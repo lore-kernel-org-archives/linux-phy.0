@@ -4,67 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC380C4345F
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Apr 2024 09:34:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDF8BC4345F
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Apr 2024 11:24:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k2C7jpt6rJ5iiW/Vi/+A9VHgUoOf/lJ2SMGNz9C3gVQ=; b=3Ym6b59lICMAgu
-	Ar9H5pQjIZCs2siykVGUeyXOrkCsz4A5ctBhI/oY1PSIPJdy5QJkJkOP/l17wrnJFdRZ3K2KjVdZ2
-	ag4eimBvU4Zau/FxhGoHe0jGvsPBf1KoKSavpEI89wYxxoKdsIqsKevRT2j0tfRaFB3YGm/v8hqyp
-	oV2IBhw8zUMkCnkByTThAfpqMNCojWiJ/LkBFXZLUNok16IOBsb4NBfbuiZm7qlT+ZTya/QfR9MXv
-	Gbb76ycuGF7DuL88FpdNoIFA0iCTWhJQ03Z85irumJTRnnZnVp1fxkMWb+D+zqEnm0sBZ6yJYGvWg
-	6KWPOZDk6u9Ai0GVoHmg==;
+	List-Owner; bh=CdJHFAR/XMTUuRfcoZAHWiW8ib1JE2WIfjFnufv4YHk=; b=IvEd944qUR7nlj
+	5NTSjAxcZWbmQrV847113wkETVpFn4OEWTRpshIoJ5GwFUu+YO22o/U45fLQJddJHJ6sfoBG/LxLI
+	X6dxtZ0OGuoI3kxCWTwwodQFBRfdg3fsTdOMWa7fy8dy3l9oAvtfa/h7pXM97uAjiYu0lxH6wCFh/
+	DRi9x5q07ThOsvvsCWfWnNhGSqk1fiISORdRUkTsjhv7jQTxQJYTw6i8VHhY6i5d2llXYHU6PP2KO
+	omfm1rUxH79m8IzezWPxw9rEtC0a1DUugbZRfog8CrTgopFDFGmhq1Yc3o21nrQPEEMO3n39ZiDYY
+	MAoOPb9H/ZBQK/adRwIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvDIX-0000000GSvi-2bUL;
-	Fri, 12 Apr 2024 09:34:17 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rvF1L-0000000Gtqe-2Zll;
+	Fri, 12 Apr 2024 11:24:39 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rvDIU-0000000GSul-1NNK;
-	Fri, 12 Apr 2024 09:34:15 +0000
+	id 1rvF1H-0000000Gtps-1fcb;
+	Fri, 12 Apr 2024 11:24:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 4B7F7CE383C;
-	Fri, 12 Apr 2024 09:34:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BD6D5C113CC;
-	Fri, 12 Apr 2024 09:34:04 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4F78E61D89;
+	Fri, 12 Apr 2024 11:24:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14499C113CC;
+	Fri, 12 Apr 2024 11:24:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1712914449;
-	bh=xLQra8oyKWr2gJU0/Rk9xTiOnKsb7illFI7gIOIzVhk=;
+	s=k20201202; t=1712921073;
+	bh=R3EqEdsxBODVZiR1t4FsAY+uuXyMbJl01zKUTUB4X0I=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fJiKmBLZyThS4o9klLsG7k+vRZefWZMLLZABuOXb5bUE1cPPFvBXXNdV2C4WRrOvT
-	 e9RrDQdRrfqh5BDLf5swFSPw+jn23s0PAJcyzpdIrVjUM1N99OyXOZLn87p4SDAXsT
-	 sAwWzd3ADkFRcqxaTy9ed5p4t6QDiXcWdRp9M04NS7fp1NNGE4P9mIkkVfnBAeqthh
-	 ii4NDHpReUI7f39KyrrhqDF3ZCwTmpCgKtq3+DNYD37Pm2g6RN2I1Im2hlaL1QQOwF
-	 jINB6EGVNQCSWjel5G+8v9NNihP9mmWjSPZU6xatq8YpHx5WzjqmmT6hSgq6Zm/2Rt
-	 07zW+ALIjeVfw==
-Date: Fri, 12 Apr 2024 15:03:59 +0530
+	b=CqQ7kT95yl/1TSCMsM0Ubak214wpR+mfm7iQA7CU/OuTGl4C/gKGQhlCR9OghpH3I
+	 8oC4lxUB6jhgZPWP2FZsD9sgeb9MD1W2BpkZbYpJt3GKkGQl979HM4DiZSyCTrnPms
+	 aNEmXpDfsiKmPPMlyVIwPbLKUZ0FFCyQEYA0i2sNDA6/49qNyY7qdg6FXtPwvMJdsA
+	 L3hAVRCAY1On5mr7niXzvgTXwT8U9dSP28znSmJ4X3f5bwKfo1zXEyuGFjAn8k7Xfq
+	 5rt4RfJSM2foXL8pqWVpetqDGk03OylwFPQvIsDpdEbwQMuIoGAyjjPqosdAJ++93W
+	 kgjBDILRl6VzA==
+Date: Fri, 12 Apr 2024 16:54:29 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Niklas Cassel <cassel@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, devicetree@vger.kernel.org,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Michal Tomek <mtdev79b@gmail.com>,
-	Damien Le Moal <dlemoal@kernel.org>,
-	Jon Lin <jon.lin@rock-chips.com>, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH 0/2] rockchip pcie3-phy separate refclk support
-Message-ID: <ZhkAB6goB4TmcmWu@matsya>
-References: <20240411130150.128107-1-cassel@kernel.org>
+To: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"hongxing.zhu@nxp.com" <hongxing.zhu@nxp.com>,
+	"linux-imx@nxp.com" <linux-imx@nxp.com>,
+	"robh@kernel.org" <robh@kernel.org>,
+	"kishon@kernel.org" <kishon@kernel.org>,
+	"heiko@sntech.de" <heiko@sntech.de>,
+	"l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+	"yang.lee@linux.alibaba.com" <yang.lee@linux.alibaba.com>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"tharvey@gateworks.com" <tharvey@gateworks.com>,
+	"shawnguo@kernel.org" <shawnguo@kernel.org>,
+	"kernel@pengutronix.de" <kernel@pengutronix.de>,
+	"s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+	"mkl@pengutronix.de" <mkl@pengutronix.de>,
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+	"imx@lists.linux.dev" <imx@lists.linux.dev>,
+	"festevam@gmail.com" <festevam@gmail.com>
+Subject: Re: [PATCH v1 0/1] phy: freescale: imx8m-pcie: facing pcie link-up
+ instability
+Message-ID: <ZhkZ7R7E9LlfZX-l@matsya>
+References: <20240322130646.1016630-1-marcel@ziswiler.com>
+ <171239511427.352254.8525089049107113141.b4-ty@kernel.org>
+ <ae96ab05b47f9788bce1c8df5a795b35e16a629c.camel@toradex.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240411130150.128107-1-cassel@kernel.org>
+In-Reply-To: <ae96ab05b47f9788bce1c8df5a795b35e16a629c.camel@toradex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240412_023414_575397_B93E3CBD 
-X-CRM114-Status: UNSURE (   7.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240412_042435_632665_D98D3E95 
+X-CRM114-Status: GOOD (  18.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,28 +84,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Niklas,
+On 07-04-24, 22:22, Marcel Ziswiler wrote:
+> Hi Vinod
+> =
 
-On 11-04-24, 15:01, Niklas Cassel wrote:
-> This series is based on: linux-phy phy/fixes
-> (Since there are other rockchip,pcie3-phy changes there that have not
-> yet reached mainline and which would otherwise have caused conflicts.)
+> On Sat, 2024-04-06 at 14:48 +0530, Vinod Koul wrote:
+> > =
 
-I merged the fixes into next and tried to apply this patch but second
-one fails for me. I guess it needs to be rebased.
+> > On Fri, 22 Mar 2024 14:06:31 +0100, Marcel Ziswiler wrote:
+> > > In our automated testing setup, we use Delock Mini-PCIe SATA cards [1=
+].
+> > > While this setup has proven very stable overall we noticed upstream on
+> > > the i.MX8M Mini fails quite regularly (about 50/50) to bring up the P=
+CIe
+> > > link while with NXP's downstream BSP 5.15.71_2.2.2 it always works. As
+> > > that old downstream stuff was quite different, I first also tried NXP=
+'s
+> > > latest downstream BSP 6.1.55_2.2.0 which from a PCIe point of view is
+> > > fairly vanilla, however, also there the PCIe link-up was not stable.
+> > > Comparing and debugging I noticed that upstream explicitly configures
+> > > the AUX_PLL_REFCLK_SEL to I_PLL_REFCLK_FROM_SYSPLL while working
+> > > downstream [2] leaving it at reset defaults of AUX_IN (PLL clock).
+> > > Unfortunately, the TRM does not mention any further details about this
+> > > register (both for the i.MX 8M Mini as well as the Plus). Maybe someb=
+ody
+> > > from NXP could further comment on this?
+> > > =
 
-Always based these changes on phy/next or phy/fixes+next (which is what
-I will end up with to resolve)
+> > > [...]
+> > =
 
--- 
+> > Applied, thanks!
+> > =
+
+> > [1/1] phy: freescale: imx8m-pcie: fix pcie link-up instability
+> > =A0=A0=A0=A0=A0 commit: 3a161017f1de55cc48be81f6156004c151f32677
+> =
+
+> Sorry, but it is slightly confusing whether v1 or v2 now got applied. I b=
+elieve v1 but then only the commit
+> messages differ. However, please note that only v2 included information o=
+n how to proceed concerning
+> backporting to stable 6.1.x.
+
+V2 was picked, you can check phy tree
+
+Somehow b4 sent email for v1 as well
+
+-- =
+
 ~Vinod
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
