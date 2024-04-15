@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4EEBC4345F
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Apr 2024 18:21:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71ADFC4345F
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Apr 2024 18:21:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=I3f8JjIZnA3YwHRjfLPrzSBj8zQqQP0xGUK601h6FPg=; b=IBsHcBHX4CJA/G
-	wtRcDLmzytG03LvriyNJtVC+BrFGNdQ8FONrml6pFGoJxkEt/+zeoz1CB4yFR0Dtj2w8CeGsCXChU
-	TxPCJQEFsESQBvPraOtybMduOrZYyMg8qGss9+KbXRvIFuCmGX/ROO5Q2q4DoD7gihLUAY8KZJXRx
-	KPxM+1tS4RsHlHHeYIGxT5G+1/7yDGbcAkM+elpta38C6ZynJa0Hin0DK+osBRXLdLHwZas0JAVSF
-	eDkvzHb32+bpvxA8oFihySDBlWtSVHhmCt2lEXqJda1bR6FZRJpNV/MIm4ZyR07A/3zAQRk3gym1o
-	NOSQvuoYrW8Qc/NyLORQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0xPP4o7knwHrx/cp+IiiJ8990Jkf1+iWaTU+kw6JgPs=; b=1WiZYEQos5M8iI
+	zOBUb8N+H63QayZVI2eH4ttnFNyHDNiNphIGsoXgk1cJ9Gad8ih4r/C6OImM4mUx+DPA402nX56OI
+	cMAmTAtbqhH2yrBRO03+uFS6JA9iuiturvGX//V48L5ieTnmuaS/ERhhfbZI1kxWtbCwAnOs27fBc
+	TlgylCGBf0S/poiMptN4xe9DHQOHrwYy9CR/3rmDh3wro++BOz+suZNSJWd9qSfC6zt3uVZlHlZl0
+	R8BFU1Jpcb0LItDftSMAhL39ik3ITxOWzIep0CVRN1M5Jqqsl+Kn8ncT3R/LNnxkrYQJ2gnREmZjq
+	GsfrwWPOT52ht+mgoX/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwQxD-00000009QiN-2eYB;
-	Mon, 15 Apr 2024 18:21:19 +0000
-Received: from mail-oo1-xc2c.google.com ([2607:f8b0:4864:20::c2c])
+	id 1rwQxH-00000009Qjp-0UQc;
+	Mon, 15 Apr 2024 18:21:23 +0000
+Received: from mail-oo1-xc2a.google.com ([2607:f8b0:4864:20::c2a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwQxA-00000009QhH-2o3z
+	id 1rwQxD-00000009QhS-2rdk
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Apr 2024 18:21:18 +0000
-Received: by mail-oo1-xc2c.google.com with SMTP id 006d021491bc7-5aa25e99414so2376474eaf.3
-        for <linux-phy@lists.infradead.org>; Mon, 15 Apr 2024 11:21:15 -0700 (PDT)
+	Mon, 15 Apr 2024 18:21:20 +0000
+Received: by mail-oo1-xc2a.google.com with SMTP id 006d021491bc7-5a7d6bc81c6so2656670eaf.2
+        for <linux-phy@lists.infradead.org>; Mon, 15 Apr 2024 11:21:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1713205274; x=1713810074; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Y+sACIufw/w8GpGeE4sEiBMvaX1bCTXDGNvgc5Qvf6E=;
-        b=DQQTAdMbYLkGj8aL/ijVbe9ec1aP8wa7kAue7dDAsSdNT8rdcHVnEnMbK1Ax1U5RIF
-         21+SZ8/CRoanIPevw5PA8XE1NmxGh5j9FiVewY0x3+tcmpmComHSvu3b64Yi3uvrpPW/
-         X3zLijwwbzn0iOtsLCxpJk5AcwE+ve0MVpYxh4mG2NTbkz1fTtp6U+U2QA3k170QCS7F
-         MWmdQSzHWn4sPzZtpeJvxaoJzuhzViIbLa+9VMG4rZLcI8qZxPMC3pX5jZpZJOx06fBX
-         8yK/3DcJwAZd1QlDRlQTesrAXXS3hVKDRF9v5FgC6lv0NSLDPhvAsK70XYszFm+UYz/S
-         07YA==
+        d=gmail.com; s=20230601; t=1713205276; x=1713810076; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=eQII4bd5vU3iEBUOJRNxIf3Y2tkmIxs3qzEGZCMfEv8=;
+        b=gm3eCedE+/hZ9hUGUp9jfLPbk9iavIE8i7LMkqrPDw5afowHsdP3PHyPY+ODHUSJ6Q
+         tQXMgtrDt5kLLUPxgHkAiPTu7Jh+NjKdCjKWm8piMoeH1Pa8bslTcN+OuTJ6DcW2Bagz
+         9mMwxL6avvqQIvsjjnrI/QzjAX+NkPkUJZDOpiYztl/saGTptiqfNG/8Up3OO9EtZPkJ
+         A6nNCKFtUG2QkMnc58E3D9Ew8KfxIAPhUBum1SDaQP8rHBdhGm2mNBEwPkHs1rT15BmU
+         DGto1rJOQwKPOYW6mlLnuFYpiTIGOuHlTamoM4SP2Omfq7jesHP2frnKpofVCnpuC58a
+         MIiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1713205274; x=1713810074;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Y+sACIufw/w8GpGeE4sEiBMvaX1bCTXDGNvgc5Qvf6E=;
-        b=hvHu6LxPCwiYUjvXUgHAEwhU1B4l4ociFIwoir3wsI9+xfH+EuDdctS9ZCHgM09dLE
-         RfqUGZMgAceU/WnyYDB72d+K9x+ez2irXhZTu20nDRV8fdThzJHsh4v3E6/Tb5pCYHq1
-         d0uQ55Vi5XuQY2Y9D74BeV8ZMOxRCuFWebFC/HakGpBzsbm6LoZ2xR61DAm98SBskkV5
-         fJ246txC1p93K0lHl+KpNEbl47w7iDt8wDJ9pnLUhlvI0hIjeA61wIoTjrS+7D2TIV1v
-         DEmXWdnwqw+/v6ie4aFTdUtmrlECX+GufGAP+ZSroTieQ8PaJG0Vq915DnVimbV2VyBT
-         vffA==
-X-Forwarded-Encrypted: i=1; AJvYcCUbYVaqoQtCPBOzfUch9U4PkjuPjdLVyQvqs2UdqcwxPwvj3wHy7vXR21fGTdGP/9RsNL2tc5wc1F9U1immGQw5IrIsJUQrvZEjg7zuCw==
-X-Gm-Message-State: AOJu0Yxs6ar1KQtnMe44Z8Y0lCAE6k4f8KYVMglFnHMwhU2WT+z/uSSK
-	t1eVtiJn1OucMSpg94BTIMbdKu6ioX8rhp9fftBMqiYYO/NRQ8Kp
-X-Google-Smtp-Source: AGHT+IHWr/WeRMTapkOGUUH5erF0VV7fugiYX43aosyHD6DomWr2AEc2K79AjdmI5lspzTuJFUOGtQ==
-X-Received: by 2002:a05:6820:985:b0:5aa:67ac:856f with SMTP id cg5-20020a056820098500b005aa67ac856fmr10305071oob.4.1713205274176;
-        Mon, 15 Apr 2024 11:21:14 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1713205276; x=1713810076;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=eQII4bd5vU3iEBUOJRNxIf3Y2tkmIxs3qzEGZCMfEv8=;
+        b=lj7W61Z8Mr/tfFwWtBxskBEjeO0Nzc4YxxOSSfmNQFM1fgUQfsyapUMiZaAkLug2i9
+         oKaB/8mQTnGENkduIiWsQ8kJPoepFe+Aiu8Nyn4/k4tgMxZ7aElCH9NYbjjTi6nL/cWX
+         U5THDanLHSUYnhPKpU2CZDdXKUfB3BB7e9bzUPOgQKeOJ8Be1CrC2dmVwwxgueOC3xNX
+         uLj/V11pMCV3/0KRwu6u99E1fUVchapWaOX0+SWD7PDpBYo8U0q/BHFsW4KtvsJD2nZ2
+         fWY27GzKTHD5QJP7DUjyhUyhwUeb8R7hi36dm6ACrHe420C3Icqlbmzq/T6ikXhGhTWR
+         lHOg==
+X-Forwarded-Encrypted: i=1; AJvYcCVl+8yWuwXidDshXiXNcKvrho2a8AhmTR+wCHdVVsOi3scuA+J+oyCxPwoLDmAzqYjcJteyGKksbPCYYxOTfwUIQqfajzinL8IkMtaELg==
+X-Gm-Message-State: AOJu0Yworvv/k1KIMDXVKKP39HrGK7d5PrTpVxZzJMqYWDhk0FWgXNMn
+	t6OhOzzlO0yE+4fU9OGlYOwMg3QFhC4Tj6QUrcmWTZVuCbUkxXCT
+X-Google-Smtp-Source: AGHT+IEeVcvxHNezT/W5g+Igrx1FREJxZQPkhRmeduAzr31PwaRKeMNBmncsMYxNomC3jAJlTvCPaw==
+X-Received: by 2002:a05:6820:2715:b0:5aa:3b8a:b491 with SMTP id db21-20020a056820271500b005aa3b8ab491mr9969886oob.4.1713205275860;
+        Mon, 15 Apr 2024 11:21:15 -0700 (PDT)
 Received: from nukework.lan (c-98-197-58-203.hsd1.tx.comcast.net. [98.197.58.203])
-        by smtp.gmail.com with ESMTPSA id x4-20020a056820104400b005a4dc7abc01sm2177494oot.11.2024.04.15.11.21.13
+        by smtp.gmail.com with ESMTPSA id x4-20020a056820104400b005a4dc7abc01sm2177494oot.11.2024.04.15.11.21.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 15 Apr 2024 11:21:13 -0700 (PDT)
+        Mon, 15 Apr 2024 11:21:15 -0700 (PDT)
 From: Alexandru Gagniuc <mr.nuke.me@gmail.com>
 To: Bjorn Andersson <andersson@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>,
@@ -82,15 +83,19 @@ To: Bjorn Andersson <andersson@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-clk@vger.kernel.org
-Cc: Alexandru Gagniuc <mr.nuke.me@gmail.com>
-Subject: [PATCH v3 0/7] ipq9574: Enable PCI-Express support
-Date: Mon, 15 Apr 2024 13:20:45 -0500
-Message-Id: <20240415182052.374494-1-mr.nuke.me@gmail.com>
+Cc: Alexandru Gagniuc <mr.nuke.me@gmail.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v3 1/7] dt-bindings: clock: Add PCIe pipe related clocks for IPQ9574
+Date: Mon, 15 Apr 2024 13:20:46 -0500
+Message-Id: <20240415182052.374494-2-mr.nuke.me@gmail.com>
 X-Mailer: git-send-email 2.40.1
+In-Reply-To: <20240415182052.374494-1-mr.nuke.me@gmail.com>
+References: <20240415182052.374494-1-mr.nuke.me@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240415_112116_733980_294B66B4 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20240415_112119_743698_31E3A678 
+X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,52 +112,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There are four PCIe ports on IPQ9574, pcie0 thru pcie3. This series
-addresses pcie2, which is a gen3x2 port. The board I have only uses
-pcie2, and that's the only one enabled in this series.
+Add defines for the missing PCIe PIPE clocks.
 
-I believe this makes sense as a monolithic series, as the individual
-pieces are not that useful by themselves.
+Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ include/dt-bindings/clock/qcom,ipq9574-gcc.h | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-In v2, I've had some issues regarding the dt schema checks. For
-transparency, I used the following test invocations to test v3:
-
-      make dt_binding_check     DT_SCHEMA_FILES=qcom,pcie.yaml:qcom,ipq8074-qmp-pcie-phy.yaml
-      make dtbs_check           DT_SCHEMA_FILES=qcom,pcie.yaml:qcom,ipq8074-qmp-pcie-phy.yaml
-
-
-Changes since v2:
- - reworked resets in qcom,pcie.yaml to resolve dt schema errors
- - constrained "reg" in qcom,pcie.yaml
- - reworked min/max intems in qcom,ipq8074-qmp-pcie-phy.yaml
- - dropped msi-parent for pcie node, as it is handled by "msi" IRQ
-
-Changes since v1:
- - updated new tables in phy-qcom-qmp-pcie.c to use lowercase hex numbers
- - reorganized qcom,ipq8074-qmp-pcie-phy.yaml to use a single list of clocks
- - reorganized qcom,pcie.yaml to include clocks+resets per compatible
- - Renamed "pcie2_qmp_phy" label to "pcie2_phy"
- - moved "ranges" property of pcie@20000000 higher up
-
-Alexandru Gagniuc (7):
-  dt-bindings: clock: Add PCIe pipe related clocks for IPQ9574
-  clk: qcom: gcc-ipq9574: Add PCIe pipe clocks
-  dt-bindings: PCI: qcom: Add IPQ9574 PCIe controller
-  PCI: qcom: Add support for IPQ9574
-  dt-bindings: phy: qcom,ipq8074-qmp-pcie: add ipq9574 gen3x2 PHY
-  phy: qcom-qmp-pcie: add support for ipq9574 gen3x2 PHY
-  arm64: dts: qcom: ipq9574: add PCIe2 nodes
-
- .../devicetree/bindings/pci/qcom,pcie.yaml    |  35 +++++
- .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |  36 ++++-
- arch/arm64/boot/dts/qcom/ipq9574.dtsi         |  93 +++++++++++-
- drivers/clk/qcom/gcc-ipq9574.c                |  76 ++++++++++
- drivers/pci/controller/dwc/pcie-qcom.c        |  13 +-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 136 +++++++++++++++++-
- .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 ++
- include/dt-bindings/clock/qcom,ipq9574-gcc.h  |   4 +
- 8 files changed, 400 insertions(+), 7 deletions(-)
-
+diff --git a/include/dt-bindings/clock/qcom,ipq9574-gcc.h b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+index 08fd3a37acaa..52123c5a09fa 100644
+--- a/include/dt-bindings/clock/qcom,ipq9574-gcc.h
++++ b/include/dt-bindings/clock/qcom,ipq9574-gcc.h
+@@ -216,4 +216,8 @@
+ #define GCC_CRYPTO_AHB_CLK				207
+ #define GCC_USB0_PIPE_CLK				208
+ #define GCC_USB0_SLEEP_CLK				209
++#define GCC_PCIE0_PIPE_CLK				210
++#define GCC_PCIE1_PIPE_CLK				211
++#define GCC_PCIE2_PIPE_CLK				212
++#define GCC_PCIE3_PIPE_CLK				213
+ #endif
 -- 
 2.40.1
 
