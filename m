@@ -4,76 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CBD9C4345F
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Apr 2024 21:50:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA4C9C4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Apr 2024 21:51:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Date:From:To:Subject:
-	Content-Description:MIME-Version:Message-ID:Cc:Content-ID:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Q1hPA1znSsx7OP8kaJgwkhlGp2oDEPy0g6PXphqb4Uw=; b=U9H
-	nKsctD457pX+ay+gjjnOBtfGeSjrNo5EoephXaliqIE9P5VPsColUEeYUidm4V2l14xOb0pvren9y
-	qC0L/UmHTGqjvnO9P3YpEZhtzkLHkAMhAjCkPUCE3FubkeE9CUzLgIOXJB8CyiL4CdYHiX0H0KkUH
-	kcmg75Ys41C/EsJlAC/RyFm8JmXu9zqhrkQ0FjklLH6YjxGFmXvArjI9CfaORjwdneNsH3fwM1nDP
-	YDWhh96cvff2me0ybEnMsSP9p7uFvpoi2TFtybBESIu7OzT2LhTf/l/MeDhydRd0h9nUvGqfRGyas
-	FJpTNJQWEiJBq7WKHckylzeT2ypzaoA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DyNKawdILq+4vOrortR0fMTh53T+dQGUuRrIc4NEjjM=; b=LExpkkPsJhIRfB
+	Q7xA3fULRJPZhstO/WO8zNUzSE6rBuh6zrYc3R7bxbgPr/rJCfYTm4hsVP6/VEAmzYbH9gk+3bpt0
+	pqLIXoOd5wphSykYLYO/PeLDadDte3nXmWQ1UNa1Rvp3ezf8cRFRsJIOd7oTxfHI+SjXTf5lkQYau
+	9OPxUWC3zRYLcAduDTVBZoeg0wSd/XZBGDtHKoryu1g549ZUU27yrnTx3ytZBVdYkd7mR/7447Lxf
+	TWbAOarFw3+4HDLCd0E29AtFq68g3u3O7TEtsD4EjOOdIuswjdJ9mRy1fP/rD6pMYq2gzHPfcksbH
+	cLXCFlv5ytcTCYny4RzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwqhH-0000000DxJJ-0Nbz;
-	Tue, 16 Apr 2024 21:50:35 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1rwqhn-0000000DxLA-2R2a;
+	Tue, 16 Apr 2024 21:51:07 +0000
+Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwqhE-0000000DxJ1-43q9
+	id 1rwqhi-0000000DxKY-1qqn
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Apr 2024 21:50:34 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2db101c11beso3552901fa.0
-        for <linux-phy@lists.infradead.org>; Tue, 16 Apr 2024 14:50:32 -0700 (PDT)
+	Tue, 16 Apr 2024 21:51:05 +0000
+Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-6098a20ab22so43378467b3.2
+        for <linux-phy@lists.infradead.org>; Tue, 16 Apr 2024 14:51:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1713304231; x=1713909031; darn=lists.infradead.org;
-        h=reply-to:date:from:to:subject:content-description
-         :content-transfer-encoding:mime-version:message-id:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=PeJSQjXoeRPXw3p8u9TEscDTfpHxwIvs9oTVQ3qAsQg=;
-        b=VPBusrXr+H1gxlKCEA3a4TUQkOF+vAzK8G8F4DkHzbwvbXD8wMrqQ1B9nDpt66GG6G
-         whHqe6yuA+8nN65/UKw4e490rhEVsG6FclAdAScFk4af6Z5kJ1bwB7yCc37iwoSMyGcB
-         kKEDGjbz/nVUutufIdhASnfgj4xK6OOqYwuRMfvOf+OVYWbEy2Etz2DKx6lB84VgTUFK
-         IKBtT+Ii6EjBxVx/2iRYDFJPIzOjyeJgOrlB9q86BZO4zai3TaFCd9WAq7D8RVT09BWF
-         NwFYQyn1rRJfrb9YzmgPAgEomWVjkSsUMmRMAV/tNb6hP85RJiowLAH6qITk2SnQerj4
-         4aNg==
+        d=linaro.org; s=google; t=1713304260; x=1713909060; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=kjacwD0Z0JhzcTISBRsYUI2PwcebrTIi/3ViNZqx+HY=;
+        b=knuNAVdVVFw+Y8lQ1cr/BfzsmmSBUd0l9sEDRMMkunvVMo39O/HawJdujuo5pvQboe
+         OddmjI9jlCMhjVQtJxQfVaTVQ9fQV3pe9rN7gVi6sAOw7Lu0A/ZuP8ZzYpT2sLSKk/11
+         y+2mq/qz/Y/idV2mjXHdExg02KAOpwCmiHfqlrvZJJbfO7Mm6CWUCyNFcD/lHE020y+b
+         MyoJg9BYgMgb4gNUjOEj0FPmjqNODrUCc8VSjx5qWJ97sJmltByy5F0pxv1WzFWMuMfz
+         oHTtRhFWsLcNF8C4bJfZBwqlPRYdyKvt+gH4IfA+EnqThHaQykyOuUW/WMSJw2H8v/lR
+         8geg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1713304231; x=1713909031;
-        h=reply-to:date:from:to:subject:content-description
-         :content-transfer-encoding:mime-version:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PeJSQjXoeRPXw3p8u9TEscDTfpHxwIvs9oTVQ3qAsQg=;
-        b=aQ+dhOh3lTSbtHifFRTM3QK7EwTq8Bp+Zv2NIFhWCKSLatvg0Rgn8zkklPwEhGBLU+
-         RUUGj3tnx/34inH0A2kbCSW8unlzy6AZKX5C3NCURFqomjmGufby6/4Z/8/ybi5JO0ye
-         dpGcrGVX70UKMyzM2LU87Ws3Utr82hwmjXwvuzgL/OhQKAWKmoScZ4QcSp0Jwg3USWiw
-         rz7ecNZO2b1bc1DISwZfMkDkjumL+fROTq15aaUtdxIc3mwPWcVt/91xgZrSRY+PnNeC
-         W7pzRq8T6/hEl6bLSInO9/8irGYwtzEcGlVubD9M+1Ty9u8+HFGstLsQ0qpJOtwUkZPG
-         0zlA==
-X-Gm-Message-State: AOJu0YzAT0IdBFOGbSdPgyYFPg9d/M9Tbu+SM3PUQg7Jw0/f6KAibg/S
-	u9FfhfQa5gGKBp1aY7I/hbOf9Y/OMYCGUrpHX4klKnCG9vmecnRIODU8NaRPWt9ACrNb
-X-Google-Smtp-Source: AGHT+IHyykrqJSUqD3zMaKZJInznCeco7yrf2Qksb4hlhJW/b07c7+7z7TgvgHxxDVZuEP7Knp9UOw==
-X-Received: by 2002:a2e:a548:0:b0:2d2:869a:55af with SMTP id e8-20020a2ea548000000b002d2869a55afmr9673186ljn.17.1713304230702;
-        Tue, 16 Apr 2024 14:50:30 -0700 (PDT)
-Received: from [192.168.8.102] ([154.120.104.13])
-        by smtp.gmail.com with ESMTPSA id r11-20020a05600c35cb00b00418631f91c1sm214834wmq.28.2024.04.16.14.50.26
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1 cipher=AES128-SHA bits=128/128);
-        Tue, 16 Apr 2024 14:50:29 -0700 (PDT)
-Message-ID: <661ef2a5.050a0220.32cd.0ace@mx.google.com>
+        d=1e100.net; s=20230601; t=1713304260; x=1713909060;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kjacwD0Z0JhzcTISBRsYUI2PwcebrTIi/3ViNZqx+HY=;
+        b=aBH2GWgVOPcqmtC94cvCETeTEY7pqhY9wPDXYBeVTZCEYcy/Qo/BbVGn9dxCVXcxAj
+         a4NbFS/8pjB/n+Bz3aAbMl/0QE/5w+cvWzDwil9nqnQkTebksDjh9LeJFfra3G/NQUqc
+         umHennTpXVR3WmywU6VwSG3++mgZSCSGbBfyHl0IWWxqrN4qOUdEotEf69yTGMfr0RlR
+         kxHr1ny+FVX7Ny4338EPs6Rtske/qm+u/7C0I3E4fvvf8qF2AszXp730xAt+OCFtliBf
+         +XN7MU/dd1McrIpfZa5SDHKfRtaPYLezA3bwtkvFVA0463IjH3yvNYT1507BCLXgjmYS
+         7Jsw==
+X-Forwarded-Encrypted: i=1; AJvYcCV5HbtkBRmbras07E8CMa7T9OnX5etbAsqfp3q4gpQd3VikOVbPTGW43QXEwavUHfU16H3RPnJtep0TfTwwGsFfRrOIiGwmdfrW1tv0UQ==
+X-Gm-Message-State: AOJu0YwwQR7ThzELbTUySRRpyWPNOCdqs30wGjacSwi6jXi98D/PmPbn
+	sYoxPdCDuqss9ynXij9dwizpdeCAxmMKRMibMTfLaD7H88qhUsrkc6ErLTtu55MvBj2RpHUrqgk
+	lNMVB0JmL/h4dBOPIvRBMQfI7zcnmvOqmdxFXtA==
+X-Google-Smtp-Source: AGHT+IHwf4S0I3CIxt2zebmdygPEKzxzcZAva7zQrKgbnJ+VAk/Eu2tIwupOVk1YuWmguhQVN3+jp9oteWNx3Ywc3xc=
+X-Received: by 2002:a81:ac65:0:b0:611:1861:1f0 with SMTP id
+ z37-20020a81ac65000000b00611186101f0mr13251817ywj.52.1713304260489; Tue, 16
+ Apr 2024 14:51:00 -0700 (PDT)
 MIME-Version: 1.0
-Content-Description: Mail message body
-Subject: Very Urgent Reply!!!!
-To: linux-phy@lists.infradead.org
-From: "Dip Paul Enes" <paulenes252@gmail.com>
-Date: Tue, 16 Apr 2024 22:50:15 +0100
+References: <20240415182052.374494-1-mr.nuke.me@gmail.com> <20240415182052.374494-7-mr.nuke.me@gmail.com>
+ <CAA8EJpqY1aDZMaeqBULEOD26UeGYbLd8RsA16jZw7zXJ7_oGPQ@mail.gmail.com>
+ <6726fa2b-f5fe-10fb-6aab-f76d61f0b3cd@gmail.com> <4a7b1e1d-ac68-4857-8925-f90c9e123fd1@gmail.com>
+In-Reply-To: <4a7b1e1d-ac68-4857-8925-f90c9e123fd1@gmail.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Wed, 17 Apr 2024 00:50:49 +0300
+Message-ID: <CAA8EJppGW=qyk2P6Z_S=dp0njsCjqZaXjw8qU4MY1HOZR-N=4A@mail.gmail.com>
+Subject: Re: [PATCH v3 6/7] phy: qcom-qmp-pcie: add support for ipq9574 gen3x2 PHY
+To: "Alex G." <mr.nuke.me@gmail.com>, Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Michael Turquette <mturquette@baylibre.com>, 
+	Stephen Boyd <sboyd@kernel.org>, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240416_145033_015651_AF208600 
-X-CRM114-Status: UNSURE (  -4.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240416_145102_582504_0A53894C 
+X-CRM114-Status: GOOD (  34.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,33 +93,164 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dipmorgan7@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Attention Sir/Madam,
+On Wed, 17 Apr 2024 at 00:25, Alex G. <mr.nuke.me@gmail.com> wrote:
+>
+> Hi Dmitry,
+>
+> On 4/15/24 16:25, mr.nuke.me@gmail.com wrote:
+> >
+> >
+> > On 4/15/24 15:10, Dmitry Baryshkov wrote:
+> >> On Mon, 15 Apr 2024 at 21:23, Alexandru Gagniuc <mr.nuke.me@gmail.com>
+> >> wrote:
+> >>>
+> >>> Add support for the gen3x2 PCIe PHY on IPQ9574, ported form downstream
+> >>> 5.4 kernel. Only the serdes and pcs_misc tables are new, the others
+> >>> being reused from IPQ8074 and IPQ6018 PHYs.
+> >>>
+> >>> Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
+> >>> ---
+> >>>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 136 +++++++++++++++++-
+> >>>   .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 ++
+> >>>   2 files changed, 149 insertions(+), 1 deletion(-)
+> >>>
+> >>
+> >> [skipped]
+> >>
+> >>> @@ -2448,7 +2542,7 @@ static inline void qphy_clrbits(void __iomem
+> >>> *base, u32 offset, u32 val)
+> >>>
+> >>>   /* list of clocks required by phy */
+> >>>   static const char * const qmp_pciephy_clk_l[] = {
+> >>> -       "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
+> >>> +       "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
+> >>> "anoc", "snoc"
+> >>
+> >> Are the NoC clocks really necessary to drive the PHY? I think they are
+> >> usually connected to the controllers, not the PHYs.
+> >
+> > The system will hang if these clocks are not enabled. They are also
+> > attached to the PHY in the QCA 5.4 downstream kernel.
 
-I hope this message finds you well. I am writing to inform you of some exciting news regarding the delivery of your consignment. Diplomat James Morgan, who has been mandated by our company to ensure the safe and prompt delivery of your consignment, has just arrived in your city.
+Interesting.
+I see that Varadarajan is converting these clocks into interconnects.
+Maybe it's better to wait for those patches to land and use
+interconnects instead. I think it would better suit the
+infrastructure.
 
-I am delighted to inform you that Diplomat James Morgan has successfully completed all the necessary procedures and documentation for the swift release and delivery of your consignment. He brings with him years of experience and expertise in handling diplomatic deliveries, and we are confident that he will ensure the successful completion of this important transaction.
+Varadarajan, could you please comment, are these interconnects
+connected to the PHY too or just to the PCIe controller?
 
-Given the significance of the consignment to you, we have arranged for Diplomat James Morgan to personally oversee its delivery to your designated location. His professionalism, attention to detail, and commitment to providing excellent customer service make him the ideal choice for this crucial task.
+> >
+> They are named "anoc_lane", and "snoc_lane" in the downstream kernel.
+> Would you like me to use these names instead?
 
-We understand that you have eagerly been awaiting the arrival of your consignment, and we apologize for any delays or inconveniences you may have experienced during this process. Rest assured that we are doing everything in our power to make sure your consignment arrives in perfect condition and within the shortest possible time frame.
+I'm fine either way.
 
-Diplomat James Morgan will contact you directly to arrange a convenient delivery date and time. Please ensure that you are available to receive the consignment or designate a trusted representative who can accept it on your behalf. You may be required to provide valid identification upon delivery, as per standard protocol.
+> e>>>   };
+> >>>
+> >>>   /* list of regulators */
+> >>> @@ -2499,6 +2593,16 @@ static const struct qmp_pcie_offsets
+> >>> qmp_pcie_offsets_v4x1 = {
+> >>>          .rx             = 0x0400,
+> >>>   };
+> >>>
+> >>> +static const struct qmp_pcie_offsets qmp_pcie_offsets_ipq9574 = {
+> >>> +       .serdes         = 0,
+> >>> +       .pcs            = 0x1000,
+> >>> +       .pcs_misc       = 0x1400,
+> >>> +       .tx             = 0x0200,
+> >>> +       .rx             = 0x0400,
+> >>> +       .tx2            = 0x0600,
+> >>> +       .rx2            = 0x0800,
+> >>> +};
+> >>> +
+> >>>   static const struct qmp_pcie_offsets qmp_pcie_offsets_v4x2 = {
+> >>>          .serdes         = 0,
+> >>>          .pcs            = 0x0a00,
+> >>> @@ -2728,6 +2832,33 @@ static const struct qmp_phy_cfg
+> >>> sm8250_qmp_gen3x1_pciephy_cfg = {
+> >>>          .phy_status             = PHYSTATUS,
+> >>>   };
+> >>>
+> >>> +static const struct qmp_phy_cfg ipq9574_pciephy_gen3x2_cfg = {
+> >>> +       .lanes                  = 2,
+> >>> +
+> >>> +       .offsets                = &qmp_pcie_offsets_ipq9574,
+> >>> +
+> >>> +       .tbls = {
+> >>> +               .serdes         = ipq9574_gen3x2_pcie_serdes_tbl,
+> >>> +               .serdes_num     =
+> >>> ARRAY_SIZE(ipq9574_gen3x2_pcie_serdes_tbl),
+> >>> +               .tx             = ipq8074_pcie_gen3_tx_tbl,
+> >>> +               .tx_num         = ARRAY_SIZE(ipq8074_pcie_gen3_tx_tbl),
+> >>> +               .rx             = ipq6018_pcie_rx_tbl,
+> >>> +               .rx_num         = ARRAY_SIZE(ipq6018_pcie_rx_tbl),
+> >>> +               .pcs            = ipq6018_pcie_pcs_tbl,
+> >>> +               .pcs_num        = ARRAY_SIZE(ipq6018_pcie_pcs_tbl),
+> >>> +               .pcs_misc       = ipq9574_gen3x2_pcie_pcs_misc_tbl,
+> >>> +               .pcs_misc_num   =
+> >>> ARRAY_SIZE(ipq9574_gen3x2_pcie_pcs_misc_tbl),
+> >>> +       },
+> >>> +       .reset_list             = ipq8074_pciephy_reset_l,
+> >>> +       .num_resets             = ARRAY_SIZE(ipq8074_pciephy_reset_l),
+> >>> +       .vreg_list              = NULL,
+> >>> +       .num_vregs              = 0,
+> >>> +       .regs                   = pciephy_v4_regs_layout,
+> >>
+> >> So, is it v4 or v5?
+> >
+> > Please give me a day or so to go over my notes and give you a more
+> > coherent explanation of why this versioning was chosen. I am only
+> > working from the QCA 5.4 downstream sources. I don't have any
+> > documentation for the silicon
+>
+> The downstream QCA kernel uses the same table for ipq6018, ipq8074-gen3,
+> and ipq9574. It is named "ipq_pciephy_gen3_regs_layout". Thus, it made
+> sense to use the same upstream table for ipq9574, "pciephy_v4_regs_layout".
+>
+> As far as the register tables go, the pcs/pcs_misc are squashed into the
+> same table in the downstream 5.4 kernel. I was able to separate the two
+> tables because the pcs_misc registers were defined with an offset of
+> 0x400. For example:
+>
+> /* QMP V2 PHY for PCIE gen3 2 Lane ports - PCS Misc registers */
+> #define PCS_PCIE_X2_POWER_STATE_CONFIG2                    0x40c
+> #define PCS_PCIE_X2_POWER_STATE_CONFIG4                    0x414
+> #define PCS_PCIE_X2_ENDPOINT_REFCLK_DRIVE                  0x420
+> #define PCS_PCIE_X2_L1P1_WAKEUP_DLY_TIME_AUXCLK_L          0x444
+> #define PCS_PCIE_X2_L1P1_WAKEUP_DLY_TIME_AUXCLK_H          0x448
+> #define PCS_PCIE_X2_L1P2_WAKEUP_DLY_TIME_AUXCLK_L          0x44c
+> #define PCS_PCIE_X2_L1P2_WAKEUP_DLY_TIME_AUXCLK_H          0x450
+> ...
+>
+> Here, QPHY_V4_PCS_PCIE_POWER_STATE_CONFIG2 = 0xc would be correct,
+> assuming a pcs_misc offset of 0x400. However, starting with
+> ENDPOINT_REFCLK_DRIVE, the register would be
+> QPHY_V4_PCS_PCIE_ENDPOINT_REFCLK_DRIVE = 0x1c. Our offsets are off-by 0x4.
+>
+> The existing V5 offsets, on the other hand, were all correct. For this
+> reason, I considered that V5 is the most likely place to add the missing
+> PCS misc definitions.
 
-Should you have any questions or concerns, please do not hesitate to reach out to me directly at dipmorgan7@gmail.com. Your satisfaction is our top priority, and we are committed to resolving any issues you may have promptly and effectively.
+Ok, sounds sane. Please use _v5 for the regs layout.
 
-Thank you for choosing our services for the delivery of your consignment. We appreciate your trust in our company and assure you that we will continue to strive for excellence throughout this process.
+>
+> Is this explanation sufficiently convincing? Where does the v4/v5 scheme
+> in upstream kernel originate?
 
-Wishing you a seamless delivery experience and a pleasant day ahead.
+Sometimes it's vendor kernels, sometimes it's a feedback from devs
+that have access to actual specs.
 
-Warm regards,
 
-Dip James Morgan
+--
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
