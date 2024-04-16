@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E43AC04FF6
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Apr 2024 12:53:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4534C4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Apr 2024 12:53:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Du5dvmzwMHRdoSjjlVtdEAadtG6E/Y4BZopw+cmgDHI=; b=nhAfWpsSJdB2Ue
-	xnfHXjFPMjnklEolBNW1UuMow5xh9Tikt08pVBy2QVz8NwR8g5CsiDl9O181yGKPGQod3K0lXCoSd
-	eDGHxsEFvoyOUKS+gi/uLps2Fb+UJSTbKvqCcvlXk3hPBS2+wCV9fFnGgd5VCZtS7luWWq5OVfran
-	FsPa/D2G1nsAplkk+B6O9UByr4uq8TZU3rspzUObsm/ov6K94CXVUtwF0H5g02aUxRXHgiqbZfcRO
-	4WYXK3p2/NHVS23bax+XQoZ6w0rOXUF/FReMl1BQ9Dhzogub5xqYPEK0TpNHOcafqPugbzJd+qdN5
-	jDe9Nf+7Rr1yewZl17fQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WFLOBWCUQKljZBfUSVBiAbQGePT2SE1FpQ7Vg6/Bhns=; b=Gew1zEthHNdf+B
+	BDrzeoVu3Upz2tL5tL9xysMlXaw2eLCUk5zTWuGz2Hlx10gOsyvmV5x0L0D17UPmcdMd2kIglG4P4
+	qixXQXRR7P7qeqOfV8l82ht+2k007gggtJBse1DOu+Y0DyZZ5kPaGe9V6LU7If1JQGaXeT0+egQfz
+	w0id5n5v9t8OnP+iVsqoerCzNNBEstpvD4mLxyNNFwr9t9XKVRaXN9jvUKLxFUy6NQfFMfdK3jfzx
+	mJUpMgob6i6O+GkHnHIijB0v6sy/GvS0M3XKfK1vIXGkJTJNx2kSY9sPQ8WtFzjvgyurcjERq0dxw
+	u1vuGZ302HtVdNOXHrJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwiJ4-0000000CC2U-03Ee;
-	Tue, 16 Apr 2024 12:53:02 +0000
+	id 1rwiJ5-0000000CC2u-1ieI;
+	Tue, 16 Apr 2024 12:53:03 +0000
 Received: from relay7-d.mail.gandi.net ([217.70.183.200])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rwiJ0-0000000CC0z-0OYX
+	id 1rwiJ2-0000000CC1r-3Olm
 	for linux-phy@lists.infradead.org;
-	Tue, 16 Apr 2024 12:52:59 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 1D0C920005;
-	Tue, 16 Apr 2024 12:52:49 +0000 (UTC)
+	Tue, 16 Apr 2024 12:53:02 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id E46DF20010;
+	Tue, 16 Apr 2024 12:52:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1713271971;
+	t=1713271979;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=K3y9GuS5/xl69QZWu2ZPRVC1k2WjWkSaQK5l7tBAvM4=;
-	b=pk96PNKJvxtGcj+a+jiYvS7naxMkRd0XCRZgHvwwWUd2fx98vnmtLLzzNj/jN39ZFDmcGE
-	gjjWqKEEPTJwS2utG2GNmPb6hcSVpqIIri3QHcwOiuIvyAZ5NwUzXUxBzhOAt0x6mHxtUu
-	//3QwhwYhL12ERZmpa8UBHiyonerp6C7YGiPwP8wOL8xX2hbQhr+dsLxBdm6BO+dRUOE+5
-	VcOL69u4+lYUcdyhyG1il1cIp3zHOGXVUrXmSxrsKcUiA44Rh4DIe8PT+FKA7CtdBdvTTw
-	hiSHn8M1CG65mSGYSnmNaot2rIJGVFwvSG7IWgLUCd8JgjO7ecHn1fchW6qPmw==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=DkjYb/heaYMzCjQ4QnbfLecl4jtQfd543suxAgCkx34=;
+	b=Q5ai+EHaCMUt1LHzoBzp0RKUivr1riPA7SfjAObRdy9sv11F78Z2/Z2uVARG4ibWFm6KJQ
+	7T5qEbMlrPGdB72T8U8EXbDN5udTOluG2lVK4Ktfe19oq7QXEy5h4owMDTuh4+VYhBJYra
+	PIjpAltwcL7hCxDyMCFp8w4v+2f6SWckxX6Cju1FAx4TXg7b5CLTkDeWFp4f/YdmPgpKW7
+	xpNBzNNwi6/YTERptsBBLBsRXcSVL2s/P1wIcGWxIv9dLPR8fZqKRwS5TXE8SAJSNzV2A0
+	EzicZT71cPUzCyffhAgC9oH6el92omZVuB9HCFgZt8MVsFN6V7SrQ4gbGHL0AQ==
 From: Thomas Richard <thomas.richard@bootlin.com>
-Subject: [PATCH 0/8] Add suspend and resume support for phy-cadence-torrent
- and phy-j721e-wiz
-Date: Tue, 16 Apr 2024 14:52:29 +0200
-Message-Id: <20240412-j7200-phy-s2r-v1-0-f15815833974@bootlin.com>
+Date: Tue, 16 Apr 2024 14:52:31 +0200
+Subject: [PATCH 2/8] phy: ti: phy-j721e-wiz: split wiz_clock_init()
+ function
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAI10HmYC/x2NwQrCQAxEf6XkbCBNi1v8FfGQ1ujGw1oSEKX03
- 7vr8c3MYzYIddOAS7eB68fC3qVCf+pgyVKeinavDEw80tgzvhIT4Zp/GOyYaFI5D6KSJqjOLKE
- 4u5QlN6tNWtSq1fVh3//V9bbvBz6aFjV6AAAA
+Message-Id: <20240412-j7200-phy-s2r-v1-2-f15815833974@bootlin.com>
+References: <20240412-j7200-phy-s2r-v1-0-f15815833974@bootlin.com>
+In-Reply-To: <20240412-j7200-phy-s2r-v1-0-f15815833974@bootlin.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
  Philipp Zabel <p.zabel@pengutronix.de>
@@ -59,9 +59,8 @@ Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
 X-Mailer: b4 0.12.0
 X-GND-Sasl: thomas.richard@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240416_055258_301207_D6208BBF 
-X-CRM114-Status: UNSURE (   8.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240416_055301_161658_FD109DBE 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,46 +77,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The patches of this series were originally in the series "Add suspend to
-ram support for PCIe on J7200" [1].
-They were moved in a separate series as requested by the PHY maintainer.
-This series adds suspend and resume support for the phy-cadence-torrent and
-phy-j721e-wiz drivers.
+The wiz_clock_init() function mixes probe and hardware configuration.
+Rename the wiz_clock_init() to wiz_clock_probe() and move the hardware
+configuration part in a new function named wiz_clock_init().
 
-Compared to the PCIe series v4 [1], these PHY patches were rebased on Linux
-v6.9-rc1.
-The only change is for the patch "phy: cadence-torrent: extract calls to
-clk_get from cdns_torrent_clk". Now the cadence-torrent driver supports
-dual reference clock, so the patch was updated consequently.
-
-[1] https://lore.kernel.org/all/20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com/
-
-Regards, 
-
-Thomas
+This hardware configuration sequence must be called during the resume
+stage of the driver.
 
 Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
 ---
-Thomas Richard (8):
-      phy: ti: phy-j721e-wiz: use dev_err_probe() instead of dev_err()
-      phy: ti: phy-j721e-wiz: split wiz_clock_init() function
-      phy: ti: phy-j721e-wiz: add resume support
-      phy: cadence-torrent: extract calls to clk_get from cdns_torrent_clk
-      phy: cadence-torrent: register resets even if the phy is already configured
-      phy: cadence-torrent: add already_configured to struct cdns_torrent_phy
-      phy: cadence-torrent: remove noop_ops phy operations
-      phy: cadence-torrent: add suspend and resume support
+ drivers/phy/ti/phy-j721e-wiz.c | 66 +++++++++++++++++++++++-------------------
+ 1 file changed, 37 insertions(+), 29 deletions(-)
 
- drivers/phy/cadence/phy-cadence-torrent.c | 140 +++++++++++++++++++++---------
- drivers/phy/ti/phy-j721e-wiz.c            | 133 +++++++++++++++++-----------
- 2 files changed, 182 insertions(+), 91 deletions(-)
----
-base-commit: b6b2d5379911df41ad51f7773ed98ef18b939258
-change-id: 20240412-j7200-phy-s2r-708ea63aea78
+diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+index 5fea4df9404e..ba670109e7ad 100644
+--- a/drivers/phy/ti/phy-j721e-wiz.c
++++ b/drivers/phy/ti/phy-j721e-wiz.c
+@@ -1076,26 +1076,12 @@ static int wiz_clock_register(struct wiz *wiz)
+ 	return ret;
+ }
+ 
+-static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
++static void wiz_clock_init(struct wiz *wiz)
+ {
+-	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
+-	struct device *dev = wiz->dev;
+-	struct device_node *clk_node;
+-	const char *node_name;
+ 	unsigned long rate;
+-	struct clk *clk;
+-	int ret;
+-	int i;
+-
+-	clk = devm_clk_get(dev, "core_ref_clk");
+-	if (IS_ERR(clk))
+-		return dev_err_probe(dev, PTR_ERR(clk),
+-				     "core_ref_clk clock not found\n");
+ 
+-	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
+-
+-	rate = clk_get_rate(clk);
+-	if (rate >= 100000000)
++	rate = clk_get_rate(wiz->input_clks[WIZ_CORE_REFCLK]);
++	if (rate >= REF_CLK_100MHZ)
+ 		regmap_field_write(wiz->pma_cmn_refclk_int_mode, 0x1);
+ 	else
+ 		regmap_field_write(wiz->pma_cmn_refclk_int_mode, 0x3);
+@@ -1119,6 +1105,38 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 		break;
+ 	}
+ 
++	if (wiz->input_clks[WIZ_CORE_REFCLK1]) {
++		rate = clk_get_rate(wiz->input_clks[WIZ_CORE_REFCLK1]);
++		if (rate >= REF_CLK_100MHZ)
++			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x1);
++		else
++			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x3);
++	}
++
++	rate = clk_get_rate(wiz->input_clks[WIZ_EXT_REFCLK]);
++	if (rate >= REF_CLK_100MHZ)
++		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x0);
++	else
++		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
++}
++
++static int wiz_clock_probe(struct wiz *wiz, struct device_node *node)
++{
++	const struct wiz_clk_mux_sel *clk_mux_sel = wiz->clk_mux_sel;
++	struct device *dev = wiz->dev;
++	struct device_node *clk_node;
++	const char *node_name;
++	struct clk *clk;
++	int ret;
++	int i;
++
++	clk = devm_clk_get(dev, "core_ref_clk");
++	if (IS_ERR(clk))
++		return dev_err_probe(dev, PTR_ERR(clk),
++				     "core_ref_clk clock not found\n");
++
++	wiz->input_clks[WIZ_CORE_REFCLK] = clk;
++
+ 	if (wiz->data->pma_cmn_refclk1_int_mode) {
+ 		clk = devm_clk_get(dev, "core_ref1_clk");
+ 		if (IS_ERR(clk))
+@@ -1126,12 +1144,6 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 					     "core_ref1_clk clock not found\n");
+ 
+ 		wiz->input_clks[WIZ_CORE_REFCLK1] = clk;
+-
+-		rate = clk_get_rate(clk);
+-		if (rate >= 100000000)
+-			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x1);
+-		else
+-			regmap_field_write(wiz->pma_cmn_refclk1_int_mode, 0x3);
+ 	}
+ 
+ 	clk = devm_clk_get(dev, "ext_ref_clk");
+@@ -1141,11 +1153,7 @@ static int wiz_clock_init(struct wiz *wiz, struct device_node *node)
+ 
+ 	wiz->input_clks[WIZ_EXT_REFCLK] = clk;
+ 
+-	rate = clk_get_rate(clk);
+-	if (rate >= 100000000)
+-		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x0);
+-	else
+-		regmap_field_write(wiz->pma_cmn_refclk_mode, 0x2);
++	wiz_clock_init(wiz);
+ 
+ 	switch (wiz->type) {
+ 	case AM64_WIZ_10G:
+@@ -1589,7 +1597,7 @@ static int wiz_probe(struct platform_device *pdev)
+ 		goto err_get_sync;
+ 	}
+ 
+-	ret = wiz_clock_init(wiz, node);
++	ret = wiz_clock_probe(wiz, node);
+ 	if (ret < 0) {
+ 		dev_warn(dev, "Failed to initialize clocks\n");
+ 		goto err_get_sync;
 
-Best regards,
 -- 
-Thomas Richard <thomas.richard@bootlin.com>
+2.39.2
 
 
 -- 
