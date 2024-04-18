@@ -4,85 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0721C4345F
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Apr 2024 13:20:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D91FAC4345F
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Apr 2024 15:33:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hp+10HinwtP3TW1HjMPOtrbcqrSApnRmVJB6vzi8PEU=; b=mlTijSM8aW6dv9
-	3M8rbb9dV1fMycY0gSHsRRii8A65KejuIKUNRraaJz5JCezSHzpWJnAr/QOA7p5IClDtpy4T0R4pO
-	ZAgVBdHIKUYOjk63zop9i+BI4NlB2GPOSAyqT86bzWl1w943fLWsDir5XBLQ5/WBpyGkt8sU4Hz5z
-	zBq+LqZCCWIfBsS3gzQItxDk68XvDdjCGWbIjORduUgVDVFP/+Xm1xazNJb/z2bci7gPBz7ANmV38
-	8ZV+r72RRXKUJnOZ7egz4BFPUCJ7qlcCaIRLbg6wkP9aodGQekHa0SyeHNlmF99HgtPIwdcOJDn4+
-	+PQCvyVajPi8ioEq3uSg==;
+	List-Owner; bh=r/JATORRPEvcGAgyij1B8zbNYkTatBvyY/KLu50r7xE=; b=l9J/hvTZm8jKvS
+	ZFECMFp0Ofl7BqqUg9FStfBrJFzo/Ik7uXtT2xGx6FJQZdUsfcZEhTharMVA211m60VqruUIR/uqf
+	NQPM4bkkXIitObwNvPxA9h7QQVDBmX2VLXtawCEkD73+ONTGJmGmYAuanmudImnURjAxYps6X/pZv
+	rnuvw8J+k11sLr6/vxPj6hNfzoZyw40RFLHQiUNcknw1FHNmvNSiMCGzLsSpDtIFQRywNUCkMQGtR
+	c7KaywkiwZMc5wkIyESPGxbcnKm+6XvetKjdKa9I7dduHtFBCcgzErPnKa5+lOVpOGvE/+8DUZ2YO
+	ApS4Vy4G6xhRQEA66OaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxRgr-00000002Lsz-13xL;
-	Thu, 18 Apr 2024 13:20:37 +0000
-Received: from mail-oo1-xc2b.google.com ([2607:f8b0:4864:20::c2b])
+	id 1rxTlT-00000002om1-1pPf;
+	Thu, 18 Apr 2024 15:33:31 +0000
+Received: from mail-oo1-xc2e.google.com ([2607:f8b0:4864:20::c2e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxRgi-00000002Lp5-3qy7
+	id 1rxTlQ-00000002okh-2emD
 	for linux-phy@lists.infradead.org;
-	Thu, 18 Apr 2024 13:20:35 +0000
-Received: by mail-oo1-xc2b.google.com with SMTP id 006d021491bc7-5aa17c29ba0so470179eaf.3
-        for <linux-phy@lists.infradead.org>; Thu, 18 Apr 2024 06:20:27 -0700 (PDT)
+	Thu, 18 Apr 2024 15:33:30 +0000
+Received: by mail-oo1-xc2e.google.com with SMTP id 006d021491bc7-5a49261093cso512113eaf.3
+        for <linux-phy@lists.infradead.org>; Thu, 18 Apr 2024 08:33:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1713446426; x=1714051226; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=kv/eRlfqI9fnVJrlsdInFKVMVhQmcxt9AimltQ38bU4=;
-        b=SjaYWlDN3kENcF8S9ZjSbGbEFMtIkUiy6oxk72FmGvm9NsgGwM6NEjJ1jqLiRZJRhg
-         zyFYijM/Nc0+cRmV0edC0fQUSpcndX9mOqiHq2j4oU4OC7tXUp9pHOxAHZLXkXuMbgkG
-         TVPpL+ih8jjc7tNkO/utUZz4yuousLb7Qsfc8F4f9SsqLbZ7Qix1YNVIMx+Kxv7nGRvl
-         hzMlxx8+pWFhIs7kdgvmVtVrgFsdb+P1dntUWMxAoxFiNr6xuIWC3316ceQO2z4bmE+9
-         oJloDlL6BHqK8hfJpFzPwUZk6M7LJ1gDDxx3L5pyWGCsG6sG59dcQLHdb8OtndeOCXbA
-         6eNw==
+        d=gmail.com; s=20230601; t=1713454406; x=1714059206; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=0PpqV3h5TqPps9cVfBqAG1UcArnq9DB4nfERwYi+F10=;
+        b=UWvS9TTfIAJ12r1ZkO0M+4Z3PlgfpQZqPUUd24MJSSIs8FsF8nCJZmVsr/Lv8gvK+3
+         fHItGQrfHpVWBpxvR0fa0J7q5dRGssEYD08b32nEsOcpocotEOFqM8J8ojJYRjNLdU7d
+         xAXpVIr0le/gEsROEQrIatnbeQQNDBGJ1YayMc3s2tA6gqFr2SjdKG3AfgoT/XbfZgMc
+         9lAWvRQ/K2NjO2lVASPO8GYYGV6JGMcUfuXds+4LngXLIc3DtfoOO6Jez99yjlv5FfDS
+         RPDzAFYDXOS111FV6TD9+UF7JVYu4CHFqhqIjwIv11j5IiA7p1mxmbByYnTFqcHkFLFf
+         B7JQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1713446426; x=1714051226;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=kv/eRlfqI9fnVJrlsdInFKVMVhQmcxt9AimltQ38bU4=;
-        b=SPbgC8Wd4Eo7vQc3LLvigQzv5jj7CaZelg0Q9PCHzwzVWhV3qldf6Uunc3pvleEu5m
-         mM4RquPSFsPJEyfEoWnEJc/NOJAkYnPOvhaiJA+O40iu7mQSX2v/aO/mzUzUHNNeancY
-         8TmTwxDpva6dLSQyCcKZXgWGujR1UwCZlaGsZl28EO/wbQNwcOdN+EtPuva1rsUCXlnZ
-         9Frk1rpPOI7HXST3YCVyNmFrMXGYEliEnZZTl/W86/BQa3w/OdbCqJh/lj7HPwoEkewo
-         8I/egyy6ICTPyDCyTCGWVpiJgn1m+eQrSukHQvS/cqt+WyJGgCWH2LK7PB2sQxqhK9Ty
-         T1bQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXxH0jH5xkJBTe2iWImLIglYiGnQBRfRnr29YfMq5u94HwIG5REnPklgHSKcDLrxxD/KzHqq/BlNbnyo6Bjqux1kZTEzAfgAQJo5eB3Vw==
-X-Gm-Message-State: AOJu0Yzaa4HoJqn3I9uLDJIVq1fB5gghWrGYXaAyeOZbcgdTtkqPo4In
-	94fmnLuCiWnBV4avoBIMCNvPfBl8G4WPTAfG7S4jcsf9F1YE01JkUGI8Df0fUkryxIkqjzPOUSs
-	l8aNBnl2O07r+RwwARP5dyHN0tgSPPnYzJ/JXvA==
-X-Google-Smtp-Source: AGHT+IHb/MdViNDEYLGDlZta2cUpYEdAdq/Zq5yJhTp7tH/XZ2cMCev0RXDqyzn43o1+A8jwrKM5rxrFUIw8Q5yDYVo=
-X-Received: by 2002:a4a:ac89:0:b0:5aa:676e:9ad9 with SMTP id
- b9-20020a4aac89000000b005aa676e9ad9mr3474499oon.2.1713446426269; Thu, 18 Apr
- 2024 06:20:26 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1713454406; x=1714059206;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=0PpqV3h5TqPps9cVfBqAG1UcArnq9DB4nfERwYi+F10=;
+        b=wWFgNT4koM0gf+v4YmiIDs53FmcQdt7xYglqUSDHoHLInx/3eTUpnNRyu7M0a/dr3m
+         KNuhxVnBRx7in/bNGfpVcttnk6XyTJss9B21I+AgjvYTMzVg5gzkx9i4YOeLcwTRbPxS
+         KtEfsdbwlNLCQ5Vy4FZurcNg1m55er1RChDZ8fZKaL4ovtN7ADF/TPbPPmd7hNifhACE
+         ox0Umo0fxBDAzqYieP+vr5SGSzAC4/ktnAVhXjyFN1qXn/eNEmYchBeCnp/ZlbAdiov+
+         8MAbRqf1xeiz7oO0jkXu3nUhWc2nklX3mOv2Lr++HFLjPXFam3VSRjU0SiWyI4hwDmvT
+         fVMw==
+X-Forwarded-Encrypted: i=1; AJvYcCXvp9Gh692p6j4yEBG1eApiUREOtjH8uw2mu4pBLoH3qkvAKbGTDOGQvb7os3QjmaC0T8BV8eu4YZupFulTlsGHHfoPhjPSMs4jSKSxiQ==
+X-Gm-Message-State: AOJu0YwtP/Dv2ejx95kcPcIZese2Afsavdq4bEKh72vpKt0KoLxZBCd5
+	hEcn6Uxq1HmDdBFCk8Bms8vA1kd/42Xv/VNigzTK3ujbRSA9h8Ql
+X-Google-Smtp-Source: AGHT+IFPSo0EiZkOCg4SbYDajm04Bi8eymG+RVOa0yqnQTLBlt5WMDawfM15TlYrRZA1R3HZD5ZEcg==
+X-Received: by 2002:a4a:98c8:0:b0:5ac:9ece:a7c with SMTP id b8-20020a4a98c8000000b005ac9ece0a7cmr3660118ooj.5.1713454405693;
+        Thu, 18 Apr 2024 08:33:25 -0700 (PDT)
+Received: from [192.168.7.169] (c-98-197-58-203.hsd1.tx.comcast.net. [98.197.58.203])
+        by smtp.gmail.com with ESMTPSA id bu10-20020a0568201aca00b005a4799f5428sm421440oob.21.2024.04.18.08.33.24
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 18 Apr 2024 08:33:25 -0700 (PDT)
+Message-ID: <e8957b07-692f-7d38-e276-b0e3791d31f4@gmail.com>
+Date: Thu, 18 Apr 2024 10:33:23 -0500
 MIME-Version: 1.0
-References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-8-peter.griffin@linaro.org> <4ed72378-672e-46d6-9f29-fa118f598739@kernel.org>
-In-Reply-To: <4ed72378-672e-46d6-9f29-fa118f598739@kernel.org>
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Thu, 18 Apr 2024 14:20:15 +0100
-Message-ID: <CADrjBPpaR86R6FMwMqos7ojVfDpGxS=ygW50UBCy1DTsoXHJgQ@mail.gmail.com>
-Subject: Re: [PATCH 07/17] arm64: dts: exynos: gs101: Add ufs, ufs-phy and ufs
- regulator dt nodes
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
-	alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org, 
-	s.nawrocki@samsung.com, cw00.choi@samsung.com, jejb@linux.ibm.com, 
-	martin.petersen@oracle.com, chanho61.park@samsung.com, ebiggers@kernel.org, 
-	linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-clk@vger.kernel.org, 
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org, 
-	andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v3 7/7] arm64: dts: qcom: ipq9574: add PCIe2 nodes
+Content-Language: en-US
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=c5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org
+References: <20240415182052.374494-1-mr.nuke.me@gmail.com>
+ <20240415182052.374494-8-mr.nuke.me@gmail.com>
+ <20240417073412.GD3894@thinkpad>
+From: mr.nuke.me@gmail.com
+In-Reply-To: <20240417073412.GD3894@thinkpad>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240418_062029_108682_EFCF431E 
-X-CRM114-Status: GOOD (  21.00  )
+X-CRM114-CacheID: sfid-20240418_083328_712477_2517D725 
+X-CRM114-Status: GOOD (  20.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,143 +103,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-Thanks for your review feedback.
-
-On Fri, 5 Apr 2024 at 08:53, Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On 04/04/2024 14:25, Peter Griffin wrote:
-> > Enable the ufs controller, ufs phy and ufs regulator in device tree.
-> >
-> > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
-> > ---
-> >  .../boot/dts/exynos/google/gs101-oriole.dts   | 17 +++++++++
-> >  arch/arm64/boot/dts/exynos/google/gs101.dtsi  | 35 +++++++++++++++++++
->
-> If you wish you can split DTSI and DTS into separate patches. Up to you.
-
-Thanks for the heads up
->
-> >  2 files changed, 52 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts b/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts
-> > index 6be15e990b65..986eb5c9898a 100644
-> > --- a/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts
-> > +++ b/arch/arm64/boot/dts/exynos/google/gs101-oriole.dts
-> > @@ -53,6 +53,14 @@ button-power {
-> >                       wakeup-source;
-> >               };
-> >       };
-> > +
-> > +     ufs_0_fixed_vcc_reg: regulator-0 {
-> > +             compatible = "regulator-fixed";
-> > +             regulator-name = "ufs-vcc";
-> > +             gpio = <&gpp0 1 0>;
->
-> Use defines for GPIO flags,
-
-Will fix in v2
-
-> but more important: are you sure this is not
-> coming from a PMIC? What's the voltage? It looks like a stub for missing
-> PMIC, because UFS voltages are usually provided by PMIC.
-
-UFS vcc is 1.2v. The gpio signal from gs101 SoC is called BOOTLD0, and
-it is connected to slave pmic (S2MPG11) UFS_EN signal which is a gpio
-enabled voltage rail for UFS (LDO8S).
-
-The downstream driver code declares the UFS supply as regulator-fixed
-even though it has a fully featured regulator driver for the pmic,
-with the LDO8S regulator exposed. Checking the DT for the pmic the min
-and max volt are different, so using regulator-fixed seems wrong for
-downstream.
-
-s_ldo8_reg: LDO8S {
-    regulator-name = "S2MPG11_LDO8";
-    regulator-min-microvolt = <1127800>;
-    regulator-max-microvolt = <1278600>;
-    regulator-always-on;
-    regulator-initial-mode = <SEC_OPMODE_SUSPEND>;
-    channel-mux-selection = <0x28>;
-    schematic-name = "L8S_UFS_VCCQ";
-    subsys-name = "UFS";
- };
-
-So I think you're correct this is a stub pending full pmic support. I
-propose in v2 to add a comment similar to what we have in
-exynos850-e850-96.dts today above the regulator-fixed node like /*
-TODO: Remove this once PMIC is implemented  */?
-
-regards,
-
-Peter.
 
 
+On 4/17/24 02:34, Manivannan Sadhasivam wrote:
+> On Mon, Apr 15, 2024 at 01:20:52PM -0500, Alexandru Gagniuc wrote:
+>> On ipq9574, there are 4 PCIe controllers. Describe the pcie2 node, and
+>> its PHY in devicetree.
+>>
+>> Only pcie2 is described, because only hardware using that controller
+>> was available for testing.
+>>
+> 
+> You should describe all the instances in DT. Since the unused ones will be
+> 'disabled', it won't affect anyone.
 
+My concern with untested but "disabled" descriptions is that someone may 
+think it's supported, try to enable it on their board, and run into 
+issues. Theoretically, we could describe pcie3, as it uses the same 
+gen3x2 phy.
 
->
-> > +             regulator-boot-on;
-> > +             enable-active-high;
-> > +     };
-> >  };
-> >
-> >  &ext_24_5m {
-> > @@ -106,6 +114,15 @@ &serial_0 {
-> >       status = "okay";
-> >  };
-> >
-> > +&ufs_0 {
-> > +     status = "okay";
-> > +     vcc-supply = <&ufs_0_fixed_vcc_reg>;
-> > +};
-> > +
-> > +&ufs_0_phy {
-> > +     status = "okay";
-> > +};
-> > +
-> >  &usi_uart {
-> >       samsung,clkreq-on; /* needed for UART mode */
-> >       status = "okay";
-> > diff --git a/arch/arm64/boot/dts/exynos/google/gs101.dtsi b/arch/arm64/boot/dts/exynos/google/gs101.dtsi
-> > index 608369cec47b..9c94829bf14c 100644
-> > --- a/arch/arm64/boot/dts/exynos/google/gs101.dtsi
-> > +++ b/arch/arm64/boot/dts/exynos/google/gs101.dtsi
-> > @@ -1277,6 +1277,41 @@ pinctrl_hsi2: pinctrl@14440000 {
-> >                       interrupts = <GIC_SPI 503 IRQ_TYPE_LEVEL_HIGH 0>;
-> >               };
-> >
-> > +             ufs_0_phy: phy@17e04000 {
-> > +                     compatible = "google,gs101-ufs-phy";
-> > +                     reg = <0x14704000 0x3000>;
-> > +                     reg-names = "phy-pma";
-> > +                     samsung,pmu-syscon = <&pmu_system_controller>;
-> > +                     #phy-cells = <0>;
-> > +                     clocks = <&ext_24_5m>;
-> > +                     clock-names = "ref_clk";
-> > +                     status = "disabled";
-> > +             };
-> > +
-> > +             ufs_0: ufs@14700000 {
-> > +                     compatible = "google,gs101-ufs";
-> > +
->
-> Drop blank line.
->
-> > +                     reg = <0x14700000 0x200>,
-> > +                           <0x14701100 0x200>,
-> > +                           <0x14780000 0xa000>,
-> > +                           <0x14600000 0x100>;
->
->
-> Best regards,
-> Krzysztof
->
+The pcie0 and pcie1 use a gen3x1 phy, which I do not support in this 
+series. I would have to leave the "phys" and "phy-names" for these 
+nodes, leading to an incomplete description
+
+Given this info, do you still wish that I add all other pcie nodes?
+
+>> Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
+>> ---
+>>   arch/arm64/boot/dts/qcom/ipq9574.dtsi | 93 ++++++++++++++++++++++++++-
+>>   1 file changed, 92 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+>> index 7f2e5cbf3bbb..f075e2715300 100644
+>> --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+>> @@ -300,7 +300,7 @@ gcc: clock-controller@1800000 {
+>>   				 <0>,
+>>   				 <0>,
+>>   				 <0>,
+>> -				 <0>,
+>> +				 <&pcie2_phy>,
+>>   				 <0>,
+>>   				 <0>;
+>>   			#clock-cells = <1>;
+>> @@ -745,6 +745,97 @@ frame@b128000 {
+>>   				status = "disabled";
+>>   			};
+>>   		};
+>> +
+>> +		pcie2_phy: phy@8c000 {
+>> +			compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+>> +			reg = <0x0008c000 0x14f4>;
+>> +
+>> +			clocks = <&gcc GCC_PCIE2_AUX_CLK>,
+>> +				 <&gcc GCC_PCIE2_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE2_PIPE_CLK>,
+>> +				 <&gcc GCC_ANOC_PCIE2_2LANE_M_CLK>,
+>> +				 <&gcc GCC_SNOC_PCIE2_2LANE_S_CLK>;
+>> +			clock-names = "aux",
+>> +				      "cfg_ahb",
+>> +				      "pipe",
+>> +				      "anoc",
+>> +				      "snoc";
+>> +
+>> +			clock-output-names = "pcie_phy2_pipe_clk";
+>> +			#clock-cells = <0>;
+>> +			#phy-cells = <0>;
+>> +
+>> +			resets = <&gcc GCC_PCIE2_PHY_BCR>,
+>> +				 <&gcc GCC_PCIE2PHY_PHY_BCR>;
+>> +			reset-names = "phy",
+>> +				      "common";
+>> +			status = "disabled";
+>> +		};
+>> +
+>> +		pcie2: pcie@20000000 {
+>> +			compatible = "qcom,pcie-ipq9574";
+>> +			reg = <0x20000000 0xf1d>,
+>> +			      <0x20000f20 0xa8>,
+>> +			      <0x20001000 0x1000>,
+>> +			      <0x00088000 0x4000>,
+>> +			      <0x20100000 0x1000>;
+>> +			reg-names = "dbi", "elbi", "atu", "parf", "config";
+>> +
+>> +			ranges = <0x81000000 0x0 0x20200000 0x20200000 0x0 0x00100000>,	/* I/O */
+> 
+> Please use below range:
+> 
+> <0x01000000 0x0 0x00000000 0x20200000 0x0 0x00100000>
+> <0x02000000 0x0 0x20300000 0x20300000 0x0 0x07d00000>
+> 
+Of course, thank you.
+
+>> +				 <0x82000000 0x0 0x20300000 0x20300000 0x0 0x07d00000>;	/* MEM */
+>> +
+>> +			device_type = "pci";
+>> +			linux,pci-domain = <3>;
+>> +			bus-range = <0x00 0xff>;
+>> +			num-lanes = <2>;
+>> +			max-link-speed = <3>;
+>> +			#address-cells = <3>;
+>> +			#size-cells = <2>;
+>> +
+>> +			phys = <&pcie2_phy>;
+>> +			phy-names = "pciephy";
+>> +
+>> +			interrupts = <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>;
+>> +			interrupt-names = "msi";
+>> +
+>> +			#interrupt-cells = <1>;
+>> +			interrupt-map-mask = <0 0 0 0x7>;
+>> +			interrupt-map = <0 0 0 1 &intc 0 0 164
+>> +					 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
+>> +					<0 0 0 2 &intc 0 0 165
+>> +					 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
+>> +					<0 0 0 3 &intc 0 0 186
+>> +					 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
+>> +					<0 0 0 4 &intc 0 0 187
+>> +					 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
+> 
+> Use a single line for each INTX entry even if it exceeds 80 column width.
+
+Yes. Will do.
+
+> - Mani
+> 
 
 -- 
 linux-phy mailing list
