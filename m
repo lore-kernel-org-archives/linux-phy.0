@@ -4,115 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 928CCC4345F
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Apr 2024 17:31:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FDD0C4345F
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Apr 2024 14:27:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YTPgGIX0jHC42Y3MLb+LqWBPYHx/NV9bw7nySNlNvVo=; b=eaZC+VntAUMwRf
-	MG6zWUa4PGk2zbk5Bbqu3NlyBs+ESyEmwKoikH+mcQvt9Dqn0zhLsit19BsWrJA2inm2rI32cyeRF
-	WRPxNkrBU6vEX+0/Ql/qF376JIAJRsBoYBXJCdJ3ujaZ5pBQFmbMCs3pxL44pDQxzLRpu4LyRPP78
-	6347zAcF4e3r6zSDANzP1tiQTTb1Onz6EHGZ7AYXNac5X1C0KIusz9VcVzBuA0iEUmHXDYLk2phBn
-	I4EnBKVlXT+HaH012pfvnJGsjahfhHHqG0NQskuI1T+K/EBUYfCJnEdRK96ROwDqDipopVK9R4wLI
-	2RV3IPuJEGPCvM6o3IzQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GalcgsNL1Lv2UuFSP6ZwHGWEKJczAEJup/t8G7YcOSQ=; b=r3clZc4dyN/vEeJtdT8Ba5Cj0D
+	D7+acpkr5nHRZa5E8S+CNndk0t97cdSGUqVhs2gUj7BsQSQUwZw3r4asDZnkOE3wnGHs7F0V1eRaV
+	GQv3khsQDEEXJzJ8JweDGHXrflo5RcMcs+pYfgVcnf78kuI54LYzOfj9tf4Ve6j9NOmJL/MeIHPtE
+	vDqnNTuH+rXLvw7oTXIx+NT4jwJLWMdBLD3uTP7nSTx1ypWfxJ8NP2/5+jKie73d2cR9Md3pmsFbx
+	a3DB55Hz5eKiisJR1cfrTSGUlOYQ8+Hb/0J2KITadTV3fEzeh5dnpdTi3K/5tBG6+Z1mL8I8qkUU6
+	IQ+1f/SQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxVbf-00000003CdZ-0JFc;
-	Thu, 18 Apr 2024 17:31:31 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rxpCq-00000005y3s-0Ipe;
+	Fri, 19 Apr 2024 14:27:12 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxVba-00000003Ccm-3gVi;
-	Thu, 18 Apr 2024 17:31:28 +0000
+	id 1rxpCm-00000005y1q-2l4X;
+	Fri, 19 Apr 2024 14:27:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4379D618A3;
-	Thu, 18 Apr 2024 17:31:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1C45C113CC;
-	Thu, 18 Apr 2024 17:31:23 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id DF2EDCE1AE1;
+	Fri, 19 Apr 2024 14:27:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9FE37C072AA;
+	Fri, 19 Apr 2024 14:27:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1713461485;
-	bh=mFPrCvLrxIQNqZjqRYLBKfQaqDsb+b6XIi+X1/IuX4U=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=qYbkzIfbWVr3khBjHDqenfNvOnPfCGCwBBWvd+w5VQuHy0miIF/vJnPxf0FZAm53E
-	 FZMGUtDr4SNCyq6y8hpmKr/sEZOrfimXsaEgCRbjmll5zwC98a/9OUiOPqu3vz+1iu
-	 vgFTK0j64M6x4VlQgE4zHMZVk0h88jDuyXLenRIDgo0HFHBLQyCZA4zxpnFnYhsiAO
-	 oEQfvxcpw0Z4VEyaaGoHL0fPglvinh6cdVyxJryetbpYxS3mGm8LkSIl9SPlx1yLhP
-	 GyZ0lS5LX7EabElZMv+8a+DjUYG9c1X0DAXLBwzckfQGttyZMOR6zrQ186ofUwxoTu
-	 u6Jz03pC6PKTw==
-Message-ID: <702adf23-868b-4e0f-8565-9ca35850bb00@kernel.org>
-Date: Thu, 18 Apr 2024 19:31:20 +0200
+	s=k20201202; t=1713536826;
+	bh=LIZ2ooYsvWJUe0Wpz+3YNSl3PEnltQyTG5qEOSFGmXk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=qk/D/+muf+di1gTdiGkl9RX59eTAIPKi/X4wFxyAAJLB4Ru+ZGaGdCvE4WSjhERbn
+	 lDsBW4dOO8a2ClDwRQtf2zOTybfG+aE4+Xenb6tHxeEDjB5mHYr8Alb6BHwiuhEoRg
+	 7R49/mWs0c6KvHLBbUjbKCwc5kpLILbiyHZGvNkaR/hsQezmnFTNtL06vAU5RsjbFM
+	 X9SNuQMOiGnBErf20eaAM/jIWzBBlBb34BC97qizzwhHVC+sfKumxbeDS5kUUvIzJ0
+	 owxzUMW6Jts137vJuNOH2RgyOSvQcftHP1eD4OYjtnjoZ3b0AaG9ztC5skFqP7Z+WL
+	 cJTywwqn3hdDg==
+Date: Fri, 19 Apr 2024 15:26:53 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Inochi Amaoto <inochiama@outlook.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen Wang <unicorn_wang@outlook.com>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Jisheng Zhang <jszhang@kernel.org>,
+	Liu Gui <kenneth.liu@sophgo.com>,
+	Jingbao Qiu <qiujingbao.dlmu@gmail.com>, dlan@gentoo.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
+Message-ID: <20240419-harmful-neutron-d0db367cf659@spud>
+References: <IA1PR20MB4953780F4617823F7173B6D6BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <IA1PR20MB4953040232A4D41E41F2D2A9BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 07/17] arm64: dts: exynos: gs101: Add ufs, ufs-phy and ufs
- regulator dt nodes
-To: Peter Griffin <peter.griffin@linaro.org>
-Cc: mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, alim.akhtar@samsung.com, avri.altman@wdc.com,
- bvanassche@acm.org, s.nawrocki@samsung.com, cw00.choi@samsung.com,
- jejb@linux.ibm.com, martin.petersen@oracle.com, chanho61.park@samsung.com,
- ebiggers@kernel.org, linux-scsi@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- tudor.ambarus@linaro.org, andre.draszik@linaro.org, saravanak@google.com,
- willmcvicker@google.com
-References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-8-peter.griffin@linaro.org>
- <4ed72378-672e-46d6-9f29-fa118f598739@kernel.org>
- <CADrjBPpaR86R6FMwMqos7ojVfDpGxS=ygW50UBCy1DTsoXHJgQ@mail.gmail.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <CADrjBPpaR86R6FMwMqos7ojVfDpGxS=ygW50UBCy1DTsoXHJgQ@mail.gmail.com>
+In-Reply-To: <IA1PR20MB4953040232A4D41E41F2D2A9BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240418_103127_046081_D439999B 
-X-CRM114-Status: UNSURE (   6.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240419_072709_113667_25CDA406 
+X-CRM114-Status: GOOD (  25.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,37 +78,187 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4972836818832811783=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 18/04/2024 15:20, Peter Griffin wrote:
-> 
-> s_ldo8_reg: LDO8S {
->     regulator-name = "S2MPG11_LDO8";
->     regulator-min-microvolt = <1127800>;
->     regulator-max-microvolt = <1278600>;
->     regulator-always-on;
->     regulator-initial-mode = <SEC_OPMODE_SUSPEND>;
->     channel-mux-selection = <0x28>;
->     schematic-name = "L8S_UFS_VCCQ";
->     subsys-name = "UFS";
->  };
-> 
-> So I think you're correct this is a stub pending full pmic support. I
-> propose in v2 to add a comment similar to what we have in
-> exynos850-e850-96.dts today above the regulator-fixed node like /*
-> TODO: Remove this once PMIC is implemented  */?
-> 
 
-Sounds good.
+--===============4972836818832811783==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="wzFy3jBeV9w7Nqxx"
+Content-Disposition: inline
 
-Best regards,
-Krzysztof
 
+--wzFy3jBeV9w7Nqxx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Apr 12, 2024 at 03:22:24PM +0800, Inochi Amaoto wrote:
+> The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
+> "VBUS_DET" to get the right operation mode. If this pin is not
+> connected, it only supports setting the mode manually.
+>=20
+> Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
+>=20
+> Signed-off-by: Inochi Amaoto <inochiama@outlook.com>
+> ---
+>  .../bindings/phy/sophgo,cv1800-usb-phy.yaml   | 90 +++++++++++++++++++
+>  1 file changed, 90 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800-u=
+sb-phy.yaml
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.=
+yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..cb394ac5d8c4
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> @@ -0,0 +1,90 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/sophgo,cv1800-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Sophgo CV18XX/SG200X USB 2.0 PHY
+> +
+> +maintainers:
+> +  - Inochi Amaoto <inochiama@outlook.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: sophgo,cv1800-usb-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  clocks:
+> +    items:
+> +      - description: PHY clock
+> +      - description: PHY app clock
+> +      - description: PHY stb clock
+> +      - description: PHY lpm clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: phy
+> +      - const: app
+> +      - const: stb
+> +      - const: lpm
+> +
+> +  dr_mode:
+> +    description: PHY device mode when initing.
+
+"initing" isn't a word, "initialising" is the correct word. Or
+"initializing" if you speak American. But if it is just the value during
+initialisation, why do we need to know - we can just overwrite it in
+software, right?
+
+Are you sure that this is limited to initialisation? I would have
+thought that it describes the configuration that the board is in, and is
+a fixed property of the system?
+
+> +    enum: [host, peripheral, otg]
+
+Rob, I know this is a phy rather than a controller, so referencing
+usb-drd.yaml doesn't really make sense, but there are several PHYs using
+dr_mode so it feels like there should be something to reference here
+rather than defining the property anew.
+
+> +
+> +  vbus_det-gpios:
+> +    description: GPIO to the USB OTG VBUS detect pin. This should not be
+> +      defined if vbus_det gpio and switch gpio are connected.
+
+I don't understand the second sentence here.
+
+> +    maxItems: 1
+> +
+> +  sophgo,switch-gpios:
+> +    description: GPIO for the phy to control connected switch.
+> +    maxItems: 2
+
+You've got two items here, they should be described. /But/ the property
+above says "switch gpio", which is singular. Which is it?
+
+Cheers,
+Conor.
+
+> +
+> +required:
+> +  - compatible
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +  - dr_mode
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        dr_mode:
+> +          const: otg
+> +    then:
+> +      required:
+> +        - vbus_det-gpios
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@48 {
+> +      compatible =3D "sophgo,cv1800-usb-phy";
+> +      reg =3D <0x48 0x4>;
+> +      #phy-cells =3D <0>;
+> +      clocks =3D <&clk 92>, <&clk 93>,
+> +               <&clk 94>, <&clk 95>;
+> +      clock-names =3D "phy", "app", "stb", "lpm";
+> +      dr_mode =3D "host";
+> +    };
+> +  - |
+> +    #include <dt-bindings/gpio/gpio.h>
+> +
+> +    phy@54 {
+> +      compatible =3D "sophgo,cv1800-usb-phy";
+> +      reg =3D <0x54 0x4>;
+> +      #phy-cells =3D <0>;
+> +      clocks =3D <&clk 92>, <&clk 93>,
+> +               <&clk 94>, <&clk 95>;
+> +      clock-names =3D "phy", "app", "stb", "lpm";
+> +      dr_mode =3D "otg";
+> +      vbus_det-gpios =3D <&portb 6 GPIO_ACTIVE_HIGH>;
+> +    };
+> --
+> 2.44.0
+>=20
+
+--wzFy3jBeV9w7Nqxx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZiJ/LQAKCRB4tDGHoIJi
+0vrCAP9R3ajhruwWEa6524OScv46PoGRGBZEDXLB11mYIt7yrQD+M6fgMybbX45+
+WHmD18Svh+jDgv07w0Lt0Pf9l3RCUAE=
+=Cu/R
+-----END PGP SIGNATURE-----
+
+--wzFy3jBeV9w7Nqxx--
+
+
+--===============4972836818832811783==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4972836818832811783==--
+
