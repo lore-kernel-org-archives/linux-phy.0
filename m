@@ -4,69 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FDD0C4345F
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Apr 2024 14:27:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 830C2C04FF6
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Apr 2024 14:28:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=GalcgsNL1Lv2UuFSP6ZwHGWEKJczAEJup/t8G7YcOSQ=; b=r3clZc4dyN/vEeJtdT8Ba5Cj0D
-	D7+acpkr5nHRZa5E8S+CNndk0t97cdSGUqVhs2gUj7BsQSQUwZw3r4asDZnkOE3wnGHs7F0V1eRaV
-	GQv3khsQDEEXJzJ8JweDGHXrflo5RcMcs+pYfgVcnf78kuI54LYzOfj9tf4Ve6j9NOmJL/MeIHPtE
-	vDqnNTuH+rXLvw7oTXIx+NT4jwJLWMdBLD3uTP7nSTx1ypWfxJ8NP2/5+jKie73d2cR9Md3pmsFbx
-	a3DB55Hz5eKiisJR1cfrTSGUlOYQ8+Hb/0J2KITadTV3fEzeh5dnpdTi3K/5tBG6+Z1mL8I8qkUU6
-	IQ+1f/SQ==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=WErkVeZiYkhajkbBHTf/9xi52hWbnrhU5Sp2DWbqBTg=; b=o18zW6/dSA8tERZRnCkOERj64g
+	cMYnoip5QsunZ/rZizPC/axqJrpFFuOVn+TRuovlb3hhsaKfkb9yRn2W+NTgfZ75IzHzOviJNFfOs
+	CUek0W8FNnvdbfQPFmforTcGx1h8b1Ac/H7uvvImMQT2I8UjvFKme5Rf+VGEt8DBLO2ElejohN0X0
+	MGWrJPNVMuGXur54lc3HcSGIjOpcfTFdvyqtj1Wgz8x0AAvwDHh4DtOz+4AytvW2KWBnsxv6pS9B3
+	yIcnFVvCdqpHLHH8ly4cWn/36zd/jnokb+MIIhOdMdT7DmvJ5LbIro9pXgbwWWBnnEFWg5SBtOdDk
+	RymwSi/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxpCq-00000005y3s-0Ipe;
-	Fri, 19 Apr 2024 14:27:12 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rxpEI-00000005yh4-0mud;
+	Fri, 19 Apr 2024 14:28:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rxpCm-00000005y1q-2l4X;
-	Fri, 19 Apr 2024 14:27:10 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id DF2EDCE1AE1;
-	Fri, 19 Apr 2024 14:27:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9FE37C072AA;
-	Fri, 19 Apr 2024 14:27:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1713536826;
-	bh=LIZ2ooYsvWJUe0Wpz+3YNSl3PEnltQyTG5qEOSFGmXk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=qk/D/+muf+di1gTdiGkl9RX59eTAIPKi/X4wFxyAAJLB4Ru+ZGaGdCvE4WSjhERbn
-	 lDsBW4dOO8a2ClDwRQtf2zOTybfG+aE4+Xenb6tHxeEDjB5mHYr8Alb6BHwiuhEoRg
-	 7R49/mWs0c6KvHLBbUjbKCwc5kpLILbiyHZGvNkaR/hsQezmnFTNtL06vAU5RsjbFM
-	 X9SNuQMOiGnBErf20eaAM/jIWzBBlBb34BC97qizzwhHVC+sfKumxbeDS5kUUvIzJ0
-	 owxzUMW6Jts137vJuNOH2RgyOSvQcftHP1eD4OYjtnjoZ3b0AaG9ztC5skFqP7Z+WL
-	 cJTywwqn3hdDg==
-Date: Fri, 19 Apr 2024 15:26:53 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Inochi Amaoto <inochiama@outlook.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen Wang <unicorn_wang@outlook.com>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Jisheng Zhang <jszhang@kernel.org>,
-	Liu Gui <kenneth.liu@sophgo.com>,
-	Jingbao Qiu <qiujingbao.dlmu@gmail.com>, dlan@gentoo.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
-Message-ID: <20240419-harmful-neutron-d0db367cf659@spud>
-References: <IA1PR20MB4953780F4617823F7173B6D6BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
- <IA1PR20MB4953040232A4D41E41F2D2A9BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
+	id 1rxpEF-00000005ydi-2gOz
+	for linux-phy@lists.infradead.org;
+	Fri, 19 Apr 2024 14:28:41 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 43JD629E017627;
+	Fri, 19 Apr 2024 14:28:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	message-id:date:mime-version:subject:to:references:from
+	:in-reply-to:content-type:content-transfer-encoding; s=
+	qcppdkim1; bh=/7AD6EwruIBOLZzV5oOINOaZDwI2eqymeSzVhuKzQpE=; b=CG
+	zj7yAjeTYIKlJiJJQI0tO4qcKFU7GuUcwUEwtkUcsUvhUavs9TkZPFggqACOreAb
+	4bWREDIo+WThsQg1Px+oBKzPUhuZS4r/antob7rPievHyz4dPEizvq6E1ED5qtkT
+	3XGtcksOEJdE7tjB65Sqo2Oef6uToIPIlW0Vv6cj70aXBjE08ND6U4AGenY72/dd
+	Xe9451BsEbN+Lwh0tdVvItLgv3xfdqQm+Z0EWPlS+VPKp17emLSxEZG6H06Lel9Z
+	F964EEhJLpUcEfqpbY7CQIVKYE1INxqMXYL3p17F1s53CVftBP89tO2Ezil1Jtus
+	OLlh4SsOYtXwqPDNW+pA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xks6s8550-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 19 Apr 2024 14:28:22 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43JESL0M014875
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 19 Apr 2024 14:28:21 GMT
+Received: from [10.216.17.233] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 19 Apr
+ 2024 07:28:13 -0700
+Message-ID: <4a83afeb-8e82-4f95-b44e-74d39d55f448@quicinc.com>
+Date: Fri, 19 Apr 2024 19:58:08 +0530
 MIME-Version: 1.0
-In-Reply-To: <IA1PR20MB4953040232A4D41E41F2D2A9BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/7] ipq9574: Enable PCI-Express support
+To: Alexandru Gagniuc <mr.nuke.me@gmail.com>,
+        Bjorn Andersson
+	<andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@linaro.org>,
+        Lorenzo
+ Pieralisi <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+	<kw@linux.com>,
+        Rob Herring <robh@kernel.org>, Bjorn Helgaas
+	<bhelgaas@google.com>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I
+	<kishon@kernel.org>,
+        Michael Turquette <mturquette@baylibre.com>,
+        Stephen
+ Boyd <sboyd@kernel.org>,
+        Manivannan Sadhasivam
+	<manivannan.sadhasivam@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-clk@vger.kernel.org>
+References: <20240415182052.374494-1-mr.nuke.me@gmail.com>
+Content-Language: en-US
+From: Kathiravan Thirumoorthy <quic_kathirav@quicinc.com>
+In-Reply-To: <20240415182052.374494-1-mr.nuke.me@gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: f5HZFmDXBrCPKCpPNSOydsESSpTxuWBO
+X-Proofpoint-ORIG-GUID: f5HZFmDXBrCPKCpPNSOydsESSpTxuWBO
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-04-19_09,2024-04-19_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 impostorscore=0
+ priorityscore=1501 bulkscore=0 adultscore=0 suspectscore=0 spamscore=0
+ mlxscore=0 lowpriorityscore=0 mlxlogscore=999 malwarescore=0 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
+ definitions=main-2404190108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240419_072709_113667_25CDA406 
-X-CRM114-Status: GOOD (  25.38  )
+X-CRM114-CacheID: sfid-20240419_072839_775898_D4527904 
+X-CRM114-Status: GOOD (  19.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,187 +113,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4972836818832811783=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4972836818832811783==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="wzFy3jBeV9w7Nqxx"
-Content-Disposition: inline
+
+On 4/15/2024 11:50 PM, Alexandru Gagniuc wrote:
+> There are four PCIe ports on IPQ9574, pcie0 thru pcie3. This series
+> addresses pcie2, which is a gen3x2 port. The board I have only uses
+> pcie2, and that's the only one enabled in this series.
+> 
+> I believe this makes sense as a monolithic series, as the individual
+> pieces are not that useful by themselves.
+> 
+> In v2, I've had some issues regarding the dt schema checks. For
+> transparency, I used the following test invocations to test v3:
+> 
+>        make dt_binding_check     DT_SCHEMA_FILES=qcom,pcie.yaml:qcom,ipq8074-qmp-pcie-phy.yaml
+>        make dtbs_check           DT_SCHEMA_FILES=qcom,pcie.yaml:qcom,ipq8074-qmp-pcie-phy.yaml
+> 
+> 
+
+Alexandru,
+
+Thanks for your contributions to the Qualcomm IPQ chipsets.
+
+I would like to inform you that we have also submitted the patches to 
+enable the PCIe support on IPQ9574[1][2] and waiting for the ICC 
+support[3] to land to enable the NOC clocks.
+
+[1] 
+https://lore.kernel.org/linux-arm-msm/20230519090219.15925-1-quic_devipriy@quicinc.com/
+[2] 
+https://lore.kernel.org/linux-arm-msm/20230519085723.15601-1-quic_devipriy@quicinc.com/
+[3] 
+https://lore.kernel.org/linux-arm-msm/20240418092305.2337429-1-quic_varada@quicinc.com/
+
+Please take a look at these patches as well.
+
+Thanks,
+Kathiravan T.
 
 
---wzFy3jBeV9w7Nqxx
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Apr 12, 2024 at 03:22:24PM +0800, Inochi Amaoto wrote:
-> The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
-> "VBUS_DET" to get the right operation mode. If this pin is not
-> connected, it only supports setting the mode manually.
->=20
-> Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
->=20
-> Signed-off-by: Inochi Amaoto <inochiama@outlook.com>
-> ---
->  .../bindings/phy/sophgo,cv1800-usb-phy.yaml   | 90 +++++++++++++++++++
->  1 file changed, 90 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800-u=
-sb-phy.yaml
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.=
-yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
-> new file mode 100644
-> index 000000000000..cb394ac5d8c4
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
-> @@ -0,0 +1,90 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/sophgo,cv1800-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Sophgo CV18XX/SG200X USB 2.0 PHY
-> +
-> +maintainers:
-> +  - Inochi Amaoto <inochiama@outlook.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: sophgo,cv1800-usb-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  clocks:
-> +    items:
-> +      - description: PHY clock
-> +      - description: PHY app clock
-> +      - description: PHY stb clock
-> +      - description: PHY lpm clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: phy
-> +      - const: app
-> +      - const: stb
-> +      - const: lpm
-> +
-> +  dr_mode:
-> +    description: PHY device mode when initing.
-
-"initing" isn't a word, "initialising" is the correct word. Or
-"initializing" if you speak American. But if it is just the value during
-initialisation, why do we need to know - we can just overwrite it in
-software, right?
-
-Are you sure that this is limited to initialisation? I would have
-thought that it describes the configuration that the board is in, and is
-a fixed property of the system?
-
-> +    enum: [host, peripheral, otg]
-
-Rob, I know this is a phy rather than a controller, so referencing
-usb-drd.yaml doesn't really make sense, but there are several PHYs using
-dr_mode so it feels like there should be something to reference here
-rather than defining the property anew.
-
-> +
-> +  vbus_det-gpios:
-> +    description: GPIO to the USB OTG VBUS detect pin. This should not be
-> +      defined if vbus_det gpio and switch gpio are connected.
-
-I don't understand the second sentence here.
-
-> +    maxItems: 1
-> +
-> +  sophgo,switch-gpios:
-> +    description: GPIO for the phy to control connected switch.
-> +    maxItems: 2
-
-You've got two items here, they should be described. /But/ the property
-above says "switch gpio", which is singular. Which is it?
-
-Cheers,
-Conor.
-
-> +
-> +required:
-> +  - compatible
-> +  - "#phy-cells"
-> +  - clocks
-> +  - clock-names
-> +  - dr_mode
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        dr_mode:
-> +          const: otg
-> +    then:
-> +      required:
-> +        - vbus_det-gpios
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    phy@48 {
-> +      compatible =3D "sophgo,cv1800-usb-phy";
-> +      reg =3D <0x48 0x4>;
-> +      #phy-cells =3D <0>;
-> +      clocks =3D <&clk 92>, <&clk 93>,
-> +               <&clk 94>, <&clk 95>;
-> +      clock-names =3D "phy", "app", "stb", "lpm";
-> +      dr_mode =3D "host";
-> +    };
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +
-> +    phy@54 {
-> +      compatible =3D "sophgo,cv1800-usb-phy";
-> +      reg =3D <0x54 0x4>;
-> +      #phy-cells =3D <0>;
-> +      clocks =3D <&clk 92>, <&clk 93>,
-> +               <&clk 94>, <&clk 95>;
-> +      clock-names =3D "phy", "app", "stb", "lpm";
-> +      dr_mode =3D "otg";
-> +      vbus_det-gpios =3D <&portb 6 GPIO_ACTIVE_HIGH>;
-> +    };
-> --
-> 2.44.0
->=20
-
---wzFy3jBeV9w7Nqxx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZiJ/LQAKCRB4tDGHoIJi
-0vrCAP9R3ajhruwWEa6524OScv46PoGRGBZEDXLB11mYIt7yrQD+M6fgMybbX45+
-WHmD18Svh+jDgv07w0Lt0Pf9l3RCUAE=
-=Cu/R
------END PGP SIGNATURE-----
-
---wzFy3jBeV9w7Nqxx--
-
-
---===============4972836818832811783==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Changes since v2:
+>   - reworked resets in qcom,pcie.yaml to resolve dt schema errors
+>   - constrained "reg" in qcom,pcie.yaml
+>   - reworked min/max intems in qcom,ipq8074-qmp-pcie-phy.yaml
+>   - dropped msi-parent for pcie node, as it is handled by "msi" IRQ
+> 
+> Changes since v1:
+>   - updated new tables in phy-qcom-qmp-pcie.c to use lowercase hex numbers
+>   - reorganized qcom,ipq8074-qmp-pcie-phy.yaml to use a single list of clocks
+>   - reorganized qcom,pcie.yaml to include clocks+resets per compatible
+>   - Renamed "pcie2_qmp_phy" label to "pcie2_phy"
+>   - moved "ranges" property of pcie@20000000 higher up
+> 
+> Alexandru Gagniuc (7):
+>    dt-bindings: clock: Add PCIe pipe related clocks for IPQ9574
+>    clk: qcom: gcc-ipq9574: Add PCIe pipe clocks
+>    dt-bindings: PCI: qcom: Add IPQ9574 PCIe controller
+>    PCI: qcom: Add support for IPQ9574
+>    dt-bindings: phy: qcom,ipq8074-qmp-pcie: add ipq9574 gen3x2 PHY
+>    phy: qcom-qmp-pcie: add support for ipq9574 gen3x2 PHY
+>    arm64: dts: qcom: ipq9574: add PCIe2 nodes
+> 
+>   .../devicetree/bindings/pci/qcom,pcie.yaml    |  35 +++++
+>   .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |  36 ++++-
+>   arch/arm64/boot/dts/qcom/ipq9574.dtsi         |  93 +++++++++++-
+>   drivers/clk/qcom/gcc-ipq9574.c                |  76 ++++++++++
+>   drivers/pci/controller/dwc/pcie-qcom.c        |  13 +-
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 136 +++++++++++++++++-
+>   .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 ++
+>   include/dt-bindings/clock/qcom,ipq9574-gcc.h  |   4 +
+>   8 files changed, 400 insertions(+), 7 deletions(-)
+> 
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4972836818832811783==--
-
