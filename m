@@ -4,59 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4564C4345F
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Apr 2024 18:58:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46033C4345F
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Apr 2024 23:32:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f6B9NlzkeBpahn/cxVbq1Ir+8DHvbkhD6MvXzLwFICM=; b=IgFKTDIMbnYJww
-	UOzyp2uMA9C/OW1XWUbQlHtYo52NQYrRaHohfhqH5kKUh7Xyxpm+GD2mwOZBuCybQNawWgiL9m+4o
-	7SpZbu+nCZG5W8py3OfzSUh3SpJLFPU5fxWmcK6QcTYsDi+6D7uVv5VN9j4aEEnH0lmIe3zBmGY4m
-	k71WfkQemuy+H29ZrPpsCCAHbfqJqxKfsg5IYJMiA6VBFjWfw3rcK/Y9PXtk9XL66Tnmia5xWud9P
-	vaPDxxtT0O/V1UidXDbo10KApAPB0DmRidKVPQ2cpMoCvK3ZJN5+tRfJ496KFpp6ZoD56FFy3RQcz
-	9b19qQrOMD/l140f/1Ow==;
+	List-Owner; bh=Q8W+y4jANs+a3XnxnDFE5NGHEw0FMmXEAiewcaz17tI=; b=u25XTtt45GzBM2
+	Obgf2I0wdYbgRRTyVF4q+1PpwozjNEegfxs+AVd1kqHoOZaIMBs9yyZsvcEc77xXZR9c5tG1u4g/o
+	H8xGgDNXn6DvhavI2N4z+ow1rruGdvaubGw2KhepBv9BE7JlKxW2LHm7BCjyI/xwxEGGqZAIlkcvB
+	V94Z7n6HwPB1hxeS6Wmo6tBXs+CpdxQRSGlJR+mQmQrRDLT61e30ed1wehNdGNI2k4VGPsqQLnK6S
+	L4kcCed+mJ/PXfOAxjFCJMomlRETM0kA4yp7jw1Zk4WYoz7NGQU8tdzGpAmTFpW7YA7rfLnlkYe3v
+	vosJtV0oh458zz56Xe8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ryys8-0000000EiIf-27I3;
-	Mon, 22 Apr 2024 18:58:36 +0000
-Received: from out-173.mta1.migadu.com ([2001:41d0:203:375::ad])
+	id 1rz398-0000000FP5L-3mzc;
+	Mon, 22 Apr 2024 23:32:26 +0000
+Received: from mail-bn8nam12olkn20801.outbound.protection.outlook.com ([2a01:111:f403:2c18::801] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ryyrq-0000000Ei5t-0Zon
-	for linux-phy@lists.infradead.org;
-	Mon, 22 Apr 2024 18:58:20 +0000
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1713812293;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=QieHunxza7oONNqDvj8FAilmUbNuLii0kfErB3NoZW4=;
-	b=sC/0mPu8+v9KnEygO9w7oUbzkZXNLGmM3vEaXpON0arLdxLJlMX8Xoi+PrJOVQxDNhAkti
-	ITyBwp5vF1T2bA1wh1hr6vDoPFmAq7VB7RBxNk2tullNtGozKvjtrU3Kq3P6Viiqzvhcuf
-	6WTCn+k2NPi82cVAvvnYWx0FdtbdsYk=
-From: Sean Anderson <sean.anderson@linux.dev>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Michal Simek <michal.simek@amd.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sean Anderson <sean.anderson@linux.dev>
-Subject: [PATCH 3/3] phy: zynqmp: Add debugfs support
-Date: Mon, 22 Apr 2024 14:58:03 -0400
-Message-Id: <20240422185803.3575319-4-sean.anderson@linux.dev>
-In-Reply-To: <20240422185803.3575319-1-sean.anderson@linux.dev>
-References: <20240422185803.3575319-1-sean.anderson@linux.dev>
+	id 1rz394-0000000FP3a-1ndW;
+	Mon, 22 Apr 2024 23:32:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=kzXGSWFYCAdhjXkyTTwbgyVK0NFMUH6pgajEw1lBhV2pn+UiYv7CgOapRXq9AKboeGJru9zVOXSkV6Wp8eH+gFy8wnacZ2VwaCb1ula/WZUbRFeLbOcWJzmtAlMF1jNE2vJ07Fbj8mTG7uDdBEVUdhhxt1KDP2Vk0A4049m8pqn3fMVbp/qnfNqxTmgfsXrvRk/F13L6++pSQtf2GeH8hnddrl6tIdPQa2JA42tt90jHARUeSusGOtdrRtJGq6nlxmytSThAN07PfLoBNo3Fm9eMhFKb6iU+hydkFfX9JqvWg1PLmZ8qWpfbL3ftNd9+UCDPz9WRTg565qqjaAlM2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=82UXYRBJDADzScQeIMMkR0iF2rWnNkbkNOLSq5sKjaE=;
+ b=KvSbhGHBIGHu6x9B+nPpu1vcIErwzu+EIA13oFB4DQLyhG9hr5ViCqw/R77hCHdevtYnb6L4qqUGqbiPisddCTR0nJ8IOS6ascV+SGPjyXi7F/1KLpwq8kkk3wDyoPtLjXtp9BMNkuwojF9aq+77FTjystmiJ9tTXWcGSRB8VTnb7rdIyXDcau2o5pMSlFFgSukUepEthCiTkW3JI7SwOWYkpY136pPLD/g035CEuDLTbmSjczG/RMfSs1c3mdmAI4tRjw8PgfA+Wyz1WheSMfLwoC4LJbVpGhkL1kdbnD0nBgREHlxWEB3qnZTOYI9K34/zXOh/F+t4SXrTB2xQ8w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=82UXYRBJDADzScQeIMMkR0iF2rWnNkbkNOLSq5sKjaE=;
+ b=QfqEHIHDlPmZ/uLd6wuyaCce6a0mNzmNdiUOTP+OuEMGlBWfiDrvGBlWEvUYKetMcxkmiNsD+rHUZWjYKA8OcwoAktD+GQxe0jeG1euYO8yflOyqFPUW4bAk9HLDa+pOS8TKB2ll46d5Wr4FlYnNjp5UQMf4J8ptG5XKcJcyYcH+r8USNrvXqtpQhtTlFAdoIJ19k31xL6OAyzF9NVlBNisn0xA/iIWl2ycuokNLxlPHOX5KXuyGOcwx+XfSNH+FkSE1uwhY/MSWPvpLqe9fv1GqwtRumKCrZNI88/PQButXQQF9W/eK0DXu41DtfVEoRMlNICaRsZTa0HfuYBzIXQ==
+Received: from IA1PR20MB4953.namprd20.prod.outlook.com (2603:10b6:208:3af::19)
+ by DS7PR20MB4855.namprd20.prod.outlook.com (2603:10b6:8:95::9) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7472.44; Mon, 22 Apr 2024 23:32:08 +0000
+Received: from IA1PR20MB4953.namprd20.prod.outlook.com
+ ([fe80::182f:841b:6e76:b819]) by IA1PR20MB4953.namprd20.prod.outlook.com
+ ([fe80::182f:841b:6e76:b819%2]) with mapi id 15.20.7472.044; Mon, 22 Apr 2024
+ 23:32:08 +0000
+Date: Tue, 23 Apr 2024 07:32:32 +0800
+From: Inochi Amaoto <inochiama@outlook.com>
+To: Conor Dooley <conor@kernel.org>, Inochi Amaoto <inochiama@outlook.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chen Wang <unicorn_wang@outlook.com>, Paul Walmsley <paul.walmsley@sifive.com>, 
+	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
+	Jisheng Zhang <jszhang@kernel.org>, Liu Gui <kenneth.liu@sophgo.com>, 
+	Jingbao Qiu <qiujingbao.dlmu@gmail.com>, dlan@gentoo.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
+Message-ID: <IA1PR20MB49531FB44161BC81C3DDACF6BB122@IA1PR20MB4953.namprd20.prod.outlook.com>
+References: <IA1PR20MB4953780F4617823F7173B6D6BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <IA1PR20MB4953040232A4D41E41F2D2A9BB042@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <20240419-harmful-neutron-d0db367cf659@spud>
+ <IA1PR20MB49536E7548B65B41F4F33FDEBB0C2@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <20240422-folic-obtuse-570b1747e7b9@spud>
+Content-Disposition: inline
+In-Reply-To: <20240422-folic-obtuse-570b1747e7b9@spud>
+X-TMN: [USkaPTQM2OGeHLPe01f1aTF4obzqORpZXlEulVPe05c=]
+X-ClientProxiedBy: PU1PR01CA0017.apcprd01.prod.exchangelabs.com
+ (2603:1096:803:15::29) To IA1PR20MB4953.namprd20.prod.outlook.com
+ (2603:10b6:208:3af::19)
+X-Microsoft-Original-Message-ID: <mr3mve2s4psiifoeze6qdhaoefi3ipjwjf37nybmue2qhbvndh@kldl6pcczl7v>
 MIME-Version: 1.0
-X-Migadu-Flow: FLOW_OUT
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: IA1PR20MB4953:EE_|DS7PR20MB4855:EE_
+X-MS-Office365-Filtering-Correlation-Id: 86fa9f86-2939-4242-232f-08dc63246ce2
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 1M21yHF5YVoVgm354X8USyx5OKgqS1FIviy0xIhZkSxuCeI0qfyb6s5G6XqWfeuqb5B4+JxZImjIg4t50L6sG1p8I0A8Uh+ZI1ZSHmgEnS2zU5/TB0n5Boi2DYdChI9S+wqR76Qnw7l/gYIudCstNUqMaqFOJuetSrz/WN+TT3lc8TAecRSKzWb2bW25fzbQQweR9BVbjHHlREj+JnQZzFTniB16moRBtsmNjBpmbAldSQluT3unOf1L+y+FZ0H1vYrsSnjvnuHw5/BEFp4uZaTHeysCBtTXx0dCgmEnQdDLgiiMBBFEKv1xKnTVRKtO+euOdZo9n6eUsdRWM335y+o3ji5nhm/rbrzOdPXaHI8cm3624jQzyKOUvcjV8HxARn8+RQ3iMeHHgA4FvvHO+sfNx44Yqqqpe/aOtATETvkIy/KHltvUd0sU96jgIDLp3yiWfW29m5QzmWaLOEFa3vBHihf5/C1KvaTBhvTtduC9Z058//B0kGv7mclWItZmzk1g0FBpl/e6jK+kRxLCd34qLphhvWI3mRPOG8IBNl90bjtZ0QZprWWZa8xyp1254b2OYNYVdbsbG78llqeKeJ6/br4kH0BbTCd0b4NX/LFknfGNt84fAlAGFqQ5K7CDinhJkvbMr838nt+yfK+hPQuHSwuEXUOPFMyiYRdByoujnSPDTFdgoi/NTwaUyzlmo4RyKZxctvx2EgAlAgPbZg==
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?RSsUv9I6Li2WEFmZAzYVm3aH1ZC5hkkMMwrm6x+df8UWaS3wSA/JU/O5u+Lk?=
+ =?us-ascii?Q?N+Lhj+jGzPEnllSBj41dTgcnzIHJ2bX7MtTgt+azONM2u5RuO3pdlPSOJu5d?=
+ =?us-ascii?Q?a1xMbHZGB4HCXO1omME44WlJNIWTs63yfASCpBI6Hxu/kRNMfLovjWXmviFW?=
+ =?us-ascii?Q?7lx7yu/BL90py0TufbICfQH4pOH0GbbjaX2PDcIGUgdf00UvZmfVvcCNZPcp?=
+ =?us-ascii?Q?x8stLKS/cXKlccG19DlK2FS+r9a9bH8L7slVJMi7tovtPr9zKYS1d3q+XC+f?=
+ =?us-ascii?Q?VyU3/Y+smwCFDVZBX/J/VYKwbUjhHWaJqLASc0yRCUgERrYtWOs3knFucbn9?=
+ =?us-ascii?Q?2gJVmt0jOwuFPdtSfMllKRqXyFL3PDydlVllFQhys0E358If/d+FxosmMGkN?=
+ =?us-ascii?Q?tOUdGNRYPFxVeA2m3TzE6WYGRi0MK8gCcYc0ujZlh+huF3uqGmSFvXu2j/vm?=
+ =?us-ascii?Q?bfqdjaKETO5N73CHfKV/OtSSh5kgnFwOTEawntMvIs+LcqTxY/3SkT4idRwV?=
+ =?us-ascii?Q?zgWdpnI5jtWicQinrkRKT6mj3izcL+pAuWpt4/KyiUMdzGKtOCqHZyGtUxmS?=
+ =?us-ascii?Q?v7YAruQvEoli3UZzqax91Ak7NEpIbR9CIJVn8/K3BaSEbqFbQjoO6qE94Iw7?=
+ =?us-ascii?Q?2R7q+M/HCMWV01sTN7znCpNHhGyQnmHhFU2mkoYV/SxprffyhLUd+TYREHAc?=
+ =?us-ascii?Q?F5jU9N0Ud7+dZr75Qd2m569kN/DIuGtrTYvrwqbTITdtVFQIWzuU6PrcktCj?=
+ =?us-ascii?Q?9q7O2hB4EwvuTB9g4eRweCOwWehSg+tvuWqN1LoUgZxegBE9EtHpmwcNDWxn?=
+ =?us-ascii?Q?iYdiTh7fFMmCkg1HZlRs9TBrMNPVHhZ7B70iO0Rj504fGC7RzHCQZCFqFoTu?=
+ =?us-ascii?Q?PPlB8cFyEmm0jdM8kLkVSbs1Jd4Y2R3dIPqnyLfnw0RVte3NTCXxz+KaFVIg?=
+ =?us-ascii?Q?z4oZah1SL4KSzdN9i++glXJa+6Ms60clWUYHzeXzrbo+1c8aCA5qpPw4V6iQ?=
+ =?us-ascii?Q?vH+wpp/5+kXPQE9SQt05B5O0medY42nB3uE5syh9MEHwMfwpSzBuPakvDSgT?=
+ =?us-ascii?Q?LF89jG5DwB2eY637izBdp1RO9KXA1SeII8WkGlPmvaLBYUDjv+0+CSww+vnN?=
+ =?us-ascii?Q?2dfpUM5vntKapv20lgLwaQdO8c5eQjfKcmpZD/8SSxYIaSWnKYsL8NhZuJoW?=
+ =?us-ascii?Q?JqNobOo2TOWakRzMg2HvVNvJusbGbdHUHNNBZrUs1Or0WvWkEEQKhT8SMXpQ?=
+ =?us-ascii?Q?sZ+N7fcGWAuiJBAxYe2b?=
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 86fa9f86-2939-4242-232f-08dc63246ce2
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR20MB4953.namprd20.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Apr 2024 23:32:08.0462
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR20MB4855
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240422_115818_453664_F34CFAA9 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20240422_163222_514266_4651D0BF 
+X-CRM114-Status: GOOD (  51.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,104 +132,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for printing some basic status information to debugfs. This
-is helpful when debugging phy consumers to make sure they are configuring
-the phy appropriately.
+On Mon, Apr 22, 2024 at 05:21:26PM GMT, Conor Dooley wrote:
+> On Sat, Apr 20, 2024 at 09:39:18AM +0800, Inochi Amaoto wrote:
+> > On Fri, Apr 19, 2024 at 03:26:53PM GMT, Conor Dooley wrote:
+> > > On Fri, Apr 12, 2024 at 03:22:24PM +0800, Inochi Amaoto wrote:
+> > > > The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
+> > > > "VBUS_DET" to get the right operation mode. If this pin is not
+> > > > connected, it only supports setting the mode manually.
+> > > > 
+> > > > Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
+> > > > 
+> > > > Signed-off-by: Inochi Amaoto <inochiama@outlook.com>
+> > > > ---
+> > > >  .../bindings/phy/sophgo,cv1800-usb-phy.yaml   | 90 +++++++++++++++++++
+> > > >  1 file changed, 90 insertions(+)
+> > > >  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> > > > 
+> > > > diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> > > > new file mode 100644
+> > > > index 000000000000..cb394ac5d8c4
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> > > > @@ -0,0 +1,90 @@
+> > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > > +%YAML 1.2
+> > > > +---
+> > > > +$id: http://devicetree.org/schemas/phy/sophgo,cv1800-usb-phy.yaml#
+> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > > +
+> > > > +title: Sophgo CV18XX/SG200X USB 2.0 PHY
+> > > > +
+> > > > +maintainers:
+> > > > +  - Inochi Amaoto <inochiama@outlook.com>
+> > > > +
+> > > > +properties:
+> > > > +  compatible:
+> > > > +    const: sophgo,cv1800-usb-phy
+> > > > +
+> > > > +  reg:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  "#phy-cells":
+> > > > +    const: 0
+> > > > +
+> > > > +  clocks:
+> > > > +    items:
+> > > > +      - description: PHY clock
+> > > > +      - description: PHY app clock
+> > > > +      - description: PHY stb clock
+> > > > +      - description: PHY lpm clock
+> > > > +
+> > > > +  clock-names:
+> > > > +    items:
+> > > > +      - const: phy
+> > > > +      - const: app
+> > > > +      - const: stb
+> > > > +      - const: lpm
+> > > > +
+> > > > +  dr_mode:
+> > > > +    description: PHY device mode when initing.
+> > > 
+> > > "initing" isn't a word, "initialising" is the correct word. Or
+> > > "initializing" if you speak American. But if it is just the value during
+> > > initialisation, why do we need to know - we can just overwrite it in
+> > > software, right?
+> > > 
+> > > Are you sure that this is limited to initialisation? I would have
+> > > thought that it describes the configuration that the board is in, and is
+> > > a fixed property of the system?
+> > > 
+> > > > +    enum: [host, peripheral, otg]
+> > > 
+> > > Rob, I know this is a phy rather than a controller, so referencing
+> > > usb-drd.yaml doesn't really make sense, but there are several PHYs using
+> > > dr_mode so it feels like there should be something to reference here
+> > > rather than defining the property anew.
+> > > 
+> > 
+> > Yes, you are right. Using dr_mode in initialisation is not necessary.
+> > We can just let it go and using the default mode. In fact, for most
+> > boards with this SoC, host mode is just enough. And it is just easy 
+> > to overwrite the mode value in the driver if we want another mode. 
+> > For the OTG, it can just check the `vbus_det-gpios`. I will remove 
+> > this property, thanks.
+> 
+> Just to be clear, it's valid to have a dr_mode property in cases that
+> you cannot detect what the mode is dynamically. What I was questioning
+> was the wording about only valid for init.
+> 
 
-Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
----
+OK, for the USB phy of CV1800, it always needs to start at host mode.
+Because it needs to switch to both mode when initializing. As a result,
+the "dr_mode" property is just added to decide which mode is set after
+initializing (mostly for functionality). This is why I say it is for 
+initializing.
 
- drivers/phy/xilinx/phy-zynqmp.c | 54 +++++++++++++++++++++++++++++++++
- 1 file changed, 54 insertions(+)
+Now, it is clean that setting dr_mode is just a function hint, and user 
+can just overwrite the mode. So I decided to remove this.
 
-diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index 08c88dcd7799..e2e86943e9f3 100644
---- a/drivers/phy/xilinx/phy-zynqmp.c
-+++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -13,6 +13,7 @@
-  */
- 
- #include <linux/clk.h>
-+#include <linux/debugfs.h>
- #include <linux/delay.h>
- #include <linux/io.h>
- #include <linux/kernel.h>
-@@ -122,6 +123,15 @@
- #define ICM_PROTOCOL_DP			0x4
- #define ICM_PROTOCOL_SGMII		0x5
- 
-+static const char *const xpsgtr_icm_str[] = {
-+	[ICM_PROTOCOL_PD] = "powered down",
-+	[ICM_PROTOCOL_PCIE] = "PCIe",
-+	[ICM_PROTOCOL_SATA] = "SATA",
-+	[ICM_PROTOCOL_USB] = "USB",
-+	[ICM_PROTOCOL_DP] = "DisplayPort",
-+	[ICM_PROTOCOL_SGMII] = "SGMII",
-+};
-+
- /* Test Mode common reset control  parameters */
- #define TM_CMN_RST			0x10018
- #define TM_CMN_RST_EN			0x1
-@@ -768,6 +778,48 @@ static struct phy *xpsgtr_xlate(struct device *dev,
- 	return ERR_PTR(-EINVAL);
- }
- 
-+/*
-+ * DebugFS
-+ */
-+
-+static int xpsgtr_status_read(struct seq_file *seq, void *data)
-+{
-+	struct xpsgtr_phy *gtr_phy = seq->private;
-+	struct clk *clk;
-+	u32 pll_status;
-+
-+	mutex_lock(&gtr_phy->phy->mutex);
-+	pll_status = xpsgtr_read_phy(gtr_phy, L0_PLL_STATUS_READ_1);
-+	clk = gtr_phy->dev->clk[gtr_phy->refclk];
-+
-+	seq_printf(seq, "Lane:            %u\n", gtr_phy->lane);
-+	seq_printf(seq, "Protocol:        %s\n",
-+		   xpsgtr_icm_str[gtr_phy->protocol]);
-+	seq_printf(seq, "Instance:        %u\n", gtr_phy->instance);
-+	seq_printf(seq, "Reference clock: %u (%pC)\n", gtr_phy->refclk, clk);
-+	seq_printf(seq, "Reference rate:  %lu\n", clk_get_rate(clk));
-+	seq_printf(seq, "PLL locked:      %s\n",
-+		   pll_status & PLL_STATUS_LOCKED ? "yes" : "no");
-+
-+	mutex_unlock(&gtr_phy->phy->mutex);
-+	return 0;
-+}
-+
-+static int xpsgtr_status_open(struct inode *inode, struct file *f)
-+{
-+	struct xpsgtr_phy *gtr_phy = inode->i_private;
-+
-+	return single_open(f, xpsgtr_status_read, gtr_phy);
-+}
-+
-+static const struct file_operations xpsgtr_status_ops = {
-+	.owner = THIS_MODULE,
-+	.open = xpsgtr_status_open,
-+	.release = single_release,
-+	.read = seq_read,
-+	.llseek = seq_lseek
-+};
-+
- /*
-  * Power Management
-  */
-@@ -917,6 +969,8 @@ static int xpsgtr_probe(struct platform_device *pdev)
- 
- 		gtr_phy->phy = phy;
- 		phy_set_drvdata(phy, gtr_phy);
-+		debugfs_create_file("status", 0444, phy->debugfs, gtr_phy,
-+				    &xpsgtr_status_ops);
- 	}
- 
- 	/* Register the PHY provider. */
--- 
-2.35.1.1320.gc452695387.dirty
+> > > > +  vbus_det-gpios:
+> > > > +    description: GPIO to the USB OTG VBUS detect pin. This should not be
+> > > > +      defined if vbus_det gpio and switch gpio are connected.
+> > > 
+> > > I don't understand the second sentence here.
+> 
+> Ah, with your explanation below I now understand what you mean here. I
+> think this needs to be re-written - I think it would be easier to
+> understand with s/gpio/pin/ in the second line.
+> 
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  sophgo,switch-gpios:
+> > > > +    description: GPIO for the phy to control connected switch.
+> > > > +    maxItems: 2
+> > > 
+> > > You've got two items here, they should be described. /But/ the property
+> > > above says "switch gpio", which is singular. Which is it?
+> > > 
+> > 
+> > `switch-gpios` is gpios to controll USB switch connected to the
+> > phy. Sophgo recommends that phy use a switch to separate device
+> > port and host port if it supports both. I know this is weird,
+> > but many board follows this design, such as Huashan PI and 
+> > Milkv Duo S. As for item number, it is just an array of gpios
+> > to process one by one, I mark it as two just because Milkv 
+> > Duo S use two gpios to controll the USB switch.
+> 
+> Right, but what I'm looking for is a description for what each GPIO
+> does, so that someone can know how the dts should be written.
+> 
+> > For vbus_det gpio description, There is because the design of 
+> > Milk-v Duo S, which connect the switch gpio and VBUS detect 
+> > gpio. In this case the OTG function is broken and we can just 
+> > change the mode by toggling switch gpios. So I suggest not 
+> > defining this property.
+> 
+> Okay. See my comment on it above.
+> 
+
+Thanks, I will add some necessary comments for these two properties.
+
+> Thanks,
+> Conor.
+
 
 
 -- 
