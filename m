@@ -4,104 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADDFDC10F19
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Apr 2024 08:33:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E5CCC4345F
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Apr 2024 11:50:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k/4xnYjzFs3CMTMKoZiNfh2VkK4Ke5UCRa2+wLLF2Bg=; b=Hny4y7asisZCc/
-	yhlsWYCUBipD1ik0WKEXfHUeXdNt5jYipkL0K62cHoKzo9SH811zfz1bYuKGTuU+W9Ucc3yOWkgle
-	PNclOg2DQ8ofkVUHMCpzw6lrNjM929Pxz9JqbiFLiM6cSglEn3V/Z6WRksLwdiEhg3oE8UymZVdrW
-	YA/O5CBHpVuGfFFLMd5iZxPLuvQ4AgwuuVwU09IpnBabpBRwLYKB5XoFCUmDhmW1c5YFbwgP0yh/q
-	qgb3YAoR4gj7TG6cTJbIjb581WDyZpempVIWP+NyDcZ1OE2fmn2C02tVAkLqQLLizVu0U6W6RRDWX
-	NKKMj43F4i2uJ45QuXkw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+EMdQzdvtNV5MPOkByQO2VJK1lZO86/FfIt8gyno4Qw=; b=IWLCvd4V+dzUE6O/Zyl2ojPWJx
+	fsCZ40f1A8PUrn84m95LZTPy8LXpQnnH7ed9QsK9nwKSTgEgfrMtXoUkowIMMHXq0G6bpgIM5H4JS
+	T9TwjfBDkopKD6QVyjDw5vrM9KmDZ36tsMx0xRDMPuIE12GiOgH4c9tl3W6C2FLZSJeZ4yBrEtBhZ
+	DMTjN8TFVhcBPFJxfSxfQz+jMCBKWO55B0+IxaCl7B44YdeV8iGZx852we9IIfszwj8yvayDyPCDo
+	awYy7o557KthxyuyG6Icy9u63yodovZY6Iqtikxc9IHYxhV6L0QKfucldo1t80tLCZwQNr+URuzaU
+	fB6ZXlow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ryp74-0000000CfSJ-4C0O;
-	Mon, 22 Apr 2024 08:33:23 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1rysBs-0000000DQJR-16wF;
+	Mon, 22 Apr 2024 11:50:32 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1ryp71-0000000CfQN-0uES
+	id 1rysBo-0000000DQGy-3sch
 	for linux-phy@lists.infradead.org;
-	Mon, 22 Apr 2024 08:33:20 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4196c62bb4eso17917735e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 22 Apr 2024 01:33:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1713774797; x=1714379597; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=cLRaymjKldV5Ae25ez2pVEwmOtAjv9LTg0zkuha6uuU=;
-        b=LGdKmx4skmcj+3rkOlg4AY3hztCastZR/GTUYW+inSETuj3U2ktoTLSZJbcr4rWWIL
-         +r+dE7v5byzXix1jNBV8f8cUIGHnUsy4beXnkHHGtM0uOBmBjEqoCm42wfes4wLAo6CH
-         k/StjFHUcejHVm8XpSgH+QmiO3hdIQbX2us4o8QfkImrLzGuXwKgthqu92fZrfbQWQJ2
-         GdygHKg43EKxDxM2NDYApiQ4NhPOxr/b74iDLjkqyNcjjAKAA7Zjy6sIgIkBkOlAc5DP
-         QdhzT7Q4j1TMeMYJvBw0LTowxd+1MBB8ER3OC1gd1Jh87mRUrK3JQMuAySS66+YJpRrR
-         F1wg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1713774797; x=1714379597;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=cLRaymjKldV5Ae25ez2pVEwmOtAjv9LTg0zkuha6uuU=;
-        b=AOzjYgOZLFtDdnsTE9Sy9o3EPae12eSTv11X2YxbzqzuKJs0r2g60K/edOIMSsnKg3
-         J2/Isp8Zc8VKUHbHG3JrQ/dUY5kALewc2sypq/H+wt4Ga6BDsgq8lGO5AFxBmiREphJf
-         OWewFAFkh7VfLVZCCHa3lhH2h+waZhMh+buvu2Zq6lLNYxCf8InpaBPm3vZN0FeO5wiM
-         NIYrWA+VfS6TOYFYEnhmGjsOa3Od2Ds1Vfw1OHNftM4WSJvacErOzuGGAWULNdtwziNa
-         INXi8dgzi00pn3S/CdkuZ8Tnqayb90/ygWUdK9XKq7euYzfSMFyORFqma2JZhrNyfMni
-         c44w==
-X-Forwarded-Encrypted: i=1; AJvYcCU8qwrDfh3Ar2Zxc6mWDftQ/6ALrvRGc40GqV8NnKVqoXBVEp4rL/lQvwEAQbY8CYE4gMKmeTcAg2eeqEuJgOcQLp45cfuB2HlXc8wOnw==
-X-Gm-Message-State: AOJu0Yzj2dZmzS4oBTh1Aw/vZbymSRQ99LZ8xNyo4U93nBpNlCtXuRYW
-	ODR4Oj6B2PthcPkEHN24xKY+p9Do8b4LygWH7wnK4lPq8F/1FYMPBp5e/owU4Gw=
-X-Google-Smtp-Source: AGHT+IFHAw4FMhpEGmtTQ4MMTPUbnYOSy9z5mJuHiv3zra6VJEyRQ6AFD+8qUVa54j5166hugk0F9w==
-X-Received: by 2002:a05:600c:c1a:b0:41a:68a5:b2c8 with SMTP id fm26-20020a05600c0c1a00b0041a68a5b2c8mr943929wmb.35.1713774797226;
-        Mon, 22 Apr 2024 01:33:17 -0700 (PDT)
-Received: from arrakeen.starnux.net ([2a01:e0a:982:cbb0:8261:5fff:fe11:bdda])
-        by smtp.gmail.com with ESMTPSA id j19-20020a05600c1c1300b004161bffa48csm15978786wms.40.2024.04.22.01.33.16
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 22 Apr 2024 01:33:16 -0700 (PDT)
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Date: Mon, 22 Apr 2024 10:33:13 +0200
-Subject: [PATCH v3 3/3] arm64: dts: qcom: sm8650: remove pcie-1-phy-aux-clk
- and add pcie1_phy pcie1_phy_aux_clk
+	Mon, 22 Apr 2024 11:50:30 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id E5C0D60EB2;
+	Mon, 22 Apr 2024 11:50:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74B58C32782;
+	Mon, 22 Apr 2024 11:50:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1713786627;
+	bh=zIsEFBhzD+ZLEO1S9a4Cy+7IngF0zRAtRSaUbuQMgQ0=;
+	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+	b=bpEmg+5mn+onj3b66rqHoJKYf13F+mBQn6j56G+3+iyAuuian6f5TSaJcbAPMG1JX
+	 h3ICYktXKg5hhzHsUobwLyzm46KYj5mn37dGf9FFoWTDdqK+lPjdhhAvKVDDOhPN4b
+	 yIEc4HifqRQGw1bVR8PnS62Q7maQYpNVXDERrDhq3RmtCGKLlD4Psr7CpOe8IVeRId
+	 chXylBwNAE9yPunHZywdrdU4Jabixsg0lSV58u5n0ZWZfu0RGQ3twcBvfI+6Kre1oz
+	 0Nly5z40HFKG2t7ZGyopobEAg/fpFPLCxZLCZJMz0r0asFp+IwUB4vZfgCqVQB7HHe
+	 Q8jhbsXjv6P4Q==
+Date: Mon, 22 Apr 2024 06:50:26 -0500
 MIME-Version: 1.0
-Message-Id: <20240422-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v3-3-799475a27cce@linaro.org>
-References: <20240422-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v3-0-799475a27cce@linaro.org>
-In-Reply-To: <20240422-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v3-0-799475a27cce@linaro.org>
-To: Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+From: Rob Herring <robh@kernel.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ devicetree@vger.kernel.org, 
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2488;
- i=neil.armstrong@linaro.org; h=from:subject:message-id;
- bh=zQpxV0djrOiwPxhRvSgIUZn7ViHWbqTnSNjH4kOd7u8=;
- b=owEBbQKS/ZANAwAKAXfc29rIyEnRAcsmYgBmJiDJ9xmje0GQO+nI5+7LeLoATi+T2Zb/zhTy4IU2
- sGW6a++JAjMEAAEKAB0WIQQ9U8YmyFYF/h30LIt33NvayMhJ0QUCZiYgyQAKCRB33NvayMhJ0X8BD/
- 9yQh5mmI6X23M/e5p+c8PjwJeVfqTbT/t6SwpivBvytndYSZ5J4914WV5BC+c3zegKWfNTmpICsrEX
- 9p6wC4liG1cUo3Y25/lH8rvUMiKMLSlK01g6dd5gkNds+e54dTsa1Ca8EahAm+pxQF5jOxbssl/VTB
- +JWwgUIA5jdN1RnO+5ZPbaMF+blg+uJVk8lXAb8axKd3TfLiVtZ+ReUQtsHmw641U/ZT/lG6fZXu6A
- 34YJmKKD/u+Z18DmTVOCcb0TAkYkylPizUGsY5s1KW7GNtPldbg3vbinHgEe6OgCInkvcxqPrNh2Xx
- G1F3t8JFKIeBjFZWE2VSIMlUXb5kcfmnmpxRvHVfXqn2Y4lta1lV5BvbIRZKvucx6ffqyVB+aKEjMA
- 7cQYR7PSFbDyUW7ULg0s5L4IuYoZTIYf7lAohQSRgAlqxBoe+5QmVG/fbHj2YwGpzBcz26241ziaQl
- YABQD/wF8l6xo8maf/Vl/jNhdO3rgukn9R5awTQG788ccmEAMayprgsJbxl0zWNOUOve++wByjlLT4
- wH4V2gdz4yR3nvnzqWTN2Pt+DxpcdEak2cnALMO0c8L4NhlS96AtrmvPcPKD8/LkuHZKWYchp1RgO0
- bGbXVL0LXslZ+uwP48mJaHFOVkQQVIlVNYhmSEpDUxB6TpT1I9sNvCQEShNw==
-X-Developer-Key: i=neil.armstrong@linaro.org; a=openpgp;
- fpr=89EC3D058446217450F22848169AB7B1A4CFF8AE
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org, Bjorn Andersson <andersson@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+In-Reply-To: <20240422-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v3-0-799475a27cce@linaro.org>
+References: <20240422-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v3-0-799475a27cce@linaro.org>
+Message-Id: <171378646293.749182.6639047187760279527.robh@kernel.org>
+Subject: Re: [PATCH v3 0/3] arm64: qcom-sm8[456]50: properly describe the
+ PCIe Gen4x2 PHY AUX clock
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240422_013319_358341_7EBBF725 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240422_045029_094747_F497AAC4 
+X-CRM114-Status: GOOD (  19.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,88 +80,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Remove the dummy pcie-1-phy-aux-clk clock and replace with the pcie1_phy
-provided QMP_PCIE_PHY_AUX_CLK.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
----
- arch/arm64/boot/dts/qcom/sm8650-mtp.dts |  4 ----
- arch/arm64/boot/dts/qcom/sm8650-qrd.dts |  4 ----
- arch/arm64/boot/dts/qcom/sm8650.dtsi    | 13 ++++---------
- 3 files changed, 4 insertions(+), 17 deletions(-)
+On Mon, 22 Apr 2024 10:33:10 +0200, Neil Armstrong wrote:
+> The PCIe Gen4x2 PHY found in the SM8[456]50 SoCs have a second clock named
+> "PHY_AUX_CLK" which is an input of the Global Clock Controller (GCC) which
+> is muxed & gated then returned to the PHY as an input.
+> 
+> Document the clock IDs to select the PIPE clock or the AUX clock,
+> also enforce a second clock-output-names and a #clock-cells value of 1
+> for the PCIe Gen4x2 PHY found in the SM8[456]50 SoCs.
+> 
+> The PHY driver needs a light refactoring to support a second clock,
+> and finally the DT is changed to connect the PHY second clock to the
+> corresponding GCC input then drop the dummy fixed rate clock.
+> 
+> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
+> ---
+> Changes in v3:
+> - Rebased on linux-next, applies now cleanly
+> - Link to v2: https://lore.kernel.org/r/20240322-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v2-0-3ec0a966d52f@linaro.org
+> 
+> Changes in v2:
+> - Collected review tags
+> - Switched back to of_clk_add_hw_provider/devm_add_action_or_reset to maintain compatibility
+> - Tried to use generic of_clk_hw_onecell_get() but it requires to much boilerplate code
+>   and would still need a local qmp_pcie_clk_hw_get() to support the current #clock-cells=0
+>   when exposing 2 clocks, so it's simpler to just return the clocks in qmp_pcie_clk_hw_get()
+> - Link to v1: https://lore.kernel.org/r/20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v1-0-926d7a4ccd80@linaro.org
+> 
+> ---
+> Neil Armstrong (3):
+>       arm64: dts: qcom: sm8450: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk
+>       arm64: dts: qcom: sm8550: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk
+>       arm64: dts: qcom: sm8650: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk
+> 
+>  arch/arm64/boot/dts/qcom/sm8450.dtsi    |  8 ++++----
+>  arch/arm64/boot/dts/qcom/sm8550-hdk.dts |  4 ----
+>  arch/arm64/boot/dts/qcom/sm8550-mtp.dts |  4 ----
+>  arch/arm64/boot/dts/qcom/sm8550-qrd.dts |  8 --------
+>  arch/arm64/boot/dts/qcom/sm8550.dtsi    | 13 ++++---------
+>  arch/arm64/boot/dts/qcom/sm8650-mtp.dts |  4 ----
+>  arch/arm64/boot/dts/qcom/sm8650-qrd.dts |  4 ----
+>  arch/arm64/boot/dts/qcom/sm8650.dtsi    | 13 ++++---------
+>  8 files changed, 12 insertions(+), 46 deletions(-)
+> ---
+> base-commit: f529a6d274b3b8c75899e949649d231298f30a32
+> change-id: 20240319-topic-sm8x50-upstream-pcie-1-phy-aux-clk-4b35169707dd
+> 
+> Best regards,
+> --
+> Neil Armstrong <neil.armstrong@linaro.org>
+> 
+> 
+> 
 
-diff --git a/arch/arm64/boot/dts/qcom/sm8650-mtp.dts b/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
-index d04ceaa73c2b..ea092f532e5a 100644
---- a/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8650-mtp.dts
-@@ -641,10 +641,6 @@ &mdss_dsi0_phy {
- 	status = "okay";
- };
- 
--&pcie_1_phy_aux_clk {
--	clock-frequency = <1000>;
--};
--
- &pcie0 {
- 	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
- 	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-diff --git a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-index 4e94f7fe4d2d..bd87aa3aa548 100644
---- a/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-+++ b/arch/arm64/boot/dts/qcom/sm8650-qrd.dts
-@@ -835,10 +835,6 @@ &mdss_dp0_out {
- 	remote-endpoint = <&usb_dp_qmpphy_dp_in>;
- };
- 
--&pcie_1_phy_aux_clk {
--	clock-frequency = <1000>;
--};
--
- &pcie0 {
- 	wake-gpios = <&tlmm 96 GPIO_ACTIVE_HIGH>;
- 	perst-gpios = <&tlmm 94 GPIO_ACTIVE_LOW>;
-diff --git a/arch/arm64/boot/dts/qcom/sm8650.dtsi b/arch/arm64/boot/dts/qcom/sm8650.dtsi
-index 8e0c1841f748..658ad2b41c5a 100644
---- a/arch/arm64/boot/dts/qcom/sm8650.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sm8650.dtsi
-@@ -60,11 +60,6 @@ bi_tcxo_ao_div2: bi-tcxo-ao-div2-clk {
- 			clock-mult = <1>;
- 			clock-div = <2>;
- 		};
--
--		pcie_1_phy_aux_clk: pcie-1-phy-aux-clk {
--			compatible = "fixed-clock";
--			#clock-cells = <0>;
--		};
- 	};
- 
- 	cpus {
-@@ -758,8 +753,8 @@ gcc: clock-controller@100000 {
- 				 <&bi_tcxo_ao_div2>,
- 				 <&sleep_clk>,
- 				 <&pcie0_phy>,
--				 <&pcie1_phy>,
--				 <&pcie_1_phy_aux_clk>,
-+				 <&pcie1_phy QMP_PCIE_PIPE_CLK>,
-+				 <&pcie1_phy QMP_PCIE_PHY_AUX_CLK>,
- 				 <&ufs_mem_phy 0>,
- 				 <&ufs_mem_phy 1>,
- 				 <&ufs_mem_phy 2>,
-@@ -2467,8 +2462,8 @@ pcie1_phy: phy@1c0e000 {
- 
- 			power-domains = <&gcc PCIE_1_PHY_GDSC>;
- 
--			#clock-cells = <0>;
--			clock-output-names = "pcie1_pipe_clk";
-+			#clock-cells = <1>;
-+			clock-output-names = "pcie1_pipe_clk", "pcie1_phy_aux_clk";
- 
- 			#phy-cells = <0>;
- 
 
--- 
-2.34.1
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
+
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+New warnings running 'make CHECK_DTBS=y qcom/sm8550-hdk.dtb qcom/sm8550-mtp.dtb qcom/sm8550-qrd.dtb qcom/sm8650-mtp.dtb qcom/sm8650-qrd.dtb' for 20240422-topic-sm8x50-upstream-pcie-1-phy-aux-clk-v3-0-799475a27cce@linaro.org:
+
+arch/arm64/boot/dts/qcom/sm8550-qrd.dtb: clock-controller@100000: clocks: [[41], [42], [43], [44, 0], [45, 0], [45, 1], [45, 2], [46, 0]] is too short
+	from schema $id: http://devicetree.org/schemas/clock/qcom,sm8550-gcc.yaml#
+arch/arm64/boot/dts/qcom/sm8550-qrd.dtb: clock-controller@100000: Unevaluated properties are not allowed ('clocks' was unexpected)
+	from schema $id: http://devicetree.org/schemas/clock/qcom,sm8550-gcc.yaml#
+
+
+
+
 
 
 -- 
