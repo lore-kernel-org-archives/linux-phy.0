@@ -4,205 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BFEC4345F
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Apr 2024 06:26:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F8ABC4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Apr 2024 13:04:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=U4mz9Ek4vsukolhXRt//oX++U8rAqDIZ2mCecVI73uw=; b=cprydq+xqjU4Zded400gky0A0G
-	IiefywIn/uJYPLhea5B9gmsZVISoIT8fwdosTefv4fgMGN3ATpQ4ETfA34aPJtjELwxALTEB3DQv6
-	qG/EpLJV2xq6qeBq8rXi5GwvV8FlR+FVWJsREtefN72vQW2d3ggTOBau6+YVzdgQJMOXyaKXasi9Z
-	oY1Wgs3Y58PxJpUk07X3QZmte17F9/75ehW+OZPBH0fNQSPmN90iZLeIPtjSsnyc1alGAwC9I/hMh
-	/ZuYLw1lTFfGNXGakpwzMx+jde9QQSIuAeVF6xIIBRXJU98yAB8adseO50ysg2Zu05AxJHfq58Xjq
-	y0sm9R9g==;
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OMEco7Yl2PD58nCwwUkmcNO2+jOJ65OLzqD9x9bSxE8=; b=J3FxXWUDmoMh6J
+	hHwW3sTqP2pOuujv3gwF4fzqiCpV2N3WTCkkg+BLmi7OboXo/p5MkfQYIifLtwCTKpbh1VmgoexSn
+	FISWI8F0O8m4RocfQERyYfJeaWRrx2Kh8wEvZySlIYlwp6Bd1CwvtNGV7RnDWnj4rTcOT7a7xGvsn
+	BWJlzCqHVfoxWlHdqypjkcCcMCoIpr6cnGzos1II/6kxMEVcbFjPiwTiHZYDZn/I+sTwg+arRgEVh
+	Ij0o0lJa/JgAV1I5OI1kFnrMt70fv3dMoty8mfJBVRUC3dBfHFyMJDFCWPN9cwahb575TEMRuAK9M
+	l/FJOsmH7pfrOIOtOGug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rz9bU-0000000G8Rs-3hri;
-	Tue, 23 Apr 2024 06:26:08 +0000
-Received: from mail-bn8nam11on20601.outbound.protection.outlook.com ([2a01:111:f403:2414::601] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1rzFoi-0000000HZ9P-3sRF;
+	Tue, 23 Apr 2024 13:04:12 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rz9bR-0000000G8Po-0IR4;
-	Tue, 23 Apr 2024 06:26:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UfjHkWVk/q4U8rHdGkK6tVK3InSw2qq9+hJ8TnkBMmk9QS2SDWuSN14uj8kQAi01Gost4Fkay5dMSGLC1DnBiVqFMo95t+V/p/hRLrz5Iz19cUBYE8/TAZO8CZZtXdUcmjF11adKx0mFauHrQMXu1wRaJSD6oVUYG7XO6Y7V0kmm9Wj/bgMMzYCk198LqVrs7pf5q6nPGoGvtIqzYtwrDQZJmMoUGaXqJwlkgH/k+ACaOSdpnP+J7SOZe7mKVg8yLwl49D8+7cNQWPI0kZYFC4Do5QPJhPHZcxZocBedhmCJT+eWq4xeBUJXDR0gmO7FEbV2sqOUEsoGG6dqkeDSRA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1qieh4aFqHLr2qhSDir1PtRV94Bm6OjcCDkWk/jY0kI=;
- b=LYaLNNlCYK70IYnMBzut1AoCLxc54zl0iTxRN1BB8VAsB0tpxdQg3ktWJsO3vHz6Qo8zfohQYjiw0hIUdcYomVgHMX7vyU/ZKJ8fLkbiFM+b9ekmSQ0TwMvcQKAhWY7qY6yVB/N+mpQSmIiVXj4zx4rbxskjtSc36nM2yaDRHQjbPQMHQQmDeFNjxf/kQU+YSinNR2YU1X9Om9Pv23bFXdCh0Y3mwekRSaEKdC+DBVVsJb9go5uogyA0B8bMdx5/SbJKuhZjm2PY2WJM2Z2CP/K8qD9LS9qaPM8G6EhJxYSlgxkogvFlARhvnOrYtaW6e61Ug7jrP/fQnlvor/+vcA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1qieh4aFqHLr2qhSDir1PtRV94Bm6OjcCDkWk/jY0kI=;
- b=Xr+h85FZaFw93dHmMvfyopo7veR2eviddm3Soliyqh7x1j3+yQ/Bkc3CYXq7UcTPleD6i809jyDimslPoMj4YDGN+xdCgaaRRD2YcYd3H+XjoLjoqnm3XYwFw5Q1tOPxKR0bxRx6XKnnAB8Mn+Ii0z2OmgzJciDcR50ymBK5s4E=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-Received: from SJ2PR12MB8109.namprd12.prod.outlook.com (2603:10b6:a03:4f5::8)
- by DS0PR12MB7701.namprd12.prod.outlook.com (2603:10b6:8:133::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7472.44; Tue, 23 Apr
- 2024 06:25:56 +0000
-Received: from SJ2PR12MB8109.namprd12.prod.outlook.com
- ([fe80::c3fc:3be9:dde7:745f]) by SJ2PR12MB8109.namprd12.prod.outlook.com
- ([fe80::c3fc:3be9:dde7:745f%7]) with mapi id 15.20.7472.044; Tue, 23 Apr 2024
- 06:25:56 +0000
-Message-ID: <691e50b7-1c1a-478a-815b-fb2a6bfdae8f@amd.com>
-Date: Tue, 23 Apr 2024 08:25:45 +0200
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/3] phy: zynqmp: Don't wait for PLL lock on nonzero PCIe
- lanes
-To: Sean Anderson <sean.anderson@linux.dev>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Kishon Vijay Abraham I <kishon@kernel.org>
-References: <20240422185803.3575319-1-sean.anderson@linux.dev>
- <20240422185803.3575319-3-sean.anderson@linux.dev>
-Content-Language: en-US
-From: Michal Simek <michal.simek@amd.com>
-Autocrypt: addr=michal.simek@amd.com; keydata=
- xsFNBFFuvDEBEAC9Amu3nk79+J+4xBOuM5XmDmljuukOc6mKB5bBYOa4SrWJZTjeGRf52VMc
- howHe8Y9nSbG92obZMqsdt+d/hmRu3fgwRYiiU97YJjUkCN5paHXyBb+3IdrLNGt8I7C9RMy
- svSoH4WcApYNqvB3rcMtJIna+HUhx8xOk+XCfyKJDnrSuKgx0Svj446qgM5fe7RyFOlGX/wF
- Ae63Hs0RkFo3I/+hLLJP6kwPnOEo3lkvzm3FMMy0D9VxT9e6Y3afe1UTQuhkg8PbABxhowzj
- SEnl0ICoqpBqqROV/w1fOlPrm4WSNlZJunYV4gTEustZf8j9FWncn3QzRhnQOSuzTPFbsbH5
- WVxwDvgHLRTmBuMw1sqvCc7CofjsD1XM9bP3HOBwCxKaTyOxbPJh3D4AdD1u+cF/lj9Fj255
- Es9aATHPvoDQmOzyyRNTQzupN8UtZ+/tB4mhgxWzorpbdItaSXWgdDPDtssJIC+d5+hskys8
- B3jbv86lyM+4jh2URpnL1gqOPwnaf1zm/7sqoN3r64cml94q68jfY4lNTwjA/SnaS1DE9XXa
- XQlkhHgjSLyRjjsMsz+2A4otRLrBbumEUtSMlPfhTi8xUsj9ZfPIUz3fji8vmxZG/Da6jx/c
- a0UQdFFCL4Ay/EMSoGbQouzhC69OQLWNH3rMQbBvrRbiMJbEZwARAQABzSlNaWNoYWwgU2lt
- ZWsgKEFNRCkgPG1pY2hhbC5zaW1la0BhbWQuY29tPsLBlAQTAQgAPgIbAwULCQgHAgYVCgkI
- CwIEFgIDAQIeAQIXgBYhBGc1DJv1zO6bU2Q1ajd8fyH+PR+RBQJkK9VOBQkWf4AXAAoJEDd8
- fyH+PR+ROzEP/1IFM7J4Y58SKuvdWDddIvc7JXcal5DpUtMdpuV+ZiHSOgBQRqvwH4CVBK7p
- ktDCWQAoWCg0KhdGyBjfyVVpm+Gw4DkZovcvMGUlvY5p5w8XxTE5Xx+cj/iDnj83+gy+0Oyz
- VFU9pew9rnT5YjSRFNOmL2dsorxoT1DWuasDUyitGy9iBegj7vtyAsvEObbGiFcKYSjvurkm
- MaJ/AwuJehZouKVfWPY/i4UNsDVbQP6iwO8jgPy3pwjt4ztZrl3qs1gV1F4Zrak1k6qoDP5h
- 19Q5XBVtq4VSS4uLKjofVxrw0J+sHHeTNa3Qgk9nXJEvH2s2JpX82an7U6ccJSdNLYbogQAS
- BW60bxq6hWEY/afbT+tepEsXepa0y04NjFccFsbECQ4DA3cdA34sFGupUy5h5la/eEf3/8Kd
- BYcDd+aoxWliMVmL3DudM0Fuj9Hqt7JJAaA0Kt3pwJYwzecl/noK7kFhWiKcJULXEbi3Yf/Y
- pwCf691kBfrbbP9uDmgm4ZbWIT5WUptt3ziYOWx9SSvaZP5MExlXF4z+/KfZAeJBpZ95Gwm+
- FD8WKYjJChMtTfd1VjC4oyFLDUMTvYq77ABkPeKB/WmiAoqMbGx+xQWxW113wZikDy+6WoCS
- MPXfgMPWpkIUnvTIpF+m1Nyerqf71fiA1W8l0oFmtCF5oTMkzsFNBFFuvDEBEACXqiX5h4IA
- 03fJOwh+82aQWeHVAEDpjDzK5hSSJZDE55KP8br1FZrgrjvQ9Ma7thSu1mbr+ydeIqoO1/iM
- fZA+DDPpvo6kscjep11bNhVa0JpHhwnMfHNTSHDMq9OXL9ZZpku/+OXtapISzIH336p4ZUUB
- 5asad8Ux70g4gmI92eLWBzFFdlyR4g1Vis511Nn481lsDO9LZhKyWelbif7FKKv4p3FRPSbB
- vEgh71V3NDCPlJJoiHiYaS8IN3uasV/S1+cxVbwz2WcUEZCpeHcY2qsQAEqp4GM7PF2G6gtz
- IOBUMk7fjku1mzlx4zP7uj87LGJTOAxQUJ1HHlx3Li+xu2oF9Vv101/fsCmptAAUMo7KiJgP
- Lu8TsP1migoOoSbGUMR0jQpUcKF2L2jaNVS6updvNjbRmFojK2y6A/Bc6WAKhtdv8/e0/Zby
- iVA7/EN5phZ1GugMJxOLHJ1eqw7DQ5CHcSQ5bOx0Yjmhg4PT6pbW3mB1w+ClAnxhAbyMsfBn
- XxvvcjWIPnBVlB2Z0YH/gizMDdM0Sa/HIz+q7JR7XkGL4MYeAM15m6O7hkCJcoFV7LMzkNKk
- OiCZ3E0JYDsMXvmh3S4EVWAG+buA+9beElCmXDcXPI4PinMPqpwmLNcEhPVMQfvAYRqQp2fg
- 1vTEyK58Ms+0a9L1k5MvvbFg9QARAQABwsF8BBgBCAAmAhsMFiEEZzUMm/XM7ptTZDVqN3x/
- If49H5EFAmQr1YsFCRZ/gFoACgkQN3x/If49H5H6BQ//TqDpfCh7Fa5v227mDISwU1VgOPFK
- eo/+4fF/KNtAtU/VYmBrwT/N6clBxjJYY1i60ekFfAEsCb+vAr1W9geYYpuA+lgR3/BOkHlJ
- eHf4Ez3D71GnqROIXsObFSFfZWGEgBtHBZ694hKwFmIVCg+lqeMV9nPQKlvfx2n+/lDkspGi
- epDwFUdfJLHOYxFZMQsFtKJX4fBiY85/U4X2xSp02DxQZj/N2lc9OFrKmFJHXJi9vQCkJdIj
- S6nuJlvWj/MZKud5QhlfZQsixT9wCeOa6Vgcd4vCzZuptx8gY9FDgb27RQxh/b1ZHalO1h3z
- kXyouA6Kf54Tv6ab7M/fhNqznnmSvWvQ4EWeh8gddpzHKk8ixw9INBWkGXzqSPOztlJbFiQ3
- YPi6o9Pw/IxdQJ9UZ8eCjvIMpXb4q9cZpRLT/BkD4ttpNxma1CUVljkF4DuGydxbQNvJFBK8
- ywyA0qgv+Mu+4r/Z2iQzoOgE1SymrNSDyC7u0RzmSnyqaQnZ3uj7OzRkq0fMmMbbrIvQYDS/
- y7RkYPOpmElF2pwWI/SXKOgMUgigedGCl1QRUio7iifBmXHkRrTgNT0PWQmeGsWTmfRit2+i
- l2dpB2lxha72cQ6MTEmL65HaoeANhtfO1se2R9dej57g+urO9V2v/UglZG1wsyaP/vOrgs+3
- 3i3l5DA=
-In-Reply-To: <20240422185803.3575319-3-sean.anderson@linux.dev>
-X-ClientProxiedBy: VI1P190CA0020.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:802:2b::33) To SJ2PR12MB8109.namprd12.prod.outlook.com
- (2603:10b6:a03:4f5::8)
+	id 1rzFoV-0000000HZ6f-3p1P
+	for linux-phy@lists.infradead.org;
+	Tue, 23 Apr 2024 13:04:11 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-51bae805c56so634439e87.0
+        for <linux-phy@lists.infradead.org>; Tue, 23 Apr 2024 06:03:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1713877435; x=1714482235; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=Kvy8LO+cIMm+HbZIf+ZYGi2YekLnZkMXi2GFq6BTKfQ=;
+        b=G7V2XxUCCJbr3cVeLeSy/sIk+/9kLsLUDFpFUYjvst8Ba3cYC0LxDudLLQ3NTHOIZd
+         ERVDLRFb7ER7pCqMRgXj9wE+xH01sz//xlXMl83oVY+7cT4Uvc5ze09F6L8A8VJlajVt
+         JIzNbV9mhgangc3XSZ3ZkoGrhRe6B/I5MclnDfWFIUe/RvxRFbqBPMy0yBYRa+2W+VsQ
+         6HPLrx4kcAam1uYhvLIxV5mdT6NuSQ0ZXhxtJzTj90CF3JmBmh/ZeBO5Rl7mWRuK8m6l
+         Mq9oROp5GMl/1iDZTyxUea4so294wlQoxxNH17rMsOWltaepkZ71b/FqX4U+OP1CDh7e
+         C4jA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1713877435; x=1714482235;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Kvy8LO+cIMm+HbZIf+ZYGi2YekLnZkMXi2GFq6BTKfQ=;
+        b=AAMDKORKRmWMWyMvJLxC6BYc7VRdaVWN0UF7y8pVU0ThviK2wigb59LlU9QDO9btPj
+         s1ULjOE5wTKMTI6CIDKTy445aQRJP49vcj3K2vDtuySADjd/SvnOLIMR6I0P/wF9x/OB
+         sNulfYb1NAwknbagzZ6xTiyk5p6kFqf+a7M7yzeyrB8eA+3NN6jKUUFm6KKwC4+T+e5I
+         8U18Z0g6xAkJig6GMJ784JaShUdB2qodDvWbnyqDRg2eh/H7mSfHbgNiQfTdIUNmXvqN
+         IuRtgOPnrOqWrP3q4oGFnD2o16T7rgeMBieqU8OdPoUMJsxEfdEjiiGOajL1aLSXoRdK
+         uKyw==
+X-Forwarded-Encrypted: i=1; AJvYcCUe8ArndrVJbIsSmI/n9fSuFprh1umTslSSuAtKRY3PpNl2fnihms4wXmCEbj2XlJNtSwuaCm7a+BcpyWwv6uWiZ365FKzbHBegM8fh7A==
+X-Gm-Message-State: AOJu0YymIIbJqp+/GOSORbCm11ChP6N1ia965Hrf8/UCNf9P7VDWOwfn
+	wxTxxQYhoazljiUz/yeMjnWVky9rFZ7WsMVgW+Dh3a2hFDox1QD8Kn6EMVW5PsQ=
+X-Google-Smtp-Source: AGHT+IGpySdaQcCROpQ5r5e9TsmfSInd7LVYx0iPlnKIMODKT5YasK7WcFwD6VkU7AE9jDrwMyk+5A==
+X-Received: by 2002:a05:6512:36d2:b0:519:6c2d:9bdb with SMTP id e18-20020a05651236d200b005196c2d9bdbmr7266957lfs.43.1713877435006;
+        Tue, 23 Apr 2024 06:03:55 -0700 (PDT)
+Received: from [172.30.205.0] (UNUSED.212-182-62-129.lubman.net.pl. [212.182.62.129])
+        by smtp.gmail.com with ESMTPSA id z4-20020ac24f84000000b00513d244005asm2019862lfs.199.2024.04.23.06.03.51
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 23 Apr 2024 06:03:53 -0700 (PDT)
+Message-ID: <f2d96f99-d8ac-4ff1-83fa-742e541565e4@linaro.org>
+Date: Tue, 23 Apr 2024 15:03:50 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ2PR12MB8109:EE_|DS0PR12MB7701:EE_
-X-MS-Office365-Filtering-Correlation-Id: 106e09d8-8858-4df5-c2d0-08dc635e3bd9
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?eXNkcUJBOThtaW4wSWtVTXZpR29LNnlsV2tnbXVJcVc0QjlycTF6U1o0cGNI?=
- =?utf-8?B?N0s4RllURmxLYmNOUWplaGJHKzVGS3cwR0l3VHVJYUxFMFY3T0FyQnBhVkdv?=
- =?utf-8?B?SEZ6UlRzbkdlREhRUGRBeGptb04rME9CYnZOVEpPbWh1WCtYY254WkkyaVFG?=
- =?utf-8?B?MThGdjZySE5Ldmw5Zld1dWFlYnFkWGxhMUJHcG12Z3Nqc213UWduOUkyUEpn?=
- =?utf-8?B?amNLNUZXdWNjalh3Z3dlMW9Ib3orakVwL1JQYklZbFFHWEw1eUk2L3g4cGN6?=
- =?utf-8?B?UEF4ZDZOOTJBME5xVzUyVUo3bGxEaVo3bytsYmdWdnBPclFOaVNkT1VCaURu?=
- =?utf-8?B?Sk85dXZhQWgxNVFIV042ZC9vaWc2MnVJUHVYbVBNZDlyZWxGUEM0YW1NSUJD?=
- =?utf-8?B?aVJ0Qlhxak90MGpCV1RqclVJS3FlbU41NDRCU2NleFJiRzIydEhhWkRzYjdE?=
- =?utf-8?B?c3E5NUNScWRiUVpoRUZHTEFiK3c5WFBEdGZpa3lpOFdxZkRrSWsxQWlOT04r?=
- =?utf-8?B?cUpoQTgvUU8xMUxmbENVN0lIMHdCTTVHNlRFS2pJNi9BNSthRUlCK1dISklL?=
- =?utf-8?B?YnZKN1lkbTZSWU9TMC8wdlF0VGRWRVdLeVkvRFhMZ3dqQ09xODR5MXUzN3NS?=
- =?utf-8?B?TmlaT3ZWRUNnUjA2enlxY01rNTRkanVQZlZzTXhOQWc1N2h3cWZyZ1ZPQU5m?=
- =?utf-8?B?T1JKNGMxWlZSVnR1bDRqQzZoQTlLRDNOc1VWdkQvdFVsTFV6WGU0MXh3MFN0?=
- =?utf-8?B?MTQybkhtKzA3RktITUNBT245Y2pic0UwYlRwZStLak1wVCs4clZlRm1DNTZS?=
- =?utf-8?B?ZXNINmtuVjAvclByeldlcHhianVyK3lEd3JUQ1JTT0EvSmVYSGxkQ3NtUzQ0?=
- =?utf-8?B?Yjg2M3RWVUJla0pPSkJDVjJLSXJKWWM3UkNFU2pONThkT3EwbFBaUG9lYTd6?=
- =?utf-8?B?S1BxUkdtS1FmSUdudEI2WWM0YlZTSE55UzJkTXNtZzRqQk9Bd1Rod0k3WE92?=
- =?utf-8?B?S3IzNWJpTGMyMDYzQ3EvMXNhcjB1OHpleWhTckNmd0VGWnF1eXV3ZzNqd1Jh?=
- =?utf-8?B?RDFqN1kwb2NyNEg2VjQyaGgwZ2x3YURyeHRkQmRRTVhJbWZ3U2dkaTJZbDR5?=
- =?utf-8?B?dEhjRE56SjBKY2xZR3lyeEc1KzNKU3d3V2hxb2dPdjZBQkhySU13SThONjEz?=
- =?utf-8?B?OEs5TGV1KzVvc3hrMTYrNXhjejY5bVF4aGIzN29wWkEwWDhNYUNaQTRlMk90?=
- =?utf-8?B?WEpTTjFQMkpHaVJqY3ZubTljSWRUZjBBK3BxekJIYytKc2tBTmRpYlM0TnpS?=
- =?utf-8?B?ZjVYTUJjSUpWMit4TWNtU2kydEhtL25EZDNUU0Y4cFV1ZkxpWWdUblZEVHEr?=
- =?utf-8?B?Y3czZ2dWd3hpU2pLRm5Hb2NsMUp2V01BN2ZicytUb0hMY1hFV0tZUDdYbFc5?=
- =?utf-8?B?Ukk3TFpBeFlnT2FqVXliOUNWNE5Ba0lSMWo3RE95Zno5eHJ1QnVpL1lDa2Ur?=
- =?utf-8?B?U2FHUHAxbTJwQ0pQemFIWkEwMmZRRm05RzNNZVhwaFpDK0V6WXZXbzVjQVdw?=
- =?utf-8?B?Z0pFUXBSdk9NaTlZMEYzKzVmSjc1dGlSVkZBcWdXWWFsYmdQbmhUYXlmTzRw?=
- =?utf-8?B?bGw1dlFHWVZzMzdoRVlJampIQVZuZzFwY0c1MWhVaVpQUzFzN0t5QzRRbndM?=
- =?utf-8?B?RExyYnJGYmNVVUppVGtheXB0c2xLc1FGUnhvNStjVWwzbGRpY1MrV1lBPT0=?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB8109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(366007)(1800799015);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?anVFYlF6d0Nha0Z0bFFXanFnWjVjdG52UWZhRUxRK1VOa09kWjhHNUs4eVYv?=
- =?utf-8?B?Q2NWZUpSbkxucC90VmgzbDhoWUlsVVJ2QzhTUkZaOFpWUVY1VnJKWVVPaU1W?=
- =?utf-8?B?b3B5VHgreFhNUmV1allIVm5xWEN2ay9JSzJVaWprdVBpdlplU3hPVm1BYWpQ?=
- =?utf-8?B?N0o1K1VHRGdVSkQrQWtjSUw3SnVid2ZPUi9uMjFQTWJ2U2VXajlCSWljRXVy?=
- =?utf-8?B?VkFuaW82QnNFTFFzL05TMUI3V0lyVS9WZmdDa3VxdldmMDV0clM5TkkrT2dS?=
- =?utf-8?B?cFp3S2lLaGFQWm9KdjVGTEtLOUhXbGxPK0doYjR6SGlVUmxGTEU3U3Z4WEpV?=
- =?utf-8?B?eXFGV0lSQ2h3TXJ0cFdjbVA1eWo4aEMrWWNOZ0U1Z3ZoS2Z1NkRhMlFKdnNL?=
- =?utf-8?B?UWJXMlhRVkZWYnRoclpTaVFRaXJET0JyU1RieVdZa1R3OFZqWVFGV1B1d0kr?=
- =?utf-8?B?SFlMSGF1Mit6TDdJTjRjdFZ2ZE5ZZ3JqdW8wOGlBYXh1dHZjdEF3QlVhVFhw?=
- =?utf-8?B?SjkwOHU2OXNxQ1ZqMFZZck1SM2wxS0MrRGRCOUtMQ0FPUmhlWnRzWjIwS2lu?=
- =?utf-8?B?SGkyMGxaUHlpa1dJQ1JoaVE5aWJjOU9ZOEhwUUl6KzFZRFhYMlg4ejEwcXEv?=
- =?utf-8?B?MVdOQllERHR1Z2YrUE9WRlpPZ0lmUWZaQmZlY214NkptSUJCeHdZQ1o4OVFs?=
- =?utf-8?B?ZXJGVy9jTkF6ZHFxaUFLNVNmUTJkUmszdklzbmNlY0NhL2RyaEFFdThNR1F0?=
- =?utf-8?B?RFFoU3ZXRVVodndoV2RSZW1sN2pCOFlvbk5DWTdVL0E0dEtHd05rQmZOd01K?=
- =?utf-8?B?RDY0d0RXWVdjK0FySERENDF3ZGdLaXFWNUk2QUZwQm0rUnM3YkJ2bmVPTXFi?=
- =?utf-8?B?TlA1aDl0YURqQ2FYZGZYOGZnWnVPM3V1cCtQQ2trOGljSDJrVHEwZ2NpK2JU?=
- =?utf-8?B?ZGhiSTJXSEdmVyt6dm9Hb2E1NEZxVE9hb2prbVlxNGdaZE1OQTNtd2tkWXlv?=
- =?utf-8?B?QitwYmhtWWE3bS9IQUo4Nko5MnlUVFZhcnFvTGljTlBiRDBZMEhOTFB6Y3k5?=
- =?utf-8?B?dDNMM0ViSWJmYkxqL1llTCtEQm5aTkZWVGl2enVrRW0rY0IyL3pqc3lRR3lF?=
- =?utf-8?B?Y0RaZVlJQWE2dzZYa1F5OFR0UmpSLzJPN3g1dVRyYTl4OWY2bU1ZMXlSd0ly?=
- =?utf-8?B?bHBuOEVJRXhYbnEvcTNRcHp4bE9xMys5UXZhek5QMXhJNkhwWThDMWM3WnY5?=
- =?utf-8?B?V3hQOURKNGppQ3o4Rk1TQzJZaUdyTFFjZHF2b0ZwQmdjTVJ2bkRSdFl4ZnhP?=
- =?utf-8?B?K2pGem13QzRSMUVMZXhVNGxPZE1TNVZjOWt1Y1QrendSNk92MERWOVk4K08x?=
- =?utf-8?B?cEZIV2d6clR5T1Z5WUNpR3pLd2dPNVN6WnlpQW0yL0ozTVBkcU16Rk1XcVk2?=
- =?utf-8?B?NFRjWndWbXZDMWFOU0hnRTNRMWdhS3gzeFBwZE5FelZ1RFkwSnBLeHBLMjdF?=
- =?utf-8?B?RW5mZmJ5WGxwOGxuRmZ1MDJ2T2VzaUd5emlCSVhqV1JEY3JNMXNleXFsV3d3?=
- =?utf-8?B?WDRQeW56ZnA4dzBTR2I5OXB3RVd2Nkw2Q2hYcjNpTHRITGpSaHpHbU9IWUor?=
- =?utf-8?B?ZlB4NGpjYVNvUUxTeTZ0TlBsSy95VlRER2RuWTF3aXVtM3NwL2VSR0Frc2N3?=
- =?utf-8?B?dGJ2MDEvNCtXMG1keEJ5WlFvMzRwME5OaEZHMk02M1pwenBpSmRZdEJJTXFZ?=
- =?utf-8?B?R1ZtS09wend3OFgwS3VWRGp5aVpqU2JzaVQ0L1lyWllobnB5cU1qanlwR3A3?=
- =?utf-8?B?S05VaDVVL3J1OEZnKzh1RTRJdE1PSlBaOU1SbjhLSnhGc3VlY1pCRTB5ZWtB?=
- =?utf-8?B?TXhURXNHeEtCeUUxQ2FHcDAxSUtkQ3lTZnpueWFPY2dEMWFiZEFWdnVHaFpF?=
- =?utf-8?B?YkFGeFhtckRveERCTFZFOGZCdTV1bWgxdGhTRzZLTFRSb252WDFHcXcxZUgx?=
- =?utf-8?B?L3FCcVhnNEZFS3o2b2hsMGpLT1JrWXNrcVUxTGMydGpzQmM5YUlqdHZSSis1?=
- =?utf-8?B?aEVsT2VWNzNaWnY1OFY4S3hLU01OR2g4Y2tHUGFtL3RrUm9yS09ldG95NXpR?=
- =?utf-8?Q?ANnKZouMwtXbLQzgAChJzADdD?=
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 106e09d8-8858-4df5-c2d0-08dc635e3bd9
-X-MS-Exchange-CrossTenant-AuthSource: SJ2PR12MB8109.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Apr 2024 06:25:56.4427
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: P3CEJk7Vz8AbAfIOHE1Tf9eeHxOWPsizWHKKz4y9ocL322vqydlxiJWLCMFfL5bP
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR12MB7701
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+To: Luca Weiss <luca.weiss@fairphone.com>, neil.armstrong@linaro.org,
+ Bjorn Andersson <andersson@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Abhinav Kumar
+ <quic_abhinavk@quicinc.com>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
+ <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com>
+ <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org>
+ <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt>
+ <236a104c-fc16-4b3d-9a00-e16517c00e3a@linaro.org>
+ <D064242SMIVM.1GUC1I9GE9IGC@fairphone.com>
+ <963b60e5-6ab7-4d9f-885a-ba744c2b7991@linaro.org>
+ <D0C42YR1270X.23P9WCWWNB8XF@fairphone.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <D0C42YR1270X.23P9WCWWNB8XF@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240422_232605_309950_B53E5E43 
-X-CRM114-Status: UNSURE (   3.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240423_060407_236770_AED6293E 
+X-CRM114-Status: GOOD (  18.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -221,12 +110,101 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 4/22/24 20:58, Sean Anderson wrote:
-> Similarly to DisplayPort, nonzero PCIe lanes never achieve PLL lock [1].
+On 4/5/24 12:19, Luca Weiss wrote:
+> On Fri Apr 5, 2024 at 10:08 AM CEST, Neil Armstrong wrote:
+>> Hi Luca,
+>>
+>> On 29/03/2024 10:02, Luca Weiss wrote:
+>>> On Tue Mar 26, 2024 at 10:02 PM CET, Konrad Dybcio wrote:
+>>>> On 16.03.2024 5:01 PM, Bjorn Andersson wrote:
+>>>>> On Fri, Mar 15, 2024 at 06:35:15PM +0100, Neil Armstrong wrote:
+>>>>>> On 15/03/2024 18:19, Luca Weiss wrote:
+>>>>>>> On Thu Feb 29, 2024 at 2:07 PM CET, Neil Armstrong wrote:
+>>>>>>>> Register a typec mux in order to change the PHY mode on the Type-C
+>>>>>>>> mux events depending on the mode and the svid when in Altmode setup.
+>>>>>>>>
+>>>>>>>> The DisplayPort phy should be left enabled if is still powered on
+>>>>>>>> by the DRM DisplayPort controller, so bail out until the DisplayPort
+>>>>>>>> PHY is not powered off.
+>>>>>>>>
+>>>>>>>> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+>>>>>>>> will be set in between of USB-Only, Combo and DisplayPort Only so
+>>>>>>>> this will leave enough time to the DRM DisplayPort controller to
+>>>>>>>> turn of the DisplayPort PHY.
+>>>>>>>>
+>>>>>>>> The patchset also includes bindings changes and DT changes.
+>>>>>>>>
+>>>>>>>> This has been successfully tested on an SM8550 board, but the
+>>>>>>>> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+>>>>>>>> PD USB Hubs and PD Altmode Dongles to make sure the switch works
+>>>>>>>> as expected.
+>>>>>>>>
+>>>>>>>> The DisplayPort 4 lanes setup can be check with:
+>>>>>>>> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+>>>>>>>> 	name = msm_dp
+>>>>>>>> 	drm_dp_link
+>>>>>>>> 		rate = 540000
+>>>>>>>> 		num_lanes = 4
+>>>>>>>
+>>>>>>> Hi Neil,
+>>>>>>>
+>>>>>>> I tried this on QCM6490/SC7280 which should also support 4-lane DP but I
+>>>>>>> haven't had any success so far.
+>>>>>>>
+>>>>> [..]
+>>>>>>> [ 1775.563969] [drm:dp_ctrl_link_train] *ERROR* max v_level reached
+>>>>>>> [ 1775.564031] [drm:dp_ctrl_link_train] *ERROR* link training #1 failed. ret=-11
+>>>>>>
+>>>>>> Interesting #1 means the 4 lanes are not physically connected to the other side,
+>>>>>> perhaps QCM6490/SC7280 requires a specific way to enable the 4 lanes in the PHY,
+>>>>>> or some fixups in the init tables.
+>>>>>>
+>>>>>
+>>>>> I tested the same on rb3gen2 (qcs6490) a couple of weeks ago, with the
+>>>>> same outcome. Looking at the AUX reads, after switching to 4-lane the
+>>>>> link training is failing on all 4 lanes, in contrast to succeeding only
+>>>>> on the first 2 if you e.g. forget to mux the other two.
+>>>>>
+>>>>> As such, my expectation is that there's something wrong in the QMP PHY
+>>>>> (or possibly redriver) for this platform.
+>>>>
+>>>> Do we have any downstream tag where 4lane dp works? I'm willing to believe
+>>>> the PHY story..
+>>>
+>>> Just tested on Fairphone 5 downstream and 4 lane appears to work there.
+>>> This is with an USB-C to HDMI adapter that only does HDMI.
+>>>
+>>> FP5:/ # cat /sys/kernel/debug/drm_dp/dp_debug
+>>>           state=0x20a5
+>>>           link_rate=270000
+>>>           num_lanes=4
+>>>           resolution=2560x1440@60Hz
+>>>           pclock=241500KHz
+>>>           bpp=24
+>>>           test_req=DP_LINK_STATUS_UPDATED
+>>>           lane_count=4
+>>>           bw_code=10
+>>>           v_level=0
+>>>           p_level=0
+>>>
+>>> Sources are here:
+>>> https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-5.4/+/refs/heads/odm/rc/target/13/fp5
+>>> And probably more importantly techpack/display:
+>>> https://gerrit-public.fairphone.software/plugins/gitiles/platform/vendor/opensource/display-drivers/+/refs/heads/odm/rc/target/13/fp5
+>>> Dts if useful:
+>>> https://gerrit-public.fairphone.software/plugins/gitiles/kernel/msm-extra/devicetree/+/refs/heads/kernel/13/fp5
+>>
+>> Could you retry with this applied ?
+>>
+>> https://lore.kernel.org/all/20240405000111.1450598-1-swboyd@chromium.org/
+> 
+> Unfortunately I do not see any change with this on QCM6490 Fairphone 5
+> and 4-lane DP.
 
-What is this [1] for?
+Hm, could you like dump all the PHY regions up and downstream with the display
+connected (and nothing connected) and compare them?
 
-M
+Konrad
 
 -- 
 linux-phy mailing list
