@@ -4,85 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5019C4345F
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Apr 2024 17:46:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17F8CC4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Apr 2024 20:50:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60v6X/oY8ggY1AWxsMLUKgXB9XeAcMep9QvvANlvF1A=; b=BxUbQz3U9FGlY7
-	rg5kOWSAqHym3lQOQ6SSfngIgTKc3rxv1OJPankxaafbeWH4Man+Ij04qWbvFEpC9BPzHRK8T1oSq
-	tfcsv5dDEPGOM5PDyeFZgapG/ApXoRYnL/X7zVeqRoZntDwzf1SyPbvebgCGOYL69oduU4uXjGZKt
-	QDCeDr6t/FN9X8dYpUuqdtYBb/EPN+SrQKsqCL5+QgpCAanIhSRV3pzPiYEggNeVo2C1AM4WfxUUg
-	7B3b+HamerR03C6Fcp7qs3HR7/wHRKIEBEknjfQn3i8k1S59RPHu9N0FjHBXFheJ4XmY8xNVOt+yJ
-	sBTmDTqYLa2P/zpLihDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4EY7XtcTMHGWjfCwDR04RBOjar9S18JmOA0aGfttqH0=; b=cLCPc4RQO3cZe1
+	4lIWH/cbEjNyxY/1PE4OVUA4Ojd0lTV4q3OfYJWEHOfrNwdkGYtyv4+hwzYUDHlazWOTcvX66irPm
+	DSJSykwGTzAUAndsEBNxUNXHlwCxQ/KUn/xlTeGh9ZlE6GXu7p8ScNE6B5TyZ5wxSDhPyQxbgMsqH
+	rppHn0LYsuMvinb6erOaLy4/sMYxeURMChVk+5X7pvSKxxCf9KvXM946hKVoFVMhaZGUYFkOx3DBs
+	iARG1CA60a2rFRo3GMhKVtFfWvF71RLdW0qmUGo0YsxTBSGcLoXpHu3No5CxquMYR99HLO2vOTCve
+	MGiQuxPKyxoXGMBxQd/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzKDY-000000011Xl-2ELD;
-	Tue, 23 Apr 2024 17:46:08 +0000
-Received: from mail-oo1-xc33.google.com ([2607:f8b0:4864:20::c33])
+	id 1rzN5l-00000001Set-3Alk;
+	Tue, 23 Apr 2024 20:50:17 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzKDV-000000011Wk-0VK3
+	id 1rzN5h-00000001Scm-1Dv1
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Apr 2024 17:46:06 +0000
-Received: by mail-oo1-xc33.google.com with SMTP id 006d021491bc7-5af2d0a53f5so46792eaf.0
-        for <linux-phy@lists.infradead.org>; Tue, 23 Apr 2024 10:46:03 -0700 (PDT)
+	Tue, 23 Apr 2024 20:50:15 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-41af670185fso918315e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 23 Apr 2024 13:50:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1713894363; x=1714499163; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=o3mo6Mk3SX0kmzv/thEaB5W9SO6Cld9rTNEVyk3LNv4=;
-        b=ombU+8qb1fSvbLOaA3msLhE2vvFBJ1tdi6Ro9qElhxI6Lu7tM3QYL6OnsromCN9Yx8
-         l1sKKj12tmdT75Tc1fSUOLMGRe9aAsb7nvCFplVBzMqWheu1pzV4GoAi2nMr6nGPIyRm
-         e76wixkmHwfFyC38Hc5DtqWSXBb4QW9Ix8S4RsTI/USAgs+JCbH35pcpPwVol4VtYpg+
-         BbY2jF3gjiae4CrY9BZXkpFIQaiitjqtve3jEbt5j3Aed/i8HhnCEZxnhfJfti5VMXQS
-         JZk8Zl1gWeiCYQlSp5GdHihuNUWiqJKkqniQyE1NM98GVYtp7/pxd2Muq/7ftnLnMJq7
-         1XPw==
+        d=linaro.org; s=google; t=1713905411; x=1714510211; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=iDTk5oDvvrRdQcAB/F+kDJkRJSv6Emu0SrjcMhqOn4I=;
+        b=Lg1aKxl0bNKhOTpM7fj9ndtYkvCP0vFSzkJAu+nlQmRB1rJfDap4i4x6VYvokdYNmq
+         HVEQgGvc6bsfksiDoFCOaTliLECvd98aS+xxp9KnJJaFAlcLpQ9TmixxFbdAwxBF4fYb
+         dnRZSmtrJGsTOc0bYeMzHfa+fKtQhQ8yTmPGbTh5D3OanNd7mezPgF/7TAfLxLjByG7+
+         fn4WZA8n+lvLGYuldVbTc+V6Olxuhu+Jo/MhL6hc7vZKyXD+sbhDKC4zcyT0j0cOI3In
+         F2mCn8vmFECcHytd0b96d+FQXJ4CaHeq7h4fKV1nD/uVFTioFXwXdd4z/7kuIV/CmQ6O
+         bfbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1713894363; x=1714499163;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=o3mo6Mk3SX0kmzv/thEaB5W9SO6Cld9rTNEVyk3LNv4=;
-        b=M0uMDGVFw8P/hzZKfnYotlOnSBqPAObXhmBuVwXIh0ktRmYnPiDOnxT1rJFpH5m3ZS
-         ExkSflS1JzhDzN6lzkyiKT5xo4r9DewRE1Kil60HCoZWdppj/SyF1/p2wAo6osRsPfe7
-         5uGM0Q6YSjvaf4iXnoehLPfTruqbOzypb97d1Mf4FeDckTCF2xwIkiKR+w5u7BSTuyNv
-         5LtTThT5jYc7CsX2jGjyMVFLw+Uj9o7uejqDCzLdRJzqWCri3nz1qMZfPs6pAkDDwGd3
-         XCecludm26bcREQry+CBFm35bk6FNJ3Ez8FM6Ecahh6/fQihQ1cj5C+yjga4KPk8brUY
-         DYpA==
-X-Forwarded-Encrypted: i=1; AJvYcCWTYR8lR5gIcIFyUp+fycI9sBZe+rB4rRRAOKnV2ssF4X9xG5x+x/KRL6mjV0mRD3+bVyx9AkleaDuErRWDYib6B3ym8DwPPHBQ8IKg1g==
-X-Gm-Message-State: AOJu0YzBty38GT+5+TxLH3WAs88B9ebc25F0iS5o9FpdWt++hvsrlr8l
-	MoK5w8hceysEcTRuLMun4SZJvnQH30SVoOCoeO52fzZS6bi0UXtdS/Ig3x9Izh2Mx7OWqeGf721
-	wTK559spNuXVDc1v0msmN04g1jguyKZV5HqUE9g==
-X-Google-Smtp-Source: AGHT+IFjQt3mfbwBR44wWtiV52Fvs+JYmX+pN7lhEf2mhrvRbg8R0D5V2WdJQGT9SPtHiTXEX5fgYqJFaSu9KML7oR8=
-X-Received: by 2002:a4a:8554:0:b0:5aa:22f5:a908 with SMTP id
- l20-20020a4a8554000000b005aa22f5a908mr1685739ooh.1.1713894362907; Tue, 23 Apr
- 2024 10:46:02 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240404122559.898930-1-peter.griffin@linaro.org>
- <20240404122559.898930-9-peter.griffin@linaro.org> <6c2b060b3b32b2da46bafbdc33236c319b6cec62.camel@linaro.org>
-In-Reply-To: <6c2b060b3b32b2da46bafbdc33236c319b6cec62.camel@linaro.org>
+        d=1e100.net; s=20230601; t=1713905411; x=1714510211;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=iDTk5oDvvrRdQcAB/F+kDJkRJSv6Emu0SrjcMhqOn4I=;
+        b=mK9LRJxHxcWHXozEufvlzU77Jth8RHQLbYOCzeyfWoanKk6Stg3b89mTOprKD0xXLd
+         bE0aXMhELuwQh55FIpQg6Igeba+kdXIn2ZBYbEoqzlD8ErMRFs0mQHpR9vuIYa4//JuS
+         daed0ag7OoeQfjcldLGuxFLpjoIIJk5cc9FPGE70PecITM4bsV5iLdObY3AtOTR+fdZ0
+         XOIYw8EQIAI6BxyXHbuFGevM5vp27z4FIkizb5lB1+28p8Z867EGU+US5kdNKQxZaa0n
+         FpFRa4CYFeqLDUWRKlZfY07U8sxSSRDxngXF8OnvQOdGasRk4plKvPvujzkq6JbekRNA
+         nz4Q==
+X-Forwarded-Encrypted: i=1; AJvYcCUYEHCypdF1xcgLmm3MnVhG6gA6o+UudvtG30MxMtQlh67ahIan3C5joDKfgBZ0WRLHoPeWoT6znpHu5gXsS0kYixeSp+Rye/I3yFa6Rw==
+X-Gm-Message-State: AOJu0YzWUNhK73nZF93y0sWpQwFBT9UgG0uqsf3D1b1CYeKafM6HeA5u
+	Ig3Ec1FcX/JAk+N5PHP42LUrlBVeGHZmoNpug7Bi6ZDmihJvVW4GcWdSz4K0AYw=
+X-Google-Smtp-Source: AGHT+IH9twwrV4GDTD98S7Dg0JzPI6O8DIUuVeYEzvAw6xtx7WWc6EfOFfwcn0BmyTCvX/h+qFPVTQ==
+X-Received: by 2002:a05:600c:4f89:b0:41a:408b:dbd4 with SMTP id n9-20020a05600c4f8900b0041a408bdbd4mr257314wmq.7.1713905411055;
+        Tue, 23 Apr 2024 13:50:11 -0700 (PDT)
+Received: from gpeter-l.lan ([2a0d:3344:2e8:8510:4269:2542:5a09:9ca1])
+        by smtp.gmail.com with ESMTPSA id bg5-20020a05600c3c8500b00419f419236fsm13065443wmb.41.2024.04.23.13.50.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 23 Apr 2024 13:50:10 -0700 (PDT)
 From: Peter Griffin <peter.griffin@linaro.org>
-Date: Tue, 23 Apr 2024 18:45:50 +0100
-Message-ID: <CADrjBPrNqJ6FNKZTgVxST1en-hRdyZFmJe42uwerSnDSmgifbg@mail.gmail.com>
-Subject: Re: [PATCH 08/17] clk: samsung: gs101: add support for cmu_hsi2
-To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
-Cc: mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
-	alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org, 
-	s.nawrocki@samsung.com, cw00.choi@samsung.com, jejb@linux.ibm.com, 
-	martin.petersen@oracle.com, chanho61.park@samsung.com, ebiggers@kernel.org, 
-	linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-clk@vger.kernel.org, 
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org, 
-	saravanak@google.com, willmcvicker@google.com
+To: mturquette@baylibre.com,
+	sboyd@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	alim.akhtar@samsung.com,
+	avri.altman@wdc.com,
+	bvanassche@acm.org,
+	s.nawrocki@samsung.com,
+	cw00.choi@samsung.com,
+	jejb@linux.ibm.com,
+	martin.petersen@oracle.com,
+	James.Bottomley@HansenPartnership.com,
+	ebiggers@kernel.org
+Cc: linux-scsi@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-clk@vger.kernel.org,
+	linux-samsung-soc@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	tudor.ambarus@linaro.org,
+	andre.draszik@linaro.org,
+	saravanak@google.com,
+	willmcvicker@google.com,
+	Peter Griffin <peter.griffin@linaro.org>
+Subject: [PATCH v2 00/14] HSI2, UFS & UFS phy support for Tensor GS101
+Date: Tue, 23 Apr 2024 21:49:52 +0100
+Message-ID: <20240423205006.1785138-1-peter.griffin@linaro.org>
+X-Mailer: git-send-email 2.44.0.769.g3c40516874-goog
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240423_104605_317565_0C1F3220 
-X-CRM114-Status: GOOD (  30.04  )
+X-CRM114-CacheID: sfid-20240423_135013_386422_AFD0BA07 
+X-CRM114-Status: GOOD (  14.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,123 +110,103 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQW5kcsOpLAoKT24gTW9uLCA4IEFwciAyMDI0IGF0IDE1OjQ5LCBBbmRyw6kgRHJhc3ppayA8
-YW5kcmUuZHJhc3ppa0BsaW5hcm8ub3JnPiB3cm90ZToKPgo+IEhpIFBldGUsCj4KPiBPbiBUaHUs
-IDIwMjQtMDQtMDQgYXQgMTM6MjUgKzAxMDAsIFBldGVyIEdyaWZmaW4gd3JvdGU6Cj4gPiBDTVVf
-SFNJMiBpcyB0aGUgY2xvY2sgbWFuYWdlbWVudCB1bml0IHVzZWQgZm9yIHRoZSBoc2kyIGJsb2Nr
-Lgo+ID4gSFNJIHN0YW5kcyBmb3IgSGlnaCBTcGVlZCBJbnRlcmZhY2UgYW5kIGFzIHN1Y2ggaXQg
-Z2VuZXJhdGVzCj4gPiBjbG9ja3MgZm9yIFBDSWUsIFVGUyBhbmQgTU1DIGNhcmQuCj4gPgo+ID4g
-VGhpcyBwYXRjaCBhZGRzIHN1cHBvcnQgZm9yIHRoZSBtdXhlcywgZGl2aWRlcnMsIGFuZCBnYXRl
-cyBpbgo+ID4gY211X2hzaTIuCj4gPgo+ID4gQ0xLX0dPVVRfSFNJMl9IU0kyX0NNVV9IU0kyX1BD
-TEsgaXMgbWFya2VkIGFzIENMS19JU19DUklUSUNBTAo+ID4gYXMgZGlzYWJsaW5nIGl0IGxlYWRz
-IHRvIGFuIGltbWVkaWF0ZSBzeXN0ZW0gaGFuZy4KPiA+Cj4gPiBDTEtfR09VVF9IU0kyX1NZU1JF
-R19IU0kyX1BDTEsgaXMgYWxzbyBtYXJrZWQgQ0xLX0lTX0NSSVRJQ0FMLgo+ID4gQSBoYW5nIGlz
-IG5vdCBvYnNlcnZlZCB3aXRoIGZpbmUgZ3JhaW5lZCBjbG9jayBjb250cm9sLCBidXQKPiA+IFVG
-UyBJUCBkb2VzIG5vdCBmdW5jdGlvbiB3aXRoIHN5c2NvbiBjb250cm9sbGluZyB0aGlzIGNsb2Nr
-Cj4gPiBqdXN0IGFyb3VuZCBoc2kyX3N5c3JlZyByZWdpc3RlciBhY2Nlc3Nlcy4KPgo+IFdvdWxk
-IGl0IG1ha2Ugc2Vuc2UgdG8gYWRkIHRoaXMgY2xvY2sgdG8gdGhlICZ1ZnNfMCBub2RlIGluIHRo
-ZSBEVFMKPiBpbnN0ZWFkPyBTZWVtcyBtb3JlIG5hdHVyYWwgdGhhbiBhIGNsb2NrIHRoYXQncyBj
-b25zdGFudGx5IGVuYWJsZWQ/CgpXaWxsIGFkZCB0aGlzIHRvIHVmcyBub2RlIGluIHYyLgoKPgo+
-ID4gWy4uLl0KPiA+Cj4gPiBVcGRhdGVkIHJlZ2V4IGZvciBjbG9jayBuYW1lIG1hbmdsaW5nCj4g
-PiAgICAgc2VkIFwKPiA+ICAgICAgICAgLWUgJ3N8XlBMTF9MT0NLVElNRV9QTExfXChbXl9dXCtc
-KXxmb3V0X1xMXDFfcGxsfCcgXAo+ID4gICAgICAgICBcCj4gPiAgICAgICAgIC1lICdzfF5QTExf
-Q09OMF9NVVhfQ0xLQ01VX1woW15fXVwrXClfXCguKlwpfG1vdXRfXExcMV9cMnwnIFwKPiA+ICAg
-ICAgICAgLWUgJ3N8XlBMTF9DT04wX1BMTF9cKC4qXCl8bW91dF9wbGxfXExcMXwnIFwKPiA+ICAg
-ICAgICAgLWUgJ3N8XkNMS19DT05fTVVYX01VWF9DTEtfXCguKlwpfG1vdXRfXExcMXwnIFwKPiA+
-ICAgICAgICAgLWUgJy9eUExMX0NPTlsxLTRdX1teX11cK18vZCcgXAo+ID4gICAgICAgICAtZSAn
-L15bXl9dXCtfQ01VX1teX11cK19DT05UUk9MTEVSX09QVElPTi9kJyBcCj4gPiAgICAgICAgIC1l
-ICcvXkNMS09VVF9DT05fQkxLX1teX11cK19DTVVfW15fXVwrX0NMS09VVDAvZCcgXAo+ID4gICAg
-ICAgICBcCj4gPiAgICAgICAgIC1lICdzfF9JUENMS1BPUlR8fCcgXAo+ID4gICAgICAgICAtZSAn
-c3xfUlNUTlNZTkN8fCcgXAo+ID4gICAgICAgICAtZSAnc3xfRzRYMl9EV0NfUENJRV9DVEx8fCcg
-XAo+ID4gICAgICAgICAtZSAnc3xfRzRYMV9EV0NfUENJRV9DVEx8fCcgXAo+ID4gICAgICAgICAt
-ZSAnc3xfUENJRV9TVUJfQ1RSTHx8JyBcCj4gPiAgICAgICAgIC1lICdzfF9JTlNUXzB8fGcnIFwK
-PiA+ICAgICAgICAgLWUgJ3N8X0xOMDVMUEV8fCcgXAo+ID4gICAgICAgICAtZSAnc3xfVE1fV1JB
-UFBFUnx8JyBcCj4gPiAgICAgICAgIC1lICdzfF9TRnx8JyBcCj4gPiAgICAgICAgIFwKPiA+ICAg
-ICAgICAgLWUgJ3N8XkNMS19DT05fRElWX0RJVl9DTEtfXChbXl9dXCtcKV9cKC4qXCl8ZG91dF9c
-TFwxX1wyfCcgXAo+ID4gICAgICAgICBcCj4gPiAgICAgICAgIC1lICdzfF5DTEtfQ09OX0JVRl9D
-TEtCVUZfXChbXl9dXCtcKV9cKC4qXCl8Z291dF9cTFwxX1wyfCcgXAo+ID4gICAgICAgICAtZSAn
-c3xeQ0xLX0NPTl9HQVRfQ0xLX0JMS19cKFteX11cK1wpX1VJRF9cKC4qXCl8Z291dF9cTFwxX1wy
-fCcgXAo+ID4gICAgICAgICAtZSAnc3xeZ291dF9bXl9dXCtfW15fXVwrX2NtdV9cKFteX11cK1wp
-X3BjbGskfGdvdXRfXDFfXDFfcGNsa3wnIFwKPiA+ICAgICAgICAgLWUgJ3N8XkNMS19DT05fR0FU
-X0dPVVRfQkxLX1woW15fXVwrXClfVUlEX1woLipcKXxnb3V0X1xMXDFfXDJ8JyBcCj4gPiAgICAg
-ICAgIC1lICdzfF5DTEtfQ09OX0dBVF9DTEtfXChbXl9dXCtcKV9cKC4qXCl8Z291dF9cTFwxX2Ns
-a19cTFwxX1wyfCcgXAo+ID4gICAgICAgICBcCj4gPiAgICAgICAgIC1lICcvXlwoRE1ZUUNIXHxQ
-Q0hcfFFDSFx8UVVFVUVcKV8vZCcKPgo+IFRoYW5rIHlvdSBmb3IgdGhlIHVwZGF0ZWQgcmVnZXgu
-Cj4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvY2xrL3NhbXN1bmcvY2xrLWdzMTAxLmMgICAgICAgICAg
-fCA1NTggKysrKysrKysrKysrKysrKysrKysrKysKPiA+ICBpbmNsdWRlL2R0LWJpbmRpbmdzL2Ns
-b2NrL2dvb2dsZSxnczEwMS5oIHwgIDYzICsrKwo+ID4gIDIgZmlsZXMgY2hhbmdlZCwgNjIxIGlu
-c2VydGlvbnMoKykKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jbGsvc2Ftc3VuZy9jbGst
-Z3MxMDEuYyBiL2RyaXZlcnMvY2xrL3NhbXN1bmcvY2xrLWdzMTAxLmMKPiA+IGluZGV4IGQwNjVl
-MzQzYTg1ZC4uYjlmODRjN2Q1YzIyIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9jbGsvc2Ftc3Vu
-Zy9jbGstZ3MxMDEuYwo+ID4gKysrIGIvZHJpdmVycy9jbGsvc2Ftc3VuZy9jbGstZ3MxMDEuYwo+
-ID4gQEAgLTIyLDYgKzIyLDcgQEAKPiA+ICAjZGVmaW5lIENMS1NfTlJfTUlTQyAoQ0xLX0dPVVRf
-TUlTQ19YSVVfRF9NSVNDX0FDTEsgKyAxKQo+ID4gICNkZWZpbmUgQ0xLU19OUl9QRVJJQzAgICAg
-ICAgKENMS19HT1VUX1BFUklDMF9TWVNSRUdfUEVSSUMwX1BDTEsgKyAxKQo+ID4gICNkZWZpbmUg
-Q0xLU19OUl9QRVJJQzEgICAgICAgKENMS19HT1VUX1BFUklDMV9TWVNSRUdfUEVSSUMxX1BDTEsg
-KyAxKQo+ID4gKyNkZWZpbmUgQ0xLU19OUl9IU0kyIChDTEtfR09VVF9IU0kyX1hJVV9QX0hTSTJf
-QUNMSyArIDEpCj4gPgo+ID4gIC8qIC0tLS0gQ01VX1RPUCAtLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCj4gPgo+ID4gQEAgLTM0
-MDksNiArMzQxMCw1NjAgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBzYW1zdW5nX2NtdV9pbmZvIHBl
-cmljMV9jbXVfaW5mbyBfX2luaXRjb25zdCA9IHsKPiA+ICAgICAgIC5jbGtfbmFtZSAgICAgICAg
-ICAgICAgID0gImJ1cyIsCj4gPiAgfTsKPiA+Cj4gPiArLyogLS0tLSBDTVVfSFNJMiAtLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCj4K
-PiBUaGlzIGNvbW1lbnQgaXMgc2hvcnRlciB0aGF0IGFsbCB0aGUgb3RoZXIgc2ltaWxhciBjb21t
-ZW50cyBpbiB0aGlzIGZpbGUuCgpXaWxsIGZpeAo+Cj4gPiBbLi4uXQo+ID4gKwo+ID4gK1BOQU1F
-KG1vdXRfaHNpMl9idXNfdXNlcl9wKSAgPSB7ICJvc2NjbGsiLCAiZG91dF9jbXVfaHNpMl9idXMi
-IH07Cj4gPiArUE5BTUUobW91dF9oc2kyX3BjaWVfdXNlcl9wKSA9IHsgIm9zY2NsayIsICJkb3V0
-X2NtdV9oc2kyX3BjaWUiIH07Cj4gPiArUE5BTUUobW91dF9oc2kyX3Vmc19lbWJkX3VzZXJfcCkg
-PSB7ICJvc2NjbGsiLCAiZG91dF9jbXVfaHNpMl91ZnNfZW1iZCIgfTsKPiA+ICtQTkFNRShtb3V0
-X2hzaTJfbW1jX2NhcmRfdXNlcl9wKSA9IHsgIm9zY2NsayIsICJkb3V0X2NtdV9oc2kyX21tY19j
-YXJkIiB9Owo+Cj4gQ2FuIHlvdSBtYWtlIHRoZXNlIGFscGhhYmV0aWNhbCwgdG9vLCBwbGVhc2Us
-IHdoaWNoIHdvdWxkIGFsc28gbWF0Y2ggdGhlaXIgdXNhZ2UKPiBiZWxvdzoKCldpbGwgZml4Cj4K
-PiA+ICsKPiA+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHNhbXN1bmdfbXV4X2Nsb2NrIGhzaTJfbXV4
-X2Nsa3NbXSBfX2luaXRjb25zdCA9IHsKPiA+ICsgICAgIE1VWChDTEtfTU9VVF9IU0kyX0JVU19V
-U0VSLCAibW91dF9oc2kyX2J1c191c2VyIiwgbW91dF9oc2kyX2J1c191c2VyX3AsCj4gPiArICAg
-ICAgICAgUExMX0NPTjBfTVVYX0NMS0NNVV9IU0kyX0JVU19VU0VSLCA0LCAxKSwKPiA+ICsgICAg
-IE1VWChDTEtfTU9VVF9IU0kyX01NQ19DQVJEX1VTRVIsICJtb3V0X2hzaTJfbW1jX2NhcmRfdXNl
-ciIsCj4gPiArICAgICAgICAgbW91dF9oc2kyX21tY19jYXJkX3VzZXJfcCwgUExMX0NPTjBfTVVY
-X0NMS0NNVV9IU0kyX01NQ19DQVJEX1VTRVIsCj4gPiArICAgICAgICAgNCwgMSksCj4gPiArICAg
-ICBNVVgoQ0xLX01PVVRfSFNJMl9QQ0lFX1VTRVIsICJtb3V0X2hzaTJfcGNpZV91c2VyIiwKPiA+
-ICsgICAgICAgICBtb3V0X2hzaTJfcGNpZV91c2VyX3AsIFBMTF9DT04wX01VWF9DTEtDTVVfSFNJ
-Ml9QQ0lFX1VTRVIsCj4gPiArICAgICAgICAgNCwgMSksCj4gPiArICAgICBNVVgoQ0xLX01PVVRf
-SFNJMl9VRlNfRU1CRF9VU0VSLCAibW91dF9oc2kyX3Vmc19lbWJkX3VzZXIiLAo+ID4gKyAgICAg
-ICAgIG1vdXRfaHNpMl91ZnNfZW1iZF91c2VyX3AsIFBMTF9DT04wX01VWF9DTEtDTVVfSFNJMl9V
-RlNfRU1CRF9VU0VSLAo+ID4gKyAgICAgICAgIDQsIDEpLAo+ID4gK307Cj4gPiArCj4gPiArc3Rh
-dGljIGNvbnN0IHN0cnVjdCBzYW1zdW5nX2dhdGVfY2xvY2sgaHNpMl9nYXRlX2Nsa3NbXSBfX2lu
-aXRjb25zdCA9IHsKPiA+ICsKPgo+IEhlcmUgYW5kIGJlbG93OiBhbGwgdGhlc2UgZXh0cmEgZW1w
-dHkgbGluZXMgYXJlIG5vdCBuZWVkZWQuCgpXaWxsIGZpeAo+Cj4gPiArICAgICBHQVRFKENMS19H
-T1VUX0hTSTJfUENJRV9HRU40XzFfUENJRV8wMDNfUEhZX1JFRkNMS19JTiwKPiA+ICsgICAgICAg
-ICAgImdvdXRfaHNpMl9wY2llX2dlbjRfMV9wY2llXzAwM19waHlfcmVmY2xrX2luIiwKPiA+ICsg
-ICAgICAgICAgIm1vdXRfaHNpMl9wY2llX3VzZXIiLAo+ID4gKyAgICAgICAgICBDTEtfQ09OX0dB
-VF9DTEtfQkxLX0hTSTJfVUlEX1BDSUVfR0VONF8xX0lQQ0xLUE9SVF9QQ0lFXzAwM19QQ0lFX1NV
-Ql9DVFJMX0lOU1RfMF9QSFlfUkVGQ0xLX0lOLAo+ID4gKyAgICAgICAgICAyMSwgMCwgMCksCj4g
-PiArCj4gPiArICAgICBHQVRFKENMS19HT1VUX0hTSTJfUENJRV9HRU40XzFfUENJRV8wMDRfUEhZ
-X1JFRkNMS19JTiwKPiA+ICsgICAgICAgICAgImdvdXRfaHNpMl9wY2llX2dlbjRfMV9wY2llXzAw
-NF9waHlfcmVmY2xrX2luIiwKPiA+ICsgICAgICAgICAgIm1vdXRfaHNpMl9wY2llX3VzZXIiLAo+
-ID4gKyAgICAgICAgICBDTEtfQ09OX0dBVF9DTEtfQkxLX0hTSTJfVUlEX1BDSUVfR0VONF8xX0lQ
-Q0xLUE9SVF9QQ0lFXzAwNF9QQ0lFX1NVQl9DVFJMX0lOU1RfMF9QSFlfUkVGQ0xLX0lOLAo+ID4g
-KyAgICAgICAgICAyMSwgMCwgMCksCj4gPiArCj4gPiArICAgICBHQVRFKENMS19HT1VUX0hTSTJf
-U1NNVF9QQ0lFX0lBX0dFTjRBXzFfQUNMSywKPiA+ICsgICAgICAgICAgImdvdXRfaHNpMl9zc210
-X3BjaWVfaWFfZ2VuNGFfMV9hY2xrIiwKPiA+ICsgICAgICAgICAgIm1vdXRfaHNpMl9idXNfdXNl
-ciIsCj4KPiBUaGUgdHdvIHN0cmluZ3MgZml0IG9uIHRoZSBzYW1lIGxpbmUuCgpXaWxsIGZpeAo+
-Cj4gPiArICAgICAgICAgIENMS19DT05fR0FUX0NMS19CTEtfSFNJMl9VSURfU1NNVF9QQ0lFX0lB
-X0dFTjRBXzFfSVBDTEtQT1JUX0FDTEssCj4gPiArICAgICAgICAgIDIxLCAwLCAwKSwKPiA+ICsK
-PiA+ICsgICAgIEdBVEUoQ0xLX0dPVVRfSFNJMl9TU01UX1BDSUVfSUFfR0VONEFfMV9QQ0xLLAo+
-ID4gKyAgICAgICAgICAiZ291dF9oc2kyX3NzbXRfcGNpZV9pYV9nZW40YV8xX3BjbGsiLAo+ID4g
-KyAgICAgICAgICAibW91dF9oc2kyX2J1c191c2VyIiwKPgo+IGRpdG8uCgpXaWxsIGZpeAoKcmVn
-YXJkcywKClBldGVyCgoKPgo+ID4gWy4uLl0KPiA+ICsgICAgIC8qIERpc2FibGluZyB0aGlzIGNs
-b2NrIG1ha2VzIHRoZSBzeXN0ZW0gaGFuZy4gTWFyayB0aGUgY2xvY2sgYXMgY3JpdGljYWwuICov
-Cj4gPiArICAgICBHQVRFKENMS19HT1VUX0hTSTJfSFNJMl9DTVVfSFNJMl9QQ0xLLAo+ID4gKyAg
-ICAgICAgICAiZ291dF9oc2kyX2hzaTJfY211X2hzaTJfcGNsayIsICJtb3V0X2hzaTJfYnVzX3Vz
-ZXIiLAo+ID4gKyAgICAgICAgICBDTEtfQ09OX0dBVF9HT1VUX0JMS19IU0kyX1VJRF9IU0kyX0NN
-VV9IU0kyX0lQQ0xLUE9SVF9QQ0xLLAo+ID4gKyAgICAgICAgICAyMSwgQ0xLX0lTX0NSSVRJQ0FM
-LCAwKSwKPgo+IEkgaGF2ZSBhIHNpbWlsYXIgY2xvY2sgaW4gVVNCLCB3aGljaCBhbHNvIGNhdXNl
-cyBhIGhhbmcgaWYgb2ZmLCBJIHdvbmRlciB3aGF0IHdlCj4gY291bGQgZG8gYmV0dGVyIGhlcmUu
-Cj4KPgo+IENoZWVycywKPiBBbmRyZScKPgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
-dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi James, Martin, Alim, Bart, Krzysztof, Vinod, all
+
+Firstly, many thanks to everyone who reviewed and tested v1.
+
+This series adds support for the High Speed Interface (HSI) 2 clock
+management unit, UFS controller and UFS phy calibration/tuning for GS101
+found in Pixel 6.
+
+With this series applied, UFS is now functional on gs101. The SKhynix
+HN8T05BZGKX015 can be enumerated, partitions mounted etc. This allows us to
+move away from the initramfs rootfs we have been using for development so far.
+
+Merge Strategy
+1) UFS driver/bindings via UFS/SCSI tree (James / Martin / Alim)
+2) GS101 DTS/DTSI should go via Krzysztofs Exynos SoC tree
+3) Clock driver/bindings via Clock tree (Krzysztof / Stephen)
+4) PHY driver/bindings via PHY tree (Vinod)
+
+The v2 series has been rebased on next-20240422, as such all the phy parts
+which were already queued by Vinod have been dropped. Two new phy patches
+are added to address review feedback received after the patches were queued.
+
+The series is broadly split into the following parts:
+1) dt-bindings documentation updates
+2) gs101/oriole dts & dtsi updates
+3) Prepatory patches for ufs-exynos driver
+4) GS101 ufs-exynos support
+5) gs101 phy fixes
+
+As well as the v1 review feedback some additional cmu_hsi2 clocks were marked
+as CLK_IGNORE_UNUSED in v2 so that all other remaining clocks in cmu_hsi2 can
+be disabled and UFS will still be functional.
+
+The sysreg clock was also moved from CLK_IS_CRITICAL in clk-gs101 to ufs node,
+as the system is still functional with that clock disabled, however fine grained
+clocking just around sysreg register accesses doesn't result in functional UFS.
+
+kind regards,
+
+Peter
+
+Changes since v1:
+ - collect up tags
+ - google,gs101-clock: alphabetical ordering (Andre)
+ - re-order samsung,exynos-ufs.yaml as per Krzysztof review
+ - Ensure google,gs101.h dt-bindings is contained with bindings patch (Andre / Krzysztof)
+ - fix google,gs101-hsi2-sysreg size (0x10000 not 0x1000) (Andre)
+ - drop blank lines in clk-gs101 (Andre)
+ - cmu-hsi2 alphabetical ordering (Andre / Krzysztof)
+ - use GPIO defines in DT and add TODO pmic comment (Krzysztof)
+ - Add sysreg clock to ufs node (Andre)
+ - Mark additional cmu_hsi2 clocks with CLK_IGNORE_UNUSED flag (Peter)
+
+lore v1: https://lore.kernel.org/linux-clk/20240404122559.898930-1-peter.griffin@linaro.org/
+
+Peter Griffin (14):
+  dt-bindings: clock: google,gs101-clock:  add HSI2 clock management
+    unit
+  dt-bindings: soc: google: exynos-sysreg: add dedicated hsi2 sysreg
+    compatible
+  dt-bindings: ufs: exynos-ufs: Add gs101 compatible
+  arm64: dts: exynos: gs101: enable cmu-hsi2 clock controller
+  arm64: dts: exynos: gs101: Add the hsi2 sysreg node
+  arm64: dts: exynos: gs101: Add ufs, ufs-phy and ufs regulator dt nodes
+  clk: samsung: gs101: add support for cmu_hsi2
+  scsi: ufs: host: ufs-exynos: Add EXYNOS_UFS_OPT_UFSPR_SECURE option
+  scsi: ufs: host: ufs-exynos: add EXYNOS_UFS_OPT_TIMER_TICK_SELECT
+    option
+  scsi: ufs: host: ufs-exynos: allow max frequencies up to 267Mhz
+  scsi: ufs: host: ufs-exynos: add some pa_dbg_ register offsets into
+    drvdata
+  scsi: ufs: host: ufs-exynos: Add support for Tensor gs101 SoC
+  phy: samsung-ufs: ufs: remove superfluous mfd/syscon.h header
+  phy: samsung-ufs: ufs: exit on first reported error
+
+ .../bindings/clock/google,gs101-clock.yaml    |  30 +-
+ .../soc/samsung/samsung,exynos-sysreg.yaml    |   2 +
+ .../bindings/ufs/samsung,exynos-ufs.yaml      |  38 +-
+ .../boot/dts/exynos/google/gs101-oriole.dts   |  18 +
+ arch/arm64/boot/dts/exynos/google/gs101.dtsi  |  54 ++
+ drivers/clk/samsung/clk-gs101.c               | 508 +++++++++++++++++-
+ drivers/phy/samsung/phy-samsung-ufs.c         |  11 +-
+ drivers/ufs/host/ufs-exynos.c                 | 197 ++++++-
+ drivers/ufs/host/ufs-exynos.h                 |  24 +-
+ include/dt-bindings/clock/google,gs101.h      |  63 +++
+ 10 files changed, 921 insertions(+), 24 deletions(-)
+
+-- 
+2.44.0.769.g3c40516874-goog
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
