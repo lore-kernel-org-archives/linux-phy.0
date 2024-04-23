@@ -4,43 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 329DCC04FFE
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Apr 2024 15:02:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC1CCC4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Apr 2024 15:03:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hrURCdcfAtsSlKsbqxyEYP2UAPL6SHcgN+f7Nf/gShQ=; b=humj0xKRgieq+v
-	8rNFqDg0Nctt6jG+PimJpdMnjLmumVt/7StHS3cdOvnhSKyDeYGK9qZQ2G50MqnjDPtnou4n0gpLW
-	1r68hVJzVOGUdTCdGmds7CAPVol3ODC9D/Y5PM5fXqovyB9bdvxoAX/Ub4rBbAqiO3dYJPZImWfPc
-	6vYOj3HGTEFIINvg4xjE0j11zmPbeZ8n0K8d5dlva9xgNOhxheHypKq/HKl55PmMEQv9kEzB/hZ2z
-	uGR7TmMncI2EYyHr3Tk5uP2lcXl5DaYbanC/72R+cIFUZMOXBPLJpOHvzQZQsPqSzd2KhnC3MXvUS
-	kS8VsFYF1Kc/2EyGd7HA==;
+	List-Owner; bh=QA8j/zeYZRWjtnuWx9/2BymSvDQd9TTQljivOXElj+A=; b=2fLwFiuec69XaI
+	moelrrDtHb5zY8+rOT0uYcrjHEl0qLk2gzrkqUoLfDnt/ALmRoqJZspb4A2bAJk0d/7yGB4QAFo0S
+	Wf1RvETT+Gl/c4XDZ8sxUg77bK/1JJYOUVUxqX/3XXeCQn81VWWatPg5UmdB2IPa3FvKiAsHh5zzK
+	hsK4N1z+SsKj6DEhtIOvW//DsSQabaxOpGOk1k984xuXt9UTy2BCKti1JZWRflOpGJ9OkaiQvhq8m
+	ABBXnQ4/kxQmKrQ46f5qwDAqoNTPg7CwTjc6WaD/IoICEZ0WnReNfkG215j9Ym348CvaVezmYrY4M
+	kAPY1aduK0C8tfnIDFPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzHfD-00000000Pbd-3Xxx;
-	Tue, 23 Apr 2024 15:02:31 +0000
-Received: from out-189.mta1.migadu.com ([95.215.58.189])
+	id 1rzHgO-00000000Q44-1kFk;
+	Tue, 23 Apr 2024 15:03:44 +0000
+Received: from out-185.mta1.migadu.com ([95.215.58.185])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzHf7-00000000PYM-1VK3
+	id 1rzHgC-00000000PyP-3jr6
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Apr 2024 15:02:30 +0000
-Message-ID: <0a57a33b-62da-4a8c-9f07-52c45cd5c57e@linux.dev>
+	Tue, 23 Apr 2024 15:03:38 +0000
+Message-ID: <96585fad-4d37-4020-a154-359ccf377906@linux.dev>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1713884534;
+	t=1713884609;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=cfLXIY2uxd/VaQ2Mp5L3agAzyFn2+FCGqgmlpStEFOE=;
-	b=q4orp9oUX63kYjDKd43Nimw7ARdfZdwm++K/ltqZggJ2W1rV7ycHuiRTsAmLrws4efzPC9
-	P71yNq3bdfWYhkW0mSMHg95duJzrF3J3bqPrOFpkQIS7i+QLxg52o+4QNJLyRYhAeG3cRe
-	JvL96Yk8BUzaz8uKCt5IETki3iRp2Jg=
-Date: Tue, 23 Apr 2024 11:02:11 -0400
+	bh=7TANHM5N3v2iElR/Xv0zvD1tTgG0PGeTr9gPXr/7U7k=;
+	b=D6lHXWPQtgSvtHtv6p8phCCUjAPyRK7KFinWitycRCImX1LiSUPsEVl+6tIm2Y+txjyslX
+	rSsGocLwVJsd0GMto2InAoqKZGQeWBxQx7LaCTxc/1n2vLCC0Mw+r3CXbc/GgdusLsArqa
+	OS4qfKrLWmKOUV5RRa/GpLjo+jsOjxI=
+Date: Tue, 23 Apr 2024 11:03:26 -0400
 MIME-Version: 1.0
-Subject: Re: [PATCH 1/3] phy: zynqmp: Store instance instead of type
+Subject: Re: [PATCH 2/3] phy: zynqmp: Don't wait for PLL lock on nonzero PCIe
+ lanes
 To: Michal Simek <michal.simek@amd.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  linux-phy@lists.infradead.org
@@ -48,16 +49,17 @@ Cc: Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Kishon Vijay Abraham I <kishon@kernel.org>
 References: <20240422185803.3575319-1-sean.anderson@linux.dev>
- <20240422185803.3575319-2-sean.anderson@linux.dev>
- <702f0ca6-7edb-4328-92e8-1853ba010910@amd.com>
+ <20240422185803.3575319-3-sean.anderson@linux.dev>
+ <691e50b7-1c1a-478a-815b-fb2a6bfdae8f@amd.com>
 Content-Language: en-US
 X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
 From: Sean Anderson <sean.anderson@linux.dev>
-In-Reply-To: <702f0ca6-7edb-4328-92e8-1853ba010910@amd.com>
+In-Reply-To: <691e50b7-1c1a-478a-815b-fb2a6bfdae8f@amd.com>
 X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240423_080225_599191_E8753F7F 
-X-CRM114-Status: GOOD (  19.06  )
+X-CRM114-CacheID: sfid-20240423_080333_699468_43C2B651 
+X-CRM114-Status: UNSURE (   5.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,201 +80,12 @@ On 4/23/24 02:25, Michal Simek wrote:
 > 
 > 
 > On 4/22/24 20:58, Sean Anderson wrote:
->> The phy "type" is just the combination of protocol and instance, and is
->> never used apart from that. Store the instance directly, instead of
->> converting to a type first. No functional change intended.
->>
->> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
->> ---
->>
->>   drivers/phy/xilinx/phy-zynqmp.c | 107 +++++++-------------------------
->>   1 file changed, 24 insertions(+), 83 deletions(-)
->>
->> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
->> index f72c5257d712..b507ed4c3053 100644
->> --- a/drivers/phy/xilinx/phy-zynqmp.c
->> +++ b/drivers/phy/xilinx/phy-zynqmp.c
->> @@ -146,22 +146,6 @@
->>   /* Total number of controllers */
->>   #define CONTROLLERS_PER_LANE        5
->>   -/* Protocol Type parameters */
->> -#define XPSGTR_TYPE_USB0        0  /* USB controller 0 */
->> -#define XPSGTR_TYPE_USB1        1  /* USB controller 1 */
->> -#define XPSGTR_TYPE_SATA_0        2  /* SATA controller lane 0 */
->> -#define XPSGTR_TYPE_SATA_1        3  /* SATA controller lane 1 */
->> -#define XPSGTR_TYPE_PCIE_0        4  /* PCIe controller lane 0 */
->> -#define XPSGTR_TYPE_PCIE_1        5  /* PCIe controller lane 1 */
->> -#define XPSGTR_TYPE_PCIE_2        6  /* PCIe controller lane 2 */
->> -#define XPSGTR_TYPE_PCIE_3        7  /* PCIe controller lane 3 */
->> -#define XPSGTR_TYPE_DP_0        8  /* Display Port controller lane 0 */
->> -#define XPSGTR_TYPE_DP_1        9  /* Display Port controller lane 1 */
->> -#define XPSGTR_TYPE_SGMII0        10 /* Ethernet SGMII controller 0 */
->> -#define XPSGTR_TYPE_SGMII1        11 /* Ethernet SGMII controller 1 */
->> -#define XPSGTR_TYPE_SGMII2        12 /* Ethernet SGMII controller 2 */
->> -#define XPSGTR_TYPE_SGMII3        13 /* Ethernet SGMII controller 3 */
->> -
->>   /* Timeout values */
->>   #define TIMEOUT_US            1000
->>   @@ -184,7 +168,8 @@ struct xpsgtr_ssc {
->>   /**
->>    * struct xpsgtr_phy - representation of a lane
->>    * @phy: pointer to the kernel PHY device
->> - * @type: controller which uses this lane
->> + * @instance: instance of the protocol type (such as the lane within a
->> + *            protocol, or the USB/Ethernet controller)
->>    * @lane: lane number
->>    * @protocol: protocol in which the lane operates
->>    * @skip_phy_init: skip phy_init() if true
->> @@ -193,7 +178,7 @@ struct xpsgtr_ssc {
->>    */
->>   struct xpsgtr_phy {
->>       struct phy *phy;
->> -    u8 type;
->> +    u8 instance;
->>       u8 lane;
->>       u8 protocol;
->>       bool skip_phy_init;
->> @@ -330,8 +315,8 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
->>         if (ret == -ETIMEDOUT)
->>           dev_err(gtr_dev->dev,
->> -            "lane %u (type %u, protocol %u): PLL lock timeout\n",
->> -            gtr_phy->lane, gtr_phy->type, gtr_phy->protocol);
->> +            "lane %u (protocol %u, instance %u): PLL lock timeout\n",
->> +            gtr_phy->lane, gtr_phy->protocol, gtr_phy->instance);
->>         return ret;
->>   }
->> @@ -643,8 +628,7 @@ static int xpsgtr_phy_power_on(struct phy *phy)
->>        * cumulating waits for both lanes. The user is expected to initialize
->>        * lane 0 last.
->>        */
->> -    if (gtr_phy->protocol != ICM_PROTOCOL_DP ||
->> -        gtr_phy->type == XPSGTR_TYPE_DP_0)
->> +    if (gtr_phy->protocol != ICM_PROTOCOL_DP || !gtr_phy->instance)
->>           ret = xpsgtr_wait_pll_lock(phy);
->>         return ret;
->> @@ -674,73 +658,33 @@ static const struct phy_ops xpsgtr_phyops = {
->>    * OF Xlate Support
->>    */
->>   -/* Set the lane type and protocol based on the PHY type and instance number. */
->> +/* Set the lane protocol and instance based on the PHY type and instance number. */
->>   static int xpsgtr_set_lane_type(struct xpsgtr_phy *gtr_phy, u8 phy_type,
->>                   unsigned int phy_instance)
->>   {
->>       unsigned int num_phy_types;
->> -    const int *phy_types;
->>         switch (phy_type) {
->> -    case PHY_TYPE_SATA: {
->> -        static const int types[] = {
->> -            XPSGTR_TYPE_SATA_0,
->> -            XPSGTR_TYPE_SATA_1,
->> -        };
->> -
->> -        phy_types = types;
->> -        num_phy_types = ARRAY_SIZE(types);
->> +    case PHY_TYPE_SATA:
->> +        num_phy_types = 2;
->>           gtr_phy->protocol = ICM_PROTOCOL_SATA;
->>           break;
->> -    }
->> -    case PHY_TYPE_USB3: {
->> -        static const int types[] = {
->> -            XPSGTR_TYPE_USB0,
->> -            XPSGTR_TYPE_USB1,
->> -        };
->> -
->> -        phy_types = types;
->> -        num_phy_types = ARRAY_SIZE(types);
->> +    case PHY_TYPE_USB3:
->> +        num_phy_types = 2;
->>           gtr_phy->protocol = ICM_PROTOCOL_USB;
->>           break;
->> -    }
->> -    case PHY_TYPE_DP: {
->> -        static const int types[] = {
->> -            XPSGTR_TYPE_DP_0,
->> -            XPSGTR_TYPE_DP_1,
->> -        };
->> -
->> -        phy_types = types;
->> -        num_phy_types = ARRAY_SIZE(types);
->> +    case PHY_TYPE_DP:
->> +        num_phy_types = 2;
->>           gtr_phy->protocol = ICM_PROTOCOL_DP;
->>           break;
->> -    }
->> -    case PHY_TYPE_PCIE: {
->> -        static const int types[] = {
->> -            XPSGTR_TYPE_PCIE_0,
->> -            XPSGTR_TYPE_PCIE_1,
->> -            XPSGTR_TYPE_PCIE_2,
->> -            XPSGTR_TYPE_PCIE_3,
->> -        };
->> -
->> -        phy_types = types;
->> -        num_phy_types = ARRAY_SIZE(types);
->> +    case PHY_TYPE_PCIE:
->> +        num_phy_types = 4;
->>           gtr_phy->protocol = ICM_PROTOCOL_PCIE;
->>           break;
->> -    }
->> -    case PHY_TYPE_SGMII: {
->> -        static const int types[] = {
->> -            XPSGTR_TYPE_SGMII0,
->> -            XPSGTR_TYPE_SGMII1,
->> -            XPSGTR_TYPE_SGMII2,
->> -            XPSGTR_TYPE_SGMII3,
->> -        };
->> -
->> -        phy_types = types;
->> -        num_phy_types = ARRAY_SIZE(types);
->> +    case PHY_TYPE_SGMII:
->> +        num_phy_types = 4;
->>           gtr_phy->protocol = ICM_PROTOCOL_SGMII;
->>           break;
->> -    }
->>       default:
->>           return -EINVAL;
->>       }
->> @@ -748,7 +692,7 @@ static int xpsgtr_set_lane_type(struct xpsgtr_phy *gtr_phy, u8 phy_type,
->>       if (phy_instance >= num_phy_types)
->>           return -EINVAL;
->>   -    gtr_phy->type = phy_types[phy_instance];
->> +    gtr_phy->instance = phy_instance;
->>       return 0;
->>   }
->>   @@ -756,14 +700,11 @@ static int xpsgtr_set_lane_type(struct xpsgtr_phy *gtr_phy, u8 phy_type,
->>    * Valid combinations of controllers and lanes (Interconnect Matrix).
->>    */
->>   static const unsigned int icm_matrix[NUM_LANES][CONTROLLERS_PER_LANE] = {
->> -    { XPSGTR_TYPE_PCIE_0, XPSGTR_TYPE_SATA_0, XPSGTR_TYPE_USB0,
->> -        XPSGTR_TYPE_DP_1, XPSGTR_TYPE_SGMII0 },
->> -    { XPSGTR_TYPE_PCIE_1, XPSGTR_TYPE_SATA_1, XPSGTR_TYPE_USB0,
->> -        XPSGTR_TYPE_DP_0, XPSGTR_TYPE_SGMII1 },
->> -    { XPSGTR_TYPE_PCIE_2, XPSGTR_TYPE_SATA_0, XPSGTR_TYPE_USB0,
->> -        XPSGTR_TYPE_DP_1, XPSGTR_TYPE_SGMII2 },
->> -    { XPSGTR_TYPE_PCIE_3, XPSGTR_TYPE_SATA_1, XPSGTR_TYPE_USB1,
->> -        XPSGTR_TYPE_DP_0, XPSGTR_TYPE_SGMII3 }
->> +    /* PCIe, SATA, USB, DP, SGMII */
->> +    { 0, 0, 0, 1, 0 },
->> +    { 1, 1, 0, 0, 1 },
->> +    { 2, 0, 0, 1, 2 },
->> +    { 3, 1, 1, 0, 3 },
+>> Similarly to DisplayPort, nonzero PCIe lanes never achieve PLL lock [1].
 > 
-> 
-> Do you think that this is more understandable than was before?
+> What is this [1] for?
 
-Yes. This better matches the documentation. And now it is easier to
-programmatically access the index. Before we might have
-
-protocol = ICM_PROTOCOL_USB
-type = XPSGTR_TYPE_USB0
-
-and the instance is there in the type name, but we can't access it. Now
-we have
-
-instance = 0
-
-and it is easy to determine which instance we have.
+I was originally going to have the comment below the fold in the commit
+message as a footnote. I forgot to remove this after editing.
 
 --Sean
 
