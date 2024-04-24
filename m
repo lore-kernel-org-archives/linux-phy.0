@@ -4,74 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 601D9C4345F
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Apr 2024 19:43:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FAEDC4345F
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Apr 2024 19:51:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zDnTm8J3CJG5qL0x2WUAmgz44HsT5zrUeOIiaFqIXG4=; b=ZyzIbt3pxLuKBm
-	7yycb9sjai7DdMmdXHkuP5CVIShWa7lwQmEafbh+R2Jz7SyPvCsRt1g/es1be9QSSLDEzovnJ/88P
-	V3E/NS4jMG8iInBzFt5U8U5+1rvd3zTzFtQtNR4YrmNVActRLlSifqQkw/E5Y5UxzdWr28ci7cAQx
-	XvasYk+WEPsVs7F80ushaRxgebONe65bXClKkooA7J34o9nrFuSpRzjJCG1eRTXhDS101+NQOnf9C
-	4kqm8i3daBS+eCcdTXjGCjT3ihInQ8j2KMFQm/dTSJa11dlfsqYYYF/vxHIhhVZ//3wf3oBpuMVTc
-	gkyZ0KZHsOCaOq+go4/w==;
+	List-Owner; bh=CKfwcfWAbX663JuYRmZBXpm3gVhnmsrtfsMBCHaxPTE=; b=nkqDIXmGYcLZyi
+	8R9ZLTFC/SFT1So9xlblGo8gXbJ00zBJdn9i5FaZUP5B0/R2COKJlLqeqZHIqbFQMFHykQZO/ReZY
+	hvlg0U3EgwthfV7K94N/n7kJtp5YEYg6ISq9lxLJSDvRUekx5zB9v8bh73zwhdzZTpcbVhne7DN/T
+	JU+ngq6dLvX6xDjYi5lrn+DTjyO9MT7OmS7/amzNv1j25f/oGQieXAddqhu/FOTX3aNyBK2rtTMmW
+	AO/s43rCj4zC0UtLEoRGUdd/WfXomIlGd4SEoq5dSgO0+20xU3LW4S75QUT7pEjOoWyeYlO6OfYjJ
+	ZRyFhgRIr8rL0WFMva+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rziWr-00000005ifN-3sH9;
-	Wed, 24 Apr 2024 19:43:41 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1rziep-00000005kVm-465S;
+	Wed, 24 Apr 2024 19:51:55 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rziWn-00000005ie0-1PUf;
-	Wed, 24 Apr 2024 19:43:39 +0000
+	id 1rziel-00000005kTH-46jd;
+	Wed, 24 Apr 2024 19:51:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 267F1CE17E1;
-	Wed, 24 Apr 2024 19:43:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14CE8C113CD;
-	Wed, 24 Apr 2024 19:43:33 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 0E2B1CE1724;
+	Wed, 24 Apr 2024 19:51:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA47BC113CD;
+	Wed, 24 Apr 2024 19:51:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1713987814;
-	bh=vKFYekx4zyI62STnk+FA6F7HSB3eErVD+QjnOQSj1zo=;
+	s=k20201202; t=1713988307;
+	bh=jtmAwDifDGJc40Ti3DRzPkHknfQW48k+SMlypzp4lZs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=XJLpfqld/3oPnXCMuNWmUg+dzsWu9g5aWo3ExrrsKERD1UuKm7b6qJJwf8r47fTSP
-	 TOTA8OFSenxTbjqqCgWrfM6h0yzb4/dm9sEX7FpCf59AS6VTYAY0KSMmeqW7/L/Jsa
-	 +oPs17OTG2cWSX8qfdrgu65VGgpP+Vjt7WeMzkgNPstKbbOFzVayCpLCunJla1/n+/
-	 l85xedaTFLhc/r6hZnmlvO5IvPTE4sToreAqtEKPq4eW9qlTPFlenSfvIuv7w5Wt3o
-	 ggC33kausbftez9qr1TZX7mnrSsEVFr8U0h6VPteLc0kwF7ItP7lV5DFcuhII31c9c
-	 2yVCBUSJtMT3Q==
-Date: Wed, 24 Apr 2024 14:43:31 -0500
+	b=db4GSOglHvJENshh/vuBu/MLHkqgfDPrR2ydUtSVPJW1JBWLfYzHD1EI/2jFTjMFU
+	 0qKcqROUzsG5HeNOHNV0wC+nNbhxA1OjgvPLxNoER+83PNobrfSjTsfoTsXjTnbKH2
+	 Hxvc7HvrRGU6Sp/ghYnWzpcWIyOSBxBsWa64WEEVFSi08Lm9tcpfYbFdEOjuTd/FsW
+	 AWhlGaFX6Najj/9S/Lm5mhtUdQ73nsUJjp6HhavsN+3rzArL3v5KBaQHyGiwzSR7Pu
+	 LgcQHjxXucVDpuy6qa3wcDJEFVrlfIuJkzCMaM9+3ryonnulvfCNMgqky3vx+lELhP
+	 55v+0hyja4Wrw==
+Date: Wed, 24 Apr 2024 14:51:44 -0500
 From: Rob Herring <robh@kernel.org>
-To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Sam Protsenko <semen.protsenko@linaro.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Will McVicker <willmcvicker@google.com>,
-	Roy Luo <royluo@google.com>, kernel-team@android.com,
+To: Peter Griffin <peter.griffin@linaro.org>
+Cc: mturquette@baylibre.com, sboyd@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+	alim.akhtar@samsung.com, avri.altman@wdc.com, bvanassche@acm.org,
+	s.nawrocki@samsung.com, cw00.choi@samsung.com, jejb@linux.ibm.com,
+	martin.petersen@oracle.com, James.Bottomley@hansenpartnership.com,
+	ebiggers@kernel.org, linux-scsi@vger.kernel.org,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH 1/7] dt-bindings: phy: samsung,usb3-drd-phy: add gs101
- compatible
-Message-ID: <20240424194331.GA352392-robh@kernel.org>
-References: <20240423-usb-phy-gs101-v1-0-ebdcb3ac174d@linaro.org>
- <20240423-usb-phy-gs101-v1-1-ebdcb3ac174d@linaro.org>
+	tudor.ambarus@linaro.org, andre.draszik@linaro.org,
+	saravanak@google.com, willmcvicker@google.com
+Subject: Re: [PATCH v2 01/14] dt-bindings: clock: google,gs101-clock:  add
+ HSI2 clock management unit
+Message-ID: <20240424195144.GA360683-robh@kernel.org>
+References: <20240423205006.1785138-1-peter.griffin@linaro.org>
+ <20240423205006.1785138-2-peter.griffin@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240423-usb-phy-gs101-v1-1-ebdcb3ac174d@linaro.org>
+In-Reply-To: <20240423205006.1785138-2-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240424_124337_759784_20CA8BCE 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20240424_125152_475954_275BA89B 
+X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,108 +83,26 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 23, 2024 at 06:06:03PM +0100, Andr=E9 Draszik wrote:
-> Add a dedicated google,gs101-usb31drd-phy compatible for Google Tensor
-> gs101 SoC.
+On Tue, Apr 23, 2024 at 09:49:53PM +0100, Peter Griffin wrote:
+> Add dt schema documentation and clock IDs for the High Speed Interface
+> 2 (HSI2) clock management unit. This CMU feeds high speed interfaces
+> such as PCIe and UFS.
 > =
 
-> It needs additional clocks enabled for register access, and additional
-> memory regions (PCS & PMA) are required for successful configuration.
-> =
-
-> Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
+> Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
+> Reviewed-by: Andr=E9 Draszik <andre.draszik@linaro.org>
 > ---
->  .../bindings/phy/samsung,usb3-drd-phy.yaml         | 78 ++++++++++++++++=
-+-----
->  1 file changed, 61 insertions(+), 17 deletions(-)
-> =
+>  .../bindings/clock/google,gs101-clock.yaml    | 30 ++++++++-
+>  include/dt-bindings/clock/google,gs101.h      | 63 +++++++++++++++++++
+>  2 files changed, 91 insertions(+), 2 deletions(-)
 
-> diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.y=
-aml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> index 452e584d9812..db1dc4c60b72 100644
-> --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> @@ -25,6 +25,7 @@ description: |
->  properties:
->    compatible:
->      enum:
-> +      - google,gs101-usb31drd-phy
->        - samsung,exynos5250-usbdrd-phy
->        - samsung,exynos5420-usbdrd-phy
->        - samsung,exynos5433-usbdrd-phy
-> @@ -57,7 +58,18 @@ properties:
->        the OF graph bindings specified.
->  =
+This collides with Andr=E9's work adding HSI0. Perhaps combine the series =
 
->    reg:
-> -    maxItems: 1
-> +    minItems: 1
-> +    items:
-> +      - description: PHY register base address.
-> +      - description: PCS register base address.
-> +      - description: PMA register base address.
-> +
-> +  reg-names:
-> +    minItems: 1
-> +    items:
-> +      - const: phy
-> +      - const: pcs
-> +      - const: pma
->  =
+or even the patches and just send clocks as a series. Then it is clear =
 
->    samsung,pmu-syscon:
->      $ref: /schemas/types.yaml#/definitions/phandle
-> @@ -85,30 +97,62 @@ allOf:
->        properties:
->          compatible:
->            contains:
-> -            enum:
-> -              - samsung,exynos5433-usbdrd-phy
-> -              - samsung,exynos7-usbdrd-phy
-> +            const: google,gs101-usb31drd-phy
->      then:
->        properties:
->          clocks:
-> -          minItems: 5
-> -          maxItems: 5
-> -        clock-names:
->            items:
-> -            - const: phy
-> -            - const: ref
-> -            - const: phy_utmi
-> -            - const: phy_pipe
-> -            - const: itp
-> -    else:
-> -      properties:
-> -        clocks:
-> -          minItems: 2
-> -          maxItems: 2
-> +            - description: Gate of main PHY clock
-> +            - description: Gate of PHY reference clock
-> +            - description: Gate of control interface AXI clock
-> +            - description: Gate of control interface APB clock
-> +            - description: Gate of SCL APB clock
->          clock-names:
->            items:
->              - const: phy
->              - const: ref
-> +            - const: ctrl_aclk
-> +            - const: ctrl_pclk
-> +            - const: scl_pclk
-> +        reg:
-> +          minItems: 3
-> +        reg-names:
-> +          minItems: 3
-> +      required:
-> +        - reg-names
-> +    else:
-> +      if:
+who should merge it.
 
-We generally try to avoid having nested else/if like this. Please change =
-
-the existing 'else' to an 'if' and then add an 'if' for your new =
-
-compatible.
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
 Rob
 
