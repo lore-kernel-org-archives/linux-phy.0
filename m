@@ -4,63 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA160C19F4E
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Apr 2024 21:57:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94758C4345F
+	for <linux-phy@archiver.kernel.org>; Thu, 25 Apr 2024 07:08:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PCfUDIpncOP45fsNjJ/jKZcC1RZDLAxz2GCZe04SwKo=; b=EfdGF7ngZ0EnBo
-	acEzQjEH7GzW7qdFpNlYLAzd0OnvTfR2P8dU0g2rHhhwbyrX13AYvj3P6FsQ1sWF9P4s4KTEdu4sw
-	vv2bDjImMxCxj+mgyhkFmKzcePjxqwn0TPsXSaTh6+OwZLAscY1hnuLnUB+K/Kg8VzPZx8yimVxvL
-	dOYTta4OdGGFMWTVXH7X4HMPx5xGPfpPIz9MIaiL5XiXk4fxh0OVajsxw9389Kk4Att8+TX3dsViw
-	w6Dv+sHNGMilC0NdzxhOvLpTzESC7a7L1AVBVAMKAznr3rXIr5HcBHEzV3O3CF7KMBMQdLitC4gUB
-	uv3Rvks0V8bBcx9tWBrg==;
+	List-Owner; bh=ynCJqb7zU17iNiNn96bJGwCYORRTBYbzXU8XMxEO7Wk=; b=XKs0VvTL9gwFnN
+	ttuRbPhQSA85+yQpKsuk24uPPLFLG29b+6CaXDNspXJX6fW7zXcGN8FqJslqfaKB4V+atHoHgQ94M
+	trcQHVJAGF1pgRu2h943yHEGnjB4SszTYX8rNlONo4xWBCSxCmtNcTRomC/vhsL/QRvlvO/8JNlMo
+	L9lQWldq+GeB1Y4m+DhSxQalfrGIzH3ie6CC1JUJwKPUZzjb0/E/Wj7abdJI/xPE/4rjtKR/4U8ny
+	pYwRxBkfKwgG1z71NiI9YIXzFckD6QoLT1GrDBH+H88RWeXm07PWK5tNi3WHPq38CazVluOzi5f+3
+	Wf4qsHGlTRtLvNTOp4Xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzkcj-000000069v4-2XMh;
-	Wed, 24 Apr 2024 21:57:53 +0000
+	id 1rztDu-00000007DaJ-0xDP;
+	Thu, 25 Apr 2024 07:08:50 +0000
 Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rzkcd-000000069ti-2yqo;
-	Wed, 24 Apr 2024 21:57:49 +0000
+	id 1rztDp-00000007DZ9-3zVN;
+	Thu, 25 Apr 2024 07:08:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 0CCEECE1676;
-	Wed, 24 Apr 2024 21:57:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5F14C113CD;
-	Wed, 24 Apr 2024 21:57:44 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 48645CE17D1;
+	Thu, 25 Apr 2024 07:08:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D2A3C113CC;
+	Thu, 25 Apr 2024 07:08:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1713995865;
-	bh=iA5er1v7o8xOSguwB/KZCt1Mz1Z6XF4dQ/9cOa/ZGMQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DL63qqX8i3ZFMOMJJPIpHSxyDW1eb6aZJpUvgCNNmt8eNfVsVS81/OuLlUjyI4rMz
-	 9Wx0J/3echd9pxR7MK3eb5xC7bCD0NGOi08FHVGUltq6B60RhHJXH1sGhyY0aiKRSO
-	 NyWpyFtgiWce7GevhcZG5o3lBAalBegjBcYCidJkKdYxZyi6C0LSQYOL4J/Uz4sGML
-	 jIazZv1mr8a71FzC/7Xc+1qwbTaqas5Tgxgd8btL8w68axLhcpsOWKKNSeuv5gWC4W
-	 MxExK7THeqKisCIgF6/A+O3P2htwE7z/pABFcU+ywLjIvZWMoMtXjMsPhnoKHDzXl2
-	 3iEh/FDYwbgJQ==
-Date: Wed, 24 Apr 2024 16:57:42 -0500
-From: Rob Herring <robh@kernel.org>
-To: Richard Zhu <hongxing.zhu@nxp.com>
-Cc: conor@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, frank.li@nxp.com,
-	conor+dt@kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
-	imx@lists.linux.dev
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: phy-imx8-pcie: Add header file
- for i.MX8Q HSIO SerDes PHY
-Message-ID: <20240424215742.GB460126-robh@kernel.org>
-References: <1713939683-15328-1-git-send-email-hongxing.zhu@nxp.com>
- <1713939683-15328-2-git-send-email-hongxing.zhu@nxp.com>
+	s=k20201202; t=1714028921;
+	bh=WK3IIsj2k+XFoe/9zTARNV+xrwTUvh5SAaxj5Dhb+cY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=kBhWMc3Ac4yW+TuIiNd73YL1NwccRH0B9fSW2HZA9AObgNcf70/34V+OXVTxTM4i9
+	 rupcl08trJpFc/x8+4sZ/FIYV4aSrp4UYkaaY1BSyytDU8FVMVDQHQFramDmCa7GBu
+	 KkALIsSDpeyK20oUkf4YzmnS9JgikdBrCDDCq4pjAgR31H4FSiv5utoKTQMoTuRuja
+	 1sTmblklWCUnXGjCTS/+pG1qnI0nK9vhuy4qPFTZo4e8AD8Q5tkBn9PwU+wyLi9FK6
+	 8OBwik0gJ1z+fRMWYE9dUljRVBo22o4GP4cMiRD/yeHTo0MXCPlcNJ7NKSmczbiviN
+	 tPc8vi8IQ+aQg==
+Message-ID: <1c6f5984-7f9f-47e3-98c3-3c3671512675@kernel.org>
+Date: Thu, 25 Apr 2024 09:08:31 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1713939683-15328-2-git-send-email-hongxing.zhu@nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 00/14] HSI2, UFS & UFS phy support for Tensor GS101
+To: Peter Griffin <peter.griffin@linaro.org>, mturquette@baylibre.com,
+ sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ vkoul@kernel.org, kishon@kernel.org, alim.akhtar@samsung.com,
+ avri.altman@wdc.com, bvanassche@acm.org, s.nawrocki@samsung.com,
+ cw00.choi@samsung.com, jejb@linux.ibm.com, martin.petersen@oracle.com,
+ James.Bottomley@HansenPartnership.com, ebiggers@kernel.org
+Cc: linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, tudor.ambarus@linaro.org,
+ andre.draszik@linaro.org, saravanak@google.com, willmcvicker@google.com
+References: <20240423205006.1785138-1-peter.griffin@linaro.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20240423205006.1785138-1-peter.griffin@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240424_145748_137914_33E8391A 
-X-CRM114-Status: GOOD (  21.15  )
+X-CRM114-CacheID: sfid-20240425_000846_470124_74A27D06 
+X-CRM114-Status: GOOD (  13.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,118 +123,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 24, 2024 at 02:21:21PM +0800, Richard Zhu wrote:
-> Add lane index and HSIO configuration definitions of the i.MX8Q HSIO
-> SerDes PHY into header file.
-
-This belongs in the binding patch. It is part of the binding.
-
-> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> ---
->  include/dt-bindings/phy/phy-imx8-pcie.h | 62 +++++++++++++++++++++++++
->  1 file changed, 62 insertions(+)
+On 23/04/2024 22:49, Peter Griffin wrote:
+> Hi James, Martin, Alim, Bart, Krzysztof, Vinod, all
 > 
-> diff --git a/include/dt-bindings/phy/phy-imx8-pcie.h b/include/dt-bindings/phy/phy-imx8-pcie.h
-> index 8bbe2d6538d8..60447b95a952 100644
-> --- a/include/dt-bindings/phy/phy-imx8-pcie.h
-> +++ b/include/dt-bindings/phy/phy-imx8-pcie.h
-> @@ -11,4 +11,66 @@
->  #define IMX8_PCIE_REFCLK_PAD_INPUT	1
->  #define IMX8_PCIE_REFCLK_PAD_OUTPUT	2
->  
-> +/*
-> + * i.MX8QM HSIO subsystem has three lane PHYs and three controllers:
-> + * PCIEA(2 lanes capable PCIe controller), PCIEB (only support one
-> + * lane) and SATA.
-> + *
-> + * Meanwhile, i.MX8QXP HSIO subsystem has one lane PHY and PCIEB(only
-> + * support one lane) controller.
-> + *
-> + * In the different use cases. PCIEA can be bound to PHY lane0, lane1
-> + * or Lane0 and lane1. PCIEB can be bound to lane1 or lane2 PHY. SATA
-> + * can only be bound to last lane2 PHY.
-> + *
-> + * +-------------------------------+------------------+
-> + * | i.MX8QM                       | i.MX8QXP         |
-> + * |-------------------------------|------------------|
-> + * |       | PCIEA | PCIEB | SATA  |       | PCIEB    |
-> + * |-------------------------------|-------|----------|
-> + * | LAN 0 | X     |       |       | LAN 0 | *        |
+> Firstly, many thanks to everyone who reviewed and tested v1.
+> 
+> This series adds support for the High Speed Interface (HSI) 2 clock
+> management unit, UFS controller and UFS phy calibration/tuning for GS101
+> found in Pixel 6.
+> 
+> With this series applied, UFS is now functional on gs101. The SKhynix
+> HN8T05BZGKX015 can be enumerated, partitions mounted etc. This allows us to
+> move away from the initramfs rootfs we have been using for development so far.
+> 
+> Merge Strategy
+> 1) UFS driver/bindings via UFS/SCSI tree (James / Martin / Alim)
+> 2) GS101 DTS/DTSI should go via Krzysztofs Exynos SoC tree
+> 3) Clock driver/bindings via Clock tree (Krzysztof / Stephen)
+> 4) PHY driver/bindings via PHY tree (Vinod)
+> 
+> The v2 series has been rebased on next-20240422, as such all the phy parts
+> which were already queued by Vinod have been dropped. Two new phy patches
+> are added to address review feedback received after the patches were queued.
+> 
+> The series is broadly split into the following parts:
+> 1) dt-bindings documentation updates
+> 2) gs101/oriole dts & dtsi updates
+> 3) Prepatory patches for ufs-exynos driver
+> 4) GS101 ufs-exynos support
+> 5) gs101 phy fixes
+> 
 
-LAN? Local Area Network? Just use 'Lane'.
+I asked to split, otherwise please explain why PHY and UFS depends on
+DTS and clk.
 
-Don't need this column                 ^^^^^^^
+Best regards,
+Krzysztof
 
-> + * |-------------------------------|-------|----------|
-> + * | LAN 1 | X     | *     |       |       |          |
-> + * |-------------------------------|-------|----------|
-> + * | LAN 2 |       | *     | *     |       |          |
-> + * +-------------------------------+------------------+
-> + * NOTE:
-> + * *: Choose one only.
-> + * X: Choose any of these.
-> + *
-> + * Define i.MX8Q HSIO PHY lane index here to specify the lane mask.
-> + */
-> +#define IMX8Q_HSIO_LANE0	0x1
-> +#define IMX8Q_HSIO_LANE1	0x2
-> +#define IMX8Q_HSIO_LANE2	0x4
-
-Thinking about this some more, in most cases of the phy binding where 
-individual lanes can be assigned, each lane is a phys entry.
-
-PCIEA:
-phys = <&hsio_phy 0 PHY_MODE_PCIE>;
-or:
-phys = <&hsio_phy 0 PHY_MODE_PCIE>, <&hsio_phy 1 PHY_MODE_PCIE>;
-
-PCIEB:
-phys = <&hsio_phy 1 PHY_MODE_PCIE>;
-or:
-phys = <&hsio_phy 2 PHY_MODE_PCIE>;
-
-SATA:
-phys = <&hsio_phy 2 PHY_MODE_SATA>;
-
-> +
-> +/*
-> + * Regarding the design of i.MX8QM HSIO subsystem, HSIO module can be
-> + * confiured as following three use cases.
-> + *
-> + * Define different configurations refer to the use cases, since it is
-> + * mandatory required in the initialization.
-> + *
-> + * On i.MX8QXP, HSIO module only has PCIEB and one lane PHY.
-> + * Define "IMX8Q_HSIO_CFG_PCIEB" for i.MX8QXP platforms.
-> + *
-> + * +----------------------------------------------------+----------+
-> + * |                               | i.MX8QM            | i.MX8QXP |
-> + * |-------------------------------|--------------------|----------|
-> + * |                               | LAN0 | LAN1 | LAN2 | LAN0     |
-
-s/LAN/Lane/
-
-> + * |-------------------------------|------|------|------|----------|
-> + * | IMX8Q_HSIO_CFG_PCIEAX2SATA    | PCIEA| PCIEA| SATA |          |
-> + * |-------------------------------|------|------|------|----------|
-> + * | IMX8Q_HSIO_CFG_PCIEAX2PCIEB   | PCIEA| PCIEA| PCIEB|          |
-> + * |-------------------------------|------|------|------|----------|
-> + * | IMX8Q_HSIO_CFG_PCIEAPCIEBSATA | PCIEA| PCIEB| SATA |          |
-> + * |-------------------------------|------|------|------|----------|
-> + * | IMX8Q_HSIO_CFG_PCIEB          | -    | -    | -    | PCIEB    |
-> + * +----------------------------------------------------+----------+
-> + */
-> +#define IMX8Q_HSIO_CFG_PCIEAX2SATA	0x1
-> +#define IMX8Q_HSIO_CFG_PCIEAX2PCIEB	0x2
-> +#define IMX8Q_HSIO_CFG_PCIEAPCIEBSATA	(IMX8Q_HSIO_CFG_PCIEAX2SATA | IMX8Q_HSIO_CFG_PCIEAX2PCIEB)
-> +#define IMX8Q_HSIO_CFG_PCIEB		IMX8Q_HSIO_CFG_PCIEAX2PCIEB
-
-Again, I don't see why you need all this. You now have mode and lanes, 
-and per SoC data in the driver, so you should be able to figure out what 
-you need from this.
-
-Rob
 
 -- 
 linux-phy mailing list
