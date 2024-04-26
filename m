@@ -4,86 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3489C04FFE
-	for <linux-phy@archiver.kernel.org>; Fri, 26 Apr 2024 10:41:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD536C4345F
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Apr 2024 20:23:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MNYK5n2s54o0H1v/cQ2u6w9HGsq/LP7dAfdPpjj4aSQ=; b=174jEJ+i2VJb2T
-	JlyKKfwKzmN9UikxBN3m2/rjK2TfFEo7fpLXeAru/A3Lz7buRsunSzt0i34Btol870O7RHYILgRz8
-	5ya0gHjELhWr8LHgSvLTgsyrOJCMXGi1cqPXpr9rmO9SRMwI6xYRR6/k1diH8K1W/+UbCWu9O40Jz
-	7VECgSRwck1v3QbODzUsC7QY1/xM4MqDqT/UnxN/q6wEkbMncVtozFYZ3bhnGnP1h+MpTOOWyqZv3
-	sQhQmeejlf9W6zcmZ2vNC9v8NN0s9DLl25b7VC8hrmOzH6mDIW86MO6dshGW1rZ28qERCU4opB3vE
-	htRAPu0KwJ2lLuOSbzxQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+wDTaEMIZOP5rkeGuJYyOiwuBQHQ3H7XmCGrFP7y99Q=; b=a3fkXvxJcv/JHj
+	IpL2slHqpu17nWUBMz2NSIGdXujY6nnBDFPYWrWYtsZycVCDcL0eLABUWEyq76Z6NHq/ycPOdKmpT
+	OE7ogE+qN+8GJqZM5mxduvVqvm2jKJquM21MIKiX0lMYm7LMjxLsKP0/cTEph7ov2FoGknJMk19TR
+	DV4hpd/EmCqAVs2fcvzyOiO1IVfqgZo0Qe8t2AYIXH4QhOXMaPuImrJnJbrsvA8Ow1DESOt/Y5J22
+	43Gwe/WYXXwwnGQ5HQ+bo9EmG4RKQ6dvLxIVUtD+6ekc5V/5XmLTO8yAjxH+3A96AnSklKgcTbn62
+	8Yujc81IgRGREH5JllIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s0J1R-0000000CBHx-1sX3;
-	Fri, 26 Apr 2024 10:41:41 +0000
-Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
+	id 1s0S67-0000000Dw7i-0ocy;
+	Fri, 26 Apr 2024 20:23:07 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s0J1O-0000000CBGL-1vQW
-	for linux-phy@lists.infradead.org;
-	Fri, 26 Apr 2024 10:41:40 +0000
-Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2dd6c160eaaso24713691fa.1
-        for <linux-phy@lists.infradead.org>; Fri, 26 Apr 2024 03:41:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1714128096; x=1714732896; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=rbXwx/HNBBmagZEhDQ/BaLCRVM/2fRQKE1iroB24Qwo=;
-        b=o+HDwNJZ5mmJRqICjAhxW+DuzfzQnJgWhAg8e9vLutvsA+waVreVlhLKsI1OxTwWRr
-         RtjVweRhuGld4jXWsxLJsHvk/kv2px8xAcMkqKH6mB9gVU1TrTLm+0CHMPfeeWiWXwv2
-         qhznGKE5yxQDxovySHQNe/IPBFqx7JZgsKWL8QE7onu2VA0t+eRbvtRpcyLojFM4zGDq
-         L8lbqg79J38tJGzIubY7Yk0RGwxkTTQ+EeElRyhxq2SgMA+HZY2zsp3BK5FFtkjsm0Sj
-         LAJC60TeAKDgkplGzlHByMPZusOSbN/vuKEAGNHREb+l37S2EkihGGFaDcji5UdeE0Sj
-         Fe2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1714128096; x=1714732896;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=rbXwx/HNBBmagZEhDQ/BaLCRVM/2fRQKE1iroB24Qwo=;
-        b=HcdbF03aVnRUSDtjrAwB0/jL61GOzqwlX4vmIQClpqR8VtUIcXbsF0/UcAQWj5Iu2c
-         5Ji6sPIUxlCQIEWBcEgRoZi26Dn0IRtqyghejuSEAcuYfVmSsgBCT6z+JQAXbwiXzNhe
-         S9KXV/0RsYvKLEgYbp4i9FNSIbwQM795ivpv48AAcSnsAOWQomy21y4vyMPyrGh+w5pP
-         XumGkXIRbPGJcW+8FEEpjsBAdwSMgAbhMKOf7FJJqqv6va5MSGdp/apZ+0u1MsMrindI
-         HLrnHqZZnaR69Nqli+RoLu+JCXhCAlINLMV2hROgH0ZO71JMSpeiprrxP3q9lLSiSdSo
-         4IYA==
-X-Gm-Message-State: AOJu0YzSz6uRiCUOrro+7wmGQaEQTcHkz1LwsLyLCFXyhldJ69Vg4w2e
-	YiKxkQTPVoYgpY8e1UxKhT+qbAkyB7sXbnEDwxa0ctq2VEHoxdqVSo8F4dzPLrQ=
-X-Google-Smtp-Source: AGHT+IHiylD7VQWD1+ej27FAWnFwoUKQ+ZEhfuiu1lnbA/xYwpsUIFHWtBloSi6kC41eD+L1ByFyIQ==
-X-Received: by 2002:a2e:a1c6:0:b0:2da:36be:1b4a with SMTP id c6-20020a2ea1c6000000b002da36be1b4amr1770332ljm.19.1714128095556;
-        Fri, 26 Apr 2024 03:41:35 -0700 (PDT)
-Received: from gpeter-l.lan ([2a0d:3344:2e8:8510:63cc:9bae:f542:50e4])
-        by smtp.gmail.com with ESMTPSA id o14-20020a05600c510e00b00419f572671dsm22035335wms.20.2024.04.26.03.41.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 26 Apr 2024 03:41:35 -0700 (PDT)
-From: Peter Griffin <peter.griffin@linaro.org>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	krzysztof.kozlowski@linaro.org
-Cc: linux-phy@lists.infradead.org,
+	id 1s0S64-0000000Dw6J-0AQf;
+	Fri, 26 Apr 2024 20:23:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 04502CE1C6B;
+	Fri, 26 Apr 2024 20:23:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA3D1C113CD;
+	Fri, 26 Apr 2024 20:23:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1714162981;
+	bh=GbaTYwdZ8id3LPa579gAi+LysdGAYbNVBDYDNoM7P+o=;
+	h=From:To:Cc:Subject:Date:From;
+	b=BDt7XFC5+ZlqbRPkXwezHFzXgsKBQ233OU/DL9YQ4CO8IvTo1gw/IpfQXQ2kyd6g7
+	 9Ms/jBsIMGaVM2n7UsxElrXKY+ChUQsNPLXBWXN1suiLlr0KQYBdPYBweG6fVFUja+
+	 zyKACwTXpGSZTjSOkd8B0ob4kTLQBV3TK+vaAXHgB1vZXo4WldQmBM7I4GVTFiZRQH
+	 y/uRsqc2XcZ7OjqpGyV8U9RA+7CRi1E3hlLwXucNJmX4njy26oSR0YpHauNSMcdoEW
+	 aVy3/SoitHOWufMcdRUft+hv6eYaTzPvWyOOKw1/8GBN9Q002HWo5k71l41zLqm8xd
+	 HT2AgHiysMayQ==
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bharat Kumar Gogada <bharat.kumar.gogada@amd.com>,
+	Michal Simek <michal.simek@amd.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	=?UTF-8?q?Krzysztof=20Wilczy=C5=84ski?= <kw@linux.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>
+Cc: netdev@vger.kernel.org,
+	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	tudor.ambarus@linaro.org,
-	andre.draszik@linaro.org,
-	saravanak@google.com,
-	willmcvicker@google.com,
-	kernel-team@android.com,
-	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH 2/2] phy: samsung-ufs: ufs: exit on first reported error
-Date: Fri, 26 Apr 2024 11:41:29 +0100
-Message-ID: <20240426104129.2211949-3-peter.griffin@linaro.org>
-X-Mailer: git-send-email 2.44.0.769.g3c40516874-goog
-In-Reply-To: <20240426104129.2211949-1-peter.griffin@linaro.org>
-References: <20240426104129.2211949-1-peter.griffin@linaro.org>
+	linux-pci@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org
+Subject: [PATCH] dt-bindings: Drop unnecessary quotes on keys
+Date: Fri, 26 Apr 2024 15:22:37 -0500
+Message-ID: <20240426202239.2837516-1-robh@kernel.org>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240426_034138_507655_4EDFDC84 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20240426_132304_461228_1AD3F5DC 
+X-CRM114-Status: GOOD (  13.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,42 +91,200 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-To preserve the err value, exit the loop immediately if an error
-is returned.
+The yamllint quoted-strings check wasn't checking keys for quotes, but
+support for checking keys was added in 1.34 release. Fix all the errors
+found when enabling the check.
 
-Fixes: f2c6d0fa197a ("phy: samsung-ufs: use exynos_get_pmu_regmap_by_phandle() to obtain PMU regmap")
-Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
+Clean-up the xilinx-versal-cpm formatting while we're here.
+
+Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 ---
- drivers/phy/samsung/phy-samsung-ufs.c | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/net/sff,sfp.yaml   | 12 ++++++------
+ .../devicetree/bindings/pci/xilinx-versal-cpm.yaml   |  7 +++++--
+ .../devicetree/bindings/pci/xlnx,nwl-pcie.yaml       |  2 +-
+ .../devicetree/bindings/phy/brcm,sata-phy.yaml       |  8 ++++----
+ .../devicetree/bindings/regulator/ti,tps62864.yaml   |  2 +-
+ .../bindings/soc/tegra/nvidia,tegra20-pmc.yaml       |  6 +++---
+ Documentation/devicetree/bindings/tpm/ibm,vtpm.yaml  |  4 ++--
+ 7 files changed, 22 insertions(+), 19 deletions(-)
 
-diff --git a/drivers/phy/samsung/phy-samsung-ufs.c b/drivers/phy/samsung/phy-samsung-ufs.c
-index ffc46c953ed6..6c5d41552649 100644
---- a/drivers/phy/samsung/phy-samsung-ufs.c
-+++ b/drivers/phy/samsung/phy-samsung-ufs.c
-@@ -99,12 +99,18 @@ static int samsung_ufs_phy_calibrate(struct phy *phy)
+diff --git a/Documentation/devicetree/bindings/net/sff,sfp.yaml b/Documentation/devicetree/bindings/net/sff,sfp.yaml
+index bf6cbc7c2ba3..90611b598d2b 100644
+--- a/Documentation/devicetree/bindings/net/sff,sfp.yaml
++++ b/Documentation/devicetree/bindings/net/sff,sfp.yaml
+@@ -29,39 +29,39 @@ properties:
+       allowable by a module in the slot, in milli-Watts. Presently, modules can
+       be up to 1W, 1.5W or 2W.
  
- 	for_each_phy_lane(ufs_phy, i) {
- 		if (ufs_phy->ufs_phy_state == CFG_PRE_INIT &&
--		    ufs_phy->drvdata->wait_for_cal)
-+		    ufs_phy->drvdata->wait_for_cal) {
- 			err = ufs_phy->drvdata->wait_for_cal(phy, i);
-+			if (err)
-+				goto out;
-+		}
+-  "mod-def0-gpios":
++  mod-def0-gpios:
+     maxItems: 1
+     description:
+       GPIO phandle and a specifier of the MOD-DEF0 (AKA Mod_ABS) module
+       presence input gpio signal, active (module absent) high. Must not be
+       present for SFF modules
  
- 		if (ufs_phy->ufs_phy_state == CFG_POST_PWR_HS &&
--		    ufs_phy->drvdata->wait_for_cdr)
-+		    ufs_phy->drvdata->wait_for_cdr) {
- 			err = ufs_phy->drvdata->wait_for_cdr(phy, i);
-+			if (err)
-+				goto out;
-+		}
- 	}
+-  "los-gpios":
++  los-gpios:
+     maxItems: 1
+     description:
+       GPIO phandle and a specifier of the Receiver Loss of Signal Indication
+       input gpio signal, active (signal lost) high
  
- 	/**
+-  "tx-fault-gpios":
++  tx-fault-gpios:
+     maxItems: 1
+     description:
+       GPIO phandle and a specifier of the Module Transmitter Fault input gpio
+       signal, active (fault condition) high
+ 
+-  "tx-disable-gpios":
++  tx-disable-gpios:
+     maxItems: 1
+     description:
+       GPIO phandle and a specifier of the Transmitter Disable output gpio
+       signal, active (Tx disable) high
+ 
+-  "rate-select0-gpios":
++  rate-select0-gpios:
+     maxItems: 1
+     description:
+       GPIO phandle and a specifier of the Rx Signaling Rate Select (AKA RS0)
+       output gpio signal, low - low Rx rate, high - high Rx rate Must not be
+       present for SFF modules
+ 
+-  "rate-select1-gpios":
++  rate-select1-gpios:
+     maxItems: 1
+     description:
+       GPIO phandle and a specifier of the Tx Signaling Rate Select (AKA RS1)
+diff --git a/Documentation/devicetree/bindings/pci/xilinx-versal-cpm.yaml b/Documentation/devicetree/bindings/pci/xilinx-versal-cpm.yaml
+index 4734be456bde..c41344f8a242 100644
+--- a/Documentation/devicetree/bindings/pci/xilinx-versal-cpm.yaml
++++ b/Documentation/devicetree/bindings/pci/xilinx-versal-cpm.yaml
+@@ -48,13 +48,16 @@ properties:
+   interrupt-controller:
+     description: Interrupt controller node for handling legacy PCI interrupts.
+     type: object
++    additionalProperties: false
++
+     properties:
+       "#address-cells":
+         const: 0
++
+       "#interrupt-cells":
+         const: 1
+-      "interrupt-controller": true
+-    additionalProperties: false
++
++      interrupt-controller: true
+ 
+ required:
+   - reg
+diff --git a/Documentation/devicetree/bindings/pci/xlnx,nwl-pcie.yaml b/Documentation/devicetree/bindings/pci/xlnx,nwl-pcie.yaml
+index 426f90a47f35..cbe832c23dae 100644
+--- a/Documentation/devicetree/bindings/pci/xlnx,nwl-pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/xlnx,nwl-pcie.yaml
+@@ -84,7 +84,7 @@ properties:
+       "#interrupt-cells":
+         const: 1
+ 
+-      "interrupt-controller": true
++      interrupt-controller: true
+ 
+     required:
+       - "#address-cells"
+diff --git a/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml b/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml
+index 8467c8e6368c..439bda142764 100644
+--- a/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/brcm,sata-phy.yaml
+@@ -59,14 +59,14 @@ patternProperties:
+       "#phy-cells":
+         const: 0
+ 
+-      "brcm,enable-ssc":
++      brcm,enable-ssc:
+         $ref: /schemas/types.yaml#/definitions/flag
+         description: |
+           Use spread spectrum clocking (SSC) on this port
+           This property is not applicable for "brcm,iproc-ns2-sata-phy",
+           "brcm,iproc-nsp-sata-phy" and "brcm,iproc-sr-sata-phy".
+ 
+-      "brcm,rxaeq-mode":
++      brcm,rxaeq-mode:
+         $ref: /schemas/types.yaml#/definitions/string
+         description:
+           String that indicates the desired RX equalizer mode.
+@@ -75,7 +75,7 @@ patternProperties:
+           - auto
+           - manual
+ 
+-      "brcm,rxaeq-value":
++      brcm,rxaeq-value:
+         $ref: /schemas/types.yaml#/definitions/uint32
+         description: |
+             When 'brcm,rxaeq-mode' is set to "manual", provides the RX
+@@ -83,7 +83,7 @@ patternProperties:
+         minimum: 0
+         maximum: 63
+ 
+-      "brcm,tx-amplitude-millivolt":
++      brcm,tx-amplitude-millivolt:
+         description: |
+             Transmit amplitude voltage in millivolt.
+         $ref: /schemas/types.yaml#/definitions/uint32
+diff --git a/Documentation/devicetree/bindings/regulator/ti,tps62864.yaml b/Documentation/devicetree/bindings/regulator/ti,tps62864.yaml
+index 0f29c75f42ea..dddea27596e9 100644
+--- a/Documentation/devicetree/bindings/regulator/ti,tps62864.yaml
++++ b/Documentation/devicetree/bindings/regulator/ti,tps62864.yaml
+@@ -24,7 +24,7 @@ properties:
+     type: object
+ 
+     properties:
+-      "SW":
++      SW:
+         type: object
+         $ref: regulator.yaml#
+         unevaluatedProperties: false
+diff --git a/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml b/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
+index b86f6f53ca95..7140c312d898 100644
+--- a/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
++++ b/Documentation/devicetree/bindings/soc/tegra/nvidia,tegra20-pmc.yaml
+@@ -365,9 +365,9 @@ allOf:
+ additionalProperties: false
+ 
+ dependencies:
+-  "nvidia,suspend-mode": ["nvidia,core-pwr-off-time", "nvidia,cpu-pwr-off-time"]
+-  "nvidia,core-pwr-off-time": ["nvidia,core-pwr-good-time"]
+-  "nvidia,cpu-pwr-off-time": ["nvidia,cpu-pwr-good-time"]
++  nvidia,suspend-mode: ["nvidia,core-pwr-off-time", "nvidia,cpu-pwr-off-time"]
++  nvidia,core-pwr-off-time: ["nvidia,core-pwr-good-time"]
++  nvidia,cpu-pwr-off-time: ["nvidia,cpu-pwr-good-time"]
+ 
+ examples:
+   - |
+diff --git a/Documentation/devicetree/bindings/tpm/ibm,vtpm.yaml b/Documentation/devicetree/bindings/tpm/ibm,vtpm.yaml
+index 50a3fd31241c..8b0d3d4be5d8 100644
+--- a/Documentation/devicetree/bindings/tpm/ibm,vtpm.yaml
++++ b/Documentation/devicetree/bindings/tpm/ibm,vtpm.yaml
+@@ -33,13 +33,13 @@ properties:
+   reg:
+     maxItems: 1
+ 
+-  'ibm,#dma-address-cells':
++  ibm,#dma-address-cells:
+     description:
+       number of cells that are used to encode the physical address field of
+       dma-window properties
+     $ref: /schemas/types.yaml#/definitions/uint32-array
+ 
+-  'ibm,#dma-size-cells':
++  ibm,#dma-size-cells:
+     description:
+       number of cells that are used to encode the size field of
+       dma-window properties
 -- 
-2.44.0.769.g3c40516874-goog
+2.43.0
 
 
 -- 
