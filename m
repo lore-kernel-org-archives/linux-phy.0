@@ -4,109 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41E82C4345F
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Apr 2024 06:31:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C58F7C4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Apr 2024 16:21:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3UEzS82zHX5j3JSyVkhZlLbKYpwlnJ5zAMQRYqvm8GU=; b=ZLUsThWZ3KKXLs
-	gdmy+CtDFbFcG0pZQbdo0cIMtzpMYvmrctwyFvRABwbB8pPxUSeGkDBqk/Vnz69zxAobqYpz6Za+T
-	x7qaeBAt5mHSzFvV2QfVN/7IGww5KqXnrDxbQMte8pJWWV3bz4SoLrKHBQK8Z+h54AIuzEhRltYiS
-	UCJcej/uhu6Qh+EZ0YDGHlg+fYr2pk178CXBmjVSOHXj1T8PDpebO9M9lw1NwVmCP7PQp3AbovLMd
-	7ZaplFvlDUhtkJHSfiK3dfCkKsaBYCkQNme/rlChmV62i6LmYbpY5ccMTrG5PDhWlyE/Q6U32qhrk
-	Gid9gidCZxqXPOyxacQQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=McNQnkmGCWZ1oFnv2ky/9QkSX4UeJHU+V+qbcdu2dRY=; b=3YsWHYz3+8fDje
+	Cx2ZBr1G8AOaLMwa1ZGWCieqpj+CBTbg0cn9QA4kU9G/T63J7QAZCY5hI0JHvPJeqt2ByWkXsuYM/
+	Q7NWnogl2V7zPea/C1vCrfl/W68LPp7aCmPFc3nA90+fTa5Rju8EXPwIjn4csYTlatkZT6kY5AwVc
+	Wakpu8oZOs0BaESyzilaHwfPMj9fSYk3zDHRggZqoQlu37VepSnoOxQZbj94fV/gkLInixpE+95ID
+	3uLStN0YAG8hwA1O9y1Gt0aj6YXmST6FlWQmgDjOFjWGxoBpF/Fo6Rc2wbYttKDjyUPoOHCJa90AK
+	AN0E5e+SLY8/EB9BxKrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1h1i-00000005I37-3bub;
-	Tue, 30 Apr 2024 06:31:42 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1s1qEl-00000007CI5-1Lpz;
+	Tue, 30 Apr 2024 16:21:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1h1f-00000005I2K-0wcw
+	id 1s1qEh-00000007CGL-3zAK
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Apr 2024 06:31:40 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43U4RaBk019841;
-	Tue, 30 Apr 2024 06:31:26 GMT
+	Tue, 30 Apr 2024 16:21:45 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 43UC8beA027011;
+	Tue, 30 Apr 2024 16:21:39 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	date:from:to:cc:subject:message-id:references:mime-version
-	:content-type:in-reply-to; s=qcppdkim1; bh=/EDHGHEVWUCmdxp3Bjyh7
-	Wce+g5mQmyF9Sk2EZ1/ZSE=; b=JW19BNTdgmH04Jj119dRFlpPitsdisGC8g4iD
-	cdj7l26qhA9cvTNh1ZeQNuwlrBJD4bgiw6RnB09pNs5PxIPlsKoROng4rE13UrPW
-	DGkFkxlZtVXLgHvNaQRloS/wLMlt5Dd9G7WracQKSE7kcgelGJBaQ+iQOZt+PVxr
-	Mj5F0LBtXpjdB3IxnCwZMH9HsqHMkdbHbdlC8qxyTCHCwRA57fsIrkuhhWqi9Sj/
-	yImsDK6EUFl6FK844wer1ev/p/OJ2g+ZL8bt8ku827neEfK6Au2LJNNp9lxKP92W
-	xGxK3VmvlhuotxnIQpuefuXrlhBa6c2Wmqnhf5TWQhrQXPGiQ==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xtd8kkmjy-1
+	from:to:cc:subject:date:message-id; s=qcppdkim1; bh=wDr8dzJLpaiP
+	P1TFmJF3Q6ce8I4MPRSecRkI20be+cg=; b=a1n7U23KhNq0raaHzPE0kgd/qJi6
+	x8VmR1mJ1cdiaV8cjH2XwW+mEItW14WfMn/ZKebjfr5oyRg7dw1HIArPRbO9YQVu
+	xQqaSKCFDlD4EyLOS/oCu2KKlnrrcC93TNSOFaFRdhgv8PFzkbzfgJtfOVgFqsRt
+	aIeDIzPOsTYVTKtpjmpd+FAqtJ4FaIg7tsjBLYyUnI1Och3adhwEUsEV34X9h63W
+	F8ke5gp73cM1ckXfYa0k714nj20LZOc0B5dVgTpkaD2bhjeSXQmWVshqkw1t+Kbd
+	/wF4hTOT1/YAbQSp7DJamh4m8KGMiDBUPB7iv0+xsR0HYGu/Ot7+qb8hJw==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xtfys411r-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 06:31:26 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 43U6VP4x008281
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 30 Apr 2024 06:31:25 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 29 Apr 2024 23:31:18 -0700
-Date: Tue, 30 Apr 2024 12:01:15 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: Alex G. <mr.nuke.me@gmail.com>, Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@linaro.org>,
-        Lorenzo Pieralisi
-	<lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?=
-	<kw@linux.com>,
-        Rob Herring <robh@kernel.org>, Bjorn Helgaas
-	<bhelgaas@google.com>,
+	Tue, 30 Apr 2024 16:21:38 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 43UGLYu1025510;
+	Tue, 30 Apr 2024 16:21:34 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 3xrtem1dqe-1;
+	Tue, 30 Apr 2024 16:21:34 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 43UGLX2I025504;
+	Tue, 30 Apr 2024 16:21:33 GMT
+Received: from hu-sgudaval-hyd.qualcomm.com (hu-msarkar-hyd.qualcomm.com [10.213.111.194])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 43UGLXk8025502;
+	Tue, 30 Apr 2024 16:21:33 +0000
+Received: by hu-sgudaval-hyd.qualcomm.com (Postfix, from userid 3891782)
+	id 638E02287; Tue, 30 Apr 2024 21:51:32 +0530 (+0530)
+From: Mrinmay Sarkar <quic_msarkar@quicinc.com>
+To: andersson@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+        conor+dt@kernel.org, konrad.dybcio@linaro.org,
+        manivannan.sadhasivam@linaro.org
+Cc: quic_shazhuss@quicinc.com, quic_nitegupt@quicinc.com,
+        quic_ramkri@quicinc.com, quic_nayiluri@quicinc.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+        quic_schintav@quicinc.com, Mrinmay Sarkar <quic_msarkar@quicinc.com>,
+        Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
-	<conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I
-	<kishon@kernel.org>,
-        Michael Turquette <mturquette@baylibre.com>,
-        Stephen
- Boyd <sboyd@kernel.org>,
-        Manivannan Sadhasivam
-	<manivannan.sadhasivam@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-clk@vger.kernel.org>
-Subject: Re: [PATCH v3 6/7] phy: qcom-qmp-pcie: add support for ipq9574
- gen3x2 PHY
-Message-ID: <ZjCQM24T2XIJ6GAR@hu-varada-blr.qualcomm.com>
-References: <20240415182052.374494-1-mr.nuke.me@gmail.com>
- <20240415182052.374494-7-mr.nuke.me@gmail.com>
- <CAA8EJpqY1aDZMaeqBULEOD26UeGYbLd8RsA16jZw7zXJ7_oGPQ@mail.gmail.com>
- <6726fa2b-f5fe-10fb-6aab-f76d61f0b3cd@gmail.com>
- <4a7b1e1d-ac68-4857-8925-f90c9e123fd1@gmail.com>
- <CAA8EJppGW=qyk2P6Z_S=dp0njsCjqZaXjw8qU4MY1HOZR-N=4A@mail.gmail.com>
- <Zi88Hdx6UgBo/gti@hu-varada-blr.qualcomm.com>
- <CAA8EJpq+Bbws8yH5Xq7rHyA+-=DaCcfEcgUa5RUt2+LWQW0kKg@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJpq+Bbws8yH5Xq7rHyA+-=DaCcfEcgUa5RUt2+LWQW0kKg@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Qiang Yu <quic_qianyu@quicinc.com>, Abel Vesa <abel.vesa@linaro.org>,
+        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: [PATCH v2 0/2] arm64: qcom: sa8775p: add support for x4 EP PCIe controller
+Date: Tue, 30 Apr 2024 21:51:25 +0530
+Message-Id: <1714494089-7917-1-git-send-email-quic_msarkar@quicinc.com>
+X-Mailer: git-send-email 2.7.4
+X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Kz9y3fLxciuZSj0DW7v68K0H1YjdIf0m
-X-Proofpoint-ORIG-GUID: Kz9y3fLxciuZSj0DW7v68K0H1YjdIf0m
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: ikTmId_na6_5At1CtcZhguBiwEjZqFG4
+X-Proofpoint-ORIG-GUID: ikTmId_na6_5At1CtcZhguBiwEjZqFG4
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-04-30_02,2024-04-29_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
- adultscore=0 spamscore=0 mlxscore=0 phishscore=0 suspectscore=0
- priorityscore=1501 impostorscore=0 lowpriorityscore=0 clxscore=1015
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2404010003 definitions=main-2404300046
+ definitions=2024-04-30_09,2024-04-30_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
+ spamscore=0 mlxscore=0 clxscore=1011 suspectscore=0 mlxlogscore=618
+ lowpriorityscore=0 impostorscore=0 priorityscore=1501 bulkscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2404010003 definitions=main-2404300117
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240429_233139_416582_6CA36058 
-X-CRM114-Status: GOOD (  33.15  )
+X-CRM114-CacheID: sfid-20240430_092144_051987_D3AE886D 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,90 +106,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 29, 2024 at 01:55:32PM +0300, Dmitry Baryshkov wrote:
-> On Mon, 29 Apr 2024 at 09:20, Varadarajan Narayanan
-> <quic_varada@quicinc.com> wrote:
-> >
-> > On Wed, Apr 17, 2024 at 12:50:49AM +0300, Dmitry Baryshkov wrote:
-> > > On Wed, 17 Apr 2024 at 00:25, Alex G. <mr.nuke.me@gmail.com> wrote:
-> > > >
-> > > > Hi Dmitry,
-> > > >
-> > > > On 4/15/24 16:25, mr.nuke.me@gmail.com wrote:
-> > > > >
-> > > > >
-> > > > > On 4/15/24 15:10, Dmitry Baryshkov wrote:
-> > > > >> On Mon, 15 Apr 2024 at 21:23, Alexandru Gagniuc <mr.nuke.me@gmail.com>
-> > > > >> wrote:
-> > > > >>>
-> > > > >>> Add support for the gen3x2 PCIe PHY on IPQ9574, ported form downstream
-> > > > >>> 5.4 kernel. Only the serdes and pcs_misc tables are new, the others
-> > > > >>> being reused from IPQ8074 and IPQ6018 PHYs.
-> > > > >>>
-> > > > >>> Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
-> > > > >>> ---
-> > > > >>>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 136 +++++++++++++++++-
-> > > > >>>   .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 ++
-> > > > >>>   2 files changed, 149 insertions(+), 1 deletion(-)
-> > > > >>>
-> > > > >>
-> > > > >> [skipped]
-> > > > >>
-> > > > >>> @@ -2448,7 +2542,7 @@ static inline void qphy_clrbits(void __iomem
-> > > > >>> *base, u32 offset, u32 val)
-> > > > >>>
-> > > > >>>   /* list of clocks required by phy */
-> > > > >>>   static const char * const qmp_pciephy_clk_l[] = {
-> > > > >>> -       "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
-> > > > >>> +       "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
-> > > > >>> "anoc", "snoc"
-> > > > >>
-> > > > >> Are the NoC clocks really necessary to drive the PHY? I think they are
-> > > > >> usually connected to the controllers, not the PHYs.
-> > > > >
-> > > > > The system will hang if these clocks are not enabled. They are also
-> > > > > attached to the PHY in the QCA 5.4 downstream kernel.
-> > >
-> > > Interesting.
-> > > I see that Varadarajan is converting these clocks into interconnects.
-> > > Maybe it's better to wait for those patches to land and use
-> > > interconnects instead. I think it would better suit the
-> > > infrastructure.
-> > >
-> > > Varadarajan, could you please comment, are these interconnects
-> > > connected to the PHY too or just to the PCIe controller?
-> >
-> > Sorry for the late response. Missed this e-mail.
-> >
-> > These 2 clks are related to AXI port clk on Aggnoc/SNOC, not
-> > directly connected to PCIE wrapper, but it should be enabled to
-> > generate pcie traffic.
->
-> So, are they required for the PHY or are they required for the PCIe
-> controller only?
+This series updates PHY and add EP PCIe node in dtsi file for
+ep pcie1 controller that supports gen4 and x4 lane width.
 
-These 2 clks are required for PCIe controller only.
-PCIE controller need these clks to send/receive axi pkts.
+Dependency for Patch 2
+----------------------
 
-Thanks
-Varada
+Depends on: 
+https://lore.kernel.org/all/1714492540-15419-1-git-send-email-quic_msarkar@quicinc.com/
 
-> > > > They are named "anoc_lane", and "snoc_lane" in the downstream kernel.
-> > > > Would you like me to use these names instead?
-> > >
-> > > I'm fine either way.
-> > >
->
->
->
-> --
-> With best wishes
-> Dmitry
+V1 -> V2:
+- Added Reviewed-by tag in patch 1
+- Fixed indentation in patch 2
+- Fixed merged conflict on patch 2 and rebased on top of v6.9-rc6
+- link to v1: https://lore.kernel.org/all/1699362294-15558-1-git-send-email-quic_msarkar@quicinc.com/
+
+Mrinmay Sarkar (2):
+  phy: qcom-qmp-pcie: add x4 lane EP support for sa8775p
+  arm64: dts: qcom: sa8775p: Add ep pcie1 controller node
+
+ arch/arm64/boot/dts/qcom/sa8775p.dtsi    | 47 ++++++++++++++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c |  9 +++++-
+ 2 files changed, 55 insertions(+), 1 deletion(-)
+
+-- 
+2.7.4
+
 
 -- 
 linux-phy mailing list
