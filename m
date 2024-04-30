@@ -4,74 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D72EAC4345F
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Apr 2024 20:36:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93D35C4345F
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Apr 2024 21:51:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aDoUjl2V8XSYe+x8fUd+goavKqip7rJLPidDQ0We/XM=; b=UnHPQsaDsyLGRP
-	70o0xt9hMDgxv8dZ0lBzz5Enge8TiJZ8GlYVnOeWyHZZ3zZD91EbHh5nI+B6V7xw1WgytmYUseUNZ
-	yv6KiR2ZAPAxY4sybDCVxlhYDnVuV7E/vJ6VfOGx9RRXWNOWnA+YhfS/9RrI+Qu4mhOvouXpe+VCk
-	wY61t8MCCi29HZPo0Aj1PdH9Hpn24oHT66tqsXJcCbVpzyiRYcJTiK1skAug4k1PJPDk9hYRMD0j6
-	fg2oU08S+0rWmzHoKfW6fMfM3F44pjIr2cz12RKn4w/8nldX1rNObFgrsHdzEns2jZO0zy362Bg5W
-	GISp40nnFRLUnIuHkmFQ==;
+	List-Owner; bh=WNSlppxvr+/uTsIsK0KXHeyP/ETUB0EEhqT+Ay6b6yM=; b=BgNFWe2W4ktyav
+	xYTMKjDKIreZdHQn4/DT6/QMVqBG81rSSDedCUBm8ZGPV6XIEhcuINiN0AuITifbbGT88IVi62Jwk
+	xT0wZ040zGlwkzi0pXZlBcDl3TY5DvcMsdXJI0iFWR1CryAXhBEEz7rJ+ycY0/4gH9QpVKJ6xah+M
+	R6Wnsaq0wws3XdNSxp8BJwek6w/47eogCYVdL5/b8IPrS26Y7ITpLDUItGxndbSyyfwMAWqvenXS9
+	UF3gD3OK3RbQO3ZGs9ANDIfI6P5LltTggGG5eWyBbfyje4cbnRnbAXmF9uYzgsGu4YC638jC3UDPk
+	B1toOG5qxuUB+cVdNtOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1uD8-00000007sbV-25rg;
-	Tue, 30 Apr 2024 20:36:22 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1s1vO8-000000080vk-0wX6;
+	Tue, 30 Apr 2024 21:51:48 +0000
+Received: from mail-oo1-xc2e.google.com ([2607:f8b0:4864:20::c2e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s1uD3-00000007sYi-05Vt;
-	Tue, 30 Apr 2024 20:36:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0AF97615FF;
-	Tue, 30 Apr 2024 20:36:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65FE6C2BBFC;
-	Tue, 30 Apr 2024 20:36:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1714509375;
-	bh=Hkj282ZLhfbSUGTDTtv67ovkyS9SO/gWC6U/Vkj6ntE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OetM1xSZk1J0d3YpjnwC9bXo2yKgdoivZ1Z2sUGNB56z1UgB9XmC+L6fSQBlWbQI/
-	 qKFuZWpF+P3kxNZoRXRfqPW6cU6T2XJW/G1Ux4af34+Tp7umnXcllQyUj+UjP06+p1
-	 a8VxltRmcsXGj1X7eQi9/gFo9y8jKV4xsGQy0EYHtFR8sWygzcmIb1Fd2WNYomut6L
-	 3qatP8rGrvwURD97AJZD99iqXpbk1DUASWyPQBNibwd+HI4tSiLzVkOWoEaMwko+9O
-	 e5ag0rcBDxffjSolV52iuRTxMkxf+ZNKtRV7ltVDUlTtkO8w7m+zvq40Im9rf7Wm1z
-	 Hu7AibVsyDe0Q==
-Date: Tue, 30 Apr 2024 15:36:14 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Russell King <linux@armlinux.org.uk>, netdev@vger.kernel.org,
-	Vinod Koul <vkoul@kernel.org>, Eric Dumazet <edumazet@google.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	"David S. Miller" <davem@davemloft.net>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Mark Brown <broonie@kernel.org>, linux-kernel@vger.kernel.org,
-	Bharat Kumar Gogada <bharat.kumar.gogada@amd.com>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Michal Simek <michal.simek@amd.com>, linux-pci@vger.kernel.org,
-	linux-tegra@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>,
-	Bjorn Helgaas <bhelgaas@google.com>
-Subject: Re: [PATCH] dt-bindings: Drop unnecessary quotes on keys
-Message-ID: <171450935610.1153506.3784386455405156371.robh@kernel.org>
-References: <20240426202239.2837516-1-robh@kernel.org>
+	id 1s1vO5-000000080uq-1MkT
+	for linux-phy@lists.infradead.org;
+	Tue, 30 Apr 2024 21:51:46 +0000
+Received: by mail-oo1-xc2e.google.com with SMTP id 006d021491bc7-5aa3f0fcd46so3891489eaf.1
+        for <linux-phy@lists.infradead.org>; Tue, 30 Apr 2024 14:51:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1714513899; x=1715118699; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=d6qd8lJvJh2hrhUBJz33E1gMQnbvjUgqj9rCB8sm/gc=;
+        b=dgfmU8+WuGgLbrO2Ma0D2mUZlrkuOgbJ6tqK1ZtFpvOb2HXRN5WpjAR37F17hF2vVl
+         rNGP2luFgqtUA++SIRzZmLqHxmxvyrO5/Wf+HGeMW0qXIckE+uNNB+/RWUTZEju8mdxu
+         JJpcQv9Jg9dbwSjhJghwy5LpWkpkKaywsXJ55W/aN/JdTgmXMvpsVitw4h8Yglbz9FmP
+         Uu9xttGR6sUBXgJJlz0GtS5Ps5SqmiIkPO50fMe2lXu0ngwHqloNSXp6Q4etz+7L2GOE
+         gWl4YggUUybBpuvaZtE8ZFv8/DvNbbV2Hu0n4NsL/L9TeVNTR8vJSY1ujTa5qOUjxH2F
+         j1dA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1714513899; x=1715118699;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=d6qd8lJvJh2hrhUBJz33E1gMQnbvjUgqj9rCB8sm/gc=;
+        b=e+DzN7NGJJ2NF6Jm5HcqP8c999oxum1LNebt9UOUZyVIsBKZwqTOfLamDTeCab6NJh
+         3qCwQ3PFUUNRTDkPYX7gtBeoclN8MZu/HtKH2cARTsjKbzkM8F296UcEZcI5UjWDEn1O
+         aN3B8VsB4TliGx6P6MxqWtjWwBlWt3fCP5k0RPhL+Dw8wTD3ul10mHYZ+Ci7apSj68b3
+         Kp620GBL/ZdLRIuE+no+LPfLQKW456mMg+167tt4DbIwWirHV34LpxGBzAfW7Rr2/qWX
+         t2hPSrIVhROKqO+oqpeq3J/fOwv8T6OLyfxs6eNh9vC32B5p5cCsrpaWM2u+mv7Bq1ei
+         VhsQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUSDfFbPnj3xj0UPQbsJEwOtVM5/Y/q09a0zGYh0ERAcfkm8icRWGnzYQvNsdmK56AYbk9/Wya+yV7H7yXHPV7IHPEKJmRyUptRjbEq2Q==
+X-Gm-Message-State: AOJu0Yy76UXREfhyvUzI36tVKtjllsL+HB4hVS6W+99zd+Yp/k4QXS2D
+	eNdbASMCIFoo0UIHjo671wLH5/CcU0Sf9TCLyigKTxzJ1Jvwobid
+X-Google-Smtp-Source: AGHT+IHW6bYHhn8CohYrr9D+kQrfwgZyt3rb3ReMqW6TPOXzhq+u1mceFtChWghqHxrVWoqCKD1mtA==
+X-Received: by 2002:a4a:98c7:0:b0:5af:c4b3:7c6d with SMTP id b7-20020a4a98c7000000b005afc4b37c6dmr691177ooj.5.1714513899564;
+        Tue, 30 Apr 2024 14:51:39 -0700 (PDT)
+Received: from [192.168.7.169] (c-98-197-58-203.hsd1.tx.comcast.net. [98.197.58.203])
+        by smtp.gmail.com with ESMTPSA id bw12-20020a056820020c00b005ace4142e7esm5575325oob.46.2024.04.30.14.51.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 30 Apr 2024 14:51:38 -0700 (PDT)
+Message-ID: <9d9c569b-2e9c-4fd3-9a1a-50f198bd0884@gmail.com>
+Date: Tue, 30 Apr 2024 16:51:37 -0500
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240426202239.2837516-1-robh@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 6/7] phy: qcom-qmp-pcie: add support for ipq9574 gen3x2
+ PHY
+To: Varadarajan Narayanan <quic_varada@quicinc.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Manivannan Sadhasivam
+ <manivannan.sadhasivam@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org
+References: <20240415182052.374494-1-mr.nuke.me@gmail.com>
+ <20240415182052.374494-7-mr.nuke.me@gmail.com>
+ <CAA8EJpqY1aDZMaeqBULEOD26UeGYbLd8RsA16jZw7zXJ7_oGPQ@mail.gmail.com>
+ <6726fa2b-f5fe-10fb-6aab-f76d61f0b3cd@gmail.com>
+ <4a7b1e1d-ac68-4857-8925-f90c9e123fd1@gmail.com>
+ <CAA8EJppGW=qyk2P6Z_S=dp0njsCjqZaXjw8qU4MY1HOZR-N=4A@mail.gmail.com>
+ <Zi88Hdx6UgBo/gti@hu-varada-blr.qualcomm.com>
+ <CAA8EJpq+Bbws8yH5Xq7rHyA+-=DaCcfEcgUa5RUt2+LWQW0kKg@mail.gmail.com>
+ <ZjCQM24T2XIJ6GAR@hu-varada-blr.qualcomm.com>
+Content-Language: en-US
+From: mr.nuke.me@gmail.com
+In-Reply-To: <ZjCQM24T2XIJ6GAR@hu-varada-blr.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240430_133617_975709_46B8945F 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20240430_145145_411586_F443E654 
+X-CRM114-Status: GOOD (  18.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,33 +111,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 26 Apr 2024 15:22:37 -0500, Rob Herring (Arm) wrote:
-> The yamllint quoted-strings check wasn't checking keys for quotes, but
-> support for checking keys was added in 1.34 release. Fix all the errors
-> found when enabling the check.
+On 4/30/24 1:31 AM, Varadarajan Narayanan wrote:
+> On Mon, Apr 29, 2024 at 01:55:32PM +0300, Dmitry Baryshkov wrote:
+>> On Mon, 29 Apr 2024 at 09:20, Varadarajan Narayanan
+>> <quic_varada@quicinc.com> wrote:
+>>>
+>>> On Wed, Apr 17, 2024 at 12:50:49AM +0300, Dmitry Baryshkov wrote:
+>>>> On Wed, 17 Apr 2024 at 00:25, Alex G. <mr.nuke.me@gmail.com> wrote:
+>>>>>
+>>>>> Hi Dmitry,
+>>>>>
+>>>>> On 4/15/24 16:25, mr.nuke.me@gmail.com wrote:
+>>>>>>
+>>>>>>
+>>>>>> On 4/15/24 15:10, Dmitry Baryshkov wrote:
+>>>>>>> On Mon, 15 Apr 2024 at 21:23, Alexandru Gagniuc <mr.nuke.me@gmail.com>
+>>>>>>> wrote:
+>>>>>>>>
+>>>>>>>> Add support for the gen3x2 PCIe PHY on IPQ9574, ported form downstream
+>>>>>>>> 5.4 kernel. Only the serdes and pcs_misc tables are new, the others
+>>>>>>>> being reused from IPQ8074 and IPQ6018 PHYs.
+>>>>>>>>
+>>>>>>>> Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
+>>>>>>>> ---
+>>>>>>>>    drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 136 +++++++++++++++++-
+>>>>>>>>    .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 ++
+>>>>>>>>    2 files changed, 149 insertions(+), 1 deletion(-)
+>>>>>>>>
+>>>>>>>
+>>>>>>> [skipped]
+>>>>>>>
+>>>>>>>> @@ -2448,7 +2542,7 @@ static inline void qphy_clrbits(void __iomem
+>>>>>>>> *base, u32 offset, u32 val)
+>>>>>>>>
+>>>>>>>>    /* list of clocks required by phy */
+>>>>>>>>    static const char * const qmp_pciephy_clk_l[] = {
+>>>>>>>> -       "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
+>>>>>>>> +       "aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
+>>>>>>>> "anoc", "snoc"
+>>>>>>>
+>>>>>>> Are the NoC clocks really necessary to drive the PHY? I think they are
+>>>>>>> usually connected to the controllers, not the PHYs.
+>>>>>>
+>>>>>> The system will hang if these clocks are not enabled. They are also
+>>>>>> attached to the PHY in the QCA 5.4 downstream kernel.
+>>>>
+>>>> Interesting.
+>>>> I see that Varadarajan is converting these clocks into interconnects.
+>>>> Maybe it's better to wait for those patches to land and use
+>>>> interconnects instead. I think it would better suit the
+>>>> infrastructure.
+>>>>
+>>>> Varadarajan, could you please comment, are these interconnects
+>>>> connected to the PHY too or just to the PCIe controller?
+>>>
+>>> Sorry for the late response. Missed this e-mail.
+>>>
+>>> These 2 clks are related to AXI port clk on Aggnoc/SNOC, not
+>>> directly connected to PCIE wrapper, but it should be enabled to
+>>> generate pcie traffic.
+>>
+>> So, are they required for the PHY or are they required for the PCIe
+>> controller only?
 > 
-> Clean-up the xilinx-versal-cpm formatting while we're here.
-> 
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
-> ---
->  Documentation/devicetree/bindings/net/sff,sfp.yaml   | 12 ++++++------
->  .../devicetree/bindings/pci/xilinx-versal-cpm.yaml   |  7 +++++--
->  .../devicetree/bindings/pci/xlnx,nwl-pcie.yaml       |  2 +-
->  .../devicetree/bindings/phy/brcm,sata-phy.yaml       |  8 ++++----
->  .../devicetree/bindings/regulator/ti,tps62864.yaml   |  2 +-
->  .../bindings/soc/tegra/nvidia,tegra20-pmc.yaml       |  6 +++---
->  Documentation/devicetree/bindings/tpm/ibm,vtpm.yaml  |  4 ++--
->  7 files changed, 22 insertions(+), 19 deletions(-)
-> 
+> These 2 clks are required for PCIe controller only.
+> PCIE controller need these clks to send/receive axi pkts.
 
-Applied, thanks!
+Very interesting information, thank you!
 
+Dmitry, In light of this information do you want me to move these clocks 
+out of the PHY and into the PCIe controller?
+
+Alex
+
+> Thanks
+> Varada
+> 
+>>>>> They are named "anoc_lane", and "snoc_lane" in the downstream kernel.
+>>>>> Would you like me to use these names instead?
+>>>>
+>>>> I'm fine either way.
+>>>>
+>>
+>>
+>>
+>> --
+>> With best wishes
+>> Dmitry
 
 -- 
 linux-phy mailing list
