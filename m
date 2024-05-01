@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F486C4345F
-	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 10:22:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2008C4345F
+	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 10:22:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s3NsyEnKLzkoV3MlQ+L2bNKaVqy3SSL2Ka0kEcKL7Wg=; b=xVO41Dcr9RORwQ
-	h7wxfaTNp4R98DZQ718yrtYtSeSb1UQlEBEFAkpdu9WZLEd2lHG103ayDcE3vjxNFuTzLlDLfLY2Q
-	1CCAwUeLP7oUaFr1Q8T0mW3V/x+Qd+4oKQWDbgY3ctoLkONLiPeBEtxPoyRDEMFA8MTR9mTFxKvyS
-	cExLc7dGFFOYNtTYP+JCaP4rd4qLFWVAaQ/bF5ftvNbhLfUQ7KdrU7vAGDqor4/2kwRASWda5o/k/
-	kNYLwaWBGDgeHxFnn4nSRjWdy692OrgLhur0ROkLfO89LBeUgihXQ9xxXCI0ml60jkP+BiJcaviva
-	Gt58G5CcKfO9g0J4a75Q==;
+	List-Owner; bh=HrzHkH1KyHAbHYKBPFthXWN96i0qToZlsbEa90knj+I=; b=e5R/FfIHKpoBSY
+	JuxaTZ83XJn8Oz8Ir3QQaTMqvGnSqoUdWBdUVjcs2IYxjn6lfqU6DMsd2/4dTQKvJbzz20I1qwH2V
+	eUJ6ebH1vTPNHXcjCPY11SKsC94iichPvWjt5T6WpPDvDiqWmZL626zy0LeSwSAOoKZiJwujOSL4O
+	B9MsDB2UZHNFPK+V6pmZhWxQS8RM183HRGrmYhObHcqekHEp/xVc6yJGyVBrinqfDe9xTx8u0R8mJ
+	4DYfWcWvY5P+PR+r6EaCuJWGTOTiMkcd7m1LOBWLsGRzb+pBvzaXFAk+tLuAVaH2Css5yOInlQYLY
+	Si6oebkm7xwstwgwXsoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2769-000000095G6-2coq;
-	Wed, 01 May 2024 10:22:01 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1s2770-000000095Ov-2R81;
+	Wed, 01 May 2024 10:22:54 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2766-000000095EQ-0KmK
+	id 1s276y-000000095OV-1gaU
 	for linux-phy@lists.infradead.org;
-	Wed, 01 May 2024 10:22:00 +0000
+	Wed, 01 May 2024 10:22:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 27393CE12B2;
-	Wed,  1 May 2024 10:21:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1D2EC113CC;
-	Wed,  1 May 2024 10:21:45 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id AF4E3610A0;
+	Wed,  1 May 2024 10:22:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 831DCC113CC;
+	Wed,  1 May 2024 10:22:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1714558914;
-	bh=7QxCLDHI6CTcg+OWFyUgHrtlIpIC7WCE64pmgcLmLcE=;
+	s=k20201202; t=1714558971;
+	bh=h7rfDC4P2mHHyUWnZGsoBw6xnXprPlYP35xFxAJ8hkk=;
 	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=Q2wcNKzPGjNQ12XiaQZsS7xGWZ0Gdl4tgmxIKwTqH/qOsWxDX69B9zIaCbXp56Vqy
-	 EBsHHGrx7EWuvDITJ+s7FsQk3t/Jh5+m+mtg22HYqlj5ptBPnM+aVkES99xtP9Xbp8
-	 w1NaFb/d9hVAjv7izzbyIRE2kQ/mk16r6EBeJiEr+W8aHGeW1Td+yKRp5og9xVl6n3
-	 vgXGDKj/BdPiDaTmmwz4Y8dgwdgOV8dqHSgEu8HIRxYrVe/6rEiFFh52Ptm+BdO/il
-	 h9mA8idQmDBijMvT9+ZZzU47jdoSGDR6pOH2jLcVOZQqbkfVxqnWOUzEe6T5mc6Rs/
-	 7oCBVkuYYcSQA==
-Message-ID: <a973f67b-de7f-4e21-b6b4-3b85d056456d@kernel.org>
-Date: Wed, 1 May 2024 12:21:43 +0200
+	b=Ty3MpEbRpWE1yo8InyD1sxP+/W8K8RAOB9q9qKzGbDRfWxbtubKaecHB2vfahIbcZ
+	 EV30//Gu0KmugjzGGHA/B0IIEVDhnuKX80rs+p2klPpv5RZAo1gqJBz/NpQfjy3L6I
+	 vnUWGSaWST5GPW6Soo3CNvq1iFSN5TJB0iUCLbiha6c26aeopYRMpljnGPlGrJGt/S
+	 SsO5DdNpyi8oSIVs2XJ4HiyXnBqfKhJR6RF4qVeD8HnOsjHqLVuEDG/ESe4TJYVGGh
+	 rZYBfAmNEjRN7mjAPtNp2/wY/bbVZSQ3A7rNZmViYMmoVAvWfDNx3aNc2J1x/LbhLY
+	 kb48+bAtwPyqw==
+Message-ID: <ea1c925f-1696-4491-a792-1b9165447dad@kernel.org>
+Date: Wed, 1 May 2024 12:22:42 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 RESEND 5/8] PCI: qcom: Add support for IPQ9574
+Subject: Re: [PATCH v4 RESEND 0/8] ipq9574: Enable PCI-Express support
 To: Alexandru Gagniuc <mr.nuke.me@gmail.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konrad.dybcio@linaro.org>,
@@ -63,7 +63,6 @@ To: Alexandru Gagniuc <mr.nuke.me@gmail.com>,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org
 References: <20240501042847.1545145-1-mr.nuke.me@gmail.com>
- <20240501042847.1545145-6-mr.nuke.me@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -109,10 +108,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240501042847.1545145-6-mr.nuke.me@gmail.com>
+In-Reply-To: <20240501042847.1545145-1-mr.nuke.me@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240501_032158_519606_1330ACF6 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20240501_032252_579824_956BC5F2 
+X-CRM114-Status: GOOD (  12.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,27 +129,32 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 01/05/2024 06:28, Alexandru Gagniuc wrote:
-> IPQ9574 has four PCIe controllers: two single-lane Gen3, and two
-> dual-lane Gen3. The controllers are identical from a software
-> perspective, with the differences appearing in the PHYs.
+> There are four PCIe ports on IPQ9574, pcie0 thru pcie3. This series
+> addresses pcie2, which is a gen3x2 port. The board I have only uses
+> pcie2, and that's the only one enabled in this series. pcie3 is added
+> as a special request, but is untested.
 > 
-> Add a compatible for the PCIe on IPQ9574.
+> I believe this makes sense as a monolithic series, as the individual
+> pieces are not that useful by themselves.
+> 
+> In v2, I've had some issues regarding the dt schema checks. For
+> transparency, I used the following test invocations to test:
+> 
+>       make dt_binding_check     DT_SCHEMA_FILES=qcom,pcie.yaml:qcom,ipq8074-qmp-pcie-phy.yaml
+>       make dtbs_check           DT_SCHEMA_FILES=qcom,pcie.yaml:qcom,ipq8074-qmp-pcie-phy.yaml
+> 
+> Changes since v3:
+>  - "const"ify .hw.init fields for the PCIE pipe clocks
+>  - Used pciephy_v5_regs_layout instead of v4 in phy-qcom-qmp-pcie.c
+>  - Included Manivannan's patch for qcom-pcie.c clocks
+>  - Dropped redundant comments in "ranges" and "interrupt-map" of pcie2.
+>  - Added pcie3 and pcie3_phy dts nodes
+>  - Moved snoc and anoc clocks to PCIe controller from PHY
+> 
 
-This is a friendly reminder during the review process.
-
-It looks like you received a tag and forgot to add it.
-
-If you do not know the process, here is a short explanation:
-Please add Acked-by/Reviewed-by/Tested-by tags when posting new
-versions, under or above your Signed-off-by tag. Tag is "received", when
-provided in a message replied to you on the mailing list. Tools like b4
-can help here. However, there's no need to repost patches *only* to add
-the tags. The upstream maintainer will do that for tags received on the
-version they apply.
-
-https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
-
-If a tag was not added on purpose, please state why and what changed.
+Three postings within short time... Allow people to actually review your
+code. Please wait 24h before posting new version. Include entire
+feedback and all tags. Explain why you ignore/skip some tags.
 
 Best regards,
 Krzysztof
