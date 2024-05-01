@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8219C4345F
-	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 23:05:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 408B4C4345F
+	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 23:06:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tnw3xU4YLzjVodP6o0GxTMBbOE8EOUcbpys8kbVRzgU=; b=iHSR5C6wWOX2bt
-	avSlufeab+TD0D5FmHA83uEMzN9AXcbj8PZ0r0yLUfnu0rAgoqmYVUxql341ACSKJczUAU2zwgB6E
-	EGMalKq/qjoVr6GGDTrBNQ1H/HOVQzq6y30ITcOV7KMXRwPVfHu8FI0Auw+bN9efupQ2jUEtWRBXa
-	nf6C97QCxKN7x6NXQTXCS2/opUSrWrLJ9QpQQ7kCPkT6XyqHMMTZzfSivyWtQN3Qqpc9iYzM2chhZ
-	GGS7FkARYUr17WNkoF6twIOefQTKCQIRbg20HI3Wpq/DMcySxtnThoQEdzs3Wk9DDX763foaSBHoW
-	ev38y4MG8qrU2Vc+lQyg==;
+	List-Owner; bh=6tmtQn1OknO0I5RCXG57hY+END9HDtHfiLQDrDZtrZg=; b=AL99heDfVioeg9
+	Nvv2Cu/PpAhpU0GdxmhnH+yhRryWpHiUv0/H7NL/XvwJu9/wkvPPv4S3KuEGXqfYpiY/sVDxNisq0
+	ZQXuzfV8ENKJiMwZUQ0ltN3UTyDoFoJR6h6gxCv2q0pVVV55wXEMCiwqpNRKIjcRp13030TmR+RMy
+	BOdcbJxhNngA8DvffUveTMQoQ1MSQAltXcn+bRlRdbl+VRbXgv0fIPQ77cBVMpiuGeI5AdDrOTvy9
+	4WEFtMPBqmlhzrSVBtbRiRv2JIYzGgjWcafhxASWFXpPnsJ6PPegh21V3hL2zqYh3F/09xiRXYRCq
+	fxDAqUoLjL3F9pmF0glg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2J1N-0000000AsD3-1TeA;
-	Wed, 01 May 2024 23:05:53 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1s2J1X-0000000AsFE-3rGq;
+	Wed, 01 May 2024 23:06:03 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2J1K-0000000AsCX-2HlJ
+	id 1s2J1U-0000000AsE9-3qyo
 	for linux-phy@lists.infradead.org;
-	Wed, 01 May 2024 23:05:51 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2df9af57b5eso70403601fa.2
-        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 16:05:50 -0700 (PDT)
+	Wed, 01 May 2024 23:06:02 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-2dcc8d10d39so84979921fa.3
+        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 16:06:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1714604749; x=1715209549; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1714604759; x=1715209559; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=ZXT2oY7RQqOzD7EKUjcgYkDikLe4I5yzWW20VO8VJdw=;
-        b=PCyhyVPDUZm+GhirmkmOc0FcmpHqW3NsFeqaawmmpddEAIaGSZr7rJf0u6m6l1TPhy
-         X/nbmx1FHkVAb7GHimRjDi9zR1pckTTZst6xHyyiQhLmmE+U1sZFofgmKA0u8Zy3wwo5
-         ZjmB3sxp/HXz4H+JuNsKXbsM4NA2iD1CehpRCo/vmjEwhhEyDmsvZBceY7dseXxnEVcJ
-         5wUMt2Upt5zBWlaUBG82DAN8bnMFIoWYBEm2o6RrSfecqLoa/mEMUXqRF9VdYiihL8qf
-         l9IzsR4YRlpClVmCQ5KSUYH/mJ5Gr9OdFuyBGpg6r/unsD/SwXSaUGOXqB/R+rdzgRJN
-         VYNg==
+        bh=cRBEcA6g+erlLdoN9JCHOuy1WSfoHszt/1llYH033ko=;
+        b=qXgYiBIkBuO04GlkgHNlBIliPmWvYnykBM/q4fR7T86dMAjNjIqPFJ4NzsFWQlK5sJ
+         t95VPRXzSIOdTS8l2b7wLmcUw+JyMPmXHF0I02xjSc/a8t+bzA9ioo+WAP29iGPI/KIt
+         +32LFvV+kHJVV0frcS3p89yvWmAU8qn4yC1wtWVznCCVhWVFma34QWK6moGpz+Z3ZNv1
+         Ps64SSlF1wKR3t/1qjjKGnrZAhd31mA/PJD+9FPvn9RRLdABKYvMUePT/FdNLBmiMkIf
+         4loE6fYeRJG3aSNqGOMLGkYGB3PVIuyl2uaBOEtKD/FaZEhvSgQJgMreM2tLHIpVjGdB
+         MTiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1714604749; x=1715209549;
+        d=1e100.net; s=20230601; t=1714604759; x=1715209559;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=ZXT2oY7RQqOzD7EKUjcgYkDikLe4I5yzWW20VO8VJdw=;
-        b=D4wYSqJ7riDAHODuLro5xBgSHsVWwKUqZ6QnTlasYX0/m6UNQgQO24fTKI0F/r8MV1
-         Sln3KkDd6On9IoU2Mgr2sETKJEq0jQaR3Wn0fUK9WNkzq/SC7lh8dLGKegtzToTnfIde
-         MTuNrb9auC5vUzozDXtx4V/n85+DbOrT5tdqNcK4vETea53iSXPI9h2aZGIj7UdyIW+A
-         fL7K9CwcV9Hf4ZM4i+8dBCiTGQOAcPZb8Ru9QrE/VStq7r3vedaNPveBaEHEM5mq+4dv
-         ZbDqDHiV2W9k2Vtd2i7Q7ijsnFNLdK7vaihR6+JuEdhbhQBmT9Tpnlau2bqOHGY95mTC
-         ScMg==
-X-Forwarded-Encrypted: i=1; AJvYcCXgnLY8DjfuSabtA8E5V8t5m5OmXJYknOvQu9V2VcG8pjZm92SDdIgSTgUoSSIPqrUF3PXAmp9+ub85l2g/4n2ryZ4BJzPxNEyUdnUBGQ==
-X-Gm-Message-State: AOJu0YwJvztXPxeonJ877yXHFQzbt9xBB1SmVtcCSMcJceNZey+NfOSG
-	ysA1jahtGPKubgMGVdZilGb91nDtV8jhek1m7w23aNxXC3N7AL/jDvYbKfb1oC0=
-X-Google-Smtp-Source: AGHT+IG4FMWQxC1UEVJBXfTf+qooLjxDp1hraJwE3DEPxV8Z4FmX4yTp+I05AbA/6k9p+ads3AYhkg==
-X-Received: by 2002:a2e:bc1c:0:b0:2d6:e295:e81f with SMTP id b28-20020a2ebc1c000000b002d6e295e81fmr325524ljf.35.1714604748936;
-        Wed, 01 May 2024 16:05:48 -0700 (PDT)
+        bh=cRBEcA6g+erlLdoN9JCHOuy1WSfoHszt/1llYH033ko=;
+        b=XE6HMU9rKI5xPflIJAvcnDKVpf/+gZZoz3FAV5IVOddPyNPjys5mXMWHyFyhnoSp/R
+         e3/9i6ErSG1kb9gyfnwNen0nLpf/gPj2oZHhnhp2n/TTUVfN/74h0P/Plzt3qoqWFqOb
+         rcfINzQCQoFppt+NlW6FQ7j3iqQehqXb1W9+ucSV9heX6Dwdt1QIYUZTnmsu/DrK0ngR
+         i2nC/ZQuYl4HoAtpoz36yYGbp/sDqFV5TDLp1k2dtoQM3CK898WGDYDzPfgjuRXh7rY2
+         LjutVco8eyT1XjijPFFps5d/1f/onb1mkAmuLi7XuhEmL2s/Nfz/zKinAbzOnZoRDkPK
+         uY4w==
+X-Forwarded-Encrypted: i=1; AJvYcCWd5tSnYgR2p2XFNP1lyWAb9hBrmESxCaDD/zHP/dBsZwnGb3aMTtlwAeaktB4E301rFD1blAw+QrrkZgooexukPjcLx2zN1/pURPAYHQ==
+X-Gm-Message-State: AOJu0YyYj2M73udeBO07/bdLFv2VOoux/c8jv7Cq5JRdec90/rF+jNqJ
+	LftR1vQz+LWfP9FpJus6cUSxv+8XsqLF5CUcPKmGnFP3Ip/pt1zD87G7zbaBKvo=
+X-Google-Smtp-Source: AGHT+IF6OMGZZYenYi9Acf2TXo7ddbB6cUhYV16WhKLqosbbD+RcK8Qv6yX4zk8hdkhaC3hJMC0FLA==
+X-Received: by 2002:a2e:9ad1:0:b0:2e0:e470:882f with SMTP id p17-20020a2e9ad1000000b002e0e470882fmr2385088ljj.28.1714604758948;
+        Wed, 01 May 2024 16:05:58 -0700 (PDT)
 Received: from [192.168.114.15] (078088045141.garwolin.vectranet.pl. [78.88.45.141])
-        by smtp.gmail.com with ESMTPSA id o9-20020aa7c7c9000000b005721127eefbsm10836857eds.17.2024.05.01.16.05.46
+        by smtp.gmail.com with ESMTPSA id p6-20020a05640243c600b005725d859e4esm6083491edc.73.2024.05.01.16.05.56
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 May 2024 16:05:48 -0700 (PDT)
-Message-ID: <3377e31b-1eac-419c-8dff-10bec2ca92ef@linaro.org>
-Date: Thu, 2 May 2024 01:05:44 +0200
+        Wed, 01 May 2024 16:05:58 -0700 (PDT)
+Message-ID: <f936d927-4d17-4928-a1a1-7bd4d3db6e54@linaro.org>
+Date: Thu, 2 May 2024 01:05:55 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 07/13] arm64: dts: qcom: sm6115: add power-domain to UFS
+Subject: Re: [PATCH 08/13] arm64: dts: qcom: sm6350: add power-domain to UFS
  PHY
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -87,7 +87,7 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  Krzysztof Kozlowski <krzk@kernel.org>,
  Konrad Dybcio <konrad.dybcio@somainline.org>
 References: <20240501-qcom-phy-fixes-v1-0-f1fd15c33fb3@linaro.org>
- <20240501-qcom-phy-fixes-v1-7-f1fd15c33fb3@linaro.org>
+ <20240501-qcom-phy-fixes-v1-8-f1fd15c33fb3@linaro.org>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
@@ -125,9 +125,9 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20240501-qcom-phy-fixes-v1-7-f1fd15c33fb3@linaro.org>
+In-Reply-To: <20240501-qcom-phy-fixes-v1-8-f1fd15c33fb3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240501_160550_620383_6B5485C5 
+X-CRM114-CacheID: sfid-20240501_160600_992893_400ED12B 
 X-CRM114-Status: UNSURE (   6.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
@@ -150,7 +150,7 @@ On 1.05.2024 6:19 PM, Dmitry Baryshkov wrote:
 > The UFS PHY is powered on via the UFS_PHY_GDSC power domain. Add
 > corresponding power-domain the the PHY node.
 > 
-> Fixes: 97e563bf5ba1 ("arm64: dts: qcom: sm6115: Add basic soc dtsi")
+> Fixes: 5a814af5fc22 ("arm64: dts: qcom: sm6350: Add UFS nodes")
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
 
