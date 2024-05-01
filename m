@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F058EC4345F
-	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 23:09:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F045C4345F
+	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 23:12:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L3/ObqK5SjveXX9JBgDOikAjYzs+rhNsXrJWSXpcoVc=; b=1a14RUav+lX+cA
-	lk0wViDChKSiH6UaDSuKKBotadHuMQr7I3RmQzmopTJ8XHBEcIzyfXGIVFpEWAefMX0v6kQTz3DGY
-	9gAgA2zryXsrrNO0Xzrjk1/oHcmFGrlzG3Lg7PIB1XZM+DT+2+RtyFV4+mJwXtkpuXdxEs/hLDpmF
-	X8clQvMDwLldRx505urcLlSN8+htV9GGueVhvw3kUH/PC3q9EnXeE8PUBxma2h2IO1yMa/18aZ1TT
-	U3IF1nwzYICWbjrNL5be4i+m5kZSQm6tLDYYLi8r029xd8LbmWm7Ipux0Hjt+WiaYrcsvS/MEQKYc
-	0peCYPXQoTCEAuIFXG5g==;
+	List-Owner; bh=Gg0ZOusHu3yfM7z0kiyoY11vu0wIoG6nf+GH4RkJeuA=; b=bWsah3anZXZJqz
+	Dt+Cvx8A03YyptP8xBhQ9vBtOh4USs2NK9erKFLDj6XuE/NWa+7antsvf+myfqS+1JKr/gdQRXYu3
+	FkDQ2ZkQ/7/i9I9gHIUytphmALMVBrxRK3P+yunj6XRT+9Koxw7U952/2M0w53TFtfykCUj7wHeAd
+	zOWMZZMbAqaaUvp7bwNc/E5uhOvq0DMIwel/tcv3kFFu7e0YOuIbQdP6TXiKiRKRP+0y/ofItwimO
+	LbtLs+moGo3CWV6P1fqLK9G61Gj+CwyGmqpa9MDsLxBJza1+gA8OW8yZqYuWDVFOeUteAJqnQQAf6
+	Ze9oCVxG5ssSePZhFZTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2J5C-0000000Asvb-2j8V;
-	Wed, 01 May 2024 23:09:50 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1s2J7Y-0000000AtFt-36Sc;
+	Wed, 01 May 2024 23:12:16 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2J59-0000000Asuy-0yS2
+	id 1s2J7U-0000000AtEy-3ayL
 	for linux-phy@lists.infradead.org;
-	Wed, 01 May 2024 23:09:48 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-572669fd9f9so7021009a12.0
-        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 16:09:45 -0700 (PDT)
+	Wed, 01 May 2024 23:12:14 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-a5557e3ebcaso219596266b.1
+        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 16:12:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1714604985; x=1715209785; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1714605130; x=1715209930; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=Ln2+Mmy8VaymdjnFL/fgiDjJTgNF1VdG6JJXTp+4zzE=;
-        b=a99UD9ZtiQ0xuhyjZrKnu4Go3gbcLXIrUMbHrC6J+EjNkTW+JI+BTgza58++fKQLTi
-         rP36qfyMLEvUNWa+2QmBKTYRs9XNsdzCFqxGgyAB7fEJaQaEuOZ4JnJvkYC3wWKYNERt
-         umxfpkCEHFM09jeX/oH//LmNnwQj37PAsaXxjqu3yZah/d3k3sFm5XKrlbaTU96n6W1r
-         l6HU35Ib6TfoqgA7wvED53+28ok2Snym4gCN+1cngZyChzBAJyIN3AUfSrzfJL0b4Tvw
-         01hXeSSYGuBrO8W1a8+G3g/R0D7PXizK2ljPWdGiJjo4RlAqDVE5bl9SgTHOZuLjxili
-         THCA==
+        bh=zhCvg7KjClQbusFKD8NHC5U/vmYAlsndfakVGGXVNKg=;
+        b=X9xJVFAnwALZqNHADekMS3sBnz5Rg7yyXaBiynen7PNm8+bNt7gf82WwcUs3D93ekW
+         uHn6axluLAzV3m2ngTwSOTiWF9cp20/+/J5utDRWPVNBDJo5ri1WylvRL6ydKC8vuTtu
+         K/UGu3dXQPTSyv++RqQiDuZa0cs1C0YOLgYH0Y8K4PgM6zSe3SZhJoFi6dRPTYsjUjs6
+         K++KRFAj26+kRkCHH9ghxziMjzAbk1a9Yjao2KanmyyEUrPhP/TUA/9amikt5ycGl9AH
+         I4X+PbILNkuCQp7I+0f3/EV7sojf2ziY+xHRle5fHSvc/uJ/b7lpmr91wODwh91KO1vN
+         bVtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1714604985; x=1715209785;
+        d=1e100.net; s=20230601; t=1714605130; x=1715209930;
         h=content-transfer-encoding:in-reply-to:autocrypt:from
          :content-language:references:cc:to:subject:user-agent:mime-version
          :date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Ln2+Mmy8VaymdjnFL/fgiDjJTgNF1VdG6JJXTp+4zzE=;
-        b=i62j1doPAnb9Vj2xTsiFzFAGXEkH03Ln6RTZEiyCyH1GVgxyYpybNIQxh5g8VWBXYl
-         BLEdD5EOb3WlrhSqGG9iAoLN2D+91grdj14dHHxp/vebpHdVHRw/9FTsjtWug4+0TfH4
-         aLFZoFJ6FiE2UpZuQVu3aBk/IL5tlTps5ckh+A5l2IE4hHTE/cgQdyuqFV9Pn7J8lXIq
-         IWmnK3qMSO7Yf5dmqr1rA6fCHi3YqB3ENJbB3iRrUwn6gyUzWMbRH40Ak7OWPBDStYa/
-         PShzZifw2mKUP5N2MferjJC2CBTHhadIwM86hY+rGB9o9v6Ty7v5xb5338Z1fMAynVbo
-         naWg==
-X-Forwarded-Encrypted: i=1; AJvYcCWcDMbZ5LSn08SyzaJISL4/VMyEjx3kG/81q1Nqjv9N9wH3LUamaJBdXZDeC48wzrwnY01rF++OOoUGy90zlM4zHWjpxqcitVjQ12cJFA==
-X-Gm-Message-State: AOJu0YwiwRkhfvDD214plx/LkAcJLHd04wE/8075nKOfFVAKBgG7HCCF
-	87ccZwiKji16XhNcQrH6bMYX5MYh1APFSczouokNi7WqzsHjOPp2cxmthRxBHhc=
-X-Google-Smtp-Source: AGHT+IGhmJ6xRw9tpsZoGuCTPpNlTqdr3tNh5XK1JiQK/jbGN9PXiobHamkKf/fh1wVabkLiI8mPHg==
-X-Received: by 2002:a50:d7c2:0:b0:572:9dbf:1538 with SMTP id m2-20020a50d7c2000000b005729dbf1538mr2514457edj.31.1714604984572;
-        Wed, 01 May 2024 16:09:44 -0700 (PDT)
+        bh=zhCvg7KjClQbusFKD8NHC5U/vmYAlsndfakVGGXVNKg=;
+        b=v1+jq0i387Di5EpTEg7S8XMJfEvCijSSzlvKmI4wySwcmvSGArQ0zkoz5v6r5zURJV
+         TOPeRs8FFsLIVdu51Cq1LoT5BdEQNd8Mu+5T9cqyRE0hCM5bIFylG+mvzBgUFvTqapdi
+         2L3boQTpqW4rtplXY5C0qwX/0MO13JRrHCDbecVTy6cYLBdzrFsL1+cL7K/x0uR3oNpY
+         Cb1wDQn+4d9Ld2gk9Peq+U1NCQ7GXITDBOZY97FsfIAh4OGtLhooRb9mpZ7PhWyR2FAL
+         qu3mSERBh7STzm1xtAZtOKwxt/m+hnXZ3yERjPh2XNn4uemKpFE7bysNedG6mWf2pPxV
+         6+8Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVdI01DqvOYLqknEeGti+r1cpAfercOfTCKm3b41mbG9Q1+CZYhWlLR1bn2N7yGYFrvQLaUy7hd+Xvi3RJLK8p1XgJEO9P5RY7RLJj6XA==
+X-Gm-Message-State: AOJu0YyfCwWQicSzQ21MrBW1Kz3ocZdxP3czA8n3OrdcCW+VaRkp3pdM
+	3IpxOYbWXzaxIoKnyQRa18iD+g5Q0MJjLjCeFEP5oYtvGd89c/kQbZuKrtsBKyU=
+X-Google-Smtp-Source: AGHT+IEd6YA08JvM1N+higQIn7mDVjGj2X7nOzNIL/Ck0S0TzZ3u3IeS6KS6XKPLpm1T/IcRgAoaCw==
+X-Received: by 2002:a17:906:5919:b0:a51:e188:bced with SMTP id h25-20020a170906591900b00a51e188bcedmr605346ejq.37.1714605130596;
+        Wed, 01 May 2024 16:12:10 -0700 (PDT)
 Received: from [192.168.114.15] (078088045141.garwolin.vectranet.pl. [78.88.45.141])
-        by smtp.gmail.com with ESMTPSA id w7-20020aa7dcc7000000b005726dceb2easm725352edu.20.2024.05.01.16.09.41
+        by smtp.gmail.com with ESMTPSA id f24-20020a170906c09800b00a522f867697sm16765743ejz.132.2024.05.01.16.12.07
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 May 2024 16:09:44 -0700 (PDT)
-Message-ID: <a4b10098-ecb0-4fd4-940e-a8400e53a6e4@linaro.org>
-Date: Thu, 2 May 2024 01:09:41 +0200
+        Wed, 01 May 2024 16:12:10 -0700 (PDT)
+Message-ID: <88aad6ee-703c-4e86-ae46-96b909503cdf@linaro.org>
+Date: Thu, 2 May 2024 01:12:06 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 12/13] arm64: dts: sda660-ifc6560: document missing USB
- PHY supplies
+Subject: Re: [PATCH 13/13] arm64: dts: qcom: msm8996-xiaomi-common: drop
+ excton from the USB PHY
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -87,7 +87,7 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  Krzysztof Kozlowski <krzk@kernel.org>,
  Konrad Dybcio <konrad.dybcio@somainline.org>
 References: <20240501-qcom-phy-fixes-v1-0-f1fd15c33fb3@linaro.org>
- <20240501-qcom-phy-fixes-v1-12-f1fd15c33fb3@linaro.org>
+ <20240501-qcom-phy-fixes-v1-13-f1fd15c33fb3@linaro.org>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
 Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
@@ -125,10 +125,11 @@ Autocrypt: addr=konrad.dybcio@linaro.org; keydata=
  bGqMHex48FVZhexNPYOd58EY9/7mL5u0sJmo+jTeb4JBgIbFPJCFyng4HwbniWgQJZ1WqaUC
  nas9J77uICis2WH7N8Bs9jy0wQYezNzqS+FxoNXmDQg2jetX8en4bO2Di7Pmx0jXA4TOb9TM
  izWDgYvmBE8=
-In-Reply-To: <20240501-qcom-phy-fixes-v1-12-f1fd15c33fb3@linaro.org>
+In-Reply-To: <20240501-qcom-phy-fixes-v1-13-f1fd15c33fb3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240501_160947_317314_9C578362 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20240501_161212_960729_39869A5E 
+X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,34 +147,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 1.05.2024 6:19 PM, Dmitry Baryshkov wrote:
-> On the IFC6560 one of the USB PHY supplies is the L10A power supply.
-> However this regulator also supplies VDDA_APC1_CS, VDD_PLL2 and VDD_P11
-> consumers. Touching the supply causes the board to be reset. Document
-> the supply as a fixed always-on regulator.
+> The USB PHYs don't use extcon connectors, drop the extcon property from
+> the hsusb_phy1 node.
 
-how not to design your power rails 101
+These don't, some do (like the one on 8916(
 
 > 
+> Fixes: 46680fe9ba61 ("arm64: dts: qcom: msm8996: Add support for the Xiaomi MSM8996 platform")
+> Cc: Yassine Oudjana <y.oudjana@protonmail.com>
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->  arch/arm64/boot/dts/qcom/sda660-inforce-ifc6560.dts | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sda660-inforce-ifc6560.dts b/arch/arm64/boot/dts/qcom/sda660-inforce-ifc6560.dts
-> index 702ab49bbc59..60412281ab27 100644
-> --- a/arch/arm64/boot/dts/qcom/sda660-inforce-ifc6560.dts
-> +++ b/arch/arm64/boot/dts/qcom/sda660-inforce-ifc6560.dts
-> @@ -96,6 +96,18 @@ v5p0_boost: v5p0-boost-regulator {
->  
->  		vin-supply = <&vph_pwr>;
->  	};
-> +
-> +	/*
-> +	 * this is also used for APC1 CPU power, touching it resets the board
-> +	 */
-
-/* This... */
-
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
 Konrad
