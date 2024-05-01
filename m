@@ -4,94 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB535C4345F
-	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 19:23:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3731BC25B4F
+	for <linux-phy@archiver.kernel.org>; Wed,  1 May 2024 20:33:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=faZCoUzOYY2bpUEpxFzcD193F158zFTEwNQcTlpUkUA=; b=yeUIe6ZM14h9pL
-	oYLaSFUeQMbs3uSPp3vJnAFdNsWBtKQRKVH3k47FLv8ndIi3rxiiSrPnxa1YfewLJQYt/05z5YiCH
-	D3SgQHkIgcHW2t7ncrATebXlLb8EkwZwkUjJQvdnZoeZhRxgglTi8mF6hyQMykLHcqk3XHMB5Wy2o
-	MFGQH8Zrfg8SREDeCany2QDVAQAwD5ovObnqVFp41FS8M7ubHlFebHyu4eb1pwAdHPwIUYVaYQ3Lx
-	pXzEIyG1ViixSunwaJB4i3FKrr08i8TZDY8IrgNwtKZoin/4jCEyMPDFm95dtD95+6KpJ2C0gxg5n
-	la8w2zRWNpt2/ckyO8bg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GUu+3bASWQOWVU4BgzPjNyUHPoIzbmy6U8U8gWDQnVg=; b=bbYoZN3aNcc6twNaUOV57Q6saW
+	Pri3UTe0ijs5IxG1azoztFC/VqawoecnBWt30RfVrIGuUpOanfY1SLUNvmvnpW7IWHIG2W/wOcJgT
+	eiootTIgwO1SCp0js+3CGqHTvVEQ6ysI0uCoStVmzjJVQ+32On+EFrlxZ/lcPjAuV3oOrJHs2KKoY
+	ctjZphIPCbWg+LSFzM8HmYI6x7h0ajon+18JCs1M9SITBaPTbdLRS/jaGijmjbXZTmIq3VaT+19Lt
+	OCluZsU9y+FM7qhP4ET9eyaq5A88foufiuz5sWLevbUTUtEZDt84zHXhi3i4P5U7TD4SoU+SpI1hE
+	t+5K3Ayw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2FYS-0000000AVeU-1eTM;
-	Wed, 01 May 2024 19:23:48 +0000
-Received: from mail-pf1-x430.google.com ([2607:f8b0:4864:20::430])
+	id 1s2GdT-0000000AeIY-2tb7;
+	Wed, 01 May 2024 20:33:03 +0000
+Received: from mail-ot1-x336.google.com ([2607:f8b0:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2FYP-0000000AVdg-477j
+	id 1s2GdP-0000000AeHl-3fPt
 	for linux-phy@lists.infradead.org;
-	Wed, 01 May 2024 19:23:47 +0000
-Received: by mail-pf1-x430.google.com with SMTP id d2e1a72fcca58-6ecee1f325bso6299878b3a.2
-        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 12:23:44 -0700 (PDT)
+	Wed, 01 May 2024 20:33:01 +0000
+Received: by mail-ot1-x336.google.com with SMTP id 46e09a7af769-6ee32bb9c8eso1769101a34.1
+        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 13:32:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=chromium.org; s=google; t=1714591423; x=1715196223; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=hbubMcULTqXEpjOw1/tNxpjigRY/QT4JGEZ8U1qfXOo=;
-        b=V2O433HS8ifWRqE8QKdbQEQ+FUyjv1ZT+EDzJJZiwgspQddU0X8bqKBlq7GVia0l80
-         PW8GLlJTypiKpScalzc/fUb71RAVoQCZvIYUPTUuUgKRxLkqRs95MqYsBWu541qNsn3k
-         LBjNBMCyWGaDrArJfmitmCTvfAuQyBtSEBCSE=
+        d=gmail.com; s=20230601; t=1714595574; x=1715200374; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=PK6bUYnjKXA3139CuZnFqKdohXzB6bNghOA877px0F0=;
+        b=AP3lIeFlWUvLmzRU4QnC8F0Ho2skj+u7bVJS2Y+PD8HJ4+TUI4CDt7YCZN0Kmt5aQx
+         V96jTBmBfP2eia/sw2aKxf2n8vEVbrCIXDDTQIoPDNltKL0MUR5q+YibRsxsyf5OKUaN
+         fEy8qSPeJ60UJoT1pDea2fY2NlOqTKxF9nh9q9Cs+Ikive7NralB5aFpR1zL+na+ixJV
+         Y+2dy/faw4tgokVgEBs9jS1hQTYbOQ2qRQpGKawMufpbY82awwxE8QyVf4roClZpn/o2
+         jNqOHm7VWAygZOpzJfLdz85pRobJ2/RYtEqlg57uzY481PPlIBSIylkkUTAevRARNErr
+         IBtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1714591423; x=1715196223;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=hbubMcULTqXEpjOw1/tNxpjigRY/QT4JGEZ8U1qfXOo=;
-        b=d9Ufz9zNQVG6jD+6h/YyHTD13sJBuLCoAdmHijXXLpimFv5K2FeusNa0kv06843aWD
-         D6oF+uHxLZNw5l/LvEcS3AIQTncabRPidMkc4cEI/BcYSRYuJFbyzZGfkplSJA8OxhoW
-         pDz9FQC7++QMk9elk2m52K623XdC/J7jhCDZtS4i6xM2OLI73jiS9DRom+m5QEZPifT+
-         5qjsJT8MvpJyNy+FJR4Lvyhjk5LdLLb/7vY6kVBtu3m2ryhU0F8nimXQgu7MvwFkhpES
-         IoEHq6yK2DCbvOhqJyAcI5TB+AYghqK9ti4aXfX1EXppmcFcDX0WJ8+edGwIh1ePPH+N
-         BdJw==
-X-Forwarded-Encrypted: i=1; AJvYcCU7xDhJhFb3L+nZoyl2xO0vS4W5QR548JKx8kVT49vrZLYcGv+rfO/psgSsf6lE49ENWBpoD6HfsvmWA8p6CPIcRkVtORj7zV3oQzVU+Q==
-X-Gm-Message-State: AOJu0YyBq1P2lRFIS+oQ4s6o5fX7MkCqVSf/Douq4IwHKsouACjtcWA8
-	DPDen9bJ/3I6TCFGSXAu3jOP8RZARX9rTzXc9xS3WWXgOPBeT/yWFt8lObqpxs4nyWKT/Mp+jFA
-	=
-X-Google-Smtp-Source: AGHT+IHUe7u3ErzWwzXwJ3ocHtxN8Ih3gAbeRlKm+p6d9ka3xKtkiRboiJTK1WQ3TFOJ85HBok3NNA==
-X-Received: by 2002:a05:6a00:9295:b0:6f0:c88e:a0dd with SMTP id jw21-20020a056a00929500b006f0c88ea0ddmr5018519pfb.28.1714591422976;
-        Wed, 01 May 2024 12:23:42 -0700 (PDT)
-Received: from mail-pl1-f170.google.com (mail-pl1-f170.google.com. [209.85.214.170])
-        by smtp.gmail.com with ESMTPSA id u29-20020a056a00099d00b006ecff9f9edbsm13388045pfg.77.2024.05.01.12.23.42
-        for <linux-phy@lists.infradead.org>
+        d=1e100.net; s=20230601; t=1714595574; x=1715200374;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=PK6bUYnjKXA3139CuZnFqKdohXzB6bNghOA877px0F0=;
+        b=nuPp7/DwkGS7xU+aiFJoHFaTdjOumfmjgiInkwqmZUdpnVbCxgheMPCIsmC5foeB57
+         5n/txEFnVyhkrxTCHm0b0+1sIXADgpSQRKv/TdTJJ6d3y1mJqvQqbqCLPPqExq9MLCsH
+         eAJ+3M89uXnjrYA2voGcPRg4qhIBqrAHtfJrUMCnkoexsaSt+fQnQ+A/TsK2ixSW9gF1
+         n4Z80/v7zbZcUUrIMCoGHwIl2WkKSrXWhdkWqh57BWOLXM+DaU4tatpJrAg3HYiZF77B
+         gSwye/0iT07WgN6XK7rba2Q3YB+ftIBvIhpLT/dHtwPe2gNe6M1ld2TKaD0mAcqA3vgT
+         a7sA==
+X-Forwarded-Encrypted: i=1; AJvYcCVdY39ugRh9hlK1mIWbTSelIlH9782bZKO1GA9CP7HsvgFA4eHRIKx0OufUTs7gL2r9mWn76VQ0n7efQfV0vHp+HGOSb0fZbPmsxGzdgw==
+X-Gm-Message-State: AOJu0Yz8TD0BdoQEcOkZobfNbqO9V+T3Ee8EiTJC4GLhNjhfuDdRiheC
+	yb+B8+Sg6FXN9tMlNQnEn6437SUwSUygPPpaP67h2OCHTR0C0R/k
+X-Google-Smtp-Source: AGHT+IEEi213Oim+pFQt5WqNLTilQ8NosxMtUvlAkKIuNAoYd59Y3HupxqwZGjbBQ04m8SUtsX/Msw==
+X-Received: by 2002:a05:6870:be97:b0:22f:bdb:633c with SMTP id nx23-20020a056870be9700b0022f0bdb633cmr125208oab.16.1714595574119;
+        Wed, 01 May 2024 13:32:54 -0700 (PDT)
+Received: from [192.168.7.110] (c-98-197-58-203.hsd1.tx.comcast.net. [98.197.58.203])
+        by smtp.gmail.com with ESMTPSA id rb11-20020a056871618b00b0023b5791f396sm2889919oab.15.2024.05.01.13.32.52
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 01 May 2024 12:23:42 -0700 (PDT)
-Received: by mail-pl1-f170.google.com with SMTP id d9443c01a7336-1ec76185c0fso27585ad.1
-        for <linux-phy@lists.infradead.org>; Wed, 01 May 2024 12:23:42 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCUevHHfDysYTxJ0zWK3vZQLncVH/VMDhVYWGC7qnVw8hHwBZ6DJ1KSfwtnxxE/5wMWcE91Iq6vkSTvOBgOxpbSft1thBEdWD+3uMENGTQ==
-X-Received: by 2002:ac8:7f03:0:b0:43a:f821:5b17 with SMTP id
- f3-20020ac87f03000000b0043af8215b17mr33651qtk.3.1714591400761; Wed, 01 May
- 2024 12:23:20 -0700 (PDT)
+        Wed, 01 May 2024 13:32:53 -0700 (PDT)
+Message-ID: <7da9d481-1e44-4f0e-9210-fcbd95bd654f@gmail.com>
+Date: Wed, 1 May 2024 15:32:52 -0500
 MIME-Version: 1.0
-References: <20240501-qcom-phy-fixes-v1-0-f1fd15c33fb3@linaro.org> <20240501-qcom-phy-fixes-v1-4-f1fd15c33fb3@linaro.org>
-In-Reply-To: <20240501-qcom-phy-fixes-v1-4-f1fd15c33fb3@linaro.org>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 1 May 2024 12:23:05 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=VYKELU-xBjMUqLSASC+m+eGCxHCgueCFjxwphxggNAww@mail.gmail.com>
-Message-ID: <CAD=FV=VYKELU-xBjMUqLSASC+m+eGCxHCgueCFjxwphxggNAww@mail.gmail.com>
-Subject: Re: [PATCH 04/13] arm64: dts: qcom: sc7180: drop extra UFS PHY compat
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Abel Vesa <abel.vesa@linaro.org>, Wesley Cheng <quic_wcheng@quicinc.com>, 
-	cros-qcom-dts-watchers@chromium.org, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, David Wronek <davidwronek@gmail.com>, 
-	Andy Gross <andy.gross@linaro.org>, Evan Green <evgreen@chromium.org>, 
-	Iskren Chernev <me@iskren.info>, Luca Weiss <luca.weiss@fairphone.com>, 
-	"Bryan O'Donoghue" <bryan.odonoghue@linaro.org>, Yassine Oudjana <y.oudjana@protonmail.com>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@somainline.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 RESEND 8/8] arm64: dts: qcom: ipq9574: add PCIe2 and
+ PCIe3 nodes
+To: Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Manivannan Sadhasivam
+ <manivannan.sadhasivam@linaro.org>, linux-arm-msm@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-clk@vger.kernel.org
+References: <20240501042847.1545145-1-mr.nuke.me@gmail.com>
+ <20240501042847.1545145-9-mr.nuke.me@gmail.com>
+Content-Language: en-US
+From: "Alex G." <mr.nuke.me@gmail.com>
+In-Reply-To: <20240501042847.1545145-9-mr.nuke.me@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240501_122346_070598_F7524652 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20240501_133300_031035_4D1B1418 
+X-CRM114-Status: GOOD (  17.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,31 +102,227 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksCgpPbiBXZWQsIE1heSAxLCAyMDI0IGF0IDk6MTnigK9BTSBEbWl0cnkgQmFyeXNoa292Cjxk
-bWl0cnkuYmFyeXNoa292QGxpbmFyby5vcmc+IHdyb3RlOgo+Cj4gVGhlIERUIHNjaGVtYSBkb2Vz
-bid0IGhhdmUgYSBmYWxsYmFjayBjb21wYXRpYmxlIGZvcgo+IHFjb20sc2M3MTgwLXFtcC11ZnMt
-cGh5LiBEcm9wIGl0IGZyb20gdGhlIGR0c2kgdG9vLgo+Cj4gRml4ZXM6IDg1ODUzNmQ5ZGM5NCAo
-ImFybTY0OiBkdHM6IHFjb206IHNjNzE4MDogQWRkIFVGUyBub2RlcyIpCj4gU2lnbmVkLW9mZi1i
-eTogRG1pdHJ5IEJhcnlzaGtvdiA8ZG1pdHJ5LmJhcnlzaGtvdkBsaW5hcm8ub3JnPgo+IC0tLQo+
-ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2M3MTgwLmR0c2kgfCAzICstLQo+ICAxIGZpbGUg
-Y2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDIgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEv
-YXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjNzE4MC5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0
-cy9xY29tL3NjNzE4MC5kdHNpCj4gaW5kZXggNDc3NGE4NTliZDdlLi41MmQwNzRhNGZiZjMgMTAw
-NjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjNzE4MC5kdHNpCj4gKysrIGIv
-YXJjaC9hcm02NC9ib290L2R0cy9xY29tL3NjNzE4MC5kdHNpCj4gQEAgLTE1ODIsOCArMTU4Miw3
-IEBAICZtY192aXJ0IFNMQVZFX0VCSTEgUUNPTV9JQ0NfVEFHX0FMV0FZUz4sCj4gICAgICAgICAg
-ICAgICAgIH07Cj4KPiAgICAgICAgICAgICAgICAgdWZzX21lbV9waHk6IHBoeUAxZDg3MDAwIHsK
-PiAtICAgICAgICAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gInFjb20sc2M3MTgwLXFtcC11
-ZnMtcGh5IiwKPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgInFjb20sc203
-MTUwLXFtcC11ZnMtcGh5IjsKPiArICAgICAgICAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0g
-InFjb20sc2M3MTgwLXFtcC11ZnMtcGh5IjsKClNlZW1zIE9LIHRvIG1lLiBJdCBsb29rcyBsaWtl
-IFVGUyBzdXBwb3J0IGZvciBzYzcxODAgaXMgbmV3IGVub3VnaAp0aGF0IHdlJ3JlIG5vdCBicmVh
-a2luZyBhbnkgc29ydCBvZiBjb21wYXRiaWxpdHkgYnkgY2hhbmdpbmcgdGhpcy4KClJldmlld2Vk
-LWJ5OiBEb3VnbGFzIEFuZGVyc29uIDxkaWFuZGVyc0BjaHJvbWl1bS5vcmc+CgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+
+On 4/30/24 23:28, Alexandru Gagniuc wrote:
+> On ipq9574, there are 4 PCIe controllers. Describe the pcie2 and pcie3
+> nodes, and their PHYs in devicetree.
+> 
+> The pcie0 and pcie1 controllers use a gen3x1 PHY, which is not
+> currently supported. Hence, only pcie2 and pcie3 are described. Only
+> pcie2 was tested because my devboard only has conenctions to pcie2.
+> 
+> Signed-off-by: Alexandru Gagniuc <mr.nuke.me@gmail.com>
+> ---
+>   arch/arm64/boot/dts/qcom/ipq9574.dtsi | 178 +++++++++++++++++++++++++-
+>   1 file changed, 176 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> index 7f2e5cbf3bbb..c391886cf9ab 100644
+> --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+> @@ -300,8 +300,8 @@ gcc: clock-controller@1800000 {
+>   				 <0>,
+>   				 <0>,
+>   				 <0>,
+> -				 <0>,
+> -				 <0>,
+> +				 <&pcie2_phy>,
+> +				 <&pcie3_phy>,
+>   				 <0>;
+>   			#clock-cells = <1>;
+>   			#reset-cells = <1>;
+> @@ -745,6 +745,180 @@ frame@b128000 {
+>   				status = "disabled";
+>   			};
+>   		};
+> +
+> +		pcie2_phy: phy@8c000 {
+> +			compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+> +			reg = <0x0008c000 0x14f4>;
+> +
+> +			clocks = <&gcc GCC_PCIE2_AUX_CLK>,
+> +				 <&gcc GCC_PCIE2_AHB_CLK>,
+> +				 <&gcc GCC_PCIE2_PIPE_CLK>;
+> +			clock-names = "aux",
+> +				      "cfg_ahb",
+> +				      "pipe";
+> +
+> +			clock-output-names = "pcie_phy2_pipe_clk";
+> +			#clock-cells = <0>;
+> +			#phy-cells = <0>;
+> +
+> +			resets = <&gcc GCC_PCIE2_PHY_BCR>,
+> +				 <&gcc GCC_PCIE2PHY_PHY_BCR>;
+> +			reset-names = "phy",
+> +				      "common";
+> +			status = "disabled";
+> +		};
+> +
+> +		pcie3_phy: phy@f4000 {
+> +			compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+> +			reg = <0x000f4000 0x14f4>;
+> +
+> +			clocks = <&gcc GCC_PCIE3_AUX_CLK>,
+> +				 <&gcc GCC_PCIE3_AHB_CLK>,
+> +				 <&gcc GCC_PCIE3_PIPE_CLK>;
+> +			clock-names = "aux",
+> +				      "cfg_ahb",
+> +				      "pipe";
+> +
+> +			clock-output-names = "pcie_phy3_pipe_clk";
+> +			#clock-cells = <0>;
+> +			#phy-cells = <0>;
+> +
+> +			resets = <&gcc GCC_PCIE3_PHY_BCR>,
+> +				 <&gcc GCC_PCIE3PHY_PHY_BCR>;
+> +			reset-names = "phy",
+> +				      "common";
+> +			status = "disabled";
+> +		};
+> +
+> +		/* TODO: Populate pcie0/pcie1 when gen3x1 phy support is added. */
+> +
+> +		pcie2: pcie@20000000 {
+> +			compatible = "qcom,pcie-ipq9574";
+> +			reg = <0x20000000 0xf1d>,
+> +			      <0x20000f20 0xa8>,
+> +			      <0x20001000 0x1000>,
+> +			      <0x00088000 0x4000>,
+> +			      <0x20100000 0x1000>;
+> +			reg-names = "dbi", "elbi", "atu", "parf", "config";
+> +
+> +			ranges = <0x81000000 0x0 0x20200000 0x20200000 0x0 0x00100000>,
+> +				 <0x82000000 0x0 0x20300000 0x20300000 0x0 0x07d00000>;
+> +
+> +			device_type = "pci";
+> +			linux,pci-domain = <3>;
+> +			bus-range = <0x00 0xff>;
+> +			num-lanes = <2>;
+> +			max-link-speed = <3>;
+> +			#address-cells = <3>;
+> +			#size-cells = <2>;
+> +
+> +			phys = <&pcie2_phy>;
+> +			phy-names = "pciephy";
+> +
+> +			interrupts = <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "msi";
+> +
+> +			#interrupt-cells = <1>;
+> +			interrupt-map-mask = <0 0 0 0x7>;
+> +			interrupt-map = <0 0 0 1 &intc 0 0 164 IRQ_TYPE_LEVEL_HIGH>,
+> +					<0 0 0 2 &intc 0 0 165 IRQ_TYPE_LEVEL_HIGH>,
+> +					<0 0 0 3 &intc 0 0 186 IRQ_TYPE_LEVEL_HIGH>,
+> +					<0 0 0 4 &intc 0 0 187 IRQ_TYPE_LEVEL_HIGH>;
+> +
+> +			clocks = <&gcc GCC_PCIE2_AXI_M_CLK>,
+> +				 <&gcc GCC_PCIE2_AXI_S_CLK>,
+> +				 <&gcc GCC_PCIE2_AXI_S_BRIDGE_CLK>,
+> +				 <&gcc GCC_ANOC_PCIE2_2LANE_M_CLK>,
+> +				 <&gcc GCC_SNOC_PCIE2_2LANE_S_CLK>,
+> +				 <&gcc GCC_PCIE2_RCHNG_CLK>;
+> +			clock-names = "axi_m",
+> +				      "axi_s",
+> +				      "axi_bridge",
+> +				      "rchng";
+
+There is a mistake here with the clock-names :( . Will fix it in v5.
+
+> +
+> +			resets = <&gcc GCC_PCIE2_PIPE_ARES>,
+> +				 <&gcc GCC_PCIE2_AUX_ARES>,
+> +				 <&gcc GCC_PCIE2_CORE_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE2_AXI_M_ARES>,
+> +				 <&gcc GCC_PCIE2_AXI_S_ARES>,
+> +				 <&gcc GCC_PCIE2_AXI_S_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE2_AXI_M_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE2_AHB_ARES>;
+> +			reset-names = "pipe",
+> +				      "aux",
+> +				      "sticky",
+> +				      "axi_m",
+> +				      "axi_s",
+> +				      "axi_s_sticky",
+> +				      "axi_m_sticky",
+> +				      "ahb";
+> +			status = "disabled";
+> +		};
+> +
+> +		pcie3: pcie@18000000 {
+> +			compatible = "qcom,pcie-ipq9574";
+> +			reg = <0x18000000 0xf1d>,
+> +			      <0x18000f20 0xa8>,
+> +			      <0x18001000 0x1000>,
+> +			      <0x000f0000 0x4000>,
+> +			      <0x18100000 0x1000>;
+> +			reg-names = "dbi", "elbi", "atu", "parf", "config";
+> +
+> +			ranges = <0x81000000 0x0 0x18200000 0x18200000 0x0 0x00100000>,
+> +				 <0x82000000 0x0 0x18300000 0x18300000 0x0 0x07d00000>;
+> +
+> +			device_type = "pci";
+> +			linux,pci-domain = <4>;
+> +			bus-range = <0x00 0xff>;
+> +			num-lanes = <2>;
+> +			max-link-speed = <3>;
+> +			#address-cells = <3>;
+> +			#size-cells = <2>;
+> +
+> +			phys = <&pcie3_phy>;
+> +			phy-names = "pciephy";
+> +
+> +			interrupts = <GIC_SPI 189 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "msi";
+> +
+> +			#interrupt-cells = <1>;
+> +			interrupt-map-mask = <0 0 0 0x7>;
+> +			interrupt-map = <0 0 0 1 &intc 0 0 189 IRQ_TYPE_LEVEL_HIGH>,
+> +					<0 0 0 2 &intc 0 0 190 IRQ_TYPE_LEVEL_HIGH>,
+> +					<0 0 0 3 &intc 0 0 192 IRQ_TYPE_LEVEL_HIGH>,
+> +					<0 0 0 4 &intc 0 0 192 IRQ_TYPE_LEVEL_HIGH>;
+> +
+> +			clocks = <&gcc GCC_PCIE3_AXI_M_CLK>,
+> +				 <&gcc GCC_PCIE3_AXI_S_CLK>,
+> +				 <&gcc GCC_PCIE3_AXI_S_BRIDGE_CLK>,
+> +				 <&gcc GCC_ANOC_PCIE3_2LANE_M_CLK>,
+> +				 <&gcc GCC_SNOC_PCIE3_2LANE_S_CLK>,
+> +				 <&gcc GCC_PCIE3_RCHNG_CLK>;
+> +			clock-names = "axi_m",
+> +				      "axi_s",
+> +				      "axi_bridge",
+> +				      "anoc",
+> +				      "snoc",
+> +				      "rchng";
+> +
+> +			resets = <&gcc GCC_PCIE3_PIPE_ARES>,
+> +				 <&gcc GCC_PCIE3_AUX_ARES>,
+> +				 <&gcc GCC_PCIE3_CORE_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE3_AXI_M_ARES>,
+> +				 <&gcc GCC_PCIE3_AXI_S_ARES>,
+> +				 <&gcc GCC_PCIE3_AXI_S_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE3_AXI_M_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE3_AHB_ARES>;
+> +			reset-names = "pipe",
+> +				      "aux",
+> +				      "sticky",
+> +				      "axi_m",
+> +				      "axi_s",
+> +				      "axi_s_sticky",
+> +				      "axi_m_sticky",
+> +				      "ahb";
+> +			status = "disabled";
+> +		};
+>   	};
+>   
+>   	thermal-zones {
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
