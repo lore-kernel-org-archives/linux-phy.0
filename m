@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7D8CC4345F
-	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 07:04:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2B0FC4345F
+	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 07:05:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6GJ2u52scXYdc0q1pPt3k2YmSaEECvrNoTcwc84hiyo=; b=z+SjMbiNTmIJ8y
-	2kmYFmQF4bW6WHaklzFBuCq44DfGNr5N2J0Ote3hB/pr92fxw7TCXRVzPhy22e54oy/hJosJWdIkO
-	RvY4VFlJetCoH/KdHYoTLYQEpqFCahZgHUEQt2UnVD8WZselb8xqXP+ihWvsrfbfIJCX1sTeOgSCY
-	La7DNUmZYlORgIkUKAzVIf4dEFiyT5XxCXFCq5ctO/5UWqfMBBiSY7FejrAnkk0NDzehfMdwW01wD
-	6H8lwhVhBJAU4juj79KneHpS0S4+E+MUc5ScDQY6Kye2aByBy3m1bQ13d6jeZMxc/gS/YbKytClg/
-	huUa7luvfPaWGwsdhQtA==;
+	List-Owner; bh=DkzrRZYdpG66i1Eu5fLGd4lbznd1vJqxak8U0VPx13Y=; b=pEr+BoYhvwbhYM
+	JbqqehWE08Iqi5KtePpezvPVmhfKBURlR/hioNDD1kECia9DObIFVWLkBGKhNx84goiwXAxHquBJN
+	Y7TuYoQAhl6YEdFwOZIekM5lxK+cpDIRyrFlPP9f4gdy7CEGHIskSIqzYMLG7A3NPt0ZXuCxnbCaX
+	6ay32STGhN6AShkeGE82hRQjimPzUmeOItFuGxGBVmDqqafWq6iof8fhc0KMVvFpFlt6ZhormA0dH
+	uWkFPNMctO15ykGi/vI/kUkC+3RRl3XX9T53BxE9RZjU839gq2Qy286uB8zAB6DiF2aTniJTqvx1Q
+	UwlIUQZZ57IoSYmhX2KQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2myU-0000000FOfk-2Rgw;
-	Fri, 03 May 2024 07:04:54 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1s2myo-0000000FOn6-2NGs;
+	Fri, 03 May 2024 07:05:14 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2myR-0000000FOfB-0ps3
+	id 1s2myl-0000000FOlL-1a2N
 	for linux-phy@lists.infradead.org;
-	Fri, 03 May 2024 07:04:52 +0000
+	Fri, 03 May 2024 07:05:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5038E61CFB;
-	Fri,  3 May 2024 07:04:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9499CC116B1;
-	Fri,  3 May 2024 07:04:43 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 719ADCE1876;
+	Fri,  3 May 2024 07:05:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74947C4AF18;
+	Fri,  3 May 2024 07:05:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1714719890;
-	bh=6JQx3GYwPX+yIXu/tPphMEToNzCa0NJqsCUm2S3oO5E=;
+	s=k20201202; t=1714719908;
+	bh=9UVvjI8VRIg0/RBQCUn4FCyYD7HQWj/ur9UuYMy8h0M=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=WZd+dOrzrTzwfM1zukliPujNy+oSoVNgSPl6HTKGKdbxM1/YFM4eBvu9ll+KcDiSx
-	 hoqfgUT+P9nG9siNwZulp6I6tDgrukYCldwDG5uv4UlwNKthU39zmYeI/RVDsM+bnw
-	 tDSoO0NdSh9JBdI29g8Dlk7FFTgcoXE42lfd4yXwASbwrWk3zaU8RewHn5S4U8t/Zh
-	 ZcP+Slne63eV5OqIojL6SO/72uclS+V8/iuWeTgXeP+Kq9cwkUteXJCbZ/EzlztpR5
-	 mbbWhfG6z6s4KuwaPs3l70ozkw+7a9IFuP/9qu0ZmitXv6lsz7y2SwzoeWtqdIJdFe
-	 zuPUSOGMWVNxQ==
-Message-ID: <882008ba-f9ee-4292-a625-14d04d40ecd7@kernel.org>
-Date: Fri, 3 May 2024 09:04:41 +0200
+	b=SonmFwVoJxTSsoxcXaCkkdzXonnwoV+frlsC0rm0lcqDNG2jhcsenwwx4zHwLfvOK
+	 zWKCLSKrmPrPwzwpkf/lE+jsGvWLsovD1tk4MyBawNj+9WscOsnUVg1h8WjampR6jv
+	 RBW9VgmJfUGq3fzyWHTgZcMeVcxSkzcZgGUyQU2Opl7l91Q+lgTudd9MQRyRFX6dBg
+	 QfixpDKCZKlzuTKXgRzMpjWJPtwSlATzSXtkahOiMHChhDwS+FL6BHKsVWQsja/7f1
+	 zVFNJFhjheAt78KwWwOuBvFuqT80pkHZr3AiFEp8GQTKN/rLaK0N1wdr9yBeNyW/9y
+	 jMdW+mDCAU70Q==
+Message-ID: <5b7334b7-e4d0-4650-a600-beb22fa6903d@kernel.org>
+Date: Fri, 3 May 2024 09:04:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/13] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: fix
- msm899[68] power-domains
+Subject: Re: [PATCH 03/13] dt-bindings: phy: qcom,usb-snps-femto-v2: use
+ correct fallback for sc8180x
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -65,7 +65,7 @@ Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  Konrad Dybcio <konrad.dybcio@somainline.org>
 References: <20240501-qcom-phy-fixes-v1-0-f1fd15c33fb3@linaro.org>
- <20240501-qcom-phy-fixes-v1-2-f1fd15c33fb3@linaro.org>
+ <20240501-qcom-phy-fixes-v1-3-f1fd15c33fb3@linaro.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -111,10 +111,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240501-qcom-phy-fixes-v1-2-f1fd15c33fb3@linaro.org>
+In-Reply-To: <20240501-qcom-phy-fixes-v1-3-f1fd15c33fb3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240503_000451_360964_12AD6658 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20240503_000511_818099_0C54E959 
+X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,48 +133,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 01/05/2024 18:19, Dmitry Baryshkov wrote:
-> The Qualcomm MSM8996 and MSM8998 platforms don't have separate power
-> domain for the UFS PHY. Replace required:power-domains with the
-> conditional schema.
+> The qcom,sc8180x-usb-hs-phy device uses qcom,usb-snps-hs-7nm-phy
+> fallback. Correct the schema for this platform.
 > 
-> Fixes: dc5cb63592bd ("dt-bindings: phy: migrate QMP UFS PHY bindings to qcom,sc8280xp-qmp-ufs-phy.yaml")
+> Fixes: 9160fb7c39a1 ("dt-bindings: phy: qcom,usb-snps-femto-v2: use fallback compatibles")
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->  .../bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml          | 16 +++++++++++++++-
->  1 file changed, 15 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> index 9dac6852f8cb..f9cfbd0b2de6 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
-> @@ -72,7 +72,6 @@ required:
->    - reg
->    - clocks
->    - clock-names
-> -  - power-domains
->    - resets
->    - reset-names
->    - vdda-phy-supply
-> @@ -130,6 +129,21 @@ allOf:
->              - const: ref
->              - const: qref
->  
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - qcom,msm8996-qmp-ufs-phy
-> +              - qcom,msm8998-qmp-ufs-phy
-> +    then:
-> +      properties:
-> +        power-domains:
-> +          false
 
-Keep it in one line (power-domains: false)
-
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
