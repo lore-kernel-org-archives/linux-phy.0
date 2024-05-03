@@ -4,118 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2B0FC4345F
-	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 07:05:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3E9CC4345F
+	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 17:01:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DkzrRZYdpG66i1Eu5fLGd4lbznd1vJqxak8U0VPx13Y=; b=pEr+BoYhvwbhYM
-	JbqqehWE08Iqi5KtePpezvPVmhfKBURlR/hioNDD1kECia9DObIFVWLkBGKhNx84goiwXAxHquBJN
-	Y7TuYoQAhl6YEdFwOZIekM5lxK+cpDIRyrFlPP9f4gdy7CEGHIskSIqzYMLG7A3NPt0ZXuCxnbCaX
-	6ay32STGhN6AShkeGE82hRQjimPzUmeOItFuGxGBVmDqqafWq6iof8fhc0KMVvFpFlt6ZhormA0dH
-	uWkFPNMctO15ykGi/vI/kUkC+3RRl3XX9T53BxE9RZjU839gq2Qy286uB8zAB6DiF2aTniJTqvx1Q
-	UwlIUQZZ57IoSYmhX2KQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=S9mVI3NdJ0KJBmknDpwRchwUlrVThTq5tOwmfMbJkKo=; b=y1bwSqhk6l2TWI5eFEHRbDrf08
+	wqgbZOPW8sdUPCV2dNplvo9uHdjAw7FGH9ODTR0q2vULd0iAZaCbAN8x8NToDPBiAOnMAtR/aZupg
+	9JpW5xveilaXwB8Sb9Paw9jO3keUKLU0HgQTvjpKM3IFG/NxV8GNqVD16J5tcjaEUqwHHAbMXRSV4
+	2FIPOhKb4u/jtygupEbIuX6TsI78LuLQ3MV8odVExRqlzBQ7jfgwqien3j3V8m6CbRmu8r0y2Tfsz
+	K/Iixi4VX5G+RnC7OZnVq+P+bFKf5xn9yBmkx0BX0eBKCyMtb8sprrrlvjqoq88yEt6aWivEUiurr
+	KgWvl5YA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2myo-0000000FOn6-2NGs;
-	Fri, 03 May 2024 07:05:14 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1s2wIG-0000000HJbh-1IQQ;
+	Fri, 03 May 2024 17:01:56 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2myl-0000000FOlL-1a2N
+	id 1s2wID-0000000HJa8-12Id
 	for linux-phy@lists.infradead.org;
-	Fri, 03 May 2024 07:05:13 +0000
+	Fri, 03 May 2024 17:01:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 719ADCE1876;
-	Fri,  3 May 2024 07:05:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74947C4AF18;
-	Fri,  3 May 2024 07:05:01 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 83BD6CE1787;
+	Fri,  3 May 2024 17:01:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E63BBC116B1;
+	Fri,  3 May 2024 17:01:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1714719908;
-	bh=9UVvjI8VRIg0/RBQCUn4FCyYD7HQWj/ur9UuYMy8h0M=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=SonmFwVoJxTSsoxcXaCkkdzXonnwoV+frlsC0rm0lcqDNG2jhcsenwwx4zHwLfvOK
-	 zWKCLSKrmPrPwzwpkf/lE+jsGvWLsovD1tk4MyBawNj+9WscOsnUVg1h8WjampR6jv
-	 RBW9VgmJfUGq3fzyWHTgZcMeVcxSkzcZgGUyQU2Opl7l91Q+lgTudd9MQRyRFX6dBg
-	 QfixpDKCZKlzuTKXgRzMpjWJPtwSlATzSXtkahOiMHChhDwS+FL6BHKsVWQsja/7f1
-	 zVFNJFhjheAt78KwWwOuBvFuqT80pkHZr3AiFEp8GQTKN/rLaK0N1wdr9yBeNyW/9y
-	 jMdW+mDCAU70Q==
-Message-ID: <5b7334b7-e4d0-4650-a600-beb22fa6903d@kernel.org>
-Date: Fri, 3 May 2024 09:04:59 +0200
+	s=k20201202; t=1714755710;
+	bh=FTaOlyTRBQhQQAb7vZwEa2LctghGTeQJqXhlkzNOBI0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=F+pcZfXZpJFOA9j0VKkgIIsI9WBref2GyOONCDzPlZFRsKo0UaaCgWAylyb62Fv9R
+	 IkpR0TicodAMWYQdLxEJCtN9YcqXzZvKZl+5kVxHnIqZ48R0/ApkoT/KfAY7gtEm8l
+	 6EA/+XALx2dgKHCn+2/LLLdtfXjHx69entbkVFcyQtW0owUvSDsQgzE5VGLkS/9l3Y
+	 mInvr6yFqZ9vTEyqEI31u2mj00HKFR0j763omQvGHTfL/vOyWVA/RWLkPnkbDlqv00
+	 rf62Ahg2x+LmpmhsyKExM2kzmgNnQ6b1oys3J/Fv5Rk/5eBSZmov15c7Z8taj+eb5J
+	 ppxH+Xo5bOfQw==
+Date: Fri, 3 May 2024 18:01:45 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Inochi Amaoto <inochiama@outlook.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen Wang <unicorn_wang@outlook.com>,
+	Jisheng Zhang <jszhang@kernel.org>,
+	Liu Gui <kenneth.liu@sophgo.com>,
+	Jingbao Qiu <qiujingbao.dlmu@gmail.com>, dlan@gentoo.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
+Message-ID: <20240503-deduct-jellied-23f4f90e94e3@spud>
+References: <IA1PR20MB4953182B8EDB465430289400BB1B2@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <IA1PR20MB495355A4186420B78BD78F49BB1B2@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <20240430-crummiest-overnight-0f46dba32bb8@spud>
+ <IA1PR20MB49535665CF1C89FFB4E1E46DBB192@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <20240501-effort-virus-9baa07daf429@spud>
+ <IA1PR20MB4953EF886763A05EE6DDEF25BB1F2@IA1PR20MB4953.namprd20.prod.outlook.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 03/13] dt-bindings: phy: qcom,usb-snps-femto-v2: use
- correct fallback for sc8180x
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>,
- Wesley Cheng <quic_wcheng@quicinc.com>, cros-qcom-dts-watchers@chromium.org,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- David Wronek <davidwronek@gmail.com>, Andy Gross <andy.gross@linaro.org>,
- Evan Green <evgreen@chromium.org>, Douglas Anderson <dianders@chromium.org>,
- Iskren Chernev <me@iskren.info>, Luca Weiss <luca.weiss@fairphone.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Yassine Oudjana <y.oudjana@protonmail.com>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Konrad Dybcio <konrad.dybcio@somainline.org>
-References: <20240501-qcom-phy-fixes-v1-0-f1fd15c33fb3@linaro.org>
- <20240501-qcom-phy-fixes-v1-3-f1fd15c33fb3@linaro.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240501-qcom-phy-fixes-v1-3-f1fd15c33fb3@linaro.org>
+In-Reply-To: <IA1PR20MB4953EF886763A05EE6DDEF25BB1F2@IA1PR20MB4953.namprd20.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240503_000511_818099_0C54E959 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240503_100153_488063_B0E1A747 
+X-CRM114-Status: GOOD (  19.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,29 +80,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1302181695229515837=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01/05/2024 18:19, Dmitry Baryshkov wrote:
-> The qcom,sc8180x-usb-hs-phy device uses qcom,usb-snps-hs-7nm-phy
-> fallback. Correct the schema for this platform.
-> 
-> Fixes: 9160fb7c39a1 ("dt-bindings: phy: qcom,usb-snps-femto-v2: use fallback compatibles")
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,usb-snps-femto-v2.yaml | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
-> 
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+--===============1302181695229515837==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="mC/9d63aJT0Up3A5"
+Content-Disposition: inline
 
-Best regards,
-Krzysztof
 
+--mC/9d63aJT0Up3A5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, May 03, 2024 at 08:36:47AM +0800, Inochi Amaoto wrote:
+> On Wed, May 01, 2024 at 06:05:28PM GMT, Conor Dooley wrote:
+> > On Wed, May 01, 2024 at 08:28:47AM +0800, Inochi Amaoto wrote:
+> > > On Tue, Apr 30, 2024 at 06:09:20PM GMT, Conor Dooley wrote:
+> > > > On Mon, Apr 29, 2024 at 08:31:11AM +0800, Inochi Amaoto wrote:
+
+> > > > > +  vbus_det-gpios:
+> > > >=20
+> > > > "vbus_det-gpios" isn't a common property AFAICT, why does it not ge=
+t a
+> > > > vendor prefix when the other gpios property does?
+> > > >=20
+> > >=20
+> > > I have seen other binding (such as sunxi phy) uses this property with=
+out=20
+> > > vendor prefix. So I think it is a common property and don't add perfi=
+x=20
+> > > for it. But it is OK for me add the vendor prefix, thanks.
+> >=20
+> > I asked yesterday and Krzysztof said:
+> > "gpios just like supplies - no prefixes, I think."
+>=20
+> Thanks for your explanation. If I do not understand wrong, you mean=20
+> it does not need to add vender prefix?
+
+Yeah, I think you're okay.
+
+--mC/9d63aJT0Up3A5
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZjUYeQAKCRB4tDGHoIJi
+0ippAQCbZB+6yctrVo8FxPFGsoTXfVgu0jCn6Myoknnj6a2r0gEAtRpP9ldQSTNK
+hFaGSTTBGWa0JD09rGB4zZZCjVY4uwI=
+=1ISt
+-----END PGP SIGNATURE-----
+
+--mC/9d63aJT0Up3A5--
+
+
+--===============1302181695229515837==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1302181695229515837==--
+
