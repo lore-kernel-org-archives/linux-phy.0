@@ -4,80 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7F13C4345F
-	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 05:38:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF327C4345F
+	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 07:04:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x5nkTGLbPW1zjnlcEmK60MtxCGAubpxyu0ERiHxupn0=; b=Q96uU7nCyCbYoN
-	BxfgIEsXirctJZJh08VGNFyURsiYHpo+x7Jlzi0OneqyrPBNFqk7k3b4cNukiSMt8jCRmVxWxLcwE
-	OsGHUUj1wnhDWUigAn29S9UBCldJWuIm4bR68YF8Rh5ioe2Te2vQvhI/tMOLPTDkqBX5dOP90qLZ9
-	GmTLcUtTnf1e0DQsw6mXlRCs4LK0kp0jAwHWIDeSd+2Dv8E4C3VXrAlrgs0oplwgzfqRPOGLrmZca
-	rKFXIZIiCeKqtKgUKJpEXUaqbd5aZuOeKNrhfIpx6XnzNjOghb0Ob35n8Bl+gQiiqW668ejPXeD6m
-	umqr/n+hLzr2zq0doEnw==;
+	List-Owner; bh=MTodD/1X09qTC3D7oghX/uC/ROCN4Cr0b9GyljaNxTc=; b=NIvKfED35rhMtK
+	wr2Iat8I12hz8RDdMJdsnqphXgpX2gSq4UUK9/XrGgoFPkYEG6ntYINmHkm050ULfcLwPHfj+Q98f
+	GMhI1dOLdBik/dQ2YxxCIWLRugBtXcQdk+BGCVoEBIrjtXc5HA/OyMic2dqVefsJ7k7oP0PnEgqPB
+	vVC6B1xnKi8RCrTLNYxtEo4U063yqjwwRw46O91zU2CriLGXX/KSfCHvXEVyx/4Kbm9CJOo8Zho9Z
+	dsQSfwHw4R+co/9403XkC3MWmSBwprePryqPFSad5rg31v9vJghh8InXgGYn1GMlPgrH07x7F4xaJ
+	tBkhtAK+uQNT0mt28PmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2lco-0000000FAya-2Gmi;
-	Fri, 03 May 2024 05:38:26 +0000
-Received: from mgamail.intel.com ([192.198.163.13])
+	id 1s2my5-0000000FOaO-1roQ;
+	Fri, 03 May 2024 07:04:29 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2lck-0000000FAxW-2G5t
+	id 1s2my3-0000000FOZr-2dZC
 	for linux-phy@lists.infradead.org;
-	Fri, 03 May 2024 05:38:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1714714703; x=1746250703;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=rKKCeOF3G9JpimaU43Lw2IpoOJrnNfrZXT1xQPXth8A=;
-  b=a3O4suCGMwHmfK92vSbeQ9nVGhYp45tBKRfMVIGUJYCaHPUNUhge380K
-   qjXo/TYLnTdVNiAlUMAkHMvrQrn393xJg7sCnPZTzvv34OuAfQl4n3PkE
-   T/f5R7bBcVoNixVzSrqwbacyO7B8UgYD5Fa4FPZmLUizpCJwVegtRiaiX
-   aRsYhcspCJUwhK1HBmiL/KWIWrRGsM6Go3gVWufVP0lbvx3DUFkuTol5L
-   3GRGGFYcskfi2MdxNho8fezYaKTshhw6DgjBTfuKW/CZpiBhSotY6RxpJ
-   eOMzk8HTsy9VdUvWY4Ys8/xUCv2+YvLZaxjwyCBIKHA1epvg8iTNgVYHR
-   g==;
-X-CSE-ConnectionGUID: 8Tq8spQmSu+FTQgNXWXzaQ==
-X-CSE-MsgGUID: aY+rzYAVTSehfkLi1sdh/w==
-X-IronPort-AV: E=McAfee;i="6600,9927,11062"; a="13463448"
-X-IronPort-AV: E=Sophos;i="6.07,247,1708416000"; 
-   d="scan'208";a="13463448"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 May 2024 22:38:18 -0700
-X-CSE-ConnectionGUID: k8feyb1gQr+mYHjcJFVckg==
-X-CSE-MsgGUID: WZxVMUhvTvuHjXpz3ZIjMw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.07,247,1708416000"; 
-   d="scan'208";a="27372199"
-Received: from lkp-server01.sh.intel.com (HELO e434dd42e5a1) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 02 May 2024 22:38:15 -0700
-Received: from kbuild by e434dd42e5a1 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1s2lcb-000BLs-1D;
-	Fri, 03 May 2024 05:38:13 +0000
-Date: Fri, 3 May 2024 13:37:49 +0800
-From: kernel test robot <lkp@intel.com>
-To: Udipto Goswami <quic_ugoswami@quicinc.com>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Udipto Goswami <quic_ugoswami@quicinc.com>
-Subject: Re: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting
- for LDO's used
-Message-ID: <202405031311.9f1PrPou-lkp@intel.com>
-References: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
+	Fri, 03 May 2024 07:04:29 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id B1518CE186C;
+	Fri,  3 May 2024 07:04:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7940C116B1;
+	Fri,  3 May 2024 07:04:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1714719864;
+	bh=Pj2tBSzx2HkV5R8JIH0sU2EK9sfWM1oUJjvCcOIOUXE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=b49Yh/UAZQfyis9GyyFSY7UKGwGWgKGoZBWBGWszbjQzh3A6CecrXTaAzgyXrj1ge
+	 5u6URox/mSaSIxhup3G80edTrBucVgRQ+yaKS+TBGi2OSm1KeJzgGwSU6SK0GbpbUO
+	 UMFo78kjwnDJwCFlT0FN8XXv5NpvmsK/FkDZl190wVDwCreRUSZOJBssR6uFRyT+hE
+	 f1opekJlXmn2rJqAp7MZknXfrQq4V+YGT5bybfVkcvlWeBu0ztefO3X+40fvwoYAOL
+	 E1GASfM8A8JTLRMneF62GSgrr9mHBt/plaji2iF3m9Q9auTWwIBvqHn+fM2vvi3tqs
+	 jM+wx74cv+NyA==
+Message-ID: <543fddc4-15fe-4ba0-b86f-2218c8796272@kernel.org>
+Date: Fri, 3 May 2024 09:04:14 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 01/13] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: fix
+ x1e80100-gen3x2 schema
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>,
+ Wesley Cheng <quic_wcheng@quicinc.com>, cros-qcom-dts-watchers@chromium.org,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ David Wronek <davidwronek@gmail.com>, Andy Gross <andy.gross@linaro.org>,
+ Evan Green <evgreen@chromium.org>, Douglas Anderson <dianders@chromium.org>,
+ Iskren Chernev <me@iskren.info>, Luca Weiss <luca.weiss@fairphone.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Yassine Oudjana <y.oudjana@protonmail.com>
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Konrad Dybcio <konrad.dybcio@somainline.org>
+References: <20240501-qcom-phy-fixes-v1-0-f1fd15c33fb3@linaro.org>
+ <20240501-qcom-phy-fixes-v1-1-f1fd15c33fb3@linaro.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20240501-qcom-phy-fixes-v1-1-f1fd15c33fb3@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240502_223822_621670_ADD25244 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20240503_000428_060823_906B083A 
+X-CRM114-Status: UNSURE (   5.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,74 +132,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Udipto,
-
-kernel test robot noticed the following build warnings:
-
-[auto build test WARNING on linus/master]
-[also build test WARNING on v6.9-rc6 next-20240502]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Udipto-Goswami/phy-qcom-snps-femto-v2-Add-load-and-voltage-setting-for-LDO-s-used/20240502-203521
-base:   linus/master
-patch link:    https://lore.kernel.org/r/20240502123312.31083-1-quic_ugoswami%40quicinc.com
-patch subject: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting for LDO's used
-config: x86_64-buildonly-randconfig-003-20240503 (https://download.01.org/0day-ci/archive/20240503/202405031311.9f1PrPou-lkp@intel.com/config)
-compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240503/202405031311.9f1PrPou-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202405031311.9f1PrPou-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
->> drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c:168: warning: Function parameter or struct member 'vreg_list' not described in 'qcom_snps_hsphy'
+On 01/05/2024 18:19, Dmitry Baryshkov wrote:
+> The qcom,x1e80100-qmp-gen3x2-pcie-phy device doesn't have second reset,
+> drop it from the clause enforcing second reset to be used.
+> 
+> Fixes: e94b29f2bd73 ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100 QMP PCIe PHYs")
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
 
 
-vim +168 drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-df2217ff17a820 Krishna Kurapati    2022-09-06  136  
-51e8114f80d076 Wesley Cheng        2020-05-04  137  /**
-51e8114f80d076 Wesley Cheng        2020-05-04  138   * struct qcom_snps_hsphy - snps hs phy attributes
-51e8114f80d076 Wesley Cheng        2020-05-04  139   *
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  140   * @dev: device structure
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  141   *
-51e8114f80d076 Wesley Cheng        2020-05-04  142   * @phy: generic phy
-51e8114f80d076 Wesley Cheng        2020-05-04  143   * @base: iomapped memory space for snps hs phy
-51e8114f80d076 Wesley Cheng        2020-05-04  144   *
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  145   * @num_clks: number of clocks
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  146   * @clks: array of clocks
-51e8114f80d076 Wesley Cheng        2020-05-04  147   * @phy_reset: phy reset control
-51e8114f80d076 Wesley Cheng        2020-05-04  148   * @vregs: regulator supplies bulk data
-51e8114f80d076 Wesley Cheng        2020-05-04  149   * @phy_initialized: if PHY has been initialized correctly
-dcbec046507615 Wesley Cheng        2020-06-25  150   * @mode: contains the current mode the PHY is in
-2a881183dc5ab2 Krzysztof Kozlowski 2023-05-07  151   * @update_seq_cfg: tuning parameters for phy init
-51e8114f80d076 Wesley Cheng        2020-05-04  152   */
-51e8114f80d076 Wesley Cheng        2020-05-04  153  struct qcom_snps_hsphy {
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  154  	struct device *dev;
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  155  
-51e8114f80d076 Wesley Cheng        2020-05-04  156  	struct phy *phy;
-51e8114f80d076 Wesley Cheng        2020-05-04  157  	void __iomem *base;
-51e8114f80d076 Wesley Cheng        2020-05-04  158  
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  159  	int num_clks;
-8a0eb8f9b9a002 Adrien Thierry      2023-06-29  160  	struct clk_bulk_data *clks;
-51e8114f80d076 Wesley Cheng        2020-05-04  161  	struct reset_control *phy_reset;
-51e8114f80d076 Wesley Cheng        2020-05-04  162  	struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
-4dac559b5584a2 Udipto Goswami      2024-05-02  163  	const struct qcom_snps_hsphy_regulator_data *vreg_list;
-51e8114f80d076 Wesley Cheng        2020-05-04  164  
-51e8114f80d076 Wesley Cheng        2020-05-04  165  	bool phy_initialized;
-dcbec046507615 Wesley Cheng        2020-06-25  166  	enum phy_mode mode;
-df2217ff17a820 Krishna Kurapati    2022-09-06  167  	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
-51e8114f80d076 Wesley Cheng        2020-05-04 @168  };
-51e8114f80d076 Wesley Cheng        2020-05-04  169  
+Best regards,
+Krzysztof
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
