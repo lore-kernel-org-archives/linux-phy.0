@@ -4,92 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B388C4345F
-	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 05:24:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7F13C4345F
+	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 05:38:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eAbwDIV18pm25B8w6BvfcLTqsqqbIEUEGLpDgO5z9VI=; b=4d/ClNURG5LD5f
-	bu+Nui+wvfUPnlU0f9rD0xvOEj0FOR5/JsRoHxUWK41hQKYKyZP2yGu7UEPux1fA9qzGft2tslKRN
-	EjWmfBeuR/HxPQxXnta6wamJSjjCSL3nT3X8cais2Gkc7MxS1qZvyxj6ptHSxA2AhnDp9fOXfcw/D
-	sjYn88jIUjxH0qyVZHH00FgOtjA3RVUhkoBZxGUvzgdpDZFXGSBvS00gguQ3H6B/b+ZcoiWfkT4A0
-	FKuFgEKNJG052RD29txARa1WiOW5NFfFcqczO+SWXjLZSeZ5ttczGHUr7DZhA5KEodlrBhVJY0FHM
-	vjjYjSEndsc2eTm+exbg==;
+	List-Owner; bh=x5nkTGLbPW1zjnlcEmK60MtxCGAubpxyu0ERiHxupn0=; b=Q96uU7nCyCbYoN
+	BxfgIEsXirctJZJh08VGNFyURsiYHpo+x7Jlzi0OneqyrPBNFqk7k3b4cNukiSMt8jCRmVxWxLcwE
+	OsGHUUj1wnhDWUigAn29S9UBCldJWuIm4bR68YF8Rh5ioe2Te2vQvhI/tMOLPTDkqBX5dOP90qLZ9
+	GmTLcUtTnf1e0DQsw6mXlRCs4LK0kp0jAwHWIDeSd+2Dv8E4C3VXrAlrgs0oplwgzfqRPOGLrmZca
+	rKFXIZIiCeKqtKgUKJpEXUaqbd5aZuOeKNrhfIpx6XnzNjOghb0Ob35n8Bl+gQiiqW668ejPXeD6m
+	umqr/n+hLzr2zq0doEnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2lOw-0000000F8eu-3M3U;
-	Fri, 03 May 2024 05:24:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1s2lco-0000000FAya-2Gmi;
+	Fri, 03 May 2024 05:38:26 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2lOs-0000000F8eK-2EnO
+	id 1s2lck-0000000FAxW-2G5t
 	for linux-phy@lists.infradead.org;
-	Fri, 03 May 2024 05:24:04 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4434hH9p004580;
-	Fri, 3 May 2024 05:23:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=I6xdoCHOHKehKUSxYk5VnCRqgQe/24QjHGkXEwwcr0c=; b=Ay
-	iS+Pki+B9YbmaWEvLQ3w4G/LbP6p6RyJSoxk7X2esMgZuJcqeQs0KI1HLG3tDAZy
-	oP9maPQrqWk0RE3pgWWJF2Tidnuuh25Ts6OZLcta+7P4Nzf73Aife6GmAW26NOZm
-	5MIJcnuNi73QnRvkrEpqUesCviMi8MnreY9HfIs9sVAFYrMBw39KkVIys9GTD4kK
-	ttzWGmSPOWb0M0Dbhbirv3EGs1+WcYXLrbbDER8bjECmBMh50dX+RVND7EfAUnNT
-	zyNB8MSbW6SP4fV6ddWqpkeQ7LJjRB5MNfginueQookgKtMUpCohFEtxTvp4nanN
-	25kMSZ7+pCVPZbYbauiw==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3xv7pxj6y5-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 03 May 2024 05:23:57 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 4435Nuh2020700
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 3 May 2024 05:23:56 GMT
-Received: from [10.217.219.221] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 2 May 2024
- 22:23:53 -0700
-Message-ID: <2f3dd278-02b8-4939-8b75-55c342adcddf@quicinc.com>
-Date: Fri, 3 May 2024 10:53:50 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting for
- LDO's used
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio
-	<konrad.dybcio@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay
- Abraham I <kishon@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
+	Fri, 03 May 2024 05:38:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1714714703; x=1746250703;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=rKKCeOF3G9JpimaU43Lw2IpoOJrnNfrZXT1xQPXth8A=;
+  b=a3O4suCGMwHmfK92vSbeQ9nVGhYp45tBKRfMVIGUJYCaHPUNUhge380K
+   qjXo/TYLnTdVNiAlUMAkHMvrQrn393xJg7sCnPZTzvv34OuAfQl4n3PkE
+   T/f5R7bBcVoNixVzSrqwbacyO7B8UgYD5Fa4FPZmLUizpCJwVegtRiaiX
+   aRsYhcspCJUwhK1HBmiL/KWIWrRGsM6Go3gVWufVP0lbvx3DUFkuTol5L
+   3GRGGFYcskfi2MdxNho8fezYaKTshhw6DgjBTfuKW/CZpiBhSotY6RxpJ
+   eOMzk8HTsy9VdUvWY4Ys8/xUCv2+YvLZaxjwyCBIKHA1epvg8iTNgVYHR
+   g==;
+X-CSE-ConnectionGUID: 8Tq8spQmSu+FTQgNXWXzaQ==
+X-CSE-MsgGUID: aY+rzYAVTSehfkLi1sdh/w==
+X-IronPort-AV: E=McAfee;i="6600,9927,11062"; a="13463448"
+X-IronPort-AV: E=Sophos;i="6.07,247,1708416000"; 
+   d="scan'208";a="13463448"
+Received: from fmviesa007.fm.intel.com ([10.60.135.147])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 May 2024 22:38:18 -0700
+X-CSE-ConnectionGUID: k8feyb1gQr+mYHjcJFVckg==
+X-CSE-MsgGUID: WZxVMUhvTvuHjXpz3ZIjMw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.07,247,1708416000"; 
+   d="scan'208";a="27372199"
+Received: from lkp-server01.sh.intel.com (HELO e434dd42e5a1) ([10.239.97.150])
+  by fmviesa007.fm.intel.com with ESMTP; 02 May 2024 22:38:15 -0700
+Received: from kbuild by e434dd42e5a1 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1s2lcb-000BLs-1D;
+	Fri, 03 May 2024 05:38:13 +0000
+Date: Fri, 3 May 2024 13:37:49 +0800
+From: kernel test robot <lkp@intel.com>
+To: Udipto Goswami <quic_ugoswami@quicinc.com>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Udipto Goswami <quic_ugoswami@quicinc.com>
+Subject: Re: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting
+ for LDO's used
+Message-ID: <202405031311.9f1PrPou-lkp@intel.com>
 References: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
- <CAA8EJppeQTadmny=hcs4xCQDXHwXEBHXjeecvZCUVcSXmwBTgg@mail.gmail.com>
-Content-Language: en-US
-From: Udipto Goswami <quic_ugoswami@quicinc.com>
-In-Reply-To: <CAA8EJppeQTadmny=hcs4xCQDXHwXEBHXjeecvZCUVcSXmwBTgg@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: IMh8dstdDZSkJ0k__r6y4e0xJkgEhb7g
-X-Proofpoint-ORIG-GUID: IMh8dstdDZSkJ0k__r6y4e0xJkgEhb7g
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1011,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-03_03,2024-05-02_03,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 adultscore=0
- suspectscore=0 mlxlogscore=999 phishscore=0 lowpriorityscore=0 mlxscore=0
- bulkscore=0 spamscore=0 malwarescore=0 impostorscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2404010003
- definitions=main-2405030035
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240502_222402_783930_F39B494C 
-X-CRM114-Status: GOOD (  30.81  )
+X-CRM114-CacheID: sfid-20240502_223822_621670_ADD25244 
+X-CRM114-Status: GOOD (  11.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,245 +89,79 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+Hi Udipto,
 
-On 5/2/2024 6:42 PM, Dmitry Baryshkov wrote:
-> On Thu, 2 May 2024 at 15:33, Udipto Goswami <quic_ugoswami@quicinc.com> wrote:
->>
->> The Femto phy depends on 0.88/ 1.8/ 3.3V regulators for its operation.
->> If one of the regulators is not voted to the required minimum voltage
->> for phy to operate, then High speed mode of operation will fail.
->>
->> On certain targets like (qcm6490_rb3gen2) where the minimum voltage
->> of the regulator is lower than the operating voltage of the phy.
->> If not voted properly, the phy supply would be limited to the min value
->> of the LDO thereby rendering the phy non-operational.
->>
->> The current implementation of the regulators in the Femto PHY is not
->> setting the load and voltage for each LDO. The appropriate voltages and
->> loads required for the PHY to operate should be set.
-> 
-> Please move min/max voltages to the DTS. There is no need to set them
-> from the driver.
-that also can be done.
-> 
-> Also, is there any reason why you can't use `regulator-initial-mode =
-> <RPMH_REGULATOR_MODE_HPM>;` like other boards do?
+kernel test robot noticed the following build warnings:
+
+[auto build test WARNING on linus/master]
+[also build test WARNING on v6.9-rc6 next-20240502]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Udipto-Goswami/phy-qcom-snps-femto-v2-Add-load-and-voltage-setting-for-LDO-s-used/20240502-203521
+base:   linus/master
+patch link:    https://lore.kernel.org/r/20240502123312.31083-1-quic_ugoswami%40quicinc.com
+patch subject: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting for LDO's used
+config: x86_64-buildonly-randconfig-003-20240503 (https://download.01.org/0day-ci/archive/20240503/202405031311.9f1PrPou-lkp@intel.com/config)
+compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240503/202405031311.9f1PrPou-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202405031311.9f1PrPou-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+>> drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c:168: warning: Function parameter or struct member 'vreg_list' not described in 'qcom_snps_hsphy'
 
 
-but the regulator loads & voltages for the phy doesn't change for every 
-platform.
-Phys operational limits will still be the same for all the different 
-platforms which exists today and the upcoming ones as well if they use it.
+vim +168 drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
 
-Suppose te LDO's HPM is 2000 but the phy require 6000, its not getting 
-enough power, same for reverse say 6000 in LDO's HPM and phy require 
-2000, isn't this power leakage ?
+df2217ff17a820 Krishna Kurapati    2022-09-06  136  
+51e8114f80d076 Wesley Cheng        2020-05-04  137  /**
+51e8114f80d076 Wesley Cheng        2020-05-04  138   * struct qcom_snps_hsphy - snps hs phy attributes
+51e8114f80d076 Wesley Cheng        2020-05-04  139   *
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  140   * @dev: device structure
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  141   *
+51e8114f80d076 Wesley Cheng        2020-05-04  142   * @phy: generic phy
+51e8114f80d076 Wesley Cheng        2020-05-04  143   * @base: iomapped memory space for snps hs phy
+51e8114f80d076 Wesley Cheng        2020-05-04  144   *
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  145   * @num_clks: number of clocks
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  146   * @clks: array of clocks
+51e8114f80d076 Wesley Cheng        2020-05-04  147   * @phy_reset: phy reset control
+51e8114f80d076 Wesley Cheng        2020-05-04  148   * @vregs: regulator supplies bulk data
+51e8114f80d076 Wesley Cheng        2020-05-04  149   * @phy_initialized: if PHY has been initialized correctly
+dcbec046507615 Wesley Cheng        2020-06-25  150   * @mode: contains the current mode the PHY is in
+2a881183dc5ab2 Krzysztof Kozlowski 2023-05-07  151   * @update_seq_cfg: tuning parameters for phy init
+51e8114f80d076 Wesley Cheng        2020-05-04  152   */
+51e8114f80d076 Wesley Cheng        2020-05-04  153  struct qcom_snps_hsphy {
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  154  	struct device *dev;
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  155  
+51e8114f80d076 Wesley Cheng        2020-05-04  156  	struct phy *phy;
+51e8114f80d076 Wesley Cheng        2020-05-04  157  	void __iomem *base;
+51e8114f80d076 Wesley Cheng        2020-05-04  158  
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  159  	int num_clks;
+8a0eb8f9b9a002 Adrien Thierry      2023-06-29  160  	struct clk_bulk_data *clks;
+51e8114f80d076 Wesley Cheng        2020-05-04  161  	struct reset_control *phy_reset;
+51e8114f80d076 Wesley Cheng        2020-05-04  162  	struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
+4dac559b5584a2 Udipto Goswami      2024-05-02  163  	const struct qcom_snps_hsphy_regulator_data *vreg_list;
+51e8114f80d076 Wesley Cheng        2020-05-04  164  
+51e8114f80d076 Wesley Cheng        2020-05-04  165  	bool phy_initialized;
+dcbec046507615 Wesley Cheng        2020-06-25  166  	enum phy_mode mode;
+df2217ff17a820 Krishna Kurapati    2022-09-06  167  	struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
+51e8114f80d076 Wesley Cheng        2020-05-04 @168  };
+51e8114f80d076 Wesley Cheng        2020-05-04  169  
 
-This also seems to be the case with voltages as well, the phy require 
-0.88V for operation but if LDO is lower then that say 0.70, phy won't work.
-
-So instead of doing it seperately doesn't it make sense to do it in driver ?
-> 
->>
->> Implement a bulk operation api to set load & voltages before doing bulk
->> enable. This will ensure that the PHY remains operational under all
->> conditions.
->>
->> Signed-off-by: Udipto Goswami <quic_ugoswami@quicinc.com>
->> ---
->>   drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 121 +++++++++++++++++-
->>   1 file changed, 114 insertions(+), 7 deletions(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> index eb0b0f61d98e..cbe9cdaa6849 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
->> @@ -78,11 +78,39 @@
->>
->>   #define LS_FS_OUTPUT_IMPEDANCE_MASK            GENMASK(3, 0)
->>
->> -static const char * const qcom_snps_hsphy_vreg_names[] = {
->> -       "vdda-pll", "vdda33", "vdda18",
->> +
->> +struct qcom_snps_hsphy_regulator_data {
->> +       const char *name;
->> +       unsigned int enable_load;
->> +       unsigned int min_voltage;
->> +       unsigned int max_voltage;
->> +};
->> +
->> +static const struct qcom_snps_hsphy_regulator_data hsphy_vreg_l[] = {
->> +       {
->> +               .name = "vdda-pll",
->> +               .enable_load = 30000,
->> +               .min_voltage = 825000,
->> +               .max_voltage = 925000,
->> +       },
->> +
->> +       {
->> +               .name = "vdda18",
->> +               .enable_load = 19000,
->> +               .min_voltage = 1704000,
->> +               .max_voltage = 1800000
->> +       },
->> +
->> +       {
->> +               .name = "vdda33",
->> +               .enable_load = 16000,
->> +               .min_voltage = 3050000,
->> +               .max_voltage = 3300000
->> +       },
->> +
->>   };
->>
->> -#define SNPS_HS_NUM_VREGS              ARRAY_SIZE(qcom_snps_hsphy_vreg_names)
->> +#define SNPS_HS_NUM_VREGS              ARRAY_SIZE(hsphy_vreg_l)
->>
->>   struct override_param {
->>          s32     value;
->> @@ -132,12 +160,90 @@ struct qcom_snps_hsphy {
->>          struct clk_bulk_data *clks;
->>          struct reset_control *phy_reset;
->>          struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
->> +       const struct qcom_snps_hsphy_regulator_data *vreg_list;
->>
->>          bool phy_initialized;
->>          enum phy_mode mode;
->>          struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
->>   };
->>
->> +static int __vdda_phy_bulk_enable_disable(struct qcom_snps_hsphy *hsphy, bool on)
-> 
-> Separate functions, please.
-sure.
-> 
->> +{
->> +       int ret = 0;
->> +       int i;
->> +
->> +       if (!on)
->> +               goto disable_vdd;
->> +
->> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
->> +
->> +               ret = regulator_set_load(hsphy->vregs[i].consumer,
->> +                                        hsphy->vreg_list[i].enable_load);
->> +
->> +               if (ret < 0) {
->> +                       dev_err(hsphy->dev, "unable to set HPM of %s %d\n",
->> +                                               hsphy->vregs[i].supply, ret);
->> +                       goto err_vdd;
->> +               }
->> +       }
->> +
->> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
->> +               ret = regulator_set_voltage(hsphy->vregs[i].consumer,
->> +                                           hsphy->vreg_list[i].min_voltage,
->> +                                           hsphy->vreg_list[i].max_voltage);
->> +               if (ret) {
->> +                       dev_err(hsphy->dev,
->> +                               "unable to set voltage of regulator %s %d\n",
->> +                                               hsphy->vregs[i].supply, ret);
->> +                       goto put_vdd_lpm;
->> +               }
->> +       }
->> +
->> +       ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->> +       if (ret)
->> +               goto unconfig_vdd;
->> +
->> +       return ret;
->> +
->> +disable_vdd:
->> +       regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->> +
->> +unconfig_vdd:
->> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
->> +               ret = regulator_set_voltage(hsphy->vregs[i].consumer, 0,
->> +                                           hsphy->vreg_list[i].max_voltage);
->> +               if (ret) {
->> +                       dev_err(hsphy->dev,
->> +                       "unable to set voltage of regulator %s %d\n",
->> +                                       hsphy->vregs[i].supply, ret);
->> +               }
->> +       }
->> +
->> +put_vdd_lpm:
->> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
->> +               ret = regulator_set_load(hsphy->vregs[i].consumer, 0);
->> +
->> +               if (ret < 0) {
->> +                       dev_err(hsphy->dev, "unable to set LPM of %s %d\n",
->> +                                               hsphy->vregs[i].supply, ret);
->> +               }
->> +       }
->> +
->> +err_vdd:
->> +       return ret;
->> +
->> +}
->> +
->> +static int vdda_phy_bulk_enable(struct qcom_snps_hsphy *hsphy)
->> +{
->> +       return __vdda_phy_bulk_enable_disable(hsphy, true);
->> +}
->> +
->> +static int vdda_phy_bulk_disable(struct qcom_snps_hsphy *hsphy)
->> +{
->> +       return __vdda_phy_bulk_enable_disable(hsphy, false);
->> +}
->> +
->>   static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
->>   {
->>          struct device *dev = hsphy->dev;
->> @@ -390,7 +496,7 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->>
->>          dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
->>
->> -       ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->> +       ret = vdda_phy_bulk_enable(hsphy);
->>          if (ret)
->>                  return ret;
->>
->> @@ -471,7 +577,7 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->>   disable_clks:
->>          clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
->>   poweroff_phy:
->> -       regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->> +       ret = vdda_phy_bulk_disable(hsphy);
->>
->>          return ret;
->>   }
->> @@ -482,7 +588,7 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
->>
->>          reset_control_assert(hsphy->phy_reset);
->>          clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
->> -       regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
->> +       vdda_phy_bulk_disable(hsphy);
->>          hsphy->phy_initialized = false;
->>
->>          return 0;
->> @@ -592,8 +698,9 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
->>
->>          num = ARRAY_SIZE(hsphy->vregs);
->>          for (i = 0; i < num; i++)
->> -               hsphy->vregs[i].supply = qcom_snps_hsphy_vreg_names[i];
->> +               hsphy->vregs[i].supply = hsphy_vreg_l[i].name;
->>
->> +       hsphy->vreg_list  = hsphy_vreg_l;
->>          ret = devm_regulator_bulk_get(dev, num, hsphy->vregs);
->>          if (ret)
->>                  return dev_err_probe(dev, ret,
->> --
->> 2.17.1
-
--Udipto
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
