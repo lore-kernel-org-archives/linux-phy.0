@@ -4,77 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E849C4345F
-	for <linux-phy@archiver.kernel.org>; Thu,  2 May 2024 13:12:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D74FDC4345F
+	for <linux-phy@archiver.kernel.org>; Fri,  3 May 2024 00:36:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V4agJorjXM/v0/938ej/XNvq6DGz6xo0SenTaUHfM2I=; b=K7b31jJgAmI7Cq
-	tmXyd+/QluGypie16SwC2wm/5uuZWTYIFQzE/BS3cC4W48KVcZHYnBk65TgvMN6P5rFDoPd/PKM/8
-	czC8r1IKLJz4cspRnC7jOdtqSuXItX7+22IGwsLMqugfhfa/GBnOnbLGc/aFKPhL1TgXI1xKJ7ugK
-	+rbG95diYmAv1ucnDi/YTdsHapg8NnNNOXPK0L6XvKJ+yq0S1VTQWXS7TDZVOnKlIsRbECBMT9pKU
-	5kuqKnzwnEa6iq4j66OpF2BZ+6ZpeHdIRH6U4E2DANsJlFCbO7S1nCSV5TbhfvYbxdZqZZyO2U8wh
-	UgSllyH21nT28TQIskDw==;
+	List-Owner; bh=QUesusY+cgyTLkL/n5pqPE/t8GkzQE/39osLTL17AJs=; b=jCp0p7EkjlO6T6
+	AQblEJ5vHVy1jw3PIWhnbFLzokfheextMV+KiOhvxqMMaDKTgFgkqffhMa0HpzEkOK1oOtmqWKfIP
+	eTGlBrCPs95mLFghZbg86YK0ENhIiGRn0LLo+HJM0TMZY9gS2qtKeupc5f0F4tPm0A7MZPxkueB7V
+	ujGpyxZGFRh6jnfYy+Yahw9amlU/ELh6Xu9fuF6vpqvwvewl8kauxB2wAN2L70CDj+c+GQ65kQbYc
+	Vnr1YF1/aZBIwo7f9LbTKuCxKUt8OwkGwTIy0iCZA6vCCiS5w5fpA2qO1zTS7m7fdHNIQFbkLYajL
+	eiVoW2xijNd/Dzx0f96Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2WF0-0000000Ckyo-0ttn;
-	Thu, 02 May 2024 13:12:50 +0000
-Received: from mail-yw1-x1136.google.com ([2607:f8b0:4864:20::1136])
+	id 1s2gug-0000000ESBA-0gHj;
+	Fri, 03 May 2024 00:36:34 +0000
+Received: from mail-bn8nam12olkn20801.outbound.protection.outlook.com ([2a01:111:f403:2c18::801] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s2WEx-0000000CkwG-0BsB
+	id 1s2guc-0000000ES94-2ow4
 	for linux-phy@lists.infradead.org;
-	Thu, 02 May 2024 13:12:48 +0000
-Received: by mail-yw1-x1136.google.com with SMTP id 00721157ae682-61ab6faf179so77756887b3.1
-        for <linux-phy@lists.infradead.org>; Thu, 02 May 2024 06:12:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1714655551; x=1715260351; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=e9IfF2XRrC1/or05aEZt3Pgg1CS/l8eHWqh1tFVKZN4=;
-        b=mvemClC4frC1R3eHRjPmWnnVDpL9EAsFz7Lihc5jYFMWvGdvqqNPn0Yx0YZPwbXxQv
-         cTX7vEp/BRlg0Bn3IVqwS+8NBajDsX0lzoF0GBEL7u4pfH9WNY4rpT+Tfl83E+TVlvuq
-         oGpdfnC/BiBPIidSx/4+BfDnjiaeP8c/iO3J5WKK+fqC4ED3Q/ZmsrmRuLIqE2suWFfH
-         f8qHjBEmh7cRphRk1yPY6XpeFeeeQto1V6L04/6B07YkWJPcKSwjXep/BrDVX4w+oNwE
-         M05tqej9ZpW9SaRD1hMlF5FrQHs7TC2V37Ta4XycME1TCo25MTbREJKwlcT+zeSmpw4F
-         IKgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1714655551; x=1715260351;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=e9IfF2XRrC1/or05aEZt3Pgg1CS/l8eHWqh1tFVKZN4=;
-        b=HV+50Pljr2Qsa8UFsu0Q6cl+T7Irw1bvbkhu1I+bue984/BLEZSm0rDfAdIZ2aAH44
-         XcS5TgUW2WTAYX122SkCJ3k1UtUKmvfLTpsfsfcWaHlFt5gGw24PjFZWIYDILTebyL6j
-         hFAtKyxpQrmzQamoc+tSQ68N0HugnFJ5pglfvHku/+n2qi2SLMg70+oaUdPDKTQ6AzFf
-         0CDE8cgZ8P3y9CJZiBB/GLQCeMzFtO9VO8hSI2fI140Fq42HS22xS63i4S7aB6RxtpUp
-         RgHSfJRwr+HNJwL0SF+ladOeb1eJ31QboJGWMADeDrS/RsOyns6Sm9sKNfXlxXXUVeKR
-         GJnA==
-X-Forwarded-Encrypted: i=1; AJvYcCUEkUFJdDCDAjTki4zcCNcq1gB9EYDT0zeunLRKM5wy+p8KYpzciEgfLNLug/K4xNtG/TtSlZCrW+MPRQ400dl3wYl5e1dkH6x6BcCsDw==
-X-Gm-Message-State: AOJu0YyHBU28hCXABD+B4EpXU0j98SnyMzdYz63rgO6jyEryzilxI507
-	epTZHOTykTcUnh7/oEb6b2lCB/Ur6w4CeFUzPTXW0BEdbg+St+I0ZtKbunVDwPp0FTL/hT2vnE3
-	Vi8h9loTNtmOakrWOngXMwjQWe7lEC0d9uFwo1w==
-X-Google-Smtp-Source: AGHT+IEmkdUGj5jxW8y/dVl1d+EP/OPmo0I1J+BrgLeQOzwiCRVJgZVKxM+VVh8ViBEG0rKvwXQFvcvTYJR/P/usunM=
-X-Received: by 2002:a25:db8e:0:b0:dca:a3e8:a25a with SMTP id
- g136-20020a25db8e000000b00dcaa3e8a25amr2216795ybf.62.1714655551232; Thu, 02
- May 2024 06:12:31 -0700 (PDT)
+	Fri, 03 May 2024 00:36:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Hwu5A4cQiFoPqfd64OJlPfG3x96CysyVHD1qBVP3c3hY+gto/mYV6lHOaRyDEYMujONmD5e4qMH0IttKww13UJjhQktVoBhThnOgLAQdfVy7IWTrUxQyT4ScQoq5MhuwBjfKGB9vTegsb0Ph7xo7jqFODMblC+XMZbiIZBl+ZoSeqjePco5yni7B0C4kI4is7TTJWPKxgGOZqSnys15FF2aQYkKCmtIfcpQWO7k/NNICAoueFuRu20646TYGID62rDENCf0MTdccBss2jj14XWGVW9Yp5wAWKb/gmdz8jFcHQ0fipDyuQMCLiAurAYteOu5Sl/6I81d6vqRo+8MFjQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OmNN968i6dDqnEafFyrdiq5/ZDYK8eYFtiI6oF/VrTA=;
+ b=KMAvCgq8Mw7pVLfV2vvLGMXYpzeVIsOpUvEh6Ep+Yz6cEvzsAwIrTEdHgNVQcqTapW07z/uJEmuIF8MIKXfi2hyzAfT6vG7yLzuIo493Ef+YCWqEAI0Ox307iSD2nmDyYJVeagyEFfPjm8Pnp1tMDptsUTN58lcXqTl3zsibFdcP6Immdk8SiDQ1OwVh59XY/jKucbE5COhSI0L25qJPW2hGJDmHR9gN7VzFgyfZ38TUJ3hXlqL2Ni6QZD3s25B0oLGK2BpUzIz8YXTdeAzEQkU7Lu50e+whKUiC/W4kNet43uQHrQWxga84O6axxivcdgSi56jgpVSnn69mmPEjGQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OmNN968i6dDqnEafFyrdiq5/ZDYK8eYFtiI6oF/VrTA=;
+ b=i6BA4DT5h9j9SDI/AV+1kmCdmFUysa2ataayRlBIyyO6hEgeuOZOpw8n9c9vr6rg4bP/g6OYxxxr7ASogTHufHG3feqHnD3K+6ns5VQI+8yTgA0gI9kg79OMr6a8vf+OLlM1SBGpXsIgD24y2IHgYipfXo+y7zNNlqaS5mFyrnLURtuK/t2+JOF+s5fCw9VabUNJ0dwpQPSEMFEF9snvLLQoQuMER44ENGGaOYAa9k0iLJDzoMvWn9GxvrWu9WO4JNQWdQl/cm/KWBawI/af67xSii6eCtJP1hdkKh8JTUNeSl44y5tYmBiX58eCHTNk0iOfaKoCFITwjJ/M604W3A==
+Received: from IA1PR20MB4953.namprd20.prod.outlook.com (2603:10b6:208:3af::19)
+ by DS0PR20MB5908.namprd20.prod.outlook.com (2603:10b6:8:148::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7519.36; Fri, 3 May
+ 2024 00:36:16 +0000
+Received: from IA1PR20MB4953.namprd20.prod.outlook.com
+ ([fe80::182f:841b:6e76:b819]) by IA1PR20MB4953.namprd20.prod.outlook.com
+ ([fe80::182f:841b:6e76:b819%2]) with mapi id 15.20.7544.023; Fri, 3 May 2024
+ 00:36:16 +0000
+Date: Fri, 3 May 2024 08:36:47 +0800
+From: Inochi Amaoto <inochiama@outlook.com>
+To: Conor Dooley <conor@kernel.org>, Inochi Amaoto <inochiama@outlook.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chen Wang <unicorn_wang@outlook.com>, Jisheng Zhang <jszhang@kernel.org>, 
+	Liu Gui <kenneth.liu@sophgo.com>, Jingbao Qiu <qiujingbao.dlmu@gmail.com>, dlan@gentoo.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: Add Sophgo CV1800 USB phy
+Message-ID: <IA1PR20MB4953EF886763A05EE6DDEF25BB1F2@IA1PR20MB4953.namprd20.prod.outlook.com>
+References: <IA1PR20MB4953182B8EDB465430289400BB1B2@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <IA1PR20MB495355A4186420B78BD78F49BB1B2@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <20240430-crummiest-overnight-0f46dba32bb8@spud>
+ <IA1PR20MB49535665CF1C89FFB4E1E46DBB192@IA1PR20MB4953.namprd20.prod.outlook.com>
+ <20240501-effort-virus-9baa07daf429@spud>
+Content-Disposition: inline
+In-Reply-To: <20240501-effort-virus-9baa07daf429@spud>
+X-TMN: [BOLdy2BA7V7Gghk3OrONgPX2iHe2ToqSedWzNfSgeh8=]
+X-ClientProxiedBy: PU1PR04CA0004.apcprd04.prod.outlook.com
+ (2603:1096:803:29::16) To IA1PR20MB4953.namprd20.prod.outlook.com
+ (2603:10b6:208:3af::19)
+X-Microsoft-Original-Message-ID: <wkbjnwlejolan5xi7hmvpxhjahbgvqt2z5heqtr4cblwmc554w@u53lgvyudfrt>
 MIME-Version: 1.0
-References: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
-In-Reply-To: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 2 May 2024 16:12:20 +0300
-Message-ID: <CAA8EJppeQTadmny=hcs4xCQDXHwXEBHXjeecvZCUVcSXmwBTgg@mail.gmail.com>
-Subject: Re: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting for
- LDO's used
-To: Udipto Goswami <quic_ugoswami@quicinc.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: IA1PR20MB4953:EE_|DS0PR20MB5908:EE_
+X-MS-Office365-Filtering-Correlation-Id: bd90a6c1-7803-4a10-2637-08dc6b090ae2
+X-Microsoft-Antispam: BCL:0;ARA:14566002|461199019|1602099003|440099019|3412199016|1710799017;
+X-Microsoft-Antispam-Message-Info: gBafjgBgrSBxUmBG0mO23OZsCvZjgNDnUcEfBOtkpqSB/7ZK9nem3doYF18mNyUi1AMtrmOntFK8Qjdn0lPi0Cz5nD8uvaAXec8GYdGvhVfuyJ+IuWC727tB1b8n+COKdMAUb7OrUJ2KWSyeUKehskH/cEIYf/bSwV9ok4Ny0LuDXyDD17/wJk/G4s6abY6vFZZFFhxWrQyeyAAzCkfdl/SLLK+uSH0Vlkc1TLymalH/P0j8wRcVOEFDoH6Rclv/08cf0EZQtLzc7Qwe4tagVP6vAMFGa5viSAZFg04KQ3yvQwFqfVLkebWX2ebpkMZo1kL+p1ohkebHFm1pV6wpFugoCDvQF45Fq6aVDlum+LuzSUjaaT/EPQoBdIx/ezDJUB8WxN2xwdfzKQpcsp1qY0YRVA4Xn2g9OhvS9AWrhLsVdy48PeCoS1l8ga1fzNr/rvFTsthjBfePXW03cTiJ6rioYlIZ/p9j9UaWi6HZy0CpeE/5YAZwdd5UDHnXgYnbGpLT5+5qsCXUkpyyyzgLXrdd7KM3pXzFq6EqfBtFxNWd0iEYP+8FHjfvyRHPyIGLSCXsn1SMcKTk7UOqZPqcrupFknHZ2NyKOO8Nxn+HVqypweqgsYjeom25eCZyHy651LWj6jqr5MUq0fkoiLOir8k4Ccuigc5mm2ENJdwX7+Ec6TpBqP5xZZhxEmI824tr
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?J5S2PuRq0UnmFl5qIMkZXabM/nS59HC6+EeQcVfG8rhw4fjydtoHpUQ7waKC?=
+ =?us-ascii?Q?GDYv0VegIgn2qj2a+9/9x0l0pnBuRYFTETEYUU2pZMKfOC8FPL9JD5/yxbz2?=
+ =?us-ascii?Q?gzABK8NCNkJD+ywDq5aTU4Fj6NcHhz1tDEHd0r7pGgFeUMd/r5+hegAvFJtN?=
+ =?us-ascii?Q?fROHOv7nfIzDM8SwevR0QiMBPc4mlPseIL4YS3Z3kATpCLs5MgozLntVfQi4?=
+ =?us-ascii?Q?UYK6DJjNhipfW1jtTqGZ02F9TBBGwCC+/04nj2o+1HnaewP41i76ZfjelZhA?=
+ =?us-ascii?Q?bG52tETVpJxsa5AgVwxXSuCLbLZ44CzVKjS87VqOwskYiXp2a3vb05os1t/C?=
+ =?us-ascii?Q?cO2W22jiAVHEvreR425VTAYKsFm2w5NCKbcE3YwhqV73SMf/F4TrfV/T+/RR?=
+ =?us-ascii?Q?e/kPArFWlgAaBOHFcuXvMm9WowRmIHgQn1FcxLAJpDWn+fQyqZp6mxVj24ne?=
+ =?us-ascii?Q?qRDvBidWsEKM1J46CnIXGGyrv2vv0hQ1nsND2tK3EdQVIvVj/UzK3pRrwV5C?=
+ =?us-ascii?Q?A3/HSlIUBPzGxVAv6vgY/nQ3u5doIlBr//34rcC25Cnxw4IF7ZmJLRMpLyNP?=
+ =?us-ascii?Q?eceC7S2hwt7WYVKzn3TLqthpeKtXK2TCaw+wNtX+stekJdBgQXICR+CuwD4S?=
+ =?us-ascii?Q?YATmh1UyfSJAyEkAOuqqtRoj4l8z1rvwKXAaGlYTRLg6+ZMFgcXf2LP50K16?=
+ =?us-ascii?Q?4qQbIfLZUO3v3P5lzj1prdwf33SSlFcrQGTDRIyrWqlkGwubwK2w1XtpXzRP?=
+ =?us-ascii?Q?Sh+jttfWz16B9P14glL7yMv47Fu1Vs1rjuy2iypePUY9WNt3IKKdsiggQ6yV?=
+ =?us-ascii?Q?IUswFQgidHm6jBPIhZMkx3yt7kt8678424k5R1tYMV/wBtMNQ8TE0MZxnyTm?=
+ =?us-ascii?Q?z15sjuaLdOADr7AuxKVGnEStNLa4vrMdc/EZxIcjRJn/N93Axe29zhfV8vuZ?=
+ =?us-ascii?Q?CuIaUb/Qd5BrmMuXNDczruz/fY3b5gAQTuk7Sx4I9xxdv+KzGjx/kKzjjYqO?=
+ =?us-ascii?Q?hKJ8AEZwnuQH+cQhkQsGm8JkINZ/+XbyDFy4O8IpmrsBWGPAZYbPyFPoXl3g?=
+ =?us-ascii?Q?voVsDQTZduYvqwQi8g2sQbFFUApBmOpqRL7xsFH7ERTHi+qd5NS+0WcfMhyA?=
+ =?us-ascii?Q?5NVgJOahKvc/ufrzpcNy2Colzy4oGs13Rv5zRVvabrIaEXJV/cFpDakN6wWA?=
+ =?us-ascii?Q?/iT16QPOAPWvDH/2gMCHvJaZcQFt6757kccESqPFdKRNYqUisMf07CRELXuQ?=
+ =?us-ascii?Q?2m8c0sRoCax+3hsm9PgP?=
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: bd90a6c1-7803-4a10-2637-08dc6b090ae2
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR20MB4953.namprd20.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 May 2024 00:36:16.3732
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR20MB5908
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240502_061247_123669_45AD5064 
-X-CRM114-Status: GOOD (  31.54  )
+X-CRM114-CacheID: sfid-20240502_173630_817939_C6C446F3 
+X-CRM114-Status: GOOD (  39.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,225 +132,147 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2 May 2024 at 15:33, Udipto Goswami <quic_ugoswami@quicinc.com> wrote:
->
-> The Femto phy depends on 0.88/ 1.8/ 3.3V regulators for its operation.
-> If one of the regulators is not voted to the required minimum voltage
-> for phy to operate, then High speed mode of operation will fail.
->
-> On certain targets like (qcm6490_rb3gen2) where the minimum voltage
-> of the regulator is lower than the operating voltage of the phy.
-> If not voted properly, the phy supply would be limited to the min value
-> of the LDO thereby rendering the phy non-operational.
->
-> The current implementation of the regulators in the Femto PHY is not
-> setting the load and voltage for each LDO. The appropriate voltages and
-> loads required for the PHY to operate should be set.
+On Wed, May 01, 2024 at 06:05:28PM GMT, Conor Dooley wrote:
+> On Wed, May 01, 2024 at 08:28:47AM +0800, Inochi Amaoto wrote:
+> > On Tue, Apr 30, 2024 at 06:09:20PM GMT, Conor Dooley wrote:
+> > > On Mon, Apr 29, 2024 at 08:31:11AM +0800, Inochi Amaoto wrote:
+> > > > The USB phy of Sophgo CV18XX series SoC needs to sense a pin called
+> > > > "VBUS_DET" to get the right operation mode. If this pin is not
+> > > > connected, it only supports setting the mode manually.
+> > > > 
+> > > > Add USB phy bindings for Sophgo CV18XX/SG200X series SoC.
+> > > > 
+> > > > Signed-off-by: Inochi Amaoto <inochiama@outlook.com>
+> > > > ---
+> > > >  .../bindings/phy/sophgo,cv1800-usb-phy.yaml   | 68 +++++++++++++++++++
+> > > >  1 file changed, 68 insertions(+)
+> > > >  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> > > > 
+> > > > diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> > > > new file mode 100644
+> > > > index 000000000000..7e3382c18d44
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> > > > @@ -0,0 +1,68 @@
+> > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > > +%YAML 1.2
+> > > > +---
+> > > > +$id: http://devicetree.org/schemas/phy/sophgo,cv1800-usb-phy.yaml#
+> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > > +
+> > > > +title: Sophgo CV18XX/SG200X USB 2.0 PHY
+> > > > +
+> > > > +maintainers:
+> > > > +  - Inochi Amaoto <inochiama@outlook.com>
+> > > > +
+> > > > +properties:
+> > > > +  compatible:
+> > > > +    const: sophgo,cv1800-usb-phy
+> > > > +
+> > > > +  reg:
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  "#phy-cells":
+> > > > +    const: 0
+> > > > +
+> > > > +  clocks:
+> > > > +    items:
+> > > > +      - description: PHY clock
+> > > > +      - description: PHY app clock
+> > > > +      - description: PHY stb clock
+> > > > +      - description: PHY lpm clock
+> > > > +
+> > > > +  clock-names:
+> > > > +    items:
+> > > > +      - const: phy
+> > > > +      - const: app
+> > > > +      - const: stb
+> > > > +      - const: lpm
+> > > > +
+> > > > +  vbus_det-gpios:
+> > > 
+> > > "vbus_det-gpios" isn't a common property AFAICT, why does it not get a
+> > > vendor prefix when the other gpios property does?
+> > > 
+> > 
+> > I have seen other binding (such as sunxi phy) uses this property without 
+> > vendor prefix. So I think it is a common property and don't add perfix 
+> > for it. But it is OK for me add the vendor prefix, thanks.
+> 
+> I asked yesterday and Krzysztof said:
+> "gpios just like supplies - no prefixes, I think."
 
-Please move min/max voltages to the DTS. There is no need to set them
-from the driver.
+Thanks for your explanation. If I do not understand wrong, you mean 
+it does not need to add vender prefix?
 
-Also, is there any reason why you can't use `regulator-initial-mode =
-<RPMH_REGULATOR_MODE_HPM>;` like other boards do?
+> The other phy used a different property (they're not identical), I did
+> check that yesterday.
+> 
 
->
-> Implement a bulk operation api to set load & voltages before doing bulk
-> enable. This will ensure that the PHY remains operational under all
-> conditions.
->
-> Signed-off-by: Udipto Goswami <quic_ugoswami@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c | 121 +++++++++++++++++-
->  1 file changed, 114 insertions(+), 7 deletions(-)
->
-> diff --git a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> index eb0b0f61d98e..cbe9cdaa6849 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-snps-femto-v2.c
-> @@ -78,11 +78,39 @@
->
->  #define LS_FS_OUTPUT_IMPEDANCE_MASK            GENMASK(3, 0)
->
-> -static const char * const qcom_snps_hsphy_vreg_names[] = {
-> -       "vdda-pll", "vdda33", "vdda18",
-> +
-> +struct qcom_snps_hsphy_regulator_data {
-> +       const char *name;
-> +       unsigned int enable_load;
-> +       unsigned int min_voltage;
-> +       unsigned int max_voltage;
-> +};
-> +
-> +static const struct qcom_snps_hsphy_regulator_data hsphy_vreg_l[] = {
-> +       {
-> +               .name = "vdda-pll",
-> +               .enable_load = 30000,
-> +               .min_voltage = 825000,
-> +               .max_voltage = 925000,
-> +       },
-> +
-> +       {
-> +               .name = "vdda18",
-> +               .enable_load = 19000,
-> +               .min_voltage = 1704000,
-> +               .max_voltage = 1800000
-> +       },
-> +
-> +       {
-> +               .name = "vdda33",
-> +               .enable_load = 16000,
-> +               .min_voltage = 3050000,
-> +               .max_voltage = 3300000
-> +       },
-> +
->  };
->
-> -#define SNPS_HS_NUM_VREGS              ARRAY_SIZE(qcom_snps_hsphy_vreg_names)
-> +#define SNPS_HS_NUM_VREGS              ARRAY_SIZE(hsphy_vreg_l)
->
->  struct override_param {
->         s32     value;
-> @@ -132,12 +160,90 @@ struct qcom_snps_hsphy {
->         struct clk_bulk_data *clks;
->         struct reset_control *phy_reset;
->         struct regulator_bulk_data vregs[SNPS_HS_NUM_VREGS];
-> +       const struct qcom_snps_hsphy_regulator_data *vreg_list;
->
->         bool phy_initialized;
->         enum phy_mode mode;
->         struct phy_override_seq update_seq_cfg[NUM_HSPHY_TUNING_PARAMS];
->  };
->
-> +static int __vdda_phy_bulk_enable_disable(struct qcom_snps_hsphy *hsphy, bool on)
+Yes, it is not total identical. But they do look similar.
 
-Separate functions, please.
+> > 
+> > > > +    description: GPIO to the USB OTG VBUS detect pin. This should not be
+> > > > +      defined if vbus_det pin and switch pin are connected, which may
+> > > > +      break the VBUS detection.
+> > > > +    maxItems: 1
+> > > > +
+> > > > +  sophgo,switch-gpios:
+> > > > +    description: GPIO array for the phy to control connected switch. For
+> > > > +      host mode, the driver will set these GPIOs to low one by one. For
+> > > > +      device mode, the driver will set these GPIOs to high in reverse
+> > > > +      order.
+> > > > +    maxItems: 2
+> > > 
+> > > You're still missing the itemised description of what each of the gpios
+> > > here are - how would I know which order to put the GPIOs in?
+> > > 
+> > > Cheers,
+> > > Conor.
+> > 
+> > In most case, the order depends on hardware design. But following the
+> > guide sophgo provides, it does have an common order. Is it good to add
+> > this description as a reference guide? If so, I will add it.
+> 
+> If we can say "gpio 1 connects to xyz on the switch" & "gpio 2 connects
+> to tuv" then it'll be easier to understand how to write the node.
+> 
 
-> +{
-> +       int ret = 0;
-> +       int i;
-> +
-> +       if (!on)
-> +               goto disable_vdd;
-> +
-> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
-> +
-> +               ret = regulator_set_load(hsphy->vregs[i].consumer,
-> +                                        hsphy->vreg_list[i].enable_load);
-> +
-> +               if (ret < 0) {
-> +                       dev_err(hsphy->dev, "unable to set HPM of %s %d\n",
-> +                                               hsphy->vregs[i].supply, ret);
-> +                       goto err_vdd;
-> +               }
-> +       }
-> +
-> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
-> +               ret = regulator_set_voltage(hsphy->vregs[i].consumer,
-> +                                           hsphy->vreg_list[i].min_voltage,
-> +                                           hsphy->vreg_list[i].max_voltage);
-> +               if (ret) {
-> +                       dev_err(hsphy->dev,
-> +                               "unable to set voltage of regulator %s %d\n",
-> +                                               hsphy->vregs[i].supply, ret);
-> +                       goto put_vdd_lpm;
-> +               }
-> +       }
-> +
-> +       ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-> +       if (ret)
-> +               goto unconfig_vdd;
-> +
-> +       return ret;
-> +
-> +disable_vdd:
-> +       regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-> +
-> +unconfig_vdd:
-> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
-> +               ret = regulator_set_voltage(hsphy->vregs[i].consumer, 0,
-> +                                           hsphy->vreg_list[i].max_voltage);
-> +               if (ret) {
-> +                       dev_err(hsphy->dev,
-> +                       "unable to set voltage of regulator %s %d\n",
-> +                                       hsphy->vregs[i].supply, ret);
-> +               }
-> +       }
-> +
-> +put_vdd_lpm:
-> +       for (i = 0; i < SNPS_HS_NUM_VREGS; i++) {
-> +               ret = regulator_set_load(hsphy->vregs[i].consumer, 0);
-> +
-> +               if (ret < 0) {
-> +                       dev_err(hsphy->dev, "unable to set LPM of %s %d\n",
-> +                                               hsphy->vregs[i].supply, ret);
-> +               }
-> +       }
-> +
-> +err_vdd:
-> +       return ret;
-> +
-> +}
-> +
-> +static int vdda_phy_bulk_enable(struct qcom_snps_hsphy *hsphy)
-> +{
-> +       return __vdda_phy_bulk_enable_disable(hsphy, true);
-> +}
-> +
-> +static int vdda_phy_bulk_disable(struct qcom_snps_hsphy *hsphy)
-> +{
-> +       return __vdda_phy_bulk_enable_disable(hsphy, false);
-> +}
-> +
->  static int qcom_snps_hsphy_clk_init(struct qcom_snps_hsphy *hsphy)
->  {
->         struct device *dev = hsphy->dev;
-> @@ -390,7 +496,7 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->
->         dev_vdbg(&phy->dev, "%s(): Initializing SNPS HS phy\n", __func__);
->
-> -       ret = regulator_bulk_enable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-> +       ret = vdda_phy_bulk_enable(hsphy);
->         if (ret)
->                 return ret;
->
-> @@ -471,7 +577,7 @@ static int qcom_snps_hsphy_init(struct phy *phy)
->  disable_clks:
->         clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
->  poweroff_phy:
-> -       regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-> +       ret = vdda_phy_bulk_disable(hsphy);
->
->         return ret;
->  }
-> @@ -482,7 +588,7 @@ static int qcom_snps_hsphy_exit(struct phy *phy)
->
->         reset_control_assert(hsphy->phy_reset);
->         clk_bulk_disable_unprepare(hsphy->num_clks, hsphy->clks);
-> -       regulator_bulk_disable(ARRAY_SIZE(hsphy->vregs), hsphy->vregs);
-> +       vdda_phy_bulk_disable(hsphy);
->         hsphy->phy_initialized = false;
->
->         return 0;
-> @@ -592,8 +698,9 @@ static int qcom_snps_hsphy_probe(struct platform_device *pdev)
->
->         num = ARRAY_SIZE(hsphy->vregs);
->         for (i = 0; i < num; i++)
-> -               hsphy->vregs[i].supply = qcom_snps_hsphy_vreg_names[i];
-> +               hsphy->vregs[i].supply = hsphy_vreg_l[i].name;
->
-> +       hsphy->vreg_list  = hsphy_vreg_l;
->         ret = devm_regulator_bulk_get(dev, num, hsphy->vregs);
->         if (ret)
->                 return dev_err_probe(dev, ret,
-> --
-> 2.17.1
->
->
+Good, I will add description of reference design for these gpios.
+
+> > 
+> > Regards,
+> > Inochi
+> > 
+> > > 
+> > > > +
+> > > > +required:
+> > > > +  - compatible
+> > > > +  - "#phy-cells"
+> > > > +  - clocks
+> > > > +  - clock-names
+> > > > +
+> > > > +additionalProperties: false
+> > > > +
+> > > > +examples:
+> > > > +  - |
+> > > > +    phy@48 {
+> > > > +      compatible = "sophgo,cv1800-usb-phy";
+> > > > +      reg = <0x48 0x4>;
+> > > > +      #phy-cells = <0>;
+> > > > +      clocks = <&clk 92>, <&clk 93>,
+> > > > +               <&clk 94>, <&clk 95>;
+> > > > +      clock-names = "phy", "app", "stb", "lpm";
+> > > > +    };
+> > > > +
+> > > > +...
+> > > > --
+> > > > 2.44.0
+> > > > 
+> > 
+> > 
 
 
--- 
-With best wishes
-Dmitry
 
 -- 
 linux-phy mailing list
