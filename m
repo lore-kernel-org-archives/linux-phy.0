@@ -4,59 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFDFAC25B4F
-	for <linux-phy@archiver.kernel.org>; Mon,  6 May 2024 17:01:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF011C25B10
+	for <linux-phy@archiver.kernel.org>; Mon,  6 May 2024 20:26:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dBLyxaFXDjltNjXAxJQdxpk8WnrADp2meIY/hxsa7zA=; b=hCv3HLCxMhnI+I
-	aH/Mr7vXTRO4CradJs/Tkf9zGJb6F7x2qdkR/oAHdI4L2vO7Ue/jooSEzhogmirGKZ5SMQr7bNOdS
-	/bB0K4QNcULUhBAUzTVRP6+A1qJ+Urxni15XuVe8Ac+LolrY/h1AqR14SzH0pxtXcwO2JAGkkMdVt
-	+oUFycnJxJ29ZhrGhNfI/QqcUIuo2Ig0uFucDuh1L1/HFtw6NCXHjat1ONTM1GowXUuZmMxckcD0T
-	VSKHcn1Mh1D70BKCRhcYE3QL9faiFxETZZ4gLEiB3Z/DrYYnyJxB/WolH5jj/KE/m8Z45R22Lg/IZ
-	bEEvCMmUdzgbadjTS5OA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=RaypvgYnRFDDD9Gk9J+azG44xjUiUtfLEe3fDlWj7jc=; b=Nwye58NO8lbcvc3Xh6PhqJ3+ar
+	YhbrN0BlV8HvufWlNzR/ahi96NoHA1rYOtqCaLTF/r/ccZ0X//1oGdfG9FNsz3uS9L12xjRNPRFHs
+	BZ5qzhhi2pOG9YXR7S0qojfVM2Ywc+QPfuqOc1YhVhhzXx6Js+fLf9jL71AhKu288x6raDM3Kh+Td
+	3HOE5Ww23SU12/1EZGoUsYf3n1FXyW7Ey1Q1yvB58UHSuZMmI/sAMwJI6FfmtEZ8WzZrEQlpuKHSu
+	UmftXP6qNhWCUqI/uH0RuXH8z+Je7M9ZPVR9XXTjpeiEljSd1MQlers5tBwaf/0KIskixWdvImSy/
+	XpSDfGug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s41iT-00000008BKA-3xuh;
-	Mon, 06 May 2024 17:01:29 +0000
-Received: from out-175.mta1.migadu.com ([2001:41d0:203:375::af])
+	id 1s44uz-00000008fTu-2BL7;
+	Mon, 06 May 2024 20:26:37 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s41iN-00000008BEG-33Js
-	for linux-phy@lists.infradead.org;
-	Mon, 06 May 2024 17:01:25 +0000
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1715014881;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=cymb81QFA90cgzVWyCG8xmXANdYL6hFgCIH16jTwgp4=;
-	b=SXnecchZOmlUkNSbT3EZ3jx8I+bsAi/ghp8tnGJNmS+mKzBpL5HXG/1PapWwZFLv6S+sLR
-	6acFddYtwbn6mI34/ZP51xk5qtiSAjMJ7RxCqhfeFb50rDfjgKe0dEah5xtEqzyE3x4RWO
-	lN4Eh8FftU8x8Bnig++3q7DlvRSNjh8=
-From: Sean Anderson <sean.anderson@linux.dev>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Michal Simek <michal.simek@amd.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sean Anderson <sean.anderson@linux.dev>
-Subject: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
-Date: Mon,  6 May 2024 13:01:10 -0400
-Message-Id: <20240506170110.2874724-5-sean.anderson@linux.dev>
-In-Reply-To: <20240506170110.2874724-1-sean.anderson@linux.dev>
-References: <20240506170110.2874724-1-sean.anderson@linux.dev>
+	id 1s44uu-00000008fR6-0xUl;
+	Mon, 06 May 2024 20:26:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id AABAD61470;
+	Mon,  6 May 2024 20:26:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 340EDC116B1;
+	Mon,  6 May 2024 20:26:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1715027191;
+	bh=5FaFsrCBU94mRwsXyuX1NTdoCg00sIuyi7QCDGgdxuY=;
+	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+	b=X5jBP/Oalm1vimfJv8a8bJ2lC/hwUzE8jRbYArIZW6zWV9/WC17q8O1vfeaq9+Scr
+	 DzpOL6XPw6jdh4AxeaDG2/YR49NdXmnvBdNiecxOMt+s0T9A1srdlQdUyeQYuiEbfB
+	 3I4cl5KJLwovDDPBjeZ8QXn8/gWssyIv/2WxMocJo++YBkAf760x5PegRrdkbU4hvl
+	 S1O00hdRTekYjk/1ChmyTEg0mJ52bYBdMxJt8Q2rSOaU2LGmCKKmyf6MtRtkThhSny
+	 fAkJ/nlTXUmBmT+iSh5WSn60lzRDXUhe2/8AFu6YaVd60EGrqdln2SsIoiiAWCYHLZ
+	 yW+pAp1qVdwFA==
+Date: Mon, 06 May 2024 15:26:29 -0500
 MIME-Version: 1.0
-X-Migadu-Flow: FLOW_OUT
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: linux-kernel@vger.kernel.org, conor+dt@kernel.org, krzk+dt@kernel.org, 
+ linux-rockchip@lists.infradead.org, 
+ Heiko Stuebner <heiko.stuebner@cherry.de>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, vkoul@kernel.org, quentin.schulz@cherry.de, 
+ linux-arm-kernel@lists.infradead.org, kishon@kernel.org
+In-Reply-To: <20240506124836.3621528-2-heiko@sntech.de>
+References: <20240506124836.3621528-1-heiko@sntech.de>
+ <20240506124836.3621528-2-heiko@sntech.de>
+Message-Id: <171502718485.3739.8024239966625128556.robh@kernel.org>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY
+ schema
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240506_100123_955057_9B5B18CF 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20240506_132632_340546_6189E144 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,93 +77,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for printing some basic status information to debugfs. This
-is helpful when debugging phy consumers to make sure they are configuring
-the phy appropriately.
 
-Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
----
+On Mon, 06 May 2024 14:48:35 +0200, Heiko Stuebner wrote:
+> From: Heiko Stuebner <heiko.stuebner@cherry.de>
+> 
+> Add dt-binding schema for the MIPI CSI/DSI PHY found on
+> Rockchip RK3588 SoCs.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+> ---
+>  .../phy/rockchip,rk3588-mipi-dcphy.yaml       | 76 +++++++++++++++++++
+>  1 file changed, 76 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> 
 
-Changes in v2:
-- Use debugfs_create_devm_seqfile
+My bot found errors running 'make dt_binding_check' on your patch:
 
- drivers/phy/xilinx/phy-zynqmp.c | 40 +++++++++++++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+yamllint warnings/errors:
 
-diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index b86fe2a249a8..2520c75a4a77 100644
---- a/drivers/phy/xilinx/phy-zynqmp.c
-+++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -13,6 +13,7 @@
-  */
- 
- #include <linux/clk.h>
-+#include <linux/debugfs.h>
- #include <linux/delay.h>
- #include <linux/io.h>
- #include <linux/kernel.h>
-@@ -123,6 +124,15 @@
- #define ICM_PROTOCOL_DP			0x4
- #define ICM_PROTOCOL_SGMII		0x5
- 
-+static const char *const xpsgtr_icm_str[] = {
-+	[ICM_PROTOCOL_PD] = "powered down",
-+	[ICM_PROTOCOL_PCIE] = "PCIe",
-+	[ICM_PROTOCOL_SATA] = "SATA",
-+	[ICM_PROTOCOL_USB] = "USB",
-+	[ICM_PROTOCOL_DP] = "DisplayPort",
-+	[ICM_PROTOCOL_SGMII] = "SGMII",
-+};
-+
- /* Test Mode common reset control  parameters */
- #define TM_CMN_RST			0x10018
- #define TM_CMN_RST_EN			0x1
-@@ -788,6 +798,34 @@ static struct phy *xpsgtr_xlate(struct device *dev,
- 	return ERR_PTR(-EINVAL);
- }
- 
-+/*
-+ * DebugFS
-+ */
-+
-+static int xpsgtr_status_read(struct seq_file *seq, void *data)
-+{
-+	struct device *dev = seq->private;
-+	struct xpsgtr_phy *gtr_phy = dev_get_drvdata(dev);
-+	struct clk *clk;
-+	u32 pll_status;
-+
-+	mutex_lock(&gtr_phy->phy->mutex);
-+	pll_status = xpsgtr_read_phy(gtr_phy, L0_PLL_STATUS_READ_1);
-+	clk = gtr_phy->dev->clk[gtr_phy->refclk];
-+
-+	seq_printf(seq, "Lane:            %u\n", gtr_phy->lane);
-+	seq_printf(seq, "Protocol:        %s\n",
-+		   xpsgtr_icm_str[gtr_phy->protocol]);
-+	seq_printf(seq, "Instance:        %u\n", gtr_phy->instance);
-+	seq_printf(seq, "Reference clock: %u (%pC)\n", gtr_phy->refclk, clk);
-+	seq_printf(seq, "Reference rate:  %lu\n", clk_get_rate(clk));
-+	seq_printf(seq, "PLL locked:      %s\n",
-+		   pll_status & PLL_STATUS_LOCKED ? "yes" : "no");
-+
-+	mutex_unlock(&gtr_phy->phy->mutex);
-+	return 0;
-+}
-+
- /*
-  * Power Management
-  */
-@@ -937,6 +975,8 @@ static int xpsgtr_probe(struct platform_device *pdev)
- 
- 		gtr_phy->phy = phy;
- 		phy_set_drvdata(phy, gtr_phy);
-+		debugfs_create_devm_seqfile(&phy->dev, "status", phy->debugfs,
-+					    xpsgtr_status_read);
- 	}
- 
- 	/* Register the PHY provider. */
--- 
-2.35.1.1320.gc452695387.dirty
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml: $id: Cannot determine base path from $id, relative path/filename doesn't match actual path or filename
+ 	 $id: http://devicetree.org/schemas/phy/phy-rockchip-mipidc.yaml
+ 	file: /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.example.dtb: phy@feda0000: reg: [[0, 4275699712], [0, 65536]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/phy-rockchip-mipidc.yaml#
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20240506124836.3621528-2-heiko@sntech.de
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
