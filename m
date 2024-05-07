@@ -4,78 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74FCAC10F1A
-	for <linux-phy@archiver.kernel.org>; Tue,  7 May 2024 11:56:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1999FC10F1A
+	for <linux-phy@archiver.kernel.org>; Tue,  7 May 2024 13:41:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IIOj99vjd8gMMTwyPA0GVCNL+ckL3/FqL74z8p6QLzI=; b=uy/ryAwBfyNIS0
-	akzRTq9mCYs5/puL4TcQOBDTr2q0tbt1XRygbxkiz4r7GNpfWLsdnkVFoXT5pzqgYtoRhBmqfsNUH
-	KcKBsWXgxRJwv451EPbO5VMco6VY51GDIpIbbgZUYIxYdz/ElnKsOWDEA8zDf5wiawqj8RfE3zAwO
-	DI+mUdEGDW/TIJXVTRz7qYgvBX7rr39MPskTRAtZQCHF5/OAww81hGOiLWEdAyU0ZNbinYicOvRnf
-	6LTOJTsmTTWyKXlrDX6qUUu8sN7aEs9ILx0XYeJa0KMfhKMrQKfQJkxL+QUZa9aS57TKi8ITbo506
-	MN6YCr2L9o4AaXWYFe7g==;
+	List-Owner; bh=c8YxSTk2qijglcRYfY3ClbVTwIaF8lFt3eE+ACv4Bfo=; b=f1SMki9onoJguw
+	86lltnUw6TTOP/ccgiVHog+E4ANB7zikeLNpKPT56cX+Wu6s1DqhgqL4QNJa4RVPYcMCLFsPe9CHk
+	esOHObOjP/1f6J3R6BlF8o3GYIKbAcV0cKaX9x0s5HA10lKWf1dynaii3MKm3Dvb4VROOPVCMARWR
+	fujmDi4HYs8Q2rsPLowkN8a/PCBOoqyq+vg0Y6YJac5DD0FVoLvnJCN7PsdYRt9ncafYZeKHN56d3
+	xxSgFlTNhkUUTDhw0V+GlVj0aLrR5pnOKuryag3oQL9vnouQCtgqRcT4Pz146wi8C2HglKO1G8OnO
+	BFSfZ6LN0i4AulQvuFbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4JQT-0000000Anr1-08y2;
-	Tue, 07 May 2024 11:56:05 +0000
-Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
+	id 1s4L4l-0000000BIgS-2d7e;
+	Tue, 07 May 2024 13:41:47 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s4JQP-0000000Anow-3uN3
+	id 1s4L4j-0000000BIeM-0zC8
 	for linux-phy@lists.infradead.org;
-	Tue, 07 May 2024 11:56:03 +0000
-Received: by mail-yb1-xb2d.google.com with SMTP id 3f1490d57ef6-de5e74939fdso2471218276.0
-        for <linux-phy@lists.infradead.org>; Tue, 07 May 2024 04:55:57 -0700 (PDT)
+	Tue, 07 May 2024 13:41:46 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2e3efa18e6aso6845131fa.0
+        for <linux-phy@lists.infradead.org>; Tue, 07 May 2024 06:41:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1715082956; x=1715687756; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=+pGkFUViosNbBwj85G0vrmVhdnEjrRiE3lfdvk1nPvw=;
-        b=xE2RNB9CqaJ7l+JvUimo2Yq1CFebnEsEx6JC3ADeGD8FeXMnIQDYpfmcNHgrEiEvFL
-         UAmjbmh9EcOsq8XR66UgABXbr2nFI4suK+HUK4LTJwOjstYy+PbX5pn/6CWkgafyqQWG
-         9IXrfXdqcFRdaHRC/q35kJB6q7+kP5Ahzf5vFyFQKHHEvr9IgiCJGA3E+pPCjDHeJ2yK
-         2byIO66By/gWiWvU2AQeuXMsSRUgfbFQXQIJSx8XoI++UYjAwWEK5bNx0PvRreLyyNc+
-         rcq9/3J8+5II4WBQwffbpyTKg+LeDmZKGPXwYyVzmaK29q8NBptELeQ4ngQg64uFBhkJ
-         Ni/w==
+        d=linaro.org; s=google; t=1715089302; x=1715694102; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=eBYWPKKxIxo8aRFjjK9T2hA9r6Tr0Rm6zJjBWqA8aQQ=;
+        b=B0ZU7JZ7qh7J6J+DJTnA/+Hi8ej3KN8UmSzm1r34z+y1X/dJg70aDyYt2oa0mvJ0Cb
+         MfDt9e2Z+uHJpyULI8gbEnHdlFrbN2NqOhrqkmH3pI8xfOhsjsNfZ7gYv/7M7btz9ZnI
+         NlfXCIaKor73Ss4anPtutH+giV8KZTTufsF+eIvyIPQKIMJlxQldaYrbTcefHtoE6lSt
+         DsLpp5vTV10TjJT6hrchrbC20j/dDFTWL1bC4uF/nLhcQTNsIipBTO3IINtRb6Q2zaN/
+         ie9+dZEIZRq+fdoI5Cp+ftZ8NQc5eqlbDby2EwaXMVdjoFWOrhY8vLFTFuRZkbM85eDD
+         PmZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1715082956; x=1715687756;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=+pGkFUViosNbBwj85G0vrmVhdnEjrRiE3lfdvk1nPvw=;
-        b=wWYwkPTXU+XlBUqxTzxiDPHgrIqdtsPHOlGPwhSHvC8kxeZVugjf5vdAO9d/aFPQ7X
-         G8Bw1tP0ctwKvzooxbEO9OSgBsx3YL+LqY8XGnT9pOzf1h4LtmyMC8nR18diEsz8/OmH
-         rh/OHOLWnEh2zSVzZaDUV7MuPh4VQzhsebSs55Fvg12Dj9kJ/r3rvWFtnEiu6FGE/CEV
-         qNcqjQ/RXV6XdCF29wRDnYfatyMVoZGkO866bVFLgIKwF8SXXg5IWGaKsrMf5lDlkbP9
-         r79JurL/IAci0DBdwKiHpp46gdZtZC/g/f5ORHhkA8thfJc3hSUp4A+lqUDZ7ewAALv+
-         T1ug==
-X-Forwarded-Encrypted: i=1; AJvYcCX2yY19Cl87Q3ttI++eWMw7TDjx2AxU1TMeAi02K0eF/p83ga1U40p923NLI30H4fDu8IX+0zdAy2ModQ298LwP/iVCfnOS8b5RGqHPyg==
-X-Gm-Message-State: AOJu0YxLbl108PxoPi8UL+qWn7fPcNKND9eZa0VF9SR0EZrjkUlKogdl
-	g9VnlQ5kpms7gKUiHzMUtnJiykX+nIasbf7+InVN8+7xUROlYF4XoDfdUOAVsKPYhPLoiDItIxp
-	P9mlIkvicXl8urbAELeIFFWW2aqLBC39LQFhOkA==
-X-Google-Smtp-Source: AGHT+IFjjy/JkHojT8EtUSY1sz+DG0YV+wEmy+k/TPQ1lX5kK3s31xaoFvKEbuasOExcuTi6OPxZ9GDQ6NlEAbyEDBY=
-X-Received: by 2002:a25:f621:0:b0:dd1:3cc1:5352 with SMTP id
- t33-20020a25f621000000b00dd13cc15352mr11210499ybd.15.1715082956486; Tue, 07
- May 2024 04:55:56 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1715089302; x=1715694102;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=eBYWPKKxIxo8aRFjjK9T2hA9r6Tr0Rm6zJjBWqA8aQQ=;
+        b=NaPgqpFsiACNvuGNFPd+SXHmUx2e0NC7NmD34eB9P9ynAp6mSuD4cK/wyD8McZ2zd2
+         i1SNzZSbJYO1TnASCEw3lwCz3zCt9Y3Mz/bNDVqnRceWLG9yPqyh/+aPE8qpRa/kEdTx
+         FG0BxW/3LlxG0CvI/kK+9MNUW9gBD0peXGtLkG+UQEy+ct8AwmmFTs0IAf5lHtR2+Vep
+         vANecVm9z5dDgnLK0fPk6kAM8Xf41SY+Abj4AKUR/MK1r7OECM9rACWgFozbK8jV6mYJ
+         obZE/TMTnw/V1QYLsBbMPwM+H+aONE6vKi1OY0gP+bqrZqEIL2a3wUsMpGHPxeAdt/b1
+         p9/A==
+X-Forwarded-Encrypted: i=1; AJvYcCXI34IWJg7s9rIa0/F0e80CTN5Zszc1Mq1W3PyXJfz0Bj0yzFvdhoRgV2FSqSTRnhkuGNlCIIlccsrpUVar+EWnzcnjIjJurw9kuTPyQw==
+X-Gm-Message-State: AOJu0Yz4EMGRWFPqRk6yMXVC+9T9Zo4TFHn/LCr+4iEkRefhnwh75zeV
+	+B9N4EfZY6LoxzZZ8vsaWqd/9OSISt0ZUowWRpWaWuvReab/7A+b2rDtg6iP4SU=
+X-Google-Smtp-Source: AGHT+IFhusLgGPzXhOPfN0j+8HODL1lRzxw67tVfNgxWdHZALf7v7+cLKSB0NTJACUQLd+5spu3LXw==
+X-Received: by 2002:a2e:7d0e:0:b0:2e1:eb38:d4b4 with SMTP id 38308e7fff4ca-2e3d9cb3781mr7358371fa.21.1715089301860;
+        Tue, 07 May 2024 06:41:41 -0700 (PDT)
+Received: from ?IPV6:2a00:f41:c0d:408:fa88:abdb:17c2:cf24? ([2a00:f41:c0d:408:fa88:abdb:17c2:cf24])
+        by smtp.gmail.com with ESMTPSA id i16-20020a2e8650000000b002e15aec44fesm2054159ljj.96.2024.05.07.06.41.39
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 07 May 2024 06:41:41 -0700 (PDT)
+Message-ID: <163a0c01-8f9f-48e6-89dc-2b702e755622@linaro.org>
+Date: Tue, 7 May 2024 15:41:38 +0200
 MIME-Version: 1.0
-References: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
- <CAA8EJppeQTadmny=hcs4xCQDXHwXEBHXjeecvZCUVcSXmwBTgg@mail.gmail.com> <90a5b641-af5b-4640-b2ad-85dbbab523bf@linaro.org>
-In-Reply-To: <90a5b641-af5b-4640-b2ad-85dbbab523bf@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 7 May 2024 14:55:45 +0300
-Message-ID: <CAA8EJpoWWXvJabcVqp+YSa8arQbLPC=v+XkvPZe6nwH7aaKnfQ@mail.gmail.com>
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] phy: qcom-snps-femto-v2: Add load and voltage setting for
  LDO's used
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: Udipto Goswami <quic_ugoswami@quicinc.com>, Bjorn Andersson <andersson@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Udipto Goswami <quic_ugoswami@quicinc.com>,
+ Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20240502123312.31083-1-quic_ugoswami@quicinc.com>
+ <CAA8EJppeQTadmny=hcs4xCQDXHwXEBHXjeecvZCUVcSXmwBTgg@mail.gmail.com>
+ <90a5b641-af5b-4640-b2ad-85dbbab523bf@linaro.org>
+ <CAA8EJpoWWXvJabcVqp+YSa8arQbLPC=v+XkvPZe6nwH7aaKnfQ@mail.gmail.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@linaro.org>
+In-Reply-To: <CAA8EJpoWWXvJabcVqp+YSa8arQbLPC=v+XkvPZe6nwH7aaKnfQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240507_045602_004730_74380C48 
-X-CRM114-Status: GOOD (  21.40  )
+X-CRM114-CacheID: sfid-20240507_064145_319981_E7E132CD 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,49 +95,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 7 May 2024 at 14:43, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
->
->
->
-> On 5/2/24 15:12, Dmitry Baryshkov wrote:
-> > On Thu, 2 May 2024 at 15:33, Udipto Goswami <quic_ugoswami@quicinc.com> wrote:
-> >>
-> >> The Femto phy depends on 0.88/ 1.8/ 3.3V regulators for its operation.
-> >> If one of the regulators is not voted to the required minimum voltage
-> >> for phy to operate, then High speed mode of operation will fail.
-> >>
-> >> On certain targets like (qcm6490_rb3gen2) where the minimum voltage
-> >> of the regulator is lower than the operating voltage of the phy.
-> >> If not voted properly, the phy supply would be limited to the min value
-> >> of the LDO thereby rendering the phy non-operational.
-> >>
-> >> The current implementation of the regulators in the Femto PHY is not
-> >> setting the load and voltage for each LDO. The appropriate voltages and
-> >> loads required for the PHY to operate should be set.
-> >
-> > Please move min/max voltages to the DTS. There is no need to set them
-> > from the driver.
-> >
-> > Also, is there any reason why you can't use `regulator-initial-mode =
-> > <RPMH_REGULATOR_MODE_HPM>;` like other boards do?
->
-> The point is to aggregate the values and switch to HPM if a threshold is
-> crossed (or stay in LPM otherwise)
 
-I see that other boards use regulator-initial-mode for the USB PHY
-regulators. Are we going to change all of them too?
-Also note, that while the combo QMP driver sets the loads, the pure
-USB QMP PHY driver doesn't set the loads. This way we can end up with
-the undervolted PHY.
 
--- 
-With best wishes
-Dmitry
+On 5/7/24 13:55, Dmitry Baryshkov wrote:
+> On Tue, 7 May 2024 at 14:43, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
+>>
+>>
+>>
+>> On 5/2/24 15:12, Dmitry Baryshkov wrote:
+>>> On Thu, 2 May 2024 at 15:33, Udipto Goswami <quic_ugoswami@quicinc.com> wrote:
+>>>>
+>>>> The Femto phy depends on 0.88/ 1.8/ 3.3V regulators for its operation.
+>>>> If one of the regulators is not voted to the required minimum voltage
+>>>> for phy to operate, then High speed mode of operation will fail.
+>>>>
+>>>> On certain targets like (qcm6490_rb3gen2) where the minimum voltage
+>>>> of the regulator is lower than the operating voltage of the phy.
+>>>> If not voted properly, the phy supply would be limited to the min value
+>>>> of the LDO thereby rendering the phy non-operational.
+>>>>
+>>>> The current implementation of the regulators in the Femto PHY is not
+>>>> setting the load and voltage for each LDO. The appropriate voltages and
+>>>> loads required for the PHY to operate should be set.
+>>>
+>>> Please move min/max voltages to the DTS. There is no need to set them
+>>> from the driver.
+>>>
+>>> Also, is there any reason why you can't use `regulator-initial-mode =
+>>> <RPMH_REGULATOR_MODE_HPM>;` like other boards do?
+>>
+>> The point is to aggregate the values and switch to HPM if a threshold is
+>> crossed (or stay in LPM otherwise)
+> 
+> I see that other boards use regulator-initial-mode for the USB PHY
+> regulators. Are we going to change all of them too?
+
+Not sure about initial mode yet.
+
+> Also note, that while the combo QMP driver sets the loads, the pure
+> USB QMP PHY driver doesn't set the loads. This way we can end up with
+> the undervolted PHY.
+
+Sounds like something to fix, then
+
+Konrad
 
 -- 
 linux-phy mailing list
