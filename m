@@ -4,67 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABE1CC25B5F
-	for <linux-phy@archiver.kernel.org>; Fri, 10 May 2024 12:48:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 038C6C25B10
+	for <linux-phy@archiver.kernel.org>; Fri, 10 May 2024 15:39:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wzIBcXQ87K7VxsHWIMUMGlNDsQgYfU74jpldE0Nrxa0=; b=ckqMlq2g5xcImB
-	V37M5H1Wau2PmQcFo05yA7Y6N7GBJ4QW+G7/pOoF/OMT8YKn2xm3DXcUAvX/JhhMexBCLcaWENh3R
-	4s7bN+UBsyZXb0HSYCrEpzsfKM1TpYedqxPasg3A7GtzRPqLYKeYhxUeJhhZn8pTTb8j6q38+Npt6
-	Q1VmOkpmrnqe2OZUFCOsLseejXqicyz34S9NOGgQsNY4s4yU6LX4jb409x+2aCMxoGYPtwUFcnkiu
-	uUIKIIsk3WpyRzL+Hpso5f4p4Hq3/eqkovvVoboR+hHDiRyOB0p3GMweCdzyTAKhH9fL2y7URqV+Q
-	SOKiZy1wyYRTNjs+7QGQ==;
+	List-Owner; bh=vnrFmgc1014fsKX6As4RCTbt6xJYU+ys6H9cZ+j/ILo=; b=XuI04FiRuxuCGm
+	MBF4XaubUBA/U3CDhlDeuBRKKC0RQdgLi1PT8/osLEeYqyZ5riabheujIId4w+XdgdG82psp2wZ/x
+	nq2gVMyd02J6/YkFirDT4C6qix1Ulv4VS8be3U1Kk76QkF7elSa58YplQgdhQxMVi8FdQOO8zpSAz
+	e2XRi+1W070Ya9inmAqmmwzi1i0PlhWCgXumCP+FwCGZm85Fe76m5iPu5+eDCJAMa/QVS2Z2tCpWv
+	79hgtEXEAnNI2o8XQjJIPPfEQrJLQowSt65A7suwjjQqQG5C3YRKxcZPgHfM4v/8Pyqkvy2oJ40mc
+	8vEVt0UKWaivAdzoOazA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s5PgB-00000005JBX-1Net;
-	Fri, 10 May 2024 12:48:51 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1s5SKx-00000005kJT-2bkv;
+	Fri, 10 May 2024 15:39:07 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s5Pg2-00000005J8U-0tdN;
-	Fri, 10 May 2024 12:48:46 +0000
+	id 1s5SKs-00000005kFn-3d51;
+	Fri, 10 May 2024 15:39:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 107B361E66;
-	Fri, 10 May 2024 12:48:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 84EA9C113CC;
-	Fri, 10 May 2024 12:48:40 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 17B3661E59;
+	Fri, 10 May 2024 15:38:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 81117C113CC;
+	Fri, 10 May 2024 15:38:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715345320;
-	bh=V8xD1Koidl+pNdYoJfQFLAiAFVdTfdYB2dUbuhjigGw=;
+	s=k20201202; t=1715355531;
+	bh=5i/Kwz7QCD09ox7fq0+nK+iuNVgav4u7fr/M1k9fkGQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=elRO8c91+R0DCAXv7+SLp8jJSCziQgTrHU6dWu9qwHD6XqKBCLiHuCKHNSbrgbcQg
-	 eJsQ0tFhCPQE2Y4O65z6uB4IrPGycaFkyuaOcB+YtDbvnjSSu49cJ0WU6MuQoLwWy3
-	 VxtXhLaNg2Y2Mv5eWn/LmrdnOqvHRlj/7/dCfxp9tpC9NhIxjD1VnxnJ7Maz3PCPe7
-	 LUqVWh0Ve9W2L+elph2QaZ0lc0RXMVlxbhOlTEuz25bOZUBWskDyl4CnteT7owXUgs
-	 jlwx/DYGCq9Hoav6/8i3JoYd0Ef4TlYm3FuTRoOTqnsoenH6UTmIUB8FSOwqSIeAVX
-	 EXF9K5LfHBQVg==
-Date: Fri, 10 May 2024 07:48:38 -0500
+	b=s4m+dHD8MracwXhQxc+HGvMM7x1N6E+yIVYj0BVRNfpR4cYP8M2xhklBBxbbTOam+
+	 o1s1UzSaLNLahxTkZo3hGkAw/9i5mz4OE1qRquZm1qsFeIcdIAswRHAF/oKVTy1U/s
+	 7xOhUSBjoOsn1zmsLJXq1/sK6yj29qTMzs71rBixyPYwB02YqA0aOsHREhwwjpuThP
+	 DnSAxMb59p3CCP5XT8z2GtK8xQotVUCqE4Zx+53dizwzQzrjqX5L3NI9vDjz5haYNn
+	 36Atqs8xCY1wAoZBYSgLWCJ7ZppgmbycjLkcmfBrk5t5H16ktF5b1yUaFa8nO/Nj3J
+	 0j2p6WNko87ZA==
+Date: Fri, 10 May 2024 10:38:49 -0500
 From: Rob Herring <robh@kernel.org>
-To: Liankun Yang <liankun.yang@mediatek.com>
-Cc: chunkuang.hu@kernel.org, p.zabel@pengutronix.de, airlied@gmail.com,
-	daniel@ffwll.ch, maarten.lankhorst@linux.intel.com,
-	mripard@kernel.org, tzimmermann@suse.de,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	chunfeng.yun@mediatek.com, vkoul@kernel.org, kishon@kernel.org,
-	matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
-	jitao.shi@mediatek.com, mac.shen@mediatek.com,
-	Project_Global_Chrome_Upstream_Group@mediatek.com,
-	dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: conor@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, frank.li@nxp.com,
+	conor+dt@kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 2/2] Add dp PHY dt-bindings
-Message-ID: <20240510124838.GA3916816-robh@kernel.org>
-References: <20240510110523.12524-1-liankun.yang@mediatek.com>
- <20240510110523.12524-3-liankun.yang@mediatek.com>
+	linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+	imx@lists.linux.dev
+Subject: Re: [PATCH v4 2/3] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY
+ binding
+Message-ID: <20240510153849.GA308062-robh@kernel.org>
+References: <1715234181-672-1-git-send-email-hongxing.zhu@nxp.com>
+ <1715234181-672-3-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240510110523.12524-3-liankun.yang@mediatek.com>
+In-Reply-To: <1715234181-672-3-git-send-email-hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240510_054845_153636_8E4A43FE 
-X-CRM114-Status: GOOD (  18.33  )
+X-CRM114-CacheID: sfid-20240510_083903_032970_98FA4833 
+X-CRM114-Status: GOOD (  20.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,82 +77,196 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, May 10, 2024 at 07:04:15PM +0800, Liankun Yang wrote:
-> Add dp PHY dt-bindings.
+On Thu, May 09, 2024 at 01:56:20PM +0800, Richard Zhu wrote:
+> Add i.MX8QM and i.MX8QXP HSIO SerDes PHY binding.
+> Introduce one HSIO configuration 'fsl,hsio-cfg', which need be set at
+> initialization according to board design.
 > 
-> Changeds in v2:
-> - Add dp PHY dt-bindings.
-> https://patchwork.kernel.org/project/linux-mediatek/patch/
-> 20240403040517.3279-1-liankun.yang@mediatek.com/
-> 
-> Signed-off-by: Liankun Yang <liankun.yang@mediatek.com>
+> Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
 > ---
->  .../display/mediatek/mediatek.phy-dp.yaml     | 45 +++++++++++++++++++
->  1 file changed, 45 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek.phy-dp.yaml
+>  .../bindings/phy/fsl,imx8qm-hsio.yaml         | 142 ++++++++++++++++++
+>  1 file changed, 142 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/fsl,imx8qm-hsio.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek.phy-dp.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek.phy-dp.yaml
-
-git refuses to apply your patch because 'new file mode 100644' is 
-missing. You must have edited the patch or something.
-
-If it did apply, you'd notice it fails testing.
-
-> index 000000000000..476bc329363f
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8qm-hsio.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8qm-hsio.yaml
+> new file mode 100644
+> index 000000000000..e8648cd9fea6
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek.phy-dp.yaml
-> @@ -0,0 +1,45 @@
+> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8qm-hsio.yaml
+> @@ -0,0 +1,142 @@
 > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/display/mediatek/mediatek,phy-dp.yaml#
+> +$id: http://devicetree.org/schemas/phy/fsl,imx8qm-hsio.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: MediaTek Display Port Controller
+> +title: Freescale i.MX8QM SoC series HSIO SERDES PHY
 > +
 > +maintainers:
-> +  - Mac shen <mac.shen@mediatek.com>
-> +  - Liankun yang <Liankun.yang@mediatek.com>
-> +
-> +description: |
-> +  Special settings need to be configured by MediaTek DP based on the actual
-> +  hardware situation. For example, when using a certain brand's docking
-> +  station for display projection, garbage may appear. Adjusting the specific
-> +  ssc value can resolve this issue.
+> +  - Richard Zhu <hongxing.zhu@nxp.com>
 > +
 > +properties:
-> +  status: disabled
-> +    description: |
-> +      Since the DP driver has already registered the DP PHY device
-> +      through mtk_dp_register_phy(), so the status is disabled.
+> +  compatible:
+> +    enum:
+> +      - fsl,imx8qm-hsio
+> +      - fsl,imx8qxp-hsio
+> +  reg:
+> +    minItems: 4
+> +    maxItems: 4
 
-What!? Please show me any other binding that has 'status' in it. Go read 
-up on how to write bindings and what goes in them.
+Need to define what is each entry:
+
+items:
+  - description: ...
+  - description: ...
+  - description: ...
+  - description: ...
+
 
 > +
-> +  dp-ssc-setting:
-> +    - ssc-delta-hbr
-> +    description: Specific values are set based on the actual HW situation.
+> +  "#phy-cells":
+> +    const: 3
+> +    description:
+> +      The first defines lane index.
+> +      The second defines the type of the PHY refer to the include phy.h.
+> +      The third defines the controller index, indicated which controller
+> +      is bound to the lane.
+> +
+> +  reg-names:
+> +    items:
+> +      - const: reg
+> +      - const: phy
+> +      - const: ctrl
+> +      - const: misc
+> +
+> +  clocks:
+> +    minItems: 5
+> +    maxItems: 14
+> +
+> +  clock-names:
+> +    minItems: 5
+> +    maxItems: 14
+> +
+> +  fsl,hsio-cfg:
+> +    description: Refer macro HSIO_CFG* include/dt-bindings/phy/phy-imx8-pcie.h.
+
+I can't, it's not in this patch. But it should be.
+
+Please say something about what this is for, not just refer to header.
+
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+
+       maximum: 3
+
+> +
+> +  fsl,refclk-pad-mode:
+> +    description:
+> +      Specifies the mode of the refclk pad used. INPUT(PHY refclock is
+> +      provided externally via the refclk pad) or OUTPUT(PHY refclock is
+> +      derived from SoC internal source and provided on the refclk pad).
+> +    $ref: /schemas/types.yaml#/definitions/string
+> +    enum: [ "input", "output" ]
+
+default?
+
+Really, this could just be a boolean for the non-default mode.
+
+> +
+> +  power-domains:
+> +    minItems: 1
+> +    maxItems: 2
 > +
 > +required:
-> +  - status
-> +  - dp-ssc-setting
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +  - fsl,hsio-cfg
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,imx8qxp-hsio
+> +    then:
+> +      properties:
+> +        clock-names:
+> +          items:
+> +            - const: pclk0
+> +            - const: apb_pclk0
+> +            - const: phy0_crr
+> +            - const: ctl0_crr
+> +            - const: misc_crr
+> +        power-domains:
+> +          minItems: 1
+
+Should be maxItems? min is already 1.
+
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,imx8qm-hsio
+> +    then:
+> +      properties:
+> +        clock-names:
+> +          items:
+> +            - const: pclk0
+> +            - const: pclk1
+> +            - const: apb_pclk0
+> +            - const: apb_pclk1
+> +            - const: pclk2
+> +            - const: epcs_tx
+> +            - const: epcs_rx
+> +            - const: apb_pclk2
+> +            - const: phy0_crr
+> +            - const: phy1_crr
+> +            - const: ctl0_crr
+> +            - const: ctl1_crr
+> +            - const: ctl2_crr
+> +            - const: misc_crr
+> +        power-domains:
+> +          minItems: 2
+> +
+> +additionalProperties: false
 > +
 > +examples:
 > +  - |
-> +    soc {
-> +        #address-cells = <2>;
-> +        #size-cells = <2>;
+> +    #include <dt-bindings/clock/imx8-clock.h>
+> +    #include <dt-bindings/clock/imx8-lpcg.h>
+> +    #include <dt-bindings/firmware/imx/rsrc.h>
+> +    #include <dt-bindings/phy/phy-imx8-pcie.h>
 > +
-> +        phy-dp@1c600000 {
-> +          status = "disabled";
-> +          dp-ssc-setting {
-> +            ssc-delta-hbr = <0x01fe>;
-> +          }
-> +        };
+> +    hsio_phy@5f1a0000 {
+
+phy@...
+
+> +        compatible = "fsl,imx8qxp-hsio";
+> +        reg = <0x5f1a0000 0x10000>,
+> +              <0x5f120000 0x10000>,
+> +              <0x5f140000 0x10000>,
+> +              <0x5f160000 0x10000>;
+> +        reg-names = "reg", "phy", "ctrl", "misc";
+> +        clocks = <&phyx1_lpcg IMX_LPCG_CLK_0>,
+> +                 <&phyx1_lpcg IMX_LPCG_CLK_4>,
+> +                 <&phyx1_crr1_lpcg IMX_LPCG_CLK_4>,
+> +                 <&pcieb_crr3_lpcg IMX_LPCG_CLK_4>,
+> +                 <&misc_crr5_lpcg IMX_LPCG_CLK_4>;
+> +        clock-names = "pclk0", "apb_pclk0", "phy0_crr", "ctl0_crr", "misc_crr";
+> +        power-domains = <&pd IMX_SC_R_SERDES_1>;
+> +        #phy-cells = <3>;
+> +        fsl,hsio-cfg = <IMX8Q_HSIO_CFG_PCIEB>;
+> +        fsl,refclk-pad-mode = "input";
 > +    };
+> +...
 > -- 
-> 2.18.0
+> 2.37.1
 > 
 
 -- 
