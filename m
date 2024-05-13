@@ -4,66 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE0AAC25B74
-	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 16:55:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A522C25B10
+	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 16:56:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ULckNjZy2mS3r8pOXn/dRuxxp0M+mXIa5h5cbHENaks=; b=tUBiZIOfRrlgiifiv9MG/DUsc3
-	5lNGQZ0jy+tCKcT0yIw7NpUSlAArNbe3pSfYcqL4hRvokHFTjawkOMDsJZTTN7yj/v7LyTU2phQKV
-	I42uNTjpC1vgtB1fYoUma0W9tJUZoMvSJ1uGaqHYJNDC+wahKfGD8pKZ/UMOiYMC6hQbZNZFLxdUo
-	Gk4OfVtgENdhjlWRwvmctxIn3FMPN4KD3WX//i6Dn3zPCNnShoSUNoMMltpOYFty7YWbj5J1FCBew
-	y14WZ2CWCGmb1BKm6yGBgEGkNhDUeVsRV2fTBvPFbdRAKs7tUABEcomESP1ifLocbpSOI5UEdZTLO
-	nQEsnr1w==;
+	bh=yTgDI0ZDxxJeJ0lIvJS3et5WrSVDbxCiXufuA9KCanc=; b=nhrtza8oHn8VhqY176weFMoAgz
+	PGdTWMQuqhzs3zb9Ddftm6OrOoXPyxJSgNVvb2Vi1RttYGta9MWzTHjiv6FCloFQD16QS70M04sxX
+	umHmBxVZYTFioFbLGehR7rdQyEIBYDFKdsCUrlquGgaEk+/RoLNFmPPIB/0w2G/AAULLYVW+sw2jW
+	L0rXJvf7qSDiExgb6jBT00Pqcqqx6L5ZZ9DxHdhbK0+P9e9kJmMuw1zjdYn28rPzZgIc8e6icE3Zt
+	Ph822+EojAwkFX7oo//hlrq5tR173jcIp309TP7dm/iCnZaejI/+F11G50nfOnnLHNj1eoZlhKHTD
+	V62NTZ9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6YxO-0000000Dcwm-2aAU;
-	Mon, 13 May 2024 16:55:22 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1s6Yy3-0000000Dd50-0OUW;
+	Mon, 13 May 2024 16:56:03 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6YxK-0000000Dcvc-3Fuf;
-	Mon, 13 May 2024 16:55:20 +0000
+	id 1s6Yxz-0000000Dd3b-0GD2;
+	Mon, 13 May 2024 16:56:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id E53B060E65;
-	Mon, 13 May 2024 16:55:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1D061C113CC;
-	Mon, 13 May 2024 16:55:16 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 67B13CE0F21;
+	Mon, 13 May 2024 16:55:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20063C4AF09;
+	Mon, 13 May 2024 16:55:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715619317;
-	bh=JfOR0ctoB05ZBwCTPmwc6W7jvbWwMcL3sGdG4s/MpMY=;
+	s=k20201202; t=1715619356;
+	bh=GtcP/4iTwZY7mpfL/M5e1XwzP6NaO5Lqcmc74sZdNcw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Jq5gLPf1ajdgqvK3czxj/fd5t/l+jnxvPYm1DFK3d+UFCsaKXuqkwojepWezUmKCH
-	 lLX8kU2ZbTH+sjKBEMmTPlWDcLUuPJ5bZGHTM8KJZoVSGWeBQC2TASoEsvNOkW5tUL
-	 HbvVZXmS8rgQayF0tHcRDNjEF7nkDsb5aiOyVCScOPmQK4Y651Gpq0aW1vJcGcbQ10
-	 cltPjGHIrl7Fpbkg+jgxL9LNK5MfmNn7qAX7iOO0rAZI0a8blKpjjvXioz627GxWw2
-	 Rsv3+XgVYdIZ8PhQ7rzBvgWumXXka6Z2Tz4CWwRlGQIoB/+yYDV8EiKSc1y9fZnFZV
-	 KiDnTgb8yab3A==
-Date: Mon, 13 May 2024 18:55:14 +0200
+	b=FDqkf6ei+cLN5J+3mVI5H6lijNlU3ylksYxRFJyGhxkLZZIgmAXZo3rDPSXEVhB9s
+	 ZKN+IcUjhkMrYmZhuVWf6c6a/9hfJCCsGqFAzeJnaH9QIDkfu7PDyHGLGfXMVK1yl2
+	 TOqQO43AmL8HoMnYrDpqv6T9ErFZzshaqqHmz9Y2Lh/Kmo7z+sM9LUAPTFwAAWLYTu
+	 CfvuBy8Qw+wnn+x271EK19MgKLd4nEnilhrYnrC16QHtUSP1n4DUOfAELSRI3n1ooo
+	 0TAw28A3GofijR9v8/2S5wAWYyT0juFxa8Eb+BeVEftXoNvxYVdG6yAoy3tIPprov4
+	 1qdoB+aP6idmQ==
+Date: Mon, 13 May 2024 18:55:52 +0200
 From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Conor Dooley <conor@kernel.org>
-Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org,
-	lorenzo.bianconi83@gmail.com, linux-arm-kernel@lists.infradead.org,
-	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org, nbd@nbd.name,
-	john@phrozen.org, dd@embedd.com, catalin.marinas@arm.com,
-	will@kernel.org, upstream@airoha.com
-Subject: Re: [PATCH 1/3] dt-bindings: phy: airoha: Add binding doc for PCIe
- PHY driver
-Message-ID: <ZkJF8gAKIGGjJgz7@lore-desk>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org,
+	lorenzo.bianconi83@gmail.com, conor@kernel.org,
+	linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	devicetree@vger.kernel.org, nbd@nbd.name, john@phrozen.org,
+	dd@embedd.com, catalin.marinas@arm.com, will@kernel.org,
+	upstream@airoha.com
+Subject: Re: [PATCH 3/3] phy: airoha: Add PCIe PHY driver for EN7581 SoC.
+Message-ID: <ZkJGGE1A2oiQIskE@lore-desk>
 References: <cover.1715527166.git.lorenzo@kernel.org>
- <7b60943ea9814a1a9a3d8b273157b338f9130174.1715527166.git.lorenzo@kernel.org>
- <b65a6290-1500-42bc-815c-d88dd52dd8ac@collabora.com>
- <20240513-earshot-droop-d40f08bffd91@spud>
+ <0005610f38bef591b0f97bafcc58dffdfa1f0ead.1715527166.git.lorenzo@kernel.org>
+ <b6bb36aa-cb8c-4e13-8ee3-233d1c76dd50@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20240513-earshot-droop-d40f08bffd91@spud>
+In-Reply-To: <b6bb36aa-cb8c-4e13-8ee3-233d1c76dd50@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240513_095518_899172_675509C1 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240513_095559_483646_73DAAC98 
+X-CRM114-Status: GOOD (  18.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,53 +72,126 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2367268470708413403=="
+Content-Type: multipart/mixed; boundary="===============7915166334910617836=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2367268470708413403==
+--===============7915166334910617836==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="hRJZAjtksdcRzbb4"
+	protocol="application/pgp-signature"; boundary="HpxzrNHt17mo5fDz"
 Content-Disposition: inline
 
 
---hRJZAjtksdcRzbb4
+--HpxzrNHt17mo5fDz
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-> On Mon, May 13, 2024 at 03:14:59PM +0200, AngeloGioacchino Del Regno wrot=
-e:
-> > Il 12/05/24 17:27, Lorenzo Bianconi ha scritto:
+> Il 12/05/24 17:27, Lorenzo Bianconi ha scritto:
+> > Introduce support for Airoha PCIe PHY controller available in EN7581
+> > SoC.
+> >=20
+> > Tested-by: Zhengping Zhang <zhengping.zhang@airoha.com>
+> > Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+> > ---
+> >   MAINTAINERS                        |    8 +
+> >   arch/arm64/configs/defconfig       |    1 +
+> >   drivers/phy/Kconfig                |   10 +
+> >   drivers/phy/Makefile               |    1 +
+> >   drivers/phy/phy-airoha-pcie-regs.h |  476 +++++++++++
+> >   drivers/phy/phy-airoha-pcie.c      | 1227 ++++++++++++++++++++++++++++
+> >   6 files changed, 1723 insertions(+)
+> >   create mode 100644 drivers/phy/phy-airoha-pcie-regs.h
+> >   create mode 100644 drivers/phy/phy-airoha-pcie.c
+> >=20
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index ce9fac46f741..d918d41a80a3 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -653,6 +653,14 @@ S:	Supported
+> >   F:	fs/aio.c
+> >   F:	include/linux/*aio*.h
+> > +AIROHA PCIE PHY DRIVER
+> > +M:	Lorenzo Bianconi <lorenzo@kernel.org>
+> > +L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+> > +S:	Maintained
+> > +F:	Documentation/devicetree/bindings/phy/airoha,pcie-phy.yaml
+> > +F:	drivers/phy/phy-airoha-pcie-regs.h
+> > +F:	drivers/phy/phy-airoha-pcie.c
+> > +
+> >   AIROHA SPI SNFI DRIVER
+> >   M:	Lorenzo Bianconi <lorenzo@kernel.org>
+> >   M:	Ray Liu <ray.liu@airoha.com>
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index a53c58584bcf..c0eacced5d41 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
 >=20
-> > > +description: |
-> > > +  The PCIe PHY supports physical layer functionality for PCIe Gen2/G=
-en3 port.
->=20
-> Additionally, the | here isn't needed cos there's no formatting to
-> preserve.
+> No, this should be in a different commit.
 
-ack, I will fix it in v2.
+ack, I will do in v2
+
+>=20
+> > @@ -1479,6 +1479,7 @@ CONFIG_RESET_QCOM_AOSS=3Dy
+> >   CONFIG_RESET_QCOM_PDC=3Dm
+> >   CONFIG_RESET_RZG2L_USBPHY_CTRL=3Dy
+> >   CONFIG_RESET_TI_SCI=3Dy
+> > +CONFIG_PHY_AIROHA_PCIE=3Dy
+> >   CONFIG_PHY_XGENE=3Dy
+> >   CONFIG_PHY_CAN_TRANSCEIVER=3Dm
+> >   CONFIG_PHY_SUN4I_USB=3Dy
+> > diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> > index 787354b849c7..8f9a7a6c4bba 100644
+> > --- a/drivers/phy/Kconfig
+> > +++ b/drivers/phy/Kconfig
+> > @@ -72,6 +72,16 @@ config PHY_CAN_TRANSCEIVER
+> >   	  functional modes using gpios and sets the attribute max link
+> >   	  rate, for CAN drivers.
+> > +config PHY_AIROHA_PCIE
+> > +	tristate "Airoha PCIe-PHY Driver"
+> > +	depends on ARCH_AIROHA || COMPILE_TEST
+> > +	depends on OF
+> > +	select GENERIC_PHY
+> > +	help
+> > +	  Say 'Y' here to add support for Airoha PCIe PHY driver.
+>=20
+> Say Y here (without quotes)
+
+ack, I will fix in v2
 
 Regards,
 Lorenzo
 
---hRJZAjtksdcRzbb4
+>=20
+> Apart from that:
+>=20
+> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collab=
+ora.com>
+>=20
+> > +	  This driver create the basic PHY instance and provides initialize
+> > +	  callback for PCIe GEN3 port.
+> > +
+> >   source "drivers/phy/allwinner/Kconfig"
+> >   source "drivers/phy/amlogic/Kconfig"
+> >   source "drivers/phy/broadcom/Kconfig"
+>=20
+
+--HpxzrNHt17mo5fDz
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCZkJF8QAKCRA6cBh0uS2t
-rBD4AP4k66zTusaYtOYlV8NwLNLh7//cGPtcmlwAAwTN95DLsQEA59p/rzC22WY8
-WH42PDRAYRnGX+9c9TPHRYPW6gsr5gk=
-=InZ0
+iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCZkJGGAAKCRA6cBh0uS2t
+rJYlAQDI0uaXnpcs+MrptrpjMk22mLuapyynADTFHO5La7YfMAEA6KKpdJRySgE0
+QDk5kO7tc19Br4a9YOAi9uNNYru8nwQ=
+=49j/
 -----END PGP SIGNATURE-----
 
---hRJZAjtksdcRzbb4--
+--HpxzrNHt17mo5fDz--
 
 
---===============2367268470708413403==
+--===============7915166334910617836==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -132,5 +202,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============2367268470708413403==--
+--===============7915166334910617836==--
 
