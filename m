@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26C82C25B75
-	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 13:11:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04DE9C25B10
+	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 13:15:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A04so/u2Zwl3KddeoSxG5sTdCTSQr0RZ0A5rzSC93XI=; b=lboQFPX/huYsPz
-	2fQfB/kWNkXYOawdp/TYWl3wEKruu8D2kHTbSubDPs73VaFYUh085zXdJzYWvo+XglR05W5ze8oLp
-	+7n9QDvTL+9hN1MJMl6QDiDVq94ku+14or+VhU7V+s2KpBAWYqLnOzfTW9uHCn0DTpyzzq331HGcR
-	H7EgFGSY2+EzC8EcD+1BNuBqiK8I/91CsRZxqi7uEahl9EBq+5XwPQzZAgD1Z1EAJgFBXgV539B8k
-	5JDmQXeqil+kHT6teGLqpNoGEh2QbPDxZe3MKwCpyCm7xJ82As8LgqrIPEc5MdzTPQzeH1PfF35Tj
-	vOW8gxHipbGDk7xiAGHg==;
+	List-Owner; bh=udjc6Su7WFslwKua6kqS1JluABUQZMR/8p7GHIcX7c0=; b=aVt/2zROT+Jkk7
+	xaiOtaAAKrvsFM6WnO24+sdlfa5+7HNy5AH5l215olmA6YasRY71vbcf4xdtXgoDdm6GFegjtN3wE
+	tm0Kg4dxbc3WEJKhfCfuMzQbRA+U/OjoSv4lghoHCqSOYZUefePEDjEkc5BS3ElHziQUtQSvKbPPG
+	qvuG1krCRfZgSTMcArNwj0b/vosS40wCRh/g6YmbGbe/Vu86+LF3Avvg97VV61zJ8fct5qjQ18dC8
+	9j0ZfTFEu3qUxUOgYOsUmyH1hTgAWLZotvxSHS/NEIzMoPunNJtYRV3878pfRyVuQVam/S2BJE09+
+	88jZBWJvEPI0lSpyTcOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6VSS-0000000Cwsc-37UZ;
-	Mon, 13 May 2024 13:11:12 +0000
-Received: from madrid.collaboradmins.com ([46.235.227.194])
+	id 1s6VWF-0000000CxmS-2zF7;
+	Mon, 13 May 2024 13:15:07 +0000
+Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6VSO-0000000CwrU-2X7X;
-	Mon, 13 May 2024 13:11:10 +0000
+	id 1s6VWB-0000000CxlJ-1ztt;
+	Mon, 13 May 2024 13:15:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1715605867;
-	bh=vb6VU8I039xfs50EqqXBhoNIQO7NhR8KG4nRvOrcCHk=;
+	s=mail; t=1715606101;
+	bh=ScwE65y5oZ1iSlFlJ7VmFHYWNkFNi8jko7R1nKVjKAg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=I32CpzZMSeEnyQQCPetjzV9Baf0RaDjXYyWuOQ7GalN+1Snmnyj2y5odmTtvsfEbn
-	 eY6qK+WoDRvy6NqqRZ1qi3OQw5Wug8y0FrgEwyHAiX3laIbkUf2WolxGx57mvVWnTM
-	 so1gyFQccRJL6+MiYYOGxyCvGrf3jMVbwuwAsFTB6X6WwIkXOfT/cWZEv+91soz08w
-	 IXZhG0wH/tSdB5mvWOG0kE0hkl82yBmMTB6PgyuDLcp2mbvajMZ17OflNB9Y0maGww
-	 Q92JrkYD8782MJcckvuL29IpeF35t5+Xp7JYHiKpfu2tJ8W7Tl6kspnb/EqRAzEQ3B
-	 kFp+dQgqwr5Hw==
+	b=2EkJxSmvVIJ3oG4G3tzRAiekWbwD52f3irZ5Mgj1KkEyBqQE3MHoXHjsSItzhp/az
+	 6O0OwiE1Tggw2xRSy2LWGoBe4bH+8oy6rRShZ9W0Rua7Rh/UxlnvC9Twc9KsOMOTM+
+	 kFl7YyOgZ5y/znfh3082NV/ik+RV8sB9i/sDAvBw9q3vtiP45GsSINR4EUp+Zt96vS
+	 iR2BLRbIDZZRk+yzYERuUJzhuwbxzSfQQX/8HhsyXOAbeqMxEBCxB/2gT2iLuBVvoE
+	 02kJjqBk7AzaIwDR5bgdRj1hqjyr3Jj4seUKK1vUzraS25XQGVkr9VeU7SqGu3yaiY
+	 xkLSNQ8UhTCAQ==
 Received: from [IPV6:fd00::2a:39ce] (cola.collaboradmins.com [IPv6:2a01:4f8:1c1c:5717::1])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 7380A3782139;
-	Mon, 13 May 2024 13:11:05 +0000 (UTC)
-Message-ID: <ffa57617-3c87-47d7-8882-becfe40abc17@collabora.com>
-Date: Mon, 13 May 2024 15:11:04 +0200
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 5830E3782139;
+	Mon, 13 May 2024 13:15:00 +0000 (UTC)
+Message-ID: <b65a6290-1500-42bc-815c-d88dd52dd8ac@collabora.com>
+Date: Mon, 13 May 2024 15:14:59 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] Add write DP phyd register from parse dts
-To: Liankun Yang <liankun.yang@mediatek.com>, chunkuang.hu@kernel.org,
- p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- chunfeng.yun@mediatek.com, vkoul@kernel.org, kishon@kernel.org,
- matthias.bgg@gmail.com, jitao.shi@mediatek.com, mac.shen@mediatek.com,
- Project_Global_Chrome_Upstream_Group@mediatek.com
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20240510110523.12524-1-liankun.yang@mediatek.com>
- <20240510110523.12524-2-liankun.yang@mediatek.com>
+Subject: Re: [PATCH 1/3] dt-bindings: phy: airoha: Add binding doc for PCIe
+ PHY driver
+To: Lorenzo Bianconi <lorenzo@kernel.org>, linux-phy@lists.infradead.org
+Cc: vkoul@kernel.org, kishon@kernel.org, lorenzo.bianconi83@gmail.com,
+ conor@kernel.org, linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ devicetree@vger.kernel.org, nbd@nbd.name, john@phrozen.org, dd@embedd.com,
+ catalin.marinas@arm.com, will@kernel.org, upstream@airoha.com
+References: <cover.1715527166.git.lorenzo@kernel.org>
+ <7b60943ea9814a1a9a3d8b273157b338f9130174.1715527166.git.lorenzo@kernel.org>
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-In-Reply-To: <20240510110523.12524-2-liankun.yang@mediatek.com>
+In-Reply-To: <7b60943ea9814a1a9a3d8b273157b338f9130174.1715527166.git.lorenzo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240513_061108_944116_C4D5CA55 
-X-CRM114-Status: GOOD (  19.73  )
+X-CRM114-CacheID: sfid-20240513_061503_683639_4C4BF54A 
+X-CRM114-Status: GOOD (  11.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,109 +79,91 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 10/05/24 13:04, Liankun Yang ha scritto:
-> During the testing phase, screen flickering is observed when
-> using displayport for screen casting. Relevant SSC register parameters
-> are set in dts to address the screen flickering issue effectively and
-> improve compatibility with different devices by adjusting the SSC gear.
+Il 12/05/24 17:27, Lorenzo Bianconi ha scritto:
+> Introduce device-tree binding documentation for Airoha EN7581 PCIe PHY
+> driver.
 > 
-> Obtaining the DPTX node, parsing the dts to obtain PHY register address
-> and value can adapt to settings of different manufacturers projects.
+> Tested-by: Zhengping Zhang <zhengping.zhang@airoha.com>
+> Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+> ---
+>   .../bindings/phy/airoha,pcie-phy.yaml         | 55 +++++++++++++++++++
+>   1 file changed, 55 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/phy/airoha,pcie-phy.yaml
 > 
-> Changeds in v2:
-> - Optimized method of writing to DP PHY register
-> https://patchwork.kernel.org/project/linux-mediatek/patch/
-> 20240403040517.3279-1-liankun.yang@mediatek.com/
-> 
-> Signed-off-by: Liankun Yang <liankun.yang@mediatek.com>
+> diff --git a/Documentation/devicetree/bindings/phy/airoha,pcie-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,pcie-phy.yaml
+> new file mode 100644
+> index 000000000000..443d7e717296
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/airoha,pcie-phy.yaml
 
-There's no devicetree support in this driver - infact, it's being probed by
-mtk-dp as a platform device.
+airoha,en7581-pcie-phy.yaml
 
-You keep sending untested stuff. Fourth time in a row.
+> @@ -0,0 +1,55 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/airoha,pcie-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Airoha PCIe PHY
 
-Please, TEST YOUR COMMITS upstream before sending!
+title: Airoha EN7581 PCI-Express PHY
 
-Regards,
+> +
+> +maintainers:
+> +  - Lorenzo Bianconi <lorenzo@kernel.org>
+> +
+> +description: |
+> +  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 port.
+> +
+> +properties:
+> +  compatible:
+> +    const: airoha,en7581-pcie-phy
+> +
+> +  reg:
+> +    maxItems: 3
+> +
+> +  reg-names:
+> +    items:
+> +      - const: csr_2l
+> +      - const: pma0
+> +      - const: pma1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/phy/phy.h>
+> +
+> +    bus {
+
+Shouldn't this realistically be 'soc' instead?
+
+Cheers,
 Angelo
 
-> ---
->   drivers/phy/mediatek/phy-mtk-dp.c | 37 +++++++++++++++++++++++++++++++
->   1 file changed, 37 insertions(+)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-> index d7024a144335..ce78112d5938 100644
-> --- a/drivers/phy/mediatek/phy-mtk-dp.c
-> +++ b/drivers/phy/mediatek/phy-mtk-dp.c
-> @@ -28,6 +28,10 @@
->   #define MTK_DP_PHY_DIG_SW_RST		(PHY_OFFSET + 0x38)
->   #define DP_GLB_SW_RST_PHYD		BIT(0)
->   
-> +#define MTK_DP_PHY_DIG_GLB_DA_REG_14	(PHY_OFFSET + 0xD8)
-> +#define XTP_GLB_TXPLL_SSC_DELTA_RBR_DEFAULT	GENMASK(15, 0)
-> +#define XTP_GLB_TXPLL_SSC_DELTA_HBR_DEFAULT	GENMASK(31, 16)
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
 > +
->   #define MTK_DP_LANE0_DRIVING_PARAM_3		(PHY_OFFSET + 0x138)
->   #define MTK_DP_LANE1_DRIVING_PARAM_3		(PHY_OFFSET + 0x238)
->   #define MTK_DP_LANE2_DRIVING_PARAM_3		(PHY_OFFSET + 0x338)
-> @@ -78,10 +82,39 @@
->   #define DRIVING_PARAM_8_DEFAULT	(XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT | \
->   				 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
->   
-> +#define SSC_SETTING	"dp-ssc-setting"
-> +#define RG_XTP_GLB_TXPLL_SSC_DELTA_HBR	"ssc-delta-hbr"
-> +
->   struct mtk_dp_phy {
->   	struct regmap *regs;
-> +	struct device *dev;
->   };
->   
-> +static int mtk_dp_set_ssc_config(struct phy *phy, struct mtk_dp_phy *dp_phy)
-> +{
-> +	int ret;
-> +	u32 read_value = 0, reg_mask = 0;
-> +	struct device_node *ssc_node = NULL;
-> +
-> +	ssc_node = of_find_node_by_name(dp_phy->dev->of_node, SSC_SETTING);
-> +	if (!ssc_node) {
-> +		dev_err(&phy->dev, "SSC node is NULL\n");
-> +		return -ENODEV;
-> +	}
-> +
-> +	ret = of_property_read_u32(ssc_node, RG_XTP_GLB_TXPLL_SSC_DELTA_HBR, &read_value);
-> +	if (ret < 0 || !read_value) {
-> +		dev_err(&phy->dev, "Read SSC vlaue fail!\n");
-> +		return -EINVAL;
-> +	}
-> +	read_value |= read_value << 16;
-> +	reg_mask |= XTP_GLB_TXPLL_SSC_DELTA_HBR_DEFAULT;
-> +
-> +	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_GLB_DA_REG_14, reg_mask, read_value);
-> +
-> +	return 0;
-> +}
-> +
->   static int mtk_dp_phy_init(struct phy *phy)
->   {
->   	struct mtk_dp_phy *dp_phy = phy_get_drvdata(phy);
-> @@ -137,6 +170,8 @@ static int mtk_dp_phy_configure(struct phy *phy, union phy_configure_opts *opts)
->   	regmap_update_bits(dp_phy->regs, MTK_DP_PHY_DIG_PLL_CTL_1,
->   			   TPLL_SSC_EN, opts->dp.ssc ? TPLL_SSC_EN : 0);
->   
-> +	mtk_dp_set_ssc_config(phy, dp_phy);
-> +
->   	return 0;
->   }
->   
-> @@ -186,6 +221,8 @@ static int mtk_dp_phy_probe(struct platform_device *pdev)
->   	if (!dev->of_node)
->   		phy_create_lookup(phy, "dp", dev_name(dev));
->   
-> +	dp_phy->dev = dev;
-> +
->   	return 0;
->   }
->   
+> +        phy@11e80000 {
+> +            compatible = "airoha,en7581-pcie-phy";
+> +            #phy-cells = <0>;
+> +            reg = <0x0 0x1fa5a000 0x0 0xfff>,
+> +                  <0x0 0x1fa5b000 0x0 0xfff>,
+> +                  <0x0 0x1fa5c000 0x0 0xfff>;
+> +            reg-names = "csr_2l", "pma0", "pma1";
+> +        };
+> +    };
+
 
 
 
