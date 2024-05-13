@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CC2BC25B78
-	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 06:38:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58ABBC25B10
+	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 06:48:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/5g3Fn/jmbXevm21OKny/WFziXqPGwzwbeUwwPVCShg=; b=Pb6Uc5J6YfN9tq
-	Kwg5GRzM1wzNS5SiPajdPNQVweJC2gSXYJ2P8lhYt2TxeM9gH+ex0YDxYek7Vkq0ZcQU41Uxga0EY
-	50RaTATa1Cp0Q9YS8GLN+IGgz/mNZxi3bOzl698sPf3R9xYFBkbKUXaCpwOzMJ1EuqlvFU9QMIKYG
-	cNbrcJFryuKSTnLWk44FRAf585dHqoFiP1Gg07ATSNSu9dz1ygvMSaGEEvIw6688M02+qf/PmQaEj
-	f1QLniP6qUr3QloJjDi7PwA9X28WP0yH18ZrVJvH0qBMAmWn2wC3rd4eM3WYqfNERDKXvUBQ/t5gs
-	MoOkYgGO+7s568ahG4uw==;
+	List-Owner; bh=xnrnJTC38c9jIhi3BDbHCzzwk/CNhHYaSsVvG1CZGa4=; b=yBIkXXGXBSGC01
+	bahJ1LtQ6QH9j1vjzC3ZTeyjKUYACfYaSsRO8dSBA5Wvv2WQSSVLRrGiwRw31buEjeiuhMSojiL2m
+	Hwu+WxjeOItk++7aU8c0tsxffNDI3m+CTyPEhr8VC2KlZhSNdCzTH4LPwKqVQQpe8J7bI7Kad18pP
+	8QZzq2ijAYdWkC0jF+MFHQfM2rZoUjC81ODxdkvvRdCP+CxNBdBsAp6D0STOal0vqvAKJccthT6JW
+	rOlYXizG1siQCFGBfCRJiVnHQ0VCA5Sj3riRQtFX1jM5bG1C3NAixqtR09yCvsascuZJCPbuywGn6
+	gSa+mwAnRRdFWUg4KDjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6PKq-0000000BtJp-14B1;
-	Mon, 13 May 2024 06:38:56 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1s6PUT-0000000Bv7h-04Ja;
+	Mon, 13 May 2024 06:48:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6PKk-0000000BtGE-3TN6;
-	Mon, 13 May 2024 06:38:53 +0000
+	id 1s6PUQ-0000000Bv6L-1Uty
+	for linux-phy@lists.infradead.org;
+	Mon, 13 May 2024 06:48:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 820E5CE0BAB;
-	Mon, 13 May 2024 06:38:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51529C113CC;
-	Mon, 13 May 2024 06:38:40 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 6007E60C4C;
+	Mon, 13 May 2024 06:48:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 020FDC113CC;
+	Mon, 13 May 2024 06:48:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715582325;
-	bh=rheX3UDLWx2TrGDc2WgD/M6QRBNEUGJmYCKleNbGYx8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=VD284AOpyhEN5r1wOAV4ARcCs40eM38v1f3mQ6sLZ7oOgtcy1nuXYTfx1PBNN805/
-	 iWQcitKNgX/gIz4u4gVX1rpjW2VIVhVz/aLuBX6WpUfWfg8njSTchd2QTmEwQG7uCR
-	 0iK37aDvz8+KWnuE7iyGE8zxrky/KQ/cDJfW+A1L32M+w9TYt0kP+ML+AHupiTipTw
-	 egYsbP1vEIb+8ygIgPZjVoZsma1uwsb0JLxSSogtjG+hhdwRlOZYeifw0V9lEiEXVQ
-	 h6i8H5mXGf39PQV03JAhSVBD69iJSwhcRB3YaKlanKqDxrnd4PsJzxbjiRy81yGXuu
-	 CKHG2MOWE5ECQ==
-Message-ID: <93690c52-7da7-4fee-9b58-6087b3fb1d71@kernel.org>
-Date: Mon, 13 May 2024 08:38:38 +0200
+	s=k20201202; t=1715582929;
+	bh=BL7ea56f7IRq97McfG2GKuk5+W78EDHVuHGDV+iQxNk=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=p4KQIVYWijwmbIjk7Z2Lm5DHuQHdS+ll4gs/QIygYN5r2OWwXrQg2zcGT4Ls9XAeI
+	 bERpsCt5ai76GHpOS+VtdNHeC98416k6D5DfgZvpgxPzpZBLwhg4GVBhYrrftbTLVG
+	 p7rQwLesOm9URyOH65WBdhyrCHdPl10ruDI7qkT3LtfHHMnPLcXFfV0o7ncxISp5dg
+	 LXMB8VBF8zerUaJb2yzNc4P9p4mEFbabI574xVD1zH3zjFDmRGw3G/vbkHgZPE0mQY
+	 eqkVE/t4ovoGb0vdiFOi760GShNRYKV1GvwxI/xVTD+6Jd/h2UTUr1mIffhKTG+Y+a
+	 DExrXZLrghJIw==
+Message-ID: <2eaefbc2-d284-460f-aae8-4c1cd003580c@kernel.org>
+Date: Mon, 13 May 2024 08:48:44 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] Add write DP phyd register from parse dts
-To: Liankun Yang <liankun.yang@mediatek.com>, chunkuang.hu@kernel.org,
- p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
- maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- chunfeng.yun@mediatek.com, vkoul@kernel.org, kishon@kernel.org,
- matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
- jitao.shi@mediatek.com, mac.shen@mediatek.com,
- Project_Global_Chrome_Upstream_Group@mediatek.com
-Cc: dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20240510110523.12524-1-liankun.yang@mediatek.com>
- <20240510110523.12524-2-liankun.yang@mediatek.com>
+Subject: Re: [PATCH V3 1/2] dt-bindings: phy: qcom,ipq8074-qmp-pcie: Document
+ the IPQ9574 QMP PCIe PHYs
+To: devi priya <quic_devipriy@quicinc.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ dmitry.baryshkov@linaro.org, neil.armstrong@linaro.org,
+ quic_msarkar@quicinc.com, quic_qianyu@quicinc.com, abel.vesa@linaro.org,
+ quic_cang@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20240512082541.1805335-1-quic_devipriy@quicinc.com>
+ <20240512082541.1805335-2-quic_devipriy@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -104,10 +102,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240510110523.12524-2-liankun.yang@mediatek.com>
+In-Reply-To: <20240512082541.1805335-2-quic_devipriy@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240512_233851_279194_777DBF4A 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20240512_234850_526997_94D13479 
+X-CRM114-Status: UNSURE (   3.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,61 +123,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/05/2024 13:04, Liankun Yang wrote:
-> During the testing phase, screen flickering is observed when
-> using displayport for screen casting. Relevant SSC register parameters
-> are set in dts to address the screen flickering issue effectively and
-> improve compatibility with different devices by adjusting the SSC gear.
+On 12/05/2024 10:25, devi priya wrote:
+> Document the QMP PCIe PHYs on IPQ9574 platform.
 > 
-> Obtaining the DPTX node, parsing the dts to obtain PHY register address
-> and value can adapt to settings of different manufacturers projects.
-> 
-> Changeds in v2:
-> - Optimized method of writing to DP PHY register
-> https://patchwork.kernel.org/project/linux-mediatek/patch/
-> 20240403040517.3279-1-liankun.yang@mediatek.com/
-> 
-> Signed-off-by: Liankun Yang <liankun.yang@mediatek.com>
+> Signed-off-by: devi priya <quic_devipriy@quicinc.com>
 > ---
->  drivers/phy/mediatek/phy-mtk-dp.c | 37 +++++++++++++++++++++++++++++++
->  1 file changed, 37 insertions(+)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-dp.c b/drivers/phy/mediatek/phy-mtk-dp.c
-> index d7024a144335..ce78112d5938 100644
-> --- a/drivers/phy/mediatek/phy-mtk-dp.c
-> +++ b/drivers/phy/mediatek/phy-mtk-dp.c
-> @@ -28,6 +28,10 @@
->  #define MTK_DP_PHY_DIG_SW_RST		(PHY_OFFSET + 0x38)
->  #define DP_GLB_SW_RST_PHYD		BIT(0)
->  
-> +#define MTK_DP_PHY_DIG_GLB_DA_REG_14	(PHY_OFFSET + 0xD8)
-> +#define XTP_GLB_TXPLL_SSC_DELTA_RBR_DEFAULT	GENMASK(15, 0)
-> +#define XTP_GLB_TXPLL_SSC_DELTA_HBR_DEFAULT	GENMASK(31, 16)
-> +
->  #define MTK_DP_LANE0_DRIVING_PARAM_3		(PHY_OFFSET + 0x138)
->  #define MTK_DP_LANE1_DRIVING_PARAM_3		(PHY_OFFSET + 0x238)
->  #define MTK_DP_LANE2_DRIVING_PARAM_3		(PHY_OFFSET + 0x338)
-> @@ -78,10 +82,39 @@
->  #define DRIVING_PARAM_8_DEFAULT	(XTP_LN_TX_LCTXCP1_SW2_PRE1_DEFAULT | \
->  				 XTP_LN_TX_LCTXCP1_SW3_PRE0_DEFAULT)
->  
-> +#define SSC_SETTING	"dp-ssc-setting"
-> +#define RG_XTP_GLB_TXPLL_SSC_DELTA_HBR	"ssc-delta-hbr"
-> +
->  struct mtk_dp_phy {
->  	struct regmap *regs;
-> +	struct device *dev;
->  };
->  
-> +static int mtk_dp_set_ssc_config(struct phy *phy, struct mtk_dp_phy *dp_phy)
-> +{
-> +	int ret;
-> +	u32 read_value = 0, reg_mask = 0;
-> +	struct device_node *ssc_node = NULL;
-> +
-> +	ssc_node = of_find_node_by_name(dp_phy->dev->of_node, SSC_SETTING);
 
-No, really. Node name can change.
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
