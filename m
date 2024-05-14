@@ -4,63 +4,170 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B7A3C25B10
-	for <linux-phy@archiver.kernel.org>; Mon, 13 May 2024 16:57:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0569C25B78
+	for <linux-phy@archiver.kernel.org>; Tue, 14 May 2024 01:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=t4I+CQCOAB+onTOV2ABqdS+W2Tlxfd8f2HdGosIT//g=; b=eVsu4ZGKPysTYhZKDOS1Xli0Dz
-	06AZUFlwkfqkw01/An0WF8+dbuXgQEa3dmNp9Qig4Z8SrPJa/iik4kzUfW5Rd51zgMkuMf1lPN7LR
-	+Hc+CH9qvOkC7FxtxG+RfWfbbqTiJgvXZgG86OXDS+rZgHAQknAb9ztUbY5oTm/amREVWetw/8WsG
-	SGNOtHEpoFzLvPzaJvPjCE00thzQ3MYvWGF81tlAijdtXRQyTODMxKR4LCfS9Ne9p+5kdb6Xno18E
-	qnHT8xejywVxwSB8ao50+8nY9hEmKUplAkntfBZCnA2QyMLYrm3oHOD5MXFXjmGMzdf53RKN4xMGF
-	LGaNW5RQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Pve6PGtdubiuyCjfoOnkFmMc4R103mrdLCcKm8hx29M=; b=KCt54ptAZ6KMjZ
+	o8WCVAZ9SuqbtwhI04E04ApSp2HienoVKBpxnxAQWkOzKp5VY6PKghQeuhmm8kyYPXQfz2oqA/Cbs
+	KamsI7KO5LCiVDlsqYuCFVUr2/b2pznj6gNvQw57EaXVIeYjbRJDkpGVCZ0kEIp0/FsLXi0fgWEwx
+	SL2pkPYSUSfsGqd19R6J95TQPpjtxjtDFYebGebpeC7Koa0XO5wx2qEIpLhe5tXvOHiNUccUR0eq0
+	8JM13b7IqM6nZJCoTqHW4z5NOQu2EJ6ERrFwPf6+JjyZTgpuc+/A1XRdVoy7tnT66qeMFgLlpPF2L
+	sRHkBD0zcjAVeMWXFdmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6Yz5-0000000DdaA-37k3;
-	Mon, 13 May 2024 16:57:07 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1s6hNQ-0000000Ekgw-1TVj;
+	Tue, 14 May 2024 01:54:48 +0000
+Received: from mail-db8eur05on20600.outbound.protection.outlook.com ([2a01:111:f400:7e1a::600] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s6Yyj-0000000DdMG-0LMU;
-	Mon, 13 May 2024 16:56:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 6FF3160ED1;
-	Mon, 13 May 2024 16:56:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BB5EC4AF08;
-	Mon, 13 May 2024 16:56:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715619404;
-	bh=257tg1ecO2+jjI/+GDVDoynBQ49K/tx40Go05H2ZTHU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=jpEa0RXDw8OFODwqQNo84PdLLcdEhzinaK+ssQMMpZKcC6TtIpmpnLg1f37HxLzSF
-	 MvTF3R1b/vsdMTMMsqIgPdscv+IEZGDNjhpuXGQNyXSBTNIIE5+GUOcWq1C4aghT4v
-	 Ve737bya9VKY8pCImkuF8bJ9BJOhd1sqXLVjQyyFnB5oIs1MluAxYeanyDjwZt4AQm
-	 j9Sp4DS93QdURNAfFcWnxw9bxarmRuvv/X9oPyJLL4Z4RuqX9IRHChxSMjD+yjfYpD
-	 OPjAoRhOLhJgRfqVM8v2rxIvqNbb0scTt2FEpLUIIVe9b9x1YrQAyMd3biqso/Z3oc
-	 7rwyoICO/Katg==
-Date: Mon, 13 May 2024 18:56:40 +0200
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Amit Singh Tomar <amitsinght@marvell.com>
-Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org,
-	lorenzo.bianconi83@gmail.com, conor@kernel.org,
-	linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	devicetree@vger.kernel.org, nbd@nbd.name, john@phrozen.org,
-	dd@embedd.com, catalin.marinas@arm.com, will@kernel.org,
-	upstream@airoha.com, angelogioacchino.delregno@collabora.com
-Subject: Re: [PATCH 3/3] phy: airoha: Add PCIe PHY driver for EN7581 SoC.
-Message-ID: <ZkJGSNQ7TQzUsEWE@lore-desk>
-References: <cover.1715527166.git.lorenzo@kernel.org>
- <0005610f38bef591b0f97bafcc58dffdfa1f0ead.1715527166.git.lorenzo@kernel.org>
- <5beb1261-a173-4ec2-b075-9a6d9c79d62e@marvell.com>
+	id 1s6hNN-0000000Ekfj-0W62;
+	Tue, 14 May 2024 01:54:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HxOi8Iwx4NOgDwnLwRWHBaU0jQcAl63vgcfcccZiJTNmF53SIyGmq/npHZW61OApcKawSLgqVbKKE84ZYAO4z74CzhgcWsJUSIxIfDp0Ju/bbg104X69WfdB/7VQy0di0XrQ+xZVK1EJN8TE4tXow5TBz6wuaJBS6weh7LjWAXsJeSoA2IYJvmRdER7YgahL4AXkTfAptncpubPc6YL2AUnPQSU9q/4gSd1zcBQuloDpGdQxqGSP7geD8/DrMHfs2MtjJ838hZXNA9i2YIBTrj7dT04QZPYYPf9d7OPz9IGkCYhvi5z0tEKoLqj45VUz7xdgHVgL4D84svqi6eJUow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=xExJF3EbiiK+5wlqQzZzOUYYFiNSafY+CrOMlGImUMc=;
+ b=glLmGeACzVnrhn0TWi/7rkCUdOb7q2uUNcfl4yT4cTs2XLNdL8m5VX8qPhGLrTT2dWRdh3C9XzWwJr7NkXRJttGnbAzYUgYS3Y17gOXvchWPX7b6aJUNroO46z/3rl4lXqkmfiG6AUR6qCAv9N74eZ/jx9QPuAiliCJLq/j9NuAeIWRxFhdWgJb/CxKJB9wv10BqA+WN/sKrMp3HyAS+EGzCfXrEoPyWqEo83O+SrdiAb0PE4xu1At5wyIUNorzdvs/pdT5C+erv1PDdreelKCirJcc4VTJV7fL/PRaKqiqP108ZLxWRxmFQ1lcABQiaCv5zR3Bkf5AQ5JZqQiRnZw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xExJF3EbiiK+5wlqQzZzOUYYFiNSafY+CrOMlGImUMc=;
+ b=lz0Xa7f8jMiUwvl0bh4Lppm87ut07TulkAaabRYef0cJTdpFl716N5bc2zCMMcvMkTFGmp2Vz3ZjdfvBPuHTWULg+m7SmN5UhCxD9oGZKaC4RG1acrdo1ml/B1fwU3y3uCSxi191VihvKM2Wi7EDjtys6h+c59HJOwih3JiDMeY=
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com (2603:10a6:20b:42b::10)
+ by AS8PR04MB7510.eurprd04.prod.outlook.com (2603:10a6:20b:294::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7544.55; Tue, 14 May
+ 2024 01:54:39 +0000
+Received: from AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::28b2:de72:ad25:5d93]) by AS8PR04MB8676.eurprd04.prod.outlook.com
+ ([fe80::28b2:de72:ad25:5d93%7]) with mapi id 15.20.7544.052; Tue, 14 May 2024
+ 01:54:39 +0000
+From: Hongxing Zhu <hongxing.zhu@nxp.com>
+To: Conor Dooley <conor@kernel.org>
+CC: "vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
+	<kishon@kernel.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
+	Frank Li <frank.li@nxp.com>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "kernel@pengutronix.de"
+	<kernel@pengutronix.de>, "imx@lists.linux.dev" <imx@lists.linux.dev>
+Subject: RE: [PATCH v5 1/2] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY
+ binding
+Thread-Topic: [PATCH v5 1/2] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY
+ binding
+Thread-Index: AQHapNap+4z6SgA6Pk+HHQHhaZycpLGVU/mAgACeNjA=
+Date: Tue, 14 May 2024 01:54:39 +0000
+Message-ID: <AS8PR04MB86760A3E903013C0AEFE9E958CE32@AS8PR04MB8676.eurprd04.prod.outlook.com>
+References: <1715563324-6391-1-git-send-email-hongxing.zhu@nxp.com>
+ <1715563324-6391-2-git-send-email-hongxing.zhu@nxp.com>
+ <20240513-antonym-flanking-5a812dd49920@spud>
+In-Reply-To: <20240513-antonym-flanking-5a812dd49920@spud>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: AS8PR04MB8676:EE_|AS8PR04MB7510:EE_
+x-ms-office365-filtering-correlation-id: 66352420-265e-409e-0fe6-08dc73b8d0c3
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230031|1800799015|7416005|366007|376005|38070700009;
+x-microsoft-antispam-message-info: =?gb2312?B?NG9QeEY0NytseWMvVnZZVFBzMWVwMFhoNFJ2dTdhbHY2TU1CKzFmaGhMem5l?=
+ =?gb2312?B?cVRSaTlDdjgrR3hOb1dpdnBNUTM1WnB1Q1BNUkxwNTBzbVJTb2tlVi9aWUVY?=
+ =?gb2312?B?UFRhOU9Cd3NodmpQMGQ0enZKOEFFbjJjdEV2R1lMTnlzbWkxNU9jM2VmalRI?=
+ =?gb2312?B?QldnMnIycVJ4Q05vQlByWVprWXZUemlWVkVmeHFCcjZtdk50dEhtTkQxTVlr?=
+ =?gb2312?B?c1IzdHZURXFVdHBrVzZya2VDbmdsd25zVEtvNy81TXlqZ3RBVVIyakxFMWdh?=
+ =?gb2312?B?a0FEOXZuMUEyYWRIMTR2ZnNya3k3Szc4Qm5oZi9MMmNUWGtnNVBzTEJLdE0w?=
+ =?gb2312?B?RmQ5N1dlTDlnbEhreUY0aDlVZ1JvMXNaYVhNK0cwdmpYZHZSN2lzWHAxS3hY?=
+ =?gb2312?B?RmxhK3BzM2FLSnRHZkdaa2dhc2NGZDRKSmFnS0FVQitwYXVQWWJBbG5vV29r?=
+ =?gb2312?B?b1N2QVpBS2ZJem1oMVlQSzc1ZlcxeHM1RENiYjNQZXVORXRYRCtoV0daYmpC?=
+ =?gb2312?B?TC9UNW84MFEvdDQrdk1LdXh6Yi9qMWMyeWp1cXhiSHFOVURoTDdHcFVyM2U0?=
+ =?gb2312?B?dk80MUJmVm9YUWZVT3J6aTRSZFlWN2tLY0ZiVjZNSjM3V280K0F2YUc3ZTNo?=
+ =?gb2312?B?VHcwT1RGaGxlSVNtVFowZ3lxNFBXL1RYbHNpWGc5enhpZ0s2Vk5NVWl6ZEs2?=
+ =?gb2312?B?eVZPNGwxK0JON2V1NGltd2Q0YjBDdGZhOHBqS2pnRUJ1ajZ3QWQwdWdSVlR3?=
+ =?gb2312?B?RzJaZzJSYVdteUtOcm0yT3dHYXYyU09FYUUwdkMyQlZuM21jdXAzcWhwMVdq?=
+ =?gb2312?B?cDE3NFJxSWx0OEhFclI4QU1ySWlMUXpqbTNrWlVWc3hXYndXVkc4YVkrbXlP?=
+ =?gb2312?B?Q1p2MWFrVnlkU1pUNXBmZndGMGR5RjBDNnJEaDJhemJWelpuMGlkZlFyWnBG?=
+ =?gb2312?B?S3hWNXBiTVVySDlYWHAyVVgzL0pINGoyb1pwNWZZak1UU1ZRbU5qdUlxaDRL?=
+ =?gb2312?B?THZoWHJBVDFIS3B5U0tDdTh5WUFhaWJQK2FvOHIzZ0dGUEhCcTVHeDRkdjhD?=
+ =?gb2312?B?cXVLMzFxckoyNFk2OC9lQ2tSbHRrdmpaSUxDN2FFQ2NuZElORjB1R0NvL1pJ?=
+ =?gb2312?B?MFg4U0VQL1p5Y1JOTEppSkU2aGpjbjVmaXdHUm1RcG56SlFteTFQQ3NKbHY2?=
+ =?gb2312?B?TFZaaStrSTZ2TGVmRFM2SmxlS01JU2hEWWhNdHI2N0NuOG0zZHAvMUExZ2ts?=
+ =?gb2312?B?bmVBWWdFWHJNWWtiMUtaQXJTQ2J1cUxTcWUrU1BmS08zd3V1RHc5aDdYa0lQ?=
+ =?gb2312?B?czRBQ2RvcXhsSjBsSlZ0dGRvWDVaa0pYSktKd3UzS001MGVkSXVYK0pkTHYr?=
+ =?gb2312?B?WXJsOTBjMVVWUFlZdGhHYTNzYVhmWU1RdmJ4RUhWWGtwZG9xZ0VqMFRJSTRm?=
+ =?gb2312?B?a1NhSFVpZDVpZ05uYWNaRnZXVWY2ZGh1NmFDK2JBRVdwb3RZcTkyY1FXMjIw?=
+ =?gb2312?B?eFE2eHIwVUxtb0FrRmt1K1k2V2trdlh0WmlnRzRPSGNTbWxkSGl0VGdIanlE?=
+ =?gb2312?B?TkxDT09IVnFRQUk0VWw1cFg3bXFZdUlMZFlIaUpDTFFxZG1RcEVEbGdDQzBY?=
+ =?gb2312?B?cXhZblMxaG9GYzdGbTd5STF3VFQ3VTdoRXJOU01GRmNQU0ZOVGkzSXJTU0Fm?=
+ =?gb2312?B?eEMvQVp4LzVzL1Q4c0Vjb08zakFzTExKa1A2QWJsalBKZUtDWU9CdGs2Umxq?=
+ =?gb2312?B?NmxZSnBYWGxZWTlNdis3SldXODJkRjVBc1BzazFWaW1OZVNnOXlYcmxJNS9W?=
+ =?gb2312?B?SFNoRkR5VU8xa3ZKTFk4Zz09?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-cn;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB8676.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(7416005)(366007)(376005)(38070700009);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?gb2312?B?RWpuMWx3UDRQb1BZOFc3Z1VKNFU5amNDV3Z4eGtnZUw2M1U5d05WODVLR2NK?=
+ =?gb2312?B?RzFnSis1OEVKUjF3SFcrYmJ0RTc5SVlMSGcrMG8rbEZYSWoxa0xrQ2RFRC82?=
+ =?gb2312?B?NzNBQS9zVVZBT1l4K2wwbUJzWWtlUW5wZUw4cGhxM3VveURKVFVmMGFrWjBj?=
+ =?gb2312?B?NTIzQStOTDZ2eGFqNlJzS0xtUHBQMElnYmRDVEF1bnFZTHIzMksyVnRjaUpL?=
+ =?gb2312?B?ZkNWN2FBU1RqUDQ1YlppWVg5T3cwc2crbXFSNGdhVk83eGtKVitlRVZlMlVP?=
+ =?gb2312?B?NGRpc3F3VEVaeHlaUlZuVjRsa1UwTVJ2ODYrb3dyNG9QcGFId2Jjam1uRUk5?=
+ =?gb2312?B?S3lFaWg2UGRTdHdNKzZtalN2V2xSZmMvOGpEb25rWmNSOThYeW1vS1ZLZTFE?=
+ =?gb2312?B?STFDUU8wa0lSVENXRnV2cjdtNGhsMVNIUVhZVnBaTVp5VXN0MEs3VDA5ZGNC?=
+ =?gb2312?B?bmZ5ejlLcmVzZUdTY0RJR0NYckFLU00relMrdEJ2a3RpaXpjL3dRb0dHRnFK?=
+ =?gb2312?B?alpsMDdFeXkwbkhpME53c3VET0FESnRNVDhmQjgrMnVwcklIeG9iNWF3K3R3?=
+ =?gb2312?B?Zk9PSjZ1bXA1bnl2aXVtZDNyMjZScEh3SzhjZXNYakNTbWwzUWNtRzJ2RHVN?=
+ =?gb2312?B?cXFNYTFHYUdiL0Fld2dSeHBPbTJqOEpYbGd3bjRDSUYyeC9LelhWeERYZ2lw?=
+ =?gb2312?B?cW56OVp3bzBxU2NYa1ArZk85bndyOURQMm9HV1B2WXUrV0RhVityQmZDUVNB?=
+ =?gb2312?B?N0RlK2w3QVlNK0RMdXIrUXB3KzBxb1VCVjl0RncvaDUyQkFCTytUd2dXaThp?=
+ =?gb2312?B?VllCa0tNRHJSR1hJWS9RbGZFdGNDOXNQeWc0Q0g1Qi8rRlZPMlV1TGF3L2dm?=
+ =?gb2312?B?allqMDBPUHNRMklkU0Rqb2R2MGJONTlGaFlSdG90U1RkZEZUTWkzdi9pRjUw?=
+ =?gb2312?B?VWpvYmljYm50OUFNYVBsRDJrVVdHL3FTNzFqWXlNSFFWbm1KajdVYzVOT0Jt?=
+ =?gb2312?B?Tm9RZUlDN21tZjI3R0hwUjVSQktab0szTGRMczdrYTlWbHQ1OTlFcG1iUVAz?=
+ =?gb2312?B?Mk5BZVlMcDdycTNuYjIyMTFlckRBNU9XRUduYUpTejhGOE5xSkYwTTZTTWJH?=
+ =?gb2312?B?RjhPdFdmSjZIRkhpWmY0Qm1OYzh0YXc5VE02ZkowWEdZai9wbDFxSEpMNC9Y?=
+ =?gb2312?B?Yk5ZcVp4UzJYaTU1NnRzbXZQS3liU2Fzd3RySVBtd3BJdlY5MGJYS3V2aDdr?=
+ =?gb2312?B?RVFZNEllblpXUmJCQTVzR0RyUDZHbjVCZHV4VmZFTmFGeHhJMGs4MVg0R1Fj?=
+ =?gb2312?B?MWdoN0NSZUJDc0wwNzRFbW5haUlJM3RvN0piRXhIeGZaSGpUOHJFSzJZeXRo?=
+ =?gb2312?B?VDE1L01PREh2MHRUZFlQd1ZOQWUwU050dk5BSU40eEpmNzNvOGN6bTU4eFNF?=
+ =?gb2312?B?QmkyUkI4WEZKcEFwTjk2cUtkdUk3RWo5ZmdIaDNmWTk4TEVkZ1NTd2hKeE52?=
+ =?gb2312?B?WVlCdm5pSHNxaWpPZ0hpeFdMRTF5Z0ZrL3NxMXc5OFAyM0NTb2F5Vitid0xn?=
+ =?gb2312?B?dUo3Y1pwdEFiMEF4dFVvUnRKZmhXUXoxR2JzdHJ5bFAxVUJJMjZhWHgvaUlj?=
+ =?gb2312?B?WGprcE5lWU5yWGs4RFhGVWJsTHJkN29ldWd1L1pMak5CQzFvWFBsVm81ODUv?=
+ =?gb2312?B?UC9YdjFybXFGM29JRWFEbi9NbXBIcGt3SzI2bjlHMTZpRnA0bkgyaDk4a1Z1?=
+ =?gb2312?B?a1ZCZEJSWE40cVJuUDF2N0NYQmtxK2lTMy92RnlWVXczdW5xRjhyTFVKRUp5?=
+ =?gb2312?B?Y01rSHVycjZ4bTJTU1N0UENtMW1sdHFjcCt0TFNRRmZXb0Y3UGV1c1NaUWJk?=
+ =?gb2312?B?dHV1OEozNGNvUlRYNjBZajBBYkNFanFYM3NpUFRWTk8wWEczU0MwSENFZ3Q4?=
+ =?gb2312?B?aWsweUxYMkxaVk5XOEd1aW5xME8vVVVQUDNPZWxMSFNWUFc1Ni9IN1ZBdGNP?=
+ =?gb2312?B?NlpqY0dUR3dsYmFGOFd0OTQvV1c1OW5LZkZtKzBXQktCajBWL1k1bFMwZk1m?=
+ =?gb2312?B?VXA1aEZMRy9IbDFIbGxSYzl2RjFhMTVLWU9jODFESzFSQ2xOQk41VkIvYkE0?=
+ =?gb2312?Q?KIiwOa2el7+98oWv+W3LMUIt0?=
 MIME-Version: 1.0
-In-Reply-To: <5beb1261-a173-4ec2-b075-9a6d9c79d62e@marvell.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8676.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 66352420-265e-409e-0fe6-08dc73b8d0c3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2024 01:54:39.3162
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: AmI+MC/X2qUsrJgahm5L28j5YmW1a9pDNdRM7htC9tZJeXfNCjLimsniDSzP4nboScYXiGXRD4Q2WIsxztvbPA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7510
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240513_095645_339268_A3F00563 
-X-CRM114-Status: GOOD (  20.97  )
+X-CRM114-CacheID: sfid-20240513_185445_497752_E0414F86 
+X-CRM114-Status: GOOD (  25.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,1319 +179,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5460849632526261500=="
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============5460849632526261500==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="xXqAj4fcYoThyFC+"
-Content-Disposition: inline
-
-
---xXqAj4fcYoThyFC+
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-[...]
-
-> > +#endif /* _PHY_AIROHA_PCIE_H */
-> > diff --git a/drivers/phy/phy-airoha-pcie.c b/drivers/phy/phy-airoha-pci=
-e.c
-> > new file mode 100644
-> > index 000000000000..66d8bee93ee6
-> > --- /dev/null
-> > +++ b/drivers/phy/phy-airoha-pcie.c
-> > @@ -0,0 +1,1227 @@
-> > +// SPDX-License-Identifier: GPL-2.0-only
-> > +/*
-> > + * Copyright (c) 2024 AIROHA Inc
-> > + * Author: Lorenzo Bianconi <lorenzo@kernel.org>
-> > + */
-> > +
-> > +#include <linux/delay.h>
-> > +#include <linux/bitfield.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/slab.h>
-> > +
-> > +#include "phy-airoha-pcie-regs.h"
-> > +
-> > +/**
-> > + * struct airoha_pcie_phy - PCIe phy driver main structure
-> > + * @dev: pointer to device
-> > + * @phy: pointer to generic phy
-> > + * @csr_2l: Analogic lane IO mapped register base address
-> > + * @pma0: IO mapped register base address of PMA0-PCIe
-> > + * @pma1: IO mapped register base address of PMA1-PCIe
-> > + * @data: pointer to SoC dependent data
->=20
-> The structure below lacks this data pointer.
-
-ack, it is just a leftover. I will fix it in v2.
-
-Regards,
-Lorenzo
-
-> > + */
-> > +struct airoha_pcie_phy {
-> > +	struct device *dev;
-> > +	struct phy *phy;
-> > +	void __iomem *csr_2l;
-> > +	void __iomem *pma0;
-> > +	void __iomem *pma1;
-> > +};
-> > +
-> > +static void airoha_phy_clear_bits(void __iomem *reg, u32 mask)
-> > +{
-> > +	u32 val =3D readl(reg) & ~mask;
-> > +
-> > +	writel(val, reg);
-> > +}
-> > +
-> > +static void airoha_phy_set_bits(void __iomem *reg, u32 mask)
-> > +{
-> > +	u32 val =3D readl(reg) | mask;
-> > +
-> > +	writel(val, reg);
-> > +}
-> > +
-> > +static void airoha_phy_update_bits(void __iomem *reg, u32 mask, u32 va=
-l)
-> > +{
-> > +	u32 tmp =3D readl(reg);
-> > +
-> > +	tmp &=3D ~mask;
-> > +	tmp |=3D val & mask;
-> > +	writel(tmp, reg);
-> > +}
-> > +
-> > +#define airoha_phy_update_field(reg, mask, val)					\
-> > +	do {									\
-> > +		BUILD_BUG_ON_MSG(!__builtin_constant_p((mask)),			\
-> > +				 "mask is not constant");			\
-> > +		airoha_phy_update_bits((reg), (mask),				\
-> > +				       FIELD_PREP((mask), (val)));		\
-> > +	} while (0)
-> > +
-> > +#define airoha_phy_csr_2l_clear_bits(pcie_phy, reg, mask)			\
-> > +	airoha_phy_clear_bits((pcie_phy)->csr_2l + (reg), (mask))
-> > +#define airoha_phy_csr_2l_set_bits(pcie_phy, reg, mask)				\
-> > +	airoha_phy_set_bits((pcie_phy)->csr_2l + (reg), (mask))
-> > +#define airoha_phy_csr_2l_update_field(pcie_phy, reg, mask, val)		\
-> > +	airoha_phy_update_field((pcie_phy)->csr_2l + (reg), (mask), (val))
-> > +#define airoha_phy_pma0_clear_bits(pcie_phy, reg, mask)				\
-> > +	airoha_phy_clear_bits((pcie_phy)->pma0 + (reg), (mask))
-> > +#define airoha_phy_pma1_clear_bits(pcie_phy, reg, mask)				\
-> > +	airoha_phy_clear_bits((pcie_phy)->pma1 + (reg), (mask))
-> > +#define airoha_phy_pma0_set_bits(pcie_phy, reg, mask)				\
-> > +	airoha_phy_set_bits((pcie_phy)->pma0 + (reg), (mask))
-> > +#define airoha_phy_pma1_set_bits(pcie_phy, reg, mask)				\
-> > +	airoha_phy_set_bits((pcie_phy)->pma1 + (reg), (mask))
-> > +#define airoha_phy_pma0_update_field(pcie_phy, reg, mask, val)			\
-> > +	airoha_phy_update_field((pcie_phy)->pma0 + (reg), (mask), (val))
-> > +#define airoha_phy_pma1_update_field(pcie_phy, reg, mask, val)			\
-> > +	airoha_phy_update_field((pcie_phy)->pma1 + (reg), (mask), (val))
-> > +
-> > +static void
-> > +airoha_phy_init_lane0_rx_fw_pre_calib(struct airoha_pcie_phy *pcie_phy,
-> > +				      int gen)
-> > +{
-> > +	u32 fl_out_target =3D gen =3D=3D 3 ? 41600 : 41941;
-> > +	u32 lock_cyclecnt =3D gen =3D=3D 3 ? 26000 : 32767;
-> > +	u32 pr_idac, val, cdr_pr_idac_tmp =3D 0;
-> > +	int i;
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_SS_LCPLL_PWCTL_SETTING_1,
-> > +				 PCIE_LCPLL_MAN_PWDB);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET2,
-> > +				     PCIE_LOCK_TARGET_BEG,
-> > +				     fl_out_target - 100);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET2,
-> > +				     PCIE_LOCK_TARGET_END,
-> > +				     fl_out_target + 100);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET1,
-> > +				     PCIE_PLL_FT_LOCK_CYCLECNT, lock_cyclecnt);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +				     PCIE_LOCK_LOCKTH, 0x3);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET3,
-> > +				     PCIE_UNLOCK_TARGET_BEG,
-> > +				     fl_out_target - 100);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET3,
-> > +				     PCIE_UNLOCK_TARGET_END,
-> > +				     fl_out_target + 100);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET1,
-> > +				     PCIE_PLL_FT_UNLOCK_CYCLECNT,
-> > +				     lock_cyclecnt);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +				     PCIE_UNLOCK_LOCKTH, 0x3);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CDR0_PR_INJ_MODE,
-> > +				   CSR_2L_PXP_CDR0_INJ_FORCE_OFF);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_R_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				 PCIE_FORCE_DA_PXP_CDR_PR_LPF_R_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_C_EN);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				   PCIE_FORCE_DA_PXP_CDR_PR_LPF_C_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_IDAC);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_PWDB);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				   PCIE_FORCE_DA_PXP_CDR_PR_PWDB);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				 PCIE_FORCE_DA_PXP_CDR_PR_PWDB);
-> > +
-> > +	for (i =3D 0; i < 7; i++) {
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +				REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				PCIE_FORCE_DA_PXP_CDR_PR_IDAC, i << 8);
-> > +		airoha_phy_pma0_clear_bits(pcie_phy,
-> > +					   REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					   PCIE_FREQLOCK_DET_EN);
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					     PCIE_FREQLOCK_DET_EN, 0x3);
-> > +
-> > +		usleep_range(10000, 15000);
-> > +
-> > +		val =3D FIELD_GET(PCIE_RO_FL_OUT,
-> > +				readl(pcie_phy->pma0 +
-> > +				      REG_PCIE_PMA_RO_RX_FREQDET));
-> > +		if (val > fl_out_target)
-> > +			cdr_pr_idac_tmp =3D i << 8;
-> > +	}
-> > +
-> > +	for (i =3D 7; i >=3D 0; i--) {
-> > +		pr_idac =3D cdr_pr_idac_tmp | (0x1 << i);
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +				REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				PCIE_FORCE_DA_PXP_CDR_PR_IDAC, pr_idac);
-> > +		airoha_phy_pma0_clear_bits(pcie_phy,
-> > +					   REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					   PCIE_FREQLOCK_DET_EN);
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					     PCIE_FREQLOCK_DET_EN, 0x3);
-> > +
-> > +		usleep_range(10000, 15000);
-> > +
-> > +		val =3D FIELD_GET(PCIE_RO_FL_OUT,
-> > +				readl(pcie_phy->pma0 +
-> > +				      REG_PCIE_PMA_RO_RX_FREQDET));
-> > +		if (val < fl_out_target)
-> > +			pr_idac &=3D ~(0x1 << i);
-> > +
-> > +		cdr_pr_idac_tmp =3D pr_idac;
-> > +	}
-> > +
-> > +	airoha_phy_pma0_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				     PCIE_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				     cdr_pr_idac_tmp);
-> > +
-> > +	for (i =3D 0; i < 10; i++) {
-> > +		airoha_phy_pma0_clear_bits(pcie_phy,
-> > +					   REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					   PCIE_FREQLOCK_DET_EN);
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					     PCIE_FREQLOCK_DET_EN, 0x3);
-> > +
-> > +		usleep_range(10000, 15000);
-> > +	}
-> > +
-> > +	/* turn off force mode and update band values */
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR0_PR_INJ_MODE,
-> > +				     CSR_2L_PXP_CDR0_INJ_FORCE_OFF);
-> > +
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_R_EN);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_C_EN);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_PWDB);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_IDAC);
-> > +	if (gen =3D=3D 3) {
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_DIG_RESERVE_14,
-> > +					     PCIE_FLL_IDAC_PCIEG3,
-> > +					     cdr_pr_idac_tmp);
-> > +	} else {
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_DIG_RESERVE_13,
-> > +					     PCIE_FLL_IDAC_PCIEG1,
-> > +					     cdr_pr_idac_tmp);
-> > +		airoha_phy_pma0_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_DIG_RESERVE_13,
-> > +					     PCIE_FLL_IDAC_PCIEG2,
-> > +					     cdr_pr_idac_tmp);
-> > +	}
-> > +}
-> > +
-> > +static void
-> > +airoha_phy_init_lane1_rx_fw_pre_calib(struct airoha_pcie_phy *pcie_phy,
-> > +				      int gen)
-> > +{
-> > +	u32 fl_out_target =3D gen =3D=3D 3 ? 41600 : 41941;
-> > +	u32 lock_cyclecnt =3D gen =3D=3D 3 ? 26000 : 32767;
-> > +	u32 pr_idac, val, cdr_pr_idac_tmp =3D 0;
-> > +	int i;
-> > +
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_SS_LCPLL_PWCTL_SETTING_1,
-> > +				 PCIE_LCPLL_MAN_PWDB);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET2,
-> > +				     PCIE_LOCK_TARGET_BEG,
-> > +				     fl_out_target - 100);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET2,
-> > +				     PCIE_LOCK_TARGET_END,
-> > +				     fl_out_target + 100);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET1,
-> > +				     PCIE_PLL_FT_LOCK_CYCLECNT, lock_cyclecnt);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +				     PCIE_LOCK_LOCKTH, 0x3);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET3,
-> > +				     PCIE_UNLOCK_TARGET_BEG,
-> > +				     fl_out_target - 100);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET3,
-> > +				     PCIE_UNLOCK_TARGET_END,
-> > +				     fl_out_target + 100);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET1,
-> > +				     PCIE_PLL_FT_UNLOCK_CYCLECNT,
-> > +				     lock_cyclecnt);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +				     PCIE_UNLOCK_LOCKTH, 0x3);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CDR1_PR_INJ_MODE,
-> > +				   CSR_2L_PXP_CDR1_INJ_FORCE_OFF);
-> > +
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_R_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				 PCIE_FORCE_DA_PXP_CDR_PR_LPF_R_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_C_EN);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				   PCIE_FORCE_DA_PXP_CDR_PR_LPF_C_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_IDAC);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PR_PWDB);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				   PCIE_FORCE_DA_PXP_CDR_PR_PWDB);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				 PCIE_FORCE_DA_PXP_CDR_PR_PWDB);
-> > +
-> > +	for (i =3D 0; i < 7; i++) {
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +				REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				PCIE_FORCE_DA_PXP_CDR_PR_IDAC, i << 8);
-> > +		airoha_phy_pma1_clear_bits(pcie_phy,
-> > +					   REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					   PCIE_FREQLOCK_DET_EN);
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					     PCIE_FREQLOCK_DET_EN, 0x3);
-> > +
-> > +		usleep_range(10000, 15000);
-> > +
-> > +		val =3D FIELD_GET(PCIE_RO_FL_OUT,
-> > +				readl(pcie_phy->pma1 +
-> > +				      REG_PCIE_PMA_RO_RX_FREQDET));
-> > +		if (val > fl_out_target)
-> > +			cdr_pr_idac_tmp =3D i << 8;
-> > +	}
-> > +
-> > +	for (i =3D 7; i >=3D 0; i--) {
-> > +		pr_idac =3D cdr_pr_idac_tmp | (0x1 << i);
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +				REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				PCIE_FORCE_DA_PXP_CDR_PR_IDAC, pr_idac);
-> > +		airoha_phy_pma1_clear_bits(pcie_phy,
-> > +					   REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					   PCIE_FREQLOCK_DET_EN);
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					     PCIE_FREQLOCK_DET_EN, 0x3);
-> > +
-> > +		usleep_range(10000, 15000);
-> > +
-> > +		val =3D FIELD_GET(PCIE_RO_FL_OUT,
-> > +				readl(pcie_phy->pma1 +
-> > +				      REG_PCIE_PMA_RO_RX_FREQDET));
-> > +		if (val < fl_out_target)
-> > +			pr_idac &=3D ~(0x1 << i);
-> > +
-> > +		cdr_pr_idac_tmp =3D pr_idac;
-> > +	}
-> > +
-> > +	airoha_phy_pma1_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				     PCIE_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				     cdr_pr_idac_tmp);
-> > +
-> > +	for (i =3D 0; i < 10; i++) {
-> > +		airoha_phy_pma1_clear_bits(pcie_phy,
-> > +					   REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					   PCIE_FREQLOCK_DET_EN);
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_SS_RX_FREQ_DET4,
-> > +					     PCIE_FREQLOCK_DET_EN, 0x3);
-> > +
-> > +		usleep_range(10000, 15000);
-> > +	}
-> > +
-> > +	/* turn off force mode and update band values */
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR1_PR_INJ_MODE,
-> > +				     CSR_2L_PXP_CDR1_INJ_FORCE_OFF);
-> > +
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_R_EN);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_LPF_C,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_LPF_C_EN);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_PIEYE_PWDB,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_PWDB);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				   PCIE_FORCE_SEL_DA_PXP_CDR_PR_IDAC);
-> > +	if (gen =3D=3D 3) {
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_DIG_RESERVE_14,
-> > +					     PCIE_FLL_IDAC_PCIEG3,
-> > +					     cdr_pr_idac_tmp);
-> > +	} else {
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_DIG_RESERVE_13,
-> > +					     PCIE_FLL_IDAC_PCIEG1,
-> > +					     cdr_pr_idac_tmp);
-> > +		airoha_phy_pma1_update_field(pcie_phy,
-> > +					     REG_PCIE_PMA_DIG_RESERVE_13,
-> > +					     PCIE_FLL_IDAC_PCIEG2,
-> > +					     cdr_pr_idac_tmp);
-> > +	}
-> > +}
-> > +
-> > +static void airoha_pcie_phy_init_default(struct airoha_pcie_phy *pcie_=
-phy)
-> > +{
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CMN,
-> > +				       CSR_2L_PXP_CMN_TRIM_MASK, 0x10);
-> > +	writel(0xcccbcccb, pcie_phy->pma0 + REG_PCIE_PMA_DIG_RESERVE_21);
-> > +	writel(0xcccb, pcie_phy->pma0 + REG_PCIE_PMA_DIG_RESERVE_22);
-> > +	writel(0xcccbcccb, pcie_phy->pma1 + REG_PCIE_PMA_DIG_RESERVE_21);
-> > +	writel(0xcccb, pcie_phy->pma1 + REG_PCIE_PMA_DIG_RESERVE_22);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CMN,
-> > +				   CSR_2L_PXP_CMN_LANE_EN);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_init_clk_out(struct airoha_pcie_phy *pcie_=
-phy)
-> > +{
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_TXPLL_POSTDIV_D256,
-> > +				       CSR_2L_PXP_CLKTX0_AMP, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_CLKTX0_FORCE_OUT1,
-> > +				       CSR_2L_PXP_CLKTX1_AMP, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_TXPLL_POSTDIV_D256,
-> > +				       CSR_2L_PXP_CLKTX0_OFFSET, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CLKTX1_OFFSET,
-> > +				       CSR_2L_PXP_CLKTX1_OFFSET, 0x2);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CLKTX0_FORCE_OUT1,
-> > +				     CSR_2L_PXP_CLKTX0_HZ);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CLKTX1_OFFSET,
-> > +				     CSR_2L_PXP_CLKTX1_HZ);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_CLKTX0_FORCE_OUT1,
-> > +				       CSR_2L_PXP_CLKTX0_IMP_SEL, 0x12);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CLKTX1_IMP_SEL,
-> > +				       CSR_2L_PXP_CLKTX1_IMP_SEL, 0x12);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_POSTDIV_D256,
-> > +				     CSR_2L_PXP_CLKTX0_SR);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CLKTX1_OFFSET,
-> > +				     CSR_2L_PXP_CLKTX1_SR);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_PLL_CMN_RESERVE0,
-> > +				       CSR_2L_PXP_PLL_RESERVE_MASK, 0xdd);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_init_csr_2l(struct airoha_pcie_phy *pcie_p=
-hy)
-> > +{
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_SW_RESET,
-> > +				 PCIE_SW_XFI_RXPCS_RST | PCIE_SW_REF_RST |
-> > +				 PCIE_SW_RX_RST);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_SW_RESET,
-> > +				 PCIE_SW_XFI_RXPCS_RST | PCIE_SW_REF_RST |
-> > +				 PCIE_SW_RX_RST);
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_TX_RESET,
-> > +				 PCIE_TX_TOP_RST | REG_PCIE_PMA_TX_RESET);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_TX_RESET,
-> > +				 PCIE_TX_TOP_RST | REG_PCIE_PMA_TX_RESET);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_init_rx(struct airoha_pcie_phy *pcie_phy)
-> > +{
-> > +	writel(0x2a00090b, pcie_phy->pma0 + REG_PCIE_PMA_DIG_RESERVE_17);
-> > +	writel(0x2a00090b, pcie_phy->pma1 + REG_PCIE_PMA_DIG_RESERVE_17);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CDR0_PR_MONPI,
-> > +				   CSR_2L_PXP_CDR0_PR_XFICK_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CDR1_PR_MONPI,
-> > +				   CSR_2L_PXP_CDR1_PR_XFICK_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy,
-> > +				     REG_CSR_2L_CDR0_PD_PICAL_CKD8_INV,
-> > +				     CSR_2L_PXP_CDR0_PD_EDGE_DISABLE);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy,
-> > +				     REG_CSR_2L_CDR1_PD_PICAL_CKD8_INV,
-> > +				     CSR_2L_PXP_CDR1_PD_EDGE_DISABLE);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_PHYCK_DIV,
-> > +				       CSR_2L_PXP_RX0_PHYCK_SEL, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_PHYCK_DIV,
-> > +				       CSR_2L_PXP_RX1_PHYCK_SEL, 0x1);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_init_jcpll(struct airoha_pcie_phy *pcie_ph=
-y)
-> > +{
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				   PCIE_FORCE_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				   PCIE_FORCE_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_TCL_VTP_EN,
-> > +				       CSR_2L_PXP_JCPLL_SPARE_LOW, 0x20);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_RST_DLY,
-> > +				   CSR_2L_PXP_JCPLL_RST);
-> > +	writel(0x0, pcie_phy->csr_2l + REG_CSR_2L_JCPLL_SSC_DELTA1);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC_PERIOD,
-> > +				     CSR_2L_PXP_JCPLL_SSC_PERIOD);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC,
-> > +				     CSR_2L_PXP_JCPLL_SSC_PHASE_INI);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC,
-> > +				     CSR_2L_PXP_JCPLL_SSC_TRI_EN);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BR,
-> > +				       CSR_2L_PXP_JCPLL_LPF_BR, 0xa);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BR,
-> > +				       CSR_2L_PXP_JCPLL_LPF_BP, 0xc);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BR,
-> > +				       CSR_2L_PXP_JCPLL_LPF_BC, 0x1f);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BWC,
-> > +				       CSR_2L_PXP_JCPLL_LPF_BWC, 0x1e);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BR,
-> > +				       CSR_2L_PXP_JCPLL_LPF_BWR, 0xa);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_JCPLL_MMD_PREDIV_MODE,
-> > +				       CSR_2L_PXP_JCPLL_MMD_PREDIV_MODE,
-> > +				       0x1);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, CSR_2L_PXP_JCPLL_MONCK,
-> > +				     CSR_2L_PXP_JCPLL_REFIN_DIV);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_VO=
-S,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_SDM_PCW);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_VO=
-S,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_SDM_PCW);
-> > +	airoha_phy_pma0_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_JCPLL_SDM_PCW,
-> > +				     PCIE_FORCE_DA_PXP_JCPLL_SDM_PCW,
-> > +				     0x50000000);
-> > +	airoha_phy_pma1_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_JCPLL_SDM_PCW,
-> > +				     PCIE_FORCE_DA_PXP_JCPLL_SDM_PCW,
-> > +				     0x50000000);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy,
-> > +				   REG_CSR_2L_JCPLL_MMD_PREDIV_MODE,
-> > +				   CSR_2L_PXP_JCPLL_POSTDIV_D5);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy,
-> > +				   REG_CSR_2L_JCPLL_MMD_PREDIV_MODE,
-> > +				   CSR_2L_PXP_JCPLL_POSTDIV_D2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_RST_DLY,
-> > +				       CSR_2L_PXP_JCPLL_RST_DLY, 0x4);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_RST_DLY,
-> > +				     CSR_2L_PXP_JCPLL_SDM_DI_LS);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_TCL_KBAND_VRE=
-F,
-> > +				     CSR_2L_PXP_JCPLL_VCO_KBAND_MEAS_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_IB_EXT,
-> > +				     CSR_2L_PXP_JCPLL_CHP_IOFST);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_IB_EXT,
-> > +				       CSR_2L_PXP_JCPLL_CHP_IBIAS, 0xc);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_JCPLL_MMD_PREDIV_MODE,
-> > +				       CSR_2L_PXP_JCPLL_MMD_PREDIV_MODE,
-> > +				       0x1);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_VCODIV,
-> > +				   CSR_2L_PXP_JCPLL_VCO_HALFLSB_EN);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_VCODIV,
-> > +				       CSR_2L_PXP_JCPLL_VCO_CFIX, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_VCODIV,
-> > +				       CSR_2L_PXP_JCPLL_VCO_SCAPWR, 0x4);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_IB_EXT,
-> > +				     REG_CSR_2L_JCPLL_LPF_SHCK_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_KBAND_KFC,
-> > +				   CSR_2L_PXP_JCPLL_POSTDIV_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_KBAND_KFC,
-> > +				     CSR_2L_PXP_JCPLL_KBAND_KFC);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_KBAND_KFC,
-> > +				       CSR_2L_PXP_JCPLL_KBAND_KF, 0x3);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_KBAND_KFC,
-> > +				     CSR_2L_PXP_JCPLL_KBAND_KS);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BWC,
-> > +				       CSR_2L_PXP_JCPLL_KBAND_DIV, 0x1);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_SCAN_MODE,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_KBAND_LOAD_EN);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy, REG_PCIE_PMA_SCAN_MODE,
-> > +				   PCIE_FORCE_DA_PXP_JCPLL_KBAND_LOAD_EN);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_LPF_BWC,
-> > +				       CSR_2L_PXP_JCPLL_KBAND_CODE, 0xe4);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_SDM_HREN,
-> > +				   CSR_2L_PXP_JCPLL_TCL_AMP_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_TCL_CMP,
-> > +				   CSR_2L_PXP_JCPLL_TCL_LPF_EN);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_JCPLL_TCL_KBAND_VREF,
-> > +				       CSR_2L_PXP_JCPLL_TCL_KBAND_VREF, 0xf);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_SDM_HREN,
-> > +				       CSR_2L_PXP_JCPLL_TCL_AMP_GAIN, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_SDM_HREN,
-> > +				       CSR_2L_PXP_JCPLL_TCL_AMP_VREF, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_TCL_CMP,
-> > +				       CSR_2L_PXP_JCPLL_TCL_LPF_BW, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_VCO_TCLVAR,
-> > +				       CSR_2L_PXP_JCPLL_VCO_TCLVAR, 0x3);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_CKOUT_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_JCPLL_CKOUT_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_CKOUT_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_JCPLL_CKOUT_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_JCPLL_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_PXP_JCPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_JCPLL_EN);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_txpll(struct airoha_pcie_phy *pcie_phy)
-> > +{
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_EN);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				   PCIE_FORCE_DA_PXP_TXPLL_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_EN);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				   PCIE_FORCE_DA_PXP_TXPLL_EN);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TXPLL_REFIN_DIV,
-> > +				   CSR_2L_PXP_TXPLL_PLL_RSTB);
-> > +	writel(0x0, pcie_phy->csr_2l + REG_CSR_2L_TXPLL_SSC_DELTA1);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_SSC_PERIOD,
-> > +				     CSR_2L_PXP_txpll_SSC_PERIOD);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_CHP_IOFST,
-> > +				       CSR_2L_PXP_TXPLL_CHP_IOFST, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_750M_SYS_CK,
-> > +				       CSR_2L_PXP_TXPLL_CHP_IBIAS, 0x2d);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_REFIN_DIV,
-> > +				     CSR_2L_PXP_TXPLL_REFIN_DIV);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_TCL_LPF_BW,
-> > +				       CSR_2L_PXP_TXPLL_VCO_CFIX, 0x3);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_I=
-DAC,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_SDM_PCW);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_I=
-DAC,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_SDM_PCW);
-> > +	airoha_phy_pma0_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_SDM_PCW,
-> > +				     PCIE_FORCE_DA_PXP_TXPLL_SDM_PCW,
-> > +				     0xc800000);
-> > +	airoha_phy_pma1_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_SDM_PCW,
-> > +				     PCIE_FORCE_DA_PXP_TXPLL_SDM_PCW,
-> > +				     0xc800000);
-> > +
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_SDM_DI_LS,
-> > +				     CSR_2L_PXP_TXPLL_SDM_IFM);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_SSC,
-> > +				     CSR_2L_PXP_TXPLL_SSC_PHASE_INI);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_REFIN_DIV,
-> > +				       CSR_2L_PXP_TXPLL_RST_DLY, 0x4);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_SDM_DI_LS,
-> > +				     CSR_2L_PXP_TXPLL_SDM_DI_LS);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_SDM_DI_LS,
-> > +				       CSR_2L_PXP_TXPLL_SDM_ORD, 0x3);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_TCL_KBAND_VRE=
-F,
-> > +				     CSR_2L_PXP_TXPLL_VCO_KBAND_MEAS_EN);
-> > +	writel(0x0, pcie_phy->csr_2l + REG_CSR_2L_TXPLL_SSC_DELTA1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_CHP_IOFST,
-> > +				       CSR_2L_PXP_TXPLL_LPF_BP, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_CHP_IOFST,
-> > +				       CSR_2L_PXP_TXPLL_LPF_BC, 0x18);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_CHP_IOFST,
-> > +				       CSR_2L_PXP_TXPLL_LPF_BR, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_CHP_IOFST,
-> > +				       CSR_2L_PXP_TXPLL_CHP_IOFST, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_750M_SYS_CK,
-> > +				       CSR_2L_PXP_TXPLL_CHP_IBIAS, 0x2d);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_TCL_VTP,
-> > +				       CSR_2L_PXP_TXPLL_SPARE_L, 0x1);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_LPF_BWR,
-> > +				     CSR_2L_PXP_TXPLL_LPF_BWC);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_POSTDIV,
-> > +				     CSR_2L_PXP_TXPLL_MMD_PREDIV_MODE);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_REFIN_DIV,
-> > +				     CSR_2L_PXP_TXPLL_REFIN_DIV);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TXPLL_TCL_LPF_BW,
-> > +				   CSR_2L_PXP_TXPLL_VCO_HALFLSB_EN);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_VCO_SCAPWR,
-> > +				       CSR_2L_PXP_TXPLL_VCO_SCAPWR, 0x7);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_TCL_LPF_BW,
-> > +				       CSR_2L_PXP_TXPLL_VCO_CFIX, 0x3);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_SDM_PCW);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PR_IDAC,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_SDM_PCW);
-> > +
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_SSC,
-> > +				     CSR_2L_PXP_TXPLL_SSC_PHASE_INI);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_LPF_BWR,
-> > +				     CSR_2L_PXP_TXPLL_LPF_BWR);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TXPLL_PHY_CK2,
-> > +				   CSR_2L_PXP_TXPLL_REFIN_INTERNAL);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_TCL_KBAND_VRE=
-F,
-> > +				     CSR_2L_PXP_TXPLL_VCO_KBAND_MEAS_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_VTP,
-> > +				     CSR_2L_PXP_TXPLL_VTP_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_POSTDIV,
-> > +				     CSR_2L_PXP_TXPLL_PHY_CK1_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TXPLL_PHY_CK2,
-> > +				   CSR_2L_PXP_TXPLL_REFIN_INTERNAL);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_SSC,
-> > +				     CSR_2L_PXP_TXPLL_SSC_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_750M_SYS_CK,
-> > +				     CSR_2L_PXP_TXPLL_LPF_SHCK_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_POSTDIV,
-> > +				     CSR_2L_PXP_TXPLL_POSTDIV_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TXPLL_KBAND_DIV,
-> > +				     CSR_2L_PXP_TXPLL_KBAND_KFC);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_KBAND_DIV,
-> > +				       CSR_2L_PXP_TXPLL_KBAND_KF, 0x3);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_KBAND_DIV,
-> > +				       CSR_2L_PXP_txpll_KBAND_KS, 0x1);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_KBAND_DIV,
-> > +				       CSR_2L_PXP_TXPLL_KBAND_DIV, 0x4);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_LPF_BWR,
-> > +				       CSR_2L_PXP_TXPLL_KBAND_CODE, 0xe4);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TXPLL_SDM_OUT,
-> > +				   CSR_2L_PXP_TXPLL_TCL_AMP_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TXPLL_TCL_AMP_VREF,
-> > +				   CSR_2L_PXP_TXPLL_TCL_LPF_EN);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_TXPLL_TCL_KBAND_VREF,
-> > +				       CSR_2L_PXP_TXPLL_TCL_KBAND_VREF, 0xf);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_SDM_OUT,
-> > +				       CSR_2L_PXP_TXPLL_TCL_AMP_GAIN, 0x3);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_TXPLL_TCL_AMP_VREF,
-> > +				       CSR_2L_PXP_TXPLL_TCL_AMP_VREF, 0xb);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_TXPLL_TCL_LPF_BW,
-> > +				       CSR_2L_PXP_TXPLL_TCL_LPF_BW, 0x3);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_CKOUT_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_TXPLL_CKOUT_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_CKOUT_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_TXPLL_CKOUT_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_EN);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_TXPLL_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_SEL_DA_PXP_TXPLL_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_TXPLL_CKOUT,
-> > +				 PCIE_FORCE_DA_PXP_TXPLL_EN);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_init_ssc_jcpll(struct airoha_pcie_phy *pci=
-e_phy)
-> > +{
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_SSC_DELTA1,
-> > +				       CSR_2L_PXP_JCPLL_SSC_DELTA1, 0x106);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_SSC_DELTA1,
-> > +				       CSR_2L_PXP_JCPLL_SSC_DELTA, 0x106);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_JCPLL_SSC_PERIOD,
-> > +				       CSR_2L_PXP_JCPLL_SSC_PERIOD, 0x31b);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC,
-> > +				   CSR_2L_PXP_JCPLL_SSC_PHASE_INI);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC,
-> > +				   CSR_2L_PXP_JCPLL_SSC_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_SDM_IFM,
-> > +				   CSR_2L_PXP_JCPLL_SDM_IFM);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_SDM_HREN,
-> > +				   REG_CSR_2L_JCPLL_SDM_HREN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_RST_DLY,
-> > +				     CSR_2L_PXP_JCPLL_SDM_DI_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC,
-> > +				   CSR_2L_PXP_JCPLL_SSC_TRI_EN);
-> > +}
-> > +
-> > +static void
-> > +airoha_pcie_phy_set_rxlan0_signal_detect(struct airoha_pcie_phy *pcie_=
-phy)
-> > +{
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CDR0_PR_COR_HBW,
-> > +				   CSR_2L_PXP_CDR0_PR_LDO_FORCE_ON);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_19,
-> > +				     PCIE_PCP_RX_REV0_PCIE_GEN1, 0x18b0);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_20,
-> > +				     PCIE_PCP_RX_REV0_PCIE_GEN2, 0x18b0);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_20,
-> > +				     PCIE_PCP_RX_REV0_PCIE_GEN3, 0x1030);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_SIGDET_DCTEST,
-> > +				       CSR_2L_PXP_RX0_SIGDET_PEAK, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_SIGDET_VTH_SE=
-L,
-> > +				       CSR_2L_PXP_RX0_SIGDET_VTH_SEL, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_REV0,
-> > +				       CSR_2L_PXP_VOS_PNINV, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_SIGDET_DCTEST,
-> > +				       CSR_2L_PXP_RX0_SIGDET_LPF_CTRL, 0x1);
-> > +
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_CAL2,
-> > +				     PCIE_CAL_OUT_OS, 0x0);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_PXP_RX0_FE_VB_EQ2,
-> > +				   CSR_2L_PXP_RX0_FE_VCM_GEN_PWDB);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_GAIN_CTRL,
-> > +				 PCIE_FORCE_SEL_DA_PXP_RX_FE_PWDB);
-> > +	airoha_phy_pma0_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_GAIN_CTRL,
-> > +				     PCIE_FORCE_DA_PXP_RX_FE_GAIN_CTRL, 0x3);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_RX_FORCE_MODE0,
-> > +				     PCIE_FORCE_DA_XPON_RX_FE_GAIN_CTRL, 0x1);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_SIGDET0,
-> > +				     PCIE_SIGDET_WIN_NONVLD_TIMES, 0x3);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy, REG_PCIE_PMA_SEQUENCE_DISB_CTRL1,
-> > +				   PCIE_DISB_RX_SDCAL_EN);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_CTRL_SEQUENCE_FORCE_CTRL1,
-> > +				 PCIE_FORCE_RX_SDCAL_EN);
-> > +	usleep_range(150, 200);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_CTRL_SEQUENCE_FORCE_CTRL1,
-> > +				   PCIE_FORCE_RX_SDCAL_EN);
-> > +}
-> > +
-> > +static void
-> > +airoha_pcie_phy_set_rxlan1_signal_detect(struct airoha_pcie_phy *pcie_=
-phy)
-> > +{
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_CDR1_PR_COR_HBW,
-> > +				   CSR_2L_PXP_CDR1_PR_LDO_FORCE_ON);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_19,
-> > +				     PCIE_PCP_RX_REV0_PCIE_GEN1, 0x18b0);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_20,
-> > +				     PCIE_PCP_RX_REV0_PCIE_GEN2, 0x18b0);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_20,
-> > +				     PCIE_PCP_RX_REV0_PCIE_GEN3, 0x1030);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_SIGDET_NOVTH,
-> > +				       CSR_2L_PXP_RX1_SIGDET_PEAK, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_SIGDET_NOVTH,
-> > +				       CSR_2L_PXP_RX1_SIGDET_VTH_SEL, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_REV0,
-> > +				       CSR_2L_PXP_VOS_PNINV, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_DAC_RANGE_EYE,
-> > +				       CSR_2L_PXP_RX1_SIGDET_LPF_CTRL, 0x1);
-> > +
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_CAL2,
-> > +				     PCIE_CAL_OUT_OS, 0x0);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_RX1_FE_VB_EQ1,
-> > +				   CSR_2L_PXP_RX1_FE_VCM_GEN_PWDB);
-> > +
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_GAIN_CTRL,
-> > +				 PCIE_FORCE_SEL_DA_PXP_RX_FE_PWDB);
-> > +	airoha_phy_pma1_update_field(pcie_phy,
-> > +				     REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_GAIN_CTRL,
-> > +				     PCIE_FORCE_DA_PXP_RX_FE_GAIN_CTRL, 0x3);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_RX_FORCE_MODE0,
-> > +				     PCIE_FORCE_DA_XPON_RX_FE_GAIN_CTRL, 0x1);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_SS_RX_SIGDET0,
-> > +				     PCIE_SIGDET_WIN_NONVLD_TIMES, 0x3);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy, REG_PCIE_PMA_SEQUENCE_DISB_CTRL1,
-> > +				   PCIE_DISB_RX_SDCAL_EN);
-> > +
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_CTRL_SEQUENCE_FORCE_CTRL1,
-> > +				 PCIE_FORCE_RX_SDCAL_EN);
-> > +	usleep_range(150, 200);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy,
-> > +				   REG_PCIE_PMA_CTRL_SEQUENCE_FORCE_CTRL1,
-> > +				   PCIE_FORCE_RX_SDCAL_EN);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_set_rxflow(struct airoha_pcie_phy *pcie_ph=
-y)
-> > +{
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_RX_SCAN_RST,
-> > +				 PCIE_FORCE_DA_PXP_RX_SIGDET_PWDB |
-> > +				 PCIE_FORCE_SEL_DA_PXP_RX_SIGDET_PWDB);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_RX_SCAN_RST,
-> > +				 PCIE_FORCE_DA_PXP_RX_SIGDET_PWDB |
-> > +				 PCIE_FORCE_SEL_DA_PXP_RX_SIGDET_PWDB);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PD_PWDB,
-> > +				 PCIE_FORCE_DA_PXP_CDR_PD_PWDB |
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PD_PWDB);
-> > +	airoha_phy_pma0_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_PWDB,
-> > +				 PCIE_FORCE_DA_PXP_RX_FE_PWDB |
-> > +				 PCIE_FORCE_SEL_DA_PXP_RX_FE_PWDB);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_CDR_PD_PWDB,
-> > +				 PCIE_FORCE_DA_PXP_CDR_PD_PWDB |
-> > +				 PCIE_FORCE_SEL_DA_PXP_CDR_PD_PWDB);
-> > +	airoha_phy_pma1_set_bits(pcie_phy,
-> > +				 REG_PCIE_PMA_FORCE_DA_PXP_RX_FE_PWDB,
-> > +				 PCIE_FORCE_DA_PXP_RX_FE_PWDB |
-> > +				 PCIE_FORCE_SEL_DA_PXP_RX_FE_PWDB);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_RX0_PHYCK_DIV,
-> > +				   CSR_2L_PXP_RX0_PHYCK_RSTB |
-> > +				   CSR_2L_PXP_RX0_TDC_CK_SEL);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_RX1_PHYCK_DIV,
-> > +				   CSR_2L_PXP_RX1_PHYCK_RSTB |
-> > +				   CSR_2L_PXP_RX1_TDC_CK_SEL);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_SW_RESET,
-> > +				 PCIE_SW_RX_FIFO_RST | PCIE_SW_TX_RST |
-> > +				 PCIE_SW_PMA_RST | PCIE_SW_ALLPCS_RST |
-> > +				 PCIE_SW_TX_FIFO_RST);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_SW_RESET,
-> > +				 PCIE_SW_RX_FIFO_RST | PCIE_SW_TX_RST |
-> > +				 PCIE_SW_PMA_RST | PCIE_SW_ALLPCS_RST |
-> > +				 PCIE_SW_TX_FIFO_RST);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_PXP_RX0_FE_VB_EQ2,
-> > +				   CSR_2L_PXP_RX0_FE_VB_EQ2_EN |
-> > +				   CSR_2L_PXP_RX0_FE_VB_EQ3_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_RX0_SIGDET_VTH_SEL,
-> > +				   CSR_2L_PXP_RX0_FE_VB_EQ1_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_RX1_FE_VB_EQ1,
-> > +				   CSR_2L_PXP_RX1_FE_VB_EQ1_EN |
-> > +				   CSR_2L_PXP_RX1_FE_VB_EQ2_EN |
-> > +				   CSR_2L_PXP_RX1_FE_VB_EQ3_EN);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_REV0,
-> > +				       CSR_2L_PXP_FE_GAIN_NORMAL_MODE, 0x4);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX0_REV0,
-> > +				       CSR_2L_PXP_FE_GAIN_TRAIN_MODE, 0x4);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_REV0,
-> > +				       CSR_2L_PXP_FE_GAIN_NORMAL_MODE, 0x4);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_REV0,
-> > +				       CSR_2L_PXP_FE_GAIN_TRAIN_MODE, 0x4);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_set_pr(struct airoha_pcie_phy *pcie_phy)
-> > +{
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR0_PR_VREG_IBAN=
-D,
-> > +				       CSR_2L_PXP_CDR0_PR_VREG_IBAND, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR0_PR_VREG_IBAN=
-D,
-> > +				       CSR_2L_PXP_CDR0_PR_VREG_CKBUF, 0x5);
-> > +
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR0_PR_CKREF_DIV,
-> > +				     CSR_2L_PXP_CDR0_PR_CKREF_DIV);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR0_PR_COR_HBW,
-> > +				     CSR_2L_PXP_CDR0_PR_CKREF_DIV1);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_CDR1_PR_VREG_IBAND_VAL,
-> > +				       CSR_2L_PXP_CDR1_PR_VREG_IBAND, 0x5);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_CDR1_PR_VREG_IBAND_VAL,
-> > +				       CSR_2L_PXP_CDR1_PR_VREG_CKBUF, 0x5);
-> > +
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR1_PR_CKREF_DIV,
-> > +				     CSR_2L_PXP_CDR1_PR_CKREF_DIV);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR1_PR_COR_HBW,
-> > +				     CSR_2L_PXP_CDR1_PR_CKREF_DIV1);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR0_LPF_RATIO,
-> > +				       CSR_2L_PXP_CDR0_LPF_TOP_LIM, 0x20000);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR1_LPF_RATIO,
-> > +				       CSR_2L_PXP_CDR1_LPF_TOP_LIM, 0x20000);
-> > +
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR0_PR_BETA_DAC,
-> > +				       CSR_2L_PXP_CDR0_PR_BETA_SEL, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR1_PR_BETA_DAC,
-> > +				       CSR_2L_PXP_CDR1_PR_BETA_SEL, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR0_PR_BETA_DAC,
-> > +				       CSR_2L_PXP_CDR0_PR_KBAND_DIV, 0x4);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR1_PR_BETA_DAC,
-> > +				       CSR_2L_PXP_CDR1_PR_KBAND_DIV, 0x4);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_set_txflow(struct airoha_pcie_phy *pcie_ph=
-y)
-> > +{
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TX0_CKLDO,
-> > +				   CSR_2L_PXP_TX0_CKLDO_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TX1_CKLDO,
-> > +				   CSR_2L_PXP_TX1_CKLDO_EN);
-> > +
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TX0_CKLDO,
-> > +				   CSR_2L_PXP_TX0_DMEDGEGEN_EN);
-> > +	airoha_phy_csr_2l_set_bits(pcie_phy, REG_CSR_2L_TX1_CKLDO,
-> > +				   CSR_2L_PXP_TX1_DMEDGEGEN_EN);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_TX1_MULTLANE,
-> > +				     CSR_2L_PXP_TX1_MULTLANE_EN);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_set_rx_mode(struct airoha_pcie_phy *pcie_p=
-hy)
-> > +{
-> > +	writel(0x804000, pcie_phy->pma0 + REG_PCIE_PMA_DIG_RESERVE_27);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_18,
-> > +				     PCIE_PXP_RX_VTH_SEL_PCIE_G1, 0x5);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_18,
-> > +				     PCIE_PXP_RX_VTH_SEL_PCIE_G2, 0x5);
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_18,
-> > +				     PCIE_PXP_RX_VTH_SEL_PCIE_G3, 0x5);
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_30,
-> > +				 0x77700);
-> > +
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR0_PR_MONCK,
-> > +				     CSR_2L_PXP_CDR0_PR_MONCK_ENABLE);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR0_PR_MONCK,
-> > +				       CSR_2L_PXP_CDR0_PR_RESERVE0, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_PXP_RX0_OSCAL_CTLE1IOS,
-> > +				       CSR_2L_PXP_RX0_PR_OSCAL_VGA1IOS, 0x19);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_PXP_RX0_OSCA_VGA1VOS,
-> > +				       CSR_2L_PXP_RX0_PR_OSCAL_VGA1VOS, 0x19);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy,
-> > +				       REG_CSR_2L_PXP_RX0_OSCA_VGA1VOS,
-> > +				       CSR_2L_PXP_RX0_PR_OSCAL_VGA2IOS, 0x14);
-> > +
-> > +	writel(0x804000, pcie_phy->pma1 + REG_PCIE_PMA_DIG_RESERVE_27);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_18,
-> > +				     PCIE_PXP_RX_VTH_SEL_PCIE_G1, 0x5);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_18,
-> > +				     PCIE_PXP_RX_VTH_SEL_PCIE_G2, 0x5);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_18,
-> > +				     PCIE_PXP_RX_VTH_SEL_PCIE_G3, 0x5);
-> > +
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_30,
-> > +				 0x77700);
-> > +
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_CDR1_PR_MONCK,
-> > +				     CSR_2L_PXP_CDR1_PR_MONCK_ENABLE);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_CDR1_PR_MONCK,
-> > +				       CSR_2L_PXP_CDR1_PR_RESERVE0, 0x2);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_OSCAL_VGA1IOS,
-> > +				       CSR_2L_PXP_RX1_PR_OSCAL_VGA1IOS, 0x19);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_OSCAL_VGA1IOS,
-> > +				       CSR_2L_PXP_RX1_PR_OSCAL_VGA1VOS, 0x19);
-> > +	airoha_phy_csr_2l_update_field(pcie_phy, REG_CSR_2L_RX1_OSCAL_VGA1IOS,
-> > +				       CSR_2L_PXP_RX1_PR_OSCAL_VGA2IOS, 0x14);
-> > +}
-> > +
-> > +static void airoha_pcie_phy_load_kflow(struct airoha_pcie_phy *pcie_ph=
-y)
-> > +{
-> > +	airoha_phy_pma0_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_12,
-> > +				     PCIE_FORCE_PMA_RX_SPEED, 0xa);
-> > +	airoha_phy_pma1_update_field(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_12,
-> > +				     PCIE_FORCE_PMA_RX_SPEED, 0xa);
-> > +	airoha_phy_init_lane0_rx_fw_pre_calib(pcie_phy, 3);
-> > +	airoha_phy_init_lane1_rx_fw_pre_calib(pcie_phy, 3);
-> > +
-> > +	airoha_phy_pma0_clear_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_12,
-> > +				   PCIE_FORCE_PMA_RX_SPEED);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_12,
-> > +				   PCIE_FORCE_PMA_RX_SPEED);
-> > +	usleep_range(100, 200);
-> > +
-> > +	airoha_phy_init_lane0_rx_fw_pre_calib(pcie_phy, 2);
-> > +	airoha_phy_init_lane1_rx_fw_pre_calib(pcie_phy, 2);
-> > +}
-> > +
-> > +/**
-> > + * airoha_pcie_phy_init() - Initialize the phy
-> > + * @phy: the phy to be initialized
-> > + *
-> > + * Initialize the phy registers.
-> > + * The hardware settings will be reset during suspend, it should be
-> > + * reinitialized when the consumer calls phy_init() again on resume.
-> > + */
-> > +static int airoha_pcie_phy_init(struct phy *phy)
-> > +{
-> > +	struct airoha_pcie_phy *pcie_phy =3D phy_get_drvdata(phy);
-> > +
-> > +	/* enable load FLL-K flow */
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_14,
-> > +				 PCIE_FLL_LOAD_EN);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_14,
-> > +				 PCIE_FLL_LOAD_EN);
-> > +
-> > +	airoha_pcie_phy_init_default(pcie_phy);
-> > +	airoha_pcie_phy_init_clk_out(pcie_phy);
-> > +	airoha_pcie_phy_init_csr_2l(pcie_phy);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	airoha_pcie_phy_init_rx(pcie_phy);
-> > +	/* phase 1, no ssc for K TXPLL */
-> > +	airoha_pcie_phy_init_jcpll(pcie_phy);
-> > +
-> > +	usleep_range(500, 600);
-> > +
-> > +	/* TX PLL settings */
-> > +	airoha_pcie_phy_txpll(pcie_phy);
-> > +
-> > +	usleep_range(200, 300);
-> > +
-> > +	/* SSC JCPLL setting */
-> > +	airoha_pcie_phy_init_ssc_jcpll(pcie_phy);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	/* Rx lan0 signal detect */
-> > +	airoha_pcie_phy_set_rxlan0_signal_detect(pcie_phy);
-> > +	/* Rx lan1 signal detect */
-> > +	airoha_pcie_phy_set_rxlan1_signal_detect(pcie_phy);
-> > +	/* RX FLOW */
-> > +	airoha_pcie_phy_set_rxflow(pcie_phy);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	airoha_pcie_phy_set_pr(pcie_phy);
-> > +	/* TX FLOW */
-> > +	airoha_pcie_phy_set_txflow(pcie_phy);
-> > +
-> > +	usleep_range(100, 200);
-> > +	/* RX mode setting */
-> > +	airoha_pcie_phy_set_rx_mode(pcie_phy);
-> > +	/* Load K-Flow */
-> > +	airoha_pcie_phy_load_kflow(pcie_phy);
-> > +	airoha_phy_pma0_clear_bits(pcie_phy, REG_PCIE_PMA_SS_DA_XPON_PWDB0,
-> > +				   PCIE_DA_XPON_CDR_PR_PWDB);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy, REG_PCIE_PMA_SS_DA_XPON_PWDB0,
-> > +				   PCIE_DA_XPON_CDR_PR_PWDB);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_SS_DA_XPON_PWDB0,
-> > +				 PCIE_DA_XPON_CDR_PR_PWDB);
-> > +	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_SS_DA_XPON_PWDB0,
-> > +				 PCIE_DA_XPON_CDR_PR_PWDB);
-> > +
-> > +	usleep_range(100, 200);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int airoha_pcie_phy_exit(struct phy *phy)
-> > +{
-> > +	struct airoha_pcie_phy *pcie_phy =3D phy_get_drvdata(phy);
-> > +
-> > +	airoha_phy_pma0_clear_bits(pcie_phy, REG_PCIE_PMA_SW_RESET,
-> > +				   PCIE_PMA_SW_RST);
-> > +	airoha_phy_pma1_clear_bits(pcie_phy, REG_PCIE_PMA_SW_RESET,
-> > +				   PCIE_PMA_SW_RST);
-> > +	airoha_phy_csr_2l_clear_bits(pcie_phy, REG_CSR_2L_JCPLL_SSC,
-> > +				     CSR_2L_PXP_JCPLL_SSC_PHASE_INI |
-> > +				     CSR_2L_PXP_JCPLL_SSC_TRI_EN |
-> > +				     CSR_2L_PXP_JCPLL_SSC_EN);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct phy_ops airoha_pcie_phy_ops =3D {
-> > +	.init =3D airoha_pcie_phy_init,
-> > +	.exit =3D airoha_pcie_phy_exit,
-> > +	.owner =3D THIS_MODULE,
-> > +};
-> > +
-> > +static int airoha_pcie_phy_probe(struct platform_device *pdev)
-> > +{
-> > +	struct airoha_pcie_phy *pcie_phy;
-> > +	struct device *dev =3D &pdev->dev;
-> > +	struct phy_provider *provider;
-> > +
-> > +	pcie_phy =3D devm_kzalloc(dev, sizeof(*pcie_phy), GFP_KERNEL);
-> > +	if (!pcie_phy)
-> > +		return -ENOMEM;
-> > +
-> > +	pcie_phy->csr_2l =3D devm_platform_ioremap_resource_byname(pdev, "csr=
-_2l");
-> > +	if (IS_ERR(pcie_phy->csr_2l))
-> > +		return dev_err_probe(dev, PTR_ERR(pcie_phy->csr_2l),
-> > +				     "Failed to map phy-csr_2l base\n");
-> > +
-> > +	pcie_phy->pma0 =3D devm_platform_ioremap_resource_byname(pdev, "pma0"=
-);
-> > +	if (IS_ERR(pcie_phy->pma0))
-> > +		return dev_err_probe(dev, PTR_ERR(pcie_phy->pma0),
-> > +				     "Failed to map phy-pma0 base\n");
-> > +
-> > +	pcie_phy->pma1 =3D devm_platform_ioremap_resource_byname(pdev, "pma1"=
-);
-> > +	if (IS_ERR(pcie_phy->pma1))
-> > +		return dev_err_probe(dev, PTR_ERR(pcie_phy->pma1),
-> > +				     "Failed to map phy-pma1 base\n");
-> > +
-> > +	pcie_phy->phy =3D devm_phy_create(dev, dev->of_node, &airoha_pcie_phy=
-_ops);
-> > +	if (IS_ERR(pcie_phy->phy))
-> > +		return dev_err_probe(dev, PTR_ERR(pcie_phy->phy),
-> > +				     "Failed to create PCIe phy\n");
-> > +
-> > +	pcie_phy->dev =3D dev;
-> > +	phy_set_drvdata(pcie_phy->phy, pcie_phy);
-> > +
-> > +	provider =3D devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> > +	if (IS_ERR(provider))
-> > +		return dev_err_probe(dev, PTR_ERR(provider),
-> > +				     "PCIe phy probe failed\n");
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static const struct of_device_id airoha_pcie_phy_of_match[] =3D {
-> > +	{ .compatible =3D "airoha,en7581-pcie-phy" },
-> > +	{ /* sentinel */ }
-> > +};
-> > +MODULE_DEVICE_TABLE(of, airoha_pcie_phy_of_match);
-> > +
-> > +static struct platform_driver airoha_pcie_phy_driver =3D {
-> > +	.probe	=3D airoha_pcie_phy_probe,
-> > +	.driver	=3D {
-> > +		.name =3D "airoha-pcie-phy",
-> > +		.of_match_table =3D airoha_pcie_phy_of_match,
-> > +	},
-> > +};
-> > +module_platform_driver(airoha_pcie_phy_driver);
-> > +
-> > +MODULE_DESCRIPTION("Airoha PCIe PHY driver");
-> > +MODULE_AUTHOR("Lorenzo Bianconi <lorenzo@kernel.org>");
-> > +MODULE_LICENSE("GPL");
->=20
-
---xXqAj4fcYoThyFC+
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCZkJGSAAKCRA6cBh0uS2t
-rGlKAPsFBwYIliDdXMPn1vpG8/RMvTMwek3XOmdx6uuOe5+MywD/QT7OWX076Fdr
-M+xg71jyA4unvvLFNpTg6lvdYBOSMgo=
-=OUf/
------END PGP SIGNATURE-----
-
---xXqAj4fcYoThyFC+--
-
-
---===============5460849632526261500==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5460849632526261500==--
-
+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBDb25vciBEb29sZXkgPGNvbm9y
+QGtlcm5lbC5vcmc+DQo+IFNlbnQ6IDIwMjTE6jXUwjE0yNUgMDowMg0KPiBUbzogSG9uZ3hpbmcg
+Wmh1IDxob25neGluZy56aHVAbnhwLmNvbT4NCj4gQ2M6IHZrb3VsQGtlcm5lbC5vcmc7IGtpc2hv
+bkBrZXJuZWwub3JnOyByb2JoK2R0QGtlcm5lbC5vcmc7DQo+IGtyenlzenRvZi5rb3psb3dza2kr
+ZHRAbGluYXJvLm9yZzsgRnJhbmsgTGkgPGZyYW5rLmxpQG54cC5jb20+Ow0KPiBjb25vcitkdEBr
+ZXJuZWwub3JnOyBsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZzsgZGV2aWNldHJlZUB2Z2Vy
+Lmtlcm5lbC5vcmc7DQo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGlu
+dXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsNCj4ga2VybmVsQHBlbmd1dHJvbml4LmRlOyBpbXhA
+bGlzdHMubGludXguZGV2DQo+IFN1YmplY3Q6IFJlOiBbUEFUQ0ggdjUgMS8yXSBkdC1iaW5kaW5n
+czogcGh5OiBBZGQgaS5NWDhRIEhTSU8gU2VyRGVzIFBIWQ0KPiBiaW5kaW5nDQo+IA0KPiBPbiBN
+b24sIE1heSAxMywgMjAyNCBhdCAwOToyMjowM0FNICswODAwLCBSaWNoYXJkIFpodSB3cm90ZToN
+Cj4gDQo+ID4gKyAgZnNsLGhzaW8tY2ZnOg0KPiA+ICsgICAgZGVzY3JpcHRpb246DQo+ID4gKyAg
+ICAgIFNwZWNpZmllcyB0aGUgdXNlIGNhc2Ugb2YgdGhlIEhTSU8gbW9kdWxlIGluIHRoZSBoYXJk
+d2FyZSBkZXNpZ24uDQo+ID4gKyAgICAgIEJlY2F1c2UgdGhlIEhTSU8gbW9kdWxlIGNhbiBiZSBj
+b25maWd1cmUgaW50byB0aHJlZSBkaWZmZXJlbnQgdXNlDQo+ID4gKyAgICAgIGNhc2VzLg0KPiA+
+ICsgICAgICBSZWZlciB0byBtYWNybyBIU0lPX0NGRyogb2YNCj4gaW5jbHVkZS9kdC1iaW5kaW5n
+cy9waHkvcGh5LWlteDgtcGNpZS5oLg0KPiA+ICsgICAgJHJlZjogL3NjaGVtYXMvdHlwZXMueWFt
+bCMvZGVmaW5pdGlvbnMvdWludDMyDQo+ID4gKyAgICBtYXhpbXVtOiAzDQo+IA0KPiA+ICsvKg0K
+PiA+ICsgKiBSZWdhcmRpbmcgdGhlIGRlc2lnbiBvZiBpLk1YOFFNIEhTSU8gc3Vic3lzdGVtLCBI
+U0lPIG1vZHVsZSBjYW4gYmUNCj4gPiArICogY29uZml1cmVkIGFzIGZvbGxvd2luZyB0aHJlZSB1
+c2UgY2FzZXMuDQo+ID4gKyAqDQo+ID4gKyAqIERlZmluZSBkaWZmZXJlbnQgY29uZmlndXJhdGlv
+bnMgcmVmZXIgdG8gdGhlIHVzZSBjYXNlcywgc2luY2UgaXQNCj4gPiAraXMNCj4gPiArICogbWFu
+ZGF0b3J5IHJlcXVpcmVkIGluIHRoZSBpbml0aWFsaXphdGlvbi4NCj4gPiArICoNCj4gPiArICog
+T24gaS5NWDhRWFAsIEhTSU8gbW9kdWxlIG9ubHkgaGFzIFBDSUVCIGFuZCBvbmUgbGFuZSBQSFku
+DQo+ID4gKyAqIERlZmluZSAiSU1YOFFfSFNJT19DRkdfUENJRUIiIGZvciBpLk1YOFFYUCBwbGF0
+Zm9ybXMuDQo+ID4gKyAqDQo+ID4gKyAqICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0rDQo+ID4gKyAqIHwgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgfCBpLk1YOFFNICAgICAgICAgICAgfCBpLk1YOFFYUA0KPiB8DQo+
+ID4gKyAqIHwtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLS0t
+LS0tfC0tLS0tLS0tLS18DQo+ID4gKyAqIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+fCBMYW5lMHwgTGFuZTF8IExhbmUyfCBMYW5lMCAgICB8DQo+ID4gKyAqIHwtLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18DQo+ID4g
+KyAqIHwgSU1YOFFfSFNJT19DRkdfUENJRUFYMlNBVEEgICAgfCBQQ0lFQXwgUENJRUF8IFNBVEEg
+fA0KPiB8DQo+ID4gKyAqIHwtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tfC0tLS0tLXwt
+LS0tLS18LS0tLS0tfC0tLS0tLS0tLS18DQo+ID4gKyAqIHwgSU1YOFFfSFNJT19DRkdfUENJRUFY
+MlBDSUVCICAgfCBQQ0lFQXwgUENJRUF8IFBDSUVCfA0KPiB8DQo+ID4gKyAqIHwtLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18DQo+
+ID4gKyAqIHwgSU1YOFFfSFNJT19DRkdfUENJRUFQQ0lFQlNBVEEgfCBQQ0lFQXwgUENJRUJ8IFNB
+VEEgfCAgICAgICAgICB8DQo+ID4gKyAqIHwtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+fC0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18DQo+ID4gKyAqIHwgSU1YOFFfSFNJT19D
+RkdfUENJRUIgICAgICAgICAgfCAtICAgIHwgLSAgICB8IC0gICAgfCBQQ0lFQiAgICB8DQo+ID4g
+KyAqICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+Ky0tLS0tLS0tLS0rDQo+ID4gKyAqLw0KPiA+ICsjZGVmaW5lIElNWDhRX0hTSU9fQ0ZHX1BDSUVB
+WDJTQVRBCTB4MQ0KPiA+ICsjZGVmaW5lIElNWDhRX0hTSU9fQ0ZHX1BDSUVBWDJQQ0lFQgkweDIN
+Cj4gPiArI2RlZmluZSBJTVg4UV9IU0lPX0NGR19QQ0lFQVBDSUVCU0FUQQ0KPiAJKElNWDhRX0hT
+SU9fQ0ZHX1BDSUVBWDJTQVRBIHwgSU1YOFFfSFNJT19DRkdfUENJRUFYMlBDSUVCKQ0KPiA+ICsj
+ZGVmaW5lIElNWDhRX0hTSU9fQ0ZHX1BDSUVCCQlJTVg4UV9IU0lPX0NGR19QQ0lFQVgyUENJRUIN
+Cj4gDQo+IFJvYiBtYXkgZGlzYWdyZWUgd2l0aCBtZSwgYnV0IEkgdGhpbmsgdGhpcyBzaG91bGQg
+YmUgYW4gZW51bSBvZiBwb3NzaWJsZSBzdHJpbmdzDQo+IHdpdGggdGhlIHRhYmxlIGhlcmUgbW92
+ZWQgaW50byB0aGUgcHJvcGVydHkgZGVzY3JpcHRpb24uIFRoZSBRWFAgb25seSBvcHRpb24NCj4g
+c2hvdWxkIHRoZW4gYmUgY29uc3RyYWluZWQgcGVyIGNvbXBhdGlibGUuDQo+IA0KSWYgdGhpcyBw
+cm9wZXJ0eSBpcyBhbiBlbnVtIG9mIHBvc3NpYmxlIHN0cmluZ3MuIFRoZXJlIHdvdWxkIGJlIHRo
+cmVlIGlmKCkNCiBjaGVja3MgdG8gcGFyc2UgdGhlIHBvc3NpYmxlIHN0cmluZyBpbiBkcml2ZXIu
+DQpJJ20gZmluZSB3aXRoIHRoYXQuDQoNCkhpIFJvYjoNCkhvdyBkbyB5b3UgdGhpbmsgYWJvdXQg
+dGhhdD8NCj4gPiArDQo+ID4gKyAgZnNsLHJlZmNsay1wYWQtbW9kZToNCj4gPiArICAgIGRlc2Ny
+aXB0aW9uOg0KPiA+ICsgICAgICBTcGVjaWZpZXMgdGhlIG1vZGUgb2YgdGhlIHJlZmNsayBwYWQg
+dXNlZC4gSU5QVVQoUEhZIHJlZmNsb2NrIGlzDQo+ID4gKyAgICAgIHByb3ZpZGVkIGV4dGVybmFs
+bHkgdmlhIHRoZSByZWZjbGsgcGFkKSBvciBPVVRQVVQoUEhZIHJlZmNsb2NrIGlzDQo+ID4gKyAg
+ICAgIGRlcml2ZWQgZnJvbSBTb0MgaW50ZXJuYWwgc291cmNlIGFuZCBwcm92aWRlZCBvbiB0aGUg
+cmVmY2xrIHBhZCkuDQo+IA0KPiA+ICsgICAgICBUaGlzIHByb3BlcnR5IG5vdCBleHNpdCBtZWFu
+cyB1bnVzZWQoUEhZIHJlZmNsb2NrIGlzIGRlcml2ZWQNCj4gPiArIGZyb20NCj4gDQo+IFBsZWFz
+ZSBydW4gYSBzcGVsbCBjaGVja2VyIG9uIHlvdXIgcGF0Y2hlcy4NCj4gDQpTb3JyeSwgSXQncyBt
+eSBmYXVsdC4gVGhlcmUgaXMgYSBzcGVsbCBtaXN0YWtlLg0Kcy9leHNpdC9leGlzdHMvDQpUaGFu
+a3MuDQo+ID4gKyAgICAgIFNvQyBpbnRlcm5hbCBzb3VyY2UpLg0KPiANCj4gPiArICAgICRyZWY6
+IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3N0cmluZw0KPiA+ICsgICAgZW51bTog
+WyBpbnB1dCwgb3V0cHV0IF0NCj4gDQo+IGVudW06IFtpbnB1dCwgb3V0cHV0LCB1bnVzZWRdDQo+
+IGRlZmF1bHQ6IHVudXNlZA0KT2theQ0KDQpCZXN0IFJlZ2FyZHMNClJpY2hhcmQNCj4gDQo+IENo
+ZWVycywNCj4gQ29ub3IuDQotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1waHkK
