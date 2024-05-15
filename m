@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35DAEC25B75
-	for <linux-phy@archiver.kernel.org>; Wed, 15 May 2024 10:45:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65359C25B75
+	for <linux-phy@archiver.kernel.org>; Wed, 15 May 2024 10:45:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4QFEZf4k5wjTOfvUPm9Ql/2bZNwpuF8rar1v0zV9avI=; b=epxRnwSQ2WJkzb
-	qzn7Qp3SSTbd7lLlxMFIJpix0NF2IWZpgujO0eBZ3jBE+1HzpMAge1mDIRvMr6a4xxJtlOaPzMVxJ
-	H8U3s2ULSvWb1aX0vcufbjHKkFjwkQ4pZDN1Kxl0eyOq7Ksrau9VgDlDoZolc0vvRhYWZStHiOMgs
-	q/6W9Pr/1ltRRzcKLe3Hg6chvNJPoE4q4s32YTbNMGJ7c1LnXxQXO+XmOaqRrcOgMX7tIMPQuu9Oo
-	wZt2wJFPr6fy0TuQpoZ1DP5xAedtR0+QQzvggl6zP+bZXTEZJyJEbRcxH0xP/9ow1h7KT38LTlWL3
-	ChACb0qNBze0+QM+KuoQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gpr66hbQcnxhdcNluevqsyHCglnEHDvE02iR6KHSNas=; b=PXiFu5zQppk+u/
+	9c3lg3k5JLuNESMeh44RmHTBkU4pAOdcsvydZRUqaw7hVIxqY76w5nV25lzok1/9QmgmnbribA+3u
+	16j7r5YAd5NeEH1KM0pgIpXmBBEzvIpJPcv/AnfWItVxBz5If1aKaEvzDChne+Zw3+OMDXZTucgHY
+	xw3nSUiVUlQFLzbpiFBgEWXfxmJa8PSNm0a5L6rz9iPoV6DtIdqfJnJPz2Y32GaXQ1bqPYb/3DgBy
+	suU61/ngd6EgVAy3UOWqNgTQucGoemzqOhlXWfVsL6Rkj54N4K7fMG1bBzTC7HJsCxiy9wpSGgiZF
+	uY34XfhLD7aeEiGkRTkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s7C87-00000001GIy-3OSl;
-	Wed, 15 May 2024 10:45:03 +0000
+	id 1s7C8D-00000001GKk-03ud;
+	Wed, 15 May 2024 10:45:09 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s7C83-00000001GHS-1fa9;
-	Wed, 15 May 2024 10:45:01 +0000
+	id 1s7C87-00000001GIJ-1hck;
+	Wed, 15 May 2024 10:45:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id A1416CE1371;
-	Wed, 15 May 2024 10:44:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55C95C116B1;
-	Wed, 15 May 2024 10:44:56 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id ACBC7CE14E6;
+	Wed, 15 May 2024 10:45:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5D3FDC116B1;
+	Wed, 15 May 2024 10:45:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1715769896;
-	bh=SaM6rBkEWsdmGxMdLo5qtXW2ylDMeVaUbAOoA0bZes4=;
-	h=From:To:Cc:Subject:Date:From;
-	b=jykfc7/1NJrVt9GVjJIiVgYWF/fWSv+yCSFLQI9iTKQOhhrgmSRaLYuKHUePI0TPx
-	 NjkPUDf5KC4/N7cjWkMCPA7RMJi36cJtdt9hGhugKjWutQHMrw2oncj3GomI1nVXGZ
-	 8tnl8ZrDZSo+EExs4aV0TAqDG4RYX/ShNDwuXHeNkK9QXS7aPwjt2/gZKLkzAMjcvC
-	 PLf4WZWrb3ElOO6JP8UN+8Ot3m7C7V4dp/Mv5hJqiV48JUiIE5QWEOH7ITU98yKws1
-	 nZ8JAsF1GWnBlRhULwzCBdCwOUKzTBUWY2SMT338GyEYPWU8pk/sAtWW8Fbf8DA9o+
-	 W8Xg01ejw81mQ==
+	s=k20201202; t=1715769900;
+	bh=/K0UiVi3rhFcrGRRkM+gRZbwIYpCEqjchJIyOiKbcPs=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=Onm1lSeo4dIwYF7SKJlQO4dhq7pODzIv8vWbeU5REzkt5e4JKzLx+IPnV082luFJg
+	 h2sZHTYMrId3yzl13gMKrKF2Rghsu/VJMquZRrAsSovklcDdo72mXvCOX86yLRiH+p
+	 tT5DdpIFGspONOhIgDuIdSnA7NtY4O3P/d5tdrqsSTYPf2Zq3w6k/2mNakKn1jybF1
+	 b21cbsJPmQ1z8AR6ju9gSFqy4PfRm48FhyoRk8DGc7KxG6x8EVAR/rkxGMN7eaZkua
+	 MeADLQm0yKik1BWchlGBXIT+iwsWaeavRyegnht3M+Xd56CBo+jFjj40mDyUxUUgNZ
+	 uovdZUMoO6vgw==
 From: Lorenzo Bianconi <lorenzo@kernel.org>
 To: linux-phy@lists.infradead.org
 Cc: vkoul@kernel.org,
@@ -60,15 +60,16 @@ Cc: vkoul@kernel.org,
 	upstream@airoha.com,
 	angelogioacchino.delregno@collabora.com,
 	amitsinght@marvell.com
-Subject: [PATCH v2 0/4] Introduce PCIe PHY driver for EN7581 SoC
-Date: Wed, 15 May 2024 12:44:44 +0200
-Message-ID: <cover.1715769325.git.lorenzo@kernel.org>
+Subject: [PATCH v2 1/4] dt-bindings: phy: airoha: Add binding doc for PCIe PHY driver
+Date: Wed, 15 May 2024 12:44:45 +0200
+Message-ID: <0807ee3023a771fbb35fff5c65839120959486d3.1715769325.git.lorenzo@kernel.org>
 X-Mailer: git-send-email 2.45.0
+In-Reply-To: <cover.1715769325.git.lorenzo@kernel.org>
+References: <cover.1715769325.git.lorenzo@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240515_034459_639636_544614CB 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240515_034503_648135_F55EE5E8 
+X-CRM114-Status: GOOD (  10.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,32 +86,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for Airoha PCIe PHY controller available in the EN7581 SoC.
+Introduce device-tree binding documentation for Airoha EN7581 PCIe PHY
+driver.
 
-Changes since v1:
-- add patch 4/4 to enable PCIe PHY driver
-- rename documentation binding in airoha,en7581-pcie-phy.yaml
-- fix kernel doc
-
-Lorenzo Bianconi (4):
-  dt-bindings: phy: airoha: Add binding doc for PCIe PHY driver
-  arm64: dts: airoha: Add EN7581 pcie-phy node
-  phy: airoha: Add PCIe PHY driver for EN7581 SoC.
-  arm64: defconfig: Enable Airoha pcie phy driver
-
- .../bindings/phy/airoha,en7581-pcie-phy.yaml  |   55 +
- MAINTAINERS                                   |    8 +
- arch/arm64/boot/dts/airoha/en7581.dtsi        |    9 +
- arch/arm64/configs/defconfig                  |    1 +
- drivers/phy/Kconfig                           |   10 +
- drivers/phy/Makefile                          |    1 +
- drivers/phy/phy-airoha-pcie-regs.h            |  476 +++++++
- drivers/phy/phy-airoha-pcie.c                 | 1226 +++++++++++++++++
- 8 files changed, 1786 insertions(+)
+Tested-by: Zhengping Zhang <zhengping.zhang@airoha.com>
+Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+---
+ .../bindings/phy/airoha,en7581-pcie-phy.yaml  | 55 +++++++++++++++++++
+ 1 file changed, 55 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
- create mode 100644 drivers/phy/phy-airoha-pcie-regs.h
- create mode 100644 drivers/phy/phy-airoha-pcie.c
 
+diff --git a/Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+new file mode 100644
+index 000000000000..4ab04b501129
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+@@ -0,0 +1,55 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/airoha,en7581-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Airoha EN7581 PCI-Express PHY
++
++maintainers:
++  - Lorenzo Bianconi <lorenzo@kernel.org>
++
++description:
++  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 port.
++
++properties:
++  compatible:
++    const: airoha,en7581-pcie-phy
++
++  reg:
++    maxItems: 3
++
++  reg-names:
++    items:
++      - const: csr_2l
++      - const: pma0
++      - const: pma1
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/phy/phy.h>
++
++    soc {
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        phy@11e80000 {
++            compatible = "airoha,en7581-pcie-phy";
++            #phy-cells = <0>;
++            reg = <0x0 0x1fa5a000 0x0 0xfff>,
++                  <0x0 0x1fa5b000 0x0 0xfff>,
++                  <0x0 0x1fa5c000 0x0 0xfff>;
++            reg-names = "csr_2l", "pma0", "pma1";
++        };
++    };
 -- 
 2.45.0
 
