@@ -4,91 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B07ADC25B74
-	for <linux-phy@archiver.kernel.org>; Thu, 16 May 2024 03:25:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43789C25B74
+	for <linux-phy@archiver.kernel.org>; Thu, 16 May 2024 09:54:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Jnly8v/LfHlXJ/UaZr3O6ha92X54XBJQztBMXdvZAB8=; b=V5dgzQEiNwhiVq
-	KDE02CLCIj+nvjcBCcIKZqanv9zIZJ/Fnul2/M43CX5+0wYC0ZQ5geLc7V+L1bLUPq5lDj80JumI0
-	TILQYr5KmU+pLhJBt77VMhvJFcO7LMxRArB6A8pUBsXdpGD/wuR+j/obss0qaBNlKWiUbPtR2Hfny
-	5L/qMttwRySYCZtco0Wj70VbDIN3HYvIQNE8mrDPZHKAm+ouzRmPk/KvbvlhvwvGeszB8lFzwdN2g
-	3jHsNMsL5Bc86djtJ9F+2rWDW99YfG5GbUJmXAAgvdDZq0vMpitQKEBuOh+/18BydQBgw/xmd1qjL
-	QsnejDkLe2OM9KoO/egw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nLr4A9q8xAVP2W2DSeWA/4hu6Pzs98b035hEd36Q2YE=; b=jTIPyzOt+W7xIF
+	5Jhy78jcR/UDYauyobx1aOEgQ8qcO+TRVeA7UdbfxzvPMpgFcAXWdusZgHmL7DJ1ZsX5KhFpxB/dy
+	Y9+G6+5RExRanuO7YfI7+pDg2BwUg6Ru6r9K6GvPLggmtv96I023sV95aIeXgJWfxTa0YDbUbFv8K
+	l09OMo8bShw5fExgahXxC/fhzC2juG3XZGcQ+8nbwnEucMQ2Hd/kIkZEHHtKGxi62dl2FWlTSlXNl
+	nqoiupRK/vkwbeVlVmTivgvQRgVu/gl4NKdxfLtlJ1s338NC49jBBExbIwYeujq6X+vl2lLdG3w8x
+	yXmt4VFCKy/5vZ+nWVuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s7Rjr-00000003ZBz-1bQC;
-	Thu, 16 May 2024 03:25:03 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1s7Xp2-00000004OLb-44me;
+	Thu, 16 May 2024 09:54:48 +0000
+Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1s7Rjo-00000003ZAm-1Ydt
-	for linux-phy@lists.infradead.org;
-	Thu, 16 May 2024 03:25:02 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 44FJY8uS027363;
-	Thu, 16 May 2024 03:24:57 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding; s=qcppdkim1; bh=KmE3rY5yTnisogsKxYAM
-	e9RKaqQslW34BXya38pYWu8=; b=NF3LrcYbyCmlKnIMzaIVpngUHgyj45QTGBya
-	jh/qGsKTlwBw6CF+Zx25LB2/1kRg3g0UmPsY6NoKS3kPaSVV9v7X5DFIXWdTR9VQ
-	5zc66J9jivRjFgGNVd1B5l+EtN3P/6TyE7dLTsTPjviH7k81syeHCQ9/WfeNaj1H
-	baMJDGCrqYZyFR3yMStnsXGN2v+j3A6uFroZZgkLkwgWIIGELESC2bTrBXfh+1Y3
-	gGIQu7gYEPdtDG5fjaF9nlD6VByt0idJTo90SqYXvW6LiDeYqVKfOXcRuSMWiPWV
-	qmGjPIbs2XUH/AoNu4IspS5C1+BgJpHwLmUxeXaOZHM/84G25g==
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3y42kvw52p-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 May 2024 03:24:56 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 44G3ObG6032168;
-	Thu, 16 May 2024 03:24:37 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 3y4quybhjt-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 May 2024 03:24:37 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 44G3ObFV032144;
-	Thu, 16 May 2024 03:24:37 GMT
-Received: from hu-devc-blr-u22-a.qualcomm.com (hu-devipriy-blr.qualcomm.com [10.131.37.37])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 44G3Ob2Z032139
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 16 May 2024 03:24:37 +0000
-Received: by hu-devc-blr-u22-a.qualcomm.com (Postfix, from userid 4059087)
-	id 5F37440FFA; Thu, 16 May 2024 08:54:36 +0530 (+0530)
-From: devi priya <quic_devipriy@quicinc.com>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-        conor+dt@kernel.org, dmitry.baryshkov@linaro.org,
-        neil.armstrong@linaro.org, quic_msarkar@quicinc.com,
-        quic_qianyu@quicinc.com, abel.vesa@linaro.org, quic_cang@quicinc.com,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Cc: quic_devipriy@quicinc.com
-Subject: [PATCH V4 0/4] Add support for PCIe PHY in IPQ9574
-Date: Thu, 16 May 2024 08:54:32 +0530
-Message-Id: <20240516032436.2681828-1-quic_devipriy@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	id 1s7Xoz-00000004OKi-3VUv;
+	Thu, 16 May 2024 09:54:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1715853284;
+	bh=mZfVpmqsWjhCsIsTVtjcaeo4Q4xSQ9TLL9TZdJX/NHE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=e2+4Oobp/AcPTTtDnKLATYjBTUw+/6tM61KKp6f6L0MMOwWOK+PNNqEiuaknJn+d9
+	 KQEqaAAH3Bm9ALNFcbWh3SLnFBfGkIne5kDHUzJ4m1nZI22ZtyvcWd5xm2B/LCHSkD
+	 PT0POFN8p/fWTmDImW+WRtu1fjEQYAOfOYO4jNK93TRr+UR/HBVepoyjx3Gz1tfmjD
+	 Dss3iJ8ngLGifYkgGUyiG2PQxiPeAmtGB3BW9exC6JJ6oITFkyTeWj9Wkhf6QtScKJ
+	 PG0+PR71aYeq04D9QfzuWTugnS8DC/qb2OXynHhAKINLkhtdmc2vNLuF1AOnBe1Q+Q
+	 MGPUEGrt8OmBg==
+Received: from [100.113.186.2] (cola.collaboradmins.com [195.201.22.229])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 4471B37821A9;
+	Thu, 16 May 2024 09:54:43 +0000 (UTC)
+Message-ID: <651d97e7-d13d-4180-ab76-65dc67ef2c2f@collabora.com>
+Date: Thu, 16 May 2024 11:54:42 +0200
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 0Zj5QkA27A3XAlUHNdfbmkKgo5QvYtHq
-X-Proofpoint-ORIG-GUID: 0Zj5QkA27A3XAlUHNdfbmkKgo5QvYtHq
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.650,FMLib:17.11.176.26
- definitions=2024-05-16_01,2024-05-15_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 malwarescore=0
- mlxlogscore=868 phishscore=0 lowpriorityscore=0 bulkscore=0
- priorityscore=1501 spamscore=0 adultscore=0 mlxscore=0 impostorscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2405010000 definitions=main-2405160022
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/4] dt-bindings: phy: airoha: Add binding doc for PCIe
+ PHY driver
+To: Lorenzo Bianconi <lorenzo@kernel.org>, linux-phy@lists.infradead.org
+Cc: vkoul@kernel.org, kishon@kernel.org, lorenzo.bianconi83@gmail.com,
+ conor@kernel.org, linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ devicetree@vger.kernel.org, nbd@nbd.name, john@phrozen.org, dd@embedd.com,
+ catalin.marinas@arm.com, will@kernel.org, upstream@airoha.com,
+ amitsinght@marvell.com
+References: <cover.1715769325.git.lorenzo@kernel.org>
+ <0807ee3023a771fbb35fff5c65839120959486d3.1715769325.git.lorenzo@kernel.org>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <0807ee3023a771fbb35fff5c65839120959486d3.1715769325.git.lorenzo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240515_202500_710034_E362EF5E 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20240516_025446_048235_7B844ACE 
+X-CRM114-Status: GOOD (  13.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,39 +75,95 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series adds support for a single-lane and two-lane PCIe PHYs
-found on Qualcomm IPQ9574 platform.
+Il 15/05/24 12:44, Lorenzo Bianconi ha scritto:
+> Introduce device-tree binding documentation for Airoha EN7581 PCIe PHY
+> driver.
+> 
+> Tested-by: Zhengping Zhang <zhengping.zhang@airoha.com>
+> Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+> ---
+>   .../bindings/phy/airoha,en7581-pcie-phy.yaml  | 55 +++++++++++++++++++
+>   1 file changed, 55 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+> new file mode 100644
+> index 000000000000..4ab04b501129
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
+> @@ -0,0 +1,55 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/airoha,en7581-pcie-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Airoha EN7581 PCI-Express PHY
+> +
+> +maintainers:
+> +  - Lorenzo Bianconi <lorenzo@kernel.org>
+> +
+> +description:
+> +  The PCIe PHY supports physical layer functionality for PCIe Gen2/Gen3 port.
+> +
+> +properties:
+> +  compatible:
+> +    const: airoha,en7581-pcie-phy
+> +
+> +  reg:
+> +    maxItems: 3
 
-[V4]
-	Picked up the R-b/A-b tags.
-	Split the phy driver and headers to individual patches.
-[V3]
-	https://lore.kernel.org/linux-arm-msm/20240512082541.1805335-1-quic_devipriy@quicinc.com/
-[V2]
-	https://lore.kernel.org/linux-arm-msm/20230519085723.15601-1-quic_devipriy@quicinc.com/
-[V1]
-	https://lore.kernel.org/linux-arm-msm/20230421124150.21190-1-quic_devipriy@quicinc.com/
+If you have a description for the registers, I'd appreciate seeing that list.
+If you don't, and can't retrieve a description, it's still fine, but please
+try if you can.
 
-devi priya (4):
-  dt-bindings: phy: qcom,ipq8074-qmp-pcie: Document the IPQ9574 QMP PCIe
-    PHYs
-  phy: qcom-qmp: Add missing offsets for Qserdes PLL registers.
-  phy: qcom-qmp: Add missing register definitions for PCS V5
-  phy: qcom-qmp-pcie: Add support for IPQ9574 g3x1 and g3x2 PCIEs
+> +
+> +  reg-names:
+> +    items:
+> +      - const: csr_2l
 
- .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |   2 +
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 309 ++++++++++++++++++
- .../phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5.h   |  14 +
- .../phy/qualcomm/phy-qcom-qmp-qserdes-pll.h   |   3 +
- 4 files changed, 328 insertions(+)
+Can we please avoid underscores?
 
--- 
-2.34.1
+Please change this to "csr-2l", after which:
+
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
+> +      - const: pma0
+> +      - const: pma1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/phy/phy.h>
+> +
+> +    soc {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +
+> +        phy@11e80000 {
+> +            compatible = "airoha,en7581-pcie-phy";
+> +            #phy-cells = <0>;
+> +            reg = <0x0 0x1fa5a000 0x0 0xfff>,
+> +                  <0x0 0x1fa5b000 0x0 0xfff>,
+> +                  <0x0 0x1fa5c000 0x0 0xfff>;
+> +            reg-names = "csr_2l", "pma0", "pma1";
+> +        };
+> +    };
 
 
 -- 
