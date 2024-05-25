@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 679AAC25B78
-	for <linux-phy@archiver.kernel.org>; Sat, 25 May 2024 20:16:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32B60C25B7A
+	for <linux-phy@archiver.kernel.org>; Sat, 25 May 2024 20:17:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Cnl7wdIA0YRSE/4lSdbFDjTQJiSbW1rh/ogCK0Mvyo=; b=ASZCvS5uclo24B
-	EQwmObmE82eq/qXFw98yrzPmBf+GDPE/T8EtjGsHDEOB/Lz8v6cUYnrU/huAtfXm/fP5Oujs8RbwU
-	3YOdHn7rAXkPmmjtHqGA7QSj9hgmghgfzAyLa9fpxBy9ctYN9a8UyOvklmx+gKVGRhNjmDCkct56B
-	x9JnLBrJrQZpzBneaoACo7fLn/nQzArKU3/lCc3ymmpgequuRwCPOD2f9Gb+mgRQxMexRpg4pg3AY
-	Ssr28iv9pBQWGaE77Lae6UI2Vuqy8asAzZYFSi2BC58aJsy5NXvslvqmKcoPap5wTmyEtGzlsbdvz
-	RBNiTXsv8wyOR+Q0IvnA==;
+	List-Owner; bh=8G6nZxA9iy6SPNNYrAsoM3TDSxvuy08/QZIIZp2aEY4=; b=XgJgdFOxaDWVP9
+	mBKTBaxB7qkQKvowbYDo3GnDkPLgdPpL7XrLN0jWqginD20HUpaT2ZSSA5XjRMvJquPS7FUKEJD8H
+	MveqPaI5n6o+aHzDXMZjqwMpncHUmCphu8fcxo5skRDLsq/Emag7+AI+GobNc7vjmxHpz3sSdBERZ
+	mEdXzw9R6VTjQgd2IcteIjwYl/IHWV5jSQaSsTBG0V/g8/a5+8B5JML9sdEACEBuMzStDWKE6sH3M
+	LojrU1bLaq9ID3QKGfjeL450RuyjQS0paFqwUPE0z6h/0OyZxHxAino7SaYqGSNDcvbIQxrXWj0qA
+	xXPlM2DhY4oOilFWHH2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAxot-0000000BdfU-40la;
-	Sat, 25 May 2024 20:16:47 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1sAxpc-0000000BdpG-2CPy;
+	Sat, 25 May 2024 20:17:32 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAxoq-0000000BdeZ-3tVg
+	id 1sAxpZ-0000000Bdmd-10Bq
 	for linux-phy@lists.infradead.org;
-	Sat, 25 May 2024 20:16:46 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-2e6792ea67fso119719051fa.1
-        for <linux-phy@lists.infradead.org>; Sat, 25 May 2024 13:16:44 -0700 (PDT)
+	Sat, 25 May 2024 20:17:30 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2e964acff1aso13141981fa.0
+        for <linux-phy@lists.infradead.org>; Sat, 25 May 2024 13:17:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1716668203; x=1717273003; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1716668245; x=1717273045; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=vxSNjzTuJf4atAWp41vejpcFG0wlQeaP+5dXZqy6R+0=;
-        b=hsZHI/62X8jnPYEH8hgfzChrEAXo+gRMLhSjCch6lPeNUhHdszvhb7xSJDEWxvKdK0
-         GhTfx+NIzHRAV0qRqLXGehJJvAwL4G8C2ZMAeAOgM5fCWzDCHexXfMMLK04SHE03PqwP
-         emVOfG+raKsPsAgWp4VifcDZNAYp+GueEvg5RQ8WcqIJc+ctJj15StvOFLcieKqMlpYv
-         5IHdXp5/cK8jof6VsjnZFbby6GhY+JZc9YCvXSE6vEs0elcJ6y+06t2u8hBaetRjOzZ+
-         nqQa5b691LFIniMHs5gzlVMIOouDHGCp+KJ1yNVptTNDNhKM652UI2hQ4YNTe4kSYQyH
-         tbcw==
+        bh=eqkkaAhB5zodAiahm8ADezWoNphieJvlbxZ1nCfU3mY=;
+        b=E2oatGTwr96E5JMLEvpXgmGjpn8pk5dwBRpHKKX0AD3yliy0PV5606ZZWDqluFioTz
+         C9M1dehbd/W2oYFP/8DPSiDpAi66pSKVwzkH14fM5ZvwAtwwuj+kbm8dcu4beDiIq3z5
+         pk5i99QKxchMVXPCJGuy0VDOOQGA4+BxwZxm5XzsjgGJK4VHo3Lp3jv5Qo4gTVkneZGf
+         pYYdDGezFPs/O5GxA4IkJcrIlMnR85m7wRMI0wmFnfNGbYF8z4XjvuO07fGZdk361Q4K
+         TeLuK7TVv+lmhMOqwGNGQQ3VQmFRFV0vUpvlqG7inxbjiBTMQSeKzeGQW82qDWw8snry
+         s0cA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716668203; x=1717273003;
+        d=1e100.net; s=20230601; t=1716668245; x=1717273045;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=vxSNjzTuJf4atAWp41vejpcFG0wlQeaP+5dXZqy6R+0=;
-        b=k4yj/3CyVPVn7Ng6FS1HyzfiZzmew/QghH3Eo7FTtDzqsPDtBp2F0EAYtfjN7mPQyR
-         0MuFXHal4bTtqdkZ/waT3ZLPpvPzR5JaXrnuPR1AALgY3V8UsUTVBzKKvGepcfxI/Rz4
-         wHGJO/pHCWC4IrbY2Emn0RbMFxyEXYhW3xtKCUPk38qI3TdnV5dH4JoqpI7+Vpaoz+fi
-         wUmssoS3UmeZfyRjZcLsxBWddO3szhAwz1s70wihQxLVzt6jxlQdYCem+fhlzgIgfOQV
-         FK5IYZGv0SPTpmBNv8FAngIu403C1Ad1KDxeDO2g6MJjLpX3A6ZxIoDHrMs3WqJZdwAj
-         JkTA==
-X-Forwarded-Encrypted: i=1; AJvYcCVfgNIWsvUfngopviTpy1BOGIdakQU5CMJjyNhFn4iaiaCzBhdpIDdnnWMZ6gtlx/ZN02dxEzbk9k3Pps0aNfEOjQe26kf4HoGhLiHYng==
-X-Gm-Message-State: AOJu0YxdYP5E07ztTqzlWDiyAdtbXZToc8s29A+TaPu6B0d+Y2zE3Yps
-	B7aaVECaUGtjgfhV7JEysRw7iB44RAN9mr+HwGHTH27v99vXZLX/rA7zxKWoIQw=
-X-Google-Smtp-Source: AGHT+IGqRSHwvMo1bs7rJRPMNeOrxq/sWSDnSnLjjibtRkPVSgOa8OApgnvVYNKAuqZszWWcJU2yVQ==
-X-Received: by 2002:a2e:3e0e:0:b0:2df:b63:a8 with SMTP id 38308e7fff4ca-2e95b278708mr30593201fa.50.1716668203490;
-        Sat, 25 May 2024 13:16:43 -0700 (PDT)
+        bh=eqkkaAhB5zodAiahm8ADezWoNphieJvlbxZ1nCfU3mY=;
+        b=udhT13jyW2hhEOcOLRVSZ+389ZTxJEAVkx1nkb6cIsSQqrv4+w1QAjO26DUvsntKmr
+         Yqixz0gz610WhDCp5CbDLgTRiZhNcAk0KfIeyvqNaeplpr9fWqLSXeen4pEKci6cHwXm
+         C5cQr9TvStTsGNwdJvVsw8E7LRROCSJ+csB+fUsXnQuyG+0OOhytkdO4FA2gyLi/ejMi
+         MDwdvtivU2exaT8v4tQtlqEXkh2Pfdu+n1m6tO85/Uebq+RVYdVlal24pqL1rZbsA0ha
+         A1SV1RexA5Msi+XGRrfJeWaxRrNAMa+7mqSBkIcqFP1Fb06y3IyVi9s3NeCg4NrK6AEm
+         tnAA==
+X-Forwarded-Encrypted: i=1; AJvYcCXeimMuu0rPvWcf9kt8chiv/MVCkRMVfdBo0Iaf9S4VkWyUq3OZyuhQW2rBVD6JRyV3f6e1J4GlYaC3bDDOta0RnBoW4gKNld8VxNhyxA==
+X-Gm-Message-State: AOJu0YwTxQENKmQzvDlu3JQI30WlCYnMs95pr3HuX/G00NP3aCu/anUx
+	82gW0VLdhpKc+hqhP2QcaNiLZHzEsIWr18tCTRzzYIPbp/jE+QSU7wRcMJiVzxw=
+X-Google-Smtp-Source: AGHT+IHXljxuGalAvmyjvzrcNfI1wbojmx0iYFgMUe8hBfLdt+A/BD1AGKqWABqy13mTAz406l/ehQ==
+X-Received: by 2002:a2e:a178:0:b0:2e2:1a8b:e2f with SMTP id 38308e7fff4ca-2e95b0bcf29mr34404251fa.2.1716668245179;
+        Sat, 25 May 2024 13:17:25 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyyykxt-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::227])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2e95bdd1517sm8813861fa.82.2024.05.25.13.16.42
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2e95bcf4bdfsm8686871fa.63.2024.05.25.13.17.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 25 May 2024 13:16:43 -0700 (PDT)
-Date: Sat, 25 May 2024 23:16:41 +0300
+        Sat, 25 May 2024 13:17:24 -0700 (PDT)
+Date: Sat, 25 May 2024 23:17:23 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Bjorn Andersson <andersson@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -73,17 +73,18 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org, 
 	linux-usb@vger.kernel.org, Bjorn Andersson <quic_bjorande@quicinc.com>
-Subject: Re: [PATCH 09/10] arm64: dts: qcom: sc8180x-primus: Enable the two
- MP USB ports
-Message-ID: <yqpnfhh5cdi3uxzg5ii5677lsjrt7nothm2neysf32mjce22fk@erbpp5lhmqrq>
+Subject: Re: [PATCH 10/10] arm64: dts: qcom: sc8180x-lenovo-flex-5g: Enable
+ USB multiport controller
+Message-ID: <dazmvgycbywpsbgtrnhi4hv3jgi6lt7dpws4gn2du7z4q4ygr2@ph44udnljkhr>
 References: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
- <20240525-sc8180x-usb-mp-v1-9-60a904392438@quicinc.com>
+ <20240525-sc8180x-usb-mp-v1-10-60a904392438@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240525-sc8180x-usb-mp-v1-9-60a904392438@quicinc.com>
+In-Reply-To: <20240525-sc8180x-usb-mp-v1-10-60a904392438@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240525_131644_985855_C4A61879 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20240525_131729_298503_E6D630AD 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,23 +101,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, May 25, 2024 at 11:04:02AM -0700, Bjorn Andersson wrote:
+On Sat, May 25, 2024 at 11:04:03AM -0700, Bjorn Andersson wrote:
 > From: Bjorn Andersson <quic_bjorande@quicinc.com>
 > 
-> The SC8180X Primus comes with an AUX card with two USB ports, fed by the
-> two multiport ports.
-> 
-> Enable the involved nodes and define two always-on regulators to enable
-> VBUS for these ports.
+> The Lenovo Flex 5G has a camera attached to the multiport USB
+> controller, enable the controller and the four phys to enable this.
 > 
 > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
->  arch/arm64/boot/dts/qcom/sc8180x-primus.dts | 60 +++++++++++++++++++++++++++++
->  1 file changed, 60 insertions(+)
-> 
+>  .../arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dts | 32 ++++++++++++++++++++++
+>  1 file changed, 32 insertions(+)
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
+> 
 
 -- 
 With best wishes
