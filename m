@@ -4,127 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4929C25B74
-	for <linux-phy@archiver.kernel.org>; Fri, 24 May 2024 07:08:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 023D5C25B78
+	for <linux-phy@archiver.kernel.org>; Sat, 25 May 2024 17:59:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xQLyAGKuhK+3BovoMQVnXJx3OrKcKdPL7pPOSVheb/8=; b=a1xk1fQd3Y7bl3qJxbLKcivU1i
-	OfLg59GnZUCO8pH5HgrhH2NLYFP/ahIJDVbnWbKs08qbIvuzm1s9JCOUXzmntNM/wIrAZS5VlwvOQ
-	JYeYfG4UzgcLdiLl7CEi9fZTJ0QHh4mwDzThGggReK+auEv+7DQl8DvyzLhJe/95240787JnYDLmn
-	gEC1GwXV/w8aoCdbSUpiu0V1yoSnfhWz5H2xsbxwwZhT9Zt9RGHyu1yTAiXjgkD3aWtn9PkvsVnxU
-	iTOKlpJ0DXGPl7JZ0adhnBLEX/vVqwLu6BiyDUjKtGQWl56u7jM9AX8+T/H77pYAeZ/DiKJgeBICO
-	molGhkSQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AvNiqro+vJjQBeyKQpvGY01eIpVcrla5/14cnVEIX04=; b=R1rozk9dc29NEU
+	4oEWLtcdB2E+RSs9+K/KUiDPbHP3ORf3ZQziZHmR6e4SQJNixohiUrXJy9oMkgIA0P4+F0rIektL1
+	q0BlEFTQ4F2AB0RJoV3vWitwCdaamGP6wjJ/HDTt8Eaj4ImkTzd62UpNNnKofzbzkLRe6JHKZL+lU
+	mN5yQS3ROqV6S82flvdbzi+WgwZXA56B8yo7bA/sleCbsB9SSZXLIptvNVIVOOGv+U6imf/frTjQR
+	UJ4h15AgisarvoUpS/dGWy03wkQ0Ga8EB/SFFXPmHXJtSI9nsqZT4z4BkfuaSsK6mjDy93jSJ6FhH
+	A5xA46SBFbzwtDPIsPQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAP2m-00000008EMy-46Sf;
-	Fri, 24 May 2024 07:08:49 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1sAvfn-0000000BSmx-2MkF;
+	Sat, 25 May 2024 17:59:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAP2i-00000008EMN-48id
+	id 1sAvfj-0000000BSlr-2218
 	for linux-phy@lists.infradead.org;
-	Fri, 24 May 2024 07:08:46 +0000
-Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-52962423ed8so550428e87.2
-        for <linux-phy@lists.infradead.org>; Fri, 24 May 2024 00:08:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1716534523; x=1717139323; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=E8MAm3h3NI5iKT+iweY3kApju3idNJyvBAdIptvUy6g=;
-        b=H/4pmFVNpkCg99o9HXyWWfckY3Hn3ydc8oKNsWGqsp3oza+Z5daJkbiEcpzlZI7cHJ
-         mALCeMoe9iMBJN1C06SGbsxBcfeVG9dfa5CXed+t7SHQpxKejRFEroLvpz2lPHFbfMwl
-         sN77CVI74SK2EXerlQzzpCwbqSTL2oTYkCWoAi7fjmX3cViL/c5YSlmPAZ0iyu7zgZDj
-         BETZFYptIw1CoaoefGUrcZENgtdZtaKS9zcdINXFy2PvST129efkdje/5AOvxhqwTcby
-         vxMshPZ7+6jo0OTwGTxGPWPx4xWZYCzVx6zNksBCBv+2Ef4g3oRN0rHIl41O1vpGyFxy
-         ikMw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716534523; x=1717139323;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=E8MAm3h3NI5iKT+iweY3kApju3idNJyvBAdIptvUy6g=;
-        b=fl9WDnfPIEdcwnLcNEosLxXfV30CCSUmBrUPIanEVR+qPG+fcOVkxE1+U+kieHmGZN
-         dup5PI9Qz+m3o2vBaL8mC4lFhkX8UA25QxnLSBoSOchRv03b/9+TozCrn8yI3mY3PxV3
-         RmK2WXJbwKSdlIB3G/nlq2Rpm8tg5H43jAqzzW6a1nepJeaNOjGZXFSJZOClN098M3tx
-         /vVI+YzE+vvKIcg4aR+07YdVce+L5yV9l8AxkI4igJrka2zV+IocW7I1CV7Z4yNw1IVc
-         fVDvYVjXmT78lCmEhVlAz3yb0j6q/oZtz3TxY/I9BxWON0Hnwy+cEBTk1FM5RVbjcOUe
-         XWeA==
-X-Forwarded-Encrypted: i=1; AJvYcCU3jz1eVr7R4pYBXh4M/3oUmsHU0VKUjJzvdoVndWB2Jzv55waPjOHBSd+KCYfnvVYwRwd3xYILayXmsmoPIrtsihMiCs7tRTbclHdw5g==
-X-Gm-Message-State: AOJu0YzaQrgmnXE2yhPmQHg/m776HYGtWZ1SCRcexo2o9ZYRvOq02+BA
-	i+/u+tA8ddXlbsCrXK25fRKJ1XrrS9C5EjxAh9Ckp7B7BoNTYidxpuWyVk9UeDk=
-X-Google-Smtp-Source: AGHT+IEEwe7apvr6NvFS8zzXW6dwrwy77zqWwTpWL0vW66DGjKQDCMmPQg9s5wT1CDWXq/2wlTSXiw==
-X-Received: by 2002:a05:6512:4cb:b0:521:54b5:86a3 with SMTP id 2adb3069b0e04-5296717fec4mr687397e87.64.1716534522716;
-        Fri, 24 May 2024 00:08:42 -0700 (PDT)
-Received: from [192.168.7.32] (212-114-21-58.box.freepro.com. [212.114.21.58])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-421089cda51sm12113335e9.47.2024.05.24.00.08.40
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 24 May 2024 00:08:42 -0700 (PDT)
-Message-ID: <f8370655-1bb8-4d1e-b9ed-df2e95e44d30@linaro.org>
-Date: Fri, 24 May 2024 09:08:38 +0200
+	Sat, 25 May 2024 17:59:12 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4F3F163515;
+	Sat, 25 May 2024 17:59:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9CC9C2BD11;
+	Sat, 25 May 2024 17:59:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1716659948;
+	bh=D+M5uC/gLzRtwYP8kRKD2zieRkaDxcHiXzI6VKM923E=;
+	h=From:Subject:Date:To:Cc:From;
+	b=QBmneknLLtl4Pb9C54CyKSYirsSIUkfWLTaivAUcgoKnCROBDNg1dJV6qTnb3GJJG
+	 SnROZcHiP4KWR/7zgp+01Lq5ftBjJFmEfbmcJorQUdQRwDVdCdiGqrkTQsyN5aynkF
+	 l5a7gOCCCmn4BRDnVoOqf9tG7BrIWSgyJJG0ogKYTQkGyQodQGDmxnEoKQZJlR7RY9
+	 EXJRiLeXIKL/XamFQGW2GF2ZDg+1yMRiiPMt7SP9LFeiQ5GjgLLAHllfJc4UJh8C8f
+	 YB99eKZGKnQyZRgSRHTtfzS8WxRQ1q9H8vCJ3Wc9XrMNoeNJNmGx1grJPQYw3qR/Ym
+	 v4KG3hRSHe0nw==
+From: Bjorn Andersson <andersson@kernel.org>
+Subject: [PATCH 00/10] arm64: dts: qcom: sc8180x: Enable the USB multiport
+ controller
+Date: Sat, 25 May 2024 11:03:53 -0700
+Message-Id: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH RFT 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-To: Luca Weiss <luca.weiss@fairphone.com>,
- Konrad Dybcio <konrad.dybcio@linaro.org>,
- Bjorn Andersson <andersson@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>, Abhinav Kumar
- <quic_abhinavk@quicinc.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org>
- <CZUHV429NTF7.1GW9TN9NXB4J1@fairphone.com>
- <7a7aa05f-9ae6-4ca0-a423-224fc78fbd0c@linaro.org>
- <liah4xvkfattlen7s2zi3vt2bl5pbbxqgig3k5ljqpveoao656@iacnommxkjkt>
- <236a104c-fc16-4b3d-9a00-e16517c00e3a@linaro.org>
- <D064242SMIVM.1GUC1I9GE9IGC@fairphone.com>
- <963b60e5-6ab7-4d9f-885a-ba744c2b7991@linaro.org>
- <D0C42YR1270X.23P9WCWWNB8XF@fairphone.com>
- <f2d96f99-d8ac-4ff1-83fa-742e541565e4@linaro.org>
- <864063fb-eeae-4eb7-9089-0d98011a0343@linaro.org>
- <D15RKEU49B4G.1B6A2MYB4LH3X@fairphone.com>
- <cbc8a2c6-0047-4345-8c93-afdba9c2bd10@linaro.org>
- <D1HOCBW6RG72.1B2RKGKW2Q5VC@fairphone.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <D1HOCBW6RG72.1B2RKGKW2Q5VC@fairphone.com>
+X-B4-Tracking: v=1; b=H4sIAAkoUmYC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIxMDUyMT3eJkC0MLgwrd0uIk3dwCXZPUJCNzi5Q089Q0QyWgpoKi1LTMCrC
+ B0bG1tQD35vd1YAAAAA==
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, 
+ Stephen Boyd <sboyd@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Wesley Cheng <quic_wcheng@quicinc.com>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-clk@vger.kernel.org, linux-usb@vger.kernel.org, 
+ Bjorn Andersson <quic_bjorande@quicinc.com>
+X-Mailer: b4 0.12.4
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1715;
+ i=quic_bjorande@quicinc.com; h=from:subject:message-id;
+ bh=D+M5uC/gLzRtwYP8kRKD2zieRkaDxcHiXzI6VKM923E=;
+ b=owEBgwJ8/ZANAwAIAQsfOT8Nma3FAcsmYgBmUigMuXpF5bHXK2P2/HJqaYU/pcjYTCVfnLLc8
+ 1gUlADCE2SJAkkEAAEIADMWIQQF3gPMXzXqTwlm1SULHzk/DZmtxQUCZlIoDBUcYW5kZXJzc29u
+ QGtlcm5lbC5vcmcACgkQCx85Pw2ZrcWE1BAAipMBeEOeI+AJ7au7JeaOu0DBn7s4jXiS84x5qzv
+ CPSqza4RbM3FtKrwSQs23BfOJFV9S/ZLrjO+zW4daRJJ5XOAKRCywrgcuhct2Arf/ZzNnd29kvz
+ 4e2LJAmPSh6oyESHvPHNz+MO9ZVvARzysIdk0JUvMmkyUJdryS+yxD17Y/1QCwUQQeful+fWV3f
+ WJNw1s4qDi+9zaKnuOG54Gx1Ead/QdOko02hME3OONx9iicRjXMHA64Hy9RKn+TWBpTwC3B52Jb
+ qL8+R0ku/W43FDuM3VHyidN2i3hKSZlOiMOc9fZa5AHZRRYzVr6hZLX/EgrMHmfoAtW+P03fDAY
+ ub3chdOWDzHt8OAbyujHu+6e6dYJ49FpiEb2h8sMWC3xaWHBbmrgSQhblXpCw88jRSG5yfBMen3
+ rpZWhZNs3j06tD+R7GnqyFmSBd9McbGbmY7dzRCNGwXmEnZi9qp6SjWC4GCjHLEbJzCydyA+ugy
+ dMC2NtNU1oLwa3znMUp+P8/GyOzKp6dc9IT9NyWrODwr3XF1ej8TtzE4LwBwRM0mK8KSU1LH/12
+ Iw+8e3DPp6yOOUPdwq4CCn3/30LDbz5oCGTO6ef2z1orwIhsDSU6y00Ub3+pmGFhG0rBFIN6XqU
+ uqX9+hycBFYnLrUYkCAG/dZb9bcg+NY9yH8Bm17094KM=
+X-Developer-Key: i=quic_bjorande@quicinc.com; a=openpgp;
+ fpr=05DE03CC5F35EA4F0966D5250B1F393F0D99ADC5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240524_000845_253046_CA6D1D94 
-X-CRM114-Status: GOOD (  21.07  )
+X-CRM114-CacheID: sfid-20240525_105911_655734_B2751BA1 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,91 +97,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/05/2024 08:51, Luca Weiss wrote:
-> On Thu May 23, 2024 at 11:06 AM CEST,  wrote:
->> Hi Lucas,
->>
->> On 10/05/2024 08:51, Luca Weiss wrote:
->>> On Tue Apr 23, 2024 at 4:08 PM CEST,  wrote:
->>>> On 23/04/2024 15:03, Konrad Dybcio wrote:
->>>>>
->>>>>
->>>>> On 4/5/24 12:19, Luca Weiss wrote:
->>
->> <snip>
->>
->>>
->>> Next, with DP 4 lane (not working on mainline but still plugged into a
->>> screen) the diff is quite a bit bigger.
->>>
->>> See attachments for the full files:
->>> * usb_1_qmpphy_20240503_151052_android_4lane.txt
->>> * usb_1_qmpphy_20240503_122443_mainline_4lane.txt
->>>
->>> Not attaching the diff because it's quite a lot
->>> $ diff --ignore-case -U0 usb_1_qmpphy_20240503_151052_android_4lane.txt usb_1_qmpphy_20240503_122443_mainline_4lane.txt
->>>
->>> Not sure this is helpful to anyone, but at least wanted to share what
->>> I've done so far here.
->>
->> Thanks a lot for the traces, it founds out the QPHY_V3_DP_COM_PHY_MODE_CTRL stays at 0x3,
->> which means the mode doesn't get broadcasted to the phy because.... the retimer only broadcasts
->> the orientation and not the mode... and it works on the HDKs and the X13s because they don't have retimers.
-> 
-> Hi Neil,
-> 
-> This was it!
-> 
->>
->> So I made the changes in nb7vpq904m and ptn36502 drivers to get the next mux and broadcast the typec mode,
->> if you find time could you test it ?
->>
->> Bjorn could you also test on the rb3gen2 ?
->>
->> The changes:
->> https://git.codelinaro.org/neil.armstrong/linux/-/commit/a61fb3b816ecbe28a12480367d9e09b700ec09e1
-> 
-> With this ptn36502 patch on top, I can confirm that DP 4-lane seems to
-> work on qcm6490-fairphone-fp5 smartphone with DP over USB-C!
-> 
-> Tested with a USB-C dongle that only has a HDMI port on the other side
-> (so no USB), and cat'ing dp_debug while connected showed num_lanes = 4
-> 
-> So feel free to add my:
-> 
-> Tested-by: Luca Weiss <luca.weiss@fairphone.com>
+The USB multiport controller found in SC8180X is used to driver the
+camera in the Lenovo Flex 5G, and a couple of additional USB ports on
+the Primus AUX board.
 
-Thanks a lot for testing, spinning a v2 with those patches!
+Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
+---
+Bjorn Andersson (10):
+      dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add sc8180x USB3 compatible
+      phy: qcom-qmp-usb: Add sc8180x USB UNIPHY
+      dt-bindings: clock: qcom: Add missing USB MP resets
+      clk: qcom: gcc-sc8180x: Add missing USB MP resets
+      dt-bindings: usb: qcom,dwc3: Add SC8180X compatibles
+      arm64: dts: qcom: sc8180x-pmics: Add second PMC8180 GPIO
+      arm64: dts: qcom: sc8180x: Align USB nodes with binding
+      arm64: dts: qcom: sc8180x: Add USB MP controller and phys
+      arm64: dts: qcom: sc8180x-primus: Enable the two MP USB ports
+      arm64: dts: qcom: sc8180x-lenovo-flex-5g: Enable USB multiport controller
 
-Neil
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        |   3 +
+ .../devicetree/bindings/usb/qcom,dwc3.yaml         |  29 ++++
+ .../arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dts |  32 ++++
+ arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi        |  16 +-
+ arch/arm64/boot/dts/qcom/sc8180x-primus.dts        |  60 +++++++
+ arch/arm64/boot/dts/qcom/sc8180x.dtsi              | 175 +++++++++++++++++++--
+ drivers/clk/qcom/gcc-sc8180x.c                     |   4 +
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c            |   3 +
+ include/dt-bindings/clock/qcom,gcc-sc8180x.h       |   4 +
+ 9 files changed, 312 insertions(+), 14 deletions(-)
+---
+base-commit: 3689b0ef08b70e4e03b82ebd37730a03a672853a
+change-id: 20240524-sc8180x-usb-mp-4eb278df7ef1
 
-> 
-> Regards
-> Luca
-> 
->> https://git.codelinaro.org/neil.armstrong/linux/-/commit/f6f976ff692bad430cd945f02b835e355f19632b
->>
->> Thanks,
->> Neil
->>
->>>
->>> Regards
->>> Luca
->>>
->>>>
->>>> Neil
->>>>
->>>>>
->>>>> Konrad
->>>
->>>
-> 
+Best regards,
+-- 
+Bjorn Andersson <quic_bjorande@quicinc.com>
 
 
 -- 
