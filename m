@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1D31C25B79
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F141CC25B7F
 	for <linux-phy@archiver.kernel.org>; Sat, 25 May 2024 17:59:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,42 +12,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E40wgbi1euACB5UkIYV+3Uce3+Df26oBqesI0kW/XKs=; b=cKmvsrjL72UEcJ
-	usw2m6JexOzM+Q9eIswS6+4/wYbFW5nSEEgfGZoqZC6AN86n5CRVRLvl98If5aFJo8QzE2AE8PU+s
-	bB7MirnxRNaoutHMzr2To8zbyAvDjeRI+dRlvXpefh80K8MsIT6ot3/8yHEHoQjvUnhBHSw/d0WA8
-	SU9JyoGzRjaXy/QFPGFKs4LPGiIQxSgcFWStfQL/qvRpnFT4pQEW1cuLPK6KcwpNueWFTysZ9Z0iW
-	pc0pJ5e5B9VBxjMZ43AYs+vGKpS43j9T1IEQ73AO7HirVzTfQywK65OG0WBpTo3Dkjz1xrFVhjMo7
-	cNXz0CoGbLpuGznKix1Q==;
+	List-Owner; bh=kSZHc43v/hEbO6jv9769R5/VBx+/41fp5tTRE/5IN8I=; b=q1INceekJKPtZ7
+	SdIWoPNUz5S6Sqb+I3V+ecG4bQ4YUvnGx8OPrVii51RbxRc4c/Hm26h1TsWc5TAuJvvMXaMweUqGF
+	BrzDEXE1E2ER2XNZzeUWRU+5qH6Ij3uGhKqf/jDy6kBK6KzEdOAv1Msd/irVPUqqbMTnUKm8qx7Or
+	yosGOLbra/URYiFPi8Tk3mVCA9P6L2sKtU9amHgzoKlrDc/rPQp6dUC+otSAnIrP7RAHFmVGL2RdK
+	dheDbYK0eEu6lOMhs2Q3lILnLkiZRH6Yjiy9YOjxYWJNLx1S5A+gVdSgI31Xz7Ic8fOafbemZRlRe
+	k22dtv2DrSLdWbQgcJyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAvfu-0000000BSrW-1CJz;
+	id 1sAvfu-0000000BSs1-2hfj;
 	Sat, 25 May 2024 17:59:22 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAvfr-0000000BSpZ-1GZh
+	id 1sAvfs-0000000BSpY-0551
 	for linux-phy@lists.infradead.org;
-	Sat, 25 May 2024 17:59:20 +0000
+	Sat, 25 May 2024 17:59:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 93E5B63571;
-	Sat, 25 May 2024 17:59:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E51BC4AF12;
+	by sin.source.kernel.org (Postfix) with ESMTP id D5E12CE0A23;
 	Sat, 25 May 2024 17:59:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CBB09C4AF0F;
+	Sat, 25 May 2024 17:59:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716659958;
-	bh=k2Zrv/KzpO8todlcSye5iZdki24cp3kSkjj42zD5Afw=;
+	s=k20201202; t=1716659957;
+	bh=o4kiKhxOwZs1Pl6joEEPNnwVtYuLg7fy0zk+ZBo5jEg=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Wke20qqMekGOA2zzhzgisOSD+FWiYq9uR/7meyG0Ywc9KdVHp7wGNDQr0mAulBX53
-	 lE2tpWox2g247DLH8Vr5cbVLDgSA7Qag+R5iAixar66emxL7kdlch8N/23mI8HLIJS
-	 Nx0jeLoMg06p69omqiJroFAdzvhkHY1/WeM2j+jk2XoKH2M2obaErPUq1NmQNUTVaF
-	 gKO9GvHsCswT/PpBPrAEKTd1Wk/1K+8jzqVbRNtpSwvKtBskV9G1CI9bQ4hrhTlG39
-	 rcswIY1ITHE+xzaYFGEzLWM8nVAgpKTa/vHG3OO3KNXFdMtwXjPmssD6D4hCX6ANG6
-	 r/CSPOkOeLeHg==
+	b=NKxe4zYFCCM18q8ezxq5LJm8ltvq9pVyC+UFQ54t0Gy0AYKXPaYt2sgYq9SMk+BOG
+	 fgC/iwzOYTjunK9p7YGl1xoMnXOkm3glEfie8UIHXjCnbv9iEcuRjr/MMHlzLuTMhs
+	 yYgyci4SDd/jyU1TAGuyn8N8vB2tWBmmvN0pyqDq8zLR6Zmuwdkdm2+3abEMqj4jkA
+	 1HeBsrRF5/BCxz70eCT/jBH057BzaQySLbebrl9Yd1QjERLm8io9XoUh8SYzIP/njv
+	 8nYbWflp74GnXk77AvOi5pyqWG7ghAwF/cU2VJRZRW+4FKUEa3F6Ofidsa9VDY5Ftd
+	 qV+a/U+mhRLLw==
 From: Bjorn Andersson <andersson@kernel.org>
-Date: Sat, 25 May 2024 11:04:00 -0700
-Subject: [PATCH 07/10] arm64: dts: qcom: sc8180x: Align USB nodes with
- binding
+Date: Sat, 25 May 2024 11:03:59 -0700
+Subject: [PATCH 06/10] arm64: dts: qcom: sc8180x-pmics: Add second PMC8180
+ GPIO
 MIME-Version: 1.0
-Message-Id: <20240525-sc8180x-usb-mp-v1-7-60a904392438@quicinc.com>
+Message-Id: <20240525-sc8180x-usb-mp-v1-6-60a904392438@quicinc.com>
 References: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
 In-Reply-To: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -64,27 +64,26 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-usb@vger.kernel.org, 
  Bjorn Andersson <quic_bjorande@quicinc.com>
 X-Mailer: b4 0.12.4
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2316;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1634;
  i=quic_bjorande@quicinc.com; h=from:subject:message-id;
- bh=YF0b2S8RermZ7DOy6SglxA1mcPt1MWrQ6lnKCRwbj0A=;
- b=owEBgwJ8/ZANAwAIAQsfOT8Nma3FAcsmYgBmUigMgQMBXUlGaner4t231riNoisxNP5xQ/tcw
- wgnDp6XSTKJAkkEAAEIADMWIQQF3gPMXzXqTwlm1SULHzk/DZmtxQUCZlIoDBUcYW5kZXJzc29u
- QGtlcm5lbC5vcmcACgkQCx85Pw2ZrcXNiQ/+Ndkh5jz0DWSWYmKm3qdD5coLzti8YsUlSD1JfS8
- SWjs8oZFArhy64bRns30/EdOKAhimPnB4/SiRHM6GdxdZDbAje3eJknqIE/UFhBQmQlo/zrZ2xw
- CWIzr4ij4tIvPUx+GZ0rjIPU0E7SEgDq2XeDUXV954Rpu7HhuQWNmLdeN3Xc8DXW1Z0i5QRo7Qn
- v+08XnBw/RSKf1DVkGtz+oatEPPHBPZmNOLHbMaq9V0AoXmXcT2/KgQ+WElZK0u7AZbymjkj9FM
- O14Bx5gRma697iKioMwRQv894Wbo9ylQD8wnolrpQ5U3A+4UkvmvstRu63x994zrqHh5gOQtz1q
- WJzBNqURDLFxiAmKH8FjYbeh73z3L4+8OzOED8Lqa6OWClexc1bKC72zTkN2W9TdtUb+s2EBhU/
- UN/B0xx1TqheMLpmCqMaLqD7yUkA4vCs624AfgahN3ZdJNlmqrqciPAcTT3DVTWY/0Mfp854Gdf
- CjuSzwJ06ySPlLfCDGaDbHvFS+3w0b7Voqg2MOeyJxbThwnyMmmFM5sMFuYqxxx/yCljcjy5kBW
- 5KGA+NYPxZSvqOZxJt/OwKjM60514j9N4pkvll/AiWXVWek1LUFYd2bP6G7FFd6dsfutpLLIh9S
- AxtJFw+fgIeWa7IvwT2+VnogbcVg3F0qr6LTnRIROuk4=
+ bh=Fz7ILqf97xUvsYbsDXAR0+z9Xlwkl6S2Ykmd3P7Brak=;
+ b=owEBgwJ8/ZANAwAIAQsfOT8Nma3FAcsmYgBmUigMTRCju33i/vPFcthH2BUPrpcbaeiyCTtom
+ b7DoTuGRkKJAkkEAAEIADMWIQQF3gPMXzXqTwlm1SULHzk/DZmtxQUCZlIoDBUcYW5kZXJzc29u
+ QGtlcm5lbC5vcmcACgkQCx85Pw2ZrcX0PRAA1Ad557RN9sy4ojGO8VytMOeFuvBiPoYLB6mqF+/
+ j24eHnPnr7vewgEWItHxNaxwF3ToG1WaTQb5B8KiXX6bus2T0H3XG/ypjVBG1hfNciXtGx5bomR
+ e8YY4wc2zjBudbNwD1KgsXVVpVO4em7BpkGGtRlYYht8bgIUFM6AHbpShovwqcbVjQJz+qLFtVa
+ DM6QyWmDqoPf0SV9EI08bx3AehOUAPwOJt48yl/IBPdnYM4DQ24P2G/fMxyDsgCz93TYzccV3VB
+ 4NVTRgPjz1cCRGYJMnQgEn/svDOTJrO1I8BYvedv8PL/2lmx3Y0UPPav3iAtHh125KYnq2pKWar
+ oZ7KEWjn8qO56VURK6m6Y0avvzBqA4R7dx/nGGywQSLJ9AaHFXjwkKByNQjO4LHbBQKD16r0R7Y
+ IlUHiP7H5PIhOpetEV1uq7NUm7z0jOPjSBfYV5Pr6wviO027GixTZhJPCWcP8/Da886tSmMfg5H
+ +U1k0wyUCO+7QXi+ZLvNXOLOYdS/Ni6qgfEn12yOWXNcnXiJf74gs72JOZL0ZEf3CtKydmizQMi
+ 618YU3mOS1PdSQPJdIDVvk+MekE8A3KIih4hpSXO7YnVNa88Vzx1OSF4yjT5MpE48JhukZHcytl
+ 1QK9WdYaYNBBaMraanRHO0/jkPPWr1VMgtEnuvGkG/Gk=
 X-Developer-Key: i=quic_bjorande@quicinc.com; a=openpgp;
  fpr=05DE03CC5F35EA4F0966D5250B1F393F0D99ADC5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240525_105919_526951_0BF4CA41 
-X-CRM114-Status: UNSURE (   8.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240525_105920_459252_EF531A62 
+X-CRM114-Status: GOOD (  10.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,64 +102,58 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Bjorn Andersson <quic_bjorande@quicinc.com>
 
-Add the pwr_event interrupt and rearrange the order of the other
-interrupts to match the binding.
+The SC8180X comes with two PMC8180 PMICs, with the GPIO block being used
+to control VBUS supply of the second USB multiport port.
+
+Rename the GPIO controller in the first PMC8180 to match the schematics
+and define this second controller.
 
 Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 ---
- arch/arm64/boot/dts/qcom/sc8180x.dtsi | 29 ++++++++++++++++++-----------
- 1 file changed, 18 insertions(+), 11 deletions(-)
+ arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/sc8180x.dtsi b/arch/arm64/boot/dts/qcom/sc8180x.dtsi
-index 067712310560..9ef3fa40e1d8 100644
---- a/arch/arm64/boot/dts/qcom/sc8180x.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc8180x.dtsi
-@@ -2665,14 +2665,16 @@ gem_noc: interconnect@9680000 {
- 		usb_prim: usb@a6f8800 {
- 			compatible = "qcom,sc8180x-dwc3", "qcom,dwc3";
- 			reg = <0 0x0a6f8800 0 0x400>;
--			interrupts-extended = <&intc GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>,
--					      <&pdc 6 IRQ_TYPE_LEVEL_HIGH>,
-+			interrupts-extended = <&intc GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>,
-+					      <&intc GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>,
-+					      <&pdc 9 IRQ_TYPE_EDGE_BOTH>,
- 					      <&pdc 8 IRQ_TYPE_EDGE_BOTH>,
--					      <&pdc 9 IRQ_TYPE_EDGE_BOTH>;
--			interrupt-names = "hs_phy_irq",
--					  "ss_phy_irq",
-+					      <&pdc 6 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "pwr_event",
-+					  "hs_phy_irq",
-+					  "dp_hs_phy_irq",
- 					  "dm_hs_phy_irq",
--					  "dp_hs_phy_irq";
-+					  "ss_phy_irq";
+diff --git a/arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi b/arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi
+index ddc84282f142..95656b5ed481 100644
+--- a/arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc8180x-pmics.dtsi
+@@ -141,11 +141,11 @@ rtc@6000 {
+ 			interrupts = <0x0 0x61 0x1 IRQ_TYPE_NONE>;
+ 		};
  
- 			clocks = <&gcc GCC_CFG_NOC_USB3_PRIM_AXI_CLK>,
- 				 <&gcc GCC_USB30_PRIM_MASTER_CLK>,
-@@ -2739,12 +2741,17 @@ usb_sec: usb@a8f8800 {
- 				      "xo";
- 			resets = <&gcc GCC_USB30_SEC_BCR>;
- 			power-domains = <&gcc USB30_SEC_GDSC>;
--			interrupts-extended = <&intc GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>,
--					      <&pdc 40 IRQ_TYPE_LEVEL_HIGH>,
+-		pmc8180_gpios: gpio@c000 {
++		pmc8180_1_gpios: gpio@c000 {
+ 			compatible = "qcom,pmc8180-gpio", "qcom,spmi-gpio";
+ 			reg = <0xc000>;
+ 			gpio-controller;
+-			gpio-ranges = <&pmc8180_gpios 0 0 10>;
++			gpio-ranges = <&pmc8180_1_gpios 0 0 10>;
+ 			#gpio-cells = <2>;
+ 			interrupt-controller;
+ 			#interrupt-cells = <2>;
+@@ -200,11 +200,21 @@ pmic@6 {
+ 		#size-cells = <0>;
+ 	};
+ 
+-	pmic@8 {
++	pmc8180_2: pmic@8 {
+ 		compatible = "qcom,pm8150", "qcom,spmi-pmic";
+ 		reg = <0x8 SPMI_USID>;
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
 +
-+			interrupts-extended = <&intc GIC_SPI 135 IRQ_TYPE_LEVEL_HIGH>,
-+					      <&intc GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>,
-+					      <&pdc 11 IRQ_TYPE_EDGE_BOTH>,
- 					      <&pdc 10 IRQ_TYPE_EDGE_BOTH>,
--					      <&pdc 11 IRQ_TYPE_EDGE_BOTH>;
--			interrupt-names = "hs_phy_irq", "ss_phy_irq",
--					  "dm_hs_phy_irq", "dp_hs_phy_irq";
-+					      <&pdc 40 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "pwr_event",
-+					  "hs_phy_irq",
-+					  "dp_hs_phy_irq",
-+					  "dm_hs_phy_irq",
-+					  "ss_phy_irq";
++		pmc8180_2_gpios: gpio@c000 {
++			compatible = "qcom,pmc8180-gpio", "qcom,spmi-gpio";
++			reg = <0xc000>;
++			gpio-controller;
++			gpio-ranges = <&pmc8180_2_gpios 0 0 10>;
++			#gpio-cells = <2>;
++			interrupt-controller;
++			#interrupt-cells = <2>;
++		};
+ 	};
  
- 			assigned-clocks = <&gcc GCC_USB30_SEC_MOCK_UTMI_CLK>,
- 					  <&gcc GCC_USB30_SEC_MASTER_CLK>;
+ 	pmic@a {
 
 -- 
 2.43.0
