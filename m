@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CDB8C25B75
-	for <linux-phy@archiver.kernel.org>; Sun, 26 May 2024 18:18:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25298C25B7A
+	for <linux-phy@archiver.kernel.org>; Sun, 26 May 2024 18:18:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mIUvAh9GMjl/c+G6Cacje4jK1b4mqvj1bMpw5LbjZHE=; b=ziIdU5n6PwWkr0
-	ywdsxPpftwM/hWkmxCSGnnBTq1po4YPR8QK9lTaW8GF3k3inUlp3Xx0coslD8l7TYmqoBJWLOhpFI
-	EGIo0AWkJ301Rcym4PdnsWinltRuFwHWuHOhikgTvOvxagIyGceYnJy2Ct11IHdNek7jIvyEkkfpD
-	iVHwTRL6t6qWopu/uUGHGgqFM9OtKawGvxz8VIy7GRwV/ueDf0UgXN5KEZJvurKuiGeFRUR7P1ZDW
-	XNlLUENctlR0XQcVpQQrstFx53MAqE70iISMOUZ7NfzadhSiY9N2jS3RE9/2i2DsNXMSh4rO7WzSh
-	ARBLrV934kcl7s2Ip8NA==;
+	List-Owner; bh=2DQAI8MbQKCmtuYw1nurrJ8eR+cnMw1cpDTMDEzdS/o=; b=xnVNQYWF1S9vW/
+	dwmB99yx/C646ap0EnMPn5RwVHOeGtVBGyEBeBgGfPzcrhCZeMdR4OEOuQTQ3aCItuWwxrk6mWES/
+	cYsIici9VDnfaRk2FtD5dW6EpYWbZ78Amrg0WGe2lVi30ThYUHe65B2XwLKT2lVNuqbjKhHESxNIy
+	0jTd3MEkMtE8iTabxnxa8CAGeWu6fc0/xkBJq/+Jb7sONvqsHuVPOQNe8kj5CYuxmyvD0ARWiKwZz
+	WXKtUX3ELb2DnAYfFR7tjd8sltimChlc/iF6lfuMV8nyBuoPr64wGjQtn7iskMqjrd4FNxATlUKST
+	PFv0o0YBRPy+J1Bit5LQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBIRa-0000000D4ko-1rqE;
-	Sun, 26 May 2024 18:18:06 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sBIRo-0000000D4om-3dLT;
+	Sun, 26 May 2024 18:18:20 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBIRY-0000000D4jM-0nm9
+	id 1sBIRm-0000000D4oI-2ECZ
 	for linux-phy@lists.infradead.org;
-	Sun, 26 May 2024 18:18:05 +0000
+	Sun, 26 May 2024 18:18:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 59D2560C02;
-	Sun, 26 May 2024 18:17:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DC471C2BD10;
-	Sun, 26 May 2024 18:17:48 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 617BCCE021E;
+	Sun, 26 May 2024 18:18:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1B72C2BD10;
+	Sun, 26 May 2024 18:18:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716747474;
-	bh=mHBnbYPxCL3ioXmDISlbjkpLrRlC4eM9hLGTISnIRcQ=;
+	s=k20201202; t=1716747494;
+	bh=KKV7nqNDm5fVm5UwO4ZtvswOo2K4l9M40/LQKIa+L9Y=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=APlhvY7H7XKkyWTF3B8wZZh9ug+kfIEMAhTGi/XJ3abhiMNUCWTON9pKb6YgtMIRF
-	 iQymJDR92R6qgR3/fQa0YtnK1/8Wxi5YfMUZd7oYajiFN/tikVCha/FzVNaJ5urwuk
-	 yb/I/jMxMeEqOhcymzLwDlLcs62JV5z6MKeHteaxXMlUAYxmGf00tSIMML0o2sJKJl
-	 15hplfnYDdWgvXtt5ZZiRgKcjhXK8sx1qpWevdf4LFpn+8j5udq80SZAHhauPv+xqN
-	 cJXBwIeE38pvF6UT797vTnULk126vNavvLYjP1W9kAgxzg+m+tt+GI+uyzc25fGKmj
-	 z6pTqr72NKq/g==
-Message-ID: <a48b15e0-e2c7-4941-8299-340a22690e01@kernel.org>
-Date: Sun, 26 May 2024 20:17:46 +0200
+	b=ASSbAHi2D61S8PV4cTZtkgQYiijZsEYULSHmnHKUQ8pmQuqygjs8c8qvx2+Y4C9MO
+	 R/nqhGacHswPbqKhcpc8Rs8/Pir55XCRG9Xpb+cXB0lOcEheVTrCJqSZf0fHlTKETl
+	 cAVTWp7wZScq6ByR8AtlV4UaOZ5VW3Xb9DNwU/+Rb9ro6yV/ykZ/KqfoPgtiPO0OeN
+	 /cPpK2hVYbBsUR6yOAffHZwdrq+G3GPuK8cWYBtZnECR2eeFD6HRvYAzILYktKcnLU
+	 g9OqqoJVc31ccgl+rpz6v4eQ7ggrmOL7dDYHhHE8uEem1chgWhxIgP8QqN7RJ1fihl
+	 jkwMRsogobrbw==
+Message-ID: <811fc8f8-ac8d-4099-84e1-50d48adfa77d@kernel.org>
+Date: Sun, 26 May 2024 20:18:07 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/10] dt-bindings: phy: qcom,sc8280xp-qmp-usb3-uni: Add
- sc8180x USB3 compatible
+Subject: Re: [PATCH 03/10] dt-bindings: clock: qcom: Add missing USB MP resets
 To: Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -61,7 +60,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-usb@vger.kernel.org,
  Bjorn Andersson <quic_bjorande@quicinc.com>
 References: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
- <20240525-sc8180x-usb-mp-v1-1-60a904392438@quicinc.com>
+ <20240525-sc8180x-usb-mp-v1-3-60a904392438@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -107,10 +106,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240525-sc8180x-usb-mp-v1-1-60a904392438@quicinc.com>
+In-Reply-To: <20240525-sc8180x-usb-mp-v1-3-60a904392438@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240526_111804_323766_2FDC28CA 
-X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-CacheID: sfid-20240526_111819_054789_51F87F06 
+X-CRM114-Status: UNSURE (   5.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -131,14 +130,13 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 25/05/2024 20:03, Bjorn Andersson wrote:
 > From: Bjorn Andersson <quic_bjorande@quicinc.com>
 > 
-> The SC8180X has two USB3 UNIPHY QMP blocks, add a compatible for these.
+> The USB multiport controller needs a few missing resets, describe them
+> in the binding.
 > 
 > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
->  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml        | 3 +++
->  1 file changed, 3 insertions(+)
 
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
 Best regards,
 Krzysztof
