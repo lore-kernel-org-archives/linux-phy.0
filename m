@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 790AEC25B7D
-	for <linux-phy@archiver.kernel.org>; Mon, 27 May 2024 07:20:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5D1FC25B7C
+	for <linux-phy@archiver.kernel.org>; Mon, 27 May 2024 07:20:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3hKOvwvcATxDQdW+j6UDYjnMnE7wHlPmfPbNVZdR2gE=; b=jvgDGmDBGmAjhK
-	/XX9rwiIsMMr5kBZT5W4hkXIvSdI5J3xUkW7Q0vkYBxddZkTDqfjUc7L/ndX+tPD/H3Jxi8RGqb4D
-	evOgNHfDmJHqng7NHJ1k60qwRVu8L4x6Hii1LmtLf5Sk/6c1jnvyd586LRWRYGZnzag7qWkykAfQN
-	scES2OTaqsWtAgZCzP5OA5L0o7Zb+obA5+f+aMNkulV0BAR2ZNks79CDJUYi7p/ohw4JgMFOOPZ6U
-	DiMh9+KXkaZd0p6LHOAydcyMUCXXV2O1L4EEG8/jVive/NCyZma4pbloJfe0j1n0ySqpcVv8AetJn
-	1F6fxegXJ0v6CZpwn/Mw==;
+	List-Owner; bh=B8OjkR5F5pFdmlDCYwCCTKhXpgQfxoqyuJgkGkPsAjY=; b=BLKQZNPuxCQfMY
+	qvNs9XlLX1DPweqiCrUEaH1HhGe4r6AKLslmBTIJGbcsDsf9FnE2w8JKn+72U8UU8670U+B5mnSF0
+	B3jub1IRfqMDb9oo0d3FLLnaKD1JouFbyGNCjiOh6XX3WMOlEdy9vEZc8pZmMWkAFj7FqddOA8ddO
+	hhO/+D4fNTnmtp/jT8Foi/OyXzX6t7+TQivlis5mU6YRayoAT3TqnaEMHHaJY9K43vZbRHubtMbKF
+	RK7c2DrRIp60Jt0Ky7euNAvbEDjq7+iJn9dzY7x5bDdxh8RyGOThTtDUiiHpKCA7apOk2jiPoqyd9
+	0w96XCrH9zK8lw/hQsug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBUf8-0000000E2OY-3sR5;
-	Mon, 27 May 2024 07:20:55 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1sBUf8-0000000E2OG-2AtN;
+	Mon, 27 May 2024 07:20:54 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBUf5-0000000E2MA-1u6b
+	id 1sBUf4-0000000E2Lo-1Noq
 	for linux-phy@lists.infradead.org;
-	Mon, 27 May 2024 07:20:52 +0000
-Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-a6265d3c488so366655866b.0
-        for <linux-phy@lists.infradead.org>; Mon, 27 May 2024 00:20:50 -0700 (PDT)
+	Mon, 27 May 2024 07:20:51 +0000
+Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-57869599ed5so1714492a12.2
+        for <linux-phy@lists.infradead.org>; Mon, 27 May 2024 00:20:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1716794449; x=1717399249; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1716794448; x=1717399248; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=TW/LSfGwT5gH7WAKYUuPqo8Jagb7fI9CA0RtQ3h/hLM=;
-        b=zM5fhEiwXcaVc6+7rDyJ1iyzZCLQGTqcCjFRKGyJXHi4AK9vxpZBPnyMd0nlrRT7MN
-         bxyo4ZiIHQWj/8BiyNy54DEfoGpn5wEwoBhVArWgpwN680c0dOJMvtioAhI1j3ojKM1d
-         WNFhKvagLjh8YaAvfe485k8rEWHv3U9Pvz22SLYc5SbBbXYUPNO9kaoyMXYtGaYD5NQA
-         v/eXpv2BRVkaivBqatbP/7PI3AI+EXQG6nHotXRoqPUcl2YGjHV4W+YBIwwZq6p346aB
-         jnl2UNHrmzymrU8sXggsSGjXmXhfXct1K3IEwT0tH7mNw8xznWM5v1BuAhEIWUvBSn7I
-         Uvxg==
+        bh=dFIwML9I1Cig6SdAiuvO9nVLq/nrtM3r9MfRFepo5r8=;
+        b=o8ywdroeNxKSRyfJh2aInIsRofZ/5v3JemaChOg4VWoKSAjGtKfCK0TVhlENJFgXe8
+         juBMJTHgU1zuU84Ynn6Uym2mDsB+BiRSoKcBF+f6NZMGNc7if59RNJ9t7SXsA21pRDvB
+         cPP0AlPPD+xb/tuqu1zUNGC2zRG1EAOhwv4zfDE7V6w7n1BP4+j6kkVfjCQxbwECjN00
+         Cq83PmxL1pT2R6uXYumtPgR0cvtP+okQ7UK5qrNOxMs/JrVybw4q/jLGaO56nXrI78a1
+         W3b8Zk1VKEfKWDfQ/cXffa3wuJACFC8Wlb5K3J50P0EiOoTooGlWinL5Dylaij4e3Qib
+         iGNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716794449; x=1717399249;
+        d=1e100.net; s=20230601; t=1716794448; x=1717399248;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=TW/LSfGwT5gH7WAKYUuPqo8Jagb7fI9CA0RtQ3h/hLM=;
-        b=ZwTwV4fUs7V7JxvtykghLlldCmFnsWZhtU28k1WpoMEDgOYHZ83OzQWJdOxe7Zi5aQ
-         lE//7ldiFkotTfQTGeu99I2TFFUOfA7ed+baAecrN2nFF36Zp2CSBnldp273MMZfa9pL
-         4ZmY2DdRvNTg6pQ6fbnicNYzRgf7A9kMvCMoziBLV8q6egi2aUZSHjijs1ZwRLc/1A4W
-         YlbgZbeZ5t18FJF5lElqwxDCNGstNEytXckeRZe9B2wkN41VkHJI2IKmd5QPYwLaxQHa
-         5+zG69qeUckJeY/MbMg8uDoY2NXvVLnzfNTmOscwsdns4SWdRKqFx9IL23Nvp7ei5g7W
-         9mow==
-X-Forwarded-Encrypted: i=1; AJvYcCV3AzsyuibUyphTfYlIiZROt2kgWhhMTmJ3S6d8VysE44IIC3P3Uuxd+Y8/IBEPFC0z6tIettxeBmfYeD9832eKA5Pc+sFaBizo7Sz2CA==
-X-Gm-Message-State: AOJu0Yy1yAYaMPyI2ceqFa88PLoD3COKtmetp2+6gYwCRNmG17hYayWG
-	R/AFRqvmOgbhaLxNcXJ8IJAvwyeLMh2Wf2l2sRcQHCQ8MuBGmPSqtkgeQezuZ50=
-X-Google-Smtp-Source: AGHT+IEb9O/hRjCH/tIkevCOFftVSv6LB7cbfSWDciPmsu1sKUNRJG4uWQdtZUSQVFBIbQhj77IErg==
-X-Received: by 2002:a17:906:b792:b0:a53:ed1b:f3ba with SMTP id a640c23a62f3a-a62642e9202mr804025266b.28.1716794449328;
-        Mon, 27 May 2024 00:20:49 -0700 (PDT)
-Received: from [127.0.1.1] ([188.27.161.69])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a626cc8e295sm457915666b.185.2024.05.27.00.20.48
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        bh=dFIwML9I1Cig6SdAiuvO9nVLq/nrtM3r9MfRFepo5r8=;
+        b=UxSgVPZevvPH62L7ktSHcPS+ZYRhvfaBjaHcx2xnBsNbjGphmQVJK8Z9z+J+a8FBgD
+         5Jhazg7swDgHVlkBy4nuWkGCAUM7MLvRKe1V3OcbFBFiw1+m9Qn/IxuGjbecH/VMqI6M
+         vFHX8yzd9qPZd8L+uCxMu48fEngTEtCbQOHkohLgwUpKmW71nJS+swGSV2TMEVQKk0gK
+         rqs6L8yp1/yGwWpSZPg4jY8IDxTyhWM+M6U04FG53XaNoaLJWRn0r9ZqCbJD1sr25Gxx
+         sL/ewXlWEevqsknyLXeiP+IY0XbGncIdMr/xrod2uFSaQ4yhoVZz0l+1I90JD65pSCdY
+         DNbg==
+X-Forwarded-Encrypted: i=1; AJvYcCXZsSOa9GB+MqhLbRG5hz4gc/dJV7lDjP2xnannEBocvCzgGoOh4MNSI5H5CGNixzM8SFnPK68fP/6BNBfy1ZwHN46x1yOWqhuHFrZL9w==
+X-Gm-Message-State: AOJu0Yx94dNGRDi/cXIJm3w3im4E9IL7aYuJIMGebSA/KqrewjKeiL1R
+	X3eLo1mHgyHS4bIXGC5sY4v+GAwqcunNh1g8Lxjpry79sePXWOEWREc5mzD6np8=
+X-Google-Smtp-Source: AGHT+IFfzB2M2LevgqhauhGVIk/oSQl9F99lkA56JEK7GoiqpOehtsnPlrupsGgAOl52ZKCriOeykw==
+X-Received: by 2002:a17:906:b117:b0:a59:a431:a8ce with SMTP id a640c23a62f3a-a626407c0d3mr605363366b.2.1716794448164;
         Mon, 27 May 2024 00:20:48 -0700 (PDT)
+Received: from [127.0.1.1] ([188.27.161.69])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a626cc8e295sm457915666b.185.2024.05.27.00.20.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 27 May 2024 00:20:47 -0700 (PDT)
 From: Abel Vesa <abel.vesa@linaro.org>
-Date: Mon, 27 May 2024 10:20:36 +0300
-Subject: [PATCH 2/3] phy: qcom-qmp: pcs: Add missing v6 N4 register offsets
+Date: Mon, 27 May 2024 10:20:35 +0300
+Subject: [PATCH 1/3] phy: qcom-qmp: qserdes-txrx: Add missing registers
+ offsets
 MIME-Version: 1.0
-Message-Id: <20240527-x1e80100-phy-qualcomm-combo-fix-dp-v1-2-be8a0b882117@linaro.org>
+Message-Id: <20240527-x1e80100-phy-qualcomm-combo-fix-dp-v1-1-be8a0b882117@linaro.org>
 References: <20240527-x1e80100-phy-qualcomm-combo-fix-dp-v1-0-be8a0b882117@linaro.org>
 In-Reply-To: <20240527-x1e80100-phy-qualcomm-combo-fix-dp-v1-0-be8a0b882117@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -77,25 +78,25 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
  Kuogee Hsieh <quic_khsieh@quicinc.com>
 X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2174; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=kaV21qO6GYNjhKLxdxIBJT19wvTGFK2gerZ38MtKK1I=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBmVDRLIpngrysYu+odCHNQ1ihTi2HjKGK3kajka
- o5g5+S1rQWJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZlQ0SwAKCRAbX0TJAJUV
- Vp6CEAC1RTXQdEOn4Z0PpOv/6boLkn/EYuDV3dW54c7Kug8NlbEKXizESrytBv/tSGyy8givfDi
- ld2Mm0eU73K8dGdgVUNdtblJz390BZqdtJtCcB5snvZoDl0Q71Wp99h7TuQ8O46AmxW19nPQPmC
- ZWzSTe6SRs9Ad7zND6/zVVk/uoQYh4IZPfhmgpwsgMovALxyW1wrf2lYUnTZywp4HxOI8lpIvPU
- BBD4s0hC979Nwg+3MbtN/86G/sy9ZulQsOcDwn1EeXf7+nmP3/Lid8qXdSR1EsjIlgbq0wNrq8a
- QgDAN0C9NizmL2Um3IJoljnhoG8uH4cNg616fI34pFhv8uH/Z/Tvq0eq3RGW+94xvJzplCFMAmo
- lBu+BKwE8/iPHvIzlTRxyItFuYS4/qr6e0gfQ/cwATENJQZRstrznAqtg5lBYEqPzqFEOt2KETG
- EXlsympwax++Kpet6lC5LXhleDBBiVW2gc2m6vnv3IcpBg0E1AE14gtK8BIswKMNk1Sc9AlKs8T
- NS6Qn/ccgmuMyd3O53/s8h8CI58AslGa4FJ/XqhEgHfG8vnfZy4WXMmZfGWfftI8W9I0lEUVUZh
- HIlABdwZk/j9bPDCxOuB4NJM7rLyYOMjuS0E7SqZU4ALJ6Aw+oqEx1fQf58NfUhG8je3NBTNAFE
- o8vZ2Lhyhn0w6RQ==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2046; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=/NKx4g17yrslFj63kXaD12eTW6X1NFoq4AP4B+eaOcA=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBmVDRJ6FoabRU16VxO/vpp4UncOhfCzCs8qutbM
+ KXmtXnXlEuJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZlQ0SQAKCRAbX0TJAJUV
+ VmpKD/wPTDzajfnprk6RxhJ8L1Lqp++t0pR+SxyHN3sdKDX/76ZxrV0d1D3zq3YwhEt20KTZcEY
+ OBPLe2SmCjZiaFke7lMe3cww6Y79xR0kLzDbsy1majk/zpBJ77x65OsCW06H+76VyLsELFF6aQS
+ 3To8fBqNxrVkYz3VV9BXVQhHBevztXNQsHIG1FQVHmyOBAZE7hJCM8JEv4ktT9ovx5HCxFd1Y/H
+ i/tc0EZ+gs9n9DPIyNhEHiqhi/ogyxdSV+4tUWPk113SnjmkxKTGXVb6pNd8qFtJD/TnhoIcuy/
+ agz4R6jb4KMR2tCSISaPhT1FUSEq3WJM7Tu1+TZlomVs6skt7xOkoyE5dL3OHOym4kEPgEnU+/U
+ IQIoAo0rO5wFPDYvT1Bz7qPOz+o09XtM4kPV53RH7s2Iplc8qFbsAA5iY9Yrgf3SMDfbkBV+wtM
+ a5Ya9/zOBA58xVaJKF8OgsrUYSvLD/Bil0dGYrivQlKVzfAyowtFZcpUUxnn+OvfTBKZa/4BxH1
+ fgV25v2aQRyvg+DXdnlXlmc+UOesUlWFAp1lYqW5o3SSkKqBY7HgzByQhyY3mFAdII3HtWIAdl5
+ +bj3FF4JDsrvsKtVKApF+viVRnO7c/T0sgb0yh2IFRxxH4rFYqnYTNAouLwynjuJfuLYEFs2bZz
+ WLB1VFbbJY3Zv0Q==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240527_002051_537643_B1902C97 
-X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-CacheID: sfid-20240527_002050_637317_39AA12C6 
+X-CRM114-Status: UNSURE (   8.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -113,58 +114,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The new X1E80100 SoC bumps up the HW version of QMP phy to v6 N4 for
-combo USB and DP PHY.  Currently, the X1E80100 uses the pure V6 PCS
-register offsets, which are different. Add the offsets so the
-mentioned platform can be fixed later on. Add the new PCS offsets
-in a dedicated header file.
+Currently, the x1e80100 uses pure V6 register offsets for DP part of the
+combo PHY. This hasn't been an issue because external DP is not yet
+enabled on any of the boards yet. But in order to enabled it, all these
+new V6 N4 register offsets are needed. So add them.
 
-Fixes: d7b3579f84f7 ("phy: qcom-qmp-combo: Add x1e80100 USB/DP combo phys")
+Fixes: 762c3565f3c8 ("phy: qcom-qmp: qserdes-txrx: Add V6 N4 register offsets")
 Co-developed-by: Kuogee Hsieh <quic_khsieh@quicinc.com>
 Signed-off-by: Kuogee Hsieh <quic_khsieh@quicinc.com>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6-n4.h | 32 +++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_n4.h | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6-n4.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6-n4.h
-new file mode 100644
-index 000000000000..b3024714dab4
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6-n4.h
-@@ -0,0 +1,32 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2023, Linaro Limited
-+ */
-+
-+#ifndef QCOM_PHY_QMP_PCS_V6_N4_H_
-+#define QCOM_PHY_QMP_PCS_V6_N4_H_
-+
-+/* Only for QMP V6 N4 PHY - USB/PCIe PCS registers */
-+#define QPHY_V6_N4_PCS_SW_RESET			0x000
-+#define QPHY_V6_N4_PCS_PCS_STATUS1		0x014
-+#define QPHY_V6_N4_PCS_POWER_DOWN_CONTROL	0x040
-+#define QPHY_V6_N4_PCS_START_CONTROL		0x044
-+#define QPHY_V6_N4_PCS_POWER_STATE_CONFIG1	0x090
-+#define QPHY_V6_N4_PCS_LOCK_DETECT_CONFIG1	0x0c4
-+#define QPHY_V6_N4_PCS_LOCK_DETECT_CONFIG2	0x0c8
-+#define QPHY_V6_N4_PCS_LOCK_DETECT_CONFIG3	0x0cc
-+#define QPHY_V6_N4_PCS_LOCK_DETECT_CONFIG6	0x0d8
-+#define QPHY_V6_N4_PCS_REFGEN_REQ_CONFIG1	0x0dc
-+#define QPHY_V6_N4_PCS_RX_SIGDET_LVL		0x188
-+#define QPHY_V6_N4_PCS_RCVR_DTCT_DLY_P1U2_L	0x190
-+#define QPHY_V6_N4_PCS_RCVR_DTCT_DLY_P1U2_H	0x194
-+#define QPHY_V6_N4_PCS_RATE_SLEW_CNTRL1		0x198
-+#define QPHY_V6_N4_PCS_RX_CONFIG		0x1b0
-+#define QPHY_V6_N4_PCS_ALIGN_DETECT_CONFIG1	0x1c0
-+#define QPHY_V6_N4_PCS_ALIGN_DETECT_CONFIG2	0x1c4
-+#define QPHY_V6_N4_PCS_PCS_TX_RX_CONFIG		0x1d0
-+#define QPHY_V6_N4_PCS_EQ_CONFIG1		0x1dc
-+#define QPHY_V6_N4_PCS_EQ_CONFIG2		0x1e0
-+#define QPHY_V6_N4_PCS_EQ_CONFIG5		0x1ec
-+
-+#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_n4.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_n4.h
+index a814ad11af07..d37cc0d4fd36 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_n4.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_n4.h
+@@ -6,11 +6,24 @@
+ #ifndef QCOM_PHY_QMP_QSERDES_TXRX_V6_N4_H_
+ #define QCOM_PHY_QMP_QSERDES_TXRX_V6_N4_H_
+ 
++#define QSERDES_V6_N4_TX_CLKBUF_ENABLE			0x08
++#define QSERDES_V6_N4_TX_TX_EMP_POST1_LVL		0x0c
++#define QSERDES_V6_N4_TX_TX_DRV_LVL			0x14
++#define QSERDES_V6_N4_TX_RESET_TSYNC_EN			0x1c
++#define QSERDES_V6_N4_TX_PRE_STALL_LDO_BOOST_EN		0x20
+ #define QSERDES_V6_N4_TX_RES_CODE_LANE_OFFSET_TX	0x30
+ #define QSERDES_V6_N4_TX_RES_CODE_LANE_OFFSET_RX	0x34
++#define QSERDES_V6_N4_TX_TRANSCEIVER_BIAS_EN		0x48
++#define QSERDES_V6_N4_TX_HIGHZ_DRVR_EN			0x4c
++#define QSERDES_V6_N4_TX_TX_POL_INV			0x50
++#define QSERDES_V6_N4_TX_PARRATE_REC_DETECT_IDLE_EN	0x54
+ #define QSERDES_V6_N4_TX_LANE_MODE_1			0x78
+ #define QSERDES_V6_N4_TX_LANE_MODE_2			0x7c
+ #define QSERDES_V6_N4_TX_LANE_MODE_3			0x80
++#define QSERDES_V6_N4_TX_TRAN_DRVR_EMP_EN		0xac
++#define QSERDES_V6_N4_TX_TX_BAND			0xd8
++#define QSERDES_V6_N4_TX_INTERFACE_SELECT		0xe4
++#define QSERDES_V6_N4_TX_VMODE_CTRL1			0xb0
+ 
+ #define QSERDES_V6_N4_RX_UCDR_FO_GAIN_RATE2		0x8
+ #define QSERDES_V6_N4_RX_UCDR_SO_GAIN_RATE2		0x18
 
 -- 
 2.34.1
