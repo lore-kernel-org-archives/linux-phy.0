@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CDE7C25B78
-	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 12:53:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 480CAC25B7C
+	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 12:54:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qFVhqeQrWkEyrKykRvmDTLTESXPXKESrRGGkzbhJWxw=; b=j4Of7pvoq229jF
-	tWhaBL843xV1r5X2gPJyvwbG2SoiXa0KFy374WoUXI7r7Ff1MGbhb+LCfM6yXbWjNFp/WDr0rDqWQ
-	O7v7oycje+Nt5EBSuOP3ziGOxSLf0HdnxYwutgz5qfQqUqqcI2/YisTWSuecmwl3oy6/aEEHsv0wC
-	hBqsDouNgSb8sk8JMGMFl7CI6T8UfBeWq/9qj3hB9U4s2G7MFY9c27ZQkaukivHckT9dWyW510k0Z
-	Vp/tnTNtsydf0FzUZg5IgYhnvkinvJj5xjWTnrM2aFxcvolb3olpAuNF99tgxOyijzixYaurG0sXm
-	GSMAnoD2qSHoWsGYoXTw==;
+	List-Owner; bh=hZBTg1rPrsfoggtq7+IKTZQw1M+seejJjW5DEOQ7Jes=; b=yTd3q7Ok+Y3178
+	+LjoP3UA4w81ForZ09hK/lPgmMUsDZfk5rNZjJwqVt540rSDyPZyvWIFjFGxziXpQItMTet324T/h
+	sFIf9PnMXZ7Jl1HSZYiRU+vqIZ5n/QClZDqjclDhuuq+lzR7v1xmiuN45uN9/iR6fOC7cpELjMaoC
+	6WJyH+KmACR/wjFcUWxEnxPaaB9nUvu767W4OvB0uEZI/cJaLyQGl6iHHu6oaQGOmyePwcuaN5ptM
+	rnYwUNfLQlPVDECOKk185amyCvjdC7m4ZvoiwG26g5zFFJ/HSeyIrcF69X/bB/nWo2pdUGMhI3+eu
+	sFMbMvexhvy97wWjt7qw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBwKN-00000000eUs-11M8;
-	Tue, 28 May 2024 12:53:19 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1sBwLh-00000000eps-491Q;
+	Tue, 28 May 2024 12:54:41 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBwKJ-00000000eTJ-34sx
+	id 1sBwLf-00000000eoM-2QiL
 	for linux-phy@lists.infradead.org;
-	Tue, 28 May 2024 12:53:17 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-5295a576702so935360e87.0
-        for <linux-phy@lists.infradead.org>; Tue, 28 May 2024 05:53:15 -0700 (PDT)
+	Tue, 28 May 2024 12:54:40 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-523b017a5c6so1125377e87.1
+        for <linux-phy@lists.infradead.org>; Tue, 28 May 2024 05:54:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1716900794; x=1717505594; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1716900877; x=1717505677; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=IhfLeEz31nnpbep1wtfE79deZVn4RTMnQcliKUfwmsk=;
-        b=oTpK9HPIgM+PRB6Bpac2um3pL3qyYJe420hX+CK/66VtEYY5RpXmkx2G+tW9ZJyqX2
-         0S74OTRRMqN073tMoo+bmkuLcjPA/h2nkC7sNooVBB6wVi7A7nB3ISOr2NVLeaim4OFa
-         zzyB6/82PpnUdf4E3cqu4ROlGTsJ9dFiRgIuD7Gd8aMzvfA+bmgLaCZOKHh6wgAj/e49
-         JH4Hy3n2cx1aEGF7CM/JL42F6xX7rEjhWc8OXTV5fXbFYv1JvHg6htME1c/Zbmfx9cD8
-         XM1YEdtRQKiQhRIlN6VBnZiT0k04yYhookaidjyuQPIqX0HhnSl6VqomgT/X2Ev8qArF
-         2mRw==
+        bh=aSTrlh2SCKUUASbHMjU/dT8MYXK+NpaxB9pLENdcjzo=;
+        b=sbzLP12DfIfhEaBjPoFZvG1ZM/f4OcEZQfJWsnqT06sxfh9h/HxC0OHZpk3YNbHTmI
+         IyTjPNcmvnHY9OHfoDl6+Re5ldLs/xDTvxP6jxTciKtJBJVKFGXzICOQj85nEYeIfhyg
+         EDf9Y/62G3buT7VsaD2t/i2fYlGAYVtP08S3Th8ZQ0ZXbIvAqXXmhUQC6oksdgxVTK8s
+         7vMLxBF+IoI2nqLtybjGKg4ult/CZE8EW6PxSKzsBoKqOYBX4OOpCNZhOlnEWITRTl2d
+         cozRs8E5rKkF7CFfiyczcwAQl85eHH+fEUuLhVL2DzLZtoMhOvg8onrvFSIKwaJq8Ic4
+         a4yA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716900794; x=1717505594;
+        d=1e100.net; s=20230601; t=1716900877; x=1717505677;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IhfLeEz31nnpbep1wtfE79deZVn4RTMnQcliKUfwmsk=;
-        b=KzvVE1XVpsoSphUmBmKy+A5nztRNBgCvjkTFMUqrjE7TsBIYQOnzJxNCEe1L/r3DAG
-         JcQ9SrI8vaZVbYvLMR/wGqd1kftafSAu2k7KLhojzLK5ZP+WIzvJ+OYwgJeWSqrRxVmD
-         byuiFQ2XXbuaYpP8OWc4y1qZbSzkKUsfw5kf30p2+OsHYtPcVVIde/Q7l3Q9oCfQ6MET
-         AafKefpSU2qbqOqTo9W6jyVfQJc3lywEH6T8W1Bi/85yaKr7KsD4jMZuD2PZ09TMkkRs
-         Rd0bp7W51sHul0woFOfGLv+TlVFZrgsdg7ZqktEw+26k0mbqEhl8Ya/Hw1ecepOJZalH
-         Zc6Q==
-X-Forwarded-Encrypted: i=1; AJvYcCUpWy+vaTJRBOod19EX5tFoE1G8y8FGkAfKaYQ+9/e/tr/CVk4yfL+n++Vntat8ObctWPCpjiCxBiw9kSkzHJ8TBu22oB41IF3XnSeArw==
-X-Gm-Message-State: AOJu0Yw090sDCs2F+1lBtiBkBuCkFez8/ijcYeFmTnh8MDlV0wFZnQny
-	Oo5XToRF4xvvCfcvSlgQ/CX0XzQ4iOSrpkemKg4t/nlxJhR569agcFkkfy3BOTI=
-X-Google-Smtp-Source: AGHT+IH1jsEV56zssrINk6gB/epPAKvvSKLlj9VGr4Avz+U+gixZrxxt6NkzNDHCNSWzzaaBtLHF6g==
-X-Received: by 2002:a19:380a:0:b0:516:d18b:eae8 with SMTP id 2adb3069b0e04-52964caa6damr6901115e87.41.1716900793703;
-        Tue, 28 May 2024 05:53:13 -0700 (PDT)
+        bh=aSTrlh2SCKUUASbHMjU/dT8MYXK+NpaxB9pLENdcjzo=;
+        b=mX8FHJbfzE04Yn+DPLNR1gxmIPlkVFIIindOp5KRsFLmCydnn0r3HfWvjuaDxaWAzx
+         asVh0Lz0cBHZUrDQxwS3p44ZDCrsa66ygGvgiVxPNywMLH6g9FejxSevxjSI7ncG8MQ2
+         rZgG/8OEa9fciCafIUAIPDs76mAfCIzl5BvVRmVtyZucy4wR4XYK8FnBlKe3JAP0deL0
+         jmUWhJDl6hnoVQGGAj7ZUr3ePVLy2cJ/fUBMLhmjUU2xqbVr3snWFXoIZ1RYvDiAr/dC
+         ptupBm3m58uJeTtplivz6O1ZriYFOKN6wTmkBYJLcNY5KJh6G+bh0DgOfThorAxeHone
+         Brbg==
+X-Forwarded-Encrypted: i=1; AJvYcCU5rHeaaWI9A/Ck9FHvf7pJlonITZAhdtOQC/keZuEXYGyzVKx0o+D/qQIG0JRKukJX9CeP4O9/DQQcMFupCYxNNiI6mPl/Fp45a8fKMQ==
+X-Gm-Message-State: AOJu0YzJvwQWdSyEeJeJEKMM3oO/mf7mB5DJXBlh69BxPLCvhgI30JHF
+	zNJXnM0UM+hPXnNjNxMeZpmDgV54rKdDnS5BpiX8kLmoexNXfM4xgB1BzPr458c=
+X-Google-Smtp-Source: AGHT+IGKzu2XIOmakywBVvQVCXPjCqQFFHQbzz7rGWhc+7VQYk4Q9VgfwbtHKoxlTZxsKpchLq1WnA==
+X-Received: by 2002:a19:ad07:0:b0:524:3ce:d4ca with SMTP id 2adb3069b0e04-52966005aadmr9313303e87.37.1716900876850;
+        Tue, 28 May 2024 05:54:36 -0700 (PDT)
 Received: from ?IPV6:2a00:f41:c97:23a9:35bc:df2e:d894:2c76? ([2a00:f41:c97:23a9:35bc:df2e:d894:2c76])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-529712f1c0fsm949009e87.279.2024.05.28.05.53.11
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5296e8877a3sm952106e87.36.2024.05.28.05.54.33
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 May 2024 05:53:13 -0700 (PDT)
-Message-ID: <e8e714ac-610e-4507-82ed-27a38c7be8fb@linaro.org>
-Date: Tue, 28 May 2024 14:53:09 +0200
+        Tue, 28 May 2024 05:54:35 -0700 (PDT)
+Message-ID: <68593878-fd39-4961-b7c2-cc33553d6fca@linaro.org>
+Date: Tue, 28 May 2024 14:54:32 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 08/10] arm64: dts: qcom: sc8180x: Add USB MP controller
- and phys
+Subject: Re: [PATCH 09/10] arm64: dts: qcom: sc8180x-primus: Enable the two MP
+ USB ports
 To: Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -81,13 +81,14 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-usb@vger.kernel.org,
  Bjorn Andersson <quic_bjorande@quicinc.com>
 References: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
- <20240525-sc8180x-usb-mp-v1-8-60a904392438@quicinc.com>
+ <20240525-sc8180x-usb-mp-v1-9-60a904392438@quicinc.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20240525-sc8180x-usb-mp-v1-8-60a904392438@quicinc.com>
+In-Reply-To: <20240525-sc8180x-usb-mp-v1-9-60a904392438@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_055315_812129_9D0D723F 
-X-CRM114-Status: GOOD (  15.57  )
+X-CRM114-CacheID: sfid-20240528_055439_664829_0BD6CC0D 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,142 +110,40 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On 5/25/24 20:04, Bjorn Andersson wrote:
 > From: Bjorn Andersson <quic_bjorande@quicinc.com>
 > 
-> The SC8180X platform comes with a multiport DWC3 controller with two
-> ports, each connected to a pair of HighSpeed and QMP SuperSpeed PHYs.
+> The SC8180X Primus comes with an AUX card with two USB ports, fed by the
+> two multiport ports.
 > 
-> Describe these blocks.
+> Enable the involved nodes and define two always-on regulators to enable
+> VBUS for these ports.
 > 
 > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
->   arch/arm64/boot/dts/qcom/sc8180x.dtsi | 146 ++++++++++++++++++++++++++++++++++
->   1 file changed, 146 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sc8180x.dtsi b/arch/arm64/boot/dts/qcom/sc8180x.dtsi
-> index 9ef3fa40e1d8..0950dc7adb20 100644
-> --- a/arch/arm64/boot/dts/qcom/sc8180x.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sc8180x.dtsi
-> @@ -2511,6 +2511,34 @@ usb_sec_hsphy: phy@88e3000 {
->   			status = "disabled";
->   		};
->   
-> +		usb_mp0_hsphy: phy@88e4000 {
-
-Even though the register names are MPn, I think this is a bit confusing..
-
-There's only one MP controller, so perhaps usb_mp_hsphy0?
 
 [...]
 
-> +			clocks = <&gcc GCC_USB3_MP_PHY_AUX_CLK>,
-> +				 <&gcc GCC_USB3_PRIM_CLKREF_CLK>,
-> +				 <&gcc GCC_USB3_MP_PHY_COM_AUX_CLK>,
-> +				 <&gcc GCC_USB3_MP_PHY_PIPE_0_CLK>;
+> +		gpio = <&pmc8180_1_gpios 9 0>;
 
-PIPE_1_CLK
+GPIO_ACTIVE_HIGH?
 
-> +			clock-names = "aux", "ref", "com_aux", "pipe";
+> +		enable-active-high;
+> +
+> +		regulator-always-on;
+> +	};
+> +
+> +	vreg_usb3_host_en: regulator-usb3-host-en {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "usb3_host_en";
+> +
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +
+> +		gpio = <&pmc8180_2_gpios 9 0>;
 
-This could be a vertical list
+GPIO_ACTIVE_HIGH
 
-> +
-> +			resets = <&gcc GCC_USB3_UNIPHY_MP1_BCR>,
-> +				 <&gcc GCC_USB3UNIPHY_PHY_MP1_BCR>;
-> +			reset-names = "phy", "phy_phy";
-> +
-> +			power-domains = <&gcc USB30_MP_GDSC>;
-> +
-> +			#clock-cells = <0>;
-> +			clock-output-names = "usb2_phy1_pipe_clk";
-> +
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-> +
->   		usb_sec_qmpphy: phy@88ee000 {
->   			compatible = "qcom,sc8180x-qmp-usb3-dp-phy";
->   			reg = <0 0x088ee000 0 0x18c>,
-> @@ -2662,6 +2738,76 @@ gem_noc: interconnect@9680000 {
->   			qcom,bcm-voters = <&apps_bcm_voter>;
->   		};
->   
-> +		usb_mp: usb@a4f8800 {
-> +			compatible = "qcom,sc8180x-dwc3-mp", "qcom,dwc3";
-> +			reg = <0 0x0a4f8800 0 0x400>;
-> +			#address-cells = <2>;
-> +			#size-cells = <2>;
-> +			ranges;
-> +			dma-ranges;
-> +
-> +			clocks = <&gcc GCC_CFG_NOC_USB3_MP_AXI_CLK>,
-> +				 <&gcc GCC_USB30_MP_MASTER_CLK>,
-> +				 <&gcc GCC_AGGRE_USB3_MP_AXI_CLK>,
-> +				 <&gcc GCC_USB30_MP_SLEEP_CLK>,
-> +				 <&gcc GCC_USB30_MP_MOCK_UTMI_CLK>,
-> +				 <&gcc GCC_USB3_SEC_CLKREF_CLK>;
+with that:
 
-This is used by the secondary DWC3 (non-MP). Are you sure?
-
-Actually, are we sure that these clocks are really supplying the DWC3s?
-
-> +			clock-names = "cfg_noc",
-> +				      "core",
-> +				      "iface",
-> +				      "sleep",
-> +				      "mock_utmi",
-> +				      "xo";
-> +
-> +			interconnects = <&aggre1_noc MASTER_USB3_2 0 &mc_virt SLAVE_EBI_CH0 0>,
-> +					<&gem_noc MASTER_AMPSS_M0 0 &config_noc SLAVE_USB3_2 0>;
-> +			interconnect-names = "usb-ddr", "apps-usb";
-> +
-> +			assigned-clocks = <&gcc GCC_USB30_MP_MOCK_UTMI_CLK>,
-> +					  <&gcc GCC_USB30_MP_MASTER_CLK>;
-> +			assigned-clock-rates = <19200000>, <200000000>;
-> +
-> +			interrupts-extended = <&intc GIC_SPI 656 IRQ_TYPE_LEVEL_HIGH>,
-> +					      <&intc GIC_SPI 655 IRQ_TYPE_LEVEL_HIGH>,
-> +					      <&intc GIC_SPI 658 IRQ_TYPE_LEVEL_HIGH>,
-> +					      <&intc GIC_SPI 657 IRQ_TYPE_LEVEL_HIGH>,
-> +					      <&pdc 59 IRQ_TYPE_EDGE_BOTH>,
-> +					      <&pdc 46 IRQ_TYPE_EDGE_BOTH>,
-> +					      <&pdc 71 IRQ_TYPE_EDGE_BOTH>,
-> +					      <&pdc 68 IRQ_TYPE_EDGE_BOTH>,
-> +					      <&pdc 7 IRQ_TYPE_LEVEL_HIGH>,
-> +					      <&pdc 30 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "pwr_event_1", "pwr_event_2",
-> +					  "hs_phy_1",	 "hs_phy_2",
-> +					  "dp_hs_phy_1", "dm_hs_phy_1",
-> +					  "dp_hs_phy_2", "dm_hs_phy_2",
-> +					  "ss_phy_1",	 "ss_phy_2";
-> +
-> +			power-domains = <&gcc USB30_MP_GDSC>;
-> +
-> +			resets = <&gcc GCC_USB30_MP_BCR>;
-> +
-> +			status = "disabled";
-> +
-> +			usb_mp_dwc3: usb@a400000 {
-> +				compatible = "snps,dwc3";
-> +				reg = <0 0x0a400000 0 0xcd00>;
-> +				interrupts = <GIC_SPI 654 IRQ_TYPE_LEVEL_HIGH>;
-> +				iommus = <&apps_smmu 0x60 0>;
-> +				snps,dis_u2_susphy_quirk;
-> +				snps,dis_enblslpm_quirk;
-
-sa8195-usb.dtsi lists a bunch more fluff:
-
-snps,has-lpm-erratum;
-snps,hird-threshold = /bits/ 8 <0x0>;
-snps,is-utmi-l1-suspend;
-snps,ssp-u3-u0-quirk;
-snps,dis-u1-entry-quirk;
-snps,dis-u2-entry-quirk;
-snps,dis_u3_susphy_quirk;
-snps,force-gen1;
-maximum-speed = "super-speed";
-
-the irq numbers look good
+Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
 Konrad
 
