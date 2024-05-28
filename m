@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5FC5C25B78
-	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 12:39:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B998C27C44
+	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 12:42:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MZ8/KTFwIuIi21BHDFIxfB14G1xxjS67y+JkC97VT0k=; b=tlsiyok9M4H6++
-	MNIyWLVP+rowRPUlDtbxNFAysvMEsf+Q8HhqybuvhwNF5wxQFFMvcR+qjYzkFJB9szygIBwcBD/93
-	6ZapF2Ekl7yzcUDij+u9qbQexbWjY1H4GH1ZCOp3fI9X4D89VupoWGHhVGkpAopHy6LO5WR/Q9Jcf
-	l/0p9lo71knsjRIfIqD/xldzMeAYlWOTwo56YGiGiz28Fizmi8YripO3U+je7GNMIbgM/iQbo6qNI
-	+dBwDm9cwRje/Ux+LHul2dG76F/vwcAe940fFhqBjtRZs0EhQqCsA/5zN8f4eVa+NezwQknkKMU7O
-	VAFqDKvE70lJkYQwhOnQ==;
+	List-Owner; bh=1Mao0T1PyTmIm4X/KI/uARoHiY2OrzpcuAYF+eoUEMU=; b=iGDfKQcxQK37Z5
+	I0RBQAvDnwjBIC5dA3aCim8TMfrAadD3Ush1ZsoF1BOa3RFeJa7Dwov94JHsr7cq0rhg0UUV3w3CC
+	opcsXBg5CKedWGhBHUC4b5R30zDIQRU+kH4I6ah+2fGZMp3Ci7RRlcGSkfC9lUWjp+561auFOeAO8
+	A1CLsyVUEdd18xtG85aQ4EL8Xc/qDqN3BGPcnz7jLC6BV0Ifh94Ava5Pg+ykXHy3ftO27f6u89v1+
+	TYOGw77F2pNM9QtRLb1Y8Jyzo5RBMs7OOQBY0XKeJolwRNq7eIjFqtktuJxKszCFd0LXthjdtSYrF
+	iqpY/pXCdpZ0aSVBvFeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBw7A-00000000cOj-0eIa;
-	Tue, 28 May 2024 12:39:40 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1sBw9h-00000000ctR-2kOr;
+	Tue, 28 May 2024 12:42:17 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBw77-00000000cNK-38p9
+	id 1sBw9e-00000000csF-1hhO
 	for linux-phy@lists.infradead.org;
-	Tue, 28 May 2024 12:39:38 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-2e73359b900so7917031fa.2
-        for <linux-phy@lists.infradead.org>; Tue, 28 May 2024 05:39:35 -0700 (PDT)
+	Tue, 28 May 2024 12:42:15 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-5295e488248so957711e87.2
+        for <linux-phy@lists.infradead.org>; Tue, 28 May 2024 05:42:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1716899974; x=1717504774; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1716900132; x=1717504932; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=MyyZ1avD99OZmFrk135FGzfKRiqqWoc5X9qTav7HvZ0=;
-        b=cyTFvQm1ro5IQXLnj0/ho7V9KcUw678wq0LSM1DIk48QVVXk0E3eBL5Hqqu/eAfcKj
-         GTdgGlsY5CL1wYME7HZPPVGeTWqWXGu3Vv/K9kFO3RmWlHxaNkObcWyKltHFGvu2hh6m
-         EnuvauTOIj6AeUJ1jw7Yw1c+vQr0uRV04GPewuYE/7f6wJ6+/ka4pHbfpNphanmZ1SFz
-         9ulrHy9rwGaxIZQA72Gba6MhWreSxGLPHLvUYClN2f8mtl2y7btHGuu8LkxcjXQFxbUx
-         x+H71Sk+yrlg3WNWsDB3ecxev6MyfHVSWx3b6CZc0mNZJevzJO1GFpWKnx7SvRJ/TsK8
-         lx7Q==
+        bh=ga2T6XeCoElWphUxptYnP0YlDqCUOZmRYJH6lTvOF0o=;
+        b=XD7dMDdXMZBpOklgf+8DDgAMdYjxrWYTGRV4ele0j53SKmkn6jOiRLtQRKEle4Ou9e
+         mE3UdpJp/ryJwCWhpuzdOMGrk4O7bo2q2ze2VKyDDZqWOcaGhe53ZQbGeKo4m4zQNaYR
+         apYCX8wacwxCmCV1S/ky70ZjILbMgL/iPOK+esuv/U6v/mnNNk0ZDpC5XSaVfFdpUtQD
+         qikWRc9eaE3YzrFKLDs5FxmIfi18a3cYp7cS9P+8t9tyWU8MGQLOY7gJg+kyMY2qHqPM
+         w00NbsejYzTeW1TohqzhDqJXxdtqaRjaK6Q+eD8mOW9Ta9BuPF0qvaqtuDHRuChheaVj
+         Q1gQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1716899974; x=1717504774;
+        d=1e100.net; s=20230601; t=1716900132; x=1717504932;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=MyyZ1avD99OZmFrk135FGzfKRiqqWoc5X9qTav7HvZ0=;
-        b=dDRPWBg+z6rOgaqY+dKGu1Cv9TANorr6p4cuGollu/5EQAPeqswxzg1X8DxCPKHCGc
-         rifV4JnarQyJpyyXv7vOjEG4vOgmo1j7VV+a4V+DVaA/vh3b2BrEjww7nY3bqf2V/F3A
-         a/2YZbO5oyeq+MUfUYktDbGhkdZ2kWfULqN7MMKZI17ZeV5M3EtE6UBIkI7basjkwSHK
-         2BVcb6AsSIGMP0G5PMWSuO7OL+XtSQXsf5PYRk67bW48gcec2SG0p5xo9kSiuj4Y9fEt
-         PUSCSNbaQ/lpDdtLw4A91N+8qAn69IUyBzhxSuvEHRtWt7uOXSbARL9bTbA49s2kSJKV
-         FAYw==
-X-Forwarded-Encrypted: i=1; AJvYcCWS1XdGNdn83aV9LZZMzLwz0cRiDFESqA3SMXoDffhSqiA4j6VQ1bmojaSHpLZqHMbufZRZczFhFP49gBNAw6dozCPJaJB+HB5j90E9Mg==
-X-Gm-Message-State: AOJu0YxozY3KZ/+R2y4yqslfTMGxunhC6JgYwFinhpNFnCj/wMh7nScc
-	CVugeiBrAQ3VcWx2PfrP+TnsCzWjT2Mf3aYjevdnkviqr7GB5aZkDpid7hR8jl0=
-X-Google-Smtp-Source: AGHT+IEuLhZJv7qeXezlx8kfsTgFOdfKulgrE/pHZmC8bjKegp4bpVB1CU8ydw/L2kKkl+X6jB3iKQ==
-X-Received: by 2002:a2e:2c16:0:b0:2e5:8720:50d2 with SMTP id 38308e7fff4ca-2e95af3493dmr78535451fa.0.1716899974195;
-        Tue, 28 May 2024 05:39:34 -0700 (PDT)
+        bh=ga2T6XeCoElWphUxptYnP0YlDqCUOZmRYJH6lTvOF0o=;
+        b=h0ulp59f8BXa4D1XU7VO57LglhzLU1niMtoXhsfM06KYwhnTSC9Q7zKFUI0NeBmNLF
+         PEaGcrut40rkaPpDumZeuuzzS3gN0CcwdHyexnWwZQc42cCbtfYS5wlrSKzv289cMV5T
+         w0xoPalyy5O/t9LTknQkh+5FYEQLQ2gwR2A2x6Hs3fTlDjd7QZL0N3cWFyWckHfc2AD8
+         VNSwF7sLta3qrBAMBKYdfeUIdUvYlT5FeV+5Uf2zA9fOe13zVcRWE6gBof5NE8VeJtk3
+         MKNI9EpUmrz8hPApPTkwaftkVnGGCd/KZzeJcP5kFGICdECYciaReXq8Y16HzTThS9ge
+         Qh5g==
+X-Forwarded-Encrypted: i=1; AJvYcCUp68oNcsBD/ZF8O+dPTiXV2gq0sG85dRX/+/r1n7hu/FSNSeeyM8EnK+QHSUIABBKb3vcojF5JS3WXcdJg9jBzcK0T5vCsWDo4C+LsBQ==
+X-Gm-Message-State: AOJu0Ywy2t6zSDZLiUnPusXAVqdUHylCuSepouoeKlqva3o8BlgFpMep
+	11UP8zOQZCHjXSJUvrj4pwYDP3UByPu7BpTns/qpDxYOePKjtU58YXtduh6I8u4=
+X-Google-Smtp-Source: AGHT+IEKKv3xDNv3NAqFduP1EFyw6pzWR6Vp8uFAEDeCR4NfYt5ZwVfqN9sWu3DZSG6ton8htkks7w==
+X-Received: by 2002:a19:6912:0:b0:51d:998e:e0c1 with SMTP id 2adb3069b0e04-5296410ad52mr8276027e87.13.1716900132197;
+        Tue, 28 May 2024 05:42:12 -0700 (PDT)
 Received: from ?IPV6:2a00:f41:c97:23a9:35bc:df2e:d894:2c76? ([2a00:f41:c97:23a9:35bc:df2e:d894:2c76])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2e98817eab1sm1386381fa.55.2024.05.28.05.39.31
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5296e887a3esm920622e87.13.2024.05.28.05.42.09
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 May 2024 05:39:33 -0700 (PDT)
-Message-ID: <a205c018-2181-405a-a4f4-4211b1113c7a@linaro.org>
-Date: Tue, 28 May 2024 14:39:29 +0200
+        Tue, 28 May 2024 05:42:11 -0700 (PDT)
+Message-ID: <a48d87a5-0271-46cb-b5c7-3c5e0334bfd2@linaro.org>
+Date: Tue, 28 May 2024 14:42:08 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 04/10] clk: qcom: gcc-sc8180x: Add missing USB MP resets
+Subject: Re: [PATCH 07/10] arm64: dts: qcom: sc8180x: Align USB nodes with
+ binding
 To: Bjorn Andersson <andersson@kernel.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -80,13 +81,13 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-usb@vger.kernel.org,
  Bjorn Andersson <quic_bjorande@quicinc.com>
 References: <20240525-sc8180x-usb-mp-v1-0-60a904392438@quicinc.com>
- <20240525-sc8180x-usb-mp-v1-4-60a904392438@quicinc.com>
+ <20240525-sc8180x-usb-mp-v1-7-60a904392438@quicinc.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@linaro.org>
-In-Reply-To: <20240525-sc8180x-usb-mp-v1-4-60a904392438@quicinc.com>
+In-Reply-To: <20240525-sc8180x-usb-mp-v1-7-60a904392438@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_053937_855394_65E87690 
-X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-CacheID: sfid-20240528_054214_508492_350E8A75 
+X-CRM114-Status: UNSURE (   7.76  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -106,16 +107,16 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 5/25/24 20:03, Bjorn Andersson wrote:
+On 5/25/24 20:04, Bjorn Andersson wrote:
 > From: Bjorn Andersson <quic_bjorande@quicinc.com>
 > 
-> The USB multiport controller needs a few additional resets, add these to
-> the driver.
+> Add the pwr_event interrupt and rearrange the order of the other
+> interrupts to match the binding.
 > 
 > Signed-off-by: Bjorn Andersson <quic_bjorande@quicinc.com>
 > ---
 
-The numbers look good
+The new numbers look correct as well
 
 Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
 
