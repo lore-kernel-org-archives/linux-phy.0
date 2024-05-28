@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11EF6C25B78
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFC74C27C44
 	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 10:20:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,35 +12,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vb28x5t20PlxPUxZgDPUxvGWuylJ9BqUXrxvQtAVSv8=; b=f2B4wdsjPep3Q5
-	iF+uqPNNgLe4h7o2rl5xpOKDrUWmx5xUQ3ufCW3ZAEuQNgyTBQcnnb3dD6rqkldtr+NvmU/SEysVp
-	5FbWIIbl/Au9SlM7TAjALtRyc/a+yjKGyr8AXkcaonli9kN/JHojbyzZpcTZ9ThMWx6pON+XBpw41
-	jEwaD17Pw5Xu8UL+Zx8MaWr1225PTi7+ffjn2yhko44lvP1NI2VmO6xUbFnhHwI0e+fALxDnD4+ez
-	njc9Dk9kghKSDMIrHRfy0qO8EW0GM4tINsGmz6NuhbxT0mCYi7OBMiSFBaFvv4/+mS2XVH9mWQaPX
-	fnm4EZfIJydv/KIV4eKQ==;
+	List-Owner; bh=OU5Ky8hYamcWZx9HpdoXunLC6BhL4Q9tsg0KGOjEJRM=; b=oqHnFPq4djd8aG
+	bJlKU06H21JUhYkkkiiJmohYjKlBSszjM4R8aHCOwR84YBOAreK0mvoV4jSQBbFGGYdbNG/vCEBSd
+	6eB9vwaTzo5VyuGu3z0RuEqn2CiHgjv2x+D4T4c0+zoGwMxkezeVVTEVezlz+HHgH1XAKYZHuUzqm
+	mYUwFjl8tEz9afrSrZt8ERLtETFXEFmaYut8NrMQTEMtZVxKXl3TR9YxW4Agbv+8/ykEgfhKi8abl
+	nja6NC8gUD7koyagglpMheOQxvIxE8vmhMsVs7xoaVuVj84102xRGUJe3KnpwGr+QxwNMmpnf2lyH
+	21qiKGh+YdZscyS4t7WQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBtwe-00000000Bpx-3Fmy;
-	Tue, 28 May 2024 10:20:40 +0000
+	id 1sBtwf-00000000BqF-106S;
+	Tue, 28 May 2024 10:20:41 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBtwb-00000000Bny-3f5d
+	id 1sBtwb-00000000Bnz-3THp
 	for linux-phy@lists.infradead.org;
 	Tue, 28 May 2024 10:20:39 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPA id 7156F24000D;
-	Tue, 28 May 2024 10:20:31 +0000 (UTC)
+Received: by mail.gandi.net (Postfix) with ESMTPA id 9D4C624000F;
+	Tue, 28 May 2024 10:20:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1716891632;
+	t=1716891633;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=GTwcLrJlkxUwGcPOIejW240WhGdaw9D79sS7IYE/LmE=;
-	b=evJjvDLsjaOsXLEPIROckcqKHLfMvST0zu/ozGJRnQ200CWCKNLpgPEt6wTC18UUEV30Mg
-	Ot0zq+pucWx4rB4J/ejdlfGgU+0pH90LXn4CgL6NmTzKnE00aK28RxPmikOMLG66GvVGWB
-	yfMfAXI/nVD/TVhXTPXpk9ONwNSvyRIef0T6FgHwr2VHcf2GfjvkIijtstXL0Thq3jNiQ/
-	ydCAZHkL2GN2Ur55tpFEmPCHMqV27jt8nXsG7tbeAzju4fAOx3IijPxlV+YcCiMACu+bLA
-	jydYKNs7qkSs/QPbrrz15AXz6INa9AnVKFUpUTaWqwoJpKeZx7ArZVB2xjJ11w==
+	bh=zGUowIjjvnUnYJCOfP5hA4A3GSUyMwVNLn232niSHqg=;
+	b=Tvxnf/1sOxG7YTTlw/W1NXEz9FHTMOZtCPTbp39/HNLu3Qmmh41gSNHJUYTqYktQguxUns
+	950m2EEkYFKsnYsS8vxMnYUd4BJSgIixtf8ZxxM6lV06qmctdPAuv2EoAs/u1SICFvndKr
+	HaGWBvV9pJaLlXAG8uLkOS6qVTnIPZsiM7CfpvXx2AXuSSIhVNT8XIzQzZFe5Hsy9f4Xqs
+	KkhbWl8xr9yjuhEaQFRiBQS6fXmm74mV6pg5s/Om6s4OUAy3czrEfgOap7TLPxTn4Hdne+
+	hrIV8gBBH4HUgMOMGn+zB3UUV+CzJA8Sy3rVmjDkdcwQAiBZthQJeGW0rl950w==
 From: Bastien Curutchet <bastien.curutchet@bootlin.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -53,17 +53,17 @@ Cc: linux-phy@lists.infradead.org,
 	herve.codina@bootlin.com,
 	christophercordahi@nanometrics.ca,
 	Bastien Curutchet <bastien.curutchet@bootlin.com>
-Subject: [PATCH 2/4] Revert "usb: musb: da8xx: Set phy in OTG mode by default"
-Date: Tue, 28 May 2024 12:20:24 +0200
-Message-ID: <20240528102026.40136-3-bastien.curutchet@bootlin.com>
+Subject: [PATCH 3/4] usb: musb: da8xx: Remove try_idle implementation from host-only mode
+Date: Tue, 28 May 2024 12:20:25 +0200
+Message-ID: <20240528102026.40136-4-bastien.curutchet@bootlin.com>
 X-Mailer: git-send-email 2.44.0
 In-Reply-To: <20240528102026.40136-1-bastien.curutchet@bootlin.com>
 References: <20240528102026.40136-1-bastien.curutchet@bootlin.com>
 MIME-Version: 1.0
 X-GND-Sasl: bastien.curutchet@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_032038_183794_91CC7421 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20240528_032038_108950_988725DF 
+X-CRM114-Status: GOOD (  10.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,40 +80,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This reverts commit 7ccf62941a38701ec9a42b4a0fa2868af456e96a.
+The idle_state is not meant for host-only mode. When the device acts as a
+host, it fails to exit the idle state once entered. This prevents new
+USB gadgets from being detected once plugged in.
 
-da8xx_musb_set_mode() forces OTG mode regardless the selected mode even
-if the property 'dr_mode = "host"' is present in device-tree. This
-causes an unrecoverable error when VBUS supply is shut down : plugged
-gadgets are no longer detected once VBUS supply is back.
+Commit 032ec49f5351 ("usb: musb: drop useless board_mode usage") removed
+a is_otg_enabled() check in the try_idle() that prevented from entering
+idle_state. This was removed because at that time it was not possible to
+select host-only mode with CONFIG_USB_MUSB_HOST so dual role was always
+set.
 
-Reverting it allows to have a selected mode coherent with device-tree's
-description. IMO, this shouldn't cause regression because OTG mode is
-the default selection when 'dr_mode' property is not set.
+Add #ifndef CONFIG_USB_MUSB_HOST around try_idle() callback to prevent
+from entering idle_state when host-only mode has been selected.
 
 Signed-off-by: Bastien Curutchet <bastien.curutchet@bootlin.com>
 ---
- drivers/usb/musb/da8xx.c | 7 -------
- 1 file changed, 7 deletions(-)
+ drivers/usb/musb/da8xx.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/usb/musb/da8xx.c b/drivers/usb/musb/da8xx.c
-index 8abf3a567e30..1681f9fba3da 100644
+index 1681f9fba3da..c5cf733673a2 100644
 --- a/drivers/usb/musb/da8xx.c
 +++ b/drivers/usb/musb/da8xx.c
-@@ -328,13 +328,6 @@ static int da8xx_musb_set_mode(struct musb *musb, u8 musb_mode)
- 	struct da8xx_glue *glue = dev_get_drvdata(musb->controller->parent);
- 	enum phy_mode phy_mode;
+@@ -191,7 +191,7 @@ static void otg_timer(struct timer_list *t)
+ 	spin_unlock_irqrestore(&musb->lock, flags);
+ }
  
--	/*
--	 * The PHY has some issues when it is forced in device or host mode.
--	 * Unless the user request another mode, configure the PHY in OTG mode.
--	 */
--	if (!musb->is_initialized)
--		return phy_set_mode(glue->phy, PHY_MODE_USB_OTG);
--
- 	switch (musb_mode) {
- 	case MUSB_HOST:		/* Force VBUS valid, ID = 0 */
- 		phy_mode = PHY_MODE_USB_HOST;
+-static void da8xx_musb_try_idle(struct musb *musb, unsigned long timeout)
++static void __maybe_unused da8xx_musb_try_idle(struct musb *musb, unsigned long timeout)
+ {
+ 	static unsigned long last_timer;
+ 
+@@ -476,7 +476,10 @@ static const struct musb_platform_ops da8xx_ops = {
+ 	.disable	= da8xx_musb_disable,
+ 
+ 	.set_mode	= da8xx_musb_set_mode,
++
++#ifndef CONFIG_USB_MUSB_HOST
+ 	.try_idle	= da8xx_musb_try_idle,
++#endif
+ 
+ 	.set_vbus	= da8xx_musb_set_vbus,
+ };
 -- 
 2.44.0
 
