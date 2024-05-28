@@ -4,42 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C9A3C25B78
-	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 10:20:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E21EFC25B7C
+	for <linux-phy@archiver.kernel.org>; Tue, 28 May 2024 10:20:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yj984EA0Nd8UvBC0JxK4Koe4i+HHpjgJzS/rbRB1OxE=; b=S0oqNlLTie/9a5
-	OeiA9XpkzT6/h33BoVe9JSkBjOCVJKGJ+sVreVC6mVFaCoeaxyziqwkT2uhCBjIcocOEQ7+GxcjMR
-	TgJmgvbvPNeaiGlnaSaBmT+fdCyxrUZUhr4EbvJAWeA4ESucuDZsx4UVSXB4CM8m+YFyXLnrbF2/p
-	q5lrZKtuuk3C4UFzPDEWFlyLz346LyBlHQQFZlFYPN10hSuR7E8tkwlRtremyrJPeREiUQd7t0tai
-	dpbPnzL2B+PAGxvdLrnHE1td2Gfl7kq1cmm3IjqN7ZmHvlsT/AVNQacvTrx/yrL66XEz4UeZTBGcu
-	b4y/Ns8EmfcARpuLJdwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=txzEuYNjoO4p1OPgL7ukHc/xYjwdEK9baLX3LClAoGM=; b=Q72mUT9t8oGg+W
+	MUjvCbPYUgphBb6m1Gii4BQMYJ0QKFNKoGkF6l5ZQWAQJ00no2hVqAIr+Y/8r1UxZeSDkvXCVfhhv
+	ysgjHZ+qoX8F1FPu8SMShap5FexljVSlEbgzhdm3v5XYGwAoGTasJW0rBIIaP7lnIpKdanIPUUjqP
+	W5dmCxZbieyleFaql124PTk3D9VpuEWof4xvIL0GtGyAXZ0YpvJr5WhtxCV+6lolt8wyVLsi0ra5j
+	RG8WstAioZ6uLbhzLxQjNVJN6nLj1Aau/8lkLuGSpDFCNDgZmGA8YdyY332X/3Pui5BheTCvLAa/Y
+	oTOoPfj492v1dYcnekYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBtwh-00000000BrC-3sf3;
+	id 1sBtwh-00000000Bqz-2X0j;
 	Tue, 28 May 2024 10:20:43 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sBtwb-00000000Bnw-3dJ1
+	id 1sBtwb-00000000Bnx-3bZj
 	for linux-phy@lists.infradead.org;
 	Tue, 28 May 2024 10:20:40 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPA id 4D0DE24000B;
-	Tue, 28 May 2024 10:20:28 +0000 (UTC)
+Received: by mail.gandi.net (Postfix) with ESMTPA id 225EE24000E;
+	Tue, 28 May 2024 10:20:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1716891629;
+	t=1716891630;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=amToApSarLSNqnXhX0wNJ/SchkoaLpTlnt9nLIsw7Xw=;
-	b=Vcf9VNi4oHVeaX/E9kYettn+xE2HkeMekUBAz7m8jxAWawVImMompaxF05MT7VUAVqGD09
-	EY9yGRfRa5E3HexRQf+yD4Ng16ORCE9XPnMJSOYkU5HNuihzDlF3lWD78hpWjV5QpEAaIq
-	22ZVHCszbVvXOXhaWVczfVBsVGFL23qlt/5ASmqDAHmZ5y9j55E//Yg8tNmU0tDrnTVXNi
-	mkjw0GXvDmASHLZy8luNQtpoccFlHysn7tlseV7afxknTDXmdzwVckxn28AaRraUne9JkE
-	fmsL6ee7uBSIGk5ak2ttjutCD5flBeT85cIXcCdtOi9H4eqvQJhgxmia2H8cbg==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=Pt4vcaHEqIK7tEg5aEV04mxd2ZnC0k99FgLlkPj/PX8=;
+	b=SVfbZnEtNR0BhLFE21BoJQ30/zXBsCr4v3wujLSLANi/Z2fjIJc88cBrYT2byO2SqyAA8R
+	DTBP9fLHFBAz8W21/rcQOdumlCGeKpML5PfNftca7BRdwWJdfHMOzwGXlPMoBPk/nqiXme
+	rWPReML+hVUs3P2zCqpIUe8reR/hc073JZoI0mTxmt06nS+w1FXEKV8lq3I/OhdnHldGE5
+	bg1jhwUJ+DCl/0JEzl52Yql7zf5hjKsVBSo7qk4jnrkgHiGFkTXN9lYbGa+yluWXZHpUlK
+	YnZvFO4iUoHG+qe7MUOjhGOD9JkRqaFfNBYFYUyNtILYyNwelzjdG7+3+g6ttQ==
 From: Bastien Curutchet <bastien.curutchet@bootlin.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -52,16 +53,17 @@ Cc: linux-phy@lists.infradead.org,
 	herve.codina@bootlin.com,
 	christophercordahi@nanometrics.ca,
 	Bastien Curutchet <bastien.curutchet@bootlin.com>
-Subject: [PATCH 0/4] usb: davinci: Add PM runtime support and improve HOST only mode support
-Date: Tue, 28 May 2024 12:20:22 +0200
-Message-ID: <20240528102026.40136-1-bastien.curutchet@bootlin.com>
+Subject: [PATCH 1/4] phy: ti: phy-da8xx-usb: Add runtime PM support
+Date: Tue, 28 May 2024 12:20:23 +0200
+Message-ID: <20240528102026.40136-2-bastien.curutchet@bootlin.com>
 X-Mailer: git-send-email 2.44.0
+In-Reply-To: <20240528102026.40136-1-bastien.curutchet@bootlin.com>
+References: <20240528102026.40136-1-bastien.curutchet@bootlin.com>
 MIME-Version: 1.0
 X-GND-Sasl: bastien.curutchet@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_032038_194412_109CA066 
-X-CRM114-Status: UNSURE (   7.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240528_032038_229840_AC9A6051 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,31 +80,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi all,
+Runtime PM is not supported while USB PHY can be turned off from
+register accesses.
 
-I've worked on adding PM runtime support on the DAVINCI's USB PHY
-controller. It revealed some bugs in the MUSB controller that I fixed in
-the last three patches.
+Add runtime PM for the USB2.0 PHY. The PHY is entirely shut down to save
+as much power as possible. This means that gadgets will not be discovered
+once suspend state is entered, and suspend state can not be left without
+an explicit user intervention (through sysfs). That's why runtime PM is
+disabled by default.
 
-The platform I work on uses the MUSB controller in HOST-only mode and has
-been designed to save as much energy as possible. To do so, the USB's
-VBUS supply can be cut off by toggling a GPIO, this triggers the bug
-fixed by patch 2.
-
-If an USB stick gets unplugged, then plugged back while the PHY is in
-suspend state, a BABBLE error happens. This BABBLE can't be recovered.
-This is fixed by last patch.
-
-Bastien Curutchet (4):
-  phy: ti: phy-da8xx-usb: Add runtime PM support
-  Revert "usb: musb: da8xx: Set phy in OTG mode by default"
-  usb: musb: da8xx: Remove try_idle implementation from host-only mode
-  usb: musb: da8xx: Implement BABBLE recovery
-
+Signed-off-by: Bastien Curutchet <bastien.curutchet@bootlin.com>
+---
  drivers/phy/ti/phy-da8xx-usb.c | 49 ++++++++++++++++++++++++++++++++++
- drivers/usb/musb/da8xx.c       | 20 ++++++++------
- 2 files changed, 61 insertions(+), 8 deletions(-)
+ 1 file changed, 49 insertions(+)
 
+diff --git a/drivers/phy/ti/phy-da8xx-usb.c b/drivers/phy/ti/phy-da8xx-usb.c
+index dc614aa09a5f..80bfe37cf846 100644
+--- a/drivers/phy/ti/phy-da8xx-usb.c
++++ b/drivers/phy/ti/phy-da8xx-usb.c
+@@ -15,11 +15,13 @@
+ #include <linux/phy/phy.h>
+ #include <linux/platform_data/phy-da8xx-usb.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
+ #include <linux/regmap.h>
+ 
+ #define PHY_INIT_BITS	(CFGCHIP2_SESENDEN | CFGCHIP2_VBDTCTEN)
+ 
+ struct da8xx_usb_phy {
++	struct device		*dev;
+ 	struct phy_provider	*phy_provider;
+ 	struct phy		*usb11_phy;
+ 	struct phy		*usb20_phy;
+@@ -40,6 +42,12 @@ static int da8xx_usb11_phy_power_on(struct phy *phy)
+ 	regmap_write_bits(d_phy->regmap, CFGCHIP(2), CFGCHIP2_USB1SUSPENDM,
+ 			  CFGCHIP2_USB1SUSPENDM);
+ 
++	/*
++	 * USB1.1 can used USB2.0 output clock as reference clock so this is here to prevent USB2.0
++	 * from shutting PHY's power when USB1.1 might use it
++	 */
++	pm_runtime_get_sync(d_phy->dev);
++
+ 	return 0;
+ }
+ 
+@@ -50,6 +58,7 @@ static int da8xx_usb11_phy_power_off(struct phy *phy)
+ 	regmap_write_bits(d_phy->regmap, CFGCHIP(2), CFGCHIP2_USB1SUSPENDM, 0);
+ 
+ 	clk_disable_unprepare(d_phy->usb11_clk);
++	pm_runtime_put_sync(d_phy->dev);
+ 
+ 	return 0;
+ }
+@@ -119,6 +128,35 @@ static const struct phy_ops da8xx_usb20_phy_ops = {
+ 	.owner		= THIS_MODULE,
+ };
+ 
++static int __maybe_unused da8xx_runtime_suspend(struct device *dev)
++{
++	struct da8xx_usb_phy *d_phy = dev_get_drvdata(dev);
++
++	dev_dbg(dev, "Suspending ...\n");
++
++	regmap_set_bits(d_phy->regmap, CFGCHIP(2), CFGCHIP2_PHYPWRDN | CFGCHIP2_OTGPWRDN);
++
++	return 0;
++}
++
++static int __maybe_unused da8xx_runtime_resume(struct device *dev)
++{
++	u32 mask = CFGCHIP2_RESET | CFGCHIP2_PHYPWRDN | CFGCHIP2_OTGPWRDN | CFGCHIP2_PHY_PLLON;
++	struct da8xx_usb_phy *d_phy = dev_get_drvdata(dev);
++	u32 pll_status;
++
++	regmap_update_bits(d_phy->regmap, CFGCHIP(2), mask, CFGCHIP2_PHY_PLLON);
++
++	dev_dbg(dev, "Resuming ...\n");
++
++	return regmap_read_poll_timeout(d_phy->regmap, CFGCHIP(2), pll_status,
++					pll_status & CFGCHIP2_PHYCLKGD, 1000, 500000);
++}
++
++static const struct dev_pm_ops da8xx_usb_phy_pm_ops = {
++	SET_RUNTIME_PM_OPS(da8xx_runtime_suspend, da8xx_runtime_resume, NULL)
++};
++
+ static struct phy *da8xx_usb_phy_of_xlate(struct device *dev,
+ 					 const struct of_phandle_args *args)
+ {
+@@ -148,6 +186,8 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
+ 	if (!d_phy)
+ 		return -ENOMEM;
+ 
++	d_phy->dev = dev;
++
+ 	if (pdata)
+ 		d_phy->regmap = pdata->cfgchip;
+ 	else
+@@ -209,6 +249,14 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
+ 	regmap_write_bits(d_phy->regmap, CFGCHIP(2),
+ 			  PHY_INIT_BITS, PHY_INIT_BITS);
+ 
++	pm_runtime_set_active(dev);
++	devm_pm_runtime_enable(dev);
++	/*
++	 * Prevent runtime pm from being ON by default. Users can enable
++	 * it using power/control in sysfs.
++	 */
++	pm_runtime_forbid(dev);
++
+ 	return 0;
+ }
+ 
+@@ -233,6 +281,7 @@ static struct platform_driver da8xx_usb_phy_driver = {
+ 	.remove_new = da8xx_usb_phy_remove,
+ 	.driver	= {
+ 		.name	= "da8xx-usb-phy",
++		.pm	= &da8xx_usb_phy_pm_ops,
+ 		.of_match_table = da8xx_usb_phy_ids,
+ 	},
+ };
 -- 
 2.44.0
 
