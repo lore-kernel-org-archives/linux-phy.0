@@ -4,62 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0018C25B75
-	for <linux-phy@archiver.kernel.org>; Wed, 29 May 2024 06:18:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6456FC25B75
+	for <linux-phy@archiver.kernel.org>; Wed, 29 May 2024 07:56:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=waQl6bErB/XlkMALYuAar7COmLGvy7tEb1UnjlYnPEc=; b=UR9XbGgNqGb98A
-	MBKDziW91qb3+iQDRYgzALuCMCpdURNKzfmoJ2EbB38TVhg5nEFTTMmCaNsK6zeFAHih5UUIWEvnS
-	vcVwDrzYR7z4o7Bz9/6v5ABUQDu9hGDZ8MvzxA3U2U+cgdyvuq09tcb2GhpN+evYtyXgx8swC4vkK
-	sCbi1i7kmUmycYXCDlRvgsqNRTTxfGxWohLvj2XCZ+RcUrQ8pTRzv2qZcRX5paCDaXV6XOR7622uA
-	tcZ3dX1U3VigK+UPLgnaxkt+pDhHM0KChlgnthyOPXtv954hBheYotLEZD1jKXNJt6AbeSdUzXwIY
-	N/HdmhsCJKxrdAi5I37Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=pEAM0bagLDFaQEeGNmBmYSi3gehy1D+PfENoW/TI5nA=; b=dtM521i1doM1sR2q5aMZUfcZfp
+	oh10cvmL+vJYgjjdh/96+cxHjIE37Qinbf3qFYo+bLO5Jf24iBPO1oKGTZh1fYm0U5iUro7sUiKd4
+	d+ZJuM2kqnEl42yVnWLuU/N7sPkdFWUEP6rcVypkkgudAA+EpIJWp+enG0S58VW1J0Z+pwvg6NsTB
+	bgtXBv1P6qn2nWRIDo8JMOilF5CpnBiWTPpLJJtbVmYTjHkYAKyx4GqrG7OAcbY6FsrijABMYNbTY
+	eI3ygv7of8z62rJFcrNsfvJft/yeeVbVOTnFa08L9/1ZUptCI9ET+WowfFiPq9owdBWTE20AYRaP4
+	Q67sMB4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCCeH-00000002z3I-0aU9;
-	Wed, 29 May 2024 06:18:57 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1sCEAE-00000003EWc-0AcD;
+	Wed, 29 May 2024 07:56:02 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sCCe1-00000002yyI-0CYo;
-	Wed, 29 May 2024 06:18:43 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F1EE6201531;
-	Wed, 29 May 2024 08:18:37 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 68FF020063B;
-	Wed, 29 May 2024 08:18:37 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net [10.192.224.44])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 6B63D1820F76;
-	Wed, 29 May 2024 14:18:35 +0800 (+08)
-From: Richard Zhu <hongxing.zhu@nxp.com>
-To: conor@kernel.org,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	frank.li@nxp.com,
-	conor+dt@kernel.org
-Cc: hongxing.zhu@nxp.com,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	kernel@pengutronix.de,
-	imx@lists.linux.dev
-Subject: [PATCH v7 2/2] phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support
-Date: Wed, 29 May 2024 14:02:45 +0800
-Message-Id: <1716962565-2084-3-git-send-email-hongxing.zhu@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1716962565-2084-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1716962565-2084-1-git-send-email-hongxing.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1sCEAB-00000003EWH-2kzW
+	for linux-phy@lists.infradead.org;
+	Wed, 29 May 2024 07:56:01 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-354de3c5c61so1444631f8f.0
+        for <linux-phy@lists.infradead.org>; Wed, 29 May 2024 00:55:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1716969357; x=1717574157; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=lQtYelb2zwqgADzWbfATSB8Y/SNXDqCycD8uNCYpBZ4=;
+        b=wKUCqBqQ8cQh2c9nDks8hpL8vngESDspJJLUQcWA/d6KTp5FPKQB86+lqBQkpU+Qvw
+         +qL7VEKSfOlyinseU/YtCdngu3XBXc1Owh4SEhrZiUixbsz6xJSJwroSew0Kl13FERwU
+         PPYnMJqrhh/XF3DJXtEAZlYcH6529ZpFO6SqwRqileuFR06c98pS04I8q1sDOEKdmE07
+         30na1nghJ1FCk6nr0djOEkl/XJ1sKXJYHsN0EVjjyju/+ODuFa5giZsAcBuV5LMoF6ie
+         JBfeB55XCpVpd7dAWsUW88eYE3A2LxDwb8a33Qf2lgUAUS3fXFk1NiCCc1CHE/Gzb5mJ
+         r8gw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1716969357; x=1717574157;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=lQtYelb2zwqgADzWbfATSB8Y/SNXDqCycD8uNCYpBZ4=;
+        b=Qh+RHutS0se9F/zuvA5iGospGD6M+wXjCKNBp0BrOstGg1KqNPtIdFxpLalAe9Bo24
+         rYEbjTgrj8zb2vklFobbF4YMuZGss0JUHIFoGmGHK2CF1U+nGuVQnt2FQb3H/0/i74tS
+         dT1pmwMn3NGLDy2AqVlJmBYB7TnfSlrBfpChuVLKn71bPweatbl3HMKJeMLC2iKUbv9O
+         oU4rT3dcla9h40GxOUTMjDHQMCnDT0JD39mO6x/2c1yLRmI5lHHiBv3p685o3XVdwvdO
+         yq4aMob551s06VBwZpmEUX7DcUVDROSmYT1x0dqCAA4XmY4ZRi3A8CntcnZ/Xz3o67+D
+         LD6A==
+X-Forwarded-Encrypted: i=1; AJvYcCWeiD+M5eBaO+cUPT/wYe1zlVC0RZMQn6CO28cXdhyWH/vgYRnXuSDRUsZbYcq1V6Jm3v2kYeIF1/hsHACU4Z2F3geZXkK90Q3vhaMzmw==
+X-Gm-Message-State: AOJu0Yx19SKskzZPeVP9WZtDO26t4ZrGF19+SIoNWwIZx5lchf+NMt/D
+	oqnrhoqgw/37VPSgt5rTeelZjV0B2JEq3vaJoneNv7oPxpILbrho7qmHLCV7/Xo=
+X-Google-Smtp-Source: AGHT+IHXJ5DB2P3l4g9u4tulV9h4irckLqN3BFo5luDpJhEcunehw5dHxuogjqEI+yRmLXNyYHkgdA==
+X-Received: by 2002:adf:e70b:0:b0:355:39d:f82 with SMTP id ffacd0b85a97d-3552fde184emr10910982f8f.53.1716969357068;
+        Wed, 29 May 2024 00:55:57 -0700 (PDT)
+Received: from ?IPV6:2a01:e0a:982:cbb0:8894:9a1b:5e81:c70? ([2a01:e0a:982:cbb0:8894:9a1b:5e81:c70])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-357ad6c2fabsm10413366f8f.83.2024.05.29.00.55.56
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 29 May 2024 00:55:56 -0700 (PDT)
+Message-ID: <b738eece-2169-44d8-a9dc-9031c6d9a175@linaro.org>
+Date: Wed, 29 May 2024 09:55:55 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v2 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
+ DisplayPort Altmode
+To: Bjorn Andersson <andersson@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org>
+ <wipu6tdqjbjlrv2sbljgzvoxvpjvkoaz6ic3keq24n3v4tap4j@entxhnd42rml>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <wipu6tdqjbjlrv2sbljgzvoxvpjvkoaz6ic3keq24n3v4tap4j@entxhnd42rml>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240528_231841_524219_C09D46F3 
-X-CRM114-Status: GOOD (  24.84  )
+X-CRM114-CacheID: sfid-20240529_005559_767381_E3400B7A 
+X-CRM114-Status: GOOD (  14.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,694 +123,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: neil.armstrong@linaro.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add i.MX8QM HSIO PHY driver support.
+On 28/05/2024 15:48, Bjorn Andersson wrote:
+> On Mon, May 27, 2024 at 10:42:32AM GMT, Neil Armstrong wrote:
+>> Register a typec mux in order to change the PHY mode on the Type-C
+>> mux events depending on the mode and the svid when in Altmode setup.
+>>
+>> The DisplayPort phy should be left enabled if is still powered on
+>> by the DRM DisplayPort controller, so bail out until the DisplayPort
+>> PHY is not powered off.
+>>
+>> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+>> will be set in between of USB-Only, Combo and DisplayPort Only so
+>> this will leave enough time to the DRM DisplayPort controller to
+>> turn of the DisplayPort PHY.
+>>
+>> The patchset also includes bindings changes and DT changes.
+>>
+>> This has been successfully tested on an SM8550 board, but the
+>> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
+>> PD USB Hubs and PD Altmode Dongles to make sure the switch works
+>> as expected.
+>>
+>> The DisplayPort 4 lanes setup can be check with:
+>> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
+>> 	name = msm_dp
+>> 	drm_dp_link
+>> 		rate = 540000
+>> 		num_lanes = 4
+> 
+> Has the issue with the USB controller dying on us been resolved?
 
-i.MX8QM HSIO has three lane PHY instances, and can be bound to the
-following controllers in the different use cases listed in below table.
-- two lanes capable PCIEA controller.
-- one lane PCIEB controller.
-- AHCI SATA controller.
+No, this would require some changes in dwc3 & ucsi to support the USB_ROLE_NONE
 
-i.MX8QM HSIO PHYs support the following use cases.
-+----------------------------------------------------+
-|                               | Lane0| Lane1| Lane2|
-|-------------------------------|------|------|------|
-| use case 1: PCIEAX2SATA       | PCIEA| PCIEA| SATA |
-|-------------------------------|------|------|------|
-| use case 2: PCIEAX2PCIEB      | PCIEA| PCIEA| PCIEB|
-|-------------------------------|------|------|------|
-| use case 3: PCIEAPCIEBSATA    | PCIEA| PCIEB| SATA |
-+----------------------------------------------------+
+I haven't looked into this yet.
 
-Signed-off-by: Richard Zhu <hongxing.zhu@nxp.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
----
- drivers/phy/freescale/Kconfig               |   9 +-
- drivers/phy/freescale/Makefile              |   1 +
- drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 610 ++++++++++++++++++++
- 3 files changed, 619 insertions(+), 1 deletion(-)
- create mode 100644 drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+Neil
 
-diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-index 45aaaea14fb4..dcd9acff6d01 100644
---- a/drivers/phy/freescale/Kconfig
-+++ b/drivers/phy/freescale/Kconfig
-@@ -35,12 +35,19 @@ config PHY_FSL_IMX8M_PCIE
- 	  Enable this to add support for the PCIE PHY as found on
- 	  i.MX8M family of SOCs.
- 
-+config PHY_FSL_IMX8QM_HSIO
-+	tristate "Freescale i.MX8QM HSIO PHY"
-+	depends on OF && HAS_IOMEM
-+	select GENERIC_PHY
-+	help
-+	  Enable this to add support for the HSIO PHY as found on
-+	  i.MX8QM family of SOCs.
-+
- config PHY_FSL_SAMSUNG_HDMI_PHY
- 	tristate "Samsung HDMI PHY support"
- 	depends on OF && HAS_IOMEM && COMMON_CLK
- 	help
- 	  Enable this to add support for the Samsung HDMI PHY in i.MX8MP.
--
- endif
- 
- config PHY_FSL_LYNX_28G
-diff --git a/drivers/phy/freescale/Makefile b/drivers/phy/freescale/Makefile
-index c4386bfdb853..658eac7d0a62 100644
---- a/drivers/phy/freescale/Makefile
-+++ b/drivers/phy/freescale/Makefile
-@@ -3,5 +3,6 @@ obj-$(CONFIG_PHY_FSL_IMX8MQ_USB)	+= phy-fsl-imx8mq-usb.o
- obj-$(CONFIG_PHY_MIXEL_LVDS_PHY)	+= phy-fsl-imx8qm-lvds-phy.o
- obj-$(CONFIG_PHY_MIXEL_MIPI_DPHY)	+= phy-fsl-imx8-mipi-dphy.o
- obj-$(CONFIG_PHY_FSL_IMX8M_PCIE)	+= phy-fsl-imx8m-pcie.o
-+obj-$(CONFIG_PHY_FSL_IMX8QM_HSIO)	+= phy-fsl-imx8qm-hsio.o
- obj-$(CONFIG_PHY_FSL_LYNX_28G)		+= phy-fsl-lynx-28g.o
- obj-$(CONFIG_PHY_FSL_SAMSUNG_HDMI_PHY)	+= phy-fsl-samsung-hdmi.o
-diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-new file mode 100644
-index 000000000000..dcf9c45ff5d6
---- /dev/null
-+++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-@@ -0,0 +1,610 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2024 NXP
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/pci_regs.h>
-+#include <linux/phy/phy.h>
-+#include <linux/phy/pcie.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/phy/phy-imx8-pcie.h>
-+
-+#define MAX_NUM_LANE	3
-+#define LANE_NUM_CLKS	5
-+
-+/* Parameters for the waiting for PCIe PHY PLL to lock */
-+#define PHY_INIT_WAIT_USLEEP_MAX	10
-+#define PHY_INIT_WAIT_TIMEOUT		(1000 * PHY_INIT_WAIT_USLEEP_MAX)
-+
-+/* i.MX8Q HSIO registers */
-+#define HSIO_CTRL0			0x0
-+#define HSIO_APB_RSTN_0			BIT(0)
-+#define HSIO_APB_RSTN_1			BIT(1)
-+#define HSIO_PIPE_RSTN_0_MASK		GENMASK(25, 24)
-+#define HSIO_PIPE_RSTN_1_MASK		GENMASK(27, 26)
-+#define HSIO_MODE_MASK			GENMASK(20, 17)
-+#define HSIO_MODE_PCIE			0x0
-+#define HSIO_MODE_SATA			0x4
-+#define HSIO_DEVICE_TYPE_MASK		GENMASK(27, 24)
-+#define HSIO_EPCS_TXDEEMP		BIT(5)
-+#define HSIO_EPCS_TXDEEMP_SEL		BIT(6)
-+#define HSIO_EPCS_PHYRESET_N		BIT(7)
-+#define HSIO_RESET_N			BIT(12)
-+
-+#define HSIO_IOB_RXENA			BIT(0)
-+#define HSIO_IOB_TXENA			BIT(1)
-+#define HSIO_IOB_A_0_TXOE		BIT(2)
-+#define HSIO_IOB_A_0_M1M0_2		BIT(4)
-+#define HSIO_IOB_A_0_M1M0_MASK		GENMASK(4, 3)
-+#define HSIO_PHYX1_EPCS_SEL		BIT(12)
-+#define HSIO_PCIE_AB_SELECT		BIT(13)
-+
-+#define HSIO_PHY_STS0			0x4
-+#define HSIO_LANE0_TX_PLL_LOCK		BIT(4)
-+#define HSIO_LANE1_TX_PLL_LOCK		BIT(12)
-+
-+#define HSIO_CTRL2			0x8
-+#define HSIO_LTSSM_ENABLE		BIT(4)
-+#define HSIO_BUTTON_RST_N		BIT(21)
-+#define HSIO_PERST_N			BIT(22)
-+#define HSIO_POWER_UP_RST_N		BIT(23)
-+
-+#define HSIO_PCIE_STS0			0xc
-+#define HSIO_PM_REQ_CORE_RST		BIT(19)
-+
-+#define HSIO_REG48_PMA_STATUS		0x30
-+#define HSIO_REG48_PMA_RDY		BIT(7)
-+
-+struct imx_hsio_drvdata {
-+	int lane_num;
-+};
-+
-+struct imx_hsio_lane {
-+	u32 ctrl_index;
-+	u32 ctrl_off;
-+	u32 idx;
-+	u32 phy_off;
-+	u32 phy_type;
-+	const char * const *clk_names;
-+	struct clk_bulk_data clks[LANE_NUM_CLKS];
-+	struct imx_hsio_priv *priv;
-+	struct phy *phy;
-+	enum phy_mode phy_mode;
-+};
-+
-+struct imx_hsio_priv {
-+	void __iomem *base;
-+	struct device *dev;
-+	struct mutex lock;
-+	const char *hsio_cfg;
-+	const char *refclk_pad;
-+	u32 open_cnt;
-+	struct regmap *phy;
-+	struct regmap *ctrl;
-+	struct regmap *misc;
-+	const struct imx_hsio_drvdata *drvdata;
-+	struct imx_hsio_lane lane[MAX_NUM_LANE];
-+};
-+
-+static const char * const lan0_pcie_clks[] = {"apb_pclk0", "pclk0", "ctl0_crr",
-+					      "phy0_crr", "misc_crr"};
-+static const char * const lan1_pciea_clks[] = {"apb_pclk1", "pclk1", "ctl0_crr",
-+					       "phy0_crr", "misc_crr"};
-+static const char * const lan1_pcieb_clks[] = {"apb_pclk1", "pclk1", "ctl1_crr",
-+					       "phy0_crr", "misc_crr"};
-+static const char * const lan2_pcieb_clks[] = {"apb_pclk2", "pclk2", "ctl1_crr",
-+					       "phy1_crr", "misc_crr"};
-+static const char * const lan2_sata_clks[] = {"pclk2", "epcs_tx", "epcs_rx",
-+					      "phy1_crr", "misc_crr"};
-+
-+static const struct regmap_config regmap_config = {
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+};
-+
-+static int imx_hsio_init(struct phy *phy)
-+{
-+	int ret, i;
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+	struct device *dev = priv->dev;
-+
-+	/* Assign clocks refer to different modes */
-+	switch (lane->phy_type) {
-+	case PHY_TYPE_PCIE:
-+		lane->phy_mode = PHY_MODE_PCIE;
-+		if (lane->ctrl_index == 0) { /* PCIEA */
-+			lane->ctrl_off = 0;
-+			lane->phy_off = 0;
-+
-+			for (i = 0; i < LANE_NUM_CLKS; i++) {
-+				if (lane->idx == 0)
-+					lane->clks[i].id = lan0_pcie_clks[i];
-+				else
-+					lane->clks[i].id = lan1_pciea_clks[i];
-+			}
-+		} else { /* PCIEB */
-+			if (lane->idx == 0) { /* i.MX8QXP */
-+				lane->ctrl_off = 0;
-+				lane->phy_off = 0;
-+			} else {
-+				/*
-+				 * On i.MX8QM, only second or third lane can be
-+				 * bound to PCIEB.
-+				 */
-+				lane->ctrl_off = SZ_64K;
-+				if (lane->idx == 1)
-+					lane->phy_off = 0;
-+				else /* the third lane is bound to PCIEB */
-+					lane->phy_off = SZ_64K;
-+			}
-+
-+			for (i = 0; i < LANE_NUM_CLKS; i++) {
-+				if (lane->idx == 1)
-+					lane->clks[i].id = lan1_pcieb_clks[i];
-+				else if (lane->idx == 2)
-+					lane->clks[i].id = lan2_pcieb_clks[i];
-+				else /* i.MX8QXP only has PCIEB, idx is 0 */
-+					lane->clks[i].id = lan0_pcie_clks[i];
-+			}
-+		}
-+		break;
-+	case PHY_TYPE_SATA:
-+		/* On i.MX8QM, only the third lane can be bound to SATA */
-+		lane->phy_mode = PHY_MODE_SATA;
-+		lane->ctrl_off = SZ_128K;
-+		lane->phy_off = SZ_64K;
-+
-+		for (i = 0; i < LANE_NUM_CLKS; i++)
-+			lane->clks[i].id = lan2_sata_clks[i];
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	/* Fetch clocks and enable them */
-+	ret = devm_clk_bulk_get(dev, LANE_NUM_CLKS, lane->clks);
-+	if (ret)
-+		return ret;
-+	ret = clk_bulk_prepare_enable(LANE_NUM_CLKS, lane->clks);
-+	if (ret)
-+		return ret;
-+
-+	/* allow the clocks to stabilize */
-+	usleep_range(200, 500);
-+	return 0;
-+}
-+
-+static int imx_hsio_exit(struct phy *phy)
-+{
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+
-+	clk_bulk_disable_unprepare(LANE_NUM_CLKS, lane->clks);
-+
-+	return 0;
-+}
-+
-+static void imx_hsio_pcie_phy_resets(struct phy *phy)
-+{
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			  HSIO_BUTTON_RST_N);
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			  HSIO_PERST_N);
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			  HSIO_POWER_UP_RST_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			HSIO_BUTTON_RST_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			HSIO_PERST_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			HSIO_POWER_UP_RST_N);
-+
-+	if (lane->idx == 1) {
-+		regmap_set_bits(priv->phy, lane->phy_off + HSIO_CTRL0,
-+				HSIO_APB_RSTN_1);
-+		regmap_set_bits(priv->phy, lane->phy_off + HSIO_CTRL0,
-+				HSIO_PIPE_RSTN_1_MASK);
-+	} else {
-+		regmap_set_bits(priv->phy, lane->phy_off + HSIO_CTRL0,
-+				HSIO_APB_RSTN_0);
-+		regmap_set_bits(priv->phy, lane->phy_off + HSIO_CTRL0,
-+				HSIO_PIPE_RSTN_0_MASK);
-+	}
-+}
-+
-+static void imx_hsio_sata_phy_resets(struct phy *phy)
-+{
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	/* clear PHY RST, then set it */
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0,
-+			  HSIO_EPCS_PHYRESET_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0,
-+			HSIO_EPCS_PHYRESET_N);
-+
-+	/* CTRL RST: SET -> delay 1 us -> CLEAR -> SET */
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0, HSIO_RESET_N);
-+	udelay(1);
-+	regmap_clear_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0,
-+			  HSIO_RESET_N);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0, HSIO_RESET_N);
-+}
-+
-+static void imx_hsio_configure_clk_pad(struct phy *phy)
-+{
-+	bool pll = false;
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	if (strncmp(priv->refclk_pad, "output", 6) == 0) {
-+		pll = true;
-+		regmap_update_bits(priv->misc, HSIO_CTRL0,
-+				   HSIO_IOB_A_0_TXOE | HSIO_IOB_A_0_M1M0_MASK,
-+				   HSIO_IOB_A_0_TXOE | HSIO_IOB_A_0_M1M0_2);
-+	} else {
-+		regmap_update_bits(priv->misc, HSIO_CTRL0,
-+				   HSIO_IOB_A_0_TXOE | HSIO_IOB_A_0_M1M0_MASK,
-+				   0);
-+	}
-+
-+	regmap_update_bits(priv->misc, HSIO_CTRL0, HSIO_IOB_RXENA,
-+			   pll ? 0 : HSIO_IOB_RXENA);
-+	regmap_update_bits(priv->misc, HSIO_CTRL0, HSIO_IOB_TXENA,
-+			   pll ? HSIO_IOB_TXENA : 0);
-+}
-+
-+static void imx_hsio_pre_set(struct phy *phy)
-+{
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	if (strncmp(priv->hsio_cfg, "pciea-x2-pcieb", 14) == 0) {
-+		regmap_set_bits(priv->misc, HSIO_CTRL0, HSIO_PCIE_AB_SELECT);
-+	} else if (strncmp(priv->hsio_cfg, "pciea-x2-sata", 13) == 0) {
-+		regmap_set_bits(priv->misc, HSIO_CTRL0, HSIO_PHYX1_EPCS_SEL);
-+	} else if (strncmp(priv->hsio_cfg, "pciea-pcieb-sata", 16) == 0) {
-+		regmap_set_bits(priv->misc, HSIO_CTRL0, HSIO_PCIE_AB_SELECT);
-+		regmap_set_bits(priv->misc, HSIO_CTRL0, HSIO_PHYX1_EPCS_SEL);
-+	}
-+
-+	imx_hsio_configure_clk_pad(phy);
-+}
-+
-+static int imx_hsio_pcie_power_on(struct phy *phy)
-+{
-+	int ret;
-+	u32 val, addr, cond;
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	imx_hsio_pcie_phy_resets(phy);
-+
-+	/* Toggle apb_pclk to make sure PM_REQ_CORE_RST is cleared. */
-+	clk_disable_unprepare(lane->clks[0].clk);
-+	mdelay(1);
-+	ret = clk_prepare_enable(lane->clks[0].clk);
-+	if (ret) {
-+		dev_err(priv->dev, "unable to enable phy apb_pclk\n");
-+		return ret;
-+	}
-+
-+	addr = lane->ctrl_off + HSIO_PCIE_STS0;
-+	cond = HSIO_PM_REQ_CORE_RST;
-+	ret = regmap_read_poll_timeout(priv->ctrl, addr, val,
-+				       (val & cond) == 0,
-+				       PHY_INIT_WAIT_USLEEP_MAX,
-+				       PHY_INIT_WAIT_TIMEOUT);
-+	if (ret)
-+		dev_err(priv->dev, "HSIO_PM_REQ_CORE_RST is set\n");
-+	return ret;
-+}
-+
-+static int imx_hsio_sata_power_on(struct phy *phy)
-+{
-+	int ret;
-+	u32 val, cond;
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	regmap_set_bits(priv->phy, lane->phy_off + HSIO_CTRL0, HSIO_APB_RSTN_0);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0,
-+			HSIO_EPCS_TXDEEMP);
-+	regmap_set_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0,
-+			HSIO_EPCS_TXDEEMP_SEL);
-+
-+	imx_hsio_sata_phy_resets(phy);
-+
-+	cond = HSIO_REG48_PMA_RDY;
-+	ret = read_poll_timeout(readb, val, ((val & cond) == cond),
-+				PHY_INIT_WAIT_USLEEP_MAX,
-+				PHY_INIT_WAIT_TIMEOUT, false,
-+				priv->base + HSIO_REG48_PMA_STATUS);
-+	if (ret)
-+		dev_err(priv->dev, "PHY calibration is timeout\n");
-+	else
-+		dev_dbg(priv->dev, "PHY calibration is done\n");
-+
-+	return ret;
-+}
-+
-+static int imx_hsio_power_on(struct phy *phy)
-+{
-+	int ret;
-+	u32 val, cond;
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	scoped_guard(mutex, &priv->lock) {
-+		if (!priv->open_cnt)
-+			imx_hsio_pre_set(phy);
-+		priv->open_cnt++;
-+	}
-+
-+	if (lane->phy_mode == PHY_MODE_PCIE)
-+		ret = imx_hsio_pcie_power_on(phy);
-+	else /* SATA */
-+		ret = imx_hsio_sata_power_on(phy);
-+	if (ret)
-+		return ret;
-+
-+	/* Polling to check the PHY is ready or not. */
-+	if (lane->idx == 1)
-+		cond = HSIO_LANE1_TX_PLL_LOCK;
-+	else
-+		/*
-+		 * Except the phy_off, the bit-offset of lane2 is same to lane0.
-+		 * Merge the lane0 and lane2 bit-operations together.
-+		 */
-+		cond = HSIO_LANE0_TX_PLL_LOCK;
-+
-+	ret = regmap_read_poll_timeout(priv->phy, lane->phy_off + HSIO_PHY_STS0,
-+				       val, ((val & cond) == cond),
-+				       PHY_INIT_WAIT_USLEEP_MAX,
-+				       PHY_INIT_WAIT_TIMEOUT);
-+	if (ret) {
-+		dev_err(priv->dev, "IMX8Q PHY%d PLL lock timeout\n", lane->idx);
-+		return ret;
-+	}
-+	dev_dbg(priv->dev, "IMX8Q PHY%d PLL is locked\n", lane->idx);
-+
-+	return ret;
-+}
-+
-+static int imx_hsio_power_off(struct phy *phy)
-+{
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	scoped_guard(mutex, &priv->lock) {
-+		priv->open_cnt--;
-+		if (priv->open_cnt == 0) {
-+			regmap_clear_bits(priv->misc, HSIO_CTRL0,
-+					  HSIO_PCIE_AB_SELECT);
-+			regmap_clear_bits(priv->misc, HSIO_CTRL0,
-+					  HSIO_PHYX1_EPCS_SEL);
-+
-+			if (lane->phy_mode == PHY_MODE_PCIE) {
-+				regmap_clear_bits(priv->ctrl,
-+						  lane->ctrl_off + HSIO_CTRL2,
-+						  HSIO_BUTTON_RST_N);
-+				regmap_clear_bits(priv->ctrl,
-+						  lane->ctrl_off + HSIO_CTRL2,
-+						  HSIO_PERST_N);
-+				regmap_clear_bits(priv->ctrl,
-+						  lane->ctrl_off + HSIO_CTRL2,
-+						  HSIO_POWER_UP_RST_N);
-+			} else {
-+				regmap_clear_bits(priv->ctrl,
-+						  lane->ctrl_off + HSIO_CTRL0,
-+						  HSIO_EPCS_TXDEEMP);
-+				regmap_clear_bits(priv->ctrl,
-+						  lane->ctrl_off + HSIO_CTRL0,
-+						  HSIO_EPCS_TXDEEMP_SEL);
-+				regmap_clear_bits(priv->ctrl,
-+						  lane->ctrl_off + HSIO_CTRL0,
-+						  HSIO_RESET_N);
-+			}
-+
-+			if (lane->idx == 1) {
-+				regmap_clear_bits(priv->phy,
-+						  lane->phy_off + HSIO_CTRL0,
-+						  HSIO_APB_RSTN_1);
-+				regmap_clear_bits(priv->phy,
-+						  lane->phy_off + HSIO_CTRL0,
-+						  HSIO_PIPE_RSTN_1_MASK);
-+			} else {
-+				/*
-+				 * Except the phy_off, the bit-offset of lane2 is same
-+				 * to lane0. Merge the lane0 and lane2 bit-operations
-+				 * together.
-+				 */
-+				regmap_clear_bits(priv->phy,
-+						  lane->phy_off + HSIO_CTRL0,
-+						  HSIO_APB_RSTN_0);
-+				regmap_clear_bits(priv->phy,
-+						  lane->phy_off + HSIO_CTRL0,
-+						  HSIO_PIPE_RSTN_0_MASK);
-+			}
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int imx_hsio_set_mode(struct phy *phy, enum phy_mode mode,
-+			     int submode)
-+{
-+	u32 val;
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	if (lane->phy_mode != mode)
-+		return -EINVAL;
-+
-+	val = (mode == PHY_MODE_PCIE) ? HSIO_MODE_PCIE : HSIO_MODE_SATA;
-+	val = FIELD_PREP(HSIO_MODE_MASK, val);
-+	regmap_update_bits(priv->phy, lane->phy_off + HSIO_CTRL0,
-+			   HSIO_MODE_MASK, val);
-+
-+	switch (submode) {
-+	case PHY_MODE_PCIE_RC:
-+		val = FIELD_PREP(HSIO_DEVICE_TYPE_MASK, PCI_EXP_TYPE_ROOT_PORT);
-+		break;
-+	case PHY_MODE_PCIE_EP:
-+		val = FIELD_PREP(HSIO_DEVICE_TYPE_MASK, PCI_EXP_TYPE_ENDPOINT);
-+		break;
-+	default: /* Support only PCIe EP and RC now. */
-+		return 0;
-+	}
-+	if (submode)
-+		regmap_update_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL0,
-+				   HSIO_DEVICE_TYPE_MASK, val);
-+
-+	return 0;
-+}
-+
-+static int imx_hsio_set_speed(struct phy *phy, int speed)
-+{
-+	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
-+	struct imx_hsio_priv *priv = lane->priv;
-+
-+	regmap_update_bits(priv->ctrl, lane->ctrl_off + HSIO_CTRL2,
-+			   HSIO_LTSSM_ENABLE,
-+			   speed ? HSIO_LTSSM_ENABLE : 0);
-+	return 0;
-+}
-+
-+static const struct phy_ops imx_hsio_ops = {
-+	.init = imx_hsio_init,
-+	.exit = imx_hsio_exit,
-+	.power_on = imx_hsio_power_on,
-+	.power_off = imx_hsio_power_off,
-+	.set_mode = imx_hsio_set_mode,
-+	.set_speed = imx_hsio_set_speed,
-+	.owner = THIS_MODULE,
-+};
-+
-+static const struct imx_hsio_drvdata imx8qxp_hsio_drvdata = {
-+	.lane_num = 0x1,
-+};
-+
-+static const struct imx_hsio_drvdata imx8qm_hsio_drvdata = {
-+	.lane_num = 0x3,
-+};
-+
-+static const struct of_device_id imx_hsio_of_match[] = {
-+	{.compatible = "fsl,imx8qm-hsio", .data = &imx8qm_hsio_drvdata},
-+	{.compatible = "fsl,imx8qxp-hsio", .data = &imx8qxp_hsio_drvdata},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, imx_hsio_of_match);
-+
-+static struct phy *imx_hsio_xlate(struct device *dev,
-+				  const struct of_phandle_args *args)
-+{
-+	struct imx_hsio_priv *priv = dev_get_drvdata(dev);
-+	int idx = args->args[0];
-+	int phy_type = args->args[1];
-+	int ctrl_index = args->args[2];
-+
-+	if (idx < 0 || idx >= priv->drvdata->lane_num)
-+		return ERR_PTR(-EINVAL);
-+	priv->lane[idx].idx = idx;
-+	priv->lane[idx].phy_type = phy_type;
-+	priv->lane[idx].ctrl_index = ctrl_index;
-+
-+	return priv->lane[idx].phy;
-+}
-+
-+static int imx_hsio_probe(struct platform_device *pdev)
-+{
-+	int i;
-+	void __iomem *off;
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct imx_hsio_priv *priv;
-+	struct phy_provider *provider;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+	priv->dev = &pdev->dev;
-+	priv->drvdata = of_device_get_match_data(dev);
-+
-+	/* Get HSIO configuration mode */
-+	if (of_property_read_string(np, "fsl,hsio-cfg", &priv->hsio_cfg))
-+		priv->hsio_cfg = "pciea-pcieb-sata";
-+	/* Get PHY refclk pad mode */
-+	if (of_property_read_string(np, "fsl,refclk-pad-mode",
-+				    &priv->refclk_pad))
-+		priv->refclk_pad = NULL;
-+
-+	priv->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(priv->base))
-+		return PTR_ERR(priv->base);
-+
-+	off = devm_platform_ioremap_resource_byname(pdev, "phy");
-+	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	if (IS_ERR(priv->phy))
-+		return dev_err_probe(dev, PTR_ERR(priv->phy),
-+				     "unable to find phy csr registers\n");
-+
-+	off = devm_platform_ioremap_resource_byname(pdev, "ctrl");
-+	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	if (IS_ERR(priv->ctrl))
-+		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
-+				     "unable to find ctrl csr registers\n");
-+
-+	off = devm_platform_ioremap_resource_byname(pdev, "misc");
-+	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	if (IS_ERR(priv->misc))
-+		return dev_err_probe(dev, PTR_ERR(priv->misc),
-+				     "unable to find misc csr registers\n");
-+
-+	for (i = 0; i < priv->drvdata->lane_num; i++) {
-+		struct imx_hsio_lane *lane = &priv->lane[i];
-+		struct phy *phy;
-+
-+		phy = devm_phy_create(&pdev->dev, NULL, &imx_hsio_ops);
-+		if (IS_ERR(phy))
-+			return PTR_ERR(phy);
-+
-+		lane->priv = priv;
-+		lane->phy = phy;
-+		lane->idx = i;
-+		phy_set_drvdata(phy, lane);
-+	}
-+
-+	dev_set_drvdata(dev, priv);
-+	dev_set_drvdata(&pdev->dev, priv);
-+
-+	provider = devm_of_phy_provider_register(&pdev->dev, imx_hsio_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static struct platform_driver imx_hsio_driver = {
-+	.probe	= imx_hsio_probe,
-+	.driver = {
-+		.name	= "imx8qm-hsio-phy",
-+		.of_match_table	= imx_hsio_of_match,
-+	}
-+};
-+module_platform_driver(imx_hsio_driver);
-+
-+MODULE_DESCRIPTION("FSL IMX8QM HSIO SERDES PHY driver");
-+MODULE_LICENSE("GPL");
--- 
-2.37.1
+> 
+> Regards,
+> Bjorn
 
 
 -- 
