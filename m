@@ -4,62 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FB5DC25B75
-	for <linux-phy@archiver.kernel.org>; Fri, 31 May 2024 16:49:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4A0BC25B75
+	for <linux-phy@archiver.kernel.org>; Fri, 31 May 2024 19:50:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vpprnqe0crzrF4NzYQnukstPhLSqGgmWK7k3rIHlj5g=; b=gUn2dQbcKGDGNP
-	mo3kLV007KxbHLczz3S2Xz2UL35JYpY7AzrRGcOH7v9IpNJegmQNTEhBvAPj+6E97zxM247yoMeOX
-	cUnaSxbjhMWWNFfKG32CEp8yy1c5/0eJU8yasPnARYfTxYtFG169N5AIB97KCvYm9hIJEqyneK+Hb
-	63MoXynxpXVk4eM9gBhrVT0OYECcr/hhG/qNRm8TzEOabjOXI0lskQFMp/ztfVLVhseWiI5FYnfo7
-	zHJ61E16Oiu8AxgOELcDYKq8lTmYG7UmbqLxYQAPbGj2QFWc6cLAuFynavaHVTv16vQiKvh+vAVjE
-	5VF0XoTkf10TuWnBaAZw==;
+	List-Owner; bh=QDTJb8fJqID/NhK0KUg8NBD/cYyTX1lPvFC1KvvQWv4=; b=FfI5NFtoeiRexq
+	rQ4p6HQajBo5AcTWfSTs9g+/cNWVoe/JLL+TW78+vrmCSPGpZD6oRoGao/UhIktfsFpWZpIuNK1IQ
+	waimv4/4DK5aBC+lMp3dFHACIaALECv525IVPRuNgnBUPDwiYCD77fgtO5UBAZ0B5szlj6APpWx+D
+	XY7OLwlKkG3KexjRc1OL4+uHCrTI691iwbH1Von3rRAt57SEtytcu2qiAZEbuY26kEWkTdoMswPqz
+	n53a3Y5MaxZq0MjiagoFduoFBwXa5ZqTorSHZK3lih8yZ+88XLNtNjU2OvoaD6BtrEliZDTJxN1kL
+	2I6cl+PW2ShBR9Cuimzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sD5R8-0000000AuSJ-0Z0M;
-	Fri, 31 May 2024 16:49:02 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1sD8Gn-0000000BJPU-1YoZ;
+	Fri, 31 May 2024 19:50:33 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sD5R4-0000000AuOz-137Y
+	id 1sD8Gk-0000000BJP6-2DJi
 	for linux-phy@lists.infradead.org;
-	Fri, 31 May 2024 16:49:00 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 28E6CC0004;
-	Fri, 31 May 2024 16:48:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1717174132;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=v/yv4AtesztMvKs3Dy53Bfb+WU3NfhkM1gOgzOFjdC8=;
-	b=eVhFnIzZA5uZr4P0MdG5r9nKiFIhTwGlMX4q07Vog/BqFN091gujcv5FRN1W/k7IxXRrzD
-	NWceODQ4gDJql5tUanC459FNm/4gtlkHnWc+GXt5SsQQSgrDcUob2AeTLH5w230x3S/Irg
-	b004+S2UD5MCIjrvTOYxkYvRghqO2fjWPz8Dk7nUw+f4LwSWPniMu49ebqmf1CiOp9chrb
-	wI1/NCdIsu2aQIXcar/+hgtFXzfVsVFg7erMmPsmiSsb2O5UecOw9K6Kbyep7xp9dq36+I
-	X2N1wC0YOE1viVDBVRCZmZhNzdioQ7UC3t6izv8nfcx3e5TcGdgUv3vS4dcarQ==
-Message-ID: <13f4bbb5-272c-4f3a-9c75-90a8b3898cad@bootlin.com>
-Date: Fri, 31 May 2024 18:48:48 +0200
+	Fri, 31 May 2024 19:50:32 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-2e95a7545bdso24539071fa.2
+        for <linux-phy@lists.infradead.org>; Fri, 31 May 2024 12:50:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1717185029; x=1717789829; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=ZU2ryqJo2RbqRp0VMOW55np9IwacuNJWvzcVOo4CArU=;
+        b=elIsJRm921K2nact4K3Orh4RI+n9MQKBYWUV0DL98hNAJZ0PMy/Ws62H1UeAEK9Q40
+         XWFMAr5hBje2+XxSAM1a4eUlUeNMM5zTGZ8oDj8RiiClKLFCd54t3KnM8vBfVC3qKzEJ
+         pAlZcLsOEi+CfxdipOHLo5zGA9mkqZ6o3MPxjrt6DqpO6o+dBjJKYlBFV4LT4COw8Awy
+         JwMX8os1tjIFFygUhSbgEkz1ynXkqUfSqN0PIHdWdaYBkCTcQ4l2I5lXKG2dqtIeYPNd
+         zZJrULP/RvDgQ210dDcgRs/4iEVgDk6mBQGzsh+PiS8lyTUt3FL1V3AxlY8x+X2bTG9n
+         y/Xg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1717185029; x=1717789829;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ZU2ryqJo2RbqRp0VMOW55np9IwacuNJWvzcVOo4CArU=;
+        b=XG6WvjPY6NQHx6+untyHS3borvsLbLpCSM/43aX3OObG8rPdVNwxBnxQeZtNmYEH5N
+         rSi4kQJn6E95Lcxc+0HQ20LgJ3JsZCn8Faa+Vw4DTFylldLzL+NZzRsVogMeNi2FAiNB
+         GBRozHfUZeh1buPBxWsHGvbXhf8ZH4aZ95klkSUpaRHl4UvVCrq+I4x6orvMY6N1N6s/
+         9bgZVRwzY/ZLhKAYZlnIAmFRgxfjU0asCrl8mqHb5OGgAxIztXE/qXAIi4uIbRPKh/un
+         mxZkqjOGC2t8NgzbxEa1pPvQq7rgfD3EKUOL4/oaJt7jMyokPOx6b/wZLtci/XD/xjYA
+         MaMA==
+X-Forwarded-Encrypted: i=1; AJvYcCXwLwRlsLHl4rjboesqzyPkbk9b/FJInqkBMElRiS7J/+CxroHK4KLDJp7lSKzkgIfG+I8MrBldeL4mgbonTM/oejS32evbwWWu2x6R1g==
+X-Gm-Message-State: AOJu0YzLHNFt/29//h/EsJAQ3eUV4DKn3pObpuE3yCOMn6XC7pHQSWKb
+	iFsgg2R94dn/lGDidGqBkkgr6iN7dghodkn9Zusmvq+lNyR1Hz+DALzqobSX7vxFY4X5j6G8Wr/
+	v
+X-Google-Smtp-Source: AGHT+IFFrDCc8S7OXqYwwrRK/3LCw6k22ohK8j3g2b44ginDvhYF+tDr/CvgM1Z8qwHTb7dniJuQ7g==
+X-Received: by 2002:ac2:5101:0:b0:52b:797d:efd4 with SMTP id 2adb3069b0e04-52b8959c55fmr1680065e87.16.1717185028871;
+        Fri, 31 May 2024 12:50:28 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyyykxt-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::227])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52b8beaf911sm206658e87.20.2024.05.31.12.50.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 31 May 2024 12:50:28 -0700 (PDT)
+Date: Fri, 31 May 2024 22:50:26 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Add X1E80100 Gen4 4-lane mode
+ support
+Message-ID: <ubyvrmv3giartl6pnen5dbis2yz6y7r6zvihorsqzsfof7q7la@e6xc52ss5qyr>
+References: <20240531-x1e80100-phy-add-gen4x4-v1-0-5c841dae7850@linaro.org>
+ <20240531-x1e80100-phy-add-gen4x4-v1-2-5c841dae7850@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/8] Add suspend and resume support for
- phy-cadence-torrent and phy-j721e-wiz
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- gregory.clement@bootlin.com, theo.lebrun@bootlin.com,
- thomas.petazzoni@bootlin.com, u-kumar1@ti.com
-References: <20240412-j7200-phy-s2r-v1-0-f15815833974@bootlin.com>
-Content-Language: en-US
-From: Thomas Richard <thomas.richard@bootlin.com>
-In-Reply-To: <20240412-j7200-phy-s2r-v1-0-f15815833974@bootlin.com>
-X-GND-Sasl: thomas.richard@bootlin.com
+Content-Disposition: inline
+In-Reply-To: <20240531-x1e80100-phy-add-gen4x4-v1-2-5c841dae7850@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240531_094858_453787_691DE9EC 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20240531_125030_911669_0E6BBEF9 
+X-CRM114-Status: GOOD (  10.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,35 +98,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 4/16/24 14:52, Thomas Richard wrote:
-> The patches of this series were originally in the series "Add suspend to
-> ram support for PCIe on J7200" [1].
-> They were moved in a separate series as requested by the PHY maintainer.
-> This series adds suspend and resume support for the phy-cadence-torrent and
-> phy-j721e-wiz drivers.
+On Fri, May 31, 2024 at 07:06:45PM +0300, Abel Vesa wrote:
+> The PCIe 6th instance from X1E80100 can be used in both 4-lane mode or
+> 2-lane mode. Add the configuration and compatible for the 4-lane mode.
 > 
-> Compared to the PCIe series v4 [1], these PHY patches were rebased on Linux
-> v6.9-rc1.
-> The only change is for the patch "phy: cadence-torrent: extract calls to
-> clk_get from cdns_torrent_clk". Now the cadence-torrent driver supports
-> dual reference clock, so the patch was updated consequently.
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 42 ++++++++++++++++++++++++++++++++
+>  1 file changed, 42 insertions(+)
 > 
-> [1] https://lore.kernel.org/all/20240102-j7200-pcie-s2r-v4-0-6f1f53390c85@bootlin.com/
 
-Hello,
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-Gentle ping.
-No merge conflict with 6.10-rc1.
-
-Best Regards,
-
-Thomas
 
 -- 
-Thomas Richard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
