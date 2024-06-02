@@ -4,70 +4,174 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68C47C25B76
-	for <linux-phy@archiver.kernel.org>; Sun,  2 Jun 2024 02:16:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D622C25B74
+	for <linux-phy@archiver.kernel.org>; Sun,  2 Jun 2024 15:49:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aVqJ6Om4dR4FTE5Z0+hQHGdvJ2aSORUIRP82q6k7XH0=; b=se75dJy9Vf94GA
-	plcaKvw9E1ktSs+KlYN9yBdMs23qAuDo8MlWF5pWd024Xgciso4xM0pfftWbWDlqECL91gPWchvxP
-	ZEQ8XetY94fQqt2kA3iPqB82rW3w25y/SOBCAQn2CA2CltrIsf27i+JNi56Xp5aVppW+dBrIENh0P
-	llCIxMrOBV/wegu8hdUkTf0EQ46LHxLrDmOkEjfkdY1YCue6AjZPmYzJGtkdg2HhGXwSgR0B8PTM+
-	CltYx7z2W4vjiBvFUaEjWA0a0xVFDxB2jn6QluyGRbFU7H36Txz8FNXQYGhvRG3hcW/VPfQYcMF9k
-	h7ucXHKWRfPQ91PAcPmQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
+	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=v/kkKjWxJm5vlqZs8yl0US111hOmNtJocogLnFRoOE8=; b=qEj4O6I622VU/BWow4/Zi6qH0T
+	6/XaEClKrnqGDIjGlzTUJ37416CCIs6iPhYjiimemS5WvNszPCUZcu662iYowGL8HwjpfoBmZaPYt
+	kuR/+L5kSsJGGdVYXi9aiKEmwzXngu6DjWLyivBrWN9e5STTqs5tAJWhJYJzZ/qupFBYq8AeCI8Ho
+	2futaPS806u9qxAPHU7xNzRzR6qVvI8K4jGSe0/xhsEDfGXylJcRpwsLB/h+BnATDngs6iRMY6gPx
+	hOpdgdkalGIUCmhlfOooq7fE2ymZQ5auATwxlXL8/fiEljrejY2qWHZ7clSHJBY5Q0lobgmUqiBXa
+	AyrWUDnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sDam5-0000000DbXb-2djU;
-	Sun, 02 Jun 2024 02:16:45 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1sDnT4-0000000EWRP-3K4x;
+	Sun, 02 Jun 2024 15:49:58 +0000
+Received: from mail-he1eur04on20722.outbound.protection.outlook.com ([2a01:111:f403:260f::722] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sDam2-0000000DbWG-0CpE;
-	Sun, 02 Jun 2024 02:16:43 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 4522GYI5121144;
-	Sat, 1 Jun 2024 21:16:34 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1717294594;
-	bh=oNE02bEOusUg2z+KZ/gOZ+49ywAiP3kNRmDQXQDhS7M=;
-	h=From:To:CC:Subject:Date;
-	b=DBvq5xWavY8x6CMfBX8JzQKmN0aBWJco/lCczL1MeEY8ZfPwS2PHDwv0LQQKj3xcK
-	 SWMiHUglZF71ql7Sg01utPqFmfwSJ8mCvKTOpX5aNyxchOfUkoNl8X3TiUAxDdluOA
-	 e/mxS4+azLIATGMfE2n9vdtpu60aW+IJKwfslQKk=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 4522GYWM046428
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sat, 1 Jun 2024 21:16:34 -0500
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Sat, 1
- Jun 2024 21:16:34 -0500
-Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Sat, 1 Jun 2024 21:16:34 -0500
-Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [172.24.227.9])
-	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 4522GT1D000696;
-	Sat, 1 Jun 2024 21:16:30 -0500
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <sjakhade@cadence.com>,
-        <rogerq@kernel.org>, <robh@kernel.org>, <mkl@pengutronix.de>,
-        <mripard@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
-        <s-vadapalli@ti.com>
-Subject: [PATCH] phy: cadence-torrent: Add SGMII + QSGMII multilink configuration for 100MHz refclk
-Date: Sun, 2 Jun 2024 07:46:29 +0530
-Message-ID: <20240602021629.3027660-1-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.40.1
+	id 1sDnT1-0000000EWOd-1zcI;
+	Sun, 02 Jun 2024 15:49:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GTBiZojMrdXa6eMRsq+iZ8Iv8XbDxZ8iE4rDkhFUkdOXJ0i0I+XrAKsw4BCVgiYuzUuoWuyG89qW8Ub1ZXzXuN5JwKdp4ODkpJiDaAclPO/ZzCLuQMzuVEyxVirMWX6GzDYg//E+NCaI0l7cDOC3syzTd/0OFIub9UFw0BafFPt7hKM12LUu06pe0Dli2dit559eK5WeEo7Io7i60yhSw8TQSmWnKFmE3mgbFZFSz7rIAIRALoe4A8T8pEru0LHJtll/fd8VcUJSQmKCUoocZjTQwWmFhtroqJ7hx6p11JR2jhAEIcFC6k7Pp6Dcm12SPxXAi0nJSREwTfe653X5eg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=GHuDlE4bz3Ri64XL5zF4+GOIm5j56U6XO6oNEWy+k7s=;
+ b=K1G/N/apj2o2J/Rq7Pyee6QhT9acvc3tA3QwZO3opQu3bHiE3D6/OPJQjIbHbCeYaM61/AXedHXfbpHjkb3ZTyplzg1dWxBQ6Hl+qpw7zFdeflje1JHWpk+1+TdwWejQnhPWFF22kiWvIlq8JrscmVoAQFIJP/QyjjKipSiArJbwYkSz0RDVuPPBsTBlXkzU6GiSs4fLi6P71uoNp8Dlx7snQdPhnL9mnz+KjvhKrH8aA4yqNRpo1LmdAyVbgNFwmR5QBfu1HMyJGGRR6FPEgA7zQnNHgtwNbQ09nS9mfo9Mfmk4bu0cDF4Dviwc+YDaw1jU8at8Lpv9lm192/w9eQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=solid-run.com; dmarc=pass action=none
+ header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GHuDlE4bz3Ri64XL5zF4+GOIm5j56U6XO6oNEWy+k7s=;
+ b=TOUyYp2dlLpurNhDYYQHN93l5WcGc0lct9JzUNnKdNMsYItsY/5ABDf+aUpzyUxLCWh/vMv0dmPI4bLmHtVtsm1hWrAw0dldTykAB3ruqhv7SQFtf9UKwmKD6pVeJg3R6cYqh8ghZkdpXO3WbGltS1Q7qvpjjp5GCZVrVoMipSY=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=solid-run.com;
+Received: from AM9PR04MB7586.eurprd04.prod.outlook.com (2603:10a6:20b:2d5::17)
+ by AS8PR04MB7512.eurprd04.prod.outlook.com (2603:10a6:20b:29e::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7611.27; Sun, 2 Jun
+ 2024 15:49:40 +0000
+Received: from AM9PR04MB7586.eurprd04.prod.outlook.com
+ ([fe80::c04e:8a97:516c:5529]) by AM9PR04MB7586.eurprd04.prod.outlook.com
+ ([fe80::c04e:8a97:516c:5529%7]) with mapi id 15.20.7633.021; Sun, 2 Jun 2024
+ 15:49:40 +0000
+From: Josua Mayer <josua@solid-run.com>
+Date: Sun, 02 Jun 2024 17:49:36 +0200
+Subject: [PATCH v6 1/7] dt-bindings: arm64: marvell: add solidrun cn9130
+ som based boards
+Message-Id: <20240602-cn9130-som-v6-1-89393e86d4c7@solid-run.com>
+References: <20240602-cn9130-som-v6-0-89393e86d4c7@solid-run.com>
+In-Reply-To: <20240602-cn9130-som-v6-0-89393e86d4c7@solid-run.com>
+To: Andrew Lunn <andrew@lunn.ch>, 
+ Gregory Clement <gregory.clement@bootlin.com>, 
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>, 
+ Rob Herring <robh+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Jonathan Cameron <jic23@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, 
+ Daniel Baluta <daniel.baluta@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Konstantin Porotchkin <kostap@marvell.com>, 
+ Richard Cochran <richardcochran@gmail.com>
+Cc: Yazan Shhady <yazan.shhady@solid-run.com>, 
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
+ Josua Mayer <josua@solid-run.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.12.4
+X-ClientProxiedBy: FR5P281CA0045.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:f3::12) To AM9PR04MB7586.eurprd04.prod.outlook.com
+ (2603:10a6:20b:2d5::17)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB7586:EE_|AS8PR04MB7512:EE_
+X-MS-Office365-Filtering-Correlation-Id: e899a37d-3afc-42bb-4d80-08dc831b9ce8
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230031|52116005|376005|1800799015|7416005|366007|921011|38350700005;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?ZjJhTk94WnlkdDVoSDBkTE1nS2l1KzFFMUJ0UGoyWDAvb0Jwb0tFZCtMbGZr?=
+ =?utf-8?B?R3QrTXhXV2FxL1JkWFM2Rjl1Z1dQUTdtVGdWMzJKOGFjdlFRNTM0c0FaL1Np?=
+ =?utf-8?B?TnlBL1owd1ZkRXlVY0I4YmtINzc2VzlPd2J2YVpGT2E2WUU5WUVGbWVpTCto?=
+ =?utf-8?B?ZjloY1lad28yWngwSGducHFpSUMyTWl1WStFTWxyek5wcXNCdVNqSmIyRlow?=
+ =?utf-8?B?RzBJOTBiT1E1Zyt3TWgwYkY1dU83VDUvRC9mdTdFZUpRWlkvNDBwRk9Fd21i?=
+ =?utf-8?B?eFRtemIxRm5wZjVpY1ZHV1gvT0prRThLVGdqL3VDU2ttTTFmMGJpY2orYjJT?=
+ =?utf-8?B?dWgzZjEycGpBWG5sb0J4RThLY1RMWkxpZU9MSGNZNGdDaU82QWlaOWhEL2pu?=
+ =?utf-8?B?VHlOb0piN0wzcDBwQ0VnMi9weTVSNFFXUkhqeHZ2SW9GeWREMDBmMWh0Wnpk?=
+ =?utf-8?B?SDJNMExmUDNaRDdtdllzZG5qcW9lNW5JSm03NlJON0dEaGpRUTYvSkRyRFhC?=
+ =?utf-8?B?WE5zRmU5K1p1REpTOWM1OXFzNHNBTGJxZFIwSXNGTlREYzJ1Q09LcHNFVjV4?=
+ =?utf-8?B?aTFuOGE4Ym9MWncxbGZ1L3NlblRKSG1ZWG5MMTJMWGtCdngzY2FwcEp4Z3FE?=
+ =?utf-8?B?bGRsOElSeVVNNDBPdER3b0RpVGVvQ09WQjk2QWhKQzlwYzhEUnloUjRCS3pa?=
+ =?utf-8?B?N3dRcktudXU5TVBXSWJ0czRXN1hlQWlaYUcrbmlMdXVvTG83bVppOXZFTklM?=
+ =?utf-8?B?bmVYbG05SXpSK29UQlQxWThXd21nNlNIVzBsVVJucWo1c1pwdkdPSU4zR2wy?=
+ =?utf-8?B?dktwT2JMT0tSbGNhZE1mWTFqRVdIdS9KaUJQSDZYWHhqMlFTaUkyRVVBdG5u?=
+ =?utf-8?B?bEZKT0JLVGtXOEIwcXB0R2wrdTBsYXJ5NFpUNkFrbXh0eWFxbjRHMFdRaHV5?=
+ =?utf-8?B?QTR1bTF1SlFxOEl4ZjVyOU9TbWNIdzYrMkVob1ZlWi9mZ0luaWRMaGtBbmZQ?=
+ =?utf-8?B?SWhKalR1TGQwRWpKbUFUbzJmL2lGUkUrSStQNWZPWkczNHFxR0VJSllUVXpr?=
+ =?utf-8?B?OTRjcmtyRzZBbjZ6bG5ieHBxNFFFMEE2bEZmc2xPY0NURC83Z0sycTAveFBu?=
+ =?utf-8?B?ckN4dm5qVSthSVVEb2xTNWxxL0d6SERwNGtVNTgwSjB0RUpkQngxRjMwNm5H?=
+ =?utf-8?B?MjRmY1BnQmRlWGtPVTIvaEZJcnpRRldML2I0em1HbFJKQTk0RndnNmpIbEhB?=
+ =?utf-8?B?ZVdDOUhJUG1PNmx6Q1VxYWt2UEdRV1hMaHpTc1phNnd6aTdrRU5OcmhnWW42?=
+ =?utf-8?B?N3JHR2w0M3MyQTJCYUszM1Y4VGg3SzVObml5SGN2NXRBNGtSZ3NVaVA5UkNJ?=
+ =?utf-8?B?UG5aYSt5Z2hPNC9nZXFaRENqTkFzc1d5aGpzUUVvYTNGcUNlRE9YQS9tbFJ3?=
+ =?utf-8?B?cUNmelJ4QlJqQ1B1MkxBcFd6bEFhQ1NiVXBQcGw2ckRDeVVDenl3MkMyVjBN?=
+ =?utf-8?B?dE00WnpXaGZ5VzJPNS9IZlk2bmtrc2RnK3FqY0xMSEdLZXBmMmVORGl5U2Fz?=
+ =?utf-8?B?TFJjR1U2WWRnWTdvblhYVjFSazlRWE1PdTFZNS9VcTA2MGh4YXhXdHorenpj?=
+ =?utf-8?B?SWdOWjU3bkkvWlorRkxneDZ2NzdCSGRFYjZ5WFBPZWdjOW50RXJHU1NDWWZm?=
+ =?utf-8?B?eG1yNWhFQ0YvcGZCQ3hraXFaYlFaQXdsRVJBRWxQNnMzYS84bkhFYlhDYmYz?=
+ =?utf-8?B?MjlqQit5ekowN1h3SGdLem9sbHJQTnNWaFBBWE9IUkJjN3VkN3RqUCtUT01Z?=
+ =?utf-8?Q?hE+GjWDuwgYn/CeXGx555nH8C57SzJsx0inro=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB7586.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(52116005)(376005)(1800799015)(7416005)(366007)(921011)(38350700005);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZHlXOUJBN012bHVMVWNqSW4xbHM1azZpTjNhSHlIU3d2Qno0RE5wQzduZkE2?=
+ =?utf-8?B?WTU4MkwwdFBXdEJNNjdRc1hBZUhjSDRuZkx4aHU5UXhxQnN3LzljQ1ljUWRr?=
+ =?utf-8?B?aW1BTHM0aUFlR1BCK2VZa3RBQTBRT1VxL1ZYT0hMN29hbGtaenh2a1FMU0tF?=
+ =?utf-8?B?UE5YVXI1TE10SElvK0QvaWpNSVIxWncxRVhwZVNVMW44a2NBZld6dXJwcHpn?=
+ =?utf-8?B?ZTR6RXZvb21zTGN3TGtJNjBpUzN2MmYwajRqVnNDVUF0UHRmMlA3cXFBdmU5?=
+ =?utf-8?B?T2U3U1IwRDVIeVFvdjN2ellsUmRXNDlhYU4xUjMvcU03bWI2Wmg3ODZOM0lu?=
+ =?utf-8?B?NVJpZDFXUFZ4QkdmVDBOVUM5REQ4TGRJeVVGaThUakxCcEFRRnNBdlJyOXY0?=
+ =?utf-8?B?V2dTWDJIMDc5Qm5NREVBYi9JKzNwTHFqa0VTVGY2Z1NxaEhZUlJ5OWZ4SlVh?=
+ =?utf-8?B?VGhNdlovZUp6MFNJNGx0akVOQnhTM2NTUWd1MlNIa0lDU29lOFVsNndHa1R3?=
+ =?utf-8?B?eDErM0xrb0NUclFJZEgrc2FEZjl6RnRDU3FzT3UrdTN2OHlLYVpXY0UvTnRQ?=
+ =?utf-8?B?czJZa0h2NUFCTTJsSldWRVFyZmVkTmd2a01ieWFSNzNmVzR6MmU1WDNUOW4w?=
+ =?utf-8?B?WTJ3UDUxUjF2aENDbDA3d0tkS1FCNGRtR0tXTGVlenJXMm9xSGd5YnhNdnRX?=
+ =?utf-8?B?N0VwVlhjT2twTVRIeEtwSng5Z3FKUnBQYXU4RkRMUkRsVmJnanMxVVlWb0Rx?=
+ =?utf-8?B?ZjE5WHlZU2U4QzNHbGhrWDQvWnJlZW1MMjQzYThQMzJXYVBhN0FaQTExWW5C?=
+ =?utf-8?B?RExBYURzOW5iK3ZGTEVzMTVXLy83N1I5RG4yRTNHeXQ0cTdUdUtibVNGSXQz?=
+ =?utf-8?B?dDN0a0ZGUGpHSmRRRjVEbDFSWkREalo5U0JTdTNCQkllazFkaEJ5TjhLZDJU?=
+ =?utf-8?B?VDNNZzNsSDluN2Q1ejFHSmt1d0V6aU9tNmE1L0ZwS09tNHdTeVFhYmJOcUlX?=
+ =?utf-8?B?N0M2SFV0UmpLbEhjVCtWdzY1cUxrMDJWQmIzYXlGL1crNGdZMU0zOVhwdEZK?=
+ =?utf-8?B?c0w1czUzYnVacHFwZElsNUYvcU5DOEVSQkNUMDJ6QzZ6VVd5MDdmdGhrenB1?=
+ =?utf-8?B?T3lTbzRBQ3lRMUFYcVhIWngxaFRkRWVYaUlPUXQ2U0d1UUo1c0lkYmh3RHcv?=
+ =?utf-8?B?Q3VFRDczdzQwY1BvbDFWTkw1VG5oWjJvTWNEQ0QwSlpRcEJCY2JqYVNOY0FH?=
+ =?utf-8?B?NHdEVW01R0l4UE5GMFl0ZWFhak13TFFydkdrM1ZweU50Q0FJMWgvOVNTMU03?=
+ =?utf-8?B?Kyt4SVUrOUFmVVliUGhYdVZ5anppODVRdmt0S1JhRkFoc3Z3Kyt6K3JydlF5?=
+ =?utf-8?B?MHBQQVRKTGFtK0JqVXJvb3ZhVjFHTUl2MS9YTkRmWUE5NlYzR0EvK21zK0RN?=
+ =?utf-8?B?MFJUaFZ2NVhoUG1ucGM3SWtabVNxblZTRFQ2S1grK1RrYkw3c1JQSGRUOVF1?=
+ =?utf-8?B?dk5RYlFLUFBQeDdrODl1QlorSUg4dzNLdWdPVzQ3ZEtPejcyejFQQmhqaEFU?=
+ =?utf-8?B?cWp2elR3YzlZeEVWRmFOV0NxV1pmSXhSYmdpekFlT2dnbUVkMXBreHZISkxC?=
+ =?utf-8?B?a1VFTHhVMTI0Z2dLYnl1WExCKzcyV2h0SHFhS3hSRGxzbW02RktuMmpnZldu?=
+ =?utf-8?B?SHdrNVFQT1dESEhZMExtQU9uM2FUbFRmakhGdFhYY04xZEN6M0VsMmFIb2I2?=
+ =?utf-8?B?NlhLOW5ZV1lQV05iV3l0YnAzK2FWYy9YYnVMYmI0Ung2SUNkcFJXZ2drc0o3?=
+ =?utf-8?B?OS9qRGNueWVuQ2U5UGtzYm42TEFKU0x2ODV3NEJQRFRPY25CL3dOMTIvd3Jk?=
+ =?utf-8?B?VEIrRDRTbXFPRjhZV3V2USt0Z0hXbzA1ck4rUjhOQUdaeXp6bDZhRFNVWXRp?=
+ =?utf-8?B?UGhVSFI3YnBsYU5QRzl4cGxaU3NYdXJuYUZUVDF5UVdaSlJjcDNqMys0ajI3?=
+ =?utf-8?B?a2RaNkwxd2tLMzE4OUJTUElvMGRYcmxKWEUycFZLRGZHTHZ5d2YxNlpiQ2tI?=
+ =?utf-8?B?RXBMUG0vWi9vMi95K3o0Skg1eFg1a1crdlAzd1VUSnUzRnZkc3BtRDdQVHVo?=
+ =?utf-8?Q?YhBuXKNEmhXkAty4oHb9MCijr?=
+X-OriginatorOrg: solid-run.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e899a37d-3afc-42bb-4d80-08dc831b9ce8
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB7586.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jun 2024 15:49:40.1008
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6lKkpfrEt2qugn+cvlFCtpaUdtqJPIja/FnVwHJWQbthgJScD9t+K1B3CRQz1fINW6IiJbySi33IzcQzk1M0YA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7512
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240601_191642_226925_1F9F66E1 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240602_084955_532885_CFDECED1 
+X-CRM114-Status: GOOD (  10.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,252 +188,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Swapnil Jakhade <sjakhade@cadence.com>
+Add bindings for SolidRun boards based on CN9130 SoM.
 
-Add register sequences for SGMII + QSGMII multilink configuration
-for 100MHz refclk.
+Three boards are added in total:
+- Clearfog Base
+- Clearfog Pro
+- SolidWAN
+The Clearfog boards are identical to the older Armada 388 based boards,
+upgraded with a new SoM and SoC.
+However the feature set and performance characteristics are different,
+therefore compatible strings from armada 388 versions are not included.
 
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+SolidWAN uses the same SoM adding a southbridge on the carrier.
+
+Since 2019 there are bindings in-tree for two boards based on cn9130 and
+9131. These are extremely verbose by listing cn9132, cn9131, cn9130,
+ap807-quad, ap807 for the SoC alone.
+CN9130 SoC combines an application processor (ap807) and a
+communication processor (cp115) in a single package.
+
+The communication processor (short CP) is also available separately as a
+southbridge. It only functions in combination with the CN9130 SoC.
+Complete systems adding one or two southbridges are by convention called
+CN9131 and CN9132 respectively.
+Despite different naming all systems are built around the same SoC.
+Therefore marvell,cn9131 and marvell,cn9132 can be omitted. The number
+of CPs is part of a board's BoM and can be reflected in the board
+compatible string instead.
+
+Existing bindings also describe cn9130 as a specialisation of
+ap807-quad. Usually board-level compatibles stop at the SoC without
+going into silicon versions or individual dies.
+There is no programming model at this layer, and in particular not for
+parts of an SoC. Therefore the ap compatibles can also be omitted.
+
+Signed-off-by: Josua Mayer <josua@solid-run.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 ---
+ .../devicetree/bindings/arm/marvell/armada-7k-8k.yaml          | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-Hello,
+diff --git a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
+index 16d2e132d3d1..74d935ea279c 100644
+--- a/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
++++ b/Documentation/devicetree/bindings/arm/marvell/armada-7k-8k.yaml
+@@ -82,4 +82,14 @@ properties:
+           - const: marvell,armada-ap807-quad
+           - const: marvell,armada-ap807
+ 
++      - description:
++          SolidRun CN9130 SoM based single-board computers
++        items:
++          - enum:
++              - solidrun,cn9130-clearfog-base
++              - solidrun,cn9130-clearfog-pro
++              - solidrun,cn9131-solidwan
++          - const: solidrun,cn9130-sr-som
++          - const: marvell,cn9130
++
+ additionalProperties: true
 
-This patch is based on linux-next tagged next-20240531.
-
-Regards,
-Siddharth.
-
- drivers/phy/cadence/phy-cadence-torrent.c | 64 +++++++++++++++++++++--
- 1 file changed, 60 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index 95924a09960c..651f8fc969d8 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -3074,6 +3074,26 @@ static void cdns_torrent_phy_remove(struct platform_device *pdev)
- 	cdns_torrent_clk_cleanup(cdns_phy);
- }
- 
-+/* SGMII and QSGMII link configuration */
-+static struct cdns_reg_pairs sgmii_qsgmii_link_cmn_regs[] = {
-+	{0x0002, PHY_PLL_CFG}
-+};
-+
-+static struct cdns_reg_pairs sgmii_qsgmii_xcvr_diag_ln_regs[] = {
-+	{0x0003, XCVR_DIAG_HSCLK_DIV},
-+	{0x0113, XCVR_DIAG_PLLDRC_CTRL}
-+};
-+
-+static struct cdns_torrent_vals sgmii_qsgmii_link_cmn_vals = {
-+	.reg_pairs = sgmii_qsgmii_link_cmn_regs,
-+	.num_regs = ARRAY_SIZE(sgmii_qsgmii_link_cmn_regs),
-+};
-+
-+static struct cdns_torrent_vals sgmii_qsgmii_xcvr_diag_ln_vals = {
-+	.reg_pairs = sgmii_qsgmii_xcvr_diag_ln_regs,
-+	.num_regs = ARRAY_SIZE(sgmii_qsgmii_xcvr_diag_ln_regs),
-+};
-+
- /* USB and DP link configuration */
- static struct cdns_reg_pairs usb_dp_link_cmn_regs[] = {
- 	{0x0002, PHY_PLL_CFG},
-@@ -4043,7 +4063,8 @@ static struct cdns_reg_pairs sgmii_100_no_ssc_tx_ln_regs[] = {
- 	{0x04A2, TX_PSC_A2},
- 	{0x04A2, TX_PSC_A3},
- 	{0x0000, TX_TXCC_CPOST_MULT_00},
--	{0x00B3, DRV_DIAG_TX_DRV}
-+	{0x00B3, DRV_DIAG_TX_DRV},
-+	{0x0002, XCVR_DIAG_PSC_OVRD}
- };
- 
- static struct cdns_reg_pairs ti_sgmii_100_no_ssc_tx_ln_regs[] = {
-@@ -4052,7 +4073,8 @@ static struct cdns_reg_pairs ti_sgmii_100_no_ssc_tx_ln_regs[] = {
- 	{0x04A2, TX_PSC_A3},
- 	{0x0000, TX_TXCC_CPOST_MULT_00},
- 	{0x00B3, DRV_DIAG_TX_DRV},
--	{0x4000, XCVR_DIAG_RXCLK_CTRL},
-+	{0x0002, XCVR_DIAG_PSC_OVRD},
-+	{0x4000, XCVR_DIAG_RXCLK_CTRL}
- };
- 
- static struct cdns_reg_pairs sgmii_100_no_ssc_rx_ln_regs[] = {
-@@ -4219,7 +4241,8 @@ static struct cdns_reg_pairs qsgmii_100_no_ssc_tx_ln_regs[] = {
- 	{0x04A2, TX_PSC_A3},
- 	{0x0000, TX_TXCC_CPOST_MULT_00},
- 	{0x0011, TX_TXCC_MGNFS_MULT_100},
--	{0x0003, DRV_DIAG_TX_DRV}
-+	{0x0003, DRV_DIAG_TX_DRV},
-+	{0x0002, XCVR_DIAG_PSC_OVRD}
- };
- 
- static struct cdns_reg_pairs ti_qsgmii_100_no_ssc_tx_ln_regs[] = {
-@@ -4229,7 +4252,8 @@ static struct cdns_reg_pairs ti_qsgmii_100_no_ssc_tx_ln_regs[] = {
- 	{0x0000, TX_TXCC_CPOST_MULT_00},
- 	{0x0011, TX_TXCC_MGNFS_MULT_100},
- 	{0x0003, DRV_DIAG_TX_DRV},
--	{0x4000, XCVR_DIAG_RXCLK_CTRL},
-+	{0x0002, XCVR_DIAG_PSC_OVRD},
-+	{0x4000, XCVR_DIAG_RXCLK_CTRL}
- };
- 
- static struct cdns_reg_pairs qsgmii_100_no_ssc_rx_ln_regs[] = {
-@@ -4541,11 +4565,13 @@ static struct cdns_torrent_vals_entry link_cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_NONE), &sl_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_PCIE), &pcie_sgmii_link_cmn_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_QSGMII), &sgmii_qsgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_USB), &usb_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_USXGMII), &usxgmii_sgmii_link_cmn_vals},
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_NONE), &sl_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_PCIE), &pcie_sgmii_link_cmn_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_SGMII), &sgmii_qsgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_USB), &usb_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_USXGMII), &usxgmii_sgmii_link_cmn_vals},
- 
-@@ -4575,11 +4601,13 @@ static struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_NONE), &sl_sgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_PCIE), &sgmii_pcie_xcvr_diag_ln_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_QSGMII), &sgmii_qsgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_USB), &sgmii_usb_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_USXGMII), &sgmii_usxgmii_xcvr_diag_ln_vals},
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_NONE), &sl_sgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_PCIE), &sgmii_pcie_xcvr_diag_ln_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_SGMII), &sgmii_qsgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_USB), &sgmii_usb_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_QSGMII, TYPE_USXGMII), &sgmii_usxgmii_xcvr_diag_ln_vals},
- 
-@@ -4635,6 +4663,8 @@ static struct cdns_torrent_vals_entry cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &sgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &sgmii_100_int_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &sl_sgmii_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &sgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &sgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &sgmii_100_no_ssc_cmn_vals},
-@@ -4645,6 +4675,8 @@ static struct cdns_torrent_vals_entry cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &qsgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &qsgmii_100_int_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &sl_qsgmii_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &qsgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &qsgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &qsgmii_100_no_ssc_cmn_vals},
-@@ -4713,6 +4745,8 @@ static struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &sgmii_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &sgmii_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &sgmii_100_no_ssc_tx_ln_vals},
-@@ -4723,6 +4757,8 @@ static struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &qsgmii_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &qsgmii_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &qsgmii_100_no_ssc_tx_ln_vals},
-@@ -4791,6 +4827,8 @@ static struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
-@@ -4801,6 +4839,8 @@ static struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
-@@ -4905,6 +4945,8 @@ static struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
-@@ -4915,6 +4957,8 @@ static struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
-@@ -5017,6 +5061,8 @@ static struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &sgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &sgmii_100_int_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &sl_sgmii_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &sgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &sgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &sgmii_100_no_ssc_cmn_vals},
-@@ -5027,6 +5073,8 @@ static struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &qsgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &qsgmii_100_int_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &sl_qsgmii_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &qsgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &qsgmii_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &qsgmii_100_no_ssc_cmn_vals},
-@@ -5095,6 +5143,8 @@ static struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
-@@ -5105,6 +5155,8 @@ static struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &ti_qsgmii_100_no_ssc_tx_ln_vals},
-@@ -5173,6 +5225,8 @@ static struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, EXTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, INTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_QSGMII, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, EXTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_USB, INTERNAL_SSC), &sgmii_100_no_ssc_rx_ln_vals},
-@@ -5183,6 +5237,8 @@ static struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, EXTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_PCIE, INTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_SGMII, NO_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, NO_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, EXTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_QSGMII, TYPE_USB, INTERNAL_SSC), &qsgmii_100_no_ssc_rx_ln_vals},
 -- 
-2.40.1
+2.35.3
 
 
 -- 
