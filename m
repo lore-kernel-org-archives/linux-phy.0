@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32EAEC25B76
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Jun 2024 12:43:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED1D0C25B75
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Jun 2024 12:46:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PgbPN/P+phNLNmFwWsi7gFHQpAHPh5wmsaDTdRE+BEE=; b=VZjv5CdBRgVxVc
-	9aifgHXGW+u+SayRJoCfFGdEzQqP3zA+ZUGqXB0YH11cu/izEQing5jpPXtDPf0Pk4eM0kC2zszOz
-	G5f6a15YnXQ1PRe/WPbizj0ltv8xEasZHuugAwZ0+djDwqOSZ6S9DUmZgTdQtkGIUfgRdvemhKuAK
-	ZuNsDAQyF3nepym/Duz+K7/tyFj6iuM+kqAs/2yHWlh3usQQ+ah0GHyhIxdb+EFYAZLhBZwRyrUG9
-	0RAoGyhm7OE1gylIN8EXbZ7hWTZ3NnrJ8rQABiAImx4iUgEootucqgKWFQIIc0T7ZM/1uI/jvHIku
-	o4Xl07QoongpAQ4dnSiw==;
+	List-Owner; bh=2OjygZayH1urS8cPlMTCB/HO5MIxpE4N6g3WXLywLUQ=; b=suii+mkuJOsX5v
+	j6bpJmvyX/ajQZhxIgqSKcTvFuU2AgdpX6fuDBkGMMBiYmtHJ96pI3wNZVoSl6QKFR6PVy2UE/3oS
+	xMSvI68NWkwaSngpuJ/2JNdIXa1p39BBIVdH9sUl5Wx5UnbkiwhFIKylO9CuChbOYECbYgY4JKyRF
+	3ZxAICdmQEO9kr4n6UiE48zfxWzbaeJ2fedUNoM8YWgb61tBGRw1BaqgYzGl31MC2ufWOGkb2atnF
+	Q271QW+pCcpPsf1yr3QeM2O7XTb5HBM0K0Irzs7gy1LLpxpBnFOR52CmplL00ejOPtWPYxWEQrutY
+	rxyyGPKkDHUIaeZaRQzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sE723-0000000GjRE-2o7F;
-	Mon, 03 Jun 2024 12:43:23 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sE74u-0000000Gjjb-2mPO;
+	Mon, 03 Jun 2024 12:46:20 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sE720-0000000GjPx-3PRE
+	id 1sE74r-0000000GjjE-3LMR
 	for linux-phy@lists.infradead.org;
-	Mon, 03 Jun 2024 12:43:22 +0000
+	Mon, 03 Jun 2024 12:46:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 64F11CE0A53;
-	Mon,  3 Jun 2024 12:43:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16362C32789;
-	Mon,  3 Jun 2024 12:43:17 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id B9DB0CE0C29;
+	Mon,  3 Jun 2024 12:46:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 62CADC2BD10;
+	Mon,  3 Jun 2024 12:46:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717418597;
-	bh=i3lDKw5djP+fp83cE4kSzg6UdwUoiQZr2LDyo4bms+8=;
+	s=k20201202; t=1717418774;
+	bh=4RsD9/C3pEBXc6FiOISGRqAdcjs1/UJEsDEwucWnhkM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pNyzT3G8I584aMxukYR+m/77Zul0hA0vZzt3Us/VprrUcEJv2N/66PX7gSM4JvNAK
-	 V1gCR99VlB+ECWzZ39Rl4MEz97JiI72VUE1r1VoK9wHBaBHgApciO1GKJgIlZn2M2g
-	 mvNd+GRYmbpbEqExwFsdoD/JUW2NuzL6qPReTqNZJk6Ac7x4BQcgi4c5fAkykObqqx
-	 0uoGdwk/Ga4KNhpu3lKAdXx4Y/nyvAlTEM6JDIIoKzLadeYK1MFof0ejWchwHOfKiN
-	 qf0nWw9HRlhmwCFQsEKju9pWEphCJLU8o+v0nkU7TXaOmiTMwcA75T5Z34FC5U6Ioc
-	 ROYrBz460yfdA==
+	b=ssboo9KIENmb5gqh+naudYKIJ+9RWIpHdaOIXmtVsWHL3kLHI3zxKd8E671GAccVs
+	 /UN76bXZeO5KUDuLi8QHumctJ6pw2U96o7qAG6oHtKDtl1gzglObXGYY0+3xbfq48m
+	 wDlRDLR47Kp5lnh6fPck8e+V8eWFHMkwU1WXCRGIGcwKjJzdEP9MgqXN+qm9Vlfn74
+	 VpCiER07m726Eq3t+m+cyLn2X3mnbDWfMBzJLoYhfqGOnXJkLKFS9P1JvSz0PuZu8o
+	 g+tosvKVkqjCN1bPwUhOpMAFJMQqsYeuqjfRD5dntj2wF/uGIWpYEdzuSued/aHjpN
+	 Hm3/EYfjqXCNg==
 Received: from johan by xi.lan with local (Exim 4.97.1)
 	(envelope-from <johan@kernel.org>)
-	id 1sE71v-000000000hP-0EBr;
-	Mon, 03 Jun 2024 14:43:15 +0200
-Date: Mon, 3 Jun 2024 14:43:15 +0200
+	id 1sE74m-000000000jf-1Gj3;
+	Mon, 03 Jun 2024 14:46:12 +0200
+Date: Mon, 3 Jun 2024 14:46:12 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Abel Vesa <abel.vesa@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -56,17 +56,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Document the X1E80100 QMP PCIe PHY Gen4 x4
-Message-ID: <Zl26Y0VklPmiirem@hovoldconsulting.com>
+Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Add X1E80100 Gen4 4-lane mode
+ support
+Message-ID: <Zl27FJVU_YHokCiD@hovoldconsulting.com>
 References: <20240531-x1e80100-phy-add-gen4x4-v1-0-5c841dae7850@linaro.org>
- <20240531-x1e80100-phy-add-gen4x4-v1-1-5c841dae7850@linaro.org>
+ <20240531-x1e80100-phy-add-gen4x4-v1-2-5c841dae7850@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240531-x1e80100-phy-add-gen4x4-v1-1-5c841dae7850@linaro.org>
+In-Reply-To: <20240531-x1e80100-phy-add-gen4x4-v1-2-5c841dae7850@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240603_054321_045804_741FCAF7 
-X-CRM114-Status: UNSURE (   7.09  )
+X-CRM114-CacheID: sfid-20240603_054618_037880_AA08599C 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,16 +84,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, May 31, 2024 at 07:06:44PM +0300, Abel Vesa wrote:
+On Fri, May 31, 2024 at 07:06:45PM +0300, Abel Vesa wrote:
 > The PCIe 6th instance from X1E80100 can be used in both 4-lane mode or
+> 2-lane mode. Add the configuration and compatible for the 4-lane mode.
 
-nit: s/PCIe 6th/sixth PCIe/
-nit: s/from/on/
-nit: s/both/either/
+Same language nits as for patch 1/1.
 
-> 2-lane mode. Document the 4-lane mode as a separate compatible.
-> 
 > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+
+I tried this patch along with the DT changes and the link on the CRD
+still comes up as 2-lane:
+
+	qcom-pcie 1bf8000.pci: PCIe Gen.4 x2 link up
+
+so something appears to be wrong here. (I noticed the same with your
+next branch last week.)
+
+How did you test this? Does the link actually come up as 4-lane for you?
 
 Johan
 
