@@ -4,74 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10A40C25B78
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Jun 2024 17:43:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99CBBC25B76
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Jun 2024 04:47:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=te34fbhOK7kbZzP2QzvCFjCwYOUwmLXp83pO/7Gka3s=; b=wlZZYshVZqtDOfdkgodrzp4r8e
-	vHBeIwbFGt49ULzznNQX0PACTpcksroNMcn5J7LH6InitWrjEu+n8d2vLKzpwVshQIXCBtT/q9lrh
-	XuMpVli9t8Ife7hTZ3fzMUx3CEAY2EdYiF/PJj4KVdjibdLRTJeupWZXKHi++GjoMbMAbIM1eFJsb
-	5XK01ySgK4EP9D4xoeWnsWAeGmYuqxoxzHxgGDzYJMz/w16nJCmhwBLaqEToOE7ls40iG7HSNJ1On
-	8NxLQ9gmeFgUtJFzLhPyzbQ8YkIG/qFw0JTSImfOAeZUS8OAbSBKRZHx0j2c2jLpYpqqSm486Li7F
-	PKkR8mMA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dv+XxTNiVgSqEFjHKTmIJtTOtVBd1ssL2/00xs3o67U=; b=BWZzPU1qFS/y3g
+	hibJ44zLpAOohfEIrzrq62Ndq9mszBfgCzAbh0T4uzr4KjI7XUUVt9bnLwHlQsQavxG6HcNohENQ8
+	u/JvtzNJuBP2AzpnCyZq8qkrD9cFDryPmPEiMOI4yWh1hbx3DBen2haDJSOwJe8798dKYza/QHACL
+	/Xnyv+AQ1w7qqjsZzk1VB7yX13r93+ailnv1dYc8wkQX7PufA9+GrZI/yxvSla/h3RHHDMIJZTJ3R
+	Iqdc2qdc5pkdmJXiqiV8mbo/iFDDSDZ3llo4Zu8k9Gn/u3AuSX4AxCL20bGPE6DdGK9iXtbzP59es
+	lCTtuXFdICdhaaT1wszw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEYBa-00000003Ls3-1thq;
-	Tue, 04 Jun 2024 17:43:02 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sEiYn-00000004d2t-0i1p;
+	Wed, 05 Jun 2024 04:47:41 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sEYBT-00000003LnL-0Xrh;
-	Tue, 04 Jun 2024 17:42:57 +0000
+	id 1sEWTW-000000030ul-3L9x;
+	Tue, 04 Jun 2024 15:53:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 4BA6CCE1261;
-	Tue,  4 Jun 2024 17:42:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9F19CC2BBFC;
-	Tue,  4 Jun 2024 17:42:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717522972;
-	bh=9ZDdQxZgE5rT+xnz9EaVUQSZwdka7kPTuTY6LYAVhWQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BeLdwi8cSohO3ByZuLm4Tu2/0iY9vfBprVnraZqhGr11xhqvCXRjYBkCm3z1DyTrY
-	 oSRSpgwxYB3P8azugzt3uSf8A1qp5OaFR7YGitqxJrKD1TiM/j/C0iJ+nrajN/PT8V
-	 Qv0Foels3jbevo27oZZ+F82xxBeaYr+12JeLaUz59Ksuz3Di97XpattErpddgzfI9F
-	 ENfe1Sl78gDeE+IKf96cx4vY/QEk9usypn4spj1VEdQvfSjWGwZGGgU56xthgW/T1J
-	 pZWULplv/Kz7CCnbfHFY13x+qWTTbDKBjjiSlXgrfTA6ADrxPYieLMT6xFyPJposIn
-	 tMqo0FLuhpxpQ==
-Date: Tue, 4 Jun 2024 18:42:46 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Josua Mayer <josua@solid-run.com>
-Cc: Andrew Lunn <andrew@lunn.ch>,
-	Gregory Clement <gregory.clement@bootlin.com>,
-	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Lars-Peter Clausen <lars@metafoo.de>,
-	Daniel Baluta <daniel.baluta@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Konstantin Porotchkin <kostap@marvell.com>,
-	Richard Cochran <richardcochran@gmail.com>,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-phy@lists.infradead.org, netdev@vger.kernel.org
-Subject: Re: [PATCH v6 3/7] dt-bindings: iio: adc: ti,ads1015: add compatible
- for tla2021
-Message-ID: <20240604-suspend-schnapps-191d2c1ad53e@spud>
-References: <20240602-cn9130-som-v6-0-89393e86d4c7@solid-run.com>
- <20240602-cn9130-som-v6-3-89393e86d4c7@solid-run.com>
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8618E6134C;
+	Tue,  4 Jun 2024 15:53:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D41BC2BBFC;
+	Tue,  4 Jun 2024 15:52:38 +0000 (UTC)
+Date: Tue, 4 Jun 2024 11:52:35 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Jani Nikula <jani.nikula@linux.intel.com>
+Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>, "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Corey Minyard <minyard@acm.org>, Allen Pais <apais@linux.microsoft.com>, Sebastian Reichel <sebastian.reichel@collabora.com>, Perry Yuan <perry.yuan@amd.com>, Giovanni Cabiddu <giovanni.cabiddu@intel.com>, Herbert Xu <herbert@gondor.apana.org.au>, Nuno Sa <nuno.sa@analog.com>, Guenter Roeck <linux@roeck-us.net>, Randy Dunlap <rdunlap@infradead.org>, Andi Shyti <andi.shyti@kernel.org>, Heiner Kallweit <hkallweit1@gmail.com>, Lee Jones <lee@kernel.org>, Samuel Holland <samuel@sholland.org>, Elad Nachman <enachman@marvell.com>, Arseniy Krasnov <AVKrasnov@sberdevices.ru>, Johannes Berg <johannes.berg@intel.com>, Gregory Greenman <gregory.greenman@intel.com>, Benjamin Berg <benjamin.berg@intel.com>, Bjorn Helgaas <bhelgaas@google.com>, Robert Richter <rrichter@amd.com>, Vinod Koul <vkoul@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Linus Walleij <linus.walleij@linaro.org>, Hans de Goede <hdegoede@redhat.com>, Ilpo =?UTF-8?B?SsOkcnZpbmVu?= <ilpo.jarvinen@linux.intel.com>, Nikita Kravets <teackot@gmail.com>, Jiri Slaby <jirislaby@kernel.org>, Srinivas Pandruvada <srinivas.pandruvada@linux.intel.com>, Stanley Chang <stanley_chang@realtek.com>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, Abdel Alkuor <abdelalkuor@geotab.com>, Kent Overstreet <kent.overstreet@linux.dev>, Eric Biggers <ebiggers@google.com>, Kees Cook <keescook@chromium.org>, Ingo Molnar <mingo@kernel.org>, Daniel Bristot de Oliveira <bristot@kernel.org>, Andrew Morton <akpm@linux-foundation.org>, Hugh Dickins <hughd@google.com>, Abel Wu <wuyun.abel@bytedance.com>, John Johansen <john.johansen@canonical.com>, Mimi Zohar <zohar@linux.ibm.com>, Stefan Berger <stefanb@linux.ibm.com>, Roberto Sassu <roberto.sassu@huawei.com>, Eric Snowberg <eric.snowberg@oracle.com>, Takashi Iwai <tiwai@suse.de>, Takashi Sakamoto <o-takashi@sakamocchi.jp>, Jiapeng Chong <jiapeng.chong@linux.alibaba.com>, Mark Brown <broonie@kernel.org>, Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>, linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org, keyrings@vger.kernel.org, linux-crypto@vger.kernel.org, linux-acpi@vger.kernel.org, linux-ide@vger.kernel.org, openipmi-developer@lists.sourceforge.net, linux-clk@vger.kernel.org, linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-tegra@vger.kernel.org, linux-pm@vger.kernel.org, qat-linux@intel.com, dri-devel@lists.freedesktop.org, intel-gfx@lists.freedesktop.org, intel-xe@lists.freedesktop.org, nouveau@lists.freedesktop.org, linux-hwmon@vger.kernel.org, linux-i2c@vger.kernel.org, linux-leds@vger.kernel.org, linux-sunxi@lists.linux.dev, linux-omap@vger.kernel.org, linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org, netdev@vger.kernel.org, linux-wireless@vger.kernel.org, linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, platform-driver-x86@vger.kernel.org, linux-staging@lists.linux.dev, linux-usb@vger.kernel.org, linux-fbdev@vger.kernel.org, linux-bcachefs@vger.kernel.org, linux-hardening@vger.kernel.org, cgroups@vger.kernel.org, linux-trace-kernel@vger.kernel.org, linux-mm@kvack.org, apparmor@lists.ubuntu.com, linux-security-module@vger.kernel.org, linux-integrity@vger.kernel.org, alsa-devel@alsa-project.org, linux-sound@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>, Nicholas Piggin <npiggin@gmail.com>, Christophe Leroy <christophe.leroy@csgroup.eu>, "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>, Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>, Dave Hansen <dave.hansen@linux.intel.com>, x86@kernel.org, "H. Peter Anvin" <hpa@zytor.com>, David Howells <dhowells@redhat.com>, "David S. Miller" <davem@davemloft.net>, "Rafael J. Wysocki" <rafael@kernel.org>, Len Brown <lenb@kernel.org>, Sergey Shtylyov <s.shtylyov@omp.ru>, Damien Le Moal
+ <dlemoal@kernel.org>, Niklas Cassel <cassel@kernel.org>, Daniel Scally <djrscally@gmail.com>, Sakari Ailus <sakari.ailus@linux.intel.com>, Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Florian Fainelli <florian.fainelli@broadcom.com>, Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>, Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, Heiko Stuebner <heiko@sntech.de>, Peter De Schrijver <pdeschrijver@nvidia.com>, Prashant Gaikwad <pgaikwad@nvidia.com>, Thierry Reding <thierry.reding@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>, Huang Rui <ray.huang@amd.com>, "Gautham R. Shenoy" <gautham.shenoy@amd.com>, Mario Limonciello <mario.limonciello@amd.com>, Viresh Kumar <viresh.kumar@linaro.org>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, Rodrigo Vivi <rodrigo.vivi@intel.com>, Joonas Lahtinen <joonas.lahtinen@linux.intel.com>, Tvrtko Ursulin <tursulin@ursulin.net>, Karol Herbst <kherbst@redhat.com>, Lyude Paul <lyude@redhat.com>, Danilo Krummrich <dakr@redhat.com>, Jean Delvare <jdelvare@suse.com>, Alexander Shishkin <alexander.shishkin@linux.intel.com>, Pavel Machek <pavel@ucw.cz>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Tony Lindgren <tony@atomide.com>, Adrian Hunter <adrian.hunter@intel.com>, Hu Ziji <huziji@marvell.com>, Ulf Hansson <ulf.hansson@linaro.org>, Miquel Raynal <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>, Potnuri Bharat Teja <bharat@chelsio.com>, Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Miri Korenblit <miriam.rachel.korenblit@intel.com>, Kalle Valo <kvalo@kernel.org>, Mahesh J Salgaonkar <mahesh@linux.ibm.com>, Oliver O'Halloran <oohall@gmail.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, JC Kuo <jckuo@nvidia.com>, Andrew Lunn <andrew@lunn.ch>, Gregory Clement <gregory.clement@bootlin.com>, Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>, Sebastian Reichel <sre@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Helge Deller <deller@gmx.de>, Brian Foster <bfoster@redhat.com>, Zhihao Cheng <chengzhihao1@huawei.com>, Tejun Heo <tj@kernel.org>, Zefan Li <lizefan.x@bytedance.com>, Johannes Weiner <hannes@cmpxchg.org>, Peter Zijlstra <peterz@infradead.org>, Juri Lelli <juri.lelli@redhat.com>, Vincent Guittot <vincent.guittot@linaro.org>, Dietmar Eggemann <dietmar.eggemann@arm.com>, Ben Segall <bsegall@google.com>, Mel Gorman <mgorman@suse.de>, Daniel Bristot de Oliveira <bristot@redhat.com>, Valentin Schneider <vschneid@redhat.com>, Masami Hiramatsu <mhiramat@kernel.org>, Mathieu Desnoyers <mathieu.desnoyers@efficios.com>, Jason Baron <jbaron@akamai.com>, Jim Cromie <jim.cromie@gmail.com>, Paul Moore <paul@paul-moore.com>, James Morris <jmorris@namei.org>, "Serge E. Hallyn" <serge@hallyn.com>, Dmitry Kasatkin <dmitry.kasatkin@gmail.com>, Clemens Ladisch <clemens@ladisch.de>, Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>, Linus Torvalds <torvalds@linux-foundation.org>
+Subject: Re: [PATCH v1 1/1] treewide: Align match_string() with
+ sysfs_match_string()
+Message-ID: <20240604115235.044acfd6@gandalf.local.home>
+In-Reply-To: <87tti9cfry.fsf@intel.com>
+References: <20240603211538.289765-1-andriy.shevchenko@linux.intel.com>
+	<87tti9cfry.fsf@intel.com>
+X-Mailer: Claws Mail 3.20.0git84 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20240602-cn9130-som-v6-3-89393e86d4c7@solid-run.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240604_104255_455904_D13D8052 
-X-CRM114-Status: GOOD (  16.21  )
+X-CRM114-CacheID: sfid-20240604_085326_943913_D5AAE3F9 
+X-CRM114-Status: GOOD (  26.35  )
+X-Mailman-Approved-At: Tue, 04 Jun 2024 21:47:39 -0700
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,82 +59,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3753527692725740248=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, 04 Jun 2024 10:45:37 +0300
+Jani Nikula <jani.nikula@linux.intel.com> wrote:
 
---===============3753527692725740248==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="TVLzrn2EdXz7R3Sf"
-Content-Disposition: inline
+> On Sun, 02 Jun 2024, Andy Shevchenko <andriy.shevchenko@linux.intel.com> wrote:
+> > Make two APIs look similar. Hence convert match_string() to be
+> > a 2-argument macro. In order to avoid unneeded churn, convert
+> > all users as well. There is no functional change intended.  
+> 
+> Why do we think it's a good idea to increase and normalize the use of
+> double-underscore function names across the kernel, like
+> __match_string() in this case? It should mean "reserved for the
+> implementation, not to be called directly".
+> 
+> If it's to be used directly, it should be named accordingly, right?
+> 
+> Being in line with __sysfs_match_string() isn't a great argument alone,
+> because this adds three times the number of __match_string() calls than
+> there are __sysfs_match_string() calls. It's not a good model to follow.
+> Arguably both should be renamed.
 
+Agreed. I want to get rid of any functions starting with an underscore
+except for those that are basically the same function used internally for
+convenience.
 
---TVLzrn2EdXz7R3Sf
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Perhaps "match_string_dynamic()"? Where it is used for dynamically
+allocated arrays without known size. Or, allow a third parameter for
+dynamic arrays.
 
-On Sun, Jun 02, 2024 at 05:49:38PM +0200, Josua Mayer wrote:
-> TI tla2021 is a limited single-channel variant of tla2024 which is
-> similar enough to be easily supportable through the same driver.
->=20
-> Add compatible string for tla2021 so boards may describe it in
-> device-tree.
->=20
-> Signed-off-by: Josua Mayer <josua@solid-run.com>
+#define match_string(_a, _s, ...)
+	char _______STR[] = __stringify((__VA_ARGS__));	\
+	if (sizeof(_______STR) > 3)			\
+		__match_string(_a, _s, ##__VA_ARGS__);  \
+	else						\
+		__match_string(_a, _s, ARRAY_SIZE(_a));
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+What the above stringify((__VA_ARGS__)) does is to check the size of any
+args added to match_string(). if there isn't any, it will turn into:
+"()\0", which is of size 3. If you add an argument, it will be:
+"(<arg>)\0", which will have a size greater than three.
 
-Thanks,
-Conor.
+(trace_printk() does this trick in include/linux/kernel.h).
 
-> ---
->  Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml | 1 +
->  1 file changed, 1 insertion(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml b/=
-Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml
-> index d605999ffe28..718f633c6e04 100644
-> --- a/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml
-> +++ b/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml
-> @@ -18,6 +18,7 @@ properties:
->      enum:
->        - ti,ads1015
->        - ti,ads1115
-> +      - ti,tla2021
->        - ti,tla2024
-> =20
->    reg:
->=20
-> --=20
-> 2.35.3
->=20
+This way, both:
 
---TVLzrn2EdXz7R3Sf
-Content-Type: application/pgp-signature; name="signature.asc"
+ match_string(array, sting);
 
------BEGIN PGP SIGNATURE-----
+or
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZl9SFgAKCRB4tDGHoIJi
-0qTZAP9VTInHBzPieEsZwrjfLF/njMhzTn87Oa3SIf0ORwC1fwEAmfEN49Q5o2D4
-T+05ZNpG/57fQf2cyIrNTl7y3WGByAE=
-=Vlni
------END PGP SIGNATURE-----
+ match_string(array, string, size);
 
---TVLzrn2EdXz7R3Sf--
+will work.
 
+-- Steve
 
---===============3753527692725740248==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3753527692725740248==--
-
