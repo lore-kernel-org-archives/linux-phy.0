@@ -4,77 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20A8EC27C5F
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 16:33:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00202C27C52
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 18:42:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qVsliOyAE0jRrOgvy3dEjhSq3sRwGsrEp0W+tfsvT7M=; b=k/uMSyXkpoIoq80krIcVVJkB/4
-	TNRRtIHpjBGHKh+1Nxha+SKZiul6L62ttY25Nv44y54/ssklC2snGiW+XpEESttiWQ3QNoY2lsOkC
-	34TLDJl4ZtsRTJp6HWTaGxSJI+YtDlp5NUjYXYHyS5SbIfsRm+m3qOSObZJEz8ZtYhln5/lyQ9ili
-	rBjWs+5KdFXU/ONwLHI6OQdumPw5RKtobrqh4n1Y35U47+LAXKpDm9gwGIqbuRc6TRa3+Q2fsNRV4
-	Jll2O2nAuFRjYgQkFCzF8vdcHkr0sNJl8aJ3PqDhUXbYuex3imm3wIstSnKCOQNKCLeVZ2jDojXGp
-	LOMnxdzA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qBYR34KNlWj3NDptz8HQpAm7jYLzWHfBETPgK5zV6hg=; b=dfHF5rqWh2dFrP
+	9bLI1O/Prh+GrYf2U84KWxYMrdUcbbLBZ2skg9fnDJlu77muvzdSIKI2jS5OgqIcXOXsgUnXYlqHR
+	m6rini9wO/6rNdlO73Mr65JAjA2GeS6gQqaoUVCuaTcpn8wWIXsZQ3Evz9SNa2Vo69VcC7BJFiCyp
+	VNoXhw9HUJ1undAg7e+9S5JJsRqObTb7U936PFrQWK3ZViBlYbOI6728d54fRJP4Da5/IRlHqIRKO
+	M5Df6imlXvcoyCE8RcdjN9GaB08Q20ppgZwsgZbpAVdn0n/FH4coY2X8om2z+yEfIky4PNjenBRQK
+	ZpucAyiCA28WGoQCJRDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFG30-0000000AYEN-3XyM;
-	Thu, 06 Jun 2024 16:33:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sFI4E-0000000AzB0-1bZQ;
+	Thu, 06 Jun 2024 18:42:30 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFG2y-0000000AYDv-1HNb
-	for linux-phy@lists.infradead.org;
-	Thu, 06 Jun 2024 16:33:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8C74E61D00;
-	Thu,  6 Jun 2024 16:33:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 971F1C2BD10;
-	Thu,  6 Jun 2024 16:32:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717691583;
-	bh=J4EIeduNWZgQM5LFuF+pkc025aA/Jgzn8slsa28alkA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=cvM4dzlD5Lmahj0VgK0rUTp4s35qgdE/OobeYuZJ1axMZw3aNqtuG/qOY2I4RtJ2c
-	 u0H+DCq1jHUQVUhWWBbKBKoTgK/ySxWrnWeA1BDFJNqu5Qi3YPRoyksmOXjvhfNwtp
-	 2DlBckNQmkNx6TrqKEjHFPxrv7kQb+A1DOBlhZBRKDVF3d4jYtTP3Bdmix7ENd5lid
-	 HqUhXY3Dxfxs32grRtLE3epHZbhESBnxIE5lilN0LKiLuLWAOiKAZIXcBWsvnA5a8I
-	 j7epTu7gNUWjYmYvY1Hbn5qUs829phlLo2oSWYH9dyX4p/TVqubwn16yxKBUYeN0Nz
-	 VehA4al7ZqJ5g==
-Date: Thu, 6 Jun 2024 17:32:56 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Marc Gonzalez <mgonzalez@freebox.fr>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Sean Paul <sean@poorly.run>,
-	Marijn Suijten <marijn.suijten@somainline.org>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>,
-	Pierre-Hugues Husson <phhusson@freebox.fr>
-Subject: Re: [PATCH v3 2/4] dt-bindings: display/msm: hdmi: add
- qcom,hdmi-tx-8998
-Message-ID: <20240606-sharply-pettiness-7c090530c2a1@spud>
-References: <20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr>
- <20240606-hdmi-tx-v3-2-9d7feb6d3647@freebox.fr>
+	id 1sFI4B-0000000AzAD-24YA;
+	Thu, 06 Jun 2024 18:42:29 +0000
+Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-1f480624d0fso12066955ad.1;
+        Thu, 06 Jun 2024 11:42:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1717699344; x=1718304144; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=4iZQmT4vxNQolNnYp5zIseeWy4wyJJ76G+a9PWEi2OQ=;
+        b=QZ7E8hLABLOGs5SJcFKg8zE4Wg0dj2NmIYiBGsxfq3u75sNAN5GL6qe9EnfwaL0onq
+         dmc8MwkE3M1PIYAfJf1arRVWijvyiAwfvAz4vn1Aeg4ss7qDXESovG8162pLhdPTV0By
+         PcDAu5QvyIYbq2133ddlxvPKc/+YIxMuTJ0C2VRjY0TiB1ZYtiL49qodn72/yBpGxZUb
+         ytYBORKG3MICbKtE263F67LqpAk4L/+d3QjzpP3EYSuhXdVU89/qEUYfcykiF06LTOat
+         /GQzKc3zHZddFiuN69pCFSasPbbLOzxs2Y5mgCPffhUWD39bfUR4ZkXGqyt2zbhsVwWp
+         Urzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1717699344; x=1718304144;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=4iZQmT4vxNQolNnYp5zIseeWy4wyJJ76G+a9PWEi2OQ=;
+        b=a+wwopP2huHLAJUm0WAz5G2BRGI+9cx92dKb48bjb6+RLwIJO/FXpWKUb4Y4k5k2yx
+         YAdC9LPvPoAcINWnIWvN6wuBYj2FQj9Pxxh5DRZe8P31sO8+iqjzF/aotLnfOTcOQ6B0
+         tFe+onApEdmUtrTCz+dwWQQiwcz5qmzRh9Mlx4YXXG548d7TACnojyt6j59RgHkKUF6i
+         2gzWHzv/MfX6i9olvpoJ8jWsJie3AUP8AzkH3DMgYdcoNQziGctiwMCWICq9GDu0Bhr1
+         MnqfOWz2q4OFaHwOd5cGg1fqXon4ncxOm0zAzCJmqzsCnsIbbdCzkhuz/hhVi9yeWKOI
+         Dijw==
+X-Forwarded-Encrypted: i=1; AJvYcCVqvH3dyGI9u3zW6yZ83blKeANlNvhXORl2sszad/AWEyaE/ZzKt6Y3nfhQH2yDkX3PDMOCnxRPYqNgWnCYOsSCcjwBtfB/2ZUokqEY2GRx4xJtWlX8XIAQmyUdd+LWklA35/OIjYJzSJ+nUiyrgCpq6ibr4Vf4UMo=
+X-Gm-Message-State: AOJu0YylgDH2IC+fi+lG6SQeCOQmnd9IA/5dNamaEUYoGr5gNlmoliVA
+	5MWYjXBIsn+ZI3LMJJRyECpwc+myprMHRKsddzy3BA3pExypM1L9
+X-Google-Smtp-Source: AGHT+IFkQ8Z6wzTxzhMDbB5Ba2CM0TWh/R5abXx0fHzeL39jtPW0SNgr7hl/LnynWuc0TSMqC4UxAg==
+X-Received: by 2002:a17:902:e849:b0:1f6:6c3f:1664 with SMTP id d9443c01a7336-1f6d0301bb0mr4632405ad.38.1717699344437;
+        Thu, 06 Jun 2024 11:42:24 -0700 (PDT)
+Received: from shresth-aspirea71576g.abesec.ac.in ([117.55.241.163])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1f6bd81bca0sm18446625ad.305.2024.06.06.11.42.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 06 Jun 2024 11:42:24 -0700 (PDT)
+From: Shresth Prasad <shresthprasad7@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	skhan@linuxfoundation.org,
+	javier.carrasco.cruz@gmail.com,
+	Shresth Prasad <shresthprasad7@gmail.com>
+Subject: [PATCH] dt-bindings: phy: rockchip-emmc-phy: Convert to dtschema
+Date: Fri,  7 Jun 2024 00:11:36 +0530
+Message-ID: <20240606184135.11065-2-shresthprasad7@gmail.com>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-In-Reply-To: <20240606-hdmi-tx-v3-2-9d7feb6d3647@freebox.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_093304_407001_AE56A2A8 
-X-CRM114-Status: UNSURE (   7.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240606_114227_562044_00961E61 
+X-CRM114-Status: GOOD (  14.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,56 +95,163 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8007475483272887919=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
+for validation.
 
---===============8007475483272887919==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="cvI1T3XU3X9BFDJc"
-Content-Disposition: inline
+Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+---
+Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
+and `rockchip/rk3399-pinebook-pro.dtb`.
 
+ .../bindings/phy/rockchip,emmc-phy.yaml       | 78 +++++++++++++++++++
+ .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
+ 2 files changed, 78 insertions(+), 43 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
 
---cvI1T3XU3X9BFDJc
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+new file mode 100644
+index 000000000000..bd8485c77bfe
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+@@ -0,0 +1,78 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,emmc-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip EMMC PHY
++
++maintainers:
++  - Shresth Prasad <shresthprasad7@gmail.com>
++
++properties:
++  "#phy-cells":
++    const: 0
++
++  compatible:
++    const: rockchip,rk3399-emmc-phy
++
++  reg:
++    description:
++      PHY register address offset and length in "general register files"
++    maxItems: 1
++
++  clock-names:
++    description: |
++      Although this is not a required property (because most boards can get
++      basic functionality without having access to it), it is strongly
++      suggested.
++    const: emmcclk
++
++  clocks:
++    description:
++      Should have a phandle to the card clock exported by the SDHCI driver.
++    maxItems: 1
++
++  drive-impedance-ohm:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Specifies the drive impedance in Ohm.
++    enum: [33, 40, 50, 66, 100]
++    default: 50
++
++  rockchip,enable-strobe-pulldown:
++    type: boolean
++    description: |
++      Enable internal pull-down for the strobe
++      line.  If not set, pull-down is not used.
++
++  rockchip,output-tapdelay-select:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Specifies the phyctrl_otapdlysec register.
++    default: 0x4
++    maximum: 0xf
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    grf {
++      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
++      #address-cells = <1>;
++      #size-cells = <1>;
++
++      emmcphy: phy@f780 {
++        #phy-cells = <0>;
++        compatible = "rockchip,rk3399-emmc-phy";
++        reg = <0xf780 0x20>;
++        clocks = <&sdhci>;
++        clock-names = "emmcclk";
++        drive-impedance-ohm = <50>;
++      };
++    };
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+deleted file mode 100644
+index 57d28c0d5696..000000000000
+--- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-Rockchip EMMC PHY
+------------------------
+-
+-Required properties:
+- - compatible: rockchip,rk3399-emmc-phy
+- - #phy-cells: must be 0
+- - reg: PHY register address offset and length in "general
+-   register files"
+-
+-Optional properties:
+- - clock-names: Should contain "emmcclk".  Although this is listed as optional
+-		(because most boards can get basic functionality without having
+-		access to it), it is strongly suggested.
+-		See ../clock/clock-bindings.txt for details.
+- - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
+- - drive-impedance-ohm: Specifies the drive impedance in Ohm.
+-                        Possible values are 33, 40, 50, 66 and 100.
+-                        If not set, the default value of 50 will be applied.
+- - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
+-                                    line.  If not set, pull-down is not used.
+- - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
+-                                    If not set, the register defaults to 0x4.
+-                                    Maximum value 0xf.
+-
+-Example:
+-
+-
+-grf: syscon@ff770000 {
+-	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-
+-...
+-
+-	emmcphy: phy@f780 {
+-		compatible = "rockchip,rk3399-emmc-phy";
+-		reg = <0xf780 0x20>;
+-		clocks = <&sdhci>;
+-		clock-names = "emmcclk";
+-		drive-impedance-ohm = <50>;
+-		#phy-cells = <0>;
+-	};
+-};
+-- 
+2.45.2
 
-On Thu, Jun 06, 2024 at 06:07:48PM +0200, Marc Gonzalez wrote:
-> HDMI TX block embedded in the APQ8098.
->=20
-> Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
-
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
-Thanks,
-Conor.
-
---cvI1T3XU3X9BFDJc
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZmHkuAAKCRB4tDGHoIJi
-0tXCAQDsUcs12fPLOgkac1DArtDCK6naogmrtsRLhRdX4CTCFQEA+qWNDZv+aF51
-v0iE15iZ3VqHMiaYVXwOclhCbq5qpA8=
-=Jq6C
------END PGP SIGNATURE-----
-
---cvI1T3XU3X9BFDJc--
-
-
---===============8007475483272887919==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8007475483272887919==--
-
