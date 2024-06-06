@@ -4,73 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A510EC25B75
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 13:29:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3708C25B75
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 14:19:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FZIltlcqjLRrmeYnz9ctloQCA5jCcb0MkiZAhuqwee0=; b=COIG/PATZn2hzrFVxiF4h2a8ji
-	YeKO4rRuj+ZVUU5YQT71MglDkA1N2r+aZMBtY8eqJV0s/n4yH9HWwCVtaSoZmMJZxsWld/2Alc1gK
-	hD/DTiPW3iLeXLVkyFtz9++epOmUgPaws6GgGedcL6RMo4AlEzVxuKgftGLvkV8/3+BzAH4tLmGs9
-	W8X2rpoxU/uLLottjnaVZNgDJHaYGgfwjLtQwpouHPQDbLTXQwQjtIRoUhU+LDJBxXAz/7pbr/W3p
-	dbugRAGDlMdpPhD0SIbxr+9q4jpTslI3UEUFqGN224phRqTidjZwjRQnL0cygR2WhmyLOhHCTreRU
-	Nm7OYQ0A==;
+	bh=LMdlYLoAshxQfav9XBqLXZygfkWuGkVrTjEIFKrJ5Aw=; b=hD/+3kwvR3WKmkNjS6B6ZGqvJu
+	laOkpLD5As6OsadGO5QSApjQxFyeCcEr+A0pdqBudUhIDdxnqeAwdzRYrG2Gp0+24Tuu0ZNQOfdP6
+	cZQt771yEyOPVXpx9k0RZfoTHJg6+h5IQIf1y+FnDUl2quUjtwcZ1O9sDdnciym6CYP1yLZcn8k8u
+	wyCZSxRjDzAeUrPOgBOInJ+FZflTTVVyNSGpbPpwCJRgS87yl/f4dhUne2FDJENMgl6EEhMqZHe6o
+	QOXHQ+tzuDGwsjaFj8EjuHskNdQ9xgXJ+N9Q4PCoZINwB62tw2rD8ukK6pqpb9ov/tOExl9jfrkeK
+	ctl7ppAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFDBn-00000009t4e-1GrS;
-	Thu, 06 Jun 2024 13:29:59 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1sFDyA-0000000A2EK-1oRq;
+	Thu, 06 Jun 2024 14:19:58 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFDBk-00000009t3d-08ng
+	id 1sFDy7-0000000A2DM-2ANe
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Jun 2024 13:29:57 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id 38308e7fff4ca-2eaad2c673fso13417251fa.3
-        for <linux-phy@lists.infradead.org>; Thu, 06 Jun 2024 06:29:55 -0700 (PDT)
+	Thu, 06 Jun 2024 14:19:56 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4215b0bffe1so6069855e9.0
+        for <linux-phy@lists.infradead.org>; Thu, 06 Jun 2024 07:19:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1717680594; x=1718285394; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1717683593; x=1718288393; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=fvkU3UYNCCgjYLGJcSgfkTy9W76vquBkQdOXEHTQQXw=;
-        b=ui2KIw8cEkR/jh06pP6L1+j7PuMHaKlNjtuvTn4ZqpKX0w3dgajtgRemYAdt3YS98u
-         rm8/4rjB2HU6bgVNgO4Qt9225Ndj8zK53YNczj0PXKqevliMcju9rqvJccAxT6HKSw9m
-         JaMkiuFZstLJ1faGJYDUjf4ttLMitfd5PGfH2F/JyCN/SSBJsL+sP9UEJFwfAAgHpTVE
-         vu4uqWIYLr5APZArBjnsusIlrdgVpe/59lsfBSyiLG/DP8geG5xArqWuPyevx7wuwJSA
-         J86ptgTNmOwXy+MZn/wNWvYiaIR6rzeM+fuE3EswdmLq/EKPs8G6g+zBoFgI9PZZKrhS
-         uP7g==
+        bh=36iJiWPjD6SuqWw0fPcJGiqZW0CSrSFa1RF7xICeHVs=;
+        b=f3m6L+0zDjuPwoF31yOuFW08Ixwo8i/uNLZRLHh+NQ5SrFjHzpub97ROypCzYyHxQ4
+         PQQYQYv4dSbmoJ3buRkiguioul+87daXsgQyoDzzmkeRxpVIo1rN10hCInIOOWGGlH4q
+         44xsXhrrzD4RaIZQRDcCYwSbq6Q6dgl6GXLp3uhnBETSg29cD/0XHHvaGjuHK0gyNdUK
+         hS7iEBFd7Pnea1+MvDdB06T/HjIhbOSzSEQXmggB6GUvEjkUfW8S7daDrC/wkOZDcfyq
+         CyfFcfUoT4W24xzKnztx34iHWG32wRecyGI8bRstGJFjaZD//oF6NQ884AveU1GbJx9R
+         lxRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717680594; x=1718285394;
+        d=1e100.net; s=20230601; t=1717683593; x=1718288393;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=fvkU3UYNCCgjYLGJcSgfkTy9W76vquBkQdOXEHTQQXw=;
-        b=ig3xBd/WqJ1FRO6mjatFAmHseNemWNmP+16v46Vta/WvNSQSGQC6zRznU5sQnWvnSp
-         ggSYiMu391ZjaO25j5vldEe4cKSvAXRmc8NNBjag3YOqxL359bsbPvwL+02gGnnJ6rVI
-         wgZzsi15TfJza4l3HkXKSFrcP+tkeCS50hqfwLU5F9taO5NyNiWCi6JT2gBoTYOdHDec
-         1ywbdnR1Fx9KI+5zbEZ+vtZf5Dmy2wPwgLIAtpFX/ltEfviOJp7/539TW+SYQUlXH9Z0
-         fPr5tWKFLZjMKst2Lk0FUsFR8FNXV4a1pZZCYZvrxztNZIM1LIeRC8Mql4B7nY4/Z6IB
-         deJw==
-X-Forwarded-Encrypted: i=1; AJvYcCUtfM8gC7SHKYC+giBOZK8KtFY+qvXYzM6obBoLWdOTGZAbU+44QBlWSt32RX4Vh5xsXBcaYDjfrqXQchhF2YYRtM1cggmeYcfxKHHPLw==
-X-Gm-Message-State: AOJu0YwwVWeMCRoQ39kmjN24BHvQ/mX3Gs3RkPOeFHvfbOm/pWARHPet
-	BJ6PfM7cc9rwWAOEZoAXm1/zYHAWbXymFTcYjh9Tte8n0o7cQaO8Z1vkXzj7Y0k=
-X-Google-Smtp-Source: AGHT+IGihh4KKiZRsPsUimCWbL/IXXf+hS2Ri+W4mtukAS+JESrNRz3BD15VPN3J+yIaWrUosgA6mg==
-X-Received: by 2002:a05:651c:152:b0:2d8:5fe6:820d with SMTP id 38308e7fff4ca-2eac797f1b3mr42093651fa.11.1717680593837;
-        Thu, 06 Jun 2024 06:29:53 -0700 (PDT)
+        bh=36iJiWPjD6SuqWw0fPcJGiqZW0CSrSFa1RF7xICeHVs=;
+        b=tekl5W/q/dms2Ll0WVatV+VU6ztGo1JYvMaChSTVlgbcJbJaQ/P/Px5wK/LnrfrbQU
+         G92964C8DrXvlUhYDbyCQwwZVSG+B8OkM3qEvcQjzuA9RVPiQqp3hdo7FwNZyj74TMlY
+         agduEgUgp0dWr4zoGpHVq6LgtkOC+MC6YWQWy/P2WtHnlgRQVS2qyWtW7O1gMQBn0eUV
+         X+iR0fLLMBbNkOMyYbmZPwqeo+6i7FT4KAuyd0/dg8mo6tfagPEOpuhPv4smsuPU5sto
+         5Ebz7JjaRzfnLtMtdFeuXUwK+Cs7s+1Qm59y8IV4cxXB4l+ipQW/ZnByhdVDYUd4vshn
+         qeww==
+X-Forwarded-Encrypted: i=1; AJvYcCUDnTSEwb4fHMSlxy5VIfqcpuslHao8Zovd2WVoF7ENLQbutliJ79tRp9cU0oEm6vhl5tRgp9UaY1eCBjauf/9sGddpGvX7+yXm3U8vow==
+X-Gm-Message-State: AOJu0YxG9NdRpmqQv9HpSsLQZRiObr0/EqgFejXRrRpXgzjG2R3PZICr
+	mbC+MrZU/4GhpEqAsTnweVpACcaRmF2Em0+ffexhQuhKWzuK+BTS3uckhY5b//Y=
+X-Google-Smtp-Source: AGHT+IHH4QeBm1WgAvOZdSJ5CLoMFu8LRgw4cTXRi0ooO8Q3Ak2T7S1SjZMKgar96ypnBMCR0zMUOw==
+X-Received: by 2002:a5d:6d8f:0:b0:34c:7ed4:55a with SMTP id ffacd0b85a97d-35ef0ddb092mr3388718f8f.33.1717683592559;
+        Thu, 06 Jun 2024 07:19:52 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:982:cbb0:6d66:dc6b:6c6b:f7aa? ([2a01:e0a:982:cbb0:6d66:dc6b:6c6b:f7aa])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-35ef5e989dfsm1572105f8f.80.2024.06.06.06.29.52
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4215c2c7dafsm23719935e9.35.2024.06.06.07.19.51
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 06 Jun 2024 06:29:53 -0700 (PDT)
-Message-ID: <ec78bd64-b1f2-48c1-b1ab-b7e2f0b9e24d@linaro.org>
-Date: Thu, 6 Jun 2024 15:29:52 +0200
+        Thu, 06 Jun 2024 07:19:52 -0700 (PDT)
+Message-ID: <168caaed-b43c-4663-b35e-c010b58b310a@linaro.org>
+Date: Thu, 6 Jun 2024 16:19:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2 2/7] phy: qcom: qmp-combo: store DP phy power state
+Subject: Re: [PATCH v2 4/7] phy: qcom: qmp-combo: register a typec mux to
+ change the QPHY_MODE
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -81,8 +82,8 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org>
- <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-2-a03e68d7b8fc@linaro.org>
- <du4345tswno5pfeiux5ks5eo37bbydilvdzw3firnsps2ejgn5@avnoqzxbmzj7>
+ <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-4-a03e68d7b8fc@linaro.org>
+ <qgitwducxmox6vac6v3pmjxgrbizd2tk2fgxds4pjqinr2cefd@lbsrbit4xsdi>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -109,10 +110,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <du4345tswno5pfeiux5ks5eo37bbydilvdzw3firnsps2ejgn5@avnoqzxbmzj7>
+In-Reply-To: <qgitwducxmox6vac6v3pmjxgrbizd2tk2fgxds4pjqinr2cefd@lbsrbit4xsdi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_062956_114270_5A6144E4 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20240606_071955_623286_35D4328D 
+X-CRM114-Status: GOOD (  29.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,62 +131,215 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/05/2024 10:59, Dmitry Baryshkov wrote:
-> On Mon, May 27, 2024 at 10:42:34AM +0200, Neil Armstrong wrote:
->> Switching the PHY Mode requires the DisplayPort PHY to be powered off,
->> keep track of the DisplayPort phy power state.
-> 
-> How is this different from dp_init_count?
-
-dp_init_count tracks the DP PHY init, while dp_powered_on tracks
-the DP PHY beeing powered on by the DRM DP driver, those are
-not the same state at all.
-
-While testing, I figured that de-initializing the DP PHY while
-is was powered-on by the DRM DP, caused the system to freeze and crash.
-
-SO I've added this to track this state and try to de-init the DP phy
-if still in use.
-
-Neil
-
-> 
+On 27/05/2024 10:57, Dmitry Baryshkov wrote:
+> On Mon, May 27, 2024 at 10:42:36AM +0200, Neil Armstrong wrote:
+>> Register a typec mux in order to change the PHY mode on the Type-C
+>> mux events depending on the mode and the svid when in Altmode setup.
+>>
+>> The DisplayPort phy should be left enabled if is still powered on
+>> by the DRM DisplayPort controller, so bail out until the DisplayPort
+>> PHY is not powered off.
+>>
+>> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
+>> will be set in between of USB-Only, Combo and DisplayPort Only so
+>> this will leave enough time to the DRM DisplayPort controller to
+>> turn of the DisplayPort PHY.
 >>
 >> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
 >> ---
->>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 5 +++++
->>   1 file changed, 5 insertions(+)
+>>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 123 ++++++++++++++++++++++++++++--
+>>   1 file changed, 118 insertions(+), 5 deletions(-)
 >>
 >> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
->> index 7f999e8a433d..183cd9cd1884 100644
+>> index 788e4c05eaf2..b55ab08d44c2 100644
 >> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 >> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
->> @@ -1512,6 +1512,7 @@ struct qmp_combo {
->>   	unsigned int dp_aux_cfg;
->>   	struct phy_configure_opts_dp dp_opts;
->>   	unsigned int dp_init_count;
->> +	bool dp_powered_on;
+>> @@ -19,6 +19,7 @@
+>>   #include <linux/reset.h>
+>>   #include <linux/slab.h>
+>>   #include <linux/usb/typec.h>
+>> +#include <linux/usb/typec_dp.h>
+>>   #include <linux/usb/typec_mux.h>
 >>   
->>   	struct clk_fixed_rate pipe_clk_fixed;
->>   	struct clk_hw dp_link_hw;
->> @@ -2685,6 +2686,8 @@ static int qmp_combo_dp_power_on(struct phy *phy)
->>   	/* Configure link rate, swing, etc. */
->>   	cfg->configure_dp_phy(qmp);
+>>   #include <drm/bridge/aux-bridge.h>
+>> @@ -1527,6 +1528,10 @@ struct qmp_combo {
 >>   
->> +	qmp->dp_powered_on = true;
+>>   	struct typec_switch_dev *sw;
+>>   	enum typec_orientation orientation;
 >> +
->>   	mutex_unlock(&qmp->phy_mutex);
+>> +	struct typec_mux_dev *mux;
+>> +	unsigned long mux_mode;
+>> +	unsigned int svid;
+>>   };
 >>   
+>>   static void qmp_v3_dp_aux_init(struct qmp_combo *qmp);
+>> @@ -3353,17 +3358,112 @@ static int qmp_combo_typec_switch_set(struct typec_switch_dev *sw,
 >>   	return 0;
->> @@ -2699,6 +2702,8 @@ static int qmp_combo_dp_power_off(struct phy *phy)
->>   	/* Assert DP PHY power down */
->>   	writel(DP_PHY_PD_CTL_PSR_PWRDN, qmp->dp_dp_phy + QSERDES_DP_PHY_PD_CTL);
+>>   }
 >>   
->> +	qmp->dp_powered_on = false;
+>> -static void qmp_combo_typec_unregister(void *data)
+>> +static int qmp_combo_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_state *state)
+>> +{
+>> +	struct qmp_combo *qmp = typec_mux_get_drvdata(mux);
+>> +	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>> +	enum qphy_mode new_mode;
+>> +	unsigned int svid;
 >> +
->>   	mutex_unlock(&qmp->phy_mutex);
+>> +	if (state->mode == qmp->mode)
+>> +		return 0;
+>> +
+>> +	mutex_lock(&qmp->phy_mutex);
+>> +
+>> +	if (state->alt)
+>> +		svid = state->alt->svid;
+>> +	else
+>> +		svid = 0; // No SVID
+>> +
+>> +	if (svid == USB_TYPEC_DP_SID) {
+>> +		switch (state->mode) {
+>> +		/* DP Only */
+>> +		case TYPEC_DP_STATE_C:
+>> +		case TYPEC_DP_STATE_E:
+>> +			new_mode = QPHY_MODE_DP_ONLY;
+>> +			break;
+>> +
+>> +		/* DP + USB */
+>> +		case TYPEC_DP_STATE_D:
+>> +		case TYPEC_DP_STATE_F:
+>> +
+>> +		/* Safe fallback...*/
+>> +		default:
+>> +			new_mode = QPHY_MODE_COMBO;
+>> +			break;
+>> +		}
+>> +	} else {
+>> +		/* Only switch to USB_ONLY when we know we only have USB3 */
+>> +		if (qmp->mux_mode == TYPEC_MODE_USB3)
+>> +			new_mode = QPHY_MODE_USB_ONLY;
+>> +		else
+>> +			new_mode = QPHY_MODE_COMBO;
+>> +	}
+>> +
+>> +	if (new_mode == qmp->init_mode) {
+>> +		dev_dbg(qmp->dev, "typec_mux_set: same phy mode, bail out\n");
+>> +		qmp->mode = state->mode;
+>> +		goto out;
+>> +	}
+>> +
+>> +	if (qmp->init_mode != QPHY_MODE_USB_ONLY && qmp->dp_powered_on) {
+>> +		dev_dbg(qmp->dev, "typec_mux_set: DP is still powered on, delaying switch\n");
+>> +		goto out;
+>> +	}
+>> +
+>> +	dev_dbg(qmp->dev, "typec_mux_set: switching from phy mode %d to %d\n",
+>> +		qmp->init_mode, new_mode);
+>> +
+>> +	qmp->mux_mode = state->mode;
+>> +	qmp->init_mode = new_mode;
+>> +
+>> +	if (qmp->init_count) {
+>> +		if (qmp->usb_init_count)
+>> +			qmp_combo_usb_power_off(qmp->usb_phy);
+>> +		if (qmp->dp_init_count)
+>> +			writel(DP_PHY_PD_CTL_PSR_PWRDN, qmp->dp_dp_phy + QSERDES_DP_PHY_PD_CTL);
+>> +		qmp_combo_com_exit(qmp, true);
+>> +
+>> +		/* Now everything's powered down, power up the right PHYs */
+>> +
+>> +		qmp_combo_com_init(qmp, true);
+>> +		if (qmp->init_mode == QPHY_MODE_DP_ONLY && qmp->usb_init_count) {
+>> +			qmp->usb_init_count--;
+> 
+> Can we move this clause next to actually powering USB part off?
+> 
+>> +		} else if (qmp->init_mode != QPHY_MODE_DP_ONLY) {
+>> +			qmp_combo_usb_power_on(qmp->usb_phy);
+>> +			if (!qmp->usb_init_count)
+>> +				qmp->usb_init_count++;
+>> +		}
+>> +		if (qmp->init_mode != QPHY_MODE_USB_ONLY && qmp->dp_init_count)
+>> +			cfg->dp_aux_init(qmp);
+> 
+> Does dp_init_count reflect the actual necessity to bring up the DP part
+> up? Maybe we can unify the code between this function and
+> qmp_combo_typec_switch_set()? I don't like that it is unobvious whether
+> these two functions will results in the same state or not depending on
+> the order in which they are being called.
+
+Yep, I'll try to use a common function, so any switch/mux call would use
+the same process, and I can probably simplify it.
+
+Thanks,
+Neil
+
+> 
+>> +	}
+>> +
+>> +out:
+>> +	mutex_unlock(&qmp->phy_mutex);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void qmp_combo_typec_switch_unregister(void *data)
+>>   {
+>>   	struct qmp_combo *qmp = data;
 >>   
+>>   	typec_switch_unregister(qmp->sw);
+>>   }
+>>   
+>> -static int qmp_combo_typec_switch_register(struct qmp_combo *qmp)
+>> +static void qmp_combo_typec_mux_unregister(void *data)
+>> +{
+>> +	struct qmp_combo *qmp = data;
+>> +
+>> +	typec_mux_unregister(qmp->mux);
+>> +}
+>> +
+>> +static int qmp_combo_typec_register(struct qmp_combo *qmp)
+>>   {
+>>   	struct typec_switch_desc sw_desc = {};
+>> +	struct typec_mux_desc mux_desc = { };
+>>   	struct device *dev = qmp->dev;
+>> +	int ret;
+>>   
+>>   	sw_desc.drvdata = qmp;
+>>   	sw_desc.fwnode = dev->fwnode;
+>> @@ -3374,10 +3474,23 @@ static int qmp_combo_typec_switch_register(struct qmp_combo *qmp)
+>>   		return PTR_ERR(qmp->sw);
+>>   	}
+>>   
+>> -	return devm_add_action_or_reset(dev, qmp_combo_typec_unregister, qmp);
+>> +	ret = devm_add_action_or_reset(dev, qmp_combo_typec_switch_unregister, qmp);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	mux_desc.drvdata = qmp;
+>> +	mux_desc.fwnode = dev->fwnode;
+>> +	mux_desc.set = qmp_combo_typec_mux_set;
+>> +	qmp->mux = typec_mux_register(dev, &mux_desc);
+>> +	if (IS_ERR(qmp->mux)) {
+>> +		dev_err(dev, "Unable to register typec mux: %pe\n", qmp->mux);
+>> +		return PTR_ERR(qmp->mux);
+>> +	}
+>> +
+>> +	return devm_add_action_or_reset(dev, qmp_combo_typec_mux_unregister, qmp);
+>>   }
+>>   #else
+>> -static int qmp_combo_typec_switch_register(struct qmp_combo *qmp)
+>> +static int qmp_combo_typec_register(struct qmp_combo *qmp)
+>>   {
 >>   	return 0;
+>>   }
+>> @@ -3609,7 +3722,7 @@ static int qmp_combo_probe(struct platform_device *pdev)
+>>   	if (ret)
+>>   		goto err_node_put;
+>>   
+>> -	ret = qmp_combo_typec_switch_register(qmp);
+>> +	ret = qmp_combo_typec_register(qmp);
+>>   	if (ret)
+>>   		goto err_node_put;
+>>   
 >>
 >> -- 
 >> 2.34.1
