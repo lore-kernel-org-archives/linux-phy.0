@@ -4,71 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF95CC27C54
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 20:12:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 840C3C27C52
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 20:33:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=65kzXkMjRpN6g/1zHMs+QAlJDha3wK7ZXsOjdFlxP68=; b=RXfrQhxgPRs6vd
-	gGhxGB/EnFX1JUXHbpnuOgoM/Cnimr7pqgToXkI/IRiGqv8/DaJHUZxMUcacZI4blRDIS7cpK19dM
-	PrB4rhDREvwMYFIk6NNKEvQwXwCeNoEgQdl/384ZClNaedPXaL1jyUsBdm+gZRvWSPpMndHj76cN4
-	PvXzh1o6zhYzO0XIpB0DeDVNSb3TmGwSoC2SV/Y/lTxKhgcjJNw5bZSkiatsODPXMgMIfc4D6N+RA
-	MJ7u+kSXic5vB2QznV24Q6Cdxc5LBJBLaApU8yABquJPHdkc+Gw8QMh6a+kTV/7ftLZBbExTNzJEu
-	H5BwTszAWIrriNRKb2DA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Bre/nZhvoV9pq2xm0KOC8FPZwubeg4wp1UoaPyGDrtw=; b=P6mlaS6zipvT9Tt57gc7crvCQk
+	W4DmfjZ2B04yRv/kZllozqzum/oqwpoXufPRPpCNgh+Hpr99vGNbJKbyOw0SfrBVbD+qFL6YEWw0C
+	Kw3S3Yrx9tEPxxeyvejyTQUo3QL+7NuTBxFOPNyWA4g23TlKy6+yj6Zoe2sJUsZX7wtlUSxKjqk9y
+	fltmDHmq7g3ktq0YkGt9nMPvoLBFUVHAGZpUXrlMCko0narix1n1fruEHBEA4myEwA1zuiFzBwx/w
+	J9JmlCdKqpBGoL9LVf6f3oXMpj82q3H+Yu3RyVxdzAMyvdNllvKeHTpniGYOX8gsEwMiMn6hPzhMW
+	Wy6T+zsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFJTV-0000000BD9n-1s0J;
-	Thu, 06 Jun 2024 20:12:41 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sFJnN-0000000BGrq-47fq;
+	Thu, 06 Jun 2024 20:33:13 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFJTR-0000000BD8z-3h7H;
-	Thu, 06 Jun 2024 20:12:39 +0000
+	id 1sFJnK-0000000BGqr-0cD8;
+	Thu, 06 Jun 2024 20:33:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id B9584CE1C38;
-	Thu,  6 Jun 2024 20:12:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6FBA9C2BD10;
-	Thu,  6 Jun 2024 20:12:27 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 6469DCE1BE2;
+	Thu,  6 Jun 2024 20:33:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C9C8C2BD10;
+	Thu,  6 Jun 2024 20:33:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717704755;
-	bh=wHvxL/Gw5jJJxgJG8DBVyc7WxHfQ4axP9NbOc0wfTV0=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=e4FvyCSOU4Kz4MHxKWKeSfGySXFTCuyG2wXI1Q8NIMuxj8QSiuQZQmUumKXBarmkN
-	 g5mfG5zMPI5P0UeCKWX2C5a+ETNGYrkienm9lTWJmCZR6gLk8YOfBoIb/WbVojyCQm
-	 NIfExJIDIhmqBn1Qbnoag+/mSGZ08YQi9M/g2nAb+Z2LB1KChxwzL6FSGcGlrHHKVN
-	 SxAv32KCYYs1ykZmDdhXe7HZPQdiJrW/Kzyqqe6Aa1D7xVpuxXsdELbfUxLbeRWYV5
-	 pwOOefAgsB68/m0GgTnrhpXv+GLjhHvVMcb4Kwhieox2WPSyljbLT9xnFr+cHetA9D
-	 azflw1EXWcqfQ==
-Date: Thu, 6 Jun 2024 21:12:22 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Conor Dooley <conor@kernel.org>
-Cc: Josua Mayer <josua@solid-run.com>, Andrew Lunn <andrew@lunn.ch>, Gregory
- Clement <gregory.clement@bootlin.com>, Sebastian Hesselbarth
- <sebastian.hesselbarth@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley
- <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
- <krzk+dt@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, Daniel Baluta
- <daniel.baluta@nxp.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Konstantin Porotchkin <kostap@marvell.com>,
- Richard Cochran <richardcochran@gmail.com>, Yazan Shhady
- <yazan.shhady@solid-run.com>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-phy@lists.infradead.org,
- netdev@vger.kernel.org
-Subject: Re: [PATCH v6 3/7] dt-bindings: iio: adc: ti,ads1015: add
- compatible for tla2021
-Message-ID: <20240606211222.3b0f7a01@jic23-huawei>
-In-Reply-To: <20240604-suspend-schnapps-191d2c1ad53e@spud>
-References: <20240602-cn9130-som-v6-0-89393e86d4c7@solid-run.com>
-	<20240602-cn9130-som-v6-3-89393e86d4c7@solid-run.com>
-	<20240604-suspend-schnapps-191d2c1ad53e@spud>
-X-Mailer: Claws Mail 4.2.0 (GTK 3.24.42; x86_64-pc-linux-gnu)
+	s=k20201202; t=1717705986;
+	bh=9oouy5x9Ue5GemoAYkfq4PmU8oIHLsNd4GhUYZOdKnk=;
+	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+	b=m8mX8VVS8F5m9+fNPFhT9U7Tp+cSZUAzQXRBB8WXkOY+YlfVD9QnoArFSKUpIXnc/
+	 oglUSqQp/CADGTIvBqtooUX4+18DnGe9iXVpURfW8eyb14FP2jtZKTv2XST7yWAn4q
+	 RNGJ/m3842XmtWmvJnQ2hTPDalPLSkrqu9MYUlFUy5z9dOJ1/3TIgxpKVd010jWJhH
+	 wnfNwvEyi4/UgD6nKSmix0nr+45jCZ3YPdGb8iGh8xcHcTRBhuoVuYaaSBf3WFlkrv
+	 qw1wY85gKgLh9bB+SzGpy2v7nIRyUy+oPzH57SpFwCas1t8Yl610Yv8MbzgCoDiQtP
+	 n05M4cvFHxi4w==
+Date: Thu, 06 Jun 2024 14:33:05 -0600
 MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Shresth Prasad <shresthprasad7@gmail.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ heiko@sntech.de, skhan@linuxfoundation.org, krzk+dt@kernel.org, 
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ conor+dt@kernel.org, javier.carrasco.cruz@gmail.com, 
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org
+In-Reply-To: <20240606184135.11065-2-shresthprasad7@gmail.com>
+References: <20240606184135.11065-2-shresthprasad7@gmail.com>
+Message-Id: <171770598518.3813098.8400310988488073666.robh@kernel.org>
+Subject: Re: [PATCH] dt-bindings: phy: rockchip-emmc-phy: Convert to
+ dtschema
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_131238_154046_671D2150 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20240606_133310_420590_9BAA64D8 
+X-CRM114-Status: GOOD (  10.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,59 +75,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 4 Jun 2024 18:42:46 +0100
-Conor Dooley <conor@kernel.org> wrote:
 
-> On Sun, Jun 02, 2024 at 05:49:38PM +0200, Josua Mayer wrote:
-> > TI tla2021 is a limited single-channel variant of tla2024 which is
-> > similar enough to be easily supportable through the same driver.
-> > 
-> > Add compatible string for tla2021 so boards may describe it in
-> > device-tree.
-> > 
-> > Signed-off-by: Josua Mayer <josua@solid-run.com>  
+On Fri, 07 Jun 2024 00:11:36 +0530, Shresth Prasad wrote:
+> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
+> for validation.
 > 
-> Acked-by: Conor Dooley <conor.dooley@microchip.com>
-
-This binding has per channel descriptions. Perhaps for this device
-it should be updated to include a restriction on number of
-such sub nodes (probably via the reg value in them) ?
-
-Mind you it's currently 8 and the ti,tla2024 only has 4.
-So a possible job for another day, hopefully alongside the
-driver support and the tla2022 which seems to be the 2 channel
-version.
-
-Applied.
-
-Thanks,
-
-Jonathan
-
+> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+> ---
+> Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
+> and `rockchip/rk3399-pinebook-pro.dtb`.
 > 
-> Thanks,
-> Conor.
+>  .../bindings/phy/rockchip,emmc-phy.yaml       | 78 +++++++++++++++++++
+>  .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
+>  2 files changed, 78 insertions(+), 43 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
 > 
-> > ---
-> >  Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml | 1 +
-> >  1 file changed, 1 insertion(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml b/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml
-> > index d605999ffe28..718f633c6e04 100644
-> > --- a/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml
-> > +++ b/Documentation/devicetree/bindings/iio/adc/ti,ads1015.yaml
-> > @@ -18,6 +18,7 @@ properties:
-> >      enum:
-> >        - ti,ads1015
-> >        - ti,ads1115
-> > +      - ti,tla2021
-> >        - ti,tla2024
-> >  
-> >    reg:
-> > 
-> > -- 
-> > 2.35.3
-> >   
+
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.example.dtb: grf: 'reg' is a required property
+	from schema $id: http://devicetree.org/schemas/soc/rockchip/grf.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.example.dtb: grf: 'reg' is a required property
+	from schema $id: http://devicetree.org/schemas/mfd/syscon.yaml#
+
+doc reference errors (make refcheckdocs):
+Warning: Documentation/devicetree/bindings/soc/rockchip/grf.yaml references a file that doesn't exist: Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+Documentation/devicetree/bindings/soc/rockchip/grf.yaml: Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20240606184135.11065-2-shresthprasad7@gmail.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
