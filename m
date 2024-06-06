@@ -4,61 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 840C3C27C52
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 20:33:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F197C27C54
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 20:45:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Bre/nZhvoV9pq2xm0KOC8FPZwubeg4wp1UoaPyGDrtw=; b=P6mlaS6zipvT9Tt57gc7crvCQk
-	W4DmfjZ2B04yRv/kZllozqzum/oqwpoXufPRPpCNgh+Hpr99vGNbJKbyOw0SfrBVbD+qFL6YEWw0C
-	Kw3S3Yrx9tEPxxeyvejyTQUo3QL+7NuTBxFOPNyWA4g23TlKy6+yj6Zoe2sJUsZX7wtlUSxKjqk9y
-	fltmDHmq7g3ktq0YkGt9nMPvoLBFUVHAGZpUXrlMCko0narix1n1fruEHBEA4myEwA1zuiFzBwx/w
-	J9JmlCdKqpBGoL9LVf6f3oXMpj82q3H+Yu3RyVxdzAMyvdNllvKeHTpniGYOX8gsEwMiMn6hPzhMW
-	Wy6T+zsQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m0G+m7KvJ/t24wq9md1zzRtWbm8nbMu6/J5Noz81X7s=; b=JDUiXPW9+mHmLW
+	K8jzg3vQjNQ5AVTQCtdNS98lCPeP4gtlGwvVpuWGvNhxVXf6Z4bjGb+hldOKCGN94rjyK3XHGPqgB
+	BzReMz8O4JKtpgx/FEPZcUpsTrw+H/mkiXY6qr7ejWDrAp/NkKy8/vmTep8+vQNgYJJ8R3qTmdzdT
+	9Rp5XVuKXONtjGrDm1seSi0agoNnToAsdkxOgYRAPNnbDf00sUunLWkq7+nZ+u0eE4ivPGRak+Bgz
+	Dlgy4sgQM1f1EDNHAfVBgbcVDZcBE9CvjpWKUZuZvNPlbA/jKTqX1FbQEy8E2UkZNVsJ/xX8yhRM7
+	jpfOWe+x170JU8mFgS8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFJnN-0000000BGrq-47fq;
-	Thu, 06 Jun 2024 20:33:13 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sFJz1-0000000BIeb-38zW;
+	Thu, 06 Jun 2024 20:45:15 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFJnK-0000000BGqr-0cD8;
-	Thu, 06 Jun 2024 20:33:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 6469DCE1BE2;
-	Thu,  6 Jun 2024 20:33:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C9C8C2BD10;
-	Thu,  6 Jun 2024 20:33:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717705986;
-	bh=9oouy5x9Ue5GemoAYkfq4PmU8oIHLsNd4GhUYZOdKnk=;
-	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
-	b=m8mX8VVS8F5m9+fNPFhT9U7Tp+cSZUAzQXRBB8WXkOY+YlfVD9QnoArFSKUpIXnc/
-	 oglUSqQp/CADGTIvBqtooUX4+18DnGe9iXVpURfW8eyb14FP2jtZKTv2XST7yWAn4q
-	 RNGJ/m3842XmtWmvJnQ2hTPDalPLSkrqu9MYUlFUy5z9dOJ1/3TIgxpKVd010jWJhH
-	 wnfNwvEyi4/UgD6nKSmix0nr+45jCZ3YPdGb8iGh8xcHcTRBhuoVuYaaSBf3WFlkrv
-	 qw1wY85gKgLh9bB+SzGpy2v7nIRyUy+oPzH57SpFwCas1t8Yl610Yv8MbzgCoDiQtP
-	 n05M4cvFHxi4w==
-Date: Thu, 06 Jun 2024 14:33:05 -0600
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Shresth Prasad <shresthprasad7@gmail.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- heiko@sntech.de, skhan@linuxfoundation.org, krzk+dt@kernel.org, 
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- conor+dt@kernel.org, javier.carrasco.cruz@gmail.com, 
- linux-kernel@vger.kernel.org, vkoul@kernel.org, kishon@kernel.org
-In-Reply-To: <20240606184135.11065-2-shresthprasad7@gmail.com>
+	id 1sFJyy-0000000BIdb-0fXG;
+	Thu, 06 Jun 2024 20:45:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1717706712; x=1749242712;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=zbRLG6muhRQTIckVj+vQW1FPTwrq3szBPYUQZ1sHcsA=;
+  b=P10+sQlB/kYxArFjU4VAUjWfPHxqXgfFKaNkFCA/seuZzWrl3kE5fJpY
+   +4cuNINK0G5Lwb6p4PRkKzbDQfjX1cbrgrniy0kw3zmiRki/ksYN54+NJ
+   1S+KAf8FxlHk81EEZXO7QJJ5evAZRT8cLgCdjb9xxRGCSL/fte1u8kIn2
+   v54uOZrPWvIeh1CFdjgCM0aJLse1CF+/I3IDoqoSKY6nvkGQ2ZeBQF50b
+   Xuwlv5g57Gk67N9kSG5TqJgwWp89EV1oX0dd9pTmGd2D68M6/2qTT38aq
+   xHw2pPme1d1IUhwBamtxXq+pKgqcT84E03cWQR4LzdPVFPpIefw96VY8R
+   Q==;
+X-CSE-ConnectionGUID: Wpre9e4ORsKbvnkAR5wkEQ==
+X-CSE-MsgGUID: m3+xT6L8TyiXgBmQK6D81Q==
+X-IronPort-AV: E=McAfee;i="6600,9927,11095"; a="14212270"
+X-IronPort-AV: E=Sophos;i="6.08,219,1712646000"; 
+   d="scan'208";a="14212270"
+Received: from fmviesa005.fm.intel.com ([10.60.135.145])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Jun 2024 13:45:11 -0700
+X-CSE-ConnectionGUID: jzM1qSOBTnasmUwsB8PmmA==
+X-CSE-MsgGUID: dsrwBcGNQd2mV0C8U3bo5g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.08,219,1712646000"; 
+   d="scan'208";a="42528870"
+Received: from unknown (HELO 0610945e7d16) ([10.239.97.151])
+  by fmviesa005.fm.intel.com with ESMTP; 06 Jun 2024 13:45:07 -0700
+Received: from kbuild by 0610945e7d16 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1sFJyr-0003go-2X;
+	Thu, 06 Jun 2024 20:45:05 +0000
+Date: Fri, 7 Jun 2024 04:44:37 +0800
+From: kernel test robot <lkp@intel.com>
+To: Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
+	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, heiko@sntech.de
+Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	skhan@linuxfoundation.org, javier.carrasco.cruz@gmail.com,
+	Shresth Prasad <shresthprasad7@gmail.com>
+Subject: Re: [PATCH] dt-bindings: phy: rockchip-emmc-phy: Convert to dtschema
+Message-ID: <202406070419.TJxm1rXC-lkp@intel.com>
 References: <20240606184135.11065-2-shresthprasad7@gmail.com>
-Message-Id: <171770598518.3813098.8400310988488073666.robh@kernel.org>
-Subject: Re: [PATCH] dt-bindings: phy: rockchip-emmc-phy: Convert to
- dtschema
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20240606184135.11065-2-shresthprasad7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_133310_420590_9BAA64D8 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20240606_134512_241594_AB3F8D8C 
+X-CRM114-Status: GOOD (  10.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,52 +92,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Shresth,
 
-On Fri, 07 Jun 2024 00:11:36 +0530, Shresth Prasad wrote:
-> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
-> for validation.
-> 
-> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
-> ---
-> Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
-> and `rockchip/rk3399-pinebook-pro.dtb`.
-> 
->  .../bindings/phy/rockchip,emmc-phy.yaml       | 78 +++++++++++++++++++
->  .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
->  2 files changed, 78 insertions(+), 43 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> 
+kernel test robot noticed the following build warnings:
 
-My bot found errors running 'make dt_binding_check' on your patch:
+[auto build test WARNING on robh/for-next]
+[also build test WARNING on linus/master v6.10-rc2 next-20240606]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-yamllint warnings/errors:
+url:    https://github.com/intel-lab-lkp/linux/commits/Shresth-Prasad/dt-bindings-phy-rockchip-emmc-phy-Convert-to-dtschema/20240607-024538
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20240606184135.11065-2-shresthprasad7%40gmail.com
+patch subject: [PATCH] dt-bindings: phy: rockchip-emmc-phy: Convert to dtschema
+reproduce: (https://download.01.org/0day-ci/archive/20240607/202406070419.TJxm1rXC-lkp@intel.com/reproduce)
 
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.example.dtb: grf: 'reg' is a required property
-	from schema $id: http://devicetree.org/schemas/soc/rockchip/grf.yaml#
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.example.dtb: grf: 'reg' is a required property
-	from schema $id: http://devicetree.org/schemas/mfd/syscon.yaml#
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202406070419.TJxm1rXC-lkp@intel.com/
 
-doc reference errors (make refcheckdocs):
-Warning: Documentation/devicetree/bindings/soc/rockchip/grf.yaml references a file that doesn't exist: Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-Documentation/devicetree/bindings/soc/rockchip/grf.yaml: Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+All warnings (new ones prefixed by >>):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20240606184135.11065-2-shresthprasad7@gmail.com
+   Warning: Documentation/devicetree/bindings/power/wakeup-source.txt references a file that doesn't exist: Documentation/devicetree/bindings/input/qcom,pm8xxx-keypad.txt
+   Warning: Documentation/devicetree/bindings/regulator/siliconmitus,sm5703-regulator.yaml references a file that doesn't exist: Documentation/devicetree/bindings/mfd/siliconmitus,sm5703.yaml
+>> Warning: Documentation/devicetree/bindings/soc/rockchip/grf.yaml references a file that doesn't exist: Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+   Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/reserved-memory/qcom
+   Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/display/exynos/
+   Using alabaster theme
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
