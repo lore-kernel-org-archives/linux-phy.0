@@ -4,36 +4,36 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87C69C27C55
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF090C27C53
 	for <linux-phy@archiver.kernel.org>; Fri,  7 Jun 2024 11:38:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UUTAaAuiGRctM1lkhEVCrM4rsQ/hYZOpxu8V+yTN8Ok=; b=4Gl56fo35Xksy6
-	DeFPQ/0usSmJM+uYaMVNoK++aLdTmsg6VkKTCFsjQ8pKyiWhGbd+jOiUhk9NcpfeXGBkztl96lxSS
-	lGXX5zCT8oETPerSqnWv3osEGQDFzx+TOWcypNgFHaNFe/mN/LKhz8WsQLtEFt1yAHi8u0y0N6A/c
-	X/iZAdi28oXF3P1VXMZ1BQpItL2TX9Adf7Q/yh12ODhidt4BycyrvsUoYPmKgmW9Vp+xleBUpfOMd
-	KBB/GqlxVvNdnJSvjlVZuQVZSzeIodowx9jmPZSPtNYBdLaLOz7T+3FqRvPUpQyulyqhT+Ex9gULz
-	9QrYQjraRJ7PK0qYpPdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LeSyhaYe8y2bP66THkoKFSQ4Os7qI9GmM1D11FymAzM=; b=EBo61ZQnmyaiUE
+	DIW2vXilNVgH8A4piThahCV/n8weas1sKNguKHmwJdaoLgz74ACZ1QjUECU4/yVYRqSkpOWXiTAy4
+	R4eJY8bMyp2+5utfXgu7Iw3R1mqzxG4mE7CMA1WEZ/T5WHTcE/uKN3A2ghcMNBRagfeZcYa/hRrEt
+	YV9sjX4aCBpynLAh3QbavksLQ2gA94qKXMv9/Qlwfd+PWdDoU13ZNlOoWm8ytXwe3BaxMI63bYGTE
+	UgHqUHxsL5FTDKAuiol7WzrO2ZrMwfLYL1AoQEIUcHrmNywAkaGreSOA+xPonBfQsIFt+38es79ga
+	GBzbOk2FShc3UKtN8Qxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFXv6-0000000DmVI-0Zgl;
+	id 1sFXv6-0000000DmVn-1pmh;
 	Fri, 07 Jun 2024 11:38:08 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFXv3-0000000DmS0-1uCa
+	id 1sFXv3-0000000DmSq-29WQ
 	for linux-phy@lists.infradead.org;
 	Fri, 07 Jun 2024 11:38:07 +0000
-X-IronPort-AV: E=Sophos;i="6.08,221,1712588400"; 
-   d="scan'208";a="207084411"
+X-IronPort-AV: E=Sophos;i="6.08,220,1712588400"; 
+   d="scan'208";a="211042474"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
-  by relmlie5.idc.renesas.com with ESMTP; 07 Jun 2024 20:37:52 +0900
+  by relmlie6.idc.renesas.com with ESMTP; 07 Jun 2024 20:37:58 +0900
 Received: from localhost.localdomain (unknown [10.226.92.204])
-	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 0BC8D40071E8;
-	Fri,  7 Jun 2024 20:37:47 +0900 (JST)
+	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 8589240071E8;
+	Fri,  7 Jun 2024 20:37:53 +0900 (JST)
 From: Biju Das <biju.das.jz@bp.renesas.com>
 To: Philipp Zabel <p.zabel@pengutronix.de>,
 	Liam Girdwood <lgirdwood@gmail.com>,
@@ -51,15 +51,16 @@ Cc: Biju Das <biju.das.jz@bp.renesas.com>,
 	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
 	Biju Das <biju.das.au@gmail.com>,
 	devicetree@vger.kernel.org
-Subject: [PATCH RFC v2 0/4] Add USB VBUS regulator for RZ/G2L
-Date: Fri,  7 Jun 2024 12:37:41 +0100
-Message-Id: <20240607113745.73934-1-biju.das.jz@bp.renesas.com>
+Subject: [PATCH RFC v2 1/4] reset: renesas: Instantiate USB VBUS regulator device
+Date: Fri,  7 Jun 2024 12:37:42 +0100
+Message-Id: <20240607113745.73934-2-biju.das.jz@bp.renesas.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20240607113745.73934-1-biju.das.jz@bp.renesas.com>
+References: <20240607113745.73934-1-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240607_043805_629072_3F295F10 
-X-CRM114-Status: UNSURE (   7.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240607_043805_690325_D9E24118 
+X-CRM114-Status: GOOD (  13.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,33 +78,95 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 As per RZ/G2L HW manual, VBUSEN can be controlled by the VBOUT bit of the
-VBUS Control Register(VBENCTL) register in the USBPHY Control. But this IP
-is in the Reset block.
+VBUS Control Register(VBENCTL) register in the USBPHY Control.
 
-Reset driver exposes this register as regmap and instantiate the USB VBUS
-regulator device. Consumers(phy device) can use regulator driver's regmap
-to control VBUS as controlling is done in the atomic context.
+Expose this register as regmap and instantiate the USB VBUS regulator
+device, so that consumer can control the vbus using regulator API's.
 
-Please provide your valuable inputs.
-
+Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
+---
 v1->v2:
- * Introduced a regulator driver to control VBUS
+ * Instatiated regulator driver 
+---
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c | 29 +++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-Biju Das (4):
-  reset: renesas: Instantiate USB VBUS regulator device
-  regulator: Add Renesas RZ/G2L USB VBUS regulator driver
-  phy: renesas: phy-rcar-gen3-usb2: Control VBUSEN selection
-  arm64: dts: renesas: rz-smarc: Replace fixed regulator for USB VBUS
-
- .../boot/dts/renesas/rz-smarc-common.dtsi     | 15 ++---
- drivers/phy/renesas/phy-rcar-gen3-usb2.c      | 17 ++++-
- drivers/regulator/Kconfig                     |  9 +++
- drivers/regulator/Makefile                    |  1 +
- .../regulator/renesas-usb-vbus-regulator.c    | 65 +++++++++++++++++++
- drivers/reset/reset-rzg2l-usbphy-ctrl.c       | 29 +++++++++
- 6 files changed, 126 insertions(+), 10 deletions(-)
- create mode 100644 drivers/regulator/renesas-usb-vbus-regulator.c
-
+diff --git a/drivers/reset/reset-rzg2l-usbphy-ctrl.c b/drivers/reset/reset-rzg2l-usbphy-ctrl.c
+index 8f6fbd978591..45406d6bbb85 100644
+--- a/drivers/reset/reset-rzg2l-usbphy-ctrl.c
++++ b/drivers/reset/reset-rzg2l-usbphy-ctrl.c
+@@ -10,10 +10,12 @@
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
++#include <linux/regmap.h>
+ #include <linux/reset.h>
+ #include <linux/reset-controller.h>
+ 
+ #define RESET			0x000
++#define VBENCTL			0x03c
+ 
+ #define RESET_SEL_PLLRESET	BIT(12)
+ #define RESET_PLLRESET		BIT(8)
+@@ -32,6 +34,7 @@ struct rzg2l_usbphy_ctrl_priv {
+ 	struct reset_controller_dev rcdev;
+ 	struct reset_control *rstc;
+ 	void __iomem *base;
++	struct platform_device *vdev;
+ 
+ 	spinlock_t lock;
+ };
+@@ -100,10 +103,19 @@ static const struct reset_control_ops rzg2l_usbphy_ctrl_reset_ops = {
+ 	.status = rzg2l_usbphy_ctrl_status,
+ };
+ 
++static const struct regmap_config rzg2l_usb_regconf = {
++	.reg_bits = 32,
++	.val_bits = 32,
++	.reg_stride = 4,
++	.max_register = 1,
++};
++
+ static int rzg2l_usbphy_ctrl_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct rzg2l_usbphy_ctrl_priv *priv;
++	struct platform_device *vdev;
++	struct regmap *regmap;
+ 	unsigned long flags;
+ 	int error;
+ 	u32 val;
+@@ -116,6 +128,22 @@ static int rzg2l_usbphy_ctrl_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->base))
+ 		return PTR_ERR(priv->base);
+ 
++	regmap = devm_regmap_init_mmio(dev, priv->base + VBENCTL, &rzg2l_usb_regconf);
++	if (IS_ERR(regmap))
++		return PTR_ERR(regmap);
++
++	vdev = platform_device_alloc("rzg2l-usb-vbus-regulator", pdev->id);
++	if (!vdev)
++		return -ENOMEM;
++	vdev->dev.parent = dev;
++	priv->vdev = vdev;
++
++	error = platform_device_add(vdev);
++	if (error) {
++		platform_device_put(vdev);
++		return error;
++	}
++
+ 	priv->rstc = devm_reset_control_get_exclusive(&pdev->dev, NULL);
+ 	if (IS_ERR(priv->rstc))
+ 		return dev_err_probe(dev, PTR_ERR(priv->rstc),
+@@ -160,6 +188,7 @@ static void rzg2l_usbphy_ctrl_remove(struct platform_device *pdev)
+ {
+ 	struct rzg2l_usbphy_ctrl_priv *priv = dev_get_drvdata(&pdev->dev);
+ 
++	platform_device_unregister(priv->vdev);
+ 	pm_runtime_put(&pdev->dev);
+ 	pm_runtime_disable(&pdev->dev);
+ 	reset_control_assert(priv->rstc);
 -- 
 2.25.1
 
