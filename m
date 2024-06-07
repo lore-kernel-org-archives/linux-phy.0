@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B36BFC27C53
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Jun 2024 11:38:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2885BC27C55
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jun 2024 11:38:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SmVQyBeE6kEJgzxxhVxaJYShuz/4mQFZ9fVcHKH2MIQ=; b=MxoiZVks7KZPiK
-	E4J3m+pZDdw9OiDTXS6GfgwYpfZrJJ0MlPf7xMxwQWk0FIjT8H/v8mnK/4JuFnn5e0mQL0hpa5T4C
-	wpj5074agF+kbT70m4R3pqzdgIWRez4Nu3N3liPkufybGGO/rYVm2w0ZIadc7xtltUN7M0yeiS182
-	qOiawbwlU8lMO2z5Dkf+ph/3UuLhbyndlG28R/if6Dsq8Swp0s8zk1BkoCZS7NT9iQioiHz3svsLt
-	+2+Me8/rMApR2x3/g71pJsXh0aUh3NG1hmyYNn1z6H5UYMj+8qo7omW9lGB4sBeo5vbPk6oVfDvX3
-	vVEEYv/TmJEnJOe2DhBA==;
+	List-Owner; bh=hcRaDMJGhUEv6B9BMQfOjBRiy60dABxEqsHWldbQzYk=; b=UAcBCuvuN57R3d
+	y2kliYTTalp0y2muPgMqCBUCko8BjtTOYLsOZver0WpY9+MvNlWud3jabtCNyTHwuG3WRlzRMHs3N
+	33sIqjttor5dJCCB6Up6A2Hn0+FC/4KdSn4yZxrJ3h/Gb7BBEgfIYvlVrMmL3xojyrGysEYjdyEjO
+	7R2vxize1ziyOipJDeUo03yebFJ4fy9i6DYl0yQAEUTLJAkRzkBXZJ2eVvytycHOzPus/7YK4BxEQ
+	Dfgnsoz/DLP/yP4oiXns3U7+NAgcctF/lkRaC7BLsWZMXvzv/HFQt3K+Lb6WszOe5sv/b47Ts0Fp3
+	Puhw3sWfyKTLFdOxe4vQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFXvC-0000000DmZ4-1lOh;
-	Fri, 07 Jun 2024 11:38:14 +0000
-Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
+	id 1sFXvE-0000000Dma3-3OTx;
+	Fri, 07 Jun 2024 11:38:16 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFXv8-0000000DmWJ-1Ikf
+	id 1sFXvD-0000000DmYz-0H4I
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Jun 2024 11:38:12 +0000
-X-IronPort-AV: E=Sophos;i="6.08,220,1712588400"; 
-   d="scan'208";a="211042492"
+	Fri, 07 Jun 2024 11:38:16 +0000
+X-IronPort-AV: E=Sophos;i="6.08,221,1712588400"; 
+   d="scan'208";a="207084446"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
-  by relmlie6.idc.renesas.com with ESMTP; 07 Jun 2024 20:38:09 +0900
+  by relmlie5.idc.renesas.com with ESMTP; 07 Jun 2024 20:38:14 +0900
 Received: from localhost.localdomain (unknown [10.226.92.204])
-	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 9242A40071E8;
-	Fri,  7 Jun 2024 20:38:04 +0900 (JST)
+	by relmlir5.idc.renesas.com (Postfix) with ESMTP id C16034005B53;
+	Fri,  7 Jun 2024 20:38:09 +0900 (JST)
 From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	Rob Herring <robh@kernel.org>,
+To: Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>
 Cc: Biju Das <biju.das.jz@bp.renesas.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
 	linux-renesas-soc@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Geert Uytterhoeven <geert+renesas@glider.be>,
 	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Biju Das <biju.das.au@gmail.com>
-Subject: [PATCH RFC v2 3/4] phy: renesas: phy-rcar-gen3-usb2: Control VBUSEN selection
-Date: Fri,  7 Jun 2024 12:37:44 +0100
-Message-Id: <20240607113745.73934-4-biju.das.jz@bp.renesas.com>
+	Biju Das <biju.das.au@gmail.com>,
+	devicetree@vger.kernel.org
+Subject: [PATCH RFC v2 4/4] arm64: dts: renesas: rz-smarc: Replace fixed regulator for USB VBUS
+Date: Fri,  7 Jun 2024 12:37:45 +0100
+Message-Id: <20240607113745.73934-5-biju.das.jz@bp.renesas.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20240607113745.73934-1-biju.das.jz@bp.renesas.com>
 References: <20240607113745.73934-1-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240607_043810_551840_2B773927 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20240607_043815_242627_1AD56DAA 
+X-CRM114-Status: UNSURE (   8.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,72 +76,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use regmap provided by the regulator driver to control VBUS for RZ/G2L
-alike SoCs.
+Replace the fixed regulator for USB VBUS.
 
 Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
 ---
 v1->v2:
- * Used regulator driver's regmap to handle VBUS.
+ * New patch.
 ---
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 17 ++++++++++++++++-
- 1 file changed, 16 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi | 15 ++++++---------
+ 1 file changed, 6 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index fbab6ac0f0d1..90561b6f9597 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -18,6 +18,7 @@
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
-+#include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <linux/string.h>
- #include <linux/usb/of.h>
-@@ -111,6 +112,7 @@ struct rcar_gen3_chan {
- 	struct extcon_dev *extcon;
- 	struct rcar_gen3_phy rphys[NUM_OF_PHYS];
- 	struct regulator *vbus;
-+	struct regmap *regmap;
- 	struct work_struct work;
- 	struct mutex lock;	/* protects rphys[...].powered */
- 	enum usb_dr_mode dr_mode;
-@@ -188,6 +190,10 @@ static void rcar_gen3_enable_vbus_ctrl(struct rcar_gen3_chan *ch, int vbus)
+diff --git a/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi b/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi
+index b7a3e6caa386..9105afbd5810 100644
+--- a/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi
++++ b/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi
+@@ -54,14 +54,6 @@ codec_dai: simple-audio-card,codec {
+ 		};
+ 	};
  
- 	dev_vdbg(ch->dev, "%s: %08x, %d\n", __func__, val, vbus);
- 	if (ch->soc_no_adp_ctrl) {
-+		if (vbus)
-+			regmap_write(ch->regmap, 0, 0);
-+		else
-+			regmap_write(ch->regmap, 0, 1);
- 		vbus_ctrl_reg = USB2_VBCTRL;
- 		vbus_ctrl_val = USB2_VBCTRL_VBOUT;
- 	}
-@@ -718,7 +724,8 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 		phy_set_drvdata(channel->rphys[i].phy, &channel->rphys[i]);
- 	}
+-	usb0_vbus_otg: regulator-usb0-vbus-otg {
+-		compatible = "regulator-fixed";
+-
+-		regulator-name = "USB0_VBUS_OTG";
+-		regulator-min-microvolt = <5000000>;
+-		regulator-max-microvolt = <5000000>;
+-	};
+-
+ 	vccq_sdhi1: regulator-vccq-sdhi1 {
+ 		compatible = "regulator-gpio";
+ 		regulator-name = "SDHI1 VccQ";
+@@ -139,6 +131,11 @@ &ohci1 {
  
--	channel->vbus = devm_regulator_get_optional(dev, "vbus");
-+	channel->vbus = devm_regulator_get(dev, channel->soc_no_adp_ctrl ?
-+					   "usb_vbus" : "vbus");
- 	if (IS_ERR(channel->vbus)) {
- 		if (PTR_ERR(channel->vbus) == -EPROBE_DEFER) {
- 			ret = PTR_ERR(channel->vbus);
-@@ -727,6 +734,14 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 		channel->vbus = NULL;
- 	}
+ &phyrst {
+ 	status = "okay";
++	vbus_usb0: usb-vbus-regulator {
++		regulator-name = "usb_vbus";
++		regulator-min-microvolt = <0>;
++		regulator-max-microvolt = <3300000>;
++	};
+ };
  
-+	if (channel->soc_no_adp_ctrl && channel->vbus) {
-+		channel->regmap = regulator_get_regmap(channel->vbus);
-+		if (IS_ERR(channel->regmap)) {
-+			ret = PTR_ERR(channel->vbus);
-+			goto error;
-+		}
-+	}
-+
- 	platform_set_drvdata(pdev, channel);
- 	channel->dev = dev;
+ &scif0 {
+@@ -171,7 +168,7 @@ &usb2_phy0 {
+ 	pinctrl-0 = <&usb0_pins>;
+ 	pinctrl-names = "default";
+ 
+-	vbus-supply = <&usb0_vbus_otg>;
++	vbus-supply = <&vbus_usb0>;
+ 	status = "okay";
+ };
  
 -- 
 2.25.1
