@@ -4,78 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CACF5C27C52
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Jun 2024 20:57:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F38A2C27C53
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jun 2024 07:32:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+jtB5o0kA6rjKp1Hk24LMH1ro4719I7mSLUYw+xJoZo=; b=pY8S9AXvROerTV
-	j8Yn4y1NADmFyYoEeqp4rJdVNyEx+Sw+Dbt1Hg+Lf7e9hMly3nW9c82H7TSAiSOyfgX6JMST+tETb
-	d3IwHnQhQU1CQAI88ekTKIoWCPzs1Bm7j9I5AuLmd4EQDFvCOYWpMcMahb1KlNu+8oUOzzr8m7BWI
-	V+cbgjNBXg98A2cvvGrjDS4aAX+BKx0KOhJ6yaaBRsQvLf/gJF0/PO7tDn4h5e/Yu8jRgCUV7bIkp
-	rJWvq4YO6altYVHF4y2HYv0OFib5D77XMftpW72ptPKARAeRdjMemwpAUmbpqfqiod7udxuyn4nop
-	OJkAnosxrCbvdSMAWlvw==;
+	List-Owner; bh=Kf5MN3NI7smQreCM/whTL90ePh4igKqnVIfX7j9cCP8=; b=RmLqqGAWmoCIUw
+	89jMeFcGlFs3VUDu0DfJckbVsOd3+TC0n+zW/tJSBmcPztvhiRwRJlNRvqCA3crWeVtUOjtw91bJk
+	O6WIyodatzn8AgKaQi631X1I1Noc8HZBWstF5HtT/xuD1pJn7e73pb0asc9gZWlwqSuDkndiMuywt
+	EmJzbLEJZ2PrK27WRYs7S1eh6FOEV+RfvLzn7JXqHCo07dDQFuUs1j8t9/G6dC6R2s6l/YPyD0uAB
+	EkvfM0NXIxkQ4IKDs/qoaFDhjHTdTXsJZyiYb8qNK8i79f8jT+OjQxS7kI+fgbsoYvusGMc7ZjkRD
+	6bc1RBchxqJstbnkLHew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFKAr-0000000BK34-2CnW;
-	Thu, 06 Jun 2024 20:57:29 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sFU5p-0000000Cxcu-2yTl;
+	Fri, 07 Jun 2024 07:32:57 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFKAo-0000000BK2Z-43Gb
+	id 1sFU5n-0000000Cxad-1GN1
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Jun 2024 20:57:28 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1E2D361EAA;
-	Thu,  6 Jun 2024 20:57:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A020FC4AF0C;
-	Thu,  6 Jun 2024 20:57:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717707445;
-	bh=wFqALVp5mDtWf6L9b+AXIGvzv82kunIA6A0exDovdCw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DAKR5WhDlunhA9NWxm1kfJnmaRG2JG+wyLkKwAhHP/2IXemCWbKsBZfQkUkIyjZRL
-	 AbOSc/7rI2Zaauv9CTBPfbfWVB37oQ1gpaP7y2O98CRg16JmYGqnXNuTH9kUl0Evbk
-	 CG+iUN3wbeQgZa10gvS/EOvmna74D6XRrM3oe4rqQB2s2pWDmwGJf5rgyhiOhMzLj1
-	 k+bx+A8435kCdTvJAkNGwdjFccJUcfscjGVhAZ+Zax4OMu7uBlj+Zm1mWMU+hI26Zc
-	 IZYZnLRIcf5xvEjqsRJXNo6vejmHiM1Pl3Tkb91KeF+Ts0tnUtKJAv5DMDcsmMXuTD
-	 ZWYqhIZlEBF3A==
-Date: Thu, 6 Jun 2024 14:57:24 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Marc Gonzalez <mgonzalez@freebox.fr>
-Cc: Vinod Koul <vkoul@kernel.org>, David Airlie <airlied@gmail.com>,
-	Sean Paul <sean@poorly.run>,
-	Marijn Suijten <marijn.suijten@somainline.org>,
-	Daniel Vetter <daniel@ffwll.ch>,
-	Pierre-Hugues Husson <phhusson@freebox.fr>,
-	Maxime Ripard <mripard@kernel.org>, Rob Clark <robdclark@gmail.com>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	linux-phy@lists.infradead.org,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	dri-devel@lists.freedesktop.org, linux-arm-msm@vger.kernel.org,
-	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
-	Arnaud Vrac <avrac@freebox.fr>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [PATCH v3 2/4] dt-bindings: display/msm: hdmi: add
- qcom,hdmi-tx-8998
-Message-ID: <171770744191.3848297.2891281220885073312.robh@kernel.org>
-References: <20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr>
- <20240606-hdmi-tx-v3-2-9d7feb6d3647@freebox.fr>
+	Fri, 07 Jun 2024 07:32:56 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-2ea903cd11bso23765231fa.1
+        for <linux-phy@lists.infradead.org>; Fri, 07 Jun 2024 00:32:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1717745571; x=1718350371; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=UqYi6/TyXsie6XKRZSwpSrdfbRCQyXuW1iK6UpWUpGA=;
+        b=YCrLK0+sWmBf3zabR4ILG0ISkqgMiD2JUSOp/wbU6XdvYKfaN/3NUMFczZJQV8WOuz
+         eMf4tKmg3oas/CR9VtXluTq63Ag08pMPjZC/94xnIxftqCPVOi41X35IFnNA0H4b6mtR
+         8vyoGpZZG9kQp4FmHvq3/EV0HubNUFxn1q1P5R1c4aQsv314kenc9gAUev8CkDgfAY85
+         5UroDEBJW1iDD+gPv074/vOgRUec1NiJ+pwIHtR06P/P/AX+Kzv6f21ZL5rHQNCBabkl
+         LQ0Q8YCt1nKRrWSvvFRny4v7gLL2pf/pDMJdyikdeqGR6IRlB7afiLrTMG7kvS1NCHOa
+         dP1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1717745571; x=1718350371;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=UqYi6/TyXsie6XKRZSwpSrdfbRCQyXuW1iK6UpWUpGA=;
+        b=GxR/nV/XvtgNqCcXuntYV58BHuA0uBMYRh8JZqjB2HfuRVamPYFI+XT6xnEYTqlAa+
+         J+vp4+wVod51SybNZNuDhbuT0oSZbDwADnIesrlI3vbSkszDocjxbN/SFssVv1XurLM/
+         zzOt1VGIvFerIVsqjo8v8gKpI3QvbnUE0Uq1L0rUktEKoN0qBlTaffxjb9of0Uelzf1n
+         AX27l1l3jQuuH3m3YSUo85xm/r96FDnzjrXmf7DuJ9KuYd3rshncHuuzkzdIcy+vx/7a
+         riNLznO7ltzR07veyPtAOHYtPY5Y4CVLGNxT71W1HsgQ6DMNSR0IckjaVHIvryISTgf6
+         UgHQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWnErEuSzTSoB7yYq/SZ4o8v/t2sh33iqqPAcsIJKR4iNKQSSOfucK8WaN6sYaZ/RrlnwcLtEhovBeMgKFTvuxLD6LBSxHf5i2S+ORSGg==
+X-Gm-Message-State: AOJu0Yx+DAHsiIpUZTrso91Q/JZrqI9gTGHUspaS+qj0CZTKGRDTMnBt
+	CCqsOOtBAnKw+KQwyzBOr36nodMzApA4slq+ddq1dR2gf+EbhLA+kFRj9PUuT60=
+X-Google-Smtp-Source: AGHT+IG28HQrJXRwR3UKDPBL8ZjvFq5oTQoYekMAlyCuQZ+jgjGFPoD6PHNh3NUcAihljpkATtWTog==
+X-Received: by 2002:a05:651c:1a11:b0:2e7:2d1f:edbd with SMTP id 38308e7fff4ca-2eadce7f8ecmr18873251fa.39.1717745571348;
+        Fri, 07 Jun 2024 00:32:51 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyyykxt-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::227])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ead41dc957sm4492321fa.135.2024.06.07.00.32.50
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 07 Jun 2024 00:32:50 -0700 (PDT)
+Date: Fri, 7 Jun 2024 10:32:49 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/7] phy: qcom: qmp-combo: store DP phy power state
+Message-ID: <dwwqfd3uwfrufvgov46egztdjpwfiyiy4x2fmm5najv3jy7n5r@n5efircs6l5b>
+References: <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org>
+ <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-2-a03e68d7b8fc@linaro.org>
+ <du4345tswno5pfeiux5ks5eo37bbydilvdzw3firnsps2ejgn5@avnoqzxbmzj7>
+ <ec78bd64-b1f2-48c1-b1ab-b7e2f0b9e24d@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240606-hdmi-tx-v3-2-9d7feb6d3647@freebox.fr>
+In-Reply-To: <ec78bd64-b1f2-48c1-b1ab-b7e2f0b9e24d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_135727_217201_911409AB 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240607_003255_367328_00B3BB74 
+X-CRM114-Status: GOOD (  15.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,18 +99,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 06 Jun 2024 18:07:48 +0200, Marc Gonzalez wrote:
-> HDMI TX block embedded in the APQ8098.
+On Thu, Jun 06, 2024 at 03:29:52PM +0200, Neil Armstrong wrote:
+> On 27/05/2024 10:59, Dmitry Baryshkov wrote:
+> > On Mon, May 27, 2024 at 10:42:34AM +0200, Neil Armstrong wrote:
+> > > Switching the PHY Mode requires the DisplayPort PHY to be powered off,
+> > > keep track of the DisplayPort phy power state.
+> > 
+> > How is this different from dp_init_count?
 > 
-> Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
-> ---
->  .../devicetree/bindings/display/msm/hdmi.yaml      | 28 ++++++++++++++++++++--
->  1 file changed, 26 insertions(+), 2 deletions(-)
+> dp_init_count tracks the DP PHY init, while dp_powered_on tracks
+> the DP PHY beeing powered on by the DRM DP driver, those are
+> not the same state at all.
 > 
+> While testing, I figured that de-initializing the DP PHY while
+> is was powered-on by the DRM DP, caused the system to freeze and crash.
+> 
+> SO I've added this to track this state and try to de-init the DP phy
+> if still in use.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+If you are to send next iteration, please add these bits to the commit
+message.
 
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
