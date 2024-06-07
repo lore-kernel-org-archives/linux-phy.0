@@ -4,85 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F38A2C27C53
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Jun 2024 07:32:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87C69C27C55
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Jun 2024 11:38:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kf5MN3NI7smQreCM/whTL90ePh4igKqnVIfX7j9cCP8=; b=RmLqqGAWmoCIUw
-	89jMeFcGlFs3VUDu0DfJckbVsOd3+TC0n+zW/tJSBmcPztvhiRwRJlNRvqCA3crWeVtUOjtw91bJk
-	O6WIyodatzn8AgKaQi631X1I1Noc8HZBWstF5HtT/xuD1pJn7e73pb0asc9gZWlwqSuDkndiMuywt
-	EmJzbLEJZ2PrK27WRYs7S1eh6FOEV+RfvLzn7JXqHCo07dDQFuUs1j8t9/G6dC6R2s6l/YPyD0uAB
-	EkvfM0NXIxkQ4IKDs/qoaFDhjHTdTXsJZyiYb8qNK8i79f8jT+OjQxS7kI+fgbsoYvusGMc7ZjkRD
-	6bc1RBchxqJstbnkLHew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UUTAaAuiGRctM1lkhEVCrM4rsQ/hYZOpxu8V+yTN8Ok=; b=4Gl56fo35Xksy6
+	DeFPQ/0usSmJM+uYaMVNoK++aLdTmsg6VkKTCFsjQ8pKyiWhGbd+jOiUhk9NcpfeXGBkztl96lxSS
+	lGXX5zCT8oETPerSqnWv3osEGQDFzx+TOWcypNgFHaNFe/mN/LKhz8WsQLtEFt1yAHi8u0y0N6A/c
+	X/iZAdi28oXF3P1VXMZ1BQpItL2TX9Adf7Q/yh12ODhidt4BycyrvsUoYPmKgmW9Vp+xleBUpfOMd
+	KBB/GqlxVvNdnJSvjlVZuQVZSzeIodowx9jmPZSPtNYBdLaLOz7T+3FqRvPUpQyulyqhT+Ex9gULz
+	9QrYQjraRJ7PK0qYpPdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFU5p-0000000Cxcu-2yTl;
-	Fri, 07 Jun 2024 07:32:57 +0000
-Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
-	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFU5n-0000000Cxad-1GN1
+	id 1sFXv6-0000000DmVI-0Zgl;
+	Fri, 07 Jun 2024 11:38:08 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sFXv3-0000000DmS0-1uCa
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Jun 2024 07:32:56 +0000
-Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-2ea903cd11bso23765231fa.1
-        for <linux-phy@lists.infradead.org>; Fri, 07 Jun 2024 00:32:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1717745571; x=1718350371; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=UqYi6/TyXsie6XKRZSwpSrdfbRCQyXuW1iK6UpWUpGA=;
-        b=YCrLK0+sWmBf3zabR4ILG0ISkqgMiD2JUSOp/wbU6XdvYKfaN/3NUMFczZJQV8WOuz
-         eMf4tKmg3oas/CR9VtXluTq63Ag08pMPjZC/94xnIxftqCPVOi41X35IFnNA0H4b6mtR
-         8vyoGpZZG9kQp4FmHvq3/EV0HubNUFxn1q1P5R1c4aQsv314kenc9gAUev8CkDgfAY85
-         5UroDEBJW1iDD+gPv074/vOgRUec1NiJ+pwIHtR06P/P/AX+Kzv6f21ZL5rHQNCBabkl
-         LQ0Q8YCt1nKRrWSvvFRny4v7gLL2pf/pDMJdyikdeqGR6IRlB7afiLrTMG7kvS1NCHOa
-         dP1g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717745571; x=1718350371;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=UqYi6/TyXsie6XKRZSwpSrdfbRCQyXuW1iK6UpWUpGA=;
-        b=GxR/nV/XvtgNqCcXuntYV58BHuA0uBMYRh8JZqjB2HfuRVamPYFI+XT6xnEYTqlAa+
-         J+vp4+wVod51SybNZNuDhbuT0oSZbDwADnIesrlI3vbSkszDocjxbN/SFssVv1XurLM/
-         zzOt1VGIvFerIVsqjo8v8gKpI3QvbnUE0Uq1L0rUktEKoN0qBlTaffxjb9of0Uelzf1n
-         AX27l1l3jQuuH3m3YSUo85xm/r96FDnzjrXmf7DuJ9KuYd3rshncHuuzkzdIcy+vx/7a
-         riNLznO7ltzR07veyPtAOHYtPY5Y4CVLGNxT71W1HsgQ6DMNSR0IckjaVHIvryISTgf6
-         UgHQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWnErEuSzTSoB7yYq/SZ4o8v/t2sh33iqqPAcsIJKR4iNKQSSOfucK8WaN6sYaZ/RrlnwcLtEhovBeMgKFTvuxLD6LBSxHf5i2S+ORSGg==
-X-Gm-Message-State: AOJu0Yx+DAHsiIpUZTrso91Q/JZrqI9gTGHUspaS+qj0CZTKGRDTMnBt
-	CCqsOOtBAnKw+KQwyzBOr36nodMzApA4slq+ddq1dR2gf+EbhLA+kFRj9PUuT60=
-X-Google-Smtp-Source: AGHT+IG28HQrJXRwR3UKDPBL8ZjvFq5oTQoYekMAlyCuQZ+jgjGFPoD6PHNh3NUcAihljpkATtWTog==
-X-Received: by 2002:a05:651c:1a11:b0:2e7:2d1f:edbd with SMTP id 38308e7fff4ca-2eadce7f8ecmr18873251fa.39.1717745571348;
-        Fri, 07 Jun 2024 00:32:51 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyyykxt-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::227])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ead41dc957sm4492321fa.135.2024.06.07.00.32.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 07 Jun 2024 00:32:50 -0700 (PDT)
-Date: Fri, 7 Jun 2024 10:32:49 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/7] phy: qcom: qmp-combo: store DP phy power state
-Message-ID: <dwwqfd3uwfrufvgov46egztdjpwfiyiy4x2fmm5najv3jy7n5r@n5efircs6l5b>
-References: <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org>
- <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-2-a03e68d7b8fc@linaro.org>
- <du4345tswno5pfeiux5ks5eo37bbydilvdzw3firnsps2ejgn5@avnoqzxbmzj7>
- <ec78bd64-b1f2-48c1-b1ab-b7e2f0b9e24d@linaro.org>
+	Fri, 07 Jun 2024 11:38:07 +0000
+X-IronPort-AV: E=Sophos;i="6.08,221,1712588400"; 
+   d="scan'208";a="207084411"
+Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
+  by relmlie5.idc.renesas.com with ESMTP; 07 Jun 2024 20:37:52 +0900
+Received: from localhost.localdomain (unknown [10.226.92.204])
+	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 0BC8D40071E8;
+	Fri,  7 Jun 2024 20:37:47 +0900 (JST)
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Biju Das <biju.das.au@gmail.com>,
+	devicetree@vger.kernel.org
+Subject: [PATCH RFC v2 0/4] Add USB VBUS regulator for RZ/G2L
+Date: Fri,  7 Jun 2024 12:37:41 +0100
+Message-Id: <20240607113745.73934-1-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ec78bd64-b1f2-48c1-b1ab-b7e2f0b9e24d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240607_003255_367328_00B3BB74 
-X-CRM114-Status: GOOD (  15.31  )
+X-CRM114-CacheID: sfid-20240607_043805_629072_3F295F10 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,33 +76,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 06, 2024 at 03:29:52PM +0200, Neil Armstrong wrote:
-> On 27/05/2024 10:59, Dmitry Baryshkov wrote:
-> > On Mon, May 27, 2024 at 10:42:34AM +0200, Neil Armstrong wrote:
-> > > Switching the PHY Mode requires the DisplayPort PHY to be powered off,
-> > > keep track of the DisplayPort phy power state.
-> > 
-> > How is this different from dp_init_count?
-> 
-> dp_init_count tracks the DP PHY init, while dp_powered_on tracks
-> the DP PHY beeing powered on by the DRM DP driver, those are
-> not the same state at all.
-> 
-> While testing, I figured that de-initializing the DP PHY while
-> is was powered-on by the DRM DP, caused the system to freeze and crash.
-> 
-> SO I've added this to track this state and try to de-init the DP phy
-> if still in use.
+As per RZ/G2L HW manual, VBUSEN can be controlled by the VBOUT bit of the
+VBUS Control Register(VBENCTL) register in the USBPHY Control. But this IP
+is in the Reset block.
 
-If you are to send next iteration, please add these bits to the commit
-message.
+Reset driver exposes this register as regmap and instantiate the USB VBUS
+regulator device. Consumers(phy device) can use regulator driver's regmap
+to control VBUS as controlling is done in the atomic context.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Please provide your valuable inputs.
 
+v1->v2:
+ * Introduced a regulator driver to control VBUS
+
+Biju Das (4):
+  reset: renesas: Instantiate USB VBUS regulator device
+  regulator: Add Renesas RZ/G2L USB VBUS regulator driver
+  phy: renesas: phy-rcar-gen3-usb2: Control VBUSEN selection
+  arm64: dts: renesas: rz-smarc: Replace fixed regulator for USB VBUS
+
+ .../boot/dts/renesas/rz-smarc-common.dtsi     | 15 ++---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c      | 17 ++++-
+ drivers/regulator/Kconfig                     |  9 +++
+ drivers/regulator/Makefile                    |  1 +
+ .../regulator/renesas-usb-vbus-regulator.c    | 65 +++++++++++++++++++
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c       | 29 +++++++++
+ 6 files changed, 126 insertions(+), 10 deletions(-)
+ create mode 100644 drivers/regulator/renesas-usb-vbus-regulator.c
 
 -- 
-With best wishes
-Dmitry
+2.25.1
+
 
 -- 
 linux-phy mailing list
