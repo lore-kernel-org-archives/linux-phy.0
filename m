@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E541C25B76
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Jun 2024 11:04:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E05C1C25B76
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Jun 2024 12:18:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sRSs3Qoo3+g6BO/ili1gYpX80MTJ+XHbDCY9l3vE0Kc=; b=P0FWY2POutZ/pU
-	/NjCGzbYlchplaGmjJecUCVqRIHfdQgw307fXRvymZKgW1vWa5oyyG167l304Ar1gFsUa/t0lO6gB
-	D0oKFVuXbL31G64t0HonX0dzcpftotkm3To9ehhT0Xx9yfGzH/XRef+i8xXXDyLVaucCQywdb5eOe
-	rjcfuHXIQuQRVv4HhpszzDtRM82p07flolN9lgJpMc8xr2obFPunPtrCpsVgI2TYGDhrWB88aEpEP
-	FxxDoccc9GdPcA3a6MdPon7sDbF2zP0GnlLw+7LbVF3W8LHsPoNc/035WKffqGNQS2pUKD4xfsN9i
-	5CaOdMVOrhAm9B9CaNrg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AboG6VNvqXOoseBHTo/RVhGvNmdvDCN8EUF45fdunmA=; b=iqwEqqRLtk2IER
+	E4vWeku/pLPQLWGjDfwt+aPgRqnmiJhtvAP0pBovKNrngpdDCCmfB2yGfYrlWMRDAFgUPe/DzAtsA
+	WUIlMdDvN7oNTKYW3/IlejZa1ZqHjPETnSmedZ4XFdBG3SfJSxGXdGCR3j/h+31GQ4Cnp4iGpeSX5
+	sGCw8ZxkLWjzw+QDRMb3uf33zO7xpZWxg5+BsUqaS6T1PhCX7IDgVQ/gl1WvAFFW/R0LJxIwJ6udX
+	6j+z0oONJFqDIkjQpUVA8LKL/1a7AzaPAr7vBs/YTIDIFfEeoj7uRgp+hK4bvelel4nkzApri3QKC
+	+uXKG+AwpXweq8/3pA4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sGzJ1-00000008ZS6-08ys;
-	Tue, 11 Jun 2024 11:04:47 +0000
+	id 1sH0S8-00000008oRs-0rC2;
+	Tue, 11 Jun 2024 12:18:16 +0000
 Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sGzIx-00000008ZPe-3pQk
+	id 1sGzIT-00000008ZEJ-1cai
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Jun 2024 11:04:45 +0000
+	Tue, 11 Jun 2024 11:04:23 +0000
 X-IronPort-AV: E=Sophos;i="6.08,229,1712588400"; 
-   d="scan'208";a="211446438"
+   d="scan'208";a="211446379"
 Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
-  by relmlie6.idc.renesas.com with ESMTP; 11 Jun 2024 20:04:42 +0900
+  by relmlie6.idc.renesas.com with ESMTP; 11 Jun 2024 20:04:09 +0900
 Received: from localhost.localdomain (unknown [10.226.93.49])
-	by relmlir5.idc.renesas.com (Postfix) with ESMTP id D7C23401007F;
-	Tue, 11 Jun 2024 20:04:37 +0900 (JST)
+	by relmlir5.idc.renesas.com (Postfix) with ESMTP id C675B400F953;
+	Tue, 11 Jun 2024 20:04:04 +0900 (JST)
 From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+To: Philipp Zabel <p.zabel@pengutronix.de>,
 	Liam Girdwood <lgirdwood@gmail.com>,
 	Mark Brown <broonie@kernel.org>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	linux-renesas-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
 	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Biju Das <biju.das.au@gmail.com>
-Subject: [PATCH v3 6/6] arm64: dts: renesas: rz-smarc: Replace fixed regulator for USB VBUS
-Date: Tue, 11 Jun 2024 12:04:02 +0100
-Message-Id: <20240611110402.58104-7-biju.das.jz@bp.renesas.com>
+	Biju Das <biju.das.au@gmail.com>,
+	devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-renesas-soc@vger.kernel.org
+Subject: [PATCH v3 0/6] Add support for USB VBUS control for RZ/G2L SoCs
+Date: Tue, 11 Jun 2024 12:03:56 +0100
+Message-Id: <20240611110402.58104-1-biju.das.jz@bp.renesas.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20240611110402.58104-1-biju.das.jz@bp.renesas.com>
-References: <20240611110402.58104-1-biju.das.jz@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_040444_175489_40289856 
-X-CRM114-Status: UNSURE (   8.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240611_040413_729731_74B76A7C 
+X-CRM114-Status: GOOD (  11.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,50 +74,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Replace the fixed regulator for USB VBUS.
+As per RZ/G2L HW manual, VBUS enable can be controlled by the VBOUT bit of
+the VBUS Control Register(VBENCTL) register in the USBPHY Control. But
+this IP is in the Reset block.
 
-Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
----
+Reset driver exposes this register as regmap and instantiate the
+USB VBUS regulator device. Consumers(phy device) can use regulator
+driver's regmap to control VBUS as controlling is done in the atomic
+context.
+
+We need to have merge strategy which subsytem will apply this patches
+as it involves multiple subsystems Reset, Regulator, PHY, DT and Renesas SoC??
+
 v2->v3:
- * Upated label name
- * Updated node and regulator name that matches with the bindings.
+ * Documented regulator-vbus in the binding file.
+ * Updated commit description and header for patch#2
+ * Moved regulator device creation and instantiation at the end of probe().
+ * Introduced new API regulator_set_hardware_enable_register() to enable/disable
+   regulator in atomic context.
+ * Dropped vbus_voltages table from patch#4
+ * Added support for enabling/disabling regulator through regmap API's
+ * Updated rzg2l_usb_vbus_rdesc with enable_{reg,mask}, fixed_uV and
+   n_voltages
+ * Updated of_node with child node of the parent device.
+ * Replaced regulator's regmap API with newly introduced
+   regulator_set_hardware_enable_register to enable/disable regulator
+   in interrupt context in patch#5
+ * Dropped using "usb_vbus-supply" in patch#5.
+ * Upated vbus regulator label name in dts file.
+ * Updated node and regulator name that matches with the binding documentation.
 v1->v2:
- * New patch.
----
- arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi | 13 +++++--------
- 1 file changed, 5 insertions(+), 8 deletions(-)
+ * Introduced a regulator driver to control VBUS
 
-diff --git a/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi b/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi
-index b7a3e6caa386..a444cb6507d3 100644
---- a/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi
-+++ b/arch/arm64/boot/dts/renesas/rz-smarc-common.dtsi
-@@ -54,14 +54,6 @@ codec_dai: simple-audio-card,codec {
- 		};
- 	};
- 
--	usb0_vbus_otg: regulator-usb0-vbus-otg {
--		compatible = "regulator-fixed";
--
--		regulator-name = "USB0_VBUS_OTG";
--		regulator-min-microvolt = <5000000>;
--		regulator-max-microvolt = <5000000>;
--	};
--
- 	vccq_sdhi1: regulator-vccq-sdhi1 {
- 		compatible = "regulator-gpio";
- 		regulator-name = "SDHI1 VccQ";
-@@ -139,6 +131,11 @@ &ohci1 {
- 
- &phyrst {
- 	status = "okay";
-+	usb0_vbus_otg: regulator-vbus {
-+		regulator-name = "vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+	};
- };
- 
- &scif0 {
+Biju Das (6):
+  dt-bindings: reset: renesas,rzg2l-usbphy-ctrl: Document USB VBUS
+    regulator
+  reset: renesas: Add USB VBUS regulator device as child
+  regulator: core: Add helper for allow access to enable register
+  regulator: Add Renesas RZ/G2L USB VBUS regulator driver
+  phy: renesas: phy-rcar-gen3-usb2: Control VBUS for RZ/G2L SoCs
+  arm64: dts: renesas: rz-smarc: Replace fixed regulator for USB VBUS
+
+ .../reset/renesas,rzg2l-usbphy-ctrl.yaml      | 12 ++++
+ Documentation/power/regulator/consumer.rst    |  5 ++
+ .../boot/dts/renesas/rz-smarc-common.dtsi     | 13 ++--
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c      |  3 +
+ drivers/regulator/Kconfig                     |  9 +++
+ drivers/regulator/Makefile                    |  1 +
+ drivers/regulator/core.c                      | 32 +++++++++
+ .../regulator/renesas-usb-vbus-regulator.c    | 67 +++++++++++++++++++
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c       | 37 ++++++++++
+ include/linux/regulator/consumer.h            |  8 +++
+ 10 files changed, 179 insertions(+), 8 deletions(-)
+ create mode 100644 drivers/regulator/renesas-usb-vbus-regulator.c
+
 -- 
 2.25.1
 
