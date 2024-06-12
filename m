@@ -4,60 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65C24C27C79
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 17:52:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C555FC27C53
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 17:52:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HtWGDZbrU5v3NAp9bxjFcvWVuCiP7U4rKH0Y9QFLi5I=; b=TUP7uo3053h83M
-	jUkcaX8RB1TBGPSCASIrIHpxHI3ARi9qKpTSix4VdHDpTQt7YuEkpTztlmrrUFjyArer3IOT1EC4k
-	q9S6ILR0EltOxxbbIjCdLfsKb1sY7aplXKgyquu4tYFpXqlE9TL01QJi6GwB9anBJ/JaRf5Mhz3mv
-	e+LRZTakNvfJiehKX072CfkHV4m/36QuQ2ENV1QdHxnrXfOSr+f+m5mX3RG1hvXxiE7tzQLHliVrg
-	I787jLV3TtSksexsHVEek1qJdICTOyLT5yguMZNEC5Ydn/Yo3TGi19j7kNSx2ybjavZ/zDxGAcf0D
-	qiVcucyayqNl4V2CQLag==;
+	List-Owner; bh=JzX38UkXj/VN6qUvi/GMNNiTdVQdgVTmOCbKEoKz7qM=; b=yOE3x65ENFgRbI
+	KwZZkRC2Dyspopd0TeqQwNDHQuT4kWNT+hjaVbJdObJF0zgzhueBnibhBfAh0zggFagAqluV++JdA
+	bRc+PoD0KgwdL22MJEkhZ3IZfbipDseKxVVihQc0xG8CM2yDWByF+qc36O6WcHcReGlaTqgTGAgC0
+	81rIoZmZ3F9yqqzbB65t6EbHO/hwDl6G+Gryl/Qh9tHbIxWKJKi4LSvVZhLuMQLcUklR3BoRvXvSA
+	bMGzaYUppDcR6nEWrTAxU+0O/4gPLbjdRmhrR49FxgxFLbCXWjWYtb47RTH+WEfY+kfIwPbMwqRvP
+	aihC3ASM/PqomnHDPoxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHS8j-0000000Dclo-0MLl;
-	Wed, 12 Jun 2024 17:52:05 +0000
+	id 1sHS8x-0000000Dcs6-0zfr;
+	Wed, 12 Jun 2024 17:52:19 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHS8e-0000000DcjZ-3l8z
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Jun 2024 17:52:02 +0000
+	id 1sHS8l-0000000DcnM-1kK2;
+	Wed, 12 Jun 2024 17:52:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id F266B6068A;
-	Wed, 12 Jun 2024 17:51:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16FCEC4AF1C;
-	Wed, 12 Jun 2024 17:51:57 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id D42D16150C;
+	Wed, 12 Jun 2024 17:52:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1BCFC116B1;
+	Wed, 12 Jun 2024 17:52:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718214719;
-	bh=UknXbz5pReCHncA13mSEjNiNpJM/nxq0DuJtMoOa5Yc=;
+	s=k20201202; t=1718214726;
+	bh=dzTwtHi0xEpEXutLs5k+UvmqJUUkMc7f/shDQFFvq24=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=glHI03xzOFwP9V+gJYyhvizsbivcbb6US3suqe2BlD0R895PQGW/vUFy4Fngr3DFy
-	 1nV+n96QfuVg71IT4xrcsrR1XCwcoxjBOVrt7ifqzAa18Wn+EtnOBgwo0sqx+gyBv8
-	 AFavM61VZqI6/atCAx0NlRewiU8QgnYXIQDjNniemvnQSA9mJgYQNUfmG+iqDODiHY
-	 5VZVTBRgVcNurTIvcmvK/yDHDBMaWg1fiSBijtrI5IjogO3vSlOPyK8L0xXTSd3tRi
-	 iEg5PTHYOOWJcvG37A6fDa1Fcs5uF6YVHmKK3EiCaW7stbmNxIGPxmWT1j7TCDV3XA
-	 zdyh3fbHyVt/A==
+	b=GigXlW0h8BeV4E9uEsT0raJRSIaqbwtMR5g+WLO29AZIcKzPQshDUMlzxYNTU3skb
+	 wvx+Nr5KMBYd4unSoOaTl2zg8faUHpaH+bmlKRP1EJ/5YDNfAhmtETAfVPa/DKIJtp
+	 v44pZbKhzuXBr9MRgsop3yMCbjdW2Ct3RHWST7K4WsAZP12XXu4RzpwIHfJcZNetvt
+	 DE+kxbTKWYi33kaV/RyhORCaTy/sBN5DffYulBzWllGnLiGUXwz+JYUqaXCXXVw/NQ
+	 poDcrWCcDOgYpTpnbCPEgrqExlaGhr7u7Rno1YCsPMoj4Hvzlkk7Xdkr6AvWzOTP0t
+	 D90/3+8npk+zw==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Jan Kiszka <jan.kiszka@siemens.com>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, 
- Sekhar Nori <nsekhar@ti.com>
-In-Reply-To: <60089a71-dad2-4a87-a304-a738e3334d4a@siemens.com>
-References: <60089a71-dad2-4a87-a304-a738e3334d4a@siemens.com>
-Subject: Re: [PATCH] phy: ti: am654-serdes: Remove duplicate define
-Message-Id: <171821471768.586907.8828903354154456302.b4-ty@kernel.org>
-Date: Wed, 12 Jun 2024 23:21:57 +0530
+To: Kevin Hilman <khilman@baylibre.com>, 
+ Jerome Brunet <jbrunet@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20240605-topic-amlogic-upstream-bindings-fixes-power-domains-phy-v1-1-c819b0ecd8c8@linaro.org>
+References: <20240605-topic-amlogic-upstream-bindings-fixes-power-domains-phy-v1-1-c819b0ecd8c8@linaro.org>
+Subject: Re: [PATCH] dt-bindings: phy: g12a-usb2-phy: add optional
+ power-domains
+Message-Id: <171821472227.586907.9102514939175576986.b4-ty@kernel.org>
+Date: Wed, 12 Jun 2024 23:22:02 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_105201_029229_1AB94BD6 
-X-CRM114-Status: UNSURE (   3.17  )
+X-CRM114-CacheID: sfid-20240612_105207_591424_7657F738 
+X-CRM114-Status: UNSURE (   4.49  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,14 +81,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 07 Jun 2024 21:33:00 +0200, Jan Kiszka wrote:
+On Wed, 05 Jun 2024 11:36:00 +0200, Neil Armstrong wrote:
+> On newer SoCs, the USB2 PHY can require a power-domain to operate,
+> add it as optional.
 > 
-
+> 
 
 Applied, thanks!
 
-[1/1] phy: ti: am654-serdes: Remove duplicate define
-      commit: bbc63e701c73bfab9f437f9661f0cbc3860097d5
+[1/1] dt-bindings: phy: g12a-usb2-phy: add optional power-domains
+      commit: 8e97ddd586148fe8852c388eb7c9bba70223da5f
 
 Best regards,
 -- 
