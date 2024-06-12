@@ -4,93 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10BE8C27C77
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 15:57:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4F69C27C77
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 16:04:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mQtmOX/6tvb8sqvncGT61zkEFaHjKTkQLrw4WqCykes=; b=q9rpI/+mGaK2I+
-	HV5eInVTC5SQfC1AB69oRElglXEOZQGqw75lo88/ecsIMFaDIS5cC1EV38EyAqhITqJEw7H8hkqqS
-	23P7ImKIlLfNcE3mvL00u+aYdxHYY0XiWmc3PNnO+z9XBboCtoOBJZcDF7G95YkZSMNumYTra9zVB
-	0GNYwwbanigFvDd5Df51O3C9HSzGDKd/MaBI0aPAfh8Qo9ieq0YybmkGOb/RBBS84jefkOWWwmHur
-	St5vtpTYi3wFUkBEDee3bx3qDnM7L+7WaT6YmY25B+4Syw+MnpiSo+s9xQtEcA2JqQ1TnPXUwJVpP
-	81drWabgp6kQvotVsjBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CNhtb9WDWtleWkm9bSzijgTfN7kGfLLQzkhYPUaNUCc=; b=dYWHjZTv+vah7t
+	q4JpomnxKx4Z/nhYOymTNO7lWl1JtAqmY0MANNffpolDd5AHBNJjToT9F53eP3JFqfn5oZw8efZ7F
+	qhiY/W75/WafbB8ThpoPyk4Q72HiThxq/XHrLgOQ1jwKcNsepBxByx7Hf1PgQO+NXqz+YP8z00f+k
+	wgq6fD1ecqn63NzjLydHz0IUqjSHs4sd9+/gliPy2IgdHN/jmPXXqdSaQrRJkJtMgXyotoUUxZVWV
+	wyKw3orFXqlfWoC4puPvFDNpziU/zcCHfIwLlzWwZcJTHPugJtWdgwmPS44UF6Fs14WAmeMQKmL9J
+	Ge7yUjVLmUpJeT23ciRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHQLl-0000000DGkH-2rJP;
-	Wed, 12 Jun 2024 15:57:25 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1sHQSP-0000000DIif-2OnJ;
+	Wed, 12 Jun 2024 16:04:17 +0000
+Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHQLh-0000000DGhd-3FT0
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Jun 2024 15:57:23 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-35f225ac23bso57781f8f.0
-        for <linux-phy@lists.infradead.org>; Wed, 12 Jun 2024 08:57:21 -0700 (PDT)
+	id 1sHQSN-0000000DIhr-15QF;
+	Wed, 12 Jun 2024 16:04:16 +0000
+Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-7041ed475acso4084098b3a.2;
+        Wed, 12 Jun 2024 09:04:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1718207840; x=1718812640; darn=lists.infradead.org;
-        h=mime-version:user-agent:content-transfer-encoding:references
-         :in-reply-to:date:cc:to:from:subject:message-id:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=tFbSRsIQaGUlhWt/inT+U+/jw1j2uBcqaGXsCKApSs0=;
-        b=kn+2pA8gd29UuyZPFDBYez+Gr8hFkrgGTk4JXwFZoyen3OkbtnGs++hlVS4ozmNAUb
-         84FVke4TR0/K2m4aPOjXxjXt5SR1rnqJZXwl3XS2FzRBwrb9HMDeuXtLmaPkhtNowtlm
-         CdMxEcptlTaIPF8Bxw0gN4uY1EutHPV78q+qe6mxvtJACWS+N252Bww+CYfhXGgAAKQc
-         rhxlwNcdYL4tRVmBAgvHIvgUUdXYngbhongYz6+e1mG9UH1RObLqjZrxNK+RdKgUsye8
-         ViPKNKkRI7websCKeaKXFoxfpFQwmVDk1LWRlLS4kudNZpeWYtHTVnvPKaRHHxBkNKzH
-         jz8A==
+        d=gmail.com; s=20230601; t=1718208252; x=1718813052; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=AH50orR5FyIlpjugYepr6bfFOHdgPbrZzYYt/ypEgjU=;
+        b=TfDHqAu2roVofA2pO24hvDb56i0abUQ8gPunCUmcw+dYZuGKqE95OJFigi7GvuFSpD
+         7gNaSbDyhysw0fCEMlHfrytjnH9I0x1FyHN8GbxpyNw3baoF1DwR3kHV0luFJSpDMvUv
+         wkTdL/qdWKAy4JJQ73Y/pCvVKjAk4/P0VUCcghirAuq4MjStNvI8vqqregibgj/Ys46b
+         yC46jsaBgHMxmKbh8iaDIKBGbZjL+q5Rvvth3iALB1tMsvaWY1fW4NFTaaU+TFrbB0HW
+         GVTgN4wqAHi66W+XMChmXGrSZSF7Sd5XkcamYu0qS6OhiwhNPhvoBLR163hg80I1Akbn
+         U5MQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718207840; x=1718812640;
-        h=mime-version:user-agent:content-transfer-encoding:references
-         :in-reply-to:date:cc:to:from:subject:message-id:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=tFbSRsIQaGUlhWt/inT+U+/jw1j2uBcqaGXsCKApSs0=;
-        b=QuUbdUyYAs9UiMzfbCSmIxquVlzty9z3ajWAQEV2CUOuLYm08js2QFbxSa6SkgAi2n
-         cC3pprVPfEq0mr2zN/lTwTBIQYZFyyfVloDjoloJWl9W0JiX1YPxXQo4A5vBzWx+IZv/
-         oz9QIGHa2jQTzo8Shey2pqH1wJvIu59kjX7VeMNf16xN95ohTuaPLl7dS1/Jju4EmYXy
-         EYC8RSqIFf8qAu1WXT3MspyTFRmWoV1uq/95tcOCpLU5N3vrqpPjg8cr3FZ3jBAZ9Dc+
-         QWQj32s+HQf9FgT9r4szxZWPcztMPFkQfTEJP0HUWCzp6HGVLNuh0+1uLsxwUaBJRYjW
-         RiHQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWdic/A0WPN5IBKafBfKnfACYqho/fOoBOt47Q5ePZDMB8AD9XK7C4BH6Yxj0jc22sCzBRmuyv2hNtWtk73lV/cRSYQieH8aVoy9hvw+A==
-X-Gm-Message-State: AOJu0YyjkTjHc/vRC51LulLbaOsGSlag/Cve0fFKK1bisn2bUb7hAmZz
-	5RFX8zHFXSExxcjQ/Ebdt/z5wYy5JUtAyAwVtf4BGpp9Ji+Uz/cMosq8cQkFt80=
-X-Google-Smtp-Source: AGHT+IEpEDDV5rjvlffnGOmRnvYE/2Zj4m5R1KKf8NISPivJRoIUhXC9RM3SjIRT0ilAhNJnaThFLg==
-X-Received: by 2002:adf:fa4e:0:b0:354:df31:6dfc with SMTP id ffacd0b85a97d-35fe89383f8mr1859836f8f.58.1718207839883;
-        Wed, 12 Jun 2024 08:57:19 -0700 (PDT)
-Received: from draszik.lan ([80.111.64.44])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-35f26355d54sm7840904f8f.64.2024.06.12.08.57.18
+        d=1e100.net; s=20230601; t=1718208252; x=1718813052;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=AH50orR5FyIlpjugYepr6bfFOHdgPbrZzYYt/ypEgjU=;
+        b=ObnCxdXIjRxMhtCtBSK0n1534WfqdV/pwvAFf6iysZ5n+Psz7ewr6FOneSnGsf4eJm
+         uBE/zL09RxpgMz2v85/8LHMOQn/KWvoBpHnJy6oHQbC1sP7BTT5UobxCXOZnGVmbJ06o
+         wcxfzx1cHYutCAq8geV1oVDH37tHTY9KLNpkWPGSlQfbH0x/hENfBpwfSSEWnbfEDpWv
+         bFqL56l7j85POZYg89mmHkchuGoYcQmpU3Z9hTmBhmk32xMFD8rghCy1M9qZU24zd0X6
+         Cz0sRB6fXMUOmU3T2W4RGooEgENv2cMMOaxlkzpTdA3S1Klkmym13WYwp/ZemDwo+5yX
+         o2QQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVohN3QGzy7oJTPQvjn60KxzzmAJfHmlKA5YgNZFkAPGetDO9PbHE2XLYwkuiSLI+XnLeUOuCTtN+FzkOliFZXt1nHoz9XIV2bxBEfBMTbzSfOE970jLSWfwInccDv477c45zfS85S87UszJvuvN9fN1rsj4SWFjns=
+X-Gm-Message-State: AOJu0YwcvJRF8/O40WhhlT66KZKSy5YlTmVT7y+VQ/rzESEi7/Bi+9ML
+	1KmZTTzKQyAOUuQc9jjzl1jFFpq/d3tuqDiJLACIC04X4O/nRCyN
+X-Google-Smtp-Source: AGHT+IHc7rN5RhTKgGX+U2xnByt7BB6V+V8NYKfp2g4qSX34Lk1wtCxbkckFHtg4nNii+mCRqOfJPg==
+X-Received: by 2002:a05:6a00:a14:b0:6fc:fcc8:cb38 with SMTP id d2e1a72fcca58-705bcf1accamr2931743b3a.33.1718208251825;
+        Wed, 12 Jun 2024 09:04:11 -0700 (PDT)
+Received: from shresth-aspirea71576g.abesec.ac.in ([139.5.197.147])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-705382784b9sm5911884b3a.48.2024.06.12.09.04.04
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 12 Jun 2024 08:57:19 -0700 (PDT)
-Message-ID: <0b594358c94ebf6d6585005a827e69c274014983.camel@linaro.org>
-Subject: Re: [PATCH v2 1/7] dt-bindings: phy: samsung,usb3-drd-phy: add
- gs101 compatible
-From: =?ISO-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
-To: Rob Herring <robh@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
- Dooley <conor+dt@kernel.org>, Peter Griffin <peter.griffin@linaro.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,  Sylwester Nawrocki
- <s.nawrocki@samsung.com>, Alim Akhtar <alim.akhtar@samsung.com>, Sam
- Protsenko <semen.protsenko@linaro.org>, Krzysztof Kozlowski
- <krzk@kernel.org>, Tudor Ambarus <tudor.ambarus@linaro.org>, Will McVicker
- <willmcvicker@google.com>, Roy Luo <royluo@google.com>,
- kernel-team@android.com, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, Arnd Bergmann
- <arnd@arndb.de>, lee@kernel.org
-Date: Wed, 12 Jun 2024 16:57:18 +0100
-In-Reply-To: <CAL_JsqKDyrYBTTcpmoM-LbQUWch_qd3t47WC0yafVJcz+Se4yA@mail.gmail.com>
-References: <20240501-usb-phy-gs101-v2-0-ed9f14a1bd6d@linaro.org>
-	 <20240501-usb-phy-gs101-v2-1-ed9f14a1bd6d@linaro.org>
-	 <CAL_JsqKDyrYBTTcpmoM-LbQUWch_qd3t47WC0yafVJcz+Se4yA@mail.gmail.com>
-User-Agent: Evolution 3.50.3-1 
+        Wed, 12 Jun 2024 09:04:11 -0700 (PDT)
+From: Shresth Prasad <shresthprasad7@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de,
+	sebastian.reichel@collabora.com,
+	s.hauer@pengutronix.de,
+	cristian.ciocaltea@collabora.com,
+	andy.yan@rock-chips.com
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	skhan@linuxfoundation.org,
+	javier.carrasco.cruz@gmail.com,
+	Shresth Prasad <shresthprasad7@gmail.com>
+Subject: [PATCH v2] dt-bindings: phy: rockchip-emmc-phy: Convert to dtschema
+Date: Wed, 12 Jun 2024 21:33:37 +0530
+Message-ID: <20240612160336.5132-2-shresthprasad7@gmail.com>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_085721_877447_3A15CC29 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20240612_090415_324925_676E5BBF 
+X-CRM114-Status: GOOD (  16.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,26 +99,182 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCAyMDI0LTA2LTEyIGF0IDA5OjM3IC0wNjAwLCBSb2IgSGVycmluZyB3cm90ZToKPiBP
-biBXZWQsIE1heSAxLCAyMDI0IGF0IDM6MTnigK9BTSBBbmRyw6kgRHJhc3ppayA8YW5kcmUuZHJh
-c3ppa0BsaW5hcm8ub3JnPiB3cm90ZToKPiA+IAo+ID4gQWRkIGEgZGVkaWNhdGVkIGdvb2dsZSxn
-czEwMS11c2IzMWRyZC1waHkgY29tcGF0aWJsZSBmb3IgR29vZ2xlIFRlbnNvcgo+ID4gZ3MxMDEg
-U29DLgo+ID4gCj4gPiBJdCBuZWVkcyBhZGRpdGlvbmFsIGNsb2NrcyBlbmFibGVkIGZvciByZWdp
-c3RlciBhY2Nlc3MsIGFuZCBhZGRpdGlvbmFsCj4gPiBtZW1vcnkgcmVnaW9ucyAoUENTICYgUE1B
-KSBhcmUgcmVxdWlyZWQgZm9yIHN1Y2Nlc3NmdWwgY29uZmlndXJhdGlvbi4KPiA+IAo+ID4gU2ln
-bmVkLW9mZi1ieTogQW5kcsOpIERyYXN6aWsgPGFuZHJlLmRyYXN6aWtAbGluYXJvLm9yZz4KPiA+
-IAo+ID4gLS0tCj4gPiB2MjogYXZvaWQgaGF2aW5nIG5lc3RlZCBlbHNlL2lmLCBhbmQgaW5zdGVh
-ZCBjaGFuZ2UgdGhlIGV4aXN0aW5nICdlbHNlJwo+ID4gwqDCoMKgIHRvIGV4cGxpY2l0bHkgc3Rh
-dGUgdGhlIHBsYXRmb3JtcyB1c2luZyAnaWYnCj4gPiAtLS0KPiA+IMKgLi4uL2JpbmRpbmdzL3Bo
-eS9zYW1zdW5nLHVzYjMtZHJkLXBoeS55YW1swqDCoMKgwqDCoMKgwqDCoCB8IDYxICsrKysrKysr
-KysrKysrKysrKysrKy0KPiA+IMKgMSBmaWxlIGNoYW5nZWQsIDU5IGluc2VydGlvbnMoKyksIDIg
-ZGVsZXRpb25zKC0pCj4gCj4gR29pbmcgdG8gcmVzcGluIHRoaXM/IEJlY2F1c2UgaXQgaXMgaW4g
-dXNlIG5vdyBhbmQgdW5kb2N1bWVudGVkLgoKWWVzLCBJJ2xsIHNlbmQgdjMgdGhpcyB3ZWVrLgoK
-Q2hlZXJzLApBbmRyZScKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
+for validation.
+
+Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+---
+Changes in v2:
+    - Fixed example
+    - Changed file referenced in grf.yaml
+
+Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
+and `rockchip/rk3399-pinebook-pro.dtb`.
+
+ .../bindings/phy/rockchip,emmc-phy.yaml       | 79 +++++++++++++++++++
+ .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
+ .../devicetree/bindings/soc/rockchip/grf.yaml |  2 +-
+ 3 files changed, 80 insertions(+), 44 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+new file mode 100644
+index 000000000000..f42045389383
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+@@ -0,0 +1,79 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,emmc-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip EMMC PHY
++
++maintainers:
++  - Shresth Prasad <shresthprasad7@gmail.com>
++
++properties:
++  "#phy-cells":
++    const: 0
++
++  compatible:
++    const: rockchip,rk3399-emmc-phy
++
++  reg:
++    description:
++      PHY register address offset and length in "general register files"
++    maxItems: 1
++
++  clock-names:
++    description: |
++      Although this is not a required property (because most boards can get
++      basic functionality without having access to it), it is strongly
++      suggested.
++    const: emmcclk
++
++  clocks:
++    description:
++      Should have a phandle to the card clock exported by the SDHCI driver.
++    maxItems: 1
++
++  drive-impedance-ohm:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Specifies the drive impedance in Ohm.
++    enum: [33, 40, 50, 66, 100]
++    default: 50
++
++  rockchip,enable-strobe-pulldown:
++    type: boolean
++    description: |
++      Enable internal pull-down for the strobe
++      line.  If not set, pull-down is not used.
++
++  rockchip,output-tapdelay-select:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Specifies the phyctrl_otapdlysec register.
++    default: 0x4
++    maximum: 0xf
++
++required:
++  - "#phy-cells"
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    grf: syscon@ff770000 {
++      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
++      reg = <0x0 0xff770000 0x0 0x10000>;
++      #address-cells = <1>;
++      #size-cells = <1>;
++
++      emmcphy: phy@f780 {
++        #phy-cells = <0>;
++        compatible = "rockchip,rk3399-emmc-phy";
++        reg = <0xf780 0x20>;
++        clocks = <&sdhci>;
++        clock-names = "emmcclk";
++        drive-impedance-ohm = <50>;
++      };
++    };
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+deleted file mode 100644
+index 57d28c0d5696..000000000000
+--- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-Rockchip EMMC PHY
+------------------------
+-
+-Required properties:
+- - compatible: rockchip,rk3399-emmc-phy
+- - #phy-cells: must be 0
+- - reg: PHY register address offset and length in "general
+-   register files"
+-
+-Optional properties:
+- - clock-names: Should contain "emmcclk".  Although this is listed as optional
+-		(because most boards can get basic functionality without having
+-		access to it), it is strongly suggested.
+-		See ../clock/clock-bindings.txt for details.
+- - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
+- - drive-impedance-ohm: Specifies the drive impedance in Ohm.
+-                        Possible values are 33, 40, 50, 66 and 100.
+-                        If not set, the default value of 50 will be applied.
+- - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
+-                                    line.  If not set, pull-down is not used.
+- - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
+-                                    If not set, the register defaults to 0x4.
+-                                    Maximum value 0xf.
+-
+-Example:
+-
+-
+-grf: syscon@ff770000 {
+-	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-
+-...
+-
+-	emmcphy: phy@f780 {
+-		compatible = "rockchip,rk3399-emmc-phy";
+-		reg = <0xf780 0x20>;
+-		clocks = <&sdhci>;
+-		clock-names = "emmcclk";
+-		drive-impedance-ohm = <50>;
+-		#phy-cells = <0>;
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 79798c747476..1f88416657cc 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -178,7 +178,7 @@ allOf:
+       patternProperties:
+         "phy@[0-9a-f]+$":
+           description:
+-            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
++            Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+ 
+   - if:
+       properties:
+-- 
+2.45.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
