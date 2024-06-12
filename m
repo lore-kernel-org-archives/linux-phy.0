@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC870C27C75
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65C24C27C79
 	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 17:52:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,51 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BzFV3VUt0uCWff5C0MRLIoK6og8TMTx2vn8eZnsfWvg=; b=mC4clipRabCqzr
-	QsUpUaJ2gT+ortnt/l+SGe1l3MFrWLGpsQ9CUvfXpyn13pqG+Nk7SRu7mJP17lwKeZpQldfgxvZFK
-	7zr1/O9YggDhAX7FZdS6eY5/s7mJmW3UpPPKb+pm/RNW8GjenMplwpL4MXt1OTh6NyWLwIFO7CFCc
-	uS/DeBMYPYD9ZuxKmxeFUji2v94e+42IUrG2Lj8NZH7rSUrrfzBgwZ7Y6I3hCWckaipalqrUKBuV/
-	OUXc/6w54egBfMy39W2CDnYWdjY7S0gcmGw1GwdRcSDd1IEGBDZxUd8nxPmpujJRseAzF5KjKB4ZW
-	E9jNi0wk/M+Ji5YWCecQ==;
+	List-Owner; bh=HtWGDZbrU5v3NAp9bxjFcvWVuCiP7U4rKH0Y9QFLi5I=; b=TUP7uo3053h83M
+	jUkcaX8RB1TBGPSCASIrIHpxHI3ARi9qKpTSix4VdHDpTQt7YuEkpTztlmrrUFjyArer3IOT1EC4k
+	q9S6ILR0EltOxxbbIjCdLfsKb1sY7aplXKgyquu4tYFpXqlE9TL01QJi6GwB9anBJ/JaRf5Mhz3mv
+	e+LRZTakNvfJiehKX072CfkHV4m/36QuQ2ENV1QdHxnrXfOSr+f+m5mX3RG1hvXxiE7tzQLHliVrg
+	I787jLV3TtSksexsHVEek1qJdICTOyLT5yguMZNEC5Ydn/Yo3TGi19j7kNSx2ybjavZ/zDxGAcf0D
+	qiVcucyayqNl4V2CQLag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHS8j-0000000DcmA-1xsr;
+	id 1sHS8j-0000000Dclo-0MLl;
 	Wed, 12 Jun 2024 17:52:05 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHS8g-0000000Dcka-3aMo
+	id 1sHS8e-0000000DcjZ-3l8z
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Jun 2024 17:52:04 +0000
+	Wed, 12 Jun 2024 17:52:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 29C8C61539;
-	Wed, 12 Jun 2024 17:52:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6152DC4AF1A;
-	Wed, 12 Jun 2024 17:52:00 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id F266B6068A;
+	Wed, 12 Jun 2024 17:51:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16FCEC4AF1C;
+	Wed, 12 Jun 2024 17:51:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718214722;
-	bh=GUySe7kOQ5O+5zPTwFjXrrUGkZhsuW1RT5+UVSqvC9w=;
+	s=k20201202; t=1718214719;
+	bh=UknXbz5pReCHncA13mSEjNiNpJM/nxq0DuJtMoOa5Yc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=ALPCfw1mB4ZBxJsLgtqUW/NXWmqkaYgUHyTkHOIIBsxP3Q7vpqiKg2T8BNMyaAAGu
-	 nC/NOiOXZUi2N1eV6vxbdK1FDlsqg6sA1c7sr0mNNr8cSFQn+FqSTTNgfPfN6RPwyn
-	 NArM2caQla0pXUjX+j51//1c4obyhbVyYxnDFLlfO92kadKHYOibWsOkfS8rOSMli9
-	 2bUOSuP853RysyoSU1YSfxBGxA/8JLaWFenhQxxJlRgbh/ugp77sZngxBXW71TIhyA
-	 QJ8sTYRooleTdgEAjSJ3MXiD+f8xLxXs5sXSj0E9thdRYWSL0jiN7Dcl6YR8k3qWgR
-	 ZqAuhstBcXDMQ==
+	b=glHI03xzOFwP9V+gJYyhvizsbivcbb6US3suqe2BlD0R895PQGW/vUFy4Fngr3DFy
+	 1nV+n96QfuVg71IT4xrcsrR1XCwcoxjBOVrt7ifqzAa18Wn+EtnOBgwo0sqx+gyBv8
+	 AFavM61VZqI6/atCAx0NlRewiU8QgnYXIQDjNniemvnQSA9mJgYQNUfmG+iqDODiHY
+	 5VZVTBRgVcNurTIvcmvK/yDHDBMaWg1fiSBijtrI5IjogO3vSlOPyK8L0xXTSd3tRi
+	 iEg5PTHYOOWJcvG37A6fDa1Fcs5uF6YVHmKK3EiCaW7stbmNxIGPxmWT1j7TCDV3XA
+	 zdyh3fbHyVt/A==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Jeff Johnson <quic_jjohnson@quicinc.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- kernel-janitors@vger.kernel.org
-In-Reply-To: <20240608-md-drivers-phy-broadcom-v1-1-f070f84cc3f0@quicinc.com>
-References: <20240608-md-drivers-phy-broadcom-v1-1-f070f84cc3f0@quicinc.com>
-Subject: Re: [PATCH] phy: broadcom: add missing MODULE_DESCRIPTION() macros
-Message-Id: <171821471999.586907.11914023851963096437.b4-ty@kernel.org>
-Date: Wed, 12 Jun 2024 23:21:59 +0530
+To: linux-phy@lists.infradead.org, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Jan Kiszka <jan.kiszka@siemens.com>
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, 
+ Sekhar Nori <nsekhar@ti.com>
+In-Reply-To: <60089a71-dad2-4a87-a304-a738e3334d4a@siemens.com>
+References: <60089a71-dad2-4a87-a304-a738e3334d4a@siemens.com>
+Subject: Re: [PATCH] phy: ti: am654-serdes: Remove duplicate define
+Message-Id: <171821471768.586907.8828903354154456302.b4-ty@kernel.org>
+Date: Wed, 12 Jun 2024 23:21:57 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_105203_117823_1936A33C 
-X-CRM114-Status: UNSURE (   3.92  )
+X-CRM114-CacheID: sfid-20240612_105201_029229_1AB94BD6 
+X-CRM114-Status: UNSURE (   3.17  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,20 +76,14 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 08 Jun 2024 23:17:05 -0700, Jeff Johnson wrote:
-> make allmodconfig && make W=1 C=1 reports:
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/phy/broadcom/phy-bcm-ns-usb2.o
-> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/phy/broadcom/phy-bcm-ns-usb3.o
+On Fri, 07 Jun 2024 21:33:00 +0200, Jan Kiszka wrote:
 > 
-> Add the missing invocations of the MODULE_DESCRIPTION() macro.
-> 
-> 
-> [...]
+
 
 Applied, thanks!
 
-[1/1] phy: broadcom: add missing MODULE_DESCRIPTION() macros
-      commit: ea09ba7653bb53252ed96ec524991c55a38bcd0f
+[1/1] phy: ti: am654-serdes: Remove duplicate define
+      commit: bbc63e701c73bfab9f437f9661f0cbc3860097d5
 
 Best regards,
 -- 
