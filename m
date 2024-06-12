@@ -4,64 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2FE7C27C53
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 17:26:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 711FEC27C75
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 17:44:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tXux/Runne9N0w4zJPEeacBxKKXkp/BNxdjjC+UySKA=; b=u1V7jyn50Wv5dTdmK8xbRTRPQ5
-	JoYmK/wOIlnMBAOWVI5Qn9OweFyrDT7KRjza8biST8eLxvoxYWFp8Tg/9SoS9TxcYadnK4yxa6BNz
-	A2h0pTpr79Eoxr/C+M0rv/UH2O4dzfogsGhOQvhs+4sRj1VFYa+SGGnPZrO5NUw6xTqSQn7a0cYAN
-	kRbw9mVvV6sEzajNRnth/15hEjmszV7TyC+L4YChzVqD0pi/GYWSJ9Fkxl6XyNc608nBLC+Udf3zq
-	xQVARyYS3LeLpHwccn3+p3RtcNVPkgyoDwP49kaG8BwuwcRfskUTqIO5/j75/UIv/zkpKOapHG81E
-	8JMaLPDg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j8ETltBozzBBe6YMUVl0Kj+Mk15+Ky8TiDLqlxBdACs=; b=MkIKOeKZXEzDmg
+	ss3a7+His4C7ASauU8ZsSUxCdwDC9kBglkTEC0OLGL04A/EV+6P0Pv67gPqkpcm4rELBCpsX7DfQk
+	nJcfvZD/HWtalFftyIDpNX6NMHiKHVtJiYVcocAb5trzLrOsERvRptX+8gEp0Kg+aABQswWfpyJ9n
+	0auONkzs+2XLYe6s2f+uRUunKaO/k1UueCyyzTL/tB9sdDqAAUPZA/xysCJAInGH/pIqlG66UGcP0
+	y+SsgGRhOMteGfrlmaIN6IPSAIlcn1e3uTUd+UR7yENCzmSpFyMpf/F9uZrI0oyGSmP8MYRTyP8k7
+	NQnjoXS7asNqE8CzlrvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHRjv-0000000DZ3F-2nOt;
-	Wed, 12 Jun 2024 17:26:27 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sHS1K-0000000DbrK-45CH;
+	Wed, 12 Jun 2024 17:44:26 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHRjq-0000000DZ27-0OSW;
-	Wed, 12 Jun 2024 17:26:24 +0000
+	id 1sHS1I-0000000Dbqe-0t64
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Jun 2024 17:44:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 5B396CE21FE;
-	Wed, 12 Jun 2024 17:26:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58848C116B1;
-	Wed, 12 Jun 2024 17:26:19 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id B210A614FD;
+	Wed, 12 Jun 2024 17:44:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9837C116B1;
+	Wed, 12 Jun 2024 17:44:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718213179;
-	bh=8mAINEWgGiadV1kEJND+F9WvJE3WuJIALswoL9FapSI=;
-	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
-	b=LypDdc56kiZi2JjvRRlVxTTMRS9WLepzejGCDmQSSqGvE8U5TsAtu5H7PCR7GWD2R
-	 +V0vb9dzRZdgXA/g8wDH85Ykf4fzHukdkp1eeNKP+zPvnocP0m15T1hyy8vIZjm+sI
-	 hZWYo5G91IrrSKFHkF6uATS6vQeP8wnNmRkjmDh1QI4l330XPyLK7vX1UUO4xEOzSd
-	 lSz0C1gpZyZLJ6XEs/TI3I55reyrrvf5ZZS+SB5ArmB+yErQn/fGulgKkQAYUGc0g4
-	 RXvFduL9Y9KlCeTYEfQZC/uvOb5lB2e3ERkH+SJHxK8V78Xu8YwttIPlA334EtlbOe
-	 AzBB30DTa/aiA==
-Date: Wed, 12 Jun 2024 11:26:18 -0600
+	s=k20201202; t=1718214262;
+	bh=X/W4+RBIDg73ZY+dLTQoYPcN2GOZNe5RdPBV8OPN5i0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=rsEIbaL3TaGu65Vzwpc66Y55Cq6oFPsp5UqG5dLb/0hshXQYvgusTLkQ7B6NSvpIg
+	 nYSv7fo28HcBka3HtEql7X9qdOPUeFx0zCaNSBux12UwWGJ2JFIMA82+y/c92vxHwt
+	 /v6gnBr3KgFXofosdzL7jADZP7qsOfjTUKiOx/J0sg8PgrkrMzn0kLuYz0qV5sOFOw
+	 QJxkIPIwYg5HWFc9l8kghshlwxcspdZIaG17nWh6fuYjSjP3wiaGV36AaZLCseFylY
+	 Jv0oQfJUxUVfFipFXezBeuBnrHKSe7wUkK4XYqvcEHAHaHigFoIKymKxuSsMXIvsF3
+	 yq7YDwZg+vs5A==
+Date: Wed, 12 Jun 2024 23:14:18 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Marc Gonzalez <mgonzalez@freebox.fr>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Sean Paul <sean@poorly.run>,
+	Marijn Suijten <marijn.suijten@somainline.org>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>,
+	Pierre-Hugues Husson <phhusson@freebox.fr>
+Subject: Re: [PATCH v3 1/4] dt-bindings: display/msm: hdmi: add
+ qcom,hdmi-phy-8998
+Message-ID: <ZmnecsZrtNoggI3X@matsya>
+References: <20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr>
+ <20240606-hdmi-tx-v3-1-9d7feb6d3647@freebox.fr>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Shresth Prasad <shresthprasad7@gmail.com>
-Cc: skhan@linuxfoundation.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, cristian.ciocaltea@collabora.com, 
- javier.carrasco.cruz@gmail.com, krzk+dt@kernel.org, 
- sebastian.reichel@collabora.com, heiko@sntech.de, 
- devicetree@vger.kernel.org, linux-rockchip@lists.infradead.org, 
- conor+dt@kernel.org, linux-arm-kernel@lists.infradead.org, 
- s.hauer@pengutronix.de, vkoul@kernel.org, andy.yan@rock-chips.com, 
- kishon@kernel.org
-In-Reply-To: <20240612160336.5132-2-shresthprasad7@gmail.com>
-References: <20240612160336.5132-2-shresthprasad7@gmail.com>
-Message-Id: <171821317822.3213383.11527359300023322395.robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: phy: rockchip-emmc-phy: Convert to
- dtschema
+Content-Disposition: inline
+In-Reply-To: <20240606-hdmi-tx-v3-1-9d7feb6d3647@freebox.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_102622_406063_A5A98FBB 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20240612_104424_329908_8694440F 
+X-CRM114-Status: GOOD (  11.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,55 +90,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 06-06-24, 18:07, Marc Gonzalez wrote:
+> HDMI PHY block embedded in the APQ8098.
 
-On Wed, 12 Jun 2024 21:33:37 +0530, Shresth Prasad wrote:
-> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
-> for validation.
+Why is the patch titled display/msm, this is phy patch and it should be
+tagged as such..
+
+Pls update
+
 > 
-> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+> Acked-by: Rob Herring (Arm) <robh@kernel.org>
+> Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 > ---
-> Changes in v2:
->     - Fixed example
->     - Changed file referenced in grf.yaml
+>  Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
-> and `rockchip/rk3399-pinebook-pro.dtb`.
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+> index 83fe4b39b56f4..78607ee3e2e84 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+> @@ -14,6 +14,7 @@ properties:
+>    compatible:
+>      enum:
+>        - qcom,hdmi-phy-8996
+> +      - qcom,hdmi-phy-8998
+>  
+>    reg:
+>      maxItems: 6
 > 
->  .../bindings/phy/rockchip,emmc-phy.yaml       | 79 +++++++++++++++++++
->  .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
->  .../devicetree/bindings/soc/rockchip/grf.yaml |  2 +-
->  3 files changed, 80 insertions(+), 44 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> 
+> -- 
+> 2.34.1
 
-My bot found errors running 'make dt_binding_check' on your patch:
-
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.example.dtb: syscon@ff770000: reg: [[0, 4285988864], [0, 65536]] is too long
-	from schema $id: http://devicetree.org/schemas/soc/rockchip/grf.yaml#
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.example.dtb: syscon@ff770000: reg: [[0, 4285988864], [0, 65536]] is too long
-	from schema $id: http://devicetree.org/schemas/mfd/syscon.yaml#
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20240612160336.5132-2-shresthprasad7@gmail.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
