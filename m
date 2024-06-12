@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 175E3C27C75
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 06:37:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4D31C27C75
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 06:38:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ogKHseqVWhRZ3G0C/HtIWGzXf7qSoV2KVGte6CP2n1w=; b=d8E6KgZekNvhvn
-	xBUwTjfpKaYMBx12CuQKXQFIKaoF6FbRPLZLgIDDFoh4wSMOzbPPJY5kzi/bvTvi2eUQhIxVEr08A
-	PVuAZEV0KoItG8p6lI3u7J8EvENo0JDh1Jg1aC07x9MujOpCEIoregWG3HI8g7/ZCnNN6vjPwR6cX
-	Q2WXIWFb93cbhEz3bHFeg7Rn0JEi0K/4602kOieI0HXFAAh1wcqUPVFj+QV4aZnDvzenz46b0oeK8
-	4aqfexBcbtqDTBzOdC3yTgJn22sETvXBv022FUuqsd79IIA3zDmJ3deFHbdswSfCyp+0FwpoAqgzn
-	QNUxh7bsFxt2U/d/eDQA==;
+	List-Owner; bh=NM+pZYNvR0lcEeNqSqj95C/YHysOA2S/tHI3XPoPGok=; b=MygYiKnNX20gdi
+	e19cUl/BXRhbEZ68jOeI2UtLJ6QhzwUm6BPKHEwriR3NAkvZpHddIwkmO6dUkckPqnMyLEPGrec5z
+	WDinezainQw8Q+XvW9JcHnvve06FrNGyqH1CDAYXSfPLM8GHPzSEemV6uOTv433ZpQfWKp78TwRxG
+	t5709mwlaKwLBYGsWzc8oCwRkIs2uAS1XSN7Nya8D6xMw0ZklSk5RlSIf/oVXpWuFTU+zkRzhTPuk
+	AqzywxlsOerDtl4CBi2mtFaZyi31VJfcaxkCqNehOf/VO4u04rzD5+u4VXuMelmT1UG5bMAkcamW8
+	99rEgapY/yUrSXDUCX5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHHby-0000000BHmG-3KXX;
-	Wed, 12 Jun 2024 06:37:34 +0000
+	id 1sHHd1-0000000BHsl-1pEz;
+	Wed, 12 Jun 2024 06:38:39 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHHbv-0000000BHlC-3ghQ
+	id 1sHHcy-0000000BHsJ-1F8c
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Jun 2024 06:37:33 +0000
+	Wed, 12 Jun 2024 06:38:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 07D9FCE2001;
-	Wed, 12 Jun 2024 06:37:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4F53C4AF1A;
-	Wed, 12 Jun 2024 06:37:23 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 7DB09CE2027;
+	Wed, 12 Jun 2024 06:38:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB353C32786;
+	Wed, 12 Jun 2024 06:38:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718174249;
-	bh=3bm+nr90zGabuVXSNZC2n6AZgUK2vfOQyDo6wXg0kH0=;
+	s=k20201202; t=1718174312;
+	bh=34mjcikk7JPKw9QBV3GR7LFyatNzP7D7uDjG/KcwrxQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=ahgXDcAEvtHYYSGsTRDqfeGX+1COlh0xsK6t4XHWPyZyWjI1IoyNKlaiF6ab1S3M0
-	 h7Fixk+wWTFQUQM2vo/V1Jq3sbBfCAjfvCX3vvwzXZtNYKPYrjklKVhiGvlAvkhqzo
-	 8TrHi3ffBJryRX1cSHQYZxxS8ewr9bO00m1ZiJrW12oFxovUoMRFCU8rwDyj5nvtPC
-	 PDEErYNlSCZbVqQu1JusJRX7MrtBgESBA/WlFiTrHaE5WxbVrHPGSHDhxpfCERmSiC
-	 nO06rXhxCYwTHiQ1n/UJ/Ye5IcAlBQyFvrdbJysINMD12R9Z5OtZx3y6A+kAD2zHU4
-	 CGLf5UEKRlbaw==
-Message-ID: <3f2bb2e7-94e9-424c-895a-7d3d6e84d561@kernel.org>
-Date: Wed, 12 Jun 2024 08:37:21 +0200
+	b=D6CoigqmNf1VA5tzxnjG0/uv0VTVhSE1MAIPRM+DJPwAt9pkg6wuqcWqPzvCowjFz
+	 wY0NCAtpfstqEcRNfAt+KYy66qN3ada0zh7FopZuvReoXM2LNXlf2naE9xJT2cJzkU
+	 0Vzn0hrcU2eVHsW/V6IlzjJjc9mO+bJX30pGZ3nrfPY42ow26gvAE/qABXEWLcLPa/
+	 g+xozy5Zn4v5gpZiT8lWGYayCuapDOiaPa/Da2RI8yn++KvhScMHrhvICeFSlgJGjT
+	 7SWFrPb8C8keY9jKsb8lMS8CNmKlDKvgAXRWzXaqUf0AGWwjx4anoglK70QMoJzCJg
+	 L5EEWdGQKU5/g==
+Message-ID: <b4d04a73-22eb-44f3-af03-8f8686869c9e@kernel.org>
+Date: Wed, 12 Jun 2024 08:38:25 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/6] dt-bindings: reset: renesas,rzg2l-usbphy-ctrl:
- Document USB VBUS regulator
-To: Biju Das <biju.das.jz@bp.renesas.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>,
+Subject: Re: [PATCH v3 6/6] arm64: dts: renesas: rz-smarc: Replace fixed
+ regulator for USB VBUS
+To: Biju Das <biju.das.jz@bp.renesas.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
 Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org,
+ Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
  Biju Das <biju.das.au@gmail.com>
 References: <20240611110402.58104-1-biju.das.jz@bp.renesas.com>
- <20240611110402.58104-2-biju.das.jz@bp.renesas.com>
+ <20240611110402.58104-7-biju.das.jz@bp.renesas.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +104,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240611110402.58104-2-biju.das.jz@bp.renesas.com>
+In-Reply-To: <20240611110402.58104-7-biju.das.jz@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_233732_324966_ECC55EDB 
-X-CRM114-Status: UNSURE (   6.71  )
+X-CRM114-CacheID: sfid-20240611_233836_743445_6B9A89E1 
+X-CRM114-Status: UNSURE (   4.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -126,25 +125,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/06/2024 13:03, Biju Das wrote:
-> The VBUS enable can be controlled by the VBOUT bit of the VBUS control
-> register. This register is part of usbphy-ctrl IP.
-> 
-> Document the USB VBUS regulator object.
-> 
+On 11/06/2024 13:04, Biju Das wrote:
+>  &phyrst {
+>  	status = "okay";
+> +	usb0_vbus_otg: regulator-vbus {
+> +		regulator-name = "vbus";
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
 
-
->  
->  additionalProperties: false
->  
-> @@ -64,4 +71,9 @@ examples:
->          resets = <&cpg R9A07G044_USB_PRESETN>;
->          power-domains = <&cpg>;
->          #reset-cells = <1>;
-> +        regulator-vbus {
-> +          regulator-name = "vbus";
-
-Messed indentation. What is the indentation of the rest?
+These two voltages look unnecessary. You know the voltage of your LDO,
+don't you? It's fixed, cannot be anything else.
 
 Best regards,
 Krzysztof
