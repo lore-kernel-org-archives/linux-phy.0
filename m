@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29819C27C53
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC870C27C75
 	for <linux-phy@archiver.kernel.org>; Wed, 12 Jun 2024 17:52:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,65 +12,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EsJnLO+9KypDn+qyLoRpkbhw5yfaMahWZACnx4N/vx0=; b=xM1JXrY5fjVUif
-	/uBxZHeS4QdJxn0Ud1RCkhIbAJrlmW/PUoIH9DYydj6sRKyTYNGenhNmBqlGxqNfavjnOy/Sp7qNW
-	lNVEUIvErVHBmL7wuTPWq8Nw3OZigCgEk5wvFrv3OhbzaXL4Ecpr51Wqj1j1OUPXWEImaZn6lMpM5
-	akJwRJbYGvL3QhrT0olb0F5y5obOXe8OpLZjOGraBzeiAgRW9YUWLLMI0ZwVfmhnuzX+bgmDCZJb3
-	7joeo24BRCF/98i/4FNqLo2mzNg1esPnwCsS1Mo7X2gPvIyMnjWm3QnSr4s5JHkpO5pL4IpQBYMKT
-	0gflEnWcP/Hbh4kN9bzg==;
+	List-Owner; bh=BzFV3VUt0uCWff5C0MRLIoK6og8TMTx2vn8eZnsfWvg=; b=mC4clipRabCqzr
+	QsUpUaJ2gT+ortnt/l+SGe1l3MFrWLGpsQ9CUvfXpyn13pqG+Nk7SRu7mJP17lwKeZpQldfgxvZFK
+	7zr1/O9YggDhAX7FZdS6eY5/s7mJmW3UpPPKb+pm/RNW8GjenMplwpL4MXt1OTh6NyWLwIFO7CFCc
+	uS/DeBMYPYD9ZuxKmxeFUji2v94e+42IUrG2Lj8NZH7rSUrrfzBgwZ7Y6I3hCWckaipalqrUKBuV/
+	OUXc/6w54egBfMy39W2CDnYWdjY7S0gcmGw1GwdRcSDd1IEGBDZxUd8nxPmpujJRseAzF5KjKB4ZW
+	E9jNi0wk/M+Ji5YWCecQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHS8i-0000000DclZ-3DWQ;
-	Wed, 12 Jun 2024 17:52:04 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sHS8j-0000000DcmA-1xsr;
+	Wed, 12 Jun 2024 17:52:05 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHS8d-0000000DcjE-1NVs;
-	Wed, 12 Jun 2024 17:52:01 +0000
+	id 1sHS8g-0000000Dcka-3aMo
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Jun 2024 17:52:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C6AA2612F2;
-	Wed, 12 Jun 2024 17:51:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AFBB6C32786;
-	Wed, 12 Jun 2024 17:51:50 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 29C8C61539;
+	Wed, 12 Jun 2024 17:52:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6152DC4AF1A;
+	Wed, 12 Jun 2024 17:52:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718214717;
-	bh=GXMOHq2P2oehyEINCQ6sMop0V6CFw7xgPbg6IOfzRRg=;
+	s=k20201202; t=1718214722;
+	bh=GUySe7kOQ5O+5zPTwFjXrrUGkZhsuW1RT5+UVSqvC9w=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=GnHzZj9uYQh4LIbCVKnnC+cLgooqzhp2ghSUtsFCGYeUWpdylbDClZW+qP5iB4jhZ
-	 yD6U9tzL89AqY8y8niCXVtIpu1IWFtKVdGkkjgGmO68OBpaVlrXv38TSbOJYzHT+Mo
-	 RyArX9rfJrsyXWY7DFr4C3LturjCXYWM0YRcE80GJv630A4NsrlE6DamyGczwzHJQ0
-	 g2IwTPmpHfwQkaJxpSd5kpi8KYCnGpda0ULMjmXt5IaQkzK50uqORj0sVQVuM+CpOq
-	 jRXpKyoUfPat8zHdDvTVlWFufyCMjdj6CGFrkINfUSNoq9OBaRjSNUvj8pA7kDHanj
-	 JdNNgnoUeF32Q==
+	b=ALPCfw1mB4ZBxJsLgtqUW/NXWmqkaYgUHyTkHOIIBsxP3Q7vpqiKg2T8BNMyaAAGu
+	 nC/NOiOXZUi2N1eV6vxbdK1FDlsqg6sA1c7sr0mNNr8cSFQn+FqSTTNgfPfN6RPwyn
+	 NArM2caQla0pXUjX+j51//1c4obyhbVyYxnDFLlfO92kadKHYOibWsOkfS8rOSMli9
+	 2bUOSuP853RysyoSU1YSfxBGxA/8JLaWFenhQxxJlRgbh/ugp77sZngxBXW71TIhyA
+	 QJ8sTYRooleTdgEAjSJ3MXiD+f8xLxXs5sXSj0E9thdRYWSL0jiN7Dcl6YR8k3qWgR
+	 ZqAuhstBcXDMQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Andrew Lunn <andrew@lunn.ch>, 
- Gregory Clement <gregory.clement@bootlin.com>, 
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>, 
- Rob Herring <robh+dt@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
- Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Jonathan Cameron <jic23@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, 
- Daniel Baluta <daniel.baluta@nxp.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Konstantin Porotchkin <kostap@marvell.com>, 
- Richard Cochran <richardcochran@gmail.com>, 
- Josua Mayer <josua@solid-run.com>
-Cc: Yazan Shhady <yazan.shhady@solid-run.com>, 
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
- linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20240602-cn9130-som-v6-0-89393e86d4c7@solid-run.com>
-References: <20240602-cn9130-som-v6-0-89393e86d4c7@solid-run.com>
-Subject: Re: (subset) [PATCH v6 0/7] arm64: dts: add description for
- solidrun cn9130 som and clearfog boards
-Message-Id: <171821471028.586907.10718051314971795937.b4-ty@kernel.org>
-Date: Wed, 12 Jun 2024 23:21:50 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Jeff Johnson <quic_jjohnson@quicinc.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel-janitors@vger.kernel.org
+In-Reply-To: <20240608-md-drivers-phy-broadcom-v1-1-f070f84cc3f0@quicinc.com>
+References: <20240608-md-drivers-phy-broadcom-v1-1-f070f84cc3f0@quicinc.com>
+Subject: Re: [PATCH] phy: broadcom: add missing MODULE_DESCRIPTION() macros
+Message-Id: <171821471999.586907.11914023851963096437.b4-ty@kernel.org>
+Date: Wed, 12 Jun 2024 23:21:59 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240612_105159_469238_B7BD452D 
-X-CRM114-Status: UNSURE (   5.53  )
+X-CRM114-CacheID: sfid-20240612_105203_117823_1936A33C 
+X-CRM114-Status: UNSURE (   3.92  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,20 +75,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sun, 02 Jun 2024 17:49:35 +0200, Josua Mayer wrote:
-> SolidRun CN9130 SoM is a mostly pin-comptible replacement for Armada 388
-> SoM used in Clearfog and Clearfog Pro boards.
+On Sat, 08 Jun 2024 23:17:05 -0700, Jeff Johnson wrote:
+> make allmodconfig && make W=1 C=1 reports:
+> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/phy/broadcom/phy-bcm-ns-usb2.o
+> WARNING: modpost: missing MODULE_DESCRIPTION() in drivers/phy/broadcom/phy-bcm-ns-usb3.o
 > 
-> 1. Add new binding for compatible strings closely matching the original.
+> Add the missing invocations of the MODULE_DESCRIPTION() macro.
 > 
-> 2. Add device-tree includes for SoM and carrier shared design.
 > 
 > [...]
 
 Applied, thanks!
 
-[4/7] dt-bindings: phy: armada-cp110-utmi: add optional swap-dx-lanes property
-      commit: 4de480264948cbf2b08a72c39ee122a9f9761e03
+[1/1] phy: broadcom: add missing MODULE_DESCRIPTION() macros
+      commit: ea09ba7653bb53252ed96ec524991c55a38bcd0f
 
 Best regards,
 -- 
