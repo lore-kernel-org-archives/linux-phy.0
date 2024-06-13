@@ -4,62 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41CE7C27C75
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 09:44:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA3F9C27C7B
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 10:08:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TmuK2Sn7vFj5K3u24LHPczPXlhkDp7itexlPLUSfbiw=; b=sJydKKb7YkdnLM
-	S4tfM8PfhcH0vLyFCAHqgLYVoBG5grtRgCtHzPcoXH33XxRjvkwwWZbdq9hPiGL4eIjPlAOV80oU5
-	+cc/mVmxdlLU2ryu7ZtJFYeTU0riRiGt/jo5oiACQ4noSPLnRcJUC8T9BwCB12JiNK87Z6v82emFL
-	jROVNH255bgIpyDm34x4OfUzdxikRNl54/h3UGgzKDVhnWqnGAhnyDOjIw6IudwjtUCJKyJ0BG+52
-	mgX8rj+/4BZTwrk7mnteulEZyd9dyN2BnzB/y9U8ZYKQZHrHZSWPL/ZROEzOXWA0cZujDuFCjHaaQ
-	4LkFagGcLpULKOOcQ8jA==;
+	List-Owner; bh=U0PC0BZpG9CG1B1SwKfV/kOi8hCishDliR/a3ZzTjoo=; b=f1R9gmJq7Q4Veo
+	8BOzF5YaimO3cvCU1/+9CEeDDXaAqYYmru3EfZhmcTNLF6yFD9O5soR4fWd/YZsGg5KnClhO1rk1G
+	SYZDMWDLBxZB63MX06yKEenFJQkqpX4etz+1LMsrt3Kr3zmw9x8T68zKn+fIIrlhX/OTM3YjU4UYi
+	ybHiN8zYlkny5Q5umFBFZ2NKuhFsH68x5P4nyW7borgNjPq+pUBnmA8r1TfgRfskqYl6fuIinpIiO
+	gqEa3dHUedXscjjI6h3OltnqPXdW/hWj3WlTBiUUPLDnRudZyiK7ge88q7PowYtKyCG/WYxG6qyKc
+	/xE7OpxBTWd5dpVtseLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHh0m-0000000G1Ng-3rvd;
-	Thu, 13 Jun 2024 09:44:52 +0000
-Received: from forward501b.mail.yandex.net ([178.154.239.145])
+	id 1sHhNF-0000000G5Ll-2ECa;
+	Thu, 13 Jun 2024 10:08:05 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHh0g-0000000G1KZ-20OF;
-	Thu, 13 Jun 2024 09:44:49 +0000
-Received: from mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net (mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net [IPv6:2a02:6b8:c12:298c:0:640:7729:0])
-	by forward501b.mail.yandex.net (Yandex) with ESMTPS id 326E861317;
-	Thu, 13 Jun 2024 12:44:35 +0300 (MSK)
-Received: by mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net (smtp/Yandex) with ESMTPSA id Vicprp1Oca60-NKeaeh3H;
-	Thu, 13 Jun 2024 12:44:33 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
-	t=1718271874; bh=rXDnmJ5ZQOUO+9FQYV87xXfZpc46R3cPAarAmqFfOiA=;
-	h=From:In-Reply-To:Cc:Date:References:To:Subject:Message-ID;
-	b=Lz7ebCIu5oUOLBGf+eWcXQ5AFXnNvRxLl6ZQnVz9AUfKAP28kEEi1tE1S0i5AaWFc
-	 m5ri4Y5j79nsndV76J15Y4Gs6PE76abROtAXGJ222vO+PVUzo3htJ30mH7XXqPVxRe
-	 Z9JQvUcYgzr5EQ1sfY95eHQX5PhyroLRur5AFFQo=
-Authentication-Results: mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net; dkim=pass header.i=@yandex.com
-Message-ID: <cc66cca1-33db-4f30-afcf-d256a959896b@yandex.com>
-Date: Thu, 13 Jun 2024 11:44:30 +0200
+	id 1sHhNC-0000000G5KL-2mGp
+	for linux-phy@lists.infradead.org;
+	Thu, 13 Jun 2024 10:08:03 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-52bc1261f45so978024e87.0
+        for <linux-phy@lists.infradead.org>; Thu, 13 Jun 2024 03:07:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1718273278; x=1718878078; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=RYvXhUR4MqvdO8CyI6lyGFQa8ObvUY9+LLJIm6+1jFA=;
+        b=XaK8p04PTHOYYazgDMAJ0sE1qdtUuJiHba7f9Zq12YsUzZBDWNrZPr80ACfQmvNEB/
+         DmEkcNAfNZpRhowO9naKpJou/SXOfwvt+ii7hsjgCLK8zKa7f+L8JKMluqXsjQtHJRPq
+         oRsFlAU3HVC+0LfM/PdY8IB9oWgLbpW7RDbRqSH7UN6bEcTG8A+RxUmygD42mgFdTSut
+         GJZV6gsAXil4/zxzge6rTMfOEAwCYrrqBBr9eAdN7gJbga3Jc2sCLKpxBq4zsdbCqBn2
+         Fdm54z6c9TUwXTLR9HpIPiCwzyCTJsyYZlN9t1YiYWiC29mutl9/Xrw6EpxqYla/ZaRv
+         W7qg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718273278; x=1718878078;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=RYvXhUR4MqvdO8CyI6lyGFQa8ObvUY9+LLJIm6+1jFA=;
+        b=hZII6jwYWNzVlBgfAymC5gb9vrIMVx5AKHrt92678UzzZVzW6NPVWZ7s+Wjm/39Av4
+         PzvWgHAZVgiQnQA/rdyhGWfIzHKDCmPiQ4rPX/+MYfn+eDyIoj956Dn3EYZF6h4pRC3r
+         s8zfSEzvoXb3X3VBOX6hnyOl4S5vuQaVmHG/6zAeTb8q6b/iBfHN6NwO9ilKEHiCPk3J
+         lrGOhx972gRpmL0ZwpiFyDZaqAiN4J1fIBRX5DfnL0rn4z3FlPJuc62owcspQL6Zs8A4
+         5AubqygMXSOl07vKauHjyd4fONmF0HOQIzWee5BLTj5TGbNIKU0DYBKPJEJW/WTlxZ+f
+         oZIQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUiOwC4xz5XSJ+jtckjcVfRtDJ1RNsQyKKdmkT0h0lHctgTvIY50FAk67/mcoecxR+pRzxyai+9cqb/xnTotPX9zdJZrpcrdEQmdPOjkQ==
+X-Gm-Message-State: AOJu0YxdkWWdX1SDBAbbdhnyupgbxgOAh6FMf8hWf4FwBFWkhL7C0DCh
+	mdQHlfTN/5XXvFYuuSeRfTYPX0QLQv+kec0/3H8jonvIaYAK5LLMtS+xZ26FxwE=
+X-Google-Smtp-Source: AGHT+IEIfjbzuR+TJYfn0WkM5bFWWQE5UXg72/ta38D4UK601aQPCRVEmPoKXYW21UYlolSVF5CCJQ==
+X-Received: by 2002:a05:6512:3096:b0:52c:893c:6c2c with SMTP id 2adb3069b0e04-52c9a3dfaeemr3306688e87.40.1718273277753;
+        Thu, 13 Jun 2024 03:07:57 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52ca282f2aasm148599e87.85.2024.06.13.03.07.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 13 Jun 2024 03:07:57 -0700 (PDT)
+Date: Thu, 13 Jun 2024 13:07:55 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Marc Gonzalez <mgonzalez@freebox.fr>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
+	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
+	Arnaud Vrac <avrac@freebox.fr>, Pierre-Hugues Husson <phhusson@freebox.fr>
+Subject: Re: [PATCH v3 2/4] dt-bindings: display/msm: hdmi: add
+ qcom,hdmi-tx-8998
+Message-ID: <qf3erx5x7cigdsel6eh4nb4cl7733ag6qxxeblcdjzys6dnrul@nl7mzrm4ljji>
+References: <20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr>
+ <20240606-hdmi-tx-v3-2-9d7feb6d3647@freebox.fr>
+ <Zmnejlkb869mN3eS@matsya>
+ <af3f71e5-6864-475d-aa90-74986d516bae@freebox.fr>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3] dt-bindings: phy: rockchip-emmc-phy: Convert to
- dtschema
-To: Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- heiko@sntech.de, sebastian.reichel@collabora.com, s.hauer@pengutronix.de,
- cristian.ciocaltea@collabora.com, andy.yan@rock-chips.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, skhan@linuxfoundation.org,
- javier.carrasco.cruz@gmail.com
-References: <20240613085812.4020-2-shresthprasad7@gmail.com>
-Content-Language: en-US
-From: Johan Jonker <jbx6244@yandex.com>
-In-Reply-To: <20240613085812.4020-2-shresthprasad7@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <af3f71e5-6864-475d-aa90-74986d516bae@freebox.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_024447_107728_83F74B75 
-X-CRM114-Status: GOOD (  22.27  )
+X-CRM114-CacheID: sfid-20240613_030802_742908_AADCD127 
+X-CRM114-Status: GOOD (  14.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,229 +105,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 6/13/24 10:58, Shresth Prasad wrote:
-> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
-> for validation.
+On Thu, Jun 13, 2024 at 04:02:24AM +0200, Marc Gonzalez wrote:
+> On 12/06/2024 19:44, Vinod Koul wrote:
 > 
-> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
-> ---
-
-Add ack request from phy maintainer here.
-
-> Changes in v3:
->     - fix `reg` in example being too long
+> > On 06-06-24, 18:07, Marc Gonzalez wrote:
+> >
+> >> HDMI TX block embedded in the APQ8098.
+> > 
+> > This one too
 > 
-> Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
-> and `rockchip/rk3399-pinebook-pro.dtb`.
+> I assume this refers to:
+> "Why is the patch titled display/msm, this is phy patch and it should be
+> tagged as such."
 > 
->  .../bindings/phy/rockchip,emmc-phy.yaml       | 79 +++++++++++++++++++
->  .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
->  .../devicetree/bindings/soc/rockchip/grf.yaml |  2 +-
->  3 files changed, 80 insertions(+), 44 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> I always copy what others have done before me:
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
-> new file mode 100644
-> index 000000000000..85d74b343991
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
-> @@ -0,0 +1,79 @@
+> $ git log --oneline Documentation/devicetree/bindings/display/msm/hdmi.yaml
+> 27339d689d2f9 dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
+> 6c04d89a6138a dt-bindings: display/msm: hdmi: mark hdmi-mux-supply as deprecated
+> e3c5ce88e8f93 dt-bindings: display/msm: hdmi: mark old GPIO properties as deprecated
+> 2f14bc38d88a4 dt-bindings: display/msm: hdmi: split and convert to yaml
+> 
+> Are you saying we should diverge from the previous nomenclature?
 
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+This one is fine. For the phy bindings please use phy: prefix.
 
-You are converting an existing document, so GPL 2 only.
-
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip,emmc-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip EMMC PHY
-> +
-> +maintainers:
-
-> +  - Shresth Prasad <shresthprasad7@gmail.com>
-
-Prefer to add someone that can immediately respond if Rob H. wants to delete something.
-Use the Rockchip DT maintainer here:
-  - Heiko Stuebner <heiko@sntech.de>
-
-> +
-> +properties:
-
-> +  "#phy-cells":
-> +    const: 0
-
-Move this to the bottom of this list.
-
-> +
-> +  compatible:
-> +    const: rockchip,rk3399-emmc-phy
-> +
-> +  reg:
-
-> +    description:
-> +      PHY register address offset and length in "general register files"
-
-remove
-
-> +    maxItems: 1
-> +
-> +  clock-names:
-
-> +    description: |
-> +      Although this is not a required property (because most boards can get
-> +      basic functionality without having access to it), it is strongly
-> +      suggested.
-
-remove
-No need for descriptions if there's just 1 clock.
-
-> +    const: emmcclk
-> +
-> +  clocks:
-
-> +    description:
-> +      Should have a phandle to the card clock exported by the SDHCI driver.
-
-remove 
-
-> +    maxItems: 1
-> +
-> +  drive-impedance-ohm:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      Specifies the drive impedance in Ohm.
-> +    enum: [33, 40, 50, 66, 100]
-> +    default: 50
-> +
-> +  rockchip,enable-strobe-pulldown:
-> +    type: boolean
-> +    description: |
-> +      Enable internal pull-down for the strobe
-> +      line.  If not set, pull-down is not used.
-> +
-> +  rockchip,output-tapdelay-select:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      Specifies the phyctrl_otapdlysec register.
-> +    default: 0x4
-> +    maximum: 0xf
-> +
-> +required:
-
-> +  - "#phy-cells"
-
-Move at the bottom of this list.
-
-> +  - compatible
-> +  - reg
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    grf: syscon@ff770000 {
-> +      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-> +      reg = <0xff770000 0x10000>;
-> +      #address-cells = <1>;
-> +      #size-cells = <1>;
-> +
-> +      emmcphy: phy@f780 {
-
-> +        #phy-cells = <0>;
-
-Move at the bottom of this list.
-Order of Properties in Device Node:
-https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/Documentation/devicetree/bindings/dts-coding-style.rst#n112
-
-> +        compatible = "rockchip,rk3399-emmc-phy";
-> +        reg = <0xf780 0x20>;
-> +        clocks = <&sdhci>;
-> +        clock-names = "emmcclk";
-> +        drive-impedance-ohm = <50>;
-> +      };
-> +    };
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> deleted file mode 100644
-> index 57d28c0d5696..000000000000
-> --- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> +++ /dev/null
-> @@ -1,43 +0,0 @@
-> -Rockchip EMMC PHY
-> ------------------------
-> -
-> -Required properties:
-> - - compatible: rockchip,rk3399-emmc-phy
-> - - #phy-cells: must be 0
-> - - reg: PHY register address offset and length in "general
-> -   register files"
-> -
-> -Optional properties:
-> - - clock-names: Should contain "emmcclk".  Although this is listed as optional
-> -		(because most boards can get basic functionality without having
-> -		access to it), it is strongly suggested.
-> -		See ../clock/clock-bindings.txt for details.
-> - - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
-> - - drive-impedance-ohm: Specifies the drive impedance in Ohm.
-> -                        Possible values are 33, 40, 50, 66 and 100.
-> -                        If not set, the default value of 50 will be applied.
-> - - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
-> -                                    line.  If not set, pull-down is not used.
-> - - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
-> -                                    If not set, the register defaults to 0x4.
-> -                                    Maximum value 0xf.
-> -
-> -Example:
-> -
-> -
-> -grf: syscon@ff770000 {
-> -	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-> -	#address-cells = <1>;
-> -	#size-cells = <1>;
-> -
-> -...
-> -
-> -	emmcphy: phy@f780 {
-> -		compatible = "rockchip,rk3399-emmc-phy";
-> -		reg = <0xf780 0x20>;
-> -		clocks = <&sdhci>;
-> -		clock-names = "emmcclk";
-> -		drive-impedance-ohm = <50>;
-> -		#phy-cells = <0>;
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> index 79798c747476..1f88416657cc 100644
-
-> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-
-grf.yaml can be busy at times. Let Heiko take care of the merge order.
-Ask for an ack from the phy maintainers in your commit message below a "---"
-
-> @@ -178,7 +178,7 @@ allOf:
->        patternProperties:
->          "phy@[0-9a-f]+$":
-
->            description:
-> -            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> +            Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
-
-Integrate rockchip,emmc-phy.yaml with grf.yaml with $ref.
-Remove above, use/test below:
-
-          $ref: /schemas/phy/rockchip,emmc-phy.yaml#
-
-          unevaluatedProperties: false
-
-
->  
->    - if:
->        properties:
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
