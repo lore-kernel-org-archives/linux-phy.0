@@ -4,125 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A783C27C4F
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 12:53:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F093C27C75
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 15:02:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IX84fymf3svCppM3jIsrUOUi+iU6aSaCgUjs2Fj2now=; b=w+YIf3q+1B+1xZ
-	/+3erNl+okwUrbgH+ybcZL05SHCEdYef5bx6nngZ8QipAGlfFkEG23lTNUn4uUXAawi0Hu/1K1ngp
-	AkMyUt1SbcE/BsVLY89YoW5fjopfFW2bfznudrcPT2FC7HiySBMzin+9ykiJEur3dBqB5zuAIPeuR
-	qLab1iCI/Kr0s3/DrFaX4AfB3yKeP3jfEfSwXuyudNL1BCUfHz8WxE+dXRFbqv9K2CZa+6q0MxCAU
-	en3GEAsMpXMKvhdRwZK+RA6HqfuyYgcs6sAHNv5lJQyt1JnmBTuhpEfLiOYIPQweK2RLvsmoaXvuf
-	ptt8fEAUJ8GtnhqR+Kdg==;
+	List-Owner; bh=BIUvL468klXXS+oe7b5A2D16sSiW8Kb1r+g8bipD3OU=; b=ZCd2yL1sgWXzXw
+	X8qP/ONCI/ysdtefGxeIJxsF9K60NFhPqWn4rsbxlOK4Xk5I5j/RC0aBl57AlOWeX2h9tRHbs2act
+	Ktve/CjQ+BU/q4ta/BlVCS+w7k0Fkiy+y7P1vIFi8a7arX1Wjwh6hnInA5e0KxtY+/nk/8jiNn6QS
+	5CqoSU0Jx69IKilBflTPt1PwzPVgh6gTrsO4jamgIj50dyjYfIFXe2DqCFaalJyPKdqPdAOJtlZ/M
+	D0Ge5VwEbxiScEt94cMkU/lwUAaEO8n9Aibwfso4rqxyDKq6zN8Fb6o1dgUchpb9iOhLWGp4uFYOP
+	k5sExtdaGrHAtKFCkIDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHjwv-0000000GaC5-3JHa;
-	Thu, 13 Jun 2024 12:53:05 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1sHlyC-0000000H4Je-3nA4;
+	Thu, 13 Jun 2024 15:02:32 +0000
+Received: from out-183.mta1.migadu.com ([2001:41d0:203:375::b7])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHjwt-0000000GaBS-3zmF;
-	Thu, 13 Jun 2024 12:53:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=O4a4nlcZpa6wi5J7EzGe1s6GaDGUHKPgnDJq+81WAZo=; b=HtsRYit41hYKLwW2HlyAJJnnxt
-	iqdlysG7HDtA1aI6GJYy043g7m9BQrDHfNb6UsVriPUpIo8/i6I1hH4jZgm9LVf+LUKDf4z0u4SnQ
-	9k7j76jKez3+vasXfu4Emnoqne6A7W9E9SQZLDjECW3uHaLmE6tXJSBcRvw1FAZ6MJiCLRJzP5uDj
-	ksdWxumHM6i8GOQfuESuvnbApkuDrgCkB9BvVSkWyaYkJJ/hLZmZhBD/Wzao4BIvqJFFsVw8sikBZ
-	qWKlC6rq3E7V+0rmjncBvlmf5z3Lj9Zrd4wD+ZsjbHPhYaehVFqsp4lsWPhuIg7dmjNf0vg1GHUZW
-	OQ0hk6FA==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHjwm-00000003boO-0Jy6;
-	Thu, 13 Jun 2024 12:53:02 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id BF25761883;
-	Thu, 13 Jun 2024 12:52:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1D90C2BBFC;
-	Thu, 13 Jun 2024 12:52:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718283175;
-	bh=2+dydYk8TPrJavTZgynuaRTEBypmQvsTjbvt51z44U8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=TLx4LMhaYTEFAdjXms6uMnRmnyDuIsp5wd23GggrIVShfev+7h/RlcD9xZD8lsfFn
-	 WSatdClM28bCaSQ6lXUlpN/uZ1W0NcCD/FPm45ypkx+RKsSg+KoVAoUrm1U2GQ/ZNV
-	 V2+V91OtYYHAlSBoEKFSiZxN/wFEnALzvJtRSj9xLHBomzqxFBrQI47jypo80QrK2F
-	 dIDNt5WbigoaD73Z3UfL+C+Z71sIxc87UA67URxMyjAnS/iI0Yc5H5bcZIJ6iQwfqR
-	 0S/JCimwy5r+QMSXyOYrRPcJx7ky0VGkhIolcsdNoBpCPXHl99n5+ZTB9sOj6YhEj6
-	 aLysvAzOft14w==
-Message-ID: <58e85008-a268-4555-bafb-f948ade16a63@kernel.org>
-Date: Thu, 13 Jun 2024 14:52:46 +0200
+	id 1sHly7-0000000H4Hc-0XdY
+	for linux-phy@lists.infradead.org;
+	Thu, 13 Jun 2024 15:02:29 +0000
+X-Envelope-To: radhey.shyam.pandey@amd.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1718290942;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=JEBRwGHuYYeaiNTmDNEUKdsVRARs0SvHUnnIMjbyCE4=;
+	b=dnRQCXmWGraLUliXWOcCW9NwR9J69w4NkRGqqRYDwsNfThTkQMQDJuIO/PWh2XM9B0pMZ5
+	i0Tdf37wyFJYrle1RU5KtND6cmEm506iyx8qtvQsKI8PVU3I9gwBEp9awJx55G6JGaLJKC
+	qm5hTtyZMNMp2XCXIy23MzRJZpsSp3A=
+X-Envelope-To: laurent.pinchart@ideasonboard.com
+X-Envelope-To: linux-phy@lists.infradead.org
+X-Envelope-To: vkoul@kernel.org
+X-Envelope-To: linux-arm-kernel@lists.infradead.org
+X-Envelope-To: linux-kernel@vger.kernel.org
+X-Envelope-To: michal.simek@amd.com
+X-Envelope-To: kishon@kernel.org
+Message-ID: <8349516a-84bc-45bf-a84c-ff05d8f50bf7@linux.dev>
+Date: Thu, 13 Jun 2024 11:02:15 -0400
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3] dt-bindings: phy: rockchip-emmc-phy: Convert to
- dtschema
-To: Johan Jonker <jbx6244@yandex.com>,
- Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- heiko@sntech.de, sebastian.reichel@collabora.com, s.hauer@pengutronix.de,
- cristian.ciocaltea@collabora.com, andy.yan@rock-chips.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, skhan@linuxfoundation.org,
- javier.carrasco.cruz@gmail.com
-References: <20240613085812.4020-2-shresthprasad7@gmail.com>
- <cc66cca1-33db-4f30-afcf-d256a959896b@yandex.com>
- <9ce15b81-a8bd-4833-b15e-3e6f240dcf03@kernel.org>
- <495e50aa-6819-457d-8503-00440abc97e3@yandex.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
+To: "Pandey, Radhey Shyam" <radhey.shyam.pandey@amd.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "Simek, Michal" <michal.simek@amd.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>
+References: <20240506170110.2874724-1-sean.anderson@linux.dev>
+ <20240506170110.2874724-5-sean.anderson@linux.dev>
+ <MN0PR12MB5953519A685A222CC603A2FEB7C12@MN0PR12MB5953.namprd12.prod.outlook.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <495e50aa-6819-457d-8503-00440abc97e3@yandex.com>
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Sean Anderson <sean.anderson@linux.dev>
+In-Reply-To: <MN0PR12MB5953519A685A222CC603A2FEB7C12@MN0PR12MB5953.namprd12.prod.outlook.com>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_135300_220978_636461B5 
-X-CRM114-Status: GOOD (  16.90  )
+X-CRM114-CacheID: sfid-20240613_080227_461238_ED844734 
+X-CRM114-Status: GOOD (  15.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,69 +85,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 13/06/2024 12:33, Johan Jonker wrote:
+On 6/13/24 05:20, Pandey, Radhey Shyam wrote:
+>> -----Original Message-----
+>> From: Sean Anderson <sean.anderson@linux.dev>
+>> Sent: Monday, May 6, 2024 10:31 PM
+>> To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>; linux-
+>> phy@lists.infradead.org
+>> Cc: Vinod Koul <vkoul@kernel.org>; linux-arm-kernel@lists.infradead.org;
+>> linux-kernel@vger.kernel.org; Michal Simek <michal.simek@amd.com>;
+>> Kishon Vijay Abraham I <kishon@kernel.org>; Sean Anderson
+>> <sean.anderson@linux.dev>
+>> Subject: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
+>> 
+>> Add support for printing some basic status information to debugfs. This
+>> is helpful when debugging phy consumers to make sure they are configuring
+>> the phy appropriately.
+>> 
+>> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
+>> ---
+>> 
+>> Changes in v2:
+>> - Use debugfs_create_devm_seqfile
+>> 
+>>  drivers/phy/xilinx/phy-zynqmp.c | 40
+>> +++++++++++++++++++++++++++++++++
+>>  1 file changed, 40 insertions(+)
+>> 
+>> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-
+>> zynqmp.c
+>> index b86fe2a249a8..2520c75a4a77 100644
+>> --- a/drivers/phy/xilinx/phy-zynqmp.c
+>> +++ b/drivers/phy/xilinx/phy-zynqmp.c
+>> @@ -13,6 +13,7 @@
+>>   */
+>> 
+>>  #include <linux/clk.h>
+>> +#include <linux/debugfs.h>
+>>  #include <linux/delay.h>
+>>  #include <linux/io.h>
+>>  #include <linux/kernel.h>
+>> @@ -123,6 +124,15 @@
+>>  #define ICM_PROTOCOL_DP			0x4
+>>  #define ICM_PROTOCOL_SGMII		0x5
+>> 
+>> +static const char *const xpsgtr_icm_str[] = {
+>> +	[ICM_PROTOCOL_PD] = "powered down",
 > 
-> 
-> On 6/13/24 12:12, Krzysztof Kozlowski wrote:
->> On 13/06/2024 11:44, Johan Jonker wrote:
->>>> ---
->>>
->>> Add ack request from phy maintainer here.
->>
-> 
->> Why? What do you mean for that? Why phy maintainer needs to ack patches
->> he is going to take?
-> 
-> See my text below:
-> From my past converting phy documents experience asking was needed to smooths things up ...
-> Let me know if things have improved.
-> 
-> grf.yaml can be busy at times. Let Heiko take care of the merge order.
-> Ask for an ack from the phy maintainers in your commit message below a "---"
-> 
->>
->>>
->>>> Changes in v3:
->>>>     - fix `reg` in example being too long
->>>>
->>>> Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
->>>> and `rockchip/rk3399-pinebook-pro.dtb`.
->>>>
->>>>  .../bindings/phy/rockchip,emmc-phy.yaml       | 79 +++++++++++++++++++
->>>>  .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
->>>>  .../devicetree/bindings/soc/rockchip/grf.yaml |  2 +-
->>>>  3 files changed, 80 insertions(+), 44 deletions(-)
->>>>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
->>>>  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
->>>> new file mode 100644
->>>> index 000000000000..85d74b343991
->>>> --- /dev/null
->>>> +++ b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
->>>> @@ -0,0 +1,79 @@
->>>
->>>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->>>
->>> You are converting an existing document, so GPL 2 only.
->>
-> 
->> Which copyrightable part was copied? This comment is not correct in
->> general, because conversions are dual-licensed (there are exceptions,
->> but that's the generic rule).
-> 
-> Was told to do so in the past by the maintainers(Rob??) for text documents conversions.(Can't find exactly were in lore, must be in one my first conversion patches)
-> If someone was submitting as GPL2 long time ago then the derived/converted work still hold the same license.
-> Let me know if the consensus has changed.
+> Protocol saying powered down seems confusing.
+> Should we say None or None(power down)?
 
-Consensus did not change but I am no sure if you got it right. It was
-about copied copyrightable text. Which part was copied here?
+Either works I guess. I'm just matching the define.
 
-I think there is none, so just like with almost all conversions, please
-use dual license.
+>> +	[ICM_PROTOCOL_PCIE] = "PCIe",
+>> +	[ICM_PROTOCOL_SATA] = "SATA",
+>> +	[ICM_PROTOCOL_USB] = "USB",
+>> +	[ICM_PROTOCOL_DP] = "DisplayPort",
+>> +	[ICM_PROTOCOL_SGMII] = "SGMII",
+>> +};
+>> +
+>>  /* Test Mode common reset control  parameters */
+>>  #define TM_CMN_RST			0x10018
+>>  #define TM_CMN_RST_EN			0x1
+>> @@ -788,6 +798,34 @@ static struct phy *xpsgtr_xlate(struct device *dev,
+>>  	return ERR_PTR(-EINVAL);
+>>  }
+>> 
+>> +/*
+>> + * DebugFS
+>> + */
+>> +
+>> +static int xpsgtr_status_read(struct seq_file *seq, void *data)
+>> +{
+>> +	struct device *dev = seq->private;
+>> +	struct xpsgtr_phy *gtr_phy = dev_get_drvdata(dev);
+>> +	struct clk *clk;
+>> +	u32 pll_status;
+>> +
+>> +	mutex_lock(&gtr_phy->phy->mutex);
+> 
+> Do we see any need for this lock? This function simply read hw register 
+> /phy members and decodes it.
 
-Best regards,
-Krzysztof
+It's to protect against modifications to gtr_phy->refclk and ->instance.
+
+These are accessed under lock elsewhere; this is not a fast path and I don't
+want to have to reason about the semantics when using a mutex is definitely
+correct.
+
+--Sean
+
+>> +	pll_status = xpsgtr_read_phy(gtr_phy, L0_PLL_STATUS_READ_1);
+>> +	clk = gtr_phy->dev->clk[gtr_phy->refclk];
+>> +
+>> +	seq_printf(seq, "Lane:            %u\n", gtr_phy->lane);
+>> +	seq_printf(seq, "Protocol:        %s\n",
+>> +		   xpsgtr_icm_str[gtr_phy->protocol]);
+>> +	seq_printf(seq, "Instance:        %u\n", gtr_phy->instance);
+>> +	seq_printf(seq, "Reference clock: %u (%pC)\n", gtr_phy->refclk, clk);
+>> +	seq_printf(seq, "Reference rate:  %lu\n", clk_get_rate(clk));
+>> +	seq_printf(seq, "PLL locked:      %s\n",
+>> +		   pll_status & PLL_STATUS_LOCKED ? "yes" : "no");
+>> +
+>> +	mutex_unlock(&gtr_phy->phy->mutex);
+>> +	return 0;
+>> +}
+>> +
+>>  /*
+>>   * Power Management
+>>   */
+>> @@ -937,6 +975,8 @@ static int xpsgtr_probe(struct platform_device *pdev)
+>> 
+>>  		gtr_phy->phy = phy;
+>>  		phy_set_drvdata(phy, gtr_phy);
+>> +		debugfs_create_devm_seqfile(&phy->dev, "status", phy-
+>> >debugfs,
+>> +					    xpsgtr_status_read);
+>>  	}
+>> 
+>>  	/* Register the PHY provider. */
+>> --
+>> 2.35.1.1320.gc452695387.dirty
+> 
 
 
 -- 
