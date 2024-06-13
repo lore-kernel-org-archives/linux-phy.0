@@ -4,42 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63ABDC27C6E
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 15:16:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 772E3C2BA16
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 15:16:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XMK/zTQWhSL5VJZyXG1qC8xd5StjymaBv9W3+hMOC4k=; b=vLosjBdIsjphpk
-	9+ynuAVlq0S3SjxEIkuuultG/GtBiSgH31ay5TZfacJgXQaR8hby+31zWHv4xiPC6GvpCtyu6G/VN
-	9Qbuy8X/3w1r4e5dwfIiEhUx/dmhItpEqelCEfouSSMS5FKBznE81tf3HzyvTgnSEYUYsCyrd9Smf
-	4tVgMMnccyC4Iu2eW9jbboEl+7CUI3OM0PyHyeUyVgAWI7oARvnjQucyhdIUAMsPwLRQJFE8iGqH/
-	5HbGOiAw9/6R32zH2QuKtGDwDU30r3piJF77Bagk8V54f7I2Gc+GI8oJdP5atnNGbtoGG4J6xrhDX
-	AkSi7bdYDMHS4cEPPyNw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bqlFscgGCwfq3M1JjvJN4AwnATV/wAbTLE5SY4nNfK4=; b=NVi4myi6H3IBlm
+	SYm7HxsfSojCTSabOJg+G9OTIWwFTIDvlrBEqMMIhntFlG4gkNcR/FfzCG8I1SYSbcxUxvWWztCdh
+	7kd2YFL1ZyBB1zI8UhR3NOjZ8n/UWLI3zbG+0LXmP7DUBTuq5n78G3LRptxtspkUK0T2FuO5Hn6+Q
+	efu4sBjstnhpwbMMRvEdU9gA/NdIs2J6nD0BSamuXuyT4zNz6D4mxmbtifRkurQznoRkO+qmKLXTO
+	S1Aaj8itPyBbXZGnwr+fYBzHU1kUn2yK6gkVtGYPuxaGNJV27NLkigpEojzcboQR36mog2sj7hFTp
+	2qecCaqm2eup6u0tGIIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHmC0-0000000H7tm-0MdE;
+	id 1sHmC0-0000000H7uX-3C2E;
 	Thu, 13 Jun 2024 15:16:48 +0000
 Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHmBv-0000000H7px-3RSG
+	id 1sHmBx-0000000H7py-1QyA
 	for linux-phy@lists.infradead.org;
-	Thu, 13 Jun 2024 15:16:46 +0000
+	Thu, 13 Jun 2024 15:16:47 +0000
 Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id 17E8220E64;
-	Thu, 13 Jun 2024 17:16:37 +0200 (CEST)
+	by ns.iliad.fr (Postfix) with ESMTP id ED20720A8B;
+	Thu, 13 Jun 2024 17:16:36 +0200 (CEST)
 Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id F265D20AE4;
+	by ns.iliad.fr (Postfix) with ESMTP id D378620356;
 	Thu, 13 Jun 2024 17:16:36 +0200 (CEST)
 From: Marc Gonzalez <mgonzalez@freebox.fr>
-Date: Thu, 13 Jun 2024 17:15:52 +0200
-Subject: [PATCH v4 3/4] arm64: dts: qcom: msm8998: add HDMI GPIOs
+Subject: [PATCH v4 0/4] HDMI TX support in msm8998
+Date: Thu, 13 Jun 2024 17:15:49 +0200
+Message-Id: <20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr>
 MIME-Version: 1.0
-Message-Id: <20240613-hdmi-tx-v4-3-4af17e468699@freebox.fr>
-References: <20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr>
-In-Reply-To: <20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr>
+X-B4-Tracking: v=1; b=H4sIACUNa2YC/2XOywrCMBCF4VeRrB3JzdS48j2ki1wmJos2kpRSK
+ X13064Elz/MfJyVVCwJK7mfVlJwTjXlsYU8n4iLZnwhJN+acMolVVRB9EOCaQFKEW/YeW+NI+3
+ 6XTCk5ZCefetQ8gBTLGiOf8OdZVxT0EgZSCYU6Kvm4FAKbRnVyqpHKIg2L5dQdjGmOuXyOabNY
+ nf/V8wCGum7gFZ5oWT3a/Tbtn0B30UufuEAAAA=
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -56,11 +58,12 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
  freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
  Pierre-Hugues Husson <phhusson@freebox.fr>, 
- Marc Gonzalez <mgonzalez@freebox.fr>
+ Marc Gonzalez <mgonzalez@freebox.fr>, 
+ Conor Dooley <conor.dooley@microchip.com>
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_081644_267092_90020715 
-X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-CacheID: sfid-20240613_081645_600969_9B4D6F94 
+X-CRM114-Status: UNSURE (   7.01  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,66 +81,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-MSM8998 GPIO pin controller reference design defines:
+DT bits required for HDMI TX support in APQ8098 (msm8998 cousin)
 
-- CEC: pin 31
-- DDC: pin 32,33
-- HPD: pin 34
+Changes in v4:
+- Collect tags since v3
+- Reword patch 1 subject (Vinod)
+- Link to v3: https://lore.kernel.org/r/20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr
 
-Downstream vendor code for reference:
+Changes in v3
+- Address Rob's comments on patch 2:
+  - 'maxItems: 5' for clocks in the 8996 if/then schema
+  - match the order of 8996 for the clock-names in common
 
-https://git.codelinaro.org/clo/la/kernel/msm-4.4/-/blob/caf_migration/kernel.lnx.4.4.r38-rel/arch/arm/boot/dts/qcom/msm8998-pinctrl.dtsi#L2324-2400
-
-mdss_hdmi_{cec,ddc,hpd}_{active,suspend}
-
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 ---
- arch/arm64/boot/dts/qcom/msm8998.dtsi | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+Arnaud Vrac (1):
+      arm64: dts: qcom: add HDMI nodes for msm8998
 
-diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-index e5f051f5a92de..ba5e873f0f35f 100644
---- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-@@ -1434,6 +1434,34 @@ blsp2_spi6_default: blsp2-spi6-default-state {
- 				drive-strength = <6>;
- 				bias-disable;
- 			};
-+
-+			hdmi_cec_default: hdmi-cec-default-state {
-+				pins = "gpio31";
-+				function = "hdmi_cec";
-+				drive-strength = <2>;
-+				bias-pull-up;
-+			};
-+
-+			hdmi_ddc_default: hdmi-ddc-default-state {
-+				pins = "gpio32", "gpio33";
-+				function = "hdmi_ddc";
-+				drive-strength = <2>;
-+				bias-pull-up;
-+			};
-+
-+			hdmi_hpd_default: hdmi-hpd-default-state {
-+				pins = "gpio34";
-+				function = "hdmi_hot";
-+				drive-strength = <16>;
-+				bias-pull-down;
-+			};
-+
-+			hdmi_hpd_sleep: hdmi-hpd-sleep-state {
-+				pins = "gpio34";
-+				function = "hdmi_hot";
-+				drive-strength = <2>;
-+				bias-pull-down;
-+			};
- 		};
- 
- 		remoteproc_mss: remoteproc@4080000 {
+Marc Gonzalez (3):
+      dt-bindings: phy: add qcom,hdmi-phy-8998
+      dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
+      arm64: dts: qcom: msm8998: add HDMI GPIOs
 
+ .../devicetree/bindings/display/msm/hdmi.yaml      |  28 ++++-
+ .../devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml |   1 +
+ arch/arm64/boot/dts/qcom/msm8998.dtsi              | 128 ++++++++++++++++++++-
+ 3 files changed, 154 insertions(+), 3 deletions(-)
+---
+base-commit: 2c4f4d94dcbf6f500b92fff5600989ea23a207e8
+change-id: 20240606-hdmi-tx-00ee8e7ddbac
+
+Best regards,
 -- 
-2.34.1
+Marc Gonzalez <mgonzalez@freebox.fr>
 
 
 -- 
