@@ -4,91 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA3F9C27C7B
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 10:08:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B0CAC27C4F
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 10:12:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0PC0BZpG9CG1B1SwKfV/kOi8hCishDliR/a3ZzTjoo=; b=f1R9gmJq7Q4Veo
-	8BOzF5YaimO3cvCU1/+9CEeDDXaAqYYmru3EfZhmcTNLF6yFD9O5soR4fWd/YZsGg5KnClhO1rk1G
-	SYZDMWDLBxZB63MX06yKEenFJQkqpX4etz+1LMsrt3Kr3zmw9x8T68zKn+fIIrlhX/OTM3YjU4UYi
-	ybHiN8zYlkny5Q5umFBFZ2NKuhFsH68x5P4nyW7borgNjPq+pUBnmA8r1TfgRfskqYl6fuIinpIiO
-	gqEa3dHUedXscjjI6h3OltnqPXdW/hWj3WlTBiUUPLDnRudZyiK7ge88q7PowYtKyCG/WYxG6qyKc
-	/xE7OpxBTWd5dpVtseLQ==;
+	List-Owner; bh=5mpzwQH8ZvSsBPbUsQ2qJOLYLkGuDKa7AjI6rU9WaBc=; b=cVjXIaaRfHNBuI
+	XIbTR2U/p6FmcUf8sqoR7P7Q8iV+RJ4aNRitHj7VwtFZjmn9MwL81abW71MlBIq8YopUAd54/hIvc
+	KnL0OwbrRA9l+QtSEL+KpE55zaS/dTXf7ih5KjDMhWfB+PXGdxx4iu1CJ+UzpUMwdGZ7dIHhz60wO
+	P7HYtXPC+Xqf6JEKLgjrEh+Y0sdW5kPSiILxofBRYqk548bQcNmNi10kEDz86jzCByXVdTaHIWBBR
+	JobVxJMV/xzQ7olFIyKZshQLIb3FsDN13HnXABl2Ev+9UvTwINsY5zGSsEftLEIT9r2bkEjKy2nAt
+	vTLRH+e/1zoeBY8SvDxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHhNF-0000000G5Ll-2ECa;
-	Thu, 13 Jun 2024 10:08:05 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+	id 1sHhRi-0000000G62w-3Wee;
+	Thu, 13 Jun 2024 10:12:42 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHhNC-0000000G5KL-2mGp
-	for linux-phy@lists.infradead.org;
-	Thu, 13 Jun 2024 10:08:03 +0000
-Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-52bc1261f45so978024e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 13 Jun 2024 03:07:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1718273278; x=1718878078; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=RYvXhUR4MqvdO8CyI6lyGFQa8ObvUY9+LLJIm6+1jFA=;
-        b=XaK8p04PTHOYYazgDMAJ0sE1qdtUuJiHba7f9Zq12YsUzZBDWNrZPr80ACfQmvNEB/
-         DmEkcNAfNZpRhowO9naKpJou/SXOfwvt+ii7hsjgCLK8zKa7f+L8JKMluqXsjQtHJRPq
-         oRsFlAU3HVC+0LfM/PdY8IB9oWgLbpW7RDbRqSH7UN6bEcTG8A+RxUmygD42mgFdTSut
-         GJZV6gsAXil4/zxzge6rTMfOEAwCYrrqBBr9eAdN7gJbga3Jc2sCLKpxBq4zsdbCqBn2
-         Fdm54z6c9TUwXTLR9HpIPiCwzyCTJsyYZlN9t1YiYWiC29mutl9/Xrw6EpxqYla/ZaRv
-         W7qg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718273278; x=1718878078;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=RYvXhUR4MqvdO8CyI6lyGFQa8ObvUY9+LLJIm6+1jFA=;
-        b=hZII6jwYWNzVlBgfAymC5gb9vrIMVx5AKHrt92678UzzZVzW6NPVWZ7s+Wjm/39Av4
-         PzvWgHAZVgiQnQA/rdyhGWfIzHKDCmPiQ4rPX/+MYfn+eDyIoj956Dn3EYZF6h4pRC3r
-         s8zfSEzvoXb3X3VBOX6hnyOl4S5vuQaVmHG/6zAeTb8q6b/iBfHN6NwO9ilKEHiCPk3J
-         lrGOhx972gRpmL0ZwpiFyDZaqAiN4J1fIBRX5DfnL0rn4z3FlPJuc62owcspQL6Zs8A4
-         5AubqygMXSOl07vKauHjyd4fONmF0HOQIzWee5BLTj5TGbNIKU0DYBKPJEJW/WTlxZ+f
-         oZIQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUiOwC4xz5XSJ+jtckjcVfRtDJ1RNsQyKKdmkT0h0lHctgTvIY50FAk67/mcoecxR+pRzxyai+9cqb/xnTotPX9zdJZrpcrdEQmdPOjkQ==
-X-Gm-Message-State: AOJu0YxdkWWdX1SDBAbbdhnyupgbxgOAh6FMf8hWf4FwBFWkhL7C0DCh
-	mdQHlfTN/5XXvFYuuSeRfTYPX0QLQv+kec0/3H8jonvIaYAK5LLMtS+xZ26FxwE=
-X-Google-Smtp-Source: AGHT+IEIfjbzuR+TJYfn0WkM5bFWWQE5UXg72/ta38D4UK601aQPCRVEmPoKXYW21UYlolSVF5CCJQ==
-X-Received: by 2002:a05:6512:3096:b0:52c:893c:6c2c with SMTP id 2adb3069b0e04-52c9a3dfaeemr3306688e87.40.1718273277753;
-        Thu, 13 Jun 2024 03:07:57 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52ca282f2aasm148599e87.85.2024.06.13.03.07.57
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 13 Jun 2024 03:07:57 -0700 (PDT)
-Date: Thu, 13 Jun 2024 13:07:55 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Marc Gonzalez <mgonzalez@freebox.fr>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
-	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konrad.dybcio@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
-	Arnaud Vrac <avrac@freebox.fr>, Pierre-Hugues Husson <phhusson@freebox.fr>
-Subject: Re: [PATCH v3 2/4] dt-bindings: display/msm: hdmi: add
- qcom,hdmi-tx-8998
-Message-ID: <qf3erx5x7cigdsel6eh4nb4cl7733ag6qxxeblcdjzys6dnrul@nl7mzrm4ljji>
-References: <20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr>
- <20240606-hdmi-tx-v3-2-9d7feb6d3647@freebox.fr>
- <Zmnejlkb869mN3eS@matsya>
- <af3f71e5-6864-475d-aa90-74986d516bae@freebox.fr>
+	id 1sHhRf-0000000G61z-1DiF;
+	Thu, 13 Jun 2024 10:12:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 2B3FBCE24B3;
+	Thu, 13 Jun 2024 10:12:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1125C2BBFC;
+	Thu, 13 Jun 2024 10:12:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718273556;
+	bh=+turtCQ3s8M5Is1ZaVsfEKBqCGPhFRe1pZK3idMaWrQ=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=qqRx4qBZp1eh8tqvpIRMJ/x/d/5/hr2a1Gi9q8hqpurCIkh5CyTPJ9GFP17VsPT/9
+	 5bN9eYER/76mZ2JFuDbID2UxYg6DoCO88BPm0aehTLf5N6UkGAeAxl2N1ddGzDU651
+	 gcqjVreA34nqM8vzZpwrLiq5ATwyr7svIKVRKKrqQbYphfz4Ljg+Nmg/DpckuVh0x3
+	 ustALwnXamVP/yiASXl+WzHU9RhVD6StiAi4NCw5T98nRmoLfTZHYugl6Lap28HF56
+	 acU3RpGnUgc1kzn19pFgnwehZhxi6gMmW7etynNso+wkZRfN5XOxuNvO1eikq48+Jg
+	 Z4jWSsR5nxSpA==
+Message-ID: <9ce15b81-a8bd-4833-b15e-3e6f240dcf03@kernel.org>
+Date: Thu, 13 Jun 2024 12:12:27 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <af3f71e5-6864-475d-aa90-74986d516bae@freebox.fr>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3] dt-bindings: phy: rockchip-emmc-phy: Convert to
+ dtschema
+To: Johan Jonker <jbx6244@yandex.com>,
+ Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ heiko@sntech.de, sebastian.reichel@collabora.com, s.hauer@pengutronix.de,
+ cristian.ciocaltea@collabora.com, andy.yan@rock-chips.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, skhan@linuxfoundation.org,
+ javier.carrasco.cruz@gmail.com
+References: <20240613085812.4020-2-shresthprasad7@gmail.com>
+ <cc66cca1-33db-4f30-afcf-d256a959896b@yandex.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <cc66cca1-33db-4f30-afcf-d256a959896b@yandex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_030802_742908_AADCD127 
-X-CRM114-Status: GOOD (  14.19  )
+X-CRM114-CacheID: sfid-20240613_031239_728353_7DBBDCBC 
+X-CRM114-Status: GOOD (  10.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,34 +123,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 13, 2024 at 04:02:24AM +0200, Marc Gonzalez wrote:
-> On 12/06/2024 19:44, Vinod Koul wrote:
+On 13/06/2024 11:44, Johan Jonker wrote:
+>> ---
 > 
-> > On 06-06-24, 18:07, Marc Gonzalez wrote:
-> >
-> >> HDMI TX block embedded in the APQ8098.
-> > 
-> > This one too
-> 
-> I assume this refers to:
-> "Why is the patch titled display/msm, this is phy patch and it should be
-> tagged as such."
-> 
-> I always copy what others have done before me:
-> 
-> $ git log --oneline Documentation/devicetree/bindings/display/msm/hdmi.yaml
-> 27339d689d2f9 dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
-> 6c04d89a6138a dt-bindings: display/msm: hdmi: mark hdmi-mux-supply as deprecated
-> e3c5ce88e8f93 dt-bindings: display/msm: hdmi: mark old GPIO properties as deprecated
-> 2f14bc38d88a4 dt-bindings: display/msm: hdmi: split and convert to yaml
-> 
-> Are you saying we should diverge from the previous nomenclature?
+> Add ack request from phy maintainer here.
 
-This one is fine. For the phy bindings please use phy: prefix.
+Why? What do you mean for that? Why phy maintainer needs to ack patches
+he is going to take?
 
--- 
-With best wishes
-Dmitry
+> 
+>> Changes in v3:
+>>     - fix `reg` in example being too long
+>>
+>> Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
+>> and `rockchip/rk3399-pinebook-pro.dtb`.
+>>
+>>  .../bindings/phy/rockchip,emmc-phy.yaml       | 79 +++++++++++++++++++
+>>  .../bindings/phy/rockchip-emmc-phy.txt        | 43 ----------
+>>  .../devicetree/bindings/soc/rockchip/grf.yaml |  2 +-
+>>  3 files changed, 80 insertions(+), 44 deletions(-)
+>>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+>>  delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+>> new file mode 100644
+>> index 000000000000..85d74b343991
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/rockchip,emmc-phy.yaml
+>> @@ -0,0 +1,79 @@
+> 
+>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> 
+> You are converting an existing document, so GPL 2 only.
+
+Which copyrightable part was copied? This comment is not correct in
+general, because conversions are dual-licensed (there are exceptions,
+but that's the generic rule).
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
