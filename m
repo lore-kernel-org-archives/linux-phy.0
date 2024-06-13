@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7646C2BA15
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63ABDC27C6E
 	for <linux-phy@archiver.kernel.org>; Thu, 13 Jun 2024 15:16:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,32 +12,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5URZjkQju9O907TkML9o/+exXDRlaKd2drkW3aA8CQU=; b=1Di00w0X7yQEpJ
-	hdfKv79rCPrIbbfg2Pj2SKHNTjYsjOwenmuORW1tbV39RHnchBNF3n8Ucw3w5fkwRkCtglv84I1eB
-	pngpKhXPX861Xy0WRYrd9BIWjWxL8qgjKZm9NozhOuHncn+P/rwOn2Ltb6eWCGR4Pd2iQe+v0wEah
-	zQpse1qLkWAWSIQI5Um2PaWvZTJMMxM2z/iSghcqJSBSdeH4/ttY0nf1ta/gNPsPvCW8rkPnnfnGN
-	k/GDVAVkTyhT7WWFmlaaFzAInor9LXJX1bt7VcQv0LJAb5xtlLy4sVzH2r2epg5ipB/QZVDx8aMqZ
-	6Z2leJ82lY1VK8637SnA==;
+	List-Owner; bh=XMK/zTQWhSL5VJZyXG1qC8xd5StjymaBv9W3+hMOC4k=; b=vLosjBdIsjphpk
+	9+ynuAVlq0S3SjxEIkuuultG/GtBiSgH31ay5TZfacJgXQaR8hby+31zWHv4xiPC6GvpCtyu6G/VN
+	9Qbuy8X/3w1r4e5dwfIiEhUx/dmhItpEqelCEfouSSMS5FKBznE81tf3HzyvTgnSEYUYsCyrd9Smf
+	4tVgMMnccyC4Iu2eW9jbboEl+7CUI3OM0PyHyeUyVgAWI7oARvnjQucyhdIUAMsPwLRQJFE8iGqH/
+	5HbGOiAw9/6R32zH2QuKtGDwDU30r3piJF77Bagk8V54f7I2Gc+GI8oJdP5atnNGbtoGG4J6xrhDX
+	AkSi7bdYDMHS4cEPPyNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHmC0-0000000H7uG-1fZ4;
+	id 1sHmC0-0000000H7tm-0MdE;
 	Thu, 13 Jun 2024 15:16:48 +0000
 Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHmBx-0000000H7pz-1Oer
+	id 1sHmBv-0000000H7px-3RSG
 	for linux-phy@lists.infradead.org;
 	Thu, 13 Jun 2024 15:16:46 +0000
 Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id 1D9F520FC7;
+	by ns.iliad.fr (Postfix) with ESMTP id 17E8220E64;
 	Thu, 13 Jun 2024 17:16:37 +0200 (CEST)
 Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id 0502920CF1;
-	Thu, 13 Jun 2024 17:16:37 +0200 (CEST)
+	by ns.iliad.fr (Postfix) with ESMTP id F265D20AE4;
+	Thu, 13 Jun 2024 17:16:36 +0200 (CEST)
 From: Marc Gonzalez <mgonzalez@freebox.fr>
-Date: Thu, 13 Jun 2024 17:15:53 +0200
-Subject: [PATCH v4 4/4] arm64: dts: qcom: add HDMI nodes for msm8998
+Date: Thu, 13 Jun 2024 17:15:52 +0200
+Subject: [PATCH v4 3/4] arm64: dts: qcom: msm8998: add HDMI GPIOs
 MIME-Version: 1.0
-Message-Id: <20240613-hdmi-tx-v4-4-4af17e468699@freebox.fr>
+Message-Id: <20240613-hdmi-tx-v4-3-4af17e468699@freebox.fr>
 References: <20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr>
 In-Reply-To: <20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -59,8 +59,8 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Marc Gonzalez <mgonzalez@freebox.fr>
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_081645_584423_9F775F9E 
-X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-CacheID: sfid-20240613_081644_267092_90020715 
+X-CRM114-Status: UNSURE (   6.85  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,142 +78,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Arnaud Vrac <avrac@freebox.fr>
+MSM8998 GPIO pin controller reference design defines:
 
-Port device nodes from vendor code.
+- CEC: pin 31
+- DDC: pin 32,33
+- HPD: pin 34
 
-Signed-off-by: Arnaud Vrac <avrac@freebox.fr>
+Downstream vendor code for reference:
+
+https://git.codelinaro.org/clo/la/kernel/msm-4.4/-/blob/caf_migration/kernel.lnx.4.4.r38-rel/arch/arm/boot/dts/qcom/msm8998-pinctrl.dtsi#L2324-2400
+
+mdss_hdmi_{cec,ddc,hpd}_{active,suspend}
+
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 ---
- arch/arm64/boot/dts/qcom/msm8998.dtsi | 100 +++++++++++++++++++++++++++++++++-
- 1 file changed, 99 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/msm8998.dtsi | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-index ba5e873f0f35f..5c53957da61c5 100644
+index e5f051f5a92de..ba5e873f0f35f 100644
 --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
 +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-@@ -2785,7 +2785,7 @@ mmcc: clock-controller@c8c0000 {
- 				 <&mdss_dsi0_phy 0>,
- 				 <&mdss_dsi1_phy 1>,
- 				 <&mdss_dsi1_phy 0>,
--				 <0>,
-+				 <&hdmi_phy 0>,
- 				 <0>,
- 				 <0>,
- 				 <&gcc GCC_MMSS_GPLL0_DIV_CLK>;
-@@ -2890,6 +2890,14 @@ dpu_intf2_out: endpoint {
- 							remote-endpoint = <&mdss_dsi1_in>;
- 						};
- 					};
-+
-+					port@2 {
-+						reg = <2>;
-+
-+						dpu_intf3_out: endpoint {
-+							remote-endpoint = <&hdmi_in>;
-+						};
-+					};
- 				};
- 			};
- 
-@@ -3045,6 +3053,96 @@ mdss_dsi1_phy: phy@c996400 {
- 
- 				status = "disabled";
+@@ -1434,6 +1434,34 @@ blsp2_spi6_default: blsp2-spi6-default-state {
+ 				drive-strength = <6>;
+ 				bias-disable;
  			};
 +
-+			hdmi: hdmi-tx@c9a0000 {
-+				compatible = "qcom,hdmi-tx-8998";
-+				reg =	<0x0c9a0000 0x50c>,
-+					<0x00780000 0x6220>,
-+					<0x0c9e0000 0x2c>;
-+				reg-names = "core_physical",
-+					    "qfprom_physical",
-+					    "hdcp_physical";
-+
-+				interrupt-parent = <&mdss>;
-+				interrupts = <8>;
-+
-+				clocks = <&mmcc MDSS_MDP_CLK>,
-+					 <&mmcc MDSS_AHB_CLK>,
-+					 <&mmcc MDSS_HDMI_CLK>,
-+					 <&mmcc MDSS_HDMI_DP_AHB_CLK>,
-+					 <&mmcc MDSS_EXTPCLK_CLK>,
-+					 <&mmcc MDSS_AXI_CLK>,
-+					 <&mmcc MNOC_AHB_CLK>,
-+					 <&mmcc MISC_AHB_CLK>;
-+				clock-names =
-+					"mdp_core",
-+					"iface",
-+					"core",
-+					"alt_iface",
-+					"extp",
-+					"bus",
-+					"mnoc",
-+					"iface_mmss";
-+
-+				phys = <&hdmi_phy>;
-+				#sound-dai-cells = <1>;
-+
-+				pinctrl-names = "default", "sleep";
-+				pinctrl-0 = <&hdmi_hpd_default
-+					     &hdmi_ddc_default
-+					     &hdmi_cec_default>;
-+				pinctrl-1 = <&hdmi_hpd_sleep
-+					     &hdmi_ddc_default
-+					     &hdmi_cec_default>;
-+
-+				status = "disabled";
-+
-+				ports {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+
-+					port@0 {
-+						reg = <0>;
-+						hdmi_in: endpoint {
-+							remote-endpoint = <&dpu_intf3_out>;
-+						};
-+					};
-+
-+					port@1 {
-+						reg = <1>;
-+						hdmi_out: endpoint {
-+						};
-+					};
-+				};
++			hdmi_cec_default: hdmi-cec-default-state {
++				pins = "gpio31";
++				function = "hdmi_cec";
++				drive-strength = <2>;
++				bias-pull-up;
 +			};
 +
-+			hdmi_phy: hdmi-phy@c9a0600 {
-+				compatible = "qcom,hdmi-phy-8998";
-+				reg = <0x0c9a0600 0x18b>,
-+				      <0x0c9a0a00 0x38>,
-+				      <0x0c9a0c00 0x38>,
-+				      <0x0c9a0e00 0x38>,
-+				      <0x0c9a1000 0x38>,
-+				      <0x0c9a1200 0x0e8>;
-+				reg-names = "hdmi_pll",
-+					    "hdmi_tx_l0",
-+					    "hdmi_tx_l1",
-+					    "hdmi_tx_l2",
-+					    "hdmi_tx_l3",
-+					    "hdmi_phy";
++			hdmi_ddc_default: hdmi-ddc-default-state {
++				pins = "gpio32", "gpio33";
++				function = "hdmi_ddc";
++				drive-strength = <2>;
++				bias-pull-up;
++			};
 +
-+				#clock-cells = <0>;
-+				#phy-cells = <0>;
++			hdmi_hpd_default: hdmi-hpd-default-state {
++				pins = "gpio34";
++				function = "hdmi_hot";
++				drive-strength = <16>;
++				bias-pull-down;
++			};
 +
-+				clocks = <&mmcc MDSS_AHB_CLK>,
-+					 <&gcc GCC_HDMI_CLKREF_CLK>,
-+					 <&rpmcc RPM_SMD_XO_CLK_SRC>;
-+				clock-names = "iface",
-+					      "ref",
-+					      "xo";
-+
-+				status = "disabled";
++			hdmi_hpd_sleep: hdmi-hpd-sleep-state {
++				pins = "gpio34";
++				function = "hdmi_hot";
++				drive-strength = <2>;
++				bias-pull-down;
 +			};
  		};
  
- 		venus: video-codec@cc00000 {
+ 		remoteproc_mss: remoteproc@4080000 {
 
 -- 
 2.34.1
