@@ -4,146 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06820C27C6E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 06:02:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64E05C27C75
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 08:35:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PkIj2zlPhppddyZyZeZZ9x9PGzROfSEJtAwuLmCqq3Q=; b=G/7wf5P2+DpVx7
-	/YTRxaoksYXU3BmUeDlhUE+YXaARsJT1i4+nBDauwnHTKKXwglKMLusJfVw8I4q3RhcdFH0USY8ra
-	MZucWm06eOzQ9uQ3DYZzHcDhukolg29QFRIHxAnb5eAil8/m152JHGtOKcKeCxzsZQYkg7UL/RCVB
-	Qfy9SXY6iEZeZmlUZCeLgin5C+MNFgRS6/4rYPQ7y2o3QJi2bT4NOSwsW66BNZUZAwkYLw936mkVx
-	KNfPVnuKtSGNKtlAZAbw65gSa/4zlLGEk4LxKhfffSj4xJLSML9hPJ6/Ko0LwG1qBvIzeaRAKJc+u
-	lSCr2l974gs1XhEsFdXQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wZ6cb9LHpSjAHrKJIDh3JRXpBZU1QQgK7mG6/bi2ftY=; b=krN+kEEs9J3R//
+	V4Phch+Ea0TRj1f4j+D8wsRErbsrcOdhiSL4rRuK7ll/LvnuQHLW/9S4Zl4vLwxwZmHjLIJtaRoV6
+	Jl13qEnKi/q8iZVeQJ9aq5HZgGRvLP7jeK/g2SGIjO4BTaHEev5WnwphrXjXj+UdJZqz0SZXZGcm2
+	yW6k4ykDWvznmbAIte1pqCBpdjHP+nt1elqvDWpgNLcq6s5CiMIp/1pITerZ3i0vS5rqe7a03byqB
+	CyxR81fvxysQonnz9asjlr0z4XkW0o5L0nT8x7rY7vmOuoPx1YtqvLTIrRN/0r+JHeIEWH4SJmdDh
+	jrNjLbcMxxGqO4iDJ4dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI01U-00000001ZWH-2crF;
-	Fri, 14 Jun 2024 06:02:52 +0000
-Received: from mail-dm6nam04on20600.outbound.protection.outlook.com ([2a01:111:f403:2409::600] helo=NAM04-DM6-obe.outbound.protection.outlook.com)
+	id 1sI2PO-000000022KL-0S6h;
+	Fri, 14 Jun 2024 08:35:42 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI01R-00000001ZVc-1E9m;
-	Fri, 14 Jun 2024 06:02:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=PhR8IcLD/GsLqpXUn9tVQxoKPa/pg9vdgxOPwl6Vaaor82sV5T71fI+ex9LysDNLXVK+rJ7V8iFbIe60klbWdNXVRWKlwbntcDX0/XPMpllRuuyO9sb2p1YuEo79jUfqVybDT0dEWcdG+wiouGZe2F5l+FeXGLeI+AbQNSXhIHDoKbB8zYjK91+FHE+JzmgrCx3wS7X6ylHnMT5sSR+FjnDJKvFuuAHupuWMROf+07WK2n6jB5nDhvFgWzF2iWZGra1LDrw3LrPiY0Qn0K/+cMESmDgeZApd3Xu63OlDL5Cd/GucB0QKtFrk8APo1v2a9DCmjntcICbOGs0XEjfDVg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=tPWXZD8/EUcAPJc+Lp8SPFvdV88lVYqQGd0/TSlX8D0=;
- b=RBYODz8QrSS+B07Hgs85d2Aqt2kY6K/jeqdn60PUp8pjI5RmRz65tMG8j1BzdB3h7yjG5TyXk7e51R4b8WRt5yiEZdMwQ97NbgqZ4sZddSqQmfEOjg/PsEU1IoMsa6zIgV6fhZxhARJyZj00ZcQIjrY7gmhuc/a4EeuD88pwu6oORy46Cuv5yQ2M9YaQVyFv2HlwmLWTGWqggtu8i/Xf6Ww+xxnGPkHzL98fEosMKEJYlCCoHNFLkRwdPQPade2nkMaJHpS4hf6kB+3sjnKV226a+nsBrYqLIa+J19uhtyUPNpuZn8vE4dMw2kyz5WbX/OP2QfLOK6y3o/n5oE+sTA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tPWXZD8/EUcAPJc+Lp8SPFvdV88lVYqQGd0/TSlX8D0=;
- b=vyvh4+prcMXPeO9XAbDOiY/6miNt7uWOMjcBDNbC96R0NlZr9+jzzBCjjSj7bfl2TAf73zs8OEiJeJkVeZLJCK2XBnKKe92aeW2eupxrJf/3gGbbXd8kkt7mq/FNchNl8hgpQidxKTCR8MoJ2R+55r8uvHw29I/K+/ZCcJYiypU=
-Received: from MN0PR12MB5953.namprd12.prod.outlook.com (2603:10b6:208:37c::15)
- by DM4PR12MB6472.namprd12.prod.outlook.com (2603:10b6:8:bc::7) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.7677.25; Fri, 14 Jun 2024 06:02:43 +0000
-Received: from MN0PR12MB5953.namprd12.prod.outlook.com
- ([fe80::6798:13c6:d7ba:e01c]) by MN0PR12MB5953.namprd12.prod.outlook.com
- ([fe80::6798:13c6:d7ba:e01c%6]) with mapi id 15.20.7677.019; Fri, 14 Jun 2024
- 06:02:43 +0000
-From: "Pandey, Radhey Shyam" <radhey.shyam.pandey@amd.com>
-To: Sean Anderson <sean.anderson@linux.dev>, Laurent Pinchart
-	<laurent.pinchart@ideasonboard.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>
-CC: Vinod Koul <vkoul@kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "Simek, Michal" <michal.simek@amd.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: RE: [PATCH v2 2/4] phy: zynqmp: Store instance instead of type
-Thread-Topic: [PATCH v2 2/4] phy: zynqmp: Store instance instead of type
-Thread-Index: AQJ83aedMQVFXzZR+sovobCavopdtgFTIz4jsHfmDjA=
-Date: Fri, 14 Jun 2024 06:02:43 +0000
-Message-ID: <MN0PR12MB59535CC0B70185DDF8044AC5B7C22@MN0PR12MB5953.namprd12.prod.outlook.com>
-References: <20240506170110.2874724-1-sean.anderson@linux.dev>
- <20240506170110.2874724-3-sean.anderson@linux.dev>
-In-Reply-To: <20240506170110.2874724-3-sean.anderson@linux.dev>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: MN0PR12MB5953:EE_|DM4PR12MB6472:EE_
-x-ms-office365-filtering-correlation-id: d2aad0cd-bf85-4c84-d73f-08dc8c379b2c
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230035|366011|376009|1800799019|38070700013;
-x-microsoft-antispam-message-info: =?us-ascii?Q?u/KerNC8EZPdnhHs5bV6O9Z82mSMQD8vUPPpnSFNbfICNCjGtXJ0aOxlqphT?=
- =?us-ascii?Q?P6ykmXdKHNrA14xYCVm/1qbbGwycJK6zaSlHVqsEyE9JGmDz1hlwzrwxxQo0?=
- =?us-ascii?Q?vqy6fcFmSl1dpPoPW7OTmlrsqeZcHKptm23NXQtRKgaYY+oQs9bvrFaZ2jvb?=
- =?us-ascii?Q?whl0CB+fvteqwcV8ON9yN6i++zBfcY8L/KNXZnk+J75k4eFoW8cov+jkO5TH?=
- =?us-ascii?Q?YYU88m8jXfKf1dmulnUlDwuinS1i0j4AT1NoJkVG1MqBByyNkmumMaeAL1yb?=
- =?us-ascii?Q?jVaYhmLSFYgaok5mVctHDw2fKIiVvqrX5qpL/XvM4sKijnKb3fgKo2AY5hrf?=
- =?us-ascii?Q?tASNYRPLVSWjjEymevGB2tPzDiE2XwKG0gscO9T0hpwgtQnjjYCk3WiFganM?=
- =?us-ascii?Q?wbfrVboYZO8EHjKFUVvcpukAoXuUDjmwDztXTct/QhtJ/VzyN1CsibZSzt/H?=
- =?us-ascii?Q?g1ziuAkJkYdBx9rQ5dQg1AGhqZ7eey/nsB4GUgtqdbEEBgB0JY3gETdz7SUU?=
- =?us-ascii?Q?l3tRz6+isfpmLgd17oC2DfuTrmz0AQdV3O0pRtWAN3MaFCB0rdbF10LsT1Oi?=
- =?us-ascii?Q?OtjcSXivGZqbz5br99ytvVM0o6poSSyzvqXcZEo6pNSF1Ex88geyEgog9ken?=
- =?us-ascii?Q?3jt9Nyu2u1CSp7jQlKjb5f8S+bvHhg63We2kljsFJiZwBAhJwUxqXhCHxcGh?=
- =?us-ascii?Q?rZVKoGt7mx/NokOsbx/PLENqvM42dyCBXGt+wUR6FylEkSDVUvKCs9Vr+53r?=
- =?us-ascii?Q?EYmsSt/MzEvV1rAha00MenIu7ndEfO4k6GlMJi3jv1e0HUlt2rezi7sRQx39?=
- =?us-ascii?Q?sfr9aoDBFWfQe+3KGZA88+IPF+pBpittLJrF4rF22rxWz0mZzU/sp2Zhz4Qe?=
- =?us-ascii?Q?UX4Xemxu8moUsD1x74myQPCBz2rd+ztJVmkkKat0bWHD+dAmbX/lPmknpH6W?=
- =?us-ascii?Q?LDFT51+XyPsUuNiuKWhRVuUyc7hyxtFTHYGHIidC5KAl1VgcsPfqsbblCiu6?=
- =?us-ascii?Q?EMa0p51MgLZ3vy7nFd0NpNwDAVvA2oeeuqjynV9hegfZf7uSLOeW8A6ss/5a?=
- =?us-ascii?Q?N8xBzGIlZCoz0J/wB29j8GsT7sRYnZLqKyHlBUTK6JPQ2HgNc8FGfbsMvvpz?=
- =?us-ascii?Q?6hkdNT4q2E2gQSHlUiA/oWPAqzRlc39aw/m/xHHUWtFCS8L8LDFwO9xbNjXa?=
- =?us-ascii?Q?jgEueo+irgW1oXASN3oFaCD2KJKhDnuuQMwE7pFU8TE8d7ZteF5WOESTie1s?=
- =?us-ascii?Q?9WBjFSrH14M/QNoCcDqrlV/nqKjKFqf8lp+8Mbcmh547qZgRmLTYeqxdTIRX?=
- =?us-ascii?Q?140c3m3DA0PvLnGys40nag2SJqBkql0S4ZKMp4SUR2wi0pmfQ9g+aKGNirzO?=
- =?us-ascii?Q?2fbeaf0=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MN0PR12MB5953.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230035)(366011)(376009)(1800799019)(38070700013);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?DIiVoCfLMiGEyEiZMQRJWUIsgrmrktk0L2UY4dYvgOoFn0mVl4KL9o/kOGwJ?=
- =?us-ascii?Q?HPqA7i1zq+tfCk6bvBbQ73j7kQxrrnIvNyIHqjitR8jZ/UUR/JIEwL8YoXlN?=
- =?us-ascii?Q?GBAquMS9C9ztpkr8zGQChSZGt2/6sDdxmb8USir6UwXOdBMnJH6GaKfTm7p4?=
- =?us-ascii?Q?EmKiT5R6hKQFs6nFcDqAL+I7ufUOJFu/tfmeLcl9Ucf4huZddCkWXiuKru8Z?=
- =?us-ascii?Q?OyOfyUJ5AUebJF2CdrWsxAj3bqN4NKj+aoN5jbLFE7jwrL2/29oaqBlFWoHj?=
- =?us-ascii?Q?CVDkWdWHAKgNJvO4dPGsBIeEOKpVRwXkr751vfgfj+KwV3Rj/E3FDL2WxNFA?=
- =?us-ascii?Q?2t/YlELIbxOW3w4X3+6JVqv1iYECF7a2FEpr2YMWRxrsj8hR0s8D8YoU/3er?=
- =?us-ascii?Q?T/cwX4AXXhmYSBi8Q0V04DZhde8Z8VbPaeUmPiQVSuJehbuu29ZsRNZ3oI+t?=
- =?us-ascii?Q?AIwhwrE98YTVjIzjaPRsp2ZCubpmj/7dhLJbf3LsG8pageTkorbf7KRQIUW8?=
- =?us-ascii?Q?UhIshNnGWdDKvp9RRXNNzAEWfj8bqaAIt5mHl6l60za81mjXra0QLIj27yAI?=
- =?us-ascii?Q?/cFBggsWLarEeB0bBu/1qctNST3zrDuR12sfePD7JX1zF4/kBSojFkCKgjMR?=
- =?us-ascii?Q?1zg6EsRvIOCnut9BLj8aHLdXXHz4k6mg9EnPO2d3FZVAi5lW0+d9Wt9u8yca?=
- =?us-ascii?Q?qDPYRTwGIFXg16nAKWm85b7xT+oUTTH47CauddEt/TFjMW1o9v3KW/Q3r381?=
- =?us-ascii?Q?rnzaxbtMNVhfvTzBqqPFIrW8paU77zuA6cT6uKS1bRo5VlHvzRTsfJ+7X4cL?=
- =?us-ascii?Q?hSHcQXDmhIO4KAtfqAap+/IdEoPgQBTqRW91WsMrLa6Tleyda5rYlXepa+E8?=
- =?us-ascii?Q?HbuL45vZ8Wd83kiolEXyb4gRVsTn1K6/FQj4YA/il1atWt2TOXDqruAri3LX?=
- =?us-ascii?Q?2y2a/L65/D0XOE0nUiFBtWIStT+lEKLz7x53+wnL6htEst94dDcJfH89IQKe?=
- =?us-ascii?Q?MCEdxRbyj8KPcoFqMd7FXm8N8ls/ZLb72mJM8cHM5za0GsdQCCTESweWuiNu?=
- =?us-ascii?Q?EVv7UjWd77yEaz3fzeg8jmva0OkT0jvUm2wHzs3OX3Z1L2+b448QG6OORGNe?=
- =?us-ascii?Q?ADhKoxJ8Vxo66k0IIkVWiFvJjGGljeLUQSaeTWYs9PtXvTQXR2x2GfreO1ZP?=
- =?us-ascii?Q?jbN0azd6ShDvUtFLORjLcHunyG3fTYmsPvlPtfSp5+2AD03Fg6RShEr+FoX9?=
- =?us-ascii?Q?OXtQIiK3V2+jOxnyXmWUjfEKf2GhpeZHCQHRpYmmoBhXFNwEd6vBDmB8Wky3?=
- =?us-ascii?Q?oJSWv09DEHA7l3N4KZbLkSya33rFUCDyoMmK21wA87AWA/SuJ7XnwlMwuo+u?=
- =?us-ascii?Q?5DQooc7zyY6iBWv27DNMCrwY6Yz87KtYT/XHX6WBlDKWsSeiiQ84CtrW4QD0?=
- =?us-ascii?Q?8n1AMWlnA7VJOo0xFHTd/adf1tTA9jloABT5+QZaL/sPaFYeIo0yJWxdscby?=
- =?us-ascii?Q?o9YYXSgcpORG3xp7jCQ6T5uEzt7sKS/Ib9oR4jcsMwFYf/hlgpbm+gFav4Io?=
- =?us-ascii?Q?epv0/K2yxUk1pRTEyEA=3D?=
+	id 1sI2PL-000000022Iu-0oKD
+	for linux-phy@lists.infradead.org;
+	Fri, 14 Jun 2024 08:35:40 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-52c85a7f834so2502739e87.0
+        for <linux-phy@lists.infradead.org>; Fri, 14 Jun 2024 01:35:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1718354137; x=1718958937; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=3DHzKRpXg9J/TD6lO3tM3V685Xzbxz5fbjLyyBJ38qc=;
+        b=vtURn1rShyK7x8SXqx3CeNIfp4EL8s1qGl0iI0FF+qatjf+HMrkfCl3cqAKvXYUzb2
+         0uT1CFatlPzofjwhhia8MTk3D46iOu35kgUzGsgHxAPlMYYI4HnIOKyR8kZiOYc9hWdN
+         NLJpARrHSUVrcQRNWDV4VmnN1I/JG5S2bEWYtZpxOIAByzJOk5WO0kKaRQIROcLM+WcB
+         iis2Qtkv2VuzU29sHTHlDKpvJ/LLyozHo+cP0xJLqcDrog70Kh0af9qLtRCr8++jpeLF
+         Fn53yWUCxC67h7/S/WPV1MTKjQ0LPFOpw6mTyCVLKILd/P2j0s2do24mzi62NyhaEZlZ
+         9G5g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718354137; x=1718958937;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=3DHzKRpXg9J/TD6lO3tM3V685Xzbxz5fbjLyyBJ38qc=;
+        b=ihfEZqlzSoHYtRo6+FR6cXfLkAizbLCS9Twoy5anzpx5pQs+bPnJt2QXvE6Ys0mra0
+         m8jJDz/v7MkA12BVh2xRJsOX631Do77WykJniwbU4gxV2Wqd1IUzal4vJC/MrQDrMaKv
+         Nhf9Ms5u9CyZcnZCMgUuOhRSAclw9lGDq9+pUlDK6kLK4rZkBlQEo6gXmtYwRw8e4Pny
+         nMHLYHqo/+yPtJ0lwbNhUkfTx5OT4njT0+xZNinh9MiHSHo2QJvxFGxH1X/nb61FM1Jf
+         eb658u0F3gQNdcYpS8ZTEayqAZZ5EiOeiDy2a1m1oi0a9+XhGzH0ViT//OTiABQckAaJ
+         gHRg==
+X-Forwarded-Encrypted: i=1; AJvYcCXi79JUjnlEzX5NBLnkqCoPu+JpSl9SRWYeg3LnEQaiJH8UpIlu3X0HQ2yjGUwxGdsxmoalqG5kRi+tnE0sCsEvgoW7Sjk0puQgbxEBRA==
+X-Gm-Message-State: AOJu0YzaU8aI5U071Y4awI8Zn43ARPozIs8QzkcoPjTePKldmPgCbCMe
+	o4xk/d1YkynPV+AgXsEzSqm4hhBvVroU+WXgAyh6Los0+2yCrmRAkX28dzCgMKw=
+X-Google-Smtp-Source: AGHT+IEQYII1Qj2KahNl20kfi6Kd0iMIEGFVS/P375Teoc/Ydgcxx2q5cNcvZc4KM7O23+ZS+5UwLA==
+X-Received: by 2002:ac2:5929:0:b0:52c:9ae0:beee with SMTP id 2adb3069b0e04-52ca6e90a58mr1297191e87.49.1718354136880;
+        Fri, 14 Jun 2024 01:35:36 -0700 (PDT)
+Received: from umbar.lan ([192.130.178.91])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52ca282f1dbsm444776e87.110.2024.06.14.01.35.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Jun 2024 01:35:36 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Subject: [PATCH v2 0/2] phy: qcom: qmp-pcie: drop second clock-output-names
+ entry
+Date: Fri, 14 Jun 2024 11:35:33 +0300
+Message-Id: <20240614-fix-pcie-phy-compat-v2-0-990863ea53bf@linaro.org>
 MIME-Version: 1.0
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: MN0PR12MB5953.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d2aad0cd-bf85-4c84-d73f-08dc8c379b2c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2024 06:02:43.3822
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: zvNeFlvX69hfQcl67ezaBYN5W1OhaAZ3O69YNIxkYinLaI2/zUrzlw3MxOJPi00u
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB6472
+X-B4-Tracking: v=1; b=H4sIANUAbGYC/32NQQ7CIBBFr9LM2jGA1FRX3sN0AXTaTqKFQENsG
+ u4u9gAu38//7++QKDIluDc7RMqc2C8V1KkBN5tlIuShMiihtGiVxJE/GBwThnlD59/BrGjFOGi
+ y+moHA3UZItXaYX32lWdOq4/bcZLlL/3vyxIFdsZo2dqbuoju8eLFRH/2cYK+lPIF25jAkLcAA
+ AA=
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ devicetree@vger.kernel.org, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1313;
+ i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
+ bh=aXVVMd280kDEU99slp/goCJdHS5H7XE36h5Z2IJXkXg=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBmbADXrUm9cJ44C/Qoh4AWATZBW3PHxHeKo1RHh
+ gPK0/xfq4WJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZmwA1wAKCRCLPIo+Aiko
+ 1QuOB/kBXJliWLone1Vftys+maL+YWswmOnQbrJaQc6CEa3Mie9hAeLIx8NBcEIIXS5NYMOuOOd
+ UCghRsR0hPuJmF0uhQZ8fSVchGAjzz01YWZbj7PVsdM0EX20qN5EWZAPhrUY5n23FqZiVnujqL7
+ lwh+pD6jiErEGx4UZWJS6/4SHCK7h8Grzgi+h7Gsvl5TKrmwIXG6CxIcgTJeux46gUm/ak5tjza
+ qUc3JlGHT4cAKtobXjt7QAqIVGDxSH7OQrnBYIN3WUnWP0wK/v8WbYwZVF4xuEqjXQ89NLYOhzb
+ 6aM5Mwg1u1mmPX4hmyuh3856QQGpinpPcwVipkAywFo8+ZVF
+X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
+ fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_230249_453358_E8DE684F 
-X-CRM114-Status: GOOD (  27.37  )
+X-CRM114-CacheID: sfid-20240614_013539_270539_0180AB54 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,244 +114,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> -----Original Message-----
-> From: Sean Anderson <sean.anderson@linux.dev>
-> Sent: Monday, May 6, 2024 10:31 PM
-> To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>; linux-
-> phy@lists.infradead.org
-> Cc: Vinod Koul <vkoul@kernel.org>; linux-arm-kernel@lists.infradead.org;
-> linux-kernel@vger.kernel.org; Michal Simek <michal.simek@amd.com>;
-> Kishon Vijay Abraham I <kishon@kernel.org>; Sean Anderson
-> <sean.anderson@linux.dev>
-> Subject: [PATCH v2 2/4] phy: zynqmp: Store instance instead of type
-> 
-> The phy "type" is just the combination of protocol and instance, and is
-> never used apart from that. Store the instance directly, instead of
-> converting to a type first. No functional change intended.
-> 
-> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
-> ---
-> 
-> Changes in v2:
-> - Expand the icm_matrix comment
-> 
->  drivers/phy/xilinx/phy-zynqmp.c | 115 +++++++++-----------------------
->  1 file changed, 31 insertions(+), 84 deletions(-)
-> 
-> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-
-> zynqmp.c
-> index 5a434382356c..5a8f81bbeb8d 100644
-> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> @@ -147,22 +147,6 @@
->  /* Total number of controllers */
->  #define CONTROLLERS_PER_LANE		5
-> 
-> -/* Protocol Type parameters */
-> -#define XPSGTR_TYPE_USB0		0  /* USB controller 0 */
-> -#define XPSGTR_TYPE_USB1		1  /* USB controller 1 */
-> -#define XPSGTR_TYPE_SATA_0		2  /* SATA controller lane 0 */
-> -#define XPSGTR_TYPE_SATA_1		3  /* SATA controller lane 1 */
-> -#define XPSGTR_TYPE_PCIE_0		4  /* PCIe controller lane 0 */
-> -#define XPSGTR_TYPE_PCIE_1		5  /* PCIe controller lane 1 */
-> -#define XPSGTR_TYPE_PCIE_2		6  /* PCIe controller lane 2 */
-> -#define XPSGTR_TYPE_PCIE_3		7  /* PCIe controller lane 3 */
-> -#define XPSGTR_TYPE_DP_0		8  /* Display Port controller lane 0 */
-> -#define XPSGTR_TYPE_DP_1		9  /* Display Port controller lane 1 */
-> -#define XPSGTR_TYPE_SGMII0		10 /* Ethernet SGMII controller 0 */
-> -#define XPSGTR_TYPE_SGMII1		11 /* Ethernet SGMII controller 1 */
-> -#define XPSGTR_TYPE_SGMII2		12 /* Ethernet SGMII controller 2 */
-> -#define XPSGTR_TYPE_SGMII3		13 /* Ethernet SGMII controller 3 */
-> -
->  /* Timeout values */
->  #define TIMEOUT_US			1000
-> 
-> @@ -185,7 +169,8 @@ struct xpsgtr_ssc {
->  /**
->   * struct xpsgtr_phy - representation of a lane
->   * @phy: pointer to the kernel PHY device
-> - * @type: controller which uses this lane
-> + * @instance: instance of the protocol type (such as the lane within a
-> + *            protocol, or the USB/Ethernet controller)
->   * @lane: lane number
->   * @protocol: protocol in which the lane operates
->   * @skip_phy_init: skip phy_init() if true
-> @@ -194,7 +179,7 @@ struct xpsgtr_ssc {
->   */
->  struct xpsgtr_phy {
->  	struct phy *phy;
-> -	u8 type;
-> +	u8 instance;
->  	u8 lane;
->  	u8 protocol;
->  	bool skip_phy_init;
-> @@ -331,8 +316,8 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
-> 
->  	if (ret == -ETIMEDOUT)
->  		dev_err(gtr_dev->dev,
-> -			"lane %u (type %u, protocol %u): PLL lock timeout\n",
-> -			gtr_phy->lane, gtr_phy->type, gtr_phy->protocol);
-> +			"lane %u (protocol %u, instance %u): PLL lock
-> timeout\n",
-> +			gtr_phy->lane, gtr_phy->protocol, gtr_phy-
-> >instance);
-> 
->  	return ret;
->  }
-> @@ -647,8 +632,7 @@ static int xpsgtr_phy_power_on(struct phy *phy)
->  	 * cumulating waits for both lanes. The user is expected to initialize
->  	 * lane 0 last.
->  	 */
-> -	if (gtr_phy->protocol != ICM_PROTOCOL_DP ||
-> -	    gtr_phy->type == XPSGTR_TYPE_DP_0)
-> +	if (gtr_phy->protocol != ICM_PROTOCOL_DP || !gtr_phy->instance)
->  		ret = xpsgtr_wait_pll_lock(phy);
-> 
->  	return ret;
-> @@ -678,73 +662,33 @@ static const struct phy_ops xpsgtr_phyops = {
->   * OF Xlate Support
->   */
-> 
-> -/* Set the lane type and protocol based on the PHY type and instance
-> number. */
-> +/* Set the lane protocol and instance based on the PHY type and instance
-> number. */
->  static int xpsgtr_set_lane_type(struct xpsgtr_phy *gtr_phy, u8 phy_type,
->  				unsigned int phy_instance)
->  {
->  	unsigned int num_phy_types;
-> -	const int *phy_types;
-> 
->  	switch (phy_type) {
-> -	case PHY_TYPE_SATA: {
-> -		static const int types[] = {
-> -			XPSGTR_TYPE_SATA_0,
-> -			XPSGTR_TYPE_SATA_1,
-> -		};
-> -
-> -		phy_types = types;
-> -		num_phy_types = ARRAY_SIZE(types);
-> +	case PHY_TYPE_SATA:
-> +		num_phy_types = 2;
->  		gtr_phy->protocol = ICM_PROTOCOL_SATA;
->  		break;
-> -	}
-> -	case PHY_TYPE_USB3: {
-> -		static const int types[] = {
-> -			XPSGTR_TYPE_USB0,
-> -			XPSGTR_TYPE_USB1,
-> -		};
-> -
-> -		phy_types = types;
-> -		num_phy_types = ARRAY_SIZE(types);
-> +	case PHY_TYPE_USB3:
-> +		num_phy_types = 2;
->  		gtr_phy->protocol = ICM_PROTOCOL_USB;
->  		break;
-> -	}
-> -	case PHY_TYPE_DP: {
-> -		static const int types[] = {
-> -			XPSGTR_TYPE_DP_0,
-> -			XPSGTR_TYPE_DP_1,
-> -		};
-> -
-> -		phy_types = types;
-> -		num_phy_types = ARRAY_SIZE(types);
-> +	case PHY_TYPE_DP:
-> +		num_phy_types = 2;
->  		gtr_phy->protocol = ICM_PROTOCOL_DP;
->  		break;
-> -	}
-> -	case PHY_TYPE_PCIE: {
-> -		static const int types[] = {
-> -			XPSGTR_TYPE_PCIE_0,
-> -			XPSGTR_TYPE_PCIE_1,
-> -			XPSGTR_TYPE_PCIE_2,
-> -			XPSGTR_TYPE_PCIE_3,
-> -		};
-> -
-> -		phy_types = types;
-> -		num_phy_types = ARRAY_SIZE(types);
-> +	case PHY_TYPE_PCIE:
-> +		num_phy_types = 4;
->  		gtr_phy->protocol = ICM_PROTOCOL_PCIE;
->  		break;
-> -	}
-> -	case PHY_TYPE_SGMII: {
-> -		static const int types[] = {
-> -			XPSGTR_TYPE_SGMII0,
-> -			XPSGTR_TYPE_SGMII1,
-> -			XPSGTR_TYPE_SGMII2,
-> -			XPSGTR_TYPE_SGMII3,
-> -		};
-> -
-> -		phy_types = types;
-> -		num_phy_types = ARRAY_SIZE(types);
-> +	case PHY_TYPE_SGMII:
-> +		num_phy_types = 4;
->  		gtr_phy->protocol = ICM_PROTOCOL_SGMII;
->  		break;
-> -	}
->  	default:
->  		return -EINVAL;
->  	}
-> @@ -752,22 +696,25 @@ static int xpsgtr_set_lane_type(struct xpsgtr_phy
-> *gtr_phy, u8 phy_type,
->  	if (phy_instance >= num_phy_types)
->  		return -EINVAL;
-> 
-> -	gtr_phy->type = phy_types[phy_instance];
-> +	gtr_phy->instance = phy_instance;
->  	return 0;
->  }
-> 
->  /*
-> - * Valid combinations of controllers and lanes (Interconnect Matrix).
-> + * Valid combinations of controllers and lanes (Interconnect Matrix). Each
-> + * "instance" represents one controller for a lane. For PCIe and DP, the
-> + * "instance" is the logical lane in the link. For SATA, USB, and SGMII,
-> + * the instance is the index of the controller.
-> + *
-> + * This information is only used to validate the devicetree reference, and is
-> + * not used when programming the hardware.
->   */
->  static const unsigned int
-> icm_matrix[NUM_LANES][CONTROLLERS_PER_LANE] = {
-> -	{ XPSGTR_TYPE_PCIE_0, XPSGTR_TYPE_SATA_0, XPSGTR_TYPE_USB0,
-> -		XPSGTR_TYPE_DP_1, XPSGTR_TYPE_SGMII0 },
-> -	{ XPSGTR_TYPE_PCIE_1, XPSGTR_TYPE_SATA_1, XPSGTR_TYPE_USB0,
-> -		XPSGTR_TYPE_DP_0, XPSGTR_TYPE_SGMII1 },
-> -	{ XPSGTR_TYPE_PCIE_2, XPSGTR_TYPE_SATA_0, XPSGTR_TYPE_USB0,
-> -		XPSGTR_TYPE_DP_1, XPSGTR_TYPE_SGMII2 },
-> -	{ XPSGTR_TYPE_PCIE_3, XPSGTR_TYPE_SATA_1, XPSGTR_TYPE_USB1,
-> -		XPSGTR_TYPE_DP_0, XPSGTR_TYPE_SGMII3 }
-> +	/* PCIe, SATA, USB, DP, SGMII */
-> +	{ 0, 0, 0, 1, 0 }, /* Lane 0 */
-> +	{ 1, 1, 0, 0, 1 }, /* Lane 1 */
-> +	{ 2, 0, 0, 1, 2 }, /* Lane 2 */
-> +	{ 3, 1, 1, 0, 3 }, /* Lane 3 */
->  };
+While testing the linux-next on SM8450-HDK I noticed that one of the
+PCIe hosts stays in the deferred state, because the corresponding PHY
+isn't probed. A quick debug pointed out that while the patches that
+added support for the PIPE AUX clock to the PHY driver have landed,
+corresponding DT changes were not picked up for 6.10. Restore the
+compatibility with the existing DT files by dropping the second entry in
+the clock-output-names array and always generating the corresponding
+name on the fly.
 
-Feel this change reduces readability and introduce magic values
-for icm_matrix and num_phy_types. At times decoding these 
-numbers can be hard. 
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+Changes in v2:
+- Fixed generated AUX clock name (Neil)
+- Link to v1: https://lore.kernel.org/r/20240521-fix-pcie-phy-compat-v1-0-8aa415b92308@linaro.org
 
-Can we retain deriving num_phy_types from ARRAY_SIZE(types);
-and also defines for ICM matrix?
+---
+Dmitry Baryshkov (2):
+      phy: qcom: qmp-pcie: restore compatibility with existing DTs
+      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: drop second output clock name
 
-> 
->  /* Translate OF phandle and args to PHY instance. */
-> @@ -822,7 +769,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
->  	 * is allowed to operate on the lane.
->  	 */
->  	for (i = 0; i < CONTROLLERS_PER_LANE; i++) {
-> -		if (icm_matrix[phy_lane][i] == gtr_phy->type)
-> +		if (icm_matrix[phy_lane][i] == gtr_phy->instance)
->  			return gtr_phy->phy;
->  	}
-> 
-> --
-> 2.35.1.1320.gc452695387.dirty
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml      | 7 +------
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c                         | 9 +++------
+ 2 files changed, 4 insertions(+), 12 deletions(-)
+---
+base-commit: 6906a84c482f098d31486df8dc98cead21cce2d0
+change-id: 20240521-fix-pcie-phy-compat-b0fd4eb46bda
+
+Best regards,
+-- 
+Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 
 -- 
