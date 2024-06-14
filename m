@@ -4,164 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60AD2C27C77
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 15:53:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E4A0C27C77
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 18:34:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Cc:
+	Subject:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQQyMZSyHL2jWuy1swdcIuvZjPXaqtC4mDFEQ8sFCYg=; b=ReKiJK4jYjYHuS
-	thCFyjJ6sUUN5851/a48zj96Wx8RSzQaXljwbkXt0p7SkLHmxaDdC62vxZo1LKnFWZQEqL0yjvnaD
-	pGZ1ygcbG/gT1B3nQSx6UdMIuNDAuTLTVUYog2AfaNu8eufZvpJ+ZuQpox9VgXXGMMZoSi02JC3gj
-	e3q3CiDnFiSz7iyBPK/635k4Hb+KTSIVT+XfCtFfnPUd9QR98WTC0aE8yGY+xYR35PDOTtCehOEj/
-	pEAviNdN0XoNa1Ino34xDbU8nA/SPmtfVH97xf58r6a9Gdd0utIlT+DRrl7tr3u8Tzi+n7SaBS/h4
-	aJGVbGMtYArVIJ+RUj4Q==;
+	List-Owner; bh=e/f9zU5obX0deNY7TOIuW/ex4Dbm7PeX1kl0VHQ3QNo=; b=gD8CAqRQbRs2hC
+	sggY3u7QYwKuJZj1dwHQmZYcgG4d2Kg6U95xOD2U94/DBSiIIcg63wJXxjmMvnfyqXbWfd/L08Zvx
+	sHu7eBjrlzC3dYUZNUfuGYq7xAf5M/mZftBZG4NBa3ShmPP43k6ImcolKgeIZ1zOJ9LPwT3mSLlRr
+	nWkMGt+UOi88bSEWX7xIkJpRuMQPmW+WW9AWGgW42elX5SHfIkSXfJZaLG2EzLApsjSu3lccpKygZ
+	ZkPJHdrom2dr60JFyClZTr/mYQVw8WeLaCYgQBI6exZJ+0F2YlLWNG6qpIGIUIMFD9G7UC/RPGtSp
+	LwUApiSBdTPlFk5UlLew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI9Eh-00000003JRR-45RU;
-	Fri, 14 Jun 2024 15:53:07 +0000
-Received: from mail-tycjpn01on20601.outbound.protection.outlook.com ([2a01:111:f403:2019::601] helo=JPN01-TYC-obe.outbound.protection.outlook.com)
+	id 1sIBkx-00000003m00-29Hm;
+	Fri, 14 Jun 2024 18:34:35 +0000
+Received: from www522.your-server.de ([195.201.215.122])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI9Ee-00000003JPr-1A79
-	for linux-phy@lists.infradead.org;
-	Fri, 14 Jun 2024 15:53:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fWqPUXUCbT+9AN2z8fSxpOXWNsI3ylVb6+tfVJAk9RJ1Y66ByQdfmhcJEr5L91XkOuNNtAa3dS4fE4UwT/e8FkhGUX88q4BEQtmkWOADE402L1Cnqll07AM7KwOGQ1iqAvovm7RTSytw8ApJPRx2ftUSfO9mb+pRhCl0xqX+DI7lynKUHJ9ffJOVSqaGoysP6OVfc9cBugq2BRBQJzBoU9vL9tPpsn12+ZBLJ1A9DCXZCwwS2M+5z6i9b4zZumyKN4EcmvZ+THxsd6SYystI5kcuESsn0XclXxNA9zfKCp+8nYHhXd1D66AFQ+jGMxjT5apDMWvWamn3h9/nbZ7kaQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Zyc/dQ7TXgZciLUuZsgksomWXgXd7IYTrBdVV0V6wIE=;
- b=N2oBAxBOOEf6GnJNfhwE7jy81/ae9nu+ofHkcVubOe1GKw/hzwvPo74Vsrgnnj1lZLOhBCysAzNX5aEWuFBTG/P/2w9dp9aUJAua/xNYKPS8cCyUSVs22lVZo1By/DgaSa3KPX+JvASS9mo4iWH73dexoUXqzvHI97c9sFH2wHF+0Zfod74H/IvfFh03ycIpxE0eI5n6zNUeXuDSOp5jfz2PaVIg5nycffWETwAPa2Pv/us061KoZ99xnaZGyj8fp/rM9DyMHU02owuKHN7htaBnnfmdKlGPqNoWUhONDtCn6FgkFigta2/l3BDUn7ly8iRzUDHQG+DAT46qew+byg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Zyc/dQ7TXgZciLUuZsgksomWXgXd7IYTrBdVV0V6wIE=;
- b=caE/0yzfgC2tyucSEfSToXpqeGxv0ncYFlX4zCzTckh90/W2jKX6dgVB/pt3qF4GmIrg8L0Yu4IXMZFAMYnH3YgbvYKdQnN8+0Cn6Z0HVk2irfeYMcfXkWlJc5u8pl8nPU5yN2mod3O2fMMRU8x/L+185RSa2yrf/iO1/zpcpHU=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYAPR01MB5708.jpnprd01.prod.outlook.com (2603:1096:404:8058::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7677.26; Fri, 14 Jun
- 2024 15:52:56 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%6]) with mapi id 15.20.7677.026; Fri, 14 Jun 2024
- 15:52:56 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Mark Brown <broonie@kernel.org>
-CC: Liam Girdwood <lgirdwood@gmail.com>, Philipp Zabel
-	<p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham
- I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
-	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, "Rafael J. Wysocki"
-	<rafael@kernel.org>, Len Brown <len.brown@intel.com>, Pavel Machek
-	<pavel@ucw.cz>, "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>, Geert
- Uytterhoeven <geert+renesas@glider.be>, Prabhakar Mahadev Lad
-	<prabhakar.mahadev-lad.rj@bp.renesas.com>, biju.das.au
-	<biju.das.au@gmail.com>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>
-Subject: RE: [PATCH v3 3/6] regulator: core: Add helper for allow access to
- enable register
-Thread-Topic: [PATCH v3 3/6] regulator: core: Add helper for allow access to
- enable register
-Thread-Index: AQHau+8g8jdUQb+BWEyWYz8fbD0DGrHCqBcAgAAUSDCAAYw8AIAC3s8wgAAv4YCAABZhUA==
-Date: Fri, 14 Jun 2024 15:52:56 +0000
-Message-ID: <TY3PR01MB113461D9FCEAC66C85D940A3886C22@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20240611110402.58104-1-biju.das.jz@bp.renesas.com>
- <20240611110402.58104-4-biju.das.jz@bp.renesas.com>
- <ZmhmWrvyQiCzzeYi@finisterre.sirena.org.uk>
- <TY3PR01MB11346B807820F681E7EEF7A6786C72@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <ZmnDwKUlXCWFJ8W0@finisterre.sirena.org.uk>
- <TY3PR01MB113467AD31470F72C75DBF41986C22@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <ZmxUUbpGZiZMlHVE@finisterre.sirena.org.uk>
-In-Reply-To: <ZmxUUbpGZiZMlHVE@finisterre.sirena.org.uk>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYAPR01MB5708:EE_
-x-ms-office365-filtering-correlation-id: e25b5c4e-db53-42bf-042d-08dc8c8a0f36
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230037|1800799021|7416011|366013|376011|38070700015;
-x-microsoft-antispam-message-info: =?us-ascii?Q?vb4ZzXv8UleGFfB3J4rP82Cx1KtXlYKdXuGIjYfqDGkalVNSugeWbXucV/jY?=
- =?us-ascii?Q?udJqHeqiRZjmgzD/dCXjwh5DnA2iJm4V+Q4zeqG2o5o0GyjhejBUiLYfFkxx?=
- =?us-ascii?Q?V9Hu1sTbocL7LphUtGbhS4tB3ARDyIriXTZKHDdmOMvAp5+6iUvFcxSBCkod?=
- =?us-ascii?Q?iY5YWRC6jkEOBED6G8PIpX+hnICD1d37RXsukqHJWioQ+AUuZs1qrJX/waLm?=
- =?us-ascii?Q?Emg+0t+/Bs4vCzPHUQqhytr3eF0w2WA010xogDRhYd1ZL3moUhG93pePPH3r?=
- =?us-ascii?Q?VX4hEmtTdo71l2/uAAH9iH5/lBwk1bIaCQbdaeVrwBKF9Qf4dOQZGoIxVoCL?=
- =?us-ascii?Q?QkkXy4246Ry9PrlX/7kRUrwg7k4P3Mcns7ffbciOBWdn4LTWXp/JgcfcV8+d?=
- =?us-ascii?Q?w2ASTQSEGE1VsObM4apw7yiCmyZ5v7N+WCF7wUOLUdIMkL3dDMCd7jPKerk1?=
- =?us-ascii?Q?iDyPqPSgR5jh2ygeR5NKtpV9KTarPD/d1bneedVgMFPj55Aeq/zXNd93DRlE?=
- =?us-ascii?Q?QdqZle0KlvExMJCnHVi7xipB9jEo0mELRzTTucgPN8goAO5248K29jFEv0VN?=
- =?us-ascii?Q?7lskwoIk5rdtwGkAuuGQtgfStchQP0+qXEQxOVMXPNZi652+taTF6eqyw6Wa?=
- =?us-ascii?Q?wuLuhFO0q6duA4yuNZos8JEX+FEc1h+Jyx8KP6XrZZYAkW4YWZH4pw9NeSDE?=
- =?us-ascii?Q?rlkjQZUnMP79Qphzys2h3+jZq5bnT5aoJ/pF8MWgLS5UkzF+V5KrYssoQ2u1?=
- =?us-ascii?Q?RqF2dZyE88ZWRiTi/nyUh8SfBEJqAN5XbNT2THRnRMhT8xuvs2dtOIa7Qn6P?=
- =?us-ascii?Q?pIVj8fXs+nba0hyVN2Zik8qE4GLq5+LHBu6pcEVoe43qz9u12z+l7EqBQd0j?=
- =?us-ascii?Q?5KE7gdZPTQqzggCwkP8uqYSws5qDOm5Y3hWRaND9Rlx1/jyvnTY52f/4DSAA?=
- =?us-ascii?Q?/merId1dr87ADZO/imQ90lMy/S20HOhepH5gApXsR4CY5L2rWXc/RKkSqCVz?=
- =?us-ascii?Q?tXBEYgSqB+hD9ePFy8MUFQLZMpNs0YgQzvnfFMV83TLiZmcZlrLYVJPFZU7q?=
- =?us-ascii?Q?Hrq9B3WlRB98c3PgGMtrXjKI8XWQbSZZceLCu8HWkZmtrN+/GJbjYvNfsQwW?=
- =?us-ascii?Q?LpbdbJlMzO9ARgWBK1NXDnz5lUk1b499c7vYRVBUObNQoRcHyvBhCL3OnE2C?=
- =?us-ascii?Q?u3//AUtEmk24fTEgyEYamoxOlwvlfA4MzVFuZDCovr0oOpZVYXEQbUG3/nxX?=
- =?us-ascii?Q?kx3vCfQE4KrsHkNC5uKXWVC+sbyhCYJlKutMA7rkg9xDk27CN261SthVb9Da?=
- =?us-ascii?Q?sYBsf4rRIiQZRSXdkdx36VYJVJ1YDIZtth9aqaplkqwd/fPF9wtPFWUqrd6e?=
- =?us-ascii?Q?k495i6c=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230037)(1800799021)(7416011)(366013)(376011)(38070700015);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?eKC7Tx/vNWyPJbv2SHDFLKofU0BhZenyph+YkpMQDikxtRLxzrtR82tkN3XX?=
- =?us-ascii?Q?KKAGWyMkYAqX1uHtuQTacAZA4hII763YtnVzETuZKCk5sNKMremOiDmxt4Wi?=
- =?us-ascii?Q?xWrSL0Ql8SqCSebdy4DuHh0kXYiwKNpQaYuA0AcuB7LkszPmKmxZ87Ox/+bu?=
- =?us-ascii?Q?BL5bNjorhnShOQTjflQaYc3tIotM0BZFnf3YvRjIBIbM2/jdGCqhxPkSWMln?=
- =?us-ascii?Q?3WRJ8oVFAfELFyxqAtUcS0ZiiIH7XjqeNTQmtAG8GogZjUdi1dbge43JhbHw?=
- =?us-ascii?Q?J3Cf2pUpeO5pyPR7XV8dp8XJyPZh2BgsPmnEhklBxRCL/zfjilfPjHb5PH8z?=
- =?us-ascii?Q?kA9H08CRoSpR/ZHiaj4B1lFebWhjeLXR/bv4A+SpK3QXxX5SBuze9t7Cgzmd?=
- =?us-ascii?Q?KSipXqVdSOeMJGguWWPZr2K57TIoSHYVshZbmpfYfclnM4T7f1pR6zBMfMtX?=
- =?us-ascii?Q?atIRsfqKWwldztInQ060HRpaSKd7b/zCx37svKAwelouf7v7ZVzc5YmBTWQG?=
- =?us-ascii?Q?HeS7mUp75WzC60+dNPt7V2Jj3R+wQL5TqGniosMs660q53SW41rxwujJkJo9?=
- =?us-ascii?Q?FMFW0T2p8QSFy5id/qzaZZ1U0pCQi4scbIf9ptvbuW6BxTz4AGhS8XeyBPw6?=
- =?us-ascii?Q?kEAnKVVpbZVK6y3hYdMX0PX6qOY7IC+9JhMpcSFetmgTPJ22MZCTmc1v3jye?=
- =?us-ascii?Q?RAtvhmX0qYQViNbTp4Blf7ZJQ2iVfEDHgt1YJiiKdwvwsrBUQlYzcRSVhBhR?=
- =?us-ascii?Q?V0cCAF1LWFgCCq5jbI8Xswv/R4qw8G2UqklCK68QJTpiB0mUUsz4JnVmOUQb?=
- =?us-ascii?Q?n7XhWkZhZOPHnwUZzSh5pWhKKvhib3eENqFwW/2RiWZJsIwvhCqG3eD+9prK?=
- =?us-ascii?Q?tj8o6/SaPE37an6m7ZIiBWH/xDZ/eaePv+htcNMXdz1YjNikv7x745mcj6z+?=
- =?us-ascii?Q?PN6xwB71SHZ009OFx99EIO5gp8ADmO6zHXaUyNAGLvHIJapLKkGzy8z6RENq?=
- =?us-ascii?Q?2lTpp+ODt1zJEVmMiPSQq8VaqanVG0LELJcXxbe/CavKxVL1f2UHs+nB6FHd?=
- =?us-ascii?Q?VRhFiBe7Mkq36UYoV0aEWsmpVZ8nrYo/oIdxKa00LcRg5P1zYL/jm47eONo+?=
- =?us-ascii?Q?D0Ud5QtbPcMWtK0RqPN+1RVgFrFiGtqNgnLEX5bzdB4VN82zRvxxeq7htO4e?=
- =?us-ascii?Q?EO+auOWMbtYZj2yphAjY/iiEkqBCz7RH5xs5xi5+kwkM/ZdtL7FDHHQEKfRt?=
- =?us-ascii?Q?eyyxQr9LxO3R4HR2NgmL2GHlgjPBItcmeUr+MQVvu5Eh371NObPrMlLm77Zu?=
- =?us-ascii?Q?UBefXf1DNQKn0AebP4Z2pdj+/F3kiFGnMMYuzCOO52SZoCklr2hNkGwTVdUD?=
- =?us-ascii?Q?t7VQKJVTJRlszKc0rvnHu62U4CGAJymy4QWCuh2er5A55b1Ymm2XXYe+htWA?=
- =?us-ascii?Q?plisQg0D30nIMacWi64drNYxKIFzTF4e6akb96st4xRE6xcb/3Ph15c/9FDN?=
- =?us-ascii?Q?J5eIZPwXDDcV0LnaK3aL1uFjOk6hwdlLgi2d6n0XFmHIBSX4vBpa2SR1rySt?=
- =?us-ascii?Q?W65DLHZxlvOc9sDk1VJ4yzbSo2s8p8dkOVdz6KUOXwdbxKH31L69XMWbOKcg?=
- =?us-ascii?Q?cA=3D=3D?=
-MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e25b5c4e-db53-42bf-042d-08dc8c8a0f36
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2024 15:52:56.7725
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: eOQB2CkBog954Ii5ZO/15JA5kf1d25bEuRsBIBqK2K7ZQh42Qc7wMNX9jsskH0muuLzcQCqfSpypNEMNGl92b2cOqjGe7cN67qzPlAb9u2E=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB5708
+	id 1sIBks-00000003lzJ-2S1Q;
+	Fri, 14 Jun 2024 18:34:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=folker-schwesinger.de; s=default2212; h=In-Reply-To:References:To:From:Cc:
+	Subject:Message-Id:Date:Content-Type:Content-Transfer-Encoding:Mime-Version:
+	Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
+	bh=QENhb9HFgTzguovvznEeWYIHmMFEH/ZbGTpLCqvvbY0=; b=D1SQpY5Q3iU5y6hS8x3yCA2fCw
+	Xefzm8C0+45Bsx/hdgDkRNbsSx/QEswS5UQ34JGXS6GhfYViD98oyeBpeza3esE6hVmq+sMfSpn8T
+	MJJI+G8UJ9YF3ttwRvN2GliXh7gTihyr1Teipx7qAcKSLC9+xmPwqQ3M4P902G7Q4kAbEikSprWDp
+	e8SrOyC+SUT00xqTD9EEtEC3l5gsMjEhnROTiPfNaL+m4kFPdK9Qw69K0E4pVp5Kbca6f05ZV1gNU
+	Yp3CcMz1SO/a4C5cqCgerfhV3SGCbSYwDnIxP5DmaKdXcDjCMjkPzH9zKrlNe0dUYFb8725cOivwN
+	3AkQUWVQ==;
+Received: from sslproxy06.your-server.de ([78.46.172.3])
+	by www522.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <dev@folker-schwesinger.de>)
+	id 1sIBkj-000LiY-5F; Fri, 14 Jun 2024 20:34:21 +0200
+Received: from [185.213.155.213] (helo=localhost)
+	by sslproxy06.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <dev@folker-schwesinger.de>)
+	id 1sIBkh-000GCY-3A;
+	Fri, 14 Jun 2024 20:34:20 +0200
+Mime-Version: 1.0
+Date: Fri, 14 Jun 2024 18:34:19 +0000
+Message-Id: <D1ZYFRA8S0KC.3GG78DB9BA5AG@folker-schwesinger.de>
+Subject: Re: [PATCH 1/3] phy: rockchip: emmc: Enable pulldown for strobe
+ line
+Cc: "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
+ <kishon@kernel.org>, "Chris Ruehl" <chris.ruehl@gtsys.com.hk>, "Rob
+ Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
+ <krzysztof.kozlowski+dt@linaro.org>, "Conor Dooley" <conor+dt@kernel.org>,
+ "Christopher Obbard" <chris.obbard@collabora.com>, "Doug Anderson"
+ <dianders@chromium.org>, "Brian Norris" <briannorris@chromium.org>, "Jensen
+ Huang" <jensenhuang@friendlyarm.com>, <linux-phy@lists.infradead.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <devicetree@vger.kernel.org>
+From: "Folker Schwesinger" <dev@folker-schwesinger.de>
+To: "Alban Browaeys" <alban.browaeys@gmail.com>,
+ =?utf-8?q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, "Conor Dooley"
+ <conor@kernel.org>
+X-Mailer: aerc 0.17.0-152-g73bcb4661460
+References: <20240326-rk-default-enable-strobe-pulldown-v1-0-f410c71605c0@folker-schwesinger.de> <313d5a24b6cffa1a9160e624bb6855aa7f66589e.camel@gmail.com> <20240411-mushily-pucker-732583c1d340@spud> <2192003.Icojqenx9y@diego> <2427291970ac0962bf56b2455e5cb26e49d42c51.camel@gmail.com>
+In-Reply-To: <2427291970ac0962bf56b2455e5cb26e49d42c51.camel@gmail.com>
+X-Authenticated-Sender: dev@folker-schwesinger.de
+X-Virus-Scanned: Clear (ClamAV 0.103.10/27306/Fri Jun 14 10:28:44 2024)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240614_085305_316133_B87E7D6E 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20240614_113431_036258_88500F97 
+X-CRM114-Status: GOOD (  22.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -178,35 +91,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Mark Brown,
+Hi Alban,
 
-Thanks for the feedback.
+thanks for aggregating all the background information about the issue.
 
-> -----Original Message-----
-> From: Mark Brown <broonie@kernel.org>
-> Sent: Friday, June 14, 2024 3:32 PM
-> Subject: Re: [PATCH v3 3/6] regulator: core: Add helper for allow access to enable register
-> 
-> On Fri, Jun 14, 2024 at 11:43:39AM +0000, Biju Das wrote:
-> 
-> > To access the hardware register for enabling/disabling the regulator,
-> > consumers must use regulator_get_exclusive(), as it can't work if
-> > there's more than one consumer. To enable/disable regulator use::
-> 
-> >        int regulator_hardware_enable(struct regulator *regulator, bool
-> > enable);
-> 
-> We should also enforce this.
+On Tue Jun 11, 2024 at 9:38 PM CEST, Alban Browaeys wrote:
+>
+> Could you test the enable-strobe property on all the dts that  disabled
+> hs400es due to this new default (I lack the hardware to test the
+> patches).
+> At least arch/arm64/boot/dts/rockchip/rk3399-khadas-edge.dtsi
+> arch/arm64/boot/dts/rockchip/rk3399-rock-4c-plus.dts
+> arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dtsi
+> and ping the board tester for other boards to test if they require
+> "rockchip,enable-strobe-pulldown" for EMMC HS400 write support (read is
+> fine even with the new default).
+>
 
-OK, will enforce and return error
+I tested some of the boards that include rk3399-rock-pi-4.dtsi (see
+below).
 
-	int ret = -EOPNOTSUPP;
+> On Tue, 2024-02-27 at 10:11 +0000, Folker Schwesinger wrote:
+> > with the following applied, the EMMC related errors are gone. dmesg
+> > only
+> > shows "Purging ... bytes" during my tests:
+> > 
+> > diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dtsi
+> > b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dtsi
+> > index f2279aa6ca9e..ae0fb87e1a8b 100644
+> > --- a/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dtsi
+> > +++ b/arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dtsi
+> > @@ -647,8 +647,10 @@ &saradc {
+> >  &sdhci {
+> >         max-frequency = <150000000>;
+> >         bus-width = <8>;
+> > -       mmc-hs200-1_8v;
+> > +       mmc-hs400-1_8v;
+> > +       mmc-hs400-enhanced-strobe;
+> >         non-removable;
+> > +       rockchip,enable-strobe-pulldown;
+> >         status = "okay";
+> >  };
+> > 
+> > For testing I ran dd three times in a row:
+> > 
+> > dd if=/dev/zero of=./zero.bin bs=1M count=5000
+> > 
+> > I tested this on both a Rock 4SE board and a Rock Pi 4B+ board with
+> > the
+> > same results.
+>
+> Folker, are you confident "Rock 4SE board and Rock Pi 4B+" were fixed
+> with above patch?
+> Ie the "rockchip,enable-strobe-pulldown;" should be under an
+> "rockchip,rk3399-emmc-phy" compaible node, that is &emmc_phy in
+> arch/arm64/boot/dts/rockchip/rk3399-rock-pi-4.dtsi, not sdhci.
+>
 
-	if (!ops || !ops->enable || !ops->disable || !regulator->exclusive)
-		return ret;
+The above diff was just a quick shot at testing the
+"rockchip,enable-strobe-pulldown" property when I first learned about
+it. I later realized that the property belongs under the &emmc_phy node
+as you suggested. That's what I did in the other patchset I sent a bit
+later, which was accepted and applied:
 
-Cheers,
-Biju
+https://lists.infradead.org/pipermail/linux-rockchip/2024-March/045723.html
+f720dd9b8b6d8b2160beda789429d5489ce8a099
+c1b1f340dd7db11f273e426e110697551c9f501f
+
+So yes, the Rock 4SE, Rock Pi 4B and Rock Pi 4B+ boards all were fixed
+with the patch. I regularly have the Rock 4SE and Rock 4B running from
+EMMC, always with the patch applied since I sent it.
 
 
 -- 
