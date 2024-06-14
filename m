@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69FFBC27C6E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 05:16:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA73DC27C6E
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 05:31:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xng3zy9UnCPxm9dklnBz8YJdgnE8BqUuj7qgMS9rzC4=; b=RG8gxKtU/EdgQ+
-	SeJwn4cwRh5zTL41GXE+lIy8ee2wpBZA1crOLsvyFhtw0GecJrsGafzUaulAcHwbxbkkPcMxObAsm
-	gRNtUkwfFgZtBbmsR+5oWUOt13xOhUuKTqeKqzJk2SsiXCSZNfmxeLUd8Z6tj9opj0qGlz4f/kR4F
-	Wqcxp2Lyu1mfZkhxOPrAj5R35upwE/5J/tn6zIaJHnswoTXZVeoJVv41O917shNQAdnQAt+tTFCa7
-	QHjY0enJxRIAJlR3IcK5WFE4SDjvLwZ3wOrvslXVYWOIsSl558WDqBqxrzsCupzIfDge7sDQEgHpc
-	BQY3Tx2txJq2DD3jAYTw==;
+	List-Owner; bh=ypuPDebwH4XKOEE60Q63JanJDV+xAeAI4YJZoHZXkFA=; b=kzCPySzRwJWu8O
+	G3s+sebi4pzIPrv0yAtScdGPWd0DscOisOEICgAZ3392P+J1HDVYQBvh8R5qo374wc1uLX2eVpzGf
+	57x6lSZclLBdJmu8RCLnaLM6cptgHyD6bcAv6T4UFLTvHpm5iE6HP4CC10uNB4xtYMeaT5xDYy1nW
+	UZX7OZzW+15HzMX9RcraGkzr5UECtOMmxxaVWM2x+uG1j+GB4BwE2W8pUqzMVsYJduSsVxA60zAj4
+	+L9UxP/EGvbOvBYBIUzQt0fpFSBIDhKhnjpoG88FeAGSksHWZz1yx7Er5eMtuof/jo9CRp0Js1N83
+	dAJmsxjT0Ta/Jy0NrbRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHzIt-00000001Tmc-44c0;
-	Fri, 14 Jun 2024 05:16:47 +0000
-Received: from mail-co1nam11on20601.outbound.protection.outlook.com ([2a01:111:f403:2416::601] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1sHzWk-00000001VjV-16q2;
+	Fri, 14 Jun 2024 05:31:06 +0000
+Received: from mail-mw2nam04on20629.outbound.protection.outlook.com ([2a01:111:f403:240a::629] helo=NAM04-MW2-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHzIr-00000001Tle-1LcX;
-	Fri, 14 Jun 2024 05:16:46 +0000
+	id 1sHzWh-00000001Vio-04ls;
+	Fri, 14 Jun 2024 05:31:04 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QZ3OusTho5/rHoMkgRTXZ7/3zMUSm3Gend6n3T0RMqA/SglCg8RKSgJZdFFbHNRrvORlsjI5rHFses3fyJKXAiu3zMeP2fe8GfDk7OLZk2DnE2I78Xaan/8VUrrcTJfpMdAZSD2IfgXBlVOkqLAS+nvYj8Ebzxy+pCtkhLpE3HGxLvAHivH+D2Oda2z8uH+N8NXxYqp4LS+UabdUIaUt4UttR8/I43NQkbIrTMOEhOtgYAm9SyHu+fA9xzFdgS+kKh7YUeJwWMGaCf2tZP1PhSZxQ3haZi0wrPGMt5FvFfbIO2Wkj2Efvmh2YUGyQdJ25Dsfh7g9UvjiHlJLd7IMwA==
+ b=G0iicvpa2bBeb6xMWuwIfQx+EUNpTDHEWh8rjeFsj7vhgdlIQRdFabQAmyPHyH76Hl1AKm0emyG6X/Euwg9VW/jEySjUya9t465+fkSVefTPEm0+VFGUwINcBFAU1lltZ/nueAlothukksJF8RkgWAf16UilxzC2z880WkYHy3i2K7bCwS2UWMlsEsr61F9Xtf/YUCrREjQXVNW4T+4Dq1vf9BfYLydy9/nUoKioKcfXupu6Uj0ElGXLkXo2l7suqLyTYzFqv2WLu/0n4yW7kRM6PKcKAzVRo1bcvrerRk51nMhZCVAsiRVbyUvvoAS9omr22ziyUcaLDSBuQwInuw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+av2u2YsQWHGce2DmU5Dr1ChP50JsPcsvChLMB4tnNU=;
- b=V9E1JDtRJa5OWdA2rYJ/fKwoA1Kql5NYma9u4x18e0nQ2s4WEBEL1HjtjrzJcAauN8RrA0yaISMg+PaI6rYm34jD0izm7n+PjTQuDLch7WaMv8d4vzyy27rlaKPKWYBYDCmcLW6z5Je+9L9nCTc55Q2BWtoFCz5DeKGurWbgdb0OdUAXuMEDwxhEEUPDiMGdV+kU7HRaZRSgAETSy56JNkkEpcuZkXGfvfh/B4aKxIwaygJ6b7hOWhh4vNCGuKaz1rNVTqSBae2ADKdaPvMnujRFUvX4iF5QPl+sHZT9yfoss7MQLQYy1uMR3ZN4pZkmVwZQYYBCGoke0R5/oYle9Q==
+ bh=aQiB4u9gZWWkPufoxGECoKRQQwjUXq2O8VV2pYq0/Es=;
+ b=i8gVS0kZCuCMidrnSvw7FKSNVDxiAY7XN2RG1xvlJcDgepU0I7/3ttau9Z4jvEbAV8TSBu+Z0tsD/1hLVef84heGlKavU3S8HkPX+kjBPTeeNHLs5uxumH/xYqPbrRRGAhJP27CLFQ8e59mBFal1lbjUHRU/X7CZ/rs7TwUyFo5HZ+lgzNV1Er24qhOZ4w2nlAxigSXJ0+H3kOtBIVOGLhg96b1t0nlbJnbeMgMGuZJoucGlOSzfe1eh+5TpsDYf4l6OKqtHZ+ZMmnPone4RMc576EJCSa0/7wTrkEdJChAKsPqq3jL6jKhgswp8U8x02ZGnb8q3wIlFV+gxY5ovOA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
  header.d=amd.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+av2u2YsQWHGce2DmU5Dr1ChP50JsPcsvChLMB4tnNU=;
- b=EendjkDw26sA/M0LZwUjONTUttorIgs6c+qefsM8FBNMhyVVlClkjvcuL+EzEdqVtMRAHCS5FmzzjUk2qY5cu5HqcnE9/O/u9fDmeOUe9LEBS3KMCHCEqzY0YbC5kgCfQ/IWj4C9Z6+54Pd7cKSOXXn1GVFnUzKV6wkVS8g7iHA=
+ bh=aQiB4u9gZWWkPufoxGECoKRQQwjUXq2O8VV2pYq0/Es=;
+ b=dmW0xBgvqs/geySMPAYUHxv1xwsPOMhfwvb90wyYMqYtmvkp3fGEBR1XpbVf2jusfcFNhQH2AbnTa7BdPqfM93Vo/Ut5HApQ2R/o070k64uErT4R9fb3zBPcNK+t0jMUlO+6J6yU1hxwtSl5xHrhZPuaX2NW7vmYvDdoVfnAs2U=
 Received: from MN0PR12MB5953.namprd12.prod.outlook.com (2603:10b6:208:37c::15)
- by PH7PR12MB5830.namprd12.prod.outlook.com (2603:10b6:510:1d5::15) with
+ by SA1PR12MB7409.namprd12.prod.outlook.com (2603:10b6:806:29c::11) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7677.25; Fri, 14 Jun
- 2024 05:16:34 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7677.24; Fri, 14 Jun
+ 2024 05:30:58 +0000
 Received: from MN0PR12MB5953.namprd12.prod.outlook.com
  ([fe80::6798:13c6:d7ba:e01c]) by MN0PR12MB5953.namprd12.prod.outlook.com
  ([fe80::6798:13c6:d7ba:e01c%6]) with mapi id 15.20.7677.019; Fri, 14 Jun 2024
- 05:16:34 +0000
+ 05:30:58 +0000
 From: "Pandey, Radhey Shyam" <radhey.shyam.pandey@amd.com>
 To: Sean Anderson <sean.anderson@linux.dev>, Laurent Pinchart
 	<laurent.pinchart@ideasonboard.com>, "linux-phy@lists.infradead.org"
@@ -57,16 +57,14 @@ CC: Vinod Koul <vkoul@kernel.org>, "linux-arm-kernel@lists.infradead.org"
 	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
 	<linux-kernel@vger.kernel.org>, "Simek, Michal" <michal.simek@amd.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: RE: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
-Thread-Topic: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
-Thread-Index: AQJ83aedMQVFXzZR+sovobCavopdtgGvrfvSsHOmC7CAAGaQgIAA7UKw
-Date: Fri, 14 Jun 2024 05:16:34 +0000
-Message-ID: <MN0PR12MB595380A6FBC3B67B312E440CB7C22@MN0PR12MB5953.namprd12.prod.outlook.com>
+Subject: RE: [PATCH v2 1/4] phy: zynqmp: Enable reference clock correctly
+Thread-Topic: [PATCH v2 1/4] phy: zynqmp: Enable reference clock correctly
+Thread-Index: AQJ83aedMQVFXzZR+sovobCavopdtgHJ/l3WsHQqluA=
+Date: Fri, 14 Jun 2024 05:30:58 +0000
+Message-ID: <MN0PR12MB59531E522EC62B160EEC35E5B7C22@MN0PR12MB5953.namprd12.prod.outlook.com>
 References: <20240506170110.2874724-1-sean.anderson@linux.dev>
- <20240506170110.2874724-5-sean.anderson@linux.dev>
- <MN0PR12MB5953519A685A222CC603A2FEB7C12@MN0PR12MB5953.namprd12.prod.outlook.com>
- <8349516a-84bc-45bf-a84c-ff05d8f50bf7@linux.dev>
-In-Reply-To: <8349516a-84bc-45bf-a84c-ff05d8f50bf7@linux.dev>
+ <20240506170110.2874724-2-sean.anderson@linux.dev>
+In-Reply-To: <20240506170110.2874724-2-sean.anderson@linux.dev>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -74,95 +72,79 @@ X-MS-TNEF-Correlator:
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=amd.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: MN0PR12MB5953:EE_|PH7PR12MB5830:EE_
-x-ms-office365-filtering-correlation-id: 0b20bba0-781d-4af0-a918-08dc8c3128ef
+x-ms-traffictypediagnostic: MN0PR12MB5953:EE_|SA1PR12MB7409:EE_
+x-ms-office365-filtering-correlation-id: 22e0dbdb-2149-460a-ef86-08dc8c332b78
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230035|376009|366011|1800799019|38070700013;
-x-microsoft-antispam-message-info: =?utf-8?B?cDFFK3k4MkZHZlZuN3ZaMVEzSzFFMjByL1p1WGlUalpMZ0RydHJRcWJrb1p4?=
- =?utf-8?B?aUQ2aFFCZnpEdjBVY3VzUlBkWUp5SCtyTk1LV1VjOTRDemFmSnJ6SmZ1SkJy?=
- =?utf-8?B?ZS82cFl5SEdET0duWWFWakRzSTVkUGVHU0d6cXRXcEZKT2lvVWFYM0FnYTBL?=
- =?utf-8?B?aDgzcExvVkxQb3MrakFmQTRYaXphUWV6c2xPUmN0UFZOcFRYL0ZzUVVGUUpz?=
- =?utf-8?B?NVh1QVN2bENKd3lJR3VmVHJ5TU5tSmNPRk1nZlJtZnZ6SUZ0M2N5WlBRSWlj?=
- =?utf-8?B?UjR0K01vb05QZk16M3g2MGJOeFFzQmRmbDRpaXRKdnlibzRRY2poNkpib1o1?=
- =?utf-8?B?Q0tjSWxnM1JFSi92dUlsRmVmRlRsaitCVmE3SDJWaEZjN1p1TkR0Qlp4WkN5?=
- =?utf-8?B?bFR0TXkxZ3A1dnVKQmlTVEJtNWxzWGhjM2hYM25NcERpc2pxMnh1aDhUTS9Z?=
- =?utf-8?B?cURkNVhnSEFjYXpNNFR3Q1hoRERzZXdEUUhrVXFrS2p6NlNIZEVveUxWaG5Z?=
- =?utf-8?B?aXdTandBUEV3QzZOc01WeVZWMXN1ME9pVEY2QkVlcUNlSEZHSlp1NDJ6QXow?=
- =?utf-8?B?Y0lxOEl5Mnpqc1gxaVRGSkdFRWZCeW9EVm8wdVFKcDVVeExJK1doM1FsQ25s?=
- =?utf-8?B?UkJDdWtCY2RYa3RGbW9Lbk9ZUjdjUFgxMndMNWRTNXBMZC9FQnBaeTZNUjNJ?=
- =?utf-8?B?SVhnSFozeEVHZHU0UG5jaVJMZU9RVk5CZXRmMlJHZWNwZFJ6cUkyaWVWYk5n?=
- =?utf-8?B?djVPUUpXMURCUVZBbDIvZVl5aDQ0aDdQckVNRDN5ZHorMGFBNnRKUVdqU1R3?=
- =?utf-8?B?V1loWXNKZCtHMi8yQWVxRGVYL0tLekZ1aTVjZlR4S1FEYldaakJzT1poNHk4?=
- =?utf-8?B?bm0wSUhxYy9NTnF3U1Z0aFl1dFpYTWpod3llcUhHQ21RWTF4MFVuZUhEMTFF?=
- =?utf-8?B?UlU3QnJIZjlVdm1rOFQ4TjNUN05jeG5lR0JVZE41eUFJRVdmSFo0Vi9iT2Yw?=
- =?utf-8?B?Z3pjTHpRNTQ5M00zVU1pSkRCZjh1UVJWT1U2K0IxVHVzWnlXSXZxVzhNNmpE?=
- =?utf-8?B?QTdjM3BhcFlUcElROE5NMlFTSFFOc3ROVHBqSndpaHYvZnF4QjNCbityNkVC?=
- =?utf-8?B?aEMveHNqVkhqV212cUZYdkhCT1lzQzdQZlJoZkVxbUxBTDhoZ1l0YU1NbW8v?=
- =?utf-8?B?NXFRdUQwVGdOVXZaSHhodnl4TFl2Q2dOV2VmK1lVVGUwWURsK0JoME80d2t3?=
- =?utf-8?B?c2lqSXFrU1owa1dkNHBlK1M4aWJOV21qaWt1SG9VNTBJU1ZHclVSVHhtK29B?=
- =?utf-8?B?RmdBdWZpdFFZcnBvYU1oTStTQlUzTjU3a3ZtOUJyZ1NoZG9XS0xBQ2xrUnRY?=
- =?utf-8?B?c1F0czY0SkdpaVJnUTNjTFI5WGJnakZRNEV1ZTNjcDJHOU1BaWNaR3VpbEQ3?=
- =?utf-8?B?Rzd6NEJtTy8vWUFIMjNmWXJiUlo4SUdkeUp3YXpMMVNPdDluYVE2ZHpqa0tk?=
- =?utf-8?B?TmtUUEZDMG1OUjFad2xJWnh2R2NuQkFXdk8zL1BtWTRueGxxc3lkWGZJWXVo?=
- =?utf-8?B?VVlOVFRiaDcwWE55Q2dtM0JESEx4UXZCR29DRDd5M3dYdExMUUFwQUowL2pp?=
- =?utf-8?B?eDF3TnRodVZ2NExMVWFkeEk0RTY0Z2pOSTNrOXkvWWVqZnNXcnN5NDc2Zmdr?=
- =?utf-8?B?bkI4L2JFVWQzNUJOV0h6cFQ3RFM5YWRWYnJqWkVUVXF4bU9HNE1OeW1xSlJh?=
- =?utf-8?B?Wi9pbmcreFMxNFVhK2hXSVhEY0tvdnpLSFVKMUpYRk9kWmhCQzNjMkVFUmlL?=
- =?utf-8?Q?V6Nm2mc723AdyHl6uFsDTn+PlcQnQNmGqN6t8=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MN0PR12MB5953.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230035)(376009)(366011)(1800799019)(38070700013);DIR:OUT;SFP:1101;
+x-microsoft-antispam: BCL:0;ARA:13230035|1800799019|366011|376009|38070700013;
+x-microsoft-antispam-message-info: =?us-ascii?Q?RK2WueHp7K8bIbjUyHTq3FSpIFzbqowHdyoS0DXLxhtzog62dUcC50NOh15z?=
+ =?us-ascii?Q?V6Vjjf+sZN7PPHGAErV6Ilj1I0CFUx81fCM7cCZsSoT0KnW/4Np5U2RW5V/I?=
+ =?us-ascii?Q?cxWh7OoNztwFRKNkuOWcV7sNvR/CZjhqEaEI3m6PBco1AYevSu9CNF/94g9v?=
+ =?us-ascii?Q?f1bRjOJXUv89OyHpsHDO3aGrTnoZ7IhaZqCDTuOfHs1bwG4hLl/8OaxfX2wf?=
+ =?us-ascii?Q?Shlcfv0r6VEEXglSxl6iixnpbgNbH7ZgVySGeYsS9v1xvAnCwX7hHKzos/cS?=
+ =?us-ascii?Q?JRADGCnbMRSVnNpWEdTmL9x+a2uuE61mwongmOcltm8HAbRvizlOi44XefGb?=
+ =?us-ascii?Q?V4+MYj0UfHO7GQ+LWVtj6eqMsYGLGFD7jpL7kMBh6EsiiMOIRp57A8p+6tuK?=
+ =?us-ascii?Q?5IG6XGAn86zq8+e6IU2/uM9l5eDS18zNBBR2HHhtPWd7Yr3kPhk3zaVCbwOD?=
+ =?us-ascii?Q?2PRdW1NpibVfX9Y1SqzoJyMEg5E8Wo+CqrcpGGWSGG6OWws9oCDZDaY5OxzP?=
+ =?us-ascii?Q?CRa824KBfLdBXB9gsFKOYvkgwY/XyHREzzqKS/914om++zMEh59wzZrADwUW?=
+ =?us-ascii?Q?FoRXH8iNlMLuYjlNj6EV2NmhGSvPmASRqht4++QKLiOpYjAkVOVpUAzUgMKI?=
+ =?us-ascii?Q?WYmGcF+eH0UhZSqfXbcOCEEKTZSLjyu1tlQpxRmkUULDvS8qeIZ8oVh5s5np?=
+ =?us-ascii?Q?5nxo509iKbAYQNi7x0S0JtZrlU1IfZD/XVttnNQHM5UWZ5aBMNRnc+DNP9Kk?=
+ =?us-ascii?Q?/0zDUaWkEX2IDEuG8EstqXSBfMmKhGMj/+/PtAbeoDuzSadKJnUyrEycb8Pc?=
+ =?us-ascii?Q?eRvu0zMnoE8LqIMTx4rNDlefRaGpJTJ+mrejXzDIyRVQU+0Gv0LFubOkV4AT?=
+ =?us-ascii?Q?CHLe9SJ7znjhc8AfBQc9iTWZP8m8JxAEBSumaL1RK85fjuwkpW0pGc1jqkYo?=
+ =?us-ascii?Q?OEyqlzuZYCA4GTqISuxhuZNtxPyjPZqvLSkuQ7zj/iz9jcfDkyUuhVfaDVr5?=
+ =?us-ascii?Q?x+YndzLnTpSdLfFpGTMp1ggqACztrlCo5QFj933qHtkO+XXV7Kcy7YGQSIIy?=
+ =?us-ascii?Q?3BzKpQUUXWoMqHnLSZqNGUuGSjbnxWOmUAhcoVnMrWxvW/HFy3iCip1NkRml?=
+ =?us-ascii?Q?ERXpGSbySpB8xX4xwgPO9/D+klrrbTy0y8Itk1UdcuU8HMxyiJeow6Xplf4Y?=
+ =?us-ascii?Q?vsgC7QafjG2gNTkt/766kYYoRGpEG3mEgN88/gQmqqW5RIEV9gzO9/Is42jw?=
+ =?us-ascii?Q?Fuv09Ubz1owz94TeGtGJfMcH0nfdCUg0X+b/d/msoqBWJvujTo7tafabk3pp?=
+ =?us-ascii?Q?1RSU6rg8/CMeBqq5FgcvOB2fkNvRo7cas1Xk2s3bCk8q4HQRplW9HO3pJW2C?=
+ =?us-ascii?Q?Dh3Bz0w=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MN0PR12MB5953.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230035)(1800799019)(366011)(376009)(38070700013);DIR:OUT;SFP:1101;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?MzY3ejgzN0p4YXI5a3hmaGprODZyQnJndENFelJIWlZjWDdCZkhFVmJ1TVcz?=
- =?utf-8?B?d0J4K3BXYm5DMStyZWp2R2FPVmFHVGVzZlJ6VUMvbXlpQVRJQnRjZXRudzVE?=
- =?utf-8?B?ajJ1ai9IaFJMU1R0dUR6SktlL1NGSk8vWTNOUHpzYmh4c2NBMTZ5ZVJwd25l?=
- =?utf-8?B?Z3c5YnpTYUNpTzk3Qm9CNTJ5ZlpvL3JSVUl4dWhMZW10ZGNDbUFhcGt6T1NZ?=
- =?utf-8?B?dXZycGd1U1k2S3pVWWRPVHBFUXJsL0tLTGsxb2ZvM1FLQ3BwL0ZvTlIvU21D?=
- =?utf-8?B?dHdIbngwcFpkRytyYTI1em01QXltVjByMndUVnpqUWVlVGJEM003ZXk3ZlJ2?=
- =?utf-8?B?cEpTd3pBUkYwQlpKSkdvS2ZrL0xQdzBaREhsQzVzVkJXTExXRjFOTnJhOE1V?=
- =?utf-8?B?TFJXTE9jenN1dkVMTndLZkJnNU1Ic3lmb0NrQXk2NGx3bW81dGJoSk4zN28v?=
- =?utf-8?B?SDk5WTFsbWRzNy9RNkErVk9zUWxPYnFzbTRqWTBFTmRDWFNMM09kbHlldlZU?=
- =?utf-8?B?ei81cTZabWpEVy9zMGwrVTd3NWk4WjVsdC8vSFltWklieFkxMzFvcERLTWpE?=
- =?utf-8?B?S0VmT2tvVnkwdEErYndUa3d2ejA3UGtrVGpyQlRPM1Jqb0VFdTFEK2RydXhH?=
- =?utf-8?B?aTdwZTZlZk0rNGIvY3dtSnY4Mk5sRkpRSk1DRUxISDFNcnZJUnQyaUhkTUx5?=
- =?utf-8?B?UjNXdEt4QjIrSHRJSzFXT2o2aTdIQmVTM3YzM3ozYS8yZHZkRHprVzl0WHd3?=
- =?utf-8?B?WmE5WnBmaUhac2svR05kL2ZsK25vcElJTmMzcWNSSDNoNTI1bjdidHhLcWJ5?=
- =?utf-8?B?am9FRTNVN0NMWUw3V3pSLzc2ZlhPVW5oaUdJNHNtbUdDVlBLNDVFdXA5aTRh?=
- =?utf-8?B?NlpFeFFpYk0zMURQaDk3NGRkREM5ZkRIZ0FmOGUwaTJsMGNjK1NkQWttSHlh?=
- =?utf-8?B?cThTbFU0NWtGUjVONHVjYk1oWi9ZRXBSNGZVQ2VwL2Uzc1QxSWUyaTRVbFMw?=
- =?utf-8?B?aHVwcUlCbnhRcWdxeXpndnhOV0x3M0RpU2g3UXo1TG0yV09xZExjYVR1ajhS?=
- =?utf-8?B?QUpKeGEzWkFleDU0V0JteWZLMGtqbG14dk45Y1JheERJQnRiaU8xb1F2SEtv?=
- =?utf-8?B?V0Ixa2xvbWNyc1Z4ZzVTWDBVMnV0ZnpRZlI5M005SW1hRzhOUU11M3BlOGJT?=
- =?utf-8?B?UnRCQ2tlTkMxQlBnQ3EvdVBFTUFrd2dEbmFsQmwyYTZoZDRyZ3MzYlN3Mmtz?=
- =?utf-8?B?aFBqLzZNQzVRNDJScVJXZTJGV1hrOThHN3Z0cFVPRi81RUlBSnJLMGkzNldm?=
- =?utf-8?B?SEsyVDNzcjExYW9VNUVYbFhJMDlkR2Q5NENwU0ZYTjJtOExUV3AwdG1kVDFt?=
- =?utf-8?B?Y1RXQWdOL1VweEozZjZSYzhKWmJ5Z01ieWl6UHBUd3V4ak1obXFDNlVrY0ZZ?=
- =?utf-8?B?UmFCT3ljYzdaZVBDSkEvV2J5dHFUbXZ2ZURXRHVreVVieTU0L0NON3prSjNY?=
- =?utf-8?B?V09yck43OGRhK0JBM1dhdDFWUDBhblRvMnprKzlFR1MvL1VrRmV5dnA5L1NL?=
- =?utf-8?B?NXFrcHMxRXgxSXBuZ3IydkxqQktmTGR0bjVzVUxQOWxvTGEvTHhJZ1dMWW55?=
- =?utf-8?B?OU9KdUs4RTByMGJFaGdadmxEMzJ6Zk5NOVN3cXBJUTE2MzZUVCtVNk00NkFn?=
- =?utf-8?B?YU5vMEJWdzkzck1lMjhKcXN6UFpEdkVxaFlVbEU1QVhCYnlFeTFuZmZ0WC84?=
- =?utf-8?B?MGlRaDRpcXJSSDdPUHNWWUhDMkdjbHczWC8xaG92MmRVSDl5Z3NKd2hHYVV3?=
- =?utf-8?B?L3RPR3VQMi82eURtclhheU9xSHRMcUhxRVM3V3ZRV05kS25iYThUUUw3WWgz?=
- =?utf-8?B?TlRyMGxtZUFNS2pKNXhLaHBBWnZrU3ZWRmhsMVdURlZjam5VSURaVVN6WWlu?=
- =?utf-8?B?Q0xNNDVlblZHdFF0amYrSDVrRjNiNUxaYm5ZMi8xamlQYUVUVTAzYzhQcEd4?=
- =?utf-8?B?VzZ1ekVZNElMRE1vVUNKd3o2OCtsSWliZDEyQTdBc0Q0T0JwdEZCUWs0Wkh2?=
- =?utf-8?B?S2N6MzM3bmdHMDY0SnRIMU1haWFoRHlnWVZDdVFkVyswYnVxZG55azcxbit1?=
- =?utf-8?Q?BO58=3D?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?NZ91BTHrvjqQ3N89ejJc9gwTBLpqAlGDU1CEwKqBM6QkErr4WmYmvX+2ZgO3?=
+ =?us-ascii?Q?0eIei0w42Jt5AIXPse83yF4sxEeXmHNc6adXE1OZPRWu1lRuM7PgNf3OZexR?=
+ =?us-ascii?Q?1QFWpqfK+4WTmFpKLFxrDVgVHfuHZn32m1f0HJiCGtHGupnS07r0m+66sG+E?=
+ =?us-ascii?Q?PW0elhXaCDf6fTTOEt+Qg1JPIarHGeRozCfdPQGuAI0y2yBLyxrqcSyvT6/E?=
+ =?us-ascii?Q?hnceT/zVItam0eAlgE1VtQ4OYg5nTwYk+JAl5NB7S+F9JA15nFzpbUIKMwr6?=
+ =?us-ascii?Q?sf4wLioZHTHNAbzeUmj1A9Wo1ruFmQLgG4LNTtKbJRKDdynf/SW+ciYampZD?=
+ =?us-ascii?Q?CVme0zAAKZAy7MyR4YP0eZqRGQ+Ug2yGZtuETD3qmtetT8Nj20jRVntZlC1x?=
+ =?us-ascii?Q?fbz+eUYWhlxpqcJyspTVFeIEWZGAtCv7yKmcmuRmEfVV2MezE3h9Ch8t0tTw?=
+ =?us-ascii?Q?M3I79n62PGiCymnDsE2Fu+9hgU0tvIDqlg54Ej4jLAVQno47+AB3IqalZVSr?=
+ =?us-ascii?Q?pIKeDeCshVTMIsa6xLWcqsIWRFex8+M99inypmQdOUBYnK9PYPpwCaiwGr9y?=
+ =?us-ascii?Q?5AYfaTZ0dYvf+FI6nqGwlgF5CRDSttIkWrJe8Lx4kwCSCpTmqEWp2XNGl7kC?=
+ =?us-ascii?Q?m+xui4PBeqkKEnJbHiN51Cj4usGeqNpl0ulaQNIOkXs3FjIJGEaeieCP+L8y?=
+ =?us-ascii?Q?kdawPcUJ6D33N6NHDOCVF9rhv0+hrcaBmi65tSG91NpVljYqtR5ACufiA79q?=
+ =?us-ascii?Q?R3PkW9sQhnPAK767vpuWbBv+46XqI2BaOt6O5AjRiUwsVfAK2Ro6vzUO/PkF?=
+ =?us-ascii?Q?ZpnDTj+3ancp1XqLN5/1MFtcLiFftKGk/fA1YIib3vO+D+KQqle+w4c3ujji?=
+ =?us-ascii?Q?OYqsmZGbnFlYBt2lK80bHtWrlgPaFLZP3badFBKpmtHEWsZrHbidqYu0mI5f?=
+ =?us-ascii?Q?apzoDLbKw1/oQR/OZrNKBDPQB1+Soy/8KoCzX9hlBEUBjLQB/MD1FhR3tTHI?=
+ =?us-ascii?Q?XtS63xa+DK18y0JhIXmrF3TFr8aLnEuNjLwy0dtdS0l1rFW3O29gD52sdSFp?=
+ =?us-ascii?Q?mrlPX+Gm5CpjCbZLkrZaD/3Ke5AzaElMWt90A1oSm9ACUg90AKSxnEQTvL08?=
+ =?us-ascii?Q?Vt541ctEaEWiJzLTZo7hWK8LBoyayjDgl39Htp18kHNGvGdLnZ/BuY7uFw9D?=
+ =?us-ascii?Q?uCTNwAlcCgsnHYZZq821AEvo/YMjFoV7XqJaBr3UJLAlH8RoBPKWfNu1HW7Y?=
+ =?us-ascii?Q?6CgyGptCLSeUIf6aBR5suSP5lYRIfQDnThmuMEc2pqop5VFFq8m5SAI9TP9M?=
+ =?us-ascii?Q?kd8PdsHj7ijwdFicpcZObrJwLxX7VxI257DGv1sXbK88Amf+lzfqBn1zJoLK?=
+ =?us-ascii?Q?lWBAYPqabIIXeVfuwZ1EmXXdBSe+VQT2xSpV+wbKsg9zLCIR/PEMC2uzpXDo?=
+ =?us-ascii?Q?rBV8wh/P0Wch+m357uuL9eElycDqy/lHZmRXKPNZDlGoSeh/v0pBn0CLofKE?=
+ =?us-ascii?Q?+rsV0yauacx8NT4QIN8fJw4qU5Zvm9RgKsxpDDMs1Og8UotiVsZX4+GaIRnC?=
+ =?us-ascii?Q?Heez0y5V5FNY2PEkbAA=3D?=
 MIME-Version: 1.0
 X-OriginatorOrg: amd.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: MN0PR12MB5953.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0b20bba0-781d-4af0-a918-08dc8c3128ef
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2024 05:16:34.7825
+X-MS-Exchange-CrossTenant-Network-Message-Id: 22e0dbdb-2149-460a-ef86-08dc8c332b78
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Jun 2024 05:30:58.0256
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Q8D3JKXoymw2nW1jC3aO8xbIqBUv5zu+IiILvrbwnJhyuMeEAxjMa1rCVZAlwiOB
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB5830
+X-MS-Exchange-CrossTenant-userprincipalname: VmmjW6xqb/VKAL4l0XijhtJrHNU/34KLOgxfGHDvXFoRRspY3AROe9DSvUG2ebzs
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR12MB7409
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_221645_502417_FFB05561 
-X-CRM114-Status: GOOD (  26.25  )
+X-CRM114-CacheID: sfid-20240613_223103_093650_D8F48920 
+X-CRM114-Status: GOOD (  21.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,145 +163,95 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 > -----Original Message-----
 > From: Sean Anderson <sean.anderson@linux.dev>
-> Sent: Thursday, June 13, 2024 8:32 PM
-> To: Pandey, Radhey Shyam <radhey.shyam.pandey@amd.com>; Laurent
-> Pinchart <laurent.pinchart@ideasonboard.com>; linux-
+> Sent: Monday, May 6, 2024 10:31 PM
+> To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>; linux-
 > phy@lists.infradead.org
 > Cc: Vinod Koul <vkoul@kernel.org>; linux-arm-kernel@lists.infradead.org;
-> linux-kernel@vger.kernel.org; Simek, Michal <michal.simek@amd.com>;
-> Kishon Vijay Abraham I <kishon@kernel.org>
-> Subject: Re: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
+> linux-kernel@vger.kernel.org; Michal Simek <michal.simek@amd.com>;
+> Kishon Vijay Abraham I <kishon@kernel.org>; Sean Anderson
+> <sean.anderson@linux.dev>
+> Subject: [PATCH v2 1/4] phy: zynqmp: Enable reference clock correctly
 > 
-> On 6/13/24 05:20, Pandey, Radhey Shyam wrote:
-> >> -----Original Message-----
-> >> From: Sean Anderson <sean.anderson@linux.dev>
-> >> Sent: Monday, May 6, 2024 10:31 PM
-> >> To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>; linux-
-> >> phy@lists.infradead.org
-> >> Cc: Vinod Koul <vkoul@kernel.org>; linux-arm-kernel@lists.infradead.org;
-> >> linux-kernel@vger.kernel.org; Michal Simek <michal.simek@amd.com>;
-> >> Kishon Vijay Abraham I <kishon@kernel.org>; Sean Anderson
-> >> <sean.anderson@linux.dev>
-> >> Subject: [PATCH v2 4/4] phy: zynqmp: Add debugfs support
-> >>
-> >> Add support for printing some basic status information to debugfs. This
-> >> is helpful when debugging phy consumers to make sure they are
-> configuring
-> >> the phy appropriately.
-> >>
-> >> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
-> >> ---
-> >>
-> >> Changes in v2:
-> >> - Use debugfs_create_devm_seqfile
-> >>
-> >>  drivers/phy/xilinx/phy-zynqmp.c | 40
-> >> +++++++++++++++++++++++++++++++++
-> >>  1 file changed, 40 insertions(+)
-> >>
-> >> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-
-> >> zynqmp.c
-> >> index b86fe2a249a8..2520c75a4a77 100644
-> >> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> >> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> >> @@ -13,6 +13,7 @@
-> >>   */
-> >>
-> >>  #include <linux/clk.h>
-> >> +#include <linux/debugfs.h>
-> >>  #include <linux/delay.h>
-> >>  #include <linux/io.h>
-> >>  #include <linux/kernel.h>
-> >> @@ -123,6 +124,15 @@
-> >>  #define ICM_PROTOCOL_DP			0x4
-> >>  #define ICM_PROTOCOL_SGMII		0x5
-> >>
-> >> +static const char *const xpsgtr_icm_str[] = {
-> >> +	[ICM_PROTOCOL_PD] = "powered down",
-> >
-> > Protocol saying powered down seems confusing.
-> > Should we say None or None(power down)?
+> Lanes can use other lanes' reference clocks, as determined by refclk.
+> Use refclk to determine the clock to enable/disable instead of always
+> using the lane's own reference clock. This ensures the clock selected in
+> xpsgtr_configure_pll is the one enabled.
 > 
-> Either works I guess. I'm just matching the define.
+> For the other half of the equation, always program REF_CLK_SEL even when
+> we are selecting the lane's own clock. This ensures that Linux's idea of
+> the reference clock matches the hardware. We use the "local" clock mux
+> for this instead of going through the ref clock network.
+> 
+> Fixes: 25d700833513 ("phy: xilinx: phy-zynqmp: dynamic clock support for
+> power-save")
+> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
+> ---
+> 
+> Changes in v2:
+> - New
+> 
+>  drivers/phy/xilinx/phy-zynqmp.c | 14 +++++++++-----
+>  1 file changed, 9 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-
+> zynqmp.c
+> index f72c5257d712..5a434382356c 100644
+> --- a/drivers/phy/xilinx/phy-zynqmp.c
+> +++ b/drivers/phy/xilinx/phy-zynqmp.c
+> @@ -80,7 +80,8 @@
+> 
+>  /* Reference clock selection parameters */
+>  #define L0_Ln_REF_CLK_SEL(n)		(0x2860 + (n) * 4)
+> -#define L0_REF_CLK_SEL_MASK		0x8f
+> +#define L0_REF_CLK_LCL_SEL		BIT(7)
+> +#define L0_REF_CLK_SEL_MASK		0x9f
+> 
+>  /* Calibration digital logic parameters */
+>  #define L3_TM_CALIB_DIG19		0xec4c
+> @@ -349,11 +350,14 @@ static void xpsgtr_configure_pll(struct xpsgtr_phy
+> *gtr_phy)
+>  		       PLL_FREQ_MASK, ssc->pll_ref_clk);
+> 
+>  	/* Enable lane clock sharing, if required */
+> -	if (gtr_phy->refclk != gtr_phy->lane) {
+> +	if (gtr_phy->refclk == gtr_phy->lane)
+> +		/* Lane3 Ref Clock Selection Register */
 
-None seems fine - we can respin if there are no objections.
-> 
-> >> +	[ICM_PROTOCOL_PCIE] = "PCIe",
-> >> +	[ICM_PROTOCOL_SATA] = "SATA",
-> >> +	[ICM_PROTOCOL_USB] = "USB",
-> >> +	[ICM_PROTOCOL_DP] = "DisplayPort",
-> >> +	[ICM_PROTOCOL_SGMII] = "SGMII",
-> >> +};
-> >> +
-> >>  /* Test Mode common reset control  parameters */
-> >>  #define TM_CMN_RST			0x10018
-> >>  #define TM_CMN_RST_EN			0x1
-> >> @@ -788,6 +798,34 @@ static struct phy *xpsgtr_xlate(struct device *dev,
-> >>  	return ERR_PTR(-EINVAL);
-> >>  }
-> >>
-> >> +/*
-> >> + * DebugFS
-> >> + */
-> >> +
-> >> +static int xpsgtr_status_read(struct seq_file *seq, void *data)
-> >> +{
-> >> +	struct device *dev = seq->private;
-> >> +	struct xpsgtr_phy *gtr_phy = dev_get_drvdata(dev);
-> >> +	struct clk *clk;
-> >> +	u32 pll_status;
-> >> +
-> >> +	mutex_lock(&gtr_phy->phy->mutex);
-> >
-> > Do we see any need for this lock? This function simply read hw register
-> > /phy members and decodes it.
-> 
-> It's to protect against modifications to gtr_phy->refclk and ->instance.
+This is common ref clock selection and not lane 3?
 
-Refclock and instance is assigned in xlate which is not protected by any
-Lock.  Also xpsgtr_phy_init () uses a different gtr_mutex. So want
-to understand this phy->mutex need.
+> +		xpsgtr_clr_set(gtr_phy->dev, L0_Ln_REF_CLK_SEL(gtr_phy-
+> >lane),
+> +			       L0_REF_CLK_SEL_MASK, L0_REF_CLK_LCL_SEL);
+> +	else
+>  		/* Lane3 Ref Clock Selection Register */
+>  		xpsgtr_clr_set(gtr_phy->dev, L0_Ln_REF_CLK_SEL(gtr_phy-
+> >lane),
+>  			       L0_REF_CLK_SEL_MASK, 1 << gtr_phy->refclk);
+> -	}
+> 
+>  	/* SSC step size [7:0] */
+>  	xpsgtr_clr_set_phy(gtr_phy, L0_PLL_SS_STEP_SIZE_0_LSB,
+> @@ -573,7 +577,7 @@ static int xpsgtr_phy_init(struct phy *phy)
+>  	mutex_lock(&gtr_dev->gtr_mutex);
+> 
+>  	/* Configure and enable the clock when peripheral phy_init call */
+> -	if (clk_prepare_enable(gtr_dev->clk[gtr_phy->lane]))
+> +	if (clk_prepare_enable(gtr_dev->clk[gtr_phy->refclk]))
+>  		goto out;
+> 
+>  	/* Skip initialization if not required. */
+> @@ -625,7 +629,7 @@ static int xpsgtr_phy_exit(struct phy *phy)
+>  	gtr_phy->skip_phy_init = false;
+> 
+>  	/* Ensure that disable clock only, which configure for lane */
+> -	clk_disable_unprepare(gtr_dev->clk[gtr_phy->lane]);
+> +	clk_disable_unprepare(gtr_dev->clk[gtr_phy->refclk]);
+> 
+>  	return 0;
+>  }
+> --
+> 2.35.1.1320.gc452695387.dirty
 
-> 
-> These are accessed under lock elsewhere; this is not a fast path and I don't
-> want to have to reason about the semantics when using a mutex is definitely
-> correct.
-> 
-> --Sean
-> 
-> >> +	pll_status = xpsgtr_read_phy(gtr_phy, L0_PLL_STATUS_READ_1);
-> >> +	clk = gtr_phy->dev->clk[gtr_phy->refclk];
-> >> +
-> >> +	seq_printf(seq, "Lane:            %u\n", gtr_phy->lane);
-> >> +	seq_printf(seq, "Protocol:        %s\n",
-> >> +		   xpsgtr_icm_str[gtr_phy->protocol]);
-> >> +	seq_printf(seq, "Instance:        %u\n", gtr_phy->instance);
-> >> +	seq_printf(seq, "Reference clock: %u (%pC)\n", gtr_phy->refclk, clk);
-> >> +	seq_printf(seq, "Reference rate:  %lu\n", clk_get_rate(clk));
-> >> +	seq_printf(seq, "PLL locked:      %s\n",
-> >> +		   pll_status & PLL_STATUS_LOCKED ? "yes" : "no");
-> >> +
-> >> +	mutex_unlock(&gtr_phy->phy->mutex);
-> >> +	return 0;
-> >> +}
-> >> +
-> >>  /*
-> >>   * Power Management
-> >>   */
-> >> @@ -937,6 +975,8 @@ static int xpsgtr_probe(struct platform_device
-> *pdev)
-> >>
-> >>  		gtr_phy->phy = phy;
-> >>  		phy_set_drvdata(phy, gtr_phy);
-> >> +		debugfs_create_devm_seqfile(&phy->dev, "status", phy-
-> >> >debugfs,
-> >> +					    xpsgtr_status_read);
-> >>  	}
-> >>
-> >>  	/* Register the PHY provider. */
-> >> --
-> >> 2.35.1.1320.gc452695387.dirty
-> >
 
 -- 
 linux-phy mailing list
