@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92E65C27C75
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 11:55:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17BFFC27C75
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 11:55:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5f4H9Rnvop4pV2florL1kgS1pEhWSusltuWUd3jlpd4=; b=44sJNQvf5BM5VdSOR3n0NV6BOB
-	F99H/I05vn86AwXr+q9nVEmO6DcGqV2prfpoqxhNJRjBAJWvKZuepe0umGOf0IMhcjVT2wtuq5f6t
-	8S0sgJHt6w0lREM1zVsdsjqW5nRTBeruo9+EzUolB8YuaqXzEy2rglX/p0s2Wsb4K39Ys8FfdIYKs
-	VCsohnYqnz2p10Y00pV3Oll46h1fpoyXemDDFI7QnQhm/LJt3nOVFZCroxKWqT0IUYPKtJkJcWvrR
-	rAiQfvu5Q7sQf01Ra7is28OXNFCj6IKpVft/UWBWocNQ3wwCAmfKCfVfLBqgrL0mw6iyWl6IKVigC
-	4NOoL4FA==;
+	bh=N5KUKi40ozqZxvRZtvcTggDCHqVjNvdthf3wTMoBzv0=; b=4zzfppwBh2ll8sDxYcbXPCDMKG
+	67A3ArXaNiCuLF60tn56b2Qst3YmnAVOhsgJnG0nQRB38YC7kcnKUayB7yavXJdugo6VuIlBprAMG
+	HO2WIM4iKRfgFQrUdQPyL6OgO/dsPloEXvVhQYRBHPa1qvIiMZDPEmzm+EW87lNlNLz9EvMpHTJpd
+	Ko3Dxdulsy/R2V9g1FpDEOL/1obdb6YXRuzOHP60YsT7G8dMRRgv0Tbnn/op6CcvNAeQMBDXKvhsD
+	auZbrqveX4NeNgMF8kFZGcraOT233dqg4AS8Qg/rILXY0JItmvDNu8QUtsZJk1FBjVcFwop9ZqQnw
+	/A3xDkxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI5WG-00000002esM-0wF4;
-	Fri, 14 Jun 2024 11:55:00 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1sI5WN-00000002euH-39h6;
+	Fri, 14 Jun 2024 11:55:07 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI5WC-00000002erV-1bP7
+	id 1sI5WL-00000002etS-3zun
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Jun 2024 11:54:58 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-52b7ffd9f6eso2161281e87.3
-        for <linux-phy@lists.infradead.org>; Fri, 14 Jun 2024 04:54:56 -0700 (PDT)
+	Fri, 14 Jun 2024 11:55:07 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-35f1e35156cso1985071f8f.1
+        for <linux-phy@lists.infradead.org>; Fri, 14 Jun 2024 04:55:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1718366095; x=1718970895; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1718366104; x=1718970904; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=o0o/KdZIsDHIfbh/VW3o1QPd/tfO5jx5iqoLGvwOSIE=;
-        b=ZD/Vdozb8wImizZIaVSS2ivLw54Vfe4BBzHOb2eMK7ncWBOFjiF3ogGR2TyOfwpR8v
-         nmi1u+Y2+UN6tClFXVf4ftDMmwQSJQ5Bgp3VkwV105XfhAMTtUHeiB/HlT4UGfryJlIc
-         2YCoLwrEjDEJYoM19j+XIKH7tSkO8FzKT7wTvYLyCXjQsfwocPqkV02u8ACUkRFjnlaG
-         +DYf/H0wpv9wN0FgMMcRqPNssq42331/XyYF9s5cH0z5EL3spmSpFn9qc2KCkoj/mYQr
-         wsSKUddHqP3LMrLAE5mXWpRkXLAaGcdCkp8gJ9j09tf1BOAKlxNZXaieBHilrOzU9jAa
-         GB0w==
+        bh=CV5ecN0ys6S0OSRYU9azuVV6qH2IDYeWmzVoZmqUUmI=;
+        b=jiHfCS10gd+ATVVq3/UhJgQOAQCiF3j+Hv1Wn6FlJ6oeOF9W2pPNQk1cutZ+tcycsO
+         ZhFDNpMkHGYTf/YyoIb8HIOGETsxXOpsp20nrI8p2SrDsGECF6nJ+yJQddKD6iMs+fji
+         fawd9DjELpcUT+dzf0kOssRKn8rkawQwRgCjnLkvjsIk8QqcU/wbXj6yD84oC8f6EwMB
+         Mp8dq3lyTmzHLWzgaCNjwgA5KreQQnxh8w1Fkhn1Puo/RUuEjn3Z2iMflGVyXxk3TmW8
+         xbAW8IIfeLL1zq5TtJ6xQFLCmRBskrx/6DqFa1KVdc0FbPKecpnaXrXOTAya4Qf+BjAH
+         YwsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718366095; x=1718970895;
+        d=1e100.net; s=20230601; t=1718366104; x=1718970904;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=o0o/KdZIsDHIfbh/VW3o1QPd/tfO5jx5iqoLGvwOSIE=;
-        b=IprBD1XB0Ma8uU6s4/JI7JMt5LbBBdMSE85IXs+cVcRLQflG4sy70xJm6/a+AfkB7y
-         oJ1S/m4KCqJTI4Lo1C+kaUYulK6AzWlcXv0wf9wvpMvDElJGXaq/G9/no28mWVmfSDGG
-         VS190hynlCBm+X0xZQlCPy+VHR/eg76dpnG1bOlY2j0sOOYu25vYcDumJTcgbqKsIpUl
-         0thEYs0GrgvtcDK4lewCSlSud5RVE8x4ejFUrs4r+3dMjt+ZwjurJySJxqS8NyY5Y9ZH
-         o4jKKHYOGChF/TNL8JTMp21z7Q3Z1MA4leTDgwYnEMQeUwU1HpQ41F6fO4is14YMt0z/
-         WxxA==
-X-Forwarded-Encrypted: i=1; AJvYcCVAYBJhEB7Mdbel/ypBHwIQKzXjJL70+sR1FNn/bOb8UeHvhFld5f++aZgbr/m7RrC3Pw87ez1aqYMoV8f/NLcWLECmAiFh6228WQzUSQ==
-X-Gm-Message-State: AOJu0YyQLBXzEgKKrkbKO4YkfkgmJI8qwd8D2SGA/c3oVS+Gs0V+Roh6
-	1hW/POW5YCpMqlw6m0+ubtQvEtXwSf0VRNCzjcSpGzZan0t+cfSu2p9y8gz1oBc=
-X-Google-Smtp-Source: AGHT+IHxv1qeMP3257dqiC5avIq5cWjeVODclM9Lx4o6rgMBVqOEsym0s7vCutQ6Cth3qYltkKSn9Q==
-X-Received: by 2002:a19:5f1c:0:b0:52c:1e37:92c7 with SMTP id 2adb3069b0e04-52ca6e99f9dmr1683157e87.59.1718366094477;
-        Fri, 14 Jun 2024 04:54:54 -0700 (PDT)
+        bh=CV5ecN0ys6S0OSRYU9azuVV6qH2IDYeWmzVoZmqUUmI=;
+        b=KRp1Q9O3nlzm2FvYYOYbd9qre5leRzIuwydcsJ+I91kVIVNhjagvHrH/P7BhhWD4wv
+         pf9EjbMNhQEh1Lk0/YldvRQES0ieZMI6tdajMdJGGLD4jvZ0kXwqOYhk39xmE3LSgWUz
+         ar/bQXRkGBhjtXzNzsAOV2SUbYoRhjiCE+P6pSy0cSHkkd9j17/0SfVnEgJkX2foIiXy
+         cgYt2uJS6vCq5oEoTm5LGJoI58C08Yqjlub/QC7To7iqT5Yl1dTWOdbtP2yCfFzH0wc4
+         U8IooUlgcJgAv1anbvwbRl8/tR31n0UCDnY+VkX3XzG2+Ka6ZV4DCwlOjkusbecyYlQ7
+         tT9g==
+X-Forwarded-Encrypted: i=1; AJvYcCVVjEL3P9YKh57+txCGYixXqQXYgPUhetS9lWHsWyqVd3gq+5bmOg1SXkZu2qTdW6I+2ns3PrdTj8tUCmvVO0FvlYkoesXTyBQPrXwIGQ==
+X-Gm-Message-State: AOJu0Ywypksn9SgWW03nvapwcsZ5Y1H31KQ+SdtMev0oE8C4LShtNIz8
+	QDrc/PbUZdupxE00Vn/QOfN/FM4tGSjhEwb6AcchfqUAgpQkFd8E6TFAocU6UNw=
+X-Google-Smtp-Source: AGHT+IFS0FLeZQHvFvpXBl7p3q8gSKN8Fu68VQ20x0vfBbNGoG9iIueMVIWVzUYkF5Jn9Yax0F422g==
+X-Received: by 2002:a5d:64e7:0:b0:360:73f4:7937 with SMTP id ffacd0b85a97d-3607a7b0e7amr1860670f8f.6.1718366104015;
+        Fri, 14 Jun 2024 04:55:04 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:982:cbb0:261a:269e:a3a8:a2cc? ([2a01:e0a:982:cbb0:261a:269e:a3a8:a2cc])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-422f61280f6sm58530805e9.27.2024.06.14.04.54.53
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-36075104a8fsm4194073f8f.110.2024.06.14.04.55.03
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 14 Jun 2024 04:54:54 -0700 (PDT)
-Message-ID: <14712023-8469-4084-9800-1502a7fdc8fd@linaro.org>
-Date: Fri, 14 Jun 2024 13:54:53 +0200
+        Fri, 14 Jun 2024 04:55:03 -0700 (PDT)
+Message-ID: <a4800ced-b825-4ead-ad1c-56990c66cfd6@linaro.org>
+Date: Fri, 14 Jun 2024 13:55:02 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v3 3/5] arm64: dts: qcom: sm8450: drop second clock name
+Subject: Re: [PATCH v3 4/5] arm64: dts: qcom: sm8550: drop second clock name
  from clock-output-names
 To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -82,7 +82,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  devicetree@vger.kernel.org
 References: <20240614-fix-pcie-phy-compat-v3-0-730d1811acf4@linaro.org>
- <20240614-fix-pcie-phy-compat-v3-3-730d1811acf4@linaro.org>
+ <20240614-fix-pcie-phy-compat-v3-4-730d1811acf4@linaro.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -109,10 +109,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20240614-fix-pcie-phy-compat-v3-3-730d1811acf4@linaro.org>
+In-Reply-To: <20240614-fix-pcie-phy-compat-v3-4-730d1811acf4@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240614_045456_463552_58D830EA 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20240614_045506_035916_74036E00 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,25 +136,25 @@ On 14/06/2024 12:18, Dmitry Baryshkov wrote:
 > clock name. The driver generates it on its own, in order to remain
 > compatible with the older DT. Drop the clock name.
 > 
-> Fixes: e76862840660 ("arm64: dts: qcom: sm8450: correct pcie1 phy clocks inputs to gcc")
+> Fixes: 0cc97d9e3fdf ("arm64: dts: qcom: sm8550: remove pcie-1-phy-aux-clk and add pcie1_phy pcie1_phy_aux_clk")
 > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > ---
->   arch/arm64/boot/dts/qcom/sm8450.dtsi | 2 +-
+>   arch/arm64/boot/dts/qcom/sm8550.dtsi | 2 +-
 >   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8450.dtsi b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-> index 1e762cc8085a..9bafb3b350ff 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8450.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sm8450.dtsi
-> @@ -2087,7 +2087,7 @@ pcie1_phy: phy@1c0e000 {
->   				      "rchng",
->   				      "pipe";
+> diff --git a/arch/arm64/boot/dts/qcom/sm8550.dtsi b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> index 4234c92aafe3..be4f0609c436 100644
+> --- a/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sm8550.dtsi
+> @@ -1939,7 +1939,7 @@ pcie1_phy: phy@1c0e000 {
+>   			power-domains = <&gcc PCIE_1_PHY_GDSC>;
 >   
-> -			clock-output-names = "pcie_1_pipe_clk", "pcie_1_phy_aux_clk";
-> +			clock-output-names = "pcie_1_pipe_clk";
 >   			#clock-cells = <1>;
+> -			clock-output-names = "pcie1_pipe_clk", "pcie1_phy_aux_clk";
+> +			clock-output-names = "pcie1_pipe_clk";
 >   
 >   			#phy-cells = <0>;
+>   
 > 
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
