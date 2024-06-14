@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B399BC27C6E
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 08:35:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0558FC27C79
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Jun 2024 08:35:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yrjbdYKoLit/FF6R5bDkd832if/iGl2WR9exYDuTYTU=; b=W1aXCJgZ9+v2tV
-	ax8XjXAm8knW/mwkYjMfcVp+MI9U82nEPyBKAfn/iGNxfxCwTru9Fp73Jrewq3aOGvYzoVV7OpRrS
-	6HHDo1RjpzBI5iY1zH0xMBK3/28m8jx+j9Yh1RLQT8llmjh1YagMw9Lw/QthJATxd1E3zRRSO1hRV
-	RdVNcy7uhRsvKdoLDPtHDWxhJrEyqoM85G0chQrnYKzxQKRzKTT3H+ykrZ04hdLQqTelDI/GSq7Bp
-	YK6NzlGnkZusVoKtVDx+l9wHyIxC/DCZEovyJgG6shNtaTc0OM/qfZRlKEZWKI1cfp3AakNwvHu5M
-	PIp+5vvxXnRLqeM2EBlQ==;
+	List-Owner; bh=vb3/th1cc7NzMMdfc/nV8OUD49ePIvTF9Ykk6+fWcY0=; b=2Hkgkktm5VcSll
+	fwWPJ2bOAmUKC9+t3J7PjdfbLNGtPoUsAfKYSDYzDFX0y65L+zsdLnexOl9pOAfmm35NF31nH7Yph
+	34pr2dJXbCD+z2uRrsCtWbHc3IHrJFuheE4roMyEMX+Zc4G5lcKYchmd+qHB6oUyOkoTYLjmyn5yo
+	ggGrlZF9EKU6WqPg6TLP8aTs0OHdOl5IZ1MhNzSP3nwQLBzW6wabZPjylIhalt2g98miUZcUyA/co
+	w88R2mu1SIAlb66QbG871bcgURwpqw3aOBDQl+PikaNGgE1Tqkno//fm8yyB42GcewltZiNXKKOSM
+	atFD3WPzLI1sDMLHJTww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI2PP-000000022Kj-1rSJ;
+	id 1sI2PP-000000022L2-32MY;
 	Fri, 14 Jun 2024 08:35:43 +0000
-Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sI2PM-000000022Iz-0nsP
+	id 1sI2PN-000000022JQ-0cPc
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Jun 2024 08:35:41 +0000
-Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-52c84a21c62so2204380e87.1
-        for <linux-phy@lists.infradead.org>; Fri, 14 Jun 2024 01:35:39 -0700 (PDT)
+	Fri, 14 Jun 2024 08:35:42 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-52bbf73f334so2153593e87.2
+        for <linux-phy@lists.infradead.org>; Fri, 14 Jun 2024 01:35:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1718354138; x=1718958938; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1718354139; x=1718958939; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=cu/gvkK5JV8o/AwZTjhXVurT12iJLCtsIO6X1RdbaeU=;
-        b=w0lvdKAN5GsTpmKLmQQ/COseiuoYH9ddqE1p9EniGE1aKRSb6RL5iO0XL91E3lEWiG
-         BdK4bPpOS3vuztnR1iewpUQdObcbFQvtPWQCbZWO1Pykt8UW3uzBwmKKik0TNV0/5Uyq
-         FUuThkqLt32i+eLCtPjjYGq3XyAhkbHsd4iFOCEyBZT3Sl5YqYYfEbZS1aqAOG5U9IIY
-         9YCEo3pMogZN36csPXQ4+yIMEUVYfAm7+AI0UErbi6EUbn2RoT52lCP92X48L3XA9UDC
-         cNqv+6tfJeGbKsK87IfYhKoFtMyBH5zQlUtycwqCFuKsqQriwx705iuSb1Efn8Pav4nN
-         RXlw==
+        bh=9exy3tODP6D6SB8BPoapzrGAVV2VEaTDfn4vpIL8sTA=;
+        b=di4WuIikuBcw5cF/ANnxwSfZAlIGVw5Mh5g/4+hWxaFL6BHl7b/xpXdlYCB5l/NsVe
+         fWTBIHFxW3TFs41dtJbu4FKswxbHCj0Ca7ePzi9UdYbDwOgffE18yHNNxCVJCMv3g67/
+         f28CdBmYoDQ0yWwh/uQwtPqKvIyJbe4VcqPTOdxAxd1r7IImxU3IV4QeRbIUKyFyDEti
+         tcNZFnD3QGXDa4Fdikhw7c1mnRP8nnCFJlxAsg2xyIuTBY5c87/4RUT1AaCaahgW2mPQ
+         2ewTLHeFzgj5Pzyupn+pizVlAKEgVoM6Z1pnHl6lLDy8Qml8FddiY/XnsJsigoVo5w1b
+         rRfg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718354138; x=1718958938;
+        d=1e100.net; s=20230601; t=1718354139; x=1718958939;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=cu/gvkK5JV8o/AwZTjhXVurT12iJLCtsIO6X1RdbaeU=;
-        b=NxqCkFOD5+qxvAjCxMDUhickAXdyW7bwgWR5PXrnErWihblE48j3pIUEaDRzMNCuh1
-         blm1kBTUW/Wy9p11jIaUXrmY3i5Orlvr1ZlF2dXQAyHgQFl4B00slIlQ2PMZi2Ef6Yu4
-         XilUOL1mHQVR6Jmx5QCjW8i4WSfeQroGEz+EG2HpEikXp2Qi7lXR9Th1ma9RuEyzJOoZ
-         bS4GCgMFbjv/QvXK4wF0Te3HgwFVmuPBQcqLBKstRiDRlxY8GUkUIBK1yDl4zxjWRMGH
-         qrSyqqoptgSu44aHJbVOiWZE6AkxPuooLawdI11jgIweRQ+Pxu4DF/9bnWQ9Y/r9SDr2
-         18UA==
-X-Forwarded-Encrypted: i=1; AJvYcCU7nrUGA5mRVqURvGSehjBNDpFhFICVhStKOlun4AfhScOThn3ZQaegq/b6j3aR5ggFggLJgz8KrWYZxO8xwiQ2uHwEMhlxS4+4WZ56Ag==
-X-Gm-Message-State: AOJu0YwlgykgI9D6CFxVRhSO+DHGyRj75ICLEFg7qhIz8HSbMVhnRDKr
-	MlFqsu7PWhCinqaK3r4qaAWSw+xOp6Yve4nf42tUBKGNo76FO/c0hALzFdYX2BA=
-X-Google-Smtp-Source: AGHT+IGBwQeeRTRpx3tVIDNf6sTLyuMyd/F9sOxQ2WN+C8rxDT7QywHo76mQERX8zghGcWanjbYHag==
-X-Received: by 2002:a19:5f1c:0:b0:52c:1e37:92c7 with SMTP id 2adb3069b0e04-52ca6e99f9dmr1335311e87.59.1718354137822;
-        Fri, 14 Jun 2024 01:35:37 -0700 (PDT)
+        bh=9exy3tODP6D6SB8BPoapzrGAVV2VEaTDfn4vpIL8sTA=;
+        b=SME4uze3LgKvqzAToO0tdqZ0/MUSEyhYRc81TJU8n0YElbydRI8f2kyc99hipBiqdZ
+         5w3EVQjDhTLv/QUmJ6LazJ4D5Q6+PSIB1WzRk4AheFRFeHfexhhp4vgjknKGvLGCwuBs
+         QyYDhuC9cLnre4OCtPHOqLWb66HjFXGVDrwyfSuBp3Q+HukY3W1w35T4zKe76O5kPCz6
+         um+oOKees/FIl5p9YhVcpBrjHnw5DryH9IJuKDL6b0Gt4lPR/f7WGQ/H+FwVkR07Lzee
+         udgFVqyxS84qeL3cpuTIm/qJ751nFOxWrOzliRDxHe5Cirws9/+ez/lnXk2qwtYYHDGH
+         Dajw==
+X-Forwarded-Encrypted: i=1; AJvYcCXLIK7bj9P+h5a87SkZVGKOYCnFl7gJN0NNNpV1daZbuj8R1zbZ+ySK/dLZsAqq4s8bEvv8+dhH5FOjXA2X2HMa77rFKjXnd9O1uJNoIg==
+X-Gm-Message-State: AOJu0Yxqoeb3Z/bnd4MA4Y0LDaMGHcJF+JR79hACt6d2uOrrdBhq6+Br
+	n7sfc54bGsrel8pvrHeUBE8l0X9SMvriOlHZ0P3JyTU3sk+2YkLY7iubQqYu/b0=
+X-Google-Smtp-Source: AGHT+IHTbmeczb/9lcCgLK16cJp1SreY1FK+nJgmHVIjpUBegYARLy52/Iu4pgHJLW+a67FN2MKxHA==
+X-Received: by 2002:a05:6512:1313:b0:52a:e529:16bd with SMTP id 2adb3069b0e04-52ca6e99a33mr1603420e87.58.1718354138727;
+        Fri, 14 Jun 2024 01:35:38 -0700 (PDT)
 Received: from umbar.lan ([192.130.178.91])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52ca282f1dbsm444776e87.110.2024.06.14.01.35.36
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52ca282f1dbsm444776e87.110.2024.06.14.01.35.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 14 Jun 2024 01:35:37 -0700 (PDT)
+        Fri, 14 Jun 2024 01:35:38 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 14 Jun 2024 11:35:34 +0300
-Subject: [PATCH v2 1/2] phy: qcom: qmp-pcie: restore compatibility with
- existing DTs
+Date: Fri, 14 Jun 2024 11:35:35 +0300
+Subject: [PATCH v2 2/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: drop
+ second output clock name
 MIME-Version: 1.0
-Message-Id: <20240614-fix-pcie-phy-compat-v2-1-990863ea53bf@linaro.org>
+Message-Id: <20240614-fix-pcie-phy-compat-v2-2-990863ea53bf@linaro.org>
 References: <20240614-fix-pcie-phy-compat-v2-0-990863ea53bf@linaro.org>
 In-Reply-To: <20240614-fix-pcie-phy-compat-v2-0-990863ea53bf@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -81,21 +81,22 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
  devicetree@vger.kernel.org, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1592;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1663;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=T3DjvXEe+sumQ+ecA/DCNSeChO1xZMZY4sezj86K88Y=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBmbADX9AHnjH9hkGD+TdBoOGvwKBB1HxpP+V47g
- 6dSXZoIDJWJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZmwA1wAKCRCLPIo+Aiko
- 1TGDB/kBg91USYnSDUl0V2b7SQdGOrrO6lVRza608UE+7V9XzzUpvCNA+vSyfU5EW2MtqBoF3AM
- 7R+FpS0MkVTEGJj7oHOlANKSQ2cPtCRBBA0KoV8z/hfknL0D0Y3fz59bpOQzNHhXF32BWr3n9jK
- SBSUcy/FIAyNfFoAfLswcIHBYAQk4c/0wkLRjp7uBZOTZh0vaNpiiUYlCAvHWATPn9+UTLJtXFQ
- IZIHCPAt0Il/PLlU43ksakMCOh+oadeb86fsyvzpcCmd3kpBc0jG5ITaJx7YBQZz3zp5yGDpSLn
- RYDl05RAjlWX1oVd08XcDyMJ6knwbRlmkH6THH/sJ63+CqKk
+ bh=5IhnbDeMfhrQJFjppRaXrqKXHovo12yYiCutUlaZxUk=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBmbADYaE9TZu9NEvq7Nc0XurtFlswavE28Gqrn+
+ 08e2niAvR6JATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZmwA2AAKCRCLPIo+Aiko
+ 1XGACACjyFeiP1G2iAmP7ZCpeanYDEvJ9RCTKWgAuxN/3fxI8NnL5GjK6s93tmLoI+lSflRCXnf
+ n7F+5T01SlF3tnRAvYc6sDG9zBqu4po77g1qi7GcncqjtYWemV6rZoOhpvWRvVGQ9Ws17xesRTv
+ 9yam18U2ubqTtFp90x/T+WEO0qPZpxSzOoK6nvTJb+moCmQO5mWng9mw3dTexw/bFnFpV41UMBY
+ q4o2uD+9aDJXXbrj4Wu4ksmME55R5Tc8o+xDP2PwXEflg85EDZiD+9EEB2y3kuYssYEn0/EmNBx
+ EobPu9qSVlDXE2QTaV7Ztvg8MLnfcpsjbJKlXuHeqzwm+VTA
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240614_013540_353842_F4F75EA2 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20240614_013541_222608_274A0A26 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,44 +113,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Existing device trees specify only a single clock-output-name for the
-PCIe PHYs. The function phy_aux_clk_register() expects a second entry in
-that property. When it doesn't find it, it returns an error, thus
-failing the probe of the PHY and thus breaking support for the
-corresponding PCIe host.
+There is no need to specify exact name for the second (AUX) output
+clock. It has never been used for the lookups based on the system clock
+name. Partially revert commit 72bea132f368 ("dt-bindings: phy:
+qcom,sc8280xp-qmp-pcie-phy: document PHY AUX clock on SM8[456]50 SoCs"),
+returning compatibility with the existing device tree: reduce
+clock-output-names to always contain a single entry.
 
-Follow the approach of the combo USB+DT PHY and generate the name for
-the AUX clocks instead of requiring it in DT.
-
-Fixes: 583ca9ccfa80 ("phy: qcom: qmp-pcie: register second optional PHY AUX clock")
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Fixes: 72bea132f368 ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: document PHY AUX clock on SM8[456]50 SoCs")
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml        | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 8cb91b9114d6..5b36cc7ac78b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -4033,14 +4033,11 @@ static int phy_aux_clk_register(struct qmp_pcie *qmp, struct device_node *np)
- {
- 	struct clk_fixed_rate *fixed = &qmp->aux_clk_fixed;
- 	struct clk_init_data init = { };
--	int ret;
-+	char name[64];
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index 16634f73bdcf..03dbd02cf9e7 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -91,8 +91,7 @@ properties:
+   "#clock-cells": true
  
--	ret = of_property_read_string_index(np, "clock-output-names", 1, &init.name);
--	if (ret) {
--		dev_err(qmp->dev, "%pOFn: No clock-output-names index 1\n", np);
--		return ret;
--	}
-+	snprintf(name, sizeof(name), "%s::phy_aux_clk", dev_name(qmp->dev));
+   clock-output-names:
+-    minItems: 1
+-    maxItems: 2
++    maxItems: 1
  
-+	init.name = name;
- 	init.ops = &clk_fixed_rate_ops;
+   "#phy-cells":
+     const: 0
+@@ -222,14 +221,10 @@ allOf:
+               - qcom,sm8650-qmp-gen4x2-pcie-phy
+     then:
+       properties:
+-        clock-output-names:
+-          minItems: 2
+         "#clock-cells":
+           const: 1
+     else:
+       properties:
+-        clock-output-names:
+-          maxItems: 1
+         "#clock-cells":
+           const: 0
  
- 	fixed->fixed_rate = qmp->cfg->aux_clock_rate;
 
 -- 
 2.39.2
