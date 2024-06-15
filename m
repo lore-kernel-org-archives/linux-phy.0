@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CCE4C2BA12
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E82A3C27C7B
 	for <linux-phy@archiver.kernel.org>; Sat, 15 Jun 2024 18:52:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,57 +12,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZuYvVkonvOOc8JZqaXdGlxoq8IjAgc/zOiKfHbwbItQ=; b=3b/bM8vicnOwl5
-	3FalC0Gb9CqSLYBHUWficc+TGY+ATq+uQHoDb5Batn92Hmi5bxA1RoaNY357y4FpL0hhj3nEopBwg
-	FjpzfzpOIXbbVO7ZtFAqVJg0CJ9Rq4y/Olj/VwAZR4777WVc71LowIhLWynQom0JbJR7m/1Ewb6ap
-	F4AcdFhZ59/zypsBja6c36E5duZVnFW1A5NYeB7LqRrTTFEpuVRDgBXmZl+VBwxUMSKFLZOTMfWW8
-	k7yd3S1x6l3ddjY0NfLUmlDbTC3PgEOMV3wOiun6vW5UIXG9FE+hqEn1vnBXk5v1UwKtLvyq7p9bv
-	r49kWYFSXrctto6as5zg==;
+	List-Owner; bh=D3vmsm6Ga7V5KfAyW/AwatTQU4wa5VfrsONKKflfB54=; b=hZooWEF9yCt1YA
+	7lfmBMBV9M9h6rUn+h3JutMBezRhcXQ4JpGQ559MqziXcRlnD+mlK2YS/nd59MAWzs0J58863KJr8
+	3CCWekG1Qc4yyb2Bk4tgnC2ZPVi1Bk3PGUNyS/h1AUEt1dyaOILebUo812wdOW0WEGFLYrg0YKxMp
+	6dn7v1VxNE3ZNcFokkl4NuyHs0IyZCzjrZNgQqMF7vmUcqgSRkZPjywmeKy2fy0ty7EAJNfNopQPq
+	/ArVFEPDZUzdBWEfMJSQWcbt7omWFVgbNEeR3Ivls2gayBXmm9pS8M1mxEri0JAhrgpLgv+Rsi0ok
+	LRUXa8eHdnbe/HZjjkYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sIYW1-00000005xC2-0SIo;
+	id 1sIYW1-00000005xCS-288a;
 	Sat, 15 Jun 2024 18:52:41 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sIYVx-00000005x7o-1Zfo
+	id 1sIYVy-00000005x9W-3Sbe
 	for linux-phy@lists.infradead.org;
-	Sat, 15 Jun 2024 18:52:39 +0000
+	Sat, 15 Jun 2024 18:52:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 47F8ACE0B27;
-	Sat, 15 Jun 2024 18:52:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 509FDC4AF53;
-	Sat, 15 Jun 2024 18:52:19 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 69542CE0959;
+	Sat, 15 Jun 2024 18:52:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B8F0C4AF62;
+	Sat, 15 Jun 2024 18:52:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718477544;
-	bh=weQHfrNTmeruW4q8jhq/6GiMueMj2ra6mLv8mX/1y5o=;
+	s=k20201202; t=1718477549;
+	bh=Ah8NsRUCcVGsrSOWkwB5ILKjgnr51ZMV2LB5dcDSdOc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=ADmwGISoKLJA18cSf9tPggPSGigFP6WsG2NNBa0hbxyPpe2badLizziBY/2OmE58u
-	 8o/2bmj2Kmj65zwX/ZbB0kRhzq6iwC6jvMT8iEyUCso7CjNPfPjZtg1oE2ulhOfQEz
-	 OrN4Lzbn+lpQ73hKbXNUu9Ey0vHlJgbpCT9QxsLLP96IyWVoQxQv25TurUgsbH+awo
-	 1LMSui1yRTGbmnlmpn9sDpZaz7DWghoMy35Ub1Nc79hbjd3k5dqpsEUzd9dWgLXwlz
-	 i1/bDsPveFY9uzf3otY9UQ3TERdvYokYmIkbg3C55WFeXRZ7AEOBA8+rjie0h32+TI
-	 lranfn0mygauA==
+	b=D5f/HCDhAPOkm50+MAqD0tuRJ6uuUM6DfL6k8fv5wCRfsMH1Twde0PxCTyWGR8X6I
+	 yyo9gt8cEdDcRHnvjNjl5TXiQ9Z87as6mUCGUWw2GR6HTMZ1GmMAmRpql2RFAZSOkI
+	 nCZM9mUvhEZ8M7+hTT60E5loymg7WCW3vm1hTQWNrZAdDRyh/+0uEDglzHfHWuJGIp
+	 fxSsancCBHuYePADYlIN4DllSxlFdVJdIeKP2Hwokppzj+CPGPl373sAsz3vBI89+H
+	 xQwBrUkbLSnB4QugBzQPKvLdQo4DXxuB1QKxGpCYKLZOsR9wRL/a8hX/gVilYMYIjn
+	 DV78BklsBp9Bg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Herman van Hazendonk <github.com@herrie.org>
-Cc: benwolsieffer@gmail.com, chris.chapuis@gmail.com, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+To: devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Shengyang Chen <shengyang.chen@starfivetech.com>
+Cc: kishon@kernel.org, robh+dt@kernel.org, 
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
+ p.zabel@pengutronix.de, minda.chen@starfivetech.com, 
+ changhuang.liang@starfivetech.com, rogerq@kernel.org, 
+ geert+renesas@glider.be, keith.zhao@starfivetech.com, 
  linux-kernel@vger.kernel.org
-In-Reply-To: <20240417065454.3599824-1-github.com@herrie.org>
-References: <20240417065020.3599755-1-github.com@herrie.org>
- <20240417065454.3599824-1-github.com@herrie.org>
-Subject: Re: [PATCH v3] dt-bindings: phy: qcom,usb-hs-phy: Add compatible
-Message-Id: <171847753945.716119.6840883875722992838.b4-ty@kernel.org>
-Date: Sun, 16 Jun 2024 00:22:19 +0530
+In-Reply-To: <20240418035020.47876-1-shengyang.chen@starfivetech.com>
+References: <20240418035020.47876-1-shengyang.chen@starfivetech.com>
+Subject: Re: [PATCH v5 0/2] Add JH7110 MIPI DPHY TX support
+Message-Id: <171847754477.716119.1989436906241299329.b4-ty@kernel.org>
+Date: Sun, 16 Jun 2024 00:22:24 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240615_115237_671096_DB737A4D 
-X-CRM114-Status: UNSURE (   3.24  )
+X-CRM114-CacheID: sfid-20240615_115239_128905_436A28BA 
+X-CRM114-Status: UNSURE (   5.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,17 +79,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 17 Apr 2024 08:54:54 +0200, Herman van Hazendonk wrote:
-> Adds qcom,usb-hs-phy-msm8660 compatible
+On Thu, 18 Apr 2024 11:50:18 +0800, Shengyang Chen wrote:
+> This patchset adds mipi dphy tx support for the StarFive JH7110 SoC.
+> It is used to transfer DSI data. The series has been tested on
+> the VisionFive 2 board.
 > 
-> Used by HP Touchpad (tenderloin) for example.
 > 
+> change since v4:
+> - Rebased on tag v6.9-rc4.
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] dt-bindings: phy: qcom,usb-hs-phy: Add compatible
-      commit: cd13368db059de22d27e86665a378aa2a388db85
+[1/2] dt-bindings: phy: Add starfive,jh7110-dphy-tx
+      commit: e4a8e87250fc2c1ed2aec5d1e8521dc7d799ea77
+[2/2] phy: starfive: Add mipi dphy tx support
+      commit: d3ab7955330843699cdcc413edd7993923e6c016
 
 Best regards,
 -- 
