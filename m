@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D608EC27C4F
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Jun 2024 12:09:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A5E0C27C4F
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Jun 2024 18:49:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WLhaWZnuLZfSGmT7n3DvxvEIlR6brqcP9D6XetM/few=; b=2gie7mg+0el/V9
-	4Y3Likc/TEx1dO+RBJIcq5k4WopC+t8HGqTCSbtbAkRuNRNoeACvpdNOpkyMrl5WG/BMH9e/Av5gd
-	BzaK8hX25RXVn6LTxCGdFAO3qpbbtomj78CcamFBdZei5O7fOvgvqdLo7fB3wqAGG7fD8m+rJlmfC
-	F/DyLMZf5iFVC20D9k+erUZqWp6zZiH/1RXIUTvsheUzC6YzCIYrKhgPMgeMkWegdk4dY52UnG+Rh
-	NIqjYnKQiJBDHnxf8/8ATIMqVS5yO1eyEWKrhhyqED18orWH0hWqEfi4ezi8NHo+EkA8PASjgSVTW
-	ExDRawsdjNhOhsyv262Q==;
+	List-Owner; bh=JaQ7tHbq8vEt3Jta/mpSDIo6qtZX9EV+GhFcby56egk=; b=kDvFZiORFtlpHy
+	GT/JoEGOtytQSCcve4tZhSIAugw62+9GclQBU+a8e8QPHydOretTQomjJgY0g/R6LlqmH7Z4Qbkye
+	U2pL4DN58aRUoOdnwonnsu0MlGytHsH5QTv3pr9e+CN2JSVXyHkGhmM802LkD4wYpnEreWFba1Age
+	wm+x/vKzBcw//as7HqQ9HdX9jXJrQVca1/tahRoS+1DroC2y3ce0Ju7otT1I9mdx9wgqhS0gQCm/Z
+	6YOVdXebbYweIzdD8iZo9M/0rHfs/lo260DTA2Uz4BU3znTzyjKAEdI3Bn5lh3TBY5zr4p1JFFb+D
+	MgFqreTaFBnz96n1WjuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sISED-00000005Lw4-1iNt;
-	Sat, 15 Jun 2024 12:09:53 +0000
+	id 1sIYSt-00000005wtD-2dNQ;
+	Sat, 15 Jun 2024 18:49:27 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sISEA-00000005Lvc-3ijr
-	for linux-phy@lists.infradead.org;
-	Sat, 15 Jun 2024 12:09:52 +0000
+	id 1sIYSp-00000005wsb-3BPH;
+	Sat, 15 Jun 2024 18:49:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DC30E60B96;
-	Sat, 15 Jun 2024 12:09:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 060BBC116B1;
-	Sat, 15 Jun 2024 12:09:47 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id C3BEB60BA3;
+	Sat, 15 Jun 2024 18:49:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A84DDC116B1;
+	Sat, 15 Jun 2024 18:49:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718453388;
-	bh=e56elCVsYhzaI2+hNiUznG1iV4hQkayq6NJHiVNEkgk=;
+	s=k20201202; t=1718477362;
+	bh=2UFS+G15YQb63hu8LpWAEUeKauwNQ3gIuqSdcJidqJ4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=b8QHqyIv7MXOgxrbk/AJH2SpyB7L40J7K7ndde7X39Cq8n2QYUWRPoIUwYkTmhqTd
-	 1K1KOK2Em+fC9JCQLUPvKDvQTFr866jV+y/D6Sxx8ViLw+e+Pgkn8sfw8/9gljZ68a
-	 uIGxQ5Dao3My7H8NfMRxIu2NAQoCfnIwwjcTZdiwoJhifaTRuFKAlgHJIrDFhmHZVI
-	 1etSEhGwfqceepTDWDENFI6LSGWavfL+qEtKYhUtXZ+0nB3MIbPCCq9hvqgdxIDYep
-	 GXAde5qysJ0se1WzT28N9wNS8S+bq3+maUtAsWXx57qq8tTKhgRrRQmWRVGg1VJufL
-	 f4kj0IPYgdAVg==
-Date: Sat, 15 Jun 2024 17:39:44 +0530
+	b=UYXEjMw/WNPKKLRHyp6R+kcO03OHxzA1i8kiL/UHm2M+ByRERA26imlKwyVwsM7pC
+	 20SxSSbNmCRhTID7gkblYNwTsn1lPRQsr+ME8YkFAtwbOOA9dEUzmxBL0IDGxXfPH9
+	 uJgWgNoDK9QlgVhO4BV54B5ucC27tJyyZOMv4GHPHYHweOh2HFUQwbhzjIPLDiQJKJ
+	 tGGcVOW9WNepklT3t3SzKayfmMUc31bjvfKt+TTWN8HEOHswk6HM5wmn9gy/LhFugv
+	 fW64hl3E3XUvgxlUYx0EyRRlv4gx/e9zb2vq0VfVbGQCQ9zj4ADDlZ6SHGLsimdkqZ
+	 /H7SUISGExowg==
+Date: Sun, 16 Jun 2024 00:19:18 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bastien Curutchet <bastien.curutchet@bootlin.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>, Bin Liu <b-liu@ti.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
-	herve.codina@bootlin.com, christophercordahi@nanometrics.ca
-Subject: Re: [PATCH 1/4] phy: ti: phy-da8xx-usb: Add runtime PM support
-Message-ID: <Zm2EiKTNR_cdLLoP@matsya>
-References: <20240528102026.40136-1-bastien.curutchet@bootlin.com>
- <20240528102026.40136-2-bastien.curutchet@bootlin.com>
+To: Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: linux-phy@lists.infradead.org, kishon@kernel.org,
+	lorenzo.bianconi83@gmail.com, conor@kernel.org,
+	linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+	devicetree@vger.kernel.org, nbd@nbd.name, john@phrozen.org,
+	dd@embedd.com, catalin.marinas@arm.com, will@kernel.org,
+	upstream@airoha.com, angelogioacchino.delregno@collabora.com,
+	amitsinght@marvell.com
+Subject: Re: [PATCH v3 0/4] Introduce PCIe PHY driver for EN7581 SoC
+Message-ID: <Zm3iLkeu27E4Qn8w@matsya>
+References: <cover.1716031610.git.lorenzo@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240528102026.40136-2-bastien.curutchet@bootlin.com>
+In-Reply-To: <cover.1716031610.git.lorenzo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240615_050951_093029_3EF17CA8 
-X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-CacheID: sfid-20240615_114924_076035_8963041D 
+X-CRM114-Status: UNSURE (   4.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,17 +78,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28-05-24, 12:20, Bastien Curutchet wrote:
-> Runtime PM is not supported while USB PHY can be turned off from
-> register accesses.
-> 
-> Add runtime PM for the USB2.0 PHY. The PHY is entirely shut down to save
-> as much power as possible. This means that gadgets will not be discovered
-> once suspend state is entered, and suspend state can not be left without
-> an explicit user intervention (through sysfs). That's why runtime PM is
-> disabled by default.
+On 18-05-24, 13:31, Lorenzo Bianconi wrote:
+> Add support for Airoha PCIe PHY controller available in the EN7581 SoC.
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
+This fails build tests on x86 etc, please make sure you compile in idff
+arch with W=1 and C=1 and submit again
 
 -- 
 ~Vinod
