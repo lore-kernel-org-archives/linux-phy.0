@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B064C27C4F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CCE4C2BA12
 	for <linux-phy@archiver.kernel.org>; Sat, 15 Jun 2024 18:52:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,52 +12,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vEjrZIeQP84r3SjLwpdrA39ZUoOmUWoqk50OTWAaY7I=; b=SVQ6uTIoBEuQ/z
-	wu5MpueRHywcuMh3ZpMDlsV6+59CmHyZYQsiuKm4vuWrc6iDa5tGOd+vlR8m0xkmHvb75Tr2Z3ViR
-	FvyL3w5R3gWqmKYabSMt78CWIapTv2vpJEQnp4FNp7RKBxMBtvTZL0CaoFwHCrBRL2MmsObEHYVQ5
-	jILikKQvAmTI1/KrkUaZFfaYJeLBAbgPjr/WWfTAQ1nTdBYWXW3Ru6DaPXIY4J5GF4TJpJrIMLQNx
-	zsZ0Wedw4W1hL+BLHiFR2zLtqaLXfAaYfrGZraSdh+K0iCjP9VbKcZd/c6z4W96CthcBVO5G+BHv9
-	9KBUoliOMpnLu3tUZWqw==;
+	List-Owner; bh=ZuYvVkonvOOc8JZqaXdGlxoq8IjAgc/zOiKfHbwbItQ=; b=3b/bM8vicnOwl5
+	3FalC0Gb9CqSLYBHUWficc+TGY+ATq+uQHoDb5Batn92Hmi5bxA1RoaNY357y4FpL0hhj3nEopBwg
+	FjpzfzpOIXbbVO7ZtFAqVJg0CJ9Rq4y/Olj/VwAZR4777WVc71LowIhLWynQom0JbJR7m/1Ewb6ap
+	F4AcdFhZ59/zypsBja6c36E5duZVnFW1A5NYeB7LqRrTTFEpuVRDgBXmZl+VBwxUMSKFLZOTMfWW8
+	k7yd3S1x6l3ddjY0NfLUmlDbTC3PgEOMV3wOiun6vW5UIXG9FE+hqEn1vnBXk5v1UwKtLvyq7p9bv
+	r49kWYFSXrctto6as5zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sIYW0-00000005xBr-3HGa;
-	Sat, 15 Jun 2024 18:52:40 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sIYW1-00000005xC2-0SIo;
+	Sat, 15 Jun 2024 18:52:41 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sIYVx-00000005x9b-1isS;
-	Sat, 15 Jun 2024 18:52:38 +0000
+	id 1sIYVx-00000005x7o-1Zfo
+	for linux-phy@lists.infradead.org;
+	Sat, 15 Jun 2024 18:52:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 908F0CE0AD6;
-	Sat, 15 Jun 2024 18:52:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 72993C116B1;
-	Sat, 15 Jun 2024 18:52:30 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 47F8ACE0B27;
+	Sat, 15 Jun 2024 18:52:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 509FDC4AF53;
+	Sat, 15 Jun 2024 18:52:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718477554;
-	bh=nyGltL8ICDC6yNzr7LgN5jIYezIhu7MymJF2gKvIdTs=;
+	s=k20201202; t=1718477544;
+	bh=weQHfrNTmeruW4q8jhq/6GiMueMj2ra6mLv8mX/1y5o=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=di9FlrJkf6enPrwrRLzCVdp15Vg/c15nzBD5yNkikm4q+vtua7GROqMrDs98lCB1v
-	 S3G1LZDtTNPw1fp6RdoLCzPO4wdz/D+TUWVQfcCxCmNfmR8wAJsvW2YbKY34vlFqAd
-	 WrYLGIDJo3IgoYKMPj0f2CHcY951iIOWPwvK6grdff2BT54uOVyinA9fSjE9I59QPr
-	 IBzE12jWaiQIg2PHpHaa/UHcz9IdCwiVwDHydjnAhRrYUchx6WnYtkZgQZkwD/hG+9
-	 j/G2OJMSWYaOae4mNPLfHzskx7BzHL6IvyG8I/YXRpDzON4GCG66/mU+yYTm73PTlc
-	 oqtWJ4SkTdk9g==
+	b=ADmwGISoKLJA18cSf9tPggPSGigFP6WsG2NNBa0hbxyPpe2badLizziBY/2OmE58u
+	 8o/2bmj2Kmj65zwX/ZbB0kRhzq6iwC6jvMT8iEyUCso7CjNPfPjZtg1oE2ulhOfQEz
+	 OrN4Lzbn+lpQ73hKbXNUu9Ey0vHlJgbpCT9QxsLLP96IyWVoQxQv25TurUgsbH+awo
+	 1LMSui1yRTGbmnlmpn9sDpZaz7DWghoMy35Ub1Nc79hbjd3k5dqpsEUzd9dWgLXwlz
+	 i1/bDsPveFY9uzf3otY9UQ3TERdvYokYmIkbg3C55WFeXRZ7AEOBA8+rjie0h32+TI
+	 lranfn0mygauA==
 From: Vinod Koul <vkoul@kernel.org>
-To: conor@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
- krzysztof.kozlowski+dt@linaro.org, frank.li@nxp.com, conor+dt@kernel.org, 
- Richard Zhu <hongxing.zhu@nxp.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- kernel@pengutronix.de, imx@lists.linux.dev
-In-Reply-To: <1716962565-2084-1-git-send-email-hongxing.zhu@nxp.com>
-References: <1716962565-2084-1-git-send-email-hongxing.zhu@nxp.com>
-Subject: Re: [PATCH v7 0/2] Add i.MX8Q HSIO PHY support
-Message-Id: <171847755003.716119.4761960505484541660.b4-ty@kernel.org>
-Date: Sun, 16 Jun 2024 00:22:30 +0530
+To: Herman van Hazendonk <github.com@herrie.org>
+Cc: benwolsieffer@gmail.com, chris.chapuis@gmail.com, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20240417065454.3599824-1-github.com@herrie.org>
+References: <20240417065020.3599755-1-github.com@herrie.org>
+ <20240417065454.3599824-1-github.com@herrie.org>
+Subject: Re: [PATCH v3] dt-bindings: phy: qcom,usb-hs-phy: Add compatible
+Message-Id: <171847753945.716119.6840883875722992838.b4-ty@kernel.org>
+Date: Sun, 16 Jun 2024 00:22:19 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240615_115237_668226_3F6F9760 
-X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-CacheID: sfid-20240615_115237_671096_DB737A4D 
+X-CRM114-Status: UNSURE (   3.24  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,27 +81,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 29 May 2024 14:02:43 +0800, Richard Zhu wrote:
-> v7 changes:
-> Rebase to 6.10-rc1
+On Wed, 17 Apr 2024 08:54:54 +0200, Herman van Hazendonk wrote:
+> Adds qcom,usb-hs-phy-msm8660 compatible
 > 
-> dt-binding
-> - To keep the table format, add "|" to description of "fsl,hsio-cfg" property.
-> - Refine the contents of "fsl,hsio-cfg" property.
-> - Add Reviewed-by: Conor Dooley <conor.dooley@microchip.com> tag.
-> PHY driver
-> - Use "imx8qm_hsio_drvdata" as imx_hsio_drvdata struct name of i.MX8QM
-> - Remove redundant memset().
-> - Add Reviewed-by: Frank Li <Frank.Li@nxp.com> tag.
+> Used by HP Touchpad (tenderloin) for example.
 > 
-> [...]
+> 
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: Add i.MX8Q HSIO SerDes PHY binding
-      commit: 7c46101aa631843ded626b823b5a412d57371812
-[2/2] phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support
-      commit: 82c56b6dd24fcdf811f2b47b72e5585c8a79b685
+[1/1] dt-bindings: phy: qcom,usb-hs-phy: Add compatible
+      commit: cd13368db059de22d27e86665a378aa2a388db85
 
 Best regards,
 -- 
