@@ -4,90 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1262C27C6E
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 08:56:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8474DC27C79
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 13:29:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6Jv5IU1C8Zzf6/PbjOe4a2oRwCHTO2WJiHzLBHaGQcY=; b=lbC3rWCg4PN/zB
-	H1NGFhEclWaM2ioOgyHZjeeiy7+Y0W/UcUZ9grYB3S2kAs5D0mYYu/DnaJJ2Pm8yVChbE0CfRqSYB
-	Q7leC5H91yFJoLV52moueLhbywhTqO38HFPhUt7Sc7VRJXn1oe3gdMiPwPmN5ZKDe8Vh8lHYHnPQJ
-	JeEl/vTkL9jl5J1cH/vu+2QCNLVgmvRY97vB2Nk5jnMbHbvPZOd5XB2tT0wU3mXUeZY0CixRnl/ty
-	H0kMH0oR83dN/QT+zDs5kDOr7bmtCrKTCTJso/yvKXp/t2tZ+PyiJPMVSNexk//SaxUsDLUXY5sCg
-	KT3vJZ4zwijrG+4gZwmg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IX2m5hrUh+KSH5tkaQfLMRsuE3YfMSc3+Rp/wmK2ou8=; b=UFAV+9bUC137ZA
+	+9/RnZoZW91qHZLaHjMi2cSjFFaGw7LADNsO02i7kyBPLOZGIoeHRgiaGGqKPZMFCErLkUFxdUZEO
+	CfvOcMbi67fplPWtg2iZaK2/4eOEcQG2SNGx/x4U8fDis6UODdakuF/prTG2u9hQhMjPFwY+ZB4VH
+	EcfgpKiMJgESuqiRYEzHyV5IiJfAyejIJlVfKOmDSyYkwffAYf5jnzk51XAfvTiUzAYylfg0doXfc
+	4Bt53BZBgD4xUDuA0WsJMaKkVy1/T0p8tb2cg/B+wBEcz0wPDkGPRVsWblGbEAxWbXsKfwf8I/+7H
+	5txuE+sh7GFdawp+UzdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJ8A3-00000009vQv-1EjL;
-	Mon, 17 Jun 2024 08:56:23 +0000
-Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
+	id 1sJCQ9-0000000Ar5T-0hsI;
+	Mon, 17 Jun 2024 13:29:17 +0000
+Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJ8A0-00000009vQE-2gAp;
-	Mon, 17 Jun 2024 08:56:22 +0000
-Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-1f4a0050b9aso34041725ad.2;
-        Mon, 17 Jun 2024 01:56:18 -0700 (PDT)
+	id 1sJCQ4-0000000Ar3K-425E;
+	Mon, 17 Jun 2024 13:29:14 +0000
+Received: by mail-pg1-x52e.google.com with SMTP id 41be03b00d2f7-652fd0bb5e6so3454842a12.0;
+        Mon, 17 Jun 2024 06:29:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1718614577; x=1719219377; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Px2F5O/xlFYH5rKqkkkLF6gjhpLOgiX0YoFm/7eZqRY=;
-        b=Uml+a7tozf24NK3doc28a3sTcjznvF8ndw5pTq/8zd5r0n6jrpOOQSx4dVdvXMkRVZ
-         zvvKHiWUhzHMjRDCBt5/GXHI4KQLbfHTaTUXbYcZ4/ZsprEE8r+xse2FViwjnxq2Nne2
-         Lu/NJLkgmDqEC1+fuTEAs7E6MDz03UfaXbmkw/VAa7EEmWpW0uvHd4T2Bo4LFQxezSgv
-         RcCehZFKtAC+AFRTWaCJFNrx3q6TpkvC0/0fqr53xgoYdXO1CZLu7LrExjpIE1qZxEKd
-         RDWXNXd19XQedkZjnTWhuawhWs8NzvtEbivzcf3kULB9WJl4Pg8SGo88dCLUs5tZK2YS
-         grjQ==
+        d=gmail.com; s=20230601; t=1718630950; x=1719235750; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=u9q+Z4GD9MpvcYkpXfGOgXbR7/P8MYbKwiRSUUKubKM=;
+        b=IR8oThhh/YA+NRGdvLJyXXyCLVwz2AE9FcBikzSmXHPZSkcQgVhQh6uXDMDx/Odi0C
+         DDBmmSnHfwSViDEL2bBQOj66X8Ah1OSZmTZQsDVTPJwv2zzwbe4RX1UaUlD3McYlg2+a
+         VIifUZJtj6x4hm2dh/AanRPwCJjt0cfekVExfRh4d16v09Q5WQX8f2ZOUn5WUr/axolz
+         PQAOZOM0ZiBhRJ9LOpymZ12TT7WXPbDR8aJZAvFhKL1eRjH4HYgFNgn8z5PXEvvQN2ws
+         y4BixsNBCuRGb2pB+JrV1Y6qJVqty12zRob0emJbb2o8tvuunqT4eQmePtRNZ0s5dtyJ
+         3Wfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718614577; x=1719219377;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Px2F5O/xlFYH5rKqkkkLF6gjhpLOgiX0YoFm/7eZqRY=;
-        b=RZXNUL2D5hyfrmow56ixy4dUM9Bv+z1DCR9cP5HDJb9qZQRiU7kzNbNR5E0+kSlbEr
-         4Zr5YDI8Pn1v65KPpuc8d4eNuWZ7CCBiANjpukRzaIk3qStoBcxMkFYk5gGsQd970c+c
-         1NeNUz9NTHVmLb4S3CR1ILE/YfeCHp2Lg+t7Qb6YPR49JDsGjbx6WdTpCP5Pb0zdjvV4
-         1oK8TjSbpj1AGgHWzd2YSA4D9XW0Bgv5P0oG6r7jVEZbQA0xAucCtNa+uW3qjvrAefHZ
-         AnNPPuvbwFA5mTz8mu8BXFJZ1N+vBJw3A10l4ffdDrPVkoayYU2Ujz4cq20Tit/+RANA
-         VWEg==
-X-Forwarded-Encrypted: i=1; AJvYcCWn5gvTj7dL2gzbdY47AIhyAbc5JLOqVS2EWaz0MA3dPB1AwLt3MCqeNcwvLgSy4YxzUaNq0k57CoKKCN4JwtSvjNoS4N5iOr5SN+LDkJ04kI+eTqfQ965MHh17oSvSThniQT37Ls/VArhblAonJh/dW/aynRkYDTY=
-X-Gm-Message-State: AOJu0YwC+EAtBg5SdN9X4c4ODXQr3n0Ts3j01AVOkWMWocgNt7TF+l9c
-	OAORYV4bVMheC2MH+9ubB0JU4n7Iz0R3nBi21IvTAWgMW0nxZh7X
-X-Google-Smtp-Source: AGHT+IHeVjWVii646asJCpvxGnP4VmV3AlDIExZwWwDrivS9N4JaJa0DteWgOnOA+8uSzFbLsrsErQ==
-X-Received: by 2002:a17:903:22c5:b0:1f7:e32f:f067 with SMTP id d9443c01a7336-1f862a1694emr96194705ad.50.1718614577443;
-        Mon, 17 Jun 2024 01:56:17 -0700 (PDT)
-Received: from localhost.localdomain ([122.161.50.215])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1f855f28fd8sm75407295ad.252.2024.06.17.01.56.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 17 Jun 2024 01:56:16 -0700 (PDT)
-From: Shresth Prasad <shresthprasad7@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	heiko@sntech.de,
-	sebastian.reichel@collabora.com,
-	andy.yan@rock-chips.com,
-	s.hauer@pengutronix.de,
-	jbx6244@yandex.com
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	javier.carrasco.cruz@gmail.com,
-	skhan@linuxfoundation.org,
-	Shresth Prasad <shresthprasad7@gmail.com>
-Subject: [PATCH v4] dt-bindings: phy: rockchip-emmc-phy: Convert to dtschema
-Date: Mon, 17 Jun 2024 14:23:42 +0530
-Message-ID: <20240617085341.34332-2-shresthprasad7@gmail.com>
-X-Mailer: git-send-email 2.45.2
+        d=1e100.net; s=20230601; t=1718630950; x=1719235750;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=u9q+Z4GD9MpvcYkpXfGOgXbR7/P8MYbKwiRSUUKubKM=;
+        b=Jsl4R556JE9hmyZf7YIZDBvKHQyurrf3U/J1xmr7FOr6Qjzr4MWEC42JnbWkdo7EEX
+         3Mrrc1OExo2WacxV+1QulE6ZFZyXkDZ0fdBRQUOKwug3wqWBdYn8bw/gxJQwMTtziNxz
+         9w+8gOQeape37U2EuaAMd0jrg7fomrnVaHqCZ3tSm+q7PY2WKKzO/YRezv1wApNFKXzf
+         WxdweoKd4nXlc5zepSOltAThTAnNjuK2EXaDmQNrmPASjfAK6qbJSz+BmAnPTE86yIzT
+         cmG7DOFL4DBq9oR+JSrO1c0MTmkL14USnAF+xCQCItVbjyGfQ5niNb+AIaVC+46+ot5S
+         Qw4A==
+X-Forwarded-Encrypted: i=1; AJvYcCWI9Fvw5rg0DwWwJY95SuhBHFpdd/tESFQlLDfQ2weJeCIAqzvi/+a3sm1uSr8wOm/ztMu3Ac20lexFkqUW51XJAM7J/hcRlUkoIv/g2g4FGw/IIXMvmi2qj1NIDXklYoz+VrZsTvIG6Oz6LGx0ElvTu5pX
+X-Gm-Message-State: AOJu0YxGGqgrI79KjXo2pjkD0tL7lAzrsukmnz1AfbQoBx/TTyh+b7n/
+	lF59wxSSbD4WxjrHet2qmgCidBkheAbgIyc9/2yS0lls8DM/a+/rUORGXfxV38Le4kH4aYmw6u2
+	NzBqp+a7ZyvN9hZZvUQ9Kcu+fXPA=
+X-Google-Smtp-Source: AGHT+IFHNQnVqTbXey7rmOHY9zC5Gl6630C23KaIy8xKqNcUDOtRiu3TC30yfGx+t6zBKRWmGgrhzjL5YAGs06H5CPg=
+X-Received: by 2002:a17:90a:2dc6:b0:2bd:f4cb:bd87 with SMTP id
+ 98e67ed59e1d1-2c4db24e973mr9926240a91.14.1718630949878; Mon, 17 Jun 2024
+ 06:29:09 -0700 (PDT)
 MIME-Version: 1.0
+References: <20240203165307.7806-1-aford173@gmail.com> <20240203165307.7806-11-aford173@gmail.com>
+ <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
+In-Reply-To: <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Mon, 17 Jun 2024 08:28:58 -0500
+Message-ID: <CAHCN7xJt+1WGFYeBii1jUDEg9OU176f0AA+rMkXCqNQrfq=XWg@mail.gmail.com>
+Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
+ (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for i.MX8MP
+ DWC HDMI)
+To: Dominique MARTINET <dominique.martinet@atmark-techno.com>
+Cc: Lucas Stach <l.stach@pengutronix.de>, linux-arm-kernel@lists.infradead.org, 
+	marex@denx.de, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
+	NXP Linux Team <linux-imx@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	Makoto Sato <makoto.sato@atmark-techno.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_015620_720498_5C1A242C 
-X-CRM114-Status: GOOD (  17.84  )
+X-CRM114-CacheID: sfid-20240617_062913_104726_581D3778 
+X-CRM114-Status: GOOD (  35.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,190 +98,97 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
-for validation.
-
-Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
----
-Request for an Ack from the PHY maintainers, so that the DT maintainer Heiko 
-can merge it to grf.yaml in the order that he likes.
-
-Changes in v4:
-    - change license to `GPL-2.0-only`
-    - change dt-binding file name
-    - remove descriptions
-    - move `#phy-cells` to the bottom
-    - add Heiko to maintainers
-    - fix `patternProperties` regex in grf.yaml
-    - change `description` to `$ref` in grf.yaml
-
-Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
-and `rockchip/rk3399-pinebook-pro.dtb`.
----
- .../phy/rockchip,rk3399-emmc-phy.yaml         | 72 +++++++++++++++++++
- .../bindings/phy/rockchip-emmc-phy.txt        | 43 -----------
- .../devicetree/bindings/soc/rockchip/grf.yaml |  9 ++-
- 3 files changed, 78 insertions(+), 46 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml
- delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml
-new file mode 100644
-index 000000000000..e61ba2b0abcd
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml
-@@ -0,0 +1,72 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/rockchip,rk3399-emmc-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip EMMC PHY
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+  - Shresth Prasad <shresthprasad7@gmail.com>
-+
-+properties:
-+  compatible:
-+    const: rockchip,rk3399-emmc-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clock-names:
-+    const: emmcclk
-+
-+  clocks:
-+    maxItems: 1
-+
-+  drive-impedance-ohm:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description:
-+      Specifies the drive impedance in Ohm.
-+    enum: [33, 40, 50, 66, 100]
-+    default: 50
-+
-+  rockchip,enable-strobe-pulldown:
-+    type: boolean
-+    description: |
-+      Enable internal pull-down for the strobe
-+      line.  If not set, pull-down is not used.
-+
-+  rockchip,output-tapdelay-select:
-+    $ref: /schemas/types.yaml#/definitions/uint32
-+    description:
-+      Specifies the phyctrl_otapdlysec register.
-+    default: 0x4
-+    maximum: 0xf
-+
-+  "#phy-cells":
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    grf: syscon@ff770000 {
-+      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-+      reg = <0xff770000 0x10000>;
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+
-+      emmcphy: phy@f780 {
-+        compatible = "rockchip,rk3399-emmc-phy";
-+        reg = <0xf780 0x20>;
-+        clocks = <&sdhci>;
-+        clock-names = "emmcclk";
-+        drive-impedance-ohm = <50>;
-+        #phy-cells = <0>;
-+      };
-+    };
-diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-deleted file mode 100644
-index 57d28c0d5696..000000000000
---- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-+++ /dev/null
-@@ -1,43 +0,0 @@
--Rockchip EMMC PHY
-------------------------
--
--Required properties:
-- - compatible: rockchip,rk3399-emmc-phy
-- - #phy-cells: must be 0
-- - reg: PHY register address offset and length in "general
--   register files"
--
--Optional properties:
-- - clock-names: Should contain "emmcclk".  Although this is listed as optional
--		(because most boards can get basic functionality without having
--		access to it), it is strongly suggested.
--		See ../clock/clock-bindings.txt for details.
-- - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
-- - drive-impedance-ohm: Specifies the drive impedance in Ohm.
--                        Possible values are 33, 40, 50, 66 and 100.
--                        If not set, the default value of 50 will be applied.
-- - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
--                                    line.  If not set, pull-down is not used.
-- - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
--                                    If not set, the register defaults to 0x4.
--                                    Maximum value 0xf.
--
--Example:
--
--
--grf: syscon@ff770000 {
--	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
--	#address-cells = <1>;
--	#size-cells = <1>;
--
--...
--
--	emmcphy: phy@f780 {
--		compatible = "rockchip,rk3399-emmc-phy";
--		reg = <0xf780 0x20>;
--		clocks = <&sdhci>;
--		clock-names = "emmcclk";
--		drive-impedance-ohm = <50>;
--		#phy-cells = <0>;
--	};
--};
-diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-index 79798c747476..6e1b1cdea680 100644
---- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-+++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-@@ -176,9 +176,12 @@ allOf:
-             Documentation/devicetree/bindings/phy/rockchip-pcie-phy.txt
- 
-       patternProperties:
--        "phy@[0-9a-f]+$":
--          description:
--            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-+        "^phy@[0-9a-f]+$":
-+          type: object
-+
-+          $ref: /schemas/phy/rockchip,rk3399-emmc-phy.yaml#
-+
-+          unevaluatedProperties: false
- 
-   - if:
-       properties:
--- 
-2.45.2
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gTW9uLCBKdW4gMTcsIDIwMjQgYXQgMToxN+KAr0FNIERvbWluaXF1ZSBNQVJUSU5FVAo8ZG9t
+aW5pcXVlLm1hcnRpbmV0QGF0bWFyay10ZWNobm8uY29tPiB3cm90ZToKPgo+IEFkYW0gRm9yZCB3
+cm90ZSBvbiBTYXQsIEZlYiAwMywgMjAyNCBhdCAxMDo1Mjo1MEFNIC0wNjAwOgo+ID4gRnJvbTog
+THVjYXMgU3RhY2ggPGwuc3RhY2hAcGVuZ3V0cm9uaXguZGU+Cj4gPgo+ID4gQWRkIGEgc2ltcGxl
+IHdyYXBwZXIgZHJpdmVyIGZvciB0aGUgRFdDIEhETUkgYnJpZGdlIGRyaXZlciB0aGF0Cj4gPiBp
+bXBsZW1lbnRzIHRoZSBmZXcgYml0cyB0aGF0IGFyZSBuZWNlc3NhcnkgdG8gYWJzdHJhY3QgdGhl
+IGkuTVg4TVAKPiA+IFNvQyBpbnRlZ3JhdGlvbi4KPgo+IEhpIEx1Y2FzLCBBZGFtLAo+ICh0cmlt
+bWVkIGNjcyBhIGJpdCkKPgo+IEZpcnN0LCB0aGFuayB5b3UgZm9yIHRoZSBlZmZvcnQgb2YgdXBz
+dHJlYW1pbmcgYWxsIG9mIHRoaXMhISBJdCdzIHJlYWxseQo+IGFwcHJlY2lhdGVkLCBhbmQgd2l0
+aCBkaXNwbGF5IHdvcmtpbmcgSSdsbCByZWFsbHkgYmUgd2FudGluZyB0byB1cHN0cmVhbQo+IG91
+ciBEVFMgYXMgd2VsbCBhcyBzb29uIGFzIEkgaGF2ZSB0aW1lICh3aGljaCBpcyBnb2luZyB0byBi
+ZSBhIHdoaWxlLAo+IGJ1dCBiZXR0ZXIgbGF0ZSB0aGFuIG5ldmVyID8pCj4KPiBVbnRpbCB0aGVu
+LCBpdCdzIGJlZW4gYSBmZXcgbW9udGhzIGJ1dCBJJ3ZlIGdvdCBhIHF1ZXN0aW9uIG9uIHRoaXMg
+Yml0Ogo+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9pbXgvaW14OG1w
+LWhkbWktdHguYyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvaW14L2lteDhtcC1oZG1pLXR4LmMK
+PiA+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiBpbmRleCAwMDAwMDAwMDAwMDAuLjg5ZmM0MzJh
+YzYxMQo+ID4gLS0tIC9kZXYvbnVsbAo+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9p
+bXgvaW14OG1wLWhkbWktdHguYwo+ID4gK3N0YXRpYyBlbnVtIGRybV9tb2RlX3N0YXR1cwo+ID4g
+K2lteDhtcF9oZG1pX21vZGVfdmFsaWQoc3RydWN0IGR3X2hkbWkgKmR3X2hkbWksIHZvaWQgKmRh
+dGEsCj4gPiArICAgICAgICAgICAgICAgICAgICBjb25zdCBzdHJ1Y3QgZHJtX2Rpc3BsYXlfaW5m
+byAqaW5mbywKPiA+ICsgICAgICAgICAgICAgICAgICAgIGNvbnN0IHN0cnVjdCBkcm1fZGlzcGxh
+eV9tb2RlICptb2RlKQo+ID4gK3sKPiA+ICsgICAgIHN0cnVjdCBpbXg4bXBfaGRtaSAqaGRtaSA9
+IChzdHJ1Y3QgaW14OG1wX2hkbWkgKilkYXRhOwo+ID4gKwo+ID4gKyAgICAgaWYgKG1vZGUtPmNs
+b2NrIDwgMTM1MDApCj4gPiArICAgICAgICAgICAgIHJldHVybiBNT0RFX0NMT0NLX0xPVzsKPiA+
+ICsKPiA+ICsgICAgIGlmIChtb2RlLT5jbG9jayA+IDI5NzAwMCkKPiA+ICsgICAgICAgICAgICAg
+cmV0dXJuIE1PREVfQ0xPQ0tfSElHSDsKPiA+ICsKPiA+ICsgICAgIGlmIChjbGtfcm91bmRfcmF0
+ZShoZG1pLT5waXhjbGssIG1vZGUtPmNsb2NrICogMTAwMCkgIT0KPiA+ICsgICAgICAgICBtb2Rl
+LT5jbG9jayAqIDEwMDApCj4gPiArICAgICAgICAgICAgIHJldHVybiBNT0RFX0NMT0NLX1JBTkdF
+Owo+Cj4gRG8geW91IGtub3cgd2h5IHN1Y2ggYSBjaGVjayBpcyBoZXJlPwoKSSBkaWRuJ3Qgd3Jp
+dGUgdGhlIG9yaWdpbmFsIGNvZGUsIHNvIEknbGwgZGVmZXIgdG8gTHVjYXMgaGVyZS4gIEkganVz
+dAp0cmllZCB0byBlZGl0L2ZpeCBpc3N1ZXMgYXMgdGhleSB3ZXJlIGlkZW50aWZpZWQgdG8gZ2V0
+IGl0IHB1c2hlZAp1cHN0cmVhbS4KCj4KPiBXaGVuIHBsdWdnaW5nIGluIGEgc2NyZWVuIHdpdGgg
+bm8gZnJlcXVlbmN5IGlkZW50aWNhbGx5IHN1cHBvcnRlZCBpbiBpdHMKPiBFRElEIHRoaXMgY2hl
+Y2sgY2F1c2VzIHRoZSBzY3JlZW4gdG8gc3RheSBibGFjaywgYW5kIHdlJ3ZlIGJlZW4gdGVsbGlu
+Zwo+IGN1c3RvbWVycyB0byBvdmVycmlkZSB0aGUgRURJRCBidXQgaXQncyBhIGh1Z2UgcGFpbi4K
+Pgo+IENvbW1pdCA2YWQwODJiZWU5MDIgKCJwaHk6IGZyZWVzY2FsZTogYWRkIFNhbXN1bmcgSERN
+SSBQSFkiKSBhbHJlYWR5Cj4gImZpeGVkIiB0aGUgc2Ftc3VuZyBoZG1pIHBoeSBkcml2ZXIgdG8g
+cmV0dXJuIHRoZSBuZXh0IGZyZXF1ZW5jeSBpZiBhbgo+IGV4YWN0IG1hdGNoIGhhc24ndCBiZWVu
+IGZvdW5kIChOWFAgdHJlZSdzIG1hdGNoIGZyZXF1ZW5jaWVzIGV4YWN0bHksIGJ1dAo+IHRoaXMg
+Z2V0cyB0aGUgZmlyc3QgY2xvY2sgd2l0aCBwaXhjbGsgPD0gcmF0ZSksIHNvIGlmIHRoaXMgY2hl
+Y2sgaXMgYWxzbwo+IHJlbGF4ZWQgb3VyIGRpc3BsYXlzIHdvdWxkIHdvcmsgb3V0IG9mIHRoZSBi
+b3guCgpBcmUgeW91IHByb3Bvc2luZyB0byByZXBsYWNlICdyZXR1cm4gTU9ERV9DTE9DS19SQU5H
+RScgd2l0aCBhIHByaW50ZWQgd2FybmluZz8KCj4KPiBJIGFsc28gZG9uJ3Qgc2VlIGFueSBvdGhl
+ciBicmlkZ2UgZG9pbmcgdGhpcyBraW5kIG9mIGNoZWNrLgo+IGRyaXZlcnMvZ3B1L2RybS9icmlk
+Z2UvaW14L2lteDkzLW1pcGktZHNpLmMgaGFzIGEgc2ltaWxhciBjaGVjayB3aXRoIGEKPiAwLjUl
+IGxlZXdheSwgYW5kIGFsbCB0aGUgb3RoZXIgZHJpdmVycyBkb24ndCBjaGVjayBhbnl0aGluZy4K
+PiBJZiB5b3Ugd2FudCB0byBhZGQgc29tZSBsZXZlbCBvZiBzYWZldHksIEkgdGhpbmsgd2UgY291
+bGQgbWFrZSB0aGlzIHdvcmsKPiB3aXRoIGEgNSUgbWFyZ2luIGVhc2lseS4uLiBQcmludGluZyBh
+IHdhcm5pbmcgaW4gZG1lc2cgY291bGQgd29yayBpZgo+IHlvdSdyZSB3b3JyaWVkIGFib3V0IGFy
+dGlmYWN0cywgYnV0IGxpdHRlcmFseSBhbnl0aGluZyBpcyBiZXR0ZXIgdGhhbiBhCj4gYmxhY2sg
+c2NyZWVuIHdpdGggbm8gZXJyb3IgbWVzc2FnZSBpbiBteSBvcGluaW9uLgo+Cj4KPiBJbiBwcmFj
+dGljZSB0aGUgc2NyZWVuIEknbSBsb29raW5nIGF0IGhhcyBhbiBFRElEIHdoaWNoIG9ubHkgc3Vw
+cG9ydHMKPiA1MS4yTUh6IGFuZCB0aGUgY2xvc2VzdCBmcmVxdWVuY3kgc3VwcG9ydGVkIGJ5IHRo
+ZSBTYW1zdW5nIEhETUkgcGh5IGlzCj4gNTAuNE1Ieiwgc28gdGhhdCdzIGEgfjEuNSUgZGlmZmVy
+ZW5jZSBhbmQgaXQnZCBiZSBncmVhdCBpZiBpdCBjb3VsZCB3b3JrCj4gb3V0IG9mIHRoZSBib3gu
+CgpJIHdvbmRlciBpZiB0aGUgSERNSSBQSFkgY291bGQgYmUgaW1wcm92ZWQgdG8gYmV0dGVyIGR5
+bmFtaWNhbGx5CmNhbGN1bGF0ZSB2YWx1ZXMgaW5zdGVhZCBvZiB0aGUgbG9vayB0YWJsZXMuCgph
+ZGFtCj4KPiBGb3IgcmVmZXJlbmNlLCB0aGUgb3V0cHV0IG9mIGVkaWQtZGVjb2RlIGlzIGFzIGZv
+bGxvdzoKPiAtLS0KPiBlZGlkLWRlY29kZSAvc3lzL2RldmljZXMvcGxhdGZvcm0vZGlzcGxheS1z
+dWJzeXN0ZW0vZHJtL2Nhcgo+IGQxL2NhcmQxLUhETUktQS0xL2VkaWQKPiBlZGlkLWRlY29kZSAo
+aGV4KToKPgo+IDAwIGZmIGZmIGZmIGZmIGZmIGZmIDAwIDNhIDQ5IDAzIDAwIDAxIDAwIDAwIDAw
+Cj4gMjAgMWUgMDEgMDMgODAgMTAgMDkgMDAgMGEgMDAgMDAgMDAgMDAgMDAgMDAgMDAKPiAwMCAw
+MCAwMCAwMCAwMCAwMCAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMQo+IDAxIDAxIDAxIDAx
+IDAxIDAxIDAwIDE0IDAwIDQwIDQxIDU4IDIzIDIwIGEwIDIwCj4gYzggMDAgOWEgNTYgMDAgMDAg
+MDAgMTggMDAgMDAgMDAgMTAgMDAgMDAgMDAgMDAKPiAwMCAwMCAwMCAwMCAwMCAwMCAwMCAwMCAw
+MCAwMCAwMCAwMCAwMCAxMCAwMCAwMAo+IDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAw
+IDAwIDAwIDAwIDAwIDEwCj4gMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAg
+MDAgMDAgOWEKPgo+IC0tLS0tLS0tLS0tLS0tLS0KPgo+IEJsb2NrIDAsIEJhc2UgRURJRDoKPiAg
+IEVESUQgU3RydWN0dXJlIFZlcnNpb24gJiBSZXZpc2lvbjogMS4zCj4gICBWZW5kb3IgJiBQcm9k
+dWN0IElkZW50aWZpY2F0aW9uOgo+ICAgICBNYW51ZmFjdHVyZXI6IE5SSQo+ICAgICBNb2RlbDog
+Mwo+ICAgICBTZXJpYWwgTnVtYmVyOiAxCj4gICAgIE1hZGUgaW46IHdlZWsgMzIgb2YgMjAyMAo+
+ICAgQmFzaWMgRGlzcGxheSBQYXJhbWV0ZXJzICYgRmVhdHVyZXM6Cj4gICAgIERpZ2l0YWwgZGlz
+cGxheQo+ICAgICBNYXhpbXVtIGltYWdlIHNpemU6IDE2IGNtIHggOSBjbQo+ICAgICBHYW1tYTog
+MS4wMAo+ICAgICBSR0IgY29sb3IgZGlzcGxheQo+ICAgICBGaXJzdCBkZXRhaWxlZCB0aW1pbmcg
+aXMgdGhlIHByZWZlcnJlZCB0aW1pbmcKPiAgIENvbG9yIENoYXJhY3RlcmlzdGljczoKPiAgICAg
+UmVkICA6IDAuMDAwMCwgMC4wMDAwCj4gICAgIEdyZWVuOiAwLjAwMDAsIDAuMDAwMAo+ICAgICBC
+bHVlIDogMC4wMDAwLCAwLjAwMDAKPiAgICAgV2hpdGU6IDAuMDAwMCwgMC4wMDAwCj4gICBFc3Rh
+Ymxpc2hlZCBUaW1pbmdzIEkgJiBJSTogbm9uZQo+ICAgU3RhbmRhcmQgVGltaW5nczogbm9uZQo+
+ICAgRGV0YWlsZWQgVGltaW5nIERlc2NyaXB0b3JzOgo+ICAgICBEVEQgMTogIDEwMjR4NjAwICAg
+IDU5Ljk5MyBIeiAxMjg6NzUgICAzOC4wOTUga0h6ICA1MS4yMDAgTUh6ICgxNTQgbW0geCA4NiBt
+Cj4gbSkKPiAgICAgICAgICAgICAgICAgIEhmcm9udCAgMTYwIEhzeW5jICAzMiBIYmFjayAxMjgg
+SHBvbCBOCj4gICAgICAgICAgICAgICAgICBWZnJvbnQgICAxMiBWc3luYyAgIDggVmJhY2sgIDE1
+IFZwb2wgTgo+ICAgICBEdW1teSBEZXNjcmlwdG9yOgo+ICAgICBEdW1teSBEZXNjcmlwdG9yOgo+
+ICAgICBEdW1teSBEZXNjcmlwdG9yOgo+IENoZWNrc3VtOiAweDlhCj4gLS0tCj4KPgo+IFRoYW5r
+cywKPiAtLQo+IERvbWluaXF1ZSBNYXJ0aW5ldAo+Cj4KPgo+IC0tCj4gbGludXgtcGh5IG1haWxp
+bmcgbGlzdAo+IGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5CgotLSAKbGludXgtcGh5IG1h
+aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
