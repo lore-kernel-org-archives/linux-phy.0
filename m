@@ -4,107 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDEC8C2BA15
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 15:59:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 043FFC2BA18
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 16:33:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xZ0psQl7pjUS72xql2l/aUYZRDgipdOLcljK7yspHGk=; b=ASbMowoafCyw4b
-	Ja6DUYGUNl3t/JP0dq30vIbAIudtPO9QdWJyCiWrK62ENg6I+9FcSzL33lMfwaCmTOcSJp+VlzLvt
-	Xu1a7ImdMq+o/Z8pq7EmMoEjFKiwoxyzY9o30nNJXqPsYYZSbuVb4AiAc1apdmv1jsWFz66x63V6i
-	/D9c0141BKyf9ybLky0dW+lUwIvXhXSFzcacsxqDq0cxc920rZxuQfWcf851WXgKTN1HolqsiogMj
-	PF++pFykYbaYey+2kte6/frm8OF+8P4+wuKE2Yium0UsL+lq1AxoBxxtu1HQt/tqDGAC31qfgYFjL
-	AV1YOeqtva6PXewd+CHA==;
+	List-Owner; bh=dJe5kTRlBCjjuVmPi+O+aHtp6sPyPv+PugMDGWDVC6I=; b=VYdPPjB2YWQA2p
+	OUMrv3G5STpKEO6fZEu1rqCnDDctXjL6UGmeZ5bFyYLTvLAN6jS5ePl0kbuWw5xkV398mmmcEUCY3
+	xUrdv7mkDVwc0lAJjyr8DaBGp1oyzNH4Vxc5LE59fZ0hhYNMwPf6Kg7PuP5zzGo7JGmXzlyk97pEd
+	I4E0fDmCnwk+8f5sb5Zdlog3qzN2QcCq2Gtgw+kLzYti3qEMapaFKuZdk3aaN+aaeE8HSHN9Vjhtf
+	hafsxncrE+2f+0QMhVJWssYmxgCSI+iOcgKGrEGsp2qRqJY7lloIAFPmBRTMeXrjcOvpMbBJ5zAo1
+	FeqpL6EGJbemjA8V+xEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJElL-0000000BcRL-25ZT;
-	Mon, 17 Jun 2024 15:59:19 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sJFIJ-0000000BkY0-2voM;
+	Mon, 17 Jun 2024 16:33:23 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJEl8-0000000BcJp-1lKo;
-	Mon, 17 Jun 2024 15:59:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id E5174CE02C2;
-	Mon, 17 Jun 2024 15:59:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42DFFC2BD10;
-	Mon, 17 Jun 2024 15:58:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718639942;
-	bh=dvaCCGm0T4LQoDBLCKOzZ/DnxCXT6xS8nFEQzuVr9pI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UQ18fZZwwfZptDfOHc7FNjvDcuKaK3FOljY9jsRYNLYttiNXyJ6Hf0X58hQPO+ICw
-	 wyByChjxK7/i2DmV0Nr5hVU84OuzEwVygqKgHXVVUhCS1XNV5r9do2hrDyEp7Ea29o
-	 r6yHOxuquJ6E+92N3Za06UvBNa1sQ8RIQrnfw1nUat0r34QEam8/iGV+yFlv++1zxf
-	 OPKmQgqQ0QaQp38nmS3UtJf/09+7T2Iou7364ql4U6TPn6oXkycWogdvr9tMdsqtPv
-	 RmP1Q/ywqGceuCXyR7xvI9UlHQtnpq7LpSbErF3HlbK4g4njV5EvwUFsCMy2+zznLb
-	 OJGD4n7BxjC6A==
-Message-ID: <f691c7f9-cd81-4bdf-a794-95118cb26686@kernel.org>
-Date: Mon, 17 Jun 2024 17:58:56 +0200
+	id 1sJFIG-0000000BkWW-1TZA
+	for linux-phy@lists.infradead.org;
+	Mon, 17 Jun 2024 16:33:21 +0000
+Received: from ptz.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::77] helo=[IPv6:::1])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <l.stach@pengutronix.de>)
+	id 1sJFHk-00033H-3A; Mon, 17 Jun 2024 18:32:48 +0200
+Message-ID: <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
+Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock
+ frequencies (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper
+ driver for i.MX8MP DWC HDMI)
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Dominique MARTINET <dominique.martinet@atmark-techno.com>, Adam Ford
+	 <aford173@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org, marex@denx.de, Laurent Pinchart
+ <laurent.pinchart@ideasonboard.com>, Andrzej Hajda
+ <andrzej.hajda@intel.com>,  Neil Armstrong <neil.armstrong@linaro.org>,
+ Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,  Jernej
+ Skrabec <jernej.skrabec@gmail.com>, Maarten Lankhorst
+ <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
+ Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Shawn Guo <shawnguo@kernel.org>, Sascha
+ Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team
+ <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, NXP Linux Team
+ <linux-imx@nxp.com>,  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Liu Ying <victor.liu@nxp.com>, 
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org, Makoto Sato <makoto.sato@atmark-techno.com>
+Date: Mon, 17 Jun 2024 18:32:45 +0200
+In-Reply-To: <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
+References: <20240203165307.7806-1-aford173@gmail.com>
+	 <20240203165307.7806-11-aford173@gmail.com>
+	 <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
+User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4] dt-bindings: phy: rockchip-emmc-phy: Convert to
- dtschema
-To: Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- heiko@sntech.de, sebastian.reichel@collabora.com, andy.yan@rock-chips.com,
- s.hauer@pengutronix.de, jbx6244@yandex.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, javier.carrasco.cruz@gmail.com,
- skhan@linuxfoundation.org
-References: <20240617085341.34332-2-shresthprasad7@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240617085341.34332-2-shresthprasad7@gmail.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:900:1d::77
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_085907_259342_D17164EC 
-X-CRM114-Status: GOOD (  16.01  )
+X-CRM114-CacheID: sfid-20240617_093320_447401_9048B981 
+X-CRM114-Status: GOOD (  35.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,174 +83,151 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17/06/2024 10:53, Shresth Prasad wrote:
-> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
-> for validation.
+Hi Dominique,
+
+Am Montag, dem 17.06.2024 um 15:16 +0900 schrieb Dominique MARTINET:
+> Adam Ford wrote on Sat, Feb 03, 2024 at 10:52:50AM -0600:
+> > From: Lucas Stach <l.stach@pengutronix.de>
+> > 
+> > Add a simple wrapper driver for the DWC HDMI bridge driver that
+> > implements the few bits that are necessary to abstract the i.MX8MP
+> > SoC integration.
 > 
-> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+> Hi Lucas, Adam,
+> (trimmed ccs a bit)
+> 
+> First, thank you for the effort of upstreaming all of this!! It's really
+> appreciated, and with display working I'll really be wanting to upstream
+> our DTS as well as soon as I have time (which is going to be a while,
+> but better late than never ?)
+> 
+> Until then, it's been a few months but I've got a question on this bit:
+> 
+> > diff --git a/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
+> > new file mode 100644
+> > index 000000000000..89fc432ac611
+> > --- /dev/null
+> > +++ b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
+> > +static enum drm_mode_status
+> > +imx8mp_hdmi_mode_valid(struct dw_hdmi *dw_hdmi, void *data,
+> > +		       const struct drm_display_info *info,
+> > +		       const struct drm_display_mode *mode)
+> > +{
+> > +	struct imx8mp_hdmi *hdmi = (struct imx8mp_hdmi *)data;
+> > +
+> > +	if (mode->clock < 13500)
+> > +		return MODE_CLOCK_LOW;
+> > +
+> > +	if (mode->clock > 297000)
+> > +		return MODE_CLOCK_HIGH;
+> > +
+> > +	if (clk_round_rate(hdmi->pixclk, mode->clock * 1000) !=
+> > +	    mode->clock * 1000)
+> > +		return MODE_CLOCK_RANGE;
+> 
+> Do you know why such a check is here?
+
+Sending a HDMI signal with a different rate than what the display
+expects rarely ends well, so this check avoids that.
+
+However, this check is a bit overcautious in that it only allows exact
+rate matches. IIRC HDMI allows a rate mismatch of +- 0.5%, so this
+check could be relaxed quite a bit to allow for that.
+> 
+> When plugging in a screen with no frequency identically supported in its
+> EDID this check causes the screen to stay black, and we've been telling
+> customers to override the EDID but it's a huge pain.
+> 
+> Commit 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY") already
+> "fixed" the samsung hdmi phy driver to return the next frequency if an
+> exact match hasn't been found (NXP tree's match frequencies exactly, but
+> this gets the first clock with pixclk <= rate), so if this check is also
+> relaxed our displays would work out of the box.
+> 
+> I also don't see any other bridge doing this kind of check.
+> drivers/gpu/drm/bridge/imx/imx93-mipi-dsi.c has a similar check with a
+> 0.5% leeway, and all the other drivers don't check anything.
+> If you want to add some level of safety, I think we could make this work
+> with a 5% margin easily... Printing a warning in dmesg could work if
+> you're worried about artifacts, but litteraly anything is better than a
+> black screen with no error message in my opinion.
+> 
+> 
+> In practice the screen I'm looking at has an EDID which only supports
+> 51.2MHz and the closest frequency supported by the Samsung HDMI phy is
+> 50.4MHz, so that's a ~1.5% difference and it'd be great if it could work
+> out of the box.
+
+For rate mismatches larger than the 0.5% allowed by the HDMI spec it
+would be better to actually add PHY PLL parameters matching those
+rates.
+
+We could potentially add some more leeway for displays like yours that
+aren't actually HDMI (as it doesn't seem to have a standard HDMI
+resolution). But that's more of a last resort option, as it may
+introduce other problems for displays that aren't as tolerant with
+their input rates. Remember the mode_valid call is used to filter modes
+that aren't compatible with the source, so for a display with multiple
+modes allowing too much leeway may lead to incompatible modes not
+getting tossed, in turn allowing userspace to set a mode that the
+display may not like due to too much rate deviation, instead of only
+presenting a list of valid modes. This again would present the user
+with a black-screen without warning situation.
+
+Regards,
+Lucas
+
+> 
+> For reference, the output of edid-decode is as follow:
 > ---
-
-
-...
-
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    const: emmcclk
-> +
-> +  clocks:
-> +    maxItems: 1
-
-Keep order from DTS coding style, so clocks then clock-names.
-
-> +
-> +  drive-impedance-ohm:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      Specifies the drive impedance in Ohm.
-> +    enum: [33, 40, 50, 66, 100]
-> +    default: 50
-> +
-> +  rockchip,enable-strobe-pulldown:
-> +    type: boolean
-> +    description: |
-> +      Enable internal pull-down for the strobe
-> +      line.  If not set, pull-down is not used.
-> +
-> +  rockchip,output-tapdelay-select:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      Specifies the phyctrl_otapdlysec register.
-> +    default: 0x4
-> +    maximum: 0xf
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    grf: syscon@ff770000 {
-
-Drop label... actually entire node looks not needed.
-
-> +      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-
-Drop
-
-> +      reg = <0xff770000 0x10000>;
-
-Drop
-
-
-> +      #address-cells = <1>;
-> +      #size-cells = <1>;
-> +
-> +      emmcphy: phy@f780 {
-
-Drop label
-
-> +        compatible = "rockchip,rk3399-emmc-phy";
-> +        reg = <0xf780 0x20>;
-> +        clocks = <&sdhci>;
-> +        clock-names = "emmcclk";
-> +        drive-impedance-ohm = <50>;
-> +        #phy-cells = <0>;
-> +      };
-> +    };
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> deleted file mode 100644
-> index 57d28c0d5696..000000000000
-> --- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> +++ /dev/null
-> @@ -1,43 +0,0 @@
-> -Rockchip EMMC PHY
-> ------------------------
-> -
-> -Required properties:
-> - - compatible: rockchip,rk3399-emmc-phy
-> - - #phy-cells: must be 0
-> - - reg: PHY register address offset and length in "general
-> -   register files"
-> -
-> -Optional properties:
-> - - clock-names: Should contain "emmcclk".  Although this is listed as optional
-> -		(because most boards can get basic functionality without having
-> -		access to it), it is strongly suggested.
-> -		See ../clock/clock-bindings.txt for details.
-> - - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
-> - - drive-impedance-ohm: Specifies the drive impedance in Ohm.
-> -                        Possible values are 33, 40, 50, 66 and 100.
-> -                        If not set, the default value of 50 will be applied.
-> - - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
-> -                                    line.  If not set, pull-down is not used.
-> - - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
-> -                                    If not set, the register defaults to 0x4.
-> -                                    Maximum value 0xf.
-> -
-> -Example:
-> -
-> -
-> -grf: syscon@ff770000 {
-> -	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
-> -	#address-cells = <1>;
-> -	#size-cells = <1>;
-> -
-> -...
-> -
-> -	emmcphy: phy@f780 {
-> -		compatible = "rockchip,rk3399-emmc-phy";
-> -		reg = <0xf780 0x20>;
-> -		clocks = <&sdhci>;
-> -		clock-names = "emmcclk";
-> -		drive-impedance-ohm = <50>;
-> -		#phy-cells = <0>;
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> index 79798c747476..6e1b1cdea680 100644
-> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
-> @@ -176,9 +176,12 @@ allOf:
->              Documentation/devicetree/bindings/phy/rockchip-pcie-phy.txt
->  
->        patternProperties:
-> -        "phy@[0-9a-f]+$":
-> -          description:
-> -            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
-> +        "^phy@[0-9a-f]+$":
-> +          type: object
-> +
-
-Drop blank line
-
-> +          $ref: /schemas/phy/rockchip,rk3399-emmc-phy.yaml#
-> +
-
-Drop blank line
-
-> +          unevaluatedProperties: false
->  
->    - if:
->        properties:
-
-Nothing in example? Isn't the example for 3399?
-
-We want only one complete example of such multi-children devices, so the
-example can be moved and included in existing one here.
-
-
-Best regards,
-Krzysztof
+> edid-decode /sys/devices/platform/display-subsystem/drm/car
+> d1/card1-HDMI-A-1/edid
+> edid-decode (hex):
+> 
+> 00 ff ff ff ff ff ff 00 3a 49 03 00 01 00 00 00
+> 20 1e 01 03 80 10 09 00 0a 00 00 00 00 00 00 00
+> 00 00 00 00 00 00 01 01 01 01 01 01 01 01 01 01
+> 01 01 01 01 01 01 00 14 00 40 41 58 23 20 a0 20
+> c8 00 9a 56 00 00 00 18 00 00 00 10 00 00 00 00
+> 00 00 00 00 00 00 00 00 00 00 00 00 00 10 00 00
+> 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 10
+> 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9a
+> 
+> ----------------
+> 
+> Block 0, Base EDID:
+>   EDID Structure Version & Revision: 1.3
+>   Vendor & Product Identification:
+>     Manufacturer: NRI
+>     Model: 3
+>     Serial Number: 1
+>     Made in: week 32 of 2020
+>   Basic Display Parameters & Features:
+>     Digital display
+>     Maximum image size: 16 cm x 9 cm
+>     Gamma: 1.00
+>     RGB color display
+>     First detailed timing is the preferred timing
+>   Color Characteristics:
+>     Red  : 0.0000, 0.0000
+>     Green: 0.0000, 0.0000
+>     Blue : 0.0000, 0.0000
+>     White: 0.0000, 0.0000
+>   Established Timings I & II: none
+>   Standard Timings: none
+>   Detailed Timing Descriptors:
+>     DTD 1:  1024x600    59.993 Hz 128:75   38.095 kHz  51.200 MHz (154 mm x 86 m
+> m)
+>                  Hfront  160 Hsync  32 Hback 128 Hpol N
+>                  Vfront   12 Vsync   8 Vback  15 Vpol N
+>     Dummy Descriptor:
+>     Dummy Descriptor:
+>     Dummy Descriptor:
+> Checksum: 0x9a
+> ---
+> 
+> 
+> Thanks,
 
 
 -- 
