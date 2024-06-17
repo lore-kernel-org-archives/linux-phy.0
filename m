@@ -4,89 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8474DC27C79
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 13:29:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDEC8C2BA15
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 15:59:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IX2m5hrUh+KSH5tkaQfLMRsuE3YfMSc3+Rp/wmK2ou8=; b=UFAV+9bUC137ZA
-	+9/RnZoZW91qHZLaHjMi2cSjFFaGw7LADNsO02i7kyBPLOZGIoeHRgiaGGqKPZMFCErLkUFxdUZEO
-	CfvOcMbi67fplPWtg2iZaK2/4eOEcQG2SNGx/x4U8fDis6UODdakuF/prTG2u9hQhMjPFwY+ZB4VH
-	EcfgpKiMJgESuqiRYEzHyV5IiJfAyejIJlVfKOmDSyYkwffAYf5jnzk51XAfvTiUzAYylfg0doXfc
-	4Bt53BZBgD4xUDuA0WsJMaKkVy1/T0p8tb2cg/B+wBEcz0wPDkGPRVsWblGbEAxWbXsKfwf8I/+7H
-	5txuE+sh7GFdawp+UzdQ==;
+	List-Owner; bh=xZ0psQl7pjUS72xql2l/aUYZRDgipdOLcljK7yspHGk=; b=ASbMowoafCyw4b
+	Ja6DUYGUNl3t/JP0dq30vIbAIudtPO9QdWJyCiWrK62ENg6I+9FcSzL33lMfwaCmTOcSJp+VlzLvt
+	Xu1a7ImdMq+o/Z8pq7EmMoEjFKiwoxyzY9o30nNJXqPsYYZSbuVb4AiAc1apdmv1jsWFz66x63V6i
+	/D9c0141BKyf9ybLky0dW+lUwIvXhXSFzcacsxqDq0cxc920rZxuQfWcf851WXgKTN1HolqsiogMj
+	PF++pFykYbaYey+2kte6/frm8OF+8P4+wuKE2Yium0UsL+lq1AxoBxxtu1HQt/tqDGAC31qfgYFjL
+	AV1YOeqtva6PXewd+CHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJCQ9-0000000Ar5T-0hsI;
-	Mon, 17 Jun 2024 13:29:17 +0000
-Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
+	id 1sJElL-0000000BcRL-25ZT;
+	Mon, 17 Jun 2024 15:59:19 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJCQ4-0000000Ar3K-425E;
-	Mon, 17 Jun 2024 13:29:14 +0000
-Received: by mail-pg1-x52e.google.com with SMTP id 41be03b00d2f7-652fd0bb5e6so3454842a12.0;
-        Mon, 17 Jun 2024 06:29:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1718630950; x=1719235750; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=u9q+Z4GD9MpvcYkpXfGOgXbR7/P8MYbKwiRSUUKubKM=;
-        b=IR8oThhh/YA+NRGdvLJyXXyCLVwz2AE9FcBikzSmXHPZSkcQgVhQh6uXDMDx/Odi0C
-         DDBmmSnHfwSViDEL2bBQOj66X8Ah1OSZmTZQsDVTPJwv2zzwbe4RX1UaUlD3McYlg2+a
-         VIifUZJtj6x4hm2dh/AanRPwCJjt0cfekVExfRh4d16v09Q5WQX8f2ZOUn5WUr/axolz
-         PQAOZOM0ZiBhRJ9LOpymZ12TT7WXPbDR8aJZAvFhKL1eRjH4HYgFNgn8z5PXEvvQN2ws
-         y4BixsNBCuRGb2pB+JrV1Y6qJVqty12zRob0emJbb2o8tvuunqT4eQmePtRNZ0s5dtyJ
-         3Wfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718630950; x=1719235750;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=u9q+Z4GD9MpvcYkpXfGOgXbR7/P8MYbKwiRSUUKubKM=;
-        b=Jsl4R556JE9hmyZf7YIZDBvKHQyurrf3U/J1xmr7FOr6Qjzr4MWEC42JnbWkdo7EEX
-         3Mrrc1OExo2WacxV+1QulE6ZFZyXkDZ0fdBRQUOKwug3wqWBdYn8bw/gxJQwMTtziNxz
-         9w+8gOQeape37U2EuaAMd0jrg7fomrnVaHqCZ3tSm+q7PY2WKKzO/YRezv1wApNFKXzf
-         WxdweoKd4nXlc5zepSOltAThTAnNjuK2EXaDmQNrmPASjfAK6qbJSz+BmAnPTE86yIzT
-         cmG7DOFL4DBq9oR+JSrO1c0MTmkL14USnAF+xCQCItVbjyGfQ5niNb+AIaVC+46+ot5S
-         Qw4A==
-X-Forwarded-Encrypted: i=1; AJvYcCWI9Fvw5rg0DwWwJY95SuhBHFpdd/tESFQlLDfQ2weJeCIAqzvi/+a3sm1uSr8wOm/ztMu3Ac20lexFkqUW51XJAM7J/hcRlUkoIv/g2g4FGw/IIXMvmi2qj1NIDXklYoz+VrZsTvIG6Oz6LGx0ElvTu5pX
-X-Gm-Message-State: AOJu0YxGGqgrI79KjXo2pjkD0tL7lAzrsukmnz1AfbQoBx/TTyh+b7n/
-	lF59wxSSbD4WxjrHet2qmgCidBkheAbgIyc9/2yS0lls8DM/a+/rUORGXfxV38Le4kH4aYmw6u2
-	NzBqp+a7ZyvN9hZZvUQ9Kcu+fXPA=
-X-Google-Smtp-Source: AGHT+IFHNQnVqTbXey7rmOHY9zC5Gl6630C23KaIy8xKqNcUDOtRiu3TC30yfGx+t6zBKRWmGgrhzjL5YAGs06H5CPg=
-X-Received: by 2002:a17:90a:2dc6:b0:2bd:f4cb:bd87 with SMTP id
- 98e67ed59e1d1-2c4db24e973mr9926240a91.14.1718630949878; Mon, 17 Jun 2024
- 06:29:09 -0700 (PDT)
+	id 1sJEl8-0000000BcJp-1lKo;
+	Mon, 17 Jun 2024 15:59:16 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id E5174CE02C2;
+	Mon, 17 Jun 2024 15:59:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42DFFC2BD10;
+	Mon, 17 Jun 2024 15:58:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718639942;
+	bh=dvaCCGm0T4LQoDBLCKOzZ/DnxCXT6xS8nFEQzuVr9pI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=UQ18fZZwwfZptDfOHc7FNjvDcuKaK3FOljY9jsRYNLYttiNXyJ6Hf0X58hQPO+ICw
+	 wyByChjxK7/i2DmV0Nr5hVU84OuzEwVygqKgHXVVUhCS1XNV5r9do2hrDyEp7Ea29o
+	 r6yHOxuquJ6E+92N3Za06UvBNa1sQ8RIQrnfw1nUat0r34QEam8/iGV+yFlv++1zxf
+	 OPKmQgqQ0QaQp38nmS3UtJf/09+7T2Iou7364ql4U6TPn6oXkycWogdvr9tMdsqtPv
+	 RmP1Q/ywqGceuCXyR7xvI9UlHQtnpq7LpSbErF3HlbK4g4njV5EvwUFsCMy2+zznLb
+	 OJGD4n7BxjC6A==
+Message-ID: <f691c7f9-cd81-4bdf-a794-95118cb26686@kernel.org>
+Date: Mon, 17 Jun 2024 17:58:56 +0200
 MIME-Version: 1.0
-References: <20240203165307.7806-1-aford173@gmail.com> <20240203165307.7806-11-aford173@gmail.com>
- <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
-In-Reply-To: <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Mon, 17 Jun 2024 08:28:58 -0500
-Message-ID: <CAHCN7xJt+1WGFYeBii1jUDEg9OU176f0AA+rMkXCqNQrfq=XWg@mail.gmail.com>
-Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
- (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for i.MX8MP
- DWC HDMI)
-To: Dominique MARTINET <dominique.martinet@atmark-techno.com>
-Cc: Lucas Stach <l.stach@pengutronix.de>, linux-arm-kernel@lists.infradead.org, 
-	marex@denx.de, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
-	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
-	NXP Linux Team <linux-imx@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	Makoto Sato <makoto.sato@atmark-techno.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4] dt-bindings: phy: rockchip-emmc-phy: Convert to
+ dtschema
+To: Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ heiko@sntech.de, sebastian.reichel@collabora.com, andy.yan@rock-chips.com,
+ s.hauer@pengutronix.de, jbx6244@yandex.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, javier.carrasco.cruz@gmail.com,
+ skhan@linuxfoundation.org
+References: <20240617085341.34332-2-shresthprasad7@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20240617085341.34332-2-shresthprasad7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_062913_104726_581D3778 
-X-CRM114-Status: GOOD (  35.79  )
+X-CRM114-CacheID: sfid-20240617_085907_259342_D17164EC 
+X-CRM114-Status: GOOD (  16.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,97 +116,182 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBKdW4gMTcsIDIwMjQgYXQgMToxN+KAr0FNIERvbWluaXF1ZSBNQVJUSU5FVAo8ZG9t
-aW5pcXVlLm1hcnRpbmV0QGF0bWFyay10ZWNobm8uY29tPiB3cm90ZToKPgo+IEFkYW0gRm9yZCB3
-cm90ZSBvbiBTYXQsIEZlYiAwMywgMjAyNCBhdCAxMDo1Mjo1MEFNIC0wNjAwOgo+ID4gRnJvbTog
-THVjYXMgU3RhY2ggPGwuc3RhY2hAcGVuZ3V0cm9uaXguZGU+Cj4gPgo+ID4gQWRkIGEgc2ltcGxl
-IHdyYXBwZXIgZHJpdmVyIGZvciB0aGUgRFdDIEhETUkgYnJpZGdlIGRyaXZlciB0aGF0Cj4gPiBp
-bXBsZW1lbnRzIHRoZSBmZXcgYml0cyB0aGF0IGFyZSBuZWNlc3NhcnkgdG8gYWJzdHJhY3QgdGhl
-IGkuTVg4TVAKPiA+IFNvQyBpbnRlZ3JhdGlvbi4KPgo+IEhpIEx1Y2FzLCBBZGFtLAo+ICh0cmlt
-bWVkIGNjcyBhIGJpdCkKPgo+IEZpcnN0LCB0aGFuayB5b3UgZm9yIHRoZSBlZmZvcnQgb2YgdXBz
-dHJlYW1pbmcgYWxsIG9mIHRoaXMhISBJdCdzIHJlYWxseQo+IGFwcHJlY2lhdGVkLCBhbmQgd2l0
-aCBkaXNwbGF5IHdvcmtpbmcgSSdsbCByZWFsbHkgYmUgd2FudGluZyB0byB1cHN0cmVhbQo+IG91
-ciBEVFMgYXMgd2VsbCBhcyBzb29uIGFzIEkgaGF2ZSB0aW1lICh3aGljaCBpcyBnb2luZyB0byBi
-ZSBhIHdoaWxlLAo+IGJ1dCBiZXR0ZXIgbGF0ZSB0aGFuIG5ldmVyID8pCj4KPiBVbnRpbCB0aGVu
-LCBpdCdzIGJlZW4gYSBmZXcgbW9udGhzIGJ1dCBJJ3ZlIGdvdCBhIHF1ZXN0aW9uIG9uIHRoaXMg
-Yml0Ogo+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9pbXgvaW14OG1w
-LWhkbWktdHguYyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvaW14L2lteDhtcC1oZG1pLXR4LmMK
-PiA+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gPiBpbmRleCAwMDAwMDAwMDAwMDAuLjg5ZmM0MzJh
-YzYxMQo+ID4gLS0tIC9kZXYvbnVsbAo+ID4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9p
-bXgvaW14OG1wLWhkbWktdHguYwo+ID4gK3N0YXRpYyBlbnVtIGRybV9tb2RlX3N0YXR1cwo+ID4g
-K2lteDhtcF9oZG1pX21vZGVfdmFsaWQoc3RydWN0IGR3X2hkbWkgKmR3X2hkbWksIHZvaWQgKmRh
-dGEsCj4gPiArICAgICAgICAgICAgICAgICAgICBjb25zdCBzdHJ1Y3QgZHJtX2Rpc3BsYXlfaW5m
-byAqaW5mbywKPiA+ICsgICAgICAgICAgICAgICAgICAgIGNvbnN0IHN0cnVjdCBkcm1fZGlzcGxh
-eV9tb2RlICptb2RlKQo+ID4gK3sKPiA+ICsgICAgIHN0cnVjdCBpbXg4bXBfaGRtaSAqaGRtaSA9
-IChzdHJ1Y3QgaW14OG1wX2hkbWkgKilkYXRhOwo+ID4gKwo+ID4gKyAgICAgaWYgKG1vZGUtPmNs
-b2NrIDwgMTM1MDApCj4gPiArICAgICAgICAgICAgIHJldHVybiBNT0RFX0NMT0NLX0xPVzsKPiA+
-ICsKPiA+ICsgICAgIGlmIChtb2RlLT5jbG9jayA+IDI5NzAwMCkKPiA+ICsgICAgICAgICAgICAg
-cmV0dXJuIE1PREVfQ0xPQ0tfSElHSDsKPiA+ICsKPiA+ICsgICAgIGlmIChjbGtfcm91bmRfcmF0
-ZShoZG1pLT5waXhjbGssIG1vZGUtPmNsb2NrICogMTAwMCkgIT0KPiA+ICsgICAgICAgICBtb2Rl
-LT5jbG9jayAqIDEwMDApCj4gPiArICAgICAgICAgICAgIHJldHVybiBNT0RFX0NMT0NLX1JBTkdF
-Owo+Cj4gRG8geW91IGtub3cgd2h5IHN1Y2ggYSBjaGVjayBpcyBoZXJlPwoKSSBkaWRuJ3Qgd3Jp
-dGUgdGhlIG9yaWdpbmFsIGNvZGUsIHNvIEknbGwgZGVmZXIgdG8gTHVjYXMgaGVyZS4gIEkganVz
-dAp0cmllZCB0byBlZGl0L2ZpeCBpc3N1ZXMgYXMgdGhleSB3ZXJlIGlkZW50aWZpZWQgdG8gZ2V0
-IGl0IHB1c2hlZAp1cHN0cmVhbS4KCj4KPiBXaGVuIHBsdWdnaW5nIGluIGEgc2NyZWVuIHdpdGgg
-bm8gZnJlcXVlbmN5IGlkZW50aWNhbGx5IHN1cHBvcnRlZCBpbiBpdHMKPiBFRElEIHRoaXMgY2hl
-Y2sgY2F1c2VzIHRoZSBzY3JlZW4gdG8gc3RheSBibGFjaywgYW5kIHdlJ3ZlIGJlZW4gdGVsbGlu
-Zwo+IGN1c3RvbWVycyB0byBvdmVycmlkZSB0aGUgRURJRCBidXQgaXQncyBhIGh1Z2UgcGFpbi4K
-Pgo+IENvbW1pdCA2YWQwODJiZWU5MDIgKCJwaHk6IGZyZWVzY2FsZTogYWRkIFNhbXN1bmcgSERN
-SSBQSFkiKSBhbHJlYWR5Cj4gImZpeGVkIiB0aGUgc2Ftc3VuZyBoZG1pIHBoeSBkcml2ZXIgdG8g
-cmV0dXJuIHRoZSBuZXh0IGZyZXF1ZW5jeSBpZiBhbgo+IGV4YWN0IG1hdGNoIGhhc24ndCBiZWVu
-IGZvdW5kIChOWFAgdHJlZSdzIG1hdGNoIGZyZXF1ZW5jaWVzIGV4YWN0bHksIGJ1dAo+IHRoaXMg
-Z2V0cyB0aGUgZmlyc3QgY2xvY2sgd2l0aCBwaXhjbGsgPD0gcmF0ZSksIHNvIGlmIHRoaXMgY2hl
-Y2sgaXMgYWxzbwo+IHJlbGF4ZWQgb3VyIGRpc3BsYXlzIHdvdWxkIHdvcmsgb3V0IG9mIHRoZSBi
-b3guCgpBcmUgeW91IHByb3Bvc2luZyB0byByZXBsYWNlICdyZXR1cm4gTU9ERV9DTE9DS19SQU5H
-RScgd2l0aCBhIHByaW50ZWQgd2FybmluZz8KCj4KPiBJIGFsc28gZG9uJ3Qgc2VlIGFueSBvdGhl
-ciBicmlkZ2UgZG9pbmcgdGhpcyBraW5kIG9mIGNoZWNrLgo+IGRyaXZlcnMvZ3B1L2RybS9icmlk
-Z2UvaW14L2lteDkzLW1pcGktZHNpLmMgaGFzIGEgc2ltaWxhciBjaGVjayB3aXRoIGEKPiAwLjUl
-IGxlZXdheSwgYW5kIGFsbCB0aGUgb3RoZXIgZHJpdmVycyBkb24ndCBjaGVjayBhbnl0aGluZy4K
-PiBJZiB5b3Ugd2FudCB0byBhZGQgc29tZSBsZXZlbCBvZiBzYWZldHksIEkgdGhpbmsgd2UgY291
-bGQgbWFrZSB0aGlzIHdvcmsKPiB3aXRoIGEgNSUgbWFyZ2luIGVhc2lseS4uLiBQcmludGluZyBh
-IHdhcm5pbmcgaW4gZG1lc2cgY291bGQgd29yayBpZgo+IHlvdSdyZSB3b3JyaWVkIGFib3V0IGFy
-dGlmYWN0cywgYnV0IGxpdHRlcmFseSBhbnl0aGluZyBpcyBiZXR0ZXIgdGhhbiBhCj4gYmxhY2sg
-c2NyZWVuIHdpdGggbm8gZXJyb3IgbWVzc2FnZSBpbiBteSBvcGluaW9uLgo+Cj4KPiBJbiBwcmFj
-dGljZSB0aGUgc2NyZWVuIEknbSBsb29raW5nIGF0IGhhcyBhbiBFRElEIHdoaWNoIG9ubHkgc3Vw
-cG9ydHMKPiA1MS4yTUh6IGFuZCB0aGUgY2xvc2VzdCBmcmVxdWVuY3kgc3VwcG9ydGVkIGJ5IHRo
-ZSBTYW1zdW5nIEhETUkgcGh5IGlzCj4gNTAuNE1Ieiwgc28gdGhhdCdzIGEgfjEuNSUgZGlmZmVy
-ZW5jZSBhbmQgaXQnZCBiZSBncmVhdCBpZiBpdCBjb3VsZCB3b3JrCj4gb3V0IG9mIHRoZSBib3gu
-CgpJIHdvbmRlciBpZiB0aGUgSERNSSBQSFkgY291bGQgYmUgaW1wcm92ZWQgdG8gYmV0dGVyIGR5
-bmFtaWNhbGx5CmNhbGN1bGF0ZSB2YWx1ZXMgaW5zdGVhZCBvZiB0aGUgbG9vayB0YWJsZXMuCgph
-ZGFtCj4KPiBGb3IgcmVmZXJlbmNlLCB0aGUgb3V0cHV0IG9mIGVkaWQtZGVjb2RlIGlzIGFzIGZv
-bGxvdzoKPiAtLS0KPiBlZGlkLWRlY29kZSAvc3lzL2RldmljZXMvcGxhdGZvcm0vZGlzcGxheS1z
-dWJzeXN0ZW0vZHJtL2Nhcgo+IGQxL2NhcmQxLUhETUktQS0xL2VkaWQKPiBlZGlkLWRlY29kZSAo
-aGV4KToKPgo+IDAwIGZmIGZmIGZmIGZmIGZmIGZmIDAwIDNhIDQ5IDAzIDAwIDAxIDAwIDAwIDAw
-Cj4gMjAgMWUgMDEgMDMgODAgMTAgMDkgMDAgMGEgMDAgMDAgMDAgMDAgMDAgMDAgMDAKPiAwMCAw
-MCAwMCAwMCAwMCAwMCAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMQo+IDAxIDAxIDAxIDAx
-IDAxIDAxIDAwIDE0IDAwIDQwIDQxIDU4IDIzIDIwIGEwIDIwCj4gYzggMDAgOWEgNTYgMDAgMDAg
-MDAgMTggMDAgMDAgMDAgMTAgMDAgMDAgMDAgMDAKPiAwMCAwMCAwMCAwMCAwMCAwMCAwMCAwMCAw
-MCAwMCAwMCAwMCAwMCAxMCAwMCAwMAo+IDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAw
-IDAwIDAwIDAwIDAwIDEwCj4gMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAgMDAg
-MDAgMDAgOWEKPgo+IC0tLS0tLS0tLS0tLS0tLS0KPgo+IEJsb2NrIDAsIEJhc2UgRURJRDoKPiAg
-IEVESUQgU3RydWN0dXJlIFZlcnNpb24gJiBSZXZpc2lvbjogMS4zCj4gICBWZW5kb3IgJiBQcm9k
-dWN0IElkZW50aWZpY2F0aW9uOgo+ICAgICBNYW51ZmFjdHVyZXI6IE5SSQo+ICAgICBNb2RlbDog
-Mwo+ICAgICBTZXJpYWwgTnVtYmVyOiAxCj4gICAgIE1hZGUgaW46IHdlZWsgMzIgb2YgMjAyMAo+
-ICAgQmFzaWMgRGlzcGxheSBQYXJhbWV0ZXJzICYgRmVhdHVyZXM6Cj4gICAgIERpZ2l0YWwgZGlz
-cGxheQo+ICAgICBNYXhpbXVtIGltYWdlIHNpemU6IDE2IGNtIHggOSBjbQo+ICAgICBHYW1tYTog
-MS4wMAo+ICAgICBSR0IgY29sb3IgZGlzcGxheQo+ICAgICBGaXJzdCBkZXRhaWxlZCB0aW1pbmcg
-aXMgdGhlIHByZWZlcnJlZCB0aW1pbmcKPiAgIENvbG9yIENoYXJhY3RlcmlzdGljczoKPiAgICAg
-UmVkICA6IDAuMDAwMCwgMC4wMDAwCj4gICAgIEdyZWVuOiAwLjAwMDAsIDAuMDAwMAo+ICAgICBC
-bHVlIDogMC4wMDAwLCAwLjAwMDAKPiAgICAgV2hpdGU6IDAuMDAwMCwgMC4wMDAwCj4gICBFc3Rh
-Ymxpc2hlZCBUaW1pbmdzIEkgJiBJSTogbm9uZQo+ICAgU3RhbmRhcmQgVGltaW5nczogbm9uZQo+
-ICAgRGV0YWlsZWQgVGltaW5nIERlc2NyaXB0b3JzOgo+ICAgICBEVEQgMTogIDEwMjR4NjAwICAg
-IDU5Ljk5MyBIeiAxMjg6NzUgICAzOC4wOTUga0h6ICA1MS4yMDAgTUh6ICgxNTQgbW0geCA4NiBt
-Cj4gbSkKPiAgICAgICAgICAgICAgICAgIEhmcm9udCAgMTYwIEhzeW5jICAzMiBIYmFjayAxMjgg
-SHBvbCBOCj4gICAgICAgICAgICAgICAgICBWZnJvbnQgICAxMiBWc3luYyAgIDggVmJhY2sgIDE1
-IFZwb2wgTgo+ICAgICBEdW1teSBEZXNjcmlwdG9yOgo+ICAgICBEdW1teSBEZXNjcmlwdG9yOgo+
-ICAgICBEdW1teSBEZXNjcmlwdG9yOgo+IENoZWNrc3VtOiAweDlhCj4gLS0tCj4KPgo+IFRoYW5r
-cywKPiAtLQo+IERvbWluaXF1ZSBNYXJ0aW5ldAo+Cj4KPgo+IC0tCj4gbGludXgtcGh5IG1haWxp
-bmcgbGlzdAo+IGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5CgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 17/06/2024 10:53, Shresth Prasad wrote:
+> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
+> for validation.
+> 
+> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+> ---
+
+
+...
+
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    const: emmcclk
+> +
+> +  clocks:
+> +    maxItems: 1
+
+Keep order from DTS coding style, so clocks then clock-names.
+
+> +
+> +  drive-impedance-ohm:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description:
+> +      Specifies the drive impedance in Ohm.
+> +    enum: [33, 40, 50, 66, 100]
+> +    default: 50
+> +
+> +  rockchip,enable-strobe-pulldown:
+> +    type: boolean
+> +    description: |
+> +      Enable internal pull-down for the strobe
+> +      line.  If not set, pull-down is not used.
+> +
+> +  rockchip,output-tapdelay-select:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description:
+> +      Specifies the phyctrl_otapdlysec register.
+> +    default: 0x4
+> +    maximum: 0xf
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    grf: syscon@ff770000 {
+
+Drop label... actually entire node looks not needed.
+
+> +      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+
+Drop
+
+> +      reg = <0xff770000 0x10000>;
+
+Drop
+
+
+> +      #address-cells = <1>;
+> +      #size-cells = <1>;
+> +
+> +      emmcphy: phy@f780 {
+
+Drop label
+
+> +        compatible = "rockchip,rk3399-emmc-phy";
+> +        reg = <0xf780 0x20>;
+> +        clocks = <&sdhci>;
+> +        clock-names = "emmcclk";
+> +        drive-impedance-ohm = <50>;
+> +        #phy-cells = <0>;
+> +      };
+> +    };
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> deleted file mode 100644
+> index 57d28c0d5696..000000000000
+> --- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> +++ /dev/null
+> @@ -1,43 +0,0 @@
+> -Rockchip EMMC PHY
+> ------------------------
+> -
+> -Required properties:
+> - - compatible: rockchip,rk3399-emmc-phy
+> - - #phy-cells: must be 0
+> - - reg: PHY register address offset and length in "general
+> -   register files"
+> -
+> -Optional properties:
+> - - clock-names: Should contain "emmcclk".  Although this is listed as optional
+> -		(because most boards can get basic functionality without having
+> -		access to it), it is strongly suggested.
+> -		See ../clock/clock-bindings.txt for details.
+> - - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
+> - - drive-impedance-ohm: Specifies the drive impedance in Ohm.
+> -                        Possible values are 33, 40, 50, 66 and 100.
+> -                        If not set, the default value of 50 will be applied.
+> - - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
+> -                                    line.  If not set, pull-down is not used.
+> - - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
+> -                                    If not set, the register defaults to 0x4.
+> -                                    Maximum value 0xf.
+> -
+> -Example:
+> -
+> -
+> -grf: syscon@ff770000 {
+> -	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+> -	#address-cells = <1>;
+> -	#size-cells = <1>;
+> -
+> -...
+> -
+> -	emmcphy: phy@f780 {
+> -		compatible = "rockchip,rk3399-emmc-phy";
+> -		reg = <0xf780 0x20>;
+> -		clocks = <&sdhci>;
+> -		clock-names = "emmcclk";
+> -		drive-impedance-ohm = <50>;
+> -		#phy-cells = <0>;
+> -	};
+> -};
+> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> index 79798c747476..6e1b1cdea680 100644
+> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+> @@ -176,9 +176,12 @@ allOf:
+>              Documentation/devicetree/bindings/phy/rockchip-pcie-phy.txt
+>  
+>        patternProperties:
+> -        "phy@[0-9a-f]+$":
+> -          description:
+> -            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+> +        "^phy@[0-9a-f]+$":
+> +          type: object
+> +
+
+Drop blank line
+
+> +          $ref: /schemas/phy/rockchip,rk3399-emmc-phy.yaml#
+> +
+
+Drop blank line
+
+> +          unevaluatedProperties: false
+>  
+>    - if:
+>        properties:
+
+Nothing in example? Isn't the example for 3399?
+
+We want only one complete example of such multi-children devices, so the
+example can be moved and included in existing one here.
+
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
