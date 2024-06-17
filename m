@@ -4,54 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65571C27C79
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 21:56:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FBA8C2BB85
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 21:56:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SpOkUAA4qO6OcS546SVYnm2NxVZYqHRlRkNjbfyOFH4=; b=kTc0MJ8SD6mcKl
-	LuDjfcj4zcXKzAmpDsZT9WWKVgH1ptJA26mE3PEsEPk27/+Nrhhy6ZGF0WW3k/pzfG/KyrXUDsRtC
-	M3OmABz3Ddvk0QaAiqpBssBAN0DeL7q/JFIkxDdJLpfe6yBGAa3aHhHMLDbQsmP/SewFLDZ/iQ937
-	DMoyOoVt382E0eKsuNZW6pkv99R2IyE0e+5mGyoq34+6xwpUnvVvWLAEQ+//V6Z3OjNP5phXr4g8W
-	OsiqB5b6ejgz/YVgrO3YYEWPz5kNHZNvUWlC+T3VCxoSs5OSdrJAgdL+UDbiJeRe4FvuFdLjd82NE
-	HGOoawEWBhiJwcddZW5A==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xlYba2wDOnJAMGYEAm5Dr1qqYInHqPgB2wOvX2aaX6U=; b=MB+6duLp4m6Ol3
+	oU2YKoSYo+WKobt9MBLNG/Wn5zpOPZhTli9qXgi9ggT31i2ufCOGX28HWd2+PNcrzu8cx9mv2oR33
+	mJt1DygeGcDv14BlH8/5IgtiuCc6rTGz2pTaBe5V2fMDE5/Cm1i5L0kOtTUN4yzsyBA5JmehNG6xw
+	hRepGavVqjPv5N/xIJm+MA1OxN6fYA5/3nPdcQ6M5Fmo+E9ZXy8XWB9a+inOozyvaJVtALQGIhu9q
+	uomFnlrtgOyt+KQ6bAMp6NXAxdFtBkLczL/jlaRCyhMIhOi7nBvmRkUykjbEDIdI37lX5IHKa68pU
+	rONxsKiHNp290aKbarWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJKL1-0000000CjYG-0Kas;
-	Mon, 17 Jun 2024 21:56:31 +0000
+	id 1sJKL2-0000000CjYq-2lMb;
+	Mon, 17 Jun 2024 21:56:32 +0000
 Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJKKw-0000000CjVH-3SaP;
-	Mon, 17 Jun 2024 21:56:28 +0000
+	id 1sJKKx-0000000CjVr-1zAu;
+	Mon, 17 Jun 2024 21:56:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1718661383;
-	bh=h9GZ/qG3QPBcnFqXga6bKtFiBGaWDKmKZeDAnSF4EKQ=;
-	h=From:Subject:Date:To:Cc:From;
-	b=Ulk5lNO+pvY7yTBe3kUU9+eg6wh7xxfwkR5lRHIEHUqZgFe/FjTuLG4DhxMj4XOM7
-	 79KpRGGe33qEdVHiUlDMm0y9Yc9UvERD7EL569Yb7TuIpomYZNzjSeh4/85FZOFgbP
-	 FgFZkGuhgysz3i0XYm7HQXNMMsmWyv2DhpNeii/RrpiQLMqa7q59jg4xUYI18eMlqt
-	 Z6GxquoQkNL9bPUol4KKCSjWKnVRTdHsdM2FYARWy1CbEhcOpUCBI2CoIXurdurIg+
-	 S/jqDeIEnIk5PG/5pSq27z3F7+3TuNoyu6rVf9xQ88+Xb8mJ3GXfL8mtzYHTEOfyQU
-	 hJn3LNAbQnJcw==
+	s=mail; t=1718661385;
+	bh=/Tf0+9ywBhA2xu+ay36C238U4Xe6QDQ8N9Bh//pwcvs=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=QV0bLGs7qU2pkEZQLaP496J4V1YrlQbHD8hWAmNmhZ3GEkb4VXHglTeN2oCBpy1mu
+	 ydj29ucf2/hYmidGOuxRPSCfQ7NzbMjYAlEXqd+/zyd4FMxDx534cIfGAMVjTuJH8E
+	 mE50zko6BfRUTdmrSqe37skUuprD51mchRAXbCTfDxUwtqKl4BIe71oyoAeEmHUEP2
+	 DUP99T1SzRgWoe5AHeTju+UGT146e4dOIy6XH+GQ3OjmxlkjarI5etGlmE7IFJ+RCE
+	 8b1U+EI2vfIb7c1pd3pkCi/EbSoLXKTRt/JB3E5Tr8daLJ/63QVm2QYIS9eHx80fNh
+	 kE5BdmsKwXxKQ==
 Received: from localhost (cola.collaboradmins.com [195.201.22.229])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 7CFBD37804B2;
-	Mon, 17 Jun 2024 21:56:23 +0000 (UTC)
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id B49313782167;
+	Mon, 17 Jun 2024 21:56:24 +0000 (UTC)
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Subject: [PATCH 0/4] Add clock provider support to Rockchip RK3588 HDMI TX
- PHY
-Date: Tue, 18 Jun 2024 00:48:08 +0300
-Message-Id: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
+Date: Tue, 18 Jun 2024 00:48:09 +0300
+Subject: [PATCH 1/4] phy: phy-rockchip-samsung-hdptx: Explicitly include
+ pm_runtime.h
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIABivcGYC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIxMDM0Nz3aJsY1MLC92MlNzMgoxK3eSc7IKi/DLdNAPTNEMz08RkAyNLJaD
- mgqLUtMwKsMHRsbW1ANtf0uhoAAAA
+Message-Id: <20240618-rk3588-hdmiphy-clkprov-v1-1-80e4aa12177e@collabora.com>
+References: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
+In-Reply-To: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
  Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
@@ -62,8 +61,8 @@ Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
 X-Mailer: b4 0.14-dev-f7c49
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_145627_365589_806A406F 
-X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-CacheID: sfid-20240617_145627_972394_415CA98E 
+X-CRM114-Status: UNSURE (   8.14  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,29 +80,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The HDMI PHY PLL can be used as an alternative clock source to RK3588
-SoC CRU. Since it provides more accurate clock rates, it can be used by
-VOP2 to improve display modes handling, such as supporting non-integer
-refresh rates.
+Driver makes use of helpers from pm_runtime.h, but relies on the header
+file being implicitly included.
 
-The first two patches in the series provide a couple of fixes and
-improvements to the existing HDPTX PHY driver, while the next two add
-the necessary changes to support the clock provider functionality.
+Explicitly pull the header in to avoid potential build failures in some
+configurations.
 
+Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY driver")
 Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 ---
-Cristian Ciocaltea (4):
-      phy: phy-rockchip-samsung-hdptx: Explicitly include pm_runtime.h
-      phy: phy-rockchip-samsung-hdptx: Enable runtime PM at PHY core level
-      dt-bindings: phy: rockchip,rk3588-hdptx-phy: Add #clock-cells
-      phy: phy-rockchip-samsung-hdptx: Add clock provider support
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 1 +
+ 1 file changed, 1 insertion(+)
 
- .../bindings/phy/rockchip,rk3588-hdptx-phy.yaml    |   3 +
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c  | 208 +++++++++++++++++----
- 2 files changed, 174 insertions(+), 37 deletions(-)
----
-base-commit: 6906a84c482f098d31486df8dc98cead21cce2d0
-change-id: 20240617-rk3588-hdmiphy-clkprov-f05f165ac029
+diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+index 946c01210ac8..3bd9b62b23dc 100644
+--- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
++++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+@@ -15,6 +15,7 @@
+ #include <linux/of_platform.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
+ #include <linux/rational.h>
+ #include <linux/regmap.h>
+ #include <linux/reset.h>
+
+-- 
+2.45.2
 
 
 -- 
