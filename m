@@ -4,65 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D41EC2BA1A
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 21:56:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58F8DC27C79
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Jun 2024 23:46:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ERjp+L54zq/ZRF9Mh71KAQi9UQIeFrP2asaRI9ZECw=; b=dBny7uZ+fsQ80s
-	t8qBtRyBamANuchbuypNeM9aBa1wlrzPb9At7BATLyZcM1zxcNys55z3meD32P74C6jM+icYDkhvg
-	z4hzTNBcGthzM80tAiMWQw0YtDcTjLTIRNcNZ8v/Qjkr9703IyMSKBKWZkekakLBEY24K6a6T8eez
-	zgTRU9ITrump8DjWQy/cANlRubuqJ/5JJlHx/7fT7FlEtsTVqWQTPEBycsr7BprsZw576IYLvV+Eq
-	XvVdeLgCqDCsxmB19uWtrIWeyCuC7s/qMnqmt/NuP88PHQSx4sCbXWcx3V7doE/4egW7xOTQypUvJ
-	qATaQLKidWYc5ahSv2rw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=jmnMnh8FE8c3NRBNprUWA1dMI9HyLREiVTI/54mH5qw=; b=3VAa40MBsO1dv7
+	XoXE2+9ajyLkIcvu9XTAxZZgTz6+6QHExIEI50sMjUse1ScEmq9784TbuxifXux4kpFvNgjSiRuOG
+	mmiZjYWucxgJ2gB2daXCmK3eGoh562nNfBr2CdhTF+YN8obxGMY5YB5G932sqJIRYshnaxf0ohw73
+	3uGMn56mgmAzjWB8/3WZXmZ8/mYQdY28aH9R6HiIQcgYWNKhr5prgIIbpaOB0Ol1RK2WtNcvm25Br
+	wkLkkduprc6SHBuBZBZdIVOPPmfb4r72Awjru8BmQStQ6b2aE/dN+L2WQbuUhmHbCRwbm6iKGdLZL
+	yZi2FtxEhg+Y/P6HfHZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJKLO-0000000CjnF-0Wej;
-	Mon, 17 Jun 2024 21:56:54 +0000
-Received: from madrid.collaboradmins.com ([2a00:1098:ed:100::25])
+	id 1sJM3G-0000000CxW4-07z7;
+	Mon, 17 Jun 2024 23:46:18 +0000
+Received: from gw2.atmark-techno.com ([35.74.137.57])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJKKz-0000000CjXH-3Ny4;
-	Mon, 17 Jun 2024 21:56:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1718661388;
-	bh=PJqnn1xMk/vyTcI7+A/mSlNl/s10hJkFyTUCDiHLlLQ=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=EoeSEaXHD95nl/EmSAh75MlfIbNTFm82Mb1sQmIwwLYLI4KBbYwt1Lpd0GvJ3omZ+
-	 czgo+iO1EDSLl3wEYGVlkrvzwP4pHW4YPlgIvc3SBHVJ+7SMTvTsVO4bfS0kIfBrjy
-	 /eHVDWyHTB2/6wtHQUrH5CFedrSe8vog/CotNbGkg4UUH28nDenoh+n9gnw4wHjd7M
-	 3u/FP+++Iqs+WQfQICWyMYvjDRAoX7i0B8CcQ+oWOAua7QQ0NVCa2hQ5pbu9FG3FVt
-	 Ynbcm+t2lxP8EatqDlcT0sb9l+DoKOBYTyFBGQC1vm9efLFde+BqI6pt2r0B62iq2o
-	 KBBc7inHUqzLw==
-Received: from localhost (cola.collaboradmins.com [195.201.22.229])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 5A56D378217B;
-	Mon, 17 Jun 2024 21:56:28 +0000 (UTC)
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 18 Jun 2024 00:48:12 +0300
-Subject: [PATCH 4/4] phy: phy-rockchip-samsung-hdptx: Add clock provider
- support
+	id 1sJM3D-0000000CxUX-3A3J
+	for linux-phy@lists.infradead.org;
+	Mon, 17 Jun 2024 23:46:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=atmark-techno.com;
+	s=gw2_bookworm; t=1718667974;
+	bh=u4SQ7Kn/9QOe7Lbom+t4xd7zdIO/xFKu407b+d9kyI8=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=lTOdODXqPn7NP3WqsJrAqrFz098uBLiJeFQ2lf+drItP/d55+A4xLs0lwLJ/gdNeO
+	 8NlZ+r9COCYazXt2M8lb1T7LLhbzzZtHZjCaJyEdPTuK0FYRUPXKFF0W6NWXriFalm
+	 AMFu7tMDnPg3gDS0tjmtw6iBv8YCHfnhqxb0TtbPNPLWoQQ+nJ/v7Mk17FInEx2p5r
+	 9Cjda4jCDV2+p4RtnBOo/PK7SzUN9AMduYRazu2DpaotjCTUldXysIwl4+m9mdLI64
+	 2q4YRCqen0sfO4oXOW5VuV+TVy2QViNuWeOS23j6U657+13LWprSgYf5fwlWt+gGV1
+	 Cr4AnUOx8yCXA==
+Received: from gw2.atmark-techno.com (localhost [127.0.0.1])
+	by gw2.atmark-techno.com (Postfix) with ESMTP id 96FE192C
+	for <linux-phy@lists.infradead.org>; Tue, 18 Jun 2024 08:46:14 +0900 (JST)
+Authentication-Results: gw2.atmark-techno.com;
+	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=TYuNF6Gv;
+	dkim-atps=neutral
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by gw2.atmark-techno.com (Postfix) with ESMTPS id 4CD9A92C
+	for <linux-phy@lists.infradead.org>; Tue, 18 Jun 2024 08:46:14 +0900 (JST)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-43ffe780607so61849461cf.1
+        for <linux-phy@lists.infradead.org>; Mon, 17 Jun 2024 16:46:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=atmark-techno.com; s=google; t=1718667973; x=1719272773; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=WEcb4ceq4vj6F4Lm3zQBzfoD3bnUJEBNMCgzOVt1Zv0=;
+        b=TYuNF6GvuFOMxp46n4s7c2o7kS3lpspzeR2G7LJtSGbihiaUL/HLDLnS4Mr2lRKoDj
+         jxg87t0D63ykedGD7istt9i30qopMa/CcIKahOXWk2b4S96UMhKA/sMWVRYQNRxKp160
+         rrUU5rH7j66WARzmvINW/pVVKt15STk6A7GjfSd4bIYWzb4EKp79ExsYpS7ft/xBZDG9
+         Hn9a93a1QkY+7R6rFj9X/bCpwlrSQlHHwTxa2c+3PHtVq4Fw1fF1s+R16fLp05Lgh+s/
+         zv/gY/nFRm5XjFrC9Gvl3o/xEyWJPn5nVUTgMXqCJcZylCZikK9NOeWwv70hS4f9PMcE
+         3y6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718667973; x=1719272773;
+        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=WEcb4ceq4vj6F4Lm3zQBzfoD3bnUJEBNMCgzOVt1Zv0=;
+        b=QMgT4ADvIRhetRzhumr/ax1r5bNT6r6bRk4cJybz9tNAytfdiAq8mCqnhAnmg3WfqO
+         Yhjd/3B0q1yPiymyksYtaTh7UXV7VVZeGgL/VeGHWv8Th/TpTaJtW4JMCiikOoTRjHwQ
+         zzq5zf/MsIj+IotCXVGjHXUo547FAfmBnWIoCZPLBjYR8lFTK9pfD/BuR4YPPfumWHDC
+         ZRqpk9sUbeeq+xDHbp0hz8aqlbt9vVABWARhzowyLidWX/gUd6h33zuW2abZ8vdXHoEO
+         3hq1NAzwWucnoAgTL0K2XxER4AkBqHu1h4CCLrNZLzBDSeuLljxms/pbRD1UBTr8RLVH
+         WLqg==
+X-Forwarded-Encrypted: i=1; AJvYcCX4vjRulvJRnxC1wngTj9BhUxnoxy8BL9Ffyp9MNnMo3r2BKIjwMhTzljNaYkjQD2608zfD/z8R7FnWeh20melmJd/DLyt69XpuJEqgHw==
+X-Gm-Message-State: AOJu0YxaVQ22iaPrQf04EZuuedTIZbyv63QaH+dGiDdr/8qme8SK7+oS
+	cV+56MaWFlREapE2ywqcEGReyUnVtOJoNCtLH3YS9+yA9g1WnzSz99vghcfpmkB5TA4S+OQ/qRx
+	AwCFKW4qo5X9dmd8QhZ3tRHpoPbASHg8OrQUyI1O9/HZRImvZV1FC/lEoaCAjv2QK
+X-Received: by 2002:a05:6870:1c6:b0:24c:a547:7b5a with SMTP id 586e51a60fabf-258428b6ce7mr13781177fac.14.1718667951784;
+        Mon, 17 Jun 2024 16:45:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHRFeiOGQPSIT5KptgcYboMcw31OfX8XCos9btgN4pxjCsjHfG6eKkB1gU/XzVNeRv8POSMRg==
+X-Received: by 2002:a05:6870:1c6:b0:24c:a547:7b5a with SMTP id 586e51a60fabf-258428b6ce7mr13781138fac.14.1718667951311;
+        Mon, 17 Jun 2024 16:45:51 -0700 (PDT)
+Received: from pc-0182.atmarktech (103.131.189.35.bc.googleusercontent.com. [35.189.131.103])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-705cc91dc67sm7938979b3a.2.2024.06.17.16.45.50
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 17 Jun 2024 16:45:50 -0700 (PDT)
+Received: from martinet by pc-0182.atmarktech with local (Exim 4.96)
+	(envelope-from <martinet@pc-zest>)
+	id 1sJM2m-00ABEf-2m;
+	Tue, 18 Jun 2024 08:45:48 +0900
+Date: Tue, 18 Jun 2024 08:45:38 +0900
+From: Dominique MARTINET <dominique.martinet@atmark-techno.com>
+To: Adam Ford <aford173@gmail.com>, Lucas Stach <l.stach@pengutronix.de>
+Cc: linux-arm-kernel@lists.infradead.org, marex@denx.de,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	Makoto Sato <makoto.sato@atmark-techno.com>
+Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
+ (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for
+ i.MX8MP DWC HDMI)
+Message-ID: <ZnDKovBokBu5D_eb@atmark-techno.com>
 MIME-Version: 1.0
-Message-Id: <20240618-rk3588-hdmiphy-clkprov-v1-4-80e4aa12177e@collabora.com>
-References: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
-In-Reply-To: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-X-Mailer: b4 0.14-dev-f7c49
+Content-Disposition: inline
+In-Reply-To: <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
+ <CAHCN7xJt+1WGFYeBii1jUDEg9OU176f0AA+rMkXCqNQrfq=XWg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_145630_060458_36020DEA 
-X-CRM114-Status: GOOD (  22.33  )
+X-CRM114-CacheID: sfid-20240617_164615_917906_8561DBBB 
+X-CRM114-Status: GOOD (  44.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,288 +137,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The HDMI PHY PLL can be used as an alternative dclk source to RK3588 SoC
-CRU. It provides more accurate clock rates required by VOP2 to improve
-existing support for display modes handling, which is known to be
-problematic when dealing with non-integer refresh rates, among others.
+Thanks for the replies, replying to both mails at once.
 
-It is worth noting this only works for HDMI 2.0 or below, e.g. cannot be
-used to support HDMI 2.1 4K@120Hz mode.
+Adam Ford wrote on Mon, Jun 17, 2024 at 08:28:58AM -0500:
+> > Commit 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY") already
+> > "fixed" the samsung hdmi phy driver to return the next frequency if an
+> > exact match hasn't been found (NXP tree's match frequencies exactly, but
+> > this gets the first clock with pixclk <= rate), so if this check is also
+> > relaxed our displays would work out of the box.
+> 
+> Are you proposing to replace 'return MODE_CLOCK_RANGE' with a printed warning?
 
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 189 +++++++++++++++++++---
- 1 file changed, 167 insertions(+), 22 deletions(-)
+Yes, something like that.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 72de287282eb..ad3fd4084377 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -8,6 +8,7 @@
-  */
- #include <linux/bitfield.h>
- #include <linux/clk.h>
-+#include <linux/clk-provider.h>
- #include <linux/delay.h>
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
-@@ -191,6 +192,8 @@
- #define LN3_TX_SER_RATE_SEL_HBR2	BIT(3)
- #define LN3_TX_SER_RATE_SEL_HBR3	BIT(2)
- 
-+#define HDMI20_MAX_RATE			600000000
-+
- struct lcpll_config {
- 	u32 bit_rate;
- 	u8 lcvco_mode_en;
-@@ -273,6 +276,12 @@ struct rk_hdptx_phy {
- 	struct clk_bulk_data *clks;
- 	int nr_clks;
- 	struct reset_control_bulk_data rsts[RST_MAX];
-+
-+	/* clk provider */
-+	struct clk_hw hw;
-+	unsigned long rate;
-+
-+	atomic_t usage_count;
- };
- 
- static const struct ropll_config ropll_tmds_cfg[] = {
-@@ -760,6 +769,8 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx,
- 	struct ropll_config rc = {0};
- 	int i;
- 
-+	hdptx->rate = rate * 100;
-+
- 	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
- 		if (rate == ropll_tmds_cfg[i].bit_rate) {
- 			cfg = &ropll_tmds_cfg[i];
-@@ -823,19 +834,6 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx,
- static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx,
- 					   unsigned int rate)
- {
--	u32 val;
--	int ret;
--
--	ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &val);
--	if (ret)
--		return ret;
--
--	if (!(val & HDPTX_O_PLL_LOCK_DONE)) {
--		ret = rk_hdptx_ropll_tmds_cmn_config(hdptx, rate);
--		if (ret)
--			return ret;
--	}
--
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_sb_init_seq);
- 
- 	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
-@@ -857,10 +855,66 @@ static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx,
- 	return rk_hdptx_post_enable_lane(hdptx);
- }
- 
-+static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx,
-+				     unsigned int rate)
-+{
-+	u32 status;
-+	int ret;
-+
-+	if (atomic_inc_return(&hdptx->usage_count) > 1)
-+		return 0;
-+
-+	ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &status);
-+	if (ret)
-+		goto dec_usage;
-+
-+	if (status & HDPTX_O_PLL_LOCK_DONE)
-+		dev_warn(hdptx->dev, "PLL locked by unknown consumer!\n");
-+
-+	if (rate) {
-+		ret = rk_hdptx_ropll_tmds_cmn_config(hdptx, rate);
-+		if (ret)
-+			goto dec_usage;
-+	}
-+
-+	return 0;
-+
-+dec_usage:
-+	atomic_dec(&hdptx->usage_count);
-+	return ret;
-+}
-+
-+static int rk_hdptx_phy_consumer_put(struct rk_hdptx_phy *hdptx)
-+{
-+	u32 status;
-+	int ret;
-+
-+	ret = atomic_dec_return(&hdptx->usage_count);
-+	if (ret > 0)
-+		return 0;
-+
-+	if (ret < 0) {
-+		dev_warn(hdptx->dev, "Usage count underflow!\n");
-+		ret = -EINVAL;
-+	} else {
-+		ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &status);
-+		if (!ret) {
-+			if (status & HDPTX_O_PLL_LOCK_DONE)
-+				rk_hdptx_phy_disable(hdptx);
-+			return 0;
-+		}
-+	}
-+
-+	atomic_inc(&hdptx->usage_count);
-+	return ret;
-+}
-+
- static int rk_hdptx_phy_power_on(struct phy *phy)
- {
- 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
- 	int bus_width = phy_get_bus_width(hdptx->phy);
-+	int ret;
-+
- 	/*
- 	 * FIXME: Temporary workaround to pass pixel_clk_rate
- 	 * from the HDMI bridge driver until phy_configure_opts_hdmi
-@@ -871,20 +925,18 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 	dev_dbg(hdptx->dev, "%s bus_width=%x rate=%u\n",
- 		__func__, bus_width, rate);
- 
--	return rk_hdptx_ropll_tmds_mode_config(hdptx, rate);
-+	ret = rk_hdptx_phy_consumer_get(hdptx, rate);
-+	if (!ret)
-+		ret = rk_hdptx_ropll_tmds_mode_config(hdptx, rate);
-+
-+	return ret;
- }
- 
- static int rk_hdptx_phy_power_off(struct phy *phy)
- {
- 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
--	u32 val;
--	int ret;
--
--	ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &val);
--	if (ret == 0 && (val & HDPTX_O_PLL_LOCK_DONE))
--		rk_hdptx_phy_disable(hdptx);
- 
--	return ret;
-+	return rk_hdptx_phy_consumer_put(hdptx);
- }
- 
- static const struct phy_ops rk_hdptx_phy_ops = {
-@@ -893,6 +945,99 @@ static const struct phy_ops rk_hdptx_phy_ops = {
- 	.owner	   = THIS_MODULE,
- };
- 
-+static struct rk_hdptx_phy *to_rk_hdptx_phy(struct clk_hw *hw)
-+{
-+	return container_of(hw, struct rk_hdptx_phy, hw);
-+}
-+
-+static int rk_hdptx_phy_clk_prepare(struct clk_hw *hw)
-+{
-+	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
-+
-+	return rk_hdptx_phy_consumer_get(hdptx, hdptx->rate / 100);
-+}
-+
-+static void rk_hdptx_phy_clk_unprepare(struct clk_hw *hw)
-+{
-+	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
-+
-+	rk_hdptx_phy_consumer_put(hdptx);
-+}
-+
-+static unsigned long rk_hdptx_phy_clk_recalc_rate(struct clk_hw *hw,
-+						  unsigned long parent_rate)
-+{
-+	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
-+
-+	return hdptx->rate;
-+}
-+
-+static long rk_hdptx_phy_clk_round_rate(struct clk_hw *hw, unsigned long rate,
-+					unsigned long *parent_rate)
-+{
-+	u32 bit_rate = rate / 100;
-+	int i;
-+
-+	if (rate > HDMI20_MAX_RATE)
-+		return rate;
-+
-+	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
-+		if (bit_rate == ropll_tmds_cfg[i].bit_rate)
-+			break;
-+
-+	if (i == ARRAY_SIZE(ropll_tmds_cfg) &&
-+	    !rk_hdptx_phy_clk_pll_calc(bit_rate, NULL))
-+		return -EINVAL;
-+
-+	return rate;
-+}
-+
-+static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
-+				     unsigned long parent_rate)
-+{
-+	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
-+
-+	return rk_hdptx_ropll_tmds_cmn_config(hdptx, rate / 100);
-+}
-+
-+static const struct clk_ops hdptx_phy_clk_ops = {
-+	.prepare = rk_hdptx_phy_clk_prepare,
-+	.unprepare = rk_hdptx_phy_clk_unprepare,
-+	.recalc_rate = rk_hdptx_phy_clk_recalc_rate,
-+	.round_rate = rk_hdptx_phy_clk_round_rate,
-+	.set_rate = rk_hdptx_phy_clk_set_rate,
-+};
-+
-+static int rk_hdptx_phy_clk_register(struct rk_hdptx_phy *hdptx)
-+{
-+	struct device *dev = hdptx->dev;
-+	const char *name, *pname;
-+	struct clk *refclk;
-+	int ret, id;
-+
-+	refclk = devm_clk_get(dev, "ref");
-+	if (IS_ERR(refclk))
-+		return dev_err_probe(dev, PTR_ERR(refclk),
-+				     "Failed to get ref clock\n");
-+
-+	id = of_alias_get_id(dev->of_node, "hdptxphy");
-+	name = id > 0 ? "clk_hdmiphy_pixel1" : "clk_hdmiphy_pixel0";
-+	pname = __clk_get_name(refclk);
-+
-+	hdptx->hw.init = CLK_HW_INIT(name, pname, &hdptx_phy_clk_ops,
-+				     CLK_GET_RATE_NOCACHE);
-+
-+	ret = devm_clk_hw_register(dev, &hdptx->hw);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to register clock\n");
-+
-+	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get, &hdptx->hw);
-+	if (ret)
-+		return dev_err_probe(dev, ret,
-+				     "Failed to register clk provider\n");
-+	return 0;
-+}
-+
- static int rk_hdptx_phy_runtime_suspend(struct device *dev)
- {
- 	struct rk_hdptx_phy *hdptx = dev_get_drvdata(dev);
-@@ -987,7 +1132,7 @@ static int rk_hdptx_phy_probe(struct platform_device *pdev)
- 	reset_control_deassert(hdptx->rsts[RST_CMN].rstc);
- 	reset_control_deassert(hdptx->rsts[RST_INIT].rstc);
- 
--	return 0;
-+	return rk_hdptx_phy_clk_register(hdptx);
- }
- 
- static const struct dev_pm_ops rk_hdptx_phy_pm_ops = {
+The imx93-mipi-dsi.c code has a check that's a bit more complex that
+might be closer to what we want if you think the check is useful:
+        if ((bridge->ops & DRM_BRIDGE_OP_DETECT) &&
+            (bridge->ops & DRM_BRIDGE_OP_EDID)) {
+                unsigned long pixel_clock_rate = mode->clock * 1000;
+                unsigned long rounded_rate;
 
+                /* Allow +/-0.5% pixel clock rate deviation */
+                rounded_rate = clk_round_rate(dsi->clk_pixel, pixel_clock_rate);
+                if (rounded_rate < pixel_clock_rate * 995 / 1000 ||
+                    rounded_rate > pixel_clock_rate * 1005 / 1000) {
+                        dev_dbg(dsi->dev, "failed to round clock for mode " DRM_MODE_FMT "\n",
+                                DRM_MODE_ARG(mode));
+                        return MODE_NOCLOCK;
+                }
+        }
+
+However, for my particular case 0.5% wouldn't be enough to get something
+to display unfortunately :/
+
+> > In practice the screen I'm looking at has an EDID which only supports
+> > 51.2MHz and the closest frequency supported by the Samsung HDMI phy is
+> > 50.4MHz, so that's a ~1.5% difference and it'd be great if it could work
+> > out of the box.
+> 
+> I wonder if the HDMI PHY could be improved to better dynamically
+> calculate values instead of the look tables.
+
+That would probably be ideal, right... If we could do that we could
+likely compute something within 0.5% of the required freq.
+
+The original code from NXP was full of what seemed at the time magic
+values, but with the new code it seems quite a bit clearer...
+At least the values that are left seem to somewhat make sense:
+https://gaia.codewreck.org/local/linux/hdmi/plot-combined.svg
+https://gaia.codewreck.org/local/linux/hdmi/plot-1.svg
+ -> dented linear values, per the intervals defined in
+ fsl_samsung_hdmi_phy_configure_pixclk()
+https://gaia.codewreck.org/local/linux/hdmi/plot-2.svg
+ -> constant for each intervals?
+https://gaia.codewreck.org/local/linux/hdmi/plot-3.svg
+https://gaia.codewreck.org/local/linux/hdmi/plot-4.svg
+ these don't really make sense to me...
+https://gaia.codewreck.org/local/linux/hdmi/plot-5.svg
+ that one 0 value at 154000000 looks odd,
+ but that aside we could probably get away with constant 0x80
+ if the value matters at all...
+https://gaia.codewreck.org/local/linux/hdmi/plot-6.svg
+ weird as well
+
+I'm thinking the last few values just affect a very small % of the
+values, but would need to check with a proper scope if I can get a hold
+of the clock line...
+Does any of you happen to have any datasheet for these registers,
+or should we consider them to be magic values?
+
+Lucas Stach wrote on Mon, Jun 17, 2024 at 06:32:45PM +0200:
+> > Do you know why such a check is here?
+> 
+> Sending a HDMI signal with a different rate than what the display
+> expects rarely ends well, so this check avoids that.
+>
+> However, this check is a bit overcautious in that it only allows exact
+> rate matches. IIRC HDMI allows a rate mismatch of +- 0.5%, so this
+> check could be relaxed quite a bit to allow for that.
+
+I'd expect displays to be tolerant to quite a few percents, but I didn't
+know the spec defined something like that... iirc the HDMI spec isn't
+public?
+
+> > In practice the screen I'm looking at has an EDID which only supports
+> > 51.2MHz and the closest frequency supported by the Samsung HDMI phy is
+> > 50.4MHz, so that's a ~1.5% difference and it'd be great if it could work
+> > out of the box.
+> 
+> For rate mismatches larger than the 0.5% allowed by the HDMI spec it
+> would be better to actually add PHY PLL parameters matching those
+> rates.
+> 
+> We could potentially add some more leeway for displays like yours that
+> aren't actually HDMI (as it doesn't seem to have a standard HDMI
+> resolution). But that's more of a last resort option, as it may
+> introduce other problems for displays that aren't as tolerant with
+> their input rates. Remember the mode_valid call is used to filter modes
+> that aren't compatible with the source, so for a display with multiple
+> modes allowing too much leeway may lead to incompatible modes not
+> getting tossed, in turn allowing userspace to set a mode that the
+> display may not like due to too much rate deviation, instead of only
+> presenting a list of valid modes. This again would present the user
+> with a black-screen without warning situation.
+
+Ah, that's a very good point, if other modes are valid then we don't
+want to present modes that are less likely to work, we should only allow
+bigger variations if no other mode worked...
+I don't think we have this info at validation time though?
+
+I think that Adam's suggestion of making this more dynamic would be
+great, if we can just generate finer frequencies for a reasonable range
+then it wouldn't be a problem to limit the check to 0.5%.
+
+Short of something really dynamic I can add a value for our particular
+display based on what I've seen above (just pick a couple of points
+along the lines for the two values I understood and whatever value
+neighbors have for the rest & check with a scope it's somewhat close),
+but I honestly would rather not get too far down this hole, we can't
+cover all the quirky hardwares that exist manually...
+
+
+Cheers,
 -- 
-2.45.2
+Dominique
+
 
 
 -- 
