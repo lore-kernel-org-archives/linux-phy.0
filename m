@@ -4,51 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2192C27C4F
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 07:55:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7462CC27C4F
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 11:25:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6BVXUl7vj8mPoBDhY9bpxeyOe4e3aXUxK4WkCJK5alY=; b=dPxOpncqhg47/2
-	Rw7BoONFGHR3DToDl7Cr2etWKbAN4iovE32ngMCMeqzDnwaIMpqMBA/ct2jSWoO1a0msLFTyCBF7e
-	qcmLb6toGZxdM8VKwqkWxVcSe8FvJhOc+TorQK0nkpTpfwP8GXCzjmNtwAd96P4V08yzSAH8dmg7q
-	WQRseN8HXZ2mmTW8GC3Y74tOf68twyHjC9+UFJ7viisrqEjRCK49H9D9Obt8UZuKgo820BGhHz7+v
-	zaC2S/wnCdgL+fC4PelnVdz4bDeK7L1+gO3jINdqSwn7hISGjc8M6CNMnenmcH2EKAuFnmbULUzZA
-	4hguyXASVTUY1KQmbuzQ==;
+	List-Owner; bh=dJVWdlQ8itutH2RScx4kgLXGP/E/LHu3GnJE1PH/ehs=; b=V1w1P+zi0rx0La
+	SHSG1psNCYfUhVQiDtsrXDrYzHOWRDCmTqKwj2V2u9JztWYuougIj9o/wu5oCGJMLoP7CtwM2DL8F
+	BAK6NqHV7g6hFlsekqMZoCcoI7bv3o5YQKczJOeeghbHLwPt2xlP1PzUO2flIOcgTjhPwnxXM+FHF
+	0BbKTuBkxK2VmfsH8/ShwTPAomGOnXe3UY+bUvpjGPnIK7k7qX+NVej5vDDVixsl78TtM0N0t5IYk
+	q3+T8sOpaxjM9MxnV5uVCYSSSK5Kynr2j66/wZvPIOYv4Nceh4fck25HchpN2RBZoXd/lrnsBc7pa
+	z4IsAAi7VGHzHxtVoF1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJTgX-0000000E1Wo-2dgF;
-	Tue, 18 Jun 2024 07:55:21 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1sJWxo-0000000Ebwi-0cYr;
+	Tue, 18 Jun 2024 11:25:24 +0000
+Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJTgV-0000000E1Vw-16HM;
-	Tue, 18 Jun 2024 07:55:20 +0000
-Received: from i5e8616c2.versanet.de ([94.134.22.194] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1sJTgP-0006QI-C0; Tue, 18 Jun 2024 09:55:13 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	id 1sJWxj-0000000Ebuk-3ulh;
+	Tue, 18 Jun 2024 11:25:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1718709917;
+	bh=laBbGW8u+C3wkt52DJVoyFfKIQuH6xetOZoiKmaKf20=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=AACNMWpJM4WRVJIsfDww72SFiSALFZZ5AdyZm+2NGuGCfsy5fYf8cOVvYQ3wAU3Qo
+	 L/xCpy6rAKSFMNimFaCXcfttYFR++8IRzmk6NE8jtBPMosoFk4JF5bRUfqXY0HOXW8
+	 NdDfVGxF5nqJ1KCkNhJSnvCdvIO6pHRlByaVagXDs8ARYVIj7RQmUwCBFM1arQYMsy
+	 9hRlIUexe4XcwuG6oSlkBaP97yTc4ZoETNJAumFMvo/wAKAQH3Rn7c7oidVyR+TLAq
+	 NLJQB5k1XXrl2cORp7Bfkedr+OdLGe+iSqVYH/oyLZNV9ijARWvO4iz+JHc5VnszGr
+	 YCefW+0Mj5opQ==
+Received: from [100.115.223.179] (cola.collaboradmins.com [195.201.22.229])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id D33A5378217B;
+	Tue, 18 Jun 2024 11:25:16 +0000 (UTC)
+Message-ID: <af51905f-f249-4f4e-8aae-82ff5b585c87@collabora.com>
+Date: Tue, 18 Jun 2024 14:25:16 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 4/4] phy: phy-rockchip-samsung-hdptx: Add clock provider
+ support
+To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Algea Cao <algea.cao@rock-chips.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
 Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH 4/4] phy: phy-rockchip-samsung-hdptx: Add clock provider support
-Date: Tue, 18 Jun 2024 09:55:12 +0200
-Message-ID: <2910644.FA0FI3ke8A@diego>
-In-Reply-To: <20240618-rk3588-hdmiphy-clkprov-v1-4-80e4aa12177e@collabora.com>
 References: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
  <20240618-rk3588-hdmiphy-clkprov-v1-4-80e4aa12177e@collabora.com>
-MIME-Version: 1.0
+ <2910644.FA0FI3ke8A@diego>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <2910644.FA0FI3ke8A@diego>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240618_005519_485985_651CA1C3 
-X-CRM114-Status: GOOD (  18.78  )
+X-CRM114-CacheID: sfid-20240618_042520_135329_8C28B751 
+X-CRM114-Status: GOOD (  12.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -60,60 +76,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Montag, 17. Juni 2024, 23:48:12 CEST schrieb Cristian Ciocaltea:
-> The HDMI PHY PLL can be used as an alternative dclk source to RK3588 SoC
-> CRU. It provides more accurate clock rates required by VOP2 to improve
-> existing support for display modes handling, which is known to be
-> problematic when dealing with non-integer refresh rates, among others.
-> 
-> It is worth noting this only works for HDMI 2.0 or below, e.g. cannot be
-> used to support HDMI 2.1 4K@120Hz mode.
-> 
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> ---
->  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 189 +++++++++++++++++++---
->  1 file changed, 167 insertions(+), 22 deletions(-)
-> 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> index 72de287282eb..ad3fd4084377 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-
->  static int rk_hdptx_phy_power_on(struct phy *phy)
->  {
->  	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
->  	int bus_width = phy_get_bus_width(hdptx->phy);
-> +	int ret;
-> +
->  	/*
->  	 * FIXME: Temporary workaround to pass pixel_clk_rate
->  	 * from the HDMI bridge driver until phy_configure_opts_hdmi
-> @@ -871,20 +925,18 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
->  	dev_dbg(hdptx->dev, "%s bus_width=%x rate=%u\n",
->  		__func__, bus_width, rate);
->  
-> -	return rk_hdptx_ropll_tmds_mode_config(hdptx, rate);
-> +	ret = rk_hdptx_phy_consumer_get(hdptx, rate);
-> +	if (!ret)
-> +		ret = rk_hdptx_ropll_tmds_mode_config(hdptx, rate);
-
-I think this will need a put if _mode_config fails?
-
-> +
-> +	return ret;
->  }
-
-
-Heiko
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gNi8xOC8yNCAxMDo1NSBBTSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gQW0gTW9udGFnLCAx
+Ny4gSnVuaSAyMDI0LCAyMzo0ODoxMiBDRVNUIHNjaHJpZWIgQ3Jpc3RpYW4gQ2lvY2FsdGVhOgo+
+PiBUaGUgSERNSSBQSFkgUExMIGNhbiBiZSB1c2VkIGFzIGFuIGFsdGVybmF0aXZlIGRjbGsgc291
+cmNlIHRvIFJLMzU4OCBTb0MKPj4gQ1JVLiBJdCBwcm92aWRlcyBtb3JlIGFjY3VyYXRlIGNsb2Nr
+IHJhdGVzIHJlcXVpcmVkIGJ5IFZPUDIgdG8gaW1wcm92ZQo+PiBleGlzdGluZyBzdXBwb3J0IGZv
+ciBkaXNwbGF5IG1vZGVzIGhhbmRsaW5nLCB3aGljaCBpcyBrbm93biB0byBiZQo+PiBwcm9ibGVt
+YXRpYyB3aGVuIGRlYWxpbmcgd2l0aCBub24taW50ZWdlciByZWZyZXNoIHJhdGVzLCBhbW9uZyBv
+dGhlcnMuCj4+Cj4+IEl0IGlzIHdvcnRoIG5vdGluZyB0aGlzIG9ubHkgd29ya3MgZm9yIEhETUkg
+Mi4wIG9yIGJlbG93LCBlLmcuIGNhbm5vdCBiZQo+PiB1c2VkIHRvIHN1cHBvcnQgSERNSSAyLjEg
+NEtAMTIwSHogbW9kZS4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQ3Jpc3RpYW4gQ2lvY2FsdGVhIDxj
+cmlzdGlhbi5jaW9jYWx0ZWFAY29sbGFib3JhLmNvbT4KPj4gLS0tCj4+ICBkcml2ZXJzL3BoeS9y
+b2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jIHwgMTg5ICsrKysrKysrKysrKysr
+KysrKystLS0KPj4gIDEgZmlsZSBjaGFuZ2VkLCAxNjcgaW5zZXJ0aW9ucygrKSwgMjIgZGVsZXRp
+b25zKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2No
+aXAtc2Ftc3VuZy1oZHB0eC5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNh
+bXN1bmctaGRwdHguYwo+PiBpbmRleCA3MmRlMjg3MjgyZWIuLmFkM2ZkNDA4NDM3NyAxMDA2NDQK
+Pj4gLS0tIGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNhbXN1bmctaGRwdHgu
+Ywo+PiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0
+eC5jCj4gCj4+ICBzdGF0aWMgaW50IHJrX2hkcHR4X3BoeV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpw
+aHkpCj4+ICB7Cj4+ICAJc3RydWN0IHJrX2hkcHR4X3BoeSAqaGRwdHggPSBwaHlfZ2V0X2RydmRh
+dGEocGh5KTsKPj4gIAlpbnQgYnVzX3dpZHRoID0gcGh5X2dldF9idXNfd2lkdGgoaGRwdHgtPnBo
+eSk7Cj4+ICsJaW50IHJldDsKPj4gKwo+PiAgCS8qCj4+ICAJICogRklYTUU6IFRlbXBvcmFyeSB3
+b3JrYXJvdW5kIHRvIHBhc3MgcGl4ZWxfY2xrX3JhdGUKPj4gIAkgKiBmcm9tIHRoZSBIRE1JIGJy
+aWRnZSBkcml2ZXIgdW50aWwgcGh5X2NvbmZpZ3VyZV9vcHRzX2hkbWkKPj4gQEAgLTg3MSwyMCAr
+OTI1LDE4IEBAIHN0YXRpYyBpbnQgcmtfaGRwdHhfcGh5X3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBo
+eSkKPj4gIAlkZXZfZGJnKGhkcHR4LT5kZXYsICIlcyBidXNfd2lkdGg9JXggcmF0ZT0ldVxuIiwK
+Pj4gIAkJX19mdW5jX18sIGJ1c193aWR0aCwgcmF0ZSk7Cj4+ICAKPj4gLQlyZXR1cm4gcmtfaGRw
+dHhfcm9wbGxfdG1kc19tb2RlX2NvbmZpZyhoZHB0eCwgcmF0ZSk7Cj4+ICsJcmV0ID0gcmtfaGRw
+dHhfcGh5X2NvbnN1bWVyX2dldChoZHB0eCwgcmF0ZSk7Cj4+ICsJaWYgKCFyZXQpCj4+ICsJCXJl
+dCA9IHJrX2hkcHR4X3JvcGxsX3RtZHNfbW9kZV9jb25maWcoaGRwdHgsIHJhdGUpOwo+IAo+IEkg
+dGhpbmsgdGhpcyB3aWxsIG5lZWQgYSBwdXQgaWYgX21vZGVfY29uZmlnIGZhaWxzPwoKSW5kZWVk
+LCBhIGZvcmNlZCBwdXQgdmFyaWFudCB3b3VsZCBiZSByZXF1aXJlZCB0byBpZ25vcmUgYW55CnJl
+Z21hcF9yZWFkKCkgZXJyb3JzIGFuZCBrZWVwIHVzYWdlX2NvdW50IGRlY3JlbWVudGVkLiAgVGhp
+cyBzaG91bGQgYmUKYWxzbyB1c2VkIGluIHJrX2hkcHR4X3BoeV9jbGtfdW5wcmVwYXJlKCksIHNp
+bmNlIC0+dW5wcmVwYXJlKCkgY2FsbGJhY2sKY2Fubm90IGZhaWwuCgpXaWxsIGdldCB0aGlzIGZp
+eGVkIGluIHYyLgoKVGhhbmtzIGZvciByZXZpZXdpbmchCgpDcmlzdGlhbgoKLS0gCmxpbnV4LXBo
+eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
