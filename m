@@ -4,125 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6679AC2BA18
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 00:05:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9703EC27C4F
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 06:20:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gzF517Ft84LZqRnc7qUdgvWxzHkbNtOYvh/S2MqYsDA=; b=KkyNlCPowshcoV
-	+NfmTEZ+NtEsZCAPLapcsEmw8sYgPUl7P6y7Bm/2H6baZwaJmxjMat1i2T+dsknwNcQfsOTWJladg
-	HrALVwd0qnVCj1UVSaUgfAfOkGQ2WlCTto/yo4tT4PWGtVX+V0iminyA8CWHCKWnXnWIV/4tgXddZ
-	dDTgbf/IJ0n37x6hZ6xy8sWhP9ZvNbNhRS/pKThqAXPeHznXAm5gI4tZ0hj3u7E4SRSnNSb6fPukW
-	CLdUQXsXHsY3Id5VPSz5DNXV3v5bVVIwzjPHqwgbbFRofZEPWZF2nFy2CHU1vnL0iR7caAO88XFYf
-	lOS0Wm3e8QmSMJcfm6Dg==;
+	List-Owner; bh=fK1s9YTu8e3CYXQ6nV5OFwzxQ6OIs6BVzV3xGgJRuhQ=; b=rJvMH5w+Lp0jcI
+	vwnjiuj9dASsXYN5za24h5dSTXMAhZqEcI9YmSixBiUSX9VmM+AStO6K+ggZJEesfqI7FmiUJniXR
+	fywdbdJLBCMpty3ry4qCu+5+PAP0PH7Y7hxvzraSiJMsCTN+ijDGCCUZaGdAgn8ld0PlBBRe0kjfT
+	Ts9w16msl7bYdHAsC9Lm+3uwNkHS/s63RgoutdhXB13ioBbsEK2srLPoWBaIL3PV3HL2CAST9Aax1
+	cwqWX3OkkcrEwnepsHUoq7J1j5twWD/ha4B0pl66rhRpGh1+GvxYOmoa+wKrbAXDvUWX7FXSOP/uT
+	TP0oONAheg6vqv6CqrHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJMLS-0000000CzhQ-0PKW;
-	Tue, 18 Jun 2024 00:05:06 +0000
-Received: from gw2.atmark-techno.com ([35.74.137.57])
+	id 1sJSD2-0000000DmRM-02Sl;
+	Tue, 18 Jun 2024 06:20:48 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJMLP-0000000Czfp-0lgQ
-	for linux-phy@lists.infradead.org;
-	Tue, 18 Jun 2024 00:05:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=atmark-techno.com;
-	s=gw2_bookworm; t=1718669100;
-	bh=TKA2C043TkCUGXnV0SbvDBVxmP0XE7myxN4MUMYbCJ4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=nTyZ13zSV1xy2D0V9wrmiHKETjbqBilxCREcL2+XF4LZGIszKOBc+6xQIoepxm2NU
-	 War3Yf1tC30isr/EJJ+drTL4yCvYyglbq89o4nMbAzOmx6dSd7BIsRthjyWzjD4ZQP
-	 ax6HpXMdhtGbzepPoF1VSn+9BS9CHQUYtLD6oOX2uDKH2Fe1/i7F9kseX6icwctATp
-	 /xSR2Nm4TR4fpi5O7lgSMSn3HkYYt9A5nUvg1mlTLSGL2l5dVQRnwVO8b77X2sNKbc
-	 9zew8da/RIuaBFki0aKrrXVgy0G0BQ+pObc+s8C1nBV6gkn4z9lA5BGDCsLVCj4s3z
-	 jR3bIvPmsYK1A==
-Received: from gw2.atmark-techno.com (localhost [127.0.0.1])
-	by gw2.atmark-techno.com (Postfix) with ESMTP id C5927A55
-	for <linux-phy@lists.infradead.org>; Tue, 18 Jun 2024 09:05:00 +0900 (JST)
-Authentication-Results: gw2.atmark-techno.com;
-	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=ckoZyrNt;
-	dkim-atps=neutral
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by gw2.atmark-techno.com (Postfix) with ESMTPS id 4098CA87
-	for <linux-phy@lists.infradead.org>; Tue, 18 Jun 2024 09:04:58 +0900 (JST)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-70428892e0cso4057735b3a.2
-        for <linux-phy@lists.infradead.org>; Mon, 17 Jun 2024 17:04:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=atmark-techno.com; s=google; t=1718669097; x=1719273897; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=0Xe63nUyIwv36+7xnvrOAI6BQO79Yhtze7l/OyxIXbI=;
-        b=ckoZyrNtNnQGxMmCkAy0GMtNOLj49HPwy+DeGAoVQDu2sSjNg7VgVdOPs20P64PPO7
-         bKLH0C/EwGyanxEPdv8+RnHruwWiXe59za7oLHKKUmj8tUU7Gq8GrpGzjpKG4XhKbfjz
-         +aOShSqSrIeFe88TwAeW3FIFo+hXuBfst7YXdgwzI+LFuG2KMVS8BvuLj0eTHKfT1UKS
-         jJrQcOI/VM1J2vZMAo+HSPVL5JX+uHGEVb8GIOA4TgckVqc1/Ro839OgkzGJj2pLVswJ
-         vas4a++xE6bbzLuDQwzz1xdrKwrMBK5rxPWOnuTXTPXL39g4G5DSyDcpfjmNdRcTAxM9
-         z4gw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718669097; x=1719273897;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=0Xe63nUyIwv36+7xnvrOAI6BQO79Yhtze7l/OyxIXbI=;
-        b=IvGL1AP127j2uhAxyN61I0FOd+vNe0qzY9sVjqHAFP1sUiOFgX/gkb93+CkeEYrkKx
-         KeZIZQP9OhRGaIzAvlGXJIt+R5Nua2Pee2oswaUaEAPljp+UEJ2NGKMZLrXkpjmTSlYG
-         ddUv0/8wmuDDYg55LiBhAGB7U2sG5Gw4mdjhsfD0TNoo2+Aseca6Rqb0H36Vcdz150fs
-         Q75U8oTuFIkBpKOzzpoGhPJxilXyEn5fvnhYu+2hL1I+seE0LKiXmImmXw3KlFYiExaS
-         ERe66F+tf+c1H2vA/KfzZfn0hGoB4NGZE/4Q/GZWW48WouI9E8gnVbTbRqJerrXCX1Fh
-         COZg==
-X-Forwarded-Encrypted: i=1; AJvYcCVn+M2elh/h80B7oJZ9Sb0b2gTk2sx/v9fb+Crj1oUselKbePnspS58MgDrFlWfrG7CpdNA0yHa/nG/rtngcplvCTJw0kSYwsH98dNJ/A==
-X-Gm-Message-State: AOJu0YxLyX9yEtaIsQp8PiuKjMLKwOWEEBSCqbPU/tQ564XVVXTNyk+E
-	x04sTvaxElBbqsPFVxN/BG5j05j6IKe39LleshhTDScYfuY/5e+q1d825sS1nx6D7tygLChHjFB
-	P39/Qc78XdSZ6RqUxgyDMWoazNhfW33LY1t5IqbY1/YT2mnwk9bxM6VLohjS8JMo0
-X-Received: by 2002:a05:6a20:7344:b0:1b0:1a02:4136 with SMTP id adf61e73a8af0-1bae7e28efcmr12053006637.8.1718669097077;
-        Mon, 17 Jun 2024 17:04:57 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEaJwsOB5qRcAEyY5B6LLeGzmT4mUY+ApOshTQERXeBYQ+t83Lc16Ao0Q3gXge9N9DbP6gkbw==
-X-Received: by 2002:a05:6a20:7344:b0:1b0:1a02:4136 with SMTP id adf61e73a8af0-1bae7e28efcmr12052978637.8.1718669096600;
-        Mon, 17 Jun 2024 17:04:56 -0700 (PDT)
-Received: from pc-0182.atmarktech (178.101.200.35.bc.googleusercontent.com. [35.200.101.178])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2c4a7602690sm11894540a91.28.2024.06.17.17.04.56
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Mon, 17 Jun 2024 17:04:56 -0700 (PDT)
-Received: from martinet by pc-0182.atmarktech with local (Exim 4.96)
-	(envelope-from <martinet@pc-zest>)
-	id 1sJMLG-00ACZX-1h;
-	Tue, 18 Jun 2024 09:04:54 +0900
-Date: Tue, 18 Jun 2024 09:04:44 +0900
-From: Dominique MARTINET <dominique.martinet@atmark-techno.com>
-To: Adam Ford <aford173@gmail.com>, Lucas Stach <l.stach@pengutronix.de>
-Cc: linux-arm-kernel@lists.infradead.org, marex@denx.de,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Makoto Sato <makoto.sato@atmark-techno.com>
-Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
- (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for
- i.MX8MP DWC HDMI)
-Message-ID: <ZnDPHN_sSaWR7KKp@atmark-techno.com>
-References: <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
- <CAHCN7xJt+1WGFYeBii1jUDEg9OU176f0AA+rMkXCqNQrfq=XWg@mail.gmail.com>
- <ZnDKovBokBu5D_eb@atmark-techno.com>
+	id 1sJSCx-0000000DmOX-1Z4E;
+	Tue, 18 Jun 2024 06:20:44 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 27862CE140C;
+	Tue, 18 Jun 2024 06:20:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 849A9C4AF1C;
+	Tue, 18 Jun 2024 06:20:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718691639;
+	bh=Pzw8C5Eyyd86/AVH89vHxaK0LKah+NcOcAwArlidsD0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=or9ZDYXVN+K7FIVk2cCi23RdUsPSz/kNApo9erBlQgwJlxT7kOJlVr1BE8LSAzUoI
+	 j8zoEVIx3W1xzQqeAxxqik56POzTmkdeV3YTgXJMxMkL3iaH4R2yXNsXST3jIpxDgy
+	 A+O5CX333/lq02MPWkzPU/8bZZ7Fvsus0K3LsxjJaVVxb74rKcUIgJ2mBj1GGhZyIt
+	 lioiqoyBhstcnaA/TSx2tboFWgyz3mwOOTCmvZo/by/5PDYmrteoouTBqlogDZAscV
+	 emLKhexuB9O+Ky9rslM3S5+pW+9KUVenkDanjL2fX3Xo8O5WNZuWFZsS1lbj+y+Y8K
+	 dyjMNWSu5NnJg==
+Message-ID: <79f3ae72-e733-433c-a577-e0092e3ce20e@kernel.org>
+Date: Tue, 18 Jun 2024 08:20:32 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZnDKovBokBu5D_eb@atmark-techno.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4] dt-bindings: phy: rockchip-emmc-phy: Convert to
+ dtschema
+To: Shresth Prasad <shresthprasad7@gmail.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, heiko@sntech.de, sebastian.reichel@collabora.com,
+ andy.yan@rock-chips.com, s.hauer@pengutronix.de, jbx6244@yandex.com,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, javier.carrasco.cruz@gmail.com,
+ skhan@linuxfoundation.org
+References: <20240617085341.34332-2-shresthprasad7@gmail.com>
+ <f691c7f9-cd81-4bdf-a794-95118cb26686@kernel.org>
+ <CAE8VWiLqBUq=-PzT2XVKB_C9nvEERM0x-maWU5qt0+aK1Rd-kg@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <CAE8VWiLqBUq=-PzT2XVKB_C9nvEERM0x-maWU5qt0+aK1Rd-kg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_170503_379262_2290C5D5 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20240617_232043_817245_C5F798CE 
+X-CRM114-Status: GOOD (  18.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,25 +123,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Dominique MARTINET wrote on Tue, Jun 18, 2024 at 08:45:38AM +0900:
-> I'm thinking the last few values just affect a very small % of the
-> values, but would need to check with a proper scope if I can get a hold
-> of the clock line...
-> Does any of you happen to have any datasheet for these registers,
-> or should we consider them to be magic values?
+On 17/06/2024 20:14, Shresth Prasad wrote:
 
-Answering to myself on this point, the registers are properly described
-in the iMX8MP reference manual...
-I don't make much sense of it at this point (what's SDC..?), but I guess
-it does sound likely we could generate the values with some work.
+>>> +examples:
+>>> +  - |
+>>> +    grf: syscon@ff770000 {
+>>
+>> Drop label... actually entire node looks not needed.
+> 
+> From what I understand, this `phy` node should be a sub-node of a `grf`
+> node which is why it is part of the example.
+> 
+>>
+>>> +      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+>>
+>> Drop
+>>
+>>> +      reg = <0xff770000 0x10000>;
+>>
+>> Drop
+> 
+> Removing `reg` causes the following warning:
+> Warning (unit_address_vs_reg): /example-0/syscon@ff770000: node has a
+> unit name, but no reg or ranges property
+> 
+> Please let me know what the prefered solution would be here.
 
-I'll wait for replies a bit first in case one of you understands this
-better than I (which is quite likely!), but can give this a few more
-hours to help.
+Obviously you need to drop entire node... You cannot just drop reg and
+leave unit address.
 
--- 
-Dominique
+> 
+>>
+>>
+>>> +      #address-cells = <1>;
+>>> +      #size-cells = <1>;
+>>> +
+>>> +      emmcphy: phy@f780 {
+>>
+>> Drop label
+>>
+>>> +        compatible = "rockchip,rk3399-emmc-phy";
+>>> +        reg = <0xf780 0x20>;
+>>> +        clocks = <&sdhci>;
+>>> +        clock-names = "emmcclk";
+>>> +        drive-impedance-ohm = <50>;
+>>> +        #phy-cells = <0>;
+>>> +      };
+>>> +    };
+>>> diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+>>> deleted file mode 100644
+>>> index 57d28c0d5696..000000000000
+>>> --- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+>>> +++ /dev/null
+>>> @@ -1,43 +0,0 @@
+>>> -Rockchip EMMC PHY
+>>> ------------------------
+>>> -
+>>> -Required properties:
+>>> - - compatible: rockchip,rk3399-emmc-phy
+>>> - - #phy-cells: must be 0
+>>> - - reg: PHY register address offset and length in "general
+>>> -   register files"
+>>> -
+>>> -Optional properties:
+>>> - - clock-names: Should contain "emmcclk".  Although this is listed as optional
+>>> -             (because most boards can get basic functionality without having
+>>> -             access to it), it is strongly suggested.
+>>> -             See ../clock/clock-bindings.txt for details.
+>>> - - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
+>>> - - drive-impedance-ohm: Specifies the drive impedance in Ohm.
+>>> -                        Possible values are 33, 40, 50, 66 and 100.
+>>> -                        If not set, the default value of 50 will be applied.
+>>> - - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
+>>> -                                    line.  If not set, pull-down is not used.
+>>> - - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
+>>> -                                    If not set, the register defaults to 0x4.
+>>> -                                    Maximum value 0xf.
+>>> -
+>>> -Example:
+>>> -
+>>> -
+>>> -grf: syscon@ff770000 {
+>>> -     compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+>>> -     #address-cells = <1>;
+>>> -     #size-cells = <1>;
+>>> -
+>>> -...
+>>> -
+>>> -     emmcphy: phy@f780 {
+>>> -             compatible = "rockchip,rk3399-emmc-phy";
+>>> -             reg = <0xf780 0x20>;
+>>> -             clocks = <&sdhci>;
+>>> -             clock-names = "emmcclk";
+>>> -             drive-impedance-ohm = <50>;
+>>> -             #phy-cells = <0>;
+>>> -     };
+>>> -};
+>>> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+>>> index 79798c747476..6e1b1cdea680 100644
+>>> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+>>> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+>>> @@ -176,9 +176,12 @@ allOf:
+>>>              Documentation/devicetree/bindings/phy/rockchip-pcie-phy.txt
+>>>
+>>>        patternProperties:
+>>> -        "phy@[0-9a-f]+$":
+>>> -          description:
+>>> -            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+>>> +        "^phy@[0-9a-f]+$":
+>>> +          type: object
+>>> +
+>>
+>> Drop blank line
+>>
+>>> +          $ref: /schemas/phy/rockchip,rk3399-emmc-phy.yaml#
+>>> +
+>>
+>> Drop blank line
+> 
+> The rest of the document also has these blank lines, which is why I've
+> also kept them here. Are you sure I should remove them?
 
+Yes
+
+> 
+>>
+>>> +          unevaluatedProperties: false
+>>>
+>>>    - if:
+>>>        properties:
+>>
+>> Nothing in example? Isn't the example for 3399?
+>>
+>> We want only one complete example of such multi-children devices, so the
+>> example can be moved and included in existing one here.
+> 
+> The example in this file is actually for `rockchip,rk3399-usb2phy` and
+> not `rockchip,rk3399-emmc-phy` which is why I haven't touched it.
+
+What? That's gref, not usb2phy.
+
+This patch and your explanations are very confusing.
+
+
+
+Best regards,
+Krzysztof
 
 
 -- 
