@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9703EC27C4F
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 06:20:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AB3BC27C4F
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 06:42:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fK1s9YTu8e3CYXQ6nV5OFwzxQ6OIs6BVzV3xGgJRuhQ=; b=rJvMH5w+Lp0jcI
-	vwnjiuj9dASsXYN5za24h5dSTXMAhZqEcI9YmSixBiUSX9VmM+AStO6K+ggZJEesfqI7FmiUJniXR
-	fywdbdJLBCMpty3ry4qCu+5+PAP0PH7Y7hxvzraSiJMsCTN+ijDGCCUZaGdAgn8ld0PlBBRe0kjfT
-	Ts9w16msl7bYdHAsC9Lm+3uwNkHS/s63RgoutdhXB13ioBbsEK2srLPoWBaIL3PV3HL2CAST9Aax1
-	cwqWX3OkkcrEwnepsHUoq7J1j5twWD/ha4B0pl66rhRpGh1+GvxYOmoa+wKrbAXDvUWX7FXSOP/uT
-	TP0oONAheg6vqv6CqrHw==;
+	List-Owner; bh=h0gnFXw/leLjVnJlrQe3HzzOjT5njotpIsl/vZCGk4s=; b=yrs7KOgLL0mTXp
+	0DcK1Bciaw5baEwpfqXmI72dY9nVrwdGU5Xim7GdPtjy6Qs7wa40IV4I3aX3chwYyyMHGVWNAFrcv
+	nhBa/ZOCkBsXU06kENJHCgTGptJepjQQ9dHYgaZUYQ53Qa+g6iaCmVMPOe3kUI4qm5oupShwD62a7
+	CT2ELZ+u/lTXDjB66y/xf48zB6TAcN2SkOkd9k4viVysSrMATNd8klVlC9Zo4uPU6I80hCV3r4UUM
+	LEwNlIG3n9n4Ul7/vdwequme105CkViD/jAAAyTaUD2ACviGeb5hu9eLqduAJEd2nGfqOljy0jiKg
+	P0m6I3qVs584hWVHBARQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJSD2-0000000DmRM-02Sl;
-	Tue, 18 Jun 2024 06:20:48 +0000
+	id 1sJSY9-0000000DqcK-2sLs;
+	Tue, 18 Jun 2024 06:42:37 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJSCx-0000000DmOX-1Z4E;
-	Tue, 18 Jun 2024 06:20:44 +0000
+	id 1sJSY1-0000000DqZn-3Tpf;
+	Tue, 18 Jun 2024 06:42:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 27862CE140C;
-	Tue, 18 Jun 2024 06:20:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 849A9C4AF1C;
-	Tue, 18 Jun 2024 06:20:34 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 5EF93CE1680;
+	Tue, 18 Jun 2024 06:42:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4A6F0C4AF1D;
+	Tue, 18 Jun 2024 06:42:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718691639;
-	bh=Pzw8C5Eyyd86/AVH89vHxaK0LKah+NcOcAwArlidsD0=;
+	s=k20201202; t=1718692946;
+	bh=b4G0M+0SDXvu/gr/P6DTgGODddDAWFkgwimbWQ/CUz8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=or9ZDYXVN+K7FIVk2cCi23RdUsPSz/kNApo9erBlQgwJlxT7kOJlVr1BE8LSAzUoI
-	 j8zoEVIx3W1xzQqeAxxqik56POzTmkdeV3YTgXJMxMkL3iaH4R2yXNsXST3jIpxDgy
-	 A+O5CX333/lq02MPWkzPU/8bZZ7Fvsus0K3LsxjJaVVxb74rKcUIgJ2mBj1GGhZyIt
-	 lioiqoyBhstcnaA/TSx2tboFWgyz3mwOOTCmvZo/by/5PDYmrteoouTBqlogDZAscV
-	 emLKhexuB9O+Ky9rslM3S5+pW+9KUVenkDanjL2fX3Xo8O5WNZuWFZsS1lbj+y+Y8K
-	 dyjMNWSu5NnJg==
-Message-ID: <79f3ae72-e733-433c-a577-e0092e3ce20e@kernel.org>
-Date: Tue, 18 Jun 2024 08:20:32 +0200
+	b=YpJCjIC6hNrHVALlQs2FR/7rlX/G/Jo7sH+9YCItIZ4Dq6xM0oB2tU4U3/PyNSSa4
+	 cILLnHE04Pbga2EzN5+5CJ/JqRMPbUnNNmWtyk7uTCA+rEWSvgSn4Qc9OcTdublFt0
+	 x1M664h0iurnKP56jKvRsdGq0PlNCC8APcEEgoLaYwkLvshyuLL7PoM1rbjN4co4VL
+	 jf9eCEs8uWqiyHEJfelnE9OzxB+jVT8VI0e8CW4f3MnlmOOR7XVq1VwthV7VnissgW
+	 opY2aQfxevaX16VFBeGNcTOS9dPuncu7ZDfHzUlVSQ/CSUriIqLtVCyIPA0ItpFnhy
+	 7edfAJlfYK/qQ==
+Message-ID: <fc5ebd40-56a8-4ed7-ab8d-bda734224d23@kernel.org>
+Date: Tue, 18 Jun 2024 08:42:20 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4] dt-bindings: phy: rockchip-emmc-phy: Convert to
- dtschema
-To: Shresth Prasad <shresthprasad7@gmail.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, heiko@sntech.de, sebastian.reichel@collabora.com,
- andy.yan@rock-chips.com, s.hauer@pengutronix.de, jbx6244@yandex.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+Subject: Re: [PATCH 3/4] dt-bindings: phy: rockchip,rk3588-hdptx-phy: Add
+ #clock-cells
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, javier.carrasco.cruz@gmail.com,
- skhan@linuxfoundation.org
-References: <20240617085341.34332-2-shresthprasad7@gmail.com>
- <f691c7f9-cd81-4bdf-a794-95118cb26686@kernel.org>
- <CAE8VWiLqBUq=-PzT2XVKB_C9nvEERM0x-maWU5qt0+aK1Rd-kg@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+References: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
+ <20240618-rk3588-hdmiphy-clkprov-v1-3-80e4aa12177e@collabora.com>
 Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -103,10 +102,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <CAE8VWiLqBUq=-PzT2XVKB_C9nvEERM0x-maWU5qt0+aK1Rd-kg@mail.gmail.com>
+In-Reply-To: <20240618-rk3588-hdmiphy-clkprov-v1-3-80e4aa12177e@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_232043_817245_C5F798CE 
-X-CRM114-Status: GOOD (  18.64  )
+X-CRM114-CacheID: sfid-20240617_234233_834576_74F8AEDC 
+X-CRM114-Status: UNSURE (   5.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,149 +123,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17/06/2024 20:14, Shresth Prasad wrote:
-
->>> +examples:
->>> +  - |
->>> +    grf: syscon@ff770000 {
->>
->> Drop label... actually entire node looks not needed.
+On 17/06/2024 23:48, Cristian Ciocaltea wrote:
+> The HDMI PHY can be used as a clock provider on RK3588 SoC, hence add
+> the necessary '#clock-cells' property.
 > 
-> From what I understand, this `phy` node should be a sub-node of a `grf`
-> node which is why it is part of the example.
-> 
->>
->>> +      compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
->>
->> Drop
->>
->>> +      reg = <0xff770000 0x10000>;
->>
->> Drop
-> 
-> Removing `reg` causes the following warning:
-> Warning (unit_address_vs_reg): /example-0/syscon@ff770000: node has a
-> unit name, but no reg or ranges property
-> 
-> Please let me know what the prefered solution would be here.
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 
-Obviously you need to drop entire node... You cannot just drop reg and
-leave unit address.
-
-> 
->>
->>
->>> +      #address-cells = <1>;
->>> +      #size-cells = <1>;
->>> +
->>> +      emmcphy: phy@f780 {
->>
->> Drop label
->>
->>> +        compatible = "rockchip,rk3399-emmc-phy";
->>> +        reg = <0xf780 0x20>;
->>> +        clocks = <&sdhci>;
->>> +        clock-names = "emmcclk";
->>> +        drive-impedance-ohm = <50>;
->>> +        #phy-cells = <0>;
->>> +      };
->>> +    };
->>> diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
->>> deleted file mode 100644
->>> index 57d28c0d5696..000000000000
->>> --- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
->>> +++ /dev/null
->>> @@ -1,43 +0,0 @@
->>> -Rockchip EMMC PHY
->>> ------------------------
->>> -
->>> -Required properties:
->>> - - compatible: rockchip,rk3399-emmc-phy
->>> - - #phy-cells: must be 0
->>> - - reg: PHY register address offset and length in "general
->>> -   register files"
->>> -
->>> -Optional properties:
->>> - - clock-names: Should contain "emmcclk".  Although this is listed as optional
->>> -             (because most boards can get basic functionality without having
->>> -             access to it), it is strongly suggested.
->>> -             See ../clock/clock-bindings.txt for details.
->>> - - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
->>> - - drive-impedance-ohm: Specifies the drive impedance in Ohm.
->>> -                        Possible values are 33, 40, 50, 66 and 100.
->>> -                        If not set, the default value of 50 will be applied.
->>> - - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
->>> -                                    line.  If not set, pull-down is not used.
->>> - - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
->>> -                                    If not set, the register defaults to 0x4.
->>> -                                    Maximum value 0xf.
->>> -
->>> -Example:
->>> -
->>> -
->>> -grf: syscon@ff770000 {
->>> -     compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
->>> -     #address-cells = <1>;
->>> -     #size-cells = <1>;
->>> -
->>> -...
->>> -
->>> -     emmcphy: phy@f780 {
->>> -             compatible = "rockchip,rk3399-emmc-phy";
->>> -             reg = <0xf780 0x20>;
->>> -             clocks = <&sdhci>;
->>> -             clock-names = "emmcclk";
->>> -             drive-impedance-ohm = <50>;
->>> -             #phy-cells = <0>;
->>> -     };
->>> -};
->>> diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
->>> index 79798c747476..6e1b1cdea680 100644
->>> --- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
->>> +++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
->>> @@ -176,9 +176,12 @@ allOf:
->>>              Documentation/devicetree/bindings/phy/rockchip-pcie-phy.txt
->>>
->>>        patternProperties:
->>> -        "phy@[0-9a-f]+$":
->>> -          description:
->>> -            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
->>> +        "^phy@[0-9a-f]+$":
->>> +          type: object
->>> +
->>
->> Drop blank line
->>
->>> +          $ref: /schemas/phy/rockchip,rk3399-emmc-phy.yaml#
->>> +
->>
->> Drop blank line
-> 
-> The rest of the document also has these blank lines, which is why I've
-> also kept them here. Are you sure I should remove them?
-
-Yes
-
-> 
->>
->>> +          unevaluatedProperties: false
->>>
->>>    - if:
->>>        properties:
->>
->> Nothing in example? Isn't the example for 3399?
->>
->> We want only one complete example of such multi-children devices, so the
->> example can be moved and included in existing one here.
-> 
-> The example in this file is actually for `rockchip,rk3399-usb2phy` and
-> not `rockchip,rk3399-emmc-phy` which is why I haven't touched it.
-
-What? That's gref, not usb2phy.
-
-This patch and your explanations are very confusing.
-
-
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
