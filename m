@@ -4,67 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7462CC27C4F
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Jun 2024 11:25:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6D28C27C53
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Jun 2024 17:02:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dJVWdlQ8itutH2RScx4kgLXGP/E/LHu3GnJE1PH/ehs=; b=V1w1P+zi0rx0La
-	SHSG1psNCYfUhVQiDtsrXDrYzHOWRDCmTqKwj2V2u9JztWYuougIj9o/wu5oCGJMLoP7CtwM2DL8F
-	BAK6NqHV7g6hFlsekqMZoCcoI7bv3o5YQKczJOeeghbHLwPt2xlP1PzUO2flIOcgTjhPwnxXM+FHF
-	0BbKTuBkxK2VmfsH8/ShwTPAomGOnXe3UY+bUvpjGPnIK7k7qX+NVej5vDDVixsl78TtM0N0t5IYk
-	q3+T8sOpaxjM9MxnV5uVCYSSSK5Kynr2j66/wZvPIOYv4Nceh4fck25HchpN2RBZoXd/lrnsBc7pa
-	z4IsAAi7VGHzHxtVoF1A==;
+	List-Owner; bh=CF2pgb28XtF1JkUCmDeeOm+PXbiKKsBeDKYgC6aHDBA=; b=TDsa1D9vcAWnV/
+	oAu5Ikq0eYIDF9dRhCNTLwuT0h/ua3HrV/ywJVzW5midBdxSB/eBDkzlVAoNQuntB1tIrqjI6laK1
+	sVNUkdK1q2jmQPWIbXJumx1gSrnp+QkdtOD2PCVJvWg7CC/FkRquiEpH6igTPdZOIns1YKuDxIyMv
+	mn1EC+yOE5uZ3cuXUW1q25Kh4iH0QimhKl8AEiiMDPZ6fDLe6oECkWxKRlK7uQlV4HnkqD0aR1bnb
+	4V2NtQf7L27c60N9ggqwWvZw4R4c+HJ1AdP2ltxTZGE+n2XGBZpYUUZOc1NlxYAL2yT7XDf1Sd4Mv
+	xUNZNbUQJgFb7glrKR3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJWxo-0000000Ebwi-0cYr;
-	Tue, 18 Jun 2024 11:25:24 +0000
-Received: from madrid.collaboradmins.com ([46.235.227.194])
+	id 1sJyhX-00000002960-0ULk;
+	Wed, 19 Jun 2024 17:02:27 +0000
+Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJWxj-0000000Ebuk-3ulh;
-	Tue, 18 Jun 2024 11:25:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1718709917;
-	bh=laBbGW8u+C3wkt52DJVoyFfKIQuH6xetOZoiKmaKf20=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=AACNMWpJM4WRVJIsfDww72SFiSALFZZ5AdyZm+2NGuGCfsy5fYf8cOVvYQ3wAU3Qo
-	 L/xCpy6rAKSFMNimFaCXcfttYFR++8IRzmk6NE8jtBPMosoFk4JF5bRUfqXY0HOXW8
-	 NdDfVGxF5nqJ1KCkNhJSnvCdvIO6pHRlByaVagXDs8ARYVIj7RQmUwCBFM1arQYMsy
-	 9hRlIUexe4XcwuG6oSlkBaP97yTc4ZoETNJAumFMvo/wAKAQH3Rn7c7oidVyR+TLAq
-	 NLJQB5k1XXrl2cORp7Bfkedr+OdLGe+iSqVYH/oyLZNV9ijARWvO4iz+JHc5VnszGr
-	 YCefW+0Mj5opQ==
-Received: from [100.115.223.179] (cola.collaboradmins.com [195.201.22.229])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by madrid.collaboradmins.com (Postfix) with ESMTPSA id D33A5378217B;
-	Tue, 18 Jun 2024 11:25:16 +0000 (UTC)
-Message-ID: <af51905f-f249-4f4e-8aae-82ff5b585c87@collabora.com>
-Date: Tue, 18 Jun 2024 14:25:16 +0300
+	id 1sJxfl-00000001vY3-2tNm
+	for linux-phy@lists.infradead.org;
+	Wed, 19 Jun 2024 15:56:36 +0000
+Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-2ec3f875e68so10036601fa.0
+        for <linux-phy@lists.infradead.org>; Wed, 19 Jun 2024 08:56:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1718812589; x=1719417389; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=M1BFZzRTH7ja91K8N7mMKCSJfOC96DMaExd23EFhZN8=;
+        b=v5ZWzsNC4xjm8mvm/jrVh8ErFBtS2Vq8YJxCf+vZ+VrCnMrkZ4aNmBkZxDUJ1hsRPb
+         caQH5kvhoyXVcOW8NU0OCMznCV+YYtyKhpXMzAscxgULm9uN+M/9lEXyDfKkuU+tW75f
+         eUgRCijPWrswF3wR6G1/rK8yuvmr/Oq/PPqgq8PRScZjX8DsgXKf5poHfnKOExH/HqW9
+         WMrhWoNeSv2tyaiJRRMwy3Dt/+EPoco9z5xaAB+TnRQbhTVlZq91G212WGrekNo+gN8G
+         WfoBOvUguMJIQJ+YaFohMes8tBjk76xQvlZGb6lDuWK/hSSZ+jl6AvrKqvxS+dd4E2KV
+         Fsdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718812589; x=1719417389;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=M1BFZzRTH7ja91K8N7mMKCSJfOC96DMaExd23EFhZN8=;
+        b=MsrJTm9iripGmE6mKZZVmyAY4QFibgxT7dgLzrXtnIM20olGBC9XhGk0rm59R6fb7h
+         mLKq/mpworkP90swB7mHyCcQ54zD3m9ks30yALgdyqz/xUcqBWSuG1awPHIdUQEt3Ftr
+         fIPTLiaEYWs9nA8ilzgdJhBiY2PTX057I/08sdBoKwlbVdqDBsRLh3Wgz7UPvf/W0Ak2
+         V8pp/+X88kwcozalAuOAST+76TiWYDFXsDpZk8ELOUoSxs9HsQAW8YHCUzihQCjvL3nB
+         RrDDRcGe88Hw6phiMwTASskMtmeULnJfwzYvRPIUO+EWlp9SlwU4sfrq/t5mJ2iwzn4T
+         RKkA==
+X-Forwarded-Encrypted: i=1; AJvYcCV1nmmiKFXke4R9ELq7XjER8Zqpx+HSFNizoILXNxqIK8PrREwA+Z6GSZ6+0pEsLq+aI297mXSDa9Ij+Pwik7m7TKK4MqJn8pvdKhzKSw==
+X-Gm-Message-State: AOJu0Yw+EgJsjLADQ2pnVXz63S2HIhCtyNT1Os21rdJgw2dhsMM/UJuq
+	AgowDjcyEGYr71bqnSAK1NhGHHWeo5we0S8Co8oV0nuhw4dgvGC1C/o8a9tmJvM=
+X-Google-Smtp-Source: AGHT+IHaA9hcJJZxhODlzWXhLljZW7b77T7umunIdwrTJtOLoyjhilkaA+PUmNL+9uZYE92Nn6e8VQ==
+X-Received: by 2002:a2e:2416:0:b0:2ec:fa4:e310 with SMTP id 38308e7fff4ca-2ec3cfd6deemr18677031fa.34.1718812589347;
+        Wed, 19 Jun 2024 08:56:29 -0700 (PDT)
+Received: from ?IPV6:2a01:e34:ec24:52e0:dbf8:4c1e:1db7:2077? ([2a01:e34:ec24:52e0:dbf8:4c1e:1db7:2077])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-422870e9145sm271027215e9.22.2024.06.19.08.56.28
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 19 Jun 2024 08:56:29 -0700 (PDT)
+Message-ID: <fcc585d5-637c-4736-a7ba-5f4eaad13ae6@freebox.fr>
+Date: Wed, 19 Jun 2024 17:56:28 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/4] phy: phy-rockchip-samsung-hdptx: Add clock provider
- support
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Algea Cao <algea.cao@rock-chips.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-References: <20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com>
- <20240618-rk3588-hdmiphy-clkprov-v1-4-80e4aa12177e@collabora.com>
- <2910644.FA0FI3ke8A@diego>
+Subject: Re: [PATCH v4 4/4] arm64: dts: qcom: add HDMI nodes for msm8998
+To: Jeffrey Hugo <quic_jhugo@quicinc.com>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
+ Marijn Suijten <marijn.suijten@somainline.org>,
+ David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+ Arnaud Vrac <avrac@freebox.fr>, Pierre-Hugues Husson <phhusson@freebox.fr>
+References: <20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr>
+ <20240613-hdmi-tx-v4-4-4af17e468699@freebox.fr>
+ <348e16f1-0a1b-4cad-a3f0-3f7979a99a02@linaro.org>
+ <pprbxhow6gl6bqlhzoiozz7ymwqk5uwuyuwclviulie4ucyjok@xv34zrzw72oz>
+ <b6676951-33a2-4c3a-bb29-0d1ea7ad33d2@linaro.org>
+ <c18c3acc-8f08-1384-0d99-509ffd663879@quicinc.com>
 Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <2910644.FA0FI3ke8A@diego>
+From: Marc Gonzalez <mgonzalez@freebox.fr>
+In-Reply-To: <c18c3acc-8f08-1384-0d99-509ffd663879@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240618_042520_135329_8C28B751 
-X-CRM114-Status: GOOD (  12.86  )
+X-CRM114-CacheID: sfid-20240619_085633_929677_61D8064B 
+X-CRM114-Status: GOOD (  16.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,46 +107,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gNi8xOC8yNCAxMDo1NSBBTSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gQW0gTW9udGFnLCAx
-Ny4gSnVuaSAyMDI0LCAyMzo0ODoxMiBDRVNUIHNjaHJpZWIgQ3Jpc3RpYW4gQ2lvY2FsdGVhOgo+
-PiBUaGUgSERNSSBQSFkgUExMIGNhbiBiZSB1c2VkIGFzIGFuIGFsdGVybmF0aXZlIGRjbGsgc291
-cmNlIHRvIFJLMzU4OCBTb0MKPj4gQ1JVLiBJdCBwcm92aWRlcyBtb3JlIGFjY3VyYXRlIGNsb2Nr
-IHJhdGVzIHJlcXVpcmVkIGJ5IFZPUDIgdG8gaW1wcm92ZQo+PiBleGlzdGluZyBzdXBwb3J0IGZv
-ciBkaXNwbGF5IG1vZGVzIGhhbmRsaW5nLCB3aGljaCBpcyBrbm93biB0byBiZQo+PiBwcm9ibGVt
-YXRpYyB3aGVuIGRlYWxpbmcgd2l0aCBub24taW50ZWdlciByZWZyZXNoIHJhdGVzLCBhbW9uZyBv
-dGhlcnMuCj4+Cj4+IEl0IGlzIHdvcnRoIG5vdGluZyB0aGlzIG9ubHkgd29ya3MgZm9yIEhETUkg
-Mi4wIG9yIGJlbG93LCBlLmcuIGNhbm5vdCBiZQo+PiB1c2VkIHRvIHN1cHBvcnQgSERNSSAyLjEg
-NEtAMTIwSHogbW9kZS4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQ3Jpc3RpYW4gQ2lvY2FsdGVhIDxj
-cmlzdGlhbi5jaW9jYWx0ZWFAY29sbGFib3JhLmNvbT4KPj4gLS0tCj4+ICBkcml2ZXJzL3BoeS9y
-b2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jIHwgMTg5ICsrKysrKysrKysrKysr
-KysrKystLS0KPj4gIDEgZmlsZSBjaGFuZ2VkLCAxNjcgaW5zZXJ0aW9ucygrKSwgMjIgZGVsZXRp
-b25zKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2No
-aXAtc2Ftc3VuZy1oZHB0eC5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNh
-bXN1bmctaGRwdHguYwo+PiBpbmRleCA3MmRlMjg3MjgyZWIuLmFkM2ZkNDA4NDM3NyAxMDA2NDQK
-Pj4gLS0tIGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNhbXN1bmctaGRwdHgu
-Ywo+PiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0
-eC5jCj4gCj4+ICBzdGF0aWMgaW50IHJrX2hkcHR4X3BoeV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpw
-aHkpCj4+ICB7Cj4+ICAJc3RydWN0IHJrX2hkcHR4X3BoeSAqaGRwdHggPSBwaHlfZ2V0X2RydmRh
-dGEocGh5KTsKPj4gIAlpbnQgYnVzX3dpZHRoID0gcGh5X2dldF9idXNfd2lkdGgoaGRwdHgtPnBo
-eSk7Cj4+ICsJaW50IHJldDsKPj4gKwo+PiAgCS8qCj4+ICAJICogRklYTUU6IFRlbXBvcmFyeSB3
-b3JrYXJvdW5kIHRvIHBhc3MgcGl4ZWxfY2xrX3JhdGUKPj4gIAkgKiBmcm9tIHRoZSBIRE1JIGJy
-aWRnZSBkcml2ZXIgdW50aWwgcGh5X2NvbmZpZ3VyZV9vcHRzX2hkbWkKPj4gQEAgLTg3MSwyMCAr
-OTI1LDE4IEBAIHN0YXRpYyBpbnQgcmtfaGRwdHhfcGh5X3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBo
-eSkKPj4gIAlkZXZfZGJnKGhkcHR4LT5kZXYsICIlcyBidXNfd2lkdGg9JXggcmF0ZT0ldVxuIiwK
-Pj4gIAkJX19mdW5jX18sIGJ1c193aWR0aCwgcmF0ZSk7Cj4+ICAKPj4gLQlyZXR1cm4gcmtfaGRw
-dHhfcm9wbGxfdG1kc19tb2RlX2NvbmZpZyhoZHB0eCwgcmF0ZSk7Cj4+ICsJcmV0ID0gcmtfaGRw
-dHhfcGh5X2NvbnN1bWVyX2dldChoZHB0eCwgcmF0ZSk7Cj4+ICsJaWYgKCFyZXQpCj4+ICsJCXJl
-dCA9IHJrX2hkcHR4X3JvcGxsX3RtZHNfbW9kZV9jb25maWcoaGRwdHgsIHJhdGUpOwo+IAo+IEkg
-dGhpbmsgdGhpcyB3aWxsIG5lZWQgYSBwdXQgaWYgX21vZGVfY29uZmlnIGZhaWxzPwoKSW5kZWVk
-LCBhIGZvcmNlZCBwdXQgdmFyaWFudCB3b3VsZCBiZSByZXF1aXJlZCB0byBpZ25vcmUgYW55CnJl
-Z21hcF9yZWFkKCkgZXJyb3JzIGFuZCBrZWVwIHVzYWdlX2NvdW50IGRlY3JlbWVudGVkLiAgVGhp
-cyBzaG91bGQgYmUKYWxzbyB1c2VkIGluIHJrX2hkcHR4X3BoeV9jbGtfdW5wcmVwYXJlKCksIHNp
-bmNlIC0+dW5wcmVwYXJlKCkgY2FsbGJhY2sKY2Fubm90IGZhaWwuCgpXaWxsIGdldCB0aGlzIGZp
-eGVkIGluIHYyLgoKVGhhbmtzIGZvciByZXZpZXdpbmchCgpDcmlzdGlhbgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 17/06/2024 19:14, Jeffrey Hugo wrote:
+> On 6/15/2024 5:35 AM, Konrad Dybcio wrote:
+>> On 14.06.2024 12:33 PM, Dmitry Baryshkov wrote:
+>>> On Fri, Jun 14, 2024 at 01:55:46AM GMT, Konrad Dybcio wrote:
+>>>>
+>>>>
+>>
+>> [...]
+>>
+>>>> GCC_HDMI_CLKREF_CLK is a child of xo, so you can drop the latter.
+>>>> It would also be worth confirming whether it's really powering the
+>>>> PHY and not the TX.. You can test that by trying to only power on the
+>>>> phy (e.g. call the phy_power_on or whatever APIs) with and without the
+>>>> clock
+>>>
+>>> I'd prefer to keep it. I think the original DT used one of LN_BB clocks
+>>> here, so it might be that the HDMI uses CXO2 / LN_BB instead of the main
+>>> CXO.
+>>>
+>>> If somebody can check, which clock is actually used for the HDMI, it
+>>> would be really great.
+>>
+>> +CC jhugo - could you please take a look?
+>>
+>> Konrad
+> 
+> Documentation is not great but it looks like CXO from what little I can 
+> find.
+
+If I read correctly, the conclusion of this sub-thread is
+that the clock tree described in the patch is correct?
+
+HDMI controller:
+
++				clocks = <&mmcc MDSS_MDP_CLK>,
++					 <&mmcc MDSS_AHB_CLK>,
++					 <&mmcc MDSS_HDMI_CLK>,
++					 <&mmcc MDSS_HDMI_DP_AHB_CLK>,
++					 <&mmcc MDSS_EXTPCLK_CLK>,
++					 <&mmcc MDSS_AXI_CLK>,
++					 <&mmcc MNOC_AHB_CLK>,
++					 <&mmcc MISC_AHB_CLK>;
++				clock-names =
++					"mdp_core",
++					"iface",
++					"core",
++					"alt_iface",
++					"extp",
++					"bus",
++					"mnoc",
++					"iface_mmss";
+
+
+PHY:
+
++				clocks = <&mmcc MDSS_AHB_CLK>,
++					 <&gcc GCC_HDMI_CLKREF_CLK>,
++					 <&rpmcc RPM_SMD_XO_CLK_SRC>;
++				clock-names = "iface",
++					      "ref",
++					      "xo";
+
+
+Regards
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
