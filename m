@@ -4,74 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68A59C27C79
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Jun 2024 15:21:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 666A4C2BA1A
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Jun 2024 15:52:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a+LmuMhCDm90Tlrz0AhnFI+A2fL8FcwD0649nKXMK2U=; b=pOF3VJku82foKi
-	uYLKF2EzXmrUZoXttKEYwC35ZNuzlCBrHLJPTacb9y9vn6OE+QAHg7uCBbqRxk9cABqSviIOrJWgs
-	zl7izwWUGmMFnc1CtpbPxX6LiifmOPCZHAX8mBCh6foxG6VGpHMy6J+38r3yxe7Enl5RRmjNRQvxW
-	O0mE5V7VloBppcPq35M/66Kp3jBIVUXW3R/phimZkOMNT/blGzogG3HbvCUezguw/tv4uQ+iR3atu
-	cpM9UPnz+YBonOB4xjfS4wQINjAEbNayBLIkrBZn+fEPQIXw1wBgakmITZtXfDrRiJ/4DlpuL7Hn2
-	vHpNeuQhSzFzVi714bdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GLqQXExKVU4U3/6ODwuo6l36qLjfRMl5XUdOfUAfplw=; b=LAHurSO1EefomR
+	LHMe3ToNUPbDtOykWJr/mH4zTtzkxwlaDzVMfxVEUR6X+Ny1LNIM/ExcvekHsxHMmI4+B7tuWe8sZ
+	5b2YWJDa4pwse/80J4nxeJx5u6RMOfBwvhEQ6A6cuGwjsitHMUSJRmCAN+u6PV/AX/01OPIK98obM
+	inGZJBp4qbiXnmbySw9uqO+pNn4Z20WuBAiQra21UaAit3tF+XeJc1d2aq7okKVv/ZCCexXMaGz/U
+	XwmQIRl3VhRKwdDmNUO4z5KvPaNyj0aoUNw8jeqG6YMbDEPPjZFcq599UVjzN8VPR07VsaYHp14/c
+	ePshoZPRB2sDIAhZijPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKJbP-00000005c8u-0Dhi;
-	Thu, 20 Jun 2024 15:21:31 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sKK5r-00000005iMT-09Qu;
+	Thu, 20 Jun 2024 15:52:59 +0000
+Received: from mail-dbaeur03on20600.outbound.protection.outlook.com ([2a01:111:f403:260d::600] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKJbL-00000005c7w-31zm
+	id 1sKK5n-00000005iLa-42Sb
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Jun 2024 15:21:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 439136181E;
-	Thu, 20 Jun 2024 15:21:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 53495C2BD10;
-	Thu, 20 Jun 2024 15:21:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718896884;
-	bh=8/TFVK6BbkaFtuuCTEO1cNehJdCtbENbX/plMk2ZWeY=;
-	h=From:Date:Subject:To:Cc:From;
-	b=n1/bWsLXWbvCjFPzJ3L6nFPy/fcfokpv2EoyJ5a9ffixVZ5V5GCAzoJfYNY0z0Q6X
-	 OZtgsZy8IseX5K7xqNJ9QzTjYvEGtXUtB96hMBGZiKnRTHgc1/mHOgk0KBv4P8bG8K
-	 KISGpyhrh8ys40BxwxSt0XUR0aZwg0yfCOXgDjeKjtUpJiKkX7v6cW5qSe9soZr4U7
-	 ccPHjWbGMvChUJ/Xl8xQHFKQH2hVix1XRu1UKLC/2SUXR1v+/r0utmeCeHlKnz2RH9
-	 RZW4nKKsRniIoxn5LMZzUOZ61oPD+ZzYUFtQ6r3bcbRuUwFUqMOx0R8aeP28HMy3qD
-	 mKQNfrrwtck8A==
-From: Nathan Chancellor <nathan@kernel.org>
-Date: Thu, 20 Jun 2024 08:21:15 -0700
-Subject: [PATCH] phy: freescale: imx8qm-hsio: Include bitfield.h for
+	Thu, 20 Jun 2024 15:52:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dS4hv1o1IiygO654I4fQSMM/218go7sideZC1mPFRR8DW/qaUreACnqauCkqGxMxELdP8C2/JaUZ2++BgqEGLCic19DFwCqOHMY7JKq3bcDA0ZtCxA1pN9CEgfJEJfereXLlqfP6BT2dQWx5X0RR6lPNXgZrLPpJZQSZx/k06CRS6rNEAgqzSFtbVSKaSLBm7ZEgFhWwUbAsUX+QfZBhUC/9/f4QqD78K1P7Yj8JMVI56QnX/vIFEQxxay6BPixZdFOh+Afxwa5j1mPRFrrzMxEpqkbB1IhFUJCdwKKI/oNGWJLF0Vqg8ed0fQReAY0sX96z2VcnSecAYpDDK4B3pg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=5rqunpmILdQOArDt4+ONzHyJbikgU+NS2YZreNerJaY=;
+ b=bqEDebnmq1GgVsCNIKFOB4oShKeAvY0ZYjcAcSwYfmXDVCYQXBnCjdC8oblPBvmv6rTAYwCccViA3Q/dRPwaB+CG2znSSy7FvIbTRjV4nbLs4wDL9NUoe+EC1vFAfwBf/rkESys9Q7m188nsl4fqYRMx+gsMtEnpW+jWBWIM5Jp4Cgwl4M3SWn43jcpvhzG300YB9svbsFbEY5sLP4rhVf2dUvT9j3N3azmPUcvWENyKTqPEPPIfmDoxPKM5gyrlKz4GB3vqD5gDc7ACdUMui8rVghcwCzafM2I6Y3pdeS/Rl11HA8Gy3SuWscP8Lz+Zluk3t0da+lCFtKjl0oWdFA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5rqunpmILdQOArDt4+ONzHyJbikgU+NS2YZreNerJaY=;
+ b=GzI402/PE6AaDBmFtghNa31X+atMaoAP2QsYYcWy7+k+ThTQQUpNPEpMWYIb+MUK8lcRptGlCLp5M6Viimm2CNMO/vUuJY/kXV4zBfIFVVYIRTXbaTYhwdICnk0j8NgTOh7zPwrb8RGMEXz3ctdsbsBswhT4es5Q57RqsOmk98Q=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AS8PR04MB8372.eurprd04.prod.outlook.com (2603:10a6:20b:3b3::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7677.31; Thu, 20 Jun
+ 2024 15:52:44 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%2]) with mapi id 15.20.7698.020; Thu, 20 Jun 2024
+ 15:52:44 +0000
+Date: Thu, 20 Jun 2024 11:52:36 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Nathan Chancellor <nathan@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Richard Zhu <hongxing.zhu@nxp.com>, linux-phy@lists.infradead.org,
+	imx@lists.linux.dev, patches@lists.linux.dev
+Subject: Re: [PATCH] phy: freescale: imx8qm-hsio: Include bitfield.h for
  FIELD_PREP
+Message-ID: <ZnRQRHWExZNqoYE0@lizhi-Precision-Tower-5810>
+References: <20240620-phy-fsl-imx8qm-hsio-add-bitfield-include-v1-1-5c7c09ed87e6@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20240620-phy-fsl-imx8qm-hsio-add-bitfield-include-v1-1-5c7c09ed87e6@kernel.org>
+X-ClientProxiedBy: SJ0PR05CA0128.namprd05.prod.outlook.com
+ (2603:10b6:a03:33d::13) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-Message-Id: <20240620-phy-fsl-imx8qm-hsio-add-bitfield-include-v1-1-5c7c09ed87e6@kernel.org>
-X-B4-Tracking: v=1; b=H4sIAOpIdGYC/x2NQQqDMBBFryKzdiAGKbVXKS4SZ9IMxNQmKhbx7
- h0Kb/MW7/8TKhfhCo/mhMK7VHlnla5tYIouvxiF1MEa25ubNbjEL4aaUObj/pkxaoCOCL2sQTg
- RSp7SRozODz0PvvMK6NxSOMjxv3qO1/UDMkIpiXoAAAA=
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Frank Li <Frank.Li@nxp.com>, 
- Richard Zhu <hongxing.zhu@nxp.com>, linux-phy@lists.infradead.org, 
- imx@lists.linux.dev, patches@lists.linux.dev, 
- Nathan Chancellor <nathan@kernel.org>
-X-Mailer: b4 0.15-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1366; i=nathan@kernel.org;
- h=from:subject:message-id; bh=8/TFVK6BbkaFtuuCTEO1cNehJdCtbENbX/plMk2ZWeY=;
- b=owGbwMvMwCUmm602sfCA1DTG02pJDGklHp+vxvTuUeGex1hv+rdJrmmbxKkcPcnCo3zMe7U/V
- nZ90TrfUcrCIMbFICumyFL9WPW4oeGcs4w3Tk2CmcPKBDKEgYtTAC5yl5HhmtWXZ6cj8xyuPvlx
- eWHz5D0WR8OsbV4f+sbMs1Gl1ypwG8P/sqdL1jxjyUo8dCzEJyA6Zd3hr+17WQ+8FqtQX/1lU48
- GHwA=
-X-Developer-Key: i=nathan@kernel.org; a=openpgp;
- fpr=2437CB76E544CB6AB3D9DFD399739260CB6CB716
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB8372:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6c8359fa-8903-4478-dc1f-08dc9141064c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230037|366013|376011|52116011|7416011|1800799021|38350700011;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?FfecLhHn3tcRTRr4aAQYSnHXXV4iekMKghVr9odRnvYQq9g2mMAhHNIJKsoa?=
+ =?us-ascii?Q?1Avg7MaRcntJi0pTpm3TJdM+nkrgWSQgwhx+pM5p2o0fJ3r8oNybUw4vY7qy?=
+ =?us-ascii?Q?7/kgCTlVTb/IDFtXIFX77SuS/ysigMmTYbWUSg/IA3gb2dGfkIhcEj1Km+mC?=
+ =?us-ascii?Q?GNmrvBidUQyVYd5dYa9XLkC3UcCFoazUwLW1pSal0zUw0kKpIZrsv38jS9qh?=
+ =?us-ascii?Q?4N3MrZlT9S1pUwYd1H3WAYX6mNahHjO/HB9S2kI4O6xgFOW/l4U9MM6qmjMC?=
+ =?us-ascii?Q?vE2C327GNkQ4f5VjPIDzPYvXarFhhAtXDN54+MSGvSm+EUq+8bP+2/IKrzRt?=
+ =?us-ascii?Q?HsrKj47CZZZsyRlFVUTZWeR+nnYuDuUa+12Gw4sF9dQGqKAVapLcchmd9ysP?=
+ =?us-ascii?Q?oZxykvVtazcdbt9AhkjiKdThmvhxGJ4p3SbpFzs98OZO5fLoeb+R4soJ32Au?=
+ =?us-ascii?Q?eye6nnR9b6PbX9CPVusg1CZSldDaAfGSBxRthOVK8FFW0bKuqTxbnKzzp6Je?=
+ =?us-ascii?Q?8ake/7G8y1KojpRkfaVHBRFMPgaPoMDtVoMHnar7jP0NkifTkrZlaapw6cUf?=
+ =?us-ascii?Q?0WtKgvvLc8BaTLJnZ6DIalCaO8AWyJRCwCcSJBQ9SWObK3K+o2Xt61voPW2P?=
+ =?us-ascii?Q?r5FV+DHTo9awmx/lX1FTad33BRUl74brrAzmAN6HpCMHNALWWmD9lnAe3Qn3?=
+ =?us-ascii?Q?bKcP8rcKRCqfZYcwXMRE0vtEiL1pMZP4ePURZZTPHcF3HWIdAzTLjmnAw0I0?=
+ =?us-ascii?Q?CgKEHLbbuAR3tayWySS2vfe6IQ4x46ZebWjRRnoDwQvbQkC/uOSysf5BzEI8?=
+ =?us-ascii?Q?9XHAB1SMLahrpqdZgS9efyJD+AcTjHNZfWzCQ71kIwHajcO8EeZNL86hMpkN?=
+ =?us-ascii?Q?OeQoLL/FBrWx0yuJqeDXtXD+j7JI0nxjlG+Xahgl30KLzJ/sIXY9Mfk9IhRX?=
+ =?us-ascii?Q?Rzvwq7Ny7bABXzbTKschQYRJhBLFWed1v9Zhj3k85Y2ljyoF5B+O+7SW/Z60?=
+ =?us-ascii?Q?lk1QxJxdxzbQbUiHElF+3M02xqqd2K9an/iPUatJM2Jas0bJ0YDTN2gcf9Vt?=
+ =?us-ascii?Q?/MghuabQiWyFSUwMMDJ0/X0riKtZV1q5nrl+smI9LobGIo8pYvoZYaIHL4Hb?=
+ =?us-ascii?Q?u1BNZ9VFuLKj/IzfZPdkCuqCGhom9oQXFgIeT2LD+7q+WuQRBd9lfChS/5gY?=
+ =?us-ascii?Q?+azmy/pVK/9mdTg9wde2edoy6C73fdkbr85IZiKE6ciCI+87MTscnXi4VIuE?=
+ =?us-ascii?Q?c79MT8yhrC27F5PZo5El3E+O+AucfIXSOa81Ez06BFgqqD+qI91gEoqYAU3R?=
+ =?us-ascii?Q?Sx55LWGVMYh2AJD0LaaQjs9vL0TF0cdn0Kr9EKV91WctG0rrn8vSZT7hizKQ?=
+ =?us-ascii?Q?lqnYvyo=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230037)(366013)(376011)(52116011)(7416011)(1800799021)(38350700011);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?oRsn3k7V10JcO6G8W9xhEp0GgKKfFl8gIZ4ZxHPd0RCn1nW+rfWfTntwVkwC?=
+ =?us-ascii?Q?pWDK4nM3vH4C82Kc1KfAw5MJrvidih1hsn22LRFOHb5ciTPgTfKmatc2+AHC?=
+ =?us-ascii?Q?TaQVeS7eJHWhkRd+vfqSU6jbWipHNQyY1b82RfObB/+qkSX8exjziYeOC81D?=
+ =?us-ascii?Q?UVh1Pg5wzdRKADtmz9uHiBeOsOhB4EfEXl9Z0ackxqpIFiggjwXl6h5nDQtg?=
+ =?us-ascii?Q?D57Edahp4d8in4UB+nK1A8g7GuiaKePuQKY2n69AbFOSiURmUIzZ0vaW0UVM?=
+ =?us-ascii?Q?FQWpvOYSw6VJHC5JmvpEUEf9vaJ9cg8zUTIQbDDr16uyinzg5HZI0xm0x13O?=
+ =?us-ascii?Q?61Ahn3FhNjazDze7O8O494YR+bbHt77XG4ZfwTDSfMqcYLVXjIHOqBYoU1jl?=
+ =?us-ascii?Q?3fgnyYqtSR0E4QsR3o7Gz4O3Rdpzvrl/VIGPA8l/UmgfxMFdQ+rwhfVXpv/m?=
+ =?us-ascii?Q?4bZN4dH8bNYQjoITCgVVkEk40raX62ixcyUwmj4SQeHFK7U6u9RxowHWaksx?=
+ =?us-ascii?Q?XLuMypXh6bz6yUVYCtoWRowtX8qv9wwniRzYUPnxQuf9Ka9xIHL4kKeLFPss?=
+ =?us-ascii?Q?PsfKr/Bc7KGn0izcFfKcNhg+1yvmlsmrZaN/i/6vrXDD8ISIHvXdmOF/xoTO?=
+ =?us-ascii?Q?ys+rJazdLoEz6OqpsDUTVls2glqOa7SCpvU9eQK4MMhpy1vTYDp48Q3SI9AE?=
+ =?us-ascii?Q?Sx3R+Uk/ECojl7Oq4d5cZOGrBioECD7UJnrPf7mhLl26P1sUlqRWjtlEVEKE?=
+ =?us-ascii?Q?0A1t0QAA4nH8OVt6TnRo70SEjrKbfmjLVNe7LxTNY899ekRsh8Bc4oxKyI7E?=
+ =?us-ascii?Q?qNfna52JpJcAm66s57hi71uxA+iSEfIzw8EnVD3pvkQeVvdqwY71gWSNW5Ha?=
+ =?us-ascii?Q?VrkOanmMmitjnfN9XnNV9MBb3D6SzlrA8SQ2xiv3HnZ073fEur4m3khqSQoH?=
+ =?us-ascii?Q?+avxVxZTDEPQepexVMglmRDTY54cyZdonRLF0Ur048pg0rIMJOVffVMdbN8F?=
+ =?us-ascii?Q?mkOkE1pFs8UWTB5lUPxaDW6cOuMr3eop0Wm49ELVIofkPUJ2nmFyHbfRSbVa?=
+ =?us-ascii?Q?cgcjD+NL3hHLS4t8KV9NpTD0FRyln2IhxpvLjDiOS1R1NkWNoXYCOxxV3qfH?=
+ =?us-ascii?Q?JgwsHjMfDHQwI1bRTK+zt3efMsa654SInZKD8QcXu+2K9c5WV2oWHtUCAWls?=
+ =?us-ascii?Q?SylAIrFUsnsK4xuLOZmU20r0Ddyl3AF7vqkwAUwfY9j16k4OydXNWs5ccvwz?=
+ =?us-ascii?Q?8w7iVVQWnAzyMHfBn7SsfOZXgoUF1V9s5bbWsfZLl1/HVumq/6tD6jm1Dh9e?=
+ =?us-ascii?Q?WxznjNKDM9MQ+hlzN6+kpT1VqYCfdRTxS5sIdQtUEO3B5024sa3gg6VvljOw?=
+ =?us-ascii?Q?bXp6tx4wdZMtAkE46WexhEDcdaQhxbCpenv21ozLvOvvNiyi8vg65j1m7I9Z?=
+ =?us-ascii?Q?3PTzRK0MPFGaLRrAZiqu7MMhQqpKwdKoX5jT7VlmpRwRPUl3PsriDLZPSq54?=
+ =?us-ascii?Q?+Mkv5fc7VSYy9pbpBPNcyfH0bGu3ixXUjZ07VngdNxslZxJGpRFYqWN1Ux6x?=
+ =?us-ascii?Q?Q+xtbOlBwW0BGrJ7Rm0=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6c8359fa-8903-4478-dc1f-08dc9141064c
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jun 2024 15:52:44.7145
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: AIJxpa7BXB5vrBpxIV6SfhEdvCgjq488UlfX8TDbpTulGp/frwDqxIs+1uqiIJs8iYcDuHc2f2jgjGyqIZPTig==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8372
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_082127_863572_B13C628A 
-X-CRM114-Status: UNSURE (   6.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240620_085256_169355_D9F40975 
+X-CRM114-Status: GOOD (  15.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,44 +162,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In various configurations/architectures, bitfield.h may not be
-transitively included, which results in a compiler error because
-FIELD_PREP is an unexpanded macro:
+On Thu, Jun 20, 2024 at 08:21:15AM -0700, Nathan Chancellor wrote:
+> In various configurations/architectures, bitfield.h may not be
+> transitively included, which results in a compiler error because
+> FIELD_PREP is an unexpanded macro:
+> 
+>   drivers/phy/freescale/phy-fsl-imx8qm-hsio.c:459:8: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+>     459 |         val = FIELD_PREP(HSIO_MODE_MASK, val);
+>         |               ^
+>   1 error generated.
+> 
+> Include bitfield.h explicitly to fix the build.
+> 
+> Fixes: 82c56b6dd24f ("phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support")
+> Signed-off-by: Nathan Chancellor <nathan@kernel.org>
+> ---
 
-  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c:459:8: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-    459 |         val = FIELD_PREP(HSIO_MODE_MASK, val);
-        |               ^
-  1 error generated.
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-Include bitfield.h explicitly to fix the build.
-
-Fixes: 82c56b6dd24f ("phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support")
-Signed-off-by: Nathan Chancellor <nathan@kernel.org>
----
- drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-index dcf9c45ff5d6..5dca93cd325c 100644
---- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-@@ -3,6 +3,7 @@
-  * Copyright 2024 NXP
-  */
- 
-+#include <linux/bitfield.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/io.h>
-
----
-base-commit: 82c56b6dd24fcdf811f2b47b72e5585c8a79b685
-change-id: 20240620-phy-fsl-imx8qm-hsio-add-bitfield-include-ab94e9b1bb1b
-
-Best regards,
--- 
-Nathan Chancellor <nathan@kernel.org>
-
+>  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> index dcf9c45ff5d6..5dca93cd325c 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> @@ -3,6 +3,7 @@
+>   * Copyright 2024 NXP
+>   */
+>  
+> +#include <linux/bitfield.h>
+>  #include <linux/clk.h>
+>  #include <linux/delay.h>
+>  #include <linux/io.h>
+> 
+> ---
+> base-commit: 82c56b6dd24fcdf811f2b47b72e5585c8a79b685
+> change-id: 20240620-phy-fsl-imx8qm-hsio-add-bitfield-include-ab94e9b1bb1b
+> 
+> Best regards,
+> -- 
+> Nathan Chancellor <nathan@kernel.org>
+> 
 
 -- 
 linux-phy mailing list
