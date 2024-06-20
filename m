@@ -4,155 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04103C27C79
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Jun 2024 17:11:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A9D8C27C79
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Jun 2024 21:28:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=elkm+Rz371KjiUDgChW1aUTt8xvOmWI+H8oaW61+uYI=; b=ZWo2BNQv3V1Xf0
-	VQrTiaBEMufU94Ot5gJnmLLBQyauqfOAUoYSyrE7EjFG1bULJ+gdbv675cyZhM7S+bg2zhNpxWzmt
-	saazpR2+gIvIqzfrg6mUa+ynMpsCAdOzBGhFRwXr7ZhwBVVx2KmRtjRPr0eIXBBTz9rgw2Y8cHt1K
-	rslzDKSE479z4+lTFzCyW8ztx2UpzmRVteaObmYFFxJSmW9b6vg670PJMesMWM/6gAT6qonwIGtNt
-	tgHBKPVeM+DqufoT+GZgH6tj/BhxkS74ZT8UTe2KjTMhCx7sxi6EHKslJM7DKWp0PnGxs+q4h6sUE
-	7SB84PhNzBhIgYaWHKsA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QEhl2mGtmlcItFraf6JDqyWnDRk1GmZOfRgvueVfLEA=; b=s1yJgc/Hitdcne
+	dREpRWn4qfwmvt2R5BKgKkTuzJlKviMKoorjMRrQwGnfjMWxCL9g9hAyV9VqRtbnMU/z5JJMM/KwL
+	pyUCy3LR2zrYOtVDjEIGCifOSVsCLwn4+4Noyt6NfB5/Lg+BQByEcGFAJl7UzptFF4sJiTCyBqcAW
+	a4sQOjhtKrF/WFdHkqoQoXH0QdRZUhjTVWeNXmh81EWjKKL7sbDPbPQslPBlAFzQ6E6sS/L/kdbse
+	964S7OWzWfgYxqtYHtUFaPi2CsaSzPORY+fG3Yjz6UkWdUH+wUkz5dZdWa2lrtIVK+WaSxa06EAyx
+	nqe5RM/GeD0b2+EyjRzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKLJs-000000060Nv-2azY;
-	Thu, 20 Jun 2024 17:11:32 +0000
-Received: from mail-tycjpn01on20601.outbound.protection.outlook.com ([2a01:111:f403:2019::601] helo=JPN01-TYC-obe.outbound.protection.outlook.com)
+	id 1sKPKu-00000006mXU-0sme;
+	Thu, 20 Jun 2024 21:28:52 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKLJo-000000060MU-0VLv
-	for linux-phy@lists.infradead.org;
-	Thu, 20 Jun 2024 17:11:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=heuV8KUl4mexMqmCyBBm7n3JG0IsVwAXTRPzVgB4/trz886Ep9A2+4ni8KkjjG1Q4AFcM7rAvri30HV7QLqNZ6pDymYplJPF49CenwKLCoOk/tlp1jRxsY/pCqkmjac0qSEKHX0TA8yI2dKIaGcCc8hoh9VlbfYpqxchFqdUofzhBrHsN4PTpOt+/wjS6+xpVVEBHB2Z0WH6GN0P2Xi2UQ8GVdVPZI+IrVq7nE1uMaw7axZsj7nYHRLKD/jqg0x+JiUgUL1d2hG/4CtA5BCNs1r6Hul6dR7UDXQwq0NlXv0kENx4rp6aNdzTYZwVspIJqpmYlLBDnYrzvcXSSwmgfQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=JknJ8Yw8OodJGXRvBVh/zDrHUiZ/8jDj806zskKufpA=;
- b=ZN/JrbpI5mRlGD0nav4c/qgVqwp74aHemSfuFoAabZwZWIhxc88N5A5QGHosQocY1qvDbhJAiWyjWhkuFBBsZHI2RPPIua94ILMCBX+RuyDhh4W50okltTh2ZYQKe7YP11fdYyBaEK/DtQNIByD4JAV2FSAsjqeq9YQkqZS0+af67wq793RV1n84QvWLnfJpjBnITxqpbSgsGPL8JwoO53iXTj7X+wO0ZBupX667ouaHupl3r7y/2sguw5nLTNuf1gyBchaCoelpkUCii/xbPj+NlT6yDU7NW/1VG8fzx4JZ2UbnaVoMPdgzGYB5QlCK5Co56+Q5iCoYifCGWHIS4w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JknJ8Yw8OodJGXRvBVh/zDrHUiZ/8jDj806zskKufpA=;
- b=rFsllXb/0k8LTQ9od4DUcnsZZlvVMt+9p85rTMEzn2sC9lGuEHVc6jNXHvOi+HkN2uZRs6MPIgRSnRiCoDSm/cJaJi3By4ohOUyEmTSjhaMJNE60Ou4n3Ey8MISkkZDcbUAP8RmBUktR9WvkTiubTkPaFOUZvhm/eDLZSwIlpos=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYWPR01MB11029.jpnprd01.prod.outlook.com (2603:1096:400:392::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7677.31; Thu, 20 Jun
- 2024 17:11:11 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%4]) with mapi id 15.20.7698.020; Thu, 20 Jun 2024
- 17:11:04 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood
-	<lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Kishon Vijay Abraham
- I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
-	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Geert Uytterhoeven
-	<geert+renesas@glider.be>, Prabhakar Mahadev Lad
-	<prabhakar.mahadev-lad.rj@bp.renesas.com>, biju.das.au
-	<biju.das.au@gmail.com>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>
-Subject: RE: [PATCH v4 0/6] Add USB VBUS regulator for RZ/G2L
-Thread-Topic: [PATCH v4 0/6] Add USB VBUS regulator for RZ/G2L
-Thread-Index: AQHav9uFt6049LPP0kieF7CZCpdzpbHQ4LEAgAAEwhA=
-Date: Thu, 20 Jun 2024 17:11:04 +0000
-Message-ID: <TY3PR01MB113461160DF55C996B0EA15E186C82@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20240616105402.45211-1-biju.das.jz@bp.renesas.com>
- <ZnRa5CRumiJeMhEb@matsya>
-In-Reply-To: <ZnRa5CRumiJeMhEb@matsya>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYWPR01MB11029:EE_
-x-ms-office365-filtering-correlation-id: 94eb612b-1600-4f71-186b-08dc914bf78e
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230037|1800799021|7416011|366013|376011|38070700015;
-x-microsoft-antispam-message-info: =?us-ascii?Q?K4/oCor+CU4chqxl0X0LALIWmY/uMFwGZ2fKRm+0E/gMUJSArFAEefj/O9qZ?=
- =?us-ascii?Q?ANdY4eq23T7kh/t5i6EmOLmJVQ3ydQdISKoCH4CoKwieiHyoD5eTNSMbLr2Q?=
- =?us-ascii?Q?dBAPS93G3Gqk+tH4uSXSR0om/OUYrMEi4/YL+VMoCOI/MMGFEW+Rlvyq4oB/?=
- =?us-ascii?Q?5ARtq7aRgLmEWVqwF6pSPgTuirZjX7bTQucFCrJhmkgaV9neT8r3q4KYpkOd?=
- =?us-ascii?Q?JIwN43WQIsOOAWFPwwrFCQIkG7QEdsgl2wV2JdaraTkuWT10o6xG1V8oMral?=
- =?us-ascii?Q?0Wk3+yhORXiO4CuM4E3tCT4Vg0rsk/1X74e+ejZP3+aZEEZZ5lJCVYcA8/qS?=
- =?us-ascii?Q?IcjUxo4e0Q9OQ9BvMNipVuFXO3duq0ojl3DyNfu1hjKpGJQZwrVTxSi/rSIt?=
- =?us-ascii?Q?naoP7W/0CL3bBZ8nsawR3Ydhno/b4LZNsqz3NYCYGXggTj0ZaKphMp9aUn2/?=
- =?us-ascii?Q?dbchwi0Xj0UnRIwEQAZ+3LUchiQ4/ibIooMJNo6sUW34r3INLkZTW4pCW6Mw?=
- =?us-ascii?Q?zRG0vpqy6qxzUgroxKcPo3AKbAvI0dwh+IifJrLdrpgf6mHA/DOO6wSDqLws?=
- =?us-ascii?Q?IQ2rAXcKNPwmWIBUuVLnCmCoNYkMVESNlpNxHtX7BCzhJZyovW3Ym6SdfJrh?=
- =?us-ascii?Q?9y7/P7Hrar27/7MhnnIZIMqPnGAvc2lomKdzy0c5TR02vxsFEp904NRmIfX+?=
- =?us-ascii?Q?5kv2sVB+00OiwgxsJ1n3Ivc/vujkBztM6KroP/C+DvosVZnKmoI18oulM3q8?=
- =?us-ascii?Q?8qXgvtrhg2dH9G0xB3gNHDMYHKpDOGJilZwcDMES/ij4Q+ylLXoOXmvHeE9y?=
- =?us-ascii?Q?9tzJp8c0y3i+cdkR4T22MOaHyJnjmZ3SCWNrmGxH1YJa8wJA5phiT7D2yGdU?=
- =?us-ascii?Q?lblZ/yHgZezov5McozlUMVBnMEpT3yKmNogmQcr0fHH4+Xl4h7vQUIUSs44d?=
- =?us-ascii?Q?PEp+83L55/45A4dHa/V4MzRkWiDcKMEgSC9zrkX31/DNwFH54/5ceSs05FJi?=
- =?us-ascii?Q?f2vEJbELZRGozr9YIrnUyOK+8zIvX0F9KlK3+O3jQxPgy/3KiipWJqM7rmej?=
- =?us-ascii?Q?EZu9fTLvhxrznkAW/Yh41hPJCnkawka0rFlhv5v3g9JPGDmjoCMJ8NmkYazE?=
- =?us-ascii?Q?o5tqJ9F5tObjx5E+ejCRrZEgg0FMv8Jf7BTa/rMdt4EiR/FWV7d+JAFIQDnq?=
- =?us-ascii?Q?MCxqvCnCNsKLJCXpSt58pVFFSgoLsDVYqoPqBc19W87OzJAyQNnxmtiA7NqZ?=
- =?us-ascii?Q?fEghF5vIJccpi/+19revVy+KEJud0tlbclzY5+fG3y7E9u13ULbanjywDUVx?=
- =?us-ascii?Q?svoR4+oblY1Kc9CcYCcpIQnD/A5BA3WjvJS8r4lKWNqwzBvqQ5xKryiY/dEM?=
- =?us-ascii?Q?dr3/g/Y=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230037)(1800799021)(7416011)(366013)(376011)(38070700015);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?U1S2Emw//eRXmCjC7XMXStmx9Sg5Ww2NhzltFDg0/Z3DAOHD8H493PSUMhqQ?=
- =?us-ascii?Q?hPEItEemmIE2DYjI2UVEFYqfnwGnK//ZDAQoxHEd4LLHYTHrMUMjt8H7uqGP?=
- =?us-ascii?Q?O3IFmRcNgD75AIvtLUdHI9C9Rh76NYicZ4B21ouwScugEY/LyWmR79nccKky?=
- =?us-ascii?Q?dbBljM4NycZy6P6N02fk13rOM0cuJVBjhN6DqSKc8X+ZnEuuVGrV81WzbB33?=
- =?us-ascii?Q?2vbp8ZAaWJekeSRqh/iSoVFeLLioxG9gcY2nwRQUtLaR7dG9mrqPE+H/BvZM?=
- =?us-ascii?Q?SFOzNI3MtN73KtE1ehLeutK9mc80NYDfpWuSdUdjox5ZBSLOk7cC+sld2bVa?=
- =?us-ascii?Q?ETMmRuuPBRkS28MAvEd3MceyYyHhNXnqmIj6TqLT2LxLZsUFowu+W++t+Th9?=
- =?us-ascii?Q?d5m4QSbzhaQpycbnss79xn6wVzKCgKjG0bNA04Zh/zkhC6Ox1aN31Al+SSVJ?=
- =?us-ascii?Q?KK7PZ2dRtOsdveY+xyqu8BHMZTsRr3OiJtZBwDIln5p/P4y9bhzvFOGkJKjV?=
- =?us-ascii?Q?XotHivBZ5O0e4Lo0NrUhPTzw/QHmWBBGSOnm1uXqn8RN/uIvXqcGj3m3hXFG?=
- =?us-ascii?Q?YixOGYDTEatsD/VMDuMM43rjzr1rGxpdGTA/k/HVbUle3o3EvbjOIyPHhUVh?=
- =?us-ascii?Q?jpkkGsp4qOCN63QlG1jgLk+aicaupLmcre2CgaprbC3TcgsJTDP/iS7DR+MA?=
- =?us-ascii?Q?uxbTmfwQkzg5pe1qao6LR1crn8LpnFbyEumD3dS2oc3D15PGAO3dNTifTgq+?=
- =?us-ascii?Q?RYliR8C0quOdda84vQbbCKxEM0VJbqiBLdgHtk6hbWF6ldleu1jKWTBGvYEi?=
- =?us-ascii?Q?MuDyT8ydSGPM38bf8YYXBrPf/4rel8zpivDODTUUCRfnHcQPmV5wI5Sb70kY?=
- =?us-ascii?Q?U5fxvIsTJtIJ4M+wuBTZBen0N5s4jRgTI/ycuN1Bo1LterkFYPkEiRBDMGe4?=
- =?us-ascii?Q?JK6okZTgiZ3yquTVUvnshNBRWYqsegb4PhU4vamcf/gVDJfOQ4NH7Q/Ms7Ps?=
- =?us-ascii?Q?bIKEtVSE3kQDoh2q1C0SAbjH9/IV7vhBFYR9SMd6jrVNur+UjCUD8dvUPQC+?=
- =?us-ascii?Q?mqL4SQ65Gn7YgRJj4TfDZRg4PJ12fVwzdOhrwvNdfAdL/w55y3y+n0tLYHwI?=
- =?us-ascii?Q?sjMKuItb/ZKYGatbwQ6JIA5KvEMZUTzn5iLya+gKhgTQAJ0E84B2sT2U/y7w?=
- =?us-ascii?Q?USIGv83LuOjFCbuBUhybvYj4jtYvtvA2rpMb4BzYL9hQCovBmsIQIYCZsrqe?=
- =?us-ascii?Q?hNZKMJ9htG6enH7XnCqZClaYiYDTNo9IsgdKMHwLNO5TyqjAr8aJslF7MrrX?=
- =?us-ascii?Q?tA2l6a69YN/EkIuoHmhzqb+JwWhsGYdH01hWHPZkgLzVp/wGm76mk0gg9iWc?=
- =?us-ascii?Q?5uexY9onvnX5w1VMDENeMuM8OgOHALH3larNtKGrtcBTP6JQ6I+0WLXyV0bb?=
- =?us-ascii?Q?B/84383ni08/eDXgVrVn12wloEn/xwcw/b3r1BPY9Z+sTZbSEphrYbOR+dUi?=
- =?us-ascii?Q?iPvHr7mMGl6zXvPdT3itHW8zqeFYjdYRNcoiV7qjQY1LXgnyrx15rv8LLDXX?=
- =?us-ascii?Q?pdkQua+Chmd2E2grwGyPbMIX0Mtk0h5DSgFtvzJL7WSwOMsPmuHWEWge8Hpc?=
- =?us-ascii?Q?kg=3D=3D?=
+	id 1sKPKr-00000006mWn-16Ya;
+	Thu, 20 Jun 2024 21:28:50 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-2c72becd4fdso1179533a91.0;
+        Thu, 20 Jun 2024 14:28:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1718918927; x=1719523727; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=B2IrnnGEnY0PAdsg8+78PSsbMokLJN/NcVtSSSZKo7A=;
+        b=M7oTH3mj38HLTQ/5JKtOq+NSvImtBLEECcvCkTVqSDfeSZmnT5JGulW4WsdZc/oEJb
+         X745eF6Ucu87LlBJ+/CEjm2hRhgW5ng/9CP0jmr7gvgePrerkUvzoRLowZewdXYfW0iw
+         zeAJ977/oyIbz+aUyIZ0IiAHysPkbOCB5kiRXnMkZi6T7f46O4U+0rn31kKTrKE9s9i3
+         tBKytLK8lWCzhN2XcsyeZ69800CFfmPuQjbFlIzcO4vZrpdMvcj1O66kOLm11fbZ7SP7
+         mMLk129CQAg7PumcvnVWH6reiTOsIBqrj7Dwny0M+ie+ny+BgA9SJtMFCnBYAtfT7KR8
+         c3MQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718918927; x=1719523727;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=B2IrnnGEnY0PAdsg8+78PSsbMokLJN/NcVtSSSZKo7A=;
+        b=qzlKesU65/UaP02TPFobC7oLmZ3ycnUVUDAmvxXZBzvyrLupkIdYQ0nMTe03ZysWGT
+         wVOplKivWeRswmKE2CGcFX0hT4BAEFCRcot5wIAGOQiu9c11khd1gu24Rk0qQa3dQmz5
+         gx0KnHQzBW82nkr7xZjj058D3J3WA84aNdg1ycuP2m67e3f3SH+l8ndqQVt4P/NG+W4e
+         kXwx1vKDmRWWGrzQV80+L/bmYH2KtrjNOquHiV1sS0eMcXTGajSrpNDF8jmflaAnQEob
+         6HQND7FaK2uF7MXm7ywIXeRwILtsoOC5ehK0c8QH9xpBCeSrGCkcQeI28x8e7DlefdoG
+         Sxww==
+X-Forwarded-Encrypted: i=1; AJvYcCW/F82/C1VMoNmLqDIdG/jMsbyACGtMlQxlIsSJD0Lh1WEdO/pxyCPTtB6NKApb6eOluaJk24BnWXBjnxOxcoovjzO2JWG27H0OF3/+q+EUISlWbpiVCidfgfm2563FurriML5HJD5K/fNp/Gt1ZKWtIDCS6ODJaQE=
+X-Gm-Message-State: AOJu0Yzqxv8oehx6NAH+++d6n11B/iP9X6gCLaq1YXbMiBNK1fSY5PIK
+	nstcAlPEWfkHPpE5lthSafRXk6SnZvYL8xjHwc0uVutf3Lakp0qz
+X-Google-Smtp-Source: AGHT+IH4Mmq3L3BL4GOBwjn22i7w8MWuGPUuZniUS0Ra/uXagWa+InuUen9W/sgAZvNVcMUn5CtXCg==
+X-Received: by 2002:a17:90a:4217:b0:2c8:81b:e798 with SMTP id 98e67ed59e1d1-2c8081be805mr1710242a91.30.1718918926729;
+        Thu, 20 Jun 2024 14:28:46 -0700 (PDT)
+Received: from shresth-aspirea71576g.abesec.ac.in ([139.5.197.147])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2c819a8f68csm147411a91.30.2024.06.20.14.28.40
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 20 Jun 2024 14:28:46 -0700 (PDT)
+From: Shresth Prasad <shresthprasad7@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de,
+	sebastian.reichel@collabora.com,
+	andy.yan@rock-chips.com,
+	s.hauer@pengutronix.de,
+	jbx6244@yandex.com
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	javier.carrasco.cruz@gmail.com,
+	skhan@linuxfoundation.org,
+	Shresth Prasad <shresthprasad7@gmail.com>
+Subject: [PATCH v5] dt-bindings: phy: rockchip-emmc-phy: Convert to dtschema
+Date: Fri, 21 Jun 2024 02:58:07 +0530
+Message-ID: <20240620212806.3011-2-shresthprasad7@gmail.com>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 94eb612b-1600-4f71-186b-08dc914bf78e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2024 17:11:04.1524
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /5GtUBVq1005xyygk265JI10HEJ6BcmR9g5J6JnTMtvsoGy5LB5QdzHSxEko2HRBNJpO6p63plCI8leA2tQCWYIyEILjYX6Z6WK6wq8+cds=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYWPR01MB11029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_101128_170897_D38FC3EA 
-X-CRM114-Status: GOOD (  16.15  )
+X-CRM114-CacheID: sfid-20240620_142849_330542_075749C0 
+X-CRM114-Status: GOOD (  18.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -169,43 +104,187 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
+for validation.
 
-Thanks for the feedback.
+Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+---
+Request for an Ack from the PHY maintainers, so that the DT maintainer Heiko 
+can merge it to grf.yaml in the order that he likes.
 
-> -----Original Message-----
-> From: Vinod Koul <vkoul@kernel.org>
-> Sent: Thursday, June 20, 2024 5:38 PM
-> Subject: Re: [PATCH v4 0/6] Add USB VBUS regulator for RZ/G2L
-> 
-> On 16-06-24, 11:53, Biju Das wrote:
-> > As per RZ/G2L HW manual, VBUS enable can be controlled by the VBOUT
-> > bit of the VBUS Control Register(VBENCTL) register in the USBPHY
-> > Control. But this IP is in the Reset block.
-> >
-> > Reset driver exposes this register as regmap and instantiate the USB
-> > VBUS regulator device. Consumers(phy device) can use regulator APIs to
-> > control VBUS as controlling is done in the atomic context.
-> >
-> > We need to have merge strategy which subsytem will apply this patches
-> > as it involves multiple subsystems Reset, Regulator, PHY, DT and
-> > Renesas SoC??
-> 
-> Why is there a dependency.. why cant they go thru respective trees?
+Changes in v5:
+    - remove myself from maintainers list
+    - put `clocks` before `clock-names`
+    - remove node lables
+    - remove `grf` node from example
+    - remove blank lines in grf.yaml
+    - add to example in grf.yaml
 
-In this series, only regulator driver changes has no dependency.
+Tested against `rockchip/rk3399-firefly.dtb`, `rockchip/rk3399-orangepi.dtb`
+and `rockchip/rk3399-pinebook-pro.dtb`.
+---
+ .../phy/rockchip,rk3399-emmc-phy.yaml         | 64 +++++++++++++++++++
+ .../bindings/phy/rockchip-emmc-phy.txt        | 43 -------------
+ .../devicetree/bindings/soc/rockchip/grf.yaml | 16 ++++-
+ 3 files changed, 77 insertions(+), 46 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
 
-PHY driver (phy-rcar-gen3-usb2.c) has a dependency on new regulator consumer API regulator_hardware_enable(),
-Without this it will lead to compilation error.
-
-USB PHY ctrl driver(reset-rzg2l-usbphy-ctrl.c) instantiate and bind regulator driver(renesas-usb-vbus-regulator.c).
-
-If regulator driver is not there means, USB PHY ctrl driver probe() fails,
-that will break existing USB functionality.
-
-Cheers,
-Biju
-
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml
+new file mode 100644
+index 000000000000..3e3729b1c799
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,rk3399-emmc-phy.yaml
+@@ -0,0 +1,64 @@
++# SPDX-License-Identifier: GPL-2.0-only
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,rk3399-emmc-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip EMMC PHY
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    const: rockchip,rk3399-emmc-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: emmcclk
++
++  drive-impedance-ohm:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Specifies the drive impedance in Ohm.
++    enum: [33, 40, 50, 66, 100]
++    default: 50
++
++  rockchip,enable-strobe-pulldown:
++    type: boolean
++    description: |
++      Enable internal pull-down for the strobe
++      line.  If not set, pull-down is not used.
++
++  rockchip,output-tapdelay-select:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Specifies the phyctrl_otapdlysec register.
++    default: 0x4
++    maximum: 0xf
++
++  "#phy-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    phy@f780 {
++      compatible = "rockchip,rk3399-emmc-phy";
++      reg = <0xf780 0x20>;
++      clocks = <&sdhci>;
++      clock-names = "emmcclk";
++      drive-impedance-ohm = <50>;
++      #phy-cells = <0>;
++    };
+diff --git a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt b/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
+deleted file mode 100644
+index 57d28c0d5696..000000000000
+--- a/Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-Rockchip EMMC PHY
+------------------------
+-
+-Required properties:
+- - compatible: rockchip,rk3399-emmc-phy
+- - #phy-cells: must be 0
+- - reg: PHY register address offset and length in "general
+-   register files"
+-
+-Optional properties:
+- - clock-names: Should contain "emmcclk".  Although this is listed as optional
+-		(because most boards can get basic functionality without having
+-		access to it), it is strongly suggested.
+-		See ../clock/clock-bindings.txt for details.
+- - clocks: Should have a phandle to the card clock exported by the SDHCI driver.
+- - drive-impedance-ohm: Specifies the drive impedance in Ohm.
+-                        Possible values are 33, 40, 50, 66 and 100.
+-                        If not set, the default value of 50 will be applied.
+- - rockchip,enable-strobe-pulldown: Enable internal pull-down for the strobe
+-                                    line.  If not set, pull-down is not used.
+- - rockchip,output-tapdelay-select: Specifies the phyctrl_otapdlysec register.
+-                                    If not set, the register defaults to 0x4.
+-                                    Maximum value 0xf.
+-
+-Example:
+-
+-
+-grf: syscon@ff770000 {
+-	compatible = "rockchip,rk3399-grf", "syscon", "simple-mfd";
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-
+-...
+-
+-	emmcphy: phy@f780 {
+-		compatible = "rockchip,rk3399-emmc-phy";
+-		reg = <0xf780 0x20>;
+-		clocks = <&sdhci>;
+-		clock-names = "emmcclk";
+-		drive-impedance-ohm = <50>;
+-		#phy-cells = <0>;
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 79798c747476..78c6d5b64138 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -176,9 +176,10 @@ allOf:
+             Documentation/devicetree/bindings/phy/rockchip-pcie-phy.txt
+ 
+       patternProperties:
+-        "phy@[0-9a-f]+$":
+-          description:
+-            Documentation/devicetree/bindings/phy/rockchip-emmc-phy.txt
++        "^phy@[0-9a-f]+$":
++          type: object
++          $ref: /schemas/phy/rockchip,rk3399-emmc-phy.yaml#
++          unevaluatedProperties: false
+ 
+   - if:
+       properties:
+@@ -292,6 +293,15 @@ examples:
+         #phy-cells = <0>;
+       };
+ 
++      phy@f780 {
++        compatible = "rockchip,rk3399-emmc-phy";
++        reg = <0xf780 0x20>;
++        clocks = <&sdhci>;
++        clock-names = "emmcclk";
++        drive-impedance-ohm = <50>;
++        #phy-cells = <0>;
++      };
++
+       u2phy0: usb2phy@e450 {
+         compatible = "rockchip,rk3399-usb2phy";
+         reg = <0xe450 0x10>;
+-- 
+2.45.2
 
 
 -- 
