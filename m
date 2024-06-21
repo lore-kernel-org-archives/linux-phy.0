@@ -4,56 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9139C27C4F
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Jun 2024 06:29:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED46DC2BA1A
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Jun 2024 06:40:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nXTvj/J6he1rVWxI3bfrJvwESS80DmiAGnMHSNx+yjc=; b=D0Q9n4FLNmf7cg
-	WUQqQBkpZtL+EmiPhL0O3o45LBRHIqn2/Kel5+Kmr9v+4Wxiy2vf1Cgsl9FhqXTUwY3MB8dWlCaXk
-	xDlJBmFZrAjY9oHNeyW1S6/fd7dXBf8KNkx6KZC+o3C4DxGQ4DLMCMiF8qZlPMWKot8PWUCvOBVNe
-	Pd0RtEDyr9yv05CGtAxgZeCGrk0SiBGq1ZCri0eCkqLPTOBPA12i4BynUvZYuWkZ6YervG5oSF+vV
-	TfNYTJXbeDqybV4rhnosXBpBTzuCWchsO5Za705D1aHL5qhHCb6rN37CZqhLoH4OEqu2Rl/sSN9sM
-	UABrj3JDVWGzQju/CswQ==;
+	List-Owner; bh=+sWq2A6KD2ZMtdZfjGPS8IGq/vLjj3hyKK+BopeQB7s=; b=q7Yn+zSl7+Pmz3
+	VUaZNilrsIkFhk6ZBLiK5/jJYnmbm3IOgcl9pugcA3IoEm2c0RpY3C45y/HglsrATC84agA8sQJxX
+	74ZwWXWU5iWZkIF6lCWq/OZPJgv9AXbR9j28M/uuVyMigLbcVUygosdJ2NZuSEOv8XDAeUQwPQeS1
+	hdYXLswLcyGvuw8EPYJEvz2LaVCQeuK8mj+HR/YDuUP4CQVcHl/M2Q22SDgp9WR1Na/Qv9mdKCZ1H
+	Y2n1UDeZHYxprzMyd4b3n4LuRqcCG2+U8WY6oiy6ZqjFd8WCZYunMR3Kee2oCtUjQxvXjcqrGd1j2
+	1CMr98uD+63QdEK1FwuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKXld-00000007yOT-1ZAs;
-	Fri, 21 Jun 2024 06:29:01 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sKXwq-0000000813n-2fIG;
+	Fri, 21 Jun 2024 06:40:36 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sKXla-00000007yNW-0U86
-	for linux-phy@lists.infradead.org;
-	Fri, 21 Jun 2024 06:28:59 +0000
+	id 1sKXwn-0000000812b-0YbS;
+	Fri, 21 Jun 2024 06:40:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 0484DCE29BB;
-	Fri, 21 Jun 2024 06:28:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC79FC4AF08;
-	Fri, 21 Jun 2024 06:28:50 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5BF2462094;
+	Fri, 21 Jun 2024 06:40:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7BC3C2BBFC;
+	Fri, 21 Jun 2024 06:40:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1718951335;
-	bh=Xfvm2+fdcJm4fj7kLpfPOGYmx2WS33tl7ElryNPJh20=;
+	s=k20201202; t=1718952032;
+	bh=K+/rxMxqAy5MbNI96QKep2nTd0OAX55bDUMBx9oYT/U=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=KhZNsKK1h/Id/Jx1eWbgccehkF/eOvnyZG27yn76/D6hrOujBG+a8FeTwRe35PG6t
-	 x42cjXg4weCsesnGryc7WkVIzV1mFFtaq5Fqhqah5bEJfNbVlp1yUSEbTEf67H9840
-	 8/Dcbo9EQYeeFmz7l8UtyCXga7JVUivryNQPudSQnQ9BcaHxV+gSVu8TaIrtIBKp8L
-	 KdKzsn6Sqesf3DsMyTYiGQejeknv0LsmSLtQJRkoVUR8vs+zu14fTSYIoj/C+YSNwy
-	 HRvLzSPNWHAwLA2AcKnTivtQ6dBwKfV89IvksjyXJfGzVEJliAvQqgCjF0nE7KygjC
-	 RIRPtM+GSZ0zQ==
-Message-ID: <85bcaf30-3ffa-4bb4-bd38-0dd3c76b92f4@kernel.org>
-Date: Fri, 21 Jun 2024 08:28:47 +0200
+	b=lf2FnjhndpjEcOM43NC9j2zdC87rV9XDDxl7Sp8Xs/roaZeONUDZpqaf5BWUJC2/F
+	 OnsQNWhbh43ER/DDvxb+TbcCP2mMtQXwm5Gv/8Ab28muO/CJxBZoe5xSfg54bFienY
+	 0u1mqpJiI7VaiEsATfKDTUMwqb3oaD+NlcPNJsu4i/SVXsFu+Kk+UswWzulDLK+T1/
+	 ZWikPvo8o/fGF26aP0ro5gHKD4HOiShZbTRGyNyP2I201szQZ1shnm8D/XzXtMVbch
+	 ClAOgImnMpJD4Cf5G02QhtPo8Tmd1x0X1JAzgB58AmWDVV89BfGQClzXPGsUq1k1/q
+	 nQJDECy42WDcA==
+Message-ID: <684ae4ea-63c6-4322-a71b-429e9cc9b0b9@kernel.org>
+Date: Fri, 21 Jun 2024 08:40:24 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] dt-bindings: phy: qcom,qmp-usb: fix spelling error
-To: YijieYang <quic_yijiyang@quicinc.com>, vkoul@kernel.org,
+Subject: Re: [PATCH v5] dt-bindings: phy: rockchip-emmc-phy: Convert to
+ dtschema
+To: Shresth Prasad <shresthprasad7@gmail.com>, vkoul@kernel.org,
  kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- quic_tengfan@quicinc.com, quic_aiquny@quicinc.com, quic_jiegan@quicinc.com
-Cc: kernel@quicinc.com
-References: <20240621061521.332567-1-quic_yijiyang@quicinc.com>
+ heiko@sntech.de, sebastian.reichel@collabora.com, andy.yan@rock-chips.com,
+ s.hauer@pengutronix.de, jbx6244@yandex.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, javier.carrasco.cruz@gmail.com,
+ skhan@linuxfoundation.org
+References: <20240620212806.3011-2-shresthprasad7@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -99,10 +101,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240621061521.332567-1-quic_yijiyang@quicinc.com>
+In-Reply-To: <20240620212806.3011-2-shresthprasad7@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240620_232858_638486_8117BC8E 
-X-CRM114-Status: UNSURE (   3.65  )
+X-CRM114-CacheID: sfid-20240620_234033_386800_7DD9A320 
+X-CRM114-Status: UNSURE (   5.38  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -120,12 +122,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21/06/2024 08:15, YijieYang wrote:
-> From: Yijie Yang <quic_yijiyang@quicinc.com>
+On 20/06/2024 23:28, Shresth Prasad wrote:
+> Convert txt bindings of Rockchip EMMC PHY to dtschema to allow
+> for validation.
 > 
-> Correct the spelling error, changing 'com' to 'qcom'.
+> Signed-off-by: Shresth Prasad <shresthprasad7@gmail.com>
+> ---
 
-Please provide Fixes and Cc-stable tags (see stable kernel rules).
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
 
 Best regards,
 Krzysztof
