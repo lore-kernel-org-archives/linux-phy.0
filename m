@@ -4,56 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B26F0C2BD09
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Jun 2024 04:40:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B93A6C2BD09
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Jun 2024 05:19:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N46Z6iDHQPCSM2+oB8QlnTMWc5tOwqZCKduqW7XNf9I=; b=V4IKsNT4X5lpJc
-	DyyFmBvFrxcMaOlON+CpCjT2wZDhuQyTGz5PXEWCd9SdqokszNY/+dgShOGCmLACoolfP9VHHvCf2
-	XGi8o95xYgDNz88kLwBh78Teue/xp9As55wzYSbLLkMQmzdDVzt+2wXYy5GsjELMQEaSsgFimYv3o
-	+7BiC5lnHDZL9j3WOPwLmo5tmP2G0iaEEZp1iXIluFA0rdboPl2PjmSX7/19bagFXilcjBlvRsek3
-	tOYbDVt5bp5wrwqEz74KxwRwjE0iG1ktV4KMGaDKq8ks5RIwpQQpiSYiRVjrhPeDbJLUCBpUPihu+
-	/WIOUzT6tuGRpHWuhOcA==;
+	List-Owner; bh=VL7ntZh5Tt61MINdeAZVPr7VxquP3b0GTuBj+wtJ1AU=; b=OwXAQlkztBVBwu
+	U+C8RG82A4Pv95syo7VVlXSQSGXuOyHgJ3iuhrnj1VKMksA/O/tDnFS8UaWwhlE9Z298vIhmzYls8
+	NwCq3i8E8clSERE4JuBU/ASeklLhe79TPayQAN/zn9EQSOnr/zYu0NMskT0e+wFb7AJHyOxInX7Ky
+	0mY4OBZc1TwOSvXHQKAz7oNLmDYrlu414/pXNYTtUJhVn3vH1I776QVvnfLodEl7afeGLaYuumOvV
+	pWxy9TrSOAjgOlW+kPZM3/xOEmjdfmOAZi2VWPKz3+ACY1sLLAGO9whrCItmlUTh2nbXepIpsiV/K
+	Rrdl1ZrX+4CF8Dn/FRhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sLbVF-0000000FWNe-1kUy;
-	Mon, 24 Jun 2024 04:40:29 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sLc7T-0000000FakB-1uRU;
+	Mon, 24 Jun 2024 05:19:59 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sLbVC-0000000FWMq-1zOZ
-	for linux-phy@lists.infradead.org;
-	Mon, 24 Jun 2024 04:40:28 +0000
+	id 1sLc7M-0000000Faif-35Wj;
+	Mon, 24 Jun 2024 05:19:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8EA4460A1C;
-	Mon, 24 Jun 2024 04:40:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1675EC2BBFC;
-	Mon, 24 Jun 2024 04:40:14 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 70F66CE10E6;
+	Mon, 24 Jun 2024 05:19:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23DD9C2BBFC;
+	Mon, 24 Jun 2024 05:19:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719204019;
-	bh=RENMatYIOIThS86qc+aiIQklu9vpGy+F1mjAhxEgZps=;
+	s=k20201202; t=1719206387;
+	bh=+EUnXjR3wwAOJNwcvE8bLduH/+zAa+qjz/9ZG7vIRN4=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=mItXLxHLdJH9QhCDD+I+EcNaaq1PpYRrBM9CEStHj+tvyNNdQZnzLuC8ja4x5kcAP
-	 l0FexydNeftx0/TxPiiauhXS3NJlUV7ZazHW/oBr3V1hhZSmVmwDn6Qkpj3fYIElsZ
-	 W60w7E8MAFAykSZ457xZUlSL4Mi2tnLnag/e7nZIKamQdTecl9tA/nqsGlxkDVqrIG
-	 ZhDPJfebrxceD/0b7LtUVAmfvZyROvp+BwZ2n9A8F8qOpFdqFePUv/bXAgRIiyN4dP
-	 q/D1SfWXptvO1YrnEfqKcxDr/BztcVRRe+Ib46Cf1X0A+Z5eMVNl89M6ol4n5u/E8B
-	 spKF1hs68SYXQ==
-Message-ID: <50f3befe-44e4-45bb-9f85-b15fc2209ee2@kernel.org>
-Date: Mon, 24 Jun 2024 06:40:13 +0200
+	b=XHMJ1oEKmDqpdqpKxrr0cTfNYhRjKILb3DSjsdy7DM1jJDw9bCbfJJevc14FMslRr
+	 3v9csFJ9lfBD1nzo0HbC19Rf5yq/mLP8nN/OZoU+5vSTiB1MSfFHaQni1NhQWDXICA
+	 9Kn4bVgrbN4vuTEQGyzqB/dIUK5wylGjqHNKPQb9tgVSFb2vSy1Qu4wuO44Q/2DbZ8
+	 SmXJiD7zz0XDhWXjVgaV7hKkZB1SqPUHLzxtKRY0pPo5vbeAYm30xR0cBX8dBwnjH1
+	 M0LmzEXDrWw+IN3Coi/3qYwqKThbR4mlpqSOQPzlSqSFHf9oMab9rb74XGTRVcTkXF
+	 fCK5VzfgCYmgg==
+Message-ID: <b91eda69-5cdc-4cd3-93c9-5daa89bdbe23@kernel.org>
+Date: Mon, 24 Jun 2024 07:19:39 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom,qmp-usb: fix spelling error
-To: YijieYang <quic_yijiyang@quicinc.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Cc: quic_tengfan@quicinc.com, quic_aiquny@quicinc.com,
- quic_jiegan@quicinc.com, kernel@quicinc.com, stable@vger.kernel.org
-References: <20240624021916.2033062-1-quic_yijiyang@quicinc.com>
+Subject: Re: [PATCH v3 1/6] dt-bindings: phy: samsung,usb3-drd-phy: add gs101
+ compatible
+To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Peter Griffin
+ <peter.griffin@linaro.org>, Marek Szyprowski <m.szyprowski@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Sam Protsenko <semen.protsenko@linaro.org>
+Cc: Tudor Ambarus <tudor.ambarus@linaro.org>,
+ Will McVicker <willmcvicker@google.com>, Roy Luo <royluo@google.com>,
+ kernel-team@android.com, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+References: <20240617-usb-phy-gs101-v3-0-b66de9ae7424@linaro.org>
+ <20240617-usb-phy-gs101-v3-1-b66de9ae7424@linaro.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -99,10 +107,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240624021916.2033062-1-quic_yijiyang@quicinc.com>
+In-Reply-To: <20240617-usb-phy-gs101-v3-1-b66de9ae7424@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240623_214026_691709_A81EED1C 
-X-CRM114-Status: UNSURE (   4.06  )
+X-CRM114-CacheID: sfid-20240623_221953_151422_2A5F7A41 
+X-CRM114-Status: UNSURE (   4.91  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,27 +123,18 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/06/2024 04:19, YijieYang wrote:
-> From: Yijie Yang <quic_yijiyang@quicinc.com>
-> 
-> Correct the spelling error, changing 'com' to 'qcom'.
-> 
-> Cc: stable@vger.kernel.org
-> Fixes: f75a4b3a6efc ("dt-bindings: phy: qcom,qmp-usb: Add QDU1000 USB3 PHY")
-> Signed-off-by: Yijie Yang <quic_yijiyang@quicinc.com>
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTcvMDYvMjAyNCAxODo0NCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gQWRkIGEgZGVkaWNh
+dGVkIGdvb2dsZSxnczEwMS11c2IzMWRyZC1waHkgY29tcGF0aWJsZSBmb3IgR29vZ2xlIFRlbnNv
+cgo+IGdzMTAxIFNvQy4KPiAKPiBJdCBuZWVkcyBhZGRpdGlvbmFsIGNsb2NrcyBlbmFibGVkIGZv
+ciByZWdpc3RlciBhY2Nlc3MsIGFuZCBhZGRpdGlvbmFsCj4gbWVtb3J5IHJlZ2lvbnMgKFBDUyAm
+IFBNQSkgYXJlIHJlcXVpcmVkIGZvciBzdWNjZXNzZnVsIGNvbmZpZ3VyYXRpb24uCj4gCj4gSXQg
+YWxzbyByZXF1aXJlcyB2YXJpb3VzIHBvd2VyIHN1cHBsaWVzIChyZWd1bGF0b3JzKSBmb3IgdGhl
+IGludGVybmFsCgoKUmV2aWV3ZWQtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5r
+b3psb3dza2lAbGluYXJvLm9yZz4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgoKLS0gCmxpbnV4
+LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
