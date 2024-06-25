@@ -4,84 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10699C2BD09
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Jun 2024 11:33:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48777C2BBCA
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Jun 2024 06:47:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8i+xphYJHjCAzPhCaGq+mlZL8eFfdKkVFrzgjaLo9AY=; b=3eCYMPUBF+bmqf
-	3rxBU5HfgimT2PvHh/lVIdus5ZLU0Yd+D7bEIQ2YG/lYhCk65GHjhzCKFWRjyFc5X5fmJgIHdyPKS
-	emEiLaKP3ko46mQ9gRrhRBiw9MrMkzA59CM62UvhMkwfDuFslf8g4JGS7YU7gJpqjABDk+dKkuVQr
-	Yfeilw9hN7apDng2GsihjL4Zkc+MFIU9tWJxfwCpMqawWu3NbjmvsSqMYb0KA7kzGYSjh+cZfAPp3
-	5IS4ZimkblPsBrdfJICL/8dYNbmJR5Pk+Ug+0cjmUSlcA0FL3/yKRs+zib9OpjnD8O+qZ1KRD4x/+
-	X+c5gsfsfYstiZlGxVxg==;
+	List-Owner; bh=G0i+75uoNZPO6PfMbBPrhWjpAzeIRYetzaFQcvnKz9w=; b=bHGJLemQLi/Zn4
+	1o+G9o1cKRbp73crQbGhsgy7awd/vuaIAQtn0qppFnnE/AX9qsiDjvTdLP340DQVqbmfwQ1W5xoZJ
+	JyYhDBMzNo8v8KC8KtGVvrqE5t+nz2Re3zSsDYDlxLW8imcuS8kdWXuIyNcx5Hoh24/+YIv124wQ2
+	rKukO03f3Br9Y1mH3z/rZ6osx6otiL6/XWABVoieDxUfiVpF9OkLgjshgkDEC9yiebCtGmGh+klTf
+	ppF6islyEpy/o7Jcs4Lh0Q5FXhVILnC3quMFdzu6nOC+um8UiMahen+4YZbnao+6pdVPjozcPe/Vg
+	HrWsYrxROX1DumVVqACQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sLhwt-0000000Gcag-1CVk;
-	Mon, 24 Jun 2024 11:33:27 +0000
-Received: from mail-oo1-xc35.google.com ([2607:f8b0:4864:20::c35])
+	id 1sLzxg-00000001pt8-2puH;
+	Tue, 25 Jun 2024 06:47:28 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sLhwn-0000000GcZ4-383A
+	id 1sLzxe-00000001psP-0Gs5
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Jun 2024 11:33:23 +0000
-Received: by mail-oo1-xc35.google.com with SMTP id 006d021491bc7-5c1d2f7ab69so1695033eaf.3
-        for <linux-phy@lists.infradead.org>; Mon, 24 Jun 2024 04:33:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1719228800; x=1719833600; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=odpMfJJZ8NPTYLZvgutefDIcMfEDKS6u2cQ2F9qXb2A=;
-        b=CwEIRiOaFeUc4kUK04N2L6G4/EKU/zCiqC/c+EPf0mGSmOjGv4xmPcaVG0qM+yi0hL
-         RwXRaMvwP2IXEuPhqv6i0a1yyKGpaUKZviQ8ZM2FkOTuEoVakCtmVZiWcWLx8HtIaACx
-         DZ6Rw0KuIt1N6DnbTalPznml8BrSrudyjqSNfJe3y4hPyKGeYjv9UZHRTk9Y1TFa9vn3
-         F7mCcZS00zW+hpwEOxzlJJkr7PH0esH/oLLgx4fRMBBDcrwYfoIUSOmd2OQc1lDun6gX
-         u/OtUHi9uTq//ylk579eYDIurwpWOtY1j1eIYSvxbNGYFVNUk8XfNg7+iZoqq7XvVDJ4
-         djew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1719228800; x=1719833600;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=odpMfJJZ8NPTYLZvgutefDIcMfEDKS6u2cQ2F9qXb2A=;
-        b=KzEWxaWRe+cVkLTIocI+GBIy6Sr3+Jq+a0tAl5zJFeZ1F9KepcGrH72K8rEHQTdBc2
-         0xXGjJ8hgMAh6qiEaJDfocWChFVRJ/JZpuRegTNK4jWpmTO+HpTqyi1T//aVuT0rexRP
-         QJ7uJo1P6ZOatlxl8wrDKbmt7pS9TRD8te8jbY1YWVvJ1wRWEpdTHNfWNgyiwecsbdzo
-         1h6FrNPc/3T+3AmUGRMeRjc+N2KOH35WOYzzz6+Cv5AuNNnKZz3EBJQJiP1VXsCOX0ww
-         R5jca8ONLaJwgb/4MtTJeWmA9bXqaRDdtSIHkNIr4NQt79Zz4S78OLPPAU09dAzS6gt4
-         lOng==
-X-Forwarded-Encrypted: i=1; AJvYcCXcYLqhw1kBoS5Yxs0SMy1ZiouKFNHT/15T/IP4s7p1SSkZQcOqDz7AFLYuBALE/msfEelDKBvBRXOb0X0tchrXy6pCDvIbxGCbcUOkkw==
-X-Gm-Message-State: AOJu0Yw/ZnevEQ/y6hEEMkzcRzTGdRngmle5M9mgdZr9bxN0hCO1MM3O
-	5bELOGJOYq4xT+7IFZilp/MC30dlnXjzYyJf27w9Jjx6l7KKV4blJwyl0pM25iV5cl92ZGp8rfX
-	ouBLsbmbfrQKCvNSATHaQm6ZC70XjozIPhHpNWA==
-X-Google-Smtp-Source: AGHT+IGmvLU2Uh+ee6D/ZczJ3wgdd7eqWxvkUL1HgsQRsgH4xuQIXM0iyYoA9GudXgodjHC0GIwB+1yLti8wulJ2M18=
-X-Received: by 2002:a4a:870d:0:b0:5c1:ae16:acb3 with SMTP id
- 006d021491bc7-5c1eb76906fmr4738478eaf.0.1719228800566; Mon, 24 Jun 2024
- 04:33:20 -0700 (PDT)
+	Tue, 25 Jun 2024 06:47:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 7D908CE176F;
+	Tue, 25 Jun 2024 06:47:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4FDAC32781;
+	Tue, 25 Jun 2024 06:47:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1719298042;
+	bh=pJJu5s9KBxupbvcL1lu1+U5fHpLZ++eVwWUD05uzpPs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=F7hE66ckoIiNZDCC/BKpdORZyZ1F8SNYkxPHAs62E7ZzqtjWc3vUgNK5qodSyTktz
+	 sF+vVkvwAs5vCg4puoKPidU8+M4B9A7cmR8a1d8Je/6fKZLew2cEA3BRTwP4v5ami0
+	 GHHk1ybDEUctvr8faom0P1IGGUwMBKulUeGeea/+hBD5fykd5KyEL2n2BzRWl7lXUT
+	 qkfYt+cOSuHTRaNFgRabcSyV6TgxMpkacyqQPUxgvcib/F825ihOkaWROgK8c3rBBQ
+	 8ltpBPkGZWHekBvobIfeUAMUKMzn2H4ul1JECtfBbxYL3WLy5bwDrYWxMhCuRjlJuq
+	 9AKgHzD8B8Nmw==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1sLzxh-000000008Oq-47Ci;
+	Tue, 25 Jun 2024 08:47:30 +0200
+Date: Tue, 25 Jun 2024 08:47:29 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Abel Vesa <abel.vesa@linaro.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Andy Gross <agross@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Lee Jones <lee@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Subject: Lockdep broken on x1e80100 (was: Re: [PATCH v5 0/7] sm8550: Add
+ support for eUSB2 repeater)
+Message-ID: <ZnpoAVGJMG4Zu-Jw@hovoldconsulting.com>
+References: <20230208190200.2966723-1-abel.vesa@linaro.org>
 MIME-Version: 1.0
-References: <20240617-usb-phy-gs101-v3-0-b66de9ae7424@linaro.org> <20240617-usb-phy-gs101-v3-6-b66de9ae7424@linaro.org>
-In-Reply-To: <20240617-usb-phy-gs101-v3-6-b66de9ae7424@linaro.org>
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Mon, 24 Jun 2024 12:33:09 +0100
-Message-ID: <CADrjBPrg6_3FhD=2W8X=yaSrTMbmcfjRo3HVo1LyHVcUM8P=0g@mail.gmail.com>
-Subject: Re: [PATCH v3 6/6] phy: exynos5-usbdrd: support Exynos USBDRD 3.1
- combo phy (HS & SS)
-To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Marek Szyprowski <m.szyprowski@samsung.com>, Sylwester Nawrocki <s.nawrocki@samsung.com>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, Sam Protsenko <semen.protsenko@linaro.org>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, Tudor Ambarus <tudor.ambarus@linaro.org>, 
-	Will McVicker <willmcvicker@google.com>, Roy Luo <royluo@google.com>, kernel-team@android.com, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <20230208190200.2966723-1-abel.vesa@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240624_043321_842214_A96B0A1B 
-X-CRM114-Status: GOOD (  26.15  )
+X-CRM114-CacheID: sfid-20240624_234726_481079_D5891C85 
+X-CRM114-Status: GOOD (  12.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,66 +81,95 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQW5kcsOpLAoKT24gTW9uLCAxNyBKdW4gMjAyNCBhdCAxNzo0NSwgQW5kcsOpIERyYXN6aWsg
-PGFuZHJlLmRyYXN6aWtAbGluYXJvLm9yZz4gd3JvdGU6Cj4KPiBBZGQgc3VwcG9ydCBmb3IgdGhl
-IEV4eW5vcyBVU0IgMy4xIERSRCBjb21ibyBwaHksIGFzIGZvdW5kIGluIEV4eW5vcyA5Cj4gU29D
-cyBsaWtlIEdvb2dsZSBHUzEwMS4gSXQgc3VwcG9ydHMgVVNCIFNTLCBIUyBhbmQgRGlzcGxheVBv
-cnQuCj4KPiBJbiB0ZXJtcyBvZiBVVE1JKywgdGhpcyBpcyB2ZXJ5IHNpbWlsYXIgdG8gdGhlIGV4
-aXN0aW5nIEV4eW5vczg1MAo+IHN1cHBvcnQgaW4gdGhpcyBkcml2ZXIuIFRoZSBkaWZmZXJlbmNl
-IGlzIHRoYXQgdGhpcyBjb21ibyBwaHkgc3VwcG9ydHMKPiBib3RoIFVUTUkrIChIUykgYW5kIFBJ
-UEUzIChTUykuIEl0IGFsc28gc3VwcG9ydHMgRFAgYWx0IG1vZGUuCj4KPiBUaGUgbnVtYmVyIG9m
-IHBvcnRzIGZvciBVVE1JKyBhbmQgUElQRTMgY2FuIGJlIGRldGVybWluZWQgdXNpbmcgdGhlCj4g
-TElOS1BPUlQgcmVnaXN0ZXIgKHdoaWNoIGFsc28gZXhpc3RzIG9uIEV4eW5vcyBFODUwKS4KPgo+
-IEZvciBTdXBlclNwZWVkIChTUykgYSBuZXcgU1MgcGh5IGlzIGluIHVzZSBhbmQgaXRzIFBJUEUz
-IGludGVyZmFjZSBpcwo+IG5ldyBjb21wYXJlZCB0byBFeHlub3MgRTg1MCwgYW5kIGFsc28gdmVy
-eSBkaWZmZXJlbnQgZnJvbSB0aGUgZXhpc3RpbmcKPiBzdXBwb3J0IGZvciBvbGRlciBFeHlub3Mg
-U29DcyBpbiB0aGlzIGRyaXZlci4KPgo+IFRoZSBTUyBwaHkgbmVlZHMgYSBiaXQgbW9yZSBjb25m
-aWd1cmF0aW9uIHdvcmsgYW5kIHJlZ2lzdGVyIHR1bmluZyBmb3IKPiBzaWduYWwgcXVhbGl0eSB0
-byB3b3JrIHJlbGlhYmx5LCBwcmVzdW1hYmx5IGR1ZSB0byB0aGUgaGlnaGVyCj4gZnJlcXVlbmN5
-LCBlLmcuIHRvIGFjY291bnQgZm9yIGRpZmZlcmVudCBib2FyZCBsYXlvdXRzLiBBZGRpdGlvbmFs
-bHksCj4gcG93ZXIgbmVlZHMgdG8gYmUgZW5hYmxlZCBiZWZvcmUgd3JpdGluZyB0byB0aGUgU1Mg
-cGh5IHJlZ2lzdGVycy4KPgo+IFRoaXMgY29tbWl0IGFkZHMgdGhlIG5lY2Vzc2FyeSBjaGFuZ2Vz
-IGZvciBVU0IgSFMgYW5kIFNTIHRvIHdvcmsuCj4gRGlzcGxheVBvcnQgaXMgb3V0IG9mIHNjb3Bl
-IGluIHRoaXMgY29tbWl0Lgo+Cj4gTm90ZXM6Cj4gKiBGb3IgdGhlIHJlZ2lzdGVyIHR1bmluZywg
-ZXh5bm9zNV91c2JkcmRfYXBwbHlfcGh5X3R1bmVzKCkgaGFzIGJlZW4KPiAgIGFkZGVkIHdpdGgg
-dGhlIGFwcHJvcHJpYXRlIGRhdGEgc3RydWN0dXJlcyB0byBzdXBwb3J0IHR1bmluZyBhdAo+ICAg
-dmFyaW91cyBzdGFnZXMgZHVyaW5nIGluaXRpYWxpc2F0aW9uLiBTaW5jZSB0aGVzZSBhcmUgaGFy
-ZHdhcmUKPiAgIHNwZWNpZmljLCB0aGUgcGxhdGZvcm0gZGF0YSBpcyBzdXBwb3NlZCB0byBiZSBw
-b3B1bGF0ZWQgYWNjb3JkaW5nbHkuCj4gICBUaGUgaW1wbGVtZW50YXRpb24gaXMgbG9vc2VseSBt
-b2RlbGxlZCBhZnRlciB0aGUgU2Ftc3VuZyBVRlMgUEhZCj4gICBkcml2ZXIuCj4KPiAgIFRoZXJl
-IGlzIG9uZSB0dW5pbmcgc3RhdGUgZm9yIFVUTUkrLCBQVFNfVVRNSV9QT1NUSU5JVCwgdG8gZXhl
-Y3V0ZQo+ICAgYWZ0ZXIgaW5pdCBhbmQgZ2VuZXJhbGx5IGludGVuZGVkIGZvciBIUyBzaWduYWwg
-dHVuaW5nLCBhcyBkb25lIGluCj4gICB0aGlzIGNvbW1pdC4KPgo+ICAgUFRTX1BJUEUzX1BSRUlO
-SVQgUFRTX1BJUEUzX0lOSVQgUFRTX1BJUEUzX1BPU1RJTklUCj4gICBQVFNfUElQRTNfUE9TVExP
-Q0sgYXJlIHR1bmluZyBzdGF0ZXMgZm9yIFBJUEUzLiBJbiB0aGUgZG93bnN0cmVhbQo+ICAgZHJp
-dmVyLCBwcmVpbml0IGRpZmZlcnMgYnkgRXh5bm9zIFNvQywgYW5kIHBvc3Rpbml0IGFuZCBwb3N0
-bG9jawo+ICAgYXJlIGRpZmZlcmVudCBwZXIgYm9hcmQuIFRoZSBsYXR0ZXIgaGF2ZW4ndCBiZWVu
-IGltcGxlbWVudGVkIGZvcgo+ICAgZ3MxMDEgaGVyZSwgYmVjYXVzZSBkb3duc3RyZWFtIGRvZXNu
-J3QgdXNlIHRoZW0gb24gZ3MxMDEgZWl0aGVyLgo+Cj4gKiBTaWduYWwgbG9jayBhY3F1aXNpdGlv
-biBmb3IgU1MgZGVwZW5kcyBvbiB0aGUgb3JpZW50YXRpb24gb2YgdGhlCj4gICBVU0ItQyBwbHVn
-LiBTaW5jZSB0aGVyZSBjdXJyZW50bHkgaXMgbm8gaW5mcmFzdHJ1Y3R1cmUgdG8gY2hhaW4KPiAg
-IGNvbm5lY3RvciBldmVudHMgdG8gYm90aCB0aGUgVVNCIERXQzMgZHJpdmVyIGFuZCB0aGlzIHBo
-eSBkcml2ZXIsIGEKPiAgIHdvcmstYXJvdW5kIGhhcyBiZWVuIGFkZGVkIGluCj4gICBleHlub3M1
-X3VzYmRyZF91c2JkcF9nMl92NF9wbWFfY2hlY2tfY2RyX2xvY2soKSB0byBjaGVjayBib3RoCj4g
-ICByZWdpc3RlcnMgaWYgaXQgZmFpbGVkIGluIG9uZSBvZiB0aGUgb3JpZW50YXRpb25zLgo+Cj4g
-KiBFcXVhbGx5LCB3ZSBjYW4gb25seSBlc3RhYmxpc2ggU1Mgc3BlZWQgaW4gb25lIG9mIHRoZSBj
-b25uZWN0b3IKPiAgIG9yaWVudGF0aW9ucyBkdWUgdG8gcHJvZ3JhbW1pbmcgZGlmZmVyZW5jZXMg
-d2hlbiBzZWxlY3RpbmcgdGhlIGxhbmUKPiAgIG11eCBpbiBleHlub3M1X3VzYmRyZF91c2JkcF9n
-Ml92NF9wbWFfbGFuZV9tdXhfc2VsKCksIHdoaWNoIHJlYWxseQo+ICAgbmVlZHMgdG8gYmUgZHlu
-YW1pYywgYmFzZWQgb24gdGhlIG9yaWVudGF0aW9uIG9mIHRoZSBjb25uZWN0b3IuCj4KPiAqIEFz
-IGlzLCB3ZSBjYW4gZXN0YWJsaXNoIGEgSFMgbGluayB1c2luZyBhbnkgY2FibGUsIGFuZCBhbiBT
-UyBsaW5rIGluCj4gICBvbmUgb3JpZW50YXRpb24gb2YgdGhlIHBsdWcsIGZhbGxpbmcgYmFjayB0
-byBIUyBpZiB0aGUgb3JpZW50YXRpb24gaXMKPiAgIHJldmVyc2VkIHRvIHRoZSBleHBlY3RhdGlv
-bi4KPgo+IFNpZ25lZC1vZmYtYnk6IEFuZHLDqSBEcmFzemlrIDxhbmRyZS5kcmFzemlrQGxpbmFy
-by5vcmc+Cj4KPiAtLS0KClJldmlld2VkLWJ5OiAgUGV0ZXIgR3JpZmZpbiA8cGV0ZXIuZ3JpZmZp
-bkBsaW5hcm8ub3JnPgphbmQKVGVzdGVkLWJ5OiBQZXRlciBHcmlmZmluIDxwZXRlci5ncmlmZmlu
-QGxpbmFyby5vcmc+CgpUZXN0ZWQgdXNpbmcgbXkgUGl4ZWwgNiBwcm8gZGV2aWNlLiBVU0IgY29t
-ZXMgdXAgYW5kIGl0IGlzIHBvc3NpYmxlIHRvCnVzZSBhZGIgZnJvbSB0aGUgaG9zdCBjb21wdXRl
-ciB0byB0aGUgcGhvbmUuCgpyZWdhcmRzLAoKUGV0ZXIKClsuLl0KCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Wed, Feb 08, 2023 at 09:01:53PM +0200, Abel Vesa wrote:
+> This patchset adds support for the eUSB2 repeater found in pmic PM8550B,
+> used along with SM8550. Since there is no dedicated generic framework
+> for eUSB2 repeaters, the most appropriate subsystem to model it is the
+> generic phy. This patchset also adds support for such repeater to the
+> eUSB2 PHY found in SM8550. Basically, the eUSB2 PHY will have its own
+> "phy" which is actually a repeater.
+
+The decision to model the repeater as a PHY unfortunately breaks lockdep
+as you now have functions like phy_init() calling phy_init() for a
+second PHY (the repeater, see splat below).
+
+As long as the locks are always taken in the same order there should be
+no risk for a deadlock, but can you please verify that and add the
+missing lockdep annotation so that lockdep can be used on platforms like
+x1e80100 (e.g. to prevent further locking issues from being introduced)?
+
+Johan
+
+
+[    8.613248] ============================================
+[    8.669073] WARNING: possible recursive locking detected
+[    8.669074] 6.10.0-rc5 #122 Not tainted
+[    8.669075] --------------------------------------------
+[    8.669075] kworker/u50:0/77 is trying to acquire lock:
+[    8.669076] ffff5cae8733ecf8 (&phy->mutex){+.+.}-{3:3}, at: phy_init+0x4c/0x12c
+[    8.669087]
+               but task is already holding lock:
+[    8.669088] ffff5cae8a056cf8 (&phy->mutex){+.+.}-{3:3}, at: phy_init+0x4c/0x12c
+[    8.669092]
+               other info that might help us debug this:
+[    8.669092]  Possible unsafe locking scenario:
+
+[    8.669093]        CPU0
+[    8.669093]        ----
+[    8.669094]   lock(&phy->mutex);
+[    8.669095]   lock(&phy->mutex);
+[    8.669097]
+                *** DEADLOCK ***
+
+[    8.669097]  May be due to missing lock nesting notation
+
+[    8.669097] 4 locks held by kworker/u50:0/77:
+[    8.669099]  #0: ffff5cae80010948 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work+0x1a4/0x638
+[    8.669108]  #1: ffff800080333de0 (deferred_probe_work){+.+.}-{0:0}, at: process_one_work+0x1cc/0x638
+[    8.669112]  #2: ffff5cae854038f8 (&dev->mutex){....}-{3:3}, at: __device_attach+0x38/0x1d4
+[    8.669117]  #3: ffff5cae8a056cf8 (&phy->mutex){+.+.}-{3:3}, at: phy_init+0x4c/0x12c
+[    8.669121]
+               stack backtrace:
+[    8.669122] CPU: 9 PID: 77 Comm: kworker/u50:0 Not tainted 6.10.0-rc5 #122
+[    8.669124] Hardware name: Qualcomm CRD, BIOS 6.0.231221.BOOT.MXF.2.4-00348.1-HAMOA-1 12/21/2023
+[    8.669125] Workqueue: events_unbound deferred_probe_work_func
+[    8.669128] Call trace:
+[    8.669129]  dump_backtrace+0x9c/0x11c
+[    8.870384]  show_stack+0x18/0x24
+[    8.870386]  dump_stack_lvl+0x90/0xd0
+[    8.870391]  dump_stack+0x18/0x24
+[    8.870393]  print_deadlock_bug+0x25c/0x348
+[    8.870396]  __lock_acquire+0x10a4/0x2064
+[    8.870399]  lock_acquire.part.0+0xc8/0x20c
+[    8.870401]  lock_acquire+0x68/0x84
+[    8.870403]  __mutex_lock+0x98/0x428
+[    8.870407]  mutex_lock_nested+0x24/0x30
+[    8.870410]  phy_init+0x4c/0x12c
+[    8.870412]  qcom_snps_eusb2_hsphy_init+0x54/0x420 [phy_qcom_snps_eusb2]
+[    8.870416]  phy_init+0xe0/0x12c
+[    8.870418]  dwc3_core_init+0x484/0x1214
+[    8.870421]  dwc3_probe+0xe54/0x171c
+[    8.870424]  platform_probe+0x68/0xd8
+[    8.870426]  really_probe+0xc0/0x388
+[    8.870427]  __driver_probe_device+0x7c/0x160
+[    8.870429]  driver_probe_device+0x40/0x114
+[    8.870430]  __device_attach_driver+0xbc/0x158
+[    8.870432]  bus_for_each_drv+0x84/0xe0
+[    8.870433]  __device_attach+0xa8/0x1d4
+[    8.870435]  device_initial_probe+0x14/0x20
+[    8.870436]  bus_probe_device+0xb0/0xb4
+[    8.870437]  deferred_probe_work_func+0xa0/0xf4
+[    8.870439]  process_one_work+0x224/0x638
+[    8.870441]  worker_thread+0x268/0x3a8
+[    8.870442]  kthread+0x124/0x128
+[    8.870443]  ret_from_fork+0x10/0x20
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
