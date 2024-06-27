@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FFDDC2BD09
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3664C3065A
 	for <linux-phy@archiver.kernel.org>; Thu, 27 Jun 2024 15:54:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,33 +12,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3k5yK5wzI8QgwkpTLoUwdb6VrnBJF+iDAintzD/4eM8=; b=vbTnzW9PZyOSNj
-	4esobNrehg08IxGqW56KT/uUToLRnVzhzrvn2frhLjjuah7EFvkc2U+iT+JIgIMJQS4YJh/S1yW5I
-	ZAM5o0bkmK2Lygz88FSgYFMKTU+EleyzjmcHfmyJro1FvPqdTIgN6Q9zmF3cg0pV7xri+YzOu4Blv
-	gE9aHSNVg4+IhEPwuWJyJp5S+pV6iUXsFCgXNCHufORyHcCB8kvoUyc1vrW5Rpx6hFhY0FWF5av+9
-	7VPoCqYOraR45H6Zj35nW9DaSQgSvqlYsji26ae/odw5hvexXfGqDlPOfUu8ht+xrcQgL2//oUvVd
-	6jtKia9/vQ7ZcmMqp58g==;
+	List-Owner; bh=LE0KYJH071Ta/CL66ZR9J3xQPjVufZ/csq4aqW6CNk8=; b=NpetiBlxfh1CUC
+	CcWal7xri5DuiIUklhUkAgNiAiC5e2r4Pbx0eyn/ANucpWuPbhpx8u+dg0vYh2UM3ySZer5SmcajO
+	yqhkoc9J7XYMSwuIzaf0LDKC5TyOfsLtC97MoqYWtJXl+rOL9dHw9QA/AoUvHcyTLZl+bUexolWEI
+	LbNsIZ5ZWI6NRqjjqJQmv2MxfwFxgEojbjDxJyQZT4D+cg1XnN593uVUA/A3rr8QWTM113Qf+BoDy
+	C/vb2FJh6xvbnMP78YrOBY0XT3ujpAalJ0+rQdUJ21kUNh0PxuNljRUO+k+T3uADPXAkK5Xor2J6l
+	iA7KhblnUJyfEz9XTi0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrS2-0000000AwZG-42kD;
-	Thu, 27 Jun 2024 15:54:22 +0000
+	id 1sMrS3-0000000AwZs-2KX3;
+	Thu, 27 Jun 2024 15:54:23 +0000
 Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrRv-0000000AwUo-3NAB
+	id 1sMrRv-0000000AwUq-3kjH
 	for linux-phy@lists.infradead.org;
-	Thu, 27 Jun 2024 15:54:19 +0000
+	Thu, 27 Jun 2024 15:54:20 +0000
 Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id B0BA6205DE;
+	by ns.iliad.fr (Postfix) with ESMTP id A3FE8201B4;
 	Thu, 27 Jun 2024 17:54:08 +0200 (CEST)
 Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id 99E0120871;
+	by ns.iliad.fr (Postfix) with ESMTP id 8F2CB205E8;
 	Thu, 27 Jun 2024 17:54:08 +0200 (CEST)
 From: Marc Gonzalez <mgonzalez@freebox.fr>
-Date: Thu, 27 Jun 2024 17:54:00 +0200
-Subject: [PATCH v5 2/4] dt-bindings: display/msm: hdmi: add
- qcom,hdmi-tx-8998
+Date: Thu, 27 Jun 2024 17:53:59 +0200
+Subject: [PATCH v5 1/4] dt-bindings: phy: add qcom,hdmi-phy-8998
 MIME-Version: 1.0
-Message-Id: <20240627-hdmi-tx-v5-2-355d5c1fbc3c@freebox.fr>
+Message-Id: <20240627-hdmi-tx-v5-1-355d5c1fbc3c@freebox.fr>
 References: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
 In-Reply-To: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -57,13 +56,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
  freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
  Pierre-Hugues Husson <phhusson@freebox.fr>, 
- Jeffrey Hugo <quic_jhugo@quicinc.com>, 
- Conor Dooley <conor.dooley@microchip.com>, 
- Marc Gonzalez <mgonzalez@freebox.fr>
+ Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_085416_025002_D78BBC2F 
-X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-CacheID: sfid-20240627_085416_124099_4E221AA6 
+X-CRM114-Status: UNSURE (   5.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,74 +78,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-HDMI TX block embedded in the APQ8098.
+HDMI PHY block embedded in the APQ8098.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 ---
- .../devicetree/bindings/display/msm/hdmi.yaml      | 28 ++++++++++++++++++++--
- 1 file changed, 26 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/display/msm/hdmi.yaml b/Documentation/devicetree/bindings/display/msm/hdmi.yaml
-index 47e97669821c3..d4a2033afea8d 100644
---- a/Documentation/devicetree/bindings/display/msm/hdmi.yaml
-+++ b/Documentation/devicetree/bindings/display/msm/hdmi.yaml
-@@ -19,14 +19,15 @@ properties:
-       - qcom,hdmi-tx-8974
-       - qcom,hdmi-tx-8994
-       - qcom,hdmi-tx-8996
-+      - qcom,hdmi-tx-8998
- 
-   clocks:
-     minItems: 1
--    maxItems: 5
-+    maxItems: 8
- 
-   clock-names:
-     minItems: 1
--    maxItems: 5
-+    maxItems: 8
+diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+index 83fe4b39b56f4..78607ee3e2e84 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+@@ -14,6 +14,7 @@ properties:
+   compatible:
+     enum:
+       - qcom,hdmi-phy-8996
++      - qcom,hdmi-phy-8998
  
    reg:
-     minItems: 1
-@@ -142,6 +143,7 @@ allOf:
-       properties:
-         clocks:
-           minItems: 5
-+          maxItems: 5
-         clock-names:
-           items:
-             - const: mdp_core
-@@ -151,6 +153,28 @@ allOf:
-             - const: extp
-         hdmi-mux-supplies: false
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,hdmi-tx-8998
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 8
-+          maxItems: 8
-+        clock-names:
-+          items:
-+            - const: mdp_core
-+            - const: iface
-+            - const: core
-+            - const: alt_iface
-+            - const: extp
-+            - const: bus
-+            - const: mnoc
-+            - const: iface_mmss
-+
- additionalProperties: false
- 
- examples:
+     maxItems: 6
 
 -- 
 2.34.1
