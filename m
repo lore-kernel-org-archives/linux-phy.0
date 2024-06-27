@@ -4,71 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A494EC2BD09
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jun 2024 08:28:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B17C4C41513
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jun 2024 11:18:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zKhNV6pvIrD9VHgh/nLPkr5519cZ0jSqdkeZlPIwyG0=; b=Q3D4zo8XFejPLb
-	9SCGGrl9x9n6o9iJtVhQISBECe3tjRl0XjifltGpR816nLvB/OmXTcTXBu0/id/qp9RA5wDNh+fd0
-	rqEtPtUF08qO/yRkQNHpG4wunhRuOPuGNzzRjwI8kEDA94FICk+5HmBMsYPROhmbwaO9u62H1sGai
-	AFyJ6308AWYtNfy7jf52hB5tDZCpScYua9QHOE4xtHq+JvRmpBPKtF3HcCjaOkb2pjNyZnxx4XwoL
-	9ReRIFZqgpGCbi4brOm9QzB1cG8g0jIBRNLT+X6EdQUN4L/5em2/9AsACGMGVizsm5lV54lAOzNFr
-	nUbBBlUDAeUnU0Fi1ilQ==;
+	List-Owner; bh=efQszP4wRR1e50Re62P0QzF9Fc/M5ePaZkda5wZ5/Pg=; b=jhQU6O9nd+htCw
+	qPD2DOkm1MkJgigbdNO91FyPV+NZL5+Kv0hQmZFV0WNDCteNDaEUAXZ6Tc2pdgnt8cBkdhpX2v4Hu
+	Ob6S4z372L3gczfMDSawPZo40408LOjVYVyk0k7EPn0lPsZQOrtTrKFAThC+nXjDadxJVlYVIxh3d
+	gv1FJOHFCyTNNmXwQvEFQF5JK7YV2rvOEHjishj0wTOav/88ybnbiI1nXcLkzBbiHpIfxgJBpGMpu
+	VACNN8av0H5tZ7yuJJPJwBvor/2E/xXeLBh1sVB+oQeiod7MhxlzUb2HbuVSpLbb2qehUrl9drEBy
+	Seywtf999VFiynzUaxTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMkUx-00000009kbm-0zz4;
-	Thu, 27 Jun 2024 08:28:55 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sMn9J-0000000A87Z-0inD;
+	Thu, 27 Jun 2024 11:18:45 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMkUl-00000009kXe-1BmH;
-	Thu, 27 Jun 2024 08:28:44 +0000
+	id 1sMn8a-0000000A7uj-0YVi
+	for linux-phy@lists.infradead.org;
+	Thu, 27 Jun 2024 11:18:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 893DD611E2;
-	Thu, 27 Jun 2024 08:28:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF220C2BBFC;
-	Thu, 27 Jun 2024 08:28:36 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 7FB3ACE2E04;
+	Thu, 27 Jun 2024 11:17:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 204E5C2BBFC;
+	Thu, 27 Jun 2024 11:17:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719476921;
-	bh=n/uEXqzaAS0LB/LRznxb+HuYwPZJVllY5Qhdrwu1MqU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LEJZDHhVhcNiVug6kgdBPbYxRjCNx3u1B6goW2YKr70VVSxpBOxlBUHeSuYa69PEO
-	 evUjmHD04cVXV97ioGmV3hC66TnlzhUmiTVfDnx82jeam1/5GVSaKrmaNr8cpBMXOw
-	 8ElIXezAY0pkC1nzBYb5NtlIA8abPWhBuy+YAeh32+IqCX00aDhGxRp3lvyLRCz4yO
-	 xyZs7jyr3zFqI06WgnbXHULic4LJo+85KS/zFk/1Zy9T4+iB8MD92cf7ss7dqUgoYz
-	 jO/xxmlIKNrjscgSLWgU30KlHGdw8b7kuzL9AfjX0Lh1nRVv89E3Db7ACr7prEHib7
-	 AgMu06ztKLyiQ==
-Date: Thu, 27 Jun 2024 09:28:33 +0100
-From: Lee Jones <lee@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Pavel Machek <pavel@ucw.cz>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Richard Weinberger <richard@nod.at>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Rahul Tanwar <rtanwar@maxlinear.com>, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org, linux-leds@vger.kernel.org,
-	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: intel,lgm: drop inactive maintainers from
- intel
-Message-ID: <20240627082833.GI2532839@google.com>
-References: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
+	s=k20201202; t=1719487077;
+	bh=lYXCKK3L8/DSkekHvSq+N+Z2VYSpxXcAEISKHGObnxE=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=tmpW9XsQG/WwI+RcUrAMLEvl/Gih+sV+nymxc4UnjuU116Pgi8wCKIeG4SH1W9HUI
+	 dNj9asjQqMODOc0cEjFhcvs/F6rGg+En9yLuES52GXot1qw4QvlCLl11JMib6gJYcd
+	 WQhJMpK81xdBiKAmpfGeFyX7Z7wZ19IXHADiVQ3Sj1WB5PiIRQccC8DnqKfhJf+Zit
+	 8KSO+9JCZOyKsvTLlZzEzW0vsnXB4mmNB2ajjeHcSmfOYMpLlv78tPFo37lM77bUyk
+	 dTrd6sXOSuiErLWAehEebVLr2ZmzTA5lFhHX0/h5KJ4TOypIY+Ovl3HigBkb6kL8pW
+	 s2twWSv9FvthQ==
+From: Mark Brown <broonie@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
+ Biju Das <biju.das.jz@bp.renesas.com>
+Cc: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+ Biju Das <biju.das.au@gmail.com>, devicetree@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org
+In-Reply-To: <20240616105402.45211-1-biju.das.jz@bp.renesas.com>
+References: <20240616105402.45211-1-biju.das.jz@bp.renesas.com>
+Subject: Re: (subset) [PATCH v4 0/6] Add USB VBUS regulator for RZ/G2L
+Message-Id: <171948707484.56488.11243036600032850483.b4-ty@kernel.org>
+Date: Thu, 27 Jun 2024 12:17:54 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.14-dev-d4707
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_012843_690826_85686E80 
-X-CRM114-Status: GOOD (  12.89  )
+X-CRM114-CacheID: sfid-20240627_041800_401182_0E6C1990 
+X-CRM114-Status: GOOD (  11.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,36 +74,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCAyNiBKdW4gMjAyNCwgS3J6eXN6dG9mIEtvemxvd3NraSB3cm90ZToKCj4gRW1haWxz
-IHRvIGNodWFuaHVhLmxlaUBpbnRlbC5jb20sIG1hbGxpa2FyanVuYXgucmVkZHlAaW50ZWwuY29t
-LAo+IHlpeGluLnpodUBpbnRlbC5jb20gYW5kIHZhZGl2ZWwubXVydWdhbngucmFtdXRoZXZhckBs
-aW51eC5pbnRlbC5jb20KPiBib3VuY2Ugd2l0aCB0aGUgc2FtZSBtZXNzYWdlOgo+IAo+ICAgWW91
-ciBtZXNzYWdlIHdhc24ndCBkZWxpdmVyZWQgdG8gWWl4aW4uemh1QGludGVsLmNvbSBiZWNhdXNl
-IHRoZQo+ICAgYWRkcmVzcyBjb3VsZG4ndCBiZSBmb3VuZCBvciBpcyB1bmFibGUgdG8gcmVjZWl2
-ZSBlbWFpbC4KPiAKPiBUaGUgSW50ZWwgTEdNIFNvQyB3YXMgYXBwYXJlbnRseSBwYXJ0IG9mIEhv
-bWUgR2F0ZXdheSBkaXZpc2lvbiB3aGljaCB3YXMKPiBhY3F1aXJlZCBieSBNYXhsaW5lYXIsIHNv
-IHN3aXRjaCBtYWludGVuYW5jZSBvZiBhZmZlY3RlZCBiaW5kaW5ncyB0byB0aGUKPiBvbmx5IGtu
-b3duIG5vbi1ib3VuY2luZyBNYXhsaW5lYXIgYWRkcmVzczogUmFodWwgVGFud2FyLgo+IAo+IEkg
-ZG8gbm90IGtub3cgaWYgUmFodWwgVGFud2FyIG9yIE1heGxpbmVhciB3YW50IHRvIG1haW50YWlu
-IHRoZQo+IGJpbmRpbmdzLCBzbyByZWdhcmRsZXNzIG9mIHRoaXMgY2hhbmdlIHdlIHNob3VsZCBj
-b25zaWRlciBiaW5kaW5ncwo+IGFiYW5kb25lZCBhbmQgcHJvYmFibHkgZHJvcCBzb29uLgo+IAo+
-IFNpZ25lZC1vZmYtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lA
-bGluYXJvLm9yZz4KPiAtLS0KPiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Ns
-b2NrL2ludGVsLGNndS1sZ20ueWFtbCAgICB8IDIgKy0KPiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL2RtYS9pbnRlbCxsZG1hLnlhbWwgICAgICAgICB8IDMgKy0tCj4gIERvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9sZWRzL2xlZHMtbGdtLnlhbWwgICAgICAgICAg
-fCAzICstLQoKQWNrZWQtYnk6IExlZSBKb25lcyA8bGVlQGtlcm5lbC5vcmc+Cgo+ICBEb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbXRkL2ludGVsLGxnbS1lYnVuYW5kLnlhbWwgIHwg
-MiArLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L2ludGVsLGxnbS1l
-bW1jLXBoeS55YW1sIHwgMiArLQo+ICBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-cGh5L2ludGVsLGxnbS11c2ItcGh5LnlhbWwgIHwgMiArLQo+ICBEb2N1bWVudGF0aW9uL2Rldmlj
-ZXRyZWUvYmluZGluZ3MvcGluY3RybC9pbnRlbCxsZ20taW8ueWFtbCAgIHwgMiArLQo+ICA3IGZp
-bGVzIGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygrKSwgOSBkZWxldGlvbnMoLSkKCi0tIApMZWUgSm9u
-ZXMgW+adjueQvOaWr10KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LXBoeQo=
+On Sun, 16 Jun 2024 11:53:52 +0100, Biju Das wrote:
+> As per RZ/G2L HW manual, VBUS enable can be controlled by the VBOUT bit of
+> the VBUS Control Register(VBENCTL) register in the USBPHY Control. But
+> this IP is in the Reset block.
+> 
+> Reset driver exposes this register as regmap and instantiate the USB VBUS
+> regulator device. Consumers(phy device) can use regulator APIs to control
+> VBUS as controlling is done in the atomic context.
+> 
+> [...]
+
+Applied to
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-next
+
+Thanks!
+
+[3/6] regulator: core: Add helper for allow HW access to enable/disable regulator
+      commit: 1cb7d29157603561af4c38535e936850ceb99f0f
+[4/6] regulator: Add Renesas RZ/G2L USB VBUS regulator driver
+      commit: 84fbd6198766336f627ba08f073fd9970729074e
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
