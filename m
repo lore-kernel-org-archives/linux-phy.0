@@ -4,44 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03B95C3064D
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jun 2024 15:54:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FFDDC2BD09
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Jun 2024 15:54:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=V7R4LYWo/dQhzdw15i4ZYNov4IAhJKdMvCs57lO/DBI=; b=jlXkKXYMoT5pPY
-	5lhi1wmOheIC7rmEb1kWVJsxvTTDyO/d135L0GVLP/YtXtMAaDzouGjhq3gmPwgJ8WRvlkJrWRC+b
-	CPuYgqG509WAUUQ2E++e/O5KshI/pJqBlDECt+A2jop9W1jmH3ZNDuiRlB8HfLl9bdRxqigeaY/wV
-	fzJq5HlEky52NdD1f57VLKctnWmtH9BybFs8IsSUl/DQmxneilDd/2H3oNr8FV6aMHVfFZGeHRT+G
-	6Bk1GSkGOku0zXMyNrVrx2/z5TgmRe5XCDo9SWuuvVMh2kD9khjX5h9D20KFKDjZ5lW+aBrMDT0Ng
-	4bABC3Bk9w4Ue4VZe3lQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3k5yK5wzI8QgwkpTLoUwdb6VrnBJF+iDAintzD/4eM8=; b=vbTnzW9PZyOSNj
+	4esobNrehg08IxGqW56KT/uUToLRnVzhzrvn2frhLjjuah7EFvkc2U+iT+JIgIMJQS4YJh/S1yW5I
+	ZAM5o0bkmK2Lygz88FSgYFMKTU+EleyzjmcHfmyJro1FvPqdTIgN6Q9zmF3cg0pV7xri+YzOu4Blv
+	gE9aHSNVg4+IhEPwuWJyJp5S+pV6iUXsFCgXNCHufORyHcCB8kvoUyc1vrW5Rpx6hFhY0FWF5av+9
+	7VPoCqYOraR45H6Zj35nW9DaSQgSvqlYsji26ae/odw5hvexXfGqDlPOfUu8ht+xrcQgL2//oUvVd
+	6jtKia9/vQ7ZcmMqp58g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrS0-0000000AwY5-1zIA;
-	Thu, 27 Jun 2024 15:54:20 +0000
+	id 1sMrS2-0000000AwZG-42kD;
+	Thu, 27 Jun 2024 15:54:22 +0000
 Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrRu-0000000AwUn-3nFC
+	id 1sMrRv-0000000AwUo-3NAB
 	for linux-phy@lists.infradead.org;
-	Thu, 27 Jun 2024 15:54:18 +0000
+	Thu, 27 Jun 2024 15:54:19 +0000
 Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id 9B647208AC;
+	by ns.iliad.fr (Postfix) with ESMTP id B0BA6205DE;
 	Thu, 27 Jun 2024 17:54:08 +0200 (CEST)
 Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id 80972205DE;
+	by ns.iliad.fr (Postfix) with ESMTP id 99E0120871;
 	Thu, 27 Jun 2024 17:54:08 +0200 (CEST)
 From: Marc Gonzalez <mgonzalez@freebox.fr>
-Subject: [PATCH v5 0/4] HDMI TX support in msm8998
-Date: Thu, 27 Jun 2024 17:53:58 +0200
-Message-Id: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
+Date: Thu, 27 Jun 2024 17:54:00 +0200
+Subject: [PATCH v5 2/4] dt-bindings: display/msm: hdmi: add
+ qcom,hdmi-tx-8998
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIABeLfWYC/2WOyw6CMBBFf4V07Zi+GKgr/8O4aOlUukBMIQRD+
- HcLGzEuT3LPyV3YQCnSwC7FwhJNcYj9M0N5KljT2ueDIPrMTHKpOXKE1ncRxhk4J6qp8t7ZhuX
- 1K1GI81663TOH1Hcwtons7lvZOCENB0NcgBYKwZRGQkNaGSe4QYfXkIhcP59D2optHMY+vfdrk
- 9q6/y8mBTnpq0AOvUJdHRvbjUkfRKG+os6itkFUpLFGY37EdV0/CDwMKxoBAAA=
+Message-Id: <20240627-hdmi-tx-v5-2-355d5c1fbc3c@freebox.fr>
+References: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
+In-Reply-To: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -58,12 +57,13 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
  freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
  Pierre-Hugues Husson <phhusson@freebox.fr>, 
- Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>, 
- Conor Dooley <conor.dooley@microchip.com>
+ Jeffrey Hugo <quic_jhugo@quicinc.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ Marc Gonzalez <mgonzalez@freebox.fr>
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_085415_129168_CC1D5E07 
-X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-CacheID: sfid-20240627_085416_025002_D78BBC2F 
+X-CRM114-Status: UNSURE (   6.76  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,44 +81,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-DT bits required for HDMI TX support in APQ8098 (msm8998 cousin)
+HDMI TX block embedded in the APQ8098.
 
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 ---
-Changes in v5:
-- Fix property & property-names for TX pinctrl in DTSI (Konrad)
-- NOT CHANGED: clock trees for TX & PHY based on Dmitry & Jeffrey's remarks
-- Link to v4: https://lore.kernel.org/r/20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr
+ .../devicetree/bindings/display/msm/hdmi.yaml      | 28 ++++++++++++++++++++--
+ 1 file changed, 26 insertions(+), 2 deletions(-)
 
-Changes in v4:
-- Collect tags since v3
-- Reword patch 1 subject (Vinod)
-- Link to v3: https://lore.kernel.org/r/20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr
+diff --git a/Documentation/devicetree/bindings/display/msm/hdmi.yaml b/Documentation/devicetree/bindings/display/msm/hdmi.yaml
+index 47e97669821c3..d4a2033afea8d 100644
+--- a/Documentation/devicetree/bindings/display/msm/hdmi.yaml
++++ b/Documentation/devicetree/bindings/display/msm/hdmi.yaml
+@@ -19,14 +19,15 @@ properties:
+       - qcom,hdmi-tx-8974
+       - qcom,hdmi-tx-8994
+       - qcom,hdmi-tx-8996
++      - qcom,hdmi-tx-8998
+ 
+   clocks:
+     minItems: 1
+-    maxItems: 5
++    maxItems: 8
+ 
+   clock-names:
+     minItems: 1
+-    maxItems: 5
++    maxItems: 8
+ 
+   reg:
+     minItems: 1
+@@ -142,6 +143,7 @@ allOf:
+       properties:
+         clocks:
+           minItems: 5
++          maxItems: 5
+         clock-names:
+           items:
+             - const: mdp_core
+@@ -151,6 +153,28 @@ allOf:
+             - const: extp
+         hdmi-mux-supplies: false
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,hdmi-tx-8998
++    then:
++      properties:
++        clocks:
++          minItems: 8
++          maxItems: 8
++        clock-names:
++          items:
++            - const: mdp_core
++            - const: iface
++            - const: core
++            - const: alt_iface
++            - const: extp
++            - const: bus
++            - const: mnoc
++            - const: iface_mmss
++
+ additionalProperties: false
+ 
+ examples:
 
-Changes in v3
-- Address Rob's comments on patch 2:
-  - 'maxItems: 5' for clocks in the 8996 if/then schema
-  - match the order of 8996 for the clock-names in common
-
----
-Arnaud Vrac (1):
-      arm64: dts: qcom: add HDMI nodes for msm8998
-
-Marc Gonzalez (3):
-      dt-bindings: phy: add qcom,hdmi-phy-8998
-      dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
-      arm64: dts: qcom: msm8998: add HDMI GPIOs
-
- .../devicetree/bindings/display/msm/hdmi.yaml      |  28 ++++-
- .../devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml |   1 +
- arch/arm64/boot/dts/qcom/msm8998.dtsi              | 128 ++++++++++++++++++++-
- 3 files changed, 154 insertions(+), 3 deletions(-)
----
-base-commit: 0169018354b9a9a2ef5d4972da3c4644ab2a73b2
-change-id: 20240606-hdmi-tx-00ee8e7ddbac
-
-Best regards,
 -- 
-Marc Gonzalez <mgonzalez@freebox.fr>
+2.34.1
 
 
 -- 
