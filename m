@@ -4,71 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECF50C2BBCA
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Jun 2024 06:57:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22E1DC2BD09
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Jun 2024 20:56:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zJLdYiIrds9++l8dNwYVtm+nEnri9/fgDuo5c7ZSRzk=; b=El0ZOWvNNtO+HT
-	UkhuP/ps9NbPSUF3OMh2F8imGTvTk9qBmfwzYm1ef6kF3N195slcZMjxbL8ymYFsAgO+faEpSFcDT
-	v2RQpdjqX2lkEGWl9bLYMwqxrDZFIf5wKR028RfwwcqjvWF9vZRuwGtzXLXaC7hZ5i2jZS2zlgO/7
-	P1GYpJL+NfbubpkreXQTmcWIhZyLA+OD8cPfkIHek/Jiwg9mBvCbii1mY3l5/quepmOevVEDT2I1F
-	2XLkImqE4uXUbRwoVyXF6kTF+8YX9Wud2HGB1PAuwAMZJ21sTPAQjyVcF2mv0lxzNGjkXyjIP4Ghq
-	dby8dAKG7P95Oo34Mxxw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tCGv4CN58xjzZ2Ql7evX1bCTX0iURXjatXUDsM+gszQ=; b=AFohhB61BiBGIs
+	K1ywdSRtPxa+M5GbLgbYikJI9g3HI8PvNshnTHM5v2755T16jTqQc4AG4wJqQNp9BEYgY16ng8/OM
+	/cYetk1LHk3RgaMuvJuYXfu6nGOCBeAVtaKB5aQlJDvhsrl53f0Vs/lQwyx4PVe295a/iNutrWiqE
+	kUFOL0+CUkS8IyeXbOv501LVkHF4p21+6MIltoUqIua4BIoZL0VLl4j1YnZXlDVETX4hbDM5Kj/cV
+	OiKNeGfJaBhjdWanSkC1w1LT/opWie4OEoW0Si6HlJhj8k8MYPUqvF/CshqVXrpFz4uOAb3jO0zKd
+	ejRoH25kDsc7yiFaFElw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sN5YR-0000000CpWO-2Mtp;
-	Fri, 28 Jun 2024 06:57:55 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sNIeM-0000000EwAI-2xWu;
+	Fri, 28 Jun 2024 20:56:54 +0000
+Received: from out-174.mta1.migadu.com ([2001:41d0:203:375::ae])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sN5YN-0000000CpVn-3zRh;
-	Fri, 28 Jun 2024 06:57:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 29C9861DE3;
-	Fri, 28 Jun 2024 06:57:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF8CAC116B1;
-	Fri, 28 Jun 2024 06:57:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719557869;
-	bh=58lZCQAq4UI2kPsnIOyCJhEWm6AHR55RqFIhoOvy+cA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Zp6CluURowv+K0o/6F/MgxegIwLdBw2CY+SGJlzU3KpAFthCGzF5BdRqDhOX9fqA4
-	 6t4b9L4J09XsfQ9CJ+lFuJpKnCdsOjuvXVwRyHnP01vP9BLlw5o6QxJBiFMolGBdOV
-	 slZCTHTdDEmylt+etBWz6a3fIBVZBAWbN6PHcQjAC2NlCpNeIJISJn8bx3tparFCKS
-	 1hQ/eZI6WuJS5OlEtQb/0au/AZDl+wqO3YNyssROZqexkI3jDED6pT5dn6x3M/6I0A
-	 zuf07R+KZNWcUj3g8IyIPslcD3Fc30WwNBShmdFFG43vXx8MdIH+vY4RpRt8ZS5+jK
-	 dciT+YC/UsdFw==
-Date: Fri, 28 Jun 2024 12:27:45 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
-	Lee Jones <lee@kernel.org>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Richard Weinberger <richard@nod.at>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
+	id 1sNIda-0000000Evdy-1mBY
+	for linux-phy@lists.infradead.org;
+	Fri, 28 Jun 2024 20:56:10 +0000
+X-Envelope-To: radhey.shyam.pandey@amd.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1719608160;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=51DtrpHQayl7ulUlBsixd6UFM0ekNQlu75nZ9eI5mu8=;
+	b=FVOUjV7Csnqr/7SpPyJafEPGIwIv7VRjGq0z3R9mywjnZNpOoUJLiAGqMPWiMdrLl5uH65
+	kRbsJVyUFba/TZKNRZObhdb6ycRj0hzRdLgiMNF7xUopX2Z+pDTjZhG/H8gibYeVE4jIA7
+	EuFM0FEXbIqG8Tai0m/vlB1uKNw4t+o=
+X-Envelope-To: laurent.pinchart@ideasonboard.com
+X-Envelope-To: linux-phy@lists.infradead.org
+X-Envelope-To: vkoul@kernel.org
+X-Envelope-To: linux-arm-kernel@lists.infradead.org
+X-Envelope-To: kishon@kernel.org
+X-Envelope-To: linux-kernel@vger.kernel.org
+X-Envelope-To: michal.simek@amd.com
+X-Envelope-To: sean.anderson@linux.dev
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Sean Anderson <sean.anderson@linux.dev>
+To: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	linux-phy@lists.infradead.org
+Cc: Vinod Koul <vkoul@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Rahul Tanwar <rtanwar@maxlinear.com>, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	dmaengine@vger.kernel.org, linux-leds@vger.kernel.org,
-	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: intel,lgm: drop inactive maintainers from
- intel
-Message-ID: <Zn5e6fPR5UkbPhdQ@matsya>
-References: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
+	linux-kernel@vger.kernel.org,
+	Michal Simek <michal.simek@amd.com>,
+	Sean Anderson <sean.anderson@linux.dev>
+Subject: [PATCH v3 0/5] phy: zynqmp: Fixes and debugfs support
+Date: Fri, 28 Jun 2024 16:55:35 -0400
+Message-Id: <20240628205540.3098010-1-sean.anderson@linux.dev>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_235752_087729_F3CABE94 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20240628_135606_632348_CDE06578 
+X-CRM114-Status: UNSURE (   5.89  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,37 +81,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-06-24, 12:18, Krzysztof Kozlowski wrote:
-> Emails to chuanhua.lei@intel.com, mallikarjunax.reddy@intel.com,
-> yixin.zhu@intel.com and vadivel.muruganx.ramuthevar@linux.intel.com
-> bounce with the same message:
-> 
->   Your message wasn't delivered to Yixin.zhu@intel.com because the
->   address couldn't be found or is unable to receive email.
-> 
-> The Intel LGM SoC was apparently part of Home Gateway division which was
-> acquired by Maxlinear, so switch maintenance of affected bindings to the
-> only known non-bouncing Maxlinear address: Rahul Tanwar.
-> 
-> I do not know if Rahul Tanwar or Maxlinear want to maintain the
-> bindings, so regardless of this change we should consider bindings
-> abandoned and probably drop soon.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  Documentation/devicetree/bindings/clock/intel,cgu-lgm.yaml    | 2 +-
->  Documentation/devicetree/bindings/dma/intel,ldma.yaml         | 3 +--
+This has a few fixes and cleanups. Additionally, the last patch adds
+useful debugfs info.
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
+Changes in v3:
+- Remove inapplicable comments
+- Take the phy mutex in xlate
+- Use "none" to represent ICM_PROTOCOL_PD, since the lane may not
+  actually be powered-down.
 
->  Documentation/devicetree/bindings/mtd/intel,lgm-ebunand.yaml  | 2 +-
->  Documentation/devicetree/bindings/phy/intel,lgm-emmc-phy.yaml | 2 +-
->  Documentation/devicetree/bindings/phy/intel,lgm-usb-phy.yaml  | 2 +-
+Changes in v2:
+- Enable reference clock correctly
+- Expand the icm_matrix comment
+- Move the logic for waiting on PLL lock to xpsgtr_wait_pll_lock
+- Use debugfs_create_devm_seqfile
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
+Sean Anderson (5):
+  phy: zynqmp: Enable reference clock correctly
+  phy: zynqmp: Store instance instead of type
+  phy: zynqmp: Only wait for PLL lock "primary" instances
+  phy: zynqmp: Take the phy mutex in xlate
+  phy: zynqmp: Add debugfs support
+
+ drivers/phy/xilinx/phy-zynqmp.c | 198 ++++++++++++++++----------------
+ 1 file changed, 100 insertions(+), 98 deletions(-)
 
 -- 
-~Vinod
+2.35.1.1320.gc452695387.dirty
+
 
 -- 
 linux-phy mailing list
