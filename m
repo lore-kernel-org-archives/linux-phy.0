@@ -4,64 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B9E0C30659
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Jun 2024 15:54:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECF50C2BBCA
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Jun 2024 06:57:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s/m6YWWF6TODt+CWrHysgrfBODqelFk7YYByvlgCc/s=; b=tr4AfvGtkKKLts
-	jFy5fdiMC5FifllWuQ+icbox00FS7iCiLytcxFzzLoA2o0PpiEaxCicNdi5DXwx7HKtKP1puP7gvb
-	JHxB7jOQa6436oKHnB57wzkV7juqC+SFt2+qcqwjy+k5htFbZVUTpbJsgbWh65NeA5T/lY9JwiNMQ
-	icCRRrMX2rU8ZuKBtxC9JY5fSw8XGgeWddahPX/TAKO9nx3VoRbnqAcplCai5qkAzKP+qXCJ7B4Bp
-	69TeSku6bxMkzgs4o1QkfvDv6ncOu39ohbtR2yyTC+qR51WZ5S4xUMNv5ltgdKT4WiFraiUWRwTjy
-	4YxclzePRMRXCmbUm/vA==;
+	List-Owner; bh=zJLdYiIrds9++l8dNwYVtm+nEnri9/fgDuo5c7ZSRzk=; b=El0ZOWvNNtO+HT
+	UkhuP/ps9NbPSUF3OMh2F8imGTvTk9qBmfwzYm1ef6kF3N195slcZMjxbL8ymYFsAgO+faEpSFcDT
+	v2RQpdjqX2lkEGWl9bLYMwqxrDZFIf5wKR028RfwwcqjvWF9vZRuwGtzXLXaC7hZ5i2jZS2zlgO/7
+	P1GYpJL+NfbubpkreXQTmcWIhZyLA+OD8cPfkIHek/Jiwg9mBvCbii1mY3l5/quepmOevVEDT2I1F
+	2XLkImqE4uXUbRwoVyXF6kTF+8YX9Wud2HGB1PAuwAMZJ21sTPAQjyVcF2mv0lxzNGjkXyjIP4Ghq
+	dby8dAKG7P95Oo34Mxxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrS3-0000000AwZX-199S;
-	Thu, 27 Jun 2024 15:54:23 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1sN5YR-0000000CpWO-2Mtp;
+	Fri, 28 Jun 2024 06:57:55 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMrRv-0000000AwUm-3ke2
-	for linux-phy@lists.infradead.org;
-	Thu, 27 Jun 2024 15:54:19 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id C02A320D42;
-	Thu, 27 Jun 2024 17:54:08 +0200 (CEST)
-Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id AD43F20D2A;
-	Thu, 27 Jun 2024 17:54:08 +0200 (CEST)
-From: Marc Gonzalez <mgonzalez@freebox.fr>
-Date: Thu, 27 Jun 2024 17:54:02 +0200
-Subject: [PATCH v5 4/4] arm64: dts: qcom: add HDMI nodes for msm8998
+	id 1sN5YN-0000000CpVn-3zRh;
+	Fri, 28 Jun 2024 06:57:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 29C9861DE3;
+	Fri, 28 Jun 2024 06:57:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF8CAC116B1;
+	Fri, 28 Jun 2024 06:57:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1719557869;
+	bh=58lZCQAq4UI2kPsnIOyCJhEWm6AHR55RqFIhoOvy+cA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Zp6CluURowv+K0o/6F/MgxegIwLdBw2CY+SGJlzU3KpAFthCGzF5BdRqDhOX9fqA4
+	 6t4b9L4J09XsfQ9CJ+lFuJpKnCdsOjuvXVwRyHnP01vP9BLlw5o6QxJBiFMolGBdOV
+	 slZCTHTdDEmylt+etBWz6a3fIBVZBAWbN6PHcQjAC2NlCpNeIJISJn8bx3tparFCKS
+	 1hQ/eZI6WuJS5OlEtQb/0au/AZDl+wqO3YNyssROZqexkI3jDED6pT5dn6x3M/6I0A
+	 zuf07R+KZNWcUj3g8IyIPslcD3Fc30WwNBShmdFFG43vXx8MdIH+vY4RpRt8ZS5+jK
+	 dciT+YC/UsdFw==
+Date: Fri, 28 Jun 2024 12:27:45 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+	Lee Jones <lee@kernel.org>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Richard Weinberger <richard@nod.at>,
+	Vignesh Raghavendra <vigneshr@ti.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Rahul Tanwar <rtanwar@maxlinear.com>, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	dmaengine@vger.kernel.org, linux-leds@vger.kernel.org,
+	linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: intel,lgm: drop inactive maintainers from
+ intel
+Message-ID: <Zn5e6fPR5UkbPhdQ@matsya>
+References: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-Message-Id: <20240627-hdmi-tx-v5-4-355d5c1fbc3c@freebox.fr>
-References: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
-In-Reply-To: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>, 
- Abhinav Kumar <quic_abhinavk@quicinc.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Sean Paul <sean@poorly.run>, 
- Marijn Suijten <marijn.suijten@somainline.org>, 
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
- Pierre-Hugues Husson <phhusson@freebox.fr>, 
- Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>
-X-Mailer: b4 0.13.0
+Content-Disposition: inline
+In-Reply-To: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240627_085416_131251_45E426C2 
-X-CRM114-Status: UNSURE (   7.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240627_235752_087729_F3CABE94 
+X-CRM114-Status: GOOD (  11.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,146 +85,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Arnaud Vrac <avrac@freebox.fr>
+On 26-06-24, 12:18, Krzysztof Kozlowski wrote:
+> Emails to chuanhua.lei@intel.com, mallikarjunax.reddy@intel.com,
+> yixin.zhu@intel.com and vadivel.muruganx.ramuthevar@linux.intel.com
+> bounce with the same message:
+> 
+>   Your message wasn't delivered to Yixin.zhu@intel.com because the
+>   address couldn't be found or is unable to receive email.
+> 
+> The Intel LGM SoC was apparently part of Home Gateway division which was
+> acquired by Maxlinear, so switch maintenance of affected bindings to the
+> only known non-bouncing Maxlinear address: Rahul Tanwar.
+> 
+> I do not know if Rahul Tanwar or Maxlinear want to maintain the
+> bindings, so regardless of this change we should consider bindings
+> abandoned and probably drop soon.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/clock/intel,cgu-lgm.yaml    | 2 +-
+>  Documentation/devicetree/bindings/dma/intel,ldma.yaml         | 3 +--
 
-Port device nodes from vendor code.
+Acked-by: Vinod Koul <vkoul@kernel.org>
 
-Signed-off-by: Arnaud Vrac <avrac@freebox.fr>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
----
- arch/arm64/boot/dts/qcom/msm8998.dtsi | 100 +++++++++++++++++++++++++++++++++-
- 1 file changed, 99 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/mtd/intel,lgm-ebunand.yaml  | 2 +-
+>  Documentation/devicetree/bindings/phy/intel,lgm-emmc-phy.yaml | 2 +-
+>  Documentation/devicetree/bindings/phy/intel,lgm-usb-phy.yaml  | 2 +-
 
-diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-index ba5e873f0f35f..417c12534823f 100644
---- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-@@ -2785,7 +2785,7 @@ mmcc: clock-controller@c8c0000 {
- 				 <&mdss_dsi0_phy 0>,
- 				 <&mdss_dsi1_phy 1>,
- 				 <&mdss_dsi1_phy 0>,
--				 <0>,
-+				 <&hdmi_phy 0>,
- 				 <0>,
- 				 <0>,
- 				 <&gcc GCC_MMSS_GPLL0_DIV_CLK>;
-@@ -2890,6 +2890,14 @@ dpu_intf2_out: endpoint {
- 							remote-endpoint = <&mdss_dsi1_in>;
- 						};
- 					};
-+
-+					port@2 {
-+						reg = <2>;
-+
-+						dpu_intf3_out: endpoint {
-+							remote-endpoint = <&hdmi_in>;
-+						};
-+					};
- 				};
- 			};
- 
-@@ -3045,6 +3053,96 @@ mdss_dsi1_phy: phy@c996400 {
- 
- 				status = "disabled";
- 			};
-+
-+			hdmi: hdmi-tx@c9a0000 {
-+				compatible = "qcom,hdmi-tx-8998";
-+				reg =	<0x0c9a0000 0x50c>,
-+					<0x00780000 0x6220>,
-+					<0x0c9e0000 0x2c>;
-+				reg-names = "core_physical",
-+					    "qfprom_physical",
-+					    "hdcp_physical";
-+
-+				interrupt-parent = <&mdss>;
-+				interrupts = <8>;
-+
-+				clocks = <&mmcc MDSS_MDP_CLK>,
-+					 <&mmcc MDSS_AHB_CLK>,
-+					 <&mmcc MDSS_HDMI_CLK>,
-+					 <&mmcc MDSS_HDMI_DP_AHB_CLK>,
-+					 <&mmcc MDSS_EXTPCLK_CLK>,
-+					 <&mmcc MDSS_AXI_CLK>,
-+					 <&mmcc MNOC_AHB_CLK>,
-+					 <&mmcc MISC_AHB_CLK>;
-+				clock-names =
-+					"mdp_core",
-+					"iface",
-+					"core",
-+					"alt_iface",
-+					"extp",
-+					"bus",
-+					"mnoc",
-+					"iface_mmss";
-+
-+				phys = <&hdmi_phy>;
-+				#sound-dai-cells = <1>;
-+
-+				pinctrl-0 = <&hdmi_hpd_default>,
-+					    <&hdmi_ddc_default>,
-+					    <&hdmi_cec_default>;
-+				pinctrl-1 = <&hdmi_hpd_sleep>,
-+					    <&hdmi_ddc_default>,
-+					    <&hdmi_cec_default>;
-+				pinctrl-names = "default", "sleep";
-+
-+				status = "disabled";
-+
-+				ports {
-+					#address-cells = <1>;
-+					#size-cells = <0>;
-+
-+					port@0 {
-+						reg = <0>;
-+						hdmi_in: endpoint {
-+							remote-endpoint = <&dpu_intf3_out>;
-+						};
-+					};
-+
-+					port@1 {
-+						reg = <1>;
-+						hdmi_out: endpoint {
-+						};
-+					};
-+				};
-+			};
-+
-+			hdmi_phy: hdmi-phy@c9a0600 {
-+				compatible = "qcom,hdmi-phy-8998";
-+				reg = <0x0c9a0600 0x18b>,
-+				      <0x0c9a0a00 0x38>,
-+				      <0x0c9a0c00 0x38>,
-+				      <0x0c9a0e00 0x38>,
-+				      <0x0c9a1000 0x38>,
-+				      <0x0c9a1200 0x0e8>;
-+				reg-names = "hdmi_pll",
-+					    "hdmi_tx_l0",
-+					    "hdmi_tx_l1",
-+					    "hdmi_tx_l2",
-+					    "hdmi_tx_l3",
-+					    "hdmi_phy";
-+
-+				#clock-cells = <0>;
-+				#phy-cells = <0>;
-+
-+				clocks = <&mmcc MDSS_AHB_CLK>,
-+					 <&gcc GCC_HDMI_CLKREF_CLK>,
-+					 <&rpmcc RPM_SMD_XO_CLK_SRC>;
-+				clock-names = "iface",
-+					      "ref",
-+					      "xo";
-+
-+				status = "disabled";
-+			};
- 		};
- 
- 		venus: video-codec@cc00000 {
+Acked-by: Vinod Koul <vkoul@kernel.org>
 
 -- 
-2.34.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
