@@ -4,40 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8EE0C2BD09
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Jun 2024 20:57:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A780C30658
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Jun 2024 20:57:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QBYsB+Oec2CC/nSXATJ6hYYv8/EunsI8pCjKB0QRw9s=; b=b1RSAUhGcy4HKL
-	454WA2SogXNOmA0BpNT3Oz9JLaGvhXrioME4S9TjkQ1j9EMBapWGqMwJA0kH9Yvc2p5cx/0w3cw0j
-	MsSkQXhed6/kRDahHOoZQUX1chJTalc8jta46ZzyC7IVVfToAutNJFL4LlE6w5kizRit5sO4IgxQI
-	PbqU/Ry3qXt3wiQ1iiDla30nvyqRqMa6mms+j52D0CLRxSt+6uAihVcYew50+IGYWf9IN/bV58M7I
-	QVOEJ9HJ3mewsNeIFTLcBZIyn2uDHZ2Vfsf270OFtxA42H3Khs5hDRdlrfjhzlB19UXImtVr3pv3b
-	kUh3Zl4lmvSkR6avUDeg==;
+	List-Owner; bh=yE9oKvUPTJO5P4eknJqbpkKp4npe0lZq3QlGK04td/c=; b=lL3FOOj0hQoiFE
+	EhBWcdae/gvLNNV5noPSE8PjKQhZNDhB9EG6HTjHD+capchVuPLPdHXF25LgK3cP1INCcP0FscElB
+	jOr3QU2tOENoF1PmsLcAnrcFXxiukFI74mMH/nYMnU93Ac6DnHJlUS04/d9o5raBSnaP2cPxh7n8B
+	KF8Ssf16ytU4anZbMxVrDKjeBKoXdbXEzqcyKIAeh2ht4urMfYCVZG0IsMNCVa7NRGdMKCfytLHfW
+	5d1pkFzzLDevhBnB7keA9qK1q1DaRalrk5ic8fUC3LMH8XUapSmsDncBESGa1QaW8b1xHPoHOklzb
+	Se7HAfCyR/9HZ6Gl9A9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sNIeb-0000000EwJt-0K8M;
-	Fri, 28 Jun 2024 20:57:09 +0000
-Received: from out-185.mta1.migadu.com ([2001:41d0:203:375::b9])
+	id 1sNIei-0000000EwNi-2xjv;
+	Fri, 28 Jun 2024 20:57:16 +0000
+Received: from out-174.mta1.migadu.com ([2001:41d0:203:375::ae])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sNIdc-0000000EvgM-3Y6b
+	id 1sNIdd-0000000EviM-1Fs9
 	for linux-phy@lists.infradead.org;
 	Fri, 28 Jun 2024 20:56:13 +0000
 X-Envelope-To: radhey.shyam.pandey@amd.com
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
-	t=1719608166;
+	t=1719608167;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=HEWbV4dqpa1TJriBZCpsvwB0QOnRaJIArW3SQXCHi9c=;
-	b=AFDgDhKY0NsP3dTnmHaWQtnn6jcTiThwnjPr+V/uYInCqwflw4ml4bg9bGbEcCcOZtZt4R
-	P+Q4wcZKBXTNZEe37nHg3mod/xb+ly7GqY1vgyhRKwTmzN2OHS/UJ+R+GYomNjWWF4Xc+X
-	1Z8IXM89R0k7+VXCe/pdR/IbyMMtE+E=
+	bh=ePtnv+mOy1V2a9C9AGkoMpYJ4bWTIeHu876bvQ6PA7w=;
+	b=LoRjkfufmI+It1uHsu+j94T3quZNHVJZk802KYnAcvZadmEkuQvNWwdhnFHJ4kw+oR2Ajg
+	p6tUKCEhXJioBIeC4VbIwlNoiQnr6fhdJV6h52a03Xhh2CiwUHtWPLPzjFNlBEEx0KrMkM
+	SF3sSn/s3gj1eQhQb7b1oiKD9rrpHro=
 X-Envelope-To: laurent.pinchart@ideasonboard.com
 X-Envelope-To: linux-phy@lists.infradead.org
 X-Envelope-To: vkoul@kernel.org
@@ -57,16 +57,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	Michal Simek <michal.simek@amd.com>,
 	Sean Anderson <sean.anderson@linux.dev>
-Subject: [PATCH v3 3/5] phy: zynqmp: Only wait for PLL lock "primary" instances
-Date: Fri, 28 Jun 2024 16:55:38 -0400
-Message-Id: <20240628205540.3098010-4-sean.anderson@linux.dev>
+Subject: [PATCH v3 4/5] phy: zynqmp: Take the phy mutex in xlate
+Date: Fri, 28 Jun 2024 16:55:39 -0400
+Message-Id: <20240628205540.3098010-5-sean.anderson@linux.dev>
 In-Reply-To: <20240628205540.3098010-1-sean.anderson@linux.dev>
 References: <20240628205540.3098010-1-sean.anderson@linux.dev>
 MIME-Version: 1.0
 X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240628_135609_132258_628ACC24 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20240628_135609_652891_50BB8805 
+X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,77 +84,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-For PCIe and DisplayPort, the phy instance represents the controller's
-logical lane. Wait for the instance 0 phy's PLL to lock as other
-instances will never lock. We do this in xpsgtr_wait_pll_lock so callers
-don't have to determine the correct lane themselves.
-
-The original comment is wrong about cumulative wait times. Since we are
-just polling a bit, all subsequent waiters will finish immediately.
+Take the phy mutex in xlate to protect against concurrent
+modification/access to gtr_phy. This does not typically cause any
+issues, since in most systems the phys are only xlated once and
+thereafter accessed with the phy API (which takes the locks). However,
+we are about to allow userspace to access phys for debugging, so it's
+important to avoid any data races.
 
 Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
 ---
 
-(no changes since v2)
+Changes in v3:
+- New
 
-Changes in v2:
-- Move the logic for waiting on PLL lock to xpsgtr_wait_pll_lock
-
- drivers/phy/xilinx/phy-zynqmp.c | 30 +++++++++++++++++++++---------
- 1 file changed, 21 insertions(+), 9 deletions(-)
+ drivers/phy/xilinx/phy-zynqmp.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index a1cf32024efb..4d697e11d8eb 100644
+index 4d697e11d8eb..991be42eef3d 100644
 --- a/drivers/phy/xilinx/phy-zynqmp.c
 +++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -294,10 +294,30 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
- 	struct xpsgtr_phy *gtr_phy = phy_get_drvdata(phy);
- 	struct xpsgtr_dev *gtr_dev = gtr_phy->dev;
- 	unsigned int timeout = TIMEOUT_US;
-+	u8 protocol = gtr_phy->protocol;
- 	int ret;
+@@ -759,6 +759,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
+ 	phy_type = args->args[1];
+ 	phy_instance = args->args[2];
  
- 	dev_dbg(gtr_dev->dev, "Waiting for PLL lock\n");
- 
-+	/*
-+	 * For DP and PCIe, only the instance 0 PLL is used. Switch to that phy
-+	 * so we wait on the right PLL.
-+	 */
-+	if ((protocol == ICM_PROTOCOL_DP || protocol == ICM_PROTOCOL_PCIE) &&
-+	    gtr_phy->instance) {
-+		int i;
-+
-+		for (i = 0; i < NUM_LANES; i++) {
-+			gtr_phy = &gtr_dev->phys[i];
-+
-+			if (gtr_phy->protocol == protocol && !gtr_phy->instance)
-+				goto got_phy;
-+		}
-+
-+		return -EBUSY;
-+	}
-+
-+got_phy:
- 	while (1) {
- 		u32 reg = xpsgtr_read_phy(gtr_phy, L0_PLL_STATUS_READ_1);
- 
-@@ -625,15 +645,7 @@ static int xpsgtr_phy_power_on(struct phy *phy)
- 	/* Skip initialization if not required. */
- 	if (!xpsgtr_phy_init_required(gtr_phy))
- 		return ret;
--	/*
--	 * Wait for the PLL to lock. For DP, only wait on DP0 to avoid
--	 * cumulating waits for both lanes. The user is expected to initialize
--	 * lane 0 last.
--	 */
--	if (gtr_phy->protocol != ICM_PROTOCOL_DP || !gtr_phy->instance)
--		ret = xpsgtr_wait_pll_lock(phy);
--
--	return ret;
-+	return xpsgtr_wait_pll_lock(phy);
- }
- 
- static int xpsgtr_phy_configure(struct phy *phy, union phy_configure_opts *opts)
++	guard(mutex)(&gtr_phy->phy->mutex);
+ 	ret = xpsgtr_set_lane_type(gtr_phy, phy_type, phy_instance);
+ 	if (ret < 0) {
+ 		dev_err(gtr_dev->dev, "Invalid PHY type and/or instance\n");
 -- 
 2.35.1.1320.gc452695387.dirty
 
