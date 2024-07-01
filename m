@@ -4,59 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39B36C2BD09
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Jul 2024 11:25:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9963C2BD09
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Jul 2024 15:05:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cnsop4rYjUGVeIVqKJXqxu5BAbdLB+VFHzB/lZ23fd0=; b=OmzNdU+AP0Txcl
-	iygYEwyMFi2opk/kygYIQ8/pu9eIkQ98GR/LSlx61/hKtsyhrpPzer9GQp4IIbICPgxiExDn565Lg
-	hw67Gl4ZULlVf+kvOtSpamvLDB8YDh39lqhCKPAYwrZzBgtBz/kHG7tk4Gfe82Rn+KOup50/iCDSd
-	I10pVT+L0gbkWWNXVdCxjmaC9cOIr+RRYaMSMxmjYfRc6C2sSB8ll+DaO5eNNdYJO0R+6cj/rdsxC
-	9RBFZyKGpLcKzRKgmZq2BNVD+wErhjfcxu0N3n3FReYgC7T7oDmZBh8pjraU1Mc4PZvXwXuevElc5
-	1UCjpJDbVcZTsejzDcgQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=v4y/5y1R+H+Yk24VPJqUbvZsoXeCahTxhTiwmiqqKFg=; b=nybv12e2VU+FF1LMkOD6Jt9y2/
+	KcdzxNJnwbshLNOZrqTaz8wqSVGmRFb465I+JDQQU69rio5zSWu3FzGzxxn2OHbDbSCjP/fPm6wT6
+	q0GI3Z2Wq2Hpdc9tDjUZvijTmrA44Slarz4XJeo9J1WUm0EeZ/We0O5BuxI7muDPhdiI947H7DG10
+	tfxBLnq7GWWzZN/D64UZip1kh5aQxrw+ayw+D4lOkPS9AzyCoVgypbwr7hQvJEZFTi1NFjmOdJqHm
+	N0fPUlvksNoIqhX+Ufwdh65q1s7xYGMIMYOuBudVDuXbWXRE2B8MrbiQxBYdMZo/Pd/sL2M86QdiI
+	jMs8sKJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOFA4-00000002t9b-3sZ7;
-	Mon, 01 Jul 2024 11:25:32 +0000
-Received: from cmccmta4.chinamobile.com ([111.22.67.137] helo=cmccmta1.chinamobile.com)
-	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOFA0-00000002t8a-2LQj;
-	Mon, 01 Jul 2024 11:25:31 +0000
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from spf.mail.chinamobile.com (unknown[10.188.0.87])
-	by rmmx-syy-dmz-app04-12004 (RichMail) with SMTP id 2ee46682921eb78-b0466;
-	Mon, 01 Jul 2024 19:25:19 +0800 (CST)
-X-RM-TRANSID: 2ee46682921eb78-b0466
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from localhost.localdomain.localdomain (unknown[10.54.5.252])
-	by rmsmtp-syy-appsvr05-12005 (RichMail) with SMTP id 2ee56682921ea41-69f87;
-	Mon, 01 Jul 2024 19:25:19 +0800 (CST)
-X-RM-TRANSID: 2ee56682921ea41-69f87
-From: Liu Jing <liujing@cmss.chinamobile.com>
-To: s.nawrocki@samsung.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	krzk@kernel.org,
-	alim.akhtar@samsung.com
-Cc: linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	Liu Jing <liujing@cmss.chinamobile.com>
-Subject: [PATCH] phy: Fix the cacography in phy-exynos5250-usb2.c
-Date: Mon,  1 Jul 2024 19:25:17 +0800
-Message-Id: <20240701112517.6597-1-liujing@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.33.0
+	id 1sOIbB-00000003rWG-1vOt;
+	Mon, 01 Jul 2024 15:05:45 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sOIZl-00000003qjK-3apl;
+	Mon, 01 Jul 2024 15:04:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 06E666148D;
+	Mon,  1 Jul 2024 15:04:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6AE23C116B1;
+	Mon,  1 Jul 2024 15:04:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1719846255;
+	bh=1827LFemuiUVmYMPnNFZh664roipuU0O0f2WDmUYEwI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Ro/RLUyEs/7TOJBLAxBtW9+L7zA2Z2liaFgitLWOegt4rpdXZVEGrOlzLBTwYQdjZ
+	 5I/80aPdIf738Sha/5DCk5gA8F7WGcDIbF/pX5ZAWLEYegixPFAp0pxYN7WVNDra9G
+	 KwNlV3rhNRaA8Fln7hBqqaKpsLtaNehz8IXxI7uYuvTq6PTPK7z8OG4hve8nJqTm21
+	 ZiVgM92DCYUO3gb5h0jjjLVJjSjqhPh8Q44Q58NwfqEKZ4xFQ5QQM3IwT3xXgJ2wcC
+	 7CyOg5OYCNmHSeQacaX8cIqZAfjqx5lY2Uns974vlSbEi+PoRRmFF8UI1oV58ixlEB
+	 +Ubcp2raorPHg==
+Date: Mon, 1 Jul 2024 16:04:10 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, kishon@kernel.org,
+	lorenzo.bianconi83@gmail.com, linux-arm-kernel@lists.infradead.org,
+	robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, nbd@nbd.name,
+	john@phrozen.org, dd@embedd.com, catalin.marinas@arm.com,
+	will@kernel.org, upstream@airoha.com,
+	angelogioacchino.delregno@collabora.com
+Subject: Re: [PATCH 1/2] dt-bindings: phy: airoha: Add dtime and Rx AEQ IO
+ registers
+Message-ID: <20240701-tubular-registry-e6f47ab2d7ca@spud>
+References: <cover.1719682943.git.lorenzo@kernel.org>
+ <a018329ff9678f3360bc6381294f95c62d34f3e3.1719682943.git.lorenzo@kernel.org>
 MIME-Version: 1.0
+In-Reply-To: <a018329ff9678f3360bc6381294f95c62d34f3e3.1719682943.git.lorenzo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240701_042529_217652_58404421 
-X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-CacheID: sfid-20240701_080418_048749_0471C2DF 
+X-CRM114-Status: UNSURE (   7.38  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -69,38 +73,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8429176878378398595=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The word 'swtich' is wrong, so fix it.
 
-Signed-off-by: Liu Jing <liujing@cmss.chinamobile.com>
----
- drivers/phy/samsung/phy-exynos5250-usb2.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/samsung/phy-exynos5250-usb2.c b/drivers/phy/samsung/phy-exynos5250-usb2.c
-index e198010e1bfd..21b06072f866 100644
---- a/drivers/phy/samsung/phy-exynos5250-usb2.c
-+++ b/drivers/phy/samsung/phy-exynos5250-usb2.c
-@@ -121,7 +121,7 @@
- #define EXYNOS_5420_USB_ISOL_HOST_OFFSET	0x70C
- #define EXYNOS_5250_USB_ISOL_ENABLE		BIT(0)
- 
--/* Mode swtich register */
-+/* Mode switch register */
- #define EXYNOS_5250_MODE_SWITCH_OFFSET		0x230
- #define EXYNOS_5250_MODE_SWITCH_MASK		1
- #define EXYNOS_5250_MODE_SWITCH_DEVICE		0
--- 
-2.33.0
+--===============8429176878378398595==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="HqN/OI93YBYXRfOt"
+Content-Disposition: inline
 
 
+--HqN/OI93YBYXRfOt
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Sat, Jun 29, 2024 at 07:51:48PM +0200, Lorenzo Bianconi wrote:
+> Introduce Tx-Rx detection time and Rx AEQ mappings in Airoha EN7581
+> PCIe-PHY binding. This change is not introducing any backward compatibili=
+ty
+> issue since the EN7581 dts is not upstream yet.
+>=20
+> Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+
+--HqN/OI93YBYXRfOt
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZoLFagAKCRB4tDGHoIJi
+0tSVAP9ShcRHDmhVey1oQg7Qc0se/z/6mFzcJm/AuW1g1zO2AQEAkmqHCL4l9824
+TY6qgXFKVYMRKz1yAsN6ncG71C+vSgQ=
+=CSWz
+-----END PGP SIGNATURE-----
+
+--HqN/OI93YBYXRfOt--
+
+
+--===============8429176878378398595==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8429176878378398595==--
+
