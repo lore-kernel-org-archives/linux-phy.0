@@ -4,71 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EF83C27C4F
-	for <linux-phy@archiver.kernel.org>; Sat, 29 Jun 2024 17:52:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 440B5C3065A
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Jul 2024 05:42:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rnhrLmzgj7WHReEK1T5gR8Qe8TsXr/1IcSSx5bpQ1qo=; b=olZGcICRc+P9iw
-	pQknW0CBQyoxqLnmgFy8CTNXelR3qaPKA66qF0JoccQqtrug1b/7KDQfoRc654oz1CiuLtkrDLMbE
-	PDd+U0KSUVLy3plaV0AakJdELb/BatVS1ycw40iria7jrcHBCoD0G0LvHosEsukFeO5aKtTTMsqzd
-	ra2/j17zm4Se/bX9mBmSOJx8pAMf5UTaewPFG0f5r6Wx1oqFGAiFtVKcLj3VtcT360HziMxrSsRAH
-	cg94/u5TuoGO0PxAKL24eTEEk7kfdQ2Pp0KSbbDa1gQpipDWtmp7q0d2VKC5dxTYI8qT/BEbPkv7a
-	SZxMEGKMdWCan/lKAMGA==;
+	List-Owner; bh=2oQ8ZQ8OMYAQ5yQNWVUlBccFi90+icX0/HInwJy34Fc=; b=CZwi+ggOuxrJY9
+	bltUQl8OPmThcU/GHd/QRSCZw667Nu8niJmKRH80jGYETnmQjJHT55/XjXIfCx2ymOysyiPBji1Mj
+	fZ0QEhQbZ498w6zKLm49tOU9/u1JODtTm6Cl5bLek5jT7b466eYwyQhUS8btHC9dsmbDd1H7YW5GW
+	UeVwNTIHzbAlBYpvPpYcOKkJUQ1B5rojC0RAb8vNsQlsOuMRtst/qhvcpgbJ1AzG/eM03CbFlSaT5
+	HrViPPPk02zDy3uYYJX8zon/ZoaHBjMSL908mAx/E99tIB8cLcd0zMOj+ujsE5GTFdzibpiKzAbdj
+	hxjrjW27TZ2JwtgffY/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sNcFq-0000000Gk8K-3MSI;
-	Sat, 29 Jun 2024 17:52:54 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sO9nk-00000001lfn-3I6r;
+	Mon, 01 Jul 2024 05:42:08 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sNcFP-0000000Gk35-11l8;
-	Sat, 29 Jun 2024 17:52:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 993E4CE1838;
-	Sat, 29 Jun 2024 17:52:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 81F35C2BBFC;
-	Sat, 29 Jun 2024 17:52:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719683540;
-	bh=j4MLfR2m8g6WYEp5qi2r2g0cT9THXcets+OgQX0XZCA=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=LArRIdi8JeqjXSfmGUUy4PMdnwoH9p0aQnvi+vMeaiebau8/JyFWVANbj6YCRU10G
-	 lUlvvZFQxaCJMNv0I+kCs9U99OFHS7TvJSv+ntQB1BUmZkuhQDORfadu8sr1478WTX
-	 rJEdnAdAgcxYambt+ZYqQFmGwQcIThXvOy8GF92dR3tCih0a0I4IoI6TkjCgGNwM7C
-	 gvgGz2XP7NdP9fADWH8mTecy1uJi4YhQ2ZU0ao3NMCZF/2i50CWFh3LaXCPEH6bQxJ
-	 4EvkAcdO+uZjlhD/JgfvO8SE2AL6nvXgvPQZtf5n66ndxjSh/1r6i9G+UHUFFXHJvJ
-	 s3RYGyZOj0u4g==
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: linux-phy@lists.infradead.org
-Cc: vkoul@kernel.org,
-	kishon@kernel.org,
-	lorenzo.bianconi83@gmail.com,
-	conor@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	nbd@nbd.name,
-	john@phrozen.org,
-	dd@embedd.com,
-	catalin.marinas@arm.com,
-	will@kernel.org,
-	upstream@airoha.com,
-	angelogioacchino.delregno@collabora.com
-Subject: [PATCH 2/2] phy: airoha: Add dtime and Rx AEQ IO registers
-Date: Sat, 29 Jun 2024 19:51:49 +0200
-Message-ID: <edf3b28926177166c65256604d69f2f576cb6fb3.1719682943.git.lorenzo@kernel.org>
-X-Mailer: git-send-email 2.45.2
-In-Reply-To: <cover.1719682943.git.lorenzo@kernel.org>
-References: <cover.1719682943.git.lorenzo@kernel.org>
+	id 1sO9ng-00000001ldp-3jBn
+	for linux-phy@lists.infradead.org;
+	Mon, 01 Jul 2024 05:42:06 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-364ff42999eso663370f8f.3
+        for <linux-phy@lists.infradead.org>; Sun, 30 Jun 2024 22:42:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1719812523; x=1720417323; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=K1RP7Fpk8x/fLqAOvJCm2fvlERvfv14/xhETHMn8PzY=;
+        b=f4dl9IChLNfruYRY5PLHl8b91fPT/YUmSsSTtdJM4mA0Kc2aVQIu+PSSj0uP1Vi4zX
+         VLf3RI8zN63Sl+NYIPt1ccAziGe+26jkN8XmO2XJgXj5MvH7IIaBMvsVQ7i8g5MCqq3I
+         gr5Va5n/W7XK9R2Q2sHVLL/CaU2mNOzZ5rFaESoweD00ffIcXcUNGjpokF5hqtnmUaif
+         iexvZbCJ8B/Jzj9Ve9Qoyn+kiOsQUk/SHu9K92k8tLjlYuolxYlf4/adSqPbs31V3iG4
+         6yxPCeFQRdLt0D3w23v+9ubh1jpB3fhO/+mh9/O2SAR3+mjryZj2YYCUkKfOhLTTS3BP
+         b6Rg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1719812523; x=1720417323;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=K1RP7Fpk8x/fLqAOvJCm2fvlERvfv14/xhETHMn8PzY=;
+        b=lbccB2kFvRQoM8TNhtxLnqW/O1XPhudvHGttI+q+vc/HtVyPm65bxZtN2JjnjGtS7W
+         tJLFA14SwqtyaXzuKJIbwz8ACkX2ca8c5nTFhBAtMx2Ryd8/QviclRpSBGY8cUj1K9LW
+         AzHRT58IBIxVOnstOvkPo3gO8dukyd3jZYkX/TfQ9zjVCsACIbfAHj3t+e6DTrS8T/i4
+         kGcYTcUNdHW2WMKALxCQIkbg3dqaeViG392NAWU4zR+JYiZZZsOyfcsnWgqkF4p79eHN
+         RX2M862pdK6NvaUG4AZpaWde+g+iwnM3yGS6dXV2yuhvdQ4WZD4NqELVOW0d4+8Vp2w9
+         1C6g==
+X-Forwarded-Encrypted: i=1; AJvYcCXFEqWP/UQvCd0HJixyyMvqgXlEslXMfBV7Kr73Lnw4JnAJfoBiyWtjm3+A0lBPI0Ni/6WNjbN3ncs/nA8uBURDvsk83EZhsH6J5ZU19Q==
+X-Gm-Message-State: AOJu0Yyzuv/PX3vDnEIiwHUU5GMH6+IVIRWfLWdnuIHCrkjkb+mipICw
+	trFad3MXFBXLgcQzIGJrzbaNEC86S9iEZpj3PqTBH5XLUoA0JnwYxmOtGB2kSQ0=
+X-Google-Smtp-Source: AGHT+IHSKBmHrhw/AYhWM82y6sx7nEDDCK+Cj+oGMZFjhX97MXohzQV+8dJGlqZohNNB2+Ja+HNgaA==
+X-Received: by 2002:a5d:47c6:0:b0:367:2d2f:e634 with SMTP id ffacd0b85a97d-367757249a4mr5411546f8f.55.1719812522948;
+        Sun, 30 Jun 2024 22:42:02 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.137])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3675a0cd687sm9063218f8f.14.2024.06.30.22.42.00
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 30 Jun 2024 22:42:02 -0700 (PDT)
+Message-ID: <9f1fa742-28c1-428a-9f85-2d3b352abb44@linaro.org>
+Date: Mon, 1 Jul 2024 07:42:00 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] dt-bindings: intel,lgm: drop inactive maintainers from
+ intel
+To: Rob Herring <robh@kernel.org>, Chuanhua Lei <lchuanhua@maxlinear.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Pavel Machek <pavel@ucw.cz>, Lee Jones <lee@kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Rahul Tanwar <rtanwar@maxlinear.com>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dmaengine@vger.kernel.org, linux-leds@vger.kernel.org,
+ linux-mtd@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-gpio@vger.kernel.org
+References: <20240626101809.25227-1-krzysztof.kozlowski@linaro.org>
+ <20240628215350.GA267712-robh@kernel.org>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Content-Language: en-US
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <20240628215350.GA267712-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240629_105227_677193_1F01DCC2 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20240630_224204_935696_18E61BC2 
+X-CRM114-Status: GOOD (  13.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,116 +152,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce Tx-Rx detection Time and Rx AEQ training mappings to
-phy-airoha-pcie driver. This is a preliminary patch to introduce PCIe
-support to En7581 SoC through the mediatek-gen3 PCIe driver.
-This change is not introducing any backward compatibility issue since
-the EN7581 dts is not upstream yet.
+On 28/06/2024 23:53, Rob Herring wrote:
+> On Wed, Jun 26, 2024 at 12:18:09PM +0200, Krzysztof Kozlowski wrote:
+>> Emails to chuanhua.lei@intel.com, mallikarjunax.reddy@intel.com,
+>> yixin.zhu@intel.com and vadivel.muruganx.ramuthevar@linux.intel.com
+>> bounce with the same message:
+>>
+>>   Your message wasn't delivered to Yixin.zhu@intel.com because the
+>>   address couldn't be found or is unable to receive email.
+>>
+>> The Intel LGM SoC was apparently part of Home Gateway division which was
+>> acquired by Maxlinear, so switch maintenance of affected bindings to the
+>> only known non-bouncing Maxlinear address: Rahul Tanwar.
+>>
+>> I do not know if Rahul Tanwar or Maxlinear want to maintain the
+>> bindings, so regardless of this change we should consider bindings
+>> abandoned and probably drop soon.
+> 
+> No bounces on this? According to this[1], Rahul is not with Maxlinear 
+> any more. Maybe an address in that thread will work. But seems like it 
+> is abandoned.
 
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
----
- drivers/phy/phy-airoha-pcie-regs.h | 17 +++++++++++++
- drivers/phy/phy-airoha-pcie.c      | 38 ++++++++++++++++++++++++++++++
- 2 files changed, 55 insertions(+)
+I did not get any bounces, maybe there is some sort of redirection
+within Maxlinear. I can change the maintainer to Chuanhua Lei.
 
-diff --git a/drivers/phy/phy-airoha-pcie-regs.h b/drivers/phy/phy-airoha-pcie-regs.h
-index 0c6496b89a71..bb1f679ca1df 100644
---- a/drivers/phy/phy-airoha-pcie-regs.h
-+++ b/drivers/phy/phy-airoha-pcie-regs.h
-@@ -474,4 +474,21 @@
- #define REG_PCIE_PMA_DIG_RESERVE_27		0x0908
- #define REG_PCIE_PMA_DIG_RESERVE_30		0x0914
- 
-+/* DTIME */
-+#define REG_PCIE_PEXTP_DIG_GLB44		0x00
-+#define PCIE_XTP_RXDET_VCM_OFF_STB_T_SEL	GENMASK(7, 0)
-+#define PCIE_XTP_RXDET_EN_STB_T_SEL		GENMASK(15, 8)
-+#define PCIE_XTP_RXDET_FINISH_STB_T_SEL		GENMASK(23, 16)
-+#define PCIE_XTP_TXPD_TX_DATA_EN_DLY		GENMASK(27, 24)
-+#define PCIE_XTP_TXPD_RXDET_DONE_CDT		BIT(28)
-+#define PCIE_XTP_RXDET_LATCH_STB_T_SEL		GENMASK(31, 29)
-+
-+/* RX AEQ */
-+#define REG_PCIE_PEXTP_DIG_LN_RX30_P0		0x0000
-+#define PCIE_XTP_LN_RX_PDOWN_L1P2_EXIT_WAIT	GENMASK(7, 0)
-+#define PCIE_XTP_LN_RX_PDOWN_T2RLB_DIG_EN	BIT(8)
-+#define PCIE_XTP_LN_RX_PDOWN_E0_AEQEN_WAIT	GENMASK(31, 16)
-+
-+#define REG_PCIE_PEXTP_DIG_LN_RX30_P1		0x0100
-+
- #endif /* _PHY_AIROHA_PCIE_H */
-diff --git a/drivers/phy/phy-airoha-pcie.c b/drivers/phy/phy-airoha-pcie.c
-index bba382badb2e..bd3edaa986c8 100644
---- a/drivers/phy/phy-airoha-pcie.c
-+++ b/drivers/phy/phy-airoha-pcie.c
-@@ -31,6 +31,9 @@ enum airoha_pcie_port_gen {
-  * @csr_2l: Analogic lane IO mapped register base address
-  * @pma0: IO mapped register base address of PMA0-PCIe
-  * @pma1: IO mapped register base address of PMA1-PCIe
-+ * @p0_xr_dtime: IO mapped register base address of port0 Tx-Rx detection time
-+ * @p1_xr_dtime: IO mapped register base address of port1 Tx-Rx detection time
-+ * @rx_aeq: IO mapped register base address of Rx AEQ training
-  */
- struct airoha_pcie_phy {
- 	struct device *dev;
-@@ -38,6 +41,9 @@ struct airoha_pcie_phy {
- 	void __iomem *csr_2l;
- 	void __iomem *pma0;
- 	void __iomem *pma1;
-+	void __iomem *p0_xr_dtime;
-+	void __iomem *p1_xr_dtime;
-+	void __iomem *rx_aeq;
- };
- 
- static void airoha_phy_clear_bits(void __iomem *reg, u32 mask)
-@@ -1101,6 +1107,21 @@ static void airoha_pcie_phy_load_kflow(struct airoha_pcie_phy *pcie_phy)
- static int airoha_pcie_phy_init(struct phy *phy)
- {
- 	struct airoha_pcie_phy *pcie_phy = phy_get_drvdata(phy);
-+	u32 val;
-+
-+	/* Setup Tx-Rx detection time */
-+	val = FIELD_PREP(PCIE_XTP_RXDET_VCM_OFF_STB_T_SEL, 0x33) |
-+	      FIELD_PREP(PCIE_XTP_RXDET_EN_STB_T_SEL, 0x1) |
-+	      FIELD_PREP(PCIE_XTP_RXDET_FINISH_STB_T_SEL, 0x2) |
-+	      FIELD_PREP(PCIE_XTP_TXPD_TX_DATA_EN_DLY, 0x3) |
-+	      FIELD_PREP(PCIE_XTP_RXDET_LATCH_STB_T_SEL, 0x1);
-+	writel(val, pcie_phy->p0_xr_dtime + REG_PCIE_PEXTP_DIG_GLB44);
-+	writel(val, pcie_phy->p1_xr_dtime + REG_PCIE_PEXTP_DIG_GLB44);
-+	/* Setup Rx AEQ training time */
-+	val = FIELD_PREP(PCIE_XTP_LN_RX_PDOWN_L1P2_EXIT_WAIT, 0x32) |
-+	      FIELD_PREP(PCIE_XTP_LN_RX_PDOWN_E0_AEQEN_WAIT, 0x5050);
-+	writel(val, pcie_phy->rx_aeq + REG_PCIE_PEXTP_DIG_LN_RX30_P0);
-+	writel(val, pcie_phy->rx_aeq + REG_PCIE_PEXTP_DIG_LN_RX30_P1);
- 
- 	/* enable load FLL-K flow */
- 	airoha_phy_pma0_set_bits(pcie_phy, REG_PCIE_PMA_DIG_RESERVE_14,
-@@ -1217,6 +1238,23 @@ static int airoha_pcie_phy_probe(struct platform_device *pdev)
- 		return dev_err_probe(dev, PTR_ERR(pcie_phy->phy),
- 				     "Failed to create PCIe phy\n");
- 
-+	pcie_phy->p0_xr_dtime =
-+		devm_platform_ioremap_resource_byname(pdev, "p0-xr-dtime");
-+	if (IS_ERR(pcie_phy->p0_xr_dtime))
-+		return dev_err_probe(dev, PTR_ERR(pcie_phy->p0_xr_dtime),
-+				     "Failed to map P0 Tx-Rx dtime base\n");
-+
-+	pcie_phy->p1_xr_dtime =
-+		devm_platform_ioremap_resource_byname(pdev, "p1-xr-dtime");
-+	if (IS_ERR(pcie_phy->p1_xr_dtime))
-+		return dev_err_probe(dev, PTR_ERR(pcie_phy->p1_xr_dtime),
-+				     "Failed to map P1 Tx-Rx dtime base\n");
-+
-+	pcie_phy->rx_aeq = devm_platform_ioremap_resource_byname(pdev, "rx-aeq");
-+	if (IS_ERR(pcie_phy->rx_aeq))
-+		return dev_err_probe(dev, PTR_ERR(pcie_phy->rx_aeq),
-+				     "Failed to map Rx AEQ base\n");
-+
- 	pcie_phy->dev = dev;
- 	phy_set_drvdata(pcie_phy->phy, pcie_phy);
- 
--- 
-2.45.2
+Best regards,
+Krzysztof
 
 
 -- 
