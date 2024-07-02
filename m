@@ -4,69 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 394A6C2BD09
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 03:21:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81222C3064D
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 07:44:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=18iXyzKyS3idOimCnDwmDMqnmuyKzepjCmAZkZ9XvXU=; b=XCEqXyrwtWrz9Y
-	2MLnjg1lDFY7Bu5UreMRVL2drwAftbUWgHUcuDx+RhA6ZrWn35KyyY+J52baiJLrRenuCFLUixIth
-	ZceAbO8yr2kZAIxJfV/h7LGd5yJYEByb9cr1p0DKjKh6ssMF4MXyLT8pdyNlxRrGts8PmXi21subL
-	PMaVKI4/QAXF3TCc+qNLl3V/tO5o7Tdt34YDXGrFf37xBRjLUzKFC3bYkg5Dj5tgwywESMnR03Y7w
-	eBl+kinvi7sppb4Jt0uTKnq7CukMdbfSGLqvUD6ZFSVC1h0aV3gn6plsjmlb6JY9Wv9tqXwoCK+Ky
-	95MdEiEFricPxMtag0Zw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hZgJslbJOsghYOx9x5ddaPaArxMBGg2fYCP7/dlNFfk=; b=yZUbBVTucwzIb/
+	V19L/twKO3nR8DZPFoWyqkITxWtYPKkV3mPZN8q5yl81zLiO7toPYs4+KC6M6aNpfcG3gpJ2uCcHN
+	xYJLn4K0pdpFm+Tb7SqR1D1sVhwleOjtlAABGPSnIAROSlkVa5JbJXk/rXL69sBKd2Ye/GL4LHZVF
+	f9un32yYEDFlKcUWv5M3tpviv8dEEWnLKN+poy1KsBuQ+EM+Nb8uyhdcbNBaStGIxLDBuOzWEOG0N
+	I1M+lP+bqDC2/fCJ1sYOH5pX0JURM06Sn6479qNnvjedPBV6Y3fW5cQLAQ+QvgXrPu7GhtFsvjieY
+	wCvrjKvMEsDAII6HrRxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOU4j-00000005Pky-3lC0;
-	Tue, 02 Jul 2024 03:21:01 +0000
-Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
+	id 1sOYBE-00000005thg-0feG;
+	Tue, 02 Jul 2024 07:44:00 +0000
+Received: from mout.web.de ([212.227.17.12])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOU4g-00000005PkQ-3UPA
+	id 1sOYBB-00000005thG-1JKt
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jul 2024 03:21:00 +0000
-Received: from icess-ProLiant-DL380-Gen10.. (unknown [183.174.60.14])
-	by APP-01 (Coremail) with SMTP id qwCowAAXH8sLcoNm9e0gAQ--.390S2;
-	Tue, 02 Jul 2024 11:20:51 +0800 (CST)
-From: Ma Ke <make24@iscas.ac.cn>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	rogerq@kernel.org,
-	sjakhade@cadence.com,
-	sergio.paracuellos@gmail.com,
-	robh@kernel.org,
-	make24@iscas.ac.cn
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: cadence-torrent: Check return value on register read
-Date: Tue,  2 Jul 2024 11:20:42 +0800
-Message-Id: <20240702032042.3993031-1-make24@iscas.ac.cn>
-X-Mailer: git-send-email 2.25.1
+	Tue, 02 Jul 2024 07:43:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1719906221; x=1720511021; i=markus.elfring@web.de;
+	bh=ZeB0+Ec+5YJTZMxHaSrgvr/vw2xhzk6rdzPpdj+oVNk=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:From:Subject:To:
+	 Cc:References:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 cc:content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=PnJOadbxr4esfuE6745tixukJpKsRRQkJ18tzFwU9pVK4ZSbEZK5m5eW+E4oarJN
+	 O+GutjpwaRY4to+eeAaAxEKpJp/4ha7/ChFO4gxn8tbVZwAVRiEGGN4TeXsCL9fCu
+	 7Bkz7W1MVJnbFLkSZTFuBXXxX1rs8t78pyYvNI0CAsL2rmLCIQfAvW8cviyAsvrEz
+	 6Cw8MIJRRVwL0T/go3KtTCqhHGQ5NBhGu3CYypDsEkD7LZOn+Dn4aMM6H1ZEk96st
+	 5ieQ+JFA4HTupP4co5mg7gNkjEjxxnm4IAdII0pYOoAzELo/jLZl0YJKhYYTEDgBI
+	 sQpU/hpWC3MS7JbR4Q==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.82.95]) by smtp.web.de (mrweb105
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 1MTvrs-1soQmN225q-00P0wZ; Tue, 02
+ Jul 2024 09:43:41 +0200
+Message-ID: <def496b0-ea98-467c-be47-77d965bb3a88@web.de>
+Date: Tue, 2 Jul 2024 09:43:17 +0200
 MIME-Version: 1.0
-X-CM-TRANSID: qwCowAAXH8sLcoNm9e0gAQ--.390S2
-X-Coremail-Antispam: 1UD129KBjvdXoW7GFykWF48CF4fWryrCr1kuFg_yoWkGwb_Gw
-	1xZwn3GFsxGrs2yF4qkw1xX34jv3W0vFy8u3Z7tF4fur9rJ3s2v3WFvr1DC348Ww1UGFn8
-	Kwnru3Z8tasrGjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUIcSsGvfJTRUUUb4kFF20E14v26r4j6ryUM7CY07I20VC2zVCF04k26cxKx2IYs7xG
-	6r1S6rWUM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8w
-	A2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Cr0_
-	Gr1UM28EF7xvwVC2z280aVAFwI0_Gr1j6F4UJwA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Cr
-	1j6rxdM2vYz4IE04k24VAvwVAKI4IrM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVAC
-	Y4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJV
-	W8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI2
-	0VAGYxC7MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrV
-	AFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCI
-	c40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267
-	AKxVWUJVW8JwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_
-	Gr1lIxAIcVC2z280aVCY1x0267AKxVWUJVW8JbIYCTnIWIevJa73UjIFyTuYvjfUOlksUU
-	UUU
-X-Originating-IP: [183.174.60.14]
-X-CM-SenderInfo: ppdnvj2u6l2u1dvotugofq/
+User-Agent: Mozilla Thunderbird
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: Re: [PATCH] phy: cadence-torrent: Check return value on register read
+To: Ma Ke <make24@iscas.ac.cn>, linux-phy@lists.infradead.org,
+ kernel-janitors@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Roger Quadros <rogerq@kernel.org>,
+ Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+ Swapnil Jakhade <sjakhade@cadence.com>, Vinod Koul <vkoul@kernel.org>
+Cc: LKML <linux-kernel@vger.kernel.org>
+References: <20240702032042.3993031-1-make24@iscas.ac.cn>
+Content-Language: en-GB
+In-Reply-To: <20240702032042.3993031-1-make24@iscas.ac.cn>
+X-Provags-ID: V03:K1:TmT02C0EJt0645VtrOXQUopS0Jq8aD9KBO2DE1l6rE2kT6u5q3A
+ PYlpyU5J45O9aKHQ1qo/FWWrE7yJezI3J10KlULC+z0rBZly+bVhHNxktTPLmmkztjNUo3Z
+ +BNmdX0sCOV6RIg9NmkaAfILn3IC/4cDfrDtnFcJ0m1W6VMGbyhBYH7WyVzhbWabDnKUseo
+ yKI3FxFNEgS04N5D3A41A==
+UI-OutboundReport: notjunk:1;M01:P0:pvNj5+zGnmQ=;bX8Il3e8Qp5ktsIFAeklq16Olka
+ szIIGu2zpvxwwxxAFxb0YleBppFB2Pdcl3iy6gXNiQOdj/ANJ2OiGJVzGC8I7+UmSASWPhTIW
+ cWD42OsCgfRNDFl7elDZ/ApYQCeU1/nXwhJiHq7wdkeTjvGd5rMJ/V1TIhuh1aapbM1GB+90O
+ oYdAWVf6Y7lVTrPkyIU/f+qkkVKVsTR6dNkmhm+J968beMelgGnNWCk9NlXhuydh3va37+Krr
+ VkdDMgYr1YVMN1HwEu5oNGFJ4SjkY5YoadVob7fN5pVpolL8t8ninmr67UGa3A2osuZELD2qb
+ 91lMi/1G5xt1cHh1BDOfwKGKLnvPctd/av6sgZwzDVO9jQrqZtqbLE7sJYGeB/QN8mKBdUG4u
+ chZvKZNRTISyffjxf6eHk9gGkaMUzXih/Qi2OlRsDjJxN7cyc9QecgRodtc7y4fsnMrNLrw4f
+ 0FT6G7u6t/vDxAMpyud0nWUVXO1UXm3niWx2LGSd2XAB3k7TrGW/lr7vUUhoxd+MHBlXb/z6d
+ JBk+jBLGBZx2Pc+gpHHuwZ4B/lH6NJgr3U0NY1RWAhsHdWGUMOIUn+ljlPZtns9c7290UzxIZ
+ xofsEeCiBmPEiyUK9rZbOGlbPCbKbCU9TlYehALvXXARJ6zpZr/X62yonTohQ/ncoIqwQu2Lk
+ uFx7TvFVGU3DZL8UQ42w1qWhvk1pjV3nhkHNyefeNMtqOFvB9l7kVm2DuA23tsTxlT3E7QrjE
+ fpsi8eGLkUvaH+UKlk4gE4xlbH1kJvLa++wfWJvvR1NkeuLkXzuwN3CyehJ2hZg5W1LFlxjkl
+ +x8MjNnAlGCvEeVHdzSRYqOEyNAz/bOBakEdayIF7MGHQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240701_202059_284718_4C5B20F2 
-X-CRM114-Status: UNSURE (   6.41  )
+X-CRM114-CacheID: sfid-20240702_004357_744564_70D02D9F 
+X-CRM114-Status: UNSURE (   5.69  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,40 +91,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-cdns_torrent_dp_set_power_state() does not consider that ret might be
-overwritten. Add return value check of regmap_read_poll_timeout() after
-register read in cdns_torrent_dp_set_power_state().
-
-Fixes: 5b16a790f18d ("phy: cadence-torrent: Reorder few functions to remove function declarations")
-Signed-off-by: Ma Ke <make24@iscas.ac.cn>
----
- drivers/phy/cadence/phy-cadence-torrent.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index 95924a09960c..6113f0022e6e 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -1156,6 +1156,9 @@ static int cdns_torrent_dp_set_power_state(struct cdns_torrent_phy *cdns_phy,
- 	ret = regmap_read_poll_timeout(regmap, PHY_PMA_XCVR_POWER_STATE_ACK,
- 				       read_val, (read_val & mask) == value, 0,
- 				       POLL_TIMEOUT_US);
-+	if (ret)
-+		return ret;
-+
- 	cdns_torrent_dp_write(regmap, PHY_PMA_XCVR_POWER_STATE_REQ, 0x00000000);
- 	ndelay(100);
- 
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiBjZG5zX3RvcnJlbnRfZHBfc2V0X3Bvd2VyX3N0YXRlKCkgZG9lcyBub3QgY29uc2lkZXIgdGhh
+dCByZXQgbWlnaHQgYmUKPiBvdmVyd3JpdHRlbi4gQWRkIHJldHVybiB2YWx1ZSBjaGVjayBvZiBy
+ZWdtYXBfcmVhZF9wb2xsX3RpbWVvdXQoKSBhZnRlcgo+IHJlZ2lzdGVyIHJlYWQgaW4gY2Ruc190
+b3JyZW50X2RwX3NldF9wb3dlcl9zdGF0ZSgpLgoKSSBzdWdnZXN0IHRvIGltcHJvdmUgc3VjaCBh
+IGNoYW5nZSBkZXNjcmlwdGlvbiBhbm90aGVyIGJpdC4KCjEuIEEgcmV0dXJuIHZhbHVlIGlzIHN0
+b3JlZCBpbiB0aGUgbWVudGlvbmVkIGxvY2FsIHZhcmlhYmxlLgoKMi4gVW5mb3J0dW5hdGVseSwg
+aXQgd2FzIG5vdCBpbW1lZGlhdGVseSBjaGVja2VkLgoKICAgKiBodHRwczovL2N3ZS5taXRyZS5v
+cmcvZGF0YS9kZWZpbml0aW9ucy8yNTIuaHRtbAoKICAgKiBodHRwczovL3dpa2kuc2VpLmNtdS5l
+ZHUvY29uZmx1ZW5jZS9kaXNwbGF5L2MvRVhQMTItQy4rRG8rbm90K2lnbm9yZSt2YWx1ZXMrcmV0
+dXJuZWQrYnkrZnVuY3Rpb25zCgozLiBIb3cgZG8geW91IHRoaW5rIGFib3V0IHRvIGF2b2lkIGEg
+cmVwZWF0ZWQgcmVmZXJlbmNlIHRvIGEgZnVuY3Rpb24gbmFtZT8KCgrigKYKPiBTaWduZWQtb2Zm
+LWJ5OiBNYSBLZSA8bWFrZTI0QGlzY2FzLmFjLmNuPgoKKiBXaHkgd2FzIHRoZSBwZXJzb25hbCBu
+YW1lIOKAnEhhb3hpYW5nIExp4oCdIG5vdCBzcGVjaWZpZWQgaGVyZT8KCiogVW5kZXIgd2hpY2gg
+Y2lyY3Vtc3RhbmNlcyB3aWxsIGFwcGxpY2F0aW9ucyBvZiB0aGUgRGV2ZWxvcGVyJ3MgQ2VydGlm
+aWNhdGUgb2YgT3JpZ2luCiAgYmUgY2xhcmlmaWVkIGJldHRlcj8KICBodHRwczovL2dpdC5rZXJu
+ZWwub3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9E
+b2N1bWVudGF0aW9uL3Byb2Nlc3Mvc3VibWl0dGluZy1wYXRjaGVzLnJzdD9oPXY2LjEwLXJjNiNu
+Mzk4CgoKSG93IGRvIHlvdSB0aGluayBhYm91dCB0byB1c2UgYSBzdW1tYXJ5IHBocmFzZSBsaWtl
+IOKAnENvbXBsZXRlIGVycm9yIGhhbmRsaW5nCmluIGNkbnNfdG9ycmVudF9kcF9zZXRfcG93ZXJf
+c3RhdGUoKeKAnT8KClJlZ2FyZHMsCk1hcmt1cwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
