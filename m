@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C198C3065C
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 13:36:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3904EC3065D
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 13:36:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7MqAhx/Sl5OChl1Z61FNY9bD49LIfK5AzTA4R5tGUoY=; b=rBWtwNyvBvM9cN
-	q93BIIFKgutSNOz5IMvbyRF4eIH/ba5C6dpZ3ERm6GGypOkiZP9YYClFhLct7rSA2HKMx9XvuiWrQ
-	LS5YDjM0jiozGcR6RTSqzbfx80kEWD9+rrcU17OxqJ1n/xT8IZ0tS5B5VLcTtRIsItzaF1fZHz7xN
-	3DbA7qqFJNdazBlic3kOX7x5QdWoltsSBBuMGyWUQ4DmtpV8p3RcrFPpcT3GPluCQ8k3tyb5GZc5P
-	uknzX0nOxSqjX3YmknhgOyQIHkkLBpg9GEMVh/gtYwKEXcOJfpEhVu3McZvdM67LnkAI0UDqNOkyF
-	JZVzp2+c59XJj+smxhgQ==;
+	List-Owner; bh=Hw3s9K1nFywnvjOSvw4KVpdYsm8wifV84sc1JtYG8Bk=; b=BqUlShMqcMgwSK
+	EwgFKlX1bLvCPE2/g8HVOrz/MZF0dkNwzaiAOJz3LMGUJety1J0gfSiIV+om2rWsRmwZG0IxqGpMz
+	mi9FWyDvQ1u0G3bpYtZOlPkMYkmqdHcdqHkTRcch3AuFR4RiXyTm9x1SR87Ualb48qJAqEIoUoaJp
+	HY3NkeAIWidSH4Ok1uzlSvfnBWcGh8JAwc6tnMfU3AwXTVyeRHNwfEpEN9vOPYzUoDG2vD5JlTYVx
+	f34mwu5ER2VBoXECkLEPIl0+l7q4qRYR6SbenMVwBWvZ/s6n3ds37vrlOEkYAn386m4bckXN3Wpj2
+	2NzHpCaAC0AnFroFvdoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOdgF-00000006sN7-3h2v;
-	Tue, 02 Jul 2024 13:36:23 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sOdgG-00000006sO0-2XzM;
+	Tue, 02 Jul 2024 13:36:24 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOdfr-00000006sCA-3Fqm;
-	Tue, 02 Jul 2024 13:36:02 +0000
+	id 1sOdfy-00000006sE6-1J5D
+	for linux-phy@lists.infradead.org;
+	Tue, 02 Jul 2024 13:36:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4D73A61BFD;
+	by sin.source.kernel.org (Postfix) with ESMTP id 440A7CE1DD6;
+	Tue,  2 Jul 2024 13:36:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B85B5C2BD10;
 	Tue,  2 Jul 2024 13:35:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA0CEC4AF0E;
-	Tue,  2 Jul 2024 13:35:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719927359;
-	bh=ngYStSfDt3gm2V4MgO5eTyDmvV+QTyC+9v7LEeYoVSw=;
+	s=k20201202; t=1719927361;
+	bh=IF+Kvrk7vBoksuSkESPNjQBIFMwOljqOLFQSXyYEjAM=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=BKHR4H/Ovc9HcJ0QEYYKrmhje3heu2JxfYnL9E4zdGhQ/QNHqI9/JWMl/TeSrxxOK
-	 nOj9+sqqg2JY9sf/YX+O5ngzn2e0l7Dg7K63T9uxPfpU5FYsMH16MgufmwC3T4qD80
-	 GdrRf/j2g0ppyvvdWjfcFWDgFSWTe/wbYGIJIeObHFv4KBOhqCYJ46c4pDmZmolrMB
-	 u3VI6ue76m8qsMm3RDfVFEcuBebhXjntKONIa+gssVkNAAqBWy/BXAGM27hXwWfOng
-	 BNErva/l+VU6Sa8xMXoB1VHTpJhtFk13f+6lP2Kmox7YT5wPy92+bXVfDOlNbYrzvt
-	 ttJw1HCp1NcNQ==
+	b=ZbcLIZiK8kcjZy+gUzDYRLul28q6XZ6AG1Zg9LdFargZohRmwXC6gkYXbWXQzg65B
+	 uW59qtFbXehBPW8twKsB3dSin7deF3DrOmmAbl5IozNnuS5ISPudMzoGOX1nQL9hAQ
+	 +hkNFYyb43YtKAS9aJABjs5Mwa/VBo1KUp+BZ+vgfumn+6WdZ4nUagLwffepF82Ic3
+	 sJwRtUo8vp9aEGz6UVa68lx+xlyZdE91yWG3Sv9/rDp5t/fJiXt5WuV+2KmwiuA/hT
+	 9n3RNkBp8YG1vOimGgC5YiNChdrSbRr+ugIlahOid6ubwhV1wR2JF90GM9hc8vTsRm
+	 OlFRkgR7XlenA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>, 
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
- linux-phy@lists.infradead.org, Sean Anderson <sean.anderson@linux.dev>
-Cc: linux-arm-kernel@lists.infradead.org, 
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-kernel@vger.kernel.org, 
- Michal Simek <michal.simek@amd.com>
-In-Reply-To: <20240628205540.3098010-1-sean.anderson@linux.dev>
-References: <20240628205540.3098010-1-sean.anderson@linux.dev>
-Subject: Re: [PATCH v3 0/5] phy: zynqmp: Fixes and debugfs support
-Message-Id: <171992735643.699169.10848642893790191835.b4-ty@kernel.org>
-Date: Tue, 02 Jul 2024 19:05:56 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Changhuang Liang <changhuang.liang@starfivetech.com>
+Cc: Keith Zhao <keith.zhao@starfivetech.com>, 
+ Shengyang Chen <shengyang.chen@starfivetech.com>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20240627020059.163535-1-changhuang.liang@starfivetech.com>
+References: <20240627020059.163535-1-changhuang.liang@starfivetech.com>
+Subject: Re: [PATCH] phy: starfive: Correct the dphy configure process
+Message-Id: <171992735936.699169.7926536201956741462.b4-ty@kernel.org>
+Date: Tue, 02 Jul 2024 19:05:59 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_063559_889551_85333036 
-X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-CacheID: sfid-20240702_063606_576607_7E22D3D1 
+X-CRM114-Status: UNSURE (   4.65  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,30 +76,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 28 Jun 2024 16:55:35 -0400, Sean Anderson wrote:
-> This has a few fixes and cleanups. Additionally, the last patch adds
-> useful debugfs info.
+On Wed, 26 Jun 2024 19:00:59 -0700, Changhuang Liang wrote:
+> We actually want to calculate the alignment values first, then
+> use the alignment value to look up the data from reg_configs[].
 > 
-> Changes in v3:
-> - Remove inapplicable comments
-> - Take the phy mutex in xlate
-> - Use "none" to represent ICM_PROTOCOL_PD, since the lane may not
->   actually be powered-down.
+> Fixes: d3ab79553308 ("phy: starfive: Add mipi dphy tx support")
 > 
-> [...]
+> 
 
 Applied, thanks!
 
-[1/5] phy: zynqmp: Enable reference clock correctly
-      commit: 687d6bccb28238fcfa65f7c1badfdfeac498c428
-[2/5] phy: zynqmp: Store instance instead of type
-      commit: 6959d2367bc3503ac4ba3eb4ec6584a43150d6b3
-[3/5] phy: zynqmp: Only wait for PLL lock "primary" instances
-      commit: 235d8b663ab9e6cc13f8374abfffa559f50b57b6
-[4/5] phy: zynqmp: Take the phy mutex in xlate
-      commit: d79c6840917097285e03a49f709321f5fb972750
-[5/5] phy: zynqmp: Add debugfs support
-      commit: 04490b621ab16d09ce5b7c62b2c8cc9fdb871421
+[1/1] phy: starfive: Correct the dphy configure process
+      commit: 8d2a3539517dbf13e970b3aabdf94b04a65d276c
 
 Best regards,
 -- 
