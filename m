@@ -4,165 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E6D4C3064D
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 12:40:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BDCFC3064D
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 12:40:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lcDEhHkxtV+UWYNItOqKgSQ3gEtyCitzuUh8YasRQvY=; b=xcA73XPCGqGoud
-	JkI3CU0ojLuhErELE5yOLnYCifaEZQBBPRdXmyjtpUjeYim39kXtv4DS3cDKHyT5+4CM3jomvVayu
-	t/6Y/u89oLELXGrKFk3O0bIbBo8KKALRcH/WdgrnB/0ZcemHaWjYG66NJjxw1dvGN/jlw0tA1ktoC
-	r+tM9yQAVRzkl+Aiu1+Mvq9BkSG1/QRlw6mi30kOYo/LaflEYBnC8Llce0KIQ6PBdeLRrByMRoczv
-	N//MqASfRQ6+U/br/hS9rNzFoincSYl9B52mj3LBtY/6UB2yDSARHxn0PfTidz/yr25sw5kIoMZ/3
-	73lkgoNvGZJ8M7e5ImOw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HXk/urWmNl98ZP8y/NppB7iu25ZJ9gSBgOBumHSzCsw=; b=pZJdt7MRzhIZ7iQp9BtONQtLXE
+	bXNrEnQ8aMKjmsZG4HJxAaHNBXwBWM/23z1/dsTjpn1rW1YgaVucy09KbqFEoij6hYf8/f4Kf/x1l
+	KmA5azyV+UB3fnGiiou9IdhDr13G6pQQbcaivHfpLIILfg7wDG4taG6YmfIbBwNjX6Egbng1eDGqz
+	6LyWBV48vHikgif5Mzi/7jaQ04+Eq59SYI/hS/CiMpfImWk0PT0g/94WTIh1cd9t19t9BQTkOCzPa
+	+sYVMo00xGSeMtWHd0SvDyApaj0kleSyVrnuosNnq+ruVJXyAVQvTRUwM3oAs3SnSOLA0o/lvJqtU
+	/kLNZyKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOcnn-00000006j2l-36qi;
-	Tue, 02 Jul 2024 12:40:07 +0000
-Received: from mail-vi1eur05on2089.outbound.protection.outlook.com ([40.107.21.89] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1sOco6-00000006j9R-40C4;
+	Tue, 02 Jul 2024 12:40:26 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOcnj-00000006j0P-42K1;
-	Tue, 02 Jul 2024 12:40:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=B1gcpXeKJfjWKc1NNdCuxNvxzDH+kSEOekDmCqguW7wngSB9mDOn77A24mIEJnjrq8++JzzDTpTjeQAItZw7cSGLVabo3Cfa062wNCJJfSi9tZxtgicQp0ckL9JkO1XdDV3br22UYEZAsH2MBmDcCc+9HdN3Kga9kOwAdVzJm55I+QZpcrUXBAmqnJzLB77OCmijr5iHfKD6hhQTkFpy90RXLDrkVN8CMuiT1aA4uMM7gb8JyEb1DSbhn7xpYcO/ynkgsKRdzEbVfkQIUKmQnXQiEOiZAnlj1ocAjuyMwbsIRoHXJ2ipXv/sjRZFO3iVff2PnNvnsmGE8HcQktIiZQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2rvyF4WRgf4bVK9mb91jorAvwYvwn3sqxhXL8wALUpc=;
- b=S/uTtFQLRAuRIxQLxczuxwdkLdrxEts8XG3cYKqG/eNcTgX1d1R6o8G+mXwBansF2MrxTVBR9EN/9Bz07l1B75qyc6GoqrzWUlm1aisOVwSmg6HCW8wMdKAcDlME6awEmk48PMqvaqXd+FJMSm9iUuMUTlCDPdjY2Kn2Js3JBcpRKcEKpm99Fh6+HarIeJ20Do+8GpxWYWPF9+TkgrXMOxcYJjAtIse+1jdQmO3Hq8DpVMLAv5bYJwIiX+7vdslFXhjmxph4GegsBsw1ijSz76BYaVheNC9/le+YRDGy4c3PbK7gvsWMb3gpY43o9zI7kkYXWQfBl7kpw4AWRgMoBQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2rvyF4WRgf4bVK9mb91jorAvwYvwn3sqxhXL8wALUpc=;
- b=FiMgo25+oaw3uRi8SHkWyPS0FRwNlLNzmY8E8bd3jd3/gyeg/8MY3chAXRRncacLzg9jvjruP9FKccGdjBb9MD4EaRqGHdvernBNmu8TYgmjxJayC6KuTCbBYfGyOxU87fYvd1w+6ESYlbFbsYENIEbjxVHvGSoCQUsmmdsyy1k=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
- by AM7PR04MB6870.eurprd04.prod.outlook.com (2603:10a6:20b:107::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7719.33; Tue, 2 Jul
- 2024 12:24:05 +0000
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::51ae:5f12:9744:1abc]) by PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::51ae:5f12:9744:1abc%4]) with mapi id 15.20.7719.028; Tue, 2 Jul 2024
- 12:24:05 +0000
-From: Sandor Yu <Sandor.yu@nxp.com>
-To: dmitry.baryshkov@linaro.org,
-	andrzej.hajda@intel.com,
-	neil.armstrong@linaro.org,
-	Laurent.pinchart@ideasonboard.com,
-	jonas@kwiboo.se,
-	jernej.skrabec@gmail.com,
-	airlied@gmail.com,
-	daniel@ffwll.ch,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	festevam@gmail.com,
-	vkoul@kernel.org,
-	dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	mripard@kernel.org
-Cc: kernel@pengutronix.de,
-	linux-imx@nxp.com,
-	Sandor.yu@nxp.com,
-	oliver.brown@nxp.com,
-	alexander.stein@ew.tq-group.com,
-	sam@ravnborg.org
-Subject: [PATCH v16 2/8] phy: Add HDMI configuration options
-Date: Tue,  2 Jul 2024 20:22:34 +0800
-Message-Id: <b1acbd48470d41b53b359d27fa2ea9358a037324.1719903904.git.Sandor.yu@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <cover.1719903904.git.Sandor.yu@nxp.com>
-References: <cover.1719903904.git.Sandor.yu@nxp.com>
-X-ClientProxiedBy: SI1PR02CA0031.apcprd02.prod.outlook.com
- (2603:1096:4:1f6::11) To PAXPR04MB9448.eurprd04.prod.outlook.com
- (2603:10a6:102:2b1::21)
+	id 1sOcnj-00000006j0W-0krU;
+	Tue, 02 Jul 2024 12:40:07 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 81EAE61341;
+	Tue,  2 Jul 2024 12:40:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9379C2BD10;
+	Tue,  2 Jul 2024 12:40:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1719924001;
+	bh=G4lrwOm8PBJDnOGCzEkhxC+Ha38BeZflLdrxWcXKBnM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=rwjQ6HVugtneW0zEDQh2DOGLqh/YDpFk5SsPlLV3JbU74z3nTMKyEJ/emzLvEzFh9
+	 pKNW9MRtdBvly3m1k9QNn7gVYamGu9uxV4xSMJCYzJXatRyCvKTtAs55uTryWhy5cs
+	 9nG6RDyRrT7h5KYD9We4nUCvpBiWwwxtEj7umJHvdD6qzdQKiQxnqn/Y8YCLHY/0NC
+	 dNcdlXyStmPdpi1O2expbN5C2PfHqosWCtrRBBUXkuEljiIcw4e6zy3vBjUkZRmFs2
+	 NPt3g+cAdKeqt689Oiz2mlq9VlufZS2MTa1BPuvz4ga9uihPEsqcoN7oLIOOFQx005
+	 KupHQdPmkLNKw==
+Date: Tue, 2 Jul 2024 14:39:58 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Sandor Yu <sandor.yu@nxp.com>
+Cc: Alexander Stein <alexander.stein@ew.tq-group.com>, 
+	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Robert Foss <rfoss@kernel.org>, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann <tzimmermann@suse.de>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, 
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+	"imx@lists.linux.dev" <imx@lists.linux.dev>, 
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "linux@ew.tq-group.com" <linux@ew.tq-group.com>
+Subject: Re: [PATCH v15 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
+Message-ID: <20240702-seahorse-of-unreal-brotherhood-dce5d0@houat>
+References: <20240306101625.795732-1-alexander.stein@ew.tq-group.com>
+ <20240306101625.795732-5-alexander.stein@ew.tq-group.com>
+ <20240306-mysterious-hoatzin-of-faith-49aec0@houat>
+ <PAXPR04MB9448829F4BA8F8AF18F371F3F4DC2@PAXPR04MB9448.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9448:EE_|AM7PR04MB6870:EE_
-X-MS-Office365-Filtering-Correlation-Id: 67e722f3-dcd2-4664-bf6c-08dc9a91dd26
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|52116014|1800799024|7416014|366016|921020|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?K6rqU2eATeVi5TLBiSVWzOb8mBE3+fvjFgF96DC84FKi7ajo0j18RNNc5OiN?=
- =?us-ascii?Q?0mFuR57BGclQyfiSk6E0+/4Q6QXblvaspDdrHFFjJE8NBru0AeN8D1b3dcWO?=
- =?us-ascii?Q?64WuW9v8uVmNxA1QDZhcPfeVw3aVLMN7FWyLZJgLU0wPSDlCRlzetGk/EM5J?=
- =?us-ascii?Q?GdjY15Tsii84/Fq2q/0DoKV88wbqKAnkgJdrzOP2fSIZABZZo2lQB/xfY5b9?=
- =?us-ascii?Q?4tPONQiHZt6c1NJcZyKco/bUqE7ocXaK35RtIomLUlXEl5eugTsCvf721OHq?=
- =?us-ascii?Q?cC+refSUugiaY6nKoo4RnMB5pvjehy+/n2D98IRoUXVief+p6FJ8k5KSJ+fx?=
- =?us-ascii?Q?ZAOQyv85CWIarK3W64fvXfxlwlx73OT9UkbNXqdeUk+vvMQHz6TTrYtVLdYH?=
- =?us-ascii?Q?3g1u76uebwdBcwgjzgwXFejD2dzYUV+oX3rjPZZrJ2SiWm6+gvjqPmrNBrWe?=
- =?us-ascii?Q?Yp0NzcLN+thEHPwhOs6QkAKMSdYU1ox+xqRmo3PID9JWyQDFVi1pUXLco7CD?=
- =?us-ascii?Q?7VSNADI93ZRrco9LC9rdcMmiHHKBX4VZZttkYGRLOjIit38fV9uNb/vSLLzq?=
- =?us-ascii?Q?WjKx0cXIY8bffDqF/lyun2ZPECWymz+IQkWJ+/z3IkKaMqpGL70v4aVaDrBv?=
- =?us-ascii?Q?TdvixCcu0gyh0/kQudqqAguxaIbDTECo+UoRdV76y3058Q9efAy9Vg9To1e3?=
- =?us-ascii?Q?19GF0zREQqzAVgEnR2lbZqAksfqrUgnBBOojPJERIRuzGtjGNEOG6/aG6aTl?=
- =?us-ascii?Q?os3GKjvgE23Y4dHKVhRtelK2anfYoZmPMozZzz8v0SyKeo2JJcb+JmVhYM/Y?=
- =?us-ascii?Q?0N51F8tdE67ML3Y125boh/Kd+kaz/zsCzs8qDQ7aS36kty9FE6q69O0GlBbn?=
- =?us-ascii?Q?U48fmuX60MlLP7mar7FbyH+OfaZFZ2GcRlOGBK7vSehD40U3u870gHJhHJIR?=
- =?us-ascii?Q?QKjp2hXaqaobLVs/fS68ZpnlygQX8ULHdoNPTEHxch7ZEyF5J5KwEyC3Xvrj?=
- =?us-ascii?Q?iox3ZI0jItgGdFuId5hHpNz1c5+CCsUtGD/jQ1XGeh8UtjVylkMDLwE5tMzx?=
- =?us-ascii?Q?XDrTZUhPNM7d0EXG9uCB6iddMICLYu0NIvhckVDNyHhtQtJx7wiuemF2znZ6?=
- =?us-ascii?Q?4v3/Q0KYIFJMrCzpFQwsPjQKmf1ldFEkFP3GPAMruPRQONe3Q2eUKr9lv2WE?=
- =?us-ascii?Q?zMj3vTwq39OJNcGFzzyUTyyR/9qcRO/xhbbbf6YTdRWKtxqiZNCwvav45SrN?=
- =?us-ascii?Q?qqbhSmfaKhR1bvfh49KHNQpFvu4nW3I2U2541WmLOS4BvigtzzEI3nmPS1/s?=
- =?us-ascii?Q?91k5K0edIfQDzZO/4IX1P3HL3CeyqXt1SCO/h0iK4guYc50c6RXXoc8f2kcE?=
- =?us-ascii?Q?k149rr4WIUFBrmWWm1Nh+dJVTuaxj327T/uoWsgWSSL2Kcj+2N8yURRVXji1?=
- =?us-ascii?Q?otvlR0CK1JY=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(52116014)(1800799024)(7416014)(366016)(921020)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AK4wsy8GtFpJhpEOKnhJFBY1VbxZTvUE+V36dbdEaUpvA5YJgGzBpyJAdEiD?=
- =?us-ascii?Q?eSsBHWppiak45+X3oEsTmscwwBD0KwoI8h4gJGKX40Hg9Nz3xbomnU0sEwNb?=
- =?us-ascii?Q?2t2Cj5nc7mWUY8Tvrryg8n+IKM8aed7Hk1mAMrl5gen5s+2KEhXBw/ck/VON?=
- =?us-ascii?Q?esHLQcNyIKmoZqPc9nPu11YyEhEIS+YbrITkPeZbmW+VS6oKL6N8H3fq7WZk?=
- =?us-ascii?Q?yD1Thub1bYv1joQcmqdB+3lGbOjNhPAMddteYNPhKTUyLS/VaJWcqEmDU7O5?=
- =?us-ascii?Q?s53J86Mq2VWQOXO6mNlngQshZal58jbg6UGABhR5OVziM+IMHiXYz5AGc8q1?=
- =?us-ascii?Q?JQsXu7NiImTUzzVlhcRe4W7aDgGT+FzveOaN1bfDjERv6wMpDpWHV7QxW6Sx?=
- =?us-ascii?Q?dv7NR0UGxY0bn0p8+34eYrJ63o2y1CKDnD1wyMgKJvXOKbjwlHCYGiZHZcG0?=
- =?us-ascii?Q?MVmnSpP59/jDT85j44Rd2g84Ikpi/ArFmFmtQCVwLRplrtxoJtuBu+cJt4Zk?=
- =?us-ascii?Q?t+F8/sj++ZggXAT8UCI7hLQCW5pwauTfdLJWmxmWSsP6gE+g6gChzpolldzx?=
- =?us-ascii?Q?gd4taIuNUtF7J40gykyJTk46X8brjMntGfoqBHRprJD9sctSU6mxLpp/uV/U?=
- =?us-ascii?Q?tpG+FCUBJL1fdoPwJYgDj4xTSI98cnO2l2A2zvQ5agqViPIE5YeXv2Gx80dW?=
- =?us-ascii?Q?b3AHnZM5iceMq1TgH1qA/tWWena8SeKLmT2lUr3/gDK4lHHU/C/AFTBCm3cd?=
- =?us-ascii?Q?CZqNFYNrHuTZaceuqQ1pBYDsOuatJpWjepuJWm6q/v/a2wIAaX5sk4dcYePy?=
- =?us-ascii?Q?08Ktw0N+y51Qghnu0g/WR+6L2gvVdUai3EMrOybv3sNQX7UBdYpczk4l6HUq?=
- =?us-ascii?Q?DKXpNFztn349+Gf/Q2n3Rlhj7nQ49YItH1S3bGY3587G9a4GEHRMPWLhRmja?=
- =?us-ascii?Q?vOGgHSGcef2cv2OGyE8K6zgGtGLvCdwdjCaqJW+RV3CqB4AT41et6OKDLPbs?=
- =?us-ascii?Q?7fVUzjFvmqwolti7HOlfp2oU706itsqXWDwRHSh5Tb0kkARndHiwtwz1cSiy?=
- =?us-ascii?Q?2i7kKVJM/MwOabx7jcIiVFbGK9PgFazScmUq492ePLl64+DephJeQ/jB3Aqf?=
- =?us-ascii?Q?DGPrrF6ibvmx4x4E+K17T9K0rVs6cbqb5i3fMfsGrz54d6+JkhIycW2/80tv?=
- =?us-ascii?Q?NJqGRHRBfiI2Ztsn66j1fxnPjwQ44qiHqmgt07bHgvwdzYG3MpRDSSOiJjZt?=
- =?us-ascii?Q?AzXas1U42hKmn4FGnwG9rtAeXT3sHAloybUkxGQSAfjcPMMYTBp23CGugBmr?=
- =?us-ascii?Q?OAU9ak62wFFMwTI5sOoij5OZ8FfKAbb+63aAbK77ynjQBShPe2bmKO87R2sV?=
- =?us-ascii?Q?9kpc1AfSxIdGZK7O0xB3PWHYgG9PLq7rb3kpdaBXfhB9bMT0lG9jtQULb2S+?=
- =?us-ascii?Q?OE/Vm5oxr6m8RAThWz0xe8QK8DfJSXVltoa1XuH6RRqxb+TKUyvBlZZ2Uqyk?=
- =?us-ascii?Q?bJ2FpYwdArXuCgwkP3FFNkOYV+z74i00sMknNRJqTx4++WQKO6GSsjHO4P/4?=
- =?us-ascii?Q?ha9PEdcL1mnh26AThv5lsyPiybIv/83S2o4CEheP?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 67e722f3-dcd2-4664-bf6c-08dc9a91dd26
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jul 2024 12:24:05.3177
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: JHrN+yMRHgOKDfI6BICeEfYCsbNCDUwwPk3bbbHuLq01mw8Mc/TU8orCVI15S+fWSh8LwpzJc9hKxJCZ5j4iWw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6870
+In-Reply-To: <PAXPR04MB9448829F4BA8F8AF18F371F3F4DC2@PAXPR04MB9448.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_054004_040344_21FEE877 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20240702_054003_680850_92A3C3FE 
+X-CRM114-Status: GOOD (  39.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -174,101 +81,216 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0523866709032665643=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Allow HDMI PHYs to be configured through the generic
-functions through a custom structure added to the generic union.
 
-The parameters added here are based on HDMI PHY
-implementation practices.  The current set of parameters
-should cover the potential users.
+--===============0523866709032665643==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="3bvkkyl5thqxineu"
+Content-Disposition: inline
 
-Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
----
-v15->v16:
-- Remove pixel_clk_rate, bpc and color_space fields from struct
-  phy_configure_opts_hdmi, they were replaced by unsigned long long tmds_char_rate.
-- Remove r-b and a-c tags because this patch have important change.
 
-v9->v15:
- *No change.
+--3bvkkyl5thqxineu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
- include/linux/phy/phy-hdmi.h | 20 ++++++++++++++++++++
- include/linux/phy/phy.h      |  7 ++++++-
- 2 files changed, 26 insertions(+), 1 deletion(-)
- create mode 100644 include/linux/phy/phy-hdmi.h
+Hi,
 
-diff --git a/include/linux/phy/phy-hdmi.h b/include/linux/phy/phy-hdmi.h
-new file mode 100644
-index 000000000000..dd923e19d17c
---- /dev/null
-+++ b/include/linux/phy/phy-hdmi.h
-@@ -0,0 +1,20 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright 2022 NXP
-+ */
-+
-+#ifndef __PHY_HDMI_H_
-+#define __PHY_HDMI_H_
-+
-+#include <linux/hdmi.h>
-+/**
-+ * struct phy_configure_opts_hdmi - HDMI configuration set
-+ * @tmds_char_rate: HDMI TMDS Character Rate in Hertz.
-+ *
-+ * This structure is used to represent the configuration state of a HDMI phy.
-+ */
-+struct phy_configure_opts_hdmi {
-+	unsigned long long tmds_char_rate;
-+};
-+
-+#endif /* __PHY_HDMI_H_ */
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 03cd5bae92d3..4ac486b101fe 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -17,6 +17,7 @@
- #include <linux/regulator/consumer.h>
- 
- #include <linux/phy/phy-dp.h>
-+#include <linux/phy/phy-hdmi.h>
- #include <linux/phy/phy-lvds.h>
- #include <linux/phy/phy-mipi-dphy.h>
- 
-@@ -42,7 +43,8 @@ enum phy_mode {
- 	PHY_MODE_MIPI_DPHY,
- 	PHY_MODE_SATA,
- 	PHY_MODE_LVDS,
--	PHY_MODE_DP
-+	PHY_MODE_DP,
-+	PHY_MODE_HDMI,
- };
- 
- enum phy_media {
-@@ -60,11 +62,14 @@ enum phy_media {
-  *		the DisplayPort protocol.
-  * @lvds:	Configuration set applicable for phys supporting
-  *		the LVDS phy mode.
-+ * @hdmi:	Configuration set applicable for phys supporting
-+ *		the HDMI phy mode.
-  */
- union phy_configure_opts {
- 	struct phy_configure_opts_mipi_dphy	mipi_dphy;
- 	struct phy_configure_opts_dp		dp;
- 	struct phy_configure_opts_lvds		lvds;
-+	struct phy_configure_opts_hdmi		hdmi;
- };
- 
- /**
--- 
-2.34.1
+On Tue, Jul 02, 2024 at 12:13:16PM GMT, Sandor Yu wrote:
+> > Subject: [EXT] Re: [PATCH v15 4/8] drm: bridge: Cadence: Add MHDP8501
+> > DP/HDMI driver
+> >=20
+> > Hi,
+> >=20
+> > On Wed, Mar 06, 2024 at 11:16:21AM +0100, Alexander Stein wrote:
+> > > +static int cdns_mhdp8501_read_hpd(struct cdns_mhdp8501_device
+> > *mhdp)
+> > > +{
+> > > +	u8 status;
+> > > +	int ret;
+> > > +
+> > > +	mutex_lock(&mhdp->mbox_mutex);
+> > > +
+> > > +	ret =3D cdns_mhdp_mailbox_send(&mhdp->base,
+> > MB_MODULE_ID_GENERAL,
+> > > +				     GENERAL_GET_HPD_STATE, 0, NULL);
+> > > +	if (ret)
+> > > +		goto err_get_hpd;
+> > > +
+> > > +	ret =3D cdns_mhdp_mailbox_recv_header(&mhdp->base,
+> > MB_MODULE_ID_GENERAL,
+> > > +					    GENERAL_GET_HPD_STATE,
+> > > +					    sizeof(status));
+> > > +	if (ret)
+> > > +		goto err_get_hpd;
+> > > +
+> > > +	ret =3D cdns_mhdp_mailbox_recv_data(&mhdp->base, &status,
+> > sizeof(status));
+> > > +	if (ret)
+> > > +		goto err_get_hpd;
+> > > +
+> > > +	mutex_unlock(&mhdp->mbox_mutex);
+> > > +
+> > > +	return status;
+> > > +
+> > > +err_get_hpd:
+> > > +	dev_err(mhdp->dev, "read hpd  failed: %d\n", ret);
+> > > +	mutex_unlock(&mhdp->mbox_mutex);
+> > > +
+> > > +	return ret;
+> > > +}
+> > > +
+> > > +enum drm_connector_status cdns_mhdp8501_detect(struct
+> > > +cdns_mhdp8501_device *mhdp) {
+> > > +	u8 hpd =3D 0xf;
+> > > +
+> > > +	hpd =3D cdns_mhdp8501_read_hpd(mhdp);
+> > > +	if (hpd =3D=3D 1)
+> > > +		return connector_status_connected;
+> > > +	else if (hpd =3D=3D 0)
+> > > +		return connector_status_disconnected;
+> > > +
+> > > +	dev_warn(mhdp->dev, "Unknown cable status, hdp=3D%u\n", hpd);
+> > > +	return connector_status_unknown;
+> > > +}
+> > > +
+> > > +static void hotplug_work_func(struct work_struct *work) {
+> > > +	struct cdns_mhdp8501_device *mhdp =3D container_of(work,
+> > > +						     struct cdns_mhdp8501_device,
+> > > +						     hotplug_work.work);
+> > > +	enum drm_connector_status status =3D cdns_mhdp8501_detect(mhdp);
+> > > +
+> > > +	drm_bridge_hpd_notify(&mhdp->bridge, status);
+> > > +
+> > > +	if (status =3D=3D connector_status_connected) {
+> > > +		/* Cable connected  */
+> > > +		DRM_INFO("HDMI/DP Cable Plug In\n");
+> > > +		enable_irq(mhdp->irq[IRQ_OUT]);
+> > > +	} else if (status =3D=3D connector_status_disconnected) {
+> > > +		/* Cable Disconnected  */
+> > > +		DRM_INFO("HDMI/DP Cable Plug Out\n");
+> > > +		enable_irq(mhdp->irq[IRQ_IN]);
+> > > +	}
+> > > +}
+> > > +
+> > > +static irqreturn_t cdns_mhdp8501_irq_thread(int irq, void *data) {
+> > > +	struct cdns_mhdp8501_device *mhdp =3D data;
+> > > +
+> > > +	disable_irq_nosync(irq);
+> > > +
+> > > +	mod_delayed_work(system_wq, &mhdp->hotplug_work,
+> > > +			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
+> > > +
+> > > +	return IRQ_HANDLED;
+> > > +}
+> >=20
+> > AFAICT from the rest of the driver, you support HDMI modes with a chara=
+cter
+> > rate > 340Mchar/s, and thus you need to enable the scrambler.
+> >=20
+> > If you unplug/replug a monitor with the scrambler enabled though, and if
+> > there's no userspace component to react to the userspace event, the cod=
+e you
+> > have here won't enable the scrambler again.
+> >=20
+> > You can test that by using modetest with a 4k@60Hz mode or something, a=
+nd
+> > then disconnecting / reconnecting the monitor.
+> >=20
+> > We addressed it in vc4 in commit 6bed2ea3cb38 ("drm/vc4: hdmi: Reset li=
+nk
+> > on hotplug").
+> >=20
+> > Arguably, the whole handling of the HDMI scrambling setup should be tur=
+ned
+> > into a helper, and I wanted to extend the work I've been doing around t=
+he
+> > HDMI infra to support the scrambler setup once it landed.
+> >=20
+>=20
+> Yes, for userspace components that do not handle HPD events (such as
+> modetest), if they are connected to a 4K display and enable scramble
+> then the cable is unplugged/plugged, HDMI will not work. However, this
+> is a userspace component limitation.
 
+No, it's not.
+
+I mean, yes, it's something the userspace *could* do. But it doesn't
+have to, and the expectation is very much that the display keeps
+working.
+
+> fbdev and weston could work well for this case.
+
+Yeah, they could work well. We don't want them to possibly work, we want
+them to work, period. That's why amdgpu, i915 and vc4 all have that code.
+
+> The patch for vc4 in commit 6bed2ea3cb38 ("drm/vc4: hdmi: Reset link
+> on hotplug") assumes unplug/replug the same monitor as stated in its
+> commit log.
+
+Indeed.
+
+> It does not support the case where unplug/plug to different displays.=20
+> For example, if the cable is unplugged from a 4K monitor and then plugged=
+ into a 1080p monitor,=20
+> 4K video mode will be output to the 1080p monitor because this userspace =
+component cannot respond to the monitor change.
+> Therefore, for userspace components that do not handle HPD events (such a=
+s modetest),=20
+> this patch can only partially solve the limitation, but it is not a perfe=
+ct solution.
+
+You're looking at it from the wrong PoV. What matters is the behaviour
+we offer from userspace. Userspace is in charge of setting the mode, and
+it's expectation is that the mode is going to be output until it either
+changes the mode or disables the display.
+
+Reenabling the scrambler when a display is disconnected and reconnected
+matches that expectation. If we ignore the case where the display has
+changed, we still match that expectation: the userspace is in control of
+the mode.
+
+If it wants to react to monitors being unplugged, it can. But it doesn't
+have to, and it should keep working as long as you don't change the
+moniter / panel.
+
+And you're also completely ignoring things like AV amplifiers that
+really like to do those kind of short HPD pulses.
+
+> If helper functions are used to restore the HDMI scramble bit after
+> hotplug, I would like to use it.
+
+Those helpers don't exist yet, so feel free to work on them.
+
+Maxime
+
+--3bvkkyl5thqxineu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZoP1HQAKCRDj7w1vZxhR
+xdkwAP40UCWrNOV2VLiJyvMg4LRN4JC8s6714BNQ8fq8rI1Q2wD+LrtpkGVb424r
+IxBXtjaaRMRF0KCaST36XTcm25I57Qc=
+=5pfl
+-----END PGP SIGNATURE-----
+
+--3bvkkyl5thqxineu--
+
+
+--===============0523866709032665643==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0523866709032665643==--
+
