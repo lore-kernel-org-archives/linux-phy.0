@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67724C30658
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 13:25:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 427DBC3064D
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 13:36:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/HIOsph+1l5YOqOM1VhGId9CrNtjjO/M/cg3ZQPLMFE=; b=b2eFUlSwuUkKLu/cJEZfK35xgd
-	Bf+gOGNiz0qHd4MLLITUt7WCdGFwjZWt/wBKAiQTB9Z5n9sS5PFoLaGGJjlJ10OyaMv/YEtDyLOQf
-	mCCiwY0pdXtKREIiD27DxxtFwRrBHw2pMCzYw9Oi6IAxNMaKEO0Jy9V1V1PfwCurIRLZDvGq2kBtE
-	qY1ecs8J35lfmsnU8lujzhROMzaYpA7l1f+IUOGOYR+6SfYNvjIcP0Ja0Snz4IayuDmNFWLNPqinx
-	LwI3gOyYXMv5BAGnoPgCvs6vJlqipsqu+Be6niamu9vB5+rtd6hi73kIVdtSmVv9vM8NvMx9X8zy0
-	9RI5JkAg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GqzMrh5mSRWz+VmXa+VusGYmSbwOZ1FmPA2Mj2FWuWE=; b=O/wErLfVNBPPNk
+	GUKBXQ/10yMqL2Ob0Gq0G/veJ+dwwnX21wt5ettxBiw1quib8E13GJ7tu11vs//laVBdEoirkLt3G
+	MYj/vjTXfEc+PWhuYi2Di+SIcXdOoWS4M46Y7HudzCcpQ6DOfzWuJiosXVU+TIyd5YnqbxT5xWeIb
+	vKjogGVtGnS7PvKeYQDl+Vxc1GbDu+TTQQrqTzgI0chd8b74NYlBs1juf7AZDoMwwcMEQuh7sAOIq
+	DZnw+owdOv9DnvsEHxSN4H/GNb73DUyInqYqf0swVXJCJSrhGnC20kOpBPAP/ALEFv0JMd2qIcQyT
+	xc+KJS15GA/FRMcHjmLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOdVa-00000006qIi-0Pjf;
-	Tue, 02 Jul 2024 13:25:22 +0000
+	id 1sOdfw-00000006sE7-3whj;
+	Tue, 02 Jul 2024 13:36:04 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOdVN-00000006qFr-0kAn;
-	Tue, 02 Jul 2024 13:25:11 +0000
+	id 1sOdfj-00000006sAI-0gMT;
+	Tue, 02 Jul 2024 13:35:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2075461B98;
-	Tue,  2 Jul 2024 13:25:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48C92C116B1;
-	Tue,  2 Jul 2024 13:25:07 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 026CC61BD5;
+	Tue,  2 Jul 2024 13:35:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DDF3CC116B1;
+	Tue,  2 Jul 2024 13:35:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719926707;
-	bh=XjTXfbCIQa36KxnEEDVA+79Iy+FVRaew9MxgzaZrNtk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EM2vpMSV2xc/Ui/s6I2JoLMw6Ds1fRhwJIKAyvESfSAY39QHKIP3oQ1FBMDZVBgaY
-	 A3ZxoBQUvrdPT+cAmx4KpgUyagAFmm6NZVKie4xtDvTnnTHU+vkCgHUpWFlfQH428X
-	 GMjTYM6yGERdRrDRxz0nkjX8kPLWvU7+RIpvu9NDrssP34XTVJ0r5CLG3AfK+4fgY/
-	 1R5oDTcLB6zpgeutF+iOsp+yLYY2wxgPo8iRW0YYeuDwMNPEHngQ49nO+AzBphHaS6
-	 k49poiv9D33hvuCpMEecqEogN+rGxjUJyqE3CUpev+NJMUl5g8IXtgpVyUKr5h3xPj
-	 g3APSbpiQKoug==
-Date: Tue, 2 Jul 2024 15:25:04 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Sandor Yu <Sandor.yu@nxp.com>
-Cc: dmitry.baryshkov@linaro.org, andrzej.hajda@intel.com, 
-	neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, 
-	jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, 
-	vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
-	alexander.stein@ew.tq-group.com, sam@ravnborg.org
-Subject: Re: [PATCH v16 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Message-ID: <20240702-quartz-salamander-of-culture-eec264@houat>
-References: <cover.1719903904.git.Sandor.yu@nxp.com>
- <359914108b879e995d4a39de32a33310009f0fab.1719903904.git.Sandor.yu@nxp.com>
+	s=k20201202; t=1719927349;
+	bh=a7AM0KEf+jQoBSJOJWM4gD6fd0KNahIDhF3fxcz0q+g=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=PCxxHH+YzNjda2lF1wB7wkNpdvAkUEXOnigPLRNjqS0sVghPBMK42agzgfg1RXnnF
+	 AiR10wkDzCsCfLP4km8ojSpAI3LON6bgNyzzsK9cTZVIVBlrBM2CYZrF0QCATs5efb
+	 OhBLaBUcPbidYeudN8T3O4o860J5mC9b2hnNdydIunNgoRzbiwkY2S3xj0Ba0puaLr
+	 Ff1L37AFLF9kAJheCXvwll7FOuFweVRAtocq9VpAYO4Inq84+yCEFASkMGHQtTOtMd
+	 qaGWFICnbRV7iQBiMIxOgoHkpSkSNZARRENTL+ZQU7eIxXlRzk0EmOBMpLjVUIjgNt
+	 2UwsHLQQP0c0w==
+From: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20240629-rk-hdptx-compile-test-fix-v1-1-c86675ba8070@collabora.com>
+References: <20240629-rk-hdptx-compile-test-fix-v1-1-c86675ba8070@collabora.com>
+Subject: Re: [PATCH] phy: phy-rockchip-samsung-hdptx: Select
+ CONFIG_MFD_SYSCON
+Message-Id: <171992734651.699169.10657232164142336775.b4-ty@kernel.org>
+Date: Tue, 02 Jul 2024 19:05:46 +0530
 MIME-Version: 1.0
-In-Reply-To: <359914108b879e995d4a39de32a33310009f0fab.1719903904.git.Sandor.yu@nxp.com>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_062509_357955_B53AE880 
-X-CRM114-Status: GOOD (  25.04  )
+X-CRM114-CacheID: sfid-20240702_063551_348467_1D4740AD 
+X-CRM114-Status: UNSURE (   5.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,296 +71,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5771836568847348746=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============5771836568847348746==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="lqdlqrw2llhccm2m"
-Content-Disposition: inline
-
-
---lqdlqrw2llhccm2m
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-There's still the scrambler issue we discussed on v15, but I have some
-more comments.
-
-On Tue, Jul 02, 2024 at 08:22:36PM GMT, Sandor Yu wrote:
-> +enum drm_connector_status cdns_mhdp8501_detect(struct cdns_mhdp8501_device *mhdp)
-> +{
-> +	u8 hpd = 0xf;
-> +
-> +	hpd = cdns_mhdp8501_read_hpd(mhdp);
-> +	if (hpd == 1)
-> +		return connector_status_connected;
-> +	else if (hpd == 0)
-> +		return connector_status_disconnected;
-> +
-> +	dev_warn(mhdp->dev, "Unknown cable status, hdp=%u\n", hpd);
-> +	return connector_status_unknown;
-> +}
-> +
-> +static void hotplug_work_func(struct work_struct *work)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = container_of(work,
-> +						     struct cdns_mhdp8501_device,
-> +						     hotplug_work.work);
-> +	enum drm_connector_status status = cdns_mhdp8501_detect(mhdp);
-> +
-> +	drm_bridge_hpd_notify(&mhdp->bridge, status);
-> +
-> +	if (status == connector_status_connected) {
-> +		/* Cable connected  */
-> +		DRM_INFO("HDMI/DP Cable Plug In\n");
-> +		enable_irq(mhdp->irq[IRQ_OUT]);
-> +	} else if (status == connector_status_disconnected) {
-> +		/* Cable Disconnected  */
-> +		DRM_INFO("HDMI/DP Cable Plug Out\n");
-> +		enable_irq(mhdp->irq[IRQ_IN]);
-> +	}
-> +}
-
-You shouldn't play with the interrupt being enabled here: hotplug
-interrupts should always enabled.
-
-If you can't for some reason, the reason should be documented in your
-driver.
-
-> +	/* Mailbox protect for HDMI PHY access */
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +	ret = phy_init(mhdp->phy);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to initialize PHY: %d\n", ret);
-> +		goto clk_disable;
-> +	}
-> +
-> +	/* Mailbox protect for HDMI PHY access */
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +	ret = phy_set_mode(mhdp->phy, phy_mode);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to configure PHY: %d\n", ret);
-> +		goto clk_disable;
-> +	}
-
-Why do you need a shared mutex between the phy and HDMI controller?
-
-> +static enum drm_mode_status
-> +cdns_hdmi_tmds_char_rate_valid(const struct drm_bridge *bridge,
-> +			       const struct drm_display_mode *mode,
-> +			       unsigned long long tmds_rate)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> +	union phy_configure_opts phy_cfg;
-> +	int ret;
-> +
-> +	phy_cfg.hdmi.tmds_char_rate = tmds_rate;
-> +
-> +	/* Mailbox protect for HDMI PHY access */
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +	ret = phy_validate(mhdp->phy, PHY_MODE_HDMI, 0, &phy_cfg);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +	if (ret < 0)
-> +		return MODE_CLOCK_RANGE;
-> +
-> +	return MODE_OK;
-> +}
-> +
-> +static enum drm_mode_status
-> +cdns_hdmi_bridge_mode_valid(struct drm_bridge *bridge,
-> +			    const struct drm_display_info *info,
-> +			    const struct drm_display_mode *mode)
-> +{
-> +	unsigned long long tmds_rate;
-> +
-> +	/* We don't support double-clocked and Interlaced modes */
-> +	if (mode->flags & DRM_MODE_FLAG_DBLCLK ||
-> +	    mode->flags & DRM_MODE_FLAG_INTERLACE)
-> +		return MODE_BAD;
-> +
-> +	/* MAX support pixel clock rate 594MHz */
-> +	if (mode->clock > 594000)
-> +		return MODE_CLOCK_HIGH;
-
-This needs to be in the tmds_char_rate_valid function
-
-> +	if (mode->hdisplay > 3840)
-> +		return MODE_BAD_HVALUE;
-> +
-> +	if (mode->vdisplay > 2160)
-> +		return MODE_BAD_VVALUE;
-> +
-> +	tmds_rate = mode->clock * 1000ULL;
-> +	return cdns_hdmi_tmds_char_rate_valid(bridge, mode, tmds_rate);
-
-It will already be called by the core so this is redundant.
-
-> +static void cdns_hdmi_bridge_atomic_enable(struct drm_bridge *bridge,
-> +					   struct drm_bridge_state *old_state)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> +	struct drm_atomic_state *state = old_state->base.state;
-> +	struct drm_connector *connector;
-> +	struct video_info *video = &mhdp->video_info;
-> +	struct drm_crtc_state *crtc_state;
-> +	struct drm_connector_state *conn_state;
-> +	struct drm_display_mode *mode = &mhdp->mode;
-> +	union phy_configure_opts phy_cfg;
-> +	int ret;
-> +
-> +	connector = drm_atomic_get_new_connector_for_encoder(state,
-> +							     bridge->encoder);
-> +	if (WARN_ON(!connector))
-> +		return;
-> +
-> +	mhdp->curr_conn = connector;
-> +
-> +	conn_state = drm_atomic_get_new_connector_state(state, connector);
-> +	if (WARN_ON(!conn_state))
-> +		return;
-> +
-> +	crtc_state = drm_atomic_get_new_crtc_state(state, conn_state->crtc);
-> +	if (WARN_ON(!crtc_state))
-> +		return;
-> +
-> +	video->color_fmt = conn_state->hdmi.output_format;
-> +	video->bpc = conn_state->hdmi.output_bpc;
-> +
-> +	drm_mode_copy(&mhdp->mode, &crtc_state->adjusted_mode);
-
-Why do you need a copy of all these fields? You should pass the
-connector / bridge state around and not copy these fields.
-
-> +	/* video mode check */
-> +	if (mode->clock == 0 || mode->hdisplay == 0 || mode->vdisplay == 0)
-> +		return;
-
-This should be checked in atomic_check, but I'm pretty sure it's redundant.
-
-> +	dev_dbg(mhdp->dev, "Mode: %dx%dp%d\n",
-> +		mode->hdisplay, mode->vdisplay, mode->clock);
-> +
-> +	drm_atomic_helper_connector_hdmi_update_infoframes(connector, state);
-> +
-> +	/* Line swapping */
-> +	cdns_mhdp_reg_write(&mhdp->base, LANES_CONFIG, 0x00400000 | mhdp->lane_mapping);
-> +
-> +	mhdp->hdmi.char_rate = drm_hdmi_compute_mode_clock(mode,
-> +							   mhdp->video_info.bpc,
-> +							   mhdp->video_info.color_fmt);
-
-The TMDS char rate is already available in the connector_state so there
-no need to recompute it.
-
-> +	phy_cfg.hdmi.tmds_char_rate = mhdp->hdmi.char_rate;
-
-And you shouldn't store a copy either.
-
-> +	/* Mailbox protect for HDMI PHY access */
-> +	mutex_lock(&mhdp->mbox_mutex);
-> +	ret = phy_configure(mhdp->phy, &phy_cfg);
-> +	mutex_unlock(&mhdp->mbox_mutex);
-> +	if (ret) {
-> +		dev_err(mhdp->dev, "%s: phy_configure() failed: %d\n",
-> +			__func__, ret);
-> +		return;
-> +	}
-> +
-> +	cdns_hdmi_sink_config(mhdp);
-> +
-> +	ret = cdns_hdmi_ctrl_init(mhdp);
-> +	if (ret < 0) {
-> +		dev_err(mhdp->dev, "%s, ret = %d\n", __func__, ret);
-> +		return;
-> +	}
-> +
-> +	/* Config GCP */
-> +	if (mhdp->video_info.bpc == 8)
-> +		cdns_hdmi_disable_gcp(mhdp);
-> +	else
-> +		cdns_hdmi_enable_gcp(mhdp);
-> +
-> +	ret = cdns_hdmi_mode_config(mhdp, mode, &mhdp->video_info);
-> +	if (ret < 0) {
-> +		dev_err(mhdp->dev, "CDN_API_HDMITX_SetVic_blocking ret = %d\n", ret);
-> +		return;
-> +	}
-> +}
-> +
-> +static int cdns_hdmi_bridge_clear_infoframe(struct drm_bridge *bridge,
-> +					    enum hdmi_infoframe_type type)
-> +{
-> +	return 0;
-> +}
-
-Either implement it or don't, but an empty function is dead code.
-
-> +static int cdns_hdmi_bridge_write_infoframe(struct drm_bridge *bridge,
-> +					    enum hdmi_infoframe_type type,
-> +					    const u8 *buffer, size_t len)
-> +{
-> +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> +
-> +	switch (type) {
-> +	case HDMI_INFOFRAME_TYPE_AVI:
-> +		cdns_hdmi_config_infoframe(mhdp, 0, len, buffer, HDMI_INFOFRAME_TYPE_AVI);
-> +		break;
-> +	case HDMI_INFOFRAME_TYPE_SPD:
-> +		cdns_hdmi_config_infoframe(mhdp, 1, len, buffer, HDMI_INFOFRAME_TYPE_SPD);
-> +		break;
-> +	case HDMI_INFOFRAME_TYPE_VENDOR:
-> +		cdns_hdmi_config_infoframe(mhdp, 2, len, buffer, HDMI_INFOFRAME_TYPE_VENDOR);
-> +		break;
-> +	default:
-> +		dev_dbg(mhdp->dev, "Unsupported infoframe type %x\n", type);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int cdns_hdmi_bridge_atomic_check(struct drm_bridge *bridge,
-> +					 struct drm_bridge_state *bridge_state,
-> +					 struct drm_crtc_state *crtc_state,
-> +					 struct drm_connector_state *conn_state)
-> +{
-> +	return drm_atomic_helper_connector_hdmi_check(conn_state->connector, conn_state->state);
-> +}
-
-You should also call your mode_valid function here.
-
-Maxime
-
---lqdlqrw2llhccm2m
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZoP/rwAKCRDj7w1vZxhR
-xbtMAPwOIZGKcI/rVzpcMiT2neBt5WGvMKV0jq/zloFZ/N14pwD/eob5WPgjeYWd
-oweE8ti1ed438LG/cKON29OerGxdGw0=
-=INSe
------END PGP SIGNATURE-----
-
---lqdlqrw2llhccm2m--
-
-
---===============5771836568847348746==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5771836568847348746==--
-
+Ck9uIFNhdCwgMjkgSnVuIDIwMjQgMDM6MjY6NTggKzAzMDAsIENyaXN0aWFuIENpb2NhbHRlYSB3
+cm90ZToKPiBDb21waWxlIHRlc3RpbmcgY29uZmlndXJhdGlvbnMgd2l0aG91dCBSRUdNQVAgc3Vw
+cG9ydCBlbmFibGVkIHJlc3VsdHMgaW4KPiBhIGJ1bmNoIG9mIGVycm9ycyBiZWluZyByZXBvcnRl
+ZDoKPiAKPiAgIC4uL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhk
+cHR4LmM6NTY5OjIxOiBlcnJvcjogdmFyaWFibGUg4oCYcmtfaGRwdHhfcGh5X3JlZ21hcF9jb25m
+aWfigJkgaGFzIGluaXRpYWxpemVyIGJ1dCBpbmNvbXBsZXRlIHR5cGUKPiAgICAgNTY5IHwgc3Rh
+dGljIGNvbnN0IHN0cnVjdCByZWdtYXBfY29uZmlnIHJrX2hkcHR4X3BoeV9yZWdtYXBfY29uZmln
+ID0gewo+ICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgIF5+fn5+fn5+fn5+fn4KPiAgIC4u
+L2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4LmM6NTcwOjEw
+OiBlcnJvcjog4oCYY29uc3Qgc3RydWN0IHJlZ21hcF9jb25maWfigJkgaGFzIG5vIG1lbWJlciBu
+YW1lZCDigJhyZWdfYml0c+KAmQo+ICAgICA1NzAgfCAgICAgICAgIC5yZWdfYml0cyA9IDMyLAo+
+ICAgICAgICAgfCAgICAgICAgICBefn5+fn5+fgo+IAo+IFsuLi5dCgpBcHBsaWVkLCB0aGFua3Mh
+CgpbMS8xXSBwaHk6IHBoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4OiBTZWxlY3QgQ09ORklHX01G
+RF9TWVNDT04KICAgICAgY29tbWl0OiBlZGY5ZTA0OTU1ZDIzODcwMzJiZWFjNTRlYmYyMGI0M2Fh
+Y2EyYWRmCgpCZXN0IHJlZ2FyZHMsCi0tIApWaW5vZCBLb3VsIDx2a291bEBrZXJuZWwub3JnPgoK
+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
