@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27B25C3064D
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 13:36:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0354EC30658
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 18:00:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EgqreH8+/Qo7aKMoxWBFRXL806KY3bBaG96QZ/Sq0fY=; b=eCfqRc8O6X4Nrz
-	lyWQ1B8dhB1liU8lmUChhIiLOFeID0pchCz96R4TrEkGuvRYLIe6rvTnGvglT3amV8bQUpKsgYnPX
-	tT8W9a6GNsgxyMQo8Sg/gPtg+Psirw93VueWHsqWB9wckIM+cK7J+1kGAbS46j3SsMQX1uorzGBJr
-	dUiIxyWbHTMWpJgEBZ1KwGpmG4h6LOYD+ro+GA3cE8UEhJPDWXAKXLTkCnSqfMRlXLg1loibBTlNO
-	kUcpXFoY6Rxvmav24G+sL47uAyWvKM3X6rSFGL/9oEDxD6kYcSXdXAgxw4K8lB5T/XT1UhtCAXiWv
-	E7pepzelS10yA0vx7pYw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mVB5y2zVXBDIBhCXh0/kVH76TsStngVswgHWWhLSMww=; b=k61yLUcuiOxs9B
+	UQINhCZ1pE+CR/9k0t67brd1t0wX9LTSzwy62IIJROElABqYRDbpSbmWAILENr9DCwWMS5XfsgIcD
+	SXIc3jOs4RU7qRTQUZbqpeWjVLDdlpyqEOC7HKo9RZqqJkC3U7ahOrL92GtC4/qMxF4IA8vABBpdN
+	xwJ11+ZNBQRmRQ9nzUxvwW8KNVfv0f7Z7SBTROIvSFD2DpX5PfOSARXnmjrP3vJICpp0r21NtYXLt
+	pcdfDZ41o7JPPvnAgRc02g+1X3hhqGGWOrZSGflCPV9k3L+heaXJQigTrYBFGeluqId5iENzcCYgu
+	8VsVSqIqaOjkvPIS0r3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOdgm-00000006seb-2h6L;
-	Tue, 02 Jul 2024 13:36:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOdgI-00000006sP6-23r5;
-	Tue, 02 Jul 2024 13:36:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A8D4B619E6;
-	Tue,  2 Jul 2024 13:36:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A917EC116B1;
-	Tue,  2 Jul 2024 13:36:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719927385;
-	bh=HknsU8WwUKZqagKR9KNNTTxKbEJAn5qGk/RSvr/NWVY=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=O6wXdR5TV241y4FfFjaal25QZYZ3TzvCkxVg5yze72ZTpON6J6YkjGd1apJDiHRQT
-	 URJjfhal5XJ3SJDIAIPXUJ/XeFoRGss92nhnnkUXKLGlFQ7MFFs7w2K5kVhji3OEEk
-	 tY9iHT6iXOS1qTaFVZT6KTqQYZ0SjqImOITS35wXeNnulXpXlGzyIg5E9IKp2X7ILp
-	 pFz67S02HQ/yWTUhfiX/cRj6r9FV0o3WXPFfntya/G9oqWn80DCi7ctAE8oxCBLyot
-	 YUCa8VFv6jZgEoGFrBrITWYz+u+ceVHoUldkC9AwrulKiPbqcs2rmDgHn04s8bu1O9
-	 +BifWJnF5By0g==
-From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, Lorenzo Bianconi <lorenzo@kernel.org>
-Cc: kishon@kernel.org, lorenzo.bianconi83@gmail.com, conor@kernel.org, 
- linux-arm-kernel@lists.infradead.org, robh+dt@kernel.org, 
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, 
- devicetree@vger.kernel.org, nbd@nbd.name, john@phrozen.org, dd@embedd.com, 
- catalin.marinas@arm.com, will@kernel.org, upstream@airoha.com, 
- angelogioacchino.delregno@collabora.com
-In-Reply-To: <cover.1719682943.git.lorenzo@kernel.org>
-References: <cover.1719682943.git.lorenzo@kernel.org>
-Subject: Re: [PATCH 0/2] Add dtime and Rx AEQ IO registers to
- phy-airoha-pcie driver
-Message-Id: <171992738030.699169.10416915810808814993.b4-ty@kernel.org>
-Date: Tue, 02 Jul 2024 19:06:20 +0530
+	id 1sOho9-00000007ZbQ-1yV2;
+	Tue, 02 Jul 2024 18:00:49 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171] helo=relmlie5.idc.renesas.com)
+	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sOho6-00000007Za6-3j08
+	for linux-phy@lists.infradead.org;
+	Tue, 02 Jul 2024 18:00:48 +0000
+X-IronPort-AV: E=Sophos;i="6.09,178,1716217200"; 
+   d="scan'208";a="210052532"
+Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
+  by relmlie5.idc.renesas.com with ESMTP; 03 Jul 2024 03:00:40 +0900
+Received: from localhost.localdomain (unknown [10.226.93.72])
+	by relmlir5.idc.renesas.com (Postfix) with ESMTP id 9B4F84006CD0;
+	Wed,  3 Jul 2024 03:00:35 +0900 (JST)
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Biju Das <biju.das.au@gmail.com>,
+	devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-renesas-soc@vger.kernel.org
+Subject: [PATCH v5 0/4] Add USB VBUS regulator for RZ/G2L
+Date: Tue,  2 Jul 2024 19:00:14 +0100
+Message-ID: <20240702180032.207275-1-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_063626_634561_538DAFEC 
-X-CRM114-Status: UNSURE (   6.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240702_110047_077037_75A6A674 
+X-CRM114-Status: GOOD (  11.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,28 +74,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+As per RZ/G2L HW manual, VBUS enable can be controlled by the VBOUT bit of
+the VBUS Control Register(VBENCTL) register in the USBPHY Control. But
+this IP is in the Reset block.
 
-On Sat, 29 Jun 2024 19:51:47 +0200, Lorenzo Bianconi wrote:
-> Introduce Tx-Rx detection Time and Rx AEQ training mappings to
-> phy-airoha-pcie driver. This is a preliminary patch to introduce PCIe
-> support to En7581 SoC through the mediatek-gen3 PCIe driver.
-> 
-> Lorenzo Bianconi (2):
->   dt-bindings: phy: airoha: Add dtime and Rx AEQ IO registers
->   phy: airoha: Add dtime and Rx AEQ IO registers
-> 
-> [...]
+Reset driver exposes this register as regmap and instantiate the USB VBUS
+regulator device. Consumers(phy device) can use regulator APIs to control
+VBUS as controlling is done in the atomic context.
 
-Applied, thanks!
+Looks like this patch series can be taken via reset tree, once Geeert
+provides Ack for board dtsi patch??
 
-[1/2] dt-bindings: phy: airoha: Add dtime and Rx AEQ IO registers
-      commit: 5854d0aa5226816575d2323e95bffdc9267d78b1
-[2/2] phy: airoha: Add dtime and Rx AEQ IO registers
-      commit: 2a011c3c12e8de461fb1fdce85fa38d308c4eb8b
+v4->v5:
+ * Dropped regulator Patches #3 and #4 as patch#3 is going to be
+   applied in Linux 6.10-rc5 and patch#4 is already in regulator/next
+   tree.
+ * Added Rb tag from Krzysztof for the binding patch.
+ * Rebased and fixed the merge conflicts for patch#2(rzg2l-usbphy-ctrl).
+ * Added Ack from Vinod for phy driver patch#5.
+ * Updated commit description for board dtsi patch.
+v3->v4:
+ * Fixed example indentation to 4 char spaces in patch#1
+ * Dropped regulator-{min,max}-microvolt from example.
+ * Updated commit header and description in patch#3
+ * Replaced regulator_set_hardware_enable_register()->regulator_hardware_enable()
+ * Updated documentation to "must use of regulator_get_exclusive() for consumers"
+ * Enforced exclusive access in regulator_hardware_enable().
+ * Added generic support regulator_hardware_enable().
+ * Added check for of_get_child_by_name().
+ * Released the resource by of_node_put()
+ * Updated commit description with regulator_hardware_enable()
+ * Used devm_regulator_get_exclusive() to get regulator handle.
+ * Dropped regulator-{min,max}-microvolt.
+v2->v3:
+ * Documented regulator-vbus in the binding file.
+ * Updated commit description and header for patch#2
+ * Moved regulator device creation and instantiation at the end of probe().
+ * Introduced new API regulator_set_hardware_enable_register() to enable/disable
+   regulator in atomic context.
+ * Dropped vbus_voltages table from patch#4
+ * Added support for enabling/disabling regulator through regmap API's
+ * Updated rzg2l_usb_vbus_rdesc with enable_{reg,mask}, fixed_uV and
+   n_voltages
+ * Updated of_node with child node of the parent device.
+ * Replaced regulator's regmap API with newly introduced
+   regulator_set_hardware_enable_register to enable/disable regulator
+   in interrupt context in patch#5
+ * Dropped using "usb_vbus-supply" in patch#5.
+ * Upated vbus regulator label name in dts file.
+ * Updated node and regulator name that matches with the binding documentation.
+v1->v2:
+ * Introduced a regulator driver to control VBUS
 
-Best regards,
+Biju Das (4):
+  dt-bindings: reset: renesas,rzg2l-usbphy-ctrl: Document USB VBUS
+    regulator
+  reset: renesas: Add USB VBUS regulator device as child
+  phy: renesas: phy-rcar-gen3-usb2: Control VBUS for RZ/G2L SoCs
+  arm64: dts: renesas: rz-smarc: Replace fixed regulator for USB VBUS
+
+ .../reset/renesas,rzg2l-usbphy-ctrl.yaml      | 10 ++++++
+ .../boot/dts/renesas/rz-smarc-common.dtsi     | 11 ++-----
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c      |  8 ++++-
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c       | 31 +++++++++++++++++++
+ 4 files changed, 51 insertions(+), 9 deletions(-)
+
 -- 
-Vinod Koul <vkoul@kernel.org>
+2.43.0
 
 
 -- 
