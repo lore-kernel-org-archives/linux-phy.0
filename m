@@ -4,72 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BDCFC3064D
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 12:40:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5520C30658
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jul 2024 13:12:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HXk/urWmNl98ZP8y/NppB7iu25ZJ9gSBgOBumHSzCsw=; b=pZJdt7MRzhIZ7iQp9BtONQtLXE
-	bXNrEnQ8aMKjmsZG4HJxAaHNBXwBWM/23z1/dsTjpn1rW1YgaVucy09KbqFEoij6hYf8/f4Kf/x1l
-	KmA5azyV+UB3fnGiiou9IdhDr13G6pQQbcaivHfpLIILfg7wDG4taG6YmfIbBwNjX6Egbng1eDGqz
-	6LyWBV48vHikgif5Mzi/7jaQ04+Eq59SYI/hS/CiMpfImWk0PT0g/94WTIh1cd9t19t9BQTkOCzPa
-	+sYVMo00xGSeMtWHd0SvDyApaj0kleSyVrnuosNnq+ruVJXyAVQvTRUwM3oAs3SnSOLA0o/lvJqtU
-	/kLNZyKg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=24cLFZ+OvsVUiHM2MfuOuiaqU8bPFsc6P+nbFSabMB8=; b=bFwvAkkmbu0mG8
+	c6GX9CfhSnaSxVTsNTzw3lMoZWpAV7sslGZIZinChA99YQdHzuJgyt74oNZOm+Unp9g04v6bnHI+f
+	NUfFNu12P4fZh1ZaiVokWPxvIdXw0GqmRmviltOte3LAM/KTSFfEFqY0VEZ2LnP4yodIB4D7JEBUp
+	0Z4tHhLzvK5Jmh66N+jFrdiNOIU2LjiPtlU0w+X1p8E9Lr3+fqhra9cTWdcjRjHCObhsBftXa8Nkd
+	C43vuN7sj70pUh5MOTdAR60Jz2saYDPctxkNLcEWUQTr2VWUGvOlY5D2WWbV4DkELwtJwXWmAJYk9
+	Ggi7Gy4H+Mf3Kg3H8fPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOco6-00000006j9R-40C4;
-	Tue, 02 Jul 2024 12:40:26 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sOdJC-00000006nkZ-2OPf;
+	Tue, 02 Jul 2024 13:12:34 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOcnj-00000006j0W-0krU;
-	Tue, 02 Jul 2024 12:40:07 +0000
+	id 1sOdJ3-00000006nhw-3fTS
+	for linux-phy@lists.infradead.org;
+	Tue, 02 Jul 2024 13:12:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 81EAE61341;
-	Tue,  2 Jul 2024 12:40:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9379C2BD10;
-	Tue,  2 Jul 2024 12:40:00 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id EA2A1CE1DDB;
+	Tue,  2 Jul 2024 13:12:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 578E7C116B1;
+	Tue,  2 Jul 2024 13:12:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719924001;
-	bh=G4lrwOm8PBJDnOGCzEkhxC+Ha38BeZflLdrxWcXKBnM=;
+	s=k20201202; t=1719925942;
+	bh=p+lBJAEBNcH6mzYX4tBdWs7yrDOUKpDqlewKL2RMD8U=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rwjQ6HVugtneW0zEDQh2DOGLqh/YDpFk5SsPlLV3JbU74z3nTMKyEJ/emzLvEzFh9
-	 pKNW9MRtdBvly3m1k9QNn7gVYamGu9uxV4xSMJCYzJXatRyCvKTtAs55uTryWhy5cs
-	 9nG6RDyRrT7h5KYD9We4nUCvpBiWwwxtEj7umJHvdD6qzdQKiQxnqn/Y8YCLHY/0NC
-	 dNcdlXyStmPdpi1O2expbN5C2PfHqosWCtrRBBUXkuEljiIcw4e6zy3vBjUkZRmFs2
-	 NPt3g+cAdKeqt689Oiz2mlq9VlufZS2MTa1BPuvz4ga9uihPEsqcoN7oLIOOFQx005
-	 KupHQdPmkLNKw==
-Date: Tue, 2 Jul 2024 14:39:58 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Sandor Yu <sandor.yu@nxp.com>
-Cc: Alexander Stein <alexander.stein@ew.tq-group.com>, 
-	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Robert Foss <rfoss@kernel.org>, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
-	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
-	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
-	Fabio Estevam <festevam@gmail.com>, 
-	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
-	"imx@lists.linux.dev" <imx@lists.linux.dev>, 
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "linux@ew.tq-group.com" <linux@ew.tq-group.com>
-Subject: Re: [PATCH v15 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Message-ID: <20240702-seahorse-of-unreal-brotherhood-dce5d0@houat>
-References: <20240306101625.795732-1-alexander.stein@ew.tq-group.com>
- <20240306101625.795732-5-alexander.stein@ew.tq-group.com>
- <20240306-mysterious-hoatzin-of-faith-49aec0@houat>
- <PAXPR04MB9448829F4BA8F8AF18F371F3F4DC2@PAXPR04MB9448.eurprd04.prod.outlook.com>
+	b=WFYJZJYO3UR/3JWTw+bvTFiEj+fr6L7XT7a4jC19rbfuBFMi4S0T8fGsD+eSBjewI
+	 K9a3ZEcwOQVT5Nsh+a0KgW+CY8TfpnUoiGva+XKt1StQdIDJTDzycabrADOekJil3E
+	 8s5NbGjb6wVA/0pqtQtgT5dMzjiqaSqNDtzZFB1tdXm3mABF1tvoAMLVmyKIDVXHJv
+	 hKmuH4M52gqxev+CuvLb5yARGsQDUp+sNun3kWzjd6f8LDobhUbClixczDpp/4J4yr
+	 fz98pu/Jf5Icaaql8W7xvXXHYRoVyonMczAS4BAr92Hhjdm5vE/ckI9RMEdwhtzsdp
+	 F6Zt8yZQ8Cwtg==
+Date: Tue, 2 Jul 2024 18:42:17 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Markus Elfring <Markus.Elfring@web.de>
+Cc: Ma Ke <make24@iscas.ac.cn>, linux-phy@lists.infradead.org,
+	kernel-janitors@vger.kernel.org,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>, Roger Quadros <rogerq@kernel.org>,
+	Sergio Paracuellos <sergio.paracuellos@gmail.com>,
+	Swapnil Jakhade <sjakhade@cadence.com>,
+	LKML <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] phy: cadence-torrent: Check return value on register read
+Message-ID: <ZoP8seqQxMFb-kS2@matsya>
+References: <20240702032042.3993031-1-make24@iscas.ac.cn>
+ <def496b0-ea98-467c-be47-77d965bb3a88@web.de>
 MIME-Version: 1.0
-In-Reply-To: <PAXPR04MB9448829F4BA8F8AF18F371F3F4DC2@PAXPR04MB9448.eurprd04.prod.outlook.com>
+Content-Disposition: inline
+In-Reply-To: <def496b0-ea98-467c-be47-77d965bb3a88@web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_054003_680850_92A3C3FE 
-X-CRM114-Status: GOOD (  39.51  )
+X-CRM114-CacheID: sfid-20240702_061226_136085_0A972574 
+X-CRM114-Status: GOOD (  11.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,216 +73,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0523866709032665643=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============0523866709032665643==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="3bvkkyl5thqxineu"
-Content-Disposition: inline
-
-
---3bvkkyl5thqxineu
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Tue, Jul 02, 2024 at 12:13:16PM GMT, Sandor Yu wrote:
-> > Subject: [EXT] Re: [PATCH v15 4/8] drm: bridge: Cadence: Add MHDP8501
-> > DP/HDMI driver
-> >=20
-> > Hi,
-> >=20
-> > On Wed, Mar 06, 2024 at 11:16:21AM +0100, Alexander Stein wrote:
-> > > +static int cdns_mhdp8501_read_hpd(struct cdns_mhdp8501_device
-> > *mhdp)
-> > > +{
-> > > +	u8 status;
-> > > +	int ret;
-> > > +
-> > > +	mutex_lock(&mhdp->mbox_mutex);
-> > > +
-> > > +	ret =3D cdns_mhdp_mailbox_send(&mhdp->base,
-> > MB_MODULE_ID_GENERAL,
-> > > +				     GENERAL_GET_HPD_STATE, 0, NULL);
-> > > +	if (ret)
-> > > +		goto err_get_hpd;
-> > > +
-> > > +	ret =3D cdns_mhdp_mailbox_recv_header(&mhdp->base,
-> > MB_MODULE_ID_GENERAL,
-> > > +					    GENERAL_GET_HPD_STATE,
-> > > +					    sizeof(status));
-> > > +	if (ret)
-> > > +		goto err_get_hpd;
-> > > +
-> > > +	ret =3D cdns_mhdp_mailbox_recv_data(&mhdp->base, &status,
-> > sizeof(status));
-> > > +	if (ret)
-> > > +		goto err_get_hpd;
-> > > +
-> > > +	mutex_unlock(&mhdp->mbox_mutex);
-> > > +
-> > > +	return status;
-> > > +
-> > > +err_get_hpd:
-> > > +	dev_err(mhdp->dev, "read hpd  failed: %d\n", ret);
-> > > +	mutex_unlock(&mhdp->mbox_mutex);
-> > > +
-> > > +	return ret;
-> > > +}
-> > > +
-> > > +enum drm_connector_status cdns_mhdp8501_detect(struct
-> > > +cdns_mhdp8501_device *mhdp) {
-> > > +	u8 hpd =3D 0xf;
-> > > +
-> > > +	hpd =3D cdns_mhdp8501_read_hpd(mhdp);
-> > > +	if (hpd =3D=3D 1)
-> > > +		return connector_status_connected;
-> > > +	else if (hpd =3D=3D 0)
-> > > +		return connector_status_disconnected;
-> > > +
-> > > +	dev_warn(mhdp->dev, "Unknown cable status, hdp=3D%u\n", hpd);
-> > > +	return connector_status_unknown;
-> > > +}
-> > > +
-> > > +static void hotplug_work_func(struct work_struct *work) {
-> > > +	struct cdns_mhdp8501_device *mhdp =3D container_of(work,
-> > > +						     struct cdns_mhdp8501_device,
-> > > +						     hotplug_work.work);
-> > > +	enum drm_connector_status status =3D cdns_mhdp8501_detect(mhdp);
-> > > +
-> > > +	drm_bridge_hpd_notify(&mhdp->bridge, status);
-> > > +
-> > > +	if (status =3D=3D connector_status_connected) {
-> > > +		/* Cable connected  */
-> > > +		DRM_INFO("HDMI/DP Cable Plug In\n");
-> > > +		enable_irq(mhdp->irq[IRQ_OUT]);
-> > > +	} else if (status =3D=3D connector_status_disconnected) {
-> > > +		/* Cable Disconnected  */
-> > > +		DRM_INFO("HDMI/DP Cable Plug Out\n");
-> > > +		enable_irq(mhdp->irq[IRQ_IN]);
-> > > +	}
-> > > +}
-> > > +
-> > > +static irqreturn_t cdns_mhdp8501_irq_thread(int irq, void *data) {
-> > > +	struct cdns_mhdp8501_device *mhdp =3D data;
-> > > +
-> > > +	disable_irq_nosync(irq);
-> > > +
-> > > +	mod_delayed_work(system_wq, &mhdp->hotplug_work,
-> > > +			 msecs_to_jiffies(HOTPLUG_DEBOUNCE_MS));
-> > > +
-> > > +	return IRQ_HANDLED;
-> > > +}
-> >=20
-> > AFAICT from the rest of the driver, you support HDMI modes with a chara=
-cter
-> > rate > 340Mchar/s, and thus you need to enable the scrambler.
-> >=20
-> > If you unplug/replug a monitor with the scrambler enabled though, and if
-> > there's no userspace component to react to the userspace event, the cod=
-e you
-> > have here won't enable the scrambler again.
-> >=20
-> > You can test that by using modetest with a 4k@60Hz mode or something, a=
-nd
-> > then disconnecting / reconnecting the monitor.
-> >=20
-> > We addressed it in vc4 in commit 6bed2ea3cb38 ("drm/vc4: hdmi: Reset li=
-nk
-> > on hotplug").
-> >=20
-> > Arguably, the whole handling of the HDMI scrambling setup should be tur=
-ned
-> > into a helper, and I wanted to extend the work I've been doing around t=
-he
-> > HDMI infra to support the scrambler setup once it landed.
-> >=20
->=20
-> Yes, for userspace components that do not handle HPD events (such as
-> modetest), if they are connected to a 4K display and enable scramble
-> then the cable is unplugged/plugged, HDMI will not work. However, this
-> is a userspace component limitation.
-
-No, it's not.
-
-I mean, yes, it's something the userspace *could* do. But it doesn't
-have to, and the expectation is very much that the display keeps
-working.
-
-> fbdev and weston could work well for this case.
-
-Yeah, they could work well. We don't want them to possibly work, we want
-them to work, period. That's why amdgpu, i915 and vc4 all have that code.
-
-> The patch for vc4 in commit 6bed2ea3cb38 ("drm/vc4: hdmi: Reset link
-> on hotplug") assumes unplug/replug the same monitor as stated in its
-> commit log.
-
-Indeed.
-
-> It does not support the case where unplug/plug to different displays.=20
-> For example, if the cable is unplugged from a 4K monitor and then plugged=
- into a 1080p monitor,=20
-> 4K video mode will be output to the 1080p monitor because this userspace =
-component cannot respond to the monitor change.
-> Therefore, for userspace components that do not handle HPD events (such a=
-s modetest),=20
-> this patch can only partially solve the limitation, but it is not a perfe=
-ct solution.
-
-You're looking at it from the wrong PoV. What matters is the behaviour
-we offer from userspace. Userspace is in charge of setting the mode, and
-it's expectation is that the mode is going to be output until it either
-changes the mode or disables the display.
-
-Reenabling the scrambler when a display is disconnected and reconnected
-matches that expectation. If we ignore the case where the display has
-changed, we still match that expectation: the userspace is in control of
-the mode.
-
-If it wants to react to monitors being unplugged, it can. But it doesn't
-have to, and it should keep working as long as you don't change the
-moniter / panel.
-
-And you're also completely ignoring things like AV amplifiers that
-really like to do those kind of short HPD pulses.
-
-> If helper functions are used to restore the HDMI scramble bit after
-> hotplug, I would like to use it.
-
-Those helpers don't exist yet, so feel free to work on them.
-
-Maxime
-
---3bvkkyl5thqxineu
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCZoP1HQAKCRDj7w1vZxhR
-xdkwAP40UCWrNOV2VLiJyvMg4LRN4JC8s6714BNQ8fq8rI1Q2wD+LrtpkGVb424r
-IxBXtjaaRMRF0KCaST36XTcm25I57Qc=
-=5pfl
------END PGP SIGNATURE-----
-
---3bvkkyl5thqxineu--
+On 02-07-24, 09:43, Markus Elfring wrote:
+> > cdns_torrent_dp_set_power_state() does not consider that ret might be
+> > overwritten. Add return value check of regmap_read_poll_timeout() after
+> > register read in cdns_torrent_dp_set_power_state().
+> 
+> I suggest to improve such a change description another bit.
+> 
+> 1. A return value is stored in the mentioned local variable.
+> 
+> 2. Unfortunately, it was not immediately checked.
+> 
+>    * https://cwe.mitre.org/data/definitions/252.html
+> 
+>    * https://wiki.sei.cmu.edu/confluence/display/c/EXP12-C.+Do+not+ignore+values+returned+by+functions
+> 
+> 3. How do you think about to avoid a repeated reference to a function name?
 
 
---===============0523866709032665643==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+<form letter>
+Feel free to ignore all comments from Markus, regardless whether the
+suggestion is reasonable or not. This person is banned from LKML and
+several maintainers ignore Markus' feedback, because it is just a waste
+of time.
+</form letter>
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0523866709032665643==--
-
