@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA08BC3065C
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jul 2024 03:04:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AB2CC30658
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jul 2024 03:04:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x2vndvBi/K5AZvv/zNIkADs4h1ZAgxdcDIxbxVnfG4o=; b=HX/ZgEhIoJ2J5k
-	G8rcaHUBlj6kUaE3lflYIFfxr9vRxfL/u/VX2mhBYgDd3Pv21g/y67IZF3h+IJS1/GVgQmr7+bs64
-	BQRxokD4rk8ULHEUauKO597atea6rtSaNJ+6yImWG5PrBnRvqf6c7QrQn54hyPnLmMUZYPLR9F1+G
-	f0IVeITANQ6lVcwnQ/xMozNet0K5F3WMjvdfisfnnvG9/Hix7pkZd4/0yHCSqfGP/fIcwb+81nIwT
-	6uu6RYj07QGnI+2ePwxxyCSc5E1pRHEU5Y16NZZgdYcW9iD9S//pHWKHjrw6z+z/i0gRvQbNPGi+R
-	1uV54a8igWpFResSF3aw==;
+	List-Owner; bh=WQGPe75ogmHRYuT3kVAnpFYcOnd8tcARBCo8deq6Lyg=; b=COKBZ/BWpZNWPg
+	jT4IAVW9dTCKSlclJshlipeLryjWg4MJ7jHac6f8KEtiUOlrLGefKmnx0wnpBsWStT7K3SRpUakEz
+	VBT6sJknNRDHgWSRdCereIvmi0Bt7oQhQEWbEMarCT0kxFdWWHVutAIvRQModde5aiqi1kodStRQk
+	iAv4WIA1xXouX9YR5wPl17SJ9gZdU6e6jAoGw1kqLe5DEMASa54/g0PbAKh3uFHnXS6d7JPHP6MyN
+	wTC8AOhtSgfZGE+y5jwUUww/TGhIWLgUEkaMPFY+dcc0ODnHHH0MZeLSQQkUSOrzIs6drCNqu/tmc
+	u8okmJbovTNZ6rD6ftmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOqIC-00000008ea3-0os2;
-	Wed, 03 Jul 2024 03:04:24 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1sOqIY-00000008ehT-39ji;
+	Wed, 03 Jul 2024 03:04:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOqI8-00000008eXb-02x1;
-	Wed, 03 Jul 2024 03:04:21 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 462HEY1H026446;
-	Wed, 3 Jul 2024 03:02:54 GMT
+	id 1sOqIU-00000008efa-1izB;
+	Wed, 03 Jul 2024 03:04:43 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 462Jbv13002531;
+	Wed, 3 Jul 2024 03:03:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/TGU65GeCuQxaGz1P0+2lJhHVExW7JnSYVc74B3YzSw=; b=jXOLJBPiv87EO9eo
-	AQPeMpaW/3LyqKUSGKlCrS4qZPs1Uim0Gs2kYzwtnOPkpTsmzVmfzu+s8PO12zgj
-	aXxEDYqSBhFvZvMXYLjC9FdV79RYK8Cmgbc4J/0rJzkZqo8QjmxDjw1DKaJ8psyR
-	MaUqYzHm7UWsoasPxKQ+tlJw4jJ6ofGBgNYiZIsh8t1VIRAOLobZEigf3+gPE9Zi
-	vfipCwN2aD4HQExcg3VQY8hZvSgwZ1nf+vo/x2OL/pbTNivn/gXxz7c+OafaH4AX
-	P4em/VN6djHGEHWJRgdb7SVsRi4h4A/05Y/oBYvHQ+jKMHKvEaehGnHM+/t7180J
-	mH13kA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4027mnqts0-1
+	vUlJeZArXy8wGVHiqF/d3CoFu3l6cFkYn6tkzhlbsb8=; b=knAGzvGbD7EwpPGJ
+	MqHSv0xiMNoGkkJASg/aBcOZJmTHqKYlxvH25FxKIyjwuysvK1l8a2fRfBfuGaky
+	SmtH89OmOf0abMKITRBfT0pf4qpZ2wNBrbvtSnac+A2K9IkQjtGoxdwLuerRC/T9
+	WAtEAT0Xsc0WUzswZZpU7tQ5yDDcpyV1Vn0i+JV5SdSZOtJ92U3i2QgLNFKyGo6K
+	HVktnmZ9BYZkpjE4OP1VT8Fz9THM1dYBlXqUbrFMpgTlmQVOVjLqa/TQAkyvgxFi
+	JdYCKYfzYV629CQYVgdeBEVHaC0eai4rNZelu83nvRb+fN8DydSJSQK0Ic/rbmHo
+	p7RRfg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 402bj8a2dy-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 03 Jul 2024 03:02:54 +0000 (GMT)
+	Wed, 03 Jul 2024 03:03:14 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46332q1s032685
+	by NALASPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46333DsQ028389
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 3 Jul 2024 03:02:52 GMT
+	Wed, 3 Jul 2024 03:03:13 GMT
 Received: from tengfan-gv.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 2 Jul 2024 20:02:30 -0700
+ 15.2.1544.9; Tue, 2 Jul 2024 20:02:50 -0700
 From: Tengfei Fan <quic_tengfan@quicinc.com>
 To: <andersson@kernel.org>, <konrad.dybcio@linaro.org>, <robh@kernel.org>,
         <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <djakov@kernel.org>,
@@ -97,9 +97,9 @@ CC: <robimarko@gmail.com>, <quic_gurus@quicinc.com>,
         <linux-watchdog@vger.kernel.org>, <linux-pci@vger.kernel.org>,
         <linux-stm32@st-md-mailman.stormreply.com>, <kernel@quicinc.com>,
         Tengfei Fan <quic_tengfan@quicinc.com>
-Subject: [PATCH 10/47] dt-bindings: crypto: ice: Document QCS9100 inline crypto engine
-Date: Wed, 3 Jul 2024 10:58:13 +0800
-Message-ID: <20240703025850.2172008-11-quic_tengfan@quicinc.com>
+Subject: [PATCH 11/47] dt-bindings: crypto: qcom,prng: document QCS9100
+Date: Wed, 3 Jul 2024 10:58:14 +0800
+Message-ID: <20240703025850.2172008-12-quic_tengfan@quicinc.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20240703025850.2172008-1-quic_tengfan@quicinc.com>
 References: <20240703025850.2172008-1-quic_tengfan@quicinc.com>
@@ -109,19 +109,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: N2jRaviVHrZmflwOCnfnpnVzPplJsrxT
-X-Proofpoint-GUID: N2jRaviVHrZmflwOCnfnpnVzPplJsrxT
+X-Proofpoint-ORIG-GUID: iI1N19sMc-SZci84tfFM0UT2-swcG7hg
+X-Proofpoint-GUID: iI1N19sMc-SZci84tfFM0UT2-swcG7hg
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-07-02_18,2024-07-02_02,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
- spamscore=0 malwarescore=0 adultscore=0 priorityscore=1501
- lowpriorityscore=0 phishscore=0 mlxscore=0 suspectscore=0 clxscore=1015
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2407030022
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
+ spamscore=0 suspectscore=0 mlxlogscore=999 mlxscore=0 priorityscore=1501
+ malwarescore=0 adultscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2406140001
+ definitions=main-2407030022
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_200420_191671_89E10804 
-X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-CacheID: sfid-20240702_200442_475952_D4DDDA7D 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -139,26 +139,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the compatible used for the inline crypto engine found on
-QCS9100.
+Document QCS9100 compatible for the True Random Number Generator.
 
 Signed-off-by: Tengfei Fan <quic_tengfan@quicinc.com>
 ---
- .../devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml    | 1 +
+ Documentation/devicetree/bindings/crypto/qcom,prng.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml b/Documentation/devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml
-index 0304f074cf08..ad0944e05025 100644
---- a/Documentation/devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml
-+++ b/Documentation/devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml
-@@ -13,6 +13,7 @@ properties:
-   compatible:
-     items:
-       - enum:
-+          - qcom,qcs9100-inline-crypto-engine
-           - qcom,sa8775p-inline-crypto-engine
-           - qcom,sc7180-inline-crypto-engine
-           - qcom,sc7280-inline-crypto-engine
+diff --git a/Documentation/devicetree/bindings/crypto/qcom,prng.yaml b/Documentation/devicetree/bindings/crypto/qcom,prng.yaml
+index 89c88004b41b..e97226eb7a50 100644
+--- a/Documentation/devicetree/bindings/crypto/qcom,prng.yaml
++++ b/Documentation/devicetree/bindings/crypto/qcom,prng.yaml
+@@ -17,6 +17,7 @@ properties:
+           - qcom,prng-ee  # 8996 and later using EE
+       - items:
+           - enum:
++              - qcom,qcs9100-trng
+               - qcom,sa8775p-trng
+               - qcom,sc7280-trng
+               - qcom,sm8450-trng
 -- 
 2.25.1
 
