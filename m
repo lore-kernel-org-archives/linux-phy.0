@@ -4,111 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 567BAC2BD09
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jul 2024 06:30:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C328C31D97
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jul 2024 08:21:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=c7zdTwVjLewAPr0TZPb8427CEZuFRK5unxsz3StUIwo=; b=EkUf/r1LStVMzxKwVQHp7xPGC0
-	k+mbCZ6VlIjbypLqnq8pHHBxdX2Xp1oYdS0LTRiFsRS4WiGrXo2OGFpKaAEySnYb+naEPTeWHU+A/
-	5mE2XBApsFeopG7uKv0NkxWHoi9IkkRgJnqyuTErRoH/nKf6G4nLhfiyOwFtjUZhQo2cdcfjYy9ct
-	6WUQpYZvfk2wZDvy91vfLH0o/7qOt4l0YUzYmT6s0wqsvS3KCGoO2657BKB7QmbqXWPhLcPTD+YfU
-	a/2wm5WBRE4/OYlEgh1ufpWncmb8KxurPNLmUXyCB8+Fdt1zyiieAAsmdBAddcIe0iiKhggpsIvT8
-	kBUOt+dg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j0qcZ4LBDLHJSHnI/UMPHbzucs3vUB1XuPbbigPQaKQ=; b=RfvJCyZ9pOedSL
+	EylcWi0WaxujMxcFZOgw4Vml+5JDDDSEfNOw7e2Y+DS/p6eEkdXr/CfRGMwwmNfGlpw+oMXg70apo
+	0VIaBHdsXw8owPY0bzMvT0diUdP/PKsyiUySIAsb07k2sU3iSqfFGuqlIX2M616SF0THlxmHXyNRW
+	ZAG5fFfiJTbCt0Od+sMfNm7r35Z+yr8QTVDJJ9jigC7IhtnHIAvBorw4gcCnwLrwHeqiqOzSU94ev
+	B6NzM8m4M/zCFg0R1bH19DB0p14dVT4J7zWZLc/jRsO6bAy5Wir3V4gaUFXYtlY5Yu8zn0cB1YmAf
+	43szQgFBKKQ5D07gJGsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOtVB-00000009Dci-08hg;
-	Wed, 03 Jul 2024 06:30:01 +0000
-Received: from esa.microchip.iphmx.com ([68.232.153.233])
+	id 1sOvEb-00000009PeF-3GzT;
+	Wed, 03 Jul 2024 08:21:01 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOtV6-00000009Dc3-37q5;
-	Wed, 03 Jul 2024 06:29:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1719988196; x=1751524196;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=uNhuDjLWZorDbXDOWnVhHDPlY99NnQewwMxhnvVsgtQ=;
-  b=Gxsoe0HDr1vqSeikiipVO5TI/gFLTolVGrIn0jHuD0KYVjfCBy1UEBSZ
-   BpRYiUfnCkff/9qnCQ/66s7om2eDgQhzRramGfsq0ofYBKt6ovGOuxD4p
-   L3rqkMjoVJq1x3N9qU7Ad23WyCHMDsySnLd7M+kdKfVHRgXYZ55Lrbkvt
-   bWW+7NYk6yDaSSaPabbtDt/H1D3dqxqPp2abyJm0KRvzmRlmtXOSMW9v1
-   Gj6syKdrKT8gsFo5Q3dlaBpwOUYypWKzlaa+f3iV4/Im69c5JdnNLkZ4d
-   04MEJkypyA8ZfmuQN9+0piLgjC2U7qdhCBpqQm0e+oXr9xYQ9mm5UaUTh
-   A==;
-X-CSE-ConnectionGUID: uIiTarkbQoeuHwrRiGsmdg==
-X-CSE-MsgGUID: 7MEjGxCjQO6357/Nmml1zg==
-X-IronPort-AV: E=Sophos;i="6.09,181,1716274800"; 
-   d="asc'?scan'208";a="31406626"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa1.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 02 Jul 2024 23:29:52 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Tue, 2 Jul 2024 23:29:26 -0700
-Received: from wendy (10.10.85.11) by chn-vm-ex04.mchp-main.com (10.10.85.152)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.35 via Frontend
- Transport; Tue, 2 Jul 2024 23:29:12 -0700
-Date: Wed, 3 Jul 2024 07:28:53 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: Tengfei Fan <quic_tengfan@quicinc.com>, <andersson@kernel.org>,
-	<konrad.dybcio@linaro.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <djakov@kernel.org>, <mturquette@baylibre.com>,
-	<sboyd@kernel.org>, <jassisinghbrar@gmail.com>,
-	<herbert@gondor.apana.org.au>, <davem@davemloft.net>,
-	<manivannan.sadhasivam@linaro.org>, <will@kernel.org>, <joro@8bytes.org>,
-	<conor@kernel.org>, <tglx@linutronix.de>, <amitk@kernel.org>,
-	<thara.gopinath@gmail.com>, <linus.walleij@linaro.org>,
-	<wim@linux-watchdog.org>, <linux@roeck-us.net>, <rafael@kernel.org>,
-	<viresh.kumar@linaro.org>, <vkoul@kernel.org>, <edumazet@google.com>,
-	<kuba@kernel.org>, <pabeni@redhat.com>, <mcoquelin.stm32@gmail.com>,
-	<robimarko@gmail.com>, <quic_gurus@quicinc.com>,
-	<bartosz.golaszewski@linaro.org>, <kishon@kernel.org>,
-	<quic_wcheng@quicinc.com>, <alim.akhtar@samsung.com>, <avri.altman@wdc.com>,
-	<bvanassche@acm.org>, <agross@kernel.org>, <gregkh@linuxfoundation.org>,
-	<quic_tdas@quicinc.com>, <robin.murphy@arm.com>, <daniel.lezcano@linaro.org>,
-	<rui.zhang@intel.com>, <lukasz.luba@arm.com>, <quic_rjendra@quicinc.com>,
-	<ulf.hansson@linaro.org>, <quic_sibis@quicinc.com>,
-	<otto.pflueger@abscue.de>, <quic_rohiagar@quicinc.com>, <luca@z3ntu.xyz>,
-	<neil.armstrong@linaro.org>, <abel.vesa@linaro.org>,
-	<bhupesh.sharma@linaro.org>, <alexandre.torgue@foss.st.com>,
-	<peppe.cavallaro@st.com>, <joabreu@synopsys.com>, <netdev@vger.kernel.org>,
-	<lpieralisi@kernel.org>, <kw@linux.com>, <bhelgaas@google.com>,
-	<ahalaney@redhat.com>, <krzysztof.kozlowski@linaro.org>,
-	<u.kleine-koenig@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
-	<quic_cang@quicinc.com>, <danila@jiaxyga.com>, <quic_nitirawa@quicinc.com>,
-	<mantas@8devices.com>, <athierry@redhat.com>, <quic_kbajaj@quicinc.com>,
-	<quic_bjorande@quicinc.com>, <quic_msarkar@quicinc.com>,
-	<quic_devipriy@quicinc.com>, <quic_tsoni@quicinc.com>,
-	<quic_rgottimu@quicinc.com>, <quic_shashim@quicinc.com>,
-	<quic_kaushalk@quicinc.com>, <quic_tingweiz@quicinc.com>,
-	<quic_aiquny@quicinc.com>, <srinivas.kandagatla@linaro.org>,
-	<linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <linux-pm@vger.kernel.org>,
-	<linux-clk@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-crypto@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
-	<linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<iommu@lists.linux.dev>, <linux-riscv@lists.infradead.org>,
-	<linux-gpio@vger.kernel.org>, <linux-watchdog@vger.kernel.org>,
-	<linux-pci@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
-	<kernel@quicinc.com>
-Subject: Re: [PATCH 00/47] arm64: qcom: dts: add QCS9100 support
-Message-ID: <20240703-manager-armless-b13b18c79192@wendy>
-References: <20240703025850.2172008-1-quic_tengfan@quicinc.com>
- <20240703035735.2182165-1-quic_tengfan@quicinc.com>
- <7417fd8c-e852-45ee-bac9-d92921036e2f@kernel.org>
+	id 1sOvEZ-00000009Pbr-1oMN
+	for linux-phy@lists.infradead.org;
+	Wed, 03 Jul 2024 08:21:00 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1sOvEH-0005jq-PW; Wed, 03 Jul 2024 10:20:41 +0200
+Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1sOvEG-006o2M-OS; Wed, 03 Jul 2024 10:20:40 +0200
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1sOvEG-0002lm-2H;
+	Wed, 03 Jul 2024 10:20:40 +0200
+Message-ID: <8169342919f5bc7576d5854df184d60fe249414c.camel@pengutronix.de>
+Subject: Re: [PATCH v4 2/6] reset: renesas: Add USB VBUS regulator device as
+ child
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Biju Das <biju.das.jz@bp.renesas.com>
+Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,  Geert Uytterhoeven
+ <geert+renesas@glider.be>, Prabhakar Mahadev Lad
+ <prabhakar.mahadev-lad.rj@bp.renesas.com>, Biju Das
+ <biju.das.au@gmail.com>, devicetree@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org
+Date: Wed, 03 Jul 2024 10:20:40 +0200
+In-Reply-To: <20240616105402.45211-3-biju.das.jz@bp.renesas.com>
+References: <20240616105402.45211-1-biju.das.jz@bp.renesas.com>
+	 <20240616105402.45211-3-biju.das.jz@bp.renesas.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-In-Reply-To: <7417fd8c-e852-45ee-bac9-d92921036e2f@kernel.org>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_232956_865756_D5341720 
-X-CRM114-Status: GOOD (  16.45  )
+X-CRM114-CacheID: sfid-20240703_012059_496035_EAFA43CF 
+X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,70 +78,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8840822939566843434=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============8840822939566843434==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5oSvLfaqEVebv1DP"
-Content-Disposition: inline
+On So, 2024-06-16 at 11:53 +0100, Biju Das wrote:
+> As per RZ/G2L HW manual, VBUS enable can be controlled by the VBOUT bit
+> of the VBUS Control Register(VBENCTL) register in the USBPHY Control.
+> 
+> Expose this register as regmap and instantiate the USB VBUS regulator
+> device, so that consumer can control the vbus using regulator API's
+> 
+> Signed-off-by: Biju Das <biju.das.jz@bp.renesas.com>
 
---5oSvLfaqEVebv1DP
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
-On Wed, Jul 03, 2024 at 06:45:00AM +0200, Krzysztof Kozlowski wrote:
-> On 03/07/2024 05:56, Tengfei Fan wrote:
-> > Introduce support for the QCS9100 SoC device tree (DTSI) and the
-> > QCS9100 RIDE board DTS. The QCS9100 is a variant of the SA8775p.
-> > While the QCS9100 platform is still in the early design stage, the
-> > QCS9100 RIDE board is identical to the SA8775p RIDE board, except it
-> > mounts the QCS9100 SoC instead of the SA8775p SoC.
->=20
-> The same huge patchset, to huge number of recipients was sent twice.
-> First, sorry, this is way too big. Second, it has way too many
-> recipients, but this is partially a result of first point. Only
-> partially because you put here dozen of totally unrelated emails. Sorry,
-> that does not make even sense. See form letter at the end how this
-> works. Third, sending it to everyone twice is a way to annoy them off
-> twice... Fourth,
->=20
-> Please split your work and do not cc dozen of unrelated folks.
-
-One of the extra recipients is cos that of that patch I sent adding the
-cache bindings to the cache entry, forgetting that that would CC the
-riscv list on all cache bindings. I modified that patch to drop the riscv
-list from the entry.
-
-Cheers,
-Conor.
-
---5oSvLfaqEVebv1DP
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZoTvpQAKCRB4tDGHoIJi
-0iuiAP9Wgtx8LiFpImc+BXo3h8CTF/4nY5kHoihO91fC51FsogEAnEhd56PAeLdE
-Uxg8sGMCKh5qjR+u3kQIZlblyU1rmwA=
-=Khim
------END PGP SIGNATURE-----
-
---5oSvLfaqEVebv1DP--
-
-
---===============8840822939566843434==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+regards
+Philipp
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8840822939566843434==--
-
