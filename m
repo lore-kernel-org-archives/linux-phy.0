@@ -4,73 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FF5DC2BD09
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jul 2024 09:08:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF45EC30653
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jul 2024 09:22:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RTv9XYzpzNl9PlVBRG/PvpSxS7rjwVZ85c/p/Xc2//0=; b=ffCskyzj17Z6Uv
-	lK8G9ARVdj3ZIlVQ2T9sme3pcmKWdOMcva4TBnh6bD7OJTwkGRVCKkdkrcqX43Kf0zGh19Qjc90GT
-	M5mTlScFz8yKNgolwOerJZU4PQcAC2nTD4zSSV7YcMm/z7DsODATW/gxi2MsjUHLcq9bNcyb8TbVQ
-	pimz/vaH/pGE4QieeCfF0LL+7nUWNdhTiRCCT0lG+vxpoPS3SOcregsV4yPgYgeEnn85XSuHisvfg
-	LBlRK9i2gUXrVzkc5NEYHIJZeVb/LJ3S1i5XVCJ9Y7Zkh2tOsZoZ5zYyKumJ6dzd7tJZO7SECMpFZ
-	D1t4r7O72LVhnvo69n0A==;
+	List-Owner; bh=pdrg33zMozMzNQpzT9fIqW+8xykeJrDG33D2yCPsyPE=; b=07YYc9ROQCJRCZ
+	08V1NiGettwZHQxdWdMDogCcGbh58xtDomyPIqfUSgePoNcThPjUWygNQ2kRTy7lnNVBABgHEMeMF
+	1qZy8yCSd0xXbQp+rnpwbxj66ZMxlzGCJ4Hh9o70Sfdm3Nwkf5RH/KxDj3LSD/IBDp78ZHUQ9RSkA
+	RsqBAashQyjIvDuaPimuNyRKbKe28yyCdHgFIjUrrnyqSzNG1XKXoExXpCHnlcBH/ix29dtZn23pO
+	ITOSUqD64dukJmeZKyW4I6e6/5AnRO7/HvMWA8cRTk8QcrUQ8j0qBP+vxSE6pn9H35onxXm1zM8HH
+	12Op7NSbvV5riCZrCf1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOvyo-00000009Vo6-04t8;
-	Wed, 03 Jul 2024 09:08:46 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1sOwBj-00000009Y8N-1Moe;
+	Wed, 03 Jul 2024 09:22:07 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOvyl-00000009Vng-0F56
-	for linux-phy@lists.infradead.org;
-	Wed, 03 Jul 2024 09:08:44 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1sOvyc-0000LM-Ui; Wed, 03 Jul 2024 11:08:34 +0200
-Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1sOvyc-006oeT-ED; Wed, 03 Jul 2024 11:08:34 +0200
-Received: from pza by lupine with local (Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1sOvyc-0004Il-1C;
-	Wed, 03 Jul 2024 11:08:34 +0200
-Message-ID: <c551445782f327205c5cdb59717e2879e0982d80.camel@pengutronix.de>
-Subject: Re: [PATCH v5 4/4] arm64: dts: renesas: rz-smarc: Replace fixed
- regulator for USB VBUS
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Biju Das <biju.das.jz@bp.renesas.com>, Geert Uytterhoeven
-	 <geert@linux-m68k.org>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-  Conor Dooley <conor+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>,  Geert Uytterhoeven
- <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- "biju.das.au" <biju.das.au@gmail.com>
-Date: Wed, 03 Jul 2024 11:08:34 +0200
-In-Reply-To: <TY3PR01MB11346C77668002325FD916DBD86DD2@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20240702180032.207275-1-biju.das.jz@bp.renesas.com>
-	 <20240702180032.207275-5-biju.das.jz@bp.renesas.com>
-	 <CAMuHMdUmvWPPBVqhtpu2dovwQg7YA7TVZBRnATUiY+1QRy0B1w@mail.gmail.com>
-	 <TY3PR01MB11346C77668002325FD916DBD86DD2@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-User-Agent: Evolution 3.46.4-2 
+	id 1sOwBf-00000009Y67-0N8Z;
+	Wed, 03 Jul 2024 09:22:04 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4638D1LB027444;
+	Wed, 3 Jul 2024 09:21:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	zFayjh+1qzFNX/L8mf2pY/rdIsRlH8uG2GflD4xHDhY=; b=GP9s9iCjwlhtGabK
+	ji04H6MUw3QZ2THnZ8MnZmsgkMmwwt1SFfnCMHhSJWVMSNLsHGqj1sbicP/Y0wy+
+	Tlvx86VUUKy+J+eHegc+RNHmJGPmisqYFhLqQigoyoHHTk57KJo2whllN1BY7LJh
+	CvCvkmrHqU+7lrISb+5hEqoYIqIdyWVy+dFXq5SgFzT2fQh5Vg2HiiKkBvdTDuMH
+	uKDXIK+4+MRDGK1o20TcWBR1bhgJUWxcml1xHGD0q/F+wRpstDBvTfyzHvL7aisU
+	bFVa9apUSGJ5qm1MRVyAXMxadQT4eHVx3BF8wOG5lo/gmeWRxFXsh8ATVQZJHcG4
+	yqnVZw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4027mnrp2m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 03 Jul 2024 09:21:35 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 4639LXCm013350
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 3 Jul 2024 09:21:33 GMT
+Received: from [10.239.132.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 3 Jul 2024
+ 02:21:11 -0700
+Message-ID: <fbeb5969-0b3a-455e-88eb-b83734bf2c50@quicinc.com>
+Date: Wed, 3 Jul 2024 17:21:09 +0800
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 01/47] dt-bindings: arm: qcom: Document QCS9100 SoC and
+ RIDE board
+To: Krzysztof Kozlowski <krzk@kernel.org>, <andersson@kernel.org>,
+        <konrad.dybcio@linaro.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+        <conor+dt@kernel.org>, <djakov@kernel.org>, <mturquette@baylibre.com>,
+        <sboyd@kernel.org>, <jassisinghbrar@gmail.com>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <manivannan.sadhasivam@linaro.org>, <will@kernel.org>,
+        <joro@8bytes.org>, <conor@kernel.org>, <tglx@linutronix.de>,
+        <amitk@kernel.org>, <thara.gopinath@gmail.com>,
+        <linus.walleij@linaro.org>, <wim@linux-watchdog.org>,
+        <linux@roeck-us.net>, <rafael@kernel.org>, <viresh.kumar@linaro.org>,
+        <vkoul@kernel.org>, <edumazet@google.com>, <kuba@kernel.org>,
+        <pabeni@redhat.com>, <mcoquelin.stm32@gmail.com>
+CC: <robimarko@gmail.com>, <bartosz.golaszewski@linaro.org>,
+        <kishon@kernel.org>, <quic_wcheng@quicinc.com>,
+        <alim.akhtar@samsung.com>, <avri.altman@wdc.com>, <bvanassche@acm.org>,
+        <agross@kernel.org>, <gregkh@linuxfoundation.org>,
+        <quic_tdas@quicinc.com>, <robin.murphy@arm.com>,
+        <daniel.lezcano@linaro.org>, <rui.zhang@intel.com>,
+        <lukasz.luba@arm.com>, <quic_rjendra@quicinc.com>,
+        <ulf.hansson@linaro.org>, <quic_sibis@quicinc.com>,
+        <otto.pflueger@abscue.de>, <luca@z3ntu.xyz>,
+        <neil.armstrong@linaro.org>, <abel.vesa@linaro.org>,
+        <bhupesh.sharma@linaro.org>, <alexandre.torgue@foss.st.com>,
+        <peppe.cavallaro@st.com>, <joabreu@synopsys.com>,
+        <netdev@vger.kernel.org>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <bhelgaas@google.com>, <ahalaney@redhat.com>,
+        <krzysztof.kozlowski@linaro.org>, <u.kleine-koenig@pengutronix.de>,
+        <dmitry.baryshkov@linaro.org>, <quic_cang@quicinc.com>,
+        <danila@jiaxyga.com>, <quic_nitirawa@quicinc.com>,
+        <mantas@8devices.com>, <athierry@redhat.com>,
+        <quic_kbajaj@quicinc.com>, <quic_bjorande@quicinc.com>,
+        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
+        <quic_tsoni@quicinc.com>, <quic_rgottimu@quicinc.com>,
+        <quic_shashim@quicinc.com>, <quic_kaushalk@quicinc.com>,
+        <quic_tingweiz@quicinc.com>, <quic_aiquny@quicinc.com>,
+        <srinivas.kandagatla@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pm@vger.kernel.org>, <linux-clk@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-crypto@vger.kernel.org>,
+        <linux-scsi@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <iommu@lists.linux.dev>,
+        <linux-riscv@lists.infradead.org>, <linux-gpio@vger.kernel.org>,
+        <linux-watchdog@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>, <kernel@quicinc.com>
+References: <20240703025850.2172008-1-quic_tengfan@quicinc.com>
+ <20240703025850.2172008-2-quic_tengfan@quicinc.com>
+ <665f6c8c-4f43-4d20-90e9-9e037a942066@kernel.org>
+From: Tengfei Fan <quic_tengfan@quicinc.com>
+In-Reply-To: <665f6c8c-4f43-4d20-90e9-9e037a942066@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 5Ybf8r0PXG_XS31lxeN4m5yOCkbBXD5_
+X-Proofpoint-GUID: 5Ybf8r0PXG_XS31lxeN4m5yOCkbBXD5_
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-03_05,2024-07-02_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
+ spamscore=0 malwarescore=0 adultscore=0 priorityscore=1501
+ lowpriorityscore=0 phishscore=0 mlxscore=0 suspectscore=0 clxscore=1015
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407030069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240703_020843_118225_FA0B2E06 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20240703_022203_303161_04C15556 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,58 +135,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTWksIDIwMjQtMDctMDMgYXQgMDg6NTYgKzAwMDAsIEJpanUgRGFzIHdyb3RlOgo+IEhpIEdl
-ZXJ0LAo+IAo+IFRoYW5rcyBmb3IgdGhlIGZlZWRiYWNrLgo+IAo+ID4gLS0tLS1PcmlnaW5hbCBN
-ZXNzYWdlLS0tLS0KPiA+IEZyb206IEdlZXJ0IFV5dHRlcmhvZXZlbiA8Z2VlcnRAbGludXgtbTY4
-ay5vcmc+Cj4gPiBTZW50OiBXZWRuZXNkYXksIEp1bHkgMywgMjAyNCA5OjM2IEFNCj4gPiBTdWJq
-ZWN0OiBSZTogW1BBVENIIHY1IDQvNF0gYXJtNjQ6IGR0czogcmVuZXNhczogcnotc21hcmM6IFJl
-cGxhY2UgZml4ZWQgcmVndWxhdG9yIGZvciBVU0IgVkJVUwo+ID4gCj4gPiBIaSBCaWp1LAo+ID4g
-Cj4gPiBPbiBUdWUsIEp1bCAyLCAyMDI0IGF0IDg6MDHigK9QTSBCaWp1IERhcyA8YmlqdS5kYXMu
-anpAYnAucmVuZXNhcy5jb20+IHdyb3RlOgo+ID4gPiBSZXBsYWNlIHRoZSBmaXhlZCByZWd1bGF0
-b3IgZm9yIFVTQiBWQlVTIGFuZCB1c2UgdGhlIHByb3BlciBvbmUgdGhhdAo+ID4gPiBjb250cm9s
-cyByZWd1bGF0b3IgYmFzZWQgb24gVkJVUyBkZXRlY3Rpb24uCj4gPiA+IAo+ID4gPiBTaWduZWQt
-b2ZmLWJ5OiBCaWp1IERhcyA8YmlqdS5kYXMuanpAYnAucmVuZXNhcy5jb20+Cj4gPiA+IC0tLQo+
-ID4gPiB2NC0+djU6Cj4gPiA+ICAqIFVwZGF0ZWQgY29tbWl0IGRlc2NyaXB0aW9uLgo+ID4gCj4g
-PiBUaGFua3MgZm9yIHRoZSB1cGRhdGUhCj4gPiAKPiA+ID4gLS0tIGEvYXJjaC9hcm02NC9ib290
-L2R0cy9yZW5lc2FzL3J6LXNtYXJjLWNvbW1vbi5kdHNpCj4gPiA+ICsrKyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvcmVuZXNhcy9yei1zbWFyYy1jb21tb24uZHRzaQo+ID4gPiBAQCAtNTQsMTQgKzU0
-LDYgQEAgY29kZWNfZGFpOiBzaW1wbGUtYXVkaW8tY2FyZCxjb2RlYyB7Cj4gPiA+ICAgICAgICAg
-ICAgICAgICB9Owo+ID4gPiAgICAgICAgIH07Cj4gPiA+IAo+ID4gPiAtICAgICAgIHVzYjBfdmJ1
-c19vdGc6IHJlZ3VsYXRvci11c2IwLXZidXMtb3RnIHsKPiA+ID4gLSAgICAgICAgICAgICAgIGNv
-bXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVkIjsKPiA+ID4gLQo+ID4gPiAtICAgICAgICAgICAg
-ICAgcmVndWxhdG9yLW5hbWUgPSAiVVNCMF9WQlVTX09URyI7Cj4gPiA+IC0gICAgICAgICAgICAg
-ICByZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDw1MDAwMDAwPjsKPiA+ID4gLSAgICAgICAgICAg
-ICAgIHJlZ3VsYXRvci1tYXgtbWljcm92b2x0ID0gPDUwMDAwMDA+Owo+ID4gPiAtICAgICAgIH07
-Cj4gPiA+IC0KPiA+ID4gICAgICAgICB2Y2NxX3NkaGkxOiByZWd1bGF0b3ItdmNjcS1zZGhpMSB7
-Cj4gPiA+ICAgICAgICAgICAgICAgICBjb21wYXRpYmxlID0gInJlZ3VsYXRvci1ncGlvIjsKPiA+
-ID4gICAgICAgICAgICAgICAgIHJlZ3VsYXRvci1uYW1lID0gIlNESEkxIFZjY1EiOyBAQCAtMTM5
-LDYgKzEzMSw5IEBACj4gPiA+ICZvaGNpMSB7Cj4gPiA+IAo+ID4gPiAgJnBoeXJzdCB7Cj4gPiA+
-ICAgICAgICAgc3RhdHVzID0gIm9rYXkiOwo+ID4gPiArICAgICAgIHVzYjBfdmJ1c19vdGc6IHJl
-Z3VsYXRvci12YnVzIHsKPiA+IAo+ID4gVGhlIGxhYmVsIGlzIG5vdCByZWFsbHkgbmVlZGVkLCBp
-cyBpdD8KPiAKPiBUaGUgbGFiZWwgaXMgdXNlZCBpbiB1c2IyX3BoeTAgbm9kZS4KPiAKPiB2YnVz
-LXN1cHBseSA9IDwmdXNiMF92YnVzX290Zz47Cj4gCj4gPiAKPiA+ID4gKyAgICAgICAgICAgICAg
-IHJlZ3VsYXRvci1uYW1lID0gInZidXMiOwo+ID4gPiArICAgICAgIH07Cj4gPiAKPiA+IEFsc28s
-IGFzIHRoZSByZWd1bGF0b3ItdmJ1cyBzdWJub2RlIGlzIHJlcXVpcmVkLCBwZXJoYXBzIGl0IHNo
-b3VsZCBiZSBtb3ZlZCB0byB0aGUgU29DLQo+ID4gc3BlY2lmaWMgLmR0c2k/IE9yIGRvIHlvdSBr
-ZWVwIGl0IGhlcmUgZm9yIGJvYXJkLXNwZWNpZmljIGNvbnRyb2wgb2YgdGhlIHJlZ3VsYXRvciBu
-YW1lLCBpLmUuIHRvCj4gPiBhdm9pZCBjb25mbGljdHM/Cj4gCj4gWWVzLCBqdXN0IHRvIGF2b2lk
-IGNvbmZsaWN0cy4gTGF0ZXIgSSBjYW4gbW92ZSB0byBpbmRpdmlkdWFsIFNvQyBzcGVjaWZpYyBk
-dHNpJ3MKCkFscmlnaHQsIHRoYW5rcyEgQXBwbGllZCB0byByZXNldC9uZXh0LgoKWzEvNF0gZHQt
-YmluZGluZ3M6IHJlc2V0OiByZW5lc2FzLHJ6ZzJsLXVzYnBoeS1jdHJsOiBEb2N1bWVudCBVU0Ig
-VkJVUyByZWd1bGF0b3IKICAgICAgaHR0cHM6Ly9naXQucGVuZ3V0cm9uaXguZGUvY2dpdC9wemEv
-bGludXgvY29tbWl0Lz9pZD1mNjRmMmQ2ZmRkYTQKWzIvNF0gcmVzZXQ6IHJlbmVzYXM6IEFkZCBV
-U0IgVkJVUyByZWd1bGF0b3IgZGV2aWNlIGFzIGNoaWxkCiAgICAgIGh0dHBzOi8vZ2l0LnBlbmd1
-dHJvbml4LmRlL2NnaXQvcHphL2xpbnV4L2NvbW1pdC8/aWQ9NDA2OGYyMmU0YjQ3ClszLzRdIHBo
-eTogcmVuZXNhczogcGh5LXJjYXItZ2VuMy11c2IyOiBDb250cm9sIFZCVVMgZm9yIFJaL0cyTCBT
-b0NzCiAgICAgIGh0dHBzOi8vZ2l0LnBlbmd1dHJvbml4LmRlL2NnaXQvcHphL2xpbnV4L2NvbW1p
-dC8/aWQ9MjQ4NDM0MDRlZmU0Cls0LzRdIGFybTY0OiBkdHM6IHJlbmVzYXM6IHJ6LXNtYXJjOiBS
-ZXBsYWNlIGZpeGVkIHJlZ3VsYXRvciBmb3IgVVNCIFZCVVMKICAgICAgaHR0cHM6Ly9naXQucGVu
-Z3V0cm9uaXguZGUvY2dpdC9wemEvbGludXgvY29tbWl0Lz9pZD1jMTI2N2UxYWZhZTYKCnJlZ2Fy
-ZHMKUGhpbGlwcAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+
+
+On 7/3/2024 12:38 PM, Krzysztof Kozlowski wrote:
+> On 03/07/2024 04:58, Tengfei Fan wrote:
+>> Document the QCS9100 SoC and RIDE board.
+>>
+>> Signed-off-by: Tengfei Fan <quic_tengfan@quicinc.com>
+>> ---
+>>   Documentation/devicetree/bindings/arm/qcom.yaml | 3 +++
+>>   1 file changed, 3 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
+>> index ec1c10a12470..f06543f96026 100644
+>> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
+>> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+>> @@ -45,6 +45,7 @@ description: |
+>>           qcs8550
+>>           qcm2290
+>>           qcm6490
+>> +        qcs9100
+>>           qdu1000
+>>           qrb2210
+>>           qrb4210
+>> @@ -894,7 +895,9 @@ properties:
+>>   
+>>         - items:
+>>             - enum:
+>> +              - qcom,qcs9100-ride
+>>                 - qcom,sa8775p-ride
+>> +          - const: qcom,qcs9100
+> 
+> This changes existing compatible for sa8775p without any explanation in
+> commit msg.
+> 
+> Best regards,
+> Krzysztof
+> 
+
+In the next verion patch series, I will provide relevant explanatory 
+information in this patch commit message.
+
+-- 
+Thx and BRs,
+Tengfei Fan
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
