@@ -4,80 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0EAAC2BD09
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Jul 2024 01:48:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B9BDC30653
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Jul 2024 08:30:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=71R/DXsE8tsIKKAuG/k+ngPRdBfgjazkTa/3fS5VjUY=; b=OHAuPGBQKXyjEW
-	EcBh85USWXJEd+NfVky37Ft4k4zUQiRCBsowXpA1shqZM4CW3gUBIWEV3+A5vpDs5WGW7Y3t34a/P
-	gETTqM4kw//lrC7mzhXt18uft8QvfT7/f/G+jSM7tCuMJ4jjKIQTG4yELbXdyy4a7w0VRWvzWVMrY
-	wMpN0vNVH3sh6Vutu7m0IYx/OyS4mVpQMP1jd6IMpbWz622UFZBNezJsepdhMCp78GWq7DAziwbOO
-	PBFLyUzTBrLZQRFL0AromtkF4GD4ZffUOmlabx3NR2Qpw+LzxhZKwMCCCR1leUpFhnIKcVspT0bQ1
-	mhGwogO0hQ1OyRrNTc8Q==;
+	List-Owner; bh=Uf3dWnMDtpRffZSvJoapba6+KjsrT4NSblA504tziMI=; b=h8vyB1ihoDIVsF
+	rdu8fuy3if95O8OFagw+QvnPj0Yhq/lY+P8vAIGy+9CA+TrKmOtyilarYf8z1Tx9I2TUkL14IrDn/
+	XuRJHyLg30R6R6Tl3dfccXcR25XG14Q66q6tI8CdBllqmCnIQxO/RkllRreMeU6gwiYjL2G4cs4Rj
+	dMvulQGFAw5NUfE516o4bxkTay7p2qFmVeWfNvSyuWAZZHYqXBNEzwueicdPeZu+v+erft/DpPB9p
+	NskjYcBr0fe2yfCOsggCPMpxXx/+1Tn2LLZVZU6U0p96X1eW7YPeyAYVojyKDObYb4LDkFyqudagl
+	KxfCs5dRLShMtGAbTXPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sPBaf-0000000Bt1K-0iys;
-	Thu, 04 Jul 2024 01:48:53 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1sPHqy-0000000Cb08-3RP3;
+	Thu, 04 Jul 2024 08:30:08 +0000
+Received: from madrid.collaboradmins.com ([46.235.227.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sPBab-0000000Bt0M-0CHl
-	for linux-phy@lists.infradead.org;
-	Thu, 04 Jul 2024 01:48:51 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-52e9944764fso81934e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 03 Jul 2024 18:48:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1720057726; x=1720662526; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=G59GNkOWbkHEYhhvdW7B0tM3W2apbni9xrSBJTuFhGU=;
-        b=eNNHpY5RUPh8DWfi4pV3Jprxg9pqCSMK/hxDHFjo4wdoyNHa0+wlkK2gztItYMn/b3
-         jSgEs/dNOVp0n8Xu4FjkMwULqBryj/6KcGjIlzDJcKtTKsSK5j5p21+fzxI81KtJAIKN
-         ehI5WoKEWumiVxUIuQV8Zn48ZR8PTkwScrBBOJ7qS+z1rIHASCLx8CcJJ3BvJ/LSar1G
-         A4/SNoIinpwiPQoekTSDYro2HV0ec3ITf7mETZ/Pc3kerGfF7kBNFT+t6aiVgGqvmlUn
-         QRohNvQ1RsQjRCN4LPsNn115GyggOyGZ/m0yhCYpqcjOo2i607++YgR9AA/bmonjA5bX
-         TQtw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1720057726; x=1720662526;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=G59GNkOWbkHEYhhvdW7B0tM3W2apbni9xrSBJTuFhGU=;
-        b=F3Oa5Y2ZCG9onSbtssBZuQAM8EzmZ90JjJqZyZSJsXdxvLJtAIovcT2WQ4uNufPiJJ
-         +1NQi2xYH9BTDf9FTemaupYxqgaAFRi4aVfiXh+8WQ6W3UiaR8F8igYpSUyZtQnfsnhw
-         ACIjJBDBVT04q01AEi87e1cy12EG0TA4Mdk5W3u/FEaUEQtdEpE3ys1LKI9PRuv706NY
-         qywcB/8YZw+cORH4uZXylBmNtdmb8w13Y9nqjrjHMD06FqIE74YNLwVSlW0f6AgV89m9
-         /7repSWm0bFd4jrrfDP8TIrpmov+oW0ZyfPgTuQPf4YniJJ/C6k6EYoHgS1BSi503Mn7
-         dYLQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWXBKZLITnW1KUy5ZT6cbPr+0YRztnLLqf+zGmxkCk8tg9J1jPnvESmpnvMfXCnvpA+wekvT23xLVtir04c4g1HblmABsOKRO0DzqLaag==
-X-Gm-Message-State: AOJu0YwDSSF+H31yK7FqILy/7ieMiLOSI5KNW1/b26A0yBFmIzCYmDA4
-	WVFLqnHKAYUrS/cPuh4xYv1jHbwyzM9llZNd5LahIEcXMb0lT5U8p6BDCcLKvCjInB1UedJbuDb
-	m0RWmh00oGkmpeb6O9ZvXIbKjxqnppzMuMsZ8Uw==
-X-Google-Smtp-Source: AGHT+IHfLv4s+vQIweVjQ7Xr1GgMPxbR9W9NSDAeDl6zTwN0+s3wCrlLDx11lSg6hn3Q5ddlFYVlYAEAVqfoxvcoJwg=
-X-Received: by 2002:a19:ca43:0:b0:52c:e1d4:8ecd with SMTP id
- 2adb3069b0e04-52ea061309bmr84261e87.8.1720057726255; Wed, 03 Jul 2024
- 18:48:46 -0700 (PDT)
+	id 1sPHql-0000000Cavy-1uze;
+	Thu, 04 Jul 2024 08:29:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1720081793;
+	bh=+1mAHgPt3THuLbRBMxm88DU/XThtegA8e9GHYVcJVnk=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=RJ7VLSBu70E4JQRr8j/FTeeGrJ+6X7wJcoARYxTLPL8lZTnJ4MCuDJlZhdtbkkQCB
+	 6rCyD8yztQlLHrJ2bsPSHiYBveTKrY7WFM9fTSItwyinCLM4vx5UPP5uThlpLkQe+z
+	 phAvHnj9Ux6sWNYJJu5bEnDLblXi6KYDWbK/EWwy+55dERsxki7uPPemYkpHjvQKuM
+	 HbJxUTJUgX6xoXvKEYJMM0IPGbGLYsVPqGIg60xk4rsMNaUJCEL6dfb96BXWS3j60Y
+	 LFMQgwbQ8+d2HJhkBZe4lhnTCDnUMpXxz+eQa3pYgiJUQpgSiaxgfq9M1AhbH7OD4w
+	 L+CIbs+QkgSew==
+Received: from [100.115.223.179] (cola.collaboradmins.com [195.201.22.229])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by madrid.collaboradmins.com (Postfix) with ESMTPSA id 2825637821A8;
+	Thu,  4 Jul 2024 08:29:52 +0000 (UTC)
+Message-ID: <4e7b019c-f685-4370-9f67-f45e0bcbc626@collabora.com>
+Date: Thu, 4 Jul 2024 11:29:51 +0300
 MIME-Version: 1.0
-References: <20240703215905.2031038-1-robh@kernel.org>
-In-Reply-To: <20240703215905.2031038-1-robh@kernel.org>
-From: Shawn Guo <shawn.guo@linaro.org>
-Date: Thu, 4 Jul 2024 09:48:34 +0800
-Message-ID: <CAAQ0ZWQ4ua6aN15Wr+gJF7GkgNgzA-OunUhSMyeecZEJZq7DtA@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: phy: hisilicon,hi3798cv200-combphy: Convert
- to DT schema
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Jianguo Sun <sunjianguo1@huawei.com>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/4] Add clock provider support to Rockchip RK3588 HDMI
+ TX PHY
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Algea Cao <algea.cao@rock-chips.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+References: <20240620-rk3588-hdmiphy-clkprov-v2-0-6a2d2164e508@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20240620-rk3588-hdmiphy-clkprov-v2-0-6a2d2164e508@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240703_184849_257728_EA505F06 
-X-CRM114-Status: UNSURE (   6.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240704_012955_663526_48FF6371 
+X-CRM114-Status: GOOD (  19.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,17 +75,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBKdWwgNCwgMjAyNCBhdCA1OjU54oCvQU0gUm9iIEhlcnJpbmcgKEFybSkgPHJvYmhA
-a2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBDb252ZXJ0IHRoZSBoaXNpbGljb24saGkzNzk4Y3YyMDAt
-Y29tYnBoeSBiaW5kaW5nIHRvIERUIHNjaGVtYSBmb3JtYXQuCj4KPiBEcm9wIHRoZSBleGFtcGxl
-IGFzIGFybS9oaXNpbGljb24vY29udHJvbGxlci9oaTM3OThjdjIwMC1wZXJpY3RybC55YW1sCj4g
-YWxyZWFkeSBjb250YWlucyBhbiBleGFtcGxlIG9mIHRoaXMgYmluZGluZy4KPgo+IFNpZ25lZC1v
-ZmYtYnk6IFJvYiBIZXJyaW5nIChBcm0pIDxyb2JoQGtlcm5lbC5vcmc+CgpBY2tlZC1ieTogU2hh
-d24gR3VvIDxzaGF3bi5ndW9AbGluYXJvLm9yZz4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
-CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Vinod,
+
+Please let me know if there are any additional items required for this
+series to be picked up.
+
+Thanks,
+Cristian
+
+On 6/20/24 3:36 AM, Cristian Ciocaltea wrote:
+> The HDMI PHY PLL can be used as an alternative clock source to RK3588
+> SoC CRU. Since it provides more accurate clock rates, it can be used by
+> VOP2 to improve display modes handling, such as supporting non-integer
+> refresh rates.
+> 
+> The first two patches in the series provide a couple of fixes and
+> improvements to the existing HDPTX PHY driver, while the next two add
+> the necessary changes to support the clock provider functionality.
+> 
+> To: Vinod Koul <vkoul@kernel.org>
+> To: Kishon Vijay Abraham I <kishon@kernel.org>
+> To: Heiko Stuebner <heiko@sntech.de>
+> To: Algea Cao <algea.cao@rock-chips.com>
+> To: Rob Herring <robh@kernel.org>
+> To: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> To: Conor Dooley <conor+dt@kernel.org>
+> Cc: kernel@collabora.com
+> Cc: linux-phy@lists.infradead.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> 
+> --- Changes in v2:
+> - Collected Reviewed-by tag from Heiko on PATCH 1 & 2, and Acked-by from
+>   Krzysztof on PATCH 3
+> - Updated PATCH 4 to make use of a forced consumer put in
+>   rk_hdptx_phy_power_on() and rk_hdptx_phy_clk_unprepare()
+> - Link to v1: https://lore.kernel.org/r/20240618-rk3588-hdmiphy-clkprov-v1-0-80e4aa12177e@collabora.com
+> 
+> ---
+> Cristian Ciocaltea (4):
+>       phy: phy-rockchip-samsung-hdptx: Explicitly include pm_runtime.h
+>       phy: phy-rockchip-samsung-hdptx: Enable runtime PM at PHY core level
+>       dt-bindings: phy: rockchip,rk3588-hdptx-phy: Add #clock-cells
+>       phy: phy-rockchip-samsung-hdptx: Add clock provider support
+> 
+>  .../bindings/phy/rockchip,rk3588-hdptx-phy.yaml    |   3 +
+>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c  | 206 +++++++++++++++++----
+>  2 files changed, 176 insertions(+), 33 deletions(-)
+> ---
+> base-commit: 6906a84c482f098d31486df8dc98cead21cce2d0
+> change-id: 20240617-rk3588-hdmiphy-clkprov-f05f165ac029
+> 
+> _______________________________________________
+> Kernel mailing list -- kernel@mailman.collabora.com
+> To unsubscribe send an email to kernel-leave@mailman.collabora.com
+> This list is managed by https://mailman.collabora.com
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
