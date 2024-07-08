@@ -4,84 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CC5CC3DA47
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 22:11:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C5BCC3DA42
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 22:24:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=axPCBDEaz+Pc+vaK4K9I0SfijxjHVsuiiZojSli9MwE=; b=QmFVfcpsu7vm9/
-	LhdSM10ku478irD2AnstfQ4WNo36lS5NTih5eKMNdeZBFYzMNDgeCyfScLvH0pT4mVXjR4Oq35aZ5
-	F/AVMn0f0R/EENCnt4v8rfeBfb7deYRDnptOEdHMb3XCTwxnWgdfTLnVM7blM14Gto4507DSOhvFI
-	otXF30n1Sp8t4c7BMcFgwW2cUvUr+bUcJzRth1bzr5WP7J8ypWJVv/EHknWwQotCag8af392k2Uoi
-	KyUD14noGA7M0ki2ksb/NbRbwfPPb/Boa0Egpb966LNhkAnnmSg2tHu6+H3kPn0W1+Y88ssmhjhBG
-	NoRa0/hJLBn5IVyelSzA==;
+	List-Owner; bh=BASdw4FB0fVndskgWsg2jyKrOqiLpC5VOeg2rSBsw30=; b=Dp44BRfcVf6rzv
+	SQvqLabUpz5P3a55c+ciE7GLSgJZ1rNi3CsrXNdKZU9+YOpqcBq9kaLV3yc3+v2y0hgeOQ2uAWAgz
+	461m/Fb3UDhl1uelPbFICYKqBf4AnuKREG/WpSTuF/ORJtrr65AaJrR3RAVbMGdoBVqNu6wndjU+U
+	7AaPhf2xj7JeBE8P5gPt0Z0+MCh5t2Qkr2lqfnQ1jqkUPiKuIIr8az7E9ugLSkLN3BQjYpyILZcKd
+	xHpACAO4zAbmRlowgwN2fUVxzzJw+Pr8gQLAv4eHzsMF5/R/GzYQBRLneye9LUbxkVhxn0gupywWL
+	uMoMFHcHHOSGUfe16kDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQwa6-00000005Asx-455X;
-	Mon, 08 Jul 2024 22:11:34 +0000
-Received: from mail-yw1-x112f.google.com ([2607:f8b0:4864:20::112f])
+	id 1sQwmu-00000005Ct6-3HnQ;
+	Mon, 08 Jul 2024 22:24:48 +0000
+Received: from mail-co1nam11olkn20800.outbound.protection.outlook.com ([2a01:111:f403:2c16::800] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQwa3-00000005AsU-2UfG
-	for linux-phy@lists.infradead.org;
-	Mon, 08 Jul 2024 22:11:33 +0000
-Received: by mail-yw1-x112f.google.com with SMTP id 00721157ae682-64b3655297aso43595087b3.1
-        for <linux-phy@lists.infradead.org>; Mon, 08 Jul 2024 15:11:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1720476690; x=1721081490; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=akSjRnSmQJXB8QkjLs5AoCqiPkMwFsS9lxtSRUZRr8U=;
-        b=ZOrpYgtZr/ToZkjWr4nNUBuYVpoHoQqK6y3t6TpIdbe3A7j1xVDBmQSCB3oH6JM2qx
-         haS5ZbNDfPhdyk9wWLY29wy4oHQc0E/RDbmhKDJHuOrw6C5rGIPO3afyps6FXQrCmCY5
-         Rt+G1TEK8IO9kOTJK5rRd7DGzfj30b+j+pt2x+yHIXFj2F7r7IfmUfYvi8ecJPnMIt43
-         482ifWXTgMeNvJFxPPII3Woroq6DurzpsLZ0QtbAL7odlhdUTRsR1uZyGphS6VnL9x62
-         RqcKLVCsOfCkod6rsoqSjCI0iPGV88xrNYBbPj7Cw2Wa0Jobxvm+Ar356qrxJ6Z8Y4lN
-         cJ0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1720476690; x=1721081490;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=akSjRnSmQJXB8QkjLs5AoCqiPkMwFsS9lxtSRUZRr8U=;
-        b=ssVUZbpyLFyJddUDMw+5TSpXV/WNiHbnwn1/zfCgEzr6V/adIk4cGy+8TzY09090v5
-         tWd2CaOFAhxw7zYuDtq2zTT8Pbkhio1QXXpwG7ZFvzS4KIRDGuU7GIcEZSUUg2vL4faA
-         8RBorsmRMddwoIJKgQStaggJP/HmK7trpZ9S7N1jj73PLHEvfyJK6bNgRTr76l/kBuOe
-         jj1cC4IqPZi4oEGATY/kknAuXihXRic0XZNoK5H8CGSDpOjR3j/UWYewuTni3r9YkMTk
-         sO9HU4crvW5WrcmTw4gNoX7aYMQTesa/DAgsh+rNDAX1dhNPvJD3WCkiNO6AfnCRS6GB
-         6rnA==
-X-Forwarded-Encrypted: i=1; AJvYcCVpuTRqmPO/4+1fwKroCydU/O+WOJfCNMyqhzmsi4pXRigB4I5Kd5/Yp6IUpHUh41LfgJfTI0lPyOfT83pwRCEOnrzbyOFHagkZ5yzU0g==
-X-Gm-Message-State: AOJu0YzmdEDuk8R2K8xRWBMyNchuppdUsmoJXz9QxN7MBpxkH9KtboFE
-	/b3AO/hHWamNUvtdx1Kqyc2FlcfOjqnH/gWe3KZGoZ0hRQucLmzZVCl5cB9uwh8Rl/J+Dz0+U9K
-	1/DAfJLvLUvabLv8+/3umHbmMVzAGSdVWr7v/XEkKzhoWbOiFyzE=
-X-Google-Smtp-Source: AGHT+IGJJD4YdSne2E2CDJPTcw+1HwH33TbgcTt5pV7mkcprUs/4t0BFrxvbt5GIFxFuNWKCvnJHBDIxbicRlCahRC4=
-X-Received: by 2002:a81:6985:0:b0:64b:2a73:f050 with SMTP id
- 00721157ae682-658ef2494cfmr10696077b3.23.1720476690444; Mon, 08 Jul 2024
- 15:11:30 -0700 (PDT)
+	id 1sQwmr-00000005CsB-3aBH;
+	Mon, 08 Jul 2024 22:24:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cFinciJghSpAUF5ya4tM3VtLsl7EBWWYn+vtrMCsr2PpyZ5B0sfj8CoGEftpoC4NNDCaUTb0aZi//gcBYagVJFBgY7lZU4mm7yBo0Cm0ZWRyCCBlVROz6czL5B1sELolfwcwvs2S+B/lFYZ1yIkNop+1e7ObDb2Wi3fxx5Z2pNwi3gzn1ZpDxyakj5W9rT9SzVlY0tozhI/EEV8P5fXEKTX+yXCm6XrbVSBB04Ns1dJ+MOic5xgmVRjDQ4A2Z+LkHwhhWX/3LXlHs3tIEiGkOySWt7qiFRNPx6/noqfvvfZB44a/KroEkkY2cH1VKxFbAdZQzu6h/8eW8ri8xgxUQA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=D/iE06B6ozTxoMdoZzpIotCyn1Fq/glHCaC7+0o8UZ0=;
+ b=Wd1No5zslS5pdW8wewVuPOUMchPosShJ4RXlmhGvueHkixxuYlgYzH0NtWXHRS8Shu2u1N5iDgGmIjUZfxO9m2qOLKyrfQ1MqpYO63NzUIv5EBQpQ8maH8Bbh6a00/7Ms7HYKDGzpjJgtj2ehSfgXQ3edDmMfMztdugzx9LmBTd8CZFAg4wqnrIw1Th3zZ2kM4cm+agoq9a+YkTHwuVoT/lbp8q574SYpxf/VKzHBAlwstB6C1cr9KwiWCOrF3cLmuTNUYac1lnMpZkFcajlIu4rZ9gIsNooniri6E5iZUAcXQ81d8XBW+39nZyLpBylHusH26KMU4AJa+4ukeYpkw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=D/iE06B6ozTxoMdoZzpIotCyn1Fq/glHCaC7+0o8UZ0=;
+ b=iMBLaqfsZLzP9SZudx7cPvdCBaecBsMNwZQhPKCuZ+ZWTFwFDUxSGfvIUSqNylv8JEgR3JxskCgihDS6z2QFVAMW/IFRPuBHNb1tkrGkPJfOrsYBkhbQMMPjvNG2ANN+tQymhShWM18e7FlKfPtTIg/jc4t7QYrsmFnFjG93dnvSCvDB3MiT/TLcg9yBSYLGelXGpGbcEu9Y+fjTQJJmvxlM5C5H4Be7FB+6pAYg0Ob67E4o4KfHgCXor3qcFnib0NhsXXA4i7V1vasuAqaQYqw+fQxcySznNraYaoCt6wNpqsQs7Tmbb/G4TUs4pXaQ/z4W4EBNWPMUIJSVCZuHnQ==
+Received: from IA1PR20MB4953.namprd20.prod.outlook.com (2603:10b6:208:3af::19)
+ by SJ1PR20MB4787.namprd20.prod.outlook.com (2603:10b6:a03:45a::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7741.35; Mon, 8 Jul
+ 2024 22:24:35 +0000
+Received: from IA1PR20MB4953.namprd20.prod.outlook.com
+ ([fe80::ab0b:c0d3:1f91:d149]) by IA1PR20MB4953.namprd20.prod.outlook.com
+ ([fe80::ab0b:c0d3:1f91:d149%6]) with mapi id 15.20.7741.033; Mon, 8 Jul 2024
+ 22:24:35 +0000
+Date: Tue, 9 Jul 2024 06:23:58 +0800
+From: Inochi Amaoto <inochiama@outlook.com>
+To: Yao Zi <ziyao@disroot.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chen Wang <unicorn_wang@outlook.com>, Inochi Amaoto <inochiama@outlook.com>, 
+	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, 
+	Albert Ou <aou@eecs.berkeley.edu>, Jisheng Zhang <jszhang@kernel.org>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-riscv@lists.infradead.org
+Subject: Re: [PATCH 1/3] dt-bindings: phy: add YAML schema for cv1800-usb-phy
+ driver bindings
+Message-ID: <IA1PR20MB495304D471AE08F75D97C25FBBDA2@IA1PR20MB4953.namprd20.prod.outlook.com>
+References: <20240708120830.5785-1-ziyao@disroot.org>
+ <20240708120830.5785-2-ziyao@disroot.org>
+Content-Disposition: inline
+In-Reply-To: <20240708120830.5785-2-ziyao@disroot.org>
+X-TMN: [ATuWioSIl7GUUxY2bYXCYjh7Ae0HBja9+VhAOxpWdkM=]
+X-ClientProxiedBy: PS2PR02CA0004.apcprd02.prod.outlook.com
+ (2603:1096:300:41::16) To IA1PR20MB4953.namprd20.prod.outlook.com
+ (2603:10b6:208:3af::19)
+X-Microsoft-Original-Message-ID: <sx54i2cgq35efwwgxzykyuyvtwpqli6zezp6octdvhqz5njwup@kiooj3x63vck>
 MIME-Version: 1.0
-References: <20240704-hdmi-phy-v2-1-a7f5af202cb5@freebox.fr>
- <5lbtymde3plfiqkvnd2lrjzxhengmsw242uqapnzpvfd5jrm25@x2ik2h6vrdxm>
- <2d21db63-4371-45b4-ab24-9a725c29e09a@freebox.fr> <CAA8EJpqz1SiUdTMpx5hmnax_rBqtpVAtOZsaL8UfHnZ5vZZFHQ@mail.gmail.com>
- <c7da3acb-4456-496d-9876-b05abcc0e010@linaro.org>
-In-Reply-To: <c7da3acb-4456-496d-9876-b05abcc0e010@linaro.org>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 9 Jul 2024 01:11:19 +0300
-Message-ID: <CAA8EJpoD4og3eb2aFB5HkFh3vAfyhqG=smtcUbmgNeuWwaJtGg@mail.gmail.com>
-Subject: Re: [PATCH v2] drm/msm: add msm8998 hdmi phy/pll support
-To: Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: Marc Gonzalez <mgonzalez@freebox.fr>, Rob Clark <robdclark@gmail.com>, 
-	Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>, 
-	Marijn Suijten <marijn.suijten@somainline.org>, David Airlie <airlied@gmail.com>, 
-	Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
-	linux-phy@lists.infradead.org, Arnaud Vrac <avrac@freebox.fr>, 
-	Pierre-Hugues Husson <phhusson@freebox.fr>, Jeffrey Hugo <quic_jhugo@quicinc.com>, 
-	Bjorn Andersson <andersson@kernel.org>
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: IA1PR20MB4953:EE_|SJ1PR20MB4787:EE_
+X-MS-Office365-Filtering-Correlation-Id: eb7f64fc-d3ed-42be-0081-08dc9f9cbf72
+X-Microsoft-Antispam: BCL:0;ARA:14566002|19110799003|461199028|8060799006|1602099012|440099028|3412199025|4302099013|1710799026;
+X-Microsoft-Antispam-Message-Info: tqwxrgSgutrqfmZ1gJtOGInZN5+eWOMHOeG+KyJSZUPsBMQpKiZhrX7aKlUNmd0oCEW6aW0TyV9W4iwA6ddDUEy7a91pT/T9AxZ1aUpSXJawRgw760Jq853lUa2V3UN7JxecdfBW/fdWiTj1evWq+1tp82Li13si2gdssbA/AtyMXKQCUCOw1L5K9cmlB4yLEo4MOrswFbxf4wApzbobaM0NeY4x5gHDlz9YERlCaGqaIMrvXWZresWE0jpMDEcgL1UFIUjCXT6v1cbQzp1vbt8OmqXyc5Ba2p42KXKhqwdnKdi6Fe99h6Nd41N08Zzwl43PJQ4g1x/zThEDqi5c3Bg6F9VgHfbc7OXUsb3AjK+M29RNQ7hSfUtVEz/RfVpAZwSIOBro3rOntl9aGmI9pVw2ahK551yioZLgHGQhgtSh3+9cDJmQxnILoZRJ81eFeFO53ySNk3/AIdD5bW4aTUpz5e5qKD3uAdIENuTdzdWK6tIXv7vYlZ8Vv8qVBy6gWnPzAHdLxlYEfOrq7x0x7mx5Wlfrs7/4jRfnleCBD+syjygkxDE15hick+MoHNbGAVnGQtDHE+ZoH0nps8alOMMxDOFXMyXSBuOSopxRGbUn0euIR8yVEIJxooOmXjOWWNNYgnCgDdJIWgGor4EKZG41Pm/yQDKyD2TgXh1KPp3l/c+iDyNjV51I3vBkMdtii/5Dbdg29oodz+eT+bKTpT3/vJhZf3vaHg/ixxTPKkmhrCvclj/Fzl3ZslTHdun9a5anCdUsQu4rB2O/m81JzxKlbRAjUQbOuhfDr3o21Xc=
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9iKCZbQLq2m0fZAD27JrhXtgAHn4gOc5tenXLyuVXmgw7DO2IruV77vLhFR9?=
+ =?us-ascii?Q?qfu+cabq8jlV4qKdw0cw2mJG/Wa0x3usRlOKde5+8b1MYC9ZSrpd8ELnsLxp?=
+ =?us-ascii?Q?MoL81TFPhN9FCCV77ZOaBMdlpElMrE7W3AeZotwG5s61m0+26hQviW+++Rl6?=
+ =?us-ascii?Q?VbMDLPpS7RB+AGk265GoHdoVhFaSVbJZvcKcK2JuHqLmLIIhIYcnT8mV6uCS?=
+ =?us-ascii?Q?ZwYEC0nsVX77evBTrpHCgusVWQPS9I6E2Pkkr+Wyd7Dcm4JpEiaVsyYqYNYK?=
+ =?us-ascii?Q?mRqazgq37qHyvstWjjUiL9Yg9yV6StRHUMHwJAD0YdZ8DRsrzhEHlgK+vnSD?=
+ =?us-ascii?Q?GZlINrEgyJLCJaZRGSy91pPbwwzqG3oWFJDDG1ohiP9XCuzTQ/1fCxB8Bbr7?=
+ =?us-ascii?Q?U82RTFTRJzD8xgMA1//jFa8QMiPOuSdC78CQKIb/MnevQAjuox5ypV8NuMnv?=
+ =?us-ascii?Q?GBkOhF3a9+YrhQ791laUsMYATDaSIOjEZYSF45rKnvfCxk8Q3u/lEjMbh8Sg?=
+ =?us-ascii?Q?tc/o42WgKf+6q9ESqn/VC98brLa3JH7a5xS7qyD/D5+p4zmcpsnclM7xw4py?=
+ =?us-ascii?Q?DHiGchqtobI9DOl4Go7Lch2k3aXAqa9NK5iDfyhJcjlLbKlvZforukimRBin?=
+ =?us-ascii?Q?BT0ap7+YZL7eyVq557d6s2dwAvxyiCaUtjuxZDfGk1QyW5asexxNzSWVjipp?=
+ =?us-ascii?Q?HtayuIRthPi52zTEISK348VTqBCK2sXHepHcFO8EnA28qOaQk1gUW+OEfLW7?=
+ =?us-ascii?Q?czC5UUxg1mzjM1PgSENz9GYpwB3nvfFjL8KWgogWaKlBwCtXErx/C2zKNuoF?=
+ =?us-ascii?Q?7Lq6WNUM514HlTUEsRnk8q0hWAW3JGwxolnL3AA6CBCwLU46V04xi0wF3b35?=
+ =?us-ascii?Q?EcvJlJO5vmJGYY1fjGCU+fl23PWOui6G64YzGbliKnkLOqVTHaEJ0NvznOyl?=
+ =?us-ascii?Q?hSqLryCsY8tEXQI1LHob5RW40D6Hti6m0+F6+1bPzqGxYO2QSX1aQ3kNPrJF?=
+ =?us-ascii?Q?Wg6hk8+oo1EjuKcZ4C/jLvE2n0nv+uPH6BmNr4E++8i52HqcghQWBhRE+Gki?=
+ =?us-ascii?Q?lZENp2UKUrsD+p9ks624I2ornwd6GX6GbYp7xlSVzav662J4A+vbIw72CydE?=
+ =?us-ascii?Q?weZH4IPIhXdnFV/T7vdu8igX3zjfbxnOd7yCycScvICaLYtbE+KsKTAQCfHh?=
+ =?us-ascii?Q?3e/SwNX3eGjhVv//RbghZ9+kSspaUqHnCcs6scWqcjLosMV67Q67V7UHbimq?=
+ =?us-ascii?Q?CmUQ/y7GysFVKgNkeXu4?=
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: eb7f64fc-d3ed-42be-0081-08dc9f9cbf72
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR20MB4953.namprd20.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jul 2024 22:24:35.7304
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ1PR20MB4787
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240708_151131_834558_731DEE8F 
-X-CRM114-Status: GOOD (  18.89  )
+X-CRM114-CacheID: sfid-20240708_152445_923871_4DB1D2A1 
+X-CRM114-Status: GOOD (  16.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,41 +130,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 9 Jul 2024 at 00:27, Konrad Dybcio <konrad.dybcio@linaro.org> wrote:
->
-> On 8.07.2024 2:49 PM, Dmitry Baryshkov wrote:
-> > On Mon, 8 Jul 2024 at 14:07, Marc Gonzalez <mgonzalez@freebox.fr> wrote:
-> >>
-> >> On 05/07/2024 16:34, Dmitry Baryshkov wrote:
->
-> [...]
->
-> >>> I'm not going to check the math, but it looks pretty close to what we
-> >>> have for msm8996.
-> >>
-> >> What is the consequence of this?
-> >
-> > That I won't check the math :-D
->
-> Dmitry is trying to say that you should check whether the calculations
-> are the same or almost the same as in the 8996 driver, and if so, try
-> to commonize the code between the two
+On Mon, Jul 08, 2024 at 12:08:28PM GMT, Yao Zi wrote:
+> cv1800-usb-phy driver supports USB 2.0 phys integrated in Sophgo
+> Cv1800/SG200x SoCs. Add YAML schema for its binding.
+> 
+> Signed-off-by: Yao Zi <ziyao@disroot.org>
+> ---
+>  .../bindings/phy/sophgo,cv1800-usb-phy.yaml   | 67 +++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..0403d899e23b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+> @@ -0,0 +1,67 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright 2019 BayLibre, SAS
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/sophgo,cv1800-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Sophgo CV1800 USB PHY
+> +
+> +maintainers:
+> +  - Yao Zi <ziyao@disroot.org>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - sophgo,cv1800-usb-phy
+> +
+> +  reg:
+> +    maxItems: 2
+> +
+> +  reg-names:
+> +    items:
+> +      - const: phy
+> +      - const: pin
 
-Not quite :-D
+drop pin, cv1800 series does not support this.
 
-They are slightly different. More importantly, this is a different
-version of QMP PHY. So, it's not really worth merging the code.
-Earlier on I pasted the patchset to move all HDMI PHY drivers to
-drivers/phy/qualcomm. I plan to integrate msm8998 support into that
-patchset (this should not be delaying this patch though). But I don't
-want to commonize the HDMI QMP PHY code before somebody implements
-support for the third version of QMP HDMI PHYs, the one that is found
-on msm8992/94.
+> +
+> +  clocks:
+> +    maxItems: 4
+> +
+> +  clock-names:
+> +    items:
+> +      - const: apb
+> +      - const: 125m
+> +      - const: 33k
+> +      - const: 12m
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  dr_role:
+> +    enum:
+> +      - host
+> +      - device
 
+cv181x series have otg support. For board with OTG,
+it should be properly handled.
 
--- 
-With best wishes
-Dmitry
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - clocks
+> +  - clock-names
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/sophgo,cv1800.h>
+> +    usb_phy: usb-phy@3006000 {
+> +        compatible = "sophgo,cv1800-usb-phy";
+> +        reg = <0x300600 0x60>, <0x3000048 0x4>;
+> +        reg-names = "phy", "pin";
+> +        clocks = <&clk CLK_APB_USB>,
+> +                 <&clk CLK_USB_125M>,
+> +                 <&clk CLK_USB_33K>,
+> +                 <&clk CLK_USB_12M>;
+> +        clock-names = "apb", "125m", "33k", "12m";
+> +        #phy-cells = <0>;
+> +    };
+> -- 
+> 2.45.2
+> 
+
+You patch is duplicated, I have sumbitted patches 
+month ago and still needs some time to figure out 
+the best topology. Phy driver belongs to syscon,
+which make things kind of complex.
+
+https://lore.kernel.org/all/IA1PR20MB4953C1876484E149AA390DD5BB1D2@IA1PR20MB4953.namprd20.prod.outlook.com/#t
+
+Regards,
+Inochi
 
 -- 
 linux-phy mailing list
