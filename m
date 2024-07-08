@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1995C3DA42
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 13:41:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43050C41513
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 13:42:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BLepuEBnYKjyhpoY0/ZBtN3pYL466wYY4kqwVAQ0P3M=; b=SV8sUqR679emqk
-	thysOj8hBU2JE720u/QJNB08uLclugERne+xKEZdL0D/vloQ581hjAn9pW7AgVyuM5uqnHEq7UrK6
-	WiimyUbVuwx9bDonualGYCVJADigDxBq5w3udlBETpvWNlGzrG7VElXFctlN8tVbZhqsK50t/V1mj
-	m9P8qWnFb4iSZPvKu0dX9AA5rQvNoq2Qrozl9OllG2dg5O6aWAgz8+ZHMY0Hohl3cgwmBfYKB2tW5
-	UNF41rSuNpMfqyh5MZCr0g9oGBX+Cgo6Y3JiiCw6yg4407gx8i9ETzkzkNC9B0b0LkZhZq+xsj+1I
-	1m10aZW0gJQqmIptILsA==;
+	List-Owner; bh=h6CMa/GZPFoyyfXZ+g8Vmz4TGe+REDCtKBIg3DpVogI=; b=PgBIs4VngHCqUW
+	e6q9+3F1aFME9EgRW2KWuWFeIt4/EWIrR35XQHvsjly31TTM+xDoefYROwCXdsg17nJ6B3SCMm8m6
+	NFQUMv0MzbFTWa3psvitziWk1t2Wxx9xJQ3r2gJIKKtoZfLLHMBCjAPAbxlNv9okXF0CcflDTHH1/
+	udwMO28bL7dPVRHNfFh7a/sjHqKGECg6mOJYHJMmjS4kePSslTiSKVNpb1mY9SXH+2sV+OohXYtzv
+	mrtEQiwOpfaS9NWnegJ6VTOPwTShe9xsVV4SyUkasMBcSDhxQV+jzkxOfpwM6dBryPugNqjkywG1B
+	1OtOnzTuQDY3SI+3xcRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQoc6-00000003wkR-1mt6;
-	Mon, 08 Jul 2024 13:41:06 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sQod3-00000003wwO-3EK0;
+	Mon, 08 Jul 2024 13:42:05 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQoc2-00000003wis-3IJw;
-	Mon, 08 Jul 2024 13:41:05 +0000
+	id 1sQod0-00000003wuK-3obE;
+	Mon, 08 Jul 2024 13:42:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 5999ACE0B79;
-	Mon,  8 Jul 2024 13:40:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E5E84C4AF0A;
-	Mon,  8 Jul 2024 13:40:54 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id D3E2ACE0C54;
+	Mon,  8 Jul 2024 13:42:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD48DC116B1;
+	Mon,  8 Jul 2024 13:41:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720446058;
-	bh=71k5UpoftlrwEwxLXBZffE07JZCDzAyV2hgZQdfHspg=;
+	s=k20201202; t=1720446120;
+	bh=Jj4vAHxYg8R4Fyjft9iJg1dQ2fuZNmD4LJxaXm147r0=;
 	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=WKHed9AEfHmvukWE3RMjK/5zQli5ekX4RJemt4i59mKlyKv9h7Rym98mBH0fuSjPj
-	 ckJi05cW746LqNJeR/qWZK/4w6gUalEEPempMEqnYzlGSJY8y0VhDWieu9K2dNMqX/
-	 kFE4dG5szgCru3nNn8OIcXpZcarMRiNNgr4wKxdbMLMdeRw09NiVTkrw5BBUKw5uKo
-	 TQkaohcXu2ExKDJ9xnIm9x6iHd7rOGFx0AoH5V2wNx7dUdpHH8pRd1rU+Z85+nMKLn
-	 j+/Pq2eM4URMaAlSUdrIWesSOU4DomPGKkfpV7Ljnwp80dIt47bgLXXsHPHQQqS2+i
-	 emhX1Cn8XHACA==
-Message-ID: <64d32e69-a216-4f63-9da5-0686b8706dd3@kernel.org>
-Date: Mon, 8 Jul 2024 15:40:52 +0200
+	b=C0kQToWSCQA6gCHh9QU32LHJ7dwyPGBEb0Sj9Wgp0tWwdRpcMU3aA0rt/NH6Qjfhg
+	 RtXws0vnfYWaCqkLPN84K69sgT6meQixx/fzYpLBDDFVNoN6XbrGwRC7tK9P8/bUMJ
+	 TxkDH0o+zkDb/itmuIl8NO0vwGIK1tMaGJSVeL/yvgPVVABx35UYUejRHhwaSrQLew
+	 /WgaaWbasy5ATneuI0nvOTFMKr3IHJVd3rBfk+yreICNbk3n8FOm2lyDUeC58mUNgv
+	 8gKyg17Ijp+vk1wCc/50ieULLgu+qFHqPc5/CYCpZBvhxJQ8qEHcduM1fCQzeaD69u
+	 flRRmwtnDWc6w==
+Message-ID: <dfd9822e-6aa7-4873-abaa-f6d8996fb3de@kernel.org>
+Date: Mon, 8 Jul 2024 15:41:53 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/3] dt-bindings: phy: add YAML schema for cv1800-usb-phy
- driver bindings
+Subject: Re: [PATCH 2/3] riscv: dts: sophgo: add nodes for USB phy and
+ controller
 To: Yao Zi <ziyao@disroot.org>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
@@ -58,7 +58,7 @@ To: Yao Zi <ziyao@disroot.org>, Vinod Koul <vkoul@kernel.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-riscv@lists.infradead.org
 References: <20240708120830.5785-1-ziyao@disroot.org>
- <20240708120830.5785-2-ziyao@disroot.org>
+ <20240708120830.5785-3-ziyao@disroot.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -104,10 +104,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240708120830.5785-2-ziyao@disroot.org>
+In-Reply-To: <20240708120830.5785-3-ziyao@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240708_064103_334534_071B9CB2 
-X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-CacheID: sfid-20240708_064203_427259_15972DD1 
+X-CRM114-Status: UNSURE (   5.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -126,55 +126,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 08/07/2024 14:08, Yao Zi wrote:
-> cv1800-usb-phy driver supports USB 2.0 phys integrated in Sophgo
-> Cv1800/SG200x SoCs. Add YAML schema for its binding.
-> 
-> Signed-off-by: Yao Zi <ziyao@disroot.org>
+>  
+> +		usb_phy: usb-phy@3006000 {
+> +			compatible = "sophgo,cv1800-usb-phy";
+> +			reg = <0x3006000 0x60>, <0x3000048 0x4>;
+> +			reg-names = "phy", "pin";
+> +			clocks = <&clk CLK_APB_USB>,
+> +				 <&clk CLK_USB_125M>,
+> +				 <&clk CLK_USB_33K>,
+> +				 <&clk CLK_USB_12M>;
+> +			clock-names = "apb", "125m", "33k", "12m";
 
-A nit, subject: drop second/last, redundant "bindings". The
-"dt-bindings" prefix is already stating that these are bindings.
-See also:
-https://elixir.bootlin.com/linux/v6.7-rc8/source/Documentation/devicetree/bindings/submitting-patches.rst#L18
-
-
-
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - sophgo,cv1800-usb-phy
-> +
-> +  reg:
-> +    maxItems: 2
-> +
-> +  reg-names:
-> +    items:
-> +      - const: phy
-> +      - const: pin
-> +
-> +  clocks:
-> +    maxItems: 4
-> +
-> +  clock-names:
-> +    items:
-> +      - const: apb
-> +      - const: 125m
-> +      - const: 33k
-> +      - const: 12m
-
-All these three should have rather some logical name, not frequency.
-
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  dr_role:
-
-No underscores in node names, missing vendor prefix (unless it is
-generic property), missing description.
-
-Please do not invent new properties like this. You probably wanted to
-reference usb-drd?
-
+Why are not you using dr_role property here?
 
 Best regards,
 Krzysztof
