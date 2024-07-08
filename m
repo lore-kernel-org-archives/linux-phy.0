@@ -4,83 +4,132 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14B74C38150
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Jul 2024 14:34:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1F88C3271E
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 04:48:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vDkzmIL8eDBENtxhsXvptduQNaLZTYN1PYrJJJtJCy8=; b=Wnnoun+w6eDf99
-	Wf7cNDv3rujN9DxUJId+cHP3es2m+QU5wZcyIgj4INZujl1aIPxWFvIIuxL57RWPXDJw6KcXevBvA
-	ze8Dq2u+P+xbK9L88TgqEvOT/nXy9rPP0AwCaUEVzDemtzcVyNSOYt1OO0NcHLh21XtdcUN0rUE0K
-	1fHfDPdLGg3s02OC8QpbfoqRaEfx4vynAvkuxNeiQvOz1uUuReGCGR85Ei5NLv/5YhYmAZcLxPKQu
-	6JqL5fV5hIa+5z6sUPoasF9kS2GI5qE85hhMhQ5FpbviwXLHy+4isZSTBfp+AB7UXCI8/4BxBQkej
-	WIsmyeEoHtLA+9VTVA9A==;
+	List-Owner; bh=3IIAj07azqb3O2wc9NFq+s51gzE+A8qBS6VOw+Y3IrE=; b=2g0ZWTP0trPEqi
+	lyFrOf4WaGi/qFSYv73FTuUr2AEiSILeY3vVxKcO3wbUm4xVV72Zb3i8wYbvYZLSDGqDU47GTua24
+	6hfSHYenvsffAEWkRDTumZMjM4Fp4v7X6hWYyABYprEABYNgnt+GDYXcJUZwq7eySvUlb2zj0kzk9
+	er6exAizpsohHN3VAbChbNdH7wBeYokl3Pv2aqrqX5oi1W3/OANAQZoAclHvkMjyMV/a7ITwr7ZZF
+	adG8IgWpIzDaczrxWDYF4Wt61yuTGdUfNtFKfdH6ZMm7wTMj3EDpxUpNBjSHTMm3fANzVhlLhXSdk
+	FV2oUFwInc8raH3Bt4zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sPk1H-0000000GDdA-2709;
-	Fri, 05 Jul 2024 14:34:39 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1sQgJ8-00000002jWX-2444;
+	Mon, 08 Jul 2024 04:48:58 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sPk1E-0000000GDbx-2wIW
-	for linux-phy@lists.infradead.org;
-	Fri, 05 Jul 2024 14:34:38 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-52ea33671ffso1204197e87.3
-        for <linux-phy@lists.infradead.org>; Fri, 05 Jul 2024 07:34:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1720190074; x=1720794874; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=LEJHO7rkl+xJJJhR/OlOUSXNtS4l+Ak5HXkZa8xkzw4=;
-        b=cgr5RkuvgJozRAZMHHI6Ox3zP/eAvUCqeQlVdCxxLV0ssHVwUdVz8S+V6tl6oT5MQC
-         sybCSZZ29xyjuArdZBXUMDObudL7bjrKytVOCFuJdnZ+B5pQd1bx5BdOWpu9jf2PLz1b
-         YLL78FdQz0PgYP0E5iz6pYob/HJPIhrhSuQUCzaMRbyhCopV8cDKHzZ8drb6LgZ5/Z8a
-         eizhczmM41aqyIYm22AuFxhS5h0VGm1ct4fLVGKmfGW3ihPhpsnruCrnNFanC/1PVLDu
-         BWC5svZ+alr8jvJWShCy2jEM2qR2S84OeKECj+ht7exO6KlC7NqvH45/RgA7ZJXlwGlC
-         eYMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1720190074; x=1720794874;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=LEJHO7rkl+xJJJhR/OlOUSXNtS4l+Ak5HXkZa8xkzw4=;
-        b=UkPGcdclSUFIyL4zWRRtyfDgPL4h/+hMuOmxTrn3RQ8cBAlaTIhKgEJjlt+aoK4S+7
-         rWNzVrfBQbOHVxU7t27Lsq6boeZym3OTKyzR+hVYPBptbfXHMLeKeT7FaXG9rqes0x7K
-         SwRh6usXMzs4HAL+Vpw3sHjj58IdLvNpl7UgWDFgRv9HfdlNiJOz9s6e4aFpe7TyVUMo
-         DjH0qJaJs1f4hqA1UmXEom6VLv1TIGaK92YkaC6WtDrqp8O9O0hiHCbk3I+OWem8B9fq
-         M59DeAUoQo5qFBIuoHRLhoGpsfu8hNQ9Bg77NEmq81MHRmKAosE+1zPyF3LRJm5JQKo1
-         /LQg==
-X-Forwarded-Encrypted: i=1; AJvYcCXITVUoKWkCKFa8ldq2kqPkLq75AlQLQapN+MBoT+zsMmd5jGng+gdsOfD+j6nm5Okj4CKBXJNvTRbx28Ub5oLpEIPfoK+Hq8vkiJ7s5g==
-X-Gm-Message-State: AOJu0YwDHaqxMvtpnuRPwE0LN5+FarJk2eiJsfK8xucK7letM/HIlwFY
-	6jenTOPBUBDlONg4EYLd4Z50PRltZKMbk4cUwa4NfxCEOTOGWQw/3pnfWovwxQU=
-X-Google-Smtp-Source: AGHT+IExpSPLbhdfXO79t1NxOiXDtAHEROuoPPAPjqvX+SJpApir1f2/GJTe7nfTqsNHoDT+/oAc+Q==
-X-Received: by 2002:a19:6a1a:0:b0:52c:f521:9423 with SMTP id 2adb3069b0e04-52ea064ee3dmr2962725e87.26.1720190073677;
-        Fri, 05 Jul 2024 07:34:33 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52e9f183e00sm575303e87.305.2024.07.05.07.34.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 05 Jul 2024 07:34:33 -0700 (PDT)
-Date: Fri, 5 Jul 2024 17:34:31 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Marc Gonzalez <mgonzalez@freebox.fr>
-Cc: Rob Clark <robdclark@gmail.com>, 
-	Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>, 
-	Marijn Suijten <marijn.suijten@somainline.org>, David Airlie <airlied@gmail.com>, 
-	Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, linux-phy@lists.infradead.org, Arnaud Vrac <avrac@freebox.fr>, 
-	Pierre-Hugues Husson <phhusson@freebox.fr>, Jeffrey Hugo <quic_jhugo@quicinc.com>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>
-Subject: Re: [PATCH v2] drm/msm: add msm8998 hdmi phy/pll support
-Message-ID: <5lbtymde3plfiqkvnd2lrjzxhengmsw242uqapnzpvfd5jrm25@x2ik2h6vrdxm>
-References: <20240704-hdmi-phy-v2-1-a7f5af202cb5@freebox.fr>
+	id 1sQgJ4-00000002jVx-1Vjj;
+	Mon, 08 Jul 2024 04:48:56 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 467NgQ4V005778;
+	Mon, 8 Jul 2024 04:47:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Mt2UNk9pZ3nG8SWY8ZJK5DyYFCJPucDgybc6SM6D4P4=; b=Pt3k0/gw3nDfHRL1
+	WH1j0zn74Dskno6RYtKxvoY3Lwqbkt4uZsKApdf64uz3Pm7tV/ZyBTzyLbVY/reC
+	5KhibpPMVXBub8eExpHBtzs27kr8trEIVEdEdu4Mh+R7budCktV5doOBpW6z9Gbo
+	c3RZ4vpPwS06yLqQcSRAarpHRbnLNmFXHfsKtBxeA56EyPkBE0RLPxGBmigNeLz3
+	1c1yEW0jXzHKbusYo1u80ekw2pJE5hQV7up0yOSh5e+u5jTWVuHAPgjgAcisY1Wg
+	L6n4Y9coVABsQWN1xD+OWOi4hMqd20I586+hLj2RnTxfgxfHzfolfdA0kuzk6QvO
+	41Is5g==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406we8tnpx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 08 Jul 2024 04:47:15 +0000 (GMT)
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA02.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 4684lDsl027084
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 8 Jul 2024 04:47:13 GMT
+Received: from [10.239.132.150] (10.80.80.8) by nasanex01a.na.qualcomm.com
+ (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 7 Jul 2024
+ 21:46:52 -0700
+Message-ID: <63eb3f58-d4a4-4a27-b78c-f4cb83e62c63@quicinc.com>
+Date: Mon, 8 Jul 2024 12:45:52 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240704-hdmi-phy-v2-1-a7f5af202cb5@freebox.fr>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 01/47] dt-bindings: arm: qcom: Document QCS9100 SoC and
+ RIDE board
+To: Krzysztof Kozlowski <krzk@kernel.org>,
+        Tengfei Fan
+	<quic_tengfan@quicinc.com>, <andersson@kernel.org>,
+        <konrad.dybcio@linaro.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+        <conor+dt@kernel.org>, <djakov@kernel.org>, <mturquette@baylibre.com>,
+        <sboyd@kernel.org>, <jassisinghbrar@gmail.com>,
+        <herbert@gondor.apana.org.au>, <davem@davemloft.net>,
+        <manivannan.sadhasivam@linaro.org>, <will@kernel.org>,
+        <joro@8bytes.org>, <conor@kernel.org>, <tglx@linutronix.de>,
+        <amitk@kernel.org>, <thara.gopinath@gmail.com>,
+        <linus.walleij@linaro.org>, <wim@linux-watchdog.org>,
+        <linux@roeck-us.net>, <rafael@kernel.org>, <viresh.kumar@linaro.org>,
+        <vkoul@kernel.org>, <edumazet@google.com>, <kuba@kernel.org>,
+        <pabeni@redhat.com>, <mcoquelin.stm32@gmail.com>
+CC: <robimarko@gmail.com>, <bartosz.golaszewski@linaro.org>,
+        <kishon@kernel.org>, <quic_wcheng@quicinc.com>,
+        <alim.akhtar@samsung.com>, <avri.altman@wdc.com>, <bvanassche@acm.org>,
+        <agross@kernel.org>, <gregkh@linuxfoundation.org>,
+        <quic_tdas@quicinc.com>, <robin.murphy@arm.com>,
+        <daniel.lezcano@linaro.org>, <rui.zhang@intel.com>,
+        <lukasz.luba@arm.com>, <quic_rjendra@quicinc.com>,
+        <ulf.hansson@linaro.org>, <quic_sibis@quicinc.com>,
+        <otto.pflueger@abscue.de>, <luca@z3ntu.xyz>,
+        <neil.armstrong@linaro.org>, <abel.vesa@linaro.org>,
+        <bhupesh.sharma@linaro.org>, <alexandre.torgue@foss.st.com>,
+        <peppe.cavallaro@st.com>, <joabreu@synopsys.com>,
+        <netdev@vger.kernel.org>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <bhelgaas@google.com>, <ahalaney@redhat.com>,
+        <krzysztof.kozlowski@linaro.org>, <u.kleine-koenig@pengutronix.de>,
+        <dmitry.baryshkov@linaro.org>, <quic_cang@quicinc.com>,
+        <danila@jiaxyga.com>, <quic_nitirawa@quicinc.com>,
+        <mantas@8devices.com>, <athierry@redhat.com>,
+        <quic_kbajaj@quicinc.com>, <quic_bjorande@quicinc.com>,
+        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
+        <quic_tsoni@quicinc.com>, <quic_rgottimu@quicinc.com>,
+        <quic_shashim@quicinc.com>, <quic_kaushalk@quicinc.com>,
+        <quic_tingweiz@quicinc.com>, <srinivas.kandagatla@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-pm@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-crypto@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <iommu@lists.linux.dev>, <linux-riscv@lists.infradead.org>,
+        <linux-gpio@vger.kernel.org>, <linux-watchdog@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>, <kernel@quicinc.com>
+References: <20240703025850.2172008-1-quic_tengfan@quicinc.com>
+ <20240703025850.2172008-2-quic_tengfan@quicinc.com>
+ <665f6c8c-4f43-4d20-90e9-9e037a942066@kernel.org>
+ <fbeb5969-0b3a-455e-88eb-b83734bf2c50@quicinc.com>
+ <97c9484b-e257-4163-a104-3457d59bc69b@kernel.org>
+From: "Aiqun Yu (Maria)" <quic_aiquny@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <97c9484b-e257-4163-a104-3457d59bc69b@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: NaHbB22mWdLnCeOe5WUMhaQTLB8iQPsZ
+X-Proofpoint-ORIG-GUID: NaHbB22mWdLnCeOe5WUMhaQTLB8iQPsZ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-08_01,2024-07-05_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
+ malwarescore=0 priorityscore=1501 clxscore=1011 impostorscore=0
+ lowpriorityscore=0 spamscore=0 mlxlogscore=976 phishscore=0 mlxscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407080035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240705_073436_766903_033BDA73 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20240707_214854_579406_7BC17F27 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,45 +146,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 04, 2024 at 06:45:36PM GMT, Marc Gonzalez wrote:
-> From: Arnaud Vrac <avrac@freebox.fr>
+
+
+On 7/3/2024 5:33 PM, Krzysztof Kozlowski wrote:
+> On 03/07/2024 11:21, Tengfei Fan wrote:
+>>>>         - items:
+>>>>             - enum:
+>>>> +              - qcom,qcs9100-ride
+>>>>                 - qcom,sa8775p-ride
+>>>> +          - const: qcom,qcs9100
+>>>
+>>> This changes existing compatible for sa8775p without any explanation in
+>>> commit msg.
+>>>
+>>> Best regards,
+>>> Krzysztof
+>>>
+>>
+>> In the next verion patch series, I will provide relevant explanatory 
+>> information in this patch commit message.
 > 
-> Ported from the downstream driver.
+> TBH, I cannot think of any reasonable explanation for this, especially
+> considering rest of the patchset which does not fix resulting dtbs_check
+> warning.
 
-Please write some sensible commit message.
+The existing compatible "sa8775p" warning can only be addressed When
+@Nikunj's "sa8775p" changes merged.
+
+Let me know if you have other suggestions for this.
 
 > 
-> Signed-off-by: Arnaud Vrac <avrac@freebox.fr>
-> Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
-> ---
->  drivers/gpu/drm/msm/Makefile                   |   1 +
->  drivers/gpu/drm/msm/hdmi/hdmi.c                |   1 +
->  drivers/gpu/drm/msm/hdmi/hdmi.h                |   8 +
->  drivers/gpu/drm/msm/hdmi/hdmi_phy.c            |   5 +
->  drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c       | 789 +++++++++++++++++++++++++
->  drivers/gpu/drm/msm/registers/display/hdmi.xml |  89 +++
->  6 files changed, 893 insertions(+)
-
-- Missing changelog
-- Missing a pointer to bindings. Ideally bindings should come together
-  with the driver.
-
-I'm not going to check the math, but it looks pretty close to what we
-have for msm8996.
-
-> +
-> +static const char * const hdmi_phy_8998_reg_names[] = {
-> +	"vdda-pll",
-> +	"vdda-phy",
-
-Unless you have a strong reason to, please use vcca and vddio here, so
-that we don't have unnecessary conditionals in schema.
-
-
+> Best regards,
+> Krzysztof
+> 
 
 -- 
-With best wishes
-Dmitry
+Thx and BRs,
+Aiqun(Maria) Yu
 
 -- 
 linux-phy mailing list
