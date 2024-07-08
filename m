@@ -4,70 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59C2EC3DA42
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 12:10:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39F8AC3271E
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 12:49:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q3QATbjkBnMjbRcOveuK7Cw7CciRLyOUjYCnifd1hSU=; b=W5RNuVsP4DxPmn
-	/I5ntqoAh0IUQwFWtpjhmt9Yb8e7QQfBOgirj2U4bimWQDL5VSJrrpQNiHC8BOQ6OYle/7bwGi1vz
-	xc/rV9prDDds4soZC5LS7IuxGK3ndHLETI6rVINrre66zKw03WP4lq8Yy8NB/oDskHGs89s1od4jQ
-	xFj9gf/+D9ksfuwfwdWBWSgmxFkMaUHlwSE9aRmCkVIL82LZfsBtKnf+SruhW4uBa79ipmBqaAZIw
-	Mkpu5OG6e+buaawIQCNiISVN0MXngB/c8RP1YXHERpzQUk8+q8eH4zI+uGbytoaeouMgK17111LyA
-	ijjDUVN2yjWYgq8A7gvw==;
+	List-Owner; bh=LEWMBTD7I4GCkIztvLgNn2N2uvUDY+o18VoOn6CyZ28=; b=NiPJrsBZUMhhq6
+	xJ0KrbTcvd9haVQ0Jim5WUsF7cLGiN1IBavxyAW1P8f2DZiLxKB1mlNNUcuIdzNe1W0oieHkp825S
+	tGnF8p2W7ZMM/LNtl11h9g0MZAjoU12qSAvGwFpvPspUFWmOzzyZ0O+uuvOwt3eCznQ/DNtahIL2J
+	nu0hWbJAyQydlnefE8szvhppA1cptHXpKgfICAehfa305ZcNT8xiVs8y250xcbEynpUaZM19jHW0p
+	7l7TeSiB7mCOGB6uomXyoeac/CY6jhb37Sx1AkQT2OlFLMYBj9exXjuQC5V3x/NoUtgPRRk9KSyVv
+	ZbofVloqAl5PssqAjLTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQnCC-00000003ir8-3zY4;
-	Mon, 08 Jul 2024 12:10:16 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1sQnoK-00000003qZr-30bp;
+	Mon, 08 Jul 2024 12:49:40 +0000
+Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQnC9-00000003ipl-3uW3;
-	Mon, 08 Jul 2024 12:10:16 +0000
-Received: from localhost (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id B9501412FF;
-	Mon,  8 Jul 2024 14:10:12 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
-	by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id VukL3U4tSXAs; Mon,  8 Jul 2024 14:10:11 +0200 (CEST)
-From: Yao Zi <ziyao@disroot.org>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1720440578; bh=W88ii+VfQhuEdGWbttUWogaLqMfwR4mJCLxGUb+XKZA=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=FaVrGCUPGQKHQMZ+rI+7D5essaiCHjtjUJKnR19ECuJdP8cSUDVcf6jLBXQLkPVPC
-	 /g19/dYim2gSTHwW5cWXCaNJy6Yl2uSxAB26cfwEY95YiZSaglbgaK2FvtCwfnamro
-	 APHVPDhua17q7A51wzGg0CPn6j3lPCHHDybuONtvRiInCeRKNfwmOjnKNHF6F6TU0v
-	 zWLMaaeL9KW4BTWVgPYES4kmRY0MsAn6OyYNfo0Cx+aD5j7/XsacPhJZ1L0Fs9Mfj+
-	 U46Evwial+surXNRiHSVSMJS00zTx7eTlhrnmz9ZAeo1eLIpM6BrbUpYFbUrrxRraj
-	 +D8yhRBrXxa9Q==
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen Wang <unicorn_wang@outlook.com>,
-	Inochi Amaoto <inochiama@outlook.com>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Jisheng Zhang <jszhang@kernel.org>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-riscv@lists.infradead.org
-Cc: Yao Zi <ziyao@disroot.org>
-Subject: [PATCH 1/3] dt-bindings: phy: add YAML schema for cv1800-usb-phy driver bindings
-Date: Mon,  8 Jul 2024 12:08:28 +0000
-Message-ID: <20240708120830.5785-2-ziyao@disroot.org>
-In-Reply-To: <20240708120830.5785-1-ziyao@disroot.org>
-References: <20240708120830.5785-1-ziyao@disroot.org>
+	id 1sQnoH-00000003qZ6-1Ya6
+	for linux-phy@lists.infradead.org;
+	Mon, 08 Jul 2024 12:49:38 +0000
+Received: by mail-pj1-x1030.google.com with SMTP id 98e67ed59e1d1-2c1a4192d55so2109971a91.2
+        for <linux-phy@lists.infradead.org>; Mon, 08 Jul 2024 05:49:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1720442976; x=1721047776; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=gwJfqVEIoVdfoTsztHNlaZf6K08VAN240cdWOXUU17s=;
+        b=eXZyMZfiRMzZkezvAT6X+naqqkc6lqOR1IjDgdr02Jt5C6rtGCy2lqmEzcp+YNdvg6
+         KEcwPZrzBEOZpWv8OK4mFzFkiavMglNrUdVxl4KheEaOyDfvbMXayzaosI/6eVY1jKQm
+         OofJ1XGI/mfLhzUvvCsL1Hp4Qy0x0HVrx32b6mEz7z0RJwRALJzJOcjTO1VLGhKAPdwa
+         +F3DYYnH8FcdTQFHmtL6vP7h60ac+5ptGSC6jM5xpHB6sbIU+JphZJpn4YP6+RtfwlFa
+         8/vGOsLyu4d6by8dmWR9V1k07E/quKxiQgnEDuMk9aMwiz13eqRyIAhnIDxgvl2Lku/E
+         UzdA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1720442976; x=1721047776;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=gwJfqVEIoVdfoTsztHNlaZf6K08VAN240cdWOXUU17s=;
+        b=q+lkDogo+wJFmZ2KwsiLizl+O5DcCwQF8ntm5wiVs3cltWsoW/4RWJyRRCJ4KQYyxZ
+         CkiNGGT4iHl+Y6NNcxo5QcMZx1M/+yVW31ECFwnq6Qk6HSy1YI8hLxyRhIeBUuezG7VX
+         7ahRWNpUzoJWjy/Q+PgN95fYiN5q8c3erDBY83a9e++JUcgmKgyyUHzHpjjKjAqZS1fE
+         9kfb79+zQvq/OGjLaJCXN21UJIXagDi9L4hAlike3zzXD4aYIBFRs/9bQrcV6SKTAhi+
+         HqAr8knqecVuVUbXhOIBHmFtAwGbTgZFxYngvufP8JxQEHAkAZCOVvW9rf8NJ4ugUILN
+         veTQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWmwuYr+z4BWuylhE+P7Td/yKTW8AHqETYKFdCynGYb0DoDtFNuwkkDoNcR3gRT5Bnv+uHaP9q34PDghnWowaubDB55uMUTI1Ssu3NyWw==
+X-Gm-Message-State: AOJu0YwykUTiMdAc3DjAqxRel1H0MSGkfUXpYXKTD3yAJeyFeWcg4kJ/
+	/hrVxFaX/xmdkvNYJL5dKItefgrPzuV3j8BWKONgPr/p8ar7mvRPZIpqB5b4dMxP9jcMQ9NgC2l
+	QWnR5liUFXkqcswGGijfhhXmyJEgPEhWbhBAcNA==
+X-Google-Smtp-Source: AGHT+IFh+8rVNSdILFoJSTAPdcM4HawcWPM/1UUqpARio3DoOIhOeIUZ96MzfeyAZxWq+ws/d6HRKhGtmB30W5rYgpQ=
+X-Received: by 2002:a17:90b:a4a:b0:2c9:6751:7539 with SMTP id
+ 98e67ed59e1d1-2c99c6ba8cemr6298715a91.44.1720442975629; Mon, 08 Jul 2024
+ 05:49:35 -0700 (PDT)
 MIME-Version: 1.0
+References: <20240704-hdmi-phy-v2-1-a7f5af202cb5@freebox.fr>
+ <5lbtymde3plfiqkvnd2lrjzxhengmsw242uqapnzpvfd5jrm25@x2ik2h6vrdxm> <2d21db63-4371-45b4-ab24-9a725c29e09a@freebox.fr>
+In-Reply-To: <2d21db63-4371-45b4-ab24-9a725c29e09a@freebox.fr>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 8 Jul 2024 15:49:23 +0300
+Message-ID: <CAA8EJpqz1SiUdTMpx5hmnax_rBqtpVAtOZsaL8UfHnZ5vZZFHQ@mail.gmail.com>
+Subject: Re: [PATCH v2] drm/msm: add msm8998 hdmi phy/pll support
+To: Marc Gonzalez <mgonzalez@freebox.fr>
+Cc: Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
+	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
+	linux-phy@lists.infradead.org, Arnaud Vrac <avrac@freebox.fr>, 
+	Pierre-Hugues Husson <phhusson@freebox.fr>, Jeffrey Hugo <quic_jhugo@quicinc.com>, 
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240708_051014_250193_3D7B1B43 
-X-CRM114-Status: GOOD (  10.73  )
+X-CRM114-CacheID: sfid-20240708_054937_442906_08C049FC 
+X-CRM114-Status: GOOD (  26.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,91 +95,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-cv1800-usb-phy driver supports USB 2.0 phys integrated in Sophgo
-Cv1800/SG200x SoCs. Add YAML schema for its binding.
+On Mon, 8 Jul 2024 at 14:07, Marc Gonzalez <mgonzalez@freebox.fr> wrote:
+>
+> On 05/07/2024 16:34, Dmitry Baryshkov wrote:
+>
+> > On Thu, Jul 04, 2024 at 06:45:36PM GMT, Marc Gonzalez wrote:
+> >
+> >> From: Arnaud Vrac <avrac@freebox.fr>
+> >>
+> >> Ported from the downstream driver.
+> >
+> > Please write some sensible commit message.
+>
+> Here's an attempt at expanding the commit message:
+>
+> """
+> This code adds support for the HDMI PHY block in the MSM8998.
+> It is a copy & paste of the vendor driver downstream:
+> https://git.codelinaro.org/clo/la/kernel/msm-4.4/-/blob/caf_migration/kernel.lnx.4.4.r38-rel/drivers/clk/msm/mdss/mdss-hdmi-pll-8998.c
+> """
 
-Signed-off-by: Yao Zi <ziyao@disroot.org>
----
- .../bindings/phy/sophgo,cv1800-usb-phy.yaml   | 67 +++++++++++++++++++
- 1 file changed, 67 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
+Add support for the HDMI PHY as present on the Qualcomm MSM8998
+platform. The code is mostly c&p of the vendor code from msm-4.4,
+kernel.lnx.4.4.r38-rel.
 
-diff --git a/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
-new file mode 100644
-index 000000000000..0403d899e23b
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/sophgo,cv1800-usb-phy.yaml
-@@ -0,0 +1,67 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+# Copyright 2019 BayLibre, SAS
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/sophgo,cv1800-usb-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Sophgo CV1800 USB PHY
-+
-+maintainers:
-+  - Yao Zi <ziyao@disroot.org>
-+
-+properties:
-+  compatible:
-+    enum:
-+      - sophgo,cv1800-usb-phy
-+
-+  reg:
-+    maxItems: 2
-+
-+  reg-names:
-+    items:
-+      - const: phy
-+      - const: pin
-+
-+  clocks:
-+    maxItems: 4
-+
-+  clock-names:
-+    items:
-+      - const: apb
-+      - const: 125m
-+      - const: 33k
-+      - const: 12m
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  dr_role:
-+    enum:
-+      - host
-+      - device
-+
-+required:
-+  - compatible
-+  - reg
-+  - reg-names
-+  - clocks
-+  - clock-names
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/sophgo,cv1800.h>
-+    usb_phy: usb-phy@3006000 {
-+        compatible = "sophgo,cv1800-usb-phy";
-+        reg = <0x300600 0x60>, <0x3000048 0x4>;
-+        reg-names = "phy", "pin";
-+        clocks = <&clk CLK_APB_USB>,
-+                 <&clk CLK_USB_125M>,
-+                 <&clk CLK_USB_33K>,
-+                 <&clk CLK_USB_12M>;
-+        clock-names = "apb", "125m", "33k", "12m";
-+        #phy-cells = <0>;
-+    };
+>
+>
+> >>  drivers/gpu/drm/msm/Makefile                   |   1 +
+> >>  drivers/gpu/drm/msm/hdmi/hdmi.c                |   1 +
+> >>  drivers/gpu/drm/msm/hdmi/hdmi.h                |   8 +
+> >>  drivers/gpu/drm/msm/hdmi/hdmi_phy.c            |   5 +
+> >>  drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c       | 789 +++++++++++++++++++++++++
+> >>  drivers/gpu/drm/msm/registers/display/hdmi.xml |  89 +++
+> >>  6 files changed, 893 insertions(+)
+> >
+> > - Missing changelog
+>
+> - Rebase onto v6.10
+> - Move drivers/gpu/drm/msm/hdmi/hdmi.xml.h to drivers/gpu/drm/msm/registers/display/hdmi.xml
+> - Add copyright attribution
+> - Remove all dead/debug/temporary code
+>
+> > - Missing a pointer to bindings. Ideally bindings should come together with the driver.
+>
+> "qcom,hdmi-phy-8998" is defined in "HDMI TX support in msm8998" series (Acked by Rob Herring & Vinod Koul)
+
+This (and the link to lore) ideally should be a part of the cover
+letter or the comment below '---' in the patch.
+
+>
+> > I'm not going to check the math, but it looks pretty close to what we
+> > have for msm8996.
+>
+> What is the consequence of this?
+
+That I won't check the math :-D
+
+>
+>
+> >> +static const char * const hdmi_phy_8998_reg_names[] = {
+> >> +    "vdda-pll",
+> >> +    "vdda-phy",
+> >
+> > Unless you have a strong reason to, please use vcca and vddio here, so
+> > that we don't have unnecessary conditionals in schema.
+>
+> The vendor code uses vddio & vcca for msm8996;
+> vdda-pll & vdda-phy for msm8998.
+>
+> Which is vcca? Which is vddio?
+
+vddio = vdda-phy (1.8V)
+vcca = vdda-pll (lower voltage)
+
+> https://git.codelinaro.org/clo/la/kernel/msm-4.4/-/blob/caf_migration/kernel.lnx.4.4.r38-rel/arch/arm/boot/dts/qcom/msm8996-mdss-pll.dtsi
+> https://git.codelinaro.org/clo/la/kernel/msm-4.4/-/blob/caf_migration/kernel.lnx.4.4.r38-rel/arch/arm/boot/dts/qcom/msm8998-mdss-pll.dtsi#L121-172
+
 -- 
-2.45.2
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
