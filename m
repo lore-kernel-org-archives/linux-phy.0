@@ -4,111 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43050C41513
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 13:42:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62B3AC3271E
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jul 2024 17:04:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h6CMa/GZPFoyyfXZ+g8Vmz4TGe+REDCtKBIg3DpVogI=; b=PgBIs4VngHCqUW
-	e6q9+3F1aFME9EgRW2KWuWFeIt4/EWIrR35XQHvsjly31TTM+xDoefYROwCXdsg17nJ6B3SCMm8m6
-	NFQUMv0MzbFTWa3psvitziWk1t2Wxx9xJQ3r2gJIKKtoZfLLHMBCjAPAbxlNv9okXF0CcflDTHH1/
-	udwMO28bL7dPVRHNfFh7a/sjHqKGECg6mOJYHJMmjS4kePSslTiSKVNpb1mY9SXH+2sV+OohXYtzv
-	mrtEQiwOpfaS9NWnegJ6VTOPwTShe9xsVV4SyUkasMBcSDhxQV+jzkxOfpwM6dBryPugNqjkywG1B
-	1OtOnzTuQDY3SI+3xcRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MOGA57GXHNROM93uVsQlNS+7ANLuMLvQFdTacqjxkXU=; b=Qq42yYOebj5ptn
+	eviHC/PaVeiYj+0Q8EZYOP8qSH61NnJaTQUCaotvyLNGt5i/V0KnG2EPXwSRkVlwTBv1YS6Ar08Bz
+	OO5FjGH43krSdLKZ0xbE94KeUZs4pYjb14plqegP6NS26VwhSrJUaFQrpZKU8/Fde88WameQNmdHX
+	ZKAnXrcB8A1WYKXWWq9q6R97nZL/2H0tqyWEx7HFJJSbpymQBqbHy3jQ0OtS0kesxMSujXEesLtfP
+	PreCVjnG0Gi8qft+GOqyfaUjJypqDABv2lyUAisL48mCoGJCFpgOrl+psS6EER8HB5ForNnjkhbWz
+	WIlf/9AHLWwGRtrozByA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQod3-00000003wwO-3EK0;
-	Mon, 08 Jul 2024 13:42:05 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sQrn8-00000004Wmn-32S6;
+	Mon, 08 Jul 2024 17:04:42 +0000
+Received: from mail-oo1-xc2e.google.com ([2607:f8b0:4864:20::c2e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQod0-00000003wuK-3obE;
-	Mon, 08 Jul 2024 13:42:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id D3E2ACE0C54;
-	Mon,  8 Jul 2024 13:42:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD48DC116B1;
-	Mon,  8 Jul 2024 13:41:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720446120;
-	bh=Jj4vAHxYg8R4Fyjft9iJg1dQ2fuZNmD4LJxaXm147r0=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=C0kQToWSCQA6gCHh9QU32LHJ7dwyPGBEb0Sj9Wgp0tWwdRpcMU3aA0rt/NH6Qjfhg
-	 RtXws0vnfYWaCqkLPN84K69sgT6meQixx/fzYpLBDDFVNoN6XbrGwRC7tK9P8/bUMJ
-	 TxkDH0o+zkDb/itmuIl8NO0vwGIK1tMaGJSVeL/yvgPVVABx35UYUejRHhwaSrQLew
-	 /WgaaWbasy5ATneuI0nvOTFMKr3IHJVd3rBfk+yreICNbk3n8FOm2lyDUeC58mUNgv
-	 8gKyg17Ijp+vk1wCc/50ieULLgu+qFHqPc5/CYCpZBvhxJQ8qEHcduM1fCQzeaD69u
-	 flRRmwtnDWc6w==
-Message-ID: <dfd9822e-6aa7-4873-abaa-f6d8996fb3de@kernel.org>
-Date: Mon, 8 Jul 2024 15:41:53 +0200
+	id 1sQrn4-00000004Wlh-45KB
+	for linux-phy@lists.infradead.org;
+	Mon, 08 Jul 2024 17:04:40 +0000
+Received: by mail-oo1-xc2e.google.com with SMTP id 006d021491bc7-5c6775ea6a3so731857eaf.3
+        for <linux-phy@lists.infradead.org>; Mon, 08 Jul 2024 10:04:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1720458277; x=1721063077; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=MvpNrB9c9Hl46wWiT75cgTZb/z1ngLdiVtG52BbExk8=;
+        b=mk8yMr1o52BIs1BJx4J4cgd/TPh4fboBmADvICjEVBJfpZSTxr3r2kLejpwMgZpq4f
+         GdHPHqmC3R/sgwwyIIKHfjLklIoFwS4FIPOjuXejmEKcno41GJKwIqgeuqXzF/ZRGP3L
+         b0v9nkxbXAF32mC7ENovCyjWDNVbHSKR6IgXDWVuta0IIAARiF9+Hzk3yMK2Zcp0BVi+
+         NKGUb/1FSbbG+NfwSQY797fqBJ3JZrO/9fz87GADELByVva6TnkJ0fYFJP+Xxcc8/lFU
+         ahcK8RDP3HWH4DFLQ12zrQrkF0+UKc06HTfpKRdcMTidH/vmU2+phTof0U0/t1JZOyHG
+         RrRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1720458277; x=1721063077;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MvpNrB9c9Hl46wWiT75cgTZb/z1ngLdiVtG52BbExk8=;
+        b=kSMjqCRK+AJCkTezGHPAr0cZEFWLFEFiXv9ApdOX7k1aWg+mBTptspdlD59CptxE38
+         jlLfvhMBfwWw4CSi0yLnMDL1eZgR9TfynWU+lVv58dvEWShT8f+wOn+flGZdLB6oFZz1
+         EwFRwCKYMBKO9mO3+tv72E0r+BFdw33zyX1o1Nj9ZlvhnwDBXa/vDhabrESmO8IUni4u
+         hla9meDcRK625vW32QlDgb48rJ6OF9BJzVo6T+JZh08cl/AVb5UBVLbVxjdjqe7K8cqT
+         D7FziL7SANojGi7Z3ySOrGKc+Kn7ddI1e47f77NtGuwphPtcmAGYqUWmZJ8ed+JRSDqC
+         +T4g==
+X-Forwarded-Encrypted: i=1; AJvYcCVFJjdY5w4YbK4OwHaYf/L7jyiuizU2llb7AhArxHljtjK+f11o0KLryJioXvs1tQjhAduDrT0KqiRnI1HvDand9xeRzO0T/6JVC96Rdg==
+X-Gm-Message-State: AOJu0YxTQKlmxitWqsBFYkwGgZSptrBhUR/FX3NKP9SMHrox7QJ4PpJt
+	RActofHeVz1T9YSU4TKRcLyy5LERicbYg++8OmneHjJE1xedazS2w0LFUxMB9PE=
+X-Google-Smtp-Source: AGHT+IHBVVH6omPzyI4LtKLmO7vYBh9XFRpTa35ZGKUdJwwwS7iIEWOMqHJsi48/VsYlkMNnwlk8qg==
+X-Received: by 2002:a05:6871:299:b0:25e:170b:4470 with SMTP id 586e51a60fabf-25e2bf1e4ebmr12424412fac.50.1720458276907;
+        Mon, 08 Jul 2024 10:04:36 -0700 (PDT)
+Received: from localhost ([2603:8080:b800:f700:cdd0:d497:b7b2:fe])
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-25ea9f8fce4sm79026fac.8.2024.07.08.10.04.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 08 Jul 2024 10:04:36 -0700 (PDT)
+Date: Mon, 8 Jul 2024 12:04:33 -0500
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	Sam Protsenko <semen.protsenko@linaro.org>,
+	Rob Herring <robh@kernel.org>, linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+	kernel-janitors@vger.kernel.org
+Subject: [PATCH] phy: exynos5-usbdrd: fix error code in probe()
+Message-ID: <a956a3e2-c6ce-4f07-ad80-ec8a96e00d16@stanley.mountain>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/3] riscv: dts: sophgo: add nodes for USB phy and
- controller
-To: Yao Zi <ziyao@disroot.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Chen Wang <unicorn_wang@outlook.com>,
- Inochi Amaoto <inochiama@outlook.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
- <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Jisheng Zhang <jszhang@kernel.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-riscv@lists.infradead.org
-References: <20240708120830.5785-1-ziyao@disroot.org>
- <20240708120830.5785-3-ziyao@disroot.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240708120830.5785-3-ziyao@disroot.org>
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240708_064203_427259_15972DD1 
-X-CRM114-Status: UNSURE (   5.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240708_100439_038923_74758A05 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,22 +98,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/07/2024 14:08, Yao Zi wrote:
->  
-> +		usb_phy: usb-phy@3006000 {
-> +			compatible = "sophgo,cv1800-usb-phy";
-> +			reg = <0x3006000 0x60>, <0x3000048 0x4>;
-> +			reg-names = "phy", "pin";
-> +			clocks = <&clk CLK_APB_USB>,
-> +				 <&clk CLK_USB_125M>,
-> +				 <&clk CLK_USB_33K>,
-> +				 <&clk CLK_USB_12M>;
-> +			clock-names = "apb", "125m", "33k", "12m";
+Return negative -ENOMEM instead of positive ENOMEM.
 
-Why are not you using dr_role property here?
+Fixes: 497ddafe915e ("phy: exynos5-usbdrd: convert Vbus supplies to regulator_bulk")
+Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+---
+ drivers/phy/samsung/phy-exynos5-usbdrd.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Best regards,
-Krzysztof
+diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+index df52b78a120b..9cbf90142950 100644
+--- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
++++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+@@ -1745,7 +1745,7 @@ static int exynos5_usbdrd_phy_probe(struct platform_device *pdev)
+ 					   sizeof(*phy_drd->regulators),
+ 					   GFP_KERNEL);
+ 	if (!phy_drd->regulators)
+-		return ENOMEM;
++		return -ENOMEM;
+ 	regulator_bulk_set_supply_names(phy_drd->regulators,
+ 					drv_data->regulator_names,
+ 					drv_data->n_regulators);
+-- 
+2.43.0
 
 
 -- 
