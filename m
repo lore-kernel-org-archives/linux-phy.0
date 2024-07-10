@@ -4,103 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C7D3C38150
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Jul 2024 06:45:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 453A8C3DA45
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Jul 2024 10:13:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FviRVn/HdPNZN00GXSqt5B4AX1C7PWtp+bGc+aMNd/4=; b=LzndXZUXgjHwGs
-	HfsHMfhAMSKkr6QT8BKgj8CJFZLyBcCHuOGClVOcRFETQOqChpXBK/Ouy/YyaqPJNs3YUlzH3faVW
-	paodr+GpJrSBRgqBvt9Jt9s4FNwgs+CTAZDPuh9scswhVtG+ztYB110+fkQ9DD2GPn1Hl88nAosKN
-	RKPQU+kFUHZVPBOzjicblF9VIddXvbyFm8gLLN/+35rPvhIXjq1jsZVQHUOnqADlQe5ELNgPrWJrU
-	xCVJl8siuYSwkez9bkFBFIOHHdu9EjCjf4STvYIHFDSNL5zEwMqEnkIqQiGVjoS22dRSNtD78ekz/
-	rZ57MbuhAWY7uRUT05rQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4rSKuR7BghobWYjHWUi/HVmiF6XehXcCBkkWG9weuiw=; b=TYMz/oSLG6wZMq
+	mwGJrVjUkQAWMDXpKjFsPf1yv0v2Dk7A9e17HhydApqLLye1NvX6hZ1jpfdhTO1l3WGtqDeCGIIa+
+	+6Ooh7rG2tWW3ovALIhvQbHmtGXQGcmVpasNuJYoxMbaa/sgl+geW40n5IJVHbXmZfLU4ppJx1Hzp
+	2+0dC2FUWYpR2olg/tBVFG3Yl2HIh3aerRxRitGJ3XkTyN50LVGaRoIzqOMEbgL+HlFU2FdFdAsoC
+	O140OaSju00AZCHJ79iKZ0doxrRiaf5l4By8x5UJCurtzMh+U+4BXdTJvSnXE5DMza+JOUDTKtIv4
+	ZUjDLkXTako+bzlTEctQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRR4v-00000009di8-4770;
-	Wed, 10 Jul 2024 06:45:25 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1sRUKe-0000000AAbw-1KZW;
+	Wed, 10 Jul 2024 10:13:52 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRR4u-00000009dhf-1RyY
-	for linux-phy@bombadil.infradead.org;
-	Wed, 10 Jul 2024 06:45:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender:
-	Reply-To:Content-ID:Content-Description:In-Reply-To:References;
-	bh=7aZECrEA5tQWlK6pbaSqNy3VIVWi6gzN6CRcwSGtkk8=; b=kn6Y/B5c1sEreb9xU2UajIrkOt
-	X2fEZktnGlCKIOrcG9OVg2UqxxgStRkLlhGietCSpRLxhBAO1G2bIKR60oHLV9lXciPu7bDA7EfGh
-	F7iMqmZUSbWCTsochY/wMhqu3kmR7cUuEg6x6WWUzb4rZehWmctUWhw7o6teFKMzJGfIvMrxLU5jd
-	MI0+qLV8icxPz5fjUdXsUOjQtisqVLP0ypVVgEv9SFmkOyZ24T2U4d48FRF08Huw4i42mPkONIM7T
-	xUcUqT7JRo6GkGrOikSBELm8nmECpSY5KecZd46CHosBSLY02knyKh04zmaqduv+BfR5D7BM1Wugf
-	0vm467lA==;
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRR4q-00000000rsB-30oh
+	id 1sRUK0-0000000AAZ3-1cvK
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Jul 2024 06:45:22 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-a77d85f7fa3so70882066b.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Jul 2024 23:45:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1720593917; x=1721198717; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=7aZECrEA5tQWlK6pbaSqNy3VIVWi6gzN6CRcwSGtkk8=;
-        b=IIYGEgk01zc37xXRMBvvsVNigFiCFDG2EBVYNbNT1yW6FfCGBiVbmmxcykj2z5bXmd
-         x2mZ55qiM75HQJxYoYQ8NZUBpENqDFc1hoW2TQ9ttM93lDRLeXx2Q3jmTPsPe9Fz9+sq
-         ss6JnaMDR673Xi8XsGvjUMWs3GgTBTvDVD8YWP6XQrtvVjKMR7uIai9/xG61N3XUs+tO
-         Bi0IW7Jo1kY/eQr7BXbF7dgCv83a+pLgwgD/V/9JJ6IR31Ohr3k6l7hsSiwmRVCv12zP
-         e9cDvSsFVISYjhqyC1g93II52Ysp6oJobUfECemMjK7Arp7lTpOQYrVzyOM+z3iQjNXS
-         VazQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1720593917; x=1721198717;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=7aZECrEA5tQWlK6pbaSqNy3VIVWi6gzN6CRcwSGtkk8=;
-        b=GE7St3sPgjk9k4IXI6E2dO72DpBgidGWgtK0CH4DQ4fRbBxRQSYYE3T1C0tsBtGKu+
-         1YuGZ3z0ufIKx/yT0xjTPP0wS6dd8QfdI5ZD0TseXFPU9v+AKYKnEEHXRX9eTK5L2rc5
-         mlrVSfueSt+noZqvscZlmOm/PJi3AR8dSq021x0LDzrz+RgRTljqmOvqn83FbcDdQCmE
-         WENSI869kW6jVJ9zJhCLizqhNe/Ql+fCmqxegWUC5iQmA3MxZGl94FytObGcEe0mK7a9
-         YE+UvNmbL68gwhBG48Z32nKx5X+xAL9p5eUNXBoTPLnZC5psUn2QJ28pGrVEe97t+EKS
-         I20w==
-X-Forwarded-Encrypted: i=1; AJvYcCXzHMqm/voFC+JPyibyYFVD6ux7Ct0RGS3n5Sr6dlaUn6VOgmBiwdYt8FBEWSo3tDgbG34DEpRMCcun9Ofh0iqT4EsbqS6UuwCWzUAinA==
-X-Gm-Message-State: AOJu0Yzljkb0+J83meLbVJW+ayu7575hG0yR6oJDiEaUixpYRH+nJULF
-	DzcO76h1hk19nsLPUbo5tHvQmmAJ+0sTBUDi00VVzlyhk85XyZETkh5qjDqeX6A=
-X-Google-Smtp-Source: AGHT+IHw00t1Zg30xrx1hACKh7awa0kbStIosk2q3dxs2TJLXa5CTmZFvqt9t2YMS5YHAWLuzCeAww==
-X-Received: by 2002:a17:907:60d2:b0:a6f:e0f0:d669 with SMTP id a640c23a62f3a-a780d218c40mr341081266b.12.1720593916943;
-        Tue, 09 Jul 2024 23:45:16 -0700 (PDT)
-Received: from puffmais.c.googlers.com (8.239.204.35.bc.googleusercontent.com. [35.204.239.8])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a780a86f620sm132214766b.209.2024.07.09.23.45.16
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Jul 2024 23:45:16 -0700 (PDT)
-From: =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
-Date: Wed, 10 Jul 2024 07:45:07 +0100
-Subject: [PATCH] phy: exynos5-usbdrd: convert some FIELD_PREP_CONST() to
- FIELD_PREP()
+	Wed, 10 Jul 2024 10:13:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 92E5CCE0CDA;
+	Wed, 10 Jul 2024 10:13:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0E842C32781;
+	Wed, 10 Jul 2024 10:13:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1720606387;
+	bh=aqyOKL7JUKjyvGHi46mbHx/pjBoWbx2W6dclkhw9M7Q=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=iYNZT89rEgxwMJW2T1uR/xxwMCJJ5+uzbPtHUvvgd90FNIne5Ixw1kPYtuTf5hm4V
+	 W7uzcdR1d1CsWn+A40hirF6UQGxKDETxbwN/CQVDvJf7nN+/MOKHOE/8/rZ6uQLNM+
+	 kfiopnpbNvF8P6n9YVCdh/1o58+nFdwr6beZT78qhzQMoJn8uON0htG3bNxUZg+R6p
+	 OVt1cami4DUjX8IMsnkyDVZBr0xGyI3TQ5cuGz/uRNEb/GddJkdZkXjvdfkPCby7+L
+	 owxeyJp8Q+vAbSaSmXhbw5FvA0yp5j25OXLCJhHCE4K99LYf+iDxntnZRZ6ZTH9Rnf
+	 Xst6lW/avTT/Q==
+Message-ID: <1486c975-3cc8-46b9-b049-1df4dfed0040@kernel.org>
+Date: Wed, 10 Jul 2024 12:13:03 +0200
 MIME-Version: 1.0
-Message-Id: <20240710-phy-field-prep-v1-1-2fa3f7dc4fc7@linaro.org>
-X-B4-Tracking: v=1; b=H4sIAPItjmYC/x2MWwqAIBAArxL73YLay7pK9FG55UKYKEQh3T3pc
- wZmEkQKTBGGIkGgiyOfLoMsC1jt7HZCNplBCVWLTgr09sGN6TDoA3lcqO21MpVWsoEcZbnx/Q/
- H6X0/orbl02AAAAA=
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>
-Cc: Peter Griffin <peter.griffin@linaro.org>, 
- Tudor Ambarus <tudor.ambarus@linaro.org>, 
- Will McVicker <willmcvicker@google.com>, kernel-team@android.com, 
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
- =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
-X-Mailer: b4 0.13.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: describe the Qualcomm SGMII PHY
+ for QCS9100
+To: Tengfei Fan <quic_tengfan@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+Cc: kernel@quicinc.com, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20240709-add_qcs9100_dwmac_sgmii_hpy_compatible-v2-0-5ffeb16252db@quicinc.com>
+ <20240709-add_qcs9100_dwmac_sgmii_hpy_compatible-v2-1-5ffeb16252db@quicinc.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
+ QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
+ gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
+ /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
+ iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
+ VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
+ 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
+ xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
+ eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
+ AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
+ MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
+ Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
+ ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
+ vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
+ oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
+ lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
+ t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
+ uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
+ 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
+ 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
+In-Reply-To: <20240709-add_qcs9100_dwmac_sgmii_hpy_compatible-v2-1-5ffeb16252db@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240710_074521_077322_35DF7963 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240710_031312_842800_A7D67E2C 
+X-CRM114-Status: GOOD (  13.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,47 +117,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VXNlIG9mIEZJRUxEX1BSRVBfQ09OU1QoKSB3YXMgYSB0aGlua28gLSBpdCdzIG1lYW50IHRvIGJl
-IHVzZWQgZm9yCihjb25zdGFudCkgaW5pdGlhbGlzZXJzLCBub3QgY29uc3RhbnQgdmFsdWVzLgoK
-VXNlIEZJRUxEX1BSRVAoKSB3aGVyZSBwb3NzaWJsZS4gSXQgaGFzIGJldHRlciBlcnJvciBjaGVj
-a2luZyBhbmQgaXMKdGhlcmVmb3JlIHRoZSBwcmVmZXJyZWQgbWFjcm8gdG8gdXNlIGluIHRob3Nl
-IGNhc2VzLgoKU2lnbmVkLW9mZi1ieTogQW5kcsOpIERyYXN6aWsgPGFuZHJlLmRyYXN6aWtAbGlu
-YXJvLm9yZz4KLS0tCiBkcml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1leHlub3M1LXVzYmRyZC5jIHwg
-MTIgKysrKysrLS0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCA2IGRlbGV0
-aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5vczUtdXNi
-ZHJkLmMgYi9kcml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1leHlub3M1LXVzYmRyZC5jCmluZGV4IGRm
-NTJiNzhhMTIwYi4uMGNjNWM0MjQ5NDQ3IDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9zYW1zdW5n
-L3BoeS1leHlub3M1LXVzYmRyZC5jCisrKyBiL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5v
-czUtdXNiZHJkLmMKQEAgLTYwNyw3ICs2MDcsNyBAQCBleHlub3M1X3VzYmRyZF91c2JkcF9nMl92
-NF9jdHJsX3BtYV9yZWFkeShzdHJ1Y3QgZXh5bm9zNV91c2JkcmRfcGh5ICpwaHlfZHJkKQogCiAJ
-cmVnID0gcmVhZGwocmVnc19iYXNlICsgRVhZTk9TODUwX0RSRF9TRUNQTUFDVEwpOwogCXJlZyAm
-PSB+U0VDUE1BQ1RMX1BNQV9SRUZfRlJFUV9TRUw7Ci0JcmVnIHw9IEZJRUxEX1BSRVBfQ09OU1Qo
-U0VDUE1BQ1RMX1BNQV9SRUZfRlJFUV9TRUwsIDEpOworCXJlZyB8PSBGSUVMRF9QUkVQKFNFQ1BN
-QUNUTF9QTUFfUkVGX0ZSRVFfU0VMLCAxKTsKIAkvKiBTRlIgcmVzZXQgKi8KIAlyZWcgfD0gKFNF
-Q1BNQUNUTF9QTUFfTE9XX1BXUiB8IFNFQ1BNQUNUTF9QTUFfQVBCX1NXX1JTVCk7CiAJcmVnICY9
-IH4oU0VDUE1BQ1RMX1BNQV9ST1BMTF9SRUZfQ0xLX1NFTCB8CkBAIC0xMTIzLDE5ICsxMTIzLDE5
-IEBAIHN0YXRpYyB2b2lkIGV4eW5vczg1MF91c2JkcmRfdXRtaV9pbml0KHN0cnVjdCBleHlub3M1
-X3VzYmRyZF9waHkgKnBoeV9kcmQpCiAJcmVnICY9IH5TU1BQTExDVExfRlNFTDsKIAlzd2l0Y2gg
-KHBoeV9kcmQtPmV4dHJlZmNsaykgewogCWNhc2UgRVhZTk9TNV9GU0VMXzUwTUhaOgotCQlyZWcg
-fD0gRklFTERfUFJFUF9DT05TVChTU1BQTExDVExfRlNFTCwgNyk7CisJCXJlZyB8PSBGSUVMRF9Q
-UkVQKFNTUFBMTENUTF9GU0VMLCA3KTsKIAkJYnJlYWs7CiAJY2FzZSBFWFlOT1M1X0ZTRUxfMjZN
-SFo6Ci0JCXJlZyB8PSBGSUVMRF9QUkVQX0NPTlNUKFNTUFBMTENUTF9GU0VMLCA2KTsKKwkJcmVn
-IHw9IEZJRUxEX1BSRVAoU1NQUExMQ1RMX0ZTRUwsIDYpOwogCQlicmVhazsKIAljYXNlIEVYWU5P
-UzVfRlNFTF8yNE1IWjoKLQkJcmVnIHw9IEZJRUxEX1BSRVBfQ09OU1QoU1NQUExMQ1RMX0ZTRUws
-IDIpOworCQlyZWcgfD0gRklFTERfUFJFUChTU1BQTExDVExfRlNFTCwgMik7CiAJCWJyZWFrOwog
-CWNhc2UgRVhZTk9TNV9GU0VMXzIwTUhaOgotCQlyZWcgfD0gRklFTERfUFJFUF9DT05TVChTU1BQ
-TExDVExfRlNFTCwgMSk7CisJCXJlZyB8PSBGSUVMRF9QUkVQKFNTUFBMTENUTF9GU0VMLCAxKTsK
-IAkJYnJlYWs7CiAJY2FzZSBFWFlOT1M1X0ZTRUxfMTlNSFoyOgotCQlyZWcgfD0gRklFTERfUFJF
-UF9DT05TVChTU1BQTExDVExfRlNFTCwgMCk7CisJCXJlZyB8PSBGSUVMRF9QUkVQKFNTUFBMTENU
-TF9GU0VMLCAwKTsKIAkJYnJlYWs7CiAJZGVmYXVsdDoKIAkJZGV2X3dhcm4ocGh5X2RyZC0+ZGV2
-LCAidW5zdXBwb3J0ZWQgcmVmIGNsazogJSMuMnhcbiIsCgotLS0KYmFzZS1jb21taXQ6IDgyZDAx
-ZmU2ZWU1MjA4NjAzNWIyMDFjZmExNDEwYTNiMDQzODQyNTcKY2hhbmdlLWlkOiAyMDI0MDcxMC1w
-aHktZmllbGQtcHJlcC1iZTY5ODJkMzgyMTUKCkJlc3QgcmVnYXJkcywKLS0gCkFuZHLDqSBEcmFz
-emlrIDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+CgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 09/07/2024 17:15, Tengfei Fan wrote:
+> Document the Qualcomm SGMII PHY for the QCS9100 platforms.
+> QCS9100 is drived from SA8775p. Currently, both the QCS9100 and SA8775p
+> platform use non-SCMI resource. In the future, the SA8775p platform will
+> move to use SCMI resources and it will have new sa8775p-related device
+> tree. Consequently, introduce "qcom,qcs9100-dwmac-sgmii-phy" to describe
+> non-SCMI based the Qualcomm SGMII PHY.
+> 
+> Signed-off-by: Tengfei Fan <quic_tengfan@quicinc.com>
+> ---
+>  .../devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml        | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+> index b9107759b2a5..74ec4579c0d6 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+> @@ -15,7 +15,10 @@ description:
+>  
+>  properties:
+>    compatible:
+> -    const: qcom,sa8775p-dwmac-sgmii-phy
+> +    items:
+
+items is not needed here, this could be an enum directly.
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
