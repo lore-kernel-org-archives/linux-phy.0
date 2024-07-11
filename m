@@ -4,71 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 975A0C3DA41
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jul 2024 08:05:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC59CC3DA47
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jul 2024 10:06:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U8P3l/uN/lrvIpvJfSqvl66bRDcl6G7r2RvFC2+JJf4=; b=KSeIqeqNJ10ksk
-	teblbnmMqeAi7YP7dWQCn/AszmqE6jedYwWmNrs0Jy7TY+OxYXZAJBgkPFKIGceMSrxkKDEt8c1Jl
-	Dt58uXAxL2gM3BPvexkHnBQp76Qoi5TYnpEaggG/aufsqnozmeIGdKQGTc0JZVMlnWxf2J5QZo1M5
-	NNnnPKy6oAdSHBOBsTplruJz3sMxN1JtuK3V03AXUkbMD2upvD8fSdpNatTpAtsdHxYlJ4EYkAF6v
-	CgM+dj8nkj2gufCiszKMhhFSdpHXAMacoxxpQxmLuUbQzI5HPdjFDCGmwbp78N8G7I+vPmwMFzKyw
-	EJIr6GA4E3MyX2T+/bSQ==;
+	List-Owner; bh=cviobuKSH94kNflmm0ucjimh4XBIsGhH8VoIisbuySk=; b=39gaYWUGvl8yng
+	VAum7GnR/fikpwNpgo0RzJFUBLHbODJJvpDEgVUZdYG19SzWY4Nsrb69buhgKp0GQ6247UQ12lQh9
+	kd0Kz4oN54kDRWeM0jtFGq3tILw/gbNhIqmfiFUL0AZCsyRY4smF1Ddccg248abC+o/JkD9PMFEaM
+	YH/qm7pUhVIIeeUi/FrGQ4PFyblRlUQElpPdkgpF23yIeQM+/z4nuZmjGuOCnG3Gtj7QXRVqI0jCH
+	1r03QaeuEgFiL76lSGmA63E1egOuO4pHSvCilaunibxgGx+64S1PRufgCIRLxn7HDCyBied3t3Y4P
+	i0a+gYJrRHcWXRABwJlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRont-0000000D6gR-0QjI;
-	Thu, 11 Jul 2024 08:05:25 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sRqgn-0000000DSia-2dHu;
+	Thu, 11 Jul 2024 10:06:13 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRonZ-0000000D6be-44w5;
-	Thu, 11 Jul 2024 08:05:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 2B52ECE0E3C;
-	Thu, 11 Jul 2024 08:05:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 98E43C116B1;
-	Thu, 11 Jul 2024 08:05:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720685103;
-	bh=/WtGV37+R0Eqy7uIY18tPfa3HmfbcUR7p0WOjPP2zpo=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=otP59T3fdeQEw2BHe/NSYCGdI42MZ+EshclSslanDlZYkphwhtXGanfpqSpkoxUeg
-	 fTNA8rvSKxzU3mu9EEMMoaE/sdH3zDLo0wzJB4FBPC0BT6j6mJGQTj0S6XikukBSkZ
-	 y3ZPtcL20E1bi0T3zus8BWMkBxHWdENgg/0jDySx4zhnJ2Y8bIJZiA7nTCkG7Dl5OZ
-	 dm/y5iMSN4+J1/0ifQP2l6nrKFuMizW6HlHUKfQJo0kLGL6tLrx7/+As1fyeZBpSE9
-	 2G4l3y/y5+Zp3rs0W8A/8gjtJW4Whsozu+SnZ63q+8HLEi3EyuBPTJVedWtYXokM0J
-	 hkktGchGjo6hA==
-Message-ID: <0dc54057-d7a0-4123-badc-8f7f07f2d930@kernel.org>
-Date: Thu, 11 Jul 2024 11:04:57 +0300
+	id 1sRqgl-0000000DShs-22r8
+	for linux-phy@lists.infradead.org;
+	Thu, 11 Jul 2024 10:06:12 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46B4mluP016381;
+	Thu, 11 Jul 2024 10:06:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	s4rbnWrirQxLzCZC4tiBnKGBshjP4tF4ViVD5SXagkw=; b=YH7W7ggMIRhUz9Sh
+	oojLii3WtoRZYW+Om5BWWBebV44o5Qd5W54DgPmar0xVX/hYZYK3ax9I7w+SzcTf
+	fys22G0obQIrMBmc8cCVjN1YEnmpUSnRwOXgxK57PfSIwxsIKyTc5RtuM7H/1O0N
+	57ednuNlKx+Y+EyHC5huHyK/2O7ftkVgWg20icSftsl+7dEzLVC0WIGgsqUlJoQZ
+	rzpoCJVl/Qb7i6WuH2y0S6BMQQy5CQdCdLHIEljIssW7jghpnM+0jhRhfhbkpsJQ
+	aaYuejjAXOyNsB/5aqGplHyzgVje/HUiMA2TTHcb6sPkn1A/eRb/YGgVWfj5yOhf
+	D5Ofbw==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406y3hkhm8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Jul 2024 10:06:06 +0000 (GMT)
+Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
+	by NASANPPMTA03.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46BA65I5007846
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 11 Jul 2024 10:06:05 GMT
+Received: from [10.239.132.150] (10.80.80.8) by nasanex01a.na.qualcomm.com
+ (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 11 Jul
+ 2024 03:05:59 -0700
+Message-ID: <51302de0-5e4c-4e2a-85a0-e22549baa13c@quicinc.com>
+Date: Thu, 11 Jul 2024 18:05:57 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: cadence-torrent: add support for three or more
- links using 2 protocols
-To: Siddharth Vadapalli <s-vadapalli@ti.com>,
- Swapnil Kashinath Jakhade <sjakhade@cadence.com>
-Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
- "kishon@kernel.org" <kishon@kernel.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "thomas.richard@bootlin.com" <thomas.richard@bootlin.com>,
- "theo.lebrun@bootlin.com" <theo.lebrun@bootlin.com>,
- "robh@kernel.org" <robh@kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "srk@ti.com" <srk@ti.com>,
- Milind Parab <mparab@cadence.com>
-References: <20240710115624.3232925-1-s-vadapalli@ti.com>
- <LV3PR07MB1036463AB8AB5D38D003175E6C5A52@LV3PR07MB10364.namprd07.prod.outlook.com>
- <7504ea5a-335b-4152-a0f4-5be68f048903@ti.com>
+Subject: Re: [PATCH v2] dt-bindings: phy: qcom,usb-snps-femto-v2: Add bindings
+ for QCS9100
+To: Trilok Soni <quic_tsoni@quicinc.com>, Rob Herring <robh@kernel.org>,
+        Tengfei Fan <quic_tengfan@quicinc.com>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <kernel@quicinc.com>
+References: <20240709-document_qcs9100_usb_hs_phy_compatible-v2-1-c84fbbafa9d6@quicinc.com>
+ <20240710162745.GA3212156-robh@kernel.org>
+ <3b8684f0-c89d-1a76-6bc5-93ced59dc51c@quicinc.com>
+From: "Aiqun Yu (Maria)" <quic_aiquny@quicinc.com>
 Content-Language: en-US
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <7504ea5a-335b-4152-a0f4-5be68f048903@ti.com>
+In-Reply-To: <3b8684f0-c89d-1a76-6bc5-93ced59dc51c@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01a.na.qualcomm.com (10.52.223.231)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: KltkDJck3BDoSsL7_rBuszENdxFJ3C0n
+X-Proofpoint-GUID: KltkDJck3BDoSsL7_rBuszENdxFJ3C0n
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-07-11_06,2024-07-10_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ spamscore=0 adultscore=0 mlxscore=0 lowpriorityscore=0 suspectscore=0
+ clxscore=1015 mlxlogscore=999 impostorscore=0 phishscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407110071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240711_010506_409474_D3520FA7 
-X-CRM114-Status: GOOD (  34.93  )
+X-CRM114-CacheID: sfid-20240711_030611_594551_EA213AE3 
+X-CRM114-Status: GOOD (  16.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,132 +107,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Siddharth,
 
-On 11/07/2024 10:53, Siddharth Vadapalli wrote:
-> On Thu, Jul 11, 2024 at 06:43:01AM +0000, Swapnil Kashinath Jakhade wrote:
->> Hi Siddharth,
-> 
-> Hello Swapnil,
-> 
-> Thank you for reviewing this patch.
-> 
-> [...]
-> 
->>> - A multilink configuration doesn't necessarily imply two protocols
->>>   since a single protocol may be split across links as follows:
->>>   Lane 0 => Protocol 1
->>>   Lane 1 => Unused
->>>   Lane 2 => Protocol 1
->>>   Lane 3 => Unused
->>>   which corresponds to two links and therefore two sub-nodes. In such a
->>>   case, treat it as two single-link configurations performed sequentially
->>>   which happens to be the case prior to this patch. To address this,
->>>   handle the case where cdns_torrent_phy_configure_multilink() can be
->>>   invoked for a single protocol with multiple sub-nodes (links) by
->>>   erroring out only when the number of protocols is strictly greater
->>>   than two, followed by handling the configuration similar to how it was
->>>   done prior to this patch.
+
+On 7/11/2024 12:45 AM, Trilok Soni wrote:
+> On 7/10/2024 9:27 AM, Rob Herring wrote:
+>> On Tue, Jul 09, 2024 at 08:46:19PM +0800, Tengfei Fan wrote:
+>>> Document the compatible string for USB phy found in Qualcomm QCS9100
+>>> SoC.
+>>> QCS9100 is drived from SA8775p. Currently, both the QCS9100 and SA8775p
+>>> platform use non-SCMI resource. In the future, the SA8775p platform will
+>>> move to use SCMI resources and it will have new sa8775p-related device
+>>> tree. Consequently, introduce "qcom,qcs9100-usb-hs-phy" to describe
+>>> non-SCMI based USB phy.
+>>>
+>>> Signed-off-by: Tengfei Fan <quic_tengfan@quicinc.com>
+>>> ---
+>>> Introduce support for the QCS9100 SoC device tree (DTSI) and the
+>>> QCS9100 RIDE board DTS. The QCS9100 is a variant of the SA8775p.
+>>> While the QCS9100 platform is still in the early design stage, the
+>>> QCS9100 RIDE board is identical to the SA8775p RIDE board, except it
+>>> mounts the QCS9100 SoC instead of the SA8775p SoC.
+>>>
+>>> The QCS9100 SoC DTSI is directly renamed from the SA8775p SoC DTSI, and
+>>> all the compatible strings will be updated from "SA8775p" to "QCS9100".
+>>> The QCS9100 device tree patches will be pushed after all the device tree
+>>> bindings and device driver patches are reviewed.
 >>
->> The assumption here that "a single protocol when split across links is to be
->> considered as single-link configurations performed sequentially" is not always
->> correct.
->> e.g. If there are 2 PCIe links, then this is a case of 'Multilink PCIe' and not 2 separate
->> 'single link PCIe'. Multilink PCIe has different PLL configurations than for single link
->> PCIe resulting in different register configurations.
->> Also, for multi-protocol case, in cdns_torrent_phy_configure_multilink() function,
->> the existing implementation considers this as multilink case of combination of 2
->> protocols which has different register config than single link of each protocol.
-> 
-> I suppose that PCIe is the only such protocol since it can have
-> different speeds despite a single protocol (Gen1, Gen2, Gen3...), unlike
-> other protocols which have a fixed speed and therefore the PLL
-> associated with them doesn't have to be reconfigured as the rate will
-> never change. Please let me know if there are other protocols (maybe DP?)
-> which also require such special handling.
-
-The constraint is PLL frequency and not protocols as such right?
-e.g. If there are 4 protocols that all use same PLL frequency then we should
-be able to support it?
-
-How about updating the patch to limit on number of PLL frequencies rather than
-number of protocols? This should deal with PCIe multi-link case as well.
-
-> 
-> [...]
-> 
->>> +		phy_t1 = fns(cdns_phy->protocol_bitmask, 0);
->>> +		/**
->>> +		 * For a single protocol split across multiple links,
->>> +		 * assign TYPE_NONE to phy_t2 for configuring each link
->>> +		 * identical to a single-link configuration with a single
->>> +		 * protocol.
->>> +		 */
->>> +		phy_t2 = TYPE_NONE;
+>> I'm not convinced this is not just pointless churn. Aren't we going to 
+>> end up with 2 compatible strings for everything? SCMI should just change 
+>> the providers, but otherwise the consumers are the same. I suppose if 
+>> clocks are abstracted into power-domains (an abuse IMO) then the 
+>> bindings change.
 >>
->> As mentioned above, assuming phy_t2 = TYPE_NONE is not correct here.
+>> Why do we need to support both SCMI and not-SCMI for the same chip?
 > 
-> I can update this patch to handle it differently for PCIe multi-link, but
-> as of now I don't see any PCIe multi-link support in the current Torrent
-> SERDES driver in Mainline Linux.
+> IOT SKU of this SOC is using the non-SCMI solution and Auto SKU
+> of this SOC is using the SCMI based solution due to additional
+> safety requirements. 
+
+More add-on information, IOT SKU which have qcs9100 soc mounted will
+have firmware releases which support non-scmi solution.
+And AUTO SKU which mounted with SA8775p will have different firmware
+releases which support SCMI solution.
 > 
->>
->> FYI. I have shared few patches to TI earlier removing the constraint of Maximum 2 links (subnodes)
->> in the driver specifically for Multilink PCIe cases.
->> Please check first 4 patches in link below.
->> https://github.com/t-c-collab/linux/commits/ti-linux-6.1.y-torrent-multi-pcie-sgmii-v1
 > 
-> The patches you are referring to above seem to remove the constraint of
-> a maximum of 2 links, __only__ when one of the protocols is PCIe [1].
-> However, that is not necessarily the only use-case for multiple links.
-> 
-> Please consider the following valid use-case:
-> SERDES Lane 0 -> SGMII
-> SERDES Lane 1 -> SGMII
-> SERDES Lane 2 -> QSGMII
-> SERDES Lane 3 -> SGMII
-> Representing the above in the device-tree will require 3 sub-nodes
-> (links):
-> &serdes {
-> 	serdes_sgmii_link1: phy@0 {
-> 		reg = <0>;
-> 		cdns,num-lanes = <2>;
-> 		#phy-cells = <0>;
-> 		cdns,phy-type = <PHY_TYPE_SGMII>;
-> 		resets = <&serdes_wiz 1>, <&serdes_wiz 2>;
-> 	};
-> 	serdes_qsgmii_link2: phy@2 {
-> 		reg = <2>;
-> 		cdns,num-lanes = <1>;
-> 		#phy-cells = <0>;
-> 		cdns,phy-type = <PHY_TYPE_QSGMII>;
-> 		resets = <&serdes_wiz 3>;
-> 	};
-> 	serdes_sgmii_link3: phy@3 {
-> 		reg = <3>;
-> 		cdns,num-lanes = <1>;
-> 		#phy-cells = <0>;
-> 		cdns,phy-type = <PHY_TYPE_SGMII>;
-> 		resets = <&serdes_wiz 4>;
-> 	};
-> };
-> 
-> Such a configuration is valid since it is still using only 2 different
-> protocols. But the existing driver doesn't allow splitting/alternating
-> protocols. So any use-case is forced to conform to a consecutive allocation
-> of protocols. This patch enables the aforementioned use-case and this has
-> been validated for functionality on the J784S4 SoC with a custom board [2].
-> 
-> I believe that this patch can be extended further to support the PCIe
-> Multi-link configuration as well. Please let me know your thoughts on
-> this.
-> 
-> [1] https://github.com/t-c-collab/linux/commit/fd87922da100b1ed30015333e037c506c510e932#diff-814f5e3b47c89595aa30310ec07ab7aa8ac96f2921f524c4f5cd536a2c3c5adbR2488
-> [2] https://e2e.ti.com/support/processors-group/processors/f/processors-forum/1383684/tda4ap-q1-limitations-for-configuration-for-serdes-lanes-when-using-qsgmii-sgmii-and-sgmii-usb3-mixed/
 
 -- 
-cheers,
--roger
+Thx and BRs,
+Aiqun(Maria) Yu
 
 -- 
 linux-phy mailing list
