@@ -4,92 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9486FC3DA41
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Jul 2024 16:45:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3158C3271E
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jul 2024 03:53:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rTQ+KNCeoBctIJ6NbYs46nxQHPRCcnzKDfAUP7Pjgzo=; b=I3/f6946z2Bizl
-	1RVozydMUJEgtxxluZmw6K1gkQWlQNk3toNVTmQMmCFu6gMNzW4w5kb6gTnyDPmxAboL0eXrlYFfd
-	COXKP/FZ5XWGsPOXCN525yry8tYpT1Mb9hxqW1VAC73fJT4O+95iR5+Zp2mNdQYAzSKboa6ed2Nff
-	k795iTVCNzj9W3CdfvtJEnHqXX0jjzX/Da8yqG/Q8DLySdtTX743IjIHNg5PTWH66vr1TrRMHuA0O
-	rYth5W5J7JBz2CxKPwAGcb/STmKjNYP/finWYL2n4Ep/3GWIVY6ywtSyFUr9vxl48Z43MzVG8SywZ
-	dQ2zEq2cnBLIMy+AGPDQ==;
+	List-Owner; bh=SBqvbVdU6XL5VcwwrsRxvum6id7EKAm3EiPrN45+YFQ=; b=FGCuskOUxtNtL7
+	4tArVik2JSoaSH7OcoAG9QJ9ymNZgC+HcHEdnZWtZAMgMs1gYeEt/gjkVPGjYh7xsGmNJMvm9z1fR
+	q0SHKDtu68vuVnJFT3nNAWeCubPUqhRm0KgmMeSMgJo8p0g+jCCH643nGI2Jf0dK+REd8kIAqoRgV
+	zhBoJ3ChgHa8HFMYpG9wD7avnsfQfnNBTnbfveKu8F1Algs2IOp8kqllOGlVu1D55vC1Bsk7ZTf0y
+	IVlLg+70ADl5omILzePBVQQk0N1QSshgt2GfU3DDKtWHMsiKTDa3ttHXRv8PkqKykB850lyWv8q6O
+	NI+sUh+Ya2/YXwFPNgGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaRn-0000000BDJN-1JoC;
-	Wed, 10 Jul 2024 16:45:39 +0000
+	id 1sRkrq-0000000CcD2-2Sxq;
+	Thu, 11 Jul 2024 03:53:14 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRaRk-0000000BDI9-2z06
+	id 1sRkrn-0000000CcCP-3cnx
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Jul 2024 16:45:38 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46A9avof016973;
-	Wed, 10 Jul 2024 16:45:32 GMT
+	Thu, 11 Jul 2024 03:53:13 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46B33bYX008672;
+	Thu, 11 Jul 2024 03:53:08 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	G6LwVwxoe1zXgroiWAGG01bsemNaFzH2jQrDan8X8XU=; b=YxFQKRIXKp1iLhGp
-	13xWuMZ2xCXHenujZi3TleVUCjn2p3x6godAVHghdvT6JLFvKZwSz5fLBwp8Qhp4
-	Wq5LGos1zikBDsGBjeFWrus5tbGkdIY4QRXtinVvTopbDZtHLLagMS/TNdytn60P
-	Z5LgzOAeuGPbzAPsObnL07mOtgqtqHNognAMMONPjgtoiHfOkeIX40jb3Qa7aKh5
-	LY4yall+q/fPdcGw4vxVXDWTi6q4GXU4ej7Su0phbrNqgvsRsv3mTpajKwAlMseb
-	rmosSzw9E2CQS9wVQqYIISIOH/LQsMeO2xvz62KOlhsZCsshOuuWyA8hECXydmIh
-	sgqLAA==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406y3hhhxr-1
+	eNuOdHzLm/d4A5amPX6nWJvH1GqUCUbQTgScANGGqfA=; b=I0GTCzyVmSkrBgsE
+	zc1C3WPJjTjkv2ASQpIkTDTJS3lCAMcbAlzeOFRU0hc7nm1PzRTyIYKg1IKI42++
+	5/WKoku0mMJYsp656dfw1q8cHP5/0ygp96hF++1U7Tb6pQvGFxuwOqNppA6StrJr
+	F2HmDWTT+X56zNc9aL3W1hwmgSXUq/PNWOIpqukFgIRuXdLE8ozXBpE31LaL0qmA
+	NyZmO03qD4+/tjkIFRpyzlgGgysynSlgcMPjoUd+F/hQ+Za6bPmw3s2FwQPD5C5W
+	gFMU7y8Sf2gQ4/H4OcB7pjcGn8rMx0UBtaGbWVw9OMblDE/rl67kEGsaBi6XBdJA
+	5r0IUQ==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 406wmmuar1-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Jul 2024 16:45:32 +0000 (GMT)
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA05.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46AGjJMO006063
+	Thu, 11 Jul 2024 03:53:08 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46B3r7qZ012546
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 10 Jul 2024 16:45:19 GMT
-Received: from [10.110.80.193] (10.80.80.8) by nasanex01a.na.qualcomm.com
- (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
+	Thu, 11 Jul 2024 03:53:07 GMT
+Received: from [10.239.132.204] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 10 Jul
- 2024 09:45:15 -0700
-Message-ID: <3b8684f0-c89d-1a76-6bc5-93ced59dc51c@quicinc.com>
-Date: Wed, 10 Jul 2024 09:45:14 -0700
+ 2024 20:53:01 -0700
+Message-ID: <8ef27923-03ed-44d2-bfa3-6efc75f8d6be@quicinc.com>
+Date: Thu, 11 Jul 2024 11:52:58 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.15.1
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom,usb-snps-femto-v2: Add bindings
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: describe the Qualcomm SGMII PHY
  for QCS9100
-Content-Language: en-US
-To: Rob Herring <robh@kernel.org>, Tengfei Fan <quic_tengfan@quicinc.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <kernel@quicinc.com>
-References: <20240709-document_qcs9100_usb_hs_phy_compatible-v2-1-c84fbbafa9d6@quicinc.com>
- <20240710162745.GA3212156-robh@kernel.org>
-From: Trilok Soni <quic_tsoni@quicinc.com>
-In-Reply-To: <20240710162745.GA3212156-robh@kernel.org>
+        Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+CC: <kernel@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20240709-add_qcs9100_dwmac_sgmii_hpy_compatible-v2-0-5ffeb16252db@quicinc.com>
+ <20240709-add_qcs9100_dwmac_sgmii_hpy_compatible-v2-1-5ffeb16252db@quicinc.com>
+ <1486c975-3cc8-46b9-b049-1df4dfed0040@kernel.org>
+From: Tengfei Fan <quic_tengfan@quicinc.com>
+In-Reply-To: <1486c975-3cc8-46b9-b049-1df4dfed0040@kernel.org>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: eK17DbsDWlOOU_1KyisRLNdD1-0qkt-C
-X-Proofpoint-GUID: eK17DbsDWlOOU_1KyisRLNdD1-0qkt-C
+X-Proofpoint-GUID: CN9arzV0--T56EhVnqgwiZZvuU1v2Zn7
+X-Proofpoint-ORIG-GUID: CN9arzV0--T56EhVnqgwiZZvuU1v2Zn7
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-10_12,2024-07-10_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
- spamscore=0 adultscore=0 mlxscore=0 lowpriorityscore=0 suspectscore=0
- clxscore=1011 mlxlogscore=999 impostorscore=0 phishscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2406140001 definitions=main-2407100117
+ definitions=2024-07-10_20,2024-07-10_01,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ priorityscore=1501 lowpriorityscore=0 spamscore=0 bulkscore=0 adultscore=0
+ impostorscore=0 suspectscore=0 malwarescore=0 mlxscore=0 mlxlogscore=999
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2406140001 definitions=main-2407110024
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240710_094536_815020_AAE896C1 
-X-CRM114-Status: GOOD (  18.65  )
+X-CRM114-CacheID: sfid-20240710_205312_050911_977E0018 
+X-CRM114-Status: GOOD (  16.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,50 +101,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 7/10/2024 9:27 AM, Rob Herring wrote:
-> On Tue, Jul 09, 2024 at 08:46:19PM +0800, Tengfei Fan wrote:
->> Document the compatible string for USB phy found in Qualcomm QCS9100
->> SoC.
+
+
+On 7/10/2024 6:13 PM, Krzysztof Kozlowski wrote:
+> On 09/07/2024 17:15, Tengfei Fan wrote:
+>> Document the Qualcomm SGMII PHY for the QCS9100 platforms.
 >> QCS9100 is drived from SA8775p. Currently, both the QCS9100 and SA8775p
 >> platform use non-SCMI resource. In the future, the SA8775p platform will
 >> move to use SCMI resources and it will have new sa8775p-related device
->> tree. Consequently, introduce "qcom,qcs9100-usb-hs-phy" to describe
->> non-SCMI based USB phy.
+>> tree. Consequently, introduce "qcom,qcs9100-dwmac-sgmii-phy" to describe
+>> non-SCMI based the Qualcomm SGMII PHY.
 >>
 >> Signed-off-by: Tengfei Fan <quic_tengfan@quicinc.com>
 >> ---
->> Introduce support for the QCS9100 SoC device tree (DTSI) and the
->> QCS9100 RIDE board DTS. The QCS9100 is a variant of the SA8775p.
->> While the QCS9100 platform is still in the early design stage, the
->> QCS9100 RIDE board is identical to the SA8775p RIDE board, except it
->> mounts the QCS9100 SoC instead of the SA8775p SoC.
+>>   .../devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml        | 5 ++++-
+>>   1 file changed, 4 insertions(+), 1 deletion(-)
 >>
->> The QCS9100 SoC DTSI is directly renamed from the SA8775p SoC DTSI, and
->> all the compatible strings will be updated from "SA8775p" to "QCS9100".
->> The QCS9100 device tree patches will be pushed after all the device tree
->> bindings and device driver patches are reviewed.
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+>> index b9107759b2a5..74ec4579c0d6 100644
+>> --- a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+>> @@ -15,7 +15,10 @@ description:
+>>   
+>>   properties:
+>>     compatible:
+>> -    const: qcom,sa8775p-dwmac-sgmii-phy
+>> +    items:
 > 
-> I'm not convinced this is not just pointless churn. Aren't we going to 
-> end up with 2 compatible strings for everything? SCMI should just change 
-> the providers, but otherwise the consumers are the same. I suppose if 
-> clocks are abstracted into power-domains (an abuse IMO) then the 
-> bindings change.
+> items is not needed here, this could be an enum directly.
 > 
-> Why do we need to support both SCMI and not-SCMI for the same chip?
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-IOT SKU of this SOC is using the non-SCMI solution and Auto SKU
-of this SOC is using the SCMI based solution due to additional
-safety requirements. 
+Thanks Krzysztof!
 
+In the next version patch series, I will check all the patch series, 
+using an enum instead od items.
+
+> 
+> 
+> 
+> Best regards,
+> Krzysztof
+> 
 
 -- 
----Trilok Soni
-
+Thx and BRs,
+Tengfei Fan
 
 -- 
 linux-phy mailing list
