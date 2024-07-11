@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB4BCC3DA4E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81091C3DA4D
 	for <linux-phy@archiver.kernel.org>; Thu, 11 Jul 2024 19:35:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,37 +12,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n9x6ga0c0uGbVKmdpyVKCbivTYojNsvglAUJ61h9ZXY=; b=QCBEYxOTmw0cE8
-	MeMB2o198XsMuJpPZh8wM59ddKYR+vMGmqNVUZJFT2EstQyumzsihxF5OLprV+yKScyi9dF0SeWJ8
-	lEncV1D2bCrk/Wm1VJFXEwkuaF9mXVsgKQogb1PE0sBibR6Kz7T1PtKjflfHU4iBOXKS9Gj4l5EWk
-	rttGvgdwrXigRnCfyzNnW6mrQO2v8WjUfVKXws1Hn2w1PK928YemEn9S09IheYewwmjaEJJfX3ANB
-	MBdk1HzRV9haJdBdZ2aB3WWBuRqwb3YBae43GEZNLqOqFZCG4n41kKLd0zG49KFTXcQuAAckQj/zQ
-	QyuFNKunSKFr3rnFIfgg==;
+	List-Owner; bh=KhyfCXh03WmaNF8euN+hHylrh65eU60Cgwo3nT8pqrE=; b=vqld924G14na2t
+	xsOfjvr83V9JgUxpz8PGddPNsTbxAkCqtz5meUZjkEN2W2P74gLFaw45p7UvOpU63Ub/+vzTd/ga3
+	X92pTdjMJgLiEFqXLtTfLsqU9B3KaRmUgHvqJnd1C0mAK+zqejIOAGhYJ5Tj9CiVQPLhwlsg2Gdyd
+	sy/F4dZlVMaGyvRybc0xS/9MX+3EyG0DP7rOqo5qNccThARa0/ZYuFZZnp/yCcmRg6UP7t6XeXwkO
+	fqddKO7Z85oc7wZfB70lj9CkYHmzwZQkxXKeUwSp3cibElGL8TnSuAp+rc1SVmF3CrPR+rsA+qkwb
+	dZJcq4Sgj+d16cB19fsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRzZN-0000000FDv4-2CdW;
+	id 1sRzZN-0000000FDun-0sUs;
 	Thu, 11 Jul 2024 19:35:09 +0000
-Received: from smtp-15.smtpout.orange.fr ([80.12.242.15] helo=smtp.smtpout.orange.fr)
+Received: from smtp-16.smtpout.orange.fr ([80.12.242.16] helo=smtp.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sRzZJ-0000000FDr9-3RE4
+	id 1sRzZI-0000000FDqj-1tmt
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jul 2024 19:35:07 +0000
+	Thu, 11 Jul 2024 19:35:06 +0000
 Received: from fedora.. ([77.131.3.214])
 	by smtp.orange.fr with ESMTPA
-	id RzZBsCMFrj4pfRzZHsIiSB; Thu, 11 Jul 2024 21:35:03 +0200
+	id RzZBsCMFrj4pfRzZGsIiRu; Thu, 11 Jul 2024 21:35:02 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
-	s=t20230301; t=1720726503;
-	bh=+R7FMy9AXoamPmQBHl0PouZlAVVAloz2ln5nMlCPFco=;
+	s=t20230301; t=1720726502;
+	bh=dRpz9tTr7QVvo4jsxN8ZGItmvHwQfohDQmxginrSsQ8=;
 	h=From:To:Subject:Date:Message-ID:MIME-Version;
-	b=G4FCmE10keN47ZT0oy7vcEVw+P05COp971q569t5kqgym7lD3ENBPU+VwI9cntx/z
-	 8dSrndaG7iv76mVM2IFztFqCb2qAkQxgXmkP4zqZVUAIeEufn8LHOKY7roFiDPX8cr
-	 zPjaAm3PLkMLfkHAH3XnOLIgptNnUnIv0BkilwdDbOVmaT5eQQx1MxFzDu+0CrEfKI
-	 3ophi6NDVNA9LE02ljoqzR2wTMy+rbdO79oU5RB+06pGlNFUDN1ioCU5p/fjoXYmdh
-	 LuQgx9ZgX2eK+x9d40YpbLS9p8SyhhG/1dgwZqNY3FfttuZr8FXZTesBvHN1JQp3be
-	 I+aJFk5GhtzRw==
+	b=JvB3Mkxqfq/Pfy0T3tXD7mgqhA5FuqwkjqyumSBu0lgO/lY8fivaCu31HACrQ20YU
+	 P3tfrUqTh6fM8pKdeV2JQ5gxTdgj9Go4/wrrrZ5TL1NYHxIGxCDY6wP7kWvS7eIifz
+	 5oMdO0+rByWN8ZsIJR9GsXmX5zjN3YC/LAbKFFwkF5ZMWJmQdzh96XS+8qpOPRK4zo
+	 1QEQTW2/DAPSw2hprvNje09kutnRZOEHPe3xQZQprH3uCEWGG4Hc+ql1VufPaCiruu
+	 sUlhEsieKEBD9PincvVNIGubprXECVnkVmnt/E1ZHd8WwPk16NEsnxNEX9KG/3ZOAI
+	 wi9OpXxg1SMyA==
 X-ME-Helo: fedora..
 X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Thu, 11 Jul 2024 21:35:03 +0200
+X-ME-Date: Thu, 11 Jul 2024 21:35:02 +0200
 X-ME-IP: 77.131.3.214
 From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 To: vkoul@kernel.org,
@@ -51,16 +51,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	kernel-janitors@vger.kernel.org,
 	Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-Subject: [PATCH 3/3] phy: cadence: Sierra: Constify a u32[]
-Date: Thu, 11 Jul 2024 21:34:54 +0200
-Message-ID: <43d881d52e3c1632ad197d4c2c18b6c481a13b24.1720723132.git.christophe.jaillet@wanadoo.fr>
+Subject: [PATCH 2/3] phy: cadence: Sierra: Constify struct cdns_sierra_vals
+Date: Thu, 11 Jul 2024 21:34:53 +0200
+Message-ID: <0ccfd259fdf40475c89cfb22a64c6388e7c646b4.1720723132.git.christophe.jaillet@wanadoo.fr>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <cover.1720723132.git.christophe.jaillet@wanadoo.fr>
 References: <cover.1720723132.git.christophe.jaillet@wanadoo.fr>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240711_123506_017278_8D227651 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20240711_123504_792094_46D6D7E6 
+X-CRM114-Status: GOOD (  10.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,8 +77,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-'cdns_sierra_pll_mux_table' is not modified in this driver.
-And it is only used as a "const u32 *".
+'struct cdns_sierra_vals' is not modified in this driver.
 
 Constifying this structure moves some data to a read-only section, so
 increase overall security.
@@ -87,32 +86,285 @@ On a x86_64, with allmodconfig:
 Before:
 ======
    text	   data	    bss	    dec	    hex	filename
-  60937	   3894	     16	  64847	   fd4f	drivers/phy/cadence/phy-cadence-sierra.o
+  60521	   4310	     16	  64847	   fd4f	drivers/phy/cadence/phy-cadence-sierra.o
 
 After:
 =====
    text	   data	    bss	    dec	    hex	filename
-  60897	   3878	     16	  64791	   fd17	drivers/phy/cadence/phy-cadence-sierra.o
+  60937	   3894	     16	  64847	   fd4f	drivers/phy/cadence/phy-cadence-sierra.o
 
 Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 ---
 Compile tested-only.
 ---
- drivers/phy/cadence/phy-cadence-sierra.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/phy/cadence/phy-cadence-sierra.c | 80 ++++++++++++------------
+ 1 file changed, 40 insertions(+), 40 deletions(-)
 
 diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index 947492c8f381..3010c9f24136 100644
+index 6bb0ca3443f1..947492c8f381 100644
 --- a/drivers/phy/cadence/phy-cadence-sierra.c
 +++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -310,7 +310,7 @@ static const struct clk_parent_data pll_mux_parent_data[][SIERRA_NUM_CMN_PLLC_PA
- 	},
+@@ -362,14 +362,14 @@ struct cdns_sierra_data {
+ 	u32 id_value;
+ 	u8 block_offset_shift;
+ 	u8 reg_offset_shift;
+-	struct cdns_sierra_vals *pcs_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+-					     [NUM_SSC_MODE];
+-	struct cdns_sierra_vals *phy_pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+-						[NUM_SSC_MODE];
+-	struct cdns_sierra_vals *pma_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+-					     [NUM_SSC_MODE];
+-	struct cdns_sierra_vals *pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
+-					    [NUM_SSC_MODE];
++	const struct cdns_sierra_vals *pcs_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
++						   [NUM_SSC_MODE];
++	const struct cdns_sierra_vals *phy_pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
++						      [NUM_SSC_MODE];
++	const struct cdns_sierra_vals *pma_cmn_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
++						   [NUM_SSC_MODE];
++	const struct cdns_sierra_vals *pma_ln_vals[NUM_PHY_TYPE][NUM_PHY_TYPE]
++						  [NUM_SSC_MODE];
  };
  
--static u32 cdns_sierra_pll_mux_table[][SIERRA_NUM_CMN_PLLC_PARENTS] = {
-+static const u32 cdns_sierra_pll_mux_table[][SIERRA_NUM_CMN_PLLC_PARENTS] = {
- 	[CMN_PLLLC] = { 0, 1 },
- 	[CMN_PLLLC1] = { 1, 0 },
+ struct cdns_regmap_cdb_context {
+@@ -539,12 +539,12 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+ 	struct cdns_sierra_inst *ins = phy_get_drvdata(gphy);
+ 	struct cdns_sierra_phy *phy = dev_get_drvdata(gphy->dev.parent);
+ 	const struct cdns_sierra_data *init_data = phy->init_data;
+-	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
++	const struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
+ 	enum cdns_sierra_phy_type phy_type = ins->phy_type;
++	const struct cdns_sierra_vals *phy_pma_ln_vals;
+ 	enum cdns_sierra_ssc_mode ssc = ins->ssc_mode;
+-	struct cdns_sierra_vals *phy_pma_ln_vals;
++	const struct cdns_sierra_vals *pcs_cmn_vals;
+ 	const struct cdns_reg_pairs *reg_pairs;
+-	struct cdns_sierra_vals *pcs_cmn_vals;
+ 	struct regmap *regmap;
+ 	u32 num_regs;
+ 	int i, j;
+@@ -1244,12 +1244,12 @@ static int cdns_sierra_phy_get_resets(struct cdns_sierra_phy *sp,
+ 
+ static int cdns_sierra_phy_configure_multilink(struct cdns_sierra_phy *sp)
+ {
++	const struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
+ 	const struct cdns_sierra_data *init_data = sp->init_data;
+-	struct cdns_sierra_vals *pma_cmn_vals, *pma_ln_vals;
++	const struct cdns_sierra_vals *phy_pma_ln_vals;
++	const struct cdns_sierra_vals *pcs_cmn_vals;
+ 	enum cdns_sierra_phy_type phy_t1, phy_t2;
+-	struct cdns_sierra_vals *phy_pma_ln_vals;
+ 	const struct cdns_reg_pairs *reg_pairs;
+-	struct cdns_sierra_vals *pcs_cmn_vals;
+ 	int i, j, node, mlane, num_lanes, ret;
+ 	enum cdns_sierra_ssc_mode ssc;
+ 	struct regmap *regmap;
+@@ -1548,7 +1548,7 @@ static const struct cdns_reg_pairs sgmii_phy_pma_ln_regs[] = {
+ 	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
+ };
+ 
+-static struct cdns_sierra_vals sgmii_phy_pma_ln_vals = {
++static const struct cdns_sierra_vals sgmii_phy_pma_ln_vals = {
+ 	.reg_pairs = sgmii_phy_pma_ln_regs,
+ 	.num_regs = ARRAY_SIZE(sgmii_phy_pma_ln_regs),
+ };
+@@ -1598,12 +1598,12 @@ static const struct cdns_reg_pairs sgmii_100_no_ssc_plllc1_opt3_ln_regs[] = {
+ 	{0x0002, SIERRA_RXBUFFER_RCDFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_cmn_vals = {
++static const struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_cmn_vals = {
+ 	.reg_pairs = sgmii_100_no_ssc_plllc1_opt3_cmn_regs,
+ 	.num_regs = ARRAY_SIZE(sgmii_100_no_ssc_plllc1_opt3_cmn_regs),
+ };
+ 
+-static struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_ln_vals = {
++static const struct cdns_sierra_vals sgmii_100_no_ssc_plllc1_opt3_ln_vals = {
+ 	.reg_pairs = sgmii_100_no_ssc_plllc1_opt3_ln_regs,
+ 	.num_regs = ARRAY_SIZE(sgmii_100_no_ssc_plllc1_opt3_ln_regs),
+ };
+@@ -1613,7 +1613,7 @@ static const struct cdns_reg_pairs qsgmii_phy_pma_ln_regs[] = {
+ 	{0x9010, SIERRA_PHY_PMA_XCVR_CTRL}
+ };
+ 
+-static struct cdns_sierra_vals qsgmii_phy_pma_ln_vals = {
++static const struct cdns_sierra_vals qsgmii_phy_pma_ln_vals = {
+ 	.reg_pairs = qsgmii_phy_pma_ln_regs,
+ 	.num_regs = ARRAY_SIZE(qsgmii_phy_pma_ln_regs),
+ };
+@@ -1664,12 +1664,12 @@ static const struct cdns_reg_pairs qsgmii_100_no_ssc_plllc1_ln_regs[] = {
+ 	{0x0002, SIERRA_RXBUFFER_RCDFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals qsgmii_100_no_ssc_plllc1_cmn_vals = {
++static const struct cdns_sierra_vals qsgmii_100_no_ssc_plllc1_cmn_vals = {
+ 	.reg_pairs = qsgmii_100_no_ssc_plllc1_cmn_regs,
+ 	.num_regs = ARRAY_SIZE(qsgmii_100_no_ssc_plllc1_cmn_regs),
+ };
+ 
+-static struct cdns_sierra_vals qsgmii_100_no_ssc_plllc1_ln_vals = {
++static const struct cdns_sierra_vals qsgmii_100_no_ssc_plllc1_ln_vals = {
+ 	.reg_pairs = qsgmii_100_no_ssc_plllc1_ln_regs,
+ 	.num_regs = ARRAY_SIZE(qsgmii_100_no_ssc_plllc1_ln_regs),
+ };
+@@ -1679,7 +1679,7 @@ static const struct cdns_reg_pairs pcie_phy_pcs_cmn_regs[] = {
+ 	{0x0430, SIERRA_PHY_PIPE_CMN_CTRL1}
+ };
+ 
+-static struct cdns_sierra_vals pcie_phy_pcs_cmn_vals = {
++static const struct cdns_sierra_vals pcie_phy_pcs_cmn_vals = {
+ 	.reg_pairs = pcie_phy_pcs_cmn_regs,
+ 	.num_regs = ARRAY_SIZE(pcie_phy_pcs_cmn_regs),
+ };
+@@ -1745,12 +1745,12 @@ static const struct cdns_reg_pairs ml_pcie_100_no_ssc_ln_regs[] = {
+ 	{0x4432, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_no_ssc_plllc_cmn_vals = {
++static const struct cdns_sierra_vals pcie_100_no_ssc_plllc_cmn_vals = {
+ 	.reg_pairs = pcie_100_no_ssc_plllc_cmn_regs,
+ 	.num_regs = ARRAY_SIZE(pcie_100_no_ssc_plllc_cmn_regs),
+ };
+ 
+-static struct cdns_sierra_vals ml_pcie_100_no_ssc_ln_vals = {
++static const struct cdns_sierra_vals ml_pcie_100_no_ssc_ln_vals = {
+ 	.reg_pairs = ml_pcie_100_no_ssc_ln_regs,
+ 	.num_regs = ARRAY_SIZE(ml_pcie_100_no_ssc_ln_regs),
+ };
+@@ -1810,7 +1810,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_no_ssc_ln_regs[] = {
+ 	{0x0002, SIERRA_TX_RCVDET_OVRD_PREG}
+ };
+ 
+-static struct cdns_sierra_vals ti_ml_pcie_100_no_ssc_ln_vals = {
++static const struct cdns_sierra_vals ti_ml_pcie_100_no_ssc_ln_vals = {
+ 	.reg_pairs = ti_ml_pcie_100_no_ssc_ln_regs,
+ 	.num_regs = ARRAY_SIZE(ti_ml_pcie_100_no_ssc_ln_regs),
+ };
+@@ -1886,12 +1886,12 @@ static const struct cdns_reg_pairs ml_pcie_100_int_ssc_ln_regs[] = {
+ 	{0x4432, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_int_ssc_plllc_cmn_vals = {
++static const struct cdns_sierra_vals pcie_100_int_ssc_plllc_cmn_vals = {
+ 	.reg_pairs = pcie_100_int_ssc_plllc_cmn_regs,
+ 	.num_regs = ARRAY_SIZE(pcie_100_int_ssc_plllc_cmn_regs),
+ };
+ 
+-static struct cdns_sierra_vals ml_pcie_100_int_ssc_ln_vals = {
++static const struct cdns_sierra_vals ml_pcie_100_int_ssc_ln_vals = {
+ 	.reg_pairs = ml_pcie_100_int_ssc_ln_regs,
+ 	.num_regs = ARRAY_SIZE(ml_pcie_100_int_ssc_ln_regs),
+ };
+@@ -1954,7 +1954,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_int_ssc_ln_regs[] = {
+ 	{0x0002, SIERRA_TX_RCVDET_OVRD_PREG}
+ };
+ 
+-static struct cdns_sierra_vals ti_ml_pcie_100_int_ssc_ln_vals = {
++static const struct cdns_sierra_vals ti_ml_pcie_100_int_ssc_ln_vals = {
+ 	.reg_pairs = ti_ml_pcie_100_int_ssc_ln_regs,
+ 	.num_regs = ARRAY_SIZE(ti_ml_pcie_100_int_ssc_ln_regs),
+ };
+@@ -2024,12 +2024,12 @@ static const struct cdns_reg_pairs ml_pcie_100_ext_ssc_ln_regs[] = {
+ 	{0x4432, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_ext_ssc_plllc_cmn_vals = {
++static const struct cdns_sierra_vals pcie_100_ext_ssc_plllc_cmn_vals = {
+ 	.reg_pairs = pcie_100_ext_ssc_plllc_cmn_regs,
+ 	.num_regs = ARRAY_SIZE(pcie_100_ext_ssc_plllc_cmn_regs),
+ };
+ 
+-static struct cdns_sierra_vals ml_pcie_100_ext_ssc_ln_vals = {
++static const struct cdns_sierra_vals ml_pcie_100_ext_ssc_ln_vals = {
+ 	.reg_pairs = ml_pcie_100_ext_ssc_ln_regs,
+ 	.num_regs = ARRAY_SIZE(ml_pcie_100_ext_ssc_ln_regs),
+ };
+@@ -2092,7 +2092,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_ext_ssc_ln_regs[] = {
+ 	{0x0002, SIERRA_TX_RCVDET_OVRD_PREG}
+ };
+ 
+-static struct cdns_sierra_vals ti_ml_pcie_100_ext_ssc_ln_vals = {
++static const struct cdns_sierra_vals ti_ml_pcie_100_ext_ssc_ln_vals = {
+ 	.reg_pairs = ti_ml_pcie_100_ext_ssc_ln_regs,
+ 	.num_regs = ARRAY_SIZE(ti_ml_pcie_100_ext_ssc_ln_regs),
+ };
+@@ -2152,12 +2152,12 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_no_ssc[] = {
+ 	{0x4432, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_no_ssc_cmn_vals = {
++static const struct cdns_sierra_vals pcie_100_no_ssc_cmn_vals = {
+ 	.reg_pairs = cdns_pcie_cmn_regs_no_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_pcie_cmn_regs_no_ssc),
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_no_ssc_ln_vals = {
++static const struct cdns_sierra_vals pcie_100_no_ssc_ln_vals = {
+ 	.reg_pairs = cdns_pcie_ln_regs_no_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_pcie_ln_regs_no_ssc),
+ };
+@@ -2227,12 +2227,12 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_int_ssc[] = {
+ 	{0x4432, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_int_ssc_cmn_vals = {
++static const struct cdns_sierra_vals pcie_100_int_ssc_cmn_vals = {
+ 	.reg_pairs = cdns_pcie_cmn_regs_int_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_pcie_cmn_regs_int_ssc),
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_int_ssc_ln_vals = {
++static const struct cdns_sierra_vals pcie_100_int_ssc_ln_vals = {
+ 	.reg_pairs = cdns_pcie_ln_regs_int_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_pcie_ln_regs_int_ssc),
+ };
+@@ -2296,12 +2296,12 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_ext_ssc[] = {
+ 	{0x4432, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_ext_ssc_cmn_vals = {
++static const struct cdns_sierra_vals pcie_100_ext_ssc_cmn_vals = {
+ 	.reg_pairs = cdns_pcie_cmn_regs_ext_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_pcie_cmn_regs_ext_ssc),
+ };
+ 
+-static struct cdns_sierra_vals pcie_100_ext_ssc_ln_vals = {
++static const struct cdns_sierra_vals pcie_100_ext_ssc_ln_vals = {
+ 	.reg_pairs = cdns_pcie_ln_regs_ext_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_pcie_ln_regs_ext_ssc),
+ };
+@@ -2413,12 +2413,12 @@ static const struct cdns_reg_pairs cdns_usb_ln_regs_ext_ssc[] = {
+ 	{0x4243, SIERRA_RXBUFFER_DFECTRL_PREG}
+ };
+ 
+-static struct cdns_sierra_vals usb_100_ext_ssc_cmn_vals = {
++static const struct cdns_sierra_vals usb_100_ext_ssc_cmn_vals = {
+ 	.reg_pairs = cdns_usb_cmn_regs_ext_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_usb_cmn_regs_ext_ssc),
+ };
+ 
+-static struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
++static const struct cdns_sierra_vals usb_100_ext_ssc_ln_vals = {
+ 	.reg_pairs = cdns_usb_ln_regs_ext_ssc,
+ 	.num_regs = ARRAY_SIZE(cdns_usb_ln_regs_ext_ssc),
+ };
+@@ -2443,7 +2443,7 @@ static const struct cdns_reg_pairs sgmii_pma_cmn_vals[] = {
+ 	{0x0013, SIERRA_CMN_PLLLC1_DCOCAL_CTRL_PREG},
+ };
+ 
+-static struct cdns_sierra_vals sgmii_cmn_vals = {
++static const struct cdns_sierra_vals sgmii_cmn_vals = {
+ 	.reg_pairs = sgmii_pma_cmn_vals,
+ 	.num_regs = ARRAY_SIZE(sgmii_pma_cmn_vals),
+ };
+@@ -2489,7 +2489,7 @@ static const struct cdns_reg_pairs sgmii_ln_regs[] = {
+ 	{0x321F, SIERRA_CPICAL_RES_STARTCODE_MODE01_PREG},
+ };
+ 
+-static struct cdns_sierra_vals sgmii_pma_ln_vals = {
++static const struct cdns_sierra_vals sgmii_pma_ln_vals = {
+ 	.reg_pairs = sgmii_ln_regs,
+ 	.num_regs = ARRAY_SIZE(sgmii_ln_regs),
  };
 -- 
 2.45.2
