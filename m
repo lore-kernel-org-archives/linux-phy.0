@@ -4,62 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7F25C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jul 2024 22:53:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CBECC2BD09
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jul 2024 07:59:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cO2f/9LvVBPpT3cRKn1+KgGWumVcyHyJTV7Fyh18YNA=; b=r2u9ZRONo2zOA/
-	iRMuzzR0KLsmVRZezrP4JHXDW8FUShdDJREKs5qv71v/XRqs3o+ZOXhRnW8MqYk/28bHC8MBfcMUE
-	dkcXekvVTDmUlJxEiVO/Fx3KFb4AAPe2n56Ht7ha1vkJWxOAW8WZYOatFSXVFZoxJcHAg7XQntG1K
-	ipM3Bya7vveScrL5wD4LDhEQMhSLz2oRFnaYQ/EkKojUuk12pHwFrmPsGUG9s4g1losGQUhNOxVbe
-	FCy5OTifai5SzeHSUYhUMdMVy7GcdVn1vEnOhkyWnSLXamMSFrKWx8S/fXdzSYXWMCHGW5GWx6bRW
-	JjHPMSwy0XS7j92HlpcA==;
+	List-Owner; bh=qDclpS608V1l2OKiwku2j55IYSeZpUMVjreGGT5vBg0=; b=PLJ5OYSbR+UEAg
+	jSGjjrCQ/29aNglpIJRwQArgOyeOQSVKKgzkfADLX9w7vXTUaclyeNE9yW2WtcIFeEOBKKcB+Rn9+
+	GK4GwLTSh7uKNDZgFr269pmtVRgQJamZapBgSJXT5wyazQaVxnIVygklXbcKDK1F2wFtz/LAfpVkD
+	UA+3Dc2rKzMUPUu5w/s7f/0vMhc3oQfoi0J22MAC72e/U5DxZQjhMx4+dxo1MZBGKRsH0Ixj3U2Je
+	sHTfVwDvoVU4RP/gY+GT1TD1zYA5e+svBZFA4J3RYVyKeivZh1ENjsdiKOys37tu8npsk1qyG9+RM
+	+eg/lW0ez4FX3kdqwCEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sS2fR-0000000FjvX-2jGj;
-	Thu, 11 Jul 2024 22:53:37 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sSBBI-0000000GpQh-3NTB;
+	Fri, 12 Jul 2024 07:59:04 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sS2fO-0000000Fjuu-1SZT
+	id 1sSBBG-0000000GpQC-03HT
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jul 2024 22:53:35 +0000
+	Fri, 12 Jul 2024 07:59:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id A8D90CE1151;
-	Thu, 11 Jul 2024 22:53:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C869CC116B1;
-	Thu, 11 Jul 2024 22:53:31 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5325F61D38;
+	Fri, 12 Jul 2024 07:59:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C6EA5C4AF09;
+	Fri, 12 Jul 2024 07:58:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1720738412;
-	bh=ofndv/zw9XA0mWAXytFcHbCoYH5AfpN6Z0ZOKdwE13A=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=XRJgImUwXxRDU4ZFiXi5TbBPoo/9R57ohVP4ma6bhp6yugygPbTIi6lkE2KJUdaO1
-	 YSOk8NhLPUjCCvdarb7p7291ZHdwotBmbDycfEPGRB8qSRe/hXSXe9mKx/CkGkCURv
-	 D8yW0cn8Gy2Mak5S+5/ykyBBduPjk6Wiw6XN8DtCC7mVpD/UWLFefkCUuFD0e3xcau
-	 LVtShkDHPdYpJLQe1wfhHaZYKWElMbolQsoEYI7Jmh/n/9TV6whQxbVTfHnByoSFQV
-	 C9MC+WJUs1v3x+kS4g3J/s6u4zpp8Atmylm2/p/GfGpyn/ZKP8ddPdZmyh1patBbwT
-	 oOpbFES2lnEjQ==
-Date: Thu, 11 Jul 2024 16:53:30 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Rayyan Ansari <rayyan.ansari@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Subject: Re: [PATCH] dt-bindings: phy: drop obsolete qcom,usb-8x16-phy
- bindings
-Message-ID: <172073837103.3268845.15106965323950109239.robh@kernel.org>
-References: <20240711122016.41806-1-rayyan.ansari@linaro.org>
+	s=k20201202; t=1720771141;
+	bh=VkwnDE7EbrkWv2GDVB/LnC45A3P6Kr9jPSeSK0jj0aM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=IQ9GOWJT7bqnQQt+NYkV0R+xBn9CSWtUBCCe5GOQOgeGzTrqV5x0CvKYymkNaqckb
+	 /OZwNkmQujf0Sb7Z/BNnbeT71AxvxOyVuCsVH8ME+FMDOcZnNlqrCt6y/xrMGy28fV
+	 ARL6jj58qcsBmwhk/icP41pM1oqhQdWvIX7YkBSUOISbDyCkPD+FEwU0y7A7uOiCge
+	 4DTv4HgyzJXQ/bORi+XERk5O9CLn0tQvinbq5WpyoV7hn4KiczhzXKUz/6D+DO/8zd
+	 lqMjl93uWdDrWkDU1vbLXJ99YdD3PPJS0NpuEqYVGKpin1VcZLbDAWB69B4wTIO+cD
+	 81xPsUhGm2AOA==
+Message-ID: <03a9f1f7-cd7b-4a6e-ab61-632fd70ae63f@kernel.org>
+Date: Fri, 12 Jul 2024 09:58:55 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240711122016.41806-1-rayyan.ansari@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] dt-bindings: phy: hisilicon,hi3798cv200-combphy:
+ Convert to DT schema
+To: "Rob Herring (Arm)" <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Shawn Guo <shawn.guo@linaro.org>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20240711152313.2364383-1-robh@kernel.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20240711152313.2364383-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240711_155334_584168_0A67E328 
-X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-CacheID: sfid-20240712_005902_215424_591BB4BA 
+X-CRM114-Status: UNSURE (   5.12  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,21 +121,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 11 Jul 2024 13:20:14 +0100, Rayyan Ansari wrote:
-> Remove the bindings for the Qualcomm 8x16 PHY driver that was dropped
-> in commit 4756f35fdf14 ("usb: phy: remove phy-qcom-8x16-usb.c") in 2017.
+On 11/07/2024 17:23, Rob Herring (Arm) wrote:
+> Convert the hisilicon,hi3798cv200-combphy binding to DT schema format.
 > 
-> Signed-off-by: Rayyan Ansari <rayyan.ansari@linaro.org>
-> ---
->  .../bindings/phy/qcom,usb-8x16-phy.txt        | 76 -------------------
->  1 file changed, 76 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/qcom,usb-8x16-phy.txt
+> Drop the example as arm/hisilicon/controller/hi3798cv200-perictrl.yaml
+> already contains an example of this binding.
 > 
+> Acked-by: Shawn Guo <shawn.guo@linaro.org>
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 
-Deleted files are an automatic Reviewed-by. ;)
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Best regards,
+Krzysztof
 
 
 -- 
