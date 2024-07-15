@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 160E3C3DA4B
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 15:26:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFC18C3DA4A
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 15:28:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MJatxAmiZrVq6+6Kt6mtqfOkhOzZ8C3b3119LWEGFx4=; b=IvDtJXjc6veb8X+mtpT5QwIC9c
-	MEkqvgjZ6LaTSumph1VEicqNmLWDFdE9dxgtZKNLXjA5cualoFFW/cjxEHsacb0rlgiTN+nmQJvJa
-	anoJ0i9p2VlAa8H2YuCREx7EY0Ay27GzlwGGgQTBtjooOzCyJ6R1tCjN2BrVJVTDpFAZF8QbS0Uws
-	FyNB52kl1qQAnA29jL4hkY7scytheVBEjEauWqas54Ofq437Wpoh51/ba8zdq60TBTHUFdyQEiOSh
-	Ml9cU6W/uKr/TfmUPMzpP69F7rRaFa/wndCFnFbBmrzyOGI6bB7O3mM0wZb9K4HJtB/br9NXCAGHp
-	dR7i/XAw==;
+	bh=JgNcBoXsSqFe9lafhqu7AUhh7tXw4jLcEQB2TGcOmSc=; b=O/jsEtxxWC1jWAHx+VK/MzjdZk
+	bmWfFLD8VIkULrn8JJW3NwiNYbDHjpj7Yn5dil7J6cBWjvRufgMXPm0irL3TDdVWHASbWzz5JgV7b
+	HviB8B6dfEk6E+DDaaRT3v3F7kXp6p4BR+iWvo4hufveKX6uZiFZiRAuZeHCYdRsZdYxL4OdlOLo9
+	tWia5pZ0jEjXx1zgHMHzNDjWOsu4zgc7l3VLt6AIjWWIZY9BnzSFibCG1E9VQzicpC9c+Qj2e1v/F
+	5Q7eqi/Oz5RTW04CIEwjjQ+HfY0jMfEtkba8UfsOTFeBY05MOpyxHYHo8Lmj245tpyzfHZonRXoj/
+	Tawr1Z4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTNar-00000007Xgs-2HOW;
-	Mon, 15 Jul 2024 15:26:25 +0000
+	id 1sTNcr-00000007Ye6-17TO;
+	Mon, 15 Jul 2024 15:28:29 +0000
 Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTNao-00000007Xfr-3poQ
+	id 1sTNco-00000007Yai-0c1M
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jul 2024 15:26:24 +0000
+	Mon, 15 Jul 2024 15:28:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 4B96ACE102B;
-	Mon, 15 Jul 2024 15:26:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9FF5C32782;
-	Mon, 15 Jul 2024 15:26:14 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 72993CE0E38;
+	Mon, 15 Jul 2024 15:28:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1927C32782;
+	Mon, 15 Jul 2024 15:28:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1721057179;
-	bh=sNW/aSHX8YqWmU4H5l4JY22GHRxmk/j7ao32iwDx0qQ=;
+	s=k20201202; t=1721057303;
+	bh=wMcIDWrmGAfvryRlixL8w6f8KnHDW2Iqu7kAgZM/vXw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ltCWfPdfZnEyL/P+J/m5VDzukXMca/1bVQAaZkeIJNR6CE/Z700sIcX0KNGiJceuu
-	 aRN+0QaIyjm2F/I+vdOGhrR9U3LSB0ZBOxFgoEDbmN8tS0B43NpTp/cSyD5vh3P1/V
-	 LQcoUgFXK74LUfvIKqpoR/yMLvvEXZEjdKXwF4QSUCYAPTU73Ef4oMfmUcEs2CoDOL
-	 xkCmuPCmLQnoGoByhA6THeRTfXISmzgoCtz+gbiJWsrWPheRpSZgHrHuqgIJjnrKA7
-	 er6gwtuB4zbLASUosYTZ1iaA1WQGv3/cu8vZoRPgxSyYqSjwJgfVml2upejvxVmUXn
-	 gQKb5ZOHQ/aOw==
-Date: Mon, 15 Jul 2024 16:26:12 +0100
+	b=o0kBacF92LbdiCs93gFwNPY1FfabN+E68VMrZgdO82AA0zEKsj1TLZd4UbDYoezIz
+	 UedRDekGi4ANFCCccOS5CIsByt5S+bYum5Llve43wrRgHD4LcELHl9TyvsjWXH5gqx
+	 QNjhQpwpy3uJUN5j03dstiME0Ou3BFNmEEERIIBgnCmM0z66A08TzL2JPnW0h6MmaQ
+	 aDGkhrggp3TEW3ZfNY8NUxwlieFOklBKDb3hHPpzUmxNN6ux2xf/Mk747654+EO2ey
+	 HqIRw4o4nRRdzP0LCbJ818Aaj31dv3XojbfnhHEId7uDYvZ7aYePb040ggppbN5/z0
+	 ScrqQPZTdJa4A==
+Date: Mon, 15 Jul 2024 16:28:16 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Marc Gonzalez <mgonzalez@freebox.fr>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -66,14 +66,15 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Pierre-Hugues Husson <phhusson@freebox.fr>,
 	Jeffrey Hugo <quic_jhugo@quicinc.com>
 Subject: Re: [PATCH v6 3/6] drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
-Message-ID: <20240715-trickery-spongy-c9d8e246b4cc@spud>
+Message-ID: <20240715-stable-popsicle-7c6e2fa76644@spud>
 References: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
  <20240715-hdmi-tx-v6-3-d27f029627ad@freebox.fr>
+ <20240715-trickery-spongy-c9d8e246b4cc@spud>
 MIME-Version: 1.0
-In-Reply-To: <20240715-hdmi-tx-v6-3-d27f029627ad@freebox.fr>
+In-Reply-To: <20240715-trickery-spongy-c9d8e246b4cc@spud>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240715_082623_152655_75063D26 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20240715_082826_587320_5EF49843 
+X-CRM114-Status: GOOD (  20.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,69 +86,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8548766318275781885=="
+Content-Type: multipart/mixed; boundary="===============2810139937493346515=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============8548766318275781885==
+--===============2810139937493346515==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="OHR+9gzr+luxGuOP"
+	protocol="application/pgp-signature"; boundary="I/966nsfPxtlNaRp"
 Content-Disposition: inline
 
 
---OHR+9gzr+luxGuOP
+--I/966nsfPxtlNaRp
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Jul 15, 2024 at 02:21:16PM +0200, Marc Gonzalez wrote:
-> Current driver already supports the msm8998 HDMI TX.
-> We just need to add the compatible string.
+On Mon, Jul 15, 2024 at 04:26:12PM +0100, Conor Dooley wrote:
+> On Mon, Jul 15, 2024 at 02:21:16PM +0200, Marc Gonzalez wrote:
+> > Current driver already supports the msm8998 HDMI TX.
+> > We just need to add the compatible string.
+>=20
+> Why is this required when the driver change suggests that this device is
+> compatible with the existing 8974?
 
-Why is this required when the driver change suggests that this device is
-compatible with the existing 8974?
+(I know I reviewed the binding already, just noticing this which
+suggests a fallback would be appropriate, despite the differing clocks
+etc)
 
 >=20
-> Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
-> ---
->  drivers/gpu/drm/msm/hdmi/hdmi.c | 1 +
->  1 file changed, 1 insertion(+)
->=20
-> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.c b/drivers/gpu/drm/msm/hdmi/h=
-dmi.c
-> index 24abcb7254cc4..0bfee41c2e71a 100644
-> --- a/drivers/gpu/drm/msm/hdmi/hdmi.c
-> +++ b/drivers/gpu/drm/msm/hdmi/hdmi.c
-> @@ -549,6 +549,7 @@ static void msm_hdmi_dev_remove(struct platform_devic=
-e *pdev)
->  }
-> =20
->  static const struct of_device_id msm_hdmi_dt_match[] =3D {
-> +	{ .compatible =3D "qcom,hdmi-tx-8998", .data =3D &hdmi_tx_8974_config },
->  	{ .compatible =3D "qcom,hdmi-tx-8996", .data =3D &hdmi_tx_8974_config },
->  	{ .compatible =3D "qcom,hdmi-tx-8994", .data =3D &hdmi_tx_8974_config },
->  	{ .compatible =3D "qcom,hdmi-tx-8084", .data =3D &hdmi_tx_8974_config },
->=20
-> --=20
-> 2.34.1
->=20
+> >=20
+> > Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
+> > ---
+> >  drivers/gpu/drm/msm/hdmi/hdmi.c | 1 +
+> >  1 file changed, 1 insertion(+)
+> >=20
+> > diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.c b/drivers/gpu/drm/msm/hdmi=
+/hdmi.c
+> > index 24abcb7254cc4..0bfee41c2e71a 100644
+> > --- a/drivers/gpu/drm/msm/hdmi/hdmi.c
+> > +++ b/drivers/gpu/drm/msm/hdmi/hdmi.c
+> > @@ -549,6 +549,7 @@ static void msm_hdmi_dev_remove(struct platform_dev=
+ice *pdev)
+> >  }
+> > =20
+> >  static const struct of_device_id msm_hdmi_dt_match[] =3D {
+> > +	{ .compatible =3D "qcom,hdmi-tx-8998", .data =3D &hdmi_tx_8974_config=
+ },
+> >  	{ .compatible =3D "qcom,hdmi-tx-8996", .data =3D &hdmi_tx_8974_config=
+ },
+> >  	{ .compatible =3D "qcom,hdmi-tx-8994", .data =3D &hdmi_tx_8974_config=
+ },
+> >  	{ .compatible =3D "qcom,hdmi-tx-8084", .data =3D &hdmi_tx_8974_config=
+ },
+> >=20
+> > --=20
+> > 2.34.1
+> >=20
 
---OHR+9gzr+luxGuOP
+
+
+--I/966nsfPxtlNaRp
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZpU/lAAKCRB4tDGHoIJi
-0t3VAQCHN0LZCGVHMJwWGIelEtEm/eH6wIS85GY5SnC33zqgnAEA5k/oMJgRULQi
-RaUAxvbASVC26bdW+BxCiMRezUdxewY=
-=7Wal
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZpVAEAAKCRB4tDGHoIJi
+0sU8AP4jM6fDhuBRN2MOUSxGHypHq+sAMObmuhoxsoBDNdo4awD/V9VWHT01TVJw
+2JaoCyJhPin+XY9G0rHrT0tjTjiN4Ac=
+=4QyH
 -----END PGP SIGNATURE-----
 
---OHR+9gzr+luxGuOP--
+--I/966nsfPxtlNaRp--
 
 
---===============8548766318275781885==
+--===============2810139937493346515==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -158,5 +171,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============8548766318275781885==--
+--===============2810139937493346515==--
 
