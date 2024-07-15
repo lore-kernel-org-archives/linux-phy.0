@@ -4,45 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4072C3DA61
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 12:22:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19CB0C41513
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 12:22:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w5wWjJn8jhY6LnG6jtzTSU5eVQDs/e0Jlye1L1dAjI0=; b=S/FEuAMHZLeBKx
-	VmWjD1bcK1pw6JrDLSQwNLIxI6k27RiPwWWBON7zjgLoJapf30y1Mqzn6TaVFDP4aJvdpv17RYHeG
-	FWYTzUKl/0L4ecpGTUgEOfDOrAl+6FCBfz0oEazrPlVRGaFj7KJ27kBAJouzDUI2s4V1Nxv9GXrZh
-	pfwf8U0dqpZK21e+k1CWTOzxeEP0ve17IdQSU1EPp6NuJ/PyqsyiHRrjfFkQ0WY6Uw2vrs61wlMdf
-	j6zFR0yYfZPRzu+R18pJXMWY5gjnRb21eRP1lLdMlNjpsvQgCXgIlRGqQuKpwG7XqNAMZRaVNy0yq
-	GI1Inx+p4RGdTKOLEQag==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JbLLanAE6dx7XOFs6QLuOgqQNsmzS+bcIqthi21BBfE=; b=euYGBkyEsPaLbh
+	sHvrrWA0GHXGOFNN6Msm3shQCOb1vZJ4o26djFwqt7MJjJV5VWmvlsOxHisK9bW3QBm9rkSKUp5VA
+	DlV7MnKiXssjZikHDJHXrcHh7rFcEGvVWi25GlPkVTbI9MPndKhn2Bmw4FgpcqTnE9kV+SGS1O8GO
+	UYZv76WHBmAt9Ims+DJBc0umfVMxDvAUkpr0Q76ojT6ukC0fZnXcfbmmKpz6/aQ4GkLztTzhfsBes
+	baWb3L7A6EobaxN8eHdznMJt+5pGn4OkvTiQD3qbs1NN3PLM7QdxGr8LDGrXSu1+gF7HzypicI0Hu
+	OnOHpGCHE8IrUf57n7zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTKj2-000000070lc-26Kc;
+	id 1sTKj2-000000070lr-3LQu;
 	Mon, 15 Jul 2024 12:22:40 +0000
 Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTKih-000000070aN-3O78
+	id 1sTKil-000000070d9-3axb
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Jul 2024 12:22:23 +0000
+	Mon, 15 Jul 2024 12:22:25 +0000
 Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id F0BDF20B8A;
-	Mon, 15 Jul 2024 14:22:13 +0200 (CEST)
+	by ns.iliad.fr (Postfix) with ESMTP id 25DE720CA4;
+	Mon, 15 Jul 2024 14:22:14 +0200 (CEST)
 Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id E804B2021F;
-	Mon, 15 Jul 2024 14:22:13 +0200 (CEST)
+	by ns.iliad.fr (Postfix) with ESMTP id 0C34920BDC;
+	Mon, 15 Jul 2024 14:22:14 +0200 (CEST)
 From: Marc Gonzalez <mgonzalez@freebox.fr>
-Subject: [PATCH v6 0/6] HDMI TX support in msm8998
-Date: Mon, 15 Jul 2024 14:21:13 +0200
-Message-Id: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
+Date: Mon, 15 Jul 2024 14:21:16 +0200
+Subject: [PATCH v6 3/6] drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIADkUlWYC/2XOu47CMBCF4VdBrpmVr2NMxXusKHwZExcQ5ERRV
- ijvjpOGrCiPNN+vebGBaqGBnQ8vVmkqQ+kfbeDxwGLnHzeCktpmkkvNkSN06V5gnIFzohPZlIK
- PrF0/K+Uyb6Xfa9u59ncYu0p+817GIKTj4IgL0EIhOOMkRNLKBcEdBrzkShT6+SfXtdiVYezr3
- /bapNbu9xeTgpZMNlPApFDbfWN9Y9I7KNQH6ga1z8KSxhM69wXNDkr7gaZBZUwyUeQQVfwHl2V
- 5A9LV6LpTAQAA
+Message-Id: <20240715-hdmi-tx-v6-3-d27f029627ad@freebox.fr>
+References: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
+In-Reply-To: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -59,12 +56,12 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
  freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
  Pierre-Hugues Husson <phhusson@freebox.fr>, 
- Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>, 
- Conor Dooley <conor.dooley@microchip.com>
+ Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240715_052220_061449_4A201A35 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20240715_052224_110766_123FF45D 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,68 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-DT bits required for HDMI TX support in qcom APQ8098 (MSM8998 cousin)
+Current driver already supports the msm8998 HDMI TX.
+We just need to add the compatible string.
 
+Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 ---
-Changes in v6:
-- Fold HDMI PHY driver submission into this series
-  => [PATCH v2] drm/msm: add msm8998 hdmi phy/pll support
-  => Link to v2: https://lore.kernel.org/all/20240704-hdmi-phy-v2-1-a7f5af202cb5@freebox.fr/
-     - Rebase onto v6.10
-     - Move drivers/gpu/drm/msm/hdmi/hdmi.xml.h to drivers/gpu/drm/msm/registers/display/hdmi.xml
-     - Add copyright attribution
-     - Remove all dead/debug/temporary code
-  => Link to v1: https://lore.kernel.org/all/63337d63-67ef-4499-8a24-5f6e9285c36b@freebox.fr/
-- split HDMI PHY driver patch in 2 parts (PHY & TX)
-- Use same regulator names as msm8996 (Dmitry)
-- Remove printk statements
-- Add Vinod's Ack on patch 1
-- Expand commit message on patch 4 = HDMI PHY driver
-- Link to v5: https://lore.kernel.org/r/20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr
+ drivers/gpu/drm/msm/hdmi/hdmi.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Changes in v5:
-- Fix property & property-names for TX pinctrl in DTSI (Konrad)
-- NOT CHANGED: clock trees for TX & PHY based on Dmitry & Jeffrey's remarks
-- Link to v4: https://lore.kernel.org/r/20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr
+diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.c b/drivers/gpu/drm/msm/hdmi/hdmi.c
+index 24abcb7254cc4..0bfee41c2e71a 100644
+--- a/drivers/gpu/drm/msm/hdmi/hdmi.c
++++ b/drivers/gpu/drm/msm/hdmi/hdmi.c
+@@ -549,6 +549,7 @@ static void msm_hdmi_dev_remove(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id msm_hdmi_dt_match[] = {
++	{ .compatible = "qcom,hdmi-tx-8998", .data = &hdmi_tx_8974_config },
+ 	{ .compatible = "qcom,hdmi-tx-8996", .data = &hdmi_tx_8974_config },
+ 	{ .compatible = "qcom,hdmi-tx-8994", .data = &hdmi_tx_8974_config },
+ 	{ .compatible = "qcom,hdmi-tx-8084", .data = &hdmi_tx_8974_config },
 
-Changes in v4:
-- Collect tags since v3
-- Reword patch 1 subject (Vinod)
-- Link to v3: https://lore.kernel.org/r/20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr
-
-Changes in v3
-- Address Rob's comments on patch 2:
-  - 'maxItems: 5' for clocks in the 8996 if/then schema
-  - match the order of 8996 for the clock-names in common
-
----
-Arnaud Vrac (2):
-      drm/msm: add msm8998 hdmi phy/pll support
-      arm64: dts: qcom: add HDMI nodes for msm8998
-
-Marc Gonzalez (4):
-      dt-bindings: phy: add qcom,hdmi-phy-8998
-      dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
-      drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
-      arm64: dts: qcom: msm8998: add HDMI GPIOs
-
- .../devicetree/bindings/display/msm/hdmi.yaml      |  28 +-
- .../devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml |   1 +
- arch/arm64/boot/dts/qcom/msm8998.dtsi              | 128 +++-
- drivers/gpu/drm/msm/Makefile                       |   1 +
- drivers/gpu/drm/msm/hdmi/hdmi.c                    |   1 +
- drivers/gpu/drm/msm/hdmi/hdmi.h                    |   8 +
- drivers/gpu/drm/msm/hdmi/hdmi_phy.c                |   5 +
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c           | 779 +++++++++++++++++++++
- drivers/gpu/drm/msm/registers/display/hdmi.xml     |  89 +++
- 9 files changed, 1037 insertions(+), 3 deletions(-)
----
-base-commit: f832eca10adfb75be6b23d32e0baaf28da034f78
-change-id: 20240606-hdmi-tx-00ee8e7ddbac
-
-Best regards,
 -- 
-Marc Gonzalez <mgonzalez@freebox.fr>
+2.34.1
 
 
 -- 
