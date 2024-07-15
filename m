@@ -4,89 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1D64C2BD09
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jul 2024 10:38:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5122C3DA59
+	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 12:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BSxbUeve66BCIlHHbWyJyKXgJaPnM4NPCOiouathQRk=; b=res8vbTCi/B1Tf
-	kxp8/WLSSodMue6DnyUZoIDwwZy1Fcjo3x4XQINpvCDj+KkMZ2BPs8Zi07bZCcTg3y2q1lB+VYa8P
-	VP/jHWoqkXIbtCuW6RNNzCFWUep7sk5ecIxOKqd2yZC2SxsbMEcTpXbgJTS+iU5Jx5oAxXNfa5zjN
-	9mf89NHvvarDA+zeuM0WxKrxKnxPPgfSQLC78VrCX6KIhvCG+Zokijtbx7VVPrbqx9q97qoJQkHlC
-	HFh5VHSMy3qZX5ZcE4dvienxgryt9MTMKeYKRd4Uqk5nBKImthLph7VKkBZFH/n/1emlws96S+tio
-	Whv3t0tub0Y634B4BYTw==;
+	List-Owner; bh=2N6xR96nBbW8oRZ9vOcZ9lwl895+O690k6ojvH4LLUo=; b=X2H2fy7sqGrjGe
+	kWyw7CXzscL+iqk5Qf8/yiS8tatrwsEfHIf1THIP70X1QBYSNoC9eXaD1IEtHxdEB493SI2GcdGyy
+	Agm9JmTzbZ5inOAmJi8HbqdieMlIzRsUyZshxxve1GfNU1Fb7rcrTu/cCZvAodbLfm/1P+f7R7A0P
+	a0gVJgoOwHi6sf3vg33hsfinZg5rRAgDmBU10sChANUnYtwDHor/kVgEbOG0dUzWaEIifO289z8Zl
+	hkDlyvGvHzBru4W6OMLam2E+UEMMNHk2gqwg4RQJ1oLlwYQLT9KEVAseo0JY0vVc8Ax1yZNPqi20N
+	NBVz57NmINrJv4GQ3SGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sSDfz-0000000HL1c-2dzY;
-	Fri, 12 Jul 2024 10:38:55 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1sTKj1-000000070kb-15kP;
+	Mon, 15 Jul 2024 12:22:39 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sSDff-0000000HKzF-0WOu;
-	Fri, 12 Jul 2024 10:38:37 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
-	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 46CAcJbj110842;
-	Fri, 12 Jul 2024 05:38:19 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1720780699;
-	bh=W/Z3C2cI7ppQME+mYRiG+8nSdB35hlEhW1U12Imi++M=;
-	h=Date:From:To:CC:Subject:References:In-Reply-To;
-	b=krD0HkEfig8tvJSJyGE4XpRmqkENvJjIfXJe5wHQZWb4Fzlt0tI3nK3CsFDtTdBox
-	 g+kLeYhrts8u1lgOe2NV+culQpq7h2vivNmF2x1UvHLrJ12hDcG3v5v/rfTOAgahvz
-	 FDCJZGuoP8498KtAhJ3hBM47t31KwGPMCAaBwpwk=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
-	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 46CAcJtW039126
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Fri, 12 Jul 2024 05:38:19 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Fri, 12
- Jul 2024 05:38:18 -0500
-Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Fri, 12 Jul 2024 05:38:19 -0500
-Received: from localhost (uda0492258.dhcp.ti.com [10.24.72.81])
-	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 46CAcHm2088301;
-	Fri, 12 Jul 2024 05:38:18 -0500
-Date: Fri, 12 Jul 2024 16:08:16 +0530
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: Roger Quadros <rogerq@kernel.org>,
-        Swapnil Kashinath Jakhade
-	<sjakhade@cadence.com>
-CC: Siddharth Vadapalli <s-vadapalli@ti.com>,
-        "vkoul@kernel.org"
-	<vkoul@kernel.org>,
-        "kishon@kernel.org" <kishon@kernel.org>,
-        "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
-        "thomas.richard@bootlin.com" <thomas.richard@bootlin.com>,
-        "theo.lebrun@bootlin.com" <theo.lebrun@bootlin.com>,
-        "robh@kernel.org"
-	<robh@kernel.org>,
-        "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>,
-        "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>,
-        "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>,
-        "srk@ti.com" <srk@ti.com>, Milind
- Parab <mparab@cadence.com>
-Subject: Re: [PATCH v2] phy: cadence-torrent: add support for three or more
- links using 2 protocols
-Message-ID: <c60a1e83-c2ad-4a04-9deb-073c69a4a06d@ti.com>
-References: <20240710115624.3232925-1-s-vadapalli@ti.com>
- <LV3PR07MB1036463AB8AB5D38D003175E6C5A52@LV3PR07MB10364.namprd07.prod.outlook.com>
- <7504ea5a-335b-4152-a0f4-5be68f048903@ti.com>
- <0dc54057-d7a0-4123-badc-8f7f07f2d930@kernel.org>
+	id 1sTKih-000000070aL-3OT7
+	for linux-phy@lists.infradead.org;
+	Mon, 15 Jul 2024 12:22:22 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+	by ns.iliad.fr (Postfix) with ESMTP id 10CE620BEB;
+	Mon, 15 Jul 2024 14:22:14 +0200 (CEST)
+Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
+	by ns.iliad.fr (Postfix) with ESMTP id F279420BAD;
+	Mon, 15 Jul 2024 14:22:13 +0200 (CEST)
+From: Marc Gonzalez <mgonzalez@freebox.fr>
+Date: Mon, 15 Jul 2024 14:21:14 +0200
+Subject: [PATCH v6 1/6] dt-bindings: phy: add qcom,hdmi-phy-8998
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0dc54057-d7a0-4123-badc-8f7f07f2d930@kernel.org>
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Message-Id: <20240715-hdmi-tx-v6-1-d27f029627ad@freebox.fr>
+References: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
+In-Reply-To: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>, 
+ Abhinav Kumar <quic_abhinavk@quicinc.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Sean Paul <sean@poorly.run>, 
+ Marijn Suijten <marijn.suijten@somainline.org>, 
+ David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
+ Pierre-Hugues Husson <phhusson@freebox.fr>, 
+ Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240712_033835_327507_C735E928 
-X-CRM114-Status: GOOD (  26.89  )
+X-CRM114-CacheID: sfid-20240715_052220_118280_7AC147EA 
+X-CRM114-Status: UNSURE (   6.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,87 +78,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Roger, Swapnil,
+HDMI PHY block embedded in the APQ8098.
 
-On Thu, Jul 11, 2024 at 11:04:57AM +0300, Roger Quadros wrote:
-> Siddharth,
-> 
-> On 11/07/2024 10:53, Siddharth Vadapalli wrote:
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Acked-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
+---
+ Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-[...]
+diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+index 83fe4b39b56f4..78607ee3e2e84 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
+@@ -14,6 +14,7 @@ properties:
+   compatible:
+     enum:
+       - qcom,hdmi-phy-8996
++      - qcom,hdmi-phy-8998
+ 
+   reg:
+     maxItems: 6
 
-> > I suppose that PCIe is the only such protocol since it can have
-> > different speeds despite a single protocol (Gen1, Gen2, Gen3...), unlike
-> > other protocols which have a fixed speed and therefore the PLL
-> > associated with them doesn't have to be reconfigured as the rate will
-> > never change. Please let me know if there are other protocols (maybe DP?)
-> > which also require such special handling.
-> 
-> The constraint is PLL frequency and not protocols as such right?
-> e.g. If there are 4 protocols that all use same PLL frequency then we should
-> be able to support it?
-> 
-> How about updating the patch to limit on number of PLL frequencies rather than
-> number of protocols? This should deal with PCIe multi-link case as well.
+-- 
+2.34.1
 
-I suppose that an indirect way of determining whether a configuration
-can be supported or not is by checking if an entry exists in the "tables"
-(link_cmn_vals_tbl). That should be accurate since it reflects what the
-driver supports.
-
-I will update this patch accordingly so that Swapnil's inputs regarding
-PCIe Multi-link are also addressed.
-
-I am describing the logic for the updated patch below. Please share your
-feedback.
-
-1. All single-link configurations (1 sub-node) can have only one
-protocol and will be handled via the "phy_ops" callbacks namely:
-.init, .power_on, ...
-No change will be made to this existing implementation.
-
-2. All multi-link configurations (2 or more sub-nodes) have to be
-configured via cdns_torrent_phy_configure_multilink().
-
-CASE-1 (2 Links/Sub-nodes):
-Check if there is an entry in "link_cmn_vals_entries" for the requested
-configuration and configure accordingly. This should handle the PCIe
-Multi-link configuration as well as other similar configurations which
-have a single protocol but cannot be treated as two single link
-configurations performed successively for each link.
-
-CASE-2 (3 or more Links/Sub-nodes):
-
-The links shall be grouped together by the protocol. Since we eventually
-have to look for an entry in "link_cmn_vals_entries", it is safe to impose
-the constraint that there shouldn't be more than 2 Protocols as the table
-is of the form:
-(phy_type1, phy_type2)
-i.e. Protocol 1, Protocol 2.
-It is guaranteed to be the case that Protocol1 != Protocol2 due to the
-following reason:
-If Protocol 1 == Protocol 2, it could have been represented in the
-device-tree using either:
-a) single link (sub-node)
-b) double link (sub-node) -> Special cases like PCIe Multi-link
-
-So assuming the above, we can enforce the constraint that there should
-be only 2 Protocols when 3 or more Links are present in the device-tree.
-This also handles the cases of
-PCIe Multi-Link + USB, PCIe Multi-Link + Q/SGMII
-which Swapnil has pointed to at [1], since PCIe Multi-Link is now a new
-protocol in itself (PHY_TYPE_PCIE_ML) and shall be represented in that
-manner in the device-tree when it is expected to be combined with a second
-protocol.
-
-After grouping the links by protocol, we can check for the entry in
-"link_cmn_vals_entries" and proceed to configure it identical to the
-2 Link case.
-
-[1] https://github.com/t-c-collab/linux/commits/ti-linux-6.1.y-torrent-multi-pcie-sgmii-v1
-
-Regards,
-Siddharth.
 
 -- 
 linux-phy mailing list
