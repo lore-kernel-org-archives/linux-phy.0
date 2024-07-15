@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5122C3DA59
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB26AC3DA4B
 	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 12:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,32 +12,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2N6xR96nBbW8oRZ9vOcZ9lwl895+O690k6ojvH4LLUo=; b=X2H2fy7sqGrjGe
-	kWyw7CXzscL+iqk5Qf8/yiS8tatrwsEfHIf1THIP70X1QBYSNoC9eXaD1IEtHxdEB493SI2GcdGyy
-	Agm9JmTzbZ5inOAmJi8HbqdieMlIzRsUyZshxxve1GfNU1Fb7rcrTu/cCZvAodbLfm/1P+f7R7A0P
-	a0gVJgoOwHi6sf3vg33hsfinZg5rRAgDmBU10sChANUnYtwDHor/kVgEbOG0dUzWaEIifO289z8Zl
-	hkDlyvGvHzBru4W6OMLam2E+UEMMNHk2gqwg4RQJ1oLlwYQLT9KEVAseo0JY0vVc8Ax1yZNPqi20N
-	NBVz57NmINrJv4GQ3SGw==;
+	List-Owner; bh=XMK/zTQWhSL5VJZyXG1qC8xd5StjymaBv9W3+hMOC4k=; b=MJw+HW2luQVGbY
+	vnywnQ6ojm0ZSIV8cQWSphYvG8FQEnBBO5UKdz5fP/uFwZBY/uwf6MULjG3X7Ue8+LBO7aRgilxFV
+	391HUcF6atVCOQAjS9EM3l+Erkohy9w2FyFVx+ZxPGyI1gYGOqHTLNT9+ykNUR9ctCxrB7F5d2MGa
+	YJWvSlvzMAk6RYdJjYZdBa5FBKd8EkSd+oHcp8tp5oL+79BIba1bpNCgJAnKqXEk/gXmg29jnGN1u
+	eOf8T9Uo7fscNMeJOLgdJFwj9qJZ4wSd2z5iyqqAqXAU9WRnvtJrjtL4ycV+DAz/00n8MQrVlNlzf
+	KyLVPA2ARxJ23a7O65kA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTKj1-000000070kb-15kP;
+	id 1sTKj1-000000070ko-2VSu;
 	Mon, 15 Jul 2024 12:22:39 +0000
 Received: from ns.iliad.fr ([212.27.33.1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTKih-000000070aL-3OT7
+	id 1sTKih-000000070aM-3ONs
 	for linux-phy@lists.infradead.org;
 	Mon, 15 Jul 2024 12:22:22 +0000
 Received: from ns.iliad.fr (localhost [127.0.0.1])
-	by ns.iliad.fr (Postfix) with ESMTP id 10CE620BEB;
+	by ns.iliad.fr (Postfix) with ESMTP id 2034320C38;
 	Mon, 15 Jul 2024 14:22:14 +0200 (CEST)
 Received: from [127.0.1.1] (freebox.vlq16.iliad.fr [213.36.7.13])
-	by ns.iliad.fr (Postfix) with ESMTP id F279420BAD;
-	Mon, 15 Jul 2024 14:22:13 +0200 (CEST)
+	by ns.iliad.fr (Postfix) with ESMTP id 19ECD20C2C;
+	Mon, 15 Jul 2024 14:22:14 +0200 (CEST)
 From: Marc Gonzalez <mgonzalez@freebox.fr>
-Date: Mon, 15 Jul 2024 14:21:14 +0200
-Subject: [PATCH v6 1/6] dt-bindings: phy: add qcom,hdmi-phy-8998
+Date: Mon, 15 Jul 2024 14:21:18 +0200
+Subject: [PATCH v6 5/6] arm64: dts: qcom: msm8998: add HDMI GPIOs
 MIME-Version: 1.0
-Message-Id: <20240715-hdmi-tx-v6-1-d27f029627ad@freebox.fr>
+Message-Id: <20240715-hdmi-tx-v6-5-d27f029627ad@freebox.fr>
 References: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
 In-Reply-To: <20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -59,8 +59,8 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Jeffrey Hugo <quic_jhugo@quicinc.com>, Marc Gonzalez <mgonzalez@freebox.fr>
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240715_052220_118280_7AC147EA 
-X-CRM114-Status: UNSURE (   6.39  )
+X-CRM114-CacheID: sfid-20240715_052220_109425_571DC29E 
+X-CRM114-Status: UNSURE (   7.34  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,27 +78,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-HDMI PHY block embedded in the APQ8098.
+MSM8998 GPIO pin controller reference design defines:
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
-Acked-by: Vinod Koul <vkoul@kernel.org>
+- CEC: pin 31
+- DDC: pin 32,33
+- HPD: pin 34
+
+Downstream vendor code for reference:
+
+https://git.codelinaro.org/clo/la/kernel/msm-4.4/-/blob/caf_migration/kernel.lnx.4.4.r38-rel/arch/arm/boot/dts/qcom/msm8998-pinctrl.dtsi#L2324-2400
+
+mdss_hdmi_{cec,ddc,hpd}_{active,suspend}
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
 ---
- Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/qcom/msm8998.dtsi | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
-index 83fe4b39b56f4..78607ee3e2e84 100644
---- a/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml
-@@ -14,6 +14,7 @@ properties:
-   compatible:
-     enum:
-       - qcom,hdmi-phy-8996
-+      - qcom,hdmi-phy-8998
+diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+index e5f051f5a92de..ba5e873f0f35f 100644
+--- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
+@@ -1434,6 +1434,34 @@ blsp2_spi6_default: blsp2-spi6-default-state {
+ 				drive-strength = <6>;
+ 				bias-disable;
+ 			};
++
++			hdmi_cec_default: hdmi-cec-default-state {
++				pins = "gpio31";
++				function = "hdmi_cec";
++				drive-strength = <2>;
++				bias-pull-up;
++			};
++
++			hdmi_ddc_default: hdmi-ddc-default-state {
++				pins = "gpio32", "gpio33";
++				function = "hdmi_ddc";
++				drive-strength = <2>;
++				bias-pull-up;
++			};
++
++			hdmi_hpd_default: hdmi-hpd-default-state {
++				pins = "gpio34";
++				function = "hdmi_hot";
++				drive-strength = <16>;
++				bias-pull-down;
++			};
++
++			hdmi_hpd_sleep: hdmi-hpd-sleep-state {
++				pins = "gpio34";
++				function = "hdmi_hot";
++				drive-strength = <2>;
++				bias-pull-down;
++			};
+ 		};
  
-   reg:
-     maxItems: 6
+ 		remoteproc_mss: remoteproc@4080000 {
 
 -- 
 2.34.1
