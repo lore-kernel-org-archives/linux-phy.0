@@ -4,86 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F973C3DA49
-	for <linux-phy@archiver.kernel.org>; Tue, 16 Jul 2024 16:38:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12F1AC3DA59
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Jul 2024 18:41:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hm1/uN+KqI+cjIOAj3SMzQyfXxai+gWIAhRDjE6URT8=; b=XLPte4tR38bYSt
-	ifLciHHD98FRhQUB/0dokJhYxuFrPuAv54osq61IYJQPphKnENLowKoMKPMzqNYArBY9fdXhv+RKu
-	i0AwaI53kzkK/EQupwB6G/yPPUV/Z+qYXXU9bOKAFDpivj2gAQTpCnaRWHCQ1sQ+dRJMUTa6zO+L5
-	EM16rKchD28PUjfui3SyExWR/XFkDA9yraDrWK14Ibu//IBlKCkYQQrQAkY2ZwdYYRAT+v6C4m4Pw
-	0oPwdBcbwnUh02nJYB9rrKaDASFp54irzBovPJFt91p0k/FwbG0A61vOlIdIxS08sHN3dUjpcMl4C
-	z1y+hLaB/0IH1IfHi+TQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=22sJuzREEgsbfXYypStlnmHUBSm8L0z2x9G0hKyEhlE=; b=ArfoGKgUHDeOyr
+	S4tY9YEmlwsCqwcWPWMaVWzgnw318/k9AIeyoTZsrjo0fatc7eIoALA34TB/VAWg1YmKZbCgmVtrI
+	dA0elBkoHET5wZv7Ujm5iGdfsjAfqmXqOY+uvgOp77oeqde/G6OzSi3nCThVEy6XaZRvrTNAMPb46
+	ISDpNjyGXuwb6j7yJ3TmlqbPnGllTYzz5Ze46fbNAn4NZKoVmPX1bZ0tbweaqnXNl6Z24k1oy3Qwh
+	5dXhWPhWnZxLhzS1gdf48gWwFq01YXaz4m6Gp7PQmNXNfqnaCi1ztm+6dGpZeCpDfCPm12fdXhrtV
+	TxGWPVEIfR4h+20OYPvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTlBj-0000000B3z5-1p3B;
-	Tue, 16 Jul 2024 16:38:03 +0000
-Received: from mail-yw1-x1136.google.com ([2607:f8b0:4864:20::1136])
+	id 1sTn76-0000000BJIA-2q93;
+	Tue, 16 Jul 2024 18:41:24 +0000
+Received: from mail-dm6nam11on20600.outbound.protection.outlook.com ([2a01:111:f403:2415::600] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTlBg-0000000B3yT-2L07
-	for linux-phy@lists.infradead.org;
-	Tue, 16 Jul 2024 16:38:01 +0000
-Received: by mail-yw1-x1136.google.com with SMTP id 00721157ae682-65f852c82fcso31856927b3.1
-        for <linux-phy@lists.infradead.org>; Tue, 16 Jul 2024 09:37:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1721147879; x=1721752679; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=Inq9wHo9haYW+I9Tylrr0gohQZyxyP5BU7osayMiXTI=;
-        b=M4a2r/L274A+7gis32NKHG5ab0Ns92G3K0ksU89f3sIvUFRU2iRb0Dqdjoeu69H/tA
-         yHbSPKupGuaMuDPk6caimSR/+JpdESi7unXe4aZBK4liequazegyoqZFksjxN15r/qHd
-         m3mG2d5fBPiucH5PTydOGsMZZvMGUHSxmbba/q6wE/Ay6MqByg4ggdWo3RFwha1mSeUR
-         13JHOEoOQrwGF+hIZ7YFfg5/huWgP1VtdOf1bQsrc+64uzSjyIxUH2appqlMY3q1Oj+s
-         BiPgJLHLM53qfbiP0m1JM1hlWm2JYMs2DrSErv80TDbqS1u6cpfNlv0IXR4fB6n1cnFv
-         SNBQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1721147879; x=1721752679;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Inq9wHo9haYW+I9Tylrr0gohQZyxyP5BU7osayMiXTI=;
-        b=N88A5qBWRIGVmhXjYh1B300ff+nE7FAYxfmrK/l3vt+r2va3mt4K1fyFxzz/Jy7Wz8
-         7axieLp71zeoOP/Z3OEihWatP/sCIgCtFRihIZqyJUIsxCbfN6D3HN++cdshC5ZxMmSQ
-         Pihq3CJYLseV5WZU4+awOKiCSc2qbCGAype9UOFb/2mM47CYWINm6KWYbnxxrfK8iwDC
-         tm/RYUwaJKMQ+vyQpJAgtmpiyMtnfWgHGvBrAKOS7xrsbXGbtuUYW6XAo9O/XsibpekV
-         bUYKTl6fVQa5ge2A58iBS3Pdj04KOb2G6nF/ikACG14qeBadAiVqfercxNY7UfAiQJbv
-         AHVA==
-X-Forwarded-Encrypted: i=1; AJvYcCVIFDaYaCuXQL0RMSCdY0yw+EgW1CQTGYYCtVa+Tlgt/qci5MK8UhNwurAX4Y1WjBaM/W9xUhwWzRsFuk1rP9ErNyGFqiAZxoOmAz+2Lw==
-X-Gm-Message-State: AOJu0YzL8hZR3XWelSpOdfJsGLQU/orgtkbq5zeRvtkXGxIfeie4KM2U
-	163aS2EtIS0M4HJy+dlUs1uJyIOJc+RkXibbqQGRJBLItK0/W2MJbbzkd0BnJ/fYuScoWl/0O71
-	bTz98xamBXjrbCWWM5lO5TbKh5+I9URXpXOM7fA==
-X-Google-Smtp-Source: AGHT+IE+6hxj9x884OAMB4VNRlYKsy/S+Y0o45dUnN/039E9rINPR7H3k9hGW0oD/pMtgKJEzaq/W5A/siUNC58eij4=
-X-Received: by 2002:a81:b402:0:b0:61b:1f0e:10 with SMTP id 00721157ae682-66380f1304amr31569737b3.4.1721147878623;
- Tue, 16 Jul 2024 09:37:58 -0700 (PDT)
+	id 1sTn73-0000000BJFk-34ul;
+	Tue, 16 Jul 2024 18:41:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=RUwMvRmlhWRZSZVIi5Rsp8ljkNvTb5geG7V0v2scSvJly/NTLy0R2RLJbjEwifwo/dnNYayqj/ibRivI2Sc6cCDI9+Kxmyri5Po3yJimuWJcKVruvMUaKYqk8FG5lN0I21k1FNPxEM+4V+wJi9zBd+FIPDTpTJ8THuA1yVU1LDrwspjUOjZMquAkXU1W+roFatsaj7sGGCJ6WM6lkL5+XsVSDmexdx5XP6/6EtDelrexFWiTt5pKo7br4K5qF/iFITXCmG7eCNaeO2tGiPJVz+gZL1St9wHY7BViK+C1frNxBKN6XDppq2nu3KnLdwgc1+SwgO1008V0aHLkhoPDtw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=eSUO7s9DQjjnCkkAdO8gJZI3UHnkm25mYFEn+EIARNY=;
+ b=a2wAGLlpRvJrVI5DxI0Gp6W7MJEPW+ZUtBz6+BAO0RHGRkD4Qk+BE3Xvyrc+Q/1xFs869cgKu50lBxbEGe9g68MicBccNbXGN7GBGGpXaFFoS7pkfY7vsYQosjmrh6nfM41b3hCtarUHnNFMslKZSwmzqBOoS0JxychM6UdLi4sQU677bC2G3wlViG5pYPkbmNMWNZ+bs48UwwfNcnegyrZez6EyR4AUcr5l0Eqo9FPxZPuiTa1O5BhVsI4thS0Uwo47mMD6AaMMoDDlF9OTtOt2hvLXM5BVpD3aCELMXdWD0pI6j3el18XTGpCAz1Qb0NEslV3iZ3R6Zs3H00Cm7A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=ideasonboard.com smtp.mailfrom=amd.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=amd.com; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=eSUO7s9DQjjnCkkAdO8gJZI3UHnkm25mYFEn+EIARNY=;
+ b=TACzYWmYDFuXFbra0J4GwBmKDbpzQWL+yo5dIJ6by8mhAhdg/zT8hBEDBVwIZLoZGR1QHVTQS3yv84co+X2+GOPuCpYVrvgUTXBx6kbHAJhGiRwN0tlPq8lWYJ/q1BS6QGTclQaNxTV37dU5ThIQo1gTvJ3PR2ehgQBCeaB0RXA=
+Received: from BN8PR16CA0017.namprd16.prod.outlook.com (2603:10b6:408:4c::30)
+ by CY8PR12MB8196.namprd12.prod.outlook.com (2603:10b6:930:78::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.28; Tue, 16 Jul
+ 2024 18:41:07 +0000
+Received: from BN1PEPF00006002.namprd05.prod.outlook.com
+ (2603:10b6:408:4c:cafe::97) by BN8PR16CA0017.outlook.office365.com
+ (2603:10b6:408:4c::30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.28 via Frontend
+ Transport; Tue, 16 Jul 2024 18:41:07 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=SATLEXMB03.amd.com; pr=C
+Received: from SATLEXMB03.amd.com (165.204.84.17) by
+ BN1PEPF00006002.mail.protection.outlook.com (10.167.243.234) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.7784.11 via Frontend Transport; Tue, 16 Jul 2024 18:41:07 +0000
+Received: from SATLEXMB06.amd.com (10.181.40.147) by SATLEXMB03.amd.com
+ (10.181.40.144) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Tue, 16 Jul
+ 2024 13:41:06 -0500
+Received: from SATLEXMB04.amd.com (10.181.40.145) by SATLEXMB06.amd.com
+ (10.181.40.147) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Tue, 16 Jul
+ 2024 13:41:06 -0500
+Received: from xhdradheys41.xilinx.com (10.180.168.240) by SATLEXMB04.amd.com
+ (10.181.40.145) with Microsoft SMTP Server id 15.1.2507.39 via Frontend
+ Transport; Tue, 16 Jul 2024 13:41:04 -0500
+From: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+To: <laurent.pinchart@ideasonboard.com>, <vkoul@kernel.org>,
+	<kishon@kernel.org>, <michal.simek@amd.com>
+CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <git@amd.com>
+Subject: [PATCH] phy: xilinx: phy-zynqmp: Fix SGMII linkup failure on resume
+Date: Wed, 17 Jul 2024 00:11:03 +0530
+Message-ID: <1721155263-2913528-1-git-send-email-radhey.shyam.pandey@amd.com>
+X-Mailer: git-send-email 2.1.1
 MIME-Version: 1.0
-References: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
- <20240627-hdmi-tx-v5-4-355d5c1fbc3c@freebox.fr> <d9898342-2439-4d3d-8e3d-5bf0a7a40245@linaro.org>
- <b6f6c845-6094-44ce-8ad0-ed4f6d353cec@freebox.fr>
-In-Reply-To: <b6f6c845-6094-44ce-8ad0-ed4f6d353cec@freebox.fr>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 16 Jul 2024 19:37:47 +0300
-Message-ID: <CAA8EJpqrAFKCr63JHEpZ3b3zdRfoNXoJP6SqKDOO4sqc=c6YdQ@mail.gmail.com>
-Subject: Re: [PATCH v5 4/4] arm64: dts: qcom: add HDMI nodes for msm8998
-To: Marc Gonzalez <mgonzalez@freebox.fr>
-Cc: Konrad Dybcio <konrad.dybcio@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
-	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
-	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Bjorn Andersson <andersson@kernel.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>, 
-	Pierre-Hugues Husson <phhusson@freebox.fr>, Jeffrey Hugo <quic_jhugo@quicinc.com>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN1PEPF00006002:EE_|CY8PR12MB8196:EE_
+X-MS-Office365-Filtering-Correlation-Id: f637a920-0914-4511-2c5d-08dca5c6dae4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|36860700013|82310400026|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?T27hA39sdMTDyeFiIN27a2H4xuubGdOLffMOwmPvL9URicx/HJN4Q1412vFk?=
+ =?us-ascii?Q?kAuuoVEKF4eRQHNahZ3iVyls0JkmSMI3tQ/5ZoGnqvURSasFgdHkp0v/L2OJ?=
+ =?us-ascii?Q?ErQPSGHjVHC4ShjY+28aJ9fwRNNZMRevY071B7q4u/iyM6Kl+Efm2Gz1k5u0?=
+ =?us-ascii?Q?ot7mZNjGutz1RaTiPVzLzOEVI1WMo+X+YjwrQKStn0XEhhX0FQYiBJ+iEL3d?=
+ =?us-ascii?Q?a0n3V8ZBh+QMazdCjX1JClFRGp7Ti218crYrMtpzOdPNAAvUwe7nU7c9pHtx?=
+ =?us-ascii?Q?mzL9apAd3UmR2QgfWGMz7L66VsEIYDYutoB4DPIRYGEYNmOk14u3dyL5QT4J?=
+ =?us-ascii?Q?+cADGv2Yu9KHpBFwVLCcp4n/9IpFNvPa1zoPkNfBD0Y69EKH8HX5Rum/TavH?=
+ =?us-ascii?Q?YkK9yb8qn6vedQ1dJE8tAzFk2PsilgZswc3zS7TExMsEUHMtfyX7o17SKMmR?=
+ =?us-ascii?Q?u0vgGZTG9J/aP2Vhsqslu0ERIoKfMR7A56yQZrBmQElONJyv6Gc4RbweSU4Q?=
+ =?us-ascii?Q?/mEN0OiMYrfQpoMPH5+9nm3gMWj4VGdzjZUo+lzviWzAzuCHkui7mPkOAV8l?=
+ =?us-ascii?Q?X0wkoJRB657PHH+ATM6ng0P4taYkP5ONEta0IDnrGVVUa7Y3nO9qip2BjcuW?=
+ =?us-ascii?Q?UI2jTESQ+x/r/KlzJOIGnHcTV6zmt69Ulh2aogi2t4iYlof+Ohr/7YtapJwL?=
+ =?us-ascii?Q?waFhjvwJAH5qNHWEUNqKWIzcu+XcEOX2YhF79UQ25FMaD18Qm2mV3iyU+O5p?=
+ =?us-ascii?Q?L9esHc2F9SRfmhmGSkpxrm7suDSrNgne+zspLI/qr/4Wpi9+uZRrGcyrAuiz?=
+ =?us-ascii?Q?wPl4Xz09gSD5yHwtxcoAzERb8iAN0iezqjLgZFvnqPA1SnAxqXuZTqNYj4Eh?=
+ =?us-ascii?Q?5wNwJHocrT/v01O4el+6NN47Sk2KlxMUZ7mSuz/jUpW1fGSg51h885zNLu1v?=
+ =?us-ascii?Q?5An9SYVtPaYrRLYFAdXqxCJrX+frxHS4CQRYohS5lQEMrE3V0H9jzNmKfuZw?=
+ =?us-ascii?Q?DGR8vn0nN6mAMmjGi73xH+PAE6xhgxQIZHPcQUTdJMFTvCIM45fkoqpPaFdt?=
+ =?us-ascii?Q?ILSkaIb+XYwh6tIupfi+u/9X/INLO8ty7HWBCPKdtm3UaeqSf96Xre1uHf5M?=
+ =?us-ascii?Q?rUgSpViM2qIG4TcA0f28sxCkDVLHjP0FwKr1jYyNsnbIQj5rAmhyyJ/eivxN?=
+ =?us-ascii?Q?+qO5SN4S3orvt3ZSjRPAit+nz5YP2lwY3hT/fSOMSYSgVgJ9nLzoeXgzD+SH?=
+ =?us-ascii?Q?CrBi3kKE14/PG5KKvfT6Mk9GzF44+N8kvesifkT1YXe4ZQj2mcJhgDnl7mLY?=
+ =?us-ascii?Q?oOvVyW5pQ3ghuQfSaa3C6QzSJ7AzVy+ByGUAavLBC4URS9Bz+CuPa2odnWa/?=
+ =?us-ascii?Q?f31gCRfsiM6Yx5sbVlbLWJw/nl6SFkuYw4ITSRj1jYds3ur5uB0IToJS08zc?=
+ =?us-ascii?Q?QeXILJ4GAP3cKkkF11FVNoyLEQ9qLBZb?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB03.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(36860700013)(82310400026)(376014);DIR:OUT;SFP:1101;
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2024 18:41:07.3637
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f637a920-0914-4511-2c5d-08dca5c6dae4
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB03.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN1PEPF00006002.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR12MB8196
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240716_093800_626115_E0CF4FC8 
-X-CRM114-Status: GOOD (  21.94  )
+X-CRM114-CacheID: sfid-20240716_114121_851041_6C65324E 
+X-CRM114-Status: GOOD (  16.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,112 +144,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 16 Jul 2024 at 17:34, Marc Gonzalez <mgonzalez@freebox.fr> wrote:
->
-> On 16/07/2024 15:11, Konrad Dybcio wrote:
->
-> > On 27.06.2024 5:54 PM, Marc Gonzalez wrote:
-> >
-> >>  arch/arm64/boot/dts/qcom/msm8998.dtsi | 100 +++++++++++++++++++++++++++++++++-
-> >>  1 file changed, 99 insertions(+), 1 deletion(-)
-> >>
-> >> diff --git a/arch/arm64/boot/dts/qcom/msm8998.dtsi b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-> >> index ba5e873f0f35f..417c12534823f 100644
-> >> --- a/arch/arm64/boot/dts/qcom/msm8998.dtsi
-> >> +++ b/arch/arm64/boot/dts/qcom/msm8998.dtsi
-> >> @@ -2785,7 +2785,7 @@ mmcc: clock-controller@c8c0000 {
-> >>                               <&mdss_dsi0_phy 0>,
-> >>                               <&mdss_dsi1_phy 1>,
-> >>                               <&mdss_dsi1_phy 0>,
-> >> -                             <0>,
-> >> +                             <&hdmi_phy 0>,
-> >>                               <0>,
-> >>                               <0>,
-> >>                               <&gcc GCC_MMSS_GPLL0_DIV_CLK>;
-> >> @@ -2890,6 +2890,14 @@ dpu_intf2_out: endpoint {
-> >>                                                      remote-endpoint = <&mdss_dsi1_in>;
-> >>                                              };
-> >>                                      };
-> >> +
-> >> +                                    port@2 {
-> >> +                                            reg = <2>;
-> >> +
-> >> +                                            dpu_intf3_out: endpoint {
-> >> +                                                    remote-endpoint = <&hdmi_in>;
-> >> +                                            };
-> >> +                                    };
-> >>                              };
-> >>                      };
-> >>
-> >> @@ -3045,6 +3053,96 @@ mdss_dsi1_phy: phy@c996400 {
-> >>
-> >>                              status = "disabled";
-> >>                      };
-> >> +
-> >> +                    hdmi: hdmi-tx@c9a0000 {
-> >
-> > Please prefix the labels (hdmi: and hdmi_phy:) with mdss_
-> >
-> > Otherwise, this looks good
-> >
-> > Reviewed-by: Konrad Dybcio <konrad.dybcio@linaro.org>
-> >
-> >
-> > One thing I noticed (testing on the 8998 MTP), enabling MDSS (not necessarily
-> > HDMI, mdss and mdp is enough) results in SMMU lockups about 30% of the time..
-> >
-> > [    4.911422] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
-> > [    4.913412] platform c901000.display-controller: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/hdmi-tx@c9a0000
-> > [    4.923353] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
-> > [    4.927893] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
-> > [    4.930647] platform c9a0000.hdmi-tx: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/display-controller@c901000
-> > [    4.941928] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
-> > [    4.944438] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
-> > [    4.952338] msm_hdmi_phy c9a0600.hdmi-phy: supply vddio not found, using dummy regulator
-> > [    4.956013] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
-> > [    4.961055] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
-> > [    4.967917] msm_hdmi_phy c9a0600.hdmi-phy: supply vcca not found, using dummy regulator
-> > [    4.974565] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
-> > [    4.977628] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
-> > [    4.984122] Bluetooth: hci0: setting up wcn399x
-> > [    4.989670] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
->
-> Interesting. I don't think I've noticed any lock-ups
-> across multiple reboots.
->
-> FWIW, I get similar warnings about "Fixed dependency cycle(s)" on my custom DT.
->
-> [    0.055349] platform 1da4000.ufshc: Fixed dependency cycle(s) with /soc@0/phy@1da7000
-> [    0.055525] platform 1da4000.ufshc: Fixed dependency cycle(s) with /soc@0/phy@1da7000
-> [    0.055584] platform 1da7000.phy: Fixed dependency cycle(s) with /soc@0/ufshc@1da4000
-> [    0.060279] platform c8c0000.clock-controller: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/hdmi-phy@c9a0600
-> [    0.060494] platform c900000.display-subsystem: Fixed dependency cycle(s) with /soc@0/clock-controller@c8c0000
-> [    0.062432] platform hdmi-out: Fixed dependency cycle(s) with /soc@0/i2c@c1b5000/tdp158@5e
-> ...
-> [   18.534346] adreno 5000000.gpu: Adding to iommu group 2
-> [   18.540215] msm-mdss c900000.display-subsystem: Adding to iommu group 3
-> [   18.544695] platform c901000.display-controller: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/hdmi-tx@c9a0000
-> [   18.551239] platform c901000.display-controller: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/hdmi-tx@c9a0000
-> [   18.562685] platform c9a0000.hdmi-tx: Fixed dependency cycle(s) with /soc@0/i2c@c1b5000/tdp158@5e
-> [   18.574122] platform c9a0000.hdmi-tx: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/display-controller@c901000
-> [   18.617640] platform c9a0000.hdmi-tx: Fixed dependency cycle(s) with /soc@0/i2c@c1b5000/tdp158@5e
-> [   18.618885] i2c 2-005e: Fixed dependency cycle(s) with /soc@0/display-subsystem@c900000/hdmi-tx@c9a0000
-> [   18.627768] tdp158-bridge 2-005e: supply vcc not found, using dummy regulator
-> [   18.636853] tdp158-bridge 2-005e: supply vdd not found, using dummy regulator
->
-> It looks like some of these warnings were pre-existing,
-> but some might have been added by my patches?
->
-> Do they need looking into?
-> I'm slightly confused.
+From: Piyush Mehta <piyush.mehta@amd.com>
 
-No, that's fine. It is the SMMU issue that Konrad has been asking you
-to take a look at.
+On a few Kria KR260 Robotics Starter Kit the PS-GEM SGMII linkup is not
+happening after the resume. This is because serdes registers are reset
+when FPD is off (in suspend state) and needs to be reprogrammed in the
+resume path with the same default initialization as done in the first
+stage bootloader psu_init routine.
 
+To address the failure introduce a set of serdes registers to be saved in
+the suspend path and then restore it on resume.
 
+Signed-off-by: Piyush Mehta <piyush.mehta@amd.com>
+Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+---
+ drivers/phy/xilinx/phy-zynqmp.c | 56 +++++++++++++++++++++++++++++++++
+ 1 file changed, 56 insertions(+)
+
+diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
+index dc8319bda43d..bdcc8d7c3dfa 100644
+--- a/drivers/phy/xilinx/phy-zynqmp.c
++++ b/drivers/phy/xilinx/phy-zynqmp.c
+@@ -165,6 +165,24 @@
+ /* Timeout values */
+ #define TIMEOUT_US			1000
+ 
++/* Lane 0/1/2/3 offset */
++#define DIG_8(n)		((0x4000 * (n)) + 0x1074)
++#define ILL13(n)		((0x4000 * (n)) + 0x1994)
++#define DIG_10(n)		((0x4000 * (n)) + 0x107C)
++#define RST_DLY(n)		((0x4000 * (n)) + 0x19A4)
++#define BYP_15(n)		((0x4000 * (n)) + 0x1038)
++#define BYP_12(n)		((0x4000 * (n)) + 0x102C)
++#define MISC3(n)		((0x4000 * (n)) + 0x19AC)
++#define EQ11(n)			((0x4000 * (n)) + 0x1978)
++
++static u32 save_reg_address[] = {
++	/* Lane 0/1/2/3 Register */
++	DIG_8(0), ILL13(0), DIG_10(0), RST_DLY(0), BYP_15(0), BYP_12(0), MISC3(0), EQ11(0),
++	DIG_8(1), ILL13(1), DIG_10(1), RST_DLY(1), BYP_15(1), BYP_12(1), MISC3(1), EQ11(1),
++	DIG_8(2), ILL13(2), DIG_10(2), RST_DLY(2), BYP_15(2), BYP_12(2), MISC3(2), EQ11(2),
++	DIG_8(3), ILL13(3), DIG_10(3), RST_DLY(3), BYP_15(3), BYP_12(3), MISC3(3), EQ11(3),
++};
++
+ struct xpsgtr_dev;
+ 
+ /**
+@@ -213,6 +231,7 @@ struct xpsgtr_phy {
+  * @tx_term_fix: fix for GT issue
+  * @saved_icm_cfg0: stored value of ICM CFG0 register
+  * @saved_icm_cfg1: stored value of ICM CFG1 register
++ * @saved_regs: registers to be saved/restored during suspend/resume
+  */
+ struct xpsgtr_dev {
+ 	struct device *dev;
+@@ -225,6 +244,7 @@ struct xpsgtr_dev {
+ 	bool tx_term_fix;
+ 	unsigned int saved_icm_cfg0;
+ 	unsigned int saved_icm_cfg1;
++	u32 *saved_regs;
+ };
+ 
+ /*
+@@ -298,6 +318,32 @@ static inline void xpsgtr_clr_set_phy(struct xpsgtr_phy *gtr_phy,
+ 	writel((readl(addr) & ~clr) | set, addr);
+ }
+ 
++/**
++ * xpsgtr_save_lane_regs - Saves registers on suspend
++ * @gtr_dev: pointer to phy controller context structure
++ */
++static void xpsgtr_save_lane_regs(struct xpsgtr_dev *gtr_dev)
++{
++	int i;
++
++	for (i = 0; i < ARRAY_SIZE(save_reg_address); i++)
++		gtr_dev->saved_regs[i] = xpsgtr_read(gtr_dev,
++						     save_reg_address[i]);
++}
++
++/**
++ * xpsgtr_restore_lane_regs - Restores registers on resume
++ * @gtr_dev: pointer to phy controller context structure
++ */
++static void xpsgtr_restore_lane_regs(struct xpsgtr_dev *gtr_dev)
++{
++	int i;
++
++	for (i = 0; i < ARRAY_SIZE(save_reg_address); i++)
++		xpsgtr_write(gtr_dev, save_reg_address[i],
++			     gtr_dev->saved_regs[i]);
++}
++
+ /*
+  * Hardware Configuration
+  */
+@@ -837,6 +883,8 @@ static int xpsgtr_runtime_suspend(struct device *dev)
+ 	gtr_dev->saved_icm_cfg0 = xpsgtr_read(gtr_dev, ICM_CFG0);
+ 	gtr_dev->saved_icm_cfg1 = xpsgtr_read(gtr_dev, ICM_CFG1);
+ 
++	xpsgtr_save_lane_regs(gtr_dev);
++
+ 	return 0;
+ }
+ 
+@@ -847,6 +895,8 @@ static int xpsgtr_runtime_resume(struct device *dev)
+ 	unsigned int i;
+ 	bool skip_phy_init;
+ 
++	xpsgtr_restore_lane_regs(gtr_dev);
++
+ 	icm_cfg0 = xpsgtr_read(gtr_dev, ICM_CFG0);
+ 	icm_cfg1 = xpsgtr_read(gtr_dev, ICM_CFG1);
+ 
+@@ -992,6 +1042,12 @@ static int xpsgtr_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	gtr_dev->saved_regs = devm_kmalloc(gtr_dev->dev,
++					   sizeof(save_reg_address),
++					   GFP_KERNEL);
++	if (!gtr_dev->saved_regs)
++		return -ENOMEM;
++
+ 	return 0;
+ }
+ 
+
+base-commit: d67978318827d06f1c0fa4c31343a279e9df6fde
 -- 
-With best wishes
-Dmitry
+2.34.1
+
 
 -- 
 linux-phy mailing list
