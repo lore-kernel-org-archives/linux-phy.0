@@ -4,63 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4C77C3DA4B
-	for <linux-phy@archiver.kernel.org>; Mon, 15 Jul 2024 18:12:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A6E5C3DA49
+	for <linux-phy@archiver.kernel.org>; Tue, 16 Jul 2024 04:04:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8uyP34W8C8fpIZ9S4fjuGLh6PP0LbecEkWH1GErTJGk=; b=SM4+jwnDUIgbo9
-	ICOSQhsqOm/+2qCIfW+Nfy6zZdFGbx79MK9v5IapSKeX04v9k/TzVW8xSRH2cHVXPAdNMe1Vawzf8
-	NWlRB4nyxA/Fmn3BwWLvva9jrNxmoOjNGVAd9KuBEnSYZFjAxDvKQy+OaqY9B1DveKMXcECcliA9G
-	dHiuV2/9SqPu+MT89ZWcNWkoCZBXqJRbNQ5MuX7cu0PMR5Gq9HNOQoeIYuEwVOHPHMcmkWsyKrU1/
-	WY36h5wu3iAr8wRDx8iwyS9fS4IW4Yx1sJafcrYXzHOB8gjztta+NfjLOK65Sn7Sv2lCPmhzMQkZt
-	7Z3mcjTJsX44X6SgNU3A==;
+	List-Owner; bh=RqCLwEiA1t1lj4xIDSlZBJ1dElPttpkQ/4lFNc+bWFI=; b=m7cqIVCn4Yru2u
+	jo/5MYJWujCeVVwEO+vQH7Ffsz1dDWHkzkClTdUELU4VmlX4tcpZ6Q7ULyAFeDtkFGk6LoaDx4zz3
+	qT0mDzQwDbWomw1oPAnjICAVnQXOhXdhC7WxrAUldV4kFbnaK3UNbJmu7tSx7njxLYFkXzMnjZ48F
+	+gVL0imbtEnE7uG7LzIDwiqVF6+5U+i3f38O4HVIXG+nX27QDiN8TViBIUQwg0NFkXwvsdpsJpge7
+	C/thgXoxLWQlY6hCF5rNWb9Y4nfiJ9inM0m02oH0P9b7cVig5qlsK5y4Ay6LOcqGrU9Ii40GdBoxC
+	puARGbVc7H/YHOAi+hUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTQBi-00000007yD6-1bS4;
-	Mon, 15 Jul 2024 18:12:38 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1sTZQX-00000009FKt-46bf;
+	Tue, 16 Jul 2024 04:04:33 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sTQBg-00000007yBr-1hzx;
-	Mon, 15 Jul 2024 18:12:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=yVTBamQZ6bxGogmwiFCMjbqgu4rJ80p0T1Hs3Yq+QIM=; b=Yn3ea2oqbbpM1+eDyq2D+9Nm6v
-	kpUM7RouAPIihF4RauOX1360j8o5L0QfsOhS9+rS0C5PjbF5MFw1iVB5R0m1N2DiUpbdGUd+tk2XW
-	aYYcDu/vL9klXGDXv7L8gn02y2Rqy88oItZF76TmeywuycKpvd8rC2LBdhXo3AqBZA0U=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1sTQBc-002aX2-Ol; Mon, 15 Jul 2024 20:12:32 +0200
-Date: Mon, 15 Jul 2024 20:12:32 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Josua Mayer <josua@solid-run.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Gregory Clement <gregory.clement@bootlin.com>,
-	Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH RFC 2/2] arm: dts: marvell: armada-38x: add description
- for usb phys
-Message-ID: <e35e0edf-f99e-4af7-8abc-c8f96b73ddd5@lunn.ch>
-References: <20240715-a38x-utmi-phy-v1-0-d57250f53cf2@solid-run.com>
- <20240715-a38x-utmi-phy-v1-2-d57250f53cf2@solid-run.com>
+	id 1sTZQD-00000009FI1-1fO3;
+	Tue, 16 Jul 2024 04:04:15 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+	by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 46G444dJ119126;
+	Mon, 15 Jul 2024 23:04:04 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1721102644;
+	bh=1d79WYKf1M0avjCQpPvE4gEYXICeLVGDCbwUPcm6h5k=;
+	h=Date:From:To:CC:Subject:References:In-Reply-To;
+	b=A2f2+Dsol/8YlH7fmjIgFo3nQjpeTUwZqNNXCuWoVlVHtvZUmUOmku8J5t8DRqUSS
+	 hD6pPMzPaBOKV1KaOYZUYsqKyX9FJ5OSkuC2UrcUM9g6ckie9C/AmL3R8Dl0e9DZB4
+	 QTsVSidg62nmTo3y1MCc0DJg39lhstmDZ0R6DgRo=
+Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 46G444TV111778
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 15 Jul 2024 23:04:04 -0500
+Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 15
+ Jul 2024 23:04:03 -0500
+Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DLEE110.ent.ti.com
+ (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Mon, 15 Jul 2024 23:04:03 -0500
+Received: from localhost (uda0492258.dhcp.ti.com [10.24.72.81])
+	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 46G442cK086362;
+	Mon, 15 Jul 2024 23:04:03 -0500
+Date: Tue, 16 Jul 2024 09:34:02 +0530
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: Roger Quadros <rogerq@kernel.org>
+CC: Siddharth Vadapalli <s-vadapalli@ti.com>,
+        Swapnil Kashinath Jakhade
+	<sjakhade@cadence.com>,
+        "vkoul@kernel.org" <vkoul@kernel.org>,
+        "kishon@kernel.org" <kishon@kernel.org>,
+        "p.zabel@pengutronix.de"
+	<p.zabel@pengutronix.de>,
+        "thomas.richard@bootlin.com"
+	<thomas.richard@bootlin.com>,
+        "theo.lebrun@bootlin.com"
+	<theo.lebrun@bootlin.com>,
+        "robh@kernel.org" <robh@kernel.org>,
+        "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+        "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+        "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>,
+        "srk@ti.com" <srk@ti.com>, Milind
+ Parab <mparab@cadence.com>
+Subject: Re: [PATCH v2] phy: cadence-torrent: add support for three or more
+ links using 2 protocols
+Message-ID: <cf060fa7-f4e5-4740-8102-f9403cbfcafd@ti.com>
+References: <20240710115624.3232925-1-s-vadapalli@ti.com>
+ <LV3PR07MB1036463AB8AB5D38D003175E6C5A52@LV3PR07MB10364.namprd07.prod.outlook.com>
+ <7504ea5a-335b-4152-a0f4-5be68f048903@ti.com>
+ <0dc54057-d7a0-4123-badc-8f7f07f2d930@kernel.org>
+ <c60a1e83-c2ad-4a04-9deb-073c69a4a06d@ti.com>
+ <d4538952-add4-4210-ae0a-574cd825b18d@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240715-a38x-utmi-phy-v1-2-d57250f53cf2@solid-run.com>
+In-Reply-To: <d4538952-add4-4210-ae0a-574cd825b18d@kernel.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240715_111236_465816_BBF26A1B 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20240715_210413_635914_93B1BFB2 
+X-CRM114-Status: GOOD (  17.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,33 +104,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 15, 2024 at 07:47:30PM +0200, Josua Mayer wrote:
-> Armada 38x has 3x USB-2.0 utmi phys. They are almost identical to the 2x
-> utmi phys on armada 8k.
+On Mon, Jul 15, 2024 at 07:08:30PM +0300, Roger Quadros wrote:
+> Hi Siddhath,
 > 
-> Add descriptions for all 3 phy ports.
+> On 12/07/2024 13:38, Siddharth Vadapalli wrote:
+> > Roger, Swapnil,
+> > 
+
+[...]
+
+> > So assuming the above, we can enforce the constraint that there should
+> > be only 2 Protocols when 3 or more Links are present in the device-tree.
+> > This also handles the cases of
+> > PCIe Multi-Link + USB, PCIe Multi-Link + Q/SGMII
+> > which Swapnil has pointed to at [1], since PCIe Multi-Link is now a new
+> > protocol in itself (PHY_TYPE_PCIE_ML) and shall be represented in that
+> > manner in the device-tree when it is expected to be combined with a second
+> > protocol.
+> > 
+> > After grouping the links by protocol, we can check for the entry in
+> > "link_cmn_vals_entries" and proceed to configure it identical to the
+> > 2 Link case.
+> > 
+> > [1] https://github.com/t-c-collab/linux/commits/ti-linux-6.1.y-torrent-multi-pcie-sgmii-v1
 > 
-> Also add a syscon node covering just the usb configuration registers.
-> Armada 8K have a syscon node covering configuration registers for
-> various functions including pinmux, woith dirvers using syscon framework
+> This proposal looks good to me. Thanks!
 
-woith -> with
+Thank you for the confirmation. I will implement the above in the v3
+patch.
 
-> for register access.
-> 
-> Armada 388 has various drivers directly claiming some of those
-> configuration registers. Hence a similar syscon node would compete for
-> resources with these drivers.
-
-Do these drivers make exclusive use of these registers? Or are
-multiple drivers using the same registers and you need something to
-mediate in order to have atomic access?
-
-In the old days, a register space could be mapped into multiple
-drivers, so long as all the drivers agreed to it. There are probably
-orion5x, kirkwood era mvebu drivers doing this.
- 
-	Andrew
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
