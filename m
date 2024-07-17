@@ -4,109 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FA6BC3DA4B
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Jul 2024 12:04:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D407C3DA62
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Jul 2024 19:39:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TAxwKeGlOsso31tZDyYb+KwtH8BNV60JyfoD9Ol2tcs=; b=t6+t5VMV53kZur
-	aD+M03fPxxNb5aQvtWaufNJ8wpCufiduuJR/2h/GFIsZZ6jKRNudhtcPzcwNAN2Tdau6tm9Tnmcqe
-	XPkTJhyTIiPDQyr57C2rgsin/X4ssa6R005uFwCGafk2ltox6Zag4h0Ojd5GNI23kkNNf5eIz6WF9
-	neVSg9KGGrLCCwCwn3JXIwAFCoiA18mDlU20MlYOk9H84bjpWjnoLwcA0ojmoDirLKVztPYS0jvjN
-	83o9iDF/sMvMsnwgOjEqqVxAovcgwIm6cBeImrvZfInS7fPUP70dvZ7gOqJo3KLCmVK41NAFASKT+
-	xNkd7G/GReGd1hmvRngg==;
+	List-Owner; bh=gYo4Leii8mQYILQyUF8WXiRgfF+qZj2jmIAJLOFRwxk=; b=Qn31eAN86irU4V
+	3z4OWJtGoP5XE+Jh3VcJDbxcdRn4OEZ/JEiO5FDba1vFvdBLl/Mo8uHEFY4m9aPC4GdTpWVXs5XVg
+	1ABgcdiNtYWgMUx8N/dNAb8nnf86ReBDFEa+ZMPKAJ5DPH/T/GKgW7HOUMISWtBjDqInnY82reBhC
+	0S5TKXmooegCjZbcZZTQ0NHJfyA2HeujW39zY+Z5OCTHdakiCJr7uJ0peJlNzeOdvJTctia4Rn0/5
+	j9tjNKyTsj/+HIWRsrEs4PaQH6MouXNOnsHBbsCSIbIvVBAHnqWZhMf9YysPisOEJnZgxtm61cuBt
+	+6pl3R5kz5Ce7cpghgbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sU3Oz-0000000Dhco-0laC;
-	Wed, 17 Jul 2024 12:04:57 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sUAUO-0000000EjIR-3WZR;
+	Wed, 17 Jul 2024 19:39:00 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sU3Oc-0000000DhWk-39Zf;
-	Wed, 17 Jul 2024 12:04:36 +0000
+	id 1sUAU3-0000000EjEj-3mzU;
+	Wed, 17 Jul 2024 19:38:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 88255CE1764;
-	Wed, 17 Jul 2024 12:04:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 886B2C32782;
-	Wed, 17 Jul 2024 12:04:26 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7B692614D5;
+	Wed, 17 Jul 2024 19:38:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A870C2BD10;
+	Wed, 17 Jul 2024 19:38:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1721217871;
-	bh=vk+H0hoJn4+tPP4KZNA7bIkiuq7tilGJ770kNIjL/4w=;
+	s=k20201202; t=1721245118;
+	bh=81NOFCtH51EtoVS2k7EUuY27b0cO9Y8jY8unhH+llsk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dp3yB7X4t6SAkC7Xh9CwPf04BTt0oPlN4946g4aM9KN0sUx2W1EtrEVRQv/58vWES
-	 imCKU0w3w7QWMah9x+n0g03QJdh9F38kkmsRZ2RcCWSaxTet+wQZ8FAKiO71ofOkQB
-	 piGxApnMgSfnazAFpVPaksjigUeFKymvN63Etb+4GCwZkQ3ra1VlPBV3vYdz5fcCX1
-	 tq3FTOQ/buVO1mpmoM8lUx1n3bX5HRUkaKChRpq682NiAn3NaxdF5TMwRDHCvxyaLt
-	 J5SZElSCT2moWUbEy9z/3U8IWW/cOWaEqPT8sVCOALYUKwHtC4cJJO5rR4bPLnXNy9
-	 gvEwrW2Fbhtag==
-Message-ID: <44ce546d-c043-44ad-9e2c-eaf052e5531b@kernel.org>
-Date: Wed, 17 Jul 2024 14:04:24 +0200
+	b=qD9u/xkN7TBm3bqzSQLagzRROSxr7PSo7K1jf5+NrT84mQjCZlIAu5X5OcfocNKMM
+	 y1KhPNEf2XkJZ5+aBe80LoonznWGNRmp8m60vNIdNW8RPnXrivwTpNkq7KklCr3fsv
+	 ohOwIdBFupNP2iGX4b30DPqr7NwH5KQbX85tF7zHaR4X3+tY811Hy+ZP8ZNYkmG7mG
+	 TdlLd4pU0B9HmSO5Zk3Wa28+Wg7Nhqh9oyeUv5ya4BB43H6drM2z8WXCHULC6djo6Q
+	 jrMBQ58Kf1YhcMhdZs8kk1SRbNB7gttCgxL/nDiMUxvHtGslhIxM63wR/GSwftryMW
+	 KChCkbdUFSNBQ==
+Message-ID: <1c393235-3bf3-4c89-ab54-42de5a33c8c2@kernel.org>
+Date: Wed, 17 Jul 2024 22:38:31 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC v2 2/4] arm: dts: marvell: armada-38x: add description
- for usb phys
-To: Josua Mayer <josua@solid-run.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: Yazan Shhady <yazan.shhady@solid-run.com>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20240716-a38x-utmi-phy-v2-0-dae3a9c6ca3e@solid-run.com>
- <20240716-a38x-utmi-phy-v2-2-dae3a9c6ca3e@solid-run.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v3] phy: cadence-torrent: add support for three or more
+ links using 2 protocols
+To: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org,
+ kishon@kernel.org, p.zabel@pengutronix.de, sjakhade@cadence.com,
+ thomas.richard@bootlin.com, theo.lebrun@bootlin.com, robh@kernel.org
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, srk@ti.com
+References: <20240716102442.1605280-1-s-vadapalli@ti.com>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240716-a38x-utmi-phy-v2-2-dae3a9c6ca3e@solid-run.com>
+From: Roger Quadros <rogerq@kernel.org>
+In-Reply-To: <20240716102442.1605280-1-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240717_050435_185899_ED2A4435 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20240717_123840_019669_73748C1E 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,35 +76,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/07/2024 22:52, Josua Mayer wrote:
-> Armada 38x has 3x USB-2.0 utmi phys. They are almost identical to the 2x
-> utmi phys on armada 8k.
+
+
+On 16/07/2024 13:24, Siddharth Vadapalli wrote:
+> The Torrent SERDES can support at most two different protocols (PHY types).
+> This only mandates that the device-tree sub-nodes used to represent the
+> configuration should describe links with at-most two different protocols.
 > 
-> Add descriptions for all 3 phy ports.
+> The existing implementation however imposes an artificial constraint that
+> allows only two links (device-tree sub-nodes). As long as at-most two
+> protocols are chosen, using more than two links to describe them in an
+> alternating configuration is still a valid configuration of the Torrent
+> SERDES.
 > 
-> Signed-off-by: Josua Mayer <josua@solid-run.com>
-> ---
->  arch/arm/boot/dts/marvell/armada-38x.dtsi | 29 +++++++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
+> A 3-Link 2-Protocol configuration of the 4-Lane SERDES can be:
+> Lane 0 => Protocol 1 => Link 1
+> Lane 1 => Protocol 1 => Link 1
+> Lane 2 => Protocol 2 => Link 2
+> Lane 3 => Protocol 1 => Link 3
 > 
-> diff --git a/arch/arm/boot/dts/marvell/armada-38x.dtsi b/arch/arm/boot/dts/marvell/armada-38x.dtsi
-> index 446861b6b17b..701a1c0c19ad 100644
-> --- a/arch/arm/boot/dts/marvell/armada-38x.dtsi
-> +++ b/arch/arm/boot/dts/marvell/armada-38x.dtsi
-> @@ -392,6 +392,11 @@ comphy5: phy@5 {
->  				};
->  			};
->  
-> +			syscon0: system-controller@18400 {
-> +				compatible = "syscon", "simple-mfd";
+> A 4-Link 2-Protocol configuration of the 4-Lane SERDES can be:
+> Lane 0 => Protocol 1 => Link 1
+> Lane 1 => Protocol 2 => Link 2
+> Lane 2 => Protocol 1 => Link 3
+> Lane 3 => Protocol 2 => Link 4
+> 
+> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
 
-That's not a valid pair. They cannot be alone.
-
-
-
-Best regards,
-Krzysztof
-
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
 
 -- 
 linux-phy mailing list
