@@ -4,64 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6669C3DA49
-	for <linux-phy@archiver.kernel.org>; Thu, 18 Jul 2024 21:03:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CF04C41513
+	for <linux-phy@archiver.kernel.org>; Thu, 18 Jul 2024 21:03:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BdAN9CNYZufGZUqF6qInJZ2bySM5LYzQbZRJVBJ4ap0=; b=huobKFUxdtWNuW
-	hWRNlN4awP5M+AcfuXR+XEe0vk14zzKKmH3Xe6MW7u6QyTW4zTNpZPpN3JwpWbDLfU5bc1vdQRK+N
-	bJ9gOfsUsWXzGu3C4TIpHC8F2ZYBECo5DJN2qMDdRlbXN7cMbcT/T2uQyiU/E10RXARuYUjQGaEkA
-	B1dH1d3FHZdbd0LuWzY+KMmy9SrEPrj1DL6Id46EQu+eeMZo/pURCuuD4Ios09SSlvcBehpLNl620
-	F+xFoIMgxuindcpDb26ecLQNkcwAOEerkZifFHnazPap0JMC0uWIYvhxTs6s9Ws5jnGiOstsAuMin
-	PY8IY0fH4Mw+IuQBS9WA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4YMWqORaw2gIlSUR2ZwekJaK9wlGRenA1PCkm8QUzTM=; b=yQsxvPg1P6eSJ1
+	OKTDTcb1ncNjFgsQlijmSCVRc7dKp05xKUCqOELUCQZo943ZvAYO2cnCHWnBmeXQJwy8ixaPXd56p
+	T3saaXQ6LB22hciABlPJnXkbQje/kecRJp3to+/XoqLDiDeWyDp6G5xXCzCvrZbQmQoInc7S5jf1d
+	8AA5TWSiXEOdZEFjizikZ8igKRbKbDybIgSWdUxYQShN5+okUOoOM6N7NjjwBXSC2t3GHj9XL9spa
+	hvmwspgX+ru9q0UYcN8blPo5qnt+H7x/C+vuVJ8AIloKqv9xg7oFf4oPxPTX5N0ELNQ0PMD7+gWq6
+	294Jg1mvwsI5ri3Bbb+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUYHj-00000000dJ0-0sJX;
+	id 1sUYHj-00000000dJ8-2DdG;
 	Thu, 18 Jul 2024 21:03:31 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUYHg-00000000dHh-0r1V
+	id 1sUYHg-00000000dHm-1EPB
 	for linux-phy@lists.infradead.org;
 	Thu, 18 Jul 2024 21:03:29 +0000
-Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-2eeb2d60efbso19542101fa.1
-        for <linux-phy@lists.infradead.org>; Thu, 18 Jul 2024 14:03:26 -0700 (PDT)
+Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2eea8ea8bb0so24406161fa.1
+        for <linux-phy@lists.infradead.org>; Thu, 18 Jul 2024 14:03:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1721336605; x=1721941405; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=7dxDbdzvY7eNqZGbwyiIl9uNuZ+ao9LaobEESaQILLo=;
-        b=T2lpDlvjEzkPZFxNOpOlL6KKwyp3VoW3M9mAxnHunCoCdxRl1oANEuSHje+i27D6rJ
-         iop31Uc2pZkFaAeUf3JxvqrguFqkJG8bh/0jEdeQLGAH05UE3bCr273ilj0ClHYPcgCr
-         xASkiLAw6+RBjBvWHa6moOjz1FVWrsC0GkLVUs5UXbHXVN8dzD2c3nsXrVnEsp7tYnN8
-         pEechA2sh6brPQt+B4/+jrFlUTmjQ9qrcrgrFdAOIt15M0XNTfsCClzwfJHOYCIIH1fb
-         STRAUF6pM7beYBFOIEbDlQLLBhveV6gLeqWr6H9+Qq7ss4JV5g/rfOh6xKTRwtmUIYV4
-         A7yQ==
+        d=gmail.com; s=20230601; t=1721336606; x=1721941406; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=4Ng8/MluP5o8TGqH9RO1LUWdUmWhLfHB51ju7l5WzX4=;
+        b=Ifad/kkGQIlLWnZf+dq+FNFn4yg+R65Z59b469Tf5hgX7YsIG7vLyRjUlvz4VeWPNA
+         CiBytqORJ4GPx51hhYpn8DvJ3PDUYeT2WMjgKTGWuRqNAAVH6EDgsQcqMzuiM1x86NsX
+         tysPbJL8DrJFn46p54Jj+bnxmhTbjRUNPkNFXLCj2MlHZH85FuRH3zpFvahcXJOHLYfC
+         uLGSJIv8eKM6iusXDfAgt0FPidhUchuo03+jrKweiW9ctZhWbrzzV2Hj9saZvz4JQApq
+         d9oVHLT4Z3W8azi0NbEBUq/MY6gCcuoZ2oBXLkkU3vPzY6OPZixlweUvQiJIVYNHucMU
+         SXsA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1721336605; x=1721941405;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=7dxDbdzvY7eNqZGbwyiIl9uNuZ+ao9LaobEESaQILLo=;
-        b=F3NPRdpMl199Dl5cbZUc0FyhmDMBzKlTzz6z7JCVUYa/vBEomI4x3T7xRO0zoUtG1L
-         i3E2vfLM8brjIVMKK3mCVVahe991d7PQftzK+qy/1s2prezZ+jn762jkutKYNZq7qqj/
-         i9/i5akRQbDtFyJCNAFRMPfQ061WKqUwlNrz4+Wo4jhLqyeInaKdD1Un/cBI3pvg9IuX
-         /O1yqFVyNP8IzsebhloQ58o1df2PmUzh2KG+/sUw6bdTq08P7JZ3Y5iBP6OBz8LGOjnZ
-         2TWU70za1gBaSFJIMj16f8/iGwJWwYcDkqHDbYD2v+vZwYFOPvPYmyyhYk+Hv08ENAzj
-         HibA==
-X-Forwarded-Encrypted: i=1; AJvYcCUfzDX/K752CGdRdwB563MZb50YsHETvcPKGKn2TfCuE1gos3Ic+0oG3lolHhI+/+0+PBCMGi3BUdWmH7zR//Uid0ZX2muGUEFQHIBzOA==
-X-Gm-Message-State: AOJu0YyIGzPVFRnsc7IW4Rud59L6ees1dVnCtcC+dmdz9scMah/TeLY+
-	XYJ80cAsP32dM44SAvkXtNI8JAVNGCSWXPo3G6Y+GwtvS8wiQAul
-X-Google-Smtp-Source: AGHT+IHj5qJtbIwhbNCUD4aF+OroIK+74WZEoQ2M0b6ONmmL3ysXNSjWfyZ9CFvwHf+jdtzfIx/7zg==
-X-Received: by 2002:a2e:7314:0:b0:2ee:871c:bcb3 with SMTP id 38308e7fff4ca-2ef05c78cc6mr22757171fa.13.1721336604732;
-        Thu, 18 Jul 2024 14:03:24 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1721336606; x=1721941406;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=4Ng8/MluP5o8TGqH9RO1LUWdUmWhLfHB51ju7l5WzX4=;
+        b=PArh/HR9wa7RwdRMOG+326SulIqMDkL1vV83mbaPzNXg8dR/AgSDMpd/dXIyhqwQ3u
+         2In5XKDuKIgcRSgsVBqM/XUQYNZIQ/aJghAbSFgL92lvgNoCtfsU5e/Zlrz2/us7mlQ9
+         j5ehnDXwcuM683YSNYXxhrXt9vvUUJlGkrdoWkFpBrU3blsEBiGAh3Aw6jTvlxqmMSj7
+         V1rX3i+JH+KrNrvtNfd19Fx+OHZ5E/CifjHICFr/93ao0A2lwHHfKQZMniRZmQOtLhet
+         VhbFdShQm3sEWhr1MVhDmu5CNAyRYLwoW4irgJocBnVH30EVOS3Wwr0jOpYVDhYd5L12
+         30tw==
+X-Forwarded-Encrypted: i=1; AJvYcCWsBk537wa367IVBStLlPVba2yoL3+swL59CZk6P9P0I4Tv718Nv24rrwjNN4WFkuwAyHfCQCGMKqPAk1kGuEwB2GdEuBQO+bg+Kcw7XQ==
+X-Gm-Message-State: AOJu0YwMbjHW9VBHkjZIhP4AdifHRRCSOCq/8JcU3zzSUrwSXCOa8bQT
+	//CDbDNrAz65l5keqqpxUxcmdW5P+gU7qqLjFCUvnqZNdFwXsDey
+X-Google-Smtp-Source: AGHT+IFtLRuDysLz+zGkK8nebDG8VhuqMbu8VfFfGsXzrU09Na8CGTIsRluoTBh3S2mHGVy2roCHVA==
+X-Received: by 2002:a2e:9f55:0:b0:2ee:7a7e:8ebd with SMTP id 38308e7fff4ca-2ef05d43ad8mr29097631fa.46.1721336605904;
+        Thu, 18 Jul 2024 14:03:25 -0700 (PDT)
 Received: from ilordash-vm.mshome.net (broadband-109-173-124-203.ip.moscow.rt.ru. [109.173.124.203])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ef05c80310sm4516511fa.13.2024.07.18.14.03.23
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ef05c80310sm4516511fa.13.2024.07.18.14.03.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 18 Jul 2024 14:03:24 -0700 (PDT)
+        Thu, 18 Jul 2024 14:03:25 -0700 (PDT)
 From: Ilya Orazov <ilordash02@gmail.com>
 To: mkl@pengutronix.de,
 	mailhol.vincent@wanadoo.fr,
@@ -74,14 +75,16 @@ Cc: linux-can@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	ilordash02@gmail.com
-Subject: [PATCH 0/2] phy: Add support for Microchip ATA6561 CAN Transceiver
-Date: Fri, 19 Jul 2024 00:03:20 +0300
-Message-Id: <20240718210322.37492-1-ilordash02@gmail.com>
+Subject: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document Microchip ATA6561
+Date: Fri, 19 Jul 2024 00:03:21 +0300
+Message-Id: <20240718210322.37492-2-ilordash02@gmail.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240718210322.37492-1-ilordash02@gmail.com>
+References: <20240718210322.37492-1-ilordash02@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240718_140328_265042_37CE25D1 
-X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-CacheID: sfid-20240718_140328_355526_FD74067A 
+X-CRM114-Status: UNSURE (   7.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,27 +102,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi all,
+Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
+It is pin-compatible with TI TCAN1042.
 
-The Microchip ATA6561 is a High-Speed CAN Transceiver with Standby Mode,
-and it is pin-compatible with TI TCAN1042. Therefore, this patch series
-extends support for the TI TCAN1042 DT bindings and the generic
-CAN Transceiver PHY driver.
-
-This CAN transceiver is a popular chip that I have used in my boards.
-I decided to add support for ATA6561 to the kernel, as I believe it would be
-beneficial.
-
-Thank you for your feedback!
-
-Ilya Orazov (2):
-  dt-bindings: phy: ti,tcan104x-can: Document Microchip ATA6561
-  phy: phy-can-transceiver: Add support for Microchip ATA6561
-
+Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
+---
  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 1 +
- drivers/phy/phy-can-transceiver.c                          | 4 ++++
- 2 files changed, 5 insertions(+)
+ 1 file changed, 1 insertion(+)
 
+diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+index 79dad3e89aa6..03de361849d2 100644
+--- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
++++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+@@ -18,6 +18,7 @@ properties:
+       - nxp,tjr1443
+       - ti,tcan1042
+       - ti,tcan1043
++      - microchip,ata6561
+ 
+   '#phy-cells':
+     const: 0
 -- 
 2.34.1
 
