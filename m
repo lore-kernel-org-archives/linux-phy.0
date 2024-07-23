@@ -4,104 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9357C3DA49
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Jul 2024 14:40:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5D1AC3DA63
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Jul 2024 17:20:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g5YVkgGtmxHqvqaWWRT7o8EaZ1i5ZKNywnxaxubYo/U=; b=4MlapRVkJ71VWK
-	1qiJSAsHhSFZEyfVgn/zA5Uav0lkT8nd5k/04WaVzAspEUo6bo+zfjuxJhCSCTFHjaP/AUBeh1EJS
-	NPinjx6IMIlnKIphTNfuKUGMkTxphto1jeOh3Nk4kJqDSGZX3P0nQDCvERPvj9cq+h4KJM+JqqRk3
-	E2BLz1U5w72orl4QarbLjcrFynHNl+QmANP44O9FWKegtjoWnpuDIG/+Q7eJ1CtTDqtda/+PnRIik
-	sKQU/EdH2WfEwzALp7AtpLurDcP0zAgFLt+NHzkyNTBRddun4Re2xbjRJbDib+Qr6kY0R1+kSBhfb
-	UsTd4KA4ahfJN48IDbHw==;
+	List-Owner; bh=mwLH9VM2G1tBBJy3939tVMoJ1Sv4+hQkWr2It60rPXE=; b=m4/TEgAzkiIYIw
+	c84K3TS4dkiVPILa/Quxoxg8wjNo7ist7d5zfwCnxvR9VFxyTDACQ0IZsIWFd27o22/PRRfWQtR0X
+	ao2pzUjLmYPBMrw4SpozHcQe+oMYFEvYVAWaTrXv60hBcQ5FpaqFLOmWo5BfAhZi+HdJGCZqMpC8c
+	1V2aYpGPV0w5NfGA8kvuzpR+PQhQordHE9A9bwXDc636anNgzvARlxgN/T3URzCQVDCTH8eBIv/ZJ
+	4sheAvCh/4lSjyLU4/QIneb0MgRzwpSiQZ2fmLYtmq+YioC7pPUz/B8+woFcggv5k1l8qneXz+K3j
+	qIGDyBafav9hsqvTkrYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWGhD-0000000CkX7-1rXr;
-	Tue, 23 Jul 2024 14:40:55 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1sWJBn-0000000D6su-1Coa;
+	Tue, 23 Jul 2024 17:20:39 +0000
+Received: from mail-yw1-x1131.google.com ([2607:f8b0:4864:20::1131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWGh9-0000000CkUo-3RR9
+	id 1sWJBQ-0000000D6oz-221Z
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Jul 2024 14:40:53 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-3683f56b9bdso2931159f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 23 Jul 2024 07:40:50 -0700 (PDT)
+	Tue, 23 Jul 2024 17:20:38 +0000
+Received: by mail-yw1-x1131.google.com with SMTP id 00721157ae682-66c7aeac627so27859927b3.1
+        for <linux-phy@lists.infradead.org>; Tue, 23 Jul 2024 10:20:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1721745649; x=1722350449; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=T3K8m7UYLI9e2nw2FiKuLBXvna2sOiFY/YtJCGaVVwg=;
-        b=HzM8woWsmReuQEV39OrC76jk3eD9sTGfQZHQl/5NvaE7Xz6eNWxkN4OhfI4xAl2OwO
-         lYQpBF8qXwKVYf2Cf+lfE3bTFqWBDtOi0OZzKWbBH5iOT1fRftA9dUcz8J48LimC7VwI
-         thSn2H3BNmTEljSezclnOvOqB2cEILCTju8zBK09IbW/8ACUo0m8gGyMVLEA7hRhyeak
-         6Ye6/B+poV+2KK3MBoUdhZ6X7HwGX3PGkpIcs6Ha36Yxa8l1IMEzSLCfmhM3iACUzFNP
-         40ZkW70lbdzZhZMWKYTY6r1IHDioErlFHAWCoM9pT5b0Vb7fZAv0YZW8flSeGtrcK7xy
-         uH7Q==
+        d=gmail.com; s=20230601; t=1721755215; x=1722360015; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=XOe0MLUMVLOrVxxv/ePfl9ff0aPXG4+Z35ycnARxiY8=;
+        b=LKuqxtamKFvj2PJXRdEP94fKnf2PG5xju0FQq934Xm8pg2Aan5baqREkKJASKmP8P+
+         XyE5Twb51+3Y8/gFmJPtxlIZjX7Rhx7trxNdbAR/0i77zFjn9lNwv5aUAsejLvcdTRI7
+         ULVf/vQE0Di8JqGWMxk3xB3TTJ4NQT32dV4u+BXyNs+xoZZxRYc35IqxvSs3fBAyUPO7
+         ej+bra3gFLSo82ZBz/XS2TpvAw/w9rFJ5gkNOhAi30qw6IbfMH5T0RCyc/HeBoIxb6ND
+         GAxILynuUE/l4Pg9oOenOqwpYCif8GsqQIr/VrJ1+eocosIEBY+Ppp8Y2vHQRC0CAjui
+         XD5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1721745649; x=1722350449;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=T3K8m7UYLI9e2nw2FiKuLBXvna2sOiFY/YtJCGaVVwg=;
-        b=g8axp/Adfpa/lh9aRJg9EBTh3IF+IGrtiv3KzKfah/BORq8OyjtFlKBsPC3hed847W
-         Ip39GKpZ5y/WC50g62fr+ltD+sg3na9asAtgi6biz831Rbkd2N/pXllK4UgpqzTCZb33
-         WhpmMoskb37/zFXlTXFXw2CrLRGlMlhA0E68HGInrMKW+JYiZhl8AZnynM5Pfkf1i/gn
-         AhvmC9zPUb+Fb4VTuLJxrWY8NtraN+WcIHRDVQjDsRt+Nii3hUzh8bo7b50T803XfF/6
-         OtmC5UEJi+St8mVsSqy5+i1YXeG6f/54mHl+2L9llTe4OSLN9gJyZ459HnU7GlWQSDHD
-         Si1A==
-X-Forwarded-Encrypted: i=1; AJvYcCVkcGhSaR4SkoQfVpbte1umi2KOF5VR7ZNiLSbae3Zhmy9NmY68YhxnwgmM+FJ7Lp2QRqQ1P/VnQVbuTB3ggG3MF46adMR50MGgsxnW/Q==
-X-Gm-Message-State: AOJu0YzhqPCNPNRecVAEGwzazMSpN1/qPbwHnKzAUhr5JzQ2p53C2Bs4
-	jLHJ/u6mReGb34LpsDC76ak1yEhzAmyddvekoaSVk58vBXtmWaF3NGiFwLDIIKA=
-X-Google-Smtp-Source: AGHT+IGlwpdFnzbN5dFR3IJlUvCm4jcY/F9lixNZD/n0wR4wTR15Py/Fg3+cKLPkHHM/vuMRaPpzDw==
-X-Received: by 2002:a05:6000:4026:b0:367:8a3b:2098 with SMTP id ffacd0b85a97d-369bbbb2e21mr7254343f8f.3.1721745649159;
-        Tue, 23 Jul 2024 07:40:49 -0700 (PDT)
-Received: from [192.168.108.81] (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-368787cf182sm11760210f8f.82.2024.07.23.07.40.47
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 23 Jul 2024 07:40:48 -0700 (PDT)
-Message-ID: <0d5d3918-3988-4d29-8bb3-aaf7b0aa0045@freebox.fr>
-Date: Tue, 23 Jul 2024 16:40:47 +0200
+        d=1e100.net; s=20230601; t=1721755215; x=1722360015;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=XOe0MLUMVLOrVxxv/ePfl9ff0aPXG4+Z35ycnARxiY8=;
+        b=cLGzFRBD7IbMyBs0VFpK4LoCRlcdS/B6p3PBMgeFQRlXnwLytDEjlNI7txqZrmI1Bt
+         e02pMeFh+cCvmmbXx76DRW1w/FP5wxbewygjxnP/OZZnEeyly29O6DkWigIIgjXA0KXI
+         zwdz92OAEreX0yfsFHMgsE/xpPsDcvfMrdqutVus4QCRtM0H7nUze7FD/kwU9TcmDp1I
+         Biw5HZL4G2X0oTA8ZAnJWZG5Pa5BYH6knlNAc5+I0tfS3EQt6FCf14FdpMtVHi/QX7Ib
+         0eQPXlA/xPAFX4i2zgWm5gOhdvnsgBvOjzErK5nBS0seNKwyRWeF8KpRFONQYBALtNG6
+         S0wQ==
+X-Forwarded-Encrypted: i=1; AJvYcCW7g1CrZyIHpN7580IC5ocw5ZTqEz3L/mPjzTWXzr+bW5O0vqbN5AucWnxquS797xI8DBWh77QsoBp0mzjPX12pnewAlyHG8i6I9DhtvQ==
+X-Gm-Message-State: AOJu0YygYsXc32b8xiNU+UCAwJrZt3AesmRoRQifn+HCXDFoaTPgFbKe
+	FMW1ocFdPfXronum066PyZzHgd/bDRWrGDnTC3wnXX5/iPr1LnTQd1GsnkFXZ76xSAkqVJHLvxD
+	qv9T5B5JWeRyCYt1fRKzRTAE0JrU=
+X-Google-Smtp-Source: AGHT+IFcHozHZx+cILlSEO6Gl2LmXfljpvHEyEVdBwuFcMIZtVfKaO43sgcYRG67ZYw8sJ27fCMFQ9KO8R/WVwG8mzo=
+X-Received: by 2002:a05:690c:10d:b0:64b:7e17:b339 with SMTP id
+ 00721157ae682-66a68b87fe5mr136874317b3.15.1721755215500; Tue, 23 Jul 2024
+ 10:20:15 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 4/4] arm64: dts: qcom: add HDMI nodes for msm8998
-To: Konrad Dybcio <konrad.dybcio@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- Arnaud Vrac <avrac@freebox.fr>, Pierre-Hugues Husson <phhusson@freebox.fr>,
- Jeffrey Hugo <quic_jhugo@quicinc.com>
-References: <20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr>
- <20240627-hdmi-tx-v5-4-355d5c1fbc3c@freebox.fr>
- <d9898342-2439-4d3d-8e3d-5bf0a7a40245@linaro.org>
- <b6f6c845-6094-44ce-8ad0-ed4f6d353cec@freebox.fr>
- <CAA8EJpqrAFKCr63JHEpZ3b3zdRfoNXoJP6SqKDOO4sqc=c6YdQ@mail.gmail.com>
- <44101ecd-61f4-4609-bb22-12b40b692552@freebox.fr>
- <CAA8EJpprtmefNM_CJFRbYVNxOWUVVWbedBq44r7GXOdDrQ2WjA@mail.gmail.com>
- <04ef978f-2bfd-46cc-a9f7-40a6f1c507f8@linaro.org>
- <7d34a857-6495-482b-9070-1817c88c9913@freebox.fr>
- <45f5dae6-c606-4612-900a-b719f58d92ce@linaro.org>
- <a8c7db04-7212-4bf0-b8b1-d371ee33478b@freebox.fr>
- <57c165e6-d942-4a17-a26b-7e4a0422127c@linaro.org>
-Content-Language: en-US
-From: Marc Gonzalez <mgonzalez@freebox.fr>
-In-Reply-To: <57c165e6-d942-4a17-a26b-7e4a0422127c@linaro.org>
+References: <20240718210322.37492-1-ilordash02@gmail.com> <20240718210322.37492-2-ilordash02@gmail.com>
+ <20240719-ahead-kiwi-995e52bf3e74@spud>
+In-Reply-To: <20240719-ahead-kiwi-995e52bf3e74@spud>
+From: IlorDash <ilordash02@gmail.com>
+Date: Tue, 23 Jul 2024 20:20:04 +0300
+Message-ID: <CAGCz5HkF_WNZBVpY2SWVf071Pi896BvKFk0jnfNAYX5AKx2Zcw@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document Microchip ATA6561
+To: Conor Dooley <conor@kernel.org>, geert+renesas@glider.be
+Cc: mkl@pengutronix.de, mailhol.vincent@wanadoo.fr, vkoul@kernel.org, 
+	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, a-govindraju@ti.com, 
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240723_074052_348421_F2D7C8E2 
-X-CRM114-Status: GOOD (  17.51  )
+X-CRM114-CacheID: sfid-20240723_102016_550582_F04EFFD4 
+X-CRM114-Status: GOOD (  20.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,96 +92,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23/07/2024 15:43, Konrad Dybcio wrote:
-
-> On 23.07.2024 3:38 PM, Marc Gonzalez wrote:
+On Fri, 19 Jul 2024 at 18:07, Conor Dooley <conor@kernel.org> wrote:
 >
->> On 23/07/2024 15:08, Konrad Dybcio wrote:
->>
->>> On 23.07.2024 2:57 PM, Marc Gonzalez wrote:
->>>
->>>> On 23/07/2024 13:45, Konrad Dybcio wrote:
->>>>
->>>>> On 23.07.2024 11:59 AM, Dmitry Baryshkov wrote:
->>>>>
->>>>>> On Tue, 23 Jul 2024 at 12:48, Marc Gonzalez wrote:
->>>>>>
->>>>>>> On 16/07/2024 18:37, Dmitry Baryshkov wrote:
->>>>>>>
->>>>>>>> No, that's fine. It is the SMMU issue that Konrad has been asking you
->>>>>>>> to take a look at.
->>>>>>>
->>>>>>> Context:
->>>>>>>
->>>>>>> [    4.911422] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
->>>>>>> [    4.923353] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
->>>>>>> [    4.927893] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
->>>>>>> [    4.941928] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
->>>>>>> [    4.944438] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
->>>>>>> [    4.956013] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
->>>>>>> [    4.961055] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
->>>>>>> [    4.974565] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
->>>>>>> [    4.977628] arm-smmu cd00000.iommu: FSR    = 00000402 [Format=2 TF], SID=0x0
->>>>>>> [    4.989670] arm-smmu cd00000.iommu: FSYNR0 = 00000021 [S1CBNDX=0 PNU PLVL=1]
->>>>>>>
->>>>>>>
->>>>>>> As I mentioned, I don't think I've ever seen issues from cd00000.iommu
->>>>>>> on my board.
->>>>>>
->>>>>> Interestingly enough, I can also see iommu errors during WiFi startup
->>>>>> / shutdown on msm8998 / miix630. This leads me to thinking that it
->>>>>> well might be that there is a missing quirk in the iommu driver.
->>>>>>
->>>>>>> I can test a reboot loop for a few hours, to see if anything shows up.
->>>>>>
->>>>>> Yes, please.
->>>>>
->>>>> Yeah I do trust you Marc that it actually works for you and I'm not
->>>>> gonna delay this series because of that, but please go ahead and
->>>>> reboot-loop your board
->>>>>
->>>>> 8998/660 is """famous""" for it's iommu problems
->>>>
->>>> [   20.501062] arm-smmu 16c0000.iommu: Unhandled context fault: fsr=0x402, iova=0x00000000, fsynr=0x1, cbfrsynra=0x1900, cb=0
->>>>
->>>> I get the above warning pretty reliably.
->>>> I don't think it's related to the issue(s) you mentioned.
->>>> System just keeps plodding along.
->>>
->>> Yeah that one's "fine"
->>
->> I booted 40 times in a loop.
->>
->> `grep -a -i FSYNR console.logs` just returns the same 16c0000.iommu
->> "Unhandled context fault" message 76 times (as above).
->>
->> NB: I have maxcpus=1 set in bootargs.
->>
->> Could the iommu issue be a race condition, NOT triggered when code
->> runs with less parallelism?
-> 
-> No clue, can you try without maxcpus=1?
+> On Fri, Jul 19, 2024 at 12:03:21AM +0300, Ilya Orazov wrote:
+> > Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
+> > It is pin-compatible with TI TCAN1042.
+> >
+> > Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
+> > ---
+> >  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > index 79dad3e89aa6..03de361849d2 100644
+> > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > @@ -18,6 +18,7 @@ properties:
+> >        - nxp,tjr1443
+> >        - ti,tcan1042
+> >        - ti,tcan1043
+> > +      - microchip,ata6561
+>
+> Given that your driver patch has
+> | diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+> | index ee4ce4249698..dbcd99213ba1 100644
+> | --- a/drivers/phy/phy-can-transceiver.c
+> | +++ b/drivers/phy/phy-can-transceiver.c
+> | @@ -89,6 +89,10 @@ static const struct of_device_id can_transceiver_phy_ids[] = {
+> |                 .compatible = "nxp,tjr1443",
+> |                 .data = &tcan1043_drvdata
+> |         },
+> | +       {
+> | +               .compatible = "microchip,ata6561",
+> | +               .data = &tcan1042_drvdata
+> | +       },
+> |         { }
+> |  };
+>
+> the driver patch is actually not needed at all, and you just need to
+> allow ti,tcan1042 as fallback compatible in the binding, so something
+> like:
+>
+>   compatible:
+>     oneOf:
+>       - enum:
+>           - nxp,tjr1443
+>           - ti,tcan1042
+>           - ti,tcan1043
+>       - items:
+>           - const: microchip,ata6561
+>           - const: ti,tcan1042
+>
+>    '#phy-cells':
+>      const: 0
+>
+> Cheers,
+> Conor.
+>
+> >
+> >    '#phy-cells':
+> >      const: 0
+> > --
+> > 2.34.1
+> >
+> >
 
-Same behavior without maxcpus=1
+I tested the build with fallback compatible:
 
-40 boots, no panics, no FSYNR other than 16c0000.iommu
+compatible:
+  oneOf:
+    - items:
+      - enum:
+        - microchip,ata6561
+      - const: ti,tcan1042
+    - items:
+      - enum:
+        - nxp,tjr1443
+      - const: ti,tcan1043
 
-> The thing will likely run slower (because reasons), but shouldn't
-> explode
+and modified compatible property in DTS:
 
-That makes sense!
+compatible = "microchip,ata6561", "ti,tcan1042";
 
-- Hey, boot is slow. What can we do to make it slower?
-- Well, just add a bunch of cores running in parallel, that will get the job done!
+Build succeeded, phy-can-transceiver driver was used. So I would like
+to add a fallback compatible for both "microchip,ata6561" and
+"nxp,tjr1443" in this binding and modify other DTS files with
+compatible = "nxp,tjr1443". What do you think?
 
-As a matter of fact, trying to boot to command-line with
-maxcpus=1 causes the system to lock up & reboot.
-I had to add a systemd script to enable some cores at init.
-Some qcom daemon must be locking a core & expect progress
-from another process.
-
-Regards
-
+-- 
+Best regards,
+Ilya Orazov
 
 -- 
 linux-phy mailing list
