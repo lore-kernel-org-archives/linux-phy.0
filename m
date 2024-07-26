@@ -4,86 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C74AC3DA70
-	for <linux-phy@archiver.kernel.org>; Thu, 25 Jul 2024 22:06:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6933C3DA63
+	for <linux-phy@archiver.kernel.org>; Fri, 26 Jul 2024 06:02:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/QtSh5f5JSCxkJyRsniQ2cApThlVIENG7WgPQTkaFSo=; b=3gOlaUlijSKeOK
-	GGSyddXRvnJBBWAG+W0OVrQ5VhxqXIQMC9Q7JggPRCPOZWlYq99XbEswjttMwjWCZNMH2aJuSn2oL
-	t6+ZX4RVSJnApPPd4K3pqWkQWCos22UrBkIDPZcTcTEczPS4CF0WfIy3dyYLBy/ZEeP5nkUck4heh
-	ZmRu3l/OhFZghmjBaniV0fm1VUl6E26inHnfsJ1GrZtPcTtl7ltRXXtXfCf1if4IbKoMHsRdkJ7fN
-	zm4QJkKn29dGvM4Fa97rmUORMfUFDqpVjUI+LE3MvvgXK+EfAM8tHov4E2m/PO98hvXhFmUrIG6WD
-	gNDflvaYpKX3KqGX3uww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zpR4Fn8RmTOHeie76VyGfveqBxIy27CVcLQFv4APDxk=; b=d0h2Mk1PBruy2b
+	g6kVM+pcdEEPLRVu41QkUnXPVAsl6sAw1aGrt5YYxy0swg8o2fSaDj1BDKavI3aDHZoC8oZDA2pwt
+	RvcljeZ9XW4AI5FJKG3DGUfc0Tc5qEFFFbIl+021X8ni67BhOrp84QdeePZMF9HiAaLso8z8KClWR
+	neopPOqIkfoUTV7pl56z17xq4kgatKR+YMBkz9GW2HhQ59ri5Wyes3ACLAdJJK/fyDBGEx1eJ89gI
+	B4bMOPjOTObPUi7wUeDAMYDK6s8ILdEmgdSc1mv9OVzetJyFXIaS33EDBG8CT3+B4kjRk8DosAAOY
+	E4XYzEqwBM3+KnQ0fUYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sX6bY-00000002Ejb-05X1;
-	Thu, 25 Jul 2024 22:06:32 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1sXE2K-000000030Kx-1XpP;
+	Fri, 26 Jul 2024 06:02:40 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sX6bV-00000002EiB-17If
+	id 1sXE1u-000000030FN-3sVO
 	for linux-phy@lists.infradead.org;
-	Thu, 25 Jul 2024 22:06:31 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 46PK6CZf012977;
-	Thu, 25 Jul 2024 22:06:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=4Xr0VOoH9Oels4LwmfIWSB
-	JBaoyGwRSVwoIfedkNq7Y=; b=gh9h2lbe392wrpN4cQ2n7DBhDEMYvSc8nUrvFL
-	+rVEJeYYX3IP21EQ8/7oRHYOAjEEdvUmQuxCAwaB/S1mIlBsSMdWJga5VgPcDnTz
-	UBAJqO8pQ+XKzzHQioRvj7xR+2zPjCdSTi0zxXFaN9CP5AoylFGXphQlFI2Xedj1
-	OXaqipV3geSOzMbDT5ucOC2ASqhQYahxMOr11GNAIoonNneEUHCDXWdPNJhY1fT1
-	yEVn7XkfDwx7jI8KDEOCjFONvCtA5Rw9XyHLY0DI5p2JJkbxUa2SSpHjvlsgkBqF
-	fVyvXguHjpJRqhZmrLEbDr3stXMgylg6YTYTIqSlrQdvCo7Q==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40g2xepf7p-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 25 Jul 2024 22:06:18 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.17.1.19/8.17.1.19) with ESMTPS id 46PM6Hxd031735
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 25 Jul 2024 22:06:17 GMT
-Received: from abhinavk-linux1.qualcomm.com (10.80.80.8) by
- nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 25 Jul 2024 15:06:17 -0700
-From: Abhinav Kumar <quic_abhinavk@quicinc.com>
-To: <freedreno@lists.freedesktop.org>, Vinod Koul <vkoul@kernel.org>,
-        "Kishon
- Vijay Abraham I" <kishon@kernel.org>,
-        Neil Armstrong
-	<neil.armstrong@linaro.org>
-CC: Abhinav Kumar <quic_abhinavk@quicinc.com>,
-        <dri-devel@lists.freedesktop.org>, <quic_jesszhan@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] phy: qcom: com-qmp-combo: fix swing and pre-emphasis table for sm8350
-Date: Thu, 25 Jul 2024 15:06:08 -0700
-Message-ID: <20240725220608.131426-1-quic_abhinavk@quicinc.com>
-X-Mailer: git-send-email 2.44.0
+	Fri, 26 Jul 2024 06:02:16 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-427db004e36so12457415e9.3
+        for <linux-phy@lists.infradead.org>; Thu, 25 Jul 2024 23:02:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1721973732; x=1722578532; darn=lists.infradead.org;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=rNgR2JbRnvuvQ8FNSWDeS5hOPWs2py2ht5Ejpugq7pM=;
+        b=LKrfXvqB2FT0WRna4oSiFyfPrqe6kWwqwCwersab/lW4WfN14gvPSHsO+9nLFrFOVi
+         Xda5AVOKV6x6Uf+6LCfkZOI1R/0Eg67zalIXkCU79GemP9GQ/ow5vAx/wjQWnmVfN9W5
+         DPYyTmVasVWOlLtdkx2aFXkWPYdYLqEu1AtF50u4tpeIIFFsYHFi2+AmSd5eo7gUgz8J
+         eEnfsx8KInC/P7Njlwk6CbefAnJAPRdwONMNrCCddUrh2w8xveHyE4JpyLoKU+Dm6C68
+         a3zed4QcEQ8gd31GdWs+zhWWjlBhg3OyPJ+r0DEcjBu6413XkUBUwHaEtxn5LCZnXi1s
+         UdRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1721973732; x=1722578532;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=rNgR2JbRnvuvQ8FNSWDeS5hOPWs2py2ht5Ejpugq7pM=;
+        b=GQDClA6hrr2Ezo0q3eEi0INPeGHMgKGssUVhWg2zRPcYhH4gtqCY0j0Ezg726fqsCm
+         s3ba5BDIWAcQpeaZQ3t6kw9C0h2e5eFl/RxLZ0mP71OlIH71MkIHgDoNrPovqB3pncBU
+         n3Hm2/Gc5AoSEGeYmg7Nlde0uFP9+7tMQo3QWXgB91U8RtB9LjS+JIv/95mXjECWiyVI
+         LQV9wmOuYEqJN5hpw0zGYSvC3Ezfse4/4jhccz6K4W5wAVlTEvs2eCx3YmMgNnyrwPLE
+         YySCTmWdc1eEFUkbpn1BPweBLDNgicUFelRnxLFPHgi+n84gboSx/sLYfkVYyK8d9Szd
+         LjVQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUYjqEju0n8LW6VopaQiFMS6fa80mqxoFM9yomRvR5RlxshCm2lEk52tJyHggEPgMOEOfotg4xBMQp2HhfmxEurf8g8njCzaiR874YeYw==
+X-Gm-Message-State: AOJu0YykAScYsQb7o3Z4umXBTHK0G34S4nWxpgFurZRxzRpLuji9Jf2w
+	5wy/2nnzjengp8G8pr5USrpgB3822EIUzcFFkVxCeM/0C3/Bxti4PH/paclCcxo=
+X-Google-Smtp-Source: AGHT+IGZITgAy64Un/8wyyMq4vbFh/xNWJjrD62oeqgqKxJlyGVdbqIZ92b5GkG6r6jaxg78Jk2SnA==
+X-Received: by 2002:a05:600c:3551:b0:426:67f0:b4fa with SMTP id 5b1f17b1804b1-4280546dec3mr29466515e9.1.1721973732563;
+        Thu, 25 Jul 2024 23:02:12 -0700 (PDT)
+Received: from [10.1.1.109] ([80.111.64.44])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4280574b2c2sm60659955e9.28.2024.07.25.23.02.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 25 Jul 2024 23:02:12 -0700 (PDT)
+Message-ID: <ace0b95ad77fe044881068a4cf1944e10b306730.camel@linaro.org>
+Subject: Re: [PATCH] phy: exynos5-usbdrd: convert some FIELD_PREP_CONST() to
+ FIELD_PREP()
+From: =?ISO-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>,  Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar
+ <alim.akhtar@samsung.com>
+Cc: Peter Griffin <peter.griffin@linaro.org>, Tudor Ambarus
+	 <tudor.ambarus@linaro.org>, Will McVicker <willmcvicker@google.com>, 
+	kernel-team@android.com, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Date: Fri, 26 Jul 2024 07:02:11 +0100
+In-Reply-To: <20240710-phy-field-prep-v1-1-2fa3f7dc4fc7@linaro.org>
+References: <20240710-phy-field-prep-v1-1-2fa3f7dc4fc7@linaro.org>
+User-Agent: Evolution 3.52.1-4 
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 1beyXof8fSBG02NUCTBuja8NNDMIGlF6
-X-Proofpoint-ORIG-GUID: 1beyXof8fSBG02NUCTBuja8NNDMIGlF6
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-07-25_24,2024-07-25_03,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 spamscore=0
- lowpriorityscore=0 bulkscore=0 mlxlogscore=999 mlxscore=0 adultscore=0
- phishscore=0 priorityscore=1501 malwarescore=0 suspectscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2407250151
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240725_150629_436931_47CBACA0 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20240725_230214_997256_149C5936 
+X-CRM114-Status: GOOD (  10.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,40 +94,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix the voltage swing and pre-emphasis tables for sm8350 as the current
-one do not match the hardware docs.
-
-Fixes: ef14aff107bd ("phy: qcom: com-qmp-combo: add SM8350 & SM8450 support")
-Signed-off-by: Abhinav Kumar <quic_abhinavk@quicinc.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 31e43638a649..c15b01aa5a48 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -1946,8 +1946,8 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
- 
- 	.swing_hbr_rbr		= &qmp_dp_v4_voltage_swing_hbr_rbr,
- 	.pre_emphasis_hbr_rbr	= &qmp_dp_v4_pre_emphasis_hbr_rbr,
--	.swing_hbr3_hbr2	= &qmp_dp_v3_voltage_swing_hbr3_hbr2,
--	.pre_emphasis_hbr3_hbr2 = &qmp_dp_v4_pre_emphasis_hbr3_hbr2,
-+	.swing_hbr3_hbr2	= &qmp_dp_v5_voltage_swing_hbr3_hbr2,
-+	.pre_emphasis_hbr3_hbr2 = &qmp_dp_v5_pre_emphasis_hbr3_hbr2,
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
--- 
-2.44.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGksCgpPbiBXZWQsIDIwMjQtMDctMTAgYXQgMDc6NDUgKzAxMDAsIEFuZHLDqSBEcmFzemlrIHdy
+b3RlOgo+IFVzZSBvZiBGSUVMRF9QUkVQX0NPTlNUKCkgd2FzIGEgdGhpbmtvIC0gaXQncyBtZWFu
+dCB0byBiZSB1c2VkIGZvcgo+IChjb25zdGFudCkgaW5pdGlhbGlzZXJzLCBub3QgY29uc3RhbnQg
+dmFsdWVzLgo+IAo+IFVzZSBGSUVMRF9QUkVQKCkgd2hlcmUgcG9zc2libGUuIEl0IGhhcyBiZXR0
+ZXIgZXJyb3IgY2hlY2tpbmcgYW5kIGlzCj4gdGhlcmVmb3JlIHRoZSBwcmVmZXJyZWQgbWFjcm8g
+dG8gdXNlIGluIHRob3NlIGNhc2VzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFuZHLDqSBEcmFzemlr
+IDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+Cj4gLS0tCj4gwqBkcml2ZXJzL3BoeS9zYW1zdW5n
+L3BoeS1leHlub3M1LXVzYmRyZC5jIHwgMTIgKysrKysrLS0tLS0tCj4gwqAxIGZpbGUgY2hhbmdl
+ZCwgNiBpbnNlcnRpb25zKCspLCA2IGRlbGV0aW9ucygtKQoKQW55IGNvbW1lbnRzIG9uIHRoaXMg
+cGF0Y2g/CgpDaGVlcnMsCkFuZHJlJwoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
