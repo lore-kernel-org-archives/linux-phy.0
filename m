@@ -4,90 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22904C3DA4A
-	for <linux-phy@archiver.kernel.org>; Sat, 27 Jul 2024 22:08:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E3CCC3DA49
+	for <linux-phy@archiver.kernel.org>; Sun, 28 Jul 2024 08:52:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tggC8JCrsTHkcvSZkRA7WJCrOMJMOvnsIbs7wx2vLEk=; b=Fw0/2Ulpa4UeXy
-	PUFo63/tJ/SQbf8LmzNyxHYFI5VbS0cUlLrsd5eib4NRkN4ZJAFpojKii+sziZxEsmL42A1tIYXwo
-	4e3vzhUlhyVjbZ3i1WW3oM5qpqr3PbK/DHSwoOrPOWGstTGFAwQm2cTCuf2XlqJk7F/0SemeVgLgp
-	njZM7fQrYvDWw69yLLkmGZsMoaZ44yhjvzVv5DuBzpdbzT7ioopq3noCw4q0X5vXr+SR5ptGbiFbv
-	DzuwhlxZ3Eq5ATqmL39StoOeve2tq6+ISxb3tEyrK9unogN/tnIyqQmlVAltWJHFbka025LuKmOh8
-	QfG8pZC9qLKRu5Y87cRA==;
+	List-Owner; bh=rFndZrkm76wLlF+rDMWQmQYV1vY6/EJDbl2Rki07p8w=; b=AePJ5CQQsPDomc
+	TghDYn8WS9aIOe/NgLwAaCfF5Yi+KLS3/dOjSB8eh7GWZ98GppE0DF2aKJqUd76OF9J6aGZu00CFL
+	WxxQHaVm0xfwI3rNOQhds2m79PQdteRFkaE6Cj35AH/CjT+TCsmWsfSyNmY0Eq4AfC1kAOaTFOHKV
+	6z8dsrCBe3m5abvfUxneIpzDYZcKxKU7vBH4wflAIYgZYThYQgt/kk9cR+jb29H272KS0bgGwwExR
+	3wu76QJTBboPU5vD1EUAVZ1azoLBwjYt03vdKxfSzOhgbCnAJu3lls4JcJPJAMHrS4udjcELxtV4T
+	qTlAvBfw7I+mrfFhRYNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXpas-00000007OUg-3Dfc;
-	Sat, 27 Jul 2024 22:08:50 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1sXze3-00000008AlC-2s5J;
+	Sun, 28 Jul 2024 08:52:47 +0000
+Received: from mail-yw1-x1132.google.com ([2607:f8b0:4864:20::1132])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXpaR-00000007OQ8-2q1K
+	id 1sXze0-00000008Akd-3KAh
 	for linux-phy@lists.infradead.org;
-	Sat, 27 Jul 2024 22:08:25 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-52efbb55d24so3455551e87.1
-        for <linux-phy@lists.infradead.org>; Sat, 27 Jul 2024 15:08:23 -0700 (PDT)
+	Sun, 28 Jul 2024 08:52:46 +0000
+Received: by mail-yw1-x1132.google.com with SMTP id 00721157ae682-66599ca3470so9552537b3.2
+        for <linux-phy@lists.infradead.org>; Sun, 28 Jul 2024 01:52:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1722118101; x=1722722901; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=mwqWPO6eJP4Qec95t6HNVfe9KGEXFic++ajRHBM7iSo=;
-        b=sng2/4hJsSY7fUmvKpLIv1AQD5Coyz1UXi0niBfn+ukEEAs8A5p5+LSBuRNIUag+4s
-         kaar+kf8GORoa7P9Ncm5+37thwAXXhsfHYKSY84tvLarpFRBk+NQnd3wTCujMpx7MHCA
-         IW+daj1Pq9fIJPUJMfcR4Oe7lvjLE9MPdxvy8isfCXd7yuL9YlmBKPgtyOl4B+31TeOn
-         rsTUv1zEYQ96KfelkzEMO59HTglKoUh3aEsusHK/mE0RBRxJkmMzXVivLT3Y1OvMiEA+
-         8abptzPZb9+f0DcS2z2qMrQXqWhMEo5Mt7P1hzLxz+/E51eXQo8p9v2CRe1hGMzWdG4F
-         HnXg==
+        d=gmail.com; s=20230601; t=1722156763; x=1722761563; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=b50kQg9CcOfPljkM2el62+Gp/5HcSGg+41XNn2C/3x4=;
+        b=IN0FrSx9tF8J98i1RYDrGBMOhfFYVGybY1FNc9pzToAc7U3Je8M2jkbQynRCsy0yjA
+         m4aV9UQq93Q0IgmFkp7eCAQgFVjAbNV/nj1DS81vze9kefssLRGhsXYtDGMnDq5G4FqL
+         /rAMmcbjul1o0tdGJGK17+to622Fkxdl3btNq/z88VP2Ee5zWUT4DY5WuoDXkBtlBPHe
+         /FkSUKtMfBYZWTsaFhh1/NrnS3GoIzwOCxHVb1Sjb4B+lLoSAw5tJKm9PI2kFiFDf6j3
+         FGIY9NRhlVmo6UJZQV7KJpuTnf5lN8KxyHPji24UtTosaWUZtGLbnruIcfe4mnWMGYMm
+         Rqbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722118101; x=1722722901;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=mwqWPO6eJP4Qec95t6HNVfe9KGEXFic++ajRHBM7iSo=;
-        b=vAb7sbBOoodtc59F5hsd131cXNmxnfnMh9aUv6YxAWKRlQMsISh84qQmtNUxjD7IWG
-         GHjCHHW9fQFhSlRGoSe4P2xrsKr+DrSip7NYj1fwLRnYtRikAGv8L56CFqSgmuQy5uUO
-         BzkSlDCjozZJSnMIF0qSKVx0XFA+jhbkhVQiXrP0N2BvsHaj0k2245Wqrik09+pYMRa6
-         L0Z/QTw6NtNRk9ZdEV3+sxrlxs3uLRU3rvg3ds4XyM7wS1EqdgSIKG9sY+7p/SzBLq+8
-         UAmVo7VR9R6UuiQNXYIv2y0ly6FtRaFz0659GSPEvElSAzRznq32vAZSMFfQ82i28nFG
-         TjzQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWQFCW/GPfFv+7iCV1EOf6fc3KVkbJzuhRA6F6ogEvHPwiUCVPR2X+QWGIcMXMjK3BUgQAzYjdFSib/kaoPCD55NFjaJyuVbHXOSErQ1g==
-X-Gm-Message-State: AOJu0Yws89iNS7jZnRQegrjrD5RcdpnJHkYanhKD8+sg/I42v+8kPdI3
-	HdMXbzJG/fcIgi4/tDfMN4uh93K/Zv2lR7dV04j4kBTaenzcRZ1mWKASPXCTtNk=
-X-Google-Smtp-Source: AGHT+IEESjcuV3/3oS+Os1zyf2LB2n6lMR6DUHxbQ1nXgYeN+N3EfPjlTdSC2SKSZtLypC95ksepqA==
-X-Received: by 2002:a05:6512:1296:b0:52e:933f:f1fa with SMTP id 2adb3069b0e04-5309b2e0b62mr2773797e87.61.1722118101176;
-        Sat, 27 Jul 2024 15:08:21 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52fd5bd1292sm872881e87.105.2024.07.27.15.08.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 27 Jul 2024 15:08:20 -0700 (PDT)
-Date: Sun, 28 Jul 2024 01:08:18 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Sui Jingfeng <sui.jingfeng@linux.dev>
-Cc: Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org, 
-	devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, p.zabel@pengutronix.de, 
-	airlied@gmail.com, daniel@ffwll.ch, maarten.lankhorst@linux.intel.com, 
-	mripard@kernel.org, tzimmermann@suse.de, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
-	kernel@pengutronix.de, festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org, 
-	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org, francesco@dolcini.it, 
-	frank.li@nxp.com
-Subject: Re: [PATCH v3 00/19] Add Freescale i.MX8qxp Display Controller
- support
-Message-ID: <no7cgb4vfd4cxhsjoftfeizvzby4vfbq2okvneq4nbxs4ogwvt@ohplzz5bez4j>
-References: <20240724092950.752536-1-victor.liu@nxp.com>
- <wky3mjl7fn773myatyrdsea6oc2xebkvrgmigmmoj36eswgqry@2kox5ad5dynl>
- <aba35ecb-2357-4c4f-8366-08d14e40d436@linux.dev>
- <zr2t6deyvwacawj7s36gols2vxu24fah25x6ofy7xpqyvc4s2d@luavybrlxpaf>
- <8014238b-2668-4602-add1-64a0c6e480ad@linux.dev>
+        d=1e100.net; s=20230601; t=1722156763; x=1722761563;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=b50kQg9CcOfPljkM2el62+Gp/5HcSGg+41XNn2C/3x4=;
+        b=vi11/GMk22s175RtieKiEE+9ZF+bgSQQF7TlSqFKsnLOTCok3GDRtpcTBNthmfAMk+
+         JtN9y4gcfzsh9Xn5mLrbkYYQtolDCmFyLTMEv9jwaDAlVi2byotICjt9jY84rZF638rf
+         go+O/WuhfYLsDq9hf6c/V4MeHsPFHtP3EdQUnlELzWORgvj2CfDws8v2Noz8F09nnCOi
+         dwNScsb3W0m6zWfX6zkhzJC4bztgGrvHgnM4jy6yPllOzcN14Jaoz5dY7rmpD/3fr1M5
+         uT8/9E1ArheQFwAdDlmvPHsPccTC1ov6qXMNTb99HRIS3gWPqKPWktwT8cLB8+oJicFH
+         /qmg==
+X-Forwarded-Encrypted: i=1; AJvYcCWXjWiYKpEJ8htkiqgD6Tbk7L1oDXn0BKHmZ90fCR0bZ8tvtDDVBjhYTR7/G0QGMPs0u0JzBCZdzTT6k5dPRASsWEv2pS+UEqw9VQunFg==
+X-Gm-Message-State: AOJu0YxoYbjqDhbxdQwOC+t9qa2xmf/006HH0ElQbSHNRrzf+SNieAjm
+	Ve+OhHgEfOF0gP/M6Zf1UnIe7WcbPgz+6QgTewbIBOZ0FC4UkoW6rb5CJ3omj0ut7T+nQWhaS6F
+	+EkKdUWnQyqxoPWlsVv5w1L5FWqI=
+X-Google-Smtp-Source: AGHT+IFxPxC4Ng6BBPJ48T04Y3ihU8aK+aGafUQKzzm/XI0/Mws3uR/xLo9Uwm/f7iZEJNeBJn29rXvYEXrH93XwLTE=
+X-Received: by 2002:a0d:ea0e:0:b0:67a:f3d4:d9d2 with SMTP id
+ 00721157ae682-67af3d4e244mr38363277b3.39.1722156762788; Sun, 28 Jul 2024
+ 01:52:42 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8014238b-2668-4602-add1-64a0c6e480ad@linux.dev>
+References: <20240718210322.37492-1-ilordash02@gmail.com> <20240718210322.37492-2-ilordash02@gmail.com>
+ <20240719-ahead-kiwi-995e52bf3e74@spud> <CAGCz5HkF_WNZBVpY2SWVf071Pi896BvKFk0jnfNAYX5AKx2Zcw@mail.gmail.com>
+ <20240723-dinginess-john-608d0b28293b@spud> <CAGCz5H=Gncw+Tr0XaQQhhGWQER5Rs1BcxbkPaJwx9jJ-8j7LGQ@mail.gmail.com>
+ <20240723-municipal-snowy-136b08b6db90@spud>
+In-Reply-To: <20240723-municipal-snowy-136b08b6db90@spud>
+From: Ilya Orazov <ilordash02@gmail.com>
+Date: Sun, 28 Jul 2024 11:52:31 +0300
+Message-ID: <CAGCz5HnJKjNj7A0YD2fw20m-NrEs3MoCLwox86mC11Kudq8xbg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document Microchip ATA6561
+To: Conor Dooley <conor@kernel.org>, geert+renesas@glider.be
+Cc: mkl@pengutronix.de, mailhol.vincent@wanadoo.fr, vkoul@kernel.org, 
+	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, a-govindraju@ti.com, 
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240727_150823_729415_B3C803DF 
-X-CRM114-Status: GOOD (  45.62  )
+X-CRM114-CacheID: sfid-20240728_015244_859746_0A7D705D 
+X-CRM114-Status: GOOD (  43.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,162 +94,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Jul 28, 2024 at 05:38:37AM GMT, Sui Jingfeng wrote:
-> Hi,
-> 
-> On 7/28/24 04:28, Dmitry Baryshkov wrote:
-> > On Sun, Jul 28, 2024 at 03:10:21AM GMT, Sui Jingfeng wrote:
-> > > Hi,
-> > > 
-> > > On 7/28/24 00:39, Dmitry Baryshkov wrote:
-> > > > > Hi,
-> > > > > 
-> > > > > This patch series aims to add Freescale i.MX8qxp Display Controller support.
-> > > > > 
-> > > > > The controller is comprised of three main components that include a blit
-> > > > > engine for 2D graphics accelerations, display controller for display output
-> > > > > processing, as well as a command sequencer.
-> > > > > 
-> > > > > Previous patch series attempts to do that can be found at:
-> > > > > https://patchwork.freedesktop.org/series/84524/
-> > > > > 
-> > > > > This series addresses Maxime's comments on the previous one:
-> > > > > a. Split the display controller into multiple internal devices.
-> > > > >      1) List display engine, pixel engine, interrupt controller and more as the
-> > > > >         controller's child devices.
-> > > > >      2) List display engine and pixel engine's processing units as their child
-> > > > >         devices.
-> > > > > 
-> > > > > b. Add minimal feature support.
-> > > > >      Only support two display pipelines with primary planes with XR24 fb,
-> > > > >      backed by two fetchunits.  No fetchunit dynamic allocation logic(to be done
-> > > > >      when necessary).
-> > > > > 
-> > > > > c. Use drm_dev_{enter, exit}().
-> > > > > 
-> > > > > Since this series changes a lot comparing to the previous one, I choose to
-> > > > > send it with a new patch series, not a new version.
-> > > > I'm sorry, I have started reviewing v2 without noticing that there is a
-> > > > v3 already.
-> > > > 
-> > > > Let me summarize my comments:
-> > > > 
-> > > > - You are using OF aliases. Are they documented and acked by DT
-> > > >     maintainers?
-> > > > 
-> > > > - I generally feel that the use of so many small devices to declare
-> > > >     functional blocks is an abuse of the DT. Please consider creating
-> > > >     _small_ units from the driver code directly rather than going throught
-> > > >     the components.
-> > > 
-> > > Well, I really don't think so. I don't agree.
-> > > 
-> > > I have checked the DTSpec[1] before type, the spec isn't define how
-> > > many is considered to be "many", and the spec isn't define to what
-> > > extent is think to be "small" as well.
-> > 
-> > Yeah. However _usually_ we are not defining DT devices for sub-device
-> > components.
-> 
-> I guess, this depended on their hardware (i.MX8qxp) layout, reflecting
-> exactly what their hardware's layout is perfectly valid. It also depend
-> on if specific part of those sub-device will be re-visioned or not. If
-> only a small part of the whole is re-versioned in the future, we can still
-> re-using this same driver with slightly modify(update) the DTS.
-> 
-> The point is to controll the granularity and forward compatibility.
+Thank you for your detailed explanation. I support the decision to use
+fallback compatible.
 
-That's why I asked for the comments or explanations. The cover letter is
-a usual place, as it is an introduction to the series. The reviewers
-don't start the series from 8/N, they start from 00/NN.
+However, I am curious as to why the NXP CAN PHY transceiver was not
+included as fallback compatible. Geert, could you please share your
+thoughts on this matter?
 
-> 
-> > So at least such decisions ought to be described and
-> > explained in the cover letter.
-> 
-> Agree, but I see 08/19 patch has a beautiful schematic. I have learned
-> a lot when reading it. I can't see any abuse of the DT through this
-> bulk series anyway.
-> 
-> 
-> Comments below are not revelant to Ying's patch series itself.
-> 
-> /*----------------------------------------------------------------*/
-> 
-> By the way, the last time that I have ever seen and feel abuse of the
-> DT is the aux-bridge.c[1] and aux-hpd-bridge.c[2]. I strongly feel that
-> those two *small* programs are abuses to the DT and possibily abuse to
-> the auxiliary bus framework.
+On Tue, 23 Jul 2024 at 23:14, Conor Dooley <conor@kernel.org> wrote:
+>
+> On Tue, Jul 23, 2024 at 10:55:17PM +0300, Ilya Orazov wrote:
+> > On Tue, 23 Jul 2024 at 21:50, Conor Dooley <conor@kernel.org> wrote:
+> > >
+> > > On Tue, Jul 23, 2024 at 08:20:04PM +0300, IlorDash wrote:
+> > > > On Fri, 19 Jul 2024 at 18:07, Conor Dooley <conor@kernel.org> wrote:
+> > > > >
+> > > > > On Fri, Jul 19, 2024 at 12:03:21AM +0300, Ilya Orazov wrote:
+> > > > > > Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
+> > > > > > It is pin-compatible with TI TCAN1042.
+> > > > > >
+> > > > > > Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
+> > > > > > ---
+> > > > > >  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 1 +
+> > > > > >  1 file changed, 1 insertion(+)
+> > > > > >
+> > > > > > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > > > > > index 79dad3e89aa6..03de361849d2 100644
+> > > > > > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > > > > > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> > > > > > @@ -18,6 +18,7 @@ properties:
+> > > > > >        - nxp,tjr1443
+> > > > > >        - ti,tcan1042
+> > > > > >        - ti,tcan1043
+> > > > > > +      - microchip,ata6561
+> > > > >
+> > > > > Given that your driver patch has
+> > > > > | diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+> > > > > | index ee4ce4249698..dbcd99213ba1 100644
+> > > > > | --- a/drivers/phy/phy-can-transceiver.c
+> > > > > | +++ b/drivers/phy/phy-can-transceiver.c
+> > > > > | @@ -89,6 +89,10 @@ static const struct of_device_id can_transceiver_phy_ids[] = {
+> > > > > |                 .compatible = "nxp,tjr1443",
+> > > > > |                 .data = &tcan1043_drvdata
+> > > > > |         },
+> > > > > | +       {
+> > > > > | +               .compatible = "microchip,ata6561",
+> > > > > | +               .data = &tcan1042_drvdata
+> > > > > | +       },
+> > > > > |         { }
+> > > > > |  };
+> > > > >
+> > > > > the driver patch is actually not needed at all, and you just need to
+> > > > > allow ti,tcan1042 as fallback compatible in the binding, so something
+> > > > > like:
+> > > > >
+> > > > >   compatible:
+> > > > >     oneOf:
+> > > > >       - enum:
+> > > > >           - nxp,tjr1443
+> > > > >           - ti,tcan1042
+> > > > >           - ti,tcan1043
+> > > > >       - items:
+> > > > >           - const: microchip,ata6561
+> > > > >           - const: ti,tcan1042
+> > > > >
+> > > > >    '#phy-cells':
+> > > > >      const: 0
+> > > >
+> > > > I tested the build with fallback compatible:
+> > > >
+> > > > compatible:
+> > > >   oneOf:
+> > > >     - items:
+> > > >       - enum:
+> > > >         - microchip,ata6561
+> > > >       - const: ti,tcan1042
+> > > >     - items:
+> > > >       - enum:
+> > > >         - nxp,tjr1443
+> > > >       - const: ti,tcan1043
+> > > >
+> > > > and modified compatible property in DTS:
+> > > >
+> > > > compatible = "microchip,ata6561", "ti,tcan1042";
+> > > >
+> > > > Build succeeded, phy-can-transceiver driver was used. So I would like
+> > > > to add a fallback compatible for both "microchip,ata6561" and
+> > > > "nxp,tjr1443" in this binding and modify other DTS files with
+> > > > compatible = "nxp,tjr1443". What do you think?
+> > >
+> > > This is wrong on two counts. Firstly, were what you have correct, you
+> > > should
+> > > squash the two:
+> > >      - items:
+> > >          - enum:
+> > >            - nxp,tjr1443
+> > >            - microchip,ata6561
+> > >          - const: ti,tcan1042
+> > >
+> > > However, that does not allow the TI compatibles in isolation, so you
+> > > still need to allow that for the actual TI devices, so you need:
+> > >
+> > >    oneOf:
+> > >      - items:
+> > >          - enum:
+> > >            - microchip,ata6561
+> > >            - nxp,tjr1443
+> > >            - ti,tcan1043
+> > >          - const: ti,tcan1042
+> > >      - const: ti,tcan1042
+> > >
+> > > There's probably some devicetrees that would need to be fixed up. I'm
+> > > just not convinced that this is worth retrofitting however.
+> >
+> > But nxp,tjr1443 is pin compatible with ti,tcan1043, so it should
+> > fallback only to ti,tcan1043 and not ti,tcan1042. That's why I decided
+> > to split them into different enums.
+>
+> Ah, sorry I missed that. I misread the match data. Then you need:
+>   compatible:
+>     oneOf:
+>       - items:
+>         - enum:
+>           - microchip,ata6561
+>         - const: ti,tcan1042
+>       - items:
+>         - enum:
+>           - nxp,tjr1443
+>         - const: ti,tcan1043
+>       - enum:
+>           const: ti,tcan1042
+>           const: ti,tcan1043
+>
+> because the TI devices exist and we still need to be able to
+> differentiate the TI and NXP devices. If you have
+>   compatible = "nxp,tjr1443", "ti,tcan1042";
+> that means the device is an nxp,tjr1443. If you have
+>   compatible = "ti,tcan1042";
+> then that's a tcan1042.
+>
+> > I made my patch according to a similar one that adds support for
+> > nxp,tjr1443. You can find it's conversation on
+> > https://lore.kernel.org/all/6ee5e2ce00019bd3f77d6a702b38bab1a45f3bb0.1674037830.git.geert+renesas@glider.be/t/#u.
+>
+> > I thought we want to hold all PHY chip names in one compatible enum
+> > and each in its own of_device_id struct in driver and extend them
+> > where appropriate.
+>
+> Nah, fallbacks are preferred when the programming model is either
+> identical or a "compatible superset" of an existing device. New
+> of_device_id structs should only be used where we need to account for
+> differences in the programming model.
+>
+> Cheers,
+> Conor.
 
-Off-topic should be directed as an answer to the original series. And if
-you tried, you'd have seen the reason and the explanation. And a quick
-glance around would have shown you the ti-sn65dsi86 bridge, which also
-has similar structure for exactly the same reasons.
 
-Nevertheless, the aux-bridge and aux-hpd-bridge provide a way to link
-two different directions of the probe dependency chains: from the SoC to
-the connector (DRM bridge chains) and from the connector to the SoC
-(USB-C chains).
-
-> 1) It's so *small* that it don't even have a hardware entity (physical
->    device) to corresponding with. As far as I can see, all hardware
->    units in this patch series are bigger than yours. Because your HPD
->    bridge is basically a "virtual wire".
-> 
->    An non-physical-exist wire hold reference to several device node,
->    this is the most awful abuse to the DT I have ever seen. In other
->    words, despite you want to solve some software problems, but then,
->    you could put a device not in the DTS, and let the 'OF' system
->    create a device for you. Just like what this series do.
-
-Thank you for your opinion. However you have clearly provided the reason
-why these devices do not have a separate DT node: they are internal
-parts of the existing device.
-
-> 
-> 2) I feel your HPD fake bridge driver abuse to the philosophy of
->    auxiliary bus [3]. The document of auxiliary bus tell us that
-> 
->    "These individual devices split from the core cannot live on
->     the platform bus as they are not physical devices that are
->     controlled by DT/ACPI"
-
-This is correct and two mentioned bridges follow this approach. This
-phrase mostly provides a boundary between platform-based MFD devices
-which usually have MMIO-like addressing for cells and non-MMIO,
-non-platform devices living on the aux bus.
-
->     Which is nearly equivalent to say that devices that are controlled
->     by DT/ACPI have better ways to enforce the control. When using
->     auxiliary bus, we *generally* should not messed with DT. See
->     golden examples[4][5]. At least, their code are able to run on
->     X86, while the code you write just can't.
-> 
-> [0] https://patchwork.freedesktop.org/patch/605555/?series=135786&rev=3
-> [1] https://elixir.bootlin.com/linux/v6.10.2/source/drivers/gpu/drm/bridge/aux-bridge.c
-> [2] https://elixir.bootlin.com/linux/v6.10.2/source/drivers/gpu/drm/bridge/aux-hpd-bridge.c
-> [3] https://www.kernel.org/doc/html/latest/driver-api/auxiliary_bus.html
-> 
-> [4] https://patchwork.freedesktop.org/series/136431/
-> [5] https://patchwork.freedesktop.org/series/134837/
-> 
-> 
-> Best regards
-> Sui
-> 
-> > > 
-> > > [1]
-> > > https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.4
-> > 
-> 
-> -- 
-> Best regards
-> Sui
-> 
 
 -- 
-With best wishes
-Dmitry
+Best regards,
+Ilya Orazov
 
 -- 
 linux-phy mailing list
