@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 139D9C3DA61
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Jul 2024 07:30:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96C8AC3DA4A
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jul 2024 07:33:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LaOkMbOX4vrz9lLvldUx3RZWlekZk05BIDfmK66GtFQ=; b=hAKJug6gnD8lP1
-	6afTvSA2CdHJyJN0KKhdsQO9c0kitkiRybvvsLrH5IR41BOynOC8Xi2+6Qxfehgx1WW/JUA/pW9p0
-	kS5xtAcONqOceQnr038fWfdhl8pSMaXAhzySKo3xpgE8VJ9bAd6rRNZASMVUsVp10aSkcKZhVQ7qr
-	fryr3MUV/Fngnc18/prpM/IxJJLR5kTf0XowukIrX01wkz1MlNOpTRpB3XfhMBniTjPvqNlts7Rw1
-	EdnhvRc3f602kI2T8Io9MhrBq3cNenAsKrJveW7zvGm52IpQvfp2uQFjmB0HexwalDTwHRcTfeJaL
-	/kkEjJjp5bLC+NnkyB3g==;
+	List-Owner; bh=eVkP4ljH2NFsGJqUNA/KZrPhoUF62a+rAEJJ43pQsvc=; b=sqEjZl02Ch1vGh
+	KkOmgz6++VUUs624z40HEKI93gk7airAz/4QbFrD4EnC4K6GcwrrLHW+ggiL5xOlco0JabMjt5H+B
+	e4X4WNlupi18YJptI4EHAa5ko0rYrfE3Z/TK1Fh1+Eh2Zo3YnE+EV+59VRTRLbyf+R2m6/Ccwd+a9
+	D9DGEDVTkWDe4Hvcl2Pbn5qIKG15131Ev9sMY8R6TmAmeYAsJ2lFH317Oe8XaGF2FgSSPrhv0kKKD
+	RNK1a7zyFWeYwIDTnW3q+pr8OR45pfN7NdNo5dARuYQyweAC/7ZAFcRBa3l+OW3ij6s/gKVqYLsqV
+	gGcyLCIaQbGveq+y7PWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sYKps-0000000ALhh-1zwY;
-	Mon, 29 Jul 2024 07:30:24 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sYKsi-0000000AM4S-16v7;
+	Mon, 29 Jul 2024 07:33:20 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sYKpQ-0000000ALVT-1wL1;
-	Mon, 29 Jul 2024 07:29:58 +0000
+	id 1sYKsH-0000000AM06-3PzZ;
+	Mon, 29 Jul 2024 07:32:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 7EB2ECE0A7C;
-	Mon, 29 Jul 2024 07:29:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 522BBC4AF0B;
-	Mon, 29 Jul 2024 07:29:51 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0F94961178;
+	Mon, 29 Jul 2024 07:32:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 17FADC32786;
+	Mon, 29 Jul 2024 07:32:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722238193;
-	bh=LFoFEL/B5hUjTc42pDZ4xdc4o93RCpy1CfB/DoJ2nhc=;
+	s=k20201202; t=1722238372;
+	bh=+S31FkW/FMZb/UwpEATwQCldYe2PdJyJz9xLy+f72vM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=KSY+Ny9DkaOR4Vv1LerkFUA6R++kXHDzGhipvdZMUTItsOX5HaB7DIQKmWeEbU5Ly
-	 xZF3qDJfDK4bOm3I3csJ4/xsxZxd2wRZHcNanpQAfSkl+Mlug9xzVci3uckEwY7aTX
-	 7xufnAUyHPwp3VHTufjMb3tMUS4NwPhHCXd4BeuxKZ5M8R6oIFPitJK6qXsVcUsl/j
-	 FFhypwEZJFFgPf/zDGcmd9w1W2Kw20xEW3T3R1F+sxtLejWS9STooHkLxgodtXeyq9
-	 JZFgLaXRER+KatuHEj9E+wORQcS+ORx1VkJqtuGcuHMFMvoAGHxeGnKrDhLjKplgre
-	 JfxZZklkiRiMA==
-Message-ID: <c4c2b30a-8ff9-4fc4-a1ed-adcd366d15a7@kernel.org>
-Date: Mon, 29 Jul 2024 09:29:48 +0200
+	b=LV3V2dJ+aySOEB5PYWvZ4b1V2nU1VSbSkkp1M9+BCKR1ScDda6G9YCHTUn9IY/mu6
+	 lPz8w7Lo8nN8xe6WSN5oJGtoZiefb3UT4xFd8PVYtVrcYvGLrwYWChwIapdFrul1yl
+	 AImZmX0lyfzWt+ippKmdd/1CQqJ2bTQc5mFrl4wWGf+NygFTHCMVah/dhDN8u3p8s6
+	 a60LIHYcyqHLz1jHXx6lYweYIZPock9W66CnuNsAKX3mLmzlefSQAoj1ok4sViabzP
+	 C1T5QMtvWSDY5GayQ85rXP7mYRlQoxxNFCkoyT9bRd9UzqS8ukFLBNS43aFZPnwM0i
+	 2n38jA1A7godA==
+Message-ID: <7ce7f373-c738-48c7-835e-6e7d10e8ae20@kernel.org>
+Date: Mon, 29 Jul 2024 09:32:45 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: nuvoton,ma35-usb2-phy: add new
- bindings
+Subject: Re: [PATCH 2/2] phy: nuvoton: add new driver for the Nuvoton MA35 SoC
+ USB 2.0 PHY
 To: hpchen0 <hpchen0nvt@gmail.com>, vkoul@kernel.org, kishon@kernel.org,
  robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org
 Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20240729061509.83828-1-hpchen0nvt@gmail.com>
- <20240729061509.83828-2-hpchen0nvt@gmail.com>
+ <20240729061509.83828-3-hpchen0nvt@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -98,10 +98,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240729061509.83828-2-hpchen0nvt@gmail.com>
+In-Reply-To: <20240729061509.83828-3-hpchen0nvt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240729_002956_887488_895BB8C9 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20240729_003254_020051_469F460B 
+X-CRM114-Status: GOOD (  15.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,95 +119,119 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29/07/2024 08:15, hpchen0 wrote:
-> Add dt-bindings for USB2 PHY found on the Nuvoton MA35 SoC.
+> Nuvoton MA35 SoCs support DWC2 USB controller.
+> Add the driver to drive the USB 2.0 PHY transceivers.
 > 
 > Signed-off-by: hpchen0 <hpchen0nvt@gmail.com>
 
-Please use proper name.
-
-> ---
->  .../bindings/phy/nuvoton,ma35-usb2-phy.yaml   | 51 +++++++++++++++++++
->  1 file changed, 51 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/nuvoton,ma35-usb2-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/nuvoton,ma35-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/nuvoton,ma35-usb2-phy.yaml
-> new file mode 100644
-> index 000000000000..415ea2c45975
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/nuvoton,ma35-usb2-phy.yaml
-> @@ -0,0 +1,51 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/nuvoton,ma35-usb2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Nuvoton MA35 USB2 phy
+> +	ret = clk_prepare_enable(p_phy->clk);
+> +	if (ret < 0) {
+> +		dev_err(p_phy->dev, "Failed to enable PHY clock: %d\n", ret);
+> +		return ret;
+> +	}
 > +
-> +maintainers:
-> +  - hpchen0 <hpchen0nvt@gmail.com>
+> +	regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
+> +	if (val & PHY0SUSPEND) {
+> +		/*
+> +		 * USB PHY0 is in operation mode already
+> +		 * make sure USB PHY 60 MHz UTMI Interface Clock ready
+> +		 */
+> +		timeout = jiffies + msecs_to_jiffies(200);
+> +		while (time_before(jiffies, timeout)) {
+> +			regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
+> +			if (val & PHY0DEVCKSTB)
+> +				return 0;
+> +			usleep_range(1000, 1500);
+> +		}
 
-Same here
+You want some readl_poll_timeout version here.
 
+> +	}
 > +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - nuvoton,ma35-usb2-phy
-
-All other devices have name ma35d1. Is this a different SoC?
-
+> +	/*
+> +	 * reset USB PHY0.
+> +	 * wait until USB PHY0 60 MHz UTMI Interface Clock ready
+> +	 */
+> +	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, (PHY0POR | PHY0SUSPEND));
+> +	timeout = jiffies + msecs_to_jiffies(200);
+> +	while (time_before(jiffies, timeout)) {
+> +		regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
+> +		if (val & PHY0DEVCKSTB)
+> +			break;
+> +		usleep_range(1000, 1500);
+> +	}
 > +
-> +  "#phy-cells":
-> +    const: 0
+> +	/* make USB PHY0 enter operation mode */
+> +	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, PHY0SUSPEND);
 > +
-> +  clocks:
-> +    maxItems: 1
-> +    description: USB PHY clock
-
-Drop description, it's obvious.
-
+> +	/* make sure USB PHY 60 MHz UTMI Interface Clock ready */
+> +	timeout = jiffies + msecs_to_jiffies(200);
+> +	while (time_before(jiffies, timeout)) {
+> +		regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
+> +		if (val & PHY0DEVCKSTB)
+> +			return 0;
+> +		usleep_range(1000, 1500);
+> +	}
 > +
-> +  clock-names:
-> +    const: usbd_gate
-
-Drop clock-names, you do not bring any new information.
-
+> +	dev_err(p_phy->dev, "Timed out waiting for PHY to power on\n");
+> +	ret = -ETIMEDOUT;
 > +
-> +  nuvoton,sys:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      phandle of the system-management node.
-
-Describe what is it for.
-
+> +	clk_disable_unprepare(p_phy->clk);
+> +	return ret;
+> +}
 > +
-> +required:
-> +  - compatible
-> +  - clocks
-> +  - nuvoton,sys
-> +  - "#phy-cells"
-
-Keep the same order as in properties.
-
+> +static int ma35_usb_phy_power_off(struct phy *phy)
+> +{
+> +	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
 > +
-> +additionalProperties: false
+> +	clk_disable_unprepare(p_phy->clk);
+> +	return 0;
+> +}
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-
-Where do you use it?
-
-> +    #include <dt-bindings/clock/nuvoton,ma35d1-clk.h>
+> +static const struct phy_ops ma35_usb_phy_ops = {
+> +	.power_on = ma35_usb_phy_power_on,
+> +	.power_off = ma35_usb_phy_power_off,
+> +	.owner = THIS_MODULE,
+> +};
 > +
-> +    usb_phy: usb-phy {
-> +        compatible = "nuvoton,ma35-usb2-phy";
-> +        clocks = <&clk USBD_GATE>;
-> +        clock-names = "usbd_gate";
-> +        nuvoton,sys = <&sys>;
-> +        #phy-cells = <0>;
-> +    };
+> +static int ma35_usb_phy_probe(struct platform_device *pdev)
+> +{
+> +	struct phy_provider *provider;
+> +	struct ma35_usb_phy *p_phy;
+> +	const char *clkgate;
+> +	struct phy *phy;
+> +
+> +	p_phy = devm_kzalloc(&pdev->dev, sizeof(*p_phy), GFP_KERNEL);
+> +	if (!p_phy)
+> +		return -ENOMEM;
+> +
+> +	p_phy->dev = &pdev->dev;
+> +	platform_set_drvdata(pdev, p_phy);
+> +
+> +	p_phy->sysreg = syscon_regmap_lookup_by_phandle(p_phy->dev->of_node, "nuvoton,sys");
+> +	if (IS_ERR(p_phy->sysreg))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(p_phy->sysreg),
+> +				     "Failed to get SYS registers\n");
+> +
+> +	/* enable clock */
+> +	of_property_read_string(p_phy->dev->of_node, "clock-enable", &clkgate);
+
+There is no such property.
+
+> +	p_phy->clk = devm_clk_get(p_phy->dev, clkgate);
+
+Don't mix styles of variables: you were using pdev->dev but now entirely
+different. Stick to pdev->dev.
+
+> +	if (IS_ERR(p_phy->clk))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(p_phy->clk),
+
+And here again pdev->dev... Bring some consistency, not random coding style.
+
+> +				     "Failed to get usb_phy clock\n");
+> +
+
 
 Best regards,
 Krzysztof
