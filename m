@@ -4,85 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62EAAC3DA4A
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Jul 2024 06:16:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 237B6C3DA4A
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jul 2024 06:16:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vv9iTt5UGOuQ+whMwrAgjTGGDPJQgRFWbvvn9cPuV2w=; b=XY8DVePbw7Ic5X
-	Fp94U5dzXUmwaOxtXuB98m9CUPzByfJ9FRaajVaRGXsM9JPtSSZO+0f09J4/We6YAcGxmNA84bfoZ
-	iO7tSy1HEgId1wHzT79GZvjQd0Brc25ahDxBPFT4FxxGfjzHwG4ehQjLbX9qxHb0ukMkd6Olpo6Le
-	0//trPxbHXtWXCGgdEBZKV5GC0pfEC0+84GWkfhYoIFYoaaOYyCAA+tupIjgJKTocBG77vrwXzYAG
-	RJ3AKunS3MIS7CBkvqQC/PEr077n4LkpXZ8tCglyaMvNx2pV+oZCwIGhDJ1hXTLZBMDtcWY0AvoLq
-	3DExiTpYxbC3O4PY/rjw==;
+	List-Owner; bh=7j4qU97xQgtsoULkKNwfEcsvRqUxU3PvgqJv5A9gWns=; b=fd9qSX0Zi4i6dA
+	G89b9M1oEnJ5iL92SjbvWcvkRJyK5PSdCOi94Y4AFi0nKzTbxMgD9h7Z2TVd9LsUFxH/a/yMTp/KJ
+	8rZNF6qSNMFcekLK6ujW6Jb3Bgu82IeVu/4GfxcasltIKv1U8R+Sye/uE4qDMkyXRZnF1RkPiLZph
+	9ox+nQy+IK1vheUno7Pz0qPHSTkddmcGWCoj2Kw8/bGzj13NGrZA9y59RDRtgJ7yc6B4R49pIRtyV
+	Cf5SERwUb4+iFHZxVqLmUnPk+AkOxjX203Ca4Ut8t9gXj6F5/r4NtLTsYF9F88PDaJ4/IS1mWqqsO
+	OPaO4Z8FLGsg4YyuvIPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sYJgO-0000000A7vv-02FU;
-	Mon, 29 Jul 2024 06:16:32 +0000
-Received: from mail-pj1-x102a.google.com ([2607:f8b0:4864:20::102a])
+	id 1sYJgl-0000000A820-3SFM;
+	Mon, 29 Jul 2024 06:16:55 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sYJfE-0000000A7ZG-1GOF;
-	Mon, 29 Jul 2024 06:15:21 +0000
-Received: by mail-pj1-x102a.google.com with SMTP id 98e67ed59e1d1-2cd48ad7f0dso2300176a91.0;
-        Sun, 28 Jul 2024 23:15:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1722233719; x=1722838519; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=xH/fsCRbVakN7gixYJYo8VOqiSpDvYW3fwUrp/KNGUI=;
-        b=mJxs+EXf35Roa9zW2s75aaf8HunS1MaiAjFcThK5NDU699xnxqBg9h49LJL7ybfqZi
-         HgX1FuZhshRk03YxyR6jPcE7ukBEe4ytjaeWbob2O7rSMhGojfXt/zmwIfIpXfKOuBFD
-         s8rfCZ0LAGi/9idxrr9N+vQX3xMwyuWsQVqujQ150B9iHj1bJVDHLxb99lfY72HfSOzu
-         g74fzgAOjbvpwOa7AaajH9URtkG7sh0Is3M9ldcycu8cRsNwhtDn8v1Vwv3A2rxAqO7L
-         yGUaWuc6u2io29kfChMsAnvUDjHIqi3WRaHD9hfhADzvSmw214sTFbbHci+WCh9q1Sgh
-         TvgA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722233719; x=1722838519;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=xH/fsCRbVakN7gixYJYo8VOqiSpDvYW3fwUrp/KNGUI=;
-        b=m8kONT7hKRCyP5oiUzYwiafP1RP/bq3Nr+9I0glxuzkiNtqFdI7u2q90rFLjUO9EIc
-         wzr1N4yi5YfPw99jgMOZ4E+JyxKeCoFo4uMFBASgU/fg+p+J8H4F5Z43sMJJm4qnlx6T
-         rBf+HPobBmj/0SH8UeyHOX1TmNufgmj1j/8ouNB+G4D1Yyj3R04uuJkUX4SAHQoBi4Um
-         vOyRwuxb9L4BlMGZILM+qfLBejM7EnGxC6tK4MzzBW17ldVgjH3Mn6UALbmXCtovPYUT
-         OQzRD5tVAi+WP9AUSgKk3Axh8pVkApbIBq9CbsbWzLH0EcL6MzYS0AnTA+/A4sF+Azzk
-         u75w==
-X-Forwarded-Encrypted: i=1; AJvYcCXsSv4cv2A+wPikByc25fv9lUQH2dT+8KHTgQ/cMkJ6BIa+thAD80V4eFM0KEj+/uhb7Bji2qUbf8QIg3EXLNy/Be10y3gbjJVaGWEYLA==
-X-Gm-Message-State: AOJu0YyfXt35M7P91+yIWAlhbng/QnSGKexar3OkzgMzY4WIOfZVyjf1
-	+sBx5IpFpV/brTHSoCtTHM+qykZuw5lBpzT7v+FsgVVbOcJO06xe
-X-Google-Smtp-Source: AGHT+IFSxE2T4Kl9u11ZvXGY16Qyk7/rJYMTKzQYuwaXrmBlyY3Q/Mt42wc53P9QSoGPdpSlABjn4w==
-X-Received: by 2002:a17:90b:3618:b0:2c2:f2d6:60d4 with SMTP id 98e67ed59e1d1-2cf7e0a6b55mr7605562a91.8.1722233719275;
-        Sun, 28 Jul 2024 23:15:19 -0700 (PDT)
-Received: from localhost.localdomain (60-250-192-107.hinet-ip.hinet.net. [60.250.192.107])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2cd8cd2013fsm7951282a91.0.2024.07.28.23.15.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 28 Jul 2024 23:15:19 -0700 (PDT)
-From: hpchen0 <hpchen0nvt@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org
-Cc: linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	hpchen0 <hpchen0nvt@gmail.com>
-Subject: [PATCH 2/2] phy: nuvoton: add new driver for the Nuvoton MA35 SoC USB 2.0 PHY
-Date: Mon, 29 Jul 2024 06:15:09 +0000
-Message-Id: <20240729061509.83828-3-hpchen0nvt@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20240729061509.83828-1-hpchen0nvt@gmail.com>
-References: <20240729061509.83828-1-hpchen0nvt@gmail.com>
+	id 1sYJg2-0000000A7ou-2bCW;
+	Mon, 29 Jul 2024 06:16:12 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id BD47F61440;
+	Mon, 29 Jul 2024 06:16:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56DA2C32786;
+	Mon, 29 Jul 2024 06:16:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722233769;
+	bh=EFb16ckAh6+SMvLScxYLNfDfGtLvCSOL3oi9pEPz1LQ=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=nnX0v4V6JBeX3dv1ITzalORWMtdhz3JBWNUzLiI3sJkThtWAgCAMjZFK5KDcRS+nO
+	 WvpjqEkAQEUjUMgg+HAqtxGB0bV1mGTycc7ENjVH5k/UVx19zxVPH6Aj3qSP0QS8N6
+	 bEPlsN76j41FdWx4vHxlbR5GcGR+q6xfn+RWiDNO7flzmsGbdkMOOqEgbt7tPzJhNx
+	 dPiGSXkH/cEfHUQQvuu7ZKEIct/r/ZVvYs605paYrwu+6AvDIV9Q16n0fLS6X4RyDn
+	 /5S7fMLVVrg95CHhE/GR37nckN4ecRmTZRVxnbsiVPv4i3tu80hGLll9uesEBLZFp1
+	 sXJNXx2teYOIA==
+Message-ID: <b1a4b23b-1c0a-49cb-9601-f4a7609cc930@kernel.org>
+Date: Mon, 29 Jul 2024 08:16:03 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
+ property
+To: Peng Fan <peng.fan@nxp.com>, Xu Yang <xu.yang_2@nxp.com>,
+ "vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
+ <kishon@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+ "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+ "conor+dt@kernel.org" <conor+dt@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "peter.chen@kernel.org" <peter.chen@kernel.org>,
+ "herve.codina@bootlin.com" <herve.codina@bootlin.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "imx@lists.linux.dev" <imx@lists.linux.dev>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ Jun Li <jun.li@nxp.com>
+References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
+ <20240726113207.3393247-3-xu.yang_2@nxp.com>
+ <PAXPR04MB8459517F5F5BC4E1C7A5E67888B72@PAXPR04MB8459.eurprd04.prod.outlook.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <PAXPR04MB8459517F5F5BC4E1C7A5E67888B72@PAXPR04MB8459.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240728_231520_380050_B9D88F24 
-X-CRM114-Status: GOOD (  22.96  )
+X-CRM114-CacheID: sfid-20240728_231610_889605_236DE7C0 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,241 +135,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Nuvoton MA35 SoCs support DWC2 USB controller.
-Add the driver to drive the USB 2.0 PHY transceivers.
+On 29/07/2024 03:03, Peng Fan wrote:
+>> Subject: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
+>> property
+>>
+>> i.MX7ULP need properly set System Integration Module(SIM) module
+>> to make usb wakeup work well. This will add a "nxp,sim" property.
+>>
+>> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+>>
+>> ---
+>> Changes in v2:
+>>  - add else branch suggested by Rob
+>> ---
+>>  .../devicetree/bindings/phy/fsl,mxs-usbphy.yaml | 17
+>> +++++++++++++++++
+>>  1 file changed, 17 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-
+>> usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-
+>> usbphy.yaml
+>> index f4b1ca2fb562..ce665a2779b7 100644
+>> --- a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+>> @@ -87,6 +87,12 @@ properties:
+>>      maximum: 119
+>>      default: 100
+>>
+>> +  nxp,sim:
+> 
+> "nxp,imx7ulp-sim" should be better. SIM is specific to i.MX7ULP as of now.
 
-Signed-off-by: hpchen0 <hpchen0nvt@gmail.com>
----
- drivers/phy/Kconfig                 |   1 +
- drivers/phy/Makefile                |   1 +
- drivers/phy/nuvoton/Kconfig         |  13 +++
- drivers/phy/nuvoton/Makefile        |   3 +
- drivers/phy/nuvoton/phy-ma35-usb2.c | 160 ++++++++++++++++++++++++++++
- 5 files changed, 178 insertions(+)
- create mode 100644 drivers/phy/nuvoton/Kconfig
- create mode 100644 drivers/phy/nuvoton/Makefile
- create mode 100644 drivers/phy/nuvoton/phy-ma35-usb2.c
+Can you guarantee that? IOW, if you ever, ever come with another "sim"
+property for another SoC NXP agrees that it will be rejected?
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index dfab1c66b3e5..f73abff416be 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -95,6 +95,7 @@ source "drivers/phy/mediatek/Kconfig"
- source "drivers/phy/microchip/Kconfig"
- source "drivers/phy/motorola/Kconfig"
- source "drivers/phy/mscc/Kconfig"
-+source "drivers/phy/nuvoton/Kconfig"
- source "drivers/phy/qualcomm/Kconfig"
- source "drivers/phy/ralink/Kconfig"
- source "drivers/phy/realtek/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index 5fcbce5f9ab1..ebc399560da4 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -25,6 +25,7 @@ obj-y					+= allwinner/	\
- 					   microchip/	\
- 					   motorola/	\
- 					   mscc/	\
-+					   nuvoton/	\
- 					   qualcomm/	\
- 					   ralink/	\
- 					   realtek/	\
-diff --git a/drivers/phy/nuvoton/Kconfig b/drivers/phy/nuvoton/Kconfig
-new file mode 100644
-index 000000000000..270ee2943287
---- /dev/null
-+++ b/drivers/phy/nuvoton/Kconfig
-@@ -0,0 +1,13 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+#
-+# PHY drivers for Nuvoton MA35 platforms
-+#
-+config PHY_MA35_USB
-+	tristate "Nuvoton MA35 USB2.0 PHY driver"
-+	depends on ARCH_MA35 || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support the USB2.0 PHY on the Nuvoton MA35
-+	  series SoCs.
-+
-diff --git a/drivers/phy/nuvoton/Makefile b/drivers/phy/nuvoton/Makefile
-new file mode 100644
-index 000000000000..85785e037d5f
---- /dev/null
-+++ b/drivers/phy/nuvoton/Makefile
-@@ -0,0 +1,3 @@
-+# SPDX-License-Identifier: GPL-2.0
-+
-+obj-$(CONFIG_PHY_MA35_USB)		+= phy-ma35-usb2.o
-diff --git a/drivers/phy/nuvoton/phy-ma35-usb2.c b/drivers/phy/nuvoton/phy-ma35-usb2.c
-new file mode 100644
-index 000000000000..061b31fcfbb1
---- /dev/null
-+++ b/drivers/phy/nuvoton/phy-ma35-usb2.c
-@@ -0,0 +1,160 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2024 Nuvoton Technology Corp.
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+/* USB PHY Miscellaneous Control Register */
-+#define MA35_SYS_REG_USBPMISCR	0x60
-+#define PHY0POR			BIT(0)  /* PHY Power-On Reset Control Bit */
-+#define PHY0SUSPEND			BIT(1)  /* PHY Suspend; 0: suspend, 1: operaion */
-+#define PHY0COMN			BIT(2)  /* PHY Common Block Power-Down Control */
-+#define PHY0DEVCKSTB			BIT(10) /* PHY 60 MHz UTMI clock stable bit */
-+
-+struct ma35_usb_phy {
-+	struct clk *clk;
-+	struct device *dev;
-+	struct regmap *sysreg;
-+};
-+
-+static int ma35_usb_phy_power_on(struct phy *phy)
-+{
-+	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
-+	unsigned long timeout;
-+	unsigned int val;
-+	int ret;
-+
-+	ret = clk_prepare_enable(p_phy->clk);
-+	if (ret < 0) {
-+		dev_err(p_phy->dev, "Failed to enable PHY clock: %d\n", ret);
-+		return ret;
-+	}
-+
-+	regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
-+	if (val & PHY0SUSPEND) {
-+		/*
-+		 * USB PHY0 is in operation mode already
-+		 * make sure USB PHY 60 MHz UTMI Interface Clock ready
-+		 */
-+		timeout = jiffies + msecs_to_jiffies(200);
-+		while (time_before(jiffies, timeout)) {
-+			regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
-+			if (val & PHY0DEVCKSTB)
-+				return 0;
-+			usleep_range(1000, 1500);
-+		}
-+	}
-+
-+	/*
-+	 * reset USB PHY0.
-+	 * wait until USB PHY0 60 MHz UTMI Interface Clock ready
-+	 */
-+	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, (PHY0POR | PHY0SUSPEND));
-+	timeout = jiffies + msecs_to_jiffies(200);
-+	while (time_before(jiffies, timeout)) {
-+		regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
-+		if (val & PHY0DEVCKSTB)
-+			break;
-+		usleep_range(1000, 1500);
-+	}
-+
-+	/* make USB PHY0 enter operation mode */
-+	regmap_update_bits(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, 0x7, PHY0SUSPEND);
-+
-+	/* make sure USB PHY 60 MHz UTMI Interface Clock ready */
-+	timeout = jiffies + msecs_to_jiffies(200);
-+	while (time_before(jiffies, timeout)) {
-+		regmap_read(p_phy->sysreg, MA35_SYS_REG_USBPMISCR, &val);
-+		if (val & PHY0DEVCKSTB)
-+			return 0;
-+		usleep_range(1000, 1500);
-+	}
-+
-+	dev_err(p_phy->dev, "Timed out waiting for PHY to power on\n");
-+	ret = -ETIMEDOUT;
-+
-+	clk_disable_unprepare(p_phy->clk);
-+	return ret;
-+}
-+
-+static int ma35_usb_phy_power_off(struct phy *phy)
-+{
-+	struct ma35_usb_phy *p_phy = phy_get_drvdata(phy);
-+
-+	clk_disable_unprepare(p_phy->clk);
-+	return 0;
-+}
-+
-+static const struct phy_ops ma35_usb_phy_ops = {
-+	.power_on = ma35_usb_phy_power_on,
-+	.power_off = ma35_usb_phy_power_off,
-+	.owner = THIS_MODULE,
-+};
-+
-+static int ma35_usb_phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *provider;
-+	struct ma35_usb_phy *p_phy;
-+	const char *clkgate;
-+	struct phy *phy;
-+
-+	p_phy = devm_kzalloc(&pdev->dev, sizeof(*p_phy), GFP_KERNEL);
-+	if (!p_phy)
-+		return -ENOMEM;
-+
-+	p_phy->dev = &pdev->dev;
-+	platform_set_drvdata(pdev, p_phy);
-+
-+	p_phy->sysreg = syscon_regmap_lookup_by_phandle(p_phy->dev->of_node, "nuvoton,sys");
-+	if (IS_ERR(p_phy->sysreg))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(p_phy->sysreg),
-+				     "Failed to get SYS registers\n");
-+
-+	/* enable clock */
-+	of_property_read_string(p_phy->dev->of_node, "clock-enable", &clkgate);
-+	p_phy->clk = devm_clk_get(p_phy->dev, clkgate);
-+	if (IS_ERR(p_phy->clk))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(p_phy->clk),
-+				     "Failed to get usb_phy clock\n");
-+
-+	phy = devm_phy_create(p_phy->dev, NULL, &ma35_usb_phy_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(phy), "Failed to create PHY\n");
-+
-+	phy_set_drvdata(phy, p_phy);
-+
-+	provider = devm_of_phy_provider_register(p_phy->dev, of_phy_simple_xlate);
-+	if (IS_ERR(provider))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(provider),
-+				     "Failed to register PHY provider\n");
-+	return 0;
-+}
-+
-+static const struct of_device_id ma35_usb_phy_of_match[] = {
-+	{ .compatible = "nuvoton,ma35-usb2-phy", },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, ma35_usb_phy_of_match);
-+
-+static struct platform_driver ma35_usb_phy_driver = {
-+	.probe		= ma35_usb_phy_probe,
-+	.driver	= {
-+		.name	= "ma35-usb2-phy",
-+		.of_match_table = ma35_usb_phy_of_match,
-+	},
-+};
-+module_platform_driver(ma35_usb_phy_driver);
-+
-+MODULE_DESCRIPTION("Nuvoton ma35 USB2.0 PHY driver");
-+MODULE_AUTHOR("hpchen0nvt@gmail.com");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
+Properties should be defined once and naming such per-soc kind of
+contradicts it.
+
+Best regards,
+Krzysztof
 
 
 -- 
