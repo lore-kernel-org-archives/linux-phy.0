@@ -4,80 +4,158 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E3CCC3DA49
-	for <linux-phy@archiver.kernel.org>; Sun, 28 Jul 2024 08:52:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CC35C3DA49
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Jul 2024 01:04:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rFndZrkm76wLlF+rDMWQmQYV1vY6/EJDbl2Rki07p8w=; b=AePJ5CQQsPDomc
-	TghDYn8WS9aIOe/NgLwAaCfF5Yi+KLS3/dOjSB8eh7GWZ98GppE0DF2aKJqUd76OF9J6aGZu00CFL
-	WxxQHaVm0xfwI3rNOQhds2m79PQdteRFkaE6Cj35AH/CjT+TCsmWsfSyNmY0Eq4AfC1kAOaTFOHKV
-	6z8dsrCBe3m5abvfUxneIpzDYZcKxKU7vBH4wflAIYgZYThYQgt/kk9cR+jb29H272KS0bgGwwExR
-	3wu76QJTBboPU5vD1EUAVZ1azoLBwjYt03vdKxfSzOhgbCnAJu3lls4JcJPJAMHrS4udjcELxtV4T
-	qTlAvBfw7I+mrfFhRYNQ==;
+	List-Owner; bh=XBtQ6G5aQHdPLB4+FGSY7cNUqRApWpTL2lvglSi2QkE=; b=sAa9VVcxqKA//W
+	KT/r4HWl+nJ/9z8U/xpgMzR1P5IcEi5Ed2SkdcfbHsKgfi9Nl0StaQFTF9MB+JnaTgZxxkqr94wuN
+	BCf3YMImQX+1SeHB0MSpCCR1da1zJ6/gOhyhZ8c3HokBslODWgYS2dNaylHlgjB1cuQTK1qpxyRGS
+	l12+HZXHAB1fRgrhsKAfk9CW7ToyBeGT4AsJQtBw1SvDYNtMx3RBwLWWmFGkOzMsetZ7WZ045uY7w
+	EbXDozcOAt+z+8ZQkmRiDXm6HS/ew9ZDIDhoKAkTeFWj6wpEZuWetUYaUWnVTL5sR37mlY9+sP/aZ
+	NYscDkhj/kwrcLYcQaTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXze3-00000008AlC-2s5J;
-	Sun, 28 Jul 2024 08:52:47 +0000
-Received: from mail-yw1-x1132.google.com ([2607:f8b0:4864:20::1132])
+	id 1sYEo0-00000009Z2c-2YPc;
+	Mon, 29 Jul 2024 01:04:05 +0000
+Received: from mail-am0eur02on2062f.outbound.protection.outlook.com ([2a01:111:f403:2606::62f] helo=EUR02-AM0-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXze0-00000008Akd-3KAh
-	for linux-phy@lists.infradead.org;
-	Sun, 28 Jul 2024 08:52:46 +0000
-Received: by mail-yw1-x1132.google.com with SMTP id 00721157ae682-66599ca3470so9552537b3.2
-        for <linux-phy@lists.infradead.org>; Sun, 28 Jul 2024 01:52:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1722156763; x=1722761563; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=b50kQg9CcOfPljkM2el62+Gp/5HcSGg+41XNn2C/3x4=;
-        b=IN0FrSx9tF8J98i1RYDrGBMOhfFYVGybY1FNc9pzToAc7U3Je8M2jkbQynRCsy0yjA
-         m4aV9UQq93Q0IgmFkp7eCAQgFVjAbNV/nj1DS81vze9kefssLRGhsXYtDGMnDq5G4FqL
-         /rAMmcbjul1o0tdGJGK17+to622Fkxdl3btNq/z88VP2Ee5zWUT4DY5WuoDXkBtlBPHe
-         /FkSUKtMfBYZWTsaFhh1/NrnS3GoIzwOCxHVb1Sjb4B+lLoSAw5tJKm9PI2kFiFDf6j3
-         FGIY9NRhlVmo6UJZQV7KJpuTnf5lN8KxyHPji24UtTosaWUZtGLbnruIcfe4mnWMGYMm
-         Rqbg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722156763; x=1722761563;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=b50kQg9CcOfPljkM2el62+Gp/5HcSGg+41XNn2C/3x4=;
-        b=vi11/GMk22s175RtieKiEE+9ZF+bgSQQF7TlSqFKsnLOTCok3GDRtpcTBNthmfAMk+
-         JtN9y4gcfzsh9Xn5mLrbkYYQtolDCmFyLTMEv9jwaDAlVi2byotICjt9jY84rZF638rf
-         go+O/WuhfYLsDq9hf6c/V4MeHsPFHtP3EdQUnlELzWORgvj2CfDws8v2Noz8F09nnCOi
-         dwNScsb3W0m6zWfX6zkhzJC4bztgGrvHgnM4jy6yPllOzcN14Jaoz5dY7rmpD/3fr1M5
-         uT8/9E1ArheQFwAdDlmvPHsPccTC1ov6qXMNTb99HRIS3gWPqKPWktwT8cLB8+oJicFH
-         /qmg==
-X-Forwarded-Encrypted: i=1; AJvYcCWXjWiYKpEJ8htkiqgD6Tbk7L1oDXn0BKHmZ90fCR0bZ8tvtDDVBjhYTR7/G0QGMPs0u0JzBCZdzTT6k5dPRASsWEv2pS+UEqw9VQunFg==
-X-Gm-Message-State: AOJu0YxoYbjqDhbxdQwOC+t9qa2xmf/006HH0ElQbSHNRrzf+SNieAjm
-	Ve+OhHgEfOF0gP/M6Zf1UnIe7WcbPgz+6QgTewbIBOZ0FC4UkoW6rb5CJ3omj0ut7T+nQWhaS6F
-	+EkKdUWnQyqxoPWlsVv5w1L5FWqI=
-X-Google-Smtp-Source: AGHT+IFxPxC4Ng6BBPJ48T04Y3ihU8aK+aGafUQKzzm/XI0/Mws3uR/xLo9Uwm/f7iZEJNeBJn29rXvYEXrH93XwLTE=
-X-Received: by 2002:a0d:ea0e:0:b0:67a:f3d4:d9d2 with SMTP id
- 00721157ae682-67af3d4e244mr38363277b3.39.1722156762788; Sun, 28 Jul 2024
- 01:52:42 -0700 (PDT)
+	id 1sYEny-00000009YzN-2r1t;
+	Mon, 29 Jul 2024 01:04:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=XciUhdBfTmsxPLcfjFC9TOKMslAJzfN99zWDYGyyOeoHl2KuHUpoGDoAtDuXr4b6LB94oWFpn1hNczX/hE8nRo6sLv6T90ZAb2czdq5OhqttIJ3JsnSIX0nGnZAfxoYILdAtE1+C4eIemLi9zBwIOdivtWHEzEg6Yok9XYJIvgk86TEAJaHY71/3CI6bdtdgxPSDvLX6GACTP1YEHgA+PeA206DqkcpvTPIUmhXK4o66ZEsZjdl3XTVsnv/772XWqZLuFX1va6dJK4VWXo/MY8uO+T5+cg5qLrWKIncCE1LPeuhrgg85za9B4v8wYOPdMzd2xpGCB39S8lpQ/gIJig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=aKgHp1QlBYHiclx3UxpVVM8WaxxMDCL+j9UjleQ1UTk=;
+ b=AqHD3yEi3dmbFylUtfm7TiJi6WxlZWasOcF+lLvCzInJh/7jTJO0fJXSUborOftfI9x9Uoa3kCnS8R5wHjJlAWttJwBPqDLwKs7BJHK/oI17edMqJLx0GBW4tXclIL6n9zbGi8hBSCTmx4w4HigppLk2lCRaN3HtBj2TyH2RIlsAAoevGD36zl8nIe/dR/TStXpgUtRtZLpXHR23/PUvXJsz7fhz4d2vUjPhMkBB5+VBV9eKOkF74HJSXcdipFrZUOHttXPzYwcE1liwHvkmOx3vlhLmpDiChAtY5Fc9nE/bLV+DksP7kPCbvihmzXRrcI1wEVL764yFfINedrd/Dg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aKgHp1QlBYHiclx3UxpVVM8WaxxMDCL+j9UjleQ1UTk=;
+ b=iZWRX4AJuMjiPBpgO2IWnllySyU5Fy5plBu8CtBGzJssMlPLRAR2fiWVVV6ymHsPntsXGfyx9IZF+CcI4iE8pSNisI7Hv/cW1jQTR86FOok2UnUYInNRpaxwWWfKjFYcoh0D58wOZ9X5z7aJCR4py5zESfoaWma3/ut7mtTh66f/i/TDaDvgJ0/2K2QSFzp/ge0xx/jjVDL2wBsXxRYxKA+/PGfIpSYqHza4XuuNqCysFZxTSZiql+B4fJ71SO9Pc15I6ELmaxrzQkYGHRzkU/j9vWWuFblW7K17d/g40AlOTXOqfMiPq4q0YwPZLyItkkP0qFlwlMuoIFX//7XdSA==
+Received: from PAXPR04MB8459.eurprd04.prod.outlook.com (2603:10a6:102:1da::15)
+ by GVXPR04MB10684.eurprd04.prod.outlook.com (2603:10a6:150:218::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7784.28; Mon, 29 Jul
+ 2024 01:03:47 +0000
+Received: from PAXPR04MB8459.eurprd04.prod.outlook.com
+ ([fe80::165a:30a2:5835:9630]) by PAXPR04MB8459.eurprd04.prod.outlook.com
+ ([fe80::165a:30a2:5835:9630%4]) with mapi id 15.20.7784.020; Mon, 29 Jul 2024
+ 01:03:47 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Xu Yang <xu.yang_2@nxp.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"kishon@kernel.org" <kishon@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "conor+dt@kernel.org"
+	<conor+dt@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+	"s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+	<kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+	"gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+	"peter.chen@kernel.org" <peter.chen@kernel.org>, "herve.codina@bootlin.com"
+	<herve.codina@bootlin.com>
+CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"imx@lists.linux.dev" <imx@lists.linux.dev>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-usb@vger.kernel.org"
+	<linux-usb@vger.kernel.org>, Jun Li <jun.li@nxp.com>
+Subject: RE: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
+ property
+Thread-Topic: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
+ property
+Thread-Index: AQHa3097fNjJlnhH/0ODxZBb+E47dbIM53LA
+Date: Mon, 29 Jul 2024 01:03:47 +0000
+Message-ID: <PAXPR04MB8459517F5F5BC4E1C7A5E67888B72@PAXPR04MB8459.eurprd04.prod.outlook.com>
+References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
+ <20240726113207.3393247-3-xu.yang_2@nxp.com>
+In-Reply-To: <20240726113207.3393247-3-xu.yang_2@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PAXPR04MB8459:EE_|GVXPR04MB10684:EE_
+x-ms-office365-filtering-correlation-id: 3438573e-06f9-4a82-5d24-08dcaf6a4d04
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|376014|366016|7416014|921020|38070700018;
+x-microsoft-antispam-message-info: =?us-ascii?Q?EwfRVDymF1pqnHxtPtIBtvMU7TkBaHU5nJ+0bRWXRdno4Epg3m3ZX69kAahs?=
+ =?us-ascii?Q?KHurtvzywPI7tZ5Hh43Jt9aW4pdokzpp0mWZ9E7Pj7nj1U5SfPVUDHbwiDK3?=
+ =?us-ascii?Q?BuRdDq1MmXEm3bsUCGDwWHNGG18Lk/VZQSdeiR1j4nUGOxyPuJcAgUiajNCM?=
+ =?us-ascii?Q?ByItETsViy0hG0RJC0akoayyOOPWB3R+HUanaEQwW4goeKGi0OXJhxNFd8eU?=
+ =?us-ascii?Q?RBGZD46rZEoBQFvPzzyuTypfxCEH8iRKF3PVQ8qzmpkBgxdCOdTgOe0T2RGG?=
+ =?us-ascii?Q?wHZnlWidZcbmAGKx9/TswqebKx0hwKqKLCs3KwKi6sENZzvd9rkdgGVlRpyX?=
+ =?us-ascii?Q?MTeJMDXwA11+WpDwT6w/p5wRV8KPbm3Ym9RfYtuDM9eQo/3HOnyjEZkLjSx2?=
+ =?us-ascii?Q?0NULDmuzrXWGBZG5XY6ZNq/mg0JYAUs2hgzbYLIxs25vUmwqfClOeu6GNuiT?=
+ =?us-ascii?Q?S+A5cwZ4dU20WTpNR2wP9SQf3xGQQPodbUWs/kTZ4Hdq60JuhVu1kL/T81hj?=
+ =?us-ascii?Q?fz70kocl2Ed+MQWosFGM6b2CsoNkDJ6cvDiOYvkyEY8xvQ8iwlNWnXkH/Qxj?=
+ =?us-ascii?Q?GTWbGAeD68+mhS5UwNhl9MvFSKPTzkaxLY/ES53dFW8gHkKiQ6q+wAUAE1Hs?=
+ =?us-ascii?Q?dIrBJNcYcZZYnHIL3Qdx0uLJwGU4mOQrPy0DKw8tsz3ZVYLwGVThfiiWSbjN?=
+ =?us-ascii?Q?54G8GnjtCmnd8Fsg7zjg7FzRpOGaoWOcA9PnPM2fQ/yE6lwHL82zKl+0G/st?=
+ =?us-ascii?Q?wvCjYMlwAaI1akPoHRfTn8dOSXJe53SscTLshibsOPred2QXkvUhltPmPHBk?=
+ =?us-ascii?Q?NZThDEednyIoiYL7UigyNZFc5RBb6ljbfb4u3mmdyGstTwjEJ9z+Ews1F0gG?=
+ =?us-ascii?Q?/x417vqlaVIj/Ut2LzNf/22Uug2RIqUqHvV8/Rja5cFnzVnt9L4RtjLiTUZ8?=
+ =?us-ascii?Q?+7DCOnW60ekUGVV1cWndqBkaoL4U29roj/dQwrHdtzfsbs2TDJeWBYPpuk+A?=
+ =?us-ascii?Q?Q8Ay9vPE3JF7ZjtX0jOly1Sw+iYGHDaQdGoBzK93aoZYz7Urox0gBROVHUP9?=
+ =?us-ascii?Q?s79wp03lQKyvw8oU81redD+IB05s699n5Sl+GKot2yxBC3Y9sojN8/dHcMdE?=
+ =?us-ascii?Q?XGeoWwOhQ3b/fp3kuCCD5+2TY4xJchBBGrTT44Na5XG77qmH24fLSCewV4R1?=
+ =?us-ascii?Q?5aDL9Uz/b3IAn5cqdkm3IHmKlkLKu2V/159oachVg5i/44bCnbF+NAzHAAdc?=
+ =?us-ascii?Q?uY7SjmzZ2IkL4MFQmqui9YceXy0TUtOiHSYRAaTH3VrOMU1zt5sHrUiOwTHV?=
+ =?us-ascii?Q?rfW1RinHm2RICcOORHhgwdkxw/2kTb3RAa/RG26Lf0gUvTFlVaibEooP48fq?=
+ =?us-ascii?Q?TpLBGU+QdixM2xckmnX6LNLN1XASOjHkv96h1VTTRFBl7nbeLruX92oRuVQm?=
+ =?us-ascii?Q?R4mVjUOALGg=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8459.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(7416014)(921020)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?MnhqTfecGFr/a7fO+ks1eW5Q1m0L43zraBDjJVNh54tY7DjImxV9kf6QLNiy?=
+ =?us-ascii?Q?FNL3QZPjhWKSVmX/M+NFBTxCYLtZF2T2I+30+5iQ3RPZ28DK+hADwjbQpQsr?=
+ =?us-ascii?Q?9om2oKUPKHwAQQh6GtJqP9+ZFU/b3uXmkEXlSfiD9iWURc4zYVMr0Mlm/4pT?=
+ =?us-ascii?Q?e0kpylk43B87iGXxVDp5+NbnoDZBmIB47NnAioDrGCD85184ZcLxP35hcwlk?=
+ =?us-ascii?Q?gWyuHQI3iBUPHhwKovCMdzapANR6GoscyFjP1otjQ8Q568tIYfISUCpIlJDK?=
+ =?us-ascii?Q?PbSvGCkO/SW+yH/DUm+HRktX8g+SSpkntfXxPfpQim+cosMb8B/53QC7qCIF?=
+ =?us-ascii?Q?g2l0MMvyK5TT2dUddEV4pRVU6ZmpIJfkiWSew0acgGs6kAncLBaYOqHRcsXP?=
+ =?us-ascii?Q?YdMSvG7Km5MV4gj/lTlfbHNlN05NqZXC8QD+8o5WaJEppWiSFkwG+PPd9kbQ?=
+ =?us-ascii?Q?BCwA5MEuscDKlA/ve+bgUOj20gqBVbuD3jpkZikOxwwLCU11NFPrkRb4+hpu?=
+ =?us-ascii?Q?oNrxR0HEfPK5R3JjTsqDfDT0agsnl4h+ypBO593ZGItjdg8n6ppyDeF020DE?=
+ =?us-ascii?Q?GFgBOVIoeu8iZ/94F6aahzyBXlQMeHhOvSh66JaSfbrkdGsRWkqwY/9HWvN0?=
+ =?us-ascii?Q?ewGTid6RmkgT5+mjqSfuuN3b1wh12BS3AqMh14m2Bd6Ibgu1toS/oNDgLYFG?=
+ =?us-ascii?Q?cB86c9r1sT5Lc6SO8YVp9HCzZGWUdmm7RmsKQmzLtlY0q5+tRFgedEREPazI?=
+ =?us-ascii?Q?YluxgkmZRrmtomAkSe1NuxWd9GSQaU9sPhDdtiEVD+USSye0gY0drjE4pno3?=
+ =?us-ascii?Q?/xmvM/C5H1CV8r86c3R1cPgCvqYni9ONRBCH/jA8nGzcF+sjUieVARhoJ2cG?=
+ =?us-ascii?Q?/Pm97B54Ll2IU1grAFqQo6BYaXd7A7JMSXB2y98H4W5rBVa+bhknGPsde0hs?=
+ =?us-ascii?Q?+IAoZe8GUnNSJz0hx7Acq7MOGFZJ+RI/IzGfdRRP6TWyk31jqNcSz562wteN?=
+ =?us-ascii?Q?2LttuyfbwsYQt+iJCfeJDvi2H+0USfGBqHAWl7TvC1ejnkthu/4r06EDZFrb?=
+ =?us-ascii?Q?V2An90qdRsWdwqXdQ4NVZVWf8cX91xJ2Qc2/7Yk/McKUg0sX9oO9fx/GDukr?=
+ =?us-ascii?Q?WApjbdcwLsTrmZxiHu47551nIu3fPYDddkUrUzkCVM9WfnYQB1F6ZFNYoLt6?=
+ =?us-ascii?Q?Z+h+mO15ZTxGctAwLkgDar5ZLVeXqCkfO/AzsrlGaoGUdLxeXZJPot140Fvb?=
+ =?us-ascii?Q?X1UrEP+XllCT/CuriS91bbaM1rHHcStDKgqcIRzzdNbxDSqGQe1OmyLM0JOg?=
+ =?us-ascii?Q?KpjhMHbNZF9DW0FWdCPdh0860KdpYEY9TIOXPd7RoyinNctnugjXaGA9fiWV?=
+ =?us-ascii?Q?362a0HXdej39zceEhYyLUzQ96G0/3q6TTYk2fAkDTuAPwvZD7agh97OgNUZH?=
+ =?us-ascii?Q?IJvsXnNCRWpSl1WfXgurac/f3wyrfyvDWBc4Py4WmVBEwVZDEUmIP0M5FBGl?=
+ =?us-ascii?Q?F7Txj/4hX/c2BPZ2vJCAzyxmSaGLWXI4hj7ZDWpx53Q283ps0WqoDuGeA9A0?=
+ =?us-ascii?Q?lyZFRLJtb/lkFxVdWFc=3D?=
 MIME-Version: 1.0
-References: <20240718210322.37492-1-ilordash02@gmail.com> <20240718210322.37492-2-ilordash02@gmail.com>
- <20240719-ahead-kiwi-995e52bf3e74@spud> <CAGCz5HkF_WNZBVpY2SWVf071Pi896BvKFk0jnfNAYX5AKx2Zcw@mail.gmail.com>
- <20240723-dinginess-john-608d0b28293b@spud> <CAGCz5H=Gncw+Tr0XaQQhhGWQER5Rs1BcxbkPaJwx9jJ-8j7LGQ@mail.gmail.com>
- <20240723-municipal-snowy-136b08b6db90@spud>
-In-Reply-To: <20240723-municipal-snowy-136b08b6db90@spud>
-From: Ilya Orazov <ilordash02@gmail.com>
-Date: Sun, 28 Jul 2024 11:52:31 +0300
-Message-ID: <CAGCz5HnJKjNj7A0YD2fw20m-NrEs3MoCLwox86mC11Kudq8xbg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document Microchip ATA6561
-To: Conor Dooley <conor@kernel.org>, geert+renesas@glider.be
-Cc: mkl@pengutronix.de, mailhol.vincent@wanadoo.fr, vkoul@kernel.org, 
-	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, a-govindraju@ti.com, 
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8459.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3438573e-06f9-4a82-5d24-08dcaf6a4d04
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Jul 2024 01:03:47.2847
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Vji+O+wFHr0LaGgJgczdok1FiQvSheyawLgbFpuYqW+V6pfF9wgYoTQq6kLGaEQoR2MlJosT5bzp1cx6S8yKug==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB10684
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240728_015244_859746_0A7D705D 
-X-CRM114-Status: GOOD (  43.02  )
+X-CRM114-CacheID: sfid-20240728_180402_770357_8AEC775C 
+X-CRM114-Status: GOOD (  12.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,166 +172,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Thank you for your detailed explanation. I support the decision to use
-fallback compatible.
+> Subject: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
+> property
+> 
+> i.MX7ULP need properly set System Integration Module(SIM) module
+> to make usb wakeup work well. This will add a "nxp,sim" property.
+> 
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> 
+> ---
+> Changes in v2:
+>  - add else branch suggested by Rob
+> ---
+>  .../devicetree/bindings/phy/fsl,mxs-usbphy.yaml | 17
+> +++++++++++++++++
+>  1 file changed, 17 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-
+> usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-
+> usbphy.yaml
+> index f4b1ca2fb562..ce665a2779b7 100644
+> --- a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
+> @@ -87,6 +87,12 @@ properties:
+>      maximum: 119
+>      default: 100
+> 
+> +  nxp,sim:
 
-However, I am curious as to why the NXP CAN PHY transceiver was not
-included as fallback compatible. Geert, could you please share your
-thoughts on this matter?
+"nxp,imx7ulp-sim" should be better. SIM is specific to i.MX7ULP as of now.
 
-On Tue, 23 Jul 2024 at 23:14, Conor Dooley <conor@kernel.org> wrote:
->
-> On Tue, Jul 23, 2024 at 10:55:17PM +0300, Ilya Orazov wrote:
-> > On Tue, 23 Jul 2024 at 21:50, Conor Dooley <conor@kernel.org> wrote:
-> > >
-> > > On Tue, Jul 23, 2024 at 08:20:04PM +0300, IlorDash wrote:
-> > > > On Fri, 19 Jul 2024 at 18:07, Conor Dooley <conor@kernel.org> wrote:
-> > > > >
-> > > > > On Fri, Jul 19, 2024 at 12:03:21AM +0300, Ilya Orazov wrote:
-> > > > > > Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
-> > > > > > It is pin-compatible with TI TCAN1042.
-> > > > > >
-> > > > > > Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
-> > > > > > ---
-> > > > > >  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml | 1 +
-> > > > > >  1 file changed, 1 insertion(+)
-> > > > > >
-> > > > > > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > > > index 79dad3e89aa6..03de361849d2 100644
-> > > > > > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > > > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > > > @@ -18,6 +18,7 @@ properties:
-> > > > > >        - nxp,tjr1443
-> > > > > >        - ti,tcan1042
-> > > > > >        - ti,tcan1043
-> > > > > > +      - microchip,ata6561
-> > > > >
-> > > > > Given that your driver patch has
-> > > > > | diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-> > > > > | index ee4ce4249698..dbcd99213ba1 100644
-> > > > > | --- a/drivers/phy/phy-can-transceiver.c
-> > > > > | +++ b/drivers/phy/phy-can-transceiver.c
-> > > > > | @@ -89,6 +89,10 @@ static const struct of_device_id can_transceiver_phy_ids[] = {
-> > > > > |                 .compatible = "nxp,tjr1443",
-> > > > > |                 .data = &tcan1043_drvdata
-> > > > > |         },
-> > > > > | +       {
-> > > > > | +               .compatible = "microchip,ata6561",
-> > > > > | +               .data = &tcan1042_drvdata
-> > > > > | +       },
-> > > > > |         { }
-> > > > > |  };
-> > > > >
-> > > > > the driver patch is actually not needed at all, and you just need to
-> > > > > allow ti,tcan1042 as fallback compatible in the binding, so something
-> > > > > like:
-> > > > >
-> > > > >   compatible:
-> > > > >     oneOf:
-> > > > >       - enum:
-> > > > >           - nxp,tjr1443
-> > > > >           - ti,tcan1042
-> > > > >           - ti,tcan1043
-> > > > >       - items:
-> > > > >           - const: microchip,ata6561
-> > > > >           - const: ti,tcan1042
-> > > > >
-> > > > >    '#phy-cells':
-> > > > >      const: 0
-> > > >
-> > > > I tested the build with fallback compatible:
-> > > >
-> > > > compatible:
-> > > >   oneOf:
-> > > >     - items:
-> > > >       - enum:
-> > > >         - microchip,ata6561
-> > > >       - const: ti,tcan1042
-> > > >     - items:
-> > > >       - enum:
-> > > >         - nxp,tjr1443
-> > > >       - const: ti,tcan1043
-> > > >
-> > > > and modified compatible property in DTS:
-> > > >
-> > > > compatible = "microchip,ata6561", "ti,tcan1042";
-> > > >
-> > > > Build succeeded, phy-can-transceiver driver was used. So I would like
-> > > > to add a fallback compatible for both "microchip,ata6561" and
-> > > > "nxp,tjr1443" in this binding and modify other DTS files with
-> > > > compatible = "nxp,tjr1443". What do you think?
-> > >
-> > > This is wrong on two counts. Firstly, were what you have correct, you
-> > > should
-> > > squash the two:
-> > >      - items:
-> > >          - enum:
-> > >            - nxp,tjr1443
-> > >            - microchip,ata6561
-> > >          - const: ti,tcan1042
-> > >
-> > > However, that does not allow the TI compatibles in isolation, so you
-> > > still need to allow that for the actual TI devices, so you need:
-> > >
-> > >    oneOf:
-> > >      - items:
-> > >          - enum:
-> > >            - microchip,ata6561
-> > >            - nxp,tjr1443
-> > >            - ti,tcan1043
-> > >          - const: ti,tcan1042
-> > >      - const: ti,tcan1042
-> > >
-> > > There's probably some devicetrees that would need to be fixed up. I'm
-> > > just not convinced that this is worth retrofitting however.
-> >
-> > But nxp,tjr1443 is pin compatible with ti,tcan1043, so it should
-> > fallback only to ti,tcan1043 and not ti,tcan1042. That's why I decided
-> > to split them into different enums.
->
-> Ah, sorry I missed that. I misread the match data. Then you need:
->   compatible:
->     oneOf:
->       - items:
->         - enum:
->           - microchip,ata6561
->         - const: ti,tcan1042
->       - items:
->         - enum:
->           - nxp,tjr1443
->         - const: ti,tcan1043
->       - enum:
->           const: ti,tcan1042
->           const: ti,tcan1043
->
-> because the TI devices exist and we still need to be able to
-> differentiate the TI and NXP devices. If you have
->   compatible = "nxp,tjr1443", "ti,tcan1042";
-> that means the device is an nxp,tjr1443. If you have
->   compatible = "ti,tcan1042";
-> then that's a tcan1042.
->
-> > I made my patch according to a similar one that adds support for
-> > nxp,tjr1443. You can find it's conversation on
-> > https://lore.kernel.org/all/6ee5e2ce00019bd3f77d6a702b38bab1a45f3bb0.1674037830.git.geert+renesas@glider.be/t/#u.
->
-> > I thought we want to hold all PHY chip names in one compatible enum
-> > and each in its own of_device_id struct in driver and extend them
-> > where appropriate.
->
-> Nah, fallbacks are preferred when the programming model is either
-> identical or a "compatible superset" of an existing device. New
-> of_device_id structs should only be used where we need to account for
-> differences in the programming model.
->
-> Cheers,
-> Conor.
+Regards,
+Peng.
 
-
-
--- 
-Best regards,
-Ilya Orazov
 
 -- 
 linux-phy mailing list
