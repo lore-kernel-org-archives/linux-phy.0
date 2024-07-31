@@ -4,81 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40C35C3DA7F
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 15:26:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9535C3DA64
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 15:29:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=E7fXVLZznohdSFv8bDDJS7QtfLnIuxeaHKi3LvNTgUs=; b=hMctPSrXsp1t/M
-	qT7/IW4KSnWIrKXGyH8EX7xmnZ8Zcuj15yk10CTsdRKeE1CTNkXnusH5oiRom15f0+Pf9+BCv2tef
-	nW84xR8Hd2VgdOK3+cm1MTDIt2gulsDbiVtTJVaoUjVRLvS51uXPGHq6qhpyDwLx4s60R09NArsrX
-	uvGoRUp2nW3DzhqKNsqcj2iDfBC00y0gEacvJEMqQ699JU/eVab2Zfi3eChAkDRb2RpA2fB9PuUIF
-	fT4gq3/WXmO5KubYhzusVKdG7lskaZUUwKKI7fSunIEUqS6tHk7kcjwu63BynGnmbAojEseq11eNL
-	IjUysAcXuDp1zo2cUYwQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4gmMrF2pCuhak6N7I64/0LXg01CkAoLF9MFCnoy3R8Y=; b=Y6F5QoNJll4zpe
+	YKiokRLVpZPJIMMpDlcxiZG1lX6ovRaw+Pw7Y9+Q7X4GowsXdQrHRIwKzkRRPLQFkr5Zw0XMkv8k+
+	A73z/Oq0JFvbVxBIWS7HHV+aRmKpvLvVxYexhYoWrTejdRnoTEhzYBvEcU75p/btg2urSkSvA2xqY
+	91U8loZwFJ7Y5QcIYXJ0RXAeqn2GfRqc6lOLut9rEurBD9i7MlRb8N1NQ/scp+tcyOipVhGuTjOit
+	rX703oyNeQfjj4gB7hKaa2jkYrTXy00VLL0XoIO49vTIsD9Lb5/PtjmnqBVc42XtwjLIkz/lJQSGp
+	3Xb9leWni0nN03MbWivQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZBDF-00000001i4q-3wIQ;
-	Wed, 31 Jul 2024 15:26:01 +0000
-Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
+	id 1sZBGn-00000001isP-2FnH;
+	Wed, 31 Jul 2024 15:29:41 +0000
+Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZBDC-00000001i4S-1u5F
+	id 1sZBGk-00000001iro-2Bm8
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 15:26:00 +0000
-Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-1fc66fc35f2so8107905ad.0
-        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 08:25:57 -0700 (PDT)
+	Wed, 31 Jul 2024 15:29:39 +0000
+Received: by mail-pf1-x42a.google.com with SMTP id d2e1a72fcca58-70d2ae44790so4154216b3a.2
+        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 08:29:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1722439557; x=1723044357; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=KROUJfzd7zpmXBSNKTmAstwkucbbvJRvDUFfClcBUTs=;
-        b=cbi7c58hVUYzgs85U1ry2Kk2U2VD+TF0GJb9+mY93dwK4KPQqcFbg+180QwoJdrA0W
-         xEOyomrCa7o7ItzsKIGcCZFRpw+ublmJ3ReIOzdW7pcKP3c1HkYyzY/s57GP+KDnyUN0
-         9rW3eMsVVAXzkXRnkeaPk0i+bRrxwpcevHiuZKZNyKLTZupUwz75rfeTX2ebH2NEOn4M
-         cpNvBBraEXrcZNLH1QcG7fEEJ9sT7vgbPCDyLKJjBCb0FWMyFBmc4JvNs2AprJsBAQEb
-         Qmqrn1WdbX97o8pimUrIfpg8m+e1ZNxbloAkQVHoZ+G2rIY175CXz2PBxZrMq238lyeU
-         fnmQ==
+        d=linaro.org; s=google; t=1722439777; x=1723044577; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=mCJpeaoOc2bazfPbXFaOP8MpVPnQ8mFYIONeim+kxB4=;
+        b=rjIBlfU6R4+tmLvrX7Z8HFIdosqzWIO4LnRDIm3okuhc/TaJCytjDmVUN//vzqFnTY
+         b2kHNUIBzhNRz8emD6u5LMaYSB9TYNQx3sQapGv5mvOCRNy3lG6RRde7HWxZFrAS13sD
+         CBnZseOt/iFrlnNCy+3v51XNd//DSpIaiaOsMW1g3ve14Swuv+c+JAu0ENFTywfhbLXT
+         N10TilThYE6Q1jXyjip76Vg1v3oQZg6bUsnUfedc9v2Gh0SywQUunVYlMpNEsHU7V5dM
+         /FNCF3fXbO5pI4gmi3LYvC7vVFc4GVylyy9rXNQ4tRBRnklaLi731ARkXtInHDchKp8P
+         1s3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722439557; x=1723044357;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=KROUJfzd7zpmXBSNKTmAstwkucbbvJRvDUFfClcBUTs=;
-        b=ZQaewIeXUl9QqM2b522DKa9MKzqn7wRegfA+TdMoaKkg+wsspyT09Tt8GyMkqsPrMB
-         DxgBPFLecXfv3BB8S6p7KmfcOCy8b0lXFVJiQAm0jI7UBM+3REYRocqsCW27EG4BUM9e
-         Ar0y2eW7aJooQKHSZoqRsjQuOIrpVw2v4oTcKPsGM9p741+RBXsxuvma5aAfe7hGx+P5
-         tRRD8wsGovAjXGRLTgA9d6VN2whWN1C8eeaXqWhLHOHb5voM5kVuS16pyUK/ed75I4gQ
-         PRHaabaeV1PVtYAlcmzSYBiuV9ozuVQsLcKqWC3RwEZm67Q48mY7SXlCZ+BhA1q+kDh/
-         3Pmw==
-X-Forwarded-Encrypted: i=1; AJvYcCXYY0vbDj3hFIbTKbIfD9B4+VDTkCd+m1tYTxMevTTEwobmv+DOjHlEhneS7e73Uvz+++Qwta9HzoODM3/7xRW/GhI94O3xrZ+dWqkPqw==
-X-Gm-Message-State: AOJu0YxjW550omj/6gAg/W42Naf8AfnWx8kSIf/q8Y0IjfYJSH9FG+zO
-	nhqn6PTuFAY0lBVUE51OFIj7wqAjk1yIagsNL+Hrh467sySYrGHVS8q0MRsN0AX/KM8m7+anoJk
-	=
-X-Google-Smtp-Source: AGHT+IHaAHeZJQl/6BDz4olgLSYsP8h4LTGjurEwCiEHHGx1zq6QKMnCPnTjvxLmt1OVRUHjdIxKYw==
-X-Received: by 2002:a17:903:1250:b0:1fe:d72d:13e1 with SMTP id d9443c01a7336-1ff37c1f3d6mr83336925ad.30.1722439556869;
-        Wed, 31 Jul 2024 08:25:56 -0700 (PDT)
-Received: from localhost.localdomain ([120.60.66.23])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1fed7ee0185sm121896295ad.132.2024.07.31.08.25.54
+        d=1e100.net; s=20230601; t=1722439777; x=1723044577;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=mCJpeaoOc2bazfPbXFaOP8MpVPnQ8mFYIONeim+kxB4=;
+        b=fkXZjc97kuSdYO0A2nrdI1MkHiQ0LlEi0nFNn9HGlOUzv9qEPanbp+rpha93+MNdDM
+         8RxxynHoUUqKkqQrzsBidbzaASgCwaG5/fP9HIPsdRqqpI+OZtsGTOIGSRbqrknal1DC
+         qaZ7nZ8HcfvVLahyfqOC0be06lz6gn1IU8Rji32Nn0TC/BhLR5xLoHfudnQTTeMTpogx
+         +47REFH85WuTfE83jGo3ISe7cgEOsR3xUrIF10/2upbUZ/+Lub1BsdB7mq/GK+zIRw72
+         jluqHKmq2mwUqlyUFoAcDZfOJDSMyBtfDXMU+uJy7g3ShAgxJyLBgqpd9tYVYQlt7PKE
+         Y8Ww==
+X-Forwarded-Encrypted: i=1; AJvYcCVQzosEM0lccLPlWdtt+FOgFiV3vUoL1FqNU5DstA1ypxOWK+fTN4mYpn0uYHMukNWzZDUZI8bsdHYCzswZA+JQLpfdUIFinsNAn05KYA==
+X-Gm-Message-State: AOJu0YzSiRF2RuYPo0NR5XQk0hrLxRselXIdgVyewA+GI+jG9boZGh/a
+	RY5YRim/vN1xkPv9sE5Iqpi7vZh90aTKVds78WWILEfKyUKDEAiIg8Xn7yqB1Q==
+X-Google-Smtp-Source: AGHT+IGohm1cBq/5zPvLuLsEzQNZ6TosNInwk8VMcHMzDiwyENOeXQOhAAUH2+CrOsko17rLYuRl0A==
+X-Received: by 2002:a05:6a21:3483:b0:1be:ffe4:b2a2 with SMTP id adf61e73a8af0-1c4a11796a5mr13080164637.7.1722439777291;
+        Wed, 31 Jul 2024 08:29:37 -0700 (PDT)
+Received: from thinkpad ([120.60.66.23])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-70ead6e333asm10071047b3a.8.2024.07.31.08.29.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 31 Jul 2024 08:25:56 -0700 (PDT)
+        Wed, 31 Jul 2024 08:29:36 -0700 (PDT)
+Date: Wed, 31 Jul 2024 20:59:28 +0530
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: vkoul@kernel.org
-Cc: kishon@kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	dmitry.baryshkov@linaro.org,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v3] phy: qcom: qmp: Add debug prints for register writes
-Date: Wed, 31 Jul 2024 20:55:48 +0530
-Message-Id: <20240731152548.102987-1-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.25.1
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, kishon@kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: qcom: qmp: Add debug prints for register writes
+Message-ID: <20240731152928.GA2983@thinkpad>
+References: <20240730100351.51454-1-manivannan.sadhasivam@linaro.org>
+ <ZqoY5kFLDEmkb495@matsya>
+ <knjl4q5zyqz3wrqp5aawgpxk6aqggvteb72enpsgweulgrxmnu@ol42qtug4xvi>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <knjl4q5zyqz3wrqp5aawgpxk6aqggvteb72enpsgweulgrxmnu@ol42qtug4xvi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_082558_531280_46090721 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20240731_082938_587637_721C2E47 
+X-CRM114-Status: GOOD (  25.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,372 +91,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-These register prints are useful to validate the init sequence against the
-Qcom internal documentation and also to share with the Qcom hw engineers to
-debug issues related to PHY.
-
-Sample debug prints:
-
-qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
-qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
-
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
-
-Changes in v3:
-
-* Used dev_dbg() to print device name
-
-Changes in v2:
-
-* Modifed the debug print to include reg offset
-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 38 ++++++++++---------
- drivers/phy/qualcomm/phy-qcom-qmp-common.h    | 19 ++++++----
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  |  8 ++--
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 27 ++++++-------
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 12 +++---
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 10 ++---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c      | 13 ++++---
- 7 files changed, 67 insertions(+), 60 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 7b00945f7191..a8adc3214bfe 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -2190,24 +2190,25 @@ static int qmp_combo_dp_serdes_init(struct qmp_combo *qmp)
- 	void __iomem *serdes = qmp->dp_serdes;
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 
--	qmp_configure(serdes, cfg->dp_serdes_tbl, cfg->dp_serdes_tbl_num);
-+	qmp_configure(qmp->dev, serdes, cfg->dp_serdes_tbl,
-+		      cfg->dp_serdes_tbl_num);
- 
- 	switch (dp_opts->link_rate) {
- 	case 1620:
--		qmp_configure(serdes, cfg->serdes_tbl_rbr,
--				cfg->serdes_tbl_rbr_num);
-+		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_rbr,
-+			      cfg->serdes_tbl_rbr_num);
- 		break;
- 	case 2700:
--		qmp_configure(serdes, cfg->serdes_tbl_hbr,
--				cfg->serdes_tbl_hbr_num);
-+		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr,
-+			      cfg->serdes_tbl_hbr_num);
- 		break;
- 	case 5400:
--		qmp_configure(serdes, cfg->serdes_tbl_hbr2,
--				cfg->serdes_tbl_hbr2_num);
-+		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr2,
-+			      cfg->serdes_tbl_hbr2_num);
- 		break;
- 	case 8100:
--		qmp_configure(serdes, cfg->serdes_tbl_hbr3,
--				cfg->serdes_tbl_hbr3_num);
-+		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr3,
-+			      cfg->serdes_tbl_hbr3_num);
- 		break;
- 	default:
- 		/* Other link rates aren't supported */
-@@ -2807,8 +2808,8 @@ static int qmp_combo_dp_power_on(struct phy *phy)
- 
- 	qmp_combo_dp_serdes_init(qmp);
- 
--	qmp_configure_lane(tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
--	qmp_configure_lane(tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
-+	qmp_configure_lane(qmp->dev, tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
- 
- 	/* Configure special DP tx tunings */
- 	cfg->configure_dp_tx(qmp);
-@@ -2850,7 +2851,7 @@ static int qmp_combo_usb_power_on(struct phy *phy)
- 	unsigned int val;
- 	int ret;
- 
--	qmp_configure(serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
-+	qmp_configure(qmp->dev, serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
- 
- 	ret = clk_prepare_enable(qmp->pipe_clk);
- 	if (ret) {
-@@ -2859,16 +2860,17 @@ static int qmp_combo_usb_power_on(struct phy *phy)
- 	}
- 
- 	/* Tx, Rx, and PCS configurations */
--	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_configure_lane(tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
- 
--	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
--	qmp_configure_lane(rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+	qmp_configure_lane(qmp->dev, rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
--	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (pcs_usb)
--		qmp_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
-+		qmp_configure(qmp->dev, pcs_usb, cfg->pcs_usb_tbl,
-+			      cfg->pcs_usb_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(10, 20);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-index 799384210509..b945fc14cece 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-@@ -9,6 +9,7 @@
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
- 	unsigned int val;
-+	char *name;
- 	/*
- 	 * mask of lanes for which this register is written
- 	 * for cases when second lane needs different values
-@@ -20,6 +21,7 @@ struct qmp_phy_init_tbl {
- 	{				\
- 		.offset = o,		\
- 		.val = v,		\
-+		.name = #o,		\
- 		.lane_mask = 0xff,	\
- 	}
- 
-@@ -27,13 +29,13 @@ struct qmp_phy_init_tbl {
- 	{				\
- 		.offset = o,		\
- 		.val = v,		\
-+		.name = #o,		\
- 		.lane_mask = l,		\
- 	}
- 
--static inline void qmp_configure_lane(void __iomem *base,
--					   const struct qmp_phy_init_tbl tbl[],
--					   int num,
--					   u8 lane_mask)
-+static inline void qmp_configure_lane(struct device *dev, void __iomem *base,
-+				      const struct qmp_phy_init_tbl tbl[],
-+				      int num, u8 lane_mask)
- {
- 	int i;
- 	const struct qmp_phy_init_tbl *t = tbl;
-@@ -45,15 +47,16 @@ static inline void qmp_configure_lane(void __iomem *base,
- 		if (!(t->lane_mask & lane_mask))
- 			continue;
- 
-+		dev_dbg(dev, "Writing Reg: %s Offset: 0x%04x Val: 0x%02x\n",
-+			t->name, t->offset, t->val);
- 		writel(t->val, base + t->offset);
- 	}
- }
- 
--static inline void qmp_configure(void __iomem *base,
--				      const struct qmp_phy_init_tbl tbl[],
--				      int num)
-+static inline void qmp_configure(struct device *dev, void __iomem *base,
-+				 const struct qmp_phy_init_tbl tbl[], int num)
- {
--	qmp_configure_lane(base, tbl, num, 0xff);
-+	qmp_configure_lane(dev, base, tbl, num, 0xff);
- }
- 
- #endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index 0442b3120563..5f89e3a3e54f 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -288,7 +288,7 @@ static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
- 	unsigned int val;
- 	int ret;
- 
--	qmp_configure(serdes, serdes_tbl, serdes_tbl_num);
-+	qmp_configure(qmp->dev, serdes, serdes_tbl, serdes_tbl_num);
- 
- 	qphy_clrbits(serdes, cfg->regs[QPHY_COM_SW_RESET], SW_RESET);
- 	qphy_setbits(serdes, cfg->regs[QPHY_COM_START_CONTROL],
-@@ -431,9 +431,9 @@ static int qmp_pcie_msm8996_power_on(struct phy *phy)
- 	}
- 
- 	/* Tx, Rx, and PCS configurations */
--	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
--	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	/*
- 	 * Pull out PHY from POWER DOWN state.
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 5b36cc7ac78b..b09ec1d7cf5a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -3667,11 +3667,11 @@ static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_
- 	tx4 = qmp->port_b + offs->tx2;
- 	rx4 = qmp->port_b + offs->rx2;
- 
--	qmp_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
--	qmp_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
-+	qmp_configure_lane(qmp->dev, tx3, tbls->tx, tbls->tx_num, 1);
-+	qmp_configure_lane(qmp->dev, rx3, tbls->rx, tbls->rx_num, 1);
- 
--	qmp_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
--	qmp_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
-+	qmp_configure_lane(qmp->dev, tx4, tbls->tx, tbls->tx_num, 2);
-+	qmp_configure_lane(qmp->dev, rx4, tbls->rx, tbls->rx_num, 2);
- }
- 
- static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
-@@ -3689,25 +3689,26 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
- 	if (!tbls)
- 		return;
- 
--	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
-+	qmp_configure(qmp->dev, serdes, tbls->serdes, tbls->serdes_num);
- 
--	qmp_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
--	qmp_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
-+	qmp_configure_lane(qmp->dev, tx, tbls->tx, tbls->tx_num, 1);
-+	qmp_configure_lane(qmp->dev, rx, tbls->rx, tbls->rx_num, 1);
- 
- 	if (cfg->lanes >= 2) {
--		qmp_configure_lane(tx2, tbls->tx, tbls->tx_num, 2);
--		qmp_configure_lane(rx2, tbls->rx, tbls->rx_num, 2);
-+		qmp_configure_lane(qmp->dev, tx2, tbls->tx, tbls->tx_num, 2);
-+		qmp_configure_lane(qmp->dev, rx2, tbls->rx, tbls->rx_num, 2);
- 	}
- 
--	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
--	qmp_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-+	qmp_configure(qmp->dev, pcs, tbls->pcs, tbls->pcs_num);
-+	qmp_configure(qmp->dev, pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
- 
- 	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
--		qmp_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
-+		qmp_configure(qmp->dev, serdes, cfg->serdes_4ln_tbl,
-+			      cfg->serdes_4ln_num);
- 		qmp_pcie_init_port_b(qmp, tbls);
- 	}
- 
--	qmp_configure(ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
-+	qmp_configure(qmp->dev, ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
- }
- 
- static int qmp_pcie_init(struct phy *phy)
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index a57e8a4657f4..d964bdfe8700 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -1527,7 +1527,7 @@ static void qmp_ufs_serdes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tb
- {
- 	void __iomem *serdes = qmp->serdes;
- 
--	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
-+	qmp_configure(qmp->dev, serdes, tbls->serdes, tbls->serdes_num);
- }
- 
- static void qmp_ufs_lanes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls *tbls)
-@@ -1536,12 +1536,12 @@ static void qmp_ufs_lanes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbl
- 	void __iomem *tx = qmp->tx;
- 	void __iomem *rx = qmp->rx;
- 
--	qmp_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
--	qmp_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
-+	qmp_configure_lane(qmp->dev, tx, tbls->tx, tbls->tx_num, 1);
-+	qmp_configure_lane(qmp->dev, rx, tbls->rx, tbls->rx_num, 1);
- 
- 	if (cfg->lanes >= 2) {
--		qmp_configure_lane(qmp->tx2, tbls->tx, tbls->tx_num, 2);
--		qmp_configure_lane(qmp->rx2, tbls->rx, tbls->rx_num, 2);
-+		qmp_configure_lane(qmp->dev, qmp->tx2, tbls->tx, tbls->tx_num, 2);
-+		qmp_configure_lane(qmp->dev, qmp->rx2, tbls->rx, tbls->rx_num, 2);
- 	}
- }
- 
-@@ -1549,7 +1549,7 @@ static void qmp_ufs_pcs_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls
- {
- 	void __iomem *pcs = qmp->pcs;
- 
--	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
-+	qmp_configure(qmp->dev, pcs, tbls->pcs, tbls->pcs_num);
- }
- 
- static int qmp_ufs_get_gear_overlay(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index 9b0eb87b1680..2fd49355aa37 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -1649,7 +1649,7 @@ static int qmp_usb_serdes_init(struct qmp_usb *qmp)
- 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
- 	int serdes_tbl_num = cfg->serdes_tbl_num;
- 
--	qmp_configure(serdes, serdes_tbl, serdes_tbl_num);
-+	qmp_configure(qmp->dev, serdes, serdes_tbl, serdes_tbl_num);
- 
- 	return 0;
- }
-@@ -1730,13 +1730,13 @@ static int qmp_usb_power_on(struct phy *phy)
- 	}
- 
- 	/* Tx, Rx, and PCS configurations */
--	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
--	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	if (pcs_usb)
--		qmp_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
-+		qmp_configure(qmp->dev, pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
- 
- 	if (cfg->has_pwrdn_delay)
- 		usleep_range(10, 20);
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 5cbc5fd529eb..d4fa1063ea61 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -526,7 +526,8 @@ static int qmp_usbc_power_on(struct phy *phy)
- 	unsigned int val;
- 	int ret;
- 
--	qmp_configure(qmp->serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
-+	qmp_configure(qmp->dev, qmp->serdes, cfg->serdes_tbl,
-+		      cfg->serdes_tbl_num);
- 
- 	ret = clk_prepare_enable(qmp->pipe_clk);
- 	if (ret) {
-@@ -535,13 +536,13 @@ static int qmp_usbc_power_on(struct phy *phy)
- 	}
- 
- 	/* Tx, Rx, and PCS configurations */
--	qmp_configure_lane(qmp->tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
--	qmp_configure_lane(qmp->rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, qmp->tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
-+	qmp_configure_lane(qmp->dev, qmp->rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
- 
--	qmp_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
--	qmp_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
-+	qmp_configure_lane(qmp->dev, qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-+	qmp_configure_lane(qmp->dev, qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
- 
--	qmp_configure(qmp->pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
-+	qmp_configure(qmp->dev, qmp->pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
- 
- 	/* Pull PHY out of reset state */
- 	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBKdWwgMzEsIDIwMjQgYXQgMDM6MTg6MzFQTSArMDMwMCwgRG1pdHJ5IEJhcnlzaGtv
+diB3cm90ZToKPiBPbiBXZWQsIEp1bCAzMSwgMjAyNCBhdCAwNDoyODo0NlBNIEdNVCwgVmlub2Qg
+S291bCB3cm90ZToKPiA+IE9uIDMwLTA3LTI0LCAxNTozMywgTWFuaXZhbm5hbiBTYWRoYXNpdmFt
+IHdyb3RlOgo+ID4gPiBUaGVzZSByZWdpc3RlciBwcmludHMgYXJlIHVzZWZ1bCB0byB2YWxpZGF0
+ZSB0aGUgaW5pdCBzZXF1ZW5jZSBhZ2FpbnN0IHRoZQo+ID4gPiBRY29tIGludGVybmFsIGRvY3Vt
+ZW50YXRpb24gYW5kIGFsc28gdG8gc2hhcmUgd2l0aCB0aGUgUWNvbSBodyBlbmdpbmVlcnMgdG8K
+PiA+ID4gZGVidWcgaXNzdWVzIHJlbGF0ZWQgdG8gUEhZLgo+ID4gPiAKPiA+ID4gU2lnbmVkLW9m
+Zi1ieTogTWFuaXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1AbGluYXJv
+Lm9yZz4KPiA+ID4gLS0tCj4gPiA+ICBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAt
+Y29tbW9uLmggfCA0ICsrKysKPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKykK
+PiA+ID4gCj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1x
+bXAtY29tbW9uLmggYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tbW9uLmgK
+PiA+ID4gaW5kZXggNzk5Mzg0MjEwNTA5Li5lNmE2YmNmY2FjMjggMTAwNjQ0Cj4gPiA+IC0tLSBh
+L2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21tb24uaAo+ID4gPiArKysgYi9k
+cml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tbW9uLmgKPiA+ID4gQEAgLTksNiAr
+OSw3IEBACj4gPiA+ICBzdHJ1Y3QgcW1wX3BoeV9pbml0X3RibCB7Cj4gPiA+ICAJdW5zaWduZWQg
+aW50IG9mZnNldDsKPiA+ID4gIAl1bnNpZ25lZCBpbnQgdmFsOwo+ID4gPiArCWNoYXIgKm5hbWU7
+Cj4gPiA+ICAJLyoKPiA+ID4gIAkgKiBtYXNrIG9mIGxhbmVzIGZvciB3aGljaCB0aGlzIHJlZ2lz
+dGVyIGlzIHdyaXR0ZW4KPiA+ID4gIAkgKiBmb3IgY2FzZXMgd2hlbiBzZWNvbmQgbGFuZSBuZWVk
+cyBkaWZmZXJlbnQgdmFsdWVzCj4gPiA+IEBAIC0yMCw2ICsyMSw3IEBAIHN0cnVjdCBxbXBfcGh5
+X2luaXRfdGJsIHsKPiA+ID4gIAl7CQkJCVwKPiA+ID4gIAkJLm9mZnNldCA9IG8sCQlcCj4gPiA+
+ICAJCS52YWwgPSB2LAkJXAo+ID4gPiArCQkubmFtZSA9ICNvLAkJXAo+ID4gPiAgCQkubGFuZV9t
+YXNrID0gMHhmZiwJXAo+ID4gPiAgCX0KPiA+ID4gIAo+ID4gPiBAQCAtMjcsNiArMjksNyBAQCBz
+dHJ1Y3QgcW1wX3BoeV9pbml0X3RibCB7Cj4gPiA+ICAJewkJCQlcCj4gPiA+ICAJCS5vZmZzZXQg
+PSBvLAkJXAo+ID4gPiAgCQkudmFsID0gdiwJCVwKPiA+ID4gKwkJLm5hbWUgPSAjbywJCVwKPiA+
+ID4gIAkJLmxhbmVfbWFzayA9IGwsCQlcCj4gPiA+ICAJfQo+ID4gPiAgCj4gPiA+IEBAIC00NSw2
+ICs0OCw3IEBAIHN0YXRpYyBpbmxpbmUgdm9pZCBxbXBfY29uZmlndXJlX2xhbmUodm9pZCBfX2lv
+bWVtICpiYXNlLAo+ID4gPiAgCQlpZiAoISh0LT5sYW5lX21hc2sgJiBsYW5lX21hc2spKQo+ID4g
+PiAgCQkJY29udGludWU7Cj4gPiA+ICAKPiA+ID4gKwkJcHJfZGVidWcoIlFNUCBQSFk6IFdyaXRp
+bmc6ICVzIC0tPiAweCUwMnhcbiIsIHQtPm5hbWUsIHQtPnZhbCk7Cj4gPiAKPiA+IFRoaXMgbGd0
+bSwgYnV0IGZhaWxzIHRvIGhlbHAgd2hlbiBvZmZzZXQgX21pZ2h0XyBiZSBpbmNvcnJlY3QsIGlu
+Y2x1ZGluZwo+ID4gdGhlIG9mZnNldCB2YWx1ZSBhcyB3ZWxsIChub3QganVzdCB0aGUgbmFtZSkg
+d291bGQgYmUgYmV0dGVyIGltby4uLiAKPiAKPiBDYW4gd2UgcGxlYXNlIHVzZSBkZXZfdmRiZyBp
+bnN0ZWFkPyBIYXZpbmcgZGV2XyBwYXJ0IG1ha2VzIHN1cmUgdGhhdCB3ZQo+IGNhbiBub3QgbWlz
+bWF0Y2ggUEhZcyBhbmQgdGhlIHNlcXVlbmNlcy4gX3ZkYmcgaXMgbGVzcyBpbXBvcnRhbnQsIGJ1
+dAo+IEkgZG9uJ3QgdGhpbmsgd2Ugd2FudCB0aGlzIGluIHRoZSBsb2cgbWVzc2FnZXMgdW5sZXNz
+IGFic29sdXRlbHkKPiByZXF1aXJlZC4KPiAKCkknbSBub3QgYSBiaWcgZmFuIG9mIF92ZGJnKCku
+IElNTywgYWxsIGRlYnVnIG1lc3NhZ2VzIGFyZSB2ZXJib3NlIGFuZCBpZgplbmFibGVkLCB1c2Vy
+IGludGVuZCB0byBzZWUgaXQuIFNvIEkgZG9uJ3QgbGlrZSBvbmUgbW9yZSBsZXZlbCBvZgpjb21w
+YXJtZW50YWxpemF0aW9uLiBBbHNvIGl0IHJlcXVpcmVzIHVzIHRvIGZlZWQgLURWRVJCT1NFX0RF
+QlVHLi4uCgpCdXQgSSBhZ3JlZSB3aXRoIGRldl9kYmcoKS4gSW5pdGlhbGx5LCBJIHRob3VnaHQg
+YWJvdXQgaXQgYnV0IGZvcmdvdCB0aGUgZmFjdAp0aGF0IHdlIG5vdyBoYXZlIGFzeW5jIHByb2Jl
+LCBzbyB0aGVyZSBpcyBubyBndWFyYW50ZWVlIHRoYXQgdGhlc2UgZGVidWcgcHJpbnRzCndpbGwg
+Z2V0IHByaW50ZWQgaW4gb3JkZXIuCgpTZW50IHYzIHdpdGggZGV2X2RiZygpLCB0aGFua3MhCgot
+IE1hbmkKCi0tIArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K61
+4K6u4K+NCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
