@@ -4,88 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B2B7C49EA1
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 13:52:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40C35C3DA7F
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 15:26:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dmTgleBxz6PkdLRSpzjj86TMGGc42HvCUmjEtlzWsrA=; b=K4gJzoN/NGvu+l
-	Y/dkaIx5oVyX3FamxbTd92NHjhChrhUx9evHTHd2tZ3taAzaY5vGr3rIQpGGfpHS1O6MN6RudoCJ6
-	b3cQZ/9+37tEYlRvtvMTUyg+N58ol97XFC+IfqeVsLA0XFnuuO9clCugZuZUOAsuZ89jlhElLplDy
-	FSjqYyANvZzSzfdh52V6xg3gUVHcy/1OCVu2HXpYSvMKv5yNf+/cdPmC5aqTae12WJxHdTLP7QWvO
-	mkOGn9yHTcMi31zr7GpbHsd3Vr51qAPs8Jm7b7qhbREz09M6gLHmV/ZofGK/VdH1pYJ9Blq3aU6xm
-	LTgIsZqWN11nd6jfQpwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=E7fXVLZznohdSFv8bDDJS7QtfLnIuxeaHKi3LvNTgUs=; b=hMctPSrXsp1t/M
+	qT7/IW4KSnWIrKXGyH8EX7xmnZ8Zcuj15yk10CTsdRKeE1CTNkXnusH5oiRom15f0+Pf9+BCv2tef
+	nW84xR8Hd2VgdOK3+cm1MTDIt2gulsDbiVtTJVaoUjVRLvS51uXPGHq6qhpyDwLx4s60R09NArsrX
+	uvGoRUp2nW3DzhqKNsqcj2iDfBC00y0gEacvJEMqQ699JU/eVab2Zfi3eChAkDRb2RpA2fB9PuUIF
+	fT4gq3/WXmO5KubYhzusVKdG7lskaZUUwKKI7fSunIEUqS6tHk7kcjwu63BynGnmbAojEseq11eNL
+	IjUysAcXuDp1zo2cUYwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ9kF-00000001MrY-3r7x;
-	Wed, 31 Jul 2024 13:51:59 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1sZBDF-00000001i4q-3wIQ;
+	Wed, 31 Jul 2024 15:26:01 +0000
+Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ9jt-00000001MjY-4946
+	id 1sZBDC-00000001i4S-1u5F
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 13:51:41 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-52f01613acbso1080062e87.1
-        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 06:51:37 -0700 (PDT)
+	Wed, 31 Jul 2024 15:26:00 +0000
+Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-1fc66fc35f2so8107905ad.0
+        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 08:25:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1722433896; x=1723038696; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=j+A/9tcgCDSSBU+srrF5nKwFL3oRa/zbgbQZ+AY8cic=;
-        b=UH6e8MvHZoeu9dlatVOTBHTiHG4NAJSVeGkcIDqXbNYnUa5VsoLaTfzk7mcQGVdkD+
-         w4knN3XBXAtPrGJwpk/L0QL+bG2h6/GMFXTjvrc2T2e3qQBfuYfaq0SwLEeuWYsZHeBr
-         WgdweG2pmx+AhiY/8X0yRi/FTeB/fkNqyu8QzYDSs4P4LAF7ayWEwJTPCiQAwd0T4WHM
-         ljHuJHF3EVccNNKVkkCy9ipAoUvmJ+p14bthau1LoxF7iBTVo43ErpOhRJqqEKJyD0nY
-         Cqc2FN8FE1nSKXaBpIUemYHVRYH8hJOIKm5ZRA9l1gbwJdDzXavGhW+tp5MXwnDz6F/5
-         ZKMA==
+        d=linaro.org; s=google; t=1722439557; x=1723044357; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=KROUJfzd7zpmXBSNKTmAstwkucbbvJRvDUFfClcBUTs=;
+        b=cbi7c58hVUYzgs85U1ry2Kk2U2VD+TF0GJb9+mY93dwK4KPQqcFbg+180QwoJdrA0W
+         xEOyomrCa7o7ItzsKIGcCZFRpw+ublmJ3ReIOzdW7pcKP3c1HkYyzY/s57GP+KDnyUN0
+         9rW3eMsVVAXzkXRnkeaPk0i+bRrxwpcevHiuZKZNyKLTZupUwz75rfeTX2ebH2NEOn4M
+         cpNvBBraEXrcZNLH1QcG7fEEJ9sT7vgbPCDyLKJjBCb0FWMyFBmc4JvNs2AprJsBAQEb
+         Qmqrn1WdbX97o8pimUrIfpg8m+e1ZNxbloAkQVHoZ+G2rIY175CXz2PBxZrMq238lyeU
+         fnmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722433896; x=1723038696;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=j+A/9tcgCDSSBU+srrF5nKwFL3oRa/zbgbQZ+AY8cic=;
-        b=w8vET1RwO9jMqgvef76IFfO0lJh+dUTvYhbD7inAu9Bs5OBqWYxxV9Fyfa+m3oCRvz
-         bXSm7TxWOnhqp8yHRMSUi4RLkTEhE6iLDqtc/T2110Dew4ahrdI29xe9ukVJzKe+rQND
-         EHR5w6CW1bHCUgmRBBsa7wei/4tbYFWVvlHrHUImHgELKn+7wdgz5DFzGEeETGlQGRYR
-         Zv1IKd7kMNldqyBjhrMFF1EOgn1EcCap4ryf7F7HoEQFL2XmphI52JOC/N2arxrHGffu
-         3ogPXpxYUw3VmIXVGfcicq1ux7QBbRHH/slKyTiQtRCFwxmShc23Q+W+0D/i8nNmdwB9
-         Lnww==
-X-Forwarded-Encrypted: i=1; AJvYcCVTfCFlMOxq4JfTo9SYAfiAXBKyOBH7c92PpHR9fn9YmdkS7U0pJrR8WhF+1bnZYTWe2/4rVE8JX9flYvin3AvCVpa8XqbnM8nFFoLizw==
-X-Gm-Message-State: AOJu0YzadfFasMNgG5KNoEfJNKZbDu2Ld2O0aZHxPZNFZAImHjm0EtAM
-	kr3hZ8OMsds9LDeDVf4vJ5r4yT2i1FuLPYiWkDK3LnBJ2KMrmgaVRf/Mva8MHZo=
-X-Google-Smtp-Source: AGHT+IG+mttw46BcNy1Yl+alFPjL+Lx9+rSBIT7ykTGakeTtCcbJGIKc4GY3EscsZjkGiVzxqdgnKA==
-X-Received: by 2002:a05:6512:3408:b0:52f:2c3:50be with SMTP id 2adb3069b0e04-530aa8c6b17mr1480045e87.20.1722433895657;
-        Wed, 31 Jul 2024 06:51:35 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-530b0146923sm260026e87.130.2024.07.31.06.51.34
+        d=1e100.net; s=20230601; t=1722439557; x=1723044357;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=KROUJfzd7zpmXBSNKTmAstwkucbbvJRvDUFfClcBUTs=;
+        b=ZQaewIeXUl9QqM2b522DKa9MKzqn7wRegfA+TdMoaKkg+wsspyT09Tt8GyMkqsPrMB
+         DxgBPFLecXfv3BB8S6p7KmfcOCy8b0lXFVJiQAm0jI7UBM+3REYRocqsCW27EG4BUM9e
+         Ar0y2eW7aJooQKHSZoqRsjQuOIrpVw2v4oTcKPsGM9p741+RBXsxuvma5aAfe7hGx+P5
+         tRRD8wsGovAjXGRLTgA9d6VN2whWN1C8eeaXqWhLHOHb5voM5kVuS16pyUK/ed75I4gQ
+         PRHaabaeV1PVtYAlcmzSYBiuV9ozuVQsLcKqWC3RwEZm67Q48mY7SXlCZ+BhA1q+kDh/
+         3Pmw==
+X-Forwarded-Encrypted: i=1; AJvYcCXYY0vbDj3hFIbTKbIfD9B4+VDTkCd+m1tYTxMevTTEwobmv+DOjHlEhneS7e73Uvz+++Qwta9HzoODM3/7xRW/GhI94O3xrZ+dWqkPqw==
+X-Gm-Message-State: AOJu0YxjW550omj/6gAg/W42Naf8AfnWx8kSIf/q8Y0IjfYJSH9FG+zO
+	nhqn6PTuFAY0lBVUE51OFIj7wqAjk1yIagsNL+Hrh467sySYrGHVS8q0MRsN0AX/KM8m7+anoJk
+	=
+X-Google-Smtp-Source: AGHT+IHaAHeZJQl/6BDz4olgLSYsP8h4LTGjurEwCiEHHGx1zq6QKMnCPnTjvxLmt1OVRUHjdIxKYw==
+X-Received: by 2002:a17:903:1250:b0:1fe:d72d:13e1 with SMTP id d9443c01a7336-1ff37c1f3d6mr83336925ad.30.1722439556869;
+        Wed, 31 Jul 2024 08:25:56 -0700 (PDT)
+Received: from localhost.localdomain ([120.60.66.23])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1fed7ee0185sm121896295ad.132.2024.07.31.08.25.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 31 Jul 2024 06:51:35 -0700 (PDT)
-Date: Wed, 31 Jul 2024 16:51:33 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Liu Ying <victor.liu@nxp.com>
-Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, p.zabel@pengutronix.de, 
-	airlied@gmail.com, daniel@ffwll.ch, maarten.lankhorst@linux.intel.com, 
-	mripard@kernel.org, tzimmermann@suse.de, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
-	kernel@pengutronix.de, festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org, 
-	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org, francesco@dolcini.it, 
-	frank.li@nxp.com
-Subject: Re: [PATCH v2 09/16] drm/imx: Add i.MX8qxp Display Controller KMS
-Message-ID: <3qmhbkx63hhncn3dl35tkhqcdo5bh2jypsfck656ylqrzfy4va@6xkgo32eg5du>
-References: <20240712093243.2108456-1-victor.liu@nxp.com>
- <20240712093243.2108456-10-victor.liu@nxp.com>
- <reuwtcszfrh5vtkuckkng5zejbj3nh7ahgf2igy2kpyskxrgox@oigld6uy55aw>
- <93485a85-65d6-4c49-9869-19248efefae7@nxp.com>
+        Wed, 31 Jul 2024 08:25:56 -0700 (PDT)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: vkoul@kernel.org
+Cc: kishon@kernel.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	dmitry.baryshkov@linaro.org,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v3] phy: qcom: qmp: Add debug prints for register writes
+Date: Wed, 31 Jul 2024 20:55:48 +0530
+Message-Id: <20240731152548.102987-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <93485a85-65d6-4c49-9869-19248efefae7@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_065138_107818_3AC57351 
-X-CRM114-Status: GOOD (  43.55  )
+X-CRM114-CacheID: sfid-20240731_082558_531280_46090721 
+X-CRM114-Status: GOOD (  15.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,941 +95,365 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 30, 2024 at 04:31:35PM GMT, Liu Ying wrote:
-> On 07/28/2024, Dmitry Baryshkov wrote:
-> > On Fri, Jul 12, 2024 at 05:32:36PM GMT, Liu Ying wrote:
-> >> i.MX8qxp Display Controller(DC) is comprised of three main components that
-> >> include a blit engine for 2D graphics accelerations, display controller for
-> >> display output processing, as well as a command sequencer.  Add kernel
-> >> mode setting support for the display controller part with two CRTCs and
-> >> two primary planes(backed by FetchLayer and FetchWarp respectively).  The
-> >> registers of the display controller are accessed without command sequencer
-> >> involved, instead just by using CPU.  The command sequencer is supposed to
-> >> be used by the blit engine.
-> > 
-> > Generic comment: please consider moving dc_plane / dc_crtc defines to
-> > the source files and dropping the headers.
-> 
-> struct dc_crtc is referenced from dc-drv.h and dc-kms.c.
-> struct dc_plane is referenced from dc-crtc.c and dc-drv.h.
-> 
-> If no objections, I may drop dc-crtc.h and dc-plane.h,
-> and move necessary stuff to dc-kms.h.
-> 
-> > 
-> >>
-> >> Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> >> ---
-> >> v2:
-> >> * Find next bridge from TCon's port.
-> >> * Drop drm/drm_module.h include from dc-drv.c.
-> >>
-> >>  drivers/gpu/drm/imx/dc/Kconfig    |   2 +
-> >>  drivers/gpu/drm/imx/dc/Makefile   |   5 +-
-> >>  drivers/gpu/drm/imx/dc/dc-crtc.c  | 578 ++++++++++++++++++++++++++++++
-> >>  drivers/gpu/drm/imx/dc/dc-crtc.h  |  67 ++++
-> >>  drivers/gpu/drm/imx/dc/dc-de.h    |   3 +
-> >>  drivers/gpu/drm/imx/dc/dc-drv.c   | 236 ++++++++++++
-> >>  drivers/gpu/drm/imx/dc/dc-drv.h   |  21 ++
-> >>  drivers/gpu/drm/imx/dc/dc-kms.c   | 143 ++++++++
-> >>  drivers/gpu/drm/imx/dc/dc-kms.h   |  15 +
-> >>  drivers/gpu/drm/imx/dc/dc-plane.c | 227 ++++++++++++
-> >>  drivers/gpu/drm/imx/dc/dc-plane.h |  37 ++
-> >>  11 files changed, 1332 insertions(+), 2 deletions(-)
-> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-crtc.c
-> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-crtc.h
-> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.c
-> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.h
-> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-plane.c
-> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-plane.h
-> >>
-> >> diff --git a/drivers/gpu/drm/imx/dc/Kconfig b/drivers/gpu/drm/imx/dc/Kconfig
-> >> index b66b815fbdf1..dac0de009273 100644
-> >> --- a/drivers/gpu/drm/imx/dc/Kconfig
-> >> +++ b/drivers/gpu/drm/imx/dc/Kconfig
-> >> @@ -1,6 +1,8 @@
-> >>  config DRM_IMX8_DC
-> >>  	tristate "Freescale i.MX8 Display Controller Graphics"
-> >>  	depends on DRM && COMMON_CLK && OF && (ARCH_MXC || COMPILE_TEST)
-> >> +	select DRM_GEM_DMA_HELPER
-> >> +	select DRM_KMS_HELPER
-> >>  	select GENERIC_IRQ_CHIP
-> >>  	help
-> >>  	  enable Freescale i.MX8 Display Controller(DC) graphics support
-> >> diff --git a/drivers/gpu/drm/imx/dc/Makefile b/drivers/gpu/drm/imx/dc/Makefile
-> >> index 1ce3e8a8db22..b9d33c074984 100644
-> >> --- a/drivers/gpu/drm/imx/dc/Makefile
-> >> +++ b/drivers/gpu/drm/imx/dc/Makefile
-> >> @@ -1,6 +1,7 @@
-> >>  # SPDX-License-Identifier: GPL-2.0
-> >>  
-> >> -imx8-dc-drm-objs := dc-cf.o dc-de.o dc-drv.o dc-ed.o dc-fg.o dc-fl.o dc-fu.o \
-> >> -		    dc-fw.o dc-ic.o dc-lb.o dc-pe.o dc-tc.o
-> >> +imx8-dc-drm-objs := dc-cf.o dc-crtc.o dc-de.o dc-drv.o dc-ed.o dc-fg.o dc-fl.o \
-> >> +		    dc-fu.o dc-fw.o dc-ic.o dc-kms.o dc-lb.o dc-pe.o \
-> >> +		    dc-plane.o dc-tc.o
-> >>  
-> >>  obj-$(CONFIG_DRM_IMX8_DC) += imx8-dc-drm.o
-> >> diff --git a/drivers/gpu/drm/imx/dc/dc-crtc.c b/drivers/gpu/drm/imx/dc/dc-crtc.c
-> >> new file mode 100644
-> >> index 000000000000..e151e14a6677
-> >> --- /dev/null
-> >> +++ b/drivers/gpu/drm/imx/dc/dc-crtc.c
-> >> @@ -0,0 +1,578 @@
-> >> +// SPDX-License-Identifier: GPL-2.0+
-> >> +/*
-> >> + * Copyright 2024 NXP
-> >> + */
-> >> +
-> >> +#include <linux/completion.h>
-> >> +#include <linux/interrupt.h>
-> >> +#include <linux/irqreturn.h>
-> >> +#include <linux/pm_runtime.h>
-> >> +#include <linux/spinlock.h>
-> >> +
-> >> +#include <drm/drm_atomic.h>
-> >> +#include <drm/drm_atomic_helper.h>
-> >> +#include <drm/drm_atomic_state_helper.h>
-> >> +#include <drm/drm_crtc.h>
-> >> +#include <drm/drm_device.h>
-> >> +#include <drm/drm_drv.h>
-> >> +#include <drm/drm_managed.h>
-> >> +#include <drm/drm_modes.h>
-> >> +#include <drm/drm_modeset_helper_vtables.h>
-> >> +#include <drm/drm_plane.h>
-> >> +#include <drm/drm_vblank.h>
-> >> +
-> >> +#include "dc-crtc.h"
-> >> +#include "dc-de.h"
-> >> +#include "dc-drv.h"
-> >> +#include "dc-pe.h"
-> >> +#include "dc-plane.h"
-> >> +
-> >> +#define DC_CRTC_WAIT_FOR_COMPLETION_TIMEOUT(c)				\
-> >> +do {									\
-> >> +	unsigned long ret;						\
-> >> +	ret = wait_for_completion_timeout(&dc_crtc->c, HZ);		\
-> >> +	if (ret == 0)							\
-> >> +		dc_crtc_err(crtc, "%s: wait for " #c " timeout\n",	\
-> >> +							__func__);	\
-> >> +} while (0)
-> >> +
-> >> +#define DC_CRTC_CHECK_FRAMEGEN_FIFO(fg)					\
-> >> +do {									\
-> >> +	typeof(fg) _fg = (fg);						\
-> >> +	if (dc_fg_secondary_requests_to_read_empty_fifo(_fg)) {		\
-> >> +		dc_fg_secondary_clear_channel_status(_fg);		\
-> >> +		dc_crtc_err(crtc, "%s: FrameGen FIFO empty\n",		\
-> >> +							__func__);	\
-> >> +	}								\
-> >> +} while (0)
-> >> +
-> >> +#define DC_CRTC_WAIT_FOR_FRAMEGEN_SECONDARY_SYNCUP(fg)			\
-> >> +do {									\
-> >> +	if (dc_fg_wait_for_secondary_syncup(fg))			\
-> >> +		dc_crtc_err(crtc,					\
-> >> +			"%s: FrameGen secondary channel isn't syncup\n",\
-> >> +							__func__);	\
-> >> +} while (0)
-> >> +
-> >> +static u32 dc_crtc_get_vblank_counter(struct drm_crtc *crtc)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +
-> >> +	return dc_fg_get_frame_index(dc_crtc->fg);
-> >> +}
-> >> +
-> >> +static int dc_crtc_enable_vblank(struct drm_crtc *crtc)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +
-> >> +	enable_irq(dc_crtc->irq_dec_framecomplete);
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static void dc_crtc_disable_vblank(struct drm_crtc *crtc)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +
-> >> +	disable_irq_nosync(dc_crtc->irq_dec_framecomplete);
-> >> +}
-> >> +
-> >> +static irqreturn_t
-> >> +dc_crtc_dec_framecomplete_irq_handler(int irq, void *dev_id)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = dev_id;
-> >> +	struct drm_crtc *crtc = &dc_crtc->base;
-> >> +	unsigned long flags;
-> >> +
-> >> +	drm_crtc_handle_vblank(crtc);
-> >> +
-> >> +	spin_lock_irqsave(&crtc->dev->event_lock, flags);
-> >> +	if (dc_crtc->event) {
-> >> +		drm_crtc_send_vblank_event(crtc, dc_crtc->event);
-> >> +		dc_crtc->event = NULL;
-> >> +		drm_crtc_vblank_put(crtc);
-> >> +	}
-> >> +	spin_unlock_irqrestore(&crtc->dev->event_lock, flags);
-> >> +
-> >> +	return IRQ_HANDLED;
-> >> +}
-> >> +
-> >> +static irqreturn_t dc_crtc_common_irq_handler(int irq, void *dev_id)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = dev_id;
-> >> +	struct drm_crtc *crtc = &dc_crtc->base;
-> >> +
-> >> +	if (irq == dc_crtc->irq_dec_seqcomplete) {
-> >> +		complete(&dc_crtc->dec_seqcomplete_done);
-> >> +	} else if (irq == dc_crtc->irq_dec_shdld) {
-> >> +		complete(&dc_crtc->dec_shdld_done);
-> >> +	} else if (irq == dc_crtc->irq_ed_cont_shdld) {
-> >> +		complete(&dc_crtc->ed_cont_shdld_done);
-> >> +	} else if (irq == dc_crtc->irq_ed_safe_shdld) {
-> >> +		complete(&dc_crtc->ed_safe_shdld_done);
-> >> +	} else {
-> >> +		dc_crtc_err(crtc, "invalid CRTC irq(%u)\n", irq);
-> >> +		return IRQ_NONE;
-> > 
-> > And this is a counter-example to my previous questions. If you had 4
-> > separate handlers, there would have been no need for the futile "invalid
-> > CRTC" error, because it would not be possible at all.
-> 
-> Ok, will drop the else clause.  Thanks.
-> 
-> > 
-> >> +	}
-> >> +
-> >> +	return IRQ_HANDLED;
-> >> +}
-> >> +
-> >> +static const struct drm_crtc_funcs dc_crtc_funcs = {
-> >> +	.reset			= drm_atomic_helper_crtc_reset,
-> >> +	.destroy		= drm_crtc_cleanup,
-> >> +	.set_config		= drm_atomic_helper_set_config,
-> >> +	.page_flip		= drm_atomic_helper_page_flip,
-> >> +	.atomic_duplicate_state	= drm_atomic_helper_crtc_duplicate_state,
-> >> +	.atomic_destroy_state	= drm_atomic_helper_crtc_destroy_state,
-> >> +	.get_vblank_counter	= dc_crtc_get_vblank_counter,
-> >> +	.enable_vblank		= dc_crtc_enable_vblank,
-> >> +	.disable_vblank		= dc_crtc_disable_vblank,
-> >> +	.get_vblank_timestamp	= drm_crtc_vblank_helper_get_vblank_timestamp,
-> >> +};
-> >> +
-> >> +static void dc_crtc_queue_state_event(struct drm_crtc_state *crtc_state)
-> >> +{
-> >> +	struct drm_crtc *crtc = crtc_state->crtc;
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +
-> >> +	spin_lock_irq(&crtc->dev->event_lock);
-> >> +	if (crtc_state->event) {
-> >> +		WARN_ON(drm_crtc_vblank_get(crtc));
-> >> +		WARN_ON(dc_crtc->event);
-> >> +		dc_crtc->event = crtc_state->event;
-> >> +		crtc_state->event = NULL;
-> >> +	}
-> >> +	spin_unlock_irq(&crtc->dev->event_lock);
-> >> +}
-> >> +
-> >> +static enum drm_mode_status
-> >> +dc_crtc_check_clock(struct dc_crtc *dc_crtc, int clk_khz)
-> >> +{
-> >> +	return dc_fg_check_clock(dc_crtc->fg, clk_khz);
-> >> +}
-> >> +
-> >> +static enum drm_mode_status
-> >> +dc_crtc_mode_valid(struct drm_crtc *crtc, const struct drm_display_mode *mode)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +	enum drm_mode_status status;
-> >> +
-> >> +	status = dc_crtc_check_clock(dc_crtc, mode->clock);
-> >> +	if (status != MODE_OK)
-> >> +		return status;
-> >> +
-> >> +	if (mode->crtc_clock > DC_FRAMEGEN_MAX_CLOCK_KHZ)
-> >> +		return MODE_CLOCK_HIGH;
-> >> +
-> >> +	return MODE_OK;
-> >> +}
-> >> +
-> >> +static int
-> >> +dc_crtc_atomic_check(struct drm_crtc *crtc, struct drm_atomic_state *state)
-> >> +{
-> >> +	struct drm_crtc_state *new_crtc_state =
-> >> +				drm_atomic_get_new_crtc_state(state, crtc);
-> >> +	struct drm_display_mode *adj = &new_crtc_state->adjusted_mode;
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +	enum drm_mode_status status;
-> >> +
-> >> +	status = dc_crtc_check_clock(dc_crtc, adj->clock);
-> >> +	if (status != MODE_OK)
-> >> +		return -EINVAL;
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static void
-> >> +dc_crtc_atomic_begin(struct drm_crtc *crtc, struct drm_atomic_state *state)
-> >> +{
-> >> +	struct drm_crtc_state *new_crtc_state =
-> >> +				drm_atomic_get_new_crtc_state(state, crtc);
-> >> +	struct dc_drm_device *dc_drm = to_dc_drm_device(crtc->dev);
-> >> +	struct dc_crtc *dc_crtc = to_dc_crtc(crtc);
-> >> +	int idx, ret;
-> >> +
-> >> +	if (!drm_atomic_crtc_needs_modeset(new_crtc_state) ||
-> >> +	    !new_crtc_state->active)
-> >> +		return;
-> > 
-> > Why? Can it be called under such conditions?
-> 
-> This is needed to make sure the balance of calling
-> pm_runtime_resume_and_get(dc_crtc->pe->dev)
-> from dc_crtc_atomic_begin() and calling
-> pm_runtime_put(dc_crtc->pe->dev)
-> from dc_crtc_atomic_disable().
-> 
-> pm_runtime_resume_and_get(dc_crtc->pe->dev) is called
-> only when the CRTC is to be enabled with a modeset
-> commit.
-> 
-> > 
-> >> +
-> >> +	if (!drm_dev_enter(crtc->dev, &idx))
-> >> +		return;
-> > 
-> > Can you please give an example of a driver using drm_dev_enter()/_exit()
-> > in DRM callbacks?
-> 
-> vc4.
-> 
-> BTW, this is required by Maxime, as noted in cover letter.
-> 
-> > 
-> >> +
-> >> +	/* request pixel engine power-on when CRTC starts to be active */
-> >> +	ret = pm_runtime_resume_and_get(dc_crtc->pe->dev);
-> > 
-> > This function doesn't return an error. So if pm_runtime_resume_and_get()
-> 
-> Kerneldoc of pm_runtime_resume_and_get() mentions error code.
-> '
-> or a negative error code otherwise
-> '
-> So, it may return an error.
-> 
-> > didn't increment the counter, corresponding pm_runtime_put() might cause
-> > an underflow. Instead void functions should use pm_runtime_get_sync()
-> 
-> pm_runtime_resume_and_get() is called from dc_crtc_atomic_begin(), which
-> is atomic considering the general DRM atomic KMS idea.  So, if the call
-> returns an error, the best we can do is to print the error out like
-> this driver does IMO.  The call should not fail in the first place due
-> to the "atomic" sense, though it can fail in theory.
-> 
-> pm_runtime_get_sync() may also return an error. And it's Kerneldoc kinda
-> says pm_runtime_resume_and_get() is better.
-> '
-> Consider using pm_runtime_resume_and_get() instead of it, especially
-> if its return value is checked by the caller, as this is likely to result
-> in cleaner code.
-> '
-> 
-> > 
-> > Also can any of the code running afterwards result in the unclocked
-> > exception if resume fails?
-> 
-> Yes.  But, it's all atomic anyway...
-> 
-> > 
-> >> +	if (ret)
-> >> +		dc_crtc_err(crtc, "failed to get DC pixel engine RPM: %d\n",
-> >> +			    ret);
-> >> +
-> >> +	atomic_inc(&dc_drm->pe_rpm_count);
-> > 
-> > Why do you need a separate RPM count? RPM code already has one.
-> 
-> If no objections, I will drop the count and call
-> pm_runtime_active(dc_crtc->pe->dev) from dc_crtc_disable_at_unbind().
+These register prints are useful to validate the init sequence against the
+Qcom internal documentation and also to share with the Qcom hw engineers to
+debug issues related to PHY.
 
-Why do you need the disable_at_unbind() thing? Doesn't shutdown take
-care of disabling it for you?
+Sample debug prints:
 
-> 
-> Thanks.
-> 
-> > 
-> >> +
-> >> +	drm_dev_exit(idx);
-> >> +}
-> >> +
-> > 
-> > 
-> > [...]
-> > 
-> >> +
-> >> +static int
-> >> +dc_crtc_request_irq(struct dc_crtc *dc_crtc, struct device *dev,
-> >> +		    unsigned int irq,
-> >> +		    irqreturn_t (*irq_handler)(int irq, void *dev_id))
-> >> +{
-> >> +	int ret;
-> >> +
-> >> +	ret = request_irq(irq, irq_handler, IRQF_NO_AUTOEN, dev_name(dev),
-> >> +			  dc_crtc);
-> >> +	if (ret < 0)
-> >> +		dev_err(dev, "failed to request irq(%u): %d\n", irq, ret);
-> >> +
-> >> +	return ret;
-> >> +}
-> >> +
-> >> +static int dc_crtc_request_irqs(struct drm_device *drm, struct dc_crtc *dc_crtc)
-> >> +{
-> >> +	struct {
-> >> +		struct device *dev;
-> >> +		unsigned int irq;
-> >> +		irqreturn_t (*irq_handler)(int irq, void *dev_id);
-> >> +	} irqs[] = {
-> >> +		{
-> >> +			dc_crtc->de->dev,
-> >> +			dc_crtc->irq_dec_framecomplete,
-> >> +			dc_crtc_dec_framecomplete_irq_handler,
-> >> +		}, {
-> >> +			dc_crtc->de->dev,
-> >> +			dc_crtc->irq_dec_seqcomplete,
-> >> +			dc_crtc_common_irq_handler,
-> >> +		}, {
-> >> +			dc_crtc->de->dev,
-> >> +			dc_crtc->irq_dec_shdld,
-> >> +			dc_crtc_common_irq_handler,
-> >> +		}, {
-> >> +			dc_crtc->ed_cont->dev,
-> >> +			dc_crtc->irq_ed_cont_shdld,
-> >> +			dc_crtc_common_irq_handler,
-> >> +		}, {
-> >> +			dc_crtc->ed_safe->dev,
-> >> +			dc_crtc->irq_ed_safe_shdld,
-> >> +			dc_crtc_common_irq_handler,
-> >> +		},
-> >> +	};
-> >> +	struct drm_crtc *crtc = &dc_crtc->base;
-> >> +	int i, ret;
-> >> +
-> >> +	dc_crtc->irqs = drmm_kcalloc(drm, ARRAY_SIZE(irqs),
-> >> +				     sizeof(*dc_crtc->irqs), GFP_KERNEL);
-> > 
-> > Using array would remove the necessity to call drmm_kcalloc here().
-> 
-> Ok, I may use a macro to define the array size instead.
-> 
-> #define DC_CRTC_IRQS    5
+qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
+qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
 
-Just embed the array into dc_crtc, no need for extra defines.
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
 
-> 
-> 
-> > 
-> >> +	if (!dc_crtc->irqs) {
-> >> +		dev_err(drm->dev, "failed to allocate CRTC%u irqs\n",
-> >> +			crtc->index);
-> >> +		return -ENOMEM;
-> >> +	}
-> >> +
-> >> +	for (i = 0; i < ARRAY_SIZE(irqs); i++) {
-> >> +		struct dc_crtc_irq *irq = &dc_crtc->irqs[i];
-> >> +
-> >> +		ret = dc_crtc_request_irq(dc_crtc, irqs[i].dev, irqs[i].irq,
-> >> +					  irqs[i].irq_handler);
-> >> +		if (ret)
-> >> +			return ret;
-> >> +
-> >> +		irq->dc_crtc = dc_crtc;
-> >> +		irq->irq = irqs[i].irq;
-> >> +
-> >> +		ret = drmm_add_action_or_reset(drm, dc_crtc_free_irq, irq);
-> > 
-> > Can you use devm_request_irq() instead?
-> 
-> No.
-> 
-> The requested irqs would be freed too late as devm_of_platform_populate()
-> is called early from dc_probe().  They would be freed later than the time
-> point where irq domain is removed from dc_ic_unbind().  That would cause
-> a kernel Oops as I tried.
+Changes in v3:
 
-Ohh, you are using drmm here. Please don't use drmm for IRQ domains.
+* Used dev_dbg() to print device name
 
-> 
-> > 
-> >> +		if (ret)
-> >> +			return ret;
-> >> +	}
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> > 
-> > [...]
-> > 
-> >> +
-> >> +static int dc_kms_init_encoder_per_crtc(struct dc_drm_device *dc_drm,
-> >> +					int crtc_index)
-> >> +{
-> >> +	struct dc_crtc *dc_crtc = &dc_drm->dc_crtc[crtc_index];
-> >> +	struct drm_device *drm = &dc_drm->base;
-> >> +	struct drm_crtc *crtc = &dc_crtc->base;
-> >> +	struct drm_connector *connector;
-> >> +	struct device *dev = drm->dev;
-> >> +	struct drm_encoder *encoder;
-> >> +	struct device_node *remote;
-> >> +	struct drm_bridge *bridge;
-> >> +	int ret = 0;
-> >> +
-> >> +	remote = of_graph_get_remote_node(dc_crtc->de->tc->dev->of_node, 0, -1);
-> >> +	if (!of_device_is_available(remote))
-> >> +		goto out;
-> >> +
-> >> +	bridge = of_drm_find_bridge(remote);
-> > 
-> > drm_of_find_panel_or_bridge() instead.
-> 
-> Nope.
-> 
-> The first bridge is always pixel combiner according to SoC design.
-> It can't be a panel.
+Changes in v2:
 
-So pass NULL as a panel pointer. At least it saves you from calling
-of_graph_get_remote_node() manually.
+* Modifed the debug print to include reg offset
 
-> >> +	if (!bridge) {
-> >> +		ret = -EPROBE_DEFER;
-> >> +		dev_err_probe(dev, ret, "failed to find bridge for CRTC%u\n",
-> >> +			      crtc->index);
-> >> +		goto out;
-> >> +	}
-> >> +
-> >> +	encoder = &dc_drm->encoder[crtc_index];
-> >> +	ret = drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_NONE);
-> >> +	if (ret) {
-> >> +		dev_err(dev, "failed to initialize encoder for CRTC%u: %d\n",
-> >> +			crtc->index, ret);
-> >> +		goto out;
-> >> +	}
-> >> +
-> >> +	encoder->possible_crtcs = drm_crtc_mask(crtc);
-> >> +
-> >> +	ret = drm_bridge_attach(encoder, bridge, NULL,
-> >> +				DRM_BRIDGE_ATTACH_NO_CONNECTOR);
-> >> +	if (ret) {
-> >> +		dev_err(dev,
-> >> +			"failed to attach bridge to encoder for CRTC%u: %d\n",
-> >> +			crtc->index, ret);
-> >> +		goto out;
-> >> +	}
-> >> +
-> >> +	connector = drm_bridge_connector_init(drm, encoder);
-> >> +	if (IS_ERR(connector)) {
-> >> +		ret = PTR_ERR(connector);
-> >> +		dev_err(dev, "failed to init bridge connector for CRTC%u: %d\n",
-> >> +			crtc->index, ret);
-> >> +		goto out;
-> >> +	}
-> >> +
-> >> +	ret = drm_connector_attach_encoder(connector, encoder);
-> >> +	if (ret)
-> >> +		dev_err(dev,
-> >> +			"failed to attach encoder to connector for CRTC%u: %d\n",
-> >> +			crtc->index, ret);
-> >> +
-> >> +out:
-> >> +	of_node_put(remote);
-> >> +	return ret;
-> >> +}
-> >> +
-> >> +int dc_kms_init(struct dc_drm_device *dc_drm)
-> >> +{
-> >> +	struct drm_device *drm = &dc_drm->base;
-> >> +	int ret, i;
-> >> +
-> >> +	ret = drmm_mode_config_init(drm);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> >> +	atomic_set(&dc_drm->pe_rpm_count, 0);
-> >> +
-> >> +	drm->mode_config.min_width = 60;
-> >> +	drm->mode_config.min_height = 60;
-> >> +	drm->mode_config.max_width = 8192;
-> >> +	drm->mode_config.max_height = 8192;
-> >> +	drm->mode_config.funcs = &dc_drm_mode_config_funcs;
-> >> +
-> >> +	drm->vblank_disable_immediate = true;
-> >> +	drm->max_vblank_count = DC_FRAMEGEN_MAX_FRAME_INDEX;
-> >> +
-> >> +	for (i = 0; i < DC_CRTCS; i++) {
-> >> +		ret = dc_crtc_init(dc_drm, i);
-> >> +		if (ret)
-> >> +			return ret;
-> >> +
-> >> +		ret = dc_kms_init_encoder_per_crtc(dc_drm, i);
-> >> +		if (ret)
-> >> +			return ret;
-> >> +	}
-> >> +
-> >> +	ret = drm_vblank_init(drm, DC_CRTCS);
-> >> +	if (ret) {
-> >> +		dev_err(drm->dev, "failed to init vblank support: %d\n", ret);
-> >> +		return ret;
-> >> +	}
-> >> +
-> >> +	drm_mode_config_reset(drm);
-> >> +
-> >> +	drm_kms_helper_poll_init(drm);
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +void dc_kms_uninit(struct dc_drm_device *dc_drm)
-> >> +{
-> >> +	drm_kms_helper_poll_fini(&dc_drm->base);
-> >> +}
-> >> diff --git a/drivers/gpu/drm/imx/dc/dc-kms.h b/drivers/gpu/drm/imx/dc/dc-kms.h
-> >> new file mode 100644
-> >> index 000000000000..4f66b11c106a
-> >> --- /dev/null
-> >> +++ b/drivers/gpu/drm/imx/dc/dc-kms.h
-> >> @@ -0,0 +1,15 @@
-> >> +/* SPDX-License-Identifier: GPL-2.0+ */
-> >> +/*
-> >> + * Copyright 2024 NXP
-> >> + */
-> >> +
-> >> +#ifndef __DC_KMS_H__
-> >> +#define __DC_KMS_H__
-> >> +
-> >> +#include "dc-de.h"
-> >> +
-> >> +#define DC_CRTCS	DC_DISPLAYS
-> >> +#define DC_ENCODERS	DC_DISPLAYS
-> >> +#define DC_PRIMARYS	DC_DISPLAYS
-> > 
-> > If they are all equal, why do you need separate defines?
-> 
-> Hmm, just for meaningful macro names to make code easy to read.
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c     | 38 ++++++++++---------
+ drivers/phy/qualcomm/phy-qcom-qmp-common.h    | 19 ++++++----
+ .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  |  8 ++--
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 27 ++++++-------
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 12 +++---
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 10 ++---
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c      | 13 ++++---
+ 7 files changed, 67 insertions(+), 60 deletions(-)
 
-From my POV it makes code harder to read, as the reviewer has to keep in
-mind that those values are all the same.
-
-> 
-> > 
-> >> +
-> >> +#endif /* __DC_KMS_H__ */
-> >> diff --git a/drivers/gpu/drm/imx/dc/dc-plane.c b/drivers/gpu/drm/imx/dc/dc-plane.c
-> >> new file mode 100644
-> >> index 000000000000..a49b043ca167
-> >> --- /dev/null
-> >> +++ b/drivers/gpu/drm/imx/dc/dc-plane.c
-> >> @@ -0,0 +1,227 @@
-> >> +// SPDX-License-Identifier: GPL-2.0+
-> >> +/*
-> >> + * Copyright 2024 NXP
-> >> + */
-> >> +
-> >> +#include <drm/drm_atomic.h>
-> >> +#include <drm/drm_atomic_helper.h>
-> >> +#include <drm/drm_atomic_state_helper.h>
-> >> +#include <drm/drm_crtc.h>
-> >> +#include <drm/drm_drv.h>
-> >> +#include <drm/drm_fb_dma_helper.h>
-> >> +#include <drm/drm_fourcc.h>
-> >> +#include <drm/drm_framebuffer.h>
-> >> +#include <drm/drm_gem_atomic_helper.h>
-> >> +#include <drm/drm_plane_helper.h>
-> >> +
-> >> +#include "dc-drv.h"
-> >> +#include "dc-fu.h"
-> >> +#include "dc-plane.h"
-> >> +
-> >> +#define DC_PLANE_MAX_PITCH	0x10000
-> >> +#define DC_PLANE_MAX_PIX_CNT	8192
-> >> +
-> >> +static const uint32_t dc_plane_formats[] = {
-> >> +	DRM_FORMAT_XRGB8888,
-> >> +};
-> >> +
-> >> +static const struct drm_plane_funcs dc_plane_funcs = {
-> >> +	.update_plane		= drm_atomic_helper_update_plane,
-> >> +	.disable_plane		= drm_atomic_helper_disable_plane,
-> >> +	.destroy		= drm_plane_cleanup,
-> >> +	.reset			= drm_atomic_helper_plane_reset,
-> >> +	.atomic_duplicate_state	= drm_atomic_helper_plane_duplicate_state,
-> >> +	.atomic_destroy_state	= drm_atomic_helper_plane_destroy_state,
-> >> +};
-> >> +
-> >> +static int dc_plane_check_no_off_screen(struct drm_plane_state *state,
-> >> +					struct drm_crtc_state *crtc_state)
-> >> +{
-> >> +	if (state->dst.x1 < 0 || state->dst.y1 < 0 ||
-> >> +	    state->dst.x2 > crtc_state->adjusted_mode.hdisplay ||
-> >> +	    state->dst.y2 > crtc_state->adjusted_mode.vdisplay) {
-> >> +		dc_plane_dbg(state->plane, "no off screen\n");
-> >> +		return -EINVAL;
-> >> +	}
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static int dc_plane_check_max_source_resolution(struct drm_plane_state *state)
-> >> +{
-> >> +	int src_h = drm_rect_height(&state->src) >> 16;
-> >> +	int src_w = drm_rect_width(&state->src) >> 16;
-> >> +
-> >> +	if (src_w > DC_PLANE_MAX_PIX_CNT || src_h > DC_PLANE_MAX_PIX_CNT) {
-> >> +		dc_plane_dbg(state->plane, "invalid source resolution\n");
-> >> +		return -EINVAL;
-> >> +	}
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static int dc_plane_check_fb(struct drm_plane_state *state)
-> >> +{
-> >> +	struct drm_framebuffer *fb = state->fb;
-> >> +	dma_addr_t baseaddr = drm_fb_dma_get_gem_addr(fb, state, 0);
-> >> +
-> >> +	/* base address alignment */
-> >> +	if (baseaddr & 0x3) {
-> >> +		dc_plane_dbg(state->plane, "fb bad baddr alignment\n");
-> >> +		return -EINVAL;
-> >> +	}
-> >> +
-> >> +	/* pitches[0] range */
-> >> +	if (fb->pitches[0] > DC_PLANE_MAX_PITCH) {
-> >> +		dc_plane_dbg(state->plane, "fb pitches[0] is out of range\n");
-> >> +		return -EINVAL;
-> >> +	}
-> >> +
-> >> +	/* pitches[0] alignment */
-> >> +	if (fb->pitches[0] & 0x3) {
-> >> +		dc_plane_dbg(state->plane, "fb bad pitches[0] alignment\n");
-> >> +		return -EINVAL;
-> >> +	}
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static int
-> >> +dc_plane_atomic_check(struct drm_plane *plane, struct drm_atomic_state *state)
-> >> +{
-> >> +	struct drm_plane_state *plane_state =
-> >> +				drm_atomic_get_new_plane_state(state, plane);
-> >> +	struct drm_crtc_state *crtc_state;
-> >> +	int ret;
-> >> +
-> >> +	/* ok to disable */
-> >> +	if (!plane_state->fb)
-> >> +		return 0;
-> >> +
-> >> +	if (!plane_state->crtc) {
-> >> +		dc_plane_dbg(plane, "no CRTC in plane state\n");
-> >> +		return -EINVAL;
-> >> +	}
-> >> +
-> >> +	crtc_state =
-> >> +		drm_atomic_get_existing_crtc_state(state, plane_state->crtc);
-> >> +	if (WARN_ON(!crtc_state))
-> >> +		return -EINVAL;
-> >> +
-> >> +	ret = drm_atomic_helper_check_plane_state(plane_state, crtc_state,
-> >> +						  DRM_PLANE_NO_SCALING,
-> >> +						  DRM_PLANE_NO_SCALING,
-> >> +						  true, false);
-> >> +	if (ret) {
-> >> +		dc_plane_dbg(plane, "failed to check plane state: %d\n", ret);
-> >> +		return ret;
-> >> +	}
-> >> +
-> >> +	ret = dc_plane_check_no_off_screen(plane_state, crtc_state);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> >> +	ret = dc_plane_check_max_source_resolution(plane_state);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> >> +	return dc_plane_check_fb(plane_state);
-> >> +}
-> >> +
-> >> +static void
-> >> +dc_plane_atomic_update(struct drm_plane *plane, struct drm_atomic_state *state)
-> >> +{
-> >> +	struct drm_plane_state *new_state =
-> >> +				drm_atomic_get_new_plane_state(state, plane);
-> >> +	struct dc_plane *dplane = to_dc_plane(plane);
-> >> +	struct drm_framebuffer *fb = new_state->fb;
-> >> +	const struct dc_fu_ops *fu_ops;
-> >> +	struct dc_lb *lb = dplane->lb;
-> >> +	struct dc_fu *fu = dplane->fu;
-> >> +	dma_addr_t baseaddr;
-> >> +	int src_w, src_h;
-> >> +	int idx;
-> >> +
-> >> +	if (!drm_dev_enter(plane->dev, &idx))
-> >> +		return;
-> >> +
-> >> +	src_w = drm_rect_width(&new_state->src) >> 16;
-> >> +	src_h = drm_rect_height(&new_state->src) >> 16;
-> >> +
-> >> +	baseaddr = drm_fb_dma_get_gem_addr(fb, new_state, 0);
-> >> +
-> >> +	fu_ops = dc_fu_get_ops(dplane->fu);
-> >> +
-> >> +	fu_ops->set_layerblend(fu, lb);
-> >> +	fu_ops->set_burstlength(fu, baseaddr);
-> >> +	fu_ops->set_src_stride(fu, fb->pitches[0]);
-> >> +	fu_ops->set_src_buf_dimensions(fu, src_w, src_h);
-> >> +	fu_ops->set_fmt(fu, fb->format);
-> >> +	fu_ops->set_framedimensions(fu, src_w, src_h);
-> >> +	fu_ops->set_baseaddress(fu, baseaddr);
-> >> +	fu_ops->enable_src_buf(fu);
-> > 
-> > Are you expecting that these ops might change? Can you call the function
-> > directly?
-> 
-> Looking at struct dc_fl and struct dc_fw, you may find struct dc_fu
-> is the base class.  These function calls take struct dc_fu as
-> arguments so that derived instances may specify their implementations.
-> 
-> So, I can't call their implementation functions directly.
-
-Ack.
-
-> 
-> > 
-> >> +
-> >> +	dc_plane_dbg(plane, "uses %s\n", fu_ops->get_name(fu));
-> >> +
-> >> +	dc_lb_pec_dynamic_prim_sel(lb, dc_cf_get_link_id(dplane->cf));
-> >> +	dc_lb_pec_dynamic_sec_sel(lb, fu_ops->get_link_id(fu));
-> >> +	dc_lb_mode(lb, LB_BLEND);
-> >> +	dc_lb_blendcontrol(lb);
-> >> +	dc_lb_position(lb, new_state->dst.x1, new_state->dst.y1);
-> >> +	dc_lb_pec_clken(lb, CLKEN_AUTOMATIC);
-> >> +
-> >> +	dc_plane_dbg(plane, "uses LayerBlend%u\n", dc_lb_get_id(lb));
-> >> +
-> >> +	/* set ExtDst's source to LayerBlend */
-> >> +	dc_ed_pec_src_sel(dplane->ed, dc_lb_get_link_id(lb));
-> >> +
-> >> +	drm_dev_exit(idx);
-> >> +}
-> >> +
-> >> +static void dc_plane_atomic_disable(struct drm_plane *plane,
-> >> +				    struct drm_atomic_state *state)
-> >> +{
-> >> +	struct dc_plane *dplane = to_dc_plane(plane);
-> >> +	const struct dc_fu_ops *fu_ops;
-> >> +	int idx;
-> >> +
-> >> +	if (!drm_dev_enter(plane->dev, &idx))
-> >> +		return;
-> >> +
-> >> +	/* disable fetchunit in shadow */
-> >> +	fu_ops = dc_fu_get_ops(dplane->fu);
-> >> +	fu_ops->disable_src_buf(dplane->fu);
-> >> +
-> >> +	/* set ExtDst's source to ConstFrame */
-> >> +	dc_ed_pec_src_sel(dplane->ed, dc_cf_get_link_id(dplane->cf));
-> >> +
-> >> +	drm_dev_exit(idx);
-> >> +}
-> >> +
-> >> +static const struct drm_plane_helper_funcs dc_plane_helper_funcs = {
-> >> +	.atomic_check = dc_plane_atomic_check,
-> >> +	.atomic_update = dc_plane_atomic_update,
-> >> +	.atomic_disable = dc_plane_atomic_disable,
-> >> +};
-> >> +
-> >> +int dc_plane_init(struct dc_drm_device *dc_drm, struct dc_plane *dc_plane)
-> >> +{
-> >> +	struct drm_plane *plane = &dc_plane->base;
-> >> +	int ret;
-> >> +
-> >> +	ret = drm_universal_plane_init(&dc_drm->base, plane, 0, &dc_plane_funcs,
-> >> +				       dc_plane_formats,
-> >> +				       ARRAY_SIZE(dc_plane_formats),
-> >> +				       NULL, DRM_PLANE_TYPE_PRIMARY, NULL);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> >> +	drm_plane_helper_add(plane, &dc_plane_helper_funcs);
-> >> +
-> >> +	dc_plane->fu = dc_drm->pe->fu_disp[plane->index];
-> >> +	dc_plane->cf = dc_drm->pe->cf_cont[plane->index];
-> >> +	dc_plane->lb = dc_drm->pe->lb[plane->index];
-> >> +	dc_plane->ed = dc_drm->pe->ed_cont[plane->index];
-> >> +
-> >> +	return 0;
-> >> +}
-> >> diff --git a/drivers/gpu/drm/imx/dc/dc-plane.h b/drivers/gpu/drm/imx/dc/dc-plane.h
-> >> new file mode 100644
-> >> index 000000000000..e72c3a7cb66f
-> >> --- /dev/null
-> >> +++ b/drivers/gpu/drm/imx/dc/dc-plane.h
-> >> @@ -0,0 +1,37 @@
-> >> +/* SPDX-License-Identifier: GPL-2.0+ */
-> >> +/*
-> >> + * Copyright 2024 NXP
-> >> + */
-> >> +
-> >> +#ifndef __DC_PLANE_H__
-> >> +#define __DC_PLANE_H__
-> >> +
-> >> +#include <linux/container_of.h>
-> >> +
-> >> +#include <drm/drm_plane.h>
-> >> +#include <drm/drm_print.h>
-> >> +
-> >> +#include "dc-fu.h"
-> >> +#include "dc-pe.h"
-> >> +
-> >> +#define dc_plane_dbg(plane, fmt, ...)					\
-> >> +do {									\
-> >> +	typeof(plane) _plane = (plane);					\
-> >> +	drm_dbg_kms(_plane->dev, "[PLANE:%d:%s] " fmt,			\
-> >> +		    _plane->base.id, _plane->name, ##__VA_ARGS__);	\
-> >> +} while (0)
-> >> +
-> >> +struct dc_plane {
-> >> +	struct drm_plane base;
-> >> +	struct dc_fu *fu;
-> >> +	struct dc_cf *cf;
-> >> +	struct dc_lb *lb;
-> >> +	struct dc_ed *ed;
-> >> +};
-> >> +
-> >> +static inline struct dc_plane *to_dc_plane(struct drm_plane *plane)
-> >> +{
-> >> +	return container_of(plane, struct dc_plane, base);
-> >> +}
-> >> +
-> >> +#endif /* __DC_PLANE_H__ */
-> >> -- 
-> >> 2.34.1
-> >>
-> > 
-> 
-> -- 
-> Regards,
-> Liu Ying
-> 
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 7b00945f7191..a8adc3214bfe 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -2190,24 +2190,25 @@ static int qmp_combo_dp_serdes_init(struct qmp_combo *qmp)
+ 	void __iomem *serdes = qmp->dp_serdes;
+ 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
+ 
+-	qmp_configure(serdes, cfg->dp_serdes_tbl, cfg->dp_serdes_tbl_num);
++	qmp_configure(qmp->dev, serdes, cfg->dp_serdes_tbl,
++		      cfg->dp_serdes_tbl_num);
+ 
+ 	switch (dp_opts->link_rate) {
+ 	case 1620:
+-		qmp_configure(serdes, cfg->serdes_tbl_rbr,
+-				cfg->serdes_tbl_rbr_num);
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_rbr,
++			      cfg->serdes_tbl_rbr_num);
+ 		break;
+ 	case 2700:
+-		qmp_configure(serdes, cfg->serdes_tbl_hbr,
+-				cfg->serdes_tbl_hbr_num);
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr,
++			      cfg->serdes_tbl_hbr_num);
+ 		break;
+ 	case 5400:
+-		qmp_configure(serdes, cfg->serdes_tbl_hbr2,
+-				cfg->serdes_tbl_hbr2_num);
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr2,
++			      cfg->serdes_tbl_hbr2_num);
+ 		break;
+ 	case 8100:
+-		qmp_configure(serdes, cfg->serdes_tbl_hbr3,
+-				cfg->serdes_tbl_hbr3_num);
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr3,
++			      cfg->serdes_tbl_hbr3_num);
+ 		break;
+ 	default:
+ 		/* Other link rates aren't supported */
+@@ -2807,8 +2808,8 @@ static int qmp_combo_dp_power_on(struct phy *phy)
+ 
+ 	qmp_combo_dp_serdes_init(qmp);
+ 
+-	qmp_configure_lane(tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
+-	qmp_configure_lane(tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
++	qmp_configure_lane(qmp->dev, tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
+ 
+ 	/* Configure special DP tx tunings */
+ 	cfg->configure_dp_tx(qmp);
+@@ -2850,7 +2851,7 @@ static int qmp_combo_usb_power_on(struct phy *phy)
+ 	unsigned int val;
+ 	int ret;
+ 
+-	qmp_configure(serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
++	qmp_configure(qmp->dev, serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
+ 
+ 	ret = clk_prepare_enable(qmp->pipe_clk);
+ 	if (ret) {
+@@ -2859,16 +2860,17 @@ static int qmp_combo_usb_power_on(struct phy *phy)
+ 	}
+ 
+ 	/* Tx, Rx, and PCS configurations */
+-	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+-	qmp_configure_lane(tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
++	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
+ 
+-	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+-	qmp_configure_lane(rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
++	qmp_configure_lane(qmp->dev, rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
+ 
+-	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ 
+ 	if (pcs_usb)
+-		qmp_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
++		qmp_configure(qmp->dev, pcs_usb, cfg->pcs_usb_tbl,
++			      cfg->pcs_usb_tbl_num);
+ 
+ 	if (cfg->has_pwrdn_delay)
+ 		usleep_range(10, 20);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+index 799384210509..b945fc14cece 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+@@ -9,6 +9,7 @@
+ struct qmp_phy_init_tbl {
+ 	unsigned int offset;
+ 	unsigned int val;
++	char *name;
+ 	/*
+ 	 * mask of lanes for which this register is written
+ 	 * for cases when second lane needs different values
+@@ -20,6 +21,7 @@ struct qmp_phy_init_tbl {
+ 	{				\
+ 		.offset = o,		\
+ 		.val = v,		\
++		.name = #o,		\
+ 		.lane_mask = 0xff,	\
+ 	}
+ 
+@@ -27,13 +29,13 @@ struct qmp_phy_init_tbl {
+ 	{				\
+ 		.offset = o,		\
+ 		.val = v,		\
++		.name = #o,		\
+ 		.lane_mask = l,		\
+ 	}
+ 
+-static inline void qmp_configure_lane(void __iomem *base,
+-					   const struct qmp_phy_init_tbl tbl[],
+-					   int num,
+-					   u8 lane_mask)
++static inline void qmp_configure_lane(struct device *dev, void __iomem *base,
++				      const struct qmp_phy_init_tbl tbl[],
++				      int num, u8 lane_mask)
+ {
+ 	int i;
+ 	const struct qmp_phy_init_tbl *t = tbl;
+@@ -45,15 +47,16 @@ static inline void qmp_configure_lane(void __iomem *base,
+ 		if (!(t->lane_mask & lane_mask))
+ 			continue;
+ 
++		dev_dbg(dev, "Writing Reg: %s Offset: 0x%04x Val: 0x%02x\n",
++			t->name, t->offset, t->val);
+ 		writel(t->val, base + t->offset);
+ 	}
+ }
+ 
+-static inline void qmp_configure(void __iomem *base,
+-				      const struct qmp_phy_init_tbl tbl[],
+-				      int num)
++static inline void qmp_configure(struct device *dev, void __iomem *base,
++				 const struct qmp_phy_init_tbl tbl[], int num)
+ {
+-	qmp_configure_lane(base, tbl, num, 0xff);
++	qmp_configure_lane(dev, base, tbl, num, 0xff);
+ }
+ 
+ #endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+index 0442b3120563..5f89e3a3e54f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
+@@ -288,7 +288,7 @@ static int qmp_pcie_msm8996_serdes_init(struct qmp_phy *qphy)
+ 	unsigned int val;
+ 	int ret;
+ 
+-	qmp_configure(serdes, serdes_tbl, serdes_tbl_num);
++	qmp_configure(qmp->dev, serdes, serdes_tbl, serdes_tbl_num);
+ 
+ 	qphy_clrbits(serdes, cfg->regs[QPHY_COM_SW_RESET], SW_RESET);
+ 	qphy_setbits(serdes, cfg->regs[QPHY_COM_START_CONTROL],
+@@ -431,9 +431,9 @@ static int qmp_pcie_msm8996_power_on(struct phy *phy)
+ 	}
+ 
+ 	/* Tx, Rx, and PCS configurations */
+-	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+-	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+-	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ 
+ 	/*
+ 	 * Pull out PHY from POWER DOWN state.
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 5b36cc7ac78b..b09ec1d7cf5a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -3667,11 +3667,11 @@ static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_
+ 	tx4 = qmp->port_b + offs->tx2;
+ 	rx4 = qmp->port_b + offs->rx2;
+ 
+-	qmp_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
+-	qmp_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
++	qmp_configure_lane(qmp->dev, tx3, tbls->tx, tbls->tx_num, 1);
++	qmp_configure_lane(qmp->dev, rx3, tbls->rx, tbls->rx_num, 1);
+ 
+-	qmp_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
+-	qmp_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
++	qmp_configure_lane(qmp->dev, tx4, tbls->tx, tbls->tx_num, 2);
++	qmp_configure_lane(qmp->dev, rx4, tbls->rx, tbls->rx_num, 2);
+ }
+ 
+ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
+@@ -3689,25 +3689,26 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
+ 	if (!tbls)
+ 		return;
+ 
+-	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
++	qmp_configure(qmp->dev, serdes, tbls->serdes, tbls->serdes_num);
+ 
+-	qmp_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
+-	qmp_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
++	qmp_configure_lane(qmp->dev, tx, tbls->tx, tbls->tx_num, 1);
++	qmp_configure_lane(qmp->dev, rx, tbls->rx, tbls->rx_num, 1);
+ 
+ 	if (cfg->lanes >= 2) {
+-		qmp_configure_lane(tx2, tbls->tx, tbls->tx_num, 2);
+-		qmp_configure_lane(rx2, tbls->rx, tbls->rx_num, 2);
++		qmp_configure_lane(qmp->dev, tx2, tbls->tx, tbls->tx_num, 2);
++		qmp_configure_lane(qmp->dev, rx2, tbls->rx, tbls->rx_num, 2);
+ 	}
+ 
+-	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
+-	qmp_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
++	qmp_configure(qmp->dev, pcs, tbls->pcs, tbls->pcs_num);
++	qmp_configure(qmp->dev, pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
+ 
+ 	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
+-		qmp_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
++		qmp_configure(qmp->dev, serdes, cfg->serdes_4ln_tbl,
++			      cfg->serdes_4ln_num);
+ 		qmp_pcie_init_port_b(qmp, tbls);
+ 	}
+ 
+-	qmp_configure(ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
++	qmp_configure(qmp->dev, ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
+ }
+ 
+ static int qmp_pcie_init(struct phy *phy)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index a57e8a4657f4..d964bdfe8700 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -1527,7 +1527,7 @@ static void qmp_ufs_serdes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tb
+ {
+ 	void __iomem *serdes = qmp->serdes;
+ 
+-	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
++	qmp_configure(qmp->dev, serdes, tbls->serdes, tbls->serdes_num);
+ }
+ 
+ static void qmp_ufs_lanes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls *tbls)
+@@ -1536,12 +1536,12 @@ static void qmp_ufs_lanes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbl
+ 	void __iomem *tx = qmp->tx;
+ 	void __iomem *rx = qmp->rx;
+ 
+-	qmp_configure_lane(tx, tbls->tx, tbls->tx_num, 1);
+-	qmp_configure_lane(rx, tbls->rx, tbls->rx_num, 1);
++	qmp_configure_lane(qmp->dev, tx, tbls->tx, tbls->tx_num, 1);
++	qmp_configure_lane(qmp->dev, rx, tbls->rx, tbls->rx_num, 1);
+ 
+ 	if (cfg->lanes >= 2) {
+-		qmp_configure_lane(qmp->tx2, tbls->tx, tbls->tx_num, 2);
+-		qmp_configure_lane(qmp->rx2, tbls->rx, tbls->rx_num, 2);
++		qmp_configure_lane(qmp->dev, qmp->tx2, tbls->tx, tbls->tx_num, 2);
++		qmp_configure_lane(qmp->dev, qmp->rx2, tbls->rx, tbls->rx_num, 2);
+ 	}
+ }
+ 
+@@ -1549,7 +1549,7 @@ static void qmp_ufs_pcs_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls
+ {
+ 	void __iomem *pcs = qmp->pcs;
+ 
+-	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
++	qmp_configure(qmp->dev, pcs, tbls->pcs, tbls->pcs_num);
+ }
+ 
+ static int qmp_ufs_get_gear_overlay(struct qmp_ufs *qmp, const struct qmp_phy_cfg *cfg)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+index 9b0eb87b1680..2fd49355aa37 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
+@@ -1649,7 +1649,7 @@ static int qmp_usb_serdes_init(struct qmp_usb *qmp)
+ 	const struct qmp_phy_init_tbl *serdes_tbl = cfg->serdes_tbl;
+ 	int serdes_tbl_num = cfg->serdes_tbl_num;
+ 
+-	qmp_configure(serdes, serdes_tbl, serdes_tbl_num);
++	qmp_configure(qmp->dev, serdes, serdes_tbl, serdes_tbl_num);
+ 
+ 	return 0;
+ }
+@@ -1730,13 +1730,13 @@ static int qmp_usb_power_on(struct phy *phy)
+ 	}
+ 
+ 	/* Tx, Rx, and PCS configurations */
+-	qmp_configure_lane(tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+-	qmp_configure_lane(rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+ 
+-	qmp_configure(pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ 
+ 	if (pcs_usb)
+-		qmp_configure(pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
++		qmp_configure(qmp->dev, pcs_usb, cfg->pcs_usb_tbl, cfg->pcs_usb_tbl_num);
+ 
+ 	if (cfg->has_pwrdn_delay)
+ 		usleep_range(10, 20);
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+index 5cbc5fd529eb..d4fa1063ea61 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+@@ -526,7 +526,8 @@ static int qmp_usbc_power_on(struct phy *phy)
+ 	unsigned int val;
+ 	int ret;
+ 
+-	qmp_configure(qmp->serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
++	qmp_configure(qmp->dev, qmp->serdes, cfg->serdes_tbl,
++		      cfg->serdes_tbl_num);
+ 
+ 	ret = clk_prepare_enable(qmp->pipe_clk);
+ 	if (ret) {
+@@ -535,13 +536,13 @@ static int qmp_usbc_power_on(struct phy *phy)
+ 	}
+ 
+ 	/* Tx, Rx, and PCS configurations */
+-	qmp_configure_lane(qmp->tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+-	qmp_configure_lane(qmp->rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, qmp->tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, qmp->rx, cfg->rx_tbl, cfg->rx_tbl_num, 1);
+ 
+-	qmp_configure_lane(qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
+-	qmp_configure_lane(qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
++	qmp_configure_lane(qmp->dev, qmp->tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
++	qmp_configure_lane(qmp->dev, qmp->rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
+ 
+-	qmp_configure(qmp->pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_configure(qmp->dev, qmp->pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
+ 
+ 	/* Pull PHY out of reset state */
+ 	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
 -- 
-With best wishes
-Dmitry
+2.25.1
+
 
 -- 
 linux-phy mailing list
