@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9724C3DA7F
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 20:18:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78C8DC3DA7F
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 20:18:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2yDw+6qyg5F/rJG+fpPaG6vLmkxIGv6R3OHM3fLk5Xo=; b=Ean8WPllAio2RL
-	B5O1uLPckG/saxhrpYrldOO4qmczv1Vu5SDlVJAVUDuzyVzUEX0ExvWizPxu0t4EneA/Wy3Vv4/N4
-	R8HGvGhEcrNgFzpnU0vd0CSWnKEdOebG83v2BmEvO6mRdZtXkXcAfvXegGEa0ondsW88nBsUt1wkF
-	eSPqYr/45k1wy9pEY7fbY0xjUUTySQvjHpkJ5w49pDH2iiJg4hsJzD7YSsWf4p7xoaAJzLY5qY6w3
-	4aClNlrWLEGde9eoMQp7fCKngJoioGr0jVCRWy6keOU+wp7QA4m/lEGSnCqvhXg7EdCPZ5HauPD0f
-	7smIImJVN6LX1byx0zxA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N0MUdP2zKGVMEu/22RMJ0n2xaOOx8Q8iC0nbfIqq83Y=; b=1Ia52VOptaPhCI
+	P6jd2/BLsgY8bYi36wbaNRiRFI4i8M1G7gO0jmY91Z9f+UB5uR1s57FstShSdJtVxP5MzrKXnZfD8
+	mow2eRfroS5NH4hR45ik52cGTYYMJ17HGE4n5S5Eus7po8jYOOzGDQKblIY8TRGc9RHFpffMR//HJ
+	7bNXIFEIXxqrskClvQMgLMs2JVgLpHtxbOyWfXi17r1b9GKzdYgFRfgq/bF0AEIyKV96aNbAhm4m4
+	1uJAhAkkP8eBh12fh84u9jXeCaGWMh5FN5VYqbXnVECD9ZRzUKtg7us8v3Q7kLHzDO87rDi3ufnMD
+	5AsW0fXoDrzV8h/yORtA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZFmg-00000002Qyq-2EHr;
-	Wed, 31 Jul 2024 20:18:54 +0000
-Received: from mta-65-227.siemens.flowmailer.net ([185.136.65.227])
+	id 1sZFmj-00000002Qzu-0jbJ;
+	Wed, 31 Jul 2024 20:18:57 +0000
+Received: from mta-65-225.siemens.flowmailer.net ([185.136.65.225])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZFmb-00000002QvW-3YgI
+	id 1sZFmb-00000002Qvb-3SQf
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 20:18:52 +0000
-Received: by mta-65-227.siemens.flowmailer.net with ESMTPSA id 2024073120184326bbf5fe430e33e344
+	Wed, 31 Jul 2024 20:18:54 +0000
+Received: by mta-65-225.siemens.flowmailer.net with ESMTPSA id 20240731201844fc26ea14e865b9e55f
         for <linux-phy@lists.infradead.org>;
         Wed, 31 Jul 2024 22:18:44 +0200
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
  d=siemens.com; i=jan.kiszka@siemens.com;
- h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc;
- bh=K3tmAYtJFHQxY5Qv/OUlau8tmffz0uL7OeNMBjM/53c=;
- b=Uthw2ChLh6B6H9OCSMfUcqx0SSLb85YAR4qUN3Un1UYTseoTkiS4sfVAy7eiLibnxSLp5n
- tHwhxfc+ueSKtboIwxwXOuLfMm7CLslHWlnZS4fRg3u4pZR8QQnRbW+TeksGly88MpdACENG
- YVdtpYmS/G/1u8OI1pUf/dhvpzlSI77cSqn+PBNH3Iy4v2GSDSpB2GqAgiop78P0IPdGtkqh
- 0euVB5h9r/6Lc9m9iQtw1MJiRyzzrvVcbz7vDeLUxHfv/bKizsrs4F5zYcGHrbUKciDPY9QU
- JVk/W7aCxTyNPW71XT+LbSe+SyOkFoDhXOn+Gc2kSidfjczxIfyfTHjA==;
+ h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc:References:In-Reply-To;
+ bh=XuWSafTJqaueVcFk2YDwRANMa4TvCIZ5dW42gSq/JL0=;
+ b=ReTkS81ClDctxkCCZdavcnAnLidOLfLpzOsuB6CsAwphoN6ZuOp21ev3CsshrA/EACYX/v
+ cfiUoDHenQEhL47UhvxNR2LWyTski6jTWUP4rM+5I9u4pL/b8qRfiSgiE8ZNk8wFxf0MVKt/
+ wnRqMnYgspm7OaaPBneal4JEDjmJlk/8aUx97Q/2q2IaDHgNxc9rFDDMSmbP+Mys9B9vp/SF
+ JObj/OW8MMe05ZXHgjc7XI9oEIp9qQwVDdhSCpvoIh1LsARZEdVZPyAYHHKRSXgZzBHmN0fY
+ kxKB+04cgGK9NE0N7O93TgM/2/as9S3jLTJcsAVR4/VPdgB5MN49EtsQ==;
 From: Jan Kiszka <jan.kiszka@siemens.com>
 To: Minda Chen <minda.chen@starfivetech.com>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -47,19 +47,20 @@ Cc: linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-riscv@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Conor Dooley <conor+dt@kernel.org>,
-	Emil Renner Berthing <kernel@esmil.dk>,
+	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Rob Herring <robh@kernel.org>
-Subject: [PATCH 0/3] riscv: jh7110: Fix configuration for on-chip USB 2.0 support
-Date: Wed, 31 Jul 2024 22:18:40 +0200
-Message-ID: <cover.1722457123.git.jan.kiszka@siemens.com>
+	Conor Dooley <conor+dt@kernel.org>
+Subject: [PATCH 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon property
+Date: Wed, 31 Jul 2024 22:18:41 +0200
+Message-ID: <ebcfe039b13097e53b3721f56a45d99807f2925b.1722457123.git.jan.kiszka@siemens.com>
+In-Reply-To: <cover.1722457123.git.jan.kiszka@siemens.com>
+References: <cover.1722457123.git.jan.kiszka@siemens.com>
 MIME-Version: 1.0
 X-Flowmailer-Platform: Siemens
 Feedback-ID: 519:519-294854:519-21489:flowmailer
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_131850_556110_ACF2A67F 
-X-CRM114-Status: UNSURE (   6.71  )
+X-CRM114-CacheID: sfid-20240731_131850_575258_623E2CC4 
+X-CRM114-Status: UNSURE (   7.13  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,29 +78,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While mainline has support for the USB controller of the JH7110 since 6.5,
-this never really worked, even not with latest downstream kernels by Starfive -
-unless you were also using an old downstream U-Boot version. The reason for
-that was a missing syscon setting that prevented the connection between USB
-2.0 PHY and the controller. This series finally fixes the issue.
+From: Jan Kiszka <jan.kiszka@siemens.com>
 
-Jan
+Analogously to the PCI PHY, access to sys_syscon is needed to connect
+the USB PHY to its controller.
 
-CC: Conor Dooley <conor+dt@kernel.org>
-CC: Emil Renner Berthing <kernel@esmil.dk>
-CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
 CC: Rob Herring <robh@kernel.org>
+CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
+CC: Conor Dooley <conor+dt@kernel.org>
+---
+ .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-Jan Kiszka (3):
-  dt-bindings: phy: jh7110-usb-phy: Add sys-syscon property
-  riscv: dts: starfive: jh7110: Add sys-syscon property to usbphy0
-  phy: starfive: jh7110-usb: Fix link configuration to controller
-
- .../bindings/phy/starfive,jh7110-usb-phy.yaml | 11 ++++++++++
- arch/riscv/boot/dts/starfive/jh7110.dtsi      |  1 +
- drivers/phy/starfive/phy-jh7110-usb.c         | 20 +++++++++++++++++++
- 3 files changed, 32 insertions(+)
-
+diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+index 269e9f9f12b6..eaf0050c6f17 100644
+--- a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+@@ -19,6 +19,16 @@ properties:
+   "#phy-cells":
+     const: 0
+ 
++  starfive,sys-syscon:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    items:
++      - items:
++          - description: phandle to System Register Controller sys_syscon node.
++          - description: PHY connect offset of SYS_SYSCONSAIF__SYSCFG register for USB PHY.
++    description:
++      The phandle to System Register Controller syscon node and the PHY connect offset
++      of SYS_SYSCONSAIF__SYSCFG register. Connect PHY to USB controller.
++
+   clocks:
+     items:
+       - description: PHY 125m
+@@ -47,4 +57,5 @@ examples:
+                  <&stgcrg 6>;
+         clock-names = "125m", "app_125m";
+         #phy-cells = <0>;
++        starfive,sys-syscon = <&sys_syscon 0x18>;
+     };
 -- 
 2.43.0
 
