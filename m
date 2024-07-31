@@ -4,64 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AA97C3DA64
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 11:26:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0F2EC3DA7F
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 11:37:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HxWrvBSZegJSKQoj4OCV2SJ/t95T9DoFtFH78xN88FU=; b=IIy2rOYqR/aEm9
-	hDhqseGn24uO+10xcAiItU2c88VYHiaew8qaifWPQ5D2LKl/8pDubch4O1b7pTSO9Me8QTcqNtOU1
-	JQU52cgCSz/s8BvDugg79p6DV05XbXDAEsR1DPeZwh81or55AzaMzsEUj0gIBD1LoG15HWDtQuS1S
-	BavchmapKS81sGAvOYBq9PEz8Mi8N0NlBECYn1k4l746UJgLiki3k8oUxEegMNpAahMyGbkQG9E/+
-	53sQtu4qfCfbp5bbLmO8Xg7NSOiwlbnXvEJG1RqrSjcWCCwP7i9h3VTNk1AKs/EpfCd+ZbDGo3hIT
-	RjhD+gVnG7Z1tQbDczTQ==;
+	List-Owner; bh=BQgblLitkLil45LFePsnmtTV6yFICRSTSQo0j+2dYuk=; b=GUiRce6I5LUZ9K
+	vbjWQ31dZsUzRLGck+oELWO7DWR1rRWMWsKSeM1PXyS2QkrEazymCKtZyywMfg4zeFinCt5v/GgPl
+	a/YR8iGpnN9uuKYd7Ys1dM28UkP1ncOmp2GH58GG1AhocFRmV0NjdDW+C9GngIQ3zB59VW1VibBqN
+	8F2b8UxBUJzoxYG99BVQj1M0epg94gSjSGXbEZtT5hCia7YTSjnS23EdFoQPgT2PaAdT+n14JMwkq
+	jcoJROpHczqF3Yxkv5WZQrXgVXLS3K+pOgYr+tC6MVs/mWgCEY145NlzbBOpgAu2/DiAPiw/mfuGG
+	Gm2UqrJL1D8kt3zKcuaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ7Tb-00000000tbJ-02gD;
-	Wed, 31 Jul 2024 11:26:40 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sZ7dh-00000000vXk-1c84;
+	Wed, 31 Jul 2024 11:37:05 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ7TX-00000000taA-1JKl
+	id 1sZ7de-00000000vVD-1O4R
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 11:26:36 +0000
+	Wed, 31 Jul 2024 11:37:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 04E0BCE0E74;
-	Wed, 31 Jul 2024 11:26:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7C45C116B1;
-	Wed, 31 Jul 2024 11:26:31 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0B90462362;
+	Wed, 31 Jul 2024 11:37:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0CEBC116B1;
+	Wed, 31 Jul 2024 11:37:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722425192;
-	bh=muOwvDjLZQ6jQCCyNA06/OumuJh2BZIgrN5mnstcahw=;
+	s=k20201202; t=1722425820;
+	bh=2mhwWJxE5yx29WXEJC/VcAvSFAoWXPOnNXtcqC8T5fQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=t6KivKpyu57v6fsSEr9zYcvDW2nzoYZ1sT1hBEIFn3+J9vd1WzhdFmsXKHbKEjIrX
-	 RPxmttPgHglaQgdE8RHlQRgSAvwmxWVJjLFLTDJ9N30Zza6BInQ29h+EpZvbc/fgkT
-	 qv5qQo+iZw2wu8Wm1mkhlDmhJ3lELQjZQbs1crz1dHtvtPOgg1dXg0R7MRQ6JZjdzr
-	 6nBTJOAOR/4HouOjXXiUY25NQFpb4fSGsdrHpw7CKGhMyxNXo2qkLwX2iuzVeEf8SF
-	 VwqPkQh4fcRz/Rk3zPvg5cwAKU+8JEJoFsBL+3Jfmtw5a8f/L6x0PU2dE3n/LqCGyF
-	 i2J0aVDZ8q9OQ==
-Date: Wed, 31 Jul 2024 16:56:28 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Johan Hovold <johan@kernel.org>
+	b=lIafMp8iM2uBcBfVUatyyh7A0wsTPD1tAkF41++0iXfKrRTvBGVE0VrU1Gi0zcX84
+	 dq51xkDDgWxhg23vFQ2wFrhmVOmM5avqAJnRhgK4ZKyop4rdPms2QZ01HE1MwBR7Ao
+	 87+t+yhTLPO8kzDsvYPFTyWNHTNEEI0266Z2UmItieR3hrNX5HWxw7yJi7686lHLjK
+	 Cxtyr6UT5jRjkAhwhj+k+DpX3Z7oIWg5QSRYhnmz/n2Qrmhh0FV1a/c6zfIUz6UlaT
+	 mlAGCmRTn3jsxz4OzRqkQkpHjHxvofIUskriY5loDOjXJQij4EvvaSLk9qOaqeOUwM
+	 VsNjrViUncfnQ==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1sZ7dn-000000007h3-1VJq;
+	Wed, 31 Jul 2024 13:37:11 +0200
+Date: Wed, 31 Jul 2024 13:37:11 +0200
+From: Johan Hovold <johan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
 Cc: Abel Vesa <abel.vesa@linaro.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	Johan Hovold <johan+linaro@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom-qmp-pcie: Fix X1E80100 PCIe Gen4 PHY
- initialisation
-Message-ID: <ZqofZNF71zA8kTxN@matsya>
-References: <20240726-x1e80100-phy-qmp-pcie-fix-config-v1-1-b569f03c0c48@linaro.org>
- <ZqOysDk0LqwxG4OF@hovoldconsulting.com>
+	linux-kernel@vger.kernel.org, Qiang Yu <quic_qianyu@quicinc.com>
+Subject: Re: [PATCH] phy: qcom: qmp-pcie: Configure all tables on port B PHY
+Message-ID: <Zqoh5w9b8nGBw9UY@hovoldconsulting.com>
+References: <20240726-phy-qcom-qmp-pcie-write-all-tbls-second-port-v1-1-751b9ee01184@linaro.org>
+ <ZqO17rPoitKbUa_9@hovoldconsulting.com>
+ <ZqoeXUFtBq-F3x1V@matsya>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZqOysDk0LqwxG4OF@hovoldconsulting.com>
+In-Reply-To: <ZqoeXUFtBq-F3x1V@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_042635_576807_689E567C 
-X-CRM114-Status: GOOD (  15.77  )
+X-CRM114-CacheID: sfid-20240731_043702_432379_18108456 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,56 +83,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-07-24, 16:29, Johan Hovold wrote:
-> On Fri, Jul 26, 2024 at 10:16:56AM +0300, Abel Vesa wrote:
-> > Update the PCIe Gen4 PHY init sequence with the latest based on internal
-> > Qualcomm documentation.
-> 
-> Any hints about what these updates imply?
-
-I am not sure if we have insights
-
-> 
-> > Fixes: 606060ce8fd0 ("phy: qcom-qmp-pcie: Add support for X1E80100 g3x2 and g4x2 PCIE")
-> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > ---
-> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 23 ++++++++++++++++-------
-> >  1 file changed, 16 insertions(+), 7 deletions(-)
+On Wed, Jul 31, 2024 at 04:52:05PM +0530, Vinod Koul wrote:
+> On 26-07-24, 16:42, Johan Hovold wrote:
+> > One more nit: subject prefix should be just
 > > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > index 5b36cc7ac78b..8b624afbf014 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > 	phy: qcom-qmp-pcie:
 > 
-> >  static const struct qmp_phy_init_tbl x1e80100_qmp_gen4x2_pcie_tx_tbl[] = {
-> > @@ -1286,12 +1287,15 @@ static const struct qmp_phy_init_tbl x1e80100_qmp_gen4x2_pcie_rx_tbl[] = {
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_1, 0x01),
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_2, 0x01),
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_3, 0x45),
-> > -	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0b),
-> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0A, 1),
-> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0B, 2),
-> 
-> Please use lower-case hex consistently.
+> I dont this so, phy: qcom: subdriver is better and used more widely than
+> this
 
-Yes pretty please, that is consistent and the norm
+I don't really care, but if you check the logs you'll see that 90% of
+the commits do not use a "phy: qcom:" prefix:
 
-> 
-> > +	QMP_PHY_INIT_CFG(QSERDES_V6_20_VGA_CAL_CNTRL1, 0x00),
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_GM_CAL, 0x0d),
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_EQU_ADAPTOR_CNTRL4, 0x0b),
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_SIGDET_ENABLES, 0x1c),
-> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_PHPRE_CTRL, 0x20),
-> > -	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
-> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x3A, 1),
-> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38, 2),
-> 
-> Ditto.
-> 
-> Johan
+$ git log --oneline --no-merges drivers/phy/qualcomm/phy-qcom-qmp* | grep "phy: qcom: " | wc
+     43     404    2949
 
--- 
-~Vinod
+$ git log --oneline --no-merges drivers/phy/qualcomm/phy-qcom-qmp* | grep "phy: qcom-qmp-" | wc
+    310    2346   20020
+
+Johan
 
 -- 
 linux-phy mailing list
