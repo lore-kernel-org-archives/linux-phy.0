@@ -4,79 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0287C3DA7F
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 15:33:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81A15C3DA64
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 20:18:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EzW0mbXN4lHQH+LdCbJ+t4tbJvxBF00Qy5ZiyzcgvEk=; b=ZX2tbYRte5OzP8
-	2sF5b7gMcqL5+ROR4Ogmk0ANfY6G1UAbuUDeKnDhmziPnWvzf5EbVIREFBi0/UkTURTmpuGbyYW6G
-	MtvIW9KqAk4mNbWgmRnSPSVX9aaNANBVzVHv0fq9kwZRFX6n/LrO9gjdxy/mX/K4ImooMlT+tnqDb
-	rU9Jv3Qq1pvPxXyFTd6Ys4zlmt/wHvJV5RiKDkRbG8lQitZOApi/FE8s2HolGsmtHAGdI+7XklfvH
-	Igs8u1UI/4otRNgluWkI0Ss2yfy4Wn5meisHVv+rThezPMaG0Swhcil0H8ycbPrEhfEcDcDd7tUPx
-	d9eo1MSnI2pkGxxkBs2g==;
+	List-Owner; bh=s8rlvZ2CXYTCnrtE6UvTulggiqcEwuXlJ8ERgF7Zl1M=; b=CA09AT9x1t2kdm
+	xDhtBvDZvWbTX6kl3xvlaNUKUc5U2r5wSdCjGnm33OVGx1pASwM/LCRCkQ6+vtNTCyFbnvIrA01yT
+	uPvAGhpEKDrMox2IcM937qr/2m828tYXU3Xe+UgT2VWIvVn4GUBEdxWG+n2ppjFI+zc3oRCgfdUM4
+	q9Cl3KVLxvjBthdmY50wyk3L6Q4Gasv50trV/6b6TMEMYi0Q+DNGzdQX0VW+gTURrk2ncp/bGnuhM
+	7mbFq3vXuRVinowt7FYMagipc2mxUBef/Ez7d6ztMoXEM2OwMO8cqINly5bCnvFYJSvCk0jqhBJx2
+	jIK9alT0UAOJhEkSjxrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZBKF-00000001jaH-1ny3;
-	Wed, 31 Jul 2024 15:33:15 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1sZFmf-00000002Qy4-04S8;
+	Wed, 31 Jul 2024 20:18:53 +0000
+Received: from mta-64-226.siemens.flowmailer.net ([185.136.64.226])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZBK2-00000001jWO-1Kon
+	id 1sZFmb-00000002Qva-38HS
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 15:33:14 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-52ed741fe46so6683844e87.0
-        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 08:33:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1722439981; x=1723044781; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=dXlLZKVnKFeg1W8l1nLnNf9l+TIhvJC1ODBH4s6Xlac=;
-        b=A/TQStP01aWowbpdEC3+Jf6xQRlvFEq8SHCt1hFc3ExbTnYTW7e+piEinq8aYMwrHc
-         9FG2wsmC2pGZ25kP8xUHrZi5KuhxKSwWfWIqu76qMb2o5GnV2Uk88DudP8ylJAwbAXOC
-         bbD5ZJ4NcF8W+RNb75dZELly/BIfBYieO+XjQHrsdmH9PNBXhUw5UAzb0kZNoZxHoqR3
-         yma9tiMWVEeSWHRaldz9vbFCGJpMr4h48DXOxnBm9VC8jZbeLKqEYhdZMF7ZvT1BjmiP
-         ZvCLJeTiBos98Ran493whfhUNUxRWOw4zYpe3bc1IoXn9RoAlB28rUtKj6BrZ0FNymH3
-         7DIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722439981; x=1723044781;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=dXlLZKVnKFeg1W8l1nLnNf9l+TIhvJC1ODBH4s6Xlac=;
-        b=vLrJS6FS0IFsKzykEvRQhrW/+7UtLR/FWP73ezkdr3JvlHqliNv/Tu6oSbbHYiWZb/
-         YMKqtjUxCxlB/opG8yOsn5M9x0zGozTk0Tk1hNcpMWe7genWkwh+2LZwg9om/nH9MV42
-         /KrrFYfsI9iLzdBtj+jLdHYgAmXW2tMOnr2/dPjA5LbFy/O6E656MPNrF6bVIApgyB8f
-         Qpt0XZmx9RpSzLc7BmVkNJvLGuBGPqlNe9EJ092pg5pTxcplvnct+bo0FesSuCgSZ2Oj
-         3FMEm/oIavGa1iPydTuB2cpE7g6aA1wbcqVqG3s3VOkb84E7vJuSGBCD2a6TOQplKAUE
-         7AlA==
-X-Forwarded-Encrypted: i=1; AJvYcCWQY/KgftwDEyixyAg8npDu0BxX2cwQ5gBakGxuBoR8TpfPXSaugBXH9DIwFGY34U68tiYWTCdOzkbvjwPZhqofWySfb3eejZUoALtfyA==
-X-Gm-Message-State: AOJu0YySphhwdhtr13A014eH+eg4BgzdCN4Ns9ThCSEqk383z0RSX7Ff
-	Ac35cLoqHza/gSSv28qxWbngNV6/Xgf94VDjtYjTbPieTSgoPdqbrp84bADfEHc=
-X-Google-Smtp-Source: AGHT+IHI/yfE5A0j3uFKHs9ToyYhliRfd4GUbCj0FUG/IfGzykUbmyYaIY9jQeHZnTg4OYprB40zeQ==
-X-Received: by 2002:ac2:57c3:0:b0:52e:f9cf:cc1d with SMTP id 2adb3069b0e04-5309b27a631mr8628670e87.23.1722439980554;
-        Wed, 31 Jul 2024 08:33:00 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52fd5c19645sm2280514e87.189.2024.07.31.08.32.59
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 31 Jul 2024 08:33:00 -0700 (PDT)
-Date: Wed, 31 Jul 2024 18:32:58 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3] phy: qcom: qmp: Add debug prints for register writes
-Message-ID: <qqppkj2ksfrt4vwhgnxqwlob5zmqdpf6rqxky246urg6ssn7x6@wgp5cjs6alus>
-References: <20240731152548.102987-1-manivannan.sadhasivam@linaro.org>
+	Wed, 31 Jul 2024 20:18:52 +0000
+Received: by mta-64-226.siemens.flowmailer.net with ESMTPSA id 202407312018447745214cecb53ab4ef
+        for <linux-phy@lists.infradead.org>;
+        Wed, 31 Jul 2024 22:18:44 +0200
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
+ d=siemens.com; i=jan.kiszka@siemens.com;
+ h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc:References:In-Reply-To;
+ bh=vBctEd0EBAVuykEtLPkNt5gMseKAAGuW/tXEMcwX2Jw=;
+ b=X7JYrtIwSjqeVXmd4PS5mDy7hnjlGD6SGINF2KrSX0a47Tr9YYK+1zABETg2h2yHTqRLjj
+ IDRW1OQWqT0zSBR9nXEDCx7BTztqmCH0qPBudRDQq0NB80xP81UD4RJdpW6Y0W6Cz/r53oLS
+ J8D3spRnA8HfiZwnYbk1xaPM2cDzTUmXKbWC4ucGeXro+wkBokugcupZ11OJ1aB/37lncKhw
+ LW56z15e2cDLR0iWAvuZjdlm0KWcXq3svKupuVeVVHmoG+fGNmMddLSMnZJKBcWq9fZ3wJlU
+ l2HVfrlXivoDlGwJKYLwekZ0WJSF7VqSrQg54Z9vTQie3iqLoi2jjJYQ==;
+From: Jan Kiszka <jan.kiszka@siemens.com>
+To: Minda Chen <minda.chen@starfivetech.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH 3/3] phy: starfive: jh7110-usb: Fix link configuration to controller
+Date: Wed, 31 Jul 2024 22:18:43 +0200
+Message-ID: <cd7b125c8c797f9d63440944df7121f9db0a49ad.1722457123.git.jan.kiszka@siemens.com>
+In-Reply-To: <cover.1722457123.git.jan.kiszka@siemens.com>
+References: <cover.1722457123.git.jan.kiszka@siemens.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240731152548.102987-1-manivannan.sadhasivam@linaro.org>
+X-Flowmailer-Platform: Siemens
+Feedback-ID: 519:519-294854:519-21489:flowmailer
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_083302_381730_BA6E7E4D 
-X-CRM114-Status: UNSURE (   7.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240731_131850_551343_27BB1C71 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,26 +74,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 31, 2024 at 08:55:48PM GMT, Manivannan Sadhasivam wrote:
-> These register prints are useful to validate the init sequence against the
-> Qcom internal documentation and also to share with the Qcom hw engineers to
-> debug issues related to PHY.
-> 
-> Sample debug prints:
-> 
-> qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
-> qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
-> 
+From: Jan Kiszka <jan.kiszka@siemens.com>
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+In order to connect the USB 2.0 PHY to its controller, we also need to
+set "u0_pdrstn_split_sw_usbpipe_plugen" [1]. Some downstream U-Boot
+versions did that, but upstream firmware does not, and the kernel must
+not rely on such behavior anyway. Failing to set this left the USB
+gadget port invisible to connected hosts behind.
 
+Link: https://doc-en.rvspace.org/JH7110/TRM/JH7110_TRM/sys_syscon.html#sys_syscon__section_b3l_fqs_wsb [1]
+Fixes: 16d3a71c20cf ("phy: starfive: Add JH7110 USB 2.0 PHY driver")
+Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+---
+ drivers/phy/starfive/phy-jh7110-usb.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
+diff --git a/drivers/phy/starfive/phy-jh7110-usb.c b/drivers/phy/starfive/phy-jh7110-usb.c
+index 633912f8a05d..67882bc4cebc 100644
+--- a/drivers/phy/starfive/phy-jh7110-usb.c
++++ b/drivers/phy/starfive/phy-jh7110-usb.c
+@@ -10,18 +10,24 @@
+ #include <linux/clk.h>
+ #include <linux/err.h>
+ #include <linux/io.h>
++#include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/regmap.h>
+ #include <linux/usb/of.h>
+ 
+ #define USB_125M_CLK_RATE		125000000
+ #define USB_LS_KEEPALIVE_OFF		0x4
+ #define USB_LS_KEEPALIVE_ENABLE		BIT(4)
+ 
++#define USB_PDRSTN_SPLIT		BIT(17)
++
+ struct jh7110_usb2_phy {
+ 	struct phy *phy;
+ 	void __iomem *regs;
++	struct regmap *sys_syscon;
++	u32 sys_phy_connect;
+ 	struct clk *usb_125m_clk;
+ 	struct clk *app_125m;
+ 	enum phy_mode mode;
+@@ -61,6 +67,10 @@ static int usb2_phy_set_mode(struct phy *_phy,
+ 		usb2_set_ls_keepalive(phy, (mode != PHY_MODE_USB_DEVICE));
+ 	}
+ 
++	/* Connect usb 2.0 phy mode */
++	regmap_update_bits(phy->sys_syscon, phy->sys_phy_connect,
++			   USB_PDRSTN_SPLIT, USB_PDRSTN_SPLIT);
++
+ 	return 0;
+ }
+ 
+@@ -101,6 +111,7 @@ static int jh7110_usb_phy_probe(struct platform_device *pdev)
+ 	struct jh7110_usb2_phy *phy;
+ 	struct device *dev = &pdev->dev;
+ 	struct phy_provider *phy_provider;
++	u32 args[1];
+ 
+ 	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+ 	if (!phy)
+@@ -129,6 +140,15 @@ static int jh7110_usb_phy_probe(struct platform_device *pdev)
+ 	phy_set_drvdata(phy->phy, phy);
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 
++	phy->sys_syscon =
++		syscon_regmap_lookup_by_phandle_args(pdev->dev.of_node,
++						     "starfive,sys-syscon",
++						     1, args);
++	if (IS_ERR(phy->sys_syscon))
++		return dev_err_probe(dev, PTR_ERR(phy->phy),
++			"Failed to get sys-syscon\n");
++	phy->sys_phy_connect = args[0];
++
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+ }
+ 
 -- 
-With best wishes
-Dmitry
+2.43.0
+
 
 -- 
 linux-phy mailing list
