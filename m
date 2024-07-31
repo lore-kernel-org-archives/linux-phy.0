@@ -4,79 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B73C0C3DA64
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 11:57:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65CC3C3DA7F
+	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 12:18:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xqsOsFwhoVm6yWEZZ5BbJR2BxTqFg8/KKa0c8+p8eeU=; b=ak+/k9+5cHG1mL
-	M3U3NGu/ZbRZ9R7UEMmKGq77GO/+PHpb7KOETgrhuJ9FTc2BGq9ewbJV2N+ZBRcHRzzvYQmaVTmcw
-	vPtFD40/nrQ3Qd5AJ1Bfik+DEsm0cmi0g9poMtzR/pTy2RULznwmZwMG4siJ5Um+iLJ1LMQTv0PiP
-	PnnJ+6HFFtNrA+4imUPwtLegyQ6ckWoJYSzGPLOQUyWkmhUyQF4cXIhbtmjaiV7ziEL2o9S42xIw2
-	30kc0Khg/C3ouf0a2qEzfUcUWfa+mZ/gbI0B0D+6j7qOUcaAD+FU8rGd50pWLDyhowsl1M2vCE5uX
-	v2lniwJrchRpVuX2DgqA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8BCjLfo7XFqxXjeZbpBLTkwqZjf1ZryxZcNdq2W3ex8=; b=ahTkcqMxuqPzP3
+	EPFgyKuQgrgzYw9kAjaj2fP26WJusKy2c0WoxVJwvDLjXdQ0RqmcaR5FoIcIE6ZBPaeW3F1HeEXau
+	M8Cms+xuSCBa95RGRomQfW1nf6BumUl7mcr0od7C8H33XLBR1m2EG56RTue/50b3ooijQzlk04rle
+	g2bHsQdQMRtqOi0XXGqlAStXDHmrDjS5EfyTMkFEGBKtU4tsGa5tLw5VUohDm57BN/30iuw0dYR5f
+	P73RnIuwQkXmX4llHcg1BKZS7WnVoojB0lEE68WqKv4fYT+ukaWoRr/QfvV4D9gKt6TTwt3rkO7cy
+	McuorPxKqyNtmqIKm+kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ7x0-00000000y8o-1uQc;
-	Wed, 31 Jul 2024 11:57:02 +0000
-Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
+	id 1sZ8I6-000000011d6-0TnV;
+	Wed, 31 Jul 2024 12:18:50 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZ7wy-00000000y8P-0XUT
+	id 1sZ8Hs-000000011XH-1uxB
 	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 11:57:01 +0000
-Received: by mail-pf1-x432.google.com with SMTP id d2e1a72fcca58-70d199fb3dfso4768120b3a.3
-        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 04:56:59 -0700 (PDT)
+	Wed, 31 Jul 2024 12:18:38 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-52f025ab3a7so8726262e87.2
+        for <linux-phy@lists.infradead.org>; Wed, 31 Jul 2024 05:18:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1722427019; x=1723031819; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=dD4/LuujpP9SBy4N2qvay9vEiTkzSElUnCkU/leHG9k=;
-        b=H3DapZiXFCo135RQnq8XCUrhTWujjGRIHJiRytBaSwU2QcBshuuleyJdT+W+RXD/TL
-         myaciVZRz3qdavP2UzCR6qPe9WOORlHOMRZeMVgYnTwdi+yYsADnDMyuqbbuc97FtM+w
-         QGmOuaZPQA1F1ZEHEaK7z6CWONNwg7pjfy6HQH54g4VWmlNbZvvRnW67fkgnCaa9OuYE
-         ypSNjcp3H71hkpRuZxjoKhKfJ3xfh5YHMHB+tnM9upyP5mpfuxJQRn9MeJXvVwA6ajPy
-         44OgmfFUKi0tqpqs7IMHWFYTFqYh7R4yugVdpYmpAhffuhOCTYfe3rbI1Xx+qEid9B8/
-         uvrg==
+        d=linaro.org; s=google; t=1722428314; x=1723033114; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ef8AtdFgaOFukIlkgGOXCKezxspkLpfoqsDfZ+2AvFA=;
+        b=fiwV4JzMItVkxRB5utcjZRRDmcngN+w9IpkVJjPqpgBACb16WPz4kDw3UvKSawL8gW
+         Z8CoxGHjEki/erIMlR5YJwvy5y+4ts8IyYX85uzLiTt0EsOb93rEtjdFgvTLJtt9oI3B
+         A0l6mb3MgU+kaodayarflbhJcM6GR91FuU6/g4KSsMuyXis/vMswfx2RO6MHNlcBS04m
+         z4NtzE9YYDY240r+I0kEi7KJlvX99U8XE5Ft/m6JSQvcDutAA56enhjBcn7Us3nGDbVI
+         2v9cf93TfeL4TvH2Hz36C1ginCfX2nCdzyCrtScrAathM/BRYfdqkGsEM8j0bkWzweyQ
+         xYPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722427019; x=1723031819;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=dD4/LuujpP9SBy4N2qvay9vEiTkzSElUnCkU/leHG9k=;
-        b=b2yd+bG/3Le0jJv2ETJFF+pTZuxzhpCamGuAgqPW037W9SsgcehisP6m9IK8HPwDzr
-         Gr6ALQ5SERdlfy0rGEqrLNocGBMLi5hH2Gm776WHldO8vsY9CD6Lzdh7bns5T1w7sMJq
-         GQS24gPQHm2ER1/jui6Pey7phWvA0wWwlR//CeCgowS6Nc5a2cc9nf4r4t1pPg9+4y7n
-         ZMFGeeM2sseLqrehNsHu1CwrLfmHDWhHvAFDPozbnwM3yZ0mV9EQiGZR+ZISKpDzQmlp
-         k4X87zEW8ETzKl8plcyQq8ragYGX315ZWbeqIM/HGo7DpBcOdAV7YvupKNBGBfxElpdi
-         6tOA==
-X-Forwarded-Encrypted: i=1; AJvYcCWuvUTXXJ8b4Q/J7QNE8rhPH+nvuAZfhqd8kYiuF367fb1IbOsvIn0eqjkHqtG2n8MlCtcTt3lv4K2AIA/SoKllcAoQuDUmmK7xhHOjmw==
-X-Gm-Message-State: AOJu0YwW+n79aSJt/xCjILYGg14nJKdkd8i9ec9kEXYw3+fb+Xrmvs8t
-	rYEM5oFI/kDDupWzwLS9uDk8fbLA1gnfbRRRp8RwQmAejYJHN2dKEpRBxiEaLA==
-X-Google-Smtp-Source: AGHT+IHhzrMk8ZPLRuUWHt897/wD7XphiJN5ikAlVgi5bi29bcgDtMwJdyVOk9U+AKsWzI3Hh3MYYg==
-X-Received: by 2002:a05:6a20:6a98:b0:1c4:23f0:9665 with SMTP id adf61e73a8af0-1c4a1321bd5mr12592532637.29.1722427018525;
-        Wed, 31 Jul 2024 04:56:58 -0700 (PDT)
-Received: from localhost.localdomain ([120.60.134.159])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2cfdc4a94c4sm1138242a91.42.2024.07.31.04.56.55
+        d=1e100.net; s=20230601; t=1722428314; x=1723033114;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Ef8AtdFgaOFukIlkgGOXCKezxspkLpfoqsDfZ+2AvFA=;
+        b=U3YIUOF4+drLGnV6eO8JzynQZ4Na5lwlWJdpK0P4Rct31DRbLyxuR8vFbXQoJ0zzzO
+         NHXUfImUAEB+jBsq7dvKjD76A5iPVCxST8HqIJ0strI4KuJd6gy8EVqYynf3iGrJW2R+
+         phG0VpMvNKTZXZnQJl/lsjaoIfI6itqxeSfwlyOL705zIA/0momEyrFasB9xgzZzeyZY
+         q7b3F2O/JjO9dTXH3bax4ExzRl5f31Ghq5ojhpVH+Kjwxxwz7KEU9oKuoA18QUU6mFJN
+         +3PyJyQG36dmOYolmjnPFZvFG+rF5l4Sijx1mL3A5j7ekLweXK/1bBQSj7qm0BxETIJ0
+         C3GQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUuPu9nLimmfrF57eg9FQeWK2uTw5hbpI33mFpjLpfsP44NYVirOv2WFUP+8sgNq84zq00N+lrCUMe3NwPqmewFxDV+scstX53GzmL2iA==
+X-Gm-Message-State: AOJu0Yw3sa6FWonSZ7ihUGYdE35GdFgfZlhOuMQClYoBZ4DnPmuG/gOK
+	MzUjeSRSR4IAFpk3YOzoy8ZIbNIg+UzyUyliQMVRyUEujcykSghp4eOY6NsgTMY=
+X-Google-Smtp-Source: AGHT+IH2dwcdWcsCN5LSSxUGg3P495Lui57f35rqpd5CqDHf/YYIimlDAmIlZZClVTpdVINKDMF6sQ==
+X-Received: by 2002:ac2:48a7:0:b0:52f:c24b:1767 with SMTP id 2adb3069b0e04-5309b27228bmr7804179e87.19.1722428314320;
+        Wed, 31 Jul 2024 05:18:34 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-52fd5c19febsm2196526e87.225.2024.07.31.05.18.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 31 Jul 2024 04:56:58 -0700 (PDT)
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: vkoul@kernel.org
-Cc: kishon@kernel.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH v2] phy: qcom: qmp: Add debug prints for register writes
-Date: Wed, 31 Jul 2024 17:26:37 +0530
-Message-Id: <20240731115637.90351-1-manivannan.sadhasivam@linaro.org>
-X-Mailer: git-send-email 2.25.1
+        Wed, 31 Jul 2024 05:18:33 -0700 (PDT)
+Date: Wed, 31 Jul 2024 15:18:31 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+	kishon@kernel.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: qcom: qmp: Add debug prints for register writes
+Message-ID: <knjl4q5zyqz3wrqp5aawgpxk6aqggvteb72enpsgweulgrxmnu@ol42qtug4xvi>
+References: <20240730100351.51454-1-manivannan.sadhasivam@linaro.org>
+ <ZqoY5kFLDEmkb495@matsya>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <ZqoY5kFLDEmkb495@matsya>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_045700_197383_B3005D76 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20240731_051836_546652_116DD709 
+X-CRM114-Status: GOOD (  21.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,65 +94,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-These register prints are useful to validate the init sequence against the
-Qcom internal documentation and also to share with the Qcom hw engineers to
-debug issues related to PHY.
+On Wed, Jul 31, 2024 at 04:28:46PM GMT, Vinod Koul wrote:
+> On 30-07-24, 15:33, Manivannan Sadhasivam wrote:
+> > These register prints are useful to validate the init sequence against the
+> > Qcom internal documentation and also to share with the Qcom hw engineers to
+> > debug issues related to PHY.
+> > 
+> > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-common.h | 4 ++++
+> >  1 file changed, 4 insertions(+)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+> > index 799384210509..e6a6bcfcac28 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+> > @@ -9,6 +9,7 @@
+> >  struct qmp_phy_init_tbl {
+> >  	unsigned int offset;
+> >  	unsigned int val;
+> > +	char *name;
+> >  	/*
+> >  	 * mask of lanes for which this register is written
+> >  	 * for cases when second lane needs different values
+> > @@ -20,6 +21,7 @@ struct qmp_phy_init_tbl {
+> >  	{				\
+> >  		.offset = o,		\
+> >  		.val = v,		\
+> > +		.name = #o,		\
+> >  		.lane_mask = 0xff,	\
+> >  	}
+> >  
+> > @@ -27,6 +29,7 @@ struct qmp_phy_init_tbl {
+> >  	{				\
+> >  		.offset = o,		\
+> >  		.val = v,		\
+> > +		.name = #o,		\
+> >  		.lane_mask = l,		\
+> >  	}
+> >  
+> > @@ -45,6 +48,7 @@ static inline void qmp_configure_lane(void __iomem *base,
+> >  		if (!(t->lane_mask & lane_mask))
+> >  			continue;
+> >  
+> > +		pr_debug("QMP PHY: Writing: %s --> 0x%02x\n", t->name, t->val);
+> 
+> This lgtm, but fails to help when offset _might_ be incorrect, including
+> the offset value as well (not just the name) would be better imo... 
 
-Sample debug prints:
+Can we please use dev_vdbg instead? Having dev_ part makes sure that we
+can not mismatch PHYs and the sequences. _vdbg is less important, but
+I don't think we want this in the log messages unless absolutely
+required.
 
-QMP PHY: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
-QMP PHY: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
+Also, could you possibly apply this to all other QMP drivers?
 
-Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
----
+> 
+> >  		writel(t->val, base + t->offset);
+> >  	}
+> >  }
+> > -- 
+> > 2.25.1
+> 
+> -- 
+> ~Vinod
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
-Changes in v2:
-
-* Modifed the debug print to include reg offset
-
- drivers/phy/qualcomm/phy-qcom-qmp-common.h | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-index 799384210509..40beb413328f 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-@@ -9,6 +9,7 @@
- struct qmp_phy_init_tbl {
- 	unsigned int offset;
- 	unsigned int val;
-+	char *name;
- 	/*
- 	 * mask of lanes for which this register is written
- 	 * for cases when second lane needs different values
-@@ -20,6 +21,7 @@ struct qmp_phy_init_tbl {
- 	{				\
- 		.offset = o,		\
- 		.val = v,		\
-+		.name = #o,		\
- 		.lane_mask = 0xff,	\
- 	}
- 
-@@ -27,6 +29,7 @@ struct qmp_phy_init_tbl {
- 	{				\
- 		.offset = o,		\
- 		.val = v,		\
-+		.name = #o,		\
- 		.lane_mask = l,		\
- 	}
- 
-@@ -45,6 +48,8 @@ static inline void qmp_configure_lane(void __iomem *base,
- 		if (!(t->lane_mask & lane_mask))
- 			continue;
- 
-+		pr_debug("QMP PHY: Writing Reg: %s Offset: 0x%04x Val: 0x%02x\n",
-+			t->name, t->offset, t->val);
- 		writel(t->val, base + t->offset);
- 	}
- }
 -- 
-2.25.1
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
