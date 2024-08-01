@@ -4,73 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C10F2C3DA7F
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 02:27:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 735F4C3DA4A
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 05:38:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qcthir/XZKBvFn0TERE+4ZStN+OoZ8J/U4DzHfiH59U=; b=N+odT2y1NovBe7
-	XCxQ48ab6QqziFSc/haZ2wXHKsYviUuvM8VtFJjO2HaZG1BvrYnV7OpRkRDngl5tSRb58NmecwO5B
-	26s++61cXQUwN23i9q37YnMDZBpsKUQhCn7/Vh40TyI3oeUKVbIvTGHO2M32y/QN+Z5nifx/b+Tri
-	iRCsvRhz9x24Xk9lW/cGZEopzQzrPx8FcnnvQ6tIDsJwqosT4iav+LZYgM6G0dyv4syCH5pD653eZ
-	SAoE4nvFayvuArdJf6qa72cd6biGLMKLoIOlzqcLulRUOkNgI/BQERunE3WjZ99tdD0tHeWfhNirP
-	NEJZsXdAPahvTf3hYssQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/4uHlgUscmy06IC2brvxkBkbTh7uHVlteMr5fTs2lTo=; b=om8kjWqkEAKP8V
+	81n35gi+WchINbL+oARsWlq0I0pJLC6y5g9OQA/KYes2a4kFqWfG2GoyJPQzH6rl6nGw2vD69IkNn
+	+6cmKke/XK+PrJ04xWEbRNVk9BgUfQkUy8d24a5nC+8DOW0Hac/jOtQZt4Hpckh3XMWfhCpB+GKep
+	OU1W7I1FO6ZRod0UsQfFeMl5QYuNdQglbnv2XzW+Uy0V/0+8DFaFo8E6Udxw87v/s1rlUcaS+89Ko
+	yA3uX2KMxiq3jOg/nWKdtRwCkHTa/0kg7/27r7lNGWHnbT8pNuilAV1tuMC4CHSC3ZciBdQJyhyuM
+	sJAxY+CqmAIVKcW26YKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZLWy-00000003RZL-1sJs;
-	Thu, 01 Aug 2024 02:27:04 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1sZOW5-00000003nD4-07Zj;
+	Thu, 01 Aug 2024 05:38:21 +0000
+Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZLWX-00000003RTr-2ZdQ
-	for linux-phy@bombadil.infradead.org;
-	Thu, 01 Aug 2024 02:26:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=SE4HjIBSBU7JRdKPDsjlGIYfqFe0/dXHiJVJGX0G6Fg=; b=KEsvQoM7HW465rtDCprQ9pCGKO
-	kONi/eu82JMHcZLk3Q1zF7GWu2SNUz+XB8bEmfYzNfY99pgsQAOnt2vbT9s0ueLhTo3kL1b1wEpfI
-	3Uoh8edQIHZsjl7Dh/ok/4R9/oPryL1UtkJ8J3IUcMVXHDHGYDvopU4hqZGLiUlWj4qkwe/db1iW9
-	d4pQl6j0sO2a7XjsL5SfroLkvOPXo9Sk/NPreHeFsx/twnSFLgCklA6ST0nUMFH51tJAdKl9OZSmc
-	I5KixzMHbdFr29W+sCNSiOwEPH+cvPAAF3d9ytnRjMeOBpwg4EVtcQrfLdKtQUk+z8SR+2v2x4SpD
-	Qbe5JPhQ==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZLWT-00000005LVm-3L1V
-	for linux-phy@lists.infradead.org;
-	Thu, 01 Aug 2024 02:26:35 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id ADE9A6276F;
-	Thu,  1 Aug 2024 02:26:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06A26C4AF10;
-	Thu,  1 Aug 2024 02:26:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722479189;
-	bh=dOz9CZJAwvcwTM3cno/e4aaYLwlNEIrTcbyLJ2I+nmk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uHkqHvP+xvPRb7QSZmGyY4+JKZSbz5E+Rr6bMaoJtEzGgfv1C4fHmQrgJDKxpWcRC
-	 700Y+cm9k78zsGNIEoNArxJN9YLrOc/DzplgjHl49xr2S0vhoIpSprKUdCCN707165
-	 5CSX6zaB/AHGA6FcYx/DZijwLwPvoIaGcNiDlzB1kbybNAEpyvBYlPUoTYhIRyusds
-	 4FYsfTUDvIoOJNyPMiYeGvXgbONgeZ/xqmKjieG8ImqZXmu9u4zo7bblvFAhi/5It7
-	 h1UnXYGm3p7y4v9Uqjpaz8GsNWy3yn7tvqW/GlJeI7K8jSsNOmeaYPuAUv9IEb7/JG
-	 vq9w8FkC1QHVQ==
-Date: Wed, 31 Jul 2024 21:26:27 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: qcom: qmp: Add debug prints for register writes
-Message-ID: <nkfrtuxv4ueow66bnazyb4ul3pz3z3wo6zsptu6wnw7hflxerx@pkwn7sx6gfqi>
-References: <20240731115637.90351-1-manivannan.sadhasivam@linaro.org>
+	id 1sZOVa-00000003n60-1yAU;
+	Thu, 01 Aug 2024 05:37:51 +0000
+Received: by mail-pf1-x42d.google.com with SMTP id d2e1a72fcca58-70eec5f2401so3955245b3a.3;
+        Wed, 31 Jul 2024 22:37:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1722490669; x=1723095469; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=rP7kB86ul/PcFVSAaxx7ceabaGdXw7owjoCpBSOG71A=;
+        b=ULHtIRB1doDEcHailIw6QqrtAYu/rqzZRwM6HemNeSzzf2SI6nnMHdfllyo52rDXLv
+         d+bcjvTpm3t8e5OOxgu5/l6MGWyfrXlk0iUoLCknZrSOMJimI0MAsgct3q3wwBDmQArY
+         KFYqirIqkKhPDlHjKyAjcDRCiQb7QyYj8Qf65A9dpsk3hGdeJWrqmqRTTKf+sR1nZz+E
+         R+A+OUVScyIALWQkRt9N6JQjvimmxUZReMEflBnk69D67vWBUuYfJXZ//PaT7oGDhYK3
+         V7X54T0fZ1OvV8EnvXAl8JjJpEKX1AWcVH+lVZMy/fnIXiKgeKvNHcja7zAqzU2X7j/B
+         uR/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1722490669; x=1723095469;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rP7kB86ul/PcFVSAaxx7ceabaGdXw7owjoCpBSOG71A=;
+        b=WYmSrsbxnjYFhaVO2vpMti69DeF2qrzbxCq+JkPtYeyIMqkYGSbJf8mhLLr5NZAfhL
+         jAz+COHSJcBHZAnd66nw1dLEvHWXhkCLtMPrEQwEPvNdSvVS1clYYFSatB4DPnQFXjqe
+         xlPwtN6pt1txhZ1OIdU/xUhV0UVgRIr+Z3ZBGrhNMjlz3XGurtrRzpPyYh+LkEn6cSQ9
+         NF1Ad8k2FjVB1n1kd1+SfC6JKS+vcRvaXHG1cM4x7swz0SepL3BXnDKwMvh8XC2IcgFM
+         0wfw5qOyI3HwEIZvu2PBR7+1N3F3mK63r+bIDalTUq6dDye0uxeJ8QX24aQeSJhmvnKg
+         zDyg==
+X-Forwarded-Encrypted: i=1; AJvYcCWpMtoanpcfpRLkxpr3XzNBQc7U2iw1vmrENFzyOlhSRiWXTJq6a+alJfr/WjxXJGLyY64PfsdT5je5MzuhJy2mINqtB/3ptWbIp7QK6g==
+X-Gm-Message-State: AOJu0YzeWOmuT3hGJhKqeh5gpa+xlSPzkgZ3o1fr0blko4B0qV+rDJ9u
+	IyOcKj5BdFGU7BSjTOkqUNRy3KOvQEW1D+GCImQLzfQemOrojms3
+X-Google-Smtp-Source: AGHT+IFp5hTrwS65AqU/9trFX4Tz4W1sMCzo9JgNShTU0C2wTw+AmFV2NvsaaC+syk01WyylMut2lw==
+X-Received: by 2002:a05:6a20:a129:b0:1c2:8dcf:1b8f with SMTP id adf61e73a8af0-1c68ce9f023mr2474971637.7.1722490669452;
+        Wed, 31 Jul 2024 22:37:49 -0700 (PDT)
+Received: from localhost.localdomain (60-250-192-107.hinet-ip.hinet.net. [60.250.192.107])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-70ead72b89csm11106876b3a.94.2024.07.31.22.37.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 31 Jul 2024 22:37:49 -0700 (PDT)
+From: Hui-Ping Chen <hpchen0nvt@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org
+Cc: linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Hui-Ping Chen <hpchen0nvt@gmail.com>
+Subject: [PATCH v3 0/2] Add support for nuvoton ma35 usb2 phy
+Date: Thu,  1 Aug 2024 05:37:42 +0000
+Message-Id: <20240801053744.807884-1-hpchen0nvt@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240731115637.90351-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_032634_162989_1ACA1838 
-X-CRM114-Status: GOOD (  18.84  )
+X-CRM114-CacheID: sfid-20240731_223750_531859_93433556 
+X-CRM114-Status: GOOD (  13.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,84 +96,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 31, 2024 at 05:26:37PM GMT, Manivannan Sadhasivam wrote:
-> These register prints are useful to validate the init sequence against the
-> Qcom internal documentation and also to share with the Qcom hw engineers to
-> debug issues related to PHY.
-> 
+This patch series adds the usb2 phy driver for the nuvoton ma35 ARMv8 SoC.
+It includes DT binding documentation and the ma35 usb2 phy driver.
 
-I've written this patch every time I've touched one of these PHYs, so I
-certainly like this.
+v3:
+  - Update nuvoton,ma35d1-usb2-phy.yaml
+    - Update the syscon usage description.
 
-> Sample debug prints:
-> 
-> QMP PHY: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
-> QMP PHY: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
 
-That said, with multiple instances of PHYs being configured at about the
-same time it seems this would benefit greatly from something identifying
-which PHY instance the write relates to?
+v2:
+  - Update nuvoton,ma35d1-usb2-phy.yaml
+    - Update the 'nuvoton,ma35-usb2-phy' to 'nuvoton,ma35d1-usb2-phy'.
+    - Remove unnecessary descriptions. 
+    - Add explanations related to SYS.
+  - Update ma35d1 usb2 phy driver
+    - Update the 'nuvoton,ma35-usb2-phy' to 'nuvoton,ma35d1-usb2-phy'.
+    - Use readl_poll_timeout() to make the system more efficient and the 
+      code more streamlined.
+    - Use the same variable name. Update the 'p_phy->dev' to 'pdev->dev'.
 
-dev_dbg() would certainly be nice...
 
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
-> 
-> Changes in v2:
-> 
-> * Modifed the debug print to include reg offset
-> 
->  drivers/phy/qualcomm/phy-qcom-qmp-common.h | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-> index 799384210509..40beb413328f 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
-> @@ -9,6 +9,7 @@
->  struct qmp_phy_init_tbl {
->  	unsigned int offset;
->  	unsigned int val;
-> +	char *name;
+Hui-Ping Chen (2):
+  dt-bindings: phy: nuvoton,ma35-usb2-phy: add new bindings
+  phy: nuvoton: add new driver for the Nuvoton MA35 SoC USB 2.0 PHY
 
-const?
+ .../bindings/phy/nuvoton,ma35d1-usb2-phy.yaml |  45 ++++++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/nuvoton/Kconfig                   |  13 ++
+ drivers/phy/nuvoton/Makefile                  |   3 +
+ drivers/phy/nuvoton/phy-ma35d1-usb2.c         | 146 ++++++++++++++++++
+ 6 files changed, 209 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/nuvoton,ma35d1-usb2-phy.yaml
+ create mode 100644 drivers/phy/nuvoton/Kconfig
+ create mode 100644 drivers/phy/nuvoton/Makefile
+ create mode 100644 drivers/phy/nuvoton/phy-ma35d1-usb2.c
 
-Regards,
-Bjorn
+-- 
+2.25.1
 
->  	/*
->  	 * mask of lanes for which this register is written
->  	 * for cases when second lane needs different values
-> @@ -20,6 +21,7 @@ struct qmp_phy_init_tbl {
->  	{				\
->  		.offset = o,		\
->  		.val = v,		\
-> +		.name = #o,		\
->  		.lane_mask = 0xff,	\
->  	}
->  
-> @@ -27,6 +29,7 @@ struct qmp_phy_init_tbl {
->  	{				\
->  		.offset = o,		\
->  		.val = v,		\
-> +		.name = #o,		\
->  		.lane_mask = l,		\
->  	}
->  
-> @@ -45,6 +48,8 @@ static inline void qmp_configure_lane(void __iomem *base,
->  		if (!(t->lane_mask & lane_mask))
->  			continue;
->  
-> +		pr_debug("QMP PHY: Writing Reg: %s Offset: 0x%04x Val: 0x%02x\n",
-> +			t->name, t->offset, t->val);
->  		writel(t->val, base + t->offset);
->  	}
->  }
-> -- 
-> 2.25.1
-> 
-> 
 
 -- 
 linux-phy mailing list
