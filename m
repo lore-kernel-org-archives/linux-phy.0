@@ -4,83 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA014C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 09:51:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCB02C3DA4A
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 10:33:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e9mMxQ5PDcv6+zu9W/Aj5LEUH8UrKfO7MbfOW+xIe7M=; b=Zu2mDVXzjcIkGd
-	PWC6ve3BT9feBAVwR45nAb95FvZIQcwYypGPAj0mgl6um9zAkPBjKRxAPNz8odNC/S2g/zUm02tX7
-	ps87w1dWdlvNpXjsQ6kupqBIji6WUClY4joukzHI30URxq1VedRI0uCWkog+IyEDbAcDsZs06zpL5
-	J5Ln9Nlqlx7TNN+4ZuKFLxqXQv+ysk8HPUOln8gZbXDEuVgey7RvEcBsu34u2+eCRJiP67vbPNoAf
-	LsoOXGFy/IlMBVgZ4R00WpvhDtnp4s2u2np+u3LepsQ2evWej2ian4iE8c38VJ+7ACgkRtLI7ZLqd
-	ZUHNYsrm64dssJMdRIog==;
+	List-Owner; bh=RQqlf0Vz0ocBbU2D19sPG5mgN53Lj0n7Dck6FLuKrcI=; b=0qsLBM28rZhNa5
+	QUnveMWGT4KMgCWydGjmsmvupDzAJBW/aE2cdmJsXo/qQc8ekJdY8oEMfktp/pKcjehtKZRGdVpWp
+	OKctNuZ3hQMo35QYWgbtzI+d62vSlchTgOLWTRoxsCqURDOKdIXvdWVgucW0ovU5L1MDHcwqKY9QJ
+	wyRND2ii4LSuz+BzfqX5DlZHjgY8YFS1oB6IPope6KJBOjLy/7Za3KIdy4YWFQBIfTSmCOklKxUlK
+	axXGJNxzVKCusqqUX/d1e/a4eiOXkYvrKzk5t/TfjtymDQcL56MDkNGjhgEG7uvSHUGjzAIp8Roge
+	5RJtBAWk1f/vPtXweqVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZSSy-00000004eX8-2Jhe;
-	Thu, 01 Aug 2024 09:51:24 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1sZT7w-00000004lQv-1Z1d;
+	Thu, 01 Aug 2024 10:33:44 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZSSU-00000004eP9-0ZDC;
-	Thu, 01 Aug 2024 09:50:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
-	s=s29768273; t=1722505850; x=1723110650; i=markus.elfring@web.de;
-	bh=EFFvQxWL9UNPrZdUueU7uIPciWCNAv23KL3vjaoAAf4=;
-	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
-	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 cc:content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=aTAXlb+VTk8ZdINVugmOnqa27Adn01TFqCyDyWKJ+OtVvTTteYJ1OPU0pzIZFx2+
-	 P2zqneB5xL54ueDlDc83gQWJk/IStBH4uSnHw8LjmJ+Qo9Yj05r2RwlCpsB0QlBdu
-	 qyruFfHmX/EcNDjy3O1OG3U+73qc30p+SFuKNuxphAbN/4d5oguBqPcP2pAHWcVDu
-	 AnIRLRnnUdjBONwXmN3NduacPB1s9sA8XwJk03nCgQPFme+N5/rGB04yjLklArX1k
-	 jVQXRRaYYkTISA0n4xdAw7efCBrB85kFTsCrjTrbFlXL0ZNWs/uxeKJqeul3qGudt
-	 AD3cdzH1+7/fic6/iA==
-X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
-Received: from [192.168.178.21] ([94.31.88.95]) by smtp.web.de (mrweb106
- [213.165.67.124]) with ESMTPSA (Nemesis) id 1M6HK6-1sbdFC2gxs-006BAr; Thu, 01
- Aug 2024 11:50:50 +0200
-Message-ID: <9cca717a-c7e9-4bf7-8cde-3a90fcfb1df5@web.de>
-Date: Thu, 1 Aug 2024 11:50:48 +0200
+	id 1sZT7s-00000004lPS-3J54
+	for linux-phy@lists.infradead.org;
+	Thu, 01 Aug 2024 10:33:43 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-428101fa30aso44812655e9.3
+        for <linux-phy@lists.infradead.org>; Thu, 01 Aug 2024 03:33:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1722508419; x=1723113219; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=2DZ9JRnL0e7KpbgL/FSZ6b64iFFZz5Rvxbediv3ijJ8=;
+        b=Vd6py+kauc2Oo6R2wF+8DfKvtkGYSmE0YHvF93ufpRqcpY/tLmVtTNzRDvD1qYmRYP
+         ZsXwPK8xIIT9CRvQLv88tYYGKhNIXNBPhL9A3oKyb+3nFIBA7yVei04OCYQG6vKq6anx
+         9DxpWy+7hpWFftiGmN0lbqHWBGTYNjYjUx1CrGtBjs6YsTU+ZjXgjYqyA5RbvgW+0FWo
+         086grGxYNoXzoEPXo4SFYjbOoCCZil2Ry1wUwxvJXCEaqIGmHn1nChwF+yUV+ALdN20Z
+         z8CutSEeUqhNMwwyN8xEi4c7pB9cUgdXAY4I5HWrfVd5J3HAW4vxcx8cffw2iJyudoqB
+         v2WA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1722508419; x=1723113219;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=2DZ9JRnL0e7KpbgL/FSZ6b64iFFZz5Rvxbediv3ijJ8=;
+        b=Ae43Wn6rM4LdBRRgBVDkDVJ4EzyIFM7q9O56lzBmaxpTEGW3bR6yPDkSJwdicsSKwb
+         y23c5i19ttMoZTos9opgeL9cTsbESpYlYMciwuPBWf/Z32yIn+Wr5Nydf/dSxgZbaThi
+         WRgczM2ped3XFOhVq7BjwXaLQNun/zVyU/JDFbGSXPwceRTDHbFYY+NKhJ7Q2yqmQEpS
+         spWE4Yx/XDny4K+fIFbnDrN0RwdZX6Tri8ISJFpbvejIlV/Gxe8I2LQkmFCXL8ZLIDVM
+         LpzBarVivpQrfuH1uAgp/vj495Fp/y8UNFOJF6toWGVqNtkwcMf4/xXF7Vi8L68TZWV3
+         1Tjw==
+X-Forwarded-Encrypted: i=1; AJvYcCUj7SbbZIxvKJ6V4VSH8COeE/yRoSQ6XyNS/GqTmEAjd+pCo7G8sgUN9arIX5MFPB7pWBfyoDBGP2RN1oODon8RG6XRkmi1YHV0ZXgukA==
+X-Gm-Message-State: AOJu0Yxw89UNkWzZ4+2cSgyGlhlUyili3YeOw20uJBDhLNPStOlIgtAk
+	cp4PAX+fJIBYjZwgAJdu+lcqWJiANuPj/VUqDiawEwPrJh6Gk9ykV70+3oswqdK5zOLppKkn1Q/
+	f
+X-Google-Smtp-Source: AGHT+IEQgVTcNKj105V6VOej2nknnx4vup+h7CU4av90EuoPVBm6nZUMtPvjq53uwkUNQcyJVXl21g==
+X-Received: by 2002:a05:600c:3ca7:b0:428:150e:4f13 with SMTP id 5b1f17b1804b1-428b4ae2222mr14059125e9.33.1722508418390;
+        Thu, 01 Aug 2024 03:33:38 -0700 (PDT)
+Received: from linaro.org ([82.79.124.209])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-428240b2d65sm44538315e9.0.2024.08.01.03.33.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 01 Aug 2024 03:33:37 -0700 (PDT)
+Date: Thu, 1 Aug 2024 13:33:36 +0300
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Johan Hovold <johan@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: qcom-qmp-pcie: Fix X1E80100 PCIe Gen4 PHY
+ initialisation
+Message-ID: <ZqtkgPf+JOP+im1s@linaro.org>
+References: <20240726-x1e80100-phy-qmp-pcie-fix-config-v1-1-b569f03c0c48@linaro.org>
+ <ZqOysDk0LqwxG4OF@hovoldconsulting.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Hui-Ping Chen <hpchen0nvt@gmail.com>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Conor Dooley <conor+dt@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>,
- Vinod Koul <vkoul@kernel.org>
-Cc: LKML <linux-kernel@vger.kernel.org>
-References: <20240801053744.807884-3-hpchen0nvt@gmail.com>
-Subject: Re: [PATCH v3 2/2] phy: nuvoton: add new driver for the Nuvoton MA35
- SoC USB 2.0 PHY
-Content-Language: en-GB
-From: Markus Elfring <Markus.Elfring@web.de>
-In-Reply-To: <20240801053744.807884-3-hpchen0nvt@gmail.com>
-X-Provags-ID: V03:K1:NL4YA0BqmCCKVmCStnA88TsGOKJr0NvMWCWg9dMsDE+euFc6uye
- Vwb/9EDvPhIZfs2jFv7kQRlziw8MpwPLagO/rEfeZ+9UqYs9uROp0Q8piUyDc2f5cvBcOr6
- oGM8ElBBQZTcVL9AvIIaq60dPxOkmjq4Kjur74wKP8gNr44F4zy8oCTvRpbfbCXjcFYS48y
- m27ZMjf8TqlLatBS+NSrg==
-UI-OutboundReport: notjunk:1;M01:P0:0kpx8SitMVQ=;MY7MjGHQ2O0KQx0HM5VwKw19C52
- BqICda3DxB9yEOhGRif8D1Js4d3DXe2/cZgiy/8MlzVdgPOgXBbBD13bC3O5cXWCl5eX+/pQz
- z4lVUtXJrrxDGBPWe7xAXOdZ3Q1myOWxPss+pOXMhOP22Q5xyyEg+n5armDq+7QheW0L7QF9h
- qH48z85a+QKPSCabyRbkOZkmlsLDOZpyN4ZToaApCwN66YSka3X8WHk9qc9nsfMPtbmYvDw88
- ESQ/1HSAl/LY5uhXZimEGbvDzzjqd6To2HS6AUerwDCQ2nOFMwVGBkeOy/fASl3+3EZKrH2Oo
- ssgXnRkJb7r8VIvq1xKW4y6v1GYJTsWop/t+BtjbEJ/Okx9fuClPU3uzNDWNKLG1vBldteTAZ
- xxoPjdse0s82czOx6KmsZjB12fnte3xggnhum6H5+1yvUkLB0mYBWI11UCfqrhFuIb4XNHIgm
- qoyutw95ncdRYu2t71q/2UVeyaZhooMQ2a8DTDjzMLxpZcADdH5UPQFaSME1V+pFKAgJZla0O
- QvdgoPh1nQZIs7h2fyrpP6Rm82jE8Q0AgPrT5XqmFdOwFcfO3TbsnNYJT2338etivGQqjhJcE
- eDg4ypcEfdNUTgnGMHWLpvSzgCQKKPL4hHoe7qTOrUfp5JC31eK7LuHprwCNHOMCH5ge1Bphf
- PrzOP3B5S2KFyWoyp7SyBO44DwirtkSMHYALgiKhbrOyDdO7+MmgwsYz+6rlh8QQmkx0uBaQH
- vkm5GQegyM8719ncMBzYhRur7MLx9G0QDceDJ4t3rQ4YGurn5HP43mvsryqpbCrAG/GVLK5pw
- /k7NrgtUScs0b/2iV2obGepQ==
+Content-Disposition: inline
+In-Reply-To: <ZqOysDk0LqwxG4OF@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_025054_563418_59D1344F 
-X-CRM114-Status: UNSURE (   6.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240801_033340_854279_35C319DB 
+X-CRM114-Status: GOOD (  18.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,15 +94,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-4oCmCj4gKysrIGIvZHJpdmVycy9waHkvbnV2b3Rvbi9waHktbWEzNWQxLXVzYjIuYwo+IEBAIC0w
-LDAgKzEsMTQ2IEBACuKApgo+ICtNT0RVTEVfREVTQ1JJUFRJT04oIk51dm90b24gbWEzNWQxIFVT
-QjIuMCBQSFkgZHJpdmVyIik7Cj4gK01PRFVMRV9BVVRIT1IoImhwY2hlbjBudnRAZ21haWwuY29t
-Iik7CuKApgoKSG93IGRvIHlvdSB0aGluayBhYm91dCB0byBhZGQgYSBwZXJzb25hbCBuYW1lIHRv
-IHN1Y2ggYW4gZW1haWwgYWRkcmVzcz8KClJlZ2FyZHMsCk1hcmt1cwoKLS0gCmxpbnV4LXBoeSBt
-YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 24-07-26 16:29:04, Johan Hovold wrote:
+> On Fri, Jul 26, 2024 at 10:16:56AM +0300, Abel Vesa wrote:
+> > Update the PCIe Gen4 PHY init sequence with the latest based on internal
+> > Qualcomm documentation.
+> 
+> Any hints about what these updates imply?
+
+Usually, there is an updated variant of the same document.
+I've been told that this values are fine-tuned over time.
+I'm assuming these updates should help with link stability, but it's
+just a guess.
+
+> 
+> > Fixes: 606060ce8fd0 ("phy: qcom-qmp-pcie: Add support for X1E80100 g3x2 and g4x2 PCIE")
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 23 ++++++++++++++++-------
+> >  1 file changed, 16 insertions(+), 7 deletions(-)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index 5b36cc7ac78b..8b624afbf014 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> 
+> >  static const struct qmp_phy_init_tbl x1e80100_qmp_gen4x2_pcie_tx_tbl[] = {
+> > @@ -1286,12 +1287,15 @@ static const struct qmp_phy_init_tbl x1e80100_qmp_gen4x2_pcie_rx_tbl[] = {
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_1, 0x01),
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_2, 0x01),
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_3, 0x45),
+> > -	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0b),
+> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0A, 1),
+> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_VGA_CAL_MAN_VAL, 0x0B, 2),
+> 
+> Please use lower-case hex consistently.
+
+Sure. Will fix in v2.
+
+> 
+> > +	QMP_PHY_INIT_CFG(QSERDES_V6_20_VGA_CAL_CNTRL1, 0x00),
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_GM_CAL, 0x0d),
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_EQU_ADAPTOR_CNTRL4, 0x0b),
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_SIGDET_ENABLES, 0x1c),
+> >  	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_PHPRE_CTRL, 0x20),
+> > -	QMP_PHY_INIT_CFG(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
+> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x3A, 1),
+> > +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38, 2),
+> 
+> Ditto.
+> 
+> Johan
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
