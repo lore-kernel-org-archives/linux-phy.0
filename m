@@ -4,69 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40396C3DA64
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 15:13:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58826C3DA64
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 15:55:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Wr8pUeuNlza4amCmHqoslyTGxMnF//KEe7+GpVNYbMc=; b=Z1dGBmZk6d2L6fJUmU/r1/pEBY
-	j9MPLXTym2ZsUOlwM9deV85RDSXqaPovPJFolInTipryPEyAFPCKIO+gAWxml6kM+7GY51f9YB+T9
-	0nsGwWgoNwB9eI1ua2mxzPG+FBNQtwGEnJV+EJF1IC3RIdUchqpohuVTDIXpoZBfxYa8CZpVL/cT/
-	iEqwZUnziZmnEJcoSBgxRlKxfZoe5cOqkbN2vHvflI0q/OvhFT+TDr42L27afEoSjl8fhkpw7ppWW
-	h1/A/yUfH3mrJQlsCcEzmHyTIE84+Sep17DIfYAJSzXtahu2jRNvPk9AMWWsU5e0LxYOm6Xx7l8ZE
-	EfHdNvlg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jkvfuW6vOaqBwjPIRtMxHejgyo+Em4A5e4cSGwzyBEo=; b=HLIcc5L/AwGDcd
+	hFKtvzzfc3IeGfzEDvt+zl2mm54iJeqvG8b99JPXP6sQxUfLRY04H0GJDiksGhuU5KYTaXeOSOxnd
+	T6yR2IAjyZMMBUgYbIRYfy7bC4fCFNEv0cgvpGKNnRva+7ewNEokXdcwzu+cEKUiclYLfcEb7hRub
+	gOvC26mt0mY/abLDg3lh1ehXUPrrw29JPD6OsjP+1xi3t+9/9/uY2X2B7K6s48SnUH/szH3Fia8RT
+	NYSdakj/D+dl8H+B//5JmT1TU23R40JDfzl7Ol063bSQp4QUT+1Kg3LKfGZOcVtIZ3uZZrR98RMv/
+	37LdrGpWYt7aw4aRjXmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZXUE-00000005oOK-3ySF;
-	Thu, 01 Aug 2024 15:13:02 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sZY9B-00000005w6p-0GZ9;
+	Thu, 01 Aug 2024 15:55:21 +0000
+Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZXUC-00000005oNo-0BWk
+	id 1sZY8q-00000005w1m-185B
 	for linux-phy@lists.infradead.org;
-	Thu, 01 Aug 2024 15:13:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5E82A628E0;
-	Thu,  1 Aug 2024 15:12:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A86C1C32786;
-	Thu,  1 Aug 2024 15:12:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722525179;
-	bh=MgNLHjJvnDe0EuUg81NvPG2LQI8S/TfbtVY9t/RZ/wQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mCwaaZSZWOik+AbxKZ+zpMU9p0teppstVuMfMtbyed/cC19ANBBdY2cB41fpUAx6Y
-	 5cyhKCRjEB+xKVjmhVjJ0T7MOUMVh7Bqkt/8U4eDqovGi2bDmMiV6xnzPGQT0wPVhD
-	 HKPv20pk5IoRcyf6qw2lxHMSI05l2QYzy3xTwL0cB9i3lSI637Oz1/hRk3zbg8NUHF
-	 OVwKICwHl+I91CyAqcgLl9hz8N6lrBRjqqWA5w9fKaIoPf+h574pq8bMkrxMrG2MUb
-	 92QvJeKeaqLlty5b9BLx9Skuurn29/3nqFDrM56j9ie+ibDrh/XZ7Pj7jCSdHGQJ3b
-	 H+F43gLlvCT+g==
-Date: Thu, 1 Aug 2024 16:12:54 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Ilya Orazov <ilordash02@gmail.com>, mkl@pengutronix.de,
-	mailhol.vincent@wanadoo.fr, vkoul@kernel.org, kishon@kernel.org,
-	robh@kernel.org, krzk+dt@kernel.org, a-govindraju@ti.com,
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: ti,tcan104x-can: Document
- Microchip ATA6561
-Message-ID: <20240801-disarray-gesture-ebad121272b0@spud>
-References: <20240718210322.37492-1-ilordash02@gmail.com>
- <20240718210322.37492-2-ilordash02@gmail.com>
- <20240719-ahead-kiwi-995e52bf3e74@spud>
- <CAGCz5HkF_WNZBVpY2SWVf071Pi896BvKFk0jnfNAYX5AKx2Zcw@mail.gmail.com>
- <20240723-dinginess-john-608d0b28293b@spud>
- <CAGCz5H=Gncw+Tr0XaQQhhGWQER5Rs1BcxbkPaJwx9jJ-8j7LGQ@mail.gmail.com>
- <20240723-municipal-snowy-136b08b6db90@spud>
- <CAGCz5HnJKjNj7A0YD2fw20m-NrEs3MoCLwox86mC11Kudq8xbg@mail.gmail.com>
- <CAMuHMdUf=McxMLqb1hgu_-4QkSFJkdWrdtbwiwn9yJoMSi3YWA@mail.gmail.com>
+	Thu, 01 Aug 2024 15:55:01 +0000
+Received: by mail-lj1-x235.google.com with SMTP id 38308e7fff4ca-2f029e9c9cfso108439571fa.2
+        for <linux-phy@lists.infradead.org>; Thu, 01 Aug 2024 08:54:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1722527698; x=1723132498; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=x6BV9QmEAZjkiTMkmAiRBs64RxnXZNT8FECYjYvT1F0=;
+        b=gL1uruzXOjI3T7ecyqaWzuzUiCHmUEThH/gPynbc/Btm1bGqj+CPrrFkMgnTrO+0sD
+         XPTy0eDLIsQjXhTHy9SY4WUYxYm5gJQPO5ij8fpyPnixsFZxSJqof+T1zqyQbB2tMWN5
+         k9KCnYA62ioG0w5URnJfbYoP+NsjioHSBkk0UPKjyoXdoLJRrjJrSFDxQG6MyApTzGPd
+         dIneAhTRDi2cralqsI3lSWmoQC4iwz4ag9A7g19sFb66uJZPyieekxD0nfWVd3x9WBZG
+         5Xih2xCbwSAxL8NiBXQ7HMhxCxzP2db/RmLFVGEPhjHr47AheM3jyBgsCRg1Izskybg6
+         MKLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1722527698; x=1723132498;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=x6BV9QmEAZjkiTMkmAiRBs64RxnXZNT8FECYjYvT1F0=;
+        b=jPWL9b6YTJ/52TJ1qYzp0Xv4rWW3BRj44VIg5KN49Y0hjxxSwrroe8+OxamW2b42D7
+         yDq9fKhC/jpgeXnslTtK7yZN3O9qW089OvN/sk/yHj1PFSmnKP7ViFoOBcIQvUpym1kF
+         9qk/oterd6yOyF6mXY1IXLbHbCIMCwueEOt+5gRduQZHRbIpuyGt5/a11yKEl6ZMysxj
+         Oft3lcHkaVa6au6wyag5r+hHabvnFBd6uFJX5fPjq3Yq99Mk0HLIANJPxiZACrYR+RHZ
+         nbElNK/5HeOeb65GX+tDGdujc50wz9GoK9t2A96PBWUD9caw6vyPw8GmusHpR+R8MNIQ
+         Qibg==
+X-Forwarded-Encrypted: i=1; AJvYcCUmkyZwDZJhpmg7XpVSXXrZSpPw7QQq8PMqf2molPrYrNDC7uNV7egUzalnkb+XD06o3QVpGEvGRvhoZxQ1PDDoNciVNqu59oSrHGBdjg==
+X-Gm-Message-State: AOJu0YzlGYCbU5ZuOwXE2CZZYLueHxHTUBMVUCnYuZpXO6tg3KzzzlCn
+	BjjriaqEVPBU14PbzhJiCkHk2hZAAGcES4KVB1SHrmSkXANvAND/a2sLbAnJLCI=
+X-Google-Smtp-Source: AGHT+IEEjZBfQbOJPlZJ3N8sVahraKT0zAt/ivfisM4qzDwzl2muq0nwL80YGhGbW+w6PuMvXZHNmQ==
+X-Received: by 2002:a2e:9e89:0:b0:2f0:27da:6864 with SMTP id 38308e7fff4ca-2f15aaacbacmr7091571fa.17.1722527697759;
+        Thu, 01 Aug 2024 08:54:57 -0700 (PDT)
+Received: from [127.0.1.1] ([82.79.124.209])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2f03cf0f9ccsm24420651fa.14.2024.08.01.08.54.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 01 Aug 2024 08:54:57 -0700 (PDT)
+From: Abel Vesa <abel.vesa@linaro.org>
+Date: Thu, 01 Aug 2024 18:54:53 +0300
+Subject: [PATCH v2] phy: qcom: qmp-pcie: Configure all tables on port B PHY
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdUf=McxMLqb1hgu_-4QkSFJkdWrdtbwiwn9yJoMSi3YWA@mail.gmail.com>
+Message-Id: <20240801-phy-qcom-qmp-pcie-write-all-tbls-second-port-v2-1-6e53c701e87e@linaro.org>
+X-B4-Tracking: v=1; b=H4sIAM2vq2YC/5XNTQ6CMBCG4auQrh1DG/505T0MCygDTFJomTYoI
+ dzdSuIBXL7f4nt24ZEJvbgnu2BcyZOdY6hLIvTYzAMCdbGFSlWWlioHN26waDvBMjlwmhBeTAG
+ hMQZCazx41HbuwFkOUGGPGruqLNpexEvH2NP75J517JF8sLyd+iq/6w8q/oNWCRLKXLY3xFTKK
+ nsYmhu2V8uDqI/j+ACLlmHo6QAAAA==
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Johan Hovold <johan+linaro@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Qiang Yu <quic_qianyu@quicinc.com>, 
+ Abel Vesa <abel.vesa@linaro.org>
+X-Mailer: b4 0.13.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2344; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=XPR2+c0CCvO/jb49BCvHwzlLdwGhGzTkMytpHJm9U6A=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBmq6/PS2cKrlgInaIucMJcEQ35MEy17OMJ9rgv0
+ 4MAsT2BI2CJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZquvzwAKCRAbX0TJAJUV
+ Vr6kD/4wVS5T+zFHq5JDyj2hySYykL00I1IFS7CCBxStgcguN5ewuQvxdyLmsHVLfuBLEJ+xdAx
+ 1VKz0GHe0UfzpcZXJEMGLH0mt4gnuK3R5GQoaaInrFogmt1UOcNzk+3s02REOo4/KK74yDydi/M
+ pzTWpo7aqwNW6PJ9A6g39RSRY3AxcjIpCWUfmDewOrtcail7rViP2/sdVsuzmMrJk4LxMAbSqLX
+ 6VozCuLBO1mlvPHVOBXJriH3gycIMPrEI+/5rxNw6qNKrpgHale0Z67kK5APay3yCPGiHbVu3S+
+ LBfrXlwo5b4n3ERbJbN0jqHhAiAXR+L0np6hOuxYMvaqmLXuL7hEYH+7z33i7/ycuQy4u5ILVmv
+ QMmRjRWoI26B6B7utDzbiG9ADi/9e3f4FEsjWUCRCQGw/yQco+CaWIQX+v112sA8MImZ47eAe9I
+ YTwMlACKh80oSxYgxLSNcJj/le5lsEj2/GpOJTSovmJ5ENkgB1pOZ6Han69AnXIhMpeU3I81HLe
+ K9e6NTnZ9qP2ZCgAWpmanlxKOWFGtTJ1oGDIQmINzt/effBIf2/iy+B+sAYt10PsOp4OztsUPOt
+ /ZjOlWHkNp0p/cg4q3EhInpplh5A1GK9u4T37RzyPOALIc/+v8GmCT5NpZHQjDIhwQfntkiC4HO
+ Szjf559b7S5kgdg==
+X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_081300_245501_B796625D 
-X-CRM114-Status: GOOD (  52.37  )
+X-CRM114-CacheID: sfid-20240801_085500_367636_841CCAB7 
+X-CRM114-Status: GOOD (  10.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,228 +109,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3720815158414224166=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Qiang Yu <quic_qianyu@quicinc.com>
 
---===============3720815158414224166==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2u/IhLrXAClqQ7yY"
-Content-Disposition: inline
+Currently, only the RX and TX tables are written to the second PHY
+(port B) when the 4-lanes mode is configured, but according to Qualcomm
+internal documentation, the pcs, pcs_misc, serdes and ln_shrd tables need
+to be written as well.
 
+Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+---
+Changes in v2:
+- Reordered tables as Johan has suggested
+- Link to v1: https://lore.kernel.org/r/20240726-phy-qcom-qmp-pcie-write-all-tbls-second-port-v1-1-751b9ee01184@linaro.org
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
---2u/IhLrXAClqQ7yY
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 5b36cc7ac78b..c0f4bc6b8ebc 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -3660,18 +3660,30 @@ static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	const struct qmp_pcie_offsets *offs = cfg->offsets;
+-	void __iomem *tx3, *rx3, *tx4, *rx4;
++	void __iomem *serdes, *tx3, *rx3, *tx4, *rx4, *pcs, *pcs_misc, *ln_shrd;
+ 
++	serdes = qmp->port_b + offs->serdes;
+ 	tx3 = qmp->port_b + offs->tx;
+ 	rx3 = qmp->port_b + offs->rx;
+ 	tx4 = qmp->port_b + offs->tx2;
+ 	rx4 = qmp->port_b + offs->rx2;
++	pcs = qmp->port_b + offs->pcs;
++	pcs_misc = qmp->port_b + offs->pcs_misc;
++	ln_shrd = qmp->port_b + offs->ln_shrd;
++
++	qmp_configure(serdes, tbls->serdes, tbls->serdes_num);
++	qmp_configure(serdes, cfg->serdes_4ln_tbl, cfg->serdes_4ln_num);
+ 
+ 	qmp_configure_lane(tx3, tbls->tx, tbls->tx_num, 1);
+ 	qmp_configure_lane(rx3, tbls->rx, tbls->rx_num, 1);
+ 
+ 	qmp_configure_lane(tx4, tbls->tx, tbls->tx_num, 2);
+ 	qmp_configure_lane(rx4, tbls->rx, tbls->rx_num, 2);
++
++	qmp_configure(pcs, tbls->pcs, tbls->pcs_num);
++	qmp_configure(pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
++
++	qmp_configure(ln_shrd, tbls->ln_shrd, tbls->ln_shrd_num);
+ }
+ 
+ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
 
-On Mon, Jul 29, 2024 at 10:51:50AM +0200, Geert Uytterhoeven wrote:
-> Hi Ilya,
->=20
-> On Sun, Jul 28, 2024 at 10:52=E2=80=AFAM Ilya Orazov <ilordash02@gmail.co=
-m> wrote:
-> > On Tue, 23 Jul 2024 at 23:14, Conor Dooley <conor@kernel.org> wrote:
-> > > On Tue, Jul 23, 2024 at 10:55:17PM +0300, Ilya Orazov wrote:
-> > > > On Tue, 23 Jul 2024 at 21:50, Conor Dooley <conor@kernel.org> wrote:
-> > > > > On Tue, Jul 23, 2024 at 08:20:04PM +0300, IlorDash wrote:
-> > > > > > On Fri, 19 Jul 2024 at 18:07, Conor Dooley <conor@kernel.org> w=
-rote:
-> > > > > > >
-> > > > > > > On Fri, Jul 19, 2024 at 12:03:21AM +0300, Ilya Orazov wrote:
-> > > > > > > > Microchip ATA6561 is High-Speed CAN Transceiver with Standb=
-y Mode.
-> > > > > > > > It is pin-compatible with TI TCAN1042.
-> > > > > > > >
-> > > > > > > > Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
-> > > > > > > > ---
-> > > > > > > >  Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml=
- | 1 +
-> > > > > > > >  1 file changed, 1 insertion(+)
-> > > > > > > >
-> > > > > > > > diff --git a/Documentation/devicetree/bindings/phy/ti,tcan1=
-04x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
-> > > > > > > > index 79dad3e89aa6..03de361849d2 100644
-> > > > > > > > --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can=
-=2Eyaml
-> > > > > > > > +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can=
-=2Eyaml
-> > > > > > > > @@ -18,6 +18,7 @@ properties:
-> > > > > > > >        - nxp,tjr1443
-> > > > > > > >        - ti,tcan1042
-> > > > > > > >        - ti,tcan1043
-> > > > > > > > +      - microchip,ata6561
-> > > > > > >
-> > > > > > > Given that your driver patch has
-> > > > > > > | diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/ph=
-y/phy-can-transceiver.c
-> > > > > > > | index ee4ce4249698..dbcd99213ba1 100644
-> > > > > > > | --- a/drivers/phy/phy-can-transceiver.c
-> > > > > > > | +++ b/drivers/phy/phy-can-transceiver.c
-> > > > > > > | @@ -89,6 +89,10 @@ static const struct of_device_id can_tra=
-nsceiver_phy_ids[] =3D {
-> > > > > > > |                 .compatible =3D "nxp,tjr1443",
-> > > > > > > |                 .data =3D &tcan1043_drvdata
-> > > > > > > |         },
-> > > > > > > | +       {
-> > > > > > > | +               .compatible =3D "microchip,ata6561",
-> > > > > > > | +               .data =3D &tcan1042_drvdata
-> > > > > > > | +       },
-> > > > > > > |         { }
-> > > > > > > |  };
-> > > > > > >
-> > > > > > > the driver patch is actually not needed at all, and you just =
-need to
-> > > > > > > allow ti,tcan1042 as fallback compatible in the binding, so s=
-omething
-> > > > > > > like:
-> > > > > > >
-> > > > > > >   compatible:
-> > > > > > >     oneOf:
-> > > > > > >       - enum:
-> > > > > > >           - nxp,tjr1443
-> > > > > > >           - ti,tcan1042
-> > > > > > >           - ti,tcan1043
-> > > > > > >       - items:
-> > > > > > >           - const: microchip,ata6561
-> > > > > > >           - const: ti,tcan1042
-> > > > > > >
-> > > > > > >    '#phy-cells':
-> > > > > > >      const: 0
-> > > > > >
-> > > > > > I tested the build with fallback compatible:
-> > > > > >
-> > > > > > compatible:
-> > > > > >   oneOf:
-> > > > > >     - items:
-> > > > > >       - enum:
-> > > > > >         - microchip,ata6561
-> > > > > >       - const: ti,tcan1042
-> > > > > >     - items:
-> > > > > >       - enum:
-> > > > > >         - nxp,tjr1443
-> > > > > >       - const: ti,tcan1043
-> > > > > >
-> > > > > > and modified compatible property in DTS:
-> > > > > >
-> > > > > > compatible =3D "microchip,ata6561", "ti,tcan1042";
-> > > > > >
-> > > > > > Build succeeded, phy-can-transceiver driver was used. So I woul=
-d like
-> > > > > > to add a fallback compatible for both "microchip,ata6561" and
-> > > > > > "nxp,tjr1443" in this binding and modify other DTS files with
-> > > > > > compatible =3D "nxp,tjr1443". What do you think?
-> > > > >
-> > > > > This is wrong on two counts. Firstly, were what you have correct,=
- you
-> > > > > should
-> > > > > squash the two:
-> > > > >      - items:
-> > > > >          - enum:
-> > > > >            - nxp,tjr1443
-> > > > >            - microchip,ata6561
-> > > > >          - const: ti,tcan1042
-> > > > >
-> > > > > However, that does not allow the TI compatibles in isolation, so =
-you
-> > > > > still need to allow that for the actual TI devices, so you need:
-> > > > >
-> > > > >    oneOf:
-> > > > >      - items:
-> > > > >          - enum:
-> > > > >            - microchip,ata6561
-> > > > >            - nxp,tjr1443
-> > > > >            - ti,tcan1043
-> > > > >          - const: ti,tcan1042
-> > > > >      - const: ti,tcan1042
-> > > > >
-> > > > > There's probably some devicetrees that would need to be fixed up.=
- I'm
-> > > > > just not convinced that this is worth retrofitting however.
-> > > >
-> > > > But nxp,tjr1443 is pin compatible with ti,tcan1043, so it should
-> > > > fallback only to ti,tcan1043 and not ti,tcan1042. That's why I deci=
-ded
-> > > > to split them into different enums.
-> > >
-> > > Ah, sorry I missed that. I misread the match data. Then you need:
-> > >   compatible:
-> > >     oneOf:
-> > >       - items:
-> > >         - enum:
-> > >           - microchip,ata6561
-> > >         - const: ti,tcan1042
-> > >       - items:
-> > >         - enum:
-> > >           - nxp,tjr1443
-> > >         - const: ti,tcan1043
-> > >       - enum:
-> > >           const: ti,tcan1042
-> > >           const: ti,tcan1043
-> > >
-> > > because the TI devices exist and we still need to be able to
-> > > differentiate the TI and NXP devices. If you have
-> > >   compatible =3D "nxp,tjr1443", "ti,tcan1042";
-> > > that means the device is an nxp,tjr1443. If you have
-> > >   compatible =3D "ti,tcan1042";
-> > > then that's a tcan1042.
-> > >
-> > > > I made my patch according to a similar one that adds support for
-> > > > nxp,tjr1443. You can find it's conversation on
-> > > > https://lore.kernel.org/all/6ee5e2ce00019bd3f77d6a702b38bab1a45f3bb=
-0.1674037830.git.geert+renesas@glider.be/t/#u.
-> > >
-> > > > I thought we want to hold all PHY chip names in one compatible enum
-> > > > and each in its own of_device_id struct in driver and extend them
-> > > > where appropriate.
-> > >
-> > > Nah, fallbacks are preferred when the programming model is either
-> > > identical or a "compatible superset" of an existing device. New
-> > > of_device_id structs should only be used where we need to account for
-> > > differences in the programming model.
-> >
-> > However, I am curious as to why the NXP CAN PHY transceiver was not
-> > included as fallback compatible. Geert, could you please share your
-> > thoughts on this matter?
->=20
-> The TJR1443 looked sufficiently similar to the TCAN1043 to use the
-> same driver configuration (which is limited to having standby and/or
-> enable signals or not).  However, I'm not sure it behaves exactly
-> the same, e.g. in case of reporting an error condition (which is not
-> yet supported by the driver). The part numbers are also different,
-> so this is not a simple case of SN74HCxx vs. CD74HCxx.
->=20
-> Summary: I don't know if they are identical, or if TJR1443 is a
-> compatible superset of TCAN1043, or vice versa. Hence I went for the
-> safest way....
+---
+base-commit: 8400291e289ee6b2bf9779ff1c83a291501f017b
+change-id: 20240725-phy-qcom-qmp-pcie-write-all-tbls-second-port-8efeced876bf
 
-If we don't know for sure what the craic is with compatibility, then we
-should leave the existing tjr1443 compatible as-is I think.
+Best regards,
+-- 
+Abel Vesa <abel.vesa@linaro.org>
 
---2u/IhLrXAClqQ7yY
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZqul9gAKCRB4tDGHoIJi
-0ihGAP9ycLYTw4OBALYRGnPOgdIt80DioV5tkzE3ZMnbzlDyUQD/ddqPhRdRL6BW
-4hQVPcQtVHP4d8p76tUJ59Dyz6rY5gg=
-=n1kR
------END PGP SIGNATURE-----
-
---2u/IhLrXAClqQ7yY--
-
-
---===============3720815158414224166==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3720815158414224166==--
-
