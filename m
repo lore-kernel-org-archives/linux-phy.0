@@ -4,83 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 615E9C3DA7F
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 00:41:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C10F2C3DA7F
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 02:27:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bXYgIJlniRap3096IckczYGLc90t/komPNVoi1gE1cA=; b=JfAhXNSQLYaCGg
-	zM71CKL8gZQV3tzlbK7/pjw4P3rNz32QJH/tFfGnqtLirTMXn4KJ3OkRA5WU2H1+v+BTOABrjcVB6
-	1fBRP8Fkdx3dsTDxP0L4FIsVxNiToGfeFiO4Gi1ucGt4/t+T5y+yzZq7FVozoZv0NHVyNlB1waMym
-	B4tCJSf/fqUTG2MHFXxM23vbT+N/ryITd78gq8olbqLlWoJ/Q5PJn77nPraOES+kyGhkCiXzhmfT0
-	jomn1xg/pFWi2uey/RvQpGnbytqLt1koCFRqAvbAbmcSHQcMqZgsnz+zrxKq8gJ9oKnUml0KoTiF5
-	TWd3Zvd6B4Z+GXava8Og==;
+	List-Owner; bh=Qcthir/XZKBvFn0TERE+4ZStN+OoZ8J/U4DzHfiH59U=; b=N+odT2y1NovBe7
+	XCxQ48ab6QqziFSc/haZ2wXHKsYviUuvM8VtFJjO2HaZG1BvrYnV7OpRkRDngl5tSRb58NmecwO5B
+	26s++61cXQUwN23i9q37YnMDZBpsKUQhCn7/Vh40TyI3oeUKVbIvTGHO2M32y/QN+Z5nifx/b+Tri
+	iRCsvRhz9x24Xk9lW/cGZEopzQzrPx8FcnnvQ6tIDsJwqosT4iav+LZYgM6G0dyv4syCH5pD653eZ
+	SAoE4nvFayvuArdJf6qa72cd6biGLMKLoIOlzqcLulRUOkNgI/BQERunE3WjZ99tdD0tHeWfhNirP
+	NEJZsXdAPahvTf3hYssQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJt0-000000034pV-0QtQ;
-	Thu, 01 Aug 2024 00:41:42 +0000
-Received: from mail-oi1-x22a.google.com ([2607:f8b0:4864:20::22a])
+	id 1sZLWy-00000003RZL-1sJs;
+	Thu, 01 Aug 2024 02:27:04 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJsU-000000034fk-2MjJ;
-	Thu, 01 Aug 2024 00:41:12 +0000
-Received: by mail-oi1-x22a.google.com with SMTP id 5614622812f47-3db1d4dab7fso3884437b6e.1;
-        Wed, 31 Jul 2024 17:41:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1722472869; x=1723077669; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=+SRhALzSNIYjZtYZCdYQEI+/EH5x/c0pzDejuFftYNk=;
-        b=JV4UX6sfExTybKsiSJOiltNyB3sVPDCQgpQ0JeUMxauR4tlVUTLEKKb58P1oLEmU8V
-         K7hLijW7E3TOOQmcLqn7rO0ev2tpqHXgyPr+X/InB1LLy9VaDpX9fk79gIUIKz4eBZay
-         uF+ipA6m54D9J5Jy9mO3GhXe83nN3VmbW5yE4YdkjdpfEOAou5fg/P5iHzX6Ec8Cuzbm
-         l9CjxrkLeMBYN9yzvCkYjSw9VBdtOkVFpUqKdD7KHHNcYqJuxHta/T9LbOZgxc4C8gLq
-         aBvA7biBr6z34SCtGCj72oqc9UclH+LSB8mRNvzAfVHuxGlwaLaoyARjDBt1htX+Op4d
-         hwcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722472869; x=1723077669;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=+SRhALzSNIYjZtYZCdYQEI+/EH5x/c0pzDejuFftYNk=;
-        b=bqpjs+0RwqYRfsGRQ7W8NDUIc+uKNvxBn7loiLVRWf8F7AnRBIBmNgrqng3KXCvf3O
-         vDtJZI3vUtZndUSR6KG0xnil/hccpkkLr7wXaD6OFXAT/Aq6ZHHbbzQRJ6F85mfOXYFM
-         bHZaPcaxuiJlHMIs3uZU+Y8lN4SklYy3VFV96CjD3NiF7646Ge9e1guC71xbGsT6AYpu
-         RNwekA0ifyBCY1kuZM2DfrZsHjRT2KgyOSTEZ8I9yEaebeGfbl2e3cHQ/K54p8N3wKBP
-         JRMQZT3dQ/S2Q849xYG036AIIV9xoy52L+OWOEvoMnORilIX+stK/sTsrUpPllpEVOaW
-         HZww==
-X-Forwarded-Encrypted: i=1; AJvYcCV++Q6fFP4E5QH4A7d9Xd4bQqNUnnme82mKJXzRJqDQA1rTj2yxFtNKQWjuImtGVbkzAztyW+co9+PpCv4CM5Biy6ZCYuzr54vfWn2ihg==
-X-Gm-Message-State: AOJu0YwqnKBu29TriPiGm7kH5eFrlAPm/FHIWgcr/TiPGN+s4xUKvxjn
-	TD+RDiEL44R2zlhNcF0DoDpf6AiPEqIggAo6INmg/8v/371Zxc10T9Yu1g==
-X-Google-Smtp-Source: AGHT+IF2+UXiIKmLrJ8RELf5HuGNCOKJPdjkpvdOPhQ+ZS8Luzx6Jwu6WdMqA97xvIZpCy9sBV+83w==
-X-Received: by 2002:a05:6808:23d6:b0:3da:a16e:1764 with SMTP id 5614622812f47-3db511b4701mr1034618b6e.4.1722472869032;
-        Wed, 31 Jul 2024 17:41:09 -0700 (PDT)
-Received: from [172.19.1.53] (60-250-192-107.hinet-ip.hinet.net. [60.250.192.107])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-7a9f7b7b029sm10935955a12.11.2024.07.31.17.41.07
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 31 Jul 2024 17:41:08 -0700 (PDT)
-Message-ID: <2e543ed4-929c-44df-ba42-0a6b259aeb0f@gmail.com>
-Date: Thu, 1 Aug 2024 08:41:05 +0800
+	id 1sZLWX-00000003RTr-2ZdQ
+	for linux-phy@bombadil.infradead.org;
+	Thu, 01 Aug 2024 02:26:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=SE4HjIBSBU7JRdKPDsjlGIYfqFe0/dXHiJVJGX0G6Fg=; b=KEsvQoM7HW465rtDCprQ9pCGKO
+	kONi/eu82JMHcZLk3Q1zF7GWu2SNUz+XB8bEmfYzNfY99pgsQAOnt2vbT9s0ueLhTo3kL1b1wEpfI
+	3Uoh8edQIHZsjl7Dh/ok/4R9/oPryL1UtkJ8J3IUcMVXHDHGYDvopU4hqZGLiUlWj4qkwe/db1iW9
+	d4pQl6j0sO2a7XjsL5SfroLkvOPXo9Sk/NPreHeFsx/twnSFLgCklA6ST0nUMFH51tJAdKl9OZSmc
+	I5KixzMHbdFr29W+sCNSiOwEPH+cvPAAF3d9ytnRjMeOBpwg4EVtcQrfLdKtQUk+z8SR+2v2x4SpD
+	Qbe5JPhQ==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sZLWT-00000005LVm-3L1V
+	for linux-phy@lists.infradead.org;
+	Thu, 01 Aug 2024 02:26:35 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id ADE9A6276F;
+	Thu,  1 Aug 2024 02:26:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06A26C4AF10;
+	Thu,  1 Aug 2024 02:26:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722479189;
+	bh=dOz9CZJAwvcwTM3cno/e4aaYLwlNEIrTcbyLJ2I+nmk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=uHkqHvP+xvPRb7QSZmGyY4+JKZSbz5E+Rr6bMaoJtEzGgfv1C4fHmQrgJDKxpWcRC
+	 700Y+cm9k78zsGNIEoNArxJN9YLrOc/DzplgjHl49xr2S0vhoIpSprKUdCCN707165
+	 5CSX6zaB/AHGA6FcYx/DZijwLwPvoIaGcNiDlzB1kbybNAEpyvBYlPUoTYhIRyusds
+	 4FYsfTUDvIoOJNyPMiYeGvXgbONgeZ/xqmKjieG8ImqZXmu9u4zo7bblvFAhi/5It7
+	 h1UnXYGm3p7y4v9Uqjpaz8GsNWy3yn7tvqW/GlJeI7K8jSsNOmeaYPuAUv9IEb7/JG
+	 vq9w8FkC1QHVQ==
+Date: Wed, 31 Jul 2024 21:26:27 -0500
+From: Bjorn Andersson <andersson@kernel.org>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] phy: qcom: qmp: Add debug prints for register writes
+Message-ID: <nkfrtuxv4ueow66bnazyb4ul3pz3z3wo6zsptu6wnw7hflxerx@pkwn7sx6gfqi>
+References: <20240731115637.90351-1-manivannan.sadhasivam@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: nuvoton,ma35-usb2-phy: add new
- bindings
-To: Krzysztof Kozlowski <krzk@kernel.org>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org
-Cc: linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20240731014313.113417-1-hpchen0nvt@gmail.com>
- <20240731014313.113417-2-hpchen0nvt@gmail.com>
- <6b1894c8-766c-4191-9f05-42f1f0a838f5@kernel.org>
-Content-Language: en-US
-From: Hui-Ping Chen <hpchen0nvt@gmail.com>
-In-Reply-To: <6b1894c8-766c-4191-9f05-42f1f0a838f5@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20240731115637.90351-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_174110_623501_452483E4 
-X-CRM114-Status: GOOD (  15.54  )
+X-CRM114-CacheID: sfid-20240801_032634_162989_1ACA1838 
+X-CRM114-Status: GOOD (  18.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,44 +82,91 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RGVhciBLcnp5c3p0b2YsCgpUaGFuayB5b3UgZm9yIHlvdXIgcmVwbHkuCgoKCk9uIDIwMjQvNy8z
-MSDkuIvljYggMDE6MzEsIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gT24gMzEvMDcvMjAy
-NCAwMzo0MywgSHVpLVBpbmcgQ2hlbiB3cm90ZToKPj4gQWRkIGR0LWJpbmRpbmdzIGZvciBVU0Iy
-IFBIWSBmb3VuZCBvbiB0aGUgTnV2b3RvbiBNQTM1IFNvQy4KPj4KPj4gU2lnbmVkLW9mZi1ieTog
-SHVpLVBpbmcgQ2hlbiA8aHBjaGVuMG52dEBnbWFpbC5jb20+Cj4+IC0tLQo+PiAgIC4uLi9iaW5k
-aW5ncy9waHkvbnV2b3RvbixtYTM1ZDEtdXNiMi1waHkueWFtbCB8IDQ3ICsrKysrKysrKysrKysr
-KysrKysKPj4gICAxIGZpbGUgY2hhbmdlZCwgNDcgaW5zZXJ0aW9ucygrKQo+PiAgIGNyZWF0ZSBt
-b2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L251dm90b24s
-bWEzNWQxLXVzYjItcGh5LnlhbWwKPj4KPj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2
-aWNldHJlZS9iaW5kaW5ncy9waHkvbnV2b3RvbixtYTM1ZDEtdXNiMi1waHkueWFtbCBiL0RvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvbnV2b3RvbixtYTM1ZDEtdXNiMi1waHku
-eWFtbAo+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+PiBpbmRleCAwMDAwMDAwMDAwMDAuLjg4ZTI5
-N2JhNGVjZgo+PiAtLS0gL2Rldi9udWxsCj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy9waHkvbnV2b3RvbixtYTM1ZDEtdXNiMi1waHkueWFtbAo+PiBAQCAtMCwwICsx
-LDQ3IEBACj4+ICsjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMC1vbmx5IE9SIEJT
-RC0yLUNsYXVzZSkKPj4gKyVZQU1MIDEuMgo+PiArLS0tCj4+ICskaWQ6IGh0dHA6Ly9kZXZpY2V0
-cmVlLm9yZy9zY2hlbWFzL3BoeS9udXZvdG9uLG1hMzVkMS11c2IyLXBoeS55YW1sIwo+PiArJHNj
-aGVtYTogaHR0cDovL2RldmljZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlhbWwjCj4+ICsK
-Pj4gK3RpdGxlOiBOdXZvdG9uIE1BMzVEMSBVU0IyIHBoeQo+PiArCj4+ICttYWludGFpbmVyczoK
-Pj4gKyAgLSBIdWktUGluZyBDaGVuIDxocGNoZW4wbnZ0QGdtYWlsLmNvbT4KPj4gKwo+PiArcHJv
-cGVydGllczoKPj4gKyAgY29tcGF0aWJsZToKPj4gKyAgICBlbnVtOgo+PiArICAgICAgLSBudXZv
-dG9uLG1hMzVkMS11c2IyLXBoeQo+PiArCj4+ICsgICIjcGh5LWNlbGxzIjoKPj4gKyAgICBjb25z
-dDogMAo+PiArCj4+ICsgIGNsb2NrczoKPj4gKyAgICBtYXhJdGVtczogMQo+PiArCj4+ICsgIG51
-dm90b24sc3lzOgo+PiArICAgICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25z
-L3BoYW5kbGUKPj4gKyAgICBkZXNjcmlwdGlvbjoKPj4gKyAgICAgIHBoYW5kbGUgb2YgdGhlIHN5
-c3RlbS1tYW5hZ2VtZW50IG5vZGUuCj4+ICsgICAgICBUaGlzIGRyaXZlciBoYXMgc29tZSBzdGF0
-dXMgYml0cyBsb2NhdGVkIGluIHRoZSBzeXMsCj4gRG8gbm90IHJlZmVyZW5jZSBkcml2ZXJzLCBi
-dXQgaGFyZHdhcmUuCgpPa2F5LiBJIHdpbGwgcmV2aXNlIHRoZSBkZXNjcmlwdGlvbi4KCgoKPj4g
-KyAgICAgIGl0IGlzIG5lY2Vzc2FyeSB0byByZWZlcmVuY2UgdGhlIHN5cyBsaW5rLgo+IFRoaXMg
-dGVsbHMgbWUgbm90aGluZy4gWW91IG11c3QgYmUgc3BlY2lmaWMgLSBXSEFUIElTIFRIRSBQVVJQ
-T1NFIG9mCj4gdGhpcyBzeXNjb24gdXNhZ2UgaW4gVVNCMiBQSFk/CgpTb3JyeSwgSSBtaXN1bmRl
-cnN0b29kLiBJIHdpbGwgY29ycmVjdCB0aGUgZGVzY3JpcHRpb24uCgpUaGFuayB5b3UgZm9yIHRo
-ZSByZW1pbmRlci4KCgoKPiBCZXN0IHJlZ2FyZHMsCj4gS3J6eXN6dG9mCgoKQmVzdCByZWdhcmRz
-LAoKSHVpLVBpbmcgQ2hlbgoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1waHkK
+On Wed, Jul 31, 2024 at 05:26:37PM GMT, Manivannan Sadhasivam wrote:
+> These register prints are useful to validate the init sequence against the
+> Qcom internal documentation and also to share with the Qcom hw engineers to
+> debug issues related to PHY.
+> 
+
+I've written this patch every time I've touched one of these PHYs, so I
+certainly like this.
+
+> Sample debug prints:
+> 
+> QMP PHY: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
+> QMP PHY: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
+
+That said, with multiple instances of PHYs being configured at about the
+same time it seems this would benefit greatly from something identifying
+which PHY instance the write relates to?
+
+dev_dbg() would certainly be nice...
+
+> 
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+> 
+> Changes in v2:
+> 
+> * Modifed the debug print to include reg offset
+> 
+>  drivers/phy/qualcomm/phy-qcom-qmp-common.h | 5 +++++
+>  1 file changed, 5 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-common.h b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+> index 799384210509..40beb413328f 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-common.h
+> @@ -9,6 +9,7 @@
+>  struct qmp_phy_init_tbl {
+>  	unsigned int offset;
+>  	unsigned int val;
+> +	char *name;
+
+const?
+
+Regards,
+Bjorn
+
+>  	/*
+>  	 * mask of lanes for which this register is written
+>  	 * for cases when second lane needs different values
+> @@ -20,6 +21,7 @@ struct qmp_phy_init_tbl {
+>  	{				\
+>  		.offset = o,		\
+>  		.val = v,		\
+> +		.name = #o,		\
+>  		.lane_mask = 0xff,	\
+>  	}
+>  
+> @@ -27,6 +29,7 @@ struct qmp_phy_init_tbl {
+>  	{				\
+>  		.offset = o,		\
+>  		.val = v,		\
+> +		.name = #o,		\
+>  		.lane_mask = l,		\
+>  	}
+>  
+> @@ -45,6 +48,8 @@ static inline void qmp_configure_lane(void __iomem *base,
+>  		if (!(t->lane_mask & lane_mask))
+>  			continue;
+>  
+> +		pr_debug("QMP PHY: Writing Reg: %s Offset: 0x%04x Val: 0x%02x\n",
+> +			t->name, t->offset, t->val);
+>  		writel(t->val, base + t->offset);
+>  	}
+>  }
+> -- 
+> 2.25.1
+> 
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
