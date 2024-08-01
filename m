@@ -4,63 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC3C8C3DA64
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Jul 2024 20:18:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8373FC3DA64
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 00:19:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WkfDbKJUpvxCd14MSy2hJz5FZBe84lzAZgwL+LoHYPo=; b=TK2ecyk2K2FF/Z
-	noJWKnr6Uvx3qwa/+G+pdbqja1ZAWWLQdxdTBCPbtozt9ZPLJ2cOveePyD9HjO/pegPRfkSzmo93X
-	D3/GAHR6RsYv8xjOoD8wlRmSlRbadWNRRzzs7zIKoe+EZtSgESCsiIYQnvKMGUQ9wzol2bYerPSEK
-	LZsozoasdsWgFuMhYa1blBZ6nlZfstSbIGNxI4wZktJzfF66VB7mWy01Xs3muL4l7PmNIZbYWYdU7
-	GGSGHsFGc08H6D9xWYf51t6VyrNkOgpFTU+be9iwLwmP5t1PiTPg8Xxd+pz6VCEIT6HzMn5FHTdgc
-	usVmTwle0xftA9lrHC8w==;
+	List-Owner; bh=BdXJYYBuUPOiCkLb/3E7PP+0Nj1wGtTubAu4Sy38D38=; b=fHrNAxPH6+SyYd
+	KyV52WFrrfGXAPsvnG1p/Moobq7Od/0mpi40yZUY798Ey0gTM7AnU9NBFMDS1Ci6uQoslxpmVwuWF
+	rOThL7SUJmAwg59i8hD8dAzluyNtVkKn13+TZggSf4hI/eNw2RvnGjmOy0oTW/ppLFfow/EwE4ywB
+	rbOT0HOo/bSnf41vFe/61clJHlA126Un+bDhFDjVxxhtLH61+DQHvzeXiWmhs8B2m+nCiav33eiPh
+	REK4z0FJTvRfJB/gdOop5uZ2Wh7moBDZ1cVE6X3+OnB8MnBihriYpMWPlOMlUQsKXXMCcYcnrtXTt
+	UjX3nJe5Efm5v6ykPJZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZFmj-00000002R0F-1xpV;
-	Wed, 31 Jul 2024 20:18:57 +0000
-Received: from mta-64-225.siemens.flowmailer.net ([185.136.64.225])
+	id 1sZJX2-00000002x5k-10hn;
+	Thu, 01 Aug 2024 00:19:00 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZFmb-00000002QvY-3duZ
-	for linux-phy@lists.infradead.org;
-	Wed, 31 Jul 2024 20:18:53 +0000
-Received: by mta-64-225.siemens.flowmailer.net with ESMTPSA id 202407312018444b413a324195eecb3b
-        for <linux-phy@lists.infradead.org>;
-        Wed, 31 Jul 2024 22:18:44 +0200
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
- d=siemens.com; i=jan.kiszka@siemens.com;
- h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Cc:References:In-Reply-To;
- bh=SUxmYkjU52Zd0l8Y+msbh0zC3Tc3jd+DyqARUfWiOQo=;
- b=ehxxPX1xzA9T8723XVnod+NinDAChb6AKCoh/gobgoervllzp78zfY4sy620NTZorpjUSj
- CwlLIyzkh7mcqpZj2KLEnv1mrpPjTRK9NaOgRfxrP/KGKfr79gshk7+/QxiQqWyfY9qWsKmH
- ZoUtIVrshF+04vzSSXPTCkA3GH+kKUoNcy0Yrqh+/3PFuSW6+aHAoQE7JTh9FJ1kHRitjSyz
- mhU7vRNeNEYg1n0A+sBw0Ov1Abxe78WvlS4NCCzV1p0OdGwbPhK0G4VNUXzkJpEWCiwfuIQU
- 1G/+n/vTjP8qPaj91iA9Awuim7xbu1hnx84bGW9eXTDnUNNyM6yAoweA==;
-From: Jan Kiszka <jan.kiszka@siemens.com>
-To: Minda Chen <minda.chen@starfivetech.com>,
+	id 1sZJW7-00000002wiJ-294T;
+	Thu, 01 Aug 2024 00:18:04 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id D2D3362436;
+	Thu,  1 Aug 2024 00:18:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C4CEC32786;
+	Thu,  1 Aug 2024 00:18:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722471482;
+	bh=I1ihhMI+ois11ajX6ji/bdQRgwfxdvb+1/6KIY3gT6s=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=bBdJVwwjqpSvunkyTDbtrC4jc/ICyprx/dD+tr2yabAHX7QfW8QsGh4VWaTtBmSyV
+	 EE79h8E6UYAFB7yYl+y86T1CjHP4DhgxjWh1QzG1og+ccjAmnWbfjMhTiyDVBSfHcC
+	 cd+6n+Kma7XN2Q4NLuK4Xuf9zPjq6RnHP8W1XXkhMPoKGl7feR/sp1UgM37m0tUH6l
+	 VtC/EpbayAkOW7wFaR+2E3J9YOAfcxCalnC3/spE5XeA+qTbkSUgJUV3Djt5MQjJpo
+	 zOqn9SOrVWAogfitf2gwvti7jx5FYAxqPhwsLTyfEbkyRtl5dQiFxbESG7B6KkAdYP
+	 rTQzV/1hGtbKg==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Sean Anderson <sean.anderson@linux.dev>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Subject: [PATCH 2/3] riscv: dts: starfive: jh7110: Add sys-syscon property to usbphy0
-Date: Wed, 31 Jul 2024 22:18:42 +0200
-Message-ID: <b785c849ebae7040c83a2d0c097064e5a451480a.1722457123.git.jan.kiszka@siemens.com>
-In-Reply-To: <cover.1722457123.git.jan.kiszka@siemens.com>
-References: <cover.1722457123.git.jan.kiszka@siemens.com>
+	Sasha Levin <sashal@kernel.org>,
+	laurent.pinchart@ideasonboard.com,
+	kishon@kernel.org,
+	michal.simek@amd.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.10 105/121] phy: zynqmp: Take the phy mutex in xlate
+Date: Wed, 31 Jul 2024 20:00:43 -0400
+Message-ID: <20240801000834.3930818-105-sashal@kernel.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240801000834.3930818-1-sashal@kernel.org>
+References: <20240801000834.3930818-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-Flowmailer-Platform: Siemens
-Feedback-ID: 519:519-294854:519-21489:flowmailer
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.10.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_131850_558726_52F4D12A 
-X-CRM114-Status: UNSURE (   6.45  )
+X-CRM114-CacheID: sfid-20240731_171803_638067_3ECBBF3B 
+X-CRM114-Status: UNSURE (   8.91  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,31 +82,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Jan Kiszka <jan.kiszka@siemens.com>
+From: Sean Anderson <sean.anderson@linux.dev>
 
-Allows the PHY to connect to its USB controller.
+[ Upstream commit d79c6840917097285e03a49f709321f5fb972750 ]
 
-Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+Take the phy mutex in xlate to protect against concurrent
+modification/access to gtr_phy. This does not typically cause any
+issues, since in most systems the phys are only xlated once and
+thereafter accessed with the phy API (which takes the locks). However,
+we are about to allow userspace to access phys for debugging, so it's
+important to avoid any data races.
+
+Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
+Link: https://lore.kernel.org/r/20240628205540.3098010-5-sean.anderson@linux.dev
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
-CC: Rob Herring <robh@kernel.org>
-CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
-CC: Conor Dooley <conor+dt@kernel.org>
----
- arch/riscv/boot/dts/starfive/jh7110.dtsi | 1 +
+ drivers/phy/xilinx/phy-zynqmp.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-index 0d8339357bad..0c0b66a69065 100644
---- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
-+++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-@@ -606,6 +606,7 @@ usbphy0: phy@10200000 {
- 				 <&stgcrg JH7110_STGCLK_USB0_APP_125>;
- 			clock-names = "125m", "app_125m";
- 			#phy-cells = <0>;
-+			starfive,sys-syscon = <&sys_syscon 0x18>;
- 		};
+diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
+index dc8319bda43d7..feaece2ed0d47 100644
+--- a/drivers/phy/xilinx/phy-zynqmp.c
++++ b/drivers/phy/xilinx/phy-zynqmp.c
+@@ -798,6 +798,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
+ 	phy_type = args->args[1];
+ 	phy_instance = args->args[2];
  
- 		pciephy0: phy@10210000 {
++	guard(mutex)(&gtr_phy->phy->mutex);
+ 	ret = xpsgtr_set_lane_type(gtr_phy, phy_type, phy_instance);
+ 	if (ret < 0) {
+ 		dev_err(gtr_dev->dev, "Invalid PHY type and/or instance\n");
 -- 
 2.43.0
 
