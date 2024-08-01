@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3161FC3DA7F
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 00:26:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41A43C3DA7F
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 00:31:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QVINJpestLKF5XUPecEL1XEyZd1DKhnkYXk4ssYGtG8=; b=bz8liU/xrs9wlg
-	C1UzvoROATAmjIKrmIzpSiIfAjW8xc93anrHsG7jH4HDLNjjl3RsPDIweK07n1GhuiisCvEFSLRvk
-	DwpimGSXmuAFu8t0ajRuhXjaOvD9XWPIqqOAPNyxIgpT5mY+3YFBSG6cRrj5KVxR4owMXfhcEMwC+
-	PI+2REgumdXd0B8TATh/VNhXIEzXBOSDK4KytsqbNgHkMs39qjH5dy4JSJjc+C8axIba3ZywR1QpN
-	oPVu32Vhjuabgy//XQFLBaBjXn49OLsFsN99ABot64v7gXOJ4nGgZak1s+4vxnZcFpMw7o69Emsrc
-	fwL/3KWBJPnNvVKjofuw==;
+	List-Owner; bh=WEmfNWJyNNNv9RGknkVN8VWoUxMhQRlGutn+duHDqHA=; b=eBHwQKMHRnH31V
+	jK4PL/24pqK85t+6l/RwuKHuY/iTpzqoqED5Fdl08arpwqzK0VOewMVsLGd9niodfDASdl++tvLg9
+	S+A2PilzZBbQV0VaJbS2GSmKbxyJyKtmNL3v7Hzvna41sfxZj4R3j8c0F858afKjcyMaMpFVGqi9U
+	rIqGVKapyWUuES8CDKMdiEIha1q/+r9YvLHq90GviMFL2pMDCGSu6imLlMBNbK840LtHwfKl+49Zu
+	y1HKF3WETE5FiVUd5vUlOfCI0+uw9wLjR8gO4TxwfoogzVOXKJXP2dXc15B5zyf1T9iM8SK11f7nU
+	Flsrv5yWvv0p6cMRSydg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJe9-00000002zXc-2nBn;
-	Thu, 01 Aug 2024 00:26:21 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sZJjW-000000031hW-3Xfr;
+	Thu, 01 Aug 2024 00:31:54 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJdd-00000002zJs-2xum;
-	Thu, 01 Aug 2024 00:25:51 +0000
+	id 1sZJit-000000031QC-2cJy;
+	Thu, 01 Aug 2024 00:31:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0AFD0624B0;
-	Thu,  1 Aug 2024 00:25:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9DF10C4AF0C;
-	Thu,  1 Aug 2024 00:25:47 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0BF4A6173B;
+	Thu,  1 Aug 2024 00:31:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A3C62C116B1;
+	Thu,  1 Aug 2024 00:31:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722471948;
-	bh=xGhvvW5Nb1lltgltgtaN920HQ82BD/KDG6WYsOpH+9o=;
+	s=k20201202; t=1722472274;
+	bh=CD6Jx+aTI+3Lv99v/xOm4/THGDtLnHkNjrNWCrQ0syk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=p+hoCl+LIdQsu7aaqPLKcgr7Iyq/1D8wQi2CBT8xlz9cnEBdKy5p47R5CuTF9oBwt
-	 fXYqAYqHnPMdr79kYlx0y8k+a1nd/vxPOAkP1MZfp3VOW9AyOyPRIAvyLlYJem65MB
-	 F1oztwRRlc9Lfy1sqSofPVqBPrD2IKzZFGqXoDG2Idgz35PFBCtD8tjrSWkxPfo+I5
-	 IhE2kY/gQe9uLTQOH8yUNsVHBweojaiKpiIJ2MHA0pzriNQ84xXY982uppZc4PgBza
-	 41j+bzqhdQo1kYoyI3R4o7dBPznZQdYXyZzt8QHaczAKFntid4yHFaA3QE4f1pMMpC
-	 CBWUpP/SsaoFg==
+	b=okJgImihSn3ytl0b8YuCjZ9fEWkAHFoEluWFjs7z3S4TMMTZwhjilzPo9RnY5HaB9
+	 tz4o3I0FhOUyLhSDvDotbPFnceYX/z6EuL0CfV4QgFbsrDCWcvWS1N1GPaQyB391Ky
+	 jp95iZAm3N1NIOWixBRKX6Ll+aGx+e1XL5vrMUKFvS0oEFb/QT13ncfJqZjXlsyhkD
+	 J2AJki3ZT4YoAi9EYMY+YgMrZ2jAOFx6dtDouKvwcjNdYb+aEHSfoCoZgMFlBQeVop
+	 BIFfZHE5qri5D4ABTTknrWk0BZB4HRKkNYVZY7WQYLIDVQ+mSJAAGlCaM6D3pqKUhO
+	 MYJmcFNGxbOMg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -52,19 +52,19 @@ Cc: Sean Anderson <sean.anderson@linux.dev>,
 	michal.simek@amd.com,
 	linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 70/83] phy: zynqmp: Take the phy mutex in xlate
-Date: Wed, 31 Jul 2024 20:18:25 -0400
-Message-ID: <20240801002107.3934037-70-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.1 51/61] phy: zynqmp: Take the phy mutex in xlate
+Date: Wed, 31 Jul 2024 20:26:09 -0400
+Message-ID: <20240801002803.3935985-51-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240801002107.3934037-1-sashal@kernel.org>
-References: <20240801002107.3934037-1-sashal@kernel.org>
+In-Reply-To: <20240801002803.3935985-1-sashal@kernel.org>
+References: <20240801002803.3935985-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.6.43
+X-stable-base: Linux 6.1.102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_172549_851119_4201952F 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20240731_173115_748350_ABDE3FE9 
+X-CRM114-Status: UNSURE (   8.95  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -102,10 +102,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
-index 2559c6594cea2..b2b761e8d6a3a 100644
+index 9be9535ad7ab7..67c45336bb2c0 100644
 --- a/drivers/phy/xilinx/phy-zynqmp.c
 +++ b/drivers/phy/xilinx/phy-zynqmp.c
-@@ -798,6 +798,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
+@@ -790,6 +790,7 @@ static struct phy *xpsgtr_xlate(struct device *dev,
  	phy_type = args->args[1];
  	phy_instance = args->args[2];
  
