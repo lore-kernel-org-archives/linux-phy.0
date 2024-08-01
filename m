@@ -4,148 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30392C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 11:01:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 405C6C3DA64
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 12:33:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qHRphr3QmSpg37XV+OiimF/6Q2RmbmIBWlA00/dn/ZA=; b=X3rVcjDLdTSKLx
-	yt1rvrawiU19M7qpIiXylcypRQLLbD0ioHMPtLUn2pw7Tg6JJE0EVcmSvxAbNxnRBaVZnpi5/rU4Q
-	g3mjzlIkks/f+Y281JYcJMMyVanw1PHx8ZxnW6S1U+QYPtZ/CqxWbMgO5sg3Gfw7OGnFCVPxTxsaN
-	mOkGw7mIepPlDQ75kPY2NtdNfNzK87fdWDnzzcDuNzHNVPnGED6osuW875IfDPUXGmkUus2MCv5gS
-	I6wsoEQVUS33y5R5UOuYVg4PTqLRimEp2Hi7Oz08/QUILKk75njRLv+OsBxCl1kmYmymM/59FHWtZ
-	I5fg2zasg4a8LaOvJJbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jdxDOrMl7lV5IRX3cYHPzkKhoM2Me60VeLbVS7MapJs=; b=SFOClaOCQqcQHc
+	YyN4Tapvpn0tuvjP0aYwMqljtEVis1XV5QpVv3atPkJvZoTXVx+LRpywBCBP2b/7aqt+eTZsnyeCY
+	1eYI2skuemJaAi2lgXoDMLwc8fcpHYd+LPsdkZYTXzbX9ahTRXGiN9Bqk/42WRRVLzaqlprWaUnN+
+	a5MG9r9w9u6k1JzaPscPUA523Yb4MKww3P9ho52H3QpANqIeAq5g+7JqB1aUk5elRnxg/1K/JnIBt
+	XDgjRDCyKNRhkBdcdzlqhq5C1TPz6e8Srm5mSENBzSUxQVASH2pkMkThb0jBad6b41ZdlNkJV8Lje
+	GOVcX3ShQRL4SZzGYfeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZTYi-00000004q3E-3lSE;
-	Thu, 01 Aug 2024 11:01:24 +0000
-Received: from mail-dbaeur03on20601.outbound.protection.outlook.com ([2a01:111:f403:260d::601] helo=EUR03-DBA-obe.outbound.protection.outlook.com)
+	id 1sZUzQ-00000005D95-431K;
+	Thu, 01 Aug 2024 12:33:04 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZTYh-00000004q2J-056q;
-	Thu, 01 Aug 2024 11:01:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=FXUD5WM8dlOk94+la5eGy+ZkovIRH+oGKjnCQfLStQy/VqMN9jQjoSdKhSRKeIXC3lzsAtBholQjPtgo0bJJX6JF5bbTahMqE1O407enDQX30fG7VFVwoBGMkAZmjUn/r0HV6ocE1vgzXcxTWI5iO6K95P/zChYMcZ/ZrHeZjwcB/RB8JgtjvZ7C7fTcS2JAuOBdMUJGg3Q6+QbUCe/mnHD20iDdNMwuGAntOqSA2DKTWm2Mlcxl92+KVsTbeqW1XBO8mlmT6ltYAivFjbPnoK09dpOXaNoCOMxSG2w1MMhVIGHvP3ZF66XOq+SnipT1qhJ3q+N63+NGJBGZEK46xg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pTiYlLydw/ccrtKhQ6AfuedkSpQ2Uwf4ZVNCmhMDrB0=;
- b=iAj0xC+uNL6O+FLq7z4qMmg8OyUM/uE5W0EtWxkvV+CUKlIRF0Pq/UHuaHvqAD9+Rlicg8sijagblohrW2xFJxB7cbph6vam/pU9CKKnW/jIoVzIiWZXPUcHYgYIE+eLinBU9/a30n1Y0+qlxEcRPu4hVed+wX1Ydyqrjba9wkivo0uVeqy83krzf7TMfwFCMp2e5HT6pWJoY8m7nCfKXELoO46TOIZzNG2oIaRhaTcvT4oFDYQC98XPUx5xj0448VOZj+aPopC6xTfpiTRpGbZqjMdzWNmqxzjM46Vd/j22n23b94ItRMlAk6CrWP5EK2EB4En1JLfl/Hp3RR/hMQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=pTiYlLydw/ccrtKhQ6AfuedkSpQ2Uwf4ZVNCmhMDrB0=;
- b=UKjBHt7T1V+mZSjDmPAvXo5KTCOVZtdkNdnjNM/gfMitsOU5e8L2oXjRmoVFcmsUmTYEYvfCooPJZbZ1qlVdgDrjzEiNU5oay2Jnylyaar3KLhokM4yB2aGTT3pimdZI9xTCmlsdjOXZpFRYSQAIzusSiaBmADLYV+cSGrHmyUjiWfWfDh5hoIDMyt9OZDu+9lq9wsbiRUEQHwVK5STqextti1OxFh8wL+r0IYzfJ8YNxaQYFXjrO8/5sNdUPNUniwxyKu2Ww30CSM2fyjRePlZz+dx9H6iIB70AWGIJyouc6F36zIsOh3wsBNDS68sQGBopPCMJSOkuZHGw4+tUTQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB8829.eurprd04.prod.outlook.com (2603:10a6:102:20c::17)
- by PA1PR04MB10171.eurprd04.prod.outlook.com (2603:10a6:102:460::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7807.28; Thu, 1 Aug
- 2024 11:01:15 +0000
-Received: from PAXPR04MB8829.eurprd04.prod.outlook.com
- ([fe80::cdc5:713a:9592:f7ad]) by PAXPR04MB8829.eurprd04.prod.outlook.com
- ([fe80::cdc5:713a:9592:f7ad%3]) with mapi id 15.20.7784.016; Thu, 1 Aug 2024
- 11:01:15 +0000
-From: Xu Yang <xu.yang_2@nxp.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	kernel@pengutronix.de,
-	festevam@gmail.com,
-	alexander.stein@ew.tq-group.com
-Cc: jun.li@nxp.com,
-	xu.yang_2@nxp.com,
-	linux-phy@lists.infradead.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2] phy: fsl-imx8mq-usb: fix tuning parameter name
-Date: Thu,  1 Aug 2024 19:01:36 +0800
-Message-Id: <20240801110136.1031689-1-xu.yang_2@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: SG2PR03CA0124.apcprd03.prod.outlook.com
- (2603:1096:4:91::28) To PAXPR04MB8829.eurprd04.prod.outlook.com
- (2603:10a6:102:20c::17)
+	id 1sZUr4-000000058xN-3dDy;
+	Thu, 01 Aug 2024 12:24:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=4Edi3d3y1GCSfDDNLxe+86RqW3hGIUB+NFjNqh7Asms=; b=b+FQnY+qn3PtjWOiwW4Bu+OqEL
+	s8wXw455rHs7BBcVZaEuYP/DY1i1MvHD1syHZuEsMe9v1lhEJgH9GwqqbQSmyza90jUyp7xupjVPw
+	XzOoJmbB0H+uZhzUnV17hovlZ6bD/z4SI9M2+xKr2T+0Y9r8XlaE+cLo0+hKvrRwTLzLQ5ZkjnRvM
+	Zwxc1w4nYcNECsagprJjCz0+qbh+wwA+XlbkaUbCyUJkOtnCj/JAcWcYuWnVG4zjKKNF2UQlDx2jT
+	Me6gcIjHOm187l3DA7TQN8/z52nx09Qd3wbjsiPk2nfvZqEaOFa0QYO1lGFHMqL+owiMYYMQEYg8j
+	dDbPX1BQ==;
+Received: from mx1.tq-group.com ([93.104.207.81])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sZUr1-00000005SmM-1Q2g;
+	Thu, 01 Aug 2024 12:24:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1722515063; x=1754051063;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=4Edi3d3y1GCSfDDNLxe+86RqW3hGIUB+NFjNqh7Asms=;
+  b=euvIoPQRumDrKesH8WcRz3c5jeWjKkQtpG9jMX88m+t6Y+CWYkaLID3b
+   2FmW7I7WT5CBedxqjqyxqNFRF87yUyVwslNWBl99726MGZrutxiqiKCWe
+   n0B4vO0+J7Vv77UqK3l8SaJMznFSr4VemuPFbbwxNnCMKONErFpT/Ku2i
+   HkLjo5oJqFWBxRCCcFZ+W4BxCwQ4MdCKWpuphUdiutLYbC++Ao335/9Lv
+   0ZFA3c0roO2IHv/wDhjYZ3bgg8Hrbk4cQFucdJdBaU6M0/L4VPJEYX3iY
+   M65tDLTilGNz/aDpFfjLA/QC4NRrZMOH/pDZZsiWNCmv4WNCOnw7Tv3hA
+   Q==;
+X-CSE-ConnectionGUID: VHGJl9vtQ7WP8mqBMssTHA==
+X-CSE-MsgGUID: vfkU7GO3TsSXEj8/S8z9mw==
+X-IronPort-AV: E=Sophos;i="6.09,254,1716242400"; 
+   d="scan'208";a="38197656"
+Received: from vmailcow01.tq-net.de ([10.150.86.48])
+  by mx1.tq-group.com with ESMTP; 01 Aug 2024 14:24:19 +0200
+X-CheckPoint: {66AB7E73-1A-E8EE7C4B-C1098986}
+X-MAIL-CPID: DEBEDEDA394C2436DE9E9A30FB8DAE5B_5
+X-Control-Analysis: str=0001.0A782F26.66AB7E74.002C,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 7C911161531;
+	Thu,  1 Aug 2024 14:24:14 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
+	s=dkim; t=1722515055;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=4Edi3d3y1GCSfDDNLxe+86RqW3hGIUB+NFjNqh7Asms=;
+	b=R/X/Ba3lJPIp7nSK+bTtsYaxkeVQ5fnMt+7KYUBUFrwcDIX77009Chc3r6kxlc009uIRiU
+	FN7m7j+kl4CFxrhBUZT37uiQcMZxIJbt6ocyIyfhpnaqO+WZTI1wQtihdSe6l+UUDxUH8f
+	GYrZmlmAnOfr+0bOntE5v/GuN7e0q/txoSghOefNl3hm6MaicZVSFhQ68jLk6++L/TE6MS
+	WyFVll9qmr8klYM6UnekCIlrqbtfzxPhQC3/Yel/rUFhdD32Xt6baxYQZcbEovARvx0aFm
+	XwBP5NCdfwmynzRDPmgk4JPrVY3NDfiw/WLtddlZzryQG7U5qb3RogF1IHqJBg==
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: vkoul@kernel.org, kishon@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, Xu Yang <xu.yang_2@nxp.com>
+Cc: jun.li@nxp.com, xu.yang_2@nxp.com, linux-phy@lists.infradead.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: fix tuning parameter name
+Date: Thu, 01 Aug 2024 14:24:15 +0200
+Message-ID: <14458406.uLZWGnKmhe@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <20240801110136.1031689-1-xu.yang_2@nxp.com>
+References: <20240801110136.1031689-1-xu.yang_2@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8829:EE_|PA1PR04MB10171:EE_
-X-MS-Office365-Filtering-Correlation-Id: c59548e4-a790-4256-5beb-08dcb2194359
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|52116014|366016|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Q38I0pdgOwJzzX4350SU3dnxcEOsWaW683nDcu1dSzWIutOaUHZuQVgDNJkp?=
- =?us-ascii?Q?aPjF0K2uI54PPY6/ZePc8zPwK6kmPE2p6oYlu30oP2V4mULzFpNkcUQOAKye?=
- =?us-ascii?Q?t4KkwtC4urW1Fgr2R0KIKTbIhBPyTCZYPxiW8gm6GYlKX8VTnjlu37tpyy5d?=
- =?us-ascii?Q?GZVqWP2l+lf95oUwcp6cIatHkmesNMhkBfd6Rsn/Gj/7OnpPd9FTjUAjQRWC?=
- =?us-ascii?Q?kRtLtbhX4MYaiLFYlnIThsHwUMQizAXF3FU2zInS9wMXgmXlTzIDv/hUFIXK?=
- =?us-ascii?Q?iW4Pl6S+ojMlZdvBZqSknNHbTopLSU5XwsdKlRzCpLwfjzu6DkX6FHD4HI4f?=
- =?us-ascii?Q?/WxamxaYrNP/PW7rEMMpZz+7HiBCgV6Jqw5RnxJCSEJ/wOx2DE/TmapsYAo7?=
- =?us-ascii?Q?nJqjPOjBePvV34rjt+65zH0zyXbN48c99HFOckSSZ+tC+2YNY3HhWA/zRdVV?=
- =?us-ascii?Q?LpKQBkkUdhBOf6ipzEg2GkO7i2qC+WAmMdENO78xFEx32GckVabwwrByWiG6?=
- =?us-ascii?Q?G3nhbiFZugCXA044TMmu0J2kjWvDtE2djhSscBcu9CRIB8fF/JUvFu95pH3k?=
- =?us-ascii?Q?OQti2Y02OmprmRWodueDnYAfv8H1cshyL1Mxrl32vQvRk2CnI07ttHrvadmz?=
- =?us-ascii?Q?55UkxwpTarjulfZOjFxPlrOeKIq9opbTms6lZO6UlFZTYxmCqVPpaJlqWgs3?=
- =?us-ascii?Q?MH5Ov8oOgtSMoyruf9DRzhN3OFvFCym1AaED8MMMk9WWOFvfPU3Rcy3f5QT7?=
- =?us-ascii?Q?LNswvgeQrKpuLH1MqfphGqtOKFEtbQD3Ks8on8+pcYfKAG2+3FMushWLRJrM?=
- =?us-ascii?Q?z4dM1Ek/sqYbtlRXhwrB62WQae+A5s6YaANsYhEbEOdqDFKa8DoRPovTNZ9M?=
- =?us-ascii?Q?b/+7llVBQFFjHCcZQVQNCEoiM8j7d9w3u2rdfoJQ+KPKu0Dn6+TnxCtx1Gjv?=
- =?us-ascii?Q?epZ9qCg1KoUHs24JpJW0vDaFNos+WVfOJNgRQtS4rSoN/3eWsCYQImnfaJfE?=
- =?us-ascii?Q?uJqewvW3A1VmHXq7HSCPXzgpGmthvdmY1r0euYl6RsEoLj35YN0KcCJvsM0X?=
- =?us-ascii?Q?GXYgsSm6chJmBvvsTRt63wVqg5uQmECHyWbtAOu9f7s4orA9kRCFs7cgVgss?=
- =?us-ascii?Q?q37q1COW+6cDDW8fMI0Oh38V+U+4LS5aGi+V0jzPCgZRPksjFiUgEo5hnr4Y?=
- =?us-ascii?Q?skg3TaNTJJm7dVtgtcXw/5cS5BClU+fXFJ+tiLzOGjp9PR8OwLFeUi5Gie2w?=
- =?us-ascii?Q?zp5RH07XJHyK52doXDRww1ASwyukDiz63XexizqqSw9qRlegdD3bTHEz2CVP?=
- =?us-ascii?Q?aXr7ODLhaKjDF+GqwN7fsoQIXoLK8lmK9fLkh5LALTk0LZ7+R4Do8CKCTa+s?=
- =?us-ascii?Q?sxjx1n6yp4ITGhGPk94EhG9Y8rJ2q9gei551gF616L6JwaJ2QQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8829.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(52116014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?N/0ikFndlUY/uIAUmBRhg2pkvzkybXR/WWJtbRY6p77b1q+uiwaELEWBAcfa?=
- =?us-ascii?Q?CKK60JBJoR49wSZrcIAQWCNiQTpoSZf+uwdRtZrjBqi+i4NbU0SsFd5WYnEs?=
- =?us-ascii?Q?o4XiVV81CrBKBzONyghfnvaSzh30ze+ZFPfl1zv5FwZKI9XBax3NKOVX+JFP?=
- =?us-ascii?Q?DqHTZ7cAX8bqVMrZTvKsi7cUTd6nr2IhMNQNm96R9uk70tCP12Bqdd3+llob?=
- =?us-ascii?Q?LMRxhQZreFUBVvLMTje9hxAps7Z/izDUDDsM5kmEK8g3a0KjX72hUiSJnfw2?=
- =?us-ascii?Q?bJ+7DnXERP6gU9qX9nQVNWhrAPlwu6OW1QTFAY3xxeG5ryFw0YF8qo9xIeYv?=
- =?us-ascii?Q?cT1jQXaKWr2wOn+Ws+8tj+QrGBpk5TnYyuhMdDO/q8QEX/8WdQ8H/whzviy2?=
- =?us-ascii?Q?4p9V/65nHC9Td209dgb+7qOFrqpbZmlp5JBk2NLN6e9PL/S2HPwKxw7clUYb?=
- =?us-ascii?Q?5EWut/+dQPkoiso+53jWJKz6wC5tz8IAEWnrnSxKTkYNVXlreMACxinvZFy2?=
- =?us-ascii?Q?Y21G1njxTqO7bBYabo0gZ8L4HpoODASl3ajaG13diIkwoUup2k4siE8mzw6J?=
- =?us-ascii?Q?PLoBmVC4FVi/K8NdX4ACOPrc0Uf1ZVXdt/QvWQI/vDIgwt9YohI2hePlX6fs?=
- =?us-ascii?Q?VSTNwstLPFuL4a8RBjC/fMiWG2ZlU2cXERlRY4Pvj7grh5jJku/ZTUZ5Inc5?=
- =?us-ascii?Q?optTcJYwDpQZGU9Oz2nQXl1R8TVAtmCSvuKyur4j20NSj8XgmzSth2M66FpU?=
- =?us-ascii?Q?I7meTVuIHONlXkVhhjohL1Y3/5WgmNSEM29G/bAjIcee0wrust5WPEcQMdPp?=
- =?us-ascii?Q?zgTqZGsk5BrvP5f4d6ynyukb0ekRIAh2q3x+Cgy04yUub1rr5bzcosMpoZWA?=
- =?us-ascii?Q?gNw1scWc9NTKFnFRgf9jVNT9ge/lcp1jFVxS1VHXVKNq97cOjQq8h8wAR9z5?=
- =?us-ascii?Q?1bLRZaBHf1CLiR1mI6zrKe6wnSkzDkJgarFS2MGhTXumSm0/hWnOO1TW4Zfg?=
- =?us-ascii?Q?feUD6jGbP3l+ftYRlV19vbm8seTCy7GkxpyemEIDE8/futnW0puaycc2EgPo?=
- =?us-ascii?Q?HTSrPLwqHYEVvGXvkojW1asnoSskh8wrX7/vP1w7N6VH7UStEL4MPYikEwN0?=
- =?us-ascii?Q?JsnA+byvtKmc6Yv8hpHdyj9P3EOKL3H1UQyxWArhPhRrk4fcoWI7sN1zI9w3?=
- =?us-ascii?Q?EtOSSHAhgNDC+Dg7a8EiuBkhIAX7+WbIm3QJrxyD01KY85X6OnEvsGj7YToR?=
- =?us-ascii?Q?NqUYovhnhDmehPiFhOV34+5p5XojahTcfDGeRpRDs/bwQMMpCkGHMkSuqiA9?=
- =?us-ascii?Q?AQ8uPBkamVdMkuoYjQRcuFGIT3i+IGzaNbCf052/J8F45tejOzb4+MjH8LT1?=
- =?us-ascii?Q?BTxNSXiDFYojgii6OBkGGQFx2DG5VogkZ2bwnUxMFzXCkM140KJ3+FYo7eL2?=
- =?us-ascii?Q?/PUgstrhV1/AIszuQ6Ef0xjfXPP5qqX7qv0snP55kshGGpUjQgDFIzWO0v1j?=
- =?us-ascii?Q?pkbOFPqkvqeol7tiINkf006My+0OudB5U8+MkkYuNbAbBWBnsu5/TTxGAAxI?=
- =?us-ascii?Q?l6Zz+JHH5CbBb309FkAik2bUzcyiNIsszBJ7Rewj?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c59548e4-a790-4256-5beb-08dcb2194359
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8829.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Aug 2024 11:01:15.6697
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 0Yv1Xz81JVyIMr8caDhJ8wluf/e14j13Oe4NnjX5V34KfrLqy49wLpSQDHpS/tcboA+HGwFmzh2wC0SyVvYTDQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10171
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_040123_081093_BFC3A526 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20240801_132423_716639_8A3D490E 
+X-CRM114-Status: GOOD (  13.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,43 +99,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to fsl,imx8mq-usb-phy.yaml, this tuning parameter should be
-fsl,phy-pcs-tx-deemph-3p5db-attenuation-db.
+Hi,
 
-Fixes: c971874a89e1 ("phy: fsl-imx8mq-usb: fix tuning parameter name")
-Cc: stable@vger.kernel.org
-Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+Am Donnerstag, 1. August 2024, 13:01:36 CEST schrieb Xu Yang:
+> According to fsl,imx8mq-usb-phy.yaml, this tuning parameter should be
+> fsl,phy-pcs-tx-deemph-3p5db-attenuation-db.
+> =
 
----
-Changes in v2:
- - add fixes
----
- drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> Fixes: c971874a89e1 ("phy: fsl-imx8mq-usb: fix tuning parameter name")
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-index 0b9a59d5b8f0..adc6394626ce 100644
---- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-@@ -176,7 +176,7 @@ static void imx8m_get_phy_tuning_data(struct imx8mq_usb_phy *imx_phy)
- 		imx_phy->comp_dis_tune =
- 			phy_comp_dis_tune_from_property(imx_phy->comp_dis_tune);
- 
--	if (device_property_read_u32(dev, "fsl,pcs-tx-deemph-3p5db-attenuation-db",
-+	if (device_property_read_u32(dev, "fsl,phy-pcs-tx-deemph-3p5db-attenuation-db",
- 				     &imx_phy->pcs_tx_deemph_3p5db))
- 		imx_phy->pcs_tx_deemph_3p5db = PHY_TUNE_DEFAULT;
- 	else
--- 
-2.34.1
+Maybe you accidently selected the wrong commit here. I think this should be
+Fixes: 63c85ad0cd811 ("phy: fsl-imx8mp-usb: add support for phy tuning")
+
+Best regards,
+Alexander
+
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> =
+
+> ---
+> Changes in v2:
+>  - add fixes
+> ---
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> =
+
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/fre=
+escale/phy-fsl-imx8mq-usb.c
+> index 0b9a59d5b8f0..adc6394626ce 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -176,7 +176,7 @@ static void imx8m_get_phy_tuning_data(struct imx8mq_u=
+sb_phy *imx_phy)
+>  		imx_phy->comp_dis_tune =3D
+>  			phy_comp_dis_tune_from_property(imx_phy->comp_dis_tune);
+>  =
+
+> -	if (device_property_read_u32(dev, "fsl,pcs-tx-deemph-3p5db-attenuation-=
+db",
+> +	if (device_property_read_u32(dev, "fsl,phy-pcs-tx-deemph-3p5db-attenuat=
+ion-db",
+>  				     &imx_phy->pcs_tx_deemph_3p5db))
+>  		imx_phy->pcs_tx_deemph_3p5db =3D PHY_TUNE_DEFAULT;
+>  	else
+> =
 
 
--- 
+
+-- =
+
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
+
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
