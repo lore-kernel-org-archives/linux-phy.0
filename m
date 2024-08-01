@@ -4,76 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C673C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 08:35:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA014C3DA4A
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 09:51:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
+	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dJ0p2q7i08/jpm8Zvr17zONRw9x2cEw9AcHM7Lzu2pk=; b=rUsRHeA4kXqcn1
-	DcKa6xxvG2Y5hiUTXXMY9EQ+PJK95kvcnrWWJG6BiDCzIU3Eay+ttrIsPxV8orTRlRN8UuWyg7+iL
-	QeV5ovafQ5KZ/iK7W/sjpFeMur/opI9Cpm8l8u6jDMyhF6PkrnN5MVDLcmRddjUoz+3mm607K5HDY
-	5Aru3IwIVnhUDovGdHmHZqahGMjitGxNzkO3sPE3/PIxPAVn0iEJIXgJ6ETz+h+MGA0gocbjUVujE
-	DAI2BdxfF2SNOHhuaQH7jUbdQ89YUdOSiGNXmSPYrE2Magkf9oy22QcM3iRlU05ZyCGi4MBjpmcj8
-	BqODsZpC3gIWgffI6nYA==;
+	List-Owner; bh=e9mMxQ5PDcv6+zu9W/Aj5LEUH8UrKfO7MbfOW+xIe7M=; b=Zu2mDVXzjcIkGd
+	PWC6ve3BT9feBAVwR45nAb95FvZIQcwYypGPAj0mgl6um9zAkPBjKRxAPNz8odNC/S2g/zUm02tX7
+	ps87w1dWdlvNpXjsQ6kupqBIji6WUClY4joukzHI30URxq1VedRI0uCWkog+IyEDbAcDsZs06zpL5
+	J5Ln9Nlqlx7TNN+4ZuKFLxqXQv+ysk8HPUOln8gZbXDEuVgey7RvEcBsu34u2+eCRJiP67vbPNoAf
+	LsoOXGFy/IlMBVgZ4R00WpvhDtnp4s2u2np+u3LepsQ2evWej2ian4iE8c38VJ+7ACgkRtLI7ZLqd
+	ZUHNYsrm64dssJMdRIog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZRHw-00000004Nja-3P0P;
-	Thu, 01 Aug 2024 08:35:56 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1sZSSy-00000004eX8-2Jhe;
+	Thu, 01 Aug 2024 09:51:24 +0000
+Received: from mout.web.de ([212.227.17.12])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZRHR-00000004NbF-2DDq;
-	Thu, 01 Aug 2024 08:35:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1722501325; x=1754037325;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=e2z2XK6Q2ktr4OcaidIWXvGR/XpR94af8Q5pcDbFQ28=;
-  b=NqgI1kgUoBonbV5DdTlbnz2hngipWeGBoylbQLjj+hcgQb47p0N2ELeG
-   tchkPmMbVe4gE9szeSrFHQpQiJQmHEUhpeJMbP9jsmZXneWqodG5JCbXP
-   19X712T7Nd1j7AT5Ydvj63p7muIPPajBJ9Ppu7I44HBVblA1xZ/z0QGlZ
-   wajwDwPJHWMuJQrvVIZxUh+YBACLc3RA+B1vsgUOe6hn9r0E17ew7jXnT
-   UfIvqvky1+oXG2K/Dj72JgVyuEs4nzdBbIjXv/5Ja5m28pjweRLl+hFZF
-   vBtQ4iAFOgxYbqW6NlCu03ShCnZg1j6P/BKO9k+5WCIhbnGOtNWFjr9vM
-   A==;
-X-CSE-ConnectionGUID: tCTULouRR8iw2dDlX5uW3w==
-X-CSE-MsgGUID: wOK98NYFTW2+gIrxHtOQQQ==
-X-IronPort-AV: E=Sophos;i="6.09,254,1716242400"; 
-   d="scan'208";a="38191023"
-Received: from vmailcow01.tq-net.de ([10.150.86.48])
-  by mx1.tq-group.com with ESMTP; 01 Aug 2024 10:35:20 +0200
-X-CheckPoint: {66AB48C8-24-2D4D5AC2-F2EAEA09}
-X-MAIL-CPID: 25B8214773C672C9B011DFACE12BA7A9_3
-X-Control-Analysis: str=0001.0A782F1B.66AB48C9.002D,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E0CA01656CA;
-	Thu,  1 Aug 2024 10:35:14 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
-	s=dkim; t=1722501316;
-	h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=e2z2XK6Q2ktr4OcaidIWXvGR/XpR94af8Q5pcDbFQ28=;
-	b=SS5wm3pIEqH5lkOGgxtNTaa1Mlt7GIP/o5fFB9NN0abWohsWtg4JDhJWJPkzDNiuOHphRL
-	KGAXBoa7LcEHTRxyXhEEP0zBjwQoPBOrJG9jp3+CHiGpzWZmb3ufr8zdH6xRY27L2ov4ZA
-	2zTllFbMTz3fqv+86CppDfk/Qlvk75FC1Dm0CE+5SjbkXhGDNk6UAM0lWyzF12N9NW9F8a
-	ya4DbAWjdV1tUCRqP2utQPc3o/mtQhZosEwGxgWUFV9kR6F12le+LZdvj9WsLWZKfSQXxc
-	T3wH2lNUHmDdWJGlAo7/sRzf7w1K1W9iFz5O69LvJ0XaW4SJ9reKLerpkCE0Pg==
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: vkoul@kernel.org, kishon@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, Xu Yang <xu.yang_2@nxp.com>
-Cc: jun.li@nxp.com, xu.yang_2@nxp.com, linux-phy@lists.infradead.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: fsl-imx8mq-usb: fix tuning parameter name
-Date: Thu, 01 Aug 2024 10:35:15 +0200
-Message-ID: <5802707.GXAFRqVoOG@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <20240801065716.3819399-1-xu.yang_2@nxp.com>
-References: <20240801065716.3819399-1-xu.yang_2@nxp.com>
+	id 1sZSSU-00000004eP9-0ZDC;
+	Thu, 01 Aug 2024 09:50:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1722505850; x=1723110650; i=markus.elfring@web.de;
+	bh=EFFvQxWL9UNPrZdUueU7uIPciWCNAv23KL3vjaoAAf4=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
+	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 cc:content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=aTAXlb+VTk8ZdINVugmOnqa27Adn01TFqCyDyWKJ+OtVvTTteYJ1OPU0pzIZFx2+
+	 P2zqneB5xL54ueDlDc83gQWJk/IStBH4uSnHw8LjmJ+Qo9Yj05r2RwlCpsB0QlBdu
+	 qyruFfHmX/EcNDjy3O1OG3U+73qc30p+SFuKNuxphAbN/4d5oguBqPcP2pAHWcVDu
+	 AnIRLRnnUdjBONwXmN3NduacPB1s9sA8XwJk03nCgQPFme+N5/rGB04yjLklArX1k
+	 jVQXRRaYYkTISA0n4xdAw7efCBrB85kFTsCrjTrbFlXL0ZNWs/uxeKJqeul3qGudt
+	 AD3cdzH1+7/fic6/iA==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.88.95]) by smtp.web.de (mrweb106
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 1M6HK6-1sbdFC2gxs-006BAr; Thu, 01
+ Aug 2024 11:50:50 +0200
+Message-ID: <9cca717a-c7e9-4bf7-8cde-3a90fcfb1df5@web.de>
+Date: Thu, 1 Aug 2024 11:50:48 +0200
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
+User-Agent: Mozilla Thunderbird
+To: Hui-Ping Chen <hpchen0nvt@gmail.com>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Conor Dooley <conor+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>
+Cc: LKML <linux-kernel@vger.kernel.org>
+References: <20240801053744.807884-3-hpchen0nvt@gmail.com>
+Subject: Re: [PATCH v3 2/2] phy: nuvoton: add new driver for the Nuvoton MA35
+ SoC USB 2.0 PHY
+Content-Language: en-GB
+From: Markus Elfring <Markus.Elfring@web.de>
+In-Reply-To: <20240801053744.807884-3-hpchen0nvt@gmail.com>
+X-Provags-ID: V03:K1:NL4YA0BqmCCKVmCStnA88TsGOKJr0NvMWCWg9dMsDE+euFc6uye
+ Vwb/9EDvPhIZfs2jFv7kQRlziw8MpwPLagO/rEfeZ+9UqYs9uROp0Q8piUyDc2f5cvBcOr6
+ oGM8ElBBQZTcVL9AvIIaq60dPxOkmjq4Kjur74wKP8gNr44F4zy8oCTvRpbfbCXjcFYS48y
+ m27ZMjf8TqlLatBS+NSrg==
+UI-OutboundReport: notjunk:1;M01:P0:0kpx8SitMVQ=;MY7MjGHQ2O0KQx0HM5VwKw19C52
+ BqICda3DxB9yEOhGRif8D1Js4d3DXe2/cZgiy/8MlzVdgPOgXBbBD13bC3O5cXWCl5eX+/pQz
+ z4lVUtXJrrxDGBPWe7xAXOdZ3Q1myOWxPss+pOXMhOP22Q5xyyEg+n5armDq+7QheW0L7QF9h
+ qH48z85a+QKPSCabyRbkOZkmlsLDOZpyN4ZToaApCwN66YSka3X8WHk9qc9nsfMPtbmYvDw88
+ ESQ/1HSAl/LY5uhXZimEGbvDzzjqd6To2HS6AUerwDCQ2nOFMwVGBkeOy/fASl3+3EZKrH2Oo
+ ssgXnRkJb7r8VIvq1xKW4y6v1GYJTsWop/t+BtjbEJ/Okx9fuClPU3uzNDWNKLG1vBldteTAZ
+ xxoPjdse0s82czOx6KmsZjB12fnte3xggnhum6H5+1yvUkLB0mYBWI11UCfqrhFuIb4XNHIgm
+ qoyutw95ncdRYu2t71q/2UVeyaZhooMQ2a8DTDjzMLxpZcADdH5UPQFaSME1V+pFKAgJZla0O
+ QvdgoPh1nQZIs7h2fyrpP6Rm82jE8Q0AgPrT5XqmFdOwFcfO3TbsnNYJT2338etivGQqjhJcE
+ eDg4ypcEfdNUTgnGMHWLpvSzgCQKKPL4hHoe7qTOrUfp5JC31eK7LuHprwCNHOMCH5ge1Bphf
+ PrzOP3B5S2KFyWoyp7SyBO44DwirtkSMHYALgiKhbrOyDdO7+MmgwsYz+6rlh8QQmkx0uBaQH
+ vkm5GQegyM8719ncMBzYhRur7MLx9G0QDceDJ4t3rQ4YGurn5HP43mvsryqpbCrAG/GVLK5pw
+ /k7NrgtUScs0b/2iV2obGepQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_013525_891503_9816D608 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20240801_025054_563418_59D1344F 
+X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,59 +92,15 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Donnerstag, 1. August 2024, 08:57:16 CEST schrieb Xu Yang:
-> According to fsl,imx8mq-usb-phy.yaml, this tuning parameter should be
-> fsl,phy-pcs-tx-deemph-3p5db-attenuation-db.
-
-Should this include a Fixes tag?
-
-Best regards,
-Alexander
-
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> ---
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> =
-
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/fre=
-escale/phy-fsl-imx8mq-usb.c
-> index 0b9a59d5b8f0..adc6394626ce 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -176,7 +176,7 @@ static void imx8m_get_phy_tuning_data(struct imx8mq_u=
-sb_phy *imx_phy)
->  		imx_phy->comp_dis_tune =3D
->  			phy_comp_dis_tune_from_property(imx_phy->comp_dis_tune);
->  =
-
-> -	if (device_property_read_u32(dev, "fsl,pcs-tx-deemph-3p5db-attenuation-=
-db",
-> +	if (device_property_read_u32(dev, "fsl,phy-pcs-tx-deemph-3p5db-attenuat=
-ion-db",
->  				     &imx_phy->pcs_tx_deemph_3p5db))
->  		imx_phy->pcs_tx_deemph_3p5db =3D PHY_TUNE_DEFAULT;
->  	else
-> =
-
-
-
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
-
-
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+4oCmCj4gKysrIGIvZHJpdmVycy9waHkvbnV2b3Rvbi9waHktbWEzNWQxLXVzYjIuYwo+IEBAIC0w
+LDAgKzEsMTQ2IEBACuKApgo+ICtNT0RVTEVfREVTQ1JJUFRJT04oIk51dm90b24gbWEzNWQxIFVT
+QjIuMCBQSFkgZHJpdmVyIik7Cj4gK01PRFVMRV9BVVRIT1IoImhwY2hlbjBudnRAZ21haWwuY29t
+Iik7CuKApgoKSG93IGRvIHlvdSB0aGluayBhYm91dCB0byBhZGQgYSBwZXJzb25hbCBuYW1lIHRv
+IHN1Y2ggYW4gZW1haWwgYWRkcmVzcz8KClJlZ2FyZHMsCk1hcmt1cwoKLS0gCmxpbnV4LXBoeSBt
+YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
