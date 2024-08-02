@@ -4,81 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E991C3DA64
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Aug 2024 19:27:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2A5BC52D70
+	for <linux-phy@archiver.kernel.org>; Fri,  2 Aug 2024 04:57:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yHYlXiwjpcfXHfBJQZYRijL+rBDKU/ZimD/Pk7jRjAU=; b=TQTj2vyAtqRYaX
-	Ucyoww9yWe46fnzCgpN6LOC0vVkRf/zhB76geCX189gfOcYznAt/d/NIXnfwOCui/lwiGKmqRerFF
-	AYOYosz6jMJR3vIXtdsJao9gGqJsdar9hRMtUB1L3i7SM6znf88z0Bq4py0DgXM+bTkRIaEKHmvvz
-	+OSHTcmtJ3eLLaH+I3TY6ZvKvqPC5//AUpCBQMPmKeQTsX1NeYbGsxcnNyB/0oAEgJ5ZsShv0rP6K
-	I/+E+m4RU4nfi6MQekFEHpeGVo9mHbp8VbYY1+8/Xx5Z0LylEv/4ZQpWdDzVN8o+XZ/7qILuWAEGx
-	88/CIdboawZePK60snfw==;
+	List-Owner; bh=KfW/DRDjkFvsAeqpUmjIbbYN68w1EN8j7n3+ZiDGQqw=; b=AaUY/WDD1VdHRh
+	kp46MOW86xQ74bOR5PT/XWKqxIoJj9nmlN5K667g2m01aFtrgCrYtn+6GgqKr/d30j2yVzcvdHk9h
+	3kuxQjGqHrFmcZJmk4Gw4jkbZpUgtK5rEjP6tWcqwCh6OiMRQUyjVhkeaXAvCujENy1vlojhc7qR7
+	xNvFtlTu8BTpLv0wUXN244zD6t5++Ea+assuL3MK2GfkAd3Els4foQzgDy120NHGoTC+ZTT3bGP9h
+	lkQnXdzZI9WrvFolH0MAIxOEXPhAFuCag6ws0E2SHu/OlNvKklE0Xtsw0p1ivXFdWB7Ph98J88RDb
+	RHjr2hO46R2a5AmE9swA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZbSD-00000006XhD-3UFW;
-	Thu, 01 Aug 2024 19:27:13 +0000
-Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
+	id 1sZkMO-00000007dbY-0K7U;
+	Fri, 02 Aug 2024 04:57:48 +0000
+Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZbSA-00000006XgI-3xtj
-	for linux-phy@lists.infradead.org;
-	Thu, 01 Aug 2024 19:27:12 +0000
-Received: by mail-lj1-x22f.google.com with SMTP id 38308e7fff4ca-2f029e9c9cfso111528031fa.2
-        for <linux-phy@lists.infradead.org>; Thu, 01 Aug 2024 12:27:10 -0700 (PDT)
+	id 1sZkML-00000007dav-1dYd;
+	Fri, 02 Aug 2024 04:57:46 +0000
+Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-1fda7fa60a9so70600325ad.3;
+        Thu, 01 Aug 2024 21:57:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1722540429; x=1723145229; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=xDiQzKV7V2fFU3bp2HZ8kCtvzTR2/LI8LX+WVgvxAC8=;
-        b=gPEthRGpRZGiRKNk0mfGB2OIP9gpmHW8RRTNrTZw3dJUp6pFC3D+tmVN++nNVxzl1F
-         +xLOCR6Xq2m04PMpm1ooyiVQfp4jz1uE0gYkbDLwoAmAc2AfM+lI397UEuZ5xB0+Ddxz
-         dfk+AHnGbtrpI+c1E3lEyhLVnKjW8nqNYOHlswg8JFdL2XqGweGHcBvjF8lXh1BmUbd3
-         GJrmws2bTN61iVzLN5UXOJWrBohdYDeZ3l9g1NyamimxTdcvujrGqPHoXdzrZeKgq7tb
-         3UFQw6us9Q9l5383Umuz8wsZ8svit7eMv7qdoDiqC7A2BALubOjbFX/fZ+mLpPNmwBGq
-         PjqQ==
+        d=gmail.com; s=20230601; t=1722574664; x=1723179464; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ClY1xWctajAODs8lW27Ly344sHCaHVC1TvyMi1aPCGo=;
+        b=RTXVNgLmO7KgomkH3YSmKoOGMhs+lfkBSLVPV0JzXimw+GCPU0OCj4fkgaN5fkMYCr
+         1ONztn7coZTcAPqdjRo5JgaYTLQuVw0zN0YR5Id3RMSYbsiwmk7gPdYhWjvoFGQFQFt0
+         6zY59bBb0Wr+WeQwKTSabFnrQrBg1Os+PvGAICTbkKvFZxF7hRS9esfu4WmCZJwtWxuz
+         oLJKkWOqHkDQBu+e+ZWTj2QPIl+fOEpxJmkj+i7lFOggtN8/hJZBVLXG9jKNxzTwdH5T
+         oxwccPfDslKlvXkeOmBuVZDYdCndDt6lC+K0uBdzZf+f7UL6/Ex6kW2SD6nm+4jSwy7y
+         CZnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722540429; x=1723145229;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=xDiQzKV7V2fFU3bp2HZ8kCtvzTR2/LI8LX+WVgvxAC8=;
-        b=Jz24NJXFIGhrQTKf5XRxRugIJNSx9IEhZ3kYjKX7Q/6KRU5uH233igzX/WLCfCHzlH
-         77YmXiqzm2zVrwuN+itf/nSmL00GvSWsV9zPcUfuiILXFo9+3YEAPGGvn20/cGcUwiYa
-         gG6c0MJWYazuAFRvPdr8Yttx+DISPMC/0tT4OGDlWLBsDS/g95e0Ejh6i3ehnPfNHW0f
-         V2YOeORcw8tk5zE2Q+jT02T1n0H2mV7j4hQH5IT0fGIonFjj1x2E8j/WwK4+5cLszlo2
-         cC3hGXkFms7UJxduq6EHpV0oESyVYVO1k89TmANsVwUbhQpfMxVq+Ajk1vwFhS8oclG3
-         SohA==
-X-Forwarded-Encrypted: i=1; AJvYcCUEVRlQ+iyq8tGuiAbr6U9vhY4zO3DwxZrctAqqwfI19ZI4v9n5a4oA+LZefR2eFisKaN+r1LxPZsqseWfcpTgqyprbBthSAYClkOMfRA==
-X-Gm-Message-State: AOJu0YynufQ8aJU2Wd3O3s4/Znh0f2VAeQkYfmNFd/rvDUITG4Ee6YEN
-	szEO9RvLidq+jZ8pQ8JqyQTVmW/EvzKea4IyTxEAazs11lcUfGxF54gr6JQoKY0=
-X-Google-Smtp-Source: AGHT+IHKqGnemhTJWJyNS+fY4snJ4ynvhZOVxkj5ompO665PXfS0Z2yTSf0YbR0e5lrQvkeMNSvYGA==
-X-Received: by 2002:a2e:b70a:0:b0:2f1:561e:c329 with SMTP id 38308e7fff4ca-2f15aac4fb2mr11233151fa.26.1722540428301;
-        Thu, 01 Aug 2024 12:27:08 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (dzdbxzyyyyyyyyyyybrhy-3.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2f15c45062csm301111fa.109.2024.08.01.12.27.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 01 Aug 2024 12:27:07 -0700 (PDT)
-Date: Thu, 1 Aug 2024 22:27:06 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Johan Hovold <johan+linaro@kernel.org>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Qiang Yu <quic_qianyu@quicinc.com>
-Subject: Re: [PATCH v2] phy: qcom: qmp-pcie: Configure all tables on port B
- PHY
-Message-ID: <37id2c7h33sj7p3vlo3tiv35qta7utee6aswieyy2b64get4bk@eqjjakr743fx>
-References: <20240801-phy-qcom-qmp-pcie-write-all-tbls-second-port-v2-1-6e53c701e87e@linaro.org>
+        d=1e100.net; s=20230601; t=1722574664; x=1723179464;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ClY1xWctajAODs8lW27Ly344sHCaHVC1TvyMi1aPCGo=;
+        b=PEmRg2p7w5ezQ/9ISlw/oJjE5KFv2BS5t6ZJzw6csCCP0hAkgOFb4OtCHpoBcQa5Ym
+         H8PKuTzECRt80z+X7dF5IepGHLE2x8IoaEIs/b1igT++Jt1Wvb4qjp79KCgizjairLlf
+         fKMzLmdYFWIsIwImMMi5j31RqYwVBWp2ER1LcdyhSRnrI/EQUur8HBexoAlsplIXwKGr
+         N3Y+16aZFOyue60+OCFWEZc7xX5Iw+ofCgY7m/9gS8zROBpDxP1NzGV7nhzxcLQqfPuo
+         PQQrdbsT6+5WHU5TRFXdY5HjVYHGtd+LLi8eiKKOpBJjWvEEcASiGDC6LKPd8tCwMBNn
+         AerQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVRQslDsNFq+RuvXJjp9I6S7f0ZzTc6PfyV0QxmyApKiZ/PwDU81bvbqKeqMxl88UD04787SMfYMv4qAWKiJhOzTCRkYP77MC69d1LFdr3b8iyASihlpsi0C3iz3xy14OrISk+63vsomP6W/Dvv/iJGQwQ/
+X-Gm-Message-State: AOJu0YxTP9jkMRYEVXINpUo3O0/xYGWtvPPJOEJ/u8OKZv2z0qS8bPUn
+	TbHW7kK9Dj1qbhorGuQZJyMJYTxMd3h2GWsaF7irQsMtKEKkQyB7
+X-Google-Smtp-Source: AGHT+IEjndBPKaZuFvBDvzeVo6OJ/KzRcDEKZqlPbxKQyH6/Win1FbAdn+/HKpH/YQEFBQ/srVIw1g==
+X-Received: by 2002:a17:903:1d1:b0:1fd:9fd8:1b2f with SMTP id d9443c01a7336-1ff57250e14mr35322045ad.8.1722574663706;
+        Thu, 01 Aug 2024 21:57:43 -0700 (PDT)
+Received: from [172.19.1.53] (60-250-192-107.hinet-ip.hinet.net. [60.250.192.107])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-1ff58f52a2dsm7973495ad.65.2024.08.01.21.57.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 01 Aug 2024 21:57:43 -0700 (PDT)
+Message-ID: <d1e08364-8f87-4282-9392-31db3330eae9@gmail.com>
+Date: Fri, 2 Aug 2024 12:57:40 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240801-phy-qcom-qmp-pcie-write-all-tbls-second-port-v2-1-6e53c701e87e@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 2/2] phy: nuvoton: add new driver for the Nuvoton MA35
+ SoC USB 2.0 PHY
+To: Markus Elfring <Markus.Elfring@web.de>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Conor Dooley <conor+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>
+Cc: LKML <linux-kernel@vger.kernel.org>
+References: <20240801053744.807884-3-hpchen0nvt@gmail.com>
+ <9cca717a-c7e9-4bf7-8cde-3a90fcfb1df5@web.de>
+Content-Language: en-US
+From: Hui-Ping Chen <hpchen0nvt@gmail.com>
+In-Reply-To: <9cca717a-c7e9-4bf7-8cde-3a90fcfb1df5@web.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240801_122711_008949_EA636BF5 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20240801_215745_473658_ED10F60C 
+X-CRM114-Status: GOOD (  11.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,38 +94,19 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 01, 2024 at 06:54:53PM GMT, Abel Vesa wrote:
-> From: Qiang Yu <quic_qianyu@quicinc.com>
-> 
-> Currently, only the RX and TX tables are written to the second PHY
-> (port B) when the 4-lanes mode is configured, but according to Qualcomm
-> internal documentation, the pcs, pcs_misc, serdes and ln_shrd tables need
-> to be written as well.
-> 
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
-> Changes in v2:
-> - Reordered tables as Johan has suggested
-> - Link to v1: https://lore.kernel.org/r/20240726-phy-qcom-qmp-pcie-write-all-tbls-second-port-v1-1-751b9ee01184@linaro.org
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 14 +++++++++++++-
->  1 file changed, 13 insertions(+), 1 deletion(-)
-> 
-
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RGVhciBNYXJrdXMsCgpUaGFuayB5b3UgZm9yIHlvdXIgcmVwbHkuCgoKCk9uIDIwMjQvOC8xIOS4
+i+WNiCAwNTo1MCwgTWFya3VzIEVsZnJpbmcgd3JvdGU6Cj4g4oCmCj4+ICsrKyBiL2RyaXZlcnMv
+cGh5L251dm90b24vcGh5LW1hMzVkMS11c2IyLmMKPj4gQEAgLTAsMCArMSwxNDYgQEAKPiDigKYK
+Pj4gK01PRFVMRV9ERVNDUklQVElPTigiTnV2b3RvbiBtYTM1ZDEgVVNCMi4wIFBIWSBkcml2ZXIi
+KTsKPj4gK01PRFVMRV9BVVRIT1IoImhwY2hlbjBudnRAZ21haWwuY29tIik7Cj4g4oCmCj4KPiBI
+b3cgZG8geW91IHRoaW5rIGFib3V0IHRvIGFkZCBhIHBlcnNvbmFsIG5hbWUgdG8gc3VjaCBhbiBl
+bWFpbCBhZGRyZXNzPwoKSSdtIHNvcnJ5LiBJIGZvcmdvdCB0byBwdXQgbXkgbmFtZSBoZXJlLiBJ
+J2xsIG1ha2UgaXQgdXAuCgoKPiBSZWdhcmRzLAo+IE1hcmt1cwoKCkJlc3QgcmVnYXJkcywKCkh1
+aS1QaW5nIENoZW4KCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
