@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33306C3DA7F
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 22:00:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21F97C3DA64
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 22:00:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nAeAoyaE0qxnVoL7u5tSJQ50nV2ahi9MfBZWHju/pG0=; b=y9srxn+LRlua+5
-	RMRu8G2I7C564Xd8XW6XFa3ZfLBmYEIfVEgM4gxW7jZ5DPeQwdMo3Oa1QI3ktXz0Y1AWOJV+uCZU1
-	Xjj/BByKs9hvw1DkDoqXy+eCw+24YCgSPguQCuSurxHqUjPbKxqUfnocj38hT6BB0ugxQswHLy5Js
-	oEBf31ow2uTuzeGxdPEp1saDp3PUNsR20omR/ibErcMkXNzz8sZkVZVDYLxMuezVx4lKYsFcsoenw
-	9ragtS6SN95eR4JkPWCZYQBhwuUw8qPpwPeZEGjTPSdvPOS1dGViAUjh5ats7dnV2qw8BU8vJ86Ri
-	4l5DAoPU8UXYHYQyzBEg==;
+	List-Owner; bh=5G+LsmPUw6FM85AqZOZnrIUDwLBGOsbWtTRBdicHbK8=; b=PWI1/b44mvkADk
+	99NVhhguz/8K0M9YyAvgJn5Sn5Z+ZQUBT4lqLnMkYn68ia40yn9qqBGQ32LYv3dkZm4gWbWC7qN5e
+	C1ZMxYzINKkD8dX6HIEulc73pRy1PSr0T2eUKGG1/wacV7jwgYedwmiwYtgRlteLFm2/RY6kBjOEi
+	faYoTxVl061iDpQONMr98nEZ8sOu8mqkWLnl3L4Bq/t/T9uL3t/tGKs7csz+qKScW+SO7ldSLomUv
+	WG5x77T/lk2Lp9H+a35KvgRcJLhq3NZwQ9uucYUcoNcG7RYrA26mn1+rsRmkZgwtHH1d88r64dV/a
+	5GBxs2NyhWhM7iH/cPAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sajGo-0000000E0sA-3mFY;
-	Sun, 04 Aug 2024 22:00:06 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1sajHH-0000000E0xE-2LUo;
+	Sun, 04 Aug 2024 22:00:35 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sajCm-0000000DzUM-3kt4;
-	Sun, 04 Aug 2024 21:55:58 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-52f0277daa5so15446901e87.0;
-        Sun, 04 Aug 2024 14:55:56 -0700 (PDT)
+	id 1sajCr-0000000DzWO-30D7;
+	Sun, 04 Aug 2024 21:56:03 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-36bcc168cdaso1360911f8f.0;
+        Sun, 04 Aug 2024 14:56:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1722808554; x=1723413354; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1722808560; x=1723413360; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=2mrhFPOA10bN9OR7jponwlQQntJxF13+NNdEHk1/zbE=;
-        b=XCHkgUNPqol2DlaOnGr2SFjngFCkSeBFhWeY4wqRL3yhiwp6e0f6Z7u8Aj5nYkhRc6
-         RTRWWAbJ+uOnW0mkNnzLLZNzeOkKVgV4cxEFmHTQMte+yM/txvTsV1f6dmIX1/f84a9q
-         mheVIsRWc5z6rGRkHuVDgBJexOHXx3i2H8zly41y4/HREViM5QlTgiKoOEtx/zgAX+m8
-         mv0LmjtvtXd2XyvN6/lNRSE2tonpiyU3tRGILstq+3DBgzL2nVPx1YWl3QRvcLPvIcPJ
-         DV8x18vPb1RORo70ZWLtfhLiYlwR9rTEJE+hDyxja8Z8dI+le2fU6v40AaexKn4unVsd
-         rq6w==
+        bh=d4k5kEk4WdJ7BTyBcpyDwtCLf6kDcGSB5mtdTxdCNTM=;
+        b=KgKGYuEolKPqsm+kenI8CC0Mtg2ptHcHDv04cQ8GRkWfReBkA/UVwEcyJZXRXthtoZ
+         LFfhXg2vh+QSKIL2dGwGKzvQmxHgDMnt9NY1Qa16CP4G/OvIJOEdXi5kRKm9nipjwill
+         GAXkOo62PdFgRLQb9byulosl3+VnBPgjJLU6zPpwhR9O28OKi/nEwnIZNvbJIeujb5aF
+         T2IpKVjqlYObUxa8RVNvtvNSABUr682t0qu3BDrIXjClqKq2MgSUuQkFGQ6SHM8zazGS
+         NeawFqwNQcxXDSfi9jJG4iA9V4Sk4NUaCsBpYcbSvsIqgr1VEmYlc8tXUh6fiAHduurs
+         dFFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722808554; x=1723413354;
+        d=1e100.net; s=20230601; t=1722808560; x=1723413360;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=2mrhFPOA10bN9OR7jponwlQQntJxF13+NNdEHk1/zbE=;
-        b=f/hM8/6RI/m4Ylnlx63BoLgktaYIw36c7+1ITfi7kjZX6RTT1IgOzmf6J2NZsldbje
-         qZiTrC1NowG7/QrLvDY05qmItLorOJGGaJuoAyz8u8cngLfczS3PxqSWm6QdbG8aGcO8
-         B3coS3J2QA8LA1BTzkrupNvIhfVUEDRx8V7BoSCgLSmxI4BPEhGVAaUNodiARI06e31T
-         U1fLWkHsADBL+T2zUqRuHsX0ao1QU5f73tTbu2y56yvaT7X4N3oRLzBPUeQmcFPnhdeR
-         Xr3wr+Y9tQGT3oa1oV2SiHA9Yu1WMA9iaCQw3NZbwL14oZuMwIQVUSLFY/rKzPw7W/ck
-         dByQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUNmH+Qls2PexzNZcHjgq7iyyIuU1HbJXBQJNM7ZvbHK3VWNjw4L39W2xYSCSOP+RkyI7FeglVAz5pwBLRKN3cUGKb3IBY96yzYnaHiICdH9OmTO3o=
-X-Gm-Message-State: AOJu0Ywns5nNYmzjSq0I7PGax7UPF9mO63AhMRHNJSQh6AQg7jzS0MO+
-	mAPwkJrcqRCDQmrFcOD+eW4hvVqfrP+SjFWDuHx1or0eQXB9DTyV1pW6PFLT
-X-Google-Smtp-Source: AGHT+IEGWbiEQg/exi1Z48CX1tnMKkyEbNXIAJdnBvBNQOjhcm8r0tNUiJsfxT1egdx0cOSk4VH1ug==
-X-Received: by 2002:a05:6512:3f27:b0:52e:faf0:410 with SMTP id 2adb3069b0e04-530bb366727mr6856914e87.1.1722808554282;
-        Sun, 04 Aug 2024 14:55:54 -0700 (PDT)
+        bh=d4k5kEk4WdJ7BTyBcpyDwtCLf6kDcGSB5mtdTxdCNTM=;
+        b=rWiZ/8EeGA6p3zg7kdeXr/WWT0GtYKdw4Nsk1NPDCh67dyExSd5V2jRdiTZGirvdkL
+         oI7uEL7pHbCZS7jpdyEca5fVWGop6VA5s3Z01nQksZEEmxQagb9tJB1xp6vl3vOqyPP5
+         jNajUjrpe1vTKRRcOVKMT9iEZ9OjgtyL9dJdiO+t3aCa4R+wRdzUd4DVQJU8mhQKOQVn
+         s5Jv4BvIwLbb0NIGnCRUf3vhCw/ZdbkeuCT9EQB252zBFy/AhPlwH5OYrqY2QC5rveNL
+         pQjkOI/N+JQVEY0fV0HEHPbbzLbkY5mVelzQqrMOarwY+t4LEbCpM8q3BOHE4fLXC7rk
+         p3FA==
+X-Forwarded-Encrypted: i=1; AJvYcCWV5i0GmYETMV8bc17AV66XH9hUApIU0bjeGMOK+dx2QQ6ktAAu+66TMp49Dap0Wxasq61HtpHIAoCJwTuGrud7erQDLm4gn1zTjGCvQT2Fre/Vh+k=
+X-Gm-Message-State: AOJu0YwkBqu81INB5pnc33JOpwrBeGGcyUjdA4knqhWOD0LGcriBKUdv
+	T6tCl6ptA+mi/kKtZqBa8WxjRCBTFvtcKruKLXslq4RCMSAkBnIA
+X-Google-Smtp-Source: AGHT+IGf9W8CS+wMJJjKQCCJ+OVnp7SviYwepgVgg4+3B6dPNlrnF9LQx7EcXysSlGhIi1PQyxQyOw==
+X-Received: by 2002:adf:f2ce:0:b0:368:3ef7:3929 with SMTP id ffacd0b85a97d-36bbc0ff3b8mr8121645f8f.22.1722808559625;
+        Sun, 04 Aug 2024 14:55:59 -0700 (PDT)
 Received: from localhost.localdomain ([2a02:ab88:3711:c80:e7a7:e025:f1a5:ef78])
-        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-a7dc9d45452sm370485066b.111.2024.08.04.14.55.53
+        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-a7dc9d45452sm370485066b.111.2024.08.04.14.55.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 04 Aug 2024 14:55:53 -0700 (PDT)
+        Sun, 04 Aug 2024 14:55:59 -0700 (PDT)
 From: David Virag <virag.david003@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -75,8 +75,8 @@ To: Vinod Koul <vkoul@kernel.org>,
 	Michael Turquette <mturquette@baylibre.com>,
 	Stephen Boyd <sboyd@kernel.org>,
 	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
 	Peter Griffin <peter.griffin@linaro.org>,
+	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
 	Sam Protsenko <semen.protsenko@linaro.org>,
 	David Virag <virag.david003@gmail.com>,
 	Marek Szyprowski <m.szyprowski@samsung.com>
@@ -87,16 +87,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	linux-clk@vger.kernel.org
-Subject: [PATCH 10/13] usb: dwc3: exynos: Add support for Exynos7885
-Date: Sun,  4 Aug 2024 23:53:55 +0200
-Message-ID: <20240804215458.404085-11-virag.david003@gmail.com>
+Subject: [PATCH 11/13] phy: exynos5-usbdrd: support Exynos7885 USB PHY
+Date: Sun,  4 Aug 2024 23:53:56 +0200
+Message-ID: <20240804215458.404085-12-virag.david003@gmail.com>
 X-Mailer: git-send-email 2.46.0
 In-Reply-To: <20240804215458.404085-1-virag.david003@gmail.com>
 References: <20240804215458.404085-1-virag.david003@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_145556_956335_DD7D4CE1 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20240804_145601_862634_216E6626 
+X-CRM114-Status: GOOD (  15.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,28 +113,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add Exynos7885 compatible string. As 7885 has the same clocks as 850, it
-can reuse the data for Exynos850.
+The Exynos7885 SoC has an Exynos USB PHY that theoretically supports
+USB3 SuperSpeed, but all known devices using it only have USB2 and the
+vendor driver has USB3 function stubbed out, so we'll only support USB2.
+
+Apart from this mysterius USB3 capability, it's the closest to Exynos850
+out of those supported. Unlike other SoCs though, this one doesn't set
+the reference clock by default, so we have to set it manually.
+For this, create a set_ref_clk_rate property in drvdata that can be set
+to a predefined value to set the clockrate to.
 
 Signed-off-by: David Virag <virag.david003@gmail.com>
 ---
- drivers/usb/dwc3/dwc3-exynos.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/phy/samsung/phy-exynos5-usbdrd.c    | 21 +++++++++++++++++++++
+ include/linux/soc/samsung/exynos-regs-pmu.h |  3 +++
+ 2 files changed, 24 insertions(+)
 
-diff --git a/drivers/usb/dwc3/dwc3-exynos.c b/drivers/usb/dwc3/dwc3-exynos.c
-index 9a6e988d165a..5cd4dc2e0a67 100644
---- a/drivers/usb/dwc3/dwc3-exynos.c
-+++ b/drivers/usb/dwc3/dwc3-exynos.c
-@@ -185,6 +185,9 @@ static const struct of_device_id exynos_dwc3_match[] = {
+diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+index df52b78a120b..466c72d8a93c 100644
+--- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
++++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+@@ -367,6 +367,7 @@ struct exynos5_usbdrd_phy_drvdata {
+ 	int n_clks;
+ 	const char * const *core_clk_names;
+ 	int n_core_clks;
++	u32 set_ref_clk_rate;
+ 	const char * const *regulator_names;
+ 	int n_regulators;
+ 	u32 pmu_offset_usbdrd0_phy;
+@@ -1361,6 +1362,10 @@ static int exynos5_usbdrd_phy_clk_handle(struct exynos5_usbdrd_phy *phy_drd)
+ 		return dev_err_probe(phy_drd->dev, -ENODEV,
+ 				     "failed to find phy reference clock\n");
+ 
++	/* Exynos7885 SoC has reference clock unset by default */
++	if (phy_drd->drv_data->set_ref_clk_rate)
++		clk_set_rate(ref_clk, phy_drd->drv_data->set_ref_clk_rate);
++
+ 	ref_rate = clk_get_rate(ref_clk);
+ 	ret = exynos5_rate_to_clk(ref_rate, &phy_drd->extrefclk);
+ 	if (ret)
+@@ -1460,6 +1465,19 @@ static const struct exynos5_usbdrd_phy_drvdata exynos7_usbdrd_phy = {
+ 	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
+ };
+ 
++static const struct exynos5_usbdrd_phy_drvdata exynos7885_usbdrd_phy = {
++	.phy_cfg                = phy_cfg_exynos850,
++	.phy_ops                = &exynos850_usbdrd_phy_ops,
++	.pmu_offset_usbdrd0_phy = EXYNOS7885_PHY_CTRL_USB20,
++	.clk_names		= exynos5_clk_names,
++	.n_clks			= ARRAY_SIZE(exynos5_clk_names),
++	.core_clk_names		= exynos5_core_clk_names,
++	.n_core_clks		= ARRAY_SIZE(exynos5_core_clk_names),
++	.regulator_names	= exynos5_regulator_names,
++	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
++	.set_ref_clk_rate       = 50 * MHZ,
++};
++
+ static const struct exynos5_usbdrd_phy_drvdata exynos850_usbdrd_phy = {
+ 	.phy_cfg		= phy_cfg_exynos850,
+ 	.phy_ops		= &exynos850_usbdrd_phy_ops,
+@@ -1663,6 +1681,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
  	}, {
- 		.compatible = "samsung,exynos7-dwusb3",
- 		.data = &exynos7_drvdata,
+ 		.compatible = "samsung,exynos7-usbdrd-phy",
+ 		.data = &exynos7_usbdrd_phy
 +	}, {
-+		.compatible = "samsung,exynos7885-dwusb3",
-+		.data = &exynos850_drvdata,
++		.compatible = "samsung,exynos7885-usbdrd-phy",
++		.data = &exynos7885_usbdrd_phy
  	}, {
- 		.compatible = "samsung,exynos850-dwusb3",
- 		.data = &exynos850_drvdata,
+ 		.compatible = "samsung,exynos850-usbdrd-phy",
+ 		.data = &exynos850_usbdrd_phy
+diff --git a/include/linux/soc/samsung/exynos-regs-pmu.h b/include/linux/soc/samsung/exynos-regs-pmu.h
+index ce1a3790d6fb..04ef93625eab 100644
+--- a/include/linux/soc/samsung/exynos-regs-pmu.h
++++ b/include/linux/soc/samsung/exynos-regs-pmu.h
+@@ -657,6 +657,9 @@
+ #define EXYNOS5433_PAD_RETENTION_UFS_OPTION			(0x3268)
+ #define EXYNOS5433_PAD_RETENTION_FSYSGENIO_OPTION		(0x32A8)
+ 
++/* For Exynos7885 */
++#define EXYNOS7885_PHY_CTRL_USB20				(0x674)
++
+ /* For Tensor GS101 */
+ #define GS101_SYSIP_DAT0					(0x810)
+ #define GS101_SYSTEM_CONFIGURATION				(0x3A00)
 -- 
 2.46.0
 
