@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFF43C3DA64
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 22:01:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68EC0C3DA64
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 22:01:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M7KzH99Cn48/3TrZZGY6biiHK8G1o/0Elg81c032dcM=; b=cdSNYXEVqhluh6
-	OJh+QaHtMjCBvEYmsQcxKa/JYXm1HYZYlZK5tycdM1RhZ6vRUaZQcsz+KHL3pZb+qnwpqi4gd4I+P
-	oV3pwaCYtn+Ab4ENeJV40HPeACn8vt3LSnksk001c6IRC2/38u2V9LfdylkJWKeGyAkQsY89s/ez3
-	alaSIIsob/9NUSO2OAshvnz1josRw8U3Nq6kUacllZYJn085srhbKNZke5QqQNGTjUJjlsGakW1iJ
-	BPQTWs35iei13kxQrvbmvp3r6TUASY2bS9LCEFrmQYuRubTmUBTQRz69gGB+acF1to6njkSoo/XH2
-	03y5hhMk1fwu/hcdV7nQ==;
+	List-Owner; bh=VjdYwxBSnalxB4DhTDfHI8zbcvwPIVIf7PeBSatAjLA=; b=Z4uTdlOcZ4xJiz
+	6qeCnDUqydeBQGaAZ/6BxbaQqeWuQQvDn9Z8WuTeYG71OTosRj+VgC4lXyvxH5tnrEbV0GObr0tB9
+	AgcP1yXe8MaXwvEa8BdPOC7OLTH7os2ojL5dXufBCnu3yafZzfgNLxO8m/9saBjAZydXpC85Y6KVN
+	3kpTASsX+4UPHmLcnWDfo65dIDk3QUnTi47gX9lOOwMa538FnVQMbOX7P5IoWQ1L25DA2K9x1JstC
+	N8aVldGFS5CuAiOVZUzPUUVTm0qcHfcTSiF2JU44dcAxA0oe4Cank2zboSzpE8Ulv6/GSmMdvu0Ri
+	kRms8GA/YV1NSz8/Etag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sajHo-0000000E13x-25Em;
-	Sun, 04 Aug 2024 22:01:08 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	id 1sajIH-0000000E1AB-0WRe;
+	Sun, 04 Aug 2024 22:01:37 +0000
+Received: from mail-ed1-x536.google.com ([2a00:1450:4864:20::536])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sajCw-0000000DzYb-1pfo;
-	Sun, 04 Aug 2024 21:56:07 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-5a79df5af51so8572229a12.0;
-        Sun, 04 Aug 2024 14:56:06 -0700 (PDT)
+	id 1sajD2-0000000DzaV-0yFk;
+	Sun, 04 Aug 2024 21:56:13 +0000
+Received: by mail-ed1-x536.google.com with SMTP id 4fb4d7f45d1cf-5a1337cfbb5so15113139a12.3;
+        Sun, 04 Aug 2024 14:56:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1722808565; x=1723413365; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1722808570; x=1723413370; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=6nXQrtmAREhYSbuVOCkvwjMA8tJJtTb76+fEkB0V/M0=;
-        b=IzL5N+UP+WTdk1jsxLOj6baSI9PKuHfWGqdZhcCjvYGoNi9PrGk9tjs8V6owZ5g5yS
-         sICAr77GFD5XfjQ/evqAcWvu/0flzmfCEdKPreQcv8lcAT82oDGR6lA8wSo/2UM43AqS
-         j2MJp2r70vBJ6j7dweqpnKsnLQj7/xjXpKimpZ7Q4ZxxieHaAjyezr/GIglrClDB/yLq
-         5YixQNCMzfE+ch+MhnZi14qY1AMEmUr65dmj8wN0lpWYbufvpcNt/epZ4CpNMDYcf+Vd
-         IHDyWhYhfT6QNd70tnSeoFOuLCb4/xVFeIvv5FeLElCX2u2+Ik+fVoYrl8YfqA1CU6rp
-         hD3w==
+        bh=2+/p7MgZYWM5kh+9ECMA6cWE3o9ZU9hqg6eDjlHC2ns=;
+        b=NQ9/ut7N15C4zPpAezfiUmjpBYQqFOB5TzFEJsVD4hFcpFmpV4eznixhno5E7x7XBv
+         KF5GKmoYl8eos2KxsE1/CLAScaBTdGfZFUJ96tOnasAl0fslKoY9Ewbtvoqt/Pyy/hMJ
+         xlN8W6Hk1vMlHjSyDrz4VkNktiP7UPiqZzB5rrLlhjjrHjNK9WrhvROJFQDjde71RIVj
+         EwXr87WIQ68CUajIUUQD487puVGmR6ZZplXq1J5HcD3vF5YqwBg/W8dg4jxlUMPnmhF2
+         Ln16sUVUNT0PgUR3nVRHeFims0gFvtm0lZufy5HyHtDF29bV49npV6VsjSFrlMP1+zFs
+         d35A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722808565; x=1723413365;
+        d=1e100.net; s=20230601; t=1722808570; x=1723413370;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=6nXQrtmAREhYSbuVOCkvwjMA8tJJtTb76+fEkB0V/M0=;
-        b=kzxP51JClf5gwcY6Bi0vuoZ7UNfo4NxJc7YUQtG5jXSwxZuH9Vj7DXJPc3GWJQQtJG
-         q0p8YOqVEbU4VntA4bGdIblBTmhnpbx6zmI8FotdYqFrFIQNnsHlShRBhy1RsJyCBoIt
-         VXsoon5JOcjc/oChCYp4R1zC66u5BMhbhr/QcJSSG8KN7wp4zZM92Do8lvY9FIhMlYLJ
-         evWCjC1uyvST4WzcgfsFZPj34iqa8h0trlFM8wVFE13p16gW8Hns75ZbyRnhNXyjBApr
-         Jp2RDTwCrGaEX/V+T5smS9ttb8c9rPuLDIoOfYlQpjC6dpSxfiTMRLISGECPIlKxBFTz
-         cfOQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUrzzlknFEHUK7dIMIR7dcKBXbY+mWWwW0KfcZjBeiX0XS9R5hAbAo+qQnyJkUIXPr61yUX6eW4WyURamrPGAOC/1fApq0hMIzRxItEn1aoBn8lQtQ=
-X-Gm-Message-State: AOJu0Yw+ninF5ahBw3ciDYNoCr2thA49yM0XPk4YdvDvPmnJ4P8kvJUc
-	k1L9P9wp1p0+HQQjtdzWuGXI+JrHsheB/IjH2zt3ZQ4DWCRWB8Ey
-X-Google-Smtp-Source: AGHT+IFLMViVMBNiStXLwb5mhAcR5sCxw4ogfYSqyoao7B0+bdKb5RDnNdmEhxeKRJdypvs3epTq+Q==
-X-Received: by 2002:a17:907:5c7:b0:a72:7b17:5d68 with SMTP id a640c23a62f3a-a7dc5f6b5a0mr763569566b.3.1722808564860;
-        Sun, 04 Aug 2024 14:56:04 -0700 (PDT)
+        bh=2+/p7MgZYWM5kh+9ECMA6cWE3o9ZU9hqg6eDjlHC2ns=;
+        b=v3GXDTMeXvacGk3fdCkrrwWTV4CSywaxYgLYp8LQv4tZJGg364C+2faxs+X/Qnsx81
+         DbEmC8PVp17jUjZNxudW0ZK3Fxv8LScCi6cgiZohDPXmuLEFRHgXsK5VU+hFOdvfytIU
+         g/0L3nvG1bxTmFN3qV4tn/e3w2y7hnFkwZlwto3bsnrBr/THnffDFi8MGaYETaAPr1QS
+         wRtoaPGXH22oygiBjVWVFuC5bTvL6zjpJhGs8m/xAyU8EP/yBNn9zvhzhuoxplfeuegc
+         ERExvYfuoAoX+YCW15L+BNhJQb9uVxCSpTrr4q/V03JsVDk6OHuTDg8CXvKV+rcKm8C7
+         7AmA==
+X-Forwarded-Encrypted: i=1; AJvYcCVTFJkx69FPkvTljRcQjNcdWfFeNrDSJ0XFHwUDkFezfK9FrPiJvJx5tOJhPVK+1kBEN9Vr9DOiJokyoOxraf1BFrKOUIWorraOj/MIA5reFr3rtuo=
+X-Gm-Message-State: AOJu0YxsbIkMew+05NWM1bNyO8AoEVdLQsExMX+Bzl3qRHtrqQcYS12M
+	FJspwI9fNB2xl0a1Te1pECidQRuHSqaiNOxESKTPsUDqRNtCe61Y
+X-Google-Smtp-Source: AGHT+IH8zoNedZrAXYOj7WYBa3ZkPcxPBBxBMYkykvUuk74jILXSIRAvBgxRPdz930MQzYMKOYCdgA==
+X-Received: by 2002:a17:907:3f13:b0:a77:cc6f:e791 with SMTP id a640c23a62f3a-a7dc4ff1addmr811525166b.38.1722808570071;
+        Sun, 04 Aug 2024 14:56:10 -0700 (PDT)
 Received: from localhost.localdomain ([2a02:ab88:3711:c80:e7a7:e025:f1a5:ef78])
-        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-a7dc9d45452sm370485066b.111.2024.08.04.14.56.03
+        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-a7dc9d45452sm370485066b.111.2024.08.04.14.56.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 04 Aug 2024 14:56:04 -0700 (PDT)
+        Sun, 04 Aug 2024 14:56:09 -0700 (PDT)
 From: David Virag <virag.david003@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -75,8 +75,8 @@ To: Vinod Koul <vkoul@kernel.org>,
 	Michael Turquette <mturquette@baylibre.com>,
 	Stephen Boyd <sboyd@kernel.org>,
 	Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
-	Peter Griffin <peter.griffin@linaro.org>,
 	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
+	Peter Griffin <peter.griffin@linaro.org>,
 	Sam Protsenko <semen.protsenko@linaro.org>,
 	David Virag <virag.david003@gmail.com>,
 	Marek Szyprowski <m.szyprowski@samsung.com>
@@ -87,16 +87,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	linux-clk@vger.kernel.org
-Subject: [PATCH 12/13] arm64: dts: exynos: Enable USB in Exynos7885
-Date: Sun,  4 Aug 2024 23:53:57 +0200
-Message-ID: <20240804215458.404085-13-virag.david003@gmail.com>
+Subject: [PATCH 13/13] arm64: dts: exynos: exynos7885-jackpotlte: Enable USB support
+Date: Sun,  4 Aug 2024 23:53:58 +0200
+Message-ID: <20240804215458.404085-14-virag.david003@gmail.com>
 X-Mailer: git-send-email 2.46.0
 In-Reply-To: <20240804215458.404085-1-virag.david003@gmail.com>
 References: <20240804215458.404085-1-virag.david003@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_145606_498519_25B449A3 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20240804_145612_296287_8520C4C8 
+X-CRM114-Status: GOOD (  14.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,66 +113,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB controller and USB PHY controller nodes to Exynos7885 SoC DTSI
+The Samsung Galaxy A8 (2018) has an USB-C port capable of USB 2.0
+speeds, used both as host and device, and is used for charging the
+phone.
 
-The SoC theoretically supports USB3 SuperSpeed, but is not implemented
-in any known device. The vendor kernel also stubs out USB3 functions, so
-we do not support it.
-
-It is though, perfectly capable of USB 2.0 high-speed mode, both as host
-and device.
+The physical port is directly connected to an S2MU004 IC, but until we
+have support for it, we can still use the USB device funtionality.
 
 Signed-off-by: David Virag <virag.david003@gmail.com>
 ---
- arch/arm64/boot/dts/exynos/exynos7885.dtsi | 35 ++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
+ .../boot/dts/exynos/exynos7885-jackpotlte.dts | 20 +++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/exynos/exynos7885.dtsi b/arch/arm64/boot/dts/exynos/exynos7885.dtsi
-index 008228fb319a..1352c64d132e 100644
---- a/arch/arm64/boot/dts/exynos/exynos7885.dtsi
-+++ b/arch/arm64/boot/dts/exynos/exynos7885.dtsi
-@@ -463,6 +463,41 @@ i2c_7: i2c@11cd0000 {
- 			clock-names = "i2c";
- 			status = "disabled";
+diff --git a/arch/arm64/boot/dts/exynos/exynos7885-jackpotlte.dts b/arch/arm64/boot/dts/exynos/exynos7885-jackpotlte.dts
+index 47a389d9ff7d..c1902d2f57cf 100644
+--- a/arch/arm64/boot/dts/exynos/exynos7885-jackpotlte.dts
++++ b/arch/arm64/boot/dts/exynos/exynos7885-jackpotlte.dts
+@@ -59,6 +59,12 @@ power-key {
+ 			wakeup-source;
  		};
-+
-+		usbdrd: usb@13600000 {
-+			compatible = "samsung,exynos7885-dwusb3";
-+			ranges = <0x0 0x13600000 0x10000>;
-+			clocks = <&cmu_fsys CLK_FSYS_USB30DRD_BUS_CLK_EARLY>,
-+				 <&cmu_fsys CLK_FSYS_USB30DRD_REF_CLK>;
-+			clock-names = "bus_early", "ref";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			status = "disabled";
-+
-+			usbdrd_dwc3: usb@0 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0x10000>;
-+				interrupts = <GIC_SPI 135 IRQ_TYPE_LEVEL_HIGH>;
-+				phys = <&usbdrd_phy 0>;
-+				phy-names = "usb2-phy";
-+				/*
-+				 * SoC in theory supports SS but no device has it.
-+				 * Actual capabilities unknown.
-+				 */
-+				maximum-speed = "high-speed";
-+			};
-+		};
-+
-+		usbdrd_phy: phy@135d0000 {
-+			compatible = "samsung,exynos7885-usbdrd-phy";
-+			reg = <0x135d0000 0x100>;
-+			clocks = <&cmu_fsys CLK_FSYS_USB30DRD_ACLK_20PHYCTRL>,
-+				 <&cmu_fsys CLK_FSYS_USB20PHY_CLKCORE>;
-+			clock-names = "phy", "ref";
-+			samsung,pmu-syscon = <&pmu_system_controller>;
-+			#phy-cells = <1>;
-+			status = "disabled";
-+		};
  	};
++
++	/* TODO: Remove this once PMIC is implemented  */
++	reg_dummy: regulator-0 {
++		compatible = "regulator-fixed";
++		regulator-name = "dummy_reg";
++	};
  };
  
+ &mmc_0 {
+@@ -111,3 +117,17 @@ key_power: key-power-pins {
+ &serial_2 {
+ 	status = "okay";
+ };
++
++&usbdrd {
++	status = "okay";
++	vdd10-supply = <&reg_dummy>;
++	vdd33-supply = <&reg_dummy>;
++};
++
++&usbdrd_dwc3 {
++	dr_mode = "peripheral"; /* Force to peripheral until we have Type-C working */
++};
++
++&usbdrd_phy {
++	status = "okay";
++};
 -- 
 2.46.0
 
