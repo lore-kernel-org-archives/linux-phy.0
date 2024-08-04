@@ -4,109 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AAA5C3DA64
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 14:17:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EE4AC3DA7F
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 16:36:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5GTffuYTof9+UyXAjIFrSpny1yeZh8JomK+sg9qu9Jc=; b=bPLOohjNHMAKLO
-	OJIG9btlYnMwD2enWFuIUbepbNuNIoLLzQoofzsgB3gK09+2LZMft7Yzfh9omVJN4sQpvMIDCiq0G
-	VWYMQIiJ8yal5Rj+cUHu0J9Lsz6XABU7izTzIMA7kSesgcNEqeFRSju9fh68+KnTC+dCppGsL5fEi
-	o1M1XtWA9KAXkgUulQ5KirR9RqnamkS6utGiuxcHg326GHjADCk+BB+7DMIO82w2iP4gi4QeXhYkm
-	uvIdizM3xKu8zxi/Egw24HMbU7nF6pTnZ0Ist6MP1gU8ydUJ84xtEiiRynVs7/zF7nNrRVYAdrAgs
-	CwPjUOc9BJfHTMzyROHw==;
+	List-Owner; bh=SyK2kgQKM+e5fFz2RpNzMoK2D+bbIj3xltSeZS94XWE=; b=XTJZMcexBtdQJn
+	wCHhJFT5Kv42aEyR4X1W4UJ/H7Npjxo9kLV/uUx1KkfrKQF+gZAnR7Eavwz7EA1p03LmzGghBpQ3s
+	1WlRJOQMzaTg6usIKrV1UXYeflo/Zem7m+ZqLTIT7M7eg/8JDDt5xE5Evq5MD3Q3UfvC12e+ovlQZ
+	Zhx7N7Z5MUR9t2m8Bh4PWxJFzigih+gp4tvv7uFJTLPdTQMLNNVeq4Zm3CTikdL3j9TI805O/aaF+
+	JGRFdLOnnP9Bo3ZmLiZDMQUGXXJlmdZQ6FLnktCt3HsrZyUqzdr5rI2se7DgnxaIezwnqOjQgQeQA
+	VYLN3ZtnjJqZ9FI+DLwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sac3S-0000000DPFR-44AH;
-	Sun, 04 Aug 2024 14:17:51 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1saeDV-0000000Daey-1Kcn;
+	Sun, 04 Aug 2024 16:36:21 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sac2w-0000000DPAZ-43X4;
-	Sun, 04 Aug 2024 14:17:20 +0000
+	id 1saeDS-0000000DaeR-06G7
+	for linux-phy@lists.infradead.org;
+	Sun, 04 Aug 2024 16:36:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5565460686;
-	Sun,  4 Aug 2024 14:17:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 395ABC32786;
-	Sun,  4 Aug 2024 14:17:10 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3B04360A7C;
+	Sun,  4 Aug 2024 16:36:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 54233C32786;
+	Sun,  4 Aug 2024 16:36:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722781038;
-	bh=5L15IZLezpo71+FrtTDwECzrZ/wJ7q95MB/hD53PSDI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=G6p0KwNr080Q1JRpIazlx9cqz7LAZ+zQV17Lx8jzTrfjxVO6e1x/Qo7Hblx6zQjKs
-	 0TAdJcHA4Rq3TldPoEYgnU6xLzK9WaVl/B/oIS6OFuXyw6fFpzzsnaz+El+uTQcYex
-	 WA7eR3WfsO76u4+yKM3Ipw6Cg5pUsL1D/pey0gDV+UhAsUz0/C+RbHhSNqHG/hA85y
-	 D9FmgmmeZMMq4q/3e443h8srzLb0Or8VhfcJobLKg6AY+eVb6umfIX/WBec2bsEhvW
-	 dqQ48BSiDE40VuvDZhxhn8nOA/i0Fj0F+hakT8XYELAD2x4PGviFfusNjkNWpLy9+N
-	 v+dJsUxr4W+Cw==
-Message-ID: <a7ba4577-40e8-46d5-bde2-442e7100dc9b@kernel.org>
-Date: Sun, 4 Aug 2024 16:17:08 +0200
+	s=k20201202; t=1722789375;
+	bh=fr/EQ9N9Nwyvf1xzY2thmnfz7MjDZQZepdI1/6C2z0M=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Dr4jxv8Dl/KILm9hJhBkA7xWEyI5yNKmMgQI6gDhXFSecxDkL3iMqOfEIXqvKk69u
+	 kBc4NfNIedd5mCIp6q8sz+P+KNC+jOGAZ0yZMrXsKoBJZjSmOopA0/VuBx0NkTx7UC
+	 Bs6+kYI++x2K5mroIrIhV1bNrR/8q5BL4QPpQQM25VPTEoYjQl5lmwDPfho0XB38fp
+	 WZRw3Ga+dcikCRvsHJam0mPRYtdmWb3Wm6O3u1aRKwmeu6+H39Bf6JqbMJgc8Xn6k0
+	 O1euC8g+LbXufjaIfbABLXybiOJ/8ilzQygj0EgU0JeEdrAcktu4r1/k0wJ9tqY6bl
+	 jlsFglFbvDTLA==
+Date: Sun, 4 Aug 2024 22:06:11 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, Qiang Yu <quic_qianyu@quicinc.com>
+Subject: Re: [PATCH v2] phy: qcom: qmp-pcie: Configure all tables on port B
+ PHY
+Message-ID: <Zq-t-1jfSg3RmLKW@matsya>
+References: <20240801-phy-qcom-qmp-pcie-write-all-tbls-second-port-v2-1-6e53c701e87e@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/5] dt-bindings: usb: dwc3-imx8mp: add compatible string
- for imx95
-To: Xu Yang <xu.yang_2@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, gregkh@linuxfoundation.org, Frank.Li@nxp.com,
- jun.li@nxp.com, l.stach@pengutronix.de, aford173@gmail.com,
- hongxing.zhu@nxp.com, alexander.stein@ew.tq-group.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org
-References: <20240802091702.2057294-1-xu.yang_2@nxp.com>
- <20240802091702.2057294-2-xu.yang_2@nxp.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240802091702.2057294-2-xu.yang_2@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20240801-phy-qcom-qmp-pcie-write-all-tbls-second-port-v2-1-6e53c701e87e@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_071719_130823_630B22DB 
-X-CRM114-Status: UNSURE (   5.46  )
+X-CRM114-CacheID: sfid-20240804_093618_151931_CCCAF77C 
+X-CRM114-Status: UNSURE (   6.65  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -124,19 +77,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/08/2024 11:16, Xu Yang wrote:
-> The i.MX95 is compatible with i.MX8MP's usb controller. This will add a
-> compatible string "fsl,imx95-dwc3" for i.MX95.
+On 01-08-24, 18:54, Abel Vesa wrote:
+> From: Qiang Yu <quic_qianyu@quicinc.com>
 > 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> ---
+> Currently, only the RX and TX tables are written to the second PHY
+> (port B) when the 4-lanes mode is configured, but according to Qualcomm
+> internal documentation, the pcs, pcs_misc, serdes and ln_shrd tables need
+> to be written as well.
 
+Sorry this does not apply on phy/next please rebase and resend
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
-Best regards,
-Krzysztof
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
