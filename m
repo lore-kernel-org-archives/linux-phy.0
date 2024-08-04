@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6338C3DA7F
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 16:39:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C66EC3DA7F
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 17:10:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NMkMxMnid/YDP/5ejrNSZdvDaF0xuflupULrC+mVyqs=; b=G9BQ30oXcDUhm4
-	oxNQgOe6cWv1CrlDUjMcTwJey/I1C22WpF4Lx8Qp89JCJHJ80n9HvXPhNXu1hAkbLBOO1Yq+19lqn
-	oy2FHc9bvbeWtwZK84UKDTMhXOUnXDvJ0F+HYCJNeZIOJTvDuprgsg31sK0b7P+yTiebO1ehK5xEH
-	vFH9yg7SVDHFXS5kDqmt/0zWS87jKfn0Q16LsUllx2GPBxTnAp/23m5VqaoQO5P1onVqWVarMQy63
-	CozbNWO8hSoeYdbG+tlSVHR+aA9fe+PMId4x9yEuNgl2UJHh4hyC1K7wR1GUnYvU8KlAig1D+PKGH
-	qBnVWhWZJD+tFOfFz/QA==;
+	List-Owner; bh=P55o0dbyPwAS2VPklHcsjAFdBrWu+Ok9BreG8ADQhHs=; b=48fF/D5wSDJHjf
+	Ysapa+wiLBIQcBpbBpTfK952lV4oVagc6VktUC/7jq0GVjItJUoEPgbU2l+RN66u9vXiaUJGvEI12
+	tylJQsHuBp5iFaxnMIJkMDS1dVT7r38aTK50e6B4ev2fZUbu3CjDDzlr+fwmDTDgfXeQXxvq2RDrZ
+	57x1I4dYUiFXtDlTOn85q7TNiLUQ0KGjEKxHS7pLo817gHRv3w9pJr3HwrQzqxdEy6ScHJ2sjKMQL
+	E9tTX0tEx3sTVAzqyBMvrNbQiLleMESHFnaGsJ333M+cuKJRjx0eXHuUtbqEyQlA2bbhSWxp9lOC1
+	06MqIPvyVlm+Hp4A0z9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saeGN-0000000Db6L-12p3;
-	Sun, 04 Aug 2024 16:39:19 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1saeke-0000000DdE2-3u84;
+	Sun, 04 Aug 2024 17:10:36 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saeGJ-0000000Db4z-3vYq
-	for linux-phy@lists.infradead.org;
-	Sun, 04 Aug 2024 16:39:17 +0000
+	id 1saek9-0000000Dd9h-0lXT;
+	Sun, 04 Aug 2024 17:10:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 28211CE028A;
-	Sun,  4 Aug 2024 16:39:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9F0EBC32786;
-	Sun,  4 Aug 2024 16:39:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 770D160ADE;
+	Sun,  4 Aug 2024 17:10:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6C833C32786;
+	Sun,  4 Aug 2024 17:10:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722789553;
-	bh=Hciw+IuSyLRYcNUz6qzbx45v8AyWImZRJsAyy0O3TqA=;
+	s=k20201202; t=1722791404;
+	bh=Qoe2GLfyjnH5NIkm5TFRsZ//1kF1br9F+560psv26Xw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RFaw/sNwksusBrHEIeqkxpEnPTdge5Y8zuNsjNcwK7ipNuHMva9X8Xe3Oo+CZbokC
-	 r6x8KVjeLwzQyvAdObmIOSpGndDiHgoyYiDYOMhgIa9vaoye81JBVRvVTmXaCRsbHN
-	 Qzzn0Izp4cMm1LXxacWHG5JVbUaQacPAmtHxglV6QeU6GUMDdKMzlYmjzB5AXU1NNP
-	 Va5Y3rJv1VV60/0qZBOUWOnEC5gVGbsKFLUJqxhq1KWZjP04eVnhbycxrtIfpzNenD
-	 zj+OiuFmg9+4VrdGeqXfFhFArj76/CtXRj0779ctSaWf4pfs1jzjOqFLc0ySoS9rAr
-	 dA/O+IERNT/NA==
-Date: Sun, 4 Aug 2024 22:09:09 +0530
+	b=d2eZt3ovf1xtNnptv5RwmsyhUkWmyi7j8mQq063GxsJYGgraakhNdwvn5cm5l6Y1N
+	 87YquAhqL6BO6hKATi/FsbByfzC+siMm1LNI/e9dzgTxXFZUb/as4xXd0fEaGtkmuJ
+	 quuWQWKnpxPue7ic4B2u5mRRAbPitlnJr95W/BLQVR2WCUMSzlsXwe+JIL/SPFm1C7
+	 pZA8bq9bpuk7pw+SzHQz6Eu7dsOiTxJP1DtWpopHgsDAH+CecLgIsWphGDWJm7lFOh
+	 3uTZQ/gIDU190LseusFb+r/fwR9DulYeE1ua8pPMfaIcNH2b932UaGbBYusWpoq61g
+	 9sSyk3bpCF9bA==
+Date: Sun, 4 Aug 2024 22:39:59 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: kishon@kernel.org, linux-arm-msm@vger.kernel.org,
+To: Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: kishon@kernel.org, p.zabel@pengutronix.de, sjakhade@cadence.com,
+	rogerq@kernel.org, thomas.richard@bootlin.com,
+	theo.lebrun@bootlin.com, robh@kernel.org,
 	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	dmitry.baryshkov@linaro.org
-Subject: Re: [PATCH v3] phy: qcom: qmp: Add debug prints for register writes
-Message-ID: <Zq-ura3oYbhb8C9a@matsya>
-References: <20240731152548.102987-1-manivannan.sadhasivam@linaro.org>
- <172249532035.256913.2685367794999812971.b4-ty@kernel.org>
- <20240801070026.GB3705@thinkpad>
+	linux-arm-kernel@lists.infradead.org, srk@ti.com
+Subject: Re: [PATCH v3] phy: cadence-torrent: add support for three or more
+ links using 2 protocols
+Message-ID: <Zq-15_enK919eUg_@matsya>
+References: <20240716102442.1605280-1-s-vadapalli@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240801070026.GB3705@thinkpad>
+In-Reply-To: <20240716102442.1605280-1-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_093916_234554_E6D5F57A 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240804_101005_302620_52481645 
+X-CRM114-Status: GOOD (  10.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,31 +75,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 01-08-24, 12:30, Manivannan Sadhasivam wrote:
-> On Thu, Aug 01, 2024 at 12:25:20PM +0530, Vinod Koul wrote:
-> > 
-> > On Wed, 31 Jul 2024 20:55:48 +0530, Manivannan Sadhasivam wrote:
-> > > These register prints are useful to validate the init sequence against the
-> > > Qcom internal documentation and also to share with the Qcom hw engineers to
-> > > debug issues related to PHY.
-> > > 
-> > > Sample debug prints:
-> > > 
-> > > qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_SYSCLK_EN_SEL Offset: 0x0094 Val: 0xd9
-> > > qcom-qmp-pcie-phy 1c0e000.phy: Writing Reg: QSERDES_V5_COM_HSCLK_SEL Offset: 0x0158 Val: 0x11
-> > > 
-> > > [...]
-> > 
-> > Applied, thanks!
-> > 
-> > [1/1] phy: qcom: qmp: Add debug prints for register writes
-> >       commit: 4e92d504475ea5841716ad775f412342520a3d26
-> > 
+On 16-07-24, 15:54, Siddharth Vadapalli wrote:
+> The Torrent SERDES can support at most two different protocols (PHY types).
+> This only mandates that the device-tree sub-nodes used to represent the
+> configuration should describe links with at-most two different protocols.
 > 
-> Thanks! Bjorn spotted that it is worth making 'char *name' a const. Can you
-> please ammend the commit?
+> The existing implementation however imposes an artificial constraint that
+> allows only two links (device-tree sub-nodes). As long as at-most two
+> protocols are chosen, using more than two links to describe them in an
+> alternating configuration is still a valid configuration of the Torrent
+> SERDES.
+> 
+> A 3-Link 2-Protocol configuration of the 4-Lane SERDES can be:
+> Lane 0 => Protocol 1 => Link 1
+> Lane 1 => Protocol 1 => Link 1
+> Lane 2 => Protocol 2 => Link 2
+> Lane 3 => Protocol 1 => Link 3
+> 
+> A 4-Link 2-Protocol configuration of the 4-Lane SERDES can be:
+> Lane 0 => Protocol 1 => Link 1
+> Lane 1 => Protocol 2 => Link 2
+> Lane 2 => Protocol 1 => Link 3
+> Lane 3 => Protocol 2 => Link 4
+> 
+> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+> ---
+> 
+> Hello,
+> 
+> This patch is based on linux-next tagged next-20240715.
 
-Send a patch please, I dont like to rebase
+Sorry this does not apply for me on phy/next, can you rebase..?
 
 -- 
 ~Vinod
