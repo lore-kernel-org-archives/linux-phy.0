@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C3DCC3DA7F
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 14:17:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AAA5C3DA64
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 14:17:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QErv0SauURUttkK62vyNLzUsOuswwZDM1ikHQ/BP2VQ=; b=HP8r/vBtCGYxZO
-	1v1ZSERtH2bAUUteQ2vEm0uoyXzObnE/ttVD+R42zX3M9lqYSmffxJ6jzl4jQKSh9XhpGVYmYM7oj
-	bUmqGRz4wlXfU38MHAAt4wmys3WjQ8BKAsqPb38rAEZ+ekLff5+wIbJauA4qOgyNRtADXA3RAOm+i
-	sNDR5IDmyHngUKb/Q3aVcvIGGa9q9jJEOBX0j0xrHlRJ6nr9GBuu5MUxrg7r3vFi9siJR3NhyHsnI
-	AJxAs1wV57iXLrkpg1qJkdmGjk+vk3qbo0RGkSRqGBoPRBin2ChYtn/Nlc7xfMTn8UK9U30mMcM2o
-	wGdSnvHfJ+achtjy+92w==;
+	List-Owner; bh=5GTffuYTof9+UyXAjIFrSpny1yeZh8JomK+sg9qu9Jc=; b=bPLOohjNHMAKLO
+	OJIG9btlYnMwD2enWFuIUbepbNuNIoLLzQoofzsgB3gK09+2LZMft7Yzfh9omVJN4sQpvMIDCiq0G
+	VWYMQIiJ8yal5Rj+cUHu0J9Lsz6XABU7izTzIMA7kSesgcNEqeFRSju9fh68+KnTC+dCppGsL5fEi
+	o1M1XtWA9KAXkgUulQ5KirR9RqnamkS6utGiuxcHg326GHjADCk+BB+7DMIO82w2iP4gi4QeXhYkm
+	uvIdizM3xKu8zxi/Egw24HMbU7nF6pTnZ0Ist6MP1gU8ydUJ84xtEiiRynVs7/zF7nNrRVYAdrAgs
+	CwPjUOc9BJfHTMzyROHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sac2v-0000000DPA2-0POf;
-	Sun, 04 Aug 2024 14:17:17 +0000
+	id 1sac3S-0000000DPFR-44AH;
+	Sun, 04 Aug 2024 14:17:51 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sac2O-0000000DP7D-2sDj;
-	Sun, 04 Aug 2024 14:16:46 +0000
+	id 1sac2w-0000000DPAZ-43X4;
+	Sun, 04 Aug 2024 14:17:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D5EE060AB4;
-	Sun,  4 Aug 2024 14:16:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96E6FC32786;
-	Sun,  4 Aug 2024 14:16:36 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 5565460686;
+	Sun,  4 Aug 2024 14:17:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 395ABC32786;
+	Sun,  4 Aug 2024 14:17:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722781003;
-	bh=+yrDRlrOYDFtWrAPd7APp27cogwl15HKJx4AENWPh9U=;
+	s=k20201202; t=1722781038;
+	bh=5L15IZLezpo71+FrtTDwECzrZ/wJ7q95MB/hD53PSDI=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=CqtjtW/fYJtZKbWrdXYbDbVDA70a1eRNhXn3bCZSu6bEO1KOlT0aXmBq5pfX/aRQp
-	 hQxJnUaLu9fzFY506j5P0ZDrv6VKIX52OeKXrmW+x7i/bMXg2el2i1AnXBRgPjKGNn
-	 pjQWAuZZrYrXzUk73aJLDbbilYHoYKq+WjdRUJIK9pGcLC1Kox61a4Q2Z3BfiPNw54
-	 1iFbAx+OMD2rFTWVsyzWDoQiJ/22tmAX19hk0gorvKq2O77KB6mjhEIklw+VTLyO4o
-	 zN2+ygG9auqOwS37118DfQE3axh68aIRRjmOcGmdkhQkQdYhi1L7ixmnAyhQPu78RU
-	 pM3OwpylLRbmA==
-Message-ID: <21557eac-44f0-451d-a194-c5d545cacbee@kernel.org>
-Date: Sun, 4 Aug 2024 16:16:34 +0200
+	b=G6p0KwNr080Q1JRpIazlx9cqz7LAZ+zQV17Lx8jzTrfjxVO6e1x/Qo7Hblx6zQjKs
+	 0TAdJcHA4Rq3TldPoEYgnU6xLzK9WaVl/B/oIS6OFuXyw6fFpzzsnaz+El+uTQcYex
+	 WA7eR3WfsO76u4+yKM3Ipw6Cg5pUsL1D/pey0gDV+UhAsUz0/C+RbHhSNqHG/hA85y
+	 D9FmgmmeZMMq4q/3e443h8srzLb0Or8VhfcJobLKg6AY+eVb6umfIX/WBec2bsEhvW
+	 dqQ48BSiDE40VuvDZhxhn8nOA/i0Fj0F+hakT8XYELAD2x4PGviFfusNjkNWpLy9+N
+	 v+dJsUxr4W+Cw==
+Message-ID: <a7ba4577-40e8-46d5-bde2-442e7100dc9b@kernel.org>
+Date: Sun, 4 Aug 2024 16:17:08 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/5] dt-bindings: phy: imx8mq-usb: add compatible
- "fsl,imx95-usb-phy"
+Subject: Re: [PATCH 2/5] dt-bindings: usb: dwc3-imx8mp: add compatible string
+ for imx95
 To: Xu Yang <xu.yang_2@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
  robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
@@ -57,6 +57,7 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
  linux-usb@vger.kernel.org
 References: <20240802091702.2057294-1-xu.yang_2@nxp.com>
+ <20240802091702.2057294-2-xu.yang_2@nxp.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,10 +103,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240802091702.2057294-1-xu.yang_2@nxp.com>
+In-Reply-To: <20240802091702.2057294-2-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_071644_854255_D74EA2FE 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20240804_071719_130823_630B22DB 
+X-CRM114-Status: UNSURE (   5.46  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,86 +125,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 02/08/2024 11:16, Xu Yang wrote:
-> The usb phy in i.MX95 is compatible with i.MX8MP's, this will add a
-> compatible "fsl,imx95-usb-phy" for i.MX95. Also change reg maxItems
-> to 2 since i.MX95 needs another regmap to control Type-C Assist (TCA)
-> block. Since i.MX95 usb phy is able to switch SS lanes, this will also
-> add orientation-switch and port property to the file.
+> The i.MX95 is compatible with i.MX8MP's usb controller. This will add a
+> compatible string "fsl,imx95-dwc3" for i.MX95.
 > 
 > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 > ---
->  .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 40 +++++++++++++++++--
->  1 file changed, 36 insertions(+), 4 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> index dc3a3f709fea..b0a614a9556d 100644
-> --- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> @@ -11,12 +11,17 @@ maintainers:
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - fsl,imx8mq-usb-phy
-> -      - fsl,imx8mp-usb-phy
-> +    oneOf:
-> +      - enum:
-> +          - fsl,imx8mq-usb-phy
-> +          - fsl,imx8mp-usb-phy
-> +      - items:
-> +          - const: fsl,imx95-usb-phy
-> +          - const: fsl,imx8mp-usb-phy
->  
->    reg:
-> -    maxItems: 1
-> +    minItems: 1
-> +    maxItems: 2
->  
->    "#phy-cells":
->      const: 0
-> @@ -28,6 +33,17 @@ properties:
->      items:
->        - const: phy
->  
-> +  orientation-switch:
-> +    description:
-> +      Flag the PHY as possible handler of USB Type-C orientation switching
-
-No need to duplicate definitions of properties.
-
-> +    type: boolean
-> +
-> +  port:
-> +    $ref: /schemas/graph.yaml#/properties/port
-> +    description:
-> +      A port node to link the PHY to a TypeC controller for the purpose of
-> +      handling orientation switching.
-
-Same here. You probably miss reference to usb-switch.
-
-> +
->    power-domains:
->      maxItems: 1
->  
-> @@ -89,6 +105,22 @@ required:
->    - clocks
->    - clock-names
->  
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - fsl,imx95-usb-phy
-> +    then:
-> +      properties:
-> +        reg:
-> +          minItems: 2
-
-list and describe the items here, instead.
 
 
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
 Krzysztof
 
 
