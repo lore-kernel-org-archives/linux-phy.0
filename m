@@ -4,59 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A22CBC3DA64
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 17:48:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F0C5C3DA64
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 17:51:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=psj9vd39SFc1tRf9cj1vOmV95H6crb4ZckDFruZTkCg=; b=JnzGSuDFVKlVQO
-	x11J+8W5n7e6hVNumMuFQgr+7iMgok/AEVPZLSVFsV3QowCLgnfXZis57QA8rJt8DKrRLbw1O/Gy8
-	8e06xe0qljdUuPGJSAX8Z5uweEs0XYO8LYc1MP+BmPtJPsDQv4d700m/NMe8KUpkDq8+yGbpPy3YN
-	N8yvhupHP9fExQJmdjW2PwKwVaj5/4T+iN0SDdT/b9oo7IaF5+FPlFCyE271s8PoeILe/lxxvQW22
-	T/akMXdhOvHrsZ341gmz2fWLG9fyGIgly8pqnKCY3fA0STuqaib8zcJH8QMevyXVDXrOhdNywHUyl
-	ZK3YDtclANpyh6ovYDPg==;
+	List-Owner; bh=sWn4DOPleja7OGadbafMQhFWpBumsv5/iVYLG5akj0Y=; b=h8dDBGYQvRufbL
+	obkYhxytyNtueQkD+nLEK55NXoe+PhFSqp5PHNW6Vbd94fiXCv0CpIUa2b7GW3oH9Rv6eLayQUIIp
+	vl3Q7mtUR2ckcOQuRpi0ZspUJHUrmy7kSqThywp6nNmqU8SHQWBRFFFliMyQykF5hAWg9cEm3S+K1
+	6YAPLBc8/+b1XSJpKqZ+bEisvgQuJw8MIB0DrofltDROzO5r2QssCImT3AgvmaIsvC4WpZ57mqy2K
+	xt4DnskTw+PNLtKsfY4QqGLPx/ER0erQ9E1VzdTQHlJiMgQPvnb1mKZ7CNuPb/8g5gRUYjjhZ/cbZ
+	Pz9m2Z/N5bEWRnlMWlPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1safLk-0000000DiVT-1X7b;
-	Sun, 04 Aug 2024 17:48:56 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1safOW-0000000Dift-3QC9;
+	Sun, 04 Aug 2024 17:51:48 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1safLh-0000000DiV5-0fZr
+	id 1safOT-0000000DifW-2eXo
 	for linux-phy@lists.infradead.org;
-	Sun, 04 Aug 2024 17:48:54 +0000
+	Sun, 04 Aug 2024 17:51:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 56BBBCE0976;
-	Sun,  4 Aug 2024 17:48:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05784C32786;
-	Sun,  4 Aug 2024 17:48:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id D735A601D7;
+	Sun,  4 Aug 2024 17:51:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E773DC32786;
+	Sun,  4 Aug 2024 17:51:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722793729;
-	bh=FrPc5WshtUFoBN134P94aXzwbHbSPUZvowqqzdnXDkM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SFH4DlawM6tIns8vplkW5u+MKPyqCgf2xI8bG0BFbhJXmU3SeiqwI/3Zx5yeZgF3X
-	 hweXxmzd1KpKy9XFL8q1SVUmaWZe4Of4qHSc6aKAxRd2hg4T0hKhIjDNGnszJcNMRD
-	 uPzpVd/q+j/CtIcsgUSp+k+nHOU1w/Iy8tQxD5VuN0bW2z0/09GbXFtrv2ydDndQUT
-	 sWTKMU9BoK0gcs46F7LSfswCy+oknHmKMAvJMCOpW0f/WY20+4FiW1cPgK4NUX8viJ
-	 deLYUtL+ut9cHh+2TOs2K2iCbaaSk/hfzDCFnFzLfph9hiW3egTRqs2f02azSuCP99
-	 yWCzST0bQ2XOg==
-Date: Sun, 4 Aug 2024 23:18:45 +0530
+	s=k20201202; t=1722793904;
+	bh=r/1ogIL9uCeZfCWGinl7eqMXqHeEKasFVr9Re0kbDSk=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=c+aGA5qYtEspaJ65GUf1zaUeFBA8rpTxC4psdmkvpN8jnmTMIdBoAGVnZunzeUEib
+	 e3TZhHnQecrN+RB3QHL5awdhlZAeRSCO1iTHw2U2Imlq5mb1QcoMRF5QCPndKQJ2+F
+	 ztExuWUDpCvBY2iEo6pwP3YfusymIw6PkVyQFWjF/CqOuoRY5MgUC5d9VxSoUJqrle
+	 nPPTZZL0Xxxpwt7uD8vaHd8/AoYDITKnJRU++PPg3Tnfq9aUnjxbusFHzVOT1oHRrt
+	 ADz9SpiUqUdYn3jLAokem3VhiiRc0tlFfnOp2D9d92gKgfEeEA32WCRcxK9hvFvpxm
+	 nSfepjPEljy/Q==
 From: Vinod Koul <vkoul@kernel.org>
-To: Josua Mayer <josua@solid-run.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: mvebu-cp110-utmi: support swapping d+/d- lanes by
- dts property
-Message-ID: <Zq--_WIgaPXPiYRQ@matsya>
-References: <20240704-mvebu-utmi-phy-v1-1-9d3c8eea46e5@solid-run.com>
+To: kishon@kernel.org, sergio.paracuellos@gmail.com, 
+ florian.fainelli@broadcom.com, krzysztof.kozlowski@linaro.org, 
+ robh@kernel.org, frank.li@vivo.com, Stefan Eichenberger <eichest@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20240711131612.98952-1-eichest@gmail.com>
+References: <20240711131612.98952-1-eichest@gmail.com>
+Subject: Re: [PATCH v1] phy: marvell: phy-mvebu-cp110-comphy: improve
+ eth_port1 on comphy4
+Message-Id: <172279390156.406109.13116235675996046154.b4-ty@kernel.org>
+Date: Sun, 04 Aug 2024 23:21:41 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240704-mvebu-utmi-phy-v1-1-9d3c8eea46e5@solid-run.com>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_104853_591986_E5D8F1EB 
-X-CRM114-Status: GOOD (  24.29  )
+X-CRM114-CacheID: sfid-20240804_105145_775035_F1022608 
+X-CRM114-Status: UNSURE (   5.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,94 +70,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDQtMDctMjQsIDE2OjU3LCBKb3N1YSBNYXllciB3cm90ZToKPiBDUDExeCBVVE1JIFBIWSBz
-dXBwb3J0cyBzd2FwcGluZyBEKy9ELSBzaWduYWxzIHZpYSBkaWdpdGFsIGNvbnRyb2wKPiByZWdp
-c3RlciAxLgo+IAo+IEFkZCBzdXBwb3J0IGZvciB0aGUgInN3YXAtZHgtbGFuZXMiIGRldmljZS10
-cmVlIHByb3BlcnR5LCB3aGljaCBsaXN0cwo+IHRoZSBwb3J0LWlkcyB0aGF0IHNob3VsZCBzd2Fw
-IEQrIGFuZCBELS4KPiBUaGUgcHJvcGVydHkgaXMgZXZhbHVhdGVkIGluIHByb2JlIGFuZCBhcHBs
-aWVkIGJlZm9yZSBwb3dlci1vbgo+IGR1cmluZyBtdmVidV9jcDExMF91dG1pX3BvcnRfc2V0dXAu
-CgpJdCBmYWlscyBteSBidWlsZCB0ZXN0cwoKZHJpdmVycy9waHkvbWFydmVsbC9waHktbXZlYnUt
-Y3AxMTAtdXRtaS5jOgpJbiBmdW5jdGlvbiDigJhtdmVidV9jcDExMF91dG1pX3BoeV9wcm9iZeKA
-mToKZHJpdmVycy9waHkvbWFydmVsbC9waHktbXZlYnUtY3AxMTAtdXRtaS5jOjM2MTo4OToKZXJy
-b3I6IG1hY3JvICJvZl9wcm9wZXJ0eV9mb3JfZWFjaF91MzIiIHBhc3NlZCA1IGFyZ3VtZW50cywg
-YnV0IHRha2VzCmp1c3QgMwogIDM2MSB8ICAgICAgICAgICAgICAgICBvZl9wcm9wZXJ0eV9mb3Jf
-ZWFjaF91MzIoZGV2LT5vZl9ub2RlLAoic3dhcC1keC1sYW5lcyIsIHByb3AsIHAsIHN3YXBfZHgp
-CiAgICAgIHwKXgpJbiBmaWxlIGluY2x1ZGVkIGZyb20KZHJpdmVycy9waHkvbWFydmVsbC9waHkt
-bXZlYnUtY3AxMTAtdXRtaS5jOjE1OgppbmNsdWRlL2xpbnV4L29mLmg6MTQzMjogbm90ZToKbWFj
-cm8gIm9mX3Byb3BlcnR5X2Zvcl9lYWNoX3UzMiIgZGVmaW5lZCBoZXJlCiAxNDMyIHwgI2RlZmlu
-ZSBvZl9wcm9wZXJ0eV9mb3JfZWFjaF91MzIobnAsIHByb3BuYW1lLCB1KQpcCiAgICAgIHwgCmRy
-aXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYzozNjE6MTc6CmVycm9yOiDi
-gJhvZl9wcm9wZXJ0eV9mb3JfZWFjaF91MzLigJkgdW5kZWNsYXJlZCAoZmlyc3QgdXNlIGluIHRo
-aXMKZnVuY3Rpb24pOyBkaWQgeW91IG1lYW4g4oCYb2ZfcHJvcGVydHlfcmVhZF91MzLigJk/CiAg
-MzYxIHwgICAgICAgICAgICAgICAgIG9mX3Byb3BlcnR5X2Zvcl9lYWNoX3UzMihkZXYtPm9mX25v
-ZGUsCiJzd2FwLWR4LWxhbmVzIiwgcHJvcCwgcCwgc3dhcF9keCkKICAgICAgfCAgICAgICAgICAg
-ICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+CiAgICAgIHwgICAgICAgICAgICAgICAgIG9m
-X3Byb3BlcnR5X3JlYWRfdTMyCmRyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0
-bWkuYzozNjE6MTc6Cm5vdGU6IGVhY2ggdW5kZWNsYXJlZCBpZGVudGlmaWVyIGlzIHJlcG9ydGVk
-IG9ubHkgb25jZSBmb3IgZWFjaCBmdW5jdGlvbgppdCBhcHBlYXJzIGluCmRyaXZlcnMvcGh5L21h
-cnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYzozNjE6NDE6CmVycm9yOiBleHBlY3RlZCDigJg7
-4oCZIGJlZm9yZSDigJhpZuKAmQogIDM2MSB8ICAgICAgICAgICAgICAgICBvZl9wcm9wZXJ0eV9m
-b3JfZWFjaF91MzIoZGV2LT5vZl9ub2RlLAoic3dhcC1keC1sYW5lcyIsIHByb3AsIHAsIHN3YXBf
-ZHgpCiAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4KICAg
-ICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgOwogIDM2MiB8ICAg
-ICAgICAgICAgICAgICAgICAgICAgIGlmIChzd2FwX2R4ID09IHBvcnRfaWQpCiAgICAgIHwgICAg
-ICAgICAgICAgICAgICAgICAgICAgfn4gICAgICAgICAgICAgICAKZHJpdmVycy9waHkvbWFydmVs
-bC9waHktbXZlYnUtY3AxMTAtdXRtaS5jOjMwMToxMzoKZXJyb3I6IHVudXNlZCB2YXJpYWJsZSDi
-gJhzd2FwX2R44oCZIFstV2Vycm9yPXVudXNlZC12YXJpYWJsZV0KICAzMDEgfCAgICAgICAgIHUz
-MiBzd2FwX2R4ID0gMDsKICAgICAgfCAgICAgICAgICAgICBefn5+fn5+CmRyaXZlcnMvcGh5L21h
-cnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYzoyOTk6MjM6CmVycm9yOiB1bnVzZWQgdmFyaWFi
-bGUg4oCYcOKAmSBbLVdlcnJvcj11bnVzZWQtdmFyaWFibGVdCiAgMjk5IHwgICAgICAgICBjb25z
-dCBfX2JlMzIgKnA7CiAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgIF4KZHJpdmVycy9waHkv
-bWFydmVsbC9waHktbXZlYnUtY3AxMTAtdXRtaS5jOjI5ODoyNjoKZXJyb3I6IHVudXNlZCB2YXJp
-YWJsZSDigJhwcm9w4oCZIFstV2Vycm9yPXVudXNlZC12YXJpYWJsZV0KICAyOTggfCAgICAgICAg
-IHN0cnVjdCBwcm9wZXJ0eSAqcHJvcDsKICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAg
-Xn5+fgpjYzE6IGFsbCB3YXJuaW5ncyBiZWluZyB0cmVhdGVkIGFzIGVycm9ycwoKCj4gCj4gU2ln
-bmVkLW9mZi1ieTogSm9zdWEgTWF5ZXIgPGpvc3VhQHNvbGlkLXJ1bi5jb20+Cj4gLS0tCj4gIGRy
-aXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYyB8IDE3ICsrKysrKysrKysr
-KysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYyBiL2RyaXZlcnMv
-cGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYwo+IGluZGV4IDQ5MjJhNWYzMzI3ZC4u
-NWU0MDNmODQyZTlhIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1
-LWNwMTEwLXV0bWkuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEw
-LXV0bWkuYwo+IEBAIC02Miw2ICs2Miw4IEBACj4gICNkZWZpbmUgICBTUV9BTVBfQ0FMX01BU0sJ
-CQlHRU5NQVNLKDIsIDApCj4gICNkZWZpbmUgICBTUV9BTVBfQ0FMX1ZBTAkJCTEKPiAgI2RlZmlu
-ZSAgIFNRX0FNUF9DQUxfRU4JCQkJQklUKDMpCj4gKyNkZWZpbmUgVVRNSV9ESUdfQ1RSTDFfUkVH
-CQkJMHgyMAo+ICsjZGVmaW5lICAgU1dBUF9EUERNCQkJCUJJVCgxNSkKPiAgI2RlZmluZSBVVE1J
-X0NUUkxfU1RBVFVTMF9SRUcJCQkweDI0Cj4gICNkZWZpbmUgICBTVVNQRU5ETQkJCQlCSVQoMjIp
-Cj4gICNkZWZpbmUgICBURVNUX1NFTAkJCQlCSVQoMjUpCj4gQEAgLTEwNCw2ICsxMDYsNyBAQCBz
-dHJ1Y3QgbXZlYnVfY3AxMTBfdXRtaV9wb3J0IHsKPiAgCXN0cnVjdCBtdmVidV9jcDExMF91dG1p
-ICpwcml2Owo+ICAJdTMyIGlkOwo+ICAJZW51bSB1c2JfZHJfbW9kZSBkcl9tb2RlOwo+ICsJYm9v
-bCBzd2FwX2R4Owo+ICB9Owo+ICAKPiAgc3RhdGljIHZvaWQgbXZlYnVfY3AxMTBfdXRtaV9wb3J0
-X3NldHVwKHN0cnVjdCBtdmVidV9jcDExMF91dG1pX3BvcnQgKnBvcnQpCj4gQEAgLTE1OSw2ICsx
-NjIsMTMgQEAgc3RhdGljIHZvaWQgbXZlYnVfY3AxMTBfdXRtaV9wb3J0X3NldHVwKHN0cnVjdCBt
-dmVidV9jcDExMF91dG1pX3BvcnQgKnBvcnQpCj4gIAlyZWcgJj0gfihWREFUX01BU0sgfCBWU1JD
-X01BU0spOwo+ICAJcmVnIHw9IChWREFUX1ZBTCA8PCBWREFUX09GRlNFVCkgfCAoVlNSQ19WQUwg
-PDwgVlNSQ19PRkZTRVQpOwo+ICAJd3JpdGVsKHJlZywgUE9SVF9SRUdTKHBvcnQpICsgVVRNSV9D
-SEdEVENfQ1RSTF9SRUcpOwo+ICsKPiArCS8qIFN3YXAgRCsvRC0gKi8KPiArCXJlZyA9IHJlYWRs
-KFBPUlRfUkVHUyhwb3J0KSArIFVUTUlfRElHX0NUUkwxX1JFRyk7Cj4gKwlyZWcgJj0gfihTV0FQ
-X0RQRE0pOwo+ICsJaWYgKHBvcnQtPnN3YXBfZHgpCj4gKwkJcmVnIHw9IFNXQVBfRFBETTsKPiAr
-CXdyaXRlbChyZWcsIFBPUlRfUkVHUyhwb3J0KSArIFVUTUlfRElHX0NUUkwxX1JFRyk7Cj4gIH0K
-PiAgCj4gIHN0YXRpYyBpbnQgbXZlYnVfY3AxMTBfdXRtaV9waHlfcG93ZXJfb2ZmKHN0cnVjdCBw
-aHkgKnBoeSkKPiBAQCAtMjg1LDcgKzI5NSwxMCBAQCBzdGF0aWMgaW50IG12ZWJ1X2NwMTEwX3V0
-bWlfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAlzdHJ1Y3QgbXZl
-YnVfY3AxMTBfdXRtaSAqdXRtaTsKPiAgCXN0cnVjdCBwaHlfcHJvdmlkZXIgKnByb3ZpZGVyOwo+
-ICAJc3RydWN0IGRldmljZV9ub2RlICpjaGlsZDsKPiArCXN0cnVjdCBwcm9wZXJ0eSAqcHJvcDsK
-PiArCWNvbnN0IF9fYmUzMiAqcDsKPiAgCXUzMiB1c2JfZGV2aWNlcyA9IDA7Cj4gKwl1MzIgc3dh
-cF9keCA9IDA7Cj4gIAo+ICAJdXRtaSA9IGRldm1fa3phbGxvYyhkZXYsIHNpemVvZigqdXRtaSks
-IEdGUF9LRVJORUwpOwo+ICAJaWYgKCF1dG1pKQo+IEBAIC0zNDUsNiArMzU4LDEwIEBAIHN0YXRp
-YyBpbnQgbXZlYnVfY3AxMTBfdXRtaV9waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAq
-cGRldikKPiAgCQkJfQo+ICAJCX0KPiAgCj4gKwkJb2ZfcHJvcGVydHlfZm9yX2VhY2hfdTMyKGRl
-di0+b2Zfbm9kZSwgInN3YXAtZHgtbGFuZXMiLCBwcm9wLCBwLCBzd2FwX2R4KQo+ICsJCQlpZiAo
-c3dhcF9keCA9PSBwb3J0X2lkKQo+ICsJCQkJcG9ydC0+c3dhcF9keCA9IDE7Cj4gKwo+ICAJCS8q
-IFJldHJpZXZlIFBIWSBjYXBhYmlsaXRpZXMgKi8KPiAgCQl1dG1pLT5vcHMgPSAmbXZlYnVfY3Ax
-MTBfdXRtaV9waHlfb3BzOwo+ICAKPiAKPiAtLS0KPiBiYXNlLWNvbW1pdDogNGRlNDgwMjY0OTQ4
-Y2JmMmIwOGE3MmMzOWVlMTIyYTlmOTc2MWUwMwo+IGNoYW5nZS1pZDogMjAyNDA3MDQtbXZlYnUt
-dXRtaS1waHktODRhYTNiZjM5NTdkCj4gCj4gU2luY2VyZWx5LAo+IC0tIAo+IEpvc3VhIE1heWVy
-IDxqb3N1YUBzb2xpZC1ydW4uY29tPgoKLS0gCn5WaW5vZAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
-IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+
+On Thu, 11 Jul 2024 15:12:47 +0200, Stefan Eichenberger wrote:
+> According to the CN9100_MPP_information document, CP_SRD4 (comphy 4)
+> supports 2500 BASE-X and 5000 BASE-R for ETH_PORT1. I was able to test
+> that 2500 BASE-X is indeed supported. Unfortunately, our HW does not
+> support 5000 BASE-R, but I assume from the document that it does, so I
+> set the muxing there too to 0x1.
+> 
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] phy: marvell: phy-mvebu-cp110-comphy: improve eth_port1 on comphy4
+      commit: 8c9f085ae3384c5dfc0bc5f2f785b7adbf7d756b
+
+Best regards,
+-- 
+Vinod Koul <vkoul@kernel.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
