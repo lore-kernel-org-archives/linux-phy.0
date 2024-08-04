@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDD38C3DA7F
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 21:55:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8267C3DA7F
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Aug 2024 21:55:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=a/+/P24mtaTxXALe8IWxUPBCGeU1OoRFrG5Q42kTn7Y=; b=lCfa6SSWYdIyfM
-	x7YuS9pIciPV8OXjy9TPQBKSM+IA+VqdV8lj/tAOG2BnzT4SOvlyDsyeZj7v2lrhGUggBOBO12UJL
-	pImG/OOqwxiB/F1taMlh8c7NV8wjTzd+GLa83AeO0jbLyhOWLwOV6903mIYenxYDfaPZ9+9e8x+kE
-	IMZp5D6YqN3fGvjGxueUuKujVZlrPl1drq9KllgeMGB2QDz4MYZzAI3ohpzflyHQ33Of/CTj9k9JJ
-	y1/CGUjwNFZNk1V4wnTXHAst0+qo0jlyzg7f8rkEbWzsbhSslB/dKsNDKJW8rjjO4PNSmu94IkfaM
-	bPsX0UFq4t9tsPY96OLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3vZ1xWTNthOfqdTf6Kqe9pV5/FssYjOeNYpE91WbA1Q=; b=PfKanpvhWSzfhB
+	huox6aPRYLtPqeVmmMqR6vi0pYNda5LHqa7rLI9LRlP05Q4gPhll2MZrodewJK9bbVYayaV2STU/z
+	uniKMQ2pKQQANpAq3d0kpMNHq4GmnlsT7O1/L+bGP32O4oLoo44nDpr1gtmFpDdrlSJKKWlMZ09pb
+	cQDF/48nSwwVlCBWcRzwuQEv6J3ftfwTKbGOlC+/fly12qc7zP8Jiho9hWmis3KBEhfnc3IbSagMd
+	8EHmOAIHHOl6SLUwyA3QfBxQBBLdU+cDoBuft0hLc9wv4MKOa9JczXiVatSB1sBmc4aV58k76+Uqb
+	8HUn2T9gK7YhJNTEI+UQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sajBz-0000000DzFi-1l13;
-	Sun, 04 Aug 2024 21:55:07 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1sajCT-0000000DzOO-2QrQ;
+	Sun, 04 Aug 2024 21:55:37 +0000
+Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sajBw-0000000DzF4-2jtw;
-	Sun, 04 Aug 2024 21:55:06 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-52efd530a4eso15341768e87.0;
-        Sun, 04 Aug 2024 14:55:03 -0700 (PDT)
+	id 1sajC1-0000000DzFv-06M7;
+	Sun, 04 Aug 2024 21:55:10 +0000
+Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-a7a94aa5080so359728066b.3;
+        Sun, 04 Aug 2024 14:55:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1722808502; x=1723413302; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=pCexiuddVYJqWOl0RZ40FcRzxOfCT1O1W+s5YZ9iMgc=;
-        b=LfJPPSzbJmWAaT+kaIJf/xFcpIWaRTikzEKcvslDLn/bdkwYs5XOymXE1l+6t8Hrct
-         Cf7jpnbIymf5bFzg1RdftXK/GpdfWGjtM5p0EJjGg/3Gv3tNiKXFZlC7LD3Y67u2KalD
-         j4e5Ji4+ekNRNlLhraJZdy8rLABUCErwDxKXBOSt77pbjk/nbBsbSTG7fn0vHh0PzWBj
-         QaO4lxeeudLDvQewz9lpYpAnsUgbdcavI1AwGJDWfInyK+de96aHuTNxtgH+UR6oxTGg
-         aFMalFKEjQba9dmtQLrb31bDOTNHUtkJ/twdxnrkw0wPz/+AhUzhf+2pDIPcVt/ZA41o
-         AtWQ==
+        d=gmail.com; s=20230601; t=1722808507; x=1723413307; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=DvYubfbVq4kUCAQhjBGxwtur3JW8+5d4oGvhKNwcNRM=;
+        b=KbpuSijPX2qE3G2iO4c5yAXT9Wu9Y7tNRpjZqLkJIKBgzVDk2TAM2TMBYDOF5orQ/J
+         xe4FY5HLGi1sVwa+Tbw9CbhiLbp6n6SVOxVYKunhi3eH90t/eTExPkQ7jxKJA99n/fDS
+         wwslPbdDz4LitJovVtXbZKwp0l7xhQ4EqpoMry1aJMGdRVH+r9xvSLiK+MWaCbGuEzGt
+         4WM/52wwq+4SguuX1w5hoB0G63RzGIyVDBogYDCEmZQYFGHlR6f+VbMOLKCfIlv7p0NQ
+         HRPJ9Zcf0z1wrN1xX2rp6ziNeuEhPXcdtIsuLF5CnYgFCnDDsGQhn0iaSFt6UBddNSea
+         smcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1722808502; x=1723413302;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=pCexiuddVYJqWOl0RZ40FcRzxOfCT1O1W+s5YZ9iMgc=;
-        b=dALtU7H26AraFgtfqLtpoy1S1RY6G+RThVkwtktMxxNNkc/w9Zrz0jv2B9FosSwcwg
-         b3VElWW4lAVpbM2iZHc0fSvsI9OOCrYeNzOXs2D0AbsebN7C1FdT0Juynij0c0OxzRt4
-         NXusCznNLPKoxO9jTNhRN7ZQzdJ/HmAV4Ymu9gxBR7EYa/DQ7rqAENkaWzdlPwVP0rNA
-         gesuteOtGlzdlKedroZsu6Th9FgXnjuo//dIh4IIfuIb2Zc7razt8PeG0ccTDV3Au0Jm
-         qTWi7uGAfANlkOvzDEwbTSdi68Ta+HBj5KQvsiGre56qY3z4qAOhqlHRoF4BdknugoLZ
-         mc9g==
-X-Forwarded-Encrypted: i=1; AJvYcCWyFaZdzk/OYNGlAkAK/vChjNt6NK3tYieQ/2YnUhVWNQwjxGdx1MzGWJykkjER6pKPpvAmhIYIRI+OTd6mSfQ1OLdra75qDmKUI9kKoOP/E+0SbtI=
-X-Gm-Message-State: AOJu0Yzyo40UWDmN4WOHPRm+4EJd2ldSVz8xPM3AUUQ9rnoFUInpCRRk
-	HwCwQM44G4vA+3PyAx5+Q5EOQhH0Di5ibY3q7mWgv8JNKkfyxmxl
-X-Google-Smtp-Source: AGHT+IFCPz2n+bI1kGoQLioilhFkYLeYs33IRkQdvNgAiTf2rhaF9PMzLiX5ATzV7KlWpxZkXOFHHw==
-X-Received: by 2002:a05:6512:3d04:b0:52e:9b15:1c60 with SMTP id 2adb3069b0e04-530bb3a5035mr7252667e87.48.1722808501427;
-        Sun, 04 Aug 2024 14:55:01 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1722808507; x=1723413307;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=DvYubfbVq4kUCAQhjBGxwtur3JW8+5d4oGvhKNwcNRM=;
+        b=UKlqwhljK2gpBf3hzyzD20rIMsmk1IeDbuJTRuxJossUpqT3ZDEygKxq4GjHK9OFp8
+         U+k95aFGkz5LA4UND3Z4anVXFs+HvWsCxunHpfYqGQiD19voGbA2/YfgXfnFqx4VeEb2
+         rDVSct9cZ96Mms+oygu7YV8SAXy8RMdaVkKBg/h/WToZWXClrqg0XrpKIXvW+iVPRSa7
+         5TjiocUaarqMnbWFn14dsxRoIvLQTRMHWIz0keuR4lxrGSSiSakFUZtfzQpPE2XmmcG+
+         BlhAl4VPh/LXBRgL+wy5v1c0NovsyX+jPwGAPlF2yzrYrrWyeRYO+ooFPkIUTn/Bgxlq
+         eeXA==
+X-Forwarded-Encrypted: i=1; AJvYcCVyxtmuCVKf944mQ+I0sHlsgBzMHgmBbwoqo59YGHHuX7d6aMY1g+8dVSZ64SbcwkAMLLcd26uGfhPjeCF7AnFbhB+04dXfPhlMmoE/udR96Np25iI=
+X-Gm-Message-State: AOJu0YwjeaZIYPwKntEPr6+DctMCo6eLviq6RhsjsnimlKhoNdUNuxK6
+	p/nrLkwNTjSUh/9Qo7BvXFmal/DlPqDLf7j0Ns3wXMV7dUVQlneO
+X-Google-Smtp-Source: AGHT+IHZGBuLPIhPXt+S5usbtLF+u2ZCoSWc/lVqgIzNNaYZXnDghzPe7QjeKjQ2UYnp26qAEAvaAw==
+X-Received: by 2002:a17:906:d54a:b0:a77:c330:ad9d with SMTP id a640c23a62f3a-a7dc51be76emr753902166b.61.1722808506919;
+        Sun, 04 Aug 2024 14:55:06 -0700 (PDT)
 Received: from localhost.localdomain ([2a02:ab88:3711:c80:e7a7:e025:f1a5:ef78])
-        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-a7dc9d45452sm370485066b.111.2024.08.04.14.55.00
+        by smtp.googlemail.com with ESMTPSA id a640c23a62f3a-a7dc9d45452sm370485066b.111.2024.08.04.14.55.05
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 04 Aug 2024 14:55:01 -0700 (PDT)
+        Sun, 04 Aug 2024 14:55:06 -0700 (PDT)
 From: David Virag <virag.david003@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -86,14 +87,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	linux-clk@vger.kernel.org
-Subject: [PATCH 00/13] Add USB support to Exynos7885
-Date: Sun,  4 Aug 2024 23:53:45 +0200
-Message-ID: <20240804215458.404085-1-virag.david003@gmail.com>
+Subject: [PATCH 01/13] dt-bindings: clock: exynos7885: Fix duplicated binding
+Date: Sun,  4 Aug 2024 23:53:46 +0200
+Message-ID: <20240804215458.404085-2-virag.david003@gmail.com>
 X-Mailer: git-send-email 2.46.0
+In-Reply-To: <20240804215458.404085-1-virag.david003@gmail.com>
+References: <20240804215458.404085-1-virag.david003@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_145504_721119_B5993C19 
-X-CRM114-Status: GOOD (  14.93  )
+X-CRM114-CacheID: sfid-20240804_145509_096864_0494B3D8 
+X-CRM114-Status: GOOD (  14.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,48 +113,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This set of patches adds support for USB on the Exynos7885 SoC.
+The numbering in Exynos7885's FSYS CMU bindings has 4 duplicated by
+accident, with the rest of the bindings continuing with 5.
 
-The Exynos7885 has a DWC3 compatible USB controller and an Exynos USB
-PHY that theoretically supports USB3 SuperSpeed, but is not implemented
-in any known device. The vendor kernel also stubs out USB3 functions, so
-we do not support it.
+Fix this by moving CLK_MOUT_FSYS_USB30DRD_USER to the end as 11.
 
-While at it, since we need some new clocks implemented, also fix some
-issues with the existing clock driver/bindings.
+Since CLK_MOUT_FSYS_USB30DRD_USER is not used in any device tree as of
+now, and there are no other clocks affected (maybe apart from
+CLK_MOUT_FSYS_MMC_SDIO_USER which the number was shared with, also not
+used in a device tree), this is the least impactful way to solve this
+problem.
 
-p.s.: Not realizing the USB PLL has a MUX on it made me waste I don't
-even want to know how much time on troubleshooting why it's not
-working...
+Fixes: cd268e309c29 ("dt-bindings: clock: Add bindings for Exynos7885 CMU_FSYS")
+Signed-off-by: David Virag <virag.david003@gmail.com>
+---
+ include/dt-bindings/clock/exynos7885.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-David Virag (13):
-  dt-bindings: clock: exynos7885: Fix duplicated binding
-  dt-bindings: clock: exynos7885: Add CMU_TOP PLL MUX indices
-  dt-bindings: clock: exynos7885: Add indices for USB clocks
-  dt-bindings: phy: samsung,usb3-drd-phy: Add Exynos7885 support
-  dt-bindings: usb: samsung,exynos-dwc3: Add Exynos7885 support
-  clk: samsung: exynos7885: Update CLKS_NR_FSYS after bindings fix
-  clk: samsung: exynos7885: Add missing MUX clocks from PLLs in CMU_TOP
-  clk: samsung: clk-pll: Add support for pll_1418x
-  clk: samsung: exynos7885: Add USB related clocks to CMU_FSYS
-  usb: dwc3: exynos: Add support for Exynos7885
-  phy: exynos5-usbdrd: support Exynos7885 USB PHY
-  arm64: dts: exynos: Enable USB in Exynos7885
-  arm64: dts: exynos: exynos7885-jackpotlte: Enable USB support
-
- .../bindings/phy/samsung,usb3-drd-phy.yaml    |  2 +
- .../bindings/usb/samsung,exynos-dwc3.yaml     |  5 +-
- .../boot/dts/exynos/exynos7885-jackpotlte.dts | 20 ++++
- arch/arm64/boot/dts/exynos/exynos7885.dtsi    | 35 +++++++
- drivers/clk/samsung/clk-exynos7885.c          | 95 +++++++++++++++----
- drivers/clk/samsung/clk-pll.c                 | 20 +++-
- drivers/clk/samsung/clk-pll.h                 |  1 +
- drivers/phy/samsung/phy-exynos5-usbdrd.c      | 21 ++++
- drivers/usb/dwc3/dwc3-exynos.c                |  3 +
- include/dt-bindings/clock/exynos7885.h        | 32 ++++---
- include/linux/soc/samsung/exynos-regs-pmu.h   |  3 +
- 11 files changed, 201 insertions(+), 36 deletions(-)
-
+diff --git a/include/dt-bindings/clock/exynos7885.h b/include/dt-bindings/clock/exynos7885.h
+index 255e3aa94323..54cfccff8508 100644
+--- a/include/dt-bindings/clock/exynos7885.h
++++ b/include/dt-bindings/clock/exynos7885.h
+@@ -136,12 +136,12 @@
+ #define CLK_MOUT_FSYS_MMC_CARD_USER	2
+ #define CLK_MOUT_FSYS_MMC_EMBD_USER	3
+ #define CLK_MOUT_FSYS_MMC_SDIO_USER	4
+-#define CLK_MOUT_FSYS_USB30DRD_USER	4
+ #define CLK_GOUT_MMC_CARD_ACLK		5
+ #define CLK_GOUT_MMC_CARD_SDCLKIN	6
+ #define CLK_GOUT_MMC_EMBD_ACLK		7
+ #define CLK_GOUT_MMC_EMBD_SDCLKIN	8
+ #define CLK_GOUT_MMC_SDIO_ACLK		9
+ #define CLK_GOUT_MMC_SDIO_SDCLKIN	10
++#define CLK_MOUT_FSYS_USB30DRD_USER	11
+ 
+ #endif /* _DT_BINDINGS_CLOCK_EXYNOS_7885_H */
 -- 
 2.46.0
 
