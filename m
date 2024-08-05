@@ -4,150 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0784FC3DA7F
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Aug 2024 08:23:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E34BBC3DA4A
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Aug 2024 09:27:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jDIBZA+BatpGHh/yzTaGC9tjlTn3eU15BObmn2aJBMA=; b=EsJSxhQt1X93n6
-	O8UetlUxhu5InKrCFssbWVeF9mbhKVIMYk0ZzsiK6/2mV0Koy+vZ5MybFYZ+efFbUTNBly5qdXFB1
-	5A9UMZF/GHiE3/fk7JHWI+fANaBMK5Ke39PCd+RCez9vYFyukFZZtreX3Bf/0e6MNW3SHGAPHzmUA
-	s5nZWA4UY71Ggm2N8tEhQu/238XkQlZbF48WwDqK7UWwZuxenvBxA00BG82f74+euFLfPAL4oxBbZ
-	NGyV8VVId9yeLAprMz+Y1L9uSKYC08B2EFuVihE556/pNbYX6Ky4mO3QGFnfdTrT2qBm16oI1tweu
-	ipjuXjUk9jOI1RQZSW0g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jU6xac4oA/JGTZ8dMSa0CO2Rnh1lrQb6ZwtTcLkXazk=; b=JXL6oRwf+KTiyE
+	OhjYUlyLMWjvP/AZjE8tgOawCy7L38yfCvMyjahdAcx3Uey0XOGkVoVul+FUmhjNRv1YTcMZ0P9iA
+	9O01qoPu7sbWTmnr/MJHJL5rPIJeSVrArZhEzz5koHrdqaeYvh09puX5/ue/Ezp8//lRxT07101Ti
+	tLoW491rz2Yp2Wx/ZtFqxD50KOV6efLM5I9YEXsjAJMZrCvl2VfMVQTmoEQMNgKG5vfU1BW8/pMsv
+	/vbUmgS3skiUbrvi144aCEc5JmSfapdqV62i1CLlGENM/HExodzfv1thQYUhDWYdg+qBz6ofVj4sD
+	Ols5F5y/1OOgAnjpHM7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saszi-0000000F6gR-2qv1;
-	Mon, 05 Aug 2024 08:23:06 +0000
-Received: from mail-westeuropeazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c201::] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1satzh-0000000FHes-1zQq;
+	Mon, 05 Aug 2024 09:27:09 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saszf-0000000F6fa-3cAg;
-	Mon, 05 Aug 2024 08:23:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=do1wD9NBzn5EWyVtG/UCAIXCZt12EFkw5QdXtSNVyvgMwFI881E/QAURumtFrtD/UkWLBRRNNLzdDyacCvmitsUqfknHPh73TPlZQvsckDhFcXm4Ds6Nys4C0ZjlaQnfbFlE1Ihm+p8ABQpgpTkZmDPnHFb36g2889PE/79NIbp7qRUE0tI10Sqwiy2RJzatil1TJk9VyNpYxYgjix+zTYQl9CzUWmgjkx2a2CLXHCOT+NlTQzzh9R0utm33ZfpRwgey68U5LRVgn9x5AMmfLa6VMAMU29Zy0NAOxOfnG0lpMW+GBOxkkPhfX+GfCfGlHi3m5bcLBEjCHYVhNouy3A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=G02YygDFqa+17AW1Rx4N5Cg4v1h9qx5amWsxBx1CurQ=;
- b=BfcFRFn6OloV2jCgxYzhKk2xCkZf6sQL5xQhWgyMaZyWFw15KYkMZO0rESja0tLXm0RHku6DetD27joAmis08Fbsd7mg462+YFTXZgAvgIbclEQA7UASHs/aIWQSN6xLbTuYq2WGt9pTRdByKZyYL6mWZhTITDXO5+qn9o3ZcU2fmnKHYk1dx9QGvIY/RxeR7B8FEB8BGORvkRO8w2iMlv78saoipq8SuUPif8iERECxmbDNZfKWQe40JT0DvueALl2or3RmMzCqD2HxUwWuBV/4MEj9ojupcd1QjqRcQARpVIfG/oodv5+PCGw2gLFo1kAMmV5B8gu2FK+Ruba+/w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=G02YygDFqa+17AW1Rx4N5Cg4v1h9qx5amWsxBx1CurQ=;
- b=eLMpfJEC49+5mN24Wq6OTNOeoHTJ6oMiLa20LNnd44gholBZ4e1/vSWUxLhzor11NpMBPRmjd+2leoJei98RWk2QMbakDZzq/ohqKZibWwWXTAwprYcwhl8tT1ZeglTdDwfKdc7k1GErP13pES82mtLya6JonHR7iy8LncEcoTKN0Fe3XgHAFNnRBuG62dmoiKTcw1xKP5jJK++XpCL30Zydj1v+Y/+n/MjpaW1xLAFAgSfeNT38aB42/cp8axfgypuNOhL8cI0jHTVTyroKx5/583DL7ns2w1bKOjitVx9AVFk+N2l2nR7CVVcrRHQ/7mVSMYJ3+PyfC9LIecUCGg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
- by PA4PR04MB7599.eurprd04.prod.outlook.com (2603:10a6:102:ea::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.25; Mon, 5 Aug
- 2024 08:22:52 +0000
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7%5]) with mapi id 15.20.7828.024; Mon, 5 Aug 2024
- 08:22:51 +0000
-Date: Mon, 5 Aug 2024 16:22:11 +0800
-From: Xu Yang <xu.yang_2@nxp.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	gregkh@linuxfoundation.org, Frank.Li@nxp.com, jun.li@nxp.com,
-	l.stach@pengutronix.de, aford173@gmail.com, hongxing.zhu@nxp.com,
-	alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH 1/5] dt-bindings: phy: imx8mq-usb: add compatible
- "fsl,imx95-usb-phy"
-Message-ID: <20240805082211.ngrokcmzuijnu26d@hippo>
-References: <20240802091702.2057294-1-xu.yang_2@nxp.com>
- <21557eac-44f0-451d-a194-c5d545cacbee@kernel.org>
- <20240805070429.rqykjd3ap5swd5vl@hippo>
- <0e1b0f11-152e-402c-97ea-788c7830267f@kernel.org>
-Content-Disposition: inline
-In-Reply-To: <0e1b0f11-152e-402c-97ea-788c7830267f@kernel.org>
-X-ClientProxiedBy: SG2PR02CA0081.apcprd02.prod.outlook.com
- (2603:1096:4:90::21) To DU2PR04MB8822.eurprd04.prod.outlook.com
- (2603:10a6:10:2e1::11)
+	id 1satz9-0000000FHVX-1fR2;
+	Mon, 05 Aug 2024 09:26:37 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 4759QCHE066999;
+	Mon, 5 Aug 2024 04:26:12 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1722849972;
+	bh=PLtvQM6mK0ErbG4GpXkO3aHV9a/JpRkzS9nxiChIEdI=;
+	h=From:To:CC:Subject:Date;
+	b=UUS0iTiQa31df7NmfaYHxyxe0hPzjNSNNU/K2ZCQNrx7YvpC/qw6gXlIK5a0/w8fb
+	 0dgAP0JKkB8lmAB379ZeiCHY88W8imt99JNkUiBHqNpAoL/M71SRPy+FQVER8l5574
+	 ULzdIAXxAkNIyu/pXHf6em3lob0vbXVN+ijUkv7A=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+	by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 4759QCs4063377
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 5 Aug 2024 04:26:12 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 5
+ Aug 2024 04:26:12 -0500
+Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Mon, 5 Aug 2024 04:26:12 -0500
+Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.72.81])
+	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 4759Q7Lp004882;
+	Mon, 5 Aug 2024 04:26:08 -0500
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <p.zabel@pengutronix.de>,
+        <sjakhade@cadence.com>, <rogerq@kernel.org>,
+        <thomas.richard@bootlin.com>, <theo.lebrun@bootlin.com>,
+        <christophe.jaillet@wanadoo.fr>, <robh@kernel.org>,
+        <make24@iscas.ac.cn>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
+        <s-vadapalli@ti.com>
+Subject: [PATCH v4] phy: cadence-torrent: add support for three or more links using 2 protocols
+Date: Mon, 5 Aug 2024 14:56:07 +0530
+Message-ID: <20240805092607.143869-1-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|PA4PR04MB7599:EE_
-X-MS-Office365-Filtering-Correlation-Id: 45f1b02d-a4ea-4db9-443b-08dcb527cc0e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|366016|7416014|376014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?YsKs5JIek+mmNANsuouRffExJYNKhnrgm+XjCB2ti4iqCVXnQmaRm9gZW3Oy?=
- =?us-ascii?Q?h5v4C/vDRIGSAnOv+U4GSV33MuJITUztjsgCU5ewlP2QA60hiLP6skSFTlC2?=
- =?us-ascii?Q?20bgXfBgArtcwrIFgeNqVWI5UyDIKVJtXiex44ieB8Boa6PUkHpGB2U8Buvn?=
- =?us-ascii?Q?ctYZy2/9YoyiAF7SExAI/abMUv03c5TyFBF35YxCfsbTO+KkN4Fd2k5ylX5O?=
- =?us-ascii?Q?D44a1KmW6aZ+nGgEQQXdqKS8jlhRLtRLVZS7zATH+AWksc9Fw9i5rA2yxDeV?=
- =?us-ascii?Q?/QLBn/3/6pdvTOkrJBJkzJGBHW+MD1RtF5rKX4eCHsN6a+nz1j54IcQ1msUu?=
- =?us-ascii?Q?f9VxfnFbAnDBE5Yo4zgwz6vu3nI9eEIxcmD4sjFBXUUT9r8VcWFuOsDzXad8?=
- =?us-ascii?Q?9EK4szMYNLF20a3OjVKasfxM2gvnILudPplvYMvZl1sgI7ZYOFLOHF1iRumd?=
- =?us-ascii?Q?q8/XORLGUU7iva62mkCJnK+30oBEaGLuCckNxE82uS5vBiRsA76fhu365bpQ?=
- =?us-ascii?Q?OwDtninL5cXaQ/+LlySgZ9C2m3gONdDWjp90tTxsJpNZ447yGQ2kudn+DQZJ?=
- =?us-ascii?Q?ycYBnQFKj4aifUoN+B5fIBVeXP6+8EVBhc50r4CtAOe/TvnqUOtmCBi7cHef?=
- =?us-ascii?Q?vUU3DEHK2UfAMaJxcsH5G5PwDSgOV77AzN/MQ8FiNfEj6aItQJfCMpr+aGPz?=
- =?us-ascii?Q?HYBl+TnOTlUpLL2eEL5ASDKeBbGfiLWu1Nlq7A3G8puoUTAISnm2prV9aEfW?=
- =?us-ascii?Q?xFiMjqoNm2nNzAlRuxVYjoEx9QeHbW4opIKiBQglA42FjPQtgByf6WQ0eqQp?=
- =?us-ascii?Q?QugavargB12c+76hljR/za8m9EzerPiwU5SFwMaSenN7EcvPvpKgHt6IAKTq?=
- =?us-ascii?Q?tgkZWz1PiQiakJ29WtbYkJGRKOMH4BcUhBXWnnmgLS7LHjw+du6kkcgXh9f/?=
- =?us-ascii?Q?CApYmoOnGSMgqcHnc67XIaCyeKju5PYcIeZ/mZdK/BmvalfguYO4DME1fMhs?=
- =?us-ascii?Q?jCeYEngZphxfUoHvGoPXBh0nuzF1k5NauyP04wi1hkNV1lNgHUgEx0Ne7PaJ?=
- =?us-ascii?Q?P7uHTQLSyU2OzOj6Bd7cLFxz9NF4WHrT4okokgV2IeHGBGbHRytiGYFeuSa0?=
- =?us-ascii?Q?AXFb+408Pp9SppZXmcJcI0AGuMGj2CbX2jhdYOVoMs8RuR3JB4SIXRgbqwMc?=
- =?us-ascii?Q?R8qGntT+L6haAzixzmXaPnjVXiuCCr4R+DHii1PQZQYjoUej702V/rYjFyyE?=
- =?us-ascii?Q?iFOM0wAmUDFEa1TftH3IzVd7IWD74VF03OxXpF0Y+VhkDcMXNyg3dD+7zsdv?=
- =?us-ascii?Q?UYkpkBKcMt6s8FFUfnLqADIrSv5lV3jlmOV/fqoQ7S7vQ/DZ2MlwZqJRpAph?=
- =?us-ascii?Q?3UOrL+NOGes2Y8zkD8AuDtNkMld9ci1uz9LZpobDYeYsWyPZSg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(366016)(7416014)(376014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?hYnQL7NseWDQ4bF37Z/9v9VXROlBGanbvVF42gBRE/1kPA/tQZ1YLbYSd7rU?=
- =?us-ascii?Q?kGolfZkcqgClswnf4Abi/uKrpkVnEqH3zd9SKbc+Stqp/SKLv6OR7sjA5Ccx?=
- =?us-ascii?Q?oRcq4NsEnohIMyHDXR6W6Vy+w/4MJr32TB1yxK4EWmlURa6z+gQjfOXTninP?=
- =?us-ascii?Q?URLajNCNCol1lA1izlt0vxCGKVa5jP+9wYpUjeRDsgryTJRTsgmn3C4AHOiw?=
- =?us-ascii?Q?Pss58eqzAiGXtGFs0yj0x6vtJW0HofZkz0clvOBypmZQUyIgqFooDGJePHQ1?=
- =?us-ascii?Q?RzYtN6xXIwduMSthk/CwvB0aFRSs76pTqdNWmuM+JCSWh8kGd3JrNawIkBni?=
- =?us-ascii?Q?Wp9rmfocdL1dNY+ZVxo5q+x4o/Vj9ZZ51h+8BYsmhqpoAKIlGTOQx0O/JOYU?=
- =?us-ascii?Q?Yg9xuSaAysJJkVbb2eanbmCkMnTjj5TSMNoArMU1b3KeROO3WyLXMnoQFxF5?=
- =?us-ascii?Q?u44todrlUI/cZdx4SjAUvygc9DjOTSsng1UZcxNStQqJM6QS/2Pmgf8ZBipw?=
- =?us-ascii?Q?vD9KC1r75tGz4EXJ7aBMdqCJ2NMpe77M16ggCZFvw8SLP/0wFpyD5sKkhYLm?=
- =?us-ascii?Q?9riIR5uWznL4ONdVZpb7TEppZ5w359GNAaDa0Qhly9LZtw/qnkzUSD1m2J1o?=
- =?us-ascii?Q?fwfJCxVAF9PYwjScN/z+q2JyDJDcBlXOsa4ElLZwbZAWCwnXdwgGXXQCf7oL?=
- =?us-ascii?Q?eFIrYAlqSuCFmMj5xiGKHlZRzc5S9FvqvBNOetARPP9ak+8ZPfmiNe1zkjrs?=
- =?us-ascii?Q?WRqRz3XtddPDfc1XfitN97FwFmDnt1GQ7C4i/f2qjGIA5Xm8YwHKW2MzmxkW?=
- =?us-ascii?Q?AVyFIj4a21o2XHQt3kqkS5W6HbPnCs8/E9AyAMcSxSr/NsoWYHREOgKHWbRj?=
- =?us-ascii?Q?oZzxONjI50fJyWrMHlcJASqSbw8qsCqqy5opqyHTwtSDiaA/JyWEIALtBpKn?=
- =?us-ascii?Q?5j/e4OYbyLu8+XDEk2yY5YfS23Gc36MFULFw/JicT4LiW23MJECHn58bX5vM?=
- =?us-ascii?Q?RDQqDqUCJT8uCvixCZGNlkIL9EJQ4snuXIjUaJEDaVbrzE+1PZgTCguHrjrX?=
- =?us-ascii?Q?ySsh46ogxVC46kf2/3Vy8e4WuAbcDYIfTpbqABM5PuVPO8cTkIQbaj0tGx8t?=
- =?us-ascii?Q?iIohQlwfa5BRfdp3nPjR4vtYGhT0RRhBG4BuoiT0zWB3a6/+qdXswc1qM75r?=
- =?us-ascii?Q?mNbzdkLJJV/dlX3A7odbuVJpVQMjq+o7a20NX2vUX4DFK9cVRUp0sgz/IURC?=
- =?us-ascii?Q?3bwIhuA0xTqreoj/Hy1tbMCCekAemtPX84LkfpBqKw8nmzVhmJd9ts0eEtpi?=
- =?us-ascii?Q?kKsIgamNrB7TANW77gBVo708MPeq2V8raHnRWyfNKF8RITR5de5ZYrfz/k/i?=
- =?us-ascii?Q?XW94jpHzvsKnvMtdcthbdjt0kEOjEPOKqE2WA9DtXMcBcgY1yobg0ShZ/J+Y?=
- =?us-ascii?Q?+rcjTaQeIV15Iw7dnSZTNmp6D8Drw9EF9vK8xbTbQK/83CE2J4v0XIb65aQz?=
- =?us-ascii?Q?xPxWxn/DELas9WUCjTOvtE8xkSjNPig2wh3PRQFtQm6G48ByL9rpkhgUt0Ac?=
- =?us-ascii?Q?r/jwOwOuvAG5MyNQtpPhrvquJQU9GEGgkhyRaxcL?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 45f1b02d-a4ea-4db9-443b-08dcb527cc0e
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Aug 2024 08:22:51.5160
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 1Sg8Eq7iH85pB1BFpKxs7NuwuRK97STRI6qeBfCoSproAXZ2+7JbVkG9xjVD96ZRjdUg1qzAmPbmBJnZS8MD5Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7599
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240805_012303_934269_6F0AEAA3 
-X-CRM114-Status: GOOD (  20.82  )
+X-CRM114-CacheID: sfid-20240805_022635_659957_5D22D729 
+X-CRM114-Status: GOOD (  29.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,87 +85,450 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 05, 2024 at 09:22:18AM +0200, Krzysztof Kozlowski wrote:
-> On 05/08/2024 09:04, Xu Yang wrote:
-> > On Sun, Aug 04, 2024 at 04:16:34PM +0200, Krzysztof Kozlowski wrote:
-> >> On 02/08/2024 11:16, Xu Yang wrote:
-> >>> The usb phy in i.MX95 is compatible with i.MX8MP's, this will add a
-> >>> compatible "fsl,imx95-usb-phy" for i.MX95. Also change reg maxItems
-> >>> to 2 since i.MX95 needs another regmap to control Type-C Assist (TCA)
-> >>> block. Since i.MX95 usb phy is able to switch SS lanes, this will also
-> >>> add orientation-switch and port property to the file.
-> >>>
-> >>> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> >>> ---
-> >>>  .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 40 +++++++++++++++++--
-> >>>  1 file changed, 36 insertions(+), 4 deletions(-)
-> >>>
-> >>> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> >>> index dc3a3f709fea..b0a614a9556d 100644
-> >>> --- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> >>> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> >>> @@ -11,12 +11,17 @@ maintainers:
-> >>>  
-> >>>  properties:
-> >>>    compatible:
-> >>> -    enum:
-> >>> -      - fsl,imx8mq-usb-phy
-> >>> -      - fsl,imx8mp-usb-phy
-> >>> +    oneOf:
-> >>> +      - enum:
-> >>> +          - fsl,imx8mq-usb-phy
-> >>> +          - fsl,imx8mp-usb-phy
-> >>> +      - items:
-> >>> +          - const: fsl,imx95-usb-phy
-> >>> +          - const: fsl,imx8mp-usb-phy
-> >>>  
-> >>>    reg:
-> >>> -    maxItems: 1
-> >>> +    minItems: 1
-> >>> +    maxItems: 2
-> >>>  
-> >>>    "#phy-cells":
-> >>>      const: 0
-> >>> @@ -28,6 +33,17 @@ properties:
-> >>>      items:
-> >>>        - const: phy
-> >>>  
-> >>> +  orientation-switch:
-> >>> +    description:
-> >>> +      Flag the PHY as possible handler of USB Type-C orientation switching
-> >>
-> >> No need to duplicate definitions of properties.
-> > 
-> > I replace it with "orientation-switch: true".
-> > 
-> >>
-> >>> +    type: boolean
-> >>> +
-> >>> +  port:
-> >>> +    $ref: /schemas/graph.yaml#/properties/port
-> >>> +    description:
-> >>> +      A port node to link the PHY to a TypeC controller for the purpose of
-> >>> +      handling orientation switching.
-> >>
-> >> Same here. You probably miss reference to usb-switch.
-> > 
-> > How about port? Should I replace it with "port: true" or
-> > 
-> > "port:"
-> > "  $ref: /schemas/usb/usb-switch.yaml#/properties/port"
-> 
-> You can drop both if you add ref to usb-switch and use
-> unevaluatedProperties.
+The Torrent SERDES can support at most two different protocols (PHY types).
+This only mandates that the device-tree sub-nodes used to represent the
+configuration should describe links with at-most two different protocols.
 
-Got it! It's helpful
+The existing implementation however imposes an artificial constraint that
+allows only two links (device-tree sub-nodes). As long as at-most two
+protocols are chosen, using more than two links to describe them in an
+alternating configuration is still a valid configuration of the Torrent
+SERDES.
 
-Thanks,
-Xu Yang
+A 3-Link 2-Protocol configuration of the 4-Lane SERDES can be:
+Lane 0 => Protocol 1 => Link 1
+Lane 1 => Protocol 1 => Link 1
+Lane 2 => Protocol 2 => Link 2
+Lane 3 => Protocol 1 => Link 3
 
-> 
-> Best regards,
-> Krzysztof
-> 
+A 4-Link 2-Protocol configuration of the 4-Lane SERDES can be:
+Lane 0 => Protocol 1 => Link 1
+Lane 1 => Protocol 2 => Link 2
+Lane 2 => Protocol 1 => Link 3
+Lane 3 => Protocol 2 => Link 4
+
+Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+Reviewed-by: Roger Quadros <rogerq@kernel.org>
+---
+
+Hello,
+
+This patch is based on linux-next tagged next-20240805.
+Patch has been sanity tested and tested for functionality in the following
+configurations with the Torrent SERDES0 on J7200-EVM:
+1. PCIe (Lanes 0 and 1) + QSGMII (Lane 2)
+   => 2 protocols, 2 links
+2. PCIe (Lanes 0 and 1) + QSGMII (Lane 2) + PCIe (Lane 3)
+   => 2 protocols, 3 links
+
+v3:
+https://lore.kernel.org/r/20240716102442.1605280-1-s-vadapalli@ti.com/
+Changes since v3:
+- Rebased patch on linux-next tagged next-20240805.
+- Collected Reviewed-by tag from Roger Quadros <rogerq@kernel.org>
+  https://lore.kernel.org/r/1c393235-3bf3-4c89-ab54-42de5a33c8c2@kernel.org/
+
+v2:
+https://lore.kernel.org/r/20240710115624.3232925-1-s-vadapalli@ti.com/
+Changes since v2:
+- Based on Swapnil and Roger's feedback on the v2 patch, the
+  configuration will be performed as follows:
+  1) For Multilink configuration with 2 sub-nodes, irrespective of
+  whether or not the protocols/phy-types are same or different,
+  the phy-types present in the sub-nodes are used as-is and the
+  configuration is performed by iterating over the sub-nodes.
+  This is identical to the existing implementation and PCIe Multilink
+  which is a single protocol expressed with 2 sub-nodes can also be
+  supported.
+  2) For Multilink configuration with 3 or more sub-nodes, the
+  configuration is performed by iterating over all sub-nodes and
+  configuring those which match the first protocol, followed by
+  iterating over all sub-nodes and configuring the ones which match the
+  second protocol. This supports 3 or 4 links as long as the number of
+  protocols is still 2 (all array values are of the type
+  [phy_t1][phy_t2], so only two different protocols are supported).
+
+v1:
+https://lore.kernel.org/r/20240709120703.2716397-1-s-vadapalli@ti.com/
+Changes since v1:
+- A multilink configuration doesn't necessarily imply two protocols
+  since a single protocol may be split across links as follows:
+  Lane 0 => Protocol 1
+  Lane 1 => Unused
+  Lane 2 => Protocol 1
+  Lane 3 => Unused
+  which corresponds to two links and therefore two sub-nodes. In such a
+  case, treat it as two single-link configurations performed sequentially
+  which happens to be the case prior to this patch. To address this,
+  handle the case where cdns_torrent_phy_configure_multilink() can be
+  invoked for a single protocol with multiple sub-nodes (links) by
+  erroring out only when the number of protocols is strictly greater
+  than two, followed by handling the configuration similar to how it was
+  done prior to this patch.
+
+Regards,
+Siddharth.
+
+ drivers/phy/cadence/phy-cadence-torrent.c | 291 +++++++++++++---------
+ 1 file changed, 172 insertions(+), 119 deletions(-)
+
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index a2d32d5f6b07..8bbbbb87bb22 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -351,6 +351,7 @@ struct cdns_torrent_phy {
+ 	void __iomem *sd_base; /* SD0801 registers base */
+ 	u32 max_bit_rate; /* Maximum link bit rate to use (in Mbps) */
+ 	u32 dp_pll;
++	u32 protocol_bitmask;
+ 	struct reset_control *phy_rst;
+ 	struct reset_control *apb_rst;
+ 	struct device *dev;
+@@ -2473,156 +2474,206 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
+ 	enum cdns_torrent_phy_type phy_t1, phy_t2;
+ 	const struct cdns_reg_pairs *reg_pairs;
+ 	int i, j, node, mlane, num_lanes, ret;
++	struct device *dev = cdns_phy->dev;
+ 	enum cdns_torrent_ssc_mode ssc;
+ 	struct regmap *regmap;
+-	u32 num_regs;
++	u32 num_regs, num_protocols, protocol;
+ 
+-	/* Maximum 2 links (subnodes) are supported */
+-	if (cdns_phy->nsubnodes != 2)
++	num_protocols = hweight32(cdns_phy->protocol_bitmask);
++	/* Maximum 2 protocols are supported */
++	if (num_protocols > 2) {
++		dev_err(dev, "at most 2 protocols are supported\n");
+ 		return -EINVAL;
++	}
+ 
+-	phy_t1 = cdns_phy->phys[0].phy_type;
+-	phy_t2 = cdns_phy->phys[1].phy_type;
+ 
+ 	/**
+-	 * First configure the PHY for first link with phy_t1. Get the array
+-	 * values as [phy_t1][phy_t2][ssc].
++	 * Get PHY types directly from subnodes if only 2 subnodes exist.
++	 * It is possible for phy_t1 to be the same as phy_t2 for special
++	 * configurations such as PCIe Multilink.
+ 	 */
+-	for (node = 0; node < cdns_phy->nsubnodes; node++) {
+-		if (node == 1) {
++	if (cdns_phy->nsubnodes == 2) {
++		phy_t1 = cdns_phy->phys[0].phy_type;
++		phy_t2 = cdns_phy->phys[1].phy_type;
++	} else {
++		/**
++		 * Both PHY types / protocols should be unique.
++		 * If they are the same, it should be expressed with either
++		 * a) Single-Link (1 Sub-node) - handled via PHY APIs
++		 * OR
++		 * b) Double-Link (2 Sub-nodes) - handled above
++		 */
++		if (num_protocols != 2) {
++			dev_err(dev, "incorrect representation of link\n");
++			return -EINVAL;
++		}
++
++		phy_t1 = fns(cdns_phy->protocol_bitmask, 0);
++		phy_t2 = fns(cdns_phy->protocol_bitmask, 1);
++	}
++
++	/**
++	 * Configure all links with the protocol phy_t1 first followed by
++	 * configuring all links with the protocol phy_t2.
++	 *
++	 * When phy_t1 = phy_t2, it is a single protocol and configuration
++	 * is performed with a single iteration of the protocol and multiple
++	 * iterations over the sub-nodes (links).
++	 *
++	 * When phy_t1 != phy_t2, there are two protocols and configuration
++	 * is performed by iterating over all sub-nodes matching the first
++	 * protocol and configuring them first, followed by iterating over
++	 * all sub-nodes matching the second protocol and configuring them
++	 * next.
++	 */
++	for (protocol = 0; protocol < num_protocols; protocol++) {
++		/**
++		 * For the case where num_protocols is 1,
++		 * phy_t1 = phy_t2 and the swap is unnecessary.
++		 *
++		 * Swapping phy_t1 and phy_t2 is only required when the
++		 * number of protocols is 2 and there are 2 or more links.
++		 */
++		if (protocol == 1) {
+ 			/**
+-			 * If first link with phy_t1 is configured, then
+-			 * configure the PHY for second link with phy_t2.
++			 * If first protocol with phy_t1 is configured, then
++			 * configure the PHY for second protocol with phy_t2.
+ 			 * Get the array values as [phy_t2][phy_t1][ssc].
+ 			 */
+ 			swap(phy_t1, phy_t2);
+ 			swap(ref_clk, ref_clk1);
+ 		}
+ 
+-		mlane = cdns_phy->phys[node].mlane;
+-		ssc = cdns_phy->phys[node].ssc_mode;
+-		num_lanes = cdns_phy->phys[node].num_lanes;
++		for (node = 0; node < cdns_phy->nsubnodes; node++) {
++			if (cdns_phy->phys[node].phy_type != phy_t1)
++				continue;
+ 
+-		/**
+-		 * PHY configuration specific registers:
+-		 * link_cmn_vals depend on combination of PHY types being
+-		 * configured and are common for both PHY types, so array
+-		 * values should be same for [phy_t1][phy_t2][ssc] and
+-		 * [phy_t2][phy_t1][ssc].
+-		 * xcvr_diag_vals also depend on combination of PHY types
+-		 * being configured, but these can be different for particular
+-		 * PHY type and are per lane.
+-		 */
+-		link_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->link_cmn_vals_tbl,
+-							  CLK_ANY, CLK_ANY,
+-							  phy_t1, phy_t2, ANY_SSC);
+-		if (link_cmn_vals) {
+-			reg_pairs = link_cmn_vals->reg_pairs;
+-			num_regs = link_cmn_vals->num_regs;
+-			regmap = cdns_phy->regmap_common_cdb;
++			mlane = cdns_phy->phys[node].mlane;
++			ssc = cdns_phy->phys[node].ssc_mode;
++			num_lanes = cdns_phy->phys[node].num_lanes;
+ 
+ 			/**
+-			 * First array value in link_cmn_vals must be of
+-			 * PHY_PLL_CFG register
++			 * PHY configuration specific registers:
++			 * link_cmn_vals depend on combination of PHY types being
++			 * configured and are common for both PHY types, so array
++			 * values should be same for [phy_t1][phy_t2][ssc] and
++			 * [phy_t2][phy_t1][ssc].
++			 * xcvr_diag_vals also depend on combination of PHY types
++			 * being configured, but these can be different for particular
++			 * PHY type and are per lane.
+ 			 */
+-			regmap_field_write(cdns_phy->phy_pll_cfg,
+-					   reg_pairs[0].val);
++			link_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->link_cmn_vals_tbl,
++								  CLK_ANY, CLK_ANY,
++								  phy_t1, phy_t2, ANY_SSC);
++			if (link_cmn_vals) {
++				reg_pairs = link_cmn_vals->reg_pairs;
++				num_regs = link_cmn_vals->num_regs;
++				regmap = cdns_phy->regmap_common_cdb;
+ 
+-			for (i = 1; i < num_regs; i++)
+-				regmap_write(regmap, reg_pairs[i].off,
+-					     reg_pairs[i].val);
+-		}
++				/**
++				 * First array value in link_cmn_vals must be of
++				 * PHY_PLL_CFG register
++				 */
++				regmap_field_write(cdns_phy->phy_pll_cfg,
++						   reg_pairs[0].val);
+ 
+-		xcvr_diag_vals = cdns_torrent_get_tbl_vals(&init_data->xcvr_diag_vals_tbl,
+-							   CLK_ANY, CLK_ANY,
+-							   phy_t1, phy_t2, ANY_SSC);
+-		if (xcvr_diag_vals) {
+-			reg_pairs = xcvr_diag_vals->reg_pairs;
+-			num_regs = xcvr_diag_vals->num_regs;
+-			for (i = 0; i < num_lanes; i++) {
+-				regmap = cdns_phy->regmap_tx_lane_cdb[i + mlane];
+-				for (j = 0; j < num_regs; j++)
+-					regmap_write(regmap, reg_pairs[j].off,
+-						     reg_pairs[j].val);
++				for (i = 1; i < num_regs; i++)
++					regmap_write(regmap, reg_pairs[i].off,
++						     reg_pairs[i].val);
+ 			}
+-		}
+ 
+-		/* PHY PCS common registers configurations */
+-		pcs_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->pcs_cmn_vals_tbl,
+-							 CLK_ANY, CLK_ANY,
+-							 phy_t1, phy_t2, ANY_SSC);
+-		if (pcs_cmn_vals) {
+-			reg_pairs = pcs_cmn_vals->reg_pairs;
+-			num_regs = pcs_cmn_vals->num_regs;
+-			regmap = cdns_phy->regmap_phy_pcs_common_cdb;
+-			for (i = 0; i < num_regs; i++)
+-				regmap_write(regmap, reg_pairs[i].off,
+-					     reg_pairs[i].val);
+-		}
++			xcvr_diag_vals = cdns_torrent_get_tbl_vals(&init_data->xcvr_diag_vals_tbl,
++								   CLK_ANY, CLK_ANY,
++								   phy_t1, phy_t2, ANY_SSC);
++			if (xcvr_diag_vals) {
++				reg_pairs = xcvr_diag_vals->reg_pairs;
++				num_regs = xcvr_diag_vals->num_regs;
++				for (i = 0; i < num_lanes; i++) {
++					regmap = cdns_phy->regmap_tx_lane_cdb[i + mlane];
++					for (j = 0; j < num_regs; j++)
++						regmap_write(regmap, reg_pairs[j].off,
++							     reg_pairs[j].val);
++				}
++			}
+ 
+-		/* PHY PMA common registers configurations */
+-		phy_pma_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->phy_pma_cmn_vals_tbl,
+-							     CLK_ANY, CLK_ANY,
+-							     phy_t1, phy_t2, ANY_SSC);
+-		if (phy_pma_cmn_vals) {
+-			reg_pairs = phy_pma_cmn_vals->reg_pairs;
+-			num_regs = phy_pma_cmn_vals->num_regs;
+-			regmap = cdns_phy->regmap_phy_pma_common_cdb;
+-			for (i = 0; i < num_regs; i++)
+-				regmap_write(regmap, reg_pairs[i].off,
+-					     reg_pairs[i].val);
+-		}
++			/* PHY PCS common registers configurations */
++			pcs_cmn_vals = cdns_torrent_get_tbl_vals(&init_data->pcs_cmn_vals_tbl,
++								 CLK_ANY, CLK_ANY,
++								 phy_t1, phy_t2, ANY_SSC);
++			if (pcs_cmn_vals) {
++				reg_pairs = pcs_cmn_vals->reg_pairs;
++				num_regs = pcs_cmn_vals->num_regs;
++				regmap = cdns_phy->regmap_phy_pcs_common_cdb;
++				for (i = 0; i < num_regs; i++)
++					regmap_write(regmap, reg_pairs[i].off,
++						     reg_pairs[i].val);
++			}
+ 
+-		/* PMA common registers configurations */
+-		cmn_vals = cdns_torrent_get_tbl_vals(&init_data->cmn_vals_tbl,
+-						     ref_clk, ref_clk1,
+-						     phy_t1, phy_t2, ssc);
+-		if (cmn_vals) {
+-			reg_pairs = cmn_vals->reg_pairs;
+-			num_regs = cmn_vals->num_regs;
+-			regmap = cdns_phy->regmap_common_cdb;
+-			for (i = 0; i < num_regs; i++)
+-				regmap_write(regmap, reg_pairs[i].off,
+-					     reg_pairs[i].val);
+-		}
++			/* PHY PMA common registers configurations */
++			phy_pma_cmn_vals =
++				cdns_torrent_get_tbl_vals(&init_data->phy_pma_cmn_vals_tbl,
++							  CLK_ANY, CLK_ANY, phy_t1, phy_t2,
++							  ANY_SSC);
++			if (phy_pma_cmn_vals) {
++				reg_pairs = phy_pma_cmn_vals->reg_pairs;
++				num_regs = phy_pma_cmn_vals->num_regs;
++				regmap = cdns_phy->regmap_phy_pma_common_cdb;
++				for (i = 0; i < num_regs; i++)
++					regmap_write(regmap, reg_pairs[i].off,
++						     reg_pairs[i].val);
++			}
+ 
+-		/* PMA TX lane registers configurations */
+-		tx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->tx_ln_vals_tbl,
+-						       ref_clk, ref_clk1,
+-						       phy_t1, phy_t2, ssc);
+-		if (tx_ln_vals) {
+-			reg_pairs = tx_ln_vals->reg_pairs;
+-			num_regs = tx_ln_vals->num_regs;
+-			for (i = 0; i < num_lanes; i++) {
+-				regmap = cdns_phy->regmap_tx_lane_cdb[i + mlane];
+-				for (j = 0; j < num_regs; j++)
+-					regmap_write(regmap, reg_pairs[j].off,
+-						     reg_pairs[j].val);
++			/* PMA common registers configurations */
++			cmn_vals = cdns_torrent_get_tbl_vals(&init_data->cmn_vals_tbl,
++							     ref_clk, ref_clk1,
++							     phy_t1, phy_t2, ssc);
++			if (cmn_vals) {
++				reg_pairs = cmn_vals->reg_pairs;
++				num_regs = cmn_vals->num_regs;
++				regmap = cdns_phy->regmap_common_cdb;
++				for (i = 0; i < num_regs; i++)
++					regmap_write(regmap, reg_pairs[i].off,
++						     reg_pairs[i].val);
+ 			}
+-		}
+ 
+-		/* PMA RX lane registers configurations */
+-		rx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->rx_ln_vals_tbl,
+-						       ref_clk, ref_clk1,
+-						       phy_t1, phy_t2, ssc);
+-		if (rx_ln_vals) {
+-			reg_pairs = rx_ln_vals->reg_pairs;
+-			num_regs = rx_ln_vals->num_regs;
+-			for (i = 0; i < num_lanes; i++) {
+-				regmap = cdns_phy->regmap_rx_lane_cdb[i + mlane];
+-				for (j = 0; j < num_regs; j++)
+-					regmap_write(regmap, reg_pairs[j].off,
+-						     reg_pairs[j].val);
++			/* PMA TX lane registers configurations */
++			tx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->tx_ln_vals_tbl,
++							       ref_clk, ref_clk1,
++							       phy_t1, phy_t2, ssc);
++			if (tx_ln_vals) {
++				reg_pairs = tx_ln_vals->reg_pairs;
++				num_regs = tx_ln_vals->num_regs;
++				for (i = 0; i < num_lanes; i++) {
++					regmap = cdns_phy->regmap_tx_lane_cdb[i + mlane];
++					for (j = 0; j < num_regs; j++)
++						regmap_write(regmap, reg_pairs[j].off,
++							     reg_pairs[j].val);
++				}
+ 			}
+-		}
+ 
+-		if (phy_t1 == TYPE_DP) {
+-			ret = cdns_torrent_dp_get_pll(cdns_phy, phy_t2);
+-			if (ret)
+-				return ret;
+-		}
++			/* PMA RX lane registers configurations */
++			rx_ln_vals = cdns_torrent_get_tbl_vals(&init_data->rx_ln_vals_tbl,
++							       ref_clk, ref_clk1,
++							       phy_t1, phy_t2, ssc);
++			if (rx_ln_vals) {
++				reg_pairs = rx_ln_vals->reg_pairs;
++				num_regs = rx_ln_vals->num_regs;
++				for (i = 0; i < num_lanes; i++) {
++					regmap = cdns_phy->regmap_rx_lane_cdb[i + mlane];
++					for (j = 0; j < num_regs; j++)
++						regmap_write(regmap, reg_pairs[j].off,
++							     reg_pairs[j].val);
++				}
++			}
+ 
+-		reset_control_deassert(cdns_phy->phys[node].lnk_rst);
++			if (phy_t1 == TYPE_DP) {
++				ret = cdns_torrent_dp_get_pll(cdns_phy, phy_t2);
++				if (ret)
++					return ret;
++			}
++
++			reset_control_deassert(cdns_phy->phys[node].lnk_rst);
++		}
+ 	}
+ 
+ 	/* Take the PHY out of reset */
+@@ -2826,6 +2877,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 	dev_set_drvdata(dev, cdns_phy);
+ 	cdns_phy->dev = dev;
+ 	cdns_phy->init_data = data;
++	cdns_phy->protocol_bitmask = 0;
+ 
+ 	cdns_phy->sd_base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(cdns_phy->sd_base))
+@@ -3010,6 +3062,7 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
+ 		}
+ 
+ 		cdns_phy->phys[node].phy = gphy;
++		cdns_phy->protocol_bitmask |= BIT(cdns_phy->phys[node].phy_type);
+ 		phy_set_drvdata(gphy, &cdns_phy->phys[node]);
+ 
+ 		node++;
+-- 
+2.40.1
+
 
 -- 
 linux-phy mailing list
