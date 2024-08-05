@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91D1BC3DA4A
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Aug 2024 05:46:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B952C3DA7F
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Aug 2024 05:47:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rmUcS/QfxsK5wryZ8GhRinfE05uRfpk/dq56+BHo7EI=; b=DWFaclVkHw1n/h
-	1x085vzKhoOWqrP0ppecgF8MO1QrdfVgj5TSBm8wCtfdr4RKJrtqWhCoO9UzGbqmWH1PNm2vMA13P
-	FogDDt91L0GmrZwYtUUkzP02SlVsiad7uRg3drq4C79IMABkYV/fxfO2jj/aJcUoNthMjeC864qag
-	RmKxaKtRLHWmPb2IAnnssMQs+asRuUROPCOq/kL8D69r/u8SIfRrU+Qeycug86mOMt1Q6XE6MLDCo
-	maW0zbFycxEp35hUvydnR+DR0r9GQjJjwHwvIcGzD/U1bFLzGdZcR0mjmTk3jHyMHYZvmj3P4+qom
-	f9DkyxTJVUp+9Y9y5rGA==;
+	List-Owner; bh=CgKLNkKb7dGxaNRp76ZDbhaGAaalDeSQQUiAJv7FdIc=; b=EM3uamhmh9NNmU
+	7m0Cvg2IVRCDzXoG+cGZiBl9W5tI3nhgWGwOlVD5Eym0el5W69+7NDhuqvTNvf8trHSytLGXZMevC
+	Lomdjkmf44XUsdNEoitILyPIR6CRGePajEwrQ6V89Z1bRP25QfDqR49atm1HQ1nb77JcKxSDClvc1
+	hX4N6B7pwnRmwLLa6rHa/igeMC08aPcath6HfHzcK0R/CqGfpE9KitS0GVOEwIzGxi1VSXQkdsIdK
+	tWR2cgcHIBk8YfgcjPTxkUErTt3Fi3MsB5tBHPeQ2H9DgXvT4V3Fwx795Eu7S7eTQg1E0EhuEq9/o
+	x9ktYqaTlZeFnxYxsL+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saqYR-0000000Eivn-0anL;
-	Mon, 05 Aug 2024 05:46:47 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1saqZY-0000000Ej7C-3RlG;
+	Mon, 05 Aug 2024 05:47:56 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saqXt-0000000EinG-0puH;
-	Mon, 05 Aug 2024 05:46:14 +0000
+	id 1saqZ2-0000000Ej1u-1V34;
+	Mon, 05 Aug 2024 05:47:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B138160B75;
-	Mon,  5 Aug 2024 05:46:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC43FC32782;
-	Mon,  5 Aug 2024 05:46:04 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 8A679CE0018;
+	Mon,  5 Aug 2024 05:47:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 926ABC32782;
+	Mon,  5 Aug 2024 05:47:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722836772;
-	bh=OX4mw95bH+8CnLRQqNyeIxX1GaKdWCVLc4sNyDYegJ0=;
+	s=k20201202; t=1722836841;
+	bh=6t39BiCMdos+o3UnVR65fSMzXPglK2uy2qedIpZNPW4=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=atcsxrd23L06+R3ao6qfq0jYTYOifASuqNNAg2/e2X42ntk2CYwIhOnBz8R+lin/+
-	 BXoLvHoEFoaHYG+4ryVUiAyBVWCubnEJ7AI9ziWaNA+Cmoe9lngGNGoHNGgrHXwVQ5
-	 awPDjAoYIaeOngYpUplLQfnKwAQzE6oCNaI+ev7Hpk2EnNR09RcNKkzid4tPijrdnD
-	 8Q35/SSHbiJV8lkaUALZaETcZ+Zg9icTNEDFCKdNPXZpUhqK0GImBmckUtspvqwyuP
-	 WXGC4GrLCBHIm6muztkYHSB8Uye389dNbIBrcMi3rIMds4dLN7UmcDsK/KUbqU4Cx3
-	 XITcBR/1v1yPg==
-Message-ID: <f928633d-072f-4b76-a22b-634e635a17c0@kernel.org>
-Date: Mon, 5 Aug 2024 07:46:02 +0200
+	b=qYmErHLPhTUCd4E4UsCXAfjbYFjhL+A7PrqX/ptaJLdhN2/y4UAM6ywbWUDq/IvI8
+	 dajUP2E4bE5DT3MHgyFOzAEgrYhcIZy5PojKG+ppzy2OWt5UV/EYyriy03pIU087L0
+	 nGgyQWVjdu+Jki7SFLXVQ3mscjX0IIzJj1TjQsocVnnwgFsFPWXg6J/G878C8TB+cS
+	 Pyqkl0Rj8XHC03ASn/frWpRhxNoqj4208LaQeixcwYKmkFxjyOccoyJ8qD9+CmsF78
+	 pn0mSD2HdSRT0DzhoSrgHOPUQyup6ozrNvBchwrwtcp6CzBzIlpxLilRwDyvaq63S0
+	 CMdGoNn6cqpeg==
+Message-ID: <3cbd3c49-e164-4bab-9a05-fdcbc01ee08b@kernel.org>
+Date: Mon, 5 Aug 2024 07:47:12 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 04/13] dt-bindings: phy: samsung,usb3-drd-phy: Add
+Subject: Re: [PATCH 05/13] dt-bindings: usb: samsung,exynos-dwc3: Add
  Exynos7885 support
 To: David Virag <virag.david003@gmail.com>, Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -56,8 +56,8 @@ To: David Virag <virag.david003@gmail.com>, Vinod Koul <vkoul@kernel.org>,
  Chanwoo Choi <cw00.choi@samsung.com>,
  Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
  <sboyd@kernel.org>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>,
- Peter Griffin <peter.griffin@linaro.org>,
  =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Peter Griffin <peter.griffin@linaro.org>,
  Sam Protsenko <semen.protsenko@linaro.org>,
  Marek Szyprowski <m.szyprowski@samsung.com>
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
@@ -65,7 +65,7 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-clk@vger.kernel.org
 References: <20240804215458.404085-1-virag.david003@gmail.com>
- <20240804215458.404085-5-virag.david003@gmail.com>
+ <20240804215458.404085-6-virag.david003@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -111,11 +111,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240804215458.404085-5-virag.david003@gmail.com>
+In-Reply-To: <20240804215458.404085-6-virag.david003@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240804_224613_372235_F2ED757E 
-X-CRM114-Status: UNSURE (   6.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240804_224724_779729_6B87E719 
+X-CRM114-Status: GOOD (  13.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,13 +132,28 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/08/2024 23:53, David Virag wrote:
+> Exynos7885 SoC has a DWC3 compatible USB controller, so it can reuse the
+> existing Exynos glue layer. Clocks are the same as on Exynos850.
 > Document Exynos7885 compatible.
-> Exynos7885 USB PHY has two clocks (ref and phy) like Exynos850, which
-> are already described in bindings.
 > 
 > Signed-off-by: David Virag <virag.david003@gmail.com>
+> ---
+>  .../devicetree/bindings/usb/samsung,exynos-dwc3.yaml         | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml b/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml
+> index 2b3430cebe99..3ec849ef4bdb 100644
+> --- a/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml
+> +++ b/Documentation/devicetree/bindings/usb/samsung,exynos-dwc3.yaml
+> @@ -16,6 +16,7 @@ properties:
+>        - samsung,exynos5250-dwusb3
+>        - samsung,exynos5433-dwusb3
+>        - samsung,exynos7-dwusb3
+> +      - samsung,exynos7885-dwusb3
+>        - samsung,exynos850-dwusb3
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+This should be compatible with exynos850, so you need oneOf: adding
+items with two compatibles.
 
 Best regards,
 Krzysztof
