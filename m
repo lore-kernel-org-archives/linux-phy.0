@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3481FC3DA4A
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Aug 2024 16:26:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC8DDC3DA4A
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Aug 2024 16:26:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gZaI1azcuVTFheksi0F2XvgVf2Etuo+yVaH5a/Mcfjg=; b=tfBRErUtpvQHW0
-	Vo7jtzfcE+zvGYNqocvNufmwvHx5xnOtALglh2On0LwHJeNao7jeJG1WJcepXlKjbswNEX1+g5LTP
-	LbMnOoge3I/Uz/8w60TDi2T4jj5KYVmqAoOD4GBj1Lu/FsxhxcwnYzwA0UjogyDewsxf0eDnIRSVL
-	4wkt4n6QOkBH8hJQMG9KK1fE1WB03ggFXPst23v6/mu2nK+zjjlnasa7vaEUjTLPNlNx0Qfzc1SN+
-	48Um5kca4hiiIonU3bzP3F0mGoEK/gIkiRDogfshai3P7HqDUrn+ds4ruixTyPFDidUT9+ocOHxKt
-	O9OMN8HqcDZi+Z9phUxg==;
+	List-Owner; bh=ynds/ANbLShz+DcFLNgsA/bxou7ATpIqcaAAH0GKmuw=; b=UX/kZhVCi0PJnZ
+	nTVqDu2rQbPi8S/2CO6wvl+wV9gtsw82yflkl6XSty8Yh5a3CYRc4HUOMOuewgGl2mwC6SLOlBcCh
+	Y7wFnlcy6tdLT9ZOnPGPTd2nSnQ3zvnXDvPqNjUXC9/jCYrKG4FE3BZ4GNFJP8QxlOxnJ6XMqoKJg
+	1hLpb7X6ieKQj0xnJ3ft/swNEeLlJtGN7Zi7gIujdwL6hsDelxVvGAswGFBfCeaREwYSMOy9Zw1GD
+	BHwzq0QnXqGnYBo08FWlM8/AL4hVgGHgajEdO3ZGOMbTYViX4337t0KQGUI+rfWwxvPcGqzjbpfxf
+	7eUWa5w75GzA+KHZTVsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sb0X6-0000000GVab-3qNy;
-	Mon, 05 Aug 2024 16:26:04 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sb0Xa-0000000GVlS-2nm1;
+	Mon, 05 Aug 2024 16:26:34 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sb0WB-0000000GVII-3fmL;
-	Mon, 05 Aug 2024 16:25:09 +0000
+	id 1sb0WG-0000000GVKs-394j;
+	Mon, 05 Aug 2024 16:25:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 2F016CE0B4D;
-	Mon,  5 Aug 2024 16:25:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8FBF5C4AF0B;
-	Mon,  5 Aug 2024 16:25:00 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 9E51BCE0B4B;
+	Mon,  5 Aug 2024 16:25:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E788FC32782;
+	Mon,  5 Aug 2024 16:25:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722875105;
-	bh=oTY1y6LH/mDw6DIDjHRilDLM3Ad9/KgqOhLxW9od9oc=;
+	s=k20201202; t=1722875109;
+	bh=zbN7KVijszQ1S5hPulI5G2cAOfeTI15A4gHSS9o6zoc=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Yukzxcd564CI618puhc2kPJrklPjQQCADFdPlB9HQKhet+02g4JkleQnC7s4VvA+h
-	 u0eX6m9UP5JVdEL0malu8QPlWKrNwdigRNWCKxLjRnqN3vtfOKUAhGz9gEgelsYo1X
-	 hoFem+XEd/duR0CnNqYgaNoiIzNkd8KGm4bktvcoEiKSAVbNFqJF+d5bkll5nwMGlV
-	 EyULrzAi2wvrK6wT7IYfAx09y9DfNHR8FKEJaeJQtMujpDDkomBOx8GIhIXp4acBrH
-	 otE67wYERUMa7dzaEPrzyf9+Mgw0crYDuuZxwwKdgQCrTsIqmUn915rJZoBQcAKEzA
-	 GDc/aY2IYvMhA==
+	b=GDhA+0oy7dmVAqooLzpx75FrWIZ86ZsUPeAHEKk4vFckpdf1AWNhNCB8poPpSJCBa
+	 6HPWSyJGI89mOcLXdpiUgRhnrLMTIU4nC8t/ofWGJZXKL4ct/PE5d6E8VA6m2vBlnG
+	 4TyiHhxN8QkIpuyLaEwBaZ54naGdFn4MRvLbGfCILmGJANq+nXlv5yxTAHPmfrgMqe
+	 hUzVOMwPtV/eMREmqvz7Hxaq7TKmx/2zOorqSSdclUwJzTwIjtHEDKFguC4OvEHvBQ
+	 qayHackhNfaS5qn1jRNO0wcyQ93Qg5jsA6HCrThZRiMPyHeoN5Zz7OY/nmPhrGRVXo
+	 u2KcG0Q/7ylpw==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, p.zabel@pengutronix.de, sjakhade@cadence.com, 
- rogerq@kernel.org, thomas.richard@bootlin.com, theo.lebrun@bootlin.com, 
- christophe.jaillet@wanadoo.fr, robh@kernel.org, make24@iscas.ac.cn, 
- Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, srk@ti.com
-In-Reply-To: <20240805092607.143869-1-s-vadapalli@ti.com>
-References: <20240805092607.143869-1-s-vadapalli@ti.com>
-Subject: Re: [PATCH v4] phy: cadence-torrent: add support for three or more
- links using 2 protocols
-Message-Id: <172287510078.465699.11033590406839071386.b4-ty@kernel.org>
-Date: Mon, 05 Aug 2024 21:55:00 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20240620-rk3588-hdmiphy-clkprov-v2-0-6a2d2164e508@collabora.com>
+References: <20240620-rk3588-hdmiphy-clkprov-v2-0-6a2d2164e508@collabora.com>
+Subject: Re: [PATCH v2 0/4] Add clock provider support to Rockchip RK3588
+ HDMI TX PHY
+Message-Id: <172287510559.465699.10935386894693742033.b4-ty@kernel.org>
+Date: Mon, 05 Aug 2024 21:55:05 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240805_092508_119144_5181EDB5 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240805_092513_002277_37839C34 
+X-CRM114-Status: GOOD (  10.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,23 +79,28 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 05 Aug 2024 14:56:07 +0530, Siddharth Vadapalli wrote:
-> The Torrent SERDES can support at most two different protocols (PHY types).
-> This only mandates that the device-tree sub-nodes used to represent the
-> configuration should describe links with at-most two different protocols.
+On Thu, 20 Jun 2024 03:36:21 +0300, Cristian Ciocaltea wrote:
+> The HDMI PHY PLL can be used as an alternative clock source to RK3588
+> SoC CRU. Since it provides more accurate clock rates, it can be used by
+> VOP2 to improve display modes handling, such as supporting non-integer
+> refresh rates.
 > 
-> The existing implementation however imposes an artificial constraint that
-> allows only two links (device-tree sub-nodes). As long as at-most two
-> protocols are chosen, using more than two links to describe them in an
-> alternating configuration is still a valid configuration of the Torrent
-> SERDES.
+> The first two patches in the series provide a couple of fixes and
+> improvements to the existing HDPTX PHY driver, while the next two add
+> the necessary changes to support the clock provider functionality.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: cadence-torrent: add support for three or more links using 2 protocols
-      commit: 5b7b83a9839be643410c31d56f17c2d430245813
+[1/4] phy: phy-rockchip-samsung-hdptx: Explicitly include pm_runtime.h
+      commit: 1b369ff94bc36d2e16c8a91c0ea8ebd329555976
+[2/4] phy: phy-rockchip-samsung-hdptx: Enable runtime PM at PHY core level
+      commit: 10ba8479f460e9256f7d884dc1b7d89006a89c7b
+[3/4] dt-bindings: phy: rockchip,rk3588-hdptx-phy: Add #clock-cells
+      commit: a652f2210054276990d45626a3b9ad5c99465f5a
+[4/4] phy: phy-rockchip-samsung-hdptx: Add clock provider support
+      commit: c4b09c562086f32588d962d30d0b7e93fe3e7cbb
 
 Best regards,
 -- 
