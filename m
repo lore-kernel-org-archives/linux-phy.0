@@ -4,108 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C176FC52D6D
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Aug 2024 08:30:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F1A0C52D71
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Aug 2024 15:56:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S4dGhmoQMkpbiWSyexFnuMtyq1mJbLfaCklg09T/v2w=; b=FMltwHmShPNICm
-	ghDIykvear7pI0FCCjieuT84A5D17CCzpZ9wTM3pOlmiaucNAQJ0GZxxlAhDeFMHCxaFe/vckgn50
-	335e1AbH9RCBhx/VNLsUIUJd3HcnQm19qDPmLaMGg8rnWZEpexSoJTXN+9H3yBs9hhFz4KJ/WQKRp
-	i+L5VeMD7vJi0+kwuLB6fD+Yd0F/vMCsIwKo59m+rn9SSfW6Ch3TwfCfsE0E/H9YBxFBUMeeeA0zO
-	jZG7Ffrmj7oBQzVj0Bh5Q4Q9QNcEvu/pTNJEMOe2aO2v7qWa+NfTjN4DK+ZhHHSMtmbGER9o4NUgQ
-	0cN1P2sOzfZ6NIaD1rUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rS0q4ELC9c1ncOFI40TVeWxHZ4kmGHP/Bbrp+v828VU=; b=ibRVkqu23WL9RK
+	v7R74OET55Y8BTdXRs0O/A/ax3oEchUxy2uZ/bpVlWxk6CosRcQTTsoq9E9YhUvbChVJE97cmJMm8
+	IcIbWdhjmv1YnmWeERII5keJ5XIOsNMjLj46R+QHAofFGu+RPyQSrt77xEp3v75mFTW8+Cpr7y70B
+	0lLfiuPfIf1EeSoX32kS1O2DIvBumq5WzkViDXrOxT0b2uMRsGCZLmXMUku6gorZkPkQQP8mdr4PG
+	G27nFzjh1lLL06pyp5ptmMskwZZL/4AhIEUqSCoLsJ0eu8hrljqIA8Cn33QpyhIgGe5MJ+jvhOkQy
+	dRsmbRNb0pFP9T3+LJJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbFao-00000000wye-21Wk;
-	Tue, 06 Aug 2024 08:30:54 +0000
+	id 1sbMYG-00000002FYJ-0O0d;
+	Tue, 06 Aug 2024 15:56:44 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbFZt-00000000wjo-2cvz;
-	Tue, 06 Aug 2024 08:29:58 +0000
+	id 1sbMXi-00000002FQA-0nNL;
+	Tue, 06 Aug 2024 15:56:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D95D260F7F;
-	Tue,  6 Aug 2024 08:29:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02DBCC32786;
-	Tue,  6 Aug 2024 08:29:49 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7A52160FF3;
+	Tue,  6 Aug 2024 15:56:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5D1AC32786;
+	Tue,  6 Aug 2024 15:56:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722932996;
-	bh=V3ZjsddvnL87rui7jg1kIK4OozC/swgwbkag97WdbJE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=uU6poAhm9A18Gz0+3whTJ3YsEVDmU7LmclB05UDqyuQ0HG64Xz1oCJE5kiD+mLh9w
-	 q9vIBiGNlXK9k45kfrCuonnOfibF0mr7bn7cKT4ecAQ9FSnpOe+/WqCv8ysFXigjAL
-	 SdfUQ4zfL3WInFZ3UaVbqX3nAvXQWSmqPQtX89oqLt9jc/kuvIyQ7+bYgtbPu4T5DD
-	 ngRYm+AMJwdNbb3nCflwK9Nl1hStcYb7i06C0gR6sO6swoNVwiXBvaxy9RfigWi91o
-	 PnNxj0BBRWqWejG4BCdwFLOO06/pac8msaLaN44vITxJmH9yIFfsDBpcaQ0UxUzq2O
-	 lCJlV5m/mCHuw==
-Message-ID: <160dd5fc-83ba-4311-a173-44521342a3d8@kernel.org>
-Date: Tue, 6 Aug 2024 10:29:47 +0200
+	s=k20201202; t=1722959769;
+	bh=kCfBzoppW38UaZfFWdxMgASm/9xiPeuaXe7b97vR2R4=;
+	h=From:To:Cc:Subject:Date:From;
+	b=ud690dZA3zuA/UW9oZeKWZ8GkNIKgD5sGygDol4edq49cbf7ifVplLKFgeIqig+3m
+	 yYz3Y+vu9jZS4PPwMU1MEzTaBklPgxjNI1Nyti3P+KUnqdpmkBeyLFw2zapxf5JoCU
+	 REsTZrvHXtTqoe7bGZS73X7MbUH1gefB+XkhZblBD7plwK20o6vG4B07XFe/MZZLUb
+	 kDmdHiBndqMPKgR6+MZa98ooEguuuODRSZxjhLt/CFupwLTv8Qiw5k5+FGhm7l/tvo
+	 dn22QQ+M33eX+LPrhsAJ0UkAtW40LfIVeMq7lA06NlcOjqlysrTq0DNJpphnvLYE+v
+	 pi0XZe5bQpSjA==
+From: Lorenzo Bianconi <lorenzo@kernel.org>
+To: linux-phy@lists.infradead.org
+Cc: vkoul@kernel.org,
+	kishon@kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	lorenzo.bianconi83@gmail.com,
+	nbd@nbd.name,
+	john@phrozen.org,
+	dd@embedd.com,
+	upstream@airoha.com,
+	angelogioacchino.delregno@collabora.com
+Subject: [PATCH v3] phy: airoha: adjust initialization delay in airoha_pcie_phy_init()
+Date: Tue,  6 Aug 2024 17:55:48 +0200
+Message-ID: <8af6f27857619f1e0dd227f08b8584ae8fb22fb2.1722959625.git.lorenzo@kernel.org>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/5] dt-bindings: phy: imx8mq-usb: add compatible
- "fsl,imx95-usb-phy"
-To: Xu Yang <xu.yang_2@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, gregkh@linuxfoundation.org, Frank.Li@nxp.com,
- jun.li@nxp.com, l.stach@pengutronix.de, aford173@gmail.com,
- hongxing.zhu@nxp.com, alexander.stein@ew.tq-group.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org
-References: <20240806050639.1013152-1-xu.yang_2@nxp.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240806050639.1013152-1-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240806_012957_790047_6AB04160 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20240806_085610_291825_B2E18A04 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,88 +77,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/08/2024 07:06, Xu Yang wrote:
-> The usb phy in i.MX95 is compatible with i.MX8MP's, this will add a
-> compatible "fsl,imx95-usb-phy" for i.MX95. Also change reg maxItems
-> to 2 since i.MX95 needs another regmap to control Type-C Assist (TCA)
-> block. Since i.MX95 usb phy is able to switch SS lanes, this will also
-> add orientation-switch and port property to the file.
-> 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> 
-> ---
-> Changes in v2:
->  - replace minItems with description in reg property
->  - remove orientation-switch and port
->  - refer to usb-switch.yaml
->  - use unevaluatedProperties
-> ---
->  .../bindings/phy/fsl,imx8mq-usb-phy.yaml      | 42 ++++++++++++++++---
->  1 file changed, 37 insertions(+), 5 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> index dc3a3f709fea..6d6d211883ae 100644
-> --- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> @@ -11,12 +11,17 @@ maintainers:
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - fsl,imx8mq-usb-phy
-> -      - fsl,imx8mp-usb-phy
-> +    oneOf:
-> +      - enum:
-> +          - fsl,imx8mq-usb-phy
-> +          - fsl,imx8mp-usb-phy
-> +      - items:
-> +          - const: fsl,imx95-usb-phy
-> +          - const: fsl,imx8mp-usb-phy
->  
->    reg:
-> -    maxItems: 1
-> +    minItems: 1
-> +    maxItems: 2
->  
->    "#phy-cells":
->      const: 0
-> @@ -89,7 +94,34 @@ required:
->    - clocks
->    - clock-names
->  
-> -additionalProperties: false
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - fsl,imx95-usb-phy
-> +    then:
-> +      properties:
-> +        reg:
-> +          items:
-> +            - description: USB PHY Control range
-> +            - description: USB PHY TCA Block range
-> +    else:
-> +      properties:
-> +        reg:
-> +          maxItems: 1
-> +
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - fsl,imx95-usb-phy
-> +    then:
-> +      $ref: /schemas/usb/usb-switch.yaml#
+Align phy-pcie initialization delay to the vendor sdk in
+airoha_pcie_phy_init routine and allow the hw to complete required
+configuration before proceeding
 
-ref should be rather in top-level. You can always disallow certain
-properties for devices, if they are really not applicable.
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+---
+Changes since v2:
+- fix comment
+Changes since v1:
+- use msleep() instead of mdelay()
+---
+ drivers/phy/phy-airoha-pcie.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-Best regards,
-Krzysztof
+diff --git a/drivers/phy/phy-airoha-pcie.c b/drivers/phy/phy-airoha-pcie.c
+index bd3edaa986c8..1e410eb41058 100644
+--- a/drivers/phy/phy-airoha-pcie.c
++++ b/drivers/phy/phy-airoha-pcie.c
+@@ -18,6 +18,9 @@
+ #define LEQ_LEN_CTRL_MAX_VAL	7
+ #define FREQ_LOCK_MAX_ATTEMPT	10
+ 
++/* PCIe-PHY initialization time in ms needed by the hw to complete */
++#define PHY_HW_INIT_TIME_MS	30
++
+ enum airoha_pcie_port_gen {
+ 	PCIE_PORT_GEN1 = 1,
+ 	PCIE_PORT_GEN2,
+@@ -1181,7 +1184,8 @@ static int airoha_pcie_phy_init(struct phy *phy)
+ 	airoha_phy_pma1_set_bits(pcie_phy, REG_PCIE_PMA_SS_DA_XPON_PWDB0,
+ 				 PCIE_DA_XPON_CDR_PR_PWDB);
+ 
+-	usleep_range(100, 200);
++	/* Wait for the PCIe PHY to complete initialization before returning */
++	msleep(PHY_HW_INIT_TIME_MS);
+ 
+ 	return 0;
+ }
+-- 
+2.45.2
 
 
 -- 
