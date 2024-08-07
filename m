@@ -4,65 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08508C3DA7F
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Aug 2024 07:20:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFF8BC52D6F
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Aug 2024 07:21:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IimvSV1Gp0/YJutx8CebpamM+aHHnHrf5bS4YPPnOpo=; b=W2wswhLfp3GO6j
-	Rf9vU23nzCRj/KiTlxkZaO4HV9JUr9cepGHZy5FQe5P0RXmRCYLwxZrMSdfnylp2TXYsrce80EHHp
-	zKkhb1zH8u2P1rFr8Z/QirkuiKpyB4wBZNsJlh8DrMHQS12cpSJvN/aHbDRsXszkGDdJoQgLrMnDX
-	LWmT60oeALMvfTWXilTS4FUpYRnzno9kiu2rwYGNLgMRfzW429hcZH6khexts8YlKsbJsJN9IIFeB
-	rVBdtxkVYUcc5WOgJI/3dISpF+AFRUY/TwFSKRmZyTitUm7aeDL5N8ChRBrKHowpTmGYpeof7lVAR
-	DQzXRTWVq53CD4woVKVQ==;
+	List-Owner; bh=aNPmN0ov/7ZxZGo0b8kZJzPUa0iIwoyX67+MQ8oX0C8=; b=zHJ/fb006buRcf
+	J01FYFfxB1E/ecnq6BdmdmTnpmlOJDri1uKF/tWateEIzIgfOKBQSnCRxA6dO2tXvzgqp4Q8x4AkX
+	XQbi7qMBmIaNU1ssJDhiJucbQIZeJGSV9sItqBJv+vGTcEbmQWDFI3KMAqOJQa0+L1bEt/GRoggyK
+	VkdBqTmHMMNPFBE6B/7PgX8qJerRxljy64l9Cn6HBnnPyS+qm/xHA0Qqocpcnq8JqDXc5LLAsBIIB
+	grvDu2T8RoWPi7jNdPmFTMM/pSZPueUjuXhXn8NxUh1nXtdoxOkm2B0keJNkRzvUgxx/2d/CfPoEF
+	hvT15tUXuRhaTjk4mMPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbayg-00000004BpG-31yE;
-	Wed, 07 Aug 2024 07:20:58 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sbazA-00000004BtL-2ph3;
+	Wed, 07 Aug 2024 07:21:28 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbay7-00000004Bia-2Pne;
-	Wed, 07 Aug 2024 07:20:25 +0000
+	id 1sbayF-00000004Bkt-0ajD;
+	Wed, 07 Aug 2024 07:20:32 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id DF8F4CE0FF0;
-	Wed,  7 Aug 2024 07:20:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EFDEBC32782;
-	Wed,  7 Aug 2024 07:20:14 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 1E2B7CE0FF0;
+	Wed,  7 Aug 2024 07:20:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1FC5C4AF0B;
+	Wed,  7 Aug 2024 07:20:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723015221;
-	bh=bbnuzLz9A5UR1BFr7SjqKnblNq1aFKi3wf/G3ok/5xE=;
+	s=k20201202; t=1723015228;
+	bh=HD4LnSWSyV6PVk9RhNL//poYJ6zC6iircMPlAlvsRag=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=bQIUC97AH6ZqyRUpetm9wrxXjkfDCHiOOqj888NdqT9C56N9Y6SA8GSI5z8bPufeg
-	 Kwlr6k7/Oxcs5a79fJjnP7O2kCJQW3YFPYfe8uMqiXq1sRUrPqAK6PA3NfAYBIvuUS
-	 kxbF5Qj0mBQE8MfL96RK+dpCqa79eWgFi5UdnSV5BLzEYjKoZynLCn7gbUs1K68Lkj
-	 DLn1S/gED4oJZcHDRt5Xfuf65T84pjZN52LrJgG9ORXHvOytVDxdeqIgTtq8nlUViK
-	 dNIOGHcvFlMGJAimIbGPxSJc1LEWLicO1QkTePPaY8qf2t1rdJKsY+riRuRS8yhngS
-	 r/LDgeA3eyVFA==
-Message-ID: <f85de847-3476-4b6c-ae45-bb625061db94@kernel.org>
-Date: Wed, 7 Aug 2024 09:20:12 +0200
+	b=a5HL9W/xJWqRFGBgKr9vkFFDwj4BelAF0jYZUtxH5D/jmUz4m1AxU4sTMxnWgPB2j
+	 8N85EyK0dBfjCTxC304kBvBOVjvZNOSZjZgxJ+OiPhLK9ZOCXa7GmIIbouSpNLsQHh
+	 XF+3WlmcLA5A3rZMfqidj/O0yR2WmjU3ILTNCLKV/gwVJBfjJv4+pKIZXUGS9vE2sJ
+	 45ch25GTdLL+KIrSH15a5mCskKtXFB0RgIgsAZgIemrpROaggHyFgqDt8E1abTVm3d
+	 YK138k5DLEEANPzSmdkVroCx+gEFYhzjpjsWuVyrIGD/12VpN3EPEszBP2Yq7l4Bo5
+	 jsuLjbQCbxnIw==
+Message-ID: <ad38013a-f132-4b64-b895-12eb3611d557@kernel.org>
+Date: Wed, 7 Aug 2024 09:20:22 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 1/5] dt-bindings: phy: imx8mq-usb: add compatible
  "fsl,imx95-usb-phy"
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: Frank Li <Frank.li@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
+To: Xu Yang <xu.yang_2@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
  robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, gregkh@linuxfoundation.org, jun.li@nxp.com,
- l.stach@pengutronix.de, aford173@gmail.com, hongxing.zhu@nxp.com,
- alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, imx@lists.linux.dev,
- linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
+ festevam@gmail.com, gregkh@linuxfoundation.org, Frank.Li@nxp.com,
+ jun.li@nxp.com, l.stach@pengutronix.de, aford173@gmail.com,
+ hongxing.zhu@nxp.com, alexander.stein@ew.tq-group.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-usb@vger.kernel.org
 References: <20240806050639.1013152-1-xu.yang_2@nxp.com>
- <160dd5fc-83ba-4311-a173-44521342a3d8@kernel.org>
- <ZrJLS37GFmvkQpml@lizhi-Precision-Tower-5810>
- <bfe6430c-a022-4e8f-ab7f-8d8e8cb10fca@kernel.org>
- <20240807055701.o7fo43efvv3jxlhv@hippo>
- <9127e97e-64ad-47df-aa4f-03feafafdbb1@kernel.org>
- <20240807071143.6njojidi75xsjkxr@hippo>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,10 +102,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240807071143.6njojidi75xsjkxr@hippo>
+In-Reply-To: <20240806050639.1013152-1-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240807_002024_017409_41E39FFC 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20240807_002031_567336_D5B173A5 
+X-CRM114-Status: UNSURE (   7.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,63 +123,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/08/2024 09:11, Xu Yang wrote:
-> On Wed, Aug 07, 2024 at 07:59:02AM +0200, Krzysztof Kozlowski wrote:
->> On 07/08/2024 07:57, Xu Yang wrote:
->>> On Wed, Aug 07, 2024 at 07:48:43AM +0200, Krzysztof Kozlowski wrote:
->>>> On 06/08/2024 18:11, Frank Li wrote:
->>>>> On Tue, Aug 06, 2024 at 10:29:47AM +0200, Krzysztof Kozlowski wrote:
->>>>>> On 06/08/2024 07:06, Xu Yang wrote:
->>>>>>> The usb phy in i.MX95 is compatible with i.MX8MP's, this will add a
->>>>>>> compatible "fsl,imx95-usb-phy" for i.MX95. Also change reg maxItems
->>>>>>> to 2 since i.MX95 needs another regmap to control Type-C Assist (TCA)
->>>>>>> block. Since i.MX95 usb phy is able to switch SS lanes, this will also
->>>>>>> add orientation-switch and port property to the file.
->>>>>>>
->>>>>>> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
->>>>>>>
->>>>>>> ---
->>>>>>> Changes in v2:
->>>>>>>  - replace minItems with description in reg property
->>>>>>>  - remove orientation-switch and port
->>>>>>>  - refer to usb-switch.yaml
->>>>>>>  - use unevaluatedProperties
->>>>>>>
-> [...]
->>>>>>
->>>>>> ref should be rather in top-level. You can always disallow certain
->>>>>> properties for devices, if they are really not applicable.
->>>>>
->>>>> There are some "required" in usb-switch.yaml,
->>>>>
->>>>> oneOf:
->>>>>   - required:
->>>>>       - port
->>>>>   - required:
->>>>>       - ports
->>>>>
->>>>> If put on the top, it may cause DTB check warning for other compatible
->>>>> strings, which have not support usb-switch.
->>>>
->>>> Hm, indeed, that's unusual case to have such different devices in one
->>>> schema. Did you test that above $ref in if: actually works?
->>>
->>> Yes, it works and this yaml pass dt_binding_check and dtbs_check. 
->>
->> I know it passes, I am asking whether it actually works. Is the $ref
->> actually effective? Is it properly applied?
+On 06/08/2024 07:06, Xu Yang wrote:
+> The usb phy in i.MX95 is compatible with i.MX8MP's, this will add a
+> compatible "fsl,imx95-usb-phy" for i.MX95. Also change reg maxItems
+> to 2 since i.MX95 needs another regmap to control Type-C Assist (TCA)
+> block. Since i.MX95 usb phy is able to switch SS lanes, this will also
+> add orientation-switch and port property to the file.
 > 
-> If imx95 usb phy node doesn't contain "orientation-switch" and "port", dtb check will
-> show below error:
-> 
-> usb/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dtb: phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
->         'port' is a required property
->         'ports' is a required property
->         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8mq-usb-phy.yaml#
-> 
-> Do you want other test results?
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 
-Thank you for confirmation, it's enough.
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
