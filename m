@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D63C5C3DA4A
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Aug 2024 01:27:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98A68C3DA4A
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Aug 2024 01:34:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hm0hyZJ4GjyZ4R1AuHbXZzk3nsc/LM74WiRuSmUZjbY=; b=0s+2YvZyvn4j7G
-	ZvRhhQOT42khwG54eIY3DPK0ktemrZeUC0LzZ3Mp0rZ8Uxm5m+bIxyX6oz58j7E0CiyAPjEsvtAYU
-	7AD7vl3Tc9+UwTGg9hjWmpstnRiK7yBDVUAhcmTebEQcPDFL18VtNuw6RFuPHqizQpbZX8sVOcLFX
-	wy/lVXUk3bM0honmwx/5YFgLlbXIGixJlMIjedw/yInl7uJF2OsXV1KzRY2/D/f5f6Nrb4yUzd4zH
-	XdhDn+0SnMHMxsQ7Wi6xlIfKTdEhO2DHSwn5pntydR1w5gKDroX23iSeTcgQNLB0uIEagRr/ikSEX
-	6fP+SQ6VfhXLS18UJc4w==;
+	List-Owner; bh=XpWQ+TvIDARRBfs4woo9p+AtVGlNpf3wt/PGcsyjiys=; b=0TpqzyrvTvhX7s
+	in5cBlYjgOF/0YzOli0dDh3XBLOCa+AYPnvd/cXqN3SmyO2WldkRPICufuPF2sJMKRbnRWeQuiV9n
+	5fHmlO7M0qaZv6hqnzwvLLV5aixtWP3vZ+IIInAfL0zqIjQUcmAu6sHnxaVo7JWiIb/TfFrk4aL/9
+	SF9OolUeGELZVTJel7uJY/jCn35vhyie4gJmmjFZL9eexSUbqRkvNIDDI2pdBQr363LKZQ+ajqifV
+	sKbYmT4HApRb+iBmhBqUkmZQxcMNK8HMTE+flL0YzaQ4jKd95tZoDvIsgaa4UxXEYJH1qpbWKnSKr
+	oc9cVFRVSDl9Q5eWtlIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1scEPQ-00000009vUl-1ZWf;
-	Fri, 09 Aug 2024 01:27:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1scEWC-00000009whc-1JDZ;
+	Fri, 09 Aug 2024 01:34:12 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1scEOr-00000009vSG-0nS4;
-	Fri, 09 Aug 2024 01:26:38 +0000
+	id 1scEVc-00000009wfR-3Vfn;
+	Fri, 09 Aug 2024 01:33:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 119F161575;
-	Fri,  9 Aug 2024 01:26:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83B66C32782;
-	Fri,  9 Aug 2024 01:26:32 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 8AE5D615B5;
+	Fri,  9 Aug 2024 01:33:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68CE6C32782;
+	Fri,  9 Aug 2024 01:33:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723166795;
-	bh=t4Kxw+OVg7XockFwmHnqd3O4dZONmVYviHD+66OcYik=;
+	s=k20201202; t=1723167215;
+	bh=jM04DU9PwiRiXmlRYkEKsDYtOW/V6HmVi1GnllNw9DA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Dxoq6RQ9C/ka5+gpSg523ncPJUeOb5YvXLj6yhC0K2bGFL8RRFUWDqdUc4sPDEN+Z
-	 HM5IWV15KVS+ZmrDFgFEI+4xa3Moc0mQ9edZVahWNz8DZQ/KJtFQNJ6+wRM9wLcjXN
-	 UWvPxzrrLMg/fb+YHFmR3mBPw1DKUdVZM9iVjIQBhKzk/U1h+T4k9/1AgLSkzVkrtf
-	 lmxfnXlFkrjag6zOAEX8+fonRhZ87Wwn7aFT+raNjHJDGBu+NJz/4E/RsgzfyVsruV
-	 XS9zj2JLsTM9ECf4+HVsylHNsFQxYFEiP++Nq/UFCT5tfxaHjzYe47dl2AnzaiUhpN
-	 +6oQdoB71K1lg==
-Date: Fri, 9 Aug 2024 09:26:25 +0800
+	b=kBc+/6KqlqCmZu3H4y1PnTsBK9UuqqrSMUAOXcF310+tBWQ6Zcw1v6bel69bRi9c/
+	 49VGLYjWggxVyvq/FzO2SToILVkFljvNPP5UopswrHma8bS07B//hM0ccEWwNkH2K6
+	 fZp5Wd13KMle+6RWDavu3m5f2adELNuBPwvNET//Rn+AFZdPsOKZwFYfue+CZdYztz
+	 HOhbYxPmumLDwsVlDsCyi13tdr90ANLN18ivJm6vN0d7ljDpk4j7UnMe0CQAppDRPW
+	 +p1TYjddvg1CHlJq8aHeRpyEwRvBcf/extXBPG3Ewyg9azzl+3PNG2t1k+ajyflr4x
+	 teEyNnQZxqmoQ==
+Date: Fri, 9 Aug 2024 09:33:25 +0800
 From: Peter Chen <peter.chen@kernel.org>
 To: Xu Yang <xu.yang_2@nxp.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
@@ -51,16 +51,17 @@ Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
 	linux-usb@vger.kernel.org, jun.li@nxp.com
-Subject: Re: [PATCH v2 1/6] usb: phy: mxs: enable regulator phy-3p0 to
- improve signal qualilty
-Message-ID: <20240809012625.GC2673490@nchen-desktop>
+Subject: Re: [PATCH v2 5/6] usb: phy: mxs: enable weak 1p1 regulator for
+ imx6ul during suspend
+Message-ID: <20240809013325.GD2673490@nchen-desktop>
 References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
+ <20240726113207.3393247-5-xu.yang_2@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240726113207.3393247-1-xu.yang_2@nxp.com>
+In-Reply-To: <20240726113207.3393247-5-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240808_182637_388416_A1493C06 
-X-CRM114-Status: GOOD (  19.83  )
+X-CRM114-CacheID: sfid-20240808_183337_007126_19100F1A 
+X-CRM114-Status: GOOD (  24.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,88 +78,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-07-26 19:32:02, Xu Yang wrote:
-> Enable regulator 'phy-3p0' to pass eye diagram test since it improve signal
-> qualilty.
+On 24-07-26 19:32:06, Xu Yang wrote:
+> 1p1 is off when the system enters suspend at i.MX6UL. It cause the PHY
+> get wrong USB DP/DM value, then unexpected wakeup may occur if USB wakeup
+> enabled. This will enable weak 1p1 during PHY suspend if vbus exist. So
+> USB DP/DM is correct when system suspend.
 > 
 > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-
-Reviewed-by: Peter Chen <peter.chen@kernel.org>
-
 > 
 > ---
 > Changes in v2:
->  - rewrite commit message
->  - use dev_err_probe() as suggested by Frank Li
+>  - modify commit message
 > ---
->  drivers/usb/phy/phy-mxs-usb.c | 26 ++++++++++++++++++++++++++
->  1 file changed, 26 insertions(+)
+>  drivers/usb/phy/phy-mxs-usb.c | 32 ++++++++++++++++++++++++++++----
+>  1 file changed, 28 insertions(+), 4 deletions(-)
 > 
 > diff --git a/drivers/usb/phy/phy-mxs-usb.c b/drivers/usb/phy/phy-mxs-usb.c
-> index 920a32cd094d..d9d29f0b37de 100644
+> index acaae22df3ba..cc4156c1b148 100644
 > --- a/drivers/usb/phy/phy-mxs-usb.c
 > +++ b/drivers/usb/phy/phy-mxs-usb.c
-> @@ -18,6 +18,7 @@
->  #include <linux/regmap.h>
->  #include <linux/mfd/syscon.h>
->  #include <linux/iopoll.h>
-> +#include <linux/regulator/consumer.h>
+> @@ -71,6 +71,9 @@
+>  #define BM_USBPHY_PLL_EN_USB_CLKS		BIT(6)
 >  
->  #define DRIVER_NAME "mxs_phy"
+>  /* Anatop Registers */
+> +#define ANADIG_REG_1P1_SET			0x114
+> +#define ANADIG_REG_1P1_CLR			0x118
+> +
+>  #define ANADIG_ANA_MISC0			0x150
+>  #define ANADIG_ANA_MISC0_SET			0x154
+>  #define ANADIG_ANA_MISC0_CLR			0x158
+> @@ -123,6 +126,9 @@
 >  
-> @@ -204,6 +205,7 @@ struct mxs_phy {
->  	int port_id;
->  	u32 tx_reg_set;
->  	u32 tx_reg_mask;
-> +	struct regulator *phy_3p0;
+>  #define USB_PHY_VLLS_WAKEUP_EN			BIT(0)
+>  
+> +#define BM_ANADIG_REG_1P1_ENABLE_WEAK_LINREG	BIT(18)
+> +#define BM_ANADIG_REG_1P1_TRACK_VDD_SOC_CAP	BIT(19)
+> +
+>  #define to_mxs_phy(p) container_of((p), struct mxs_phy, phy)
+>  
+>  /* Do disconnection between PHY and controller without vbus */
+> @@ -196,7 +202,8 @@ static const struct mxs_phy_data imx6sx_phy_data = {
 >  };
 >  
->  static inline bool is_imx6q_phy(struct mxs_phy *mxs_phy)
-> @@ -288,6 +290,16 @@ static int mxs_phy_hw_init(struct mxs_phy *mxs_phy)
->  	if (ret)
->  		goto disable_pll;
+>  static const struct mxs_phy_data imx6ul_phy_data = {
+> -	.flags = MXS_PHY_DISCONNECT_LINE_WITHOUT_VBUS,
+> +	.flags = MXS_PHY_DISCONNECT_LINE_WITHOUT_VBUS |
+> +		MXS_PHY_HARDWARE_CONTROL_PHY2_CLK,
+>  };
 >  
-> +	if (mxs_phy->phy_3p0) {
-> +		ret = regulator_enable(mxs_phy->phy_3p0);
-> +		if (ret) {
-> +			dev_err(mxs_phy->phy.dev,
-> +				"Failed to enable 3p0 regulator, ret=%d\n",
-> +				ret);
-> +			return ret;
-> +		}
-> +	}
-> +
->  	/* Power up the PHY */
->  	writel(0, base + HW_USBPHY_PWD);
->  
-> @@ -448,6 +460,9 @@ static void mxs_phy_shutdown(struct usb_phy *phy)
->  	if (is_imx7ulp_phy(mxs_phy))
->  		mxs_phy_pll_enable(phy->io_priv, false);
->  
-> +	if (mxs_phy->phy_3p0)
-> +		regulator_disable(mxs_phy->phy_3p0);
-> +
->  	clk_disable_unprepare(mxs_phy->clk);
+>  static const struct mxs_phy_data imx7ulp_phy_data = {
+> @@ -241,6 +248,11 @@ static inline bool is_imx7ulp_phy(struct mxs_phy *mxs_phy)
+>  	return mxs_phy->data == &imx7ulp_phy_data;
 >  }
 >  
-> @@ -789,6 +804,17 @@ static int mxs_phy_probe(struct platform_device *pdev)
->  	mxs_phy->clk = clk;
->  	mxs_phy->data = of_device_get_match_data(&pdev->dev);
->  
-> +	mxs_phy->phy_3p0 = devm_regulator_get(&pdev->dev, "phy-3p0");
-> +	if (PTR_ERR(mxs_phy->phy_3p0) == -ENODEV)
-> +		/* not exist */
-> +		mxs_phy->phy_3p0 = NULL;
-> +	else if (IS_ERR(mxs_phy->phy_3p0))
-> +		return dev_err_probe(&pdev->dev, PTR_ERR(mxs_phy->phy_3p0),
-> +				"Getting regulator error\n");
+> +static inline bool is_imx6ul_phy(struct mxs_phy *mxs_phy)
+> +{
+> +	return mxs_phy->data == &imx6ul_phy_data;
+> +}
 > +
-> +	if (mxs_phy->phy_3p0)
-> +		regulator_set_voltage(mxs_phy->phy_3p0, 3200000, 3200000);
-> +
->  	platform_set_drvdata(pdev, mxs_phy);
+>  /*
+>   * PHY needs some 32K cycles to switch from 32K clock to
+>   * bus (such as AHB/AXI, etc) clock.
+> @@ -884,18 +896,30 @@ static void mxs_phy_wakeup_enable(struct mxs_phy *mxs_phy, bool on)
 >  
->  	device_set_wakeup_capable(&pdev->dev, true);
+>  static void mxs_phy_enable_ldo_in_suspend(struct mxs_phy *mxs_phy, bool on)
+>  {
+> -	unsigned int reg = on ? ANADIG_ANA_MISC0_SET : ANADIG_ANA_MISC0_CLR;
+> +	unsigned int reg;
+> +	u32 value;
+>  
+>  	/* If the SoCs don't have anatop, quit */
+>  	if (!mxs_phy->regmap_anatop)
+>  		return;
+>  
+> -	if (is_imx6q_phy(mxs_phy))
+> +	if (is_imx6q_phy(mxs_phy)) {
+> +		reg = on ? ANADIG_ANA_MISC0_SET : ANADIG_ANA_MISC0_CLR;
+>  		regmap_write(mxs_phy->regmap_anatop, reg,
+>  			BM_ANADIG_ANA_MISC0_STOP_MODE_CONFIG);
+> -	else if (is_imx6sl_phy(mxs_phy))
+> +	} else if (is_imx6sl_phy(mxs_phy)) {
+> +		reg = on ? ANADIG_ANA_MISC0_SET : ANADIG_ANA_MISC0_CLR;
+>  		regmap_write(mxs_phy->regmap_anatop,
+>  			reg, BM_ANADIG_ANA_MISC0_STOP_MODE_CONFIG_SL);
+> +	} else if (is_imx6ul_phy(mxs_phy)) {
+> +		reg = on ? ANADIG_REG_1P1_SET : ANADIG_REG_1P1_CLR;
+> +		value = BM_ANADIG_REG_1P1_ENABLE_WEAK_LINREG |
+> +			BM_ANADIG_REG_1P1_TRACK_VDD_SOC_CAP;
+> +		if (mxs_phy_get_vbus_status(mxs_phy) && on)
+> +			regmap_write(mxs_phy->regmap_anatop, reg, value);
+> +		else if (!on)
+> +			regmap_write(mxs_phy->regmap_anatop, reg, value);
+
+Please check if vbus is not there but wakeup is enabled, and see the
+behaviour is expected or not.
+
+Peter
+> +	}
+>  }
+>  
+>  static int mxs_phy_system_suspend(struct device *dev)
 > -- 
 > 2.34.1
 > 
