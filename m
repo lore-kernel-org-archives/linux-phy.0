@@ -4,66 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A0E1C52D7C
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Aug 2024 14:57:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBA07C3DA4A
+	for <linux-phy@archiver.kernel.org>; Sun, 11 Aug 2024 13:37:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Zc/0yOqpcAnAVsDuX+X6JH9Y2CW5Rz6Psz/rneV6+Og=; b=SGIkXrBDGXLq2rE11wEeN6UfSg
-	53qUnhLqdKVtegTdoL/UxKMKZqvabgHQeYMyYFuWU1IiWMNPcUVLCxL7XvZrvre8HzMyji3eRMQ5m
-	dJt/WgLXUW//OiQhNow5YqkP3vf6KqHsxaGKW53QujS3cCasNsLuOLS9MMCE7GoODMtUFLIfUUWZK
-	ivydfmimu9K9kOWH1Cpu/PnjlSFodo9tovmqEx6hyjJEiacwHLmLYYiNFHEbWeVaA9IdHCzfM0I3b
-	REEz4iCO/kkkuX1ArWoUE2isVOLRn7cEeiKayrS84tsKSkTzJDQ99aZOGDnVgzo27GHfAwzaNzn/7
-	mChfOyGg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=63P2cxl8kwjXZeV7LBFXEfcTR34rl/lDCMLwDZOHJ9U=; b=2xgzFaa9E64O3N
+	KIOuQUGacWLh42gcsiwGh3sRbhoYQGBdiozYZQIlovWZPnYS86FhWESXIo2VplBNHOOPxvHV/V/b1
+	XNUx0Y0VBHg82aqs1a2PEGWhl1elT88EaGQN4hzksL4paExuMRg4WzV89TC6tOmaX30Smd0G/l08C
+	6UIpia0w6N6n/bHDYKL+0ajdyHOoxufcT/s9W0P7iOuc8mnoqNT+4IiaAPsfC2jlGzUZ3do7pLqpo
+	L50zTHveImCF6l7tPTJQl6ue866YPHMCQklbXkxs7TXftfQTogjQonH/688fE+bP8XQ3rFXRUDkHs
+	GCdg2/3MNSbPTrrnqHVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1scR3b-0000000BcXH-2fPp;
-	Fri, 09 Aug 2024 14:57:31 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sd8km-0000000Fbyp-1rgo;
+	Sun, 11 Aug 2024 13:37:00 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1scR3Y-0000000BcWv-1bGo
+	id 1sd8ki-0000000Fbxq-1ub4
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Aug 2024 14:57:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A9A83616FF;
-	Fri,  9 Aug 2024 14:57:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0453DC32782;
-	Fri,  9 Aug 2024 14:57:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723215447;
-	bh=4R4KKGn2NxfICr7QhCZSDNk9DiWF5xBj9zur1+8jo88=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=JaRDrZOIPLi0YGLznowFlch5ly9OEAzEwIqVenI88eKSPOMRFgDnYJO4twVfCN96s
-	 Uo07xbv8E3L7VIskARFQo62HM6diZXNQXm1g1IQjEMXCzJPyo4O8ojWU02CBO12nPO
-	 /MmjdgAc7ldcVl6TuxkMgVgwPuCB6elIlIvhf8pudxG0GCi9RrWIYouCW4Bhd9poG/
-	 2T0fvUOljQ2biWHPsyBE0qXpsKlxDzgOr+vRYh1G/Bjahq4AWV2xFH1N8ZeUQXsYWX
-	 W8R+x+xAtkCUYgbNMZawkc3PGwBB85oOmlDNkGHa1Uf5jCeQh+bpbCWYu/i/eQ3eXu
-	 P7IyVTaF3AQ6w==
-Date: Fri, 9 Aug 2024 15:57:22 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Ilya Orazov <ilordash02@gmail.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
+	Sun, 11 Aug 2024 13:36:58 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-52f025ab3a7so4501941e87.2
+        for <linux-phy@lists.infradead.org>; Sun, 11 Aug 2024 06:36:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1723383414; x=1723988214; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=cig1+J77dIPekmdgbTlikcW8VVCG5pt4tWITgQBHG4I=;
+        b=JwyAWx6lRoSoKLmR9feWZPhZerd8AOli/ZWwJedroyqn07HdD6DWMjkFx28fKQrOZF
+         rUMYx4/cEzz3OfYygK6Zxt1jd0ThLN2J1GVxWQj3wAhf6fm58MoP7ZQvY9WjRCeVXhs/
+         txhS6l5NNEpqXqo5riKfB4p6vxC3/Yz2n1EbdeQ3gZKvkLE9p8hZT5i2l3s+8ffs5yFo
+         ksHMSeloOlQ6wjPtvt1pYoynK/QVjIrqp7/JMExoZvwn7AoYTyrIc/wT0GyaAoFfBp8K
+         CfPDhwNgfbpT/oomp+FxlVk4sj2nPCyRp+sysQV/LUgy3sVJQQ7OyafzhLDmPSV7RoYv
+         HLQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1723383414; x=1723988214;
+        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=cig1+J77dIPekmdgbTlikcW8VVCG5pt4tWITgQBHG4I=;
+        b=kU9b1MVCUczOaDDVpcLG5+eN9UYphj1Va5FFnWgOHSVQUNLAVYduePrc6k4SgMa2qX
+         Y0+RIIlhpIKOSYvZhQKdHKgCYWjh4XRhYEUHKQM+OtI3avbqH3fIQkV4tTEUI0/ZTmRo
+         ED0fsoBh84rTxFIV9FFm8Z0I4C+J118/qXyOlPZDC25kOzYvuXpp/cGNb1eHRZ1UGm9q
+         TIPJRQWsFW94kZ6XYBcV+Hc9HjA96BSsk/OXE6aST3D3KS4OOliBdVK/nDf/FcWtNxuX
+         gNfh41/7RXzY40ERfk2DPoUF/MbbvTJ2FXqepKkfwaHfit0mkRy+AKTQ1HgkJJTeTS0m
+         lb+g==
+X-Forwarded-Encrypted: i=1; AJvYcCWM1pgyUW+2UsKT83cDukZptSWL/EDXZJyp0XtqzToNa7T4MbmtcqvbAMfltDEXLz/yolOSzzQlCz2jP6TPA3VZHmSWbWVGvJ2wL41GCg==
+X-Gm-Message-State: AOJu0YxUksyRjxqxL6hzsL4SqLo+LJOoB9KvtOwhdrClAWAY0Yr5Yjxi
+	u79yrwbc7gtfXfwnmaAw8j6sucSPGJOMe92wSoFRS1l16NYAx3n+075BaZ/QS88=
+X-Google-Smtp-Source: AGHT+IHt33AuHPjxUd4uOwuYX+OCWuwzGXpabOgvFL5h/RJY7EsClSLXTXMTL71IPhLvH3UFICIxFw==
+X-Received: by 2002:a05:6512:3b08:b0:52f:c24b:1767 with SMTP id 2adb3069b0e04-530ee9742f8mr4787738e87.19.1723383413675;
+        Sun, 11 Aug 2024 06:36:53 -0700 (PDT)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a80bb0e1288sm147807766b.80.2024.08.11.06.36.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 11 Aug 2024 06:36:53 -0700 (PDT)
+Date: Sun, 11 Aug 2024 16:36:49 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: oe-kbuild@lists.linux.dev, Jan Kiszka <jan.kiszka@siemens.com>,
+	Minda Chen <minda.chen@starfivetech.com>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Conor Dooley <conor+dt@kernel.org>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v3 1/1] dt-bindings: phy: ti,tcan104x-can: Document
- Microchip ATA6561
-Message-ID: <20240809-guru-tassel-84a14486a596@spud>
-References: <56a52c81-68de-438d-94ae-9decc799d824@kernel.org>
- <20240808191735.1483572-1-ilordash02@gmail.com>
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 3/3] phy: starfive: jh7110-usb: Fix link configuration to
+ controller
+Message-ID: <053d3e9f-ba32-406c-a799-91ea577a0cb9@stanley.mountain>
 MIME-Version: 1.0
-In-Reply-To: <20240808191735.1483572-1-ilordash02@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <cd7b125c8c797f9d63440944df7121f9db0a49ad.1722457123.git.jan.kiszka@siemens.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240809_075728_484144_281921F0 
-X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-CacheID: sfid-20240811_063656_506210_BC72FC45 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,60 +92,90 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2612192450937474027=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Jan,
 
---===============2612192450937474027==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Z9RnOkapWi2cVpnp"
-Content-Disposition: inline
+kernel test robot noticed the following build warnings:
 
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
---Z9RnOkapWi2cVpnp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+url:    https://github.com/intel-lab-lkp/linux/commits/Jan-Kiszka/dt-bindings-phy-jh7110-usb-phy-Add-sys-syscon-property/20240802-101748
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/cd7b125c8c797f9d63440944df7121f9db0a49ad.1722457123.git.jan.kiszka%40siemens.com
+patch subject: [PATCH 3/3] phy: starfive: jh7110-usb: Fix link configuration to controller
+config: microblaze-randconfig-r072-20240810 (https://download.01.org/0day-ci/archive/20240811/202408110917.hE9xidPH-lkp@intel.com/config)
+compiler: microblaze-linux-gcc (GCC) 14.1.0
 
-On Thu, Aug 08, 2024 at 10:17:35PM +0300, Ilya Orazov wrote:
-> Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
-> It is pin-compatible with TI TCAN1042 and has a compatible programming
-> model, therefore use ti,tcan1042 as fallback compatible.
->=20
-> Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
-> ---
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+| Closes: https://lore.kernel.org/r/202408110917.hE9xidPH-lkp@intel.com/
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
+smatch warnings:
+drivers/phy/starfive/phy-jh7110-usb.c:148 jh7110_usb_phy_probe() warn: passing zero to 'PTR_ERR'
 
-btw, please don't send new versions as a reply to existing ones, it's a
-shortcut to getting lost in deep mailboxes that sort by thread (or as I
-almost did here, deletion of the mail without reading it).
+vim +/PTR_ERR +148 drivers/phy/starfive/phy-jh7110-usb.c
 
---Z9RnOkapWi2cVpnp
-Content-Type: application/pgp-signature; name="signature.asc"
+16d3a71c20cf2e Minda Chen 2023-06-29  109  static int jh7110_usb_phy_probe(struct platform_device *pdev)
+16d3a71c20cf2e Minda Chen 2023-06-29  110  {
+16d3a71c20cf2e Minda Chen 2023-06-29  111  	struct jh7110_usb2_phy *phy;
+16d3a71c20cf2e Minda Chen 2023-06-29  112  	struct device *dev = &pdev->dev;
+16d3a71c20cf2e Minda Chen 2023-06-29  113  	struct phy_provider *phy_provider;
+0ed73d833230fd Jan Kiszka 2024-07-31  114  	u32 args[1];
+16d3a71c20cf2e Minda Chen 2023-06-29  115  
+16d3a71c20cf2e Minda Chen 2023-06-29  116  	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+16d3a71c20cf2e Minda Chen 2023-06-29  117  	if (!phy)
+16d3a71c20cf2e Minda Chen 2023-06-29  118  		return -ENOMEM;
+16d3a71c20cf2e Minda Chen 2023-06-29  119  
+16d3a71c20cf2e Minda Chen 2023-06-29  120  	phy->usb_125m_clk = devm_clk_get(dev, "125m");
+16d3a71c20cf2e Minda Chen 2023-06-29  121  	if (IS_ERR(phy->usb_125m_clk))
+16d3a71c20cf2e Minda Chen 2023-06-29  122  		return dev_err_probe(dev, PTR_ERR(phy->usb_125m_clk),
+16d3a71c20cf2e Minda Chen 2023-06-29  123  			"Failed to get 125m clock\n");
+16d3a71c20cf2e Minda Chen 2023-06-29  124  
+16d3a71c20cf2e Minda Chen 2023-06-29  125  	phy->app_125m = devm_clk_get(dev, "app_125m");
+16d3a71c20cf2e Minda Chen 2023-06-29  126  	if (IS_ERR(phy->app_125m))
+16d3a71c20cf2e Minda Chen 2023-06-29  127  		return dev_err_probe(dev, PTR_ERR(phy->app_125m),
+16d3a71c20cf2e Minda Chen 2023-06-29  128  			"Failed to get app 125m clock\n");
+16d3a71c20cf2e Minda Chen 2023-06-29  129  
+16d3a71c20cf2e Minda Chen 2023-06-29  130  	phy->regs = devm_platform_ioremap_resource(pdev, 0);
+16d3a71c20cf2e Minda Chen 2023-06-29  131  	if (IS_ERR(phy->regs))
+16d3a71c20cf2e Minda Chen 2023-06-29  132  		return dev_err_probe(dev, PTR_ERR(phy->regs),
+16d3a71c20cf2e Minda Chen 2023-06-29  133  			"Failed to map phy base\n");
+16d3a71c20cf2e Minda Chen 2023-06-29  134  
+16d3a71c20cf2e Minda Chen 2023-06-29  135  	phy->phy = devm_phy_create(dev, NULL, &jh7110_usb2_phy_ops);
+16d3a71c20cf2e Minda Chen 2023-06-29  136  	if (IS_ERR(phy->phy))
+16d3a71c20cf2e Minda Chen 2023-06-29  137  		return dev_err_probe(dev, PTR_ERR(phy->phy),
+16d3a71c20cf2e Minda Chen 2023-06-29  138  			"Failed to create phy\n");
+16d3a71c20cf2e Minda Chen 2023-06-29  139  
+16d3a71c20cf2e Minda Chen 2023-06-29  140  	phy_set_drvdata(phy->phy, phy);
+16d3a71c20cf2e Minda Chen 2023-06-29  141  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+16d3a71c20cf2e Minda Chen 2023-06-29  142  
+0ed73d833230fd Jan Kiszka 2024-07-31  143  	phy->sys_syscon =
+0ed73d833230fd Jan Kiszka 2024-07-31  144  		syscon_regmap_lookup_by_phandle_args(pdev->dev.of_node,
+0ed73d833230fd Jan Kiszka 2024-07-31  145  						     "starfive,sys-syscon",
+0ed73d833230fd Jan Kiszka 2024-07-31  146  						     1, args);
+0ed73d833230fd Jan Kiszka 2024-07-31  147  	if (IS_ERR(phy->sys_syscon))
+0ed73d833230fd Jan Kiszka 2024-07-31 @148  		return dev_err_probe(dev, PTR_ERR(phy->phy),
 
------BEGIN PGP SIGNATURE-----
+Passing the wrong variable.  It should be phy->sys_syscon instead of phy->phy.
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZrYuUgAKCRB4tDGHoIJi
-0oVmAQD8Uap0l7TMY5aZAVoZiOEmVvtoe4eohtWFtQiBT7YazQD+MAqeHGP2ntUa
-S2D7wGaioo1h4pc9Qw7vK53R5JN2jwk=
-=+82K
------END PGP SIGNATURE-----
+0ed73d833230fd Jan Kiszka 2024-07-31  149  			"Failed to get sys-syscon\n");
+0ed73d833230fd Jan Kiszka 2024-07-31  150  	phy->sys_phy_connect = args[0];
+0ed73d833230fd Jan Kiszka 2024-07-31  151  
+16d3a71c20cf2e Minda Chen 2023-06-29  152  	return PTR_ERR_OR_ZERO(phy_provider);
+16d3a71c20cf2e Minda Chen 2023-06-29  153  }
 
---Z9RnOkapWi2cVpnp--
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
-
---===============2612192450937474027==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2612192450937474027==--
-
