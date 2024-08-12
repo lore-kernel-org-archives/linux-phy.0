@@ -4,78 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FC38C52D7C
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Aug 2024 13:15:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F401C3DA7F
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Aug 2024 13:58:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GE9AUGXBCa+txUHMRR09+gvnAemsiwYu5F2m3xHyAjc=; b=4ritI+GbCy1LK1
-	va5dZbkcn6+FlB4/s06JpNZouo3DP1dcCmbC5btRMF8bwVk+Nlm7UCSfzScVRSiFNMKPhyCNR9/pb
-	7ccxV/16geGfiZZ31LQPRNQRGluzEmJWcdOpT8YAxywtMb5mNZGgMjE13RkRNHZCUKF2J1MWq05U3
-	tW55AHgRMWHWNJnKe9a8KcdkIBx7K0aXP2KtHBV9EkcJkdzENF+KSe+sqONs/11DpGQil1u+MLUyA
-	olC+to0xlDm1G6JiZjnm1Lv+5m6CGillmOllKd+f3limqmISKYmX7WjcDoAxc7c+NFzb0F3NFFol1
-	PMOqhHvwHGSKVVDkmDVw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=26g3EGJpu0ozPm+wS5uo4Pg+9NmrcBlTvuUY2OITLZM=; b=Lu5g6491JMCFNR
+	VOOYiV9Y5C9wHOsWTPslLfIaLghL/ZW8pwU30gVHvMFDH3n2ZSiVHROZJIb1qiEQC9ZFw0zoCoGv8
+	XmRuGIFmLQ6X2vTm+WYespsmknlCPtwS5Mdhyv9U3rWkRVlAk7OY5aiwzAvcJ1NUwcQw5qzBWIuK7
+	DMlrd7YD5DEPQJQn3qDv087X+ueTKqPdcS1a90Mi3J5cNZ6E1sXF5myyVKDp07arYpg7wTUHPsJeR
+	qrLETV0xUxd4EHlKJH72/arIEqI6N7VLRF0ONN96aGPwyzv3gh20Ha0ZW1KKXxt4j8YnU0FHpZmGX
+	v5JVyM/G3j/Mc0lbniww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdUtP-00000000NLq-3BKh;
-	Mon, 12 Aug 2024 13:15:23 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93])
+	id 1sdVZ0-00000000W5Z-3KQJ;
+	Mon, 12 Aug 2024 13:58:22 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdTpU-00000000Cua-0zEr;
-	Mon, 12 Aug 2024 12:07:17 +0000
-Received: from pps.filterd (m0369457.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47C7aX5W019310;
-	Mon, 12 Aug 2024 14:07:00 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=selector1; bh=jBFm5lioebDOyXazDkIYVb
-	60u9foI26v49i7zxn/x54=; b=USQvDMeoQniI+VZiOV2MqGuQAwc2MC8xmLLnmb
-	M8L52BpaB76y82tchXIEMMdQf+YzjnVubLBNG1yEcrDVo1zP/PizUkGEblsFL0v5
-	BwBwrGXLAyLNAWVbFYOSfSGz9l2oy10tPEaS7ikKsiDo31JEMR7yQWf5MYhsUtss
-	3/yQjpBSlWNqdDt4/G052DfONjRdHp0a/Lxomj3SYcJWzDMyKsW47SSPdcXesPa3
-	EHP+S9MvX0B43OHFT0S4wSA1C3/Q5qZslZW8HqvfYL1m4p83YmyJQvfSLX6lpGFz
-	wzIMsQ3XegNdR6zQ6iGPMvLT5WtDG7qKIx2XwvlOivj3bVMA==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 40xk5hm8ed-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 12 Aug 2024 14:07:00 +0200 (MEST)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id ABF8740045;
-	Mon, 12 Aug 2024 14:06:54 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8E57125AF0A;
-	Mon, 12 Aug 2024 14:06:06 +0200 (CEST)
-Received: from localhost (10.129.178.198) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Mon, 12 Aug
- 2024 14:06:06 +0200
-From: Christian Bruel <christian.bruel@foss.st.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
-        <p.zabel@pengutronix.de>
-CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <fabrice.gasnier@foss.st.com>,
-        Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH 0/5] Add STM32MP25 USB3/PCIE COMBOPHY driver 
-Date: Mon, 12 Aug 2024 14:05:24 +0200
-Message-ID: <20240812120529.3564390-1-christian.bruel@foss.st.com>
-X-Mailer: git-send-email 2.34.1
+	id 1sdVX3-00000000VSQ-10TC
+	for linux-phy@lists.infradead.org;
+	Mon, 12 Aug 2024 13:56:24 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-367940c57ddso2585541f8f.3
+        for <linux-phy@lists.infradead.org>; Mon, 12 Aug 2024 06:56:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1723470978; x=1724075778; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=S8pPBKCtj1qMblogWbM7RgQzND2CLqVTOWooV2IgGeU=;
+        b=XH2EnHyGrs3h7jmBsZODcvlehKQGC6gV5H+4sdRCaoGAjrkoyg3I71lvVwVNAwAem7
+         t75gE7ZuT7dnMoyWcS/ORGRUjLggBp9KOZn0NXsGmaGJKul1IFVo7k8IQwaxsG1F/mk6
+         AT8bs05UUEIyp5KedCHcIoWLDtbduG2mbre8LqSrbJxJsVTspQouMe0rYI7jCcjAHLgP
+         OpUgg6/lDi0zyKe3VIwi4xWoFC+zFbDXUEOs9i2ApXB9AauU5SAMqWvoiaApIFP0Iq6p
+         Y/zx5bJFyiEIBxpHh3rjNbgtA1zac+FnGMIC+FQwT9HcI7Z9Ev/cV97X3hNC6fzrtay3
+         AeYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1723470978; x=1724075778;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=S8pPBKCtj1qMblogWbM7RgQzND2CLqVTOWooV2IgGeU=;
+        b=XOK9r+bITQP+ZrW8/jOiXNm4PJnXUsdTBLwCWkfFqtW9Zxa4n7kSaXTLc6wTeliAr4
+         hoazqWKiA4bjjU0pRQDqX3yKVGVG3SX/WPzFVKMijJxXKhSKatdFk4Rguiu5/GZdMLlB
+         7GxelL9L6CbtdmhYFXFdX7QwTq3vVuEM1K6PceL48AXWeYlJLBJJ3W7A/AyHIS3eKbc4
+         NHqOO/vYVg+inT8kD083J4r1OUWdXNhRhYqFF18wLgchi+qeMrAUstZcLcrZ55mkgCf1
+         9t1iF40GCBXyatFM6r0qF/1HqaWY0h8g0YCJQJh2DaRdPaMG1JmKJEw03inBEs/z7TuT
+         FCLw==
+X-Forwarded-Encrypted: i=1; AJvYcCVdApeh+tCyCM4limzhlgqQLH22AlRU96y2Dn1YvNJp16G9homtiafAMW41jkI9Ix6NhxxH0JTNeMgLpNkPOy72f811FDMcTuB83Sqy1A==
+X-Gm-Message-State: AOJu0YwdxoAwOBfIyMH5KWOS3IHlFeVceZfyr/bebnEZuyQHFt315iDP
+	pqrKbloZcqS0vrxzgern3zg9RxxhPiDAVOZCQ8KXy0Q4pYFoPXrQv29RRg5rjR0=
+X-Google-Smtp-Source: AGHT+IGUCDDDJmPdkUeF51lGMXmc2B54eXkWDGs+ePmSEkQ87f4+LylylfieyVoH9qavVmYIfup6/A==
+X-Received: by 2002:a5d:52c8:0:b0:368:460a:961d with SMTP id ffacd0b85a97d-3716ccd6f24mr267787f8f.3.1723470978233;
+        Mon, 12 Aug 2024 06:56:18 -0700 (PDT)
+Received: from [192.168.108.81] (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-36e4f0a66e8sm7602815f8f.114.2024.08.12.06.56.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 12 Aug 2024 06:56:17 -0700 (PDT)
+Message-ID: <0b2279f3-1591-4297-aae3-2b3b915b4a2b@freebox.fr>
+Date: Mon, 12 Aug 2024 15:56:17 +0200
 MIME-Version: 1.0
-X-Originating-IP: [10.129.178.198]
-X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
- (10.75.129.71)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-12_02,2024-08-12_01,2024-05-17_01
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 0/6] HDMI TX support in msm8998
+To: Rob Clark <robdclark@gmail.com>, Abhinav Kumar
+ <quic_abhinavk@quicinc.com>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>,
+ Bjorn Andersson <andersson@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>,
+ Pierre-Hugues Husson <phhusson@freebox.fr>,
+ Jeffrey Hugo <quic_jhugo@quicinc.com>,
+ Conor Dooley <conor.dooley@microchip.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, David Airlie <airlied@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>,
+ Jeffrey Hugo <quic_jhugo@quicinc.com>
+References: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
+Content-Language: en-US
+From: Marc Gonzalez <mgonzalez@freebox.fr>
+In-Reply-To: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240812_050716_641140_DCA67078 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20240812_065621_415246_5BBCE6D7 
+X-CRM114-Status: GOOD (  17.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,30 +109,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds USB3/PCIE COMBOPHY driver for the STM32MP25 SoC from
-STMicrolectronics, respective yaml schema and enable for the stm32mp257f-ev1
-device into which it is used for PCIe.
+Hello Rob, Abhinav, Dmitry,
 
-Christian Bruel (5):
-  MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
-  dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
-  phy: stm32: Add support for STM32MP25 COMBOPHY.
-  arm64: dts: st: Add combophy node on stm32mp251
-  arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
+This series might be ready this time?
+Are all the patches supposed to go through
+https://gitlab.freedesktop.org/drm/msm.git ?
 
- .../bindings/phy/st,stm32-combophy.yaml       | 178 +++++
- MAINTAINERS                                   |   6 +
- arch/arm64/boot/dts/st/stm32mp251.dtsi        |  17 +
- arch/arm64/boot/dts/st/stm32mp257f-ev1.dts    |  14 +
- drivers/phy/st/Kconfig                        |  12 +
- drivers/phy/st/Makefile                       |   1 +
- drivers/phy/st/phy-stm32-combophy.c           | 607 ++++++++++++++++++
- 7 files changed, 835 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
- create mode 100644 drivers/phy/st/phy-stm32-combophy.c
+(Probably not... patches 5 & 6 are probably
+supposed to go through Bjorn's tree?)
 
--- 
-2.34.1
+Regards
+
+
+On 24/07/2024 17:01, Marc Gonzalez wrote:
+
+> DT bits required for HDMI TX support in qcom APQ8098 (MSM8998 cousin)
+> 
+> ---
+> Changes in v7:
+> - prefix the labels hdmi: and hdmi_phy: with mdss_ (Konrad)
+> - DID NOT MODIFY patch 3, based on conversation between Conor & Dmitry
+> - tested 40+40 boots with/without maxcpus=1 => no iommu panic witnessed
+> - Collect tags from Konrad & Dmitry (hopefully b4 did the right thing)
+> - Link to v6: https://lore.kernel.org/r/20240715-hdmi-tx-v6-0-d27f029627ad@freebox.fr
+> 
+> Changes in v6:
+> - Fold HDMI PHY driver submission into this series
+>   => [PATCH v2] drm/msm: add msm8998 hdmi phy/pll support
+>   => Link to v2: https://lore.kernel.org/all/20240704-hdmi-phy-v2-1-a7f5af202cb5@freebox.fr/
+>      - Rebase onto v6.10
+>      - Move drivers/gpu/drm/msm/hdmi/hdmi.xml.h to drivers/gpu/drm/msm/registers/display/hdmi.xml
+>      - Add copyright attribution
+>      - Remove all dead/debug/temporary code
+>   => Link to v1: https://lore.kernel.org/all/63337d63-67ef-4499-8a24-5f6e9285c36b@freebox.fr/
+> - split HDMI PHY driver patch in 2 parts (PHY & TX)
+> - Use same regulator names as msm8996 (Dmitry)
+> - Remove printk statements
+> - Add Vinod's Ack on patch 1
+> - Expand commit message on patch 4 = HDMI PHY driver
+> - Link to v5: https://lore.kernel.org/r/20240627-hdmi-tx-v5-0-355d5c1fbc3c@freebox.fr
+> 
+> Changes in v5:
+> - Fix property & property-names for TX pinctrl in DTSI (Konrad)
+> - NOT CHANGED: clock trees for TX & PHY based on Dmitry & Jeffrey's remarks
+> - Link to v4: https://lore.kernel.org/r/20240613-hdmi-tx-v4-0-4af17e468699@freebox.fr
+> 
+> Changes in v4:
+> - Collect tags since v3
+> - Reword patch 1 subject (Vinod)
+> - Link to v3: https://lore.kernel.org/r/20240606-hdmi-tx-v3-0-9d7feb6d3647@freebox.fr
+> 
+> Changes in v3
+> - Address Rob's comments on patch 2:
+>   - 'maxItems: 5' for clocks in the 8996 if/then schema
+>   - match the order of 8996 for the clock-names in common
+> 
+> ---
+> Arnaud Vrac (2):
+>       drm/msm: add msm8998 hdmi phy/pll support
+>       arm64: dts: qcom: add HDMI nodes for msm8998
+> 
+> Marc Gonzalez (4):
+>       dt-bindings: phy: add qcom,hdmi-phy-8998
+>       dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
+>       drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
+>       arm64: dts: qcom: msm8998: add HDMI GPIOs
+> 
+>  .../devicetree/bindings/display/msm/hdmi.yaml      |  28 +-
+>  .../devicetree/bindings/phy/qcom,hdmi-phy-qmp.yaml |   1 +
+>  arch/arm64/boot/dts/qcom/msm8998.dtsi              | 128 +++-
+>  drivers/gpu/drm/msm/Makefile                       |   1 +
+>  drivers/gpu/drm/msm/hdmi/hdmi.c                    |   1 +
+>  drivers/gpu/drm/msm/hdmi/hdmi.h                    |   8 +
+>  drivers/gpu/drm/msm/hdmi/hdmi_phy.c                |   5 +
+>  drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c           | 779 +++++++++++++++++++++
+>  drivers/gpu/drm/msm/registers/display/hdmi.xml     |  89 +++
+>  9 files changed, 1037 insertions(+), 3 deletions(-)
+> ---
+> base-commit: 003a26f5074bfe024603cf76f8fd486a5344f307
+> change-id: 20240606-hdmi-tx-00ee8e7ddbac
+
 
 
 -- 
