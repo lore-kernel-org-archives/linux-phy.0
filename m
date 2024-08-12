@@ -4,82 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBA07C3DA4A
-	for <linux-phy@archiver.kernel.org>; Sun, 11 Aug 2024 13:37:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24095C52D7C
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Aug 2024 12:07:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=63P2cxl8kwjXZeV7LBFXEfcTR34rl/lDCMLwDZOHJ9U=; b=2xgzFaa9E64O3N
-	KIOuQUGacWLh42gcsiwGh3sRbhoYQGBdiozYZQIlovWZPnYS86FhWESXIo2VplBNHOOPxvHV/V/b1
-	XNUx0Y0VBHg82aqs1a2PEGWhl1elT88EaGQN4hzksL4paExuMRg4WzV89TC6tOmaX30Smd0G/l08C
-	6UIpia0w6N6n/bHDYKL+0ajdyHOoxufcT/s9W0P7iOuc8mnoqNT+4IiaAPsfC2jlGzUZ3do7pLqpo
-	L50zTHveImCF6l7tPTJQl6ue866YPHMCQklbXkxs7TXftfQTogjQonH/688fE+bP8XQ3rFXRUDkHs
-	GCdg2/3MNSbPTrrnqHVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7vq887eLxpXHoPKjnsKjhESdAhSZcIlsPI9F+ahYXGg=; b=RU6JJz+8KGffNP
+	P6fbGuuFbyUVyRAG4GXcOCmrjBpeZo0tDqgDqKV7AGtaRN586m1bI69FWO2tz3o6j8OnsumS5jzzD
+	QJo6LfgN2Ndp5NUwDSx0px/746Oh1hYho2b2md08A7QMPtdwIq1QDVG28Jlq6y0PcSMScEqiUqtdO
+	1JFPcYK1Rx8UOL1N5BcelSVbI+Pzf0jbV+6hMCDsXa4aLIWM3RE4xxiZCUt4rWWOUX8zrPN6Jrnms
+	4bEHMFe1f/3da4GSiVvIJC81fP6lWuT4O1bXrCKST8kXTX8CdtMz1ixn/+EywBnTRKSa+D7IvPuB4
+	ZtTxBGn10G4jgKzVEMRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sd8km-0000000Fbyp-1rgo;
-	Sun, 11 Aug 2024 13:37:00 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1sdTq6-00000000D1D-2XLV;
+	Mon, 12 Aug 2024 12:07:54 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sd8ki-0000000Fbxq-1ub4
-	for linux-phy@lists.infradead.org;
-	Sun, 11 Aug 2024 13:36:58 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-52f025ab3a7so4501941e87.2
-        for <linux-phy@lists.infradead.org>; Sun, 11 Aug 2024 06:36:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1723383414; x=1723988214; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=cig1+J77dIPekmdgbTlikcW8VVCG5pt4tWITgQBHG4I=;
-        b=JwyAWx6lRoSoKLmR9feWZPhZerd8AOli/ZWwJedroyqn07HdD6DWMjkFx28fKQrOZF
-         rUMYx4/cEzz3OfYygK6Zxt1jd0ThLN2J1GVxWQj3wAhf6fm58MoP7ZQvY9WjRCeVXhs/
-         txhS6l5NNEpqXqo5riKfB4p6vxC3/Yz2n1EbdeQ3gZKvkLE9p8hZT5i2l3s+8ffs5yFo
-         ksHMSeloOlQ6wjPtvt1pYoynK/QVjIrqp7/JMExoZvwn7AoYTyrIc/wT0GyaAoFfBp8K
-         CfPDhwNgfbpT/oomp+FxlVk4sj2nPCyRp+sysQV/LUgy3sVJQQ7OyafzhLDmPSV7RoYv
-         HLQA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1723383414; x=1723988214;
-        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
-         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=cig1+J77dIPekmdgbTlikcW8VVCG5pt4tWITgQBHG4I=;
-        b=kU9b1MVCUczOaDDVpcLG5+eN9UYphj1Va5FFnWgOHSVQUNLAVYduePrc6k4SgMa2qX
-         Y0+RIIlhpIKOSYvZhQKdHKgCYWjh4XRhYEUHKQM+OtI3avbqH3fIQkV4tTEUI0/ZTmRo
-         ED0fsoBh84rTxFIV9FFm8Z0I4C+J118/qXyOlPZDC25kOzYvuXpp/cGNb1eHRZ1UGm9q
-         TIPJRQWsFW94kZ6XYBcV+Hc9HjA96BSsk/OXE6aST3D3KS4OOliBdVK/nDf/FcWtNxuX
-         gNfh41/7RXzY40ERfk2DPoUF/MbbvTJ2FXqepKkfwaHfit0mkRy+AKTQ1HgkJJTeTS0m
-         lb+g==
-X-Forwarded-Encrypted: i=1; AJvYcCWM1pgyUW+2UsKT83cDukZptSWL/EDXZJyp0XtqzToNa7T4MbmtcqvbAMfltDEXLz/yolOSzzQlCz2jP6TPA3VZHmSWbWVGvJ2wL41GCg==
-X-Gm-Message-State: AOJu0YxUksyRjxqxL6hzsL4SqLo+LJOoB9KvtOwhdrClAWAY0Yr5Yjxi
-	u79yrwbc7gtfXfwnmaAw8j6sucSPGJOMe92wSoFRS1l16NYAx3n+075BaZ/QS88=
-X-Google-Smtp-Source: AGHT+IHt33AuHPjxUd4uOwuYX+OCWuwzGXpabOgvFL5h/RJY7EsClSLXTXMTL71IPhLvH3UFICIxFw==
-X-Received: by 2002:a05:6512:3b08:b0:52f:c24b:1767 with SMTP id 2adb3069b0e04-530ee9742f8mr4787738e87.19.1723383413675;
-        Sun, 11 Aug 2024 06:36:53 -0700 (PDT)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a80bb0e1288sm147807766b.80.2024.08.11.06.36.52
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 11 Aug 2024 06:36:53 -0700 (PDT)
-Date: Sun, 11 Aug 2024 16:36:49 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: oe-kbuild@lists.linux.dev, Jan Kiszka <jan.kiszka@siemens.com>,
-	Minda Chen <minda.chen@starfivetech.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 3/3] phy: starfive: jh7110-usb: Fix link configuration to
- controller
-Message-ID: <053d3e9f-ba32-406c-a799-91ea577a0cb9@stanley.mountain>
+	id 1sdTpU-00000000Cv6-3AAa;
+	Mon, 12 Aug 2024 12:07:18 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47C8C6F0020315;
+	Mon, 12 Aug 2024 14:07:02 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=selector1; bh=
+	hTGGJf1xrP8/mXE2sYPwE92h+HI1SDxZubRutBlQ/GA=; b=oeXWPxB2sYxOVlrG
+	m5BB/+E88cqO3UaCWU2beVL3XBDPiM+sw2pxQ3nwOcWWvnKbVOWxCDuGyYGA+72f
+	4/etw91pOmtlqOWF9chSHIH63HIPEqSmzLLTPFW1RCpY1z3TLH1Tp+mffoP7nv6g
+	4hVN+i8bGW0fNVIY4fCgfssaosbaA/nOYj/pnuHy4+G79uAq7HPhR4FBpENSyLDr
+	0VgvroCADP13mMaplvQObrXh9cGmZZZ8IQeb+KoikDM+mPMJC+6Y1qcn3Argjuq/
+	aVxXvsNbVD1lOXh5G2ueCLU6UgJPUMdYWftcwPwstH/T5TWDrxGbDg6lkXvp3hRN
+	f6tZnQ==
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 40x15f6a2a-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 12 Aug 2024 14:07:02 +0200 (MEST)
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 4795B40046;
+	Mon, 12 Aug 2024 14:06:58 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E70EE25AF05;
+	Mon, 12 Aug 2024 14:06:09 +0200 (CEST)
+Received: from localhost (10.129.178.198) by SHFDAG1NODE3.st.com
+ (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Mon, 12 Aug
+ 2024 14:06:09 +0200
+From: Christian Bruel <christian.bruel@foss.st.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
+        <p.zabel@pengutronix.de>
+CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <fabrice.gasnier@foss.st.com>,
+        Christian Bruel <christian.bruel@foss.st.com>
+Subject: [PATCH 1/5] MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
+Date: Mon, 12 Aug 2024 14:05:25 +0200
+Message-ID: <20240812120529.3564390-2-christian.bruel@foss.st.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240812120529.3564390-1-christian.bruel@foss.st.com>
+References: <20240812120529.3564390-1-christian.bruel@foss.st.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cd7b125c8c797f9d63440944df7121f9db0a49ad.1722457123.git.jan.kiszka@siemens.com>
+X-Originating-IP: [10.129.178.198]
+X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
+ (10.75.129.71)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-12_02,2024-08-12_01,2024-05-17_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240811_063656_506210_BC72FC45 
-X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-CacheID: sfid-20240812_050717_101650_34B8CDE8 
+X-CRM114-Status: UNSURE (   8.75  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,82 +96,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Jan,
+Add myself as STM32MP25 COMBOPHY maintainer
 
-kernel test robot noticed the following build warnings:
+Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+---
+ MAINTAINERS | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Jan-Kiszka/dt-bindings-phy-jh7110-usb-phy-Add-sys-syscon-property/20240802-101748
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/cd7b125c8c797f9d63440944df7121f9db0a49ad.1722457123.git.jan.kiszka%40siemens.com
-patch subject: [PATCH 3/3] phy: starfive: jh7110-usb: Fix link configuration to controller
-config: microblaze-randconfig-r072-20240810 (https://download.01.org/0day-ci/archive/20240811/202408110917.hE9xidPH-lkp@intel.com/config)
-compiler: microblaze-linux-gcc (GCC) 14.1.0
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-| Closes: https://lore.kernel.org/r/202408110917.hE9xidPH-lkp@intel.com/
-
-smatch warnings:
-drivers/phy/starfive/phy-jh7110-usb.c:148 jh7110_usb_phy_probe() warn: passing zero to 'PTR_ERR'
-
-vim +/PTR_ERR +148 drivers/phy/starfive/phy-jh7110-usb.c
-
-16d3a71c20cf2e Minda Chen 2023-06-29  109  static int jh7110_usb_phy_probe(struct platform_device *pdev)
-16d3a71c20cf2e Minda Chen 2023-06-29  110  {
-16d3a71c20cf2e Minda Chen 2023-06-29  111  	struct jh7110_usb2_phy *phy;
-16d3a71c20cf2e Minda Chen 2023-06-29  112  	struct device *dev = &pdev->dev;
-16d3a71c20cf2e Minda Chen 2023-06-29  113  	struct phy_provider *phy_provider;
-0ed73d833230fd Jan Kiszka 2024-07-31  114  	u32 args[1];
-16d3a71c20cf2e Minda Chen 2023-06-29  115  
-16d3a71c20cf2e Minda Chen 2023-06-29  116  	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
-16d3a71c20cf2e Minda Chen 2023-06-29  117  	if (!phy)
-16d3a71c20cf2e Minda Chen 2023-06-29  118  		return -ENOMEM;
-16d3a71c20cf2e Minda Chen 2023-06-29  119  
-16d3a71c20cf2e Minda Chen 2023-06-29  120  	phy->usb_125m_clk = devm_clk_get(dev, "125m");
-16d3a71c20cf2e Minda Chen 2023-06-29  121  	if (IS_ERR(phy->usb_125m_clk))
-16d3a71c20cf2e Minda Chen 2023-06-29  122  		return dev_err_probe(dev, PTR_ERR(phy->usb_125m_clk),
-16d3a71c20cf2e Minda Chen 2023-06-29  123  			"Failed to get 125m clock\n");
-16d3a71c20cf2e Minda Chen 2023-06-29  124  
-16d3a71c20cf2e Minda Chen 2023-06-29  125  	phy->app_125m = devm_clk_get(dev, "app_125m");
-16d3a71c20cf2e Minda Chen 2023-06-29  126  	if (IS_ERR(phy->app_125m))
-16d3a71c20cf2e Minda Chen 2023-06-29  127  		return dev_err_probe(dev, PTR_ERR(phy->app_125m),
-16d3a71c20cf2e Minda Chen 2023-06-29  128  			"Failed to get app 125m clock\n");
-16d3a71c20cf2e Minda Chen 2023-06-29  129  
-16d3a71c20cf2e Minda Chen 2023-06-29  130  	phy->regs = devm_platform_ioremap_resource(pdev, 0);
-16d3a71c20cf2e Minda Chen 2023-06-29  131  	if (IS_ERR(phy->regs))
-16d3a71c20cf2e Minda Chen 2023-06-29  132  		return dev_err_probe(dev, PTR_ERR(phy->regs),
-16d3a71c20cf2e Minda Chen 2023-06-29  133  			"Failed to map phy base\n");
-16d3a71c20cf2e Minda Chen 2023-06-29  134  
-16d3a71c20cf2e Minda Chen 2023-06-29  135  	phy->phy = devm_phy_create(dev, NULL, &jh7110_usb2_phy_ops);
-16d3a71c20cf2e Minda Chen 2023-06-29  136  	if (IS_ERR(phy->phy))
-16d3a71c20cf2e Minda Chen 2023-06-29  137  		return dev_err_probe(dev, PTR_ERR(phy->phy),
-16d3a71c20cf2e Minda Chen 2023-06-29  138  			"Failed to create phy\n");
-16d3a71c20cf2e Minda Chen 2023-06-29  139  
-16d3a71c20cf2e Minda Chen 2023-06-29  140  	phy_set_drvdata(phy->phy, phy);
-16d3a71c20cf2e Minda Chen 2023-06-29  141  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-16d3a71c20cf2e Minda Chen 2023-06-29  142  
-0ed73d833230fd Jan Kiszka 2024-07-31  143  	phy->sys_syscon =
-0ed73d833230fd Jan Kiszka 2024-07-31  144  		syscon_regmap_lookup_by_phandle_args(pdev->dev.of_node,
-0ed73d833230fd Jan Kiszka 2024-07-31  145  						     "starfive,sys-syscon",
-0ed73d833230fd Jan Kiszka 2024-07-31  146  						     1, args);
-0ed73d833230fd Jan Kiszka 2024-07-31  147  	if (IS_ERR(phy->sys_syscon))
-0ed73d833230fd Jan Kiszka 2024-07-31 @148  		return dev_err_probe(dev, PTR_ERR(phy->phy),
-
-Passing the wrong variable.  It should be phy->sys_syscon instead of phy->phy.
-
-0ed73d833230fd Jan Kiszka 2024-07-31  149  			"Failed to get sys-syscon\n");
-0ed73d833230fd Jan Kiszka 2024-07-31  150  	phy->sys_phy_connect = args[0];
-0ed73d833230fd Jan Kiszka 2024-07-31  151  
-16d3a71c20cf2e Minda Chen 2023-06-29  152  	return PTR_ERR_OR_ZERO(phy_provider);
-16d3a71c20cf2e Minda Chen 2023-06-29  153  }
-
+diff --git a/MAINTAINERS b/MAINTAINERS
+index f328373463b0d..258fb57ccff58 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -21910,6 +21910,12 @@ F:	arch/m68k/kernel/*sun3*
+ F:	arch/m68k/sun3*/
+ F:	drivers/net/ethernet/i825xx/sun3*
+ 
++STMICROELECTRONICS STMP32MP25 USB3/PCIE COMBOPHY DRIVER
++M:	Christian Bruel <christian.bruel@foss.st.com>
++S:	Maintained
++F:	Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
++F:	drivers/phy/st/phy-stm32-combophy.c
++
+ SUN4I LOW RES ADC ATTACHED TABLET KEYS DRIVER
+ M:	Hans de Goede <hdegoede@redhat.com>
+ L:	linux-input@vger.kernel.org
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.34.1
 
 
 -- 
