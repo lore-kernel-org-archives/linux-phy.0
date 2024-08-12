@@ -4,63 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57238C3DA7F
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Aug 2024 15:47:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C63EC3DA7F
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Aug 2024 15:55:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lWkM2rSmER/8V5TH56Nzu8Fgsacjnyej6/j8LdTEiVo=; b=CIG/V1VhrGEDSy
-	aZopzh5MhuPqRCK+7YHah/+6jV50elm2uo5Rf+XE8rRgMYoX5otw7+IwVvNJAI9SDOproqmxvQyah
-	WTFEU5SFZpafsYjEKukHFU5Sl3eXRTuQNJwdBNkCwLX4bSfiNIqcQrbau7HOTeOFXpWmFi962hpvc
-	Pfwk6zfmd8aZ4V5+0VCIEhU2arEiYp2z0voO6By2SGOMQbw+D6MBNkbMK/uVa4NlcL5oe2+0u5v3Y
-	OVs1hHwjkJml74bbbJFtc7SvcEQSEYpxzwiAmlDi+U/tvHFxW5n0e924pvdSxEsKnY/HqCXyEiInm
-	F6cfDMjRlD6gR3g1Umiw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Hq/9CBx+I17jq8bSY+sEbtyAmT0spulqZA1yrxUmhKU=; b=kziEaY0naDLRr+KwtbyoiYS0/O
+	T8Ybw/PSF67Wjjco8iq/WNIVjfEzW7JXmZXW8qUINvUlLV3L14JSHB4F6JGJUI6vXA5r9251hBgvX
+	/Q+4wSFnFfbT6K9yZjml9IOdGlUUZz6C7f4I+th50P66njnyJ+lUClfdRIV+thx2BtnZ5zF+NDpF5
+	Q3t4Y3cWZCpawvia8/ynIky4OJRcMpJ15eb8mMGSs+STbYkkYttZBwJhhlentEXElbVslsECn19aV
+	/2nJSboi/OyVxY9DTcTXpaQXxIUTCamAeZu5xRpZtAga2N+AkPqA6+HyqJcu+YjCT4ioejUmAZVlS
+	glU6STWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdXGS-00000000nI8-05Kt;
-	Mon, 12 Aug 2024 15:47:20 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sdXOd-00000000oMC-0VOH;
+	Mon, 12 Aug 2024 15:55:47 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdXFp-00000000nBj-02PA;
-	Mon, 12 Aug 2024 15:46:42 +0000
+	id 1sdXOZ-00000000oLm-3Jki;
+	Mon, 12 Aug 2024 15:55:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 4F8B1CE0F8F;
-	Mon, 12 Aug 2024 15:46:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4695C32782;
-	Mon, 12 Aug 2024 15:46:37 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1544960FC7;
+	Mon, 12 Aug 2024 15:55:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6098DC32782;
+	Mon, 12 Aug 2024 15:55:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723477598;
-	bh=LVd9TGyp4d0U2ismMK0yyPmFgRWGEjHc5jVuSmjiEm0=;
+	s=k20201202; t=1723478142;
+	bh=fIxgfU9U7UdKHCzgTt5JxPxYSDRiI+jpNpkMi6cCmNM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=DoD2mQntD+Qh4IZ33zQCH33TBS1+jhJwVOkFTC88ccqNz+vbk4a1qjR8tpAs/JNM1
-	 7+HVG6jxEkR5wxBW+sQnje5OJaZH7+k9smfyYW+MvJgsT8c17jVx9ASl3xvjqbS6VC
-	 Lb70vfVA5PTDiul77Pntd8ZBwnRLESZMLsPN8RthDnz74nCCG77hl9CcTybBrPPOU2
-	 yWeB0y7ZEaf+IZ3KAcQgNsL55sv6zenhpaMqbgjhn3mkmnsELCDR9vw8ZNG4SbSMbe
-	 9dANZQy2FTlXAgEW5aKzumFK4bLZ9P1pXq40FkMqmcsAdBRy/cdBuaQ5nD8LMBHcxi
-	 2aF3RXB2gTDpw==
-Date: Mon, 12 Aug 2024 09:46:33 -0600
-From: Rob Herring <robh@kernel.org>
-To: Christian Bruel <christian.bruel@foss.st.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com, p.zabel@pengutronix.de,
+	b=P3mgSpRiCH/hfVz2HIjVM3C3Yq1lKI/jniZJcW7Ur61Ag1fqi65ipjx2ct84DMI7M
+	 ysFCCNySYeQc9/SjndDB+u/vUZB6yel/3PTpuALkdKCzgb4fEN+R4JpiF47QioSeDx
+	 q6hQE6XJuufABIB5Cyn/PVzhgYEyCxcpi8w73daUvRcKkqS+mhH0QCfPlsLZ70vXxU
+	 1maqNbGWxk3KsNl93e3FEmNsxc/oM6locRh/VSratxEfDtPff5xHOOblWkXV1nLL82
+	 JFWjibQXr6QkjDKkLp5iLrFxtvilJGf/NEtL1Zakmnt3L2hh5WyJ0Sx07x7rOmUZfs
+	 QkQN7t4vp1Idw==
+Date: Mon, 12 Aug 2024 16:55:38 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Jan Kiszka <jan.kiszka@siemens.com>
+Cc: Minda Chen <minda.chen@starfivetech.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	fabrice.gasnier@foss.st.com
-Subject: Re: [PATCH 2/5] dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
-Message-ID: <20240812154633.GB593866-robh@kernel.org>
-References: <20240812120529.3564390-1-christian.bruel@foss.st.com>
- <20240812120529.3564390-3-christian.bruel@foss.st.com>
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Dan Carpenter <dan.carpenter@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
+ property
+Message-ID: <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
+References: <cover.1723472153.git.jan.kiszka@siemens.com>
+ <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240812120529.3564390-3-christian.bruel@foss.st.com>
+In-Reply-To: <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240812_084641_421754_6013804E 
-X-CRM114-Status: GOOD (  25.46  )
+X-CRM114-CacheID: sfid-20240812_085543_956461_1DFF2F6D 
+X-CRM114-Status: GOOD (  16.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,247 +73,102 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7197319549015307311=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 12, 2024 at 02:05:26PM +0200, Christian Bruel wrote:
-> Document the bindings for STM32 COMBOPHY interface, used to support
-> the PCIe and USB3 stm32mp25 drivers.
-> Following entries can be used to tune caracterisation parameters
->  - st,output-micro-ohms and st,output-vswing-microvolt bindings entries
-> to tune the impedance and voltage swing using discrete simulation results
->  - st, phy_rx0_eq register to set the internal rx equalizer filter value.
-> 
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+
+--===============7197319549015307311==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="LtVVHt/+tPGAV+JK"
+Content-Disposition: inline
+
+
+--LtVVHt/+tPGAV+JK
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
+> From: Jan Kiszka <jan.kiszka@siemens.com>
+>=20
+> Analogously to the PCI PHY, access to sys_syscon is needed to connect
+> the USB PHY to its controller.
+>=20
+> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 > ---
->  .../bindings/phy/st,stm32-combophy.yaml       | 178 ++++++++++++++++++
->  1 file changed, 178 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml b/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> new file mode 100644
-> index 0000000000000..6a53ab834b2a7
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> @@ -0,0 +1,178 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/st,stm32-combophy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32MP25 USB3/PCIe COMBOPHY
-> +
-> +maintainers:
-> +  - Christian Bruel <christian.bruel@foss.st.com>
-> +
-> +description: |
-
-Don't need '|' if no formatting to preserve.
-
-> +  Single lane PHY shared (exclusive) between the USB3 and PCIe controllers.
-> +  Supports 5Gbit/s for USB3 and PCIe gen2 or 2.5Gbit/s for PCIe gen1.
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32mp25-combophy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  st,syscfg:
-
-Order is standard properties first, vendor properties second. 
-
+> CC: Rob Herring <robh@kernel.org>
+> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> CC: Conor Dooley <conor+dt@kernel.org>
+> ---
+>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-ph=
+y.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> index 269e9f9f12b6..eaf0050c6f17 100644
+> --- a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+> @@ -19,6 +19,16 @@ properties:
+>    "#phy-cells":
+>      const: 0
+> =20
+> +  starfive,sys-syscon:
 > +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> +    description: Phandle to the SYSCON entry required for configuring PCIe
-> +      or USB3.
-
-You need constraints on the size of the phandle-array or perhaps this 
-should be just 'phandle'.
-
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +    description: |
-> +      The cells contain the following arguments.
-> +
-> +      - description: The PHY type
-> +          enum:
-> +            - PHY_TYPE_USB3
-> +            - PHY_TYPE_PCIE
-> +
-> +  clocks:
-> +    anyOf:
-
-Should be 'items'
-
-> +      - description: apb-clk Bus clock mandatory to access registers.
-> +      - description: ker-clk Internal RCC reference clock for USB3 or PCIe
-> +      - description: pad-clk Optional on board clock input for PCIe only. Typically an
-> +                     external 100Mhz oscillator wired on dedicated CLKIN pad. Used as reference
-> +                     clock input instead of the ker-clk
-> +
-> +  clock-names:
-> +    oneOf:
+> +    items:
 > +      - items:
-> +          - const: apb-clk
-> +          - const: ker-clk
-> +
-> +      - items:
-> +          - const: apb-clk
-> +          - const: ker-clk
-> +          - const: pad-clk
+> +          - description: phandle to System Register Controller sys_sysco=
+n node.
+> +          - description: PHY connect offset of SYS_SYSCONSAIF__SYSCFG re=
+gister for USB PHY.
 
-Don't need oneOf here. Just add 'minItems: 2' on the 2nd entry.
+Why is having a new property for this required? The devicetree only has
+a single usb phy, so isn't it sufficient to look up the syscon by
+compatible, rather than via phandle + offset?
 
-'-clk' is also redundant. Drop.
-
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: phy-rst
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  st,ssc-on:
-> +    type: boolean
 > +    description:
-> +      A boolean property whose presence indicates that the SSC for common clock
-> +      needs to be set.
+> +      The phandle to System Register Controller syscon node and the PHY =
+connect offset
+> +      of SYS_SYSCONSAIF__SYSCFG register. Connect PHY to USB controller.
 > +
-> +  st,rx_equalizer:
+>    clocks:
+>      items:
+>        - description: PHY 125m
+> @@ -47,4 +57,5 @@ examples:
+>                   <&stgcrg 6>;
+>          clock-names =3D "125m", "app_125m";
+>          #phy-cells =3D <0>;
+> +        starfive,sys-syscon =3D <&sys_syscon 0x18>;
+>      };
+> --=20
+> 2.43.0
+>=20
 
-s/_/-/
+--LtVVHt/+tPGAV+JK
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
+-----BEGIN PGP SIGNATURE-----
 
-That's already the minimum. Drop.
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZrowegAKCRB4tDGHoIJi
+0gXFAP9irfiKqj3CaOoVEdmxFBQbHAu8wbJBdmXuGodai0OMaQEAp0i//vC20L1l
+o+8FpvJ1Mt/ZC28yMFhDKZtipTS5rgc=
+=rBq+
+-----END PGP SIGNATURE-----
 
-> +    maximum: 7
-> +    default: 2
-> +    description:
-> +      A 3 bit value describing internal filter settings for the RX equalizer.
+--LtVVHt/+tPGAV+JK--
 
-How does one decide what value to use?
 
-> +
-> +  st,output-micro-ohms:
-> +    minimum: 3999000
-> +    maximum: 6090000
-> +    default: 4968000
-> +    description:
-> +      A value property to tune the Single Ended Output Impedance, simulations results
-> +      at 25C for a VDDP=0.8V. The hardware accepts discrete values in this range.
-> +
-> +  st,output-vswing-microvolt:
-> +    minimum: 442000
-> +    maximum: 803000
-> +    default: 803000
-> +    description:
-> +      A value property in microvolt to tune the Single Ended Output Voltage Swing to change the
-> +      Vlo, Vhi for a VDDP = 0.8V. The hardware accepts discrete values in this range.
-> +
-> +  wakeup-source: true
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +    description: interrupt used for wakeup
-> +
-> +  access-controllers:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - st,syscfg
-> +  - '#phy-cells'
-> +  - resets
-> +  - reset-names
-> +  - clocks
-> +  - clock-names
-> +
-> +allOf:
-> +  - if:
-> +      required:
-> +        - wakeup-source
-> +    then:
-> +      anyOf:
-> +        - required: [interrupts]
-> +        - required: [interrupts-extended]
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    // Example 1: COMBOPHY configured to use internal reference clock
-> +    #include <dt-bindings/clock/st,stm32mp25-rcc.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/reset/st,stm32mp25-rcc.h>
-> +
-> +    combophy_internal: phy@480c0000 {
-> +        compatible = "st,stm32mp25-combophy";
-> +        reg = <0x480c0000 0x1000>;
-> +        #phy-cells = <1>;
-> +        clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>;
-> +        clock-names = "apb-clk", "ker-clk";
-> +        resets = <&rcc USB3PCIEPHY_R>;
-> +        reset-names = "phy-rst";
-> +        st,syscfg = <&syscfg>;
-> +        access-controllers = <&rifsc 67>;
-> +        power-domains = <&CLUSTER_PD>;
-> +        wakeup-source;
-> +        interrupts-extended = <&exti1 45 IRQ_TYPE_EDGE_FALLING>;
-> +    };
-> +
-> +  - |
-> +    // Example 2: COMBOPHY configured to use extrenal 100MHz reference clock
-> +    // on CLKIN pad for PCIe
-> +    #include <dt-bindings/clock/st,stm32mp25-rcc.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/reset/st,stm32mp25-rcc.h>
-> +
-> +    clocks {
-> +        pad_clk: pad-clk {
-> +            #clock-cells = <0>;
-> +            compatible = "fixed-clock";
-> +            clock-frequency = <100000000>;
-> +        };
-> +    };
-
-Drop. Providers aren't relevant to this binding.
-
-Though just 1 optional clock doesn't justify a whole other example. So 
-drop one of the examples.
-
-> +
-> +    combophy_pad: phy@480c0000 {
-> +        compatible = "st,stm32mp25-combophy";
-> +        reg = <0x480c0000 0x1000>;
-> +        #phy-cells = <1>;
-> +        clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>, <&pad_clk>;
-> +        clock-names = "apb-clk", "ker-clk", "pad-clk";
-> +        resets = <&rcc USB3PCIEPHY_R>;
-> +        reset-names = "phy-rst";
-> +        st,syscfg = <&syscfg>;
-> +        access-controllers = <&rifsc 67>;
-> +        power-domains = <&CLUSTER_PD>;
-> +        wakeup-source;
-> +        interrupts-extended = <&exti1 45 IRQ_TYPE_EDGE_FALLING>;
-> +    };
-> +...
-> -- 
-> 2.34.1
-> 
+--===============7197319549015307311==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7197319549015307311==--
+
