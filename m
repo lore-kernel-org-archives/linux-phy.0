@@ -4,80 +4,210 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE348C52D7C
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Aug 2024 20:26:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3147C52D7B
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Aug 2024 05:32:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TbMG03gx3rmB6hjNBQBfL/l5dG8GxqGZ00+F4Dm2oKg=; b=uSB5IBpRTvIEY6
-	JNoLCvy8/l+vg5b/bc48/2CrLieZBxTgt9mh/vsf8y4Hft3XhYm5zEeFPpRUbblJSv1UOnZQMYsmi
-	4cDHjWvonvvPMLWfI5Fq3eL0er/+MSo1jA0AG1Fucdf5wbTYVy8Bv7MkhvTwvdXpxG8cBmqxaWPdq
-	f0lXpdBn2yeLY7bvkgV6HAIpR76eR94c5zievyoYy9gQj0/SneMJrOi5OIp4wCTEkWYlg5xmi+XOK
-	libfNkK+ePcXvJyp7GJQhTzgz00fVa3Mpnxke8qCGJu38aHQci4vlRV3XnDg0VE/u8t4VmHzdMWn7
-	XF1NQcN4dhK4hbOE1ONw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Sr8tg6BXMM7Wc1L5RZasW3alqjc01i5+P32jgdfTg5c=; b=QF8IjqH72zg6e8ihyWd2O9OHCQ
+	1s4RVvqQg4v+f+Ar5s5kIXjMz+3XGk4l2ygo8fJakfKNyE18aMiMZOMnXNPuKq5wdVbVBFof7ssVP
+	1OzDkkr6M1i3zdspimxqN9DzYsJKeGq6aURsFnghCeDfdH7t+ut89QxNJlUgTD9Nre3Rp6AuHVZIc
+	1pBQwOX75v3LyXJgXrfm2YrfqRnxALmvSPh82oiXJ6lpafATVvenUJiZ/Yi1k+i4NOOMF5MgoHw/e
+	/wn4R36QFpmKAWuDYLnMvn8UCehp4xeXrGdoM3AOQgPzjbfUQ+8wwxRNDAgRbK+tEmWY6VgSKTAy3
+	Di5BuKcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdbcD-00000001SRV-1z8u;
-	Mon, 12 Aug 2024 20:26:05 +0000
-Received: from mgamail.intel.com ([192.198.163.19])
+	id 1sdk8h-00000002Saj-2OTm;
+	Tue, 13 Aug 2024 05:32:11 +0000
+Received: from mail-am6eur05on2062b.outbound.protection.outlook.com ([2a01:111:f403:2612::62b] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdbbp-00000001SKN-1Rxr;
-	Mon, 12 Aug 2024 20:25:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1723494341; x=1755030341;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=jN9wnNczQ9GMZEEKhewppiaItX6FtzTVk26GlChufhk=;
-  b=Ji0SwAHgEKB99MMrED+lubkZA4Tbo4s4EtFbkA0Wy1b5I8FeB30vFWxZ
-   U9iUWjlQrr6qBQiv/VKCgB1mW1Px3CHXVJHhAWGyVuAxqUD+a/BUsbL+U
-   cabwxoEw9Ei9CXfN75lrOR//aqWu8OKh5L6THK+qMf8U7MKQ7iWTGDy7w
-   0WIqUUTSpCRQwBDreZIjQdyz5oTrJjTBtTF6Tj5KtQrd0MRsYb6oZ8RKA
-   ksRojGRPjH5k7mvMas+RUBvVdupDM+7eS6OOT3pUqmEVakf/ta8IY+6MN
-   CSQ3eTE2PpC3PeY6leXZypLmsoDNxMayl8qJ1I45j9c3WKEngNFFls92o
-   g==;
-X-CSE-ConnectionGUID: yfhp90tJRIWS9NW3aU19RA==
-X-CSE-MsgGUID: j/o9MTvgSmiFtKVzELFsSA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11162"; a="21272556"
-X-IronPort-AV: E=Sophos;i="6.09,284,1716274800"; 
-   d="scan'208";a="21272556"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Aug 2024 13:25:38 -0700
-X-CSE-ConnectionGUID: boTyfTxQTY6gD+Pl+O1ixg==
-X-CSE-MsgGUID: pxSpLirDRFOhdkJFReh7Ww==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.09,284,1716274800"; 
-   d="scan'208";a="58042333"
-Received: from unknown (HELO b6bf6c95bbab) ([10.239.97.151])
-  by fmviesa006.fm.intel.com with ESMTP; 12 Aug 2024 13:25:35 -0700
-Received: from kbuild by b6bf6c95bbab with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1sdbbd-000C9r-2F;
-	Mon, 12 Aug 2024 20:25:30 +0000
-Date: Tue, 13 Aug 2024 04:24:27 +0800
-From: kernel test robot <lkp@intel.com>
-To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org,
-	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com, p.zabel@pengutronix.de
-Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	fabrice.gasnier@foss.st.com,
-	Christian Bruel <christian.bruel@foss.st.com>
-Subject: Re: [PATCH 3/5] phy: stm32: Add support for STM32MP25 COMBOPHY.
-Message-ID: <202408130447.IzvuJERR-lkp@intel.com>
-References: <20240812120529.3564390-4-christian.bruel@foss.st.com>
+	id 1sdk8f-00000002Sa0-0WuB;
+	Tue, 13 Aug 2024 05:32:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=GrPTlpX0532MaH2RCeLpGJV8Dt/ZtfnSiR226cC5QLWCvUlmvd12Sv3+vHjtJCMPmo0Umluah+M836jAYn5iYv6udoRfZE4mkQLb4sfXImwiX2EzzQWm31v8mkWg1jrF5CAQM7pUm45UOnqfpTnYlHDz08a9nYGXqWYffu2iryUckYiRv7/7ouJF0/pN5dq1gUhjK3TW4MIFuW2WgVLzGGXNoYKYRufihUrY6p3xZdqx0JzExxknLrGta65BVoRGDGbPsUa2AXG1d3Zk+LccyTY6E6DwjfdOq1XtmpYbmXCvHFaKBX0ybRgHBY6+FZM6K9OlYAWG5RugxZ/pqUm4Vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ZKhins825aWj3v6S1pmXeQrNSMOTACxh3E/YtfeVxxY=;
+ b=HBPVckS/+X6wKb4Z2Kw3F/AjSBlfdjD5fPz6Ty8W79a9V+PmVWU7fBEdX10vn68maZdetVvyqShw9y+/GdXyszi+KgBEBADlz0C/+bUssdr7xaRnevoirstEH7Dh+AQZJqZCKCAWRcSvXId5OyuQ//kwdIr3/w8GgClOaAbpLEzFP6A06/YAvRfKDZNXItBLXrAXHnKAFec6FB2MRZQxmxbPyPKE7JfBdScWXm1f2159rMnR0KOw+m07bAqd8ezqckpO6shHHvU+l3vgyoek1+AhC8eP55/+R9zpVZX1s8RiGHX3U5e3xDfAyjf5OlFd2f/XjiDUbWhCw7RMi0lPUg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=siemens.com; dmarc=pass action=none header.from=siemens.com;
+ dkim=pass header.d=siemens.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=siemens.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ZKhins825aWj3v6S1pmXeQrNSMOTACxh3E/YtfeVxxY=;
+ b=wd58KWctqvcWG/m7I94X8TvV7r5IlV6Azb7kheATLNfJOdFuCWR0+r01ve3CmMNhgJw3z2aI1SI4JuatEk2QyghpQWUh0J1AdZ7EfLcx+MTyOgiBWwCzMJPNIMuvqARsRl6zH/PY86cFvieSKDSM7M/xVR8Zzz2LxbmkOUyWm9elOVI3Y/rJiT+d0nZyR8IMs6DvTFdSkdgez0clxRPkWzbApAxH67hotMPrmf1oeId2AC+0zDpsXwvOqx/8GlcFrnL7RaLTJvXIZuLVRVtVM6jn/08eBuVV88smcZiDInNgUzm/hjwtY7mSeobS2XoEsIZI+GBedE8P1iNaCt7dQw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=siemens.com;
+Received: from AS4PR10MB6181.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:20b:588::19)
+ by GVXPR10MB8864.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:150:1e4::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7849.22; Tue, 13 Aug
+ 2024 05:31:54 +0000
+Received: from AS4PR10MB6181.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::8fe1:7e71:cf4a:7408]) by AS4PR10MB6181.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::8fe1:7e71:cf4a:7408%4]) with mapi id 15.20.7849.021; Tue, 13 Aug 2024
+ 05:31:52 +0000
+Message-ID: <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
+Date: Tue, 13 Aug 2024 07:31:50 +0200
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
+ property
+To: Conor Dooley <conor@kernel.org>
+Cc: Minda Chen <minda.chen@starfivetech.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Dan Carpenter <dan.carpenter@linaro.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>
+References: <cover.1723472153.git.jan.kiszka@siemens.com>
+ <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
+ <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
+From: Jan Kiszka <jan.kiszka@siemens.com>
+Content-Language: en-US
+Autocrypt: addr=jan.kiszka@siemens.com; keydata=
+ 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
+In-Reply-To: <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
+X-ClientProxiedBy: FR4P281CA0005.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:c8::13) To AS4PR10MB6181.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:20b:588::19)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240812120529.3564390-4-christian.bruel@foss.st.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AS4PR10MB6181:EE_|GVXPR10MB8864:EE_
+X-MS-Office365-Filtering-Correlation-Id: 871e0659-3862-4fce-3db2-08dcbb593ca6
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|366016|1800799024;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?dGhWemh6TmRPVHNQbzlodXRDUXVXSFpGWWVUN2l0a0VOQ0xaaVROOVVpUFFt?=
+ =?utf-8?B?dEI2VHQ1d2MvdEhRdlBvSnRlZlEvZG5xVG5SbStzMEw3WEhWRE1SWWZXandz?=
+ =?utf-8?B?Z3QrN2JyMHRkRlJiZGRJV3hDKzhwMmpPSWp2WXJtZGt1blRJU3QvQUcwN0VJ?=
+ =?utf-8?B?QmZXTzA3dnp6WWRhLzZWWlJpdzhUK1pEd0NkNFNYaUdKZGYwOVkwOE94VEtH?=
+ =?utf-8?B?K0NwL1RGOThhbGJGRFBlN2hYV3JoaHAyb3pIdlRZM2hWNXlSd0RmWjZNU2NN?=
+ =?utf-8?B?S0pFY0l4VktSa2tWd0ZCQ2Mrb3VnVkRDanhCdGxvaUJuZDloMGpGUy9veHBo?=
+ =?utf-8?B?WWJpNTduMDJlZTFoeXdtNENoMmVQNSsrOENwb0h4bTdFVUhBNTBwQjAzZjlE?=
+ =?utf-8?B?Vi9TMGZ3UFRBRzgvN2kwY1l1RlA1akJ0aDM4aEdvajBwVkVKYncrRjJXNmli?=
+ =?utf-8?B?clkxVnJLM2pqN0o0OVgxaXU3cFN2WFVUak5kSDFEdHYxVUp0WUFMbzdMODFp?=
+ =?utf-8?B?OGVXR0pySFJyNnVMNVJhUm5mNk5QVnhVS0RxdHRLeDNnSHlQd0czZGxWSEc1?=
+ =?utf-8?B?N09ReTZ6bnpQQjJOTE0raEhOZU9vYUxKenVtWVFnQk5uQ3NDeGdtaDBVWU40?=
+ =?utf-8?B?WU5ZZEEyc3h6SHlIdnU5OUZneVhZOHh5K1Fjekk1clZDcHJDN3RaM3ZuZ3pH?=
+ =?utf-8?B?YVRDR2N2bmtyZGMvWGpUM0xROGh1YkNaYWtXZCtJS05IZU1TNzRBc2Z4T21W?=
+ =?utf-8?B?MjFTbmhNdFRqOEh2Z0RZLzZ3cVZzWHVYbFhXbGxzdm9CU3M2b3VMZVNaK2lY?=
+ =?utf-8?B?NU4yZEF5T0dQUnMwZlNSdXBGTjNqbmxPZndNUkNEcloxZUNNdHlNcitLYVB2?=
+ =?utf-8?B?Y3U0VEJZQUVjNXFVdUxxcFZjQkI4bHh5bUo2RkdXTjhmWHJ5cDZ1ZmpFckV0?=
+ =?utf-8?B?aW5uei9yZGVhUndSWlhKSE9jVEJIbGczR3I1Nm8xT0htSVlPOUxIVFB3QmFr?=
+ =?utf-8?B?dXFsQnR5M09GYXFJQ1NKM3RxTG1lN2VaSkxudDV5VHY3R1V0VGk2ZHRNNUJu?=
+ =?utf-8?B?Vkp5dlNUL00xQ0RxOGVnNTlabFoveGF4c0swOXQ2U25zcnlNc0hFZkhvUkpN?=
+ =?utf-8?B?ZlhBVEllZzVOWFFFQTZXV29jeFQ3Vi9uTC90U3FhcUxiRXV4TDJLKzlGL1dL?=
+ =?utf-8?B?NFJFZGlSQm1OZU9tc1gxUzFKNUE0QkM3ZEtmTUUxL3lMT1EyMk5RaGE2WDA1?=
+ =?utf-8?B?K0lxY1lnWWtIaWc3YUd2cmNoaGtTcVhKa2hsV1U5WjdjTEJJZitjbW91UUY0?=
+ =?utf-8?B?NTlHSE9FUHpZbTVEQ2libFBqa2xWczdpREJGd1lWbXNvNndSekR5Zm5pYmkw?=
+ =?utf-8?B?aldWY3FrSW5kdmp5SUtoclJDRTdNT1ZTelYwMHc3enpvZ28yN1FFV1Q2Y1U5?=
+ =?utf-8?B?SVh4bUpDWU5SZ1RhWkRpbi9vVy96VFdnNmdoZDg2RVNwaTdDckk5cEpLbFVF?=
+ =?utf-8?B?bENnTWZNUk9ITUtiM0pOUmZDT3YySExycGVmYTg2KzhTMk00ZHZ5K0M4RVhV?=
+ =?utf-8?B?OW5DRVFRbnJoS2NQTHNHenFGZjFDRVAyU3BlZXd5b25SeitqYkExNnV5cFBh?=
+ =?utf-8?B?QXVmeFNhRlpTOWxubHVQT0I5NWUzclVOWUZ2SEtJOWxTSUljQ2t3Y1pYRFZu?=
+ =?utf-8?B?V3JUaXpTcW8wTjhkNFRtWk8xc29iTlUycWxVSTNTQjhYVHdVKzVwWC9hZTFD?=
+ =?utf-8?B?aEdTOHo4N0FVNzlaVmJHS1kwbW5ndU1IZWF4Q1Vvb1hnTDlrK0tXSGN6NkpM?=
+ =?utf-8?B?N05mdXpwM3BQUUtrc0V5QT09?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR10MB6181.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(1800799024);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ODYyc2VoN0U5b3B2TWZTSjVCOUQ0MG8vSkpvbkwrZ28wckZ1WjBYMDdnWi9t?=
+ =?utf-8?B?NTAzd3pmZ25wbzd4YXVvcGplMFF1ekpoTmRUTldWYUwyQ3RWMFg1Uzdka2w1?=
+ =?utf-8?B?dngyTlM5ZUFBL3VCRUU4aitNZGg0ZGo2QzFuNlcxb0UrQkdOSFllTmFXSTln?=
+ =?utf-8?B?MytUY09MeFpwMjhEQTMweUVkT2x5N3J2dG1hMWhqZzlZaERQT3R3ZW9OZTR2?=
+ =?utf-8?B?dHhjM3pBbzlJbHBlUmg1TEUxT2VpMDMxNzUwNDBVWFpMQXdYNWFlZzNXVENy?=
+ =?utf-8?B?cmZFUjBZczlJLzFvaEVONXpnY1QyOER2SFF3cmM0VUcwWlB1ZzdUSUVDR0w2?=
+ =?utf-8?B?MEJZUy84UHFFU0JRN0VkTCthZzBXWmE2N1piYlRIcWx3L1VINHEvOFZ5VHN3?=
+ =?utf-8?B?MVc0RkxudHFuc29iZEdXTml0WU5WWmc5QUgxWTk4SVJPYnJCSnVoblRqQ2J2?=
+ =?utf-8?B?b1dMSHIxYXZWalI3azlXUnhIQ1gxanpnc0tVYlU4VzVLMWRzYWxDbzVyanUw?=
+ =?utf-8?B?bSsrdS9CbEova0k2bytXQ3hPeGZTUUpFWlNDN1Q4cy9sbG9XRUpzU3lvdjN4?=
+ =?utf-8?B?a3ZtY25NVFVPY1NTYlFHVFFPQWl3ZHp3ZVBrTTR0UzNyOW1ZcUFlbUQrc1B4?=
+ =?utf-8?B?SGZnNVNTbUZKdE9ySVlDTjlRaW8xT1h3U2lPTTlNUmhHdVhJNGFmNGV3RlFE?=
+ =?utf-8?B?YTU5NUZvbCtWR2tGR0FFSUlreDNsTWd2MHJvL21PNU5xK0VWSFpmQ3hoMm1P?=
+ =?utf-8?B?d0YxVWJOSXRYNDNocm1oZFdqRjBLaFpsc1ZPYk16Qm50TWVtYnVoczhONDhV?=
+ =?utf-8?B?WFI2Q1NsL3BlN283YTk0ZHBNUURoMkpTV2pGM0xZTUxGNUVQK1dXMkdad2Z3?=
+ =?utf-8?B?YzV2aDRqV2N0RHFKQldFdk1sc0N6Tmllc0tiQzNhOExtMG1WK2xVR1RLMnNX?=
+ =?utf-8?B?ajB4bDNZNGViM3hvTFZpNW9zOEFqci93NnZDZmh2bGZxVGRvZVVISStzeVlp?=
+ =?utf-8?B?Zk9tY1lPNjR1VDNva1pVOVlQYzJnV1pCamVlcWFwQ0JiS1lNWWpQancvWUkw?=
+ =?utf-8?B?ei8yV2dDVDAyM09aeGxpbDVVMWhveWY4dWcyL0lHUmkrOHV2VlRwbXM1M3pj?=
+ =?utf-8?B?RXRNektPcHNFb3Z4SDdobjBKQlZsQkxld05hdUJEQ0JZY2FxbnhIU1hsQ1My?=
+ =?utf-8?B?eTlMVTlLLzgySHJRN2NpRWVvUERJWjRCOFAzQUU0T2RiR045ZmIyM1orZThT?=
+ =?utf-8?B?MExUVTFIUnFQYzBZTEw5ZUF1cnFTRkpWSVE3enRXTGc3V1c4N1BsbFpxbFhG?=
+ =?utf-8?B?aVd3SFVoK2xzK2kvRjUvMkNVaDh2bW01MVY3d2lVeGRSRVNlQW1pVElFK05P?=
+ =?utf-8?B?M3NKR1hTWEFucEJHb1hVS1hpS3oyeGM3ZVZSRU5KUWRCUDYrOG1nZWpQZUY3?=
+ =?utf-8?B?c0Fob1daZnNkYkZ4Q1BwNWVhQ0dCaW11WVE4Y3JpcmVDVGpzSEE2VnYvN3ZC?=
+ =?utf-8?B?dkZWNG9mY1liZGhmM0pSV0VCVjN2TDZNMmJrbVIzTFZVUlhPZG51UXJYZGJI?=
+ =?utf-8?B?bVBodGdzc1NJTDJyZjk1UVRKMEJ1cXk5cTV3RStLb0FDUGJEREphd0FNZ1NF?=
+ =?utf-8?B?MFNkZlBOY0oyOVNGWFo3cVE0ZzhjTVZRdUVBd1JSeVY3eDk3d0lDRWg0R2s4?=
+ =?utf-8?B?K1lNSDVwcGUvdDJJQnFja0p0SDh6R1J3WEUvRnd0NGpRV0k0cjVUM2lXUStq?=
+ =?utf-8?B?RUd0TWs4QVUvQ1h2Q090NkZyQXY5TS83V0gyb2pTbk1lRUdHdXhwckMzTlR5?=
+ =?utf-8?B?V3lKMzc5LytXSTdnYmxFc2VGeHhBRlQzVkYzRVpGMUpPK3gwVDM2NXQzRE91?=
+ =?utf-8?B?MjliY0F1QWdGMFI4MmJUKytVSVl4NzJ0b09NcGswUkpSSTdXaHFEeFN0MEox?=
+ =?utf-8?B?QUE1YUxwS3JiZHBuR2dQQlRjVXF6M0E5bWkxT295OWkvOG1DS1ArbkpiZlF3?=
+ =?utf-8?B?eHJ6eDh4K094UWgzWEFlcnNmbmg5WEhCMXdKZTA5V29ZTnV2aERGSVBuUVUr?=
+ =?utf-8?B?dCtpUkp4SXBhcTBnZm9QNndKVFJDbE5nOHNtL0RNK3g0UEtvU1FGeU1ORHFm?=
+ =?utf-8?Q?LguYp3Fp9fVxR9Qfs2FfRgL5I?=
+X-OriginatorOrg: siemens.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 871e0659-3862-4fce-3db2-08dcbb593ca6
+X-MS-Exchange-CrossTenant-AuthSource: AS4PR10MB6181.EURPRD10.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Aug 2024 05:31:52.4482
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 38ae3bcd-9579-4fd4-adda-b42e1495d55a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: oPiCqfbN6xzL6E7fTmUC3V5o5zE22hizMK5833sIL8ZtF9MVkDOwqKn/5DD/VIy8DHWuVUub6sUq0CNR7Hzfmg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR10MB8864
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240812_132541_463900_FE55430A 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20240812_223209_401227_833EF296 
+X-CRM114-Status: GOOD (  15.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,101 +224,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Christian,
+On 12.08.24 17:55, Conor Dooley wrote:
+> On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
+>> From: Jan Kiszka <jan.kiszka@siemens.com>
+>>
+>> Analogously to the PCI PHY, access to sys_syscon is needed to connect
+>> the USB PHY to its controller.
+>>
+>> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+>> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+>> ---
+>> CC: Rob Herring <robh@kernel.org>
+>> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
+>> CC: Conor Dooley <conor+dt@kernel.org>
+>> ---
+>>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11 +++++++++++
+>>  1 file changed, 11 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+>> index 269e9f9f12b6..eaf0050c6f17 100644
+>> --- a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yaml
+>> @@ -19,6 +19,16 @@ properties:
+>>    "#phy-cells":
+>>      const: 0
+>>  
+>> +  starfive,sys-syscon:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    items:
+>> +      - items:
+>> +          - description: phandle to System Register Controller sys_syscon node.
+>> +          - description: PHY connect offset of SYS_SYSCONSAIF__SYSCFG register for USB PHY.
+> 
+> Why is having a new property for this required? The devicetree only has
+> a single usb phy, so isn't it sufficient to look up the syscon by
+> compatible, rather than via phandle + offset?
+> 
 
-kernel test robot noticed the following build errors:
+I didn't design this, I just copied it from
+starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither sure
+we want to change that anymore nor deviate in the pattern here.
 
-[auto build test ERROR on atorgue-stm32/stm32-next]
-[also build test ERROR on robh/for-next linus/master v6.11-rc3 next-20240812]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Jan
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Bruel/MAINTAINERS-add-entry-for-ST-STM32MP25-COMBOPHY-driver/20240812-201003
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/atorgue/stm32.git stm32-next
-patch link:    https://lore.kernel.org/r/20240812120529.3564390-4-christian.bruel%40foss.st.com
-patch subject: [PATCH 3/5] phy: stm32: Add support for STM32MP25 COMBOPHY.
-config: arc-allyesconfig (https://download.01.org/0day-ci/archive/20240813/202408130447.IzvuJERR-lkp@intel.com/config)
-compiler: arceb-elf-gcc (GCC) 13.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240813/202408130447.IzvuJERR-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202408130447.IzvuJERR-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   drivers/phy/st/phy-stm32-combophy.c: In function 'stm32_impedance_tune':
->> drivers/phy/st/phy-stm32-combophy.c:134:36: error: implicit declaration of function 'FIELD_PREP' [-Werror=implicit-function-declaration]
-     134 |                                    FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
-         |                                    ^~~~~~~~~~
->> drivers/phy/st/phy-stm32-combophy.c:137:26: error: implicit declaration of function 'FIELD_GET' [-Werror=implicit-function-declaration]
-     137 |                 imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
-         |                          ^~~~~~~~~
-   cc1: some warnings being treated as errors
-
-
-vim +/FIELD_PREP +134 drivers/phy/st/phy-stm32-combophy.c
-
-   107	
-   108	static int stm32_impedance_tune(struct stm32_combophy *combophy)
-   109	{
-   110		u8 imp_size = ARRAY_SIZE(imp_lookup);
-   111		u8 vswing_size = ARRAY_SIZE(imp_lookup[0].vswing);
-   112		u8 imp_of, vswing_of;
-   113		u32 max_imp = imp_lookup[0].microohm;
-   114		u32 min_imp = imp_lookup[imp_size - 1].microohm;
-   115		u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
-   116		u32 min_vswing = imp_lookup[0].vswing[0];
-   117		u32 val;
-   118	
-   119		if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
-   120			if (val < min_imp || val > max_imp) {
-   121				dev_err(combophy->dev, "Invalid value %u for output ohm\n", val);
-   122				return -EINVAL;
-   123			}
-   124	
-   125			for (imp_of = 0 ; imp_of < ARRAY_SIZE(imp_lookup); imp_of++)
-   126				if (imp_lookup[imp_of].microohm <= val)
-   127					break;
-   128	
-   129			dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
-   130				imp_lookup[imp_of].microohm);
-   131	
-   132			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-   133					   STM32MP25_PCIEPRG_IMPCTRL_OHM,
- > 134					   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
-   135		} else {
-   136			regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
- > 137			imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
-   138		}
-   139	
-   140		if (!of_property_read_u32(combophy->dev->of_node, "st,output-vswing-microvolt", &val)) {
-   141			if (val < min_vswing || val > max_vswing) {
-   142				dev_err(combophy->dev, "Invalid value %u for output vswing\n", val);
-   143				return -EINVAL;
-   144			}
-   145	
-   146			for (vswing_of = 0 ; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++)
-   147				if (imp_lookup[imp_of].vswing[vswing_of] >= val)
-   148					break;
-   149	
-   150			dev_dbg(combophy->dev, "Set %u microvolt swing\n",
-   151				 imp_lookup[imp_of].vswing[vswing_of]);
-   152	
-   153			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-   154					   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
-   155					   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
-   156		}
-   157	
-   158		return 0;
-   159	}
-   160	
+>> +    description:
+>> +      The phandle to System Register Controller syscon node and the PHY connect offset
+>> +      of SYS_SYSCONSAIF__SYSCFG register. Connect PHY to USB controller.
+>> +
+>>    clocks:
+>>      items:
+>>        - description: PHY 125m
+>> @@ -47,4 +57,5 @@ examples:
+>>                   <&stgcrg 6>;
+>>          clock-names = "125m", "app_125m";
+>>          #phy-cells = <0>;
+>> +        starfive,sys-syscon = <&sys_syscon 0x18>;
+>>      };
+>> -- 
+>> 2.43.0
+>>
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Siemens AG, Technology
+Linux Expert Center
+
 
 -- 
 linux-phy mailing list
