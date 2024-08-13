@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46619C52D7C
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Aug 2024 08:05:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E8B2C52D7B
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Aug 2024 17:15:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Yjl/AkzhsBfAvONMDbyQ/6owIXwJ0HhsnfyO+198Z3A=; b=SQPA3leXnWZJOINv3z1IGZ8YhJ
-	0nrA1hGqSa9Hdq7Ho71mWsIeKLk/72zmfMjn7NKrN/huOTiCKk4fazezHSju6LXxg4HGZHHAnvE//
-	ziv0gW3s4qa+CZ+OEiX7KMnjo/UAQ0M1Cc8blLHh5opE1p49oRBKcUX6QfzreeAoseE0CZKl2OVA5
-	cxwYsv0Ggje6Z3wsY/bKuyqRJlSgT72MW2RX1g4iDQHt+BeggNfHCZ7wLWeTSLONxiBK3KPt4KIF3
-	0xGl7q1SpmyW5mr3n8U0zPHZv/7GQFZJY31fKxgh5DsDsQ5UnUlQ4Gq3U4feceHdfKSHEYvDMBDok
-	EqNlyoRg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XIcavGNAxpVHDj1dQucaRlDNWpz/fnyqu84s6s70ZFo=; b=s6lKKqsj9tCrZb
+	BBQANqhZDdzLt3sAU7BcOk6oMjM1NnZCI1fCq20f/P4wIWwEHNbSogP5fzJIophKTj+io+X0vmXTT
+	we5RKCMCWGr7xierFHJxC15CbQfEZrY+eim4EKQgtnK+403xg5TAHh+A/uLd2zmJ2mspq5JDcPvp9
+	ny2APLpiMj50e26Usj6dy0wspisHksJObknbgoc+Gnsr3I1lH2JUTB2mkkc/P7od1uAzVXZ+3I1OO
+	BfU8xyLoREYqFFCAqg/gmhNGXWWfZmPiaQ0yQZOwFZ7MY6BiOkTpneqwheSmRcjGGXpmNa4gdMMdK
+	OB0MyDJYINXapgKJCF7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdmX3-00000002pKk-48RH;
-	Tue, 13 Aug 2024 08:05:29 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1sdv73-00000004U0P-19SZ;
+	Tue, 13 Aug 2024 17:15:13 +0000
+Received: from mail-io1-xd30.google.com ([2607:f8b0:4864:20::d30])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdmX1-00000002pJi-0FUM;
-	Tue, 13 Aug 2024 08:05:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1723536327; x=1755072327;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=FIdrhg5f7gPL8C52+sglRjEBy/cZyurxJLuVYrykLcs=;
-  b=RB3d2yLbThduvkdDJ5sbV4QRVz9fMvHpAG97JkS+plDK1+RxinMgSGLd
-   GpQ7GuBDlKSN3ZzWZ23FZRpm1GZYtmRHXYVwogV1wkT3iCeMBwrAVA/Mp
-   fHk7mCVKsZ4Txd5iAcGFCl7Ly7hGXQu4MkF6qAz7BEX+FVAEF2VJz78X7
-   nIm7hgHZHs4fog8z3s4V06rITNMefxwMzDmildW9CN60tLo+LCa/QJreM
-   m6cZX4HSAJ9CyDL4xUV4ndJqg3DTDf4ch47nFcQAYSWx++G/OUC3CZBMq
-   W/KqcuGvWeBedYWFGW7RjRfq1JCC0lUJ8pJ3N02d0ULidxfIZJy+lGGyE
-   A==;
-X-CSE-ConnectionGUID: oFI4QnJZT5WrEkZVyaQ1bA==
-X-CSE-MsgGUID: HZzKbVx5Sh+M+65LtEXbHA==
-X-IronPort-AV: E=Sophos;i="6.09,285,1716274800"; 
-   d="asc'?scan'208";a="197845690"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa6.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 13 Aug 2024 01:05:24 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Tue, 13 Aug 2024 01:04:57 -0700
-Received: from wendy (10.10.85.11) by chn-vm-ex01.mchp-main.com (10.10.85.143)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.35 via Frontend
- Transport; Tue, 13 Aug 2024 01:04:55 -0700
-Date: Tue, 13 Aug 2024 09:04:17 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Jan Kiszka <jan.kiszka@siemens.com>
-CC: Conor Dooley <conor@kernel.org>, Minda Chen <minda.chen@starfivetech.com>,
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-riscv@lists.infradead.org>, <linux-kernel@vger.kernel.org>, Dan
- Carpenter <dan.carpenter@linaro.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
- property
-Message-ID: <20240813-haiku-pusher-f2fb037a2f49@wendy>
-References: <cover.1723472153.git.jan.kiszka@siemens.com>
- <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
- <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
- <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
+	id 1sdv68-00000004TtW-2i2f
+	for linux-phy@lists.infradead.org;
+	Tue, 13 Aug 2024 17:14:18 +0000
+Received: by mail-io1-xd30.google.com with SMTP id ca18e2360f4ac-824c85e414bso59063339f.2
+        for <linux-phy@lists.infradead.org>; Tue, 13 Aug 2024 10:14:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1723569255; x=1724174055; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=XnQW8pYG6LCHnllh5P1GTODS6+I9/wuKSdiLV/Ktwcw=;
+        b=igOMcq2d66UlgKWGlj0v/s+/CIS+nYpw/rLoQiZDiRGg7B46m0g0FbY8BK4/V6TNEH
+         8nENacume7JDSUUo9wd43Xf3smlupfEmXtpS5FiGUbOWwBe8W3FfO+pSKTr5HXzGJ2HR
+         IJQ32bit7WUCLw0Ircc4DDT7DswSwxHU2TGZkMWgjuTzShBPkefvIAbf84RZevWJpth1
+         0go25XIdKqziJAvHK5IQQLe54JjsSrwSiQR0XTTIJSAfuGtFmYPnN1bQ+VlA/Q78pRj1
+         XyYOgLt1f//yZNFibZlprtSf81xHxdqs7AcO832iAy7BMFl9ayvvhXW45QwNQwD05cAH
+         PDAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1723569255; x=1724174055;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=XnQW8pYG6LCHnllh5P1GTODS6+I9/wuKSdiLV/Ktwcw=;
+        b=jnDUsXxaXLxXKrAJFMGnp7V11i9EQZ7vaeraKMWu4jliAQ1gk6QGdiC26gQnew9jYc
+         pGJeu9YL/4AKbqLAReiSNOXar0DxgdO+bbtdL8+40Z33knJwAj4UxGOUxWERjErBZnkJ
+         A16r+w2ubWfTv6AaeNHR3Ea4IdR1Jr33GNc52tGEMmvz7P0fXvVSllCppg8gtaGoFEjA
+         6a4R+Am/H8mQYvHs47QzbilT++tHJp3CLcxQ5HVZwdMsPFQRLA9SHaaLYlG3UXLZmSU/
+         P5LDdjLwYc4XMzQ11SMEjdwYt/uV9W5NYcAyTEusW4NYyGe2oP8SqQjRAFp40guVj14z
+         X3/Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVWFyUGvC6T8gHnZrRlXpllAvLWupLs7YD5tAMlw+ug3TFX4/iLBAVsdCKmbScPcmKKIGosHAlqRMShIxY4jgDgWL49kZ03uzWOQeLXDg==
+X-Gm-Message-State: AOJu0YzN/8vss1Mz9kL7Lzp9XmfZq8Lb5VFASQHCyHL6j1nNWNYoCMPY
+	J81WjG0mv7jdErkw3nK2EDmXZ5FD0yLz+Mm2NJ89o3jslF1ClYv9AZD+qyBzjq8aKKNJ3Y0kim2
+	UKXStmv6z6zOPZT/rhFDEgoy9V2A=
+X-Google-Smtp-Source: AGHT+IE1SEdB2S6FPvLqmHpU+NfPOzND/hei07NGJ6SnXJB1C3ScxKKZcSU1n+qObrhFw1qzFXpNI0UnKg5i8mH7VNU=
+X-Received: by 2002:a05:6e02:184b:b0:383:6af0:eb0d with SMTP id
+ e9e14a558f8ab-39d124c3641mr4830845ab.26.1723569254595; Tue, 13 Aug 2024
+ 10:14:14 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
+References: <56a52c81-68de-438d-94ae-9decc799d824@kernel.org> <20240808191735.1483572-1-ilordash02@gmail.com>
+In-Reply-To: <20240808191735.1483572-1-ilordash02@gmail.com>
+From: Ilya Orazov <ilordash02@gmail.com>
+Date: Tue, 13 Aug 2024 20:14:03 +0300
+Message-ID: <CAGCz5Hk=mSjQ1eFWstQQu=JZUkavJ_mRhnp8DRELUXP_syq4Zw@mail.gmail.com>
+Subject: Re: [PATCH v3 1/1] dt-bindings: phy: ti,tcan104x-can: Document
+ Microchip ATA6561
+To: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Aswath Govindraju <a-govindraju@ti.com>
+Cc: Conor Dooley <conor+dt@kernel.org>, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240813_010527_205005_E6BA7E96 
-X-CRM114-Status: GOOD (  25.79  )
+X-CRM114-CacheID: sfid-20240813_101416_712080_4594F92F 
+X-CRM114-Status: GOOD (  14.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,129 +87,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7893698973862077223=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============7893698973862077223==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4yclWa1Vx5GaX1/H"
-Content-Disposition: inline
+On Thu, 8 Aug 2024 at 22:18, Ilya Orazov <ilordash02@gmail.com> wrote:
+>
+> Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
+> It is pin-compatible with TI TCAN1042 and has a compatible programming
+> model, therefore use ti,tcan1042 as fallback compatible.
+>
+> Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
+> ---
+>  .../devicetree/bindings/phy/ti,tcan104x-can.yaml    | 13 +++++++++----
+>  1 file changed, 9 insertions(+), 4 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> index 79dad3e89aa6..4a8c3829d85d 100644
+> --- a/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> +++ b/Documentation/devicetree/bindings/phy/ti,tcan104x-can.yaml
+> @@ -14,10 +14,15 @@ properties:
+>      pattern: "^can-phy"
+>
+>    compatible:
+> -    enum:
+> -      - nxp,tjr1443
+> -      - ti,tcan1042
+> -      - ti,tcan1043
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - microchip,ata6561
+> +          - const: ti,tcan1042
+> +      - enum:
+> +          - ti,tcan1042
+> +          - ti,tcan1043
+> +          - nxp,tjr1443
+>
+>    '#phy-cells':
+>      const: 0
+>
+> base-commit: 6a0e38264012809afa24113ee2162dc07f4ed22b
+> --
+> 2.34.1
+>
 
---4yclWa1Vx5GaX1/H
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Could you please review my patch?
 
-On Tue, Aug 13, 2024 at 07:31:50AM +0200, Jan Kiszka wrote:
-> On 12.08.24 17:55, Conor Dooley wrote:
-> > On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
-> >> From: Jan Kiszka <jan.kiszka@siemens.com>
-> >>
-> >> Analogously to the PCI PHY, access to sys_syscon is needed to connect
-> >> the USB PHY to its controller.
-> >>
-> >> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> >> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> >> ---
-> >> CC: Rob Herring <robh@kernel.org>
-> >> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> >> CC: Conor Dooley <conor+dt@kernel.org>
-> >> ---
-> >>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11 +++++++++++
-> >>  1 file changed, 11 insertions(+)
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb=
--phy.yaml b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.y=
-aml
-> >> index 269e9f9f12b6..eaf0050c6f17 100644
-> >> --- a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.ya=
-ml
-> >> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.ya=
-ml
-> >> @@ -19,6 +19,16 @@ properties:
-> >>    "#phy-cells":
-> >>      const: 0
-> >> =20
-> >> +  starfive,sys-syscon:
-> >> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> >> +    items:
-> >> +      - items:
-> >> +          - description: phandle to System Register Controller sys_sy=
-scon node.
-> >> +          - description: PHY connect offset of SYS_SYSCONSAIF__SYSCFG=
- register for USB PHY.
-> >=20
-> > Why is having a new property for this required? The devicetree only has
-> > a single usb phy, so isn't it sufficient to look up the syscon by
-> > compatible, rather than via phandle + offset?
-> >=20
->=20
-> I didn't design this, I just copied it from
-> starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither sure
-> we want to change that anymore nor deviate in the pattern here.
+I hope the new patch version hasn't been lost in your inbox. Thanks to
+Conor, I understand now that sending new versions as a reply wasn't
+the best approach. I appreciate your time and feedback.
 
-To be honest, I think some of the other users of phandle + offset on
-this soc were just copy-pasted without thinking about whether or not they
-were required too. This one seems like it should just be a lookup by
-compatible in the driver instead of by phandle. As a bonus, it will work
-with existing devicetrees - whereas your current implementation will
-fail to probe on systems that have the old devicetree, a regression for
-systems running with that devicetree and downstream firmware.
-
-Cheers,
-Conor.
-
-> Jan
->=20
-> >> +    description:
-> >> +      The phandle to System Register Controller syscon node and the P=
-HY connect offset
-> >> +      of SYS_SYSCONSAIF__SYSCFG register. Connect PHY to USB controll=
-er.
-> >> +
-> >>    clocks:
-> >>      items:
-> >>        - description: PHY 125m
-> >> @@ -47,4 +57,5 @@ examples:
-> >>                   <&stgcrg 6>;
-> >>          clock-names =3D "125m", "app_125m";
-> >>          #phy-cells =3D <0>;
-> >> +        starfive,sys-syscon =3D <&sys_syscon 0x18>;
-> >>      };
-> >> --=20
-> >> 2.43.0
-> >>
->=20
-> --=20
-> Siemens AG, Technology
-> Linux Expert Center
->=20
-
---4yclWa1Vx5GaX1/H
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZrsTdQAKCRB4tDGHoIJi
-0qFLAP9V1J8PxI9x0hWQY9Q7/h1oGpyntcEVazVyrJCTuLV1iwEAgBTmAnTv+AkD
-7ty2V6D+iyeVdmYHbEWBlDVrNlDeKA0=
-=cWfz
------END PGP SIGNATURE-----
-
---4yclWa1Vx5GaX1/H--
-
-
---===============7893698973862077223==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Best regards,
+Ilya Orazov
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7893698973862077223==--
-
