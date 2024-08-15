@@ -4,71 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22AC0C3DA7F
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Aug 2024 14:43:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 233E7C52D7C
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Aug 2024 16:13:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=p31iu08cu7oLCaxzNy47gg8uj6+usFwUMgsI5p8kwJo=; b=MYDu7qUP7Iv2zCDC+mS7TFKgHj
-	ydN4kSK9gMwKBNWngv1uYPeKIgRNaR/n2K59EAcP4SHYgLn5ASfDaUHC1DTL7bnx1yeD/hRrHUKKL
-	clFryaMIgSHZVk5PK5dn/WXyJ29j2BhR7uVy6jKh0Qs0ephAJL7QQFRr12ZEhLT9oM6cYf0GFX+Bp
-	MMeXlxtOuiFxnTcMUFUIlaSS3R0zJ3xvODyiX/MN6mRjU01nn/gIk9l2svV3PAbz1CLRUDNZda+So
-	wKUs3q7A0wYF2slR1MEr8QJSGx+tI5k+TFiOyAFxMiSO7abphrZIMwm3BqGNG58ozco2BrZvGDCJ1
-	H0n79igA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RLdcVz9gBuHJNj4M3pcv+/mt+tkif3twrOAW9qXAoj4=; b=4aEMeX/NdEHGX9
+	4fJwYatcmsd5f3IpKgq4sOCYeS48gRbMdymWMm0Qjdl5GxA040i++Zvd+PAQ1zo7XfWkPiHJbxEty
+	EcC7sV9dT8Ekn6CgFnCpuynbPVyGj1+GkyR4VSergws7x0GnYqBwOisaSpRWsmliQNg1Srd3KQEAX
+	nC50OADtIGKfjqXHh55piKsqTjmOY65kICWBeeIepU/8kMCns1Fv7bDnVWxXAQWY856AA25hMFYVW
+	wIuDOhSZZmsq0rl67ZgE5UWuRu8dHfP+z6EeuhO7ghQmCpIK/o8Q3EwucFKLG525knaTmMgR8EHoJ
+	1FmSbWNFEQzlvx8dRPuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sebhX-0000000AFmU-3RgA;
-	Thu, 15 Aug 2024 14:43:43 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sed5x-0000000ATgD-3U9t;
+	Thu, 15 Aug 2024 16:13:01 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sebg0-0000000AFMa-2zKR;
-	Thu, 15 Aug 2024 14:42:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id A4FBECE1CA4;
-	Thu, 15 Aug 2024 14:42:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C93ABC32786;
-	Thu, 15 Aug 2024 14:42:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723732925;
-	bh=M40/005yIp6PCsxxKStq9i/vMz5yXRGyPImHwfgRiyQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VEAB2bn5hNHq7njuWlDTwBaBdfm593hUm+7dAlHYT1OXAgZo5F5FwZQGGvCvXRcXH
-	 Ix+EVn36nGzdPtpoGHDBmxWfsDGB9R00F1NtpKo4KUZ9xEVMEVhVdT0rd0s/JGskIz
-	 kRvbs7GY5572G1kVn+7t23D+XoNj7g+exF5MT9GlnanqdVJX1MhOVfjO+Q4Ugd2B0e
-	 sicrwqsWDLXwTCTJPcY0xgvtcgPYed8xFYfaCRxFaNN9icRjFy6/FNsFVZVrZcEa5a
-	 SPO8jgsVrwOzqHhwrvhd7IIJ1xngfd5kKoV01ssLmo63DyCnmulPArf46eD/FZxn/9
-	 JdARv89eYqdMg==
-Date: Thu, 15 Aug 2024 15:42:00 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Minda Chen <minda.chen@starfivetech.com>
-Cc: Conor Dooley <conor.dooley@microchip.com>,
-	Jan Kiszka <jan.kiszka@siemens.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	Dan Carpenter <dan.carpenter@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Subject: Re: =?utf-8?B?5Zue5aSNOiBbUEFUQ0ggdjIgMS8z?= =?utf-8?Q?=5D?=
- dt-bindings: phy: jh7110-usb-phy: Add sys-syscon property
-Message-ID: <20240815-endless-credible-324438d164f4@spud>
-References: <cover.1723472153.git.jan.kiszka@siemens.com>
- <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
- <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
- <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
- <20240813-haiku-pusher-f2fb037a2f49@wendy>
- <SHXPR01MB08633B523DA1F6C5632F6D9DE6802@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
+	id 1sed5q-0000000ATeH-1ckl;
+	Thu, 15 Aug 2024 16:12:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=/+Gq5JqbMy1Ohz5FGdcJwbNyFqGLttXx8PyGPZaul8c=; b=y/mgYsQzJGaqPJP0WAZ2WUBVDL
+	JquQwfK8Y8T21O0vy3IlMBc1Ib4g10MVY713tLJJ7asTjmdOJ1N6V2gO7e8qHmICD4C6AxGn2xOSH
+	bd+IkJmC305GG9v8V5Y8Py/NUHSFNJrAcpNzJJCS6+RNl2kHTi+mJHRUUvbYCdRh9Uaesq4M4FsdM
+	+x+HtclWRw9qtiuRrWCNH4QLNFpHoV8JIuuYjU2AbB6FkFBhWE91o8ZL/A/xkxqOKGUlaVocAtIgq
+	jnYLRJXt0tcyyVeDWsKKJkZOFQfKA/SqQu8TPygXtS8r4eBafY1lzKv9CRq3wP1PUizesjbJLQCQh
+	mn0xdG6g==;
+Received: from i53875a9f.versanet.de ([83.135.90.159] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1sed5l-00056j-5O; Thu, 15 Aug 2024 18:12:49 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+ Dragan Simic <dsimic@manjaro.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: phy-rockchip-inno-usb2: Handle failed extcon allocation
+ better
+Date: Thu, 15 Aug 2024 18:12:48 +0200
+Message-ID: <4927264.xgNZFEDtJV@diego>
+In-Reply-To: <5fa7796d71e2f46344e972bc98a54539f55b6109.1723551599.git.dsimic@manjaro.org>
+References: <5fa7796d71e2f46344e972bc98a54539f55b6109.1723551599.git.dsimic@manjaro.org>
 MIME-Version: 1.0
-In-Reply-To: <SHXPR01MB08633B523DA1F6C5632F6D9DE6802@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240815_074209_320502_EFC5DEC3 
-X-CRM114-Status: GOOD (  33.18  )
+X-CRM114-CacheID: sfid-20240815_091254_480916_AD95B3D4 
+X-CRM114-Status: GOOD (  16.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,124 +69,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8066768479893480018=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Am Dienstag, 13. August 2024, 20:38:17 CEST schrieb Dragan Simic:
+> Return the actual error code upon failure to allocate extcon device, instead
+> of hardcoding -ENOMEM.  While there, produce an appropriate error message.
+> 
+> Signed-off-by: Dragan Simic <dsimic@manjaro.org>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> index 4f71373ae6e1..d33418a1e7a8 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> @@ -434,8 +434,10 @@ static int rockchip_usb2phy_extcon_register(struct rockchip_usb2phy *rphy)
+>  		edev = devm_extcon_dev_allocate(rphy->dev,
+>  						rockchip_usb2phy_extcon_cable);
+>  
+> -		if (IS_ERR(edev))
+> -			return -ENOMEM;
+> +		if (IS_ERR(edev)) {
+> +			dev_err(rphy->dev, "failed to allocate extcon device\n");
+> +			return PTR_ERR(edev);
+> +		}
 
---===============8066768479893480018==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Y6obAq/LA5e3r0dd"
-Content-Disposition: inline
+maybe even use dev_err_probe?
 
-
---Y6obAq/LA5e3r0dd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Aug 15, 2024 at 10:33:55AM +0000, Minda Chen wrote:
->=20
->=20
-> >=20
-> > On Tue, Aug 13, 2024 at 07:31:50AM +0200, Jan Kiszka wrote:
-> > > On 12.08.24 17:55, Conor Dooley wrote:
-> > > > On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
-> > > >> From: Jan Kiszka <jan.kiszka@siemens.com>
-> > > >>
-> > > >> Analogously to the PCI PHY, access to sys_syscon is needed to
-> > > >> connect the USB PHY to its controller.
-> > > >>
-> > > >> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> > > >> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> > > >> ---
-> > > >> CC: Rob Herring <robh@kernel.org>
-> > > >> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > > >> CC: Conor Dooley <conor+dt@kernel.org>
-> > > >> ---
-> > > >>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11
-> > +++++++++++
-> > > >>  1 file changed, 11 insertions(+)
-> > > >>
-> > > >> diff --git
-> > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yam
-> > > >> l
-> > > >> b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yam
-> > > >> l index 269e9f9f12b6..eaf0050c6f17 100644
-> > > >> ---
-> > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yam
-> > > >> l
-> > > >> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > >> +++ .yaml
-> > > >> @@ -19,6 +19,16 @@ properties:
-> > > >>    "#phy-cells":
-> > > >>      const: 0
-> > > >>
-> > > >> +  starfive,sys-syscon:
-> > > >> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> > > >> +    items:
-> > > >> +      - items:
-> > > >> +          - description: phandle to System Register Controller
-> > sys_syscon node.
-> > > >> +          - description: PHY connect offset of
-> > SYS_SYSCONSAIF__SYSCFG register for USB PHY.
-> > > >
-> > > > Why is having a new property for this required? The devicetree only
-> > > > has a single usb phy, so isn't it sufficient to look up the syscon
-> > > > by compatible, rather than via phandle + offset?
-> > > >
-> > >
-> > > I didn't design this, I just copied it from
-> > > starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither
-> > > sure we want to change that anymore nor deviate in the pattern here.
-> >=20
-> > To be honest, I think some of the other users of phandle + offset on th=
-is soc were
-> > just copy-pasted without thinking about whether or not they were requir=
-ed too.
-> > This one seems like it should just be a lookup by compatible in the dri=
-ver instead
-> > of by phandle. As a bonus, it will work with existing devicetrees - whe=
-reas your
-> > current implementation will fail to probe on systems that have the old
-> > devicetree, a regression for systems running with that devicetree and
-> > downstream firmware.
-> >=20
-> > Cheers,
-> > Conor.
-> >=20
-> Hi Conor
-> I know you would like to put the offset value to the code, Just set sysco=
-n in dts.
-> Just like pcie-starfive.c. right?
-
-No, not quite. That still uses a phandle lookup, I was talking about
-using syscon_regmap_lookup_by_compatible().
-
---Y6obAq/LA5e3r0dd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZr4TuAAKCRB4tDGHoIJi
-0sIFAQC/JyXvK+VLgbIRFzTwOSJvSzC4aJueRc46G1g/t0SWQAEAsiQzJzNWfk3E
-4/t1gvtNHk8K7qm6C0l8crJVrI7AsAY=
-=JWz8
------END PGP SIGNATURE-----
-
---Y6obAq/LA5e3r0dd--
+rockchip_usb2phy_extcon_register() gets called from the probe function,
+so even using it is also sematically correct ;-) .
 
 
---===============8066768479893480018==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Heiko
+
+>  
+>  		ret = devm_extcon_dev_register(rphy->dev, edev);
+>  		if (ret) {
+> 
+
+
+
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8066768479893480018==--
-
