@@ -4,180 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 293B1C3DA7F
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Aug 2024 08:20:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0A84C52D7D
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Aug 2024 10:34:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tkm+/pNHAJ2TIzP4JS45dhLJxZ8UrW+RtsKbcF95L7U=; b=us1xDW84xiZ2Q7UVwmNd7oB4OQ
-	8ChCIzHh9puseTIQ3XbYeytgMk4tkKz041HlGcwF4myRl/yUmQm/IiA0Mrtdzuzknj3MUyKeet0CY
-	Mf0LfZCTLqplkuYv0ANcz55w6hAn/afHcZA3od6hBz+gRtkXXUtfFDqXIueoNp0GXi2pXTzWTDZnn
-	e1955BbSzxQ5AYpjie9SrFFfy9x8cqNKj3hQ5ixfOXGIulPBHDHE8NyCjD68KnLmoQyaKI5ZWvc70
-	r3fLLcUVLAe9mr2qkd4v0Q/JfGRsRcgOWgA6F/rjOEytG8enCWKm/huWZgYNJhfNpRoMVjw8RNiKg
-	WQKgHfLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0wMvdtaHUrY9h08DHAs4r95QhOVxt4jQdohPIPNMAZg=; b=I2j1XnnatYyQ3z
+	5QAp3JRxtKu9WjFIvVAGgR22jS3I+gIWvH0PU4R/ipq5TmPKAYe9Na9NuSY2MoF01pAoHxooW0k2J
+	O1iD6R/dS0SZxma8+3TPRSTeJGlkqLfpt/HKbY79oTwSpK2h561qI6/9pEVkMnyP9GfQRKxU9E3xE
+	YGNcgjgkWoyKQC+EDOOkzl+Dp+a/OZ5ajoPJwJ4a+nNZFJ9N4GsvS3Id7tEiLnfrKQZDn6qjw0X2j
+	qUnPVJyCmHXLj5lALpc/q5HEL28+asfl91B7VeIO7O1fG5ZD0LSD9yzOctmwbM/vmQxvDrxGAXTQf
+	bbrNmjmeKjrNlZYRvWdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seViY-00000009N7b-2wDN;
-	Thu, 15 Aug 2024 08:20:22 +0000
-Received: from mail-db8eur05on2070f.outbound.protection.outlook.com ([2a01:111:f400:7e1a::70f] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1seXo6-00000009dAq-2h3G;
+	Thu, 15 Aug 2024 10:34:14 +0000
+Received: from mail-bjschn02on20711.outbound.protection.partner.outlook.cn ([2406:e500:4440:2::711] helo=CHN02-BJS-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seVhu-00000009N2n-0zVA;
-	Thu, 15 Aug 2024 08:19:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=NkMCnAvQimGJTNP/HFrofrckmB9wLS2i7/GzgR5686Xm5hq1fCq425kC7rMSSbDsLREW6GDsiNyGRzZ337dfqfZxx5jkLBX8UOaoEdozbZI39Dw1VCfIFG0XyvUkNAlIL1gx3qhGgRH0utPNY5wf7HJyPZMt/+fT/pm6/69SqOU9qLBISCEjUElrIcKPbhbJRPrSZNdHt4DuGf6tgQDDg3AgGJ3r87ih8LTkkGzyTF6I5WKFwdUK1t26nBYhuVJCepeIgHpxFPZvKIKe9BE2hCO8Kq3Ku1ezwOfF0Tt74G2TrPtFInROs+uUZkNEaCJ4VCwQmBM9y8zskaV1NfnxbA==
+	id 1seXo2-00000009d93-3iu6;
+	Thu, 15 Aug 2024 10:34:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=K3H9ascx/5pCw72JXZDtDzE8iGGh8zoPgS1cE1mKQkeYwKG1FbLdzrCSSH4vYEHVlybjHiTX9ZVnL78DVRd3baBlqb55wwzUdEKkY7zQefI4Y7tX86rgb6x5ZiXBis29l+AymExhCFXCIR37vRnqTDNLEYZU50LLwX/irZr7k+yOCMH8zmljkWN4ITXgPaJD3bXdTH8j80TDk39lwp77T/Y1l+qiFs8PHmX7CduLf2xM+e3vP469GU1VN9/3Pl+b0/8rot8qFktVyC2jP53e1x9CsC5LvrXLzWekHcNOuVL/GCvslyez6AHnzzJeuZmA7msL632eJ7B32wSX+d/RQQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
+ s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=66Zi5tPuLc0iFDOBqaoyhe/owZnMsgbGn3N7GzUq3W4=;
- b=AzGk5Jkcky/EU2ROVNO1EMgLr+OMT7iD/0tVCsuJEafzCdzAzyYlilX7yHqteQFMxSQoKw+nBRpd/KtpioxDXUyT+8rnqs/BxfVNa8b0x2pjKTcnsb7NdycYo5Y3GOtnA/R3ehqkR5tbOJHj7p54lCzLP6iZ2GGp7IJtrZLp5VMY0Vs1q6BxnxMPsvGvuuPIiq5E5nuDjNX9ee7zCTves4c6llxeRIsW414sLRZDc3V2fMD3HurCNkHR6eMCYdXE6Jrm1EYl8KNuXcynouuCd/ifioB4zVyZDsY1UkbBnSo4iw+bCHA6cxC0P54QatII3hNCQ+ydkI3SQME2PVocaQ==
+ bh=qDo5SrZ/4pywN3nG4oxF3giT4t7+xTbQGbK4wFKcEBI=;
+ b=I3ScJNOdHxbNvrOV9Loou043SdY7SRBdz2wByAW4CSQWULQv6jwWx8FyqomQbwNJdqyP5vDsYFeoHVrJC5bh10pb9tErtg+dtJkqrZqwdkVX4bqn+y3ScdrR5ejaV/dH2Xe2/NBjxDlWGMkjrUjxh2GN6NpbaOux14wTLdQ8l8lGah2ppoJd1MGWe3D1v3bEiq7/7IxARjeUgj2HxbZFXhKltEpY0/smQJjieQK/c691iZ/RnMmG2SqTv2lqYEhqtCyKR4C+lEqU/ycU/z7lix4yBijoMqP4hdV4CuOgir3LE8DOllpCQcqpqYqecRO9Yx45UFgH0y++B9rU6A0kmg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
- dkim=pass header.d=kontron.de; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com;
- s=selector2-mysnt-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=66Zi5tPuLc0iFDOBqaoyhe/owZnMsgbGn3N7GzUq3W4=;
- b=PR3578MLZuEY01EqiH1fNoEhzq8fe7e/ofE6WuXXfkw1wgncssGGvZhAv36FQYd5VzGzlTDz3ppS20EPYtj8ECyFJ5sOwE4ESUb0/pLrscPjrGDdIvPFV7gcni/8FjNhYl9Er4zBFpiVZBLhR2mHTswuPjTgz2qK4PwGpMmwJjo=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=kontron.de;
-Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:263::10)
- by VI0PR10MB8523.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:237::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7875.17; Thu, 15 Aug
- 2024 08:19:30 +0000
-Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::b854:7611:1533:2a19]) by PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::b854:7611:1533:2a19%7]) with mapi id 15.20.7849.021; Thu, 15 Aug 2024
- 08:19:30 +0000
-Message-ID: <cd03ecb1-100e-4699-95ed-d837a2802dc7@kontron.de>
-Date: Thu, 15 Aug 2024 10:19:27 +0200
-User-Agent: Mozilla Thunderbird
-Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
- (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for i.MX8MP
- DWC HDMI)
-To: Lucas Stach <l.stach@pengutronix.de>,
- Dominique MARTINET <dominique.martinet@atmark-techno.com>,
- Adam Ford <aford173@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org, marex@denx.de,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- Makoto Sato <makoto.sato@atmark-techno.com>
-References: <20240203165307.7806-1-aford173@gmail.com>
- <20240203165307.7806-11-aford173@gmail.com>
- <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
- <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
-Content-Language: en-US, de-DE
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
-In-Reply-To: <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
-X-ClientProxiedBy: FR4P281CA0115.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:bb::20) To PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:102:263::10)
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:25::15) by SHXPR01MB0864.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:24::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.33; Thu, 15 Aug
+ 2024 10:33:55 +0000
+Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
+ ([fe80::9c31:a452:dc3b:7273]) by
+ SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn ([fe80::9c31:a452:dc3b:7273%3])
+ with mapi id 15.20.7828.031; Thu, 15 Aug 2024 10:33:55 +0000
+From: Minda Chen <minda.chen@starfivetech.com>
+To: Conor Dooley <conor.dooley@microchip.com>, Jan Kiszka
+	<jan.kiszka@siemens.com>
+CC: Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon
+ Vijay Abraham I <kishon@kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-riscv@lists.infradead.org"
+	<linux-riscv@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, Dan Carpenter <dan.carpenter@linaro.org>, Rob
+ Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
+ Dooley <conor+dt@kernel.org>
+Subject: =?gb2312?B?u9i4tDogW1BBVENIIHYyIDEvM10gZHQtYmluZGluZ3M6IHBoeTogamg3MTEw?=
+ =?gb2312?Q?-usb-phy:_Add_sys-syscon_property?=
+Thread-Topic: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
+ property
+Thread-Index: AQHa7MIqi3fKeaFdgUCkV8gwHQ6DdLIjxqIAgADkCwCAACqYgIADTTAQ
+Date: Thu, 15 Aug 2024 10:33:55 +0000
+Message-ID: <SHXPR01MB08633B523DA1F6C5632F6D9DE6802@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
+References: <cover.1723472153.git.jan.kiszka@siemens.com>
+ <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
+ <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
+ <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
+ <20240813-haiku-pusher-f2fb037a2f49@wendy>
+In-Reply-To: <20240813-haiku-pusher-f2fb037a2f49@wendy>
+Accept-Language: en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SHXPR01MB0863:EE_|SHXPR01MB0864:EE_
+x-ms-office365-filtering-correlation-id: 43711e8d-88d4-4375-dc59-08dcbd15c372
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|7416014|41320700013|366016|38070700018;
+x-microsoft-antispam-message-info: dzGRQBuEJVAahcmvEqPP4Q/1N7+J64hmgyPaf5P492i7veJDiJt4EFJTOQvZBzBRnu0jPIQUEqjcTZmT9fLuM8Nj0m1I1ifHQYr+Yh3tfT9FBxfeDPv9gX5mWe29mrQ9qBw8PPnxtvw0ruTHk3RCRB/Qimy0g4AGAMSMQLIE8/g1gDsSvG+n65Dt2tpxfs4WIAaNxi/w4CEIjJwBKX98tJzOka5MReGiHbgISwThjuPf4mWPEPe8NfgYz1BR9Thx2RkBZ0DhVsixNMnZ+I0KdOb8S92b+97mHJH1KDrTxLKhcTKP0MvvwsgDUkngtDQEbBqzJ3mcFEqFZBeAB5s6mg7QFu93ZFG0Kcn5lRyVJLnJGxAy7SHw6V269lzAzNAqwAf2rgPoRd/0GFtqqyiR9i6jP4PSwsdFisALcJp0AiUoCrrPLQmBGOd8tG7VgQyLJleZYeAg2Ni4cEsfJbgR5kv6BZq4WZfTtEP7NxBqwe2NbTAtOk8eDE8Ds3slOEq9LQ75QTpDYKbEO8tffgeSWMRuhisvXOZyINiL1wkFdnB24xMgfSjsnbyXbG70LqLPRuZY/c2nn3W11Ci1gJ/rIQgaO5TemBH90rYaXaqFrpVFEqS/EyFveM2OPzKXLO6i
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-cn;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(7416014)(41320700013)(366016)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?gb2312?B?WndoaExqcks3bjR0L205alF5WlJIWjRBbXF3b0g0Q3FvU2pRdk1RQSt5OTZY?=
+ =?gb2312?B?OVFxVUtEd2E3LzBDV0NBbWVob1pqa1p0Y1VCVENnT2Y5K24yT1V1MWhvbUdw?=
+ =?gb2312?B?dGx0aWc1aG5OMWF1SG9zTUMyV25qUnhLdUZXRmtmRkx0YVFRb0pnL1VJY3A1?=
+ =?gb2312?B?NmV4dzRDMkRwemJMZmhwTmoxMEhvQXBTUGxiTzVocmVFL3YrL3Q5aUtGcTJF?=
+ =?gb2312?B?MUpJNnZkOUcwUkRSTHhmTWJvQnI1a29Xb2p3UVZqTWlvcExPb29VQlk3R0pX?=
+ =?gb2312?B?ZkRNZ1dXeldqSHgyaXRPS3BFOTc5dmM0Q1RuY0s4SE1CR2hyN1NhY0lPVVFr?=
+ =?gb2312?B?ZVFSSjZvQzlzaGkrRERCMmN5VjNLejBtMUV3NktONmIxTnlLcjQyc3NKdHNQ?=
+ =?gb2312?B?WG5oZ2NSclZlVUM2aUtRbjI1cnBTQmZiUmQvbFlndEhQVzJrSlVrVm1IZEMz?=
+ =?gb2312?B?UnhnR1JQTXlPaExXS3Jyd2pQS0s0a05YWnZWYng0WUxXa2hxdkpNcFZ4Y0dM?=
+ =?gb2312?B?UnU2bVNBT09GTHdjQVpFaXVPbTFsTEpEMzRhNStibTNQbEF2dXZQd2l3SXRK?=
+ =?gb2312?B?VHczc2s4UGNaVGtwQTREQVIvaERRWmwyb2ZwZ29EU0R1SUdyVVl3VGRDQUt4?=
+ =?gb2312?B?dE9ESk1UcXZDeTRqUlR6M2YyMzlUeC9vN1llUDhiai96NWNkd21aZDN6Rng2?=
+ =?gb2312?B?TC94YXlFQjNuUzJ4RkNEWWJqdUltQ1pVS2hQYnBTcWVKVFRmSGc3Y0JEVTll?=
+ =?gb2312?B?SkVWdHNaUFZvc1QzcW5rNlpCSndEamNmRHBwOHBVdGlDS1JKRnRwMzJnVXhj?=
+ =?gb2312?B?T3hEd01Xc0hLTW5TL0tDRlVwNk0rNDMyTk1iM2ZhWnprU0x3K0NMaThXdXdZ?=
+ =?gb2312?B?TEhpdS94NWVaWjhuS2t0MnBZOXc0YkxSSHNSOGlhZjNkbDViSkhrK3NZSUtF?=
+ =?gb2312?B?T2tCb3JPVzhBOWVZQTJkSkJJU3JsRkdFUzljbTBsdUpzTFVHS2hESVplVlRT?=
+ =?gb2312?B?QVFhSHNHT3hQam1CWTZDS2FTOEtpR2FrZGk5SkQ1OXAvSi9TMVl0WHA3VTly?=
+ =?gb2312?B?bVh1WDk3NjNldm45N3RUSGFRaVN0enp5OUh4aUlaMmNVQ1Q2QzdxbHk2TzZZ?=
+ =?gb2312?B?eXJuTmJTRmpXU0RPYld1Ny9mRFdtaXZCdGh2aEpYcFoyZWdGem1tTTVBL3Zy?=
+ =?gb2312?B?OVpMUldSZU55OU1CdXhjM1NzdFZjRXpVaTBZVW5RMDlpSWV5dkdxL2liMlMz?=
+ =?gb2312?B?cGNjTUg0aTNRamJpR092RXZqZnJQZDlsZW1OdnFMdHFXR2MrSTNmNUszZk1h?=
+ =?gb2312?B?NjRGMGc1WjJWREJJQ0JVUXp1ZU5EV0p6M3JmL2NaZmkwS1REb1YxZ2FFUHht?=
+ =?gb2312?B?ZjI4cFc0VzNLSDRQcm96WHN3cWxHL01DWGpvckVrRHltbTVYWk1EUytEcXd2?=
+ =?gb2312?B?MDVBMmJHSjI0N2Y2Q3QydU9taUwvd2JpT1BCbmhxOUpIUkhmekh4ajk3TC81?=
+ =?gb2312?B?cWg5TjhueWpKTXRvQk9iQmRxbUwxOVhmRDdHdGxiU1RtUmlEWUlyR0V1Z2FF?=
+ =?gb2312?B?N3IrTEd4K0ozdkFYUytielV3SHRGM2JVNzVwVitlOEFmdzE4a3pTejdRQ2Ew?=
+ =?gb2312?B?Sk5qaDlOUlc4UVJQTjlYenJtVHRnUTQ0VXJXMXZ0Q2hyUnRpMkRsL0xtVWdp?=
+ =?gb2312?B?aWt2NFdCZzNkZi9UVGJYZVNtNm5qcHNiNkNtQWVmRVFXckkyWDNpckVyWGJU?=
+ =?gb2312?B?YnlsQzFhTGcvRDhrZ1pBV1pTd3N4YXhVRVl6RjFJVm5kSVhDL1owMlBVcjFy?=
+ =?gb2312?B?TjdxY3hOc2l3ODYwNDBNS0RUMHl6cEdYbnNBOGxlOHVsMmkwTERwZitzL1Bo?=
+ =?gb2312?B?UU00R1RrNnZnVDR4QjdyeC8wNVZvTHduK1JWSFAyY1hVa1ovb2FRSTJyNXho?=
+ =?gb2312?B?QUNaWDVWVWRWeGZDQi93NnlHMUZVbEVvUDFKMkluRnA1RU9yL2NJL3ZhaWxj?=
+ =?gb2312?B?M2JBSlcya1BmZTBEQVpOWnJSLzUrcGdqb3NFRWJQQzZLRFQxcFAwQk1OaVF0?=
+ =?gb2312?B?L0I5VUJnQWhvdkkvbmwyakYvNHUwWDNpYnE5V2VRN21qajNkTzZySGlabmo1?=
+ =?gb2312?Q?fBdA=3D?=
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR10MB5681:EE_|VI0PR10MB8523:EE_
-X-MS-Office365-Filtering-Correlation-Id: 6907b217-2a61-4da5-d449-08dcbd02fc78
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?LzNESUV4cWhEZXhiOGRtSzFQdFlhcGJSZmVZaFgvN3NZSzAzWnFBSHhTQVFO?=
- =?utf-8?B?L05PMDNlRXJBS28raDhYRlpjVGdxaXRyYTl6aFhmK1dnYVpjQ1Evc1U5ekNh?=
- =?utf-8?B?cEJmNDF3ZXhtRXl0RXAzeTF1b0JCSTNKeUNFRHN2SVFuUXdwSlorQ2NJaEdI?=
- =?utf-8?B?RTEvQ1NrdUtBajZDZWlkQkR6R3hRck1Gb09vd2JKcGF1TGdmUmNML1ZsZ2hp?=
- =?utf-8?B?YUZ3QmozR0V3TU51WFhvKytKUXU5c3p2KzB3K21WUHNrN1RNKzk3WU40eWVv?=
- =?utf-8?B?WDdsVUtuQzFUUU1vSHNyVGZCUUdQSFQrY2dvZlg1ZHdyUkhFK0dPeUl4d09P?=
- =?utf-8?B?cU5Ub1h6d1dDeC9pSmhHNVdLekhPdU5ianhpK3ZOczYxSlZnS1duZmc1dWRB?=
- =?utf-8?B?NXJ5d1VqdVF6aXRYYjFIMEl5SlVNd3VSTTRKZ2JkamtrbXhtNHk1azlmWnht?=
- =?utf-8?B?enpJaGhsTnZoRDBtK2VYMGJXaTNqZ1Z5eWJWbFVzbGVaZVphWjdLS0pUVldm?=
- =?utf-8?B?ZFhydDVPOElHVjFGTDE2OXBmRWVFdDRteEpHMTdaVmZ4QjBQRzBoQk83Y25W?=
- =?utf-8?B?QkxmbE40T1RVWk5zL1B6K09TTFBLTHFHTVlQM0lKYit6NHJVVDlVNlBlQWdr?=
- =?utf-8?B?UmdsMEM1aW5PdSsyRHpTOHRWeGdkSmVneXpvdWlwbUhPQ0ROOWs4cEVSL2c1?=
- =?utf-8?B?MW1SKzIxVGNVempnQ05YY1J3d3VpS1FnYllQYXlZdnMyZ2RWV1FqYmFvSjJs?=
- =?utf-8?B?cFpad1dOT0JDYnRuUmV3V0dlSmswdVhsc29EUjl1RUxZWW1aWHRPRXdBVEhv?=
- =?utf-8?B?d0c3ZTV1NURBOTFqN1dXbDBTWFB3dzR0Um9rSmdRRHduM2dVeklIcnZLVUhh?=
- =?utf-8?B?S2R0OWF0cUNQSWJ5MWZJV0t1Z0NVTFZQQU1XbkI1bUFaQ0gvNEY2UnJPMW9E?=
- =?utf-8?B?L0NxSDVER0h2dmhzVW1NMmpLQmIveHhjL2ZFdXlOQXd2dTlqbERmQmNyOWQ4?=
- =?utf-8?B?OHhQU3hYUW9mbXVVbCsvbWVnOXJFYXJ2NlN6NjdiWDdNWnFXYXlhdzlwaE1t?=
- =?utf-8?B?SWw0UzVQZlM2QXZyTDZ4cHdhMTh0dlM5L1ZEblBYN1dLRklPQ1NEeFk0SVJG?=
- =?utf-8?B?M3JGNkFnZXZpMHdBcVdhc2oxNEZRaGsweUJmR3FPaGhneWdMcExTTmt4ZUhN?=
- =?utf-8?B?eWwwT3FpQWc3T1VLYmU2Z0NKUEJaNnFYcjdmM2F3MENsbjlNVklHUW4rd25y?=
- =?utf-8?B?dDI0OHhiY1NaSVllaHQ5NkZRc1VoTWNhWHB0K1ljMVlGWDMvY2Fpbmx4RzVm?=
- =?utf-8?B?WlNxRFNIemEzUDBFUWR2UGh5aWUvbGd2a0RNT1lySmhNbWZVTkNxUlgvUk9z?=
- =?utf-8?B?RDR4T0dQM0REMzJUTDhIOU5Yb1pIMWFhS1VXMFk5bzhNYzBQREFrYUJlOWor?=
- =?utf-8?B?WmcrL2lHYjJNRUNzSzZzajhiZ1RrSTlETFkwTTZPbXNZU3ZleGVBQWVNRlc2?=
- =?utf-8?B?Q25yMFJJcWlCQkgvS0tJbkxOekpNdythT1BiNW5rQ1Foc3JKem1TY0x5czlz?=
- =?utf-8?B?V1hFYkRJMTkySlhUUmh3TXZtV3d0MDZsdExHQ28rWjFGMUdkemVDellKMDU5?=
- =?utf-8?B?TTgwaDlncW16eUJQcHhiOHRKTTNUeWFsS1o0UnVSWnFCWnd6YjN5MnhYSE9i?=
- =?utf-8?B?bmZEd1dqdEZ4RGx6d3ErOTg2Y3N3Zlhwd0F1M3lSN1hsMW55Q1JkWTdPQThF?=
- =?utf-8?B?S28zd1lHTFp3MTRKTUJyOUtQaVF2dkg3STNxUWU2RDl4YzM2QXIxUjRCQkFp?=
- =?utf-8?B?NzFlN1RkQlN6QkZCdHVrZz09?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?N0FxTHU3ZDEzVzZnQUdXY29ROFBrL2liRlFGRXV1RDRzcmxuOTMrSjRYeU1z?=
- =?utf-8?B?T2ExQ0FDa2tDR29IYXdadTFnd01JYlhGNHR0dmd3cy84VFAzMjZRZUNsbWJu?=
- =?utf-8?B?bHBOUFVzRk9ESGUrMWtSZGZHZ3B1cW9KRFlFdmpZQ3Q2TmtDVmtLc0d5Lzds?=
- =?utf-8?B?ajRrdWdlZmZLUURyWkE1K1hQNUxSRUNIQkFPZnNsZEVqRldZVlVGRGczdTlr?=
- =?utf-8?B?ZlNKMDF3ZFByaVpZUHUvSWlIWkw0cWN6S0syY2dWaWw4eFFobkR4OWpEcDg1?=
- =?utf-8?B?cFFPcFozM1k5Qis0ZzJzUDE3dW5KcWNmak5sWHhXKzQwSXdkV3dlWGRuK1Ar?=
- =?utf-8?B?dGRNL2xuUDA0YnJPYi8rd2xmbXNlazdLeC9ubElwUU93VGNQcml4c3JrRHlM?=
- =?utf-8?B?Si9EUVFBYlhxTXFqaEFXQThoMktDUXI4NkNoc2RjVlo2c09ZRmxZRllQNmU5?=
- =?utf-8?B?WXB2WmVUZjNtUmFnWDF5YVoyQlNDeVdXaWR2aldtVTBYelNNak5DVlphYXZV?=
- =?utf-8?B?UTZlL0JOKzkrVUVTNzZpUU9xVUs4VFJFVUVzLzZqV29aeURtMUtoSVUxcVE0?=
- =?utf-8?B?NnBwRVJuZzV0UlREK25SZUY1LzBwam1xV1JMY1JHS0tqcE5UMEdWeGhsRmxh?=
- =?utf-8?B?SUFHNUJIOUxHYlFaREwveVo1YnRWejl4ZUkza0ttNUxwa3NNaG53QlNmS0RF?=
- =?utf-8?B?Z2srMTdXUDlGcGZMd2hzRXBHdXBGMys0Q1VFNkNOYzd5MS9rN2lEY2tYY3Z5?=
- =?utf-8?B?enprZnlFT3NGc21rbHVRajIwV1k5YUVtdUtqYUdIWVVGN0wyNEorcGJ2M0Fa?=
- =?utf-8?B?SXBVYnlsMVRLdFo3cVpiaVJRbFJIRm1ZekF1K041cVVoRjJYdWROeWRTQWJB?=
- =?utf-8?B?Nk95Mml0VDlXT2RvdmxPNTJGazdtMGhSOHZUbFNjNnpqQUkzb2ovTjM4bkhL?=
- =?utf-8?B?b1VkWFFJaVZWZ0NZQWxvV1duNTJjaHFzNTB5SFU2c2owWTZLWmhMSm1xMDIx?=
- =?utf-8?B?azkrYmNMbjFET3BzQ0pxUE5ubDdRTjVKaHRnVnNWTUd6S3FIRHRNWWVPT251?=
- =?utf-8?B?NkJKaWtTc0V1TWkyYW56QUhlditMMGRqZzA0amFkZ0l2Vy9nVEZVak1mT0NG?=
- =?utf-8?B?ZE9JbGk0UmN2MWhiRkRhZkhxNEc4aXpGZFpsbzVMUHcyVGtuWFdIM0ZYQjlK?=
- =?utf-8?B?eDNUNTkrTUVqV2xaaXZKdSs2UFQyYVVCNDhXMFk4eFZHYXB6RlBTalFQejFT?=
- =?utf-8?B?QU1qR2RhUkhXOVVXRE9EOHoyem1INVl1UGY3Tmk2bjdkRU1wNGVXbUEycGxV?=
- =?utf-8?B?UW56WU5CL0g5SFpueGUyc0RCTGZKQVU5QzBMajM3dWZxZGRUbXhib1ZENnNK?=
- =?utf-8?B?cjdKSW5DNDNRTUs1NGV1ZUhKQ084cUt5MTlTMVk1Ti9qaWgzQkpBaUpCSkU5?=
- =?utf-8?B?Z2FoWHVnNVBDa2RrTzFpdTZpVXpWZXNtOW1La1lwSHFOY1cwbkdEclgvbXc3?=
- =?utf-8?B?bTRwUEE3WVZEc0VObE5raC95Z0MySGIzS1pub0x0MlVxVjk0ZCtyN0VSc1da?=
- =?utf-8?B?RGw0dXphNlpqWjJuMmtrNHhmSFQwMEdGRGRuUGRIaFZnVlF6R0plNWF1cmdy?=
- =?utf-8?B?bjZ3c3pzOWxDbGpBQzM3WnlEcGswenkrT3hsajZSWG9jRXdHZ29hQ1hORnRt?=
- =?utf-8?B?bzZNaFRCejMxbFdtanVXR0FxT21aUjZYT2VkUndHcVhlT3pRTC8yTUU0dWZV?=
- =?utf-8?B?OFEzZGF1MlR0N3h4b1EvWExZZmNGYUFrNDBrZ3dRVFQxWkxWZWYwY3pTZzhz?=
- =?utf-8?B?aXRQL2JOSzA0MEhDZ3Jvczdqb1BVQUt3TmlML3BrZmtlcUYxWDhEdXFacHN5?=
- =?utf-8?B?bXNwKzRjWlBqcU0yRVZnaUl4TUptdlFqQ1FVRG1PcERoaFljTWdOaGRQV05a?=
- =?utf-8?B?QWQ3M3JibXRrNmJRU0R1aVpXL3R5Vk1KRXNmMm5XMFR6LzNUcGpjVFo5djVO?=
- =?utf-8?B?eUZzQ05ZZ3BORmFCNkFBS3lpLzdpd2NNcXU4YmNHUkhJQ0tWY3Vma1U4UmVq?=
- =?utf-8?B?ckZDc1dlcXRid2lOVkpEdElXWTl3WDRmUkttM0FKeTIxS1VTTzZYTWhyRkVh?=
- =?utf-8?B?Um5iRkVZTXdBUlpuZ0pkQTVwN0ZieDFVdkZvNXY2QUpiL1JUK3l1TXNvSlJs?=
- =?utf-8?B?aXc9PQ==?=
-X-OriginatorOrg: kontron.de
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6907b217-2a61-4da5-d449-08dcbd02fc78
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+X-OriginatorOrg: starfivetech.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Aug 2024 08:19:30.4092
+X-MS-Exchange-CrossTenant-AuthSource: SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: 43711e8d-88d4-4375-dc59-08dcbd15c372
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Aug 2024 10:33:55.0446
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: TS+hzLRzecrvf7XL/pP7BXyKk4zl2DtAiC/H+AOJJLQTo0IUKSDCvL1nr9Z0i9AREujf7p1YDenNRw2p77S8P/3zRAg/fv4EfiAfC+ILlYw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR10MB8523
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Z7spdvmdBOS/xtX5gV4jzZ4sZd3HSNm9HIVo2vLBvkj2fkw5UKsgJsyXfAhW4GQnnKEFaHqrG8h/fhrDl2b+X1gSw5+G9oiqBYJwmkJT/s0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SHXPR01MB0864
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240815_011942_438222_E98C2BF5 
-X-CRM114-Status: GOOD (  37.09  )
+X-CRM114-CacheID: sfid-20240815_033410_951819_AB66F84F 
+X-CRM114-Status: GOOD (  29.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -194,134 +150,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dominique, hi Lucas,
 
-On 17.06.24 6:32 PM, Lucas Stach wrote:
-> Hi Dominique,
-> 
-> Am Montag, dem 17.06.2024 um 15:16 +0900 schrieb Dominique MARTINET:
->> Adam Ford wrote on Sat, Feb 03, 2024 at 10:52:50AM -0600:
->>> From: Lucas Stach <l.stach@pengutronix.de>
->>>
->>> Add a simple wrapper driver for the DWC HDMI bridge driver that
->>> implements the few bits that are necessary to abstract the i.MX8MP
->>> SoC integration.
->>
->> Hi Lucas, Adam,
->> (trimmed ccs a bit)
->>
->> First, thank you for the effort of upstreaming all of this!! It's really
->> appreciated, and with display working I'll really be wanting to upstream
->> our DTS as well as soon as I have time (which is going to be a while,
->> but better late than never ?)
->>
->> Until then, it's been a few months but I've got a question on this bit:
->>
->>> diff --git a/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
->>> new file mode 100644
->>> index 000000000000..89fc432ac611
->>> --- /dev/null
->>> +++ b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
->>> +static enum drm_mode_status
->>> +imx8mp_hdmi_mode_valid(struct dw_hdmi *dw_hdmi, void *data,
->>> +		       const struct drm_display_info *info,
->>> +		       const struct drm_display_mode *mode)
->>> +{
->>> +	struct imx8mp_hdmi *hdmi = (struct imx8mp_hdmi *)data;
->>> +
->>> +	if (mode->clock < 13500)
->>> +		return MODE_CLOCK_LOW;
->>> +
->>> +	if (mode->clock > 297000)
->>> +		return MODE_CLOCK_HIGH;
->>> +
->>> +	if (clk_round_rate(hdmi->pixclk, mode->clock * 1000) !=
->>> +	    mode->clock * 1000)
->>> +		return MODE_CLOCK_RANGE;
->>
->> Do you know why such a check is here?
-> 
-> Sending a HDMI signal with a different rate than what the display
-> expects rarely ends well, so this check avoids that.
-> 
-> However, this check is a bit overcautious in that it only allows exact
-> rate matches. IIRC HDMI allows a rate mismatch of +- 0.5%, so this
-> check could be relaxed quite a bit to allow for that.
-
-I checked with a 1080p display that reports 23 possible modes via EDID.
-Out of these 15 are accepted by the driver with the strict check.
-
-Two more would be accepted with a relaxed check that allows a 0.5% margin.
-
-For the remaining six modes, the pixel clock would deviate up to ~5%
-from what the display expects. Still, if I remove the check altogether,
-all 23 modes seem to work just fine.
-
->>
->> When plugging in a screen with no frequency identically supported in its
->> EDID this check causes the screen to stay black, and we've been telling
->> customers to override the EDID but it's a huge pain.
->>
->> Commit 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY") already
->> "fixed" the samsung hdmi phy driver to return the next frequency if an
->> exact match hasn't been found (NXP tree's match frequencies exactly, but
->> this gets the first clock with pixclk <= rate), so if this check is also
->> relaxed our displays would work out of the box.
->>
->> I also don't see any other bridge doing this kind of check.
->> drivers/gpu/drm/bridge/imx/imx93-mipi-dsi.c has a similar check with a
->> 0.5% leeway, and all the other drivers don't check anything.
->> If you want to add some level of safety, I think we could make this work
->> with a 5% margin easily... Printing a warning in dmesg could work if
->> you're worried about artifacts, but litteraly anything is better than a
->> black screen with no error message in my opinion.
->>
->>
->> In practice the screen I'm looking at has an EDID which only supports
->> 51.2MHz and the closest frequency supported by the Samsung HDMI phy is
->> 50.4MHz, so that's a ~1.5% difference and it'd be great if it could work
->> out of the box.
-> 
-> For rate mismatches larger than the 0.5% allowed by the HDMI spec it
-> would be better to actually add PHY PLL parameters matching those
-> rates.
-
-I'd really like to be able to add more PHY PLL setpoints for displays
-that use non-CEA-861 modes. Unfortunately I didn't manage to figure out
-the fractional-n PLL parameter calculation so far.
-
-The i.MX8MP Reference Manual provides formulas to calculate the
-parameters based on the register values and I tried to make sense of it
-using the existing register values in the driver. But somehow it doesn't
-add up for me.
-
-Lucas, did you already work with the PLL parameters? By any chance, do
-you now how the math behind them works?
 
 > 
-> We could potentially add some more leeway for displays like yours that
-> aren't actually HDMI (as it doesn't seem to have a standard HDMI
-> resolution). But that's more of a last resort option, as it may
-> introduce other problems for displays that aren't as tolerant with
-> their input rates. Remember the mode_valid call is used to filter modes
-> that aren't compatible with the source, so for a display with multiple
-> modes allowing too much leeway may lead to incompatible modes not
-> getting tossed, in turn allowing userspace to set a mode that the
-> display may not like due to too much rate deviation, instead of only
-> presenting a list of valid modes. This again would present the user
-> with a black-screen without warning situation.
+> On Tue, Aug 13, 2024 at 07:31:50AM +0200, Jan Kiszka wrote:
+> > On 12.08.24 17:55, Conor Dooley wrote:
+> > > On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
+> > >> From: Jan Kiszka <jan.kiszka@siemens.com>
+> > >>
+> > >> Analogously to the PCI PHY, access to sys_syscon is needed to
+> > >> connect the USB PHY to its controller.
+> > >>
+> > >> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+> > >> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> > >> ---
+> > >> CC: Rob Herring <robh@kernel.org>
+> > >> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> > >> CC: Conor Dooley <conor+dt@kernel.org>
+> > >> ---
+> > >>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11
+> +++++++++++
+> > >>  1 file changed, 11 insertions(+)
+> > >>
+> > >> diff --git
+> > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yam
+> > >> l
+> > >> b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yam
+> > >> l index 269e9f9f12b6..eaf0050c6f17 100644
+> > >> ---
+> > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy.yam
+> > >> l
+> > >> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
+> > >> +++ .yaml
+> > >> @@ -19,6 +19,16 @@ properties:
+> > >>    "#phy-cells":
+> > >>      const: 0
+> > >>
+> > >> +  starfive,sys-syscon:
+> > >> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> > >> +    items:
+> > >> +      - items:
+> > >> +          - description: phandle to System Register Controller
+> sys_syscon node.
+> > >> +          - description: PHY connect offset of
+> SYS_SYSCONSAIF__SYSCFG register for USB PHY.
+> > >
+> > > Why is having a new property for this required? The devicetree only
+> > > has a single usb phy, so isn't it sufficient to look up the syscon
+> > > by compatible, rather than via phandle + offset?
+> > >
+> >
+> > I didn't design this, I just copied it from
+> > starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither
+> > sure we want to change that anymore nor deviate in the pattern here.
+> 
+> To be honest, I think some of the other users of phandle + offset on this soc were
+> just copy-pasted without thinking about whether or not they were required too.
+> This one seems like it should just be a lookup by compatible in the driver instead
+> of by phandle. As a bonus, it will work with existing devicetrees - whereas your
+> current implementation will fail to probe on systems that have the old
+> devicetree, a regression for systems running with that devicetree and
+> downstream firmware.
+> 
+> Cheers,
+> Conor.
+> 
+Hi Conor
+I know you would like to put the offset value to the code, Just set syscon in dts.
+Just like pcie-starfive.c. right?
 
-What about adding some option to relax or remove the check for debugging
-purposes? Maybe combined with printing a warning message?
-
-I agree that we should prevent incompatible modes from passing the
-filter, but it would be really helpful if people had an easy way to
-relax/remove the check to see whether their display could potentially
-work without them needing to modify and recompile the kernel.
-
-Thanks
-Frieder
-
+> > Jan
+> >
+> > >> +    description:
+> > >> +      The phandle to System Register Controller syscon node and the
+> PHY connect offset
+> > >> +      of SYS_SYSCONSAIF__SYSCFG register. Connect PHY to USB
+> controller.
+> > >> +
+> > >>    clocks:
+> > >>      items:
+> > >>        - description: PHY 125m
+> > >> @@ -47,4 +57,5 @@ examples:
+> > >>                   <&stgcrg 6>;
+> > >>          clock-names = "125m", "app_125m";
+> > >>          #phy-cells = <0>;
+> > >> +        starfive,sys-syscon = <&sys_syscon 0x18>;
+> > >>      };
+> > >> --
+> > >> 2.43.0
+> > >>
+> >
+> > --
+> > Siemens AG, Technology
+> > Linux Expert Center
+> >
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
