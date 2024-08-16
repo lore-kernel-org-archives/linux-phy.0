@@ -4,82 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77C96C52D7D
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Aug 2024 13:26:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CDE8C3DA4A
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Aug 2024 22:37:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIbwo42+I647nDw5nxOUMknUfJkM7kQ+ZKcboiJzNJI=; b=s+5frOl8ZNmXv5
-	SKRJdbMDqbQfNrw3X3gpN/snfVpTNWMGrgyJ8o9kAsXLH64d3vWWFPtjpxsdDMLDvKMgu24nem254
-	+RStKAJZ4nJZ4yzAXxVeYa4vTXBHqb4eA8p/Xcbd1LyCSZpRTVu13v3hnxYqwIxzM61yi0NNS68oO
-	RHFMMwJNT1J7Fq/yZDdmFqsSbg+dO3qKLuSGqRaRlsIqr4ftBtpwcSsMs23+EeolWup+64rIzJWh4
-	4+7UN/1OaWBcDBb8s27wOLoYmuRmkQtwBhfUSR8oTRPmTXnXRwK84xLwqjqEAFtuoPAkXF3kh5Y8m
-	PtkDcr05Oz0KUowIEMrg==;
+	List-Owner; bh=cwDt7LgD2BlOcdIeZ7aIotxoXAxCu8KK8aX516oPzQI=; b=JnVqSKDM1fIWZi
+	ghWK+IbUaVxw48h+Df4ixfmi1P4ir+RuyQ4AzUiEY8lgsySB89ApRYxTUN8sfLCNtmKsCmyiAf6Yz
+	taBlTmDkvDnZVsQ0fL6jDyQVQSJ0DGWXNHghZxdr/kwuc+bJbK/5+wroweE12jM5aAKxaZ9BJe/E9
+	cnzF4PCvuQVmO0BcwQ77J/1kubgcsyGMLGkuWCu6TSHD7KEi5POBiFvIqmsSlDb3J0cyocvLwui4v
+	+3zQRlSXI6/lrxU06+In8u7kcwtrZGepMGQeCYY0T6ZTTGpJacoYFoyD5CUnDnzhJJA1477Iqcl3D
+	r6TK3A/SUrsCbCJAAUKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sewxw-0000000D2Nq-0Oup;
-	Fri, 16 Aug 2024 13:26:04 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
+	id 1sf5Zz-0000000EDMt-1B15;
+	Fri, 16 Aug 2024 22:37:55 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sewvr-0000000D1tr-46cf;
-	Fri, 16 Aug 2024 13:23:57 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47GB3sO5026079;
-	Fri, 16 Aug 2024 15:23:47 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=selector1; bh=
-	oFevO1WzCe1lndyKIcqDqzd48GJyNyJUl83cjIp11to=; b=wi89wzvoAWZ4JLHX
-	/vey5yXyVCwUYYt6WmAX+NEwpjWACLYxfSxA3rbyXm+wlUMX/WkDYflpcMwGB1Sl
-	V62X7RVP97mubEl0kwFdaka4y8uCoxG/KiYZ3GPfGEl/G+U3I/fhLcRTE5HybJ4u
-	oqD87qXXf7GO2deT3kNo0yd9Qmqq6vlbxttZXTiwr2FpZuGM/qqHDikIIiWdehDm
-	vUj0Tn90+8w5e1qOgDke5yWgquiQItQ3PgUMr4HnaAuApWovTkJfyT9V7F5b5YR0
-	MhsUxnCV2Ott7Z58epG4H/1IpUkBw6qjN7bY/xRQzBjNg/4+cTb6T0xgfnILxDvr
-	mdQ/Rw==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 411vkuj53v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 16 Aug 2024 15:23:47 +0200 (MEST)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id A13894002D;
-	Fri, 16 Aug 2024 15:23:43 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EDA3D25C5AE;
-	Fri, 16 Aug 2024 15:22:53 +0200 (CEST)
-Received: from localhost (10.129.178.198) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Fri, 16 Aug
- 2024 15:22:53 +0200
-From: Christian Bruel <christian.bruel@foss.st.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
-        <p.zabel@pengutronix.de>
-CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <fabrice.gasnier@foss.st.com>,
-        Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH v2 5/5] arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
-Date: Fri, 16 Aug 2024 15:20:57 +0200
-Message-ID: <20240816132058.920870-6-christian.bruel@foss.st.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240816132058.920870-1-christian.bruel@foss.st.com>
-References: <20240816132058.920870-1-christian.bruel@foss.st.com>
+	id 1sf5ZI-0000000EDI5-2tvb;
+	Fri, 16 Aug 2024 22:37:14 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0D911622D8;
+	Fri, 16 Aug 2024 22:37:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 94AD2C32782;
+	Fri, 16 Aug 2024 22:37:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1723847831;
+	bh=RyCJlWYK9S6rt9Lmx7407UIS/Kt3nkIojR6T7QOcSVI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=kUCKfCOPIoWnxxtaNhk3XFGhAPyv43yiKbbDVhG7Zr0kkKGjzYCAr9mcWiY+aP4m+
+	 ESeW/leStl9x6YpaczZi/gZGDTjISCRl6pEUuZ64fLoD6w6fc8jAjEcVUTE753NY88
+	 5/y8QS889uZcKOAnh8p2llfxUrNGYdo4eg00NBbhL5GxfcgkWtrVOb0Qe/rQuq9Pz1
+	 y/0WWsXo6MA2VkQ6Hfzhi08zHyyS4jk+fAXAQQ0vtpEjBqcPt1GYT7bItwArEtlYb2
+	 s0rd0/z7RnPSVBMnoaf51tTn68B6WYxinvj5WAP+jUXvfFcRPT+ROGpCPoaXAPdKnT
+	 GCxd9VQUbpDNA==
+Date: Fri, 16 Aug 2024 16:37:10 -0600
+From: Rob Herring <robh@kernel.org>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	p.zabel@pengutronix.de, airlied@gmail.com, daniel@ffwll.ch,
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+	tzimmermann@suse.de, krzk+dt@kernel.org, conor+dt@kernel.org,
+	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+	festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org,
+	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org,
+	francesco@dolcini.it, frank.li@nxp.com
+Subject: Re: [PATCH v3 06/19] dt-bindings: display: imx: Add i.MX8qxp Display
+ Controller command sequencer
+Message-ID: <20240816223710.GA2394350-robh@kernel.org>
+References: <20240724092950.752536-1-victor.liu@nxp.com>
+ <20240724092950.752536-7-victor.liu@nxp.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.129.178.198]
-X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
- (10.75.129.71)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-16_05,2024-08-16_01,2024-05-17_01
+Content-Disposition: inline
+In-Reply-To: <20240724092950.752536-7-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240816_062356_392547_38A30F6D 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240816_153712_843451_62906AEF 
+X-CRM114-Status: GOOD (  18.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,49 +81,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the COMBOPHY with external pad clock on stm32mp257f-ev1
-board, to be used for the PCIe clock provider.
+On Wed, Jul 24, 2024 at 05:29:37PM +0800, Liu Ying wrote:
+> i.MX8qxp Display Controller contains a command sequencer is designed to
+> autonomously process command lists.
+> 
+> Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> ---
+> v3:
+> * New patch. (Rob)
+> 
+>  .../imx/fsl,imx8qxp-dc-command-sequencer.yaml | 67 +++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-command-sequencer.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-command-sequencer.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-command-sequencer.yaml
+> new file mode 100644
+> index 000000000000..2e0e8e40a185
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-command-sequencer.yaml
+> @@ -0,0 +1,67 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,imx8qxp-dc-command-sequencer.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX8qxp Display Controller Command Sequencer
+> +
+> +description: |
+> +  The Command Sequencer is designed to autonomously process command lists.
+> +  By that it can load setups into the DC configuration and synchronize to
+> +  hardware events.  This releases a system's CPU from workload, because it
+> +  does not need to wait for certain events.  Also it simplifies SW architecture,
+> +  because no interrupt handlers are required.  Setups are read via AXI bus,
+> +  while write access to configuration registers occurs directly via an internal
+> +  bus.  This saves bandwidth for the AXI interconnect and improves the system
+> +  architecture in terms of safety aspects.
+> +
+> +maintainers:
+> +  - Liu Ying <victor.liu@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: fsl,imx8qxp-dc-command-sequencer
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 5
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: error
+> +      - const: sw0
+> +      - const: sw1
+> +      - const: sw2
+> +      - const: sw3
+> +
+> +  fsl,iram:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: phandle pointing to the mmio-sram device node
 
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
----
- arch/arm64/boot/dts/st/stm32mp257f-ev1.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+'sram' is the standard property for this.
 
-diff --git a/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts b/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-index 214191a8322b..bcf84d533cb2 100644
---- a/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-+++ b/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-@@ -27,6 +27,14 @@ chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	clocks {
-+		pad_clk: pad-clk {
-+			#clock-cells = <0>;
-+			compatible = "fixed-clock";
-+			clock-frequency = <100000000>;
-+		};
-+	};
-+
- 	memory@80000000 {
- 		device_type = "memory";
- 		reg = <0x0 0x80000000 0x1 0x0>;
-@@ -50,6 +58,12 @@ &arm_wdt {
- 	status = "okay";
- };
- 
-+&combophy {
-+	clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>, <&pad_clk>;
-+	clock-names = "apb", "ker", "pad";
-+	status = "okay";
-+};
-+
- &ethernet2 {
- 	pinctrl-names = "default", "sleep";
- 	pinctrl-0 = <&eth2_rgmii_pins_a>;
--- 
-2.34.1
-
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - interrupts
+> +  - interrupt-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8-lpcg.h>
+> +
+> +    command-sequencer@56180400 {
+> +        compatible = "fsl,imx8qxp-dc-command-sequencer";
+> +        reg = <0x56180400 0x1a4>;
+> +        clocks = <&dc0_lpcg IMX_LPCG_CLK_5>;
+> +        interrupt-parent = <&dc0_intc>;
+> +        interrupts = <36>, <37>, <38>, <39>, <40>;
+> +        interrupt-names = "error", "sw0", "sw1", "sw2", "sw3";
+> +    };
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
