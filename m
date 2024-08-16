@@ -4,85 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9B79C531DC
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Aug 2024 06:35:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28FE4C3DA4A
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Aug 2024 13:22:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
-	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lWVwdNtR+Oc/ZE6FLMhnn06vLpWLqcahAP+ESEMfRjA=; b=KVWmgT0CkavCff
-	VQy3YihwNPCJX656gekP5j6A7ufEbTFFdKHJ4TT00oU2EbqkN6X+moZb6YV7JfUjreQCYo6mFU+Iy
-	YJzNvgwgjfG1N45PDA3TagxmjkpXiKGxl97IgwPSr81rkRzVV5gY5NwUQKxGZz7ZllmNz/Ug9cIao
-	sssQ9w9j44+h2qj9Q4iiSVXTdsLFt5MJx+kAGm9/eU9PV8G0GQWnUolzrQ+/qpmT3H0l2H3r0Qj7N
-	eTnmaWz0F3nk7ls+U5AxR9k0Ugo8dA6g5fpNolhkLZkfdbKEarbUPq/0JudWs9yZhtc3G/hczwAE8
-	0o9ijnNIZQY4pWwos5Dg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zm2K1uSG/XGB3G9NWC+wIjX5ufkt5rhl+N20If/4eus=; b=R/BLTQFoPuq0sp
+	dLxeI0ZT7ekZtSv8qhQciGFpXbPqHjhb7Vf4aqKYutM13J2v442RYBNI9hEDRFXX2Nt7ZuxYVBhuM
+	EsiOgnNNo/DYtQuUXhjRYkPOCklczh9/B3/Sny6LqbA2mJWUqyyuh7+i2S7A3LHKbEf4WmF8xjL2i
+	WOlhZVU7UvDlNBKy7pglPu7lnt/ZFFWZr0pv5NzTdF5VQ7CWyAEeWAQiuIyCqShNWJ36b7yBex+EA
+	XVtj6HslsQSZnkfdVRjCgpS2AoWlz9lFavyqb9Onx8qZuHSl38U4DS2GzV0Q7Fg3FV9yGqD9r0Mra
+	5ra3D+VCEc8+Qx34IFhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seqYj-0000000BxM2-08L0;
-	Fri, 16 Aug 2024 06:35:37 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1sewuj-0000000D1UQ-3dv5;
+	Fri, 16 Aug 2024 13:22:45 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1seqYg-0000000BxKZ-0kCN
-	for linux-phy@lists.infradead.org;
-	Fri, 16 Aug 2024 06:35:35 +0000
-Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-a8384008482so151859666b.2
-        for <linux-phy@lists.infradead.org>; Thu, 15 Aug 2024 23:35:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=fairphone.com; s=fair; t=1723790132; x=1724394932; darn=lists.infradead.org;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=dlvy/2cOpY4w4qpZGIrneMUP1FhFXubcCbWNdPksnnY=;
-        b=OXvDe89JQkmZmIxjxwltzySoq3W+76gD1LYZqhd2HLMx6eHvWEA0f4Fx/LD/VPnISC
-         L7lza27NwcpiQbBONf1ghsyved936uR8zMDnJAutUIejTApJWt+fEd0fdGwyktJsv3N4
-         +YqwEZGERKpVb0vxnsHuKjvXVyfTdKxqBkpVISPCiKpJMJLuEdyxsAkt5M77iEVi3hL7
-         dtXLj0beebRvA3n4pSSrb31EjOi1p1jiJvfGqQhE9PbsdasXiTeooHe2BN+/fGbFvEFw
-         zt98b9yNBSji87nyVTKsC+/3JNTtQ8IpKY5NWTYqhLtrTV8U8l0zkqW9uThYjgh0sPpm
-         swxw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1723790132; x=1724394932;
-        h=in-reply-to:references:to:from:subject:cc:message-id:date
-         :content-transfer-encoding:mime-version:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=dlvy/2cOpY4w4qpZGIrneMUP1FhFXubcCbWNdPksnnY=;
-        b=FvFvIrB4V6ZuwK465Vzj3GRla0Bd+Ajbjg1Hr35FoFETpM9ShtBqGWjac31d5OsLE8
-         69hFfnwZIv6kZaa3MavE1ys9A5c3b1mUfq2xJJqdX2JnZ+2DCX7iyB7JwVT+L79PKB+Y
-         B5ORDcLEqSTrFUlTjY+8zRp9gCDGo890GYyYp9sszjpdzKq+tJcTd98aWz10P95lnx7T
-         IZM4yfg8d+naNCaa0BNvBIFOj0A5grFKXQZ/+DzeSdePpDm5UmgRiqkkrosjKXd2ZvnY
-         +ro9AsVdPsLIed23YS7RcSrXYWyPmKXh5l/RGfXT/0h91I8HpCIgGo8JiP8w9dKiAZe5
-         YiWw==
-X-Forwarded-Encrypted: i=1; AJvYcCXQaxPeJRwTVkEVHr5VXK+K9tNBGgcql/UldGjfCWknPWtMv7leKf5hv452hfbggycl+qgXSWLBXKzcFFjgPH5MVgzJmHEk0Khcc9bS6w==
-X-Gm-Message-State: AOJu0Yx/Wjcr5n9AWB3LLV4c88oFBoA1/4WK8zSFFNXVH6Do+TG/gKRU
-	o8CeGAZqsi8Fam9YmdysDv3GqVvxXQqMsYyO0k/o8RLBlhYKJASrpczbgGQTYe8=
-X-Google-Smtp-Source: AGHT+IEjLooN9mJouFfwclDBmTI6IWvI0aT85+PtIm7Jj9agzY0qG27OrjnCsCVb6+1o8gjkiZQ/Qw==
-X-Received: by 2002:a17:907:944a:b0:a77:db36:1ccf with SMTP id a640c23a62f3a-a8392a3bb13mr117533666b.42.1723790131615;
-        Thu, 15 Aug 2024 23:35:31 -0700 (PDT)
-Received: from localhost ([145.15.244.232])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a83838eeecesm206592166b.95.2024.08.15.23.35.29
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 15 Aug 2024 23:35:31 -0700 (PDT)
-Mime-Version: 1.0
-Date: Fri, 16 Aug 2024 08:35:28 +0200
-Message-Id: <D3H4LOY4UHKJ.2E21EUSJWXQGJ@fairphone.com>
-Cc: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v2 0/7] arm64: qcom: allow up to 4 lanes for the Type-C
- DisplayPort Altmode
-From: "Luca Weiss" <luca.weiss@fairphone.com>
-To: "Neil Armstrong" <neil.armstrong@linaro.org>, "Vinod Koul"
- <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Rob
- Herring" <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>,
- "Conor Dooley" <conor+dt@kernel.org>, "Bjorn Andersson"
- <andersson@kernel.org>, "Konrad Dybcio" <konrad.dybcio@linaro.org>,
- "Krzysztof Kozlowski" <krzysztof.kozlowski+dt@linaro.org>
-X-Mailer: aerc 0.18.2-0-ge037c095a049
-References: <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org>
-In-Reply-To: <20240527-topic-sm8x50-upstream-phy-combo-typec-mux-v2-0-a03e68d7b8fc@linaro.org>
+	id 1sewuS-0000000D1OI-1BYn;
+	Fri, 16 Aug 2024 13:22:30 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47GB3eOb007662;
+	Fri, 16 Aug 2024 15:22:11 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=selector1; bh=N+RTuMITKav8svMSG7///5
+	muEWq1usuZqZIJk8FR7FU=; b=2qP+8X4hjNsGxJRU+OWVK0d8UVu2eovFjrpX+Z
+	H/QIvOD6SFEq/bWnF2oRd3dhXMv03ufJIB9ccAZdxqT7BoodEdJSdqQgvY9wadZZ
+	m/G7d+hxJ/s7GHcEi5ILNt+63N3Hg+Gm0ovK3pa2PyzGTZJqraff6iDXwnlmZ81l
+	D7ieS9LA6RNK93g7NFePZaDTBBfwzCZOuEj5FTHYcCnJSogpWBYOP3IqS0M5eRKH
+	8NsMD+NvbIW8EXYBGYpluzog+Hp2DhAEvPCe5SxhU290DUzFA/+lg5ZN3vyTkmdu
+	iD75bpTPwOPK2Jh7WNjzm1Nm/Yr1ky+kFSU+72ky0Zdga2Aw==
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 4121pns97n-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 16 Aug 2024 15:22:11 +0200 (MEST)
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 542E940045;
+	Fri, 16 Aug 2024 15:22:06 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C175A25C5AD;
+	Fri, 16 Aug 2024 15:21:15 +0200 (CEST)
+Received: from localhost (10.129.178.198) by SHFDAG1NODE3.st.com
+ (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Fri, 16 Aug
+ 2024 15:21:15 +0200
+From: Christian Bruel <christian.bruel@foss.st.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
+        <p.zabel@pengutronix.de>
+CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <fabrice.gasnier@foss.st.com>,
+        Christian Bruel <christian.bruel@foss.st.com>
+Subject: [PATCH v2 0/5] Add STM32MP25 USB3/PCIE COMBOPHY driver 
+Date: Fri, 16 Aug 2024 15:20:52 +0200
+Message-ID: <20240816132058.920870-1-christian.bruel@foss.st.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+X-Originating-IP: [10.129.178.198]
+X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
+ (10.75.129.71)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-16_05,2024-08-16_01,2024-05-17_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240815_233534_267155_ADE4595E 
-X-CRM114-Status: GOOD (  25.68  )
+X-CRM114-CacheID: sfid-20240816_062228_725591_22F43A44 
+X-CRM114-Status: GOOD (  11.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,95 +92,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon May 27, 2024 at 10:42 AM CEST, Neil Armstrong wrote:
-> Register a typec mux in order to change the PHY mode on the Type-C
-> mux events depending on the mode and the svid when in Altmode setup.
->
-> The DisplayPort phy should be left enabled if is still powered on
-> by the DRM DisplayPort controller, so bail out until the DisplayPort
-> PHY is not powered off.
->
-> The Type-C Mode/SVID only changes on plug/unplug, and USB SAFE states
-> will be set in between of USB-Only, Combo and DisplayPort Only so
-> this will leave enough time to the DRM DisplayPort controller to
-> turn of the DisplayPort PHY.
->
-> The patchset also includes bindings changes and DT changes.
->
-> This has been successfully tested on an SM8550 board, but the
-> Thinkpad X13s deserved testing between non-PD USB, non-PD DisplayPort,
-> PD USB Hubs and PD Altmode Dongles to make sure the switch works
-> as expected.
->
-> The DisplayPort 4 lanes setup can be check with:
-> $ cat /sys/kernel/debug/dri/ae01000.display-controller/DP-1/dp_debug
-> 	name = msm_dp
-> 	drm_dp_link
-> 		rate = 540000
-> 		num_lanes = 4
-> ...
->
-> This patchset depends on [1] to allow broadcasting the type-c mode
-> to the PHY, otherwise the PHY will keep the combo state while the
-> retimer would setup the 4 lanes in DP mode.
->
-> [1] https://lore.kernel.org/all/20240527-topic-sm8x50-upstream-retimer-broadcast-mode-v1-0-79ec91381aba@linaro.org/
+Thanks Rob for your comments, addressed in v2.
 
-Hi Neil,
+This patch series adds USB3/PCIE COMBOPHY driver for the STM32MP25 SoC from
+STMicrolectronics, respective yaml schema and enable for the stm32mp257f-ev1
+device into which it is used for PCIe.
 
-Is there anything happening on this patchset? From what I can see there
-were a few comments on the patches, would be nice if we could get this
-in at some point.
+Changes in v2:
+   - Reorder entries
+   - Rename clock_names and reset_names bindings
+   - Rename and clarify rx-equalizer binding 
 
-Regards
-Luca
+Christian Bruel (5):
+  MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
+  dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
+  phy: stm32: Add support for STM32MP25 COMBOPHY.
+  arm64: dts: st: Add combophy node on stm32mp251
+  arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
 
->
-> To: Bjorn Andersson <andersson@kernel.org>
-> To: Konrad Dybcio <konrad.dybcio@linaro.org>
-> To: Vinod Koul <vkoul@kernel.org>
-> To: Kishon Vijay Abraham I <kishon@kernel.org>
-> To: Rob Herring <robh@kernel.org>
-> To: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-> To: Conor Dooley <conor+dt@kernel.org>
-> To: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> Cc: linux-arm-msm@vger.kernel.org
-> Cc: linux-phy@lists.infradead.org
-> Cc: devicetree@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Neil Armstrong <neil.armstrong@linaro.org>
->
-> Changes in v2:
-> - Reference usb-switch.yaml in bindings patch
-> - Fix switch/case indenting
-> - Check svid for USB_TYPEC_DP_SID
-> - Fix X13s patch subject
-> - Update SM8650 patch to enable 4 lanes on HDK aswell
-> - Link to v1: https://lore.kernel.org/r/20240229-topic-sm8x50-upstream-phy-combo-typec-mux-v1-0-07e24a231840@linaro.org
->
-> ---
-> Neil Armstrong (7):
->       dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp: Reference usb-switch.yaml to allow mode-switch
->       phy: qcom: qmp-combo: store DP phy power state
->       phy: qcom: qmp-combo: introduce QPHY_MODE
->       phy: qcom: qmp-combo: register a typec mux to change the QPHY_MODE
->       arm64: dts: qcom-sm8550: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
->       arm64: dts: qcom-sm8650: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
->       arm64: dts: qcom: sc8280xp-lenovo-thinkpad-x13: allow 4 lanes for DisplayPort and enable QMP PHY mode-switch
->
->  .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   7 +-
->  .../dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts     |   6 +-
->  arch/arm64/boot/dts/qcom/sm8550-hdk.dts            |   3 +-
->  arch/arm64/boot/dts/qcom/sm8550-qrd.dts            |   3 +-
->  arch/arm64/boot/dts/qcom/sm8650-hdk.dts            |   3 +-
->  arch/arm64/boot/dts/qcom/sm8650-qrd.dts            |   3 +-
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 169 +++++++++++++++++++--
->  7 files changed, 174 insertions(+), 20 deletions(-)
-> ---
-> base-commit: d4eef8b2e18d3e4d2343fb3bb975f8ac4522129a
-> change-id: 20240229-topic-sm8x50-upstream-phy-combo-typec-mux-31b5252513c9
->
-> Best regards,
+ .../bindings/phy/st,stm32-combophy.yaml       | 145 +++++
+ MAINTAINERS                                   |   6 +
+ arch/arm64/boot/dts/st/stm32mp251.dtsi        |  17 +
+ arch/arm64/boot/dts/st/stm32mp257f-ev1.dts    |  14 +
+ drivers/phy/st/Kconfig                        |  11 +
+ drivers/phy/st/Makefile                       |   1 +
+ drivers/phy/st/phy-stm32-combophy.c           | 607 ++++++++++++++++++
+ 7 files changed, 801 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
+ create mode 100644 drivers/phy/st/phy-stm32-combophy.c
+
+-- 
+2.34.1
 
 
 -- 
