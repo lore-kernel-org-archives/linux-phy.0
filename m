@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35069C3DA4A
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Aug 2024 22:40:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA8D3C3DA4A
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Aug 2024 22:41:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=22vUx6KlYHzyhVTZ3Q8QjgTRAZRQYJajQYYU5zXLr+I=; b=NNY/FhRg/qYmCE
-	XohOJrSJwdt/jVy12fF/lE4lM6c0ge0cfYZoDWmDH81Xkd9ilDTrTlBWE2jJebyPATPtlglQuwwfW
-	BK3JUtjO4qjGLajSdguBGCe1ZL7gNgs05jI9xBxxHkLwxZYIUnamMKu2Bfe7YJPW/LIHZh/gXiFAD
-	PiI51nfSi+8p6OuODLqo3HCR9Eo/zWw1eJBLHI9fj9d0FDufUwF0+wYT84c/zj2UNmDkgG/9RFfrt
-	6dfuCtWT1NjLKGtUCy/UZJbVpqUAVYGMvMCo0dzJt9aCuER3NNdhDAmdOb7dChT4JvZeXfbu8ysAo
-	liZ03/DjQIibfuBy0pGg==;
+	List-Owner; bh=3iGrX6voix/2Et4wUkrlpGqyLQXMTu68PR/imNu1OvA=; b=ONYRZ9mPuW83vx
+	zwDQGzgUNVa3d5J6SPTSlKr8mxo610qmgX5D0zfbf0JgUL6a9iVy8BU8DdVRKNapADF0k6MPowyAm
+	BNp8gWrj5UnUN2dY7rWw5Danoo2OTPH97qdlmMCpqQCMyqXsQvNi6WRV1YfIPRZuOc0iiE6hOf3RC
+	jaL2D/7xtaPiA7vf7/myes7emN7+LZJSCvj2vUlSCYNE05duajQjwD/gzz1YJgV4Og4iodBl+QdfQ
+	sfyOEm6XFlkc+6ylMrDbD3twy9gj0bcbFK5Ynf6nolAxSvPq4/rq3OF4BBUL23Y9zLE4TgflPISS6
+	eVMtdUH49vM0p2KrpYeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sf5ce-0000000EDnb-3lRb;
-	Fri, 16 Aug 2024 22:40:40 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sf5dZ-0000000EDwP-1xyT;
+	Fri, 16 Aug 2024 22:41:37 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sf5bz-0000000EDgs-2UXW;
-	Fri, 16 Aug 2024 22:40:00 +0000
+	id 1sf5ct-0000000EDpl-2iju;
+	Fri, 16 Aug 2024 22:40:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id CE418622FA;
-	Fri, 16 Aug 2024 22:39:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CAC1C32782;
-	Fri, 16 Aug 2024 22:39:58 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 1A270CE20AF;
+	Fri, 16 Aug 2024 22:40:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25373C32782;
+	Fri, 16 Aug 2024 22:40:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723847998;
-	bh=yLgBm9EHFdqhhjPZ0xAEPGSJiVwgSWNa0lcI/kftets=;
+	s=k20201202; t=1723848053;
+	bh=35Gggnneu4ZsX1jEkgo7SKcrzozXMNAhO7CG53M/PLM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=drt0e7SJlXPXlA5dgoJrHp/EE6nyWURgh3JHxpgb3xvT7uRmoe2zziG2njkn2Obcx
-	 P1jWxlq/Z/NbE8rNjwIzmworTxqMWk48ZFT2EZ9FF5vmAirX8Tg1MFUfV6e2FcFyHD
-	 FbIWKcl6cdSSz5kwxbrFjJadhLYGvZKCCU5bZ4faHRp02Tz9oFKNkzE/a9XQBC1NVo
-	 NqUNd6WOu4KaDu0bHzQU1/cha920gSrChM+k9GHvgP3DLqd8kWXFROosgadTWRLD+d
-	 oCRLWdN5t3dGxJprHRVdgtAY6DIOEIg4LLPE5FJLBKMqZNtZjLpyQZ5NCrkGgwFlJM
-	 Tz+YKhKeAsiHg==
-Date: Fri, 16 Aug 2024 16:39:57 -0600
+	b=ObvEDYP4s28qGNh8+dScvtQ3Ge9sCUNL4/VV3ncRwmwDXEIFPv6kzzb90iIrspzSW
+	 EejbsO1BKu1KaoXBZbgEtyGcoCJ1T4LRBhsygoJNItdS/T+MbrCPDxJA7JclCOFY1B
+	 L16OOTLiroTpWEg/JscLQnGcHTwMy5XaJHqzJZCw7FP3qRdSDh7tysllljZybASaxb
+	 3QLOA6dIrUbiWsz4Gi+TPm4S8JXNv/AYFc7Uh8zZBxN5alUkdG06aX5tJdW9BGq7rf
+	 LGVXI6/pW3Bn5W7hVb12D2VK712CXwf1HqZ9X1hsgyiFpm9ivGRPMk4Sc/BzEx6Nrb
+	 E7Ku3h0izOk7Q==
+Date: Fri, 16 Aug 2024 16:40:52 -0600
 From: Rob Herring <robh@kernel.org>
 To: Liu Ying <victor.liu@nxp.com>
 Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
@@ -54,17 +54,18 @@ Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
 	festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org,
 	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org,
 	francesco@dolcini.it, frank.li@nxp.com
-Subject: Re: [PATCH v3 04/19] dt-bindings: display: imx: Add i.MX8qxp Display
- Controller pixel engine
-Message-ID: <20240816223957.GC2394350-robh@kernel.org>
+Subject: Re: [PATCH v3 03/19] dt-bindings: display: imx: Add i.MX8qxp Display
+ Controller display engine
+Message-ID: <20240816224052.GD2394350-robh@kernel.org>
 References: <20240724092950.752536-1-victor.liu@nxp.com>
- <20240724092950.752536-5-victor.liu@nxp.com>
+ <20240724092950.752536-4-victor.liu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240724092950.752536-5-victor.liu@nxp.com>
+In-Reply-To: <20240724092950.752536-4-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240816_153959_707009_97269757 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20240816_154055_880866_401D9850 
+X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,11 +82,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 24, 2024 at 05:29:35PM +0800, Liu Ying wrote:
-> i.MX8qxp Display Controller pixel engine consists of all processing units
-> that operate in the AXI bus clock domain.  Command sequencer and interrupt
-> controller of the Display Controller work with AXI bus clock, but they are
-> not in pixel engine.
+On Wed, Jul 24, 2024 at 05:29:34PM +0800, Liu Ying wrote:
+> i.MX8qxp Display Controller display engine consists of all processing units
+> that operate in a display clock domain.
 > 
 > Signed-off-by: Liu Ying <victor.liu@nxp.com>
 > ---
@@ -93,14 +92,16 @@ On Wed, Jul 24, 2024 at 05:29:35PM +0800, Liu Ying wrote:
 > * No change.
 > 
 > v2:
-> * Drop fsl,dc-*-id DT properties from example. (Krzysztof)
+> * Drop fsl,dc-*-id DT properties. (Krzysztof)
+> * Drop port property. (Krzysztof)
 > * Fix register range sizes in example.
 > 
->  .../imx/fsl,imx8qxp-dc-pixel-engine.yaml      | 250 ++++++++++++++++++
->  1 file changed, 250 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-pixel-engine.yaml
+>  .../imx/fsl,imx8qxp-dc-display-engine.yaml    | 152 ++++++++++++++++++
+>  1 file changed, 152 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine.yaml
 
 Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+
 
 -- 
 linux-phy mailing list
