@@ -4,59 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19312C52D7D
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Aug 2024 06:52:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4A72C52D7F
+	for <linux-phy@archiver.kernel.org>; Sat, 17 Aug 2024 09:16:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
-	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dmuttPtCgDr7PQn4xpzF3MuzslryfLjBqv2DcGlZbtI=; b=kc4CQqYyv7abPYzBjQmhhCjqdz
-	+O1UMmls5A3+o0NfqGVt+OYbPniW8RtUDRhgCojVc7jw+ckvxwygIcR9/7wQpsqfGzMMJlOYXgTQF
-	w6/Ctd5XT25SNooNynfqT9aWzDm/sHJKNFKVFWpMXKRRavuLlltB/PdN2jATfcGO5oyCSzzCWhigV
-	6xbz4W+x4venvX/md4BMY7r1veYRhOawk66jDwyiWZWtC037cRlHH6wwOpVB2vMnJMsEXV290s/CY
-	tjoNxuv4cRYVJ+gpTFQ4zSu+z76tfx+pYna1WCxoNOckZDsb069uh2ocSf9hPIdfyJGUaGRn1FkJb
-	kYnfFaiQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DSZjegqmCg59H0eGnMNAWWSextQSVNDSS9hlbMKkaFE=; b=uZyob/3FOUNgJd
+	gCId/xDSjpzv6tAXXIRcpeQ5PwqW/TSj22NqZkghr3H02WUi/Tl/jitW+jdUMbgm8NryaMtKC0P38
+	XlWfcJbj6QX7wrJzihcDWi8QZUWYCH3JygpvtoDGwSymaiKNYbMidg9SGoJFFzzkoZPaWx75XEO52
+	GiscTGmE3Mkf6vucGET5pPM8sFwqjJIVOqxPf4883tMrA04/yfyQlE302srP69EmC/dk6VtCVLAUs
+	Hk8JrR0IFtriDimiTd5fAvf0bOl61cQY6mY/3cU8zMGgOEJV/eXbnxG0wc64clvODCz1lqv4+d4Sr
+	JG+0rWek5VTpC41g1OYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sfDJ0-0000000En9M-2vYq;
-	Sat, 17 Aug 2024 06:52:54 +0000
-Received: from mail.manjaro.org ([2a01:4f8:c0c:51f3::1])
+	id 1sfFYP-0000000EzSS-2feg;
+	Sat, 17 Aug 2024 09:16:57 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sfDII-0000000En21-3vsp;
-	Sat, 17 Aug 2024 06:52:12 +0000
+	id 1sfFXj-0000000EzNx-128c;
+	Sat, 17 Aug 2024 09:16:16 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3732460598;
+	Sat, 17 Aug 2024 09:16:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B801C116B1;
+	Sat, 17 Aug 2024 09:16:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1723886173;
+	bh=GWU5g2P3TgrYgAqvKnUAT2YxAdkP+gsga4BDZM+Aicc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=LQq2saKFiR1AHKMzP+NTG5XHIvGw8gmGsDZuDE9gn9ZGFvVYWLXw8dfW31v90SIOZ
+	 L2/CKJb1MXxeQtKbCIrb/PhQgECcUWOmtdSW1qqKxQbDzjZ+SpSLCBdH/cpLSMvXys
+	 UfGRiLv3zi+xlWb1dDHMlLTqi26o/B7yxCjKDpzABNZALJOYKmfCSBwlSWvmW9Sc/l
+	 zCeCeEiIZRTPdXnnu1ZaY9kEyKGjocfUI9tnYUEhul0oLBp/eebYJieYE0k/sVSYf9
+	 jqtkpIgY7mIVb3z051BOGKY3qDmijgkQjgtBaLLcN1pKdcbllf5Z09awtES1MnaEyG
+	 MyltK+TLZKFOA==
+Message-ID: <63398875-6bd1-4c58-a343-9c490a15deb2@kernel.org>
+Date: Sat, 17 Aug 2024 11:16:07 +0200
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=manjaro.org; s=2021;
-	t=1723877526;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=6ajXNLehEHAoItRTdTFepO1J4PMhcHWqezEIcekJb2I=;
-	b=BVmxMd9c3smjJUe4ao94yg+XXNmRJ4YiV/fDJ/knlfx+MuDkUFLe7yEOKDBGEzfLkmEW6p
-	hic+wrqBm9wP+cXExok4QqbjYHGeTc/R4V7iUu+sNfD2qZQaRl3VzEnLtl5BVhg8R+qPiA
-	vlZ56OccJlvOQfPitXtcH7gqw3OK72Ih5e7AR93Q7fgiQawWQ65u/7P7ekfOsn9TG8oyGP
-	qUh3j0O4UeM9bGV9piVm8C1wTGBmMcnolY2q6Zzg3tuGvcksmXhhn2BDKxU41cCuSkX0Mb
-	FzTzZboLNL2FAzxZ0pIXtK+2OvsdKbaZMy7hSpOBEp2jnKEi0LxBVjvI04NH+w==
-Date: Sat, 17 Aug 2024 08:52:05 +0200
-From: Dragan Simic <dsimic@manjaro.org>
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
-Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- vkoul@kernel.org, kishon@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: phy-rockchip-inno-usb2: Handle failed extcon
- allocation better
-In-Reply-To: <4927264.xgNZFEDtJV@diego>
-References: <5fa7796d71e2f46344e972bc98a54539f55b6109.1723551599.git.dsimic@manjaro.org>
- <4927264.xgNZFEDtJV@diego>
-Message-ID: <93d7cfcf3ce97f22e29cc93241b65bc1@manjaro.org>
-X-Sender: dsimic@manjaro.org
-Authentication-Results: ORIGINATING;
-	auth=pass smtp.auth=dsimic@manjaro.org smtp.mailfrom=dsimic@manjaro.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/5] MAINTAINERS: add entry for ST STM32MP25 COMBOPHY
+ driver
+To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ mcoquelin.stm32@gmail.com, alexandre.torgue@foss.st.com,
+ p.zabel@pengutronix.de
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ fabrice.gasnier@foss.st.com
+References: <20240816132058.920870-1-christian.bruel@foss.st.com>
+ <20240816132058.920870-2-christian.bruel@foss.st.com>
+Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20240816132058.920870-2-christian.bruel@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240816_235211_473692_27B8D705 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20240817_021615_460590_9A650581 
+X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,39 +118,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGVsbG8gSGVpa28sCgpPbiAyMDI0LTA4LTE1IDE4OjEyLCBIZWlrbyBTdMO8Ym5lciB3cm90ZToK
-PiBBbSBEaWVuc3RhZywgMTMuIEF1Z3VzdCAyMDI0LCAyMDozODoxNyBDRVNUIHNjaHJpZWIgRHJh
-Z2FuIFNpbWljOgo+PiBSZXR1cm4gdGhlIGFjdHVhbCBlcnJvciBjb2RlIHVwb24gZmFpbHVyZSB0
-byBhbGxvY2F0ZSBleHRjb24gZGV2aWNlLCAKPj4gaW5zdGVhZAo+PiBvZiBoYXJkY29kaW5nIC1F
-Tk9NRU0uICBXaGlsZSB0aGVyZSwgcHJvZHVjZSBhbiBhcHByb3ByaWF0ZSBlcnJvciAKPj4gbWVz
-c2FnZS4KPj4gCj4+IFNpZ25lZC1vZmYtYnk6IERyYWdhbiBTaW1pYyA8ZHNpbWljQG1hbmphcm8u
-b3JnPgo+PiAtLS0KPj4gIGRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVz
-YjIuYyB8IDYgKysrKy0tCj4+ICAxIGZpbGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspLCAyIGRl
-bGV0aW9ucygtKQo+PiAKPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1y
-b2NrY2hpcC1pbm5vLXVzYjIuYyAKPj4gYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2No
-aXAtaW5uby11c2IyLmMKPj4gaW5kZXggNGY3MTM3M2FlNmUxLi5kMzM0MThhMWU3YTggMTAwNjQ0
-Cj4+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1pbm5vLXVzYjIuYwo+
-PiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby11c2IyLmMKPj4g
-QEAgLTQzNCw4ICs0MzQsMTAgQEAgc3RhdGljIGludCAKPj4gcm9ja2NoaXBfdXNiMnBoeV9leHRj
-b25fcmVnaXN0ZXIoc3RydWN0IHJvY2tjaGlwX3VzYjJwaHkgKnJwaHkpCj4+ICAJCWVkZXYgPSBk
-ZXZtX2V4dGNvbl9kZXZfYWxsb2NhdGUocnBoeS0+ZGV2LAo+PiAgCQkJCQkJcm9ja2NoaXBfdXNi
-MnBoeV9leHRjb25fY2FibGUpOwo+PiAKPj4gLQkJaWYgKElTX0VSUihlZGV2KSkKPj4gLQkJCXJl
-dHVybiAtRU5PTUVNOwo+PiArCQlpZiAoSVNfRVJSKGVkZXYpKSB7Cj4+ICsJCQlkZXZfZXJyKHJw
-aHktPmRldiwgImZhaWxlZCB0byBhbGxvY2F0ZSBleHRjb24gZGV2aWNlXG4iKTsKPj4gKwkJCXJl
-dHVybiBQVFJfRVJSKGVkZXYpOwo+PiArCQl9Cj4gCj4gbWF5YmUgZXZlbiB1c2UgZGV2X2Vycl9w
-cm9iZT8KPiAKPiByb2NrY2hpcF91c2IycGh5X2V4dGNvbl9yZWdpc3RlcigpIGdldHMgY2FsbGVk
-IGZyb20gdGhlIHByb2JlIGZ1bmN0aW9uLAo+IHNvIGV2ZW4gdXNpbmcgaXQgaXMgYWxzbyBzZW1h
-dGljYWxseSBjb3JyZWN0IDstKSAuCgpHb29kIHN1Z2dlc3Rpb24sIHRoYW5rcyEgIEknbGwgdXNl
-IGRldl9lcnJfcHJvYmUoKSBpbiB0aGUgdjIsIGFsYmVpdCBpdAphbHNvIGNhbGxzIGZvciB0dXJu
-aW5nIHRoaXMgaW50byBhIHNtYWxsIHBhdGNoIHNlcmllcyB0aGF0IGFkZGl0aW9uYWxseQpyZXBs
-YWNlcyBkZXZfZXJyKCkgd2l0aCBkZXZfZXJyX3Byb2JlKCkgaW4gdGhlIHJvY2tjaGlwX3VzYjJw
-aHlfcHJvYmUoKQpmdW5jdGlvbiwgZm9yIGNvbnNpc3RlbmN5LiA6KQoKPj4gIAkJcmV0ID0gZGV2
-bV9leHRjb25fZGV2X3JlZ2lzdGVyKHJwaHktPmRldiwgZWRldik7Cj4+ICAJCWlmIChyZXQpIHsK
-Pj4gCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+On 16/08/2024 15:20, Christian Bruel wrote:
+> Add myself as STM32MP25 COMBOPHY maintainer
+> 
+> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+> ---
+>  MAINTAINERS | 6 ++++++
+>  1 file changed, 6 insertions(+)
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index f328373463b0..258fb57ccff5 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -21910,6 +21910,12 @@ F:	arch/m68k/kernel/*sun3*
+>  F:	arch/m68k/sun3*/
+>  F:	drivers/net/ethernet/i825xx/sun3*
+>  
+> +STMICROELECTRONICS STMP32MP25 USB3/PCIE COMBOPHY DRIVER
+> +M:	Christian Bruel <christian.bruel@foss.st.com>
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
+> +F:	drivers/phy/st/phy-stm32-combophy.c
+
+There are no such files. Organize your patchset in bisectable way.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
