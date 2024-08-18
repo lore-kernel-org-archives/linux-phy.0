@@ -4,63 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABB98C52D7C
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Aug 2024 16:05:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0994C52D7C
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Aug 2024 17:30:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=coeQkr80LKM1wrFC5Zz0SwQfzN7iEi8alBsyEoBUPxY=; b=RlZ00Zfz3DMvNx
-	/qyO/4+CTqiGy6CBbcyvp4ohgtn+GFKBxdCN0oaPQcCksCmaooOfgpyr0vx6LNgzn6fKFdmGibkcC
-	AgskoQEktdaZfhrOYDfNlTck9vmeITmCYW4NhLK3VByB99mTPJbW0RPguVX/ZEPz75Koc/wCx8Li5
-	ToNAgLh8ov4vwwQlEZQ+wU+i0G68wmVKDaHwVEAQ53uMOCqfMHwbtk6wpQc0KHix7IRfDlZWjkCH6
-	vy/nL8TNNG9FE5mRXyLC230shWUmztYXQ6neLMT9tAlnmgW3povcF9G2ddCokBR5WazNdLvR0jZso
-	sPU2SY/O6UjHNObG+Raw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MMp0+/3F5DItd1Eua8yOb4wlEwQiKh0HdwAExv4lN+4=; b=k+1GzxRiInUljs
+	ru2OdoRlL5kpJYP14H/7aiilfEaXfIAh1JZJpF+f4MJOuj1p0zpdkyXaOpuL9GdA5FxkwJicNNmvK
+	6MODlNuXuWakVRHZi8uL+cBi2zmhYGiJcXIiLxEFDWLRkqa2gffrK7Gwny2PwC7Asy6Q4dgHreJgk
+	OdOaQK9uHSa3hQxr2yDG5f5c00HyBt4bJhm+izo18D7q5s6bdBoGUQqj0Oqk4D3Da5HPoebTCDyqt
+	eaQeI1K5puIusYQHDNY3P30Ee/jvfKTg22Qc/qOzG7I+r8TxAKGfYm7ctrSyDdGOdZ5/YW8gILb4H
+	FLsC8PLgwZn5L3f2Sk8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sfiP4-0000000GnL3-1duU;
-	Sun, 18 Aug 2024 16:05:14 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sfjjK-0000000Gt5N-0gbO;
+	Sun, 18 Aug 2024 17:30:14 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sfiOK-0000000GnCk-3udv;
-	Sun, 18 Aug 2024 16:04:30 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 10113CE02C4;
-	Sun, 18 Aug 2024 16:04:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD504C32786;
-	Sun, 18 Aug 2024 16:04:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723997066;
-	bh=zOh8sLLniupBfxa1ZvD5qt1zclMnT9P4G1dPyjbnZjM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=p1t1lls702regXytE2r0csn0P8XdquKfZFZqW1TtFiWw6klyVviJ395rc8ifokGma
-	 WbR/2hGw0+yowaxddFwvYwokfFrqY7V59659EaaHkQNO85ap/S+jI/3W2lHml2w8P6
-	 tCVf/m+ZpcOKbm4plSyiLyFcks7j/VY1BU7oEnPt7T+HVenrgp5b+gkbqJJrGtUB6u
-	 YwPvk539p/XSwOzfbMZc9iLnce9jONEljnfOyuSxbgafjGs1pWp1lmdhYhZg2vQ1v4
-	 skdSlVAmRg0Yft1nFsDdJCLxVXtF8HCcFlWMkwyoMlvCTNGn1XxbyGmknKzxp+7322
-	 pGIqzJGy7WFXA==
-Date: Sun, 18 Aug 2024 10:04:24 -0600
-From: Rob Herring <robh@kernel.org>
-To: Christian Bruel <christian.bruel@foss.st.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com, p.zabel@pengutronix.de,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	fabrice.gasnier@foss.st.com
-Subject: Re: [PATCH v2 2/5] dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
-Message-ID: <20240818160424.GA156214-robh@kernel.org>
-References: <20240816132058.920870-1-christian.bruel@foss.st.com>
- <20240816132058.920870-3-christian.bruel@foss.st.com>
+	id 1sfjhp-0000000GsX0-0aAx
+	for linux-phy@lists.infradead.org;
+	Sun, 18 Aug 2024 17:28:42 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-37193ef72a4so1556383f8f.1
+        for <linux-phy@lists.infradead.org>; Sun, 18 Aug 2024 10:28:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1724002119; x=1724606919; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=PMnjAah/UWroMhE148PgxhjcZt84A7eF0pUsqexp/xQ=;
+        b=USLXKAZEKxgH2O/ARrXcFA7flheLLUyzFcZqO3N7AI3K8FnVPYUeo9tWoDFHfTjUCK
+         3xjULB2+glgYmREJ7sTR2eIDDl0GUrsoIDemBPsiBQnS8lXvJjcLT6bohJ1heB/3pxIr
+         AelPtpQqJGzMzJW2W3f/ICG1GUEBeZj8QpMCdQ3DePKm3QNwdvU/bY30neVdeF3qGzn4
+         VjuRxSK+gBdnH1mG1LV/HhwxbF3ARLuMSA0FrstpNmZ//F0R6smJgvxTyet4oLHcmKJ3
+         1VGS8PudGCtRz0GQWaOr70OwPMwoKNxLiA+mfw4MUYT7yFzrzFndVjcsHDh0H9f8oJ99
+         WoKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724002119; x=1724606919;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=PMnjAah/UWroMhE148PgxhjcZt84A7eF0pUsqexp/xQ=;
+        b=G1etpKxXLf/P3S8KCppe9qm7q8ySisAMVNUZ7B8xD5c7di2NyBjO0v1LpVloabMnlg
+         0ZinuoMGi5IYC1hM3YO8iuESZxb+Ka4yFGdc6uG8XQOtwtnety6QlT0Y4Bpt16JL9pEQ
+         l7vhCd5MHNd6ODbQYHhaWR7cBjCuafzHaaoscU6AIiDEUtTtMMlZmk/cFqhAhvSTZBGu
+         AznNYQaXjifX4ykz6qL6qVietHktEYnmUuhlWzTCIJsYiV2YLHIaTjNKXFIgblJNhbzZ
+         ktcdQQPvrSUR/J5GzbGdE6qd4NCwiBm5Yz6GZAa/345QpA2GRn9jILeaqnJnO50aieVq
+         qfMg==
+X-Forwarded-Encrypted: i=1; AJvYcCUlqI/HOsq+BOzEqnIviUWQRfbiX4PPVdkFb+S+43mL6hc/ZjIV90rUCti9Gi2XVT92c/PLXuyl79I=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw79eVerKW7b0QPwo2nMHBFngzmfG3GqzPB8s+a+KeJObfNt43J
+	bwirmLKzv9Cvjx1wvDdLGKIwH5ja6byCGqzYDvS3bVgux4zsDc04CJpQwloghp8=
+X-Google-Smtp-Source: AGHT+IHKIKkAiJcdyepoCL+1/HhHa4+A1IIkB0xWHjT0oRr8pb2bKGRlOXa3/rVSag8EpoJHu5jWLw==
+X-Received: by 2002:adf:b347:0:b0:368:3b21:6643 with SMTP id ffacd0b85a97d-371946a1372mr5523675f8f.48.1724002119278;
+        Sun, 18 Aug 2024 10:28:39 -0700 (PDT)
+Received: from krzk-bin.. ([178.197.215.209])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-371898498casm8461112f8f.42.2024.08.18.10.28.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 18 Aug 2024 10:28:38 -0700 (PDT)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+	Masami Hiramatsu <mhiramat@kernel.org>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH] dt-bindings: phy: socionext,uniphier: add top-level constraints
+Date: Sun, 18 Aug 2024 19:28:35 +0200
+Message-ID: <20240818172835.121757-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240816132058.920870-3-christian.bruel@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240818_090429_345076_1BFB4410 
-X-CRM114-Status: GOOD (  21.84  )
+X-CRM114-CacheID: sfid-20240818_102841_203168_A7E8C312 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,151 +100,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Aug 16, 2024 at 03:20:54PM +0200, Christian Bruel wrote:
-> Document the bindings for STM32 COMBOPHY interface, used to support
-> the PCIe and USB3 stm32mp25 drivers.
-> Following entries can be used to tune caracterisation parameters
->  - st,output-micro-ohms and st,output-vswing-microvolt bindings entries
-> to tune the impedance and voltage swing using discrete simulation results
->  - st,rx-equalizer register to set the internal rx equalizer filter value.
-> 
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
-> ---
->  .../bindings/phy/st,stm32-combophy.yaml       | 144 ++++++++++++++++++
->  1 file changed, 144 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml b/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> new file mode 100644
-> index 000000000000..c33a843b83a3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> @@ -0,0 +1,144 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/st,stm32-combophy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32MP25 USB3/PCIe COMBOPHY
-> +
-> +maintainers:
-> +  - Christian Bruel <christian.bruel@foss.st.com>
-> +
-> +description:
-> +  Single lane PHY shared (exclusive) between the USB3 and PCIe controllers.
-> +  Supports 5Gbit/s for USB3 and PCIe gen2 or 2.5Gbit/s for PCIe gen1.
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32mp25-combophy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +    description: |
-> +      The cells contain the following arguments.
-> +
-> +      - description: The PHY type
-> +          enum:
-> +            - PHY_TYPE_USB3
-> +            - PHY_TYPE_PCIE
-> +
-> +  clocks:
-> +    minItems: 2
-> +    items:
-> +      - description: apb Bus clock mandatory to access registers.
-> +      - description: ker Internal RCC reference clock for USB3 or PCIe
-> +      - description: pad Optional on board clock input for PCIe only. Typically an
-> +                     external 100Mhz oscillator wired on dedicated CLKIN pad. Used as reference
-> +                     clock input instead of the ker
-> +
-> +  clock-names:
-> +    minItems: 2
-> +    items:
-> +      - const: apb
-> +      - const: ker
-> +      - const: pad
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: phy
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  wakeup-source: true
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +    description: interrupt used for wakeup
-> +
-> +  access-controllers:
-> +    minItems: 1
-> +    maxItems: 2
-> +
-> +  st,syscfg:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: Phandle to the SYSCON entry required for configuring PCIe
-> +      or USB3.
-> +
-> +  st,ssc-on:
-> +    type: boolean
-> +    description:
-> +      A boolean property whose presence indicates that the SSC for common clock
-> +      needs to be set.
-> +
-> +  st,rx-equalizer:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
-> +    maximum: 7
-> +    default: 2
-> +    description:
-> +      A 3 bit value to tune the RX fixed equalizer setting for optimal eye compliance
-> +
-> +  st,output-micro-ohms:
-> +    minimum: 3999000
-> +    maximum: 6090000
-> +    default: 4968000
-> +    description:
-> +      A value property to tune the Single Ended Output Impedance, simulations results
-> +      at 25C for a VDDP=0.8V. The hardware accepts discrete values in this range.
-> +
-> +  st,output-vswing-microvolt:
-> +    minimum: 442000
-> +    maximum: 803000
-> +    default: 803000
-> +    description:
-> +      A value property in microvolt to tune the Single Ended Output Voltage Swing to change the
-> +      Vlo, Vhi for a VDDP = 0.8V. The hardware accepts discrete values in this range.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - st,syscfg
-> +  - '#phy-cells'
-> +  - resets
-> +  - reset-names
-> +  - clocks
-> +  - clock-names
-> +
-> +allOf:
-> +  - if:
-> +      required:
-> +        - wakeup-source
-> +    then:
-> +      anyOf:
-> +        - required: [interrupts]
-> +        - required: [interrupts-extended]
+Properties with variable number of items per each device are expected to
+have widest constraints in top-level "properties:" block and further
+customized (narrowed) in "if:then:".  Add missing top-level constraints
+for clock-names and reset-names.
 
-Drop this if/then. We should have this somewhere common as it applies to 
-all.
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ .../bindings/phy/socionext,uniphier-ahci-phy.yaml         | 8 ++++++--
+ .../bindings/phy/socionext,uniphier-pcie-phy.yaml         | 8 ++++++--
+ .../bindings/phy/socionext,uniphier-usb3hs-phy.yaml       | 7 +++++--
+ .../bindings/phy/socionext,uniphier-usb3ss-phy.yaml       | 7 +++++--
+ 4 files changed, 22 insertions(+), 8 deletions(-)
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
+index de3cffc850bc..e34b875a1bb8 100644
+--- a/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-ahci-phy.yaml
+@@ -30,13 +30,17 @@ properties:
+     minItems: 1
+     maxItems: 2
+ 
+-  clock-names: true
++  clock-names:
++    minItems: 1
++    maxItems: 6
+ 
+   resets:
+     minItems: 2
+     maxItems: 6
+ 
+-  reset-names: true
++  reset-names:
++    minItems: 2
++    maxItems: 6
+ 
+ allOf:
+   - if:
+diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
+index b3ed2f74a414..9fc0e87c508e 100644
+--- a/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
+@@ -31,13 +31,17 @@ properties:
+     minItems: 1
+     maxItems: 2
+ 
+-  clock-names: true
++  clock-names:
++    minItems: 1
++    maxItems: 2
+ 
+   resets:
+     minItems: 1
+     maxItems: 2
+ 
+-  reset-names: true
++  reset-names:
++    minItems: 1
++    maxItems: 2
+ 
+   socionext,syscon:
+     $ref: /schemas/types.yaml#/definitions/phandle
+diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+index 2107d98ace15..25c4159f86e4 100644
+--- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3hs-phy.yaml
+@@ -34,12 +34,15 @@ properties:
+     minItems: 2
+     maxItems: 3
+ 
+-  clock-names: true
++  clock-names:
++    minItems: 2
++    maxItems: 3
+ 
+   resets:
+     maxItems: 2
+ 
+-  reset-names: true
++  reset-names:
++    maxItems: 2
+ 
+   vbus-supply:
+     description: A phandle to the regulator for USB VBUS
+diff --git a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+index 8f5aa6238bf3..1f663e9901da 100644
+--- a/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/socionext,uniphier-usb3ss-phy.yaml
+@@ -35,12 +35,15 @@ properties:
+     minItems: 2
+     maxItems: 3
+ 
+-  clock-names: true
++  clock-names:
++    minItems: 2
++    maxItems: 3
+ 
+   resets:
+     maxItems: 2
+ 
+-  reset-names: true
++  reset-names:
++    maxItems: 2
+ 
+   vbus-supply:
+     description: A phandle to the regulator for USB VBUS, only for USB host
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
