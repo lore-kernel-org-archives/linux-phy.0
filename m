@@ -4,108 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4A72C52D7F
-	for <linux-phy@archiver.kernel.org>; Sat, 17 Aug 2024 09:16:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92E7AC52D7C
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Aug 2024 14:25:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DSZjegqmCg59H0eGnMNAWWSextQSVNDSS9hlbMKkaFE=; b=uZyob/3FOUNgJd
-	gCId/xDSjpzv6tAXXIRcpeQ5PwqW/TSj22NqZkghr3H02WUi/Tl/jitW+jdUMbgm8NryaMtKC0P38
-	XlWfcJbj6QX7wrJzihcDWi8QZUWYCH3JygpvtoDGwSymaiKNYbMidg9SGoJFFzzkoZPaWx75XEO52
-	GiscTGmE3Mkf6vucGET5pPM8sFwqjJIVOqxPf4883tMrA04/yfyQlE302srP69EmC/dk6VtCVLAUs
-	Hk8JrR0IFtriDimiTd5fAvf0bOl61cQY6mY/3cU8zMGgOEJV/eXbnxG0wc64clvODCz1lqv4+d4Sr
-	JG+0rWek5VTpC41g1OYg==;
+	List-Owner; bh=sJMLMUVmP//j4KY+n8pqQVZCzKk/LRs4dlkvcFlPS7I=; b=dUsQCjpkdnkFnK
+	jzxJarWZ7qILxvlVtbKYfim60WfVupVusymD1nEHxiaHfHvbVcWnGr8EZAC+jYW6J0RZO3vjGMCzg
+	D7WXCh7sLNJ/+L52vMkJaDlPB2M7/Zj3Z17LkLRi898mZnLZemWPLuxT4Z934+/ReVQJBKLUKKZaA
+	MLfhVXowAbalvldY9E2qKbrcjdoF6VIEagwGnen3OTs2HuI/usAmR2VOgYTacaHetSOSaCKVbIHdM
+	2MtlUloYlSixU0HE19WZUY5PAYYu5NaEGW3HgXXgC3tJ0/zTldgeuwWDOUuJFAXa+MTuo8LvJiT7B
+	DLKfeYowN/8OcoY/9VrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sfFYP-0000000EzSS-2feg;
-	Sat, 17 Aug 2024 09:16:57 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sfgqM-0000000Gh6u-3Z6p;
+	Sun, 18 Aug 2024 14:25:18 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sfFXj-0000000EzNx-128c;
-	Sat, 17 Aug 2024 09:16:16 +0000
+	id 1sfgpD-0000000Ggro-2VfU;
+	Sun, 18 Aug 2024 14:24:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3732460598;
-	Sat, 17 Aug 2024 09:16:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B801C116B1;
-	Sat, 17 Aug 2024 09:16:08 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 11D4BCE016A;
+	Sun, 18 Aug 2024 14:24:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BFE5CC32786;
+	Sun, 18 Aug 2024 14:24:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723886173;
-	bh=GWU5g2P3TgrYgAqvKnUAT2YxAdkP+gsga4BDZM+Aicc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=LQq2saKFiR1AHKMzP+NTG5XHIvGw8gmGsDZuDE9gn9ZGFvVYWLXw8dfW31v90SIOZ
-	 L2/CKJb1MXxeQtKbCIrb/PhQgECcUWOmtdSW1qqKxQbDzjZ+SpSLCBdH/cpLSMvXys
-	 UfGRiLv3zi+xlWb1dDHMlLTqi26o/B7yxCjKDpzABNZALJOYKmfCSBwlSWvmW9Sc/l
-	 zCeCeEiIZRTPdXnnu1ZaY9kEyKGjocfUI9tnYUEhul0oLBp/eebYJieYE0k/sVSYf9
-	 jqtkpIgY7mIVb3z051BOGKY3qDmijgkQjgtBaLLcN1pKdcbllf5Z09awtES1MnaEyG
-	 MyltK+TLZKFOA==
-Message-ID: <63398875-6bd1-4c58-a343-9c490a15deb2@kernel.org>
-Date: Sat, 17 Aug 2024 11:16:07 +0200
+	s=k20201202; t=1723991044;
+	bh=p3xChge9ucTtWR9EXLrqY/hgcj62+4knZXEk2TA3eQY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Xq7IggzJZvSFhjmkhMAzVG4GSJYhuSulvTLRuDNrGl34WSAtAJG7Csa/WXtnTTOSq
+	 j12xW3EkfpjsteJm+igFb/YjxL6dWJA3/b3E7Y67Hat14V+YPKBGzYoHo1QaAtsbiZ
+	 ip6IIQwmlEYULQmKEPJipIET54djlSTzVySuYQlXP6c7VGwSvfyoo23x40ZNcAckJz
+	 pClhBJfTM2CMxEH13Xm2lALBccoY/NdzbJOgXnxL3/36o63I6B2sHXZJE+aw77prR/
+	 CMe/dKyvV6ZgGENkEvp+/3bKUtLvY1Cjd+WL9wctN44T7OiKf/NVzQ+9H4eOlWU4st
+	 zoqNPLiDa/Hqw==
+Date: Sun, 18 Aug 2024 08:24:02 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: aisheng.dong@nxp.com, linux-kernel@vger.kernel.org, krzk+dt@kernel.org,
+	kishon@kernel.org, daniel@ffwll.ch,
+	maarten.lankhorst@linux.intel.com, p.zabel@pengutronix.de,
+	tzimmermann@suse.de, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev, festevam@gmail.com,
+	airlied@gmail.com, francesco@dolcini.it, kernel@pengutronix.de,
+	conor+dt@kernel.org, s.hauer@pengutronix.de, agx@sigxcpu.org,
+	shawnguo@kernel.org, frank.li@nxp.com,
+	linux-arm-kernel@lists.infradead.org, tglx@linutronix.de,
+	dri-devel@lists.freedesktop.org, vkoul@kernel.org,
+	mripard@kernel.org
+Subject: Re: [PATCH v3 08/19] dt-bindings: display: imx: Add i.MX8qxp Display
+ Controller
+Message-ID: <172399104139.23572.10090663935384596561.robh@kernel.org>
+References: <20240724092950.752536-1-victor.liu@nxp.com>
+ <20240724092950.752536-9-victor.liu@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/5] MAINTAINERS: add entry for ST STM32MP25 COMBOPHY
- driver
-To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org,
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- mcoquelin.stm32@gmail.com, alexandre.torgue@foss.st.com,
- p.zabel@pengutronix.de
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- fabrice.gasnier@foss.st.com
-References: <20240816132058.920870-1-christian.bruel@foss.st.com>
- <20240816132058.920870-2-christian.bruel@foss.st.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
- QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
- gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
- /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
- iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
- VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
- 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
- xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
- eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
- AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
- MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
- Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
- ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
- vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
- oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
- lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
- t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
- uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
- 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
- 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240816132058.920870-2-christian.bruel@foss.st.com>
+Content-Disposition: inline
+In-Reply-To: <20240724092950.752536-9-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240817_021615_460590_9A650581 
-X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-CacheID: sfid-20240818_072407_844833_D854F88D 
+X-CRM114-Status: UNSURE (   8.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -123,32 +83,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/08/2024 15:20, Christian Bruel wrote:
-> Add myself as STM32MP25 COMBOPHY maintainer
+
+On Wed, 24 Jul 2024 17:29:39 +0800, Liu Ying wrote:
+> i.MX8qxp Display Controller(DC) is comprised of three main components that
+> include a blit engine for 2D graphics accelerations, display controller for
+> display output processing, as well as a command sequencer.
 > 
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+> Signed-off-by: Liu Ying <victor.liu@nxp.com>
 > ---
->  MAINTAINERS | 6 ++++++
->  1 file changed, 6 insertions(+)
+> v3:
+> * No change.
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index f328373463b0..258fb57ccff5 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -21910,6 +21910,12 @@ F:	arch/m68k/kernel/*sun3*
->  F:	arch/m68k/sun3*/
->  F:	drivers/net/ethernet/i825xx/sun3*
->  
-> +STMICROELECTRONICS STMP32MP25 USB3/PCIE COMBOPHY DRIVER
-> +M:	Christian Bruel <christian.bruel@foss.st.com>
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> +F:	drivers/phy/st/phy-stm32-combophy.c
+> v2:
+> * Drop fsl,dc-*-id DT properties from example. (Krzysztof)
+> * Use generic pmu pattern property. (Krzysztof)
+> 
+>  .../bindings/display/imx/fsl,imx8qxp-dc.yaml  | 236 ++++++++++++++++++
+>  1 file changed, 236 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc.yaml
+> 
 
-There are no such files. Organize your patchset in bisectable way.
-
-Best regards,
-Krzysztof
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
 
 -- 
