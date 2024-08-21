@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F764C52D6F
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 08:44:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DF1EC52D6F
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 08:54:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5ZcBEXhp7bufczUnWdNOohGgMoi65A8BhRN0wh2i9bc=; b=RAEsrXm0Rd33Fl
-	QCU8eyyqJgW0/fXSL9nddKj/Z1S74EHh6jQM2I3J1Bhg2xPy2qY6XYnb/c05/1XSz0erjzdaxh8Yq
-	2gIVIfjuRZBZSZbx8P+r9B/hNF1l8LKjT+1Y1INgCi3a7kT2af/4yiiPN/WOYtdAz2DNjPlcJbMLM
-	jXjvKISZ/ikmi0nMr3OdrWwlgMF31hZazHJJXg7VcneZs4x1oV0UgmjhjTipzmIo9Ef7B6+3CRObP
-	I+MTKsKWLLZiWsSjefZINDmpfutPlyL/Dkcp0G9xoehSqrgFuKHRh4eDBVY6jn8vt8pQPMz+bWINy
-	LIiabz+yDwXfzDFSQ7rw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
+	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=K1oDkLr4oXs6PKJ0cBRr3Helzp/3EfZ8eKVj49FVf18=; b=Qita+//84I0j3+asZk+6CyRBPA
+	BW/WmxSdbyBlRwMY3a2wvGnDiySDZjAmgQPluYswzZIMZhUhMwFEbkmhA/GbnNhJtHqnIKCTPouHC
+	ZF5TsQWSHPaSeiBp4TLxXzO2H7T8H9OEIjm4LjzzaiIKEZ+1c0JV0dk9Eqy+3ruBPKYdK1TDPac59
+	Ct+23zr+AKavUubuRWUvSq9GVm4n8VoxF4ebolU67AGn+JEeACh5D7MApsEPyc6Ua9f7zgoPXGmxL
+	JvXt+fXPxpL9NF2PrXNelJKFob8cwaTV01nok+RmG2l/M4GhgeFxHpDeEor/O6fXZIW4/7mm1nrJ/
+	bIIf5w8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sggxH-000000087zP-1Cco;
-	Wed, 21 Aug 2024 08:44:35 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1sgh74-00000008A0V-4AKW;
+	Wed, 21 Aug 2024 08:54:42 +0000
+Received: from mail.manjaro.org ([116.203.91.91])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sggwJ-000000087n2-0iEq;
-	Wed, 21 Aug 2024 08:43:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=b+eB73GrPccCdLU6CWfc1pg5yiGEbiwTbUmoc3zvXNA=; b=QcoTYbVaABv8lmTWg5EUXU9zOc
-	fHDmF8VR5HyWsQh0p/qGZ+G/gQTSU181Vygyx0Wxen1cuH+j3E5rUPIu2PSLBFlABKu7TSi0OfDh1
-	zFXCUqXNkXlDhB10krdXIqltXmqyD4BmujaVN1nFDWalNBwSSkd/BMHxh3yR4fYdY5hIz3I5/O/xr
-	NIHN2kh5Fbbg1fZyACF+VHp1kEDdRNHwbsv6BPODxUFsz7KPOQRLwsRaLjF0YGahPeyRY49r6sqo2
-	ibZQIZTK4bLF49hr2KsKx27Iboatt212jDpMVj6UIneynrCsytrfD0IiRKaFoGPfhHPyvlgqXw8wa
-	otCc+P4g==;
-Received: from i53875aca.versanet.de ([83.135.90.202] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1sggwG-0004yi-VV; Wed, 21 Aug 2024 10:43:33 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- Dragan Simic <dsimic@manjaro.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 3/3] phy: phy-rockchip-inno-usb2: Improve error handling while
- probing
-Date: Wed, 21 Aug 2024 10:44:00 +0200
-Message-ID: <12869965.VsHLxoZxqI@diego>
-In-Reply-To: <866445027a4f41165c872f494b04c218b6e67b09.1724225528.git.dsimic@manjaro.org>
-References: <cover.1724225528.git.dsimic@manjaro.org>
- <866445027a4f41165c872f494b04c218b6e67b09.1724225528.git.dsimic@manjaro.org>
+	id 1sgh5h-000000089fA-21yz;
+	Wed, 21 Aug 2024 08:53:19 +0000
 MIME-Version: 1.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=manjaro.org; s=2021;
+	t=1724230395;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=me2bazh1+XWM3oC6fY5BIO7VytdUgoc5JECJvjoPUzo=;
+	b=ULWCheHThawcPG+AyC/53aQI+sHKckvEBHPdwDjlQDS3N7u4edYLeuV2XTFididXOS2f8O
+	mCeDJS5Q3Buf3Yj/s0AxkoIMPZEagEqboFqCVnd6QijhF8JVGToQs07waDJ7yacEmiFWSz
+	9jptrljyfbl5a7AbH8neI8Rk962fOEuXhT+VJNStlqb6lpBWe/AuamKmzRJUueMzlddf9C
+	0XOatZ2wb48e5ML3NmdNRn7vLu1bETbQjK4N8WWj+2OlfEISqswUNLrqqPd53ev4GhNtEY
+	sQaXMAnVPpJo/B0VHpbM98QqERp4ildDkw4inNxaQ55nNypq+MyYQVHZr6q2Lw==
+Date: Wed, 21 Aug 2024 10:53:14 +0200
+From: Dragan Simic <dsimic@manjaro.org>
+To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+ vkoul@kernel.org, kishon@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/3] phy: phy-rockchip-inno-usb2: Perform trivial code
+ cleanups
+In-Reply-To: <5307900.6fTUFtlzNn@diego>
+References: <cover.1724225528.git.dsimic@manjaro.org>
+ <14167d6b025e18d2a06ee429feea6551ef6f9c44.1724225528.git.dsimic@manjaro.org>
+ <5307900.6fTUFtlzNn@diego>
+Message-ID: <83a33b5ad6dd13668b6d8733f5546725@manjaro.org>
+X-Sender: dsimic@manjaro.org
+Authentication-Results: ORIGINATING;
+	auth=pass smtp.auth=dsimic@manjaro.org smtp.mailfrom=dsimic@manjaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240821_014335_265479_BD6C46B5 
-X-CRM114-Status: GOOD (  15.91  )
+X-CRM114-CacheID: sfid-20240821_015317_987009_644E67C6 
+X-CRM114-Status: GOOD (  11.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,39 +69,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Mittwoch, 21. August 2024, 09:37:55 CEST schrieb Dragan Simic:
-> Improve error handling in the probe path by using function dev_err_probe()
-> where appropriate, and by no longer using it rather pointlessly in one place
-> that actually produces a single, hardcoded error code.
-> 
-> Signed-off-by: Dragan Simic <dsimic@manjaro.org>
-
-> @@ -1375,8 +1372,10 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
->  	rphy->irq = platform_get_irq_optional(pdev, 0);
->  	platform_set_drvdata(pdev, rphy);
->  
-> -	if (!phy_cfgs)
-> -		return dev_err_probe(dev, -EINVAL, "phy configs are not assigned!\n");
-> +	if (!phy_cfgs) {
-> +		dev_err(dev, "phy configs are not assigned\n");
-> +		return -EINVAL;
-> +	}
->  
->  	ret = rockchip_usb2phy_extcon_register(rphy);
->  	if (ret)
-
-I really don't understand the rationale here. Using dev_err_probe here 
-is just fine and with that change you just introduce more lines of code
-for exactly the same functionality?
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGVsbG8gSGVpa28sCgpPbiAyMDI0LTA4LTIxIDEwOjM5LCBIZWlrbyBTdMO8Ym5lciB3cm90ZToK
+PiBBbSBNaXR0d29jaCwgMjEuIEF1Z3VzdCAyMDI0LCAwOTozNzo1MyBDRVNUIHNjaHJpZWIgRHJh
+Z2FuIFNpbWljOgo+PiBQZXJmb3JtIGEgZmV3IHRyaXZpYWwgY29kZSBjbGVhbnVwcywgZS5nLiB0
+byBvYmV5IHRoZSByZXZlcnNlIAo+PiBDaHJpc3RtYXMgdHJlZQo+PiBydWxlLCB0byBhdm9pZCB1
+c2Ugb2YgInsgLi4uIH0iIGNvZGUgYmxvY2tzIHdoZXJlIHRoZXkgYXJlbid0IHJlYWxseSAKPj4g
+bmVlZGVkLAo+PiBvciB0byBhdm9pZCBsaW5lIHdyYXBwaW5nIGJ5IHVzaW5nIHRoZSAxMDAtY29s
+dW1uIHdpZHRoIGJldHRlci4KPj4gCj4+IE5vIGludGVuZGVkIGZ1bmN0aW9uYWwgY2hhbmdlcyBh
+cmUgaW50cm9kdWNlZCBieSB0aGVzZSBjb2RlIGNsZWFudXBzLgo+PiAKPj4gU2lnbmVkLW9mZi1i
+eTogRHJhZ2FuIFNpbWljIDxkc2ltaWNAbWFuamFyby5vcmc+Cj4gCj4+IEBAIC00NDUsNyArNDQ1
+LDYgQEAgc3RhdGljIGludCByb2NrY2hpcF91c2IycGh5X2V4dGNvbl9yZWdpc3RlcihzdHJ1Y3Qg
+Cj4+IHJvY2tjaGlwX3VzYjJwaHkgKnJwaHkpCj4+ICAJfQo+PiAKPj4gIAlycGh5LT5lZGV2ID0g
+ZWRldjsKPj4gLQo+PiAgCXJldHVybiAwOwo+PiAgfQo+IAo+IGRlcGVuZGluZyBvbiBob3cgbml0
+cGlja3kgd2Ugd2FudCB0byBiZSwgSSdtIG5vdCB2ZXJ5IGZvbmQgb2YgdGhpcyAKPiBjaGFuZ2Uu
+Cj4gQXNzaWduaW5nIHRoZSBleHRjb24tZGV2IGFuZCByZXR1cm5pbmcgIjAiIGFyZSB0d28gZGlm
+ZmVyZW50IGFjdGlvbnMsIAo+IGFuZAo+IEkgdGhpbmsgbW9zdCBkcml2ZXJzIGRvIGFjdHVhbGx5
+IHVzZSBhIGJsYW5rIGxpbmUgYmV0d2VlbiB0aG9zZS4KPiAKPiBCdXQgdGhhdCByZWFsbHkgaXMg
+anVzdCBhIHN0eWxlIHByZWZlcmVuY2UgZm9yIG1lLCBzbyBhbnl3YXkKPiAKPiBSZXZpZXdlZC1i
+eTogSGVpa28gU3R1ZWJuZXIgPGhlaWtvQHNudGVjaC5kZT4KClRoYW5rcyBmb3IgeW91ciByZXZp
+ZXc7IEkgaGFkIHNpbWlsYXIgdGhvdWdodHMsIGJlbGlldmUgaXQgb3Igbm90LiA6KSAgCklmCnRo
+ZXJlIHdpbGwgYmUgdjMsIEknbGwgYnJpbmcgdGhlIGVtcHR5IHNlcGFyYXRvciBsaW5lIGJhY2su
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
