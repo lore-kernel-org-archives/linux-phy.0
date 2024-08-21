@@ -4,91 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82F29C3DA4A
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 02:50:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4054FC52D6F
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 03:58:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N5jkvWLv1/vrdCwaGuozQqP2NCp3FlNz9DxvziqR2Vw=; b=u1AWUdX8ng6HOo
-	kjipHXTEZ2p6zctCWArpXOS7CpgQQ6FkCs8sikdXwd96mW3TD1ANrBvCbWEf/U0rmTDHT1Q+biJJH
-	OxKFkxxTuuvCdjv2HEBxR4zSoto90/lo3YHkH5u9onEQatEoIRjiLerrgLF1VpILh3iXfujSwrxQq
-	7Oji48KrrRNXQnRth4plb4msuq0kNhQVHDKXv1gNdHXpGmb7LZ63vMw7JZCg00ZdbhpEhPYIlxO/D
-	kqXGgDmtN6B7+itlcCiCDKixe85OsDd9Y0Yv7TllCdwL50R/vV0zaoaPWGsRosObDT31DjC3PF5Yc
-	1rXosDBZeAxDI0zDVblA==;
+	List-Owner; bh=L0BBQOFwYSEMFwLPUlXGc0SmyvSKv4GPySx5TU2TCDk=; b=PK7B1VcmF1CJN/
+	K6/ZBgzc8Oz/YuSoFtrs8iBYXyKb/Z+k22s4zEEgszozudoEmBwhKUONATDMDfEJZVi20zynzHMef
+	Lu6UcN87yFxC6ehUVSN31U2mVRNLvs4BQlnwU9xXJ7WjQOkgHBD0SA1vuyuCiUhxDNbHVbQvKDIaf
+	m/Qa4B1AKTInTVaA1AI3ZAucU8pg6Dd9lxDApZlgdAzniYcv8FPvYGs0rkfuRZB4tao6PK6bh2To3
+	+GLP5wEQGZvdO9EKSPrdNamdHr0QAxF6pcLfhTi0J4CsI5J3x5pG9scHoUswDUY/VEFWPCSG4aZwx
+	37Ss+8u1cdxTANoIPo1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgbQ9-00000007Jzo-11yy;
-	Wed, 21 Aug 2024 02:50:01 +0000
-Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+	id 1sgcU6-00000007ROX-3nZ8;
+	Wed, 21 Aug 2024 03:58:10 +0000
+Received: from gw2.atmark-techno.com ([35.74.137.57])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgbPQ-00000007JnT-14Nz;
-	Wed, 21 Aug 2024 02:49:17 +0000
-Received: by mail-pg1-x530.google.com with SMTP id 41be03b00d2f7-7b0c9bbddb4so4148149a12.3;
-        Tue, 20 Aug 2024 19:49:15 -0700 (PDT)
+	id 1sgcU4-00000007RNc-1byn
+	for linux-phy@lists.infradead.org;
+	Wed, 21 Aug 2024 03:58:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=atmark-techno.com;
+	s=gw2_bookworm; t=1724212684;
+	bh=iRH6vm3f+qvme31wvecI88/Rqtmvlts9o6HozktikAk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=hnTOwpIhccDO2GGNj9HeEhzBogkmuYWcnN0wXA3iRAPyOk+8R3WFRBV5NSP2rzqel
+	 9gBqBh2UKVEbNSP+is35Zr1T7cEXwfbUtFA9i5zO7aUWrMRkrVyYCQJX9AFGM2L3IL
+	 o22D1ERjMU4iyU1bWipmXl4vtfeqJU8oeIyMe1uVsf6WRhTnSDHF9nqQ+oSZutVSOA
+	 Pbk7GqpEflza4gyhlKrv6rgN/DIvddd5Wve/e2Cj5ubbueCzMIY84IUE3kfniiVi3P
+	 JX1UBPK0e/rPwjPIn9RPysqQakeZTTWDgygkbWRqwlv/bKsmilb72RwVb6a+dWZXkG
+	 UfrLTpS9TpBXQ==
+Received: from gw2.atmark-techno.com (localhost [127.0.0.1])
+	by gw2.atmark-techno.com (Postfix) with ESMTP id 186C7A0C
+	for <linux-phy@lists.infradead.org>; Wed, 21 Aug 2024 12:58:04 +0900 (JST)
+Authentication-Results: gw2.atmark-techno.com;
+	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=EMteFAz1;
+	dkim-atps=neutral
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by gw2.atmark-techno.com (Postfix) with ESMTPS id BF304A1A
+	for <linux-phy@lists.infradead.org>; Wed, 21 Aug 2024 12:57:58 +0900 (JST)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2d40f92f0a2so3094266a91.0
+        for <linux-phy@lists.infradead.org>; Tue, 20 Aug 2024 20:57:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1724208555; x=1724813355; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=RE92xTzpyc1kzcm5lmkLo7kV0Lo7mv/gXSiJrqevpAQ=;
-        b=Mq3nTLvDW+fZZ5WiwWeJjLklQagc2GaXvAF1ZvANmLi1BO7FMLFigtV4vWcHEPujnt
-         D9DKPr/TtCssH1EKdvtmoI1mlNzWr9LG9rH6AM/DD5O/EHGRANk0ZvPdyO0JM8/GTR9D
-         KjGnIJ+QEEcPwgJjRjIsNSgwKmZXks30aBT8ilvyb0wgn5M5Ly1uj6ZH0Osr3Za9+vsu
-         mCN470vEThDoidGROOkGoOmOM9A1trct8SZaInShMClNgjeXsnbDXFV1SHmudABmDL8p
-         tS7iY4KUanIMT3wbgtrp4zT8Fp6aGZ4dNaeZ+TDa1K4Exe9YaWJ6aNUYDzO7e/BECS4f
-         i+BA==
+        d=atmark-techno.com; s=google; t=1724212678; x=1724817478; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=V+qnGxy5w3VX94K4aj4lv3e2rRMZae3o2HZnHPaaqtQ=;
+        b=EMteFAz1Zw+2PlWVLALYhwmBfSiQ4m5+RJHqFVZHOFgGgB7IkiZbpeDrRlc8sQVmbO
+         CGId/DHa96QymAZmyrsEtBTYjnhJ6uywTqv4sQ64WY137OfD032rlNUy6Vf9550YmapU
+         sma4dgo9ltsFEeemLwRL6Br8u0iVx8dyYRe0J5iGyr+XS9bENuPdDxMTZ/Xwka0YR0vP
+         5MXmkCs2D7iasXdwU9V+GU8DYe4XVNv5xpuD2Q9Aa5ymREwEXvxcNueJmjoYHbXZBo2q
+         h/NDsEllDfP3/rSyFVHWsDOYlDSLR/rDIVwWMfMGM0Z7uX1TQrzXvVHNDjdwIQGvb/Zd
+         7L0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724208555; x=1724813355;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=RE92xTzpyc1kzcm5lmkLo7kV0Lo7mv/gXSiJrqevpAQ=;
-        b=ikSvZ/1xq+VDorY6gt4UpzIzGwJd0e39L37KgqdEJtER46HfpwrtuPHBqOYl/+9+ed
-         QmJLnoQlMY+MoPyaCQsF8GxVz8cqlwZwNqbe+2/2DPhkL+07RC+ktgwt4niw3UQjKaXQ
-         hpc+2nPi6KKkGHmq95Du2yp5S1yc9vpRl8IC6eAtyFDmrfCq0by3KppLDhlfsdXHTgsh
-         BNB1AzW+g3inCgwmedZM4943kXZtsKeWxfq6ofnl9b3sX2sDr444ZbO7unqf3fzU31lX
-         +MvnRtVK1x140sl7b8I5qDEvL+evpN8wIAECqwEovLhOterOSlpVkeBCpbcd6jN7TTxd
-         02aw==
-X-Forwarded-Encrypted: i=1; AJvYcCVlzY7nJdKlU99OaF/jGguTjod8rsWxlGvJQRFHk/esCHzvTNB5RvPMeb7a3wW3ze0MP52FpCcbVKM5@lists.infradead.org, AJvYcCWPtnGHbzPsfbRwGBDmWwSGwxvlVh1J4Njhgg/RvBtA9Iz9htx9bt4EKYLpSMklC5/4Qqi/ZzTuREuZDDIfBkJ2@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9fWOn8ft/gUqwa63AjndpfunirBfq5kvTTke+tAOVCX9bm96Z
-	iMgxDrIkcu4PAGWufyPXjZiVNyLSSolK/aywFz2sOHE81vQvnPQQcVIhALV1Y5Fvhv/E4QGrZlQ
-	mRYU8eJeThTv2Ka4JONyIES10tcc=
-X-Google-Smtp-Source: AGHT+IHPIeU+XeIHnRDwOc8ghN5MtcSzCEjHZtvnpI0kCMC3xi6zc1BgiVyooCk3wuq0/oAVIZyRNBgW98ToLF19jq4=
-X-Received: by 2002:a17:90b:3889:b0:2cd:2992:e8dc with SMTP id
- 98e67ed59e1d1-2d5e99fb6demr1065257a91.5.1724208554836; Tue, 20 Aug 2024
- 19:49:14 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240203165307.7806-1-aford173@gmail.com> <20240203165307.7806-11-aford173@gmail.com>
- <Zm_UzO4Jmm7Aykcm@atmark-techno.com> <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
- <cd03ecb1-100e-4699-95ed-d837a2802dc7@kontron.de>
-In-Reply-To: <cd03ecb1-100e-4699-95ed-d837a2802dc7@kontron.de>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 20 Aug 2024 21:49:03 -0500
-Message-ID: <CAHCN7x+bh_ka250hOCenO3Et6re4EJ=5TG8=kpG1hs-PV0dQxQ@mail.gmail.com>
-Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
- (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for i.MX8MP
- DWC HDMI)
-To: Frieder Schrempf <frieder.schrempf@kontron.de>
-Cc: Lucas Stach <l.stach@pengutronix.de>, 
-	Dominique MARTINET <dominique.martinet@atmark-techno.com>, linux-arm-kernel@lists.infradead.org, 
-	marex@denx.de, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
-	Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>, 
-	Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
-	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
-	NXP Linux Team <linux-imx@nxp.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+        d=1e100.net; s=20230601; t=1724212678; x=1724817478;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=V+qnGxy5w3VX94K4aj4lv3e2rRMZae3o2HZnHPaaqtQ=;
+        b=C+WwdYQoYf6eBsI2sbxxBripH6JgS/P7EHgKOctOWxlD0Fi26htQ6qmnudHLY8VnrK
+         gumCds8/UxO7kHblV+WuF2+ukqoXkz5IRHYExJUunPYySTn2y0raxYyBeuT55pZz+we0
+         Ppnq33sD1qN8Vu4JRRe326NdwuOVoDOWi8EpTVJ3ia8VbkqPaXETt8Ar40r0fx3xjZV6
+         8IEN/4L3/nXxbhtYOTQXVpcnuoFJZhXTl6H3wl2OASNcRZ8nN6qsAyc/pMC9j6BsbS4R
+         w/+hzG7RjAiN3xqobjOnHOUquU0dqrqhxhkA2TgR2k8GRSO3Z+HtLp9eWF3gPKE29GrE
+         OKOA==
+X-Forwarded-Encrypted: i=1; AJvYcCWy9KPNseVhqDZmICkqgkqxunICK/qC2lTsAd9i8HotytUFuKL6KScOygCC7yLMbrPruAvg13xKhgo=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx7LVPp2WiYNhCwG4CvKxf5NeELgkaenN6u86dpBTPN/QiemKlE
+	deTidJfVT//y6kyYPb0Ls5kUUUQotUlErGwHduPurrHiiMqlK1j6iyeUei8rYsE6g36DOYkEi/e
+	FdCEjHWj52jsv2Mro6XdjNS/CqYXEkii2Qlc+pYnkzuEP+SCZrivnDC7vmjF/cFvh
+X-Received: by 2002:a17:90b:1e50:b0:2d3:d8c9:780e with SMTP id 98e67ed59e1d1-2d5e9a1c42bmr1083896a91.20.1724212677602;
+        Tue, 20 Aug 2024 20:57:57 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEVIiKdohXScz0/LgmYJB0F0NSJGU/plj9oicFpDF0zuctdGMznMuiv+lGTxqm9jYAS6FVvyw==
+X-Received: by 2002:a17:90b:1e50:b0:2d3:d8c9:780e with SMTP id 98e67ed59e1d1-2d5e9a1c42bmr1083873a91.20.1724212677161;
+        Tue, 20 Aug 2024 20:57:57 -0700 (PDT)
+Received: from pc-0182.atmarktech (117.209.187.35.bc.googleusercontent.com. [35.187.209.117])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2d5eba30e40sm501627a91.24.2024.08.20.20.57.56
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 20 Aug 2024 20:57:56 -0700 (PDT)
+Received: from martinet by pc-0182.atmarktech with local (Exim 4.96)
+	(envelope-from <martinet@pc-zest>)
+	id 1sgcTr-003xuT-0q;
+	Wed, 21 Aug 2024 12:57:55 +0900
+Date: Wed, 21 Aug 2024 12:57:45 +0900
+From: Dominique MARTINET <dominique.martinet@atmark-techno.com>
+To: Adam Ford <aford173@gmail.com>
+Cc: Frieder Schrempf <frieder.schrempf@kontron.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-arm-kernel@lists.infradead.org, marex@denx.de,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>, Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	NXP Linux Team <linux-imx@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
 	Makoto Sato <makoto.sato@atmark-techno.com>
+Subject: Re: drm/bridge/imx8mp-hdmi-tx: Allow inexact pixel clock frequencies
+ (Was: [PATCH V8 10/12] drm/bridge: imx: add bridge wrapper driver for
+ i.MX8MP DWC HDMI)
+Message-ID: <ZsVluV50NvuGGHFX@atmark-techno.com>
+References: <20240203165307.7806-1-aford173@gmail.com>
+ <20240203165307.7806-11-aford173@gmail.com>
+ <Zm_UzO4Jmm7Aykcm@atmark-techno.com>
+ <22a3f5266260dd3915269ae3eec7724f7537eb55.camel@pengutronix.de>
+ <cd03ecb1-100e-4699-95ed-d837a2802dc7@kontron.de>
+ <CAHCN7x+bh_ka250hOCenO3Et6re4EJ=5TG8=kpG1hs-PV0dQxQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAHCN7x+bh_ka250hOCenO3Et6re4EJ=5TG8=kpG1hs-PV0dQxQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240820_194916_321880_D389ACCD 
-X-CRM114-Status: GOOD (  61.50  )
+X-CRM114-CacheID: sfid-20240820_205808_569994_5122B577 
+X-CRM114-Status: GOOD (  44.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,129 +139,106 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBBdWcgMTUsIDIwMjQgYXQgMzoxOeKAr0FNIEZyaWVkZXIgU2NocmVtcGYKPGZyaWVk
-ZXIuc2NocmVtcGZAa29udHJvbi5kZT4gd3JvdGU6Cj4KPiBIaSBEb21pbmlxdWUsIGhpIEx1Y2Fz
-LAo+Cj4gT24gMTcuMDYuMjQgNjozMiBQTSwgTHVjYXMgU3RhY2ggd3JvdGU6Cj4gPiBIaSBEb21p
-bmlxdWUsCj4gPgo+ID4gQW0gTW9udGFnLCBkZW0gMTcuMDYuMjAyNCB1bSAxNToxNiArMDkwMCBz
-Y2hyaWViIERvbWluaXF1ZSBNQVJUSU5FVDoKPiA+PiBBZGFtIEZvcmQgd3JvdGUgb24gU2F0LCBG
-ZWIgMDMsIDIwMjQgYXQgMTA6NTI6NTBBTSAtMDYwMDoKPiA+Pj4gRnJvbTogTHVjYXMgU3RhY2gg
-PGwuc3RhY2hAcGVuZ3V0cm9uaXguZGU+Cj4gPj4+Cj4gPj4+IEFkZCBhIHNpbXBsZSB3cmFwcGVy
-IGRyaXZlciBmb3IgdGhlIERXQyBIRE1JIGJyaWRnZSBkcml2ZXIgdGhhdAo+ID4+PiBpbXBsZW1l
-bnRzIHRoZSBmZXcgYml0cyB0aGF0IGFyZSBuZWNlc3NhcnkgdG8gYWJzdHJhY3QgdGhlIGkuTVg4
-TVAKPiA+Pj4gU29DIGludGVncmF0aW9uLgo+ID4+Cj4gPj4gSGkgTHVjYXMsIEFkYW0sCj4gPj4g
-KHRyaW1tZWQgY2NzIGEgYml0KQo+ID4+Cj4gPj4gRmlyc3QsIHRoYW5rIHlvdSBmb3IgdGhlIGVm
-Zm9ydCBvZiB1cHN0cmVhbWluZyBhbGwgb2YgdGhpcyEhIEl0J3MgcmVhbGx5Cj4gPj4gYXBwcmVj
-aWF0ZWQsIGFuZCB3aXRoIGRpc3BsYXkgd29ya2luZyBJJ2xsIHJlYWxseSBiZSB3YW50aW5nIHRv
-IHVwc3RyZWFtCj4gPj4gb3VyIERUUyBhcyB3ZWxsIGFzIHNvb24gYXMgSSBoYXZlIHRpbWUgKHdo
-aWNoIGlzIGdvaW5nIHRvIGJlIGEgd2hpbGUsCj4gPj4gYnV0IGJldHRlciBsYXRlIHRoYW4gbmV2
-ZXIgPykKPiA+Pgo+ID4+IFVudGlsIHRoZW4sIGl0J3MgYmVlbiBhIGZldyBtb250aHMgYnV0IEkn
-dmUgZ290IGEgcXVlc3Rpb24gb24gdGhpcyBiaXQ6Cj4gPj4KPiA+Pj4gZGlmZiAtLWdpdCBhL2Ry
-aXZlcnMvZ3B1L2RybS9icmlkZ2UvaW14L2lteDhtcC1oZG1pLXR4LmMgYi9kcml2ZXJzL2dwdS9k
-cm0vYnJpZGdlL2lteC9pbXg4bXAtaGRtaS10eC5jCj4gPj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0
-Cj4gPj4+IGluZGV4IDAwMDAwMDAwMDAwMC4uODlmYzQzMmFjNjExCj4gPj4+IC0tLSAvZGV2L251
-bGwKPiA+Pj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9pbXgvaW14OG1wLWhkbWktdHgu
-Ywo+ID4+PiArc3RhdGljIGVudW0gZHJtX21vZGVfc3RhdHVzCj4gPj4+ICtpbXg4bXBfaGRtaV9t
-b2RlX3ZhbGlkKHN0cnVjdCBkd19oZG1pICpkd19oZG1pLCB2b2lkICpkYXRhLAo+ID4+PiArICAg
-ICAgICAgICAgICAgICAgY29uc3Qgc3RydWN0IGRybV9kaXNwbGF5X2luZm8gKmluZm8sCj4gPj4+
-ICsgICAgICAgICAgICAgICAgICBjb25zdCBzdHJ1Y3QgZHJtX2Rpc3BsYXlfbW9kZSAqbW9kZSkK
-PiA+Pj4gK3sKPiA+Pj4gKyAgIHN0cnVjdCBpbXg4bXBfaGRtaSAqaGRtaSA9IChzdHJ1Y3QgaW14
-OG1wX2hkbWkgKilkYXRhOwo+ID4+PiArCj4gPj4+ICsgICBpZiAobW9kZS0+Y2xvY2sgPCAxMzUw
-MCkKPiA+Pj4gKyAgICAgICAgICAgcmV0dXJuIE1PREVfQ0xPQ0tfTE9XOwo+ID4+PiArCj4gPj4+
-ICsgICBpZiAobW9kZS0+Y2xvY2sgPiAyOTcwMDApCj4gPj4+ICsgICAgICAgICAgIHJldHVybiBN
-T0RFX0NMT0NLX0hJR0g7Cj4gPj4+ICsKPiA+Pj4gKyAgIGlmIChjbGtfcm91bmRfcmF0ZShoZG1p
-LT5waXhjbGssIG1vZGUtPmNsb2NrICogMTAwMCkgIT0KPiA+Pj4gKyAgICAgICBtb2RlLT5jbG9j
-ayAqIDEwMDApCj4gPj4+ICsgICAgICAgICAgIHJldHVybiBNT0RFX0NMT0NLX1JBTkdFOwo+ID4+
-Cj4gPj4gRG8geW91IGtub3cgd2h5IHN1Y2ggYSBjaGVjayBpcyBoZXJlPwo+ID4KPiA+IFNlbmRp
-bmcgYSBIRE1JIHNpZ25hbCB3aXRoIGEgZGlmZmVyZW50IHJhdGUgdGhhbiB3aGF0IHRoZSBkaXNw
-bGF5Cj4gPiBleHBlY3RzIHJhcmVseSBlbmRzIHdlbGwsIHNvIHRoaXMgY2hlY2sgYXZvaWRzIHRo
-YXQuCj4gPgo+ID4gSG93ZXZlciwgdGhpcyBjaGVjayBpcyBhIGJpdCBvdmVyY2F1dGlvdXMgaW4g
-dGhhdCBpdCBvbmx5IGFsbG93cyBleGFjdAo+ID4gcmF0ZSBtYXRjaGVzLiBJSVJDIEhETUkgYWxs
-b3dzIGEgcmF0ZSBtaXNtYXRjaCBvZiArLSAwLjUlLCBzbyB0aGlzCj4gPiBjaGVjayBjb3VsZCBi
-ZSByZWxheGVkIHF1aXRlIGEgYml0IHRvIGFsbG93IGZvciB0aGF0Lgo+Cj4gSSBjaGVja2VkIHdp
-dGggYSAxMDgwcCBkaXNwbGF5IHRoYXQgcmVwb3J0cyAyMyBwb3NzaWJsZSBtb2RlcyB2aWEgRURJ
-RC4KPiBPdXQgb2YgdGhlc2UgMTUgYXJlIGFjY2VwdGVkIGJ5IHRoZSBkcml2ZXIgd2l0aCB0aGUg
-c3RyaWN0IGNoZWNrLgo+Cj4gVHdvIG1vcmUgd291bGQgYmUgYWNjZXB0ZWQgd2l0aCBhIHJlbGF4
-ZWQgY2hlY2sgdGhhdCBhbGxvd3MgYSAwLjUlIG1hcmdpbi4KPgo+IEZvciB0aGUgcmVtYWluaW5n
-IHNpeCBtb2RlcywgdGhlIHBpeGVsIGNsb2NrIHdvdWxkIGRldmlhdGUgdXAgdG8gfjUlCj4gZnJv
-bSB3aGF0IHRoZSBkaXNwbGF5IGV4cGVjdHMuIFN0aWxsLCBpZiBJIHJlbW92ZSB0aGUgY2hlY2sg
-YWx0b2dldGhlciwKPiBhbGwgMjMgbW9kZXMgc2VlbSB0byB3b3JrIGp1c3QgZmluZS4KPgo+ID4+
-Cj4gPj4gV2hlbiBwbHVnZ2luZyBpbiBhIHNjcmVlbiB3aXRoIG5vIGZyZXF1ZW5jeSBpZGVudGlj
-YWxseSBzdXBwb3J0ZWQgaW4gaXRzCj4gPj4gRURJRCB0aGlzIGNoZWNrIGNhdXNlcyB0aGUgc2Ny
-ZWVuIHRvIHN0YXkgYmxhY2ssIGFuZCB3ZSd2ZSBiZWVuIHRlbGxpbmcKPiA+PiBjdXN0b21lcnMg
-dG8gb3ZlcnJpZGUgdGhlIEVESUQgYnV0IGl0J3MgYSBodWdlIHBhaW4uCj4gPj4KPiA+PiBDb21t
-aXQgNmFkMDgyYmVlOTAyICgicGh5OiBmcmVlc2NhbGU6IGFkZCBTYW1zdW5nIEhETUkgUEhZIikg
-YWxyZWFkeQo+ID4+ICJmaXhlZCIgdGhlIHNhbXN1bmcgaGRtaSBwaHkgZHJpdmVyIHRvIHJldHVy
-biB0aGUgbmV4dCBmcmVxdWVuY3kgaWYgYW4KPiA+PiBleGFjdCBtYXRjaCBoYXNuJ3QgYmVlbiBm
-b3VuZCAoTlhQIHRyZWUncyBtYXRjaCBmcmVxdWVuY2llcyBleGFjdGx5LCBidXQKPiA+PiB0aGlz
-IGdldHMgdGhlIGZpcnN0IGNsb2NrIHdpdGggcGl4Y2xrIDw9IHJhdGUpLCBzbyBpZiB0aGlzIGNo
-ZWNrIGlzIGFsc28KPiA+PiByZWxheGVkIG91ciBkaXNwbGF5cyB3b3VsZCB3b3JrIG91dCBvZiB0
-aGUgYm94Lgo+ID4+Cj4gPj4gSSBhbHNvIGRvbid0IHNlZSBhbnkgb3RoZXIgYnJpZGdlIGRvaW5n
-IHRoaXMga2luZCBvZiBjaGVjay4KPiA+PiBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL2lteC9pbXg5
-My1taXBpLWRzaS5jIGhhcyBhIHNpbWlsYXIgY2hlY2sgd2l0aCBhCj4gPj4gMC41JSBsZWV3YXks
-IGFuZCBhbGwgdGhlIG90aGVyIGRyaXZlcnMgZG9uJ3QgY2hlY2sgYW55dGhpbmcuCj4gPj4gSWYg
-eW91IHdhbnQgdG8gYWRkIHNvbWUgbGV2ZWwgb2Ygc2FmZXR5LCBJIHRoaW5rIHdlIGNvdWxkIG1h
-a2UgdGhpcyB3b3JrCj4gPj4gd2l0aCBhIDUlIG1hcmdpbiBlYXNpbHkuLi4gUHJpbnRpbmcgYSB3
-YXJuaW5nIGluIGRtZXNnIGNvdWxkIHdvcmsgaWYKPiA+PiB5b3UncmUgd29ycmllZCBhYm91dCBh
-cnRpZmFjdHMsIGJ1dCBsaXR0ZXJhbHkgYW55dGhpbmcgaXMgYmV0dGVyIHRoYW4gYQo+ID4+IGJs
-YWNrIHNjcmVlbiB3aXRoIG5vIGVycm9yIG1lc3NhZ2UgaW4gbXkgb3Bpbmlvbi4KPiA+Pgo+ID4+
-Cj4gPj4gSW4gcHJhY3RpY2UgdGhlIHNjcmVlbiBJJ20gbG9va2luZyBhdCBoYXMgYW4gRURJRCB3
-aGljaCBvbmx5IHN1cHBvcnRzCj4gPj4gNTEuMk1IeiBhbmQgdGhlIGNsb3Nlc3QgZnJlcXVlbmN5
-IHN1cHBvcnRlZCBieSB0aGUgU2Ftc3VuZyBIRE1JIHBoeSBpcwo+ID4+IDUwLjRNSHosIHNvIHRo
-YXQncyBhIH4xLjUlIGRpZmZlcmVuY2UgYW5kIGl0J2QgYmUgZ3JlYXQgaWYgaXQgY291bGQgd29y
-awo+ID4+IG91dCBvZiB0aGUgYm94Lgo+ID4KPiA+IEZvciByYXRlIG1pc21hdGNoZXMgbGFyZ2Vy
-IHRoYW4gdGhlIDAuNSUgYWxsb3dlZCBieSB0aGUgSERNSSBzcGVjIGl0Cj4gPiB3b3VsZCBiZSBi
-ZXR0ZXIgdG8gYWN0dWFsbHkgYWRkIFBIWSBQTEwgcGFyYW1ldGVycyBtYXRjaGluZyB0aG9zZQo+
-ID4gcmF0ZXMuCj4KPiBJJ2QgcmVhbGx5IGxpa2UgdG8gYmUgYWJsZSB0byBhZGQgbW9yZSBQSFkg
-UExMIHNldHBvaW50cyBmb3IgZGlzcGxheXMKPiB0aGF0IHVzZSBub24tQ0VBLTg2MSBtb2Rlcy4g
-VW5mb3J0dW5hdGVseSBJIGRpZG4ndCBtYW5hZ2UgdG8gZmlndXJlIG91dAo+IHRoZSBmcmFjdGlv
-bmFsLW4gUExMIHBhcmFtZXRlciBjYWxjdWxhdGlvbiBzbyBmYXIuCj4KPiBUaGUgaS5NWDhNUCBS
-ZWZlcmVuY2UgTWFudWFsIHByb3ZpZGVzIGZvcm11bGFzIHRvIGNhbGN1bGF0ZSB0aGUKPiBwYXJh
-bWV0ZXJzIGJhc2VkIG9uIHRoZSByZWdpc3RlciB2YWx1ZXMgYW5kIEkgdHJpZWQgdG8gbWFrZSBz
-ZW5zZSBvZiBpdAo+IHVzaW5nIHRoZSBleGlzdGluZyByZWdpc3RlciB2YWx1ZXMgaW4gdGhlIGRy
-aXZlci4gQnV0IHNvbWVob3cgaXQgZG9lc24ndAo+IGFkZCB1cCBmb3IgbWUuCj4KPiBMdWNhcywg
-ZGlkIHlvdSBhbHJlYWR5IHdvcmsgd2l0aCB0aGUgUExMIHBhcmFtZXRlcnM/IEJ5IGFueSBjaGFu
-Y2UsIGRvCj4geW91IG5vdyBob3cgdGhlIG1hdGggYmVoaW5kIHRoZW0gd29ya3M/CgpJIHNwZW50
-IGEgbGl0dGxlIHRpbWUgdHJ5aW5nIHRvIHVuZGVyc3RhbmQgaXQgYSBiaXQuICBJIGNyZWF0ZWQg
-YSBQTVMKY2FsY3VsYXRvciBzaW1pbGFyIHRvIHRoZSBvbmUgdXNlZCBvbiB0aGUgRFNJIGNvbnRy
-b2xsZXIsIGV4Y2VwdCB0aGF0CnRoZSBNIHNlZW1zIHRvIGJlIGZpeGVkIGF0IGEgdmFsdWUgb2Yg
-NjIgcGVyIHRoZSBkYXRhIHNoZWV0LCBzbyBpdCdzCm1vcmUgb2YgYSBQUyBjYWxjdWxhdG9yLgoK
-QW55d2F5LCBXaGVuIEkgcnVuIG15IFAtUyBjYWxjdWxhdG9yIHRvIGdlbmVyYXRlIHRoZSAnYmVz
-dCByYXRlJyBJIGdldAphIHZhbHVlIHRoYXQncyB1c3VhbGx5IDAuMiUgdmFyaWFuY2UgZnJvbSBu
-b21pbmFsLCBidXQgSSBvbmx5IHZlcmlmaWVkCmEgaGFuZGZ1bCBvZiB2YWx1ZXM6CgpTZXZlcmFs
-IHdoaWNoIHdlcmUgKzAuMiUKMjk3NjAwMDAwIHZzIDI5NzAwMDAwMCAoNGtAMzApCjE0ODgwMDAw
-MCB2cyAxNDg1MDAwMDAgKDEwODBwNjApCjc0NDAwIHZzIDc0MjAwCgpPbmUgdmFsdWUgd2FzIC0w
-LjE2JQoyNDgwMDAwMCB2cyAyNTIwMDAwMAoKSWYgdGhlIE0gdmFsdWUgd2FzIGEgYml0IG1vcmUg
-ZmxleGlibGUsIHdlIG1pZ2h0IGJlIGFibGUgdG8gcmVkdWNlCnRoYXQgdmFyaWFuY2UgbW9yZS4K
-CklmIC8gd2hlbiBJIGdldCBzb21lIHRpbWUsIEkgbWlnaHQgcGxheSB3aXRoIHRyeWluZyB0byBk
-aXNhYmxlIHRoZQpmcmFjdGlvbmFsIG1vZGUgYW5kIGp1c3QgdXNlIHRoZSBQTVMgY2FsY3VsYXRv
-ciBmb3Igc2ltcGxpY2l0eSBkZXNwaXRlCnRoZSBpbmFjY3VyYWN5LiAgTWF5YmUgd2UgY291bGQg
-ZmFsbCBiYWNrIHRvIHVzaW5nIHRoZSBQTVMgY2FsY3VsYXRvcgppZiB0aGUgZGVzaXJlZCBmcmVx
-dWVuY3kgaXNuJ3QgaW4gdGhlIGxvb2stdXAtdGFibGUuCgphZGFtCgo+Cj4gPgo+ID4gV2UgY291
-bGQgcG90ZW50aWFsbHkgYWRkIHNvbWUgbW9yZSBsZWV3YXkgZm9yIGRpc3BsYXlzIGxpa2UgeW91
-cnMgdGhhdAo+ID4gYXJlbid0IGFjdHVhbGx5IEhETUkgKGFzIGl0IGRvZXNuJ3Qgc2VlbSB0byBo
-YXZlIGEgc3RhbmRhcmQgSERNSQo+ID4gcmVzb2x1dGlvbikuIEJ1dCB0aGF0J3MgbW9yZSBvZiBh
-IGxhc3QgcmVzb3J0IG9wdGlvbiwgYXMgaXQgbWF5Cj4gPiBpbnRyb2R1Y2Ugb3RoZXIgcHJvYmxl
-bXMgZm9yIGRpc3BsYXlzIHRoYXQgYXJlbid0IGFzIHRvbGVyYW50IHdpdGgKPiA+IHRoZWlyIGlu
-cHV0IHJhdGVzLiBSZW1lbWJlciB0aGUgbW9kZV92YWxpZCBjYWxsIGlzIHVzZWQgdG8gZmlsdGVy
-IG1vZGVzCj4gPiB0aGF0IGFyZW4ndCBjb21wYXRpYmxlIHdpdGggdGhlIHNvdXJjZSwgc28gZm9y
-IGEgZGlzcGxheSB3aXRoIG11bHRpcGxlCj4gPiBtb2RlcyBhbGxvd2luZyB0b28gbXVjaCBsZWV3
-YXkgbWF5IGxlYWQgdG8gaW5jb21wYXRpYmxlIG1vZGVzIG5vdAo+ID4gZ2V0dGluZyB0b3NzZWQs
-IGluIHR1cm4gYWxsb3dpbmcgdXNlcnNwYWNlIHRvIHNldCBhIG1vZGUgdGhhdCB0aGUKPiA+IGRp
-c3BsYXkgbWF5IG5vdCBsaWtlIGR1ZSB0byB0b28gbXVjaCByYXRlIGRldmlhdGlvbiwgaW5zdGVh
-ZCBvZiBvbmx5Cj4gPiBwcmVzZW50aW5nIGEgbGlzdCBvZiB2YWxpZCBtb2Rlcy4gVGhpcyBhZ2Fp
-biB3b3VsZCBwcmVzZW50IHRoZSB1c2VyCj4gPiB3aXRoIGEgYmxhY2stc2NyZWVuIHdpdGhvdXQg
-d2FybmluZyBzaXR1YXRpb24uCj4KPiBXaGF0IGFib3V0IGFkZGluZyBzb21lIG9wdGlvbiB0byBy
-ZWxheCBvciByZW1vdmUgdGhlIGNoZWNrIGZvciBkZWJ1Z2dpbmcKPiBwdXJwb3Nlcz8gTWF5YmUg
-Y29tYmluZWQgd2l0aCBwcmludGluZyBhIHdhcm5pbmcgbWVzc2FnZT8KPgo+IEkgYWdyZWUgdGhh
-dCB3ZSBzaG91bGQgcHJldmVudCBpbmNvbXBhdGlibGUgbW9kZXMgZnJvbSBwYXNzaW5nIHRoZQo+
-IGZpbHRlciwgYnV0IGl0IHdvdWxkIGJlIHJlYWxseSBoZWxwZnVsIGlmIHBlb3BsZSBoYWQgYW4g
-ZWFzeSB3YXkgdG8KPiByZWxheC9yZW1vdmUgdGhlIGNoZWNrIHRvIHNlZSB3aGV0aGVyIHRoZWly
-IGRpc3BsYXkgY291bGQgcG90ZW50aWFsbHkKPiB3b3JrIHdpdGhvdXQgdGhlbSBuZWVkaW5nIHRv
-IG1vZGlmeSBhbmQgcmVjb21waWxlIHRoZSBrZXJuZWwuCj4KPiBUaGFua3MKPiBGcmllZGVyCgot
-LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Adam Ford wrote on Tue, Aug 20, 2024 at 09:49:03PM -0500:
+> > > However, this check is a bit overcautious in that it only allows exact
+> > > rate matches. IIRC HDMI allows a rate mismatch of +- 0.5%, so this
+> > > check could be relaxed quite a bit to allow for that.
+> >
+> > I checked with a 1080p display that reports 23 possible modes via EDID.
+> > Out of these 15 are accepted by the driver with the strict check.
+> >
+> > Two more would be accepted with a relaxed check that allows a 0.5% margin.
+> >
+> > For the remaining six modes, the pixel clock would deviate up to ~5%
+> > from what the display expects. Still, if I remove the check altogether,
+> > all 23 modes seem to work just fine.
+
+I can confirm the displays I tested also seem pretty tolerant in
+practice (up to ~3-4% at least), but I agree with Lucas that this isn't
+something we can rely on for a general purpose driver as having examples
+of things being tolerant doesn't mean all hardware will be as flexible..
+
+> > I'd really like to be able to add more PHY PLL setpoints for displays
+> > that use non-CEA-861 modes. Unfortunately I didn't manage to figure out
+> > the fractional-n PLL parameter calculation so far.
+> >
+> > The i.MX8MP Reference Manual provides formulas to calculate the
+> > parameters based on the register values and I tried to make sense of it
+> > using the existing register values in the driver. But somehow it doesn't
+> > add up for me.
+> >
+> > Lucas, did you already work with the PLL parameters? By any chance, do
+> > you now how the math behind them works?
+> 
+> I spent a little time trying to understand it a bit.  I created a PMS
+> calculator similar to the one used on the DSI controller,
+
+Great! I'll admit this also flies over my head and I don't have the
+time to study this, so this is much appreciated.
+
+> except that
+> the M seems to be fixed at a value of 62 per the data sheet, so it's
+> more of a PS calculator.
+
+Hmm... PHY_REG2 in the datasheet only lists '0011_1110b - 62' as
+example(?) values, but it doesn't say other values are reserved either,
+I'm not sure what to make of it.
+In the current driver PHY_REG_02 (driver macro) is assigned the first
+field of .pll_div_regs, which goes anywhere from 0x4b to 0x7b -- pretty
+far from 62(0x3e)...
+
+Since other frequencies have been adjusting this main diviser ratio we
+actually tried copying neighboring values and adjusting only that reg 2
+(so the M if I get this right?), but the end result ended up not
+synchronizing properly every time... We didn't have time to check with a
+scope if the generated signal was ugly or if it just didn't lock
+properly, but the display worked when we just re-used the neighboring
+values without changing anything despite being ~3-4% off, so we took the
+easy way out here and didn't dig much further.
+
+> Anyway, When I run my P-S calculator to generate the 'best rate' I get
+> a value that's usually 0.2% variance from nominal, but I only verified
+> a handful of values:
+> 
+> Several which were +0.2%
+> 297600000 vs 297000000 (4k@30)
+> 148800000 vs 148500000 (1080p60)
+> 74400 vs 74200
+> 
+> One value was -0.16%
+> 24800000 vs 25200000
+> 
+> If the M value was a bit more flexible, we might be able to reduce
+> that variance more.
+
+Yes, I think the M value could be more flexible, but that'd require
+checking if it actually works, whereas having slightly off frequencies
+will most likely be OK so I don't think it's worth the effort -- happy
+to stick to what the datasheet describes.
+
+> If / when I get some time, I might play with trying to disable the
+> fractional mode and just use the PMS calculator for simplicity despite
+> the inaccuracy.  Maybe we could fall back to using the PMS calculator
+> if the desired frequency isn't in the look-up-table.
+
+That'd be greatly appreciated, I don't have any strong opinion on
+whether that should completely replace the table, or only be used if
+there is no exact match in the table as these are values we know will
+work; but we can definitely test any patch you can throw at us here.
+
+
+Cheers,
+-- 
+Dominique
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
