@@ -4,61 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 056D0C52D7C
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 08:56:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3217C52D7C
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 09:09:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
 	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NBq8SIg18PECgDZgQCQobYZELOxeQam0A5nwL83R4vs=; b=STkFDjMBeNGMUS13pk8H9gW5mG
-	ToyBEdi1C16ubdmSJM2qvnESxqJ/DlZX1YvbBcRy/Iyt23/nfpmJJUY2oUznel1c/h2CZmBhUxp55
-	bYLXms7rCkxsWmDUQI+WOIRI1WZ+cMVCC2ZtYtCRskslYso48HoJO5yqe2Mn+Ue/6hxtF794aCOL7
-	P1wGxitoHdRw8awkYBgVdZPI0Lcxpf3KYUXn787NWGq1hD5c8F9WFk8OVZgO0p94zIY7TNWqWm/Lz
-	HtSd7Rv6+/S5h9la1ZhGYkPElSN8HxEZ1A5kVP+mYOa4h1N8TyJpMJYp6ONm6bn2TKYYr3loBWDVc
-	aY38vgyA==;
+	bh=oGBsjPlnRzdXR2ALcNHitdQdpiTSmt8XCO0tMGVCrNI=; b=Dq26W2lUCkNyMak11GVMrY1GhS
+	kRMBZg+60r1SMHdZuGQGsEsR8mvhPftsI/VkDvlbXEYQ9o0Fypb974nu2QbkyOy6oIq4kUIJCoHQ8
+	i8VZL2kO5Lidn15dbsXEAnDGoU0J/l8P1uxVSGxFnYDgQxVYc/8bsWEN2JjWAEGFIh/vNppWNfWcH
+	+5lEXBvIHbWm3MU2NrQ2upkXeEKcqCeBXC0/wS1JMCaokH1z6VUc4UouCDElbEm0/IelcY4BPkC+7
+	Gc2lGwxGQpaXCBeHkxc+e+zJpSZKB5oNbvmbS910+u7UU4UEJHIbUZZNqyzQbfi+P+JFjdPSx835N
+	gieIGn4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgh8j-00000008AVK-33le;
-	Wed, 21 Aug 2024 08:56:25 +0000
-Received: from mail.manjaro.org ([116.203.91.91])
+	id 1sghLh-00000008CfX-2wh4;
+	Wed, 21 Aug 2024 09:09:49 +0000
+Received: from mail.manjaro.org ([2a01:4f8:c0c:51f3::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgh7z-00000008AMJ-2CPO;
-	Wed, 21 Aug 2024 08:55:40 +0000
+	id 1sghKz-00000008Cb1-2OFN;
+	Wed, 21 Aug 2024 09:09:07 +0000
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=manjaro.org; s=2021;
-	t=1724230538;
+	t=1724231343;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=o5+mhHoQRTBRXRWrYFtxPdPmjZzokWCEndZVOtR565Y=;
-	b=m6DfmStz8SOfq5zC8n1iqsMD1H19KuNWrmoKefRudJe2SkRfA0y5bX/XXa4rrZVRZ+6eUb
-	fhTu99IP0+sYoeXAs5dGU6hk3Z0JirUAhpOMWvtcE+aN5+z/gn8u2/anp4jSzqNa6lSvi8
-	8fBcf4z49/bRRjAVWUM+seXMepVHObDXjV8HwR8f6xOh8wHGAKz+N9GpXRZ3t+0tCeYKIu
-	DUCrbTxs51/FT/yRKtRqKcgIfWT0BNEdRLR5y99K8XG1H89jkoHqTkl47ulw780M7f2zhL
-	m7RieNEze6AZNPDpju8msLMsOmJoDzZ6Ji3fg7IAKJd/brqK8obynNDzMOpyUw==
-Date: Wed, 21 Aug 2024 10:55:38 +0200
+	bh=KnuXtuSFEhMmZPIHCVemmAS+lD9TQ4aP2hCr8AgCkXc=;
+	b=a0rF/+1LfI97JuyVlhGIwDzyth9/l0OMMZUt81srp2rWt4dkkM6bd0ZaWWTYfGrJc5A1tv
+	pUfu43vT6KSTOexVuMJLUaGKuoUQ1Q9eqgjcYEZazt2HeiiGsbE+K8aUJvnn4m3xIl2+oi
+	KI1ZS+5sPyt6+fCGBjHyZNmFZ5tiUSHBQ95UHBEl/Hl1rR/LbgPP8kRNBCyDmGcuA5ehkX
+	oUarZQQCxjfAZ/bOSUW1sjEmlprH0DPmERR9xcyLMLloiw5BYzaKLqH1evyeJNtUB09YLT
+	ydNkBfQH8JW+upU5iAAuO6o8rxXuJQwx4S1uTATV8yPltOWvH95thM5+UpdGFg==
+Date: Wed, 21 Aug 2024 11:09:03 +0200
 From: Dragan Simic <dsimic@manjaro.org>
 To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
 Cc: linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
  vkoul@kernel.org, kishon@kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/3] phy: phy-rockchip-inno-usb2: Handle failed extcon
- allocation better
-In-Reply-To: <39189616.J2Yia2DhmK@diego>
+Subject: Re: [PATCH v2 3/3] phy: phy-rockchip-inno-usb2: Improve error
+ handling while probing
+In-Reply-To: <12869965.VsHLxoZxqI@diego>
 References: <cover.1724225528.git.dsimic@manjaro.org>
- <96200baf794a0c451f3bbc3f5530b8cf0e359dfc.1724225528.git.dsimic@manjaro.org>
- <39189616.J2Yia2DhmK@diego>
-Message-ID: <8f1f70ffdf5f52347c47cad31bf0a7da@manjaro.org>
+ <866445027a4f41165c872f494b04c218b6e67b09.1724225528.git.dsimic@manjaro.org>
+ <12869965.VsHLxoZxqI@diego>
+Message-ID: <486bddb6aad14d05a3fb2d876d0d9d0d@manjaro.org>
 X-Sender: dsimic@manjaro.org
 Authentication-Results: ORIGINATING;
 	auth=pass smtp.auth=dsimic@manjaro.org smtp.mailfrom=dsimic@manjaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240821_015539_723278_A6EEEDAD 
-X-CRM114-Status: UNSURE (   7.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240821_020905_802169_94C3685A 
+X-CRM114-Status: GOOD (  14.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,16 +74,35 @@ Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjAyNC0wOC0yMSAxMDo0MSwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gQW0gTWl0dHdvY2gs
-IDIxLiBBdWd1c3QgMjAyNCwgMDk6Mzc6NTQgQ0VTVCBzY2hyaWViIERyYWdhbiBTaW1pYzoKPj4g
-UmV0dXJuIHRoZSBhY3R1YWwgZXJyb3IgY29kZSB1cG9uIGZhaWx1cmUgdG8gYWxsb2NhdGUgZXh0
-Y29uIGRldmljZSwgCj4+IGluc3RlYWQKPj4gb2YgaGFyZGNvZGluZyAtRU5PTUVNLiAgVXNlIGRl
-dl9lcnJfcHJvYmUoKSB0byBhbHNvIGxvZyBhcHByb3ByaWF0ZSAKPj4gbWVzc2FnZXMsCj4+IHdo
-aWNoIGlzIGZpbmUgYmVjYXVzZSB0aGUgY29udGFpbmluZyBmdW5jdGlvbiBpcyB1c2VkIGluIHRo
-ZSBwcm9iZSAKPj4gcGF0aC4KPj4gCj4+IEhlbHBlZC1ieTogSGVpa28gU3R1Ym5lciA8aGVpa29A
-c250ZWNoLmRlPgo+IAo+IEhvdyBkaWQgSSBoZWxwIHdpdGggdGhpcz8gOi1ECj4gCj4gUmV2aWV3
-ZWQtYnk6IEhlaWtvIFN0dWVibmVyIDxoZWlrb0BzbnRlY2guZGU+CgpUaGFua3MgZm9yIHlvdXIg
-cmV2aWV3LiAgV2VsbCwgeW91IHN1Z2dlc3RlZCB0aGF0IGRldl9lcnJfcHJvYmUoKSBpcyAKdXNl
-ZC4gOikKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LXBoeQo=
+T24gMjAyNC0wOC0yMSAxMDo0NCwgSGVpa28gU3TDvGJuZXIgd3JvdGU6Cj4gQW0gTWl0dHdvY2gs
+IDIxLiBBdWd1c3QgMjAyNCwgMDk6Mzc6NTUgQ0VTVCBzY2hyaWViIERyYWdhbiBTaW1pYzoKPj4g
+SW1wcm92ZSBlcnJvciBoYW5kbGluZyBpbiB0aGUgcHJvYmUgcGF0aCBieSB1c2luZyBmdW5jdGlv
+biAKPj4gZGV2X2Vycl9wcm9iZSgpCj4+IHdoZXJlIGFwcHJvcHJpYXRlLCBhbmQgYnkgbm8gbG9u
+Z2VyIHVzaW5nIGl0IHJhdGhlciBwb2ludGxlc3NseSBpbiBvbmUgCj4+IHBsYWNlCj4+IHRoYXQg
+YWN0dWFsbHkgcHJvZHVjZXMgYSBzaW5nbGUsIGhhcmRjb2RlZCBlcnJvciBjb2RlLgo+PiAKPj4g
+U2lnbmVkLW9mZi1ieTogRHJhZ2FuIFNpbWljIDxkc2ltaWNAbWFuamFyby5vcmc+Cj4gCj4+IEBA
+IC0xMzc1LDggKzEzNzIsMTAgQEAgc3RhdGljIGludCByb2NrY2hpcF91c2IycGh5X3Byb2JlKHN0
+cnVjdCAKPj4gcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+PiAgCXJwaHktPmlycSA9IHBsYXRmb3Jt
+X2dldF9pcnFfb3B0aW9uYWwocGRldiwgMCk7Cj4+ICAJcGxhdGZvcm1fc2V0X2RydmRhdGEocGRl
+diwgcnBoeSk7Cj4+IAo+PiAtCWlmICghcGh5X2NmZ3MpCj4+IC0JCXJldHVybiBkZXZfZXJyX3By
+b2JlKGRldiwgLUVJTlZBTCwgInBoeSBjb25maWdzIGFyZSBub3QgCj4+IGFzc2lnbmVkIVxuIik7
+Cj4+ICsJaWYgKCFwaHlfY2Zncykgewo+PiArCQlkZXZfZXJyKGRldiwgInBoeSBjb25maWdzIGFy
+ZSBub3QgYXNzaWduZWRcbiIpOwo+PiArCQlyZXR1cm4gLUVJTlZBTDsKPj4gKwl9Cj4+IAo+PiAg
+CXJldCA9IHJvY2tjaGlwX3VzYjJwaHlfZXh0Y29uX3JlZ2lzdGVyKHJwaHkpOwo+PiAgCWlmIChy
+ZXQpCj4gCj4gSSByZWFsbHkgZG9uJ3QgdW5kZXJzdGFuZCB0aGUgcmF0aW9uYWxlIGhlcmUuIFVz
+aW5nIGRldl9lcnJfcHJvYmUgaGVyZQo+IGlzIGp1c3QgZmluZSBhbmQgd2l0aCB0aGF0IGNoYW5n
+ZSB5b3UganVzdCBpbnRyb2R1Y2UgbW9yZSBsaW5lcyBvZiBjb2RlCj4gZm9yIGV4YWN0bHkgdGhl
+IHNhbWUgZnVuY3Rpb25hbGl0eT8KCkFzIHdlIGtub3csIGRldl9lcnJfcHJvYmUoKSBkZWNpZGVz
+IGhvdyB0byBsb2cgdGhlIHJlY2VpdmVkIGVycm9yIAptZXNzYWdlCmJhc2VkIG9uIHRoZSBlcnJv
+ciBjb2RlIGl0IHJlY2VpdmVzLCBidXQgaW4gdGhpcyBjYXNlIHRoZSBlcnJvciBjb2RlIGlzCmhh
+cmRjb2RlZCBhcyAtRUlOVkFMLiAgVGh1cywgaW4gdGhpcyBjYXNlIGl0IGlzbid0IGFib3V0IGtl
+ZXBpbmcgdGhlIExvQwpjb3VudCBhIGJpdCBsb3dlciwgYnV0IGFib3V0IHVzaW5nIGRldl9lcnIo
+KSB3aGVyZSB0aGUgcmVzdWx0aW5nIG91dGNvbWUKb2YgZXJyb3IgbG9nZ2luZyBpcyBhbGVhZHkg
+a25vd24sIGFuZCB3aGVyZSBsb2dnaW5nIHRoZSBlcnJvciBjb2RlIAphY3R1YWxseQppc24ndCBo
+ZWxwZnVsLCBiZWNhdXNlIGl0J3MgaGFyZGNvZGVkIGFuZCB0aGUgbG9nZ2VkIGVycm9yIG1lc3Nh
+Z2UgCmFscmVhZHkKdGVsbHMgZXZlcnl0aGluZyBhYm91dCB0aGUgZXJyb3IgY29uZGl0aW9uLgoK
+SW4gb3RoZXIgd29yZHMsIGl0J3MgYWJvdXQgYmVpbmcgYXMgcHJlY2lzZSBhcyBwb3NzaWJsZSB3
+aGVuIGRlY2lkaW5nIApiZXR3ZWVuCmRldl9lcnIoKSBhbmQgZGV2X2Vycl9wcm9iZSgpLCBpbiBi
+b3RoIGRpcmVjdGlvbnMuICBJIGhvcGUgaXQgbWFrZXMgCnNlbnNlLgoKLS0gCmxpbnV4LXBoeSBt
+YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
