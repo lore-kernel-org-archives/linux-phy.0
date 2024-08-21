@@ -4,74 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CCBDC52D7C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 901E3C52D6F
 	for <linux-phy@archiver.kernel.org>; Wed, 21 Aug 2024 08:40:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fdegLfpy5tA+c482NFznovZwYRvMxZLjrohe9bQhXL0=; b=2YqxJGiZDJcJWT
-	KhFTnbxDob2al5BzjK1c6nOJ7CorN4YoJISGfPcu7QwMigWAPKBfhYC/hPmGTjXjYK5tpcW6jqtBi
-	0ySb8xzK92+qdfikFgpKRlq9rl5iW10NdZxPbCXwvK3prw3y6XSJhliOGSAn2hSZxSBW+WdwpxI57
-	MdgU2iWNWL7LYFpklVGoJuiYVaNF6KpySeGXIbuiilE/7WOh3hCwt83yDKW/8k+vIXR6uSnXaFRVu
-	VZVhFQDHWKoEg33Abw8OrC4Yq3u1Xiq3BpctCSGHXNXZYioyGdxxLCIWCQmvyIW8Y41/mSmtmUG7b
-	XeCGGGNm02x8AnMKailg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IQ6bRmsSvvxn7OI2heTcG31S+YfmqxvZ02O1fTSkxxI=; b=qB8a75ZIClUSi1
+	YqWmMN/QS30MbDhilX0OQi3D2yLq42hUnCBKVoLnr6/CVQWTkGduEQ85vQiVIK64W+8/yT27lZ0hK
+	Ih0GdgnSDmFNW3mqW/dygRrr+IZjMh6dNIu+RIXgwx+nOEuhzHHxmg3j64Zvwti0zZwi4Fusl+FLM
+	OBD0CrfgKBPBxED97MNfdh26UKPioDSbclfR7OBDWyS9+yQB/+KnrG3V/H8q4HmZz8wfJX4Coe20U
+	4rGf4n/sUe0DjNK6khxhI75mOFr9yqUDRDZ9TQUcwdgoqdTwEdf3JJuH8tHgzdyYuKuPp4WKJQIhM
+	aZBw68ZmYE3gzjGmXdpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sggth-000000087Ed-40xv;
-	Wed, 21 Aug 2024 08:40:53 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1sggti-000000087Et-1Crr;
+	Wed, 21 Aug 2024 08:40:54 +0000
+Received: from mail-lj1-x233.google.com ([2a00:1450:4864:20::233])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sggsC-000000086uE-485l
+	id 1sggsE-000000086uc-0zrh
 	for linux-phy@lists.infradead.org;
 	Wed, 21 Aug 2024 08:39:23 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-533488ffb03so564967e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 21 Aug 2024 01:39:20 -0700 (PDT)
+Received: by mail-lj1-x233.google.com with SMTP id 38308e7fff4ca-2ef2d96164aso72585901fa.3
+        for <linux-phy@lists.infradead.org>; Wed, 21 Aug 2024 01:39:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1724229558; x=1724834358; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Me8QiB6xyaZlcbL2CCoVp22MMqKHiaQrWWtzVJ9JT8U=;
-        b=WgLd2aP1EWbMn2O91vNglgyGPIzgnSZIuTjJIyK0k+81e/uRya/MGk+rtD+0wXhW1W
-         yRDWGpCvklK3JSAQ7ae+UMZOANP+vbYXdVDDPNC7/0teHCgcsPBwz0ZBRtk0XjeWtiP2
-         im4BPcPEAHcHg62GY4jlt9pA8P3iexJAOWzo+zXkSy8wYWs7RogMsXCgK4BEX92jlVV2
-         0jrFcO+mnELySE2gTQ1njegvuIOaQ1CxA+1QyzGxJx8UFu8wiiSu4TtEDTIGKi3kpy6w
-         0s1plzLKCD1B+CsvLCWGphZQYA1NxlsN69m+UoKveE124231gQ9yGre86tY3zb9hzmTA
-         mTrg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724229558; x=1724834358;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1724229560; x=1724834360; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Me8QiB6xyaZlcbL2CCoVp22MMqKHiaQrWWtzVJ9JT8U=;
-        b=h1FAkhT7kdJLMJ+njs4StZF8/WsLVGIxR5CbU9gLJbNH3Ruy+2FTPAeo3Ah8OXpJx5
-         rIWPYUkOJ2uoLxZyH7nxyTIYFT0MdJu2lWzkfkRm00FSsH0quWxR/qiAoP0a34MvnCuM
-         tJhxmTUswJPcNiGcMzndnypuyzsH4qc9PJHS701FvWtTrNEU7lh5W9Idowf6iA/lpqVx
-         35g+FrfjfzckTmiSLZv5iP9DnAHuDt8KrjxxLQscci8vIaCMyT/xMUybVPfAulN9+IM1
-         esrb29D1iq9fDkP7xTmBApJyPGVVVlCQZJ5SwAIHhg32UcUBK2tW85RgiUqSB22N3E75
-         H23A==
-X-Forwarded-Encrypted: i=1; AJvYcCUCKXAj13qvhFSIvgh4rBKMJGmidQe2dxoFin6ZRGGZFsvtYN0rR5rxwZ+AyEUdZE5MrdiFqqSU9R8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyNBxcjkHapjCngV0l68nBABFfJ7fORo7TXdJme3cobG5sEhTS4
-	Nln4swZY3dO+VLxo+8A2P87Sx3l5No3fh0gbDb/GKR3z9FpuvpKJzMs6XXMts68=
-X-Google-Smtp-Source: AGHT+IGj+hXZYBllOsX/kgCr//z3RQ8wmghc3L1/myZ0YR48vdXPJJn0GqAwPLWXTU3Dh0QVdCiOEg==
-X-Received: by 2002:a2e:b8cb:0:b0:2f3:e2f0:f79 with SMTP id 38308e7fff4ca-2f3f893f8famr11704031fa.38.1724229558336;
-        Wed, 21 Aug 2024 01:39:18 -0700 (PDT)
+        bh=XW5mUnNxro8riCIyxaHkbcC2c1AimCjEWCDq55C4owo=;
+        b=xm2zujAzodCsm37wsJtXWxWofQe463MZjLKNnbi3ljJRiefZkrnVcSpjwKXHSZBR9k
+         yBJZ039FHgiQOR7iMMRxK7UsbMaRKUDRPLxLiQTGr83Efk+cRw+tloSbZdYtHqDoCe3Q
+         FAeU2vXu0+bPBPygnLMlLouUwM7+gSwwxS+vSH/1L+1xOYLvuYOyvLqQfAdEdJth4pPU
+         oMQDPmP3LcDNX+EmnAEat56K8V8HVr/1NFTMs+KRxmOp03KCVTdJLz6Yz2YCL6LnIYcI
+         onw5hXM7Y8bRQ+yrZI90XA1plBvjtKJ2Bw53a2rY61lFGvzgbpHs5mJuKZsHZIItQmBz
+         N1nQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724229560; x=1724834360;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=XW5mUnNxro8riCIyxaHkbcC2c1AimCjEWCDq55C4owo=;
+        b=W0Lfo4iMORVdxyhbL+njBhjBhGlXV38TqyAJfoCBdz0jOU1X6Y/R98dxH1r7sgGYbr
+         h++Xr4QuTsjszsJEqHOWYgLUTv4q5AQCXTDIy13K4kz6DW9iqQ/zEyCc9S5OSoAx5PCq
+         bwlzKCXi8h0UsTkK7B+DJjRW6a7unkU5l6DVWRZ4TnSxiTTR2ejcJljj+s7tYygSg8m2
+         KhqD65HB/BhEPlrxtRhnVc8+HlknI7z+Fz6Rk9RVbi/YHIN6T6V2oTN1TCo/G0KTT4DL
+         a+w+pHf4QtFTBB/7Qp5RvODAROxMZgvjKyTPEoP4K8XHptVXxmqVG4y9MAbayy/tVRrq
+         vObA==
+X-Forwarded-Encrypted: i=1; AJvYcCVtGsEl8aGidQWn3/jB4Modhi/ZeO0WysulBpkdjXsamJuGr/s2apZ/8rlKNG6pFLMdhOSlOaz7mTM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy+kDQU9COU7vlD4c4Fq8sjn7bNL5Ayk4cg9tr3YbzJWdF8n0Ep
+	Noov3FglGKbzEDyN7CfoRF3djiVyg9bCipEYIbM6gQuhh+IgPZbx1udmkU/aN5Q=
+X-Google-Smtp-Source: AGHT+IERO+IDQyEBp/hErnAumhznnmvnA3dFgXMO7vZvWt4uQGrSdNVPCWdcTB6bCEgyLm2lNmDM0w==
+X-Received: by 2002:a05:651c:b12:b0:2ef:26f2:d3e2 with SMTP id 38308e7fff4ca-2f3fd22519bmr3157451fa.2.1724229559656;
+        Wed, 21 Aug 2024 01:39:19 -0700 (PDT)
 Received: from [127.0.1.1] ([82.79.186.176])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5bebc0817a8sm7785019a12.84.2024.08.21.01.39.17
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5bebc0817a8sm7785019a12.84.2024.08.21.01.39.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 Aug 2024 01:39:17 -0700 (PDT)
+        Wed, 21 Aug 2024 01:39:19 -0700 (PDT)
 From: Abel Vesa <abel.vesa@linaro.org>
-Subject: [PATCH v2 0/2] phy: qcom: qmp-pcie: Add support for Gen4 4-lane
- mode for X1E80100
-Date: Wed, 21 Aug 2024 11:38:59 +0300
-Message-Id: <20240821-x1e80100-phy-add-gen4x4-v2-0-c34db42230e9@linaro.org>
+Date: Wed, 21 Aug 2024 11:39:00 +0300
+Subject: [PATCH v2 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Document the X1E80100 QMP PCIe PHY Gen4 x4
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAKOnxWYC/4WNQQqDMBBFryKz7pSJJm3oynsUF6kZdaAkkhRRx
- Ls39QJdvgf//R0yJ+EMj2qHxItkiaFAfamgn1wYGcUXhppqTaZRuCq2pIhwnjZ03uPIQa8aB2c
- bcsaQed2grOfEg6xn+dkVniR/YtrOo0X97P/mopDQ9FYr7/huDbVvCS7Fa0wjdMdxfAEN+0Oxv
- wAAAA==
+Message-Id: <20240821-x1e80100-phy-add-gen4x4-v2-1-c34db42230e9@linaro.org>
+References: <20240821-x1e80100-phy-add-gen4x4-v2-0-c34db42230e9@linaro.org>
+In-Reply-To: <20240821-x1e80100-phy-add-gen4x4-v2-0-c34db42230e9@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -81,25 +80,25 @@ Cc: Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
  linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
  Krzysztof Kozlowski <krzk@kernel.org>
 X-Mailer: b4 0.13.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1250; i=abel.vesa@linaro.org;
- h=from:subject:message-id; bh=9FVwu4pJOklFTnZIWwVB/0zj0Lw5GkvoPp1jvnSF/bw=;
- b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBmxaeuAmocwiEhNdbEfhgTpBcxB8g7XdnzMbZqY
- BkoDb8QsNqJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZsWnrgAKCRAbX0TJAJUV
- VuvOD/9k/CnVQSL37cU5HkAresKxzN2+M8H1F+kjdbyt3zJjgvQ1vHdq7RtWXnlsYrJk8Xggkdg
- AvVYThqKkOAPnOWT7E77CedOdHxs4PwOW2HHD6VDEfBX+6mB2IM+QnHC5X6lXy5dGZjC3wnS7yI
- +DK7EwBjc1wq4mEQ3QV0HEM+kclWvsx9HWJFzzvrAc80KAIiL2/rH1X8dQDpN5fqLCgqQDSRKvG
- aINa9OpAir9l8Wgpwu7r9xYcJtBYD+B7ENYZFXuIa0kKXyvvcUudXzbaVV62LLfKiRNcBVztsRl
- h5RP2wj8tq3axh6zhhPCqocKeNOmNS9kgtVW0d44eV8IQhxbnukwimPjLOjJz+tFlmRFCyiS7kt
- aCtsKU463SVKiaxAU8oKbJRAQ1G7rjTqyS9ansvGekgejEZeU3uUMBQK8951knMNwWUiISxvE3M
- CIs92q2AN80+ZMT51ck1BSFiNvpi8KjAQhIEfpEZq/GiyKVeoUofi/dJ+e1DxjkEnHrcHkZWVHk
- WGEaq/jLc25EjDLH5U+sL5rDVu3OX/3UTe4miflWXRHLaPVjF2hgFFPd+UzDUrJ76gGrHTkVa1D
- qA2LyUFJjV8vaafKn1v6pn9602zbOcKal236qY8XHEBLmkeqP7AQZ/B9wB0jb6y+1lOCfD41UZv
- xrU7PIFNHxJYMhw==
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1471; i=abel.vesa@linaro.org;
+ h=from:subject:message-id; bh=0hjm0dG0v8Da7V655fPK+1NlV7mcfIrkrKbGwkw3CAw=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBmxaeyZXFTjg8Mcst9z+XweZ39L4hKqTRTHYjv4
+ hZfQCe4LEiJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCZsWnsgAKCRAbX0TJAJUV
+ VlauEAC0aywWt3dkE/aKcT3+0s01lx7RDGRvwXYEkB4sc1i1pN2MW7fxw8dBtY95ed05z/SLakb
+ P5dyowNz+CtjoOUmZX4ZuNrDOCuS50RkTkDk8GiKJHF+CT7jCDCaR209SZQXVRXEcbxC0DH9zle
+ MC+nENCbfJ4DV3WItRt6V0bxjcYA8qRWa1wrwNQ7xIl/gsrhvRj3b3obYgDp5enIE/3KR3JQ2jN
+ KkGOjPxbyG9AhiusOE963s2QY264GHHLARqqVt++TtPl8uQ1bHbG5dK/OzD4faM+o8w3uuqVu86
+ bYGRoLSKBYNq0bFqjf+E2iX8dOfaJIyUtHfQiLoM5XtRt+5xK/6T/U1zjyJQqQR1a/XTbP2Ng0v
+ S/iYy6hUeAlec82mTabzRpohNsXlP8LJQFvQu2C/IE/Jhfyz76v/VDkWLeG/WTNwW89AP4KTbXB
+ lscfEHhXaXkq1g46LSy5bZhQb8d14Hp24IOuNO4XIPteTzU9o9pzmPIYZ3ImsLtT0cXcoG3e+Ns
+ 7+rWRru2+eNyz2geJ7uvt+D01XL64IsHCvZCqead/tORbwTrk8jGV0D9jzAcaTd9DpYO2l59lDQ
+ LCCHF+Fq8sqE791eHbZ1VMnXbpgwGJ1lNtDv7XO0In4RusHsxoPC3+K/unlBEbIFu95M0iZ2Dtx
+ JP5ywwt53W20AKQ==
 X-Developer-Key: i=abel.vesa@linaro.org; a=openpgp;
  fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240821_013921_069418_C9D89424 
-X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-CacheID: sfid-20240821_013922_317846_9E534BF8 
+X-CRM114-Status: UNSURE (   7.71  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -117,36 +116,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On all X Elite boards currently supported upstream, the NVMe sits
-on the PCIe 6. Until now that has been configured in dual lane mode
-only. The schematics reveal that the NVMe is actually using 4 lanes.
-So add support for the 4-lane mode and document the compatible for it.
+The sixth PCIe instance on X1E80100 can be used in either 4-lane mode or
+2-lane mode. Document the 4-lane mode as a separate compatible.
 
-This patchset depends on:
-https://lore.kernel.org/all/20240805-phy-qcom-qmp-pcie-write-all-tbls-second-port-v3-1-6967c6bf61d1@linaro.org/
-
+Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
 Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 ---
-Changes in v2:
-- Re-worded the commit message following Johan's suggestions.
-- Picked up Krzysztof's R-b tag for the bindings patch
-- Link to v1: https://lore.kernel.org/r/20240531-x1e80100-phy-add-gen4x4-v1-0-5c841dae7850@linaro.org
+ Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
----
-Abel Vesa (2):
-      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100 QMP PCIe PHY Gen4 x4
-      phy: qcom: qmp-pcie: Add Gen4 4-lanes mode for X1E80100
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index 03dbd02cf9e7..dcf4fa55fbba 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -40,6 +40,7 @@ properties:
+       - qcom,sm8650-qmp-gen4x2-pcie-phy
+       - qcom,x1e80100-qmp-gen3x2-pcie-phy
+       - qcom,x1e80100-qmp-gen4x2-pcie-phy
++      - qcom,x1e80100-qmp-gen4x4-pcie-phy
+ 
+   reg:
+     minItems: 1
+@@ -118,6 +119,7 @@ allOf:
+           contains:
+             enum:
+               - qcom,sc8280xp-qmp-gen3x4-pcie-phy
++              - qcom,x1e80100-qmp-gen4x4-pcie-phy
+     then:
+       properties:
+         reg:
+@@ -169,6 +171,7 @@ allOf:
+               - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+               - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+               - qcom,sc8280xp-qmp-gen3x4-pcie-phy
++              - qcom,x1e80100-qmp-gen4x4-pcie-phy
+     then:
+       properties:
+         clocks:
 
- .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |  3 ++
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 42 ++++++++++++++++++++++
- 2 files changed, 45 insertions(+)
----
-base-commit: 81528d2de965dafd6911a0f9a975fc30b25e7080
-change-id: 20240531-x1e80100-phy-add-gen4x4-fa830a5505b6
-
-Best regards,
 -- 
-Abel Vesa <abel.vesa@linaro.org>
+2.34.1
 
 
 -- 
