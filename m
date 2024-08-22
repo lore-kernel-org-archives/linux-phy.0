@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8F51C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 16:49:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A775C52D7C
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 16:50:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2Pk0jxPqXoJ18234wIdi9/AWq/qVzBhQ/C2a0DkXkII=; b=d5GaKDqOESabpWOJriSGfV297T
-	+/nK3ao5tUQTIY14fWV7GEppfzI735dFcWnvdwYx0iJxmEDIqstjCtg2dIe2uE1o1jvMijs/rHHm2
-	TOuN4QACbyZtlkPn8yHYMiMRXkJOJu9nbSJK702urU8DYw4iys6A9+ATf3M6xVqdfMlWJBKYqEovu
-	qFQNZJ7E2EB1OXSUrySOlJTaQp3RogoEjWusoLKiIz6xBRRc1l4o0oNrROlj77JHTALYY6KMCd5nP
-	KFSEJhTbtULtIYL47euz87QtHtDxo2hEyngcqWXFMmkpSJKzOvaWuqPzlSSeP/cFIvuyGemxTFwQ+
-	V9/OsCmg==;
+	bh=PriIJNiuSUo8F50K8ZRc6V55dP55oE2Ime8cpmd2rQQ=; b=LMZXKEPXYZbF+Dc6gH1jOiMMqI
+	FEK6QkYiZqyL46DB/BBnrQ3e8PNc7JG2RdAV7eODr3PD01hnIWwTPh3nKY+HhPAV9ohanp/vUd8a/
+	IJURNxD2gb720gVAddqhcMKofdsMXg4Pk2lh+tUsONn1taYDh1kQKrKepRtvbqM4Zkve5veh3MIzB
+	SNFyQfkP2y6JAto6uZCvuyFVeX0zuApgtl9nXTduzSynIFsFR2y5hadmPXQ8KjPVNkmr63ziF6siP
+	6jJ4cVEqvADzTh6F97k8r29lB6cSpi/wqmPRHkHCyMhG6VlZbTcGC0XQ/YAV123bO23v9ZuGYeO8z
+	tQTmNVcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shAzs-0000000DfRu-1ucl;
-	Thu, 22 Aug 2024 16:49:16 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1shB0c-0000000DfjM-3O6f;
+	Thu, 22 Aug 2024 16:50:02 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shAx6-0000000Debm-28fC;
-	Thu, 22 Aug 2024 16:46:26 +0000
+	id 1shAxN-0000000DehO-1Gbz;
+	Thu, 22 Aug 2024 16:46:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id D5BA0CE0DFA;
-	Thu, 22 Aug 2024 16:46:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A083AC4AF0B;
-	Thu, 22 Aug 2024 16:46:17 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id B657261221;
+	Thu, 22 Aug 2024 16:46:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22688C32782;
+	Thu, 22 Aug 2024 16:46:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724345182;
-	bh=at2jGYed94rBd41ln5QjqjDRA9cbMcgERaHl5UP9H88=;
+	s=k20201202; t=1724345200;
+	bh=FvxdiKHyEdgk3+LYFNwSArmpeWuVoucsDBFvg6Z/Hro=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=GvxWs3Tq4IT0UVfWQiSFtzytZ94M0iLcK4Wgkz5Xmr2vOTGsVf2NR5mBrLtTSTeiW
-	 WdDum80RaXSldqLfPyKs4yfYjMqfBiiIgxXLNTgOy/AU2fTqUBKZUbe6yKBedy9ayq
-	 Sytb8FozfLXBUKvLhIe/v3pfw2iZsnDIMhwzozIFX+FBkNa8lVLjYRwxErH4UbjqaK
-	 rCvnPzHK/KXg1fCuALp2Xfcaz7czlAHguqtgQJR7jj0Xpbmb8R6DCFwQiCJaOjanlX
-	 lexCshb2deERus9lTlgrIlV+3hp9F7nDU+Klum4ZixyOrWSOtYuzse7pwmwhniwg4H
-	 f69gq5K570aaA==
-Date: Thu, 22 Aug 2024 17:46:15 +0100
+	b=gTtiZOl2pgiaJ0lGKZJOPwRpHDst0oReqOU+oGdVWRWSzkvGeAauMWry4M2oXseVm
+	 DdjTwR68Rv/4Lwr2u8uz7hqPqnH5fXHm3f+mXILdvdPH1ZuewKTu4MO5T00uWH3JX9
+	 XlmZZYD+n1reOcP4g7843IcnE+SFdc2aa+W1lVc/BoN7xP4x9NAhPlDZjwjC+2lF0I
+	 D1pLNf5BrL3lTy+tUXjRm/5tRB+S+umjUv4AAinQv/aLwHt44Ph3xJ5tzrtaWAvAHH
+	 6EuEYEzcPzoZ1AbSE3MARNVGgmgOP7rXkXkGDh8Nfa1Sd2YsyDg2hFZH0ILdz1WI5q
+	 LIUfqMl0DeuWg==
+Date: Thu, 22 Aug 2024 17:46:34 +0100
 From: Conor Dooley <conor@kernel.org>
 To: Claudiu <claudiu.beznea@tuxon.dev>
 Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
@@ -55,16 +55,16 @@ Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
 	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: Re: [PATCH 09/16] dt-bindings: usb: renesas,usbhs: Document RZ/G3S
- SoC
-Message-ID: <20240822-encrypt-putdown-cc8770aa781d@spud>
+Subject: Re: [PATCH 11/16] dt-bindings: phy: renesas,usb2-phy: Document
+ RZ/G3S phy bindings
+Message-ID: <20240822-idiom-parasite-1c025f81a399@spud>
 References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <20240822152801.602318-10-claudiu.beznea.uj@bp.renesas.com>
+ <20240822152801.602318-12-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
-In-Reply-To: <20240822152801.602318-10-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20240822152801.602318-12-claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240822_094624_843041_D29BD2D9 
-X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-CacheID: sfid-20240822_094641_410896_AFA72953 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,47 +77,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============9064367473877188526=="
+Content-Type: multipart/mixed; boundary="===============6527018736766696563=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============9064367473877188526==
+--===============6527018736766696563==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="5UGYhxQz8p7q9/9a"
+	protocol="application/pgp-signature"; boundary="n6tcZc8VQgDU6IS+"
 Content-Disposition: inline
 
 
---5UGYhxQz8p7q9/9a
+--n6tcZc8VQgDU6IS+
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Aug 22, 2024 at 06:27:54PM +0300, Claudiu wrote:
+On Thu, Aug 22, 2024 at 06:27:56PM +0300, Claudiu wrote:
 > From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 >=20
-> The USBHS IP block on RZ/G3S SoC is identitcal to the one found on the
-> RZ/G2L device. Document the RZ/G3S USBHS IP block.
+> Document the RZ/G3S PHY bindings. The RZ/G3S USB PHY is almost identical
+> with the RZ/G2L USB PHY. The difference is that there is a hardware
+> limitation on the max burst size used when the BUS master interface
+> issues a transfer request for RZ/G3S that is configured though PHY
+> registers.
 >=20
 > Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
 Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
---5UGYhxQz8p7q9/9a
+--n6tcZc8VQgDU6IS+
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZsdrVwAKCRB4tDGHoIJi
-0qBlAQCdmgDx2vSq44d6AZcY/EME/mmHOP2w0IAW97mAF6MKJQEA7fBLbHgGSw8b
-n5k//O/k2RK4u2MfswfPY9B40HEOUwM=
-=L2pF
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZsdraQAKCRB4tDGHoIJi
+0tFUAP4+QkcGlFAZRCml52Rk+JBPvo9JE4TS+hLepapieOITIwEArIn+vxHSvlPF
+SRdWF33ftrzazHqHTyx3A1xVMa7DngM=
+=+2KY
 -----END PGP SIGNATURE-----
 
---5UGYhxQz8p7q9/9a--
+--n6tcZc8VQgDU6IS+--
 
 
---===============9064367473877188526==
+--===============6527018736766696563==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -128,5 +131,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============9064367473877188526==--
+--===============6527018736766696563==--
 
