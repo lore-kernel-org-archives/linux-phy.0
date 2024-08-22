@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 277BEC3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 07:10:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83239C3DA4A
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 07:10:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YYOcnk6/6riigDOXB4wCgGUyd9K5Qb8hU9qqVnDbk0I=; b=12GumvWFEgowLR
-	m3vNZA07hV1UXK/MwjCkB5U95TJkCueBOUDCXw1s+zs/DOO/TrqEwfThh39lUlv3p20mK7YN+g/l5
-	hxVWS+vwyvmrwmhtXXh0B59dMJw+ASH1YLWre1bCPqIsz01fiIIZ3p5CuZqu8fTjO+4GeJEDNafh2
-	Ef1pCEB2Aivb9bIrdH7LBjiAhTi9/zNyn7FpLABb9tEG431ot7fWurwzsERtjU0ENhN1G3oITyqAH
-	mJq7fvIr/sxrGq8QDJ1lnZxCoo0ssyT7jVlRG//KDQAmFhGM1ODjA0zvx3cubLcYmBZ0Y9lwqP8kv
-	2c92Q/692Af42YzSw0Wg==;
+	List-Owner; bh=d7DfmbxHYSAWRtrGx7n8aA/JJ4hDX5cz+H9PG7kG5rk=; b=yWkVLM+4A/4DYA
+	M+6nAU1hzIrXiEX224cYOPdqh5P0f6P/iH4NFEQ0RwF8B/ua8ek68hZTz0zj3XHF3OtMUniQGeZkA
+	Riqe4oanU/8oDrFwj3Iw96QaK92ORTFB1Luvzs8CH+7lz2OAJ1DwEkMm0SJo14cWnd2zrL8wotiml
+	BRCIX6kJR4BcYBPh2/lceLiBLAH/wt3aJS3kTUzhCVXnaG8Eqn9RLGFZ6kRDj7HftbZAxb7/rmTzB
+	vmCQ806xVa91+a9NWaxznKU0jmzSpr2JydSBrSVOtf4Fh+MfvntS040BzjUV6SARAyW+mvYovyTqn
+	dig/ohELFsqvYauYbziQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh1xK-0000000BlpK-3aYB;
-	Thu, 22 Aug 2024 07:10:02 +0000
-Received: from mail-wr1-f45.google.com ([209.85.221.45])
+	id 1sh1y1-0000000Blsd-0xw2;
+	Thu, 22 Aug 2024 07:10:45 +0000
+Received: from mail-wm1-f50.google.com ([209.85.128.50])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh1xI-0000000BloO-00kg
+	id 1sh1xy-0000000Blrr-3Wqf
 	for linux-phy@lists.infradead.org;
-	Thu, 22 Aug 2024 07:10:01 +0000
-Received: by mail-wr1-f45.google.com with SMTP id ffacd0b85a97d-3719f0758c6so203428f8f.1
-        for <linux-phy@lists.infradead.org>; Thu, 22 Aug 2024 00:09:59 -0700 (PDT)
+	Thu, 22 Aug 2024 07:10:44 +0000
+Received: by mail-wm1-f50.google.com with SMTP id 5b1f17b1804b1-4281faefea9so2561565e9.2
+        for <linux-phy@lists.infradead.org>; Thu, 22 Aug 2024 00:10:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724310598; x=1724915398;
+        d=1e100.net; s=20230601; t=1724310641; x=1724915441;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=3H1kaiqBDVxlwA4iJxcavRAusD8vGrmkXFJ66NtzGlw=;
-        b=oVR/A/6vQJYCwd4qZ/e0W2+GGqW+mKah+mWXTcNbdXtAVwxDsfmR9hMp3mseaChJ3O
-         aDYF/rOaxzBhxr5+rqbKfonBRclOh+IDK+eJRjRreYkBxcL1nmqy3fI2hUPYczeMpYwj
-         8EnWcKQDah9k8fFVgsFYZAyUhgf6IAxFsaqcg4EEOH+Wu81gkDLjeCUFYiLuwNgC4BqC
-         GiH1/+/NnHoPufpR9u72/MtQNq4AcYPUxM6BMXBe/wfevnUo/NBwNeqCGz56kZz3ore9
-         9D3+POE7zyl07G8IXKM+11CfQ0AKrpZSO7brepZCDniVgODWFvpAiE0Wa5E4i6SfcBzS
-         djQw==
-X-Forwarded-Encrypted: i=1; AJvYcCWS4Z8tU+kjL9wSIPCW6nnhWrNcek6/IULeXWGeLcBASChBMCsPT6185siYvue//DjmCiq7SFAYdWU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxP4+4Q656zG+IBALZ2l6REY3GcEsxW6gRcjt8dlBZ13YI3cOR1
-	hF93i9vi6LdHyn+EKnDHgTorn7W9tT2jclSxEpbBGmVp8SpWmM08
-X-Google-Smtp-Source: AGHT+IEaLQJPXHf0jzTCHz44xI8pF+94YiU8T8uZsTFO0g+IRTIrxZhafKN0PoMor5S2XB+9sLTnrA==
-X-Received: by 2002:adf:a382:0:b0:371:86bc:6c05 with SMTP id ffacd0b85a97d-372fd57c982mr2501966f8f.10.1724310597974;
-        Thu, 22 Aug 2024 00:09:57 -0700 (PDT)
+        bh=WJLS+VMzjQh/qW23wkGqqs7vCL2z1TRLs+avsxI9g9U=;
+        b=d0tO5AYzcXaB7wRLYHoTiN/X/DXPdKbDpfNmGvpWQHzQCbRcRGEzBId2WVRVMh1/wx
+         TiNToXXf9cLqv6jd9l2zG5IMEKc11iEE0YbBl9OuX2N79nJpFu8F+FrpG6WNbu+rlSGr
+         F4y6EufaXyo4/cMhyUmpilIIgQmprixInkRWPLxR3QI1O41rnSkNDe5yaJPMLC7K4K11
+         MESzcn5Su8NpRg6YLGAl+Z9+CmiCZMLFbCtDNeK28N+82jPuucJbB+7yp/8Jv+9097/C
+         GRfKvGO+CkB09MLZv1rxJlwxEwro6GLRm5kHL41ef3Uof7faAjDB9XbcoLDRI9455tbk
+         cyRQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWzz0bk+3ZjVrD/zFpcbtbfgR0BaiKazcZ6ISTWY0QWkbaf/L+S1WoWDN2Hh62/d15o01liufmM2Zg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwOdrJI/LWT7yXQ1ojt6IvK/r9SvE5FmL+p9XwIQ6URKwu/Vj+n
+	cU+ng0cyLnP2KidQY9bByiNIaNG8krurZ+R6zmkN3XxKFeeOlq9f
+X-Google-Smtp-Source: AGHT+IGhVPATLSo8mqmfADnE2rN+0EPjvp3o+g8b3YIlLtzolWkMDw+jE12kniXWaVfmPiUENvKPmw==
+X-Received: by 2002:a05:600c:a0e:b0:427:ac40:d4b1 with SMTP id 5b1f17b1804b1-42abd244b8bmr27855965e9.27.1724310640800;
+        Thu, 22 Aug 2024 00:10:40 -0700 (PDT)
 Received: from krzk-bin ([178.197.222.82])
-        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-42ac514e093sm14020635e9.7.2024.08.22.00.09.56
+        by smtp.googlemail.com with ESMTPSA id 5b1f17b1804b1-42abef81a5esm50053995e9.28.2024.08.22.00.10.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 22 Aug 2024 00:09:57 -0700 (PDT)
-Date: Thu, 22 Aug 2024 09:09:53 +0200
+        Thu, 22 Aug 2024 00:10:40 -0700 (PDT)
+Date: Thu, 22 Aug 2024 09:10:37 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Ilya Orazov <ilordash02@gmail.com>
 Cc: Marc Kleine-Budde <mkl@pengutronix.de>, 
@@ -60,17 +60,17 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
 	Aswath Govindraju <a-govindraju@ti.com>, linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org
-Subject: Re: [PATCH v3 0/1] dt-bindings: phy: ti,tcan104x-can: Document
- Microchip
-Message-ID: <thpryn4unrebkvx4a7jhqmxt5ntmog2gcw3ekh6h72jews4een@b43tsg7poegn>
+Subject: Re: [PATCH v3 1/1] dt-bindings: phy: ti,tcan104x-can: Document
+ Microchip ATA6561
+Message-ID: <txb77x3lkk6gnhzavx5j7ahqg6wjdm2zjpk2fe3z7vopit5kvg@pxom5ang6izt>
 References: <20240821215357.20224-1-ilordash02@gmail.com>
+ <20240821215357.20224-2-ilordash02@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240821215357.20224-1-ilordash02@gmail.com>
+In-Reply-To: <20240821215357.20224-2-ilordash02@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240822_001000_061564_D62CD112 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240822_001042_909496_A0C8831A 
+X-CRM114-Status: GOOD (  13.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,14 +87,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 22, 2024 at 12:53:56AM +0300, Ilya Orazov wrote:
-> Hi all,
+On Thu, Aug 22, 2024 at 12:53:57AM +0300, Ilya Orazov wrote:
+> Microchip ATA6561 is High-Speed CAN Transceiver with Standby Mode.
+> It is pin-compatible with TI TCAN1042 and has a compatible programming
+> model, therefore use ti,tcan1042 as fallback compatible.
 > 
-> As suggested in the previous email conversation on this patch, I am
-> sending this new version as a standalone email. I hope this approach
-> makes it easier to review and keeps the conversation history clearer.
+> Signed-off-by: Ilya Orazov <ilordash02@gmail.com>
+> ---
 
-Where was it suggested?
+Where is the changelog?
+
+Where is the tag you received?
+
+Why sending it again without any of the above?
+
+<form letter>
+This is a friendly reminder during the review process.
+
+It looks like you received a tag and forgot to add it.
+
+If you do not know the process, here is a short explanation: Please add
+Acked-by/Reviewed-by/Tested-by tags when posting new versions, under
+or above your Signed-off-by tag. Tag is "received", when provided
+in a message replied to you on the mailing list. Tools like b4 can help
+here. However, there's no need to repost patches *only* to add the tags.
+The upstream maintainer will do that for tags received on the version
+they apply.
+
+https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
+
+If a tag was not added on purpose, please state why and what changed.
+</form letter>
 
 Best regards,
 Krzysztof
