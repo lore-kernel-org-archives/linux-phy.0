@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3137FC3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 11:02:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C62F1C3DA4A
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 11:41:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mJfWMSgRfMESjjUbqsBFj+zsfeAPNVbhKW/UvZkCQDU=; b=xopIx5F03o4Zqf
-	lqEBCysjsE04e3PPRCp5EV6kuIwNjgfvGIH4f1GukeKrmQFoNL7W6jUUEAx3nIG2iJlPz5cp5kBPe
-	o9m8hTQdw7UD1Lka4LyjHG9dhpGlPmiqZDJXUi4QM/0135EKBjx3XqNgTBM55+TNgzvx+nc9BbDHM
-	wjUEGjEDsd80mEdBHIJ/dW6h0npiZPkWQtp5AIPH7hGzU3lKVZevXhOOpAIHV1ZU3USzuaT0dZ00C
-	z3nAUJdSlyeFkzkgCpf7AMd+u/pb6n2PTelse+71A9SoUhVM88Tq+54e3KyFePpE44Ge5ba4Y4qdC
-	RnDfopiwSNpG4h58+veQ==;
+	List-Owner; bh=T1thJPg54Ps0xOU5qb/hJeYgCOOVGclpwyWn2U/0tco=; b=ESGhILLNXcjX6X
+	GBH5eSbh1khBbCsd7nfWqOaYeXgsz18pKDt6Xl4JoDW9I7Sj641JNMsrO9NvaazyVH57LN06MEgnT
+	wdFX5yxSl/qVgH/2KQ6o/gOEd75tK1hpfhXoZfQu/9mnDmv+7EIvs8DAbP95tauOFDURzRIoFRkwa
+	h9ewgaJYKZU7YREUbFm4V8RHg0jBwJixeGOkzMQjQJUdxHLKcUjVBdxaCAW6w/r9XXMDBkJaRanDw
+	LIje2Sgv9BCSb/LZOsX6k1WaZAwCUnGlDyaNBd1udOUqTvyuaLYIHb4u3JLaBbCVR6wTYvoMwyExK
+	mWcBYAJkgn2G511JP+KQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh5aC-0000000CVip-3BTV;
-	Thu, 22 Aug 2024 11:02:24 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sh6CU-0000000CcKX-1snn;
+	Thu, 22 Aug 2024 11:41:58 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh5a9-0000000CViT-0dYZ
-	for linux-phy@lists.infradead.org;
-	Thu, 22 Aug 2024 11:02:22 +0000
+	id 1sh6Bk-0000000CcF2-1mjm;
+	Thu, 22 Aug 2024 11:41:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 64D476102E;
-	Thu, 22 Aug 2024 11:02:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D12C5C32782;
-	Thu, 22 Aug 2024 11:02:16 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id E05B2A40275;
+	Thu, 22 Aug 2024 11:41:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4751C32782;
+	Thu, 22 Aug 2024 11:41:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724324540;
-	bh=IjGVu6MxuuasM8YQfi8vO+LWFgZ2eOi391Mum6F79MI=;
+	s=k20201202; t=1724326871;
+	bh=7bkCARdi1VmnQkUmpWAJUfPzTKWAbsevARXH+QvJhck=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=m+gQyIx6qbjWu8RKbbwPBOxtxqShP5HlfF+AhbKqCK4sbcFJiUg9ihys9d/GB712s
-	 Cy2wzuR4MkPUswqvparSyGRWdmazPMmPQViRod9UT3Jiryx3Ues1uL6z8F0XPBDIg3
-	 nQU8RtXp7Nxq1s8zechoemGP9JE6UE3h1/2YRTsmQDroea+MLNoE0CZpgzOQfDbQVL
-	 /gyx1PiLBVDtIjxd3I2mWULzIlj/SDOjEActobPbKkkDd4tzy/hHmcjDeUqgQSvKoz
-	 S4anSLtTzACKjvDkHNvsD2DekixEKvmk/ZZqnEz9UqrBi+Cwj1JmkH8YSekUmA+paI
-	 p6I/DOJGuJfVQ==
-Message-ID: <a9e6fd12-345b-46a2-b5a4-d32a65ff456e@kernel.org>
-Date: Thu, 22 Aug 2024 13:02:13 +0200
+	b=lFToW+5ibhCK9zVfe4kzGVgGoX7fCpft0SB6/H/FQzi0vu0O5/HsWxC9Eb+IKRXlJ
+	 hDR+iNIE9C5p5VeDWmiSFN4lTFluJDgMByCIUyEDKfO15aY3ltiptJYMxz0kpcsxB/
+	 G6UGlWlXHpotzfWMaGr4cpnDSVa0vXDRSvK9wM1iBcukffSc2QlT8HUKCVaZkKGSSV
+	 YmvkkAhfT/WoJsVc303u9QkhhJnOmHoq2PBBpcBd/VOi/K66b3c+6KQUduoWsjzzNU
+	 AT4xFJ+evj+/GFGdcBaJ10+mORRwoNpnchZDm17EtxPiCO7RL4Lv1t6/zAW7MwhWI9
+	 elweLubsVZkRg==
+Message-ID: <b95e461b-d3aa-41e4-bf93-f14f853f3f03@kernel.org>
+Date: Thu, 22 Aug 2024 13:41:02 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/1] dt-bindings: phy: ti,tcan104x-can: Document
- Microchip
-To: Ilya Orazov <ilordash02@gmail.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
- Vincent Mailhol <mailhol.vincent@wanadoo.fr>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Aswath Govindraju <a-govindraju@ti.com>,
- linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20240821215357.20224-1-ilordash02@gmail.com>
- <thpryn4unrebkvx4a7jhqmxt5ntmog2gcw3ekh6h72jews4een@b43tsg7poegn>
- <CAGCz5H=vos9sh_ts_ExH8dQSnicFyN+=TfWmBbnqS8egdD+k=Q@mail.gmail.com>
+Subject: Re: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
+ property
+To: Xu Yang <xu.yang_2@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, gregkh@linuxfoundation.org, peter.chen@kernel.org,
+ herve.codina@bootlin.com
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-usb@vger.kernel.org, jun.li@nxp.com
+References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
+ <20240726113207.3393247-3-xu.yang_2@nxp.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -104,10 +102,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <CAGCz5H=vos9sh_ts_ExH8dQSnicFyN+=TfWmBbnqS8egdD+k=Q@mail.gmail.com>
+In-Reply-To: <20240726113207.3393247-3-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240822_040221_357390_058E5E8C 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20240822_044112_754473_36737259 
+X-CRM114-Status: UNSURE (   5.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,31 +123,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/08/2024 12:35, Ilya Orazov wrote:
-> On Thu, 22 Aug 2024 at 10:09, Krzysztof Kozlowski <krzk@kernel.org> wrote:
->>
->> On Thu, Aug 22, 2024 at 12:53:56AM +0300, Ilya Orazov wrote:
->>> Hi all,
->>>
->>> As suggested in the previous email conversation on this patch, I am
->>> sending this new version as a standalone email. I hope this approach
->>> makes it easier to review and keeps the conversation history clearer.
->>
->> Where was it suggested?
->>
->> Best regards,
->> Krzysztof
->>
+On 26/07/2024 13:32, Xu Yang wrote:
+> i.MX7ULP need properly set System Integration Module(SIM) module to make
+> usb wakeup work well. This will add a "nxp,sim" property.
 > 
-> Hi Krzysztof,
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 > 
-> Conor suggested that I should not send new versions of the patch as
-> replies in his mail [0]. So, I sent the new one as a separate email.
-> 
-> 0- https://lore.kernel.org/all/20240809-guru-tassel-84a14486a596@spud/
 
-OK, I misunderstood what you mean by "standalone email". So this was
-just resend? Then patch should be marked as RESEND.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
