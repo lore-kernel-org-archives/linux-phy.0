@@ -4,152 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72818C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 08:30:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E71CC3DA4A
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 10:36:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5Ip9Z81BMDedkl0WEghlIXi8tNnVyLNi+kMwzUQDNyg=; b=bMp2ZIsykNr2Hu
-	x4TbkfdR/Pq/V8AEZtp7FysthsCneTgcnQPhvuLiJS3rqC7YISOztz7BcdG7ticTEYgYRSPdjnjp6
-	8yq+KR+lexlEMpYRI1YXXJqmhB/miYaMKA1bnXvHTc3YPJ+dv42oGYqxTYGal11zJzcjE2oWRBx2T
-	r0ROqVEkb0mU8wt9vGwQ7grPirf03bBAs1FP0oHykBCR9rxz/0lQ9mBbZQsZq9pANpHcxiK7Y+2Zv
-	VBAq3vK72LCPqn6xJiurXBSQkmM9VYggrzOuRDi3lMNP0KIHO0EzC7SsTewVFEIHgFBHUclszp5jN
-	pinNLS1aNaH4b8c241vQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SHs3xSkw9hd3OHVPPI4mXo8VGXz4+nGWMIif4mrqDq8=; b=srn+BSW9fqrcZ4
+	jJgRYSxegfqb5GooefnSAdGMfJP29epgls8SAK1vO6HUx/4b9VprX+Il8RAa/66zMIf00rQGJDL0X
+	yA5UCiUbou4OvERveArebdEk/NkJzZJmwelXABOQN9zz3o3HvJlMrW62KOIH0lqxBy0tLrnkgDUMn
+	f9aGSgnCKKREMWT7WgxBg2d/kf5Ez065lflyXlPN91YOLb1PHAbzv1zL9mu6r4Zu4G3RcxCIy/8kJ
+	5+zB3XV/azRt/hOWLz1KelFKWBoN9DdUuJfD96prA9IizMuUzlkvIihI6x2b3VzSCc5MamzJJubUI
+	jw8JOmpR/doEhqQbWiHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh3DT-0000000C3i9-0WJO;
-	Thu, 22 Aug 2024 08:30:47 +0000
-Received: from mail-eastasiaazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c400::] helo=HK2PR02CU002.outbound.protection.outlook.com)
+	id 1sh5BU-0000000CS8u-0GHo;
+	Thu, 22 Aug 2024 10:36:52 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh3CM-0000000C3PK-0Zwf;
-	Thu, 22 Aug 2024 08:29:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qPyxI4cUYNECDLgUZW6KrZjK9qgnl8bBRg+fQGgB4iOAR8YeGsUSfQmWK6E9W2Zy2LeP6dIC2u+6uxs5xiGgTFtMPLutUMbD03cK2Tgy0wgnKcGiIfZZc0cCdtv1B6qJDl6rL0W4srbCDEg4UdPsZzxwhKq1p4fBDJC02JslkRwUiUacA+ZquiawDGGrMKEizSSRGMzvKR6/FDmtIcgqvrHKE+qgiaregoTMbwXSVEialTAuxlWrIh/tfeDH8EamCoqr4LU9zFX08rZN5ZT93/kOr9ij7i6S1aUr4tJdzq5B7M8nEalCMNLhk4I5QkywwWZ3XL0GmPqLIPVgzJ24Bg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=VwkPutKog2rmpE2FfH+ojM7ztMMWoa7jeLrE1IONC8A=;
- b=uoTi0assD5xacGoZ2Ki+GovDXen+4i7sr9PPF4HORu7mItbjidy5AO6kaEn13MasZ1pmxuSCV2K281yIZdL7P0ZMQKz5OQeCW3zvvG/PIk55GS+gJ/GMioaX25GB38SpYig9hlg7T0OUmFm+hBTAtbrzVSTB2Au8H0mMZopGB/tiINQBc0qwlOtJX2ib3VNWULMdkbiqNPeUUduh12l1BEAXlOrkj2Dd09XZtl8bNqwTMZDFbx1a/gwAcybskmqr+5B02zd2CB+EycYwzThZXFcFmcUAUaMpncP01cLEMPn48vBJD/21jTEwnedpI938hBp8mo3Gc0X8E3AgeGjcdA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
- dkim=pass header.d=vivo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VwkPutKog2rmpE2FfH+ojM7ztMMWoa7jeLrE1IONC8A=;
- b=U+C3LDTQRovKc8gtWxKyCjLYCBVyY5Q9bq4ypDxOK/WU4eAzksVRn8VtENw7NgSROqkW9TMY9gMjcGSlAnHbceePOEa7KJUDv9BHeAkT7VrHjFN53xN2ETgf7CBicOtW3DQrv6IIDCvJ1eiuYcI/sBq883SPOB+/eZC8J+FI1KeEJynD0zscn5QRs3EnkmKy6ns2h4E9rTRFRMuNZC6rHU7vgcQgXQoG49AcxQwmMC5HuLYmBvb/R8Oj69EHbP+SmlpACZZ1x+VFWqPjKElRwKjPnPGg0m3QTnfFf/qgZ78y6GyFqW3Pzm2WJ8AaePXxTvU+nucgxdO2kbNzw3awow==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=vivo.com;
-Received: from TYZPR06MB5275.apcprd06.prod.outlook.com (2603:1096:400:1f5::6)
- by KL1PR06MB6259.apcprd06.prod.outlook.com (2603:1096:820:d9::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7875.25; Thu, 22 Aug
- 2024 08:29:34 +0000
-Received: from TYZPR06MB5275.apcprd06.prod.outlook.com
- ([fe80::6257:d19:a671:f4f1]) by TYZPR06MB5275.apcprd06.prod.outlook.com
- ([fe80::6257:d19:a671:f4f1%3]) with mapi id 15.20.7897.014; Thu, 22 Aug 2024
- 08:29:34 +0000
-From: Yangtao Li <frank.li@vivo.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	krzk@kernel.org,
-	alim.akhtar@samsung.com,
-	frank.li@vivo.com,
-	konrad.dybcio@linaro.org,
-	liubo03@inspur.com,
-	robh@kernel.org,
-	yuvaraj.cd@gmail.com,
-	ks.giri@samsung.com,
-	vasanth.a@samsung.com
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: [PATCH 4/4] phy: samsung: exynos5250-sata: fix missing clock disable in remove path
-Date: Thu, 22 Aug 2024 02:44:33 -0600
-Message-Id: <20240822084433.1596209-1-frank.li@vivo.com>
-X-Mailer: git-send-email 2.25.1
-X-ClientProxiedBy: SI2P153CA0032.APCP153.PROD.OUTLOOK.COM
- (2603:1096:4:190::23) To TYZPR06MB5275.apcprd06.prod.outlook.com
- (2603:1096:400:1f5::6)
+	id 1sh5Aa-0000000CRyG-3bS4
+	for linux-phy@bombadil.infradead.org;
+	Thu, 22 Aug 2024 10:35:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Cc:To:Subject:Message-ID:
+	Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=SlGOucvSgDtSQ9wwuPYvLZJURsS0vqWONUgEBulumIA=; b=ICHZlmnHvYUwT4oauoznUwGLff
+	nZhfJGuPt7LHeY73/O/rA/OE/k7NL7N99pxqYM7ojJSyDMO32G4ii66xBAJ9uuu30SqBPMa/eNtn/
+	6FTS+jtDgKqirJEDYJw02lGdEdCVsSmD3dGnIyqBzEk4Gbyv5tjaqY9wRP2fj49q2Mn7qeHD2iidc
+	BYgKQee+0fZuIoxq9UcJgM8BhlcPddRxjXneJeg1Y5E3wz/8a7S74FD8W/vnApNt2Jn9259K8OApl
+	Ubr/Sh6v29S8el4JNxejCTvS1a2pt4Z95ncYFVjWeYSQj/0U61go9ZzbQQjGm9ezdlzteQhbApjU7
+	JlK3JpZQ==;
+Received: from mail-yw1-x1129.google.com ([2607:f8b0:4864:20::1129])
+	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sh5AW-00000009uMI-2iTM
+	for linux-phy@lists.infradead.org;
+	Thu, 22 Aug 2024 10:35:55 +0000
+Received: by mail-yw1-x1129.google.com with SMTP id 00721157ae682-690b6cbce11so6637827b3.2
+        for <linux-phy@lists.infradead.org>; Thu, 22 Aug 2024 03:35:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1724322947; x=1724927747; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=SlGOucvSgDtSQ9wwuPYvLZJURsS0vqWONUgEBulumIA=;
+        b=Wvy+ntJh++GwNl0z8VbWxrFHxsSWLhuqAPpgm74aAsKla4xiFlYNurE6Zw57mgG+mu
+         PRw7x8+NNwPNsj+ETQAkJ5ONb1ezR0/fHJgytAZtUc02nMNEq6Z89zjgE51IMwp1DyVv
+         XKg0qn13Q+UqChxfDzguNOmiZ2B9GoqhsPAMQVL5Wa9ADRCH6w0jW0ZNdS1Eci508bW2
+         Tvuc4g67SVu90PBvQbl0e31aqFBf060M12O1wCYR5Mg0m8UsP6Rl7UwqGeRHJfrCsp92
+         l7PVj3/uonaoMOp4S7R3Ilw350p8TYVxr8Z5V7ksfkTGenAgnh+MYNTg5Fw1C/ao1tzi
+         uymA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724322947; x=1724927747;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=SlGOucvSgDtSQ9wwuPYvLZJURsS0vqWONUgEBulumIA=;
+        b=JOxujdLUONbezyryCd6gCCDPmJd3BnNe612CTEZXYZF2i+jqQGWU1hLZFGTC3dmHKm
+         +1ym4qNw23JzOSxD4fG1yApCzSETX/Dxmo5IyLulYL1G9XP5mbNHSdqR0mteERxTjB2v
+         5HIwT7D6UzhDqaOfF4sreG2uQF6HQNZIVHsArBlPPJ/crnsl9WMqJDcwGoBPhrxt8XbV
+         HEUzvR+R8A4eM2LNChsxGlL75b/XOBFSpN0pbl/3acAn0T4aAkemAVcgD+/bw4kPnEFd
+         fqz9MzpVyG6z6hOngqiBdPrXd7FJi16A/tSo2U46fVjNGqSJlsWs9oP5BrChxL0qbEoW
+         Aqxg==
+X-Forwarded-Encrypted: i=1; AJvYcCXDpYpVwyrSHjc7D85tKAJjn06SJ9LmkeJ3Uxh6EzZrYLOgvxcWFob/HApopgsug7i8G6j5hzSeg7c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzJiXrdu0/FOU7H+qBQqgZ/yb9Gd+nm/yUXizjD4q9fm70SdmN9
+	rExN3++lZq15T49xPm23TP2JBk5S/XdpB7H9Uo0QEsJD7GMVW4/47weky5AUQxFyaa98pLZFc3t
+	CewQMXwIRr26IjyoiBjm+C7EHq3Q=
+X-Google-Smtp-Source: AGHT+IG6bWOYEN2J3a92yRl68xajoh4axN8so4QLGPSZQq9BbWbUuCUj+XIS5c+xCT5cUK9sMjHDEY9agZS5+hY0dUI=
+X-Received: by 2002:a05:690c:3744:b0:6ad:219a:b687 with SMTP id
+ 00721157ae682-6c3d5ecc2d0mr18942827b3.39.1724322947525; Thu, 22 Aug 2024
+ 03:35:47 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TYZPR06MB5275:EE_|KL1PR06MB6259:EE_
-X-MS-Office365-Filtering-Correlation-Id: 285cb0d2-4634-46f9-0096-08dcc2848d80
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|52116014|366016|1800799024|921020|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?y25CAZDNE3vrAfKQQsE1DHy2id35bpyabrEag1v4uUJNOtjW7ffXFJRNGM9V?=
- =?us-ascii?Q?VWkf/+k/0Wk/F9hGr/3qMlvte1QJb531bnQ3R1gDOfI81MDIs1GRtYAB9a9r?=
- =?us-ascii?Q?b849+EoK30vK3fIxUW4qwD1Pqq2EJ25yY7TKU5wxOyj3/I6PcJpLL9C2S3eU?=
- =?us-ascii?Q?oLgw7wkJ3OFHydLUUJ0XnKA8YORNwgne0VuoZ3gTYC4iysh154Q8/4ddgsgm?=
- =?us-ascii?Q?CUFxgppTy6zn+XXZ9fIqkiShnlR3fd6U4r6nMt6Awzq4WiBf5kjpL4Z0Hh5Z?=
- =?us-ascii?Q?RfNLPRGIMs4nXkIcyj0zCBatgT9nz1hydnrWk4iXAOBQbwa80A5UCRnf1nij?=
- =?us-ascii?Q?CinlZn4VrLBI2PPPybmgUmYzlVJGZ0swvBkWvyNMeOhwzP+AWSKqNeQVLuBo?=
- =?us-ascii?Q?HW8kOZLjh0RLqZWk07nLWUUyzpeqycglX4T6oAtjDLBT+EJgVySf0aZFlIZv?=
- =?us-ascii?Q?vQwsQsLykOEm5BgsF/PyyVTJxB9e53hL2Tf3gYx/5BIbzgNHxtOqLG+i9SgF?=
- =?us-ascii?Q?gwg353jzeKyYrTTXhpH6WGrxgfgAbgpiCXe4rSUpzcSQtVJ2TnxR3Ce361nD?=
- =?us-ascii?Q?D8XxmaDeZcfeNRNT0E5qh1H4T8Eq03Tpl034+Zco40XRRbZR313TtIfpx1sV?=
- =?us-ascii?Q?dBkm3dU2BRS9r0hPGlMSjbelu+I/YfTM2bxZ2A9+hnSTk5MmJx6dzYKcvlHd?=
- =?us-ascii?Q?UhX7ShNUIG5m4I79w4jaeWjff6p9aXqbK4N0PcqsRAOhZxe/qKDBkrTaLQHv?=
- =?us-ascii?Q?Aps1vkn/UmU40zASd15C3AEbIqqYFRh/40Ju/GHnVSnQEXHJu1kHYcZkaSbD?=
- =?us-ascii?Q?j3vg/ONkTodsVpSrstLQ9aDQtn6sK0o/ezDDGdlbme4Xzl3Pg6hUbx3HE2SM?=
- =?us-ascii?Q?ab67dsCfuVtGrZfRMm9O9PGezQ7qx6PAiNMvquchSek6nwef12kQmSYYsG6J?=
- =?us-ascii?Q?dT9F9RVTjQff1WYWZ9aZDNXSQ64+lDiSq5QiCiiSkrrt4JUjR7qe8VYzyRv2?=
- =?us-ascii?Q?7YlUllkmJLwOEwWPL40edJOQ8Ke5J1Qi08yJjziPU/bCl3cUAWV6kWXWWqoX?=
- =?us-ascii?Q?jgrlUwXKXcAHk3xZLG7ZTXzkd2l1mkJW5/VRhTNfuqpIb699Ym0YHcVa+KXr?=
- =?us-ascii?Q?YhVidGGQ/JSddIO+06HX5gxKFVCcFZVI0/ncUQ/g8NLpB8atoboyByhjkIE8?=
- =?us-ascii?Q?UZAKP1sbU3IYAAuRQ80WDdMSVpX+InqInjegUE4WEvA1CCFdpX9RXAz3fRK+?=
- =?us-ascii?Q?mxSxidLR70n/8Qkz0DVCT1IJikIYZ3x3YOhZONGwUCzb9p+MboB3QpYTeu7a?=
- =?us-ascii?Q?lQFtySpdJr1cJFUELOcXA5DxjyywWQEnsqKVippMX/2R+VlkOW0KYWUooldq?=
- =?us-ascii?Q?t4k9FcwJ3KSiHoZHQPn4kD/trqueozcM9I4VTRFM8WkgN35O7pkATnKvfBgt?=
- =?us-ascii?Q?9WSDbQsbSBo=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYZPR06MB5275.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(52116014)(366016)(1800799024)(921020)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?j0Cs0aOs1ho8KBJgHpHsT9RQOR27oKYMzxISSWqt9nwtVxaWThQRVJQ2aiWP?=
- =?us-ascii?Q?rL4pVC6PVjbyWXgAqD4TgcsRkQXYRQ180wHwa6ZawNnGQXg+Mrv7jYCvqZy3?=
- =?us-ascii?Q?RUK1Dq8ZASeSQ/VXliL0AO52tnDYUJM4ZSzvWIllt1tQX9aJo4gvWbSJGrpX?=
- =?us-ascii?Q?JN2X+DhMM7g8bcizUaGy+jtJcw/tbhLt9v6f3qUf2OIonFEqC4uCG/B4YXiP?=
- =?us-ascii?Q?X65utwWnG8h+M953/wh3wJnW/n74R/JzmePfxrz9hC3wJjgWLIqI1kT2Du6V?=
- =?us-ascii?Q?WbaPoeXKXbtLLwUcxZeBLuq1KF+ea+Oe6lvxkhTInhoyJXPlLjm4KXuy7es2?=
- =?us-ascii?Q?kJ2iXRZ9e8TcVF5sBeNZn34drYUHT5R4UvZxFGtMDQHpRkSt2SMcJDchJ+QO?=
- =?us-ascii?Q?Y2vKBxyZKBUaI57eTbE++8jtgb2mjB/lDUMUPEFQsj2no7joPmZViQMrmw2n?=
- =?us-ascii?Q?rN4+o4OjtuTc2aoyikfuBHQ5j8HhAbU+oXXOb/qHzyfpvuMl3+XrM766upQy?=
- =?us-ascii?Q?ufwEKEEQ+8NhpjyFTU99VV0ltnQ3XvJuXmWtDLl7fyf5nwF1PGXazGOk+H4y?=
- =?us-ascii?Q?1Aoi5jfzYw4FMlQeUc/7UtYaZtxjPmStbBS3Mx10hPAnCNJVkQb6iKgEWbx0?=
- =?us-ascii?Q?ibSuFo90CCsgxxTVUHvt8yRrHcVAEAc5mCr6qaZ+VNXQV82ILqiei5gWivKE?=
- =?us-ascii?Q?IN/6B8C/lEAeBdE+mIeUJnJndTFg51wdiyVtH60UDYBxlfNKbEFPl0SY2/c6?=
- =?us-ascii?Q?H3A1+hBTE6nLvUIZSdPPVY5SRs7ZlwPfFCdWFOL7Ym47hvYCmwbUrGpkDckI?=
- =?us-ascii?Q?JNWybGzMTr0Anq36FDQ0WGrSpQ2n5/cfN9rrwBorwsKyshQZjv7PJJkWyI0F?=
- =?us-ascii?Q?hb5v2crCXgCQVweqD6nXXfBzGEtTqd9scMS2FuwqSkAEwrPpYKZB+/2qywda?=
- =?us-ascii?Q?m6hBycccn63Qi1iVvXuOIKh1HlAOMojGEyXvneI3nXHQytNy7ZtAnLz3pzg4?=
- =?us-ascii?Q?GhuYRhr6UFCmCoSFprSB03dByTnr9MMe2ve13LoyOf1KOoB5wJW0HH6EO3yM?=
- =?us-ascii?Q?oi32TmMIbv4QeAwF0c/HBuHxsjgYJtiONw9UNm/S9GQ+Mf1MXXfzDAQd601U?=
- =?us-ascii?Q?hBRioSJAxQctNkLQahnfC8+no3JuuXy8o1JEMbRdy1Bw/9EUXhuD6c1ugn7c?=
- =?us-ascii?Q?XQv3k/jZqSlNOWZiDbKtM067I2Dv03tmbh3lDAukO0zp72xc2mYDs/+hPhMM?=
- =?us-ascii?Q?xrIF1SkUEXTWtxu+NQbYTiNgmSwRJSmJ34PIEgJNTbcynI7MHhpVucufxnO4?=
- =?us-ascii?Q?XidM620IyFiGJ4B7uG8nzdGmtxZshdClhdLBeqoLSCfGvWiSGdX1SuhecQSG?=
- =?us-ascii?Q?TzyHY7EStpB4ZjoH4ACCCotiKEcK8qdDM+wSjnvmjac0dOXKb8sJAogY2T1f?=
- =?us-ascii?Q?ZB08Xqccpe2zSqyaOqLTyyGfZbPdTy+CKA9KIbpbpvTbw+FK5i+DvgA5wEa2?=
- =?us-ascii?Q?6KyflFdIz5OKWuQXEHyaYle6BOd4XTyJFr8+dZnTIOdl4ZR+rxlNimHOoraG?=
- =?us-ascii?Q?riVoLPgzyo4kw1AkG7L70V0vPpwO6oEeL2iL9xm9?=
-X-OriginatorOrg: vivo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 285cb0d2-4634-46f9-0096-08dcc2848d80
-X-MS-Exchange-CrossTenant-AuthSource: TYZPR06MB5275.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Aug 2024 08:29:34.6463
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: CQE2T6OlVUJKSYHZxiRrWAobUbqdfyF/JVPqvR17E7HsXbOd+097Mum3cOJUGZC4/hURxXyeDZ2XE0gip+xI8w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR06MB6259
+References: <20240821215357.20224-1-ilordash02@gmail.com> <thpryn4unrebkvx4a7jhqmxt5ntmog2gcw3ekh6h72jews4een@b43tsg7poegn>
+In-Reply-To: <thpryn4unrebkvx4a7jhqmxt5ntmog2gcw3ekh6h72jews4een@b43tsg7poegn>
+From: Ilya Orazov <ilordash02@gmail.com>
+Date: Thu, 22 Aug 2024 13:35:37 +0300
+Message-ID: <CAGCz5H=vos9sh_ts_ExH8dQSnicFyN+=TfWmBbnqS8egdD+k=Q@mail.gmail.com>
+Subject: Re: [PATCH v3 0/1] dt-bindings: phy: ti,tcan104x-can: Document Microchip
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Aswath Govindraju <a-govindraju@ti.com>, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240822_012938_205158_C8EA2D34 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20240822_113553_334147_9E5D3693 
+X-CRM114-Status: GOOD (  13.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,86 +107,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Convert devm_clk_get(), clk_prepare_enable() to a single
-call to devm_clk_get_enabled(), as this is exactly
-what this function does.
+On Thu, 22 Aug 2024 at 10:09, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On Thu, Aug 22, 2024 at 12:53:56AM +0300, Ilya Orazov wrote:
+> > Hi all,
+> >
+> > As suggested in the previous email conversation on this patch, I am
+> > sending this new version as a standalone email. I hope this approach
+> > makes it easier to review and keeps the conversation history clearer.
+>
+> Where was it suggested?
+>
+> Best regards,
+> Krzysztof
+>
 
-The devm_clk_get_enabled() helpers avoids the calls to
-clk_disable_unprepare().
+Hi Krzysztof,
 
-Fixes: bcff4cba41bc ("PHY: Exynos: Add Exynos5250 SATA PHY driver")
-Signed-off-by: Yangtao Li <frank.li@vivo.com>
----
- drivers/phy/samsung/phy-exynos5250-sata.c | 20 ++++++--------------
- 1 file changed, 6 insertions(+), 14 deletions(-)
+Conor suggested that I should not send new versions of the patch as
+replies in his mail [0]. So, I sent the new one as a separate email.
 
-diff --git a/drivers/phy/samsung/phy-exynos5250-sata.c b/drivers/phy/samsung/phy-exynos5250-sata.c
-index 595adba5fb8f..0452b236ea50 100644
---- a/drivers/phy/samsung/phy-exynos5250-sata.c
-+++ b/drivers/phy/samsung/phy-exynos5250-sata.c
-@@ -47,7 +47,6 @@
- 
- struct exynos_sata_phy {
- 	struct phy *phy;
--	struct clk *phyclk;
- 	void __iomem *regs;
- 	struct regmap *pmureg;
- 	struct i2c_client *client;
-@@ -164,6 +163,7 @@ static int exynos_sata_phy_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct phy_provider *phy_provider;
- 	struct device_node *node;
-+	struct clk *phyclk;
- 	int ret = 0;
- 
- 	sata_phy = devm_kzalloc(dev, sizeof(*sata_phy), GFP_KERNEL);
-@@ -193,16 +193,10 @@ static int exynos_sata_phy_probe(struct platform_device *pdev)
- 
- 	dev_set_drvdata(dev, sata_phy);
- 
--	sata_phy->phyclk = devm_clk_get(dev, "sata_phyctrl");
--	if (IS_ERR(sata_phy->phyclk)) {
-+	phyclk = devm_clk_get_enabled(dev, "sata_phyctrl");
-+	if (IS_ERR(phyclk)) {
- 		dev_err(dev, "failed to get clk for PHY\n");
--		ret = PTR_ERR(sata_phy->phyclk);
--		goto put_dev;
--	}
--
--	ret = clk_prepare_enable(sata_phy->phyclk);
--	if (ret < 0) {
--		dev_err(dev, "failed to enable source clk\n");
-+		ret = PTR_ERR(phyclk);
- 		goto put_dev;
- 	}
- 
-@@ -210,7 +204,7 @@ static int exynos_sata_phy_probe(struct platform_device *pdev)
- 	if (IS_ERR(sata_phy->phy)) {
- 		dev_err(dev, "failed to create PHY\n");
- 		ret = PTR_ERR(sata_phy->phy);
--		goto clk_disable;
-+		goto put_dev;
- 	}
- 
- 	phy_set_drvdata(sata_phy->phy, sata_phy);
-@@ -219,13 +213,11 @@ static int exynos_sata_phy_probe(struct platform_device *pdev)
- 					of_phy_simple_xlate);
- 	if (IS_ERR(phy_provider)) {
- 		ret = PTR_ERR(phy_provider);
--		goto clk_disable;
-+		goto put_dev;
- 	}
- 
- 	return 0;
- 
--clk_disable:
--	clk_disable_unprepare(sata_phy->phyclk);
- put_dev:
- 	put_device(&sata_phy->client->dev);
- 
+0- https://lore.kernel.org/all/20240809-guru-tassel-84a14486a596@spud/
+
 -- 
-2.39.0
-
+Best regards,
+Ilya Orazov
 
 -- 
 linux-phy mailing list
