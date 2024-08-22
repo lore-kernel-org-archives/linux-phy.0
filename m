@@ -4,109 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C62F1C3DA4A
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 11:41:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF328C531DF
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Aug 2024 15:54:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T1thJPg54Ps0xOU5qb/hJeYgCOOVGclpwyWn2U/0tco=; b=ESGhILLNXcjX6X
-	GBH5eSbh1khBbCsd7nfWqOaYeXgsz18pKDt6Xl4JoDW9I7Sj641JNMsrO9NvaazyVH57LN06MEgnT
-	wdFX5yxSl/qVgH/2KQ6o/gOEd75tK1hpfhXoZfQu/9mnDmv+7EIvs8DAbP95tauOFDURzRIoFRkwa
-	h9ewgaJYKZU7YREUbFm4V8RHg0jBwJixeGOkzMQjQJUdxHLKcUjVBdxaCAW6w/r9XXMDBkJaRanDw
-	LIje2Sgv9BCSb/LZOsX6k1WaZAwCUnGlDyaNBd1udOUqTvyuaLYIHb4u3JLaBbCVR6wTYvoMwyExK
-	mWcBYAJkgn2G511JP+KQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SUGUU9k2G1x8jT1rRMb08ILQ4MEoEQnkG3LRg6PMv3U=; b=O1/FOG1sg0RR6w
+	y7s1Mj0GAaUC714xN+7MeGs8gUMn0S2phriaELxrwKGLVYXV+OdWX8NYYiCxLwIXiUrAc8VRU+ek9
+	We/2cLmTDUXbGjfsxo77AlJVCj5PU8fH9GvMEw+RS+JVDpROpcw31n0ZvTGaJeacU0qYeYinIFE4g
+	iLxIpOCTq3ckKOVg1Lc/h55bFYfjdv7+D7OYifTptnAQhP00lgesgk6St0qqTCYOboGnc+gvYPcBO
+	vQ95uYV1P9L3OQkSZ+4O1RkdLqtkmRbagkMUDE5Jo/cBIpgeExVnkmN4V6su+SHx8Wl5AHGmQZJrJ
+	usWil1BboH6US/ih4eaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh6CU-0000000CcKX-1snn;
-	Thu, 22 Aug 2024 11:41:58 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1shA8j-0000000DRHL-2558;
+	Thu, 22 Aug 2024 15:54:21 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sh6Bk-0000000CcF2-1mjm;
-	Thu, 22 Aug 2024 11:41:14 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id E05B2A40275;
-	Thu, 22 Aug 2024 11:41:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4751C32782;
-	Thu, 22 Aug 2024 11:41:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724326871;
-	bh=7bkCARdi1VmnQkUmpWAJUfPzTKWAbsevARXH+QvJhck=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lFToW+5ibhCK9zVfe4kzGVgGoX7fCpft0SB6/H/FQzi0vu0O5/HsWxC9Eb+IKRXlJ
-	 hDR+iNIE9C5p5VeDWmiSFN4lTFluJDgMByCIUyEDKfO15aY3ltiptJYMxz0kpcsxB/
-	 G6UGlWlXHpotzfWMaGr4cpnDSVa0vXDRSvK9wM1iBcukffSc2QlT8HUKCVaZkKGSSV
-	 YmvkkAhfT/WoJsVc303u9QkhhJnOmHoq2PBBpcBd/VOi/K66b3c+6KQUduoWsjzzNU
-	 AT4xFJ+evj+/GFGdcBaJ10+mORRwoNpnchZDm17EtxPiCO7RL4Lv1t6/zAW7MwhWI9
-	 elweLubsVZkRg==
-Message-ID: <b95e461b-d3aa-41e4-bf93-f14f853f3f03@kernel.org>
-Date: Thu, 22 Aug 2024 13:41:02 +0200
+	id 1sh9jW-0000000DKlB-2MRd
+	for linux-phy@lists.infradead.org;
+	Thu, 22 Aug 2024 15:28:20 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-53349d3071eso1235478e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 22 Aug 2024 08:28:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1724340496; x=1724945296; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=oG0PQto83btnEL28K6haZsLSn7p7+BWVYeK6+IqQicQ=;
+        b=Kd0DuaWhb86PQtp/hxx+OyAnMToW3VGdg6Yh87KrBeYqM5ZoMfFC+5kPP14VTUJT/j
+         AYPjVOx49RawudoVYonIsTCP3iUZRvEbYr1YnR2AwnPV8SbQXV7CaEvU4mVbdIDkzFoO
+         hgP2xk7DUTFbEx8OGJiKrYCQ/c1Hu8htdMckKvF/k12iad1Q7hVjLW197cf5TVBbn0mf
+         3Ii4TJ9OXhBwpzVUGzfwJjovJmCoM3kgn7nwoqA5X++Yd+SIeZYYL596CogNzES8u+hZ
+         O/EeNs/mxmjZykOEJZpQ0d9R39ObEtA2GI2awhSusLzs06hEsoknr/+KZWq0dYJD38eW
+         scWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724340496; x=1724945296;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=oG0PQto83btnEL28K6haZsLSn7p7+BWVYeK6+IqQicQ=;
+        b=kokSelFf/28ktyW59rCtEugxg9Lfg3MmkdvesJz5konRynHb+ENje1CEsIhmcAbtwu
+         9MkDQ8pCVVFmuufigqiuDizvkweZmC/X28Avn5JqGvb3RI/9FCXr/VNma4RIt8AoYfBM
+         lp9on+rgwyjcfVybJvvjcHNcVTD0P5mPvyzmhP04drS4bYF23cRsBr07pE7LT+D6Q2C4
+         A+y2HUVogPPEzpH1gtqXRMp056dGnb7h50owX8gApv9K84PxAmsDM3yzZsqK1emtFfJH
+         wsObZzuxH5VPcKhxe2UCcAFHfuwbBhDvVs70T3tYen8KDtbkpdLfwu9O4IDxzXNfRNpv
+         3idQ==
+X-Gm-Message-State: AOJu0Yy6+ah9H1ydzFQZlhNeO6JegXx8k2f/wiuFzCM0dDceO4hZdJJs
+	v7iOFgmF3urLj3IZR/aD/E4YBLt/zHB2aLrGDnYWuKWuPmBh/ZGeZU/X5bNq5dX2ECCjgC6Zdm/
+	8
+X-Google-Smtp-Source: AGHT+IHF2HEzRj6RLICHJMj0My+kwTWQOaRUjHy9OJ1aWJK8tooH9yYqAZuBr0m26WtCehY9rsGeRw==
+X-Received: by 2002:ac2:4c46:0:b0:52e:9b92:4990 with SMTP id 2adb3069b0e04-53348562455mr4098402e87.32.1724340495855;
+        Thu, 22 Aug 2024 08:28:15 -0700 (PDT)
+Received: from claudiu-X670E-Pro-RS.. ([82.78.167.177])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a868f484dc5sm134189166b.171.2024.08.22.08.28.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 22 Aug 2024 08:28:15 -0700 (PDT)
+From: Claudiu <claudiu.beznea@tuxon.dev>
+X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	p.zabel@pengutronix.de,
+	geert+renesas@glider.be,
+	magnus.damm@gmail.com,
+	gregkh@linuxfoundation.org,
+	mturquette@baylibre.com,
+	sboyd@kernel.org,
+	yoshihiro.shimoda.uh@renesas.com,
+	biju.das.jz@bp.renesas.com,
+	ulf.hansson@linaro.org
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-clk@vger.kernel.org,
+	linux-pm@vger.kernel.org,
+	claudiu.beznea@tuxon.dev,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+Date: Thu, 22 Aug 2024 18:27:45 +0300
+Message-Id: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
- property
-To: Xu Yang <xu.yang_2@nxp.com>, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, gregkh@linuxfoundation.org, peter.chen@kernel.org,
- herve.codina@bootlin.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-usb@vger.kernel.org, jun.li@nxp.com
-References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
- <20240726113207.3393247-3-xu.yang_2@nxp.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240726113207.3393247-3-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240822_044112_754473_36737259 
-X-CRM114-Status: UNSURE (   5.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240822_082818_774628_F85EC74F 
+X-CRM114-Status: GOOD (  15.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,17 +112,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26/07/2024 13:32, Xu Yang wrote:
-> i.MX7ULP need properly set System Integration Module(SIM) module to make
-> usb wakeup work well. This will add a "nxp,sim" property.
-> 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> 
+From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Hi,
 
-Best regards,
-Krzysztof
+Series adds initial USB support for the Renesas RZ/G3S SoC.
+
+Series is split as follows:
+
+- patch 01/16		- add clock reset and power domain support for USB
+- patch 02-04/16	- add reset control support for a USB signal
+			  that need to be controlled before/after
+			  the power to USB area is turned on/off.
+			  
+			  Philipp, Ulf, Geert, all,
+			  
+			  I detailed my approach for this in patch
+			  04/16, please have a look and let me know
+			  your input.
+			  
+			  Thank you!
+
+- patch 05/16		- moves SoC identification to SYSC driver
+- patch 06-08/16	- updates USB PHY control driver for USB
+			  support
+- patch 09/16		- update documentation for USBHS
+- patch 10-12/16	- updates the USB PHY driver for USB support
+- patch 13-15/16	- updates the device tree with USB support
+- patch 16/16		- enables the reset control driver
+
+Thank you,
+Claudiu Beznea
+
+Claudiu Beznea (16):
+  clk: renesas: r9a08g045: Add clocks, resets and power domains for USB
+  dt-bindings: soc: renesas: renesas,rzg2l-sysc: Add #reset-cells for
+    RZ/G3S
+  dt-bindings: reset: renesas,r9a08g045-sysc: Add reset IDs for RZ/G3S
+    SYSC reset
+  soc: renesas: Add SYSC driver for Renesas RZ/G3S
+  soc: renesas: sysc: Move RZ/G3S SoC detection on SYSC driver
+  dt-bindings: reset: renesas,rzg2l-usbphy-ctrl: Document RZ/G3S SoC
+  reset: rzg2l-usbphy-ctrl: Get reset control array
+  reset: rzg2l-usbphy-ctrl: Add support for RZ/G3S
+  dt-bindings: usb: renesas,usbhs: Document RZ/G3S SoC
+  phy: renesas: rcar-gen3-usb2: Add support to initialize the bus
+  dt-bindings: phy: renesas,usb2-phy: Document RZ/G3S phy bindings
+  phy: renesas: rcar-gen3-usb2: Add support for the RZ/G3S SoC
+  arm64: dts: renesas: Add #reset-cells to system controller node
+  arm64: dts: renesas: r9a08g045: Add USB support
+  arm64: dts: renesas: rzg3s-smarc: Enable USB support
+  arm64: defconfig: Enable RZ/G3S SYSC reset driver
+
+ .../bindings/phy/renesas,usb2-phy.yaml        |   4 +-
+ .../reset/renesas,rzg2l-usbphy-ctrl.yaml      |  35 +++-
+ .../soc/renesas/renesas,rzg2l-sysc.yaml       |  16 ++
+ .../bindings/usb/renesas,usbhs.yaml           |   2 +
+ arch/arm64/boot/dts/renesas/r9a08g045.dtsi    | 120 +++++++++++++
+ arch/arm64/boot/dts/renesas/rzg3s-smarc.dtsi  |  61 +++++++
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/clk/renesas/r9a08g045-cpg.c           |  17 ++
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c      |  60 ++++++-
+ drivers/reset/Kconfig                         |   7 +
+ drivers/reset/Makefile                        |   1 +
+ drivers/reset/reset-rzg2l-usbphy-ctrl.c       |   3 +-
+ drivers/reset/reset-rzg3s-sysc.c              | 140 ++++++++++++++++
+ drivers/soc/renesas/Makefile                  |   1 +
+ drivers/soc/renesas/renesas-soc.c             |  12 --
+ drivers/soc/renesas/rzg3s-sysc.c              | 158 ++++++++++++++++++
+ .../reset/renesas,r9a08g045-sysc.h            |  10 ++
+ include/linux/soc/renesas/rzg3s-sysc-reset.h  |  24 +++
+ 18 files changed, 648 insertions(+), 24 deletions(-)
+ create mode 100644 drivers/reset/reset-rzg3s-sysc.c
+ create mode 100644 drivers/soc/renesas/rzg3s-sysc.c
+ create mode 100644 include/dt-bindings/reset/renesas,r9a08g045-sysc.h
+ create mode 100644 include/linux/soc/renesas/rzg3s-sysc-reset.h
+
+-- 
+2.39.2
 
 
 -- 
