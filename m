@@ -4,166 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0F5EC52D7C
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Aug 2024 07:36:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39331C52D7C
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Aug 2024 08:00:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mxk+Wy8lJzcgYM/MDUhUl7pUYAS9veepl63u3dnGtig=; b=LF+PpipP4WkB9k
-	77rAdGAQFFIWiTpQyMV+qoMCZVvDuOTHsd7TMiwKDwjqu6iywg0a31Z3Gk1GAZSN0nCQ/q81rhZSH
-	QeruewEYieBYZyz5IuPpIl+4n/7AYSlpkhc4yT/tvgsoufPlVGV9swI1OXXqXjfY5IOjn3M32hoCG
-	Yue4IhJ0XQD9Pd/Lhg5wOTFjtUr1KHLIPeXWWONmps7/pn6ZmgsJyCKOC98bRfYU4L4Us5PHcWPk8
-	kTVPAoXCXJTAs7iKguyFk3qupByhWUYfh/fZXZXYMRpN08RgYzrGXbTHATGSTAL5G4/XcgYGJZV6I
-	6Gabgx5niZSyM/0jM7cQ==;
+	List-Owner; bh=y0AWgNI/yYjcCW5RI21OYFTS1pl5Jm7zNkf6qLJY2Bs=; b=YSc6DqAWXlGMv0
+	mLIYI8yEFR77E+qVkb3BYA4O29PIgpRDVvZ9fLGMVN4CAa8hyfUStVEu847Ph++vUYH0dVo7QgG8j
+	c8Ojyw5bZNZLTBV0qlE8EDpCEkEE58HVsPoht7wU1No7eukPDjE5qG2mXK5VjV4WTkNYsT1rx8zWw
+	rTIE8YKectS4STtJAESU+5g+RDhGIMTfUqw+HPFWr5daHjR/6HKqlJ9p69o41XF7y6M9zeDoFWOXk
+	fKxmE1M71X/Si7DO/0fWXHPLTc9N5rM7UThgMwSGgRHDE2cJR9NcuyQxP9YN+uRvy4dYX88QeV0mQ
+	Od8h29Nqd/X0jpwbbp+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shOqc-0000000FfRk-2ofT;
-	Fri, 23 Aug 2024 07:36:38 +0000
-Received: from mail-japaneastazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c405::1] helo=TY3P286CU002.outbound.protection.outlook.com)
+	id 1shPDj-0000000FjrX-3tkD;
+	Fri, 23 Aug 2024 08:00:31 +0000
+Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shOpw-0000000FfGZ-3GXC;
-	Fri, 23 Aug 2024 07:35:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Lu886PCji+UNNYUWAlbaUalapLeQFhb+SJSQKRVqF5gLBdSkkSRCXR5Ba2xx0gYg9X/qRMAbU7yaUhkCOGKKy6UGFcwhU7URaWHfkfimmieCb0Fq3VeF/q+Xm9ZDRdlawLnxraLb0IRauVI2l131m/ZZhleF6Wx2/wi0d3CDoXzKDeDeXGyANJWsrwjLY9lNvtcfvHXVJ85ffTqEI30LogUFH9HKJbtNwvyY9rN6+wbSyEhmwwmyNOI+WGxL5x2mPu2ME28ypja/SwWQDIaqhOItT4AJDcUmyv5Od35DPtH5h5pl0PMAr1ONPZl0J96o9nCCS6bvZ0O1mYB4sRFUTg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Ha39zt00Ud54rrj+OBwpod3DaKbEwcqFVDbGmwJHTm8=;
- b=OIo7q8YC47HS/CpUmWidJJDWzDTX62JNgyepHpfrjqqApRKmVARNmxgsXs3ongkJE6vnCtVf4qthCY5dy/JGW8AwWuVosc7/mJ0UFwPr1kwUpwzin1gXSX6m1obZcQoH0BktVZ37JADRx/Q9BAS+10iPiNUlowX/22IsQFIBB/JSOVMjjMqoiDYYesg9qCgTd4Sat6tTAI6mySTAZ2jl7QJOa0JJyuSCi0hj6HikPFnBJsphOjdympW2CnldLESsa2NxkNaH9UvOaXtTtEyNBCKVR6qs6A3uLqs0+3bGzPlGKwi7LrSlTDN3g1rHe7meWGYFRZv7jT/nr0bftXpFxg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ha39zt00Ud54rrj+OBwpod3DaKbEwcqFVDbGmwJHTm8=;
- b=nPX3/8/fZfbMfmTOGPmVGFsd7zy+yVrvHDVyEg5oh9UVpE+TIggKp/7ajzYezXT0w68MMFF/+le2EVOtiAO6MBjEKUXX+JCiT98EPmbPJdb4XWS3fwUGIO3b90wZB8ZpyJmlwC+pqSL9bO2sr/YmCR/b7RNlbfOvounJV1OOX8g=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYRPR01MB12916.jpnprd01.prod.outlook.com (2603:1096:405:1b4::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7897.19; Fri, 23 Aug
- 2024 07:35:50 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%6]) with mapi id 15.20.7897.014; Fri, 23 Aug 2024
- 07:35:50 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "kishon@kernel.org" <kishon@kernel.org>,
-	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>, "geert+renesas@glider.be"
-	<geert+renesas@glider.be>, "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
-	"gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
-	"mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
-	<sboyd@kernel.org>, Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	"ulf.hansson@linaro.org" <ulf.hansson@linaro.org>
-CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
-	<linux-clk@vger.kernel.org>, "linux-pm@vger.kernel.org"
-	<linux-pm@vger.kernel.org>, Claudiu.Beznea <claudiu.beznea@tuxon.dev>,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: RE: [PATCH 10/16] phy: renesas: rcar-gen3-usb2: Add support to
- initialize the bus
-Thread-Topic: [PATCH 10/16] phy: renesas: rcar-gen3-usb2: Add support to
- initialize the bus
-Thread-Index: AQHa9Kf4PPM3ttIrIU+GFs1JG0RdeLI0cirA
-Date: Fri, 23 Aug 2024 07:35:50 +0000
-Message-ID: <TY3PR01MB113468A6CA4ADBCA577670AD486882@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <20240822152801.602318-11-claudiu.beznea.uj@bp.renesas.com>
-In-Reply-To: <20240822152801.602318-11-claudiu.beznea.uj@bp.renesas.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYRPR01MB12916:EE_
-x-ms-office365-filtering-correlation-id: bfd16a1b-3e14-42e0-be79-08dcc3463654
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|1800799024|7416014|38070700018|921020;
-x-microsoft-antispam-message-info: =?us-ascii?Q?hYdel4nlKjlERDy2Jz4txmmA7Xvs/W/TctX0jyTtGEjlC/612XWT+AbiLaN1?=
- =?us-ascii?Q?rInXMx6t/GEp/YTGQZOpAgi+WuDfyn6US/6TJSOvtbtcqSGVuhI535L4RMVQ?=
- =?us-ascii?Q?Kxe3zZpSKix77niGa/0Oow7i1ImRCHEP+9wJtpcD8Fxe/fd3Q6R0jRtFxLhl?=
- =?us-ascii?Q?Vwr4c9U4erX7zHx2DzwZZp36UvtqViuk0uzGAU8pvrKap0J7xxw03FM+r1KL?=
- =?us-ascii?Q?SbbC2optXayRldw3AkKXqBcK7d9hrk/rRCQD1DoEYJRv/JKvPvghviR0VMb1?=
- =?us-ascii?Q?RxvQTJqk7z1okTdQR/AFBBiIcBlGOT1UOE850Pmq+C0G9uEk6OA+XGa5+KCh?=
- =?us-ascii?Q?KzIssDVu+W2N/JRJFUN3tN6ThyS7uFqBTjwEYitcvmylmm7awiKuyUC4gvZP?=
- =?us-ascii?Q?uMQRG/umLPXd+qgksmm8tgWaQukBWEVECBfAurXAal7/81i3fMXaLgasR7WC?=
- =?us-ascii?Q?p17x07OWDTJA3LeEh4bRlnur39OlBckPdVgZsjzAeXb05t2DLti9bV5zukII?=
- =?us-ascii?Q?WYVGlOj7zxN35U5A7FLUBPF99vc44TUFu7/QKmBC6sx8xdq0qIxxgUoI/mPi?=
- =?us-ascii?Q?KsZanjwEXU2KifRyn0SlRQgknIZPvHJqoTsOq0PQUlKdGsyZ1wtTse+zRYT5?=
- =?us-ascii?Q?K58iPN9PMsWJ43nMtPGQXskJ3FiubbsSglalizaDSiFVDn/iQUwabvA/CKwX?=
- =?us-ascii?Q?eNHIbrlOmpM/rTSKYdxaKbA/geVGN2Y/gKNjaoCf0O1q/gT9nX6umZFRb9bC?=
- =?us-ascii?Q?byPa4Ej3Z6A7zn6TdfT5qU53cp73ty4dnnrKcBL4BXh9HymHnObfNq9otHn2?=
- =?us-ascii?Q?uoZppJ+nGETd29/Txj94p1zaMrwbe0UFP0RIpXxN8+zTRhip+RCpybfSswiJ?=
- =?us-ascii?Q?cBu0BgQl25Zm38GACi1U/f8hF1bVa9WzyIfaslc3odfQlWzGWfeiVTLlXkwS?=
- =?us-ascii?Q?POKEh8nnijcRS9FlfBCW4+4b/YiG8Jcp9ZTARr6ICH5uG/jWktzoY0ZSG3UU?=
- =?us-ascii?Q?J8hV+qlxIz+jf2g4FPrhyv46XSVRvcE64vxHWel9SKQE8ZCm83V+adfXyeS9?=
- =?us-ascii?Q?d2PyoTujUEM1MkLe2OKvsHKZBBZOk2lHBoCw3f4UAiP32KXGqjm+CHutv4D4?=
- =?us-ascii?Q?XUDSm+u+iUJEBBHa4B9MLvP37ohitE7INGKAk1xSX2PXuLRqYecSvP7xXfDo?=
- =?us-ascii?Q?kPRAUc+RqY5LBfg/sf2XXZTt/Nrt8+vxO+hQNCxcPZkQi2SE4sjphH8Phshn?=
- =?us-ascii?Q?+1Njg79StRcM5GCNMBCEk6rrc98AMhvRe5Zkdd+WwJ10LAruulC0Erw7zGN7?=
- =?us-ascii?Q?BlLnLXPAvlJdh1TNtxeEJjpD8gvTNKzQhWm/QCiWHrRSqp0a362Vh7NqY3XQ?=
- =?us-ascii?Q?0j/dntuc2fPkt6AnHv+91Na7CkpwLkb9VpfkJcE7ha94UtH8OA9eF8yONc1A?=
- =?us-ascii?Q?Jkt7usDwBjo=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(7416014)(38070700018)(921020);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?ha6o5CKN4oaJqBdV+OVp4eE+GKMU8DzGwtXIned8JmUCpK2XO6EKd2mGPbHf?=
- =?us-ascii?Q?FrI8V4zXd2gB8v7SmXtgc16ni7q+z8mtlK+DWq/fuJn9Uw4DlZr82NOaE5CB?=
- =?us-ascii?Q?V/eHBxhMnG46q5fNemjGIuRZdQJ3LeUFmQhdY2lK72xjG+aweoEaGd55Ml+C?=
- =?us-ascii?Q?b/CCo/szzP7GBLiIwF/I8WGCsagK2tMttYwUOgbK+yIb9RNgb2hx0L1wCwd/?=
- =?us-ascii?Q?Dto5gc9Io4ZfLuDBPVJSF5IiyqLN14ppgSPyI2yD6r80zhCuq+Nj9acgza8s?=
- =?us-ascii?Q?8G/qstgIOm6wARFUJ2CXR28loBVri7ZB5TTYRUvzSuJGu6DchNq8lqOYLht2?=
- =?us-ascii?Q?jDsq4S2bRWHIFF2yoAmsNNPZZsB0GMqwC49NuXq9emSUfXqaSYdAvp9laT7E?=
- =?us-ascii?Q?CRcfaN0VffhIF2CaMMwkNsRN7NQ3Tw81qqZK5LDc3Jm4m6vBVICVDlHMaYpX?=
- =?us-ascii?Q?mk1v3dWbdKoqtOasIp1I835vGEqTiI8HAZJZ0k5CvGbM9hvXssw+iuAyM4BP?=
- =?us-ascii?Q?pvEdR+fRWNAa2p3bIaaIiCrcY6qvb32WoO20D6TioNcn2j2tz1zWAKJlXWsO?=
- =?us-ascii?Q?LfIK9XqKnHHcRAy3nJY+/12Ci8gJcyNOZ8+24mqkKxTVpUd1otlG0ZEX56uM?=
- =?us-ascii?Q?/8vcP0OOG7e4BkCIsx7e5wwsucNkDe0x8in3NKXsg4wDusRxnD7CiZphK2ZH?=
- =?us-ascii?Q?EQQ69nGdF/EwmBMnDwtYf6fwdrMNm2kt6sJDOHiro50Mcu0rbCbpfvbPpAXE?=
- =?us-ascii?Q?lYtQl43E7OI57AjKbux/OPLuuSpWRtC8GF5PiJtXPikfsKtAjP0uYBOot58U?=
- =?us-ascii?Q?yaILKa1E/OmgHGrPEZ4bvT7KwzmjcBz9JOSmA1l7R+REo1HMoq/Gp6zQAXkU?=
- =?us-ascii?Q?6LrlmtBLjdMiUHW5yG2jypjEb7jNXMsqlNCodGjFJMmp+bxW03Nt+gL63hWY?=
- =?us-ascii?Q?C92N+PIplvN8uuPkFjA9sjyI93+ej2tAHLnafVeQq6nIjeCMzBZHWZUKSHrd?=
- =?us-ascii?Q?gIvCnDIDsqPXk8icLVre9uZID1wp/7S7Ij5hTOefs3Veu6l8XWCN7d9FYwLi?=
- =?us-ascii?Q?iRWcW3prI7VJNKxiCN5GB4r9G4WViODQU+bIbOlddPPgFDix2+NCZlBXMc2s?=
- =?us-ascii?Q?7kAM6KcBjawKNd7qLmJT6FSQGzg9K6F+Ed6Lupk0Wcb2FiBT7WLFjxtf15V2?=
- =?us-ascii?Q?2kjec45GwmrTw8d8LgsZeBM1RGDE5/iS0AV4fnRQKpqYgAHTVEEqGAaOPVcl?=
- =?us-ascii?Q?HjpVL2I8hW7mGfcSYwVofUn5aE1BzzSJz9sU/ojx3ZTkzveLiJycuG7gxTI8?=
- =?us-ascii?Q?oEE+V3B+3z6+hcVYdPMkvZOcjRcHuW/mM+zR5kqZgh1qvWXcHsKzs+cUbU3I?=
- =?us-ascii?Q?We3EkrwOfBnGIUo0+18lbEOVlX0Q01pUcSZvgpRKbCQIT3BwWiiKNR4iKtrL?=
- =?us-ascii?Q?JgM2BxKmak3wl7eQRmG9OGxyOZWkjddM/g/rV+UyvwzShFhoNwhl8VV3cOYb?=
- =?us-ascii?Q?TGD53XvYVBFomLj4FWQJVqvQUtb71YovtV3IDiPIMuFCe9PmYJDNfzbCXmQ1?=
- =?us-ascii?Q?Xff6Q9lWpk9G1JkUawLO6eTO53YSPVgTGY8lm7plQ6HvlZu6u+9rbtSYlLzM?=
- =?us-ascii?Q?qQ=3D=3D?=
+	id 1shPCy-0000000FjiN-2dvv
+	for linux-phy@lists.infradead.org;
+	Fri, 23 Aug 2024 07:59:45 +0000
+Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-a8682bb5e79so242174766b.2
+        for <linux-phy@lists.infradead.org>; Fri, 23 Aug 2024 00:59:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1724399983; x=1725004783; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=9cyUaWQ/RfElk/9t5oBKQMBDU3FsVlRw3b+jDEVNsQM=;
+        b=H40Nm1c15+goOMjkUfKGUsNv0NAu1t6plMwFSol4ZYKoiMHRG3hZZl4MP4hw/830EX
+         9VncGvmd1cQz8U0UolSbbYRheFcY8wCmuAmunBHEUoYX6chBl2Ie8zVE3QMGRbL/UldW
+         8RIP1XmzEC+Ao71MY6JDdPss0Xh2no/x7R1zFWovzQa88IAxyUVqelhNhSeY7kBqqDJm
+         GGiztDfhcPJ+zeu+DcLjxG1IU/2In9so7P/QhDCcbn0KAkkc9gfbiRCEzNZSDHLB5wGB
+         kxZbIWeSy8tSHIMNoDVMwlJyh3yeDD4N5dxHFHoczaPaUo2U+XbMG5lAKa+n9nGQM+He
+         +K3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724399983; x=1725004783;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=9cyUaWQ/RfElk/9t5oBKQMBDU3FsVlRw3b+jDEVNsQM=;
+        b=RpySzl82YMGK9w72h9YbPb96lp0W57ZJRTx9h5qSC39ZtPDOCGSu6ov5nB4Fw4a8tH
+         +FX+irKRaIBRmcXIbtsUpOXaRhOnCxjFmPxjXBhZkKd5uk4eQjQNv2qjXL7mfQq1xZ0m
+         NNQh8L0EJtpNRFBQxlZ1fqYHFiNkCYaXManVbZsZls8j8o1diEBLN3dyLznY1jDcdMBx
+         B5NqC8P9A+SpPBVyTUiO8Ya3ZsS80i8R7P5Mq4Cb6EWfNJDqIvZH/wYjC6VXTD5intfV
+         FkMvqlAJCeaER5GiAZ1G7u/mMbZIHYWtHalhavMBTx0o6UwJ3L7iDUF3Gaiu+KQXrJld
+         2lAA==
+X-Forwarded-Encrypted: i=1; AJvYcCUWfywiFokPWxgvp9Aq9HhBwmQiLOwHsvT95qRYBAWNYZDBCAfVFCek+u3WPdTuw4E4AdT+x+I3umU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwRf/MKtMEx+vK6xZAJ7rc45meT5B/P2wfVzY5QPTYHbr5p/9T/
+	DyYM19zbPuiQMZ3q/hGqitPfXgedoRpw4h4Ss/6norAcU7Sla0geDZ4meqjmX4U=
+X-Google-Smtp-Source: AGHT+IFALanES9BGD/uHrel10X5aoBTS5/4uaV/A+E4WAJMOHgg5/BTkzR0yFcRw4eCRtDATN+BsLQ==
+X-Received: by 2002:a17:907:6d0d:b0:a86:938f:e84c with SMTP id a640c23a62f3a-a86a54df8d3mr78450566b.66.1724399982571;
+        Fri, 23 Aug 2024 00:59:42 -0700 (PDT)
+Received: from [192.168.50.4] ([82.78.167.177])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a868f48aac4sm219597466b.185.2024.08.23.00.59.40
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 23 Aug 2024 00:59:42 -0700 (PDT)
+Message-ID: <e0308678-c031-41e1-8d07-d2b78504180f@tuxon.dev>
+Date: Fri, 23 Aug 2024 10:59:39 +0300
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bfd16a1b-3e14-42e0-be79-08dcc3463654
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Aug 2024 07:35:50.6343
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ehgFgLiyPzj9D2MlADZdW/+sQLf4mEe4c0QsxYinB5KslhbgPNhflkyypsPsqCYkv4lCdNdJ8TkZgxCUJxrlEuayMUrk5ttR9llOV8dkBP0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRPR01MB12916
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 02/16] dt-bindings: soc: renesas: renesas,rzg2l-sysc: Add
+ #reset-cells for RZ/G3S
+Content-Language: en-US
+To: Conor Dooley <conor@kernel.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
+ magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com,
+ sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com,
+ biju.das.jz@bp.renesas.com, ulf.hansson@linaro.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <20240822152801.602318-3-claudiu.beznea.uj@bp.renesas.com>
+ <20240822-vanilla-enigmatic-f0b05ecca4b6@spud>
+ <20240822-mountain-hurdle-dd1f08b96f64@spud>
+From: claudiu beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <20240822-mountain-hurdle-dd1f08b96f64@spud>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240823_003557_070857_5AB2D192 
-X-CRM114-Status: GOOD (  28.79  )
+X-CRM114-CacheID: sfid-20240823_005944_678781_8405EAD7 
+X-CRM114-Status: GOOD (  14.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -180,159 +106,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Claudiu,
 
-> -----Original Message-----
-> From: Claudiu <claudiu.beznea@tuxon.dev>
-> Sent: Thursday, August 22, 2024 4:28 PM
-> Subject: [PATCH 10/16] phy: renesas: rcar-gen3-usb2: Add support to initialize the bus
-> 
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> 
-> The Renesas RZ/G3S need to initialize the USB BUS before transferring data due to hardware limitation.
-> As the register that need to be touched for this is in the address space of the USB PHY, and the UBS
-> PHY need to be initialized before any other USB drivers handling data transfer, add support to
-> initialize the USB BUS.
-> 
-> As the USB PHY is probed before any other USB drivers that enables clocks and de-assert the reset
-> signals and the BUS initialization is done in the probe phase, we need to add code to de-assert reset
-> signal and runtime resume the device (which enables its clocks) before accessing the registers.
-> 
-> As the reset signals are not required by the USB PHY driver for the other USB PHY hardware variants,
-> the reset signals and runtime PM was handled only in the function that initialize the USB BUS.
-> 
-> The PHY initialization was done right after runtime PM enable to have all in place when the PHYs are
-> registered.
 
-There is no user for this patch. The first user is RZ/G3S and you should merge this patch with
-next one.
+On 22.08.2024 19:44, Conor Dooley wrote:
+> On Thu, Aug 22, 2024 at 05:42:57PM +0100, Conor Dooley wrote:
+>> On Thu, Aug 22, 2024 at 06:27:47PM +0300, Claudiu wrote:
+>>> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>>>
+>>> The RZ/G3S System controller has registers to control signals that need
+>>> to be de-asserted/asserted before/after different SoC areas are power
+>>> on/off. This signals are implemented as reset signals. For this document
+>>> the #reset-cells property.
+>>>
+>>> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>>> ---
+>>>  .../bindings/soc/renesas/renesas,rzg2l-sysc.yaml | 16 ++++++++++++++++
+>>>  1 file changed, 16 insertions(+)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
+>>> index 4386b2c3fa4d..6b0bb34485d9 100644
+>>> --- a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
+>>> +++ b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
+>>> @@ -42,12 +42,28 @@ properties:
+>>>        - const: cm33stbyr_int
+>>>        - const: ca55_deny
+>>>  
+>>> +  "#reset-cells":
+>>> +    const: 1
+>>> +
+>>>  required:
+>>>    - compatible
+>>>    - reg
+>>>  
+>>>  additionalProperties: false
+>>>  
+>>> +allOf:
+>>> +  - if:
+>>> +      properties:
+>>> +        compatible:
+>>> +          contains:
+>>> +            const: renesas,r9a08g045-sysc
+>>> +    then:
+>>> +      required:
+>>> +        - "#reset-cells"
+>>
+>> Given this is new required property on an existing platform, I'd expect
+>> some mention of why it used to be okay to not have this but is now
+>> required. Did firmware or a bootloader stage take things out of reset?
+> 
+> Reading a bit more into the series, the peripherals in question were
+> just never used nor did a driver for the sysc exist, so there's neither
 
-Cheers,
-Biju
+Exactly.
+
+> explanation of prior behaviour nor concerns about compatibility?
+
+The newly introduced sysc driver is probed only for RZ/G3S and used to
+control the USB, PCIe signals though reset control driver (registered by
+sysc driver on auxiliary bus) and to identify the chip. The intention is to
+later migrate the chip identification support for the rest of RZ/G2 devices
+to this new driver and add more functionalities, when/if needed.
+
+Thank you,
+Claudiu Beznea
 
 > 
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> ---
->  drivers/phy/renesas/phy-rcar-gen3-usb2.c | 50 ++++++++++++++++++++++--
->  1 file changed, 47 insertions(+), 3 deletions(-)
+>>
+>>> +    else:
+>>> +      properties:
+>>> +        "#reset-cells": false
+>>> +
+>>>  examples:
+>>>    - |
+>>>      #include <dt-bindings/interrupt-controller/arm-gic.h>
+>>> -- 
+>>> 2.39.2
+>>>
 > 
-> diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> index 7594f64eb737..cf4299cea579 100644
-> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> @@ -19,12 +19,14 @@
->  #include <linux/platform_device.h>
->  #include <linux/pm_runtime.h>
->  #include <linux/regulator/consumer.h>
-> +#include <linux/reset.h>
->  #include <linux/string.h>
->  #include <linux/usb/of.h>
->  #include <linux/workqueue.h>
 > 
->  /******* USB2.0 Host registers (original offset is +0x200) *******/
->  #define USB2_INT_ENABLE		0x000
-> +#define USB2_AHB_BUS_CTR	0x008
->  #define USB2_USBCTR		0x00c
->  #define USB2_SPD_RSM_TIMSET	0x10c
->  #define USB2_OC_TIMSET		0x110
-> @@ -40,6 +42,10 @@
->  #define USB2_INT_ENABLE_USBH_INTB_EN	BIT(2)	/* For EHCI */
->  #define USB2_INT_ENABLE_USBH_INTA_EN	BIT(1)	/* For OHCI */
-> 
-> +/* AHB_BUS_CTR */
-> +#define USB2_AHB_BUS_CTR_MBL_MASK	GENMASK(1, 0)
-> +#define USB2_AHB_BUS_CTR_MBL_INCR4	2
-> +
->  /* USBCTR */
->  #define USB2_USBCTR_DIRPD	BIT(2)
->  #define USB2_USBCTR_PLL_RST	BIT(1)
-> @@ -111,6 +117,7 @@ struct rcar_gen3_chan {
->  	struct extcon_dev *extcon;
->  	struct rcar_gen3_phy rphys[NUM_OF_PHYS];
->  	struct regulator *vbus;
-> +	struct reset_control *rstc;
->  	struct work_struct work;
->  	struct mutex lock;	/* protects rphys[...].powered */
->  	enum usb_dr_mode dr_mode;
-> @@ -125,6 +132,7 @@ struct rcar_gen3_chan {  struct rcar_gen3_phy_drv_data {
->  	const struct phy_ops *phy_usb2_ops;
->  	bool no_adp_ctrl;
-> +	bool init_bus;
->  };
-> 
->  /*
-> @@ -650,6 +658,35 @@ static enum usb_dr_mode rcar_gen3_get_dr_mode(struct device_node *np)
->  	return candidate;
->  }
-> 
-> +static int rcar_gen3_phy_usb2_init_bus(struct rcar_gen3_chan *channel)
-> +{
-> +	struct device *dev = channel->dev;
-> +	int ret;
-> +	u32 val;
-> +
-> +	channel->rstc = devm_reset_control_array_get_shared(dev);
-> +	if (IS_ERR(channel->rstc))
-> +		return PTR_ERR(channel->rstc);
-> +
-> +	ret = pm_runtime_resume_and_get(dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = reset_control_deassert(channel->rstc);
-> +	if (ret)
-> +		goto rpm_put;
-> +
-> +	val = readl(channel->base + USB2_AHB_BUS_CTR);
-> +	val &= ~USB2_AHB_BUS_CTR_MBL_MASK;
-> +	val |= USB2_AHB_BUS_CTR_MBL_INCR4;
-> +	writel(val, channel->base + USB2_AHB_BUS_CTR);
-> +
-> +rpm_put:
-> +	pm_runtime_put(dev);
-> +
-> +	return ret;
-> +}
-> +
->  static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)  {
->  	const struct rcar_gen3_phy_drv_data *phy_data; @@ -703,6 +740,15 @@ static int
-> rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
->  		goto error;
->  	}
-> 
-> +	platform_set_drvdata(pdev, channel);
-> +	channel->dev = dev;
-> +
-> +	if (phy_data->init_bus) {
-> +		ret = rcar_gen3_phy_usb2_init_bus(channel);
-> +		if (ret)
-> +			goto error;
-> +	}
-> +
->  	channel->soc_no_adp_ctrl = phy_data->no_adp_ctrl;
->  	if (phy_data->no_adp_ctrl)
->  		channel->obint_enable_bits = USB2_OBINT_IDCHG_EN; @@ -733,9 +779,6 @@ static int
-> rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
->  		channel->vbus = NULL;
->  	}
-> 
-> -	platform_set_drvdata(pdev, channel);
-> -	channel->dev = dev;
-> -
->  	provider = devm_of_phy_provider_register(dev, rcar_gen3_phy_usb2_xlate);
->  	if (IS_ERR(provider)) {
->  		dev_err(dev, "Failed to register PHY provider\n"); @@ -762,6 +805,7 @@ static void
-> rcar_gen3_phy_usb2_remove(struct platform_device *pdev)
->  	if (channel->is_otg_channel)
->  		device_remove_file(&pdev->dev, &dev_attr_role);
-> 
-> +	reset_control_assert(channel->rstc);
->  	pm_runtime_disable(&pdev->dev);
->  };
-> 
-> --
-> 2.39.2
-
 
 -- 
 linux-phy mailing list
