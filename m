@@ -4,92 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39331C52D7C
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Aug 2024 08:00:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 879A3C52D7C
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Aug 2024 08:08:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y0AWgNI/yYjcCW5RI21OYFTS1pl5Jm7zNkf6qLJY2Bs=; b=YSc6DqAWXlGMv0
-	mLIYI8yEFR77E+qVkb3BYA4O29PIgpRDVvZ9fLGMVN4CAa8hyfUStVEu847Ph++vUYH0dVo7QgG8j
-	c8Ojyw5bZNZLTBV0qlE8EDpCEkEE58HVsPoht7wU1No7eukPDjE5qG2mXK5VjV4WTkNYsT1rx8zWw
-	rTIE8YKectS4STtJAESU+5g+RDhGIMTfUqw+HPFWr5daHjR/6HKqlJ9p69o41XF7y6M9zeDoFWOXk
-	fKxmE1M71X/Si7DO/0fWXHPLTc9N5rM7UThgMwSGgRHDE2cJR9NcuyQxP9YN+uRvy4dYX88QeV0mQ
-	Od8h29Nqd/X0jpwbbp+Q==;
+	List-Owner; bh=cigOjTaoDUCOyR+I3vWRfT/5AWqjPULfLAMHRL7Cfxg=; b=YFPRQ5A8Whjn61
+	o04zXH9/HrqmthClTXZkul62hZJ5BbjwxzYnL9klGh5Uro05WbkpS8/n4QuAETXwOuSEyWHTBL3h7
+	wnDu/GZ7FcemcjR+VJxlM7bl0tpkbTwWPc5mXMZzYPSEPbYtb952WBcRYQK57VuBhcUzRZDJSBgpM
+	sjxdEOegkLjX6KG71zdJO7vVlXpFV2paudWFs3Ek+06DQhXAd6H8WhjktcXjoLyOc+KuhXmLxGd1G
+	qoGyMFuDYg3rOaTwUzMIQFgb2dhb3/QwS5aQ8CnE+rWRFgy12XitkkvuYJEF7lPAdC/isU7404u8m
+	i7++kJibCwqVbeICk6ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shPDj-0000000FjrX-3tkD;
-	Fri, 23 Aug 2024 08:00:31 +0000
-Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
+	id 1shPL6-0000000FmCm-3SY8;
+	Fri, 23 Aug 2024 08:08:08 +0000
+Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1shPCy-0000000FjiN-2dvv
+	id 1shPII-0000000Fl0l-453A
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Aug 2024 07:59:45 +0000
-Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-a8682bb5e79so242174766b.2
-        for <linux-phy@lists.infradead.org>; Fri, 23 Aug 2024 00:59:44 -0700 (PDT)
+	Fri, 23 Aug 2024 08:05:18 +0000
+Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-5bf009cf4c0so1988343a12.1
+        for <linux-phy@lists.infradead.org>; Fri, 23 Aug 2024 01:05:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1724399983; x=1725004783; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1724400313; x=1725005113; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=9cyUaWQ/RfElk/9t5oBKQMBDU3FsVlRw3b+jDEVNsQM=;
-        b=H40Nm1c15+goOMjkUfKGUsNv0NAu1t6plMwFSol4ZYKoiMHRG3hZZl4MP4hw/830EX
-         9VncGvmd1cQz8U0UolSbbYRheFcY8wCmuAmunBHEUoYX6chBl2Ie8zVE3QMGRbL/UldW
-         8RIP1XmzEC+Ao71MY6JDdPss0Xh2no/x7R1zFWovzQa88IAxyUVqelhNhSeY7kBqqDJm
-         GGiztDfhcPJ+zeu+DcLjxG1IU/2In9so7P/QhDCcbn0KAkkc9gfbiRCEzNZSDHLB5wGB
-         kxZbIWeSy8tSHIMNoDVMwlJyh3yeDD4N5dxHFHoczaPaUo2U+XbMG5lAKa+n9nGQM+He
-         +K3Q==
+        bh=Sa2OTpQrBESkhM7AyFlojoPsyzzboKrANMMd0+jjBPI=;
+        b=bf1d/plvO/qQ0atkqHrxNxpULJMki2brSD0OPWeDGJD3V+xc7Rx281dH1NYhAgzwaz
+         3kpm305AMWXyDrvRe2re3QLSSI7PMama2GGCnf1vfczAOchhOZiayT7LfNOPBdQmGY1d
+         xMyG0bdGZMT8/EoiYCqtymAij0HMsa/aZkugaSD8ZrVN60CKe592oFFKdWDDbBBu0BHF
+         XUVcEMFET+cJhbwJb1S48cJv0sTWfN+RwXsvYtwHCTzeuyjQuQbkHnDSnPwV7TECnFsO
+         +hwWhX2eOyKuAd5WVodHBINaRfLi7ePZVQj0pcw6xlGiBCjgO3MiurqSAXt7sTgCs/g+
+         Zpew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724399983; x=1725004783;
+        d=1e100.net; s=20230601; t=1724400313; x=1725005113;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to
          :content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=9cyUaWQ/RfElk/9t5oBKQMBDU3FsVlRw3b+jDEVNsQM=;
-        b=RpySzl82YMGK9w72h9YbPb96lp0W57ZJRTx9h5qSC39ZtPDOCGSu6ov5nB4Fw4a8tH
-         +FX+irKRaIBRmcXIbtsUpOXaRhOnCxjFmPxjXBhZkKd5uk4eQjQNv2qjXL7mfQq1xZ0m
-         NNQh8L0EJtpNRFBQxlZ1fqYHFiNkCYaXManVbZsZls8j8o1diEBLN3dyLznY1jDcdMBx
-         B5NqC8P9A+SpPBVyTUiO8Ya3ZsS80i8R7P5Mq4Cb6EWfNJDqIvZH/wYjC6VXTD5intfV
-         FkMvqlAJCeaER5GiAZ1G7u/mMbZIHYWtHalhavMBTx0o6UwJ3L7iDUF3Gaiu+KQXrJld
-         2lAA==
-X-Forwarded-Encrypted: i=1; AJvYcCUWfywiFokPWxgvp9Aq9HhBwmQiLOwHsvT95qRYBAWNYZDBCAfVFCek+u3WPdTuw4E4AdT+x+I3umU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwRf/MKtMEx+vK6xZAJ7rc45meT5B/P2wfVzY5QPTYHbr5p/9T/
-	DyYM19zbPuiQMZ3q/hGqitPfXgedoRpw4h4Ss/6norAcU7Sla0geDZ4meqjmX4U=
-X-Google-Smtp-Source: AGHT+IFALanES9BGD/uHrel10X5aoBTS5/4uaV/A+E4WAJMOHgg5/BTkzR0yFcRw4eCRtDATN+BsLQ==
-X-Received: by 2002:a17:907:6d0d:b0:a86:938f:e84c with SMTP id a640c23a62f3a-a86a54df8d3mr78450566b.66.1724399982571;
-        Fri, 23 Aug 2024 00:59:42 -0700 (PDT)
+        bh=Sa2OTpQrBESkhM7AyFlojoPsyzzboKrANMMd0+jjBPI=;
+        b=l0BDx4OtP5WD3EJ63z3ZDmC913HVFtVGShKaWfnCdGRAZ4sGb9vjvZ57B0LjlFUeJH
+         Kv2tsamyOwl3bYCqk07ZV0+s5orPHJYpDPX6ujlZxtmflkuuc7BaEilGYRPML/SFjvTy
+         TgaswJKi/GcMvxxtnDGQ18+QW3fNZzFK8qk2fqb3fg/4kHYi5oHDPlc+bpwKi93MSdFj
+         pXE925yqwOW7pRk+DHmHFqGAmbxMeHfdv0F3g8is+n44JWYtp858dfhEKmoyERzHVe0j
+         eBYhxv00fZybmG/w3m1aeNCQPH5nmMqkqObsj84CX/7CXLji+GX7ynhSVqSC4bGXU1hn
+         jHzQ==
+X-Gm-Message-State: AOJu0YzQBL3fsjsi/TP+r6FVZDJqeLADHUzxhHVeUxD5cPgwuHbOtrXc
+	cxDQJwMAPSSH675p/hAJ4zcAGOH82XzFzB2TuEi5TgYGxFjz/OKfcIjg2eCahdQ=
+X-Google-Smtp-Source: AGHT+IFLA0foch1GjV3sZ6TDbZaP3PbxJBTxdcJ9LvOUf0bBMIcrMOGIxsjxdcDtskzYa8CA/ntjuA==
+X-Received: by 2002:a05:6402:d06:b0:5be:df28:f6e3 with SMTP id 4fb4d7f45d1cf-5c08916a8aamr730964a12.13.1724400312895;
+        Fri, 23 Aug 2024 01:05:12 -0700 (PDT)
 Received: from [192.168.50.4] ([82.78.167.177])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a868f48aac4sm219597466b.185.2024.08.23.00.59.40
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5c0515ab2f1sm1756491a12.97.2024.08.23.01.05.10
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 23 Aug 2024 00:59:42 -0700 (PDT)
-Message-ID: <e0308678-c031-41e1-8d07-d2b78504180f@tuxon.dev>
-Date: Fri, 23 Aug 2024 10:59:39 +0300
+        Fri, 23 Aug 2024 01:05:12 -0700 (PDT)
+Message-ID: <5f14dc3a-edff-45f3-a162-3f6fd567777f@tuxon.dev>
+Date: Fri, 23 Aug 2024 11:05:10 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/16] dt-bindings: soc: renesas: renesas,rzg2l-sysc: Add
- #reset-cells for RZ/G3S
+Subject: Re: [PATCH 07/16] reset: rzg2l-usbphy-ctrl: Get reset control array
 Content-Language: en-US
-To: Conor Dooley <conor@kernel.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
- magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com,
- sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com,
- biju.das.jz@bp.renesas.com, ulf.hansson@linaro.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-pm@vger.kernel.org,
+To: Biju Das <biju.das.jz@bp.renesas.com>, "vkoul@kernel.org"
+ <vkoul@kernel.org>, "kishon@kernel.org" <kishon@kernel.org>,
+ "robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
+ <krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
  Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <20240822152801.602318-3-claudiu.beznea.uj@bp.renesas.com>
- <20240822-vanilla-enigmatic-f0b05ecca4b6@spud>
- <20240822-mountain-hurdle-dd1f08b96f64@spud>
+ <20240822152801.602318-8-claudiu.beznea.uj@bp.renesas.com>
+ <TY3PR01MB11346900BCCEB55580C2F912086882@TY3PR01MB11346.jpnprd01.prod.outlook.com>
 From: claudiu beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <20240822-mountain-hurdle-dd1f08b96f64@spud>
+In-Reply-To: <TY3PR01MB11346900BCCEB55580C2F912086882@TY3PR01MB11346.jpnprd01.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240823_005944_678781_8405EAD7 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20240823_010515_019057_8275636F 
+X-CRM114-Status: GOOD (  25.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,83 +114,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi, Biju,
 
-
-On 22.08.2024 19:44, Conor Dooley wrote:
-> On Thu, Aug 22, 2024 at 05:42:57PM +0100, Conor Dooley wrote:
->> On Thu, Aug 22, 2024 at 06:27:47PM +0300, Claudiu wrote:
->>> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->>>
->>> The RZ/G3S System controller has registers to control signals that need
->>> to be de-asserted/asserted before/after different SoC areas are power
->>> on/off. This signals are implemented as reset signals. For this document
->>> the #reset-cells property.
->>>
->>> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->>> ---
->>>  .../bindings/soc/renesas/renesas,rzg2l-sysc.yaml | 16 ++++++++++++++++
->>>  1 file changed, 16 insertions(+)
->>>
->>> diff --git a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
->>> index 4386b2c3fa4d..6b0bb34485d9 100644
->>> --- a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
->>> +++ b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
->>> @@ -42,12 +42,28 @@ properties:
->>>        - const: cm33stbyr_int
->>>        - const: ca55_deny
->>>  
->>> +  "#reset-cells":
->>> +    const: 1
->>> +
->>>  required:
->>>    - compatible
->>>    - reg
->>>  
->>>  additionalProperties: false
->>>  
->>> +allOf:
->>> +  - if:
->>> +      properties:
->>> +        compatible:
->>> +          contains:
->>> +            const: renesas,r9a08g045-sysc
->>> +    then:
->>> +      required:
->>> +        - "#reset-cells"
->>
->> Given this is new required property on an existing platform, I'd expect
->> some mention of why it used to be okay to not have this but is now
->> required. Did firmware or a bootloader stage take things out of reset?
+On 23.08.2024 10:25, Biju Das wrote:
+> Hi Claudiu,
 > 
-> Reading a bit more into the series, the peripherals in question were
-> just never used nor did a driver for the sysc exist, so there's neither
+>> -----Original Message-----
+>> From: Claudiu <claudiu.beznea@tuxon.dev>
+>> Sent: Thursday, August 22, 2024 4:28 PM
+>> Subject: [PATCH 07/16] reset: rzg2l-usbphy-ctrl: Get reset control array
+>>
+>> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>>
+>> Before accessing the USB area of the RZ/G3S SoC the PWRRDY bit of the SYS_USB_PWRRDY register need to
+>> be cleared. When USB area is not used the PWRRDY bit of the SYS_USB_PWRRDY register need to be set.
+>> This register is in the SYSC controller address space and the assert/de-assert of the signal handled
+>> by SYSC_USB_PWRRDY was implemented as a reset signal.
+>>
+>> The USB modules available on the RZ/G3S SoC that need this bit set are:
+>> - USB ch0 (supporting host and peripheral mode)
+>> - USB ch2 (supporting host mode)
+>> - USBPHY control
+>>
+>> As the USBPHY control is the root device for all the other USB channels (USB ch0, USB ch1) add support
+>> to set the PWRRDY for the USB area when initializing the USBPHY control. As this is done though reset
+>> signals get the reset array in the USBPHY control driver.
+>>
+> 
+> Comment applicable, if the USB PWRRDY signal is modelled as reset signal.
+> 
+> There is no user for this patch. The first user is RZ/G3S and is there is no support yet.
+> I think you should merge this patch with next one so that there is a user(RZ/G3S)
+> for this patch.
 
-Exactly.
+I have nothing against to squash it. I was seeing it differently:
+- this patch prepares the ground for the addition of RZ/G3S
+- the next patch just enables the support for RZ/G3S
 
-> explanation of prior behaviour nor concerns about compatibility?
+It looks to me more modular like this, patches are simpler, easier for
+review and each issue is described differently in patch description.
 
-The newly introduced sysc driver is probed only for RZ/G3S and used to
-control the USB, PCIe signals though reset control driver (registered by
-sysc driver on auxiliary bus) and to identify the chip. The intention is to
-later migrate the chip identification support for the rest of RZ/G2 devices
-to this new driver and add more functionalities, when/if needed.
+I can do it either ways.
+
 
 Thank you,
 Claudiu Beznea
 
+
+> Cheers,
+> Biju
 > 
+>> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>> ---
+>>  drivers/reset/reset-rzg2l-usbphy-ctrl.c | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
 >>
->>> +    else:
->>> +      properties:
->>> +        "#reset-cells": false
->>> +
->>>  examples:
->>>    - |
->>>      #include <dt-bindings/interrupt-controller/arm-gic.h>
->>> -- 
->>> 2.39.2
->>>
-> 
+>> diff --git a/drivers/reset/reset-rzg2l-usbphy-ctrl.c b/drivers/reset/reset-rzg2l-usbphy-ctrl.c
+>> index 1cd157f4f03b..8b64c12f3bec 100644
+>> --- a/drivers/reset/reset-rzg2l-usbphy-ctrl.c
+>> +++ b/drivers/reset/reset-rzg2l-usbphy-ctrl.c
+>> @@ -132,7 +132,7 @@ static int rzg2l_usbphy_ctrl_probe(struct platform_device *pdev)
+>>  	if (IS_ERR(regmap))
+>>  		return PTR_ERR(regmap);
+>>
+>> -	priv->rstc = devm_reset_control_get_exclusive(&pdev->dev, NULL);
+>> +	priv->rstc = devm_reset_control_array_get_exclusive(&pdev->dev);
+>>  	if (IS_ERR(priv->rstc))
+>>  		return dev_err_probe(dev, PTR_ERR(priv->rstc),
+>>  				     "failed to get reset\n");
+>> --
+>> 2.39.2
 > 
 
 -- 
