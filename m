@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E538C5472E
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Aug 2024 10:08:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 242C0C54731
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Aug 2024 10:08:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8YWoBeB2S9cgB7FNyP3WHjMWMxIvSjTvRg36W1gslLs=; b=pJHYdoAFprDM1Z
-	4S1CqsfHp+ZcUmtf+cJbK0kn9omvYLWdMcquAbPSwgFVmicJ59mPPocPZzRbUCsASuIG/7PeAGVq+
-	aleBDkhgMeRpm2poP08T/h9VhNAsPlSt9j4YrFoa/VbTN18khImseoNvmbagywG0cy83tMKLpju5C
-	oeU5bHM3GbJzp5x6lIdmwtAWlIAsCftnzi58XQd1Suci6DX4wB1NhXT6jr6Ap9cstehvGyKTWaxt0
-	s66w1Ke+cBiTTbkAd70+sZy40D55d7qjhjar86J5WB6lOYrxYSyui4ihPLc4Q+nNKVVFSOr4QylEi
-	1FiTza/1Qd2ARkPvliHg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PLOUZp8RI94XkdMy5QB8f2Ys/ZiDI/tnHXp+vFcdBPc=; b=Nttedjg+hjnZ+P
+	GohLCzRMH64VoUkh/NU5EBAPz3eo3LxePCWGvQtyTbPjlNJGLkFG1zQAxWndBJrT1EgrPd2BOTXAr
+	616u2GZTbY8NKQJhAvQdMlD1LQRhONOgAj/emBh++mgoTcsZO8dh4rGzQXh8usngL/SdnEXNMJmXp
+	Kjm4oBcCcQ+8WlEllhHmj+2cU9/wEkt0naXnFHUdXhT6D9ZVk6DRc2s4jcZnjmrX4Xxw3kvEC8tB/
+	NQbWT5XPdLSPckePAnOtoUF/4pxtXFWWo9RTVWWdp8TjLYNfpCa95IVUySt3j+lvA0YLBiCeLWC3P
+	oE5k7hAPjyDA1O3x5SiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siWeN-00000006qy0-3sXJ;
-	Mon, 26 Aug 2024 10:08:39 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	id 1siWeO-00000006qyu-34rs;
+	Mon, 26 Aug 2024 10:08:40 +0000
+Received: from mail-wm1-f53.google.com ([209.85.128.53])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siWdL-00000006qbY-3uDZ
+	id 1siWdP-00000006qd3-0V6S
 	for linux-phy@lists.infradead.org;
-	Mon, 26 Aug 2024 10:07:37 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-368633ca4ffso571067f8f.0
-        for <linux-phy@lists.infradead.org>; Mon, 26 Aug 2024 03:07:34 -0700 (PDT)
+	Mon, 26 Aug 2024 10:07:40 +0000
+Received: by mail-wm1-f53.google.com with SMTP id 5b1f17b1804b1-4290075c7e1so5145275e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 26 Aug 2024 03:07:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1724666853; x=1725271653; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=+HjftXAU3xKMpzR2JP/aMX2y07jgOYNP9sRw85N0o18=;
-        b=JmSTnieJkMyxUvABiJvn/30mZFcTPNTqBhnrsVXgpx02AVfsu8gxdzciv6QNgjxbPF
-         UnmO1WsTIJhzmknA5yriVXw6rHbMyY+YIFR56IeLoGef9Wg/zTKCibS3K3nVOJImx40d
-         RvAoXDA8HvXXcT1Fe0zkN+Qap/4L1hXbqk9v1+WZIXiPJIealc9hFlN3DHOEuF1RDwCL
-         +dz6IH/Z0loAs8H3xUlPtI3eWLid8fTGsOeIjrI9p4+368ijKzPoplbHBZ8MR2hiK52W
-         CIOrfuj16CcOUQyzHwidYlgjCnibUmanea3jdtB8i2FVMfr90ECQCKG2L0aekRErQJUW
-         OthQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724666853; x=1725271653;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=linaro.org; s=google; t=1724666857; x=1725271657; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=+HjftXAU3xKMpzR2JP/aMX2y07jgOYNP9sRw85N0o18=;
-        b=nmFW8XniI1Va7BxVZev9qkeBZsA42TzmrDZK+xzSz0ywy0wvLSMGPsqugUwcnXC1Ar
-         hU4V7hpoQcvu44gVD9u6r234KKUG5iVbJUqrNN/Co0OgG3fVsVNYxot5Squcko2N/wst
-         zBW/ZxgNAOwm91o1QnKCiBwZrTJQ8DI91trAK0VrUxAiBCQN47MaLukiAhKp5kuxDy2j
-         bWvpJquRFXz/V5L4tJoLTAUs9HeXLYHIPTxTOUgM70qptVIaXMbcRSPgBxM0N5Xir/ta
-         IRBk/LBt9mQjqx+0XHjtULJc1U6R7W0sniHt8KhEaA0HmlGlcSVZH8XQfyf1ONWhiY1x
-         qo8w==
-X-Gm-Message-State: AOJu0Yw8rNoSTArRpVNB3iHoOJtoV56lG7xNnrTW42KLDklNN3L2wjDZ
-	uFj7/lBjRVW6VBIOoxvkFMl16jal1SoBKvPl5G1o3N0Zrr+7OpdK1n7TlNaL9dM=
-X-Google-Smtp-Source: AGHT+IFCD5GPA1+BkzRXcgnVVTn8nZixGGKVQtfkU6p7k64Y3GOsR+HExdueg7UHKjrmdDfxphRs4w==
-X-Received: by 2002:a5d:59a9:0:b0:371:8d07:f84b with SMTP id ffacd0b85a97d-3731191519cmr4431159f8f.7.1724666852669;
-        Mon, 26 Aug 2024 03:07:32 -0700 (PDT)
+        bh=3WbdwJwMzGd487Jm58/6IPAFGaqbJVFIEVy/1bU3kBU=;
+        b=oZgjnaCpq5y+DdK+o79IOjlgjdBFaspfXJfQL6quKgV8kJkGIQ6HxGqiK9H1ZbTTGv
+         pMZSEHvYndzCdydcjgqppyKgBnho9tAx5iyuM8MyBsE/epggMFaEvOUqQYjHby0ZtJ71
+         V2/METTZBBzLoXS6Wpu408Am8/ijpsg8+qAa1P8/b6z6Uek8L5BHfFBPxHqnmu/LeBxv
+         C96EU4BtsJc6Bob30Cxfdaw+FDJieXWbKnngR7NH22pEtwBP1LGM90OaslKcv9BlibH7
+         fWcHPOdkXUCtubvE6NhqfibD7F3sLwaRN+I8JIxNq5T9HpTqL8WHOeSZC8e5TRAEqLc1
+         vgoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724666857; x=1725271657;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=3WbdwJwMzGd487Jm58/6IPAFGaqbJVFIEVy/1bU3kBU=;
+        b=Knl0c0OqkVpoiKfxoKt63sC96lHA3iOEJs+M8+0kzy8aPPmN+Esa2/y7d5MEnaqpf1
+         5Gx/lAiaPota/tEWBc0bRtx32Vp8XAxDsGP7NIkVLmV5UZKYTHcmpdch3S0vPoJmPdre
+         DMVA3C6nJ13OSSiRmMTeePR2+jteo4UnRvoCz0vFQCDFbcmlynrwPqbxem3FUJ3Lm1u4
+         QbchI7DLIk8NWw/vbwnEkGqMHVdr/uNbiyI7mIjeCYn9+3tige2n9X3Dnh5Z3xw7zcu7
+         842GBLHtiaiENOVa6JuIz7fqZKa7QVWtRlTLVA8ZBI9jJvQI0lc4cx/tgnG/ewA8VufO
+         vICA==
+X-Gm-Message-State: AOJu0YwpNDb0MwXbBF7TnR1O5owo4noDpBaplpjNQGjs3yWdy1D6I7Xt
+	qlp0DFGaMUnpYYP6PYC/FYLu7ZVCDU1fHobKSi92HTU60OWVROlqGvRzseLyIZE=
+X-Google-Smtp-Source: AGHT+IFklH3Ny9t7GPphcYtSHUeO9OqMZPPFfYRC9xfJkhjaSEMhKLJDJuN0g5pcthbBx7LS51ulDQ==
+X-Received: by 2002:a5d:648e:0:b0:373:6bf:9608 with SMTP id ffacd0b85a97d-37311843370mr3729073f8f.2.1724666856869;
+        Mon, 26 Aug 2024 03:07:36 -0700 (PDT)
 Received: from [127.0.1.1] ([178.197.222.82])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37308110009sm10324821f8f.18.2024.08.26.03.07.31
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37308110009sm10324821f8f.18.2024.08.26.03.07.35
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 26 Aug 2024 03:07:32 -0700 (PDT)
+        Mon, 26 Aug 2024 03:07:36 -0700 (PDT)
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH 00/11] phy: simplify with cleanup.h and few other ideas
-Date: Mon, 26 Aug 2024 12:07:16 +0200
-Message-Id: <20240826-phy-of-node-scope-v1-0-5b4d82582644@linaro.org>
+Date: Mon, 26 Aug 2024 12:07:19 +0200
+Subject: [PATCH 03/11] phy: cadence: sierra: Simplify with scoped for each
+ OF child loop
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIANRTzGYC/x3MQQqAIBBA0avIrBsYTSm6SrSInGo2KgpRSHdPW
- r7F/xUKZ+ECk6qQ+ZIiMTToTsF2ruFgFN8Mhoyl0ThM54NxxxA9Y9liYiTn2JPt9WB7aF3KvMv
- 9P+flfT/ZtsNTYwAAAA==
+Message-Id: <20240826-phy-of-node-scope-v1-3-5b4d82582644@linaro.org>
+References: <20240826-phy-of-node-scope-v1-0-5b4d82582644@linaro.org>
+In-Reply-To: <20240826-phy-of-node-scope-v1-0-5b4d82582644@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Ray Jui <rjui@broadcom.com>, 
  Scott Branden <sbranden@broadcom.com>, 
@@ -81,27 +82,26 @@ Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-arm-msm@vger.kernel.org, 
  Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.14.1
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1853;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2013;
  i=krzysztof.kozlowski@linaro.org; h=from:subject:message-id;
- bh=flmAEj5Nd9G8wrUjTaGvwvFK+32RV5njH6u856Suhok=;
- b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBmzFPVkZ2FsKym2PSIv1cjVB9boTWCPLW6iOlIN
- /9pOIHBeGeJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCZsxT1QAKCRDBN2bmhouD
- 1xLqD/9/qGmAF8uPKhx2wWo3kIzy3zrrimGskzxVQsS1cNXBQRhKKrAI6JAENVXRunpYd01lng/
- v0Hvcze6XwNg2IOTK4bjA0n0AF1KvOzFzaPNE3cS+W+t1QUPEz0nzSRzXryV6tYTBb2Z4UCzBDS
- pUC/9jLhQJf1X8giqkNktJNUJ24cOzG4DyUoe4Qvki6ISGMXI2zEMoOOXTOunDcMz9fLB9PBcow
- q94N2lgYb4EcM/KtB5EVs8pFdB7TRIfd14GRRAPqSFBJ0Po6Ym+nT92uxrsWIEj0Nt2Ag8ZwOk6
- WpYyQDmrDFhwdQt4TVhVrcm6kHThBEMrS7+1VdulIBcUvpw/o40qvqFIWlxvyntlcqaGtAMQu/D
- HAO5edJzkHxYXGOcvnDdUFM54tcxqe1EbgWAx61OLgwIrYm/wYoTNHC42CMvduAvA1bNNvHLzSd
- PWb0C6qh18GesykeVDY1LSwjkYBNHFRLBvgaTUEq4PPdVIqtUU58E4vR3qAc8cgQEtAGJje04nA
- llG/H/5qkeIe3hLgrmO7ipSS4pfWIRpPjj93sFe7Sdelh1e8oYwZMm1FwRDmAb8d/T6qa5Iklyo
- QrX76hLjS4tmqrzTHn3WDz+1sUThCLwxfL0K8MoTqIPYsjEMkvYuGKo9rhgnK9AVc4sWYae1LIY
- EIYW82BvNvhusHg==
+ bh=jtNLroZp6oDWwv/KZ3xoT8RtBVpmgjpirqt/ibFxI8s=;
+ b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBmzFPbbKpPHL6GdF5Qqk8rC/GGGrQ4Hh1ZvCtrZ
+ cPY7A2jkAWJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCZsxT2wAKCRDBN2bmhouD
+ 15SfD/9OO/+x3tuIvYd/WbnMT1CUTEf/bF9MuCLRDZpGzwZ8G5dCifwH0FuB5yPntS+hAZlBHp3
+ uIrluv46zJ/Bwsu8eq55BNiIRX2jDecimSOcjXpQndqjiK0v11mZqrpzbFr0PFZcxC2LdszLC9j
+ /1mXPHAhb7CRvCnzKAieTGIY0RA+XP2H0vmzYIQLoc4P7pX19VuxzJhn1pz3CAxAS5qu/iHf5EE
+ 7MfJDnYLKjy48xxkuXs2K2x7jfQv1rBa400T84DoO34MI6A/CxhYEvclBvEVotu+W2zY6x+C+ek
+ QcfKOYnaW1fgCgbA6BpD64ycS2PLcs0Sa+U9KCaaxGkMFF3wcsTeHQ8medG4dhIrzRPyKTMyPkt
+ VluPLHFOHLDew0KlZGSnd2Q1ksOGy+/45S1Oco+2jKUJKyOaiVhsS21scCBagibIWtRLLGHlDid
+ JUVnWiX9yv436GZxILEaeALTUJZbn7NOJUcZK/mcLgVLcaG46CZnZgF+iw7uv1WpwIAUqXkaUpM
+ bnfiSwO5YAEdHESCbWUmxilRSIntxrgzfEhTmEipYjHtmtGNX7nO0ZtShMAiKmpIsqb1+g8nxXE
+ Vl6HFgHWsh5qYz0LpYb7xlW7AmzeV+0LqjatoYQECv4pDCWf/rZiuC8oqhQw3mBeO4gq/qcGhbr
+ 2ZWDAaRAwHdBApA==
 X-Developer-Key: i=krzysztof.kozlowski@linaro.org; a=openpgp;
  fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240826_030735_983067_899CD76F 
-X-CRM114-Status: UNSURE (   5.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240826_030739_173573_10633BB4 
+X-CRM114-Status: GOOD (  11.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,43 +118,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Make code simpler with scoped/cleanup.h/dev_err_probe.
+Use scoped for_each_available_child_of_node_scoped() when iterating over
+device nodes to make code a bit simpler.
 
-Best regards,
-Krzysztof
-
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
-Krzysztof Kozlowski (11):
-      phy: broadcom: bcm-cygnus-pcie: Simplify with scoped for each OF child loop
-      phy: broadcom: brcm-sata: Simplify with scoped for each OF child loop
-      phy: cadence: sierra: Simplify with scoped for each OF child loop
-      phy: hisilicon: usb2: Simplify with scoped for each OF child loop
-      phy: mediatek: tphy: Simplify with scoped for each OF child loop
-      phy: mediatek: xsphy: Simplify with scoped for each OF child loop
-      phy: qcom: qmp-pcie-msm8996: Simplify with scoped for each OF child loop
-      phy: ti: am654-serdes: Use scoped device node handling to simplify error paths
-      phy: ti: gmii-sel: Simplify with dev_err_probe()
-      phy: ti: j721e-wiz: Drop OF node reference earlier for simpler code
-      phy: ti: j721e-wiz: Simplify with scoped for each OF child loop
+ drivers/phy/cadence/phy-cadence-sierra.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
- drivers/phy/broadcom/phy-bcm-cygnus-pcie.c       | 20 +++-------
- drivers/phy/broadcom/phy-brcm-sata.c             | 21 ++++------
- drivers/phy/cadence/phy-cadence-sierra.c         |  7 +---
- drivers/phy/hisilicon/phy-hisi-inno-usb2.c       | 12 ++----
- drivers/phy/mediatek/phy-mtk-tphy.c              | 30 ++++++--------
- drivers/phy/mediatek/phy-mtk-xsphy.c             | 27 +++++--------
- drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c | 11 ++----
- drivers/phy/ti/phy-am654-serdes.c                | 50 ++++++++----------------
- drivers/phy/ti/phy-gmii-sel.c                    | 16 +++-----
- drivers/phy/ti/phy-j721e-wiz.c                   | 12 ++----
- 10 files changed, 68 insertions(+), 138 deletions(-)
----
-base-commit: 834e84894a9d34ecc195d5db5386912bde3eefd7
-change-id: 20240825-phy-of-node-scope-055ed0431743
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index 3010c9f24136..aeec6eb6be23 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -1366,7 +1366,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 	unsigned int id_value;
+ 	int ret, node = 0;
+ 	void __iomem *base;
+-	struct device_node *dn = dev->of_node, *child;
++	struct device_node *dn = dev->of_node;
+ 
+ 	if (of_get_child_count(dn) == 0)
+ 		return -ENODEV;
+@@ -1438,7 +1438,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 
+ 	sp->autoconf = of_property_read_bool(dn, "cdns,autoconf");
+ 
+-	for_each_available_child_of_node(dn, child) {
++	for_each_available_child_of_node_scoped(dn, child) {
+ 		struct phy *gphy;
+ 
+ 		if (!(of_node_name_eq(child, "phy") ||
+@@ -1452,7 +1452,6 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 			dev_err(dev, "failed to get reset %s\n",
+ 				child->full_name);
+ 			ret = PTR_ERR(sp->phys[node].lnk_rst);
+-			of_node_put(child);
+ 			goto put_control;
+ 		}
+ 
+@@ -1461,7 +1460,6 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 			if (ret) {
+ 				dev_err(dev, "missing property in node %s\n",
+ 					child->name);
+-				of_node_put(child);
+ 				reset_control_put(sp->phys[node].lnk_rst);
+ 				goto put_control;
+ 			}
+@@ -1475,7 +1473,6 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 			gphy = devm_phy_create(dev, child, &noop_ops);
+ 		if (IS_ERR(gphy)) {
+ 			ret = PTR_ERR(gphy);
+-			of_node_put(child);
+ 			reset_control_put(sp->phys[node].lnk_rst);
+ 			goto put_control;
+ 		}
 
-Best regards,
 -- 
-Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+2.43.0
 
 
 -- 
