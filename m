@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BC3DC54734
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Aug 2024 13:24:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE6CEC5472F
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Aug 2024 13:25:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4jiZ2Sirw5LLkm/OJxLvUm/w7UwTFZb4WpHtdaJrhUE=; b=iKU8/5MNXKN8qm
-	bCChvwLix1fZnzNonQHPRh7UU+rUbuw3Mluu+7in1qJCfQue2hpfHjSHh+R49V/h9pOd3zxfrWW58
-	daK3d+1YYL3jap67kpYfpC6DtLz8V6ecTnyhZvbxc4HYpM4OfC3Ls9ggEXJEDwlOiaMZe5dL8+KWv
-	e4NAVT3mHQtvQQqdGauNIk4UTnCIkQloKwMByvpGx8Yc3Qvm+1an9w3zr0TC84oZUzlJ5pDuDE8DO
-	fUp8g9378FbnW7sGSzQKdV0dcQsSrUN6L3Au8hAdJBzk2Qn7zQS4aS/zfI5JLQuDdnth/eNDogrEx
-	Eov7nrzBPdeOOcmzVuNw==;
+	List-Owner; bh=6wJ6d6TF4S+clYZIhMlSbG0uMVRX9YSLb+2N+MuUBe4=; b=4KJAYeENAd6NFQ
+	+JaGfVDFZF2F0bQfggGKesfzbARnL2LEyVfuxSQZxzmDjwKKMOQWoZFyMVLbPtp9481Dwte1uN2ab
+	W6VSWhPbnJMkj0SLJfSMc30R6r7vWteKqYxPGBKKOdPtU65IkGCgwk1mHyYQrfmC1uW+pcSMQhoCZ
+	rq5S1HTNeLK9467+w23nDDcNQ9pbcob/k/R9NTj/D2ZweK490Flemk+TM+LsAl6y3kxgX20en/qvv
+	p8kUyaOivUF7TwOX9IpchBjcJze7ssuCSI87szr+xTU/mcIJvE3Rg6Q6W4SHIrq6pSgu11I01fQXx
+	/GXm7gbTbqXjD3jsBisQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siwBe-0000000BRc9-0sGz;
-	Tue, 27 Aug 2024 13:24:42 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1siwCY-0000000BS2Y-2Okr;
+	Tue, 27 Aug 2024 13:25:38 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siwAl-0000000BRGv-0f5l;
-	Tue, 27 Aug 2024 13:23:48 +0000
+	id 1siwB0-0000000BRNF-3V7w;
+	Tue, 27 Aug 2024 13:24:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 3A073A419CD;
-	Tue, 27 Aug 2024 13:23:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 87E0AC61041;
-	Tue, 27 Aug 2024 13:23:42 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2B36AA419CC;
+	Tue, 27 Aug 2024 13:23:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68E85C61041;
+	Tue, 27 Aug 2024 13:23:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724765026;
-	bh=mDhu/iZsja8ip8Pm2FL9kdwCESYdBw1UKwf/Kf3cPCc=;
+	s=k20201202; t=1724765041;
+	bh=73+RVauxylVeoSXQPKLsgBt/WsASDjw/hrVgux1lTlQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=GPPHdM9wD3DL6t8QBV6TWNJF3pGC/kAJZ+e9RYQlt0rfVg5hGwDgUjAJxXLqD5zsf
-	 r0EaYKdWSXe7UV9Qif+G1bA78IGft6VPPcaIApr9ykpQf5xe2AuyJTHQHlJnYad416
-	 At9QLUXmrOeybWoOEF5ad5ra18Vm8i6bm5avo5dp62WuDOIbPLhRrchufidq1m5mDP
-	 fx/os3mheeNaZn7uojTLex68vCVZF9VOvmZx+t2uJVqKnamuR3Av0S9w+JaxLUBf0J
-	 TThtY8jBeRczIof4mubmZRPsIyuPkLBjnMNL35Hvj1NTe9CGzsKu4tcK1Q9RZNlwlX
-	 9PpROBBQznykw==
-Message-ID: <5f29a065-269d-4e72-81b8-30d247994fbd@kernel.org>
-Date: Tue, 27 Aug 2024 15:23:40 +0200
+	b=p90XrteRoMz+UCX+p3AroIYoiuNUJOOnLFy99oydxGwCEPGuNAnIdZpAxgrmygMik
+	 VsnPvJa1cyvtQs4rKhUyM6P1LJ3JBm+CO4rOVeXBLRaWPPJzSuBui3KRHsHLlXmQYj
+	 JGeg2a/FbCEmkzvwZqblNJhrixkn2+ght2TlU3tGN0l2obpndewVqnGJhYcC4hEqjk
+	 +m/0s6AlEAiZ2qKyS2sM6TDP/q+TskoauDDAZd0yYCg7VMVsGzMB/qmY7B1H5qR6ga
+	 zjxXsNV0s1R/Hjfwi4BZgxDslMzUjAJBQxIl2J+S7zr7huHBOidqxwZTvCFrRZbep5
+	 md/XVfNwZy7fQ==
+Message-ID: <2e634ee8-7622-4eb8-ba5b-0d218bb092eb@kernel.org>
+Date: Tue, 27 Aug 2024 15:23:56 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/5] dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
+Subject: Re: [PATCH v3 0/5] Add STM32MP25 USB3/PCIE COMBOPHY driver
 To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org,
  kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
  mcoquelin.stm32@gmail.com, alexandre.torgue@foss.st.com,
@@ -55,7 +55,6 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  fabrice.gasnier@foss.st.com
 References: <20240827122459.1102889-1-christian.bruel@foss.st.com>
- <20240827122459.1102889-2-christian.bruel@foss.st.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -101,10 +100,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240827122459.1102889-2-christian.bruel@foss.st.com>
+In-Reply-To: <20240827122459.1102889-1-christian.bruel@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240827_062347_414496_9FA78D8E 
-X-CRM114-Status: GOOD (  16.57  )
+X-CRM114-CacheID: sfid-20240827_062403_045574_006257C1 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,95 +122,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 27/08/2024 14:24, Christian Bruel wrote:
-> Document the bindings for STM32 COMBOPHY interface, used to support
-> the PCIe and USB3 stm32mp25 drivers.
-> Following entries can be used to tune caracterisation parameters
->  - st,output-micro-ohms and st,output-vswing-microvolt bindings entries
-> to tune the impedance and voltage swing using discrete simulation results
->  - st,rx-equalizer register to set the internal rx equalizer filter value.
+> This patch series adds USB3/PCIE COMBOPHY driver for the STM32MP25 SoC from
+> STMicrolectronics, respective yaml schema and enable for the stm32mp257f-ev1
+> device into which it is used for PCIe.
 > 
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+> Changes in v3:
+> Address comments from Rob and Krzysztof:
+>    - Reorder MAINTAINERS patch
+>    - Drop wakeup-source from bindings (should be generic)
 
-v1? Or v3?
-
-> ---
->  .../bindings/phy/st,stm32-combophy.yaml       | 144 ++++++++++++++++++
->  1 file changed, 144 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml b/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-> new file mode 100644
-> index 000000000000..c33a843b83a3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
-
-Filename matching compatible.
-
-> @@ -0,0 +1,144 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/st,stm32-combophy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32MP25 USB3/PCIe COMBOPHY
-> +
-> +maintainers:
-> +  - Christian Bruel <christian.bruel@foss.st.com>
-> +
-> +description:
-> +  Single lane PHY shared (exclusive) between the USB3 and PCIe controllers.
-> +  Supports 5Gbit/s for USB3 and PCIe gen2 or 2.5Gbit/s for PCIe gen1.
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32mp25-combophy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +    description: |
-> +      The cells contain the following arguments.
-> +
-> +      - description: The PHY type
-
-That's some sort of mess. Is it schema within description or schema? Why
-two descriptions?
-
-> +          enum:
-> +            - PHY_TYPE_USB3
-> +            - PHY_TYPE_PCIE
-> +
-
-...
-
-> +required:
-> +  - compatible
-> +  - reg
-> +  - st,syscfg
-> +  - '#phy-cells'
-> +  - resets
-> +  - reset-names
-> +  - clocks
-> +  - clock-names
-> +
-> +allOf:
-> +  - if:
-> +      required:
-> +        - wakeup-source
-> +    then:
-> +      anyOf:
-> +        - required: [interrupts]
-> +        - required: [interrupts-extended]
-> +
-
-I do not see any improvements.
-
-The tag you received was CONDITIONAL. If you do not apply the comments,
-you cannot just apply the tag.
+Where? Point me to the exact line being dropped.
 
 Best regards,
 Krzysztof
