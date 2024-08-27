@@ -4,65 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9451BC54735
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Aug 2024 12:13:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B228AC54734
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Aug 2024 12:34:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FSMkGwxyaTELxZsm43yHD0TkES91KY3p7YIT5NJW1O8=; b=gntj7zKiJcO1nG
-	nCU6+HB2f0SpltB1NwY83fcOlrjkSPXyXzGpQlzm21SmPngrtvByMXXdVRYil098X2g8hLoFgMBs4
-	r8a4uvHj7NyP9tTwoQwtjCEcuKpfWvV+GhFBc9rVToQZadDPlRvL/oau/33QG76sgHvoIgbdSs3tW
-	vmzxUfta1dEi9KsCwkxPL4AYqrc33nbXGtzpWoVTctb1CvlY2d/gtHeJ/6LNN9Z7UPcF0UN8EiIKJ
-	8fX4cPyST0aE/fJl8+SV1GUUDJLzj9mxanoUxCnGxc7aBeaqaxh2GCp/tVvdk4GUiqG6DGqXtKNPx
-	S7qYKGrgLH0hnbIBus1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mSglcOz+JmsB3RdM/t2p/o/kDDSFTkpYzbmoQmhzuUE=; b=cUTBBdAg2DCnUF
+	G9c9/vU7tWexxhdl0Nh3/j6jeBQknb5+hp3h/9OHfKjp69zrgJwuQXS8dKxHoLfxyY7yTv6caNLDZ
+	VpNI7+j39L//mUQycz136bJjE1L8fnaY3HwzU8LrgaNI9Xx0QaYyDYqKQuKJwgU1npfRcUO8B4nSZ
+	i1iVDR9kBQfJGqDSpuBHr4XrbkTGc+5p6XDtej6CuVUeJWqH0DXKmYSMsOc6YJfxRYSOXZ3Sc6TD1
+	1iUnUvZX0s/GZTQW1pRczEqB7Xf1Vl5tlqmXB2XfQIn5edcZv9V9IAigOepCTj4W/Mp1bNFTZYxzL
+	Njh9LBeVAnzq0h9tbISA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siv4b-0000000BAUE-1FkQ;
-	Tue, 27 Aug 2024 12:13:21 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1sivP1-0000000BFyg-0zTr;
+	Tue, 27 Aug 2024 12:34:27 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siv3j-0000000BANb-0qxT
-	for linux-phy@lists.infradead.org;
-	Tue, 27 Aug 2024 12:12:28 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 4302BA4196F;
-	Tue, 27 Aug 2024 12:12:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BE09FC4FF6D;
-	Tue, 27 Aug 2024 11:36:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724758594;
-	bh=UcW3FlwqzuyJC9hCJ1ksNC75o+2Abm/hr0EArMLVnD8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=u7vwb1MMrQL1AC5qXHbki5GkSPFBcZxhTD/qXN7Is7Ck+79QFUzmvB8EmwEjnKB11
-	 J0bnPk5haVavHQaqxta0wkp0As1SYqmiahukScVyh75RL6P92Kk5Lt801TeYqd5t0f
-	 RSFNvqAmSXybFLkcIyUz21Ax6ZrKOnsolRf8yo6JD7AUsj29RnIcDQwrddkQf8NlxR
-	 fn5ViQ7ntWiynZbWCR7f9yPJSmETgD2NMI6mtodjWGZpqRXuxhEXRu8eAk8KuU685l
-	 k+/Xf3PGHPcQIovoE4G4324FEkigDbr6R3JNQVGQMYJugMm1Ukn3Itv0s9RGQnNnQ6
-	 NwOmBnc295sXw==
-Date: Tue, 27 Aug 2024 13:36:30 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Qiang Yu <quic_qianyu@quicinc.com>
-Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
-	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, mturquette@baylibre.com, sboyd@kernel.org, abel.vesa@linaro.org, 
-	quic_msarkar@quicinc.com, quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org, 
-	kw@linux.com, lpieralisi@kernel.org, neil.armstrong@linaro.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH 5/8] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Document the X1E80100 QMP PCIe PHY Gen4 x8
-Message-ID: <jqzbpgqrbazf3rbdhag56rks74r2h3sjm6mr3tp7v2hb6pxamy@qhksqzsygttt>
-References: <20240827063631.3932971-1-quic_qianyu@quicinc.com>
- <20240827063631.3932971-6-quic_qianyu@quicinc.com>
+	id 1sivHG-0000000BDF2-0LvU;
+	Tue, 27 Aug 2024 12:26:27 +0000
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47RAZcVc018614;
+	Tue, 27 Aug 2024 14:26:14 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=selector1; bh=MTkvu1DrSeJOWwBLrkpClM
+	7Ev2RqstQuHoTEgAEyciM=; b=oISbGJP+2iVPBDbHoCB/YD4k0+TUU2BrnsypM5
+	Pz1qj1l9X1LmtU7jaBTReWVKfzjmEh6uNs1Au3aJwJiB7J2CO3q4ok3hl83M48ZW
+	0VVidMmRhGIMO+3wDGsbK/umvjuZOCcOZBCLY3s+vqRB7u7aBcU5YDX9Ed6pO3W6
+	AErcN0M32uDa39r+DLB4+AN0v8BXRwJ2pWeEKMvRhF01zhyCVtVGa3zjdMe0ePEb
+	VCptViheJFi5B/nRwcjXS1Fg4bUE11rUk54FTROj4MpBy/jj8IMxaY8YLMk8avU3
+	Lg5x2VjhU34b0RudKst8+NLXRwVpdoAd2wF3Eh6EGcgngcnQ==
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 41796km64c-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 27 Aug 2024 14:26:14 +0200 (MEST)
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 7B29440045;
+	Tue, 27 Aug 2024 14:26:10 +0200 (CEST)
+Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3573526333B;
+	Tue, 27 Aug 2024 14:25:22 +0200 (CEST)
+Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
+ (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Tue, 27 Aug
+ 2024 14:25:22 +0200
+From: Christian Bruel <christian.bruel@foss.st.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
+        <p.zabel@pengutronix.de>
+CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <fabrice.gasnier@foss.st.com>,
+        Christian Bruel <christian.bruel@foss.st.com>
+Subject: [PATCH v3 0/5] Add STM32MP25 USB3/PCIE COMBOPHY driver 
+Date: Tue, 27 Aug 2024 14:24:54 +0200
+Message-ID: <20240827122459.1102889-1-christian.bruel@foss.st.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240827063631.3932971-6-quic_qianyu@quicinc.com>
+X-Originating-IP: [10.129.178.212]
+X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE3.st.com
+ (10.75.129.71)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-27_06,2024-08-27_01,2024-05-17_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240827_051227_389893_79D1FDF2 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20240827_052626_606134_70EC8E1B 
+X-CRM114-Status: GOOD (  11.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,55 +92,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 26, 2024 at 11:36:28PM -0700, Qiang Yu wrote:
-> PCIe 3rd instance of X1E80100 support Gen 4x8 which needs different 8 lane
-> capable QMP PCIe PHY. Document Gen 4x8 PHY as separate module.
-> 
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> ---
->  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml        | 18 +++++++++++++++++-
->  1 file changed, 17 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> index 03dbd02cf9e7..e122657490b1 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -40,6 +40,7 @@ properties:
->        - qcom,sm8650-qmp-gen4x2-pcie-phy
->        - qcom,x1e80100-qmp-gen3x2-pcie-phy
->        - qcom,x1e80100-qmp-gen4x2-pcie-phy
-> +      - qcom,x1e80100-qmp-gen4x8-pcie-phy
->  
->    reg:
->      minItems: 1
-> @@ -47,7 +48,7 @@ properties:
->  
->    clocks:
->      minItems: 5
-> -    maxItems: 7
-> +    maxItems: 8
->  
->    clock-names:
->      minItems: 5
-> @@ -59,6 +60,7 @@ properties:
->        - const: pipe
->        - const: pipediv2
->        - const: phy_aux
-> +      - const: clkref_en
+This patch series adds USB3/PCIE COMBOPHY driver for the STM32MP25 SoC from
+STMicrolectronics, respective yaml schema and enable for the stm32mp257f-ev1
+device into which it is used for PCIe.
 
-That sounds like enabling clock ref, not the reference clock.
+Changes in v3:
+Address comments from Rob and Krzysztof:
+   - Reorder MAINTAINERS patch
+   - Drop wakeup-source from bindings (should be generic)
 
->  
->    power-domains:
->      maxItems: 1
-> @@ -190,6 +192,19 @@ allOf:
->          clock-names:
->            minItems: 7
+Changes in v2:
+   - Reorder entries
+   - Rename clock_names and reset_names bindings
+   - Rename and clarify rx-equalizer binding 
 
-You need to now constrain other cases. Missing maxItems.
+Christian Bruel (5):
+  dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
+  phy: stm32: Add support for STM32MP25 COMBOPHY.
+  MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
+  arm64: dts: st: Add combophy node on stm32mp251
+  arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
 
-Best regards,
-Krzysztof
+ .../bindings/phy/st,stm32-combophy.yaml       | 144 +++++
+ MAINTAINERS                                   |   6 +
+ arch/arm64/boot/dts/st/stm32mp251.dtsi        |  17 +
+ arch/arm64/boot/dts/st/stm32mp257f-ev1.dts    |  14 +
+ drivers/phy/st/Kconfig                        |  11 +
+ drivers/phy/st/Makefile                       |   1 +
+ drivers/phy/st/phy-stm32-combophy.c           | 607 ++++++++++++++++++
+ 7 files changed, 800 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/st,stm32-combophy.yaml
+ create mode 100644 drivers/phy/st/phy-stm32-combophy.c
+
+-- 
+2.34.1
 
 
 -- 
