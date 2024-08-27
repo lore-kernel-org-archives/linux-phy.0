@@ -4,82 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E38DAC54734
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Aug 2024 12:34:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93DD8C5473A
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Aug 2024 12:34:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIbwo42+I647nDw5nxOUMknUfJkM7kQ+ZKcboiJzNJI=; b=Xg8I+Zzw2KwSK5
-	EgAJAJekxtv/NrdRsTl7WfQuh38sSVkV5eNiguB2v8xLYuutEXQ2x2JEOf3W1uYppakW0j55wvWn3
-	NJdN6vDUTFK3IuHMaA/elyZSba4zpyqHodT1+lOLhvRpcMXOrRDt6mW4JdkwYQZq1sU3lNnNQmzIu
-	l+n71rf5s3YctxWET8nH/2tu5AULs3DC9fVxFnk84Q570qgn3H1wt9fIB8TfiVTgvnJHyj/FzvIsZ
-	C8hZAHw40CmP5mPWabcQr/a0SItd19u9xER3DmReD145KXUVMs5gaBOS/t2xCkFGhSfDQZXfMwKgw
-	PDZJTr+uzr0vNs7YjtCw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=mnaRncWHvHhxQ/34v1fJnohKpIlXkZZKR8vfyGA1QMk=; b=OsWOGptsC3eh1FlEvRaEXSK1gy
+	IPtmIcFO+oWv7/WiCg4TIkjjWS1qNwn0DMfPEKj4uKJT6eDGTIcLgayAQg+ggiRjvIkh1ia2SUCtx
+	N4mFX0IyuJlwTmnst1h+h1wrz2rhbbIMITx47G6naFCB+iGzaI8ADMW/8IH4dHzGU2a4mddUgUorg
+	+ZAPYJ2/QR0DKBFM2wab7m40FcA/TCJ4pOSuNWHT3fFu8D9HfImbmnzSYBH87iU8HSxL6akCEHErn
+	KeUYyRqCNjE2vcrZgqS5caUsCqenH+NzktXmroLPdTEHBNWWBD45qGFE4ZSam4zjlO2XEx2oqLh3y
+	4izM01Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sivP9-0000000BG62-1QsH;
-	Tue, 27 Aug 2024 12:34:35 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
+	id 1sivPE-0000000BGB5-3wF3;
+	Tue, 27 Aug 2024 12:34:40 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sivIw-0000000BE6y-28KR;
-	Tue, 27 Aug 2024 12:28:12 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47R9SHYe022518;
-	Tue, 27 Aug 2024 14:28:04 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=selector1; bh=
-	oFevO1WzCe1lndyKIcqDqzd48GJyNyJUl83cjIp11to=; b=i6uXeeKLWRxy94In
-	EvMRbtS/PUzxXmyA8022fgQ8d7s5d1gfAy/FRZ4M+2lPl1YlQEHExNwkP6dKGYhm
-	qmJ0AodA8U97w41Rx32k1lgLiTw9DdmbhYcQmyczpENdKstI8IXPOV3xIr3L3sdv
-	hOEe/vd0j20FDIDxwZ96pWuXDmWp5Z6jCYWzRmMJYkOQKW+ZXw9Ua/Mfi6ipTQXA
-	mGbRAvPbhe0V+3omfMYbHSNs5IPLWsQTj1pgtfizRLPjh/0Z+8mFvrkl2+IP0WEh
-	wnyKAKVy+mYhnT906DRR2iXh0rtEuyIjBqGitu9P6CsuLwO85/nCjDiMkkmloJpr
-	3LOe+A==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 419c6u0tk6-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 27 Aug 2024 14:28:04 +0200 (MEST)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 6ABC94002D;
-	Tue, 27 Aug 2024 14:28:00 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BD6EA263345;
-	Tue, 27 Aug 2024 14:27:11 +0200 (CEST)
-Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Tue, 27 Aug
- 2024 14:27:11 +0200
-From: Christian Bruel <christian.bruel@foss.st.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
-        <p.zabel@pengutronix.de>
-CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <fabrice.gasnier@foss.st.com>,
-        Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH 5/5] arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
-Date: Tue, 27 Aug 2024 14:24:59 +0200
-Message-ID: <20240827122459.1102889-6-christian.bruel@foss.st.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240827122459.1102889-1-christian.bruel@foss.st.com>
-References: <20240827122459.1102889-1-christian.bruel@foss.st.com>
+	id 1sivMO-0000000BF7F-1Pv5
+	for linux-phy@lists.infradead.org;
+	Tue, 27 Aug 2024 12:31:47 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id AD93CA4190E;
+	Tue, 27 Aug 2024 12:31:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3FCAAC6104D;
+	Tue, 27 Aug 2024 12:31:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1724761903;
+	bh=qmMzGnC28ZCDh31+2GefMmB0QMXAHDZVokWKSX+jKyU=;
+	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+	b=gNMjNWhoZffSOv1un8ggYbJD221iCDLPRhGXySnV4I9D0LpvMrLudiopVGiQHN41h
+	 sIBQFWvONGMXeFUFsvTLZ4Ug1Jk986Qn8V/R0P6HPX4mCfVarAnDYwW0/qkFeI52C5
+	 01CzjlyjSbdqLE57f0Z7YxxcQUqPP+SMMfHtgYmXU+gqDJ+wswLxRVol2yYOpC351t
+	 qK2N/HKBi6FJkb2HVNv6vR1SOwo3hokVVhnBRqlcjvuQSR4QX+OeVvg7kT6TdWJvpy
+	 1+b9n3YM4Im9LXRIM2j4UWAmCnOVb797kw4jDDohWQHpwNRuMGm0w7oCdc+o7+8r3l
+	 FWDFBNRa0Xctw==
+Date: Tue, 27 Aug 2024 07:31:41 -0500
 MIME-Version: 1.0
-X-Originating-IP: [10.129.178.212]
-X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE3.st.com
- (10.75.129.71)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
- definitions=2024-08-27_06,2024-08-27_01,2024-05-17_01
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Qiang Yu <quic_qianyu@quicinc.com>
+Cc: devicetree@vger.kernel.org, mturquette@baylibre.com, vkoul@kernel.org, 
+ dmitry.baryshkov@linaro.org, sboyd@kernel.org, neil.armstrong@linaro.org, 
+ linux-clk@vger.kernel.org, conor+dt@kernel.org, 
+ linux-arm-msm@vger.kernel.org, andersson@kernel.org, kw@linux.com, 
+ manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, 
+ konradybcio@kernel.org, abel.vesa@linaro.org, quic_devipriy@quicinc.com, 
+ linux-pci@vger.kernel.org, quic_msarkar@quicinc.com, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kishon@kernel.org, krzk+dt@kernel.org
+In-Reply-To: <20240827063631.3932971-1-quic_qianyu@quicinc.com>
+References: <20240827063631.3932971-1-quic_qianyu@quicinc.com>
+Message-Id: <172476183902.3553327.3757950028426438486.robh@kernel.org>
+Subject: Re: [PATCH 0/8] Add support for PCIe3 on x1e80100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240827_052810_868346_93E2CD24 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240827_053144_547999_7158F635 
+X-CRM114-Status: GOOD (  13.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,48 +79,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the COMBOPHY with external pad clock on stm32mp257f-ev1
-board, to be used for the PCIe clock provider.
 
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
----
- arch/arm64/boot/dts/st/stm32mp257f-ev1.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+On Mon, 26 Aug 2024 23:36:23 -0700, Qiang Yu wrote:
+> This series add support for PCIe3 on x1e80100.
+> 
+> PCIe3 needs additional set of clocks, regulators and new set of PCIe QMP
+> PHY configuration compare other PCIe instances on x1e80100. Hence add
+> required resource configuration and usage for PCIe3.
+> 
+> Qiang Yu (8):
+>   phy: qcom-qmp: pcs-pcie: Add v6.30 register offsets
+>   phy: qcom-qmp: pcs: Add v6.30 register offsets
+>   phy: qcom: qmp: Add phy register and clk setting for x1e80100 PCIe3
+>   arm64: dts: qcom: x1e80100: Add support for PCIe3 on x1e80100
+>   dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100
+>     QMP PCIe PHY Gen4 x8
+>   clk: qcom: gcc-x1e80100: Fix halt_check for pipediv2 clocks
+>   arm64: dts: qcom: x1e80100-qcp: Add power supply and sideband signal
+>     for pcie3
+>   PCI: qcom: Add support to PCIe slot power supplies
+> 
+>  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |  18 +-
+>  arch/arm64/boot/dts/qcom/x1e80100-qcp.dts     | 116 +++++++++
+>  arch/arm64/boot/dts/qcom/x1e80100.dtsi        | 205 +++++++++++++++-
+>  drivers/clk/qcom/gcc-x1e80100.c               |  10 +-
+>  drivers/pci/controller/dwc/pcie-qcom.c        |  52 +++-
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 222 +++++++++++++++++-
+>  .../qualcomm/phy-qcom-qmp-pcs-pcie-v6_30.h    |  25 ++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_30.h |  19 ++
+>  8 files changed, 657 insertions(+), 10 deletions(-)
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_30.h
+>  create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_30.h
+> 
+> --
+> 2.34.1
+> 
+> 
+> 
 
-diff --git a/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts b/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-index 214191a8322b..bcf84d533cb2 100644
---- a/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-+++ b/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-@@ -27,6 +27,14 @@ chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	clocks {
-+		pad_clk: pad-clk {
-+			#clock-cells = <0>;
-+			compatible = "fixed-clock";
-+			clock-frequency = <100000000>;
-+		};
-+	};
-+
- 	memory@80000000 {
- 		device_type = "memory";
- 		reg = <0x0 0x80000000 0x1 0x0>;
-@@ -50,6 +58,12 @@ &arm_wdt {
- 	status = "okay";
- };
- 
-+&combophy {
-+	clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>, <&pad_clk>;
-+	clock-names = "apb", "ker", "pad";
-+	status = "okay";
-+};
-+
- &ethernet2 {
- 	pinctrl-names = "default", "sleep";
- 	pinctrl-0 = <&eth2_rgmii_pins_a>;
--- 
-2.34.1
+
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
+
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+New warnings running 'make CHECK_DTBS=y qcom/x1e80100-qcp.dtb' for 20240827063631.3932971-1-quic_qianyu@quicinc.com:
+
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: reg: [[0, 29163520, 0, 12288], [0, 2013265920, 0, 3869], [0, 2013269824, 0, 168], [0, 2013270016, 0, 4096], [0, 2014314496, 0, 1048576]] is too short
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: reg-names: ['parf', 'dbi', 'elbi', 'atu', 'config'] is too short
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clocks: [[53, 348], [53, 84], [53, 86], [53, 87], [53, 94], [53, 95], [53, 22], [53, 33]] is too long
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:0: 'aux' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:1: 'cfg' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:2: 'bus_master' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:3: 'bus_slave' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:4: 'slave_q2a' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:5: 'noc_aggr' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names:6: 'cnoc_sf_axi' was expected
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: clock-names: ['pipe_clk_src', 'aux', 'cfg', 'bus_master', 'bus_slave', 'slave_q2a', 'noc_aggr', 'cnoc_sf_axi'] is too long
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pci@1bd0000: Unevaluated properties are not allowed ('operating-points-v2', 'opp-table' were unexpected)
+	from schema $id: http://devicetree.org/schemas/pci/qcom,pcie-x1e80100.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: phy@1be0000: clock-names:4: 'pipe' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: phy@1be0000: clock-names:5: 'pipediv2' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: phy@1be0000: clock-names:6: 'phy_aux' was expected
+	from schema $id: http://devicetree.org/schemas/phy/qcom,sc8280xp-qmp-pcie-phy.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pmic@3: gpio@8800: 'pm_sde7_aux_3p3', 'pm_sde7_main_3p3' do not match any of the regexes: '-hog(-[0-9]+)?$', '-state$', 'pinctrl-[0-9]+'
+	from schema $id: http://devicetree.org/schemas/mfd/qcom,spmi-pmic.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: gpio@8800: 'pm_sde7_aux_3p3', 'pm_sde7_main_3p3' do not match any of the regexes: '-hog(-[0-9]+)?$', '-state$', 'pinctrl-[0-9]+'
+	from schema $id: http://devicetree.org/schemas/pinctrl/qcom,pmic-gpio.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: pmic@8: gpio@8800: 'pcie_x8_12v_on' does not match any of the regexes: '-hog(-[0-9]+)?$', '-state$', 'pinctrl-[0-9]+'
+	from schema $id: http://devicetree.org/schemas/mfd/qcom,spmi-pmic.yaml#
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: gpio@8800: 'pcie_x8_12v_on' does not match any of the regexes: '-hog(-[0-9]+)?$', '-state$', 'pinctrl-[0-9]+'
+	from schema $id: http://devicetree.org/schemas/pinctrl/qcom,pmic-gpio.yaml#
+
+
+
+
 
 
 -- 
