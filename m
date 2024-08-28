@@ -4,94 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0AD3C5479B
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Aug 2024 09:48:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CEE8FC54E62
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Aug 2024 09:52:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ki8BVYOL7k9odbqDvG8yHxURYDXlgX87lOKeVGnfZvM=; b=e2QWD8QAX0Kle3
-	jbmZuKEJLX1uAKmftFQPwFXNVQ/ojU2bCvxVB2kWYGNcKwY928XjqyizmxTy1Fslaxjq4ZKmDItYk
-	JtZQr2uQZgMiGEtUoTHlbyFNDGWq13YN/7HSus2Ht5FLZAt8TNlzopyQ/h+16uawhQgyFuyWDhONz
-	GQEqIzXEN2TBUsuJ3LmQBVojlps2I1v5KDuU248LorOAEQIOUih6WLi7ENg29dT3CnZ+9NwAdEQhW
-	CYSBXNGRKztqqQlIopjVKh84bXsJLJBDQ71AvOLi03sYX4HNnu+C4LqUBrna4PVzXHltc2Nr3YMig
-	4dNgzolwkdSB8p5zOQmQ==;
+	List-Owner; bh=cxXDI+9lAsH/IkKO2ALqj6Ua6K7o4rnY6UNngtHR3ls=; b=n00HyIQDPTD+aC
+	DkBNtLxgNJthgRHzcO8siYSdBpgdKd0+H7i5w2+7mMxP57jcwKowm4FHMIuyUrPKtUAhARJ+FBFbA
+	aw/1jQtZr2GoQyO/UX6a/GtMsNyRfJU7duS5iz/C+XRmskbXLnPDkbJlnHgp6RvJVYzqIwUJ6bECB
+	atsQsf78fRDNUuENEl9n75XVwixmpTVq1mpf7JOos10Np90/7/z7bHD6Rw7X0wwPEF6l31itYQUPM
+	1bQ3XGBa2OZYeNP3qeEZg2FjV9Lg4Uq5Bu4FQ5j2TTD342mJr+DNdWGDwilE8PUsPMsDB1Zzh2A13
+	p+9AIFXmrn/wvWXEb1dQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjFHU-0000000En9W-2MJf;
-	Wed, 28 Aug 2024 09:48:00 +0000
+	id 1sjFMC-0000000Eo6B-2Iwu;
+	Wed, 28 Aug 2024 09:52:52 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjFGs-0000000Emyb-3pLo
+	id 1sjFLp-0000000Eo0E-0NSr
 	for linux-phy@lists.infradead.org;
-	Wed, 28 Aug 2024 09:47:24 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47RLa8Vd003338;
-	Wed, 28 Aug 2024 09:47:16 GMT
+	Wed, 28 Aug 2024 09:52:30 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47RLoxO3021979;
+	Wed, 28 Aug 2024 09:52:23 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	wFrCP06yThMc9EUNQaHvP6RM6Ru44h3Cwde2qdVIPg8=; b=Iy002u14I9Dn0CL9
-	4FMVMqIMRSdotoyDQbbcZdg3RLZmW3vZttY551Q8tcn+BZ+bgfB1mKqz4aCxsDPd
-	EV2J3sDPHjT8AuupszFnoRpBEtwGwvKieP4660H6fDIL1K9jSct0J92tFw7UxArC
-	5n5mTce+6mFhqCwVdRXXamG5PDx84dL4rrNnH9nzWWf9cm1hwSDLlR7RiQbqKLG1
-	/PHIJSvzvyFDXLHB6ZD/foZmR0pRTvgBJwLq4xR1EIcL34xmXgUJADH616hZok92
-	h4N1FjT8Biw4lPjpEJMzIi74qhH3Pn645l8b5/1q5xgoQEBrlL2YiGasS4Wo3wPI
-	CKdudA==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419puuhc4d-1
+	LZ/UZBqbrpDfh3OhZd0Fzvysdp6yYSxd2eS0/wozgjg=; b=Wv4VEiK9EMI+b4+h
+	h8VJ5Cy7wTZcBh6aYAi1tgdDJeMOTZBgidrHpTQX/Q1HrLl8WKStiiEWKIwdLLQz
+	ChnUNmbJ25haKVMD4xKZo+Z0NjvwOp5TwZ6t/U+R2HAcRkJRsMMhOPQV844sw0ud
+	k8PgcUPIl2AqpQ1kOUU046N2GWQGZQfyKK/gras89CAhgwHWfttQxAhRdnQFaQzV
+	cAwX/CYTYETNB66plMUli6Dj3R9ZT84zAL0K/wKzvCi16rFgA878gnIgA8iXyqWm
+	Atu+eIKDh6xiqpUvLKJHx6S1WXvvtuvlMkywPIbyOyfsuDebhAMMW/WfGQG8Aryp
+	iJaPJg==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419q2xsc6v-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 28 Aug 2024 09:47:15 +0000 (GMT)
+	Wed, 28 Aug 2024 09:52:22 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47S9lE2Z022003
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47S9qLPd029799
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 28 Aug 2024 09:47:14 GMT
+	Wed, 28 Aug 2024 09:52:21 GMT
 Received: from [10.239.29.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
  (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 28 Aug
- 2024 02:47:08 -0700
-Message-ID: <2c23f7e8-c407-4c5c-a8e2-65be98f9c92b@quicinc.com>
-Date: Wed, 28 Aug 2024 17:47:04 +0800
+ 2024 02:52:13 -0700
+Message-ID: <d79f84f1-345b-4099-b1d2-567ebfd3789d@quicinc.com>
+Date: Wed, 28 Aug 2024 17:52:09 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 3/8] phy: qcom: qmp: Add phy register and clk setting for
  x1e80100 PCIe3
-To: Konrad Dybcio <konradybcio@kernel.org>, <manivannan.sadhasivam@linaro.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <andersson@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
         <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
-        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>
-CC: <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
+        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
         <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
         <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
         <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-clk@vger.kernel.org>
 References: <20240827063631.3932971-1-quic_qianyu@quicinc.com>
  <20240827063631.3932971-4-quic_qianyu@quicinc.com>
- <2d3f3da1-713e-4378-b87d-11f10f0f9590@kernel.org>
+ <3rwkr4tqyki7umt75bgy6wcs2whchw2vb5ckrkqffaizxm3ssp@glkarq76vl4f>
 Content-Language: en-US
 From: Qiang Yu <quic_qianyu@quicinc.com>
-In-Reply-To: <2d3f3da1-713e-4378-b87d-11f10f0f9590@kernel.org>
+In-Reply-To: <3rwkr4tqyki7umt75bgy6wcs2whchw2vb5ckrkqffaizxm3ssp@glkarq76vl4f>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: bPaR0HwOi_PMeNhFKaeI2BPb0mytkZPr
-X-Proofpoint-GUID: bPaR0HwOi_PMeNhFKaeI2BPb0mytkZPr
+X-Proofpoint-ORIG-GUID: 2X_2s6x66qP3zlQeEjn_cCe0fE1nDiyF
+X-Proofpoint-GUID: 2X_2s6x66qP3zlQeEjn_cCe0fE1nDiyF
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
  definitions=2024-08-28_03,2024-08-27_01,2024-05-17_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- malwarescore=0 clxscore=1015 impostorscore=0 phishscore=0 adultscore=0
- bulkscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0 mlxlogscore=799
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
+ clxscore=1015 priorityscore=1501 lowpriorityscore=0 spamscore=0
+ impostorscore=0 mlxlogscore=955 phishscore=0 adultscore=0 bulkscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2407110000 definitions=main-2408280070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240828_024723_130691_071E2233 
-X-CRM114-Status: GOOD (  17.28  )
+X-CRM114-CacheID: sfid-20240828_025229_295082_231BABF8 
+X-CRM114-Status: GOOD (  11.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,75 +110,28 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 8/27/2024 6:33 PM, Konrad Dybcio wrote:
-> On 27.08.2024 8:36 AM, Qiang Yu wrote:
->> Currently driver supports only x4 lane based functionality using tx/rx and
->> tx2/rx2 pair of register sets. To support 8 lane functionality with PCIe3,
->> PCIe3 related QMP PHY provides additional programming which are available
->> as txz and rxz based register set. Hence adds txz and rxz based registers
->> usage and programming sequences. Phy register setting for txz and rxz will
->> be applied to all 8 lanes. Some lanes may have different settings on
->> several registers than txz/rxz, these registers should be programmed after
->> txz/rxz programming sequences completing.
->>
->> Besides, PCIe3 related QMP PHY also requires addtional clk, which is named
->> as clkref_en. Hence, add this clk into qmp_pciephy_clk_l so that it can be
->> easily parsed from devicetree during init.
->>
->> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
->> ---
-> [...]
->
->> +static const struct qmp_phy_init_tbl x1e80100_qmp_gen4x8_pcie_rx_tbl[] = {
->> +	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x3a, 1),
-> 1 -> BIT(0)
->
-> [...]
->
->> +	/* Set to true for programming all 8 lanes using txz/rxz registers */
->> +	bool lane_broadcasting;
-> This is unnecessary because you call qmp_configure_lane conditionally,
-> but that function has a nullcheck built in
-Yes, there is null pointer check in qmp_configure_lane, will remove
-lane_broadcating check.
->> +
->>   	/* resets to be requested */
->>   	const char * const *reset_list;
->>   	int num_resets;
->> @@ -2655,6 +2815,8 @@ struct qmp_pcie {
->>   	void __iomem *rx;
->>   	void __iomem *tx2;
->>   	void __iomem *rx2;
->> +	void __iomem *txz;
->> +	void __iomem *rxz;
->>   	void __iomem *ln_shrd;
+On 8/27/2024 7:38 PM, Krzysztof Kozlowski wrote:
+> On Mon, Aug 26, 2024 at 11:36:26PM -0700, Qiang Yu wrote:
+>>   	if (cfg->tbls.ln_shrd)
+>>   		qmp->ln_shrd = base + offs->ln_shrd;
 >>   
->>   	void __iomem *port_b;
->> @@ -2700,7 +2862,7 @@ static inline void qphy_clrbits(void __iomem *base, u32 offset, u32 val)
->>   
->>   /* list of clocks required by phy */
->>   static const char * const qmp_pciephy_clk_l[] = {
->> -	"aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux",
->> +	"aux", "cfg_ahb", "ref", "refgen", "rchng", "phy_aux", "clkref_en",
-> Why not just put in TCSR_PCIE_8L_CLKREF_EN as "ref"? It's downstream
-> of the XO anyway.
-Yes, TCSR_PCIE_8L_CLKREF_EN is source from XO, will update patch as
-your comments.
+>> @@ -4424,6 +4641,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+>>   	}, {
+>>   		.compatible = "qcom,x1e80100-qmp-gen4x2-pcie-phy",
+>>   		.data = &x1e80100_qmp_gen4x2_pciephy_cfg,
+>> +	}, {
+>> +		.compatible = "qcom,x1e80100-qmp-gen4x8-pcie-phy",
+> Undocumented compatible or your patch order is wrong.
+OK, will put the yaml patch in front of this patch
 
 Thanks,
 Qiang
 >
-> [...]
+>> +		.data = &x1e80100_qmp_gen4x8_pciephy_cfg,
+>>   	},
+> Best regards,
+> Krzysztof
 >
->>   	const struct qmp_phy_cfg *cfg = qmp->cfg;
->> @@ -3700,6 +3907,11 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
->>   
->>   	qmp_configure(qmp->dev, serdes, tbls->serdes, tbls->serdes_num);
->>   
->> +	if (cfg->lane_broadcasting) {
-> All these ifs can be unconditional
->
-> Konrad
 
 -- 
 linux-phy mailing list
