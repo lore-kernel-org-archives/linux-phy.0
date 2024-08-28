@@ -4,62 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4096BC636E3
-	for <linux-phy@archiver.kernel.org>; Wed, 28 Aug 2024 16:48:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19B36C636EE
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Aug 2024 19:28:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zIt9Wfvj5eXx/X//9YDEa1JdMShBa1FU6dyt/xt5doA=; b=VTVVe5/GlMf5koHRZG9aoZJuX5
-	q/XdfKFYm0wM6kUZnmj2sphwo2K/wqQCam71mEYKXtrhw9z+tRNiO8sbInUAgQWd92pL+ov9JH6ca
-	3GsN5f5Boo49skdSPd0XRwK9UZLVFoDwWbbtpGnVY4Gy8xZBl4lEQLSBuV8/1RXdpiqsEjIX7ZxaX
-	cnjsc4zkc3942AHYmTJVERqVLYqIbSpUMbAIjJxv6d17TE+YIxQhVKuXdgEoFHVRHcT5S6qiiBagg
-	URTOHSYC1M7D+DiuHN85vh1WCgq2pskTgbR5CFMji8kQn6Of/cSCOO5vi7dZD6yv/6Hh09R5nRbP1
-	xmTV3jXw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K3/niQWxtswrux6pEXGBeKQk0qEELc8d7YXIYZD9a7I=; b=fn2ja9lcYBy8N/
+	5geakeMOrp80rkHCs6Zh3H5F1ERGf8QqIgzWbwhjRxpcYwCFARL9YFhFaP5/mcyfSdf3Kk+XaWFQ9
+	6B1fctQi/nargys4wr9PdydnvCtHGzphFrtQzu0V/pLa/oxvxyIVAmgYCx+ckP4foAxVm9kGoa4XR
+	wN6OAUUFpmFuJRZKvIsOPOxq9crXyWyWpproFF8kwRUMvgqTEGCv0V4YjeZ885eSgFkSXI83eWraQ
+	d6/ghHONHS95Az6fQv7VFyXtIk6T4Biwwa6Gy6AyooeNnODGVf8Fc35g7DrZCrUfSrmoNPWry977I
+	5Iw26R3tyG6nPUhM5hVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjLqH-0000000GFO6-3hg4;
-	Wed, 28 Aug 2024 16:48:21 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1sjOLF-0000000GjWN-328o;
+	Wed, 28 Aug 2024 19:28:29 +0000
+Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjLpQ-0000000GFGX-2OJJ;
-	Wed, 28 Aug 2024 16:47:30 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 47276A428B6;
-	Wed, 28 Aug 2024 16:47:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9BC89C4CABF;
-	Wed, 28 Aug 2024 16:11:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724861477;
-	bh=9CtFrh3gKyelJvHQtwXVoL7gTTFZNFMEbrIHkpQX020=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=guNWp2bD47/n92FQffLtDnx3F/38XLD7Q9FpHV2RCXj3jzotPNdPUO5BN+pHTfu69
-	 EW4MmLD5CEf3UXMqKMeS6UDdhEH2v6vFNL0fsdGp1Iz+Qgb0+IIa0pfk2D4yuHTXFF
-	 6LJhk6iD+rWsuaQ67bNl8uKCVi2ykNQLf9Ibmu5j9HqHq7/2aEvHeRRMphWNlobXkP
-	 WkgcHxUTV+M2fC0FlDCqLN4IcEHUU2M5OCSaBiBuyYkx3NRAxMOjdvryiHPNYxtmy6
-	 LDID3U86Onq4+mMmfPEqQRnguSDzZYjCBP8ugKTLsAktMs35GZMxKn9Ym3aygxWYij
-	 C1I9T80hbocoQ==
-Date: Wed, 28 Aug 2024 17:11:12 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Christian Bruel <christian.bruel@foss.st.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com, p.zabel@pengutronix.de,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	fabrice.gasnier@foss.st.com
-Subject: Re: [PATCH v4 1/5] dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
-Message-ID: <20240828-handsfree-overarch-cd1af26cb0c5@spud>
-References: <20240828143452.1407532-1-christian.bruel@foss.st.com>
- <20240828143452.1407532-2-christian.bruel@foss.st.com>
+	id 1sjOL0-0000000GjMh-1Tef
+	for linux-phy@lists.infradead.org;
+	Wed, 28 Aug 2024 19:28:15 +0000
+Received: by mail-pg1-x530.google.com with SMTP id 41be03b00d2f7-7c3ebba7fbbso5081685a12.1
+        for <linux-phy@lists.infradead.org>; Wed, 28 Aug 2024 12:28:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1724873292; x=1725478092; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=41vNKmWV0Fmo4MXQhPV0ZKp536FxHqIvBGLbGjrcGLI=;
+        b=gXn6c7/XtGV4ItbM+YV146TpvAzFhZyTa9WBCdlgxv2xTytUyHvJDE4Abb3iV8Iwni
+         fBHZ+KaaxbtxuJP/8WAa2YuYsmtpy+xZtseX0G+/ojkpT1UDgACE/q4VkmjSjdW3s7ji
+         STT4mpjVuPjGZ6js3fCllQeAduhjCIbsGM1KghOAptQkKoypbvw/AeSg9AqcO/pIiwH6
+         3OErJ3vks4l+SOiM0Vu9GKFVU32jXq7ZwNJS5spDx45c6/MSfCoPO1KsIulD/p4aAJnr
+         /jyWKkdSFC0wBNwIKP0eGqkdGKwCZYXplMKAVQtrnjTiDxHNg6cjGVGylsspJlzd2wXv
+         CNpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724873292; x=1725478092;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=41vNKmWV0Fmo4MXQhPV0ZKp536FxHqIvBGLbGjrcGLI=;
+        b=pBCATbD+ImFWny8ym/YWsflHZeleVmSan47HBm3uHC2Q2PmS7T6y2n1LPtJxu6+1OB
+         mT27OLPDwceoIwzYA2Ovf/q85t/cDr5r1wwPE8jU7QNnbhEngBFyfyGIzbs/9nGDnQEJ
+         n0J3bxTMCbH/llrJG2NemwfkqwuwGQatp09cyQpJQSiI7Y4HAxcp7cxO01THUQtybnut
+         RLLxRug5mx4GUsKl4ZpObrmD6yGP7AGYc2AhkTBxW4BJZta4YLow0nUYm/wHtql4mOSx
+         iO9RXbNyUxkjxn5oWM6HqCGXx5mfXJJoQlTcZnTsmwqGPw+EV5Er6rTgVZTzB127pBIY
+         w0hg==
+X-Gm-Message-State: AOJu0YwW3/fD9tv/MuA8puJbGFQrknQdu5VbswUvq4V2nf7ppfMiJjRm
+	slf77EK58FYtyP1bSCt0BGUXiBw2HNbK3R3pPW57Gwz1A71DiMk0jUVz/f63LdIjJZKGmCrHcBZ
+	1QYmD09tc232m8l456VHUTwTC1cY=
+X-Google-Smtp-Source: AGHT+IHGKQRrrJKAWjVfpmgtEEps4m/S1EaPYltuzkTd89UmilZ0DIs4APB42zq9VQmfA4Lnvo50dt6R8J5UrG5K0ow=
+X-Received: by 2002:a17:90b:46d8:b0:2d3:b55e:5f2 with SMTP id
+ 98e67ed59e1d1-2d8561a24f8mr404633a91.14.1724873292293; Wed, 28 Aug 2024
+ 12:28:12 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20240828143452.1407532-2-christian.bruel@foss.st.com>
+References: <20240828024813.1353572-1-aford173@gmail.com> <20240828024813.1353572-2-aford173@gmail.com>
+ <Zs7kJ6vCDbxVvxU1@atmark-techno.com> <CAHCN7xLX1FPQFFBsgfd4Msa+y=KNay9M9q1fu=P1uuKZLacS4g@mail.gmail.com>
+In-Reply-To: <CAHCN7xLX1FPQFFBsgfd4Msa+y=KNay9M9q1fu=P1uuKZLacS4g@mail.gmail.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Wed, 28 Aug 2024 14:28:00 -0500
+Message-ID: <CAHCN7xJtw2JakEtvD31dCKvpanzu6Pxbc0S81rDurYbVp5g_aA@mail.gmail.com>
+Subject: Re: [RFC 2/2] phy: freescale: fsl-samsung-hdmi: Support dynamic
+ integer divider
+To: Dominique Martinet <dominique.martinet@atmark-techno.com>
+Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com, 
+	frieder.schrempf@kontron.de, aford@beaconembedded.com, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
+	Marco Felsch <m.felsch@pengutronix.de>, Lucas Stach <l.stach@pengutronix.de>, 
+	linux-kernel@vger.kernel.org, Makoto Sato <makoto.sato@atmark-techno.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240828_094728_751646_E00B7CD6 
-X-CRM114-Status: GOOD (  25.10  )
+X-CRM114-CacheID: sfid-20240828_122814_418595_0E03EF88 
+X-CRM114-Status: GOOD (  38.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,234 +90,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5095203310922427685=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============5095203310922427685==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ZqexDgeCbf5zKW3c"
-Content-Disposition: inline
-
-
---ZqexDgeCbf5zKW3c
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Aug 28, 2024 at 04:34:48PM +0200, Christian Bruel wrote:
-> Document the bindings for STM32 COMBOPHY interface, used to support
-> the PCIe and USB3 stm32mp25 drivers.
-> Following entries can be used to tune caracterisation parameters
->  - st,output-micro-ohms and st,output-vswing-microvolt bindings entries
-> to tune the impedance and voltage swing using discrete simulation results
->  - st,rx-equalizer register to set the internal rx equalizer filter value.
->=20
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
-> ---
->  .../bindings/phy/st,stm32mp25-combophy.yaml   | 128 ++++++++++++++++++
->  1 file changed, 128 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/st,stm32mp25-co=
-mbophy.yaml
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/st,stm32mp25-combophy.=
-yaml b/Documentation/devicetree/bindings/phy/st,stm32mp25-combophy.yaml
-> new file mode 100644
-> index 000000000000..8d4a40b94507
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/st,stm32mp25-combophy.yaml
-> @@ -0,0 +1,128 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/st,stm32mp25-combophy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: STMicroelectronics STM32MP25 USB3/PCIe COMBOPHY
-> +
-> +maintainers:
-> +  - Christian Bruel <christian.bruel@foss.st.com>
-> +
-> +description:
-> +  Single lane PHY shared (exclusive) between the USB3 and PCIe controlle=
-rs.
-> +  Supports 5Gbit/s for USB3 and PCIe gen2 or 2.5Gbit/s for PCIe gen1.
-> +
-> +properties:
-> +  compatible:
-> +    const: st,stm32mp25-combophy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +    items:
-> +      - description: apb Bus clock mandatory to access registers.
-> +      - description: ker Internal RCC reference clock for USB3 or PCIe
-> +      - description: pad Optional on board clock input for PCIe only. Ty=
-pically an
-> +                     external 100Mhz oscillator wired on dedicated CLKIN=
- pad. Used as reference
-> +                     clock input instead of the ker
-> +
-> +  clock-names:
-> +    minItems: 2
-> +    items:
-> +      - const: apb
-> +      - const: ker
-> +      - const: pad
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: phy
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  wakeup-source: true
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +    description: interrupt used for wakeup
-> +
-> +  access-controllers:
-> +    minItems: 1
-> +    maxItems: 2
-
-Can you please describe the items here?
-
-> +  st,syscfg:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: Phandle to the SYSCON entry required for configuring PC=
-Ie
-> +      or USB3.
-
-Why is a phandle required for this lookup, rather than doing it by
-compatible?
-
-> +
-> +  st,ssc-on:
-> +    type: boolean
-
-flag, not boolean, for presence based stuff. And in the driver,
-s/of_property_read_bool/of_property_present/.
-
-> +    description:
-> +      A boolean property whose presence indicates that the SSC for commo=
-n clock
-> +      needs to be set.
-
-And what, may I ask, does "SSC" mean? "Common clock" is also a bit of a
-"linuxism", what does this actually do in the hardware block?
-
-> +
-> +  st,rx-equalizer:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0
-> +    maximum: 7
-> +    default: 2
-> +    description:
-> +      A 3 bit value to tune the RX fixed equalizer setting for optimal e=
-ye compliance
-> +
-> +  st,output-micro-ohms:
-> +    minimum: 3999000
-> +    maximum: 6090000
-> +    default: 4968000
-> +    description:
-> +      A value property to tune the Single Ended Output Impedance, simula=
-tions results
-> +      at 25C for a VDDP=3D0.8V. The hardware accepts discrete values in =
-this range.
-> +
-> +  st,output-vswing-microvolt:
-> +    minimum: 442000
-> +    maximum: 803000
-> +    default: 803000
-> +    description:
-> +      A value property in microvolt to tune the Single Ended Output Volt=
-age Swing to change the
-> +      Vlo, Vhi for a VDDP =3D 0.8V. The hardware accepts discrete values=
- in this range.
-> +
-> +required:
-> +  - "#phy-cells"
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +  - reg
-> +  - resets
-> +  - reset-names
-> +  - st,syscfg
-
-The order here should reflect the ordering in a node, so compatible and
-reg first, rather than sorted alphanumerically.=20
-
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/st,stm32mp25-rcc.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/reset/st,stm32mp25-rcc.h>
-> +
-> +    combophy: phy@480c0000 {
-
-You can drop the label here, it ain't used by anything.
-
-Cheers,
-Conor.
-
-> +        compatible =3D "st,stm32mp25-combophy";
-> +        reg =3D <0x480c0000 0x1000>;
-> +        #phy-cells =3D <1>;
-> +        clocks =3D <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>;
-> +        clock-names =3D "apb", "ker";
-> +        resets =3D <&rcc USB3PCIEPHY_R>;
-> +        reset-names =3D "phy";
-> +        st,syscfg =3D <&syscfg>;
-> +        access-controllers =3D <&rifsc 67>;
-> +        power-domains =3D <&CLUSTER_PD>;
-> +        wakeup-source;
-> +        interrupts-extended =3D <&exti1 45 IRQ_TYPE_EDGE_FALLING>;
-> +    };
-> +...
-> --=20
-> 2.34.1
->=20
-
---ZqexDgeCbf5zKW3c
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZs9MIAAKCRB4tDGHoIJi
-0rh1AQCPLBp07OqC6pb/M6pgsgJC3wD1Sth/EdmLd/aA+HbfbQD/UrdgsGoXy9Qq
-CdxZUx/rJtHiFAP20+3XyjwVb1Gy1gU=
-=onYf
------END PGP SIGNATURE-----
-
---ZqexDgeCbf5zKW3c--
-
-
---===============5095203310922427685==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5095203310922427685==--
-
+T24gV2VkLCBBdWcgMjgsIDIwMjQgYXQgOToxMeKAr0FNIEFkYW0gRm9yZCA8YWZvcmQxNzNAZ21h
+aWwuY29tPiB3cm90ZToKPgo+IE9uIFdlZCwgQXVnIDI4LCAyMDI0IGF0IDM6NDfigK9BTSBEb21p
+bmlxdWUgTWFydGluZXQKPiA8ZG9taW5pcXVlLm1hcnRpbmV0QGF0bWFyay10ZWNobm8uY29tPiB3
+cm90ZToKPiA+Cj4gPiBBZGFtIEZvcmQgd3JvdGUgb24gVHVlLCBBdWcgMjcsIDIwMjQgYXQgMDk6
+NDg6MDJQTSAtMDUwMDoKPiA+ID4gVGhlcmUgaXMgY3VycmVudGx5IGEgbG9vay11cCB0YWJsZSBm
+b3IgYSB2YXJpZXR5IG9mIHJlc29sdXRpb25zLgo+ID4gPiBTaW5jZSB0aGUgcGh5IGhhcyB0aGUg
+YWJpbGl0eSB0byBkeW5hbWljYWxseSBjYWxjdWxhdGUgdGhlIHZhbHVlcwo+ID4gPiBuZWNlc3Nh
+cnkgdG8gdXNlIHRoZSBpbnRnZXIgZGl2aWRlciB3aGljaCBzaG91bGQgYWxsb3cgbW9yZQo+ID4g
+PiByZXNvbHV0aW9ucyB3aXRob3V0IGhhdmluZyB0byB1cGRhdGUgdGhlIGxvb2stdXAtdGFibGUu
+ICBJZiB0aGUKPiA+ID4gaW50ZWdlciBjYWxjdWxhdG9yIGNhbm5vdCBnZXQgYW4gZXhhY3QgZnJl
+cXVlbmN5LCBpdCBmYWxscyBiYWNrCj4gPiA+IHRvIHRoZSBsb29rLXVwLXRhYmxlLiAgQmVjYXVz
+ZSB0aGUgTFVUIGFsZ29yaXRobSBkb2VzIHNvbWUKPiA+ID4gcm91bmRpbmcsIEkgZGlkIG5vdCBy
+ZW1vdmUgaW50ZWdlciBlbnRyaWVzIGZyb20gdGhlIExVVC4KPiA+Cj4gPiBUaGFuayB5b3UhCj4g
+Pgo+ID4gV2UncmUgc3RpbGwgcnVubmluZyA1LjEwIHNvIEkgYmFja3BvcnRlZCB0aGUgZHJpdmVy
+IGFzIG9mIGl0J3MgY3VycmVudAo+ID4gc3RhdGUgZmlyc3QgKHRoYXQgcGFydCB3b3JrcyksIHVu
+Zm9ydHVuYXRlbHkgb3VyIDUxLjJNSHogZGlzcGxheSBkb2VzCj4gPiBub3Qgd29yayB3aXRoIHRo
+aXMuCj4gPgo+ID4gQWZ0ZXIgcGh5X2Nsa19yb3VuZF9yYXRlKCkgbm90IHJvdW5kIHRoZSBwaXhl
+bCBjbG9jayB0byB0aGUgdGFibGUgdmFsdWVzCj4gPiAob3RoZXJ3aXNlIHdlJ2Qgb25seSBnZXQg
+cm91bmRlZCB2YWx1ZXMpLCBhbmQgbWFraW5nIHBoeV9jbGtfc2V0X3JhdGUoKQo+ID4gcGFzcyB0
+aGUgcmVxdWVzdGVkIGByYXRlYCBpbnN0ZWFkIG9mIHVzaW5nIHRoZSBuZXh0IHNtYWxsZXIgY2Zn
+LT5waXhjbGssCj4gPiB0aGUgZGlzcGxheSBubyBsb25nZXIgY29tZXMgdXAuCgpJdCBsb29rcyBs
+aWtlIEkgbmVlZCB0byB1cGRhdGUgcGh5X2Nsa19yb3VuZF9yYXRlIHRvIGNhbGN1bGF0ZSB0aGUK
+aW50ZWdlciBjbG9jayB2YWx1ZSB0aGVyZSBhcyB3ZWxsIGFuZCBpZiBpdCdzIG5vdCBwb3NzaWJs
+ZSB0byByZWFjaAp0aGUgZGVzaXJlZCB2YWx1ZSwgZmFsbCBiYWNrIHRvIHRoZSBMVVQuCgpJIGxp
+a2VseSB3b24ndCBnZXQgdGhhdCBkb25lIHRvZGF5LCBidXQgSSdsbCB0cnkuCgphZGFtCj4KPiBE
+byB5b3Ugd2FudCBtZSB0byBjcmVhdGUgYSB0YWJsZSBlbnRyeSBmb3IgNTEuMk1Iej8gIEkgYW0g
+cHJldHR5IHN1cmUKPiB0aGUgaW50ZWdlciBlbmdpbmUgY2FuIGhhbmRsZSBpdC4gIEknbGwgaW52
+ZXN0aWdhdGUgd2hhdCdzIGNhbGxpbmcKPiBwaHlfY2xrX3JvdW5kX3JhdGUgdG8gc2VlIGlmIHdl
+IGNhbiB1c2UgdGhlIFBNUyBjYWxjdWFsdG9yIHRvIGF2b2lkCj4gdGhlIGxvb2stdXAgdGFibGUu
+Cj4KPgo+ID4KPiA+IEl0IGNvbWVzIHVwIHdpdGggdGhlIHZhbHVlcyBvYnRhaW5lZCBmb3IgNTAu
+NE1IeiAobmV4dCBjbG9zZXN0IHZhbHVlKSwKPiA+IHdoaWNoIGFsc28gaGFzIGFuIGV4YWN0IG1h
+dGNoIHNvIHVzZXMgdGhlIGludGVnZXIgZGl2aWRlciB0aGlzIHBhdGNoCj4gPiBjb21wdXRlcyBp
+bnN0ZWFkIG9mIHRoZSB0YWJsZSB2YWx1ZXMsIGJ1dCBub3Qgd2l0aCB0aGUgNTEuMk1IeiBpdAo+
+ID4gcmVxdWVzdHMuLi4KPiA+IEknbSBhZnJhaWQgYXQgdGhpcyBwb2ludCBJIGRvbid0IGtub3cg
+aG93IHRvIGRlYnVnIHRoYXQgZnVydGhlciB3aXRob3V0Cj4gPiBnZXR0aW5nIGEgc2NvcGUgb3V0
+IChJIGRvbid0IGtub3cgaWYgdGhlIHNvYyBpc24ndCBnZW5lcmF0aW5nIHNvbWV0aGluZwo+ID4g
+Y29ycmVjdCBvciBpZiB0aGUgZGlzcGxheSBhY3R1YWxseSBkb2Vzbid0IGxpa2UgdGhlIGZyZXF1
+ZW5jeSBpdAo+ID4gcmVxdWVzdHM/ISB0aGUgbGF0ZXIgY291bGQgYmUgY2hlY2tlZCBieSBwbHVn
+Z2luZyBpdCBpbiB0byBhbm90aGVyIFBDCj4gPiB0aGF0IG1pZ2h0IHN1cHBvcnQgdGhhdCBmcmVx
+dWVuY3kuLi4pLCBhbmQgdGhhdCBpcyBnb2luZyB0byB0YWtlIHF1aXRlIGEKPiA+IHdoaWxlLi4u
+Cj4gPgo+ID4gSG9wZWZ1bGx5IEZyaWVkZXIgd2lsbCBoYXZlIG1vcmUgc3VjY2VzcyB3aXRoIGhp
+cyBkaXNwbGF5cz8KPiA+IEl0IGNvdWxkIGFsc28gYmUgdmVyeSB3ZWxsIGR1ZSB0byBzb21lIG9m
+IHRoZSBkaWZmZXJlbmNlcyB3aXRoIG91ciA1LjEwCj4gPiB0cmVlLCBzb3JyeSBhYm91dCB0aGF0
+Lgo+ID4KPiA+ID4gIHN0YXRpYyBpbnQgZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlKHN0
+cnVjdCBmc2xfc2Ftc3VuZ19oZG1pX3BoeSAqcGh5LAo+ID4gPiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgY29uc3Qgc3RydWN0IHBoeV9jb25maWcgKmNmZykKPiA+ID4g
+IHsKPiA+ID4gKyAgICAgdTMyIGRlc2lyZWRfY2xvY2sgPSBjZmctPnBpeGNsayAqIDU7Cj4gPgo+
+ID4gKEkgZG9uJ3QgcmVhbGx5IHVuZGVyc3RhbmQgd2hlcmUgdGhhdCBgKiA1YCBjb21lcyBmcm9t
+LCBidXQgSSBndWVzcyBpdCdzCj4gPiBleHBlY3RlZD8gd29ya3MgZm9yIG90aGVyIGRpc3BsYXkg
+YW5kIG5laWdoYm9yIGZyZXF1ZW5jeSBhbnl3YXkuLi4pCj4KPiBXaGVuIEkgbG9va2VkIGF0IHRo
+ZSBMVVQgZW50cmllcyBmb3IgdGhlIGNsb2NrIHJhdGVzIHRoYXQgZG9uJ3QgbmVlZAo+IHRoZSBm
+cmFjdGlvbmFsIGRpdmlkZXIsIEkgbm90ZWQgdGhlIGNsb2NrIHJhdGUgd2FzIDV4IHRoZSBwaXgg
+Y2xvY2suCj4gVGhpcyB3YXMgY29uc2lzdGVudCBmb3IgZWFjaCBlbnRyeS4gIEV2ZW4gd2hlbiB0
+aGUgZnJhY3Rpb25hbCBkaXZpZGVyCj4gd2FzIHVzZWQsIGl0IGFwcGVhcmVkIHRoYXQgdGhlIGNs
+b2NrIHJhdGUgd2FzIDV4IHRoZSBwaXggY2xrLiAgQmVjYXVzZQo+IHRoZSBQTVMgY2FsY3VsYXRv
+ciBJIHdyb3RlIGlzIGV4cGVjdGluZyBhIGNsb2NrIHJhdGUsIEkganVzdAo+IG11bHRpcGxpZWQg
+YnkgNSBoZXJlIGluc3RlYWQgb2YgaW5zaWRlIHRoZSBQTVMgY2FsY3VsYXRvci4KPgo+IGFkYW0K
+PiA+Cj4gPiBUaGFua3MsCj4gPiAtLQo+ID4gRG9taW5pcXVlCj4gPgo+ID4KCi0tIApsaW51eC1w
+aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
