@@ -4,113 +4,150 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D68D5C7EE3A
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 08:37:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83C3FC83026
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 09:02:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=cau4JukevDEU+bmJRUmkK+P4ozrrnHNiYKgjm6+x0H4=; b=N0ZcY6dJeKUtJegl/PnqcJo0bu
-	5d8xJMZe8oDUqTnuDrn/s7eSqcNYgvu1fqcAh1y2Nss8Jhvieyizb6OoJabYK1/Vpu3Ecljo/F93y
-	b4Yz30azUR0r7Fg6y5EZbMx/g6xsvl0JXKQpRgzclrtTmcOkst2w5V/SMR9AIYcIfE+bkH75ddtLT
-	O2d1lpDLq6lDopBnUNFIgBNwtcJJ5dyZHfhFKisaMFLm4+52M+F69ctyEvt1YiDotkfGA5EixEeCA
-	6UiLVOmpr9EGCxBc39lxMk5a1nyW05WvhSNim2mwiKUWTdT/aoPwTwx96YQ0XSYZadCDzmUZwsWUR
-	CklojHOw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aoyjzOGXtKjBEDzqtj+vwwJ5rjbGZMd4WdxTslmlz08=; b=LpAtPGYbUGQT/Q
+	YGwDHfBmBDE4mbzFin44AmO/SZwAHUoT1BZtirrfYLtJOBL+PM/vwgs8sm9d5Mj1IzCabiRR4b0N5
+	9IYZqMBjTKIPe9IFcuoYLLpPTKvksl4gHpLbusRtgczCWIX/+ksCtZwhwReCJoijdrnl5KoCOS1kY
+	M+5uYI5im5VcFRCJFwUEKFvZdlZ2aofdFxk+Bjy/I00LzSdoGl5Kyby6xO8IQR3OiFtG2EHfDiMpj
+	VULP+VW79RlXB9NX6pXHUyp8KDz0hmWoQwIASPInbIQmcYKCt4WqA2KXbFgnOL9sP7IwH2D6Fu8/l
+	TVzQ7xh/whVStU7J6JlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjafE-00000001BBF-2IAr;
-	Thu, 29 Aug 2024 08:37:56 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1sjb2r-00000001GaP-4Ale;
+	Thu, 29 Aug 2024 09:02:21 +0000
+Received: from mail-db8eur05on20608.outbound.protection.outlook.com ([2a01:111:f400:7e1a::608] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjaYP-000000019NI-3S2m
-	for linux-phy@lists.infradead.org;
-	Thu, 29 Aug 2024 08:30:55 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-42bac9469e8so3286105e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Aug 2024 01:30:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1724920252; x=1725525052; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=/fW71FS0lmTuV1wHWmHmOLHgNUvex8iYSoVrr1nHB6s=;
-        b=tU0ikx02jPOrg4Ux36zvWU7WPuQIyV1eMZfc7gE6VZVH0P2O0+lv1pn60x+G+VR/Nv
-         lPZcmFG5Ttu1JXtkpKtHAuBnV3PudwCcb5aB6OqAhJXgy0PzVqT3X2EYcSbgpL4GLspx
-         7YwGDXcLqDmyfHUVnYhgRYL4WH0hB3ChO3zyB+y5kUvpoQP2IUBhnFMduA7UCbNPXQsn
-         792XUAogHDkWiI+Cn8SFWFszgm8a3MKbuZLrRaS+qdrj4OpGH3W0tR8BbVXx+pm52+Fu
-         8JUoZuNNw5FJ0x86olEIhaSr3k/EvyaXXNOXK/usf+CAK46i63/4Iz0NullnZlr20g6i
-         PNlg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724920252; x=1725525052;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=/fW71FS0lmTuV1wHWmHmOLHgNUvex8iYSoVrr1nHB6s=;
-        b=eQ4fKqzg6KOe15cNBIAIWWKkaT8TgvSXDKtBKirr2c1FmnyR6xNuvtHSChfn50aInw
-         33kUdIDTfPhW2/jH+qhdK9PfDQtVxEp26pf6QwR/9GL5AQ5faDoCu+5zntKKZjBRSK/4
-         hRLurI5XXF5MAGyodXZOrEvhdhEXL5TwJwZI7y0Wb0gd9hRWmB5Du24mx6GUYHplYj30
-         I12hbZFqMXvN5Kx5Hjce1yj2YOPy2lAsC70y/4Gb6X/o4lC4jph/YOHiMH0NUUPc5vJX
-         1XfdP8iWKYTZxF18QKgEOO1yU+mzktRE+pchSfQWEjuqSVaUTmR+YM7j+fLeUYTOtMYw
-         fxHA==
-X-Forwarded-Encrypted: i=1; AJvYcCWyUK6HhDBW3bcFZmfxs5TpIVBuudImgGMcoH5x5/r9T3Y77bZdGgcPfsKMH5u6+SOA8ozLqmms0z0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyEMMO1HMNIaVaMGE0bjjLer1ULrWOxIQExCu7dhjs65eRLi35y
-	/L+ooKhrfbyNAGPHbieIfAsJxp5EXeJ+SUSaS0fIdU9AYW3ncT9/TTNSxvTG2BatbomWCzSU84r
-	I
-X-Google-Smtp-Source: AGHT+IHGuznT7s9K3x5HeSkF7fCIjIIH9qT4bN2dkHvKGxtIsO2SxucelcGw+Ke16+3q8DaHNkERJA==
-X-Received: by 2002:a05:600c:5110:b0:426:6696:9e50 with SMTP id 5b1f17b1804b1-42bb02591d1mr12515665e9.14.1724920251352;
-        Thu, 29 Aug 2024 01:30:51 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:982:cbb0:12f5:c9c:a0e1:6915? ([2a01:e0a:982:cbb0:12f5:c9c:a0e1:6915])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-42ba639652esm44084155e9.2.2024.08.29.01.30.50
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Aug 2024 01:30:50 -0700 (PDT)
-Message-ID: <79a643de-9808-4866-9e41-8bd5ab55ffed@linaro.org>
-Date: Thu, 29 Aug 2024 10:30:49 +0200
+	id 1sjawo-00000001FGs-2ruE;
+	Thu, 29 Aug 2024 08:56:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=EoJOZyEWSYL7h12Q65+bjIb0aPlCMNDVxAalzitvMBv1RR/haa6Xm0R33GNAzuRSt7KMr6RJ8zC75E/cVGTmJvfVGI6v+mtiouDDk9wbjLt2ugmwNDGQoHeXr3ZrZOEIvu8jioCRvNyyhW5cynsWzFx6kJQlDet4dA2d+Zitvac/1wcCQM5q2hHawkojJ+JPd6yoIe5z1hia/bIohCFGIr4IpQJ0u97JqcvahB8pqGJWcShtRwopCNKLANCDEvXjeIzKVNySgqnpV6F6lI6r31KY6y5XfWIsp5PCyclqM7FqoEd4u7OLlkXVTAabjGlR4DHwX+3ckDWpNTOAd3hu8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=DouPeljZfXG7BPHIQh8DzNMzoD3gMuGArvrHoaCirBA=;
+ b=YidFp3U0SbP29PnzkzlqKaA0ZnvWDpATsz/YUowgpxS5riYlf6XcI9ztytRL1OsvBxxB34FBC9XuTeMOHfUBOEVOW2lya/pVtmCYMUmF9OczyZE2tHPkcRDjaXVX07pHVP02/7M+G+kDkR63VnYmQI4Q6EAMPLPNbyDSPNCFaWvNoTND75ZHG0PUUuDryiLYVdVb0TGF8vYnmAntL1fnEq/ioICrGAnjWTAUcnAFZL8qZdHm6Y3PqRf6eK7ywDqEcgbF5BPPdyXwS5qzH6IrmsvZU31Bgd/2JlPURzbWDK3dYY/TzblA+lxtTWZtPqlhFyAemIp1JtBIB5pW/MLCdg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=DouPeljZfXG7BPHIQh8DzNMzoD3gMuGArvrHoaCirBA=;
+ b=NwEe88LOfqw3vOE7usV/8RPPe9fUZlP0EKUTGcpqcrFBdY9UtwBzYy7ExS4iR4HYxAW/vSHMmxQJRZWpkDC/P1tMYtTJHIio/AxSNYFGOPWHPqjBsmVy7OzYDQe/lrHA4kLxH/ERwHHsN98wW1r0SPYMzm5OCa+ergQIyaZ7ZGhF7RBCoKev6gYzCVp1TipXkg/OH5tNEWTwAOvfbWy8bsS7hVJmKZmrN7aDDV1V0tLALxzVFsuPNKfCPu9ivFTC14AW9DHlZQGE3GOzQKryV9QDzH5ztUlY6fsGhXC2Z3X6mgJh5x5ze5K5RvSyAamUXrQfCttv47ggpG2PAlMO8Q==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
+ by VI2PR04MB10882.eurprd04.prod.outlook.com (2603:10a6:800:27a::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7897.28; Thu, 29 Aug
+ 2024 08:55:56 +0000
+Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
+ ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
+ ([fe80::4e24:c2c7:bd58:c5c7%5]) with mapi id 15.20.7897.027; Thu, 29 Aug 2024
+ 08:55:56 +0000
+Date: Thu, 29 Aug 2024 16:54:44 +0800
+From: Xu Yang <xu.yang_2@nxp.com>
+To: Shawn Guo <shawnguo2@yeah.net>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
+	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+	gregkh@linuxfoundation.org, peter.chen@kernel.org,
+	herve.codina@bootlin.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org,
+	jun.li@nxp.com
+Subject: Re: [PATCH v2 6/6] ARM: dts: imx7ulp: add "nxp,sim" property for
+ usbphy1
+Message-ID: <20240829085444.ayfp2zkeeyxya2ju@hippo>
+References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
+ <20240726113207.3393247-6-xu.yang_2@nxp.com>
+ <20240826065612.ol4fjib4g2jrvoy7@hippo>
+ <Zs6A4OEgaC8a3gcw@dragon>
+Content-Disposition: inline
+In-Reply-To: <Zs6A4OEgaC8a3gcw@dragon>
+X-ClientProxiedBy: SG2PR01CA0138.apcprd01.prod.exchangelabs.com
+ (2603:1096:4:8f::18) To DU2PR04MB8822.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e1::11)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 2/2] phy: add NXP PTN3222 eUSB2 to USB2 redriver
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: Konrad Dybcio <konradybcio@kernel.org>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org
-References: <20240829-nxp-ptn3222-v1-0-46906bc4747a@linaro.org>
- <20240829-nxp-ptn3222-v1-2-46906bc4747a@linaro.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20240829-nxp-ptn3222-v1-2-46906bc4747a@linaro.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|VI2PR04MB10882:EE_
+X-MS-Office365-Filtering-Correlation-Id: e5119068-326e-47e7-bc6a-08dcc80864da
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|52116014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?YYqnTsRxVC38/44Q9acV+GqjEksln2cceTmxakSNA34lIn8LKaDRFRACiIAi?=
+ =?us-ascii?Q?+ZHQvK0iAvd0S+26BcUIfmx/HAQkiJ9ObNvL75E/2nF62nXNrVwTnlxIMyWI?=
+ =?us-ascii?Q?KW/Xkf294pkE0gesIDGIRBX5gP+7LenSweZTt6zd9KdMAqLKxA0bvOhj27eB?=
+ =?us-ascii?Q?XFhxZomjl/Z6eCOt5k7+CeJnWhaCyMa5O3F1gaB+0t4jtQkZyerMhrT9O7M1?=
+ =?us-ascii?Q?MvXw2he3D9ctp91lnjIK62T/8vSAtoj8XjmgDcTJu8IXiSaWb59P89jp+NaC?=
+ =?us-ascii?Q?sYEaGmmKBcsolukHSPLxUzwLJmJD02y6IKxcYEyFZNIF6pZBh3A0nYFYFdhQ?=
+ =?us-ascii?Q?Sqndpzb6uT5qOR3yX97kwALEsox+Hn04sWFOs8p+kBj+/SCuB9Ye7gIpPs6/?=
+ =?us-ascii?Q?kBlNvAlQbZ/LmoY5JjGatQqsWXurihiM6qkUPtuejZ6x29YBEaDpDDnoCp4/?=
+ =?us-ascii?Q?hzCQbhKC37N55BzEc7K3LgIsJbgO9oM4jSl2AS5y5upBz5VeiWSQ/NU7BqnV?=
+ =?us-ascii?Q?EnHEutA9FuTAzYcSYNlSsTnOBJjRrr8s30elQnm8EpsxpLYfjlOsH+I4rtjX?=
+ =?us-ascii?Q?6lJgfDwiUfDhwdQ0BFHjllVxsOg6Y1lzws65QTeWb7MLIidQOblbzJ1kIaLJ?=
+ =?us-ascii?Q?nP+YCJQ7vVKSXaPajxxkhRRfTxO08t4KVXxr76Jf5s1lLfl4ZmzvEU0AH0ja?=
+ =?us-ascii?Q?M/RG8FHjWbsUqNO763VOsPhMB852unhAHAYACQdxkSpgeHMf8wMOCRqRzjxZ?=
+ =?us-ascii?Q?1Cx4TIzoTYrWhuEqza5aw/qP7b/d0K5Y9J9of27cCVX4dscuME7icvUf2LKo?=
+ =?us-ascii?Q?OqsU+PWpl0fxnnvYvxmZCaMQTd9opRNvUHjhgdHgN7ol7FE0WTXJ6FxZDBhi?=
+ =?us-ascii?Q?MPISlocXsVl0MQwhuEkshJ7fW5n4mtLizBiIluJ5Vu2nA1bepWWBX1+lARAu?=
+ =?us-ascii?Q?RlY6sVNcFyxuDzOdSdkoMLTGbBllAkCSNtQh17J4BBeS9xtODTTofKC9MCCu?=
+ =?us-ascii?Q?OGO6zW80Jqxs7ofhiDqI1/uYy3JRQr4kpq68XG62//8HxOBchh9TPlABKRp3?=
+ =?us-ascii?Q?ko2sWo+FUw3E92ZFeX5JidyQFh0C+fr3Pzz5BTmTthkqNk/vfiLxdUX1Ujd6?=
+ =?us-ascii?Q?3ZwGwDuJtKm4q77bylq+PcnyJVwsm0GIPjPxoSihdkcm/WZGd1OzCcQ9XExf?=
+ =?us-ascii?Q?iwv/Tcld+f/PcZQTso+C7+wroA5ZVBAybtvxeEiqevFO80NiTTvaGuj5b555?=
+ =?us-ascii?Q?fJUBdtK/9apTGvUmMTRxt42S3h/tqv/msaFq9Wr7QfTK9BIYn5jQllR9Xjmf?=
+ =?us-ascii?Q?Qm5Gdm/AVIZCt3ucRMpUiolT6S4xM+MHwkh3B8/Zixg1BZ11przd3v1TPaxM?=
+ =?us-ascii?Q?tTgWo6ISD0PERBrLDwy5/jfBL2hHE8+FSu6J4xGF5fjlPcXt6A=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(52116014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?W21YimEuGgebP6Y0+DigQ55bnzNGKOnw2QirD4btWwcpdY1orgkiRfHJIm1k?=
+ =?us-ascii?Q?aYqLrheOKuzq8/klSXcZ+ziQJeLOGnFU1tA0rBILkFImvX8qYSfG0CMR7pL/?=
+ =?us-ascii?Q?yGN4v10QsvWOjTSRz79BjfCUZ1FqlWodl8mW3T2H4ZT2IQh1Nadsdn0g+iKx?=
+ =?us-ascii?Q?PO+LPayerGxpUv/+3ewt8NPpgKBjFzof8QAdZcjh/BsyoPhi45eTykNPL+pZ?=
+ =?us-ascii?Q?EOcSinPwAQnxNN8IF6svl0bKOaJfCzsik9QlL6ZRsoyPvOJT0q62uRYLndP9?=
+ =?us-ascii?Q?ycpocPJ8+u5RL5xo6eJmc6dbyn34uZmGyA4wt0xocgud78eJqUbjF4iHgJRi?=
+ =?us-ascii?Q?OtbRX0/B/JlDWZC8OcO72nF+c5Ywjxy9o7QgIZItTav7JcFRLPEC9yCaUoi0?=
+ =?us-ascii?Q?Nn05iTf7tOYrTLUqtYut47/jp2S5Ahi2mMgSYfz9CHusVk/vi2nGkCfXs5Gn?=
+ =?us-ascii?Q?zIOFq49eJzJDnj9SKyS+yrlVJ+ewxwYSNOzeVwJNuC8If4y+ki2VYZT2OwWk?=
+ =?us-ascii?Q?v0ooytDyJoKgLov54XtbWH+7YNFwbcWgBYdnfzfNZEpyQ4wH1FzH2F0cDO5N?=
+ =?us-ascii?Q?cfj7t2sPIFuIFQ1hTBufig9HhKbsUsAYoE6PbmtlonEAZqFoJdfjLzu20Rok?=
+ =?us-ascii?Q?2aKiEqy/JW4Gk8T1qZJtdtP+jYl/M8SlNlUaG9VNPCyXKsWVWbvMMNiw2+nU?=
+ =?us-ascii?Q?NcpBPm63K0W3BsiJw+mJAV8GNZ9YJs170GWtUxRjckcvn8H36rk9gbsv9QgQ?=
+ =?us-ascii?Q?TTKBBCK7s9kwmLE7l4ZfgGuqMS9sOge8Sez+h+HlmGyUo0N+BLHEh8uSAv6y?=
+ =?us-ascii?Q?NG6uNnWY656hbuXVQ/T1uRYQcK8cty8UrXJ7T5sadZozMHqfxf+dyEkxytBX?=
+ =?us-ascii?Q?QPtx2gmgMkzgaRBgZuYlkIwgrZDEOaGlu+XmTUptxP93dwe8cMEn7eR5txz3?=
+ =?us-ascii?Q?QLPVovtRbkpt1wc3L6RbaZs1fWS1y9MR8d1dRo6gZe7H/qU7VAYAa+LO9PjG?=
+ =?us-ascii?Q?NIE35D3iIgGT2LB07FavH1lHqeACuUWzHue9AFFo3kdnMqtgdxAAeLKV+xZp?=
+ =?us-ascii?Q?f7ZxaW8Uj6hdcQBGKGFZ19ROa7ONA548kwVWB18SHinY+JPywLS/U0vsn5QZ?=
+ =?us-ascii?Q?TNf9sfVao9Bnsnoizd6lYmSvdznhkO3VYMejOhhjhvzf2vQ5/40/EvSxoZsr?=
+ =?us-ascii?Q?AcOdG0RO7SAoV9ylnfs+bXhdISATy92jfWaucCBYPNHNCal1ao0fO3Of8lV4?=
+ =?us-ascii?Q?a20rcSCPuIU1Bj6uOEVYLoRWAhZna4Dp+c7ZxBP3VocrcQKRBILUu9V8AYvk?=
+ =?us-ascii?Q?SML6kIh49V2LK4X0P9q7KVmQe5LlaIxPo0YGsp+1sB6R4wGc+fnmyNnofWc/?=
+ =?us-ascii?Q?5s/qClgIkhmX0eaA8es7th6JdswPx0S03VfCQYtrhMJ5RZA1FMxk0+PxuMOS?=
+ =?us-ascii?Q?FvzhhJx+MlyBArj16GKK3vNhiDSKsyj3jGjE5OuQtcItkD+TZFp4WdsEPGBC?=
+ =?us-ascii?Q?FZW7FTz0DCa8fBMllxTtOiGEJ02djWFCNDviIqoyyFZbI5Wbu4QPvgxFkArJ?=
+ =?us-ascii?Q?xNjVzS2Ks2HkafLVtCv3QD5tjovZtLnB7Pm9PzY3?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e5119068-326e-47e7-bc6a-08dcc80864da
+X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Aug 2024 08:55:55.9364
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 9GJCAnMTLZg3OpalUjHh869rH/dTlwlVNgUX+xcu1x/12tbkFMaXllWIYhuAeI2owY7kHe1VVIGU4O9Ob1NWPQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10882
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_013054_052597_C33A9CCD 
-X-CRM114-Status: GOOD (  23.41  )
+X-CRM114-CacheID: sfid-20240829_015607_113659_CF2E2173 
+X-CRM114-Status: GOOD (  20.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,193 +159,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/08/2024 10:21, Dmitry Baryshkov wrote:
-> The NXP PTN3222 is the single-port eUSB2 to USB2 redriver that performs
-> translation between eUSB2 and USB2 signalling schemes. It supports all
-> three data rates: Low Speed, Full Speed and High Speed.
+On Wed, Aug 28, 2024 at 09:44:00AM +0800, Shawn Guo wrote:
+> On Mon, Aug 26, 2024 at 02:56:12PM +0800, Xu Yang wrote:
+> > Hi Shawn,
+> > 
+> > On Fri, Jul 26, 2024 at 07:32:07PM +0800, Xu Yang wrote:
+> > > i.MX7ULP need properly set System Integration Module(SIM) module to make
+> > > usb wakeup work well. This will add a "nxp,sim" property for usbphy1.
+> > > 
+> > > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> > > 
+> > > ---
+> > > Changes in v2:
+> > >  - no changes
+> > > ---
+> > >  arch/arm/boot/dts/nxp/imx/imx7ulp.dtsi | 1 +
+> > >  1 file changed, 1 insertion(+)
+> > > 
+> > > diff --git a/arch/arm/boot/dts/nxp/imx/imx7ulp.dtsi b/arch/arm/boot/dts/nxp/imx/imx7ulp.dtsi
+> > > index ac338320ac1d..b093f2a447ae 100644
+> > > --- a/arch/arm/boot/dts/nxp/imx/imx7ulp.dtsi
+> > > +++ b/arch/arm/boot/dts/nxp/imx/imx7ulp.dtsi
+> > > @@ -214,6 +214,7 @@ usbphy1: usb-phy@40350000 {
+> > >  			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
+> > >  			clocks = <&pcc2 IMX7ULP_CLK_USB_PHY>;
+> > >  			#phy-cells = <0>;
+> > > +			nxp,sim = <&sim>;
+> > >  		};
+> > >  
+> > >  		usdhc0: mmc@40370000 {
+> > 
+> > Could you please pick up patch 3 and 6?
 > 
-> The reset state enables autonegotiation of the PHY role and of the data
-> rate, so no additional programming is required.
-> 
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->   drivers/phy/Kconfig           |  11 ++++
->   drivers/phy/Makefile          |   1 +
->   drivers/phy/phy-nxp-ptn3222.c | 119 ++++++++++++++++++++++++++++++++++++++++++
->   3 files changed, 131 insertions(+)
-> 
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index dfab1c66b3e5..cb06a7f79740 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -82,6 +82,17 @@ config PHY_AIROHA_PCIE
->   	  This driver create the basic PHY instance and provides initialize
->   	  callback for PCIe GEN3 port.
->   
-> +config PHY_NXP_PTN3222
-> +	tristate "NXP PTN3222 1-port eUSB2 to USB2 redriver"
-> +	depends on I2C
-> +	depends on OF
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support NXP PTN3222 1-port eUSB2 to USB2 Redriver.
-> +	  This redriver performs translation between eUSB2 and USB2 signalling
-> +	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
-> +	  Speed and High Speed.
-> +
->   source "drivers/phy/allwinner/Kconfig"
->   source "drivers/phy/amlogic/Kconfig"
->   source "drivers/phy/broadcom/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index 5fcbce5f9ab1..b64247046575 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -11,6 +11,7 @@ obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
->   obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
->   obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
->   obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
-> +obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
->   obj-y					+= allwinner/	\
->   					   amlogic/	\
->   					   broadcom/	\
-> diff --git a/drivers/phy/phy-nxp-ptn3222.c b/drivers/phy/phy-nxp-ptn3222.c
-> new file mode 100644
-> index 000000000000..429a91910f14
-> --- /dev/null
-> +++ b/drivers/phy/phy-nxp-ptn3222.c
-> @@ -0,0 +1,119 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2024, Linaro Limited
-> + */
-> +
-> +#include <linux/gpio/consumer.h>
-> +#include <linux/i2c.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/regmap.h>
-> +#include <linux/regulator/consumer.h>
-> +
-> +#define NUM_SUPPLIES 2
-> +
-> +struct ptn3222 {
-> +	struct i2c_client *client;
-> +	struct phy *phy;
-> +	struct gpio_desc *reset_gpio;
-> +	struct regulator_bulk_data supplies[NUM_SUPPLIES];
-> +};
-> +
-> +static int ptn3222_init(struct phy *phy)
-> +{
-> +	struct ptn3222 *ptn3222 = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = regulator_bulk_enable(NUM_SUPPLIES, ptn3222->supplies);
-> +	if (ret)
-> +		return ret;
-> +
-> +	gpiod_set_value_cansleep(ptn3222->reset_gpio, 0);
-> +
-> +	return 0;
-> +}
-> +
-> +static int ptn3222_exit(struct phy *phy)
-> +{
-> +	struct ptn3222 *ptn3222 = phy_get_drvdata(phy);
-> +
-> +	gpiod_set_value_cansleep(ptn3222->reset_gpio, 1);
-> +
-> +	return regulator_bulk_disable(NUM_SUPPLIES, ptn3222->supplies);
-> +}
-> +
-> +static const struct phy_ops ptn3222_ops = {
-> +	.init		= ptn3222_init,
-> +	.exit		= ptn3222_exit,
-> +	.owner		= THIS_MODULE,
-> +};
-> +
-> +static int ptn3222_probe(struct i2c_client *client)
-> +{
-> +	struct device *dev = &client->dev;
-> +	struct phy_provider *phy_provider;
-> +	struct ptn3222 *ptn3222;
-> +	int ret;
-> +
-> +	ptn3222 = devm_kzalloc(dev, sizeof(*ptn3222), GFP_KERNEL);
-> +	if (!ptn3222)
-> +		return -ENOMEM;
-> +
-> +	ptn3222->client = client;
-> +
-> +	ptn3222->reset_gpio = devm_gpiod_get_optional(dev, "reset",
-> +						      GPIOD_OUT_HIGH);
-> +	if (IS_ERR(ptn3222->reset_gpio))
-> +		return dev_err_probe(dev, PTR_ERR(ptn3222->reset_gpio),
-> +				     "unable to acquire reset gpio\n");
-> +
-> +	ptn3222->supplies[0].supply = "vdd3v3";
-> +	ptn3222->supplies[0].init_load_uA = 11000;
-> +	ptn3222->supplies[1].supply = "vdd1v8";
-> +	ptn3222->supplies[1].init_load_uA = 55000;
-> +
-> +	ret = devm_regulator_bulk_get(dev,
-> +				      NUM_SUPPLIES,
-> +				      ptn3222->supplies);
+> Patch #3 should go via usb tree, and ping me on #6 after #3 is applied.
 
-Suggestion only, you could switch to devm_regulator_bulk_get_const()
+Okay.
 
-> +	if (ret)
-> +		return ret;
-> +
-> +	ptn3222->phy = devm_phy_create(dev, dev->of_node, &ptn3222_ops);
-> +	if (IS_ERR(ptn3222->phy)) {
-> +		dev_err(dev, "failed to create PHY: %d\n", ret);
-> +		return PTR_ERR(ptn3222->phy);
-> +	}
-> +
-> +	phy_set_drvdata(ptn3222->phy, ptn3222);
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +}
-> +
-> +static const struct i2c_device_id ptn3222_table[] = {
-> +	{ "ptn3222" },
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(i2c, ptn3222_table);
-> +
-> +static const struct of_device_id ptn3222_of_table[] = {
-> +	{ .compatible = "nxp,ptn3222" },
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, ptn3222_of_table);
-> +
-> +static struct i2c_driver ptn3222_driver = {
-> +	.driver = {
-> +		.name = "ptn3222",
-> +		.of_match_table = ptn3222_of_table,
-> +	},
-> +	.probe = ptn3222_probe,
-> +	.id_table = ptn3222_table,
-> +};
-> +
-> +module_i2c_driver(ptn3222_driver);
-> +
-> +MODULE_DESCRIPTION("NXP PTN3222 eUSB2 Redriver driver");
-> +MODULE_LICENSE("GPL");
+Thanks,
+Xu Yang
+
 > 
-
-Apart that, it looks fine, please add my:
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Shawn
+> 
 
 -- 
 linux-phy mailing list
