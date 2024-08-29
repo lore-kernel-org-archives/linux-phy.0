@@ -4,148 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4965C71135
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 09:15:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE92DC8302B
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 10:19:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gm3sbmf68nK5rWrKIJJ0A79sNlCX9X7ovGsRbZe2l10=; b=Yo4vLtQKqc2cUS
-	GoQqU7JeQxM44b9YRNFhCqFaMtWmlsDYDWv2JteS0nLicRUks4uC2rsTGfzarWXNe/jU7TBMAF98Z
-	op70dra9v5k36NRlD27E4oWhuwr0y0ae2zNT+SXAsuk8bSEoWZAZdK7VM3cKq4k0UB7Wau5ljRPCp
-	mLsTKdkX//Vs+m+QYALBr6XtOenUhzc7jaDxDLcDE+S/JGsK0/pK9cpZUcW2AUwm5dmzPJx5zynuy
-	+LFKPTSeEYwfwIbZyw5e/8rvk9zLLwaTD6OFESXpw/MLNOr+b70G8nzyxHxq54Ti9fqCUJY1S3dDj
-	MfjGwKQZncfldB9Jzfdg==;
+	List-Owner; bh=spqy7ZRJdCHo4HAeNMntVBS177b8LjEZTNiPGcVXcIk=; b=pHQQA5gHcrqyGc
+	qSN3p2QtsbjKHXBKWVpVX3xgYDH3kyJR1HPXDoBSISZkafHW9AvAgD2LhPheyW8MRIJw6M2538RpG
+	TD18uRg2DpCUCqtaLIFTeMqCPhgWzh2QfUQZ3dWRt0K4rnsdlkbyflwtM05OymiZtX7TbdE+DfEnh
+	14PFyrR35HRgZI84pnuYBopOX9GZWRBs3sIaMUdGAR9jxpkvLJ2canleBqoXayAwefJoPUL6rqHDp
+	9hESCre2/4ibybZDoOfgxAOeld9zdD+PO/mIoXuICWF2vgDoO9UNLmnYCyVBg2JOKUkTkklt8Urc+
+	KO6RszMgOKyR9cYxtVEA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjbFz-00000001JaC-1kgr;
-	Thu, 29 Aug 2024 09:15:55 +0000
-Received: from mail-westeuropeazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c201::] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1sjcFX-00000001Wq0-1vcb;
+	Thu, 29 Aug 2024 10:19:31 +0000
+Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjbB2-00000001IsZ-3mqu;
-	Thu, 29 Aug 2024 09:10:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=oGy+9zL0rdI/0TCiSvzrclFJo1jY2lnWRoMoo99QVE53pIQ/9I+xH0ZMAclnmXHM97VxFKy8xzYDBxuDLtXakgdX1BHERN8QJh+b8sZC0fXt/pqskHm9H9wvMbdY88zk8Sx9vTDkiUInczNbeyoeP8MPNKq8hbcFmM8J9B7PLcNg47pkIrvv9m2nU3UOb8mz2X53+dX6SuTt355RKLtgeCurSeKp9T/ImGbEaylBndO1RkitM0Gq107V+ySqREIqYTlgdqEhq9fsyjeB770xqg5tdbczcKr1V9X0V4WflsTcl8eCuJFSlGp3n650DLP+sM2wbK9DDgzd8/BxCom2hA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ejmztoxhueFV8+gO79ieKGa4eHzKgVP4eRkX3Me+VhY=;
- b=GnxljFVX/Viv67MOJ24BjL7H87jjRlCh5v7Xrt48cnhWybegcDhRE+mV91KJyMncfnwqJb/NgykbWwut/myCMBfwGbZ5RPxCNIFLAGVVEDHvy4NaLQvnmtcXNuxnxjZozjDQJY1Ppw4S0qbt8Ob1R+2g8O7GemCT0ZQ7eiE8el2jCG6zxSn1RG0VAY6kxOBG2oC1QPAimFrpUSxmicCREPpWbg4P30pjdN83VwMuS4nNsIwBlEVLpqti1lY3Jw/npPPX9tgIp8rgUirEpPfau1X7J1gSfMk/1zhSGg3UU8WLyZdxTCAIckvUYhnEsfXWU0euQP1VNorY7Kv5XM+fVQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ejmztoxhueFV8+gO79ieKGa4eHzKgVP4eRkX3Me+VhY=;
- b=Tq2BfKhJg9iFX1eCfJdbj7hYv+QtQTWIJYEKlSiMPYZj3GRjvUACv1qP70yEy27WQoET5GNAxRNch2CCIcnJm71sM7oZTFUSKN4NeFVB/Ig4ldWB33lq71oBbhrVkMrCzfwTC+F1e9JCbpddOhpb9NMYMZAqpMHkcVHIgfbbRN2rcdlLBNS8IDJzoH52Y1H1NakAK3RqjQgkEl2YeWj54oKfW/fbuakbS+Q1vGaaS5aORogJokYro707g/HFiMxQz0MdRJlGgESXMAC2e7p/xY7Dn3ef0l/wk8j6AHBq1AcZ6znvH//1Y8wBStXIJK5QASXM6CAyVhC4bSWnCJX3Ew==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
- by DUZPR04MB9726.eurprd04.prod.outlook.com (2603:10a6:10:4e3::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.20; Thu, 29 Aug
- 2024 09:10:44 +0000
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7%5]) with mapi id 15.20.7897.027; Thu, 29 Aug 2024
- 09:10:44 +0000
-Date: Thu, 29 Aug 2024 17:09:35 +0800
-From: Xu Yang <xu.yang_2@nxp.com>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	gregkh@linuxfoundation.org, peter.chen@kernel.org,
-	herve.codina@bootlin.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org, jun.li@nxp.com
-Subject: Re: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
- property
-Message-ID: <20240829090935.ktc7jgd2en4qay2h@hippo>
-References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
- <20240726113207.3393247-3-xu.yang_2@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20240726113207.3393247-3-xu.yang_2@nxp.com>
-X-ClientProxiedBy: SI1PR02CA0033.apcprd02.prod.outlook.com
- (2603:1096:4:1f6::14) To DU2PR04MB8822.eurprd04.prod.outlook.com
- (2603:10a6:10:2e1::11)
+	id 1sjcFV-00000001WoH-0JzW
+	for linux-phy@lists.infradead.org;
+	Thu, 29 Aug 2024 10:19:30 +0000
+Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-5343617fdddso844372e87.0
+        for <linux-phy@lists.infradead.org>; Thu, 29 Aug 2024 03:19:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1724926767; x=1725531567; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=dsgEl12pS5/oK+D6m4jiXUFGwYqDk87JRvruFRHJCvw=;
+        b=O2iDD2RJqD/0A0SEoxJ7pKaB57BP/OAhYo9ZJvMoV5Nky3EzLN+kChvPqt4a3MYHhP
+         vaNOmjlbe4dCPQXGIjVLWrKk4TVM1Ubq9aiwUSmaq5qqJaad9v03SPjTtaoEcDSXp87j
+         7kN8B9rkkuCFgCVnkOgLWImcDBC6U7iu1Cnp0D3Q7fnMebXa+3U9xfaEGdSmjYsTtQXV
+         6q9QqLIKu8W4je5LmzNPK1fVhYl2Bd6TpGxvjshIrbtBPaE41EwHja8DcCQnyA27qHNl
+         eM3UeTzO4zj8sLWaeCm2CrQ6goDAxdnpL3JSUfjoqYF7Abgb8DP7yGNLKvtwF4vy2hXX
+         lJlg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724926767; x=1725531567;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=dsgEl12pS5/oK+D6m4jiXUFGwYqDk87JRvruFRHJCvw=;
+        b=dOVMD2orPQ5sigcOgy+P3tFH8q/hBk16KrR6+oHmUib5pX8/pJ3CMK6+JQP6dtubb7
+         VadocVaGSWSI5Z23F00FYnxBRnvgZGVd46T0Re/IMthvXZhaXZdWWxGbcvKxycMApJCL
+         fYrPQDUJ+1i2yVpfs0FGsE1xqQPCQsX/5cCx7qr3/ZnfvnpQgHszSCGvFgJH5WIWkmtw
+         k1vHMDlj36JHyeOf1MagXliOMl7XptrH8JsHPOgUChVm6hhFUGv6fNbFyD504pkRUcdU
+         UR5XmM88WS/DPXxmj5E0kqqQup+f2vQ8X21Npij3iG8/hrB6j1HF+58NxuDXA6ETGyB3
+         ooAQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWiX6+ogU7XJrzlglDH84kp85QjkOIRyTcfe8+q2s/TyHqZ3GqmLZfgB5zdTyQ9WcYr4GhsoskZ7d8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz7psj6IpWMwj59kXfjeTI5JyR3eGk6yfhGfb/MGC4Gix0Y4bgK
+	ZfLY5Nx3c3JofGjQ6ge8Rr9NC1PUN65yVEoT0Uyzx3pK+/Lu8KI6qyr8wwdYjNs=
+X-Google-Smtp-Source: AGHT+IFI/J4pmYQEU4+SHn18VCyisudN4k2godV3tyoAlPi2LbLETrSD6LA/Lou8PXucHxARCjq3Jg==
+X-Received: by 2002:a05:6512:234b:b0:530:b773:b4ce with SMTP id 2adb3069b0e04-5353e575f40mr2138577e87.33.1724926766646;
+        Thu, 29 Aug 2024 03:19:26 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53540827af9sm116406e87.170.2024.08.29.03.19.25
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 29 Aug 2024 03:19:26 -0700 (PDT)
+Date: Thu, 29 Aug 2024 13:19:24 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: neil.armstrong@linaro.org
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH 2/2] phy: add NXP PTN3222 eUSB2 to USB2 redriver
+Message-ID: <izr7linltwo4kbpp4dtls7bahvk4a2hwtqaz3fyuktjuiudqly@ivulir54ktxk>
+References: <20240829-nxp-ptn3222-v1-0-46906bc4747a@linaro.org>
+ <20240829-nxp-ptn3222-v1-2-46906bc4747a@linaro.org>
+ <79a643de-9808-4866-9e41-8bd5ab55ffed@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|DUZPR04MB9726:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7efb02c9-ad78-4dde-dd16-08dcc80a763a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|7416014|52116014|921020|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?n6F+WTwwDKAbknMpmL6j9KbgYMtgojFQhgLScDgodWm2ltM58J3xOyplj/tT?=
- =?us-ascii?Q?NEchL5nqyk4C5WHvCtXLE2WjZUn00XWLxmNQ+oNwDv2ZpawLyOcVRH2T48Ej?=
- =?us-ascii?Q?3aXrnr/Mkh/GifZecokXcwUStnJhpO8Eawb8RAzVKAej/BlqfX+1Ce78Exw3?=
- =?us-ascii?Q?s8OOqWJkXDfqtKXjFJqJlN5mDwFR7NpzBsS4rSN1z7SH5+gyxVZ2P0RoR458?=
- =?us-ascii?Q?nkqYsAe1AGE+USMaNyWFaASO1e4cXC0xIztacAwR/+V0y78cJCkFaUoUuESa?=
- =?us-ascii?Q?y7DpmVlH/UxF9VeYTsVXQm8X4aiJrbqAKWKSY2fJaGoPqtFCwQL0O5IiegV3?=
- =?us-ascii?Q?ex6e8y9SMP0hWJXyVU4NfxIt60B0UK+9FkBnvk0c/vLRgCWb2QOA93sCd1iY?=
- =?us-ascii?Q?CbyXJ0TLRm3CO98jSUjNNH4FacV0+xnYbQEiNR/+QVU53iwH+Wv6VyZxDpz3?=
- =?us-ascii?Q?/9FTooGZIK3Er+1fFG6nJCcomcIs/xi9ty+zOTV7ndy6fSA8omV0fhsXzQBK?=
- =?us-ascii?Q?rl4maMiafGMmb5HDJ8AMx1jbzWZ2LPAAcR2wer3X03CkPI2ns7w64Sm52Dr+?=
- =?us-ascii?Q?k+QApSRpI8KjzTPC4cCCI4FyRPsI46zDb7XvJqqU7DNrTQJjcR0Y0f5fdL4i?=
- =?us-ascii?Q?AQ7aghUrxoojt2DkZo5CYNktmlmXzmlK4yERUTCAhfMVMBeci1X8oEWzQAE4?=
- =?us-ascii?Q?tOoqowD1YC7B69cW0UqWUECBKqpG03e7CXkO+Ou7O4y6EbYaVlqL2AAXhNCr?=
- =?us-ascii?Q?s1yQbpNG/tEEdSUx289MIsqjziqd48GOX+0KqLE/n7rlswBUYerr+q8OyYOH?=
- =?us-ascii?Q?GvxThdS+PZp+ck+ye+yrAerqI8KthuKXXrgrigxFBMWDAfhncgv2HMmqIr4u?=
- =?us-ascii?Q?kXYtfsXKG+nxIdDnVUrg1Gm0FORHevAPtB6nHdBa98yJkJVOLSrS5UdeE2BG?=
- =?us-ascii?Q?yrsM1gjEMpDKQJMa/S7OHe9u8ogZyPka1JFIDzJup0F4K2jxgwTKqBqPQItX?=
- =?us-ascii?Q?o5qJm7quKwEz6kU8kjJ4poRm7QMkl+yGqb7qRmFNdL3opBDJSs+i7ooRwxHd?=
- =?us-ascii?Q?vriSLczs+TBQatUzFuprEXkbkttS9RwPtP6ST1yma/Y4WeMW5NJKr/mfZgwA?=
- =?us-ascii?Q?M3Eq2CU118veo7Dq/tmlhK2CgcDWVfK9Afv0rYGeLCcNJiwbJTO4ZtKHzzfO?=
- =?us-ascii?Q?5GxzLO+MrrWvm8wyy692nqu28uRZUfNEUtn4C4tHLZdu0XX9vJdean5wUqUB?=
- =?us-ascii?Q?iZ7jPu1SX07GG9blNzhY7VgfBQyNmdquQO92DaNqJypIlH3o6u8kw/rQIrfe?=
- =?us-ascii?Q?ll0v6JonBCfNtffiVJnAg9RARfjkttN7wkU57CGQ9TWLNfGkG/GETLE65xWi?=
- =?us-ascii?Q?ar+KhZVA6qkwCaLtMsL3zwx0VCdwXaCdRm1MgxnlO9xpNkzWw0KL2hY5Dtr4?=
- =?us-ascii?Q?zrMD4p2JinU=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(7416014)(52116014)(921020)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?sBprjybqIth5GASBrQXLRInKVlRI3HTEVpROtHxpznJ6/nCh0l+d0n9YBAw9?=
- =?us-ascii?Q?guC6L+4ZwNmBBuom7QFOBZkkzBQjmByOwc121NUumPZXWtZ52eO031+mBVBF?=
- =?us-ascii?Q?WGS+Gm0g7g/3GjQp8HEHy7qmaEAti1NfJ6/Z7VSWM9iMEbaspAvYt6r+tlMq?=
- =?us-ascii?Q?N8uRO9kXCvdV4pi1HThkswDwhVDkco1qAc30OzDc4oiZrgtuUST8nmyYyEUB?=
- =?us-ascii?Q?NIrCsMs9BlmFZkA4roPRdIBJBm7SG0Xmfmp1zt9MgAeWTj/15/e8Hhke2iHi?=
- =?us-ascii?Q?zlxx2BxF5a6/RxkmCGSu+1MSGtD5s8AZ1FnqOPFusTpvIj7gBR+3JzAs2xbu?=
- =?us-ascii?Q?HamvkzWU4M06aX/pUnh8xLXrdwJR3RJIgPhsluT3Jb7o0rdf+YX6rFEhVily?=
- =?us-ascii?Q?idHfrznMcv2lxeDRmgjJLX/80XdCJhbs0pJbj5L9nPsqFN6MAbzQIjgUvPKl?=
- =?us-ascii?Q?UpVDTh5dx6nYi5hYfrooEezQVA/E/991VsQTW8ouPOSK4B8k5lJL7P4+vbcW?=
- =?us-ascii?Q?Rnxt8xCaI8B9UvCnNU3KrWMNA5cdSToXvGpxcnj1YE8x50RjlwDLdknmHgsZ?=
- =?us-ascii?Q?H0eJYhrkVa3E5J/3nRYMqdXnwplhQfF+IsPK656PdxJngpqEdwC/Y3gwFQOf?=
- =?us-ascii?Q?5ShxD74twIAncvVam8CemHSJ+P/ov/f4bBmM/V9FKJ6D+qssMkOFoFYj2C/P?=
- =?us-ascii?Q?ofstQdSNtfSa38JoBBeylPpKdRp4Kf5AC7Jz6yEjJoi3XFTSo6Ux8LzWzvl+?=
- =?us-ascii?Q?TkAsqF6vHFK4OoA5UeyshSKj7spq6alIkj36Xw1O8ULkB5Zc/pYz9WT9R6pH?=
- =?us-ascii?Q?g40boq8i7QvueXeXjFntU/38LSSyDcHCs7+hkcxmgLlM7Em2zkbH7qaWWGp/?=
- =?us-ascii?Q?fOrbZd7L3d91Lqf0wFBpw6knsYLiYYwqfSjA7qZto1bqsTfsxt8BT/TjkRea?=
- =?us-ascii?Q?lwoqM2uVlOnKnYH5AOX6HPiNONffhnkgE66vBpXzQ+v38nbJs2f9HC7+xhKG?=
- =?us-ascii?Q?0jHf7fRW4+zD6wiAKk6dj0PUGywARhT1t570mQmvzvmLtVHK+XT99Y27Z5oe?=
- =?us-ascii?Q?1s0mSmXRrpaXnFzvmj6ZwAvAbn/ZL/qQdAyBzqyA8PA5Za110l2DLQJQJf2L?=
- =?us-ascii?Q?gyISG9dOkt9x6XQgqmrfMv9PqQiKV9/QQ8/9FewIUuYxtvGfLLXiGLz1LJF0?=
- =?us-ascii?Q?ey578979njE/cj6MK2dEFxdrKmc0tS/fF9gx0uruHHbyQ9nNVTshBmNlc0zz?=
- =?us-ascii?Q?LZC3KbpIVEAD2h6yslCDqTwuCBdj/cTUZTjhnDxDOs3nEzcKao8F3h97zDld?=
- =?us-ascii?Q?g9LL5Svk9lkf/+2NzHPEFpxufTKBAAjCLZ9gaYuVF3N//hz1ICWQneApN8l/?=
- =?us-ascii?Q?Kl7H0X0Ubp7TVxbdQpd2DpeA7hrkzbTzyLG2fzTWDP87EQdHMVzekbvlqmiQ?=
- =?us-ascii?Q?Eexq71lUX6qpgl3NlODymUOjWMmnQT3c/MO31XyYovFy+hI7Qx9EOujEePAr?=
- =?us-ascii?Q?Uo+/iHt9ODAsJyraYYq71f//rAWiQhDtT9OKQcW36X2z0ajRRGhw4Ji/oJoX?=
- =?us-ascii?Q?AJphrsSlbvNgiMFuEc9Y2EyQEutNF0TwEiWUvg59?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7efb02c9-ad78-4dde-dd16-08dcc80a763a
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Aug 2024 09:10:44.1828
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: u9/EO2MpMDRWAoXezF6q0t3kFzf3DwasYd203g892hdPAxMSpqqFLJlmcprwOxG6NsU4WahOMFZriuA1TWQn+w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DUZPR04MB9726
+Content-Disposition: inline
+In-Reply-To: <79a643de-9808-4866-9e41-8bd5ab55ffed@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_021049_306551_B5A30D70 
-X-CRM114-Status: GOOD (  15.39  )
+X-CRM114-CacheID: sfid-20240829_031929_137088_AEA40A59 
+X-CRM114-Status: GOOD (  15.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,66 +97,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Greg,
+On Thu, Aug 29, 2024 at 10:30:49AM GMT, neil.armstrong@linaro.org wrote:
+> On 29/08/2024 10:21, Dmitry Baryshkov wrote:
+> > The NXP PTN3222 is the single-port eUSB2 to USB2 redriver that performs
+> > translation between eUSB2 and USB2 signalling schemes. It supports all
+> > three data rates: Low Speed, Full Speed and High Speed.
+> > 
+> > The reset state enables autonegotiation of the PHY role and of the data
+> > rate, so no additional programming is required.
+> > 
+> > Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> > ---
+> >   drivers/phy/Kconfig           |  11 ++++
+> >   drivers/phy/Makefile          |   1 +
+> >   drivers/phy/phy-nxp-ptn3222.c | 119 ++++++++++++++++++++++++++++++++++++++++++
+> >   3 files changed, 131 insertions(+)
 
-On Fri, Jul 26, 2024 at 07:32:04PM +0800, Xu Yang wrote:
-> i.MX7ULP need properly set System Integration Module(SIM) module to make
-> usb wakeup work well. This will add a "nxp,sim" property.
+> > +
+> > +	ptn3222->supplies[0].supply = "vdd3v3";
+> > +	ptn3222->supplies[0].init_load_uA = 11000;
+> > +	ptn3222->supplies[1].supply = "vdd1v8";
+> > +	ptn3222->supplies[1].init_load_uA = 55000;
+> > +
+> > +	ret = devm_regulator_bulk_get(dev,
+> > +				      NUM_SUPPLIES,
+> > +				      ptn3222->supplies);
 > 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> Suggestion only, you could switch to devm_regulator_bulk_get_const()
+
+Good idea, I'll take a look.
+
 > 
-> ---
-> Changes in v2:
->  - add else branch suggested by Rob
-> ---
->  .../devicetree/bindings/phy/fsl,mxs-usbphy.yaml | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> index f4b1ca2fb562..ce665a2779b7 100644
-> --- a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> @@ -87,6 +87,12 @@ properties:
->      maximum: 119
->      default: 100
->  
-> +  nxp,sim:
-> +    description:
-> +      The system integration module (SIM) provides system control and chip
-> +      configuration registers.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
->  required:
->    - compatible
->    - reg
-> @@ -110,6 +116,17 @@ allOf:
->        required:
->          - fsl,anatop
->  
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          const: fsl,imx7ulp-usbphy
-> +    then:
-> +      required:
-> +        - nxp,sim
-> +    else:
-> +      properties:
-> +        nxp,sim: false
-> +
->  additionalProperties: false
->  
->  examples:
+> > +	if (ret)
+> > +		return ret;
+> > +
 
-
-Could you please pick up patch #3? Rest of the patches are mainlined.
-
-Thanks,
-Xu Yang
-
-> -- 
-> 2.34.1
-> 
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
