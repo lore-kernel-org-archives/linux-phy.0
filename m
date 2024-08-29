@@ -4,120 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A147FC83F16
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 16:05:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E634CC83F2D
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 16:18:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q/9uleUzrRVC42YcS+yGqQECtELKDxQCHy6CEGq634g=; b=ST1AWrgoZWPf10
-	JFlqRaA7yyZTr1c0S1BgJNI49CxkNMY3wiDEMNaqWAEqlKmV3r2ERJ+tCR8gjN6QrwutEksU4Prug
-	FXvQObdnACQbd94wvSiHVzQHkc8FkjR3hbCyyOf+mlNLtDDwY1Af1tLt6XVmSgCD3/eWwr/oGnImI
-	lN+SQtzYUy7LR1IL8Lhw7nIiZRJ/fJXKX60Pl+jmOZqmqI+vNNWSBccLco57aiBEw/WZIL8oyDIFt
-	vDZY/35Ib4Cod+UEPAm3p3ZS+BI+kuu5P/nnV/OET3aL4wuzoED7ek6/uNIMK4pw4uBXyNTAFkrMe
-	3lKGOaBsKAuRbeuHq6ag==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=TaHjr4PoeMVXQIggttzzNkLFzdzteI63QRwADxhq+lU=; b=UkxGePnZmoKQm5X0OMjXOafUeq
+	oYldHzd1R34kxF6J5wgqAlHncGX9+Jv4vYaOGfIrY4Q6Q/hVe52EZ2rSYtDyoKP8Eu6Rz6QYsaVG1
+	0XPAQ5gYVQz4iDtQlPu9SWMw1hki1Jh0Z/ljDKcqLLDFJVDIJh90x5AJlUW1l42uVbJwWAgPQnlIC
+	l40Rpo4bur+Vf7D0gHvAs2mOXjRhezpZHs4m58OQQqXsubTFy4b/EwlhNo/Je0/Y7qGxEcW4kaGAs
+	ojGuGgp98HHORSZeiCK9oplBNKKUI5AESXT8iGu+1GieXOBmC06e1NEc7UliBgTXNBaEwGtAE5RHc
+	fw7djXnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjhe5-00000002kS5-1Nhg;
-	Thu, 29 Aug 2024 16:05:13 +0000
-Received: from mail-qk1-x72d.google.com ([2607:f8b0:4864:20::72d])
+	id 1sjhrC-00000002neN-2YSr;
+	Thu, 29 Aug 2024 16:18:46 +0000
+Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjhdQ-00000002kHT-3eBX
+	id 1sjhqr-00000002nWf-0c38
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Aug 2024 16:04:34 +0000
-Received: by mail-qk1-x72d.google.com with SMTP id af79cd13be357-7a809d5affdso39218385a.2
-        for <linux-phy@lists.infradead.org>; Thu, 29 Aug 2024 09:04:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1724947471; x=1725552271; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=j21zmxbJDf4bu7f2ESz3fPyqSzdlXT+oYN+G3wNwqmw=;
-        b=EghLyi1bSSK5/Chdu2BXXq9ZLJzuGqoAuyL61A0n7+IU/4O73RAWgoVtjFHRlfYo5y
-         +Rq8pi8R3HiX6k7p+OKLhwBBTnrrpjyJRan65UF1CMy98aZsG6FSePegFcsunVbxzA/u
-         BUhwMnvg26tptz3K7dGr4uoo0oUnOq9U9r7Z0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724947471; x=1725552271;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=j21zmxbJDf4bu7f2ESz3fPyqSzdlXT+oYN+G3wNwqmw=;
-        b=CC+je1A2f+egP5YxafhE14/DgymZQ75BjZVsfBNwfSrtixjN82myWEgrBLfG3J22Iu
-         KgnkBWmadY+mt5aG9R+VnI+8K+cxPTd+QxdJhc9uZeHYId4/s0qVzdqNRM0pBIjY7ppe
-         FJsTf+3jQodKsdJtDUHeEKteoBKwK9t+7cV3d56DDdBzrtvpakDZi/tvy5YORXU8272J
-         guP80+cmMWhRwgXeA2O1Jbi5SmLgZ8DQOITgjNU87NKs/+Xrlz1rB0VbONOgyi5WWs3X
-         NrcF8WoSj7bqFLPQ4QGK/rcOTKeFNqN/DfaSs7nki9/XV++eSKzpATJ3+DR4vqX3b4fp
-         +9Xg==
-X-Gm-Message-State: AOJu0Yw+XKpTaWlzArEvJ0rHHRjZrj1cXES2bGxktJzKqe01Y+WgQ7W0
-	MYdN39zeizplxT40yvnmzxmDl+zc3nu7pk3qYltIcLG8R9dsfohkiQljSWjGbA==
-X-Google-Smtp-Source: AGHT+IGREj3FhSq8F6DKn4/qmBnRJfMtRh/hbxD3XubvWPQGGl4sTABAbw/aWaSYcQX3e7u/kBgg6Q==
-X-Received: by 2002:a05:620a:280c:b0:79f:14ef:40cf with SMTP id af79cd13be357-7a804266f84mr272703285a.56.1724947471212;
-        Thu, 29 Aug 2024 09:04:31 -0700 (PDT)
-Received: from [10.67.48.245] ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-7a806c4cd7csm63176085a.69.2024.08.29.09.04.28
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Aug 2024 09:04:30 -0700 (PDT)
-Message-ID: <b64f0713-31ab-4ea7-a1a7-3e904f253c86@broadcom.com>
-Date: Thu, 29 Aug 2024 09:04:27 -0700
+	Thu, 29 Aug 2024 16:18:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 48F9BCE1BA4;
+	Thu, 29 Aug 2024 16:18:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B1F8C4CEC5;
+	Thu, 29 Aug 2024 16:18:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1724948301;
+	bh=0DFCIEnpEsAW/SjC51AnwDz3RJhoIFR9GB8cHGV8p5Y=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UAGJi+B9G7+ByyYTIff3xkkjmNTvtXetrK7MraXov7GbqBK4stVR39FvWENtwLR2y
+	 DiS6pkiibezMP1HXyHh0jQvBRZcUNV216gv7u55c+LduKII9t7gur38dgEwaaTc0WJ
+	 6IMawqXsQvaRLr8ynXiHoRLOSW/X3LJKZmY7kj0jb6uJ2EkN8dCRz8oZ6e8jJaWeo+
+	 Me8/i22BFG48bmjL5K9LF6vXvbNzrgUcN3ms38IQPVzEqtTt3HKp9gWZSFOd9nDabb
+	 FUQ74IrtCj095vhYzPK6hUgnn1pSQsVeAi+4JER9g0V9hm9A/4/S4V8GaAadxBUhpL
+	 MietOEiOgq9rA==
+Date: Thu, 29 Aug 2024 17:18:17 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: add NXP PTN3222 eUSB2 to USB2
+ redriver
+Message-ID: <20240829-dandy-jingle-1002fb99b900@spud>
+References: <20240829-nxp-ptn3222-v1-0-46906bc4747a@linaro.org>
+ <20240829-nxp-ptn3222-v1-1-46906bc4747a@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/11] phy: broadcom: brcm-sata: Simplify with scoped for
- each OF child loop
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Broadcom internal kernel review list
- <bcm-kernel-feedback-list@broadcom.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-arm-msm@vger.kernel.org
-References: <20240826-phy-of-node-scope-v1-0-5b4d82582644@linaro.org>
- <20240826-phy-of-node-scope-v1-2-5b4d82582644@linaro.org>
-Content-Language: en-US
-From: Florian Fainelli <florian.fainelli@broadcom.com>
-Autocrypt: addr=florian.fainelli@broadcom.com; keydata=
- xsBNBFPAG8ABCAC3EO02urEwipgbUNJ1r6oI2Vr/+uE389lSEShN2PmL3MVnzhViSAtrYxeT
- M0Txqn1tOWoIc4QUl6Ggqf5KP6FoRkCrgMMTnUAINsINYXK+3OLe7HjP10h2jDRX4Ajs4Ghs
- JrZOBru6rH0YrgAhr6O5gG7NE1jhly+EsOa2MpwOiXO4DE/YKZGuVe6Bh87WqmILs9KvnNrQ
- PcycQnYKTVpqE95d4M824M5cuRB6D1GrYovCsjA9uxo22kPdOoQRAu5gBBn3AdtALFyQj9DQ
- KQuc39/i/Kt6XLZ/RsBc6qLs+p+JnEuPJngTSfWvzGjpx0nkwCMi4yBb+xk7Hki4kEslABEB
- AAHNMEZsb3JpYW4gRmFpbmVsbGkgPGZsb3JpYW4uZmFpbmVsbGlAYnJvYWRjb20uY29tPsLB
- IQQQAQgAywUCZWl41AUJI+Jo+hcKAAG/SMv+fS3xUQWa0NryPuoRGjsA3SAUAAAAAAAWAAFr
- ZXktdXNhZ2UtbWFza0BwZ3AuY29tjDAUgAAAAAAgAAdwcmVmZXJyZWQtZW1haWwtZW5jb2Rp
- bmdAcGdwLmNvbXBncG1pbWUICwkIBwMCAQoFF4AAAAAZGGxkYXA6Ly9rZXlzLmJyb2FkY29t
- Lm5ldAUbAwAAAAMWAgEFHgEAAAAEFQgJChYhBNXZKpfnkVze1+R8aIExtcQpvGagAAoJEIEx
- tcQpvGagWPEH/2l0DNr9QkTwJUxOoP9wgHfmVhqc0ZlDsBFv91I3BbhGKI5UATbipKNqG13Z
- TsBrJHcrnCqnTRS+8n9/myOF0ng2A4YT0EJnayzHugXm+hrkO5O9UEPJ8a+0553VqyoFhHqA
- zjxj8fUu1px5cbb4R9G4UAySqyeLLeqnYLCKb4+GklGSBGsLMYvLmIDNYlkhMdnnzsSUAS61
- WJYW6jjnzMwuKJ0ZHv7xZvSHyhIsFRiYiEs44kiYjbUUMcXor/uLEuTIazGrE3MahuGdjpT2
- IOjoMiTsbMc0yfhHp6G/2E769oDXMVxCCbMVpA+LUtVIQEA+8Zr6mX0Yk4nDS7OiBlvOwE0E
- U8AbwQEIAKxr71oqe+0+MYCc7WafWEcpQHFUwvYLcdBoOnmJPxDwDRpvU5LhqSPvk/yJdh9k
- 4xUDQu3rm1qIW2I9Puk5n/Jz/lZsqGw8T13DKyu8eMcvaA/irm9lX9El27DPHy/0qsxmxVmU
- pu9y9S+BmaMb2CM9IuyxMWEl9ruWFS2jAWh/R8CrdnL6+zLk60R7XGzmSJqF09vYNlJ6Bdbs
- MWDXkYWWP5Ub1ZJGNJQ4qT7g8IN0qXxzLQsmz6tbgLMEHYBGx80bBF8AkdThd6SLhreCN7Uh
- IR/5NXGqotAZao2xlDpJLuOMQtoH9WVNuuxQQZHVd8if+yp6yRJ5DAmIUt5CCPcAEQEAAcLB
- gQQYAQIBKwUCU8AbwgUbDAAAAMBdIAQZAQgABgUCU8AbwQAKCRCTYAaomC8PVQ0VCACWk3n+
- obFABEp5Rg6Qvspi9kWXcwCcfZV41OIYWhXMoc57ssjCand5noZi8bKg0bxw4qsg+9cNgZ3P
- N/DFWcNKcAT3Z2/4fTnJqdJS//YcEhlr8uGs+ZWFcqAPbteFCM4dGDRruo69IrHfyyQGx16s
- CcFlrN8vD066RKevFepb/ml7eYEdN5SRALyEdQMKeCSf3mectdoECEqdF/MWpfWIYQ1hEfdm
- C2Kztm+h3Nkt9ZQLqc3wsPJZmbD9T0c9Rphfypgw/SfTf2/CHoYVkKqwUIzI59itl5Lze+R5
- wDByhWHx2Ud2R7SudmT9XK1e0x7W7a5z11Q6vrzuED5nQvkhAAoJEIExtcQpvGagugcIAJd5
- EYe6KM6Y6RvI6TvHp+QgbU5dxvjqSiSvam0Ms3QrLidCtantcGT2Wz/2PlbZqkoJxMQc40rb
- fXa4xQSvJYj0GWpadrDJUvUu3LEsunDCxdWrmbmwGRKqZraV2oG7YEddmDqOe0Xm/NxeSobc
- MIlnaE6V0U8f5zNHB7Y46yJjjYT/Ds1TJo3pvwevDWPvv6rdBeV07D9s43frUS6xYd1uFxHC
- 7dZYWJjZmyUf5evr1W1gCgwLXG0PEi9n3qmz1lelQ8lSocmvxBKtMbX/OKhAfuP/iIwnTsww
- 95A2SaPiQZA51NywV8OFgsN0ITl2PlZ4Tp9hHERDe6nQCsNI/Us=
-In-Reply-To: <20240826-phy-of-node-scope-v1-2-5b4d82582644@linaro.org>
+In-Reply-To: <20240829-nxp-ptn3222-v1-1-46906bc4747a@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_090432_924771_1FDACE5D 
-X-CRM114-Status: UNSURE (   5.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240829_091825_719784_72FD5905 
+X-CRM114-Status: GOOD (  16.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,23 +74,133 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============0479386008760043318=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 8/26/24 03:07, Krzysztof Kozlowski wrote:
-> Use scoped for_each_available_child_of_node_scoped() when iterating over
-> device nodes to make code a bit simpler.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
--- 
-Florian
+--===============0479386008760043318==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="lb2JHJxD1qBMGfou"
+Content-Disposition: inline
 
+
+--lb2JHJxD1qBMGfou
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Aug 29, 2024 at 11:21:13AM +0300, Dmitry Baryshkov wrote:
+> The NXP PTN3222 is the single-port eUSB2 to USB2 redriver that performs
+> translation between eUSB2 and USB2 signalling schemes. It supports all
+> three data rates: Low Speed, Full Speed and High Speed.
+>=20
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>  .../devicetree/bindings/phy/nxp,ptn3222.yaml       | 55 ++++++++++++++++=
+++++++
+>  1 file changed, 55 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/nxp,ptn3222.yaml b/Doc=
+umentation/devicetree/bindings/phy/nxp,ptn3222.yaml
+> new file mode 100644
+> index 000000000000..acec5bb2391d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/nxp,ptn3222.yaml
+> @@ -0,0 +1,55 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/nxp,ptn3222.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP PTN3222 1-port eUSB2 to USB2 redriver
+> +
+> +maintainers:
+> +  - Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - nxp,ptn3222
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  vdd1v8-supply:
+> +    description: power supply (1.8V)
+
+As a nit, these descriptions could just be ": true" like the
+reset-gpios, they're equally obvious.
+
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+
+Cheers,
+Conor.
+
+> +
+> +  vdd3v3-supply:
+> +    description: power supply (3.3V)
+> +
+> +  reset-gpios: true
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - '#phy-cells'
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/gpio/gpio.h>
+> +
+> +    i2c {
+> +        #address-cells =3D <1>;
+> +        #size-cells =3D <0>;
+> +
+> +        redriver@4f {
+> +            compatible =3D "nxp,ptn3222";
+> +            reg =3D <0x4f>;
+> +            #phy-cells =3D <0>;
+> +            vdd3v3-supply =3D <&vreg_3p3>;
+> +            vdd1v8-supply =3D <&vreg_1p8>;
+> +            reset-gpios =3D <&gpio_reset GPIO_ACTIVE_LOW>;
+> +        };
+> +    };
+> +...
+>=20
+> --=20
+> 2.39.2
+>=20
+
+--lb2JHJxD1qBMGfou
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZtCfSAAKCRB4tDGHoIJi
+0g0vAP0ULmArYvwsKhDXcZT3/4k+oqLJV5IRg5A/j6KAIiP0kAEA3keLUf3OdneN
+T8XD0nEmiPfqLNo/YVZtsIw/VcqqsQ4=
+=tE0b
+-----END PGP SIGNATURE-----
+
+--lb2JHJxD1qBMGfou--
+
+
+--===============0479386008760043318==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0479386008760043318==--
+
