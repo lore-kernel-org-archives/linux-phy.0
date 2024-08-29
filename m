@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 293F6C83000
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91644C6FD35
 	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 08:09:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,58 +12,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6OZT6AQ/4TZjlEIjXy5s1RTCCH/qVRfVNF/DVqaJlQE=; b=QFraU8xDcfRQyS
-	pkD5a+F9Y7uf4Z51lwURGX+dFSwuUPKMDiSQycV+7Jp9IcDAmmY/lZw5qjUSK7zyt+uwM2CZzSLEU
-	uf247ZK1eHqtKMNI6i5F8ypQRTiHkp0zh/B7FGyVdYz6Hude0nN6qvEzIwbQyJKgTWLOWsjGPB/Ru
-	ZlgvaNKorQn66H7EnQFSa49tQ71hUTJqZ5LXFgDSr6gUChUrdUexncVjye3ieWZap+zNf2g8oFgKR
-	F6qJKDo1XceJHf0OYADbV/5SBsNiR+0KHbzmpCHfJZOBVXhFdXW/aaSrOxK97ukJjR51dtLerptKi
-	l/IQSFdwgtqc2cUTHxPw==;
+	List-Owner; bh=8AQe+diQxNuSebbhYCcRZMIg2FcywCVXCwIkVnAmtSs=; b=EEEBAgFtHTgpJB
+	YmaUfCFyTiUpV7l5HFYk2W2TBve+86qbLzK/wJGEtFB/rhWpgUZVboLPmvVMD14c4thUFCYGz5FFz
+	hHIljkDynAP6BM+yy4i4F8N2EBtGSi6s5itCzEPKAQpP7a3Z/6CkpI1EgAvPTbkHahEzO1CFK2lyV
+	j88z8b/4CGa28RJj4kp504pWx6zK7MSX+r0m94Gx0MDN57hMgve8WuqA9z+Gmc2kdss0k34MpLuGT
+	ZWW0a+frnoZvoDbEV3RkyBUHKo5v9bNfaOQovjkRNw3XN89eVWQdLkILvVwFSPKNvnyIx+WeuTfuY
+	ZcFpnjdlnxSgCZdc7ejA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjaDq-000000015Jy-3SYd;
-	Thu, 29 Aug 2024 08:09:38 +0000
+	id 1sjaDr-000000015KP-0d4a;
+	Thu, 29 Aug 2024 08:09:39 +0000
 Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjaCz-0000000158B-13yC
+	id 1sjaDC-0000000159q-3yM1
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Aug 2024 08:08:47 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-53438aa64a4so396972e87.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Aug 2024 01:08:44 -0700 (PDT)
+	Thu, 29 Aug 2024 08:09:00 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-5334c4d6829so462474e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 29 Aug 2024 01:08:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1724918923; x=1725523723; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1724918937; x=1725523737; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=T4BmdnrzBdhHgzltTkpUo2txI/5MakiYPq5y08PZ3iA=;
-        b=bGLCZDS/Gy1Kt/ziouUkVh06G36VCaXvPaVCAYWBa2Vu3W8cQc593wMDZWvcVtsQBd
-         jzWd4Ab/d1GGzcbQuvnc9NKvJ8rsaK3z5yNClHBe7U0gMBdcCyE1+7QG6W906YeV/DlO
-         U5fVAXxEmcijRLFXwU2YPKvkQlDHisKO6YGe7C5iHAXvenV6ug1srPgohr7xxjqbHCGW
-         Wq5+BDhxFzuW7lMPz+PeAOIT98/GO+CXppQlOPB7cn5Tm1pjr6FpUrs38eAAJ1/zJEN5
-         yTAlJQWxEZjDql+AxNyN32id9Jv0njbcWEXOt3+CnbxGKJG587S0rQCzAPv8JA3abiRe
-         xsOA==
+        bh=rzdVHNvVFZs/r7z8d45DArC5y0n0ZEzQ/sfa0ZzJkSQ=;
+        b=vv1rK/1hRemMVU5gY3RnoohsqQd4jCA7ggnG7otrR4+k4TX7ZRcNg5hJqn20UlxOl4
+         LpUybiXTe+9lWQAgAIdqWutm49WNk7B3iAcPCZaCwlcDdpfWIrRzIK2NhPxPxSB5drOB
+         vPEfAANpcmwN2lmleI2BGy1kSl/61vCSgyT1+52f7/jnKFjRsPv3DHwSn/YFWaithzw/
+         TeQLd/LCyJBHtthGZUgvj5VOUwoFPdVqtY2XLmVrW+mFKr9KdbR0UNod7zZ904fz4zsh
+         bviNBU2mtr/sHeEsqmQhl84u6dT4F+cy+ghVLjiTE1rJg0eYOwjPeRsGyytw1sy7w3Cq
+         mZsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1724918923; x=1725523723;
+        d=1e100.net; s=20230601; t=1724918937; x=1725523737;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=T4BmdnrzBdhHgzltTkpUo2txI/5MakiYPq5y08PZ3iA=;
-        b=St6c8Noa4S2BguB92MKgQ9pOyijafOGyObmTigR5X8aHbNGB1TT2Pp1z2p8XuJ78cO
-         vPWiIMQPoUHv/pjuGfTAASLmxu+dtiUY5VvMZXcoAlj8r6w7JZe6suNuq5CWHUyfe6ZK
-         CN5BCG/0A1bs8DV63SrfCKINQPOvVeWuy9xFJUpZWpC70XhpWOgiUd+I1rkDSO7ifPqo
-         7sPK83B3nwx0tG7j+Pvltjrh6Aj3Yu31qfvfrIFvifCkAcFFy5MTJw7n75idzy8oNI/1
-         UArUfezDblnRXgKQU/pfGjmNBTcX2WsvCs8BzoBPQGZz7tprxrgks/XfW77iRlNNIGF3
-         FhSA==
-X-Forwarded-Encrypted: i=1; AJvYcCVAikD4+LHfyFRndUuOHpRYgh5hE5LUhgPn69KMCJkPqqumUzDKj5q2aowYgHunTBpnGt7Kj/2UBHQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyhf3By3qlEVeHBLaS5nzUtTD6Tb5AKSAS9pa1bPd06QCHLurr7
-	+8MO8RTPlgs15HY6c5qXFGZYPtDjZpFoG4rw9UJH1XglIzc4X+27BB6EBVYDHcqi0eDF4OZrLeb
-	A
-X-Google-Smtp-Source: AGHT+IFTQjqSKFSw070YjNsOEWLTFMBsy1Rq3X8Pmfp9WqqZRc0GHm4rRo/dmxH9UycESrTXamJ/2A==
-X-Received: by 2002:a05:6512:1195:b0:52c:e159:a998 with SMTP id 2adb3069b0e04-5353e57874dmr1271656e87.29.1724918922593;
-        Thu, 29 Aug 2024 01:08:42 -0700 (PDT)
+        bh=rzdVHNvVFZs/r7z8d45DArC5y0n0ZEzQ/sfa0ZzJkSQ=;
+        b=HeagNLv4bEfafuERM69xM4OOTFnX20vJVq8j8NEFYuPCRPGo9SFOT+sgj03CGyni4S
+         gTvWeZ+bKrJK+c2gnUJu63IRjqUDmm5K3lu6gPhP1HTVzjKTuS0a/aZI7Nl+d2algJ/Z
+         /5z4r8CiL476PDVcPYEcLHfkLB2BPI6dpoExVch8vf9UTaR0OpZNSNdps0dTcH/vYkLe
+         cwkA5fXeOCGbG4gw8sFcpeARbBuu+DeSmTnvDJtc5TCGItDHgDdJT4YjyoCzBCaCXT5f
+         G3JruyqdFb2YcQz7A1cSwCvBXvYRNYtgMm1wkhYj3RTA7Ss27CbaQmsUtxCN1qAq84RP
+         Ssew==
+X-Forwarded-Encrypted: i=1; AJvYcCV38gKE+dB3aFeXr2ErKthwAhQWMA997Gq2BmsFdxkgEa4MuaXS6pYsPfiO913EwLZ8Gmyx0t684yQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzzYdilqd638HP29nnZbV+0PpmMrL8bd1l3AwWgrOK+dM0DfX+1
+	8Xr/8KtInjbXLvJB8mGsq402e0CmMJjLYUMtgLCDXa0hpeIb4/rg1EXU4pJ0CNA=
+X-Google-Smtp-Source: AGHT+IFIE5FdgmQvSzVx3ReotP0YOU4OOkMPEDzM9mZ+yWZ3XKm1Dl6erwST516kO7jI6UlRoSAIng==
+X-Received: by 2002:a05:6512:3e13:b0:52e:9ab9:da14 with SMTP id 2adb3069b0e04-5353e5744e8mr1286311e87.31.1724918936864;
+        Thu, 29 Aug 2024 01:08:56 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53540827759sm86257e87.158.2024.08.29.01.08.41
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5354084116bsm86523e87.214.2024.08.29.01.08.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 29 Aug 2024 01:08:41 -0700 (PDT)
-Date: Thu, 29 Aug 2024 11:08:40 +0300
+        Thu, 29 Aug 2024 01:08:56 -0700 (PDT)
+Date: Thu, 29 Aug 2024 11:08:54 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Yangtao Li <frank.li@vivo.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, krzk@kernel.org, 
@@ -71,16 +70,16 @@ Cc: vkoul@kernel.org, kishon@kernel.org, krzk@kernel.org,
 	yuvaraj.cd@gmail.com, ks.giri@samsung.com, vasanth.a@samsung.com, 
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 2/4] phy: qualcomm: phy-qcom-apq8064-sata: Convert to
+Subject: Re: [PATCH 3/4] phy: qualcomm: phy-qcom-ipq806x-sata: Convert to
  devm_clk_get_enabled()
-Message-ID: <fngnwis5yyf56w3vs424clfuqf6qvaquq4udipqidco7jmr6fx@ijledjmr6apj>
-References: <20240822084400.1595426-1-frank.li@vivo.com>
+Message-ID: <bo3hx7ma3np3wjpjc3zmya7iagefnlkwyh4s5gv7jxhr3ompob@cpehveanuxmw>
+References: <20240822084417.1596110-1-frank.li@vivo.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240822084400.1595426-1-frank.li@vivo.com>
+In-Reply-To: <20240822084417.1596110-1-frank.li@vivo.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_010845_335556_E02FBFC5 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20240829_010859_011103_15373DEA 
+X-CRM114-Status: GOOD (  10.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,19 +96,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Aug 22, 2024 at 02:44:00AM GMT, Yangtao Li wrote:
+On Thu, Aug 22, 2024 at 02:44:16AM GMT, Yangtao Li wrote:
 > Convert devm_clk_get(), clk_prepare_enable() to a single
 > call to devm_clk_get_enabled(), as this is exactly
 > what this function does.
 > 
 > Signed-off-by: Yangtao Li <frank.li@vivo.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-apq8064-sata.c | 22 ++++----------------
+>  drivers/phy/qualcomm/phy-qcom-ipq806x-sata.c | 22 ++++----------------
 >  1 file changed, 4 insertions(+), 18 deletions(-)
 > 
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 With best wishes
