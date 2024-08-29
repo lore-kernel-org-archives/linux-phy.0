@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A731C8303E
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 17:56:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A0B2C87FCD
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 18:09:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wqjoWeVKUfouGIsUNmgHnCdZsjn3NppzmCa9QKR1lcY=; b=ze3i/p5kb5Idxt
-	oZsKb0HjBeQeWyLogjRtejdF6Pyu2Uzy3kQrXNTtztdfUQm1e00um3jZt8tTxi0R8yCbuXuC7T8ry
-	BVTFXGy41y5XsAJY0RqDRd/oEI2qd0kjkSrZ+wLLqRIQBcJDWM7PesKT71LN9FxiLXUR/P8ACKaVS
-	0eexq6ghqr5J+Qc/Z1LFWbTzl+QLdErgjd/t+EZFOTS+aR2i+lGVuOm2I+Hh/WYedW62cTAptIvco
-	JSEISY3XJ5okokasK7E6R2BEJlXlIjif6Lwl24buJxssNGVVrXDPdujKiWghxywH0RNdJdiM4c8DQ
-	2opYuyn7f5Rgy8jABwgg==;
+	List-Owner; bh=C2vnIP/3IkqrE+wfxMQN7pmatPcBL4n6oMa9+lOt7sY=; b=pQCWg0aCKmwcir
+	/fqRnaDNOsyl7PxkPq7aPhiaeybY10FYVJKUEdKGYkn0aino1v/BrMD5Ox06QRJpK+RPl8c2fojqK
+	/6LpcROcBum3euD2e9v9fIU0pBjmOcwdpmiF3Lg9pVXwpAaF/k0bC2djTUsPnog+M+2vrRbZuXqsr
+	IVjyVwhQxmW0DPQiqVWGqEbN8dsQN0Weo13gsTkOvPVyxwwM+bvnMo4/UnMpg1D1MEKqOUo3tMIk5
+	L4unzC8Xf7f/nnn3/BpOqBapFtYh/N/Oxd2cNfC4/XYm39cUbkI4V/E2V2bhHUdj+OVtO3vwHHiVb
+	kicasZm7tizJGg2Fi2nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjjNT-000000036AJ-3ch2;
-	Thu, 29 Aug 2024 17:56:11 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1sjjaN-000000038g6-07Pu;
+	Thu, 29 Aug 2024 18:09:31 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjjNM-0000000368j-22dQ
-	for linux-phy@lists.infradead.org;
-	Thu, 29 Aug 2024 17:56:06 +0000
+	id 1sjjZU-000000038OZ-21T7;
+	Thu, 29 Aug 2024 18:08:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 527A5AE0877;
-	Thu, 29 Aug 2024 17:55:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C607AC4CEC1;
-	Thu, 29 Aug 2024 17:56:01 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 77FF7AE082E;
+	Thu, 29 Aug 2024 18:08:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B073FC4CEC1;
+	Thu, 29 Aug 2024 18:08:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724954162;
-	bh=AdzfqrDZaOuc1QbK407DlhXv2urEHeKQSLxkuHSAl+w=;
+	s=k20201202; t=1724954914;
+	bh=C13xoFhJK6cmxgZuGmS3AlQujpIr+u06c/XDdASbM3g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=XIqUHkZJPj1xXtu1VYJSvObjGnXZK1Diff7LMNqLJRkuL5Pu/JQUPXqeCN9w0li2O
-	 krKyBzgqr4stFskXudyP1W+HzV8oSuPM7xrKjapqoIy/kl/xas1VcBRb4y0RoUoSLR
-	 wj9b/F6QmTrqUB+HWj3jztGjchvQTip6FQzz3VLUOjxNdHtwIOGSmMNQgy63oisbZq
-	 B0bn1vsEw0WXb0yONzBpk4rr5Tajn4oMivKWECfS37TLf8HDacGYSZJTP60ZxuwFcv
-	 qrxrwI0d8YJtb9eOQz4aLrFwrO4Uw9FTrur43SQRH41i/5krPX6mLzjHMxwOsHcQzi
-	 +EiLem7J77wQg==
-Date: Thu, 29 Aug 2024 23:25:58 +0530
+	b=r8wStHdi3ge6t9sjbk6KPialPcbQPcyFbjlsFzhn/L7sqIQPTLqUT/X9x+vYmqG04
+	 nhMqLOAoaKstC5MQY9jGhMI5ENif90I8aGI8P9/tyF6VdWyg9wOTKURrLagXOOEP3B
+	 1NhGgDISSUfmfYq757tfPMgHM4q8eqJMv5XJziF5ljSnqUcRMV+tOn9I4+jsEXHc2p
+	 +M31Y+EFf8clGukjQsVVMGPf4TWCHEg65uugJxBU9K9rOVf13AFDdb9iq9LqkefDwY
+	 rNeZWNB8OOP6XAb7jNtVwPvZWMZ8BcaaUrEZ89UATP2wdvgDWI+9qQ5yMZ/a+XSSaP
+	 0+Fbxqx1VMb1g==
+Date: Thu, 29 Aug 2024 23:38:30 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Adam Ford <aford173@gmail.com>
-Cc: linux-phy@lists.infradead.org, dominique.martinet@atmark-techno.com,
-	linux-imx@nxp.com, festevam@gmail.com, frieder.schrempf@kontron.de,
-	aford@beaconembedded.com,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [RFC V2 2/2] phy: freescale: fsl-samsung-hdmi: Support dynamic
- integer divider
-Message-ID: <ZtC2LhYAAdPdSRpz@vaman>
-References: <20240829021256.787615-1-aford173@gmail.com>
- <20240829021256.787615-2-aford173@gmail.com>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+	kernel@pengutronix.de, festevam@gmail.com,
+	gregkh@linuxfoundation.org, Frank.Li@nxp.com, jun.li@nxp.com,
+	l.stach@pengutronix.de, aford173@gmail.com, hongxing.zhu@nxp.com,
+	alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v3 3/5] phy: fsl-imx8mq-usb: add tca function driver for
+ imx95
+Message-ID: <ZtC5HqOzgDBYc8uW@vaman>
+References: <20240826070854.1948347-1-xu.yang_2@nxp.com>
+ <20240826070854.1948347-3-xu.yang_2@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240829021256.787615-2-aford173@gmail.com>
+In-Reply-To: <20240826070854.1948347-3-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_105604_827697_4573E644 
-X-CRM114-Status: GOOD (  34.91  )
+X-CRM114-CacheID: sfid-20240829_110836_829366_BE2D013C 
+X-CRM114-Status: GOOD (  36.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,240 +79,358 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 28-08-24, 21:12, Adam Ford wrote:
-> There is currently a look-up table for a variety of resolutions.
-> Since the phy has the ability to dynamically calculate the values
-> necessary to use the intger divider which should allow more
-> resolutions without having to update the look-up-table.  If the
-> integer calculator cannot get an exact frequency, it falls back
-> to the look-up-table.  Because the LUT algorithm does some
-> rounding, I did not remove integer entries from the LUT.
-
-Any reason why this is RFC?
-
+On 26-08-24, 15:08, Xu Yang wrote:
+> The i.MX95 USB3 phy has a Type-C Assist block (TCA). This block consists
+> two functional blocks (XBar assist and VBus assist) and one system
+> access interface using APB.
 > 
-> Signed-off-by: Adam Ford <aford173@gmail.com>
+> The primary functionality of XBar assist is:
+>  - switching lane for flip
+>  - moving unused lanes into lower power states.
 > 
-> diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> index bc5d3625ece6..76e0899c6006 100644
-> --- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> @@ -16,6 +16,8 @@
+> This info can be get from:
+> i.MX95 RM Chapter 163.3.8 Type-C assist (TCA) block.
+> 
+> This will add support for TCA block to achieve lane switching and tca
+> lower power functionality.
+> 
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> Reviewed-by: Jun Li <jun.li@nxp.com>
+> 
+> ---
+> Changes in v2:
+>  - return the value of imx95_usb_phy_get_tca()
+> Changes in v3:
+>  - no changes
+> ---
+>  drivers/phy/freescale/Kconfig              |   1 +
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 240 +++++++++++++++++++++
+>  2 files changed, 241 insertions(+)
+> 
+> diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
+> index dcd9acff6d01..81f53564ee15 100644
+> --- a/drivers/phy/freescale/Kconfig
+> +++ b/drivers/phy/freescale/Kconfig
+> @@ -5,6 +5,7 @@ if (ARCH_MXC && ARM64) || COMPILE_TEST
+>  config PHY_FSL_IMX8MQ_USB
+>  	tristate "Freescale i.MX8M USB3 PHY"
+>  	depends on OF && HAS_IOMEM
+> +	depends on TYPEC || TYPEC=n
+>  	select GENERIC_PHY
+>  	default ARCH_MXC && ARM64
 >  
->  #define PHY_REG(reg)		(reg * 4)
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> index adc6394626ce..8bd6d91951a2 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -10,6 +10,7 @@
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regulator/consumer.h>
+> +#include <linux/usb/typec_mux.h>
 >  
-> +#define REG01_PMS_P_MASK	GENMASK(3, 0)
-> +#define REG03_PMS_S_MASK	GENMASK(7, 4)
->  #define REG12_CK_DIV_MASK	GENMASK(5, 4)
->  #define REG13_TG_CODE_LOW_MASK	GENMASK(7, 0)
->  #define REG14_TOL_MASK		GENMASK(7, 4)
-> @@ -31,11 +33,17 @@
+>  #define PHY_CTRL0			0x0
+>  #define PHY_CTRL0_REF_SSP_EN		BIT(2)
+> @@ -50,11 +51,66 @@
 >  
->  #define PHY_PLL_DIV_REGS_NUM 6
+>  #define PHY_TUNE_DEFAULT		0xffffffff
 >  
-> +#ifndef MHZ
-> +#define MHZ	(1000UL * 1000UL)
-> +#endif
+> +#define TCA_CLK_RST			0x00
+> +#define TCA_CLK_RST_SW			BIT(9)
+> +#define TCA_CLK_RST_REF_CLK_EN		BIT(1)
+> +#define TCA_CLK_RST_SUSPEND_CLK_EN	BIT(0)
 > +
->  struct phy_config {
->  	u32	pixclk;
->  	u8	pll_div_regs[PHY_PLL_DIV_REGS_NUM];
+> +#define TCA_INTR_EN			0x04
+> +#define TCA_INTR_STS			0x08
+> +
+> +#define TCA_GCFG			0x10
+> +#define TCA_GCFG_ROLE_HSTDEV		BIT(4)
+> +#define TCA_GCFG_OP_MODE		GENMASK(1, 0)
+> +#define TCA_GCFG_OP_MODE_SYSMODE	0
+> +#define TCA_GCFG_OP_MODE_SYNCMODE	1
+> +
+> +#define TCA_TCPC			0x14
+> +#define TCA_TCPC_VALID			BIT(4)
+> +#define TCA_TCPC_LOW_POWER_EN		BIT(3)
+> +#define TCA_TCPC_ORIENTATION_NORMAL	BIT(2)
+> +#define TCA_TCPC_MUX_CONTRL		GENMASK(1, 0)
+> +#define TCA_TCPC_MUX_CONTRL_NO_CONN	0
+> +#define TCA_TCPC_MUX_CONTRL_USB_CONN	1
+> +
+> +#define TCA_SYSMODE_CFG			0x18
+> +#define TCA_SYSMODE_TCPC_DISABLE	BIT(3)
+> +#define TCA_SYSMODE_TCPC_FLIP		BIT(2)
+> +
+> +#define TCA_CTRLSYNCMODE_CFG0		0x20
+> +#define TCA_CTRLSYNCMODE_CFG1           0x20
+> +
+> +#define TCA_PSTATE			0x30
+> +#define TCA_PSTATE_CM_STS		BIT(4)
+> +#define TCA_PSTATE_TX_STS		BIT(3)
+> +#define TCA_PSTATE_RX_PLL_STS		BIT(2)
+> +#define TCA_PSTATE_PIPE0_POWER_DOWN	GENMASK(1, 0)
+> +
+> +#define TCA_GEN_STATUS			0x34
+> +#define TCA_GEN_DEV_POR			BIT(12)
+> +#define TCA_GEN_REF_CLK_SEL		BIT(8)
+> +#define TCA_GEN_TYPEC_FLIP_INVERT	BIT(4)
+> +#define TCA_GEN_PHY_TYPEC_DISABLE	BIT(3)
+> +#define TCA_GEN_PHY_TYPEC_FLIP		BIT(2)
+> +
+> +#define TCA_VBUS_CTRL			0x40
+> +#define TCA_VBUS_STATUS			0x44
+> +
+> +#define TCA_INFO			0xFC
+> +
+> +struct tca_blk {
+> +	struct typec_switch_dev *sw;
+> +	void __iomem *base;
+> +	struct mutex mutex;
+> +	enum typec_orientation orientation;
+> +};
+> +
+>  struct imx8mq_usb_phy {
+>  	struct phy *phy;
+>  	struct clk *clk;
+>  	void __iomem *base;
+>  	struct regulator *vbus;
+> +	struct tca_blk *tca;
+>  	u32 pcs_tx_swing_full;
+>  	u32 pcs_tx_deemph_3p5db;
+>  	u32 tx_vref_tune;
+> @@ -64,6 +120,170 @@ struct imx8mq_usb_phy {
+>  	u32 comp_dis_tune;
 >  };
 >  
-> +static struct phy_config custom_phy_pll_cfg;
 > +
->  static const struct phy_config phy_pll_cfg[] = {
->  	{
->  		.pixclk = 22250000,
-> @@ -440,10 +448,83 @@ fsl_samsung_hdmi_phy_configure_pll_lock_det(struct fsl_samsung_hdmi_phy *phy,
->  	       phy->regs + PHY_REG(14));
->  }
->  
-> +static unsigned long fsl_samsung_hdmi_phy_find_pms(unsigned long fout, u8 *p, u16 *m, u8 *s)
+> +static void tca_blk_orientation_set(struct tca_blk *tca,
+> +				enum typec_orientation orientation);
+> +
+> +#ifdef CONFIG_TYPEC
+> +
+> +static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
+> +				enum typec_orientation orientation)
 > +{
-> +	unsigned long best_freq = 0;
-> +	u32 min_delta = 0xffffffff;
-
-> +	u8 _p, best_p;
-> +	u16 _m, best_m;
-> +	u8 _s, best_s;
+> +	struct imx8mq_usb_phy *imx_phy = typec_switch_get_drvdata(sw);
+> +	struct tca_blk *tca = imx_phy->tca;
+> +	int ret;
 > +
-> +	for (_p = 1; _p <= 11; ++_p) {
-
-starts with 1 to 11.. why?
-
-> +		for (_s = 1; _s <= 16; ++_s) {
-> +			u64 tmp;
-> +			u32 delta;
+> +	if (tca->orientation == orientation)
+> +		return 0;
 > +
-> +			/* s must be even */
-> +			if (_s > 1 && (_s & 0x01) == 1)
-> +				_s++;
+> +	ret = clk_prepare_enable(imx_phy->clk);
+> +	if (ret)
+> +		return ret;
 > +
-> +			/* _s cannot be 14 per the TRM */
-> +			if (_s == 14)
-> +				continue;
+> +	tca_blk_orientation_set(tca, orientation);
+> +	clk_disable_unprepare(imx_phy->clk);
 > +
-> +			/*
-> +			 * TODO: Ref Manual doesn't state the range of _m
-> +			 * so this should be further refined if possible.
-> +			 * This range was set based on the original values
-> +			 * in the look-up table
-> +			 */
-> +			tmp = (u64)fout * (_p * _s);
-> +			do_div(tmp, 24 * MHZ);
-> +			_m = tmp;
-> +			if (_m < 0x30 || _m > 0x7b)
-> +				continue;
-> +
-> +			/*
-> +			 * Rev 2 of the Ref Manual states the
-> +			 * VCO can range between 750MHz and
-> +			 * 3GHz.  The VCO is assumed to be _m x
-> +			 * the reference frequency of 24MHz divided
-> +			 * by the prescaler, _p
-> +			 */
-> +			tmp = (u64)_m * 24 * MHZ;
-> +			do_div(tmp, _p);
-> +			if (tmp < 750 * MHZ ||
-> +			    tmp > 3000 * MHZ)
-> +				continue;
-> +
-> +			tmp = (u64)_m * 24 * MHZ;
-> +			do_div(tmp, _p * _s);
-> +
-> +			delta = abs(fout - tmp);
-> +			if (delta < min_delta) {
-> +				best_p = _p;
-> +				best_s = _s;
-> +				best_m = _m;
-> +				min_delta = delta;
-> +				best_freq = tmp;
-> +			}
-> +		}
-> +	}
-> +
-> +	if (best_freq) {
-> +		*p = best_p;
-> +		*m = best_m;
-> +		*s = best_s;
-> +	}
-> +
-> +	return best_freq;
+> +	return 0;
 > +}
 > +
->  static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
->  					  const struct phy_config *cfg)
->  {
-> +	u32 desired_clock = cfg->pixclk * 5;
-> +	u32 close_freq;
->  	int i, ret;
-> +	u16 m;
-> +	u8 p, s;
->  	u8 val;
->  
->  	/* HDMI PHY init */
-> @@ -453,11 +534,38 @@ static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
->  	for (i = 0; i < ARRAY_SIZE(common_phy_cfg); i++)
->  		writeb(common_phy_cfg[i].val, phy->regs + common_phy_cfg[i].reg);
->  
-> -	/* set individual PLL registers PHY_REG2 ... PHY_REG7 */
-> -	for (i = 0; i < PHY_PLL_DIV_REGS_NUM; i++)
-> -		writeb(cfg->pll_div_regs[i], phy->regs + PHY_REG(2) + i * 4);
-> +	/* Using the PMS calculator alone, determine if can use integer divider */
-> +	close_freq = fsl_samsung_hdmi_phy_find_pms(desired_clock, &p, &m, &s);
+> +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
+> +					struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct typec_switch_dev *sw;
+> +	struct typec_switch_desc sw_desc = { };
 > +
-> +	/* If the clock cannot be configured with integer divder, use the fractional divider */
-> +	if (close_freq != desired_clock) {
-> +		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: use fractional divider\n");
-> +		/* set individual PLL registers PHY_REG2 ... PHY_REG7 */
-> +		for (i = 0; i < PHY_PLL_DIV_REGS_NUM; i++)
-> +			writeb(cfg->pll_div_regs[i], phy->regs + PHY_REG(2) + i * 4);
-> +		fsl_samsung_hdmi_phy_configure_pixclk(phy, cfg);
-> +	} else {
-> +		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: use integer divider\n");
-> +		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: P = %d\n", p);
-> +		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: M = %d\n", m);
-> +		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: S = %d\n", s);
-> +		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: frequency = %u\n", close_freq);
+> +	sw_desc.drvdata = imx_phy;
+> +	sw_desc.fwnode = dev->fwnode;
+> +	sw_desc.set = tca_blk_typec_switch_set;
+> +	sw_desc.name = NULL;
 > +
-> +		/* Write integer divder values for PMS */
-> +		writeb(FIELD_PREP(REG01_PMS_P_MASK, p), phy->regs + PHY_REG(1));
-> +		writeb(m, phy->regs + PHY_REG(2));
-> +		writeb(FIELD_PREP(REG03_PMS_S_MASK, s-1), phy->regs + PHY_REG(3));
-> +
-> +		/* Configure PHY to disable fractional divider */
-> +		writeb(0x00, phy->regs + PHY_REG(4));
-> +		writeb(0x00, phy->regs + PHY_REG(5));
-> +		writeb(0x80, phy->regs + PHY_REG(6));
-> +		writeb(0x00, phy->regs + PHY_REG(7));
-> +
-> +		writeb(REG21_SEL_TX_CK_INV | FIELD_PREP(REG21_PMS_S_MASK, s-1),
-> +		       phy->regs + PHY_REG(21));
+> +	sw = typec_switch_register(dev, &sw_desc);
+> +	if (IS_ERR(sw)) {
+> +		dev_err(dev, "Error register tca orientation switch: %ld",
+> +				PTR_ERR(sw));
+> +		return NULL;
 > +	}
->  
-> -	fsl_samsung_hdmi_phy_configure_pixclk(phy, cfg);
->  	fsl_samsung_hdmi_phy_configure_pll_lock_det(phy, cfg);
->  
->  	writeb(REG33_FIX_DA | REG33_MODE_SET_DONE, phy->regs + PHY_REG(33));
-> @@ -484,8 +592,17 @@ static unsigned long phy_clk_recalc_rate(struct clk_hw *hw,
->  static long phy_clk_round_rate(struct clk_hw *hw,
->  			       unsigned long rate, unsigned long *parent_rate)
->  {
-> +	u32 int_div_clk;
->  	int i;
-> +	u16 m;
-> +	u8 p, s;
 > +
-> +	/* If the integer divider works, just use it */
-> +	int_div_clk = fsl_samsung_hdmi_phy_find_pms(rate * 5, &p, &m, &s) / 5;
-> +	if (int_div_clk == rate)
-> +		return int_div_clk;
->  
-> +	/* Otherwise, fall back to the LUT */
->  	for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
->  		if (phy_pll_cfg[i].pixclk <= rate)
->  			return phy_pll_cfg[i].pixclk;
-> @@ -497,16 +614,28 @@ static int phy_clk_set_rate(struct clk_hw *hw,
->  			    unsigned long rate, unsigned long parent_rate)
->  {
->  	struct fsl_samsung_hdmi_phy *phy = to_fsl_samsung_hdmi_phy(hw);
-> +	u32 int_div_clk;
->  	int i;
-> -
-> -	for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
-> -		if (phy_pll_cfg[i].pixclk <= rate)
-> -			break;
-> -
-> -	if (i < 0)
-> -		return -EINVAL;
-> -
-> -	phy->cur_cfg = &phy_pll_cfg[i];
-> +	u16 m;
-> +	u8 p, s;
+> +	return sw;
+> +}
 > +
-> +	/* If the integer divider works, just use it */
-> +	int_div_clk = fsl_samsung_hdmi_phy_find_pms(rate * 5, &p, &m, &s) / 5;
-> +	if (int_div_clk == rate) {
-> +		/* Just set the pixclk rate, the rest will be calculated */
-> +		custom_phy_pll_cfg.pixclk = int_div_clk;
-> +		phy->cur_cfg  = &custom_phy_pll_cfg;
-> +	} else {
-> +		/* Otherwise, search the LUT */
-> +		for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
-> +			if (phy_pll_cfg[i].pixclk <= rate)
-> +				break;
+> +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
+> +{
+> +	typec_switch_unregister(sw);
+> +}
 > +
-> +		if (i < 0)
-> +			return -EINVAL;
+> +#else
 > +
-> +		phy->cur_cfg = &phy_pll_cfg[i];
+> +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
+> +			struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	return NULL;
+> +}
+> +
+> +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw) {}
+> +
+> +#endif /* CONFIG_TYPEC */
+> +
+> +static void tca_blk_orientation_set(struct tca_blk *tca,
+> +				enum typec_orientation orientation)
+> +{
+> +	u32 val;
+> +
+> +	mutex_lock(&tca->mutex);
+> +
+> +	if (orientation == TYPEC_ORIENTATION_NONE) {
+> +		/*
+> +		 * use Controller Synced Mode for TCA low power enable and
+> +		 * put PHY to USB safe state.
+> +		 */
+> +		val = readl(tca->base + TCA_GCFG);
+> +		val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYNCMODE);
+> +		writel(val, tca->base + TCA_GCFG);
+> +
+> +		val = readl(tca->base + TCA_TCPC);
+> +		val = TCA_TCPC_VALID | TCA_TCPC_LOW_POWER_EN;
+> +		writel(val, tca->base + TCA_TCPC);
+> +
+> +		goto out;
 > +	}
+> +
+> +	/* use System Configuration Mode for TCA mux control. */
+> +	val = readl(tca->base + TCA_GCFG);
+> +	val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYSMODE);
+> +	writel(val, tca->base + TCA_GCFG);
+> +
+> +	/* Disable TCA module */
+> +	val = readl(tca->base + TCA_SYSMODE_CFG);
+> +	val |= TCA_SYSMODE_TCPC_DISABLE;
+> +	writel(val, tca->base + TCA_SYSMODE_CFG);
+> +
+> +	if (orientation == TYPEC_ORIENTATION_REVERSE)
+> +		val |= TCA_SYSMODE_TCPC_FLIP;
+> +	else if (orientation == TYPEC_ORIENTATION_NORMAL)
+> +		val &= ~TCA_SYSMODE_TCPC_FLIP;
+> +
+> +	writel(val, tca->base + TCA_SYSMODE_CFG);
+> +
+> +	/* Enable TCA module */
+> +	val &= ~TCA_SYSMODE_TCPC_DISABLE;
+> +	writel(val, tca->base + TCA_SYSMODE_CFG);
+> +
+> +out:
+> +	tca->orientation = orientation;
+> +	mutex_unlock(&tca->mutex);
+> +}
+> +
+> +static void tca_blk_init(struct tca_blk *tca)
+> +{
+> +	u32 val;
+> +
+> +	/* reset XBar block */
+> +	val = readl(tca->base + TCA_CLK_RST);
+> +	val &= ~TCA_CLK_RST_SW;
+> +	writel(val, tca->base + TCA_CLK_RST);
+> +
+> +	udelay(100);
+> +
+> +	/* clear reset */
+> +	val |= TCA_CLK_RST_SW;
+> +	writel(val, tca->base + TCA_CLK_RST);
+> +
+> +	tca_blk_orientation_set(tca, tca->orientation);
+> +}
+> +
+> +static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
+> +				struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct tca_blk *tca;
+> +
+> +	tca = devm_kzalloc(dev, sizeof(*tca), GFP_KERNEL);
+> +	if (!tca)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	tca->base = devm_platform_ioremap_resource(pdev, 1);
+> +	if (IS_ERR(tca->base))
+> +		return tca->base;
+> +
+> +	mutex_init(&tca->mutex);
+> +
+> +	tca->orientation = TYPEC_ORIENTATION_NORMAL;
+> +	tca->sw = tca_blk_get_typec_switch(pdev, imx_phy);
+> +
+> +	return tca;
+> +}
+> +
+> +static void imx95_usb_phy_put_tca(struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	struct tca_blk *tca = imx_phy->tca;
+> +
+> +	if (!tca)
+> +		return;
+> +
+> +	tca_blk_put_typec_switch(tca->sw);
+> +}
+> +
+>  static u32 phy_tx_vref_tune_from_property(u32 percent)
+>  {
+>  	percent = clamp(percent, 94U, 124U);
+> @@ -315,6 +535,9 @@ static int imx8mp_usb_phy_init(struct phy *phy)
 >  
->  	return fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
+>  	imx8m_phy_tune(imx_phy);
+>  
+> +	if (imx_phy->tca)
+> +		tca_blk_init(imx_phy->tca);
+> +
+>  	return 0;
 >  }
+>  
+> @@ -359,6 +582,8 @@ static const struct of_device_id imx8mq_usb_phy_of_match[] = {
+>  	 .data = &imx8mq_usb_phy_ops,},
+>  	{.compatible = "fsl,imx8mp-usb-phy",
+>  	 .data = &imx8mp_usb_phy_ops,},
+> +	{.compatible = "fsl,imx95-usb-phy",
+> +	 .data = &imx8mp_usb_phy_ops,},
+
+Okay
+
+>  	{ }
+>  };
+>  MODULE_DEVICE_TABLE(of, imx8mq_usb_phy_of_match);
+> @@ -398,6 +623,13 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>  
+>  	phy_set_drvdata(imx_phy->phy, imx_phy);
+>  
+> +	if (device_is_compatible(dev, "fsl,imx95-usb-phy")) {
+
+so future version will also have this check, so are we going to increase
+this..? maybe better idea is to expand imx8mp_usb_phy_ops and add a flag
+for tca support and set that for required compatible, or make this a
+property?
+
+
+> +		imx_phy->tca = imx95_usb_phy_get_tca(pdev, imx_phy);
+> +		if (IS_ERR(imx_phy->tca))
+> +			return dev_err_probe(dev, PTR_ERR(imx_phy->tca),
+> +						"failed to get tca\n");
+> +	}
+> +
+>  	imx8m_get_phy_tuning_data(imx_phy);
+>  
+>  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> @@ -405,8 +637,16 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>  	return PTR_ERR_OR_ZERO(phy_provider);
+>  }
+>  
+> +static void imx8mq_usb_phy_remove(struct platform_device *pdev)
+> +{
+> +	struct imx8mq_usb_phy *imx_phy = platform_get_drvdata(pdev);
+> +
+> +	imx95_usb_phy_put_tca(imx_phy);
+> +}
+> +
+>  static struct platform_driver imx8mq_usb_phy_driver = {
+>  	.probe	= imx8mq_usb_phy_probe,
+> +	.remove = imx8mq_usb_phy_remove,
+>  	.driver = {
+>  		.name	= "imx8mq-usb-phy",
+>  		.of_match_table	= imx8mq_usb_phy_of_match,
 > -- 
-> 2.43.0
+> 2.34.1
 
 -- 
 ~Vinod
