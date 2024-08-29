@@ -4,65 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E634CC83F2D
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 16:18:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2408C83F2D
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Aug 2024 16:31:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TaHjr4PoeMVXQIggttzzNkLFzdzteI63QRwADxhq+lU=; b=UkxGePnZmoKQm5X0OMjXOafUeq
-	oYldHzd1R34kxF6J5wgqAlHncGX9+Jv4vYaOGfIrY4Q6Q/hVe52EZ2rSYtDyoKP8Eu6Rz6QYsaVG1
-	0XPAQ5gYVQz4iDtQlPu9SWMw1hki1Jh0Z/ljDKcqLLDFJVDIJh90x5AJlUW1l42uVbJwWAgPQnlIC
-	l40Rpo4bur+Vf7D0gHvAs2mOXjRhezpZHs4m58OQQqXsubTFy4b/EwlhNo/Je0/Y7qGxEcW4kaGAs
-	ojGuGgp98HHORSZeiCK9oplBNKKUI5AESXT8iGu+1GieXOBmC06e1NEc7UliBgTXNBaEwGtAE5RHc
-	fw7djXnA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1Rl+Une8FyWUx9uR1D07kF3wDRdWHq4fFRf7f9+GCCs=; b=G84I418XQhN3Nl
+	Q5ZMYuqlwXVSgSI/+adsnnfKsNn2RQ3R7QkiRHjWAtEw82vP+HJ02dsZrzTYmH3HFGjmSp/cpImr/
+	KBC9VEVH3XbGy2Zx1TgIM9gUpJvJxdw02mnEr8jNglqDYMdnIASPAOEl4VfrAw4jEJ9dl/iZrSJXZ
+	GR/oiPp9ZCeJ/024+EFqiwFT9/GflTh7xwfLLCTketjZ7wAfdUMiGvjMjwKUrH/vycVyiCnFfQM76
+	86rep9zBHGFNY+CMWwsOqaV4l8hRwPykkFC9Qp6UGNA6lA8T6gg3TqO2Yu4YCpdAP4mefmvp3epH4
+	xYs5Cw7j342GAtE+YlYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjhrC-00000002neN-2YSr;
-	Thu, 29 Aug 2024 16:18:46 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sji33-00000002qOh-2Sfa;
+	Thu, 29 Aug 2024 16:31:01 +0000
+Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjhqr-00000002nWf-0c38
+	id 1sjh2s-00000002bbS-3MYs
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Aug 2024 16:18:27 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 48F9BCE1BA4;
-	Thu, 29 Aug 2024 16:18:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B1F8C4CEC5;
-	Thu, 29 Aug 2024 16:18:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724948301;
-	bh=0DFCIEnpEsAW/SjC51AnwDz3RJhoIFR9GB8cHGV8p5Y=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=UAGJi+B9G7+ByyYTIff3xkkjmNTvtXetrK7MraXov7GbqBK4stVR39FvWENtwLR2y
-	 DiS6pkiibezMP1HXyHh0jQvBRZcUNV216gv7u55c+LduKII9t7gur38dgEwaaTc0WJ
-	 6IMawqXsQvaRLr8ynXiHoRLOSW/X3LJKZmY7kj0jb6uJ2EkN8dCRz8oZ6e8jJaWeo+
-	 Me8/i22BFG48bmjL5K9LF6vXvbNzrgUcN3ms38IQPVzEqtTt3HKp9gWZSFOd9nDabb
-	 FUQ74IrtCj095vhYzPK6hUgnn1pSQsVeAi+4JER9g0V9hm9A/4/S4V8GaAadxBUhpL
-	 MietOEiOgq9rA==
-Date: Thu, 29 Aug 2024 17:18:17 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: add NXP PTN3222 eUSB2 to USB2
- redriver
-Message-ID: <20240829-dandy-jingle-1002fb99b900@spud>
-References: <20240829-nxp-ptn3222-v1-0-46906bc4747a@linaro.org>
- <20240829-nxp-ptn3222-v1-1-46906bc4747a@linaro.org>
+	Thu, 29 Aug 2024 15:26:48 +0000
+Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-a8696e9bd24so103467566b.0
+        for <linux-phy@lists.infradead.org>; Thu, 29 Aug 2024 08:26:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1724945203; x=1725550003; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=IIVRFaFvh25kJ2shkW0d6LgWcnTu2JPMWtkC2wxiE8c=;
+        b=CeJRMxPf3jplUCt0DhX6bynmZs1wNpdCq92D/CuvVMpiLhvU7AooNHt+pW7XhNSsDS
+         l2Y87g4cdyfiUKw/PSYi+HNSH9OuKRDOJanLbC/f6RocH7jUp4R7ygskLLl43awI39FT
+         273vuPxCeQZkzqUWF58pc7XePvZxti+MXuQ03MfGqKNAcGqFtri+mrDL64aQPCtZvc2u
+         JDV9Ow/AqHCoqQczQsfB5pptpAPdy1U7LyLIkxAQGKrN2ffgpgClTC+SMN11MeRihaor
+         L9kaqEaYhyl75S1X6LwiFLTvklPr7JrWLFOZ/FN7hgremWSKqM1C1EBwLC+KIidIg4m8
+         qZHw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1724945203; x=1725550003;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=IIVRFaFvh25kJ2shkW0d6LgWcnTu2JPMWtkC2wxiE8c=;
+        b=CBck7tVzVIL9G8/b2KhgFzaOscM/cWVOv5lBvlGBdXV9g/UTBGMb8/PrWoJDxDX0V6
+         KS880kuqwTmwBUxWe5sM9pYssnZu1uuneKaAaP2EB1ouQCo5Pic3hbPT3bOugNNBrWiN
+         yiL8w+pFvwcwOWJWMrNfZT3jwZq+1n4GKIM5syBLr6aB0Dwg0Uf0hWLFnM/LprLpCmdi
+         cepUOMSMAD9EHOBLlcwGMTm7MtMqLbyHv8gJt8t1bHYMWc0GFjvE4AmoayMr9LeGXXWA
+         EKUhhWKaQhH72eS++QyzrPclUESUDzrklMw0tg3i96RhHcf1xLgg0DGJ5NuXfSbq8SgE
+         NGlw==
+X-Forwarded-Encrypted: i=1; AJvYcCVX5NHcK6BlgnAzmWR70CISDPhqg69v0UZzmbtKXC7mkD0Le4r1S2TEimGvuiwLp+flHEU1cM2+82I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzAlH6lwQAesCFUW3sLRGVfGCem92PhyDSVOdvlwosUtvYLigky
+	FmQsqpLOh+cxA2KlGeWbAdlCMMKWjAWwIwuJ+KfcY+lNfWvupP2gW4vezbW7ZpHuxJ7agYfmkXO
+	IDNtLXL30DFRzsXEmxsY4dmZERTl7woRwO5oFPQ==
+X-Google-Smtp-Source: AGHT+IH2kueLQc5TRgnqFrkLjrGvJRIK/BMurN2noHpa1MBrWwQdN5e//Oya3AbhSVY9odHODdUMQtzGctXu6ADcfvk=
+X-Received: by 2002:a17:907:970f:b0:a86:894e:cd09 with SMTP id
+ a640c23a62f3a-a897f78bdb5mr287428066b.9.1724945202995; Thu, 29 Aug 2024
+ 08:26:42 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20240829-nxp-ptn3222-v1-1-46906bc4747a@linaro.org>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 29 Aug 2024 17:26:04 +0200
+Message-ID: <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+To: Claudiu <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
+	magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
+	sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
+	biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+	linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_091825_719784_72FD5905 
-X-CRM114-Status: GOOD (  16.33  )
+X-CRM114-CacheID: sfid-20240829_082647_021043_AFD823B1 
+X-CRM114-Status: GOOD (  15.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,133 +91,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0479386008760043318=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, 22 Aug 2024 at 17:28, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+>
+> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>
+> Hi,
+>
+> Series adds initial USB support for the Renesas RZ/G3S SoC.
+>
+> Series is split as follows:
+>
+> - patch 01/16           - add clock reset and power domain support for USB
+> - patch 02-04/16        - add reset control support for a USB signal
+>                           that need to be controlled before/after
+>                           the power to USB area is turned on/off.
+>
+>                           Philipp, Ulf, Geert, all,
+>
+>                           I detailed my approach for this in patch
+>                           04/16, please have a look and let me know
+>                           your input.
 
---===============0479386008760043318==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="lb2JHJxD1qBMGfou"
-Content-Disposition: inline
+I have looked briefly. Your suggested approach may work, but I have a
+few thoughts, see below.
 
+If I understand correctly, it is the consumer driver for the device
+that is attached to the USB power domain that becomes responsible for
+asserting/de-asserting this new signal. Right?
 
---lb2JHJxD1qBMGfou
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+In this regard, please note that the consumer driver doesn't really
+know when the power domain really gets powered-on/off. Calling
+pm_runtime_get|put*() is dealing with the reference counting. For
+example, a call to pm_runtime_get*() just makes sure that the PM
+domain gets-or-remains powered-on. Could this be a problem from the
+reset-signal point of view?
 
-On Thu, Aug 29, 2024 at 11:21:13AM +0300, Dmitry Baryshkov wrote:
-> The NXP PTN3222 is the single-port eUSB2 to USB2 redriver that performs
-> translation between eUSB2 and USB2 signalling schemes. It supports all
-> three data rates: Low Speed, Full Speed and High Speed.
->=20
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->  .../devicetree/bindings/phy/nxp,ptn3222.yaml       | 55 ++++++++++++++++=
-++++++
->  1 file changed, 55 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/nxp,ptn3222.yaml b/Doc=
-umentation/devicetree/bindings/phy/nxp,ptn3222.yaml
-> new file mode 100644
-> index 000000000000..acec5bb2391d
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/nxp,ptn3222.yaml
-> @@ -0,0 +1,55 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/nxp,ptn3222.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP PTN3222 1-port eUSB2 to USB2 redriver
-> +
-> +maintainers:
-> +  - Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - nxp,ptn3222
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  vdd1v8-supply:
-> +    description: power supply (1.8V)
+[...]
 
-As a nit, these descriptions could just be ": true" like the
-reset-gpios, they're equally obvious.
-
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
-Cheers,
-Conor.
-
-> +
-> +  vdd3v3-supply:
-> +    description: power supply (3.3V)
-> +
-> +  reset-gpios: true
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - '#phy-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +
-> +    i2c {
-> +        #address-cells =3D <1>;
-> +        #size-cells =3D <0>;
-> +
-> +        redriver@4f {
-> +            compatible =3D "nxp,ptn3222";
-> +            reg =3D <0x4f>;
-> +            #phy-cells =3D <0>;
-> +            vdd3v3-supply =3D <&vreg_3p3>;
-> +            vdd1v8-supply =3D <&vreg_1p8>;
-> +            reset-gpios =3D <&gpio_reset GPIO_ACTIVE_LOW>;
-> +        };
-> +    };
-> +...
->=20
-> --=20
-> 2.39.2
->=20
-
---lb2JHJxD1qBMGfou
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZtCfSAAKCRB4tDGHoIJi
-0g0vAP0ULmArYvwsKhDXcZT3/4k+oqLJV5IRg5A/j6KAIiP0kAEA3keLUf3OdneN
-T8XD0nEmiPfqLNo/YVZtsIw/VcqqsQ4=
-=tE0b
------END PGP SIGNATURE-----
-
---lb2JHJxD1qBMGfou--
-
-
---===============0479386008760043318==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Kind regards
+Uffe
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0479386008760043318==--
-
