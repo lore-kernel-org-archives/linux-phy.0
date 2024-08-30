@@ -4,84 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58D5ACA0EFF
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 10:43:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74620CA0EFF
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 10:54:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wSRO6GGT+lQfsPQ/xv1zq2dwlsL3Ao/mHMYwQsMxI7U=; b=iGUHGnWNZbNkKT
-	6dYVpp9a7KhorQQGQ31qk3lsymgWqvlTScSZfZijdF8EunxspkLkj2PZsFPiHCy6eITdR4YC2WZ3C
-	VUFZLBdYzrDclU9aDvscyQ2y18gkjwL85Zi6lHsBTiLALV9fs7A+dVLHmDCvMAlscrC2O0V/c8Izl
-	Xu8kUqXOypv1cPPPKOopK8RriZcJNNUiC0U6ryNEftE4V2OEIEYDbB/P6vl9cT9hd9ZnU1ogvPsPb
-	lxRtKMQJ1VNniGL9TG43IPcEpQdzpOXWkj7na92/5PT6oqx/m/qAsMswc0PzOcSoggMxV4pjCONij
-	RgJPvKwfT2SH9QcqEYBg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UYpPMm73NWGL0y79FHoAg2+jtMxpwxyex3m1cqOumhs=; b=Wfz0cxHdV3MpFg
+	d+fTtafU84drPgWjcWeiX7PqHBPyXjnPZhI3gxnTbZuYMvtF8K8FyT1Tx1s9wp2mSe3AXh2iD8bZU
+	3TFHeXP/auKafHW1tJBZ0W5IpjDBuoVMaoms3cOzXzIS5ELbXcm8U9a9A5ZIHFaeubraSOyK6YQq1
+	Nw5Hfi+sTLUCUVddZ2VMdzs3N3sLsIyi7PUHoacC9Ur6FTyA8OIE1KlEqeBxAOa9o1Cjs9iwSzJhU
+	iNdIUcTFAB5EbZHG3O48CmClWS28u290uP5gTAzdMnJBu+f5BqOWtSqPeHMkstAuy2C3qAFBx/9Yu
+	NTEdXa42po8sjYSB91AA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjz6M-00000005sPj-42Ph;
-	Fri, 30 Aug 2024 10:43:34 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1sjzGo-00000005uQw-0UR0;
+	Fri, 30 Aug 2024 10:54:22 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjz55-00000005s6Z-1RHC
-	for linux-phy@lists.infradead.org;
-	Fri, 30 Aug 2024 10:42:16 +0000
-Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-533488ffaebso1983222e87.0
-        for <linux-phy@lists.infradead.org>; Fri, 30 Aug 2024 03:42:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725014533; x=1725619333; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=nnBATt0aCdgUC6P5YWHuzTeqt0mGO1EjpThrCVktSJU=;
-        b=eJBuCdiJxV852Or7vmFc7rX6CZlQlUnQvYxpK6yQhha6OX6jWEGE/Dg4H5JK/PQAok
-         X80L8GQQxTQ0bifFudLTiCnKNnlxeepo6FKjtHxkcaBIN2a8dkvJ+EAHZaptpb0k+3pY
-         9412M88t6qTd/ZczyFlRo3yOjVxzcOUzmYkvj9RzIM73UkdJm0q8GlZNkw0ICwFeEtHV
-         SvzDcXCg1a6gluDYwM0L40fECouOX6m8uYJA5hO0o7crc6j5DYdamGw6IAni3T2yIAXt
-         EW40k9GlRlSbSwBHj/U7VfbWdmkz5twzfMKGPzreU9mHUwOU7Co09EWei5OUfVtNAezN
-         xO3A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725014533; x=1725619333;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=nnBATt0aCdgUC6P5YWHuzTeqt0mGO1EjpThrCVktSJU=;
-        b=OBDcwVPFtzzgQGYtlNgV8H1ONrpWRYFbmsJlHUYG7LZpar8EWzTKTNwNgZKmLyH9Mm
-         UKtvm8l2Vwkl/CQO4cN77wj33OfPGm4ZJ3zOEPF+5ubMbPg+kEsWV/W1YGAbQ0fj+nNx
-         ckefVw12MGFAtxSBs+3JILzDGYCteiXiaU+d24QBY2f98llIEbtfpQBvwtlxX8Exmnld
-         FKmEImQ+Hq/Y2qFih6axp8DrQ90weekhieaM2dtAptoNJd6e0xctYhnf+hYc2IpUzlyF
-         gHTfPpJ/yxAos4oeVcIkpNG+k3Q5GowcqFEU2lXVER0HyLVUgE6zeYc7u3nrc7bYMZH8
-         dzEw==
-X-Forwarded-Encrypted: i=1; AJvYcCUnTGAvnw/Z2vzRzljpKFoigj0szroNFuQeD+50N/KDSf8EilNpaGY3+JIUqoKFigGTzhke1QemkJ0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw1luomf+jWabMfBY1+ySKj38hF6R3uPkbGNrb2Aqb9WEgbTxCa
-	M6qQMFWet4qnI/2bmO+QHKQFoEesaJ24bOdbfgf1Wpp66XDQiUkWg14yalfFVsk=
-X-Google-Smtp-Source: AGHT+IHIVMMpPiudJNRkic59qjcS0uvC6Loc8Pvi0x8IGyPMyVB8soyXpzs69J1ZylJShtWwpCcRFA==
-X-Received: by 2002:a05:6512:3c99:b0:52e:9f17:841a with SMTP id 2adb3069b0e04-53546af3048mr1391073e87.6.1725014532644;
-        Fri, 30 Aug 2024 03:42:12 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5354079bb9dsm540503e87.21.2024.08.30.03.42.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 30 Aug 2024 03:42:11 -0700 (PDT)
-Date: Fri, 30 Aug 2024 13:42:10 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Abel Vesa <abel.vesa@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	Krzysztof Kozlowski <krzk@kernel.org>, Johan Hovold <johan+linaro@kernel.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Document the X1E80100 QMP PCIe PHY Gen4 x4
-Message-ID: <gvx3sdsdxigel3iwu7vgvvgxohvnaqq6suogsqojeumobhwhdk@5qct23m5ncda>
-References: <20240823-x1e80100-phy-add-gen4x4-v3-0-b7765631ca01@linaro.org>
- <20240823-x1e80100-phy-add-gen4x4-v3-1-b7765631ca01@linaro.org>
+	id 1sjzFv-00000005uEz-3hqT;
+	Fri, 30 Aug 2024 10:53:29 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 47UArMIc101755;
+	Fri, 30 Aug 2024 05:53:22 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1725015202;
+	bh=KUOgx+nr0Fdd/U00rm4qzZJfvik05ytOlpn9p/ouBH8=;
+	h=From:To:CC:Subject:Date;
+	b=NRWVImWbs7jZ12VLz4r/DKXBGPc8M0cu20KRKBPDV+v3Z156O5hiYonuviIyP77TQ
+	 6K853QRxazjjAm68VhX+HX8PEgNWvKaw1SOdnsFlHq76kyANFBBEIujPajRucveRbb
+	 X8Ae5HLweEExBElldZspQhgYsmOmm9JfGgYxnus4=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 47UArMRk012191
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Fri, 30 Aug 2024 05:53:22 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Fri, 30
+ Aug 2024 05:53:22 -0500
+Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Fri, 30 Aug 2024 05:53:21 -0500
+Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.72.81])
+	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 47UArHDB009586;
+	Fri, 30 Aug 2024 05:53:18 -0500
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <sjakhade@cadence.com>,
+        <yamonkar@cadence.com>
+CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <nm@ti.com>, <srk@ti.com>, <s-vadapalli@ti.com>
+Subject: [PATCH] dt-bindings: phy: cadence-sierra: Allow PHY types QSGMII and SGMII
+Date: Fri, 30 Aug 2024 16:23:16 +0530
+Message-ID: <20240830105316.1824319-1-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240823-x1e80100-phy-add-gen4x4-v3-1-b7765631ca01@linaro.org>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_034215_435941_70053A2F 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20240830_035328_000177_F8E5C380 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,64 +84,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Aug 23, 2024 at 10:04:15AM GMT, Abel Vesa wrote:
-> The sixth PCIe instance on X1E80100 can be used in either 4-lane mode or
-> 2-lane mode. Document the 4-lane mode as a separate compatible.
+The Sierra SERDES can be configured for QSGMII and SGMII protocols. Hence,
+update the bindings to treat "PHY_TYPE_QSGMII" and "PHY_TYPE_SGMII" as
+valid values for the "cdns,phy-type" property.
 
-As the patches were merged, it's too late for this series, but as a
-note: we should think of a way to describe the PHY configuration without
-changing the compatibility strings. The hardware stays the same, it's
-just the number of lanes being wired that changes.
+Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+---
 
-The obvious way to handle platform-specific differences is by using
-num-lanes property of the PCIe host and then passing required
-configuration (num lanes, max speed, etc.) to the PCIe PHY via
-phy_configure() call.
+Hello,
 
-> 
-> Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> ---
->  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> index 03dbd02cf9e7..dcf4fa55fbba 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> @@ -40,6 +40,7 @@ properties:
->        - qcom,sm8650-qmp-gen4x2-pcie-phy
->        - qcom,x1e80100-qmp-gen3x2-pcie-phy
->        - qcom,x1e80100-qmp-gen4x2-pcie-phy
-> +      - qcom,x1e80100-qmp-gen4x4-pcie-phy
->  
->    reg:
->      minItems: 1
-> @@ -118,6 +119,7 @@ allOf:
->            contains:
->              enum:
->                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-> +              - qcom,x1e80100-qmp-gen4x4-pcie-phy
->      then:
->        properties:
->          reg:
-> @@ -169,6 +171,7 @@ allOf:
->                - qcom,sc8280xp-qmp-gen3x1-pcie-phy
->                - qcom,sc8280xp-qmp-gen3x2-pcie-phy
->                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-> +              - qcom,x1e80100-qmp-gen4x4-pcie-phy
->      then:
->        properties:
->          clocks:
-> 
-> -- 
-> 2.34.1
-> 
+This patch is based on linux-next tagged next-20240830.
 
+Regards,
+Siddharth.
+
+ Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml
+index 37f028f7a095..137ac5703853 100644
+--- a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.yaml
+@@ -96,7 +96,7 @@ patternProperties:
+           Specifies the type of PHY for which the group of PHY lanes is used.
+           Refer include/dt-bindings/phy/phy.h. Constants from the header should be used.
+         $ref: /schemas/types.yaml#/definitions/uint32
+-        enum: [2, 4]
++        enum: [2, 4, 8, 9]
+ 
+       cdns,num-lanes:
+         description:
 -- 
-With best wishes
-Dmitry
+2.40.1
+
 
 -- 
 linux-phy mailing list
