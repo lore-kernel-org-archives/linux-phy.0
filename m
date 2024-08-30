@@ -4,109 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1D06CA0EC5
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 10:05:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36990CA0EFC
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 10:16:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SzcTBru8AJwAt0PLbYw4zJM8Q/+6VwHZeRE+z3ev/yM=; b=z2Fqdc73oUeH5f
-	cSeYp3mTofbw9Y1x8OQllCFvXwSix/oBtLmsNHLz7/2w5lebGKtkdyYNwZOziq9vMLLwxv1qTP4/S
-	zRgyGgsmcywaGS5jzgDuAu6U0gtJ5MzNzawx6655dKW/m1oMvQGdNi5EWeMR2/V2UmCmCw2SITvb6
-	ArvDb0xjETMQ2eeklWBLIcT+cBbiUboXcJKt+C470a2S59I0E3D0mvyl7sD4RmxNCeTeTyXXANneC
-	IDZ8SHYP7y/XxDPYmr9kDJFzGBMV/aLtZ14hLSIu59KvV06MRk+AfKOn0ZXfUpDnL5d+BhbYrliG+
-	iq/rhovt3Bs4KFjzIgiw==;
+	List-Owner; bh=wcskx+zrKLfGKPpD61NeQNl3hyCIxeP/3oOgtRk1WmU=; b=y+NaBdnEAd5+7X
+	sup2Y6W3abyZzNhHgDPikwBIvsY4pX5mof2y4AbW+1UOe6VjuzLRA+bCOsDZzsWNmTOyMIILumpTd
+	lQClHY9b5ii7C9Qs82j8ziKbiRQqsc3DfeHFZbzR/TkbCarQnY2wYqaRSzNDc4nq8WnRzNiBuPHRN
+	UvVI8ck8Jcnumi4mcYRJGzcyfj3yT8xxWi0V+sDVbaJW4jc7G5l7gr2n+IqiwYU/8jCtK5Xi+8iQM
+	N4eUbQyqX5N4WN32JEaiZhoAZK8Mqm0Zoi6x5i+50XI5GrMPuwbgpbSi13EQYuCRlGXaUxlIMXudf
+	q5SWcmwKTNXr8bY0YKhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjyV9-00000005htM-3s43;
-	Fri, 30 Aug 2024 10:05:07 +0000
-Received: from sin.source.kernel.org ([145.40.73.55])
+	id 1sjyfl-00000005l3K-3prR;
+	Fri, 30 Aug 2024 10:16:05 +0000
+Received: from mail-yb1-xb30.google.com ([2607:f8b0:4864:20::b30])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjyRj-00000005gYo-3lns
+	id 1sjyes-00000005kmE-3t4y
 	for linux-phy@lists.infradead.org;
-	Fri, 30 Aug 2024 10:01:38 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 17B29CE1D9B;
-	Fri, 30 Aug 2024 10:01:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E05DDC4CEC2;
-	Fri, 30 Aug 2024 10:01:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725012093;
-	bh=eUzYi6PdntJZPmYPnJQixEyscHo0C+wrxQUeHB41bbc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=eAaUvILnBtDSgeFWzKX1FxEuxAnt6xh6lHsvh2kuAu9rklGpq5ojTtSI/vqBMIAqI
-	 zN9fqAl4u0xEtvqu7SL/YKzxo7EPQNDB6XX3lEB2DHSd9zD++FAE3ArKT1np7OORog
-	 LVeionBUk+dDg+vDfAW+zdH8oonfRdTeNOH21Gt+n8oFEIkNtULR9LcxhwGe+xX+gO
-	 Ld9NGJIfYZDT2/OWRDHAh1X/q5CuCM5NRDTRPklbwAOovkLIz7qkLzsvgMXwSaTUuZ
-	 HRy5beZUuvo30aQQt0XvW+p1C/4hAUXkE0LDJ9dJll1c8207JNTDPQQ1x0mQlqZpKp
-	 P3ERjEsKcn2QA==
-Message-ID: <4ab9dcb6-4a0b-493c-943b-5de05457c592@kernel.org>
-Date: Fri, 30 Aug 2024 12:01:27 +0200
+	Fri, 30 Aug 2024 10:15:13 +0000
+Received: by mail-yb1-xb30.google.com with SMTP id 3f1490d57ef6-e115c8aa51fso1740542276.1
+        for <linux-phy@lists.infradead.org>; Fri, 30 Aug 2024 03:15:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1725012909; x=1725617709; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=UwkZJIL6lWhl6ByZiDGKwgiO886aZ7Ma/SrA3D4RrxQ=;
+        b=UmS86U6vL3bURUaEv6LgEIFfDZYUIxesqYGL1/4p/44pllQDlhdYyjalfBeIYDrMWB
+         3H1gbb8/jsRZpTuuDmZ2XacuiE+xNmHZZSNbTt8RzJJIbRNptFifzAAma3VGjM+8M2p3
+         3JOtexgFqF3bnYL6mogki0l0LFTPeF1Tfx9TM5wrh5Yqbec5BCkRUhwlzfXimIcti+cl
+         HARiJtoOMIhoXxdTNREO+c9/0ngKg61Mlph1SUl7TpM8Ts9Lt4RLautA0H4Tgv12PZk9
+         Y0Uc9LlhqLmuUdzF9RDT3bJKRb70ULOkOX11zjEOPPNlbzrjWzcplwGC53CiPpPjkN0e
+         aZaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725012909; x=1725617709;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=UwkZJIL6lWhl6ByZiDGKwgiO886aZ7Ma/SrA3D4RrxQ=;
+        b=VRzhMYBJM4y3Ts6QRUcW4CrAZYnddFxppf6NUs9q0T7adxDd4BAg2jrGroHv7Eta67
+         mGNrC74+rKnhiUUBHrIghbHcLf5tSF7M7+BMArEflMp1J/Irn7xH2HyGOqs075vMSYKF
+         QufpIV/fHfpfQYae89hknosrGeh2kjosxOcf6qiOlQNtAKf7B1fk6LcM3rO6yi1cMXkB
+         cmFLv3UgBg0Oz5/HIQ4fAPeMHJ9YHmQ35Z+aMIIh+7GA+oxPT6wT8+m59HcdmYISW6DR
+         YK6yKoTttN4EkiLmFFp4kaT2GnCuWB2wLC335DxjotJeB5W/oj/LYs+RbxKMN3OEXXey
+         PnVA==
+X-Forwarded-Encrypted: i=1; AJvYcCVJXvbNG/MF3KV2TxG6w2nOTgB0+oRRoUgw2dkpLJfiXxcZFoB2arEUmb37dD5FLwOu+qpK+fsPQnc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzS7oKqx5tP0THxZSqkqsjBNFv6+CIOboPVQczidsXVWF2vmgAa
+	UUFXLleORwRgt+5/lZZS/7kiGrYuE8bxUZCWxDH8fOyPIjSW+/ExE0khe/lCCt3Ya2g4GGko2W/
+	bjoKLHTzVKO+G/G6+cJTO3m+p6GXLXhWGZdRlDw==
+X-Google-Smtp-Source: AGHT+IENC1Eou3o76ET+fArBcJHz5tLkQ1M6jag1cqYy++ImNouJ6bItdx2SVPKjxSeyzrzWnSwjb3NJLNY42U4Z7/o=
+X-Received: by 2002:a05:6902:1384:b0:e0e:cb25:c413 with SMTP id
+ 3f1490d57ef6-e1a7a1d369emr1888445276.52.1725012909519; Fri, 30 Aug 2024
+ 03:15:09 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/2] phy: qcom: qmp-pcie: Add support for Gen4 4-lane
- mode for X1E80100
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Abel Vesa <abel.vesa@linaro.org>
-Cc: Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Johan Hovold <johan+linaro@kernel.org>
-References: <20240823-x1e80100-phy-add-gen4x4-v3-0-b7765631ca01@linaro.org>
- <172495833400.405683.4328817324548517864.b4-ty@kernel.org>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <172495833400.405683.4328817324548517864.b4-ty@kernel.org>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com> <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
+In-Reply-To: <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 30 Aug 2024 12:14:33 +0200
+Message-ID: <CAPDyKFrVS2vpsJqTvjKCJ7ADqXc4D4k2eeCBsaK4T+=pXDnKUA@mail.gmail.com>
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+To: claudiu beznea <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
+	magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
+	sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
+	biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+	linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_030136_671789_FB850A80 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240830_031511_013043_A2736179 
+X-CRM114-Status: GOOD (  38.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,31 +97,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 29/08/2024 21:05, Vinod Koul wrote:
-> 
-> On Fri, 23 Aug 2024 10:04:14 +0300, Abel Vesa wrote:
->> On all X Elite boards currently supported upstream, the NVMe sits
->> on the PCIe 6. Until now that has been configured in dual lane mode
->> only. The schematics reveal that the NVMe is actually using 4 lanes.
->> So add support for the 4-lane mode and document the compatible for it.
->>
->> This patchset depends on:
->> https://lore.kernel.org/all/20240805-phy-qcom-qmp-pcie-write-all-tbls-second-port-v3-1-6967c6bf61d1@linaro.org/
->>
->> [...]
-> 
-> Applied, thanks!
-> 
-> [1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100 QMP PCIe PHY Gen4 x4
->       commit: 0c5f4d23f77631f657b60ef660676303f7620688
+On Fri, 30 Aug 2024 at 10:22, claudiu beznea <claudiu.beznea@tuxon.dev> wrote:
+>
+> Hi, Ulf,
+>
+> On 29.08.2024 18:26, Ulf Hansson wrote:
+> > On Thu, 22 Aug 2024 at 17:28, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+> >>
+> >> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> >>
+> >> Hi,
+> >>
+> >> Series adds initial USB support for the Renesas RZ/G3S SoC.
+> >>
+> >> Series is split as follows:
+> >>
+> >> - patch 01/16           - add clock reset and power domain support for USB
+> >> - patch 02-04/16        - add reset control support for a USB signal
+> >>                           that need to be controlled before/after
+> >>                           the power to USB area is turned on/off.
+> >>
+> >>                           Philipp, Ulf, Geert, all,
+> >>
+> >>                           I detailed my approach for this in patch
+> >>                           04/16, please have a look and let me know
+> >>                           your input.
+> >
+> > I have looked briefly. Your suggested approach may work, but I have a
+> > few thoughts, see below.
+> >
+> > If I understand correctly, it is the consumer driver for the device
+> > that is attached to the USB power domain that becomes responsible for
+> > asserting/de-asserting this new signal. Right?
+>
+> Right!
+>
+> >
+> > In this regard, please note that the consumer driver doesn't really
+> > know when the power domain really gets powered-on/off. Calling
+> > pm_runtime_get|put*() is dealing with the reference counting. For
+> > example, a call to pm_runtime_get*() just makes sure that the PM
+> > domain gets-or-remains powered-on. Could this be a problem from the
+> > reset-signal point of view?
+>
+> It should be safe. From the HW manual I understand the hardware block is
+> something like the following:
+>
+>
+>                   USB area
+>          +-------------------------+
+>          |                         |
+>          | PHY --->USB controller  |
+> SYSC --> |  ^                      |
+>          |  |                      |
+>          | PHY reset               |
+>          +-------------------------+
+>
+> Where:
+> - SYSC is the system controller that controls the new signal for which
+>   I'm requesting opinions in this series
+> - PHY reset: is the block controlling the PHYs
+> - PHY: is the block controlling the USB PHYs
+> - USB controller: is the USB controller
+>
+> Currently, I passed the SYSC signal handling to the PHY reset driver; w/o
+> PHY reset the rest of the USB logic cannot work (neither PHY block nor USB
+> controller).
+>
+> Currently, the PHY reset driver call pm_runtime_resume_and_get() in probe
+> and pm_runtime_put() in remove. The struct reset_control_ops::{assert,
+> deassert} only set specific bits in registers (no pm_runtime* calls).
 
-Heh, we discussed yesterday on IRC that this should wait.
+Thanks for clarifying!
 
-Why do we keep discussing things in private...
+For my understanding, in what register range do these bits belong? Is
+it the USB logic or in the PM domain logic, or something else.
 
-Best regards,
-Krzysztof
+>
+> The PHY driver is taking its PHY reset in probe and release it in remove().
+> With this approach the newly introduced SYSC signal will be
+> de-asserted/asserted only in the PHY reset probe/remove (either if it is
+> handled though PM domain or reset control signal).
+>
+> If the SYSC signal would be passed to all the blocks in the USB area (and
+> it would be handled though PM domains) it should be no problem either,
+> AFAICT, because of reference counting the pm_runtime_get|put*() is taking
+> care of. As the PHY reset is the root node the in the devices node tree for
+> USB the reference counting should work, too (I may miss something though,
+> please correct me if I'm wrong).
+>
+> If the SYSC signal would be handled though a reset control driver (as
+> proposed in this series) and we want to pass this reference to all the
+> blocks in the USB area then we can request the reset signal as shared and,
+> AFAIK, this is also reference counted. The devices node tree should help
+> with the order, too, if I'm not wrong.
 
+Reference counting a reset signal sounds a bit weird to me, but I
+guess it can work. :-)
+
+To sum up from my side;
+
+As long as it's fine that we may end up asserting/de-asserting the
+reset-signal, without actually knowing if the PM domain is getting
+turn-on/off, then using a reset-control like what you propose seems
+okay to me.
+
+If not, there are two other options that can be considered I think.
+*) Using the genpd on/off notifiers, to really allow the consumer
+driver of the reset-control to know when the PM domain gets turned
+on/off.
+**) Move the entire reset handling into the PM domain provider, as it
+obviously knows when the domain is getting turned on/off.
+
+Thanks again for your explanations!
+
+Kind regards
+Uffe
 
 -- 
 linux-phy mailing list
