@@ -4,83 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36990CA0EFC
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 10:16:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58D5ACA0EFF
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 10:43:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wcskx+zrKLfGKPpD61NeQNl3hyCIxeP/3oOgtRk1WmU=; b=y+NaBdnEAd5+7X
-	sup2Y6W3abyZzNhHgDPikwBIvsY4pX5mof2y4AbW+1UOe6VjuzLRA+bCOsDZzsWNmTOyMIILumpTd
-	lQClHY9b5ii7C9Qs82j8ziKbiRQqsc3DfeHFZbzR/TkbCarQnY2wYqaRSzNDc4nq8WnRzNiBuPHRN
-	UvVI8ck8Jcnumi4mcYRJGzcyfj3yT8xxWi0V+sDVbaJW4jc7G5l7gr2n+IqiwYU/8jCtK5Xi+8iQM
-	N4eUbQyqX5N4WN32JEaiZhoAZK8Mqm0Zoi6x5i+50XI5GrMPuwbgpbSi13EQYuCRlGXaUxlIMXudf
-	q5SWcmwKTNXr8bY0YKhA==;
+	List-Owner; bh=wSRO6GGT+lQfsPQ/xv1zq2dwlsL3Ao/mHMYwQsMxI7U=; b=iGUHGnWNZbNkKT
+	6dYVpp9a7KhorQQGQ31qk3lsymgWqvlTScSZfZijdF8EunxspkLkj2PZsFPiHCy6eITdR4YC2WZ3C
+	VUFZLBdYzrDclU9aDvscyQ2y18gkjwL85Zi6lHsBTiLALV9fs7A+dVLHmDCvMAlscrC2O0V/c8Izl
+	Xu8kUqXOypv1cPPPKOopK8RriZcJNNUiC0U6ryNEftE4V2OEIEYDbB/P6vl9cT9hd9ZnU1ogvPsPb
+	lxRtKMQJ1VNniGL9TG43IPcEpQdzpOXWkj7na92/5PT6oqx/m/qAsMswc0PzOcSoggMxV4pjCONij
+	RgJPvKwfT2SH9QcqEYBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjyfl-00000005l3K-3prR;
-	Fri, 30 Aug 2024 10:16:05 +0000
-Received: from mail-yb1-xb30.google.com ([2607:f8b0:4864:20::b30])
+	id 1sjz6M-00000005sPj-42Ph;
+	Fri, 30 Aug 2024 10:43:34 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjyes-00000005kmE-3t4y
+	id 1sjz55-00000005s6Z-1RHC
 	for linux-phy@lists.infradead.org;
-	Fri, 30 Aug 2024 10:15:13 +0000
-Received: by mail-yb1-xb30.google.com with SMTP id 3f1490d57ef6-e115c8aa51fso1740542276.1
-        for <linux-phy@lists.infradead.org>; Fri, 30 Aug 2024 03:15:10 -0700 (PDT)
+	Fri, 30 Aug 2024 10:42:16 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-533488ffaebso1983222e87.0
+        for <linux-phy@lists.infradead.org>; Fri, 30 Aug 2024 03:42:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725012909; x=1725617709; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=UwkZJIL6lWhl6ByZiDGKwgiO886aZ7Ma/SrA3D4RrxQ=;
-        b=UmS86U6vL3bURUaEv6LgEIFfDZYUIxesqYGL1/4p/44pllQDlhdYyjalfBeIYDrMWB
-         3H1gbb8/jsRZpTuuDmZ2XacuiE+xNmHZZSNbTt8RzJJIbRNptFifzAAma3VGjM+8M2p3
-         3JOtexgFqF3bnYL6mogki0l0LFTPeF1Tfx9TM5wrh5Yqbec5BCkRUhwlzfXimIcti+cl
-         HARiJtoOMIhoXxdTNREO+c9/0ngKg61Mlph1SUl7TpM8Ts9Lt4RLautA0H4Tgv12PZk9
-         Y0Uc9LlhqLmuUdzF9RDT3bJKRb70ULOkOX11zjEOPPNlbzrjWzcplwGC53CiPpPjkN0e
-         aZaw==
+        d=linaro.org; s=google; t=1725014533; x=1725619333; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=nnBATt0aCdgUC6P5YWHuzTeqt0mGO1EjpThrCVktSJU=;
+        b=eJBuCdiJxV852Or7vmFc7rX6CZlQlUnQvYxpK6yQhha6OX6jWEGE/Dg4H5JK/PQAok
+         X80L8GQQxTQ0bifFudLTiCnKNnlxeepo6FKjtHxkcaBIN2a8dkvJ+EAHZaptpb0k+3pY
+         9412M88t6qTd/ZczyFlRo3yOjVxzcOUzmYkvj9RzIM73UkdJm0q8GlZNkw0ICwFeEtHV
+         SvzDcXCg1a6gluDYwM0L40fECouOX6m8uYJA5hO0o7crc6j5DYdamGw6IAni3T2yIAXt
+         EW40k9GlRlSbSwBHj/U7VfbWdmkz5twzfMKGPzreU9mHUwOU7Co09EWei5OUfVtNAezN
+         xO3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725012909; x=1725617709;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=UwkZJIL6lWhl6ByZiDGKwgiO886aZ7Ma/SrA3D4RrxQ=;
-        b=VRzhMYBJM4y3Ts6QRUcW4CrAZYnddFxppf6NUs9q0T7adxDd4BAg2jrGroHv7Eta67
-         mGNrC74+rKnhiUUBHrIghbHcLf5tSF7M7+BMArEflMp1J/Irn7xH2HyGOqs075vMSYKF
-         QufpIV/fHfpfQYae89hknosrGeh2kjosxOcf6qiOlQNtAKf7B1fk6LcM3rO6yi1cMXkB
-         cmFLv3UgBg0Oz5/HIQ4fAPeMHJ9YHmQ35Z+aMIIh+7GA+oxPT6wT8+m59HcdmYISW6DR
-         YK6yKoTttN4EkiLmFFp4kaT2GnCuWB2wLC335DxjotJeB5W/oj/LYs+RbxKMN3OEXXey
-         PnVA==
-X-Forwarded-Encrypted: i=1; AJvYcCVJXvbNG/MF3KV2TxG6w2nOTgB0+oRRoUgw2dkpLJfiXxcZFoB2arEUmb37dD5FLwOu+qpK+fsPQnc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzS7oKqx5tP0THxZSqkqsjBNFv6+CIOboPVQczidsXVWF2vmgAa
-	UUFXLleORwRgt+5/lZZS/7kiGrYuE8bxUZCWxDH8fOyPIjSW+/ExE0khe/lCCt3Ya2g4GGko2W/
-	bjoKLHTzVKO+G/G6+cJTO3m+p6GXLXhWGZdRlDw==
-X-Google-Smtp-Source: AGHT+IENC1Eou3o76ET+fArBcJHz5tLkQ1M6jag1cqYy++ImNouJ6bItdx2SVPKjxSeyzrzWnSwjb3NJLNY42U4Z7/o=
-X-Received: by 2002:a05:6902:1384:b0:e0e:cb25:c413 with SMTP id
- 3f1490d57ef6-e1a7a1d369emr1888445276.52.1725012909519; Fri, 30 Aug 2024
- 03:15:09 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com> <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
-In-Reply-To: <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 30 Aug 2024 12:14:33 +0200
-Message-ID: <CAPDyKFrVS2vpsJqTvjKCJ7ADqXc4D4k2eeCBsaK4T+=pXDnKUA@mail.gmail.com>
-Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
-To: claudiu beznea <claudiu.beznea@tuxon.dev>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
-	magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
-	sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
-	biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org, 
+        d=1e100.net; s=20230601; t=1725014533; x=1725619333;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=nnBATt0aCdgUC6P5YWHuzTeqt0mGO1EjpThrCVktSJU=;
+        b=OBDcwVPFtzzgQGYtlNgV8H1ONrpWRYFbmsJlHUYG7LZpar8EWzTKTNwNgZKmLyH9Mm
+         UKtvm8l2Vwkl/CQO4cN77wj33OfPGm4ZJ3zOEPF+5ubMbPg+kEsWV/W1YGAbQ0fj+nNx
+         ckefVw12MGFAtxSBs+3JILzDGYCteiXiaU+d24QBY2f98llIEbtfpQBvwtlxX8Exmnld
+         FKmEImQ+Hq/Y2qFih6axp8DrQ90weekhieaM2dtAptoNJd6e0xctYhnf+hYc2IpUzlyF
+         gHTfPpJ/yxAos4oeVcIkpNG+k3Q5GowcqFEU2lXVER0HyLVUgE6zeYc7u3nrc7bYMZH8
+         dzEw==
+X-Forwarded-Encrypted: i=1; AJvYcCUnTGAvnw/Z2vzRzljpKFoigj0szroNFuQeD+50N/KDSf8EilNpaGY3+JIUqoKFigGTzhke1QemkJ0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw1luomf+jWabMfBY1+ySKj38hF6R3uPkbGNrb2Aqb9WEgbTxCa
+	M6qQMFWet4qnI/2bmO+QHKQFoEesaJ24bOdbfgf1Wpp66XDQiUkWg14yalfFVsk=
+X-Google-Smtp-Source: AGHT+IHIVMMpPiudJNRkic59qjcS0uvC6Loc8Pvi0x8IGyPMyVB8soyXpzs69J1ZylJShtWwpCcRFA==
+X-Received: by 2002:a05:6512:3c99:b0:52e:9f17:841a with SMTP id 2adb3069b0e04-53546af3048mr1391073e87.6.1725014532644;
+        Fri, 30 Aug 2024 03:42:12 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5354079bb9dsm540503e87.21.2024.08.30.03.42.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 30 Aug 2024 03:42:11 -0700 (PDT)
+Date: Fri, 30 Aug 2024 13:42:10 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Abel Vesa <abel.vesa@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Johan Hovold <johan@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
-	linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+	Krzysztof Kozlowski <krzk@kernel.org>, Johan Hovold <johan+linaro@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Document the X1E80100 QMP PCIe PHY Gen4 x4
+Message-ID: <gvx3sdsdxigel3iwu7vgvvgxohvnaqq6suogsqojeumobhwhdk@5qct23m5ncda>
+References: <20240823-x1e80100-phy-add-gen4x4-v3-0-b7765631ca01@linaro.org>
+ <20240823-x1e80100-phy-add-gen4x4-v3-1-b7765631ca01@linaro.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20240823-x1e80100-phy-add-gen4x4-v3-1-b7765631ca01@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_031511_013043_A2736179 
-X-CRM114-Status: GOOD (  38.69  )
+X-CRM114-CacheID: sfid-20240830_034215_435941_70053A2F 
+X-CRM114-Status: GOOD (  15.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,122 +98,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 30 Aug 2024 at 10:22, claudiu beznea <claudiu.beznea@tuxon.dev> wrote:
->
-> Hi, Ulf,
->
-> On 29.08.2024 18:26, Ulf Hansson wrote:
-> > On Thu, 22 Aug 2024 at 17:28, Claudiu <claudiu.beznea@tuxon.dev> wrote:
-> >>
-> >> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> >>
-> >> Hi,
-> >>
-> >> Series adds initial USB support for the Renesas RZ/G3S SoC.
-> >>
-> >> Series is split as follows:
-> >>
-> >> - patch 01/16           - add clock reset and power domain support for USB
-> >> - patch 02-04/16        - add reset control support for a USB signal
-> >>                           that need to be controlled before/after
-> >>                           the power to USB area is turned on/off.
-> >>
-> >>                           Philipp, Ulf, Geert, all,
-> >>
-> >>                           I detailed my approach for this in patch
-> >>                           04/16, please have a look and let me know
-> >>                           your input.
-> >
-> > I have looked briefly. Your suggested approach may work, but I have a
-> > few thoughts, see below.
-> >
-> > If I understand correctly, it is the consumer driver for the device
-> > that is attached to the USB power domain that becomes responsible for
-> > asserting/de-asserting this new signal. Right?
->
-> Right!
->
-> >
-> > In this regard, please note that the consumer driver doesn't really
-> > know when the power domain really gets powered-on/off. Calling
-> > pm_runtime_get|put*() is dealing with the reference counting. For
-> > example, a call to pm_runtime_get*() just makes sure that the PM
-> > domain gets-or-remains powered-on. Could this be a problem from the
-> > reset-signal point of view?
->
-> It should be safe. From the HW manual I understand the hardware block is
-> something like the following:
->
->
->                   USB area
->          +-------------------------+
->          |                         |
->          | PHY --->USB controller  |
-> SYSC --> |  ^                      |
->          |  |                      |
->          | PHY reset               |
->          +-------------------------+
->
-> Where:
-> - SYSC is the system controller that controls the new signal for which
->   I'm requesting opinions in this series
-> - PHY reset: is the block controlling the PHYs
-> - PHY: is the block controlling the USB PHYs
-> - USB controller: is the USB controller
->
-> Currently, I passed the SYSC signal handling to the PHY reset driver; w/o
-> PHY reset the rest of the USB logic cannot work (neither PHY block nor USB
-> controller).
->
-> Currently, the PHY reset driver call pm_runtime_resume_and_get() in probe
-> and pm_runtime_put() in remove. The struct reset_control_ops::{assert,
-> deassert} only set specific bits in registers (no pm_runtime* calls).
+On Fri, Aug 23, 2024 at 10:04:15AM GMT, Abel Vesa wrote:
+> The sixth PCIe instance on X1E80100 can be used in either 4-lane mode or
+> 2-lane mode. Document the 4-lane mode as a separate compatible.
 
-Thanks for clarifying!
+As the patches were merged, it's too late for this series, but as a
+note: we should think of a way to describe the PHY configuration without
+changing the compatibility strings. The hardware stays the same, it's
+just the number of lanes being wired that changes.
 
-For my understanding, in what register range do these bits belong? Is
-it the USB logic or in the PM domain logic, or something else.
+The obvious way to handle platform-specific differences is by using
+num-lanes property of the PCIe host and then passing required
+configuration (num lanes, max speed, etc.) to the PCIe PHY via
+phy_configure() call.
 
->
-> The PHY driver is taking its PHY reset in probe and release it in remove().
-> With this approach the newly introduced SYSC signal will be
-> de-asserted/asserted only in the PHY reset probe/remove (either if it is
-> handled though PM domain or reset control signal).
->
-> If the SYSC signal would be passed to all the blocks in the USB area (and
-> it would be handled though PM domains) it should be no problem either,
-> AFAICT, because of reference counting the pm_runtime_get|put*() is taking
-> care of. As the PHY reset is the root node the in the devices node tree for
-> USB the reference counting should work, too (I may miss something though,
-> please correct me if I'm wrong).
->
-> If the SYSC signal would be handled though a reset control driver (as
-> proposed in this series) and we want to pass this reference to all the
-> blocks in the USB area then we can request the reset signal as shared and,
-> AFAIK, this is also reference counted. The devices node tree should help
-> with the order, too, if I'm not wrong.
+> 
+> Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+> Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> index 03dbd02cf9e7..dcf4fa55fbba 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> @@ -40,6 +40,7 @@ properties:
+>        - qcom,sm8650-qmp-gen4x2-pcie-phy
+>        - qcom,x1e80100-qmp-gen3x2-pcie-phy
+>        - qcom,x1e80100-qmp-gen4x2-pcie-phy
+> +      - qcom,x1e80100-qmp-gen4x4-pcie-phy
+>  
+>    reg:
+>      minItems: 1
+> @@ -118,6 +119,7 @@ allOf:
+>            contains:
+>              enum:
+>                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> +              - qcom,x1e80100-qmp-gen4x4-pcie-phy
+>      then:
+>        properties:
+>          reg:
+> @@ -169,6 +171,7 @@ allOf:
+>                - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+>                - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+> +              - qcom,x1e80100-qmp-gen4x4-pcie-phy
+>      then:
+>        properties:
+>          clocks:
+> 
+> -- 
+> 2.34.1
+> 
 
-Reference counting a reset signal sounds a bit weird to me, but I
-guess it can work. :-)
-
-To sum up from my side;
-
-As long as it's fine that we may end up asserting/de-asserting the
-reset-signal, without actually knowing if the PM domain is getting
-turn-on/off, then using a reset-control like what you propose seems
-okay to me.
-
-If not, there are two other options that can be considered I think.
-*) Using the genpd on/off notifiers, to really allow the consumer
-driver of the reset-control to know when the PM domain gets turned
-on/off.
-**) Move the entire reset handling into the PM domain provider, as it
-obviously knows when the domain is getting turned on/off.
-
-Thanks again for your explanations!
-
-Kind regards
-Uffe
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
