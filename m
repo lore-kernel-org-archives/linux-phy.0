@@ -4,168 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2601CA0EE8
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 08:07:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47F64CA0EE8
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 08:12:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=85naES71G/b35oDmEHH9dfV6g8tehsrPqklH5CUDfdc=; b=FgUR3jdERn44TA
-	fDI6yyLdny1rEJ4zvBaZrc9I82xBpt3o3aAHMIo7BGqPXZqsQ1O/mUsW18LFfccexXlqsZsLHlEQL
-	+vCQ87ZUXO5m7qPvPHA3U04L5kcQCDpIG+c1ss1ciN6zmQbgQCdPnHaA0MYNvlViNT9uUKQfS6Ozy
-	W/Cd+yhm+rLCay2RDzFaki96l7kNqzIgMetDDM/gXVfdjALd8EYxn/sudx6dDp6sZ+6Q4hN+/e27d
-	BFYqOEg/ID9i57gpPalsWdg7bOtD0fgci+hPtKJb2KzqjqGT9OB8vYK213pOszqNs4/iq9/RTgfSY
-	HpN3ZGB2JeLw1vkFx/Zw==;
+	List-Owner; bh=s4vabjNZRZpL3/J6+7Tt3Ng42df4NmBYO5v8zkWFG1A=; b=aoRucwY+CUTWut
+	u31Y6FivnVVxjqUrpBUC5OYlAK9Bh9nCxbS3Jb7B9U4EXanR9RpMOtI+BDNhoEuyEjEyIguBLU9uC
+	2fUYfZJW+25k6ZsSTDZG1+LU5QdfwaI7MWedOCNqXzd6hGeMWn/j7jNCzzTd/b7nyYaWpGEx25mJF
+	0STL+dARLvfOtSEUEpCp9cRU32BrlhftTY22N+3MZ2elK0Q09B1VAz8Vxo/pd4RuC/7FrujQo2IN9
+	7KwrBi449q0peunq3gIWR2LqlNT11Lc40fVHge5CrOJSOyluiYMPk6dDUnt1ZsE+/tMWgb21i+njf
+	xZPr+wN1ex6n267DTxMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjwfS-00000005Fby-1kfD;
-	Fri, 30 Aug 2024 08:07:38 +0000
-Received: from mail-japaneastazlp170110002.outbound.protection.outlook.com ([2a01:111:f403:c405::2] helo=TYVP286CU001.outbound.protection.outlook.com)
+	id 1sjwjw-00000005Gzm-3Aad;
+	Fri, 30 Aug 2024 08:12:16 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjweN-00000005FBo-339X;
-	Fri, 30 Aug 2024 08:06:33 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=WYRQaxm4jB3XM/TUjIdlBNvJKlSoNeJN/mxIjBCDayTC22Ee664Od5fgoCeCYqGHnE3rHd8mPjFgA1hWY5ohvILArlx2WUlWvNghOgHbB6inaePUAHPWTS/DfmJnq7vDJPYwSEXxN1pBbq71EMYcPyGxdcwr4T6BukP/YlhJafzRWlB7Knxccu9G61LM7Z5ByK9o9gN6RqYC5d6pcczunzO4L5eLjO0vkDBErB7juLwV/VXDTTXkYA+HAcavootkc52D/JPEAXhADd9MK3jpzLYG16hBnyZHVh9H3DIB7rXXxe/mOglHVTzcCiDAfBSdqq8yykVAcollNlmssJo51Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=9a7ldjUZw1M22M5VBcybOwT69NGeaNbDAEPQuF0BUtQ=;
- b=LysZ72xuKdoCulIiHxCzR0j1uqQrOLhRRrzQrPaq64J9cNqB/4ApI3vuXdociX9BL0b99JWjsl4y1OhB6SGI21kcqSzQ1hIRkWz0QyVYEyQZOfMlmupeBLP2wRh690sUZ44I7FVXMwsVPui5IxixPPsJP1Eo0+MxuWU9OU07SVkl5pz5H3scYmeqQt0QQe/WiFUvvVccZS/n2ENjmQYhX3lpCueCRF6UvYAoFnNirhJkfRrqN/FRpRJYV57sMUh8Krs6b8IIKIxTTYb9Q4uc+qvQISYzHzPdBTLzZ5thrIVZd9MZwkXhCiH9+cQqd9xkuxpryboja0os9C+Bcnb8qA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9a7ldjUZw1M22M5VBcybOwT69NGeaNbDAEPQuF0BUtQ=;
- b=eAd/QSq/Mz2LKEen6+ANJydaueu6DkWsi3z32nNEVUZL1pnPR/upd1qGELsFIW8ZU4JvViXmLa+sfgM56AiEoWdX1BMdpEE4oz6HxesXT4t3lRGSJ7w8L/gOBf1d0x/ZNxqharzyTR7mdR7mJ5lVYAl16cqlYu9zo3HzT7nLIC4=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYYPR01MB12825.jpnprd01.prod.outlook.com (2603:1096:405:15b::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7897.28; Fri, 30 Aug
- 2024 08:06:25 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%6]) with mapi id 15.20.7918.019; Fri, 30 Aug 2024
- 08:06:25 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, "kishon@kernel.org"
-	<kishon@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "conor+dt@kernel.org"
-	<conor+dt@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
-	"geert+renesas@glider.be" <geert+renesas@glider.be>, "magnus.damm@gmail.com"
-	<magnus.damm@gmail.com>, "gregkh@linuxfoundation.org"
-	<gregkh@linuxfoundation.org>, "mturquette@baylibre.com"
-	<mturquette@baylibre.com>, "sboyd@kernel.org" <sboyd@kernel.org>, Yoshihiro
- Shimoda <yoshihiro.shimoda.uh@renesas.com>, "ulf.hansson@linaro.org"
-	<ulf.hansson@linaro.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>, "linux-usb@vger.kernel.org"
-	<linux-usb@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
-	<linux-clk@vger.kernel.org>, "linux-pm@vger.kernel.org"
-	<linux-pm@vger.kernel.org>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: RE: [PATCH 10/16] phy: renesas: rcar-gen3-usb2: Add support to
- initialize the bus
-Thread-Topic: [PATCH 10/16] phy: renesas: rcar-gen3-usb2: Add support to
- initialize the bus
-Thread-Index: AQHa9Kf4PPM3ttIrIU+GFs1JG0RdeLI0cirAgAAZfgCAAABPEIAK8MEAgAAAiaA=
-Date: Fri, 30 Aug 2024 08:06:25 +0000
-Message-ID: <TY3PR01MB11346AE72983D6E3749AC8EC386972@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <20240822152801.602318-11-claudiu.beznea.uj@bp.renesas.com>
- <TY3PR01MB113468A6CA4ADBCA577670AD486882@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <8faa6b6d-a013-4a71-a8b7-af02ac92d94b@tuxon.dev>
- <TY3PR01MB11346FBA77256F2156D374ECF86882@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <ZtF8rtI7e/7cK4BR@vaman>
-In-Reply-To: <ZtF8rtI7e/7cK4BR@vaman>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYYPR01MB12825:EE_
-x-ms-office365-filtering-correlation-id: fcb5c223-6471-4917-43a3-08dcc8caa4b3
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014|38070700018;
-x-microsoft-antispam-message-info: =?us-ascii?Q?/gJKBM7KORLkGBVw22rIhGT0K2Kk+ZZC33Npz6TJA4GDfS1MIal+eJO8RV0k?=
- =?us-ascii?Q?980DnraAmef+/H2+m6pkIUszaNKwqhZ4Fcxag89YEM87jlAsXkLfTDghw7aS?=
- =?us-ascii?Q?alBaR8Haqa96nLn2U+W9wsjId7fE4btVEmbI5vKiLR/4JLXKLO6H51C09E04?=
- =?us-ascii?Q?VCRrcfnPXhlkoDxBJz+IHjt2oCDd7jmmJHGEmkxpIxY7CC+hanNukCAGitNX?=
- =?us-ascii?Q?WR7DDBbgRuTPxmKyxoSi4Md3gT12oNtpMy2BMioeDrQquXdv92/siFToP0Q4?=
- =?us-ascii?Q?TQbu7rnNYsA37VN7va5QbwLhwOOEY7bbp+Twd4gaoPYfASSu+zW1iEkuEmiD?=
- =?us-ascii?Q?4IVTZfkHiaIra1+MgYPahhbPgb8TPQ+kf10ijjkHdzxcZzGeHTQu5gp2hhnb?=
- =?us-ascii?Q?SmPqnsduNNHEC/dJh4s/NaL7JwZJEdqNQ1rzX+VanN01XlV+7+ZmmiLzAgbw?=
- =?us-ascii?Q?K/tcYtRaNbFFi39VezTJzjppW/Ybs1r6Ikt8uWZfBbQhF5kVx2d3b7JxR2i1?=
- =?us-ascii?Q?uJRcINKU4ccYlRcFx5Gxu+WwDBzjmrdWiVLduwK7VGxrtz1vmmkt2qevN/qN?=
- =?us-ascii?Q?mByoFSfXAKHFU4vcMvbC+O4ddyUaudtAsNK8FDTsoPEH67g6tXC2uU2SiHcA?=
- =?us-ascii?Q?I53ChU41z44a1H/lef1lvleR4lvt9fdnhENESWA8UyJbzOhpHpdsuenn+x4o?=
- =?us-ascii?Q?z5XA0gePyP3+7TQZrD/WpdDfe4L90AdKXAzqMUsh7RVyPXFg9I22VHwl3KyR?=
- =?us-ascii?Q?EvcrfxiJ9Ko7UukGmDewAJU7WfDjzN3sglVFADdkRpGIKRHAXZdIkwijPCn7?=
- =?us-ascii?Q?NbVDDPdVwpOzwzbwS73aMPZ+B6+iiYFTLOptRGV8o0AU+Dy7GOGXqzhNh83a?=
- =?us-ascii?Q?YI9EEfo12doryZ7lZIC4J70wlr4KL0A+N7Sks7S0Y7vVuhUK29isfA0daLye?=
- =?us-ascii?Q?jrI3UDa5G36i9LbuP46vV7+kK92s7cV0Qn873nkSoETUQsfY0B6OYQhtu1H8?=
- =?us-ascii?Q?sizQUuHBXV9aVgssemddEY68SJzuh3eKyGlVChcQ5o8oJolSN8GbMUbKHkuN?=
- =?us-ascii?Q?ppou1HQWdGBzzIPdaycDT+gYhHSMjnTLy17XDo6kEQ5ISst6Y6pTeU0aMgbl?=
- =?us-ascii?Q?J/s0QBy3p40Lb9MDLwysT/Ttd7ao06+0S5iEdvTbTPpGtIL2sR1Q0rmizJXB?=
- =?us-ascii?Q?G7fCNlqej2BmIFwGzMOYnkZxAbo986IT1omK8qVhb0AQ09QBBnvsSAT0K8Fc?=
- =?us-ascii?Q?uJJAYGyw9ExiRl7XeTbdqnCW+NkNROloOzt45+FvaoDZjpT7ZvTNWrd2sD0U?=
- =?us-ascii?Q?OD3qwqB1kCNfrquMeD1A3xcWC7o/VuXEl7rg4Dxj9MI/8kmfLbeYYzur0XGc?=
- =?us-ascii?Q?wBcYwxQm4CUTgouqw//Wl/R28fG9MahMrBAbHv1lAWVCpVJvBQ=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(38070700018);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?it+Kb6gaqnDv2gAgPc4FVI633Zz1/PdBJpot750Hmn+jnshA0o/vzar0UZ9n?=
- =?us-ascii?Q?FmFLxigmJuDbIZjwvnVm2fjfvBqasFBlXsL3KJsfgJLtY6ZhpbEDm9YJu3hM?=
- =?us-ascii?Q?WtUWRUPwo5cw2y9mGcaYGfVbhwKzjdj2ZbF2EbH8CXe+lW2voFLXDHVJREOQ?=
- =?us-ascii?Q?Qk5Vo0X/wXHH6h6eOhDCXVGRpczQSxz+aUVREbrlz45iC7upZCalGo7T2r0S?=
- =?us-ascii?Q?BG1tv2YLLOEboIVdcCFE89g0WEh+R8LTsQSPkRyWlQWvVUyXrd0sjVJPWeWm?=
- =?us-ascii?Q?YnNJ+Y+6rkc5UYRI9VTnRNIyKMhAWZ3f+S5JF6Rdjq2Cyphdo033sL7DKMi8?=
- =?us-ascii?Q?nfHISU3QsKS4nJx0rFfMKUnSCuQOCMRIyqlVdvVRA8Al4xgq2GKKht/zxpCS?=
- =?us-ascii?Q?cVzUX1FHRBJzvSUfLIOZRfI1bBBjFA1BqvZ9DX8JlW7dotgfw+9fSgbIosC+?=
- =?us-ascii?Q?RzIdfx37Ipjxwoh2ZN7Vj9Ep8sfdkv5/kPoZAkNuyvRBlSXN9HneSS1z9lu/?=
- =?us-ascii?Q?HoGJpK1HrhAEtEY3HhoRqkWTxe9MVk3oH+u35jL4mlniehx/gKW1Hx717Z2H?=
- =?us-ascii?Q?sVlWm1b43+3IsEy+Z3jZJtzBZ7PiXeEa8oHdyHiKLbvJfonebnbTazLtNpO1?=
- =?us-ascii?Q?79l2r0h30ymSPTDryeMU4mLwwF6JprKo7xj2TUaRgwCu4UDBjJ54uFRYYGAN?=
- =?us-ascii?Q?qUWJeaMlKRLkG49PkdYuWNEgYzvZxtsZcO1t6tsQXrou0eUj1DM3YcJlw7G1?=
- =?us-ascii?Q?+pTwDydg5s7R/z2Yl59HaXrjJb0wx8Xul4Qpm4jHUwUWXASmc5eUNuh3YnRm?=
- =?us-ascii?Q?DVatyIGFdA9axLJga+LTpZ+3s4CiH2RgkmoFXoYKik8s1qIX7DLi1d+QnENb?=
- =?us-ascii?Q?DXWOiwaHbgZ9DZxp7pAsR3YV44UMmX6zsbanfa6ZXxVmApNWM8y+4O9NC2+A?=
- =?us-ascii?Q?V/i5f4SeYY4RErWAZnuyADKBURxoiPZWm1/RtfbhtU8a3NY22yxQwn9+7sud?=
- =?us-ascii?Q?a89dQFVK8wfEcrxa7Oi+q/hahBxoPZwiaYzCqRqXHHW8gDOtyE+zWmTDXwIJ?=
- =?us-ascii?Q?8pGr95v+wyGuXTsI05T3GZYtWP3X3YSagpYFogJiTgx/zjIuat6EPx/HbnZJ?=
- =?us-ascii?Q?Yz7dBN8Keh3jLtR758RoFpvRZvyy179bk+ST073wkMKVCCHKo7YB5NnjTTFN?=
- =?us-ascii?Q?5QyOBeJizulxg8/gmw0+F9OmoqM48E6f9vulYLbqfyszyLDnmGf3YE0Z0f5z?=
- =?us-ascii?Q?57AhlU1yGiEnITyFeXvdFkIRxOHFnYziDUJ0OYr4piRQ4E+A690kk6M/DQvj?=
- =?us-ascii?Q?Tf6/GPwnVKnHEUkUgiwEcWhhvjw397vZ1ThOzNDtASAPp5ya4g7XLXSfFRw8?=
- =?us-ascii?Q?d0a5r3p2wktO2boNTklkEHFUMd32Ua3+0BjcF7+YyVGVWLWs2F2h+61yRwTo?=
- =?us-ascii?Q?H8zutcQmtC5IokC6LpSAYAzjfGuNA39VzeyNhzO+MnOWteKazd1fK/CyAuyj?=
- =?us-ascii?Q?dQ3UD/GcoekVZ3xKlcsKvrLQJcg5mt+EufvZemVsC1LyJkdTP3xqBH74TGU2?=
- =?us-ascii?Q?8G1jMUzgqwE7QTDsfjQ7f6Gr1aAqohR22rxIYPMeApWhgWlqrAih33uAF+rC?=
- =?us-ascii?Q?dQ=3D=3D?=
+	id 1sjwiZ-00000005GZ7-2R0N;
+	Fri, 30 Aug 2024 08:10:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 86216A44173;
+	Fri, 30 Aug 2024 08:10:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EA72C4CEC2;
+	Fri, 30 Aug 2024 08:10:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1725005450;
+	bh=xYuItBQNMP96MzefUyk+q8WjjT2Y1ucVlzEXtvlMHcs=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=OhNsIyEK3V2pCrW3tzn7S5hCisdmB5E7oCfj25Oo0JKAAK/Ujg7pBCHKQSugzFyQu
+	 UFXzC0iB4ftTxjcrMOUucHRNlgoVhvUnxMBlfRlTJpVqbO6f3pcWSbuZYpxFd+Vv58
+	 BpPAenoG07doPHMHViJIFhtwq6o09PH3ifnCqogtyn15eeDynet6mz08iSVdq9bF8u
+	 IvmINMgaqU3z8r+lKg4E15douPhE9VqP3LR9fEY6GgF1RGoTLwQQEX6ficnww3IYA8
+	 swmt4k0NWxFg+yOzlLsIq7D5pNZCzBsVZ38wZ3hNGjsy1G0jrHsOfgTreO5fEJ3hSg
+	 hRnQD6f+DVunw==
+From: Vinod Koul <vkoul@kernel.org>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, Ray Jui <rjui@broadcom.com>, 
+ Scott Branden <sbranden@broadcom.com>, 
+ Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org
+In-Reply-To: <20240826-phy-of-node-scope-v1-0-5b4d82582644@linaro.org>
+References: <20240826-phy-of-node-scope-v1-0-5b4d82582644@linaro.org>
+Subject: Re: [PATCH 00/11] phy: simplify with cleanup.h and few other ideas
+Message-Id: <172500544630.434293.13040748970370817856.b4-ty@kernel.org>
+Date: Fri, 30 Aug 2024 13:40:46 +0530
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fcb5c223-6471-4917-43a3-08dcc8caa4b3
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Aug 2024 08:06:25.1386
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ZfREIIYZl+ejE7ilUKhGD6k2P+rwSnsarRDIRpYkXADY1ONiqtKqNqiXgJNXyBfVEGwKz236cCj0H4bzadDHAsRSAz9wtqyeRQPpgdWdqmM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYYPR01MB12825
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_010632_279967_2C8909B9 
-X-CRM114-Status: GOOD (  28.72  )
+X-CRM114-CacheID: sfid-20240830_011051_729157_CE085CBE 
+X-CRM114-Status: UNSURE (   6.08  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -182,55 +79,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
 
-> -----Original Message-----
-> From: Vinod Koul <vkoul@kernel.org>
-> Sent: Friday, August 30, 2024 9:03 AM
-> Subject: Re: [PATCH 10/16] phy: renesas: rcar-gen3-usb2: Add support to initialize the bus
+On Mon, 26 Aug 2024 12:07:16 +0200, Krzysztof Kozlowski wrote:
+> Make code simpler with scoped/cleanup.h/dev_err_probe.
 > 
-> On 23-08-24, 09:01, Biju Das wrote:
-> > > >> The Renesas RZ/G3S need to initialize the USB BUS before
-> > > >> transferring data due to hardware
-> > > limitation.
-> > > >> As the register that need to be touched for this is in the
-> > > >> address space of the USB PHY, and the UBS PHY need to be
-> > > >> initialized before any other USB drivers handling data transfer, add support to initialize the
-> USB BUS.
-> > > >>
-> > > >> As the USB PHY is probed before any other USB drivers that
-> > > >> enables clocks and de-assert the reset signals and the BUS
-> > > >> initialization is done in the probe phase, we need to add code to
-> > > >> de-assert reset signal and runtime resume the
-> > > device (which enables its clocks) before accessing the registers.
-> > > >>
-> > > >> As the reset signals are not required by the USB PHY driver for
-> > > >> the other USB PHY hardware variants, the reset signals and
-> > > >> runtime PM was handled only in the function
-> > > that initialize the USB BUS.
-> > > >>
-> > > >> The PHY initialization was done right after runtime PM enable to
-> > > >> have all in place when the PHYs are registered.
-> > > >
-> > > > There is no user for this patch. The first user is RZ/G3S and you
-> > > > should merge this patch with next one.
-> > >
-> > > I think this is a matter of taste... This is how I usually format
-> > > the patches (for scenarios like
-> > > this) and got no request for squashing.
-> >
-> > That is strange for trivial patches like this.
+> Best regards,
+> Krzysztof
 > 
-> Splitting is better, this patch does one thing whereas the next one uses it adds in new device, i
-> would say quite a clean approach
-> 
-> NOTE: Don't quote the not required context while replying, it is good mail list hygiene
 
-Agreed. I was wrong then. To support a new device, bus initialization is required.
-So I thought it should go together.
+Applied, thanks!
 
-Cheers,
-Biju
+[01/11] phy: broadcom: bcm-cygnus-pcie: Simplify with scoped for each OF child loop
+        commit: e33525de6c3c7780564e0859ea6daef27309995b
+[02/11] phy: broadcom: brcm-sata: Simplify with scoped for each OF child loop
+        commit: a7f1dbf479d2a3cbf2a25bd186bbe15efd17d849
+[03/11] phy: cadence: sierra: Simplify with scoped for each OF child loop
+        commit: 612f9fcb435fdc9abd46b6339c9000cef6d323a2
+[04/11] phy: hisilicon: usb2: Simplify with scoped for each OF child loop
+        commit: 93cab07a02f08e4a2837dd22280b741ba0a7a541
+[05/11] phy: mediatek: tphy: Simplify with scoped for each OF child loop
+        commit: d2714416770ed0cecaf69eaff34d20817f2c3bea
+[06/11] phy: mediatek: xsphy: Simplify with scoped for each OF child loop
+        commit: 77df35acd182a23c117a937ffd6b0830a5428649
+[07/11] phy: qcom: qmp-pcie-msm8996: Simplify with scoped for each OF child loop
+        commit: 608863e1e600a4d91b00dddd6ff11eda1cbebaa5
+[08/11] phy: ti: am654-serdes: Use scoped device node handling to simplify error paths
+        commit: 29b44a38503856952862c710d47d933c0173fd04
+[09/11] phy: ti: gmii-sel: Simplify with dev_err_probe()
+        commit: 27a4046255377eb0faab5c41fd271b1acab1ac41
+[10/11] phy: ti: j721e-wiz: Drop OF node reference earlier for simpler code
+        commit: afd7aaf3ecaf1b247db1294ef0687fb3cb530213
+[11/11] phy: ti: j721e-wiz: Simplify with scoped for each OF child loop
+        commit: 0d5a213c2eae880e0f7f8bc252314bae194d68d8
+
+Best regards,
+-- 
+~Vinod
+
+
 
 -- 
 linux-phy mailing list
