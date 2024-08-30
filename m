@@ -4,97 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40959CA0EF7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89DE3CA0EF9
 	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 09:31:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=regc3fDC5kIt1SqzaycauFGoeOlS1SDAC3+ml/nkDpY=; b=Av/dMeKERStlQ1
-	BY2/ECxcUncpTsK3hvhXdtLd/yBmMy2s/j26CX0aLr+d+ytCPv1annKrJ6YjqhhKMVOsYnjA7O/WK
-	1XuJpwY4YIExLTtSckQhahVR1/0Gzg9Kop6znVIXVj+++StDNdII3uV4IIdHp3k4IqwyU8LFTar1z
-	Mj1nIcal92DHpnRBxmRgyiRRK+ilsqp7Nxy0vu2SXYCY3RTTELdRhdGvaFBI/Uvjvnuc140VvBDLj
-	1LRYZS6fkI2XS4WZrTIYxp11+zO8zCkxt+VG3CVc4+kumW8V18MePnGhYTnUnX/hump+pm11S0+yL
-	RRgqxP4HpufmeNPZoLAQ==;
+	List-Owner; bh=pG9oo89m0Mfwl0OcNnkoux1O7Jv2EBGVMR7oc8+mQEA=; b=wYU7ztq0EOBzn9
+	5sJRhEB6qr7s4mYjMT1mM6H7XCaiM9u7VqAh6aoSudngYdMiAcIzvOlUuy6Lu+6zYjkryMc5XERQD
+	Ul0dWUWTfmH/c1vPdIBtUS64groFZBUl+5OVFquM+Mu92Zim/hN3nL8yW5x90Cf6+p2p2CPjCl3O/
+	fkui4X6pWbLns5C0bI9NRTybiK4jUDR9kuIZjVsAIBK/9GRrrTlveGCK3WPLdUAmfU+EJU6749p33
+	6hKFopbTG2hz15at+Zidt6w+Jdwyq7eXCXt4zvcnSFEs4FZ8ZmzWAvpYYL1B1/uLxWntCONooFIL3
+	Af4baQRaZhOVy+95BLzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjxyF-00000005ZEQ-3owb;
-	Fri, 30 Aug 2024 09:31:07 +0000
-Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
+	id 1sjxyG-00000005ZEe-131W;
+	Fri, 30 Aug 2024 09:31:08 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjwsG-00000005JZE-0hV2
+	id 1sjwu6-00000005K91-2DNv
 	for linux-phy@lists.infradead.org;
-	Fri, 30 Aug 2024 08:20:54 +0000
-Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-5344ab30508so2446284e87.0
-        for <linux-phy@lists.infradead.org>; Fri, 30 Aug 2024 01:20:51 -0700 (PDT)
+	Fri, 30 Aug 2024 08:22:47 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4281d812d3eso17028545e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 30 Aug 2024 01:22:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725006050; x=1725610850; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=MoaODkYOEyaemv+peV2Lk7usu4P7Fb4c6U5XdS7bZmQ=;
-        b=AC6ExIlc0J3qMW8TZJO4li5OkNayD5J3XVFqBUMLyD6x4IP8P8oxcXMpU/q59hQ0t3
-         L5Yc05JI2tilRrytojoPHBM6aTy9UA8y/eTY6niUy4Uc6svvc6Mzsn25wl96d6Hs0bYq
-         KU4VnfZI5iZYwpFh1+8EGoarduJlE0a3b320VKf08f1hwW8RYlFBrd3DWDFZVmCUHnED
-         YI1hkCRnBpq0ZLuCqaq1/aIGL5p1/wL1k+G533zqoIMYDwjx9mfWGC8BpOqZU8oXRZJ8
-         RQNNsS7mlcclEyVkNBDomtryPu3/AOTK+Th/anpbLk56fvR+6QpOjXvc6e4kelpZRHgN
-         AshA==
+        d=tuxon.dev; s=google; t=1725006164; x=1725610964; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=zchK+tZfRdJr/B0VNKRrEBtLoJmeJfsr2YpFzQ08IdE=;
+        b=qIqR2qafk7Hu69phmpTXelIbSWgjKhYsHc11o+6Uql5uavAxDv9cV+k0xjzKs4WOUe
+         DzRQfEgtHtdsa0tei9YEDux2wKvyc6jI41mNkX04fQ7cLy4NXxje8UhcAMiibmQAjYYi
+         2cmnIagV0qCoOpEbFcb8DJXZ2NQde6AIL2QCjUXKWm5pEtrxIQ0V/Xyp9z6jU4pwJp5E
+         smunqZkuV61DcRbpMZjSrYjek3Qh3qEMOtnGwV2FAhvR0YSJ7sFmpM2txXgQr33KaFqn
+         XNAdjF0epaasSXK53P/68NmcvkJ5VS5uKp/T+UmQU+sAif3iEG9f6j4lToQQdV5FcaW5
+         AN/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725006050; x=1725610850;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MoaODkYOEyaemv+peV2Lk7usu4P7Fb4c6U5XdS7bZmQ=;
-        b=kPdgTChlxkKYsdtKeUsPE2SdbKCvyp4Fwdkg8YxNrQr8k8VJcQfb9gWJU2wpB5yvJ5
-         7lDwnX6Cc6i4k1GhEGGiftkKsUYYIojPfuNGp1r9cbgMCi9hay9ii2t2dBDo8JMmNCNw
-         VP09GJi5h2LR2ZhXssdmieLR/B1vFy1a4PHqguq7aWL21+p21Vs5WM6FMzXZpAC3e5v1
-         70LcWMDsvCLPRkm1pncG3jQk03FNn0pUT2EaPHQ8sOw7G5aI9CkVB8164DWGJCZYbRtn
-         01n7tfo+Sncpkw5H74aq+4s9f6RIjBqaE92qkoeN0Qj232FwMRAmJXpZZx085jgPAj55
-         DKQw==
-X-Forwarded-Encrypted: i=1; AJvYcCWG/xQP52eTa7O7yyNDx7y6Eg6fOHm8/ZArFYqx+QnICa4F7uCazpxuiAOhLLE7QDuUUjI0Mjz3y0o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0E443FqZTDP/fk9J32+O24tVipYdNTtzxjorhmCYLS8hpUF9U
-	kCuyJ0vyfpfvJKCoa6nuDBS07F8F/7BkgZoJP1w3d8tf/RSZnvko1oTQO2IKfWo=
-X-Google-Smtp-Source: AGHT+IGmSgunJBFWoiGmNhpvhGutjro+tqb45pwPrnBZXSo69PM3+98+jAV4SnI7qqstTV4etV5vBA==
-X-Received: by 2002:a05:6512:234a:b0:534:53d7:c97f with SMTP id 2adb3069b0e04-5353ebdb303mr1831310e87.23.1725006049693;
-        Fri, 30 Aug 2024 01:20:49 -0700 (PDT)
-Received: from umbar.lan ([192.130.178.90])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5354084e00asm482623e87.271.2024.08.30.01.20.48
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 30 Aug 2024 01:20:49 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 30 Aug 2024 11:20:46 +0300
-Subject: [PATCH v2 2/2] phy: add NXP PTN3222 eUSB2 to USB2 redriver
+        d=1e100.net; s=20230601; t=1725006164; x=1725610964;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=zchK+tZfRdJr/B0VNKRrEBtLoJmeJfsr2YpFzQ08IdE=;
+        b=j7/NYsgR0s3/OjuC+GzMNaPa72dmQn928U7FhFQZQ/GaqTrYm4FOo5ik4kvxl6JOlp
+         /MoR1n5taWl/CKtD0AcJpxU453keYcU/0r4jTZ57TZGcCQZ1uLuS92kyBceKlgaHfzk0
+         mV68cDVbKALJaf6SYB8jSqkkAScAHMkDK3ls2PvAZbwIz6w9r7p9WiHtltPxB5PVQSiu
+         xCEa3DaM5T7ljVzj2v3SHWqTVttypkifxcuSZoibr7+znbl367hiLlh7zT1wGslGIPJy
+         zDBklB3gIRRwX/qshm6jsj4eaksFrHguFde5bWmk6zjLN5LnxtvVrLP92GbEOwp/fimi
+         WGdw==
+X-Forwarded-Encrypted: i=1; AJvYcCW8PLeHam5QnL4uc52+r+EoFv7/0PG4Eb1A/K8sC9EBdUdvURKpw3ZlzSUkp8nJ0oiW5vHlGakaFeQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwnJBqjGD3fd25xzBkGm7bDXi/gvu07/go3JDddTBDC+xZNlHNn
+	8TCXFV/F4JFZQEZkDtUyL2AxqV+pEfdTRl+5A7rH4r0D7KipqJ89jb484LQY5hY=
+X-Google-Smtp-Source: AGHT+IF8ZkJGKUmuglZKyShKgzTB0GuKfWBu6xay0mGYscvHuYinOaW5h5J83vGVNlCFB6KS0zIxvQ==
+X-Received: by 2002:a05:600c:3ca2:b0:426:5520:b835 with SMTP id 5b1f17b1804b1-42bb01ae206mr53646705e9.5.1725006164296;
+        Fri, 30 Aug 2024 01:22:44 -0700 (PDT)
+Received: from [192.168.50.4] ([82.78.167.144])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-42bb87f7fccsm31864805e9.46.2024.08.30.01.22.42
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 30 Aug 2024 01:22:43 -0700 (PDT)
+Message-ID: <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
+Date: Fri, 30 Aug 2024 11:22:41 +0300
 MIME-Version: 1.0
-Message-Id: <20240830-nxp-ptn3222-v2-2-4c6d8535cf6c@linaro.org>
-References: <20240830-nxp-ptn3222-v2-0-4c6d8535cf6c@linaro.org>
-In-Reply-To: <20240830-nxp-ptn3222-v2-0-4c6d8535cf6c@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Konrad Dybcio <konradybcio@kernel.org>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-msm@vger.kernel.org, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-X-Mailer: b4 0.14.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5234;
- i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=uSYp1Bgqx34Q5SjTseJvUt270be+S/EYojDVhNGuWlg=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBm0YDfjo9lAZn1sSEvdM1GmdSFgLHhs2U/YaOSk
- eTdelaxzk2JATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZtGA3wAKCRCLPIo+Aiko
- 1S11B/9oXHKLCYMEAVsVuXLN5oo9juZzLvViEyCe+usH/16ZKAHTUX6DVZXUJfag53AVfyk7pM8
- +ilarO20hEUqLb9+pKCwPy8jZREUrpafDkmdK1gg8Ed/jaZKQD9nxv9FYdtGbkQoXv3hoip/eyW
- RruyRxjlD0lAU81pV9lR2HwhVCAipiAqed3xf+hr99GfFnqBqFwVe9HkdLNvacgSHlxlw4+t6Aa
- /2+q1O+nT1Q1vdloGjXoh71VHmGgT/TsrOQq/bwMOjd/dSIxGRfxfh+N2ct/001roVTXUDZKhc8
- KYcI3loRRcpgDArOH7JZy2IwR+rPH2OmR3oIrZhpeprsjwN3
-X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
- fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+Content-Language: en-US
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
+ magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com,
+ sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com,
+ biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
+From: claudiu beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_012052_271699_8F1169C1 
-X-CRM114-Status: GOOD (  17.34  )
+X-CRM114-CacheID: sfid-20240830_012246_611945_501175AB 
+X-CRM114-Status: GOOD (  24.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,189 +102,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The NXP PTN3222 is the single-port eUSB2 to USB2 redriver that performs
-translation between eUSB2 and USB2 signalling schemes. It supports all
-three data rates: Low Speed, Full Speed and High Speed.
+Hi, Ulf,
 
-The reset state enables autonegotiation of the PHY role and of the data
-rate, so no additional programming is required.
+On 29.08.2024 18:26, Ulf Hansson wrote:
+> On Thu, 22 Aug 2024 at 17:28, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+>>
+>> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>>
+>> Hi,
+>>
+>> Series adds initial USB support for the Renesas RZ/G3S SoC.
+>>
+>> Series is split as follows:
+>>
+>> - patch 01/16           - add clock reset and power domain support for USB
+>> - patch 02-04/16        - add reset control support for a USB signal
+>>                           that need to be controlled before/after
+>>                           the power to USB area is turned on/off.
+>>
+>>                           Philipp, Ulf, Geert, all,
+>>
+>>                           I detailed my approach for this in patch
+>>                           04/16, please have a look and let me know
+>>                           your input.
+> 
+> I have looked briefly. Your suggested approach may work, but I have a
+> few thoughts, see below.
+> 
+> If I understand correctly, it is the consumer driver for the device
+> that is attached to the USB power domain that becomes responsible for
+> asserting/de-asserting this new signal. Right?
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Tested-by: Konrad Dybcio <konradybcio@kernel.org>
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
----
- drivers/phy/Kconfig           |  11 ++++
- drivers/phy/Makefile          |   1 +
- drivers/phy/phy-nxp-ptn3222.c | 123 ++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 135 insertions(+)
+Right!
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index dfab1c66b3e5..cb06a7f79740 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -82,6 +82,17 @@ config PHY_AIROHA_PCIE
- 	  This driver create the basic PHY instance and provides initialize
- 	  callback for PCIe GEN3 port.
- 
-+config PHY_NXP_PTN3222
-+	tristate "NXP PTN3222 1-port eUSB2 to USB2 redriver"
-+	depends on I2C
-+	depends on OF
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support NXP PTN3222 1-port eUSB2 to USB2 Redriver.
-+	  This redriver performs translation between eUSB2 and USB2 signalling
-+	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
-+	  Speed and High Speed.
-+
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index 5fcbce5f9ab1..b64247046575 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -11,6 +11,7 @@ obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
- obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
-+obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
- obj-y					+= allwinner/	\
- 					   amlogic/	\
- 					   broadcom/	\
-diff --git a/drivers/phy/phy-nxp-ptn3222.c b/drivers/phy/phy-nxp-ptn3222.c
-new file mode 100644
-index 000000000000..c6179d8701e6
---- /dev/null
-+++ b/drivers/phy/phy-nxp-ptn3222.c
-@@ -0,0 +1,123 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2024, Linaro Limited
-+ */
-+
-+#include <linux/gpio/consumer.h>
-+#include <linux/i2c.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/regmap.h>
-+#include <linux/regulator/consumer.h>
-+
-+#define NUM_SUPPLIES 2
-+
-+struct ptn3222 {
-+	struct i2c_client *client;
-+	struct phy *phy;
-+	struct gpio_desc *reset_gpio;
-+	struct regulator_bulk_data *supplies;
-+};
-+
-+static int ptn3222_init(struct phy *phy)
-+{
-+	struct ptn3222 *ptn3222 = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = regulator_bulk_enable(NUM_SUPPLIES, ptn3222->supplies);
-+	if (ret)
-+		return ret;
-+
-+	gpiod_set_value_cansleep(ptn3222->reset_gpio, 0);
-+
-+	return 0;
-+}
-+
-+static int ptn3222_exit(struct phy *phy)
-+{
-+	struct ptn3222 *ptn3222 = phy_get_drvdata(phy);
-+
-+	gpiod_set_value_cansleep(ptn3222->reset_gpio, 1);
-+
-+	return regulator_bulk_disable(NUM_SUPPLIES, ptn3222->supplies);
-+}
-+
-+static const struct phy_ops ptn3222_ops = {
-+	.init		= ptn3222_init,
-+	.exit		= ptn3222_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static const struct regulator_bulk_data ptn3222_supplies[NUM_SUPPLIES] = {
-+	{
-+		.supply = "vdd3v3",
-+		.init_load_uA = 11000,
-+	}, {
-+		.supply = "vdd1v8",
-+		.init_load_uA = 55000,
-+	}
-+};
-+
-+static int ptn3222_probe(struct i2c_client *client)
-+{
-+	struct device *dev = &client->dev;
-+	struct phy_provider *phy_provider;
-+	struct ptn3222 *ptn3222;
-+	int ret;
-+
-+	ptn3222 = devm_kzalloc(dev, sizeof(*ptn3222), GFP_KERNEL);
-+	if (!ptn3222)
-+		return -ENOMEM;
-+
-+	ptn3222->client = client;
-+
-+	ptn3222->reset_gpio = devm_gpiod_get_optional(dev, "reset",
-+						      GPIOD_OUT_HIGH);
-+	if (IS_ERR(ptn3222->reset_gpio))
-+		return dev_err_probe(dev, PTR_ERR(ptn3222->reset_gpio),
-+				     "unable to acquire reset gpio\n");
-+
-+	ret = devm_regulator_bulk_get_const(dev, NUM_SUPPLIES, ptn3222_supplies,
-+					    &ptn3222->supplies);
-+	if (ret)
-+		return ret;
-+
-+	ptn3222->phy = devm_phy_create(dev, dev->of_node, &ptn3222_ops);
-+	if (IS_ERR(ptn3222->phy)) {
-+		dev_err(dev, "failed to create PHY: %d\n", ret);
-+		return PTR_ERR(ptn3222->phy);
-+	}
-+
-+	phy_set_drvdata(ptn3222->phy, ptn3222);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct i2c_device_id ptn3222_table[] = {
-+	{ "ptn3222" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(i2c, ptn3222_table);
-+
-+static const struct of_device_id ptn3222_of_table[] = {
-+	{ .compatible = "nxp,ptn3222" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, ptn3222_of_table);
-+
-+static struct i2c_driver ptn3222_driver = {
-+	.driver = {
-+		.name = "ptn3222",
-+		.of_match_table = ptn3222_of_table,
-+	},
-+	.probe = ptn3222_probe,
-+	.id_table = ptn3222_table,
-+};
-+
-+module_i2c_driver(ptn3222_driver);
-+
-+MODULE_DESCRIPTION("NXP PTN3222 eUSB2 Redriver driver");
-+MODULE_LICENSE("GPL");
+> 
+> In this regard, please note that the consumer driver doesn't really
+> know when the power domain really gets powered-on/off. Calling
+> pm_runtime_get|put*() is dealing with the reference counting. For
+> example, a call to pm_runtime_get*() just makes sure that the PM
+> domain gets-or-remains powered-on. Could this be a problem from the
+> reset-signal point of view?
 
--- 
-2.39.2
+It should be safe. From the HW manual I understand the hardware block is
+something like the following:
 
+
+                  USB area
+         +-------------------------+
+         |                         |
+         | PHY --->USB controller  |
+SYSC --> |  ^                      |
+         |  |                      |
+         | PHY reset               |
+         +-------------------------+
+
+Where:
+- SYSC is the system controller that controls the new signal for which
+  I'm requesting opinions in this series
+- PHY reset: is the block controlling the PHYs
+- PHY: is the block controlling the USB PHYs
+- USB controller: is the USB controller
+
+Currently, I passed the SYSC signal handling to the PHY reset driver; w/o
+PHY reset the rest of the USB logic cannot work (neither PHY block nor USB
+controller).
+
+Currently, the PHY reset driver call pm_runtime_resume_and_get() in probe
+and pm_runtime_put() in remove. The struct reset_control_ops::{assert,
+deassert} only set specific bits in registers (no pm_runtime* calls).
+
+The PHY driver is taking its PHY reset in probe and release it in remove().
+With this approach the newly introduced SYSC signal will be
+de-asserted/asserted only in the PHY reset probe/remove (either if it is
+handled though PM domain or reset control signal).
+
+If the SYSC signal would be passed to all the blocks in the USB area (and
+it would be handled though PM domains) it should be no problem either,
+AFAICT, because of reference counting the pm_runtime_get|put*() is taking
+care of. As the PHY reset is the root node the in the devices node tree for
+USB the reference counting should work, too (I may miss something though,
+please correct me if I'm wrong).
+
+If the SYSC signal would be handled though a reset control driver (as
+proposed in this series) and we want to pass this reference to all the
+blocks in the USB area then we can request the reset signal as shared and,
+AFAIK, this is also reference counted. The devices node tree should help
+with the order, too, if I'm not wrong.
+
+Thank you for looking at this,
+Claudiu Beznea
+
+> 
+> [...]
+> 
+> Kind regards
+> Uffe
 
 -- 
 linux-phy mailing list
