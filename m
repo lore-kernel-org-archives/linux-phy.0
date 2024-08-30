@@ -4,66 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDB9FCA0EE8
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 08:13:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E50B5CA0EEB
+	for <linux-phy@archiver.kernel.org>; Fri, 30 Aug 2024 08:14:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xTlqaS3a7EmhvzXYjvgfiIQKrQU46P3q9VCoWqYMWqA=; b=G4+jo+a7FuebEU
-	Xo+qJCZvFKU/RuzSCsvNw4nWrH/9R8Slb21t92DWGFPX4kSfYhNausc/fd/pa0Jd1HQhJ0z2BPwl/
-	Ox1EIA9/sNMY/RQHJ+0HABuKOzu4ehV+u8cPSAp9psZn9HB3HWeSMvhW1/NYU9xqhj1mKz6Nnve9V
-	rnukLTlqck/IFX/A62lIbHBskQg91sQu8L09bGrGrVJ2SXefm9E3HmUaS3LKyTnH4+tcUGjWrn2b5
-	FRoozlM+5TdmzVWlwEK40qS5oJMrHsXYp5QpMeseMAzwfexKNowyJCRYD1219ALBEVzzulbpoau6E
-	zcNKk+YbgoWeuQ0M53Xg==;
+	List-Owner; bh=pQG28mtBAx0NsZF2mZ2SaAF+Y+sNIwPl83F8vIJg7qE=; b=iYUpzUK417CH/5
+	Nh4p+P0W5lZJIKLwVbRU/xMbcEDb/CpiJcaSVQPotMLPYDyOpD7eu8FOaZ0XPJ4SGI8qsIrF9ZBlb
+	8oFBsHTiOzmq4NVTD6wjI0Em4ZlhwRi7ycwcPW4xc2VF1CXgVbzeQR2OyXSc7hak6k1s1XzWZOJ0E
+	iWwTCayhgZ+uIIqrMCrb2eRSTATkg1OP7O2c9qiDw8lsX5VCqD4nghOh0ebvHVknSjgJwB4GU2A4Z
+	iplW4GiKLCHpVoyY+oaSGqGgPH4LV6El5XIRrTtz9h0wds/PqLqYaQTDYoVGh39zsD2j4BRXXZB/k
+	+LU7j/eqszmSI0Lx2HWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjwkp-00000005HKm-2TAW;
-	Fri, 30 Aug 2024 08:13:11 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1sjwmW-00000005Huy-2Dgi;
+	Fri, 30 Aug 2024 08:14:56 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjwig-00000005Gbj-0U9s;
-	Fri, 30 Aug 2024 08:10:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 2692EA4417E;
-	Fri, 30 Aug 2024 08:10:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C2E7EC4CEC2;
-	Fri, 30 Aug 2024 08:10:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725005456;
-	bh=3ydTwNGyIXL6fFISp1v27alYYBcjKlkwV1nvJ+LgMmQ=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=nx8CkU61PYK7Ada7KKWaqejI8FCF8TStl2f+Lw5+1n4UDd90SM5ZBa3jvhEHSaR75
-	 KdGvTylNPwJRnzbGXeaBtrK6ruDB289UA0oHbFmAP0TNeWHoZp3uSW3b/LSkvNEBYp
-	 VJ4q/jMCAnOZ1UMBUlpS00GJ0iJVQWH0wunSHU8zK/mIE2QJ3XwN0tHd7KrVphxUxO
-	 kvTAjnQTR1j8louOu9sUpRx/2B0jVU//KySTJ8fl/qd4UdmBTpitZM+bL9oWT1gw7a
-	 85fp//ihugYz2QqYkXOKyFNwEHYg0ghd19VjmGf3BEkjBwUkIIBA8Ymp3RfgoqV0OB
-	 oKHX9w1cnrk/g==
-From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
- magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
- sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
- biju.das.jz@bp.renesas.com, ulf.hansson@linaro.org, 
- Claudiu <claudiu.beznea@tuxon.dev>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-clk@vger.kernel.org, linux-pm@vger.kernel.org, 
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-In-Reply-To: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
-Subject: Re: (subset) [PATCH 00/16] Add initial USB support for the Renesas
- RZ/G3S SoC
-Message-Id: <172500545045.434293.2799164142138573835.b4-ty@kernel.org>
-Date: Fri, 30 Aug 2024 13:40:50 +0530
+	id 1sjwjy-00000005H0h-3cym
+	for linux-phy@lists.infradead.org;
+	Fri, 30 Aug 2024 08:12:20 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47U7onoF028379;
+	Fri, 30 Aug 2024 08:12:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	nJ6+DSpczrnSs4I88jN8J93McBZVjZyaOHjkWS6Q2jw=; b=M/cL4aF2P9sNpgjr
+	9ejR9EZPtQAQub1VCBg+wf3BZnKUHU4Y9hyCUchMnqH3f+kgVto2faBtu4F1lkia
+	qkDnXBaLKm8QepBiq0KD22rmFf5pblI3eJz41R51N0ez/wYrAkEzlsfHHPMrg92A
+	jUsogrNJADzHIh4K8XP9R78LAREkROflkIXuAByeOAyonilYEKQzHtT0ZhmGdOPD
+	v7saqP+5EOAoOCJswgZpqdzjlO0GxB6eYE/yfjSd2Do/iRHLUwJ624VF6licydqA
+	VElCYys6LWSFqrTSNjL5NvjPvgHpQzRHaWhiRlAiRolco8ieFeHELz9TRqNOM7jJ
+	U5DTGQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 419puuftu8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 30 Aug 2024 08:12:05 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47U8C45t021440
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 30 Aug 2024 08:12:04 GMT
+Received: from hu-srichara-blr.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 30 Aug 2024 01:11:58 -0700
+From: Sricharan R <quic_srichara@quicinc.com>
+To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <p.zabel@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
+        <quic_nsekar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <robimarko@gmail.com>, <quic_srichara@quicinc.com>
+Subject: [PATCH V3 2/6] dt-bindings: PCI: qcom: Add IPQ5108 SoC
+Date: Fri, 30 Aug 2024 13:41:28 +0530
+Message-ID: <20240830081132.4016860-3-quic_srichara@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240830081132.4016860-1-quic_srichara@quicinc.com>
+References: <20240830081132.4016860-1-quic_srichara@quicinc.com>
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: Ftw1_vdWFsNhwYgKOuYpUsBIRuCD_JOW
+X-Proofpoint-ORIG-GUID: Ftw1_vdWFsNhwYgKOuYpUsBIRuCD_JOW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-30_04,2024-08-29_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 adultscore=0 malwarescore=0 suspectscore=0 bulkscore=0
+ clxscore=1015 mlxlogscore=999 mlxscore=0 phishscore=0 lowpriorityscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2408300060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240830_011058_259718_CFF60455 
-X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-CacheID: sfid-20240830_011218_946103_A86D21A7 
+X-CRM114-Status: UNSURE (   9.19  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,32 +104,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 
-On Thu, 22 Aug 2024 18:27:45 +0300, Claudiu wrote:
-> Series adds initial USB support for the Renesas RZ/G3S SoC.
-> 
-> Series is split as follows:
-> 
-> - patch 01/16		- add clock reset and power domain support for USB
-> - patch 02-04/16	- add reset control support for a USB signal
-> 			  that need to be controlled before/after
-> 			  the power to USB area is turned on/off.
-> 
-> [...]
+Add support for the PCIe controller on the Qualcomm
+IPQ5108 SoC to the bindings.
 
-Applied, thanks!
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+---
+ [v3] No change
 
-[10/16] phy: renesas: rcar-gen3-usb2: Add support to initialize the bus
-        commit: 4eae16375357a2a7e8501be5469532f7636064b3
-[11/16] dt-bindings: phy: renesas,usb2-phy: Document RZ/G3S phy bindings
-        commit: f3c8498551146dfb014be0d85d3a7df98be16aa2
-[12/16] phy: renesas: rcar-gen3-usb2: Add support for the RZ/G3S SoC
-        commit: 3c2ea12a625dbf5a864f4920235fa1c739d06e7d
+ .../devicetree/bindings/pci/qcom,pcie.yaml    | 35 +++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-Best regards,
+diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+index f867746b1ae5..c12efa27b8d8 100644
+--- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+@@ -21,6 +21,7 @@ properties:
+           - qcom,pcie-apq8064
+           - qcom,pcie-apq8084
+           - qcom,pcie-ipq4019
++          - qcom,pcie-ipq5018
+           - qcom,pcie-ipq6018
+           - qcom,pcie-ipq8064
+           - qcom,pcie-ipq8064-v2
+@@ -312,6 +313,39 @@ allOf:
+             - const: ahb # AHB reset
+             - const: phy_ahb # PHY AHB reset
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,pcie-ipq5018
++    then:
++      properties:
++        clocks:
++          minItems: 6
++          maxItems: 6
++        clock-names:
++          items:
++            - const: iface # PCIe to SysNOC BIU clock
++            - const: axi_m # AXI Master clock
++            - const: axi_s # AXI Slave clock
++            - const: ahb # AHB clock
++            - const: aux # Auxiliary clock
++            - const: axi_bridge # AXI bridge clock
++        resets:
++          minItems: 8
++          maxItems: 8
++        reset-names:
++          items:
++            - const: pipe # PIPE reset
++            - const: sleep # Sleep reset
++            - const: sticky # Core sticky reset
++            - const: axi_m # AXI master reset
++            - const: axi_s # AXI slave reset
++            - const: ahb # AHB reset
++            - const: axi_m_sticky # AXI master sticky reset
++            - const: axi_s_sticky # AXI slave sticky reset
++
+   - if:
+       properties:
+         compatible:
+@@ -503,6 +537,7 @@ allOf:
+               enum:
+                 - qcom,pcie-apq8064
+                 - qcom,pcie-ipq4019
++                - qcom,pcie-ipq5018
+                 - qcom,pcie-ipq8064
+                 - qcom,pcie-ipq8064v2
+                 - qcom,pcie-ipq8074
 -- 
-~Vinod
-
+2.34.1
 
 
 -- 
