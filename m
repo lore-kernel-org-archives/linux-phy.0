@@ -4,85 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7F58CD1293
-	for <linux-phy@archiver.kernel.org>; Sat, 31 Aug 2024 10:34:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7831CD13D2
+	for <linux-phy@archiver.kernel.org>; Sat, 31 Aug 2024 14:21:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BVNXyhf0MVh1jicwA7VUEseh3VxMU7fYoBhqRdQ4MFM=; b=x9io/jImpSJcU3
-	S6EzbXWHqBJcNMhAkjyCx3HxGzmEpbjXB3YhH5zz3h4ck4pXGXHyPFWs+ZK76blxm5H9y+nyjt0T3
-	S9l6sFQUCARIRZHvNC4UTFO9iVRYq+AR4ZKOOSr9RRPfXLK3nG6xgPraJYtJm9EXAyuGxtHG0GrjR
-	PSNJF6yzAS71RIy7VXHJ+QBISwk80oP0Io9Lg0/WLwAto/BNcV9rd0663zVWZnxCgOTxy4bvVmSEq
-	RpiLIYk7oEg2F5XgYg8DSRShaytf1NqS4jDIza/lt5fHmqWCGmUcGQYcXw2yHDNc0/xHgLEpotYyI
-	UEzQnmLTyZ8hOCMngpfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=I99KRqYykGA22RKyp7lhUFX9bM8tfuE4Lk8rWmQ5x/E=; b=2vfI68W1Dioq2E
+	bwfMWpROCyTeIyaiPmVS4U+hXgqdrqk/hNt2gOAcRAmJ9+MvSiuqnwLcj2dksZ07Yqt9DOGwFRn1t
+	YRiNG0YH2YiHDrfvvjKwPXHm8DFEtxpOCV3FWNXg6B5RZmDKxJk+/SMnV1Pa+3IbVxCMrpksW03ba
+	qEKxMLITGVIIOYZSJ2ZchoSfDrgBuQiqz4ZdSanHRbduPWTcqRrnfmHqVuHhHQrbISi+UhL4XvYE2
+	hyq3X+OR+3y1KUwMW+EcWIWK6hs5dkcvRInjZfm7lQYt9QstEhvG8r9OrFYZtm+YZsZRpOQ6NBs6q
+	c5qCZV+8dupcyOHkEDow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1skLRK-000000099O9-2mjg;
-	Sat, 31 Aug 2024 10:34:42 +0000
-Received: from mail-yb1-xb34.google.com ([2607:f8b0:4864:20::b34])
+	id 1skOyR-00000009Tie-1U2Y;
+	Sat, 31 Aug 2024 14:21:07 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1skLPN-0000000996F-2Rq2
+	id 1skOyL-00000009ThF-2fIc
 	for linux-phy@lists.infradead.org;
-	Sat, 31 Aug 2024 10:32:43 +0000
-Received: by mail-yb1-xb34.google.com with SMTP id 3f1490d57ef6-dff1ccdc17bso2837883276.0
-        for <linux-phy@lists.infradead.org>; Sat, 31 Aug 2024 03:32:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725100360; x=1725705160; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=tKxIacQXeZ2qcUvNmDUUVII5ysi793GfJwtJp8UupOo=;
-        b=okRW12XPeXOJwfD10uZ8xh8YMBFsuh5Jm3ay+Rgd8k2FMY6Xcu7vVn90Hr3lOuMMKt
-         g424iLhUu8mlFZJM3bi6TXC/O+voeHm2SIj8wS+OGcOEzW8HluQUMSVzDuloYngzCBaa
-         v79BsrVhgdsz+W/ra/VKCiy9vbw33AdhiwmAxv41vHrXTxgYex9h6hckcfO4pD6kU7eo
-         0K62l38htQMyf4psGetJPgWyN1vo8ORAVGu5hJGx7x9BPgXJNaqUbkhBZ6LweZfsNo3t
-         1jH8oehhVLGi7b713SqREjWS8PToXUxYKKApwtNAIYeiYDSXkm3ioowzvDgnHrTTRmxl
-         obCg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725100360; x=1725705160;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=tKxIacQXeZ2qcUvNmDUUVII5ysi793GfJwtJp8UupOo=;
-        b=p4Pl4L0zeOJoEWQpTFruHetcEi+dNtqGi1Do0bcEBvSClzKgOkjkw+rWbSnd2D949N
-         S+S30MAf7Ba6ZBf6I+RZAWpk88QaHv/JXc//kBsRP9HKy4ZdamIxqc3MEeSlLKZs5W6b
-         hnmkOjjAvVt26BX4U23cBUw4lAJFdsUZ83RNlSmr+s7qJebRrEUHrQO7RQBDKtmsfNXe
-         j2dZDFSxLKzzO/tzJ56WNdNuME05JLUeUccsbkIVgHWnYYqYS57/rrkyD/DhMTdc1p21
-         g+LBwYg7o3i+NAG45IevooA3Oaz4FZSutDIihoRsoSu3A3PCA8gsiy0q96ZioOnzF0Lw
-         5fPQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU9DUyvo5op85NV6RzXM1HFSY8mU0cBaRtzWbTyjeJx7cFOGd1nYN1np/nO2FPvy6G4hIAmTEcE0xk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyPl7QyHgfE02Dt9YkNE3YFyJTf3wMcfO/g5q1L4AGnATiBWnjo
-	B1e6nn26RUAQnqRQjykmEjySkK/TrsDix52NUdNNASpNNWwyINuJfowEi6hcWywbb/THog6EElQ
-	yJbZ8RwN9Cl3NickPVLLRRXHmxw3jedHpmOwGcA==
-X-Google-Smtp-Source: AGHT+IH8Eb7EYXiidD/DrNNChHQ2lwNk48tFSRFBB77aRxIJWoIIPagMeOtludSNPt8BV9FsjbJZVJT8vUY8xBCkml0=
-X-Received: by 2002:a05:6902:1145:b0:e0b:a7c1:9dcc with SMTP id
- 3f1490d57ef6-e1a7a019106mr5308764276.20.1725100360016; Sat, 31 Aug 2024
- 03:32:40 -0700 (PDT)
+	Sat, 31 Aug 2024 14:21:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1725114058;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=G4fRU4GXiLRr9tyWkx+zPFkdV4614FpRfFryE8h7iDU=;
+	b=GmKeor4DzSHPCQ4Ym0IQLgjye46SrNd3KD5ZlTln5Gn2NAGI0UevlC+YeMZqT62H7b1Nuh
+	jPz4WLWuvYnrt3EjCy+VN0Yvk8StX5U9g2JAVbWMCwPdXxiFiNaOZJ9ABywcSNBiwr0jAD
+	y9pbYEBZQgwSF4DnYPX5w98pgW5ss3U=
+Received: from mx-prod-mc-01.mail-002.prod.us-west-2.aws.redhat.com
+ (ec2-54-186-198-63.us-west-2.compute.amazonaws.com [54.186.198.63]) by
+ relay.mimecast.com with ESMTP with STARTTLS (version=TLSv1.3,
+ cipher=TLS_AES_256_GCM_SHA384) id us-mta-519-5oMSUygFNq6SBHUQxEOdqg-1; Sat,
+ 31 Aug 2024 10:20:54 -0400
+X-MC-Unique: 5oMSUygFNq6SBHUQxEOdqg-1
+Received: from mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com [10.30.177.4])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx-prod-mc-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTPS id 8F6B41955BEF;
+	Sat, 31 Aug 2024 14:20:50 +0000 (UTC)
+Received: from localhost.localdomain (unknown [10.39.192.42])
+	by mx-prod-int-01.mail-002.prod.us-west-2.aws.redhat.com (Postfix) with ESMTP id 5DC7F30001A4;
+	Sat, 31 Aug 2024 14:20:45 +0000 (UTC)
+From: Hans de Goede <hdegoede@redhat.com>
+To: Sebastian Reichel <sre@kernel.org>,
+	=?UTF-8?q?Thomas=20Wei=C3=9Fschuh?= <linux@weissschuh.net>,
+	MyungJoo Ham <myungjoo.ham@samsung.com>,
+	Chanwoo Choi <cw00.choi@samsung.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Hans de Goede <hdegoede@redhat.com>,
+	Enric Balletbo Serra <enric.balletbo@collabora.com>,
+	Andrey Smirnov <andrew.smirnov@gmail.com>,
+	linux-pm@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH 0/6] power: supply: Change usb_types from an array into a bitmask
+Date: Sat, 31 Aug 2024 16:20:33 +0200
+Message-ID: <20240831142039.28830-1-hdegoede@redhat.com>
 MIME-Version: 1.0
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
- <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev> <CAPDyKFrVS2vpsJqTvjKCJ7ADqXc4D4k2eeCBsaK4T+=pXDnKUA@mail.gmail.com>
- <fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev>
-In-Reply-To: <fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Sat, 31 Aug 2024 12:32:02 +0200
-Message-ID: <CAPDyKFrkkASq7rfRN=9sEet-p8T8t+f__PdnSNRN3bMNipnNNw@mail.gmail.com>
-Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
-To: claudiu beznea <claudiu.beznea@tuxon.dev>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
-	magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
-	sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
-	biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
-	linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+X-Scanned-By: MIMEDefang 3.4.1 on 10.30.177.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240831_033241_651740_4D11CD9E 
-X-CRM114-Status: GOOD (  21.36  )
+X-CRM114-CacheID: sfid-20240831_072101_774064_4A99CC7B 
+X-CRM114-Status: GOOD (  20.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,114 +91,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-[...]
+Hi All,
 
-> >
-> > If not, there are two other options that can be considered I think.
-> > *) Using the genpd on/off notifiers, to really allow the consumer
-> > driver of the reset-control to know when the PM domain gets turned
-> > on/off.
-> > **) Move the entire reset handling into the PM domain provider, as it
-> > obviously knows when the domain is getting turned on/off.
->
-> This option is what I've explored, tested on my side.
->
-> I explored it in 2 ways:
->
-> 1/ SYSC modeled as an individual PM domain provider (this is more
->    appropriate to how HW manual described the hardware) with this the PHY
->    reset DT node would have to get 2 PM domains handlers (one for the
->    current PM domain provider and the other one for SYSC):
->
-> +               phyrst: usbphy-ctrl@11e00000 {
-> +                       compatible = "renesas,r9a08g045-usbphy-ctrl";
-> +                       reg = <0 0x11e00000 0 0x10000>;
-> +                       clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>;
-> +                       resets = <&cpg R9A08G045_USB_PRESETN>;
-> +                       power-domain-names = "cpg", "sysc";
-> +                       power-domains = <&cpg R9A08G045_PD_USB_PHY>, <&sysc
-> R9A08G045_SYSC_PD_USB>;
-> +                       #reset-cells = <1>;
-> +                       status = "disabled";
-> +
-> +                       usb0_vbus_otg: regulator-vbus {
-> +                               regulator-name = "vbus";
-> +                       };
-> +               };
-> +
+When support for the "charge_behaviour" property was added the list of
+available values was made a bitmask in power_supply_desc.
 
-According to what you have described earlier/above, modelling the SYSC
-as a PM domain provider seems like a better description of the HW to
-me. Although, as I said earlier, if you prefer the reset approach, I
-would not object to that.
+"usb_types" is very similar in that:
+1. It is an enum
+2. The list of available values is stored in power_supply_desc
+3. When shown it shows all available values, with the active one surrounded
+   by square brackets.
 
->
-> and the PHY reset driver will get bulky with powering on/off both of these,
-> at least with my current implementation, something like (and the following
-> code is in probe()):
->
-> +       if (priv->set_power) {
-> +               priv->cpg_genpd_dev = dev_pm_domain_attach_by_name(dev, "cpg");
-> +               if (IS_ERR(priv->cpg_genpd_dev)) {
-> +                       dev_err_probe(dev, error, "Failed to attach CPG PM
-> domain!");
-> +                       error = PTR_ERR(priv->cpg_genpd_dev);
-> +                       goto err_pm_runtime_put;
-> +               }
-> +
-> +               priv->sysc_genpd_dev = dev_pm_domain_attach_by_name(dev,
-> "sysc");
-> +               if (IS_ERR(priv->sysc_genpd_dev)) {
-> +                       dev_err_probe(dev, error, "Failed to attach sysc PM
-> domain!");
-> +                       error = PTR_ERR(priv->sysc_genpd_dev);
-> +                       goto err_genpd_cpg_detach;
-> +               }
-> +
-> +               priv->cpg_genpd_dl = device_link_add(dev, priv->cpg_genpd_dev,
-> +                                                    DL_FLAG_PM_RUNTIME |
-> +                                                    DL_FLAG_STATELESS);
-> +               if (!priv->cpg_genpd_dl) {
-> +                       dev_err_probe(dev, -ENOMEM, "Failed to add CPG
-> genpd device link!");
-> +                       goto err_genpd_sysc_detach;
-> +               }
-> +
-> +               priv->sysc_genpd_dl = device_link_add(dev,
-> priv->sysc_genpd_dev,
-> +                                                     DL_FLAG_PM_RUNTIME |
-> +                                                     DL_FLAG_STATELESS);
-> +               if (!priv->sysc_genpd_dl) {
-> +                       dev_err_probe(dev, -ENOMEM, "Failed to add sysc
-> genpd device link!");
-> +                       goto err_genpd_cpg_dl_del;
-> +               }
-> +
-> +
-> +               error = pm_runtime_resume_and_get(priv->cpg_genpd_dev);
-> +               if (error) {
-> +                       dev_err_probe(dev, error, "Failed to runtime resume
-> cpg PM domain!");
-> +                       goto err_genpd_sysc_dl_del;
-> +               }
-> +
-> +               error = pm_runtime_resume_and_get(priv->sysc_genpd_dev);
-> +               if (error) {
-> +                       dev_err_probe(dev, error, "Failed to runtime resume
-> sysc PM domain!");
-> +                       goto err_genpd_cpg_off;
-> +               }
-> +       }
+But "usb_types" uses an array with valid enum values instead of a bitmask.
+This uses more memory then the bitmap approach and it makes it impossible
+to have a shared generic show() function for properties which show
+available values, with the active one surrounded by square brackets.
 
-Indeed, the code above looks bulky.
+This patch-set moves "usb_types" over to a bitmask in power_supply_desc
+to indicate the available values.
 
-Fortunately, we now have dev|devm_pm_domain_attach_list(), which
-replaces all of the code above.
+Patches 1 - 3:
 
-[...]
+It turns out that the ucs1002-power driver contained a surprise in that
+it supports writing to "usb_type" even though the ABI doc says it is
+read-only. Since we cannot break shipped userspace API, the ship has sailed
+on this one. The first patch documents that writing "usb_type" is allowed,
+but only for power-supply devices which provide USB power rather then
+consume it.
 
-Kind regards
-Uffe
+Enum properties accept writing the FOO_TEXT[] string values, passing
+the enum value matching the FOO_TEXT entry to set_property(), the second
+patch adjusts ucs1002_set_usb_type() to directly accept enum values.
+
+The rt9467 driver was another driver which allowed writing to "usb_type"
+but there the use made no sense, so it is simply dropped.
+
+Patches 4 - 6:
+
+These patches implement the actual moving of usb_types to a bitmask.
+
+Patch 6 is a bit of a bigbang patch moving all drivers over in one go,
+touching a couple of drivers outside drivers/power/supply: 1 in
+drivers/extcon/ 1 in drivers/phy/ and 5 in drivers/usb/typec/ since
+the changes outside of drivers/power/supply are small I've chosen to
+make all the changes in one go rather then have some sort of
+intermediate state where both ways are supported.
+
+For merging this I believe it would be best for an immutable branch / tag
+to be created on the linux-power-supply tree and then send a pull-request
+to the extcon, phy and usb-typec maintainers to merge the tag.
+
+extcon, phy and typec maintainers can you please give your Acked-by for
+patch 6/6 for merging these changes through the linux-power-supply tree?
+
+This set is based on top of the latest linux-power-supply/for-next.
+
+Regards,
+
+Hans
+
+
+Hans de Goede (6):
+  power: supply: "usb_type" property may be written to
+  power: supply: ucs1002: Adjust ucs1002_set_usb_type() to accept string
+    values
+  power: supply: rt9467-charger: Remove "usb_type" property write
+    support
+  power: supply: sysfs: Add power_supply_show_enum_with_available()
+    helper
+  power: supply: sysfs: Move power_supply_show_enum_with_available() up
+  power: supply: Change usb_types from an array into a bitmask
+
+ Documentation/ABI/testing/sysfs-class-power   |  7 +-
+ drivers/extcon/extcon-intel-cht-wc.c          | 15 ++---
+ drivers/phy/ti/phy-tusb1210.c                 | 11 +---
+ drivers/power/supply/axp20x_usb_power.c       | 13 ++--
+ drivers/power/supply/bq256xx_charger.c        | 15 ++---
+ drivers/power/supply/cros_usbpd-charger.c     | 22 +++----
+ .../power/supply/lenovo_yoga_c630_battery.c   |  7 +-
+ drivers/power/supply/mp2629_charger.c         | 15 ++---
+ drivers/power/supply/mt6360_charger.c         | 13 ++--
+ drivers/power/supply/mt6370-charger.c         | 13 ++--
+ drivers/power/supply/power_supply_core.c      |  4 --
+ drivers/power/supply/power_supply_sysfs.c     | 66 ++++++-------------
+ drivers/power/supply/qcom_battmgr.c           | 37 ++++++-----
+ drivers/power/supply/qcom_pmi8998_charger.c   | 13 ++--
+ drivers/power/supply/rk817_charger.c          |  9 +--
+ drivers/power/supply/rn5t618_power.c          | 13 ++--
+ drivers/power/supply/rt9467-charger.c         | 16 ++---
+ drivers/power/supply/rt9471.c                 | 15 ++---
+ drivers/power/supply/ucs1002_power.c          | 26 ++++----
+ drivers/usb/typec/anx7411.c                   | 11 +---
+ drivers/usb/typec/rt1719.c                    | 11 +---
+ drivers/usb/typec/tcpm/tcpm.c                 | 11 +---
+ drivers/usb/typec/tipd/core.c                 |  9 +--
+ drivers/usb/typec/ucsi/psy.c                  | 11 +---
+ include/linux/power_supply.h                  |  3 +-
+ 25 files changed, 132 insertions(+), 254 deletions(-)
+
+-- 
+2.46.0
+
 
 -- 
 linux-phy mailing list
