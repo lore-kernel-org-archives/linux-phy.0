@@ -4,94 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7ACFCA1018
-	for <linux-phy@archiver.kernel.org>; Sat, 31 Aug 2024 10:26:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7F58CD1293
+	for <linux-phy@archiver.kernel.org>; Sat, 31 Aug 2024 10:34:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gklLo/RSJ+YnB9sSWXkrRYK5kYvCF3u/RJ2Oa9hz/xk=; b=RY9Htrtmh4G4l9
-	Vbq5nXGgFPr15DWcjkS9zYAn8AyNdmE3ortkQpwUvr6etkhi+ojMxuCmihX0OXOyL9csrFCd5GtRa
-	eRwIUN5czKP2P8TxtyzdP7lQ/aSbZpv4n8bS2tysUCtVG5PsdAAZozVLbM+7IMu7DcKe/PsIG0/C6
-	E9K1f+GpzFw0tL4TLYLNKi5RQSm7x9AkhLCTMEsZPdrOYXR2jNlFM0BQnPfO1iRrsGYZmkxID3+8s
-	6JPUlSR8+vEAv1CBe1tJCdciFyyUshZf8iwoRzxmka0u0dRcCuMHZ4M1REcxqHcvkk9C3D/XIvZ4i
-	F4PFEhBjqr3JtwEs3Ybg==;
+	List-Owner; bh=BVNXyhf0MVh1jicwA7VUEseh3VxMU7fYoBhqRdQ4MFM=; b=x9io/jImpSJcU3
+	S6EzbXWHqBJcNMhAkjyCx3HxGzmEpbjXB3YhH5zz3h4ck4pXGXHyPFWs+ZK76blxm5H9y+nyjt0T3
+	S9l6sFQUCARIRZHvNC4UTFO9iVRYq+AR4ZKOOSr9RRPfXLK3nG6xgPraJYtJm9EXAyuGxtHG0GrjR
+	PSNJF6yzAS71RIy7VXHJ+QBISwk80oP0Io9Lg0/WLwAto/BNcV9rd0663zVWZnxCgOTxy4bvVmSEq
+	RpiLIYk7oEg2F5XgYg8DSRShaytf1NqS4jDIza/lt5fHmqWCGmUcGQYcXw2yHDNc0/xHgLEpotYyI
+	UEzQnmLTyZ8hOCMngpfA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1skLJq-000000097He-1Y9Q;
-	Sat, 31 Aug 2024 10:26:58 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1skLRK-000000099O9-2mjg;
+	Sat, 31 Aug 2024 10:34:42 +0000
+Received: from mail-yb1-xb34.google.com ([2607:f8b0:4864:20::b34])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1skLJn-000000097GZ-0H0C
+	id 1skLPN-0000000996F-2Rq2
 	for linux-phy@lists.infradead.org;
-	Sat, 31 Aug 2024 10:26:57 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id 38308e7fff4ca-2f5064816edso28997421fa.3
-        for <linux-phy@lists.infradead.org>; Sat, 31 Aug 2024 03:26:54 -0700 (PDT)
+	Sat, 31 Aug 2024 10:32:43 +0000
+Received: by mail-yb1-xb34.google.com with SMTP id 3f1490d57ef6-dff1ccdc17bso2837883276.0
+        for <linux-phy@lists.infradead.org>; Sat, 31 Aug 2024 03:32:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725100012; x=1725704812; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=t7IgB1agJBW5RBkqLzlSX6ufghWuw8mW4AOdleN6NVM=;
-        b=cjOcuKYIV+lNgtVH4XS7qROnF4ryvqCEkYk8ceym8iGEzrgp45sZCPPoOCnUaLdDZw
-         vzpTSUpKdq1ojVLbNa8RjyLB3z6OIr0evGis9mOrz9FnTS4QlN/Oa2xA/4b2TBftdpDf
-         TzVdXhBUogB2CB0zsTr5aLtPt9htLHB204MQ5B3HkSD0DbtYdnIMvnwu+wQ3ZedDfjkr
-         h2BqAZszndVd+0v0ac8hVLh1y261HguWRNoVB1PQGLRNSvpWFAcfSGl5nT4/HgyEiFEI
-         3zuzrh3JHdJFWMFYKRsdv1BERlzXH5oBKwoeb131GlKZPOHGMjwRoWr5BRCty5zd0HM+
-         l2qw==
+        d=linaro.org; s=google; t=1725100360; x=1725705160; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=tKxIacQXeZ2qcUvNmDUUVII5ysi793GfJwtJp8UupOo=;
+        b=okRW12XPeXOJwfD10uZ8xh8YMBFsuh5Jm3ay+Rgd8k2FMY6Xcu7vVn90Hr3lOuMMKt
+         g424iLhUu8mlFZJM3bi6TXC/O+voeHm2SIj8wS+OGcOEzW8HluQUMSVzDuloYngzCBaa
+         v79BsrVhgdsz+W/ra/VKCiy9vbw33AdhiwmAxv41vHrXTxgYex9h6hckcfO4pD6kU7eo
+         0K62l38htQMyf4psGetJPgWyN1vo8ORAVGu5hJGx7x9BPgXJNaqUbkhBZ6LweZfsNo3t
+         1jH8oehhVLGi7b713SqREjWS8PToXUxYKKApwtNAIYeiYDSXkm3ioowzvDgnHrTTRmxl
+         obCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725100012; x=1725704812;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=t7IgB1agJBW5RBkqLzlSX6ufghWuw8mW4AOdleN6NVM=;
-        b=Z23TdYJRU5S6R78zb1DFLzeVNubKkTtj00iQpRl9UiYFL8/rHZGLMFIKkkomJe2Ruo
-         xrA6NZ2kK4tzr7zu5NWgH94Dnh5OjpgXqNsU2ZiI+8FbPDvlZVrW2SFjBmTC5S8Oz7yB
-         0KKWS1h9B/Bbgp+/zqLmetTMwTlX1qe9V1tqMaFBgwT7RAfjonmrQOJkwhyIVWkSzGXy
-         H2JSoEOxKyPzEz8VOIcFgwZQ+ER4KyR4o8Bvsb4JjssV9EzmUO/pCHAMRTba8AQkd4KG
-         chHgIsptPKeNZm4QLe6qRPp/FKT2yaLwMWNz1frJ8E0Ryl2RHZ/46YJ5dNq7A3YqsBJ3
-         xw1w==
-X-Forwarded-Encrypted: i=1; AJvYcCVGZjGCZFZ3/kIu3wKYZOwvS48NBsdtJenXpY6yzZGBnHeA3sfZBCv9ZBl6xMLk5dQA2Sw9H0vVwPY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywd1d3L9LwiJ9mG/zgCYFZSZ+jtCbGRbhlVIVe+O2ZQn2MalwuT
-	nNTuWvEqpdQJDt2ciP/7iwXtjNnY5BCi84vlz/kLU+N4kc/MYXpwF5pNwMVQS3A=
-X-Google-Smtp-Source: AGHT+IHTXl7fs6MOyZbzgPXqP04Jf+Owl6eDwnf2NZWtSnIIVFM8b2dwxzRBRRwgDmGHzyhMft09UA==
-X-Received: by 2002:a05:651c:b26:b0:2ef:1d8d:21fd with SMTP id 38308e7fff4ca-2f610390981mr70278371fa.2.1725100011804;
-        Sat, 31 Aug 2024 03:26:51 -0700 (PDT)
-Received: from ?IPV6:2001:14ba:a0c3:3a00::7a1? (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2f614efec43sm10060541fa.29.2024.08.31.03.26.51
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 31 Aug 2024 03:26:51 -0700 (PDT)
-Message-ID: <2009ea50-c82e-45ee-afd2-b6f5e0435dba@linaro.org>
-Date: Sat, 31 Aug 2024 13:26:49 +0300
+        d=1e100.net; s=20230601; t=1725100360; x=1725705160;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=tKxIacQXeZ2qcUvNmDUUVII5ysi793GfJwtJp8UupOo=;
+        b=p4Pl4L0zeOJoEWQpTFruHetcEi+dNtqGi1Do0bcEBvSClzKgOkjkw+rWbSnd2D949N
+         S+S30MAf7Ba6ZBf6I+RZAWpk88QaHv/JXc//kBsRP9HKy4ZdamIxqc3MEeSlLKZs5W6b
+         hnmkOjjAvVt26BX4U23cBUw4lAJFdsUZ83RNlSmr+s7qJebRrEUHrQO7RQBDKtmsfNXe
+         j2dZDFSxLKzzO/tzJ56WNdNuME05JLUeUccsbkIVgHWnYYqYS57/rrkyD/DhMTdc1p21
+         g+LBwYg7o3i+NAG45IevooA3Oaz4FZSutDIihoRsoSu3A3PCA8gsiy0q96ZioOnzF0Lw
+         5fPQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU9DUyvo5op85NV6RzXM1HFSY8mU0cBaRtzWbTyjeJx7cFOGd1nYN1np/nO2FPvy6G4hIAmTEcE0xk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyPl7QyHgfE02Dt9YkNE3YFyJTf3wMcfO/g5q1L4AGnATiBWnjo
+	B1e6nn26RUAQnqRQjykmEjySkK/TrsDix52NUdNNASpNNWwyINuJfowEi6hcWywbb/THog6EElQ
+	yJbZ8RwN9Cl3NickPVLLRRXHmxw3jedHpmOwGcA==
+X-Google-Smtp-Source: AGHT+IH8Eb7EYXiidD/DrNNChHQ2lwNk48tFSRFBB77aRxIJWoIIPagMeOtludSNPt8BV9FsjbJZVJT8vUY8xBCkml0=
+X-Received: by 2002:a05:6902:1145:b0:e0b:a7c1:9dcc with SMTP id
+ 3f1490d57ef6-e1a7a019106mr5308764276.20.1725100360016; Sat, 31 Aug 2024
+ 03:32:40 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 4/6] drm/msm: add msm8998 hdmi phy/pll support
-To: Marc Gonzalez <mgonzalez@freebox.fr>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>,
- Pierre-Hugues Husson <phhusson@freebox.fr>,
- Jeffrey Hugo <quic_jhugo@quicinc.com>
-References: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
- <20240724-hdmi-tx-v7-4-e44a20553464@freebox.fr>
-Content-Language: en-GB
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-In-Reply-To: <20240724-hdmi-tx-v7-4-e44a20553464@freebox.fr>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
+ <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev> <CAPDyKFrVS2vpsJqTvjKCJ7ADqXc4D4k2eeCBsaK4T+=pXDnKUA@mail.gmail.com>
+ <fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev>
+In-Reply-To: <fa9b3449-ea3e-4482-b7eb-96999445cea5@tuxon.dev>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Sat, 31 Aug 2024 12:32:02 +0200
+Message-ID: <CAPDyKFrkkASq7rfRN=9sEet-p8T8t+f__PdnSNRN3bMNipnNNw@mail.gmail.com>
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+To: claudiu beznea <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
+	magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
+	sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
+	biju.das.jz@bp.renesas.com, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+	linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240831_032655_321785_E5CEFD3F 
-X-CRM114-Status: GOOD (  30.21  )
+X-CRM114-CacheID: sfid-20240831_033241_651740_4D11CD9E 
+X-CRM114-Status: GOOD (  21.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,334 +94,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/07/2024 18:01, Marc Gonzalez wrote:
-> From: Arnaud Vrac <avrac@freebox.fr>
-> 
-> Add support for the HDMI PHY as present on the Qualcomm MSM8998 SoC.
-> This code is mostly copy & paste of the vendor code from msm-4.4
-> kernel.lnx.4.4.r38-rel.
-> 
-> Signed-off-by: Arnaud Vrac <avrac@freebox.fr>
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Marc Gonzalez <mgonzalez@freebox.fr>
-> ---
->   drivers/gpu/drm/msm/Makefile                   |   1 +
->   drivers/gpu/drm/msm/hdmi/hdmi.h                |   8 +
->   drivers/gpu/drm/msm/hdmi/hdmi_phy.c            |   5 +
->   drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c       | 779 +++++++++++++++++++++++++
->   drivers/gpu/drm/msm/registers/display/hdmi.xml |  89 +++
->   5 files changed, 882 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/msm/Makefile b/drivers/gpu/drm/msm/Makefile
-> index eb788921ff4fe..b9a5dc8c33ede 100644
-> --- a/drivers/gpu/drm/msm/Makefile
-> +++ b/drivers/gpu/drm/msm/Makefile
-> @@ -32,6 +32,7 @@ msm-display-$(CONFIG_DRM_MSM_HDMI) += \
->   	hdmi/hdmi_phy.o \
->   	hdmi/hdmi_phy_8960.o \
->   	hdmi/hdmi_phy_8996.o \
-> +	hdmi/hdmi_phy_8998.o \
->   	hdmi/hdmi_phy_8x60.o \
->   	hdmi/hdmi_phy_8x74.o \
->   	hdmi/hdmi_pll_8960.o \
-> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi.h b/drivers/gpu/drm/msm/hdmi/hdmi.h
-> index 4586baf364151..a62d2aedfbb72 100644
-> --- a/drivers/gpu/drm/msm/hdmi/hdmi.h
-> +++ b/drivers/gpu/drm/msm/hdmi/hdmi.h
-> @@ -137,6 +137,7 @@ enum hdmi_phy_type {
->   	MSM_HDMI_PHY_8960,
->   	MSM_HDMI_PHY_8x74,
->   	MSM_HDMI_PHY_8996,
-> +	MSM_HDMI_PHY_8998,
->   	MSM_HDMI_PHY_MAX,
->   };
->   
-> @@ -154,6 +155,7 @@ extern const struct hdmi_phy_cfg msm_hdmi_phy_8x60_cfg;
->   extern const struct hdmi_phy_cfg msm_hdmi_phy_8960_cfg;
->   extern const struct hdmi_phy_cfg msm_hdmi_phy_8x74_cfg;
->   extern const struct hdmi_phy_cfg msm_hdmi_phy_8996_cfg;
-> +extern const struct hdmi_phy_cfg msm_hdmi_phy_8998_cfg;
->   
->   struct hdmi_phy {
->   	struct platform_device *pdev;
-> @@ -184,6 +186,7 @@ void __exit msm_hdmi_phy_driver_unregister(void);
->   #ifdef CONFIG_COMMON_CLK
->   int msm_hdmi_pll_8960_init(struct platform_device *pdev);
->   int msm_hdmi_pll_8996_init(struct platform_device *pdev);
-> +int msm_hdmi_pll_8998_init(struct platform_device *pdev);
->   #else
->   static inline int msm_hdmi_pll_8960_init(struct platform_device *pdev)
->   {
-> @@ -194,6 +197,11 @@ static inline int msm_hdmi_pll_8996_init(struct platform_device *pdev)
->   {
->   	return -ENODEV;
->   }
-> +
-> +static inline int msm_hdmi_pll_8998_init(struct platform_device *pdev)
-> +{
-> +	return -ENODEV;
-> +}
->   #endif
->   
->   /*
-> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_phy.c b/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
-> index 88a3423b7f24d..95b3f7535d840 100644
-> --- a/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
-> +++ b/drivers/gpu/drm/msm/hdmi/hdmi_phy.c
-> @@ -118,6 +118,9 @@ static int msm_hdmi_phy_pll_init(struct platform_device *pdev,
->   	case MSM_HDMI_PHY_8996:
->   		ret = msm_hdmi_pll_8996_init(pdev);
->   		break;
-> +	case MSM_HDMI_PHY_8998:
-> +		ret = msm_hdmi_pll_8998_init(pdev);
-> +		break;
->   	/*
->   	 * we don't have PLL support for these, don't report an error for now
->   	 */
-> @@ -193,6 +196,8 @@ static const struct of_device_id msm_hdmi_phy_dt_match[] = {
->   	  .data = &msm_hdmi_phy_8x74_cfg },
->   	{ .compatible = "qcom,hdmi-phy-8996",
->   	  .data = &msm_hdmi_phy_8996_cfg },
-> +	{ .compatible = "qcom,hdmi-phy-8998",
-> +	  .data = &msm_hdmi_phy_8998_cfg },
->   	{}
->   };
->   
-> diff --git a/drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c b/drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c
-> new file mode 100644
-> index 0000000000000..9a3b005fa391a
-> --- /dev/null
-> +++ b/drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c
-> @@ -0,0 +1,779 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2016, The Linux Foundation. All rights reserved.
-> + * Copyright (c) 2024 Freebox SAS
-> + */
-> +
-> +#include <linux/clk-provider.h>
-> +#include <linux/delay.h>
-> +
-> +#include "hdmi.h"
-> +
-> +#define HDMI_VCO_MAX_FREQ			12000000000UL
-> +#define HDMI_VCO_MIN_FREQ			8000000000UL
-> +
-> +#define HDMI_PCLK_MAX_FREQ			600000000
-> +#define HDMI_PCLK_MIN_FREQ			25000000
-> +
-> +#define HDMI_HIGH_FREQ_BIT_CLK_THRESHOLD	3400000000UL
-> +#define HDMI_DIG_FREQ_BIT_CLK_THRESHOLD		1500000000UL
-> +#define HDMI_MID_FREQ_BIT_CLK_THRESHOLD		750000000UL
-> +#define HDMI_CORECLK_DIV			5
-> +#define HDMI_DEFAULT_REF_CLOCK			19200000
-> +#define HDMI_PLL_CMP_CNT			1024
-> +
-> +#define HDMI_PLL_POLL_MAX_READS			100
-> +#define HDMI_PLL_POLL_TIMEOUT_US		150
-> +
-> +#define HDMI_NUM_TX_CHANNEL			4
-> +
-> +struct hdmi_pll_8998 {
-> +	struct platform_device *pdev;
-> +	struct clk_hw clk_hw;
-> +	unsigned long rate;
-> +
-> +	/* pll mmio base */
-> +	void __iomem *mmio_qserdes_com;
-> +	/* tx channel base */
-> +	void __iomem *mmio_qserdes_tx[HDMI_NUM_TX_CHANNEL];
-> +};
-> +
-> +#define hw_clk_to_pll(x) container_of(x, struct hdmi_pll_8998, clk_hw)
-> +
-> +struct hdmi_8998_phy_pll_reg_cfg {
-> +	u32 com_svs_mode_clk_sel;
-> +	u32 com_hsclk_sel;
-> +	u32 com_pll_cctrl_mode0;
-> +	u32 com_pll_rctrl_mode0;
-> +	u32 com_cp_ctrl_mode0;
-> +	u32 com_dec_start_mode0;
-> +	u32 com_div_frac_start1_mode0;
-> +	u32 com_div_frac_start2_mode0;
-> +	u32 com_div_frac_start3_mode0;
-> +	u32 com_integloop_gain0_mode0;
-> +	u32 com_integloop_gain1_mode0;
-> +	u32 com_lock_cmp_en;
-> +	u32 com_lock_cmp1_mode0;
-> +	u32 com_lock_cmp2_mode0;
-> +	u32 com_lock_cmp3_mode0;
-> +	u32 com_core_clk_en;
-> +	u32 com_coreclk_div_mode0;
-> +
-> +	u32 tx_lx_tx_band[HDMI_NUM_TX_CHANNEL];
-> +	u32 tx_lx_tx_drv_lvl[HDMI_NUM_TX_CHANNEL];
-> +	u32 tx_lx_tx_emp_post1_lvl[HDMI_NUM_TX_CHANNEL];
-> +	u32 tx_lx_pre_driver_1[HDMI_NUM_TX_CHANNEL];
-> +	u32 tx_lx_pre_driver_2[HDMI_NUM_TX_CHANNEL];
-> +	u32 tx_lx_res_code_offset[HDMI_NUM_TX_CHANNEL];
-> +
-> +	u32 phy_mode;
-> +};
-> +
-> +struct hdmi_8998_post_divider {
-> +	u64 vco_freq;
-> +	int hsclk_divsel;
-> +	int vco_ratio;
-> +	int tx_band_sel;
-> +	int half_rate_mode;
-> +};
-> +
-> +static inline struct hdmi_phy *pll_get_phy(struct hdmi_pll_8998 *pll)
-> +{
-> +	return platform_get_drvdata(pll->pdev);
-> +}
-> +
-> +static inline void hdmi_pll_write(struct hdmi_pll_8998 *pll, int offset,
-> +				  u32 data)
-> +{
-> +	writel(data, pll->mmio_qserdes_com + offset);
-> +}
-> +
-> +static inline u32 hdmi_pll_read(struct hdmi_pll_8998 *pll, int offset)
-> +{
-> +	return readl(pll->mmio_qserdes_com + offset);
-> +}
-> +
-> +static inline void hdmi_tx_chan_write(struct hdmi_pll_8998 *pll, int channel,
-> +				      int offset, int data)
-> +{
-> +	 writel(data, pll->mmio_qserdes_tx[channel] + offset);
-> +}
-> +
-> +static inline u32 pll_get_cpctrl(u64 frac_start, unsigned long ref_clk,
-> +				 bool gen_ssc)
-> +{
-> +	if ((frac_start != 0) || gen_ssc)
-> +		return 0x8;
-> +
-> +	return 0x30;
-> +}
-> +
-> +static inline u32 pll_get_rctrl(u64 frac_start, bool gen_ssc)
-> +{
-> +	if ((frac_start != 0) || gen_ssc)
-> +		return 0x16;
-> +
-> +	return 0x18;
-> +}
-> +
-> +static inline u32 pll_get_cctrl(u64 frac_start, bool gen_ssc)
-> +{
-> +	if ((frac_start != 0) || gen_ssc)
-> +		return 0x34;
-> +
-> +	return 0x2;
-> +}
-> +
-> +static inline u32 pll_get_integloop_gain(u64 frac_start, u64 bclk, u32 ref_clk,
-> +					 bool gen_ssc)
-> +{
-> +	int digclk_divsel = bclk > HDMI_DIG_FREQ_BIT_CLK_THRESHOLD ? 1 : 2;
-> +	u64 base;
-> +
-> +	if ((frac_start != 0) || gen_ssc)
-> +		base = 0x3F;
-> +	else
-> +		base = 0xC4;
-> +
-> +	base <<= (digclk_divsel == 2 ? 1 : 0);
-> +
-> +	return (base <= 2046 ? base : 2046);
-> +}
-> +
-> +static inline u32 pll_get_pll_cmp(u64 fdata, unsigned long ref_clk)
-> +{
-> +	u64 dividend = HDMI_PLL_CMP_CNT * fdata;
-> +	u32 divisor = ref_clk * 10;
-> +	u32 rem;
-> +
-> +	rem = do_div(dividend, divisor);
-> +	if (rem > (divisor >> 1))
-> +		dividend++;
-> +
-> +	return dividend - 1;
-> +}
-> +
-> +static inline u64 pll_cmp_to_fdata(u32 pll_cmp, unsigned long ref_clk)
-> +{
-> +	u64 fdata = ((u64)pll_cmp) * ref_clk * 10;
-> +
-> +	do_div(fdata, HDMI_PLL_CMP_CNT);
-> +
-> +	return fdata;
-> +}
-> +
-> +#define HDMI_REF_CLOCK_HZ ((u64)19200000)
-> +#define HDMI_MHZ_TO_HZ ((u64)1000000)
-> +static int pll_get_post_div(struct hdmi_8998_post_divider *pd, u64 bclk)
-> +{
-> +	u32 const ratio_list[] = {1, 2, 3, 4, 5, 6,
-> +				     9, 10, 12, 15, 25};
-> +	u32 const band_list[] = {0, 1, 2, 3};
-> +	u32 const sz_ratio = ARRAY_SIZE(ratio_list);
-> +	u32 const sz_band = ARRAY_SIZE(band_list);
-> +	u32 const cmp_cnt = 1024;
-> +	u32 const th_min = 500, th_max = 1000;
-> +	u32 half_rate_mode = 0;
-> +	u32 list_elements;
-> +	int optimal_index;
-> +	u32 i, j, k;
-> +	u32 found_hsclk_divsel = 0, found_vco_ratio;
-> +	u32 found_tx_band_sel;
-> +	u64 const min_freq = HDMI_VCO_MIN_FREQ, max_freq = HDMI_VCO_MAX_FREQ;
-> +	u64 freq_list[ARRAY_SIZE(ratio_list) * ARRAY_SIZE(band_list)];
-> +	u64 found_vco_freq;
-> +	u64 freq_optimal;
-> +
-> +find_optimal_index:
-> +	freq_optimal = max_freq;
-> +	optimal_index = -1;
-> +	list_elements = 0;
-> +
-> +	for (i = 0; i < sz_ratio; i++) {
-> +		for (j = 0; j < sz_band; j++) {
-> +			u64 freq = div_u64(bclk, (1 << half_rate_mode));
-> +
-> +			freq *= (ratio_list[i] * (1 << band_list[j]));
-> +			freq_list[list_elements++] = freq;
-> +		}
-> +	}
-> +
-> +	for (k = 0; k < ARRAY_SIZE(freq_list); k++) {
-> +		u32 const clks_pll_div = 2, core_clk_div = 5;
-> +		u32 const rng1 = 16, rng2 = 8;
-> +		u32 th1, th2;
-> +		u64 core_clk, rvar1, rem;
-> +
-> +		core_clk = (((freq_list[k] /
-> +			      ratio_list[k / sz_band]) /
-> +			      clks_pll_div) / core_clk_div);
+[...]
 
-This causes linking errors on arm32:
+> >
+> > If not, there are two other options that can be considered I think.
+> > *) Using the genpd on/off notifiers, to really allow the consumer
+> > driver of the reset-control to know when the PM domain gets turned
+> > on/off.
+> > **) Move the entire reset handling into the PM domain provider, as it
+> > obviously knows when the domain is getting turned on/off.
+>
+> This option is what I've explored, tested on my side.
+>
+> I explored it in 2 ways:
+>
+> 1/ SYSC modeled as an individual PM domain provider (this is more
+>    appropriate to how HW manual described the hardware) with this the PHY
+>    reset DT node would have to get 2 PM domains handlers (one for the
+>    current PM domain provider and the other one for SYSC):
+>
+> +               phyrst: usbphy-ctrl@11e00000 {
+> +                       compatible = "renesas,r9a08g045-usbphy-ctrl";
+> +                       reg = <0 0x11e00000 0 0x10000>;
+> +                       clocks = <&cpg CPG_MOD R9A08G045_USB_PCLK>;
+> +                       resets = <&cpg R9A08G045_USB_PRESETN>;
+> +                       power-domain-names = "cpg", "sysc";
+> +                       power-domains = <&cpg R9A08G045_PD_USB_PHY>, <&sysc
+> R9A08G045_SYSC_PD_USB>;
+> +                       #reset-cells = <1>;
+> +                       status = "disabled";
+> +
+> +                       usb0_vbus_otg: regulator-vbus {
+> +                               regulator-name = "vbus";
+> +                       };
+> +               };
+> +
 
-/usr/bin/arm-linux-gnueabi-ld: drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.o: 
-in function `pll_get_post_div':
-drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c:207: undefined reference to 
-`__aeabi_uldivmod'
+According to what you have described earlier/above, modelling the SYSC
+as a PM domain provider seems like a better description of the HW to
+me. Although, as I said earlier, if you prefer the reset approach, I
+would not object to that.
 
-I'll replace this with div_u64. If it results in wrong frequencies being 
-selected, please post a separate fix for 6.12-rc
+>
+> and the PHY reset driver will get bulky with powering on/off both of these,
+> at least with my current implementation, something like (and the following
+> code is in probe()):
+>
+> +       if (priv->set_power) {
+> +               priv->cpg_genpd_dev = dev_pm_domain_attach_by_name(dev, "cpg");
+> +               if (IS_ERR(priv->cpg_genpd_dev)) {
+> +                       dev_err_probe(dev, error, "Failed to attach CPG PM
+> domain!");
+> +                       error = PTR_ERR(priv->cpg_genpd_dev);
+> +                       goto err_pm_runtime_put;
+> +               }
+> +
+> +               priv->sysc_genpd_dev = dev_pm_domain_attach_by_name(dev,
+> "sysc");
+> +               if (IS_ERR(priv->sysc_genpd_dev)) {
+> +                       dev_err_probe(dev, error, "Failed to attach sysc PM
+> domain!");
+> +                       error = PTR_ERR(priv->sysc_genpd_dev);
+> +                       goto err_genpd_cpg_detach;
+> +               }
+> +
+> +               priv->cpg_genpd_dl = device_link_add(dev, priv->cpg_genpd_dev,
+> +                                                    DL_FLAG_PM_RUNTIME |
+> +                                                    DL_FLAG_STATELESS);
+> +               if (!priv->cpg_genpd_dl) {
+> +                       dev_err_probe(dev, -ENOMEM, "Failed to add CPG
+> genpd device link!");
+> +                       goto err_genpd_sysc_detach;
+> +               }
+> +
+> +               priv->sysc_genpd_dl = device_link_add(dev,
+> priv->sysc_genpd_dev,
+> +                                                     DL_FLAG_PM_RUNTIME |
+> +                                                     DL_FLAG_STATELESS);
+> +               if (!priv->sysc_genpd_dl) {
+> +                       dev_err_probe(dev, -ENOMEM, "Failed to add sysc
+> genpd device link!");
+> +                       goto err_genpd_cpg_dl_del;
+> +               }
+> +
+> +
+> +               error = pm_runtime_resume_and_get(priv->cpg_genpd_dev);
+> +               if (error) {
+> +                       dev_err_probe(dev, error, "Failed to runtime resume
+> cpg PM domain!");
+> +                       goto err_genpd_sysc_dl_del;
+> +               }
+> +
+> +               error = pm_runtime_resume_and_get(priv->sysc_genpd_dev);
+> +               if (error) {
+> +                       dev_err_probe(dev, error, "Failed to runtime resume
+> sysc PM domain!");
+> +                       goto err_genpd_cpg_off;
+> +               }
+> +       }
 
--- 
-With best wishes
-Dmitry
+Indeed, the code above looks bulky.
 
+Fortunately, we now have dev|devm_pm_domain_attach_list(), which
+replaces all of the code above.
+
+[...]
+
+Kind regards
+Uffe
 
 -- 
 linux-phy mailing list
