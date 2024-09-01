@@ -4,65 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E8CECA101E
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Sep 2024 08:07:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FEA6CD342A
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Sep 2024 16:33:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lDpwFXpq/PT9aT2IhJMHMYZhAhTis9HpkP2t7KbM1OI=; b=iQsSCNTEAXu3+j
-	KGR5LHKzOIknB/0uVSqGKu9dXg2uvuKgA3TBwsvLCCgadbLieF6snwY5MiNzwG9W8MdYDrF27SIi5
-	8V+gsHHZ4QUrFd6fe7FwIIR0ba77UfvbYWFfKS32TXUgFS/awiQnpA02yHk41WibV9XvC9X2f+IM3
-	rtM4TIeZLp3NQB7BFSnKiDTvEKjF/BK9SpLZKil7W/MKhPcopb2Wo9nGMtIQLJvqj/VX0RdTRiyTK
-	PShPfF7mwMUACX+Hu31WDKKiEBT/JQSnNTgXg0lEyPbE8DZZo1Mju1v7StYNqKVMzW41KuSWc4u/7
-	DYyRbI2xgAEss3XJW0uw==;
+	List-Owner; bh=bd973DwJG4g2UuBaoJHnyd5MQ0ABWX6MHKh2L2ZCZhQ=; b=vJcDySOKFuOd1E
+	aZmBno/UR7Vfca0ZJ4RevCtXwcnNxIGJyt/Cb2p9ZH72TtfPOUz7+JwtVBq59xxWJmwgZra3PoNgN
+	zCf/Z1PcJrBxP5gObsoaj9Ce9+a2KdZvMGPjcrNt32eNldhIpbmpF8ByMveyxibqlWPxshRXKw/q9
+	wGZC0Y5pHY8MaRdbbaGFw07MSjg/ivhEvSYpQ62HqHedMB+FcXsM+XVsTjHmVS6zSnkK0l7nH2BHR
+	qO4jh1TBZjTxHd1X2VaoT7bu1wDo5PkueVmhYCqTniHJSQfpasovew4BRyFiLEfglz1YcknxUG3Eg
+	xzaRvHJyZycyY64bdHLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1skfcL-0000000B9UT-2tZq;
-	Sun, 01 Sep 2024 08:07:25 +0000
-Received: from mail-m16.yeah.net ([220.197.32.19])
-	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1skfcJ-0000000B9Ty-0Wqs;
-	Sun, 01 Sep 2024 08:07:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yeah.net;
-	s=s110527; h=Date:From:Subject:Message-ID:MIME-Version:
-	Content-Type; bh=7u7AOaHLwE9q3P+6liu00OMqbJ/gWmnFJKpZmoN9Dr8=;
-	b=FPrdAQY1DM27COWhDwJugxNQf/KqQIdLYBlWIyNlx4Q1HyepMrxfzJmnt0tK/v
-	bCT1rOMfSo9mbsab8xCxYj3K6072FOB4oX8XjRXJOYAELyGr1GMQHtbKSPu/dF+t
-	M2DeA5hzAT8zMroZOJvu0fCy6aIoMAdynhxjPvK+i58X8=
-Received: from dragon (unknown [114.216.210.89])
-	by gzsmtp3 (Coremail) with SMTP id M88vCgDnzwKlINRmKt9CAA--.32856S3;
-	Sun, 01 Sep 2024 16:07:03 +0800 (CST)
-Date: Sun, 1 Sep 2024 16:07:01 +0800
-From: Shawn Guo <shawnguo2@yeah.net>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	gregkh@linuxfoundation.org, Frank.Li@nxp.com, jun.li@nxp.com,
-	l.stach@pengutronix.de, aford173@gmail.com, hongxing.zhu@nxp.com,
-	alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 4/5] arm64: dts: imx95: add usb3 related nodes
-Message-ID: <ZtQgpYY9KjP9FUi5@dragon>
-References: <20240826070854.1948347-1-xu.yang_2@nxp.com>
- <20240826070854.1948347-4-xu.yang_2@nxp.com>
+	id 1sknVk-0000000BxGv-2sN0;
+	Sun, 01 Sep 2024 16:33:08 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1sknVg-0000000BxCq-0Xv2
+	for linux-phy@lists.infradead.org;
+	Sun, 01 Sep 2024 16:33:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id C6CD75C4B35;
+	Sun,  1 Sep 2024 16:32:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B658C4CEC8;
+	Sun,  1 Sep 2024 16:33:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1725208382;
+	bh=iMGDRvpGmErh3kT77LApW0C+MmED9uptTCxVciaFglc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=qp0Dm8Xkyz6mVcS4CLaMgcdwI2IiOxMPJLS0MOSPfed0zjIYIUu82N2Y8pBciQppd
+	 6Yu3j/FmCx5SGPd1jtQSwUnpOyBLiv6qo3+/Op0FTxP3CZCm4z3y3huJxF83Ov/Skm
+	 T3enHKYTUF6118sa8SXSl2Pn8Dj+gz15PkKA+mHb0VIgGnLfki+DyAaRyTkfpl6c/h
+	 pmuvOmDvWG8lUiGYn+k1jgWm2pzkNqTcSaAUum4q5U5/nlk2Dc3++Apu2hoTOaf5qv
+	 lWyVG/ZOdIEqzWuKkCXko8jpwktL/UivpIIcliZBKoJCEl9fp6HXRUBCXQ4des7yLZ
+	 CH2TIip3HFVFw==
+Date: Sun, 1 Sep 2024 22:02:54 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Abel Vesa <abel.vesa@linaro.org>, Johan Hovold <johan@kernel.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: Re: [PATCH v3 0/2] phy: qcom: qmp-pcie: Add support for Gen4 4-lane
+ mode for X1E80100
+Message-ID: <ZtSXNt5ZSrM2t5xK@vaman>
+References: <20240823-x1e80100-phy-add-gen4x4-v3-0-b7765631ca01@linaro.org>
+ <172495833400.405683.4328817324548517864.b4-ty@kernel.org>
+ <4ab9dcb6-4a0b-493c-943b-5de05457c592@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240826070854.1948347-4-xu.yang_2@nxp.com>
-X-CM-TRANSID: M88vCgDnzwKlINRmKt9CAA--.32856S3
-X-Coremail-Antispam: 1Uf129KBjvJXoW7KFyftrW8CrWDCr1xCw47twb_yoW8try8p3
-	srGayUZrs2gF1IkFWaqF48KF95J3y0kFZ5ur1fWryjkr9xZ3sFgFWIkF1S9r18XrsrXw4j
-	qFsaqF12kFnxtw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j4g4fUUUUU=
-X-Originating-IP: [114.216.210.89]
-X-CM-SenderInfo: pvkd40hjxrjqh1hdxhhqhw/1tbiAgtNZWbUDSsrwgAAsc
+In-Reply-To: <4ab9dcb6-4a0b-493c-943b-5de05457c592@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240901_010723_507170_C1D9D9D6 
-X-CRM114-Status: GOOD (  13.90  )
+X-CRM114-CacheID: sfid-20240901_093304_232110_118125BD 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,82 +81,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 26, 2024 at 03:08:53PM +0800, Xu Yang wrote:
-> Add usb3 phy and controller nodes for imx95.
+On 30-08-24, 12:01, Krzysztof Kozlowski wrote:
+> On 29/08/2024 21:05, Vinod Koul wrote:
+> > 
+> > On Fri, 23 Aug 2024 10:04:14 +0300, Abel Vesa wrote:
+> >> On all X Elite boards currently supported upstream, the NVMe sits
+> >> on the PCIe 6. Until now that has been configured in dual lane mode
+> >> only. The schematics reveal that the NVMe is actually using 4 lanes.
+> >> So add support for the 4-lane mode and document the compatible for it.
+> >>
+> >> This patchset depends on:
+> >> https://lore.kernel.org/all/20240805-phy-qcom-qmp-pcie-write-all-tbls-second-port-v3-1-6967c6bf61d1@linaro.org/
+> >>
+> >> [...]
+> > 
+> > Applied, thanks!
+> > 
+> > [1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100 QMP PCIe PHY Gen4 x4
+> >       commit: 0c5f4d23f77631f657b60ef660676303f7620688
 > 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> 
-> ---
-> Changes in v2:
->  - no changes
-> Changes in v3:
->  - no changes
-> ---
->  arch/arm64/boot/dts/freescale/imx95.dtsi | 43 ++++++++++++++++++++++++
->  1 file changed, 43 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx95.dtsi b/arch/arm64/boot/dts/freescale/imx95.dtsi
-> index 1bbf9a0468f6..06a7c2f1e211 100644
-> --- a/arch/arm64/boot/dts/freescale/imx95.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx95.dtsi
-> @@ -1188,5 +1188,48 @@ pcie1_ep: pcie-ep@4c380000 {
->  			power-domains = <&scmi_devpd IMX95_PD_HSIO_TOP>;
->  			status = "disabled";
->  		};
-> +
-> +		usb3_phy: phy@4c1f0040 {
-> +			compatible = "fsl,imx95-usb-phy", "fsl,imx8mp-usb-phy";
-> +			reg = <0x0 0x4c1f0040 0x0 0x40>,
-> +			      <0x0 0x4c1fc000 0x0 0x100>;
-> +			clocks = <&scmi_clk IMX95_CLK_HSIO>;
-> +			clock-names = "phy";
-> +			#phy-cells = <0>;
-> +			power-domains = <&scmi_devpd IMX95_PD_HSIO_TOP>;
-> +			orientation-switch;
-> +			status = "disabled";
-> +		};
-> +
-> +		usb3: usb@4c010010 {
+> Heh, we discussed yesterday on IRC that this should wait.
 
-Please try to sort nodes with unit-address in the address.
+I must have miseed that...
+ 
+> Why do we keep discussing things in private...
 
-Shawn
+This ideally should have followed up as a reply to this thread...
 
-> +			compatible = "fsl,imx95-dwc3", "fsl,imx8mp-dwc3";
-> +			reg = <0x0 0x4c010010 0x0 0x04>,
-> +			      <0x0 0x4c1f0000 0x0 0x20>;
-> +			clocks = <&scmi_clk IMX95_CLK_HSIO>,
-> +				 <&scmi_clk IMX95_CLK_32K>;
-> +			clock-names = "hsio", "suspend";
-> +			interrupts = <GIC_SPI 173 IRQ_TYPE_LEVEL_HIGH>;
-> +			#address-cells = <2>;
-> +			#size-cells = <2>;
-> +			ranges;
-> +			power-domains = <&scmi_devpd IMX95_PD_HSIO_TOP>;
-> +			dma-ranges = <0x0 0x0 0x0 0x0 0x10 0x0>;
-> +			status = "disabled";
-> +
-> +			usb3_dwc3: usb@4c100000 {
-> +				compatible = "snps,dwc3";
-> +				reg = <0x0 0x4c100000 0x0 0x10000>;
-> +				clocks = <&scmi_clk IMX95_CLK_HSIO>,
-> +					 <&scmi_clk IMX95_CLK_24M>,
-> +					 <&scmi_clk IMX95_CLK_32K>;
-> +				clock-names = "bus_early", "ref", "suspend";
-> +				interrupts = <GIC_SPI 175 IRQ_TYPE_LEVEL_HIGH>;
-> +				phys = <&usb3_phy>, <&usb3_phy>;
-> +				phy-names = "usb2-phy", "usb3-phy";
-> +				snps,gfladj-refclk-lpm-sel-quirk;
-> +				snps,parkmode-disable-ss-quirk;
-> +				iommus = <&smmu 0xe>;
-> +			};
-> +		};
->  	};
->  };
-> -- 
-> 2.34.1
-> 
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
