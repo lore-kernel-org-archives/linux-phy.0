@@ -4,187 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 803B3CA0ED3
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Sep 2024 10:48:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1403CA0ED3
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Sep 2024 11:11:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ff+qRRTds8Vwyc+BDlq3gTua1M47QpG92Zx85wCHTE0=; b=OU2NvkTAQP44Wq
-	34U2nM9YPVjQzKRRp5ZazJqLvjPvxpb3QjjnaccXS/sPDUq9HTPVPV8NhmIsMZIdogvV+72avqYNt
-	dYscURQWR7E+TcSSB5bFwoo8xvnmMBPqWog1PdNXNlOztpGdHd/Iidjo2BlmPvHyvPzUy+6X7Ar3x
-	CBX1jatbAouEzT0GgSd8jGRftHoqjehKOHzWX9rkdKmkM10DxZkgOJp/AA/D+Y6/I7iroUSrECgdM
-	y26Q5YHdb6FaBSsKatYS37+YmqJgT+ZegHy7mzYAXsZjxV3WWGC6extfvcPv2mPykuSs/P67AzumR
-	KIng18VZYN0tImAcHLqg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u9x6mw1La97mFBYiPTSVyVqc3iK1THfr/woj6yZi8sE=; b=IowTXCBj7ted3E
+	PK2BcQJnSGjSviJhUY1f2LZTSQuyYByYl285JxiTQcw1uO5K67l/JXXFB2cSwdjTrE/2P5rQ81Agj
+	ibEIBh8oWBGZ+zDQGSozI9Bl6dAfZkrgqzp+tzZXUXCim5hxHB6uKUqvI0QPy+CL1xvNOov7g6AAO
+	QSr5WlI+Ytqe8KLo+aV6e8rj6T02Wi0QBc9aZxaSr+lUwV72TXcILy1VYBKzvjIUiNFul/VdKDgMw
+	I/hgxMoNzYXjhX0WVFlGGeJq6NswaBwTH3XZK/RAg32ibad5cs9jGml38GVtLLJfbd4FSgqKi0Fga
+	sshVJXi5kImzeZp9Qs8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sl4bT-0000000Dymo-0ogd;
-	Mon, 02 Sep 2024 10:48:11 +0000
-Received: from mail-japanwestazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c406::1] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1sl4yM-0000000E48l-0jPO;
+	Mon, 02 Sep 2024 11:11:50 +0000
+Received: from mail-sh0chn02on2070e.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::70e] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sl4bQ-0000000Dylf-0LLz;
-	Mon, 02 Sep 2024 10:48:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=P6ngAG2YX+W2+54RzIgeYBqlZZZnjUZ6MhtWDueY8eSX/gp3dbGOaxgdBzoQ6O8KvnM2S2jJd4MUeohhKf4Ko79OrZ4+zrYxpVt02D5jNcuaCZ1CV9Y4CdPJwpxyOvO54VE7nq9V98xtoppyCuX42rLijH2QHLuuMxJDmjyV9aBPj5FGEZU79PjnCgx/sl9dc7IR8VzsWKabLXCbz3rjlnDW8QB9wFcej2bHswJuWfHNE/wQDYikfVvZJ0yaJflBJVVVgngIdHKJ41cFOx0AE8T3mBMM35hs1yLMOVb1BaEBCKlvvsblGgo3HdUr+xW22HqIzeW3zcC3bTbto1JMyg==
+	id 1sl4yI-0000000E47o-1g5G
+	for linux-phy@lists.infradead.org;
+	Mon, 02 Sep 2024 11:11:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QaENqe8Oq8s1Dw9CZGCKdDwp9DJRPOmq/yhNxu9flwcfgyPEkPk2vA74cktTb33P8cYlDStoAKDndjzCkNivK+cLbIB+h45nexAh2UZXX9UbrYVr6QlmkMg6jLAdNtR3OPWe20QGRDiRL2qARZIuVfxneU1jI69P6Ucfjrbd9t9lUOeGvQ44wbu7u4iF11DeDHq1ugRi7ZniGqWPj1yWWPEM5a0gznZOwtJt9gUkgcE0kzoq1ENCGESM6khRjpdOonBS8Xc9AiA3R3t40gA+GsT6kHIDJHahIzv0ZX2LL4t027UcjmciujhI0n9eiThYPlr9J5gUu+UErflUXxu/3Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
+ s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=oUExOcXEmynL6jpn8PmXBpgXUD8IziRIUmGl4vJTJrw=;
- b=MmbUo8JpB+A3byQrTIdJm4cLfjYN+ckvdEDV+etlCVMC3l67EHhtWR39hd/OjCnZjitLfTbWTBZXMA/s1cOtgcegXueTlKy+CRlO0MF/vnjRm/D6ySjLdTaKsD/bis1bCPwpFm+jS9pO6qOMu8qfc+byk4EprANHC1UEhk5nMFdfakAwS4x0t3OYoD7cGEAJOfepFr8QFd0gYGC9TZBDFpdemAMB/W/zcAPAs8AtBj8VhAAvxca7YxMUIHdh1FxdHF34cbeHmnhrQx5v8rAxbH2gFAQIA2XKvVY540Pr2s/zOyBbzVBl9T/jfWEkcVeZrRwmg2rEvsUqduwWorxz7w==
+ bh=MNBy5B3NqYchU+3rxMXJMIoizLHYHvvL0dEpX3qKi/k=;
+ b=kBSbpoSUq8dRNiusd1RDPnGUGnkniDckem7UU1UCns371mSbNRi7Dq0/QXO9qGRqcbMKSMMjsp/c1m8dyBk0antRFdufhQ6EiCHekiOMdngWDxxdAhBBk2NdGM1t/TlBEba8QHBZbOPBAOdmkCNbZWJcs0a5M9LjDNx6V1L01lnOQDVbutDbUTe9JyUty4zKXLiVDzNCiB2H3LLdo3kkX6Oiw5epYt7lF3oVFOg8c5pLqxsBExN5UPiiJoEicFk6lg1OUQWzfny0ltsOpLkeMefMxIJHKFxlcJS4EE2rUu7dy11rTTljIEyzxGCB0Bif6QXikvvfN7WHJlJu5GzwGw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oUExOcXEmynL6jpn8PmXBpgXUD8IziRIUmGl4vJTJrw=;
- b=UwjwtYg0Wfncasrab0BH1BbUqBG7zaRoeitEs/oQ1nZG3h1lq0ASfHQq7Sme1gTZeE3YBYkhZGth1TgXENaPR9ht5RsULy7MGRzjTkwHM3qchf4+tYPRwsO3rW82sfG9e85rcB/9kz7ZHv+70oyrP7laW2WFq7tSFuPA8uL5nu4=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by OS3PR01MB9496.jpnprd01.prod.outlook.com (2603:1096:604:1cb::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.24; Mon, 2 Sep
- 2024 10:47:50 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%6]) with mapi id 15.20.7918.024; Mon, 2 Sep 2024
- 10:47:50 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, Ulf Hansson
-	<ulf.hansson@linaro.org>
-CC: "vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
-	<kishon@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "conor+dt@kernel.org"
-	<conor+dt@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
-	"geert+renesas@glider.be" <geert+renesas@glider.be>, "magnus.damm@gmail.com"
-	<magnus.damm@gmail.com>, "gregkh@linuxfoundation.org"
-	<gregkh@linuxfoundation.org>, "mturquette@baylibre.com"
-	<mturquette@baylibre.com>, "sboyd@kernel.org" <sboyd@kernel.org>, Yoshihiro
- Shimoda <yoshihiro.shimoda.uh@renesas.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-renesas-soc@vger.kernel.org"
-	<linux-renesas-soc@vger.kernel.org>, "linux-usb@vger.kernel.org"
-	<linux-usb@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
-	<linux-clk@vger.kernel.org>, "linux-pm@vger.kernel.org"
-	<linux-pm@vger.kernel.org>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: RE: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
-Thread-Topic: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
-Thread-Index: AQHa9KfrLpE8CCuWg0uaPyaAgZR3ArI+ZjUAgAEcCoCAAVgqEIADVdkwgAAP5ACAAACycIAABtQAgAAAhkCAABeagIAAAFcw
-Date: Mon, 2 Sep 2024 10:47:50 +0000
-Message-ID: <TY3PR01MB11346A4814F83FE296A1DED8886922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
- <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
- <TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <TY3PR01MB113467275C519B729FCAB1ACB86922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <5556d176-cca7-492c-ba21-48256d5d6338@tuxon.dev>
- <TY3PR01MB113464D53083F4C8A5DBBA36586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <590a4fb2-24b2-432b-92db-534c5a52ed0b@tuxon.dev>
- <TY3PR01MB11346505565B81AD2894E035586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <35dc7414-f5bd-4ed4-bfa1-f723f4f0078c@tuxon.dev>
-In-Reply-To: <35dc7414-f5bd-4ed4-bfa1-f723f4f0078c@tuxon.dev>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|OS3PR01MB9496:EE_
-x-ms-office365-filtering-correlation-id: 655d0a62-8584-4d1e-d956-08dccb3cb0e7
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|38070700018;
-x-microsoft-antispam-message-info: =?utf-8?B?WlN2RWR0R1B6SXhoWjNVUjZFaG56Mm1DYjkzUmRWT0pUam12bkFUT2F4WXk1?=
- =?utf-8?B?TTEvdVZFaUluREV2aU1JYWQ2clptdk91R1JuQzV1MTg3ZklaaVk2VDlvNDVT?=
- =?utf-8?B?TjgzMXNSVmk4OEx0bXJFK1FKZld3eW1jdWt2ZWdmUXAvS3ljbVZBbzFCb0xu?=
- =?utf-8?B?N3M3TkNJRC9aVkxNTm1oMWorWUpBMWMwSTdUZkViNUcwSklVL1UvN052K1RV?=
- =?utf-8?B?U09CYlE4ZmdZbGpQOFZSQTJDNHpDSHhEUFlLZWlWeGNQT0Zoem1QcVFhMnNx?=
- =?utf-8?B?d0pQRjRBZ1Q2K1V6WVhTL1lYMitQTEpkRFJkOEthN1RoNUFjS0x2Z2pTMXIz?=
- =?utf-8?B?U0hiYlhuT3VJVW5sbk9EeklodTlmcjlCdTd2N0Y0QUUyNGFvRDhUb2l5RUVG?=
- =?utf-8?B?ODN5bkJVdnc2VHpYbEh0ckZFR0RFbDIvakhWWFRtZ0svbHhFSkRZMEdzK3A0?=
- =?utf-8?B?aW44Y1g0bEI3MVBMRHYxRjltSERRQ05ZcnVQbFk4a1BzS29ndU95MWJWVjRG?=
- =?utf-8?B?TGh4dno3VFVwamdjVjVNb0hqb1QrVmRGZ01CQVkxeFF0bFJDUXRiTFowenM2?=
- =?utf-8?B?OUJ4REJ6ZFhOTElwVU1McFRPbnovZWs2RG5ESW4xNE5JaDFreGRhN1ZhdDNa?=
- =?utf-8?B?cEZEVmg0L1dQUnJhSWZ2VzkwL1VLSytVVDV4bmFVV2JHRHBsenF4N1IweWpr?=
- =?utf-8?B?ZDhTRzNWbXh5TnIybEdZd3IxbTN2Qm1XTzlJN25PWWs3RlpNMWFkaS9MWm5m?=
- =?utf-8?B?YnVwSHROOGZUQkh5ejFuSHQvRllpMGhUMU1PTHZQOWY1VTBINkJWM2RqRXVI?=
- =?utf-8?B?SWt5UmdNNkhQbmFROGNJUDNGbUlOVlV5YXk1dEwrWnp3UVBLNXF4K20wUXFU?=
- =?utf-8?B?TFdsOWFPeVd1SlRZUWJYNUdIa292SFZXWG9NVGQ0aFd5L0ZoLzlJZmxWZGly?=
- =?utf-8?B?RmU0RnlwMm9IdXU4S0xpaFVHd1dNc2dycnQyUHFFN091eGNWYzRlYWFGazBI?=
- =?utf-8?B?cE11RUd4UDVXYkl0dTZsYnN1SmRrV05xVlRTYUZjK1I2RjN3cW9FQXpWM0ho?=
- =?utf-8?B?alJiVnc1cXZQMzFiL2IyTVloRFl1RUswc0QwRU1NRzR4S2xwVVZxZ0pPVGk1?=
- =?utf-8?B?WGRSTHp3REZJdmVUMHoyRng5blRsenhBd1VvZnE2R0tjOFYva0NFckZmeHE1?=
- =?utf-8?B?RzBPWVVEU0NIaXQwdU5UdlIwQ290emFBeFdiUkdDeEI3aWhvU1YrU1NLUUgv?=
- =?utf-8?B?c0hnREN1QjVraGxJL3BROG5hSGdqWTdIQTBjbnRyV0ZNQ3gzUWE4Z0hwZldk?=
- =?utf-8?B?RjRoVzE4ZUFzaWlTcTV2MEJPNWFROU5CczVYYlNjMFVlRGwxUWppQ1VTVVYv?=
- =?utf-8?B?TDhkU05jZ3JtK0lUanE0Tmd0MG5UQ2tRTlZjR0p1Yk5QZW9rNkY2Y25IamRu?=
- =?utf-8?B?N3JwS3hjcUx3U0xxcGNjTytlR0owd1NFb2hDVUYzVU5vRk5SbnN3WTZTRUpa?=
- =?utf-8?B?bnl0Wmt6UTBqRHdTVlN4RHFKNEdyd0V6cDVKbmVyblVDZ1U4aU5ZZUQ0cTJV?=
- =?utf-8?B?UGlxbGVac1pHdnArdVNLVkFFRWgrS0JkdUY1czNGblJrajdCaUs4NEJqMDRZ?=
- =?utf-8?B?d2tyLzNnN2RJQ1FLc3JlLzRGVnNoTUNoZFpoaExSZDVKUHppVWJNR0hPeVFP?=
- =?utf-8?B?SGNOdU9ZSlhzVFFBWTMxTFpTS3k0aGpKL3d1ZG1UL3A5MVBlUFBoSDRHUEdT?=
- =?utf-8?B?dHRyM0cxTmxJdWo2ZE5RakpRU3RxNG15dmxOeU9qMnlJcGRaTXExdTIwZWRU?=
- =?utf-8?B?UGZsUS9PL01VZUVJQXNJYkZlY2pCdEhUY012OWdVSmFIQkovZGlEbmgvRVZs?=
- =?utf-8?B?emVzcXlvVG5WRndsay9ORTVnSmk2OTFTYm9YRFRuZEJCd0E9PQ==?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(38070700018);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?d3UrVEdBckkvOVVFYmt1VTN6UUJNbWxlV0NZVVZGL3VRQXBIMmFvRFhEdVFm?=
- =?utf-8?B?Smtya29vUG4vZjhwM3U1ak16QnJ1aHQvdnIxOWlkdVhwVXM2M0tNc3U3aURz?=
- =?utf-8?B?R09lc01Jd09vMkIvZFBVZUdKUzhhdTF0M0hCMDl5Zk1IeUUvTzlpUlFDeWl6?=
- =?utf-8?B?WG44WmloWlViM204TW5tMXQ3blF1RytLRm5CK1N4YUE0N2kwT3lwSGlkWTVh?=
- =?utf-8?B?VDk5bXNvQ3FrQmhudUN0dEp1aWFBYUdaVy8zVG55RFBWQVMvMlkwVEtVTUxz?=
- =?utf-8?B?dUFUR0dQODFtczl2RFBnS0JsSTJ0RFM2cDI2enE1U01pNjBEU1FOd0Jvb25p?=
- =?utf-8?B?dGNQWVNUajVWK2hDTFE4b21SRGFZcUtDOTRUUkw5ZkZkRUVPNDFGT3QvL1RH?=
- =?utf-8?B?cS95SXd3aVZZdU9rbVBZUDNoR0pwbGwwbWowOFBtdlgzQUJkeGlselN0TmlG?=
- =?utf-8?B?TThVN01ZVVF4SWNMWk5hekdmYzJyZGxmbklxbngrR3YvRld6NVJ4cWdHbEZ1?=
- =?utf-8?B?a0FVcHdiUjRpQ1VLcjl3Y0xaaStBV0p1bmY2amVjbnNpMWtQZTlvRkd3Z2Jk?=
- =?utf-8?B?UWk5MVhvQUtMSDZFMDdQY1ZCYWJXQzVvRk1LcEZZb0dlOVVrZXdCOHZoRkNG?=
- =?utf-8?B?ZjdOejlWZWhUNHM5eE9MdW9pSWh3aFBoRW05ZmFZajVUSXFvSzhESDJrMWs3?=
- =?utf-8?B?Q0R3ZitDWnZYYW9WanZlRm15TmxWRGkxZnk2RCs2VnlNVEpkZjhCNVJrTlBw?=
- =?utf-8?B?M3RiZW5jb3Iyb3dZQW1jNHdhcG1YbHZlamNENS9reEFSMGEvS2h5b0J2cnBD?=
- =?utf-8?B?eFFlNmN0SGQyMmlNM0VaN2Q0MjFZMTBHR3FlQ1FORGpkMkdZZitOSGJlaS8w?=
- =?utf-8?B?VkRCYzkrc1diN1BibURzdUNlRGxlYlVLdk9aTlhhZEh4M21lNllwOEtCM0kr?=
- =?utf-8?B?aUx4ckpwODMzVm95aHJ0M1dLeVNXLzZoeHVpZVZKb3I0V0pENXY4ZXNqRWhm?=
- =?utf-8?B?cEpwcDdtM3BIRERwSzh1RW1zM2lHTFdIWXBmSm1iMk1hLzNPSmlpbC9xWDhC?=
- =?utf-8?B?YkgzbWhpZXRrK1pIYzhHMFVVVTRwaC9DV2RWYU5vdHdHZ3dkWkRXZUhDRjNp?=
- =?utf-8?B?VVpJd1QxazRiNSt2bmkwSlVYVHNlZzJWM0MyMHRkQkFFbmxuSk81MlZ5NCts?=
- =?utf-8?B?TEs4UUNKcGYvR2VqSkJxVFF5VjNybVdBM2Q3UjFpa0lFM3ZUeUhGbC93ckND?=
- =?utf-8?B?MHdqdTE2TnhvYmlFRHhjRjNIY3VMd25hT01oL2NDODRjVjY0TlZMU3FoSXpH?=
- =?utf-8?B?OUZUdHRURlFJb3FORjdkMlNvM242d0hCN3hia3pXaW9YcU5HdTMvTjlqYktl?=
- =?utf-8?B?ZTRqUUFCV2FWVE1hNnk0eXExOXFZWGE0YldWdG9rdU5JdEpNUFJreklFZWpZ?=
- =?utf-8?B?dzZmdDVmOGp3Mk1xcmtPSXMvbzhTOSt2eWNKZG9oNkFlbmFCQlpTelJWaC9k?=
- =?utf-8?B?TEhYekpNdVBKcDN6SjhGQzE2QUppYXFUc1BnUy96NUlpYi8wUU9JT2Q1V0hn?=
- =?utf-8?B?UXZYNEhKQ0lHZ1o2RXZZSzk1Mlc2cTZaenptRHdLSi91WVZSYjFXZXQ4TGUv?=
- =?utf-8?B?bHAwRnVUY2FXak9CRGYrQXUwZGNYcld3Q2F6MnozeTNML0lmMXQzdXNaZUJF?=
- =?utf-8?B?SS9HeWxEbXYzUHVmV0FmNUV0UGtTZUNuNU1UdThhcjNOMkNLMHBWQUhKeWM5?=
- =?utf-8?B?bFNWcTNLa3JtNnl4ZnJFYVFiQzlXTnY3dnVDVjBKM2xobnRvZGVmMnRTcm40?=
- =?utf-8?B?c3l0VTBsSU9pbXppdTlRR3QzdGZtUG96NDhHYTdNTnhXZXdiY05EQXAwVW9O?=
- =?utf-8?B?MGZ1dU5udDNZd2ZyNVVPNXBDQ0Q1OGJCQ1ZQc25BTTBXMWVkcWxYZkdTRWo1?=
- =?utf-8?B?WUtRQ3VlaFd3ODJsZDFialpFOFplYU9xYUlMMTlBR3JZYWtmY3pycXMwQVZC?=
- =?utf-8?B?aWxNeUR6MTNxT1hlMGkvZW1JWGFDZmJSeFFnenc1MjlCQXBMa1ViazRMWWhV?=
- =?utf-8?B?N2RaRWdzWE42cHZqKzJwYUNJUzJ2dFdGYWducDluMDhQaml3Tk9EcUxyZnRv?=
- =?utf-8?B?MHhoMVRBTGZSSWRYV2J4QjJ4cmhHYTFxRXpiU1g5QzNJeTZHNjFRS0RaZ1Ns?=
- =?utf-8?B?WUE9PQ==?=
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:25::15) by SHXPR01MB0768.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:24::11) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7897.31; Mon, 2 Sep
+ 2024 11:11:38 +0000
+Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
+ ([fe80::3f35:8db2:7fdf:9ffb]) by
+ SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn ([fe80::3f35:8db2:7fdf:9ffb%5])
+ with mapi id 15.20.7897.027; Mon, 2 Sep 2024 11:11:38 +0000
+From: Minda Chen <minda.chen@starfivetech.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Jan Kiszka <jan.kiszka@siemens.com>,
+	linux-phy@lists.infradead.org
+Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Conor Dooley <conor@kernel.org>,
+	linux-kernel@vger.kernel.org,
+	Minda Chen <minda.chen@starfivetech.com>
+Subject: [PATCH v3 0/1] Fix configuration for on-chip USB 2.0 support
+Date: Mon,  2 Sep 2024 19:11:26 +0800
+Message-Id: <20240902111127.15155-1-minda.chen@starfivetech.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: ZQ0PR01CA0032.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c550:2::6) To SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:25::15)
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SHXPR01MB0863:EE_|SHXPR01MB0768:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1359706c-d15a-442c-486a-08dccb400359
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|366016|41320700013|38350700014;
+X-Microsoft-Antispam-Message-Info: uA6eF3joVzdeDZvMfFrUcmB2JQoE5uSx9dDiknfQOcyGSApIkSBpMuGJYTI9KyhXKTLzhF806+OMFtfMMjqpWrXb6sNLvvSzMQycYy2hMayj6omcJ6fKFoHDenCN2goDRA3J4urzbvc/tEPXkgaA8HgHjFrluzf8K3NUVC6txaVU5xZaCcQlaYUqeLWqm0sa6RLpYBAcSBZYWAKcXRDjaQQJMK5U8/+Xv1NzD4ju1SqlyCtOqI3Z7KXneusqdxwOoULkGk10EOGPFshNDUPuvpmUtR6dSWq0HktQLGy1BP8B9NcUumapJKwFnK4T2uk1eepcj81vcYraiVai4w4XpcMZFyBngxmcVsoZzJLTLKrzeiO8KFiv7ipWLGVCi9APRZakzoJQWx2joo6pMQQb1TVIEoCN4zsu3vsJOhwj04ElvAb5Dl3OqiTL7zlR8ke+2FbrWUSI76bbZMefPIjBJzv1nFzhcNlougWRqs24dVOmwI9nPHtix4byoTi0EPLT+bxsK6DSi/8WjqryVthO2Ujg/W+EXoC+P8SpVV3NzwY0CPgQG7ABZcKYDC8E0q09mejBh2s/+CYZXUqFwBPIz7/kevt+BIdIvciWCIOgylvhOw/GrqCPM+6MguOxv7Xu
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(366016)(41320700013)(38350700014);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?7N2mb6zpp4O2lO/d4lCTycm9gxC5/Oh3YcS+HoDJIj0tCngXpAqqkEDYIqkd?=
+ =?us-ascii?Q?OHpY6lxgJtC2QZMrAPtcGSlbThiXTtcwhyh+gKXAo8yShSNF6dyyt8PK3rZN?=
+ =?us-ascii?Q?9f2MIUnAK4O8kfSNfLTMvH0/FsxmFL26i3ZnDeiuQdoVZoQMznWpX2FYnCA7?=
+ =?us-ascii?Q?qpTeaWDG6Eb6eKXjBo/dpbBf/SFXO9WxA8uVGEVclG+Ig7eZxs5X8QPYBrB6?=
+ =?us-ascii?Q?BS6fhPEEvSY3+AT5BuXx6WnUt2mtoOczq5sw1iBvcwGq4i9q8piD4GoK76da?=
+ =?us-ascii?Q?ieEFwB1ZWOjkFO/MX/UzNh8McaB3CP0vqgYLXqCvWZ/t1TFoywqlwduY9qFC?=
+ =?us-ascii?Q?3EQt6W5aaGRaqTVPf7mYMXk/s6qlmtUgahCB6j2ImoM4K6EQ5Wcm+Rcr2he9?=
+ =?us-ascii?Q?4YGd4e6O05YyPnBvDdjyH6xjHSHTUd1FKm1fNVib3sbeGoNIwbierPzybq6z?=
+ =?us-ascii?Q?/MZseLrtBStNhPywH+PNceP8zlcddpG6+1uGHDMDetD+muf1SiR/+TIDvdKH?=
+ =?us-ascii?Q?NPLjzsdOL+gCR+fumVnodEyeMmVIGEKdXxJgr6Pmmo4PH7lpAogFhN+F3tVZ?=
+ =?us-ascii?Q?J7kKzlKjyFuJIR/dX06h1VNKOBlgvViOt2NoMv3ryNWANxUoQFTfh9EDWrLk?=
+ =?us-ascii?Q?7ZJWg91YsMtui5BGPyymYu/MUe+0aQ/Eo0aXWNVSqFfJFgcWuelyqRdtT7zJ?=
+ =?us-ascii?Q?dPtGGMRcskuehKmV+zVFxzufTppmYeNtDqrW/8xgvRTin1dfIhE8Hk8jVH4C?=
+ =?us-ascii?Q?Bai2/V2AheyOr3WxJguMP4LyxoB9SbKkcm61Vqm3fg6KP83RBjV2fZBo4Sm4?=
+ =?us-ascii?Q?rQvLXrq3r84w7aZmLG1QqHkyGsVu2W8TKL8Dq2HqVCKdP8FRMdQ8E+xvob0p?=
+ =?us-ascii?Q?wgfoeP5DwB/iOgRxOLbm3XWhR8N8sGMkG64vqv3Y4trTOGl/UbayzewiDMKS?=
+ =?us-ascii?Q?PoVvzyZ1zsnrDH8oSPVkCBvSmfg/pK4zax7USWz2IN5m8DC0NAb2poWddG79?=
+ =?us-ascii?Q?vAXxF6Wqrth3Zr6wiKdZ5ISilvmhgcZU2098j+8JofHlbwBYoyxQ10LOd2sV?=
+ =?us-ascii?Q?Kju0AI0i/HYrFwCVePRf2MOk3DsFVpM6wI7EA8Mrt1eDpmIfeZRok8vL3x4V?=
+ =?us-ascii?Q?ex58N5O7xmF7vL7KK4ftN0Vn0AY5ZDPWDg/lTZOJigky9RAggvfy9XnYBi6u?=
+ =?us-ascii?Q?oBQv7afkJix8onjfVU82auXZE2UHFfY1WrNrCu7w/SJFv11QUT6tvvhGI8LO?=
+ =?us-ascii?Q?21VcGp4z3pL0cxiFfcqFj+PnLZw1tpLkWhcEiFxDJwROK3pRQHWARkziO0+x?=
+ =?us-ascii?Q?O2fN7oj0QASaSfjgnA4c8mofQD90dJjErPNpH9Ca/m31x5XFEm8cLuJshPhF?=
+ =?us-ascii?Q?Kte5AdmXq2M5dxzhBrNM84MTVy+y6OF9PZ8j+ee3NBYAJxGmvH9z68DrxRax?=
+ =?us-ascii?Q?CHzhKedJicgMuMCwX27A1W8aefjWnBPNbupcjgKECW3TJQjpMvGahz4X6zi5?=
+ =?us-ascii?Q?xMtXwRHPWM0wfIVqFdZS8JAlf6OybkQt8yDus6u2JDhhXhGYtTTy9HIYN6TM?=
+ =?us-ascii?Q?sATAGfMcTejS0BcTTBd/3KIFnN7QscC2CeNLuQSgCawndt4Io+hSZaE9B4mc?=
+ =?us-ascii?Q?kQ=3D=3D?=
+X-OriginatorOrg: starfivetech.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1359706c-d15a-442c-486a-08dccb400359
+X-MS-Exchange-CrossTenant-AuthSource: SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 655d0a62-8584-4d1e-d956-08dccb3cb0e7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Sep 2024 10:47:50.5972
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Sep 2024 11:11:37.9493
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: GsIlTkcT3MgbXqdO8mCbrHPMfyIB+Bz9jweyTHeIRiNRtNtPjogtLeIeT41pkI90ykaXJpI57VpeupKaM7jmOmWLMIrGj9yWsdyG1SF/fa0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS3PR01MB9496
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: zmN2OBWH8u/r3x/b44eIkJ0GQfl5uPEShcT4cszUcu05zzYMioVPyoi6v+kIYpCXmOc7fGO3x08mWa2i35p3hxBveH6j0sHZ00snhJf5KEM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SHXPR01MB0768
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240902_034808_483034_9FBB1CF3 
-X-CRM114-Status: GOOD (  28.09  )
+X-CRM114-CacheID: sfid-20240902_041146_459482_A7D49A6B 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -201,82 +133,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Claudiu,
+While mainline has support for the USB controller of the JH7110 since 6.5,
+this never really worked, even not with latest downstream kernels by Starfive -
+unless you were also using an old downstream U-Boot version. The reason for
+that was a missing syscon setting that prevented the connection between USB
+2.0 PHY and the controller. This series finally fixes the issue.
 
-> -----Original Message-----
-> From: claudiu beznea <claudiu.beznea@tuxon.dev>
-> Sent: Monday, September 2, 2024 11:41 AM
-> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
-> 
-> 
-> 
-> On 02.09.2024 12:18, Biju Das wrote:
-> >>>>> Do you have any plan to control this power transitions(ALL_ON to AWO and vice versa) in linux?
-> >>>> As you know, the RZ/G3S USB PM code is already prepared. This is
-> >>>> also configuring these signals when going to suspend/exiting from resume.
-> >>>> W/o configuring properly these signals the USB is not working after a suspend/resume cycle.
-> >>> One option is to handle SYSC USB PWRRDY signal in TF-A, if you plan
-> >>> to handle system transitions
-> >> there??
-> >>
-> >> As I mentioned, the settings in these registers may be changed by intermediary booting
-> applications.
-> >> Depending on that, Linux need to control it also on probe for USB to
-> >> work (it should be the same with PCIe, these signals seems similar from HW manual description).
-> > You mean system transition settings will be override by U-boot, so Linux needs to restore it back??
-> 
-> It was talking about booting...
+Changes in v2:
+ - fix copy&paste mistake in error patch found by kernel test robot and Dan Carpenter
 
-I am also referring to boot. Boot starts with TF-A and it has a system state.
+Change in v3:
+ - Using syscon_regmap_lookup_by_compatible() to lookup regmap. So dts
+   with no changed. Delete v2 patch1 and patch 2.
 
-> 
-> You proposed to handle SYSC signals from TF-A in a discussion about system power transitions:
-> 
-> "One option is to handle SYSC USB PWRRDY signal in TF-A,  if you plan to handle system transitions"
-> 
-> (I was guessing the "system transition" statement there refers to power states transitions, ALL_ON <->
-> AWO/VBAT)
+base on v6.11-rc5
 
-That is correct.
+Jan Kiszka (1):
+  phy: starfive: jh7110-usb: Fix link configuration to controller
 
-> 
-> and I gave the booting process as a counter example: if we handle it in TF-A it may not be enough as
-> these signals might be changed by intermediary booting applications (e.g., U-Boot).
+ drivers/phy/starfive/phy-jh7110-usb.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-Why should U-boot override, system state signals such as USB PWRREADY? Can you please give an example.
 
-> 
-> To conclude, there are 3 scenarios I see where these signals need to be
-> handled:
-> 1/ booting 
-> 2/ suspend to RAM
-> 3/ driver unbind/bind
+base-commit: 5be63fc19fcaa4c236b307420483578a56986a37
+-- 
+2.17.1
 
---> It should be OK as linux is not handling USB PWRREADY signal.
 
-> 
-> In case of booting: if we have TF-A to set signals there might be intermediary booting applications
-> (e.g. U-Boot) that set these signals also. If it leaves it in improper state and Linux wants to use
-> USB then the USB will not work (if Linux doesn't handle it).
-
-That is the problem of U-boot. U-boot should not override system state signals such as USB PWRREADY.
-
-> 
-> In case of suspend to RAM: as TF-A is the only application in the suspend to RAM chain, it should work
-> handling it in TF-A.
-
-That is correct, TF-A should handle based on system state.
-
-> 
-> In case of unbind/bind: currently we don't know if these signals introduces any kind of power saving
-> so asserting/de-asserting them in Linux may be useful from this perspective, if any.
-
-These are system signals, according to me should not be used in unbind/bind.
-
-I may be wrong.
-
-Cheers,
-Biju
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
