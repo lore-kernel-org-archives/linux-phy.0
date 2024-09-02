@@ -4,113 +4,181 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BEA1C54FC6
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Sep 2024 21:46:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56205CA0ED3
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Sep 2024 07:55:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C26G5J2+N7vDanoC5tRIj7F795GEeNyJpg/gEYQJ9+k=; b=GkMkidGMEoW9Le
-	ok7H8YaJcd+IgCU0O/vm/deZVEe5FrD9jm/y6B/PSaVPRYV3bIzVcuHkNn/yxt7HOMkD56C5RZXMN
-	iTDlmhdOcyX9K30/0I/AaXO+PZ8dYwH1XrnhwWyB1lwWxOdkwUV010rJizXVPAY2AUCKwfqcictCl
-	reMHtipobWrTKmeXXMBWXPFaKN0KkVgH7aRusTTi2oWrqoCCZluHcU+bHvEjB2tLCGywx5Y13o1Wa
-	iWNbEUg/5h1vLcIIjwfZGm9CIt2Fd10lmXvUtgx8ocNBmOw85cV5VVnMy9RvToQNj7OQeqhQ/vmE2
-	spKN5gHJnF/dENE4DJ/w==;
+	List-Owner; bh=A8ey1bf+gzElO7OrVp+4fgEjK/tDYGQdg41SejexUkM=; b=T/eAdaIBlepdFf
+	dKJY93jsElAGMJ66kGTwzpB+KkxZFo/MjjIP593YaBX9l0oiacPj8jhoZny+A5cUxMctLJfw7u3WP
+	n7KAkFFkCDZ1g38K7R3owQTPuU0KHHUl5qT8bwbYrKypZE0UyoO2bvwKORpkpLzdk/ehtDNqf061T
+	DUGnJ6Fawud+FbPm7nWwUjvoVw5oMUpIcuLY//5KWzm5LBiFNkrvxtmuiHIqJven1Xtb0jCGWsg20
+	gNvRIXoeDYKevlJX+SZy4pkmmHaJ2qINI8GLzKT6TDLYllEh+9ZidZdLWrVGH76GEhSPo3tReAn7+
+	U5Y+Inj1Gh9njsLPymSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sksPA-0000000CNi5-1Wwf;
-	Sun, 01 Sep 2024 21:46:40 +0000
-Received: from gw2.atmark-techno.com ([35.74.137.57])
+	id 1sl1tw-0000000DOFp-080M;
+	Mon, 02 Sep 2024 07:55:04 +0000
+Received: from mail-japaneastazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c405::1] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sksP7-0000000CNhQ-2Ret
-	for linux-phy@lists.infradead.org;
-	Sun, 01 Sep 2024 21:46:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=atmark-techno.com;
-	s=gw2_bookworm; t=1725227193;
-	bh=Fc6jdlhhqUfBDtoCkcjqQlwdvZp0Mm902RhOUtVCNUw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uHEuHBYxnOWvOuwjEgpbzVB6TLglQZwatK8gNUWPP3Lv2YZp3E+kRcHl3WjL/ph2I
-	 Fde+aUPI+Tk/noYZ2cC7nQ4HF+l2LR8X3UIOsHZSOnlc9ch7MNEpUFW5w39dkmdlFn
-	 MGDDXMdteqrcHhBPw6mMfs/EKRf0Y6RklfUMuqNXwPUu0D0GUbL2cUYuLHnzNRpvHl
-	 ohA98+VkvvJCYcoDsYciTiH3if+NCgCeJxphmoxASbUBLifZu9AYVj0VyqcMLx0WOV
-	 W7UA2KhVFLDQsAcCrth7KDq/Xds7fjPrnp4Hcc/Ec+K7uqzadw/wzBZ8bi1AyAvmO/
-	 vsK/KE+E+MvJg==
-Received: from gw2.atmark-techno.com (localhost [127.0.0.1])
-	by gw2.atmark-techno.com (Postfix) with ESMTP id DA1E49A5
-	for <linux-phy@lists.infradead.org>; Mon,  2 Sep 2024 06:46:33 +0900 (JST)
-Authentication-Results: gw2.atmark-techno.com;
-	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=WxjWQFlN;
-	dkim-atps=neutral
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by gw2.atmark-techno.com (Postfix) with ESMTPS id DA9BD105
-	for <linux-phy@lists.infradead.org>; Mon,  2 Sep 2024 06:46:31 +0900 (JST)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-2d8e59fcd4bso228371a91.1
-        for <linux-phy@lists.infradead.org>; Sun, 01 Sep 2024 14:46:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=atmark-techno.com; s=google; t=1725227191; x=1725831991; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=aqoR1K0s1LZWBnxVYuck4KdhPBlvgzt5rveXqQj0UWY=;
-        b=WxjWQFlN8EvZj44Vv2sQDHEz77cUCoQq5xvExmW9xQybeC6JGrx5btI77p6flstCcb
-         gKcQpTQ2T+Hjxa8TL85QT7NATvVBjiZAFd+LhYBmWG0IWrDKJq0h8pAKqQIztUR5Bo/8
-         hIXKWg2zcvelXtcfC7EKYZq8VpR2p36Ym/xuRnAJCxpJ5Ox/3X8fBrWnUd+5X3wyRkkH
-         xphe/SPojtDZRLmsOPsX3L9H1wwV3nuw3ODaJPT7itjzFaGvQLVpBNUk57elE2GkgZMD
-         3Ht7ukmegjUeTxOD6xdfEnjd305SF5SFC7a4EpuNht6KtMAQyWCIQz/V3ulhIFGNyodo
-         aMOw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725227191; x=1725831991;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=aqoR1K0s1LZWBnxVYuck4KdhPBlvgzt5rveXqQj0UWY=;
-        b=PjYII5ZbNDMt7rCPH6cFqVyfDXyb83Kjg0ZtWS0m069Q0V8LZSzR+gDqiV3Fol+X6S
-         H16aj3kYv/7e9g/tTdL3vYOPn1a5FtOmIW3sYDK01v296lC2U0biT1e92rdhoNPKxyB+
-         ZvO45EhHQMwb7/WNXy7TUD/RHE/wyhXYIwtlGy/TGXz7X/jSOy9JZ4+52WhLIardyISG
-         kFMROVedW8HHhEe/B3Jr5cYQF66M41ots8Wv1ifSP0qSugkvb/T+4xB6DqYxKVeuOL+7
-         qyi2+enA5ftc8RNTTyoM4eMbCbS0bzKtO7bUkaXTsFHMhwKF7R5DvBdASSQ8kAB8zHct
-         cJbg==
-X-Gm-Message-State: AOJu0Yy98A6kWWMq+kHdBeK9inusPMiBd9/U+DUWkyBCWF9WiVrPv9qL
-	59zceOfAZMqO9ujEpVy8TgNS8Rxqd9ON1xFqBkpBbrBaJ2vQt62D00drspi6bt2OfoTCd1z5mTI
-	TMriIsvR4zjp8Vhw76ZPSzmuljcZnaZ23sz/75KxnHO8FgpwSah9X5VSMb8R7ooO3NJrc8Dm3
-X-Received: by 2002:a17:90a:9293:b0:2d8:bbf7:bb7b with SMTP id 98e67ed59e1d1-2d8bbf7bc18mr2942119a91.30.1725227190801;
-        Sun, 01 Sep 2024 14:46:30 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEMVGk1ZWIrg1GcUpcuZvKPNFbQMzrfBBFDeKfNRBY77z9dAbgRFAXRyGZG/Ha2mCmFixr2Yw==
-X-Received: by 2002:a17:90a:9293:b0:2d8:bbf7:bb7b with SMTP id 98e67ed59e1d1-2d8bbf7bc18mr2942097a91.30.1725227190321;
-        Sun, 01 Sep 2024 14:46:30 -0700 (PDT)
-Received: from pc-0182.atmarktech (35.112.198.104.bc.googleusercontent.com. [104.198.112.35])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2d85b3b95cesm7632101a91.53.2024.09.01.14.46.29
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 01 Sep 2024 14:46:29 -0700 (PDT)
-Received: from martinet by pc-0182.atmarktech with local (Exim 4.96)
-	(envelope-from <martinet@pc-zest>)
-	id 1sksOy-002Ekh-1I;
-	Mon, 02 Sep 2024 06:46:28 +0900
-Date: Mon, 2 Sep 2024 06:46:18 +0900
-From: Dominique Martinet <dominique.martinet@atmark-techno.com>
-To: Adam Ford <aford173@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
-	frieder.schrempf@kontron.de, aford@beaconembedded.com,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
-	Lucas Stach <l.stach@pengutronix.de>, linux-kernel@vger.kernel.org,
-	Makoto Sato <makoto.sato@atmark-techno.com>
-Subject: Re: [RFC V3 3/3] phy: freescale: fsl-samsung-hdmi: Support dynamic
- integer
-Message-ID: <ZtTgqj3kBEc8sAjE@atmark-techno.com>
-References: <20240830032442.226031-1-aford173@gmail.com>
- <20240830032442.226031-3-aford173@gmail.com>
- <ZtFfBs4HEShmJKsi@atmark-techno.com>
- <CAHCN7x+xy+Y6o++Y5NdZaBJUsHV9Ru_2PwuH6G-2oz1juO=+rQ@mail.gmail.com>
+	id 1sl1tI-0000000DO3G-343E;
+	Mon, 02 Sep 2024 07:54:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Fp46+oc4rcjbg/dP06zUPxh4ff7AI8FvvN6QtLDIEf3/VIm5SrCFZk6AnZl5t1l6W1QW4c5Ay37zHO8xyN/eJhzv5k6EFecG08zLX61JU1mrW6JGM7siNDm0Iw2aCT3nG4oVIGxB7X7MlWjnMrOj+Plgur+fSdnoXi6aPe/JNT7gr2JiRQ4+ZEMn3CpFQk/29M+8vGPajEYSi/oHg0NyZdvMwGvh+m0gQB5m7ht9mB498tyn3T+uhBIa/AM10VZmKb7iXyAYJFAa+IgSAqJj6TckX61UHPCKWGnArFVm/lDlD6Npgwr+4b441XKJNCy0Enapu/fmRD9eS4sl+coJIA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=V7zKAseahiwC5XSZB+kVh8DIDGUDMabcburxif6c/VE=;
+ b=wWbgqgM7qJovNHts7Gi428zZJ+WfcLzdD7XYVu9BGooi3hpneNt76APfkkYFSyGBAYCXLXUJaLaN83WS1h6PmKTkOVBfWJNR7NOp5Rxdf6WVYn6lCVcScAq0wL3/gwXaOlsS7XWeJ/8c1tgtEyoYdo4rPQKMR9TO1lR7eGZzBwAWk04TjXxeJxj4fmlNFlVSOHs3Hvg4fBg8l+hl0frAigeqVgPTNUbm37jhtOp5o3W23PXK9SXFgu3rQiLmPmGr6p5SSpz56AIOwjEkf5CkXY7fGLCNFgj86M2/Eps0lywCMpTME4FuxZSlqXRmoVxNOiLGGhdZuFjED0ahmkGJrQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V7zKAseahiwC5XSZB+kVh8DIDGUDMabcburxif6c/VE=;
+ b=UHuTEmrxqLxzdmC2vWxBl2Ui1pk/IMovc2pLLiSTDD9LT3aybcVDAerswcMSdGo+WW8psMr7aZQAxLl14HWLoryV87fURhTB2dpkwukFjrio9Hmc0CWZN+fUlyJGDNH65lLtw2m8n0DuoTo6mswoh26ygDMttWtKXZWWwsRv8Eg=
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
+ by TY3PR01MB10110.jpnprd01.prod.outlook.com (2603:1096:400:1d9::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.24; Mon, 2 Sep
+ 2024 07:54:09 +0000
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1%6]) with mapi id 15.20.7918.024; Mon, 2 Sep 2024
+ 07:54:09 +0000
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, Ulf Hansson
+	<ulf.hansson@linaro.org>
+CC: "vkoul@kernel.org" <vkoul@kernel.org>, "kishon@kernel.org"
+	<kishon@kernel.org>, "robh@kernel.org" <robh@kernel.org>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "conor+dt@kernel.org"
+	<conor+dt@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"geert+renesas@glider.be" <geert+renesas@glider.be>, "magnus.damm@gmail.com"
+	<magnus.damm@gmail.com>, "gregkh@linuxfoundation.org"
+	<gregkh@linuxfoundation.org>, "mturquette@baylibre.com"
+	<mturquette@baylibre.com>, "sboyd@kernel.org" <sboyd@kernel.org>, Yoshihiro
+ Shimoda <yoshihiro.shimoda.uh@renesas.com>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-renesas-soc@vger.kernel.org"
+	<linux-renesas-soc@vger.kernel.org>, "linux-usb@vger.kernel.org"
+	<linux-usb@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
+	<linux-clk@vger.kernel.org>, "linux-pm@vger.kernel.org"
+	<linux-pm@vger.kernel.org>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: RE: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+Thread-Topic: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+Thread-Index: AQHa9KfrLpE8CCuWg0uaPyaAgZR3ArI+ZjUAgAEcCoCAAVgqEIADVdkw
+Date: Mon, 2 Sep 2024 07:54:09 +0000
+Message-ID: <TY3PR01MB113467275C519B729FCAB1ACB86922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
+ <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
+ <TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+In-Reply-To: <TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TY3PR01MB10110:EE_
+x-ms-office365-filtering-correlation-id: 75b2b442-2da9-43cf-8329-08dccb246d9d
+x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|366016|38070700018;
+x-microsoft-antispam-message-info: =?utf-8?B?QkdOcVBUd3UzeGRsZzZjaUpucEM3UjQ3NWo5cUhSTlU3NUdJK1NlMHJTRmFM?=
+ =?utf-8?B?RlNTaXVTLzEwMjZkVUE5VC83U0c5YzhodVduSVNDeVZ4OGtyYmlTYVdWbHBS?=
+ =?utf-8?B?VWhaM2wvSm1jOU92Z1Y1QmxvTVQ2ZXdzT2VOdldYNkJvOTNTdkxHaFNqZFNW?=
+ =?utf-8?B?YlNPU0VxRlRUTGhmR3dUUVZYQ2t6djRDTnlYMEc2NkFtbVNZWjl4Vk9WOXFT?=
+ =?utf-8?B?c3AxZjBxQ1RnM29MOGk3ZS9sSjJBODlLSHBUdk1MMEtkaE1KRFRWN3lFbWpV?=
+ =?utf-8?B?ditkQW5aU041UkllYVdBbjFiWGtaY3JGdFR2dG1PWmlzR2YxQlBXaldZcUNm?=
+ =?utf-8?B?bHMrOGF2c2R2ZVladWFXdS92QnVURVVZTWJCUkoxaGptcjVRWmg2ZWM4TkJW?=
+ =?utf-8?B?OUhTUXVsVmFxc2pBOTNxTmRvVi90T09kMDBPQTZDaE1tMlpmWFp1VkFkYVFX?=
+ =?utf-8?B?Ly9aRWd3NmN0Nk9FUlhNVmFrZVEzNHdaTUVzRWhqek93WSsxbGpRUDVQb2xt?=
+ =?utf-8?B?SUQ5WGgxYWQvcFJIWGlJUmovVFkvOTZ1RUlYMW02ZndvL3M1RWFDRFM1UFIx?=
+ =?utf-8?B?WnZoUUhqT0JSUXdDZC9wYWdMTWYyN0I3eVIyU2tsdVdyMDU1OUd2YzBYTldw?=
+ =?utf-8?B?UjkzNXNoSncvWk9GSEd1M3JTMXNwVis0WHlBTTRsUGFrK0Q1MittbkdWcXll?=
+ =?utf-8?B?T3NJV2s4TTBGRWw0dzZVU1lkeEE0VUlvbERVa1RUSW1ZUGUyb0xtUE52K0Yv?=
+ =?utf-8?B?RVRKM00zaWlFU0hMS0ozaUtYVmlLbzRER0NUcm1YRGlDaDlRL0lycGNsbmJs?=
+ =?utf-8?B?QS9hZHVHcWQwMVhGMWlWeFY1RUVZRmZ2WVRrbXRydDhXWW1hRFA4WEU4UnRj?=
+ =?utf-8?B?aWViL3BBMDBNM1UwT1ZDSHYreVNFblJ2Z3hBMUQ1eFJ6WDVGWEtJRkdYNVc1?=
+ =?utf-8?B?a211K3BFNWw0ZThSRGhRVWdoaUhwVkt6bWNMVXBHVkFoQ0NvRlR3QjhUWFFi?=
+ =?utf-8?B?OUNuakJiZ2VMdFJBRlhaNXd4eDZ5TWU5R3Joelp5d3FjVm5PQjZWM1Z0Ny9J?=
+ =?utf-8?B?SHMvUmxDRkplYlUvWlVjLzZRRzMvTFUxNUNsYUNYV3FUUGgyZkgyc2h0STZn?=
+ =?utf-8?B?WGZKWGRCMHhFbjFTbWJCcXVGZ3dxVG9GRzE1S3NDVTNnNVJiSS9CQjBHblU1?=
+ =?utf-8?B?Q3RReWt5a0pHdHQ3Z3djd25Db3dQMVI5b3o3RUdXdTJDK1FnckN1Q21mTjNM?=
+ =?utf-8?B?bnAzMmJvaWV0R3ZYN3hLeVVRdmlreE5qU0xVQVRlTE5MclZlOXZ1T3ZnQStK?=
+ =?utf-8?B?dzVyMUM3MmpqaXoyTVI4cGpPZnVLMkI2RmNPdkpJbG9UeFR5dXJvNzhIMzBv?=
+ =?utf-8?B?Qm9EMmRoUnB0eTJLZUxad25zZG1WL3B2R3RzWnBndGx5THlCMmE2TFNKV1M3?=
+ =?utf-8?B?T3M0YzE5dTlENHdSSFlOUHpXWTB2MHRnWlVrdUQ5MU9SMS8yMDFLZlY0RnJv?=
+ =?utf-8?B?WEVnZm0zelZUbXpDaFBpd1d6ZHp3bmFremo4SVZyckxFZ0IyZlM2SE9sUjRP?=
+ =?utf-8?B?bGI5RllHTlk2NGE5cTZEWE9yTWlFVFhlb2V1UEY0WFN6MkdFY3VuaUZldE91?=
+ =?utf-8?B?L2g0NjFYTVRHajQ4aGdMRkM0YUJZZXo5bGlGSDY5ckMxLzlETFBtUWJjVVlM?=
+ =?utf-8?B?K2NxOGE5WHA3b3VjaDJ5UEI1TkttODE5N291L3VZNVI4cjVKaStYbjNEZm16?=
+ =?utf-8?B?TkNkWE1rK08vNVYzOGQ0M0RDbVowOWZ2UWxPb3luVm1DMkcwRkNOSzRBRDhP?=
+ =?utf-8?B?aVlndjVkL3FGSzNqUHR1aStXb1FXTVVRalFpSTlxbnpmcllneWJuL281cDhY?=
+ =?utf-8?B?NlFnZ0lMcWJIdmxQWFlRYnpFb2RIZEpHaEVkRzdUVGFSaEE9PQ==?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(366016)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?eHFoUCtsdVZGbVdoQ1VvWXdkdW5Qbk5rWTVCdmdNYWNWWHM3ZWZaTU5qRXB0?=
+ =?utf-8?B?RVJDQkFia2NHL1lleU1MRWk1YlVlT0dTQ3hLdTEwdnpDcmZqdExvTktrQlFo?=
+ =?utf-8?B?UTMyaGZ0c256TTFNaFhSc3liWXZkSzZKRm5yUThHRTd3MGJ5b28zQ2ROQTA5?=
+ =?utf-8?B?NWwwMDBlcjBDeDNHTUFNSzNZVFMzbkRYdTBPMjJLTHE0SGgxcmdrallUY1BU?=
+ =?utf-8?B?RW5SRXcxL2FLM0dwS2hoenVidVBVaFdKOGtMWVhSeUpYUU1LSmZMb1FlL09X?=
+ =?utf-8?B?ZlhveElvTXZWMGJIeFpaZ3BobFdQYkp6Ykl4RDlBT0QyZGVoREpvcDJFT1A1?=
+ =?utf-8?B?RVdtekFuL3l2Q1VJTFk0VGFaTHlLUnF0eVNKTzliakxXRWVscUdFV1pITEJO?=
+ =?utf-8?B?UmtxUVV0dkd5VDVlaG5EbXNJUG0xcW1qMzVzdWxiTWtyMTdhTkhteThVbUxO?=
+ =?utf-8?B?K3hyKzFWTUU1MnJEZCtxNzk1OXVHUEZRQ0tzWXZOcFZnYmtlMW45WkU4UGxq?=
+ =?utf-8?B?VDJGN0RxdXBkYWdzYTRCdzNlUUtCdHdZbVREWk1aKzZBc1hTUENjdjJwV0Q5?=
+ =?utf-8?B?aUI1WEJLUG5mTkRwZGlFSkt4WWd5djErQS9BUTNCVzFYL29GWGFUY0lrL2pZ?=
+ =?utf-8?B?MnBrRzJ1c0JBbjNmemp6WUdzWXI2VUVmb0ZXanFaNGYzamNyNzkrczVPemRm?=
+ =?utf-8?B?UGxZT2pmRDJMY1hwb28velAvRjFjV1FQdFRMVkJQR1YwSldxbkgrL3ArRkpZ?=
+ =?utf-8?B?UnY1VHRHV2wrZUZ0YmZtR0U3bUxNckVXRk9SR0tISEEwZnZYODYxYjY2M1FK?=
+ =?utf-8?B?cHE0dVRJLzk5TWRPZ1BBdmZVTHl3RnVRbTBQdVZQR1dXMVVCRU1yQjE2SHBi?=
+ =?utf-8?B?YU1vUFVUb1Nzb21za0VFT2Vtbkwvc0NOVU04emw3eVlzcUcrdnVQYnpWRkpC?=
+ =?utf-8?B?cS9PWldwbmZ0amNmRWFzU25rM29tMVN0bmZTbUJGYzVDeUYxb2FKekFMY2ds?=
+ =?utf-8?B?YTVaSlZyMld6dndaOHVIV3VsU091Z3puL3FjY1dITUZRSXlJVUFmSFBGZUN2?=
+ =?utf-8?B?K3lKYmsvYmRydGFTQXR1Z05Fc1ZJalArcFkxUFgvSzloVFA5WGM3QktmSU44?=
+ =?utf-8?B?Nk45Umo2V003STZHTnFoM1FHNUwxa0lUTnh6R0wyNTQ1WEl1SW9YSnh3S21D?=
+ =?utf-8?B?MTZHVEI0ZEcxeFgxbnRndEYrbDgvWFA0OVRHREZDVkZvNXlpMUoxZm94R3JD?=
+ =?utf-8?B?RlcwemdvY25NaHY1dGFpMHpzTVRCTG1HTnYwRmR0ZVBjbWc3U3o2L3FCQ0J1?=
+ =?utf-8?B?S2VRaHFjdXFudDRZQTY0WUhGUUo1K05IaUx1TE9kcnc1UmJXa0JzTi9Qa0Ew?=
+ =?utf-8?B?SzlCeUhDUzBVN2cwdXhOTkM5a2h3K2FtNFg3ei8xK3RhbGpEZGJlR1JXQ1Rs?=
+ =?utf-8?B?dUtBZ216S29CNWdsdERkRFBIaHZlMVp3M3V5cWdmZysyMkUyMEV6a25sbWlI?=
+ =?utf-8?B?YWs0SXN1cklMUEYxT1grYlllTk0xSjRrVUh6eE5ONkVwT1puL1FZaWtONG9y?=
+ =?utf-8?B?UUpSVGFOSHQyYk4rSE5xMHIyOEZ3R2tPUDJrT204eDV2dTgxa01qWUlTZHZL?=
+ =?utf-8?B?Q1JmQnp3bUlUOHlLSks2MGVmVlpCYXU3dk9mNDB3bGdaWWQyWmV0Qk15akZH?=
+ =?utf-8?B?WDl6Y3ZXSzNkcGdqSEVIWGhjRjIxUk01MnNiSFgvQTdPWHdZbkpwekhYMGdi?=
+ =?utf-8?B?VHd5TGNYd25maG00UUR6MWpoVFovUUhOOVJKb0U5eFVjZEgrMm5ZTVNOSERR?=
+ =?utf-8?B?MThaS1RhNkYwdlhWYXI5MFViRy8vTFZxKytVZXovcTNkRlJLakQwWjA0QkJp?=
+ =?utf-8?B?ZGs5bEMrS0cveVpQTkNzN015SkMxWjZJdUp1b3NlYlZmakhjdVNsa2JNVmZ5?=
+ =?utf-8?B?QVk0ZzhtcEczck5NS2RZR2RyRFRoWUw1UnVISkIrWU93ZUd0dzMwaEdwZnN0?=
+ =?utf-8?B?RHlYalBoeVFDSldpd1ZmNzdvbHBVazA2Y1BLaGhNbnB2Mlo1ZXFOaFUzVDZ3?=
+ =?utf-8?B?a0t3a1JpNUZMTms5b21pRmZWMnJkMk4xZHFsZk5VTHRoK28rby9nOVM5OXNU?=
+ =?utf-8?B?UC9DaE1Lc2dSYk9YNC80TWhqRGJYRXpvR2dNcGpzaW84RE9aazAwZ2o4MU1t?=
+ =?utf-8?B?MWc9PQ==?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHCN7x+xy+Y6o++Y5NdZaBJUsHV9Ru_2PwuH6G-2oz1juO=+rQ@mail.gmail.com>
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 75b2b442-2da9-43cf-8329-08dccb246d9d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Sep 2024 07:54:09.7835
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: xY77QcpNnolaEE8uPHIh4VtOQXDLfCT7KXMUuibYV2daIxcHFXLSWoNVE9IRMHKWmiUoGZNSHJB/ITIHR3rQZ1SJSv2UUyKj2/qnG3NzGik=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY3PR01MB10110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240901_144637_762382_D5AF0FC0 
-X-CRM114-Status: GOOD (  37.66  )
+X-CRM114-CacheID: sfid-20240902_005425_139401_A6F619DC 
+X-CRM114-Status: GOOD (  33.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,86 +195,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Adam Ford wrote on Fri, Aug 30, 2024 at 10:04:41AM -0500:
-> > So, as far as I'm concerned I'd be happy to move forward with that and
-> > will backport this to our tree/remove our kludged values, would "just"
-> > need to properly pick the closest value if no exact match instead of
-> > always falling back to the table (or just remove the table altogether if
-> > we can test a few monitors?)
+Hi Claudiu,
+
+> -----Original Message-----
+> From: Biju Das
+> Sent: Saturday, August 31, 2024 6:14 AM
+> Subject: RE: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
 > 
-> I took that step on my local build machine to remove the integer
-> divider stuff from the LUT since it can be found automatically.  I
-> haven't committed them yet, but I'll likely add it to the series once
-> submit it without the RFC.
+> Hi Claudiu,
 > 
-> I am also likely to update the rounding function to look at the delta
-> between the closest LUT clock value and the closest integer clock
-> value and use whichever is closest to the desired value.
-
-Sounds good, thanks!
-
-> > I'd change cur_cfg from pointer to the struct itself like this (partial
-> > patch that probably won't even apply on your branch:)
-> > ----
-> > diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> > index 9048cdc760c2..d7124604819c 100644
-> > --- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> > +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-> > @@ -402,7 +402,7 @@ struct fsl_samsung_hdmi_phy {
+> > -----Original Message-----
+> > From: claudiu beznea <claudiu.beznea@tuxon.dev>
+> > Sent: Friday, August 30, 2024 9:23 AM
+> > Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas
+> > RZ/G3S SoC
 > >
-> >         /* clk provider */
-> >         struct clk_hw hw;
-> > -       const struct phy_config *cur_cfg;
-> > +       struct phy_config cur_cfg;
-> >  };
+> > Hi, Ulf,
 > >
-> >  static inline struct fsl_samsung_hdmi_phy *
-> > @@ -562,9 +562,9 @@ static int phy_clk_set_rate(struct clk_hw *hw,
-> >         if (i < 0)
-> >                 return -EINVAL;
+> > On 29.08.2024 18:26, Ulf Hansson wrote:
+> > > On Thu, 22 Aug 2024 at 17:28, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+> > >>
+> > >> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> > >>
+> > >> Hi,
+> > >>
+> > >> Series adds initial USB support for the Renesas RZ/G3S SoC.
+> > >>
+> > >> Series is split as follows:
+> > >>
+> > >> - patch 01/16           - add clock reset and power domain support for USB
+> > >> - patch 02-04/16        - add reset control support for a USB signal
+> > >>                           that need to be controlled before/after
+> > >>                           the power to USB area is turned on/off.
+> > >>
+> > >>                           Philipp, Ulf, Geert, all,
+> > >>
+> > >>                           I detailed my approach for this in patch
+> > >>                           04/16, please have a look and let me know
+> > >>                           your input.
+> > >
+> > > I have looked briefly. Your suggested approach may work, but I have
+> > > a few thoughts, see below.
+> > >
+> > > If I understand correctly, it is the consumer driver for the device
+> > > that is attached to the USB power domain that becomes responsible
+> > > for asserting/de-asserting this new signal. Right?
 > >
-> > -       phy->cur_cfg = &phy_pll_cfg[i];
-> > +       phy->cur_cfg = phy_pll_cfg[i];
+> > Right!
 > >
-> > -       return fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
-> > +       return fsl_samsung_hdmi_phy_configure(phy, &phy->cur_cfg);
-> >  }
+> > >
+> > > In this regard, please note that the consumer driver doesn't really
+> > > know when the power domain really gets powered-on/off. Calling
+> > > pm_runtime_get|put*() is dealing with the reference counting. For
+> > > example, a call to pm_runtime_get*() just makes sure that the PM
+> > > domain gets-or-remains powered-on. Could this be a problem from the
+> > > reset-signal point of view?
 > >
-> >  static const struct clk_ops phy_clk_ops = {
-> > ----
+> > It should be safe. From the HW manual I understand the hardware block is something like the
+> following:
 > >
-> > Then you can just set it directly for calculated values.
-> > But conceptually it's the same, just one less indirection.
+> >
+> >                   USB area
+> >          +-------------------------+
+> >          |                         |
+> >          | PHY --->USB controller  |
+> > SYSC --> |  ^                      |
+> >          |  |                      |
+> >          | PHY reset               |
+> >          +-------------------------+
 > 
-> I was thinking about that, but I wasn't sure the impact of
-> un-const-ing would have on the LUT.
+> How USB PWRRDY signal is connected to USB?
 > 
-> Using the extra indirection minimizes the impact of changes to the LUT
-> and how its handled by the compiler.
+> USB block consists of PHY control, PHY, USB HOST and USB OTG Controller IPs.
+> 
+> Is it connected to top level block or connected to each IP's for turning off the USB region power?
+> 
+> ? Or Just PHY (HW manual mentions for AWO, the USB PWRRDY signal->USB PHY PWRRDY signal control)?
 
-The LUT has to stay const, you don't want something modifying it by
-mistake; my suggestion makes cur_cfg a copy which does not need to be
-const and the assignment (`phy->cur_cfg = phy_pll_cfg[i];`) is
-equivalent to a memcpy -- the struct is small enough that the cost of
-copying it if the value didn't match is negligible in my opinion.
+As per the update from HW team,
 
-With that said, I'm not saying you must do this, this just avoids using
-a static value which could be problematic if there are multiple parallel
-uses of the driver, go ahead with whatever you prefer for v4.
-(note my approach doesn't fix the same problem if the driver is
-used twice in parallel.. is it possible that e.g. one kernel thread
-calls phy_clk_set_rate() while another thread checks something about the
-hardware and calls phy_clk_round_rate()? If so neither approach is
-correct and we can't easily skip recomputing, and it'd be better to just
-have a phy_config struct on the stack instead -- on my imx8mp it takes
-4.7us without -O, 0.6us with -O2 to compute; I *think* we can affort to
-recompute every time...)
+"SYS_USB_PWRRDY and SYS_PCIE_RST_RSM_B are used when transition from ALL_ON to AWO (or from AWO to ALL_ON).
 
--- 
-Dominique
+Refer to step 8,9 in Table 41.10 Example Transition Flow Outline from ALL_ON Mode to AWO Mode.
+Refer to step 9,10 in Table 41.11 Example Transition Flow Outline from AWO Mode to ALL_ON Mode.
 
+When turning off USB PHY and PCIe PHY, if they are not controlled, PHY may break."
 
+Do you have any plan to control this power transitions(ALL_ON to AWO and vice versa) in linux? 
 
+Cheers,
+Biju
+ 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
