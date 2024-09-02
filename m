@@ -4,129 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB9F1CD13CF
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Sep 2024 09:19:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D58DBCD13CF
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Sep 2024 10:40:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zb+ZFPzVCCZxdJ7iTV7WZBRXrhYRe9nB/2OBxFMs1TA=; b=bKf+OBjTvCEplX
-	1RAA5+R91eIFhQ8eKU7pIwhVlE0I3M5vXZV52HhvHtcoIjaU5IySa+6c4gXJk6nHHhU/rRC/Wvuqv
-	DiMklOf+z7xLCSK60lkwVt0zimAD7X0jix8GQeWcaVPaWPv/1WmRqvG+qJeM8NesJA6EALEKJ9IzC
-	/i4SEBm4OjY8n269kiUls2tv2sNJ7OxP85fjXpSmZ+Kh/EPooum2v6wy70t1C1Urd2PkKT7AWoxrn
-	Rrtg4lJPa0WOCodvezzvTP6598xXfEnzXt52wUAFIGpZMTRiRkqTmwQ+Isg8JgjeRBZhDMNLKUDns
-	asi/Xp+2vMbGBna7jGqw==;
+	List-Owner; bh=Exaq6mApS6bgMlBEkpSU5s+GjRrwF36zbqhwQHPLPTQ=; b=OjM9VkrM3QR8E7
+	XZGA4tNeYZHHFGrX7ag66P2wfztssn+eZUNKwTaNn1iudK1axxnydYzNQQA3GV0Q0ieYTS796ny9l
+	zkIdDK2kkwNnllCvo5H+jxCOVEVcMifu7iKu5AxmZKFP44VJ91XxiUISd2nr9LWGUL81tLmGbQykQ
+	OHelWJY4UQnEX1wNJP8jdx9V8UE0tDrRRTsXURw2S1PnaeEFj4Dnsvs0EP8NEA2d7yedr1lJQKh/q
+	Rh0a2p1+5LO6XSEGIdAXvnHFBLORaycGB+VGNApnL6yqEPqIyQK9hoqPVHpHrXtMG3MEFur5sXbpO
+	z0TjXECnic50FuNXtHbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sl3E3-0000000Dfiy-1pEk;
-	Mon, 02 Sep 2024 09:19:55 +0000
-Received: from mail-sh0chn02on20710.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::710] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
+	id 1sl4UK-0000000DxSb-2Pt0;
+	Mon, 02 Sep 2024 10:40:48 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sl3E0-0000000DfhD-1TUN;
-	Mon, 02 Sep 2024 09:19:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fBkfgacbTUpZnM6EPnA0zf2M0afssU43qpWQfoXZMiWdBlq8qE3s293QiBDgpJSzlZzr1Oqku+goata2x3HspiT1NPSmdrJkKycvsQvmfYJnQ2oMr8PPflAJxLYZZMhQGBjXLdNaKw6+bq0ThhdHkzWtuqKI68yq1rjo4jVLAttzHuiyjIr25eN+dJEsVnn9DSsDa3UHckakCLoZ6hm61iB+rxS6EFY8dzeJRK0kYFULGh0MApHCJJP2xxM5B860RrAtLXKq6DyWlwNNI1BYBfZZ84ymWgCdi2CjTLspKI8gJMHG7vIaQi91mOcC+pRIisuDcKJ3+bkHP2RKvvnSWQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=r2Qa+BOFe7WUy5JkpJRa9t8lAnu3Cn+nLJZpGLJgLOs=;
- b=W8EaF8UvbNFg8OLHv+uTpsJYGMr7xf6Tnm9wOf0VB4uJD9G/Vuhk77VrFhPmnVMGeA6/zgM01ybIkqsmWiVXWdk/U0f0FzvZeZkwWJOl/bkndzL3NqhAhDJX+nuse8i7MTLxAaSAAeCoJ3mLQG02PSyrthlf2AF5n0wIFiYU3u5gQRhJeVdQAEAYBbuBP4lTpThva3IaRPhOznK93fUjEUrUC65Jd5hjS+2uxaHqDW33AeUr59WYQvSPvIGAwtPh2Rzz24uN4et4R3Kw/+Dtvk48S5it3Hd+sCNEQBis4lHjGNVG1EZpDILNrYvAdjHmMK46PbDZdi2Az7AregFaGg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=starfivetech.com; dmarc=pass action=none
- header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
-Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:25::15) by SHXPR01MB0670.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:26::16) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7897.31; Mon, 2 Sep
- 2024 09:19:29 +0000
-Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
- ([fe80::3f35:8db2:7fdf:9ffb]) by
- SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn ([fe80::3f35:8db2:7fdf:9ffb%5])
- with mapi id 15.20.7897.027; Mon, 2 Sep 2024 09:19:29 +0000
-From: Minda Chen <minda.chen@starfivetech.com>
-To: Conor Dooley <conor@kernel.org>
-CC: Conor Dooley <conor.dooley@microchip.com>, Jan Kiszka
-	<jan.kiszka@siemens.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham
- I <kishon@kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-riscv@lists.infradead.org"
-	<linux-riscv@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, Dan Carpenter <dan.carpenter@linaro.org>, Rob
- Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
- Dooley <conor+dt@kernel.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
- property
-Thread-Topic: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
- property
-Thread-Index: AQHa/Rk2nIla84OkdUyCXgqm7iSxew==
-Date: Mon, 2 Sep 2024 09:19:29 +0000
-Message-ID: <SHXPR01MB08632E50DFE53BE0CFAA99ABE6922@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
-References: <cover.1723472153.git.jan.kiszka@siemens.com>
- <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
- <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
- <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
- <20240813-haiku-pusher-f2fb037a2f49@wendy>
- <SHXPR01MB08633B523DA1F6C5632F6D9DE6802@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
- <20240815-endless-credible-324438d164f4@spud>
-In-Reply-To: <20240815-endless-credible-324438d164f4@spud>
-Accept-Language: en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=starfivetech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SHXPR01MB0863:EE_|SHXPR01MB0670:EE_
-x-ms-office365-filtering-correlation-id: 46d7797e-4a03-477e-cf68-08dccb30591a
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|41320700013|7416014|38070700018;
-x-microsoft-antispam-message-info: KRyB2MiHhMOWuxG10Ns9JxjgOJfTYzlkdBExw4Zpwz9UGmpD0Sz3qZ9LHtinimx963U/ZKxTVKZiy0/nui83fXzig2HZyE2g7Cg2KkGWdtzYSO89xEd5oFTZqEfLrXu7GOtXyUZKV1Ja6zFGiQiwQ1Xj4FJr0RebKq0nhHAPaMKdqA2A+m8X7vHdIXCeJmY5xGjRL5r3eev0P9fjDPtdsD3jtCJtY3LKFrt2kl2Frf9sQBouWyLctoXzFpkrZd6vehzXlXfGo8K8GWeyQ7Z3+h1NxBKS9IZOD44R6JNBzw54GJMYJOpWUVxetvRx87VWGS9X7YBS6UBVdYgb/zQ5OeCStO+eGU6dGKGWpf5bs2BNpOXkgfdHfp8k50UiJLIMxI129uOcgCoDLHUOKbP7+gle0684jBPxtMknqNGk4snly3N5NFAWYPcZh/PELZ/j/6UmCHDl6lNZy/E8QZF1zk+BqhQ3+zGxSYDagaYpLlpSAGN5azTY8mjBHgB201fYNTWNYipIADdoPMZBPLrg6NRvNaCwwMuXY9nSNBm0QfCVIGxd0J/2JruvJUJ4/Y0wEKelu4miaqdelyG0Lwa0A+JLc9j2DawSvAgyHPwAVVAONzxSd/PYqB0DVfGfZQGr
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(41320700013)(7416014)(38070700018);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?NiHY1GGDnak/sDonsOO+5ArVsDIzKKBGWmDoSyAbZTZPRgJHZbUOwDS4PRIf?=
- =?us-ascii?Q?UbgHaCh3RlDTjZilAH6+cBLQtpQWd/3oS5LBCCk3+X/Bb72nDkXZmX0Z4jCE?=
- =?us-ascii?Q?Uoh0ch9H8TrIKlj0X1Ts50yDpHmBs+1JdHb9qPjzJj5J4woEjM67xB+wjJVu?=
- =?us-ascii?Q?4hjjRb3t+81OyKTPIfEfaUftx0pVTn1SN7fRCsliunhyDX5ruLY4hVV/h9oh?=
- =?us-ascii?Q?1sWwnRnf76D3n96WmMqpfw0Stn4liyKPp00lrCyW1YXtcwhVgrY1zEtu7eFB?=
- =?us-ascii?Q?na1bxLrsthddFdHHpIwPZmdoQln2zKwzvCDYuMAArqPYP/V0eNGkOfTPZ/ap?=
- =?us-ascii?Q?uzYOwpOjDiBNFLtfAtlnjSzNL/M4p8wYRsTgQBcLwrWogvioWkUghorajpBZ?=
- =?us-ascii?Q?c0hp6BceDVgiTgg+uXwjuDCw0WyZjx56DuOy6Dp3illviw5yhlviDYp/POVY?=
- =?us-ascii?Q?3J/aOc1H0/FT3r4JA0kCGeHWeOvZVtGrOtXpT/Fw7bK09TGLVwVNAKTYjVJR?=
- =?us-ascii?Q?0PeF5c6/Lq3IOGqRYIYJUgB5KN72Mp23Jy6qUbtUoUKwzdwGJ9RzMGmG57x4?=
- =?us-ascii?Q?zqpGxzxWqZCESNIf1XYRHxZrqsiKe7bPeUI72mc79GDqT/Y8NSBAW2IUxdB0?=
- =?us-ascii?Q?+9OO2jlFckWTLn8jLuG5xCdkkR4gnELkqlAwCFg+nAsnz8CG9TUUoE8VXyjD?=
- =?us-ascii?Q?832jthJHsLXgsA3OKX4F1voYuevj6B9m2AGrvZN2WE0uAupclloFFzy1GLsQ?=
- =?us-ascii?Q?DxxJ2AGazKQIiNEZEq3F8yKOSy9Z/pA8k/8uAXEJvIDdEBtRcHpiHtBBb7WD?=
- =?us-ascii?Q?6pDqgHQbFebkiTgzu2CSYS6x69xJ2cuNlZf4voayauGwno6h2mt4pjSQKjGW?=
- =?us-ascii?Q?syUdSA2f4FkPwvzdbVm5zJsBgzNRkUgtgGEqmybSONvQkBuX98iYG4V1Ry85?=
- =?us-ascii?Q?DX57xDyuIAzlROiSLIRKNIt6MWU9b3VJyzXls4zD+885S0KlpxjrOrL7b8Ne?=
- =?us-ascii?Q?ESYBe/p7GGCk9JewkuA/oYZKVu3qYU/YnSRJDK0YybC2n3dzuPWUgS7ALEYA?=
- =?us-ascii?Q?dkl4OuY7FlHR4NOnHc/h7J/WwVJqHbUOg4zEksnNLL7jVA2SaZ5pHMXaScrF?=
- =?us-ascii?Q?BPEbQwlirHssDCNyG1zX4Dq7y9QNoLpGFGS/wHxtqDLT+Mw3odZXSdrAlPGp?=
- =?us-ascii?Q?UEukJkwNDR8Zy0APBM6HGFCjgc+4SvzJdoPGxL5w8GdUwMXP5uZF5dMI0SAF?=
- =?us-ascii?Q?SgzKMa3KGB2kODf/eocmNuinWPuSXY/4VsFF3Tv/gd38iBHvAImoA2APfG4T?=
- =?us-ascii?Q?96XPtSqBme2SyQs8M/xJ7dYHRDHEb3Gcn+3G1FacLb3QWW2AzE3E8yAaiJ1t?=
- =?us-ascii?Q?xQZEb6AIHvicCwTO4unBfithZSipmg/oXAGt8+hs0tAAKGASNAh+fFRHyTzr?=
- =?us-ascii?Q?bz7gBcNwTM4VBH3ifXXWPNeyLfEwboOhsqKEFpzx3854CfuuOfqRXOwAukPp?=
- =?us-ascii?Q?hrHDjWxobYG2qXGVG8env3g9xi6zo3WkUZhcVHceci5j/Qvl34frLBCzMGmE?=
- =?us-ascii?Q?4oE8+CcE22F0GFrMJmXvBdsQuGwFtMcFyS6CZDnQ?=
+	id 1sl4UI-0000000DxRB-12ID
+	for linux-phy@lists.infradead.org;
+	Mon, 02 Sep 2024 10:40:47 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-42ba9b47f4eso23412365e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 02 Sep 2024 03:40:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1725273645; x=1725878445; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=zWWCgOPtFspoggG7+OMLKZKpBUJ4rokojwECnjcrCcM=;
+        b=cUv1jd3vbTcAswXWODkzilzzCiwLZwFuHVp9hIZ/+1JCqnS5bu0hbvz/hw3GPbzh3K
+         99NajJ+r75Xg3oIYUPrKxAkrk+2/R/IG2so8MilN4r7CHI0GnYBQnX7mcIlEq7VIZCBa
+         qzYRJz5MMRhd73deMPwihkYNo3WF+NDttZBwCxHtomvZMTxgnfjTUBcnl620Begx5c+3
+         Rp/oyJO3qbbqpJOTZBEUYpqoBBaDomEnlljdLLeSxHyXUYhLPVrPrKKlYnVK8iV9qYPa
+         zH2QE8rswQ9nBlK/As+clzwKnEjBzej742kWT6YtOCFAaXcMv4XSVBFsYBR6EP79dCCX
+         4h8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725273645; x=1725878445;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=zWWCgOPtFspoggG7+OMLKZKpBUJ4rokojwECnjcrCcM=;
+        b=jg6ODIDHTc5oedbxOSNMR1uKM7a9bviYYkWb9pSSoN9I/WxNcwUkqUgCcN1qWCcLEJ
+         BlcpM/QzDpKnwJ0WBS4qzzK6PkDtIUhqNi9ExuaHnZQStWN+n3+2f/rkLxAMhrxCmsOE
+         6c2IisN0NqV+kHcejn/PF3r0yNNDSTmClp2jEzrmCkYOZ6O5ikppTkkGw3j4OFBT17cu
+         Jlcg1Q8hOisBovMlGHld3Hr88UvXxMkIJdq3INAaAvOnKV4k11MInLZDfq9Hiwwz9RJJ
+         7SwKXi7+SAz1nSfRbb60aQVXgmGwRFe5ZvX4UwJERXxALT1DIF9pcsfcauw5W+2FmxWy
+         MNHw==
+X-Forwarded-Encrypted: i=1; AJvYcCV6GxjS1q7CD1qlhm2YXsgMUkqH2emdZ9HErZE4Qqivhgnev49rJpWMAMF7CtCYAleRmT89y4XcVV4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyohXj9CvyLs0Ygbds/PptFzwCsWe7HvyIbcs+tAQ4b0C+YagAe
+	GdPSeaJ7hdnV/OXceNzhg72mqai295rMgG4CerPFBiOMgYci9Q6qhuQ4BwAq1nE=
+X-Google-Smtp-Source: AGHT+IEniJ2zOfbNHplbZjwpzuwiNjNlpRHzMFPmgRBRzmpJXPHJZQY3Y0Tn4zQKdT5Es5pJWppmSw==
+X-Received: by 2002:a05:600c:1c18:b0:424:a7f1:ba2 with SMTP id 5b1f17b1804b1-42bb4e9f61bmr76021345e9.17.1725273644573;
+        Mon, 02 Sep 2024 03:40:44 -0700 (PDT)
+Received: from [192.168.50.4] ([82.78.167.144])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-42bbc127ec5sm105407055e9.19.2024.09.02.03.40.42
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 02 Sep 2024 03:40:44 -0700 (PDT)
+Message-ID: <35dc7414-f5bd-4ed4-bfa1-f723f4f0078c@tuxon.dev>
+Date: Mon, 2 Sep 2024 13:40:41 +0300
 MIME-Version: 1.0
-X-OriginatorOrg: starfivetech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
-X-MS-Exchange-CrossTenant-Network-Message-Id: 46d7797e-4a03-477e-cf68-08dccb30591a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Sep 2024 09:19:29.3158
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8NsRkzD1LTDQ7VaZA+kGUyeowrirOg3/GaERVTpl8IpuYOWtFn9c/tslyKNGhZw35mOh/kQ5j1rCg1K1xBg0vMHEdzMDphMk1RvEnXZFgAw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SHXPR01MB0670
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+Content-Language: en-US
+To: Biju Das <biju.das.jz@bp.renesas.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>
+Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
+ "kishon@kernel.org" <kishon@kernel.org>, "robh@kernel.org"
+ <robh@kernel.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+ "conor+dt@kernel.org" <conor+dt@kernel.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
+ <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
+ <TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <TY3PR01MB113467275C519B729FCAB1ACB86922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <5556d176-cca7-492c-ba21-48256d5d6338@tuxon.dev>
+ <TY3PR01MB113464D53083F4C8A5DBBA36586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <590a4fb2-24b2-432b-92db-534c5a52ed0b@tuxon.dev>
+ <TY3PR01MB11346505565B81AD2894E035586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+From: claudiu beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <TY3PR01MB11346505565B81AD2894E035586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240902_021952_469972_ED5E870F 
-X-CRM114-Status: GOOD (  36.79  )
+X-CRM114-CacheID: sfid-20240902_034046_326721_FCE5CE25 
+X-CRM114-Status: GOOD (  15.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,87 +124,61 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-> 
-> On Thu, Aug 15, 2024 at 10:33:55AM +0000, Minda Chen wrote:
-> >
-> >
-> > >
-> > > On Tue, Aug 13, 2024 at 07:31:50AM +0200, Jan Kiszka wrote:
-> > > > On 12.08.24 17:55, Conor Dooley wrote:
-> > > > > On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
-> > > > >> From: Jan Kiszka <jan.kiszka@siemens.com>
-> > > > >>
-> > > > >> Analogously to the PCI PHY, access to sys_syscon is needed to
-> > > > >> connect the USB PHY to its controller.
-> > > > >>
-> > > > >> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> > > > >> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> > > > >> ---
-> > > > >> CC: Rob Herring <robh@kernel.org>
-> > > > >> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > > > >> CC: Conor Dooley <conor+dt@kernel.org>
-> > > > >> ---
-> > > > >>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11
-> > > +++++++++++
-> > > > >>  1 file changed, 11 insertions(+)
-> > > > >>
-> > > > >> diff --git
-> > > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > > >> .yam
-> > > > >> l
-> > > > >> b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > > >> .yam l index 269e9f9f12b6..eaf0050c6f17 100644
-> > > > >> ---
-> > > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > > >> .yam
-> > > > >> l
-> > > > >> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb
-> > > > >> +++ -phy
-> > > > >> +++ .yaml
-> > > > >> @@ -19,6 +19,16 @@ properties:
-> > > > >>    "#phy-cells":
-> > > > >>      const: 0
-> > > > >>
-> > > > >> +  starfive,sys-syscon:
-> > > > >> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> > > > >> +    items:
-> > > > >> +      - items:
-> > > > >> +          - description: phandle to System Register Controller
-> > > sys_syscon node.
-> > > > >> +          - description: PHY connect offset of
-> > > SYS_SYSCONSAIF__SYSCFG register for USB PHY.
-> > > > >
-> > > > > Why is having a new property for this required? The devicetree
-> > > > > only has a single usb phy, so isn't it sufficient to look up the
-> > > > > syscon by compatible, rather than via phandle + offset?
-> > > > >
-> > > >
-> > > > I didn't design this, I just copied it from
-> > > > starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither
-> > > > sure we want to change that anymore nor deviate in the pattern here.
-> > >
-> > > To be honest, I think some of the other users of phandle + offset on
-> > > this soc were just copy-pasted without thinking about whether or not they
-> were required too.
-> > > This one seems like it should just be a lookup by compatible in the
-> > > driver instead of by phandle. As a bonus, it will work with existing
-> > > devicetrees - whereas your current implementation will fail to probe
-> > > on systems that have the old devicetree, a regression for systems
-> > > running with that devicetree and downstream firmware.
-> > >
-> > > Cheers,
-> > > Conor.
-> > >
-> > Hi Conor
-> > I know you would like to put the offset value to the code, Just set syscon in dts.
-> > Just like pcie-starfive.c. right?
-> 
-> No, not quite. That still uses a phandle lookup, I was talking about using
-> syscon_regmap_lookup_by_compatible().
+On 02.09.2024 12:18, Biju Das wrote:
+>>>>> Do you have any plan to control this power transitions(ALL_ON to AWO and vice versa) in linux?
+>>>> As you know, the RZ/G3S USB PM code is already prepared. This is also
+>>>> configuring these signals when going to suspend/exiting from resume.
+>>>> W/o configuring properly these signals the USB is not working after a suspend/resume cycle.
+>>> One option is to handle SYSC USB PWRRDY signal in TF-A, if you plan to handle system transitions
+>> there??
+>>
+>> As I mentioned, the settings in these registers may be changed by intermediary booting applications.
+>> Depending on that, Linux need to control it also on probe for USB to work (it should be the same with
+>> PCIe, these signals seems similar from HW manual description).
+> You mean system transition settings will be override by U-boot, so Linux needs to restore it back??
 
-Okay. Using syscon_regmap_lookup_by_compatible() can just modify the driver code only.
-But syscon_regmap_lookup_by_compatible() is not exist in uboot now. If I want to enable
-CONFIG_OF_UPSTREAM in uboot. I have to add this function in u-boot...
+It was talking about booting...
+
+You proposed to handle SYSC signals from TF-A in a discussion about system
+power transitions:
+
+"One option is to handle SYSC USB PWRRDY signal in TF-A,  if you plan to
+handle system transitions"
+
+(I was guessing the "system transition" statement there refers to power
+states transitions, ALL_ON <-> AWO/VBAT)
+
+and I gave the booting process as a counter example: if we handle it in
+TF-A it may not be enough as these signals might be changed by intermediary
+booting applications (e.g., U-Boot).
+
+To conclude, there are 3 scenarios I see where these signals need to be
+handled:
+1/ booting
+2/ suspend to RAM
+3/ driver unbind/bind
+
+In case of booting: if we have TF-A to set signals there might be
+intermediary booting applications (e.g. U-Boot) that set these signals
+also. If it leaves it in improper state and Linux wants to use USB then the
+USB will not work (if Linux doesn't handle it).
+
+In case of suspend to RAM: as TF-A is the only application in the suspend
+to RAM chain, it should work handling it in TF-A.
+
+In case of unbind/bind: currently we don't know if these signals introduces
+any kind of power saving so asserting/de-asserting them in Linux may be
+useful from this perspective, if any.
+
+Either way, I think Linux should handle all that it can to make the devices
+work and not rely on third party applications.
+
+Thank you,
+Claudiu Beznea
+
+> 
+> Cheers,
+> Biju
 
 -- 
 linux-phy mailing list
