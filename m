@@ -4,89 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56FABC54FC6
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 01:31:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0153BCA101E
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 05:12:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IPHfBTFJzuy6xcLj2nDqtRVwcnxN+oSbRJvvAafsjvw=; b=bv7/ZGEHOg2qMx
-	i9eTAGgqP6EJdMTdXy+KN/fkc9xwzMwWZDzThFJFTJhV8ulcV1Rwd7qiT2BGLF0V6bublNVgVvh9V
-	Wp+ZYx8uUTKzEFk2beayttyPpy4uyClgW3IEYz3wi3yj8motzcdZje8Yms6CBylMycgPRk9azU499
-	zl2oNJGzGHnPcOKWykujHO5FTTXMRX+QqxBYLc4ibuTYhj4WmDea9RTCd6O4372FlNUi+hmiGg2Cz
-	26Gohzs+vPCT/SQIoLCcmmQP2a9XnOImXVl75s8xweQPsbu5VANhGDh3Y1Ndq1MyA5eV76dIyYXQP
-	fKQmI+WNNdZK1WSki81A==;
+	List-Owner; bh=LgwNtUul9VFXVvXKsZH5vdZCM4tQQakNUQC4Iw9xm8A=; b=wGtUA+S9cZBa3f
+	m7n9aRXHD8ura268zHTSK1lcA+9EC/oMNulVrq1d8gbO2eU6dA53l61GH4mzD+0AGfcbUWw+G/Wfp
+	nkKfNVILE3oW3tt/bUbMN6nPJUW7d/TKLyHcUZaj4uiM+SWQLNcFbJ4DNnAbjQJV15KqwbiIeuoOc
+	9QLlB39kjejSjoJvCo6qfo/DpAqPN4Aa/n5Sc5V0FqKUB4tcu9GJJRoK79AnFi+NadTzMJRXeky0z
+	ya4NBAOtXMQlm/myjDrSSA4LZAYdfrjkndgPlACXXhy8xte3xTMBGKfu1KNQvaD336XMUDlAWH/Lr
+	65nHJovvB7ueSCaOulyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slIOg-0000000Fwhz-4BAu;
-	Tue, 03 Sep 2024 01:31:55 +0000
-Received: from mail-io1-xd2a.google.com ([2607:f8b0:4864:20::d2a])
+	id 1slLqX-0000000GLha-2hMY;
+	Tue, 03 Sep 2024 05:12:53 +0000
+Received: from gw2.atmark-techno.com ([35.74.137.57])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slIOd-0000000FwgU-209p
+	id 1slLqU-0000000GLga-2gxi
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Sep 2024 01:31:52 +0000
-Received: by mail-io1-xd2a.google.com with SMTP id ca18e2360f4ac-829e8718502so199453339f.3
-        for <linux-phy@lists.infradead.org>; Mon, 02 Sep 2024 18:31:51 -0700 (PDT)
+	Tue, 03 Sep 2024 05:12:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=atmark-techno.com;
+	s=gw2_bookworm; t=1725340368;
+	bh=wWO2bj7xnGRGn6uerGFHpllvxA3WXeC78hSILIY+YSk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=S/kz9qYF19e6lRc0s5BeqE1b0XD8+U+z3gnaSXb1E2gRdfdfm21Qjio0J/mNFrcHR
+	 dQIswzqH9+KA2KD4ydlW7eh5IqnYe2jh0akLtwU8M4IjzgCZk1fqfuqBkZJ33KpEhk
+	 YDTvcN88PsT2nGzmUZQCylaGT/9q17B+ZRfe87hrwzAteAizgAm+kxTIK3cpskBE50
+	 11OH+CfD/p3eY+ESXeNqlMWQUU7OxO3aNjmsKSVgWv+EiDctFuAteSSFSFBnZq1JES
+	 fkYIHniN4Mdg2k5ZvnspXcv371kTwWXNkY6FpbD7Ulmkb69xbOme47On/TfeZ2TlHc
+	 kWP1jBVdaRyPA==
+Received: from gw2.atmark-techno.com (localhost [127.0.0.1])
+	by gw2.atmark-techno.com (Postfix) with ESMTP id 3E32F9D0
+	for <linux-phy@lists.infradead.org>; Tue,  3 Sep 2024 14:12:48 +0900 (JST)
+Authentication-Results: gw2.atmark-techno.com;
+	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=StcKrLCU;
+	dkim-atps=neutral
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by gw2.atmark-techno.com (Postfix) with ESMTPS id 6B34F9D1
+	for <linux-phy@lists.infradead.org>; Tue,  3 Sep 2024 14:12:46 +0900 (JST)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-2da511a99e1so859840a91.2
+        for <linux-phy@lists.infradead.org>; Mon, 02 Sep 2024 22:12:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1725327110; x=1725931910; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=rjDycFG/gwvOYgM+KYAdbKzrZuoPb1hpign8aj2gA/s=;
-        b=ib4DEbBnuDfe93X/Kvlccf54yL0rY0/2C7LXewUUtw2fCOcKLTi9Nvdyj39c116PXz
-         xUVlTUSoJzfnoYckXitAm4I01VRDOvI5WLT9DOr4LVXsBeDA8IJfFsnkw576kT3BTL/d
-         lNkbX9u3uZHhNrIGFNwnH6XSj66ex01Wg7TG3bSm/V/WcF/7SenzmiSsxgDj8GrvruTy
-         aTy62eL4LFihnf2l9kZLBYfzu1kuY/cefzSCvs14LpuDa2co3psyef3kfT5mtNSsp0ts
-         S+IHWa1tFdkeI/vhGdBju4nUOaX5guajE5xqMBgqDysjXvGxiPD+IHH0METimC6Ru9d0
-         7CAw==
+        d=atmark-techno.com; s=google; t=1725340365; x=1725945165; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=WTVet2hwtDQC+7RYNH41N/xrPAZsrbreOOChXWn2n14=;
+        b=StcKrLCUJ40UO1Ryv9EYYO5JJv9GRJZpBvJhLrCCEO0PAx2Wow8ksiGvPj6k7xajwW
+         2rhnsWVqayFoMh2RBhXVFbw+MbU0Qi/NcwAP+ErzjrtV4YbXvU0KF4QDvS4ZY3mq+XZu
+         oeA/eg4cVBZHlXnCtdd58IEX/JmK6SxPvkoLF3oYLaYQjHyZjYZ1LeWCJOKgLpNUCJUt
+         kQqSnz515kv9GZtYxspRxVzFncoSFgIzCw/D/9RykJcqajKZhysTRd0fNU04WFsmBFKh
+         HXFwRWV+Ea/wYBhopNVUUJI1sS5TS+tiXMERP2trBrdJq7RritLB3FeZGLHPRVmpvH3t
+         wpIA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725327110; x=1725931910;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=rjDycFG/gwvOYgM+KYAdbKzrZuoPb1hpign8aj2gA/s=;
-        b=WGjE2e8tjODKSLjAjIDXhFyJUMhbZz55Sv2zPQzJIDQ5z5e2Bn4qTnT111FxTvBHHF
-         hABGXDIzIOpFbG2O5Vwp3gfgR7jU0rAJn8XqAYbEXfLkQ8qZeZp7sV+FR+x+e2ufGAuO
-         rd1LRLRJOQ7knw3GJ8UaiJ6G7HdakiOgM5mcLz8+iKXjzAb+g5O2IeNYEZC3SqqusIAj
-         kWheCNcgEm2S0JE+n3w6keSADhZkjh/HdnbF8n8Um1GjuM5Y/szrl9buOwadJIVFVYwM
-         Arggqyow5id5qXhbEVofzOP1sraJ3qEh+VfQoIGlB6PAsykprv7PXWfOxojFpGiWgb5R
-         +5Uw==
-X-Gm-Message-State: AOJu0YzyPFBH0Dno+nqWNIgLK5F4ZdOYV8AcI8tgbqzhxqTbDKMby1RW
-	eTtfWF2Qkzs1va8X1pJ/b6qCnWs85Zp9ou3e6WaInS6mywN8qynFn/jwIQ==
-X-Google-Smtp-Source: AGHT+IFBxGp8SaeQqQUz2zloZ4K1h8vgzjf3pkmahMn9NrG4HemfvelUnukoTgxIAlFGA7ZKWawR9A==
-X-Received: by 2002:a05:6e02:1fcc:b0:39f:36f3:196f with SMTP id e9e14a558f8ab-39f378ea649mr163711435ab.4.1725327109783;
-        Mon, 02 Sep 2024 18:31:49 -0700 (PDT)
-Received: from aford-System-Version.lan (c-75-72-166-104.hsd1.mn.comcast.net. [75.72.166.104])
-        by smtp.gmail.com with ESMTPSA id e9e14a558f8ab-39f3b059c32sm28466715ab.75.2024.09.02.18.31.48
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 02 Sep 2024 18:31:49 -0700 (PDT)
-From: Adam Ford <aford173@gmail.com>
-To: linux-phy@lists.infradead.org
-Cc: dominique.martinet@atmark-techno.com,
-	linux-imx@nxp.com,
-	festevam@gmail.com,
-	frieder.schrempf@kontron.de,
-	aford@beaconembedded.com,
-	Sandor.yu@nxp.com,
-	Adam Ford <aford173@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
+        d=1e100.net; s=20230601; t=1725340365; x=1725945165;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=WTVet2hwtDQC+7RYNH41N/xrPAZsrbreOOChXWn2n14=;
+        b=HkbbJWUV7SBUFYIyPiXgc09YZbD399T1kfzJ87tNSi2ZIWY50EsIP5/Pwc9VqYt4KH
+         YRnEbuwOk6On+P+443yBqAzrJLkuvYecxqHLRrCIIaRkwczp4cNY/Ue/GtqUMV11VqJ1
+         5hGqjS1p9EI/2snuS1iDeu+wTjq7dG9lSZI0LnPCiqVWW3oZ7/xm8EjP/97b1NFicQPm
+         EUOoESiru5trf9am0zsbdcrHfq6YZSwx5Gk3CE8OJVfSqhYFLm6LdTVwhULMj+LwdCnV
+         opis/1GUxcxHnubvMtXIr3Hn5B39LGX6TDLjHpK49Duus1X/mQoCXThLhKLtGQNs59Fq
+         qq1A==
+X-Gm-Message-State: AOJu0YyFH1TdWCozqhg4SexI+85aHRSfL+ggLqtg7Ny3YYMBHtKPzwiK
+	QiBKfbkJ1bDalWIFIFGcAkSWMm1tdmTXpyceeObqWAAIUvvBrElcp2fyOeeLV32c7kyAaayyU0r
+	tm+9TUIpt2JERvGf66qYB4mbR9Q+b6fiRZvRUKfiADdxcsqTuV4i80SblFAjtRcm27Iixgd255Z
+	M=
+X-Received: by 2002:a17:90a:51c4:b0:2c2:df58:bb8c with SMTP id 98e67ed59e1d1-2d85619f138mr17306765a91.18.1725340365190;
+        Mon, 02 Sep 2024 22:12:45 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHI/W6ki+54ibKrTj4V308dUfrgyQoxjyaoSQGc5uK59zJxNKhhGRxaLH+SmdhuJ8T3mWPCXQ==
+X-Received: by 2002:a17:90a:51c4:b0:2c2:df58:bb8c with SMTP id 98e67ed59e1d1-2d85619f138mr17306741a91.18.1725340364813;
+        Mon, 02 Sep 2024 22:12:44 -0700 (PDT)
+Received: from pc-0182.atmarktech (145.82.198.104.bc.googleusercontent.com. [104.198.82.145])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2d8445e7faesm12597893a91.16.2024.09.02.22.12.44
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 02 Sep 2024 22:12:44 -0700 (PDT)
+Received: from martinet by pc-0182.atmarktech with local (Exim 4.96)
+	(envelope-from <martinet@pc-zest>)
+	id 1slLqM-003XDw-37;
+	Tue, 03 Sep 2024 14:12:42 +0900
+Date: Tue, 3 Sep 2024 14:12:32 +0900
+From: Dominique Martinet <dominique.martinet@atmark-techno.com>
+To: Adam Ford <aford173@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
+	frieder.schrempf@kontron.de, aford@beaconembedded.com,
+	Sandor.yu@nxp.com, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
 	Marco Felsch <m.felsch@pengutronix.de>,
 	Lucas Stach <l.stach@pengutronix.de>,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH V4 5/5] phy: freescale: fsl-samsung-hdmi:  Remove unnecessary LUT entries
-Date: Mon,  2 Sep 2024 20:30:47 -0500
-Message-ID: <20240903013113.139698-6-aford173@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240903013113.139698-1-aford173@gmail.com>
+	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	linux-kernel@vger.kernel.org,
+	Makoto Sato <makoto.sato@atmark-techno.com>
+Subject: Re: [PATCH V4 4/5] phy: freescale: fsl-samsung-hdmi:  Use closest
+ divider
+Message-ID: <ZtaawD3vb8gmnVmO@atmark-techno.com>
 References: <20240903013113.139698-1-aford173@gmail.com>
+ <20240903013113.139698-5-aford173@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20240903013113.139698-5-aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240902_183151_540940_33CD6486 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20240902_221250_822467_CF2463D0 
+X-CRM114-Status: GOOD (  17.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,212 +127,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The lookup table contains entries which use the integer divider
-instead of just the fractional divider.  Since the set and round
-functions check both the integer divider values and the LUT values,
-it's no longer necessary to keep the integer divder values in the,
-as they are able to by dynamically calcuated.
+Thank you!
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
+Adam Ford wrote on Mon, Sep 02, 2024 at 08:30:46PM -0500:
+> +	/* Calculate the differences and use the closest one */
+> +	delta_frac = (rate - phy_pll_cfg[i].pixclk);
+> +	delta_int = (rate - int_div_clk);
+
+This assumes rate > whatever pixclk was found, that doesn't look true to
+me for the integer calculation (`delta = abs(fout - tmp)` so it looks
+like it can pick a larger value)
+
+For the LUT, the way the lookup works is by picking the closest smaller
+value so this is not a problem, but someone might come fix that later so
+I'd rather just use abs() everywhere for future-proofing
+
+
+That aside it looks good to me, I'll add a 0.5% tolerance patch and test
+this all ASAP (might be a few days); will send the tolerance patch
+properly after testing but for reference it will probably look like
+this:
 ---
- drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 83 +++-----------------
- 1 file changed, 13 insertions(+), 70 deletions(-)
+From 12479386c955a59330232c84f4f856606c3a53e0 Mon Sep 17 00:00:00 2001
+From: Dominique Martinet <dominique.martinet@atmark-techno.com>
+Date: Tue, 3 Sep 2024 13:47:24 +0900
+Subject: [PATCH] drm/bridge: imx8mp-hdmi-tx: allow 0.5% margin with selected clock
 
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-index 0bf526e282a7..7cfad4ed94f3 100644
---- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -60,25 +60,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 23750000,
- 		.pll_div_regs = { 0xd1, 0x50, 0xf1, 0x86, 0x85, 0x80, 0x40 },
--	}, {
--		.pixclk = 24000000,
--		.pll_div_regs = { 0xd1, 0x50, 0xf0, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 24024000,
- 		.pll_div_regs = { 0xd1, 0x50, 0xf1, 0x99, 0x02, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 25175000,
- 		.pll_div_regs = { 0xd1, 0x54, 0xfc, 0xcc, 0x91, 0x80, 0x40 },
--	}, {
--		.pixclk = 25200000,
--		.pll_div_regs = { 0xd1, 0x54, 0xf0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 26750000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xf2, 0x89, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 27000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0xf0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 27027000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xf2, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
-@@ -96,18 +87,9 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 35000000,
- 		.pll_div_regs = { 0xd1, 0x58, 0xb8, 0x8b, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 36000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0xb0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 36036000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xb2, 0xfd, 0x0c, 0x80, 0x40 },
--	}, {
--		.pixclk = 40000000,
--		.pll_div_regs = { 0xd1, 0x64, 0xb0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
--		.pixclk = 43200000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x90, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 43243200,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x92, 0xfd, 0x0c, 0x80, 0x40 },
-@@ -123,19 +105,13 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 50349650,
- 		.pll_div_regs = { 0xd1, 0x54, 0x7c, 0xc3, 0x8f, 0x80, 0x40 },
--	}, {
--		.pixclk = 50400000,
--		.pll_div_regs = { 0xd1, 0x54, 0x70, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 53250000,
- 		.pll_div_regs = { 0xd1, 0x58, 0x72, 0x84, 0x03, 0x82, 0x41 },
- 	}, {
- 		.pixclk = 53500000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x72, 0x89, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 54000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x70, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 54054000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x72, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
-@@ -144,10 +120,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 59340659,
- 		.pll_div_regs = { 0xd1, 0x62, 0x74, 0xdb, 0x52, 0x88, 0x47 },
--	}, {
--		.pixclk = 59400000,
--		.pll_div_regs = { 0xd1, 0x63, 0x70, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 61500000,
- 		.pll_div_regs = { 0xd1, 0x66, 0x74, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
-@@ -159,10 +132,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 70000000,
- 		.pll_div_regs = { 0xd1, 0x58, 0x58, 0x8b, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 72000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x50, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 72072000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x52, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
-@@ -174,10 +144,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 78500000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x54, 0x87, 0x01, 0x80, 0x40 },
--	}, {
--		.pixclk = 80000000,
--		.pll_div_regs = { 0xd1, 0x64, 0x50, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 82000000,
- 		.pll_div_regs = { 0xd1, 0x66, 0x54, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
-@@ -204,10 +171,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 100699300,
- 		.pll_div_regs = { 0xd1, 0x54, 0x3c, 0xc3, 0x8f, 0x80, 0x40 },
--	}, {
--		.pixclk = 100800000,
--		.pll_div_regs = { 0xd1, 0x54, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 102500000,
- 		.pll_div_regs = { 0xd1, 0x55, 0x32, 0x8c, 0x05, 0x90, 0x4b },
- 	}, {
-@@ -219,19 +183,13 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 107000000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x32, 0x89, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 108000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 108108000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x32, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 118000000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x34, 0x95, 0x08, 0x80, 0x40 },
--	}, {
--		.pixclk = 118800000,
--		.pll_div_regs = { 0xd1, 0x63, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 123000000,
- 		.pll_div_regs = { 0xd1, 0x66, 0x34, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
-@@ -252,10 +210,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 140000000,
- 		.pll_div_regs = { 0xd1, 0x75, 0x36, 0xa7, 0x90, 0x80, 0x40 },
--	}, {
--		.pixclk = 144000000,
--		.pll_div_regs = { 0xd1, 0x78, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 148352000,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x35, 0xdb, 0x39, 0x90, 0x45 },
- 	}, {
-@@ -279,9 +234,6 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 165000000,
- 		.pll_div_regs = { 0xd1, 0x45, 0x11, 0x84, 0x81, 0x90, 0x4b },
--	}, {
--		.pixclk = 180000000,
--		.pll_div_regs = { 0xd1, 0x4b, 0x10, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 185625000,
- 		.pll_div_regs = { 0xd1, 0x4e, 0x12, 0x9a, 0x95, 0x80, 0x40 },
-@@ -300,25 +252,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 213000000,
- 		.pll_div_regs = { 0xd1, 0x58, 0x12, 0x84, 0x03, 0x82, 0x41 },
--	}, {
--		.pixclk = 216000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x10, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 216216000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x12, 0xfd, 0x0c, 0x80, 0x40 },
--	}, {
--		.pixclk = 237600000,
--		.pll_div_regs = { 0xd1, 0x63, 0x10, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 254000000,
- 		.pll_div_regs = { 0xd1, 0x69, 0x14, 0x89, 0x08, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 277500000,
- 		.pll_div_regs = { 0xd1, 0x73, 0x15, 0x88, 0x05, 0x90, 0x4d },
--	}, {
--		.pixclk = 288000000,
--		.pll_div_regs = { 0xd1, 0x78, 0x10, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 297000000,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x15, 0x84, 0x03, 0x90, 0x45 },
- 	},
--- 
-2.43.0
+This allows the hdmi driver to pick e.g. 64.8MHz instead of 65Mhz when we
+cannot output the exact frequency, enabling the imx8mp HDMI output to
+support more modes
+
+Signed-off-by: Dominique Martinet <dominique.martinet@atmark-techno.com>
+
+diff --git a/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
+index 13bc570c5473..9431cd5e06c3 100644
+--- a/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
++++ b/drivers/gpu/drm/bridge/imx/imx8mp-hdmi-tx.c
+@@ -23,6 +23,7 @@ imx8mp_hdmi_mode_valid(struct dw_hdmi *dw_hdmi, void *data,
+ 		       const struct drm_display_mode *mode)
+ {
+ 	struct imx8mp_hdmi *hdmi = (struct imx8mp_hdmi *)data;
++	long round_rate;
+ 
+ 	if (mode->clock < 13500)
+ 		return MODE_CLOCK_LOW;
+@@ -30,8 +31,9 @@ imx8mp_hdmi_mode_valid(struct dw_hdmi *dw_hdmi, void *data,
+ 	if (mode->clock > 297000)
+ 		return MODE_CLOCK_HIGH;
+ 
+-	if (clk_round_rate(hdmi->pixclk, mode->clock * 1000) !=
+-	    mode->clock * 1000)
++	round_rate = clk_round_rate(hdmi->pixclk, mode->clock * 1000);
++	/* accept 0.5% = 5/1000 tolerance (mode->clock is 1/1000) */
++	if (abs(round_rate - mode->clock * 1000) > mode->clock * 5)
+ 		return MODE_CLOCK_RANGE;
+ 
+ 	/* We don't support double-clocked and Interlaced modes */
+---
+--
+Dominique
+
 
 
 -- 
