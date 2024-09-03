@@ -4,162 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46908CD3420
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 08:42:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 914C5CD13CF
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 09:55:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3qRji44adn2NxUSSNXeQ7rIAcDsCdzHyfBBld79jSc4=; b=hVeWyxqVUN0pTl
-	cSE5lnLgXioza5xoeBwIMRtwl0UuSZQjzIbgNWafecdinYby38w04tD2rT31FQco/vhlXPetJoBmn
-	06T7NqyLrVPbpMmEb3ufFZoYRtqU32t/Kxl42CoXMceP17nvF4kFSVyF0rriWQ9uz5B37QQmPTW00
-	lWdERsoJucKsLINZ8iKDgW6gbK+tOxkj+ASbXRWTQD7ZQ+wmWSfebenk8gU95KtSU22k1lAqQsDAn
-	lnmd70ssCxA72BqDRcBDzsHZw8MKHSwjWTyoyC33+x8IElCLTLB2mEyKyLd6br49w012+YEAGnddg
-	x3EPJ+QdZwINBP2wU8Zg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=j7DMar2KYSPXBHAM3Cvb3p66OPplEmHd5yk/rTHFZK0=; b=LRYxflmPaLGSSC9oCxkrVX6YWh
+	0tSukKqfhAy60pOxKa5TabqFATEheLUqOiA796wPxK/gvsZKQjGqNSCNaB9mcG12Oa7YPJCHztOda
+	g40mfinKxeRbI5/s7yIYJst56S9Z2cCHyzV49WoYHwjF0qXGYmw2pKTiDZeCtXTotKaL/byj3pjw8
+	9g7vOEtuviBSTC7T+mMqXS/QQlfVgHvc+0SryIRyawC7Cq0Obqlatl84MmL9awpi4hADKHXdCOWui
+	tHH2RWdzdAQmusTeFWYosOr/8+1DU8FlRL5hWr1iIB7icACSQx15AENrLM+hBo+PB/tfOVov848hP
+	1JcCc5Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slP7W-0000000GxNw-00Rm;
-	Tue, 03 Sep 2024 08:42:38 +0000
-Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1slQGM-0000000HG3z-18mR;
+	Tue, 03 Sep 2024 09:55:50 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slP7R-0000000GxLu-3oAX
-	for linux-phy@lists.infradead.org;
-	Tue, 03 Sep 2024 08:42:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=DjSvxhSV1iG8Br8RcQdQrHNDhiPSeplwVKWwEsOx+Xl/lUPgmnL+Lm48r/qeXpGcytQlngVRU9/pEJYrJVqBcSqmup1AooddrwAtcrUzRKEmuiSRmCEU88/FF0cg17vGTA1G1nUngdbnyCBUO0mWP9I6QH5j9aF/Xo0hNQg5OFYNiyoYnlTOs9Z04XgpXS3IPl3bDOs61uwej/cxphY4TejBns3dxb1anU2DFnDjK/yPBtq8fV/IECpCBJxZeEjP3cBQE4rCOhKqadnmEjI8G705TGAs0MYB/SGb2jXf9mmdhFuXk9IOe4rXb5jyeVHxhVJ8LPu15nZ1xtb4htleyw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DGY+Z/fwqXfPlvTjOWRA139gBrn+2QMrMxqImcidDXo=;
- b=SVE7zYAFE/qmUiGTsOjKvnCAG0wO966n03p6h/WNlBoVRDzdhXlYGA1naXITPcSO5udD0cGAPBDHZD+CinPZSYMUTyiFUuO6uUDTUXZJVwiKQiN69VY8Aog1xP2aHNe7LhdxHxEdAeBZYsfEF28rLQA7o4hLqT8vKX/D+l9yXdljHGI1LuQox9mrplBWOdWcMTFr0Z6sZE1jDa7M7yyXF3WUJnJY4lv7MQlDLZAb+f1EF2vAWpz7TwQSikqU5Vxx2PqSVbpR5MZ4ZPDDoRMBi1OCvPs+uwrrJBet6mDbZVpBt6oGpt+6arNP0pSXfhkNWPjT+ZOsj8qPIOm4hflU5g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=solid-run.com; dmarc=pass action=none
- header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DGY+Z/fwqXfPlvTjOWRA139gBrn+2QMrMxqImcidDXo=;
- b=S7d/0kUSGLdTzMIqDvMhG0nOMoHIUlskgK2cf4YiB/l+H3sIL7KPn0hsr3mx3bvDkMbhaMsfbA+cP38KUoKZRlsqRNJRICpK7bteCDcsg/SX9LTkOT8R0SS0FHb/NgIJ7umgxgJXiBleqeXp76bIbHmTNLqfDhHBBJ7Fz/0v0y4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=solid-run.com;
-Received: from AM9PR04MB7586.eurprd04.prod.outlook.com (2603:10a6:20b:2d5::17)
- by VI0PR04MB10734.eurprd04.prod.outlook.com (2603:10a6:800:25e::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.24; Tue, 3 Sep
- 2024 08:42:24 +0000
-Received: from AM9PR04MB7586.eurprd04.prod.outlook.com
- ([fe80::c04e:8a97:516c:5529]) by AM9PR04MB7586.eurprd04.prod.outlook.com
- ([fe80::c04e:8a97:516c:5529%6]) with mapi id 15.20.7918.024; Tue, 3 Sep 2024
- 08:42:24 +0000
-From: Josua Mayer <josua@solid-run.com>
-Date: Tue, 03 Sep 2024 11:41:54 +0300
-Subject: [PATCH v2] phy: mvebu-cp110-utmi: support swapping d+/d- lanes by
- dts property
-Message-Id: <20240903-mvebu-utmi-phy-v2-1-7f49c131fad0@solid-run.com>
-X-B4-Tracking: v=1; b=H4sIANHL1mYC/3XMQQ6CMBCF4auQWTsGShFw5T0Mi9IOMolQ0kIjI
- b27lb3L/yXvO8CTY/Jwzw5wFNiznVOISwZ6VPOLkE1qELmQeZ1LnAL1G27rxLiMOzZSqbIfyra
- qDaTT4mjgzwk+u9Qj+9W6/fRD8Vv/UqHAAltT6oZIyRtVD2/fbNBt81XbCboY4xeq/YWgsAAAA
- A==
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Josua Mayer <josua@solid-run.com>
-X-Mailer: b4 0.14.1
-X-ClientProxiedBy: TL0P290CA0014.ISRP290.PROD.OUTLOOK.COM (2603:1096:950:5::8)
- To AM9PR04MB7586.eurprd04.prod.outlook.com (2603:10a6:20b:2d5::17)
+	id 1slQ3S-0000000HDYx-3yt6;
+	Tue, 03 Sep 2024 09:42:32 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 6FBD1A42627;
+	Tue,  3 Sep 2024 09:42:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CBE20C4CEC4;
+	Tue,  3 Sep 2024 09:42:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1725356549;
+	bh=5BLz5g5ZXnWApa/H8Ah2Nu3ZSoDtsGE5Qt5nhSeqhdk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=fpWJiwrwBxT7rWN+9/oKqNvpR+ufP71dFF1FTsDNfzANX/Nj/bigOjITeTIxXHdOt
+	 nG3Ot6/tpDS03RaC2jtz+XgT9WwZQz7UEJjsxed+xrO24kTIfBNlCtVa3v+Kc0bt3B
+	 ZYs1ebjQXYxPPfq11YzTKqL8Voc16LR7exKuRy6/OlL7TPsSgt6mxoOg9txiYJe4u+
+	 jzXNfGLZH+BpA22zL1XF1JJMEY+D23K96KK5SUDZVnHnttnVOc1JkkObL8um+4+fZM
+	 z5KEvA4BwWDThCEMjQaj7AKNDQkBgbE5vZVFNbyBUNCY0hqmJQjjUHCnCXJlf3ZOw/
+	 qPcsTSZBncIFA==
+Date: Tue, 3 Sep 2024 10:42:30 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Minda Chen <minda.chen@starfivetech.com>
+Cc: Conor Dooley <conor.dooley@microchip.com>,
+	Jan Kiszka <jan.kiszka@siemens.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	Dan Carpenter <dan.carpenter@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
+ property
+Message-ID: <20240903-gating-shamrock-c0d4415d1eb3@squawk>
+References: <cover.1723472153.git.jan.kiszka@siemens.com>
+ <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
+ <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
+ <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
+ <20240813-haiku-pusher-f2fb037a2f49@wendy>
+ <SHXPR01MB08633B523DA1F6C5632F6D9DE6802@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
+ <20240815-endless-credible-324438d164f4@spud>
+ <SHXPR01MB08632E50DFE53BE0CFAA99ABE6922@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB7586:EE_|VI0PR04MB10734:EE_
-X-MS-Office365-Filtering-Correlation-Id: bb9d3689-96e3-4766-ae8f-08dccbf45537
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|52116014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?S1B1VUdMcUZFWnYyeDJONGRLc2h3dHNrc2hqb0F1LzJUZkhvUWgwWUNiSWlq?=
- =?utf-8?B?Q3F5THFETHpuTWZZSnJXRVBPNDBiVHlUWk0yZmFhajBncHBEQkVadkExU2lq?=
- =?utf-8?B?MEU3NGxBbDMrd3M4M0E2dUdkL29qUXFBOW9FcHRrdkJ1cXB3MllUeUpXQUxr?=
- =?utf-8?B?MGxNNXc2VXlsR1NXdGNNcmpLS2pxaHdDVml0UFlYTGh1YzFZVjIvTlJyR1I0?=
- =?utf-8?B?YWdsMFF5OVA3WE5neVlzZ2Zia1RKT2lTWVJoMWtkMHNnRjliZ093MGgyb3Bk?=
- =?utf-8?B?S3Q4QU85dmFRdmJUWStoTmZsMW1Ua2p5K0JFVHR4alVnUUZPZS9oNGRvZkR5?=
- =?utf-8?B?WG5BWUdTM0pzOThOOTVNbjl6bVROQ0l0ZGluTms4QnJKK3BPd2Z1M3Budm14?=
- =?utf-8?B?U1ovNWtvTVFWK1dBcXZBZ1lKR0pLUUZxNlR5eFlKT3IxL3gvYkdiZWUzb0Q1?=
- =?utf-8?B?Q1pBM0Z4VEQrdTlndklPa0xhcXREYzlwMm9IZjlkVWIzNnhQVmdDK3Q5NEYw?=
- =?utf-8?B?MGNuaGdlOW1KUU0yVUdtcHNXa1haZ09SR0lRQmFBci9mck9XeElDVUlLOGhx?=
- =?utf-8?B?N0NIQ3EvSFBnbUVsTkZEYnF5L0Jpd2lKTm11a29CZTU1NVd6Ty9uZmd3WDQ3?=
- =?utf-8?B?Ri95SDFTTFVBdnhyM3FqZk1kTmJQNGZsMGl0Z3ptQm1EajF1bFRqNHAwdEVs?=
- =?utf-8?B?TjdheWNTQ2hwU3VoTmRLRncxbDhoYnlTQUhmS0JsSEViLzNobFZvTzRGMFRH?=
- =?utf-8?B?WUY5bFo3TVZMRGQ0WEJEZ0poelNDbkJhNnpTbVl2Z0JoSjkrVkxrelp4MDBZ?=
- =?utf-8?B?Wk5BZ1Z4aVd0ZVJGWVFFS2dTSGhSbHh6ZGdEc0cvZDN6dHNhTDZkWEUzY3RI?=
- =?utf-8?B?QmZEWUd6bHZYc1d6aTNqL2ErT1FvSENUZUVueG44cWZUbkNsUTJYblFVN2dp?=
- =?utf-8?B?azREYjQxYjhVeHNuc0RSZ0F3a1BVTzBDRzB4TjdaYXFTYWk3NXgwRWxPbDJM?=
- =?utf-8?B?VmdDQ2U3SzF1TU54eEIva25jR3BwejY4cVpBZGQxOG5RZndLd3NWM3M5aUZm?=
- =?utf-8?B?TkxjZVdPaSthd2ZhTldSTmZpaHBEQ05rbGQ5TkZId29IaUlUUUxrRkdZQXIw?=
- =?utf-8?B?QnE0ZTdEeDhsMVZmdHZmTjNCYXIrVFpWSE15eW1qT2tOOVU0cmhjeWEzMUFR?=
- =?utf-8?B?VXhmU0RmeWR0QUVVVVA0bXB1cVM4RmNTNFBlaHg4bi9XUkVPK3lOWFczL3Iz?=
- =?utf-8?B?RFlhNXFXUmFXMXB5ZUhTZjk0U2piNi9uUEZIWEZLaHdyaXhrNHJlSW52SXYv?=
- =?utf-8?B?ZXB3aWx1Q1c3SzNYbDJRRGFDL3JkcC80Um9EYXlVTUxrd1RXOHVVbmZiZ0oy?=
- =?utf-8?B?R2tFMHdKSS9aNUpnL0ZIL2RHS041eXo0TzhMVm9TREJZeGpRa1VBVkdyZDFX?=
- =?utf-8?B?b2tyM01CK3I5cTRzY2p1R0hIS2drV1lKbVNYUm1LaVJIMnAxTm1YR0xUc3ZP?=
- =?utf-8?B?TjR4amlzWkx6VnBybis4V213QlEvS1VYdTM0RzAvUWJ0VnByMW9MNURXeWVK?=
- =?utf-8?B?Z1VBUGUvUWhpSGVySGphQ2ZBc091NjNWWWVtWmlJV0syYXFlbTk0YnN5eDVB?=
- =?utf-8?B?K29GSHJvRE1jdnY4cW9QdkJ1a0t3MDJzdWI4R2pMTjFQUnVDMlZ5WmZneFFm?=
- =?utf-8?B?ZVNnV214Qnl0K2ducVBRQmtId05xeFByc0V0NkxnYSswS0EzZmJZSHFCMXNJ?=
- =?utf-8?B?UVhySE5sd29XUFd1SmY2NDM5bEppbENub3A1MmpBd0sxMTVpNGtvZmVCemZ1?=
- =?utf-8?B?eTJVYWV4cm0za0dxVEJqekY3ay9CMXVOdUdqTnJiWTBkRVZZMEpzY0ZrY3Fk?=
- =?utf-8?B?Rnk1ZXBmS013S2Nac0xoTVdzL1FUOElKZG11L1FST3ZpR0E9PQ==?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB7586.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(52116014)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?eC9WSFAzRi9rcXFTTDVIZWE1c3FITFVkMXZVNjV6cndOaDE5ZGRCUXdRM0JM?=
- =?utf-8?B?MU9FQ0dvSnE0Ujd5T0R2V1dna1hBbnFtQzE0czhlL2tpcVl5bklOT1R3NFdR?=
- =?utf-8?B?Vlhsc0d6YlgxbXhKYVRZK0drZG9zMjJ6QkUyVnhVMDNpRERhakNqSjJBVWxP?=
- =?utf-8?B?dFVVLzYyY05URVU2K3NPNUxuMmtnelVMMzN2SEFWZkRzMXFYWi9jZlY1Tk45?=
- =?utf-8?B?SWNDbXgvTUpBYmxnOVdPeXN1eUpqUkF1T0w4V2trNCsvT0xOSmxnaWtCSDBm?=
- =?utf-8?B?RTY3NDJqQlk3SWFTZFc0UjRhVkRONnFxdWg4clFlV2ovNnhSSTN3WEpaNm1v?=
- =?utf-8?B?dDkxYUR3aVZTWVAxSnpjQnBqUWxIU0VEWUlGVThQcEtIa0t2cWcrSC84SUZl?=
- =?utf-8?B?RW1rNHF4Nndxd08xY2NJQXc5TXZHL1NBS1FlcXZsTFYyS29XRDdpbURpZnIy?=
- =?utf-8?B?Z0FzSUg3bkxxeXJYbE1PNEF2WXhnWEJvazRDOTlkVEZ5blZ3NHRUV2NhOWg2?=
- =?utf-8?B?RlVrOHRPdHpZaU5TVUUrTkVMYXc0aVZFSk5NcnlQZEM0ZitCWG4yWWFzTlFX?=
- =?utf-8?B?RlcrS0ZqV1NkenhkbmlCd1dHV3J1WVdTRG9KdUlZeXI0ZUlXdU5FYUxxZlA2?=
- =?utf-8?B?aWlBaUliZ1l3aUR4R0RVNmZLS0EreGo4b1MvTmtaU3FnWlZpaVFpL2IyWUZt?=
- =?utf-8?B?ak5MYnVPMkhXN0h1dzVsRCtiR1JhQ1FYdXc3OU9lbU5FTlFEMUwydlJQam15?=
- =?utf-8?B?dFhreUhWNE8yeUc3aFRmRzdTTjNzZXNHNjh2KzRlZGRpSG82LzNBd2dEVUNm?=
- =?utf-8?B?ZEkxRzViWVFRZVdObjZ6OFE0bEl4Mll1ZjJyd0lWNFh1TzRNRy9qNUx2bG1x?=
- =?utf-8?B?UzZSdFZhQW9rSFl2V0wrMlNZUXZLT0RWUTd0cWNSZGpTenBVN3JYTHN0NjRh?=
- =?utf-8?B?Uy9HbU5MU1NRUUR3dDVjaHZ4d3ZwYTVWVFNabmlScFgxb0s5Q1dhL0dodkxK?=
- =?utf-8?B?elZORTlzczhzbHVpUStJejNDbXVWMHlmSng2SzVXU0duV2ZTUXV6QXR5UDJl?=
- =?utf-8?B?MWxPT0ZCTnhndVlpK3VpQUR3MmdDV2R1RlpsMnFvcjV0VzJ0WHRzK0J2MVV0?=
- =?utf-8?B?Mk9CcDRqRVdwNVdOWjR2QUh2OWhyNzMwYUgydktrN21zN2NOTGdSRzZFSFZn?=
- =?utf-8?B?ZXV0K2tDU2VQOWNpOTBmNDRPRkNqNjg1aW8rNDkrQ3V1cEdmQkNJNjF1V3dJ?=
- =?utf-8?B?K3FMOGNrZ2RDSGo1S1VIcFpmYjhNOEhSRUxVRFMxUlFldEMyMFFFMzVST0N6?=
- =?utf-8?B?dEQwNk8rcFpVVzFIeWRseFNjcXJGWWhMSXU1czJBdnFQckR1bU1Ec1lxa1Ir?=
- =?utf-8?B?N3dKOHQreXpaMVp6QUg1TmRJY1JVdk14N29ERTVTbERTY24xcU5nalV0UUpB?=
- =?utf-8?B?SDM0MlBPQ2pGOVFMbHB6WG1JYjFWNWVYZUd5cEtKdGlxelJkMEpvUDFBbHRY?=
- =?utf-8?B?SGNia0E2NHFVVDRacDQ3ejBPNmUzRWZyb0d1bzVvMDRKajFQNVVkV2R1eG5o?=
- =?utf-8?B?NlRhL00xVUNZaS9zQkhZODlEekhRS2tlSjdEbDBKZll5SU5JMEx0YWUrQTVG?=
- =?utf-8?B?K2duTnVLNVNUSXVEbjloNEk4dldybEpNcExLQi9QOTdOaXdmQWRZRlo5MWJw?=
- =?utf-8?B?b2xUS3Vwb1d6Si9jY3BINis5eDdPRDQvVnU2cm8xa2pSZlFTSlM5V3VURW8v?=
- =?utf-8?B?cDlVUjJGeXFRbXdHbDFLcloxUHlFWENDU0dVYTNTSVhCRjJRa0dGcWpRbGNi?=
- =?utf-8?B?OG02RVpEcFRGZzNnc09WUnBhMm9FZENhakE1bit5N1J3YUxSNWVsWm5xNXV3?=
- =?utf-8?B?TE54RDJVeGdVYmJZMFpnT3lwM1VleWpvWjZuRDFpOVhSbkJaSkJhTDR5MGtG?=
- =?utf-8?B?YmZJSnM4WU1uRmcwVWczYVl5MXFYV2wybGpETVJBRlk2N2FvalZPVHIyVHJU?=
- =?utf-8?B?dXJiK2Jkd0dTZlNiYUhaZnF6RzBNUHRZSEJJTnZnZThIOVlxai9hb2p5M0lQ?=
- =?utf-8?B?V24rU1hPWThER1cvTHVSbzZ5cVk5R3RSTityNnV2K053Y0MxYklvUUVUSk44?=
- =?utf-8?Q?ewdL2ifIKGbbVs1KiJR5d5p00?=
-X-OriginatorOrg: solid-run.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bb9d3689-96e3-4766-ae8f-08dccbf45537
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB7586.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2024 08:42:24.4177
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2EdmNkLyXi9KPUxNGQuIoPSqz/WvC2n+vvZ26+0vg5dVxycQyGGnV5YXM0+Jp2r/gQdun9qBOJtvhVFxlpVsLg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB10734
+In-Reply-To: <SHXPR01MB08632E50DFE53BE0CFAA99ABE6922@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240903_014233_993475_1DABAC47 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20240903_024231_145859_AB85A28F 
+X-CRM114-Status: GOOD (  41.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -171,96 +82,143 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2878397655183781166=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CP11x UTMI PHY supports swapping D+/D- signals via digital control
-register 1.
 
-Add support for the "swap-dx-lanes" device-tree property, which lists
-the port-ids that should swap D+ and D-.
-The property is evaluated in probe and applied before power-on
-during mvebu_cp110_utmi_port_setup.
+--===============2878397655183781166==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="V8qJgUi9TxzWpM4h"
+Content-Disposition: inline
 
-Signed-off-by: Josua Mayer <josua@solid-run.com>
----
-Changes in v2:
-- fixed compile error introduced with v6.11-rc1:
-  parameters of of_property_for_each_u32 were changed from 5 to 3.
-  (Reported-by: Vinod Koul <vkoul@kernel.org>)
-- rebased on v6.11-rc1
-- Link to v1: https://lore.kernel.org/r/20240704-mvebu-utmi-phy-v1-1-9d3c8eea46e5@solid-run.com
----
- drivers/phy/marvell/phy-mvebu-cp110-utmi.c | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
 
-diff --git a/drivers/phy/marvell/phy-mvebu-cp110-utmi.c b/drivers/phy/marvell/phy-mvebu-cp110-utmi.c
-index 4922a5f3327d..12d619d9cf97 100644
---- a/drivers/phy/marvell/phy-mvebu-cp110-utmi.c
-+++ b/drivers/phy/marvell/phy-mvebu-cp110-utmi.c
-@@ -62,6 +62,8 @@
- #define   SQ_AMP_CAL_MASK			GENMASK(2, 0)
- #define   SQ_AMP_CAL_VAL			1
- #define   SQ_AMP_CAL_EN				BIT(3)
-+#define UTMI_DIG_CTRL1_REG			0x20
-+#define   SWAP_DPDM				BIT(15)
- #define UTMI_CTRL_STATUS0_REG			0x24
- #define   SUSPENDM				BIT(22)
- #define   TEST_SEL				BIT(25)
-@@ -104,6 +106,7 @@ struct mvebu_cp110_utmi_port {
- 	struct mvebu_cp110_utmi *priv;
- 	u32 id;
- 	enum usb_dr_mode dr_mode;
-+	bool swap_dx;
- };
- 
- static void mvebu_cp110_utmi_port_setup(struct mvebu_cp110_utmi_port *port)
-@@ -159,6 +162,13 @@ static void mvebu_cp110_utmi_port_setup(struct mvebu_cp110_utmi_port *port)
- 	reg &= ~(VDAT_MASK | VSRC_MASK);
- 	reg |= (VDAT_VAL << VDAT_OFFSET) | (VSRC_VAL << VSRC_OFFSET);
- 	writel(reg, PORT_REGS(port) + UTMI_CHGDTC_CTRL_REG);
-+
-+	/* Swap D+/D- */
-+	reg = readl(PORT_REGS(port) + UTMI_DIG_CTRL1_REG);
-+	reg &= ~(SWAP_DPDM);
-+	if (port->swap_dx)
-+		reg |= SWAP_DPDM;
-+	writel(reg, PORT_REGS(port) + UTMI_DIG_CTRL1_REG);
- }
- 
- static int mvebu_cp110_utmi_phy_power_off(struct phy *phy)
-@@ -286,6 +296,7 @@ static int mvebu_cp110_utmi_phy_probe(struct platform_device *pdev)
- 	struct phy_provider *provider;
- 	struct device_node *child;
- 	u32 usb_devices = 0;
-+	u32 swap_dx = 0;
- 
- 	utmi = devm_kzalloc(dev, sizeof(*utmi), GFP_KERNEL);
- 	if (!utmi)
-@@ -345,6 +356,10 @@ static int mvebu_cp110_utmi_phy_probe(struct platform_device *pdev)
- 			}
- 		}
- 
-+		of_property_for_each_u32(dev->of_node, "swap-dx-lanes", swap_dx)
-+			if (swap_dx == port_id)
-+				port->swap_dx = 1;
-+
- 		/* Retrieve PHY capabilities */
- 		utmi->ops = &mvebu_cp110_utmi_phy_ops;
- 
+--V8qJgUi9TxzWpM4h
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
----
-base-commit: 8400291e289ee6b2bf9779ff1c83a291501f017b
-change-id: 20240704-mvebu-utmi-phy-84aa3bf3957d
+On Mon, Sep 02, 2024 at 09:19:29AM +0000, Minda Chen wrote:
+>=20
+>=20
+> >=20
+> > On Thu, Aug 15, 2024 at 10:33:55AM +0000, Minda Chen wrote:
+> > >
+> > >
+> > > >
+> > > > On Tue, Aug 13, 2024 at 07:31:50AM +0200, Jan Kiszka wrote:
+> > > > > On 12.08.24 17:55, Conor Dooley wrote:
+> > > > > > On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
+> > > > > >> From: Jan Kiszka <jan.kiszka@siemens.com>
+> > > > > >>
+> > > > > >> Analogously to the PCI PHY, access to sys_syscon is needed to
+> > > > > >> connect the USB PHY to its controller.
+> > > > > >>
+> > > > > >> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+> > > > > >> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> > > > > >> ---
+> > > > > >> CC: Rob Herring <robh@kernel.org>
+> > > > > >> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> > > > > >> CC: Conor Dooley <conor+dt@kernel.org>
+> > > > > >> ---
+> > > > > >>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11
+> > > > +++++++++++
+> > > > > >>  1 file changed, 11 insertions(+)
+> > > > > >>
+> > > > > >> diff --git
+> > > > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
+> > > > > >> .yam
+> > > > > >> l
+> > > > > >> b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
+> > > > > >> .yam l index 269e9f9f12b6..eaf0050c6f17 100644
+> > > > > >> ---
+> > > > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
+> > > > > >> .yam
+> > > > > >> l
+> > > > > >> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb
+> > > > > >> +++ -phy
+> > > > > >> +++ .yaml
+> > > > > >> @@ -19,6 +19,16 @@ properties:
+> > > > > >>    "#phy-cells":
+> > > > > >>      const: 0
+> > > > > >>
+> > > > > >> +  starfive,sys-syscon:
+> > > > > >> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+> > > > > >> +    items:
+> > > > > >> +      - items:
+> > > > > >> +          - description: phandle to System Register Controller
+> > > > sys_syscon node.
+> > > > > >> +          - description: PHY connect offset of
+> > > > SYS_SYSCONSAIF__SYSCFG register for USB PHY.
+> > > > > >
+> > > > > > Why is having a new property for this required? The devicetree
+> > > > > > only has a single usb phy, so isn't it sufficient to look up the
+> > > > > > syscon by compatible, rather than via phandle + offset?
+> > > > > >
+> > > > >
+> > > > > I didn't design this, I just copied it from
+> > > > > starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither
+> > > > > sure we want to change that anymore nor deviate in the pattern he=
+re.
+> > > >
+> > > > To be honest, I think some of the other users of phandle + offset on
+> > > > this soc were just copy-pasted without thinking about whether or no=
+t they
+> > were required too.
+> > > > This one seems like it should just be a lookup by compatible in the
+> > > > driver instead of by phandle. As a bonus, it will work with existing
+> > > > devicetrees - whereas your current implementation will fail to probe
+> > > > on systems that have the old devicetree, a regression for systems
+> > > > running with that devicetree and downstream firmware.
+> > > >
+> > > > Cheers,
+> > > > Conor.
+> > > >
+> > > Hi Conor
+> > > I know you would like to put the offset value to the code, Just set s=
+yscon in dts.
+> > > Just like pcie-starfive.c. right?
+> >=20
+> > No, not quite. That still uses a phandle lookup, I was talking about us=
+ing
+> > syscon_regmap_lookup_by_compatible().
+>=20
+> Okay. Using syscon_regmap_lookup_by_compatible() can just modify the driv=
+er code only.
+> But syscon_regmap_lookup_by_compatible() is not exist in uboot now. If I =
+want to enable
+> CONFIG_OF_UPSTREAM in uboot. I have to add this function in u-boot...
 
-Best regards,
--- 
-Josua Mayer <josua@solid-run.com>
+You can use
+	node =3D ofnode_by_compatible(ofnode_null(), "foo");
+	*regmap =3D syscon_node_to_regmap(node);
+in U-Boot.
 
+
+--V8qJgUi9TxzWpM4h
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZtbaAQAKCRB4tDGHoIJi
+0qddAQCykV/8wdobsflqJGegk8VpG4PfIyVD95Ps/lFiN6N8EAEA3A0m+qTJUFXs
+meGu8AGVsKo0mah3sBBHmXQzCetNhA8=
+=t0GZ
+-----END PGP SIGNATURE-----
+
+--V8qJgUi9TxzWpM4h--
+
+
+--===============2878397655183781166==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2878397655183781166==--
+
