@@ -4,42 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F367FCD342E
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 07:04:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70574CD342A
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 07:05:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nnCneILlgECC/foxbhAMdwF07bSML8bXgo5DBLfR30w=; b=nfAZPxZgROpjLy
-	ogqA4yERF2GGgsqm5ADC1441kfE1muduQLkBazpoI2AI+6jdTd2IGvtZp93rUJyF9wo5OhK9U5IWT
-	ApMrjMQjB2cIGUPsW+bw8zwiQN1bU1sMBUL59lcNxBwCGOjPEjgJ00Q6zBqOH1gjVXvNfnEBbjwaf
-	iI4oZshgP+to1hOG792gQCy+WRMvSYlzoPQXv1DD7rMspz6qu0diFv75X+/DWs2YLJuWIZObnOf0S
-	EWnGnmCjDMWtsXCEMFhC+EUXPGGrJM8vI3yPx6C5+nMljZZSkqEYt5hMg5NP+C3Dxu5I33Jdq3bqy
-	O3jXZE3FPcQh7PVekhvQ==;
+	List-Owner; bh=UOPk/z/9U3YGMlJyvev8bsNqMw3LstBXKn3a+TIHUy0=; b=phUU7N0t+0aDOb
+	xH/H/htEJxkNK4fwNeF5YURVL4GcbrbIpuIFpLlteCKfkmGLR1U9GWgzIPClLa2KLddFo4E9frsUp
+	+KLXUeVbv8Uf4CKNtMyKH11bWKop6uoNc1hKXzKWg77v5fPPTaE8tPDuQehek73HYKRSsJKTi/rik
+	hJ3H6Ed+b5r1EQR/t9dB7G40Q8MbIuUTw7j+hc/ptPo2sHm7p61Tvsxco801id4rsD44cekmzQFNh
+	XRDPgZDOXZHyahJatWx3z5LXSBowCAg0GhsFxlOiVaM3yc6Py+hO/dTH1jdfVWl8qQ4bVGTRhIRf2
+	GSW/SNoL7DjjDT+dxyzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slNaC-0000000GaTk-2nkB;
-	Tue, 03 Sep 2024 07:04:08 +0000
+	id 1slNb9-0000000Gaco-0Kn3;
+	Tue, 03 Sep 2024 07:05:07 +0000
 Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slNaA-0000000GaSZ-1aTF
+	id 1slNaz-0000000GaaF-0CQu
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Sep 2024 07:04:07 +0000
+	Tue, 03 Sep 2024 07:04:58 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 44656A41469;
-	Tue,  3 Sep 2024 07:03:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86AFBC4CEC6;
-	Tue,  3 Sep 2024 07:04:04 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id F11D3A414F1;
+	Tue,  3 Sep 2024 07:04:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E3FFC4CEC5;
+	Tue,  3 Sep 2024 07:04:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1725347045;
-	bh=Slca8lD1DlvSk2D0BUDJG9aG9GeCUTaKROfks2UHNiA=;
+	s=korg; t=1725347095;
+	bh=KfpUJwPIkdByyK2eQ8JyzjZah5wqNhIliyGW7R4pti0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CB6s09fHVKI8KSqLISVCSqr00f49L2O+jAJfDiv/EQPHQH5xaxdvEayXMJ0BtN0xY
-	 ACdON3+y+2K70BLZR8oung6+fO1hdye1bUsulUTXLF7x4HtALOZlims/IfFC5kWv2h
-	 37YdzRLufUNX7PLRJBJdjk3jwseKo8V8GLy0Ez3o=
-Date: Tue, 3 Sep 2024 09:04:02 +0200
+	b=wjtvTAJc1Xo+M62VHxjD7poicRHGhMge/exUMWMO+hA/aFjeuvc6b94ebwwS9oFai
+	 YLTyEqKqSHsEDs397XoDynvmjE6DBCd1tB+zkAc0JmqYSje8X98CjVOznC+0k4CdNL
+	 jFREm1GEf476vvHy4CO9OrtTB/KAq+WXbpPTgVOg=
+Date: Tue, 3 Sep 2024 09:04:52 +0200
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: Hans de Goede <hdegoede@redhat.com>
 Cc: Sebastian Reichel <sre@kernel.org>,
@@ -53,16 +53,17 @@ Cc: Sebastian Reichel <sre@kernel.org>,
 	Andrey Smirnov <andrew.smirnov@gmail.com>, linux-pm@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 1/6] power: supply: "usb_type" property may be written to
-Message-ID: <2024090342-succulent-unkempt-666c@gregkh>
+Subject: Re: [PATCH 6/6] power: supply: Change usb_types from an array into a
+ bitmask
+Message-ID: <2024090340-mumbo-worsening-9a55@gregkh>
 References: <20240831142039.28830-1-hdegoede@redhat.com>
- <20240831142039.28830-2-hdegoede@redhat.com>
+ <20240831142039.28830-7-hdegoede@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240831142039.28830-2-hdegoede@redhat.com>
+In-Reply-To: <20240831142039.28830-7-hdegoede@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240903_000406_498863_3471AFD8 
-X-CRM114-Status: GOOD (  14.55  )
+X-CRM114-CacheID: sfid-20240903_000457_171694_3CAD84E6 
+X-CRM114-Status: GOOD (  10.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,36 +80,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Aug 31, 2024 at 04:20:34PM +0200, Hans de Goede wrote:
-> According to Documentation/ABI/testing/sysfs-class-power the "usb_type"
-> property is Read-Only.
+On Sat, Aug 31, 2024 at 04:20:39PM +0200, Hans de Goede wrote:
+> The bit_types array just hold a list of valid enum power_supply_usb_type
+> values which map to 0 - 9. This can easily be represented as a bitmap.
 > 
-> For power-supplies which consume USB power such as battery charger chips,
-> this is correct.
+> This reduces the size of struct power_supply_desc and further reduces
+> the data section size by drivers no longer needing to store the array.
 > 
-> But the UCS1002 USB Port Power Controller driver which is a driver
-> for a chip which is a power-source for USB-A charging ports "usb_type"
-> is actually writable to configure the type of USB charger emulated
-> by the USB-A port.
-
-Ick, crazy hardware :(
-
+> This also unifies how usb_types are handled with charge_behaviours,
+> which allows power_supply_show_usb_type() to be removed.
 > 
-> Adjust the docs and the power_supply_sysfs.c code to adjust for this
-> new writeable use of "usb_type":
-> 
-> 1. Update Documentation/ABI/testing/sysfs-class-power to document that
-> "usb_type" may be writable
-> 
-> 2. Change the power_supply_attr type in power_supply_sysfs.c from
-> POWER_SUPPLY_ATTR() into POWER_SUPPLY_ENUM_ATTR() so that the various
-> usb_type string values from POWER_SUPPLY_TYPE_TEXT[] such as e.g.
-> "SDP" and "USB_PD" can be written to the "usb_type" attribute instead
-> of only accepting integer values.
-> 
-> Cc: Enric Balletbo Serra <enric.balletbo@collabora.com>
-> Cc: Andrey Smirnov <andrew.smirnov@gmail.com>
 > Signed-off-by: Hans de Goede <hdegoede@redhat.com>
+
+Nice!
 
 Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
