@@ -4,149 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01C6CCD342E
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 07:37:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5146CD342F
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 07:52:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z/93c6hmwU6BtBYqCILMNdJW1V5wOoqwJORFcRZBSjU=; b=MJemLTQapJ27Oe
-	t/xx+l+nDQrBmbqrXEkwIenlgSLd/rMVLTrDmmrUd0MYTSOWa8ONWeEIRqc/Pj4ktMMXmdEUP8aK7
-	WAmmBAnR2hx1yxpyOMlSfqRtIBuC6ND5kKTfUK7zWzCLtlVonoOrVsMCc6viQBQbySr9OXOIook1Q
-	79Snmkj3/Pzacwc4W+VOeK5Kk1lFs/2EwnkooaNqhVhuZCJy/OcqZO/hYJLyIKP+okyBLoBcsHCsE
-	eZ5q81d/CV3Ppm6POnFyIW7+LR4GK5hi01fwiQrdBrbavbCdoyzRlUN5tzAScQADYXj36iM3bX33P
-	yo17kxFCVKVtRrR0fMPA==;
+	List-Owner; bh=RZ1Pb/UQFDt7k6fV8fJsW/8xzVfSaRqcRMO2wDIi3hI=; b=MtaEoJNowL4OpL
+	NSoRlApM1fRhtm7oVQ0woRqjw1HGLS/hk1VXnWIQUWJCnyGYgvYnII4RcUh7xzFPfveERjnPm2qF/
+	pBy3sp50ibwxKDwP3wgyfqatA6QWHUkUXMlPyB2/zzwE8WaMUid2UityP9nz4VmZCjNL3Cn1nrRAG
+	datL8puxFtLQvZ6zav4r6nP+5cENXFpikgyIuvX1O/sEKC65s8VzLLGvelLUqc2DnEL/6JieCY0YN
+	XylwqFrlCpdxDd1gTL1ZQmScR5Z+QmjJYgeRXWxN2W/2Z0Tb7M28Fm9zlPx5e7mC+DraWgeP9wlvj
+	KZHwnNIuifihnNcinO2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slO6G-0000000GiJS-2zxE;
-	Tue, 03 Sep 2024 07:37:16 +0000
-Received: from mail-am6eur05on20604.outbound.protection.outlook.com ([2a01:111:f403:2612::604] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1slOLC-0000000Glpy-1Qy6;
+	Tue, 03 Sep 2024 07:52:42 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slO5Z-0000000Gi97-3n8N;
-	Tue, 03 Sep 2024 07:36:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=PqmAl9OvJ73hgBPtoy+DF2z8K9SF6twftAY6lFpW0qrwXGZQ88nw3KkOHdPlp3J6FwwNwbVX7e36iXQ2vzlc7r56DSf53MuM4RBLh5Ln8hb2HEAMvQbxCsc314GMHuMgsv3PLtEYDfCBxRpha/V3j5UBKb6/U6tyE5YPNM08YqauXRBB6QjP27FgLDhCW56zHiIctoygpJwGln6d9f+CIEfqquK2Adan/G3RFWh4MPtl3qudwno/TOL9K2jLaIVGgV83ahltN6PLlbiUofXfMkuPHb81hxR1hxxdj2HSgbAqHGy1px17CQk2IlYLJ9Z1o5RqSSxPSBQaz8q4hULm5w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=nVraK8nhVOVulJAZxC5aqFjqd4IazwcmU0v2dw5i+as=;
- b=N5XJI0uASBq+dvLPcpAoAuK/m72cZPcZJvRdF+hIdlziwPZALLRI5qi/q9Wo1HYjOegkI0WJQ9rXBad/8nnxNRdNGTqx2UuS/hs9si29bzI7kADtNtV1FsE+RZeNOchlaXuHeAKpyeMAHIPsMGhcIUqEe+xV+JWi0QrpqfIonush3L6X8Vm03DloqGfD4Ywb3fmnRzny5TeazXMF5KoBvG6Z8BzrlNwuLyH9tnIpN7y/VlwcdyjC3pI0OcE7qZl3DFMFiquZS9NmDxmlhxnUuK2VIilV+bkf1Ri+CDsX+sdrgFAkb/Jqu+K3cipSLargMvFk1GmU6GDzw/QfvHkX0w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nVraK8nhVOVulJAZxC5aqFjqd4IazwcmU0v2dw5i+as=;
- b=PHX/mgQjRtMXW2DwArednA/QLr1cboxn5UZ+9AwwY3eWKjMocQNXd0IstiqhUZ2vBooNH/nLIHi/dY/MpEYWZj8TKOI4niPzyR9daF93mWfaLfYeKb2F74naYkgw3MYnHwzzi0ecAsByVbLOssaILrGT81dLv+50BYVZsvcpfGD45/2N503Awj0OwcSq0f7Lz4AMnek2LHO/GlbQ/iCOojhGA5XOTJMw7r7KbvYTMom7DintFnZ63bxM49cnNnwoNraIWSytDcAA2Yc5u+Mu2etNiDiiYjqcEKWnSu4rVzFRyjH19f0baY48FhZ6BtyFUhAn1WI0bef9waavfoH+uw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
- by DB9PR04MB8362.eurprd04.prod.outlook.com (2603:10a6:10:241::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.24; Tue, 3 Sep
- 2024 07:36:28 +0000
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7%4]) with mapi id 15.20.7918.024; Tue, 3 Sep 2024
- 07:36:28 +0000
-Date: Tue, 3 Sep 2024 15:35:09 +0800
-From: Xu Yang <xu.yang_2@nxp.com>
-To: Greg KH <gregkh@linuxfoundation.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	peter.chen@kernel.org, herve.codina@bootlin.com,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org, jun.li@nxp.com
-Subject: Re: [PATCH v2 3/6] dt-bindings: phy: mxs-usb-phy: add nxp,sim
- property
-Message-ID: <20240903073509.7fb6izjnbhtiocjn@hippo>
-References: <20240726113207.3393247-1-xu.yang_2@nxp.com>
- <20240726113207.3393247-3-xu.yang_2@nxp.com>
- <20240829090935.ktc7jgd2en4qay2h@hippo>
- <2024090332-smokiness-virus-5f65@gregkh>
-Content-Disposition: inline
-In-Reply-To: <2024090332-smokiness-virus-5f65@gregkh>
-X-ClientProxiedBy: SI1PR02CA0017.apcprd02.prod.outlook.com
- (2603:1096:4:1f4::10) To DU2PR04MB8822.eurprd04.prod.outlook.com
- (2603:10a6:10:2e1::11)
+	id 1slOGa-0000000GkaW-463A
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Sep 2024 07:47:58 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1slOGX-0004RF-CO; Tue, 03 Sep 2024 09:47:53 +0200
+Received: from [2a0a:edc0:2:b01:1d::c5] (helo=pty.whiteo.stw.pengutronix.de)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1slOGV-0058BE-NY; Tue, 03 Sep 2024 09:47:51 +0200
+Received: from mfe by pty.whiteo.stw.pengutronix.de with local (Exim 4.96)
+	(envelope-from <mfe@pengutronix.de>)
+	id 1slOGV-004N9C-1x;
+	Tue, 03 Sep 2024 09:47:51 +0200
+Date: Tue, 3 Sep 2024 09:47:51 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Adam Ford <aford173@gmail.com>
+Cc: linux-phy@lists.infradead.org, dominique.martinet@atmark-techno.com,
+	linux-imx@nxp.com, festevam@gmail.com, frieder.schrempf@kontron.de,
+	aford@beaconembedded.com, Sandor.yu@nxp.com,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH V4 1/5] phy: freescale: fsl-samsung-hdmi: Replace
+ register defines with macro
+Message-ID: <20240903074751.nacchml6trk6si6s@pengutronix.de>
+References: <20240903013113.139698-1-aford173@gmail.com>
+ <20240903013113.139698-2-aford173@gmail.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|DB9PR04MB8362:EE_
-X-MS-Office365-Filtering-Correlation-Id: 54f7b52e-fd6d-43de-c289-08dccbeb1f4a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|52116014|7416014|376014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Lkdt3oaqVumTOb0sl09ebbMtY4SuZCpd1m1b6ks37ZcDylpC0gsCx7zq43yd?=
- =?us-ascii?Q?Hx1LOx6Y00xZrl+YFa6qTZfzvZy0Fc3VfTeRGoG/zi+WIurNntSPtbUYhFyT?=
- =?us-ascii?Q?OO/RjcL3vEXDQv6FcLTlsEMOFDB28Ijk/Dp/96D5/NzLFZiRZhUwQ6bDL+sz?=
- =?us-ascii?Q?20E5+wpwwRnB7BPsmuCHF+6dJRxvFPNeOLaWeiZmTelvP8HPMcxE7/Jeph/5?=
- =?us-ascii?Q?2xmLMn+/un9PhCUnbcXGPcx7h6UIV0ZMqchSpp3xGhpeZxIOe//GF1y5nCOv?=
- =?us-ascii?Q?qETOB5hkTg4jmkUuuh/EIL+roHAGdlRJ+JWuW4AFm7gW/S65Y5RZQXVCq6fu?=
- =?us-ascii?Q?u9pqRk/0KFOtJWtzbdfJafcD6I+UNq3oV0MLCerCPLXhPK0zv9yHWaEDNtIC?=
- =?us-ascii?Q?IZpXpJ5/UB+H1LcKWomG4FM0aJVy38vrI9jznWkFrK4qp7LDbdXAOfaT4yPb?=
- =?us-ascii?Q?Sm6FKbdGSw0JKwR6zjv3hewsOibU/BD7CfSiM/VFhuVdyNj2xGWxh4ita5PP?=
- =?us-ascii?Q?oOmxeHZvWvy1a2S2JKq+Sq5CkHgXnL8lC5gpYNLUSXypLf7zAcda9Ukvv20A?=
- =?us-ascii?Q?UT1FrFWUBKh+kxmOMRj+JZt6v/JS1g5oaQXyvL48JlQt0AL7b1KOeDBkR3P/?=
- =?us-ascii?Q?aTqmqZ9EqOZ2Fi8FLHVoTOiy44FitNoHn2bGF81l8nk4NuYym4HzrcvJKzpW?=
- =?us-ascii?Q?aRCP9FQ2yvCbN76/+V78F6M66+EKp71q3KeqdUQ8Y7NbKR2xr0bfPlJfzrhC?=
- =?us-ascii?Q?yKP01Vi8Yay0wg32SFQz1EeZ4ktkvJoRq3KESI1l/dOuBEcEHjN0u7h70Hag?=
- =?us-ascii?Q?YFkiycUMhaiJEJ8uCL5XHrDUFnJO7A1ZMdO0RIFNC71aeY8eJX+6X0FpfrNg?=
- =?us-ascii?Q?/36bsd6+Uf/9S3o3kb5so9iNbYCmdRkwwnUnLhhr9zHEbL36bN/ohYZ2PIWt?=
- =?us-ascii?Q?bKfmnVJ5QQ8rQouB5Alq2Q85GILWuRTHDPQu1+pkY2uXj3WkFCUl7ejE3r6q?=
- =?us-ascii?Q?7P+qmZUBT2FPYdmuHRqs06jCd2rTunJRhQDecwhY+t+LDcOc9Up4VgPJBe9v?=
- =?us-ascii?Q?paKxgTaDTQhxZ1C1xDT+likPcYFICXM97V8LnXcwVqTn0soi0O/iffkojceK?=
- =?us-ascii?Q?UR9AjhUNzmZalKwsbNfcaIos1hg8c2zI8PNN7WInMv4nef1bPpGpsYkdMXO4?=
- =?us-ascii?Q?tAIn9Mwmll4a8hVQS8UlqiLLyDvwaZGor550obcB49mktb/b91Mta2ToPZux?=
- =?us-ascii?Q?e8bykY9iKw1Aoq8/KCKz6LXc1pD8y/3LTHSrKKnKhr4T//mTfPVR+guf9AQj?=
- =?us-ascii?Q?RmyLxydKX2WzciU5EoP4OCosBbCQKQCwDwwk+xelje0Brq1hKmTCbsdJneMd?=
- =?us-ascii?Q?PqSKeVmh90AlvrdVZXHe1iv9mVNZZ0KjbvhiG8YQQXksrBeZBg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(52116014)(7416014)(376014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?TTGYARAkgq/r/uYD14ZShwWeJQjbNQIcp6ssfov+OzL0gfQjppqDgaL+05L0?=
- =?us-ascii?Q?GmaUAfF9E/tbbEEm3j7GhbJX1Lh+ZQCcT2p+3yvKOjt8Ouze+l3wty1Hdiye?=
- =?us-ascii?Q?pXW7VxGP2XadZnFXq/XnpZdAhRdvL4XCDx5dIwRjK/AMZnuIyRbSOdcapMAx?=
- =?us-ascii?Q?UmwTQwQozKmxWFJn0JPhTyNdgJyLFy7XLsWZ4WHuCMKPxeQ6a8mFJEhou48/?=
- =?us-ascii?Q?BbOr62e5oNUC2X5xg1IIRtRJUo/LakOVL5weTG6ESTFYcDWCGlcagK5tQ/Io?=
- =?us-ascii?Q?HGBoNrJxab68crPRIqJnD7NrkPBRg8B63FB8HnM3VH2UPY/llSkWsjeGiB8Q?=
- =?us-ascii?Q?n/f3t3zHhjZwGpWx5MXaXdKW2Ki7xLYaCKsvzTOcchJctYvRSsPq63Gmq2G1?=
- =?us-ascii?Q?wrkc8zBEuY0U3eB+QvTSntcY7SYkn9RK3TQ83FmNblAnFyQrRVzlvSD+cMkH?=
- =?us-ascii?Q?r6tY7/CqNv8o2tRipls7XD8yCyMOw0GNeki3HLE6IUg8okBcIphW+DMi5xWL?=
- =?us-ascii?Q?aapQU/gwvUloaSFysD9eabOFEnHIijMy2Ha4r4MLTbL8EzDFWJI63ahGKDrY?=
- =?us-ascii?Q?iDeESX5gWssfj7XJe3a+Xt+RiEZG4yTZ6htYdD+LQIe7aA9kvEar2JXXyNZI?=
- =?us-ascii?Q?uEkoNNE1K15vIt2DHDW/p4FwLSrEDE++M2xMOdk+DgoGa45A/xaiYDrWFBuJ?=
- =?us-ascii?Q?YZq/KCbIs67B1DFvT66QgiavoRwI7TOcDT77/RYX2s6x2N9iKXHOhbX8qxb3?=
- =?us-ascii?Q?5bMeyNruvZcqdR2m7BIEseXaky3fl6fomgBN+a32yckW3xeZo3eb6JcBVqug?=
- =?us-ascii?Q?I8XDNMDsbz4MPRhCDGn8H0qBGn8HaY3wV27QeXg/5sdbjznKeetmwxc1aoAW?=
- =?us-ascii?Q?/A/GpTulgAQ2Hf0n8rpXexOd39oocsVTal3hdT/S63pd13+EP3p9B42QJNO7?=
- =?us-ascii?Q?jSNA8d2CdM4+uVyY51AgReaO1phvwplVsoyFrT5hyNmG7roaA7HOn5a+U1Dz?=
- =?us-ascii?Q?qfctbUzrl/aWvllq1T0TT/HlxxxcjP+GTznbr0gZDRN+A3fx4CYx3RdsdAi7?=
- =?us-ascii?Q?R60sineFM/uERjXlj/ACB2jj1gCGtfdqR8m8fJ1Rq0JOowtruaPvPfS5kADB?=
- =?us-ascii?Q?scnwl6jIHMqF0kC5YNuQ7waIf3oMFLvsyLz4dAwV4dareR0S+SBuNVoy8o1j?=
- =?us-ascii?Q?tZFq3oQS53TUEGj668VETtmYLBgUaiaubZLROMhJW6uitmW2bSxixQVHdmQk?=
- =?us-ascii?Q?UhOVyKG47seIRTjP9U3WDXPOueSVbI2bl/56zEptzBEc5RxUAGJvMaK9+eBw?=
- =?us-ascii?Q?E3TMAfxTDKCUaQf+/HE6hhSb5/F/fQVo4YVa2IJhVvKeV+pSygqTEdw77V9l?=
- =?us-ascii?Q?oCpoYLlF//9ADMWvEirFhheT5HoOTfmZfi+lLdmXAKDmkHAneumUrg7bfzgY?=
- =?us-ascii?Q?ue9WYbQJkJKadaUK5NSns7wdYC0GFSNKffG7/jb8LoLjjOAPmkFA1BrRodtP?=
- =?us-ascii?Q?PgQ024u7hhnb3dwBhm3iBpU2saLQAbRI4BKCca7VZAx2FNIVdxUYD3sQYyLh?=
- =?us-ascii?Q?h1s5gbhKJE4dk2eVq3Sp66ayA+H00KJmQTWMfPCZ?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 54f7b52e-fd6d-43de-c289-08dccbeb1f4a
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2024 07:36:28.3973
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: x2OFfAtaGRWzdrUONS439N7Wbh30b7o5oNzUm6GrVeOhd5hqCgbQ+k6dw+VBm0qET/0OHTy+O6H1GAp+tORTbA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8362
+Content-Disposition: inline
+In-Reply-To: <20240903013113.139698-2-aford173@gmail.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240903_003633_972408_0F63C700 
-X-CRM114-Status: GOOD (  20.97  )
+X-CRM114-CacheID: sfid-20240903_004757_193259_7831849E 
+X-CRM114-Status: GOOD (  25.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,69 +82,240 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 03, 2024 at 09:08:52AM +0200, Greg KH wrote:
-> On Thu, Aug 29, 2024 at 05:09:35PM +0800, Xu Yang wrote:
-> > Hi Greg,
-> > 
-> > On Fri, Jul 26, 2024 at 07:32:04PM +0800, Xu Yang wrote:
-> > > i.MX7ULP need properly set System Integration Module(SIM) module to make
-> > > usb wakeup work well. This will add a "nxp,sim" property.
-> > > 
-> > > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> > > 
-> > > ---
-> > > Changes in v2:
-> > >  - add else branch suggested by Rob
-> > > ---
-> > >  .../devicetree/bindings/phy/fsl,mxs-usbphy.yaml | 17 +++++++++++++++++
-> > >  1 file changed, 17 insertions(+)
-> > > 
-> > > diff --git a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> > > index f4b1ca2fb562..ce665a2779b7 100644
-> > > --- a/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/fsl,mxs-usbphy.yaml
-> > > @@ -87,6 +87,12 @@ properties:
-> > >      maximum: 119
-> > >      default: 100
-> > >  
-> > > +  nxp,sim:
-> > > +    description:
-> > > +      The system integration module (SIM) provides system control and chip
-> > > +      configuration registers.
-> > > +    $ref: /schemas/types.yaml#/definitions/phandle
-> > > +
-> > >  required:
-> > >    - compatible
-> > >    - reg
-> > > @@ -110,6 +116,17 @@ allOf:
-> > >        required:
-> > >          - fsl,anatop
-> > >  
-> > > +  - if:
-> > > +      properties:
-> > > +        compatible:
-> > > +          const: fsl,imx7ulp-usbphy
-> > > +    then:
-> > > +      required:
-> > > +        - nxp,sim
-> > > +    else:
-> > > +      properties:
-> > > +        nxp,sim: false
-> > > +
-> > >  additionalProperties: false
-> > >  
-> > >  examples:
-> > 
-> > 
-> > Could you please pick up patch #3? Rest of the patches are mainlined.
+Hi Adam,
+
+thanks for the patch.
+
+On 24-09-02, Adam Ford wrote:
+> There are 47 registers defined as PHY_REG_xx were xx goes from 00 to
+> 47.  Simplify this by replacing them all with a macro which is passed
+> the register number to return the proper register offset.
 > 
-> Can you please resend it as an individual patch with the reviewed-by
-> added to it?
+> Signed-off-by: Adam Ford <aford173@gmail.com>
+> ---
+>  drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 138 ++++++-------------
+>  1 file changed, 41 insertions(+), 97 deletions(-)
+> 
+> diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> index 9048cdc760c2..bc5d3625ece6 100644
+> --- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> @@ -14,76 +14,20 @@
+>  #include <linux/platform_device.h>
+>  #include <linux/pm_runtime.h>
+>  
+> -#define PHY_REG_00		0x00
+> -#define PHY_REG_01		0x04
+> -#define PHY_REG_02		0x08
+> -#define PHY_REG_08		0x20
+> -#define PHY_REG_09		0x24
+> -#define PHY_REG_10		0x28
+> -#define PHY_REG_11		0x2c
+> -
+> -#define PHY_REG_12		0x30
+> -#define  REG12_CK_DIV_MASK	GENMASK(5, 4)
+> -
+> -#define PHY_REG_13		0x34
+> -#define  REG13_TG_CODE_LOW_MASK	GENMASK(7, 0)
+> -
+> -#define PHY_REG_14		0x38
+> -#define  REG14_TOL_MASK		GENMASK(7, 4)
+> -#define  REG14_RP_CODE_MASK	GENMASK(3, 1)
+> -#define  REG14_TG_CODE_HIGH_MASK	GENMASK(0, 0)
+> -
+> -#define PHY_REG_15		0x3c
+> -#define PHY_REG_16		0x40
+> -#define PHY_REG_17		0x44
+> -#define PHY_REG_18		0x48
+> -#define PHY_REG_19		0x4c
+> -#define PHY_REG_20		0x50
+> -
+> -#define PHY_REG_21		0x54
+> -#define  REG21_SEL_TX_CK_INV	BIT(7)
+> -#define  REG21_PMS_S_MASK	GENMASK(3, 0)
+> -
+> -#define PHY_REG_22		0x58
+> -#define PHY_REG_23		0x5c
+> -#define PHY_REG_24		0x60
+> -#define PHY_REG_25		0x64
+> -#define PHY_REG_26		0x68
+> -#define PHY_REG_27		0x6c
+> -#define PHY_REG_28		0x70
+> -#define PHY_REG_29		0x74
+> -#define PHY_REG_30		0x78
+> -#define PHY_REG_31		0x7c
+> -#define PHY_REG_32		0x80
+> -
+> -/*
+> - * REG33 does not match the ref manual. According to Sandor Yu from NXP,
+> - * "There is a doc issue on the i.MX8MP latest RM"
+> - * REG33 is being used per guidance from Sandor
+> - */
 
-Sure. Will do it later.
+Can we keep this comment please.
 
-Thanks,
-Xu Yang
+> -#define PHY_REG_33		0x84
+> -#define  REG33_MODE_SET_DONE	BIT(7)
+> -#define  REG33_FIX_DA		BIT(1)
+> -
+> -#define PHY_REG_34		0x88
+> -#define  REG34_PHY_READY	BIT(7)
+> -#define  REG34_PLL_LOCK		BIT(6)
+> -#define  REG34_PHY_CLK_READY	BIT(5)
+> -
+> -#define PHY_REG_35		0x8c
+> -#define PHY_REG_36		0x90
+> -#define PHY_REG_37		0x94
+> -#define PHY_REG_38		0x98
+> -#define PHY_REG_39		0x9c
+> -#define PHY_REG_40		0xa0
+> -#define PHY_REG_41		0xa4
+> -#define PHY_REG_42		0xa8
+> -#define PHY_REG_43		0xac
+> -#define PHY_REG_44		0xb0
+> -#define PHY_REG_45		0xb4
+> -#define PHY_REG_46		0xb8
+> -#define PHY_REG_47		0xbc
+> +#define PHY_REG(reg)		(reg * 4)
+> +
+> +#define REG12_CK_DIV_MASK	GENMASK(5, 4)
+
+> +#define REG13_TG_CODE_LOW_MASK	GENMASK(7, 0)
+
+> +#define REG14_TOL_MASK		GENMASK(7, 4)
+> +#define REG14_RP_CODE_MASK	GENMASK(3, 1)
+> +#define REG14_TG_CODE_HIGH_MASK	GENMASK(0, 0)
+
+> +#define REG21_SEL_TX_CK_INV	BIT(7)
+> +#define REG21_PMS_S_MASK	GENMASK(3, 0)
+
+> +#define REG33_MODE_SET_DONE	BIT(7)
+> +#define REG33_FIX_DA		BIT(1)
+
+> +#define REG34_PHY_READY	BIT(7)
+> +#define REG34_PLL_LOCK		BIT(6)
+> +#define REG34_PHY_CLK_READY	BIT(5)
+
+Also please add newlines in between different reg defines like I did
+above. The comment which we should keep should be put above
+REG_33_MODE_SET_DONE. The rest LGTM.
+
+Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
+
+>  #define PHY_PLL_DIV_REGS_NUM 6
+>  
+> @@ -369,29 +313,29 @@ struct reg_settings {
+>  };
+>  
+>  static const struct reg_settings common_phy_cfg[] = {
+> -	{ PHY_REG_00, 0x00 }, { PHY_REG_01, 0xd1 },
+> -	{ PHY_REG_08, 0x4f }, { PHY_REG_09, 0x30 },
+> -	{ PHY_REG_10, 0x33 }, { PHY_REG_11, 0x65 },
+> +	{ PHY_REG(0), 0x00 }, { PHY_REG(1), 0xd1 },
+> +	{ PHY_REG(8), 0x4f }, { PHY_REG(9), 0x30 },
+> +	{ PHY_REG(10), 0x33 }, { PHY_REG(11), 0x65 },
+>  	/* REG12 pixclk specific */
+>  	/* REG13 pixclk specific */
+>  	/* REG14 pixclk specific */
+> -	{ PHY_REG_15, 0x80 }, { PHY_REG_16, 0x6c },
+> -	{ PHY_REG_17, 0xf2 }, { PHY_REG_18, 0x67 },
+> -	{ PHY_REG_19, 0x00 }, { PHY_REG_20, 0x10 },
+> +	{ PHY_REG(15), 0x80 }, { PHY_REG(16), 0x6c },
+> +	{ PHY_REG(17), 0xf2 }, { PHY_REG(18), 0x67 },
+> +	{ PHY_REG(19), 0x00 }, { PHY_REG(20), 0x10 },
+>  	/* REG21 pixclk specific */
+> -	{ PHY_REG_22, 0x30 }, { PHY_REG_23, 0x32 },
+> -	{ PHY_REG_24, 0x60 }, { PHY_REG_25, 0x8f },
+> -	{ PHY_REG_26, 0x00 }, { PHY_REG_27, 0x00 },
+> -	{ PHY_REG_28, 0x08 }, { PHY_REG_29, 0x00 },
+> -	{ PHY_REG_30, 0x00 }, { PHY_REG_31, 0x00 },
+> -	{ PHY_REG_32, 0x00 }, { PHY_REG_33, 0x80 },
+> -	{ PHY_REG_34, 0x00 }, { PHY_REG_35, 0x00 },
+> -	{ PHY_REG_36, 0x00 }, { PHY_REG_37, 0x00 },
+> -	{ PHY_REG_38, 0x00 }, { PHY_REG_39, 0x00 },
+> -	{ PHY_REG_40, 0x00 }, { PHY_REG_41, 0xe0 },
+> -	{ PHY_REG_42, 0x83 }, { PHY_REG_43, 0x0f },
+> -	{ PHY_REG_44, 0x3E }, { PHY_REG_45, 0xf8 },
+> -	{ PHY_REG_46, 0x00 }, { PHY_REG_47, 0x00 }
+> +	{ PHY_REG(22), 0x30 }, { PHY_REG(23), 0x32 },
+> +	{ PHY_REG(24), 0x60 }, { PHY_REG(25), 0x8f },
+> +	{ PHY_REG(26), 0x00 }, { PHY_REG(27), 0x00 },
+> +	{ PHY_REG(28), 0x08 }, { PHY_REG(29), 0x00 },
+> +	{ PHY_REG(30), 0x00 }, { PHY_REG(31), 0x00 },
+> +	{ PHY_REG(32), 0x00 }, { PHY_REG(33), 0x80 },
+> +	{ PHY_REG(34), 0x00 }, { PHY_REG(35), 0x00 },
+> +	{ PHY_REG(36), 0x00 }, { PHY_REG(37), 0x00 },
+> +	{ PHY_REG(38), 0x00 }, { PHY_REG(39), 0x00 },
+> +	{ PHY_REG(40), 0x00 }, { PHY_REG(41), 0xe0 },
+> +	{ PHY_REG(42), 0x83 }, { PHY_REG(43), 0x0f },
+> +	{ PHY_REG(44), 0x3E }, { PHY_REG(45), 0xf8 },
+> +	{ PHY_REG(46), 0x00 }, { PHY_REG(47), 0x00 }
+>  };
+>  
+>  struct fsl_samsung_hdmi_phy {
+> @@ -442,7 +386,7 @@ fsl_samsung_hdmi_phy_configure_pixclk(struct fsl_samsung_hdmi_phy *phy,
+>  	}
+>  
+>  	writeb(REG21_SEL_TX_CK_INV | FIELD_PREP(REG21_PMS_S_MASK, div),
+> -	       phy->regs + PHY_REG_21);
+> +	       phy->regs + PHY_REG(21));
+>  }
+>  
+>  static void
+> @@ -469,7 +413,7 @@ fsl_samsung_hdmi_phy_configure_pll_lock_det(struct fsl_samsung_hdmi_phy *phy,
+>  		break;
+>  	}
+>  
+> -	writeb(FIELD_PREP(REG12_CK_DIV_MASK, ilog2(div)), phy->regs + PHY_REG_12);
+> +	writeb(FIELD_PREP(REG12_CK_DIV_MASK, ilog2(div)), phy->regs + PHY_REG(12));
+>  
+>  	/*
+>  	 * Calculation for the frequency lock detector target code (fld_tg_code)
+> @@ -489,11 +433,11 @@ fsl_samsung_hdmi_phy_configure_pll_lock_det(struct fsl_samsung_hdmi_phy *phy,
+>  
+>  	/* FLD_TOL and FLD_RP_CODE taken from downstream driver */
+>  	writeb(FIELD_PREP(REG13_TG_CODE_LOW_MASK, fld_tg_code),
+> -	       phy->regs + PHY_REG_13);
+> +	       phy->regs + PHY_REG(13));
+>  	writeb(FIELD_PREP(REG14_TOL_MASK, 2) |
+>  	       FIELD_PREP(REG14_RP_CODE_MASK, 2) |
+>  	       FIELD_PREP(REG14_TG_CODE_HIGH_MASK, fld_tg_code >> 8),
+> -	       phy->regs + PHY_REG_14);
+> +	       phy->regs + PHY_REG(14));
+>  }
+>  
+>  static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
+> @@ -503,7 +447,7 @@ static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
+>  	u8 val;
+>  
+>  	/* HDMI PHY init */
+> -	writeb(REG33_FIX_DA, phy->regs + PHY_REG_33);
+> +	writeb(REG33_FIX_DA, phy->regs + PHY_REG(33));
+>  
+>  	/* common PHY registers */
+>  	for (i = 0; i < ARRAY_SIZE(common_phy_cfg); i++)
+> @@ -511,14 +455,14 @@ static int fsl_samsung_hdmi_phy_configure(struct fsl_samsung_hdmi_phy *phy,
+>  
+>  	/* set individual PLL registers PHY_REG2 ... PHY_REG7 */
+>  	for (i = 0; i < PHY_PLL_DIV_REGS_NUM; i++)
+> -		writeb(cfg->pll_div_regs[i], phy->regs + PHY_REG_02 + i * 4);
+> +		writeb(cfg->pll_div_regs[i], phy->regs + PHY_REG(2) + i * 4);
+>  
+>  	fsl_samsung_hdmi_phy_configure_pixclk(phy, cfg);
+>  	fsl_samsung_hdmi_phy_configure_pll_lock_det(phy, cfg);
+>  
+> -	writeb(REG33_FIX_DA | REG33_MODE_SET_DONE, phy->regs + PHY_REG_33);
+> +	writeb(REG33_FIX_DA | REG33_MODE_SET_DONE, phy->regs + PHY_REG(33));
+>  
+> -	ret = readb_poll_timeout(phy->regs + PHY_REG_34, val,
+> +	ret = readb_poll_timeout(phy->regs + PHY_REG(34), val,
+>  				 val & REG34_PLL_LOCK, 50, 20000);
+>  	if (ret)
+>  		dev_err(phy->dev, "PLL failed to lock\n");
+> -- 
+> 2.43.0
+> 
+> 
 
 -- 
 linux-phy mailing list
