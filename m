@@ -4,73 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 914C5CD13CF
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 09:55:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19DA8CD3427
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 10:20:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=j7DMar2KYSPXBHAM3Cvb3p66OPplEmHd5yk/rTHFZK0=; b=LRYxflmPaLGSSC9oCxkrVX6YWh
-	0tSukKqfhAy60pOxKa5TabqFATEheLUqOiA796wPxK/gvsZKQjGqNSCNaB9mcG12Oa7YPJCHztOda
-	g40mfinKxeRbI5/s7yIYJst56S9Z2cCHyzV49WoYHwjF0qXGYmw2pKTiDZeCtXTotKaL/byj3pjw8
-	9g7vOEtuviBSTC7T+mMqXS/QQlfVgHvc+0SryIRyawC7Cq0Obqlatl84MmL9awpi4hADKHXdCOWui
-	tHH2RWdzdAQmusTeFWYosOr/8+1DU8FlRL5hWr1iIB7icACSQx15AENrLM+hBo+PB/tfOVov848hP
-	1JcCc5Ew==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NhaAkLVUziNl+xPkCgbAP/N94xfNXRj3+02SNHttKyo=; b=jfRbH/zeg2FcNA
+	nROXR+9Eem/98/SM7kEvWym4e04DA4wZhmX/7+r0dLU1qgh14fbkltgRCvZDV2iXM2Smbf4DV7WWu
+	gRp3VLIeMLpF4Ev6K5F/urmVmJcln/trGaypweC/x4rHS3eCj36iLFjr+TyicoRVJstvgXiOsFSpT
+	7ItpsJ1dRsTmpBUrB/YmYMhIQ1Ag64gSv3UhMOyUZ7TtffgKkEtCt5OjN5kZmCs9a7hELrgcDuJr4
+	lNmRKOVRh1c+D63/EmJVa//4NKiLfc1AZMNmouu/0h5ptySKfn67ao3Cs7mpZYXteBOamd0TX73qL
+	9zVw+hvVmpvbsg/+DeLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slQGM-0000000HG3z-18mR;
-	Tue, 03 Sep 2024 09:55:50 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1slQdw-0000000HJZI-2mmT;
+	Tue, 03 Sep 2024 10:20:12 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slQ3S-0000000HDYx-3yt6;
-	Tue, 03 Sep 2024 09:42:32 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 6FBD1A42627;
-	Tue,  3 Sep 2024 09:42:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CBE20C4CEC4;
-	Tue,  3 Sep 2024 09:42:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725356549;
-	bh=5BLz5g5ZXnWApa/H8Ah2Nu3ZSoDtsGE5Qt5nhSeqhdk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fpWJiwrwBxT7rWN+9/oKqNvpR+ufP71dFF1FTsDNfzANX/Nj/bigOjITeTIxXHdOt
-	 nG3Ot6/tpDS03RaC2jtz+XgT9WwZQz7UEJjsxed+xrO24kTIfBNlCtVa3v+Kc0bt3B
-	 ZYs1ebjQXYxPPfq11YzTKqL8Voc16LR7exKuRy6/OlL7TPsSgt6mxoOg9txiYJe4u+
-	 jzXNfGLZH+BpA22zL1XF1JJMEY+D23K96KK5SUDZVnHnttnVOc1JkkObL8um+4+fZM
-	 z5KEvA4BwWDThCEMjQaj7AKNDQkBgbE5vZVFNbyBUNCY0hqmJQjjUHCnCXJlf3ZOw/
-	 qPcsTSZBncIFA==
-Date: Tue, 3 Sep 2024 10:42:30 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Minda Chen <minda.chen@starfivetech.com>
-Cc: Conor Dooley <conor.dooley@microchip.com>,
-	Jan Kiszka <jan.kiszka@siemens.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	Dan Carpenter <dan.carpenter@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: jh7110-usb-phy: Add sys-syscon
- property
-Message-ID: <20240903-gating-shamrock-c0d4415d1eb3@squawk>
-References: <cover.1723472153.git.jan.kiszka@siemens.com>
- <30f3ca9f6bd788e16767b36aa22c0e9dc4d1c6a4.1723472153.git.jan.kiszka@siemens.com>
- <20240812-overstuff-skirt-7a8aabbcdc6f@spud>
- <8cdba8b0-7364-4c09-b18a-f3f59da1eae2@siemens.com>
- <20240813-haiku-pusher-f2fb037a2f49@wendy>
- <SHXPR01MB08633B523DA1F6C5632F6D9DE6802@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
- <20240815-endless-credible-324438d164f4@spud>
- <SHXPR01MB08632E50DFE53BE0CFAA99ABE6922@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
+	id 1slQdY-0000000HJQe-3MYS
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Sep 2024 10:19:51 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-53345604960so5923618e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 03 Sep 2024 03:19:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1725358787; x=1725963587; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=iJS4mKwDt71f+czvCGcc6KmwF1qHOE0EcsdjnmVJivo=;
+        b=N/McP+7NMUyXs2v01Of7mJyGOuPH5I9UdfxnnYERHQkIVEUPS4P4jAJhO5Jder8i0L
+         QBbpCRBvRG9YcVoFwzNpfSF4y/VHPm8R/EAUI30onTy151xv+y/ujNERJH9VjYDi4bet
+         THooh5KEUqWb2IIq2i52tM6UgcBX6/Y3mXddw3TvgG5nFhLeSNsAinhyiPLTz4RTQtIj
+         3NqTAc0UYsAjTVjbTHrX0O1mREKTrYjysztcAn/mrvFezwH2OunTvIvvz+AbPPkfq7hF
+         fkJ8GEZRqdwMB9UdOUT5t8zZDXLWY9oBdrqHA9sSzedYPdnikTRCj02THZHaeudHbMV7
+         vgaA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725358787; x=1725963587;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=iJS4mKwDt71f+czvCGcc6KmwF1qHOE0EcsdjnmVJivo=;
+        b=l/iQGSgNaiiSUJx9nErOcBWo/Xp5z7yLveqwCnIlceY/HQHiCXgJiGHlpwHRxVApr6
+         tMdWy6egk4NOZz2zD/wcnZ+p4Kp6YP/PpFLFny9WuIi93Qu1cOUGLlfNkoe0CsTHfCxw
+         Felzo6fORIGTAfFSXIj8pgTIvpZLZA06Ii++ZZR67mbMklzpPw5PtYtSyziUCLGrrrYg
+         nQCyZw2fBRfxD8OJrPyDnsG1/5h9mFhHii7F4Xddm3xu9Ta5tKVkVrRX+VPidEChXouj
+         k9iQ0Rd3ZSJkkCIHmKc9T0A9MEdAlkUtmN3dyJqgQAw9QcWJAi5TyaHQ8rrGUL2ohdnB
+         eimQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUAXtN5csFI1/8+7TyyoyV3USMgNrUGqbrsgO1kNk9gOOg31vKuXSMSOLdnX4NxN/S+o2+ooTcNiGU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzmigMo99ENma7D5z0jop+vEFw+XxSxMypXvgBngu8LoyhNPbbj
+	JETF6VJHYRJqoDIZAexg2tKAZcp/r1aO7I9/M2PO76tCtg5ebxxX6H9pjZHdReQ=
+X-Google-Smtp-Source: AGHT+IEls7cIQ+6hQSbZxyc8bV5YfWpE5Og0ZDGcEK0Z3VxswtkW6lt0WU0csWHFdZCyWxXy9FAPkw==
+X-Received: by 2002:a05:6512:108c:b0:52e:7125:c70a with SMTP id 2adb3069b0e04-53546b93fd9mr8417306e87.47.1725358786595;
+        Tue, 03 Sep 2024 03:19:46 -0700 (PDT)
+Received: from [192.168.50.4] ([82.78.167.144])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a8988feb0e5sm675067666b.12.2024.09.03.03.19.44
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 03 Sep 2024 03:19:46 -0700 (PDT)
+Message-ID: <4cb2f788-1ba6-40f6-a48d-1fd2e5293aa8@tuxon.dev>
+Date: Tue, 3 Sep 2024 13:19:44 +0300
 MIME-Version: 1.0
-In-Reply-To: <SHXPR01MB08632E50DFE53BE0CFAA99ABE6922@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+Content-Language: en-US
+To: Biju Das <biju.das.jz@bp.renesas.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>
+Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
+ "kishon@kernel.org" <kishon@kernel.org>, "robh@kernel.org"
+ <robh@kernel.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+ "conor+dt@kernel.org" <conor+dt@kernel.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <CAPDyKFrS4Dhd7DZa2zz=oPro1TiTJFix0awzzzp8Qatm-8Z2Ug@mail.gmail.com>
+ <99bef301-9f6c-4797-b47e-c83e56dfbda9@tuxon.dev>
+ <TY3PR01MB1134652F9587CFA0ADE851CA486902@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <TY3PR01MB113467275C519B729FCAB1ACB86922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <5556d176-cca7-492c-ba21-48256d5d6338@tuxon.dev>
+ <TY3PR01MB113464D53083F4C8A5DBBA36586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <590a4fb2-24b2-432b-92db-534c5a52ed0b@tuxon.dev>
+ <TY3PR01MB11346505565B81AD2894E035586922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <35dc7414-f5bd-4ed4-bfa1-f723f4f0078c@tuxon.dev>
+ <TY3PR01MB11346A4814F83FE296A1DED8886922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+From: claudiu beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <TY3PR01MB11346A4814F83FE296A1DED8886922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240903_024231_145859_AB85A28F 
-X-CRM114-Status: GOOD (  41.76  )
+X-CRM114-CacheID: sfid-20240903_031948_879891_2B3371F5 
+X-CRM114-Status: GOOD (  25.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,143 +119,109 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2878397655183781166=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2878397655183781166==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="V8qJgUi9TxzWpM4h"
-Content-Disposition: inline
 
+On 02.09.2024 13:47, Biju Das wrote:
+> Hi Claudiu,
+> 
+>> -----Original Message-----
+>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
+>> Sent: Monday, September 2, 2024 11:41 AM
+>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+>>
+>>
+>>
+>> On 02.09.2024 12:18, Biju Das wrote:
+>>>>>>> Do you have any plan to control this power transitions(ALL_ON to AWO and vice versa) in linux?
+>>>>>> As you know, the RZ/G3S USB PM code is already prepared. This is
+>>>>>> also configuring these signals when going to suspend/exiting from resume.
+>>>>>> W/o configuring properly these signals the USB is not working after a suspend/resume cycle.
+>>>>> One option is to handle SYSC USB PWRRDY signal in TF-A, if you plan
+>>>>> to handle system transitions
+>>>> there??
+>>>>
+>>>> As I mentioned, the settings in these registers may be changed by intermediary booting
+>> applications.
+>>>> Depending on that, Linux need to control it also on probe for USB to
+>>>> work (it should be the same with PCIe, these signals seems similar from HW manual description).
+>>> You mean system transition settings will be override by U-boot, so Linux needs to restore it back??
+>>
+>> It was talking about booting...
+> 
+> I am also referring to boot. Boot starts with TF-A and it has a system state.
+> 
+>>
+>> You proposed to handle SYSC signals from TF-A in a discussion about system power transitions:
+>>
+>> "One option is to handle SYSC USB PWRRDY signal in TF-A,  if you plan to handle system transitions"
+>>
+>> (I was guessing the "system transition" statement there refers to power states transitions, ALL_ON <->
+>> AWO/VBAT)
+> 
+> That is correct.
+> 
+>>
+>> and I gave the booting process as a counter example: if we handle it in TF-A it may not be enough as
+>> these signals might be changed by intermediary booting applications (e.g., U-Boot).
+> 
+> Why should U-boot override, system state signals such as USB PWRREADY? Can you please give an example.
 
---V8qJgUi9TxzWpM4h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I didn't say *should* but *might* and I was referring to a hypothetical
+situation where any used application (bootloader) might trigger this signal
+for whatever reason. My point was to let Linux to handle all the settings
+that it can do for a particular functionality. The resisters in SYSC
+address space controlling these signals are accessible to normal world
+compared to others in the SYSC address spaces.
 
-On Mon, Sep 02, 2024 at 09:19:29AM +0000, Minda Chen wrote:
->=20
->=20
-> >=20
-> > On Thu, Aug 15, 2024 at 10:33:55AM +0000, Minda Chen wrote:
-> > >
-> > >
-> > > >
-> > > > On Tue, Aug 13, 2024 at 07:31:50AM +0200, Jan Kiszka wrote:
-> > > > > On 12.08.24 17:55, Conor Dooley wrote:
-> > > > > > On Mon, Aug 12, 2024 at 04:15:51PM +0200, Jan Kiszka wrote:
-> > > > > >> From: Jan Kiszka <jan.kiszka@siemens.com>
-> > > > > >>
-> > > > > >> Analogously to the PCI PHY, access to sys_syscon is needed to
-> > > > > >> connect the USB PHY to its controller.
-> > > > > >>
-> > > > > >> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> > > > > >> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> > > > > >> ---
-> > > > > >> CC: Rob Herring <robh@kernel.org>
-> > > > > >> CC: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > > > > >> CC: Conor Dooley <conor+dt@kernel.org>
-> > > > > >> ---
-> > > > > >>  .../bindings/phy/starfive,jh7110-usb-phy.yaml         | 11
-> > > > +++++++++++
-> > > > > >>  1 file changed, 11 insertions(+)
-> > > > > >>
-> > > > > >> diff --git
-> > > > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > > > >> .yam
-> > > > > >> l
-> > > > > >> b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > > > >> .yam l index 269e9f9f12b6..eaf0050c6f17 100644
-> > > > > >> ---
-> > > > > >> a/Documentation/devicetree/bindings/phy/starfive,jh7110-usb-phy
-> > > > > >> .yam
-> > > > > >> l
-> > > > > >> +++ b/Documentation/devicetree/bindings/phy/starfive,jh7110-usb
-> > > > > >> +++ -phy
-> > > > > >> +++ .yaml
-> > > > > >> @@ -19,6 +19,16 @@ properties:
-> > > > > >>    "#phy-cells":
-> > > > > >>      const: 0
-> > > > > >>
-> > > > > >> +  starfive,sys-syscon:
-> > > > > >> +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> > > > > >> +    items:
-> > > > > >> +      - items:
-> > > > > >> +          - description: phandle to System Register Controller
-> > > > sys_syscon node.
-> > > > > >> +          - description: PHY connect offset of
-> > > > SYS_SYSCONSAIF__SYSCFG register for USB PHY.
-> > > > > >
-> > > > > > Why is having a new property for this required? The devicetree
-> > > > > > only has a single usb phy, so isn't it sufficient to look up the
-> > > > > > syscon by compatible, rather than via phandle + offset?
-> > > > > >
-> > > > >
-> > > > > I didn't design this, I just copied it from
-> > > > > starfive,jh7110-pcie-phy.yaml. As that already exists, I'm neither
-> > > > > sure we want to change that anymore nor deviate in the pattern he=
-re.
-> > > >
-> > > > To be honest, I think some of the other users of phandle + offset on
-> > > > this soc were just copy-pasted without thinking about whether or no=
-t they
-> > were required too.
-> > > > This one seems like it should just be a lookup by compatible in the
-> > > > driver instead of by phandle. As a bonus, it will work with existing
-> > > > devicetrees - whereas your current implementation will fail to probe
-> > > > on systems that have the old devicetree, a regression for systems
-> > > > running with that devicetree and downstream firmware.
-> > > >
-> > > > Cheers,
-> > > > Conor.
-> > > >
-> > > Hi Conor
-> > > I know you would like to put the offset value to the code, Just set s=
-yscon in dts.
-> > > Just like pcie-starfive.c. right?
-> >=20
-> > No, not quite. That still uses a phandle lookup, I was talking about us=
-ing
-> > syscon_regmap_lookup_by_compatible().
->=20
-> Okay. Using syscon_regmap_lookup_by_compatible() can just modify the driv=
-er code only.
-> But syscon_regmap_lookup_by_compatible() is not exist in uboot now. If I =
-want to enable
-> CONFIG_OF_UPSTREAM in uboot. I have to add this function in u-boot...
+> 
+>>
+>> To conclude, there are 3 scenarios I see where these signals need to be
+>> handled:
+>> 1/ booting 
+>> 2/ suspend to RAM
+>> 3/ driver unbind/bind
+> 
+> --> It should be OK as linux is not handling USB PWRREADY signal.
+> 
+>>
+>> In case of booting: if we have TF-A to set signals there might be intermediary booting applications
+>> (e.g. U-Boot) that set these signals also. If it leaves it in improper state and Linux wants to use
+>> USB then the USB will not work (if Linux doesn't handle it).
+> 
+> That is the problem of U-boot. U-boot should not override system state signals such as USB PWRREADY.
 
-You can use
-	node =3D ofnode_by_compatible(ofnode_null(), "foo");
-	*regmap =3D syscon_node_to_regmap(node);
-in U-Boot.
+U-Boot can also use USB as well.
 
+> 
+>>
+>> In case of suspend to RAM: as TF-A is the only application in the suspend to RAM chain, it should work
+>> handling it in TF-A.
+> 
+> That is correct, TF-A should handle based on system state.
+> 
+>>
+>> In case of unbind/bind: currently we don't know if these signals introduces any kind of power saving
+>> so asserting/de-asserting them in Linux may be useful from this perspective, if any.
+> 
+> These are system signals, according to me should not be used in unbind/bind.
 
---V8qJgUi9TxzWpM4h
-Content-Type: application/pgp-signature; name="signature.asc"
+It can be done whatever way. I would just prefer to work for all scenarios.
 
------BEGIN PGP SIGNATURE-----
+Thank you,
+Claudiu Beznea
 
-iHUEARYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZtbaAQAKCRB4tDGHoIJi
-0qddAQCykV/8wdobsflqJGegk8VpG4PfIyVD95Ps/lFiN6N8EAEA3A0m+qTJUFXs
-meGu8AGVsKo0mah3sBBHmXQzCetNhA8=
-=t0GZ
------END PGP SIGNATURE-----
-
---V8qJgUi9TxzWpM4h--
-
-
---===============2878397655183781166==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> I may be wrong.
+> 
+> Cheers,
+> Biju
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2878397655183781166==--
-
