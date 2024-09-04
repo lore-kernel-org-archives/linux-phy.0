@@ -4,169 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A202CD3431
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 09:57:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C02D5CA0ED3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:06:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=M4G47hpuuqTlxHqZdHL/mAQAUfcwdXCRN7zH9TmeZ2A=; b=X4N0idpBvlqnNFkUo4o3yJ/2Jp
-	nMtsVghKtqdLIXgHrJaQeco//FVT6tEJcL2Epr5mxqKmUEy5AKv4lNrEHl3gx8POqlcDfvv9ZnmsA
-	hOOZSMR1IQwcOEyesH5wCyEGZ5Y42X9W0vt78nhOz45uyUqtJW3VAsv7bStajx945CSl9B/pPJvdh
-	2+DcpFwm8bEigvGxlJQEmTfNZlJKCBAyThHq2CCOsB6dfZ21bFy40YwZO0iNpG+Uhe799doNiuyo1
-	gOYPgbyadakQlHrBMnmT3tkZZko5vmayC9Yfmk3de+PnkW2wHCaG3vcg4w+JFKSV8se/U5j0HM4k4
-	kQnxCj1Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=29OO+D39FTNtE9/jTLOEWDiTKCIF0PFAkPBhhDg/Qcg=; b=cHS5UyXHwvaddi
+	FFu5Mao4dI6DxhVxn+XcNePbS1LnStlGyRvIpaX7OkNxgyxRqz1nxW7OeSY7k3oZdPwNd2X1vP91B
+	arMRJrnGen6RfSUB4HFI5K9pjx3AAf2KCcqVY26B7d4nWdbUnZG6QXh1qQ6kwR4pkeX59CKUelVCF
+	zhD2855iHv3uL0YAl12ndRzFA4bRmyN5k56ID9fS0K+xw2Za++sw0K0D+BzS+iRGPll/jixID1d81
+	FZg3ux411i03tID7Fn6Ttr0Zuc/tkP8a6JxWy3AU39Pj2W2qqXBeXV4iLNi2yXI9G3UNs2cMCaGyb
+	JRVSNA+XHHVMuqdCPmVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slml3-00000003nDF-1ATb;
-	Wed, 04 Sep 2024 09:57:01 +0000
-Received: from mail-vi1eur05on2070e.outbound.protection.outlook.com ([2a01:111:f403:2613::70e] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1slmu7-00000003pGs-1jJ1;
+	Wed, 04 Sep 2024 10:06:23 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmDM-00000003eKY-0kZ7
+	id 1slmHo-00000003faG-2V51
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Sep 2024 09:22:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=nmvbs7dABzShAzdkue7Zuu3JPBz2j52L8x1dL7526/AlP2Y62tRXD7ee+jvMf+Drk/f50TN+AUi9BFy14QfjqPBmlQY68EmwGhn0lD4OflaimtfHQXwW1lbxi6Ox63sBVYbYJNkCNSgHDAqa2VMgr9rLmOos8wbB4lmkre05C/OZ4GrecElPdSfkw6jPv11Yhqalux03N4WgeKtitBjFUXegeAzAyufo+liAByuyMybZ6c0Ovxzw/G514QB4LCBA4jUFk6YDP+xY4X+iqYUlANFjvzBqNRnemS4C0fn3yQbP5IDOKw7xraC9MWogH9qYdBop8+VFax6xZ1uUwciIgw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=aWQEM4+CSMA37mZPUvxlQZ0Rbba4LcMwQA6rlditGDM=;
- b=t84Vmlif/c0FU2UjRI55spGSNmS1SnyHoV+qpypZZJon4IkgthATklRWjUEYecnHZTCIPQ5BZmmI171kX4v8Lt/fabmUGKsYyCTda+8xxo98C7IIBmsq6aNzM+G0DGlpwWeIBSNZrRba+0iqF/vS5Q5eZ9ygU5/mB7dVgC4YOk3miHCAO1RZLa3SRqJKwFo9zbE/uX61jCak/VZMgaXE0jw9P2nwR22V56RlG2GQP2a1vElkHZyZ3WurzjT9EnqajyxnUjZY5ynGMzVH4rjqeLR9BFCZt8yzIfYgaalFL2TU6jNbXWBgUmZG/2LZ1EBkSNBkwLi51xvnkDhHvqiooA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
- dkim=pass header.d=kontron.de; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com;
- s=selector2-mysnt-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=aWQEM4+CSMA37mZPUvxlQZ0Rbba4LcMwQA6rlditGDM=;
- b=O86K6XbUjLNSBVWly0JXXxpx/bMwIEOubnJV1eY5G7pXKD3WaMl0Pp5nUFIxLYAc9GDUi7igTa6/VCLSy5L7J2xgl3Jl8rLyEzt7cHD87hBhK1Ak3SuJVU3937SJy5iuBER6e+j87zRO+XYMa7IKKEca+zZ1AfcfLX4qysCDd8o=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=kontron.de;
-Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:263::10)
- by DU4PR10MB8802.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:10:569::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.25; Wed, 4 Sep
- 2024 09:22:00 +0000
-Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::b854:7611:1533:2a19]) by PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::b854:7611:1533:2a19%7]) with mapi id 15.20.7918.024; Wed, 4 Sep 2024
- 09:22:00 +0000
-Message-ID: <eccf0274-51c8-4afd-bf98-af7d401f4422@kontron.de>
-Date: Wed, 4 Sep 2024 11:21:59 +0200
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V5 1/5] phy: freescale: fsl-samsung-hdmi: Replace register
- defines with macro
-To: Adam Ford <aford173@gmail.com>, linux-phy@lists.infradead.org
-Cc: dominique.martinet@atmark-techno.com, linux-imx@nxp.com,
- festevam@gmail.com, aford@beaconembedded.com, Sandor.yu@nxp.com,
- Marco Felsch <m.felsch@pengutronix.de>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Lucas Stach <l.stach@pengutronix.de>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-kernel@vger.kernel.org
-References: <20240904023310.163371-1-aford173@gmail.com>
- <20240904023310.163371-2-aford173@gmail.com>
-Content-Language: en-US, de-DE
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
-In-Reply-To: <20240904023310.163371-2-aford173@gmail.com>
-X-ClientProxiedBy: FR3P281CA0137.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:95::11) To PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:102:263::10)
+	Wed, 04 Sep 2024 09:26:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1725442006;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=SGMDfa3Bec/ArdYvFpR6Hu7GEx9nNeUcYfjXHJm4mxI=;
+	b=L+U6ztYbw8rtUtLuIpVg7W+GIlsVj2lutA3S12UrYQ/xkB70Sg2WazABXC9zii9dHzr9tZ
+	gJT0BhEVpOKGr72nj7D2NDpsnBeGGeLpHm5Y2vT79VW/b1SASbbXEkEN1MB0KKgFqJ3b3V
+	R7mUMvaBKbllLKx54L82VhJCoPSxQHQ=
+Received: from mail-lf1-f70.google.com (mail-lf1-f70.google.com
+ [209.85.167.70]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-519--xKz5UkoPImWhohN5iYnbQ-1; Wed, 04 Sep 2024 05:26:43 -0400
+X-MC-Unique: -xKz5UkoPImWhohN5iYnbQ-1
+Received: by mail-lf1-f70.google.com with SMTP id 2adb3069b0e04-5334824e68dso1925251e87.3
+        for <linux-phy@lists.infradead.org>; Wed, 04 Sep 2024 02:26:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725442002; x=1726046802;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=SGMDfa3Bec/ArdYvFpR6Hu7GEx9nNeUcYfjXHJm4mxI=;
+        b=UsUwwpFnYvIy9edNotAve8j2tEiV+CcQR1QqjUg5QDG8ziWtEi8N3mHUNpo0puIQxx
+         tsls6Tbw22yFrxVrgsoYdah6hz0mOskR+YhX3UUkp3j/34J3lI53loLb6nN3+OkJGYT9
+         i6d8VUt+TbVb+muP2fXp/2iROxZDbCXdahoczpYZmb+SjdfyPvi6xCt6XTYnU2TfSwvF
+         LmHlUP2paf/7GR2llF6X8RfWLKXpYQAg7GTO2d1DWlrSyMG1JKNJRBqrB2vO62R0Z05x
+         nGsEDceZ7G3DwHw5GoyHom90W0kTOHHJIaCixaPmMhW1uh0gl8JG2febMvopU4JtSF3j
+         xtZA==
+X-Forwarded-Encrypted: i=1; AJvYcCVdhwqA4kby2RSwsbDbS9D05JXdcEFsoX3gLd7gij48aGeCLZFdN6yeXZfIT/ZumBKe0xaY7EU8YBU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz1WdXigYHIibhJWXdB17C8ZvhNOCj4cGyvt9A4uH0ncKZdfY4o
+	kE6rZ2fTT2cHa+M88tSDefHCqKEYQ3bZ8K/Cr61uCYfHw73KyUOUN7i303ZgulkiuO2qDNs1Fd2
+	5pKlkndqyvM7Wpsl0GMM7312bURM3PCg8Gs0zAH7i+7+3uIHjgU+AWNA2txu67Bk=
+X-Received: by 2002:a05:6512:3a95:b0:52e:97b3:42a1 with SMTP id 2adb3069b0e04-53546b271damr10358629e87.24.1725442001962;
+        Wed, 04 Sep 2024 02:26:41 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFDnqP0JR7XUOSJNlvelC6lZrlFyXexs7kVqkjHiQ57R3hhUrCbDj2RrDPJJmY4gaF4BOb/5g==
+X-Received: by 2002:a05:6512:3a95:b0:52e:97b3:42a1 with SMTP id 2adb3069b0e04-53546b271damr10358588e87.24.1725442001207;
+        Wed, 04 Sep 2024 02:26:41 -0700 (PDT)
+Received: from ?IPV6:2001:1c00:c32:7800:5bfa:a036:83f0:f9ec? (2001-1c00-0c32-7800-5bfa-a036-83f0-f9ec.cable.dynamic.v6.ziggo.nl. [2001:1c00:c32:7800:5bfa:a036:83f0:f9ec])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a8988feb0e5sm797577066b.12.2024.09.04.02.26.40
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 04 Sep 2024 02:26:40 -0700 (PDT)
+Message-ID: <8febdf39-ea1a-4e03-afc8-bd6e0c3b8624@redhat.com>
+Date: Wed, 4 Sep 2024 11:26:40 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR10MB5681:EE_|DU4PR10MB8802:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2e863890-f824-4701-8db6-08dcccc3080f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|1800799024|366016|376014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?RGpOSEhEaEliWUZ3dHJzZUdNaVIwaUdZWkhjcWRQYStZcWxIRFBPL3phRUx6?=
- =?utf-8?B?UlhMS0FMd0U5b3RHZzFaWGQvSSt1MGNpajBhOGFPSkJzbTRoT2RDSVBIamlU?=
- =?utf-8?B?eHM4bHlNdWlHdEJhY0JHTVQ4NnFQSGlaRFNhTGRSeGszS0lRUkU1OFA5Z1BZ?=
- =?utf-8?B?S1ZYc3BnVGt6ZmhzRDZkU0ExTDV5WHVwbkgwc2ZLQXpzczdyNndFREpQODIw?=
- =?utf-8?B?NEUvVThPSUlRVThqTlBDVUt2VUl0bzVzK2NNL3E2emZCSTdQWHc5Z1lNcnFF?=
- =?utf-8?B?VVFRY0ZzbDdCVVdDMlg5K1BRRFVGMlhpNzVuN21CNWZuQi9nemtKVk1NaFZY?=
- =?utf-8?B?NXZCYlB0Q3RwcmNkOGZYVjR3L2hOUHZWOXNVcmNjLytCQ2lFZ1JTMDFpMGVt?=
- =?utf-8?B?RW1DSTdQem53NGNHTnpJRWgyQUNnWTlQQ0ZEMCtXemp4Z25yL2x4ZWx5ZStk?=
- =?utf-8?B?dy9vS0JMa1hhelBqckd5ckNtdmxkTTltVVNlM2hUMDZyRGx4RjBhd2VaWXc3?=
- =?utf-8?B?ZU5nUXJwNjBUQ3FWc2VhMUN0UlRZQnQxbjd2YXpOdTRsZWdXU25kdE0zYnEx?=
- =?utf-8?B?VU5yeXZ0Z0o0aE5yTmhYa3JNTk5PdzZuWXhZK2gzVUIzZnlMdzZSNGZSU2RR?=
- =?utf-8?B?bE1iVEtycGF4OFJObWhNcUtlcURFM2MzQlJFaEFNWDRkblMyQTRld01XeEtY?=
- =?utf-8?B?enhtYVRxY3gxU1NLdmZEeTVrT3YzYzFqZjFRRFRndmhOY3FVeEV0SXpnbmdz?=
- =?utf-8?B?YUkzS1FZVk5USnZsd1N0RGFsK1BHUGZhdDQ5Mm5ucndvZENqTERjVTMrd1pG?=
- =?utf-8?B?ZWt6cXBGOHZpbWlBS3B3TmQ5enhQRDhBZU14aE85b29QWFJodzNoT2tyUmdD?=
- =?utf-8?B?M0ZtTzNuanZWVGMxOUhqdG9KYjl1TXdvR3BtZEhlK2R0OHVqMTNzZzhmeHlU?=
- =?utf-8?B?bnErRXc3TTBSRytneDlvOVdwbmtxTHV4aVdtMmoxclA4cVcxako1VStsNmdj?=
- =?utf-8?B?dVExalA1VWkwcnRFUjh5cUVYNU43ZCtGc3o0dlh0dWNZMDc1RjVUZlVNelMx?=
- =?utf-8?B?MW5FNm1IK3Z2aUlRMUNHNXIxeEZmSVV1SVpTeE41cS9KTDRiaGhkL0VBazJ5?=
- =?utf-8?B?ajlVU21DSUdmTDl6eTQ1aUZ1clk3cCtuZ05YUmljR1llOHFrcU1YRUwvdnNM?=
- =?utf-8?B?LzNuSFdzRFhhSkJSelBQbnRkVDNMV09JTTBQNXNIMzNiTU14Mmtxc2N5eHBK?=
- =?utf-8?B?cUVUcmxJdHVqa3k0eXZZRnoya0N6WnBpRmFmVFcrVEJyVityZ21uUEJNVmhY?=
- =?utf-8?B?MTV1Q3daU0x1TCtVNCtMWW5MdmJmbTk3V1lzUVNZdDdhZFlHc3Nwcml4WGhH?=
- =?utf-8?B?NksvcUYvNHFIU0g3T1NwdzBqWTR3b3A3N0RpV2ozZGdSMjZqVXorMEtyQzJt?=
- =?utf-8?B?U2NINS9EQWFoemNEZmRvTnFwM0tIM1ROTjAxZHdFbk5iM3poOWF2VkhtWFdk?=
- =?utf-8?B?YlA3NnNMZFY4VUMyRmVaMCtLbTcycEZWS3IwZ2RDeDFTcFpmbFVGMTFPZFU2?=
- =?utf-8?B?dEV0aHR5b09RYVd6WlAyT2hNU0psN1N0WkpnWmd5RHhRV2swSVY1blU2dDk2?=
- =?utf-8?B?YzdwTGtrV0RXb1RDOXhWYkxCZXJvOTFIcWFxK3dlR0JpQ3N2WjRsd2VvMXVS?=
- =?utf-8?B?ZTJWdlJ2RnhXRlJxQ0pkdTlEWjVBMStvWDJZekswS1pQZFFhcmJNeEdhelpm?=
- =?utf-8?B?Zit0QzkxRlFmVTY5RER3MHd6MnlwbGFVeThCbWhGSGVRSzRJNDdQWDB0WjFx?=
- =?utf-8?B?dHA0UVJISW9GMTZEcjlSUT09?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(7416014)(1800799024)(366016)(376014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?SUxKTWc3MXhJdG5LR0FXd1ZEYWJIS1hYM3I5TVFwZUVZc24xdWRlVnc3cXRS?=
- =?utf-8?B?V1JpVG5IMzA0c3JhNVJ6RzlKUDVqeFN0VDcxU1RrS2VyTEdHTWZXdUZ3RXJx?=
- =?utf-8?B?bGVSQ3RUR3VmeTNtV3N5UTZtNGZ6aHk0RXBjWUxzYkd2T3RNdkY5Ui9EeXMv?=
- =?utf-8?B?QURhVVE0VzFFSEw2NUYvRU9NandiR21rNmRJQm5DNThiZUlqcmxPOFhJNEhl?=
- =?utf-8?B?RFkzSnMzVHRCSzR0dWlTeW9mQitYWk9IRkQ3cmFlTjU0OTZReUk4MXRNbG5q?=
- =?utf-8?B?a0NsQnBHanlrZmxGS052b29lVFpxZFpscGtEYUNIMGtFNXlWeWtOMk5Jd3BW?=
- =?utf-8?B?NGlndC9aamhVOWREblVkMUxySHdtOW1ubXBRL0VIc0RIUnhSQ09ZRDEyNnQ3?=
- =?utf-8?B?Q2Q5WEpwQ2FLSkJIYU92enJtcmR1MjdBaG9rVHFyWXJaV2d6R1BKbDhvOUYv?=
- =?utf-8?B?Sm9qaUtwcXJmY0JaZDBMdHVCSEhnd1lmb05YZWpDTCtXUW82NFZrS3BIUy9q?=
- =?utf-8?B?MEJyRmloTGU3bFZENkt5dk9QZWVSTnA3YWVha0xVdjFMMVIrc2h2S1dGbEx3?=
- =?utf-8?B?MjhxNElqV2oxSzBDcUNrdGZBdnltdURKYTlhVVE0Q0ZhYUllZmgyanRPTk85?=
- =?utf-8?B?elhOZElhODV0K2diUVJhcUhZUkVCUE9Vb2IybmRmQks2d2g4eW9DQ29ueGlF?=
- =?utf-8?B?NzRhb3VZOEh4VWd3RUxJZEZqbmphbVdQdVk5RG4vOVdyWjFhVVdCbkwxZDh2?=
- =?utf-8?B?S0JLYmdsQ2oyN2ltUkwyeDE4aXBFK05VREZsNnF0RUIvYzAray94NGJaNS8w?=
- =?utf-8?B?OUozMHp2VVU3S01IK2FSRlpLVm5xWDRzM0ZDVldoSHBwcHFVM3NUOFZQOTlk?=
- =?utf-8?B?aDN0VXNSdVFqSjN1c0lHMVJtb3hQZGFkdmdRZUtwcmtzOEFiWEltRjZpTzds?=
- =?utf-8?B?UWtvaFNCdkFFRE1hM1NNblIvVjlvcEVPQ0YvcytJVGttcG9aT3l3MzJRQklq?=
- =?utf-8?B?MHk0WmN1V1NlckJ6VnY4b21MemNQS3pySS8yZVhjSHV3ZjU3TFRPMVpvVjhw?=
- =?utf-8?B?RE9pRHZQdmFONzZOdlp5SGVyTGtwSGVacllXbnBQQ3RVVGhCYTBmdkRXUUwv?=
- =?utf-8?B?ZlNqZVdESjJIZldrS3JOckRvdzdkczBhRjlLTFN0UU9KSjJPeVJPa09OS1RW?=
- =?utf-8?B?TXhLaDRBTUljOHFIWitwNzU4ZnpkeHFhYmdhV1FGcU8xWlhNT3ZFZkJxd1B0?=
- =?utf-8?B?aVV6ZldvWWxHbFc1aFFKaWtnRTZ0WHVMZnpqK1lNZUtzV2haTmVRZ25SeURT?=
- =?utf-8?B?VDg2ZlZTZUlvZUpGUG5PNUdqR0ZRT3haOTVOSlRWMmljZUQxODFVdDh3SThy?=
- =?utf-8?B?R0phc1lUUVJlclQxSjY1S3dwWkczcURzM2JrQXh1dmZJR2lzVEFJaHhmQ05Y?=
- =?utf-8?B?dzBrMWNDZ1RIYVBFOFhHY1g1WmM2NlRjekI2VUxGZWlLZzRhSTBKZCtranZu?=
- =?utf-8?B?c05HT1I4U0ZYNE1YcVdlTktMejBVajlPYVZFOWgvbTh0KzJBRWJBUEkzYW5J?=
- =?utf-8?B?REhTdDB2Vk14M1JDWkVmcFhMZkFEclM2TVkza2h1WFZoM1JnWG9DSFdXMmk1?=
- =?utf-8?B?aHVmeFl1c0M0UTk5a0JqRmJsM3paV2JqeWFRNGpBNHJvUWM5UmNHaDlDd0pX?=
- =?utf-8?B?Z2hueWEzWHdBWXRuaFVUSGljZjVPbWxrbCtxcjY5K2RZNU1SL3kzRGE5bXNR?=
- =?utf-8?B?MGs3US93RG1YRjMzRFF2M29FZGFrWjdibml1YUtpUmhTZFgva1c0N09CQkJh?=
- =?utf-8?B?Um55TDE4djdlbFgrbVJvZy9Jb1VZcnZneFNXN1NTU0d6cG5yNVlwSFpQSlp0?=
- =?utf-8?B?UEZBRGVvMkR1cENOSUtQN1RJVGQrUUNmczVNU3p4ZHJCZWIxUFhkNW1hQm03?=
- =?utf-8?B?Y1ZNbkkzL0dHWTBuUFdidndncUorL2p6VGdZSTd4cUFRalJHVTgyR2lXam82?=
- =?utf-8?B?emJQdklqK1ZNQXBIZkhzREttYkpxNjMvTmNQRHdnN09CeElVL2hrdHhLejZF?=
- =?utf-8?B?S1UrZmF6TnVCd21uR2hpOU5LcDNpVXpTWlFoSXg2OHdBbjhpQXBkVktxVS8y?=
- =?utf-8?B?V1ZBTU9QZ1YyV2M4K2ZrQ3lnMFo2ZytSWVRUSDIvZDRMYXBnUzBVV2d2Y09Q?=
- =?utf-8?B?WGc9PQ==?=
-X-OriginatorOrg: kontron.de
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2e863890-f824-4701-8db6-08dcccc3080f
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Sep 2024 09:22:00.7085
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: XS3T5VNXrTBgFSri9tRI/PTZ4vBTvCFskZoPQTZDJ+UhGXrdYsHfaCiauZCBDMaHSRZCf/TdnsSLxDHtWtHHdVQnAM/9OruUtCOB8gNzdF8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR10MB8802
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/6] power: supply: Change usb_types from an array into a
+ bitmask
+To: Sebastian Reichel <sre@kernel.org>
+Cc: =?UTF-8?Q?Thomas_Wei=C3=9Fschuh?= <linux@weissschuh.net>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Chanwoo Choi
+ <cw00.choi@samsung.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Enric Balletbo Serra <enric.balletbo@collabora.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20240831142039.28830-1-hdegoede@redhat.com>
+ <ez5ja55dl7w7ynq2wv4efsvvqtk4xyalf4k6agtsuhpgrtlpg3@d6ghlle4cu2q>
+From: Hans de Goede <hdegoede@redhat.com>
+In-Reply-To: <ez5ja55dl7w7ynq2wv4efsvvqtk4xyalf4k6agtsuhpgrtlpg3@d6ghlle4cu2q>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Language: en-US, nl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_022212_270852_E0D1BB81 
-X-CRM114-Status: UNSURE (   6.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240904_022648_750631_83BFF74F 
+X-CRM114-Status: GOOD (  34.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -183,16 +111,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04.09.24 4:32 AM, Adam Ford wrote:
-> There are 47 registers defined as PHY_REG_xx were xx goes from 00 to
-> 47.  Simplify this by replacing them all with a macro which is passed
-> the register number to return the proper register offset.
-> 
-> Signed-off-by: Adam Ford <aford173@gmail.com>
-> Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
+Hi,
 
-Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-Tested-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+On 9/4/24 12:04 AM, Sebastian Reichel wrote:
+> Hi,
+> 
+> On Sat, Aug 31, 2024 at 04:20:33PM GMT, Hans de Goede wrote:
+>> When support for the "charge_behaviour" property was added the list of
+>> available values was made a bitmask in power_supply_desc.
+>>
+>> "usb_types" is very similar in that:
+>> 1. It is an enum
+>> 2. The list of available values is stored in power_supply_desc
+>> 3. When shown it shows all available values, with the active one surrounded
+>>    by square brackets.
+>>
+>> But "usb_types" uses an array with valid enum values instead of a bitmask.
+>> This uses more memory then the bitmap approach and it makes it impossible
+>> to have a shared generic show() function for properties which show
+>> available values, with the active one surrounded by square brackets.
+>>
+>> This patch-set moves "usb_types" over to a bitmask in power_supply_desc
+>> to indicate the available values.
+>>
+>> Patches 1 - 3:
+>>
+>> It turns out that the ucs1002-power driver contained a surprise in that
+>> it supports writing to "usb_type" even though the ABI doc says it is
+>> read-only. Since we cannot break shipped userspace API, the ship has sailed
+>> on this one. The first patch documents that writing "usb_type" is allowed,
+>> but only for power-supply devices which provide USB power rather then
+>> consume it.
+>>
+>> Enum properties accept writing the FOO_TEXT[] string values, passing
+>> the enum value matching the FOO_TEXT entry to set_property(), the second
+>> patch adjusts ucs1002_set_usb_type() to directly accept enum values.
+>>
+>> The rt9467 driver was another driver which allowed writing to "usb_type"
+>> but there the use made no sense, so it is simply dropped.
+>>
+>> Patches 4 - 6:
+>>
+>> These patches implement the actual moving of usb_types to a bitmask.
+>>
+>> Patch 6 is a bit of a bigbang patch moving all drivers over in one go,
+>> touching a couple of drivers outside drivers/power/supply: 1 in
+>> drivers/extcon/ 1 in drivers/phy/ and 5 in drivers/usb/typec/ since
+>> the changes outside of drivers/power/supply are small I've chosen to
+>> make all the changes in one go rather then have some sort of
+>> intermediate state where both ways are supported.
+>>
+>> For merging this I believe it would be best for an immutable branch / tag
+>> to be created on the linux-power-supply tree and then send a pull-request
+>> to the extcon, phy and usb-typec maintainers to merge the tag.
+>>
+>> extcon, phy and typec maintainers can you please give your Acked-by for
+>> patch 6/6 for merging these changes through the linux-power-supply tree?
+>>
+>> This set is based on top of the latest linux-power-supply/for-next.
+> 
+> As we are quite close before the merge window I just took it with
+> just the Ack from Greg. The changes in PHY and Extcon are quite
+> small.
+
+Great, thank you.
+
+Regards,
+
+Hans
+
+
+
+
+> I did prepare an immutable branch in case it is needed by
+> any of the other involved trees:
+> 
+> The following changes since commit 8400291e289ee6b2bf9779ff1c83a291501f017b:
+> 
+>   Linux 6.11-rc1 (2024-07-28 14:19:55 -0700)
+> 
+> are available in the Git repository at:
+> 
+>   https://git.kernel.org/pub/scm/linux/kernel/git/sre/linux-power-supply.git tags/ib-psy-usb-types-signed
+> 
+> for you to fetch changes up to 364ea7ccaef917a3068236a19a4b31a0623b561a:
+> 
+>   power: supply: Change usb_types from an array into a bitmask (2024-09-03 23:20:28 +0200)
+> 
+> ----------------------------------------------------------------
+> Immutable branch for usb_types change for v6.12
+> 
+> Changing usb_types type from array to bitmap in the power_supply_desc
+> struct requires updating power-supply drivers living in different
+> subsystem, so it is handled via an immutable branch.
+> 
+> ----------------------------------------------------------------
+> Hans de Goede (6):
+>       power: supply: "usb_type" property may be written to
+>       power: supply: ucs1002: Adjust ucs1002_set_usb_type() to accept string values
+>       power: supply: rt9467-charger: Remove "usb_type" property write support
+>       power: supply: sysfs: Add power_supply_show_enum_with_available() helper
+>       power: supply: sysfs: Move power_supply_show_enum_with_available() up
+>       power: supply: Change usb_types from an array into a bitmask
+> 
+>  Documentation/ABI/testing/sysfs-class-power     |  7 ++-
+>  drivers/extcon/extcon-intel-cht-wc.c            | 15 ++----
+>  drivers/phy/ti/phy-tusb1210.c                   | 11 ++---
+>  drivers/power/supply/axp20x_usb_power.c         | 13 ++---
+>  drivers/power/supply/bq256xx_charger.c          | 15 ++----
+>  drivers/power/supply/cros_usbpd-charger.c       | 22 +++------
+>  drivers/power/supply/lenovo_yoga_c630_battery.c |  7 +--
+>  drivers/power/supply/mp2629_charger.c           | 15 ++----
+>  drivers/power/supply/mt6360_charger.c           | 13 ++---
+>  drivers/power/supply/mt6370-charger.c           | 13 ++---
+>  drivers/power/supply/power_supply_core.c        |  4 --
+>  drivers/power/supply/power_supply_sysfs.c       | 66 ++++++++-----------------
+>  drivers/power/supply/qcom_battmgr.c             | 37 +++++++-------
+>  drivers/power/supply/qcom_pmi8998_charger.c     | 13 ++---
+>  drivers/power/supply/rk817_charger.c            |  9 +---
+>  drivers/power/supply/rn5t618_power.c            | 13 ++---
+>  drivers/power/supply/rt9467-charger.c           | 16 ++----
+>  drivers/power/supply/rt9471.c                   | 15 ++----
+>  drivers/power/supply/ucs1002_power.c            | 26 +++++-----
+>  drivers/usb/typec/anx7411.c                     | 11 ++---
+>  drivers/usb/typec/rt1719.c                      | 11 ++---
+>  drivers/usb/typec/tcpm/tcpm.c                   | 11 ++---
+>  drivers/usb/typec/tipd/core.c                   |  9 +---
+>  drivers/usb/typec/ucsi/psy.c                    | 11 ++---
+>  include/linux/power_supply.h                    |  3 +-
+>  25 files changed, 132 insertions(+), 254 deletions(-)
+> 
+> -- Sebastian
+
 
 -- 
 linux-phy mailing list
