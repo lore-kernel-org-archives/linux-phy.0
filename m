@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64A96CA0ED3
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:12:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73C83CD4847
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:14:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BbNkEKDmb6uQwqrQq1QF550yZ2cOImQhExgqzaT8G6w=; b=wvSZy7QXr7ZkTY
-	RSbOYHOT3j/VE1H/P+6UBfvNbbhDv11N05A7x8H1SWE3jSORZa/TC4kb8guitjEWIMRJNIkvdTXsk
-	n7FjNc8hwVLLD0DllEeyIbpAzmmo9yZPmRumUYLXjOYhlXYPoqq7LBi+o4DaOP0tv82byivC2uXvy
-	GathNNCKN73X4v4iZlwv2wj3hIlb5HC7b2QT2ndQ5nj+97xFKvTuvCFzs5D8DYwkrRhlLQmIjk28E
-	gUStxpDndDoPcdadHhU/TlRBZbaJmNtjzEjJxX2Hd+gcTvhsIQ0NbZojbo4+MSpj60I6ehlm4duGL
-	i8Hh1znFOmCf4yvtWAZA==;
+	List-Owner; bh=G2CsaDWJN6olcLjH7IJse5CycB8S/2fS7rM2GC4w/gc=; b=bcfOWADjSo+kVk
+	zIP1N+z1gL5LesnsbE4moh3ekCqdvcsPbcgV1AxwRS4+8SneqsuIImxVUADAIPVGCcBmbtHVleyBY
+	XletRVzP/FIXeaGxKLc/I79bfzgoOFY2Lu8o6oFmaI2fXPkad/Z49jEaqktSUdtS/V3N1gWAzz9i/
+	PWYOncbQxiyCdexP8E66TS6RQmeNq4SuKnjGGDf2suNLi6vzEAIYmAG4u48D7euA6/Kyqi2pLSdj+
+	VSFMh32JCyZ1tC1MQjHelOY3m7xaR1GoOEJ/yaLaDYmVO5ZTrMHsXQsEM93h+bJA8XxkxLEFkbfoA
+	3jl8c/FVMZLO4J9ZlCkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmzf-00000003qt5-0Wru;
-	Wed, 04 Sep 2024 10:12:07 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sln2L-00000003rIc-0ku0;
+	Wed, 04 Sep 2024 10:14:53 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmSz-00000003icI-1kWk;
-	Wed, 04 Sep 2024 09:38:22 +0000
+	id 1slmU3-00000003ix9-1UED;
+	Wed, 04 Sep 2024 09:39:28 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4A6855C3E7D;
-	Wed,  4 Sep 2024 09:38:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BA4EC4CEC9;
-	Wed,  4 Sep 2024 09:38:10 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4AC4D5C0FCA;
+	Wed,  4 Sep 2024 09:39:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9B04C4CEC6;
+	Wed,  4 Sep 2024 09:39:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725442700;
-	bh=4Oxz02UXsHvMi4PosHxXi44tWRFHjOAIO+C8WFCBS5g=;
+	s=k20201202; t=1725442766;
+	bh=KYJzv/JgvF+3JCuKxVNSBMqfNqctJKRJIYxK6Z9pzek=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=gIgGZin4OpMLlQQjFhOvjm4u1uA4dUZv0rJ65H2rREYsG1NrlfX/IFKlbAzPVKCFx
-	 YFFrbOQaIauuCGiQ08OUIQfk/hS1RnnKodmHk+AJyPQ8UICD32XsV9YQQ0F0xr2jNr
-	 3zhB2s/I5i7obEN731r/0Co7LeOjRNNW1Pv8Ll9qCp6sTtT3trcAc2Q/Z0AoxBQu25
-	 gZ4VSqhehxPZStkYjNcYxc5UTCxPbWLrDjxRD2R0K0F+6GcfPPCMu4WdHZgRdvT7nX
-	 dw6mfAp01e9EvRmiob3peDLbBCGh4HL7Lv9HeqwCzvjE6Z+4wPjVf9GpzWA9G+z4U6
-	 TkN2ZypA/NOTA==
-Message-ID: <0627fd69-f7d8-48ae-bbba-3a2d9bbaa5b1@kernel.org>
-Date: Wed, 4 Sep 2024 11:38:08 +0200
+	b=fIEaRZP1IZ5ZNKKaO5mjiWzy4/1MuwpOV8O761wu/XbQu8rAmK7KUXx+pBWdFbPbe
+	 5fMsVH2rpZc1cF1K2G7XXLoSM7AfkKcrV8klWur6EkKUc7bYUep0fjyRB+B37ZvoVo
+	 hydyFJPpc6YIBSs8MaQKva8MIBM9KjF7ItvyUOth41eBaVe3bXW/dEItJoOvuVtjPo
+	 Nhh2mIlIbQ0KwDh+l1wy7+Dlquwk7pjG7cIB3zQOc/gxbV4pzc6ppAit1PBQjK2khT
+	 rfcpBSSeiJyACV5jN50LD8D6qrQXPjibmBZNgK/nWUNK2P5tjM5DaP0AO0m1//leh4
+	 NWDdneF19HQaA==
+Message-ID: <851566fe-4802-41c7-bb35-d6d1e9cf9bdf@kernel.org>
+Date: Wed, 4 Sep 2024 11:39:13 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 16/19] dt-bindings: arm: qcom: document QCS8275/QCS8300
- SoC and reference board
+Subject: Re: [PATCH 17/19] arm64: defconfig: enable clock controller,
+ interconnect and pinctrl for QCS8300
 To: Jingyi Wang <quic_jingyw@quicinc.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>, Rob Herring <robh@kernel.org>,
@@ -69,7 +69,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  iommu@lists.linux.dev
 References: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
- <20240904-qcs8300_initial_dtsi-v1-16-d0ea9afdc007@quicinc.com>
+ <20240904-qcs8300_initial_dtsi-v1-17-d0ea9afdc007@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -115,10 +115,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-16-d0ea9afdc007@quicinc.com>
+In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-17-d0ea9afdc007@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_023821_624201_1A417126 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20240904_023927_526989_97E59D3C 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,38 +136,47 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/09/2024 10:33, Jingyi Wang wrote:
-> Document the QCS8275/QCS8300 SoC and its reference board QCS8300 RIDE.
-> QCS8300 is an Industrial Safe SoC, while QCS8275 is the Industrial
-> Non-Safe version which can share the same SoC dtsi and board DTS.
+> Enable clock controller, interrconnect and pinctrl for QCS8300.
+
+NXP QCS8300? What is QCS8300? Which products use it? That's a defconfig
+for entire kernel, not your Qualcomm one.
+
+> It needs to be built-in for UART to provide a console.
 > 
 > Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
 > ---
->  Documentation/devicetree/bindings/arm/qcom.yaml | 8 ++++++++
->  1 file changed, 8 insertions(+)
+>  arch/arm64/configs/defconfig | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
-> index c0529486810f..ccf9a166368f 100644
-> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
-> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
-> @@ -42,6 +42,8 @@ description: |
->          msm8996
->          msm8998
->          qcs404
-> +        qcs8275
-> +        qcs8300
->          qcs8550
->          qcm2290
->          qcm6490
-> @@ -895,6 +897,12 @@ properties:
->            - const: qcom,qcs404-evb
->            - const: qcom,qcs404
->  
-> +      - items:
-> +          - enum:
-> +              - qcom,qcs8300-ride
-> +          - const: qcom,qcs8275
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 81ca46e3ab4b..a9ba6b25a0ed 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -606,6 +606,7 @@ CONFIG_PINCTRL_MSM8996=y
+>  CONFIG_PINCTRL_MSM8998=y
+>  CONFIG_PINCTRL_QCM2290=y
+>  CONFIG_PINCTRL_QCS404=y
+> +CONFIG_PINCTRL_QCS8300=y
+>  CONFIG_PINCTRL_QDF2XXX=y
+>  CONFIG_PINCTRL_QDU1000=y
+>  CONFIG_PINCTRL_SA8775P=y
+> @@ -1317,6 +1318,7 @@ CONFIG_MSM_MMCC_8998=m
+>  CONFIG_QCM_GCC_2290=y
+>  CONFIG_QCM_DISPCC_2290=m
+>  CONFIG_QCS_GCC_404=y
+> +CONFIG_QCS_GCC_8300=y
+>  CONFIG_QDU_GCC_1000=y
+>  CONFIG_SC_CAMCC_8280XP=m
+>  CONFIG_SC_DISPCC_7280=m
+> @@ -1618,6 +1620,7 @@ CONFIG_INTERCONNECT_QCOM_MSM8996=y
+>  CONFIG_INTERCONNECT_QCOM_OSM_L3=m
+>  CONFIG_INTERCONNECT_QCOM_QCM2290=y
+>  CONFIG_INTERCONNECT_QCOM_QCS404=m
+> +CONFIG_INTERCONNECT_QCOM_QCS8300=y
 
-So the qcs8300 ride comes with non-safe SoC?
+Why this cannot be a module?
+
+
 
 Best regards,
 Krzysztof
