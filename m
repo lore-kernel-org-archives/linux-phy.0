@@ -4,48 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B425CA0ED3
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:11:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64A96CA0ED3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:12:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Du5jwyiLVtIs9wn2u6A5I7Em8/H07FgUS6i/RRRSik=; b=K46GC/F+VRFWSX
-	pWhw9vxvj4U6F2k4IcpcsPNg1qy2QXvZlmZQJPTy0TSpUVDvDtOvInf3o+QGNT/EHOsBZ/tzAdy1T
-	SeeuiDsbOKKroSIUBGcsTz5uo9Ifd44eaaGlpT7oRVdCf9XinktMiBF+w5sj6F6W5qUUagGNemSTh
-	OygN3riKOBi/ywfb6vFemQylGrzsaiR5Xr4LM3Wexqtfa3kdJyalSlYXlqnjnmk9mWflw+2GPhFJw
-	atRgZjeFo/r0hXubDJgupAO+boBpuIh3h4hvbYXFo0lIhX8h6VSyloxidcQ0YaMORAxzdM1dsyV4u
-	3k7rgXKDivX6iCDOX3FA==;
+	List-Owner; bh=BbNkEKDmb6uQwqrQq1QF550yZ2cOImQhExgqzaT8G6w=; b=wvSZy7QXr7ZkTY
+	RSbOYHOT3j/VE1H/P+6UBfvNbbhDv11N05A7x8H1SWE3jSORZa/TC4kb8guitjEWIMRJNIkvdTXsk
+	n7FjNc8hwVLLD0DllEeyIbpAzmmo9yZPmRumUYLXjOYhlXYPoqq7LBi+o4DaOP0tv82byivC2uXvy
+	GathNNCKN73X4v4iZlwv2wj3hIlb5HC7b2QT2ndQ5nj+97xFKvTuvCFzs5D8DYwkrRhlLQmIjk28E
+	gUStxpDndDoPcdadHhU/TlRBZbaJmNtjzEjJxX2Hd+gcTvhsIQ0NbZojbo4+MSpj60I6ehlm4duGL
+	i8Hh1znFOmCf4yvtWAZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmyk-00000003qgo-3l76;
-	Wed, 04 Sep 2024 10:11:10 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1slmzf-00000003qt5-0Wru;
+	Wed, 04 Sep 2024 10:12:07 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmRW-00000003iDD-2VTI;
-	Wed, 04 Sep 2024 09:36:52 +0000
+	id 1slmSz-00000003icI-1kWk;
+	Wed, 04 Sep 2024 09:38:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 070F45C4974;
-	Wed,  4 Sep 2024 09:36:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05B17C4CEC2;
-	Wed,  4 Sep 2024 09:36:39 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4A6855C3E7D;
+	Wed,  4 Sep 2024 09:38:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BA4EC4CEC9;
+	Wed,  4 Sep 2024 09:38:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725442609;
-	bh=/G0entf9EPz+27QSEI/EZdanBKxFjNeFTpe7D09RV/4=;
+	s=k20201202; t=1725442700;
+	bh=4Oxz02UXsHvMi4PosHxXi44tWRFHjOAIO+C8WFCBS5g=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UZ0bTcSULYaM6j4KjsHpBpkpkO3jFgkrNLCmlze9xZa1iiCb6KgPFL7f5AP8w132O
-	 2Zb95LDh/mEtrdbVNjWrg9JApQjVtBsrintOsR9w0IhEfkL87MudGsLsvlk3Raddv4
-	 q5i+oip1C19BZ26rwmzS7wm8MzoR1QesttC6C9ArhpJCc3vvimYsu0dee4wKPWnAPZ
-	 ZGS9fYkIkbKoP9B8YesqdfN+7/cpwfm/nkyunXtiIlrmrRrweFAM1Z/UMO/8D4RVqM
-	 CNov5KkjVYhrUrRBh7vzCfLCit6dXmN1vnD3RdQj8TYKNR9MiBliHKBwWnPlabs5mK
-	 OZls7c76Uv/9w==
-Message-ID: <8e5e611c-bce6-478f-b63c-e532b95cbe5c@kernel.org>
-Date: Wed, 4 Sep 2024 11:36:37 +0200
+	b=gIgGZin4OpMLlQQjFhOvjm4u1uA4dUZv0rJ65H2rREYsG1NrlfX/IFKlbAzPVKCFx
+	 YFFrbOQaIauuCGiQ08OUIQfk/hS1RnnKodmHk+AJyPQ8UICD32XsV9YQQ0F0xr2jNr
+	 3zhB2s/I5i7obEN731r/0Co7LeOjRNNW1Pv8Ll9qCp6sTtT3trcAc2Q/Z0AoxBQu25
+	 gZ4VSqhehxPZStkYjNcYxc5UTCxPbWLrDjxRD2R0K0F+6GcfPPCMu4WdHZgRdvT7nX
+	 dw6mfAp01e9EvRmiob3peDLbBCGh4HL7Lv9HeqwCzvjE6Z+4wPjVf9GpzWA9G+z4U6
+	 TkN2ZypA/NOTA==
+Message-ID: <0627fd69-f7d8-48ae-bbba-3a2d9bbaa5b1@kernel.org>
+Date: Wed, 4 Sep 2024 11:38:08 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 05/19] phy: qcom-qmp-ufs: Add support for QCS8300
+Subject: Re: [PATCH 16/19] dt-bindings: arm: qcom: document QCS8275/QCS8300
+ SoC and reference board
 To: Jingyi Wang <quic_jingyw@quicinc.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>, Rob Herring <robh@kernel.org>,
@@ -66,9 +67,9 @@ Cc: linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- iommu@lists.linux.dev, Xin Liu <quic_liuxin@quicinc.com>
+ iommu@lists.linux.dev
 References: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
- <20240904-qcs8300_initial_dtsi-v1-5-d0ea9afdc007@quicinc.com>
+ <20240904-qcs8300_initial_dtsi-v1-16-d0ea9afdc007@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -114,10 +115,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-5-d0ea9afdc007@quicinc.com>
+In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-16-d0ea9afdc007@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_023650_790606_5406EA53 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20240904_023821_624201_1A417126 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,29 +136,38 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/09/2024 10:33, Jingyi Wang wrote:
-> From: Xin Liu <quic_liuxin@quicinc.com>
+> Document the QCS8275/QCS8300 SoC and its reference board QCS8300 RIDE.
+> QCS8300 is an Industrial Safe SoC, while QCS8275 is the Industrial
+> Non-Safe version which can share the same SoC dtsi and board DTS.
 > 
-> Add QMP PHY support for QCS8300 which is compatible with SA8775P.
-> 
-> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
 > Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 3 +++
->  1 file changed, 3 insertions(+)
+>  Documentation/devicetree/bindings/arm/qcom.yaml | 8 ++++++++
+>  1 file changed, 8 insertions(+)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index d964bdfe8700..8bad68400736 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -2010,6 +2010,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
->  	}, {
->  		.compatible = "qcom,msm8998-qmp-ufs-phy",
->  		.data = &sdm845_ufsphy_cfg,
-> +	}, {
-> +		.compatible = "qcom,qcs8300-qmp-ufs-phy",
-> +		.data = &sa8775p_ufsphy_cfg,
+> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
+> index c0529486810f..ccf9a166368f 100644
+> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
+> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
+> @@ -42,6 +42,8 @@ description: |
+>          msm8996
+>          msm8998
+>          qcs404
+> +        qcs8275
+> +        qcs8300
+>          qcs8550
+>          qcm2290
+>          qcm6490
+> @@ -895,6 +897,12 @@ properties:
+>            - const: qcom,qcs404-evb
+>            - const: qcom,qcs404
+>  
+> +      - items:
+> +          - enum:
+> +              - qcom,qcs8300-ride
+> +          - const: qcom,qcs8275
 
-Is compatible? Then this is redundant. Drop.
+So the qcs8300 ride comes with non-safe SoC?
 
 Best regards,
 Krzysztof
