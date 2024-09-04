@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73C83CD4847
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:14:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54B02CA0ED3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:15:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G2CsaDWJN6olcLjH7IJse5CycB8S/2fS7rM2GC4w/gc=; b=bcfOWADjSo+kVk
-	zIP1N+z1gL5LesnsbE4moh3ekCqdvcsPbcgV1AxwRS4+8SneqsuIImxVUADAIPVGCcBmbtHVleyBY
-	XletRVzP/FIXeaGxKLc/I79bfzgoOFY2Lu8o6oFmaI2fXPkad/Z49jEaqktSUdtS/V3N1gWAzz9i/
-	PWYOncbQxiyCdexP8E66TS6RQmeNq4SuKnjGGDf2suNLi6vzEAIYmAG4u48D7euA6/Kyqi2pLSdj+
-	VSFMh32JCyZ1tC1MQjHelOY3m7xaR1GoOEJ/yaLaDYmVO5ZTrMHsXQsEM93h+bJA8XxkxLEFkbfoA
-	3jl8c/FVMZLO4J9ZlCkw==;
+	List-Owner; bh=QmUK7KCyd87aVi35WqhF9fXRrWfH6RxiVENR1jjoqqA=; b=uD9OtJ+h7OLRNh
+	UWiQUTqnJt2DkKVKtk88mLVgEXQkZyCs+0aAW1AYpcfEP4ua99qbyj07TH6A66erru4695utOwTTm
+	QKJFqxrdZ1FmNvI1kLQmy8WtayVQGZ1bmI7OArVEV407i6mq9ORbsN/iZtQysJ/XDigqfdtq7zQ8a
+	2D+MbniFta/mHa6NZxur/FxdYC9kWlqmiR913FzVnqRmqkBlYed+kHrspk6rnIyYp0gON+R6aTLMZ
+	WqH+TtNQSgWqZnEmj67s/S1W5G4s1h9z5UzxscKASP3BjbYx0NfiTNd0wC6z7/V+17PHK/oFeoFe0
+	+0gvYqGxl31XtZL2LPWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sln2L-00000003rIc-0ku0;
-	Wed, 04 Sep 2024 10:14:53 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sln3J-00000003rdV-4104;
+	Wed, 04 Sep 2024 10:15:53 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmU3-00000003ix9-1UED;
-	Wed, 04 Sep 2024 09:39:28 +0000
+	id 1slmWl-00000003jgL-0BMR;
+	Wed, 04 Sep 2024 09:42:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4AC4D5C0FCA;
-	Wed,  4 Sep 2024 09:39:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9B04C4CEC6;
-	Wed,  4 Sep 2024 09:39:15 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 44A5A5C0072;
+	Wed,  4 Sep 2024 09:42:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 08E2CC4CEC2;
+	Wed,  4 Sep 2024 09:41:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725442766;
-	bh=KYJzv/JgvF+3JCuKxVNSBMqfNqctJKRJIYxK6Z9pzek=;
+	s=k20201202; t=1725442933;
+	bh=Oec9l7s17IwaiLXgNR1SWtJBoMzsunOXYZarsJi44os=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=fIEaRZP1IZ5ZNKKaO5mjiWzy4/1MuwpOV8O761wu/XbQu8rAmK7KUXx+pBWdFbPbe
-	 5fMsVH2rpZc1cF1K2G7XXLoSM7AfkKcrV8klWur6EkKUc7bYUep0fjyRB+B37ZvoVo
-	 hydyFJPpc6YIBSs8MaQKva8MIBM9KjF7ItvyUOth41eBaVe3bXW/dEItJoOvuVtjPo
-	 Nhh2mIlIbQ0KwDh+l1wy7+Dlquwk7pjG7cIB3zQOc/gxbV4pzc6ppAit1PBQjK2khT
-	 rfcpBSSeiJyACV5jN50LD8D6qrQXPjibmBZNgK/nWUNK2P5tjM5DaP0AO0m1//leh4
-	 NWDdneF19HQaA==
-Message-ID: <851566fe-4802-41c7-bb35-d6d1e9cf9bdf@kernel.org>
-Date: Wed, 4 Sep 2024 11:39:13 +0200
+	b=qfk2exhRilb/mDb5zkdMxVssIApdDdkN2OtWR1nYcYQ45/z39ErsKaKq8E2tMY7bL
+	 f4Jvq64hJNR3KOOwwhwYEPIjFi5ZPQINEyvpkHkXLNZW2HYMdCaaDL68yxbm7Lqzwq
+	 UyHZQha2LpoNaaCu8UvhhVoKi8Df1XsmtHGA0qXm1xjzExfh8wgzKiRFpqoAVHlAUT
+	 R0lxSPeLDNqHgdVnDN1GPfA0k8HiCUGE6CqGSOWL4XJEH8VVUBZWynki5HbZTY/+tX
+	 2H+rSxdJt7UPMjkedReYhshriapkRBUU5PaY7lQZbGPvfBwRHbpu53wjEWhR5c3c6r
+	 ZvK8u57wDIxxw==
+Message-ID: <be8b573c-db4e-4eec-a9a6-3cd83d04156d@kernel.org>
+Date: Wed, 4 Sep 2024 11:41:56 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 17/19] arm64: defconfig: enable clock controller,
- interconnect and pinctrl for QCS8300
+Subject: Re: [PATCH 18/19] arm64: dts: qcom: add initial support for QCS8300
+ DTSI
 To: Jingyi Wang <quic_jingyw@quicinc.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>, Rob Herring <robh@kernel.org>,
@@ -67,9 +67,12 @@ Cc: linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-scsi@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- iommu@lists.linux.dev
+ iommu@lists.linux.dev, Zhenhua Huang <quic_zhenhuah@quicinc.com>,
+ Xin Liu <quic_liuxin@quicinc.com>, Kyle Deng <quic_chunkaid@quicinc.com>,
+ Tingguo Cheng <quic_tingguoc@quicinc.com>,
+ Raviteja Laggyshetty <quic_rlaggysh@quicinc.com>
 References: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
- <20240904-qcs8300_initial_dtsi-v1-17-d0ea9afdc007@quicinc.com>
+ <20240904-qcs8300_initial_dtsi-v1-18-d0ea9afdc007@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -115,10 +118,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-17-d0ea9afdc007@quicinc.com>
+In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-18-d0ea9afdc007@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_023927_526989_97E59D3C 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20240904_024215_255244_4FD642BC 
+X-CRM114-Status: GOOD (  18.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,45 +139,95 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/09/2024 10:33, Jingyi Wang wrote:
-> Enable clock controller, interrconnect and pinctrl for QCS8300.
-
-NXP QCS8300? What is QCS8300? Which products use it? That's a defconfig
-for entire kernel, not your Qualcomm one.
-
-> It needs to be built-in for UART to provide a console.
+> Add initial DTSI for QCS8300 SoC.
 > 
+> This revision brings support for:
+> - CPUs with cpu idle
+> - interrupt-controller with PDC wakeup support
+> - gcc
+> - TLMM
+> - interconnect
+> - qup with uart
+> - smmu
+> - pmic
+> - ufs
+> - ipcc
+> - sram
+> - remoteprocs including ADSP,CDSP and GPDSP
+> 
+> [Zhenhua: added the smmu node]
+> Co-developed-by: Zhenhua Huang <quic_zhenhuah@quicinc.com>
+> Signed-off-by: Zhenhua Huang <quic_zhenhuah@quicinc.com>
+> [Xin: added ufs/adsp/gpdsp nodes]
+> Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
+> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
+> [Kyle: added the aoss_qmp node]
+> Co-developed-by: Kyle Deng <quic_chunkaid@quicinc.com>
+> Signed-off-by: Kyle Deng <quic_chunkaid@quicinc.com>
+> [Tingguo: added the pmic nodes]
+> Co-developed-by: Tingguo Cheng <quic_tingguoc@quicinc.com>
+> Signed-off-by: Tingguo Cheng <quic_tingguoc@quicinc.com>
+> [Raviteja: added interconnect nodes]
+> Co-developed-by: Raviteja Laggyshetty <quic_rlaggysh@quicinc.com>
+> Signed-off-by: Raviteja Laggyshetty <quic_rlaggysh@quicinc.com>
 > Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
 > ---
->  arch/arm64/configs/defconfig | 3 +++
->  1 file changed, 3 insertions(+)
+>  arch/arm64/boot/dts/qcom/qcs8300.dtsi | 1282 +++++++++++++++++++++++++++++++++
+>  1 file changed, 1282 insertions(+)
 > 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 81ca46e3ab4b..a9ba6b25a0ed 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -606,6 +606,7 @@ CONFIG_PINCTRL_MSM8996=y
->  CONFIG_PINCTRL_MSM8998=y
->  CONFIG_PINCTRL_QCM2290=y
->  CONFIG_PINCTRL_QCS404=y
-> +CONFIG_PINCTRL_QCS8300=y
->  CONFIG_PINCTRL_QDF2XXX=y
->  CONFIG_PINCTRL_QDU1000=y
->  CONFIG_PINCTRL_SA8775P=y
-> @@ -1317,6 +1318,7 @@ CONFIG_MSM_MMCC_8998=m
->  CONFIG_QCM_GCC_2290=y
->  CONFIG_QCM_DISPCC_2290=m
->  CONFIG_QCS_GCC_404=y
-> +CONFIG_QCS_GCC_8300=y
->  CONFIG_QDU_GCC_1000=y
->  CONFIG_SC_CAMCC_8280XP=m
->  CONFIG_SC_DISPCC_7280=m
-> @@ -1618,6 +1620,7 @@ CONFIG_INTERCONNECT_QCOM_MSM8996=y
->  CONFIG_INTERCONNECT_QCOM_OSM_L3=m
->  CONFIG_INTERCONNECT_QCOM_QCM2290=y
->  CONFIG_INTERCONNECT_QCOM_QCS404=m
-> +CONFIG_INTERCONNECT_QCOM_QCS8300=y
+> diff --git a/arch/arm64/boot/dts/qcom/qcs8300.dtsi b/arch/arm64/boot/dts/qcom/qcs8300.dtsi
+> new file mode 100644
+> index 000000000000..244fa8bf97d9
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/qcom/qcs8300.dtsi
+> @@ -0,0 +1,1282 @@
+> +// SPDX-License-Identifier: BSD-3-Clause
+> +/*
+> + * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+> + */
+> +
+> +#include <dt-bindings/clock/qcom,qcs8300-gcc.h>
+> +#include <dt-bindings/clock/qcom,rpmh.h>
+> +#include <dt-bindings/interconnect/qcom,icc.h>
+> +#include <dt-bindings/interconnect/qcom,qcs8300-rpmh.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/mailbox/qcom-ipcc.h>
+> +#include <dt-bindings/power/qcom,rpmhpd.h>
+> +#include <dt-bindings/power/qcom-rpmpd.h>
+> +#include <dt-bindings/soc/qcom,rpmh-rsc.h>
+> +
+> +/ {
+> +	interrupt-parent = <&intc>;
+> +	#address-cells = <2>;
+> +	#size-cells = <2>;
+> +
+> +	clocks {
+> +		sleep_clk: sleep-clk {
+> +			compatible = "fixed-clock";
+> +			#clock-cells = <0>;
+> +			clock-frequency = <32000>;
 
-Why this cannot be a module?
+Are you sure that sleep clock is physically part of the SoC?
+
+> +		};
+> +	};
+> +
+> +	cpus {
+> +		#address-cells = <2>;
+> +		#size-cells = <0>;
+> +
+
+...
+
+> +
+> +	soc: soc@0 {
+> +		compatible = "simple-bus";
+> +
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges = <0 0 0 0 0x10 0>;
+
+ranges follow compatible, so it is the second property.
 
 
 
