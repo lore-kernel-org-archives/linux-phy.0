@@ -4,49 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11088CA0ED3
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:10:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B425CA0ED3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 10:11:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fhDUyT5bHB2BVD1siAi8B02C601djLXn7aiM2elf4VQ=; b=aEEZw+lHwEi4xd
-	d/niLZvLfRVS43X4psU5Dxy8fO/drB4M8KAq5+LF+6BdMTq0zndJBExUNcnoVY8JQ/vQZxro4axdo
-	8uib4gS+Jl1jOMjxe+8sAUEjwHNqsVZQG3U3J2M1WH0i7nripp4slc6PVinTYLnsT/b0C8ZB7jYw7
-	Jq7KcjVZumwfNn+gW2IhOsjBZ13JVFkhVZhKPr2OfO01/z1t5dAY9Q3C/dHxitOpifQFG3RMQmkrN
-	bytIl6j+D+qE2P9342C9r8ArpyyB/TqMsXHb+pNrAu7RT9h23hgc6kgF48jy5xvtqIDTYr9+fZl4T
-	WAS9+EBrN0ytlKkCOHGQ==;
+	List-Owner; bh=7Du5jwyiLVtIs9wn2u6A5I7Em8/H07FgUS6i/RRRSik=; b=K46GC/F+VRFWSX
+	pWhw9vxvj4U6F2k4IcpcsPNg1qy2QXvZlmZQJPTy0TSpUVDvDtOvInf3o+QGNT/EHOsBZ/tzAdy1T
+	SeeuiDsbOKKroSIUBGcsTz5uo9Ifd44eaaGlpT7oRVdCf9XinktMiBF+w5sj6F6W5qUUagGNemSTh
+	OygN3riKOBi/ywfb6vFemQylGrzsaiR5Xr4LM3Wexqtfa3kdJyalSlYXlqnjnmk9mWflw+2GPhFJw
+	atRgZjeFo/r0hXubDJgupAO+boBpuIh3h4hvbYXFo0lIhX8h6VSyloxidcQ0YaMORAxzdM1dsyV4u
+	3k7rgXKDivX6iCDOX3FA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmxp-00000003qOr-30Mz;
-	Wed, 04 Sep 2024 10:10:13 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1slmyk-00000003qgo-3l76;
+	Wed, 04 Sep 2024 10:11:10 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slmR3-00000003i0t-0D3K;
-	Wed, 04 Sep 2024 09:36:22 +0000
+	id 1slmRW-00000003iDD-2VTI;
+	Wed, 04 Sep 2024 09:36:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id AB9CCA43263;
-	Wed,  4 Sep 2024 09:36:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D1C3C4CEC2;
-	Wed,  4 Sep 2024 09:36:10 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 070F45C4974;
+	Wed,  4 Sep 2024 09:36:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05B17C4CEC2;
+	Wed,  4 Sep 2024 09:36:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725442579;
-	bh=Z3fuRf8XZZZBJCF1LMMj9LgsjfNJpKJkN5P89xg347k=;
+	s=k20201202; t=1725442609;
+	bh=/G0entf9EPz+27QSEI/EZdanBKxFjNeFTpe7D09RV/4=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=tCfxpBQauJYXXh1NHJC+sHJWR/YM7kfwVgmfz00vK6sJsA4xfFyJjJ6V3l9JhLpqU
-	 0Rk1isjiIkxrLKC14HxVnh5gfEsQtd/If9OOdWqKAPxwMVAxL4ky6s5QMZzm11FHyv
-	 OqFtX7Hre98oLSC9L7wpkYNIH8Yq1Y5o2wIyR8C4GlCb+YDhiInBLBXuhMCOCNGlJX
-	 jJTTumI54Mr8go69PYSLdmtQKMpHh6YO9cA7eEJ38fUjIjKD4t9/wQRg7LCwHidm6E
-	 CzCWRWWjMTFvS5y1ar6sKGbeUOJ4WhLGth3We0oftd7mIas7gIWqFdFuYcZ/WvyUvy
-	 9zOildTwpSpxQ==
-Message-ID: <ecd95f82-ea98-4279-ad01-dc73d361180a@kernel.org>
-Date: Wed, 4 Sep 2024 11:36:08 +0200
+	b=UZ0bTcSULYaM6j4KjsHpBpkpkO3jFgkrNLCmlze9xZa1iiCb6KgPFL7f5AP8w132O
+	 2Zb95LDh/mEtrdbVNjWrg9JApQjVtBsrintOsR9w0IhEfkL87MudGsLsvlk3Raddv4
+	 q5i+oip1C19BZ26rwmzS7wm8MzoR1QesttC6C9ArhpJCc3vvimYsu0dee4wKPWnAPZ
+	 ZGS9fYkIkbKoP9B8YesqdfN+7/cpwfm/nkyunXtiIlrmrRrweFAM1Z/UMO/8D4RVqM
+	 CNov5KkjVYhrUrRBh7vzCfLCit6dXmN1vnD3RdQj8TYKNR9MiBliHKBwWnPlabs5mK
+	 OZls7c76Uv/9w==
+Message-ID: <8e5e611c-bce6-478f-b63c-e532b95cbe5c@kernel.org>
+Date: Wed, 4 Sep 2024 11:36:37 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/19] remoteproc: qcom: pas: Add QCS8300 remoteproc
- support
+Subject: Re: [PATCH 05/19] phy: qcom-qmp-ufs: Add support for QCS8300
 To: Jingyi Wang <quic_jingyw@quicinc.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>, Rob Herring <robh@kernel.org>,
@@ -69,7 +68,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  iommu@lists.linux.dev, Xin Liu <quic_liuxin@quicinc.com>
 References: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
- <20240904-qcs8300_initial_dtsi-v1-2-d0ea9afdc007@quicinc.com>
+ <20240904-qcs8300_initial_dtsi-v1-5-d0ea9afdc007@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -115,10 +114,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-2-d0ea9afdc007@quicinc.com>
+In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-5-d0ea9afdc007@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_023621_252803_0F360BAB 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20240904_023650_790606_5406EA53 
+X-CRM114-Status: GOOD (  14.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,31 +135,29 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 04/09/2024 10:33, Jingyi Wang wrote:
-> Add support for PIL loading on ADSP, CDSP and GPDSP on QCS8300
-> platform.
+> From: Xin Liu <quic_liuxin@quicinc.com>
 > 
-> Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
+> Add QMP PHY support for QCS8300 which is compatible with SA8775P.
+> 
 > Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
 > Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
 > ---
->  drivers/remoteproc/qcom_q6v5_pas.c | 3 +++
+>  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 3 +++
 >  1 file changed, 3 insertions(+)
 > 
-> diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
-> index ef82835e98a4..f92ccd4921b7 100644
-> --- a/drivers/remoteproc/qcom_q6v5_pas.c
-> +++ b/drivers/remoteproc/qcom_q6v5_pas.c
-> @@ -1416,6 +1416,9 @@ static const struct of_device_id adsp_of_match[] = {
->  	{ .compatible = "qcom,qcs404-adsp-pas", .data = &adsp_resource_init },
->  	{ .compatible = "qcom,qcs404-cdsp-pas", .data = &cdsp_resource_init },
->  	{ .compatible = "qcom,qcs404-wcss-pas", .data = &wcss_resource_init },
-> +	{ .compatible = "qcom,qcs8300-adsp-pas", .data = &sa8775p_adsp_resource},
-> +	{ .compatible = "qcom,qcs8300-cdsp-pas", .data = &sa8775p_cdsp0_resource},
-> +	{ .compatible = "qcom,qcs8300-gpdsp-pas", .data = &sa8775p_gpdsp0_resource},
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> index d964bdfe8700..8bad68400736 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+> @@ -2010,6 +2010,9 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
+>  	}, {
+>  		.compatible = "qcom,msm8998-qmp-ufs-phy",
+>  		.data = &sdm845_ufsphy_cfg,
+> +	}, {
+> +		.compatible = "qcom,qcs8300-qmp-ufs-phy",
+> +		.data = &sa8775p_ufsphy_cfg,
 
-What's the point of this? You have entire commit msg to explain such
-weird duplication. Otherwise sorry, don't duplicate unnecessarily.
-Devices are compatible, aren't they?
+Is compatible? Then this is redundant. Drop.
 
 Best regards,
 Krzysztof
