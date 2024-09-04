@@ -4,65 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14EAECD37B1
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Sep 2024 22:21:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6521ECD4842
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 02:33:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xK2KjfCPirDb8be10+unrop6RTDU414IjwASjol6qkY=; b=1u+KeupfUKAvAIs/pqIyshp1l+
-	KV7v64a6bUSPoqwo1rmWPRV/7hheBjC4jTg39zcNUW5jmqffR7LvzqKVw1rOtYWfs4LlzuvKALtgD
-	jvszJDHZ2B+hkbKU64WC/P8wdDXERpfvSSSvD2FtANb7fXQ5Y/TEnciQgPUTCNTP9ajk3Yb5QiLb2
-	zxwM0XeBEotuZS7Nqk9a7Zck7TcaybNgtx7vOUZoH4YNl99dC/xdMZOBe1zJVGnUrqkOEiq1L3tyL
-	bicV/sFPDmD8yHtQuH69g0VbK06Ui5cuowo0okcKL0IhgjkiGzsv3LuedPYVkPWxuYp8ZKZq4mFIX
-	6y22xVMA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kUrVUXVu6BujXV8DY/+m0M34NONokRW3ASSVky1lpio=; b=HevVfvqSrRDehi
+	F2UtvXUo8jiPRC8+h4QTdNBcoHtHzDs0+unQ1Rms7s8YMB1dEzWw780pvzUJDgdsyEMgA9iQYY2wv
+	5FlmbWO7bSNEoqS/dmbq8fZ7FmH9Fbs+nfWFnzGsfOSY9FOHiZcQC5xzxL5hyFmJWrV4g2/1G2S3X
+	s+gw5rtxdQzrFVCjF+LQw8k92DdKebzrVimlBsdr9EZgEPiEETPCP/3HwP9tgXojjGmQkos5BGLUf
+	Mo7E8VRbnqE7EgQVQnRwOHd6pa+cn81Ney7jsPtMAE2NMDncoAzksx/YkT6nNc6lCOaKZQPm5WhAM
+	2L4z2ruZYS0FtwyjZvQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slbtk-000000029es-11Bs;
-	Tue, 03 Sep 2024 22:21:16 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1slfpl-00000002anN-1Hd3;
+	Wed, 04 Sep 2024 02:33:25 +0000
+Received: from mail-io1-xd32.google.com ([2607:f8b0:4864:20::d32])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slbdU-000000025Ne-0xFF
+	id 1slfpi-00000002amr-0CLJ
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Sep 2024 22:04:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 22F245C55BE;
-	Tue,  3 Sep 2024 22:04:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0FBAFC4CEC4;
-	Tue,  3 Sep 2024 22:04:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725401067;
-	bh=IAvJFDh2rktQgabsaLMqmIoVmG1fDxEHEeTpxxDd4fE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=oZVFel7sc4ORVEYeqJUFAWe6zXuPUP9WRuhGgQQQurfxOx8LP+Kp6IIs0TJGhd2sF
-	 uKHU1bAoQpA3hpMUZkE5By8Mgx9EsCQ+ReZ1As4GFio3VVPznZyRZxhOYTaKq3UrlS
-	 cvlEXDLTVN/dQ56Z02bvpIbmexfXWYBDzefn/xLcoPOd4XB3LFnzW9uAaiR+w2fwoG
-	 YdFqzesSrvi76CrVMEYCqku1CIilAckaq/rWx7IF0uyWvUgAcrMpEJkVQmHEUfCwtQ
-	 98AjTEQkmwkmVfxmYCrFyIBVmDwmXtrMzo5OnxqRJsNXueTXt/86rq0aevZiVyPpxd
-	 KrtcRkShsmxOQ==
-Received: by mercury (Postfix, from userid 1000)
-	id D2A63106044E; Wed, 04 Sep 2024 00:04:24 +0200 (CEST)
-Date: Wed, 4 Sep 2024 00:04:24 +0200
-From: Sebastian Reichel <sre@kernel.org>
-To: Hans de Goede <hdegoede@redhat.com>
-Cc: Thomas =?utf-8?Q?Wei=C3=9Fschuh?= <linux@weissschuh.net>, 
-	MyungJoo Ham <myungjoo.ham@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Enric Balletbo Serra <enric.balletbo@collabora.com>, Andrey Smirnov <andrew.smirnov@gmail.com>, 
-	linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 0/6] power: supply: Change usb_types from an array into a
- bitmask
-Message-ID: <ez5ja55dl7w7ynq2wv4efsvvqtk4xyalf4k6agtsuhpgrtlpg3@d6ghlle4cu2q>
-References: <20240831142039.28830-1-hdegoede@redhat.com>
+	Wed, 04 Sep 2024 02:33:23 +0000
+Received: by mail-io1-xd32.google.com with SMTP id ca18e2360f4ac-82a3acaa1bbso137783839f.2
+        for <linux-phy@lists.infradead.org>; Tue, 03 Sep 2024 19:33:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1725417200; x=1726022000; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=2Cq4uRe87nNpuluoh2u68vh6xZwB2FqhqnMAWLtSiFU=;
+        b=m/+GPGfcZGIBOL/N8ED7Y3HVMmpPjpe5OEGaJTYIexIHRTptTSDTfZbrGYSUn5iCRd
+         J61XZPlY6sDbOHq94BJtPsLAOPQyMjx5lo4R8/u8I9pQLVCb9IDHl+ilwxsxop/yNFGs
+         NHM4JkeNnXMU1QanVeSdid7OFtVcEkKcCNgzaeKGESE+EIb81Qs/7hBZ+dGiqAOZctW7
+         mN4S2/1q3uyANgOouoSbELWd9CLvDi+HcLoCrZNy68JzIyCJ7HzWadHft/L+wBneauep
+         tYOh+rNAmuhCBb2VtfREopD8sv5L9xgHXd4xqLg0pYkuXx6WHAAMzY01OERJnRGI/xco
+         hS+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725417200; x=1726022000;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=2Cq4uRe87nNpuluoh2u68vh6xZwB2FqhqnMAWLtSiFU=;
+        b=QybMTweVLrC2lXaFZlY8LZSrG7JR/K7A2TQQXybekTH2pAQXZ2Oq3esra8t12+ZLof
+         W3YYkz+a3UZOrgdiAQNXCYlv6N0AfmtxKK11cHv7Kwl/kbQFk/SnJZMmtsdZhUWOqbAV
+         amTa2981Ugbax7lRiKySws3PLEU9qyko1thT2Y4TIsrdqsy5pWbqjRiQBWbmlyMAefZh
+         5sxvhYbwyh8UJWErUm7IV10kGWheUfzJuUi54gIp+PEdM9NhiUFM2o83YEfIZnd3yHOK
+         mmL2EJUrK9T4u7A6aXXlWuflDnaKVQJc/QKelkMAgikhdOeYGZ75OOx7FdoO9TKPUxjA
+         G+eA==
+X-Gm-Message-State: AOJu0YyuUsTQqnrvAtkJg48P/7L3NKRI37q5t96AGirwaVVa0fEOl5eo
+	tDVjcqEato1marXh4CZKJokJUZoKzbOdIGsOQa/MM3Pl4j1qM/+V6oga/w==
+X-Google-Smtp-Source: AGHT+IEnNoDnJJHEsh46v8XZWeTjgjrjPV2KXMHRMeK6JATQURWY7kyHULcOTy2yDMp7T4Be0RCgtg==
+X-Received: by 2002:a92:3643:0:b0:39f:526b:c5e1 with SMTP id e9e14a558f8ab-39f526bc781mr96172755ab.18.1725417199953;
+        Tue, 03 Sep 2024 19:33:19 -0700 (PDT)
+Received: from aford-System-Version.lan (c-75-72-166-104.hsd1.mn.comcast.net. [75.72.166.104])
+        by smtp.gmail.com with ESMTPSA id e9e14a558f8ab-39f3afc4ff6sm34556175ab.37.2024.09.03.19.33.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 03 Sep 2024 19:33:19 -0700 (PDT)
+From: Adam Ford <aford173@gmail.com>
+To: linux-phy@lists.infradead.org
+Cc: dominique.martinet@atmark-techno.com,
+	linux-imx@nxp.com,
+	festevam@gmail.com,
+	frieder.schrempf@kontron.de,
+	aford@beaconembedded.com,
+	Sandor.yu@nxp.com,
+	Adam Ford <aford173@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Marco Felsch <m.felsch@pengutronix.de>,
+	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH V5 0/5] phy: freescale: fsl-samsung-hdmi: Expand phy clock options
+Date: Tue,  3 Sep 2024 21:32:39 -0500
+Message-ID: <20240904023310.163371-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-In-Reply-To: <20240831142039.28830-1-hdegoede@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240903_150428_396150_CA9CD28F 
-X-CRM114-Status: GOOD (  36.98  )
+X-CRM114-CacheID: sfid-20240903_193322_108784_F537B3F6 
+X-CRM114-Status: GOOD (  14.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,181 +95,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7276008227877781057=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============7276008227877781057==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="btzqktsiaq62mw5e"
-Content-Disposition: inline
+Currently, there is a look-up-table to describe all the clock options the HDMI PHY
+can use.  Some of these entries in the LUT are using a fractional divider which does
+not have a well documented algorithm for determinging values, but the the integer
+divider can use an algorithm to calculate the integer divder values dynamically
+beyond those listed in the LUT and also duplicates some of the entries.
 
+The first two patches do not do anything functionally other than simplify
+some of the register accesses and de-duplicates some of the register look-ups.
 
---btzqktsiaq62mw5e
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+The third patch adds support for the integer divider and uses it whenever the
+clock request is an exact match.  Otherwise, it will use the LUT as before.
+The rouding is still based on the LUT if the integer clock isn't an exact match.
 
-Hi,
+The forth patch updates thes set_rate and round_rate functions to use either
+the fractional clock LUT or the the integer divder mechanism to determine
+which ever clock rate might be closest match.
 
-On Sat, Aug 31, 2024 at 04:20:33PM GMT, Hans de Goede wrote:
-> When support for the "charge_behaviour" property was added the list of
-> available values was made a bitmask in power_supply_desc.
->=20
-> "usb_types" is very similar in that:
-> 1. It is an enum
-> 2. The list of available values is stored in power_supply_desc
-> 3. When shown it shows all available values, with the active one surround=
-ed
->    by square brackets.
->=20
-> But "usb_types" uses an array with valid enum values instead of a bitmask.
-> This uses more memory then the bitmap approach and it makes it impossible
-> to have a shared generic show() function for properties which show
-> available values, with the active one surrounded by square brackets.
->=20
-> This patch-set moves "usb_types" over to a bitmask in power_supply_desc
-> to indicate the available values.
->=20
-> Patches 1 - 3:
->=20
-> It turns out that the ucs1002-power driver contained a surprise in that
-> it supports writing to "usb_type" even though the ABI doc says it is
-> read-only. Since we cannot break shipped userspace API, the ship has sail=
-ed
-> on this one. The first patch documents that writing "usb_type" is allowed,
-> but only for power-supply devices which provide USB power rather then
-> consume it.
->=20
-> Enum properties accept writing the FOO_TEXT[] string values, passing
-> the enum value matching the FOO_TEXT entry to set_property(), the second
-> patch adjusts ucs1002_set_usb_type() to directly accept enum values.
->=20
-> The rt9467 driver was another driver which allowed writing to "usb_type"
-> but there the use made no sense, so it is simply dropped.
->=20
-> Patches 4 - 6:
->=20
-> These patches implement the actual moving of usb_types to a bitmask.
->=20
-> Patch 6 is a bit of a bigbang patch moving all drivers over in one go,
-> touching a couple of drivers outside drivers/power/supply: 1 in
-> drivers/extcon/ 1 in drivers/phy/ and 5 in drivers/usb/typec/ since
-> the changes outside of drivers/power/supply are small I've chosen to
-> make all the changes in one go rather then have some sort of
-> intermediate state where both ways are supported.
->=20
-> For merging this I believe it would be best for an immutable branch / tag
-> to be created on the linux-power-supply tree and then send a pull-request
-> to the extcon, phy and usb-typec maintainers to merge the tag.
->=20
-> extcon, phy and typec maintainers can you please give your Acked-by for
-> patch 6/6 for merging these changes through the linux-power-supply tree?
->=20
-> This set is based on top of the latest linux-power-supply/for-next.
+The last patch removes the integer divider entries from the LUT since by then
+it'll be comparing both the integer divider calculator and the closest value
+in the LUT.
 
-As we are quite close before the merge window I just took it with
-just the Ack from Greg. The changes in PHY and Extcon are quite
-small. I did prepare an immutable branch in case it is needed by
-any of the other involved trees:
+In my testing with a AOC 4K monitor, I was able to add 4 entries in my modetest
+table.  I do not have an HDMI analyzer, so I just used my monitor to determine
+if this series worked.
 
-The following changes since commit 8400291e289ee6b2bf9779ff1c83a291501f017b:
+Adam Ford (5):
+  phy: freescale: fsl-samsung-hdmi: Replace register defines with macro
+  phy: freescale: fsl-samsung-hdmi: Simplify REG21_PMS_S_MASK lookup
+  phy: freescale: fsl-samsung-hdmi: Support dynamic integer
+  phy: freescale: fsl-samsung-hdmi: Use closest divider
+  phy: freescale: fsl-samsung-hdmi: Remove unnecessary LUT entries
 
-  Linux 6.11-rc1 (2024-07-28 14:19:55 -0700)
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 570 ++++++++++---------
+ 1 file changed, 293 insertions(+), 277 deletions(-)
 
-are available in the Git repository at:
+  V5 Updates patch 1 of 5 for whitespace and comment updates
+      Patches 1 and 2 add RB tags
+      No functional changes from V4
+-- 
+2.43.0
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/sre/linux-power-supply.gi=
-t tags/ib-psy-usb-types-signed
-
-for you to fetch changes up to 364ea7ccaef917a3068236a19a4b31a0623b561a:
-
-  power: supply: Change usb_types from an array into a bitmask (2024-09-03 =
-23:20:28 +0200)
-
-----------------------------------------------------------------
-Immutable branch for usb_types change for v6.12
-
-Changing usb_types type from array to bitmap in the power_supply_desc
-struct requires updating power-supply drivers living in different
-subsystem, so it is handled via an immutable branch.
-
-----------------------------------------------------------------
-Hans de Goede (6):
-      power: supply: "usb_type" property may be written to
-      power: supply: ucs1002: Adjust ucs1002_set_usb_type() to accept strin=
-g values
-      power: supply: rt9467-charger: Remove "usb_type" property write suppo=
-rt
-      power: supply: sysfs: Add power_supply_show_enum_with_available() hel=
-per
-      power: supply: sysfs: Move power_supply_show_enum_with_available() up
-      power: supply: Change usb_types from an array into a bitmask
-
- Documentation/ABI/testing/sysfs-class-power     |  7 ++-
- drivers/extcon/extcon-intel-cht-wc.c            | 15 ++----
- drivers/phy/ti/phy-tusb1210.c                   | 11 ++---
- drivers/power/supply/axp20x_usb_power.c         | 13 ++---
- drivers/power/supply/bq256xx_charger.c          | 15 ++----
- drivers/power/supply/cros_usbpd-charger.c       | 22 +++------
- drivers/power/supply/lenovo_yoga_c630_battery.c |  7 +--
- drivers/power/supply/mp2629_charger.c           | 15 ++----
- drivers/power/supply/mt6360_charger.c           | 13 ++---
- drivers/power/supply/mt6370-charger.c           | 13 ++---
- drivers/power/supply/power_supply_core.c        |  4 --
- drivers/power/supply/power_supply_sysfs.c       | 66 ++++++++-------------=
-----
- drivers/power/supply/qcom_battmgr.c             | 37 +++++++-------
- drivers/power/supply/qcom_pmi8998_charger.c     | 13 ++---
- drivers/power/supply/rk817_charger.c            |  9 +---
- drivers/power/supply/rn5t618_power.c            | 13 ++---
- drivers/power/supply/rt9467-charger.c           | 16 ++----
- drivers/power/supply/rt9471.c                   | 15 ++----
- drivers/power/supply/ucs1002_power.c            | 26 +++++-----
- drivers/usb/typec/anx7411.c                     | 11 ++---
- drivers/usb/typec/rt1719.c                      | 11 ++---
- drivers/usb/typec/tcpm/tcpm.c                   | 11 ++---
- drivers/usb/typec/tipd/core.c                   |  9 +---
- drivers/usb/typec/ucsi/psy.c                    | 11 ++---
- include/linux/power_supply.h                    |  3 +-
- 25 files changed, 132 insertions(+), 254 deletions(-)
-
--- Sebastian
-
---btzqktsiaq62mw5e
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmbXh+UACgkQ2O7X88g7
-+pqgqxAAmxavPS+UWhWDuuNHRKCOCwsF5Yy/AoqXJUGMO+cnud9xuZ4TIFIA4aev
-ybq790Sxu4dDn2IPzbiota+pW4tz8rgOEOLapwE+9IQLKK0DdA7yRtP/u0W9B2yk
-PTeNd2KkzpFdKz/+000TumcXMaFtJhEbYjOxKS4PUcbUqn1qJ1S1v4tRXzsvEoSR
-fMqYCJULbBtASQe3WZaQLfXZFAYaHIgn56+Djh8ZoTtZWIHBk2Rz0IFnSFHK9/5p
-r4iGTtyC4TQw42s94AhEs5WW4LV7sYb0UYl7M6dwRqdxWV5S8k2HnNCp/3eKfOnz
-eFB37yu5y7hSvkmlIL4K2ZJyZ789Zrmq+tDsTuX9VGQlnY0L0+wPotI/+HlLwJTz
-q0b4AJGEepQ3Y4ahkE0O2itkJv7WC0vrZPRxHLs//t5MtjOl81aAxEkYExeqM1e4
-Tl22Uj/aoVbx4FRMlEczySD7kBzzXWj+Y4kWUWin8x5mKsKEZEHeoBOs+cD/u++W
-NKBvTMEZSpHdRwcdK1c07uyGgCjJkMcRdQyhXYrFxEwz9POJqaMCojqva7WtxLVH
-zSd3DkA8n7c5je0ow9ug6iX9Vsa7bqHPmAIPHx7DiwCkwsMq3dw9+QE0/H+8eX1/
-cXjyrTnp/CZQS1SSwDhnYzaKjy77eWHbZt9G21YDxtJbxeAWA8U=
-=x3oo
------END PGP SIGNATURE-----
-
---btzqktsiaq62mw5e--
-
-
---===============7276008227877781057==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7276008227877781057==--
-
