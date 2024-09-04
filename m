@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99A87CA0ED3
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 08:46:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36A4ACD3431
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 08:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X0VLvfn7NoMPmszrSdOBw8qRiUoN+IVbEJ41bvMdlnE=; b=O6yC7rG7UKd6To
-	VkwIO2BNkBhvjuVN7D2eLoPfMeMtWKMoRxlp1jJR3HFd8rf1X5i4XEprpb7T+s4DnigKZszSnLmUk
-	LGJYXwQJSlONcw/Nu3HGzmII4CVLwOC5WDUZB09nJsvssnlF4HIh8h7C1PslWryWtp0JLXc7iD3Xe
-	9J/VP92TmnnVQmxzdoIR54l6pdAfX7C/BRTJOrrfNAz2GexOwGgWq12KlE8wWRcBnY1DBNXN3o6Mj
-	19Wyi4NZIiDYTkQpNHahnv7E+++qFWpit/cqt0PuKZ+FY72EJh6G0QMKGKjN4EThYhu3dMLchwxlK
-	foOaOAZdKsrzgEuXApPQ==;
+	List-Owner; bh=fag3R8MKo3v7qhDtBehZ+hnXpb5QqM7wpXSKm5zjElE=; b=y419TN4JZ2xkMG
+	zYlExCshQ/cIg1GaymM84BwY5+Ai6tBUM0xGLH59NxYM9VIvXbuQWDyx9nRqNQaWa9lnpSe88uX/F
+	0/vFk2StQFQrWO84f3weS4IHmhYELyIB8833a3VDd3dmbihjF0RtreZ0eo0upQPSo1ZGi4zGb72W3
+	MsSrmUFNhgeh8QqK9BhGepe4x0i6gG9VOjQvvQz2KgaMYvtqGoKi+pjayElOubVdFp52nlYdeJs50
+	96XJ1ymLIeKqll2uhOY2CbeAJpqI9HuggiTmLPrw45PoekYFonZ3wESdMEae7zFm90VR/aQDjtPOC
+	KEFX7zwBeQCBRKWKc21Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sllf9-00000003V5R-1P1g;
-	Wed, 04 Sep 2024 08:46:51 +0000
+	id 1sllg3-00000003VNx-3wK7;
+	Wed, 04 Sep 2024 08:47:47 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sllTQ-00000003Qll-2nTa;
-	Wed, 04 Sep 2024 08:34:46 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 483Md1eJ006005;
-	Wed, 4 Sep 2024 08:34:28 GMT
+	id 1sllTV-00000003Qnt-39Vu;
+	Wed, 04 Sep 2024 08:34:51 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 483LuqYJ002825;
+	Wed, 4 Sep 2024 08:34:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	u8VhrvOn1bDEJCrKK7Ka8sNoIAYo6OaRkqqy/Ppi0Uo=; b=YU71RR4exEgTWS2m
-	rSKaNaq9M5Pbw9K3Cn8F8cyxMBrYJzlBOcC/iUkhTmRq0RzR6PKd3U+/N5+ShEAu
-	I2TyMgI90MbYnWTjgiHvF6Ju31PxveuMqTv0BoCvIkXVK+vH5LsZBorRFLvyDEf9
-	DcjJlO46Wq2QtBpuucETI4z1NkV/1CQKv2SZm/+yFyu1LoUa0tCsPIstAyhn1qjU
-	2zu/NzKnASe/XfaXqp/VElB1QLSgDmt1qB/jfjre3l8mRhSrZn8bZ+q1cA1+DCTI
-	oEpD4CoatOjSNglxpJSeEsfJ2sB1KH4qtERHKDivDcu2zqQNWauV1pSxpEfw+Ij9
-	++900w==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41bt6725u7-1
+	zFakva9w0IFC8+6l2Czg0R0aQmXMzSAypJ9ft3MS3bo=; b=JO2Z+Mf+9JQH+IxZ
+	nkhL9nPWae34qntEl+7/G1FqIFvq2dgqDls1Y/p0GAhXI+rmnKAjO/h432/bvTlf
+	2MPkwYQjLmp4dXY8zv4HqcZirwFJ78TlC+LXjCslFj6cg2upb8lqcJnucMFqJqW+
+	aYrXg18PZBA/iS3hhvd7gzRllD8X+TDg/c/koZ1S/Uke4tfCTfSoeM/cx0I+qZ0h
+	SQm1am/gab68alwT/I4pYtcL9RwIKfo9STdHOS9axIUQEK0ahuFkfBaMbUumcdxf
+	cZR/a2I4T9acvPDhscKQNxOE7faUJDXh5TRMPaG8ZJsU/Y3yizUP9fifPJy/X0RN
+	jjc/Gg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41drqe4bcv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 04 Sep 2024 08:34:28 +0000 (GMT)
+	Wed, 04 Sep 2024 08:34:37 +0000 (GMT)
 Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4848YRXh028503
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4848YZSH005534
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 4 Sep 2024 08:34:27 GMT
+	Wed, 4 Sep 2024 08:34:35 GMT
 Received: from jingyw-gv.qualcomm.com (10.80.80.8) by
  nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 4 Sep 2024 01:34:18 -0700
+ 15.2.1544.9; Wed, 4 Sep 2024 01:34:27 -0700
 From: Jingyi Wang <quic_jingyw@quicinc.com>
-Date: Wed, 4 Sep 2024 16:33:43 +0800
-Subject: [PATCH 02/19] remoteproc: qcom: pas: Add QCS8300 remoteproc
- support
+Date: Wed, 4 Sep 2024 16:33:44 +0800
+Subject: [PATCH 03/19] dt-bindings: phy: Add QMP UFS PHY comptible for
+ QCS8300
 MIME-Version: 1.0
-Message-ID: <20240904-qcs8300_initial_dtsi-v1-2-d0ea9afdc007@quicinc.com>
+Message-ID: <20240904-qcs8300_initial_dtsi-v1-3-d0ea9afdc007@quicinc.com>
 References: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
 In-Reply-To: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
 To: Bjorn Andersson <andersson@kernel.org>,
@@ -96,11 +96,11 @@ CC: <linux-arm-msm@vger.kernel.org>, <linux-remoteproc@vger.kernel.org>,
         Xin Liu
 	<quic_liuxin@quicinc.com>
 X-Mailer: b4 0.15-dev-99b12
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1725438840; l=1313;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1725438840; l=1235;
  i=quic_jingyw@quicinc.com; s=20240829; h=from:subject:message-id;
- bh=eRnHuM4fcfsWKej+awtm4axCjNDL8/ysx+AUsUyuYMk=;
- b=0VjaWywdQz5GkkE0DsUVf3aRljLwu0/kQLKh6HQ1Tt/ZBlkBe0F7c5B0t3RGbnykOoV9rEhvg
- c0n8z31b6pLAKCAiRqWkHxl7EBnVfUYpasw4Xuja+dYClzJkZg8wBUn
+ bh=9YQZBIRM0Q/mqAXjLQG6b92+1SsE5zc4l/IHOcd+K5Y=;
+ b=W8OzQirNe3IoBkwL2mv4dICvys4dda/TO/9FWJ5tIEkQE6Mx4wCEZzmnvUkRZ5SSSMHl3y8/l
+ I9J2vyxdQ3ADyfJlhP4Vl4rV81f5YXbASq7aPuqwN5dS0g2218u7hcF
 X-Developer-Key: i=quic_jingyw@quicinc.com; a=ed25519;
  pk=3tHAHZsIl3cClXtU9HGR1okpPOs9Xyy1M0jzHw6A/qs=
 X-Originating-IP: [10.80.80.8]
@@ -108,19 +108,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01b.na.qualcomm.com (10.47.209.197)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: hEjExQXcbG6sS79jjZa8D5NFZ_-GJ6wQ
-X-Proofpoint-GUID: hEjExQXcbG6sS79jjZa8D5NFZ_-GJ6wQ
+X-Proofpoint-GUID: kBoUKW3W7h9T3hdIQJzXb9Cu_sZErqlC
+X-Proofpoint-ORIG-GUID: kBoUKW3W7h9T3hdIQJzXb9Cu_sZErqlC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-04_05,2024-09-04_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- bulkscore=0 mlxscore=0 impostorscore=0 suspectscore=0 phishscore=0
- mlxlogscore=999 lowpriorityscore=0 spamscore=0 clxscore=1015
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2407110000 definitions=main-2409040065
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0 mlxscore=0
+ phishscore=0 adultscore=0 suspectscore=0 priorityscore=1501 clxscore=1015
+ impostorscore=0 spamscore=0 mlxlogscore=736 bulkscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2407110000
+ definitions=main-2409040065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_013444_867617_E3A3E9B8 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20240904_013450_015955_A1691CE3 
+X-CRM114-Status: GOOD (  11.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,30 +137,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for PIL loading on ADSP, CDSP and GPDSP on QCS8300
-platform.
+From: Xin Liu <quic_liuxin@quicinc.com>
 
-Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
+Document the QMP UFS PHY compatible for QCS8300 to support physical
+layer functionality for USB found on the SoC.
+
 Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
 Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
 ---
- drivers/remoteproc/qcom_q6v5_pas.c | 3 +++
- 1 file changed, 3 insertions(+)
+ Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
-index ef82835e98a4..f92ccd4921b7 100644
---- a/drivers/remoteproc/qcom_q6v5_pas.c
-+++ b/drivers/remoteproc/qcom_q6v5_pas.c
-@@ -1416,6 +1416,9 @@ static const struct of_device_id adsp_of_match[] = {
- 	{ .compatible = "qcom,qcs404-adsp-pas", .data = &adsp_resource_init },
- 	{ .compatible = "qcom,qcs404-cdsp-pas", .data = &cdsp_resource_init },
- 	{ .compatible = "qcom,qcs404-wcss-pas", .data = &wcss_resource_init },
-+	{ .compatible = "qcom,qcs8300-adsp-pas", .data = &sa8775p_adsp_resource},
-+	{ .compatible = "qcom,qcs8300-cdsp-pas", .data = &sa8775p_cdsp0_resource},
-+	{ .compatible = "qcom,qcs8300-gpdsp-pas", .data = &sa8775p_gpdsp0_resource},
- 	{ .compatible = "qcom,sa8775p-adsp-pas", .data = &sa8775p_adsp_resource},
- 	{ .compatible = "qcom,sa8775p-cdsp0-pas", .data = &sa8775p_cdsp0_resource},
- 	{ .compatible = "qcom,sa8775p-cdsp1-pas", .data = &sa8775p_cdsp1_resource},
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index f9cfbd0b2de6..a3540f7a8ef8 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+     enum:
+       - qcom,msm8996-qmp-ufs-phy
+       - qcom,msm8998-qmp-ufs-phy
++      - qcom,qcs8300-qmp-ufs-phy
+       - qcom,sa8775p-qmp-ufs-phy
+       - qcom,sc7180-qmp-ufs-phy
+       - qcom,sc7280-qmp-ufs-phy
+@@ -85,6 +86,7 @@ allOf:
+           contains:
+             enum:
+               - qcom,msm8998-qmp-ufs-phy
++              - qcom,qcs8300-qmp-ufs-phy
+               - qcom,sa8775p-qmp-ufs-phy
+               - qcom,sc7180-qmp-ufs-phy
+               - qcom,sc7280-qmp-ufs-phy
 
 -- 
 2.25.1
