@@ -4,94 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53FAACD3431
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 08:37:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52D58CA0ED3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 08:45:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ovvlDKoIoYRwOvr+vIMtKihVLJou41RLN82GBN7K+8s=; b=3T7rGnEdydFtSw
-	sy0NUxbsBDGmxXEpud7DsQARNhHNuYdULJP8H8AEUNK+lokroudmPihPMfQQwxJchWtfmEjahfAyd
-	UvvYUzULm4lUBrTGy5JHL68VOleufTE0d8Ux4Nbir5y3795ZNvRwKxzdNOJuSzeBpspXF3NgYIDxV
-	IKEx6DB4VtrMRn5ivYQbkTPpd98OkjfD1wA2hj5BK+rfHBiWOzPnvdyk1l7npQSdpdrR7QgJoXyNX
-	GfCkCKEArc8afDYjnGu/zOC8JHOSoN05t1JA6ZOzK0RYDhSVOMhfeAwnfseOb92fPvLz/5aGCa6P2
-	qBdbCIliawSBMGZ8+IEw==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1JuJ/Z+tz796btgoJ9eAF+J3DjsMb9usMuhZARjmkiU=; b=L/9odvZe/yqpcW
+	vqLkUJk/MbZF17oG/q14QUqzDgdr0xL3jvOofNjKvrrp7WEJlQVCJJ3jjT92SKQy90ViyzqhlGJcO
+	Hf6pC4d+Z3xeHcda2ev4g9Vr6EnYRq9251Ty90tfYa97dklEUhR15LQdItdBoOXZPMtnpjTLz+BgK
+	l2fI70gdJgGIznLKh/maphrv7JYD2Lp+aFhFB53mTYac3wa18Gx9VOeIGXfq3l1TWSX1n/N7xg+ih
+	dqa3nmRtzNQ29nHJM4tIAFT2eg+ND18oYKY6SO6L2nfKS9wg7ssHDz6mUyieSFMmtR46KLAuehRe1
+	nvPRsUre9C+mYFjusvdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sllWL-00000003S18-0HNb;
-	Wed, 04 Sep 2024 08:37:45 +0000
-Received: from gw2.atmark-techno.com ([35.74.137.57])
+	id 1slldL-00000003UYB-3rUw;
+	Wed, 04 Sep 2024 08:44:59 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sllNr-00000003PBL-2HA1
-	for linux-phy@lists.infradead.org;
-	Wed, 04 Sep 2024 08:29:00 +0000
-Authentication-Results: gw2.atmark-techno.com;
-	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=fqUdTmVK;
-	dkim-atps=neutral
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by gw2.atmark-techno.com (Postfix) with ESMTPS id 4460196A
-	for <linux-phy@lists.infradead.org>; Wed,  4 Sep 2024 17:28:56 +0900 (JST)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2058d0e6269so27213845ad.1
-        for <linux-phy@lists.infradead.org>; Wed, 04 Sep 2024 01:28:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=atmark-techno.com; s=google; t=1725438535; x=1726043335; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=A9BCwc1u246SzIEfXsEg7Wl2dUEH2B7BGFR7ylaNFJA=;
-        b=fqUdTmVKAsJrMgNxIe3fsB5jSXejZ+2SItAYp7JC0JSnYCb+EQiY674bPMe7vMcg0d
-         D9FFDfEyKOF6iL0bHA1mCLMPsaBCzsNrbk6x1UXAVkRDCSH9C5iuNVEOUpomqeDHETac
-         suyf7ivH90vj5dHXtfzVOwCIr0Fc2o296pzJOC6syr4Cm+3GSRsoIIBxKKs+KqfEldxb
-         VS23t7BgRUFGeKjX0IlLq9rgIpbxJIAEDV1gUI0FddPklQYToZjLyv5fH6fCzjkCst1j
-         pXVaPxoWm0s4Crl41WA2J7Xl27zxbwyTFM/16mAbPqFhUD2QlDQMM5EkGQ2G7qTyWcea
-         yo0A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725438535; x=1726043335;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=A9BCwc1u246SzIEfXsEg7Wl2dUEH2B7BGFR7ylaNFJA=;
-        b=d2/hcGyMm0hbDbeGkdJ438tZYL2eKPov+l2ob29hT84JQhZHxY/9El8n9W/dWWXthv
-         SsE+yQrYuO2Coo5BAiHVkDTqm6PLq/lzKYtoD6NvN3okloIF8mn9gg8TqdFIChqhDKIp
-         mWRKRFP5NxvKIfsXjmrH94ftv8XMwcEUAnurnC5VhF8M7FdrFEorivxZNhcl5TCAdrQz
-         zvdJ9M0pax3DdNYoyAPAJVyTYGfvzUPJ5Lu0mBWG7uDCVYMk44JboddnGQynbbCMEwm7
-         Ba2x0k+yfsGnqlIrQx3yDtIj6LAYb27P9FwVPcM38AUAINUpkBOte6WaKs1TGpgjtycS
-         azrA==
-X-Gm-Message-State: AOJu0Yx4L40Rzk+pgFYIhSxn0PAfC+uW8CQEB8p0tByvN3ya8LH+RmUY
-	HUyCYEbsRW2idglEF/TTiNkuz8VZkTsAOz+TbB2mjd4Wb/ah7R1fsOiGakpjF5+Kl029us/h//N
-	MX/t5LEDJ5XDgHYQy2IZuZubxy0dT/nfUpAfc15Nz6g2O6prNHw/YqYCXrH9yQ7g9
-X-Received: by 2002:a17:903:1209:b0:1fa:1dd8:947a with SMTP id d9443c01a7336-2050c40deccmr203498545ad.46.1725438534981;
-        Wed, 04 Sep 2024 01:28:54 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGS+b8OnFANk61nL2CTN2tYlqnFgqCAT2QKrc70UflP7I3lRMwNJQtrzMre3KtyFh164q8eyA==
-X-Received: by 2002:a17:903:1209:b0:1fa:1dd8:947a with SMTP id d9443c01a7336-2050c40deccmr203498305ad.46.1725438534560;
-        Wed, 04 Sep 2024 01:28:54 -0700 (PDT)
-Received: from localhost (76.125.194.35.bc.googleusercontent.com. [35.194.125.76])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-206aea3864csm9133635ad.141.2024.09.04.01.28.53
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Wed, 04 Sep 2024 01:28:54 -0700 (PDT)
-Date: Wed, 4 Sep 2024 17:28:42 +0900
-From: Dominique Martinet <dominique.martinet@atmark-techno.com>
-To: Adam Ford <aford173@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
-	frieder.schrempf@kontron.de, aford@beaconembedded.com,
-	Sandor.yu@nxp.com, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V4 3/5] phy: freescale: fsl-samsung-hdmi: Support dynamic
- integer
-Message-ID: <ZtgaOlHi93b_py7T@atmark-techno.com>
-References: <20240903013113.139698-1-aford173@gmail.com>
- <20240903013113.139698-4-aford173@gmail.com>
+	id 1sllTJ-00000003QjD-2c6h;
+	Wed, 04 Sep 2024 08:34:39 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 483K82GG008946;
+	Wed, 4 Sep 2024 08:34:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=ZFB8Kbz1SyQHqfis6mv9oa
+	YLaY2wXicDsXVo/UQ/XXA=; b=Jsz897Z3U+4m/hf7K71SMJtBPibh2E//L6EZ2u
+	yUEQDyc164kEMMDCFqb+WNXMwiMiFqIdI17P14X4Av1K+//nINN3t2nrSO1Vltnh
+	tM9I/etgXSVtqglQ/6evAj7S8sKBFk+XFOm0K3LUXP5xkkfYO9U/KQ4R7pogM7Na
+	U4NbcnytewUy2QeqYGMUhpDxLUmIiQOC/GwqXjPNXZ0elHKXLLm/WvSZOe/R7FN8
+	4LG5hE5zXt8C4dbEEUb60THRF2oH+GTWLtpsP04spcYFhrOnNVn+XdcdmP9XKTEO
+	7GNyFGsM7V/2o4YHuUDDXUgNh8vIsEu0fQf8/0hPSkoIx28Q==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41bud2t4j6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 04 Sep 2024 08:34:11 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4848YAjL001656
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 4 Sep 2024 08:34:10 GMT
+Received: from jingyw-gv.qualcomm.com (10.80.80.8) by
+ nalasex01b.na.qualcomm.com (10.47.209.197) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Wed, 4 Sep 2024 01:34:01 -0700
+From: Jingyi Wang <quic_jingyw@quicinc.com>
+Subject: [PATCH 00/19] Add initial support for QCS8300
+Date: Wed, 4 Sep 2024 16:33:41 +0800
+Message-ID: <20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240903013113.139698-4-aford173@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAGYb2GYC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIxMDCyNL3cLkYgtjA4P4zLzMkszEnPiUkuJMXcNEYwuz1CRjQ/MUYyWg1oK
+ i1LTMCrCx0bG1tQBX97wSZgAAAA==
+To: Bjorn Andersson <andersson@kernel.org>,
+        Mathieu Poirier
+	<mathieu.poirier@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        "Bartosz
+ Golaszewski" <bartosz.golaszewski@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Manivannan Sadhasivam
+	<manivannan.sadhasivam@linaro.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>, "Andy Gross" <agross@kernel.org>,
+        Ulf Hansson <ulf.hansson@linaro.org>,
+        "Thomas Gleixner" <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+        Robin
+ Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+        Konrad Dybcio
+	<konradybcio@kernel.org>,
+        Robert Marko <robimarko@gmail.com>,
+        Das Srinagesh
+	<quic_gurus@quicinc.com>,
+        Jassi Brar <jassisinghbrar@gmail.com>, Lee Jones
+	<lee@kernel.org>,
+        Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+        Catalin Marinas <catalin.marinas@arm.com>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-remoteproc@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-scsi@vger.kernel.org>,
+        <linux-pm@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <iommu@lists.linux.dev>, Jingyi Wang <quic_jingyw@quicinc.com>,
+        Xin Liu
+	<quic_liuxin@quicinc.com>,
+        Shazad Hussain <quic_shazhuss@quicinc.com>,
+        Tingguo Cheng <quic_tingguoc@quicinc.com>,
+        Zhenhua Huang
+	<quic_zhenhuah@quicinc.com>,
+        Kyle Deng <quic_chunkaid@quicinc.com>,
+        "Raviteja
+ Laggyshetty" <quic_rlaggysh@quicinc.com>
+X-Mailer: b4 0.15-dev-99b12
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1725438840; l=4106;
+ i=quic_jingyw@quicinc.com; s=20240829; h=from:subject:message-id;
+ bh=TSbTlxmynJaa+3azrWecam5RAA/J2OsZiqLEu2rc0/A=;
+ b=pljMssqerWcs/iddcMjH4610nwwVlYPdgrso7lGrkJYZmSy9VyEegf+c9Qbq/0NUtpZoex7v0
+ rTLtTVzd7zoAMOuNoVgqH6ER65mNCiB25uwQyN3Wa5u0FPhje08Mamw
+X-Developer-Key: i=quic_jingyw@quicinc.com; a=ed25519;
+ pk=3tHAHZsIl3cClXtU9HGR1okpPOs9Xyy1M0jzHw6A/qs=
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: MZ_8Z4fjhEJalyL95xmfS_Ekm-0cBv1H
+X-Proofpoint-ORIG-GUID: MZ_8Z4fjhEJalyL95xmfS_Ekm-0cBv1H
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-04_05,2024-09-04_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 adultscore=0
+ clxscore=1011 spamscore=0 mlxlogscore=999 malwarescore=0 mlxscore=0
+ bulkscore=0 priorityscore=1501 phishscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2409040065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_012859_716113_06133090 
-X-CRM114-Status: GOOD (  30.64  )
+X-CRM114-CacheID: sfid-20240904_013437_708084_FC25602C 
+X-CRM114-Status: GOOD (  14.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,82 +143,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Adam Ford wrote on Mon, Sep 02, 2024 at 08:30:45PM -0500:
-> There is currently a look-up table for a variety of resolutions.
-> Since the phy has the ability to dynamically calculate the values
-> necessary to use the intger divider which should allow more
-> resolutions without having to update the look-up-table.
-> 
-> If the lookup table cannot find an exact match, fall back to the
-> dynamic calculator of the integer divider.
-> 
-> Previously, the value of P was hard-coded to 1, this required an
-> update to the phy_pll_cfg table to add in the extra value into the
-> table, so if the value of P is calculated to be something else
-> by the PMS calculator, the calculated_phy_pll_cfg structure
-> can be used instead without having to keep track of which method
-> was used.
-> 
-> Signed-off-by: Adam Ford <aford173@gmail.com>
+Add initial support for QCS8300 SoC and QCS8300 RIDE board.
 
-I've rechecked this series with abs() added in the later patch and this
-looks fine; all modes I tried properly synced up with my monitor.
-(except one but I don't see set_rate() being called for it so it's
-something else)
+This revision brings support for:
+- CPUs with cpu idle
+- interrupt-controller with PDC wakeup support
+- gcc
+- TLMM
+- interconnect
+- qup with uart
+- smmu
+- pmic
+- ufs
+- ipcc
+- sram
+- remoteprocs including ADSP,CDSP and GPDSP
 
-(On a semi-unrelated note on my backport I get a "PLL failed to lock"
-message for the first sync only, but everything seems to work regardless
-even if there is no further set_rate(), so I'll pretend I didn't see
-that... the old code just has a 20ms wait without any check so it's not
-like it was any better... anyway that's unrelated to this serie)
+Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
+---
+patch series organized as:
+- 1-2: remoteproc binding and driver
+- 3-5: ufs binding and driver
+- 6-7: rpmhpd binding and driver
+- 8-15: bindings for other components found on the SoC
+- 16-19: changes to support the device tree
 
-I'm also confident enough set_rate() won't be called in parallel with
-different rates for my device so I'm fine with the new global, letting
-others complain if that's a problem for them.
+dependencies:
+tlmm: https://lore.kernel.org/linux-arm-msm/20240819064933.1778204-1-quic_jingyw@quicinc.com/
+gcc: https://lore.kernel.org/all/20240820-qcs8300-gcc-v1-0-d81720517a82@quicinc.com/
+interconnect: https://lore.kernel.org/linux-arm-msm/20240827151622.305-1-quic_rlaggysh@quicinc.com/
 
+dtb check got following err:
+/local/mnt/workspace/jingyi/aim500/linux/arch/arm64/boot/dts/qcom/qcs8300-ride.dtb: interconnect@1680000: Unevaluated properties are not allowed ('reg' was unexpected)
+which is cause by "reg" compatible missing in dt binding, will be fixed in interconnect patch series.
 
-So, feel free to add this to all 5 patches:
-Test-by: Dominique Martinet <dominique.martinet@atmark-techno.com>
+---
+Jingyi Wang (11):
+      dt-bindings: remoteproc: qcom,sa8775p-pas: Document QCS8300 remoteproc
+      remoteproc: qcom: pas: Add QCS8300 remoteproc support
+      dt-bindings: qcom,pdc: document QCS8300 Power Domain Controller
+      dt-bindings: soc: qcom: add qcom,qcs8300-imem compatible
+      dt-bindings: mailbox: qcom-ipcc: Document QCS8300 IPCC
+      dt-bindings: mfd: qcom,tcsr: Add compatible for QCS8300
+      dt-bindings: nvmem: qfprom: Add compatible for QCS8300
+      dt-bindings: arm: qcom: document QCS8275/QCS8300 SoC and reference board
+      arm64: defconfig: enable clock controller, interconnect and pinctrl for QCS8300
+      arm64: dts: qcom: add initial support for QCS8300 DTSI
+      arm64: dts: qcom: add base QCS8300 RIDE dts
 
-Just one style nitpick:
+Kyle Deng (1):
+      dt-bindings: soc: qcom,aoss-qmp: Document the QCS8300 AOSS channel
 
-> @@ -453,29 +541,70 @@ static unsigned long phy_clk_recalc_rate(struct clk_hw *hw,
->  static long phy_clk_round_rate(struct clk_hw *hw,
->  			       unsigned long rate, unsigned long *parent_rate)
->  {
-> +	u32 int_div_clk;
->  	int i;
-> +	u16 m;
-> +	u8 p, s;
-> +
-> +	/* If the clock is out of range return error instead of searching */
-> +	if (rate > 297000000 || rate < 22250000)
-> +		return -EINVAL;
->  
-> +	/* Check the look-up table */
->  	for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
->  		if (phy_pll_cfg[i].pixclk <= rate)
-> -			return phy_pll_cfg[i].pixclk;
-> +			break;
-> +	/* If the rate is an exact match, return it now */
-> +	if (rate == phy_pll_cfg[i].pixclk)
-> +		return phy_pll_cfg[i].pixclk;
-> +
-> +	/*
-> +	 * The math on the lookup table shows the PMS math yields a
-> +	 * frequency 5 x pixclk.
-> +	 * When we check the integer divider against the desired rate,
-> +	 * multiply the rate x 5 and then divide the outcome by 5.
-> +	 */
-> +	int_div_clk = fsl_samsung_hdmi_phy_find_pms(rate * 5, &p, &m, &s) / 5;
+Shazad Hussain (1):
+      dt-bindings: power: rpmpd: Add QCS8300 power domains
 
-I still think it makes more sense to move the * 5, / 5 and comment
-inside fsl_samsung_hdmi_phy_find_pms -- the other caller doesn't have
-such the comment so it might look odd depending on where one started
-looking.
+Tingguo Cheng (1):
+      pmdomain: qcom: rpmhpd: Add QCS8300 power domains
 
+Xin Liu (3):
+      dt-bindings: phy: Add QMP UFS PHY comptible for QCS8300
+      dt-bindings: ufs: qcom: Document the QCS8300 UFS Controller
+      phy: qcom-qmp-ufs: Add support for QCS8300
+
+Zhenhua Huang (2):
+      dt-bindings: arm-smmu: Add compatible for QCS8300 SoC
+      dt-bindings: firmware: qcom,scm: document SCM on QCS8300 SoCs
+
+ Documentation/devicetree/bindings/arm/qcom.yaml    |    8 +
+ .../devicetree/bindings/firmware/qcom,scm.yaml     |    1 +
+ .../bindings/interrupt-controller/qcom,pdc.yaml    |    1 +
+ .../devicetree/bindings/iommu/arm,smmu.yaml        |    2 +
+ .../devicetree/bindings/mailbox/qcom-ipcc.yaml     |    1 +
+ .../devicetree/bindings/mfd/qcom,tcsr.yaml         |    1 +
+ .../devicetree/bindings/nvmem/qcom,qfprom.yaml     |    1 +
+ .../bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    |    2 +
+ .../devicetree/bindings/power/qcom,rpmpd.yaml      |    1 +
+ .../bindings/remoteproc/qcom,sa8775p-pas.yaml      |    6 +
+ .../bindings/soc/qcom/qcom,aoss-qmp.yaml           |    1 +
+ .../devicetree/bindings/sram/qcom,imem.yaml        |    1 +
+ .../devicetree/bindings/ufs/qcom,ufs.yaml          |    2 +
+ arch/arm64/boot/dts/qcom/Makefile                  |    1 +
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts          |  246 ++++
+ arch/arm64/boot/dts/qcom/qcs8300.dtsi              | 1282 ++++++++++++++++++++
+ arch/arm64/configs/defconfig                       |    3 +
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            |    3 +
+ drivers/pmdomain/qcom/rpmhpd.c                     |   24 +
+ drivers/remoteproc/qcom_q6v5_pas.c                 |    3 +
+ include/dt-bindings/power/qcom-rpmpd.h             |   19 +
+ 21 files changed, 1609 insertions(+)
+---
+base-commit: eb8c5ca373cbb018a84eb4db25c863302c9b6314
+change-id: 20240829-qcs8300_initial_dtsi-1a386eb317d3
+
+Best regards,
 -- 
-Dominique
+Jingyi Wang <quic_jingyw@quicinc.com>
+
 
 -- 
 linux-phy mailing list
