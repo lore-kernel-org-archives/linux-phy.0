@@ -4,112 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0432BCD4847
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 18:16:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25C75CD4F4A
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 23:57:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xwiacSg55uX3JbjA+veiVCD5edegdF7wG6lrDEVql0o=; b=pr1W3Tj4d+0aOh
-	rKXCNJkbNEqb1N6fYtmBiStec3S7yvRDPmi1hPKYrJCPJ3Hfuh55fwdzhZOX7+NDsSdWRoo501PH2
-	crYK0jLeRa+ODAIls/bI+McovnOtE0iyL1Ge8WwbcIAz3VypCzq4CQdkN5+kPtLTa2jeQUVa1DpMd
-	Ub9L9tM8aQEcFD5fd4+KguosmfwmLPm2IU4UQynye9y5Lr8S7LDk0r7Ng6ssbDZcpPLIkIKfUDIY/
-	m/cbRlJ4SZJLdooldVSRFcLSBQWgsrolmJd8Lo1My11QmRusLZwmwOgx7weM4DCh7Bcg+UYt1O4hf
-	mkPX00QdntlgwnRE5crA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g6P5khboMsj4/4wInzXXEedDWfUNUWKeT+elyM9wtas=; b=PjrpAWsyvvyThj
+	AGujBP8ijvCYlbFkm6PRxyXYPTf0zZ0/Z/VYTWlsMIbyDBFyBAflBVvCYh2Ulwh49Zr+JVA7xxFBz
+	Fp25B6rCpCnq+nnB1IYPxHIn3p2HZmg01qCAXSfYW4Wo52KkSW4poDT3iID6eOwXkhMOGXJVwxUhI
+	ncXBhW72Xw3t/qqLC/PgCX5+iKXTFgAha7ddzU/cWZhNiz0yTPSWCJJC6kkNX/EMlIMrVXY8XwK6O
+	3HrKkv62RNcqeqzHqVfrqpuVoyVnCO2ycqyRwxhiIwwU793KRPp1JiwvN7sUI/GRCco6dP+A2a2Z9
+	57I0ea0cpjdMV/niZ6HA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sluYU-00000005ZcS-2jM6;
-	Wed, 04 Sep 2024 18:16:34 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1slzs2-00000006QPu-1YHX;
+	Wed, 04 Sep 2024 23:57:06 +0000
+Received: from mail-il1-x131.google.com ([2607:f8b0:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sluYR-00000005Zc2-1c46
+	id 1slzrz-00000006QPP-3566
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Sep 2024 18:16:32 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 522515C57FE;
-	Wed,  4 Sep 2024 18:16:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B8C8C4CEC2;
-	Wed,  4 Sep 2024 18:16:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725473790;
-	bh=mtx1u1ixv5Azx4m3nJAArYmfaHcyt0YeqfamjYc1Nks=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=s8gHIkcz2xOM4HbTOVNS3t/CSjJuiz/SquZcIAE4+9oFfraveIyH7bnKzDde+xfRh
-	 57GCS6SzxY/QRQKZEfwoaGEJjA+ieEV6OhJ39RHOCeH7+Z/kxMSD0yVemGs24qowkI
-	 RPrlQVIUL5Kf251NRVS0Y2lulCFuO1SGzasQc9Z7ioivIoOaJhzfKRtIxGWfspEUDG
-	 Ehbu/9BrafykCwSNTNvL+zGLnqbbQsVP/CPIX4O8vKH3gSqYLPkl4F6bObRUxSAKSs
-	 ihJRipmGJUx0IIJeeaNIJNe61zF/Or7jzmrwF+sw+SJ5tr+EJ4SUCmJypfCXzaMniW
-	 mBtDUTzN+a4rw==
-Message-ID: <ec59c6d0-0ef9-482f-8aa6-42d36c3420e5@kernel.org>
-Date: Wed, 4 Sep 2024 20:16:19 +0200
+	Wed, 04 Sep 2024 23:57:05 +0000
+Received: by mail-il1-x131.google.com with SMTP id e9e14a558f8ab-39d4161c398so945895ab.3
+        for <linux-phy@lists.infradead.org>; Wed, 04 Sep 2024 16:57:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1725494222; x=1726099022; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=F2GvsxqrGhdBZJzoxaEyme4yyK4FzYQjimMYgOocqX4=;
+        b=bOihL+r/S5aF8ZDAEBUNNO0g6U8qNL/+5XtFv4PY8fkdOAAinyzJd1yZRsCUag6Elj
+         TtQdY0iDUzdb1J5Iq3d6TDEXp1boh1SoVUoQrZDOLtGVjsbXmV8eClmfzAOB3evrzaLd
+         68oQ4qINTWkakBtNeGiX6ehKRzgx55/yVjqWvMc55CdkH/JE1vxMPfTrf5/YHglsIh9+
+         z8FiC/yrVQr7Fm2lL46aaRY5lAazS/4bdBpugTd3305oIDtVS9Rjf2IMowF0lf0WAD4n
+         aXGKSJk2rDYx29/qbBeHjWPAHnvZY0ycECHP2aVJvxW+GKGA3DrwFv1G/4wXNueey2Q/
+         ymLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725494222; x=1726099022;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=F2GvsxqrGhdBZJzoxaEyme4yyK4FzYQjimMYgOocqX4=;
+        b=a0O3C+zERsKtfoMsptJJ9pmZfkYGqgUE1tGgFs0tizuGEBjc7QsydEQQ72V3DUM6cJ
+         J/QEd6NOf8g8RtgDiNPeODEdzv5svNS+X6ISqnNCmGPw1f/w9UZCUHJs35GtewyI2qN0
+         ZDo7DJ8uCVXu/HO7VvAwDp9AguMd9uQ4xEcsUE94XJO+dt5s8DT5w3yavAU47lypRoix
+         kB5Q2p6rKoB/hQItfJIbyrDtLfrDCOcam5xXMktUHs9uTsfFyA+rbTFsyIt5bFehLhom
+         BBXyzPOpVJDoBjYcUKmWyfG03RG7hwO3dmtC+YF3MN2eoV6MFm0yLMm9CEA2XEzOSeCU
+         tl7w==
+X-Gm-Message-State: AOJu0YwWLu6IJkrdoCZIz9UQQ8KWmAPuc77Ib5bKF5aIofeshmjfEdwa
+	fOfK699TDOyGXth445LhQYoWD7VKn9mDzgkwV9mxNOb9PF4MxuYFwliXOg==
+X-Google-Smtp-Source: AGHT+IH2/xw7uH1ta+NymZn7qHkQdO3VJG3zbLmK705z0/0HgtyU0x7qA0GYuICzmaP9S5RtJfmLgQ==
+X-Received: by 2002:a05:6e02:1d0b:b0:3a0:452d:aaf7 with SMTP id e9e14a558f8ab-3a0452dadc9mr33115215ab.11.1725494222142;
+        Wed, 04 Sep 2024 16:57:02 -0700 (PDT)
+Received: from aford-System-Version.lan (c-75-72-166-104.hsd1.mn.comcast.net. [75.72.166.104])
+        by smtp.gmail.com with ESMTPSA id e9e14a558f8ab-39f3afc594csm39396735ab.43.2024.09.04.16.57.00
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 04 Sep 2024 16:57:01 -0700 (PDT)
+From: Adam Ford <aford173@gmail.com>
+To: linux-phy@lists.infradead.org
+Cc: dominique.martinet@atmark-techno.com,
+	linux-imx@nxp.com,
+	festevam@gmail.com,
+	frieder.schrempf@kontron.de,
+	aford@beaconembedded.com,
+	Sandor.yu@nxp.com,
+	Adam Ford <aford173@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Marco Felsch <m.felsch@pengutronix.de>,
+	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH V6 0/5] phy: freescale: fsl-samsung-hdmi: Expand phy clock options
+Date: Wed,  4 Sep 2024 18:30:28 -0500
+Message-ID: <20240904233100.114611-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 1/6] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
- uniphy
-To: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
- manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
- andersson@kernel.org, konradybcio@kernel.org, p.zabel@pengutronix.de,
- dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, robimarko@gmail.com
-References: <20240830081132.4016860-1-quic_srichara@quicinc.com>
- <20240830081132.4016860-2-quic_srichara@quicinc.com>
- <e2qgpvfccpo2sd4mbrynxruvt5attqmtd5oik26of7tv7u4lq6@kvb63sglwa5b>
- <de17d37f-ed0c-4e73-91d5-fc902573212a@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
- QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
- gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
- /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
- iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
- VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
- 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
- xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
- eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
- AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
- MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
- Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
- ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
- vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
- oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
- lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
- t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
- uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
- 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
- 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <de17d37f-ed0c-4e73-91d5-fc902573212a@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_111631_572547_293079B5 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20240904_165703_814650_35CF5417 
+X-CRM114-Status: GOOD (  14.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,60 +100,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/09/2024 19:20, Sricharan Ramabadhran wrote:
-> 
-> 
-> On 8/30/2024 1:53 PM, Krzysztof Kozlowski wrote:
->> On Fri, Aug 30, 2024 at 01:41:27PM +0530, Sricharan R wrote:
->>> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
->>>
->>> Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5018.
->>>
->>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->>> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
->>> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
->>> ---
->>>   [v3] Added reviewed-by tags
->>>
->>>   .../phy/qcom,ipq5018-uniphy-pcie.yaml         | 70 +++++++++++++++++++
->>>   1 file changed, 70 insertions(+)
->>>   create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5018-uniphy-pcie.yaml
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5018-uniphy-pcie.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5018-uniphy-pcie.yaml
->>> new file mode 100644
->>> index 000000000000..c04dd179eb8b
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5018-uniphy-pcie.yaml
->>> @@ -0,0 +1,70 @@
->>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->>> +%YAML 1.2
->>> +---
->>> +$id: http://devicetree.org/schemas/phy/qcom,ipq5018-uniphy-pcie.yaml#
->>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>> +
->>> +title: Qualcomm UNIPHY PCIe 28LP PHY controller for genx1, genx2
->>> +
->>> +maintainers:
->>> +  - Nitheesh Sekar <quic_nsekar@quicinc.com>
->>> +  - Sricharan Ramabadhran <quic_srichara@quicinc.com>
->>> +
->>> +properties:
->>> +  compatible:
->>> +    enum:
->>> +      - qcom,ipq5018-uniphy-pcie-gen2x1
->>> +      - qcom,ipq5018-uniphy-pcie-gen2x2
->>
->> ... and now I wonder why there are two compatibles. Isn't the phy the
->> same? We talk about the same hardware?
->   We have 2 different physical phys. One with single lane and another
->   with dual lane. Its same IP, but for 2 lanes, 2 sets of the phy
->   specific registers needs to configured. So differentiating that here.
+Currently, there is a look-up-table to describe all the clock options the HDMI PHY
+can use.  Some of these entries in the LUT are using a fractional divider which does
+not have a well documented algorithm for determinging values, but the the integer
+divider can use an algorithm to calculate the integer divder values dynamically
+beyond those listed in the LUT and also duplicates some of the entries.
 
-What you described, suggests using phy mode or num-lanes in PCI
-controller, not separate compatible. It's the same IP.
+The first two patches do not do anything functionally other than simplify
+some of the register accesses and de-duplicates some of the register look-ups.
 
-Best regards,
-Krzysztof
+The third patch adds support for the integer divider and uses it whenever the
+clock request is an exact match.  Otherwise, it will use the LUT as before.
+The rouding is still based on the LUT if the integer clock isn't an exact match.
+
+The forth patch updates thes set_rate and round_rate functions to use either
+the fractional clock LUT or the the integer divder mechanism to determine
+which ever clock rate might be closest match.
+
+The last patch removes the integer divider entries from the LUT since by then
+it'll be comparing both the integer divider calculator and the closest value
+in the LUT.
+
+In my testing with a AOC 4K monitor, I was able to add 4 entries in my modetest
+table.  I do not have an HDMI analyzer, so I just used my monitor to determine
+if this series worked.
+
+V6: Fix some whitespace
+    Fix issues with calculating the closest divider
+    
+V5: Updates patch 1 of 5 for whitespace and comment updates
+      Patches 1 and 2 add RB tags
+      No functional changes from V4
+      
+Adam Ford (5):
+  phy: freescale: fsl-samsung-hdmi: Replace register defines with macro
+  phy: freescale: fsl-samsung-hdmi: Simplify REG21_PMS_S_MASK lookup
+  phy: freescale: fsl-samsung-hdmi: Support dynamic integer
+  phy: freescale: fsl-samsung-hdmi: Use closest divider
+  phy: freescale: fsl-samsung-hdmi: Remove unnecessary LUT entries
+
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 570 ++++++++++---------
+ 1 file changed, 292 insertions(+), 278 deletions(-)
+
+-- 
+2.43.0
 
 
 -- 
