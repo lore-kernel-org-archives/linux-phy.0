@@ -4,89 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D721CD4F4A
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Sep 2024 23:57:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AE0ACD4F4F
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 03:34:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yamK/EWakumDkUHQk4QUSa69vtOCo26Z1E4MvJh8v50=; b=f6cU9vdF6gHh9v
-	1/hbybDTFLeYbVbvSCPsxRkudet6NsP17pv8A1FIpFY+7xZIqFzqQKktU0V0uAp+oq7uuQvrfle4O
-	NAzrD2ce2XQliLogjeHq1L7kDhw+eLE6SlQcO4/g/T7m4f+utAG/6CEyPsCknwdrS/cKJBpaP88zh
-	m9xaJECAonMi/zrmoV0bTdUZ7gU7ARuZ9V3wYXTFdeUXsZfOHV6UUMQOq/pea6zlmMpLlks07r+N0
-	gFHrzMKbPlg2FPx6+tbaTW7I6JD/vHHRzaqSDu2vcvEpeihmk4jHOANJaIWNNBXM5T4kIc53npkeZ
-	EkPIk9PHBAoi1Jx5xv0g==;
+	List-Owner; bh=rmbyWz3NcCKB9r+YnXXq1Q2s/9geCMTP/Q2q+Dx1fBA=; b=lIdegpYgs0a+73
+	gY5hQFSpgMQ6p9FKDCEO6xmbJpl8BIQGWw+EwNnOdoR7J+YDllyn3ZWWfoMdrUgq+LP9EX6GNhcfi
+	DZMyOF/WVlWm2OJ8msOHVml549qSfXAhc1n2qv0tm64EM9bjfs0jstLVu3etDcU5gO+QQ/MRtmQxT
+	hzDZNtcOpqBCUyPCD5JWkCnaVLX4xjs717lgSuIT6f/smH9059dmevwnpSaG3ERQ2Ro9ex6tEYCxG
+	yCtJAzGon/7IGHoUtGOFzwSPdQInuZ7vnnB5QqdHQaS+Ta3jXWMt6GsfNnZG7ODalvuZeInOyRYaW
+	2BbEOpmtf0tZu+yml9mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slzsR-00000006QXp-1UBf;
-	Wed, 04 Sep 2024 23:57:31 +0000
-Received: from mail-il1-x136.google.com ([2607:f8b0:4864:20::136])
+	id 1sm3Gc-00000006pNl-3sVu;
+	Thu, 05 Sep 2024 03:34:42 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slzsO-00000006QWw-3O4w
+	id 1sm3Fg-00000006p8i-2rym
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Sep 2024 23:57:30 +0000
-Received: by mail-il1-x136.google.com with SMTP id e9e14a558f8ab-39fd6a9acb6so760985ab.0
-        for <linux-phy@lists.infradead.org>; Wed, 04 Sep 2024 16:57:28 -0700 (PDT)
+	Thu, 05 Sep 2024 03:33:46 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-53567b4c3f4so211604e87.2
+        for <linux-phy@lists.infradead.org>; Wed, 04 Sep 2024 20:33:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1725494247; x=1726099047; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1725507223; x=1726112023; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=aXSm9WNyKH2X+oIseXOh6+U5ooOHPYDvfoco3hKDKmI=;
-        b=kpXeTQpSoSWeBS0gFGt+RKUAPm/lIrVlyX+FpF+Z/IczBvwLOqAqY5aNpc9Y7qLvL5
-         QB/hxaTGR2fnKbWh+lWlp0baZSkAUbC2pd7YnPI+pxXNrd9CL6i8s6elrE8zC9ejO2gp
-         9O7wDBKGABgP84u4jPp5TU2WfcehezW1WyHwjPp7eWcG/JnYHzHFZ3CRaNW2Tr4Cpshz
-         4Z6WHM3HOBFY5ZYWsZJ72ZLBQC0zt7wgMa033r0Swuh/8lBJOKril+Pp2ChNKr9GhKBP
-         NmjNcI9B/vgZpmlPSkbHR10/g2RLDflgna477bxxKrdiVByPzXc9McHjnknoU8APnhfq
-         2W/w==
+        bh=dGI49nIoainLFaa1TPUEgnROODaXfiT1w+95Y7KXH0A=;
+        b=D+2vGRGzrVLAs0sGrJJIlKLqJS5rb9OcL1cuSsWjFrrvZkQOVWqLDxWBH8cTriabHY
+         CMye6KUB5b+bjfiqRlisGMMup+F3WWXrJDfL7E/6PLk1GoCK0bWqjxtIAGMKgnS2b0W0
+         irIaKW/+7Cgycy2S6lX8mwjfDWRlTgMS4jCNi4oGwLa/8Zo9QxjBweYCCq3yxdyJB4DM
+         lWmwMBAq5MOvPd2m/q27pdV3D8Rrb7HQ4UYgu4ichJcUNUXohge7Y/KY/+0yjQ6mLXk8
+         9qxyqGUs+1/aQvuiAE12+hSnVztPewJqdsXtYopM1eg3eVOppIeDPwhcDS86+ubMFoJj
+         wYsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725494247; x=1726099047;
+        d=1e100.net; s=20230601; t=1725507223; x=1726112023;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=aXSm9WNyKH2X+oIseXOh6+U5ooOHPYDvfoco3hKDKmI=;
-        b=llGo12m0IBE0fgl20ArhsKUZZe8H4Mhu9lntyPCu2mjzvW4YzheO2w8cLhyLIrbGbt
-         mme2X0ZCj7ILc68RidwyO7UBcx2HlB5BYC8KtOW7tizFShFUegQ9dke2K3POahGb9xWL
-         lU2rIyEHnDsKWUJ+pe0f3aSVZlDP4sNMKg4aR8LuEpy06VfCAAPIhNqa+fJ108hHbtzz
-         gkz3D0HAE32/PIxQ5LacXVFeAJnmQL1BNgSp+q7iAW5Sf9iKS48CC2DYFVhJrIUWEx7B
-         xRe6VgXOglhYuxQ6mehxz+QN4m2we25/OkXsmnnypxF/wMGToeKMEv9hR3czcaLRY3PY
-         noBw==
-X-Gm-Message-State: AOJu0YzXwjT/2hM28kHQKTYHBgLEAxJaJOcwm2/YB78eAv2d+Uql10fF
-	DmEs6OAiKYt0mpeiYhAvpBl/6DNBt7ws0Z3QClM9AQijkM31R7XuULiPCg==
-X-Google-Smtp-Source: AGHT+IFUOeEAenh8bRBe65yBvzTzTad6MxUdqDI6x0cOmF4c0818sqHkfFafnkg/GA4i9lWMj5Cg3Q==
-X-Received: by 2002:a05:6e02:1c27:b0:39f:36f3:1957 with SMTP id e9e14a558f8ab-39f6a978675mr100072705ab.3.1725494247336;
-        Wed, 04 Sep 2024 16:57:27 -0700 (PDT)
-Received: from aford-System-Version.lan (c-75-72-166-104.hsd1.mn.comcast.net. [75.72.166.104])
-        by smtp.gmail.com with ESMTPSA id e9e14a558f8ab-39f3afc594csm39396735ab.43.2024.09.04.16.57.26
+        bh=dGI49nIoainLFaa1TPUEgnROODaXfiT1w+95Y7KXH0A=;
+        b=NHLrapod3MMIGaz6ll6fR3syIYw3f9O+Y1YzGL0McOU0NT9oGbI4/5Mq/+HaXzyq/s
+         YQmcxvoDdX8qwzzVDChpJSMWFLrKb8ok8PsYbL/aNK4aGxrS0CxrhSilePZ/bobSyueu
+         X3ZeDV3xokykV5Ov0h391viuICQZiH9t2Z2LNOhsnl4zbzZDGNoVniEgkYujeifcVzX6
+         L9WSBA8kVbHKAFGeVvDdn+Aru5c1mw3L14AtwUQWkkNq+GN6PqaWF43aSbAMchozcLKK
+         uN606VFe0ze0oMW28BSyFmWgg7mgGtOJRjior2nyjuVN4R+5H5HEqHvy3rbfdK+7PZMN
+         szKw==
+X-Forwarded-Encrypted: i=1; AJvYcCWmrnQHNny9NnSKcc7wBBk7/vXzW4l3+dNvcueqorJ4IyWrPT0LgyG6c9HIwCwqnbh3ZlN4QSehBEc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzoj8W1zwDz7OTaW5JgEn7RwRSFQvSBKE20oj3HLUQX1NpQQ61H
+	nyTvnFPnvS4MHRGnV3B6MNQnHupw1q+3W/NiiuYbZ06fDWsMX9pa3lfK/VpoPuU=
+X-Google-Smtp-Source: AGHT+IGI1ThGNwiYzgjZpB38Gzh3Kii8Shn3E44t5s6JycEWNTDgK8ZwOGUE8abD1/FHADwkhMcSXg==
+X-Received: by 2002:a05:6512:6d2:b0:533:44c6:1ef1 with SMTP id 2adb3069b0e04-53546baacc4mr12832555e87.56.1725507222640;
+        Wed, 04 Sep 2024 20:33:42 -0700 (PDT)
+Received: from umbar.unikie.fi ([192.130.178.90])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53565f6d409sm389165e87.35.2024.09.04.20.33.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 04 Sep 2024 16:57:26 -0700 (PDT)
-From: Adam Ford <aford173@gmail.com>
-To: linux-phy@lists.infradead.org
-Cc: dominique.martinet@atmark-techno.com,
-	linux-imx@nxp.com,
-	festevam@gmail.com,
-	frieder.schrempf@kontron.de,
-	aford@beaconembedded.com,
-	Sandor.yu@nxp.com,
-	Adam Ford <aford173@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
+        Wed, 04 Sep 2024 20:33:41 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH V6 5/5] phy: freescale: fsl-samsung-hdmi: Remove unnecessary LUT entries
-Date: Wed,  4 Sep 2024 18:30:33 -0500
-Message-ID: <20240904233100.114611-6-aford173@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240904233100.114611-1-aford173@gmail.com>
-References: <20240904233100.114611-1-aford173@gmail.com>
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Rob Clark <robdclark@gmail.com>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Sean Paul <sean@poorly.run>,
+	Marijn Suijten <marijn.suijten@somainline.org>,
+	David Airlie <airlied@gmail.com>,
+	Daniel Vetter <daniel@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@linaro.org>,
+	Marc Gonzalez <mgonzalez@freebox.fr>
+Cc: linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	Arnaud Vrac <avrac@freebox.fr>,
+	Pierre-Hugues Husson <phhusson@freebox.fr>,
+	Jeffrey Hugo <quic_jhugo@quicinc.com>,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: Re: [PATCH v7 0/6] HDMI TX support in msm8998
+Date: Thu,  5 Sep 2024 06:33:36 +0300
+Message-Id: <172550712143.3299484.1580127137460046609.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
+References: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_165728_871975_FEB8AD8D 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20240904_203344_753731_D944791D 
+X-CRM114-Status: UNSURE (   6.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,219 +117,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The lookup table contains entries which use the integer divider
-instead of just the fractional divider. Since the set and round
-functions check both the integer divider values and the LUT values,
-it's no longer necessary to keep the integer divider values in the
-lookup table, as can be dynamically calcuated.
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
-Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-Tested-by: Frieder Schrempf <frieder.schrempf@kontron.de>
----
-V6: Fix typos in commit message
-V5: No Change
-V4:  New to series
----
- drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 83 +++-----------------
- 1 file changed, 13 insertions(+), 70 deletions(-)
+On Wed, 24 Jul 2024 17:01:33 +0200, Marc Gonzalez wrote:
+> DT bits required for HDMI TX support in qcom APQ8098 (MSM8998 cousin)
+> 
 
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-index 9a21dbbf1a82..1203143bad7a 100644
---- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -69,25 +69,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 23750000,
- 		.pll_div_regs = { 0xd1, 0x50, 0xf1, 0x86, 0x85, 0x80, 0x40 },
--	}, {
--		.pixclk = 24000000,
--		.pll_div_regs = { 0xd1, 0x50, 0xf0, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 24024000,
- 		.pll_div_regs = { 0xd1, 0x50, 0xf1, 0x99, 0x02, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 25175000,
- 		.pll_div_regs = { 0xd1, 0x54, 0xfc, 0xcc, 0x91, 0x80, 0x40 },
--	}, {
--		.pixclk = 25200000,
--		.pll_div_regs = { 0xd1, 0x54, 0xf0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 26750000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xf2, 0x89, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 27000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0xf0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 27027000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xf2, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
-@@ -105,18 +96,9 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 35000000,
- 		.pll_div_regs = { 0xd1, 0x58, 0xb8, 0x8b, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 36000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0xb0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 36036000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xb2, 0xfd, 0x0c, 0x80, 0x40 },
--	}, {
--		.pixclk = 40000000,
--		.pll_div_regs = { 0xd1, 0x64, 0xb0, 0x00, 0x00, 0x80, 0x00 },
--	}, {
--		.pixclk = 43200000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x90, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 43243200,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x92, 0xfd, 0x0c, 0x80, 0x40 },
-@@ -132,19 +114,13 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 50349650,
- 		.pll_div_regs = { 0xd1, 0x54, 0x7c, 0xc3, 0x8f, 0x80, 0x40 },
--	}, {
--		.pixclk = 50400000,
--		.pll_div_regs = { 0xd1, 0x54, 0x70, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 53250000,
- 		.pll_div_regs = { 0xd1, 0x58, 0x72, 0x84, 0x03, 0x82, 0x41 },
- 	}, {
- 		.pixclk = 53500000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x72, 0x89, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 54000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x70, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 54054000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x72, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
-@@ -153,10 +129,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 59340659,
- 		.pll_div_regs = { 0xd1, 0x62, 0x74, 0xdb, 0x52, 0x88, 0x47 },
--	}, {
--		.pixclk = 59400000,
--		.pll_div_regs = { 0xd1, 0x63, 0x70, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 61500000,
- 		.pll_div_regs = { 0xd1, 0x66, 0x74, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
-@@ -168,10 +141,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 70000000,
- 		.pll_div_regs = { 0xd1, 0x58, 0x58, 0x8b, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 72000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x50, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 72072000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x52, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
-@@ -183,10 +153,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 78500000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x54, 0x87, 0x01, 0x80, 0x40 },
--	}, {
--		.pixclk = 80000000,
--		.pll_div_regs = { 0xd1, 0x64, 0x50, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 82000000,
- 		.pll_div_regs = { 0xd1, 0x66, 0x54, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
-@@ -213,10 +180,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 100699300,
- 		.pll_div_regs = { 0xd1, 0x54, 0x3c, 0xc3, 0x8f, 0x80, 0x40 },
--	}, {
--		.pixclk = 100800000,
--		.pll_div_regs = { 0xd1, 0x54, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 102500000,
- 		.pll_div_regs = { 0xd1, 0x55, 0x32, 0x8c, 0x05, 0x90, 0x4b },
- 	}, {
-@@ -228,19 +192,13 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 107000000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x32, 0x89, 0x88, 0x80, 0x40 },
--	}, {
--		.pixclk = 108000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 108108000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x32, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 118000000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x34, 0x95, 0x08, 0x80, 0x40 },
--	}, {
--		.pixclk = 118800000,
--		.pll_div_regs = { 0xd1, 0x63, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 123000000,
- 		.pll_div_regs = { 0xd1, 0x66, 0x34, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
-@@ -261,10 +219,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 140000000,
- 		.pll_div_regs = { 0xd1, 0x75, 0x36, 0xa7, 0x90, 0x80, 0x40 },
--	}, {
--		.pixclk = 144000000,
--		.pll_div_regs = { 0xd1, 0x78, 0x30, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 148352000,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x35, 0xdb, 0x39, 0x90, 0x45 },
- 	}, {
-@@ -288,9 +243,6 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 165000000,
- 		.pll_div_regs = { 0xd1, 0x45, 0x11, 0x84, 0x81, 0x90, 0x4b },
--	}, {
--		.pixclk = 180000000,
--		.pll_div_regs = { 0xd1, 0x4b, 0x10, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 185625000,
- 		.pll_div_regs = { 0xd1, 0x4e, 0x12, 0x9a, 0x95, 0x80, 0x40 },
-@@ -309,25 +261,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 	}, {
- 		.pixclk = 213000000,
- 		.pll_div_regs = { 0xd1, 0x58, 0x12, 0x84, 0x03, 0x82, 0x41 },
--	}, {
--		.pixclk = 216000000,
--		.pll_div_regs = { 0xd1, 0x5a, 0x10, 0x00, 0x00, 0x80, 0x00 },
- 	}, {
- 		.pixclk = 216216000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x12, 0xfd, 0x0c, 0x80, 0x40 },
--	}, {
--		.pixclk = 237600000,
--		.pll_div_regs = { 0xd1, 0x63, 0x10, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 254000000,
- 		.pll_div_regs = { 0xd1, 0x69, 0x14, 0x89, 0x08, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 277500000,
- 		.pll_div_regs = { 0xd1, 0x73, 0x15, 0x88, 0x05, 0x90, 0x4d },
--	}, {
--		.pixclk = 288000000,
--		.pll_div_regs = { 0xd1, 0x78, 0x10, 0x00, 0x00, 0x80, 0x00 },
--	}, {
-+	},  {
- 		.pixclk = 297000000,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x15, 0x84, 0x03, 0x90, 0x45 },
- 	},
+Applied, thanks!
+
+[1/6] dt-bindings: phy: add qcom,hdmi-phy-8998
+      https://gitlab.freedesktop.org/lumag/msm/-/commit/8886def25eef
+[2/6] dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
+      https://gitlab.freedesktop.org/lumag/msm/-/commit/656810411b1d
+[3/6] drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
+      https://gitlab.freedesktop.org/lumag/msm/-/commit/a61eb17f40e8
+[4/6] drm/msm: add msm8998 hdmi phy/pll support
+      https://gitlab.freedesktop.org/lumag/msm/-/commit/caedbf17c48d
+
+Best regards,
 -- 
-2.43.0
-
+Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 linux-phy mailing list
