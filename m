@@ -4,166 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF8A5CD4F59
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 07:50:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEF7BCD4F59
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 08:30:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xG2P2P8Yg43Lrk2cqBrSUfTdLXKrrSUumIGR2mfRdZY=; b=yl4sKIwmp7WejwscZooYZcvX2M
-	1RQm9OV+VfIPKByjCV/qzZH7YjP+Y1gN9Nzeny+r4cIMnfr4vqjBsm2HGUoY4hBHEcpaMjoQ7uKbV
-	qFZIwy7Gc+68ZyLBj0ZzkZR6XaWLWHYsQj9TH5OOWU7fq9PD2w1b+ZDVfY1RIsEzOVm0nclxJqw0H
-	iS16DJqKSEQD53933eILOSjQ4lUVLjMsfyfJU7Q69/Ii/O7OIhxjpCkkgQzp+cX3puhdqOet+XIku
-	9tTRofYzYQ5/DrtF8oWCymZWZxLxPZbkqtyjkupGv8lfgxIiI7En0pngSufeGbY00Nv4lLRoHLmpV
-	IMH/Xyfw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8GFNE5a4e6cU6aYLxqGbgswN60YTyTj5Caan7qZjGwM=; b=0rjxPjNcOfR6tv
+	I9mHfVozxy6JBYU7n7vW08IAJGlvr9R9zoNz5dYCAnavY3OGXEhcjYua1UrSMjOHQDIo4STusFNnx
+	PbgEtSTLlAQl+s/MutmGZQhskWXADx9vzyfsbA4zlcCr3dCuzDcFHI1hLL+j8By5lm1SchrHVLM5V
+	pxYWz2jnh9/F2nTj7KlEAdYrGUjXHP7iIGnE4tBSgMZqs+UWA1cc1rJJ7JHZvWVWhTRzBsCAgSx2z
+	4ejckg8b+ndEjvduSnvQ/uXlQf7itJKi0G4H6MVb9wYmhDPjS2/+3uKObyGf3G0+IXxQw35ho9z7V
+	EbM1yiRMpowWrx4n5xpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm7GE-00000007QTy-23bp;
-	Thu, 05 Sep 2024 07:50:34 +0000
-Received: from mail-am7eur03on20700.outbound.protection.outlook.com ([2a01:111:f403:260e::700] helo=EUR03-AM7-obe.outbound.protection.outlook.com)
+	id 1sm7sw-00000007adH-1gte;
+	Thu, 05 Sep 2024 08:30:34 +0000
+Received: from mail.manjaro.org ([2a01:4f8:c0c:51f3::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm7FH-00000007QC6-1WDE
-	for linux-phy@lists.infradead.org;
-	Thu, 05 Sep 2024 07:49:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=PkI+1ZhHnhqi0TEJYZ7IzIX9ekX7dyVSMNHx6cJR/SlWl/szp6i10MWGPM18NRbUzQYIamebQJVBMlykZc+LyItbKfGYFgFZqCGxShJhODi6GHVzBoLpHav8vCj5hMm0LsPdYewDsFoWoBTvFBkG2V+SZRfOpauiJ9Gwnm0qOyz8u/mxzkFAtYiUn6SiaVFG4c/WJn9/PKhhO86XJ6XXb/u239W35OApUytSPyl73evz46ySKanf/a+mFx7ZBFBKktAxgEbIOBRIFcDRkrnT1OKVSUSgGKylKkjy+4nR2T00ooWEFkp6+UOuSzv+731eTUp/LR/RsKt2FWgVp5Lzdg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=CBbmO4N7lNSbYNhJfWy3Ljx3gyhMHljRfVAhoOk9CWQ=;
- b=ZzQi49AYIFFLfw6KH0V8FyJ6ReEulmMUnBMlxqRhXVLB4nAGKYRDj1Snfei04jihCNyEWSGB2mvIm8aPuQ2MlINZyKDBaPs7BE89vG5k3CxuEXwqtqCUan8zGMj86cintNuxFyYeJdGIoG61HD5PHI+ewFur+wpV70agSszYuSdSJOrmghU0k2zHA+i2qthlPUYmYTaO13YFKftnXfppKjLkvFsDIR8F1omSy1VogYcuBA/S28HKT3SM9tM2saVD1AZh5FeoZtyNjfFj7QhvBAjFT9ycm6vLD7sPQhX52dZGohPMjuFew+hFCr3d9iCndoF7ckWbnsnofqrYOX3u6A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
- dkim=pass header.d=kontron.de; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com;
- s=selector2-mysnt-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CBbmO4N7lNSbYNhJfWy3Ljx3gyhMHljRfVAhoOk9CWQ=;
- b=iAluDvJd3imoV9lo/h49qui472yCi233ARfEU2EFkKxWKw5fRLcILpgsJVgqFUD/s0DX2x/e/L/Mcxd4hEKERBnciEhImWKcnOpyDnxEYzyKABSvjpTDhfsWG/mnbu+rCE7gUaVfhP6Dh8spdPj6GznrkSmNj+R1ZYgSSS3ylTA=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=kontron.de;
-Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:263::10)
- by AS4PR10MB5720.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:20b:4f6::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.27; Thu, 5 Sep
- 2024 07:49:30 +0000
-Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::b854:7611:1533:2a19]) by PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::b854:7611:1533:2a19%7]) with mapi id 15.20.7918.024; Thu, 5 Sep 2024
- 07:49:30 +0000
-Message-ID: <0f9c3794-6bb4-41fa-8bc6-c00ecaf506a1@kontron.de>
-Date: Thu, 5 Sep 2024 09:49:29 +0200
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V6 0/5] phy: freescale: fsl-samsung-hdmi: Expand phy clock
- options
-To: Adam Ford <aford173@gmail.com>, linux-phy@lists.infradead.org
-Cc: dominique.martinet@atmark-techno.com, linux-imx@nxp.com,
- festevam@gmail.com, aford@beaconembedded.com, Sandor.yu@nxp.com,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Marco Felsch <m.felsch@pengutronix.de>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Lucas Stach <l.stach@pengutronix.de>, linux-kernel@vger.kernel.org
-References: <20240904233100.114611-1-aford173@gmail.com>
-Content-Language: en-US, de-DE
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
-In-Reply-To: <20240904233100.114611-1-aford173@gmail.com>
-X-ClientProxiedBy: FR4P281CA0416.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:d0::19) To PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:102:263::10)
+	id 1sm7r0-00000007a54-2At9;
+	Thu, 05 Sep 2024 08:28:36 +0000
+From: Dragan Simic <dsimic@manjaro.org>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=manjaro.org; s=2021;
+	t=1725524909;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=QGbYTu2hqsFggew3uw7+862rMPLb1SOuJtmtRUbdkcQ=;
+	b=QZizFzOcelRH+iBInyBr3yjcET0dYugZ0HXQiTXga278uMJ83t9l5ZWHMqzGIfNmmm8ZgI
+	4ZzUaZ8pByTw0FYX9ReO40DywXxUrutj0NaWHV2KfoxJfh/+bQcFIRqtRuDe7RhV7IWcK1
+	Xl2Nst472A8tQ6oy3C6eSdLD0qxFJiQygaOU8ttWJktgfR4pO7F7MmG8sGovVaMRxR5snS
+	1DXOZjFaTNdd8rCNKKAY705oFiS93+75CVGYqYucF50I+KtCyjdl/kiIYzEKy/bvjLHKBX
+	rdxSnOrqZGdfqilmfGmqlDnnlR5ga2t8qtdfnf62oYH9/uRgi2JbJbPLCBA5iQ==
+To: linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org
+Cc: vkoul@kernel.org,
+	kishon@kernel.org,
+	heiko@sntech.de,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/3] Improve error handling in Rockchip Inno USB 2.0 PHY driver
+Date: Thu,  5 Sep 2024 10:28:21 +0200
+Message-Id: <cover.1725524802.git.dsimic@manjaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR10MB5681:EE_|AS4PR10MB5720:EE_
-X-MS-Office365-Filtering-Correlation-Id: 17e25ef3-45f6-4951-a6b1-08dccd7f4634
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|7416014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?YXpUSDVBeWFtcGh2UmFOL1Vjb2QwZ0pKa3F4TTgrazJsYVFneGFBbkVza0g3?=
- =?utf-8?B?RG52L2FmUEI4dWtjVC9LSFd2Y0Jib0lYMytoREh3RXBZNWNlbnFndXBoak9v?=
- =?utf-8?B?VmtpNzJWbGZMemVUSFNuWjBhcjJGY29UZHI5SjltdlBIRXJ5dVNkYmQvTisy?=
- =?utf-8?B?OGk2QWFaTnpreG5JRGVIR1RoMHlKd3lkUkJ3cEtkVEhBSzJpZklZUWoybE9F?=
- =?utf-8?B?eDUzMFNPTWZtK2dpL29ON29wWmphd2Zad0FkbzI0SERlOUh2WldsMEJBZUlr?=
- =?utf-8?B?dUM5SEh2b01MSnhaKzVDdHNzYTlwTGxnY0lscFlPeURnZnJPWGZ3V2d2MEpi?=
- =?utf-8?B?WVpBUXZGN3N6bkRhZHI3RVFaSit3UHVOOHlONnRwTWRMcHlWRXNTM0JTTFVO?=
- =?utf-8?B?aW4xdXNuQXBkR1VzRjNtNU5HYkV3dlBRZU5uSmpGbzU2NVdhVzlzeWovV282?=
- =?utf-8?B?RXBrd1d0RG1Tem9sVlpCdmJqL21GTmpGby9NS0lGeE1udDE3R3NmaXMrV1NG?=
- =?utf-8?B?MldkdU9RelB0ZkNKbGtkNytIODUzK0ZmMjFTU2ZaczBjcnZDKy9zN0RjS0l5?=
- =?utf-8?B?cEJlbEJnNUJkWnpzdEgxMkVhTHAwNHU4Zk5Kb1dzbnVCMUpWZWFoVHlBZnBS?=
- =?utf-8?B?c20vN1ZybmNWb0d2bnZVODhJSm5mMTJYakFUTXd4d3A2Wm1jTHNoWVJ5Mm42?=
- =?utf-8?B?d01XUndOYjFjQTZXaE5CNXdDVlJPcDl4UTVBaEpFdDhuNzNnWUEzYUcwblFS?=
- =?utf-8?B?bTFqZi96R0orTUhHWHhmWFRPWGhoYTlxTTJWa1NmOEdaZ2RoM05Bc0kxTE1F?=
- =?utf-8?B?SUI4RmVoelhuNnQ4aXNQMzVHdUh6K1dPTytCVEFvNk1XRHlkalBOb0VUQzNx?=
- =?utf-8?B?cU4vMVJjOTAyTEN1ejN1Um1ZZW5MalJ3MzRLSGxOaGR5ZU1sNmRWbGJVZDRQ?=
- =?utf-8?B?OWpNcXRXRlF0ZXNTVXViTzZyTzBjQTJ1bSsyRWlDZzFWYXVBVWRFUFplak9v?=
- =?utf-8?B?eUU1Tkh3NXJ0ZWZCdjBhZ1I3L2FDRGo1ZDFEUnVVTUtXSjFKSElza3VOU2Jx?=
- =?utf-8?B?SThqa1QzK3B3V1BmL1daUVY0ZFBNSHpCYlEwclFSOXdpYzdQbHhwTno3SUFP?=
- =?utf-8?B?ZnJGZzZsL295cW9kbGtNUnBoOUt0cklOUkNQOC9zYlF6cml4TWQ1KzZCektG?=
- =?utf-8?B?RWVFek1tNmhRRmhlOStTazBON1lJUTZ2UjhkUStjR1U4K2NGaitMUU1EeVV5?=
- =?utf-8?B?RTV6aSs0Y29yck14RGNPbURnd0J2eTRSUG1zOUpEb1ppbmpPY1FmV3BpWVNs?=
- =?utf-8?B?N1VkWGxxTC8xa2lBRExHd3pwc1FuTU1sMGo4dDhMZzFmQTBTRFo2Nk00UlN5?=
- =?utf-8?B?WFR0UFdpK1Y2MDZKdDloWVhwZUZrOEZnTnBEeWdCMTRDUFBoYUUxc0hKcm1S?=
- =?utf-8?B?NVhCZlA2U3NCMWUyODlSUXJaVU9tYUhXTWZCd0R6ZVJSZG03d3hJdWl4d21z?=
- =?utf-8?B?RW05Vm96eFRWaFc4RUx6eUQvZnZ1Z2c3eTFMVkRGeGhjZW9IbWtoWGcyeVgz?=
- =?utf-8?B?bVBUa0g5M3RJTnlWbFU3WW40b01COXhOWXNFSFBRcjdSbzFSWGNzZE1SQm1F?=
- =?utf-8?B?OWR0Z2syWkJDMGpVOXo5Y1pSYTZ6QVNlYXpaYlpRdFQ4cUhGQWJMV21GQXpk?=
- =?utf-8?B?OENnQmtBVmJoaEwyL2VEN1hYdHlHTk9Xc0k0Z0E0NnNLMndYalVVMUN2Nmcv?=
- =?utf-8?B?dmxZM2FaTmZOOWpjbjJrOVNjeTd4b285TzU1T0lQSmRLbmRjVkc2RjFjVXZp?=
- =?utf-8?B?YlpzV3RHSkVlVG1EQmY4Zz09?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(7416014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZTFYd1pOOWNIMmhRazdiRFJxdERMZFI0ZG9aNXNYbnQ4UDhJMFMyRU9HOG1u?=
- =?utf-8?B?V2RTODVvR1Q1YWwvdEp4TzlaQXYwTXdEMkNuNzl2MFpQVU9CUmFmY084elFS?=
- =?utf-8?B?SDdVSldHL1htQ2lySlBuTC9JalRDY1VJdXVWYjBEVzltQnR1OTFaNStHMWRy?=
- =?utf-8?B?UkxJODhCdlRQL08zakF6KzVhQ2E4T0VQcDZaN1p0YXQ5a1RpS3ZEMnBUWGNm?=
- =?utf-8?B?bWZDWnJLOERncFFaZGJCay9ib0wvN2lPcHUvNkFOby96R25jQlJTS1JFbzdm?=
- =?utf-8?B?cG5zTVBXOENudE1nOUcvZVI1ak1zc1ZEcWpWWXQwaGpFSXA5cndjMFZEakVV?=
- =?utf-8?B?aEgrOTJCZDNURklZQU83MzMzNjVlODVCSDFpR09VeXNUTERZbkZSU0xNZ0FK?=
- =?utf-8?B?SGNua2dCcTR5TWRYUUprNDJMNEt3VTdNMEV2aElRUGtZckROT2ZHMUs2NXk2?=
- =?utf-8?B?Tm1ybEZPbTZ5eURDeGN1SXhKR2lPbXBQQTBRK29HNWVJbkhiSDlNUHdWaHlD?=
- =?utf-8?B?V3I3SjJ1ZE1hODQvT3F1ZWJXYTZCam81Z3lmTVFFMlI1SVVzbHgxK1JQMzJF?=
- =?utf-8?B?NXYwdUc2NkU5aVlQcURsdThnTnNNNmpPNjc3cFR2SnQ0K3pMRHp5cmF6ZHpT?=
- =?utf-8?B?c0dudG83aGpsUUJoLy9zL243cHdPb3RiczBOM1RKUmVCS0VsbjMwcXBWTHlX?=
- =?utf-8?B?eUFhb3o0Sm5nR2FabEx4UUtpbmhObk9IS05EQ0l0ak45YnBWdW8zQlRaSWVn?=
- =?utf-8?B?ZGdKSEFRZzMxajhNK2hoYStCV1lKbWYrWmthTy9LMzZTK3lWcldVUllRK1pT?=
- =?utf-8?B?a25neEZBclBwRDYxUXh2dWZlTzlIVWhPWHYyWGFsekYzYjZHbVZvME11UWhq?=
- =?utf-8?B?RytlVnZnMjFZV3R6T1YvblRpQVo2U3VTRmhacHlFdmcxTHBCZzZiT0FvTkpS?=
- =?utf-8?B?YkJ3d3UrQTFsdndTWGRJYzlqOEpUL2xIUFk1T1g5SkNOT2pieW0rNjJVVHI5?=
- =?utf-8?B?ZWlTblVJSjVVUzdDUXU0cUFJNFFsMytydlg4TjY5MVZVazZiNXU1cDgrYTdX?=
- =?utf-8?B?NEE4T0I1eGhZY3k1aDRQR0xyaWdBVEpLZHlNT1FqQm5wY1IvMWdzMUNDWW5r?=
- =?utf-8?B?ZERURGdOejF0Q3ZCZXJNdTF0UzduOHZVRk14eWRuU1k3YjhBRGsrbGtGWC82?=
- =?utf-8?B?MEFMZW5qSlZVMjJoSmRWSGtiUnZ2TGM3aEJrQlJsb3JrM3N5d1IreXR4UFhj?=
- =?utf-8?B?SDZoU250SndxZmhpSFc5VTVhdjFUeHg3NkhFY2RhbnAwNDczNzlZV3dpV2hr?=
- =?utf-8?B?cDY1UFY2c3hjbjBRYnJiWU5qWTUzZ05RN0tTdUlHMldGSHEwQi9iZ2tXTjd4?=
- =?utf-8?B?bGlOYWVFYVE3V216UHJOc25qUTEwa1ovSjJBdU5OODdZRld1TklyZy9JaHB4?=
- =?utf-8?B?Qm9GNkdvZnN4L29sM2ZRVWVIdFMxdTladk5QRHhwSkljRFhKc2M2UGlnZWpZ?=
- =?utf-8?B?TTNiTWZSNk5Gb0VWZTBQTGtySVdpRmM0a0Jkbk14VzFXVUVZUk9nbVNWL2lt?=
- =?utf-8?B?bTg0SGgwb0tXOHJMSTJEbllkeHV5RWpnWDRJM0xoTEQ2M1dHdzFSK3BnWE1l?=
- =?utf-8?B?d1VuYURSZ25iN0o1TitsVnhXZjNRZGg4VG1nTDBnNDF5ak0zVjBER0RvbVhB?=
- =?utf-8?B?cFNJWDJUYkpwL3dJdGxPQUhBZkIzTDBsM2NYalZ2MHo4a2h5WHE2Z1lZWVE0?=
- =?utf-8?B?WE1JTUE1WGZBV1Y1TVF3ZDRNb3UvSkZSenF5bHV0ajdkV1BtWno3ZlMwcU5m?=
- =?utf-8?B?dHBtYVkvME82MzN0cWdvNytUTWRIR24vS1AxT2FQbm96M0pNQTdLYzFuZVg1?=
- =?utf-8?B?RnBuTGcvSSs5eE9aUDZ4Z0N0eGFnQ0J2dDZBdGdaNlg3bGdoNFV2RjRZODFU?=
- =?utf-8?B?K2J2azh0RW5yZkRGMHU4aWVpTC94V01rRHp0MGN5TWNRN2xkNytMcENMSXph?=
- =?utf-8?B?UFdNTW9mZ3k1WlArTXdrZTZGa1hqaE5DOXBoc1VTcUFhaWtDSDh4c0xZUXVk?=
- =?utf-8?B?bHZwS3Q3blZ0ZFpTc3pUSzV1d2VvSHdEYzRhVzduQ0xZL1F2blNPNmVRaVN6?=
- =?utf-8?B?QUc3aTA0cWtjMVg3V2lBaElHakxtWi93V08xRFRYaHd4eHV1blNCUFNQY213?=
- =?utf-8?B?QVE9PQ==?=
-X-OriginatorOrg: kontron.de
-X-MS-Exchange-CrossTenant-Network-Message-Id: 17e25ef3-45f6-4951-a6b1-08dccd7f4634
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2024 07:49:30.3343
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: K8AbDkWI4OQTQoZNf8pALtWRSTzMrv1H71TavRJkOr8Rl79g5vB/GsAbpdJWSMaljKiB668NP9llZ84if2mQ3/faT7Ln+gks3MNf48/JB6A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS4PR10MB5720
+Authentication-Results: ORIGINATING;
+	auth=pass smtp.auth=dsimic@manjaro.org smtp.mailfrom=dsimic@manjaro.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240905_004935_445369_8B64875A 
-X-CRM114-Status: GOOD (  19.82  )
+X-CRM114-CacheID: sfid-20240905_012835_083740_6C4AEF12 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -180,40 +71,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05.09.24 1:30 AM, Adam Ford wrote:
-> Currently, there is a look-up-table to describe all the clock options the HDMI PHY
-> can use.  Some of these entries in the LUT are using a fractional divider which does
-> not have a well documented algorithm for determinging values, but the the integer
-> divider can use an algorithm to calculate the integer divder values dynamically
-> beyond those listed in the LUT and also duplicates some of the entries.
-> 
-> The first two patches do not do anything functionally other than simplify
-> some of the register accesses and de-duplicates some of the register look-ups.
-> 
-> The third patch adds support for the integer divider and uses it whenever the
-> clock request is an exact match.  Otherwise, it will use the LUT as before.
-> The rouding is still based on the LUT if the integer clock isn't an exact match.
-> 
-> The forth patch updates thes set_rate and round_rate functions to use either
-> the fractional clock LUT or the the integer divder mechanism to determine
-> which ever clock rate might be closest match.
-> 
-> The last patch removes the integer divider entries from the LUT since by then
-> it'll be comparing both the integer divider calculator and the closest value
-> in the LUT.
-> 
-> In my testing with a AOC 4K monitor, I was able to add 4 entries in my modetest
-> table.  I do not have an HDMI analyzer, so I just used my monitor to determine
-> if this series worked.
+This is a small series that improves error handling in the probe path
+of the Rockchip Innosilicon USB 2.0 PHY driver, by returning the actual
+error code in one place and by using dev_err_probe() properly in multiple
+places.  It also performs a bunch of small, rather trivial code cleanups,
+to make the code neater and a bit easier to read.
 
-So I tested this series and it works fine. With Dominique's patch to
-allow for 0.5% deviation for the clock, all the 24 modes of my monitor
-and 30 out of 42 modes of my HDMI grabber are working now.
+Changes in v3:
+  - Collected Reviewed-by tags from Heiko for patches 1/3 and 2/3
+  - Brought back one empty line as a separator of dissimilar operations
+    in patch 1/3, as suggested by Heiko [2]
+  - Dropped one backward conversion of dev_err_probe() to dev_err() in
+    patch 3/3, as suggested by Heiko, [3] and adjusted the summary and
+    description of patch 3/3 accordingly
 
-I still have some issues with LCDIF underrun errors on modeswitch with
-v6.11-rc6 but these are unrelated to this series.
+Changes in v2:
+  - Expanded into a small series, after a suggestion from Heiko [1] to
+    use dev_err_probe(), because it all happens in the probe path
 
-Thanks Adam and Dominique for the great work!
+Link to v2: https://lore.kernel.org/linux-phy/cover.1724225528.git.dsimic@manjaro.org/T/#u
+Link to v1: https://lore.kernel.org/linux-phy/5fa7796d71e2f46344e972bc98a54539f55b6109.1723551599.git.dsimic@manjaro.org/T/#u
+
+[1] https://lore.kernel.org/linux-phy/4927264.xgNZFEDtJV@diego/
+[2] https://lore.kernel.org/linux-phy/5307900.6fTUFtlzNn@diego/
+[3] https://lore.kernel.org/linux-phy/6073817.31tnzDBltd@diego/
+
+Dragan Simic (3):
+  phy: phy-rockchip-inno-usb2: Perform trivial code cleanups
+  phy: phy-rockchip-inno-usb2: Handle failed extcon allocation better
+  phy: phy-rockchip-inno-usb2: Use dev_err_probe() in the probe path
+
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 56 +++++++------------
+ 1 file changed, 21 insertions(+), 35 deletions(-)
+
 
 -- 
 linux-phy mailing list
