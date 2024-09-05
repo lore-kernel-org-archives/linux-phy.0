@@ -4,81 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDE51CD5BCB
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 15:01:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16DF8CD5BCF
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 16:15:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iwch9l+XMoVRqx2FohUck31nT3p0+yw1ERwcjhzazYU=; b=RNSAoDrT8NwJOD
-	2jK19/eldJCvKX1cGOlJgwb5h/A6/ixgE0To2FWGIJENcbdhGw9Gq4a8TYaLq7nXRrZT1cvYMh7ea
-	+dtDUBa6/FJY2fgTayiALhZ9vfOIeHLrpFqUaGGODxUSUrPPmP+dgX0mGkN1uZI8PRMbrUNcUKdaE
-	6AxwNeLke39focQZb3EaElMMLVqpdDkJ4FNGKQf28h95dKjf556vwm3G33oAm2GKqEo8rgFtKOH1W
-	trWpdzV3xqWhz4RsZfIrMX7eS/jmNiuL417ygqESMzFB3Y9815IBQL3bi+bmBLPFBa30ZSQRReWdd
-	5hPjQ48tyM2gLloWNmpg==;
+	List-Owner; bh=+CpHW0y/77W83FnQbuM40HHvn5KLAkQrufmk+JCC7ns=; b=bjtEKVTGlLzDZ4
+	6Udu0fhno6XLbTltYWwppXphbUGbu/XF4AlQhlB7dLiXoWcNaUqcczGoZAs34nFphYKlc47cohmTk
+	XsL4aVXUo5aTeh9kKKW9xq3enG3T1yERkYHDAHeItT5aF7MBPslZrRJZuPqg/1xqJ06VJvgnoutLW
+	r4ELCKiqKWUPpJxD2Yqjb+OP94mNqOd38clFJ3Tartc1okzio8fRhYarwshs263DBJ7ydkM1itRAZ
+	XUwOotr2i8xZ6oPrk4eWqUH0U+fOvhYAshuerDwxTigp4MLwG2/NtsoyZ0WftvHs8KreC7fBwM/zx
+	n63YGPx+b1GJC5wDMH6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smDyw-00000008qoj-0yfr;
-	Thu, 05 Sep 2024 15:01:10 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1smF91-000000094g7-2WdS;
+	Thu, 05 Sep 2024 16:15:39 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smCq0-00000008aZp-2bjj
-	for linux-phy@bombadil.infradead.org;
-	Thu, 05 Sep 2024 13:47:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:To:Subject:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description;
-	bh=ZiBOKaL6onW9Pbfwy4gZAp+8pRnbcEgUuVRuT9Lh37M=; b=a5TR4HAhJnYtV0HLH1/enelZpG
-	EsesSDraZrgLAvv7oJ9WhyNsKt0ZHpaGvjE+BAT/VpLbK3gFZK/eo9R7J2k/CohL8L+DktYv8CWl4
-	lA4FwN3QKwRG26Pnv5pbfcgJYcrpElR7IRBZoae1WUm0jsjVeIMxIoUaP3zauO6M1uK3wlgQcthzi
-	r5xmDDNGflqv0TGp3iV9X+hYSiheOxXiJ6LCYmlVwufAYsL1g4lw0eKKMqzCglqMgYI8ZPrvZxBWJ
-	6TrgxY8D2zNc3ITH8q7ee3gCPpzK+YoTso+38JqKfKaiwkvcFPqR4DR14Gc4E7pa5DAkQdUc9r3f0
-	A68rVVtQ==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1smCpv-00000000UVr-3S5H
+	id 1smF7k-000000094Sj-2RLz
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Sep 2024 13:47:51 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7D4E35C5CB0;
-	Thu,  5 Sep 2024 13:47:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A9B8C4CEC3;
-	Thu,  5 Sep 2024 13:47:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1725544063;
-	bh=71k1Ochv2FC5okt+9RprHRdYfaZu9bLcTVyeNCoL8r0=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=Ic4Ek1ZWVl2lJ8st6GLtIkODrTBG+tf6NAuQKe0HntNEZtlPOU3NhnbxBEqQsxEeO
-	 lojnuwiLsh4fDvhuRdQ3RNPP9n0j1LUmqXE9Qa5p94Dl7aVI1DUSU/eb+VD2kiVKDR
-	 nqLceoTE0a2E4rrvsOVxdOF1xtjNfyAoYv2fQ5owncvVeq56Jyi50hLnUSBUkAb+8D
-	 9bJub1/7+0vLx17fpJxoJ2twc9u/YJ3tcXmpR1afOUaUni6SYKwcglEg9B6h+F/cVB
-	 lFKYgWngayZyCwCJzcHx+jea01T583hMuwAhVq4qsqkyCt9fHmnYmYZKZZpV26P54B
-	 sArasEpU95tMA==
-Message-ID: <bf114807-c56c-4209-ab26-9e90ac00cedf@kernel.org>
-Date: Thu, 5 Sep 2024 15:47:35 +0200
+	Thu, 05 Sep 2024 16:14:27 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-374cacf18b1so671772f8f.2
+        for <linux-phy@lists.infradead.org>; Thu, 05 Sep 2024 09:14:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1725552858; x=1726157658; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=SQCzkFNF6R0y5OgjwiBOcxXDxjjM7SPAsOwwAJex/C0=;
+        b=mS5F+9OIkoQHXo1i/OQV04EalPKhVmdZVEH63KnbWFFfmUiNpj7O9NARrPwHB9+7IU
+         vxXWLCzd2SiZPeSK2ybBEU/5PRL5+AMGF8/vi3RKbrg93PQrVjq2xtH3dI2+kLcIVH32
+         Mo/wbrGfJIql8o0UewYtJjKuTUyXVKXH4S/7PFahZXPzg5ELI1SnWnFYfv1cLiYJ8e9a
+         Us4dMfzCigoPLomdP9Sxof/zM7SmQOzs9Osl7nk2ALRrqI7at+9Gx5XC2vJb6aMGBJqK
+         sdDYNbrwxV9bMArGAj3u5D12x0bFXLpBB1UFncnfSoZ5IqqtdhfTpQkoAh8JMiDVau7n
+         oyFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725552858; x=1726157658;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=SQCzkFNF6R0y5OgjwiBOcxXDxjjM7SPAsOwwAJex/C0=;
+        b=sjmeUcBPU+3xT6h3wdvD1CbgRFEPldIjLyxMW/C9qU0P2hQmsGr1eyN4lHlXSNh9Ff
+         x5GykIwNCbrq45fKbis4eZlqWBiFDwOsXmS81NH6HXV9a4nlrQ5bfdHEf1GL59y/abpP
+         LGC5Bn/HHyAts/gfmjykLCnuMi4NfirhLvuQHKrf87aK2t7VzZWaRfo0W8eg21wBkyZe
+         OLby+VG2KN3QWbDfDmCkDSEFObx5EUpUB44ecaG1pbYPFIb56gbZD1YnQ5sd4oQk121j
+         LpZMMMzdO+rn1VDuJXRfAuk7lkj6lLoiaj43vy7+U9j+egflZOqZp4rYbyMeoFumjPJg
+         1/hg==
+X-Forwarded-Encrypted: i=1; AJvYcCUw9N6vDovZYHFMxid03BHp94LPARUL8PkI6oiDfKKNS/79zFOLJZzQW+Cze8aXLIhzMm0I7KgvjPo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzF5ikjvWoYx+xTDNeVQU8ERRg5fjB7tcW37u4l4/GY3wTR83Ig
+	4beyR8CnO5lLxWs08tUcavIQMuyuh9DxdtGASQEeZnZDVg4s8kF6TCGz9ac4hAU=
+X-Google-Smtp-Source: AGHT+IGTeRidPfzjWMeiTd2JcaXWh07h5yeyFVwKWBYencGxKEZw41jcBDd8CO30rx53dbUA3JWpWg==
+X-Received: by 2002:a5d:6991:0:b0:374:c7d1:2ac0 with SMTP id ffacd0b85a97d-3787e496687mr2221867f8f.47.1725552857141;
+        Thu, 05 Sep 2024 09:14:17 -0700 (PDT)
+Received: from [192.168.108.50] (freebox.vlq16.iliad.fr. [213.36.7.13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-374c6543ee3sm12569790f8f.12.2024.09.05.09.14.16
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 05 Sep 2024 09:14:16 -0700 (PDT)
+Message-ID: <747218ab-86a1-4308-b34a-98064ccdac30@freebox.fr>
+Date: Thu, 5 Sep 2024 18:14:15 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 3/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-To: Sricharan R <quic_srichara@quicinc.com>, bhelgaas@google.com,
- lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
- p.zabel@pengutronix.de, dmitry.baryshkov@linaro.org,
- quic_nsekar@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- robimarko@gmail.com
-References: <20240830081132.4016860-1-quic_srichara@quicinc.com>
- <20240830081132.4016860-4-quic_srichara@quicinc.com>
+Subject: Re: [PATCH v7 0/6] HDMI TX support in msm8998
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
+ Marijn Suijten <marijn.suijten@somainline.org>,
+ David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>,
+ Pierre-Hugues Husson <phhusson@freebox.fr>,
+ Jeffrey Hugo <quic_jhugo@quicinc.com>,
+ Conor Dooley <conor.dooley@microchip.com>
+References: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
+ <172550712143.3299484.1580127137460046609.b4-ty@linaro.org>
 Content-Language: en-US
-From: Konrad Dybcio <konradybcio@kernel.org>
-In-Reply-To: <20240830081132.4016860-4-quic_srichara@quicinc.com>
+From: Marc Gonzalez <mgonzalez@freebox.fr>
+In-Reply-To: <172550712143.3299484.1580127137460046609.b4-ty@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240905_144748_002757_1F760616 
-X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-CacheID: sfid-20240905_091420_806434_6B8DC59E 
+X-CRM114-Status: UNSURE (   7.58  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,53 +110,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 30.08.2024 10:11 AM, Sricharan R wrote:
-> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+On 05/09/2024 05:33, Dmitry Baryshkov wrote:
+
+> On Wed, 24 Jul 2024 17:01:33 +0200, Marc Gonzalez wrote:
+>
+>> DT bits required for HDMI TX support in qcom APQ8098 (MSM8998 cousin)
 > 
-> Add Qualcomm PCIe UNIPHY 28LP driver support present
-> in Qualcomm IPQ5018 SoC and the phy init sequence.
+> Applied, thanks!
 > 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> Signed-off-by: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> ---
+> [1/6] dt-bindings: phy: add qcom,hdmi-phy-8998
+>       https://gitlab.freedesktop.org/lumag/msm/-/commit/8886def25eef
+> [2/6] dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
+>       https://gitlab.freedesktop.org/lumag/msm/-/commit/656810411b1d
+> [3/6] drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
+>       https://gitlab.freedesktop.org/lumag/msm/-/commit/a61eb17f40e8
+> [4/6] drm/msm: add msm8998 hdmi phy/pll support
+>       https://gitlab.freedesktop.org/lumag/msm/-/commit/caedbf17c48d
 
-[...]
+Hello Bjorn,
 
-> +static const struct qcom_uniphy_pcie_data ipq5018_2x1_data = {
-> +	.lanes		= 1,
-> +	.lane_offset	= 0x800,
-> +	.phy_type	= PHY_TYPE_PCIE_GEN2,
-> +	.init_seq	= ipq5018_regs,
-> +	.init_seq_num	= ARRAY_SIZE(ipq5018_regs),
-> +};
-> +
-> +static const struct qcom_uniphy_pcie_data ipq5018_2x2_data = {
-> +	.lanes		= 2,
-> +	.lane_offset	= 0x800,
-> +	.phy_type	= PHY_TYPE_PCIE_GEN2,
-> +	.init_seq	= ipq5018_regs,
-> +	.init_seq_num	= ARRAY_SIZE(ipq5018_regs),
-> +};
+Now that the binding & driver parts have been merged,
+(Thanks, Dmitry! And thanks to all reviewers)
+am I right to assume that you are supposed to pick up
+patches 5 & 6 for the msm8998 DTSI?
+(Hopefully in time for 6.12-rc1)
 
-As krzk suggested, the difference is just num-lanes
+Regards
 
-[...]
-
-> +static int qcom_uniphy_pcie_power_off(struct phy *x)
-> +{
-> +	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
-> +	
-> +	reset_control_assert(phy->resets);
-
-Is the reset line supposed to be kept asserted?
-
-[...]
-
-> +MODULE_LICENSE("Dual BSD/GPL");
-
-Was that intended?
-
-Konrad
 
 -- 
 linux-phy mailing list
