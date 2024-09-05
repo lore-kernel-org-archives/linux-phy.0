@@ -4,103 +4,167 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AE0ACD4F4F
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 03:34:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 056A7CD4F5B
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 07:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rmbyWz3NcCKB9r+YnXXq1Q2s/9geCMTP/Q2q+Dx1fBA=; b=lIdegpYgs0a+73
-	gY5hQFSpgMQ6p9FKDCEO6xmbJpl8BIQGWw+EwNnOdoR7J+YDllyn3ZWWfoMdrUgq+LP9EX6GNhcfi
-	DZMyOF/WVlWm2OJ8msOHVml549qSfXAhc1n2qv0tm64EM9bjfs0jstLVu3etDcU5gO+QQ/MRtmQxT
-	hzDZNtcOpqBCUyPCD5JWkCnaVLX4xjs717lgSuIT6f/smH9059dmevwnpSaG3ERQ2Ro9ex6tEYCxG
-	yCtJAzGon/7IGHoUtGOFzwSPdQInuZ7vnnB5QqdHQaS+Ta3jXWMt6GsfNnZG7ODalvuZeInOyRYaW
-	2BbEOpmtf0tZu+yml9mQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=a/mvZ11o5LG7mrvDgj1ekUgJcl3rjYhU/FxYuQeXx1Y=; b=NpmJpEO/aWOjVauJpP5hHNCD2v
+	9+XxRQC62uCph7AGVEYHfJX9EUkmKbkg5R+l3/LdospgfUZZrmD5QP+0Unqh9IJkiNupp2IkplZnq
+	4wtZFUGznL/y4Bt7HCo0lu7ww3/1D42LROx7eCStlhlm2B4v7VSvLA16fOaxHlqPyKhi3frmvr/JX
+	BNCCMPHZ7c1YjtjwW5fcD8Tn+fRG0ATque6iEtDlog/10P5oRrRGwzcGC1gJUS0YLexMAk/psdz4w
+	7DS6mPuh+4iekntbeYItFgnfXGTpJhU4x7yN38DKkg6QBlsgIwZU8GJG+SXYUzsNVELODMVF/r833
+	hoz2dAvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm3Gc-00000006pNl-3sVu;
-	Thu, 05 Sep 2024 03:34:42 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1sm6xD-00000007N9m-2l7A;
+	Thu, 05 Sep 2024 07:30:55 +0000
+Received: from mail-db8eur05on2071b.outbound.protection.outlook.com ([2a01:111:f400:7e1a::71b] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm3Fg-00000006p8i-2rym
+	id 1sm6xB-00000007N8v-08og
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Sep 2024 03:33:46 +0000
-Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-53567b4c3f4so211604e87.2
-        for <linux-phy@lists.infradead.org>; Wed, 04 Sep 2024 20:33:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725507223; x=1726112023; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=dGI49nIoainLFaa1TPUEgnROODaXfiT1w+95Y7KXH0A=;
-        b=D+2vGRGzrVLAs0sGrJJIlKLqJS5rb9OcL1cuSsWjFrrvZkQOVWqLDxWBH8cTriabHY
-         CMye6KUB5b+bjfiqRlisGMMup+F3WWXrJDfL7E/6PLk1GoCK0bWqjxtIAGMKgnS2b0W0
-         irIaKW/+7Cgycy2S6lX8mwjfDWRlTgMS4jCNi4oGwLa/8Zo9QxjBweYCCq3yxdyJB4DM
-         lWmwMBAq5MOvPd2m/q27pdV3D8Rrb7HQ4UYgu4ichJcUNUXohge7Y/KY/+0yjQ6mLXk8
-         9qxyqGUs+1/aQvuiAE12+hSnVztPewJqdsXtYopM1eg3eVOppIeDPwhcDS86+ubMFoJj
-         wYsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725507223; x=1726112023;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=dGI49nIoainLFaa1TPUEgnROODaXfiT1w+95Y7KXH0A=;
-        b=NHLrapod3MMIGaz6ll6fR3syIYw3f9O+Y1YzGL0McOU0NT9oGbI4/5Mq/+HaXzyq/s
-         YQmcxvoDdX8qwzzVDChpJSMWFLrKb8ok8PsYbL/aNK4aGxrS0CxrhSilePZ/bobSyueu
-         X3ZeDV3xokykV5Ov0h391viuICQZiH9t2Z2LNOhsnl4zbzZDGNoVniEgkYujeifcVzX6
-         L9WSBA8kVbHKAFGeVvDdn+Aru5c1mw3L14AtwUQWkkNq+GN6PqaWF43aSbAMchozcLKK
-         uN606VFe0ze0oMW28BSyFmWgg7mgGtOJRjior2nyjuVN4R+5H5HEqHvy3rbfdK+7PZMN
-         szKw==
-X-Forwarded-Encrypted: i=1; AJvYcCWmrnQHNny9NnSKcc7wBBk7/vXzW4l3+dNvcueqorJ4IyWrPT0LgyG6c9HIwCwqnbh3ZlN4QSehBEc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzoj8W1zwDz7OTaW5JgEn7RwRSFQvSBKE20oj3HLUQX1NpQQ61H
-	nyTvnFPnvS4MHRGnV3B6MNQnHupw1q+3W/NiiuYbZ06fDWsMX9pa3lfK/VpoPuU=
-X-Google-Smtp-Source: AGHT+IGI1ThGNwiYzgjZpB38Gzh3Kii8Shn3E44t5s6JycEWNTDgK8ZwOGUE8abD1/FHADwkhMcSXg==
-X-Received: by 2002:a05:6512:6d2:b0:533:44c6:1ef1 with SMTP id 2adb3069b0e04-53546baacc4mr12832555e87.56.1725507222640;
-        Wed, 04 Sep 2024 20:33:42 -0700 (PDT)
-Received: from umbar.unikie.fi ([192.130.178.90])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53565f6d409sm389165e87.35.2024.09.04.20.33.41
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 04 Sep 2024 20:33:41 -0700 (PDT)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Rob Clark <robdclark@gmail.com>,
-	Abhinav Kumar <quic_abhinavk@quicinc.com>,
-	Sean Paul <sean@poorly.run>,
-	Marijn Suijten <marijn.suijten@somainline.org>,
-	David Airlie <airlied@gmail.com>,
-	Daniel Vetter <daniel@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@linaro.org>,
-	Marc Gonzalez <mgonzalez@freebox.fr>
-Cc: linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org,
-	Arnaud Vrac <avrac@freebox.fr>,
-	Pierre-Hugues Husson <phhusson@freebox.fr>,
-	Jeffrey Hugo <quic_jhugo@quicinc.com>,
-	Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v7 0/6] HDMI TX support in msm8998
-Date: Thu,  5 Sep 2024 06:33:36 +0300
-Message-Id: <172550712143.3299484.1580127137460046609.b4-ty@linaro.org>
-X-Mailer: git-send-email 2.39.2
-In-Reply-To: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
-References: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
+	Thu, 05 Sep 2024 07:30:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=aByMcGP82ZuyZ4oto19an7xlxAPWx9pbTqTyObiFojqLa7h2egK0BbfnJxDsOaOB+7ciRHda5G8oLd4y0zMU43nVgzxCaYWCDbKYS2Z13bbH2AKJt0JSsS/EZRYUvyAPqQs5bEqthTPqN57umKRc/f007H/LPVwzwvLU6k7O4RaBaHqR8AUqAvHslEpFl47/BGf54X0GVzM/UN2dePE9rXoyMOTD3kGUIAR90jXnFTb1RbKIBn8kGFHUohQCOBC19W83miNztSDKKOPRJOvHg4Z3WnsLLpTFVjL2BJIWhpriE8BJQD7NG2FBrdJZec1NPm2eHup2m2JRUyEwQtAP7w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tOXmoK79o0rKFTm6Di3A445PTxd4v0mmpJSapXya+yQ=;
+ b=w3UYv82P+CwKYCKYMQBn13w2oh1qiHgft2aUuWsx36s1StycVG54sN7qdGR/nZdzzdgP7T0JjtYQZKGTXHfh2fUCHBu4k3tNmaEqp6xYE+FN2B0GNJci2ZWL3gJ5F9Nox41XeTZRXp7UDbZCXg50sDWD/hfuxOgMpu2TIvEoq2Hkyyt56zOFpzYZHLENzZXhYu1u4sJ08BLBn2PKzfTm9Wak8p/G69F/hvNnHwzGLWF8w1dBVKNrvGEHa9/WLrBtIu9HFTzM5cbtV7ISAgu5WM01Z+DlLrRtqeMmn5ZhLZ3crYwvWkmR2UbfGpOj7UqDKqDjS5ppa9tN6yTpu6bDSg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
+ dkim=pass header.d=kontron.de; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com;
+ s=selector2-mysnt-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tOXmoK79o0rKFTm6Di3A445PTxd4v0mmpJSapXya+yQ=;
+ b=bXIFBZ8+mkO5KMar36T2SjaCnT6oTgDIo1wzP8yI0jgozVZe+VW0BokIlU0CGrmmZnpSvttn6S6SA5/Wdy1DAVY2sQPsU6goHGc6/IMCZCTkXNK9i1vz3hfr2MAwL0K8kqMgdnumSEbUalc4bZZ4QVGU6sInkBuAn4QE2LV8z7w=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=kontron.de;
+Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:263::10)
+ by DU0PR10MB6679.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:10:401::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.25; Thu, 5 Sep
+ 2024 07:30:46 +0000
+Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::b854:7611:1533:2a19]) by PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::b854:7611:1533:2a19%7]) with mapi id 15.20.7918.024; Thu, 5 Sep 2024
+ 07:30:46 +0000
+Message-ID: <d99018f8-09a6-49eb-a054-e8605cb169ce@kontron.de>
+Date: Thu, 5 Sep 2024 09:30:44 +0200
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V6 4/5] phy: freescale: fsl-samsung-hdmi: Use closest
+ divider
+To: Adam Ford <aford173@gmail.com>, linux-phy@lists.infradead.org
+Cc: dominique.martinet@atmark-techno.com, linux-imx@nxp.com,
+ festevam@gmail.com, aford@beaconembedded.com, Sandor.yu@nxp.com,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Marco Felsch <m.felsch@pengutronix.de>, Lucas Stach
+ <l.stach@pengutronix.de>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+ <u.kleine-koenig@pengutronix.de>, linux-kernel@vger.kernel.org
+References: <20240904233100.114611-1-aford173@gmail.com>
+ <20240904233100.114611-5-aford173@gmail.com>
+Content-Language: en-US, de-DE
+From: Frieder Schrempf <frieder.schrempf@kontron.de>
+In-Reply-To: <20240904233100.114611-5-aford173@gmail.com>
+X-ClientProxiedBy: FR4P281CA0305.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:f6::14) To PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:102:263::10)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA4PR10MB5681:EE_|DU0PR10MB6679:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7ba92e6b-fe37-4e0b-41ad-08dccd7ca84a
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016|7416014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?N1Q5dU9xVlg0cFlQTVJuT0ViZ0hIb2s3K3NCVGdnWVJseisxV09OZklFWVB5?=
+ =?utf-8?B?RnNVaFpVVkhGU3ozVFNyUjg4UzlSTjdrUEJhdWNPbUVaSllGL2xNUmQvaXRF?=
+ =?utf-8?B?cytLVHZPZ2krOG1XbnN6OHQrZ3k1MHljS0VwQ0MzOUVOSWt5TThFbnFBQzhB?=
+ =?utf-8?B?czNkSHMxMStYbldnakpUYUtpM1JCQ0ZtQy9yOTVMSjBYVjdqcjkzOXVlbmlZ?=
+ =?utf-8?B?RkRFTjFnd29zSUIvRDY3MXlKTmpxWE9TRHFRd3lzazdnZkZFSThOV3VaanlG?=
+ =?utf-8?B?VEZES3k1NjhCcU81VXE0aTlIcUl4U0JlZzhFWUFIakExTUIrdmROSURpc1VJ?=
+ =?utf-8?B?elo1TEgyV3kvZVNidXVGTkt1em95SVNsNFR6cFBqd3RRODRDVWJ0ZUpMSGVG?=
+ =?utf-8?B?ZzJMWnhXeXZBQ2JTeU9ISHByWk5KQ2ovTDVwUjVOdk4rdEpkcFZtL01xRXkx?=
+ =?utf-8?B?UGlRSDlkL1h5NXNxRndTdlRwOW9iZ3NlQ2pFQm1rYmJNVTkyRGFOVzFRRTgy?=
+ =?utf-8?B?SmgvTHVVL202Ty9zWmZ0TjQyMTdoQkRSMjZmZ2FESS9lN3hYQUc1SUdtVk9N?=
+ =?utf-8?B?S0ZyUy9hV0hiMm1mWnJMN2hyOTB0V1owK0hGcE50Ymx1Z3hiWDBTMFE3WHNn?=
+ =?utf-8?B?ZjE1MXl4NFg0Rm42QnlmK3ZXYld6bitqYi9VTnMxNmpCQnVqN1FsUmlIcFF4?=
+ =?utf-8?B?dlRUdStIRjJXS0RieXJtek9iYkc3TW5iUWpjZHkwem8vdlYrSXJpTWlZSWU0?=
+ =?utf-8?B?R1hKejNNaFE5YXU4OTJKaXN0amVrR095Y1l6MG5lSzdhUW40Uyt3NC9SYmxv?=
+ =?utf-8?B?a1hXcDc4Uk50WHdmNWFGdVBDMy9yNmZpaWx4L1puajc3TlN0OVFETmsvNEt3?=
+ =?utf-8?B?UVlqb3JVL2hMckxDQUFBQzRtTk1WRFZCTmc2TERaaVFoTU8xaFB0YVl1S3px?=
+ =?utf-8?B?OFNlcUZ3Ti9hdE05MUhhOEcxc2xRMWZ2blRZUUhMc0tsYU5lZmJkWVN2WXlt?=
+ =?utf-8?B?Zm1RYkNTT1RCV0luN3VhKzZRTjkrNmRNN28rdkdNc1RvbCt6NjIwR0puMW1o?=
+ =?utf-8?B?czRnOHlDWkFVTUVzUnpSMlhwTG9MNnJDanhMcGRhb3pkUElZbERHeEVVMlF3?=
+ =?utf-8?B?WWdBUFBDeUs5dXpzdTNjVEZqRDY0R2tyNThyK2NPMi9mbTZ5bWtOZHVPZHBt?=
+ =?utf-8?B?bDhEWThHOHdhTmpPeFRXUWtjMnN0bkZobk1YRGE3L1hZcGRuV1RwQm9lM1Q5?=
+ =?utf-8?B?cDIwWnlkRlB1OWJ4Wjl0Nm9YNU5LT1FURlVkMWpWU0lka0lKNlVzTWFQdDVU?=
+ =?utf-8?B?cjdTSXJPSlpFcTMrd0s4QUFMMVcwZGVsVGVPMFdKUHZNMWpQOHJ3RStic25G?=
+ =?utf-8?B?RXUxK2NiZVYzTmtSOXVaNWg5UWM5Q1l2bllWRHhxc3J1eTNyV016Y2tjQkpR?=
+ =?utf-8?B?UGx6NFVHWTdiSUxxNXdqa2F1U01hNWhPaGFXWjFQYkpqTVFWS2pkSmFCM2Ur?=
+ =?utf-8?B?Rjh5Q3dPbm9YOTNoVXR3Wk01dHpWVzNOeGxYczNPaGcrZUd1T3ZqMVpwTTNz?=
+ =?utf-8?B?ZGJHcjFGNklIMjVaKzQ1MFB3MVVyWEUrWVlrMFJXbGpUakxuS2dJYVQ1K1dG?=
+ =?utf-8?B?WEMvMVJRdmZnUHpHcWpQL1A3TGNsL1J5emhiOEtNM0dHY0ltUFFzVnU3aUs1?=
+ =?utf-8?B?MEJxTTczVE9hOVNYU0lLYnJ6QjhTTW5mZFRYNEdSRTNKakgrVWJDMmpOUU1C?=
+ =?utf-8?B?OXlYK2VDMzlRTy9CZ2lhMFdVeE9XNzArL09uQTR1RFJLL3dpZWxXSVYvQy9K?=
+ =?utf-8?B?UHphUkdIdTZvZWdGWElOZz09?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(7416014);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Y21VUW96cGxRNlord1JaRDNTYVJualJWK0orbDAxWWJidlg1TEtYT2RBa05V?=
+ =?utf-8?B?cVAzdHpxckZiWCtHWHFCa1RPYnBtTFplL3FKeXlIYmNnVGpsSld1c0E1WjYw?=
+ =?utf-8?B?azBiVlNkK2NFQnZsZjRzZStGUHE5YjJQemtWdHp4QWcxTjdwVUZuMmthTDZK?=
+ =?utf-8?B?WUhCTjBNdjZkc0NEcWRycFNOTGhiejA3T2h6SCtXM3Z4ekNua1JEMWRlRTdj?=
+ =?utf-8?B?V0FXWEJ5MUtWdU9lSDdTblpZdDJzenoyMTQ1U3hQdXBvTURqZkRpSE44VStE?=
+ =?utf-8?B?RnBMY3F5aTA3QTl6WDlXaWVtL2c4ZnBnRUlyWWR4cVBidlV0N0xkdkRGSDFC?=
+ =?utf-8?B?aXY2SU1SNUhlOVBZNGdGOVpPT1NPV1F1U3pXaVhra041SnVNRHkvY3hic0xh?=
+ =?utf-8?B?RXQ5aWZpdEt2eE1yWFJTT3pZQlZlcmR2bXhnRHN0L2llWDYzbFo5S1J5UVln?=
+ =?utf-8?B?aWxtVmllWmpqNEFxTzZHdHM4M00yd0FaUDMvYXB6azIrdHNrRkNPajZzSmpn?=
+ =?utf-8?B?WTZoTmR3MVJRaXhTTDh3Q1NRdFN1QnN0WXdnbEpyNXFFRVMwTlhpMWJWNzBX?=
+ =?utf-8?B?Unpha2xhNFk0SVRiZUZ6cjNzVlpqRE9ydTN5V1JUMlVKZ2swa1dqOExEc2F4?=
+ =?utf-8?B?SVhGSWw3ZmtkZENzdWZBYUtGelppTlJBMkZmTVJyRjBZWjNmeU9RRzY5L2o5?=
+ =?utf-8?B?WG95Vk03ay9zaWl0NmV5aXpLdlloakhBTlVra21CMGpTUmcvWTNjdDJ0ZmJY?=
+ =?utf-8?B?S0daZ2RJUStzMWg2YWNvZW1wYXoxaE5RZGVYVFl0Wmt3SUNjMkVGZVpaWWVH?=
+ =?utf-8?B?aEpEbC92NkhtYWxiOXRjTUpyUVpFaVV5RzFPc2c4dDlqRHNzbE9JK0hreXRi?=
+ =?utf-8?B?dUlYZ0M2RUlLUTdYVXBmZnFEdHUrQlloM2wyZGdwRlF2bkFEcFFEdC9iekxl?=
+ =?utf-8?B?TXBUcDJZWlVNMWNuZmd0TWdiYzRKOHlQWkl6UW5iMmhGRlBxVmNIQUFiQU8x?=
+ =?utf-8?B?NzRWZU1ka1V2SCtBbzQ5L0s2YkpWdVhZNFRsQnNSYWRnUGhvbC82Ym11MUVj?=
+ =?utf-8?B?WEZTRnJIb3RNdFpEQ3lJVmt6UDlDK0V3emZaMWtEYnVSd3NMSDNTeEJsM0x2?=
+ =?utf-8?B?WmJlN3F3UTZ0ZVhCMzVMRStYcUUxOGhTQzRmVFQ1bkxTMVNOenRCbmp2aWx4?=
+ =?utf-8?B?YXE5VmRQcU5kUTYzYmx3OGJyZEUzZzAyQk0yTFN5VkwrZHFGcVg3ekprUFYx?=
+ =?utf-8?B?NHFYaE5HOXI2SmJiZFpSeGdoc2JpbGFOdk1QdkZTcFpzNkZPRmRnTEt4ZThZ?=
+ =?utf-8?B?NVlQeHh3U3JsbWtBK2tZZ0FxVVluQU9ud2RjVGRzTkxNendIbHJNTHh5V2dw?=
+ =?utf-8?B?TU1LQ0xDRXh2LzBSZFNvb2k2Rklna2ZqQW1GYngxeTN5VDZHVEwyTkRTTjFp?=
+ =?utf-8?B?S0hVdHVhbWdVR3pXUzJBeWhhc1ErejU2djdza0VtMnRqTEtCd080T0EzcEY2?=
+ =?utf-8?B?aDBWSy8zQVBHTFZ6elVHQjhCMTJqUDFMTnJsVjRZdUljZXdhQ0VONEFCWDBY?=
+ =?utf-8?B?ZFMxcEkyRVFveStKUU5yeC84QzBIaXBJYTZVekxKanJXZkxQbHZIaC8yWG4w?=
+ =?utf-8?B?YzEzaWl0MlBXMlhjeFNwcXcvaEFGWk5CYlRqNXIzNFlGSWZwU3ZjL255QlRU?=
+ =?utf-8?B?bDNES3RRbVpmL3Z2bDl3ZFRMN0swMG5LRFRzbnZReVllUTFwZ3I1OUhYQlFG?=
+ =?utf-8?B?bU9EVWlJckFwNmJuTXNXNEdLTnFseVRoS1hRWkYyTjJjU0hlNE8yeTBqeitI?=
+ =?utf-8?B?cDUxMGRYTS9icmZPdVJYUEZZaXp0M3lpbm82d1NnQXQ5aXhMbGdIR0NLUXhF?=
+ =?utf-8?B?V0JQVml5ZFNZVlBJV2dOOGtNSnFyczZHT3RSYXQ3V21JMlp6QmdNSFdQNGhS?=
+ =?utf-8?B?cUpLOEpsTW5qb250NGl0N2JDSWsxQ1Z3RnovV2kxOGh6U2pZaVFDMnlyOWVM?=
+ =?utf-8?B?ZCs0aDFTZUVpLzhVbVBsdGxuUGY0QzdObklvL0dHNi9xMW9pYUVidUlyUWc0?=
+ =?utf-8?B?bGFuVGFzU1BpSXZpRU04VVZ2VHNJdm1hUWdUcmc1Z0VERkVQZGQxNGI2dU8r?=
+ =?utf-8?B?QmZGT0N5QmV5aEYrUHU3anB6ZGNveTQvTFZIRXhWT1hjdFd0Q0RvOW1ra1hr?=
+ =?utf-8?B?cnc9PQ==?=
+X-OriginatorOrg: kontron.de
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7ba92e6b-fe37-4e0b-41ad-08dccd7ca84a
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2024 07:30:46.4248
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: iqbmFxy2kIh9Vz9kv2nO9bOXmXWNeoHZlQZUUIaGlXCaqZknmXXB9PswCMi+zGuzwnZW2Hh8tFY1teWY6nz9p/2wxvPN2DZ2SNpS2Kv1Qdo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR10MB6679
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_203344_753731_D944791D 
-X-CRM114-Status: UNSURE (   6.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240905_003053_121737_DEC3DDF0 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,25 +181,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Wed, 24 Jul 2024 17:01:33 +0200, Marc Gonzalez wrote:
-> DT bits required for HDMI TX support in qcom APQ8098 (MSM8998 cousin)
+On 05.09.24 1:30 AM, Adam Ford wrote:
+> Currently, if the clock values cannot be set to the exact rate,
+> the round_rate and set_rate functions use the closest value found in
+> the look-up-table.  In preparation of removing values from the LUT
+> that can be calculated evenly with the integer calculator, it's
+> necessary to ensure to check both the look-up-table and the integer
+> divider clock values to get the closest values to the requested
+> value.  It does this by measuring the difference between the
+> requested clock value and the closest value in both integer divider
+> calucator and the fractional clock look-up-table.
 > 
+> Which ever has the smallest difference between them is returned as
+> the cloesest rate.
+> 
+> Signed-off-by: Adam Ford <aford173@gmail.com>
+> Signed-off-by: Dominique Martinet <dominique.martinet@atmark-techno.com>
 
-Applied, thanks!
-
-[1/6] dt-bindings: phy: add qcom,hdmi-phy-8998
-      https://gitlab.freedesktop.org/lumag/msm/-/commit/8886def25eef
-[2/6] dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
-      https://gitlab.freedesktop.org/lumag/msm/-/commit/656810411b1d
-[3/6] drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
-      https://gitlab.freedesktop.org/lumag/msm/-/commit/a61eb17f40e8
-[4/6] drm/msm: add msm8998 hdmi phy/pll support
-      https://gitlab.freedesktop.org/lumag/msm/-/commit/caedbf17c48d
-
-Best regards,
--- 
-Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+Tested-by: Frieder Schrempf <frieder.schrempf@kontron.de>
 
 -- 
 linux-phy mailing list
