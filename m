@@ -4,80 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20667CE7AA6
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 00:57:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C9D3CE7AA5
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 01:54:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LbFl6NfRJG6qlZ4V1f+g6DY4FN59Gq+FuXmJFCEqV4A=; b=aV4BQiM65l2zJC
-	qZolI6sqsqIx0m1FtV27lTpQmMtpeJeMAtJgJccKtaLT23Zr/uA6NI+LCnvsin2SuSXrTouMuINRO
-	UiXWlts12gwG3AfZ3z2xk0l6jK2vleq7/DJAFaToArUjXWTk7p4Otxs+O+C6p1ykijxKQmogkTg+8
-	FUtCdj5uGrCqewLrK/dN1Kgfgj+T0XspUi9PgpCNWuABIhNr+ap9nfdblv44zAt3QxbBKh7IxcB77
-	MH14k+m6nb1R3aQ5AGEATKiqHn18SqxPaCnvteOBvauPg6S9zaM7iQwSIgvsRWaH58dOzQtZhtkJf
-	brwPPjzUy9xAl9CLu+lQ==;
+	List-Owner; bh=n7cxzRkAcz1gGTO9EPccIHv2VTwVz45NpvkhK+Dwc7E=; b=tuX0MeOTTi9fU0
+	Xc507gj0j1tTGibglO7L5JyRreByk+PmGSaGb8Xk//7IC/OFsLNyyV64vdFv3kw6ewtVGVI6SlhXi
+	k2slZOejHs36EB5ETFt2Piw7dnSr2+OmaXTx4dhlCemR2wjG4D3owSnf4ofGDlctJp1empk9fJymy
+	B8mwzo9Fs897EMfZdOQ4Y44yCEFvbcljyfPX1dLjna21K3vGU71FoqelnY3s0qBkENZAE2/VQ5Cmo
+	k27NF4mqDSFQ7SSaw60uiSZmxt04fkSRzfjXME+S9hFBZynJXexXeie216+Vg3/dK8t0MwzshqNgP
+	8He5Un4gBWQmcs14Gyyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smNIN-0000000AEtf-37vk;
-	Fri, 06 Sep 2024 00:57:51 +0000
-Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
+	id 1smOBe-0000000AKGA-334t;
+	Fri, 06 Sep 2024 01:54:58 +0000
+Received: from gw2.atmark-techno.com ([35.74.137.57])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smNIK-0000000AEtG-2oZF
+	id 1smOBa-0000000AKFf-47ao
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Sep 2024 00:57:50 +0000
-Received: by mail-pj1-x1032.google.com with SMTP id 98e67ed59e1d1-2d8b679d7f2so1125775a91.1
-        for <linux-phy@lists.infradead.org>; Thu, 05 Sep 2024 17:57:48 -0700 (PDT)
+	Fri, 06 Sep 2024 01:54:56 +0000
+Authentication-Results: gw2.atmark-techno.com;
+	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=Q9O8UjrX;
+	dkim-atps=neutral
+Received: from mail-oi1-f200.google.com (mail-oi1-f200.google.com [209.85.167.200])
+	by gw2.atmark-techno.com (Postfix) with ESMTPS id DF1F77C3
+	for <linux-phy@lists.infradead.org>; Fri,  6 Sep 2024 10:54:52 +0900 (JST)
+Received: by mail-oi1-f200.google.com with SMTP id 5614622812f47-3df1e412a53so1817311b6e.0
+        for <linux-phy@lists.infradead.org>; Thu, 05 Sep 2024 18:54:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1725584267; x=1726189067; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MlXacWVc911/08odZj5isX+6FCo66PzJYDhU5TKMs40=;
-        b=YHTQYYYT8/MBLijDPYBPhM3WjvV7ge3UmHxHUAUZqKl6bO/VyWg4ZIKsbfHpNQv1gs
-         oLLvEJ8RUwd3OigG71rg62zXeAWoCD7YSABRZAwtm1ShDmhSFDe5+Ec/J+SflZv6BBKi
-         xcERmRRBFywX/K2J6s9STmq2vzHHxJAs25hz0gp+V54zFg4TnXx0/73ohHfMo6MSkYq7
-         hAAcMSRpp6SZIsm2aFPIFeiKaMlx73sO93B+DaAUe7lVgSO4bAveeEDXug2kAG5AMg3G
-         nCjc4Ylv8zxCMF2WgnwSWn8OQfRcMGq/ucDh1xD8w6ojoDJkNZpsWuS4h6Wz4wJxOUtA
-         tK6w==
+        d=atmark-techno.com; s=google; t=1725587691; x=1726192491; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=durTQ7XeNWZjAZ/4AGM8xhjnXE2dEnjAadXy47DRtOw=;
+        b=Q9O8UjrXE4GLC6NM3AhmuNRBwwaFhHxkFm9PtQ7pFAwr6H1tdFdgmJbxOAnfafiBK1
+         8IpJzMyMNT3Q8M6CPI7ATm+j8W2+BCjsXDTiGYxE53AvgQHb5Q2/CHqtLfDK10+U0T+J
+         OOHnMH5vJ/es18uSA/jH2XMMur4eMOb7PATrrh3B4MmfLI5NknESKLjJJ/w5uJjH7kQw
+         mMFABYj+1wzDut/yYNeXlDaK5BK7iqBFDKh72lKCSayES2XT6qo6Mp/zzMuxLbfPsivc
+         zpRr2vHXDifiNm82Br06FFPwTcOThWM4Iql6KmLNct43Jdd24nlsyLa0QbrUZwpOXNaR
+         1FxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725584267; x=1726189067;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MlXacWVc911/08odZj5isX+6FCo66PzJYDhU5TKMs40=;
-        b=QnWIHUdoA/NM/kozFxoBj5CXi1WQ2NHBNmvwk5ipiqkGBPL1A9OUB4pNrELEoWn22x
-         hMPQKmrcnrtucQlF8KVrOXnXOobJer6AdkNwqJQ16bIISlgzH/n3+3wNB5MWBhO8d416
-         0CTMngwz6IV4PqPglNXDEM9UIE2zmOiOVV1vrFK0vEPp5MOC6POof9o5gWOupAuBCrvu
-         sSq9Y2JJyTYIwAAL1l8bXUyY3k3zzWJ05nKkIBCsxE87bZcD2dq93BoOs5BVRfXnGx8D
-         BQjin6R68/i9oXdR6gV+ULCk6agNc3QzIkNWhoaofRSEA8jdu35i7tPgrS8I4zIl/CnT
-         268g==
-X-Gm-Message-State: AOJu0Yw+9fd503cXM1UztmAhQ4HYRJRTvyiotcul6MidCLTZ7kypt7HK
-	yogyAfNu8hnguEhLnQkcZH5uZDgo7Peg0zt+OdN0QoQyMTmZD1oKSX9+IrLuwOZgqiSlFfHrk3Y
-	F4tbsYMhdTJ1tEedxsxyhUSeiTXc=
-X-Google-Smtp-Source: AGHT+IH6gnV0sVo2Vp70FLhjA/z5Pll9fH+V03yoU41fOXKIfG0c0/I4CcKlSRmtR4RvnNEA5kA/fYA0yNdvl4aFV+M=
-X-Received: by 2002:a17:90a:a08e:b0:2d8:8a03:b90d with SMTP id
- 98e67ed59e1d1-2dad512d6f9mr1224682a91.41.1725584267294; Thu, 05 Sep 2024
- 17:57:47 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240904233100.114611-1-aford173@gmail.com> <20240904233100.114611-5-aford173@gmail.com>
- <ZtpMPCHBnEgtkBWp@atmark-techno.com>
-In-Reply-To: <ZtpMPCHBnEgtkBWp@atmark-techno.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Thu, 5 Sep 2024 19:57:36 -0500
-Message-ID: <CAHCN7xLo1RgkUPTdTpCtKjnT7w=gPDCfe_ZEbKj0joVvLG02Dw@mail.gmail.com>
-Subject: Re: [PATCH V6 4/5] phy: freescale: fsl-samsung-hdmi: Use closest divider
-To: Dominique Martinet <dominique.martinet@atmark-techno.com>
-Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com, 
-	frieder.schrempf@kontron.de, aford@beaconembedded.com, Sandor.yu@nxp.com, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Marco Felsch <m.felsch@pengutronix.de>, Lucas Stach <l.stach@pengutronix.de>, 
-	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
+        d=1e100.net; s=20230601; t=1725587691; x=1726192491;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=durTQ7XeNWZjAZ/4AGM8xhjnXE2dEnjAadXy47DRtOw=;
+        b=SO5uhXpxAoUpz7PcE9RfJuZtlnP5b9G6pnBURAavFTQ45GcjPkTXMN8gWd/7ymf3N4
+         UFmS0r1pOCW4LWrABNJj0Ot7p1mmx1fln/R2SaC4GqfeMlBVY7hRoA8x1zbVL02IA677
+         47kzo2ueZ4jP1N3xN58VLgB2YjEhU/tiqGED2hks/cuWcq0CTpX08YfkRZZwCO0ht0lK
+         QNMIFFkf+lEhX0Ik227MHOjIDaS3dKnnsvRoV36gj5HxJFJ5hXFCRhL9Id6Y2emXctQ3
+         jOH+CLza5t2amqXpOL43E3s8xFf7UPKa39Q1mKGjHCF5sY5feQbxC9s2d2kHBVQB/iwc
+         Y+oQ==
+X-Gm-Message-State: AOJu0YzHJWrAWjFiiKgHjfhmkZNNapjq6++/7aSVYA3/WBDHg1GAxeh4
+	YMbnrtE7ngDdf4st+R5xF1y+FpLWBH7tXCyU0EyOaccxdN1ie79jJLnrrArZsj9dbWHcJRh+ZJd
+	lMS+US0qquuUItMKOLFVDqoVaOJMXtUnjQnh6SwGnoJpB24veCdrziKk9s02XaN2d
+X-Received: by 2002:a05:6870:a7aa:b0:277:e6fc:4a69 with SMTP id 586e51a60fabf-277e6fc4eb8mr17433236fac.2.1725587691320;
+        Thu, 05 Sep 2024 18:54:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFVipTQfUND/FnRqfGq4dI5ZGP/w2h0TeXSOD87mBrBmYVleyYHmbalAOvkXRNmqfOthp2LQQ==
+X-Received: by 2002:a05:6870:a7aa:b0:277:e6fc:4a69 with SMTP id 586e51a60fabf-277e6fc4eb8mr17433220fac.2.1725587690879;
+        Thu, 05 Sep 2024 18:54:50 -0700 (PDT)
+Received: from localhost (76.125.194.35.bc.googleusercontent.com. [35.194.125.76])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-717785988aasm3839472b3a.164.2024.09.05.18.54.50
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 05 Sep 2024 18:54:50 -0700 (PDT)
+Date: Fri, 6 Sep 2024 10:54:39 +0900
+From: Dominique Martinet <dominique.martinet@atmark-techno.com>
+To: Adam Ford <aford173@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
+	frieder.schrempf@kontron.de, aford@beaconembedded.com,
+	Sandor.yu@nxp.com, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Marco Felsch <m.felsch@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
 	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH V6 4/5] phy: freescale: fsl-samsung-hdmi: Use closest
+ divider
+Message-ID: <Ztpg3_iE2Dbqb4VT@atmark-techno.com>
+References: <20240904233100.114611-1-aford173@gmail.com>
+ <20240904233100.114611-5-aford173@gmail.com>
+ <ZtpMPCHBnEgtkBWp@atmark-techno.com>
+ <CAHCN7xLo1RgkUPTdTpCtKjnT7w=gPDCfe_ZEbKj0joVvLG02Dw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAHCN7xLo1RgkUPTdTpCtKjnT7w=gPDCfe_ZEbKj0joVvLG02Dw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240905_175748_740524_8AB0FEBF 
-X-CRM114-Status: GOOD (  51.85  )
+X-CRM114-CacheID: sfid-20240905_185455_165081_D16D587E 
+X-CRM114-Status: GOOD (  58.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,168 +105,177 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBTZXAgNSwgMjAyNCBhdCA3OjI24oCvUE0gRG9taW5pcXVlIE1hcnRpbmV0Cjxkb21p
-bmlxdWUubWFydGluZXRAYXRtYXJrLXRlY2huby5jb20+IHdyb3RlOgo+Cj4KPiAoc29ycnkgSSBt
-ZWFudCB0byBzZW5kIHRoaXMgeWVzdGVyZGF5IGJ1dCBJJ20gYmVpbmcgZm9yY2VkIHRvIGFkanVz
-dCBteQo+IG1haWwgcGlwZWxpbmUgd2l0aCB3b3JrIGFuZCBnbWFpbCBhbmQgaXQgZGlkbid0IGdv
-IG91dCAtLSB0cnlpbmcKPiBhZ2Fpbi4gU29ycnkgaWYgaXQgYWN0dWFsbHkgZGlkIGdvIHRocm91
-Z2guIEhvcGVmdWxseSBJIGRpZG4ndCBtaXNmaXJlCj4gYW55dGhpbmcgZWxzZSB5ZXN0ZXJkYXku
-Li4pCj4KPiBBZGFtIEZvcmQgd3JvdGUgb24gV2VkLCBTZXAgMDQsIDIwMjQgYXQgMDY6MzA6MzJQ
-TSAtMDUwMDoKPiA+IEN1cnJlbnRseSwgaWYgdGhlIGNsb2NrIHZhbHVlcyBjYW5ub3QgYmUgc2V0
-IHRvIHRoZSBleGFjdCByYXRlLAo+ID4gdGhlIHJvdW5kX3JhdGUgYW5kIHNldF9yYXRlIGZ1bmN0
-aW9ucyB1c2UgdGhlIGNsb3Nlc3QgdmFsdWUgZm91bmQgaW4KPiA+IHRoZSBsb29rLXVwLXRhYmxl
-LiAgSW4gcHJlcGFyYXRpb24gb2YgcmVtb3ZpbmcgdmFsdWVzIGZyb20gdGhlIExVVAo+ID4gdGhh
-dCBjYW4gYmUgY2FsY3VsYXRlZCBldmVubHkgd2l0aCB0aGUgaW50ZWdlciBjYWxjdWxhdG9yLCBp
-dCdzCj4gPiBuZWNlc3NhcnkgdG8gZW5zdXJlIHRvIGNoZWNrIGJvdGggdGhlIGxvb2stdXAtdGFi
-bGUgYW5kIHRoZSBpbnRlZ2VyCj4gPiBkaXZpZGVyIGNsb2NrIHZhbHVlcyB0byBnZXQgdGhlIGNs
-b3Nlc3QgdmFsdWVzIHRvIHRoZSByZXF1ZXN0ZWQKPiA+IHZhbHVlLiAgSXQgZG9lcyB0aGlzIGJ5
-IG1lYXN1cmluZyB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIHRoZQo+ID4gcmVxdWVzdGVkIGNsb2Nr
-IHZhbHVlIGFuZCB0aGUgY2xvc2VzdCB2YWx1ZSBpbiBib3RoIGludGVnZXIgZGl2aWRlcgo+ID4g
-Y2FsdWNhdG9yIGFuZCB0aGUgZnJhY3Rpb25hbCBjbG9jayBsb29rLXVwLXRhYmxlLgo+ID4KPiA+
-IFdoaWNoIGV2ZXIgaGFzIHRoZSBzbWFsbGVzdCBkaWZmZXJlbmNlIGJldHdlZW4gdGhlbSBpcyBy
-ZXR1cm5lZCBhcwo+ID4gdGhlIGNsb2VzZXN0IHJhdGUuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTog
-QWRhbSBGb3JkIDxhZm9yZDE3M0BnbWFpbC5jb20+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBEb21pbmlx
-dWUgTWFydGluZXQgPGRvbWluaXF1ZS5tYXJ0aW5ldEBhdG1hcmstdGVjaG5vLmNvbT4KPgo+IGI0
-IChvciB3aGF0ZXZlciB5b3UncmUgdXNpbmcpIHByb2JhYmx5IHBpY2tlZCB0aGF0IHVwIGZyb20g
-dGhlIHBhdGNoIEkKPiBpbmNsdWRlZCBpbiBteSByZXBseSB0byB0aGlzIHBhdGNoLCB0aGlzIHNv
-YiBzaG91bGQgZ28gYXdheS4KPgpGb3IgZWFjaCBpdGVyYXRpb24sIEkgZ3JhYmJlZCB0aGUgcGF0
-Y2hlcyBmcm9tIHBhdGNod29yayB3aGljaApjb250YWluZWQgYW55IHMtby1iIG1lc3NhZ2VzLCBp
-ZiBwcmVzZW50LiAgSSBkaWRuJ3QgYWRkIGFueXRoaW5nCm1hbnVhbGx5Lgo+Cj4KPiA+IGRpZmYg
-LS1naXQgYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYyBiL2Ry
-aXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCj4gPiBpbmRleCA0YjEz
-ZTM4NmU1YmEuLjlhMjFkYmJmMWE4MiAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvcGh5L2ZyZWVz
-Y2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCj4gPiArKysgYi9kcml2ZXJzL3BoeS9mcmVlc2Nh
-bGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYwo+ID4gQEAgLTU0Nyw2ICs1NDcsMTYgQEAgc3RhdGlj
-IHVuc2lnbmVkIGxvbmcgcGh5X2Nsa19yZWNhbGNfcmF0ZShzdHJ1Y3QgY2xrX2h3ICpodywKPiA+
-ICAgICAgIHJldHVybiBwaHktPmN1cl9jZmctPnBpeGNsazsKPiA+ICB9Cj4gPgo+ID4gK3N0YXRp
-YyB1MzIgZnNsX3NhbXN1bmdfaGRtaV9waHlfZ2V0X2Nsb3Nlc3RfcmF0ZSh1bnNpZ25lZCBsb25n
-IHJhdGUsCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IHUzMiBpbnRfZGl2X2NsaywgdTMyIGZyYWNfZGl2X2NsaykKPiA+ICt7Cj4gPiArICAgICAvKiBU
-aGUgaW50X2Rpdl9jbGsgbWF5IGJlIGdyZWF0ZXIgdGhhbiByYXRlLCBzbyBjYXN0IGl0IGFuZCB1
-c2UgQUJTICovCj4gPiArICAgICBpZiAoYWJzKChsb25nKXJhdGUgLSAobG9uZylpbnRfZGl2X2Ns
-aykgPCAocmF0ZSAtIGZyYWNfZGl2X2NsaykpCj4KPiBJIHN0aWxsIHRoaW5rIGByYXRlIC0gZnJh
-Y19kaXZfY2xrYCBtaWdodCBub3QgYWx3YXlzIGhvbGQgaW4gdGhlIGZ1dHVyZQo+IChiZWNhdXNl
-IHRoZXJlIGlzIG5vIGludHJpbnNpYyByZWFzb24gd2UnZCBwaWNrIHRoZSBzbWFsbGVyIGVuZCBp
-biBjYXNlCj4gb2YgaW5leGFjdCBtYXRjaCBhbmQgYSBmdXR1cmUgaW1wcm92ZW1lbnQgbWlnaHQg
-Y2hhbmdlIHRoaXMgdG8gdGhlCj4gY2xvc2VzdCB2YWx1ZSBhcyB3ZWxsKSwgc28gSSdsbCBhcmd1
-ZSBhZ2FpbiBmb3IgaGF2aW5nIGJvdGggdXNlIGFicygpLAo+IGJ1dCBhdCBsZWFzdCB0aGVyZSdz
-IG9ubHkgb25lIHBsYWNlIHRvIHVwZGF0ZSBpZiB0aGF0IGNoYW5nZXMgaW4gdGhlCj4gZnV0dXJl
-IG5vdyBzbyBob3BlZnVsbHkgd2hvZXZlciBkb2VzIHRoaXMgd2lsbCBub3RpY2UuLi4KCkkgY2Fu
-IGFkZCB0aGUgQUJTIG9uIHRoZSBmcmFjdGlvbmFsIGRpdmlkZXIuICBJIGxlZnQgaXQgb3V0IG9u
-IHB1cnBvc2UKc2luY2UgdGhlIExVVCB0YWJsZSBhbHdheXMgcmV0dXJuIGEgdmFsdWUgZXF1YWwg
-b3IgbGVzcywgc28gdGhlIGV4dHJhCkFCUyBzZWVtZWQgbGlrZSBidXN5IHdvcmsuICBIb3dldmVy
-LCBJIGNhbiBzZWUgdGhlIGFyZ3VtZW50IGZvciBiZWluZwpjb25zaXN0ZW50LgoKPgo+ID4gKyAg
-ICAgICAgICAgICByZXR1cm4gaW50X2Rpdl9jbGs7Cj4gPiArCj4gPiArICAgICByZXR1cm4gZnJh
-Y19kaXZfY2xrOwo+ID4gK30KPiA+ICsKPiA+ICBzdGF0aWMgbG9uZyBwaHlfY2xrX3JvdW5kX3Jh
-dGUoc3RydWN0IGNsa19odyAqaHcsCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHVu
-c2lnbmVkIGxvbmcgcmF0ZSwgdW5zaWduZWQgbG9uZyAqcGFyZW50X3JhdGUpCj4gPiAgewo+ID4g
-QEAgLTU2Myw2ICs1NzMsNyBAQCBzdGF0aWMgbG9uZyBwaHlfY2xrX3JvdW5kX3JhdGUoc3RydWN0
-IGNsa19odyAqaHcsCj4gPiAgICAgICBmb3IgKGkgPSBBUlJBWV9TSVpFKHBoeV9wbGxfY2ZnKSAt
-IDE7IGkgPj0gMDsgaS0tKQo+ID4gICAgICAgICAgICAgICBpZiAocGh5X3BsbF9jZmdbaV0ucGl4
-Y2xrIDw9IHJhdGUpCj4gPiAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4gPiArCj4KPiAo
-dW5yZWxhdGVkKQoKSSBkb24ndCB1bmRlcnN0YW5kIHdoYXQgeW91J3JlIGFza2luZyBoZXJlLgoK
-Pgo+ID4gICAgICAgLyogSWYgdGhlIHJhdGUgaXMgYW4gZXhhY3QgbWF0Y2gsIHJldHVybiBpdCBu
-b3cgKi8KPiA+ICAgICAgIGlmIChyYXRlID09IHBoeV9wbGxfY2ZnW2ldLnBpeGNsaykKPiA+ICAg
-ICAgICAgICAgICAgcmV0dXJuIHBoeV9wbGxfY2ZnW2ldLnBpeGNsazsKPiA+IEBAIC01NzksOCAr
-NTkwLDcgQEAgc3RhdGljIGxvbmcgcGh5X2Nsa19yb3VuZF9yYXRlKHN0cnVjdCBjbGtfaHcgKmh3
-LAo+ID4gICAgICAgaWYgKGludF9kaXZfY2xrID09IHJhdGUpCj4gPiAgICAgICAgICAgICAgIHJl
-dHVybiBpbnRfZGl2X2NsazsKPiA+Cj4gPiAtICAgICAvKiBGYWxsIGJhY2sgdG8gdGhlIGNsb3Nl
-c3QgdmFsdWUgaW4gdGhlIExVVCAqLwo+ID4gLSAgICAgcmV0dXJuIHBoeV9wbGxfY2ZnW2ldLnBp
-eGNsazsKPiA+ICsgICAgIHJldHVybiBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9nZXRfY2xvc2VzdF9y
-YXRlKHJhdGUsIGludF9kaXZfY2xrLCBwaHlfcGxsX2NmZ1tpXS5waXhjbGspOwo+ID4gIH0KPiA+
-Cj4gPiAgc3RhdGljIGludCBwaHlfY2xrX3NldF9yYXRlKHN0cnVjdCBjbGtfaHcgKmh3LAo+ID4g
-QEAgLTU5NCwyNyArNjA0LDM3IEBAIHN0YXRpYyBpbnQgcGh5X2Nsa19zZXRfcmF0ZShzdHJ1Y3Qg
-Y2xrX2h3ICpodywKPiA+Cj4gPiAgICAgICAvKiBJZiB0aGUgaW50ZWdlciBkaXZpZGVyIHdvcmtz
-LCBqdXN0IHVzZSBpdCAqLwo+Cj4gSSBmb3VuZCB0aGlzIGNvbW1lbnQgYSBiaXQgY29uZnVzaW5n
-IGdpdmVuIHRoZSBjdXJyZW50IGZsb3cgYXMgb2YgdGhpcwo+IHBhdGNoLiBNaWdodCBtYWtlIG1v
-cmUgc2Vuc2UgaW1tZWRpYXRlbHkgYmVmb3JlIHRoZSBpZj8KPgoKVGhpcyBjb2RlIGV2b2x2ZWQg
-d2l0aCBlYWNoIGl0ZXJhdGlvbiwgYnV0IEkgZGlkbid0IG5lY2Vzc2FyaWx5CnJlb3JnYW5pemUg
-dGhlIGNvbW1lbnRzLiAgSSBjYW4gcmVhcnJhbmdlIHRoZW0uCj4KPiA+ICAgICAgIGludF9kaXZf
-Y2xrID0gZnNsX3NhbXN1bmdfaGRtaV9waHlfZmluZF9wbXMocmF0ZSAqIDUsICZwLCAmbSwgJnMp
-IC8gNTsKPiA+ICsgICAgIGNhbGN1bGF0ZWRfcGh5X3BsbF9jZmcucGl4Y2xrID0gaW50X2Rpdl9j
-bGs7Cj4gPiArICAgICBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnLnBsbF9kaXZfcmVnc1swXSA9IEZJ
-RUxEX1BSRVAoUkVHMDFfUE1TX1BfTUFTSywgcCk7Cj4gPiArICAgICBjYWxjdWxhdGVkX3BoeV9w
-bGxfY2ZnLnBsbF9kaXZfcmVnc1sxXSA9IG07Cj4gPiArICAgICBjYWxjdWxhdGVkX3BoeV9wbGxf
-Y2ZnLnBsbF9kaXZfcmVnc1syXSA9IEZJRUxEX1BSRVAoUkVHMDNfUE1TX1NfTUFTSywgcy0xKTsK
-PiA+ICsgICAgIHBoeS0+Y3VyX2NmZyA9ICZjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnOwo+ID4gICAg
-ICAgaWYgKGludF9kaXZfY2xrID09IHJhdGUpIHsKPiA+ICAgICAgICAgICAgICAgZGV2X2RiZyhw
-aHktPmRldiwgImZzbF9zYW1zdW5nX2hkbWlfcGh5OiB1c2luZyBpbnRlZ2VyIGRpdmlkZXJcbiIp
-Owo+ID4gLSAgICAgICAgICAgICBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnLnBpeGNsayA9IGludF9k
-aXZfY2xrOwo+ID4gLSAgICAgICAgICAgICBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnLnBsbF9kaXZf
-cmVnc1swXSA9IEZJRUxEX1BSRVAoUkVHMDFfUE1TX1BfTUFTSywgcCk7Cj4gPiAtICAgICAgICAg
-ICAgIGNhbGN1bGF0ZWRfcGh5X3BsbF9jZmcucGxsX2Rpdl9yZWdzWzFdID0gbTsKPiA+IC0gICAg
-ICAgICAgICAgY2FsY3VsYXRlZF9waHlfcGxsX2NmZy5wbGxfZGl2X3JlZ3NbMl0gPSBGSUVMRF9Q
-UkVQKFJFRzAzX1BNU19TX01BU0ssIHMtMSk7Cj4gPiAtICAgICAgICAgICAgIC8qIHBsbF9kaXZf
-cmVncyAzLTYgYXJlIGZpeGVkIGFuZCBwcmUtZGVmaW5lZCBhbHJlYWR5ICovCj4KPiBuaXRwaWNr
-OiBtaWdodCB3YW50IHRvIGtlZXAgdGhlIGFib3ZlIGNvbW1lbnQ/Cgpvay4KPgo+ID4gLSAgICAg
-ICAgICAgICBwaHktPmN1cl9jZmcgID0gJmNhbGN1bGF0ZWRfcGh5X3BsbF9jZmc7Cj4gPiArICAg
-ICAgICAgICAgIGdvdG8gZG9uZTsKPiA+ICAgICAgIH0gZWxzZSB7Cj4gPiAgICAgICAgICAgICAg
-IC8qIE90aGVyd2lzZSwgc2VhcmNoIHRoZSBMVVQgKi8KPiA+IC0gICAgICAgICAgICAgZGV2X2Ri
-ZyhwaHktPmRldiwgImZzbF9zYW1zdW5nX2hkbWlfcGh5OiB1c2luZyBmcmFjdGlvbmFsIGRpdmlk
-ZXJcbiIpOwo+ID4gLSAgICAgICAgICAgICBmb3IgKGkgPSBBUlJBWV9TSVpFKHBoeV9wbGxfY2Zn
-KSAtIDE7IGkgPj0gMDsgaS0tKQo+ID4gLSAgICAgICAgICAgICAgICAgICAgIGlmIChwaHlfcGxs
-X2NmZ1tpXS5waXhjbGsgPD0gcmF0ZSkKPiA+ICsgICAgICAgICAgICAgZm9yIChpID0gQVJSQVlf
-U0laRShwaHlfcGxsX2NmZykgLSAxOyBpID49IDA7IGktLSkgewo+ID4gKyAgICAgICAgICAgICAg
-ICAgICAgIGlmIChwaHlfcGxsX2NmZ1tpXS5waXhjbGsgPT0gcmF0ZSkgewo+ID4gKyAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgZGV2X2RiZyhwaHktPmRldiwgImZzbF9zYW1zdW5nX2hkbWlf
-cGh5OiB1c2luZyBmcmFjdGlvbmFsIGRpdmlkZXJcbiIpOwo+Cj4gbml0cGljazogbWlnaHQgbWFr
-ZSBzZW5zZSB0byBwcmludCB3aGF0IHdhcyBwaWNrZWQgaW4gY2FzZSBvZiBpbmV4YWN0Cj4gbWF0
-Y2ggYXMgd2VsbCwgYnV0IHRoZXNlIGFyZSBkYmcgd2FybmluZyBzbyBwcm9iYWJseSBmaW5lIGVp
-dGhlciB3YXkuCgpJIGNhbiBhZGQgdGhlIGFjdHVhbCB2YWx1ZXMgcmV0dXJuZWQuCgo+Cj4KPiBv
-dmVyYWxsIEkgZmluZCB0aGUgZmxvdyBvZiB0aGlzIGZ1bmN0aW9uIGhhcmQgdG8gcmVhZDsgaXQn
-cyBhIGJpdCB1Z2x5Cj4gZmxvdy13aXNlIGJ1dCBqdW1waW5nIGluIHRoZSBjbG9jayBjb21wYXJp
-c29uICdpZicgbWlnaHQgaGVscCB0cmltIHRoaXM/Cj4gKGFuZCBpZiB3ZSdyZSBnb2luZyBvdXQg
-b2Ygb3VyIHdheSB0byBmYWN0b3Igb3V0IHRoZSBkaWZmLCBtYXliZSB0aGUgbHV0Cj4gbG9va3Vw
-IGNvdWxkIGJlIGFzIHdlbGwpCj4KPiBCdXQgSSdtIHByb2JhYmx5IGp1c3QgYmVpbmcgb3ZlcmNy
-aXRpY2FsIGhlcmUsIGl0J3MgZmluZSBhcyBpcyBpZiB5b3UKPiBwZWZlciB5b3VyIHZlcnNpb24s
-IGp1c3Qgd3JpdGluZyBkb3duIHRoaXMgYXMgYW4gaWxsdXN0cmF0aW9uIG9mIHdoYXQgSQo+IG1l
-YW50IHdpdGggdGhlIGFib3ZlIHNlbnRlbmNlIGFzIEknbSBub3Qgc3VyZSBJIHdhcyBjbGVhciAt
-LSBJJ2xsIGJlCj4ganVzdCBhcyBoYXBweSB0byBjb25zaWRlciB0aGlzIHNlcmllcyBkb25lIHNv
-IHdlIGNhbiBkbyBtb3JlIGludGVyZXN0aW5nCj4gdGhpbmdzIDpQCgpOb3cgSSBhbSBhIGJpdCBt
-b3JlIGNvbmZ1c2VkLCBiZWNhdXNlIGFib3ZlIEkgZ290IHRoZSBpbXByZXNzaW9uIHlvdQp3ZXJl
-IHdpdGhkcmF3aW5nIHlvdXIgcy1vLWIsIGJ1dCBub3cgaXQgc291bmRzIGxpa2UgeW91IHdhbnQg
-dG8gbW92ZQppdCBmb3J3YXJkLgoKSXQgc291bmRlZCBsaWtlIEZyaWVkZXIgd2FzIG1ha2luZyBz
-b21lIHByb2dyZXNzIG9uIHVuZGVyc3RhbmRpbmcgYQpsaXR0bGUgbW9yZSBhYm91dCB0aGUgZnJh
-Y3Rpb25hbCBkaXZpZGVyLgoKPgo+IHsKPiAgICAgdTMyIGludF9kaXZfY2xrLCBmcmFjX2Rpdl9j
-bGs7Cj4gICAgIGludCBpOwo+ICAgICB1MTYgbTsKPiAgICAgdTggcCwgczsKPgo+ICAgICAvLyAo
-SSBoYXZlbid0IGdpdmVuIHVwIG9uIHRoYXQgKjUgdG8gbW92ZSBpbnNpZGUgdGhpcyBmdW5jdGlv
-bi4uLikKCkkgd2FudGVkIHRvIGtlZXAgdGhlIFBNUyBjYWxjdWxhdG9yIHJldHVybmluZyB0aGUg
-cmVhbCBjbG9jayB2YWx1ZQpzaW5jZSB0aGUgY2FsY3VsYXRpb25zIGFyZSBiYXNlZCBvbiBlcXVh
-dGlvbiBpbiB0aGUgcmVmIG1hbnVhbCwgRnBsbCA9CkZyZWYgKiBNIC8gKFAqUykKVGhpcyB3YXks
-IHRoZSBjYWxsaW5nIGZ1bmN0aW9uIGNhbiBkZXRlcm1pbmUgaWYgaXQgbmVlZHMgdG8gYmUKbXVs
-dGlwbGllZCBieSA1LiAgSSBoYXZlbid0IGZ1bGx5IGRldGVybWluZWQgaG93IHRoZSBmcmFjdGlv
-bmFsCmNhbGN1bGF0b3IgZGV0ZXJtaW5lcyB3aGF0IGZyZXF1ZW5jeSBpdCB3YW50cyBmb3IgYSB0
-YXJnZXQgZnJlcXVlbmN5LAphbmQgdXNpbmcgdGhlIHZhbHVlcyBmb3IgUCwgTSBhbmQgUyBmcm9t
-IHRoZSBmcmFjdGlvbmFsIGRpdmlkZXIKZG9lc24ndCBzZWVtIHRvIGFsd2F5cyB5aWVsZCA1eCBs
-aWtlIHRoZXkgZGlkIGZvciB0aGUgdGFibGUgZW50cmllcwp1c2luZyB0aGUgaW50ZWdlciBkaXZp
-ZGVyLgoKSSBhbSBob3Bpbmcgc29tZW9uZSBmcm9tIE5YUCBjYW4gZWxhYm9yYXRlLCBvciBnaXZl
-IHVzIHNvbWUgY2x1ZXMgb24KaG93IHRvIGdldCBiZXR0ZXIgZnJhY3Rpb25hbCBkaXZpZGVyIHZh
-bHVlcy4KCj4gICAgIGludF9kaXZfY2xrID0gZnNsX3NhbXN1bmdfaGRtaV9waHlfZmluZF9wbXMo
-cmF0ZSwgJnAsICZtLCAmcyk7Cj4gICAgIGlmIChpbnRfZGl2X2NsayA9PSByYXRlKQo+ICAgICAg
-ICAgZ290byB1c2VfaW50X2NsazsKPgo+ICAgICBmcmFjX2Rpdl9jbGsgPSBmc2xfc2Ftc3VuZ19o
-ZG1pX3BoeV9maW5kX2x1dChyYXRlLCAmaSk7Cj4gICAgIC8vIChub3QgY29udmluY2VkIHRoYXQg
-Y2hlY2sgYWN0dWFsbHkgYnJpbmdzIG11Y2gsIGJ1dCBpdCdzIG5vdCBsaWtlCj4gICAgIC8vIGl0
-IGh1cnRzIGVpdGhlcikKPiAgICAgaWYgKGZyYWNfZGl2X2NsayA9PSByYXRlKQo+ICAgICAgICAg
-Z290byB1c2VfZnJhY19jbGs7Cj4KPiAgICAgaWYgKGZzbF9zYW1zdW5nX2hkbWlfcGh5X2dldF9j
-bG9zZXN0X3JhdGUocmF0ZSwgaW50X2Rpdl9jbGssCj4gICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIGZyYWNfZGl2X2NsaykgPT0gaW50X2Rpdl9jbGspIHsKPiB1
-c2VfaW50X2NsazoKPiAgICAgICAgIGRldl9kYmcocGh5LT5kZXYsICJmc2xfc2Ftc3VuZ19oZG1p
-X3BoeTogdXNpbmcgaW50ZWdlciBkaXZpZGVyXG4iKTsKPiAgICAgICAgIGNhbGN1bGF0ZWRfcGh5
-X3BsbF9jZmcucGl4Y2xrID0gaW50X2Rpdl9jbGs7Cj4gICAgICAgICBjYWxjdWxhdGVkX3BoeV9w
-bGxfY2ZnLnBsbF9kaXZfcmVnc1swXSA9IEZJRUxEX1BSRVAoUkVHMDFfUE1TX1BfTUFTSywgcCk7
-Cj4gICAgICAgICBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnLnBsbF9kaXZfcmVnc1sxXSA9IG07Cj4g
-ICAgICAgICBjYWxjdWxhdGVkX3BoeV9wbGxfY2ZnLnBsbF9kaXZfcmVnc1syXSA9IEZJRUxEX1BS
-RVAoUkVHMDNfUE1TX1NfTUFTSywgcy0xKTsKPiAgICAgICAgIC8qIHBsbF9kaXZfcmVncyAzLTYg
-YXJlIGZpeGVkIGFuZCBwcmUtZGVmaW5lZCBhbHJlYWR5ICovCj4gICAgICAgICBwaHktPmN1cl9j
-ZmcgID0gJmNhbGN1bGF0ZWRfcGh5X3BsbF9jZmc7Cj4gICAgIH0gZWxzZSB7Cj4gdXNlX2ZyYWNf
-Y2xrOgo+ICAgICAgICAgZGV2X2RiZyhwaHktPmRldiwgImZzbF9zYW1zdW5nX2hkbWlfcGh5OiB1
-c2luZyBmcmFjdGlvbmFsIGRpdmlkZXJcbiIpOwo+ICAgICAgICAgcGh5LT5jdXJfY2ZnID0gJnBo
-eV9wbGxfY2ZnW2ldOwo+ICAgICB9Cj4gICAgIHJldHVybiBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9j
-b25maWd1cmUocGh5LCBwaHktPmN1cl9jZmcpOwo+IH0KPgo+IC0tCj4gRG9taW5pcXVlCgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Adam Ford wrote on Thu, Sep 05, 2024 at 07:57:36PM -0500:
+> > > Signed-off-by: Dominique Martinet <dominique.martinet@atmark-techno.com>
+> >
+> > b4 (or whatever you're using) probably picked that up from the patch I
+> > included in my reply to this patch, this sob should go away.
+> >
+> For each iteration, I grabbed the patches from patchwork which
+> contained any s-o-b messages, if present.  I didn't add anything
+> manually.
+
+Yes, I'm just saying the tool got confused - I replied to an earlier
+iteration of this patch with a quote of the 0.5% tolerance patch I
+properly sent afterwards here:
+https://lore.kernel.org/all/ZtaawD3vb8gmnVmO@atmark-techno.com/
+
+And it picked the sob from the patch, that I hadn't intended to be added
+as a review -- from my understanding a sob is something you'd add if you
+pick the patch through your tree (e.g. I add sob for patches I apply
+through the 9p tree I maintain), but not something to give on reviews.
+I'll reply to individual patches with reviewed-by/tested-by once this
+thread has settled down; I don't have more comments than what I sent
+just now, so I think this is almost ready.
+
+
+> > > +static u32 fsl_samsung_hdmi_phy_get_closest_rate(unsigned long rate,
+> > > +                                              u32 int_div_clk, u32 frac_div_clk)
+> > > +{
+> > > +     /* The int_div_clk may be greater than rate, so cast it and use ABS */
+> > > +     if (abs((long)rate - (long)int_div_clk) < (rate - frac_div_clk))
+> >
+> > I still think `rate - frac_div_clk` might not always hold in the future
+> > (because there is no intrinsic reason we'd pick the smaller end in case
+> > of inexact match and a future improvement might change this to the
+> > closest value as well), so I'll argue again for having both use abs(),
+> > but at least there's only one place to update if that changes in the
+> > future now so hopefully whoever does this will notice...
+> 
+> I can add the ABS on the fractional divider.  I left it out on purpose
+> since the LUT table always return a value equal or less, so the extra
+> ABS seemed like busy work.  However, I can see the argument for being
+> consistent.
+
+Yeah, I agree it's not needed right now; I won't insist on this, just
+saying I prefer consistency/future-proofing here.
+
+> > > +             return int_div_clk;
+> > > +
+> > > +     return frac_div_clk;
+> > > +}
+> > > +
+> > >  static long phy_clk_round_rate(struct clk_hw *hw,
+> > >                              unsigned long rate, unsigned long *parent_rate)
+> > >  {
+> > > @@ -563,6 +573,7 @@ static long phy_clk_round_rate(struct clk_hw *hw,
+> > >       for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
+> > >               if (phy_pll_cfg[i].pixclk <= rate)
+> > >                       break;
+> > > +
+> >
+> > (unrelated)
+> 
+> I don't understand what you're asking here.
+
+This chunk is just adding a blank line that's not related to the rest of
+the patch; it's fine, just pointed it out if it wasn't intended.
+(these are usually leftovers from tests or something like that)
+
+> > > -             phy->cur_cfg  = &calculated_phy_pll_cfg;
+> > > +             goto done;
+> > >       } else {
+> > >               /* Otherwise, search the LUT */
+> > > -             dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using fractional divider\n");
+> > > -             for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
+> > > -                     if (phy_pll_cfg[i].pixclk <= rate)
+> > > +             for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--) {
+> > > +                     if (phy_pll_cfg[i].pixclk == rate) {
+> > > +                             dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using fractional divider\n");
+> >
+> > nitpick: might make sense to print what was picked in case of inexact
+> > match as well, but these are dbg warning so probably fine either way.
+> 
+> I can add the actual values returned.
+
+Note my argument here wasn't about having the values on this line, it's
+that the inexact case (when comparing with
+fsl_samsung_hdmi_phy_get_closest_rate) doesn't print either line
+
+(having the values can't hurt for dbg though, I think it could be useful
+if you rework this)
+
+> > overall I find the flow of this function hard to read; it's a bit ugly
+> > flow-wise but jumping in the clock comparison 'if' might help trim this?
+> > (and if we're going out of our way to factor out the diff, maybe the lut
+> > lookup could be as well)
+> >
+> > But I'm probably just being overcritical here, it's fine as is if you
+> > pefer your version, just writing down this as an illustration of what I
+> > meant with the above sentence as I'm not sure I was clear -- I'll be
+> > just as happy to consider this series done so we can do more interesting
+> > things :P
+> 
+> Now I am a bit more confused, because above I got the impression you
+> were withdrawing your s-o-b, but now it sounds like you want to move
+> it forward.
+
+I don't have any strong opinion here: I generally dislike nitpicking
+about form, and value the progress you've done more than fixing the flow
+of this function (e.g. this function already is good/progress from what
+we have right now, we don't need perfect)
+
+withdrawing my s-o-b doesn't meant I disagree with the patch, I just
+hadn't willingly given it. If you don't mind reworking the patch a bit
+I'll retest the new version, otherwise I'm fine approving this as is.
+
+> It sounded like Frieder was making some progress on understanding a
+> little more about the fractional divider.
+
+That's awesome!
+I think we can/want to get this merged first, and we can improve
+with fractional divider calculations in a later iteration to get rid of
+the LUT altogether; it'll be easier for other users of the chip to go a
+step at a time as well if they notice a breakage.
+
+> >     // (I haven't given up on that *5 to move inside this function...)
+> 
+> I wanted to keep the PMS calculator returning the real clock value
+> since the calculations are based on equation in the ref manual, Fpll =
+> Fref * M / (P*S)
+> This way, the calling function can determine if it needs to be
+> multiplied by 5.  I haven't fully determined how the fractional
+> calculator determines what frequency it wants for a target frequency,
+> and using the values for P, M and S from the fractional divider
+> doesn't seem to always yield 5x like they did for the table entries
+> using the integer divider.
+
+The way I see it is that 5x is an artifact of the PMS calculation:
+the caller doesn't want '5x rate', it wants 'rate', and actually setting
+the p/m/s values provided by the function gets us 'rate', so it feels
+like that's not the caller should have to worry about.. When we add
+fractional divider support then it'll be the calculator's job to
+determine if/when it needs that 5x.
+
+But if I understand what you're saying, fsl_samsung_hdmi_phy_find_pms()
+is not a pms specific to the NXP chip, but something more general to any
+integer divisor that is better kept more generic if it weren't for the
+few references to our hardware (e.g. limits on m)?
+
+If so then I guess I can understand your position, I wouldn't go as far
+as saying it warrants another level of indirection so I guess it's fine
+as is.
+
+(In a similar line of thought, had I implemented this I would have had
+the function not return generic p/m/s but return the pll registers
+directly -- it took me a moment to check why we were setting regs[2] to
+`s-1` and confirming we had s>1...)
+
+
+
+Anyway, once again I don't feel like I am in any position to be preachy
+about all of this, so I'm fine with this patch as is - please take of it
+what you agree with/want to rework and we can leave the rest here as far
+as I'm concerned.
+-- 
+Dominique
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
