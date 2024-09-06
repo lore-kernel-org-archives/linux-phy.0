@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E85C1CE7AA3
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 13:00:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC741CE7B06
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 13:01:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uIIlN9JgzXkSfTQ3it75bmm5Y8CGORNyjqyZrnjVk54=; b=MbxrIu2YsczOCf
-	sub/mKINIkUlChDzV63yDIPDRntMpxiXteBMFqZ54bLmkZdVsFaLPuV+gyZwtafqwwZeojtxZrZji
-	0UE/tHK7PJvfPC7WULo9ZN+wySsjRFZLOgqk2qVOPbRtyaxbTfZNezZqarQ3MdJOacJcw8kCiIlVo
-	36jesGrFyPmqnt76R0diPmdSic/UXrY3pWo1i7Le8ohcFohM81C32mrLfQL1YEBx+Q2X63cGzfUUu
-	hKFdB3p9eFPvefb8UC0tTpBxxPpwwhnqSo+C29Hy5j8Q2CqdH3qq0bK8F+vKDq3JjsqdeHmMg3pOl
-	aVZm7FvBLi5Uimm5KEtQ==;
+	List-Owner; bh=bwG01PhkMHhaSUt774m0N7ufwFVRqS9o5CLC5MKVvas=; b=m/04Sye35oja5k
+	EJyy1vQVtrpyTQ7nuGqJfdtQDYvxOpJGDyPejpOaMEPdlPkC1i3X+etb0XZCxlBLTI3SXhSXgx0dt
+	ChPYgcdKgpbHvbPW1Cpqw2OHDp8snJJEotoT1Y934+mg5tj5xTh4V6JnQ0K+AzshdLttu4O/rpJzq
+	kU/oGGBbAj/4ZtOalyld24YjQj8xFjZoh53ve54ZlmF5jU50HcyigRZVlE6d0VqWEGm/jkivlr0lx
+	C98cDEowUbmNn5ZyM1FTKv8GVT5YFvHp9FFHFaQyffJRji29ZXXrXU1MZCmwLfBmo/IZ0q/1dkLiR
+	1afKKEs6UQRwrCOGfn3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smYZN-0000000CGVy-2ID4;
-	Fri, 06 Sep 2024 13:00:09 +0000
+	id 1smYaL-0000000CGmu-1zMH;
+	Fri, 06 Sep 2024 13:01:09 +0000
 Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smYTX-0000000CF8a-3Qpp;
-	Fri, 06 Sep 2024 12:54:09 +0000
+	id 1smYTZ-0000000CF8a-2TKp;
+	Fri, 06 Sep 2024 12:54:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1725627247; x=1757163247;
+  t=1725627249; x=1757163249;
   h=from:date:subject:mime-version:content-transfer-encoding:
    message-id:references:in-reply-to:to:cc;
-  bh=AlVAS36lPr5nte9AlFxlAgXuPIW2QqGeW0nzZYxYbUo=;
-  b=mPMraro4+MIQi//gRXF9VO2aHSAIj2TFeWSR+sMuvpoI30PqeDtoomHv
-   2cblZDIqKlgL5lZDF1w09AG9asSrLnv7FVpDu2xCul9OcFlwb4iI//QFN
-   kYTdZX7EZMUoyx06a0B7ZEc74hgSWgcsLmpuR0EicvYSgywXR19e1/Kfg
-   cQBGtt9RjWHx0jgXQmi7RsllhLi3c2JR9KtxTde+v31/8eZOpEnAluSGb
-   r3DTD+Bo4g61N2JeR1G9sknK09KmS120WZ6EWaIT5/nYG5ILnf9W5ZvYO
-   T7WuPelvxZf6DTx+5+s4RDcjm0ZMntY0gUDLVArOYYAcfw5BkwLIuHZDZ
+  bh=YuZBdtQE5MqcdrUj6rfc2zVrFcaYBODaSIfNfhlSw14=;
+  b=KttoufTXEnmIbLoz+lsc6w54zS1tAPIpkxwxj9Gt7MXMEmstlv820Pyr
+   6XVKaipVTNVp4vFT3GvDRrr914A0+wdWtd6NpCgoCDRzRUUhNH4QbGWno
+   8d+yL+6F2s9TE4Y6IFbX36BtjUYlRVHEB/IcjnSvVs+yfvnJOCOz+aFZi
+   XBHYxwHtiuy2uHAtGMh/yzaV2Q+9M1vWdnJj7jXQkeT1GUDjru56EDttg
+   PRe1DeD/U8QRefwypn1a5/wQYGesybwyn5WQyR+Jvski7SIy8F//sp8/Q
+   /VMz1aI3rjAi+7RmO7hndVZsilLXP7mW8BVUkmgF8dL6IAgwMaVSZCDru
    w==;
 X-CSE-ConnectionGUID: sLMTJciFQoOe3QYYo7sv+w==
-X-CSE-MsgGUID: OalJaReFTrSgwf+gWS1XUA==
+X-CSE-MsgGUID: xjGOYz0LQ8G5DM5GODpyag==
 X-IronPort-AV: E=Sophos;i="6.10,207,1719903600"; 
-   d="scan'208";a="31334927"
+   d="scan'208";a="31334947"
 X-Amp-Result: SKIPPED(no attachment in message)
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa4.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 06 Sep 2024 05:54:04 -0700
+  by esa4.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 06 Sep 2024 05:54:06 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Fri, 6 Sep 2024 05:53:24 -0700
+ 15.1.2507.35; Fri, 6 Sep 2024 05:53:32 -0700
 Received: from DEN-DL-M70577.microchip.com (10.10.85.11) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.2507.35 via Frontend Transport; Fri, 6 Sep 2024 05:53:22 -0700
+ 15.1.2507.35 via Frontend Transport; Fri, 6 Sep 2024 05:53:29 -0700
 From: Daniel Machon <daniel.machon@microchip.com>
-Date: Fri, 6 Sep 2024 14:52:42 +0200
-Subject: [PATCH 5/9] phy: sparx5-serdes: add function for getting the CMU
- index
+Date: Fri, 6 Sep 2024 14:52:45 +0200
+Subject: [PATCH 8/9] dt-bindings: phy: sparx5: document lan969x in sparx5
+ dt-bindings
 MIME-Version: 1.0
-Message-ID: <20240906-sparx5-lan969x-serdes-driver-v1-5-8d630614c58a@microchip.com>
+Message-ID: <20240906-sparx5-lan969x-serdes-driver-v1-8-8d630614c58a@microchip.com>
 References: <20240906-sparx5-lan969x-serdes-driver-v1-0-8d630614c58a@microchip.com>
 In-Reply-To: <20240906-sparx5-lan969x-serdes-driver-v1-0-8d630614c58a@microchip.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -70,8 +70,9 @@ CC: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
 X-Mailer: b4 0.14-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240906_055407_956034_84290595 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20240906_055409_849117_1361491F 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,79 +89,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The SERDES to CMU mapping is different on Sparx5 and lan969x. Therefore
-create a function for getting the CMU index on Sparx5.
+Document lan969x in the existing Sparx5 dt-bindings.
 
 Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
 Reviewed-by: Steen Hegelund <Steen.Hegelund@microchip.com>
 ---
- drivers/phy/microchip/sparx5_serdes.c | 11 ++---------
- drivers/phy/microchip/sparx5_serdes.h |  9 +++++++++
- 2 files changed, 11 insertions(+), 9 deletions(-)
+ .../bindings/phy/microchip,sparx5-serdes.yaml          | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
-index b1376a142b14..5b918a2716dd 100644
---- a/drivers/phy/microchip/sparx5_serdes.c
-+++ b/drivers/phy/microchip/sparx5_serdes.c
-@@ -28,14 +28,6 @@
- /* Optimal power settings from GUC */
- #define SPX5_SERDES_QUIET_MODE_VAL 0x01ef4e0c
+diff --git a/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml b/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml
+index bdbdb3bbddbe..1e07a311e8a5 100644
+--- a/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml
++++ b/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml
+@@ -8,6 +8,7 @@ title: Microchip Sparx5 Serdes controller
  
--enum sparx5_10g28cmu_mode {
--	SPX5_SD10G28_CMU_MAIN = 0,
--	SPX5_SD10G28_CMU_AUX1 = 1,
--	SPX5_SD10G28_CMU_AUX2 = 3,
--	SPX5_SD10G28_CMU_NONE = 4,
--	SPX5_SD10G28_CMU_MAX,
--};
--
- enum sparx5_sd25g28_mode_preset_type {
- 	SPX5_SD25G28_MODE_PRESET_25000,
- 	SPX5_SD25G28_MODE_PRESET_10000,
-@@ -1648,7 +1640,7 @@ static int sparx5_sd10g28_apply_params(struct sparx5_serdes_macro *macro,
- 	if (params->skip_cmu_cfg)
- 		return 0;
+ maintainers:
+   - Steen Hegelund <steen.hegelund@microchip.com>
++  - Daniel Machon <daniel.machon@microchip.com>
  
--	cmu_idx = sparx5_serdes_cmu_get(params->cmu_sel, lane_index);
-+	cmu_idx = priv->data->ops.serdes_cmu_get(params->cmu_sel, macro->sidx);
- 	err = sparx5_cmu_cfg(priv, cmu_idx);
- 	if (err)
- 		return err;
-@@ -2520,6 +2512,7 @@ static const struct sparx5_serdes_match_data sparx5_desc = {
- 	},
- 	.ops = {
- 		.serdes_type_set      = &sparx5_serdes_type_set,
-+		.serdes_cmu_get       = &sparx5_serdes_cmu_get,
- 	},
- };
+ description: |
+   The Sparx5 SERDES interfaces share the same basic functionality, but
+@@ -62,12 +63,17 @@ description: |
+   * 10.3125 Gbps (10GBASE-R/10GBASE-KR/USXGMII)
+   * 25.78125 Gbps (25GBASE-KR/25GBASE-CR/25GBASE-SR/25GBASE-LR/25GBASE-ER)
  
-diff --git a/drivers/phy/microchip/sparx5_serdes.h b/drivers/phy/microchip/sparx5_serdes.h
-index 785c7fe0bbeb..a7e92c1330e9 100644
---- a/drivers/phy/microchip/sparx5_serdes.h
-+++ b/drivers/phy/microchip/sparx5_serdes.h
-@@ -26,6 +26,14 @@ enum sparx5_serdes_mode {
- 	SPX5_SD_MODE_SFI,
- };
- 
-+enum sparx5_10g28cmu_mode {
-+	SPX5_SD10G28_CMU_MAIN = 0,
-+	SPX5_SD10G28_CMU_AUX1 = 1,
-+	SPX5_SD10G28_CMU_AUX2 = 3,
-+	SPX5_SD10G28_CMU_NONE = 4,
-+	SPX5_SD10G28_CMU_MAX,
-+};
++  lan969x has ten SERDES10G interfaces that share the same features, operating
++  modes and data rates as the equivalent Sparx5 SERDES10G interfaces.
 +
- struct sparx5_serdes_macro {
- 	struct sparx5_serdes_private *priv;
- 	u32 sidx;
-@@ -44,6 +52,7 @@ struct sparx5_serdes_consts {
+ properties:
+   $nodename:
+     pattern: "^serdes@[0-9a-f]+$"
  
- struct sparx5_serdes_ops {
- 	void (*serdes_type_set)(struct sparx5_serdes_macro *macro, int sidx);
-+	int (*serdes_cmu_get)(enum sparx5_10g28cmu_mode mode, int sd_index);
- };
+   compatible:
+-    const: microchip,sparx5-serdes
++    enum:
++      - microchip,sparx5-serdes
++      - microchip,lan969x-serdes
  
- struct sparx5_serdes_match_data {
+   reg:
+     minItems: 1
+@@ -90,11 +96,19 @@ additionalProperties: false
+ 
+ examples:
+   - |
+-    serdes: serdes@10808000 {
++    serdes@10808000 {
+       compatible = "microchip,sparx5-serdes";
+       #phy-cells = <1>;
+       clocks = <&sys_clk>;
+       reg = <0x10808000 0x5d0000>;
+     };
+ 
++  - |
++    serdes@e3410000 {
++      compatible = "microchip,lan969x-serdes";
++      #phy-cells = <1>;
++      clocks = <&fabric_clk>;
++      reg = <0xe3410000 0x150000>;
++    };
++
+ ...
 
 -- 
 2.34.1
