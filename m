@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7709BCE7AA3
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 13:01:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C2A8CE7B06
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 13:03:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rl2ciToGjJ+ffCCCYhEx3yBvgYjogNKkrda/bGVe2ek=; b=js9VrP6jqF9Lox
-	buBvnh9i70RDX1PD8WCADHpyeRgxInDmwhR5FPEH4P3oz6MwS1wvWJ4N9eXfC2yzACf5xHqJBSZzj
-	0Sff/+lUqEKH2+EBWZVVW5T0YVX6H/9Tw4oLwF2e5PMLm5+yARptpX3ZebX7OQhgLDyQrMNkrfmcT
-	OzNtccxB5tUkT86PsvAA2IN5ekE3xIfHfAz11tzgIA4UavFyV6wK2R/Br1OHHuNujACED+oz8EZgj
-	xwo/5YQgRcBo11+KRio+aMT+6LHajTKsduixZiicgtDwaRxAmhzApNxGTSFu9KzyS0CSaFy8IYHaS
-	ZzhlUF06j5aKUlkyrR0A==;
+	List-Owner; bh=w8U0Qd13Dg2g/sXCDRkJXY+Kkf7QGlsgj2f0qWoXIVg=; b=1/lKUohbNLrSMw
+	xDOezeRalNhCP5Z/b/e99XZE+p3VhbnksXbTsZR8W3mYNfcJNLeuKDlENMYbL5h3IGbr6rYH6TLV4
+	v9R5Tk8YTWr++2STmyFOEfP2fifNGuUbnQOGGmT04nvJNxn2fWLU8NCE/MZBtp8u1yJQBM/E7I0B1
+	oKh2pARTZVtdUt2O8IEpRN7aJpRFpKRIgiqB3z0i+DjXyUOic5mPjKjwFX1tt8nxGrz8ZgXMH2Qq/
+	9TPIAdZQOvpzS+S86y921Xw5zBFVHuk/01cmZ7T7Sy9kXkhWmk0Oe92gp9rJo7l8sfGsKYC3x1iVd
+	5oPiKEkq5bolPGmIw2kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smYaL-0000000CGnF-41fz;
-	Fri, 06 Sep 2024 13:01:09 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1smYcL-0000000CHQB-0KYo;
+	Fri, 06 Sep 2024 13:03:13 +0000
+Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smYTZ-0000000CFAO-3cJo;
-	Fri, 06 Sep 2024 12:54:11 +0000
+	id 1smYTe-0000000CFCs-40Tz;
+	Fri, 06 Sep 2024 12:54:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1725627249; x=1757163249;
+  t=1725627254; x=1757163254;
   h=from:date:subject:mime-version:content-transfer-encoding:
    message-id:references:in-reply-to:to:cc;
-  bh=7l9NrJzDRwjdZHAMyRsabzZVk1Sx9YAMGgdYTdk2pig=;
-  b=RupywhfZLVF0s62X31MNJ7H3ryYh2pv/+H+OL+TgZiBtP6Ss7ILxnEV0
-   Q31pE9cJ7MG8YRt1ulWplvtGBcaTPWeOpFnKEfXNW0snIuoXMIQJop7ws
-   +/4IyoZEIUcDahOfgdIlYW4d6jgsL6BH8anuRyaKs6cxyR0JSuhpO9KcG
-   y4Y3ceqIlA3WmppiFP3pYPHDNQCNONYsYk5bIGLmHtS/57cKJb7CyLrV0
-   tQ6sQmXgZBDejejp8XjExCxY6yZ6nsypLsgN9u63EtClvyC5Cf8BrAaW1
-   7o38RVFNZuP9Yg8EuMxFzGmAZ0i6+gjubIJtvhuZq+i9LS11tRruy5V6n
-   w==;
-X-CSE-ConnectionGUID: sLMTJciFQoOe3QYYo7sv+w==
-X-CSE-MsgGUID: sd/0LsJtRLK/d2HFUXfY3w==
+  bh=tjcjEhjpTxjl2BLDskeVYj2Lk7MhcvUneySLl+PKUE8=;
+  b=mWHF30WyqsRdk1fpgnAOd9GpIllP9xNlUzFvp/rpbYoF7xm+OvdaZd4M
+   3jAERdBoAM+z4bP8riiCq3jd+n9BGxsRG7gnBmVnkGyr0GsbnKjSDOebi
+   dEFLmoIWZlDD1QMZvmJhukBdUR09B0ksVNY82xlGZdrBsvpULXgV7eyMC
+   YA8i8RjUW6cSKMq28RKdQUVes6Y9Yy5/p1pPmAGu9WXMVCdIX1j06KO7A
+   996pU9wj/vEfNsmAaNC47iUeNFV8wlGdRPiLDGc7rsuJ/doMwdxhDBfVH
+   crHhVyddn28mOZumnJbuiA0DBSS0LBFou6R64/rWkE+i9MN3Ex4TyuMjH
+   Q==;
+X-CSE-ConnectionGUID: aGkh2dtQQfCI8QG2frKi1g==
+X-CSE-MsgGUID: b7FA8d3ASK2gCHjhEpqjfw==
 X-IronPort-AV: E=Sophos;i="6.10,207,1719903600"; 
-   d="scan'208";a="31334948"
+   d="scan'208";a="262386468"
 X-Amp-Result: SKIPPED(no attachment in message)
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa4.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 06 Sep 2024 05:54:06 -0700
+  by esa5.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 06 Sep 2024 05:54:13 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Fri, 6 Sep 2024 05:53:34 -0700
+ 15.1.2507.35; Fri, 6 Sep 2024 05:53:29 -0700
 Received: from DEN-DL-M70577.microchip.com (10.10.85.11) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.2507.35 via Frontend Transport; Fri, 6 Sep 2024 05:53:32 -0700
+ 15.1.2507.35 via Frontend Transport; Fri, 6 Sep 2024 05:53:27 -0700
 From: Daniel Machon <daniel.machon@microchip.com>
-Date: Fri, 6 Sep 2024 14:52:46 +0200
-Subject: [PATCH 9/9] phy: lan969x-serdes: add support for lan969x serdes
- driver
+Date: Fri, 6 Sep 2024 14:52:44 +0200
+Subject: [PATCH 7/9] phy: sparx5-serdes: add support for branching on chip
+ type
 MIME-Version: 1.0
-Message-ID: <20240906-sparx5-lan969x-serdes-driver-v1-9-8d630614c58a@microchip.com>
+Message-ID: <20240906-sparx5-lan969x-serdes-driver-v1-7-8d630614c58a@microchip.com>
 References: <20240906-sparx5-lan969x-serdes-driver-v1-0-8d630614c58a@microchip.com>
 In-Reply-To: <20240906-sparx5-lan969x-serdes-driver-v1-0-8d630614c58a@microchip.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -70,8 +70,8 @@ CC: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
 X-Mailer: b4 0.14-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240906_055410_214861_C7C6F08C 
-X-CRM114-Status: GOOD (  18.62  )
+X-CRM114-CacheID: sfid-20240906_055415_172781_82201709 
+X-CRM114-Status: GOOD (  17.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,177 +88,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for lan969x SERDES driver. Lan969x has ten 10G SERDES'es
-which share the same features and data rates as the Sparx5 SERDES'es.
+In preparation for lan969x, add a way to branch out on code that is to
+be executed on either Sparx5 or lan969x.  Initially, this is required to
+branch out when checking the SERDES types and SERDES speeds, since the
+handling of these differ on the two platforms. This will also be used by
+the lan969x driver introduced in a subsequent patch.
 
 Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
 Reviewed-by: Steen Hegelund <Steen.Hegelund@microchip.com>
 ---
- drivers/phy/microchip/sparx5_serdes.c | 88 +++++++++++++++++++++++++++++++++++
- drivers/phy/microchip/sparx5_serdes.h |  2 +
- 2 files changed, 90 insertions(+)
+ drivers/phy/microchip/sparx5_serdes.c | 29 ++++++++++++++++++-----------
+ drivers/phy/microchip/sparx5_serdes.h |  5 +++++
+ 2 files changed, 23 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
-index 05fdf225ff43..39ebc5b21258 100644
+index 8a716bfaa023..05fdf225ff43 100644
 --- a/drivers/phy/microchip/sparx5_serdes.c
 +++ b/drivers/phy/microchip/sparx5_serdes.c
-@@ -25,6 +25,8 @@
- #define SPX5_SERDES_25G_START 25
- #define SPX5_SERDES_6G10G_CNT SPX5_SERDES_25G_START
- 
-+#define LAN969X_SERDES_10G_CNT 10
-+
- /* Optimal power settings from GUC */
- #define SPX5_SERDES_QUIET_MODE_VAL 0x01ef4e0c
- 
-@@ -36,6 +38,13 @@ const unsigned int sparx5_serdes_tsize[TSIZE_LAST] = {
- 	[TC_SD_LANE] = 25,
- };
- 
-+const unsigned int lan969x_serdes_tsize[TSIZE_LAST] = {
-+	[TC_SD10G_LANE] = 10,
-+	[TC_SD_CMU] = 6,
-+	[TC_SD_CMU_CFG] = 6,
-+	[TC_SD_LANE] = 10,
-+};
-+
- /* Pointer to the register target size table */
- const unsigned int *tsize;
- 
-@@ -1096,6 +1105,24 @@ static int sparx5_serdes_cmu_get(enum sparx5_10g28cmu_mode mode, int sd_index)
- 	return sparx5_serdes_cmu_map[mode][sd_index];
- }
- 
-+/* Map of 6G/10G serdes mode and index to CMU index. */
-+static const int
-+lan969x_serdes_cmu_map[SPX5_SD10G28_CMU_MAX][LAN969X_SERDES_10G_CNT] = {
-+	[SPX5_SD10G28_CMU_MAIN] = { 2, 2, 2, 2, 2,
-+				    2, 2, 2, 5, 5 },
-+	[SPX5_SD10G28_CMU_AUX1] = { 0, 0, 3, 3, 3,
-+				    3, 3, 3, 3, 3 },
-+	[SPX5_SD10G28_CMU_AUX2] = { 1, 1, 1, 1, 4,
-+				    4, 4, 4, 4, 4 },
-+	[SPX5_SD10G28_CMU_NONE] = { 1, 1, 1, 1, 4,
-+				    4, 4, 4, 4, 4 },
-+};
-+
-+static int lan969x_serdes_cmu_get(enum sparx5_10g28cmu_mode mode, int sd_index)
-+{
-+	return lan969x_serdes_cmu_map[mode][sd_index];
-+}
-+
- static void sparx5_serdes_cmu_power_off(struct sparx5_serdes_private *priv)
+@@ -2298,10 +2298,12 @@ static int sparx5_serdes_set_speed(struct phy *phy, int speed)
  {
- 	void __iomem *cmu_inst, *cmu_cfg_inst;
-@@ -2184,6 +2211,10 @@ static int sparx5_serdes_clock_config(struct sparx5_serdes_macro *macro)
- {
- 	struct sparx5_serdes_private *priv = macro->priv;
+ 	struct sparx5_serdes_macro *macro = phy_get_drvdata(phy);
  
-+	/* Clock is auto-detected in 100Base-FX mode on lan969x */
-+	if (priv->data->type == SPX5_TARGET_LAN969X)
-+		return 0;
-+
- 	if (macro->serdesmode == SPX5_SD_MODE_100FX) {
- 		u32 freq = priv->coreclock == 250000000 ? 2 :
- 			priv->coreclock == 500000000 ? 1 : 0;
-@@ -2395,6 +2426,12 @@ static void sparx5_serdes_type_set(struct sparx5_serdes_macro *macro, int sidx)
- 	}
- }
- 
-+static void lan969x_serdes_type_set(struct sparx5_serdes_macro *macro, int sidx)
-+{
-+	macro->serdestype = SPX5_SDT_10G;
-+	macro->stpidx = macro->sidx;
-+}
-+
- static int sparx5_phy_create(struct sparx5_serdes_private *priv,
- 			   int idx, struct phy **phy)
- {
-@@ -2519,6 +2556,41 @@ static struct sparx5_serdes_io_resource sparx5_serdes_iomap[] =  {
- 	{ TARGET_SD_LANE_25G + 7, 0x5c8000 }, /* 0x610dd0000: sd_lane_25g_32 */
- };
- 
-+static const struct sparx5_serdes_io_resource lan969x_serdes_iomap[] =  {
-+	{ TARGET_SD_CMU,               0x0     }, /* 0xe3410000 */
-+	{ TARGET_SD_CMU +  1,          0x8000  }, /* 0xe3418000 */
-+	{ TARGET_SD_CMU +  2,          0x10000 }, /* 0xe3420000 */
-+	{ TARGET_SD_CMU +  3,          0x18000 }, /* 0xe3428000 */
-+	{ TARGET_SD_CMU +  4,          0x20000 }, /* 0xe3430000 */
-+	{ TARGET_SD_CMU +  5,          0x28000 }, /* 0xe3438000 */
-+	{ TARGET_SD_CMU_CFG,           0x30000 }, /* 0xe3440000 */
-+	{ TARGET_SD_CMU_CFG +  1,      0x38000 }, /* 0xe3448000 */
-+	{ TARGET_SD_CMU_CFG +  2,      0x40000 }, /* 0xe3450000 */
-+	{ TARGET_SD_CMU_CFG +  3,      0x48000 }, /* 0xe3458000 */
-+	{ TARGET_SD_CMU_CFG +  4,      0x50000 }, /* 0xe3460000 */
-+	{ TARGET_SD_CMU_CFG +  5,      0x58000 }, /* 0xe3468000 */
-+	{ TARGET_SD10G_LANE,           0x60000 }, /* 0xe3470000 */
-+	{ TARGET_SD10G_LANE +  1,      0x68000 }, /* 0xe3478000 */
-+	{ TARGET_SD10G_LANE +  2,      0x70000 }, /* 0xe3480000 */
-+	{ TARGET_SD10G_LANE +  3,      0x78000 }, /* 0xe3488000 */
-+	{ TARGET_SD10G_LANE +  4,      0x80000 }, /* 0xe3490000 */
-+	{ TARGET_SD10G_LANE +  5,      0x88000 }, /* 0xe3498000 */
-+	{ TARGET_SD10G_LANE +  6,      0x90000 }, /* 0xe34a0000 */
-+	{ TARGET_SD10G_LANE +  7,      0x98000 }, /* 0xe34a8000 */
-+	{ TARGET_SD10G_LANE +  8,      0xa0000 }, /* 0xe34b0000 */
-+	{ TARGET_SD10G_LANE +  9,      0xa8000 }, /* 0xe34b8000 */
-+	{ TARGET_SD_LANE,             0x100000 }, /* 0xe3510000 */
-+	{ TARGET_SD_LANE +  1,        0x108000 }, /* 0xe3518000 */
-+	{ TARGET_SD_LANE +  2,        0x110000 }, /* 0xe3520000 */
-+	{ TARGET_SD_LANE +  3,        0x118000 }, /* 0xe3528000 */
-+	{ TARGET_SD_LANE +  4,        0x120000 }, /* 0xe3530000 */
-+	{ TARGET_SD_LANE +  5,        0x128000 }, /* 0xe3538000 */
-+	{ TARGET_SD_LANE +  6,        0x130000 }, /* 0xe3540000 */
-+	{ TARGET_SD_LANE +  7,        0x138000 }, /* 0xe3548000 */
-+	{ TARGET_SD_LANE +  8,        0x140000 }, /* 0xe3550000 */
-+	{ TARGET_SD_LANE +  9,        0x148000 }, /* 0xe3558000 */
-+};
-+
- static const struct sparx5_serdes_match_data sparx5_desc = {
- 	.type = SPX5_TARGET_SPARX5,
- 	.iomap = sparx5_serdes_iomap,
-@@ -2534,6 +2606,21 @@ static const struct sparx5_serdes_match_data sparx5_desc = {
- 	},
- };
- 
-+static const struct sparx5_serdes_match_data lan969x_desc = {
-+	.type = SPX5_TARGET_LAN969X,
-+	.iomap = lan969x_serdes_iomap,
-+	.iomap_size = ARRAY_SIZE(lan969x_serdes_iomap),
-+	.tsize = lan969x_serdes_tsize,
-+	.consts = {
-+		.sd_max       = 10,
-+		.cmu_max      = 6,
-+	},
-+	.ops = {
-+		.serdes_type_set      = &lan969x_serdes_type_set,
-+		.serdes_cmu_get       = &lan969x_serdes_cmu_get,
+-	if (macro->sidx < SPX5_SERDES_10G_START && speed > SPEED_5000)
+-		return -EINVAL;
+-	if (macro->sidx < SPX5_SERDES_25G_START && speed > SPEED_10000)
+-		return -EINVAL;
++	if (macro->priv->data->type == SPX5_TARGET_SPARX5) {
++		if (macro->sidx < SPX5_SERDES_10G_START && speed > SPEED_5000)
++			return -EINVAL;
++		if (macro->sidx < SPX5_SERDES_25G_START && speed > SPEED_10000)
++			return -EINVAL;
 +	}
-+};
-+
- /* Client lookup function, uses serdes index */
- static struct phy *sparx5_serdes_xlate(struct device *dev,
- 				     const struct of_phandle_args *args)
-@@ -2635,6 +2722,7 @@ static int sparx5_serdes_probe(struct platform_device *pdev)
+ 	if (speed != macro->speed) {
+ 		macro->speed = speed;
+ 		if (macro->serdesmode != SPX5_SD_MODE_NONE)
+@@ -2338,11 +2340,14 @@ static int sparx5_serdes_validate(struct phy *phy, enum phy_mode mode,
+ 	if (macro->speed == 0)
+ 		return -EINVAL;
  
- static const struct of_device_id sparx5_serdes_match[] = {
- 	{ .compatible = "microchip,sparx5-serdes", .data = &sparx5_desc },
-+	{ .compatible = "microchip,lan969x-serdes", .data = &lan969x_desc },
- 	{ }
+-	if (macro->sidx < SPX5_SERDES_10G_START && macro->speed > SPEED_5000)
+-		return -EINVAL;
+-	if (macro->sidx < SPX5_SERDES_25G_START && macro->speed > SPEED_10000)
+-		return -EINVAL;
+-
++	if (macro->priv->data->type == SPX5_TARGET_SPARX5) {
++		if (macro->sidx < SPX5_SERDES_10G_START &&
++		    macro->speed > SPEED_5000)
++			return -EINVAL;
++		if (macro->sidx < SPX5_SERDES_25G_START &&
++		    macro->speed > SPEED_10000)
++			return -EINVAL;
++	}
+ 	switch (submode) {
+ 	case PHY_INTERFACE_MODE_1000BASEX:
+ 		if (macro->speed != SPEED_100 && /* This is for 100BASE-FX */
+@@ -2515,6 +2520,7 @@ static struct sparx5_serdes_io_resource sparx5_serdes_iomap[] =  {
  };
- MODULE_DEVICE_TABLE(of, sparx5_serdes_match);
+ 
+ static const struct sparx5_serdes_match_data sparx5_desc = {
++	.type = SPX5_TARGET_SPARX5,
+ 	.iomap = sparx5_serdes_iomap,
+ 	.iomap_size = ARRAY_SIZE(sparx5_serdes_iomap),
+ 	.tsize = sparx5_serdes_tsize,
+@@ -2618,8 +2624,9 @@ static int sparx5_serdes_probe(struct platform_device *pdev)
+ 			return err;
+ 	}
+ 
+-	/* Power down all CMUs by default */
+-	sparx5_serdes_cmu_power_off(priv);
++	/* Power down all CMU's by default */
++	if (priv->data->type == SPX5_TARGET_SPARX5)
++		sparx5_serdes_cmu_power_off(priv);
+ 
+ 	provider = devm_of_phy_provider_register(priv->dev, sparx5_serdes_xlate);
+ 
 diff --git a/drivers/phy/microchip/sparx5_serdes.h b/drivers/phy/microchip/sparx5_serdes.h
-index 1beaa3d05a5d..d7093d0b09c0 100644
+index 50900bf06c4c..1beaa3d05a5d 100644
 --- a/drivers/phy/microchip/sparx5_serdes.h
 +++ b/drivers/phy/microchip/sparx5_serdes.h
-@@ -36,6 +36,8 @@ enum sparx5_10g28cmu_mode {
- 
- enum sparx5_target {
- 	SPX5_TARGET_SPARX5,
-+	SPX5_TARGET_LAN969X,
-+
+@@ -34,6 +34,10 @@ enum sparx5_10g28cmu_mode {
+ 	SPX5_SD10G28_CMU_MAX,
  };
  
++enum sparx5_target {
++	SPX5_TARGET_SPARX5,
++};
++
  struct sparx5_serdes_macro {
+ 	struct sparx5_serdes_private *priv;
+ 	u32 sidx;
+@@ -56,6 +60,7 @@ struct sparx5_serdes_ops {
+ };
+ 
+ struct sparx5_serdes_match_data {
++	enum sparx5_target type;
+ 	const struct sparx5_serdes_consts consts;
+ 	const struct sparx5_serdes_ops ops;
+ 	const struct sparx5_serdes_io_resource *iomap;
 
 -- 
 2.34.1
