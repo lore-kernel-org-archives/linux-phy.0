@@ -4,67 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 491B4CE7B14
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 13:47:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC9F1E6FE41
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 19:58:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DNbcIVdvbRxn/ssJ0hT/foL2eu+T7cWk89SnNeZtBvQ=; b=Iv6S56rerr6rW4
-	920P+/iCJiJs0Nu1PsAVt4kXvkeXK41WXLM6hVRaQdtWeV4XJn1CD1zgwKoVcNLV1rMBowFSK8Ub9
-	EAPivv17604kmsSqIpoo8jhu/U22dTq6e2H+UOhrkCOaUFz5SwXogYVrp3uPO30vMsWn6f5qFhQcB
-	DPzhaFlZ0uUGFapmAjomxIsG1yMyyBCj/YzmvzHhjbh5DjQg2wvzTR4fpgi8QO7wTiVr/kGXcAGl9
-	utjc0M3Ozm4FPCEsDQoilxcj83BBLDUSDMsM2U4GQjABcGo547V21vgxWE8q9KW0fO/DTMZDyiYrQ
-	7Af7Yw/DAFHSI2y0hmKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GBMLKp9CcRnGk4+Tt370O04MUtRKHIGlbY4j6N5slCU=; b=4xREYfMmCU7EEP
+	70SR/YodiakOo65NWXv1umplPRBFMYPwaiCBPjeb7TlIncS3m1/o0KizEeIHoLEOIFmP8mTqb81N4
+	IAL7AoDu7KlnvPpeiZ5ARqr5+JQ2f8oGJd5m4YjVWSUZMZ90e/SkJoG3YEHeUWDdlUxnlrooSmTnb
+	acduO0U0IxJhRxmnes2Fxaquu++SI9LvR2/OvZC1YEJlWrKGvHjiEib23KS8QIuRXgRpBbnsb3dL+
+	bSY3yhsy6E2RCW0KIVFIunvcVcU9hDP0yE34JyjBEMgfFP4CSbZxCRimkDEqng2/9t+FLpjW87BVj
+	qNbsq64B/01xK+n75azw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smZIt-0000000CP3g-3dzG;
-	Fri, 06 Sep 2024 13:47:11 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1smf5k-0000000DU2h-1U8s;
+	Fri, 06 Sep 2024 19:58:00 +0000
+Received: from smtp-23.smtpout.orange.fr ([80.12.242.23] helo=smtp.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smZGD-0000000COJj-0Vex
+	id 1smf5h-0000000DU24-18Ru
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Sep 2024 13:44:27 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1smZFt-0000Lh-1c; Fri, 06 Sep 2024 15:44:05 +0200
-Received: from [2a0a:edc0:0:900:1d::4e] (helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1smZFq-005xU3-5T; Fri, 06 Sep 2024 15:44:02 +0200
-Received: from pza by lupine with local (Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1smZFq-0009UL-0F;
-	Fri, 06 Sep 2024 15:44:02 +0200
-Message-ID: <d743de28a5dd643cf775f4d8a3baaabd09d48c48.camel@pengutronix.de>
-Subject: Re: [PATCH v5 2/5] phy: stm32: Add support for STM32MP25 COMBOPHY.
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org, 
- kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org,  mcoquelin.stm32@gmail.com,
- alexandre.torgue@foss.st.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org,  linux-kernel@vger.kernel.org,
- fabrice.gasnier@foss.st.com
-Date: Fri, 06 Sep 2024 15:44:01 +0200
-In-Reply-To: <20240903121303.2953150-3-christian.bruel@foss.st.com>
-References: <20240903121303.2953150-1-christian.bruel@foss.st.com>
-	 <20240903121303.2953150-3-christian.bruel@foss.st.com>
-User-Agent: Evolution 3.46.4-2 
+	Fri, 06 Sep 2024 19:57:58 +0000
+Received: from fedora.home ([90.11.132.44])
+	by smtp.orange.fr with ESMTPA
+	id mf5asaRIOjDE7mf5asHg0n; Fri, 06 Sep 2024 21:57:54 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
+	s=t20230301; t=1725652674;
+	bh=xYR3kPiysp0DAu3hHTCdnVZ7J5OM+i5euxXxIpGksJ4=;
+	h=From:To:Subject:Date:Message-ID:MIME-Version;
+	b=UKRALhwGsYTuYigKVxKoo0JZ69+DDjBvnn6qfJcKI3njUqRapI3Rh51o8+diJHjuE
+	 MhgHF9HQnh1G5UdkHXe+Ijsp4HwEphBpO9KK5OVMJFcd1p0m1Pev8lY98FjLHnsM6f
+	 14VKjI/kFW9y/n/yw4te7mKEm3UoVH3om1zmYXAzE5RkqmUOR1DrZpSaEDSD0NMSMp
+	 eejwB1pfMfRrESQd9sqWBRs0d/TIwnau3gBlyaEzdY2962egpIlD+AW0VPde039ebG
+	 vvN3mh6SEx9MoGRI1HzwpCnk8TLGWyHyaCnwki82Fl13TdSFCPotd6vRaQjmVzARAG
+	 bK5cf5AD8YdUA==
+X-ME-Helo: fedora.home
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Fri, 06 Sep 2024 21:57:54 +0200
+X-ME-IP: 90.11.132.44
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Cc: linux-kernel@vger.kernel.org,
+	kernel-janitors@vger.kernel.org,
+	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+	linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH] phy: renesas: rcar-gen3-usb2: Fix an error handling path in rcar_gen3_phy_usb2_probe()
+Date: Fri,  6 Sep 2024 21:57:47 +0200
+Message-ID: <fc9f7b444f0ca645411868992bbe16514aeccfed.1725652654.git.christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.46.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240906_064425_352348_AA9B17AA 
-X-CRM114-Status: GOOD (  23.69  )
+X-CRM114-CacheID: sfid-20240906_125757_467649_BE434213 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,215 +79,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+If an error occurs after the rcar_gen3_phy_usb2_init_bus(),
+reset_control_assert() must be called, as already done in the remove
+function.
 
-On Di, 2024-09-03 at 14:13 +0200, Christian Bruel wrote:
-> Addition of the COMBOPHY driver found on STM32MP25 platforms
-> 
-> This single lane PHY is shared (exclusive) between the USB3 and PCIE
-> controllers.
-> Supports 5Gbit/s for PCIE gen2 or 2.5Gbit/s for PCIE gen1.
-> 
-> Supports wakeup-source capability to wakeup system using remote-wakeup
-> capable USB device
-> 
-> Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
-> ---
->  drivers/phy/st/Kconfig              |  11 +
->  drivers/phy/st/Makefile             |   1 +
->  drivers/phy/st/phy-stm32-combophy.c | 590 ++++++++++++++++++++++++++++
->  3 files changed, 602 insertions(+)
->  create mode 100644 drivers/phy/st/phy-stm32-combophy.c
-> 
-[...]
-> diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
-> new file mode 100644
-> index 000000000000..305ba124d092
-> --- /dev/null
-> +++ b/drivers/phy/st/phy-stm32-combophy.c
-> @@ -0,0 +1,590 @@
-[...]
-> +static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
-> +{
-> +	int ret;
-> +	u32 refclksel, pllmult, propcntrl, val;
-> +	u32 clk_rate;
-> +	struct clk *clk;
-> +
-> +	if (combophy->have_pad_clk)
-> +		clk = combophy->clks[PAD_CLK].clk;
-> +	else
-> +		clk = combophy->clks[KER_CLK].clk;
-> +
-> +	clk_rate = clk_get_rate(clk);
-> +
-> +	reset_control_assert(combophy->phy_reset);
-> +
-> +	dev_dbg(combophy->dev, "%s pll init rate %d\n",
-> +		combophy->have_pad_clk ? "External" : "Ker", clk_rate);
-> +
-> +	/*
-> +	 * vddcombophy is interconnected with vddcore. Isolation bit should be unset
-> +	 * before using the ComboPHY.
-> +	 */
-> +	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-> +			   SYSCFG_COMBOPHY_CR2_ISO_DIS, SYSCFG_COMBOPHY_CR2_ISO_DIS);
-> +
-> +	if (combophy->type != PHY_TYPE_PCIE)
-> +		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +				   SYSCFG_COMBOPHY_CR1_REFSSPEN, SYSCFG_COMBOPHY_CR1_REFSSPEN);
+Fixes: 4eae16375357 ("phy: renesas: rcar-gen3-usb2: Add support to initialize the bus")
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-Could the multiple accesses to SYSCFG_COMBOPHY_CR1 be consolidated into
-a single regmap_update_bits()?
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index 58e123305152..8577056491de 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -770,7 +770,7 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 		if (IS_ERR(channel->rphys[i].phy)) {
+ 			dev_err(dev, "Failed to create USB2 PHY\n");
+ 			ret = PTR_ERR(channel->rphys[i].phy);
+-			goto error;
++			goto err_control_assert;
+ 		}
+ 		channel->rphys[i].ch = channel;
+ 		channel->rphys[i].int_enable_bits = rcar_gen3_int_enable[i];
+@@ -784,7 +784,7 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 	if (IS_ERR(channel->vbus)) {
+ 		if (PTR_ERR(channel->vbus) == -EPROBE_DEFER) {
+ 			ret = PTR_ERR(channel->vbus);
+-			goto error;
++			goto err_control_assert;
+ 		}
+ 		channel->vbus = NULL;
+ 	}
+@@ -793,15 +793,17 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 	if (IS_ERR(provider)) {
+ 		dev_err(dev, "Failed to register PHY provider\n");
+ 		ret = PTR_ERR(provider);
+-		goto error;
++		goto err_control_assert;
+ 	} else if (channel->is_otg_channel) {
+ 		ret = device_create_file(dev, &dev_attr_role);
+ 		if (ret < 0)
+-			goto error;
++			goto err_control_assert;
+ 	}
+ 
+ 	return 0;
+ 
++err_control_assert:
++	reset_control_assert(channel->rstc);
+ error:
+ 	pm_runtime_disable(dev);
+ 
+-- 
+2.46.0
 
-> +
-> +	if (combophy->type == PHY_TYPE_PCIE && !combophy->have_pad_clk)
-> +		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-> +				   STM32MP25_PCIEPRGCR_EN, STM32MP25_PCIEPRGCR_EN);
-> +
-> +	if (of_property_present(combophy->dev->of_node, "st,ssc-on")) {
-> +		dev_dbg(combophy->dev, "Enabling clock with SSC\n");
-> +		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +				   SYSCFG_COMBOPHY_CR1_SSCEN, SYSCFG_COMBOPHY_CR1_SSCEN);
-> +	}
-> +
-> +	if (!of_property_read_u32(combophy->dev->of_node, "st,rx-equalizer", &val)) {
-> +		dev_dbg(combophy->dev, "Set RX equalizer %u\n", val);
-> +		if (val > SYSCFG_COMBOPHY_CR4_RX0_EQ) {
-> +			dev_err(combophy->dev, "Invalid value %u for rx0 equalizer\n", val);
-
-This path looks like it should deassert the phy_reset as well.
-
-> +			return -EINVAL;
-> +		}
-> +
-> +		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR4,
-> +			   SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
-> +	}
-> +
-> +	if (combophy->type == PHY_TYPE_PCIE) {
-> +		ret = stm32_impedance_tune(combophy);
-> +		if (ret) {
-> +			reset_control_deassert(combophy->phy_reset);
-> +			goto out;
-> +		}
-> +
-> +		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +				   SYSCFG_COMBOPHY_CR1_REFUSEPAD,
-> +				   combophy->have_pad_clk ? SYSCFG_COMBOPHY_CR1_REFUSEPAD : 0);
-> +	}
-> +
-> +	switch (clk_rate) {
-> +	case 100000000:
-> +		pllmult = MPLLMULT_100;
-> +		refclksel = REFCLKSEL_0;
-> +		propcntrl = 0x8u << 4;
-> +		break;
-> +	case 19200000:
-> +		pllmult = MPLLMULT_19_2;
-> +		refclksel = REFCLKSEL_1;
-> +		propcntrl = 0x8u << 4;
-> +		break;
-> +	case 25000000:
-> +		pllmult = MPLLMULT_25;
-> +		refclksel = REFCLKSEL_0;
-> +		propcntrl = 0xeu << 4;
-> +		break;
-> +	case 24000000:
-> +		pllmult = MPLLMULT_24;
-> +		refclksel = REFCLKSEL_1;
-> +		propcntrl = 0xeu << 4;
-> +		break;
-> +	case 20000000:
-> +		pllmult = MPLLMULT_20;
-> +		refclksel = REFCLKSEL_0;
-> +		propcntrl = 0xeu << 4;
-> +		break;
-> +	default:
-> +		dev_err(combophy->dev, "Invalid rate 0x%x\n", clk_rate);
-> +		reset_control_deassert(combophy->phy_reset);
-> +		ret = -EINVAL;
-> +		goto out;
-> +	};
-> +
-> +	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +			   SYSCFG_COMBOPHY_CR1_REFCLKDIV2, REFCLDIV_0);
-> +	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +			   SYSCFG_COMBOPHY_CR1_REFCLKSEL, refclksel);
-> +	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +			   SYSCFG_COMBOPHY_CR1_MPLLMULT, pllmult);
-> +
-> +	/*
-> +	 * Force elasticity buffer to be tuned for the reference clock as
-> +	 * the separated clock model is not supported
-> +	 */
-> +	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR5,
-> +			   SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS, SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS);
-> +
-> +	reset_control_deassert(combophy->phy_reset);
-> +
-> +	ret = regmap_read_poll_timeout(combophy->regmap, SYSCFG_COMBOPHY_SR, val,
-> +				       !(val & STM32MP25_PIPE0_PHYSTATUS),
-> +				       10, 1000);
-> +	if (ret) {
-> +		dev_err(combophy->dev, "timeout, cannot lock PLL\n");
-> +		goto out;
-> +	}
-> +
-> +	if (combophy->type == PHY_TYPE_PCIE) {
-> +		val = readl_relaxed(combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
-> +		val &= ~COMBOPHY_PROP_CNTRL;
-> +		val |= propcntrl;
-> +		writel_relaxed(val, combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
-> +	}
-> +
-> +	return 0;
-> +
-> +out:
-> +	if (combophy->type == PHY_TYPE_PCIE && !combophy->have_pad_clk)
-> +		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-> +				   STM32MP25_PCIEPRGCR_EN, 0);
-> +
-> +	if (combophy->type != PHY_TYPE_PCIE)
-> +		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-> +				   SYSCFG_COMBOPHY_CR1_REFSSPEN, 0);
-> +
-> +	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-> +			   SYSCFG_COMBOPHY_CR2_ISO_DIS, 0);
-> +
-> +	return ret;
-> +}
-> +
-[...]
-> +
-> +static int stm32_combophy_probe(struct platform_device *pdev)
-> +{
-> +	struct stm32_combophy *combophy;
-> +	struct device *dev = &pdev->dev;
-> +	struct phy_provider *phy_provider;
-> +	int ret, irq;
-> +
-> +	combophy = devm_kzalloc(dev, sizeof(*combophy), GFP_KERNEL);
-> +	if (!combophy)
-> +		return -ENOMEM;
-> +
-> +	combophy->dev = dev;
-> +
-> +	dev_set_drvdata(dev, combophy);
-> +
-> +	combophy->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(combophy->base))
-> +		return PTR_ERR(combophy->base);
-> +
-> +	if (stm32_combophy_get_clocks(combophy))
-> +		return ret;
-> +
-> +	combophy->phy_reset = devm_reset_control_get(dev, "phy");
-
-Please use devm_reset_control_get_exclusive() directly.
-
-regards
-Philipp
 
 -- 
 linux-phy mailing list
