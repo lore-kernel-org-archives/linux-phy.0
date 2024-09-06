@@ -4,96 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16DF8CD5BCF
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Sep 2024 16:15:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8C08CE7AA5
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Sep 2024 00:26:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+CpHW0y/77W83FnQbuM40HHvn5KLAkQrufmk+JCC7ns=; b=bjtEKVTGlLzDZ4
-	6Udu0fhno6XLbTltYWwppXphbUGbu/XF4AlQhlB7dLiXoWcNaUqcczGoZAs34nFphYKlc47cohmTk
-	XsL4aVXUo5aTeh9kKKW9xq3enG3T1yERkYHDAHeItT5aF7MBPslZrRJZuPqg/1xqJ06VJvgnoutLW
-	r4ELCKiqKWUPpJxD2Yqjb+OP94mNqOd38clFJ3Tartc1okzio8fRhYarwshs263DBJ7ydkM1itRAZ
-	XUwOotr2i8xZ6oPrk4eWqUH0U+fOvhYAshuerDwxTigp4MLwG2/NtsoyZ0WftvHs8KreC7fBwM/zx
-	n63YGPx+b1GJC5wDMH6g==;
+	List-Owner; bh=mIevmrbbO4V7Zlw6oDdzK8VrULdSafkCYoHGz3r6I0E=; b=WRjC8hYSSiJDnZ
+	xzZ7hv7/Tm3E5PhpHqwJSmw0chA/yzJ9EDrdbtVlAE2n15Q43vaqC35OZbhu++gIqRL5TzCZd2reW
+	ImRzCVwK7xu0dXxO8MUc28SDSJTTr/RsCUSb4vutD3cSvKU9jBSbwdUSzQzzBRgtE8P1yVOE9OVk3
+	pdwopBha/AxoebkP2xX5j61x6t+bA5Gno9BlYNTp0n9TKYYNiLj30gXKiVnbmuxeJlhAqzkuhkzD2
+	GfjpRavWO+5eBQzBfhB7XW5XEzfbKITkGriGT/tDj0yZSoS9KZbCd+kXH2mTSBi39YpTBnc1UHrlJ
+	DZ43b2busNQoJwwiwivQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smF91-000000094g7-2WdS;
-	Thu, 05 Sep 2024 16:15:39 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	id 1smMoT-0000000AC78-0F30;
+	Fri, 06 Sep 2024 00:26:57 +0000
+Received: from gw2.atmark-techno.com ([35.74.137.57])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smF7k-000000094Sj-2RLz
+	id 1smMoQ-0000000AC4d-2Q8r
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Sep 2024 16:14:27 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-374cacf18b1so671772f8f.2
-        for <linux-phy@lists.infradead.org>; Thu, 05 Sep 2024 09:14:19 -0700 (PDT)
+	Fri, 06 Sep 2024 00:26:56 +0000
+Authentication-Results: gw2.atmark-techno.com;
+	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=Q4z/af2V;
+	dkim-atps=neutral
+Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
+	by gw2.atmark-techno.com (Postfix) with ESMTPS id 7FED79A5
+	for <linux-phy@lists.infradead.org>; Fri,  6 Sep 2024 09:26:50 +0900 (JST)
+Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-2d9a2b8af50so1976169a91.0
+        for <linux-phy@lists.infradead.org>; Thu, 05 Sep 2024 17:26:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=freebox-fr.20230601.gappssmtp.com; s=20230601; t=1725552858; x=1726157658; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=SQCzkFNF6R0y5OgjwiBOcxXDxjjM7SPAsOwwAJex/C0=;
-        b=mS5F+9OIkoQHXo1i/OQV04EalPKhVmdZVEH63KnbWFFfmUiNpj7O9NARrPwHB9+7IU
-         vxXWLCzd2SiZPeSK2ybBEU/5PRL5+AMGF8/vi3RKbrg93PQrVjq2xtH3dI2+kLcIVH32
-         Mo/wbrGfJIql8o0UewYtJjKuTUyXVKXH4S/7PFahZXPzg5ELI1SnWnFYfv1cLiYJ8e9a
-         Us4dMfzCigoPLomdP9Sxof/zM7SmQOzs9Osl7nk2ALRrqI7at+9Gx5XC2vJb6aMGBJqK
-         sdDYNbrwxV9bMArGAj3u5D12x0bFXLpBB1UFncnfSoZ5IqqtdhfTpQkoAh8JMiDVau7n
-         oyFg==
+        d=atmark-techno.com; s=google; t=1725582409; x=1726187209; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=LGTM8z3drlabx5saFMxcrZbEE2LPwIqPrjtUbOYE5m8=;
+        b=Q4z/af2VjKJTIijTYogYfJIKgP7SYqKmRwJDT1Ig2JAnNy9in1HcESGk8Tu1Xbv2dw
+         z4EsXvDZv/ZxYflDj1gKTyej/UloRNRETYHgzV9N5JJ78RbAHWEVzrV+N0y4JGKThEmA
+         Ck7h2RAg6MIDqZZjUa5/Xkdg5sZS+HoR9JLrAfktVDAPUp/BHn9RvuuCzKrtVYXBrs03
+         5NKl0Ujz17/K9K+k3m4yBVQZeEqKF3wH480mYnUwGSUKmXiOb/n5rNMu0ul7amp1zEup
+         ESPSHaQHsT9Ou5iJV3F+L7luMssQp8nRaqjJGOzFPSVBAJq2xrvqpzl/fkBoO6eJ/8Pp
+         MGvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725552858; x=1726157658;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=SQCzkFNF6R0y5OgjwiBOcxXDxjjM7SPAsOwwAJex/C0=;
-        b=sjmeUcBPU+3xT6h3wdvD1CbgRFEPldIjLyxMW/C9qU0P2hQmsGr1eyN4lHlXSNh9Ff
-         x5GykIwNCbrq45fKbis4eZlqWBiFDwOsXmS81NH6HXV9a4nlrQ5bfdHEf1GL59y/abpP
-         LGC5Bn/HHyAts/gfmjykLCnuMi4NfirhLvuQHKrf87aK2t7VzZWaRfo0W8eg21wBkyZe
-         OLby+VG2KN3QWbDfDmCkDSEFObx5EUpUB44ecaG1pbYPFIb56gbZD1YnQ5sd4oQk121j
-         LpZMMMzdO+rn1VDuJXRfAuk7lkj6lLoiaj43vy7+U9j+egflZOqZp4rYbyMeoFumjPJg
-         1/hg==
-X-Forwarded-Encrypted: i=1; AJvYcCUw9N6vDovZYHFMxid03BHp94LPARUL8PkI6oiDfKKNS/79zFOLJZzQW+Cze8aXLIhzMm0I7KgvjPo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzF5ikjvWoYx+xTDNeVQU8ERRg5fjB7tcW37u4l4/GY3wTR83Ig
-	4beyR8CnO5lLxWs08tUcavIQMuyuh9DxdtGASQEeZnZDVg4s8kF6TCGz9ac4hAU=
-X-Google-Smtp-Source: AGHT+IGTeRidPfzjWMeiTd2JcaXWh07h5yeyFVwKWBYencGxKEZw41jcBDd8CO30rx53dbUA3JWpWg==
-X-Received: by 2002:a5d:6991:0:b0:374:c7d1:2ac0 with SMTP id ffacd0b85a97d-3787e496687mr2221867f8f.47.1725552857141;
-        Thu, 05 Sep 2024 09:14:17 -0700 (PDT)
-Received: from [192.168.108.50] (freebox.vlq16.iliad.fr. [213.36.7.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-374c6543ee3sm12569790f8f.12.2024.09.05.09.14.16
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 05 Sep 2024 09:14:16 -0700 (PDT)
-Message-ID: <747218ab-86a1-4308-b34a-98064ccdac30@freebox.fr>
-Date: Thu, 5 Sep 2024 18:14:15 +0200
+        d=1e100.net; s=20230601; t=1725582409; x=1726187209;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=LGTM8z3drlabx5saFMxcrZbEE2LPwIqPrjtUbOYE5m8=;
+        b=tFSgj+veu8RTcd52u4GxkcOlAOWXUPvOen6zteGn/2D1/2oDzSNBjfy37O00LzBqz1
+         hwYyhDjGoShOgBN+iIBMc5e9G2rEJngjjTu07WMjXFVrj5OYd8cuDi+NDwT8IrBH8wtl
+         vWW6YAEGJdW0fzEfeAXXgPd2N/qplSvHkcuZz3ZWBNhA7j+Xj+bRrcqLLezwZlal9tHa
+         e5DGri0SH11gsPa1f0hOTfKlGV/7/htjlLueCFMYRidt+OPkJi72GYBMEiQFRUzQDyp4
+         DrlEMvBVkpVuTwqB63ydc+BWL5L9GlXbGUAHJOlgdoDe/wZifWQaKlwat6g+dOceAuKj
+         KdQA==
+X-Gm-Message-State: AOJu0YwkiKpqB27tR7/ayD/Md/UJeAp3WwPGKQM6CNd0XBvylIkda/4z
+	3liQuAvoAl4vse9FfnBKxT9b6zJN2ArnJqvK15FSzjL3zorCFVSNoBBztyhA0ocAYcBwCdxwbDT
+	He8tVZyUrGU4tJJjk2JF9LOHzUISjrrlT1jqBzvKv7APcdnu6yzmmERZesc9JFl89
+X-Received: by 2002:a17:90b:2248:b0:2d3:db91:ee82 with SMTP id 98e67ed59e1d1-2dad513a8d5mr993643a91.40.1725582408960;
+        Thu, 05 Sep 2024 17:26:48 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGssYkvho2wuTiIV5XqLvj+xnJwXtMw7FK+bKNnXv5/kW4P3Qtr4XZhgQnImulOf/HrOPuE7A==
+X-Received: by 2002:a17:90b:2248:b0:2d3:db91:ee82 with SMTP id 98e67ed59e1d1-2dad513a8d5mr993625a91.40.1725582408574;
+        Thu, 05 Sep 2024 17:26:48 -0700 (PDT)
+Received: from localhost (162.198.187.35.bc.googleusercontent.com. [35.187.198.162])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2dadc091116sm150733a91.46.2024.09.05.17.26.47
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 05 Sep 2024 17:26:48 -0700 (PDT)
+Date: Fri, 6 Sep 2024 09:26:36 +0900
+From: Dominique Martinet <dominique.martinet@atmark-techno.com>
+To: Adam Ford <aford173@gmail.com>
+Cc: linux-phy@lists.infradead.org, linux-imx@nxp.com, festevam@gmail.com,
+	frieder.schrempf@kontron.de, aford@beaconembedded.com,
+	Sandor.yu@nxp.com, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Marco Felsch <m.felsch@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH V6 4/5] phy: freescale: fsl-samsung-hdmi: Use closest
+ divider
+Message-ID: <ZtpMPCHBnEgtkBWp@atmark-techno.com>
+References: <20240904233100.114611-1-aford173@gmail.com>
+ <20240904233100.114611-5-aford173@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 0/6] HDMI TX support in msm8998
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Rob Clark <robdclark@gmail.com>,
- Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- David Airlie <airlied@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, Arnaud Vrac <avrac@freebox.fr>,
- Pierre-Hugues Husson <phhusson@freebox.fr>,
- Jeffrey Hugo <quic_jhugo@quicinc.com>,
- Conor Dooley <conor.dooley@microchip.com>
-References: <20240724-hdmi-tx-v7-0-e44a20553464@freebox.fr>
- <172550712143.3299484.1580127137460046609.b4-ty@linaro.org>
-Content-Language: en-US
-From: Marc Gonzalez <mgonzalez@freebox.fr>
-In-Reply-To: <172550712143.3299484.1580127137460046609.b4-ty@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20240904233100.114611-5-aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240905_091420_806434_6B8DC59E 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240905_172655_102665_72860F0E 
+X-CRM114-Status: GOOD (  35.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,33 +108,171 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/09/2024 05:33, Dmitry Baryshkov wrote:
 
-> On Wed, 24 Jul 2024 17:01:33 +0200, Marc Gonzalez wrote:
->
->> DT bits required for HDMI TX support in qcom APQ8098 (MSM8998 cousin)
+(sorry I meant to send this yesterday but I'm being forced to adjust my
+mail pipeline with work and gmail and it didn't go out -- trying
+again. Sorry if it actually did go through. Hopefully I didn't misfire
+anything else yesterday...)
+
+Adam Ford wrote on Wed, Sep 04, 2024 at 06:30:32PM -0500:
+> Currently, if the clock values cannot be set to the exact rate,
+> the round_rate and set_rate functions use the closest value found in
+> the look-up-table.  In preparation of removing values from the LUT
+> that can be calculated evenly with the integer calculator, it's
+> necessary to ensure to check both the look-up-table and the integer
+> divider clock values to get the closest values to the requested
+> value.  It does this by measuring the difference between the
+> requested clock value and the closest value in both integer divider
+> calucator and the fractional clock look-up-table.
 > 
-> Applied, thanks!
+> Which ever has the smallest difference between them is returned as
+> the cloesest rate.
 > 
-> [1/6] dt-bindings: phy: add qcom,hdmi-phy-8998
->       https://gitlab.freedesktop.org/lumag/msm/-/commit/8886def25eef
-> [2/6] dt-bindings: display/msm: hdmi: add qcom,hdmi-tx-8998
->       https://gitlab.freedesktop.org/lumag/msm/-/commit/656810411b1d
-> [3/6] drm/msm/hdmi: add "qcom,hdmi-tx-8998" compatible
->       https://gitlab.freedesktop.org/lumag/msm/-/commit/a61eb17f40e8
-> [4/6] drm/msm: add msm8998 hdmi phy/pll support
->       https://gitlab.freedesktop.org/lumag/msm/-/commit/caedbf17c48d
+> Signed-off-by: Adam Ford <aford173@gmail.com>
+> Signed-off-by: Dominique Martinet <dominique.martinet@atmark-techno.com>
 
-Hello Bjorn,
+b4 (or whatever you're using) probably picked that up from the patch I
+included in my reply to this patch, this sob should go away.
 
-Now that the binding & driver parts have been merged,
-(Thanks, Dmitry! And thanks to all reviewers)
-am I right to assume that you are supposed to pick up
-patches 5 & 6 for the msm8998 DTSI?
-(Hopefully in time for 6.12-rc1)
 
-Regards
 
+> diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> index 4b13e386e5ba..9a21dbbf1a82 100644
+> --- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> @@ -547,6 +547,16 @@ static unsigned long phy_clk_recalc_rate(struct clk_hw *hw,
+>  	return phy->cur_cfg->pixclk;
+>  }
+>  
+> +static u32 fsl_samsung_hdmi_phy_get_closest_rate(unsigned long rate,
+> +						 u32 int_div_clk, u32 frac_div_clk)
+> +{
+> +	/* The int_div_clk may be greater than rate, so cast it and use ABS */
+> +	if (abs((long)rate - (long)int_div_clk) < (rate - frac_div_clk))
+
+I still think `rate - frac_div_clk` might not always hold in the future
+(because there is no intrinsic reason we'd pick the smaller end in case
+of inexact match and a future improvement might change this to the
+closest value as well), so I'll argue again for having both use abs(),
+but at least there's only one place to update if that changes in the
+future now so hopefully whoever does this will notice...
+
+> +		return int_div_clk;
+> +
+> +	return frac_div_clk;
+> +}
+> +
+>  static long phy_clk_round_rate(struct clk_hw *hw,
+>  			       unsigned long rate, unsigned long *parent_rate)
+>  {
+> @@ -563,6 +573,7 @@ static long phy_clk_round_rate(struct clk_hw *hw,
+>  	for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
+>  		if (phy_pll_cfg[i].pixclk <= rate)
+>  			break;
+> +
+
+(unrelated)
+
+>  	/* If the rate is an exact match, return it now */
+>  	if (rate == phy_pll_cfg[i].pixclk)
+>  		return phy_pll_cfg[i].pixclk;
+> @@ -579,8 +590,7 @@ static long phy_clk_round_rate(struct clk_hw *hw,
+>  	if (int_div_clk == rate)
+>  		return int_div_clk;
+>  
+> -	/* Fall back to the closest value in the LUT */
+> -	return phy_pll_cfg[i].pixclk;
+> +	return fsl_samsung_hdmi_phy_get_closest_rate(rate, int_div_clk, phy_pll_cfg[i].pixclk);
+>  }
+>  
+>  static int phy_clk_set_rate(struct clk_hw *hw,
+> @@ -594,27 +604,37 @@ static int phy_clk_set_rate(struct clk_hw *hw,
+>  
+>  	/* If the integer divider works, just use it */
+
+I found this comment a bit confusing given the current flow as of this
+patch. Might make more sense immediately before the if?
+
+
+>  	int_div_clk = fsl_samsung_hdmi_phy_find_pms(rate * 5, &p, &m, &s) / 5;
+> +	calculated_phy_pll_cfg.pixclk = int_div_clk;
+> +	calculated_phy_pll_cfg.pll_div_regs[0] = FIELD_PREP(REG01_PMS_P_MASK, p);
+> +	calculated_phy_pll_cfg.pll_div_regs[1] = m;
+> +	calculated_phy_pll_cfg.pll_div_regs[2] = FIELD_PREP(REG03_PMS_S_MASK, s-1);
+> +	phy->cur_cfg = &calculated_phy_pll_cfg;
+>  	if (int_div_clk == rate) {
+>  		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using integer divider\n");
+> -		calculated_phy_pll_cfg.pixclk = int_div_clk;
+> -		calculated_phy_pll_cfg.pll_div_regs[0] = FIELD_PREP(REG01_PMS_P_MASK, p);
+> -		calculated_phy_pll_cfg.pll_div_regs[1] = m;
+> -		calculated_phy_pll_cfg.pll_div_regs[2] = FIELD_PREP(REG03_PMS_S_MASK, s-1);
+> -		/* pll_div_regs 3-6 are fixed and pre-defined already */
+
+nitpick: might want to keep the above comment?
+
+> -		phy->cur_cfg  = &calculated_phy_pll_cfg;
+> +		goto done;
+>  	} else {
+>  		/* Otherwise, search the LUT */
+> -		dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using fractional divider\n");
+> -		for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--)
+> -			if (phy_pll_cfg[i].pixclk <= rate)
+> +		for (i = ARRAY_SIZE(phy_pll_cfg) - 1; i >= 0; i--) {
+> +			if (phy_pll_cfg[i].pixclk == rate) {
+> +				dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using fractional divider\n");
+
+nitpick: might make sense to print what was picked in case of inexact
+match as well, but these are dbg warning so probably fine either way.
+
+
+overall I find the flow of this function hard to read; it's a bit ugly
+flow-wise but jumping in the clock comparison 'if' might help trim this?
+(and if we're going out of our way to factor out the diff, maybe the lut
+lookup could be as well)
+
+But I'm probably just being overcritical here, it's fine as is if you
+pefer your version, just writing down this as an illustration of what I
+meant with the above sentence as I'm not sure I was clear -- I'll be
+just as happy to consider this series done so we can do more interesting
+things :P
+
+{
+    u32 int_div_clk, frac_div_clk;
+    int i;
+    u16 m;
+    u8 p, s;
+    
+    // (I haven't given up on that *5 to move inside this function...)
+    int_div_clk = fsl_samsung_hdmi_phy_find_pms(rate, &p, &m, &s);
+    if (int_div_clk == rate)
+        goto use_int_clk;
+
+    frac_div_clk = fsl_samsung_hdmi_phy_find_lut(rate, &i);
+    // (not convinced that check actually brings much, but it's not like
+    // it hurts either)
+    if (frac_div_clk == rate)
+        goto use_frac_clk;
+    
+    if (fsl_samsung_hdmi_phy_get_closest_rate(rate, int_div_clk,
+                                              frac_div_clk) == int_div_clk) {
+use_int_clk:
+        dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using integer divider\n");
+        calculated_phy_pll_cfg.pixclk = int_div_clk;
+        calculated_phy_pll_cfg.pll_div_regs[0] = FIELD_PREP(REG01_PMS_P_MASK, p);
+        calculated_phy_pll_cfg.pll_div_regs[1] = m;
+        calculated_phy_pll_cfg.pll_div_regs[2] = FIELD_PREP(REG03_PMS_S_MASK, s-1);
+        /* pll_div_regs 3-6 are fixed and pre-defined already */
+        phy->cur_cfg  = &calculated_phy_pll_cfg;
+    } else {
+use_frac_clk:
+        dev_dbg(phy->dev, "fsl_samsung_hdmi_phy: using fractional divider\n");
+        phy->cur_cfg = &phy_pll_cfg[i];
+    }
+    return fsl_samsung_hdmi_phy_configure(phy, phy->cur_cfg);
+}
+
+-- 
+Dominique
 
 -- 
 linux-phy mailing list
