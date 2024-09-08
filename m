@@ -4,69 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34784CD4F4C
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Sep 2024 16:59:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60C4BE6FE49
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Sep 2024 18:12:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XidiH35HDGYu+McnC61nmjp+150T4VQwfoANM8BO92Y=; b=A73fUIe0jHSwHq
-	sb1XvTqdbfeeDWHmCpIslXpK9wbljNKAuKwuQJknk0enz0Vd4TeIvh/GYyEJcPh1+SkuZ0Bwt3kif
-	cYpn7XAkzN1kVTW+7yo5mnEQv4s3DUF7wdPGp7GyLoTS5IqArJt3MBbekKFduH4beyjckcQR777tG
-	c0810Ul6Xrf8KWoq9bVMy6xTl3hAoaLproRvF2Z3O7LVdB+/iT+5EpE2QlI+0aBng3wyHQPStkjJN
-	+SJSERTCky73+Q4ZGKqixk3R+K0oupUOY8nOpKB7fkWmsE5PV4q3UcLWVA1Y+4Lh0yepgGm+dBKNI
-	O+AmpCgm6qsY1Ew+xKbQ==;
+	List-Owner; bh=3A+y6Nyk3fWr3vCUJ3U48Q11TImo+EEOPa28YEI6QR8=; b=5EhPYPyLsaMUNb
+	bUcaEIF1DfJrkA4phUHxy8JabeLXYdz6teqpS/i6c/vwaMr2ctPUEDDdFd2uhFrakznMRppx6Xqys
+	/rs19o4oc6QBCTtVMPHN+WlQKHk0cOVZ9FZDNNLFMqJkxMZKk8B12/8DxFTZallCY6peYzutmLkrx
+	pEC/rGLJF7ubFBNk1EoR7BwWzv2H6j848NvIWFUAA5yGaH104TU6fUYv3oyHAR6yMZwTMhtHnQiPS
+	66hHBX31As+QPK4xHCfVb3dDemtlW97rS936IN+HB/SEtvkgssOO1G+Dto2Ci+LVpsFnHbZS5c6k3
+	bs89ZZbHZrJK0wUpSlOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snLFg-0000000H8c4-36E7;
-	Sun, 08 Sep 2024 16:59:04 +0000
-Received: from msa-210.smtpout.orange.fr ([193.252.23.210] helo=msa.smtpout.orange.fr)
+	id 1snMP0-0000000HE7S-02oP;
+	Sun, 08 Sep 2024 18:12:46 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snLFc-0000000H8bG-2bls
+	id 1snMOw-0000000HE71-0kHf
 	for linux-phy@lists.infradead.org;
-	Sun, 08 Sep 2024 16:59:03 +0000
-Received: from [192.168.1.37] ([90.11.132.44])
-	by smtp.orange.fr with ESMTPA
-	id nLFVsSexkHecynLFVs3xum; Sun, 08 Sep 2024 18:58:57 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
-	s=t20230301; t=1725814737;
-	bh=RdcTk8ohJPW11cQiApgamG5S3f5jcX8WFaEBB5WL29M=;
-	h=Message-ID:Date:MIME-Version:Subject:To:From;
-	b=Waf26jujfPXECY3CCDjijKiHyI/dBzztosdUkGORAS/uepLb4kcKcLqmgiPDoYcku
-	 MoXMKrUxZEDENW48sn74nf7unkftTZiaW/l95dmfPviRRTkvexcsvSiskoc1uat1ZD
-	 +gRtAs187E32Lft/bz80V2cScm6OjBinBKUQVX9Wyx0Xf17m1H6bpTOHmpjU4VtAGW
-	 rklcVfzdta3T+DQRBeCO2mgLWFTmkVQ7LbQ6V4SI36ZSf59SzBh56y+6KmeB1IZu3Q
-	 i/ZB8QGH7iR9sLQpi46o6xJdGoV3ffCZLVCx/6E7ZWWtMtOPTJ/mI/ktgazDnTtOe9
-	 irQCqqT4HbSPg==
-X-ME-Helo: [192.168.1.37]
-X-ME-Auth: bWFyaW9uLmphaWxsZXRAd2FuYWRvby5mcg==
-X-ME-Date: Sun, 08 Sep 2024 18:58:57 +0200
-X-ME-IP: 90.11.132.44
-Message-ID: <d01bed96-7811-4ace-8b92-1ee9fafac649@wanadoo.fr>
-Date: Sun, 8 Sep 2024 18:58:52 +0200
+	Sun, 08 Sep 2024 18:12:44 +0000
+Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-5c26852af8fso4481526a12.2
+        for <linux-phy@lists.infradead.org>; Sun, 08 Sep 2024 11:12:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1725819160; x=1726423960; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=yLpbA80LmxTHG9gW0hEcEP8bDOpNZeMU9QCy58Ejxfk=;
+        b=zKnuSMQhz16YQmkd44O2F8sGElte1mwH8PAXxixOyFG/pczN3AnGVR7IipM6yeYUwe
+         Am7WPKD/C5QePW69a2bkTefgl8Qswg9ZU7gzvIbdov9rZSh1GaaDe/NbOJvhMysOOqYw
+         LnmqVjkMNi9dqD57nTZ0vHAfK7YgIbgXZHuxKJz9eBsxMzXknK4DODqto3wj4yos0HRa
+         Nn7GLmZKLuKPW63hykkVmcG/fz5eEJocxNLyBje3D6ngugl5DE8TSrvAjfCOgD5G5aBn
+         uw5z53sGrSFspJIAR1FNeJezlACbbEYxQPrA+5THYMEwutc3bXlrPfTAwbZxAijXjj0V
+         s0jA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725819160; x=1726423960;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=yLpbA80LmxTHG9gW0hEcEP8bDOpNZeMU9QCy58Ejxfk=;
+        b=OTJLv2a5iq/kfmzArnlsoRzxFHxu+qZVYQwxPLqE2+CL705LGxtmIPvW4gr3O/10CN
+         RPZF8zWY5VW5MHr4zWu+Ng5Stgd7hsbq/wXOxsqTdO3OFhQEkMI3CC1UoeCWB4vTbmks
+         /sXy0G/y8EzZ28qG6bM1UjZWk9pIWmJdkRUUy2NOBDbYtb+xbHKNA0BI9lOlqPLYHm/Q
+         1Fjj82hEbKZyJq0MV6hVYQi5tP0eQqKrPQB4OF8KvKxHAVqWyEb4HamEAFm20gUwT4OO
+         iuMUUH67D5oLP/V6GGLb8vGOYFgJ22RKNZtQou7DodDH6VWZwiHhdZCfuLNs9tv15o43
+         63SA==
+X-Forwarded-Encrypted: i=1; AJvYcCVEl0NBjZ8foSfe/RVYYZDMl1LsGbQjSmUpmu17iWzGw/zOvgVHz97EmNP50ONCx6u0N7KpanZDUPg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzej8yBLDsZU1jSrAQ0L8P9+GZqOrlmPLTnvm3eWYYmGo3MfwGu
+	nD4yqlRIqCYgALJxuE3GGdPTUneFTicB7WfLwOppvNGX+6DNK88jumHSQcP5Ee4=
+X-Google-Smtp-Source: AGHT+IGZmYxgGiI70T7NWs+HoEGWThK7q03OcDCcCbtJuh4T+au00Xa5qZUqzPdTJml0KnkDuhKByQ==
+X-Received: by 2002:a05:6402:4020:b0:5c3:c548:bb25 with SMTP id 4fb4d7f45d1cf-5c3e964ccc4mr4692004a12.23.1725819158955;
+        Sun, 08 Sep 2024 11:12:38 -0700 (PDT)
+Received: from linaro.org ([84.232.173.69])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5c3ebd8cc28sm2094903a12.83.2024.09.08.11.12.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 08 Sep 2024 11:12:38 -0700 (PDT)
+Date: Sun, 8 Sep 2024 21:12:37 +0300
+From: Abel Vesa <abel.vesa@linaro.org>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Johan Hovold <johan@kernel.org>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: qcom: edp: Add runtime PM support
+Message-ID: <Zt3pFdndtTw/nbgs@linaro.org>
+References: <20240907-phy-qcom-edp-enable-runtime-pm-v1-1-8b9ee4210e1e@linaro.org>
+ <CAA8EJpqw6pB4d_zQyYdhq9_prLnh+mLMdRSzJ+5EvAjT9wi86A@mail.gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: renesas: rcar-gen3-usb2: Fix an error handling
- path in rcar_gen3_phy_usb2_probe()
-To: Biju Das <biju.das.jz@bp.renesas.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-References: <4efe2d0419cbe98163e2422ebe0c7896b8a5efed.1725717505.git.christophe.jaillet@wanadoo.fr>
- <TY3PR01MB113468D1573C1E50AC9F97DCF86982@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-Content-Language: en-US, fr-FR
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-In-Reply-To: <TY3PR01MB113468D1573C1E50AC9F97DCF86982@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+Content-Disposition: inline
+In-Reply-To: <CAA8EJpqw6pB4d_zQyYdhq9_prLnh+mLMdRSzJ+5EvAjT9wi86A@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240908_095901_231809_A0E82925 
-X-CRM114-Status: GOOD (  21.95  )
+X-CRM114-CacheID: sfid-20240908_111242_272091_B56CD815 
+X-CRM114-Status: GOOD (  41.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,69 +92,284 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-TGUgMDgvMDkvMjAyNCDDoCAxODozOSwgQmlqdSBEYXMgYSDDqWNyaXTCoDoKPiBIaSBDaHJpc3Rv
-cGhlIEpBSUxMRVQsCj4gCj4gVGhhbmtzIGZvciB0aGUgcGF0Y2guCj4gCj4+IC0tLS0tT3JpZ2lu
-YWwgTWVzc2FnZS0tLS0tCj4+IEZyb206IENocmlzdG9waGUgSkFJTExFVCA8Y2hyaXN0b3BoZS5q
-YWlsbGV0QHdhbmFkb28uZnI+Cj4+IFNlbnQ6IFNhdHVyZGF5LCBTZXB0ZW1iZXIgNywgMjAyNCAy
-OjU5IFBNCj4+IFN1YmplY3Q6IFtQQVRDSCB2Ml0gcGh5OiByZW5lc2FzOiByY2FyLWdlbjMtdXNi
-MjogRml4IGFuIGVycm9yIGhhbmRsaW5nIHBhdGggaW4KPj4gcmNhcl9nZW4zX3BoeV91c2IyX3By
-b2JlKCkKPj4KPj4gSWYgYW4gZXJyb3Igb2NjdXJzIGFmdGVyIHRoZSByY2FyX2dlbjNfcGh5X3Vz
-YjJfaW5pdF9idXMoKSwKPj4gcmVzZXRfY29udHJvbF9hc3NlcnQoKSBtdXN0IGJlIGNhbGxlZCwg
-YXMgYWxyZWFkeSBkb25lIGluIHRoZSByZW1vdmUgZnVuY3Rpb24uCj4+Cj4+IFRoaXMgaXMgZmlu
-ZSB0byByZS11c2UgdGhlIGV4aXN0aW5nIGVycm9yIGhhbmRsaW5nIHBhdGgsIGJlY2F1c2UgZXZl
-biBpZiAiY2hhbm5lbC0+cnN0YyIgaXMgc3RpbGwgTlVMTAo+PiBhdCB0aGlzIHBvaW50LCBpdCBp
-cyBzYWZlIHRvIGNhbGwgcmVzZXRfY29udHJvbF9hc3NlcnQoTlVMTCkuCj4+Cj4+IEZpeGVzOiA0
-ZWFlMTYzNzUzNTcgKCJwaHk6IHJlbmVzYXM6IHJjYXItZ2VuMy11c2IyOiBBZGQgc3VwcG9ydCB0
-byBpbml0aWFsaXplIHRoZSBidXMiKQo+PiBTaWduZWQtb2ZmLWJ5OiBDaHJpc3RvcGhlIEpBSUxM
-RVQgPGNocmlzdG9waGUuamFpbGxldEB3YW5hZG9vLmZyPgo+PiAtLS0KPj4gQ2hhbmdlcyBpbiB2
-MjoKPj4gICAgLSBSZS11c2UgJ2Vycm9yJyB0byBzaW1wbGlmeSB0aGUgcGF0Y2ggICBbY2xhdWRp
-dSBiZXpuZWFdCj4+ICAgIC0gVXBkYXRlIHRoZSBjb21taXQgZGVzY3JpcHRpb24gdG8gZXhwbGFp
-biB3aHkgaXQgaXMgc2FmZS4KPj4KPj4gdjE6Cj4+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2Fs
-bC9mYzlmN2I0NDRmMGNhNjQ1NDExODY4OTkyYmJlMTY1MTRhZWNjZmVkLjE3MjU2NTI2NTQuZ2l0
-LmNocmlzdG9waGUuamFpbGxldAo+PiBAd2FuYWRvby5mci8KPj4gLS0tCj4+ICAgZHJpdmVycy9w
-aHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYyB8IDEgKwo+PiAgIDEgZmlsZSBjaGFuZ2Vk
-LCAxIGluc2VydGlvbigrKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcmVuZXNhcy9w
-aHktcmNhci1nZW4zLXVzYjIuYyBiL2RyaXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11
-c2IyLmMKPj4gaW5kZXggNThlMTIzMzA1MTUyLi5jY2IwYjU0YjcwZjcgMTAwNjQ0Cj4+IC0tLSBh
-L2RyaXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMy11c2IyLmMKPj4gKysrIGIvZHJpdmVy
-cy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYwo+PiBAQCAtODAzLDYgKzgwMyw3IEBA
-IHN0YXRpYyBpbnQgcmNhcl9nZW4zX3BoeV91c2IyX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZp
-Y2UgKnBkZXYpCj4+ICAgCXJldHVybiAwOwo+Pgo+PiAgIGVycm9yOgo+PiArCXJlc2V0X2NvbnRy
-b2xfYXNzZXJ0KGNoYW5uZWwtPnJzdGMpOwo+IAo+IFRoaXMgd2lsbCByZXN1bHQgaW4gZWl0aGVy
-IGtlcm5lbCBjcmFzaCBbMV0gb3IgcmVzZXQgdXNhZ2UgY291bnQgaW1iYWxhbmNlIGluIGNhc2UK
-PiBvZiBlcnJvciBbMl0gYW5kIFszXSBpbiByY2FyX2dlbjNfcGh5X3VzYjJfaW5pdF9idXMoKSBz
-ZWUgWzRdLiBBbHNvIHJlc2V0IGNvbnRyb2wgQVBJIGlzIG5vdAo+IHJlc3BlY3RlZCBmb3IgU29D
-cyBvdGhlciB0aGFuIFJaL0czUy4gRm9yIHRob3NlIFNvQydzIHJlc2V0IGFzc2VydCBpcwo+IGNh
-bGxlZCB3aXRob3V0IGNhbGxpbmcgYSBnZXQoKS4gTWF5YmUgYWRkIGEgY2hlY2sgKHBoeV9kYXRh
-LT5pbml0X2J1cykgZm9yCj4gYXNzZXJ0IGFwaSdzLCB0aGF0IGd1YXJhbnRlZXMgYXNzZXJ0IGlz
-IGNhbGxlZCBhZnRlciBjYWxsaW5nIGEgZ2V0KCkgYXMgaXQKPiB2YWxpZCBvbmx5IGZvciBSWi9H
-M1M/Pwo+IAo+IFsxXQo+IGNoYW5uZWwtPnJzdGMgPSBkZXZtX3Jlc2V0X2NvbnRyb2xfYXJyYXlf
-Z2V0X3NoYXJlZChkZXYpOwo+IAlpZiAoSVNfRVJSKGNoYW5uZWwtPnJzdGMpKQo+IAkJcmV0dXJu
-IFBUUl9FUlIoY2hhbm5lbC0+cnN0Yyk7Cj4gCj4gWzJdCj4gcmV0ID0gcG1fcnVudGltZV9yZXN1
-bWVfYW5kX2dldChkZXYpOwo+IAlpZiAocmV0KQo+IAkJcmV0dXJuIHJldDsKPiBbM10KPiByZXQg
-PSByZXNldF9jb250cm9sX2RlYXNzZXJ0KGNoYW5uZWwtPnJzdGMpOwo+IAlpZiAocmV0KQo+IAkJ
-Z290byBycG1fcHV0Owo+IAo+IFs0XSBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC92
-Ni4xMS1yYzYvc291cmNlL2RyaXZlcnMvcmVzZXQvY29yZS5jI0w0ODMKClNvLCBpZiBJIHVuZGVy
-c3RhbmQgY29ycmVjdGx5LCB2MSBbNV0gd2FzIGNvcnJlY3QuIDopCgoKSSBkb24ndCB0aGluayB0
-aGF0IFsxXSB3b3VsZCBjcmFzaCwgYmVjYXVzZSBvZiBbNl0uIEl0IHdvdWxkIG9ubHkgCldBUk5f
-T04uIEJ1dCB3aXRoIHYxLCBpdCBpcyBub3QgY2FsbGVkLgoKV2l0aCB2MSwgcmVzZXRfY29udHJv
-bF9hc3NlcnQoKSBpcyBub3QgY2FsbGVkIGlmIApyY2FyX2dlbjNfcGh5X3VzYjJfaW5pdF9idXMo
-KSBmYWlscy4gU28gWzJdIGFuZCBbM10gY2FuJ3Qgb2NjdXIuCgpJIGNhbiBzZW5kIGEgdjMsIHdo
-aWNoIGlzIHRoZSBzYW1lIG9mIHYxLCBvciB5b3UgY2FuIHBpY2sgdjEgYXMtaXMgKGlmIApJJ20g
-Y29ycmVjdC4uLiA6KSkgb3IgeW91IGNhbiBqdXN0IGlnbm9yZSBpdCBpZiAicmVzZXQgY29udHJv
-bCBBUEkgaXMgCm5vdCByZXNwZWN0ZWQgZm9yIFNvQ3MiLgoKCklmIG9mIGludGVyZXN0LCBJIHNw
-b3R0ZWQgaXQgd2l0aCBvbmUgb2YgbXkgY29jY2luZWxsZSBzY3JpcHQgdGhhdCAKY29tcGFyZXMg
-ZnVuY3Rpb25zIGNhbGxlZCBpbiAucmVtb3ZlIGZ1bmN0aW9uLCBidXQgbm90IGluIGVycm9yIGhh
-bmRsaW5nIApwYXRoIG9mIHByb2JlLgoKCkNKCgpbNV06IApodHRwczovL2xvcmUua2VybmVsLm9y
-Zy9hbGwvZmM5ZjdiNDQ0ZjBjYTY0NTQxMTg2ODk5MmJiZTE2NTE0YWVjY2ZlZC4xNzI1NjUyNjU0
-LmdpdC5jaHJpc3RvcGhlLmphaWxsZXRAd2FuYWRvby5mci8KCls2XTogCmh0dHBzOi8vZWxpeGly
-LmJvb3RsaW4uY29tL2xpbnV4L3Y2LjExLXJjNi9zb3VyY2UvZHJpdmVycy9yZXNldC9jb3JlLmMj
-TDQ3MwoKPiAKPiBDaGVlcnMsCj4gQmlqdQo+IAo+PiAgIAlwbV9ydW50aW1lX2Rpc2FibGUoZGV2
-KTsKPj4KPj4gICAJcmV0dXJuIHJldDsKPj4gLS0KPj4gMi40Ni4wCj4+Cj4gCj4gCj4gCgoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 24-09-07 20:52:14, Dmitry Baryshkov wrote:
+> On Sat, 7 Sept 2024 at 18:25, Abel Vesa <abel.vesa@linaro.org> wrote:
+> >
+> > Enable runtime PM support by adding proper ops which will handle the
+> > clocks and regulators. These resources will now be handled on power_on and
+> > power_off instead of init and exit PHY ops. Also enable these resources on
+> > probe in order to balance out the disabling that is happening right after.
+> > Prevent runtime PM from being ON by default as well.
+> >
+> > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-edp.c | 105 ++++++++++++++++++++++++++----------
+> >  1 file changed, 77 insertions(+), 28 deletions(-)
+> >
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+> > index da2b32fb5b45..3affeef261bf 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-edp.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+> > @@ -192,14 +192,6 @@ static int qcom_edp_phy_init(struct phy *phy)
+> >         int ret;
+> >         u8 cfg8;
+> >
+> > -       ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> > -       if (ret)
+> > -               return ret;
+> > -
+> > -       ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
+> > -       if (ret)
+> > -               goto out_disable_supplies;
+> > -
+> >         writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
+> >                DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
+> >                edp->edp + DP_PHY_PD_CTL);
+> > @@ -246,11 +238,6 @@ static int qcom_edp_phy_init(struct phy *phy)
+> >         msleep(20);
+> >
+> >         return 0;
+> > -
+> > -out_disable_supplies:
+> > -       regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> > -
+> > -       return ret;
+> >  }
+> >
+> >  static int qcom_edp_set_voltages(struct qcom_edp *edp, const struct phy_configure_opts_dp *dp_opts)
+> > @@ -721,6 +708,8 @@ static int qcom_edp_phy_power_on(struct phy *phy)
+> >         u32 val;
+> >         u8 cfg1;
+> >
+> > +       pm_runtime_get_sync(&phy->dev);
+> > +
+> >         ret = edp->cfg->ver_ops->com_power_on(edp);
+> >         if (ret)
+> >                 return ret;
+> > @@ -841,6 +830,8 @@ static int qcom_edp_phy_power_off(struct phy *phy)
+> >
+> >         writel(DP_PHY_PD_CTL_PSR_PWRDN, edp->edp + DP_PHY_PD_CTL);
+> >
+> > +       pm_runtime_put(&phy->dev);
+> > +
+> >         return 0;
+> >  }
+> >
+> > @@ -856,23 +847,12 @@ static int qcom_edp_phy_set_mode(struct phy *phy, enum phy_mode mode, int submod
+> >         return 0;
+> >  }
+> >
+> > -static int qcom_edp_phy_exit(struct phy *phy)
+> > -{
+> > -       struct qcom_edp *edp = phy_get_drvdata(phy);
+> > -
+> > -       clk_bulk_disable_unprepare(ARRAY_SIZE(edp->clks), edp->clks);
+> > -       regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> > -
+> > -       return 0;
+> > -}
+> > -
+> >  static const struct phy_ops qcom_edp_ops = {
+> >         .init           = qcom_edp_phy_init,
+> >         .configure      = qcom_edp_phy_configure,
+> >         .power_on       = qcom_edp_phy_power_on,
+> >         .power_off      = qcom_edp_phy_power_off,
+> >         .set_mode       = qcom_edp_phy_set_mode,
+> > -       .exit           = qcom_edp_phy_exit,
+> >         .owner          = THIS_MODULE,
+> >  };
+> >
+> > @@ -1036,6 +1016,32 @@ static int qcom_edp_clks_register(struct qcom_edp *edp, struct device_node *np)
+> >         return devm_of_clk_add_hw_provider(edp->dev, of_clk_hw_onecell_get, data);
+> >  }
+> >
+> > +static int __maybe_unused qcom_edp_runtime_suspend(struct device *dev)
+> > +{
+> > +       struct qcom_edp *edp = dev_get_drvdata(dev);
+> > +
+> > +       dev_err(dev, "Suspending DP phy\n");
+> 
+> Debug leftovers?
+
+Well, I should've made those dev_vdbg instead. 
+
+> 
+> > +
+> > +       clk_bulk_disable_unprepare(ARRAY_SIZE(edp->clks), edp->clks);
+> > +       regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> > +
+> > +       return 0;
+> > +}
+> > +
+> > +static int __maybe_unused qcom_edp_runtime_resume(struct device *dev)
+> > +{
+> > +       struct qcom_edp *edp = dev_get_drvdata(dev);
+> > +       int ret;
+> > +
+> > +       dev_err(dev, "Resuming DP phy\n");
+> 
+> Debug leftovers?
+> 
+
+See above.
+
+> > +
+> > +       ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> > +       if (ret)
+> > +               return ret;
+> > +
+> > +       return clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
+> 
+> Missing error handling
+> 
+
+Yep, will fix.
+
+> > +}
+> > +
+> >  static int qcom_edp_phy_probe(struct platform_device *pdev)
+> >  {
+> >         struct phy_provider *phy_provider;
+> > @@ -1091,20 +1097,57 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
+> >                 return ret;
+> >         }
+> >
+> > -       ret = qcom_edp_clks_register(edp, pdev->dev.of_node);
+> > -       if (ret)
+> > +       ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> > +       if (ret) {
+> > +               dev_err(dev, "failed to enable regulators, err=%d\n", ret);
+> >                 return ret;
+> > +       }
+> > +
+> > +       ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
+> > +       if (ret) {
+> > +               dev_err(dev, "failed to enable clocks, err=%d\n", ret);
+> > +               goto err_disable_regulators;
+> > +       }
+> 
+> Please use pm_runtime_get_sync() instead().
+> 
+
+So let me explain how I thought this through first. This DP PHY is
+usually used on platforms where display is left enabled by the
+bootloader. So doing pm_runtime_get_sync would mean we increment the
+device's usage counter while it is known to be already enabled, even if
+genpd doesn't consider it so. So doing set_active instead would be more
+accurate. Now, for the regulator and clock generic frameworks, that
+seemed OK to do at the time. Now I can see that the same argument can be
+made for those as well. So I'm thinking maybe I just drop the enable
+here and don't do _get_sync, but rather rely on the resume being done
+on power on instead. 
+
+> > +
+> > +       ret = qcom_edp_clks_register(edp, pdev->dev.of_node);
+> > +       if (ret) {
+> > +               dev_err(dev, "failed to register PHY clocks, err=%d\n", ret);
+> > +               goto err_disable_clocks;
+> > +       }
+> >
+> >         edp->phy = devm_phy_create(dev, pdev->dev.of_node, &qcom_edp_ops);
+> >         if (IS_ERR(edp->phy)) {
+> >                 dev_err(dev, "failed to register phy\n");
+> > -               return PTR_ERR(edp->phy);
+> > +               ret = PTR_ERR(edp->phy);
+> > +               goto err_disable_clocks;
+> >         }
+> >
+> > +       pm_runtime_set_active(dev);
+> > +       ret = devm_pm_runtime_enable(dev);
+> 
+> If this handles earlier, you don't need to call pm_runtime_set_active() manually
+> 
+
+Enable and set_active are two separate things. Maybe I'm
+misunderstanding your comment.
+
+> > +       if (ret)
+> > +               goto err_disable_clocks;
+> > +       /*
+> > +        * Prevent runtime pm from being ON by default. Users can enable
+> > +        * it using power/control in sysfs.
+> 
+> why?
+> 
+
+OK, so this is a tricky one. If there is any platform out there that
+makes use of this PHY but the resources are not properly described, we
+might get in trouble. So I was thinking that maybe we don't risk that
+but let the user enable it via sysfs. That way, this patch will not
+break by default such platforms.
+
+Also, this would be in line with the rest of the other Qcom PHYs.
+
+> > +        */
+> > +       pm_runtime_forbid(dev);
+> > +
+> > +       dev_set_drvdata(dev, edp);
+> >         phy_set_drvdata(edp->phy, edp);
+> >
+> >         phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> > -       return PTR_ERR_OR_ZERO(phy_provider);
+> > +       if (IS_ERR(phy_provider))
+> > +               goto err_disable_clocks;
+> > +
+> > +       return 0;
+> > +
+> > +err_disable_clocks:
+> > +       clk_bulk_disable_unprepare(ARRAY_SIZE(edp->clks), edp->clks);
+> > +
+> > +err_disable_regulators:
+> > +       regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
+> 
+> Ideally this should be handled by pm_runtime. Or at least by pm_runtime_put().
+
+Will drop entirely. Again, lets not enable anything on probe for now.
+
+> 
+> > +
+> > +       return ret;
+> >  }
+> >
+> >  static const struct of_device_id qcom_edp_phy_match_table[] = {
+> > @@ -1117,10 +1160,16 @@ static const struct of_device_id qcom_edp_phy_match_table[] = {
+> >  };
+> >  MODULE_DEVICE_TABLE(of, qcom_edp_phy_match_table);
+> >
+> > +static const struct dev_pm_ops qcom_edp_pm_ops = {
+> > +       SET_RUNTIME_PM_OPS(qcom_edp_runtime_suspend,
+> > +                          qcom_edp_runtime_resume, NULL)
+> > +};
+> > +
+> >  static struct platform_driver qcom_edp_phy_driver = {
+> >         .probe          = qcom_edp_phy_probe,
+> >         .driver = {
+> >                 .name   = "qcom-edp-phy",
+> > +               .pm     = &qcom_edp_pm_ops,
+> >                 .of_match_table = qcom_edp_phy_match_table,
+> >         },
+> >  };
+> >
+> > ---
+> > base-commit: 9aaeb87ce1e966169a57f53a02ba05b30880ffb8
+> > change-id: 20240907-phy-qcom-edp-enable-runtime-pm-6fad07af8947
+> >
+> > Best regards,
+> > --
+> > Abel Vesa <abel.vesa@linaro.org>
+> >
+> 
+> 
+> -- 
+> With best wishes
+> Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
