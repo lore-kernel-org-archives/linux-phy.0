@@ -4,79 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7D74ECE57E
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 10:45:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB29AECE579
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 12:45:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=goPiPaAo+ii9PKlCgSG6BZG3jwNeRcJ1VshvOxcyF1k=; b=LmddCV1AF6Z/gs
-	NdaZmRwG9DixIjAPKtdBOqhWrfEpNe8Sv3vwB6mfmi9V2YAyDPvMSoZY/kDo7ZAvx7pZnQ6Amk54K
-	rUKfqP+97Ke9Q/FGm0/LnP62TvKDZpiLkvXromFdCdQzXke3GFc1ASEUtGbeLLZ4cSYoyxuicuJrm
-	iK/DfSMjT2wY6Qbv8DDpuCux0iv731LWJSEK2r57TEfzCUVrBbcmCu+yO9TWODA0w8lAnyfSLjD54
-	aSxSOUXt2exAyxY+SZO1KrIyPdH8lgzDk0p2aMQuI3oxu7ZfzqrBg0Oasqb2mEJek9K3pbzx1GNFA
-	CgtBKtc6xYOG9qblScxA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sQO7QM3TUrrS6Pm/FMOp7GHeQWZSjFMabhRkCYe2jP4=; b=X1feA/OCIv6WY1Ybkn6Wat+xIt
+	VnK69Oblat9u0BRie2OvADbxWnLg9ZARXX46iWgLKAkvu9jiow9vuGBmL75B5HnJYI2B6+D9EEkRh
+	OdTxnoz+p0XXfbrd0+mitnqpaOUeMe+z+pZq33ZATlUv0H9o7jIOsN1Fa+YJKFfr4EHAL93qG41sq
+	WFiKC/UGxqNwPIFm3+QYT4/afDpstae5Gi8BvCksbZWNtY/cJ3wRDf/0uUHPm/7ODV11XVJUj2Hkl
+	9/Um52adiq+mPsH6ve30pJ+rHlmP30cHABgoX59aDbPN7IA5n+DHgO6jH79FvHCTq/np6ixuPDzpL
+	/VbfbXhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snbtZ-00000001YDV-1Upp;
-	Mon, 09 Sep 2024 10:45:21 +0000
-Received: from esa.microchip.iphmx.com ([68.232.153.233])
+	id 1sndm0-00000001sns-2BMH;
+	Mon, 09 Sep 2024 12:45:40 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snawL-00000001NI4-1X0j;
-	Mon, 09 Sep 2024 09:44:20 +0000
+	id 1sncB9-00000001bPy-1Q9t
+	for linux-phy@lists.infradead.org;
+	Mon, 09 Sep 2024 11:03:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1725875050; x=1757411050;
+  t=1725879811; x=1757415811;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=h5LA/enNgw1sNFYXeart0ZorY5rVj4crVb/Vfqx8aUI=;
-  b=HA1fYfiypLp2Xd0x+Tbo5DuzRn63fI5PiZz7WFnXD/MfgwWppH/ou7IA
-   K/mPqBbMe13EpuzQdojyXUt5d+GKEkwrbWAlXDLIPC1TWBCNR1qimNE61
-   Ik5yQqA04nYhh5orvoQRVNuGyr2uIFlwnvxH8qXUdOAlsLR6tgErTQ6xw
-   YpGWcobcwdU5UNCouyj97VuY4lRYcGSK0TqXQqMixm+Wb93DEDleZXHES
-   aoR1jzcqr6puAQl0DxHA8/MO8Y8/IJ/s5NR8U3XlBvCjgdKKuPzpvo8ND
-   b9/LEFHUnxZjyURkh/RVMpmaX3vcmRJ6nu8wuCKUOh/w7JmsSD23TzqM/
-   A==;
-X-CSE-ConnectionGUID: L5CatC7qR+24yrk0PqV2lQ==
-X-CSE-MsgGUID: JW9LqD7NTV6izxZSQ6janA==
-X-IronPort-AV: E=Sophos;i="6.10,213,1719903600"; 
-   d="scan'208";a="262473465"
-X-Amp-Result: SKIPPED(no attachment in message)
+  bh=zxqrtgg8N3MLqE09QLa/5QUpra3H4/9rmhKJTagM0+E=;
+  b=kpgD2uwAnEjXzGtXzzCBh0XxOFQ3G4keqxYGnun7j4Yg9Fq61/l1ZmKV
+   CPCjjgwEC6UCEQ9BbP0prS+JF13PNZ8zmgzoTZW7gD9EmWJwkYbwoah0B
+   H/6qoqwoPqRgkphWb/kcv6tU7pqTYzCobdqxTj4DnwWig4DS71ZfzXB0V
+   P7Vm4V2S/Z7YJhr/WXv4k0yDtQBYn0VVvqxziRWPD8a7Jx4sp7yoCsvWu
+   v/LjqDsUz1vF8eF8yDWkVXWnV9Iu9iG6qFZ7rnN4SRlwEZ7l6/D6fDRvU
+   wTWJuuwPRVX0knbZ4V4fZj4HAEeHaZSFak/nNssauRPi8vPLihpT7GmJ1
+   g==;
+X-CSE-ConnectionGUID: 4dJ/0+VGSpWfEj1lld7pJA==
+X-CSE-MsgGUID: 3psar7/NQRmZko+2y/Yudw==
+X-IronPort-AV: E=Sophos;i="6.10,214,1719903600"; 
+   d="asc'?scan'208";a="32143414"
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa5.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 09 Sep 2024 02:44:09 -0700
+  by esa2.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 09 Sep 2024 04:03:29 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Mon, 9 Sep 2024 02:43:27 -0700
-Received: from DEN-DL-M70577 (10.10.85.11) by chn-vm-ex01.mchp-main.com
- (10.10.85.143) with Microsoft SMTP Server id 15.1.2507.35 via Frontend
- Transport; Mon, 9 Sep 2024 02:43:25 -0700
-Date: Mon, 9 Sep 2024 09:43:24 +0000
-From: Daniel Machon <daniel.machon@microchip.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
+ 15.1.2507.35; Mon, 9 Sep 2024 04:03:24 -0700
+Received: from wendy (10.10.85.11) by chn-vm-ex01.mchp-main.com (10.10.85.143)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.35 via Frontend
+ Transport; Mon, 9 Sep 2024 04:03:22 -0700
+Date: Mon, 9 Sep 2024 12:02:49 +0100
+From: Conor Dooley <conor.dooley@microchip.com>
+To: Minda Chen <minda.chen@starfivetech.com>
 CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Lars Povlsen <lars.povlsen@microchip.com>, Steen Hegelund
-	<Steen.Hegelund@microchip.com>, <UNGLinuxDriver@microchip.com>, Rob Herring
-	<robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
-	<conor+dt@kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<devicetree@vger.kernel.org>
-Subject: Re: [PATCH 8/9] dt-bindings: phy: sparx5: document lan969x in sparx5
- dt-bindings
-Message-ID: <20240909094324.u2aahgnrmxkxt7fc@DEN-DL-M70577>
-References: <20240906-sparx5-lan969x-serdes-driver-v1-0-8d630614c58a@microchip.com>
- <20240906-sparx5-lan969x-serdes-driver-v1-8-8d630614c58a@microchip.com>
- <c0aa5342-a2af-4ac4-bc33-b6dbfff77f63@kernel.org>
- <20240909082241.hvw3a7yig3pujrsk@DEN-DL-M70577>
- <ee4d4375-873b-4b9c-b694-f0191e5c2c54@kernel.org>
+	Jan Kiszka <jan.kiszka@siemens.com>, <linux-phy@lists.infradead.org>, Emil
+ Renner Berthing <emil.renner.berthing@canonical.com>, Rob Herring
+	<robh+dt@kernel.org>, Conor Dooley <conor@kernel.org>,
+	<linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v3 1/1] phy: starfive: jh7110-usb: Fix link configuration
+ to controller
+Message-ID: <20240909-drizzle-hydroxide-dd405c4c3a6d@wendy>
+References: <20240902111127.15155-1-minda.chen@starfivetech.com>
+ <20240902111127.15155-2-minda.chen@starfivetech.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ee4d4375-873b-4b9c-b694-f0191e5c2c54@kernel.org>
+In-Reply-To: <20240902111127.15155-2-minda.chen@starfivetech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240909_024409_433562_5F425B8C 
-X-CRM114-Status: GOOD (  16.85  )
+X-CRM114-CacheID: sfid-20240909_040331_463765_980C3CF7 
+X-CRM114-Status: GOOD (  11.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,44 +85,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1668043928942100487=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> >>>    compatible:
-> >>> -    const: microchip,sparx5-serdes
-> >>> +    enum:
-> >>> +      - microchip,sparx5-serdes
-> >>> +      - microchip,lan969x-serdes
-> >>
-> >> It seems there is no lan969x SoC/chip. Are you sure you are using
-> >> correct naming, matching what kernel is using? Maybe you just sent
-> >> whatever you had in downstream (hint: that's never a good idea).
-> >
-> > You are right. There is no upstream support for lan969x SoC yet. The
-> > upstreaming of the lan969x SoC has just begun, and this series is part
-> > of that upstreaming effort. The lan969x switch driver (not submitted
-> > yet) will depend on this SERDES driver, however, their functionality is
-> > really independent of each other. That is why I am also upstreaming the
-> > SERDES- and switch driver series independent of each other.
-> 
-> That's not exactly my point. Becayse lan969x appears. I claim you use
-> incorrect name, so are you sure you do not use wildcards?
-> Best regards,
-> Krzysztof
+--===============1668043928942100487==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="qjEwf94R/mUYYeCE"
+Content-Disposition: inline
 
-Ahh.
+--qjEwf94R/mUYYeCE
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-So the problem is the 'x' in lan969x, right? I think we have a habbit of
-documenting compatible strings like this in bindings. Anyway, what I can
-do is document the different part numbers in the bindings: lan9691,
-lan9692, lan9693, lan9694, lan9696 and lan9698.
+On Mon, Sep 02, 2024 at 07:11:27PM +0800, Minda Chen wrote:
+> From: Jan Kiszka <jan.kiszka@siemens.com>
+>=20
+> In order to connect the USB 2.0 PHY to its controller, we also need to
+> set "u0_pdrstn_split_sw_usbpipe_plugen" [1]. Some downstream U-Boot
+> versions did that, but upstream firmware does not, and the kernel must
+> not rely on such behavior anyway. Failing to set this left the USB
+> gadget port invisible to connected hosts behind.
+>=20
+> Link: https://doc-en.rvspace.org/JH7110/TRM/JH7110_TRM/sys_syscon.html#sy=
+s_syscon__section_b3l_fqs_wsb [1]
+> Fixes: 16d3a71c20cf ("phy: starfive: Add JH7110 USB 2.0 PHY driver")
+> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
+> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
 
-/Daniel
+Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
 
+--qjEwf94R/mUYYeCE
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZt7V2AAKCRB4tDGHoIJi
+0juLAP0Sv4xZPU/+NpNoVLsi4fsM0XhHNLn4YcKwtjCD6dPgzgD+KH7/Z3GzArn4
+IjuEL7terWYP/AVVmz7hHyJkh7+vKwA=
+=X8B3
+-----END PGP SIGNATURE-----
+
+--qjEwf94R/mUYYeCE--
+
+
+--===============1668043928942100487==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1668043928942100487==--
+
