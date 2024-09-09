@@ -4,85 +4,170 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99498E6FE49
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Sep 2024 18:55:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDFA6CE7AB0
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 06:00:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+L7qEKNe3zFIkQ+e90TZjVmSLb7FeUbbK3ggR+qyPfk=; b=vB3L0yVDv11sUI
-	eWxPIJALB292b0sAmIQFHGKqPW32BXZEV1rucLwobpp3197o/O66DOdhpLlr1FD5grNYBKLoiKOPO
-	BukuR1pOzdkRTOSZscuKdgll6ozkRE73XzegGHZeZBa+PiOuFr4ncdTeJf+mLo8OYFZhxXhWtvMzh
-	CJZB20w7ZUwEPL2VjPF0M4nnZS0+UmqJAJ3EIco+rO9lo3GBrq4yQreNSf4jlsdclwm0WuBoVWaQq
-	r2fxM66bqbw7w3JsS6I50uIITpMVrPNUWbPQoXAvEpBnPT5yln/+XgRwXw6i1C+XpAzttTa1grg3n
-	e4FNOiz7/ly/JzlkVadw==;
+	List-Owner; bh=QOUqINDMqLiMDpbJHIxcl2d1/LPS2W7ikOY/7i1weMg=; b=Nt8LoF2ntKrANZ
+	GkW6ax3pfp2MlKRHFBVIrpwg4L5AkzkvBAnFO8E/A4kfPSR+N/9rWzchPUD6PNmKm1dZa3s2jOVLV
+	w16sYRt6qW5k3hzbl1a8FGSpNiYGd+CYAyuyjHl3L0Z1LyMmr/J8tiJ6qGL6Dqb7nQWbBRdKAEW7E
+	b5uaJnVZ03jXE0EjC50XvfMdSqqBw1z808xI6DVjov9OXDTBeHYizNIY7gcMzErQvoXmVzBVoAUP7
+	OzjX8Z0p2aR655SneDnQa+a+LJkMRCCIc+5IuVnGxhkziNCN++HeM0gPyifEKpuwt3KXN/rGSnUqq
+	GxlyuwEdxVO7KQs/Gk9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snN4M-0000000HHBG-16eJ;
-	Sun, 08 Sep 2024 18:55:30 +0000
-Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
+	id 1snXS0-00000000aLr-35DR;
+	Mon, 09 Sep 2024 06:00:36 +0000
+Received: from mail-japaneastazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c405::1] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snN4J-0000000HHAZ-0udZ
+	id 1snXRw-00000000aKi-3Z6B
 	for linux-phy@lists.infradead.org;
-	Sun, 08 Sep 2024 18:55:29 +0000
-Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-a8a7596b7dfso590708666b.0
-        for <linux-phy@lists.infradead.org>; Sun, 08 Sep 2024 11:55:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1725821725; x=1726426525; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=TZqIGddUBas03ff3I6BsSNqLWw68X6NTJ5NUnBgSAJs=;
-        b=F0RQvP5Wq1sl/tnt5RrNmgK+sKExtWBLHitgixTHiNBb4HAwGIXV9ZdZP8IqzG+X6m
-         GomxpWA50kuaen0OcfIebsqEZn/gUIcRAT2tkonLh3g1udNwwbpRYv8uxy6gQQK55fp2
-         80hqtTH0out+hVulpfXCXWwEHGiFIEgkJRmYqLDT2WFYoDoYfJjD8iI3XZn9emUOuBnh
-         KJDtdbFqjlH1hahCj29AgxxGpYmD2Ra82WUqI8CMQbYNKDTynqhITnQc6hzMmwsFznuC
-         ss/baOSWeaom4L+U/elBSCepoI08bAvIbZG96T22A9nZsaJdmyk1Dkon27P2i98epbrP
-         mOow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1725821725; x=1726426525;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=TZqIGddUBas03ff3I6BsSNqLWw68X6NTJ5NUnBgSAJs=;
-        b=ZrqXPPV6sjmppveHDDaewW4ic3QnjEzemskitMlP1ULryQv3JfnA3AHZ3BL3m6Krk9
-         EUtUtvdjNBMBRd5ZB/zTF9VpIVfRiMyKCojY3W3qrbpwdPDT7H19bwOy8HacAcaFKWZm
-         0VVXNMDeJFg+OzYdFZohnJw9Tks5sy6FgJt1S0pBACakskg3+jiYcQgH/ByAie/Vpg5i
-         zCP+IP4I6iNCgcN6RhULjByYMQIbrNrirVNQvSyNlo9PBsFX8wiuvkoBVpzE3fct81jb
-         ecABYh4u9Oix5gX59GtbhS/ReM9qTCZ9qAcRouDfQJKv42mqV6qjvVt9rP2vLUGNahSw
-         gMrQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXhLHGgaUhLJBlthy/d3G0c3T+TGZIoirUE0EcDBc/OhOJga4eJa3JaExk6MP4RTAZH4++UWpoHUdg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyoNcb5r4Q0eO1ld0bwZ5iGwGh2d6lLbghCUfhD7dHrrl4Vy9Lv
-	mfhlovij2sJM3ayP5Vg1SdloB1HdwHf+U4Uu8dxXPl1/9bFQlHTRAtWfKrnmV/M=
-X-Google-Smtp-Source: AGHT+IETZqM2pc1rLuzoyDSyX/OFqGWUSsTan/jxSxZruPDYvwhZl5X8EVMtgIHXYzE+I2N7GQc1qw==
-X-Received: by 2002:a17:907:3da4:b0:a80:c0ed:2145 with SMTP id a640c23a62f3a-a8a85f2ee3dmr874155266b.2.1725821724657;
-        Sun, 08 Sep 2024 11:55:24 -0700 (PDT)
-Received: from linaro.org ([84.232.173.69])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a8d25c73c00sm236188466b.101.2024.09.08.11.55.23
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 08 Sep 2024 11:55:24 -0700 (PDT)
-Date: Sun, 8 Sep 2024 21:55:22 +0300
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Johan Hovold <johan@kernel.org>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qcom: edp: Add runtime PM support
-Message-ID: <Zt3zGg6VhZJ7qdgz@linaro.org>
-References: <20240907-phy-qcom-edp-enable-runtime-pm-v1-1-8b9ee4210e1e@linaro.org>
- <CAA8EJpqw6pB4d_zQyYdhq9_prLnh+mLMdRSzJ+5EvAjT9wi86A@mail.gmail.com>
- <Zt3pFdndtTw/nbgs@linaro.org>
- <CAA8EJppTp5S1L-rHKDW58uXQO08p6o=aNbE3kA9UjVKZsyJ-Jw@mail.gmail.com>
+	Mon, 09 Sep 2024 06:00:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Yw62w2Yw/jU5oQ0Kj4V7YoriY/o4R5AGk8tAcc02y8YErmkUf0hZp+C9KyRRhugU/ItNy2IZ2gIUTFfOgMdWo0u1ltC/wLW1gCI4PBPeTxZ3f0Cj3pbV+BdJy3+KisPxdkuh9utvlAqIys5thmyGjAtM7Qkj2cqQXVw3n/FFfCfHWwNv5ZlxudGN1vC5Xy8RFhkQ+6mY2M7FIFVqChkJhlJxfPIHh6ODqBmGihOeb6aezrohmcud0cUmLkr4/bVCiA0MY5JD9z+VHnrGulaKbnw3WHXJLgRerF/vLg1V6GaKUgO9h4L4mjkkaj+bsNIPSA/bLneBUk2suYT8Wq8yiQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Lm2C9kuoL30njVXTbhqg98ufeR6H3DqMU5eLl5OaEM4=;
+ b=v7JRV8FMUnItM4KTwLYAJKZBlWHBwKVsgDB4pE9bQ1CZs5JayJ3OEDoppG9n2Dwx7KHugYcrav2r0rexjlG9ogJfxzn4vKIUP7A0ZQsc4EuHWUelyu0VJmDESuNe0Rzjad1AxZ2fDAOlsWTtlnc9qjeVSwfAZfnPTpNfnZ4yn6X93qMNbWr/FmD17HV7GQm6l3h4eb2GXr6Loxhz9FqWeO49Ks+HB6Zj2SnFe2Y6Hfw9QvP/YFCsOfbts4giJh7OSNmggE2ydQzM2IM/b2u2a5gO53+vG14K1e83RRN2LTp5QSE+UQ+qyFNLFVERTSmoNiTdvnKmZS/bProbDQdpBg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Lm2C9kuoL30njVXTbhqg98ufeR6H3DqMU5eLl5OaEM4=;
+ b=VOGwyPATVcyXaG8vlktfSi/Dvor+/hrOQ9LzUhS8RLN57VPQ2qwA43KI+QHHl79fPsWuec/kI3ueBD4c5WplyeFcqbeJnKsU999yJ7tEO4HVLfjbHrXqymV8kpSacI+r0xed0VBK+Zr2mDui44IfnoDr6X/v/o32fAp2VFEiadI=
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
+ by TYCPR01MB6803.jpnprd01.prod.outlook.com (2603:1096:400:b2::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7939.23; Mon, 9 Sep
+ 2024 06:00:16 +0000
+Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
+ ([fe80::86ef:ca98:234d:60e1%4]) with mapi id 15.20.7939.022; Mon, 9 Sep 2024
+ 06:00:16 +0000
+From: Biju Das <biju.das.jz@bp.renesas.com>
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Yoshihiro Shimoda
+	<yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>, Kishon
+ Vijay Abraham I <kishon@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+Subject: RE: [PATCH v2] phy: renesas: rcar-gen3-usb2: Fix an error handling
+ path in rcar_gen3_phy_usb2_probe()
+Thread-Topic: [PATCH v2] phy: renesas: rcar-gen3-usb2: Fix an error handling
+ path in rcar_gen3_phy_usb2_probe()
+Thread-Index: AQHbAS4ibvRfK4Xud0ioOSFDKFeH4bJOFDsAgAAKLACAANUI0A==
+Date: Mon, 9 Sep 2024 06:00:16 +0000
+Message-ID: <TY3PR01MB113466A2B99EE80E8BB0A94AD86992@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+References: <4efe2d0419cbe98163e2422ebe0c7896b8a5efed.1725717505.git.christophe.jaillet@wanadoo.fr>
+ <TY3PR01MB113468D1573C1E50AC9F97DCF86982@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <d01bed96-7811-4ace-8b92-1ee9fafac649@wanadoo.fr>
+In-Reply-To: <d01bed96-7811-4ace-8b92-1ee9fafac649@wanadoo.fr>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYCPR01MB6803:EE_
+x-ms-office365-filtering-correlation-id: 869b1605-4c43-46ca-5a6d-08dcd094ad6e
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|376014|38070700018;
+x-microsoft-antispam-message-info: =?utf-8?B?MEgzVVJnbjRsSXdRWVZSTVpmcG0xOFBhWlhDRFhnNk4rc1MySlNFUnRpVlpT?=
+ =?utf-8?B?OStQNyswSlN5U01sbnNoSmR0RlZ2U0NOVmZXSmViY1ZQNnJWL0ZRV0FNZEVU?=
+ =?utf-8?B?RlBLaTVxUVdFdmFKR2p1Y045ODZVa0k0cVAxSzc5ZG1obm42ZXpTU003MUdQ?=
+ =?utf-8?B?TTNudWRsVDg5UnJGdm13Z1ZkRkQ5TXh2emlCTm9xaGN1dG9qa3E2UWNHVDVW?=
+ =?utf-8?B?V2JvSTRUQXU4OWY4UVVMNzNkeGVjV2xPZWVNZDNZdUJKNW93ZXE5YUhEUWN4?=
+ =?utf-8?B?MFdZMkJOZmNWKzY3ZVFqSExTZHpnU1lHM0dwazZiaXJFWStRVVYraFcvRG9H?=
+ =?utf-8?B?ekVNY21BTUhxeURHOWRhRUlIU3RKOTlqdENwdlI2MVJKZFJ5WlZzS1phUGE0?=
+ =?utf-8?B?SzVmcElFb2d3UGM5VmlJU3Y4TFdqdG5EMU5xeVNaZ2tvU1UwTkZLanNGUDE3?=
+ =?utf-8?B?K3FuMWdzdmxGbUcwMWpPSUorcjFpUDk0d3MrQi9rRWlqZFlPRVB3VTNkRXNT?=
+ =?utf-8?B?VUVyajZ3OTBCMzYrYlhuaWV2UjNDWGJsRjl2bVRLVnF0dFFPM3BESkpBb2hZ?=
+ =?utf-8?B?K2Jrc0xQODdZSFo0Z1hRMmdXL2E4T25sTFFsTTBhZTRHbWxBWStLd1dQTFlI?=
+ =?utf-8?B?b2NRdGhaY0dkaG51Vlh5dTBNMUs5Y2pFcU5mVjVVK1BHMUQxNFEveko3UTdR?=
+ =?utf-8?B?eHhVNTZ1Uy93RkpFM3VuVnNlY0FITnY1emk3eXFDakF0TmZyMmdBanoyOGJT?=
+ =?utf-8?B?RlJDcTRpV2Vwb1EwaVpnQ0FzQmRkN2RENEhuVXpCSEdERXZNOWlKVWJUb0JG?=
+ =?utf-8?B?Y05IMFk0ZnFJNUJRYm9YUVNBMHM4ckVwOXp6eVVueEwyR0hjTXdZTnl3bzRS?=
+ =?utf-8?B?S0cwN2IrbnN5V2dJVElMVDdYVTYya3BucktHV1NkTFVWcTF6MFNiY3YvdjRr?=
+ =?utf-8?B?Q016U21PTGtYT05zeGhvbGNmSW9EY0tGMmIrbHdmaHYwUmJCWUNHRHMxWmxu?=
+ =?utf-8?B?TzVMWlcxWHlTZmwzdC9mYXVZQTZ5WHkyQVdEVlF1MFVKVVdyWktXRjdQOEp1?=
+ =?utf-8?B?YUM2djlHbld1UlRtRmV6cndRa1ZRak0wbVFhTXltZGd6WVRURjdRVWthZFQv?=
+ =?utf-8?B?MVUxbDk3SmFBUFkweVQzb0svNjRmQWdsNXFkeEFpZ0JSOFk1R3VMMFN4SUJ4?=
+ =?utf-8?B?dWRMdFM5RmdaVFROR2ZyUGJPa25MRTltVEZPWXI2RWJrcWo4Rk9xeE15R1Zq?=
+ =?utf-8?B?bnQwUzJNU0hXV2tPUmp0aWtUaDc0TnlpYjdsN1J5WU1raDZmcXhXV2ZvVHdB?=
+ =?utf-8?B?OWN3KzdLdXZ0Sm5KQlg1QzB6YWNaRUhNY1M0ZXYxQTM3UFFTcWJwTHJNUG9P?=
+ =?utf-8?B?ZXpZbUdKazNjZG9Qc2M5OXBYS3Ixd1ZZdnFkUEZDcGpUeTczei9uWk5xSHBh?=
+ =?utf-8?B?SjNYUXM5NmF3Q2hncVV6YVVLTTZaRWc2bitRZUdNQnRYRW9lUGhML0lSakpX?=
+ =?utf-8?B?K1pPUkh1YzU5S1E4QVR5RWp6SDhWLzA2enM2MkRlYjFEekgzTTMzamRzRDA4?=
+ =?utf-8?B?MzVnWFRiS2lxaHpMMkp0WHJZS2ZOODAwRTdpdjN2MVcyMTJ2SmFXWVhUNHFo?=
+ =?utf-8?B?amRVNytTQkxYV00wdVJjcVNZeGFadm9XOEM1aUhhL3dmeWRDVzJ2bE91S29H?=
+ =?utf-8?B?UVAyRUpvQkdvVWhneVV1cU43b09Sc21DZzE0UGtyMjRjZVdOZGR6WUJ4ZUlB?=
+ =?utf-8?B?NEZkZngxWjI1ZGwrSDI4a0VLUFlyallWWXZ6cjlGeEV3bjNwdVdLSm5RWjZG?=
+ =?utf-8?Q?/0GmLT+OVrIWnGOYHbjsudxshDrrps7ZlD8OM=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?eVdnRVRTbmVNTVc5WWVKSU5zektXeGZURHFhcC9nU2daUTBBbzF3a0YzNVF3?=
+ =?utf-8?B?ekI2TG1VSGNlS21EMGVveVlHMjI5QnVuK3J1WG9xc2h1T2plZFJBQjNIZC9I?=
+ =?utf-8?B?alpVSGFJaEdCZXY0bjlZZys2allFWG1zVjd0QmQxTjdwM0pIb1RuU08wQ0pT?=
+ =?utf-8?B?M1dWbGlmSFFyUENLZ3Y2TFRDSHBtcDVNci9jVDZqVmxwV3R3RnVJdkc3QlJm?=
+ =?utf-8?B?Z1RwM3NZamhBRjZFamxVc29CbmErUlBLM3E4amxnVVZOZXNCLzFac0EyMVNI?=
+ =?utf-8?B?c3lFQnVNUUxDSGFXS3pabEhKQzd1R3JTc0lCWHErQnI5OTlHSGh1OHliTGE3?=
+ =?utf-8?B?eVpmd1pSNVhqK3ZYcU4xK1VQbmlwejRuLzVqWmoxZVBwcFI3WFhseHVnTks4?=
+ =?utf-8?B?bDZpdXZ3SWFDMzhOOGZBRVhjdnk2cFNKQ3ZlT3BNdzNPUENlSWs0V2F0VUg4?=
+ =?utf-8?B?MVc3RGZVOTV4dFlWQi9yUlZtdUduVTBLYnNvWXdqUkZQbi83dEpUM3BtSEtJ?=
+ =?utf-8?B?NURBd2RKMFdJdHpxdERyWTRTU1Q0NkR3MENua2h6cmJDeUFKcCtLOEpiVDVD?=
+ =?utf-8?B?SW9COUUyQnpETVhJOEJpNlJJWmNqSmhUMFNJbFMyZTdoc2YwT2g0Q0x4QkYw?=
+ =?utf-8?B?ZkZTR1l1LzhhaG56SWVPaDFPVldsYXBQR3NGR2FDWWs0OEFWQWg1ZEtHbmV5?=
+ =?utf-8?B?ZHozNXRyZjdsaEdrMXo4WngvZGl0KzlkWXFOZms5WFFrWnlUdkQwQmEydFlF?=
+ =?utf-8?B?aWlzRVNFT0JIemxZNjdxZ2R4UTZLWmVUS1VSc1craEpKY25jbVBjQTlqcUl5?=
+ =?utf-8?B?djVGeVhDd2NDTG1ZVWJHbm5xN1c3ZW1FbzlTUEZFb3QxL0dLSzYxQlFGRHl3?=
+ =?utf-8?B?MW9aUDJXeVFHRU83aEpHUUtwZThrWjhQMklrdXQ3Wjgzdk9rZjBsN3ZEY0dV?=
+ =?utf-8?B?MUIrMHdYRzEvTkppQ29vQVRDdkJPVTdlZGk0Sm5TdHVsclJJdUdPRmdzMEFo?=
+ =?utf-8?B?MGNVWGVFbjJQYnlIMHhSRTJPTGtoRGl5eVg3T1gvOWJPdXRaaGtPSVdYRGo5?=
+ =?utf-8?B?RjFvdWFLQzEzSldFQlNYRDJJYWppd1BJVzJnZGpFbFBtcVdmVFg5YzBsYmlu?=
+ =?utf-8?B?V0QxS09ZYTBzQW1qZWxwTm1KdExXRzJLdWdQYTk4TEQvdkhVcjNGT1VNYWNI?=
+ =?utf-8?B?OEVGY2FoUTA3clN1STMxVGtrRWR3c3B3amM1SFFBMlJJcm5yck5RazVqRVlS?=
+ =?utf-8?B?NHBCMFk1U3FDYUtyT3NscmpvT2xzNC8rdVJtRGl0UmVTdTZQeDB3SVkvVmpp?=
+ =?utf-8?B?OGJRczRicEFhYkNBbS83dVVSbkhsUU1xRk4xNmdRdEhReXUzRU0vUUtxNm4v?=
+ =?utf-8?B?NVA0cVgrRFVsZ0cyRXZkSVFQaHF3LzVvYy9pZjhkUklNRENQQ2daWm5hcmFT?=
+ =?utf-8?B?WGhmNlpoeUZJM1MvVHlGQ3lxY3lud2c3NUNyWFViNGJRV2J5WnBsK2NJd0xB?=
+ =?utf-8?B?WGI4OXFpcTlBdnBZR3hDd2NOVkRQaEY4aUcxbi9DNlUyU2JwS2dYOTljMFhS?=
+ =?utf-8?B?QkdyampRRzZwd25KTk5QMnlOVHZTRzVTMW1JUWl6VmYwd3dnbTlDUDVPSS9Z?=
+ =?utf-8?B?OEhlU2pjL2NHUXVIWHhweEgzRXJXZEFHVHAvNUVLUWRwZ0JpcWNpTGF5ZVVT?=
+ =?utf-8?B?MUFuY1g0MGJ1cEl6QXBscmhpMUdNTittdkFWVXl5U2szK015YU9vVVQ4aWZB?=
+ =?utf-8?B?Z0FmWlRjd2drcmV5Nisva29rNzA4RHJ5ZElFSkp5WDg5K0cxZkl4akw5R0dE?=
+ =?utf-8?B?SG9xMHc4YlFzYVhDcXBOT1p0SmtTai9tSEhYRnJoeVJTZENmaDM2NE54ejVN?=
+ =?utf-8?B?VGNvekMrVzBwM0ZVcWszY0NRajdXb2IrUTRINURCQVpJN2s5RnBrRU9qb1FW?=
+ =?utf-8?B?d3hRcWppdVdqQVVXOVB4OUczcEh3dEo5VytCRVBob2x1NVYybEpYM2Z2ZnM1?=
+ =?utf-8?B?dWFHWlZnbTN4bXlFZ1doMldMamlteFBiQy9wLzZBL0VuNWltMTBZdzFDelVp?=
+ =?utf-8?B?anNLQ1VqNUhqVDJsMndrb3A1anBIcnllOTdEQldJUzFnSDhrWW5uaFg5ek9U?=
+ =?utf-8?B?VXg0U0VqWWFISHFBYVRJQjlCaWNDNlRhMXNHYWhaZ3JyOWpXZWdUaVZtend2?=
+ =?utf-8?B?d1E9PQ==?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAA8EJppTp5S1L-rHKDW58uXQO08p6o=aNbE3kA9UjVKZsyJ-Jw@mail.gmail.com>
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 869b1605-4c43-46ca-5a6d-08dcd094ad6e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2024 06:00:16.2912
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: L0H+s74/A/CKRGDNaIS9ZOhHt5ZibQtbaz3UO5dJj31L4eL6J9oHuWeiqHKyvdnTWiewrJJTnvnqNJxd7dj4mPY7zkaw1p3s56SGVA6N0gA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYCPR01MB6803
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240908_115527_292634_4CD81442 
-X-CRM114-Status: GOOD (  50.32  )
+X-CRM114-CacheID: sfid-20240908_230033_245957_AFE6ABD0 
+X-CRM114-Status: GOOD (  34.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,171 +179,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-09-08 21:43:01, Dmitry Baryshkov wrote:
-> On Sun, 8 Sept 2024 at 21:12, Abel Vesa <abel.vesa@linaro.org> wrote:
-> >
-> > On 24-09-07 20:52:14, Dmitry Baryshkov wrote:
-> > > On Sat, 7 Sept 2024 at 18:25, Abel Vesa <abel.vesa@linaro.org> wrote:
-> > > >
-> > > > Enable runtime PM support by adding proper ops which will handle the
-> > > > clocks and regulators. These resources will now be handled on power_on and
-> > > > power_off instead of init and exit PHY ops. Also enable these resources on
-> > > > probe in order to balance out the disabling that is happening right after.
-> > > > Prevent runtime PM from being ON by default as well.
-> > > >
-> > > > Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
-> > > > ---
-> > > >  drivers/phy/qualcomm/phy-qcom-edp.c | 105 ++++++++++++++++++++++++++----------
-> > > >  1 file changed, 77 insertions(+), 28 deletions(-)
-> > > >
-> > > > diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-> > > > index da2b32fb5b45..3affeef261bf 100644
-> > > > --- a/drivers/phy/qualcomm/phy-qcom-edp.c
-> > > > +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-
-[...]
-
-> > > > +}
-> > > > +
-> > > >  static int qcom_edp_phy_probe(struct platform_device *pdev)
-> > > >  {
-> > > >         struct phy_provider *phy_provider;
-> > > > @@ -1091,20 +1097,57 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
-> > > >                 return ret;
-> > > >         }
-> > > >
-> > > > -       ret = qcom_edp_clks_register(edp, pdev->dev.of_node);
-> > > > -       if (ret)
-> > > > +       ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
-> > > > +       if (ret) {
-> > > > +               dev_err(dev, "failed to enable regulators, err=%d\n", ret);
-> > > >                 return ret;
-> > > > +       }
-> > > > +
-> > > > +       ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
-> > > > +       if (ret) {
-> > > > +               dev_err(dev, "failed to enable clocks, err=%d\n", ret);
-> > > > +               goto err_disable_regulators;
-> > > > +       }
-> > >
-> > > Please use pm_runtime_get_sync() instead().
-> > >
-> >
-> > So let me explain how I thought this through first. This DP PHY is
-> > usually used on platforms where display is left enabled by the
-> > bootloader. So doing pm_runtime_get_sync would mean we increment the
-> > device's usage counter while it is known to be already enabled, even if
-> > genpd doesn't consider it so. So doing set_active instead would be more
-> > accurate. Now, for the regulator and clock generic frameworks, that
-> > seemed OK to do at the time. Now I can see that the same argument can be
-> > made for those as well. So I'm thinking maybe I just drop the enable
-> > here and don't do _get_sync, but rather rely on the resume being done
-> > on power on instead.
-> 
-> Please don't rely on the bootloader. The device should be in the
-> resumed state when registering clocks. Also devm_pm_runtime_enable()
-> should also be called before, so that the CCF makes note of PM being
-> enabled.
-
-Fair enough. Will do that.
-
-> 
-> >
-> > > > +
-> > > > +       ret = qcom_edp_clks_register(edp, pdev->dev.of_node);
-> > > > +       if (ret) {
-> > > > +               dev_err(dev, "failed to register PHY clocks, err=%d\n", ret);
-> > > > +               goto err_disable_clocks;
-> > > > +       }
-> > > >
-> > > >         edp->phy = devm_phy_create(dev, pdev->dev.of_node, &qcom_edp_ops);
-> > > >         if (IS_ERR(edp->phy)) {
-> > > >                 dev_err(dev, "failed to register phy\n");
-> > > > -               return PTR_ERR(edp->phy);
-> > > > +               ret = PTR_ERR(edp->phy);
-> > > > +               goto err_disable_clocks;
-> > > >         }
-> > > >
-> > > > +       pm_runtime_set_active(dev);
-> > > > +       ret = devm_pm_runtime_enable(dev);
-> > >
-> > > If this handles earlier, you don't need to call pm_runtime_set_active() manually
-> > >
-> >
-> > Enable and set_active are two separate things. Maybe I'm
-> > misunderstanding your comment.
-> 
-> Yeah, I wrote something strange here. I meant that if enable is called
-> earlier and then if the device is resumed, there is no need to call
-> set_active.
-
-I guess you meant "that if _get_sync is called earlier and then ...", right?
-Enable won't resume it.
-
-> 
-> >
-> > > > +       if (ret)
-> > > > +               goto err_disable_clocks;
-> > > > +       /*
-> > > > +        * Prevent runtime pm from being ON by default. Users can enable
-> > > > +        * it using power/control in sysfs.
-> > >
-> > > why?
-> > >
-> >
-> > OK, so this is a tricky one. If there is any platform out there that
-> > makes use of this PHY but the resources are not properly described, we
-> > might get in trouble. So I was thinking that maybe we don't risk that
-> > but let the user enable it via sysfs. That way, this patch will not
-> > break by default such platforms.
-> 
-> If the platform doesn't describe resources, it is broken, there is no
-> need to support it.
-> >
-> > Also, this would be in line with the rest of the other Qcom PHYs.
-> 
-> I think it's a bit of a cargo cult. Such code was added in 2018 and
-> then it was c&p'ed since that time.
-
-OK, will drop it.
-
-> 
-> >
-> > > > +        */
-> > > > +       pm_runtime_forbid(dev);
-> > > > +
-> > > > +       dev_set_drvdata(dev, edp);
-> > > >         phy_set_drvdata(edp->phy, edp);
-> > > >
-> > > >         phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> > > > -       return PTR_ERR_OR_ZERO(phy_provider);
-> > > > +       if (IS_ERR(phy_provider))
-> > > > +               goto err_disable_clocks;
-> > > > +
-> > > > +       return 0;
-> > > > +
-> > > > +err_disable_clocks:
-> > > > +       clk_bulk_disable_unprepare(ARRAY_SIZE(edp->clks), edp->clks);
-> > > > +
-> > > > +err_disable_regulators:
-> > > > +       regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
-> > >
-> > > Ideally this should be handled by pm_runtime. Or at least by pm_runtime_put().
-> >
-> > Will drop entirely. Again, lets not enable anything on probe for now.
-> 
-> NAK.
-
-OK, your argument above about the registering of clocks needing the
-PHY resumed makes sense. Will do _get_sync on probe.
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgQ2hyaXN0b3BoZSBKQUlMTEVULA0KDQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+
+IEZyb206IENocmlzdG9waGUgSkFJTExFVCA8Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI+
+DQo+IFNlbnQ6IFN1bmRheSwgU2VwdGVtYmVyIDgsIDIwMjQgNTo1OSBQTQ0KPiBTdWJqZWN0OiBS
+ZTogW1BBVENIIHYyXSBwaHk6IHJlbmVzYXM6IHJjYXItZ2VuMy11c2IyOiBGaXggYW4gZXJyb3Ig
+aGFuZGxpbmcgcGF0aCBpbg0KPiByY2FyX2dlbjNfcGh5X3VzYjJfcHJvYmUoKQ0KPiANCj4gTGUg
+MDgvMDkvMjAyNCDDoCAxODozOSwgQmlqdSBEYXMgYSDDqWNyaXTCoDoNCj4gPiBIaSBDaHJpc3Rv
+cGhlIEpBSUxMRVQsDQo+ID4NCj4gPiBUaGFua3MgZm9yIHRoZSBwYXRjaC4NCj4gPg0KPiA+PiAt
+LS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiA+PiBGcm9tOiBDaHJpc3RvcGhlIEpBSUxMRVQg
+PGNocmlzdG9waGUuamFpbGxldEB3YW5hZG9vLmZyPg0KPiA+PiBTZW50OiBTYXR1cmRheSwgU2Vw
+dGVtYmVyIDcsIDIwMjQgMjo1OSBQTQ0KPiA+PiBTdWJqZWN0OiBbUEFUQ0ggdjJdIHBoeTogcmVu
+ZXNhczogcmNhci1nZW4zLXVzYjI6IEZpeCBhbiBlcnJvcg0KPiA+PiBoYW5kbGluZyBwYXRoIGlu
+DQo+ID4+IHJjYXJfZ2VuM19waHlfdXNiMl9wcm9iZSgpDQo+ID4+DQo+ID4+IElmIGFuIGVycm9y
+IG9jY3VycyBhZnRlciB0aGUgcmNhcl9nZW4zX3BoeV91c2IyX2luaXRfYnVzKCksDQo+ID4+IHJl
+c2V0X2NvbnRyb2xfYXNzZXJ0KCkgbXVzdCBiZSBjYWxsZWQsIGFzIGFscmVhZHkgZG9uZSBpbiB0
+aGUgcmVtb3ZlIGZ1bmN0aW9uLg0KPiA+Pg0KPiA+PiBUaGlzIGlzIGZpbmUgdG8gcmUtdXNlIHRo
+ZSBleGlzdGluZyBlcnJvciBoYW5kbGluZyBwYXRoLCBiZWNhdXNlIGV2ZW4NCj4gPj4gaWYgImNo
+YW5uZWwtPnJzdGMiIGlzIHN0aWxsIE5VTEwgYXQgdGhpcyBwb2ludCwgaXQgaXMgc2FmZSB0byBj
+YWxsIHJlc2V0X2NvbnRyb2xfYXNzZXJ0KE5VTEwpLg0KPiA+Pg0KPiA+PiBGaXhlczogNGVhZTE2
+Mzc1MzU3ICgicGh5OiByZW5lc2FzOiByY2FyLWdlbjMtdXNiMjogQWRkIHN1cHBvcnQgdG8NCj4g
+Pj4gaW5pdGlhbGl6ZSB0aGUgYnVzIikNCj4gPj4gU2lnbmVkLW9mZi1ieTogQ2hyaXN0b3BoZSBK
+QUlMTEVUIDxjaHJpc3RvcGhlLmphaWxsZXRAd2FuYWRvby5mcj4NCj4gPj4gLS0tDQo+ID4+IENo
+YW5nZXMgaW4gdjI6DQo+ID4+ICAgIC0gUmUtdXNlICdlcnJvcicgdG8gc2ltcGxpZnkgdGhlIHBh
+dGNoICAgW2NsYXVkaXUgYmV6bmVhXQ0KPiA+PiAgICAtIFVwZGF0ZSB0aGUgY29tbWl0IGRlc2Ny
+aXB0aW9uIHRvIGV4cGxhaW4gd2h5IGl0IGlzIHNhZmUuDQo+ID4+DQo+ID4+IHYxOg0KPiA+PiBo
+dHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvZmM5ZjdiNDQ0ZjBjYTY0NTQxMTg2ODk5MmJiZTE2
+NTE0YWVjY2ZlZC4NCj4gPj4gMTcyNTY1MjY1NC5naXQuY2hyaXN0b3BoZS5qYWlsbGV0DQo+ID4+
+IEB3YW5hZG9vLmZyLw0KPiA+PiAtLS0NCj4gPj4gICBkcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1y
+Y2FyLWdlbjMtdXNiMi5jIHwgMSArDQo+ID4+ICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
+KCspDQo+ID4+DQo+ID4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2Fy
+LWdlbjMtdXNiMi5jDQo+ID4+IGIvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVz
+YjIuYw0KPiA+PiBpbmRleCA1OGUxMjMzMDUxNTIuLmNjYjBiNTRiNzBmNyAxMDA2NDQNCj4gPj4g
+LS0tIGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYw0KPiA+PiArKysg
+Yi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yY2FyLWdlbjMtdXNiMi5jDQo+ID4+IEBAIC04MDMs
+NiArODAzLDcgQEAgc3RhdGljIGludCByY2FyX2dlbjNfcGh5X3VzYjJfcHJvYmUoc3RydWN0IHBs
+YXRmb3JtX2RldmljZSAqcGRldikNCj4gPj4gICAJcmV0dXJuIDA7DQo+ID4+DQo+ID4+ICAgZXJy
+b3I6DQo+ID4+ICsJcmVzZXRfY29udHJvbF9hc3NlcnQoY2hhbm5lbC0+cnN0Yyk7DQo+ID4NCj4g
+PiBUaGlzIHdpbGwgcmVzdWx0IGluIGVpdGhlciBrZXJuZWwgY3Jhc2ggWzFdIG9yIHJlc2V0IHVz
+YWdlIGNvdW50DQo+ID4gaW1iYWxhbmNlIGluIGNhc2Ugb2YgZXJyb3IgWzJdIGFuZCBbM10gaW4N
+Cj4gPiByY2FyX2dlbjNfcGh5X3VzYjJfaW5pdF9idXMoKSBzZWUgWzRdLiBBbHNvIHJlc2V0IGNv
+bnRyb2wgQVBJIGlzIG5vdA0KPiA+IHJlc3BlY3RlZCBmb3IgU29DcyBvdGhlciB0aGFuIFJaL0cz
+Uy4gRm9yIHRob3NlIFNvQydzIHJlc2V0IGFzc2VydCBpcw0KPiA+IGNhbGxlZCB3aXRob3V0IGNh
+bGxpbmcgYSBnZXQoKS4gTWF5YmUgYWRkIGEgY2hlY2sgKHBoeV9kYXRhLT5pbml0X2J1cykNCj4g
+PiBmb3IgYXNzZXJ0IGFwaSdzLCB0aGF0IGd1YXJhbnRlZXMgYXNzZXJ0IGlzIGNhbGxlZCBhZnRl
+ciBjYWxsaW5nIGEgZ2V0KCkgYXMgaXQgdmFsaWQgb25seSBmb3INCj4gUlovRzNTPz8NCj4gPg0K
+PiA+IFsxXQ0KPiA+IGNoYW5uZWwtPnJzdGMgPSBkZXZtX3Jlc2V0X2NvbnRyb2xfYXJyYXlfZ2V0
+X3NoYXJlZChkZXYpOw0KPiA+IAlpZiAoSVNfRVJSKGNoYW5uZWwtPnJzdGMpKQ0KPiA+IAkJcmV0
+dXJuIFBUUl9FUlIoY2hhbm5lbC0+cnN0Yyk7DQo+ID4NCj4gPiBbMl0NCj4gPiByZXQgPSBwbV9y
+dW50aW1lX3Jlc3VtZV9hbmRfZ2V0KGRldik7DQo+ID4gCWlmIChyZXQpDQo+ID4gCQlyZXR1cm4g
+cmV0Ow0KPiA+IFszXQ0KPiA+IHJldCA9IHJlc2V0X2NvbnRyb2xfZGVhc3NlcnQoY2hhbm5lbC0+
+cnN0Yyk7DQo+ID4gCWlmIChyZXQpDQo+ID4gCQlnb3RvIHJwbV9wdXQ7DQo+ID4NCj4gPiBbNF0N
+Cj4gPiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51eC92Ni4xMS1yYzYvc291cmNlL2Ry
+aXZlcnMvcmVzZXQvY29yZS5jDQo+ID4gI0w0ODMNCj4gDQo+IFNvLCBpZiBJIHVuZGVyc3RhbmQg
+Y29ycmVjdGx5LCB2MSBbNV0gd2FzIGNvcnJlY3QuIDopDQoNClllcywgSSBhZ3JlZSB2MSBbNV0g
+aXMgY29ycmVjdCwgaWYgd2UgaWdub3JlICJyZXNldCBjb250cm9sIEFQSSBpcyBub3QgcmVzcGVj
+dGVkIGZvciBTb0NzIi4NCg0KQW5vdGhlciBzb2x1dGlvbiBjb3VsZCBiZSB1c2luZyBhY3Rpb25f
+b3JfcmVzZXQoKSBmb3IgY2xlYW51cCBmb3INCnJjYXJfZ2VuM19waHlfdXNiMl9pbml0X2J1cygp
+LCBzbyB0aGF0IGl0IGlzIGFwcGxpY2FibGUgb25seSBmb3IgUlovRzNTPz8NCg0KQ2hlZXJzLA0K
+QmlqdQ0KDQo+IA0KPiANCj4gSSBkb24ndCB0aGluayB0aGF0IFsxXSB3b3VsZCBjcmFzaCwgYmVj
+YXVzZSBvZiBbNl0uIEl0IHdvdWxkIG9ubHkgV0FSTl9PTi4gQnV0IHdpdGggdjEsIGl0IGlzIG5v
+dA0KPiBjYWxsZWQuDQo+IA0KPiBXaXRoIHYxLCByZXNldF9jb250cm9sX2Fzc2VydCgpIGlzIG5v
+dCBjYWxsZWQgaWYNCj4gcmNhcl9nZW4zX3BoeV91c2IyX2luaXRfYnVzKCkgZmFpbHMuIFNvIFsy
+XSBhbmQgWzNdIGNhbid0IG9jY3VyLg0KPiANCj4gSSBjYW4gc2VuZCBhIHYzLCB3aGljaCBpcyB0
+aGUgc2FtZSBvZiB2MSwgb3IgeW91IGNhbiBwaWNrIHYxIGFzLWlzIChpZiBJJ20gY29ycmVjdC4u
+LiA6KSkgb3IgeW91IGNhbg0KPiBqdXN0IGlnbm9yZSBpdCBpZiAicmVzZXQgY29udHJvbCBBUEkg
+aXMgbm90IHJlc3BlY3RlZCBmb3IgU29DcyIuDQo+IA0KPiANCj4gSWYgb2YgaW50ZXJlc3QsIEkg
+c3BvdHRlZCBpdCB3aXRoIG9uZSBvZiBteSBjb2NjaW5lbGxlIHNjcmlwdCB0aGF0IGNvbXBhcmVz
+IGZ1bmN0aW9ucyBjYWxsZWQNCj4gaW4gLnJlbW92ZSBmdW5jdGlvbiwgYnV0IG5vdCBpbiBlcnJv
+ciBoYW5kbGluZyBwYXRoIG9mIHByb2JlLg0KPiANCj4gDQo+IENKDQo+IA0KPiBbNV06DQo+IGh0
+dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC9mYzlmN2I0NDRmMGNhNjQ1NDExODY4OTkyYmJlMTY1
+MTRhZWNjZmVkLjE3MjU2NTI2NTQuZ2l0LmNocmlzdG9waGUuamFpbGxldA0KPiBAd2FuYWRvby5m
+ci8NCj4gDQo+IFs2XToNCj4gaHR0cHM6Ly9lbGl4aXIuYm9vdGxpbi5jb20vbGludXgvdjYuMTEt
+cmM2L3NvdXJjZS9kcml2ZXJzL3Jlc2V0L2NvcmUuYyNMNDczDQo+IA0KPiA+DQo+ID4gQ2hlZXJz
+LA0KPiA+IEJpanUNCj4gPg0KPiA+PiAgIAlwbV9ydW50aW1lX2Rpc2FibGUoZGV2KTsNCj4gPj4N
+Cj4gPj4gICAJcmV0dXJuIHJldDsNCj4gPj4gLS0NCj4gPj4gMi40Ni4wDQo+ID4+DQo+ID4NCj4g
+Pg0KPiA+DQoNCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LXBoeQo=
