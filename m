@@ -4,76 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB29AECE579
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 12:45:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9BDCECE579
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 12:47:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sQO7QM3TUrrS6Pm/FMOp7GHeQWZSjFMabhRkCYe2jP4=; b=X1feA/OCIv6WY1Ybkn6Wat+xIt
-	VnK69Oblat9u0BRie2OvADbxWnLg9ZARXX46iWgLKAkvu9jiow9vuGBmL75B5HnJYI2B6+D9EEkRh
-	OdTxnoz+p0XXfbrd0+mitnqpaOUeMe+z+pZq33ZATlUv0H9o7jIOsN1Fa+YJKFfr4EHAL93qG41sq
-	WFiKC/UGxqNwPIFm3+QYT4/afDpstae5Gi8BvCksbZWNtY/cJ3wRDf/0uUHPm/7ODV11XVJUj2Hkl
-	9/Um52adiq+mPsH6ve30pJ+rHlmP30cHABgoX59aDbPN7IA5n+DHgO6jH79FvHCTq/np6ixuPDzpL
-	/VbfbXhg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RY+uJi3jjyyMjVXCPG3pT7C4sJcnkGAjxY3JHmc2H8A=; b=QKZbRowWfHi0di
+	ecAoOZW4z2TXBWWcDOSLSVyFPbP3XprQ1uTnTjnSFX2jYulA95e04mrGCT9uJtjrlL234VdM1sMDB
+	5TtiBPiq7HYXYjueRYaGHFS42DEbX4maA1JyIoWi5+HzJGLsEUu/IrK7Ql8F0DHbKjCe3pKruIeBZ
+	mf8uB6NDFiH7X6JLMcxugf/KbyCoq9ASERLH5ykS4gFyK2QkY1nyHvLpfBJFeV8kRrfnByqcyAH9x
+	XAwfqORNMaFsqXRNJQyZQklJ4FEyz1UtpHuocqnhqxxBaRe+dnvdKuHBW9b7j90N9aSMVa7gcGyeV
+	GSYYJFcIKLP3F6y9gMgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sndm0-00000001sns-2BMH;
-	Mon, 09 Sep 2024 12:45:40 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1sndoE-00000001usM-0Wey;
+	Mon, 09 Sep 2024 12:47:58 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sncB9-00000001bPy-1Q9t
+	id 1sndnC-00000001twx-1ley
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Sep 2024 11:03:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1725879811; x=1757415811;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=zxqrtgg8N3MLqE09QLa/5QUpra3H4/9rmhKJTagM0+E=;
-  b=kpgD2uwAnEjXzGtXzzCBh0XxOFQ3G4keqxYGnun7j4Yg9Fq61/l1ZmKV
-   CPCjjgwEC6UCEQ9BbP0prS+JF13PNZ8zmgzoTZW7gD9EmWJwkYbwoah0B
-   H/6qoqwoPqRgkphWb/kcv6tU7pqTYzCobdqxTj4DnwWig4DS71ZfzXB0V
-   P7Vm4V2S/Z7YJhr/WXv4k0yDtQBYn0VVvqxziRWPD8a7Jx4sp7yoCsvWu
-   v/LjqDsUz1vF8eF8yDWkVXWnV9Iu9iG6qFZ7rnN4SRlwEZ7l6/D6fDRvU
-   wTWJuuwPRVX0knbZ4V4fZj4HAEeHaZSFak/nNssauRPi8vPLihpT7GmJ1
-   g==;
-X-CSE-ConnectionGUID: 4dJ/0+VGSpWfEj1lld7pJA==
-X-CSE-MsgGUID: 3psar7/NQRmZko+2y/Yudw==
-X-IronPort-AV: E=Sophos;i="6.10,214,1719903600"; 
-   d="asc'?scan'208";a="32143414"
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa2.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 09 Sep 2024 04:03:29 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Mon, 9 Sep 2024 04:03:24 -0700
-Received: from wendy (10.10.85.11) by chn-vm-ex01.mchp-main.com (10.10.85.143)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.35 via Frontend
- Transport; Mon, 9 Sep 2024 04:03:22 -0700
-Date: Mon, 9 Sep 2024 12:02:49 +0100
-From: Conor Dooley <conor.dooley@microchip.com>
-To: Minda Chen <minda.chen@starfivetech.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jan Kiszka <jan.kiszka@siemens.com>, <linux-phy@lists.infradead.org>, Emil
- Renner Berthing <emil.renner.berthing@canonical.com>, Rob Herring
-	<robh+dt@kernel.org>, Conor Dooley <conor@kernel.org>,
-	<linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH v3 1/1] phy: starfive: jh7110-usb: Fix link configuration
- to controller
-Message-ID: <20240909-drizzle-hydroxide-dd405c4c3a6d@wendy>
-References: <20240902111127.15155-1-minda.chen@starfivetech.com>
- <20240902111127.15155-2-minda.chen@starfivetech.com>
+	Mon, 09 Sep 2024 12:46:58 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-2daaa9706a9so3300699a91.1
+        for <linux-phy@lists.infradead.org>; Mon, 09 Sep 2024 05:46:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1725886012; x=1726490812; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=CmsSXtXoT0LjaKLXoUsKwFJIQHJ/ks4Ou/9C9lMCcY0=;
+        b=jl1TvyKTDPOsg7SitClcEGktW80fK7WnTKC2+q2mp69flpzCcpuYazCW2mFXFg/YXs
+         ACrOc4wweGJscZ1gYNYmCl7OCa9OCHvHXXAfMVAsxPYq9BTr8CL/wLfDYqTd7ufQE/HJ
+         MeqOvvyOmgoYrmvJuyK6g65MMx6iKyxz53G/NVJX9CaHOpKXqlLx4vkX9P7/bO5fGU3h
+         jAPsE8q1notWCJNeq7eA2k0nWjIlA5eTmM1V8zwsVg1D/qgUAbQ4DLCRCKcsPPE21tTT
+         jsXvaF0GlKfTrWcyR+uw7QdH2kIiN7MKUqrxG74XrehjrquMVlR+SPVU/kY1uWayKebE
+         Pvkw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1725886012; x=1726490812;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=CmsSXtXoT0LjaKLXoUsKwFJIQHJ/ks4Ou/9C9lMCcY0=;
+        b=Cvd+/6MxfKhZjKtdeqxVsKrtbZ5Yc4UWw1t0wtCx9xkd0yheRLBU0TNXhCa7+8i9S2
+         Ohu4eazpJtleoPToYwvHsE6ke+88XX4AjIpY2qApBCGy2yHqOUBE5mtinSC3zow/QkRh
+         I/hw1ESmSyNdN5iuQi9fJZM/w7R//0O79351tRxCA8xrizAfYLN4KHt021t+O+z05qUo
+         RDIHfqksKV9d26QBiCVuCsdboQf1pKVFFDdoXkqrwTHDlvTC4BwNFNlGoMPSGxmW8VUt
+         TRJCFmilyxPWyyozxBRCMPBuWbVJ1kHyxSl4HqgvjFX5r+pprhbQJe1krzfwcA830t/q
+         HE3Q==
+X-Forwarded-Encrypted: i=1; AJvYcCWHokJbh1EKcpFFVehAXVc3VTwz2K7qh1W9I3jJGq65FFVRlYqnl5s2LkPWt4ig9YecTk6KCyc1ldI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxc76i/80TVJj0kZNjtc7rXKNYawHJZkjkoY1sCorfPjivm1cMK
+	U1kZZERbFEF1+CD956G1O8DQMFTrBcrqz+B9g39dGsr3B5RAWDCj6LWztICA1Vr+YAiGao1RQ3n
+	aJRhHaVgUwZ30IEzflLANgTebGpw=
+X-Google-Smtp-Source: AGHT+IEnYPHu+DclcXKCQRMpkx1L5NfLXxIStiOuqt20xBcgi2mEQBkdbBME1/YQ3ICjAFgL7tzuyJS3kLgZXx9qWks=
+X-Received: by 2002:a17:90b:32c9:b0:2d8:840b:9654 with SMTP id
+ 98e67ed59e1d1-2dad511829amr9609405a91.34.1725886012395; Mon, 09 Sep 2024
+ 05:46:52 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20240902111127.15155-2-minda.chen@starfivetech.com>
+References: <20240904233100.114611-1-aford173@gmail.com> <20240904233100.114611-5-aford173@gmail.com>
+ <ZtpMPCHBnEgtkBWp@atmark-techno.com> <CAHCN7xLo1RgkUPTdTpCtKjnT7w=gPDCfe_ZEbKj0joVvLG02Dw@mail.gmail.com>
+ <ada922ea-b307-4ccf-9e2d-9a2a08fb97c1@fris.de> <Ztvbd4XqY95YMAZd@atmark-techno.com>
+In-Reply-To: <Ztvbd4XqY95YMAZd@atmark-techno.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Mon, 9 Sep 2024 07:46:41 -0500
+Message-ID: <CAHCN7xLvFkcFhE51fGXumoin4FWON2ZQ7duXJX40kkqK_ugXgw@mail.gmail.com>
+Subject: Re: [PATCH V6 4/5] phy: freescale: fsl-samsung-hdmi: Use closest divider
+To: Dominique Martinet <dominique.martinet@atmark-techno.com>
+Cc: Frieder Schrempf <frieder@fris.de>, linux-phy@lists.infradead.org, linux-imx@nxp.com, 
+	festevam@gmail.com, frieder.schrempf@kontron.de, aford@beaconembedded.com, 
+	Sandor.yu@nxp.com, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Marco Felsch <m.felsch@pengutronix.de>, 
+	Lucas Stach <l.stach@pengutronix.de>, 
+	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
+	linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240909_040331_463765_980C3CF7 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20240909_054654_842760_9442F02B 
+X-CRM114-Status: GOOD (  32.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,61 +92,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1668043928942100487=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============1668043928942100487==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qjEwf94R/mUYYeCE"
-Content-Disposition: inline
-
---qjEwf94R/mUYYeCE
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Sep 02, 2024 at 07:11:27PM +0800, Minda Chen wrote:
-> From: Jan Kiszka <jan.kiszka@siemens.com>
->=20
-> In order to connect the USB 2.0 PHY to its controller, we also need to
-> set "u0_pdrstn_split_sw_usbpipe_plugen" [1]. Some downstream U-Boot
-> versions did that, but upstream firmware does not, and the kernel must
-> not rely on such behavior anyway. Failing to set this left the USB
-> gadget port invisible to connected hosts behind.
->=20
-> Link: https://doc-en.rvspace.org/JH7110/TRM/JH7110_TRM/sys_syscon.html#sy=
-s_syscon__section_b3l_fqs_wsb [1]
-> Fixes: 16d3a71c20cf ("phy: starfive: Add JH7110 USB 2.0 PHY driver")
-> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-
---qjEwf94R/mUYYeCE
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZt7V2AAKCRB4tDGHoIJi
-0juLAP0Sv4xZPU/+NpNoVLsi4fsM0XhHNLn4YcKwtjCD6dPgzgD+KH7/Z3GzArn4
-IjuEL7terWYP/AVVmz7hHyJkh7+vKwA=
-=X8B3
------END PGP SIGNATURE-----
-
---qjEwf94R/mUYYeCE--
-
-
---===============1668043928942100487==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1668043928942100487==--
-
+T24gRnJpLCBTZXAgNiwgMjAyNCBhdCAxMTo1MOKAr1BNIERvbWluaXF1ZSBNYXJ0aW5ldAo8ZG9t
+aW5pcXVlLm1hcnRpbmV0QGF0bWFyay10ZWNobm8uY29tPiB3cm90ZToKPgo+IEZyaWVkZXIgU2No
+cmVtcGYgd3JvdGUgb24gRnJpLCBTZXAgMDYsIDIwMjQgYXQgMTA6Mjg6NTlQTSArMDIwMDoKPiA+
+IEkgdGhpbmsgSSBtYW5hZ2VkIHRvIGdldCBiZWhpbmQgdGhlIGNhbGN1bGF0aW9uIG9mIHRoZSBm
+cmFjdGlvbmFsLW4gZGl2aWRlcgo+ID4gcGFyYW1ldGVycy4gSSBjYW1lIHVwIHdpdGggYSBzcHJl
+YWRzaGVldCB0byBjYWxjdWxhdGUgdGhlIG91dHB1dCBmcmVxdWVuY3kKPiA+IGZyb20gZXhpc3Rp
+bmcgcmVnaXN0ZXIgdmFsdWVzIGFuZCBJIGhhdmUgYSBjcnVkZSBQeXRob24gc2NyaXB0IHRoYXQg
+Y2FuIGJlCj4gPiB1c2VkIHRvIHNlYXJjaCBmb3IgcGFyYW1ldGVycyBmb3IgYSBnaXZlbiBwaXhl
+bCBjbG9jay4KPiA+Cj4gPiBJIHRlc3RlZCB0aGlzIHdpdGggdGhyZWUgZGlmZmVyZW50IG5vbi1D
+RUEtODYxIHBpeGVsIGNsb2NrIHZhbHVlcyAoc3VwcG9ydGVkCj4gPiBieSBteSBIRE1JIFVTQiBn
+cmFiYmVyKSBmb3Igd2hpY2ggdGhlIGludGVnZXIgUExMIHlpZWxkZWQgZGV2aWF0aW9ucyA+MC41
+JS4KPiA+IFdpdGggdGhlIG5ldyBMVVQgZW50cmllcyB0aG9zZSBtb2RlcyB3b3JrIG5vdy4KPiA+
+Cj4gPiBJIHdpbGwgY2xlYW4gdGhpbmdzIHVwIGEgYml0IGFuZCB0aGVuIHNoYXJlIHdoYXQgSSBo
+YXZlLiBJIGhvcGUgdGhhdCB0aGlzCj4gPiBhbGxvd3MgYW55b25lIHRvIGNhbGN1bGF0ZSBwYXJh
+bWV0ZXJzIGZvciB0aGVpciBub24tc3RhbmRhcmQgZGlzcGxheXMgaWYKPiA+IHJlcXVpcmVkLgo+
+ID4KPiA+IElmIHNvbWVvbmUgZmVlbHMgZXh0cmEgbW90aXZhdGVkIHRoZXkgY291bGQgdHJ5IHRv
+IGNhbGN1bGF0ZSB0aGUgZnJhY3Rpb25hbAo+ID4gcGFyYW1ldGVycyBhdCBydW50aW1lLiBIb3dl
+dmVyIEknbSBub3Qgc3VyZSB0aGF0IHRoaXMgaXMgZmVhc2libGUuIFRoZQo+ID4gbnVtZXJpY2Fs
+IGNvbXB1dGF0aW9uIG9mIGEgbGFyZ2UgbnVtYmVyIG9mIHBhcmFtZXRlcnMgaXMgcXVpdGUgaGVh
+dnkgYW5kCj4gPiBpdCdzIHByb2JhYmx5IG5vdCBlYXN5IHRvIHN0cmlwIHRoZSBhbGdvcml0aG0g
+ZG93biB0byBzb21ldGhpbmcgdGhhdCBjYW4gYmUKPiA+IHJ1biBvbiB0aGUgdGFyZ2V0IHdpdGhv
+dXQgdG9vIG11Y2ggb3ZlcmhlYWQuCj4KPiBJIHRoaW5rIGtlZXBpbmcgdGhlIExVVCBpcyBwZXJm
+ZWN0bHkgZmluZSBpZiB3ZSBrbm93IHdoZXJlIHRoZSB2YWx1ZXMKPiBjb21lIGZyb20gLSBwZXJo
+YXBzIGhhdmluZyB5b3VyIHB5dGhvbiBwcm9ncmFtIGluIGEgY29tbWVudCBhYm92ZSB0aGUKPiBM
+VVQgc28gYW55b25lIGNhbiBjaGVjayB0aGUgdmFsdWVzIG1hdGNoPwo+Cj4gTXkgbWFpbiBwcm9i
+bGVtIHdpdGggdGhlIExVVCBpcyBqdXN0IHRoYXQgLS0gdGhlcmUncyBubyB3YXkgb2YKPiBjaGVj
+a2luZy4gSWYgdGhlIHZhbHVlcyBjb21lIGZyb20gc29tZXdoZXJlIHNlbnNpYmxlIGFuZCBjYW4g
+YmUgdmVyaWZpZWQKPiBJIHRoaW5rIGl0IG1ha2VzIHNlbnNlIHRvIGtlZXAgaXQgdG8gZmlsbCB0
+aGUgaG9sZXMgd2hlcmUgdGhlIGludGVnZXIKPiBkaXZpZGVyIGlzbid0IGVub3VnaC4KPgo+ID4g
+PiBUaGlzIHdheSwgdGhlIGNhbGxpbmcgZnVuY3Rpb24gY2FuIGRldGVybWluZSBpZiBpdCBuZWVk
+cyB0byBiZQo+ID4gPiBtdWx0aXBsaWVkIGJ5IDUuICBJIGhhdmVuJ3QgZnVsbHkgZGV0ZXJtaW5l
+ZCBob3cgdGhlIGZyYWN0aW9uYWwKPiA+ID4gY2FsY3VsYXRvciBkZXRlcm1pbmVzIHdoYXQgZnJl
+cXVlbmN5IGl0IHdhbnRzIGZvciBhIHRhcmdldCBmcmVxdWVuY3ksCj4gPiA+IGFuZCB1c2luZyB0
+aGUgdmFsdWVzIGZvciBQLCBNIGFuZCBTIGZyb20gdGhlIGZyYWN0aW9uYWwgZGl2aWRlcgo+ID4g
+PiBkb2Vzbid0IHNlZW0gdG8gYWx3YXlzIHlpZWxkIDV4IGxpa2UgdGhleSBkaWQgZm9yIHRoZSB0
+YWJsZSBlbnRyaWVzCj4gPiA+IHVzaW5nIHRoZSBpbnRlZ2VyIGRpdmlkZXIuCj4gPgo+ID4gRm9y
+IHdoYXQgSSBmb3VuZCBvdXQgdGhlIGZhY3RvciBvZiA1IGFsd2F5cyBhcHBsaWVzLiBGb3IgdGhl
+IGludGVnZXIgcGFydAo+ID4gYW5kIGFsc28gZm9yIHRoZSBmcmFjdGlvbmFsIHBhcnQuCj4KPiBJ
+biB0aGF0IGNhc2UgSSdtIGRlZmluaXRlbHkgaW4gZmF2b3Igb2YgbW92aW5nIGl0IGluc2lkZSB0
+aGUgZnVuY3Rpb24gYXMKPiBwYXJ0IG9mIHRoZSBjYWxjdWxhdGlvbgoKSSdsbCBkbyBhIFY3IHdp
+dGggdGhlIDV4IGZhY3RvciBtb3ZlZCBpbnRvIHRoZSBpbnRlZ2VyIGNhbGN1bGF0b3IuCkknbGwg
+YWxzbyB0cnkgdG8gcmVhcnJhbmdlIHRoZSBmbG93IGEgYml0IGFzIHlvdSByZXF1ZXN0ZWQuICBE
+ZXBlbmRpbmcKb24gaG93IG11Y2ggY2hhbmdlcywgSSBtYXkgc3RyaXAgb2ZmIGFueSBzLW8tYiBu
+b3Rlcy4KSSB3YXMgdHJhdmVsaW5nIG92ZXIgdGhlIHdlZWtlbmQgYW5kIEknbSBsaWtlbHkgdHJh
+dmVsaW5nIHRoZSBuZXh0CndlZWtlbmRzLCBzbyBJIHdpbGwgdHJ5IHRvIGdldCB0byBpdCB0aGlz
+IHdlZWsgYmVmb3JlIEkgZ28sIGJ1dCBJCmNhbid0IHByb21pc2UgYW55dGhpbmcgcXVpY2tseS4K
+CmFkYW0KCj4KPiBUaGFuayB5b3UgYm90aCEKPiAtLQo+IERvbWluaXF1ZQoKLS0gCmxpbnV4LXBo
+eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
