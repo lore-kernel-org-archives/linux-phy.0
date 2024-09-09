@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B336BECE579
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 15:18:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8584ECE579
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Sep 2024 15:19:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8OIrssgzXsYUG6kN9H32cZKITecWv1NA+l7I2YDvedY=; b=yIimGru7GL0oBi
-	3yGU97ua9MtPT4tJPmgZEbG1Egu12oQ05mrPJ9rMvvbiwdjEMv9qFvDh07/6AP4XesiKy61wRDvjh
-	e4TU0c5ltFXeXCP8ej22qMC2BIXegxncno93i/CjIM8Z64HPSNVvLsM/h9hV7wCmS2HLxEh2d7tdk
-	6rI1vlaK+kRSiukfZmeN1a56q/a6I2ZlpAOwo9hKxsSl5cq6NUB+pLS9MENxLHZ2hNnoA9xOSqRvQ
-	90RdnpEOUPgIM6hhpLgVZL2X4ZpsPfteZQpL9XdDLslquohSpcpxqXkcRRMrlRsM9hIv2YD4WcCNq
-	PLyJ4Q51/SVYMP0L4iVw==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=48jlrkerNpXaUa9nc/rbknJ1JlhOGw7IE6mOh5lckyo=; b=TiFrCfj3JYcs84
+	QmKv0RUkDA1Av4p08E/yITKJDXmh7L2/doe3B8mNEJ760lQX4NsQkQCCf6d1Ls47zp+dOFpI69hGi
+	w3FWz24uCPt5zXKSm1rSHb1nCERn6Kq5G8P/tqPJV9gx+RxG2+MmuagETs005upILR8u+OXdGdx6q
+	4FVg54UqA4zbKd2xGnj4f+mNMPX+zL3rO4pnBGXB8rD3M1ewHSEAjVUCJfdODQO7uJEFUGU729k0m
+	rxHwnKqkTM2eau0YQmpWQxzb7qDJzlq05zBy+EbxY1gEdmGeLXpuBUkX/jKDBd1GyoU2tO8ehCqX8
+	q9JvOt3rko0KDYv9zjcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sng9j-00000002R1Q-1ppx;
-	Mon, 09 Sep 2024 15:18:19 +0000
+	id 1sngAi-00000002RHx-2WqF;
+	Mon, 09 Sep 2024 15:19:20 +0000
 Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sng6s-00000002QCZ-1ZOm;
-	Mon, 09 Sep 2024 15:15:24 +0000
+	id 1sng6t-00000002QDu-3UEt;
+	Mon, 09 Sep 2024 15:15:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1725894922; x=1757430922;
-  h=from:subject:date:message-id:mime-version:
-   content-transfer-encoding:to:cc;
-  bh=7eBDbIZBoCNdgrtkB2Ysz8rn1Ya0WQpeA0tUMqyjFIg=;
-  b=cs9qV1fXyczDsAn7EpX42DWwuVE1knwIqj/B8OnAg+AxlRyCF94B1+rk
-   TkWuFi0ZJTLX1b3n4HwZROCDJQCoeH7dO2TQPkQXEgOQvnUi0tRnjeXyD
-   +suhHylim12vAzAZyhrBLP+L5kp1X66GxoZVzK+F+LavZIK+KVCFClaGB
-   xl67/RJ8TuZyjAj6gx5KRrXii+wTUhLDUy1mGDT2zS6iNQxkvbXp6NQxQ
-   s4TxNI8Fou5dLReXKO0zJJ+LGMmNWPxeyi1UboCVIiq3ZvCTmMF2p2kb+
-   ybiWqf+/FIoyNnoJl1QcXMqxNZxbUmB51o3D3tsOE9yH0ZMcJJn1HTiDa
-   A==;
+  t=1725894924; x=1757430924;
+  h=from:date:subject:mime-version:content-transfer-encoding:
+   message-id:references:in-reply-to:to:cc;
+  bh=1AJHRHcGfmD/9YGKz72ENNmKG33hLzSx1mSxJxpOXls=;
+  b=CN+SAD63Ha+XWvVaGHm4r7HE/V9MDH9CsFIw5ACDFI8zC4USZ914qZHT
+   g7lvVOVJPj8Wd/cgr05xmsh89GmfNJXeDPJ+yyV+2FNCU7WLBqoJFkgbK
+   SIw88EoiftMjU73MxLx3WpA5Gn6WivsJJ56VwtzHetacIjvaj51cmAu+3
+   zNf82/GTVBP8H7EjG0A/zYfoWRsrVwnHt2DSf/ZJXSoG8apNl++K+XSHB
+   lrpuf6/sGi+f/8+TcgA9xLGjveHaXgAdKHn/prHiKD/O0moxLTLX2i0L1
+   uIUSPRCVukQV7kjdCNRFoAYCgcuLPblebZsZEzacAdXV/c8GPOILJ3ZUf
+   g==;
 X-CSE-ConnectionGUID: /ltMKKTeRqSXWxXLFfJz/g==
-X-CSE-MsgGUID: FiYGY5+RRX+z7Dxmn8NWFw==
+X-CSE-MsgGUID: bKvqNuDfQLii5spaWCHo/A==
 X-IronPort-AV: E=Sophos;i="6.10,214,1719903600"; 
-   d="scan'208";a="31514493"
+   d="scan'208";a="31514505"
 X-Amp-Result: SKIPPED(no attachment in message)
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa3.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 09 Sep 2024 08:15:21 -0700
+  by esa3.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 09 Sep 2024 08:15:22 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Mon, 9 Sep 2024 08:14:54 -0700
+ 15.1.2507.35; Mon, 9 Sep 2024 08:14:59 -0700
 Received: from DEN-DL-M70577.microchip.com (10.10.85.11) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.2507.35 via Frontend Transport; Mon, 9 Sep 2024 08:14:52 -0700
+ 15.1.2507.35 via Frontend Transport; Mon, 9 Sep 2024 08:14:57 -0700
 From: Daniel Machon <daniel.machon@microchip.com>
-Subject: [PATCH v2 0/9] phy: sparx5-serdes: add support for lan969x serdes
- driver
-Date: Mon, 9 Sep 2024 17:14:40 +0200
-Message-ID: <20240909-sparx5-lan969x-serdes-driver-v2-0-d695bcb57b84@microchip.com>
+Date: Mon, 9 Sep 2024 17:14:42 +0200
+Subject: [PATCH v2 2/9] phy: sparx5-serdes: add constants to match data
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAOAQ32YC/32OQQ7CIBREr2JY+w2lLQFX3sN0QQHlJxaajyE1T
- e8urXuXL5l5MyvLntBndj2tjHzBjClWEOcTs8HEpwd0lZngouNKCMizoaWHl4la6gVq3fkMjrB
- 4AtUq7UbntFGaVcVM/oHLob8PlUeTPYxkog27dDIY91jA/E70OU6UZg//9jSX//dKAxyUky2XT
- Wd7ZW4TWko24HyxaWLDtm1fMOtkyOMAAAA=
+Message-ID: <20240909-sparx5-lan969x-serdes-driver-v2-2-d695bcb57b84@microchip.com>
+References: <20240909-sparx5-lan969x-serdes-driver-v2-0-d695bcb57b84@microchip.com>
+In-Reply-To: <20240909-sparx5-lan969x-serdes-driver-v2-0-d695bcb57b84@microchip.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
 	Lars Povlsen <lars.povlsen@microchip.com>, Steen Hegelund
 	<Steen.Hegelund@microchip.com>, <UNGLinuxDriver@microchip.com>, Rob Herring
@@ -72,8 +69,8 @@ CC: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
 X-Mailer: b4 0.14-dev
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240909_081522_583565_96446151 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20240909_081523_923406_E26A2CC5 
+X-CRM114-Status: GOOD (  13.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,71 +87,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The lan969x switch chip (upstreaming efforts beginning soon) has ten 10G
-SERDES'es which share the same features and data rates as the Sparx5 10G
-SERDES'es. Lets take advantage of this and reuse the existing SERDES
-driver for lan969x.
-
-In order to do this, we add a new indirection layer to the register
-macros, that takes register differences into account. Additionally, we
-add driver match data for other differences that we need to handle.
-These other differences are handled by a combination of constants (eg.
-the number of SERDES'es), ops and if's
-
-Patch #1 adds support for match data.
-
-Patch #2 adds a struct to handle constants and adds a constant for the
-number of SERDES'es.
-
-Patch #3 adds a constant for the number of CMU's
-
-Patch #4 adds a struct for ops and adds a function for setting SERDES
-type.
-
-Patch #5 adds a function for getting the number of CMU's.
-
-Patch #6 adds register macro indirection layer.
-
-Patch #7 adds SERDES target types (eg. Sparx5, lan969x) to be used for
-branching out based on the target.
-
-Patch #8 adds support for lan969x in the Sparx5 dt-bindings.
-
-Patch #9 introduces the new lan969x SERDES driver.
+We need to handle a few different constants that differ for Sparx5 and
+lan969x. Add a new struct: sparx5_serdes_consts for this purpose. We
+populate it with an initial field for the number of SERDES'es: sd_max.
 
 Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
+Reviewed-by: Steen Hegelund <Steen.Hegelund@microchip.com>
 ---
-Changes in v2:
-- Changed the subject and commit description.
-- Added compatible strings for all lan969x SKU's in the dt-bindings.
-- Got rid of example in dt-bindings.
-- Added new compatible string: lan9691-serdes to driver.
-- Link to v1: https://lore.kernel.org/r/20240906-sparx5-lan969x-serdes-driver-v1-0-8d630614c58a@microchip.com
+ drivers/phy/microchip/sparx5_serdes.c | 7 +++++--
+ drivers/phy/microchip/sparx5_serdes.h | 5 +++++
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
----
-Daniel Machon (9):
-      phy: sparx5-serdes: add support for private match data
-      phy: sparx5-serdes: add constants to match data
-      phy: sparx5-serdes: add constant for the number of CMU's
-      phy: sparx5-serdes: add ops to match data
-      phy: sparx5-serdes: add function for getting the CMU index
-      phy: sparx5-serdes: add indirection layer to register macros
-      phy: sparx5-serdes: add support for branching on chip type
-      dt-bindings: phy: sparx5: document lan969x
-      phy: lan969x-serdes: add support for lan969x serdes driver
+diff --git a/drivers/phy/microchip/sparx5_serdes.c b/drivers/phy/microchip/sparx5_serdes.c
+index 5427e8627a78..c3ed028fc74e 100644
+--- a/drivers/phy/microchip/sparx5_serdes.c
++++ b/drivers/phy/microchip/sparx5_serdes.c
+@@ -2510,6 +2510,9 @@ static struct sparx5_serdes_io_resource sparx5_serdes_iomap[] =  {
+ static const struct sparx5_serdes_match_data sparx5_desc = {
+ 	.iomap = sparx5_serdes_iomap,
+ 	.iomap_size = ARRAY_SIZE(sparx5_serdes_iomap),
++	.consts = {
++		.sd_max       = 33,
++	},
+ };
+ 
+ /* Client lookup function, uses serdes index */
+@@ -2526,7 +2529,7 @@ static struct phy *sparx5_serdes_xlate(struct device *dev,
+ 	sidx = args->args[0];
+ 
+ 	/* Check validity: ERR_PTR(-ENODEV) if not valid */
+-	for (idx = 0; idx < SPX5_SERDES_MAX; idx++) {
++	for (idx = 0; idx < priv->data->consts.sd_max; idx++) {
+ 		struct sparx5_serdes_macro *macro =
+ 			phy_get_drvdata(priv->phys[idx]);
+ 
+@@ -2594,7 +2597,7 @@ static int sparx5_serdes_probe(struct platform_device *pdev)
+ 
+ 		priv->regs[iomap->id] = iomem + iomap->offset;
+ 	}
+-	for (idx = 0; idx < SPX5_SERDES_MAX; idx++) {
++	for (idx = 0; idx < priv->data->consts.sd_max; idx++) {
+ 		err = sparx5_phy_create(priv, idx, &priv->phys[idx]);
+ 		if (err)
+ 			return err;
+diff --git a/drivers/phy/microchip/sparx5_serdes.h b/drivers/phy/microchip/sparx5_serdes.h
+index 128f8c53172f..8c27cfde4938 100644
+--- a/drivers/phy/microchip/sparx5_serdes.h
++++ b/drivers/phy/microchip/sparx5_serdes.h
+@@ -26,7 +26,12 @@ enum sparx5_serdes_mode {
+ 	SPX5_SD_MODE_SFI,
+ };
+ 
++struct sparx5_serdes_consts {
++	int sd_max;
++};
++
+ struct sparx5_serdes_match_data {
++	const struct sparx5_serdes_consts consts;
+ 	const struct sparx5_serdes_io_resource *iomap;
+ 	int iomap_size;
+ };
 
- .../bindings/phy/microchip,sparx5-serdes.yaml      |  17 +-
- drivers/phy/microchip/sparx5_serdes.c              | 195 +++++-
- drivers/phy/microchip/sparx5_serdes.h              |  44 +-
- drivers/phy/microchip/sparx5_serdes_regs.h         | 746 ++++++++++++++-------
- 4 files changed, 706 insertions(+), 296 deletions(-)
----
-base-commit: 221f9cce949ac8042f65b71ed1fde13b99073256
-change-id: 20240822-sparx5-lan969x-serdes-driver-8389dbdd9a89
-
-Best regards,
 -- 
-Daniel Machon <daniel.machon@microchip.com>
+2.34.1
 
 
 -- 
