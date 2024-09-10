@@ -4,159 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8D6BECE564
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Sep 2024 07:07:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 064BDECE582
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Sep 2024 07:41:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/GZ9c7CDpsWR1T5IGYwcv9mininvXJtH+bk+NosXQ/8=; b=sGytwZ8sK5ws1a
-	gagN5ug3glR9HwSxn3OZSW5FAiJQMcvxUSHMGwEPVu8RRe1bL2YWjEuwbpnucMTr/i/0OjXgajf7o
-	LVH66jtCfixmMRrh3f3lGoQrGhRvcsd7Nt5pP2CL+PJp3wl/f2IB7h2smOLkZti3rHEojeJWEUANw
-	jJ9UeGbnzuhVWIeK2WVHQczkHEOsxTl/zxR+gpm+Znz9wzeOp+qvOzZ0cEdpxt3mvyaG0lAtBTjJ/
-	cpr6W+NYe3mRW3Pg53Y9A6eE/qMmX8+8+uhwfdSd2B+p8iveW6hdCgljiD2/UtU9wxMI4VacLKDCi
-	wMn//q94ze/XhbJemaRA==;
+	List-Owner; bh=uXfxAQ/sX42IJP9g+ZCke6DZDeofdbBS6QdwJbXWihs=; b=IZmIAcNKH/X3mm
+	YKpYEkiJiPPdKFs0GWAbc4rmjlO6+ZSeuQUKl5Ofuw3zp/grNg978+GtqkeX+7s4q+M17jf3EEzeF
+	QdGWm+MbYb2A06nzHZ4t3VpgLRuDs9GtDmTTfGPMIkS8YBesBEWUxcvhKSQuHOZn1yWGbjCqBwSDO
+	AAT6J0a3yNis4lWkFgWIhTN15vXTzORYga+AFwAQP6ypESWcbdw0CEF1zFQpjSyEwduLVbb/186YO
+	QQx/FFbAZ6RUTMl9fikRLWXXADRxlfPPxKglNjd6KPkUUjqXVtxODplKH8aQsKL7IJAbfDwuPIbHI
+	yOha64+u6w3JVCe/S8mA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snuyK-00000004XWv-2kx3;
-	Tue, 10 Sep 2024 07:07:32 +0000
-Received: from mail-westeuropeazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c201::] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1snvV2-00000004e6z-3316;
+	Tue, 10 Sep 2024 07:41:20 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1snuuS-00000004Wx0-3UEb;
-	Tue, 10 Sep 2024 07:03:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=lF2ot0+iGshAYFUebRfivJmmSs+sMc4la2WGceYyWZmtway1r3kGH2FzFIoNDd6Pn5cfoaGuGIvhT79lgfC+/wu7rncMNeuuVvxLMoRd7ay3oWyfv5rmgFALqhHVHE4AucV+2ZulQvIlkcE43VLZj+BNflsFDuWSnc+FEuWqwgVALFXzd6ror0SxzMn4xu5emEKyklb3lzfr9rGNvQqhe9fQbOJ7QBzRjmK8tZ6ZzGs+Zg3EJzVC7FfpZsI86DTICsYX0zZl2PcP533mObZJtdIg6OGX6WIjiyaFaVjPkm3ZJBbFC78/1hCWl1xEedXUNMry7N/EegXY8c0cuikchA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UWtFwZNYr4McLYbcRlIJfcpoNE0hW547G/ChkhKnPl0=;
- b=lL/oGJMma0yF6RbpkkmUzQhPV6+pH/fmPhCRSavEEs7lNdw7pRKP6LfFHwtTT2BecWYUA+8UvUr1DDdJwL4Ea1X4q34ZtYFkf1jCvCF/09GxRchD6vBeS0cV9BLHYdh7HlNiri3uwYnwVi3voJqAIlyWr3Y2lDsHg5T4LBiK6Bdj+ADF7FG6J4grNl01i4wJQJwOIsyfxULI/M5kIL9hPH/Rz9KHGc8tcbvZdLUS1gq7ZCTLeZT6J6/ruZh3A0iGvbnyFXkghqtAi09/jgoGHzPGDRxQenlSJjvejyzWZlOXuMWn5HuFxy9nZQIgm5x5kyM5UNNyUPG/3uFOJxXsuA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UWtFwZNYr4McLYbcRlIJfcpoNE0hW547G/ChkhKnPl0=;
- b=KWNaC0fon7cu2BQwmyYcoX4F4KjYAz+HdP/EwdzDWokV6E2PCmjoGjsRI9exwJv8sPH1y0tJiFvsMMaSq2sReedLGH6PmZGHJ0DT9o+27TTHo4dLwoniHjXKqTuQeqgaG5iYqjcIoUNuUPf3Oz24m2ukKZTp7pr5FMRYobqm+mlnz09evu36qnami3pHEfMprpNtDDBJNneRKUaIAwpKqx61OS5AEqDuyvPMsYzFQ/Mak4RnPQ9uoXOVys2YhcfNL5Z0fJm2kV/23BmgrgZlzBl/NhFUmjB7sWuzBXaGj1IdC8nraOQNg7qnYRoEmX2k+ZkscXdK1mdXrDfqoPPw/A==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
- by DB8PR04MB7099.eurprd04.prod.outlook.com (2603:10a6:10:12b::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7939.24; Tue, 10 Sep
- 2024 07:03:30 +0000
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7%4]) with mapi id 15.20.7918.024; Tue, 10 Sep 2024
- 07:03:30 +0000
-From: Xu Yang <xu.yang_2@nxp.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	kernel@pengutronix.de,
-	festevam@gmail.com,
-	gregkh@linuxfoundation.org,
-	Frank.Li@nxp.com,
-	jun.li@nxp.com,
-	l.stach@pengutronix.de,
-	aford173@gmail.com,
-	hongxing.zhu@nxp.com,
-	alexander.stein@ew.tq-group.com
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: [PATCH v4 5/5] arm64: dts: imx95-19x19-evk: add typec nodes and enable usb3 node
-Date: Tue, 10 Sep 2024 15:03:39 +0800
-Message-Id: <20240910070339.4150883-5-xu.yang_2@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240910070339.4150883-1-xu.yang_2@nxp.com>
-References: <20240910070339.4150883-1-xu.yang_2@nxp.com>
-X-ClientProxiedBy: SG2PR01CA0184.apcprd01.prod.exchangelabs.com
- (2603:1096:4:189::9) To DU2PR04MB8822.eurprd04.prod.outlook.com
- (2603:10a6:10:2e1::11)
+	id 1snvU0-00000004dyV-22Ed;
+	Tue, 10 Sep 2024 07:40:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 089C15C05E6;
+	Tue, 10 Sep 2024 07:40:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAD13C4CEC3;
+	Tue, 10 Sep 2024 07:40:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1725954015;
+	bh=wlTegC/QTFnptw7DuqNfzDPNGm8rVd8/JkWhJcVsykE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=gUVVggDMNXJs62VS/eSboCHyfFHuOPAwRp9z9KEZBHZbsWXqa9aQ9pxfdA0J+etxi
+	 F69wIVikd8TqxQtoQOZd+llfFFqk8sSAu41T7qR2/VfyOrEILVlV99FzENUdY/hRuv
+	 4Hx8PzOVx53DC3JzumRAOOcezfflc2JOC7/gsrumyogTjS60YES34eJ0mkoulQjqzn
+	 xaAoO28415NSwD4e1Xb1XhblcMJhTjG6g5fOC7brr4pmHKKji2sm3YAswqjAqPWizP
+	 9cGVWXHHar4GW0kMpWKT+Mi2Exc7G5HO3OQSzJb0kTfws1/hzSUUJec4kA4rZFayY7
+	 YbI/NZv5MwJTg==
+Date: Tue, 10 Sep 2024 09:40:12 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Daniel Machon <daniel.machon@microchip.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Lars Povlsen <lars.povlsen@microchip.com>, 
+	Steen Hegelund <Steen.Hegelund@microchip.com>, UNGLinuxDriver@microchip.com, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v2 8/9] dt-bindings: phy: sparx5: document lan969x
+Message-ID: <wd3gzn3lpmw64qor3xslif6rnp7htycfhu33pa2xpxvv6mrwqe@nv6pcwkstywe>
+References: <20240909-sparx5-lan969x-serdes-driver-v2-0-d695bcb57b84@microchip.com>
+ <20240909-sparx5-lan969x-serdes-driver-v2-8-d695bcb57b84@microchip.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|DB8PR04MB7099:EE_
-X-MS-Office365-Filtering-Correlation-Id: 98bf546a-d147-489c-d2fc-08dcd166ad3d
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|7416014|52116014|1800799024|921020|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?GskSktdOiwi+j17FZO6BXJ7zZ9DQ7fYdmWQkKIGWF6zkgqfATjwQr3nQQ1QB?=
- =?us-ascii?Q?zAf2uONU0zYTvrQYOfdt71BlPbgy9UqPjAcxQkO2AwmeI33yYawWT8OiG2B1?=
- =?us-ascii?Q?gwu7+pOTCcbmedB4RUa3RbgFIkMA85Ea7fG8iiZMF5rbx6fu+yqMNKOtpBJ4?=
- =?us-ascii?Q?2uzIvTyOOr46ddIx7yKbGsK+5EMStPlQvUU7OSntdemhpkRxNPRiFpK4xM05?=
- =?us-ascii?Q?tQzhxTRR+nLQkBuZUdDhGfjrOKR3z/JhzjFMwBgpIZD6pw9aH8W8qkfe4Cpj?=
- =?us-ascii?Q?BE/8nfVXmQVgFjlE8GEUzGWmxOkQTxslYhoTaUhpgvP1mKbwJMz8VuIEjDZ5?=
- =?us-ascii?Q?NPRKK2QbaL6QR/U1ODjoBlWMjOIQUJw8u1XRZF+UmkwJ7WvwBXZBB6SAGbcn?=
- =?us-ascii?Q?M3js8AsyEEZoIVEFTCga0UZovd7hJeWgoziQD4XokB/UbF+FoFzVN3pGW4Xw?=
- =?us-ascii?Q?4dHzIOj1VwLlO7Pxo3zdjAXK/UaXusfXiD88uBF2yRxenrbTCeJ3MoO6gybA?=
- =?us-ascii?Q?8c/wzJWawF0UMfnRXdBPTGOzzu3lwZLK1cO32uXGoB+DkU3HoqdUfuc3sM7l?=
- =?us-ascii?Q?M+UEFj4qarL6q3gYj+euFDHH4pUFsR6dPAza92z4iEI3J2gQWDHqob7lsnAL?=
- =?us-ascii?Q?JKTdGW7ydtC+RIVuOInnnQXCu7bNahyub7gGxTweYsSpl9m6jsmyhbZoOU8c?=
- =?us-ascii?Q?ywBEmzUUSc1OTD3oN9QjCngh8R68DIiIVOeDO/yNvl+hohoyJ/SNduvH88BU?=
- =?us-ascii?Q?crmGJkBX0u7oTfcQHmby4TmMzWuMeEaroQVRGZtlDCkbQ9DKT2li+oRAlR8f?=
- =?us-ascii?Q?UmeTgcN/8pOpQPerNOIiniotAxthKhzJRnDev4actRCH7TEGzDQNWO8LYMtn?=
- =?us-ascii?Q?emGdn79GEazTQ1jQ6gy+BdITil6JsSISh2yAcAq7gqr0EYlsjkWyZCswErEs?=
- =?us-ascii?Q?XLZpH0BNqWrCwgpbeTZ18kQXJhRGWMMROuBxZFPVqm7R//hlCTRj9rpMuIRb?=
- =?us-ascii?Q?YAJryk2BAK8zE0XwN1oI2Gx0Zvbm2EbqMxgVeTxVmnwFLYNypqtPTkqfJvoV?=
- =?us-ascii?Q?52vmMAiUAx81q0gXsfKsptbr5WMBo7iQHAhANa65KANbu9KtcxncBvv44JuQ?=
- =?us-ascii?Q?H6HTF1VYOEQyOX8KcpSdiNq7YXgdg0tMX0wyoHiq5nN+2PhjTn1e/aEIQ8mJ?=
- =?us-ascii?Q?/wAY+1lVE4/yPOYfOP5n8f7oUHZYGYVuOfr8e6m0744RLUnglMMUvrHA4GMt?=
- =?us-ascii?Q?ppyusqe10FjEqKnjg1nMeLeo6qjzgP1+GYHbTKaeMEnqlG/FAC1HHnf5GWYZ?=
- =?us-ascii?Q?z53KW/VQq/tZjzOuaijH19EIKHW/RqKS6RPNhGdEHdu4WfKIM3n2/dfhIH3H?=
- =?us-ascii?Q?qvlrdqiCgapMoSBaK9Rhli9PWvFzeTHEQPMPgbmswM3AuY0dmyoO16Rb3496?=
- =?us-ascii?Q?Y97jtvFpS+g=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(52116014)(1800799024)(921020)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?DQHJ3464BnYOvBfP4RpMUHxU7+178JcSTrw7ho6CqNO0agvu74omVhpuBkcN?=
- =?us-ascii?Q?3+/O3+hXJR6TfdcpvQ3RmaZl0W1Sj/3YdpBRNfpKscRgFlhoGHuMOsTN1crZ?=
- =?us-ascii?Q?Qj4mCdESyphwJqJxVFhZF7Zg/+g9r/y5Sy0xDuW4WTvZfaM8glP+KVAz+/M+?=
- =?us-ascii?Q?tmuyPQrK62+TALEFPZwgUTFGTBuGrOjmYEZbBNeBWIe/GmhswDK2Y2CyCLI+?=
- =?us-ascii?Q?wAZL50U3QPyiMT0QttZAhD/q1bNRU1JPk5/yvA4IwAnI1OvRaL+gUqjOs0jy?=
- =?us-ascii?Q?CbNvzZ3LcM++JuljcVoJ01S2woyLgmPamE3KaQME2OhDPmsLmFnjmTxDBnjQ?=
- =?us-ascii?Q?ii+SxZP9754Ipz5V0z72xQk+yyjfzFcqGvhz5PmHU7AqbWKz5NHldXKRyoSP?=
- =?us-ascii?Q?pJVVaYwM/cHfQslLQLxp1dXtJrAKlY7FjN+cJDQo5I4ZpJAfGbZo8oxcOb0u?=
- =?us-ascii?Q?Guz3Q7en8cuBJIfQQyKp51CMJCu+VtbZJzsXXnmzIppFBkTUcue4rXTQG0Ts?=
- =?us-ascii?Q?8rQ6zJsxjd2Yc8w0hpDjs7QmyK/I2rNkcR6eoXZ9o/Yg7Pq7vYGB2eythK1k?=
- =?us-ascii?Q?JS3xqabAA3D+dJiNcEt8xllO8wCUaIODFj7O5Icq/poScaneKWkcqmyHxY4Y?=
- =?us-ascii?Q?GjqD27Gzvesc789kaGzSnTs0jtLVdt+aVlmT86qjnin7ZC88UlUssCREyz3k?=
- =?us-ascii?Q?Gdxa5Hz/tkDqFPAcEfZae+0YZnD7/IZc67Qe7/EKIQ8MV/BhO6ExAfLxZlWL?=
- =?us-ascii?Q?f2FoScnILlet0HFbx6rtHzfob+UhIKK4W3LqU5nogIhfLv6GrGV4Tpwu8I0w?=
- =?us-ascii?Q?Am5XHsDHOlwEL0IW5NqSfveOSzVa5FydLuKN59SfNzoGdPnHLIPI6G1kEsVC?=
- =?us-ascii?Q?uUjQCO8++LdtqlQ3JPAwUPuDlwon/kpm1wqEbTn6qfGJ95WMxfv+PZcICQep?=
- =?us-ascii?Q?KeexHGi5E1YLLVA3ZlnkH0RKdPmwVBFiBpkSliBTpUepaXIddFkbScx7zCou?=
- =?us-ascii?Q?kOBMdae6nN0PSP3kL2rDtwXeQzc5re6wfzbYv4+oltAvdlkCzMRiMg6mCFVZ?=
- =?us-ascii?Q?YdsXzfnkrW8uOrTh/TbJzEBOw/icin2D1fncelP/ioB+yjbNCE6Ru5/RUS5H?=
- =?us-ascii?Q?3u9SrHAQWx/ejugiCgGQj03bksO6hk7UxQsiGwNme5sYGcTsf+RI2tGfbRtF?=
- =?us-ascii?Q?2sNazr8/Ab+BLcT1fm9glrhBSCOg9dKa0LSA6FdMtA8UzONO/HoKYT8rtrIG?=
- =?us-ascii?Q?jHjrFYZN5BqBq5ZB+QwFETuwq7XTZD9OGdW0tOlrYh/OSHyqFp79xV8Xp8oK?=
- =?us-ascii?Q?AVskySnkIiXSMyR30oDNkeMiVMpOrA3VeGJ4bTAzpt4B3YjnW3biX2f94K7w?=
- =?us-ascii?Q?peBoFvDJf7EruJ0U8m5/9vbTFENP0RPcJtHLp6sT5397R1NEb8q5waHbY47D?=
- =?us-ascii?Q?H+Hevr9iMY2svqArAUNrxEgYAAibF6uLXTWug8limeEYiUuLltWghEzgQBYT?=
- =?us-ascii?Q?O2waku1voPF8IzJj0TlJzxqD2uHrtQmGvENVzCETNb8lAZaDfcvFspylyG4L?=
- =?us-ascii?Q?2t21hJpWbh14aeTiUEF2yFE2v5TLC9ma/w50cDFB?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 98bf546a-d147-489c-d2fc-08dcd166ad3d
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Sep 2024 07:03:30.5075
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: F6rWqLCwS00XnuvgVUylYeZbkDnipN9r9kSEL8MfvmfyNuPIaAo2wj0WozmI5fkibrNCmF1OMMkbVMMZd4wMog==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7099
+Content-Disposition: inline
+In-Reply-To: <20240909-sparx5-lan969x-serdes-driver-v2-8-d695bcb57b84@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240910_000332_901959_89A0212C 
-X-CRM114-Status: GOOD (  10.63  )
+X-CRM114-CacheID: sfid-20240910_004016_682976_32D9284D 
+X-CRM114-Status: GOOD (  17.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -173,137 +76,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This board has one Type-C port which has USB3 capability. This will
-add typec nodes and enable usb3 node.
+On Mon, Sep 09, 2024 at 05:14:48PM +0200, Daniel Machon wrote:
+> Lan969x is going to reuse the existing Sparx5 SERDES driver - document
+> that by adding compatible strings for the different SKU's that we
+> support, and a short description of the SERDES types and data rates
+> supported.
+> 
+> Signed-off-by: Daniel Machon <daniel.machon@microchip.com>
+> Reviewed-by: Steen Hegelund <Steen.Hegelund@microchip.com>
+> ---
+>  .../bindings/phy/microchip,sparx5-serdes.yaml           | 17 ++++++++++++++++-
+>  1 file changed, 16 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml b/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml
+> index bdbdb3bbddbe..fa0b02916dac 100644
+> --- a/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml
+> +++ b/Documentation/devicetree/bindings/phy/microchip,sparx5-serdes.yaml
+> @@ -8,6 +8,7 @@ title: Microchip Sparx5 Serdes controller
+>  
+>  maintainers:
+>    - Steen Hegelund <steen.hegelund@microchip.com>
+> +  - Daniel Machon <daniel.machon@microchip.com>
+>  
+>  description: |
+>    The Sparx5 SERDES interfaces share the same basic functionality, but
+> @@ -62,12 +63,26 @@ description: |
+>    * 10.3125 Gbps (10GBASE-R/10GBASE-KR/USXGMII)
+>    * 25.78125 Gbps (25GBASE-KR/25GBASE-CR/25GBASE-SR/25GBASE-LR/25GBASE-ER)
+>  
+> +  lan969x has ten SERDES10G interfaces that share the same features, operating
+> +  modes and data rates as the equivalent Sparx5 SERDES10G interfaces.
+> +
+>  properties:
+>    $nodename:
+>      pattern: "^serdes@[0-9a-f]+$"
+>  
+>    compatible:
+> -    const: microchip,sparx5-serdes
+> +    oneOf:
+> +      - enum:
+> +          - microchip,sparx5-serdes
+> +          - microchip,lan9691-serdes
+> +      - items:
+> +          - enum:
+> +              - microchip,lan9698-serdes
+> +              - microchip,lan9696-serdes
+> +              - microchip,lan9694-serdes
+> +              - microchip,lan9693-serdes
+> +              - microchip,lan9692-serdes
 
-Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+If there is going to be a new version, keep rather increasing/growing
+alphanumerical order, but no need to resend just for this.
 
----
-Changes in v2:
- - no changes
-Changes in v3:
- - no changes
-Changes in v4:
- - no changes
----
- .../boot/dts/freescale/imx95-19x19-evk.dts    | 81 +++++++++++++++++++
- 1 file changed, 81 insertions(+)
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-diff --git a/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts b/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
-index d14a54ab4fd4..46a9cd3d4403 100644
---- a/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
-@@ -5,6 +5,7 @@
- 
- /dts-v1/;
- 
-+#include <dt-bindings/usb/pd.h>
- #include "imx95.dtsi"
- 
- / {
-@@ -99,6 +100,48 @@ i2c7_pcal6524: i2c7-gpio@22 {
- 		interrupt-parent = <&gpio5>;
- 		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
- 	};
-+
-+	ptn5110: tcpc@50 {
-+		compatible = "nxp,ptn5110", "tcpci";
-+		reg = <0x50>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_typec>;
-+		interrupt-parent = <&gpio5>;
-+		interrupts = <14 IRQ_TYPE_LEVEL_LOW>;
-+
-+		typec_con: connector {
-+			compatible = "usb-c-connector";
-+			label = "USB-C";
-+			power-role = "dual";
-+			data-role = "dual";
-+			try-power-role = "sink";
-+			source-pdos = <PDO_FIXED(5000, 3000, PDO_FIXED_USB_COMM)>;
-+			sink-pdos = <PDO_FIXED(5000, 0, PDO_FIXED_USB_COMM)>;
-+			op-sink-microwatt = <0>;
-+			self-powered;
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					typec_con_hs: endpoint {
-+						remote-endpoint = <&usb3_data_hs>;
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					typec_con_ss: endpoint {
-+						remote-endpoint = <&usb3_data_ss>;
-+					};
-+				};
-+			};
-+		};
-+	};
- };
- 
- &lpuart1 {
-@@ -128,6 +171,38 @@ &pcie1 {
- 	status = "okay";
- };
- 
-+&usb3 {
-+	status = "okay";
-+};
-+
-+&usb3_phy {
-+	status = "okay";
-+
-+	port {
-+		usb3_data_ss: endpoint {
-+			remote-endpoint = <&typec_con_ss>;
-+		};
-+	};
-+};
-+
-+&usb3_dwc3 {
-+	dr_mode = "otg";
-+	hnp-disable;
-+	srp-disable;
-+	adp-disable;
-+	usb-role-switch;
-+	role-switch-default-mode = "peripheral";
-+	snps,dis-u1-entry-quirk;
-+	snps,dis-u2-entry-quirk;
-+	status = "okay";
-+
-+	port {
-+		usb3_data_hs: endpoint {
-+			remote-endpoint = <&typec_con_hs>;
-+		};
-+	};
-+};
-+
- &usdhc1 {
- 	pinctrl-names = "default", "state_100mhz", "state_200mhz", "sleep";
- 	pinctrl-0 = <&pinctrl_usdhc1>;
-@@ -245,6 +320,12 @@ IMX95_PAD_SD2_RESET_B__GPIO3_IO_BIT7		0x31e
- 		>;
- 	};
- 
-+	pinctrl_typec: typecgrp {
-+		fsl,pins = <
-+			IMX95_PAD_GPIO_IO34__GPIO5_IO_BIT14			0x31e
-+		>;
-+	};
-+
- 	pinctrl_usdhc2_gpio: usdhc2gpiogrp {
- 		fsl,pins = <
- 			IMX95_PAD_SD2_CD_B__GPIO3_IO_BIT0		0x31e
--- 
-2.34.1
+Best regards,
+Krzysztof
 
 
 -- 
