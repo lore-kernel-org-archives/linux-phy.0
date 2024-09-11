@@ -4,93 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27A09EE01FB
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 01:28:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C73E8EE01FB
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 01:29:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TJV7hSHcyhjCvGbUJmAlnB4he7PnEEVzekh042LzlA4=; b=escn7fMbftkxp7
-	oHFeIXLCIvxuZVmGd0Adr8iCVaqeX95kYhDenLbXMAg9AyYbTGTr6ketLc45rNJ99SAvQNCaKX44Y
-	Xm+wgwJztdZBZBno3GeapBZvlKNfjWa8OmJSqb61PG+J9wtqSAorxYCeN8mlEwqa4PXdreUN0oR4p
-	25UXSnmBEU48csrASZ1iY6AqPgc1sdDj2z2iZSBo6674iilu02N3gIVmbo08Q04FBcODLtN5ErYlE
-	QeuZLP0SpjWqp7Tj4fTv23Hs57KwHXhQVq/PoxKVXJ360irsGAko+JSOVE885Fz32FTtEwxlyaOXv
-	5byHSZHcaYv8RLOyHkxw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eHOLfNuLojnKlI0Cl/SgXUhtBfHq+Hc8+p19Dhz+tF8=; b=eiNEeaSbOfT/yK
+	ehdhdijeAU1G1z6xK5dfIw7ve66QpQchZMoyB39eT0UJONE2r6eDuRNv0SY+DBLttxmeoLjkai7md
+	nzHZXVJ95FktASLP1AsxbxSu//H429Ss88bz+sCwrm1uXe+t0BqJjrX2iogOTVZhxcKWe2i9KgttB
+	3JQo1NUiHvX9y21m4Os70rKbulBLy5pPhU1PaLLxgB7oMw1aP/NyHgaEw3BcA1dgdPDKjoSRo8j8F
+	oXtkcaBBSAbKpcqWomeGo/jGAkJOOPqp3HI62BkwGXolbtC9oXJdgY7NPWFJMrZ45A4bbQg6XU6mM
+	x6pbEglZl8kZToUsD+8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soC9R-00000007gjx-3hcg;
-	Wed, 11 Sep 2024 01:28:09 +0000
-Received: from gw2.atmark-techno.com ([35.74.137.57])
+	id 1soCAG-00000007gv3-2Ek5;
+	Wed, 11 Sep 2024 01:29:00 +0000
+Received: from mail-il1-x12e.google.com ([2607:f8b0:4864:20::12e])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soC96-00000007gee-3Nhq
+	id 1soCAD-00000007guW-3jOP
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Sep 2024 01:27:50 +0000
-Authentication-Results: gw2.atmark-techno.com;
-	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=SSQIc7dQ;
-	dkim-atps=neutral
-Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by gw2.atmark-techno.com (Postfix) with ESMTPS id F3BE68BA
-	for <linux-phy@lists.infradead.org>; Wed, 11 Sep 2024 10:27:46 +0900 (JST)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-205529c3402so81349165ad.0
-        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 18:27:46 -0700 (PDT)
+	Wed, 11 Sep 2024 01:28:59 +0000
+Received: by mail-il1-x12e.google.com with SMTP id e9e14a558f8ab-39e6b1ab200so27661895ab.0
+        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 18:28:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=atmark-techno.com; s=google; t=1726018066; x=1726622866; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=piebQm/1epxkP81mU8tuwXGPc4HtMsCSKOg4ODSsprs=;
-        b=SSQIc7dQQrj5p+OeOiUmqnHcTpsOLmkanrbfRkgzeQYa+wpxj2b7ux7VJyJtFeJc2i
-         1K/AMN9aNG6Y+32gqpQhbu/aBd3Rg6BjnzAy09mTzq/2/qfxNkI21Xv/VAF2i0l8Y5YK
-         ZA2Rt0y+a2K80VS9Pl0ikRhmpSJYoLA2dPA4IWDEYZwGoR8r4rnSPDhoBnL8unWfJEEq
-         78CC5VpSQVYISHRCUx+Gq8DngU+ESXvfYjQPzJJzZv8SqmAKjKSAJkIF2OImRXI++Qbx
-         qAwSpAV3BAaZxoKTXAELBz7WLEC+sQp3WjSEGrujTPS6oWJnHrYEDjqcNQ5B/Tqt9ws+
-         72FQ==
+        d=gmail.com; s=20230601; t=1726018136; x=1726622936; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=ka8v+nuFAA0Gh9Hx/tLInP2OJKYP8TUm7K91UqDbkbY=;
+        b=WCSTnvQRp6w3Ybv0/Ig5AMjocgSgL58yz2Jx6hw5iI8zo/pMWNG5g/oBTC95seXdzs
+         iOMrKsb6DOezLSgmlOpFUW9sxZuLSTFECnpoQg0kCaAuX2qYceTs1mXa4po3GZf7UUus
+         gbsvHDBsceElQnqv96mbwEmjtpvojEZiFW3iQoKr4oBN+FOpaDuzQre1LVRQ0BxaCIT5
+         G4KuIGHFFbE3KDPBxxkb2/92J5X2nOOSuiqi8I9I+G3pxoT9xpdK49bOuTspbugNwniG
+         Nv2zicAEM0pae3mrWEBBDnc0xuRV8DaeNHgaJLrtskVRsQDiH9mbWfJZLcaq90BwOLkS
+         Yq0Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726018066; x=1726622866;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=piebQm/1epxkP81mU8tuwXGPc4HtMsCSKOg4ODSsprs=;
-        b=xNXDYiyaKcphfESbbOySLAz/pCPIyfMtg5GbFGbg/WZmgSIPW14YleiOG5wz8HbGin
-         znLZQcHq7K1FpTttUfLPwrvjEHUsO4dDYyYq7b3zMZO0saNpMRvoQpoKyvDWvomPms5O
-         StZHsP7NNV3KbFFDACzLHk6cCH8DqJCzWowG3HNpt+HWhZcQr5dhQ60mmP9vFf0uAAi7
-         IkdZo6qw3BjpwpsqnrCmLouh4C+Fj2vgz9QTg+Zmo/+KKIyU+RQbLILZDdV6TKa0zteB
-         sXZVJXN7Lhh2bpO5f990mxD3bD0hG/k/Q6OKcSYmbD56TUUFxPv+65Gzxb5stIICFwCF
-         Hchg==
-X-Forwarded-Encrypted: i=1; AJvYcCWpeLiLWui5guIGlhHlRb4c59Q/yiWYfFp2vc1RBto7MosrlW+Oawn3YaaX8zM1IuKrtxmXzXjho7k=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx62sOFqrYZ1v5mSbUhaYhbYpNI8Dg3owOZLGYn4AbgJVTAT/t8
-	VT53H7dqikqmWuWIFFoLQPSEM8+jYR7Bv65gWA8RjRMEWlrDcgPxN9sy+2Ukgg35gNEQUOtzoMG
-	WOVj2xHMUQ5rbacba89/uNYyokVzxenThHR7pKY8XkTCE0J9OoFBVjCOHopMSgvFm
-X-Received: by 2002:a17:902:d511:b0:207:2093:99a3 with SMTP id d9443c01a7336-2074c4c4fe4mr23879935ad.5.1726018065719;
-        Tue, 10 Sep 2024 18:27:45 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGazzt/LaGGBY2DoRrtPEoEdLzev+TuypaNYFEnIn0/5MgpFyaXvG93yy4tnQ/hkAPoU1RVew==
-X-Received: by 2002:a17:902:d511:b0:207:2093:99a3 with SMTP id d9443c01a7336-2074c4c4fe4mr23879675ad.5.1726018065232;
-        Tue, 10 Sep 2024 18:27:45 -0700 (PDT)
-Received: from localhost (35.112.198.104.bc.googleusercontent.com. [104.198.112.35])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-20710e3368bsm54300225ad.95.2024.09.10.18.27.44
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 10 Sep 2024 18:27:44 -0700 (PDT)
-Date: Wed, 11 Sep 2024 10:27:33 +0900
-From: Dominique Martinet <dominique.martinet@atmark-techno.com>
-To: Adam Ford <aford173@gmail.com>
-Cc: Frieder Schrempf <frieder@fris.de>,
+        d=1e100.net; s=20230601; t=1726018136; x=1726622936;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ka8v+nuFAA0Gh9Hx/tLInP2OJKYP8TUm7K91UqDbkbY=;
+        b=X0EBt9uvtpz91cE0BzYN7LW0x86Ir4uezJtgl2wfvKG7nRqiKBo9Or/1hPcj9AzXvn
+         JI3o8WbbEbNFz1HY4DHFIHZSe6qo6HevLkyLVlgsISHDOFk5Q73s5lYqk79ly+QncEge
+         FEZfqGHgY9UF9oZOprFxnMbfskiShHLHY8xc4+QHskXQ8oLpGXu0YuBG2O3xPEuozM7h
+         g+fBEvl/cM1lvLD6IGMTwUr/lxssmFvEjx/wqYa1K/5ZZR78tFubk664VqRwDJgWLVlV
+         GBRRwGNiw7RrG0aNRhwqiOdd8iiepH4j7gkjZ2VciScNFz7c3RwSlM2v2Z7SPA/XV6EE
+         41RQ==
+X-Gm-Message-State: AOJu0YzFmdh6ogGCHiSaEFoQqzNd7kQi/iGzQgKslhI1xWgQ7g4K/cYS
+	tk85puw7Xs91FjUQws/nCDz+y4QlQLbc+dazY+s5tK2ESGXJ7xyktedsbA==
+X-Google-Smtp-Source: AGHT+IF+mE7+NwgL4kVINEDilY0cUwrweJIzqC5lwqmEt2ov9DI4+B+MFPZFyGsaQH8Hv60GO2chfA==
+X-Received: by 2002:a92:874a:0:b0:3a0:65a0:460a with SMTP id e9e14a558f8ab-3a065a04863mr62567995ab.19.1726018136265;
+        Tue, 10 Sep 2024 18:28:56 -0700 (PDT)
+Received: from aford-System-Version.lan (c-75-72-166-104.hsd1.mn.comcast.net. [75.72.166.104])
+        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-4d094561c8csm1917945173.62.2024.09.10.18.28.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 10 Sep 2024 18:28:50 -0700 (PDT)
+From: Adam Ford <aford173@gmail.com>
+To: linux-phy@lists.infradead.org
+Cc: dominique.martinet@atmark-techno.com,
+	linux-imx@nxp.com,
+	festevam@gmail.com,
+	frieder.schrempf@kontron.de,
+	aford@beaconembedded.com,
+	Sandor.yu@nxp.com,
+	Adam Ford <aford173@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Vinod Koul <vkoul@kernel.org>, Lucas Stach <l.stach@pengutronix.de>,
 	Marco Felsch <m.felsch@pengutronix.de>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH 0/2] Extending PLL LUT for i.MX8MP Samsung HDMI PHY
-Message-ID: <ZuDyBQ1I2vcGzAqX@atmark-techno.com>
-References: <20240910181544.214797-1-frieder@fris.de>
- <ZuDjAwPxHeJTvXAp@atmark-techno.com>
- <CAHCN7xJD8jsqyZX1JkWxrA84XkZ8YYN19hXW6KVe+jkOFugqrw@mail.gmail.com>
+	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH V7 0/5] phy: freescale: fsl-samsung-hdmi: Expand phy clock options
+Date: Tue, 10 Sep 2024 20:28:06 -0500
+Message-ID: <20240911012838.944630-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHCN7xJD8jsqyZX1JkWxrA84XkZ8YYN19hXW6KVe+jkOFugqrw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240910_182748_982294_2E1BCCCA 
-X-CRM114-Status: GOOD (  27.84  )
+X-CRM114-CacheID: sfid-20240910_182857_951136_1F60B1F1 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,47 +100,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Adam Ford wrote on Tue, Sep 10, 2024 at 08:16:04PM -0500:
-> > That aside, I see no problem with this, just one meta-comment about
-> > adding a link to the script in an external repo: I see some other
-> > drivers have python scripts in their trees e.g.
-> > drivers/comedi/drivers/ni_routing/tools/*py
-> > drivers/gpu/drm/ci/xfails/update-xfails.py
-> > drivers/gpu/drm/msm/registers/gen_header.py
-> >
-> > would it make sense to commit the script here instead of linking to a
-> > repo that might be lost in the future?
-> >
-> > I'm not quite sure what policy the linux repo has here, so leaving that
-> > as an open question.
-> 
-> Is there a reason this couldn't be coded in C and used to expand my
-> integer calculator series?  With that, we could drop the lookup table.
+Currently, there is a look-up-table to describe all the clock options the HDMI PHY
+can use.  Some of these entries in the LUT are using a fractional divider which does
+not have a well documented algorithm for determinging values, but the the integer
+divider can use an algorithm to calculate the integer divder values dynamically
+beyond those listed in the LUT and also duplicates some of the entries.
 
-Quoting a previous mail from Frieder:
-> I will clean things up a bit and then share what I have. I hope that this
-> allows anyone to calculate parameters for their non-standard displays if
-> required.
-> 
-> If someone feels extra motivated they could try to calculate the fractional
-> parameters at runtime. However I'm not sure that this is feasible. The
-> numerical computation of a large number of parameters is quite heavy and it's
-> probably not easy to strip the algorithm down to something that can be run on
-> the target without too much overhead.
+The first two patches do not do anything functionally other than simplify
+some of the register accesses and de-duplicates some of the register look-ups.
 
-Trying a random frequency with the algorithm he has implemented it
-easily takes 10 seconds to run on my imx8mp board, so even if we asssume
-C is 3-4 times faster I think the current algorithm is too slow for
-runtime and it makes more sense to extended the LUT to me (as long as
-the values can be & are checked at least once, which we now can)
+The third patch adds support for the integer divider and uses it whenever the
+clock request is an exact match.  Otherwise, it will use the LUT as before.
+The rouding is still based on the LUT if the integer clock isn't an exact match.
 
-The current algorithm brute-forces its way through so there could be a
-better way of computing the fractional part of the divider, but I'm not
-sure it's worth the effort at this point; I guess it's a good
-intellectual challenge though so someone might do it in the future.
+The forth patch updates thes set_rate and round_rate functions to use either
+the fractional clock LUT or the the integer divder mechanism to determine
+which ever clock rate might be closest match.
+
+The last patch removes the integer divider entries from the LUT since by then
+it'll be comparing both the integer divider calculator and the closest value
+in the LUT.
+
+In my testing with a AOC 4K monitor, I was able to add 4 entries in my modetest
+table.  I do not have an HDMI analyzer, so I just used my monitor to determine
+if this series worked.
+
+
+Adam Ford (5):
+  phy: freescale: fsl-samsung-hdmi: Replace register defines with macro
+  phy: freescale: fsl-samsung-hdmi: Simplify REG21_PMS_S_MASK lookup
+  xphy: freescale: fsl-samsung-hdmi: Support dynamic integer
+  phy: freescale: fsl-samsung-hdmi: Use closest divider
+  phy: freescale: fsl-samsung-hdmi: Remove unnecessary LUT entries
+
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 596 ++++++++++---------
+ 1 file changed, 318 insertions(+), 278 deletions(-)
 
 -- 
-Dominique
+2.43.0
+
 
 -- 
 linux-phy mailing list
