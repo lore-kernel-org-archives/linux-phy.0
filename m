@@ -4,55 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDC75EE4992
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 10:53:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 785A4EE4991
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 10:55:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v45RtMXNnQa2CtCj2a8VVjujt14ri71vnMxPvoOYHMk=; b=o/nFBxNP7jnsa7
-	OLxnfl3zfK6LflxNbewJp7vCTAZagIUd34Wl/EyruM8ZQNjbTfEkjz2qni1Ci0uUk2LtWQmzJEow6
-	yPcGlZvi07GW6GnhjFLhKI9JRB5Rvd3lSUlP1mfdTzOZ8DL1dIr2Rm7Dad4enPp+dXKTV3cCYXON6
-	Ih63pU+rmWXDrvTins0Rnm9ZWgYO8kYx+l0hoA5Ay8ODhWMA1k3+ynO/WYGiTciAocsZL1dDkef3a
-	vGC+eWb305kxTbkLAOUWDepoycbg2G3qmTIh/k1jujJ9gsUtdOpo7YTshVIIlUATKZFkhwSfwNUd4
-	KBu39iI1mXLBc/KeS+iw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DT+DXlRxkj3wQPSFJ2drsKPtiLsna6XMUiow5ExtOqI=; b=tUNffANmLDqVRT
+	jVNdzqEOQvFFPDx8zvueZSfMt9bMx1QVN86iTBsWbDlqCbV1IizbgmA3YdMnzFsy5RGhWZWh+UPA0
+	kTqba+BAVg6ZCbbJVcoT6zyUm2/jP8afnHLbmuylgYd8xgHspWMt4I2xLFvmIOnMo+CmdRydUHkr8
+	x6KLh5fPUrzOd77C/eqFA7k5PonoRkLkI/T0siAyYiJRzUbpZ5cvhnFKbyVf1GHDdOBC/Vo+Uoyws
+	dFg7tOAYeF+++IvyQw6uDPnRPnnToo44GIfPvsdxLaIHGEUKexQbaR8OhY7ZQdaoncBx7m/l1ywIf
+	6L+0+q2U9TQy8VjcgPog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soKy9-00000009BCJ-1sqj;
-	Wed, 11 Sep 2024 10:53:05 +0000
+	id 1soL0D-00000009BmV-0v1p;
+	Wed, 11 Sep 2024 10:55:13 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soKwG-00000009AVc-3zNW;
-	Wed, 11 Sep 2024 10:51:19 +0000
+	id 1soKwJ-00000009AWy-0jjg;
+	Wed, 11 Sep 2024 10:51:20 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48BAoH9q027746;
-	Wed, 11 Sep 2024 12:51:01 +0200
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48BA3uad027275;
+	Wed, 11 Sep 2024 12:51:04 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=selector1; bh=
-	HC41gKbNTPTheLxQatK65Adbh2JRdRstc3B3EX+giRg=; b=hcvYmMTCoT6Y/wgR
-	SA2BCqplm/TRjScoo7xmGDB8mkg03BA7LcdCLSWixqTn3XCm30ojDhdFuLY1cDQZ
-	BSfmoFMec2aoqtzQ8UGG6n5LNeec2IJxGyFklcadmmE6SQEtiZNKM5tKfDSv3WsO
-	hZ0EDnsQsNfu11VofbhskFl/8ao+uEZV6QktsGhlmkG/qEX+lXBGfg0zTNrg7ikl
-	Qdq/duFahps5JrjJRXkRETiZUE0DebH7vPM7VJzmGEbCRWJs8XjK/Ww9wjfOKZsQ
-	C/BA1gfRGhNG8N0HVyCZP9SRHVQz21u4115G7LHJ1yh8L8J0VOlKJs+bFit3+BJ+
-	5aQP7w==
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=selector1; bh=0WzLc6q4m7ThCYCCO39O3y
+	qSLr+hElZixPi6UArXKN8=; b=7R+RzhNySdANufmrav6Ysx/IC4URkBP9Z/qseB
+	M3MwB1j7XPt8S/QRBBeUJ6bCBUrqtuZKcG3t7Q2ct+VQtSqW4cFLFC4uVySbxXmg
+	lh2kW/2PLbgNbVEQVqznsZ20mTB5Vpreu5SCqPXN/8waZNEXwfaEmJjTyIrNnsQw
+	2/xwi3z7Vw0cxnrCfO84W1qap5X+7VKf96nMWgB5ds7u6H48I5f8FAfOnJF7kuak
+	jB3LldT76QnRJ2hVNvETUTh4z3L/qU11MwbQr15r/AehaFYSXJrW/S8yi4uX1o/u
+	gFVEqmsdsvaXgClI77CWXz8TNC1kP1pkUmsNouy9Rveo5/gw==
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 41gyaux9n1-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 41gyaux9nb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 11 Sep 2024 12:51:01 +0200 (MEST)
+	Wed, 11 Sep 2024 12:51:04 +0200 (MEST)
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id DA63140073;
-	Wed, 11 Sep 2024 12:49:44 +0200 (CEST)
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id D612C40069;
+	Wed, 11 Sep 2024 12:49:36 +0200 (CEST)
 Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 381092542B9;
-	Wed, 11 Sep 2024 12:47:03 +0200 (CEST)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2165925AF0C;
+	Wed, 11 Sep 2024 12:46:54 +0200 (CEST)
 Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
  (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Wed, 11 Sep
- 2024 12:47:02 +0200
+ 2024 12:46:53 +0200
 From: Christian Bruel <christian.bruel@foss.st.com>
 To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
         <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
@@ -63,12 +62,10 @@ CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
         <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
         <fabrice.gasnier@foss.st.com>,
         Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH v8 3/5] MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
-Date: Wed, 11 Sep 2024 12:46:44 +0200
-Message-ID: <20240911104646.2980821-4-christian.bruel@foss.st.com>
+Subject: [PATCH v8 0/5] Add STM32MP25 USB3/PCIE COMBOPHY driver 
+Date: Wed, 11 Sep 2024 12:46:41 +0200
+Message-ID: <20240911104646.2980821-1-christian.bruel@foss.st.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240911104646.2980821-1-christian.bruel@foss.st.com>
-References: <20240911104646.2980821-1-christian.bruel@foss.st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.129.178.212]
 X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
@@ -77,9 +74,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240911_035109_386810_E1FE0357 
-X-CRM114-Status: UNSURE (   8.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240911_035111_600930_330631AE 
+X-CRM114-Status: GOOD (  12.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,30 +92,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add myself as STM32MP25 COMBOPHY maintainer
+Changes in v7/v8:
+   - MAINTAINERS: Reorder STM32MP25 DRIVER entry
 
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
----
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
+Changes in v6:
+   - stm32_combophy_pll_init: merge combophy_cr1 accesses and error path.
+   - Use devm_reset_control_get_exclusive
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index a70b7c9c3533..73fd76dab699 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -21908,6 +21908,12 @@ F:	drivers/*/stm32-*timer*
- F:	drivers/pwm/pwm-stm32*
- F:	include/linux/*/stm32-*tim*
- 
-+STM32MP25 USB3/PCIE COMBOPHY DRIVER
-+M:	Christian Bruel <christian.bruel@foss.st.com>
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/st,stm32mp25-combophy.yaml
-+F:	drivers/phy/st/phy-stm32-combophy.c
-+
- STMMAC ETHERNET DRIVER
- M:	Alexandre Torgue <alexandre.torgue@foss.st.com>
- M:	Jose Abreu <joabreu@synopsys.com>
+Changes in v5:
+   - Drop syscfg phandle and change driver to use lookup_by_compatible
+   - Use clk_bulk API and drop stm32_combophy_enable/disable_clocks
+   - Reorder required: list.
+   - Fix access-controllers maxItems
+
+Changes in v4:
+   - "#phy-cells": Drop type item description since it is specified
+     by user node phandle.
+   - Rename stm32-combophy.yaml to match compatible
+   - Drop wakeup-source from bindings (should be generic)
+   - Alphabetically reorder required: list.
+   - Drop "Reviewed-by" since those previous changes
+
+Changes in v3:
+   - Reorder MAINTAINERS patch
+
+Changes in v2:
+   - Reorder entries
+   - Rename clock_names and reset_names bindings
+   - Rename and clarify rx-equalizer binding 
+
+Christian Bruel (5):
+  dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
+  phy: stm32: Add support for STM32MP25 COMBOPHY.
+  MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
+  arm64: dts: st: Add combophy node on stm32mp251
+  arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
+
+ .../bindings/phy/st,stm32mp25-combophy.yaml   | 119 ++++
+ MAINTAINERS                                   |   6 +
+ arch/arm64/boot/dts/st/stm32mp251.dtsi        |  16 +
+ arch/arm64/boot/dts/st/stm32mp257f-ev1.dts    |  14 +
+ drivers/phy/st/Kconfig                        |  11 +
+ drivers/phy/st/Makefile                       |   1 +
+ drivers/phy/st/phy-stm32-combophy.c           | 596 ++++++++++++++++++
+ 7 files changed, 763 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/st,stm32mp25-combophy.yaml
+ create mode 100644 drivers/phy/st/phy-stm32-combophy.c
+
 -- 
 2.34.1
 
