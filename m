@@ -4,81 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 340D2EE4991
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 10:58:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2811EE4998
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 11:53:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIbwo42+I647nDw5nxOUMknUfJkM7kQ+ZKcboiJzNJI=; b=grSRifCWi3G4KQ
-	o+Tt1KupUDhkx5VqMxYmLtox790+Cxmd6//G07cP0lm4jTl8RfCGPFyd2lPFok4Pwj+QQCpIQcnwv
-	m2arjpMlNSfSMjlnVzitl7Ad8u020U6tlllBLHQjfo52gOwzmc3qfr6QPB5bDYtAvXM8PqBIXRfCQ
-	bf+IxTlrPN1/GbEakiMvGDcj3CJmwjf/Vewg73tuOuVoZ4rjwUezbuQyEhB/S/8G/GBw8TMMhMFNn
-	lsoLqj0jlUnFRFiKP+5SzcELILquhvJkco1RjG5QcYBELjhWKo94U7al4TXKhyzzLMfbmKOK5UldC
-	pUko24Kn4NUDboJxCJag==;
+	List-Owner; bh=G2z1ot6YGoxZpVuMd7oJXfG5uRX7pZrEfXxoioTEXCM=; b=qwxAclcRX7SXNE
+	+CJLFok3SBgi+7QFtQ9VeaVAq/sqSKIvt8m3OjR7bg0ffCD2yuR8ghQQScRTA9eVjY+exNS0E6mAQ
+	k2dT3D7bnycwmgzdddrIDKzK/yIS3edUhXCevI1ptbxSufOuWhqcvqt7d2dCrAGmrgOWL5NQSKSv2
+	mkB5CwJzk0saoce9pd9/YTelfQhQIS2BII0CdpUUzGe5iwLXj7EzPEgflM5EB3YkvkZZFSR0cHJCY
+	AfERMHYLDlpSXMsUPn3dCbjMhDRiiXDrwFyLnCp9i2UHCCTc/AE6Lp9k3l/7KnZ0c84+/Num0IiWA
+	J7kQGHW2b97ciiFkvrAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soL3D-00000009CSZ-3rfA;
-	Wed, 11 Sep 2024 10:58:19 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93] helo=mx07-00178001.pphosted.com)
+	id 1soLui-00000009MXs-15jA;
+	Wed, 11 Sep 2024 11:53:36 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soKx1-00000009AkT-38QY;
-	Wed, 11 Sep 2024 10:51:57 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48BAdhhu025267;
-	Wed, 11 Sep 2024 12:51:49 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=selector1; bh=
-	oFevO1WzCe1lndyKIcqDqzd48GJyNyJUl83cjIp11to=; b=oBKEYZHpB4/TwbHM
-	Py7nN4GzRsJf+cXakvEd2TiSrey19GlCX2hk1bSxfiLhmrKjmaUjbrBhDMICXKEK
-	Qp0Xzgv9BNQ0EQrh5/musdkdGVW8vVHmXbG2/gIo6eOw0ST60PMn24OSnJQwMfk5
-	jczC/eKiVhdLCVl9tchLgHZ23sklQUa2jfdvaoHHF/4yH6iXMSiOxsc1T5VLZIn9
-	TQZ+cGkjUw/uhleZ31ORjO4wPv4tH4EKhT4Z/zHCByF37KD2HOf+jq14WgYPxA5K
-	hAqslTFnkK5RZdvwjGoRNf+0c9YM/0hzdFyqPG7HkM8iQVgbxBOAdWeYXiral+sc
-	S7K5Dw==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 41gyaux9uh-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 11 Sep 2024 12:51:49 +0200 (MEST)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 43E7F40044;
-	Wed, 11 Sep 2024 12:50:32 +0200 (CEST)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 982E5266D3A;
-	Wed, 11 Sep 2024 12:48:05 +0200 (CEST)
-Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Wed, 11 Sep
- 2024 12:48:05 +0200
-From: Christian Bruel <christian.bruel@foss.st.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>,
-        <p.zabel@pengutronix.de>
-CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <fabrice.gasnier@foss.st.com>,
-        Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH v8 5/5] arm64: dts: st: Enable COMBOPHY on the stm32mp257f-ev1 board
-Date: Wed, 11 Sep 2024 12:46:46 +0200
-Message-ID: <20240911104646.2980821-6-christian.bruel@foss.st.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240911104646.2980821-1-christian.bruel@foss.st.com>
-References: <20240911104646.2980821-1-christian.bruel@foss.st.com>
+	id 1soLue-00000009MVg-0iPw
+	for linux-phy@lists.infradead.org;
+	Wed, 11 Sep 2024 11:53:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 43BFEA44CCD;
+	Wed, 11 Sep 2024 11:53:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66CDBC4CEC6;
+	Wed, 11 Sep 2024 11:53:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1726055610;
+	bh=IZP0j0URHKg34Z+uDXsss8wvd9andjBbgzMWCUodLmI=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=d/fdVFS6XEQFeADxLTiFke6jAgpiRerRJ5wROxrE+lBd1o2RdSV9MdHWHj+uZSyTk
+	 Aa5yFtJdtYvhZ4UHC/ds5w2sYPQ0PCVu9jxL/RF53gk2LT+9lPc9u1lgvqFH1Gsrn3
+	 c3payVXt+6GIJOX1elOndTTHvUAJIy+zVsKuaWTD2xC7SOBeLISnYqnwBe2lLhFGNF
+	 0+Uhf8XscvoLCz/oFnKyiQrLcR8fUIm+ySWeCnI56xoHqp156zYYl8Qnj4Wj3SSaWb
+	 wfejaQED14F7pR9NtI+WP9HlZuMqUSWrvavnVe9boWENRN6WyK9eTdpgmG2WSqV+E6
+	 WT0MlbEwtZn8g==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan+linaro@kernel.org>)
+	id 1soLuv-000000002rS-2cQ7;
+	Wed, 11 Sep 2024 13:53:49 +0200
+From: Johan Hovold <johan+linaro@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH 4/4] phy: qcom: qmp-usb: move driver data initialisation earlier
+Date: Wed, 11 Sep 2024 13:52:53 +0200
+Message-ID: <20240911115253.10920-5-johan+linaro@kernel.org>
+X-Mailer: git-send-email 2.44.2
+In-Reply-To: <20240911115253.10920-1-johan+linaro@kernel.org>
+References: <20240911115253.10920-1-johan+linaro@kernel.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.129.178.212]
-X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
- (10.75.129.71)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240911_035156_100521_D0DBAC38 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20240911_045332_299730_55C96DBE 
+X-CRM114-Status: GOOD (  12.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,48 +80,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the COMBOPHY with external pad clock on stm32mp257f-ev1
-board, to be used for the PCIe clock provider.
+Commit 44aff8e31080 ("phy: qcom-qmp-combo: clean up probe
+initialisation") removed most users of the platform device driver data,
+but mistakenly also removed the initialisation despite the data still
+being used in the runtime PM callbacks.
 
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+The initialisation was soon after restored by commit 83a0bbe39b17 ("phy:
+qcom-qmp-combo: add support for updated sc8280xp binding") but now
+happens slightly later during probe. This should not cause any trouble
+currently as runtime PM needs to be enabled manually through sysfs and
+the platform device would not be suspended before the PHY has been
+registered anyway.
+
+Move the driver data initialisation to avoid a NULL-pointer dereference
+on runtime suspend if runtime PM is ever enabled by default in this
+driver.
+
+Fixes: 44aff8e31080 ("phy: qcom-qmp-combo: clean up probe initialisation")
+Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
 ---
- arch/arm64/boot/dts/st/stm32mp257f-ev1.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts b/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-index 214191a8322b..bcf84d533cb2 100644
---- a/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-+++ b/arch/arm64/boot/dts/st/stm32mp257f-ev1.dts
-@@ -27,6 +27,14 @@ chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index c478bf74817a..ddecf34968fd 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -3649,6 +3649,7 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 		return -ENOMEM;
  
-+	clocks {
-+		pad_clk: pad-clk {
-+			#clock-cells = <0>;
-+			compatible = "fixed-clock";
-+			clock-frequency = <100000000>;
-+		};
-+	};
-+
- 	memory@80000000 {
- 		device_type = "memory";
- 		reg = <0x0 0x80000000 0x1 0x0>;
-@@ -50,6 +58,12 @@ &arm_wdt {
- 	status = "okay";
- };
+ 	qmp->dev = dev;
++	dev_set_drvdata(dev, qmp);
  
-+&combophy {
-+	clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>, <&pad_clk>;
-+	clock-names = "apb", "ker", "pad";
-+	status = "okay";
-+};
-+
- &ethernet2 {
- 	pinctrl-names = "default", "sleep";
- 	pinctrl-0 = <&eth2_rgmii_pins_a>;
+ 	qmp->orientation = TYPEC_ORIENTATION_NORMAL;
+ 
+@@ -3725,8 +3726,6 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ 
+ 	phy_set_drvdata(qmp->dp_phy, qmp);
+ 
+-	dev_set_drvdata(dev, qmp);
+-
+ 	if (usb_np == dev->of_node)
+ 		phy_provider = devm_of_phy_provider_register(dev, qmp_combo_phy_xlate);
+ 	else
 -- 
-2.34.1
+2.44.2
 
 
 -- 
