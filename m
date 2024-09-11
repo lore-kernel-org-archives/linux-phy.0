@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B94AFEE4990
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 10:46:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD6EAEE498F
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 10:47:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z8cpIh1c5S/bboC9DbfDTX7C781R8a0vK15vlSKzPkA=; b=fmW8IFNebIAvEY
-	Gf33AaBgqzsE9DWqZnQMmM7Pbx/2+28cUeSuWPurjbI59DPEQhocGH73xBBSPd6hLeR4y/jrm57/D
-	b8WUtbKhfzgNIPiVTSxKGG0WjmfniUUsXBA/LFjWQluLTcOyxoc0gVF2dDrsnpA8WOa8hL6FJDHNn
-	CvIouFdR/I194tVoLPz7z1qAAFF5Q6L0mjsBM8lH7VHxmUtfLtpsb4Sq1q280goA2KKXHiS6eTBDV
-	xeVH+3R00gAL5kn4CeS7aFhsjnDHL51co/Fl2qVb7abOY1u/o4GXHEXpNLXJlWQZhlXuYzOLsfu0j
-	JQVbrr+8Ip2JzDW9MQ9A==;
+	List-Owner; bh=Ga+AE4Jv4E3F10m+Q14QOISwH1GVvhqzID7EAOjWWU8=; b=FzYVUfqBOoqAFM
+	LvPyFUG4Yk7g7mruBZK1XFO7DLw34MXOVvan82Is1y0oc1FHTYiXMTaJuvJwqgoWLVbXfqSR7qmMx
+	Xpi2m02tln6uW/m5EkTaw0XH/zVevtBCLJ5L6NnCbxQjtoOJ1z7YXeahLUFM9570zH+Ti1gkgNu7/
+	eiz26vsDjzPmEzrWL0hBAU9HVUNgNKEdjgKmYoQl1R7ab3OuaIwQCWNQjbX+J8IqbGK9Jqs4sk7O+
+	KLz7uqwTJdDDI32VvdOjCJB8vJPEd5Sak4ArlDa6a3HBZQuPAaFhi8zcObgtENazpDX+0rfGhxjaN
+	AwvnUPgv5DArdn7ikOtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soKrw-000000099l8-1kJ9;
-	Wed, 11 Sep 2024 10:46:40 +0000
+	id 1soKsx-000000099wE-1fJg;
+	Wed, 11 Sep 2024 10:47:43 +0000
 Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soKn0-000000098YB-0NoD;
+	id 1soKn2-000000098Zx-1xOF;
 	Wed, 11 Sep 2024 10:41:38 +0000
-Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48B63xY8027599;
-	Wed, 11 Sep 2024 12:41:26 +0200
+Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48B7nWjM005470;
+	Wed, 11 Sep 2024 12:41:29 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=selector1; bh=
-	14nV4yo74BeJ/Eta4KcByX7PADB/y+FTg4sU010XzGM=; b=S0Wc3TIBVDu65cIA
-	cpeafn2ybHT1XyOhGzJ3anrnJEdbJWjy7a5HkbJxPSZzEVOgEw0V+IrVezPI5KKQ
-	yOv0Mw0XaS9YdGVVc9RF9IAe1RqvCkty4VbSNlS678GDQ6aAavAA3T6qyARfPxnr
-	/ZBkJP2zM0/+dLFGeZvdZS5uSqq9CJqwuKdpa6CVpjKOLw8N+pIAIIT1u5+0Iwhq
-	IaHDcnxW5cKnv/h96wYFcQKAfN7wdPGtBiZw0CKS4Z/3czU/KBDtw+SmRyrSBBTz
-	pbRju2y3UoY87wmQmeFGFDY28AQF55AV/oV2EKYN148yfuTQoGYFl3KNNH/kPN+R
-	mbZruQ==
+	4fv1sQ8oNVXZbR6VQwj242LUMa622njNgXPkguclEbo=; b=iFy3VlOIok70Wf1D
+	XUBfK0zXFXtae8gE8k6iHXkrjbNnU83Iipeq1g//KG6xywr3vsQcZ0BUpoNtzTeq
+	0v3MgtPMhrMudblbrx9/TOkY9aY9NoZJXeHXNX/bLla2kX6p2fxPt/3Kyph65Ftm
+	4bYJyZe2y87ORsYfgAweJUiD7v0Xd57bVtMyqHohpkJYw+3/W5nqNFqQ4rKYjhqq
+	8yflMO5mcmi0PKad8ua33DF+7qW+07cuIBaezpXYA5EnLcg3riBp3SbMCFMpdKos
+	lR6sOSdeocg5hsh8nQYUdiHvmlE/B9MJ/QRdplN7OU74/zE5HCkrMqbxNlr/0oKx
+	Nu4Icw==
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 41gy7sejw0-1
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 41gyeh6fkr-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 11 Sep 2024 12:41:26 +0200 (MEST)
+	Wed, 11 Sep 2024 12:41:29 +0200 (MEST)
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 67F63400BD;
-	Wed, 11 Sep 2024 12:40:16 +0200 (CEST)
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id EB711400B9;
+	Wed, 11 Sep 2024 12:40:15 +0200 (CEST)
 Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 08D77265093;
-	Wed, 11 Sep 2024 12:37:40 +0200 (CEST)
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3043F265097;
+	Wed, 11 Sep 2024 12:37:42 +0200 (CEST)
 Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
  (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Wed, 11 Sep
- 2024 12:37:39 +0200
+ 2024 12:37:41 +0200
 From: Christian Bruel <christian.bruel@foss.st.com>
 To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
         <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
@@ -63,9 +63,9 @@ CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
         <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
         <fabrice.gasnier@foss.st.com>,
         Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH v7 2/5] phy: stm32: Add support for STM32MP25 COMBOPHY.
-Date: Wed, 11 Sep 2024 12:37:26 +0200
-Message-ID: <20240911103729.2980431-3-christian.bruel@foss.st.com>
+Subject: [PATCH v7 4/5] arm64: dts: st: Add combophy node on stm32mp251
+Date: Wed, 11 Sep 2024 12:37:28 +0200
+Message-ID: <20240911103729.2980431-5-christian.bruel@foss.st.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240911103729.2980431-1-christian.bruel@foss.st.com>
 References: <20240911103729.2980431-1-christian.bruel@foss.st.com>
@@ -77,8 +77,8 @@ X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240911_034134_476103_EE117EE7 
-X-CRM114-Status: GOOD (  28.55  )
+X-CRM114-CacheID: sfid-20240911_034136_920400_5C24F2F2 
+X-CRM114-Status: GOOD (  11.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,657 +95,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Addition of the COMBOPHY driver found on STM32MP25 platforms
-
-This single lane PHY is shared (exclusive) between the USB3 and PCIE
-controllers.
-Supports 5Gbit/s for PCIE gen2 or 2.5Gbit/s for PCIE gen1.
-
-Supports wakeup-source capability to wakeup system using remote-wakeup
-capable USB device
+Add support for COMBOPHY which is used either by the USB3 and PCIe
+controller.
+USB3 or PCIe mode is done with phy_set_mode().
+PCIe internal reference clock can be generated from the internal clock
+source or optionnaly from an external 100Mhz pad.
 
 Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
 ---
- drivers/phy/st/Kconfig              |  11 +
- drivers/phy/st/Makefile             |   1 +
- drivers/phy/st/phy-stm32-combophy.c | 596 ++++++++++++++++++++++++++++
- 3 files changed, 608 insertions(+)
- create mode 100644 drivers/phy/st/phy-stm32-combophy.c
+ arch/arm64/boot/dts/st/stm32mp251.dtsi | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-diff --git a/drivers/phy/st/Kconfig b/drivers/phy/st/Kconfig
-index 3fc3d0781fb8..304614b6dabf 100644
---- a/drivers/phy/st/Kconfig
-+++ b/drivers/phy/st/Kconfig
-@@ -33,6 +33,17 @@ config PHY_STIH407_USB
- 	  Enable this support to enable the picoPHY device used by USB2
- 	  and USB3 controllers on STMicroelectronics STiH407 SoC families.
- 
-+config PHY_STM32_COMBOPHY
-+	tristate "STMicroelectronics COMBOPHY driver for STM32MP25"
-+	depends on ARCH_STM32 || COMPILE_TEST
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support the COMBOPHY device used by USB3 or PCIe
-+	  controllers on STMicroelectronics STM32MP25 SoC.
-+	  This driver controls the COMBOPHY block to generate the PCIe 100Mhz
-+	  reference clock from either the external clock generator or HSE
-+	  internal SoC clock source.
-+
- config PHY_STM32_USBPHYC
- 	tristate "STMicroelectronics STM32 USB HS PHY Controller driver"
- 	depends on ARCH_STM32 || COMPILE_TEST
-diff --git a/drivers/phy/st/Makefile b/drivers/phy/st/Makefile
-index c862dd937b64..cb80e954ea9f 100644
---- a/drivers/phy/st/Makefile
-+++ b/drivers/phy/st/Makefile
-@@ -3,4 +3,5 @@ obj-$(CONFIG_PHY_MIPHY28LP) 		+= phy-miphy28lp.o
- obj-$(CONFIG_PHY_ST_SPEAR1310_MIPHY)	+= phy-spear1310-miphy.o
- obj-$(CONFIG_PHY_ST_SPEAR1340_MIPHY)	+= phy-spear1340-miphy.o
- obj-$(CONFIG_PHY_STIH407_USB)		+= phy-stih407-usb.o
-+obj-$(CONFIG_PHY_STM32_COMBOPHY)	+= phy-stm32-combophy.o
- obj-$(CONFIG_PHY_STM32_USBPHYC) 	+= phy-stm32-usbphyc.o
-diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
-new file mode 100644
-index 000000000000..37ae6b28c7fa
---- /dev/null
-+++ b/drivers/phy/st/phy-stm32-combophy.c
-@@ -0,0 +1,596 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * STMicroelectronics COMBOPHY STM32MP25 Controller driver.
-+ *
-+ * Copyright (C) 2024 STMicroelectronics
-+ * Author: Christian Bruel <christian.bruel@foss.st.com>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/platform_device.h>
-+#include <linux/phy/phy.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/regmap.h>
-+#include <linux/reset.h>
+diff --git a/arch/arm64/boot/dts/st/stm32mp251.dtsi b/arch/arm64/boot/dts/st/stm32mp251.dtsi
+index 1167cf63d7e8..b596afec1b6e 100644
+--- a/arch/arm64/boot/dts/st/stm32mp251.dtsi
++++ b/arch/arm64/boot/dts/st/stm32mp251.dtsi
+@@ -7,6 +7,7 @@
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/reset/st,stm32mp25-rcc.h>
+ #include <dt-bindings/regulator/st,stm32mp25-regulator.h>
 +#include <dt-bindings/phy/phy.h>
-+
-+#define SYSCFG_COMBOPHY_CR1 0x4c00
-+#define SYSCFG_COMBOPHY_CR2 0x4c04
-+#define SYSCFG_COMBOPHY_CR4 0x4c0c
-+#define SYSCFG_COMBOPHY_CR5 0x4c10
-+#define SYSCFG_COMBOPHY_SR  0x4c14
-+#define SYSCFG_PCIEPRGCR    0x6080
-+
-+/* SYSCFG PCIEPRGCR */
-+#define STM32MP25_PCIEPRGCR_EN	  BIT(0)
-+#define STM32MP25_PCIEPRG_IMPCTRL_OHM     GENMASK(3, 1)
-+#define STM32MP25_PCIEPRG_IMPCTRL_VSWING  GENMASK(5, 4)
-+
-+/* SYSCFG SYSCFG_COMBOPHY_SR */
-+#define STM32MP25_PIPE0_PHYSTATUS BIT(1)
-+
-+/* SYSCFG CR1 */
-+#define SYSCFG_COMBOPHY_CR1_REFUSEPAD BIT(0)
-+#define SYSCFG_COMBOPHY_CR1_MPLLMULT GENMASK(7, 1)
-+#define SYSCFG_COMBOPHY_CR1_REFCLKSEL GENMASK(16, 8)
-+#define SYSCFG_COMBOPHY_CR1_REFCLKDIV2 BIT(17)
-+#define SYSCFG_COMBOPHY_CR1_REFSSPEN BIT(18)
-+#define SYSCFG_COMBOPHY_CR1_SSCEN BIT(19)
-+
-+/* SYSCFG CR4 */
-+#define SYSCFG_COMBOPHY_CR4_RX0_EQ GENMASK(2, 0)
-+
-+#define MPLLMULT_19_2 (0x02u << 1)
-+#define MPLLMULT_20   (0x7du << 1)
-+#define MPLLMULT_24   (0x68u << 1)
-+#define MPLLMULT_25   (0x64u << 1)
-+#define MPLLMULT_26   (0x60u << 1)
-+#define MPLLMULT_38_4 (0x41u << 1)
-+#define MPLLMULT_48   (0x6cu << 1)
-+#define MPLLMULT_50   (0x32u << 1)
-+#define MPLLMULT_52   (0x30u << 1)
-+#define MPLLMULT_100  (0x19u << 1)
-+
-+#define REFCLKSEL_0   0
-+#define REFCLKSEL_1   (0x108u << 8)
-+
-+#define REFCLDIV_0    0
-+
-+/* SYSCFG CR2 */
-+#define SYSCFG_COMBOPHY_CR2_MODESEL GENMASK(1, 0)
-+#define SYSCFG_COMBOPHY_CR2_ISO_DIS BIT(15)
-+
-+#define COMBOPHY_MODESEL_PCIE 0
-+#define COMBOPHY_MODESEL_USB  3
-+
-+/* SYSCFG CR5 */
-+#define SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS BIT(12)
-+
-+#define COMBOPHY_SUP_ANA_MPLL_LOOP_CTL 0xc0
-+#define COMBOPHY_PROP_CNTRL GENMASK(7, 4)
-+
-+/* Required apb/ker clocks first, optional pad last. */
-+static const char * const combophy_clks[] = {"apb", "ker", "pad"};
-+#define APB_CLK 0
-+#define KER_CLK 1
-+#define PAD_CLK 2
-+
-+struct stm32_combophy {
-+	struct phy *phy;
-+	struct regmap *regmap;
-+	struct device *dev;
-+	void __iomem *base;
-+	struct reset_control *phy_reset;
-+	struct clk_bulk_data clks[ARRAY_SIZE(combophy_clks)];
-+	int num_clks;
-+	bool have_pad_clk;
-+	unsigned int type;
-+	bool is_init;
-+	int irq_wakeup;
-+};
-+
-+struct clk_impedance  {
-+	u32 microohm;
-+	u32 vswing[4];
-+};
-+
-+/*
-+ * lookup table to hold the settings needed for a ref clock frequency
-+ * impedance, the offset is used to set the IMP_CTL and DE_EMP bit of the
-+ * PRG_IMP_CTRL register. Use ordered discrete values in the table
-+ */
-+static const struct clk_impedance imp_lookup[] = {
-+	{ 6090000, { 442000, 564000, 684000, 802000 } },
-+	{ 5662000, { 528000, 621000, 712000, 803000 } },
-+	{ 5292000, { 491000, 596000, 700000, 802000 } },
-+	{ 4968000, { 558000, 640000, 722000, 803000 } },
-+	{ 4684000, { 468000, 581000, 692000, 802000 } },
-+	{ 4429000, { 554000, 613000, 717000, 803000 } },
-+	{ 4204000, { 511000, 609000, 706000, 802000 } },
-+	{ 3999000, { 571000, 648000, 726000, 803000 } }
-+};
-+
-+static int stm32_impedance_tune(struct stm32_combophy *combophy)
-+{
-+	u8 imp_size = ARRAY_SIZE(imp_lookup);
-+	u8 vswing_size = ARRAY_SIZE(imp_lookup[0].vswing);
-+	u8 imp_of, vswing_of;
-+	u32 max_imp = imp_lookup[0].microohm;
-+	u32 min_imp = imp_lookup[imp_size - 1].microohm;
-+	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
-+	u32 min_vswing = imp_lookup[0].vswing[0];
-+	u32 val;
-+
-+	if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
-+		if (val < min_imp || val > max_imp) {
-+			dev_err(combophy->dev, "Invalid value %u for output ohm\n", val);
-+			return -EINVAL;
-+		}
-+
-+		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++)
-+			if (imp_lookup[imp_of].microohm <= val)
-+				break;
-+
-+		dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
-+			imp_lookup[imp_of].microohm);
-+
-+		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-+				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
-+				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
-+	} else {
-+		regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
-+		imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
-+	}
-+
-+	if (!of_property_read_u32(combophy->dev->of_node, "st,output-vswing-microvolt", &val)) {
-+		if (val < min_vswing || val > max_vswing) {
-+			dev_err(combophy->dev, "Invalid value %u for output vswing\n", val);
-+			return -EINVAL;
-+		}
-+
-+		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++)
-+			if (imp_lookup[imp_of].vswing[vswing_of] >= val)
-+				break;
-+
-+		dev_dbg(combophy->dev, "Set %u microvolt swing\n",
-+			 imp_lookup[imp_of].vswing[vswing_of]);
-+
-+		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-+				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
-+				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
-+	}
-+
-+	return 0;
-+}
-+
-+static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
-+{
-+	int ret;
-+	u32 refclksel, pllmult, propcntrl, val;
-+	u32 clk_rate;
-+	struct clk *clk;
-+	u32 cr1_val = 0, cr1_mask = 0;
-+
-+	if (combophy->have_pad_clk)
-+		clk = combophy->clks[PAD_CLK].clk;
-+	else
-+		clk = combophy->clks[KER_CLK].clk;
-+
-+	clk_rate = clk_get_rate(clk);
-+
-+	dev_dbg(combophy->dev, "%s pll init rate %d\n",
-+		combophy->have_pad_clk ? "External" : "Ker", clk_rate);
-+
-+	if (combophy->type != PHY_TYPE_PCIE) {
-+		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
-+		cr1_val |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
-+	}
-+
-+	if (of_property_present(combophy->dev->of_node, "st,ssc-on")) {
-+		dev_dbg(combophy->dev, "Enabling clock with SSC\n");
-+		cr1_mask |= SYSCFG_COMBOPHY_CR1_SSCEN;
-+		cr1_val |= SYSCFG_COMBOPHY_CR1_SSCEN;
-+	}
-+
-+	switch (clk_rate) {
-+	case 100000000:
-+		pllmult = MPLLMULT_100;
-+		refclksel = REFCLKSEL_0;
-+		propcntrl = 0x8u << 4;
-+		break;
-+	case 19200000:
-+		pllmult = MPLLMULT_19_2;
-+		refclksel = REFCLKSEL_1;
-+		propcntrl = 0x8u << 4;
-+		break;
-+	case 25000000:
-+		pllmult = MPLLMULT_25;
-+		refclksel = REFCLKSEL_0;
-+		propcntrl = 0xeu << 4;
-+		break;
-+	case 24000000:
-+		pllmult = MPLLMULT_24;
-+		refclksel = REFCLKSEL_1;
-+		propcntrl = 0xeu << 4;
-+		break;
-+	case 20000000:
-+		pllmult = MPLLMULT_20;
-+		refclksel = REFCLKSEL_0;
-+		propcntrl = 0xeu << 4;
-+		break;
-+	default:
-+		dev_err(combophy->dev, "Invalid rate 0x%x\n", clk_rate);
-+		return -EINVAL;
-+	};
-+
-+	cr1_mask |= SYSCFG_COMBOPHY_CR1_REFCLKDIV2;
-+	cr1_val |= REFCLDIV_0;
-+
-+	cr1_mask |= SYSCFG_COMBOPHY_CR1_REFCLKSEL;
-+	cr1_val |= refclksel;
-+
-+	cr1_mask |= SYSCFG_COMBOPHY_CR1_MPLLMULT;
-+	cr1_val |= pllmult;
-+
-+	/*
-+	 * vddcombophy is interconnected with vddcore. Isolation bit should be unset
-+	 * before using the ComboPHY.
-+	 */
-+	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-+			   SYSCFG_COMBOPHY_CR2_ISO_DIS, SYSCFG_COMBOPHY_CR2_ISO_DIS);
-+
-+	reset_control_assert(combophy->phy_reset);
-+
-+	if (combophy->type == PHY_TYPE_PCIE) {
-+		ret = stm32_impedance_tune(combophy);
-+		if (ret)
-+			goto out_iso;
-+
-+		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFUSEPAD;
-+		cr1_val |= combophy->have_pad_clk ? SYSCFG_COMBOPHY_CR1_REFUSEPAD : 0;
-+	}
-+
-+	if (!of_property_read_u32(combophy->dev->of_node, "st,rx-equalizer", &val)) {
-+		dev_dbg(combophy->dev, "Set RX equalizer %u\n", val);
-+		if (val > SYSCFG_COMBOPHY_CR4_RX0_EQ) {
-+			dev_err(combophy->dev, "Invalid value %u for rx0 equalizer\n", val);
-+			ret = -EINVAL;
-+			goto out_iso;
-+		}
-+
-+		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR4,
-+			   SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
-+	}
-+
-+	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1, cr1_mask, cr1_val);
-+
-+	/*
-+	 * Force elasticity buffer to be tuned for the reference clock as
-+	 * the separated clock model is not supported
-+	 */
-+	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR5,
-+			   SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS, SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS);
-+
-+	reset_control_deassert(combophy->phy_reset);
-+
-+	ret = regmap_read_poll_timeout(combophy->regmap, SYSCFG_COMBOPHY_SR, val,
-+				       !(val & STM32MP25_PIPE0_PHYSTATUS),
-+				       10, 1000);
-+	if (ret) {
-+		dev_err(combophy->dev, "timeout, cannot lock PLL\n");
-+		if (combophy->type == PHY_TYPE_PCIE && !combophy->have_pad_clk)
-+			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-+					   STM32MP25_PCIEPRGCR_EN, 0);
-+
-+		if (combophy->type != PHY_TYPE_PCIE)
-+			regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-+					   SYSCFG_COMBOPHY_CR1_REFSSPEN, 0);
-+
-+		goto out;
-+	}
-+
-+
-+	if (combophy->type == PHY_TYPE_PCIE) {
-+		if (!combophy->have_pad_clk)
-+			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-+					   STM32MP25_PCIEPRGCR_EN, STM32MP25_PCIEPRGCR_EN);
-+
-+		val = readl_relaxed(combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
-+		val &= ~COMBOPHY_PROP_CNTRL;
-+		val |= propcntrl;
-+		writel_relaxed(val, combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
-+	}
-+
-+	return 0;
-+
-+out_iso:
-+	reset_control_deassert(combophy->phy_reset);
-+
-+out:
-+	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-+			   SYSCFG_COMBOPHY_CR2_ISO_DIS, 0);
-+
-+	return ret;
-+}
-+
-+static struct phy *stm32_combophy_xlate(struct device *dev,
-+					const struct of_phandle_args *args)
-+{
-+	struct stm32_combophy *combophy = dev_get_drvdata(dev);
-+	unsigned int type;
-+
-+	if (args->args_count != 1) {
-+		dev_err(dev, "invalid number of cells in 'phy' property\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	type = args->args[0];
-+	if (type != PHY_TYPE_USB3 && type != PHY_TYPE_PCIE) {
-+		dev_err(dev, "unsupported device type: %d\n", type);
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	if (combophy->have_pad_clk && type != PHY_TYPE_PCIE) {
-+		dev_err(dev, "Invalid use of clk_pad for USB3 mode\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	combophy->type = type;
-+
-+	return combophy->phy;
-+}
-+
-+static int stm32_combophy_set_mode(struct stm32_combophy *combophy)
-+{
-+	int type = combophy->type;
-+	u32 val;
-+
-+	switch (type) {
-+	case PHY_TYPE_PCIE:
-+		dev_dbg(combophy->dev, "setting PCIe ComboPHY\n");
-+		val = COMBOPHY_MODESEL_PCIE;
-+		break;
-+	case PHY_TYPE_USB3:
-+		dev_dbg(combophy->dev, "setting USB3 ComboPHY\n");
-+		val = COMBOPHY_MODESEL_USB;
-+		break;
-+	default:
-+		dev_err(combophy->dev, "Invalid PHY mode %d\n", type);
-+		return -EINVAL;
-+	}
-+
-+	return regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-+				  SYSCFG_COMBOPHY_CR2_MODESEL, val);
-+}
-+
-+static int stm32_combophy_suspend_noirq(struct device *dev)
-+{
-+	struct stm32_combophy *combophy = dev_get_drvdata(dev);
-+
-+	/*
-+	 * Clocks should be turned off since it is not needed for
-+	 * wakeup capability. In case usb-remote wakeup is not enabled,
-+	 * combo-phy is already turned off by HCD driver using exit callback
-+	 */
-+	if (combophy->is_init) {
-+		clk_bulk_disable_unprepare(combophy->num_clks, combophy->clks);
-+
-+		/* since wakeup is enabled for ctrl */
-+		enable_irq_wake(combophy->irq_wakeup);
-+	}
-+
-+	return 0;
-+}
-+
-+static int stm32_combophy_resume_noirq(struct device *dev)
-+{
-+	struct stm32_combophy *combophy = dev_get_drvdata(dev);
-+	int ret;
-+
-+	/*
-+	 * If clocks was turned off by suspend call for wakeup then needs
-+	 * to be turned back ON in resume. In case usb-remote wakeup is not
-+	 * enabled, clocks already turned ON by HCD driver using init callback
-+	 */
-+	if (combophy->is_init) {
-+		/* since wakeup was enabled for ctrl */
-+		disable_irq_wake(combophy->irq_wakeup);
-+
-+		ret = clk_bulk_prepare_enable(combophy->num_clks, combophy->clks);
-+		if (ret) {
-+			dev_err(dev, "can't enable clocks (%d)\n", ret);
-+			return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int stm32_combophy_exit(struct phy *phy)
-+{
-+	struct stm32_combophy *combophy = phy_get_drvdata(phy);
-+	struct device *dev = combophy->dev;
-+
-+	combophy->is_init = false;
-+
-+	if (combophy->type == PHY_TYPE_PCIE && !combophy->have_pad_clk)
-+		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-+				   STM32MP25_PCIEPRGCR_EN, 0);
-+
-+	if (combophy->type != PHY_TYPE_PCIE)
-+		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-+				   SYSCFG_COMBOPHY_CR1_REFSSPEN, 0);
-+
-+	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-+			   SYSCFG_COMBOPHY_CR2_ISO_DIS, 0);
-+
-+	clk_bulk_disable_unprepare(combophy->num_clks, combophy->clks);
-+
-+	pm_runtime_put_noidle(dev);
-+
-+	return 0;
-+}
-+
-+static int stm32_combophy_init(struct phy *phy)
-+{
-+	struct stm32_combophy *combophy = phy_get_drvdata(phy);
-+	struct device *dev = combophy->dev;
-+	int ret;
-+
-+	pm_runtime_get_noresume(dev);
-+
-+	ret = clk_bulk_prepare_enable(combophy->num_clks, combophy->clks);
-+	if (ret) {
-+		dev_err(dev, "can't enable clocks (%d)\n", ret);
-+		pm_runtime_put_noidle(dev);
-+		return ret;
-+	}
-+
-+	ret = stm32_combophy_set_mode(combophy);
-+	if (ret) {
-+		dev_err(dev, "combophy mode not set\n");
-+		clk_bulk_disable_unprepare(combophy->num_clks, combophy->clks);
-+		pm_runtime_put_noidle(dev);
-+		return ret;
-+	}
-+
-+	ret = stm32_combophy_pll_init(combophy);
-+	if (ret) {
-+		clk_bulk_disable_unprepare(combophy->num_clks, combophy->clks);
-+		pm_runtime_put_noidle(dev);
-+		return ret;
-+	}
-+
-+	pm_runtime_disable(dev);
-+	pm_runtime_set_active(dev);
-+	pm_runtime_enable(dev);
-+
-+	combophy->is_init = true;
-+
-+	return ret;
-+}
-+
-+static const struct phy_ops stm32_combophy_phy_data = {
-+	.init = stm32_combophy_init,
-+	.exit = stm32_combophy_exit,
-+	.owner = THIS_MODULE
-+};
-+
-+static irqreturn_t stm32_combophy_irq_wakeup_handler(int irq, void *dev_id)
-+{
-+	return IRQ_HANDLED;
-+}
-+
-+static int stm32_combophy_get_clocks(struct stm32_combophy *combophy)
-+{
-+	int i, ret;
-+
-+	for (i = 0; i < ARRAY_SIZE(combophy_clks); i++)
-+		combophy->clks[i].id = combophy_clks[i];
-+
-+	combophy->num_clks = ARRAY_SIZE(combophy_clks) - 1;
-+
-+	ret = devm_clk_bulk_get(combophy->dev, combophy->num_clks, combophy->clks);
-+	if (ret)
-+		return ret;
-+
-+	ret = devm_clk_bulk_get_optional(combophy->dev, 1, combophy->clks + combophy->num_clks);
-+	if (ret)
-+		return ret;
-+
-+	if (combophy->clks[combophy->num_clks].clk != NULL) {
-+		combophy->have_pad_clk = true;
-+		combophy->num_clks++;
-+	}
-+
-+	return 0;
-+}
-+
-+static int stm32_combophy_probe(struct platform_device *pdev)
-+{
-+	struct stm32_combophy *combophy;
-+	struct device *dev = &pdev->dev;
-+	struct phy_provider *phy_provider;
-+	int ret, irq;
-+
-+	combophy = devm_kzalloc(dev, sizeof(*combophy), GFP_KERNEL);
-+	if (!combophy)
-+		return -ENOMEM;
-+
-+	combophy->dev = dev;
-+
-+	dev_set_drvdata(dev, combophy);
-+
-+	combophy->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(combophy->base))
-+		return PTR_ERR(combophy->base);
-+
-+	if (stm32_combophy_get_clocks(combophy))
-+		return ret;
-+
-+	combophy->phy_reset = devm_reset_control_get_exclusive(dev, "phy");
-+	if (IS_ERR(combophy->phy_reset))
-+		return dev_err_probe(dev, PTR_ERR(combophy->phy_reset),
-+				     "Failed to get PHY reset\n");
-+
-+	combophy->regmap = syscon_regmap_lookup_by_compatible("st,stm32mp25-syscfg");
-+	if (IS_ERR(combophy->regmap))
-+		return dev_err_probe(dev, PTR_ERR(combophy->regmap),
-+				     "No syscfg specified\n");
-+
-+	combophy->phy = devm_phy_create(dev, NULL, &stm32_combophy_phy_data);
-+	if (IS_ERR(combophy->phy))
-+		return dev_err_probe(dev, PTR_ERR(combophy->phy),
-+				     "failed to create PCIe/USB3 ComboPHY\n");
-+
-+	if (device_property_read_bool(dev, "wakeup-source")) {
-+		irq = platform_get_irq(pdev, 0);
-+		if (irq < 0)
-+			return dev_err_probe(dev, irq, "failed to get IRQ\n");
-+		combophy->irq_wakeup = irq;
-+
-+		ret = devm_request_threaded_irq(dev, combophy->irq_wakeup, NULL,
-+						stm32_combophy_irq_wakeup_handler, IRQF_ONESHOT,
-+						NULL, NULL);
-+		if (ret)
-+			return dev_err_probe(dev, ret, "unable to request wake IRQ %d\n",
-+						 combophy->irq_wakeup);
-+	}
-+
-+	ret = devm_pm_runtime_enable(dev);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to enable pm runtime\n");
-+
-+	phy_set_drvdata(combophy->phy, combophy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, stm32_combophy_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct dev_pm_ops stm32_combophy_pm_ops = {
-+	NOIRQ_SYSTEM_SLEEP_PM_OPS(stm32_combophy_suspend_noirq,
-+				  stm32_combophy_resume_noirq)
-+};
-+
-+static const struct of_device_id stm32_combophy_of_match[] = {
-+	{ .compatible = "st,stm32mp25-combophy", },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, stm32_combophy_of_match);
-+
-+static struct platform_driver stm32_combophy_driver = {
-+	.probe = stm32_combophy_probe,
-+	.driver = {
-+		   .name = "stm32-combophy",
-+		   .of_match_table = stm32_combophy_of_match,
-+		   .pm = pm_sleep_ptr(&stm32_combophy_pm_ops)
-+	}
-+};
-+
-+module_platform_driver(stm32_combophy_driver);
-+
-+MODULE_AUTHOR("Christian Bruel <christian.bruel@foss.st.com>");
-+MODULE_DESCRIPTION("STM32MP25 Combophy USB3/PCIe controller driver");
-+MODULE_LICENSE("GPL");
+ 
+ / {
+ 	#address-cells = <2>;
+@@ -518,6 +519,21 @@ i2c8: i2c@46040000 {
+ 				status = "disabled";
+ 			};
+ 
++			combophy: phy@480c0000 {
++				compatible = "st,stm32mp25-combophy";
++				reg = <0x480c0000 0x1000>;
++				#phy-cells = <1>;
++				clocks = <&rcc CK_BUS_USB3PCIEPHY>, <&rcc CK_KER_USB3PCIEPHY>;
++				clock-names = "apb", "ker";
++				resets = <&rcc USB3PCIEPHY_R>;
++				reset-names = "phy";
++				access-controllers = <&rifsc 67>;
++				power-domains = <&CLUSTER_PD>;
++				wakeup-source;
++				interrupts-extended = <&exti1 45 IRQ_TYPE_EDGE_FALLING>;
++				status = "disabled";
++			};
++
+ 			sdmmc1: mmc@48220000 {
+ 				compatible = "st,stm32mp25-sdmmc2", "arm,pl18x", "arm,primecell";
+ 				arm,primecell-periphid = <0x00353180>;
 -- 
 2.34.1
 
