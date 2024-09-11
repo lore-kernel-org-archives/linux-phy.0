@@ -4,92 +4,149 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3939EE01F3
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 06:08:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BF14EE01F3
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 06:10:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8WexWOnZTmgQZ5GWmD4+PCMmSZmnmH8UwJAO4IH9zBA=; b=re3fpDl3qVmlNy
-	YL99FYFA756k1wlEqBIEC1qOuzCNFMZzz5vX1fWF+0llc5eeemT6YxYVkAYmcrr6SiKAzvNQfgUem
-	POX7kwfWiatvLHTb71ll4rJ1ZuSvh9UDP7ISz9Hpib26Ggn9znOwUm6s2Mc0huW2pdxR1Vpwuz2Z6
-	G5obDJpKvFyagJTDfNW8o0Dt/JPPxboux7VfS8/D+E67DeqPEGNYequi1eUTCfhPsqlvWnk6xQBek
-	RJ/KbfwErYmZarBeLtXzEn61GJGvOJO8FIjLT155khLwUD3KhXX9AbylZV7IyIIoc1BvjaUmcdRlL
-	J/naWXg+zOyvEzWWL8lw==;
+	List-Owner; bh=EdIpHAEJT6DltReTyqZJwTm38OXs9ZaHNkvujzbvkeA=; b=i6HR+pKUzZf6ki
+	vBwmxJd1b0qhC3YE4MVWgPSg3cTpilUTYqWlVsYxApnHzsk43axarrh7p+zuroVJzKiDVGj/v8CH4
+	P1z1QNosPx4AuaD/xHe9k1r57aaF9QF9Ef72OGXLVgH04/xe/D6Sj0B8iYZ2oU26qzKPjWSUk+fR3
+	8iY17JUpzIP5qnT6fYLMESwZ7Q6P6AFzt9S2OoBr8rPfk8kkr8JZJ+4+VB2b6dEfc9eomOPyKI0Sf
+	izbH9hz/dQD1cOfMXevXKEo8A1wgBhj7ZOfxFjAVEbGqf9yzLGGW57qdtpzbJRiWKbFGYxVOtf6yO
+	meS4Th8sNsYSbYhbxS4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soGWf-00000008DzN-2hUv;
-	Wed, 11 Sep 2024 06:08:25 +0000
-Received: from gw2.atmark-techno.com ([35.74.137.57])
+	id 1soGYr-00000008EEJ-2aTa;
+	Wed, 11 Sep 2024 06:10:41 +0000
+Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soGWc-00000008Dxg-3KPN
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Sep 2024 06:08:24 +0000
-Authentication-Results: gw2.atmark-techno.com;
-	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=fZJ4R/TR;
-	dkim-atps=neutral
-Received: from mail-oa1-f71.google.com (mail-oa1-f71.google.com [209.85.160.71])
-	by gw2.atmark-techno.com (Postfix) with ESMTPS id 7334942C
-	for <linux-phy@lists.infradead.org>; Wed, 11 Sep 2024 15:08:21 +0900 (JST)
-Received: by mail-oa1-f71.google.com with SMTP id 586e51a60fabf-277f9af7500so5896111fac.0
-        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 23:08:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=atmark-techno.com; s=google; t=1726034900; x=1726639700; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=9lp38k0toLxisIn/B8aEYnDA+fE9TR3RoFUskSoeQ60=;
-        b=fZJ4R/TRzTK3T/mLLWvKsx/06VJAUmOlpvhxKKVV1z9r+UMbf4SI9OERWPCl7FLar7
-         J4BdYo+qJN1KObWPY4oaCjwWsHyoiYSlQqC/J9LmSEJq8jSuad/HqlILE3mc8J/xO9X5
-         255fIeiHDg0kPzU7d9LQaZm+WPga4yUyB9FaWTEZq5OxUTLkb1K6bkreKyIryDdSByVJ
-         AxbzuDcUHyei9hSURr1Ga0Bjrc1b2yNz68XQkPYeapCOwC5XKM5J7jC+P/lyy54uzPKN
-         nJYndLT5Or0SqCufWgVfmGV3GCVxLd1V9xmDX/iNnTJ4JzEs7xucCnnn6UkHBVLAg0SK
-         i3Rw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726034900; x=1726639700;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9lp38k0toLxisIn/B8aEYnDA+fE9TR3RoFUskSoeQ60=;
-        b=lAAnmJ11NTcEjAymwrW3qh5Kv8ZYn9eFnRS/OJNGDoBVFHQaJFeygQSQvTWJe5FPCf
-         /U/uUc17D0vzrFs1qMZcKNUeqdyh0FhjCHRoZ9CK8sqCHjJ0UyvzD5By2062ZLGPESPx
-         x/buv8iOLQRvhO3wtuZJ7Z+6e8mGqSugwG594dcgceUP8LFNfi9/kQKqAUpxwIPO+V0+
-         7aFeZhjsKuAMJXW43upbJeTRNnehWSP+WILboVm5JT55IL8UqCrrdSYDaPCSDCAAlWXx
-         Q2kk0DZ2yQYbzVZkG5zG8DqXdLWun8SuiSiqTk5akMUKs6kpAsud9aJ82pHm7C5xQm5+
-         B5aQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXoUTI3+aLj6UFYWoA8G6qCcUuLlbKwWMIk6SuwS9bdkL3vV2JKFCc+wsfzJ0Q8Z15dBkj/L5D5ku8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyrytx16O7dEWPui4NTXicdIGUyFbj6jQ+jtczlngNZqyQsVAlX
-	A4c9R5y2dLvIZKnmBSEvtrBsPQrwOnioXoVAXIP867MnRxjkHWN4s0af4suplbyOSM3AyGbg9re
-	X3s7nBnr9EPnB/IdFgL82GOP1pu3bUrBi2RfuFkDvYcxqE9nQGFqJ5Mixrt+IpQwYjHl+Wqp8
-X-Received: by 2002:a05:6870:e0d2:b0:277:e40b:1aff with SMTP id 586e51a60fabf-27b9d92257cmr9017164fac.9.1726034900077;
-        Tue, 10 Sep 2024 23:08:20 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHxdpLsS49QByP64MoIJ5Yg0iFT4+YNDfB8VHF2UKv2JNQthocyLtssFQVJrFtRaLDY2b5xFw==
-X-Received: by 2002:a05:6870:e0d2:b0:277:e40b:1aff with SMTP id 586e51a60fabf-27b9d92257cmr9017144fac.9.1726034899668;
-        Tue, 10 Sep 2024 23:08:19 -0700 (PDT)
-Received: from localhost (103.131.189.35.bc.googleusercontent.com. [35.189.131.103])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-719090ae07bsm2267726b3a.163.2024.09.10.23.08.18
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 10 Sep 2024 23:08:19 -0700 (PDT)
-Date: Wed, 11 Sep 2024 15:08:07 +0900
-From: Dominique Martinet <dominique.martinet@atmark-techno.com>
-To: Frieder Schrempf <frieder@fris.de>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Vinod Koul <vkoul@kernel.org>, Adam Ford <aford173@gmail.com>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH 0/2] Extending PLL LUT for i.MX8MP Samsung HDMI PHY
-Message-ID: <ZuEzxw96vRlYJ321@atmark-techno.com>
-References: <20240910181544.214797-1-frieder@fris.de>
- <ZuDjAwPxHeJTvXAp@atmark-techno.com>
-MIME-Version: 1.0
+	id 1soGYo-00000008EDX-3fMZ;
+	Wed, 11 Sep 2024 06:10:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=nL0a/zDvCymb1zlk8fFyNfr4oXUettzAWAjKXXSrxCI8PD24/Ez3PQF9i7SBNINdTMASnVmQoWWYZsV49VUcowSsxKXZT8+TAS3vBJb3iB9FKL2xuT8C2GnZtv+nfxl9pg3knDUO4wlQnukmFSJLRWkBYz26RzAhZAho6qqB71FKuxtU749hYSog9kABt5gzp3pwjz85aMKlCAfxznhdDuQxJ1rmkTzIMOkpS7hplquhdTEOIjq/ikr6tigG/J7L4i/RPoTw7w1IRc5ZRwhFBk6RDEMB5ymrZZt9KhAj8IjGyPrCexpyn6yXWe3qH25E1P42BC01o9MMdZcjr7ypWA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=/rG6W0keBgT91oLYdQTU3LWgqgk1aBR4uSC0kZVWibg=;
+ b=G1kh522VOP3iQikYvJU8bF2pO6z3H3cS2PlXC7xHWa+012lJuY7hec1GQ7B1zt5Bmr39VulMvzG932oxKVUQSZnxQaA4UOp+4Flr6y4h0lSCU+DVAVuMIxV5goUxA3YzrVLyL6rvclTebOS1K7izJjTtSSF2F/f146ZFryXAnIGwjN6ZNBQRqprUANFXyTbGk3Iws8h0dSEbjkNE0W6gwATOpYlAg7o1NDWWRFPRpgqguMF5jf6idG06wWJ0Fjcv5GCXVmVNIDVTTbAkAnPU5z5B6nZRHRhOqJduwh2zFruUSU4d8zpkAxndo96kv15kQW/7OXz3Oju7P0P3qNsY7A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/rG6W0keBgT91oLYdQTU3LWgqgk1aBR4uSC0kZVWibg=;
+ b=PbkEYLs4A2FAuDwKzpsAdqt9OI1PfPPLp4WiOV+QZVLnawdDApFge6bWfG5ESgXNQm72r3wDO0qi2ShzWkInKuS/zBo9AJPal71Y7gR83wKdacM9vCTU2X73in7oHvVeJ7r5iVxRsjCKap0FZs8GKLcUTQMuheyC9gHYXCiIaRV+kXTExHNreDtOGdAYyOI/bKXUzYuZF3sWYGlsFdcCIomws2iVPPSxpFXJKWBWoFfDVt/1AWc5HQ+L2i7kQih62W9g2EC52/eRLdVdxX46RtUYEhTcYmf/eQtO4FvLrNG7o/UZbFzUYNBalRzr5TvUaQSZ9ZfYFrOz5b4iJ+GxzQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
+ by AS8PR04MB8005.eurprd04.prod.outlook.com (2603:10a6:20b:2ac::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7939.23; Wed, 11 Sep
+ 2024 06:10:29 +0000
+Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
+ ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
+ ([fe80::4e24:c2c7:bd58:c5c7%4]) with mapi id 15.20.7918.024; Wed, 11 Sep 2024
+ 06:10:29 +0000
+Date: Wed, 11 Sep 2024 14:09:02 +0800
+From: Xu Yang <xu.yang_2@nxp.com>
+To: Frank Li <Frank.li@nxp.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
+	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+	gregkh@linuxfoundation.org, jun.li@nxp.com, l.stach@pengutronix.de,
+	aford173@gmail.com, hongxing.zhu@nxp.com,
+	alexander.stein@ew.tq-group.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v4 5/5] arm64: dts: imx95-19x19-evk: add typec nodes and
+ enable usb3 node
+Message-ID: <20240911060902.pjfrkjbyuvcqso45@hippo>
+References: <20240910070339.4150883-1-xu.yang_2@nxp.com>
+ <20240910070339.4150883-5-xu.yang_2@nxp.com>
+ <ZuCaquGr+ocHmD6x@lizhi-Precision-Tower-5810>
 Content-Disposition: inline
-In-Reply-To: <ZuDjAwPxHeJTvXAp@atmark-techno.com>
+In-Reply-To: <ZuCaquGr+ocHmD6x@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: SI1PR02CA0047.apcprd02.prod.outlook.com
+ (2603:1096:4:1f5::15) To DU2PR04MB8822.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e1::11)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|AS8PR04MB8005:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6e6fa987-215e-482b-a748-08dcd2286f66
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|366016|376014|7416014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?f6lz7Et940Ojxo85MOD8lLdaATMwFvir8Eb32DNyXvEUdNf+Jct0F6JOq8lk?=
+ =?us-ascii?Q?qWGE8jlf0PuhgINCTRtzQPQcrzLRuELJTM/7sHdw3BVdb4gcc1v6amg00h1/?=
+ =?us-ascii?Q?GwFa3t1A6N7p1BIWr4EANPfOTRmWMbNtaJztAwXiNzL7HnjviVhTy8GW1ilZ?=
+ =?us-ascii?Q?WnlldEQxGe6rxdE/JkZUm3DYgseTdbZLLrx4b4zf7Jodfm1kCfBkubSDwYJ4?=
+ =?us-ascii?Q?Otv7ygxatf14XnJ2EJsQCK7onpS11oiRpqUkTltj1gpJWcjt1f3sJoJaKsrK?=
+ =?us-ascii?Q?euxsQxrqusHqB6CmqNxFUyL6CoHEtUYbkek5+4GTaWU9Nbo3SYU9sDpnQqOJ?=
+ =?us-ascii?Q?+ol7c4YNdBF7FbQzPOgIYzFjsQeBs8TrRDrqXJXTENSfNfqoo1PaUSUksfMf?=
+ =?us-ascii?Q?wR60TmUgSNXX3eZh9sgGlG3JigQW6glfX0SEvlfK+ooUB98CAbnQ9S24wNnl?=
+ =?us-ascii?Q?WRDWAVNd4WXjViRFi1wE76O0uQmEd2Il5tQbnnS9gL5lQv4WJr2t8np3tAQh?=
+ =?us-ascii?Q?HtJ1vvlfQHlwKz+/OjULXadzMXptav/+Rwlu5MeL0DQFBw8KAZSRzCtVf4KQ?=
+ =?us-ascii?Q?Dv/r51ySlu0FjnQNzFtizjukqk/C249n4G5nGN/U0lzD+pt6yrK9i3G+DZ8E?=
+ =?us-ascii?Q?bz8D2AtYZ7ym1qE/t0pPKpwuLReyVme1h1CXyX1fHlSuD1VgexPqNrUy3tQ/?=
+ =?us-ascii?Q?9hd0zlqxl0UbUgBFQ/GvBkxIVgtK43W8MAS61EJ5pRQkJk3rlzHSUgmpuICk?=
+ =?us-ascii?Q?O86zs17XpZUg3H5hRaZPO8bbQUJ8W7aUayAc0LXPtLyBJAUwAeRiEYornsCD?=
+ =?us-ascii?Q?Ab23er3lfCiIHdF1QW5iSU8mzu0PuHDRHT2bjHykyyjqkKA6VvKurieFBFLJ?=
+ =?us-ascii?Q?2HfLlp4Wlis+LQMW2ARZDHMHMY3KLTGiW+6ilt+p46ETvKC2HMrziWWzmN5I?=
+ =?us-ascii?Q?2ZqzPtCWjHJP6xYtSirxm6wL/+KBOM346AnmG72nwYhoRNLqHgeIhxd+LYGT?=
+ =?us-ascii?Q?SPFpqfutYTrB3OE38NZhfS2STVTafQvwX2GfIec1wDI6m4R6J6ITJReez47C?=
+ =?us-ascii?Q?v/rhMrFF1X5vrTm4X8ynIhSLHIAvYVq5GjOybzNkzj7QatxyecgCibZ5gYOj?=
+ =?us-ascii?Q?NpsNZqopuznKaCDTbwyf5eGID3vcciLYw19v2g7TfIKhXgNq494f0kEd/PEA?=
+ =?us-ascii?Q?4qHMZyW8KtPLr8m//BjazMTuKwNMncPvUX0Lzzgg8HsBDinNrtPeYs22qKsh?=
+ =?us-ascii?Q?+pEU3vzawUqZ7aIcr1ar152ukxtlS4r/qRlveui6EOQdbCk4x2KmCMxp11Mc?=
+ =?us-ascii?Q?4SE5BZiR5cNLFqCp5cjYZGVo3VG/7iCZ2H/WXNinvKa+DRGZSdeIz2ijJ8wo?=
+ =?us-ascii?Q?pbeE5eE5btpSppkOjoilmeaU5TNVB5jGN4ObUdfiy5ZnoobpJQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(366016)(376014)(7416014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ei03mkf0BJ94uMmgnnZPJsUsp9s+RiO1R0UuvRjIApFWQzSO1QECjg3xA7qV?=
+ =?us-ascii?Q?N+WiScpXnOjrfkzsZPprdiYl8bm74+Vg9brCyqVH/en7wP39ycl9AY+em16c?=
+ =?us-ascii?Q?8zt9Q6kI3jgJdBPsxRpn12E+0Xjpxt8tKSOW+dCXqzHrDwNZGWqusUcEh/oq?=
+ =?us-ascii?Q?fdHrY1U+so42H91u+uT1mqX6vStzS+LsJFXpBSORLlVMtlxY9Ypb710tHS0W?=
+ =?us-ascii?Q?FFHgmfXWbhwUSet8uGj7t9Mg9S5incV0DWYC8hMgnk2/08r+LrOaxN64pQbw?=
+ =?us-ascii?Q?+ics8ahxJKOgOeuhFPRtZVX8bKeEAbKWk4NrU2cT/muX/WxS2tevHpa9nQbk?=
+ =?us-ascii?Q?GS0OTQdKFKmHQNDwW8wYczgfQclHplnkxeYmTpPgWMh2k2n8KZ2wxvxhJA+O?=
+ =?us-ascii?Q?eynSLLKy1VlK72lzWHd1lL0ztIi4PHiW7M90byoxM51mSfOQDi9w0Lfg4YpT?=
+ =?us-ascii?Q?+CoI06Qds71mWV19tOv0rk81TXrWE1tzIl/7jABhsKQNqmjwTzCHCEONMAlz?=
+ =?us-ascii?Q?tRkKj4UE8tL0OWCaVx6S3caPu4M3aavbZ8RLZBdxizKvYXXUYWvI1El2np/3?=
+ =?us-ascii?Q?J5MPx9IqeFCgWvwtAY42o4o4fm2lkobj1Pn5H1bcAZSz064o4j9QECFIeQor?=
+ =?us-ascii?Q?cdd1b6SUmxZgRZJeF7jVW5jr9jGJWoJTcAC73zUVfxFZCEUvAb/V4R9ipnMr?=
+ =?us-ascii?Q?B2WbGvchdEP3HkMdzUFoyXdOTKggRGaKStZ5BWAC8US7cpJKiDb4AFXoDNdF?=
+ =?us-ascii?Q?oi2LEp4RCdTa6T32zXrPUW8C8hGSDoPbo7w4yctiBtieYJdCfiZd+45NZUdz?=
+ =?us-ascii?Q?rH2nqvqWgwX6fUBQrdIjQHGskRAxpvvTt6IxfxmsM4SMRNOZaieeKTm0PnZK?=
+ =?us-ascii?Q?6AErETnaw4bOCoySzMNCfa1w1yzOi6a+yDLjnUGLq2gotVxsI6UqRx3lGCrM?=
+ =?us-ascii?Q?GWdbvc/iidYQehDq0elRKkipgaS9eijg/BZGyWhCJ3brCvPTlhSLHC4JJHf3?=
+ =?us-ascii?Q?RdpjtBALnJNLbaKB2SyaHb6gVBt5yhsUgfGF/BDiw3b8+nqnKaA2hYdKc5u9?=
+ =?us-ascii?Q?MFefdUJsicGFpgmwgxjXwwkc3pMCxWzhpvmOI7t4I6JD4zBi+/Wg8ctEJSyz?=
+ =?us-ascii?Q?+dEJ78RfESwJpug76qx17lU6lvE63i9L8zKQHGlpad5RupwqrmUy6i3w2RK6?=
+ =?us-ascii?Q?aRS20R0RjD//FJXAuUgIxmEp80w6cyT8a6kRLFdohqrMlLDTgq/lAu4g5fwD?=
+ =?us-ascii?Q?fGw8nK6NpmlvkcX46PuTLrS9W5iZ5qqrsU6mwGaKODdEpqA2jdQzTSmJl7OP?=
+ =?us-ascii?Q?F8ltzYoaO0M78SXiOdYLUWpF0QIwcD+gakEN2PB52yUxMZ2ENGbmmCADHGdR?=
+ =?us-ascii?Q?Iyt2GlekXsnJpqz/WgxUMUt14wUqHxE6XIJfKXO6B7cq1Feczj0xhycvY8Bx?=
+ =?us-ascii?Q?t9VJccM7S868QQqylbBZ5oESVST0uKfp2zlQ512ACVbT3OIqQwZWtEhRb3l0?=
+ =?us-ascii?Q?ETBLEEAm9ZO0CmKBdS3iiqtbbUHStNWmetG2A/vTrSmdKuLfWMcJTzLRhgSx?=
+ =?us-ascii?Q?KvDpkq3t7shPeolokgzrMBUEM6jw3lrNy/1TQLl0?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6e6fa987-215e-482b-a748-08dcd2286f66
+X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Sep 2024 06:10:29.1764
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: cG/tWHaLdoI74uVBXq37xTkOkdIBQFCXnxIMcRhuhfzGbrcPxvDgJ3bq7sTI+7GHDd2cGLzJG1C4NElMYPXIkA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8005
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240910_230822_972579_00DD47C7 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20240910_231039_108291_A8812853 
+X-CRM114-Status: GOOD (  18.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,198 +163,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Dominique Martinet wrote on Wed, Sep 11, 2024 at 09:23:31AM +0900:
-> so if I find some time I'll whip some loop to check all other values...
+On Tue, Sep 10, 2024 at 03:14:50PM -0400, Frank Li wrote:
+> On Tue, Sep 10, 2024 at 03:03:39PM +0800, Xu Yang wrote:
+> > This board has one Type-C port which has USB3 capability. This will
+> > add typec nodes and enable usb3 node.
+> >
+> > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> >
+> > ---
+> > Changes in v2:
+> >  - no changes
+> > Changes in v3:
+> >  - no changes
+> > Changes in v4:
+> >  - no changes
+> > ---
+> >  .../boot/dts/freescale/imx95-19x19-evk.dts    | 81 +++++++++++++++++++
+> >  1 file changed, 81 insertions(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts b/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
+> > index d14a54ab4fd4..46a9cd3d4403 100644
+> > --- a/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
+> > +++ b/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
+> > @@ -5,6 +5,7 @@
+> >
+> >  /dts-v1/;
+> >
+> > +#include <dt-bindings/usb/pd.h>
+> >  #include "imx95.dtsi"
+> >
+> >  / {
+> > @@ -99,6 +100,48 @@ i2c7_pcal6524: i2c7-gpio@22 {
+> >  		interrupt-parent = <&gpio5>;
+> >  		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
+> >  	};
+> > +
+> > +	ptn5110: tcpc@50 {
+> > +		compatible = "nxp,ptn5110", "tcpci";
+> > +		reg = <0x50>;
+> > +		pinctrl-names = "default";
+> > +		pinctrl-0 = <&pinctrl_typec>;
+> > +		interrupt-parent = <&gpio5>;
+> > +		interrupts = <14 IRQ_TYPE_LEVEL_LOW>;
+> > +
+> > +		typec_con: connector {
+> > +			compatible = "usb-c-connector";
+> > +			label = "USB-C";
+> > +			power-role = "dual";
+> > +			data-role = "dual";
+> > +			try-power-role = "sink";
+> > +			source-pdos = <PDO_FIXED(5000, 3000, PDO_FIXED_USB_COMM)>;
+> > +			sink-pdos = <PDO_FIXED(5000, 0, PDO_FIXED_USB_COMM)>;
+> > +			op-sink-microwatt = <0>;
+> > +			self-powered;
+> > +
+> > +			ports {
+> > +				#address-cells = <1>;
+> > +				#size-cells = <0>;
+> > +
+> > +				port@0 {
+> > +					reg = <0>;
+> > +
+> > +					typec_con_hs: endpoint {
+> > +						remote-endpoint = <&usb3_data_hs>;
+> > +					};
+> > +				};
+> > +
+> > +				port@1 {
+> > +					reg = <1>;
+> > +
+> > +					typec_con_ss: endpoint {
+> > +						remote-endpoint = <&usb3_data_ss>;
+> > +					};
+> > +				};
+> > +			};
+> > +		};
+> > +	};
+> >  };
+> >
+> >  &lpuart1 {
+> > @@ -128,6 +171,38 @@ &pcie1 {
+> >  	status = "okay";
+> >  };
+> >
+> > +&usb3 {
+> > +	status = "okay";
+> > +};
+> > +
+> > +&usb3_phy {
+> > +	status = "okay";
+> > +
+> > +	port {
+> > +		usb3_data_ss: endpoint {
+> > +			remote-endpoint = <&typec_con_ss>;
+> > +		};
+> > +	};
+> > +};
+> 
+> Please keep node name alphabet order
+> usb3_phy should be after usb3_dwc3.
 
-There were more differences than I thought there'd be (see diff below)
+Okay. Will fix the order.
 
-they're all minor enough to probably not care, but your script finds
-exact values for them so it might be worth updating the regs if we keep
-the table...
-(OTOH these seem to work, and "if it works don't touch it" -- I have no
-further opinion now I've checked, curiosity is sated)
+Thanks,
+Xu Yang
 
-Might want to just check 154000000 though, reg6's 0x80 was not set so
-SDC was disabled? and it'd get the integer fraction (153600000) instead
-if I understand this correctly
-
----------
-diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-index a5ad51425ee3..72facc7bd045 100644
---- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-+++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
-@@ -73,7 +73,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 24024000,
- 		.pll_div_regs = { 0xd1, 0x50, 0xf1, 0x99, 0x02, 0x80, 0x40 },
- 	}, {
--		.pixclk = 25175000,
-+		.pixclk = 25177981,
- 		.pll_div_regs = { 0xd1, 0x54, 0xfc, 0xcc, 0x91, 0x80, 0x40 },
- 	},  {
- 		.pixclk = 26750000,
-@@ -82,16 +82,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 27027000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0xf2, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
--		.pixclk = 29500000,
-+		.pixclk = 29487500,
- 		.pll_div_regs = { 0xd1, 0x62, 0xf4, 0x95, 0x08, 0x80, 0x40 },
- 	}, {
--		.pixclk = 30750000,
-+		.pixclk = 30729661,
- 		.pll_div_regs = { 0xd1, 0x66, 0xf4, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
--		.pixclk = 30888000,
-+		.pixclk = 30848949,
- 		.pll_div_regs = { 0xd1, 0x66, 0xf4, 0x99, 0x18, 0x88, 0x45 },
- 	}, {
--		.pixclk = 33750000,
-+		.pixclk = 33731250,
- 		.pll_div_regs = { 0xd1, 0x70, 0xf4, 0x82, 0x01, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 35000000,
-@@ -106,13 +106,13 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 44500000,
- 		.pll_div_regs = { 0xd1, 0x5c, 0x92, 0x98, 0x11, 0x84, 0x41 },
- 	}, {
--		.pixclk = 47000000,
-+		.pixclk = 47005000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x94, 0x95, 0x82, 0x80, 0x40 },
- 	}, {
--		.pixclk = 47500000,
-+		.pixclk = 47502000,
- 		.pll_div_regs = { 0xd1, 0x63, 0x96, 0xa1, 0x82, 0x80, 0x40 },
- 	}, {
--		.pixclk = 50349650,
-+		.pixclk = 50355924,
- 		.pll_div_regs = { 0xd1, 0x54, 0x7c, 0xc3, 0x8f, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 53250000,
-@@ -124,16 +124,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 54054000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x72, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
--		.pixclk = 59000000,
-+		.pixclk = 58975000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x74, 0x95, 0x08, 0x80, 0x40 },
- 	}, {
--		.pixclk = 59340659,
-+		.pixclk = 59264777,
- 		.pll_div_regs = { 0xd1, 0x62, 0x74, 0xdb, 0x52, 0x88, 0x47 },
- 	},  {
--		.pixclk = 61500000,
-+		.pixclk = 61459322,
- 		.pll_div_regs = { 0xd1, 0x66, 0x74, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
--		.pixclk = 63500000,
-+		.pixclk = 63437500,
- 		.pll_div_regs = { 0xd1, 0x69, 0x74, 0x89, 0x08, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 67500000,
-@@ -145,25 +145,25 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 72072000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x52, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
--		.pixclk = 74176000,
-+		.pixclk = 74175824,
- 		.pll_div_regs = { 0xd1, 0x5d, 0x58, 0xdb, 0xA2, 0x88, 0x41 },
- 	}, {
- 		.pixclk = 74250000,
- 		.pll_div_regs = { 0xd1, 0x5c, 0x52, 0x90, 0x0d, 0x84, 0x41 },
- 	}, {
--		.pixclk = 78500000,
-+		.pixclk = 78487500,
- 		.pll_div_regs = { 0xd1, 0x62, 0x54, 0x87, 0x01, 0x80, 0x40 },
- 	},  {
--		.pixclk = 82000000,
-+		.pixclk = 81945763,
- 		.pll_div_regs = { 0xd1, 0x66, 0x54, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
--		.pixclk = 82500000,
-+		.pixclk = 82486555,
- 		.pll_div_regs = { 0xd1, 0x67, 0x54, 0x88, 0x01, 0x90, 0x49 },
- 	}, {
--		.pixclk = 89000000,
-+		.pixclk = 89075000,
- 		.pll_div_regs = { 0xd1, 0x70, 0x54, 0x84, 0x83, 0x80, 0x40 },
- 	}, {
--		.pixclk = 90000000,
-+		.pixclk = 89950000,
- 		.pll_div_regs = { 0xd1, 0x70, 0x54, 0x82, 0x01, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 94000000,
-@@ -178,7 +178,7 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 99000000,
- 		.pll_div_regs = { 0xd1, 0x52, 0x32, 0x82, 0x01, 0x88, 0x47 },
- 	}, {
--		.pixclk = 100699300,
-+		.pixclk = 100711847,
- 		.pll_div_regs = { 0xd1, 0x54, 0x3c, 0xc3, 0x8f, 0x80, 0x40 },
- 	},  {
- 		.pixclk = 102500000,
-@@ -196,16 +196,16 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 108108000,
- 		.pll_div_regs = { 0xd1, 0x5a, 0x32, 0xfd, 0x0c, 0x80, 0x40 },
- 	}, {
--		.pixclk = 118000000,
-+		.pixclk = 117950000,
- 		.pll_div_regs = { 0xd1, 0x62, 0x34, 0x95, 0x08, 0x80, 0x40 },
- 	},  {
--		.pixclk = 123000000,
-+		.pixclk = 122918644,
- 		.pll_div_regs = { 0xd1, 0x66, 0x34, 0x82, 0x01, 0x88, 0x45 },
- 	}, {
--		.pixclk = 127000000,
-+		.pixclk = 126875000,
- 		.pll_div_regs = { 0xd1, 0x69, 0x34, 0x89, 0x08, 0x80, 0x40 },
- 	}, {
--		.pixclk = 135000000,
-+		.pixclk = 134925000,
- 		.pll_div_regs = { 0xd1, 0x70, 0x34, 0x82, 0x01, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 135580000,
-@@ -214,20 +214,20 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 137520000,
- 		.pll_div_regs = { 0xd1, 0x72, 0x38, 0x99, 0x10, 0x85, 0x41 },
- 	}, {
--		.pixclk = 138750000,
-+		.pixclk = 138658397,
- 		.pll_div_regs = { 0xd1, 0x73, 0x35, 0x88, 0x05, 0x90, 0x4d },
- 	}, {
--		.pixclk = 140000000,
-+		.pixclk = 140040000,
- 		.pll_div_regs = { 0xd1, 0x75, 0x36, 0xa7, 0x90, 0x80, 0x40 },
- 	},  {
--		.pixclk = 148352000,
-+		.pixclk = 148265128,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x35, 0xdb, 0x39, 0x90, 0x45 },
- 	}, {
--		.pixclk = 148500000,
-+		.pixclk = 148396403,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x35, 0x84, 0x03, 0x90, 0x45 },
- 	}, {
- 		.pixclk = 154000000,
--		.pll_div_regs = { 0xd1, 0x40, 0x18, 0x83, 0x01, 0x00, 0x40 },
-+		.pll_div_regs = { 0xd1, 0x40, 0x18, 0x83, 0x01, 0x80, 0x40 },
- 	}, {
- 		.pixclk = 157000000,
- 		.pll_div_regs = { 0xd1, 0x41, 0x11, 0xa7, 0x14, 0x80, 0x40 },
-@@ -268,10 +268,10 @@ static const struct phy_config phy_pll_cfg[] = {
- 		.pixclk = 254000000,
- 		.pll_div_regs = { 0xd1, 0x69, 0x14, 0x89, 0x08, 0x80, 0x40 },
- 	}, {
--		.pixclk = 277500000,
-+		.pixclk = 277316794,
- 		.pll_div_regs = { 0xd1, 0x73, 0x15, 0x88, 0x05, 0x90, 0x4d },
- 	},  {
--		.pixclk = 297000000,
-+		.pixclk = 296792806,
- 		.pll_div_regs = { 0xd1, 0x7b, 0x15, 0x84, 0x03, 0x90, 0x45 },
- 	},
- };
--------------
--- 
-Dominique
 
 -- 
 linux-phy mailing list
