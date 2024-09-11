@@ -4,91 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF1F3EE01F6
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 00:23:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB88FEE01FB
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 01:16:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gkWvRSjtl+3tdq6c411u7lITK+ntvDz0K43HqsMVhzQ=; b=dy7+5+4CWQ5siM
-	ffM6pZv79h2x9bqLcguFVrw3fjhOdXMZOaeCmLGFIkzzIigpWx4fEwPtTVLBE9FPrlcYD/Ac5iYah
-	eVG9f0lzwLWI8F98LKww/dX2EYSlRqPzruLRVPk+In/W2boZjtPmWvWJFPb6M4W0kleSF7gtMeNij
-	UcdyyjS76TlYO/abd7NHG3OUtHHPCCDVlhiBt0i/aI56kodGCg93ApERmizQSi3n7JLfZbusV4dxx
-	/UYXTes6kJx36+NqenduGFerQIEa5EdjSKiMpllrq8Gauvb7z3DIY+lM1EqDjnYzEAyLKyJOcfCwA
-	d466ysp0hDoo15Ky+iIQ==;
+	List-Owner; bh=wCeZqbZfacJJu4mH3CAS1iPt5Ma5c/uMwO8E0bp9FTA=; b=zxv+6kCIDOIOrB
+	wnAjVrZjEnDl7jq26cnJESWg2mJwmMJTRtOGbu2Pjv33bxjr63ZLVMn4tT51FPyGnhHGdv+1sviOO
+	NcqlPeKC7i2GDLYT0kZsqhBzps3R9Hssi4Not8CaWqFFKuq5iXPQuKOFtkd4Twx7ax8yez04qe4gw
+	fO4m1rnRDfW6h8QE305Rp/3kWIpm6oGmK8X8YmuirWBlCY6Y3yoTBxN6RGDlYZ34C6GxMs9AgkprT
+	iKKA9GzWI/tHOdL9TG7mEb5A/lmQ9QJFk9/I59Sp+LHRmwS/56qoWQvHTKj38BDyDL1pGH1UEglT8
+	bu4JLrrHvi2erW0RRAHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soB9D-00000007ZcS-2DcP;
-	Wed, 11 Sep 2024 00:23:51 +0000
-Received: from gw2.atmark-techno.com ([35.74.137.57])
+	id 1soBxz-00000007fJc-2aDu;
+	Wed, 11 Sep 2024 01:16:19 +0000
+Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soB9B-00000007Zc1-0g3M
+	id 1soBxx-00000007fJ0-2pB1
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Sep 2024 00:23:50 +0000
-Authentication-Results: gw2.atmark-techno.com;
-	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=VLJEk70p;
-	dkim-atps=neutral
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by gw2.atmark-techno.com (Postfix) with ESMTPS id 519AF6C1
-	for <linux-phy@lists.infradead.org>; Wed, 11 Sep 2024 09:23:45 +0900 (JST)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-207510f3242so7438765ad.0
-        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 17:23:45 -0700 (PDT)
+	Wed, 11 Sep 2024 01:16:19 +0000
+Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-2d8a4bad409so4257605a91.0
+        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 18:16:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=atmark-techno.com; s=google; t=1726014224; x=1726619024; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=xWAl5lGM4zIiLjsv0PKGGyk+U6ZWLatC9GMlGoP1sOY=;
-        b=VLJEk70pKnK9UE7x0JDVsX9/486k67b+Vpou+Fv3ncWJuSb/noEpoO0PmXuDzgH4TB
-         BWhkdUzWpBgVHSEo2JNIoZbYvrcPrP1WVVbowxA+FdL+hes6kKYCOJqjLhtG4TK2KpuO
-         izGvToFf/EZoNNvfARmDzA38jdxo1TthjRVFNe3tNxkRTQ7v3uD24SPIOmHjxyBa6fWp
-         UTkG3nUW152Q0iNPGcasKvKeTYlKrvJ3fYkAfE2MzdjTLjqW4AWgqslDaQQwfmiIoShV
-         c6tz9yvnYb6OXWcng5e7f0YcFCC5EE63M93tdJ237kARfgkAH113w+pLhxKzbSC0PnPq
-         tPvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726014224; x=1726619024;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20230601; t=1726017376; x=1726622176; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=xWAl5lGM4zIiLjsv0PKGGyk+U6ZWLatC9GMlGoP1sOY=;
-        b=tUsu2Ry/rU8xSd44HgN3CLh4pLaKcDRVodyVswyaha2tbGrZvzrM65UOe3JS00MnNI
-         M5rXAGdg84zNBh/SvmwffaiBeFUNJv4GYytPkw4h2DihwyygZqby6IfXZuWd3D1nGc8D
-         7yHJWqeqx9p0RewkFhLAVgoulYcblVIeegb956a+a2+XhhvadZMQEa+ADOtrtalgbpOg
-         aVYi4SXHe1tk8cpZIGTNsRgjm1rdX6erv/YqnAJTg33mjGkR0oxdv+gn5u55BF1RwtyQ
-         5k0FqGfBi1P0WyZXSI9faqCatJhdu2donwds18I2HQzYmEyT2pjhhN5qu2P91+YZi7DQ
-         FaLA==
-X-Forwarded-Encrypted: i=1; AJvYcCUFaJYHszXzcgE5SIvFcmC84NJWcYgFoH5mWcg+P15FWsMcIOe92OX8i42n86CgZ8tkGmAw4yfxyLA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyWWy4WMlS0kRepRnOVzqdBKJVaxXnKJxDSQF0r3STLwqo916vY
-	zQChLqCOuUkBf/VrAQLKNDp6jss9m3vM7msnEY6wH8FaEWHweA2fsSuG+WbnoTw8J1F2JgxUhO9
-	ewbOoNHX0nmLv7Ox7Z01RmstyACeTSWFnIiRzTuDU5e5Czptax19ZbPxEt2DpXjm6
-X-Received: by 2002:a17:903:41c3:b0:205:68a4:b2d9 with SMTP id d9443c01a7336-2074c70ec52mr32126165ad.48.1726014224073;
-        Tue, 10 Sep 2024 17:23:44 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH6qhOJonASH42vWnoWDp8Di47y4f4/0X2Q+DYlOavyzi2Fm4h1OKvu1K9Sn/u2x1rhAnod7g==
-X-Received: by 2002:a17:903:41c3:b0:205:68a4:b2d9 with SMTP id d9443c01a7336-2074c70ec52mr32125895ad.48.1726014223636;
-        Tue, 10 Sep 2024 17:23:43 -0700 (PDT)
-Received: from localhost (178.101.200.35.bc.googleusercontent.com. [35.200.101.178])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2071a6109cfsm48806255ad.175.2024.09.10.17.23.42
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 10 Sep 2024 17:23:43 -0700 (PDT)
-Date: Wed, 11 Sep 2024 09:23:31 +0900
-From: Dominique Martinet <dominique.martinet@atmark-techno.com>
-To: Frieder Schrempf <frieder@fris.de>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Vinod Koul <vkoul@kernel.org>, Adam Ford <aford173@gmail.com>,
-	Lucas Stach <l.stach@pengutronix.de>,
-	Marco Felsch <m.felsch@pengutronix.de>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH 0/2] Extending PLL LUT for i.MX8MP Samsung HDMI PHY
-Message-ID: <ZuDjAwPxHeJTvXAp@atmark-techno.com>
-References: <20240910181544.214797-1-frieder@fris.de>
+        bh=nVqiUxsVb7vxvZzrSiSeI8t+eG1EK/BxIDvzNolJKEU=;
+        b=EOUl+y3V2IUSZf2MtfAw0/0j7pgTy+OQJk0RbINDcAVzfGSYPw+wFriKddt1VDMxVZ
+         YHFs72YO9ZgUZLN1imlIiEsbHv/HLQDkRV24A9MGvaWCODdCJa65l1omf031+LIwhkDm
+         5pq/iF9OoATHK39P9sxis9S+UkQ/B+X6nvxf4TNG20Lf5g8jGDc3goLzFRCys6O1dtVl
+         RPiVIhBSKVJyeX1mlZ+4txGH8SPVqxnQKmPMwETvq+tubdVrp80WT2blttn7K8E2ifJM
+         Ijh0vbULGcoXZ8Ix7qY5fkR8xNNvU7aeO2fvzVj4bj+05LY93jYrZaJFIorgi/BSr7qw
+         2ACA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726017376; x=1726622176;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=nVqiUxsVb7vxvZzrSiSeI8t+eG1EK/BxIDvzNolJKEU=;
+        b=ggOa2+tUvIpIkBNe0J013ICj7JgGg6vupS0bV5nAXQFL3GBbpKJYbNPWz7x0bM/ZaW
+         zFI7ydIwfRYqXy8uDMmMjFLOnXwqKv7wls4nsxCNELgEciHleVBZ9j/HxkaJzZ8u3tQB
+         gGZRdmeHARYfpFub3rzt3E/DPosniIrn+bKGTHBjENQUmnkb1TjAgJVs8H2b3jU+tCRP
+         PplRwY+RyzFVD96Gkq5WI8uJ9+3NYOO2TM33VfQ6j9ZYyuraMYLS2NLMgjv6m32sK5W9
+         vnxxnFUbyQ60R/ACNHNP8YrELRfS10wXvg+HZtmytSI00ScWsuZ5iQSMKBCODFfnYGiE
+         8M4A==
+X-Forwarded-Encrypted: i=1; AJvYcCWp3+1zWf8KgEKOOIU+o8plNQ29q8XywNfisov4+FUeXsTubrBPQz/9u67PWhTCiF1cm33rfg3WeJ8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YydAwVCX+q5f/7ZisuDkcwfCU0tpvCk2onXTgJLmZzoOKLk5f2b
+	mpsaD79nfJhjQjrt+y1apU026SmwUiIsduzpoZeB7oloslkdyR1kKCk5iXSf7E7N0yatCwuRJb/
+	3OOwL6EVPKSANtlQ+qc5uMMPRJCQ=
+X-Google-Smtp-Source: AGHT+IEjBGIyK0K/tjlnfxCBOZturPb0CoCSRIRBiEsDUZRqprFH60pRY1NoYuyXhwgkJFvimfZmeqCrXV4/Iak55mc=
+X-Received: by 2002:a17:90b:2d92:b0:2d3:b438:725f with SMTP id
+ 98e67ed59e1d1-2db4211cacfmr9006083a91.24.1726017376028; Tue, 10 Sep 2024
+ 18:16:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240910181544.214797-1-frieder@fris.de>
+References: <20240910181544.214797-1-frieder@fris.de> <ZuDjAwPxHeJTvXAp@atmark-techno.com>
+In-Reply-To: <ZuDjAwPxHeJTvXAp@atmark-techno.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Tue, 10 Sep 2024 20:16:04 -0500
+Message-ID: <CAHCN7xJD8jsqyZX1JkWxrA84XkZ8YYN19hXW6KVe+jkOFugqrw@mail.gmail.com>
+Subject: Re: [PATCH 0/2] Extending PLL LUT for i.MX8MP Samsung HDMI PHY
+To: Dominique Martinet <dominique.martinet@atmark-techno.com>
+Cc: Frieder Schrempf <frieder@fris.de>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
+	Lucas Stach <l.stach@pengutronix.de>, Marco Felsch <m.felsch@pengutronix.de>, 
+	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240910_172349_334820_D10DACE1 
-X-CRM114-Status: GOOD (  16.72  )
+X-CRM114-CacheID: sfid-20240910_181617_739290_E0840E9F 
+X-CRM114-Status: GOOD (  26.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,107 +87,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Frieder Schrempf wrote on Tue, Sep 10, 2024 at 08:14:51PM +0200:
-> [2] https://codeberg.org/fschrempf/samsung-hdmi-phy-pll-calculator/src/branch/main/pll.py
-
-Great work! Thanks!
-
-I was curious about the existing table entries, recomputing existing
-values doesn't yield the same values. For example, the first entry is
-{
-        .pixclk = 22250000,
-        .pll_div_regs = { 0xd1, 0x4b, 0xf1, 0x89, 0x88, 0x80, 0x40 },
-}
-but computing it yields
-{
-    .pixclk = 22250000,
-    .pll_div_regs = { 0xd1, 0x4a, 0xf0, 0xef, 0x10, 0x81, 0x40 },
-}
-
-I assume there just are multiple ways to generate the same frequencies,
-which is fine in itself, but it'd be great to be able to "back-compute"
-the entries as a sanity check.
-
-I've played a bit with your script and spent more time on it than I'd
-like to admit, but something like this seems to do the trick, plugging
-in the regs from the kernel:
-
----
-pll = FractionalNPLL(freq_ref)
-
-regs = [0xd1, 0x4b, 0xf1, 0x89, 0x88, 0x80, 0x40]
-# assume fractional
-if not regs[0] & 0xD0:
-    print("reg[0] missing 0xD0")
-    sys.exit(1)
-pll.freq_frac = True
-pll.params["p"] = regs[0] & 0x2f
-pll.params["m"] = regs[1]
-pll.params["s"] = (regs[2] >> 4) + 1
-pll.params["n2"] = ((regs[2] >> 3) & 0x1) + 1
-pll.params["n"] = (regs[2] & 0x7) + 4
-pll.params["lc"] = regs[3] & 0x7f
-if regs[4] & 0x80:
-    pll.params["lc"] = - pll.params["lc"]
-pll.params["k"] = regs[4] & 0x7f
-pll.params["lc_s"] = regs[5] & 0x7f
-pll.params["k_s"] = regs[6] & 0xbf
-
-
-f_vco = int(pll.params["m"] * pll.f_ref / pll.params["p"])
-if f_vco < 750000000 or f_vco > 3000000000:
-    print(f"f_vco {f_vco} out of range")
-    sys.exit(1)
-f_calc = f_vco / pll.params["s"] / 5
-pll.freq_int = round(f_calc)
-print(f_calc)
-sdc = pll.calc_sdc(pll.params)
-frac = pll.calc_f_frac(sdc, pll.params)
-print(frac)
-freq = pll.freq_int + frac
-print(freq)
-pll.print_reg_driver_data(freq)
-exit(0);
----
-yields this back (comments added manually)
----
-22500000.0 (integer part)
--250000.0 (fractional part)
-22250000.0 (summed)
-
-PHY Driver Table Entry:
-{
-    .pixclk = 22250000.0,
-    .pll_div_regs = { 0xd1, 0x4b, 0xf1, 0x89, 0x88, 0x81, 0x40 },
-}
----
-
-so if I find some time I'll whip some loop to check all other values...
-
-
-
-
-That aside, I see no problem with this, just one meta-comment about
-adding a link to the script in an external repo: I see some other
-drivers have python scripts in their trees e.g.
-drivers/comedi/drivers/ni_routing/tools/*py
-drivers/gpu/drm/ci/xfails/update-xfails.py
-drivers/gpu/drm/msm/registers/gen_header.py
-
-would it make sense to commit the script here instead of linking to a
-repo that might be lost in the future?
-
-I'm not quite sure what policy the linux repo has here, so leaving that
-as an open question.
--- 
-Dominique
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBTZXAgMTAsIDIwMjQgYXQgNzoyM+KAr1BNIERvbWluaXF1ZSBNYXJ0aW5ldAo8ZG9t
+aW5pcXVlLm1hcnRpbmV0QGF0bWFyay10ZWNobm8uY29tPiB3cm90ZToKPgo+IEZyaWVkZXIgU2No
+cmVtcGYgd3JvdGUgb24gVHVlLCBTZXAgMTAsIDIwMjQgYXQgMDg6MTQ6NTFQTSArMDIwMDoKPiA+
+IFsyXSBodHRwczovL2NvZGViZXJnLm9yZy9mc2NocmVtcGYvc2Ftc3VuZy1oZG1pLXBoeS1wbGwt
+Y2FsY3VsYXRvci9zcmMvYnJhbmNoL21haW4vcGxsLnB5Cj4KPiBHcmVhdCB3b3JrISBUaGFua3Mh
+Cj4KPiBJIHdhcyBjdXJpb3VzIGFib3V0IHRoZSBleGlzdGluZyB0YWJsZSBlbnRyaWVzLCByZWNv
+bXB1dGluZyBleGlzdGluZwo+IHZhbHVlcyBkb2Vzbid0IHlpZWxkIHRoZSBzYW1lIHZhbHVlcy4g
+Rm9yIGV4YW1wbGUsIHRoZSBmaXJzdCBlbnRyeSBpcwo+IHsKPiAgICAgICAgIC5waXhjbGsgPSAy
+MjI1MDAwMCwKPiAgICAgICAgIC5wbGxfZGl2X3JlZ3MgPSB7IDB4ZDEsIDB4NGIsIDB4ZjEsIDB4
+ODksIDB4ODgsIDB4ODAsIDB4NDAgfSwKPiB9Cj4gYnV0IGNvbXB1dGluZyBpdCB5aWVsZHMKPiB7
+Cj4gICAgIC5waXhjbGsgPSAyMjI1MDAwMCwKPiAgICAgLnBsbF9kaXZfcmVncyA9IHsgMHhkMSwg
+MHg0YSwgMHhmMCwgMHhlZiwgMHgxMCwgMHg4MSwgMHg0MCB9LAo+IH0KPgo+IEkgYXNzdW1lIHRo
+ZXJlIGp1c3QgYXJlIG11bHRpcGxlIHdheXMgdG8gZ2VuZXJhdGUgdGhlIHNhbWUgZnJlcXVlbmNp
+ZXMsCj4gd2hpY2ggaXMgZmluZSBpbiBpdHNlbGYsIGJ1dCBpdCdkIGJlIGdyZWF0IHRvIGJlIGFi
+bGUgdG8gImJhY2stY29tcHV0ZSIKPiB0aGUgZW50cmllcyBhcyBhIHNhbml0eSBjaGVjay4KPgo+
+IEkndmUgcGxheWVkIGEgYml0IHdpdGggeW91ciBzY3JpcHQgYW5kIHNwZW50IG1vcmUgdGltZSBv
+biBpdCB0aGFuIEknZAo+IGxpa2UgdG8gYWRtaXQsIGJ1dCBzb21ldGhpbmcgbGlrZSB0aGlzIHNl
+ZW1zIHRvIGRvIHRoZSB0cmljaywgcGx1Z2dpbmcKPiBpbiB0aGUgcmVncyBmcm9tIHRoZSBrZXJu
+ZWw6Cj4KPiAtLS0KPiBwbGwgPSBGcmFjdGlvbmFsTlBMTChmcmVxX3JlZikKPgo+IHJlZ3MgPSBb
+MHhkMSwgMHg0YiwgMHhmMSwgMHg4OSwgMHg4OCwgMHg4MCwgMHg0MF0KPiAjIGFzc3VtZSBmcmFj
+dGlvbmFsCj4gaWYgbm90IHJlZ3NbMF0gJiAweEQwOgo+ICAgICBwcmludCgicmVnWzBdIG1pc3Np
+bmcgMHhEMCIpCj4gICAgIHN5cy5leGl0KDEpCj4gcGxsLmZyZXFfZnJhYyA9IFRydWUKPiBwbGwu
+cGFyYW1zWyJwIl0gPSByZWdzWzBdICYgMHgyZgo+IHBsbC5wYXJhbXNbIm0iXSA9IHJlZ3NbMV0K
+PiBwbGwucGFyYW1zWyJzIl0gPSAocmVnc1syXSA+PiA0KSArIDEKPiBwbGwucGFyYW1zWyJuMiJd
+ID0gKChyZWdzWzJdID4+IDMpICYgMHgxKSArIDEKPiBwbGwucGFyYW1zWyJuIl0gPSAocmVnc1sy
+XSAmIDB4NykgKyA0Cj4gcGxsLnBhcmFtc1sibGMiXSA9IHJlZ3NbM10gJiAweDdmCj4gaWYgcmVn
+c1s0XSAmIDB4ODA6Cj4gICAgIHBsbC5wYXJhbXNbImxjIl0gPSAtIHBsbC5wYXJhbXNbImxjIl0K
+PiBwbGwucGFyYW1zWyJrIl0gPSByZWdzWzRdICYgMHg3Zgo+IHBsbC5wYXJhbXNbImxjX3MiXSA9
+IHJlZ3NbNV0gJiAweDdmCj4gcGxsLnBhcmFtc1sia19zIl0gPSByZWdzWzZdICYgMHhiZgo+Cj4K
+PiBmX3ZjbyA9IGludChwbGwucGFyYW1zWyJtIl0gKiBwbGwuZl9yZWYgLyBwbGwucGFyYW1zWyJw
+Il0pCj4gaWYgZl92Y28gPCA3NTAwMDAwMDAgb3IgZl92Y28gPiAzMDAwMDAwMDAwOgo+ICAgICBw
+cmludChmImZfdmNvIHtmX3Zjb30gb3V0IG9mIHJhbmdlIikKPiAgICAgc3lzLmV4aXQoMSkKPiBm
+X2NhbGMgPSBmX3ZjbyAvIHBsbC5wYXJhbXNbInMiXSAvIDUKPiBwbGwuZnJlcV9pbnQgPSByb3Vu
+ZChmX2NhbGMpCj4gcHJpbnQoZl9jYWxjKQo+IHNkYyA9IHBsbC5jYWxjX3NkYyhwbGwucGFyYW1z
+KQo+IGZyYWMgPSBwbGwuY2FsY19mX2ZyYWMoc2RjLCBwbGwucGFyYW1zKQo+IHByaW50KGZyYWMp
+Cj4gZnJlcSA9IHBsbC5mcmVxX2ludCArIGZyYWMKPiBwcmludChmcmVxKQo+IHBsbC5wcmludF9y
+ZWdfZHJpdmVyX2RhdGEoZnJlcSkKPiBleGl0KDApOwo+IC0tLQo+IHlpZWxkcyB0aGlzIGJhY2sg
+KGNvbW1lbnRzIGFkZGVkIG1hbnVhbGx5KQo+IC0tLQo+IDIyNTAwMDAwLjAgKGludGVnZXIgcGFy
+dCkKPiAtMjUwMDAwLjAgKGZyYWN0aW9uYWwgcGFydCkKPiAyMjI1MDAwMC4wIChzdW1tZWQpCj4K
+PiBQSFkgRHJpdmVyIFRhYmxlIEVudHJ5Ogo+IHsKPiAgICAgLnBpeGNsayA9IDIyMjUwMDAwLjAs
+Cj4gICAgIC5wbGxfZGl2X3JlZ3MgPSB7IDB4ZDEsIDB4NGIsIDB4ZjEsIDB4ODksIDB4ODgsIDB4
+ODEsIDB4NDAgfSwKPiB9Cj4gLS0tCj4KPiBzbyBpZiBJIGZpbmQgc29tZSB0aW1lIEknbGwgd2hp
+cCBzb21lIGxvb3AgdG8gY2hlY2sgYWxsIG90aGVyIHZhbHVlcy4uLgo+Cj4KPgo+Cj4gVGhhdCBh
+c2lkZSwgSSBzZWUgbm8gcHJvYmxlbSB3aXRoIHRoaXMsIGp1c3Qgb25lIG1ldGEtY29tbWVudCBh
+Ym91dAo+IGFkZGluZyBhIGxpbmsgdG8gdGhlIHNjcmlwdCBpbiBhbiBleHRlcm5hbCByZXBvOiBJ
+IHNlZSBzb21lIG90aGVyCj4gZHJpdmVycyBoYXZlIHB5dGhvbiBzY3JpcHRzIGluIHRoZWlyIHRy
+ZWVzIGUuZy4KPiBkcml2ZXJzL2NvbWVkaS9kcml2ZXJzL25pX3JvdXRpbmcvdG9vbHMvKnB5Cj4g
+ZHJpdmVycy9ncHUvZHJtL2NpL3hmYWlscy91cGRhdGUteGZhaWxzLnB5Cj4gZHJpdmVycy9ncHUv
+ZHJtL21zbS9yZWdpc3RlcnMvZ2VuX2hlYWRlci5weQo+Cj4gd291bGQgaXQgbWFrZSBzZW5zZSB0
+byBjb21taXQgdGhlIHNjcmlwdCBoZXJlIGluc3RlYWQgb2YgbGlua2luZyB0byBhCj4gcmVwbyB0
+aGF0IG1pZ2h0IGJlIGxvc3QgaW4gdGhlIGZ1dHVyZT8KPgo+IEknbSBub3QgcXVpdGUgc3VyZSB3
+aGF0IHBvbGljeSB0aGUgbGludXggcmVwbyBoYXMgaGVyZSwgc28gbGVhdmluZyB0aGF0Cj4gYXMg
+YW4gb3BlbiBxdWVzdGlvbi4KCklzIHRoZXJlIGEgcmVhc29uIHRoaXMgY291bGRuJ3QgYmUgY29k
+ZWQgaW4gQyBhbmQgdXNlZCB0byBleHBhbmQgbXkKaW50ZWdlciBjYWxjdWxhdG9yIHNlcmllcz8g
+IFdpdGggdGhhdCwgd2UgY291bGQgZHJvcCB0aGUgbG9va3VwIHRhYmxlLgoKYWRhbQo+IC0tCj4g
+RG9taW5pcXVlCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1waHkK
