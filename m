@@ -4,78 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB88FEE01FB
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 01:16:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27A09EE01FB
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Sep 2024 01:28:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wCeZqbZfacJJu4mH3CAS1iPt5Ma5c/uMwO8E0bp9FTA=; b=zxv+6kCIDOIOrB
-	wnAjVrZjEnDl7jq26cnJESWg2mJwmMJTRtOGbu2Pjv33bxjr63ZLVMn4tT51FPyGnhHGdv+1sviOO
-	NcqlPeKC7i2GDLYT0kZsqhBzps3R9Hssi4Not8CaWqFFKuq5iXPQuKOFtkd4Twx7ax8yez04qe4gw
-	fO4m1rnRDfW6h8QE305Rp/3kWIpm6oGmK8X8YmuirWBlCY6Y3yoTBxN6RGDlYZ34C6GxMs9AgkprT
-	iKKA9GzWI/tHOdL9TG7mEb5A/lmQ9QJFk9/I59Sp+LHRmwS/56qoWQvHTKj38BDyDL1pGH1UEglT8
-	bu4JLrrHvi2erW0RRAHQ==;
+	List-Owner; bh=TJV7hSHcyhjCvGbUJmAlnB4he7PnEEVzekh042LzlA4=; b=escn7fMbftkxp7
+	oHFeIXLCIvxuZVmGd0Adr8iCVaqeX95kYhDenLbXMAg9AyYbTGTr6ketLc45rNJ99SAvQNCaKX44Y
+	Xm+wgwJztdZBZBno3GeapBZvlKNfjWa8OmJSqb61PG+J9wtqSAorxYCeN8mlEwqa4PXdreUN0oR4p
+	25UXSnmBEU48csrASZ1iY6AqPgc1sdDj2z2iZSBo6674iilu02N3gIVmbo08Q04FBcODLtN5ErYlE
+	QeuZLP0SpjWqp7Tj4fTv23Hs57KwHXhQVq/PoxKVXJ360irsGAko+JSOVE885Fz32FTtEwxlyaOXv
+	5byHSZHcaYv8RLOyHkxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soBxz-00000007fJc-2aDu;
-	Wed, 11 Sep 2024 01:16:19 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1soC9R-00000007gjx-3hcg;
+	Wed, 11 Sep 2024 01:28:09 +0000
+Received: from gw2.atmark-techno.com ([35.74.137.57])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soBxx-00000007fJ0-2pB1
+	id 1soC96-00000007gee-3Nhq
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Sep 2024 01:16:19 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-2d8a4bad409so4257605a91.0
-        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 18:16:16 -0700 (PDT)
+	Wed, 11 Sep 2024 01:27:50 +0000
+Authentication-Results: gw2.atmark-techno.com;
+	dkim=pass (2048-bit key; unprotected) header.d=atmark-techno.com header.i=@atmark-techno.com header.a=rsa-sha256 header.s=google header.b=SSQIc7dQ;
+	dkim-atps=neutral
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by gw2.atmark-techno.com (Postfix) with ESMTPS id F3BE68BA
+	for <linux-phy@lists.infradead.org>; Wed, 11 Sep 2024 10:27:46 +0900 (JST)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-205529c3402so81349165ad.0
+        for <linux-phy@lists.infradead.org>; Tue, 10 Sep 2024 18:27:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1726017376; x=1726622176; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=nVqiUxsVb7vxvZzrSiSeI8t+eG1EK/BxIDvzNolJKEU=;
-        b=EOUl+y3V2IUSZf2MtfAw0/0j7pgTy+OQJk0RbINDcAVzfGSYPw+wFriKddt1VDMxVZ
-         YHFs72YO9ZgUZLN1imlIiEsbHv/HLQDkRV24A9MGvaWCODdCJa65l1omf031+LIwhkDm
-         5pq/iF9OoATHK39P9sxis9S+UkQ/B+X6nvxf4TNG20Lf5g8jGDc3goLzFRCys6O1dtVl
-         RPiVIhBSKVJyeX1mlZ+4txGH8SPVqxnQKmPMwETvq+tubdVrp80WT2blttn7K8E2ifJM
-         Ijh0vbULGcoXZ8Ix7qY5fkR8xNNvU7aeO2fvzVj4bj+05LY93jYrZaJFIorgi/BSr7qw
-         2ACA==
+        d=atmark-techno.com; s=google; t=1726018066; x=1726622866; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=piebQm/1epxkP81mU8tuwXGPc4HtMsCSKOg4ODSsprs=;
+        b=SSQIc7dQQrj5p+OeOiUmqnHcTpsOLmkanrbfRkgzeQYa+wpxj2b7ux7VJyJtFeJc2i
+         1K/AMN9aNG6Y+32gqpQhbu/aBd3Rg6BjnzAy09mTzq/2/qfxNkI21Xv/VAF2i0l8Y5YK
+         ZA2Rt0y+a2K80VS9Pl0ikRhmpSJYoLA2dPA4IWDEYZwGoR8r4rnSPDhoBnL8unWfJEEq
+         78CC5VpSQVYISHRCUx+Gq8DngU+ESXvfYjQPzJJzZv8SqmAKjKSAJkIF2OImRXI++Qbx
+         qAwSpAV3BAaZxoKTXAELBz7WLEC+sQp3WjSEGrujTPS6oWJnHrYEDjqcNQ5B/Tqt9ws+
+         72FQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726017376; x=1726622176;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=nVqiUxsVb7vxvZzrSiSeI8t+eG1EK/BxIDvzNolJKEU=;
-        b=ggOa2+tUvIpIkBNe0J013ICj7JgGg6vupS0bV5nAXQFL3GBbpKJYbNPWz7x0bM/ZaW
-         zFI7ydIwfRYqXy8uDMmMjFLOnXwqKv7wls4nsxCNELgEciHleVBZ9j/HxkaJzZ8u3tQB
-         gGZRdmeHARYfpFub3rzt3E/DPosniIrn+bKGTHBjENQUmnkb1TjAgJVs8H2b3jU+tCRP
-         PplRwY+RyzFVD96Gkq5WI8uJ9+3NYOO2TM33VfQ6j9ZYyuraMYLS2NLMgjv6m32sK5W9
-         vnxxnFUbyQ60R/ACNHNP8YrELRfS10wXvg+HZtmytSI00ScWsuZ5iQSMKBCODFfnYGiE
-         8M4A==
-X-Forwarded-Encrypted: i=1; AJvYcCWp3+1zWf8KgEKOOIU+o8plNQ29q8XywNfisov4+FUeXsTubrBPQz/9u67PWhTCiF1cm33rfg3WeJ8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YydAwVCX+q5f/7ZisuDkcwfCU0tpvCk2onXTgJLmZzoOKLk5f2b
-	mpsaD79nfJhjQjrt+y1apU026SmwUiIsduzpoZeB7oloslkdyR1kKCk5iXSf7E7N0yatCwuRJb/
-	3OOwL6EVPKSANtlQ+qc5uMMPRJCQ=
-X-Google-Smtp-Source: AGHT+IEjBGIyK0K/tjlnfxCBOZturPb0CoCSRIRBiEsDUZRqprFH60pRY1NoYuyXhwgkJFvimfZmeqCrXV4/Iak55mc=
-X-Received: by 2002:a17:90b:2d92:b0:2d3:b438:725f with SMTP id
- 98e67ed59e1d1-2db4211cacfmr9006083a91.24.1726017376028; Tue, 10 Sep 2024
- 18:16:16 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240910181544.214797-1-frieder@fris.de> <ZuDjAwPxHeJTvXAp@atmark-techno.com>
-In-Reply-To: <ZuDjAwPxHeJTvXAp@atmark-techno.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 10 Sep 2024 20:16:04 -0500
-Message-ID: <CAHCN7xJD8jsqyZX1JkWxrA84XkZ8YYN19hXW6KVe+jkOFugqrw@mail.gmail.com>
+        d=1e100.net; s=20230601; t=1726018066; x=1726622866;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=piebQm/1epxkP81mU8tuwXGPc4HtMsCSKOg4ODSsprs=;
+        b=xNXDYiyaKcphfESbbOySLAz/pCPIyfMtg5GbFGbg/WZmgSIPW14YleiOG5wz8HbGin
+         znLZQcHq7K1FpTttUfLPwrvjEHUsO4dDYyYq7b3zMZO0saNpMRvoQpoKyvDWvomPms5O
+         StZHsP7NNV3KbFFDACzLHk6cCH8DqJCzWowG3HNpt+HWhZcQr5dhQ60mmP9vFf0uAAi7
+         IkdZo6qw3BjpwpsqnrCmLouh4C+Fj2vgz9QTg+Zmo/+KKIyU+RQbLILZDdV6TKa0zteB
+         sXZVJXN7Lhh2bpO5f990mxD3bD0hG/k/Q6OKcSYmbD56TUUFxPv+65Gzxb5stIICFwCF
+         Hchg==
+X-Forwarded-Encrypted: i=1; AJvYcCWpeLiLWui5guIGlhHlRb4c59Q/yiWYfFp2vc1RBto7MosrlW+Oawn3YaaX8zM1IuKrtxmXzXjho7k=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx62sOFqrYZ1v5mSbUhaYhbYpNI8Dg3owOZLGYn4AbgJVTAT/t8
+	VT53H7dqikqmWuWIFFoLQPSEM8+jYR7Bv65gWA8RjRMEWlrDcgPxN9sy+2Ukgg35gNEQUOtzoMG
+	WOVj2xHMUQ5rbacba89/uNYyokVzxenThHR7pKY8XkTCE0J9OoFBVjCOHopMSgvFm
+X-Received: by 2002:a17:902:d511:b0:207:2093:99a3 with SMTP id d9443c01a7336-2074c4c4fe4mr23879935ad.5.1726018065719;
+        Tue, 10 Sep 2024 18:27:45 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGazzt/LaGGBY2DoRrtPEoEdLzev+TuypaNYFEnIn0/5MgpFyaXvG93yy4tnQ/hkAPoU1RVew==
+X-Received: by 2002:a17:902:d511:b0:207:2093:99a3 with SMTP id d9443c01a7336-2074c4c4fe4mr23879675ad.5.1726018065232;
+        Tue, 10 Sep 2024 18:27:45 -0700 (PDT)
+Received: from localhost (35.112.198.104.bc.googleusercontent.com. [104.198.112.35])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-20710e3368bsm54300225ad.95.2024.09.10.18.27.44
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 10 Sep 2024 18:27:44 -0700 (PDT)
+Date: Wed, 11 Sep 2024 10:27:33 +0900
+From: Dominique Martinet <dominique.martinet@atmark-techno.com>
+To: Adam Ford <aford173@gmail.com>
+Cc: Frieder Schrempf <frieder@fris.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	Vinod Koul <vkoul@kernel.org>, Lucas Stach <l.stach@pengutronix.de>,
+	Marco Felsch <m.felsch@pengutronix.de>,
+	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 Subject: Re: [PATCH 0/2] Extending PLL LUT for i.MX8MP Samsung HDMI PHY
-To: Dominique Martinet <dominique.martinet@atmark-techno.com>
-Cc: Frieder Schrempf <frieder@fris.de>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
-	Lucas Stach <l.stach@pengutronix.de>, Marco Felsch <m.felsch@pengutronix.de>, 
-	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Message-ID: <ZuDyBQ1I2vcGzAqX@atmark-techno.com>
+References: <20240910181544.214797-1-frieder@fris.de>
+ <ZuDjAwPxHeJTvXAp@atmark-techno.com>
+ <CAHCN7xJD8jsqyZX1JkWxrA84XkZ8YYN19hXW6KVe+jkOFugqrw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAHCN7xJD8jsqyZX1JkWxrA84XkZ8YYN19hXW6KVe+jkOFugqrw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240910_181617_739290_E0840E9F 
-X-CRM114-Status: GOOD (  26.76  )
+X-CRM114-CacheID: sfid-20240910_182748_982294_2E1BCCCA 
+X-CRM114-Status: GOOD (  27.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,66 +102,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBTZXAgMTAsIDIwMjQgYXQgNzoyM+KAr1BNIERvbWluaXF1ZSBNYXJ0aW5ldAo8ZG9t
-aW5pcXVlLm1hcnRpbmV0QGF0bWFyay10ZWNobm8uY29tPiB3cm90ZToKPgo+IEZyaWVkZXIgU2No
-cmVtcGYgd3JvdGUgb24gVHVlLCBTZXAgMTAsIDIwMjQgYXQgMDg6MTQ6NTFQTSArMDIwMDoKPiA+
-IFsyXSBodHRwczovL2NvZGViZXJnLm9yZy9mc2NocmVtcGYvc2Ftc3VuZy1oZG1pLXBoeS1wbGwt
-Y2FsY3VsYXRvci9zcmMvYnJhbmNoL21haW4vcGxsLnB5Cj4KPiBHcmVhdCB3b3JrISBUaGFua3Mh
-Cj4KPiBJIHdhcyBjdXJpb3VzIGFib3V0IHRoZSBleGlzdGluZyB0YWJsZSBlbnRyaWVzLCByZWNv
-bXB1dGluZyBleGlzdGluZwo+IHZhbHVlcyBkb2Vzbid0IHlpZWxkIHRoZSBzYW1lIHZhbHVlcy4g
-Rm9yIGV4YW1wbGUsIHRoZSBmaXJzdCBlbnRyeSBpcwo+IHsKPiAgICAgICAgIC5waXhjbGsgPSAy
-MjI1MDAwMCwKPiAgICAgICAgIC5wbGxfZGl2X3JlZ3MgPSB7IDB4ZDEsIDB4NGIsIDB4ZjEsIDB4
-ODksIDB4ODgsIDB4ODAsIDB4NDAgfSwKPiB9Cj4gYnV0IGNvbXB1dGluZyBpdCB5aWVsZHMKPiB7
-Cj4gICAgIC5waXhjbGsgPSAyMjI1MDAwMCwKPiAgICAgLnBsbF9kaXZfcmVncyA9IHsgMHhkMSwg
-MHg0YSwgMHhmMCwgMHhlZiwgMHgxMCwgMHg4MSwgMHg0MCB9LAo+IH0KPgo+IEkgYXNzdW1lIHRo
-ZXJlIGp1c3QgYXJlIG11bHRpcGxlIHdheXMgdG8gZ2VuZXJhdGUgdGhlIHNhbWUgZnJlcXVlbmNp
-ZXMsCj4gd2hpY2ggaXMgZmluZSBpbiBpdHNlbGYsIGJ1dCBpdCdkIGJlIGdyZWF0IHRvIGJlIGFi
-bGUgdG8gImJhY2stY29tcHV0ZSIKPiB0aGUgZW50cmllcyBhcyBhIHNhbml0eSBjaGVjay4KPgo+
-IEkndmUgcGxheWVkIGEgYml0IHdpdGggeW91ciBzY3JpcHQgYW5kIHNwZW50IG1vcmUgdGltZSBv
-biBpdCB0aGFuIEknZAo+IGxpa2UgdG8gYWRtaXQsIGJ1dCBzb21ldGhpbmcgbGlrZSB0aGlzIHNl
-ZW1zIHRvIGRvIHRoZSB0cmljaywgcGx1Z2dpbmcKPiBpbiB0aGUgcmVncyBmcm9tIHRoZSBrZXJu
-ZWw6Cj4KPiAtLS0KPiBwbGwgPSBGcmFjdGlvbmFsTlBMTChmcmVxX3JlZikKPgo+IHJlZ3MgPSBb
-MHhkMSwgMHg0YiwgMHhmMSwgMHg4OSwgMHg4OCwgMHg4MCwgMHg0MF0KPiAjIGFzc3VtZSBmcmFj
-dGlvbmFsCj4gaWYgbm90IHJlZ3NbMF0gJiAweEQwOgo+ICAgICBwcmludCgicmVnWzBdIG1pc3Np
-bmcgMHhEMCIpCj4gICAgIHN5cy5leGl0KDEpCj4gcGxsLmZyZXFfZnJhYyA9IFRydWUKPiBwbGwu
-cGFyYW1zWyJwIl0gPSByZWdzWzBdICYgMHgyZgo+IHBsbC5wYXJhbXNbIm0iXSA9IHJlZ3NbMV0K
-PiBwbGwucGFyYW1zWyJzIl0gPSAocmVnc1syXSA+PiA0KSArIDEKPiBwbGwucGFyYW1zWyJuMiJd
-ID0gKChyZWdzWzJdID4+IDMpICYgMHgxKSArIDEKPiBwbGwucGFyYW1zWyJuIl0gPSAocmVnc1sy
-XSAmIDB4NykgKyA0Cj4gcGxsLnBhcmFtc1sibGMiXSA9IHJlZ3NbM10gJiAweDdmCj4gaWYgcmVn
-c1s0XSAmIDB4ODA6Cj4gICAgIHBsbC5wYXJhbXNbImxjIl0gPSAtIHBsbC5wYXJhbXNbImxjIl0K
-PiBwbGwucGFyYW1zWyJrIl0gPSByZWdzWzRdICYgMHg3Zgo+IHBsbC5wYXJhbXNbImxjX3MiXSA9
-IHJlZ3NbNV0gJiAweDdmCj4gcGxsLnBhcmFtc1sia19zIl0gPSByZWdzWzZdICYgMHhiZgo+Cj4K
-PiBmX3ZjbyA9IGludChwbGwucGFyYW1zWyJtIl0gKiBwbGwuZl9yZWYgLyBwbGwucGFyYW1zWyJw
-Il0pCj4gaWYgZl92Y28gPCA3NTAwMDAwMDAgb3IgZl92Y28gPiAzMDAwMDAwMDAwOgo+ICAgICBw
-cmludChmImZfdmNvIHtmX3Zjb30gb3V0IG9mIHJhbmdlIikKPiAgICAgc3lzLmV4aXQoMSkKPiBm
-X2NhbGMgPSBmX3ZjbyAvIHBsbC5wYXJhbXNbInMiXSAvIDUKPiBwbGwuZnJlcV9pbnQgPSByb3Vu
-ZChmX2NhbGMpCj4gcHJpbnQoZl9jYWxjKQo+IHNkYyA9IHBsbC5jYWxjX3NkYyhwbGwucGFyYW1z
-KQo+IGZyYWMgPSBwbGwuY2FsY19mX2ZyYWMoc2RjLCBwbGwucGFyYW1zKQo+IHByaW50KGZyYWMp
-Cj4gZnJlcSA9IHBsbC5mcmVxX2ludCArIGZyYWMKPiBwcmludChmcmVxKQo+IHBsbC5wcmludF9y
-ZWdfZHJpdmVyX2RhdGEoZnJlcSkKPiBleGl0KDApOwo+IC0tLQo+IHlpZWxkcyB0aGlzIGJhY2sg
-KGNvbW1lbnRzIGFkZGVkIG1hbnVhbGx5KQo+IC0tLQo+IDIyNTAwMDAwLjAgKGludGVnZXIgcGFy
-dCkKPiAtMjUwMDAwLjAgKGZyYWN0aW9uYWwgcGFydCkKPiAyMjI1MDAwMC4wIChzdW1tZWQpCj4K
-PiBQSFkgRHJpdmVyIFRhYmxlIEVudHJ5Ogo+IHsKPiAgICAgLnBpeGNsayA9IDIyMjUwMDAwLjAs
-Cj4gICAgIC5wbGxfZGl2X3JlZ3MgPSB7IDB4ZDEsIDB4NGIsIDB4ZjEsIDB4ODksIDB4ODgsIDB4
-ODEsIDB4NDAgfSwKPiB9Cj4gLS0tCj4KPiBzbyBpZiBJIGZpbmQgc29tZSB0aW1lIEknbGwgd2hp
-cCBzb21lIGxvb3AgdG8gY2hlY2sgYWxsIG90aGVyIHZhbHVlcy4uLgo+Cj4KPgo+Cj4gVGhhdCBh
-c2lkZSwgSSBzZWUgbm8gcHJvYmxlbSB3aXRoIHRoaXMsIGp1c3Qgb25lIG1ldGEtY29tbWVudCBh
-Ym91dAo+IGFkZGluZyBhIGxpbmsgdG8gdGhlIHNjcmlwdCBpbiBhbiBleHRlcm5hbCByZXBvOiBJ
-IHNlZSBzb21lIG90aGVyCj4gZHJpdmVycyBoYXZlIHB5dGhvbiBzY3JpcHRzIGluIHRoZWlyIHRy
-ZWVzIGUuZy4KPiBkcml2ZXJzL2NvbWVkaS9kcml2ZXJzL25pX3JvdXRpbmcvdG9vbHMvKnB5Cj4g
-ZHJpdmVycy9ncHUvZHJtL2NpL3hmYWlscy91cGRhdGUteGZhaWxzLnB5Cj4gZHJpdmVycy9ncHUv
-ZHJtL21zbS9yZWdpc3RlcnMvZ2VuX2hlYWRlci5weQo+Cj4gd291bGQgaXQgbWFrZSBzZW5zZSB0
-byBjb21taXQgdGhlIHNjcmlwdCBoZXJlIGluc3RlYWQgb2YgbGlua2luZyB0byBhCj4gcmVwbyB0
-aGF0IG1pZ2h0IGJlIGxvc3QgaW4gdGhlIGZ1dHVyZT8KPgo+IEknbSBub3QgcXVpdGUgc3VyZSB3
-aGF0IHBvbGljeSB0aGUgbGludXggcmVwbyBoYXMgaGVyZSwgc28gbGVhdmluZyB0aGF0Cj4gYXMg
-YW4gb3BlbiBxdWVzdGlvbi4KCklzIHRoZXJlIGEgcmVhc29uIHRoaXMgY291bGRuJ3QgYmUgY29k
-ZWQgaW4gQyBhbmQgdXNlZCB0byBleHBhbmQgbXkKaW50ZWdlciBjYWxjdWxhdG9yIHNlcmllcz8g
-IFdpdGggdGhhdCwgd2UgY291bGQgZHJvcCB0aGUgbG9va3VwIHRhYmxlLgoKYWRhbQo+IC0tCj4g
-RG9taW5pcXVlCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1waHkK
+Adam Ford wrote on Tue, Sep 10, 2024 at 08:16:04PM -0500:
+> > That aside, I see no problem with this, just one meta-comment about
+> > adding a link to the script in an external repo: I see some other
+> > drivers have python scripts in their trees e.g.
+> > drivers/comedi/drivers/ni_routing/tools/*py
+> > drivers/gpu/drm/ci/xfails/update-xfails.py
+> > drivers/gpu/drm/msm/registers/gen_header.py
+> >
+> > would it make sense to commit the script here instead of linking to a
+> > repo that might be lost in the future?
+> >
+> > I'm not quite sure what policy the linux repo has here, so leaving that
+> > as an open question.
+> 
+> Is there a reason this couldn't be coded in C and used to expand my
+> integer calculator series?  With that, we could drop the lookup table.
+
+Quoting a previous mail from Frieder:
+> I will clean things up a bit and then share what I have. I hope that this
+> allows anyone to calculate parameters for their non-standard displays if
+> required.
+> 
+> If someone feels extra motivated they could try to calculate the fractional
+> parameters at runtime. However I'm not sure that this is feasible. The
+> numerical computation of a large number of parameters is quite heavy and it's
+> probably not easy to strip the algorithm down to something that can be run on
+> the target without too much overhead.
+
+Trying a random frequency with the algorithm he has implemented it
+easily takes 10 seconds to run on my imx8mp board, so even if we asssume
+C is 3-4 times faster I think the current algorithm is too slow for
+runtime and it makes more sense to extended the LUT to me (as long as
+the values can be & are checked at least once, which we now can)
+
+The current algorithm brute-forces its way through so there could be a
+better way of computing the fractional part of the divider, but I'm not
+sure it's worth the effort at this point; I guess it's a good
+intellectual challenge though so someone might do it in the future.
+
+-- 
+Dominique
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
