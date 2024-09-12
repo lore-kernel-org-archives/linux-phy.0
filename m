@@ -4,98 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4470EEB57D
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Sep 2024 09:39:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C998EEEB583
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Sep 2024 09:57:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rYZw5I4ZXZaxRpWL/6z49IQVASMMitVQNEmbmdYKxXE=; b=TsFjst4woyBYWI
-	Z+lqLdBCWSPN7xfTqy03Z88IONG9QmOGztcVbgJtlAfYXRsJyNOj+BLhHfYVjRnotfm+yeEXRApiG
-	CaeXXTLi5VzWeO97/mnlrjcPQeHf3NED6X/4s5BH5/Lj5gUvpl7cVbr9lGLXQp5j8AZXco4HspXHM
-	YTRBMfbyKTa42um9nOMmFgGiuywYpMh2rfVz6HUuJEGH+fkGkDi1yoRZEGNlTZRCauy6nYr0QwJ9U
-	C8CZd3pfqrEPGDJTe/uzDRa1VcWP/B+iGo7i00WArElcZ3hi2VjivDroevTcbB6+M0Ok9NWHgyEGW
-	qEyVcYanAqcXvOCyPXMg==;
+	List-Owner; bh=A6itFkpn4+ufo2q7bzxvaIeoG3Op+IH81eEx6FKQA1w=; b=4d3bNOBTgzAfu2
+	8eG3fOsra1P/dVvDUlpiYoNXhyA4By5x6fcsFhsp/ZRE6idceLsmFV7O/4yhvZ6WMN0SoKboSMqmo
+	XU+2UtoYu6FCCnXw22WxTjJ9FTxeCur19K/Yyo2thVGxrph8/j5Q2N+gRLmRJbCFlSn5Jq8QwOAaX
+	yjFlh3np8wZoWmvR+ov8JO2mjGjDssxQwGrpdIuZJGbgD5TfOganxGl/4l/OurPRZy0252IqEmRYr
+	/M53mDZ9ZGeBRvbvYgqY7lH0+Dts4qWMycd2xbgOEDpQmkdQET2mdS+wBAXLcRmMCExUV/2oUkJwv
+	sZ/EayN4pphNeBdFvp4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sogIq-0000000CZbj-1btw;
-	Thu, 12 Sep 2024 09:39:52 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1sogZm-0000000CcLN-1obN;
+	Thu, 12 Sep 2024 09:57:22 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sogIn-0000000CZa2-0zf7
+	id 1sogZj-0000000CcKb-4ATF
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Sep 2024 09:39:51 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48C2L2fw029584;
-	Thu, 12 Sep 2024 09:39:42 GMT
+	Thu, 12 Sep 2024 09:57:21 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48C2L458014088;
+	Thu, 12 Sep 2024 09:57:12 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	CmakW4XfB0c67uSMneJWbWtjJCf22jONs64rRyD7XtE=; b=kPfXltKupHofrBBE
-	P596+krg6BPz43D81L4pKPH9C0sB+DkN9s4huKy0YO6lUulnVOQSeyuTq20vPjUa
-	2IKsdZ4V0DHGAqzoGyRO9kEIYlQzIuMfdGzoCdBbAWOzKnArbWR8MIUeMHOVUkT/
-	6jXByVIN1RnSWPQXMnh85hKI8284LLEtgfnQAiJ9qOnRMf4Upw+G8W6xXXATuajb
-	Kqdso3JgXWSRgu+404muc/RGpe7dPw1puSlIP0lWoHMA/9WWpOFIi21WawQd+hFA
-	gQ3o9rWsiiHxnL6vnNVjzQbKBXeP5/fjvOcYQhUOlElYO53HjJa9QbCZXD7ATy65
-	PEtxxg==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41he5e3x5v-1
+	5QPAhKrtQYIasF68Ssl5Mnv7LAU0oTBN2QAQNSqhxmk=; b=ZbS1SCKRsiVNql3q
+	K9EnXb+nHT+i9UrCDDrd99cBRYWC7UBlFU9wVPiteSB+98E4tmUMWptRxtGNHhcg
+	fvcw1UIFFWujVMHO8zzFLR6605eurLkDDPr0YodpiI5rOWXRt66057Q874trScFD
+	lRHTyrUmQiFBL7YmcIGpevb7x8Hc7AWOvo77tU4yOBrprynGluIu5bRKyUbJXLFr
+	2ntD5f4PWmHFxJI9NFPPY1TG4UxCmZvujI2t9XJYHVw6ChFh8r8uUsQfYTvqeDzj
+	FkOJ/STf4GGTG4+V0SLC2iHolsCYOgI0+1QSLjhg+ASIrctxVd35E7zMkyF3N+fS
+	uhV8Tw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41gy8p4sqj-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Sep 2024 09:39:42 +0000 (GMT)
+	Thu, 12 Sep 2024 09:57:12 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48C9dfuF028878
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48C9vBg1002912
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Sep 2024 09:39:41 GMT
+	Thu, 12 Sep 2024 09:57:11 GMT
 Received: from [10.204.67.70] (10.80.80.8) by nalasex01a.na.qualcomm.com
  (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 12 Sep
- 2024 02:39:32 -0700
-Message-ID: <3bf16fae-60ae-4bd2-b631-3cd8bfef0609@quicinc.com>
-Date: Thu, 12 Sep 2024 15:09:29 +0530
+ 2024 02:57:02 -0700
+Message-ID: <9cf67bc8-d567-4fbe-af77-bdc79f74fc0a@quicinc.com>
+Date: Thu, 12 Sep 2024 15:26:59 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/5] phy: qcom: edp: Introduce aux_cfg array for version
- specific aux settings
+Subject: Re: [PATCH 3/5] phy: qcom: edp: Add support for eDP PHY on SA8775P
 Content-Language: en-US
-To: Bjorn Andersson <quic_bjorande@quicinc.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 CC: <vkoul@kernel.org>, <kishon@kernel.org>, <konradybcio@kernel.org>,
-        <andersson@kernel.org>, <simona@ffwll.ch>,
-        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
+        <andersson@kernel.org>, <simona@ffwll.ch>, <abel.vesa@linaro.org>,
         <robdclark@gmail.com>, <quic_abhinavk@quicinc.com>, <sean@poorly.run>,
         <marijn.suijten@somainline.org>, <airlied@gmail.com>,
         <daniel@ffwll.ch>, <maarten.lankhorst@linux.intel.com>,
         <mripard@kernel.org>, <tzimmermann@suse.de>, <robh@kernel.org>,
         <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <quic_khsieh@quicinc.com>,
         <konrad.dybcio@linaro.org>, <quic_parellan@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
-        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
-        <quic_riteshk@quicinc.com>, <quic_vproddut@quicinc.com>
+        <quic_bjorande@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
+        <devicetree@vger.kernel.org>, <quic_riteshk@quicinc.com>,
+        <quic_vproddut@quicinc.com>
 References: <20240911100813.338-1-quic_mukhopad@quicinc.com>
- <20240911100813.338-3-quic_mukhopad@quicinc.com>
- <ZuJHtXrZIRDd7Kyg@hu-bjorande-lv.qualcomm.com>
+ <20240911100813.338-4-quic_mukhopad@quicinc.com>
+ <CAA8EJpqurbPKjmRH8zdqPkMuze4zwJVu+=W0nP=Ldc6o_4Tu4w@mail.gmail.com>
 From: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
-In-Reply-To: <ZuJHtXrZIRDd7Kyg@hu-bjorande-lv.qualcomm.com>
+In-Reply-To: <CAA8EJpqurbPKjmRH8zdqPkMuze4zwJVu+=W0nP=Ldc6o_4Tu4w@mail.gmail.com>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: mRF0ufnVtER2NYhWRQKJsB86gY3IUxIo
-X-Proofpoint-GUID: mRF0ufnVtER2NYhWRQKJsB86gY3IUxIo
+X-Proofpoint-GUID: HBOVyAdpivXZcwafyU0DnSmEZOsifBef
+X-Proofpoint-ORIG-GUID: HBOVyAdpivXZcwafyU0DnSmEZOsifBef
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 clxscore=1015
- priorityscore=1501 suspectscore=0 lowpriorityscore=0 impostorscore=0
- malwarescore=0 mlxscore=0 phishscore=0 bulkscore=0 adultscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409120067
+ impostorscore=0 mlxscore=0 bulkscore=0 suspectscore=0 priorityscore=1501
+ mlxlogscore=999 lowpriorityscore=0 adultscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2409120070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240912_023949_435639_C421FE84 
-X-CRM114-Status: GOOD (  20.18  )
+X-CRM114-CacheID: sfid-20240912_025720_185440_E7FD79BA 
+X-CRM114-Status: GOOD (  16.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,127 +112,115 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 9/12/2024 7:15 AM, Bjorn Andersson wrote:
-> On Wed, Sep 11, 2024 at 03:38:10PM +0530, Soutrik Mukhopadhyay wrote:
->> In order to support different HW versions, introduce aux_cfg array
->> to move v4 specific aux configuration settings.
+On 9/11/2024 4:10 PM, Dmitry Baryshkov wrote:
+> On Wed, 11 Sept 2024 at 13:08, Soutrik Mukhopadhyay
+> <quic_mukhopad@quicinc.com> wrote:
+>> Add support for eDP PHY v5 found on the Qualcomm SA8775P platform.
 >>
 >> Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 >> ---
->>   drivers/phy/qualcomm/phy-qcom-edp.c | 34 +++++++++++++++++------------
->>   1 file changed, 20 insertions(+), 14 deletions(-)
+>>   drivers/phy/qualcomm/phy-qcom-edp.c | 47 +++++++++++++++++++++++++++++
+>>   1 file changed, 47 insertions(+)
 >>
 >> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
->> index da2b32fb5b45..0f860a807d1b 100644
+>> index 0f860a807d1b..34a47cd2919d 100644
 >> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
 >> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
->> @@ -90,6 +90,7 @@ struct phy_ver_ops {
->>   
->>   struct qcom_edp_phy_cfg {
->>   	bool is_edp;
->> +	u8 *aux_cfg;
->>   	const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
->>   	const struct phy_ver_ops *ver_ops;
+>> @@ -191,6 +191,45 @@ static u8 edp_phy_aux_cfg_v4[10] = {
+>>          0x00, 0x13, 0x24, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
 >>   };
->> @@ -186,11 +187,14 @@ static const struct qcom_edp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg = {
->>   	.pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3,
->>   };
->>   
->> +static u8 edp_phy_aux_cfg_v4[10] = {
->> +	0x00, 0x13, 0x24, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
+>>
+>> +static const u8 edp_swing_hbr_rbr_v5[4][4] = {
+>> +       { 0x07, 0x0f, 0x16, 0x1f },
+>> +       { 0x0d, 0x16, 0x1e, 0xff },
+>> +       { 0x11, 0x1b, 0xff, 0xff },
+>> +       { 0x16, 0xff, 0xff, 0xff }
+>> +};
+> Same as v4
+
+
+Yes, we will reuse edp_swing_hbr_rbr for v5.
+
+
+>
+>> +
+>> +static const u8 edp_pre_emp_hbr_rbr_v5[4][4] = {
+>> +       { 0x05, 0x11, 0x17, 0x1d },
+>> +       { 0x05, 0x11, 0x18, 0xff },
+>> +       { 0x06, 0x11, 0xff, 0xff },
+>> +       { 0x00, 0xff, 0xff, 0xff }
+>> +};
+> Could you please confirm that there is a single value difference?
+
+
+Yes, there is a single value difference.
+
+
+>
+>> +
+>> +static const u8 edp_swing_hbr2_hbr3_v5[4][4] = {
+>> +       { 0x0b, 0x11, 0x17, 0x1c },
+>> +       { 0x10, 0x19, 0x1f, 0xff },
+>> +       { 0x19, 0x1f, 0xff, 0xff },
+>> +       { 0x1f, 0xff, 0xff, 0xff }
+>> +};
+> Same as v4
+
+
+Yes, we will reuse edp_swing_hbr2_hbr3 for v5.
+
+
+>
+>> +
+>> +static const u8 edp_pre_emp_hbr2_hbr3_v5[4][4] = {
+>> +       { 0x0c, 0x15, 0x19, 0x1e },
+>> +       { 0x0b, 0x15, 0x19, 0xff },
+>> +       { 0x0e, 0x14, 0xff, 0xff },
+>> +       { 0x0d, 0xff, 0xff, 0xff }
+>> +};
+> This one looks fine
+>
+>> +
+>> +static const struct qcom_edp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg_v5 = {
+>> +       .swing_hbr_rbr = &edp_swing_hbr_rbr_v5,
+>> +       .swing_hbr3_hbr2 = &edp_swing_hbr2_hbr3_v5,
+>> +       .pre_emphasis_hbr_rbr = &edp_pre_emp_hbr_rbr_v5,
+>> +       .pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3_v5,
+>> +};
+>> +
+>> +static u8 edp_phy_aux_cfg_v5[10] = {
+>> +       0x00, 0x13, 0xa4, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
 >> +};
 >> +
 >>   static int qcom_edp_phy_init(struct phy *phy)
 >>   {
->>   	struct qcom_edp *edp = phy_get_drvdata(phy);
->>   	int ret;
->> -	u8 cfg8;
->>   
->>   	ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
->>   	if (ret)
->> @@ -222,22 +226,20 @@ static int qcom_edp_phy_init(struct phy *phy)
->>   	 * even needed.
->>   	 */
->>   	if (edp->cfg->swing_pre_emph_cfg && !edp->is_edp)
->> -		cfg8 = 0xb7;
->> -	else
->> -		cfg8 = 0x37;
->> +		edp->cfg->aux_cfg[8] = 0xb7;
-> If you have multiple instances of the eDP PHY they will all point to the
-> same edp_phy_aux_cfg_v4[], so making instance-specific modifications
-> to that array will not be okay.
->
->
-> Make edp_phy_aux_cfg_v4[] const to reduce the likelihood for someone
-> else to make this mistake in the future and make a local copy of the
-> array on the stack so that you can modify it.
->
-> Regards,
-> Bjorn
-
-
-Sure, we will change edp_phy_aux_cfg_v4[] to const and use local copy to 
-modify it.
-
-
->
->>   
->>   	writel(0xfc, edp->edp + DP_PHY_MODE);
->>   
->> -	writel(0x00, edp->edp + DP_PHY_AUX_CFG0);
->> -	writel(0x13, edp->edp + DP_PHY_AUX_CFG1);
->> -	writel(0x24, edp->edp + DP_PHY_AUX_CFG2);
->> -	writel(0x00, edp->edp + DP_PHY_AUX_CFG3);
->> -	writel(0x0a, edp->edp + DP_PHY_AUX_CFG4);
->> -	writel(0x26, edp->edp + DP_PHY_AUX_CFG5);
->> -	writel(0x0a, edp->edp + DP_PHY_AUX_CFG6);
->> -	writel(0x03, edp->edp + DP_PHY_AUX_CFG7);
->> -	writel(cfg8, edp->edp + DP_PHY_AUX_CFG8);
->> -	writel(0x03, edp->edp + DP_PHY_AUX_CFG9);
->> +	writel(edp->cfg->aux_cfg[0], edp->edp + DP_PHY_AUX_CFG0);
->> +	writel(edp->cfg->aux_cfg[1], edp->edp + DP_PHY_AUX_CFG1);
->> +	writel(edp->cfg->aux_cfg[2], edp->edp + DP_PHY_AUX_CFG2);
->> +	writel(edp->cfg->aux_cfg[3], edp->edp + DP_PHY_AUX_CFG3);
->> +	writel(edp->cfg->aux_cfg[4], edp->edp + DP_PHY_AUX_CFG4);
->> +	writel(edp->cfg->aux_cfg[5], edp->edp + DP_PHY_AUX_CFG5);
->> +	writel(edp->cfg->aux_cfg[6], edp->edp + DP_PHY_AUX_CFG6);
->> +	writel(edp->cfg->aux_cfg[7], edp->edp + DP_PHY_AUX_CFG7);
->> +	writel(edp->cfg->aux_cfg[8], edp->edp + DP_PHY_AUX_CFG8);
->> +	writel(edp->cfg->aux_cfg[9], edp->edp + DP_PHY_AUX_CFG9);
->>   
->>   	writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
->>   	       PHY_AUX_SYNC_ERR_MASK | PHY_AUX_ALIGN_ERR_MASK |
->> @@ -519,16 +521,19 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
+>>          struct qcom_edp *edp = phy_get_drvdata(phy);
+>> @@ -520,6 +559,13 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
+>>          .com_configure_ssc      = qcom_edp_com_configure_ssc_v4,
 >>   };
->>   
+>>
+>> +static const struct qcom_edp_phy_cfg sa8775p_dp_phy_cfg = {
+>> +       .is_edp = false,
+>> +       .aux_cfg = edp_phy_aux_cfg_v5,
+>> +       .swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
+>> +       .ver_ops = &qcom_edp_phy_ops_v4,
+>> +};
+>> +
 >>   static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
->> +	.aux_cfg = edp_phy_aux_cfg_v4,
->>   	.ver_ops = &qcom_edp_phy_ops_v4,
->>   };
->>   
->>   static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
->> +	.aux_cfg = edp_phy_aux_cfg_v4,
->>   	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
->>   	.ver_ops = &qcom_edp_phy_ops_v4,
->>   };
->>   
->>   static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
->>   	.is_edp = true,
->> +	.aux_cfg = edp_phy_aux_cfg_v4,
->>   	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg,
->>   	.ver_ops = &qcom_edp_phy_ops_v4,
->>   };
->> @@ -707,6 +712,7 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
->>   };
->>   
->>   static struct qcom_edp_phy_cfg x1e80100_phy_cfg = {
->> +	.aux_cfg = edp_phy_aux_cfg_v4,
->>   	.swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
->>   	.ver_ops = &qcom_edp_phy_ops_v6,
->>   };
->> -- 
+>>          .aux_cfg = edp_phy_aux_cfg_v4,
+>>          .ver_ops = &qcom_edp_phy_ops_v4,
+>> @@ -1114,6 +1160,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
+>>   }
+>>
+>>   static const struct of_device_id qcom_edp_phy_match_table[] = {
+>> +       { .compatible = "qcom,sa8775p-edp-phy", .data = &sa8775p_dp_phy_cfg, },
+>>          { .compatible = "qcom,sc7280-edp-phy", .data = &sc7280_dp_phy_cfg, },
+>>          { .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
+>>          { .compatible = "qcom,sc8280xp-dp-phy", .data = &sc8280xp_dp_phy_cfg, },
+>> --
 >> 2.17.1
 >>
+>
 
 -- 
 linux-phy mailing list
