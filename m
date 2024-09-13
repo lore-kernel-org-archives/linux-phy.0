@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCBA5FA3732
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 08:37:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFBAFFA3730
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 08:38:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=v9PnIy5Jn4Fk2LQroPwQ4t+ffDwdsUckRSBDB4GyrM4=; b=lLhkdne+2DgZCS
-	n17S/4g1sTYVhhCwFYC02beln5U4G2Bomwptxh+vkxUxv1y7wLLptGAxCXrBDZ8QcqtO69V087+Ro
-	OCCMZ8a8r3n4AYRJoGfZGQj4v8UWl4x3dmRw2wkb99ar2+WqO7Va8rIBLM0pdk8a6GhVnhjOVY7wW
-	37NF9KQAGnI6CAvSE3/R+tsoCKUZpnVdhGiUx+1Ywb9zywcZehza3Xm5RLnaNl3Es6N4lX0oEYFV/
-	WSkQ5KNdIxQNUTP5PKwZEr/vl1fPtKfTLineoht+jRWu/tTfIVDn7X4Ivdls7edl3Pz5o32orwxNd
-	QEUxV/YvNnGYCI6y9t9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y2eGHSbb/NBmOriObGfpOqwSsuWCqzPBhjjsCisKj3E=; b=pxnqx3f7yJlt1d
+	ikI+wZ7pMY3rVfJQ52JFAdF3U4iWOL93KXnOF4P2r1GVD9HMrfCulP4i5X0NRsgHJpiTdF2e2c8mF
+	kruR2/JVf1en5oWpkf26JVms6tawVHoXJVK92xEbz2370GkuBV0106/mer22vBlYky6kkHwKX9XPa
+	qt7Ao53QXkaFlsG8+4BylxiujfodTqq4e/q6EUowIDpWVhQ3o8Ak/vu+px6uckJlfmuFVAv85TjAY
+	hZi0h0VxEWelE0AOeD+UX8qyojciz91KVkT0RwWQa4Net0SgqrYxyZjw6ivy51NP7D8zi9wFb9CUw
+	QHwfxjivCokJWwifbjog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sp1oS-0000000FMqU-1Spw;
-	Fri, 13 Sep 2024 08:37:56 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1sp1oZ-0000000FMtT-1Nlb;
+	Fri, 13 Sep 2024 08:38:03 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sp1oE-0000000FMma-1Pfx
+	id 1sp1oG-0000000FMnG-3Ega
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Sep 2024 08:37:52 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48CMBb7v018913;
-	Fri, 13 Sep 2024 08:37:28 GMT
+	Fri, 13 Sep 2024 08:38:02 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48CMBNi2025957;
+	Fri, 13 Sep 2024 08:37:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=Pds7CggsUh1Rn6FKGi339ydI1uZXqwenFix
-	dciKo4T4=; b=Lld+RusjUiG9krtmKEH5WPHJkLGULVSh59rk3FmZ+Q3a1PX0b7s
-	7a7hZPRgLu4zGwtuSloUVMkCcpVJGA2VQ0g/n/x2xciHG5RbOjVfb1UaWlhFcyxC
-	56oNfZNefSpzxs8DsftteHCbBzm2KVS/PeHbwAdbsiaDsN/a86PAfbT2YBECCsUH
-	7G4CpLr4PjeN/rW2BuJyTCFq2r6bTvMUak3FKXo4RWAvshUj2foB5/1K+xI9SRqW
-	tCkutiI9ZYTHPaablSDzoBXYPOtWYteQRuhcjCbCbvPDHEjwTQsqeaOTpYCOyewm
-	Wjxd3WMpUfYGNJUKLbXDTZ21gPNOopVFWzQ==
-Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41j6gn4b9k-1
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=L6o39Eh8+0T
+	Sfl/Z0mrOZpm02L0Avavu7L6sO/yLHW0=; b=E4c8p2FbZXPmLp000D20FNMIlSR
+	RcFH5Op5thJzQOex4Le1KDjr52+2goVscGtkmACE+Dr0Hpe7Nz81ykrfUNXcIAha
+	9/3phXHEd8+5WlJweuAnrlb4/b2eUUmWmp+h3WTxhZ+xMTmhfsVBUgCwBEuBfbPL
+	qBCzbSE5iDIDLsWvFK5QIIB5i26pUBl4wpfNgo8owuyG4soSMjk9O5k9GBi6//KT
+	5GUG7fnYEItftOnl/tQuBvwP9tiB8WXt9yaA6j3R5HuDPxM8MT4K4WXmPELgf/j3
+	V1a1y66hAbUacjNTQ+H8Kj1sTNf0liXemVJx1JMgBx6U3knoXa+mMAtUVbw==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41gy8p84x8-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Sep 2024 08:37:27 +0000 (GMT)
-Received: from pps.filterd (NALASPPMTA02.qualcomm.com [127.0.0.1])
-	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 48D7n725006336;
-	Fri, 13 Sep 2024 08:37:26 GMT
+	Fri, 13 Sep 2024 08:37:32 +0000 (GMT)
+Received: from pps.filterd (NALASPPMTA04.qualcomm.com [127.0.0.1])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 48D8VCRG027584;
+	Fri, 13 Sep 2024 08:37:31 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by NALASPPMTA02.qualcomm.com (PPS) with ESMTPS id 41kwufrfe7-1
+	by NALASPPMTA04.qualcomm.com (PPS) with ESMTPS id 41ky3cqtu8-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Sep 2024 08:37:26 +0000
-Received: from NALASPPMTA02.qualcomm.com (NALASPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 48D8Y5eu005428;
-	Fri, 13 Sep 2024 08:37:26 GMT
+	Fri, 13 Sep 2024 08:37:31 +0000
+Received: from NALASPPMTA04.qualcomm.com (NALASPPMTA04.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 48D8bVtg002953;
+	Fri, 13 Sep 2024 08:37:31 GMT
 Received: from hu-devc-lv-u22-c.qualcomm.com (hu-qianyu-lv.qualcomm.com [10.81.25.114])
-	by NALASPPMTA02.qualcomm.com (PPS) with ESMTPS id 48D8bPng010338
+	by NALASPPMTA04.qualcomm.com (PPS) with ESMTPS id 48D8bUD5002952
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Sep 2024 08:37:26 +0000
+	Fri, 13 Sep 2024 08:37:31 +0000
 Received: by hu-devc-lv-u22-c.qualcomm.com (Postfix, from userid 4098150)
-	id 9FB6954F; Fri, 13 Sep 2024 01:37:25 -0700 (PDT)
+	id DB52C54F; Fri, 13 Sep 2024 01:37:30 -0700 (PDT)
 From: Qiang Yu <quic_qianyu@quicinc.com>
 To: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
         robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
@@ -70,28 +70,30 @@ Cc: dmitry.baryshkov@linaro.org, kw@linux.com, lpieralisi@kernel.org,
         linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
         linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
         linux-clk@vger.kernel.org, Qiang Yu <quic_qianyu@quicinc.com>
-Subject: [PATCH v2 0/5] Add support for PCIe3 on x1e80100
-Date: Fri, 13 Sep 2024 01:37:19 -0700
-Message-Id: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
+Subject: [PATCH v2 5/5] arm64: dts: qcom: x1e80100: Add support for PCIe3 on x1e80100
+Date: Fri, 13 Sep 2024 01:37:24 -0700
+Message-Id: <20240913083724.1217691-6-quic_qianyu@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
+References: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
 X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: btvZkKFNgB4xeuw285RWP8WZ9UwYZqrk
-X-Proofpoint-GUID: btvZkKFNgB4xeuw285RWP8WZ9UwYZqrk
+X-Proofpoint-GUID: vrEy8n95ObxzviPKwNmzSlBjd8pTQ01P
+X-Proofpoint-ORIG-GUID: vrEy8n95ObxzviPKwNmzSlBjd8pTQ01P
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 adultscore=0
- clxscore=1015 phishscore=0 mlxlogscore=932 lowpriorityscore=0
- suspectscore=0 mlxscore=0 priorityscore=1501 malwarescore=0 bulkscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 clxscore=1015
+ impostorscore=0 mlxscore=0 bulkscore=0 suspectscore=0 priorityscore=1501
+ mlxlogscore=999 lowpriorityscore=0 adultscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2408220000 definitions=main-2409130059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240913_013742_413917_71CC4704 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20240913_013744_957794_83EBEF6E 
+X-CRM114-Status: GOOD (  12.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,47 +110,234 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series add support for PCIe3 on x1e80100.
+Describe PCIe3 controller and PHY. Also add required system resources like
+regulators, clocks, interrupts and registers configuration for PCIe3.
 
-PCIe3 needs additional set of clocks, regulators and new set of PCIe QMP
-PHY configuration compare other PCIe instances on x1e80100. Hence add
-required resource configuration and usage for PCIe3.
+Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+---
+ arch/arm64/boot/dts/qcom/x1e80100.dtsi | 202 ++++++++++++++++++++++++-
+ 1 file changed, 201 insertions(+), 1 deletion(-)
 
-v2->v1:
-1. Squash [PATCH 1/8], [PATCH 2/8],[PATCH 3/8] into one patch and make the
-   indentation consistent.
-2. Put dts patch at the end of the patchset.
-3. Put dt-binding patch at the first of the patchset.
-4. Add a new patch where opp-table is added in dt-binding to avoid dtbs
-   checking error.
-5. Remove GCC_PCIE_3_AUX_CLK, RPMH_CXO_CLK, put in TCSR_PCIE_8L_CLKREF_EN
-   as ref.
-6. Remove lane_broadcasting.
-7. Add 64 bit bar, Remove GCC_PCIE_3_PIPE_CLK_SRC, 
-   GCC_CFG_NOC_PCIE_ANOC_SOUTH_AHB_CLK is changed to
-   GCC_CFG_NOC_PCIE_ANOC_NORTH_AHB_CLK.
-8. Add Reviewed-by tag.
-9. Remove [PATCH 7/8], [PATCH 8/8].
-
-Qiang Yu (5):
-  dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100
-    QMP PCIe PHY Gen4 x8
-  dt-bindings: PCI: qcom: Add OPP table for X1E80100
-  phy: qcom: qmp: Add phy register and clk setting for x1e80100 PCIe3
-  clk: qcom: gcc-x1e80100: Fix halt_check for pipediv2 clocks
-  arm64: dts: qcom: x1e80100: Add support for PCIe3 on x1e80100
-
- .../bindings/pci/qcom,pcie-x1e80100.yaml      |   4 +
- .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |   3 +
- arch/arm64/boot/dts/qcom/x1e80100.dtsi        | 202 ++++++++++++++++-
- drivers/clk/qcom/gcc-x1e80100.c               |  10 +-
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 211 ++++++++++++++++++
- .../qualcomm/phy-qcom-qmp-pcs-pcie-v6_30.h    |  25 +++
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_30.h |  19 ++
- 7 files changed, 468 insertions(+), 6 deletions(-)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_30.h
- create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_30.h
-
+diff --git a/arch/arm64/boot/dts/qcom/x1e80100.dtsi b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
+index a36076e3c56b..a7703e4974a6 100644
+--- a/arch/arm64/boot/dts/qcom/x1e80100.dtsi
++++ b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
+@@ -744,7 +744,7 @@ gcc: clock-controller@100000 {
+ 
+ 			clocks = <&bi_tcxo_div2>,
+ 				 <&sleep_clk>,
+-				 <0>,
++				 <&pcie3_phy>,
+ 				 <&pcie4_phy>,
+ 				 <&pcie5_phy>,
+ 				 <&pcie6a_phy>,
+@@ -2907,6 +2907,206 @@ mmss_noc: interconnect@1780000 {
+ 			#interconnect-cells = <2>;
+ 		};
+ 
++		pcie3: pci@1bd0000 {
++			device_type = "pci";
++			compatible = "qcom,pcie-x1e80100";
++			reg = <0 0x01bd0000 0 0x3000>,
++			      <0 0x78000000 0 0xf1d>,
++			      <0 0x78000f40 0 0xa8>,
++			      <0 0x78001000 0 0x1000>,
++			      <0 0x78100000 0 0x100000>,
++			      <0 0x01bd3000 0 0x1000>;
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config",
++				    "mhi";
++			#address-cells = <3>;
++			#size-cells = <2>;
++			ranges = <0x01000000 0x0 0x00000000 0x0 0x78200000 0x0 0x100000>,
++				 <0x02000000 0x0 0x78300000 0x0 0x78300000 0x0 0x3d00000>,
++				 <0x03000000 0x7 0x40000000 0x7 0x40000000 0x0 0x40000000>;
++			bus-range = <0x00 0xff>;
++
++			dma-coherent;
++
++			linux,pci-domain = <3>;
++			num-lanes = <8>;
++
++			interrupts = <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 769 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 836 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 671 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 218 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi0",
++					  "msi1",
++					  "msi2",
++					  "msi3",
++					  "msi4",
++					  "msi5",
++					  "msi6",
++					  "msi7";
++
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &intc 0 0 0 220 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &intc 0 0 0 221 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &intc 0 0 0 237 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &intc 0 0 0 238 IRQ_TYPE_LEVEL_HIGH>;
++
++			clocks = <&gcc GCC_PCIE_3_AUX_CLK>,
++				 <&gcc GCC_PCIE_3_CFG_AHB_CLK>,
++				 <&gcc GCC_PCIE_3_MSTR_AXI_CLK>,
++				 <&gcc GCC_PCIE_3_SLV_AXI_CLK>,
++				 <&gcc GCC_PCIE_3_SLV_Q2A_AXI_CLK>,
++				 <&gcc GCC_CFG_NOC_PCIE_ANOC_NORTH_AHB_CLK>,
++				 <&gcc GCC_CNOC_PCIE_NORTH_SF_AXI_CLK>;
++			clock-names = "aux",
++				      "cfg",
++				      "bus_master",
++				      "bus_slave",
++				      "slave_q2a",
++				      "noc_aggr",
++				      "cnoc_sf_axi";
++
++			assigned-clocks = <&gcc GCC_PCIE_3_AUX_CLK>;
++			assigned-clock-rates = <19200000>;
++
++			interconnects = <&pcie_south_anoc MASTER_PCIE_3 QCOM_ICC_TAG_ALWAYS
++					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
++					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
++					 &cnoc_main SLAVE_PCIE_3 QCOM_ICC_TAG_ALWAYS>;
++			interconnect-names = "pcie-mem",
++					     "cpu-pcie";
++
++			resets = <&gcc GCC_PCIE_3_BCR>,
++				 <&gcc GCC_PCIE_3_LINK_DOWN_BCR>;
++			reset-names = "pci",
++				      "link_down";
++
++			power-domains = <&gcc GCC_PCIE_3_GDSC>;
++
++			phys = <&pcie3_phy>;
++			phy-names = "pciephy";
++
++			operating-points-v2 = <&pcie3_opp_table>;
++
++			status = "disabled";
++
++			pcie3_opp_table: opp-table {
++				compatible = "operating-points-v2";
++
++				/* GEN 1 x1 */
++				opp-2500000 {
++					opp-hz = /bits/ 64 <2500000>;
++					required-opps = <&rpmhpd_opp_low_svs>;
++					opp-peak-kBps = <250000 1>;
++				};
++
++				/* GEN 1 x2 and GEN 2 x1 */
++				opp-5000000 {
++					opp-hz = /bits/ 64 <5000000>;
++					required-opps = <&rpmhpd_opp_low_svs>;
++					opp-peak-kBps = <500000 1>;
++				};
++
++				/* GEN 1 x4 and GEN 2 x2 */
++				opp-10000000 {
++					opp-hz = /bits/ 64 <10000000>;
++					required-opps = <&rpmhpd_opp_low_svs>;
++					opp-peak-kBps = <1000000 1>;
++				};
++
++				/* GEN 1 x8 and GEN 2 x4 */
++				opp-20000000 {
++					opp-hz = /bits/ 64 <20000000>;
++					required-opps = <&rpmhpd_opp_low_svs>;
++					opp-peak-kBps = <2000000 1>;
++				};
++
++				/* GEN 2 x8 */
++				opp-40000000 {
++					opp-hz = /bits/ 64 <40000000>;
++					required-opps = <&rpmhpd_opp_low_svs>;
++					opp-peak-kBps = <4000000 1>;
++				};
++
++				/* GEN 3 x1 */
++				opp-8000000 {
++					opp-hz = /bits/ 64 <8000000>;
++					required-opps = <&rpmhpd_opp_svs>;
++					opp-peak-kBps = <984500 1>;
++				};
++
++				/* GEN 3 x2 and GEN 4 x1 */
++				opp-16000000 {
++					opp-hz = /bits/ 64 <16000000>;
++					required-opps = <&rpmhpd_opp_svs>;
++					opp-peak-kBps = <1969000 1>;
++				};
++
++				/* GEN 3 x4 and GEN 4 x2 */
++				opp-32000000 {
++					opp-hz = /bits/ 64 <32000000>;
++					required-opps = <&rpmhpd_opp_svs>;
++					opp-peak-kBps = <3938000 1>;
++				};
++
++				/* GEN 3 x8 and GEN 4 x4 */
++				opp-64000000 {
++					opp-hz = /bits/ 64 <64000000>;
++					required-opps = <&rpmhpd_opp_svs>;
++					opp-peak-kBps = <7876000 1>;
++				};
++
++				/* GEN 4 x8 */
++				opp-128000000 {
++					opp-hz = /bits/ 64 <128000000>;
++					required-opps = <&rpmhpd_opp_svs>;
++					opp-peak-kBps = <15753000 1>;
++				};
++			};
++		};
++
++		pcie3_phy: phy@1be0000 {
++			compatible = "qcom,x1e80100-qmp-gen4x8-pcie-phy";
++			reg = <0 0x01be0000 0 0x10000>;
++
++			clocks = <&gcc GCC_PCIE_3_PHY_AUX_CLK>,
++				 <&gcc GCC_PCIE_3_CFG_AHB_CLK>,
++				 <&tcsr TCSR_PCIE_8L_CLKREF_EN>,
++				 <&gcc GCC_PCIE_3_PHY_RCHNG_CLK>,
++				 <&gcc GCC_PCIE_3_PIPE_CLK>,
++				 <&gcc GCC_PCIE_3_PIPEDIV2_CLK>;
++			clock-names = "aux",
++				      "cfg_ahb",
++				      "ref",
++				      "rchng",
++				      "pipe",
++				      "pipediv2";
++
++			resets = <&gcc GCC_PCIE_3_PHY_BCR>,
++				 <&gcc GCC_PCIE_3_NOCSR_COM_PHY_BCR>;
++			reset-names = "phy",
++				      "phy_nocsr";
++
++			assigned-clocks = <&gcc GCC_PCIE_3_PHY_RCHNG_CLK>;
++			assigned-clock-rates = <100000000>;
++
++			power-domains = <&gcc GCC_PCIE_3_PHY_GDSC>;
++
++			#clock-cells = <0>;
++			clock-output-names = "pcie3_pipe_clk";
++
++			#phy-cells = <0>;
++
++			status = "disabled";
++		};
++
+ 		pcie6a: pci@1bf8000 {
+ 			device_type = "pci";
+ 			compatible = "qcom,pcie-x1e80100";
 -- 
 2.34.1
 
