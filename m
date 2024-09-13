@@ -4,83 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 602D6EEEC08
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 04:46:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EF24FA372B
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 08:37:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QNFZhbQPWvwwvzlOmDZyJGoAY+9pJI8LC1jA7zJfumY=; b=KflyZeuMt1flN/
-	PDE/vAWU5A7DW8/zazYmpXIMTttlj8q8shxx925oeU9qvEg5hcI/fe4HShNBkkNx2+UXeoH5Ni4ov
-	P8Voq6UksmaEYxz4TMPy8bK00Z4yZqUFT6NyBX+9glyG7Bx9oWIQ1xZlamajr67CLbaaGgqofMkaV
-	8y4WVIaiUHtz3SAOWikb+rmZpCLwqCDeiz1dewFY+zUSxjrC4+U3vxCabqZoiQL3iLS8r2iXImCxi
-	7ZdX4j20pycLxNVGfxHOByNu+brYZWk2HnOSYRm43upRo+xBPJk0NMrQngH4lsRY9wLBHFXPg4IfK
-	KroNzMcQPFPzOmmQe9fA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FYI1PB9k+LtlLqyjfAtk2QNCVtw5Qdl+6K0/uPAXmsw=; b=lkyg1r1/GZ3Y2D
+	I5Jz/9uNicSsZ3mOYLvSlNe3h8lty21lT2yLKfhlgdOu89WMRn/dlIOvT6p4edq5NhNDFpYC6NY+D
+	0GmL+3dRH7u12/6E7/hOX9ddauIhV9/ul8bvUJR7qS3V5w9tgR6VCWXpgUKJp5oP/Pw63fFGJ8HCG
+	9wlO8AJr/jQhuRDi0aVJZzb7HWiS5dxmQxQV7HQTiuDDfoXLcwjuezBpDOwrb9amOw7MVDVg54lSC
+	TnCQAFRewrIXL38veB3GapwNiQXbrXr1vCermVR8r2Vg/qw85vqcgwOLlTaMrbe+i6+R1D73divkr
+	NXWFDfwWIS9yaXYvYksw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soyCB-0000000EvXa-3iDj;
-	Fri, 13 Sep 2024 04:46:11 +0000
-Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
+	id 1sp1oF-0000000FMmq-0Ftu;
+	Fri, 13 Sep 2024 08:37:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soyC6-0000000EvWj-3YtA
+	id 1sp1oC-0000000FMlQ-2L6V
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Sep 2024 04:46:10 +0000
-Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-5bf01bdaff0so577809a12.3
-        for <linux-phy@lists.infradead.org>; Thu, 12 Sep 2024 21:46:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1726202764; x=1726807564; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=dvjMZVYW6cr2cJF7xCG4RzHVN0FtN4ELeVl4OFEmIT0=;
-        b=ZJEiN/waE3aSqHaXW0YJ7R7IJe7xFaz7whpPHfD6It6MpNxY/VSsJJtSpHzgTkKukY
-         DrBnnFcVUcwVmnqPzEen3ya912y6HAhM2DY4XL+P6XTHhOgBElOT1dV3IvXN81U7lQIq
-         rxhUxHP8tWo48tsmUJPui7zLS5z79+n3S13HubYOZTdKrIyYb32FA1LfXVxzadCb7ft2
-         sDzugrztaVlq9T0nO22WuH1FqYlWbZSV015HXw05ygKVxElFKIvFAAht99X09OdQ5ft1
-         yI2lBZZvdSrAR7bFOtxYsOhKpTHg49LINw7F+cQW8ezkyjLVaA4MJ2+2CZ2TcZDOP1sB
-         Z0lQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726202764; x=1726807564;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=dvjMZVYW6cr2cJF7xCG4RzHVN0FtN4ELeVl4OFEmIT0=;
-        b=T+QSoTvyTYZewyBe/W4pz8fZiq/FAoc9tZ5F+zTmc8fMaFxonfectGR9djwgAL7CtV
-         6LHaaAJxQi3AoHDViyjMaqV5hNlYJ6huYYg8Q3g+K52Cr7HAuy2DlhoohLu78mR6EwWo
-         LPIxjohY7HZpeFXVFyyNOWcADFt/tlOfuZuwwMpCJztpqVQGcclv1FtarcOGDLLNrk7x
-         bTFBsdJezp2j5/DeQNSVWzySpQbeJqWI3lWtssgC7q8IzrFUdVVQWIRBjufvCbOjmh3n
-         pUBDsr8jf65oZ3zJOEgO+ED5A++a9CYXEvWE0qtrJeuxpAlDq6GqRN+MXy+n4ld34ok4
-         XDJA==
-X-Forwarded-Encrypted: i=1; AJvYcCUy6BKmE+EF7WqxiVKtD83vz0sedlzvbnnCBZvbj6PvvZGYX/dka+OQPsHGYlmgle/LxcGo5uNG1lQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx9+75APZtUJHhYDD/0VhLLlYvO72KO+qsyUPScgUQmKOTfmltE
-	P8ktrO1uM+TJrdjFfgS4kR2g2609JB36EMWn8AuqT6/lxKmZhKKG
-X-Google-Smtp-Source: AGHT+IFfaAVy51H5u5apm3I4pEWfaWlpFB7z2h8ZgkGGlzxqpBzd+BWSTMcvBDQo5Qs5g+lQ/sfDhQ==
-X-Received: by 2002:a05:6402:2b8f:b0:5c4:8ac:ff80 with SMTP id 4fb4d7f45d1cf-5c41e2ada81mr1139349a12.33.1726202764181;
-        Thu, 12 Sep 2024 21:46:04 -0700 (PDT)
-Received: from localhost.lan (031011218106.poznan.vectranet.pl. [31.11.218.106])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5c3ebd76fc4sm7303468a12.78.2024.09.12.21.46.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Sep 2024 21:46:03 -0700 (PDT)
-From: =?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <zajec5@gmail.com>
-To: Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Jeff Johnson <quic_jjohnson@quicinc.com>,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	=?UTF-8?q?Rafa=C5=82=20Mi=C5=82ecki?= <rafal@milecki.pl>
-Subject: [PATCH 1/2] dt-bindings: phy: bcm-ns-usb2-phy: drop deprecated variant
-Date: Fri, 13 Sep 2024 06:45:56 +0200
-Message-Id: <20240913044557.28315-1-zajec5@gmail.com>
-X-Mailer: git-send-email 2.35.3
+	Fri, 13 Sep 2024 08:37:41 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48CMB68u020730;
+	Fri, 13 Sep 2024 08:37:28 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=0zWQWW9TNJ9
+	Sn1C1qDnP8DxQDrJcZ3+8W8Ddo3zIAao=; b=I2kLogiE3Z9kr8gyjfRIqwP5LRZ
+	jEzl7CLc6Tlhfx4d5GS0tgnojk6RDFW5jCWejUzcaDqKkoyt1LLhrMDbd6sFT2O/
+	LGkcfxlKD1CJFUz5ZSTQ8NOhF3PaRz5aTedBBSLD+cmxdZ1LAwFjeqDATxFCPzdr
+	mzCcMt3aemwFBpMAc5LL3VfmsQygMXb1m5WIXGhkkAukMd1Jm0+l4tbWYZYN2Llt
+	lZVL8+TCngW9KtzeTUlzWQrlcv4plNUnK/C7xP3MLlS7XWqbFvV0HDDOPQtwfHp9
+	fChPP4wNwbwOYMJx2K+EZcyoX5v1kGkwV7sDSPKiG1s9i5/gWVv0D4+JZCA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41gy6pg0y6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 13 Sep 2024 08:37:27 +0000 (GMT)
+Received: from pps.filterd (NALASPPMTA02.qualcomm.com [127.0.0.1])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 48D8SeFo030866;
+	Fri, 13 Sep 2024 08:37:26 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by NALASPPMTA02.qualcomm.com (PPS) with ESMTPS id 41kwufrfe9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 13 Sep 2024 08:37:26 +0000
+Received: from NALASPPMTA02.qualcomm.com (NALASPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 48D8SUh9030703;
+	Fri, 13 Sep 2024 08:37:26 GMT
+Received: from hu-devc-lv-u22-c.qualcomm.com (hu-qianyu-lv.qualcomm.com [10.81.25.114])
+	by NALASPPMTA02.qualcomm.com (PPS) with ESMTPS id 48D8bQ9u010340
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 13 Sep 2024 08:37:26 +0000
+Received: by hu-devc-lv-u22-c.qualcomm.com (Postfix, from userid 4098150)
+	id 3A865663; Fri, 13 Sep 2024 01:37:26 -0700 (PDT)
+From: Qiang Yu <quic_qianyu@quicinc.com>
+To: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+        robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
+        sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
+        quic_devipriy@quicinc.com
+Cc: dmitry.baryshkov@linaro.org, kw@linux.com, lpieralisi@kernel.org,
+        neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-clk@vger.kernel.org, Qiang Yu <quic_qianyu@quicinc.com>
+Subject: [PATCH v2 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100 QMP PCIe PHY Gen4 x8
+Date: Fri, 13 Sep 2024 01:37:20 -0700
+Message-Id: <20240913083724.1217691-2-quic_qianyu@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
+References: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: fJfrjy5n4_kP5R8x9f2aU76L7jxz5F1Q
+X-Proofpoint-GUID: fJfrjy5n4_kP5R8x9f2aU76L7jxz5F1Q
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
+ bulkscore=0 lowpriorityscore=0 mlxlogscore=999 spamscore=0 phishscore=0
+ impostorscore=0 suspectscore=0 mlxscore=0 malwarescore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2409130059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240912_214606_918001_53468662 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20240913_013740_623401_0DBC5207 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,41 +106,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogUmFmYcWCIE1pxYJlY2tpIDxyYWZhbEBtaWxlY2tpLnBsPgoKVGhlIG9sZCBiaW5kaW5n
-IHZhcmlhbnQgKHRoZSBvbmUgY292ZXJpbmcgd2hvbGUgRE1VIGJsb2NrKSB3YXMKZGVwcmVjYXRl
-ZCAzIHllYXJzIGFnby4gTGludXgga2VybmVsIHdhcyB3YXJuaW5nIHdoZW4gdXNpbmcgaXQgZm9y
-CnNpbWlsYXIgYW1vdW50IG9mIHRpbWUuCgpUaGVyZSBhcmVuJ3QgYW55IGtub3duIE5vcnRoc3Rh
-ciBkZXZpY2VzIHdpdGggYm9vdGxvYWRlciBwcm92aWRpbmcgRFQgdG8Kb3BlcmF0aW5nIHN5c3Rl
-bS4gQWN0dWFsbHkgT3BlbldydCBzZWVtcyB0byBiZSB0aGUgb25seSBwcm9qZWN0IHVzaW5nCnRo
-aXMgYmluZGluZyBhbmQgaXQgYWx3YXlzIGFwcGVuZHMgRFRCIHRvIGtlcm5lbC4gSXQgaGFzIHN3
-aXRjaGVkIHRvIHRoZQpub24tZGVwcmVjYXRlZCBiaW5kaW5nIHllYXJzIGFnby4KCkdpdmVuIHRo
-ZXJlIGlzIGNsb3NlIHRvIHplcm8gY2hhbmNlIHRoaXMgYnJlYWtzIGFueW9uZSdzIHNldHVwIGl0
-IHNob3VsZAptb3JlIHRoYW4gc2FmZSB0byBkcm9wIHRoaXMgYmluZGluZyB2YXJpYW50IGFmdGVy
-IDMgeWVhcnMuCgpTaWduZWQtb2ZmLWJ5OiBSYWZhxYIgTWnFgmVja2kgPHJhZmFsQG1pbGVja2ku
-cGw+Ci0tLQogLi4uL2JpbmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkueWFtbCAgICAgICAgIHwg
-MTkgKysrLS0tLS0tLS0tLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwg
-MTYgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
-bmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy9waHkvYmNtLW5zLXVzYjItcGh5LnlhbWwKaW5kZXggNDI2MTAxNTMwYTIxLi5k
-NzJjMDJhYjU1YWUgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9waHkvYmNtLW5zLXVzYjItcGh5LnlhbWwKKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL3BoeS9iY20tbnMtdXNiMi1waHkueWFtbApAQCAtMTgsMTYgKzE4LDggQEAgcHJv
-cGVydGllczoKICAgICBjb25zdDogYnJjbSxucy11c2IyLXBoeQogCiAgIHJlZzoKLSAgICBhbnlP
-ZjoKLSAgICAgIC0gbWF4SXRlbXM6IDEKLSAgICAgICAgZGVzY3JpcHRpb246IFBIWSBjb250cm9s
-IHJlZ2lzdGVyCi0gICAgICAtIG1heEl0ZW1zOiAxCi0gICAgICAgIGRlc2NyaXB0aW9uOiBpb21l
-bSBhZGRyZXNzIHJhbmdlIG9mIERNVSAoRGV2aWNlIE1hbmFnZW1lbnQgVW5pdCkKLSAgICAgICAg
-ZGVwcmVjYXRlZDogdHJ1ZQotCi0gIHJlZy1uYW1lczoKLSAgICBpdGVtczoKLSAgICAgIC0gY29u
-c3Q6IGRtdQorICAgIG1heEl0ZW1zOiAxCisgICAgZGVzY3JpcHRpb246IFBIWSBjb250cm9sIHJl
-Z2lzdGVyCiAKICAgYnJjbSxzeXNjb24tY2xrc2V0OgogICAgIGRlc2NyaXB0aW9uOiBwaGFuZGxl
-IHRvIHN5c2NvbiBmb3IgY2xrc2V0IHJlZ2lzdGVyCkBAIC01MCwxMiArNDIsNyBAQCByZXF1aXJl
-ZDoKICAgLSBjbG9ja3MKICAgLSBjbG9jay1uYW1lcwogICAtICIjcGh5LWNlbGxzIgotCi1vbmVP
-ZjoKLSAgLSByZXF1aXJlZDoKLSAgICAgIC0gYnJjbSxzeXNjb24tY2xrc2V0Ci0gIC0gcmVxdWly
-ZWQ6Ci0gICAgICAtIHJlZy1uYW1lcworICAtIGJyY20sc3lzY29uLWNsa3NldAogCiBhZGRpdGlv
-bmFsUHJvcGVydGllczogZmFsc2UKIAotLSAKMi4zNS4zCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
-IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+PCIe 3rd instance of X1E80100 support Gen 4x8 which needs different 8 lane
+capable QMP PCIe PHY. Document Gen 4x8 PHY as separate module.
+
+Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+---
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml    | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index dcf4fa55fbba..680ec3113c2b 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -41,6 +41,7 @@ properties:
+       - qcom,x1e80100-qmp-gen3x2-pcie-phy
+       - qcom,x1e80100-qmp-gen4x2-pcie-phy
+       - qcom,x1e80100-qmp-gen4x4-pcie-phy
++      - qcom,x1e80100-qmp-gen4x8-pcie-phy
+ 
+   reg:
+     minItems: 1
+@@ -172,6 +173,7 @@ allOf:
+               - qcom,sc8280xp-qmp-gen3x2-pcie-phy
+               - qcom,sc8280xp-qmp-gen3x4-pcie-phy
+               - qcom,x1e80100-qmp-gen4x4-pcie-phy
++              - qcom,x1e80100-qmp-gen4x8-pcie-phy
+     then:
+       properties:
+         clocks:
+@@ -201,6 +203,7 @@ allOf:
+               - qcom,sm8550-qmp-gen4x2-pcie-phy
+               - qcom,sm8650-qmp-gen4x2-pcie-phy
+               - qcom,x1e80100-qmp-gen4x2-pcie-phy
++              - qcom,x1e80100-qmp-gen4x8-pcie-phy
+     then:
+       properties:
+         resets:
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
