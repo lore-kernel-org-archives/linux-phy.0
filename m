@@ -4,63 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ABB5FC6170
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 18:24:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D8CBFC6172
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 21:24:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Anusv6Wy9Zib2uTDnEoyQGmKh5TH/SPYJLGlJXaJn/c=; b=y7cTNBBRE3jpRWojkN0GCpNxR2
-	g+862R/XjW6ciRTf23v6P5x8cYj45VkReFZz3D7oCwW03ADz0QxqJd+QPz4hrDkbaiSeLXSd6grLR
-	BHoDiLU4SIkq8LV19WT4H5qjCtj0GXZl01IhrDEF6LbB/v3CwbJgUI7gr0jktZL2rWWqUdFvCgbkX
-	ApblVslAoFq0+Nsspl4xPfYbyO0I6xt0eqyHLae6YSgFb+8Sd7bACA7hGYxDWzDwheYdjinOqMUsc
-	NHBZ9BlBdcRgO1ZsqZQrooyVJ9ovuw3ndXPeGdha6nvRtDoQd8T7y0nzWu7U0OFA+f6UJDwH2f8U8
-	IfjOydEQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OzGiW+OWdBFvsn8CKiez/UQpfBU9irKW8113vUqU7Lc=; b=2lhdPC+1bqKLCa
+	u3zFNoVmaYff+NgSRqn5L1VTdkxoe5Yk0AFoTDpo51OZKRK1EmizDWuLuaHquAiQtIEL4bTKeTK98
+	l2be5flQJxyGMt0tnZbHF6KLDViOoyATN839Fppv4gzVCtJHWMkHB7o4O+XwkxwBmItGcjDq4PT3p
+	h6l6Cdw7M69HrJTLJEeTtdkV/aR8Jf/NJPZGUNDcya2AytF5cWcddVeWeYyveqOYBfDaqNuxjgdT5
+	vErc8BE39+XCRT4ZoddqJHQQWRJvnnfXNh9LrpCoa/xiNm8i2nSPzyNhiCYiGwdp5JazQcJeKa/eC
+	36EaJvKP0iTLIBDuSqNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1spAyN-0000000Gnmg-2zdc;
-	Fri, 13 Sep 2024 18:24:47 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1spDmZ-0000000H9hb-2oWG;
+	Fri, 13 Sep 2024 21:24:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1spAyL-0000000Gnll-1tMB
+	id 1spDmX-0000000H9gQ-0iyx
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Sep 2024 18:24:46 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4ABB05C5A9C;
-	Fri, 13 Sep 2024 18:24:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 613EAC4CEC0;
-	Fri, 13 Sep 2024 18:24:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1726251884;
-	bh=iNlKwKpdp2ZsLozJYZ5+b//iKVeh2WfBLezgaI4UM7c=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LHuShvTaDCz+nyy+cYZsSfLfat4WUzaHx69+RG+R0C1T/aCHHa8jhhdA9gHhTKrRJ
-	 y5FTrUnowQkYSslrWiN9339L9ZLgLSeiZ5kIAqmIG0ndhwJgm4xUykvavx7xMBZGGs
-	 wsNw9upMvoejwWM5VAOG8CPrdwuBwGy3W0vmGRyTJAUiB4gsnzXwwEQc+P6ayS+IBy
-	 ZRXuD8zmE1p1GBJBsopYpLVtD+twRNkbdEdjQx1EW8hiwE87+YfiYTphh3noFE8GS2
-	 E3asI79XPDTRkP+iv2tZR/becuEO7sa/zEIhfp5fSJI94JNpRXSCG9pnX29H34KOHG
-	 KL52BWYfQWhDQ==
-Date: Fri, 13 Sep 2024 19:24:40 +0100
-From: Conor Dooley <conor@kernel.org>
-To: =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jeff Johnson <quic_jjohnson@quicinc.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	=?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <rafal@milecki.pl>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: bcm-ns-usb2-phy: drop deprecated
- variant
-Message-ID: <20240913-spiritual-sneeze-7c48a16d2700@spud>
-References: <20240913044557.28315-1-zajec5@gmail.com>
+	Fri, 13 Sep 2024 21:24:46 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48DAMtOY020721;
+	Fri, 13 Sep 2024 21:24:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=tQMAo/P1IflG7nAnXqAA/OEs
+	PpPBcgSWfyxQsLmmhyQ=; b=hPORs8CWJDrsMA5BXP/N68whcDL+nSNB9SPTABw/
+	Acpf8YX9z4OI/G4BLtm/YqqJZ5n0mQDE8XYtDUcaL/h4V0opZB86jsBrzT2Z21YS
+	KqYivrNAg/vJgycnhWJmQh0pVJRoe0n91alO8yeI7HeNRsykQ0sPpfr+3bCgiQWG
+	2kEG9IzsJKmp41YKOgJDkQmvKEmmXxJIW7DHomvcfInzKYbeO7GAGsrOe72JS6fF
+	cBT+86BdIO47aux8VpSObs5MaRnXat1TRfU0FRx80pxUIKP6wqwB7O4OQ/x6POEN
+	eDTqMSsyOZDj+I1cO+oPRvfZF2ybA9PqHhOJR/AvpQvmGA==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41gy6phxea-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 13 Sep 2024 21:24:37 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48DLOZXO020049
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 13 Sep 2024 21:24:35 GMT
+Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Fri, 13 Sep 2024 14:24:35 -0700
+Date: Fri, 13 Sep 2024 14:24:33 -0700
+From: Bjorn Andersson <quic_bjorande@quicinc.com>
+To: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>, <konradybcio@kernel.org>,
+        <andersson@kernel.org>, <simona@ffwll.ch>,
+        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
+        <robdclark@gmail.com>, <quic_abhinavk@quicinc.com>, <sean@poorly.run>,
+        <marijn.suijten@somainline.org>, <airlied@gmail.com>,
+        <daniel@ffwll.ch>, <maarten.lankhorst@linux.intel.com>,
+        <mripard@kernel.org>, <tzimmermann@suse.de>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <quic_khsieh@quicinc.com>,
+        <konrad.dybcio@linaro.org>, <quic_parellan@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+        <quic_riteshk@quicinc.com>, <quic_vproddut@quicinc.com>
+Subject: Re: [PATCH 5/5] drm/msm/dp: Add DisplayPort controller for SA8775P
+Message-ID: <ZuStkRFvwJT7re6D@hu-bjorande-lv.qualcomm.com>
+References: <20240911100813.338-1-quic_mukhopad@quicinc.com>
+ <20240911100813.338-6-quic_mukhopad@quicinc.com>
+ <ZuH3WqMwn7fl3nhh@hu-bjorande-lv.qualcomm.com>
+ <a44a6f08-1f4a-4e5c-a4e4-30ab65c467f7@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <20240913044557.28315-1-zajec5@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <a44a6f08-1f4a-4e5c-a4e4-30ab65c467f7@quicinc.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: g_fwJ9nxwhCCQryUMpJpBLvqMux3AxWq
+X-Proofpoint-GUID: g_fwJ9nxwhCCQryUMpJpBLvqMux3AxWq
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
+ bulkscore=0 lowpriorityscore=0 mlxlogscore=999 spamscore=0 phishscore=0
+ impostorscore=0 suspectscore=0 mlxscore=0 malwarescore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2409130152
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240913_112445_552529_7A9F4E84 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20240913_142445_246687_28914B18 
+X-CRM114-Status: GOOD (  26.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,67 +105,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0412558874570756322=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, Sep 12, 2024 at 03:34:05PM +0530, Soutrik Mukhopadhyay wrote:
+> 
+> On 9/12/2024 1:32 AM, Bjorn Andersson wrote:
+> > On Wed, Sep 11, 2024 at 03:38:13PM +0530, Soutrik Mukhopadhyay wrote:
+> > > The Qualcomm SA8775P platform comes with a DisplayPort controller
+> > > with a different base offset than the previous SoCs,
+> > > add support for this in the DisplayPort driver.
 
---===============0412558874570756322==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="R27qjzCqPLhq9VAn"
-Content-Disposition: inline
+Please check the line wrapping of this as well; the lines here should be
+wrapped at 75 columns.
 
+> > > 
+> > > Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
+> > > ---
+> > >   drivers/gpu/drm/msm/dp/dp_display.c | 7 +++++++
+> > >   1 file changed, 7 insertions(+)
+> > > 
+> > > diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
+> > > index e1228fb093ee..e4954fd99eb0 100644
+> > > --- a/drivers/gpu/drm/msm/dp/dp_display.c
+> > > +++ b/drivers/gpu/drm/msm/dp/dp_display.c
+> > > @@ -118,6 +118,12 @@ struct msm_dp_desc {
+> > >   	bool wide_bus_supported;
+> > >   };
+> > > +static const struct msm_dp_desc sa8775p_dp_descs[] = {
+> > > +	{ .io_start = 0xaf54000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+> > > +	{ .io_start = 0xaf5c000, .id = MSM_DP_CONTROLLER_1, .wide_bus_supported = true },
+> > Why is this list incomplete?
+> > 
+> > Regards,
+> > Bjorn
+> 
+> 
+> Do you mean to add for mdss_1 as well?
+> 
 
---R27qjzCqPLhq9VAn
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I don't see a reason for not submitting them as well.
 
-On Fri, Sep 13, 2024 at 06:45:56AM +0200, Rafa=C5=82 Mi=C5=82ecki wrote:
-> From: Rafa=C5=82 Mi=C5=82ecki <rafal@milecki.pl>
->=20
-> The old binding variant (the one covering whole DMU block) was
-> deprecated 3 years ago. Linux kernel was warning when using it for
-> similar amount of time.
->=20
-> There aren't any known Northstar devices with bootloader providing DT to
-> operating system. Actually OpenWrt seems to be the only project using
-> this binding and it always appends DTB to kernel. It has switched to the
-> non-deprecated binding years ago.
->=20
-> Given there is close to zero chance this breaks anyone's setup it should
-> more than safe to drop this binding variant after 3 years.
+> We only added dp controllers for mdss_0 as we plan to validate and enable
+> only these.
+> 
 
-I love a commit message like this.
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-
-Thanks,
-Conor.
-
---R27qjzCqPLhq9VAn
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZuSDaAAKCRB4tDGHoIJi
-0k0YAP92wBmfRtY6iNbU8/6oouu4H1tJlPi0OczQX+aAQXy8CAD/fHQlTonufz8q
-mRYlzKrkS/rh1bP/4IdYt2TOYdqF4wg=
-=/aR8
------END PGP SIGNATURE-----
-
---R27qjzCqPLhq9VAn--
+As far as I can tell there are 5 DPTX blocks on mdss_0.
 
 
---===============0412558874570756322==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+It is perfectly fine that you just state in the commit message that
+"Only MDSS0 DPTX0 and DPTX1 have been validated", but please add the
+others as well in this commit.
+
+Regards,
+Bjorn
+
+> 
+> > 
+> > > +	{}
+> > > +};
+> > > +
+> > >   static const struct msm_dp_desc sc7180_dp_descs[] = {
+> > >   	{ .io_start = 0x0ae90000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+> > >   	{}
+> > > @@ -162,6 +168,7 @@ static const struct msm_dp_desc x1e80100_dp_descs[] = {
+> > >   };
+> > >   static const struct of_device_id dp_dt_match[] = {
+> > > +	{ .compatible = "qcom,sa8775p-dp", .data = &sa8775p_dp_descs },
+> > >   	{ .compatible = "qcom,sc7180-dp", .data = &sc7180_dp_descs },
+> > >   	{ .compatible = "qcom,sc7280-dp", .data = &sc7280_dp_descs },
+> > >   	{ .compatible = "qcom,sc7280-edp", .data = &sc7280_dp_descs },
+> > > -- 
+> > > 2.17.1
+> > > 
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0412558874570756322==--
-
