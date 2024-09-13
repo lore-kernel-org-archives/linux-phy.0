@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F91FEEE26C
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 12:31:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0882FA374A
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 12:35:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bMZAnl/atP6iGSVV4V+ihKoamM+km0XchKFBcUqrcTI=; b=4CKeDHfBToo2DN
-	gVnrifDrlSqgPl3vqgKDfwgAdEtfgWtjqdqLyKe1t1JELYU8dI0OiTutaC30/Rxv2vfL2O/sh5qj6
-	ffaR5exqwk1fsSSNjoBXgM88fRucif9D3rQMgdFIg7N16Jt0fubSrcYdEMQ8vQtAYW/r54ZhL2T6K
-	Sac44WmfSynnqmnIfDwhlQpf8kNRGpH3vzmAJlhg91JDtkMX6mPOr9jwwGveBvKxgahTTO6D/vznz
-	Y2ISrwcUDa6OeD26/PYPIh1ec1eJ0VRK0xPPilGm6qI2aZS4lR6rfYfhNL8u8U7RuWior3PT0Yh3y
-	HHngsQexX4ghmJfVEXYQ==;
+	List-Owner; bh=IdospbBLp+y32BGK00s/heZzCyFm4OSCelnP6b6ydIs=; b=WMz7VzkZT44OZg
+	4Yd5ykAjuhahgSYNw43FSlSLDg5VXpgNwLrK7W3XI7TJhRoamLaGaHQTZqWqMq/RwES2U4zgmvAUx
+	p2V00PuaG1BB00grO1Mtenc3KxkRJo1/SKnCoDWZMWPVZnv8Ej3jWRd49bopl5eb0hIrk9mK5/miE
+	+wDPoAojK6qqLkNwK5gP4fWBnOkaEJFYXxhk83/gb3vFG7pu7REOgKlC+vWZX6PSMPJGBZD1UBT7E
+	Im5GQVmrOeYr2KOj4lK9Q21FYI8OFWMvCJZ1dniwuSsMsjBcXCkOt8ggMwvwRRSeOZqnGduFApTY7
+	Zdq//LPXoY62bJBOxHyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sp5S7-0000000Fu9S-3Pkh;
-	Fri, 13 Sep 2024 12:31:07 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1sp5WT-0000000Furk-1eje;
+	Fri, 13 Sep 2024 12:35:37 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sp5S5-0000000Fu90-0EOd
+	id 1sp5WR-0000000Fuqz-1Xxi
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Sep 2024 12:31:06 +0000
-Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2f66423686bso20425611fa.3
-        for <linux-phy@lists.infradead.org>; Fri, 13 Sep 2024 05:31:04 -0700 (PDT)
+	Fri, 13 Sep 2024 12:35:36 +0000
+Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-5356aa9a0afso1457943e87.2
+        for <linux-phy@lists.infradead.org>; Fri, 13 Sep 2024 05:35:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1726230663; x=1726835463; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1726230933; x=1726835733; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=7lfIoqIzq7Oaxzbrg6+hyftX0grPutbfuzbJgM78HVI=;
-        b=KxZWwlGUDOwQyz4amcNaUQpbV5azHncEOYj8++UjCHDkuTyCl/Zv/xI2ZQVQX/j/uu
-         d9BsYnZHhNky0KegZRbShKo27qzqLSUK14abRllqmqdX7KbfO2IcmU1Xrks4+zvxBJ0c
-         /4RPe7KParJ1jqZnVNh2V4OW4ZcSC133fApXaVifKYsobGLA1+4XIIrzzfYKQVW/25wq
-         lKCcrx0cr7zBG1DS259zsFkFzvUwyd4JckZHbDoOJAsetaoR0NOcFbaxm8ABQBdR2L1l
-         DLN2JBQi4rkUaBI7aAr2Yo7s5xnVBBxLe5opy2AmPGDk9oa7skrPRNr2aXxWpHe4XwtJ
-         hf3g==
+        bh=MjJZ4X98ntqTWPk6LArQGhPHBOzVXOE82z4DS0YRyYA=;
+        b=sTfhFN6LUXKYAZ2X+1VPl/F2I+hK9CEmsvI/5nWKLU34GWuV4elPIMismZinM3ee47
+         FfozhPwv+g787uF4cARqDa89WoyebveXvSAPeKvMfk1l2HM2n7zbhPINwNzoo48u9t+p
+         eN80PMeb+Lo1TP39ZuWoDgTW5gi1h0bU1EgEvIDAUhXCOQjIk7bVBg3UK0IKnUaXjF3o
+         SUUlaDcvL0dtxvXFULq9egVtVG91m2skXhDf+5my6fCCHXgYjuKUyZIseRCvWvkzT2+f
+         PmIK9JLsCN1uQUbJMc0850kSlGYG1Ife7AZW13qUplt+pPRLnpz8B5EGc+XOl3s+PSXb
+         OLtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726230663; x=1726835463;
+        d=1e100.net; s=20230601; t=1726230933; x=1726835733;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=7lfIoqIzq7Oaxzbrg6+hyftX0grPutbfuzbJgM78HVI=;
-        b=NN1uGLV4kB8B0I7KD0ZR8F8ntcom8hSKXCzTKXUhEn/XskjeowX3rBa+uzyXUAZo6p
-         FXNdu/xV5I+obhVuW75fAQeoqLWdz/y/Mwe3fVIeXaugrffVaFyAQfayL8QRmRU4WIa+
-         YWhOwjnOouvDHwgKf3b9wT8brgGI3kKVOd+5TaigMmXtE8dnVDh0m4ucmBAXeXV9C0/M
-         P+mAECUiA5rOR9E2Vv79WNZvPgLtaxioMnpx2MZtZn6D1Q1YNXGNin3zc0svGZKONIzK
-         1SkZDHu5MggVa0ZMbmHLEKC/2Rywgf1v0Cvj5K7cW1QWNwhCyj/WHTHp6WuTawoWLezy
-         Q2Nw==
-X-Forwarded-Encrypted: i=1; AJvYcCUNBbBtuJ5qEe4PZReBS7QF+B72zYdexg/jnqeUmKPeREnM+V0vZmWVGyBI1aEKGE0SyZC/qyao64c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwhMWvG9qDoelWfq5/1WsYgtQPCik3oEfdyCkl3pcjTCPrFOFU3
-	FUFy/Te5rVnrbzNcGPyipoIpc+JnEULbKzFJzt73V5b6CKeGvTSSEJ/UIQfkVmo=
-X-Google-Smtp-Source: AGHT+IEiDkYAB870ZBn/zctGJmdUhoUk4th5m2Zqgejglsbq0AUhxf7YU//dFZlelqKAMfIRGO7czQ==
-X-Received: by 2002:a2e:619:0:b0:2f6:1da6:1c64 with SMTP id 38308e7fff4ca-2f787f437fdmr24587471fa.45.1726230661896;
-        Fri, 13 Sep 2024 05:31:01 -0700 (PDT)
+        bh=MjJZ4X98ntqTWPk6LArQGhPHBOzVXOE82z4DS0YRyYA=;
+        b=YC20E4CqJb80XI/BcAtHhHDixjvOXu/rR+waH7Q0qHQlfTWzKULZFIBbNPcb2qgShZ
+         OblfrHSb3U2AUd+X2DTfqHFnYS8mSHWChIsx+lsh7Hwpq2nbu0UZwmhEYoEEFFiLxGFW
+         +qCsGlTJc/FMSXIAZyRByWkUVUOro5BO5S643ssrMq5s3fodxCBJqNeewEcAEmWNt31x
+         jeg684q7JNyfGkCaYt+P3avTI3jsjfNjhAOPKPQZbK3AEngqI6R9ttWOZ/o0uWhZwN9F
+         q4JwWLr5FsKgR9Jl0wlAl5yxOQHc/tNIxIdWZLvg9AERoVMBf8+F2sERTWqOZL8w5i5b
+         cQjA==
+X-Forwarded-Encrypted: i=1; AJvYcCW8Tb7AfmXS1N1OSiX7V+P3GxvNqJPPAFTsA5SxRQ4n58GayzYEXtdxs9WuFrEQMhHUjfZ+dtwXNy0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZvL1ymHHK4Frl+pD6lzgpVdutuRTL4bf8g3EZe36hj2eHNqa6
+	A3Su6Jz9yyjZioOFl1rR5uq6VmGKTwEqyiUU2rSzCJvVZqTJZ274+gPwZRQTwfw=
+X-Google-Smtp-Source: AGHT+IHX0DyjU76XALWxmWo1rFtyrXa04JOcs287YwEsi4dcvnoaeAHvh4uSkbpFq6zKRGmVBfQSaQ==
+X-Received: by 2002:a05:6512:1247:b0:533:c9d:a01f with SMTP id 2adb3069b0e04-5367feb95f5mr2113449e87.4.1726230933059;
+        Fri, 13 Sep 2024 05:35:33 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2f75c07c83dsm22040201fa.80.2024.09.13.05.31.01
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5365f914c72sm2257748e87.305.2024.09.13.05.35.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Sep 2024 05:31:01 -0700 (PDT)
-Date: Fri, 13 Sep 2024 15:30:59 +0300
+        Fri, 13 Sep 2024 05:35:32 -0700 (PDT)
+Date: Fri, 13 Sep 2024 15:35:30 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Qiang Yu <quic_qianyu@quicinc.com>
 Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
@@ -72,16 +72,18 @@ Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
 	neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
 	linux-clk@vger.kernel.org
-Subject: Re: [PATCH v2 2/5] dt-bindings: PCI: qcom: Add OPP table for X1E80100
-Message-ID: <tf4z475uqjenohdgqj4ltoty3j3gopxnbdhrrn6zo3ug5yuvyq@us2nysv2ggxh>
+Subject: Re: [PATCH v2 5/5] arm64: dts: qcom: x1e80100: Add support for PCIe3
+ on x1e80100
+Message-ID: <bizip6exhqdm34fhdw7dvqws4oqgexp2f2lp2zxoblqu2zfupi@t33svola3tq4>
 References: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
- <20240913083724.1217691-3-quic_qianyu@quicinc.com>
+ <20240913083724.1217691-6-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240913083724.1217691-3-quic_qianyu@quicinc.com>
+In-Reply-To: <20240913083724.1217691-6-quic_qianyu@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240913_053105_119193_49D4F83D 
-X-CRM114-Status: GOOD (  15.11  )
+X-CRM114-CacheID: sfid-20240913_053535_432557_DCB8E036 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,45 +100,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 13, 2024 at 01:37:21AM GMT, Qiang Yu wrote:
-> Add OPP table so that PCIe is able to adjust power domain performance
-> state and ICC peak bw according to PCIe gen speed and link width.
+On Fri, Sep 13, 2024 at 01:37:24AM GMT, Qiang Yu wrote:
+> Describe PCIe3 controller and PHY. Also add required system resources like
+> regulators, clocks, interrupts and registers configuration for PCIe3.
 > 
 > Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
 > ---
->  Documentation/devicetree/bindings/pci/qcom,pcie-x1e80100.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie-x1e80100.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie-x1e80100.yaml
-> index a9db0a231563..e2d6719ca54d 100644
-> --- a/Documentation/devicetree/bindings/pci/qcom,pcie-x1e80100.yaml
-> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie-x1e80100.yaml
-> @@ -70,6 +70,10 @@ properties:
->        - const: pci # PCIe core reset
->        - const: link_down # PCIe link down reset
->  
-> +  operating-points-v2: true
-> +  opp-table:
-> +    type: object
+>  arch/arm64/boot/dts/qcom/x1e80100.dtsi | 202 ++++++++++++++++++++++++-
+>  1 file changed, 201 insertions(+), 1 deletion(-)
 
-I think these properties are generic enough and we might want to have
-them for most if not all platforms. Maybe we should move them to
-qcom,pcie-common.yaml?
+I didn't verify the addresses, the rest LGTM
 
-Krzysztof, Mani, WDYT?
-
-> +
->  allOf:
->    - $ref: qcom,pcie-common.yaml#
->  
-> -- 
-> 2.34.1
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 With best wishes
