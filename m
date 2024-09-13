@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90597FA3746
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 11:43:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B75BFA3746
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 11:45:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/5+6+P3CRzEsz7KoYO+GIpd+6oLf4YdEN8x9SvCwQgc=; b=Z/AjRqCv/iOzzu
-	DESc57gTv1CmyXuDw2lnvgVUBy55s2DiDq5TE3G2WaON1piA8rvB8Wd0XsJifiXAm1eUYbHFweN1r
-	XsSOtQ7EgFaDeGMXNJ4C19SQ+XHeGzgmfVLT80K7SrUlQegciRmbAGru9g08kLywARyj9ZzQmRjot
-	OeuF/gCF6j23I1H062y5+FR62Kw8SSYningeKPlGspFXtviqRmaqGJMLcnuwuU+8q4NAvtA1YLvUO
-	9hXIJiqfzbK6MkRUaFyVoOp7BwCMaxvxBJcHegheD1mLwVm5j/CIs0AXyrqts4btKsmGW22TuSU5N
-	2LXOsFZgp3k/hESDqSwA==;
+	List-Owner; bh=bcny0qzJ3vzz5FH2HMvqqB0DA7hayRNAWACNIJrlxm8=; b=UgARJRyntLhtsC
+	vpPowXSsVkN3fOxVLzGtc3b1vbgkkMWsXgvcvOD5rcKdWAlCz3EQ3/+y53gp+/NtE+IqobKK9f3Y6
+	7Dm8lWbpp1jAcd9NKwhyR30yILwFKF2Wz53tZKKkli0tag/cBnepgC21gk9IGE+SxpWUOh/ye+pxT
+	Bqw0glLewkfKojR6VeVt6IPv8ik8jIVT1/hZ5oIk6cg77LMkvLejZJR4aGGge4OSLv+uhGLFg3shm
+	6cL7JI5qWR+mWPcFCLoR/07TeYIB4RWJgcMwHUYZIJ4DkCruilAE/BlHr8f4ZhTYJT1WGsrG2Gdj+
+	fxAk1zz3JCFZ3ymNht1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sp4hk-0000000FlzU-0hdu;
-	Fri, 13 Sep 2024 11:43:12 +0000
-Received: from mail-yw1-x112a.google.com ([2607:f8b0:4864:20::112a])
+	id 1sp4jl-0000000FmQJ-3KCv;
+	Fri, 13 Sep 2024 11:45:17 +0000
+Received: from mail-yw1-x112b.google.com ([2607:f8b0:4864:20::112b])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sp4hh-0000000Flyr-20QH
+	id 1sp4io-0000000Fm9q-3PX1
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Sep 2024 11:43:10 +0000
-Received: by mail-yw1-x112a.google.com with SMTP id 00721157ae682-6d49cec2a5dso6580257b3.3
-        for <linux-phy@lists.infradead.org>; Fri, 13 Sep 2024 04:43:08 -0700 (PDT)
+	Fri, 13 Sep 2024 11:44:21 +0000
+Received: by mail-yw1-x112b.google.com with SMTP id 00721157ae682-6daf46ee332so6712407b3.0
+        for <linux-phy@lists.infradead.org>; Fri, 13 Sep 2024 04:44:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1726227788; x=1726832588; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1726227857; x=1726832657; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=9UwhSpacqWbNrpzy9OkkjEtHbhA7k4WWF7GmkMMBnJM=;
-        b=s9ZiEKU8fxELwJiHX/2BUGGQkTUbyOENq5YSkbIGuLW3lqonC5eQRERgIOhvkIIgg/
-         rqg3Otk0CONBxTY881BqyjFsqeYkBwN4zyJeDDhKzc/1jdG0sXA6/U29OwOz/hNg8d0B
-         wk1hQ48Lal6fW+00aInqOGceIXU3JrsX3iL11XDxzQMn/FuSJ77LSG50WuOZcruGAO73
-         LMa9JBVovpQVHUBpJ1ifhgiayab3+Kr2CoCSfn+tnq2EM0G9iCeWS8okpzsE/d7J4fyS
-         rrgTZtrilKnir0PknzO2LauKFTlYG54krbQrym167/PopL7dyoTFjlygi7PHJcAzxdJA
-         f7Rw==
+        bh=bpGVAz7F68gq4K0wsGbVi84hQs0Zw4wJBgelJinUR+M=;
+        b=HcRhMIOLCaLwlY7OeO5YvX2+XwfTv+y0/GSOBp3uUdScZs2jC6a3oDoYnfHEJnhIkQ
+         z3pN8VEruQiC4KFlN70ZZWMb2fxp4KSQ3JjuzHGebAyO8Xfpu6B7D48zbQctg6kDS8GL
+         33nsSuIvk1fyPgIkQAEED4eM/N3KhLjLguulwCNW8t3LsQ4d0OzWYRB2bVjy/sKiDauf
+         prxfKL5uOpt31MNbkxfR68OFtPpkD8At1EskTmAnK0vUxUnhh1BzqA49mRhVlmWN4E8A
+         r10CGUFlacOMc3GqzxT2sAPI7k5QJJwufy22S1B86KTpiHYK8fir2Cv1GbGyuFHI2dCJ
+         +UEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726227788; x=1726832588;
+        d=1e100.net; s=20230601; t=1726227857; x=1726832657;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=9UwhSpacqWbNrpzy9OkkjEtHbhA7k4WWF7GmkMMBnJM=;
-        b=JWJ0fMt00bucqpRvdY0SnEZgcG/pTBeedfUZc8Wkbbur5e1B+RBY2rDY0drfzCkLwM
-         rlSxHRuXRrHU3Znu7KAXb7PuClN7SDIAYxdYUFGy09FEh9PNdV1tVBY1eqYx5/j5Zu5I
-         XBz2A/cB+10BH0c8qu419aopf7+mcjX4os4QXS1gLcanXaRxJY4teeHzXGBhbCFvkapj
-         YQURfTxUei1KUeQaQdo8mmTBrj8gi7jJhb9oTqJzKAKc9upfve6UXKnJJ6dXOpVSNI3K
-         rfii0/he37XzTAaYnqwd73QpqG5xKNK/s69Z62awLDDx+dUAk0RZiaKdo26zcvqMx+GI
-         67gw==
-X-Forwarded-Encrypted: i=1; AJvYcCW9F2mMQ7MVPWchvPFSwXAENphmosJZAmVFq7uKq63QIfqU3JEDuP1NIUZkqVmm6kHW8Ke4eQz+pyw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx3x18BXWd+WrorTkBnMjMUzNItcsL+yEpbuXyL/muvmh6jSDuO
-	Z50DFxzxI/GE4YyarIPHkapK2Gq020zFFTT+koUS+STpvyTH7oqq68ixwqBB4VwtJZOKCqXNBYB
-	2WOi3nCc4aJwUlVGKoiNCLUUke7EP29fAHajRtQ==
-X-Google-Smtp-Source: AGHT+IE1TLnxU5IuXLszG0sh4Cmeh/NG3k6A0NeL7GYbVv4i0eJleu/njbaWM0plHlg4dpg3DlaBntAGY4GvPCDnoFM=
-X-Received: by 2002:a05:690c:ec9:b0:632:5b24:c0c with SMTP id
- 00721157ae682-6dbcc23000fmr21070177b3.5.1726227787870; Fri, 13 Sep 2024
- 04:43:07 -0700 (PDT)
+        bh=bpGVAz7F68gq4K0wsGbVi84hQs0Zw4wJBgelJinUR+M=;
+        b=dp7qNGywxPYKVqJx93eeuQWIJPvSJU8LsxYqgfuOzjnGtJRgzRWzl8yujKf5dcSo0d
+         gmC1E5BF3RtIw+PWlIOXvYms3sP97CnfBxlH77PK6PgXKPB4qGYchBqop0JYqXthMpxe
+         DFnVhc9YZX/nw+RtxPqBG2AEoQBaoURArBJpvUefwcXIyEdWAks4v2dJupHK0DCir05G
+         vOay4EP72FkwRq5kaUhqjRdXwft08ZHgpVHZw0KRP5c5Ieb3pPmyUEwtqwNAAkTarTG4
+         9rfv2i0CRxPsCzzZchnGyFTg2NzERA5Zek+nOCHWN8vS48AV7u3h3c/z433E6FMsNjrR
+         VZow==
+X-Forwarded-Encrypted: i=1; AJvYcCVxW3M0St7j8ouBr6FS5OWqmuSy2JGxxKXbHoNPqk13iGWaZHoUH8wVgW35zl6v3mmp6rSHDu8R3tc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YznmfQM4sp2/PX0pBAveVl9wKNeXMOtbBVlqd1jIb7JRGvLdX9b
+	auYlXP5SaXrly7wT6qY6BIyA6GHKzqA3wAGG0moI2b2SOt5qz+MYrc4En0KNfp+cGi13OZylyaH
+	8gr2ac0wEtoEXPQLGgoowUBOi+Xe0E8zSthu6mg==
+X-Google-Smtp-Source: AGHT+IE+HCTz9/Hpne7uiESMruAIZ8sOYY9ablamvHhKXDnIFQMaJZtzXwjRu+Y8yXtv+wftvk256sWwlMRwxMdIsno=
+X-Received: by 2002:a05:690c:3708:b0:62f:aaaa:187a with SMTP id
+ 00721157ae682-6dbcc26265bmr21823667b3.14.1726227857290; Fri, 13 Sep 2024
+ 04:44:17 -0700 (PDT)
 MIME-Version: 1.0
-References: <20240913103755.7290-1-quic_mukhopad@quicinc.com> <20240913103755.7290-3-quic_mukhopad@quicinc.com>
-In-Reply-To: <20240913103755.7290-3-quic_mukhopad@quicinc.com>
+References: <20240913103755.7290-1-quic_mukhopad@quicinc.com> <20240913103755.7290-6-quic_mukhopad@quicinc.com>
+In-Reply-To: <20240913103755.7290-6-quic_mukhopad@quicinc.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 13 Sep 2024 14:42:56 +0300
-Message-ID: <CAA8EJppddLmzJ9WSkLLr-nwM-qe647Sm6jV8SpHdB=0vRQT-=Q@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] phy: qcom: edp: Introduce aux_cfg array for
- version specific aux settings
+Date: Fri, 13 Sep 2024 14:44:06 +0300
+Message-ID: <CAA8EJpqyr0b4zUZ3h+bTASru74fm1U9LGJkpqcQhEChH2EexXQ@mail.gmail.com>
+Subject: Re: [PATCH v2 5/5] drm/msm/dp: Add DisplayPort controller for SA8775P
 To: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org, 
 	andersson@kernel.org, simona@ffwll.ch, abel.vesa@linaro.org, 
@@ -82,8 +81,8 @@ Cc: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org,
 	devicetree@vger.kernel.org, quic_riteshk@quicinc.com, 
 	quic_vproddut@quicinc.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240913_044309_561314_DA99F9E1 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20240913_044418_904927_CF1BB97A 
+X-CRM114-Status: GOOD (  17.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,125 +102,49 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 On Fri, 13 Sept 2024 at 13:38, Soutrik Mukhopadhyay
 <quic_mukhopad@quicinc.com> wrote:
 >
-> In order to support different HW versions, introduce aux_cfg array
-> to move v4 specific aux configuration settings.
+> The Qualcomm SA8775P platform comes with a DisplayPort controller
+> with a different base offset than the previous SoCs,
+> add support for this in the DisplayPort driver.
 >
 > Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 > ---
-> v2: Fixed review comments from Bjorn and Dmitry
->         - Made aux_cfg array as const.
+> v2: No change
 >
 > ---
->  drivers/phy/qualcomm/phy-qcom-edp.c | 37 ++++++++++++++++++-----------
->  1 file changed, 23 insertions(+), 14 deletions(-)
+>  drivers/gpu/drm/msm/dp/dp_display.c | 7 +++++++
+>  1 file changed, 7 insertions(+)
 >
-> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-> index da2b32fb5b45..bcd5aced9e06 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-> @@ -90,6 +90,7 @@ struct phy_ver_ops {
->
->  struct qcom_edp_phy_cfg {
->         bool is_edp;
-> +       const u8 *aux_cfg;
->         const struct qcom_edp_swing_pre_emph_cfg *swing_pre_emph_cfg;
->         const struct phy_ver_ops *ver_ops;
->  };
-> @@ -186,11 +187,15 @@ static const struct qcom_edp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg = {
->         .pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3,
+> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
+> index e1228fb093ee..e4954fd99eb0 100644
+> --- a/drivers/gpu/drm/msm/dp/dp_display.c
+> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
+> @@ -118,6 +118,12 @@ struct msm_dp_desc {
+>         bool wide_bus_supported;
 >  };
 >
-> +static const u8 edp_phy_aux_cfg_v4[10] = {
-> +       0x00, 0x13, 0x24, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
+> +static const struct msm_dp_desc sa8775p_dp_descs[] = {
+> +       { .io_start = 0xaf54000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+> +       { .io_start = 0xaf5c000, .id = MSM_DP_CONTROLLER_1, .wide_bus_supported = true },
+
+Please wait for the discussion to end before posting new iterations.
+In this case Bjorn pointed out that this is not the full
+configuration. Please add a comment, describing that there is a second
+MDSS, which isn't declared here as it wasn't validated.
+
+> +       {}
 > +};
 > +
->  static int qcom_edp_phy_init(struct phy *phy)
->  {
->         struct qcom_edp *edp = phy_get_drvdata(phy);
-> +       u8 aux_cfg[10];
-
-Please define 10, so that there are no magic numbers (and less chance
-of damaging the stack if it gets changed in one place only.
-
->         int ret;
-> -       u8 cfg8;
->
->         ret = regulator_bulk_enable(ARRAY_SIZE(edp->supplies), edp->supplies);
->         if (ret)
-> @@ -200,6 +205,8 @@ static int qcom_edp_phy_init(struct phy *phy)
->         if (ret)
->                 goto out_disable_supplies;
->
-> +       memcpy(aux_cfg, edp->cfg->aux_cfg, sizeof(aux_cfg));
-> +
->         writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
->                DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
->                edp->edp + DP_PHY_PD_CTL);
-> @@ -222,22 +229,20 @@ static int qcom_edp_phy_init(struct phy *phy)
->          * even needed.
->          */
->         if (edp->cfg->swing_pre_emph_cfg && !edp->is_edp)
-> -               cfg8 = 0xb7;
-> -       else
-> -               cfg8 = 0x37;
-> +               aux_cfg[8] = 0xb7;
->
->         writel(0xfc, edp->edp + DP_PHY_MODE);
->
-> -       writel(0x00, edp->edp + DP_PHY_AUX_CFG0);
-> -       writel(0x13, edp->edp + DP_PHY_AUX_CFG1);
-> -       writel(0x24, edp->edp + DP_PHY_AUX_CFG2);
-> -       writel(0x00, edp->edp + DP_PHY_AUX_CFG3);
-> -       writel(0x0a, edp->edp + DP_PHY_AUX_CFG4);
-> -       writel(0x26, edp->edp + DP_PHY_AUX_CFG5);
-> -       writel(0x0a, edp->edp + DP_PHY_AUX_CFG6);
-> -       writel(0x03, edp->edp + DP_PHY_AUX_CFG7);
-> -       writel(cfg8, edp->edp + DP_PHY_AUX_CFG8);
-> -       writel(0x03, edp->edp + DP_PHY_AUX_CFG9);
-> +       writel(aux_cfg[0], edp->edp + DP_PHY_AUX_CFG0);
-> +       writel(aux_cfg[1], edp->edp + DP_PHY_AUX_CFG1);
-> +       writel(aux_cfg[2], edp->edp + DP_PHY_AUX_CFG2);
-> +       writel(aux_cfg[3], edp->edp + DP_PHY_AUX_CFG3);
-> +       writel(aux_cfg[4], edp->edp + DP_PHY_AUX_CFG4);
-> +       writel(aux_cfg[5], edp->edp + DP_PHY_AUX_CFG5);
-> +       writel(aux_cfg[6], edp->edp + DP_PHY_AUX_CFG6);
-> +       writel(aux_cfg[7], edp->edp + DP_PHY_AUX_CFG7);
-> +       writel(aux_cfg[8], edp->edp + DP_PHY_AUX_CFG8);
-> +       writel(aux_cfg[9], edp->edp + DP_PHY_AUX_CFG9);
-
-Replace this with a loop?
-
->
->         writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
->                PHY_AUX_SYNC_ERR_MASK | PHY_AUX_ALIGN_ERR_MASK |
-> @@ -519,16 +524,19 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
+>  static const struct msm_dp_desc sc7180_dp_descs[] = {
+>         { .io_start = 0x0ae90000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+>         {}
+> @@ -162,6 +168,7 @@ static const struct msm_dp_desc x1e80100_dp_descs[] = {
 >  };
 >
->  static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
-> +       .aux_cfg = edp_phy_aux_cfg_v4,
->         .ver_ops = &qcom_edp_phy_ops_v4,
->  };
->
->  static const struct qcom_edp_phy_cfg sc8280xp_dp_phy_cfg = {
-> +       .aux_cfg = edp_phy_aux_cfg_v4,
->         .swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
->         .ver_ops = &qcom_edp_phy_ops_v4,
->  };
->
->  static const struct qcom_edp_phy_cfg sc8280xp_edp_phy_cfg = {
->         .is_edp = true,
-> +       .aux_cfg = edp_phy_aux_cfg_v4,
->         .swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg,
->         .ver_ops = &qcom_edp_phy_ops_v4,
->  };
-> @@ -707,6 +715,7 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
->  };
->
->  static struct qcom_edp_phy_cfg x1e80100_phy_cfg = {
-> +       .aux_cfg = edp_phy_aux_cfg_v4,
->         .swing_pre_emph_cfg = &dp_phy_swing_pre_emph_cfg,
->         .ver_ops = &qcom_edp_phy_ops_v6,
->  };
+>  static const struct of_device_id dp_dt_match[] = {
+> +       { .compatible = "qcom,sa8775p-dp", .data = &sa8775p_dp_descs },
+>         { .compatible = "qcom,sc7180-dp", .data = &sc7180_dp_descs },
+>         { .compatible = "qcom,sc7280-dp", .data = &sc7280_dp_descs },
+>         { .compatible = "qcom,sc7280-edp", .data = &sc7280_dp_descs },
 > --
 > 2.17.1
 >
