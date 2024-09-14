@@ -4,96 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D8CBFC6172
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Sep 2024 21:24:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 517ACFC618D
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Sep 2024 03:59:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OzGiW+OWdBFvsn8CKiez/UQpfBU9irKW8113vUqU7Lc=; b=2lhdPC+1bqKLCa
-	u3zFNoVmaYff+NgSRqn5L1VTdkxoe5Yk0AFoTDpo51OZKRK1EmizDWuLuaHquAiQtIEL4bTKeTK98
-	l2be5flQJxyGMt0tnZbHF6KLDViOoyATN839Fppv4gzVCtJHWMkHB7o4O+XwkxwBmItGcjDq4PT3p
-	h6l6Cdw7M69HrJTLJEeTtdkV/aR8Jf/NJPZGUNDcya2AytF5cWcddVeWeYyveqOYBfDaqNuxjgdT5
-	vErc8BE39+XCRT4ZoddqJHQQWRJvnnfXNh9LrpCoa/xiNm8i2nSPzyNhiCYiGwdp5JazQcJeKa/eC
-	36EaJvKP0iTLIBDuSqNg==;
+	List-Owner; bh=i4aKt2rWJHOVLbdP7EELxjKjwibTrxGMqxyYxonrGxg=; b=3kuDDogWSPS2hW
+	v37lVXfWNVqQBFDeMMXl0grbCqiFNIVUF0r2EJQMMrdPszhBWySFM/LoU/qMv1Tjrsie3x3VgIMSq
+	pVdMQr6OcqLUaZ3hABx3geYB4TiibWLqkOj+YAo/jU9iY+BdFczE8Zjwyj8YnuTutRZMInIyBIZpY
+	JovovC6DUSPFqrmDTIasTD/Q0ADR+ULbGEH8ZE3b/qHyr2U3dW3uJFKsTn+ETjwFZcuWvLzQkWv83
+	IybtDm0zqxc4ktQvM8ZX0SitRZB0f9upGvl7a2HyC7abrAislcZjYaZczAkD3yUwmTurLnviJbhkE
+	OujTqxsuzw/DzS8gNygg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1spDmZ-0000000H9hb-2oWG;
-	Fri, 13 Sep 2024 21:24:47 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1spJwl-0000000015A-3nbY;
+	Sat, 14 Sep 2024 03:59:43 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1spDmX-0000000H9gQ-0iyx
+	id 1spJwk-0000000014I-0420
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Sep 2024 21:24:46 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48DAMtOY020721;
-	Fri, 13 Sep 2024 21:24:37 GMT
+	Sat, 14 Sep 2024 03:59:43 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48E0K2rd029091;
+	Sat, 14 Sep 2024 03:59:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=tQMAo/P1IflG7nAnXqAA/OEs
-	PpPBcgSWfyxQsLmmhyQ=; b=hPORs8CWJDrsMA5BXP/N68whcDL+nSNB9SPTABw/
-	Acpf8YX9z4OI/G4BLtm/YqqJZ5n0mQDE8XYtDUcaL/h4V0opZB86jsBrzT2Z21YS
-	KqYivrNAg/vJgycnhWJmQh0pVJRoe0n91alO8yeI7HeNRsykQ0sPpfr+3bCgiQWG
-	2kEG9IzsJKmp41YKOgJDkQmvKEmmXxJIW7DHomvcfInzKYbeO7GAGsrOe72JS6fF
-	cBT+86BdIO47aux8VpSObs5MaRnXat1TRfU0FRx80pxUIKP6wqwB7O4OQ/x6POEN
-	eDTqMSsyOZDj+I1cO+oPRvfZF2ybA9PqHhOJR/AvpQvmGA==
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	iA/kORVBL6Wxi6a/guxYnyVIschyH2EOUiO0lvyRjFk=; b=dWZr7WPST3zK1SYM
+	e5AOEV3hgapNEn59a8Z2qG7wO069I6mEu7jE0ozy6fcxiz9gQ+NKtIKHNBnlYXAo
+	7Uvpb4j5LwP267Fwtil94dNau2/Hm0S2+xKZO8M+uY59FFgcAJi4VR9Q5IeTWzSN
+	j6iAal/17XtVTkSfdhwL8yW8i7EZgzZqFQuAgUfCr75fzzqPyKY/rErTzIC0/cG+
+	Z3BHZcx5TTVon3tybhzyTVz5p3WxL4RuVmOqArXjxjjXN/rbZe4bkT9ERRAUcZh/
+	wOXmPsSep+Dd2tccayag0P42R+qnBmH13skPiIzDIZHzpM+ZNws6XnlkbubpMTVs
+	6/1r1A==
 Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41gy6phxea-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41myumrarv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Sep 2024 21:24:37 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48DLOZXO020049
+	Sat, 14 Sep 2024 03:59:32 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48E3xUFo030003
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Sep 2024 21:24:35 GMT
-Received: from hu-bjorande-lv.qualcomm.com (10.49.16.6) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 13 Sep 2024 14:24:35 -0700
-Date: Fri, 13 Sep 2024 14:24:33 -0700
-From: Bjorn Andersson <quic_bjorande@quicinc.com>
-To: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>, <konradybcio@kernel.org>,
-        <andersson@kernel.org>, <simona@ffwll.ch>,
-        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
-        <robdclark@gmail.com>, <quic_abhinavk@quicinc.com>, <sean@poorly.run>,
-        <marijn.suijten@somainline.org>, <airlied@gmail.com>,
-        <daniel@ffwll.ch>, <maarten.lankhorst@linux.intel.com>,
-        <mripard@kernel.org>, <tzimmermann@suse.de>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <quic_khsieh@quicinc.com>,
-        <konrad.dybcio@linaro.org>, <quic_parellan@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
-        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
-        <quic_riteshk@quicinc.com>, <quic_vproddut@quicinc.com>
-Subject: Re: [PATCH 5/5] drm/msm/dp: Add DisplayPort controller for SA8775P
-Message-ID: <ZuStkRFvwJT7re6D@hu-bjorande-lv.qualcomm.com>
-References: <20240911100813.338-1-quic_mukhopad@quicinc.com>
- <20240911100813.338-6-quic_mukhopad@quicinc.com>
- <ZuH3WqMwn7fl3nhh@hu-bjorande-lv.qualcomm.com>
- <a44a6f08-1f4a-4e5c-a4e4-30ab65c467f7@quicinc.com>
+	Sat, 14 Sep 2024 03:59:30 GMT
+Received: from [10.216.29.174] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 13 Sep
+ 2024 20:59:22 -0700
+Message-ID: <36bd9f69-e263-08a1-af07-45185ea03671@quicinc.com>
+Date: Sat, 14 Sep 2024 09:29:17 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a44a6f08-1f4a-4e5c-a4e4-30ab65c467f7@quicinc.com>
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01b.na.qualcomm.com (10.47.209.197) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.1
+Subject: Re: [PATCH v2 0/5] Add support for PCIe3 on x1e80100
+Content-Language: en-US
+To: Qiang Yu <quic_qianyu@quicinc.com>, <manivannan.sadhasivam@linaro.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <andersson@kernel.org>, <konradybcio@kernel.org>, <krzk+dt@kernel.org>,
+        <conor+dt@kernel.org>, <mturquette@baylibre.com>, <sboyd@kernel.org>,
+        <abel.vesa@linaro.org>, <quic_msarkar@quicinc.com>,
+        <quic_devipriy@quicinc.com>
+CC: <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
+        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>
+References: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
+From: Krishna Chaitanya Chundru <quic_krichai@quicinc.com>
+In-Reply-To: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: g_fwJ9nxwhCCQryUMpJpBLvqMux3AxWq
-X-Proofpoint-GUID: g_fwJ9nxwhCCQryUMpJpBLvqMux3AxWq
+X-Proofpoint-ORIG-GUID: zFX8fzgqJUywOZLiwxkJshUCOO-16e_o
+X-Proofpoint-GUID: zFX8fzgqJUywOZLiwxkJshUCOO-16e_o
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 adultscore=0
- bulkscore=0 lowpriorityscore=0 mlxlogscore=999 spamscore=0 phishscore=0
- impostorscore=0 suspectscore=0 mlxscore=0 malwarescore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409130152
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 impostorscore=0
+ bulkscore=0 lowpriorityscore=0 malwarescore=0 mlxscore=0 adultscore=0
+ spamscore=0 suspectscore=0 mlxlogscore=999 priorityscore=1501 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2408220000
+ definitions=main-2409140026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240913_142445_246687_28914B18 
-X-CRM114-Status: GOOD (  26.91  )
+X-CRM114-CacheID: sfid-20240913_205942_219834_CEC1274C 
+X-CRM114-Status: GOOD (  17.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,81 +102,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 12, 2024 at 03:34:05PM +0530, Soutrik Mukhopadhyay wrote:
+Hi qiang,
+
+In next series can you add logic in controller driver
+to have new ops for this x1e80100 since this hardware
+has smmuv3 support but currently the ops_1_9_0 ops which
+is being used has configuring bdf to sid table which will
+be not present for this devices.
+
+
+- Krishna Chaitanya.
+
+On 9/13/2024 2:07 PM, Qiang Yu wrote:
+> This series add support for PCIe3 on x1e80100.
 > 
-> On 9/12/2024 1:32 AM, Bjorn Andersson wrote:
-> > On Wed, Sep 11, 2024 at 03:38:13PM +0530, Soutrik Mukhopadhyay wrote:
-> > > The Qualcomm SA8775P platform comes with a DisplayPort controller
-> > > with a different base offset than the previous SoCs,
-> > > add support for this in the DisplayPort driver.
-
-Please check the line wrapping of this as well; the lines here should be
-wrapped at 75 columns.
-
-> > > 
-> > > Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
-> > > ---
-> > >   drivers/gpu/drm/msm/dp/dp_display.c | 7 +++++++
-> > >   1 file changed, 7 insertions(+)
-> > > 
-> > > diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
-> > > index e1228fb093ee..e4954fd99eb0 100644
-> > > --- a/drivers/gpu/drm/msm/dp/dp_display.c
-> > > +++ b/drivers/gpu/drm/msm/dp/dp_display.c
-> > > @@ -118,6 +118,12 @@ struct msm_dp_desc {
-> > >   	bool wide_bus_supported;
-> > >   };
-> > > +static const struct msm_dp_desc sa8775p_dp_descs[] = {
-> > > +	{ .io_start = 0xaf54000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
-> > > +	{ .io_start = 0xaf5c000, .id = MSM_DP_CONTROLLER_1, .wide_bus_supported = true },
-> > Why is this list incomplete?
-> > 
-> > Regards,
-> > Bjorn
+> PCIe3 needs additional set of clocks, regulators and new set of PCIe QMP
+> PHY configuration compare other PCIe instances on x1e80100. Hence add
+> required resource configuration and usage for PCIe3.
 > 
+> v2->v1:
+> 1. Squash [PATCH 1/8], [PATCH 2/8],[PATCH 3/8] into one patch and make the
+>     indentation consistent.
+> 2. Put dts patch at the end of the patchset.
+> 3. Put dt-binding patch at the first of the patchset.
+> 4. Add a new patch where opp-table is added in dt-binding to avoid dtbs
+>     checking error.
+> 5. Remove GCC_PCIE_3_AUX_CLK, RPMH_CXO_CLK, put in TCSR_PCIE_8L_CLKREF_EN
+>     as ref.
+> 6. Remove lane_broadcasting.
+> 7. Add 64 bit bar, Remove GCC_PCIE_3_PIPE_CLK_SRC,
+>     GCC_CFG_NOC_PCIE_ANOC_SOUTH_AHB_CLK is changed to
+>     GCC_CFG_NOC_PCIE_ANOC_NORTH_AHB_CLK.
+> 8. Add Reviewed-by tag.
+> 9. Remove [PATCH 7/8], [PATCH 8/8].
 > 
-> Do you mean to add for mdss_1 as well?
+> Qiang Yu (5):
+>    dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100
+>      QMP PCIe PHY Gen4 x8
+>    dt-bindings: PCI: qcom: Add OPP table for X1E80100
+>    phy: qcom: qmp: Add phy register and clk setting for x1e80100 PCIe3
+>    clk: qcom: gcc-x1e80100: Fix halt_check for pipediv2 clocks
+>    arm64: dts: qcom: x1e80100: Add support for PCIe3 on x1e80100
 > 
-
-I don't see a reason for not submitting them as well.
-
-> We only added dp controllers for mdss_0 as we plan to validate and enable
-> only these.
+>   .../bindings/pci/qcom,pcie-x1e80100.yaml      |   4 +
+>   .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |   3 +
+>   arch/arm64/boot/dts/qcom/x1e80100.dtsi        | 202 ++++++++++++++++-
+>   drivers/clk/qcom/gcc-x1e80100.c               |  10 +-
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 211 ++++++++++++++++++
+>   .../qualcomm/phy-qcom-qmp-pcs-pcie-v6_30.h    |  25 +++
+>   drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_30.h |  19 ++
+>   7 files changed, 468 insertions(+), 6 deletions(-)
+>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6_30.h
+>   create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6_30.h
 > 
-
-As far as I can tell there are 5 DPTX blocks on mdss_0.
-
-
-It is perfectly fine that you just state in the commit message that
-"Only MDSS0 DPTX0 and DPTX1 have been validated", but please add the
-others as well in this commit.
-
-Regards,
-Bjorn
-
-> 
-> > 
-> > > +	{}
-> > > +};
-> > > +
-> > >   static const struct msm_dp_desc sc7180_dp_descs[] = {
-> > >   	{ .io_start = 0x0ae90000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
-> > >   	{}
-> > > @@ -162,6 +168,7 @@ static const struct msm_dp_desc x1e80100_dp_descs[] = {
-> > >   };
-> > >   static const struct of_device_id dp_dt_match[] = {
-> > > +	{ .compatible = "qcom,sa8775p-dp", .data = &sa8775p_dp_descs },
-> > >   	{ .compatible = "qcom,sc7180-dp", .data = &sc7180_dp_descs },
-> > >   	{ .compatible = "qcom,sc7280-dp", .data = &sc7280_dp_descs },
-> > >   	{ .compatible = "qcom,sc7280-edp", .data = &sc7280_dp_descs },
-> > > -- 
-> > > 2.17.1
-> > > 
 
 -- 
 linux-phy mailing list
