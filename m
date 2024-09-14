@@ -4,124 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E5D5C02180
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Sep 2024 07:05:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BAEBC02191
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Sep 2024 11:28:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1c2mUz4J3aNTANQyIUiB4q3RCGLxN59nC9EFiE0Rjs8=; b=wN4AWuWZIshgka
-	1Yf+hjHbOgn+B4ypxsvWsG3e+09URdCFcII8/JlFxkPAuB+UiN66pLmZPWG8ZLVo73aeS5ph0YvNp
-	jPKHQRk0AsSk4QO7Dh4fnOyxu1o0AbtDhDpKhcv2fpHo2INzaiDWCOQAyMiCkvlkvylKD+BNtqVOO
-	yzmuNeFWL2JX65LHK2LcSlQGvX3zDt6XR21yUGWa2JhUMvt9N713Ft/v4XfBR+xhQ3DJN7+Hgj2dp
-	bPTTQfNa1V59L3BvLAeV4/o9rdhsa09G/0uZf0tTXqg5G+eHqw3i2rXTtZYZBjOkn+LkmVAELHWn4
-	NnXpktNufxYxNFD1yssg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+gF8KXTAkejnY9x92eR0VNIFFW7MAozhT/xS/tBuj/U=; b=dIaF+Qofd9BN/1
+	F7UTvJd97lZPkWB0amvX3vKuaXkdomPaBtq6JIuxDYbNhT/FYiy3R2fKxCTYJFh/26FaBoNbPLbYQ
+	oIeFaPCG1mckjDa8pB4CObrH72JX2VfhbktNm3h07MeXSIDUf88vguNl+lCR1eiwNy47sJRRZ08tG
+	IMEYToqTUjqy88sfiEO+bPYB8ghRy6TcXtcGE/OHeChTl+uyc/OAGvR83MeWAxWAdzKUKCULicKgH
+	3JF3L3Ov/yWqENZ45f4ahR1Ekvi/8SMMOxOl8lP1eMS/tVlBUH/Kb7+2mjjVeDBYYbSKYHm7sK+w+
+	c/SGehHERqH4x2d2NClA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1spMqQ-00000000G8A-0WwD;
-	Sat, 14 Sep 2024 07:05:22 +0000
-Received: from mail-sh0chn02on20705.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::705] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
+	id 1spQx2-00000000bRb-2iaO;
+	Sat, 14 Sep 2024 11:28:28 +0000
+Received: from mail-io1-xd35.google.com ([2607:f8b0:4864:20::d35])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1spMqM-00000000G6z-1AzL
+	id 1spQx0-00000000bQp-0dOM
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Sep 2024 07:05:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SqXmbdidoTJJ1O918G85zTTuOhYKEImnuoNbFvmhRCVk6joW1a5ez3uN9v017eqhkY3CaxDnFZOvFIZSRFHZmfSeffwvgUwViMYDCa/FJ9gUohkvim1DMuXBQuvxCzz+2EVrLMjxYZN/RoP1KigDilGZR4WlNo5koILqIRagYsKnzKgDdZBbscMJOnrNjU1IWayitDzO/peOMqB09OBMcB1IeyQ/DvSoqhDCeU7eLO/ZiVA5FwqXNuKlpXETwebI7fHJ61kJkNuosuOHuFw3E5k0S++lGbCIzip34xVROyfYiPYnfwTE3L2Ca05IRU4gxzXqoj4/w8rtmFj3NqJ+3w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=XVjf+drbLutqHzUU22cKZ5Yxh00J4q+BvCdvtexAKUc=;
- b=TUG4iKvdb6Hzr/zx3fFMADiOYGOMym4lRtTMT8T4wo+M/NnmxbyfNvpU9yaErjuP4ONMtekGDYRKb77l7E9PPjLXPjM1KxFhhQjJ4tOkHIXjy4gkeKxHjK//z5i0kq7nWuLulOKzERg5/BwPPNoqfS2dteXZd4YMxtwf1VSOSwNfDDG2dlSE1DGG1qZEAh0J2TChf5+BV4WZOd7f+PuOnNGbUDvFaly8G4SLWvG6/cvxmhD13bVU1xxBndPrVROJ0t8hhQCWunE3sw78+SBTdg5sOCgyYBVox1YyG0S5jKwge7y2cVIuneuoSJrW08AQDhmLeX8oD/tMCS4yEkD0yA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=starfivetech.com; dmarc=pass action=none
- header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
-Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:25::15) by SHXPR01MB0511.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:1e::10) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7962.20; Sat, 14 Sep
- 2024 06:49:04 +0000
-Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
- ([fe80::3f35:8db2:7fdf:9ffb]) by
- SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn ([fe80::3f35:8db2:7fdf:9ffb%6])
- with mapi id 15.20.7962.018; Sat, 14 Sep 2024 06:49:04 +0000
-From: Minda Chen <minda.chen@starfivetech.com>
-To: Conor Dooley <conor.dooley@microchip.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jan Kiszka <jan.kiszka@siemens.com>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, Emil Renner Berthing
-	<emil.renner.berthing@canonical.com>, Rob Herring <robh+dt@kernel.org>, Conor
- Dooley <conor@kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: [PATCH v3 1/1] phy: starfive: jh7110-usb: Fix link configuration to
- controller
-Thread-Topic: [PATCH v3 1/1] phy: starfive: jh7110-usb: Fix link configuration
- to controller
-Thread-Index: AQHa/SjhiXxDr9AYPEm7hgAwfhkcBrJPVUuAgAeUwaA=
-Date: Sat, 14 Sep 2024 06:49:04 +0000
-Message-ID: <SHXPR01MB0863955434409B0269300E6EE6662@SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn>
-References: <20240902111127.15155-1-minda.chen@starfivetech.com>
- <20240902111127.15155-2-minda.chen@starfivetech.com>
- <20240909-drizzle-hydroxide-dd405c4c3a6d@wendy>
-In-Reply-To: <20240909-drizzle-hydroxide-dd405c4c3a6d@wendy>
-Accept-Language: en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=starfivetech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SHXPR01MB0863:EE_|SHXPR01MB0511:EE_
-x-ms-office365-filtering-correlation-id: e12d83e6-863a-47a4-5322-08dcd4895297
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|41320700013|366016|38070700018;
-x-microsoft-antispam-message-info: 3TvOJtAd774yOUkqwWYdyadxjIrcevzOpYwj9DACVKhxryZhPb21O19HpJHaxlPJQUoVQKb5TtaXaFDeJ1K5xiwvRPkSPTSmx9SCf7i+/FMCHWD4yGQW27XCWtUTHwSyyLyQnRvh+k/Ho/ruZnNOHrRbGdFiMduS/R4GmOuxEl9bm+VyejH+9kK4xDtB4S+pKEPV9qgPWq4B+wpReuyl6vuA35bzjjdHJMlK9YsIcVuSUjv8Z4IYeozlNVIIWCCgw+RqWPT0Br6xWbtfhgdG0C1Nslv5REzvGYJ7Nkw+gwc9l0i+HzXoGY6ZaLf8+0eGhetR8KztebVqftbzeOZ9r2F2L2k0uQKrcMq2nt91R/FS9nVeBYTRDra/kSW07qN9WqYq/+4nAPeFEIxhKcf1VXcYvZQEGWocWKbLq7mWFCM5V0zIDq5XupHdA5LRRWv3OhBCQ4WLHFEpqdcI0owXHyQcqANzwmn1r9r/dfPIRphlvm9Jqzp9w6V8ZI5VmNPFHnM6HAOrZ1wHoZ6jHGkMdk4XISrhSEU7aFhUSA0oxrEKcf7ebVSs8/th+Wr8wDzAaOIAxChpLdQyuildFnCizpPLauuu/O3/ZTncaO7ow8p2UM/4dVHzNs2AR6rSJttJ
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(41320700013)(366016)(38070700018);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?aAOjtbd2LsGi3A5diF1D0meJf8Rwxj/ohI6oejXBIkKheVHUD/m0Iu/Fatz3?=
- =?us-ascii?Q?TxvGMywMSpqjWng4sQQZLGO0JiAUEpzfPq/D7dET+2hh39LOa3T4+UnhXFLR?=
- =?us-ascii?Q?AxbymNOdLFJDA7ttiF9Mw0CnWw2Bdy8k+yHQTViLPsVoGlEktR6Z3K9P6Bvk?=
- =?us-ascii?Q?t3jNQFeZQQF7LRo0Eg3IPXikI0W8yicnCradGt9QargDpxuuquk8NVL6ttea?=
- =?us-ascii?Q?ucUeeRjSdViuyfjHIGXl+tP1cWsuBhmq9iNbcjKk+Y8G4qS/FE5KW1HLTR78?=
- =?us-ascii?Q?ylzePqomvEdsFUszpXrnzpZJFCuJ0ZCS1NxYR1drdDY4S+Vj2eIPTDsAfEPT?=
- =?us-ascii?Q?uio27BfWgWG2BDiMb64chOVET6I+oVKDIkVPdHYEUXCtY9cOvFlSzTO28HKU?=
- =?us-ascii?Q?1soeGzqHB5TzRm9HGWiygMAy1NnQ/jL891z89G+ZbEIyPl0HiV+FXNOnBjhL?=
- =?us-ascii?Q?mpYpC70pPTbPXyY0ULndksUHTOqiM26QBDnkd0oFLhW/D143w38IUBBc4CXu?=
- =?us-ascii?Q?B+3Wc04IyPbV8YlIiEkgGoiwCM52VLAat+YVRreAuI61iD+ffytHtz1zwLD3?=
- =?us-ascii?Q?qZqm8Rf2Q9/RmheicXMqBKubsfMjtPvBLmA9trn8po86IHAL7UKszzDXlNBR?=
- =?us-ascii?Q?fRCkCbLIsCol3LhsjdxBIoGNaXLb+8Zh87tMCizZAIqzcP29dk7PT91dS/N0?=
- =?us-ascii?Q?fq14Z7tirTJqg5gG8tO8ls23tcQTji1QLasKFnaMFRom1bd4Hb9Ow3pyQUyW?=
- =?us-ascii?Q?ui8/S5Xeai9nBwflgtRvRTiy/JUA3EQtGbkg7zD49z4AMO9LrU5CuR3e6hox?=
- =?us-ascii?Q?nc4i4Fe1HDbI/gu50HAYo+pcdJ6oU84OH//D8tSNXGdFSsSad5mdkY9YhP6a?=
- =?us-ascii?Q?3RDw5SUJAoa/j+IAjO1CVcoCyl/rYQNSXei+93Q1t+0bQ9gV0TjT+D4BtYe6?=
- =?us-ascii?Q?GskEYpG9eTldDXez0h95a/vAnTUvR2XqC5r6CRqTpfoXKtovohR9moH9l7G3?=
- =?us-ascii?Q?YyBe53vG/Lz0xIa/IQvWrPrywKPOHiY10HVzyQYy+XbqF+Bj9Th+m5ZFCj7p?=
- =?us-ascii?Q?8J797c7SsFyaZVHclGAlBxUJ61W1NagaXIxBev7mGR5PeOl9/Mnqio6r9fku?=
- =?us-ascii?Q?9Zgj/8kj/LYLxyokWdtr7T1IWTH4cwEByz/pxnN/QQBJkxyARGKmSzIhXfdS?=
- =?us-ascii?Q?eiMoDqRvAh7OtPIYSTgBGArF+0F3ErW4x7hpbLz3CIHJlOCzXLNkTyohz/fV?=
- =?us-ascii?Q?4k6kCMdssLRhILOLTwAIPDUyjjnCpyQvrgdOzmosaeJfZfkLqh6VGiO9CAcC?=
- =?us-ascii?Q?VP7WQN38cEb3aWBlJNO5Mumxd/7Lq0pCR0+cxVGigs9cJ0OjDbZtVFPKz1hE?=
- =?us-ascii?Q?m65kV0hUlZVkhJF5/u+FLgfNhaOxKxf6KBbn5KiIpcxIj0+1Wz2G0kqjgh4Y?=
- =?us-ascii?Q?bfT8X9JVw+S2C4g2yFuLcsBGntjc2vXJ9GgpGbeRR35TR25Z6nHdYNSwWeby?=
- =?us-ascii?Q?k49CV6OglWol0M/rNzpnh9ooIPj50qCGfDodTndJnkWmnYDVNI5mUwEM9oC1?=
- =?us-ascii?Q?Z+Cvz5ZZn4a1wcyLCfKG2o8v9lftACkjOQWprlfKzaM3+1ck/NZn5pVDIVJ6?=
- =?us-ascii?Q?0A=3D=3D?=
+	Sat, 14 Sep 2024 11:28:27 +0000
+Received: by mail-io1-xd35.google.com with SMTP id ca18e2360f4ac-82aef2c1e5fso63628439f.1
+        for <linux-phy@lists.infradead.org>; Sat, 14 Sep 2024 04:28:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1726313304; x=1726918104; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=PAVjeaAIlz54nRRU+R00d7cGt2iVae2/gffgn/qC9ZU=;
+        b=NM7kQhJexRjZDCCCj5rdDyA9xdQyAeDvxX9ue0bm9wF6gCW7HgSpLPkPqgiKY+1Xq9
+         SduQ4DT7ADO+0EICqDE2561bOT6e+zA3LOW3XmgHQMsvwGHKifFJUwgabJf+jfAl+tvT
+         LSMNG8NultpFBNiBScGGIS+8vBpJ4j3ODspPeGaSywBCwxehTgoEuBhkyhwDpC73vYng
+         GCxUo++gtS2JfApyEwAoizsdjvvZteD2OfTrr4Dg51Cvt70LGkGC6vo8PnTwreGAmvXP
+         gla2g87LFVaHB8xEX5LG2MKr0rsXo7JTHhnwQ1asZ081fZn5BmRMliRLBAyaEjTjUOAN
+         B5/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726313304; x=1726918104;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=PAVjeaAIlz54nRRU+R00d7cGt2iVae2/gffgn/qC9ZU=;
+        b=czLmMUiTZl78YhzrotuwEFGEu+xA4PC/9jCOxt7gH5l2vRxXU8+y/RVqZfNEPJvi9d
+         RLSNNOmE39QtAAmfit8wNoamsxHeaXj+izKch/KjIt/nPiLSqCtOKrRPBfx8uo0Za7+N
+         FHKFMTSJoSBjTuunDvGa1jhZmJzbWWCX5GrUCwgaDdLo8YlL4vrFG9kBC5MRsi8euJZ1
+         x1WE+xW8fcoptkyvO6d5Pk0Qm99zxKnzZFQG5lBNz99pVfgZVNyH+abqt1gmNDXWta6Z
+         WqFEvpHryjLUK5qji4ZaM+QzWFYbbg79kC6V0zczj8K9AeWF1eCd3pDLvSx3AI8aVxHQ
+         tvow==
+X-Gm-Message-State: AOJu0YxV6q4EucJ9EeoDuw6xo1ZdzHMKq/gIxWnmw+RJh2MyYIy+T3LW
+	gJKiBYU/RVdopjCx2Mp/A5wCBROXb4rHEWH05ta2tN3+OXmpl2sfmo7Siw==
+X-Google-Smtp-Source: AGHT+IGorVJHU4xMZQfYjHd7AVJc43hrhdZ2GAS9mpcJ7RW+2UJfZzUdqy5mPL2kG2NZqWjMjN8aCQ==
+X-Received: by 2002:a92:c567:0:b0:39d:25d8:43a9 with SMTP id e9e14a558f8ab-3a08b65fec5mr55199625ab.0.1726313303906;
+        Sat, 14 Sep 2024 04:28:23 -0700 (PDT)
+Received: from aford-System-Version.lan (c-75-72-166-104.hsd1.mn.comcast.net. [75.72.166.104])
+        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-4d37ed35572sm350307173.131.2024.09.14.04.28.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 14 Sep 2024 04:28:23 -0700 (PDT)
+From: Adam Ford <aford173@gmail.com>
+To: linux-phy@lists.infradead.org
+Cc: dominique.martinet@atmark-techno.com,
+	linux-imx@nxp.com,
+	festevam@gmail.com,
+	frieder.schrempf@kontron.de,
+	aford@beaconembedded.com,
+	Sandor.yu@nxp.com,
+	neil.armstrong@linaro.org,
+	Adam Ford <aford173@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Marco Felsch <m.felsch@pengutronix.de>,
+	Lucas Stach <l.stach@pengutronix.de>,
+	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH V8 0/5] phy: freescale: fsl-samsung-hdmi: Expand phy clock options
+Date: Sat, 14 Sep 2024 06:27:44 -0500
+Message-ID: <20240914112816.520224-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-OriginatorOrg: starfivetech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
-X-MS-Exchange-CrossTenant-Network-Message-Id: e12d83e6-863a-47a4-5322-08dcd4895297
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Sep 2024 06:49:04.0826
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cdB1St6UrSm08K/x2V+raKiLwnW3ZrmFp6VRTusPFWTh6kbo7bGuoAwao5D+39gcf0L0IoA7Akth7DFKKXZQBCaGgQePBYZvwdkLeY3NETc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SHXPR01MB0511
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240914_000518_326921_E10A8412 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20240914_042826_212959_6F72D6CE 
+X-CRM114-Status: GOOD (  13.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,27 +101,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> 
-> On Mon, Sep 02, 2024 at 07:11:27PM +0800, Minda Chen wrote:
-> > From: Jan Kiszka <jan.kiszka@siemens.com>
-> >
-> > In order to connect the USB 2.0 PHY to its controller, we also need to
-> > set "u0_pdrstn_split_sw_usbpipe_plugen" [1]. Some downstream U-Boot
-> > versions did that, but upstream firmware does not, and the kernel must
-> > not rely on such behavior anyway. Failing to set this left the USB
-> > gadget port invisible to connected hosts behind.
-> >
-> > Link:
-> > https://doc-en.rvspace.org/JH7110/TRM/JH7110_TRM/sys_syscon.html#sys_s
-> > yscon__section_b3l_fqs_wsb [1]
-> > Fixes: 16d3a71c20cf ("phy: starfive: Add JH7110 USB 2.0 PHY driver")
-> > Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> > Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-> 
-> Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+Currently, there is a look-up-table to describe all the clock options the HDMI PHY
+can use.  Some of these entries in the LUT are using a fractional divider which does
+not have a well documented algorithm for determinging values, but the the integer
+divider can use an algorithm to calculate the integer divder values dynamically
+beyond those listed in the LUT and also duplicates some of the entries.
 
-Conor :
-   Thanks
+The first two patches do not do anything functionally other than simplify
+some of the register accesses and de-duplicates some of the register look-ups.
+
+The third patch adds support for the integer divider and uses it whenever the
+clock request is an exact match.  Otherwise, it will use the LUT as before.
+The rouding is still based on the LUT if the integer clock isn't an exact match.
+
+The forth patch updates thes set_rate and round_rate functions to use either
+the fractional clock LUT or the the integer divder mechanism to determine
+which ever clock rate might be closest match.
+
+The last patch removes the integer divider entries from the LUT since by then
+it'll be comparing both the integer divider calculator and the closest value
+in the LUT.
+
+In my testing with a AOC 4K monitor, I was able to add 4 entries in my modetest
+table.  I do not have an HDMI analyzer, so I just used my monitor to determine
+if this series worked.
+
+Adam Ford (5):
+  phy: freescale: fsl-samsung-hdmi: Replace register defines with macro
+  phy: freescale: fsl-samsung-hdmi: Simplify REG21_PMS_S_MASK lookup
+  phy: freescale: fsl-samsung-hdmi: Support dynamic integer
+  phy: freescale: fsl-samsung-hdmi: Use closest divider
+  phy: freescale: fsl-samsung-hdmi: Remove unnecessary LUT entries
+
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 604 ++++++++++---------
+ 1 file changed, 325 insertions(+), 279 deletions(-)
+
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
