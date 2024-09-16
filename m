@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A37F9C3ABB2
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Sep 2024 15:22:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D52FDC3ABB2
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Sep 2024 15:24:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H/1yAzIglDirHP5wQw6utLE+bI+laEBixYx7dCszMOk=; b=r5BhloVbh233l8
-	BVKXQF/M0X3mPgp06U4HMBvi9sl8KguXM1bv2lOVPbrOU0iTQfVa0DCB9vBJvlDpm4Gr9vbs+qMLP
-	B4mAXrqtcTP3ffdwmuZR+yQcVTHuwy4jR8LrS2DevXis7fcjo/WQ0AaI/AtYZ9ejQ6dSEsaPa9iLz
-	DiuBuaeZYMmhzKbcmv6UTO+p+K6XMi1IOTiqktAoqxwu1zgHN6noierrU8Q5KJtJhAT+oZ35v1J+f
-	JOoaJli90T3EBaocxwIyezFxQ0AyZAP387MDH/XYBYmE5ncgArmVKlagVLuFd6dTkaeiUkVAS0lWy
-	gar7B3PbfCU4u5NkH64A==;
+	List-Owner; bh=go9jvfoYJNnWJZnA3X4G8Jtejys6eTyWRXWMDIgwrmw=; b=Frba+Ojrffq3w3
+	t8P5U0CA9ZIuZ0j/HY7rXFQ4ZcmWBUPLaZX6fhknZXJ5GXIzgr1vjB3BWhxykuCZdaj3pHKZTKIMO
+	HDj/ur6ktirnny8GIRaqvl3cRAzW2CIQDZXRvqd5D3+oBezt5br1dImqhERqQHFYY6kOs7OoAZVVg
+	+TuLShLRdGJ9dPvQ/4KofkANnJShs7amfgN4+I0+M0OxWQJrMUVPTdyclOF1oIW5nytYoAAw48Z3t
+	lTO9RUCJDEEWB5gjwbvkbBOw8mKNepJJCUxB5CU6FfkSzNG1CU/BUI9xYwvfT7DoMIWKqCy3e13vu
+	Kgj/LokSwRokzKciChvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqDYW-00000004Kzp-12AA;
-	Mon, 16 Sep 2024 15:22:24 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sqDax-00000004LZC-1pRf;
+	Mon, 16 Sep 2024 15:24:55 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqDXQ-00000004KmB-3gU8
+	id 1sqDa3-00000004LQp-3695
 	for linux-phy@lists.infradead.org;
-	Mon, 16 Sep 2024 15:21:18 +0000
+	Mon, 16 Sep 2024 15:24:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7EF615C5C68;
-	Mon, 16 Sep 2024 15:21:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4741C4CEC4;
-	Mon, 16 Sep 2024 15:21:14 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 619BB5C5501;
+	Mon, 16 Sep 2024 15:23:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9645C4CEC4;
+	Mon, 16 Sep 2024 15:23:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1726500075;
-	bh=15KPeQUmUDmhfRZADjOpKO9OZuRW742vA+qq24d9DQo=;
+	s=k20201202; t=1726500238;
+	bh=qD4ujfWspewbmLI96zIOIwR+FCHU3GJLIZW/IsoDLFQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=B5ITreaqD66aCZn0ZnFRJQUnkcv9GGjMkBePgY00QODxUerihkKlQ/zgReoKJwE2Q
-	 Cap3vUp5CkErTeHLvGn0fZa13YQzZxOCbR+88hd5sTElej40AgSEz+toE+/ngvMUZm
-	 EGEtYX8jlXedfWk40Ep2CJOYrGNjS+8XUqV2K1kWZrw2P2vndv/Lw9zb9VL3pQPHkj
-	 YoGmZkYSS0I/H58sA1yM0QCgNHLkjE8SSN+w1RelY8FwpUsdq2uBiKyEOb1rirrEHc
-	 Z5C2xlsId/ivtorQ6nAOg7xPJ7QU550v4Z35ZhWnUq/g3VyAo/65+vr4nsezSW3mtV
-	 0C29kzbyIC/YQ==
-Date: Mon, 16 Sep 2024 17:21:12 +0200
+	b=iCSYIdJ2R+jEL8qu1nVKJBsW7jCgmQs5cI9Y5u8/Rdvzt9tlTuPysbpyuuhcIUoZe
+	 UNAgJYN1dLkgYF9EnKhnJfo9XR9xCdQRUtuVp0qqvOmCDa14lH1FWjLUMb6eGiDkxA
+	 0QAvQr2+JKAA1ZEyx2DNMWXuhMHqtHm7/7rHgxrL2zqWOMQgN01TFWE6yX2u9gqNnT
+	 1cirZm6IuULvnnJsw7c4OYtXiLQkyG/ncfu8uWYN2IRvP91kt9IlWcUWvqgWih4tWg
+	 FaoqRG1UjZfUFnd96G6GEGkVskI0iZoFOmK7vnMwpEmWu8Yj7av7oMVxf+lCoUkuYw
+	 5WVHbeMZCQEXg==
+Date: Mon, 16 Sep 2024 17:23:55 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org, 
@@ -57,15 +57,15 @@ Cc: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org,
 	quic_riteshk@quicinc.com, quic_vproddut@quicinc.com
 Subject: Re: [PATCH v2 1/5] dt-bindings: phy: Add eDP PHY compatible for
  sa8775p
-Message-ID: <qy4hizhsrz6nnfq4a5eremcc7b2gtw6czpav2j34nyj4i6fenv@p6vzlxanhmd5>
+Message-ID: <2hv2hcpbanduw4wg2wbza4jkze4sgilrtyc7zack23uygwsjol@ckskl2rkd5xp>
 References: <20240913103755.7290-1-quic_mukhopad@quicinc.com>
  <20240913103755.7290-2-quic_mukhopad@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20240913103755.7290-2-quic_mukhopad@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240916_082117_003538_79AD02FA 
-X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-CacheID: sfid-20240916_082359_837978_753A4B0E 
+X-CRM114-Status: UNSURE (   6.46  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -90,10 +90,8 @@ On Fri, Sep 13, 2024 at 04:07:51PM +0530, Soutrik Mukhopadhyay wrote:
 > ---
 > v2: No change
 >  
-> ---
->  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 1 +
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
 
 Best regards,
 Krzysztof
