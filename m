@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF2A2C3ABA2
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Sep 2024 11:36:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F356C3ABA2
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Sep 2024 14:53:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z758/0goo+QDUEfLgAsuLdWKV9jYwV+lgTpto7vNl9w=; b=JflX46D/IUGKsh
-	hn/tQyVxyq/pPl9+/YmGx0XQsqtcw+ahIzqfHixecxeEe6L0EOlCEym+LTXAaZlio/1VYuNpC1GGG
-	41eA9QGMrlqp/of3PqM3YCGGkG7jRWEHYI7MY1EwlHFd3D9cKuw93r7xkdq0svV0qRes0Tmg6Z3jv
-	eso1b3TejjecpmkJZPoD4hgV5zYI4RhbPmEQ8lTw1B9+8robmpLcD932Ls8TB8d7wb0cqx/+1JHIw
-	d25ocYr2WdDCJlIaAAuo6Tynx5Kn5KUk1F/vnqz6wpU3Ma5aGbis9UWNERVO+5xgr7omOq/AQtFXi
-	4TVGntwY3agO0zsFemXg==;
+	List-Owner; bh=nFDxpHl0AV+8v08/eKImbnxW0k9A2DfXgIxfk8Lna00=; b=CNQQDRvKicw5A6
+	3tIVXWqjeLAIaT3iTi9CCfVFku4IbknNVYz52nOwn4svi+jOxCR/ceFWTBy68t5Q6CQ1e4vdBZWpU
+	Vh/flJ0TUJggrO9G6IVjaoCjPv3raGiJKgBjNSImMRxqTNUpETmNDMCmfsRMXf1xPz+xsn3/+SOfa
+	c8/Inamw+CpyRaQDUNGyFyyYQnozyURakZVaz1VNu3E9bwX2bPDrVybU8fHq3yaILlgwAL9eUaAUO
+	Xib7wOT7wwLQrdZX8DActIGrhazzw4MfxsIP5hev7JXWK+yg48d/fOB2eT4RFUS5udXsPjjs2In82
+	duy8cX/GKBH0DpfVfd2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqA1v-00000003tHo-1Xjv;
-	Mon, 16 Sep 2024 11:36:31 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1sqD6a-00000004GWz-33hH;
+	Mon, 16 Sep 2024 14:53:32 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqA1s-00000003tGT-1KhX
+	id 1sqD6A-00000004GSZ-21Um
 	for linux-phy@lists.infradead.org;
-	Mon, 16 Sep 2024 11:36:29 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-a8d2daa2262so406831866b.1
-        for <linux-phy@lists.infradead.org>; Mon, 16 Sep 2024 04:36:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1726486586; x=1727091386; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=g2kD63xCEnK7LpZGmhTprbOnZCv6t5U7PfEhkSoqT9E=;
-        b=M2z2Z92DxQo9MBuzBW81hWAYhwEyRu7RN8CaKmWGKazCv8SU8JOHkma6iYW1kKKWe2
-         6yyXHEbup2Q9+Pbg/v8G1OllLs75bL0nyw01y4zPHhMvgzCsiLEfJZvWBmMlgzbkertn
-         t7DfXEQQNPEFRDYGGtDR2uy8IVZ5nRak3dBkxb0R5buooxv5o9a5Ogq8CQpNgAGDZ9hS
-         STEeRlRRcG1m5b8EqUP8vXBg0IlabKFh2lM42slAdnLOcG037ABwdeTZhlaPrq37xN/j
-         invSAWgP223prGDhXbRBdJ4XyRblBIll4U2y0n1APoETtdkMLofLV2xGGA5yM1uLqjBJ
-         2FaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726486586; x=1727091386;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=g2kD63xCEnK7LpZGmhTprbOnZCv6t5U7PfEhkSoqT9E=;
-        b=nMa/CKYRduWk78PngP47nK/kDKIbkzmJHr8oe/vhBdPyjNXMIYn7h0AcUmn+ADiJO/
-         0sbbE3XdDDpan3cMeopIBtCWpOyeECQYREdrsjc81LuWeNIJZLolHXwbb4Xt2udPM0Xz
-         gXfrxZWavNZhZbq7gN1SqLXTWkRaPAV2wXNFFJu+iCGhNCzeK6sLUWWoPkY1y5z495/+
-         /2AIQeuf6vW2x4ucqqKpB6+lulPkxdH3rIYA4QxH5kijMcXqLhuqzVyY3cYoqiQbvzip
-         i4ybvW6bvIqX88WFTsVZsj9ASMykRa2SbboIrHBs1GfLSgDutVRbLEbWmq+E+Kp/JZhm
-         PF7Q==
-X-Forwarded-Encrypted: i=1; AJvYcCWcXp8asnw6AFEPYjVmpcK6a02OXinxqCuO6M3k2dYyXzH8MCj45LGRn8jCHqLdVT5Tlw2owom2R+M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwzDn6a9u4x8k1ledVZjrxENVehEk3tFyK0mQhlrMCp4dLYN1Qh
-	VdWW2i5r1v457YPzn0u+J2k8hqli2Iy9WmRx+fV1Zt538Ffg9LsH0AoLaFhQIaI=
-X-Google-Smtp-Source: AGHT+IE4iVNH/Yi3C6l6RnP78Zl1rdiKCTKo5dcFalxIAXD2Y4EUCMepAYttsrZ1Iej8+4iKxR3rHQ==
-X-Received: by 2002:a17:907:2d87:b0:a8d:7046:a1bd with SMTP id a640c23a62f3a-a9047d03d80mr979448166b.28.1726486585422;
-        Mon, 16 Sep 2024 04:36:25 -0700 (PDT)
-Received: from linaro.org ([62.231.96.65])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a90610f386dsm302049466b.49.2024.09.16.04.36.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Sep 2024 04:36:24 -0700 (PDT)
-Date: Mon, 16 Sep 2024 14:36:23 +0300
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Johan Hovold <johan+linaro@kernel.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Rajendra Nayak <quic_rjendra@quicinc.com>,
-	Sibi Sankar <quic_sibis@quicinc.com>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: Re: [PATCH 2/3] arm64: dts: qcom: x1e80100: fix PCIe4 and PCIe6a PHY
- clocks
-Message-ID: <ZugYN0L/dj0iJxaH@linaro.org>
-References: <20240916082307.29393-1-johan+linaro@kernel.org>
- <20240916082307.29393-3-johan+linaro@kernel.org>
+	Mon, 16 Sep 2024 14:53:08 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id D1E0AA42911;
+	Mon, 16 Sep 2024 14:52:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56461C4CEC4;
+	Mon, 16 Sep 2024 14:53:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1726498385;
+	bh=ctZwLzZwC/S01hY87aaTXyQxeQL1P/gwLYvLGpwJ9ak=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=CzYPAk6vU0dptH0UPZ7h+cKXnSR27tIxN6AzthzifB2bvw+U38KVuOX1ZzHumkhd2
+	 P+E1PVKkXedgw0oJXY3T6nZfUEBrE0Gj5MOPRpwMOHVbEFm5fTY/4/GKg1jCJlrVZi
+	 +mvh4Gz3TbgbiJgzR8Ua7kRxOXL09ODDu8R084FX+AYzOw9vtLZTL8KSIViFuyACN1
+	 APHGWmCD1yG3UnebYl9SdaszcSHQMjs6vMrSzH9pbq7r5bSfh0h7sBVzGW1BQga6e8
+	 gJkvJpLLWCy6pc/AyK8ZLwoV0hvr9aBJLgc1M8uonFXm7UdrkrSxOodM1AVEU2r3Vc
+	 1lNAPMsxTK8GQ==
+Date: Mon, 16 Sep 2024 16:53:01 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Jingyi Wang <quic_jingyw@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, Xin Liu <quic_liuxin@quicinc.com>
+Subject: Re: [PATCH v2] dt-bindings: phy: Add QMP UFS PHY comptible for
+ QCS8300
+Message-ID: <ztpetznwid2om6vylyl2boi665ch3wnkprkmzcq6bem6cqhqtf@ogsi657y4kex>
+References: <20240911-qcs8300_ufs_phy_binding-v2-1-c801a2d27a84@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240916082307.29393-3-johan+linaro@kernel.org>
+In-Reply-To: <20240911-qcs8300_ufs_phy_binding-v2-1-c801a2d27a84@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240916_043628_389636_A3FB05D3 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20240916_075306_682489_742969CA 
+X-CRM114-Status: GOOD (  16.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,68 +76,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-09-16 10:23:06, Johan Hovold wrote:
-> Add the missing clkref enable and pipediv2 clocks to the PCIe4 and
-> PCIe6a PHYs.
+On Wed, Sep 11, 2024 at 02:56:16PM +0800, Jingyi Wang wrote:
+> From: Xin Liu <quic_liuxin@quicinc.com>
 > 
-> Fixes: 5eb83fc10289 ("arm64: dts: qcom: x1e80100: Add PCIe nodes")
-> Cc: stable@vger.kernel.org	# 6.9
-> Cc: Abel Vesa <abel.vesa@linaro.org>
-> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
-
-Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
-
+> Document the QMP UFS PHY compatible for Qualcomm QCS8300 to support
+> physical layer functionality for UFS found on the SoC. Use fallback to
+> indicate the compatibility of the QMP UFS PHY on the QCS8300 with that
+> on the SA8775P.
+> 
+> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
+> Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
 > ---
->  arch/arm64/boot/dts/qcom/x1e80100.dtsi | 16 ++++++++++------
->  1 file changed, 10 insertions(+), 6 deletions(-)
+> Changes in v2:
+> - decoupled from the original series.
+> - Use fallback to indicate compatibility with SA8775P.
+> - typo fixup
+> - Link to v1: https://lore.kernel.org/r/20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com
+> ---
+>  .../bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    | 46 ++++++++++++----------
+>  1 file changed, 26 insertions(+), 20 deletions(-)
 > 
-> diff --git a/arch/arm64/boot/dts/qcom/x1e80100.dtsi b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
-> index 0cf4f3c12428..53e7d1e603cb 100644
-> --- a/arch/arm64/boot/dts/qcom/x1e80100.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
-> @@ -2980,14 +2980,16 @@ pcie6a_phy: phy@1bfc000 {
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+> index f9cfbd0b2de6..626a2039e177 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+> @@ -15,26 +15,31 @@ description:
 >  
->  			clocks = <&gcc GCC_PCIE_6A_PHY_AUX_CLK>,
->  				 <&gcc GCC_PCIE_6A_CFG_AHB_CLK>,
-> -				 <&rpmhcc RPMH_CXO_CLK>,
-> +				 <&tcsr TCSR_PCIE_4L_CLKREF_EN>,
->  				 <&gcc GCC_PCIE_6A_PHY_RCHNG_CLK>,
-> -				 <&gcc GCC_PCIE_6A_PIPE_CLK>;
-> +				 <&gcc GCC_PCIE_6A_PIPE_CLK>,
-> +				 <&gcc GCC_PCIE_6A_PIPEDIV2_CLK>;
->  			clock-names = "aux",
->  				      "cfg_ahb",
->  				      "ref",
->  				      "rchng",
-> -				      "pipe";
-> +				      "pipe",
-> +				      "pipediv2";
+>  properties:
+>    compatible:
+> -    enum:
+> -      - qcom,msm8996-qmp-ufs-phy
+> -      - qcom,msm8998-qmp-ufs-phy
+> -      - qcom,sa8775p-qmp-ufs-phy
+> -      - qcom,sc7180-qmp-ufs-phy
+> -      - qcom,sc7280-qmp-ufs-phy
+> -      - qcom,sc8180x-qmp-ufs-phy
+> -      - qcom,sc8280xp-qmp-ufs-phy
+> -      - qcom,sdm845-qmp-ufs-phy
+> -      - qcom,sm6115-qmp-ufs-phy
+> -      - qcom,sm6125-qmp-ufs-phy
+> -      - qcom,sm6350-qmp-ufs-phy
+> -      - qcom,sm7150-qmp-ufs-phy
+> -      - qcom,sm8150-qmp-ufs-phy
+> -      - qcom,sm8250-qmp-ufs-phy
+> -      - qcom,sm8350-qmp-ufs-phy
+> -      - qcom,sm8450-qmp-ufs-phy
+> -      - qcom,sm8475-qmp-ufs-phy
+> -      - qcom,sm8550-qmp-ufs-phy
+> -      - qcom,sm8650-qmp-ufs-phy
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - qcom,qcs8300-qmp-ufs-phy
+> +          - const: qcom,sa8775p-qmp-ufs-phy
+> +      - enum:
+> +          - qcom,msm8996-qmp-ufs-phy
+> +          - qcom,msm8998-qmp-ufs-phy
+> +          - qcom,sa8775p-qmp-ufs-phy
+> +          - qcom,sc7180-qmp-ufs-phy
+> +          - qcom,sc7280-qmp-ufs-phy
+> +          - qcom,sc8180x-qmp-ufs-phy
+> +          - qcom,sc8280xp-qmp-ufs-phy
+> +          - qcom,sdm845-qmp-ufs-phy
+> +          - qcom,sm6115-qmp-ufs-phy
+> +          - qcom,sm6125-qmp-ufs-phy
+> +          - qcom,sm6350-qmp-ufs-phy
+> +          - qcom,sm7150-qmp-ufs-phy
+> +          - qcom,sm8150-qmp-ufs-phy
+> +          - qcom,sm8250-qmp-ufs-phy
+> +          - qcom,sm8350-qmp-ufs-phy
+> +          - qcom,sm8450-qmp-ufs-phy
+> +          - qcom,sm8475-qmp-ufs-phy
+> +          - qcom,sm8550-qmp-ufs-phy
+> +          - qcom,sm8650-qmp-ufs-phy
 >  
->  			resets = <&gcc GCC_PCIE_6A_PHY_BCR>,
->  				 <&gcc GCC_PCIE_6A_NOCSR_COM_PHY_BCR>;
-> @@ -3232,14 +3234,16 @@ pcie4_phy: phy@1c0e000 {
->  
->  			clocks = <&gcc GCC_PCIE_4_AUX_CLK>,
->  				 <&gcc GCC_PCIE_4_CFG_AHB_CLK>,
-> -				 <&rpmhcc RPMH_CXO_CLK>,
-> +				 <&tcsr TCSR_PCIE_2L_4_CLKREF_EN>,
->  				 <&gcc GCC_PCIE_4_PHY_RCHNG_CLK>,
-> -				 <&gcc GCC_PCIE_4_PIPE_CLK>;
-> +				 <&gcc GCC_PCIE_4_PIPE_CLK>,
-> +				 <&gcc GCC_PCIE_4_PIPEDIV2_CLK>;
->  			clock-names = "aux",
->  				      "cfg_ahb",
->  				      "ref",
->  				      "rchng",
-> -				      "pipe";
-> +				      "pipe",
-> +				      "pipediv2";
->  
->  			resets = <&gcc GCC_PCIE_4_PHY_BCR>;
->  			reset-names = "phy";
-> -- 
-> 2.44.2
-> 
+>    reg:
+>      maxItems: 1
+> @@ -85,6 +90,7 @@ allOf:
+>            contains:
+>              enum:
+>                - qcom,msm8998-qmp-ufs-phy
+> +              - qcom,qcs8300-qmp-ufs-phy
+
+Not needed.
+
+BTW, please be sure you organize your patchsets per subsystem. IOW, that
+you do not split same subsystem bindings patches into separate
+patchsets.
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
