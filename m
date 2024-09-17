@@ -4,119 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F54EC3ABD8
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Sep 2024 06:04:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8ECFBC35FF2
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Sep 2024 08:13:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5nKmH8pwJOI8PJet553pPXebG6QEA6oIGXA3iBQ8rwA=; b=uVhY88N0BLs1wA
-	SYCpvLrXLm29lcFbNGWXqfpOwTfCHu3isYTgZurOkRW09DU24ea5ycPp1BWI6FyLJKHbtuuXsoPg/
-	BT7O6rc+8Z/94dnGfYKhmFN0yC4GGHtCPW3nl7GUlfizOwrLVNAk+a7aKZXbx3U+5Ov5r30odVOrx
-	fVW7EufiYRs/kpoZD4Q5eqnPOxZj4DaiEAzgASb8VAhvZtUdYFT31kn+QWX0DC0Irbc2Pix6zM/Eb
-	xjrTPVW+d3EJTKk3G+Jbymldg5qbhhhpGT9KoQPGIpDexZ0Ne3vWgcRlajv+0Hh0OrTuWv7INbijK
-	zFKM4SbfyYEI7vZxOJBg==;
+	List-Owner; bh=3FhE08b4+ff77RI+lYMI8oTHtq9Iv00qtIUiCLfAzcU=; b=sibPKdQHpFNXQF
+	EiHs/6DB6BfKuLhLclbAcLCLVZck5HmFL5uGJkMIFJMOZ/FRLdZx+d2e7gGDwjXkCFeU18LD/8ya4
+	qDPo2dFyaD9Veb5fP/s8yvM8YHzWi0IVDuFYMAtyhojxJqnjowEJ8sOLEsLhwwuYDfztOIcD0K/EC
+	HOnbbmYOwHtdhH5dXvyW27GWMqoT/gfclF4s9syW8udqAdniSOkBfvexqWIuCCQInPkQSTHQc+9D/
+	OAy5l5l12wC/MuMRsLT7bfqWUlFB47DquHt2MY6DWleiwpe+TIPZXZZWWpmbrQCQNxWUFBHUePgK4
+	8bk4w2h0Zkh74SWMJgww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqRJx-00000005SL5-01bW;
-	Tue, 17 Sep 2024 06:04:17 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1sqTKv-00000005fUH-0RIt;
+	Tue, 17 Sep 2024 08:13:25 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sqRJu-00000005SKn-1fPA
+	id 1sqTKs-00000005fSW-2vTr
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Sep 2024 06:04:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id BE8D5A433BF;
-	Tue, 17 Sep 2024 06:04:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E083C4CEC6;
-	Tue, 17 Sep 2024 06:04:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1726553053;
-	bh=vlUhT/e6l8JvkPqSUOpKwwLGx50wAgbnGaKM0ehUu5k=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Dovvvv7Na6uQGrDLIiFntJULd3yG5S2H4EbnWItgRifd/I6aoIvyZN3QG7wEALXkL
-	 kS/I1Cru1Bx3Bs9zrZNNe43pT5APgCtblJj47pvq70tuf5zgsgYj6tpPbTc63KUVZb
-	 78qzhuKCqEFpQXgOHLxEPKa0wIw+EXDEOTq10cBypNF8lor4bQUcZRKBEJJmz/A63Y
-	 UiCZO3hRWKuLQLuVzLuKt3DmEq+Yfc1wemTln8gY3z53cOCcuNgKRYTPMDkxHXzvqp
-	 Ux9AJ5QSfpeOssRdx4SgvvVJsMjbF3dsawKjbGpSnUEAxOUhzqH4GBq4s8tVoiPz9b
-	 +naIEaJ37ERsA==
-Message-ID: <e9ee952a-7c88-4c4c-b12f-fc4a33b3a517@kernel.org>
-Date: Tue, 17 Sep 2024 08:04:01 +0200
+	Tue, 17 Sep 2024 08:13:24 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48GFEtL6007234;
+	Tue, 17 Sep 2024 08:13:08 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	6RdX0bFCBFita5q9pO6XTSQJpayvjOJ/luZyvNW3Cn0=; b=YyQ8hnumYeB79eof
+	espbv8XOu908CLozu+8rC7jxULWG1TzfYrKk1t65xpvxuCS1UU/tZGbGfgk3/6Ru
+	Q0QZu9KJ3fbHIAxStdQ92/9LKjMWoEFQlO4HR0m4NcmSzV8LAoTsk+yLsNXmdFDb
+	hRZTp5MJat/PTBlqTvwzC0dxJxseWEzt3Q0tmS9evQqwXkuwj2jXHw83raE4tcTd
+	v7kjws+vE0a7KDJLFXBsHGn7o+eKsCL8+v1E2pKckrs7hgNyT2D6VI1PzlSnlj4t
+	JsEqpy+j2NT7WL/XeHfPbGlQ1+RD026vBsteYGdVKl1MEwszKGJhe3Qp0B7e+J6W
+	kx11+w==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4jhp8e3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Sep 2024 08:13:07 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48H8D65w000864
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 17 Sep 2024 08:13:06 GMT
+Received: from [10.204.67.70] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 17 Sep
+ 2024 01:12:57 -0700
+Message-ID: <b2d94fa5-6924-46f6-95cf-bde315ccbdbd@quicinc.com>
+Date: Tue, 17 Sep 2024 13:42:54 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/5] dt-bindings: phy: Add eDP PHY compatible for
- sa8775p
-To: Konrad Dybcio <konradybcio@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>, vkoul@kernel.org,
- kishon@kernel.org, andersson@kernel.org, simona@ffwll.ch,
- abel.vesa@linaro.org, robdclark@gmail.com, quic_abhinavk@quicinc.com,
- sean@poorly.run, marijn.suijten@somainline.org, airlied@gmail.com,
- daniel@ffwll.ch, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
- tzimmermann@suse.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, quic_khsieh@quicinc.com, konrad.dybcio@linaro.org,
- quic_parellan@quicinc.com, quic_bjorande@quicinc.com,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
- quic_riteshk@quicinc.com, quic_vproddut@quicinc.com
-References: <20240913103755.7290-1-quic_mukhopad@quicinc.com>
- <20240913103755.7290-2-quic_mukhopad@quicinc.com>
- <2hv2hcpbanduw4wg2wbza4jkze4sgilrtyc7zack23uygwsjol@ckskl2rkd5xp>
- <t4ytnii3sdiqsni74d7qsi2c6uv2klwmzmgznnirt2z55to4hj@lyaoh5fzcyti>
- <f736f02e-f19b-4be2-86ad-73d6ae7c6dc2@kernel.org>
+Subject: Re: [PATCH 5/5] drm/msm/dp: Add DisplayPort controller for SA8775P
 Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <f736f02e-f19b-4be2-86ad-73d6ae7c6dc2@kernel.org>
+To: Bjorn Andersson <quic_bjorande@quicinc.com>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>, <konradybcio@kernel.org>,
+        <andersson@kernel.org>, <simona@ffwll.ch>,
+        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
+        <robdclark@gmail.com>, <quic_abhinavk@quicinc.com>, <sean@poorly.run>,
+        <marijn.suijten@somainline.org>, <airlied@gmail.com>,
+        <daniel@ffwll.ch>, <maarten.lankhorst@linux.intel.com>,
+        <mripard@kernel.org>, <tzimmermann@suse.de>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <quic_khsieh@quicinc.com>,
+        <konrad.dybcio@linaro.org>, <quic_parellan@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+        <quic_riteshk@quicinc.com>, <quic_vproddut@quicinc.com>
+References: <20240911100813.338-1-quic_mukhopad@quicinc.com>
+ <20240911100813.338-6-quic_mukhopad@quicinc.com>
+ <ZuH3WqMwn7fl3nhh@hu-bjorande-lv.qualcomm.com>
+ <a44a6f08-1f4a-4e5c-a4e4-30ab65c467f7@quicinc.com>
+ <ZuStkRFvwJT7re6D@hu-bjorande-lv.qualcomm.com>
+From: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
+In-Reply-To: <ZuStkRFvwJT7re6D@hu-bjorande-lv.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: C2cU45NdQrzcj1_yrumqfypF_LZ5lcmM
+X-Proofpoint-GUID: C2cU45NdQrzcj1_yrumqfypF_LZ5lcmM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ clxscore=1015 phishscore=0 impostorscore=0 bulkscore=0 adultscore=0
+ suspectscore=0 lowpriorityscore=0 malwarescore=0 spamscore=0 mlxscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2408220000 definitions=main-2409170061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240916_230414_596822_E25FE420 
-X-CRM114-Status: UNSURE (   8.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240917_011322_894021_088CD532 
+X-CRM114-Status: GOOD (  24.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,33 +108,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17/09/2024 01:26, Konrad Dybcio wrote:
-> On 16.09.2024 10:33 PM, Dmitry Baryshkov wrote:
->> On Mon, Sep 16, 2024 at 05:23:55PM GMT, Krzysztof Kozlowski wrote:
->>> On Fri, Sep 13, 2024 at 04:07:51PM +0530, Soutrik Mukhopadhyay wrote:
->>>> Add compatible string for the supported eDP PHY on sa8775p platform.
->>>>
+
+On 9/14/2024 2:54 AM, Bjorn Andersson wrote:
+> On Thu, Sep 12, 2024 at 03:34:05PM +0530, Soutrik Mukhopadhyay wrote:
+>> On 9/12/2024 1:32 AM, Bjorn Andersson wrote:
+>>> On Wed, Sep 11, 2024 at 03:38:13PM +0530, Soutrik Mukhopadhyay wrote:
+>>>> The Qualcomm SA8775P platform comes with a DisplayPort controller
+>>>> with a different base offset than the previous SoCs,
+>>>> add support for this in the DisplayPort driver.
+> Please check the line wrapping of this as well; the lines here should be
+> wrapped at 75 columns.
+
+
+Yes, it is within 75 columns, we ran checkpatch.pl before posting the patch.
+
+
+>
 >>>> Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 >>>> ---
->>>> v2: No change
->>>>  
+>>>>    drivers/gpu/drm/msm/dp/dp_display.c | 7 +++++++
+>>>>    1 file changed, 7 insertions(+)
+>>>>
+>>>> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
+>>>> index e1228fb093ee..e4954fd99eb0 100644
+>>>> --- a/drivers/gpu/drm/msm/dp/dp_display.c
+>>>> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
+>>>> @@ -118,6 +118,12 @@ struct msm_dp_desc {
+>>>>    	bool wide_bus_supported;
+>>>>    };
+>>>> +static const struct msm_dp_desc sa8775p_dp_descs[] = {
+>>>> +	{ .io_start = 0xaf54000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+>>>> +	{ .io_start = 0xaf5c000, .id = MSM_DP_CONTROLLER_1, .wide_bus_supported = true },
+>>> Why is this list incomplete?
 >>>
->>> Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+>>> Regards,
+>>> Bjorn
 >>
->> So, is it reviewed or acked?
-> 
-> After a thorough review, it has been acked
+>> Do you mean to add for mdss_1 as well?
+>>
+> I don't see a reason for not submitting them as well.
 
-Way too many emails in inbox after short trip... This should be only acked.
 
-Best regards,
-Krzysztof
+Sure, we will add for mdss_1 as well.
 
+
+>
+>> We only added dp controllers for mdss_0 as we plan to validate and enable
+>> only these.
+>>
+> As far as I can tell there are 5 DPTX blocks on mdss_0.
+>
+>
+> It is perfectly fine that you just state in the commit message that
+> "Only MDSS0 DPTX0 and DPTX1 have been validated", but please add the
+> others as well in this commit.
+>
+> Regards,
+> Bjorn
+
+
+We cross-checked the mdss architecture and found that there are only 2 
+dp controllers for each mdss.
+
+We will add all 4 and mention in the commit message that "Only MDSS0 
+DPTX0 and DPTX1 have been validated".
+
+
+>
+>>>> +	{}
+>>>> +};
+>>>> +
+>>>>    static const struct msm_dp_desc sc7180_dp_descs[] = {
+>>>>    	{ .io_start = 0x0ae90000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+>>>>    	{}
+>>>> @@ -162,6 +168,7 @@ static const struct msm_dp_desc x1e80100_dp_descs[] = {
+>>>>    };
+>>>>    static const struct of_device_id dp_dt_match[] = {
+>>>> +	{ .compatible = "qcom,sa8775p-dp", .data = &sa8775p_dp_descs },
+>>>>    	{ .compatible = "qcom,sc7180-dp", .data = &sc7180_dp_descs },
+>>>>    	{ .compatible = "qcom,sc7280-dp", .data = &sc7280_dp_descs },
+>>>>    	{ .compatible = "qcom,sc7280-edp", .data = &sc7280_dp_descs },
+>>>> -- 
+>>>> 2.17.1
+>>>>
 
 -- 
 linux-phy mailing list
