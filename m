@@ -4,60 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89663CCD1A6
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Sep 2024 13:38:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47EC0CDD54F
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Sep 2024 17:14:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PkPLcRCaNBLxuiQ498pcxgsop12OwjyKCUb94/xV9/I=; b=NgjgCZzP9Do+Gs
-	DVtDzq7aEW0fk0d5TL897FFAwtCj9hIFGYoUPAgIU/DQllWvtw1Ee0LPyqzO6enFrFzKWMI6V4M66
-	zVWnistmCAaTKkMlsxl/KvznyKFIFrAqTDSZSCXguwKXO84UVj6lePtqM8fNFh+pwPBwlGyddiab0
-	REsfcAcx/gep/YrJ7UY0neyu1RljtOQ+S8Dwsy8C1juMcypcRi7QIJUaBnjVBsjBr/kCr6b/3m3Nb
-	3OwaaqVoj4Je/TYokzTKVprpnYS8qSlOL9wDcubwXwI0Y+PCWFshENXGvbUqI0FXhMOoesiBD2b/l
-	wRaB/KakgZgFgccRo+xw==;
+	List-Owner; bh=YSUe67iORq/EldzESfEnxZoFa/p4lJwR7IJP8TvR03U=; b=qIicpgjU1bNVtU
+	n9BzA1kxFgYavjCIh2/IfhEOvpkOnfSJmq3qSQGvXSrmizfFS+6E+v210LfeF4qEdH0WddlucbY9x
+	IoDL9kSF9Hc2q8vqFL8FPOxqp9WZhYIiet1lLqSWC4BkGYxQTE1fBMmph79F75WfGtFDupfu9NFYQ
+	xdHKQUNQic2J52FHrSo0Ix7mc1I5IRIAgK1xfzuhRfYUSDCKTTYf52WCgvnwnBwHvLb2ZVXiX7LuN
+	+SoCvcX6s6aiTOAyc5UFOtEI3oB1C4dzUEgtVh+rkfbCBYQ3xvaRII/0FhlXBat7nKNFVk/KU9zN/
+	iohXrvOPcyZz9hIGA/YQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1squtQ-00000008Lfv-0r8C;
-	Wed, 18 Sep 2024 13:38:52 +0000
+	id 1sqyGY-00000008iLW-42lT;
+	Wed, 18 Sep 2024 17:14:58 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1squo9-00000008L1X-0EXA;
-	Wed, 18 Sep 2024 13:33:26 +0000
+	id 1sqyGW-00000008iJw-01ZN
+	for linux-phy@lists.infradead.org;
+	Wed, 18 Sep 2024 17:14:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id BF6C25C5CB3;
-	Wed, 18 Sep 2024 13:33:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CBA8FC4CEC3;
-	Wed, 18 Sep 2024 13:33:23 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id B7D465C57AB;
+	Wed, 18 Sep 2024 17:14:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA227C4CEC2;
+	Wed, 18 Sep 2024 17:14:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1726666404;
-	bh=DOm2BG6AMxdE927gikbeKZHeNqkczmwrGnj2NOpTHwc=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=P0+98eD0EYLxkd0RxjjjZq3Kt89O8hWXJ0sgWOLzRKiW6OkU3HJatu5uEjnrL+zj8
-	 OIbZrpPbpJk/2M8wKhy1que2vHAZU+ZE6fmavMcMlfstblvL2x4Kkc2sc8RmC80tws
-	 NtV0rXTkt4OZpsJ8umEl0hnbmU4EAbbwEMOYB6JRqWZA9GIt67gGOxSHvFEx9gnGcL
-	 Kellz5L35WQ7jrzWvk8UzK9QLD0oCquByU9gzUj/H/b/xu4eZ2jxrJFhVisKtrzKsA
-	 aST5pRkwsXcJDYnNY9c71YAAbEIkbTCcwOPD/zCupEiF9L267g94f66Cysi7LfYWqI
-	 7Mp0e8lfncunw==
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-Date: Wed, 18 Sep 2024 15:32:55 +0200
-Subject: [PATCH 4/4] phy: airoha: Fix REG_CSR_2L_RX{0,1}_REV0 definitions
+	s=k20201202; t=1726679695;
+	bh=se9nDBRBjI7FoM8cZzoIPCEXe0jMmjU5Q1XxWRQ6wUA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=hjFh4A1Hi4VkpIC8I2IMLHVXC6pOFVGLcPJu/LY/tYv312M0B/g+aA5eMcOB21d7v
+	 pirME89AvXq8f7qy+B6NQifjSFYkUCLG3Kee7FQKBJLcNz/VI/ymALb0BCCKljjpjX
+	 Gy8b3WYJAkWTraU6DbWgX2S6z8RFZ6OmA9GFSijBmzek5JfJ68PvdQ2gVmfVdxtL+m
+	 vG45JW3AWMI2o+zIBHtpc7pZOK83tK8BIE2Avw4ikCQjFZVBgDP91w7wkSIViXd3w8
+	 Z9FqO2F3LLS7nFTPQLEU+8N3QAomNYMbjwZlStqRp2lDIK+Xq55YG8d0Cfpklh+Frx
+	 o2Q3ESpMo1dww==
+Date: Wed, 18 Sep 2024 12:14:53 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Johan Hovold <johan+linaro@kernel.org>
+Cc: Bjorn Andersson <andersson@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Sibi Sankar <quic_sibis@quicinc.com>, linux-phy@lists.infradead.org,
+	Rajendra Nayak <quic_rjendra@quicinc.com>,
+	Abel Vesa <abel.vesa@linaro.org>, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>, linux-arm-msm@vger.kernel.org
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: add
+ missing x1e80100 pipediv2 clocks
+Message-ID: <172667969326.1817225.11425040649410740756.robh@kernel.org>
+References: <20240916082307.29393-1-johan+linaro@kernel.org>
+ <20240916082307.29393-2-johan+linaro@kernel.org>
 MIME-Version: 1.0
-Message-Id: <20240918-airoha-en7581-phy-fixes-v1-4-8291729a87f8@kernel.org>
-References: <20240918-airoha-en7581-phy-fixes-v1-0-8291729a87f8@kernel.org>
-In-Reply-To: <20240918-airoha-en7581-phy-fixes-v1-0-8291729a87f8@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Christian Marangi <ansuelsmth@gmail.com>, 
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- upstream@airoha.com, Lorenzo Bianconi <lorenzo@kernel.org>
-X-Mailer: b4 0.14.1
+Content-Disposition: inline
+In-Reply-To: <20240916082307.29393-2-johan+linaro@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240918_063325_168121_BED0D2C6 
-X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-CacheID: sfid-20240918_101456_110450_1D82E4C4 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,38 +83,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix the following register definitions for REG_CSR_2L_RX{0,1}_REV0
-registers:
-- CSR_2L_PXP_VOS_PNINV
-- CSR_2L_PXP_FE_GAIN_NORMAL_MODE
-- CSR_2L_PXP_FE_GAIN_TRAIN_MODE
 
-Fixes: d7d2818b9383 ("phy: airoha: Add PCIe PHY driver for EN7581 SoC.")
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
----
- drivers/phy/phy-airoha-pcie-regs.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+On Mon, 16 Sep 2024 10:23:05 +0200, Johan Hovold wrote:
+> The x1e80100 QMP PCIe PHYs all have a pipediv2 clock that needs to be
+> described.
+> 
+> Fixes: e94b29f2bd73 ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the X1E80100 QMP PCIe PHYs")
+> Cc: Abel Vesa <abel.vesa@linaro.org>
+> Signed-off-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
 
-diff --git a/drivers/phy/phy-airoha-pcie-regs.h b/drivers/phy/phy-airoha-pcie-regs.h
-index bb1f679ca1df..b938a7b468fe 100644
---- a/drivers/phy/phy-airoha-pcie-regs.h
-+++ b/drivers/phy/phy-airoha-pcie-regs.h
-@@ -197,9 +197,9 @@
- #define CSR_2L_PXP_TX1_MULTLANE_EN		BIT(0)
- 
- #define REG_CSR_2L_RX0_REV0			0x00fc
--#define CSR_2L_PXP_VOS_PNINV			GENMASK(3, 2)
--#define CSR_2L_PXP_FE_GAIN_NORMAL_MODE		GENMASK(6, 4)
--#define CSR_2L_PXP_FE_GAIN_TRAIN_MODE		GENMASK(10, 8)
-+#define CSR_2L_PXP_VOS_PNINV			GENMASK(19, 18)
-+#define CSR_2L_PXP_FE_GAIN_NORMAL_MODE		GENMASK(22, 20)
-+#define CSR_2L_PXP_FE_GAIN_TRAIN_MODE		GENMASK(26, 24)
- 
- #define REG_CSR_2L_RX0_PHYCK_DIV		0x0100
- #define CSR_2L_PXP_RX0_PHYCK_SEL		GENMASK(9, 8)
-
--- 
-2.46.0
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
 
 -- 
