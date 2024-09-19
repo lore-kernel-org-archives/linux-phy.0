@@ -4,94 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C25C9CF3943
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Sep 2024 14:06:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 646A5CF3944
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Sep 2024 14:14:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M/x9YaRpkRZEL67FneWKHGS+1DWdhApmoHtGCPW0wEk=; b=Ymuorb777sfzRU
-	SSh9771vUk+UT/bB+4T7wO5zXoEMsKk+OA8gNq5WM3vSocKzjztC7RRQYUUblSmiHyQRcSfz+jGoc
-	e5aqp1Pi4/oQZ9MlVQTgX8rAm6Hv6JgloK3VXXfV5IQPYS3sSXZMljiGg5GsJDkU9gnowg+BMtPmT
-	hvH0titQwDjIjGhcF6LkalzKB2D4huFWIO8YlNXz7n1UfT37n9ZHKpmk/WwKU6fThrCWfxGNteBpX
-	jfOC2MkpL8Mi/FQCTvpzX1VNMz0pHlUB7xW6MeGONWCj6qQaNZi6KfZDW9pgCWAR5QQ0FARfNu8Ab
-	gZi4CkSC5pNYEtEFfiIg==;
+	List-Owner; bh=e7FTXkifrMkzIiBvdmtSqTkn2NWD1EhvPnGplED3OpY=; b=mVreFLSpK0ZDaj
+	2Upqx1tAhpbcKvVA8no0x9RKNvVHw8aZyDrgFtroo/PJvy/i9wOBBAo+MF1v78oM7S5xIOegJF7p8
+	SDDgqy68HlpJfzUv7OAwx7rYu3t1Rx3mtfRtkP6GuHF2JjkxovpClk+tWtOfG9jFGGg3JmeFyGKsH
+	wOMGcwMdR4SHIEpIhVMi63haxbMy80UQAeyznYRdvXwMT8hUhHKv9PMO2ZvZRkzmsuNlCuBxo7BQX
+	07BuPiaf7HFXWin9JaL5q0J/+MxPnHLftClUeIQPmS9CRNwoWCwWuDRZRyds5j/U3aaCQ2Y1cNKzs
+	iXY+BbS63KvS5uasjXJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1srHnE-0000000APAg-1gVr;
-	Thu, 19 Sep 2024 14:06:00 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1srHvf-0000000AQBE-4BLG;
+	Thu, 19 Sep 2024 14:14:44 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1srHnC-0000000APAI-1rI4
+	id 1srHvc-0000000AQAq-2sQ2
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Sep 2024 14:05:59 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48J96WYd023715;
-	Thu, 19 Sep 2024 14:05:48 GMT
+	Thu, 19 Sep 2024 14:14:42 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48J6ui9d024651;
+	Thu, 19 Sep 2024 14:14:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	uFhBTahebu4VgxkS8FMCQLMBIAheHoUGsXISykSdThA=; b=cL+ry6yaTOl/b2tf
-	DyZivyfX9G1J/iaQA7Y/V6suKXAqXvkNGm93xqsVNpLVz7bsM7Qy8RD0j4PLiFPl
-	IVD4DMiOfLWmx8eBgB0y4dyyHwloKNh2zR1tR19XTFMM1Svt4tbNiG3BfHHtEG8G
-	Zy6P0bethRLpv4F+jFYAUXWjSE+2slYxvzNwokcWllxPp1xDBXTRPAUVQ4yDfS3q
-	OXJ8mq/uNmTPY2q7y7YFBq1409IFjXDKc0SjGxD1Wuf/iS/6EMzpyvP/BNSnXx94
-	5zKwS8HLR4Jj6kzfaXQyB4kmbq8Wejj6T/UOxWinNgeVV6SDnb12rhcFIjBBWEQT
-	NFLmvA==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4kjngxh-1
+	nb+2JDRR/I2mRpqjg1Du/MQPJZAJ7gRJ9cmY1nhoiC0=; b=MpkRbTIe1KYoNk6G
+	l+OvWA1NytZxLP35PZEjl99uCCEkkMiNbnGgeJNUwzS9Q1yAmrsi4jwTaO1hotWf
+	gYcOKPy6VwA05nfrQ/yDRY//EPCO7Ka99z0gN/yQpwuC2RFI7e/H0foRoPcQEpf8
+	Yem9T/9WSnjKlPdDhpi6aC/8LyMiSE3rbGudA6EV2ZcSpCm35lcDxLngw3MG+PtQ
+	rnTlutEf4myt00w4+j16pHvRP44fpNRAfsllDZlcxDCxdLJm/gfqZLfNFJzY4mNV
+	n4eXJ7tPR01vwLZPhDoLdVnKkFrDnlV71k7mWERZBdQ0aIw7Pzbuc/82vvx3bLOj
+	P+NmgQ==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41n4hhdknw-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Sep 2024 14:05:47 +0000 (GMT)
+	Thu, 19 Sep 2024 14:14:15 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48JE5kqn013393
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48JEEDbB029992
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 19 Sep 2024 14:05:46 GMT
+	Thu, 19 Sep 2024 14:14:13 GMT
 Received: from [10.253.37.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
  (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 19 Sep
- 2024 07:05:40 -0700
-Message-ID: <af601078-3ab7-484e-bdd3-6220a5fb3083@quicinc.com>
-Date: Thu, 19 Sep 2024 22:05:38 +0800
+ 2024 07:14:08 -0700
+Message-ID: <6f1118eb-89cf-4fd4-a35d-e8b98b0b7a8d@quicinc.com>
+Date: Thu, 19 Sep 2024 22:14:06 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/5] arm64: dts: qcom: x1e80100: Add support for PCIe3
- on x1e80100
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
-        <andersson@kernel.org>, <konradybcio@kernel.org>, <krzk+dt@kernel.org>,
-        <conor+dt@kernel.org>, <mturquette@baylibre.com>, <sboyd@kernel.org>,
-        <abel.vesa@linaro.org>, <quic_msarkar@quicinc.com>,
-        <quic_devipriy@quicinc.com>, <dmitry.baryshkov@linaro.org>,
-        <kw@linux.com>, <lpieralisi@kernel.org>, <neil.armstrong@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-clk@vger.kernel.org>
+Subject: Re: [PATCH v2 0/5] Add support for PCIe3 on x1e80100
+To: Krishna Chaitanya Chundru <quic_krichai@quicinc.com>,
+        <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
+        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>
+CC: <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
+        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>
 References: <20240913083724.1217691-1-quic_qianyu@quicinc.com>
- <20240913083724.1217691-6-quic_qianyu@quicinc.com>
- <20240913135710.6ionsmzo45orin6n@thinkpad>
+ <36bd9f69-e263-08a1-af07-45185ea03671@quicinc.com>
 Content-Language: en-US
 From: Qiang Yu <quic_qianyu@quicinc.com>
-In-Reply-To: <20240913135710.6ionsmzo45orin6n@thinkpad>
+In-Reply-To: <36bd9f69-e263-08a1-af07-45185ea03671@quicinc.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: givn9zvQi86dlin518MTGRoXkk5wFe4p
-X-Proofpoint-ORIG-GUID: givn9zvQi86dlin518MTGRoXkk5wFe4p
+X-Proofpoint-GUID: _mdC1IH3zYXwxrLCQBtGo18Z4GNH8Uo0
+X-Proofpoint-ORIG-GUID: _mdC1IH3zYXwxrLCQBtGo18Z4GNH8Uo0
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
- suspectscore=0 mlxscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
- phishscore=0 impostorscore=0 mlxlogscore=999 priorityscore=1501
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409190093
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
+ adultscore=0 impostorscore=0 phishscore=0 priorityscore=1501 clxscore=1015
+ mlxlogscore=999 mlxscore=0 spamscore=0 lowpriorityscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2408220000
+ definitions=main-2409190093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240919_070558_530174_CB606C0E 
-X-CRM114-Status: GOOD (  19.12  )
+X-CRM114-CacheID: sfid-20240919_071440_872482_F6609D52 
+X-CRM114-Status: GOOD (  22.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,264 +102,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On 9/13/2024 9:57 PM, Manivannan Sadhasivam wrote:
-> On Fri, Sep 13, 2024 at 01:37:24AM -0700, Qiang Yu wrote:
->> Describe PCIe3 controller and PHY. Also add required system resources like
->> regulators, clocks, interrupts and registers configuration for PCIe3.
->>
->> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
->> ---
->>   arch/arm64/boot/dts/qcom/x1e80100.dtsi | 202 ++++++++++++++++++++++++-
->>   1 file changed, 201 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/x1e80100.dtsi b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
->> index a36076e3c56b..a7703e4974a6 100644
->> --- a/arch/arm64/boot/dts/qcom/x1e80100.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/x1e80100.dtsi
->> @@ -744,7 +744,7 @@ gcc: clock-controller@100000 {
->>   
->>   			clocks = <&bi_tcxo_div2>,
->>   				 <&sleep_clk>,
->> -				 <0>,
->> +				 <&pcie3_phy>,
->>   				 <&pcie4_phy>,
->>   				 <&pcie5_phy>,
->>   				 <&pcie6a_phy>,
->> @@ -2907,6 +2907,206 @@ mmss_noc: interconnect@1780000 {
->>   			#interconnect-cells = <2>;
->>   		};
->>   
->> +		pcie3: pci@1bd0000 {
-> pcie@
->
->> +			device_type = "pci";
->> +			compatible = "qcom,pcie-x1e80100";
->> +			reg = <0 0x01bd0000 0 0x3000>,
->> +			      <0 0x78000000 0 0xf1d>,
-> 0x0 here and below.
->
->> +			      <0 0x78000f40 0 0xa8>,
->> +			      <0 0x78001000 0 0x1000>,
->> +			      <0 0x78100000 0 0x100000>,
->> +			      <0 0x01bd3000 0 0x1000>;
->> +			reg-names = "parf",
->> +				    "dbi",
->> +				    "elbi",
->> +				    "atu",
->> +				    "config",
->> +				    "mhi";
->> +			#address-cells = <3>;
->> +			#size-cells = <2>;
->> +			ranges = <0x01000000 0x0 0x00000000 0x0 0x78200000 0x0 0x100000>,
->> +				 <0x02000000 0x0 0x78300000 0x0 0x78300000 0x0 0x3d00000>,
->> +				 <0x03000000 0x7 0x40000000 0x7 0x40000000 0x0 0x40000000>;
->> +			bus-range = <0x00 0xff>;
->> +
->> +			dma-coherent;
->> +
->> +			linux,pci-domain = <3>;
->> +			num-lanes = <8>;
->> +
->> +			interrupts = <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 769 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 836 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 671 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 218 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>;
->> +			interrupt-names = "msi0",
->> +					  "msi1",
->> +					  "msi2",
->> +					  "msi3",
->> +					  "msi4",
->> +					  "msi5",
->> +					  "msi6",
->> +					  "msi7";
-> Can you add 'global' interrupt as well? While doing so, please make sure the
-> global_irq related patches are applied and Link up works fine. Those patches are
-> already in linux-next.
-Sure, let me add global interrupt and have a try. Will also update patch
-according to your other comments.
-
-Thanks,
-Qiang
->
->> +
->> +			#interrupt-cells = <1>;
->> +			interrupt-map-mask = <0 0 0 0x7>;
->> +			interrupt-map = <0 0 0 1 &intc 0 0 0 220 IRQ_TYPE_LEVEL_HIGH>,
-> Use GIC_SPI for the parent interrupt specifier.
->
-> - Mani
->
->> +					<0 0 0 2 &intc 0 0 0 221 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0 0 0 3 &intc 0 0 0 237 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0 0 0 4 &intc 0 0 0 238 IRQ_TYPE_LEVEL_HIGH>;
->> +
->> +			clocks = <&gcc GCC_PCIE_3_AUX_CLK>,
->> +				 <&gcc GCC_PCIE_3_CFG_AHB_CLK>,
->> +				 <&gcc GCC_PCIE_3_MSTR_AXI_CLK>,
->> +				 <&gcc GCC_PCIE_3_SLV_AXI_CLK>,
->> +				 <&gcc GCC_PCIE_3_SLV_Q2A_AXI_CLK>,
->> +				 <&gcc GCC_CFG_NOC_PCIE_ANOC_NORTH_AHB_CLK>,
->> +				 <&gcc GCC_CNOC_PCIE_NORTH_SF_AXI_CLK>;
->> +			clock-names = "aux",
->> +				      "cfg",
->> +				      "bus_master",
->> +				      "bus_slave",
->> +				      "slave_q2a",
->> +				      "noc_aggr",
->> +				      "cnoc_sf_axi";
->> +
->> +			assigned-clocks = <&gcc GCC_PCIE_3_AUX_CLK>;
->> +			assigned-clock-rates = <19200000>;
->> +
->> +			interconnects = <&pcie_south_anoc MASTER_PCIE_3 QCOM_ICC_TAG_ALWAYS
->> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
->> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
->> +					 &cnoc_main SLAVE_PCIE_3 QCOM_ICC_TAG_ALWAYS>;
->> +			interconnect-names = "pcie-mem",
->> +					     "cpu-pcie";
->> +
->> +			resets = <&gcc GCC_PCIE_3_BCR>,
->> +				 <&gcc GCC_PCIE_3_LINK_DOWN_BCR>;
->> +			reset-names = "pci",
->> +				      "link_down";
->> +
->> +			power-domains = <&gcc GCC_PCIE_3_GDSC>;
->> +
->> +			phys = <&pcie3_phy>;
->> +			phy-names = "pciephy";
->> +
->> +			operating-points-v2 = <&pcie3_opp_table>;
->> +
->> +			status = "disabled";
->> +
->> +			pcie3_opp_table: opp-table {
->> +				compatible = "operating-points-v2";
->> +
->> +				/* GEN 1 x1 */
->> +				opp-2500000 {
->> +					opp-hz = /bits/ 64 <2500000>;
->> +					required-opps = <&rpmhpd_opp_low_svs>;
->> +					opp-peak-kBps = <250000 1>;
->> +				};
->> +
->> +				/* GEN 1 x2 and GEN 2 x1 */
->> +				opp-5000000 {
->> +					opp-hz = /bits/ 64 <5000000>;
->> +					required-opps = <&rpmhpd_opp_low_svs>;
->> +					opp-peak-kBps = <500000 1>;
->> +				};
->> +
->> +				/* GEN 1 x4 and GEN 2 x2 */
->> +				opp-10000000 {
->> +					opp-hz = /bits/ 64 <10000000>;
->> +					required-opps = <&rpmhpd_opp_low_svs>;
->> +					opp-peak-kBps = <1000000 1>;
->> +				};
->> +
->> +				/* GEN 1 x8 and GEN 2 x4 */
->> +				opp-20000000 {
->> +					opp-hz = /bits/ 64 <20000000>;
->> +					required-opps = <&rpmhpd_opp_low_svs>;
->> +					opp-peak-kBps = <2000000 1>;
->> +				};
->> +
->> +				/* GEN 2 x8 */
->> +				opp-40000000 {
->> +					opp-hz = /bits/ 64 <40000000>;
->> +					required-opps = <&rpmhpd_opp_low_svs>;
->> +					opp-peak-kBps = <4000000 1>;
->> +				};
->> +
->> +				/* GEN 3 x1 */
->> +				opp-8000000 {
->> +					opp-hz = /bits/ 64 <8000000>;
->> +					required-opps = <&rpmhpd_opp_svs>;
->> +					opp-peak-kBps = <984500 1>;
->> +				};
->> +
->> +				/* GEN 3 x2 and GEN 4 x1 */
->> +				opp-16000000 {
->> +					opp-hz = /bits/ 64 <16000000>;
->> +					required-opps = <&rpmhpd_opp_svs>;
->> +					opp-peak-kBps = <1969000 1>;
->> +				};
->> +
->> +				/* GEN 3 x4 and GEN 4 x2 */
->> +				opp-32000000 {
->> +					opp-hz = /bits/ 64 <32000000>;
->> +					required-opps = <&rpmhpd_opp_svs>;
->> +					opp-peak-kBps = <3938000 1>;
->> +				};
->> +
->> +				/* GEN 3 x8 and GEN 4 x4 */
->> +				opp-64000000 {
->> +					opp-hz = /bits/ 64 <64000000>;
->> +					required-opps = <&rpmhpd_opp_svs>;
->> +					opp-peak-kBps = <7876000 1>;
->> +				};
->> +
->> +				/* GEN 4 x8 */
->> +				opp-128000000 {
->> +					opp-hz = /bits/ 64 <128000000>;
->> +					required-opps = <&rpmhpd_opp_svs>;
->> +					opp-peak-kBps = <15753000 1>;
->> +				};
->> +			};
->> +		};
->> +
->> +		pcie3_phy: phy@1be0000 {
->> +			compatible = "qcom,x1e80100-qmp-gen4x8-pcie-phy";
->> +			reg = <0 0x01be0000 0 0x10000>;
->> +
->> +			clocks = <&gcc GCC_PCIE_3_PHY_AUX_CLK>,
->> +				 <&gcc GCC_PCIE_3_CFG_AHB_CLK>,
->> +				 <&tcsr TCSR_PCIE_8L_CLKREF_EN>,
->> +				 <&gcc GCC_PCIE_3_PHY_RCHNG_CLK>,
->> +				 <&gcc GCC_PCIE_3_PIPE_CLK>,
->> +				 <&gcc GCC_PCIE_3_PIPEDIV2_CLK>;
->> +			clock-names = "aux",
->> +				      "cfg_ahb",
->> +				      "ref",
->> +				      "rchng",
->> +				      "pipe",
->> +				      "pipediv2";
->> +
->> +			resets = <&gcc GCC_PCIE_3_PHY_BCR>,
->> +				 <&gcc GCC_PCIE_3_NOCSR_COM_PHY_BCR>;
->> +			reset-names = "phy",
->> +				      "phy_nocsr";
->> +
->> +			assigned-clocks = <&gcc GCC_PCIE_3_PHY_RCHNG_CLK>;
->> +			assigned-clock-rates = <100000000>;
->> +
->> +			power-domains = <&gcc GCC_PCIE_3_PHY_GDSC>;
->> +
->> +			#clock-cells = <0>;
->> +			clock-output-names = "pcie3_pipe_clk";
->> +
->> +			#phy-cells = <0>;
->> +
->> +			status = "disabled";
->> +		};
->> +
->>   		pcie6a: pci@1bf8000 {
->>   			device_type = "pci";
->>   			compatible = "qcom,pcie-x1e80100";
->> -- 
->> 2.34.1
->>
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDkvMTQvMjAyNCAxMTo1OSBBTSwgS3Jpc2huYSBDaGFpdGFueWEgQ2h1bmRydSB3cm90ZToK
+PiBIaSBxaWFuZywKPgo+IEluIG5leHQgc2VyaWVzIGNhbiB5b3UgYWRkIGxvZ2ljIGluIGNvbnRy
+b2xsZXIgZHJpdmVyCj4gdG8gaGF2ZSBuZXcgb3BzIGZvciB0aGlzIHgxZTgwMTAwIHNpbmNlIHRo
+aXMgaGFyZHdhcmUKPiBoYXMgc21tdXYzIHN1cHBvcnQgYnV0IGN1cnJlbnRseSB0aGUgb3BzXzFf
+OV8wIG9wcyB3aGljaAo+IGlzIGJlaW5nIHVzZWQgaGFzIGNvbmZpZ3VyaW5nIGJkZiB0byBzaWQg
+dGFibGUgd2hpY2ggd2lsbAo+IGJlIG5vdCBwcmVzZW50IGZvciB0aGlzIGRldmljZXMuCj4KU3Vy
+ZSwgYmRmMnNpZCBtYXAgaXMgbm90IHN1cHBvcnRlZCBhbmQgcmVxdWlyZWQgc2luY2Ugd2UgdXNl
+IHNtbXV2MyBmb3IKcGNpZSBvbiB4MWU4MDEwMC4gQ2FuIEkgYWRkIGEgbmV3IG9wcyB3aGljaCBp
+cyBzYW1lIGFzIG9wc18xXzlfMCBiYXNpY2FsbHkKYW5kIG9ubHkgY29uZmlnX3NpZCBjYWxsYmFj
+ayBpcyByZW1vdmVkLiBPciBhZGQgYSBuZXcgZmxhZyB0byBkZXRlcm1pbmUgaWYKd2UgbmVlZCB0
+byBjb25maWcgYmRmMnNpZCBtYXAgbGlrZSBub19sMHMuCgpIaSBNYW5pLCB3aGF0IGRvIHlvdSB0
+aGluayBhYm91dCB0aGlzPwoKVGhhbmtzLApRaWFuZwo+Cj4gLSBLcmlzaG5hIENoYWl0YW55YS4K
+Pgo+IE9uIDkvMTMvMjAyNCAyOjA3IFBNLCBRaWFuZyBZdSB3cm90ZToKPj4gVGhpcyBzZXJpZXMg
+YWRkIHN1cHBvcnQgZm9yIFBDSWUzIG9uIHgxZTgwMTAwLgo+Pgo+PiBQQ0llMyBuZWVkcyBhZGRp
+dGlvbmFsIHNldCBvZiBjbG9ja3MsIHJlZ3VsYXRvcnMgYW5kIG5ldyBzZXQgb2YgUENJZSBRTVAK
+Pj4gUEhZIGNvbmZpZ3VyYXRpb24gY29tcGFyZSBvdGhlciBQQ0llIGluc3RhbmNlcyBvbiB4MWU4
+MDEwMC4gSGVuY2UgYWRkCj4+IHJlcXVpcmVkIHJlc291cmNlIGNvbmZpZ3VyYXRpb24gYW5kIHVz
+YWdlIGZvciBQQ0llMy4KPj4KPj4gdjItPnYxOgo+PiAxLiBTcXVhc2ggW1BBVENIIDEvOF0sIFtQ
+QVRDSCAyLzhdLFtQQVRDSCAzLzhdIGludG8gb25lIHBhdGNoIGFuZCAKPj4gbWFrZSB0aGUKPj4g
+wqDCoMKgIGluZGVudGF0aW9uIGNvbnNpc3RlbnQuCj4+IDIuIFB1dCBkdHMgcGF0Y2ggYXQgdGhl
+IGVuZCBvZiB0aGUgcGF0Y2hzZXQuCj4+IDMuIFB1dCBkdC1iaW5kaW5nIHBhdGNoIGF0IHRoZSBm
+aXJzdCBvZiB0aGUgcGF0Y2hzZXQuCj4+IDQuIEFkZCBhIG5ldyBwYXRjaCB3aGVyZSBvcHAtdGFi
+bGUgaXMgYWRkZWQgaW4gZHQtYmluZGluZyB0byBhdm9pZCBkdGJzCj4+IMKgwqDCoCBjaGVja2lu
+ZyBlcnJvci4KPj4gNS4gUmVtb3ZlIEdDQ19QQ0lFXzNfQVVYX0NMSywgUlBNSF9DWE9fQ0xLLCBw
+dXQgaW4gCj4+IFRDU1JfUENJRV84TF9DTEtSRUZfRU4KPj4gwqDCoMKgIGFzIHJlZi4KPj4gNi4g
+UmVtb3ZlIGxhbmVfYnJvYWRjYXN0aW5nLgo+PiA3LiBBZGQgNjQgYml0IGJhciwgUmVtb3ZlIEdD
+Q19QQ0lFXzNfUElQRV9DTEtfU1JDLAo+PiDCoMKgwqAgR0NDX0NGR19OT0NfUENJRV9BTk9DX1NP
+VVRIX0FIQl9DTEsgaXMgY2hhbmdlZCB0bwo+PiDCoMKgwqAgR0NDX0NGR19OT0NfUENJRV9BTk9D
+X05PUlRIX0FIQl9DTEsuCj4+IDguIEFkZCBSZXZpZXdlZC1ieSB0YWcuCj4+IDkuIFJlbW92ZSBb
+UEFUQ0ggNy84XSwgW1BBVENIIDgvOF0uCj4+Cj4+IFFpYW5nIFl1ICg1KToKPj4gwqDCoCBkdC1i
+aW5kaW5nczogcGh5OiBxY29tLHNjODI4MHhwLXFtcC1wY2llLXBoeTogRG9jdW1lbnQgdGhlIFgx
+RTgwMTAwCj4+IMKgwqDCoMKgIFFNUCBQQ0llIFBIWSBHZW40IHg4Cj4+IMKgwqAgZHQtYmluZGlu
+Z3M6IFBDSTogcWNvbTogQWRkIE9QUCB0YWJsZSBmb3IgWDFFODAxMDAKPj4gwqDCoCBwaHk6IHFj
+b206IHFtcDogQWRkIHBoeSByZWdpc3RlciBhbmQgY2xrIHNldHRpbmcgZm9yIHgxZTgwMTAwIFBD
+SWUzCj4+IMKgwqAgY2xrOiBxY29tOiBnY2MteDFlODAxMDA6IEZpeCBoYWx0X2NoZWNrIGZvciBw
+aXBlZGl2MiBjbG9ja3MKPj4gwqDCoCBhcm02NDogZHRzOiBxY29tOiB4MWU4MDEwMDogQWRkIHN1
+cHBvcnQgZm9yIFBDSWUzIG9uIHgxZTgwMTAwCj4+Cj4+IMKgIC4uLi9iaW5kaW5ncy9wY2kvcWNv
+bSxwY2llLXgxZTgwMTAwLnlhbWzCoMKgwqDCoMKgIHzCoMKgIDQgKwo+PiDCoCAuLi4vcGh5L3Fj
+b20sc2M4MjgweHAtcW1wLXBjaWUtcGh5LnlhbWzCoMKgwqDCoMKgwqAgfMKgwqAgMyArCj4+IMKg
+IGFyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS94MWU4MDEwMC5kdHNpwqDCoMKgwqDCoMKgwqAgfCAy
+MDIgKysrKysrKysrKysrKysrKy0KPj4gwqAgZHJpdmVycy9jbGsvcWNvbS9nY2MteDFlODAxMDAu
+Y8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgIDEwICstCj4+IMKgIGRyaXZlcnMvcGh5
+L3F1YWxjb21tL3BoeS1xY29tLXFtcC1wY2llLmPCoMKgwqDCoMKgIHwgMjExICsrKysrKysrKysr
+KysrKysrKwo+PiDCoCAuLi4vcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjcy1wY2llLXY2XzMwLmjC
+oMKgwqAgfMKgIDI1ICsrKwo+PiDCoCBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAt
+cGNzLXY2XzMwLmggfMKgIDE5ICsrCj4+IMKgIDcgZmlsZXMgY2hhbmdlZCwgNDY4IGluc2VydGlv
+bnMoKyksIDYgZGVsZXRpb25zKC0pCj4+IMKgIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3Bo
+eS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNzLXBjaWUtdjZfMzAuaAo+PiDCoCBjcmVhdGUgbW9k
+ZSAxMDA2NDQgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjcy12Nl8zMC5oCj4+
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
