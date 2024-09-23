@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1D42CF9C6E
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Sep 2024 11:45:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A6E2CF9C6E
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Sep 2024 11:45:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nr3QN/gtUYX5QITgvrFN90Pf69UvmxN7g+On4e2AwDA=; b=nMLuKqja3dcNiG
-	D1j+s2lB6I8qYKr8TlTsDPMrcPKjJSmPlLZ7uqI+1yrykxIXgE6ik3F1eLlOdBdmErbYQTT3vlkZK
-	fX1ng+kaokChY+7UaNOqBuIub5Yj4RL6hjbMsqEYyDguHVQ81a2IFuvxoqUOQn9PDESlpkJZhOvqz
-	TGjdRGVwfMsZzIa2TUkST7SyLiMRdwOXtHN9cmSJJNxzX+hUglX6AedMsZsf5w0ywqGjr7zB3d82F
-	MrD+MtRa98VFsT6lBMLdPEn4TiEmyVGFR5sTUbHQSgMFwLrky2VGugVPNmK1AQZluf4WAjknThLd/
-	XsRquhqOE6Tl+/rbfXdw==;
+	List-Owner; bh=ye1GaHk5/e8KlK+RreIdoNjLtxI66Y2IC8YRPmwbbdc=; b=nnN+jrzGqIeOnR
+	CXdMd986rOiEvf5u6o2Kq6lyO6cRsJ7O5bIEOhgRD1W0nu7pNQCEs3jNuVhKE0iBKKleXCdIhp9CG
+	XFJn68/KzOoPWLZRO2xn4ygvNaUZibIB7YdNkhZUPJq3D6YZ2ULDPJ0udFql1ECN3rKAFQXYgzY1e
+	sMQ3fvsxHEF/rtlhQXogBTLfLT+bWIRSMPqin86OuA7nvLmQyMQW8oPw68WN2tq+0eI2HqdFg8Zfp
+	tXnbwpTerbKl8L0fDz5uhuODIcgXUuwH1faCBpIYMllNLhCzpQaZVN5mpRjRxNuN/a1ZvX+Bvo1Dl
+	DsvDshU6kYi496Gz7c4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sshV5-0000000H5rF-0n7K;
-	Mon, 23 Sep 2024 11:45:07 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1sshVT-0000000H5wq-2Tas;
+	Mon, 23 Sep 2024 11:45:31 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sshV1-0000000H5ou-2JEu
+	id 1sshVR-0000000H5w0-27YR
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Sep 2024 11:45:04 +0000
-Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-5365c512b00so4816914e87.3
-        for <linux-phy@lists.infradead.org>; Mon, 23 Sep 2024 04:45:03 -0700 (PDT)
+	Mon, 23 Sep 2024 11:45:30 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-53661ac5ba1so4378784e87.2
+        for <linux-phy@lists.infradead.org>; Mon, 23 Sep 2024 04:45:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1727091901; x=1727696701; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1727091928; x=1727696728; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=jhnBmWAe9NUrsichqtPogCcJph5ClsF7zPozObEyXA4=;
-        b=IqxNXInttBl7X6Nnm/9bN3DlxsPOc6aLa88X5hLQQ/pcdD5ERJOZMMZe9MgipHX7+G
-         jLVsM3ABxdLeGIIAI61esONuKr3Dx7BYYIVNyTiUFsJiZu+9+GB/p9IRcaFNwkT0khcP
-         twclWoa6IhOcPQd6KVorUufqAt+bTIydEjPD00T4dJ68kfPJu55fyArPBhPUXoQ+5Ah+
-         fFMk6PyKtEhari8yD8jXjcOs0aM5fXc/TyWtHJRv2HBkf/P4NdW5HuHZnMkyzFPXhGBW
-         VYn3B+G7tmFd5CzGZVzQcO8KnjMjlFADEHss3j+M8vNq+OL6Wl2GQKz+K7393X6P460W
-         C19g==
+        bh=JMwbFcxKHdbftumcznblxJfBpPC8ptWVXFa2dH4Buk8=;
+        b=FwqlM8GFWkVmS7irkAUb2vfho7V+Rvs4Mr3QY8ttiRK16Gz/0p/8x8IxZR8ohbI98L
+         xlo1qbxn5nv8kUkmutmbrACLQ3s17U2488kom7leilQfzbvtCcQ9PMYjjiPmKLwPwrjf
+         KEFYZe8VjZ6yE+ctm2ZW5xpmTnE63xteMSl8fsUmbBURVYcT9ciqDw8Pmk6dT2ntyO6M
+         s9Runc9nwg6VtQU4xYqnb1dUCgbHZALhSvm+9fS3XAEfGMzcAU79JDHjAMgqERAMeGOv
+         d/z1CnyJImoeCT2WnTdlUI0GXgYiSUqtcUM9bIQetU5E9PVh1pVhSb4qIE2t0PqTwH6Y
+         QsGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727091901; x=1727696701;
+        d=1e100.net; s=20230601; t=1727091928; x=1727696728;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=jhnBmWAe9NUrsichqtPogCcJph5ClsF7zPozObEyXA4=;
-        b=dyocx2IwvaYk8jU1pHEys3LLJwZv18VB+pEgjoucRnW4Yx9OaXB1k4W9OzxbisV2BJ
-         k5tf+EWpQ634itxywCPODh29mOO0PhY8PtF4oOQkltLjt5j5vsyE4kkrzuWZFvWT39s7
-         pWPTTllnJj31puNu0Uw9fZH8I/PU7Q469iI2epeXGMZr75ZetZkNWHZ8FaJsQtV+Ih5M
-         TXsiULfYvMJISxr/Yg7Z/5SJoxFwkhCNHTcY46sHao19lPfC/tOAhtzeCzmcRCeV/Hqc
-         n4CQs+HLvaSs07OPxvVtVJio4RpPXJs4ZTei+h9+5A47PmpphqkNYQq379LhxQ49lCvJ
-         yPnA==
-X-Forwarded-Encrypted: i=1; AJvYcCWhlOndvkMyWq4UXYjp8DPnpWsWeQXC4faXZGkbxRxUinp+jMVO3Za2trCZw8AZ3apr6vasNqRU/ac=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzqREIBFu8G4rjTT8bmTaw5NudKwwS3amuQmcLr+PgH1lnJpzDz
-	eEeKVjyo17WpGqILRZefEGX90XfXN9PAs2eagPcyXX5A8qUxxmsRHgNrN7qVioM=
-X-Google-Smtp-Source: AGHT+IHa4aqsZXTbC37KCXn5fe4mfHLWoWf0Nyyz2mtzA1/7uiKYj0/E1PRavXBv3jLrfICSOaxmpg==
-X-Received: by 2002:a05:6512:a8e:b0:536:52c4:e45c with SMTP id 2adb3069b0e04-536ac2f54b4mr4462943e87.31.1727091901086;
-        Mon, 23 Sep 2024 04:45:01 -0700 (PDT)
+        bh=JMwbFcxKHdbftumcznblxJfBpPC8ptWVXFa2dH4Buk8=;
+        b=WJauwYqDBh16Fa2R09ixEx7NW/i6YGtMK9Ant301nqSOm2bJ7E+gxo76EvJ/hhr4Pb
+         Sbcnpjvn0vFiM7+XCmaXVa18cATSyx7oYtW13G5P8b28YIEUGZilA61gCKHSJEsf6Bmw
+         JKZDXKG+xnm1BKu+24RZQ9MgIBSjdk8u7rX4hSA2yqtO6/1CkG5s6NjuVes9zn6b7f1x
+         aeY3gweyXWBQ2/sittXl0VexOLlAmnDpoxc1p6D80lqlOFeGGvT/tIIm2/qwe6f5Xro3
+         FJcs+e/jVM7dn3e9UjlBpOe289Agp9RkeV2mtQmi0WHlCX74zxYo97HhH1tz4qhnQW/C
+         b1bg==
+X-Forwarded-Encrypted: i=1; AJvYcCURrsXwEFB71UzKILqZ6aoT0RGYcaogSwVduGcWjROFwi+yOv6fy5Hc8ttICfNlWC0AFEh3WAGF/ao=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxpan5MVIzTJIRg9t5Z9+AynAKORHSEiDeeDOSsd5TrkZi1BPJK
+	Ejw9hbDpCE8aWALVq29yKL/gk5c52+tni99yKqOfgIRnBJgEVH5zN+KiIVPqUrE=
+X-Google-Smtp-Source: AGHT+IFCh2GD/YYaddP7TMIDd36YLwXyayl1/jc49hpm9pk1zAYcHwo3MqpSbCp+ZxyRhnbKUPJIcw==
+X-Received: by 2002:a05:6512:3b27:b0:52e:9b68:d2d4 with SMTP id 2adb3069b0e04-536ac33b18emr4731956e87.56.1727091927618;
+        Mon, 23 Sep 2024 04:45:27 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-536870a875bsm3259740e87.224.2024.09.23.04.44.59
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-536a6959582sm1674291e87.22.2024.09.23.04.45.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Sep 2024 04:44:59 -0700 (PDT)
-Date: Mon, 23 Sep 2024 14:44:57 +0300
+        Mon, 23 Sep 2024 04:45:27 -0700 (PDT)
+Date: Mon, 23 Sep 2024 14:45:25 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org, 
@@ -75,17 +75,17 @@ Cc: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org,
 	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
 	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, quic_riteshk@quicinc.com, 
 	quic_vproddut@quicinc.com
-Subject: Re: [PATCH v3 2/5] phy: qcom: edp: Introduce aux_cfg array for
- version specific aux settings
-Message-ID: <qughwerqucheykdwxhip32n7epijn3625jxn2ls7t7nptu4tkw@ls2u7uzaoegj>
+Subject: Re: [PATCH v3 3/5] phy: qcom: edp: Add support for eDP PHY on SA8775P
+Message-ID: <mrx2flabzgzsfyenqowgslb5654wcai6q3oclkc2i3em3iqusr@ed3af2qdx7vb>
 References: <20240923113150.24711-1-quic_mukhopad@quicinc.com>
- <20240923113150.24711-3-quic_mukhopad@quicinc.com>
+ <20240923113150.24711-4-quic_mukhopad@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240923113150.24711-3-quic_mukhopad@quicinc.com>
+In-Reply-To: <20240923113150.24711-4-quic_mukhopad@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240923_044503_638486_B3B8E4C9 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20240923_044529_564117_63D5021F 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,22 +102,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 23, 2024 at 05:01:47PM GMT, Soutrik Mukhopadhyay wrote:
-> In order to support different HW versions, introduce aux_cfg array
-> to move v4 specific aux configuration settings.
+On Mon, Sep 23, 2024 at 05:01:48PM GMT, Soutrik Mukhopadhyay wrote:
+> Add support for eDP PHY v5 found on the Qualcomm SA8775P platform.
 > 
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 > Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 > ---
-> v2: Fixed review comments from Bjorn and Dmitry
-> 	- Made aux_cfg array as const.
+> v2: Fixed review comments from Dmitry
+> 	- Reused edp_swing_hbr_rbr and edp_swing_hbr2_hbr3 for v5.
 > 
-> v3: Fixed review comments from Dmitry
-> 	- Used a for loop to write the dp_phy_aux_cfg registers.
-> 	- Pre-defined the aux_cfg size to prevent any magic numbers.
-> 
-> ---
->  drivers/phy/qualcomm/phy-qcom-edp.c | 41 ++++++++++++-----------------
->  1 file changed, 17 insertions(+), 24 deletions(-)
+> v3: No change
 > 
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
