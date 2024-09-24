@@ -4,111 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E3A3CF9C69
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 18:40:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AFE8CF9C6B
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 20:26:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q2YmRopPM34iBajWaSR5l/a/J1aCkeK7aLA5xotTLIU=; b=l4nm7eEdlSVyNi
-	YW7Feam5c02O3+gFmx+Pex3MUSKtOwyrCHqnumuiYsCM1JIEXIpZA7PZR/RKZo1jJdllGQEWohqIX
-	R6/Hiu3Jyy9bib/A0+xCCA3jVoTZiUhHwI4Sf6uprkADHmaZ24qazGegiAJjtAro3Q9VaJ7B0/wY5
-	giXFUV1rytbwX/wb4KqHhbvYkgtLGCvyVhTvBxUoz2PJ1Hy/P2ygUWn2T4JLSrNozEe78Y+ocOjMD
-	y69O21HkBQxzsBGqQsV5UYT5WtydtyjmAI7IDiP1g2wkPef6UvUhNkeCQEM1yV3wfZZKEO0E69YS6
-	EFSzqyR4K+PB/re0ba0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MzKpisGWWaZFQho/vKWL4NPpBp3mTzMeWVipX5EmFGw=; b=fPauGl9/fxX+d3
+	Ii7yDkwykxUVjUE5xO7UpfvuOEXfkTCCQzKrywIUVoUFQaTeRo7YJSzsE68INLYH76f8IcpDCIvIS
+	M/lTdxnlz4Rsbkrtb1ROdWjgl0NKJy1fiuEmQLZz84eVKoyKI56rNHNLO811JCsWIbKAFY8NLGMFH
+	zFCKyyv3IpnXOEd0iB/mQW59/rysxYvQReKH7+4wc85u/t9cvYLxMGbwNOCefD4DL2LqTBczBldWP
+	kf45ZQPAunoJ/AGUNC+pdk9inWdVwiT/OsxEBxaWEBrGBkRKTMDhRybUKMJ7vHyE6GAlW565DNYyB
+	7t4FqZIjej7UdjK/bujg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1stASP-000000034Tx-04KF;
-	Tue, 24 Sep 2024 18:40:17 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1stC7d-00000003EZ3-0w1P;
+	Tue, 24 Sep 2024 20:26:57 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1stARe-000000034Kg-39mC
+	id 1stC6c-00000003ESZ-11Rp
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Sep 2024 18:39:32 +0000
+	Tue, 24 Sep 2024 20:25:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id BE02F5C5CC8;
-	Tue, 24 Sep 2024 18:39:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F03A1C4CEC5;
-	Tue, 24 Sep 2024 18:39:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1727203169;
-	bh=wzehy+b1qqLL8OTawQ1M6yaZDocl+IDjT2tUky8lGqo=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=fq4YZClR2OdQ6phVcGXx9vGCe426M6TIwMiaXPX02UhmNw6NlJLzucw8ZKNkpUjw6
-	 mHC9uADFtLPlJPI10x9Nitd8gpTeQ+VjBi4BMlQHksMLAU1X6yNma56Q+rnmLXauPG
-	 5114beqs6/qmN+kKDpFzu7lKoGPbLN8NA8gmmv2wRGmzXcdeRQ3y3/tr8vdXuoi1NE
-	 egOVBogMn+4df1mnzZ9pQLjLkk2R8wMT3ZXaJcmMDCovKCQm38l2it3OrpOoq9BhiD
-	 pXoQ4JuG9y/kevN2jK7YLZ7DgTSlBlwoxSeAwNqBkXtiLFHON5HQyg6tghcxGA3oTQ
-	 SX7ZeI5suWeFA==
-Message-ID: <50e0e837-1c70-4d6d-bb55-a68dec3dcd3b@kernel.org>
-Date: Tue, 24 Sep 2024 20:39:20 +0200
+	by dfw.source.kernel.org (Postfix) with ESMTP id 963BB5C5D00;
+	Tue, 24 Sep 2024 20:25:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D265DC4CEC4;
+	Tue, 24 Sep 2024 20:25:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1727209552;
+	bh=UWNoYLvQTXsoFZYn+gjzKUUudry9tbHFLE2IOzxy5uE=;
+	h=Date:From:To:Cc:Subject:From;
+	b=hui9R236ilNieec9nh9qM/gy9ghCRRsidmWKCIojwzpA+E2VSNaaqGIFPgeIIJGcS
+	 ogKDaQZAYyQ6ZGnUuUJW+54auoiTMlzw6yXlojf2wJ3ofWW/2Ib8w61chgSZaDlKPl
+	 HHT2IdJQIIVqak3LgHywutC5uwaHWWTzFOrfJBII=
+Date: Tue, 24 Sep 2024 16:25:45 -0400
+From: Konstantin Ryabitsev <konstantin@linuxfoundation.org>
+To: Keith Zhao <keith.zhao@starfivetech.com>
+Cc: linux-phy@lists.infradead.org, helpdesk@kernel.org
+Subject: Bouncing maintainer: Shengyang Chen
+Message-ID: <20240924-radical-chirpy-hawk-3aa339@lemur>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/6] dt-bindings: PCI: qcom: Move OPP table to
- qcom,pcie-common.yaml
-To: Qiang Yu <quic_qianyu@quicinc.com>, manivannan.sadhasivam@linaro.org,
- vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, andersson@kernel.org,
- konradybcio@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- mturquette@baylibre.com, sboyd@kernel.org, abel.vesa@linaro.org,
- quic_msarkar@quicinc.com, quic_devipriy@quicinc.com
-Cc: dmitry.baryshkov@linaro.org, kw@linux.com, lpieralisi@kernel.org,
- neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-clk@vger.kernel.org
-References: <20240924101444.3933828-1-quic_qianyu@quicinc.com>
- <20240924101444.3933828-3-quic_qianyu@quicinc.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20240924101444.3933828-3-quic_qianyu@quicinc.com>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_113930_957227_FF19A35C 
-X-CRM114-Status: UNSURE (   5.39  )
+X-CRM114-CacheID: sfid-20240924_132554_729341_C2D46C3D 
+X-CRM114-Status: UNSURE (   6.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -126,20 +67,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24/09/2024 12:14, Qiang Yu wrote:
-> OPP table is a generic property that is also required by other qcom
-> platforms. Hence move this property to qcom,pcie-common.yaml so that PCIe
-> on other qcom platforms is able to adjust power domain performance state
-> and ICC peak bw according to PCIe gen speed and link width.
-> 
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> ---
+Hello:
 
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+I'm reaching out to co-maintainers of the following subsystems:
+
+  - STARFIVE JH7110 DPHY TX DRIVER
+
+The email address for one of your maintainers is bouncing:
+
+  M: Shengyang Chen <shengyang.chen@starfivetech.com>
+
+There are several possible courses of action:
+
+1. If you know the new email address for the maintainer, please ask them to
+   submit a patch for MAINTAINERS and .mailmap files.
+
+2. If this maintainer stepped away from their duties, or if co-maintainers are
+   equally unable to reach them via any other means, please submit a patch to
+   MAINTAINERS to remove their M: entry.
+
+The goal is to have no bouncing M: entries in the maintainers file, so please
+follow up as soon as you have decided on the correct course of action.
 
 Best regards,
-Krzysztof
+--
+Konstantin Ryabitsev
+Linux Foundation
 
+bugspray track
 
 -- 
 linux-phy mailing list
