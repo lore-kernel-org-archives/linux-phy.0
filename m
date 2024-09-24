@@ -4,90 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37362CF9C6B
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 08:57:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A471BCF9C6B
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 09:33:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+x2ofs9CRQW3TcftvFd4G+arEDqIN/IkS+2r/TRAkH4=; b=RkGOdaYSpLKL0J
-	D4xqV1MJ1i+qL52zRUq2bcIv2bxVubdKprkXx5TDjJbanPgkSaI70GL0+E7UaLuH0KwBl6iAtG9DU
-	xy+7vWxjF9JfyJbHE6oRpGFfh2uRqfn0s9KL8yzMHZ8ExPDhUiBIFno8lKZ19e3OHnih92/5kzBjH
-	K5EvHWdEiK012+Ma04HW2vcbP5sclpGBS4koILfg0VvxP2+pJM3zf+u08VSknBB0sIQhaaKapKI/i
-	LKtTxU56Pu0hw0tMfpWH8WXmSnCmqqn2BJzQBwwzIuB2izdFau0t9799xaXFTZd5doHZFeDU9kAEW
-	QVW4l++k+k4TQdcmaqQg==;
+	List-Owner; bh=Bx36YuHhFX8Lc3ED7JAy3GUWlefQWJlLqrxeUqC1hn4=; b=0arIPG4QNuKn28
+	4Fi2ICJvD+PFdTuoq+kyv2qeNG9mchShRc0e7X9eCdFBeRwVgfVvx45dEt7XhOV1UrbiWdiGHhogg
+	urlK52nB91PL+8emgDqudyLqtYahEvFpY60U5zVNcJZ14188fvyaUr5S43vsU2HGj5I6JgyaYM/ey
+	AZ6rEJfOQ/HJCXEXcXjEYR4Amk7hXF1XOtsDGA1KDVM5ARWlbRvmLEHYMM6YGRdwxbTWHfwixEFl1
+	D+m/FfHt3Gd/cxT8qJagX33A2AQmyKRVJffzft+LiKOIQnG/TGORcq1tubsDmwkV5W/tNYUVvIawX
+	EyBby2JOcVDpOtv4tCYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1st1Lx-00000001gpN-3Ouq;
-	Tue, 24 Sep 2024 08:57:01 +0000
-Received: from mail-pf1-x436.google.com ([2607:f8b0:4864:20::436])
+	id 1st1uu-00000001p01-0rAz;
+	Tue, 24 Sep 2024 09:33:08 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1st1KP-00000001gNv-2Of5;
-	Tue, 24 Sep 2024 08:55:27 +0000
-Received: by mail-pf1-x436.google.com with SMTP id d2e1a72fcca58-7191f1875d3so768705b3a.0;
-        Tue, 24 Sep 2024 01:55:25 -0700 (PDT)
+	id 1st1sw-00000001o8K-08F9
+	for linux-phy@lists.infradead.org;
+	Tue, 24 Sep 2024 09:31:07 +0000
+Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2f7ba97ebaaso48647331fa.2
+        for <linux-phy@lists.infradead.org>; Tue, 24 Sep 2024 02:31:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1727168125; x=1727772925; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=RdPQOqshsi8htdMx4DK/czYe2ICbMxqoRuwqGRvjM74=;
-        b=jbbpDeFSWHoJCwN+Eac/SDrlsPRrgiW6zD9dbc4AVnuPA+MamFkkhmEKbX4a0LnSQF
-         0gAqUWChk5aYunnoMpFtmbzt99rfq/3/bqNUxtwgtcFoNvynZTCEh9jhWi41xn4Kr1wg
-         cCoiHBcijjji1sj7BAjdaQOoct4Wu18Ur7ULHfqbz6TErPGTJbxigcIE+gFBUnqR3Vz0
-         vyPypD1d/h54P3WGEU7nxJ0krztBnIsj6SPRY/yxuExjifR7Jvp1agrlINx0gUPc4OVn
-         QKOs46TPNQBCJdZ2Qo5ZDqKBs1VwFH8y2zPYToaEFgRckGEE9MU4NTxPgdN0wTq1jO0v
-         ZGOA==
+        d=linaro.org; s=google; t=1727170264; x=1727775064; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=yWBIbFHZNiPI/HNmpMhvRGObId3eaCn9wFIzXYkz7to=;
+        b=UimgJMYs6tn0E9cSf4dpzvWvtjCw89YCR+xZ2BxAxcqFLcM2riAaee3Ekwbz0OAf+F
+         YliZQIBvX28YUGvh1HPNbtu/gIoowl0vH0CqaNbFvzFuGhLQ1HNeIsKNDQQFEPleeuD7
+         DC+BHD+K0EFZM+VXFH7MVWF8rPNeIE4s+4mTg9N0iLYDuAsYlBr/VUBwMy4oZnx3SCe4
+         /EB76qrE8pFklGo/miHAjeFiDvPP0xWll5pzZ+lZvlqMXUcN1oDwQn+oY4D6qYtFk0c/
+         je5JhdrlA2RTJXkkHFwVi/Yr5Ew4qHcxvIe6JVUO7IxGBuSRtAKjmGJlNg++Ds8svUP0
+         BhaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727168125; x=1727772925;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=RdPQOqshsi8htdMx4DK/czYe2ICbMxqoRuwqGRvjM74=;
-        b=DSzdTyxmbGJGxcENznGYiHIqd7ajZOoeBEAGyPGKeDYpcdbEnln5zqqQ0Oj5CnLXPH
-         kbkv+4nVzCTdISjM5zCwybC3jYONFs2BsksRXVECzF7Gvj0kCMmIRsWNkWUFXZ/rGwlL
-         4gxBUI0NZq5hkz5n2XnJCVBCadReqkwUiLAT2UL+U/gKhHUAl8QaJNwNlLXkeb054lWf
-         0tZA/DDlCvgZYWat/csit/YZQbOJueJn5WjlR51MelsKkgdf1238CL1zChcJu4J2a3Bz
-         1cEkafsEnp9I2KjA4S043IRyLsRIKDK722UMNUk8p2jWrlyipPzL5N2KbWNpmhXL5vvl
-         1Agg==
-X-Forwarded-Encrypted: i=1; AJvYcCVSXrQ9hpWLkq7RayrIjsp3qvDWerx7cYqYgrFnPWeTXdXvcrc9kYcQnw2eYNeKGKyz30qYas3DUnNazvt0p3Vp@lists.infradead.org, AJvYcCWpwpG5RuKUFFDVbBXY0CnJ7tNf1J0RHTX5SvpKwFYXC2VbN+Eiigic9nqg1/q0e4L6wzXrlf1ALm53Kel2dtM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxL7mDihyun85rO7ZGDGhRZX6Ybd0JV/YD10SHnX7oVUnRkJb7a
-	48ob4ubePFSOnw+l8w0NhMj257+ymJUtI/sJQPpYRBu+CPtrIoHh
-X-Google-Smtp-Source: AGHT+IEXl7SFCqZvaJLXCa3j7Np7B5WEQB9FRszoJwYQw7a2Y06TIz8wkJbIeFGUABP0toEDRBtHng==
-X-Received: by 2002:a05:6a21:32a6:b0:1cf:3130:9966 with SMTP id adf61e73a8af0-1d30a91f9f0mr9694991637.3.1727168124544;
-        Tue, 24 Sep 2024 01:55:24 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71afc97c18bsm795090b3a.158.2024.09.24.01.55.19
+        d=1e100.net; s=20230601; t=1727170264; x=1727775064;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=yWBIbFHZNiPI/HNmpMhvRGObId3eaCn9wFIzXYkz7to=;
+        b=ZBqxciFRFq6Dqq5FEeKWPqRKX8ZMmPDIicwsH/cljky+q5uQvBHlx4lBm0TRE8rBP+
+         ACn488cVIOyT/7kzg6Ub6uKqF1NXW44h1Bf2I4/vdAWzrF4X712KJL9oAqZ+AYeYmaZd
+         ehMA/WN0DwK+YNPjIL+XBCEjc3sZxLyODD81G6xp1K8VzMGfXE+QWpL8yoeVhfjwZoL7
+         X7+IXFqJR1mYf4u/iNt+iVBKkDGwYgpbiwJXOOP+I8S3ZeDZETFGIMo4dHNgeiSw28ct
+         KgK+IGHY9lD7qU10h/JyBINzi59OvcTSuHFnpRFW51+aEqSJWyi1s7Cv3lXQ3vnan8Ay
+         pZJQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVTkQzs2AlzAHIqn4n3Ln017f6j2ec1MKi0bhdM2dZGCtK2yDIb60Hs3XrKVFwhwJrelET9z1qvsm0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyNmveka1EwuMBLHXUCIGfaXq9WmNtlvnkR7U6hjNOHhFg9gNnx
+	BvUJ5hJL8dVW7UBk6cUitlP46qoLG9takL4Q4zi01Oqszn1OjVRJyrHs03egkoc=
+X-Google-Smtp-Source: AGHT+IHl/avwAYPIhb6TlrUBum/ZYPGtpNgmakP+vyGoMgDMX9PZ7T3T0XlPukXCsWcNZg9FyHE4qw==
+X-Received: by 2002:a05:6512:220f:b0:530:aa4b:81c7 with SMTP id 2adb3069b0e04-536ad3d5526mr6590279e87.59.1727170264125;
+        Tue, 24 Sep 2024 02:31:04 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-537a864029dsm150753e87.120.2024.09.24.02.31.03
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Sep 2024 01:55:24 -0700 (PDT)
-From: Frank Wang <frawang.cn@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	heiko@sntech.de
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	william.wu@rock-chips.com,
-	tim.chen@rock-chips.com,
-	wmc@rock-chips.com,
-	Frank Wang <frank.wang@rock-chips.com>
-Subject: [PATCH v2 2/2] phy: rockchip: inno-usb2: Add usb2 phys support for rk3576
-Date: Tue, 24 Sep 2024 16:55:10 +0800
-Message-ID: <20240924085510.20863-2-frawang.cn@gmail.com>
-X-Mailer: git-send-email 2.45.2
-In-Reply-To: <20240924085510.20863-1-frawang.cn@gmail.com>
-References: <20240924085510.20863-1-frawang.cn@gmail.com>
+        Tue, 24 Sep 2024 02:31:03 -0700 (PDT)
+Date: Tue, 24 Sep 2024 12:31:02 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Alexander Stein <alexander.stein@ew.tq-group.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org, 
+	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, 
+	daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, 
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, mripard@kernel.org, 
+	Sandor Yu <Sandor.yu@nxp.com>, kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
+	sam@ravnborg.org
+Subject: Re: [PATCH v17 1/8] drm: bridge: Cadence: Create mhdp helper driver
+Message-ID: <vlqcv7pdhyf6rjmkm2ccyvg3fv64gcp536zppns6nc3xpzuew6@j3qrwextsp33>
+References: <cover.1727159906.git.Sandor.yu@nxp.com>
+ <6e2e4951aa4c69eed68af231c2b0b2ce302b2358.1727159906.git.Sandor.yu@nxp.com>
+ <2773403.mvXUDI8C0e@steina-w>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2773403.mvXUDI8C0e@steina-w>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_015525_966108_1A449624 
-X-CRM114-Status: GOOD (  20.56  )
+X-CRM114-CacheID: sfid-20240924_023106_100810_A8EFCFDC 
+X-CRM114-Status: GOOD (  28.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,248 +96,167 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: William Wu <william.wu@rock-chips.com>
+On Tue, Sep 24, 2024 at 10:41:26AM GMT, Alexander Stein wrote:
+> Hi Sandor,
+> =
 
-The RK3576 SoC has two independent USB2.0 PHYs, and
-each PHY has one port.
+> Am Dienstag, 24. September 2024, 09:36:46 CEST schrieb Sandor Yu:
+> > MHDP8546 mailbox access functions will be share to other mhdp driver
+> > and Cadence HDP-TX HDMI/DP PHY drivers.
+> > Create a new mhdp helper driver and move all those functions into.
+> > =
 
-Signed-off-by: William Wu <william.wu@rock-chips.com>
-Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
----
-Changelog:
-v2:
- - no changes.
+> > cdns_mhdp_reg_write() is renamed to cdns_mhdp_dp_reg_write(),
+> > because it use the DPTX command ID DPTX_WRITE_REGISTER.
+> > =
 
-v1:
- - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10467-2-frank.wang@rock-chips.com/
+> > New cdns_mhdp_reg_write() is created with the general command ID
+> > GENERAL_REGISTER_WRITE.
+> > =
 
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 131 ++++++++++++++++--
- 1 file changed, 123 insertions(+), 8 deletions(-)
+> > Rewrite cdns_mhdp_set_firmware_active() in mhdp8546 core driver,
+> > use cdns_mhdp_mailbox_send() to replace cdns_mhdp_mailbox_write()
+> > same as the other mailbox access functions.
+> > =
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 4f71373ae6e1a..51ca16cbb86cb 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -229,9 +229,10 @@ struct rockchip_usb2phy_port {
-  * @dev: pointer to device.
-  * @grf: General Register Files regmap.
-  * @usbgrf: USB General Register Files regmap.
-- * @clk: clock struct of phy input clk.
-+ * @clks: array of phy input clocks.
-  * @clk480m: clock struct of phy output clk.
-  * @clk480m_hw: clock struct of phy output clk management.
-+ * @num_clks: number of phy input clocks.
-  * @phy_reset: phy reset control.
-  * @chg_state: states involved in USB charger detection.
-  * @chg_type: USB charger types.
-@@ -246,9 +247,10 @@ struct rockchip_usb2phy {
- 	struct device	*dev;
- 	struct regmap	*grf;
- 	struct regmap	*usbgrf;
--	struct clk	*clk;
-+	struct clk_bulk_data	*clks;
- 	struct clk	*clk480m;
- 	struct clk_hw	clk480m_hw;
-+	int			num_clks;
- 	struct reset_control	*phy_reset;
- 	enum usb_chg_state	chg_state;
- 	enum power_supply_type	chg_type;
-@@ -376,6 +378,7 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
- {
- 	struct device_node *node = rphy->dev->of_node;
- 	struct clk_init_data init;
-+	struct clk *refclk = of_clk_get_by_name(node, "phyclk");
- 	const char *clk_name;
- 	int ret = 0;
- 
-@@ -386,8 +389,8 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
- 	/* optional override of the clockname */
- 	of_property_read_string(node, "clock-output-names", &init.name);
- 
--	if (rphy->clk) {
--		clk_name = __clk_get_name(rphy->clk);
-+	if (!IS_ERR(refclk)) {
-+		clk_name = __clk_get_name(refclk);
- 		init.parent_names = &clk_name;
- 		init.num_parents = 1;
- 	} else {
-@@ -1406,22 +1409,29 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 	if (IS_ERR(rphy->phy_reset))
- 		return PTR_ERR(rphy->phy_reset);
- 
--	rphy->clk = devm_clk_get_optional_enabled(dev, "phyclk");
--	if (IS_ERR(rphy->clk)) {
--		return dev_err_probe(&pdev->dev, PTR_ERR(rphy->clk),
-+	ret = devm_clk_bulk_get_all(dev, &rphy->clks);
-+	if (ret == -EPROBE_DEFER) {
-+		return dev_err_probe(&pdev->dev, -EPROBE_DEFER,
- 				     "failed to get phyclk\n");
- 	}
- 
-+	/* Clocks are optional */
-+	rphy->num_clks = ret < 0 ? 0 : ret;
-+
- 	ret = rockchip_usb2phy_clk480m_register(rphy);
- 	if (ret) {
- 		dev_err(dev, "failed to register 480m output clock\n");
- 		return ret;
- 	}
- 
-+	ret = clk_bulk_prepare_enable(rphy->num_clks, rphy->clks);
-+	if (ret)
-+		return ret;
-+
- 	if (rphy->phy_cfg->phy_tuning) {
- 		ret = rphy->phy_cfg->phy_tuning(rphy);
- 		if (ret)
--			return ret;
-+			goto disable_clks;
- 	}
- 
- 	index = 0;
-@@ -1484,6 +1494,8 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
- 
- put_child:
- 	of_node_put(child_np);
-+disable_clks:
-+	clk_bulk_disable_unprepare(rphy->num_clks, rphy->clks);
- 	return ret;
- }
- 
-@@ -1495,6 +1507,30 @@ static int rk3128_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- 				BIT(2) << BIT_WRITEABLE_SHIFT | 0);
- }
- 
-+static int rk3576_usb2phy_tuning(struct rockchip_usb2phy *rphy)
-+{
-+	int ret;
-+	u32 reg = rphy->phy_cfg->reg;
-+
-+	/* Deassert SIDDQ to power on analog block */
-+	ret = regmap_write(rphy->grf, reg + 0x0010, GENMASK(29, 29) | 0x0000);
-+	if (ret)
-+		return ret;
-+
-+	/* Do reset after exit IDDQ mode */
-+	ret = rockchip_usb2phy_reset(rphy);
-+	if (ret)
-+		return ret;
-+
-+	/* HS DC Voltage Level Adjustment 4'b1001 : +5.89% */
-+	ret |= regmap_write(rphy->grf, reg + 0x000c, GENMASK(27, 24) | 0x0900);
-+
-+	/* HS Transmitter Pre-Emphasis Current Control 2'b10 : 2x */
-+	ret |= regmap_write(rphy->grf, reg + 0x0010, GENMASK(20, 19) | 0x0010);
-+
-+	return ret;
-+}
-+
- static int rk3588_usb2phy_tuning(struct rockchip_usb2phy *rphy)
- {
- 	int ret;
-@@ -1923,6 +1959,84 @@ static const struct rockchip_usb2phy_cfg rk3568_phy_cfgs[] = {
- 	{ /* sentinel */ }
- };
- 
-+static const struct rockchip_usb2phy_cfg rk3576_phy_cfgs[] = {
-+	{
-+		.reg = 0x0,
-+		.num_ports	= 1,
-+		.phy_tuning	= rk3576_usb2phy_tuning,
-+		.clkout_ctl	= { 0x0008, 0, 0, 1, 0 },
-+		.port_cfgs	= {
-+			[USB2PHY_PORT_OTG] = {
-+				.phy_sus	= { 0x0000, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x00c0, 1, 1, 0, 1 },
-+				.bvalid_det_st	= { 0x00c4, 1, 1, 0, 1 },
-+				.bvalid_det_clr = { 0x00c8, 1, 1, 0, 1 },
-+				.ls_det_en	= { 0x00c0, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x00c4, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x00c8, 0, 0, 0, 1 },
-+				.disfall_en	= { 0x00c0, 6, 6, 0, 1 },
-+				.disfall_st	= { 0x00c4, 6, 6, 0, 1 },
-+				.disfall_clr	= { 0x00c8, 6, 6, 0, 1 },
-+				.disrise_en	= { 0x00c0, 5, 5, 0, 1 },
-+				.disrise_st	= { 0x00c4, 5, 5, 0, 1 },
-+				.disrise_clr	= { 0x00c8, 5, 5, 0, 1 },
-+				.utmi_avalid	= { 0x0080, 1, 1, 0, 1 },
-+				.utmi_bvalid	= { 0x0080, 0, 0, 0, 1 },
-+				.utmi_ls	= { 0x0080, 5, 4, 0, 1 },
-+			}
-+		},
-+		.chg_det = {
-+			.cp_det		= { 0x0080, 8, 8, 0, 1 },
-+			.dcp_det	= { 0x0080, 8, 8, 0, 1 },
-+			.dp_det		= { 0x0080, 9, 9, 1, 0 },
-+			.idm_sink_en	= { 0x0010, 5, 5, 1, 0 },
-+			.idp_sink_en	= { 0x0010, 5, 5, 0, 1 },
-+			.idp_src_en	= { 0x0010, 14, 14, 0, 1 },
-+			.rdm_pdwn_en	= { 0x0010, 14, 14, 0, 1 },
-+			.vdm_src_en	= { 0x0010, 7, 6, 0, 3 },
-+			.vdp_src_en	= { 0x0010, 7, 6, 0, 3 },
-+		},
-+	},
-+	{
-+		.reg = 0x2000,
-+		.num_ports	= 1,
-+		.phy_tuning	= rk3576_usb2phy_tuning,
-+		.clkout_ctl	= { 0x2008, 0, 0, 1, 0 },
-+		.port_cfgs	= {
-+			[USB2PHY_PORT_OTG] = {
-+				.phy_sus	= { 0x2000, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x20c0, 1, 1, 0, 1 },
-+				.bvalid_det_st	= { 0x20c4, 1, 1, 0, 1 },
-+				.bvalid_det_clr = { 0x20c8, 1, 1, 0, 1 },
-+				.ls_det_en	= { 0x20c0, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x20c4, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x20c8, 0, 0, 0, 1 },
-+				.disfall_en	= { 0x20c0, 6, 6, 0, 1 },
-+				.disfall_st	= { 0x20c4, 6, 6, 0, 1 },
-+				.disfall_clr	= { 0x20c8, 6, 6, 0, 1 },
-+				.disrise_en	= { 0x20c0, 5, 5, 0, 1 },
-+				.disrise_st	= { 0x20c4, 5, 5, 0, 1 },
-+				.disrise_clr	= { 0x20c8, 5, 5, 0, 1 },
-+				.utmi_avalid	= { 0x2080, 1, 1, 0, 1 },
-+				.utmi_bvalid	= { 0x2080, 0, 0, 0, 1 },
-+				.utmi_ls	= { 0x2080, 5, 4, 0, 1 },
-+			}
-+		},
-+		.chg_det = {
-+			.cp_det		= { 0x2080, 8, 8, 0, 1 },
-+			.dcp_det	= { 0x2080, 8, 8, 0, 1 },
-+			.dp_det		= { 0x2080, 9, 9, 1, 0 },
-+			.idm_sink_en	= { 0x2010, 5, 5, 1, 0 },
-+			.idp_sink_en	= { 0x2010, 5, 5, 0, 1 },
-+			.idp_src_en	= { 0x2010, 14, 14, 0, 1 },
-+			.rdm_pdwn_en	= { 0x2010, 14, 14, 0, 1 },
-+			.vdm_src_en	= { 0x2010, 7, 6, 0, 3 },
-+			.vdp_src_en	= { 0x2010, 7, 6, 0, 3 },
-+		},
-+	},
-+	{ /* sentinel */ }
-+};
-+
- static const struct rockchip_usb2phy_cfg rk3588_phy_cfgs[] = {
- 	{
- 		.reg = 0x0000,
-@@ -2094,6 +2208,7 @@ static const struct of_device_id rockchip_usb2phy_dt_match[] = {
- 	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
- 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
- 	{ .compatible = "rockchip,rk3568-usb2phy", .data = &rk3568_phy_cfgs },
-+	{ .compatible = "rockchip,rk3576-usb2phy", .data = &rk3576_phy_cfgs },
- 	{ .compatible = "rockchip,rk3588-usb2phy", .data = &rk3588_phy_cfgs },
- 	{ .compatible = "rockchip,rv1108-usb2phy", .data = &rv1108_phy_cfgs },
- 	{}
--- 
-2.45.2
+> > Replaces the local mutex mbox_mutex with a global mutex mhdp_mailbox_mu=
+tex
+> > to prevent race conditions in mailbox access by multi drivers.
+> > =
+
+> > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> > ---
+> > v16->v17:
+> > - Replaces the local mutex mbox_mutex with a global mutex mhdp_mailbox_=
+mutex
+> > =
+
+> > v12->v16:
+> >  *No change.
+> > =
+
+> > V11->v12:
+> > - Move status initialize out of mbox_mutex.
+> > - Reorder API functions in alphabetical.
+> > - Add notes for malibox access functions.
+> > - Add year 2024 to copyright.
+> > =
+
+> >  drivers/gpu/drm/bridge/cadence/Kconfig        |   4 +
+> >  drivers/gpu/drm/bridge/cadence/Makefile       |   1 +
+> >  .../gpu/drm/bridge/cadence/cdns-mhdp-helper.c | 307 +++++++++++++
+> >  .../drm/bridge/cadence/cdns-mhdp8546-core.c   | 425 ++++--------------
+> >  .../drm/bridge/cadence/cdns-mhdp8546-core.h   |  47 +-
+> >  .../drm/bridge/cadence/cdns-mhdp8546-hdcp.c   |  36 +-
+> >  include/drm/bridge/cdns-mhdp-helper.h         |  94 ++++
+> >  7 files changed, 507 insertions(+), 407 deletions(-)
+> >  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c
+> >  create mode 100644 include/drm/bridge/cdns-mhdp-helper.h
+> > =
+
+> > diff --git a/drivers/gpu/drm/bridge/cadence/Kconfig b/drivers/gpu/drm/b=
+ridge/cadence/Kconfig
+> > index cced81633ddcd..e0973339e9e33 100644
+> > --- a/drivers/gpu/drm/bridge/cadence/Kconfig
+> > +++ b/drivers/gpu/drm/bridge/cadence/Kconfig
+> > @@ -21,6 +21,9 @@ config DRM_CDNS_DSI_J721E
+> >  	  the routing of the DSS DPI signal to the Cadence DSI.
+> >  endif
+> >  =
+
+> > +config CDNS_MHDP_HELPER
+> > +	tristate
+> > +
+> >  config DRM_CDNS_MHDP8546
+> >  	tristate "Cadence DPI/DP bridge"
+> >  	select DRM_DISPLAY_DP_HELPER
+> > @@ -28,6 +31,7 @@ config DRM_CDNS_MHDP8546
+> >  	select DRM_DISPLAY_HELPER
+> >  	select DRM_KMS_HELPER
+> >  	select DRM_PANEL_BRIDGE
+> > +	select CDNS_MHDP_HELPER
+> >  	depends on OF
+> >  	help
+> >  	  Support Cadence DPI to DP bridge. This is an internal
+> > diff --git a/drivers/gpu/drm/bridge/cadence/Makefile b/drivers/gpu/drm/=
+bridge/cadence/Makefile
+> > index c95fd5b81d137..087dc074820d7 100644
+> > --- a/drivers/gpu/drm/bridge/cadence/Makefile
+> > +++ b/drivers/gpu/drm/bridge/cadence/Makefile
+> > @@ -2,6 +2,7 @@
+> >  obj-$(CONFIG_DRM_CDNS_DSI) +=3D cdns-dsi.o
+> >  cdns-dsi-y :=3D cdns-dsi-core.o
+> >  cdns-dsi-$(CONFIG_DRM_CDNS_DSI_J721E) +=3D cdns-dsi-j721e.o
+> > +obj-$(CONFIG_CDNS_MHDP_HELPER) +=3D cdns-mhdp-helper.o
+> >  obj-$(CONFIG_DRM_CDNS_MHDP8546) +=3D cdns-mhdp8546.o
+> >  cdns-mhdp8546-y :=3D cdns-mhdp8546-core.o cdns-mhdp8546-hdcp.o
+> >  cdns-mhdp8546-$(CONFIG_DRM_CDNS_MHDP8546_J721E) +=3D cdns-mhdp8546-j72=
+1e.o
+> > diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c b/driver=
+s/gpu/drm/bridge/cadence/cdns-mhdp-helper.c
+> > new file mode 100644
+> > index 0000000000000..c60a6b69a5343
+> > --- /dev/null
+> > +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c
+> > @@ -0,0 +1,307 @@
+> > +// SPDX-License-Identifier: GPL-2.0-only
+> > +/*
+> > + * Copyright (C) 2023, 2024 NXP Semiconductor, Inc.
+> > + *
+> > + */
+> > +#include <drm/bridge/cdns-mhdp-helper.h>
+> > +#include <linux/dev_printk.h>
+> > +#include <linux/module.h>
+> > +
+> > +/* Protects mailbox communications with the firmware */
+> > +DEFINE_MUTEX(mhdp_mailbox_mutex);
+> =
+
+> This is not enough if the driver is built as a module:
+> =
+
+> > ERROR: modpost: "mhdp_mailbox_mutex"
+> > [drivers/gpu/drm/bridge/cadence/cdns-mhdp8546.ko] undefined! ERROR:
+> > modpost: "mhdp_mailbox_mutex"
+> > [drivers/gpu/drm/bridge/cadence/cdns-mhdp8501.ko] undefined!
+> =
+
+> Not sure if EXPORT_SYMBOL_GPL() on a mutex is considered good style.
+
+Absolutely no. The API should wrap register access, using the mutex
+whether required, rather than exporting the mutex for everybody else to
+use.
+
+> =
+
+> Best regards,
+> Alexander
+> =
+
+> > [snip]
+> -- =
+
+> TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+> Amtsgericht M=FCnchen, HRB 105018
+> Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+> http://www.tq-group.com/
+> =
+
+> =
 
 
--- 
+-- =
+
+With best wishes
+Dmitry
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
