@@ -4,88 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B510ECF9C6B
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 08:55:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B298ECF9C71
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 08:57:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bzpEuEDR54DShg9pAZOzmhptHIbucDSEYAYwCpo2Tyk=; b=jV0Zeu0WNsN9rl
-	YqCPD33oKtXcEdkd0XLzxTt/WvWfNMKu4b9oUrxAmPV04i425VBiSiIvD4DWDto1z/XLTyLGfPIn7
-	49eJU1E2cRT716GpvepLiprOUryttyktIr5YU+1ScOq71eRckDht6fQp+B61Fo48dWaOxGdZ0q5so
-	66jrvD6Lh7Vb1+VTWVmKYO4jNroi2LOETU4rLNhBqIbMRdLql+6JMMobJfBzKwO/hhCTMeEW8xl4Z
-	PuPe81Ghape9npZ+1EBhi8iHe5n3YSoiyOfL/11pqtoh19FpsPXVbQ8FoJQsDlDCZeHnp5Jajy5wI
-	zT48uLBlYnpY+4rgMwjg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S2bNj7uoOm0XYbXEnMxWSdwFYybAiQPjugN+G1bZEFA=; b=B1/a2OH0F/14TN
+	xRI06yUoHcv/jNSiOZgRsf1D97Ye1X8a5Rs84XP8f5fdgYYHmu6RLr185C5TPDlqHSuyvF8DHiuBQ
+	mn8bP5Jtgp8BPLVKImr32xr5f/oaMTKwxefk0omZiHIZ7K7ZFp1zaTQ4xWGie65ISWSNThACqyulM
+	cx1Z5HD68IZNUM75uVfjd+xv3aW2q3xDNZIEhPH/bHvqs7DmOiu8ca0PTQrm/Dn+HLDQqvdQBlead
+	ab2McreuooZqmSbv69n5hFWRH2hMkNXu5LPPqSx3rydfcTC9qJLYYN60hFxxt/je+MfQa5GcTlTPE
+	P8XZT82YpyK4jAJ4r3YQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1st1KN-00000001gMu-1rEc;
-	Tue, 24 Sep 2024 08:55:23 +0000
-Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+	id 1st1Lx-00000001gou-1nwB;
+	Tue, 24 Sep 2024 08:57:01 +0000
+Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1st1KL-00000001gLj-0IHD;
-	Tue, 24 Sep 2024 08:55:22 +0000
-Received: by mail-pg1-x530.google.com with SMTP id 41be03b00d2f7-7d511e60be5so330436a12.0;
-        Tue, 24 Sep 2024 01:55:20 -0700 (PDT)
+	id 1st1KP-00000001gMp-0SsI
+	for linux-phy@lists.infradead.org;
+	Tue, 24 Sep 2024 08:55:26 +0000
+Received: by mail-lj1-x22b.google.com with SMTP id 38308e7fff4ca-2f75c56f16aso67634631fa.0
+        for <linux-phy@lists.infradead.org>; Tue, 24 Sep 2024 01:55:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1727168119; x=1727772919; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=/FI1DcNAuH3qKf7n7Xl/ic4hrmrj7FMsL5tIw63tMgw=;
-        b=lo6rVzVW9FnOkpNcGA+1qMfQVM61mOgc/lO30umngvIrTEJq341RO3KHSmDJz5Jtv1
-         7S3h8t3Su8wyImT/cxmTmJsZMp57f+gZfeMvS9AsCJjC4Y9nGXInhfXlFYq+STWFRepe
-         sItPNQL1sasjX22820r4eqzss9R/Wqd5h6IPo5PzTFTWQs4FG4Nk2+mttB3eCsGdegrr
-         oSSX3XVQvb0ReLS7JdGa2kK9WZcEzyiMUFtvavFl9wiHp2tZ9M3uUsDmMAWP7NHE+VLq
-         fKZh4Vr9+R/d3MTO5LGkwW3Z1mzJqWjGKtOQkrd4Hs+//7o0j8ZfvvFbkwNcsJRCdDWV
-         h3Ig==
+        d=linaro.org; s=google; t=1727168122; x=1727772922; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=3zPekBBQnYE9h1wNiBnPJ1W27ZUNg/CsS+5seicJ1+I=;
+        b=GAxCdwMb3SXJoWT8HKmvciB14vyAnaOoS/poViJB7tSOXp7uWzFlHWoE8jD8/dJh4Y
+         f3n3HmZ22oqfM3k6L7dyRXw+ERQJjR+xbIzPy1Gds0iWo7sp4w/IL4TGwX1a9YBgZDMk
+         t0n3yNMwNFDAogk6JYONApQC22i4eJuxIdVeolncAJCZS4tMLBBIID+5ydWB7Uil0/YP
+         uz1j7983F6NDu+GHHXYfsG1muGcPbT1QlM6nyd4Lw1usMbNv3oM6kO6RysCuU/pwUjiR
+         6KA9eEbBHtM0xVHC2lfnhSTG1V90HoEYPqJkP+GsJ7SIqp5nkntI+KWnD6kH2O63ykDw
+         dX9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727168119; x=1727772919;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=/FI1DcNAuH3qKf7n7Xl/ic4hrmrj7FMsL5tIw63tMgw=;
-        b=KskdHld1CDgVzfZPFafIGcLWzxy5kNGGQCJl9Rwfi8kxm21t5Li4OF+ArGzsc0g2iG
-         Diky9U1m9gJJShqHiRqIEKG9N7E959HWxNNoYbaonU6nJ5svCzAyWBhJcAP7iLC8NC+i
-         tFz3IeHgFUwKwf/9gvowGCrQoryr4vSvzjOGHSsoWCwSCHY8yWp/sB2nfKBKE81eHNn4
-         EprRxI+XURZfa5/soJNbjdgcGPwGqAXN+JEldWnCrfzxCXjUwrS52PMPCoNkQ0gLPJCY
-         d21j26wJm9zkgCxSTrA7D+amGUoz3GylAijCPi+Uj0xXXDlNCkKWsrKWjsAwe3kmA0pl
-         wnqA==
-X-Forwarded-Encrypted: i=1; AJvYcCWV26nhcjVXMCU+4G64Eet9JSPT7JnF5y0TckF4Q8caiVyEB4BxiXAbjKgxN6LeCxNysguoGdaop4bj5HNBD94=@lists.infradead.org, AJvYcCXpbsiMcg2HPFtUH6sCzmPC/rN/Ki5TfAY2Wz++jQD4ON3T+zflvO0lJa5th5SRpUMb2DRk1UtDyGKF1xwIIyeh@lists.infradead.org
-X-Gm-Message-State: AOJu0YxuOux5n97+XpCAxyCSAsOGEgWcRYC6QTBkFe9vLy+8mJgBW+Cv
-	eZrlU5uBu0JenP67Xx79bjCZ4emjsu/3rSHmWLAQbFcsx7C8TNzNTB5e2QmDspI=
-X-Google-Smtp-Source: AGHT+IHxkIzwP+MOur8ldY/9lqikVaW+SAAtkZjc59TlE/i2ve5nhmTkBi3mBcZoS3Y1WtTQYnYdjg==
-X-Received: by 2002:a05:6a20:430e:b0:1cf:4903:7f5f with SMTP id adf61e73a8af0-1d30a8bf46emr10200468637.1.1727168119286;
-        Tue, 24 Sep 2024 01:55:19 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71afc97c18bsm795090b3a.158.2024.09.24.01.55.14
+        d=1e100.net; s=20230601; t=1727168122; x=1727772922;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=3zPekBBQnYE9h1wNiBnPJ1W27ZUNg/CsS+5seicJ1+I=;
+        b=SCxbDzPxOqxd95XFNQuCdZ9mqLT7RvWUTcXXd9CE+vhHpYiULU+79CYXxiqgUXMnaU
+         08+4XwMvY7m7XnNJBQXLo8VFdaSEkNETLibO8HA9In9yzNJYx+jYM8/7B+L0bsz5atlp
+         tmrhkw+GnCfkc1dMlFC6x/XaOYH5XBtn/3UBUOQX4ITYSU+fWCiDzrPxQWrwgDCLbxXj
+         pTyj4sWKe45n3FRpqWax7EOqG5FoK7GD8opjWGnQ2CkT7SzOoLMl0jufUXVutUuQZO/K
+         51kslSWdMtXIsgn0BpfWOWjwMqMLHKPXkJ1ttmKJ9aUHa/rPX9jVjcHeWGIZNbEREB25
+         SP7w==
+X-Forwarded-Encrypted: i=1; AJvYcCUbBoXI88Qm56CXXZQGfT0Iox0ZSu3S0mhtLwJM6KFW44yrTX7ClwYwXNUkDwMgu+YM0afogPim9+Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzEzdfebEicKd3d9UR8TlFpVcKIrM0wv9ngRl8Ja4m61H4cOXL+
+	0tbmrsZ4g5wirxe9KB4yAipVWiHePKxbJdeEBwDtqr2MWQvvdE0WzGtX3aTSt24=
+X-Google-Smtp-Source: AGHT+IF6kGMJj95pD29Vie/S8ZFE7+n7j8iD9RC3u4NBK76/EBw9rwODDmYNVV5BSqgST6bsdkOcKg==
+X-Received: by 2002:a2e:510a:0:b0:2f6:5f0a:9cfe with SMTP id 38308e7fff4ca-2f7cb36059dmr56161761fa.30.1727168122127;
+        Tue, 24 Sep 2024 01:55:22 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2f8d289b68fsm1458611fa.115.2024.09.24.01.55.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 24 Sep 2024 01:55:18 -0700 (PDT)
-From: Frank Wang <frawang.cn@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	heiko@sntech.de
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	william.wu@rock-chips.com,
-	tim.chen@rock-chips.com,
-	wmc@rock-chips.com,
-	Frank Wang <frank.wang@rock-chips.com>
-Subject: [PATCH v2 1/2] dt-bindings: phy: rockchip,inno-usb2phy: add rk3576
-Date: Tue, 24 Sep 2024 16:55:09 +0800
-Message-ID: <20240924085510.20863-1-frawang.cn@gmail.com>
-X-Mailer: git-send-email 2.45.2
+        Tue, 24 Sep 2024 01:55:20 -0700 (PDT)
+Date: Tue, 24 Sep 2024 11:55:17 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org, 
+	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, 
+	daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, 
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, mripard@kernel.org, 
+	kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
+	alexander.stein@ew.tq-group.com, sam@ravnborg.org, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v17 3/8] dt-bindings: display: bridge: Add Cadence
+ MHDP8501
+Message-ID: <w72m4bxymngdadhp4x3mxyvv4j6k3mgtoqg3tcw4p3xdmhfpmx@wbkmfj3zmwcv>
+References: <cover.1727159906.git.Sandor.yu@nxp.com>
+ <b2e1d26f964a03163ec7a1ba6ac8d7c88d6cb111.1727159906.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b2e1d26f964a03163ec7a1ba6ac8d7c88d6cb111.1727159906.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_015521_142276_B394D0BD 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240924_015525_169558_6AF30ACB 
+X-CRM114-Status: GOOD (  17.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,68 +101,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Frank Wang <frank.wang@rock-chips.com>
+On Tue, Sep 24, 2024 at 03:36:48PM GMT, Sandor Yu wrote:
+> Add bindings for Cadence MHDP8501 DisplayPort/HDMI bridge.
+> 
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+> v16->v17:
+> - Add lane-mapping property
+> 
+> v9->v16:
+>  *No change
+> 
+> .../display/bridge/cdns,mhdp8501.yaml         | 109 ++++++++++++++++++
+>  1 file changed, 109 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> new file mode 100644
+> index 0000000000000..3f79f328c7425
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
+> @@ -0,0 +1,109 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp8501.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Cadence MHDP8501 DP/HDMI bridge
+> +
+> +maintainers:
+> +  - Sandor Yu <Sandor.yu@nxp.com>
+> +
+> +description:
+> +  Cadence MHDP8501 DisplayPort/HDMI interface.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,imx8mq-mhdp8501
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: MHDP8501 DP/HDMI APB clock.
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description:
+> +      phandle to the DP/HDMI PHY
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Hotplug cable plugin.
+> +      - description: Hotplug cable plugout.
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: plug_in
+> +      - const: plug_out
+> +
+> +  lane-mapping:
+> +    description: lane mapping for HDMI or DisplayPort interface.
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description:
+> +          Input port from display controller output.
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/properties/port
+> +        description:
+> +          Output port to DisplayPort or HDMI connector.
+> +
+> +    required:
+> +      - port@0
+> +      - port@1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - interrupts
+> +  - interrupt-names
+> +  - phys
+> +  - lane-mapping
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8mq-clock.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    mhdp: display-bridge@32c00000 {
+> +        compatible = "fsl,imx8mq-mhdp8501";
+> +        reg = <0x32c00000 0x100000>;
+> +        interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-names = "plug_in", "plug_out";
+> +        clocks = <&clk IMX8MQ_CLK_DISP_APB_ROOT>;
+> +        phys = <&mdhp_phy>;
+> +        lane-mapping = <0xe4>;
 
-Add compatible for the USB2 phy in the Rockchip RK3576 SoC.
+What does this value mean? The DT should be describing the hardware, not
+the register values. Can it be expressed as the data-lanes property of
+the corresponding port?
 
-Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
----
-Changelog:
-v2:
- - Categorize clock names by oneOf keyword.
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +
+> +                mhdp_in: endpoint {
+> +                    remote-endpoint = <&dcss_out>;
+> +                };
+> +            };
+> +
+> +            port@1 {
+> +                reg = <1>;
+> +
+> +                mhdp_out: endpoint {
+> +                    remote-endpoint = <&dp_connector>;
+> +                };
+> +            };
+> +        };
+> +    };
+> -- 
+> 2.34.1
+> 
 
-v1:
- - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10467-1-frank.wang@rock-chips.com/
-
- .../bindings/phy/rockchip,inno-usb2phy.yaml      | 16 ++++++++++++++--
- 1 file changed, 14 insertions(+), 2 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-index 5254413137c64..8af4e0f8637fc 100644
---- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
-@@ -20,6 +20,7 @@ properties:
-       - rockchip,rk3366-usb2phy
-       - rockchip,rk3399-usb2phy
-       - rockchip,rk3568-usb2phy
-+      - rockchip,rk3576-usb2phy
-       - rockchip,rk3588-usb2phy
-       - rockchip,rv1108-usb2phy
- 
-@@ -34,10 +35,20 @@ properties:
-     const: 0
- 
-   clocks:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 3
- 
-   clock-names:
--    const: phyclk
-+    minItems: 1
-+    maxItems: 3
-+    items:
-+      oneOf:
-+        - description: aclk for USB MMU.
-+          const: aclk
-+        - description: aclk_slv for USB MMU.
-+          const: aclk_slv
-+        - description: PHY input reference clocks.
-+          const: phyclk
- 
-   assigned-clocks:
-     description:
-@@ -143,6 +154,7 @@ allOf:
-           contains:
-             enum:
-               - rockchip,rk3568-usb2phy
-+              - rockchip,rk3576-usb2phy
-               - rockchip,rk3588-usb2phy
- 
-     then:
 -- 
-2.45.2
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
