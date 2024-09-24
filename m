@@ -4,71 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CC03CF9C6B
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 15:17:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 353BBCF9C6F
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 16:13:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9bU8gx/E5AgiHwOVtpl8QkZyH01o+i0B2kcFaeXbcJo=; b=USnmzyUDEPBQtl
-	ayJ7Y6xE0NmJzSMA4NWa0sGsflgogmU7bYSCualZN9x6rgkPPcY2Rcgdjxqm3YXp64rHcroT9QqoF
-	zAtzLDcmxc2lZhnF2wZUYCMGIKhx8NunMEbLM5mZLnFTac2vUBasl3611ookiWkdWQAKUHXXObueV
-	ZvTfLxja0x9kREkPaNfx/BkqV3WiaRCPLtIRb9lR4uMpMKnSUZmoDRaZhHZ1Fra0K8v6bwTlSmupu
-	QV9rzJ29ldZNuI0gYVU/bZPNBzClAPk5zSYGjP3MZzwqrd2omTwpWuEJstrbpQArsx6ofvzTIIbVZ
-	Cs/extaIjEawoE5RwkRQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Wg0p0Y9j/bQXOQqcpPVYaYac3S5xeQ9jzlWOY/MZqFU=; b=YiQleKzABoAXVdDS7m6JpRJlLS
+	owOPss2cXUuc+svc1rDs8ZI6HGDjx0O50ByY8jgQ2xW9l48qlbn7dq6WpLQBPjbCj5zYT26N3LpJZ
+	gEtWAat1NI1LKbFhJ4o5IzrzybvIJYvcSCU4abilK1WC4uCZIkxh3KX0zh0H/hmDHVSnK2yR1unKL
+	KhV4YxjSPO7HWz4HVUU/rkaoNDDSwasaTn9XmUZCgeQY82drCY7TvdLnCGMJlrctN5RdB88ladFGy
+	gObI4HnRJFaarZUCmRzQK4LdnFRSNOkeMp/GHY43OTCkNa1h2slXao+ArP8l1eKOmTP5JVK7aIWXG
+	ALETkuWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1st7II-00000002eDR-3O7A;
-	Tue, 24 Sep 2024 15:17:38 +0000
+	id 1st8Ai-00000002m7O-3Y0A;
+	Tue, 24 Sep 2024 16:13:52 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1st7I3-00000002eAH-2kMY
-	for linux-phy@lists.infradead.org;
-	Tue, 24 Sep 2024 15:17:36 +0000
+	id 1st88c-00000002lV9-17v1;
+	Tue, 24 Sep 2024 16:11:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id D73E0A435EE;
-	Tue, 24 Sep 2024 15:17:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82513C4CEC4;
-	Tue, 24 Sep 2024 15:17:22 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 48FCDA436B6;
+	Tue, 24 Sep 2024 16:11:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8B91C4CECF;
+	Tue, 24 Sep 2024 16:11:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1727191042;
-	bh=K45iTz1RzuouoCG+1FPCQaMpH4ux1cedGX96IMVXfDM=;
+	s=k20201202; t=1727194301;
+	bh=bWLWmOlWnq9t18YqdEiJAt1CiCqOxDnW9vppGQwtLs0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pTT+d6+anhV0SAGbGLH6jxitdEhE8CRPa/T3338wYjxKN8j1ZLOwsid9k1oekodLB
-	 AbtwjIvLw8xQlWucy9eWzydHLXhj2D3hnzXm1ug2mEz3YIPoRUC6z5ZBDvcdJb6gF7
-	 ME+mqSt0evhwN45iTDLGK6oUl/FAHPKrtZqryCTaGikwgRTyMmiMWEaUAd6AZ0Alhb
-	 ym5l9EH+nii/homxqmaNf/b2XhRTjEf5qvgz+cjlavZ6fuLOFthyQTvCJiultaiFsE
-	 JuYgRYXrar3lpnQrfnFaGmDZ7seDpC3JEVkLGorY7CJsOb7mY9ZNIFRd7jphhYb4UL
-	 upOtRWgOUBJhw==
-Received: from johan by theta with local (Exim 4.98)
-	(envelope-from <johan@kernel.org>)
-	id 1st7Hz-0000000028G-0Gw4;
-	Tue, 24 Sep 2024 17:17:19 +0200
-Date: Tue, 24 Sep 2024 17:17:19 +0200
-From: Johan Hovold <johan@kernel.org>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Qiang Yu <quic_qianyu@quicinc.com>, vkoul@kernel.org, kishon@kernel.org,
-	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
-	sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
-	quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org,
-	kw@linux.com, lpieralisi@kernel.org, neil.armstrong@linaro.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH v4 5/6] PCI: qcom: Add support for X1E80100 SoC
-Message-ID: <ZvLX_wkh7_y7sjPZ@hovoldconsulting.com>
-References: <20240924101444.3933828-1-quic_qianyu@quicinc.com>
- <20240924101444.3933828-6-quic_qianyu@quicinc.com>
- <20240924135021.ybpyoahlpuvedma5@thinkpad>
+	b=aEdt8p1pDQcezHF4zNNDViBHVARqR4kUM9rBen3wCTmaQ8ukqDdDymBW7Ml8oeYpI
+	 QuNyBAKuCl0Xr5V6yNp6ZCe2v6sXc7krPgR42VoJlsF8Naeq1k4YRDrJfu0UEP2gRr
+	 EseRMXWzbLQO+dIRJ2zStjk6PQFfqHqxI7b4TFFl+yvP3XMpFhMqZujWSw1EP0K3aD
+	 me0/pA1xKhczOe+B9IqFGK/KtlvGSAxTOHO7iLgj46YiUYYaMt4gsN6mYLvdxAdCDF
+	 Wijynn/R0m2caX7QtdRMVXrJMA6pi/W3M4huW8UmdVdpc1lFubUEoxgwZ/MOpQ+5KF
+	 JK5dPM4HiGynQ==
+Date: Tue, 24 Sep 2024 17:11:35 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Frank Wang <frawang.cn@gmail.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, heiko@sntech.de,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
+	tim.chen@rock-chips.com, wmc@rock-chips.com,
+	Frank Wang <frank.wang@rock-chips.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip,inno-usb2phy: add
+ rk3576
+Message-ID: <20240924-overtly-curable-13df2e7fdc9b@spud>
+References: <20240924085510.20863-1-frawang.cn@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240924135021.ybpyoahlpuvedma5@thinkpad>
+In-Reply-To: <20240924085510.20863-1-frawang.cn@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_081723_791161_2AD156FE 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20240924_091142_577106_E80C3C4A 
+X-CRM114-Status: GOOD (  16.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,47 +71,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1419654048023982101=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 24, 2024 at 03:50:21PM +0200, Manivannan Sadhasivam wrote:
-> On Tue, Sep 24, 2024 at 03:14:43AM -0700, Qiang Yu wrote:
-> > X1E80100 has PCIe ports that support up to Gen4 x8 based on hardware IP
-> > version 1.38.0.
-> > 
-> > Currently the ops_1_9_0 which is being used for X1E80100 has config_sid
-> > callback to config BDF to SID table. However, this callback is not
-> > required for X1E80100 because it has smmuv3 support and BDF to SID table
-> > will be not present.
-> > 
-> > Hence add support for X1E80100 by introducing a new ops and cfg structures
-> > that don't require the config_sid callback. This could be reused by the
-> > future platforms based on SMMUv3.
-> > 
-> 
-> Oops... I completely overlooked that you are not adding the SoC support but
-> fixing the existing one :( Sorry for suggesting a commit message that changed
-> the context.
-> 
-> For this, you can have something like:
-> 
-> "PCI: qcom: Fix the ops for X1E80100 SoC
-> 
-> X1E80100 SoC is based on SMMUv3, hence it doesn't need the BDF2SID mapping
-> present in the existing cfg_1_9_0 ops. This is fixed by introducing new ops
-> 'ops_1_38_0' and cfg 'cfg_1_38_0' structures. These are exactly same as the
-> 1_9_0 ones, but they don't have the 'config_sid()' callback that handles the
-> BDF2SID mapping in the hardware. These new structures could also be used by the
-> future SoCs making use of SMMUv3."
 
-Don't we need something like this for sc8280xp and other platforms using
-SMMUv3 as well?
+--===============1419654048023982101==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="9ONglCN6MohFU9El"
+Content-Disposition: inline
 
-Johan
+
+--9ONglCN6MohFU9El
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Sep 24, 2024 at 04:55:09PM +0800, Frank Wang wrote:
+> From: Frank Wang <frank.wang@rock-chips.com>
+>=20
+> Add compatible for the USB2 phy in the Rockchip RK3576 SoC.
+>=20
+> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+> ---
+> Changelog:
+> v2:
+>  - Categorize clock names by oneOf keyword.
+>=20
+> v1:
+>  - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10=
+467-1-frank.wang@rock-chips.com/
+>=20
+>  .../bindings/phy/rockchip,inno-usb2phy.yaml      | 16 ++++++++++++++--
+>  1 file changed, 14 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.=
+yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> index 5254413137c64..8af4e0f8637fc 100644
+> --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+> @@ -20,6 +20,7 @@ properties:
+>        - rockchip,rk3366-usb2phy
+>        - rockchip,rk3399-usb2phy
+>        - rockchip,rk3568-usb2phy
+> +      - rockchip,rk3576-usb2phy
+>        - rockchip,rk3588-usb2phy
+>        - rockchip,rv1108-usb2phy
+> =20
+> @@ -34,10 +35,20 @@ properties:
+>      const: 0
+> =20
+>    clocks:
+> -    maxItems: 1
+> +    minItems: 1
+> +    maxItems: 3
+> =20
+>    clock-names:
+> -    const: phyclk
+> +    minItems: 1
+> +    maxItems: 3
+
+clock-names isn't a required property, you can't allow jumbling the order
+like this does without breaking the ABI. Why can't the new device have
+phyclk in position 1?
+
+> +    items:
+> +      oneOf:
+> +        - description: aclk for USB MMU.
+> +          const: aclk
+> +        - description: aclk_slv for USB MMU.
+> +          const: aclk_slv
+> +        - description: PHY input reference clocks.
+> +          const: phyclk
+> =20
+>    assigned-clocks:
+>      description:
+> @@ -143,6 +154,7 @@ allOf:
+>            contains:
+>              enum:
+>                - rockchip,rk3568-usb2phy
+> +              - rockchip,rk3576-usb2phy
+>                - rockchip,rk3588-usb2phy
+> =20
+>      then:
+> --=20
+> 2.45.2
+>=20
+
+--9ONglCN6MohFU9El
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZvLktwAKCRB4tDGHoIJi
+0serAPwIYuF4gyihV2aMrvRUC4W0irDbNRmBm48l27fzdMCvZgEA6gwjgmxwEj16
+u1H8U9SfTXaCdALcASHdF1nIVLs+wwY=
+=/vi0
+-----END PGP SIGNATURE-----
+
+--9ONglCN6MohFU9El--
+
+
+--===============1419654048023982101==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1419654048023982101==--
+
