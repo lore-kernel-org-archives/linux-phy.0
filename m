@@ -4,80 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 048A4CF9C6B
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 11:34:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA5B8CF9C6F
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Sep 2024 13:49:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wtm3inqP5wMeowRmYZXmjAfcKHP9SJCN+dXwU3nrxbM=; b=hI0xVw/J8E13+i
-	NKXVUB7V6dO5yZXjsgPzw60vG0RYOE8JMwu8B7jgzk2DvJCBVKUcjLf5Da1OZ3XLByqW6qi+VZTgr
-	R0uVP9neDoIemEWBjAbmNFnUjNTNKeRPA1iJuODVu+bZITHNnk942AQbwUcfFwMHdouh7kRe/1yMP
-	Bey1256oCIi7ktAzwTjgUkv0C186CrOQXUnTzTol4vFMHejNXOtTclc2Gbl0HeggVV/m0EA+IBU+8
-	+5ud+iyTGb5pAGskPDiu5v/1mGhkx8fW2XCcQVkVtwJB8f6RDomMiTkSF7gmXuFInXpTzvw7bYeXC
-	FIA7yW7W7aYIMeQWxNYg==;
+	List-Owner; bh=5/5eDdIqF48/evRxi/3ePju64xONErVh/mfLs/N+FkE=; b=LrpsClwXwtguD/
+	nSBgK7pLLajU5H2oBgSl+m5/YexQ0aw5vQeI2YdS+JqgezG42FXg5NPw3oqbxxAQAj1J7Z7GrjoX6
+	YGid+CEeBqHYbHO+wFiL8l3lReacbnsA9pn4/qojGlIAhfOJaxbsYspdQvpd8fww16Wc+EiIcD+nd
+	A+EdZMD/eE3rzF8qAVActL1a9t1wCvYdLOsIRkR3Ax7dVTKS8S0KKqkjWzhKb4NL+XL+u3w08IWTm
+	blZ+9SdVBKgO9iDxoq0kv6GaaRXkjsRIOyJKDO0KuVpCaPgIXL9ttbSIX8M/nOLMZbbY/GiKxiqU9
+	xZn7cOuLd/4O/KTv+Sig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1st3oY-00000002Awp-2NFV;
-	Tue, 24 Sep 2024 11:34:42 +0000
-Received: from mail-yb1-f173.google.com ([209.85.219.173])
+	id 1st5uZ-00000002TLP-1ft4;
+	Tue, 24 Sep 2024 13:49:03 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1st3mH-00000002AD9-3mnL;
-	Tue, 24 Sep 2024 11:32:23 +0000
-Received: by mail-yb1-f173.google.com with SMTP id 3f1490d57ef6-e1dc358d6aeso4016371276.3;
-        Tue, 24 Sep 2024 04:32:20 -0700 (PDT)
+	id 1st5tP-00000002TBi-40ny
+	for linux-phy@lists.infradead.org;
+	Tue, 24 Sep 2024 13:47:53 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-5365aa568ceso6514438e87.0
+        for <linux-phy@lists.infradead.org>; Tue, 24 Sep 2024 06:47:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1727185670; x=1727790470; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=kBt3x6ALV42ewF+LrxPLGBD5z1fDXU5VRBYVjXfLHqA=;
+        b=Mo/bSwhwfQk6vN5q1jXmj86oZAIq3eomfc/oSRlh1zuO3RJAEieuf4oFo/H8Kf7WWT
+         eqni/QPEHWo8PRQrqXmtM/f3qACgkCb7ZwJ7/yZ6Xbb9kj8u3p9zZEJ+yH7ejXZzEBZG
+         P+oNgGWh1k82c+EkoSW+fmDOwa8zdDxv+Ex3sdgO1dUNzBs7vf+oliX3cStUjLogNbYw
+         jSfRI3FFBgWLalk3PoskYhQxVFeoNyAaew1Mana34TicOHd5eYkX0fuuTW+lYKNF9FZO
+         2hEm/nYR6q9yORrDCB+hkvXQg84kwsRUjOsJq3sLG4t2hJQ0dxbGZi805ru96BRTTjuC
+         DVGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727177540; x=1727782340;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=jm6h96BED8DQTfet2QAIovV1CqCtWAjpatPZ7/UosWI=;
-        b=dtpftWe9m931tuuJ5cQF5sVf4+kfoojzeAKLne/elWCeMLYRM3xj6Z+IStC9l8YBBf
-         jBFS1OSoLUdIlZ0hcyY1zL+jEbhkrUxLo6vSdpY+5LpelXz6tl6GP5JeugqUOvl4E2eS
-         otxw9q4GWXYlJlNDvYI4PoDVPeX+0ls2lAGL4NT3SVBmaXv/dUeSRtoD9d9u9JhMDntJ
-         R5JsjMfU7e2lU+nH+UkEP/e9UcRGev0wA94AfAt2+GZHZOMKWkdCSSAzs9BZzJSO2beO
-         ib0KyylQt+7FJnb6yVvIxuD/bDiO7tZrXGMgjOivilZ0jcriDtVi10UD2Z3zBr/SiV+k
-         fh4A==
-X-Forwarded-Encrypted: i=1; AJvYcCVy4dVD3c8vPga8AQgiKEStuXmRclL3BAXkiCKbcPI/AOxlyV5RLgx3vOs+L6n2rgVSm8P0IZaaNm3l@lists.infradead.org, AJvYcCXvsX/pRDMsD44oxw9dLa8t/Aiu3EpNC1JuFM3+kBHe3Nc0p1nmzmhKeNqNS3NqMdW7g0mKt/C91IqqSPsweP6k@lists.infradead.org
-X-Gm-Message-State: AOJu0YzVHQP7oKDwLDP8WEBGJDY+tamc2O8AlABHsNqy1+N+nJOMmKsb
-	hKB1ALN+XEi1hfGRQLtDoguHcIZVANlWujz2kc1T51leQOl3UfJhiHtqY0fU
-X-Google-Smtp-Source: AGHT+IG5WVo5eG22avj9SNaKsJYbW5KGsmUJx2+HUsiynKVD7chFptqQTvBpjhW/T9bSFtqFbxuDQA==
-X-Received: by 2002:a05:6902:260a:b0:e1a:7830:c6e6 with SMTP id 3f1490d57ef6-e2250c46f84mr10040027276.27.1727177539646;
-        Tue, 24 Sep 2024 04:32:19 -0700 (PDT)
-Received: from mail-yw1-f179.google.com (mail-yw1-f179.google.com. [209.85.128.179])
-        by smtp.gmail.com with ESMTPSA id 3f1490d57ef6-e2499ae672csm205457276.3.2024.09.24.04.32.17
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 24 Sep 2024 04:32:17 -0700 (PDT)
-Received: by mail-yw1-f179.google.com with SMTP id 00721157ae682-6dbb24ee2ebso47583547b3.1;
-        Tue, 24 Sep 2024 04:32:17 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCVCeyorSaoLyx01Jr0P1+b0L7AHMqSv5fVKU+ZSDh7z2+40PObIoLotEOqmmCzsbWbYrM8lXX6UBVxK@lists.infradead.org, AJvYcCXk7RoJBH7dk97H4756NNwzJP4dZlnoxEtWXgh9r8GQSLPUFniK82RLysd1p1JUudoyeR0jI5KqeHgZd2fLa3oo@lists.infradead.org
-X-Received: by 2002:a05:690c:48c1:b0:6af:eaaf:2527 with SMTP id
- 00721157ae682-6dfeed87f8cmr127931067b3.18.1727177537112; Tue, 24 Sep 2024
- 04:32:17 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1727185670; x=1727790470;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=kBt3x6ALV42ewF+LrxPLGBD5z1fDXU5VRBYVjXfLHqA=;
+        b=lvvEzkAw/S0th/zLrc9O/Xdw/iXv/3dg6+3cNO6bNRSqOcyA1Dg7hkkd7GEyNi8bSa
+         uittgifwF0qkRLsGMrmg0LKo5T9Og7EABG1kVjHpU2PDpPBpPnIz2LNNYyJOuLJ1ecSE
+         WH+sNkbBGaCBAgQyGvs6uGY4OsZW1lj3lcTg1vfm7p5WMNl6oogBX8UuR9QvKo1V/nQu
+         D+DW/tvL+wo3nolMoYVAZJA2pf2YuQSzatqxCfO4PtRv94AFuqCih1TQJE6lRuqiiga5
+         LcGcvx6sc2HedaJSJzo3meFHWNpZH8qC7CbJpYXX6bVlEowhn6i/0QlxqSXlasQnNUr7
+         aCyQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWopo2KZ/tgwM8sjfLySdt7tS9VqkudBUr96xQfnTk4kXiH9u8nDyvoh0NgW7+6D6hYFWE65ufRUYM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxxhFZmVBmmsxvpNrXORdTrllcNI0T/7Gl/oEkW/X7b+mpC4hu+
+	eiA5pUpqWDfluFTxws4D86wTA7OE4l8vwefjkCCnVTPVPPsq5I3RvL24rur1oIg=
+X-Google-Smtp-Source: AGHT+IGJKZpf6QQ+S8K3ti23EiAXeRY+081fsTj6EyFFUngV4d81tjNwb7xcXTbrQdu0LscMt/VsWQ==
+X-Received: by 2002:a05:6512:3048:b0:533:4785:82ab with SMTP id 2adb3069b0e04-536ac2d6a6bmr9755530e87.1.1727185669530;
+        Tue, 24 Sep 2024 06:47:49 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-537a86408cesm233908e87.149.2024.09.24.06.47.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 24 Sep 2024 06:47:48 -0700 (PDT)
+Date: Tue, 24 Sep 2024 16:47:45 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Maxime Ripard <mripard@kernel.org>
+Cc: Sandor Yu <Sandor.yu@nxp.com>, andrzej.hajda@intel.com, 
+	neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, 
+	jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, 
+	vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
+	alexander.stein@ew.tq-group.com, sam@ravnborg.org
+Subject: Re: [PATCH v17 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
+Message-ID: <2mug3ii2vi735sk7nwwu2rcj63d3mlgazlhg4sydcxb6uf5nsc@qi5ut5pmajsv>
+References: <cover.1727159906.git.Sandor.yu@nxp.com>
+ <8bdf573bfd7e3feb45d7ccb53765a978a685ce2d.1727159906.git.Sandor.yu@nxp.com>
+ <20240924-mottled-psychedelic-lorikeet-ef8f4c@houat>
 MIME-Version: 1.0
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com> <20240822152801.602318-5-claudiu.beznea.uj@bp.renesas.com>
-In-Reply-To: <20240822152801.602318-5-claudiu.beznea.uj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 24 Sep 2024 13:32:04 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdVQsHx0nC3xwQWVRWyWMnbXd1=RokNn8rkJv3bfG_0p-A@mail.gmail.com>
-Message-ID: <CAMuHMdVQsHx0nC3xwQWVRWyWMnbXd1=RokNn8rkJv3bfG_0p-A@mail.gmail.com>
-Subject: Re: [PATCH 04/16] soc: renesas: Add SYSC driver for Renesas RZ/G3S
-To: Claudiu <claudiu.beznea@tuxon.dev>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be, 
-	magnus.damm@gmail.com, gregkh@linuxfoundation.org, mturquette@baylibre.com, 
-	sboyd@kernel.org, yoshihiro.shimoda.uh@renesas.com, 
-	biju.das.jz@bp.renesas.com, ulf.hansson@linaro.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-clk@vger.kernel.org, linux-pm@vger.kernel.org, 
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Content-Disposition: inline
+In-Reply-To: <20240924-mottled-psychedelic-lorikeet-ef8f4c@houat>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_043221_990410_6EB4534B 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20240924_064752_004549_7AF6C566 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,46 +95,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQ2xhdWRpdSwKCk9uIFRodSwgQXVnIDIyLCAyMDI0IGF0IDU6MjjigK9QTSBDbGF1ZGl1IDxj
-bGF1ZGl1LmJlem5lYUB0dXhvbi5kZXY+IHdyb3RlOgo+IEZyb206IENsYXVkaXUgQmV6bmVhIDxj
-bGF1ZGl1LmJlem5lYS51akBicC5yZW5lc2FzLmNvbT4KPgo+IFRoZSBSWi9HM1MgU1lTIENvbnRy
-b2xsZXIgaGFzIDIgcmVnaXN0ZXJzIChvbmUgZm9yIFBDSUUgb25lIGZvciBVU0IpIHRoYXQKPiBu
-ZWVkIHRvIGJlIGNvbmZpZ3VyZWQgYmVmb3JlL2FmdGVyIHBvd2VyaW5nIG9mZi9vbiB0aGUgUENJ
-IG9yIFVTQgo+IGFyZXMuIFRoZSBiaXRzIGluIHRoZXNlIHJlZ2lzdGVycyBjb250cm9sIHNpZ25h
-bHMgdG8gUENJRSBhbmQgVVNCIHRoYXQKPiBuZWVkIHRvIGJlIGRlLWFzc2VydGVkL2Fzc2VydGVk
-IGFmdGVyL2JlZm9yZSBwb3dlciBvbi9vZmYgZXZlbnQuIEZvciB0aGlzCj4gYWRkIFNZU0MgY29u
-dHJvbGxlciBkcml2ZXIgdGhhdCByZWdpc3RlcnMgYSByZXNldCBjb250cm9sbGVyIGRyaXZlciBv
-bgo+IGF1eGlsaWFyeSBidXMgd2hpY2ggYWxsb3dzIFVTQiwgUENJRSBkcml2ZXJzIHRvIGNvbnRy
-b2wgdGhlc2Ugc2lnbmFscy4KPgo+IFNpZ25lZC1vZmYtYnk6IENsYXVkaXUgQmV6bmVhIDxjbGF1
-ZGl1LmJlem5lYS51akBicC5yZW5lc2FzLmNvbT4KClRoYW5rcyBmb3IgeW91ciBwYXRjaCEKCj4g
-LS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvcmVzZXQvcmVzZXQtcnpnM3Mtc3lzYy5jCj4g
-QEAgLTAsMCArMSwxNDAgQEAKPiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAK
-PiArLyoKPiArICogUmVuZXNhcyBSWi9HM1MgU1lTQyByZXNldCBkcml2ZXIKPiArICoKPiArICog
-Q29weXJpZ2h0IChDKSAyMDI0IFJlbmVzYXMgRWxlY3Ryb25pY3MgQ29ycC4KPiArICovCj4gKwo+
-ICsjaW5jbHVkZSA8bGludXgvYXV4aWxpYXJ5X2J1cy5oPgoKVXNpbmcgdGhlIEF1eGlsaWFyeSBC
-dXMgcmVxdWlyZXMgc2VsZWN0aW5nIEFVWElMSUFSWV9CVVMuCkVsc3NlIHlvdSBtaWdodCBydW4g
-aW50byBidWlsZCBmYWlsdXJlczoKCmFhcmNoNjQtbGludXgtZ251LWxkOiBkcml2ZXJzL3NvYy9y
-ZW5lc2FzL3J6ZzNzLXN5c2MubzogaW4gZnVuY3Rpb24KYHJ6ZzNzX3N5c2NfcHJvYmUnOgpyemcz
-cy1zeXNjLmM6KC50ZXh0KzB4MjFjKTogdW5kZWZpbmVkIHJlZmVyZW5jZSB0byBgYXV4aWxpYXJ5
-X2RldmljZV9pbml0JwphYXJjaDY0LWxpbnV4LWdudS1sZDogcnpnM3Mtc3lzYy5jOigudGV4dCsw
-eDI2NCk6IHVuZGVmaW5lZCByZWZlcmVuY2UKdG8gYF9fYXV4aWxpYXJ5X2RldmljZV9hZGQnCmFh
-cmNoNjQtbGludXgtZ251LWxkOiBkcml2ZXJzL3Jlc2V0L3Jlc2V0LXJ6ZzNzLXN5c2MubzogaW4g
-ZnVuY3Rpb24KYHJ6ZzNzX3N5c2NfcmVzZXRfZHJpdmVyX2luaXQnOgpyZXNldC1yemczcy1zeXNj
-LmM6KC5pbml0LnRleHQrMHgxYyk6IHVuZGVmaW5lZCByZWZlcmVuY2UgdG8KYF9fYXV4aWxpYXJ5
-X2RyaXZlcl9yZWdpc3RlcicKYWFyY2g2NC1saW51eC1nbnUtbGQ6IGRyaXZlcnMvcmVzZXQvcmVz
-ZXQtcnpnM3Mtc3lzYy5vOiBpbiBmdW5jdGlvbgpgcnpnM3Nfc3lzY19yZXNldF9kcml2ZXJfZXhp
-dCc6CnJlc2V0LXJ6ZzNzLXN5c2MuYzooLmV4aXQudGV4dCsweDEwKTogdW5kZWZpbmVkIHJlZmVy
-ZW5jZSB0bwpgYXV4aWxpYXJ5X2RyaXZlcl91bnJlZ2lzdGVyJwoKR3J7b2V0amUsZWV0aW5nfXMs
-CgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdlZXJ0IFV5dHRlcmhvZXZlbiAt
-LSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4ay5v
-cmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJIGNh
-bGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0cyBJ
-IGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Tue, Sep 24, 2024 at 12:16:27PM GMT, Maxime Ripard wrote:
+> On Tue, Sep 24, 2024 at 03:36:49PM GMT, Sandor Yu wrote:
+> > +static int cdns_mhdp8501_read_hpd(struct cdns_mhdp8501_device *mhdp)
+> > +{
+> > +	u8 status;
+> > +	int ret;
+> > +
+> > +	mutex_lock(&mhdp_mailbox_mutex);
+> > +
+> > +	ret = cdns_mhdp_mailbox_send(&mhdp->base, MB_MODULE_ID_GENERAL,
+> > +				     GENERAL_GET_HPD_STATE, 0, NULL);
+> > +	if (ret)
+> > +		goto err_get_hpd;
+> > +
+> > +	ret = cdns_mhdp_mailbox_recv_header(&mhdp->base, MB_MODULE_ID_GENERAL,
+> > +					    GENERAL_GET_HPD_STATE,
+> > +					    sizeof(status));
+> > +	if (ret)
+> > +		goto err_get_hpd;
+> > +
+> > +	ret = cdns_mhdp_mailbox_recv_data(&mhdp->base, &status, sizeof(status));
+> > +	if (ret)
+> > +		goto err_get_hpd;
+> > +
+> > +	mutex_unlock(&mhdp_mailbox_mutex);
+> 
+> That's better I guess, but it's still not a good API design. If you
+> can't have concurrent accesses, then cdns_mhdp_mailbox_send et al.
+> should take the mutex themselves.
+
+I think that a proper API might be:
+
+int cdns_mhdp_mailbox_send_recv(struct cdns_mhdp_device *mhdp,
+			u8 module_id, u8 opcode,
+			u16 size, const u8 *message,
+			u16 buf_size, u8 *buf);
+
+Internally it should take the lock, exchange the data, then return.
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
