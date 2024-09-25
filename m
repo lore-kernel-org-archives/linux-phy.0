@@ -4,60 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0103C369A1
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Sep 2024 07:14:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BE69C369A3
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Sep 2024 07:18:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EULMDZtQMP3Hr55oY5Bca9FHNUpwWM6Db/N1MER0L/E=; b=XesYzlcsIXIZEX
-	4abWnCBORW0XNVEolBG1VfAYFEq7d2lH0Katc1pKEdRUi0IGKPtQAePKEnEUyzZrK9H9RfkBEi391
-	Kh9u9Z3/yI+jhIQ4onzmZ0IALZkdrJlbB9a1wrcqi/YR2IxxHYoGCHtsBltzncS15NiCHoqWMBdWJ
-	oceKCU+Jbk/3ZlDyb819TD5TM3avmleZJgu31U4xslmJEMxzmDVwyG9bGdPkrV9VdPatjXVD26mZq
-	zv99OHWweSXasETCbt/t7PhyODVPEvCWrX1vSUxYip/Rp8GCaOKKLuLneHnQ/BCE6CZwkc3pA5onx
-	8Q2MhFNpErgBOsuX5zkw==;
+	List-Owner; bh=VPMZnBDDbXrRWkWchamSioUEY0rmS59K4nbAxdsMaMM=; b=wpmpx4TzQKN/o6
+	kXGXEqCjCCCjx1PR3WDF+Z/ao5RXDB2cJpcuspLV6Wqpdz+WOajhuFCMKi6rCBofAGWr1xIGmJ46J
+	I+X81OqdLB3T6uFkziMrvL1SEqpjllgayhx5Hu1m02AJ1HQXSPHzQEG5az400eAE8cnEooatzxaji
+	2OTgwYv02DYv7AizBXfHikXCLDe2jr5R1RKfUvtkW9C6lwIAodxsCNXCntKmW8xAnTfDLJgJMKyK9
+	cwhzzD4ZhWdtqrJNc8fCQBX3MnMeyF0i26h9wyhRmpKGxW3lyh3iIKH7o+WS9G54H6ts0B1rl2lxe
+	1QOc/9ue0/FFjPXyGqLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1stMDy-00000004GxK-2X7q;
-	Wed, 25 Sep 2024 07:14:10 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1stMIV-00000004I1E-0mHy;
+	Wed, 25 Sep 2024 07:18:51 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1stMDv-00000004GwD-31cG
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Sep 2024 07:14:09 +0000
+	id 1stMGV-00000004HPq-0Oa6;
+	Wed, 25 Sep 2024 07:16:48 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id AB3AFA4395D;
-	Wed, 25 Sep 2024 07:13:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67892C4CECD;
-	Wed, 25 Sep 2024 07:14:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 534195C5D15;
+	Wed, 25 Sep 2024 07:16:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 90D41C4CEC3;
+	Wed, 25 Sep 2024 07:16:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1727248446;
-	bh=qJ4TsQ/6sArUbR1U3iecRaZ6CownESjdXqH3GgdPvcs=;
+	s=k20201202; t=1727248606;
+	bh=wlACnvaHMg42FGtJEoBPkQSfA29gqh3WPsl/M0+9Cu8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=fGqurL4Pj8U8nZs+NSlgdDX3IWw9273x8Mrg51UhRYzx+B5x/tw/FyqGNOhQM7V5y
-	 4O4SphPKSGZ2abMaExxrXiwOed/+HyZUewPzvyALMeLbBHTvwCk8K9flSGpsk/cWT5
-	 b/q/XJ4n/xRT8NeFeaS9kE4kMdy5i9SoRp++3Xsrd5YTHen3TDJkUwWA5ZdF9YFLkZ
-	 kAFGnOvMNpo2RuOPI6Xs1ZJEvZ194lS2gbyYN3nziIIRigHBW2M1VieylwM+dRbO9z
-	 jdkoQkyg7P21OGos7k9JTs1xKN2DXrAXq7k/8lD0XjqiTGzfRKQIIy3uJDW81qtydP
-	 3Caiur91MlF6w==
-Message-ID: <01ea36e7-f4a7-4f1f-9596-3ed6ed13b47b@kernel.org>
-Date: Wed, 25 Sep 2024 09:14:00 +0200
+	b=SkaoKo+tJ04Oi1whNH0iQvQ2ebWfeKjM+QaIaYnvG9aEQgpHXSHn7PBnV6Gi/rR1v
+	 Ah4EnaOJqO1wlqdD89A04+6DN1HA2wEbFYVVuUiWNdqauze62x9wYeaPTtXhwMl7eG
+	 db8vtygygIVh0k0DZuxqOyzh66JK12v7bsOEkIuU3PnGcxQHYvYRBJD+kdQ8gbfAZP
+	 02RghyUDTvBzqw9PdCm4s+onpBT1KbPDA5l+idkljBG8vWrUS7nFKqGCVo4oqVHCTk
+	 ksVo39J0Ke5/8IeHcpUpck723uk4EKUOhmO2e12zxRnGpkupAbJkTBIpTquJhdtidj
+	 JkgJu8hoFLt/Q==
+Message-ID: <2a4200ac-3ea2-4449-94ac-c4b9f37ad800@kernel.org>
+Date: Wed, 25 Sep 2024 09:16:37 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] dt-bindings: phy: Add QMP UFS PHY comptible for
- QCS8300
-To: Jingyi Wang <quic_jingyw@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Xin Liu <quic_liuxin@quicinc.com>
-References: <20240911-qcs8300_ufs_phy_binding-v2-1-c801a2d27a84@quicinc.com>
- <ztpetznwid2om6vylyl2boi665ch3wnkprkmzcq6bem6cqhqtf@ogsi657y4kex>
- <6656171b-12d3-490b-b53c-f907b7454f99@quicinc.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip,inno-usb2phy: add
+ rk3576
+To: Frank Wang <frawang.cn@gmail.com>, Conor Dooley <conor@kernel.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, heiko@sntech.de, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ william.wu@rock-chips.com, tim.chen@rock-chips.com,
+ Frank Wang <frank.wang@rock-chips.com>
+References: <20240924085510.20863-1-frawang.cn@gmail.com>
+ <20240924-overtly-curable-13df2e7fdc9b@spud>
+ <87146372-6d05-4994-8f64-47f4cb07e2b4@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,10 +102,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <6656171b-12d3-490b-b53c-f907b7454f99@quicinc.com>
+In-Reply-To: <87146372-6d05-4994-8f64-47f4cb07e2b4@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240925_001407_924565_8D53D0E2 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20240925_001647_302589_A4EB03E9 
+X-CRM114-Status: GOOD (  15.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,105 +122,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25/09/2024 05:16, Jingyi Wang wrote:
+On 25/09/2024 04:09, Frank Wang wrote:
+> Hi Conor,
 > 
+> On 2024/9/25 0:11, Conor Dooley wrote:
+>> On Tue, Sep 24, 2024 at 04:55:09PM +0800, Frank Wang wrote:
+>>> From: Frank Wang <frank.wang@rock-chips.com>
+>>>
+>>> Add compatible for the USB2 phy in the Rockchip RK3576 SoC.
+>>>
+>>> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+>>> ---
+>>> Changelog:
+>>> v2:
+>>>   - Categorize clock names by oneOf keyword.
+>>>
+>>> v1:
+>>>   - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10467-1-frank.wang@rock-chips.com/
+>>>
+>>>   .../bindings/phy/rockchip,inno-usb2phy.yaml      | 16 ++++++++++++++--
+>>>   1 file changed, 14 insertions(+), 2 deletions(-)
+>>>
+>>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+>>> index 5254413137c64..8af4e0f8637fc 100644
+>>> --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+>>> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+>>> @@ -20,6 +20,7 @@ properties:
+>>>         - rockchip,rk3366-usb2phy
+>>>         - rockchip,rk3399-usb2phy
+>>>         - rockchip,rk3568-usb2phy
+>>> +      - rockchip,rk3576-usb2phy
+>>>         - rockchip,rk3588-usb2phy
+>>>         - rockchip,rv1108-usb2phy
+>>>   
+>>> @@ -34,10 +35,20 @@ properties:
+>>>       const: 0
+>>>   
+>>>     clocks:
+>>> -    maxItems: 1
+>>> +    minItems: 1
+>>> +    maxItems: 3
+>>>   
+>>>     clock-names:
+>>> -    const: phyclk
+>>> +    minItems: 1
+>>> +    maxItems: 3
+>> clock-names isn't a required property, you can't allow jumbling the order
+>> like this does without breaking the ABI. Why can't the new device have
+>> phyclk in position 1?
 > 
-> On 9/16/2024 10:53 PM, Krzysztof Kozlowski wrote:
->> On Wed, Sep 11, 2024 at 02:56:16PM +0800, Jingyi Wang wrote:
->>> From: Xin Liu <quic_liuxin@quicinc.com>
->>>
->>> Document the QMP UFS PHY compatible for Qualcomm QCS8300 to support
->>> physical layer functionality for UFS found on the SoC. Use fallback to
->>> indicate the compatibility of the QMP UFS PHY on the QCS8300 with that
->>> on the SA8775P.
->>>
->>> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
->>> Signed-off-by: Jingyi Wang <quic_jingyw@quicinc.com>
->>> ---
->>> Changes in v2:
->>> - decoupled from the original series.
->>> - Use fallback to indicate compatibility with SA8775P.
->>> - typo fixup
->>> - Link to v1: https://lore.kernel.org/r/20240904-qcs8300_initial_dtsi-v1-0-d0ea9afdc007@quicinc.com
->>> ---
->>>  .../bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml    | 46 ++++++++++++----------
->>>  1 file changed, 26 insertions(+), 20 deletions(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
->>> index f9cfbd0b2de6..626a2039e177 100644
->>> --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
->>> +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
->>> @@ -15,26 +15,31 @@ description:
->>>  
->>>  properties:
->>>    compatible:
->>> -    enum:
->>> -      - qcom,msm8996-qmp-ufs-phy
->>> -      - qcom,msm8998-qmp-ufs-phy
->>> -      - qcom,sa8775p-qmp-ufs-phy
->>> -      - qcom,sc7180-qmp-ufs-phy
->>> -      - qcom,sc7280-qmp-ufs-phy
->>> -      - qcom,sc8180x-qmp-ufs-phy
->>> -      - qcom,sc8280xp-qmp-ufs-phy
->>> -      - qcom,sdm845-qmp-ufs-phy
->>> -      - qcom,sm6115-qmp-ufs-phy
->>> -      - qcom,sm6125-qmp-ufs-phy
->>> -      - qcom,sm6350-qmp-ufs-phy
->>> -      - qcom,sm7150-qmp-ufs-phy
->>> -      - qcom,sm8150-qmp-ufs-phy
->>> -      - qcom,sm8250-qmp-ufs-phy
->>> -      - qcom,sm8350-qmp-ufs-phy
->>> -      - qcom,sm8450-qmp-ufs-phy
->>> -      - qcom,sm8475-qmp-ufs-phy
->>> -      - qcom,sm8550-qmp-ufs-phy
->>> -      - qcom,sm8650-qmp-ufs-phy
->>> +    oneOf:
->>> +      - items:
->>> +          - enum:
->>> +              - qcom,qcs8300-qmp-ufs-phy
->>> +          - const: qcom,sa8775p-qmp-ufs-phy
->>> +      - enum:
->>> +          - qcom,msm8996-qmp-ufs-phy
->>> +          - qcom,msm8998-qmp-ufs-phy
->>> +          - qcom,sa8775p-qmp-ufs-phy
->>> +          - qcom,sc7180-qmp-ufs-phy
->>> +          - qcom,sc7280-qmp-ufs-phy
->>> +          - qcom,sc8180x-qmp-ufs-phy
->>> +          - qcom,sc8280xp-qmp-ufs-phy
->>> +          - qcom,sdm845-qmp-ufs-phy
->>> +          - qcom,sm6115-qmp-ufs-phy
->>> +          - qcom,sm6125-qmp-ufs-phy
->>> +          - qcom,sm6350-qmp-ufs-phy
->>> +          - qcom,sm7150-qmp-ufs-phy
->>> +          - qcom,sm8150-qmp-ufs-phy
->>> +          - qcom,sm8250-qmp-ufs-phy
->>> +          - qcom,sm8350-qmp-ufs-phy
->>> +          - qcom,sm8450-qmp-ufs-phy
->>> +          - qcom,sm8475-qmp-ufs-phy
->>> +          - qcom,sm8550-qmp-ufs-phy
->>> +          - qcom,sm8650-qmp-ufs-phy
->>>  
->>>    reg:
->>>      maxItems: 1
->>> @@ -85,6 +90,7 @@ allOf:
->>>            contains:
->>>              enum:
->>>                - qcom,msm8998-qmp-ufs-phy
->>> +              - qcom,qcs8300-qmp-ufs-phy
->>
->> Not needed.
->>
-> Well noted.
->> BTW, please be sure you organize your patchsets per subsystem. IOW, that
->> you do not split same subsystem bindings patches into separate
->> patchsets.
->>
-> Do you mean combine the binding of qmp-ufs-phy with ufs controller? I noticed
-> that this patch belongs to "GENERIC PHY FRAMEWORK" subsystem and ufs controller
-> binding belongs to "UNIVERSAL FLASH STORAGE HOST CONTROLLER DRIVER". If necessary,
-> we can pay attention to combine them next time
+> I sent a draft changes in patch v1 comments which put the "phyclk" in 
 
-No, I mean group patches targeting the same subsystem.
+No, you did not. You sent buggy code which was never tested.
+
+> position 1, Krzysztof said I have messed the order, so I reorder them in v2.
+
+No, I did not. I said your current code (from your reply or patch v2)
+messes the order. Even though I sent you reply that this code is wrong,
+you still decided to ignore my feedback and send it.
+
+To be clear:
+NAK
+
+> Did I misunderstand? anyway, should the changes like the below?
+
+Read all the answers again instead of putting wrong words to wrong patches.
+
 
 Best regards,
 Krzysztof
