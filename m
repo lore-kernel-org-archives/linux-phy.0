@@ -4,95 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 799BCCF9C71
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Sep 2024 06:38:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CE8EC369A1
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Sep 2024 07:01:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hdtQr+BfkQ/SeM2dPHBQAlNaMIXbytPyvQ6T4vJtlkQ=; b=Rb389aXKO8vGcg
-	IF0Nn5Syrb+7/f8GYqAtwxWhJrb+aeQl0LekUw9XF/TzBwwIFLOwhXLjJBu7gViIOQJ7/D5fmcME2
-	MraVJazCxALXftF197HbEr/mJcQHqwLkxiapyKyUAtqxRT7sj14zAkCnhazwgjI70miynZNt7Nyve
-	S2oVtK28uQ7lVSeXazQLlNxZCM8j+LuKMT/6Y8jg+OKH8E5Lhezm/+J/hrd8/9+oPIAsmsTXGNmgD
-	j3ZMxciPF+9CSsPS83VOM01jOkB2xUxXFNu9IE4AsaXMQy/Q16faSlmgSuztHWjna9u7IaammTuwn
-	hl4D/UlCDqWy/bZRgsqg==;
+	List-Owner; bh=FBE4wQabEOIS/97qNLGxfBEFGytJiv88MwU0jcrzJzw=; b=HYbYIHapPEA0eX
+	ycKG5jWN57XXBTtzRc+zz/JDTNSLZMvgjGxdHaaE3NZP+KV2PCRdvWH8pWwmqNcIXdliZw/6JSBuk
+	3I7ssFqh1ZU2TxJaky9hwEVbsO5YIK3/ir4tYQg1+KqUSJXNADiGraekLvNZjXCFLpu/GTspXKFDf
+	YQlr5FwSOhpK1a/TEE370hxqAHJWGUbViUVDdxAKJ9gB7aCem9UAoYgJPdoJmUckiQELdz53yDAeG
+	eEpGUg632CsyE44CpZo6qPtRjHTd5jkRAnge/LONgkQvFT5kS2MLyCcI12oHlsmPSVcB2s2nO3df8
+	b4kU1pwGVTbeb2THB7cA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1stLf4-00000004BZz-0FAA;
-	Wed, 25 Sep 2024 06:38:06 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1stM1F-00000004FZI-3owP;
+	Wed, 25 Sep 2024 07:01:05 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1stLez-00000004BZF-3JCG
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Sep 2024 06:38:03 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 48OIDiDF014189;
-	Wed, 25 Sep 2024 06:37:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	dml4l8YTdpSXN3fvjDeknbMZkf62ADsnaczED9FK9e4=; b=XOtCx1jDy9mjdhL5
-	N7gTxQK5JV8rZYG2h+vxmyXkej+KSosUkUE8jGEGyiAl4xX6tWFzyNKMZ2/ip2OD
-	aFPlEQYyZW0+aCGNf85gSa4THD2Izp+p1e51j+LTjBqJEVwfePiqwsgWKFgrOBaY
-	PuHBcEcGr8s1nhv+LgDZyz3762xjhKvdpdTACMRlrOg1/pZc1mVjtYspTW480oUf
-	jxnvTNLoXZQvRtXBYE67NGeeRvMsA0Ok1GC6Et9FBH65qIHB9ImfxWbUhOMSBF5H
-	jLWsiALDjPjWRNBAMS8KlA9+RYg6+0+AFZ9ZD43MSH6KSL7+hI79+OQI1lemn6BQ
-	54NpaA==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41sn3sb09g-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Sep 2024 06:37:50 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 48P6bnef003840
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 25 Sep 2024 06:37:49 GMT
-Received: from [10.239.29.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 24 Sep
- 2024 23:37:43 -0700
-Message-ID: <ee32742d-9daf-4bff-948b-cf2e705bc73f@quicinc.com>
-Date: Wed, 25 Sep 2024 14:37:41 +0800
+	id 1stLzy-00000004FFi-1hvT;
+	Wed, 25 Sep 2024 06:59:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=4OHDvy0JbwIo9T9ERJY3XrQ0uyG3wqjaKHFSvcXXFsw=; b=utEltkYfHyzwR+C/bwO7gQuIvm
+	OCsXLnaMF0nOUSAoY1NHWyYYEVNsbDaDTqzFdClMIk69dYyHGWRXA5Er+eAkv7xtBWtC8MmhWYUBX
+	kltVnupn96hDAgeokDV+Rm+pfm+QQbM41f/AX2Hu/mj81U/rgj7me4CNw7jEJ9qAXDRQ3EhUuGyFX
+	/aTFheYa4Yrxr0uA4G+LRg+lNrYawxIweumhAU16ej0tO66lUSDscJ8gSpFHf9QcTYeV5O44GlRPS
+	gzR/0wCm4HwoZze+yWHFt0mNvcgNL6mh+kRmFfhqOH/MbCWE9UToh/A0IuB4WvmC+2VD9Pb6q99sn
+	1O7py0vw==;
+Received: from 90-177-212-167.rck.o2.cz ([90.177.212.167] helo=phil.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1stLzp-0007NK-Jb; Wed, 25 Sep 2024 08:59:33 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, frawang <frawang.cn@gmail.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
+ tim.chen@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>
+Subject: Re: [PATCH v2 2/2] phy: rockchip: inno-usb2: Add usb2 phys support for rk3576
+Date: Wed, 25 Sep 2024 08:59:33 +0200
+Message-ID: <5522095.29KlJPOoH8@phil>
+In-Reply-To: <29d80d30-dcbf-4fe1-b7aa-3f8c46fee714@gmail.com>
+References: <20240924085510.20863-1-frawang.cn@gmail.com> <15288441.JCcGWNJJiE@phil>
+ <29d80d30-dcbf-4fe1-b7aa-3f8c46fee714@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 6/6] arm64: dts: qcom: x1e80100: Add support for PCIe3
- on x1e80100
-To: Johan Hovold <johan@kernel.org>
-CC: <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
-        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
-        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
-        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>
-References: <20240924101444.3933828-1-quic_qianyu@quicinc.com>
- <20240924101444.3933828-7-quic_qianyu@quicinc.com>
- <ZvLQFSjwR-TvHbm_@hovoldconsulting.com>
-Content-Language: en-US
-From: Qiang Yu <quic_qianyu@quicinc.com>
-In-Reply-To: <ZvLQFSjwR-TvHbm_@hovoldconsulting.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: mpKWqdM3dO_f5WcpP9YB-8ZxXYKPRcS_
-X-Proofpoint-ORIG-GUID: mpKWqdM3dO_f5WcpP9YB-8ZxXYKPRcS_
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 phishscore=0
- mlxscore=0 impostorscore=0 spamscore=0 malwarescore=0 suspectscore=0
- priorityscore=1501 lowpriorityscore=0 mlxlogscore=966 clxscore=1015
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2408220000 definitions=main-2409250046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240924_233801_873837_1F7077C2 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20240924_235942_522234_26B198DE 
+X-CRM114-Status: GOOD (  21.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,56 +71,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Frank,
 
-On 9/24/2024 10:43 PM, Johan Hovold wrote:
-> On Tue, Sep 24, 2024 at 03:14:44AM -0700, Qiang Yu wrote:
->> Describe PCIe3 controller and PHY. Also add required system resources like
->> regulators, clocks, interrupts and registers configuration for PCIe3.
->> @@ -2907,6 +2907,208 @@ mmss_noc: interconnect@1780000 {
->>   			#interconnect-cells = <2>;
->>   		};
->>   
->> +		pcie3: pcie@1bd0000 {
->> +			device_type = "pci";
->> +			compatible = "qcom,pcie-x1e80100";
->> +			interrupts = <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 166 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 769 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 836 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 671 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 218 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>,
->> +				     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>;
->> +			interrupt-names = "msi0",
->> +					  "msi1",
->> +					  "msi2",
->> +					  "msi3",
->> +					  "msi4",
->> +					  "msi5",
->> +					  "msi6",
->> +					  "msi7",
->> +					  "global";
-> This ninth "global" interrupt is not described by the bindings, which
-> would also need to be updated. What is it used for?
+Am Mittwoch, 25. September 2024, 03:42:35 CEST schrieb frawang:
+> >> @@ -376,6 +378,7 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
+> >>   {
+> >>   	struct device_node *node = rphy->dev->of_node;
+> >>   	struct clk_init_data init;
+> >> +	struct clk *refclk = of_clk_get_by_name(node, "phyclk");
+> > Doesn't this create an imbalance - with the missing put?
+> > I think ideally just define clk_bulk_data structs for the
+> > 1-clock and 3-clock variant, attach that to the device-data
+> > and then use the regular devm_clk_bulk_get ?
+> >
+> > That way you can then retrieve the clock from that struct?
+> 
+> How about keep the clk_bulk_data and num_clks member in rockchip_usb2phy 
+> structs, and retrieve the clock by "clks.id" here?
+> Just like the following codes.
+> 
+> @@ -378,8 +378,9 @@ rockchip_usb2phy_clk480m_register(struct 
+> rockchip_usb2phy *rphy)
+>   {
+>          struct device_node *node = rphy->dev->of_node;
+>          struct clk_init_data init;
+> -       struct clk *refclk = of_clk_get_by_name(node, "phyclk");
+> +       struct clk *refclk = NULL;
+>          const char *clk_name;
+> +       int i;
+>          int ret = 0;
+> 
+>          init.flags = 0;
+> @@ -389,6 +390,13 @@ rockchip_usb2phy_clk480m_register(struct 
+> rockchip_usb2phy *rphy)
+>          /* optional override of the clockname */
+>          of_property_read_string(node, "clock-output-names", &init.name);
+> 
+> +       for (i = 0; i < rphy->num_clks; i++) {
+> +               if (!strncmp(rphy->clks[i].id, "phyclk", 6)) {
+> +                       refclk = rphy->clks[i].clk;
+> +                       break;
+> +               }
+> +       }
+> +
 
-As of now, the global interrupts is mainly used to get link up event so
-that the device driver can enumerate the PCIe endpoint devices without
-user intervention. You can refer to
-https://lore.kernel.org/linux-pci/20240828-pci-qcom-hotplug-v4-11-263a385fbbcb@linaro.org.
+this is exactly what I had in mind :-)
 
-I see this global interrupts has been documented in qcom,pcie-sm8450.yaml.
-Do I need to move it to qcom,pcie-common.yaml?
+Thanks
+Heiko
 
-Thanks,
-Qiang
->
-> Johan
+
 
 -- 
 linux-phy mailing list
