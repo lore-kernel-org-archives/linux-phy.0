@@ -4,62 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68721CEBF7D
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Sep 2024 07:43:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCD4ECEBF7D
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Sep 2024 07:59:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Yg+TEXF0AD3l2JMKmjhHRhJvxOIkXilxpxmxCVeGro=; b=ZDfRZutXAVRg8v
-	l9MMfHWf41l2JVorX3cQCR7W5A0ugu0vZhFAx+14XsvWsUXx2s6pBTJ9bZ2dIRg+vZQkVWer5AR9P
-	zQYfd7Dc20SximxCZmdw/QSHL/xn6C9DEsdui6WbxtX/IsAeduDENVyvJOg0bZOFnCe6LLaRGuR4g
-	1DoRcSwxi7wCarKH/86Fgxjy0hXi3XZgrvRnLU3bZXyGUj1UOgd1Tk/8/zvdaWDI1ESo6xnLAu8+2
-	Q1560KbOO3ivi2dBQRXhftK99hsuZhceOHSZUQvSfXFhPfi4HlBupN/6LDc2aQSLPnC3BIp4rPFwg
-	mIEnJVHksV5qZiEQ+Ykw==;
+	List-Owner; bh=nm44Cqwg8HOFaFS39nw6wbInNJlww8mbTXkFsmherJQ=; b=DiGwKaoE90AyC3
+	hv8sMo8ZsCPqyszhVFBxzYYtESDM72YD1G95XKq13QpQi++cnKU0G21tnMDcEbqKYBCmzH16euOFg
+	CIFQoiX7aoSFWO053uRKh7iXxoT8sit8+WApwHp32Gk35DNTzG4P+O62U3L8FkR0it1br50sVbURP
+	4RJgDS5fBwGM4kuFlNPngJHcR+AFQ+nwNfFLjaOoXmJoQJk9O27Ynz2J/Ewb+Hb3SWld+U77h8X8S
+	QRn9uai1kPvaozUur1CSohfhmhGmrpT8UXWvihv+hEfa1UtvqpQ6JtRZ5QrG+MN4IBGeWSSYmFzRe
+	NZxboVjaIpHAHIsvc9Xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1su5d9-0000000ANq4-3OAC;
-	Fri, 27 Sep 2024 07:43:11 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1su5sp-0000000AQ1t-0gTh;
+	Fri, 27 Sep 2024 07:59:23 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1su5d6-0000000ANox-38Pp;
-	Fri, 27 Sep 2024 07:43:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=5ZTsev+NIW/zSFtIbfCXm6MY/MQInTAzru2nwTb17h8=; b=KdpYHP+j5/nU7dka/Qp+fzSLl1
-	//K33u0LzJWBdChANPG5AGEVmTrUOqfyp6GCdIyioKVLU5t2U44tr+GWX+Ulv7lCDmKFPjGvxo3NL
-	iDNOyUo6SL/wL3UJ7TFcbvPvWJla/bJjFEtXDWASouvhQcGhG5mkV5IntUe/kYUsfvSZeH16bBHk9
-	oDe9pmYbSYxsJXTL5Yjz0dQB2gdXpu8ILTngBsidBXLCSDvnLIt0dlojzh6NvhdBZS++IlJHJ6Ydk
-	Rw9nYChbKmV+F8siT7RTKENPL2iChTANooD+whdaWVx18RQeRNlfZKXPH//mGSHlDVNPT+cM6JqU1
-	WUDcuowA==;
-Received: from 85-160-70-253.reb.o2.cz ([85.160.70.253] helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1su5cx-0008Nc-Rb; Fri, 27 Sep 2024 09:42:59 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, Frank Wang <frawang.cn@gmail.com>
+	id 1su5sh-0000000APzr-1HWD;
+	Fri, 27 Sep 2024 07:59:21 +0000
+Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-20b411a1d60so139375ad.2;
+        Fri, 27 Sep 2024 00:59:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1727423954; x=1728028754; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=7HwX6OI4gIIHbN/hK9fjNZGmVtettbN++9lE7NDiTf8=;
+        b=KLUvfISG56uuuYI+GXDCWfjmXNwpOpuYPDZayIxrJJ8A7vY3+6aY6+2GCZgfnvfUgw
+         czNie+N5fJ2aDWxbFonGbcykTVcCZrDtU1XBuzaJ5Xy2H7uAlQYB9lAE8SsQuM/HWu8f
+         otG5QWqtjWlaDM4nO7I6FMcCmdmpodQ+CoTQRoNXECCTf3QFZ1A9pm1qEHo4GchTmMPZ
+         xwXiJ7TUPvcdaF+4HYyudts3momiGnqLMlzSHir1cu6xyPd9x/r8b/9etpslkL43OnZv
+         oR/m2/HdMpK2TFiovghw8tFPgRCKw1gz2lhVyXdqPxL9NdxP0P4mbOAN4tvDWwQcr0XE
+         n90g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1727423954; x=1728028754;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=7HwX6OI4gIIHbN/hK9fjNZGmVtettbN++9lE7NDiTf8=;
+        b=a3Z0oLSgqubEIkuurz2RFbRuumQJ7tU7AXVwmi6nu5PjkJcGNBsPc1RlUJ92g0D2Mx
+         GtHGWOcZ9v+DWdOMqaStMHxC8u0fjBAz8dIS/3SldzWO5MpWUNVCBY+OYf/gi/K1m4my
+         SFFTzPjHnCC9E8A85Ne9YeAe5ZxA2YjlgySge3yTNFcjUQIHHYLcQ/qfsv5o1zV5ALPP
+         ZAxsFNK+q59DC/CEz4Xu9mbenIhthW/XpqC9gJCp+6vWWi4UazWwdQyb75uaKZTKb9Am
+         C+mUcMNUzYvWRXKeVNif09hwyZCVVQPcMbuH9BBFxcDJ7xyX22oLl5ElhNrm7ekMf/Mj
+         j4JQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVBcV33F+6Xw/PkGvmZ3GX8CopEoXPIBqe5EUFNs/ZdV9ci5xhCHFeFUglVTBX8kA1Nq7f9U6ZmoFtnAB4sSq+H@lists.infradead.org, AJvYcCVsU8dZfxThPtvSpVzzK9ohb/cC0Byp0wXvdh42tk3ylY07op16e7muCBZhN+nqZNq1qjT1GSjn4oEyj4RF05U=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwkgaHn/mnWsgVh5TfsDfMqz0r72XnFp2rpYmFp0YcNNEuAuEn6
+	odyW61iGWqA5tPVR5z0J2RhNzY89P3xe6TRvdW1+7U2gvhIHc6ZW
+X-Google-Smtp-Source: AGHT+IE8JYRGGpZv4q306yHVh3sNMzBl8mIZYgoblrNJM7FaZO2kvA7WslMeA3lBcRj9DzjVCS+SCA==
+X-Received: by 2002:a05:6a00:39a8:b0:714:1bcf:adbe with SMTP id d2e1a72fcca58-71b25dacbdemr1720656b3a.0.1727423954093;
+        Fri, 27 Sep 2024 00:59:14 -0700 (PDT)
+Received: from [192.168.60.56] ([103.29.142.67])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71b265249b7sm1060789b3a.148.2024.09.27.00.59.09
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 27 Sep 2024 00:59:13 -0700 (PDT)
+Message-ID: <a06af01a-656b-4ef6-84a6-bc1c35d5bafa@gmail.com>
+Date: Fri, 27 Sep 2024 15:59:08 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: rockchip,inno-usb2phy: add
+ rk3576
+To: Krzysztof Kozlowski <krzk@kernel.org>, vkoul@kernel.org,
+ kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ heiko@sntech.de
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
  tim.chen@rock-chips.com, frank.wang@rock-chips.com
-Subject: Re: [PATCH v3 2/2] phy: rockchip: inno-usb2: Add usb2 phys support for rk3576
-Date: Fri, 27 Sep 2024 09:42:58 +0200
-Message-ID: <9874721.ag9G3TJQzC@phil>
-In-Reply-To: <9cc2d594-a930-4c4a-86ee-47228af28936@gmail.com>
-References: <20240926103223.29538-1-frawang.cn@gmail.com> <10867555.aFP6jjVeTY@phil>
- <9cc2d594-a930-4c4a-86ee-47228af28936@gmail.com>
-MIME-Version: 1.0
+References: <20240926103223.29538-1-frawang.cn@gmail.com>
+ <ed829240-d4f7-471f-84f6-3509f87f11a1@kernel.org>
+ <7944f4dd-96f0-40df-8c91-523409e3cb20@gmail.com>
+ <4b98196a-c898-4d08-9101-31feb4e59b5c@kernel.org>
+Content-Language: en-US
+From: Frank Wang <frawang.cn@gmail.com>
+In-Reply-To: <4b98196a-c898-4d08-9101-31feb4e59b5c@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240927_004309_010288_97A39063 
-X-CRM114-Status: GOOD (  44.81  )
+X-CRM114-CacheID: sfid-20240927_005915_372585_C3364C62 
+X-CRM114-Status: GOOD (  11.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,199 +96,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
-
-Am Freitag, 27. September 2024, 08:16:42 CEST schrieb Frank Wang:
-> On 2024/9/26 18:48, Heiko Stuebner wrote:
-> > Am Donnerstag, 26. September 2024, 12:32:23 CEST schrieb Frank Wang:
-> >> From: William Wu <william.wu@rock-chips.com>
-> >>
-> >> The RK3576 SoC has two independent USB2.0 PHYs, and each PHY has
-> >> one port.
-> >>
-> >> This change also converts the clock management from single to bulk
-> >> as some Rockchip SoCs (e.g RK3576) have more than one clock.
-> >>
-> >> Signed-off-by: William Wu <william.wu@rock-chips.com>
-> >> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
-> >> ---
-> >> Changelog:
-> >> v3:
-> >>   - amend the commit log adds clocks converting.
-> >>   - retrieve the clock by "clks.id" in *_clk480m_register() function.
-> >>
-> >> v2:
-> >>   - no changes.
-> >> v1:
-> >>   - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10467-2-frank.wang@rock-chips.com/
-> >>
-> >>   drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 139 +++++++++++++++++-
-> >>   1 file changed, 131 insertions(+), 8 deletions(-)
-> >>
-> >> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> >> index 4f71373ae6e1..642c7857c5ae 100644
-> >> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> >> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> >> @@ -229,9 +229,10 @@ struct rockchip_usb2phy_port {
-> >>    * @dev: pointer to device.
-> >>    * @grf: General Register Files regmap.
-> >>    * @usbgrf: USB General Register Files regmap.
-> >> - * @clk: clock struct of phy input clk.
-> >> + * @clks: array of phy input clocks.
-> >>    * @clk480m: clock struct of phy output clk.
-> >>    * @clk480m_hw: clock struct of phy output clk management.
-> >> + * @num_clks: number of phy input clocks.
-> >>    * @phy_reset: phy reset control.
-> >>    * @chg_state: states involved in USB charger detection.
-> >>    * @chg_type: USB charger types.
-> >> @@ -246,9 +247,10 @@ struct rockchip_usb2phy {
-> >>   	struct device	*dev;
-> >>   	struct regmap	*grf;
-> >>   	struct regmap	*usbgrf;
-> >> -	struct clk	*clk;
-> >> +	struct clk_bulk_data	*clks;
-> >>   	struct clk	*clk480m;
-> >>   	struct clk_hw	clk480m_hw;
-> >> +	int			num_clks;
-> >>   	struct reset_control	*phy_reset;
-> >>   	enum usb_chg_state	chg_state;
-> >>   	enum power_supply_type	chg_type;
-> >> @@ -376,7 +378,9 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
-> >>   {
-> >>   	struct device_node *node = rphy->dev->of_node;
-> >>   	struct clk_init_data init;
-> >> +	struct clk *refclk = NULL;
-> >>   	const char *clk_name;
-> >> +	int i;
-> >>   	int ret = 0;
-> >>   
-> >>   	init.flags = 0;
-> >> @@ -386,8 +390,15 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
-> >>   	/* optional override of the clockname */
-> >>   	of_property_read_string(node, "clock-output-names", &init.name);
-> >>   
-> >> -	if (rphy->clk) {
-> >> -		clk_name = __clk_get_name(rphy->clk);
-> >> +	for (i = 0; i < rphy->num_clks; i++) {
-> >> +		if (!strncmp(rphy->clks[i].id, "phyclk", 6)) {
-> >> +			refclk = rphy->clks[i].clk;
-> >> +			break;
-> >> +		}
-> >> +	}
-> >> +
-> >> +	if (!IS_ERR(refclk)) {
-> >> +		clk_name = __clk_get_name(refclk);
-> >>   		init.parent_names = &clk_name;
-> >>   		init.num_parents = 1;
-> >>   	} else {
-> >> @@ -1406,22 +1417,29 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
-> >>   	if (IS_ERR(rphy->phy_reset))
-> >>   		return PTR_ERR(rphy->phy_reset);
-> >>   
-> >> -	rphy->clk = devm_clk_get_optional_enabled(dev, "phyclk");
-> >> -	if (IS_ERR(rphy->clk)) {
-> >> -		return dev_err_probe(&pdev->dev, PTR_ERR(rphy->clk),
-> >> +	ret = devm_clk_bulk_get_all(dev, &rphy->clks);
-> >> +	if (ret == -EPROBE_DEFER) {
-> >> +		return dev_err_probe(&pdev->dev, -EPROBE_DEFER,
-> >>   				     "failed to get phyclk\n");
-> >>   	}
-> >>   
-> >> +	/* Clocks are optional */
-> >> +	rphy->num_clks = ret < 0 ? 0 : ret;
-> >> +
-> >>   	ret = rockchip_usb2phy_clk480m_register(rphy);
-> >>   	if (ret) {
-> >>   		dev_err(dev, "failed to register 480m output clock\n");
-> >>   		return ret;
-> >>   	}
-> >>   
-> >> +	ret = clk_bulk_prepare_enable(rphy->num_clks, rphy->clks);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> > Do you actually need that separate enable step?
-> > There exists devm_clk_bulk_get_all_enable()
-> >
-> > https://elixir.bootlin.com/linux/v6.11/source/include/linux/clk.h#L511
-> >
-> > which you could use above. Especially as otherwise you'd need a remove
-> > callback to disable the clock on driver unbind?
-> >
-> 
-> Using devm_clk_bulk_get_all() just can get clocknumbers, 
-> and devm_clk_bulk_get_all_enable() is not.
-> It seems that there is no other API can get the number of clocks separately.
-
-Hmm, didn't see that yesterday, but you're right.
-
-From a consistency standpoint I think it would actually make sense to
-return the number of clocks from devm_clk_bulk_get_all_enable() .
-
-Because right now, those clk_* functions are looking pretty similar
-but behave differently. And looking at the function, the enable-variant
-also just uses clk_bulk_get_all, just looses the number of clocks
-because "ret" is reused by the enable call.
-
-
-But if you don't want to touch the clk API that's also ok, but
-you should then add a devm_add_action_or_reset call, to disable
-the clocks on driver removal, before they are freed.
-
-
-> >>   	if (rphy->phy_cfg->phy_tuning) {
-> >>   		ret = rphy->phy_cfg->phy_tuning(rphy);
-> >>   		if (ret)
-> >> -			return ret;
-> >> +			goto disable_clks;
-> >>   	}
-> >>   
-> >>   	index = 0;
-> >> @@ -1484,6 +1502,8 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
-> >>   
-> >>   put_child:
-> >>   	of_node_put(child_np);
-> >> +disable_clks:
-> >> +	clk_bulk_disable_unprepare(rphy->num_clks, rphy->clks);
-> >>   	return ret;
-> >>   }
-> >>   
-> >> @@ -1495,6 +1515,30 @@ static int rk3128_usb2phy_tuning(struct rockchip_usb2phy *rphy)
-> >>   				BIT(2) << BIT_WRITEABLE_SHIFT | 0);
-> >>   }
-> >
-> > I still maintain, that this maybe should be two separate patches.
-> > And you even seem to have nice "cut-here" in it ;-)
-> >
-> > The code above converts the driver to use clk_bulk to handle
-> > multiple clocks for controller variants needing it.
-> >
-> >
-> > And the code below adds the rk3576-specific data to the driver.
-> >
-> 
-> Make sense, I shall split two separate patches in the next version.
-> BTW, should I send the clk_bulk process patch as a separate series? I 
-> mean I shouldn't send it together with this series, right?
-
-No, just one series, convert the driver to clk_bulk*, add rk3576 binding,
-add rk3576-specific data :-) .
-
-Because people will want to see where you're going with your change
-and having "this series depends on this separate patch" creates confusion
-and you're really only touching this one driver.
-
-Heiko
-
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgS3J6eXN6dG9mLAoKT24gMjAyNC85LzI3IDE1OjMwLCBLcnp5c3p0b2YgS296bG93c2tpIHdy
+b3RlOgo+IE9uIDI3LzA5LzIwMjQgMDk6MDEsIEZyYW5rIFdhbmcgd3JvdGU6Cj4+IEhpIEtyenlz
+enRvZiwKPj4KPj4gT24gMjAyNC85LzI2IDIyOjE5LCBLcnp5c3p0b2YgS296bG93c2tpIHdyb3Rl
+Ogo+Pj4gT24gMjYvMDkvMjAyNCAxMjozMiwgRnJhbmsgV2FuZyB3cm90ZToKPj4+PiArICAtIGlm
+Ogo+Pj4+ICsgICAgICBwcm9wZXJ0aWVzOgo+Pj4+ICsgICAgICAgIGNvbXBhdGlibGU6Cj4+Pj4g
+KyAgICAgICAgICBjb250YWluczoKPj4+PiArICAgICAgICAgICAgZW51bToKPj4+PiArICAgICAg
+ICAgICAgICAtIHJvY2tjaGlwLHJrMzU3Ni11c2IycGh5Cj4+Pj4gKyAgICB0aGVuOgo+Pj4+ICsg
+ICAgICBwcm9wZXJ0aWVzOgo+Pj4+ICsgICAgICAgIGNsb2NrczoKPj4+PiArICAgICAgICAgIG1p
+bkl0ZW1zOiAzCj4+Pj4gKyAgICAgICAgICBtYXhJdGVtczogMwo+Pj4gUmVhZCBvbmUgbW9yZSB0
+aW1lIHRoZSBleGFtcGxlIEkgZ2F2ZSB5b3UuIFRvcC1sZXZlbCBjb25zdHJhaW50cyBhcmUKPj4+
+IHNheWluZyBtYXggb25lIGNsb2NrLgo+Pj4KPj4+IEJlc3QgcmVnYXJkcywKPj4+IEtyenlzenRv
+Zgo+Pj4KPj4gU29ycnkgZm9yIG92ZXJsb29raW5nIHRoaXMsIEkgd2lsbCBzZXQgYm90aCAiY2xv
+Y2tzIiBhbmQgImNsb2NrLW5hbWVzIgo+PiB0byB0cnVlLCBhbmQgYWRkIHRoZSBlbHNlIGNhc2Ug
+YmVsb3cgdGhlIGFib3ZlIGNvZGVzIGZvciB0aGUgIm9sZCIgU29Dcy4KPj4gSnVzdCBsaWtlIHRo
+ZSBiZWxvdy4KPj4KPj4gLcKgIGNsb2NrczoKPj4gLcKgwqDCoCBtYXhJdGVtczogMQo+PiArwqAg
+Y2xvY2tzOiB0cnVlCj4+Cj4+IC3CoCBjbG9jay1uYW1lczoKPj4gLcKgwqDCoCBjb25zdDogcGh5
+Y2xrCj4+ICvCoCBjbG9jay1uYW1lczogdHJ1ZQo+IEZvciB0aGUgdGhpcmQgdGltZSwgcmVhZCB0
+aGUgY29kZSBJIGdhdmUgeW91LiBEbyB5b3Ugc2VlIHNvbWV0aGluZyBsaWtlCj4gdGhpcyB0aGVy
+ZT8gV2h5IGRvaW5nIGFsbCB0aGUgdGltZSBzb21ldGhpbmcgZGlmZmVyZW50IHRoYW4gZXhpc3Rp
+bmcgY29kZT8KClJlZmVyIHRvIHRoZSBsaW5rIHlvdSBzZW50IG1lIHRoYXQgSSBtdXN0IGFkZCBt
+aW5JdGVtcyBwcm9wZXJ0eSBmb3IgCmNsb2NrcywganVzdCBsaWtlIHRoZSBiZWxvdyBjb2RlczoK
+CkBAIC0zNSw3ICszNSw4IEBAIHByb3BlcnRpZXM6CiDCoMKgwqDCoCBjb25zdDogMAoKIMKgwqAg
+Y2xvY2tzOgotwqDCoMKgIG1heEl0ZW1zOiAxCivCoMKgwqAgbWluSXRlbXM6IDEKK8KgwqDCoCBt
+YXhJdGVtczogMwoKVGhhdCBjYW4gcGFzcyBkdF9iaW5kaW5nIGFuZCBkdGIgY2hlY2tpbmcsIGhv
+d2V2ZXIsICJjbG9ja3MiIGlzIHRoZSAKb3B0aW9uYWwgcHJvcGVydHkgZm9yIHNvbWUgb2xkIFJv
+Y2tjaGlwIFBIWXMswqAgSSBhbSBub3Qgc3VyZSBpcyBpdCByaWdodCAKdG8gZm9yY2Ugc2V0wqAg
+bWluSXRlbXMgYXMgMSAuCklmIGp1c3Qga2VlcCBtYXhJdGVtcywgdGhlIGR0X2JpbmRpbmcgY2hl
+Y2tpbmcgaXMgZmFpbHVyZS4KCgpCZXN0IHJlZ2FyZHMsCkZyYW5rCgo+IEJlc3QgcmVnYXJkcywK
+PiBLcnp5c3p0b2YKPgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXBoeQo=
