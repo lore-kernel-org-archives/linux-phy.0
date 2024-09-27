@@ -4,64 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74E76CEBF6A
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Sep 2024 08:03:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64868CEBF8C
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Sep 2024 09:54:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=maTSHfVw6A69GHSSDX6VoLNxi3Mm9KQ4MpRCjMpSfOE=; b=vgEhjhdfTlmjVN
-	bwpRck7q7DHt5xZ4HLOBTPgExruQqmGW4WRjWv6Nl9ifMdJGXZ39qCa+mFPFD4EII9V0XWuDz/FqY
-	r2RW6xEt3J6WTCVG5nSE4WGvDE5LnH4OoAPcDYtGsagKXZYKyLsKIUt3DMGE1ztDrkxQV+ePR2veh
-	zgwUQGMmBj3rh/aJFFmjuNqjNbvmBXylc9QQBiehhmSLnaOTFAR6uCzA0QbKpK1eATYxOg62/py3G
-	6OSdbVsW7pJ797u19hd0/HcyscbdlGt8L0GXlzk1RJR4xW5XI5LCHp6gQmkEvfqYGnSw/wbDLDlLU
-	vFAKr5rNmzxMnNAkQtzw==;
+	List-Owner; bh=S2EqzZl4N2ELVTXgv//WmelYZgh3kGpuxMXQtDc0CGs=; b=1D0Zd5NRupmTf5
+	CGZ8RRenGq1WGxLmE9C/XTcK/QcU2658b20kWLCGwgFJkvPeZ0Z7RBaWkPmACwMX/hSf4/pC/832V
+	j5LZ1Yuencc8eqrqb3ZQk/Eg1ramM+moIn4aX+2Nz0vlnGa+5JNhhTVQi9pVdtXSQaB1CfYdZOJfm
+	eGBOIw/AOGT7bxSv08VtfKc3b6BqPW2emxdkbsfQ1HWB+NxKIVLrkMtBC+yrJlWWB9NT0y9pAX5c2
+	jbCsTikqHfZIM8g3vJvtppzj3bk9nI7I77qRvtyTHgnrP+DTDX0QBP4ORNop/r+V/HcgoiGPzOqvL
+	W/2k45zSWWXqyAJ3bK1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1su5wM-0000000AQln-08dF;
-	Fri, 27 Sep 2024 08:03:02 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1su7ft-0000000Ajwh-46wq;
+	Fri, 27 Sep 2024 09:54:09 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1su5vZ-0000000AQe4-0IpX;
-	Fri, 27 Sep 2024 08:02:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=VrHmD3qjrTGLP9NWMXSPhKgSjDl2KVnQsH7jouH3UsI=; b=QLSmztucKNR9BO55sYkVhudf8M
-	zxv4k5lSfkeSk9O/fAfcX+6YrDVdYAJ4BXUdhMzUt2GlIDFp/VFi+wKbizLPemDqINc5q+BdwGlUm
-	KAnzGihqcTR1VEqDfA2GidGdVaB2FTCyLA8yd7BT4TW8+UoXXAbiaZo2ii5a4iBGMkQnOXWyl3spz
-	+gJXa6F4pqt+uGWneO8VsAP4tnIbY/vMfzfv1OvTOw+xB/IDp/iSneW81xEAthSAqdmYAKW0MP8O5
-	N3L0b4Ay2DAgQ3cq0ZE9q7Jf/H1RL4z47VoVXe7EyTTu8/MQDeH6/vscyWyejC0MGjVqwVs6UNSYX
-	kH7HbgnQ==;
-Received: from 85-160-70-253.reb.o2.cz ([85.160.70.253] helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1su5vT-00009l-Ez; Fri, 27 Sep 2024 10:02:07 +0200
-From: Heiko Stuebner <heiko@sntech.de>
+	id 1su7ei-0000000AjqU-1iCT;
+	Fri, 27 Sep 2024 09:52:57 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id A79585C5A10;
+	Fri, 27 Sep 2024 09:52:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD390C4CEC9;
+	Fri, 27 Sep 2024 09:52:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1727430775;
+	bh=33PrDDHYsDn2bdtDMBJO2RODp0bUQsB7iOO7EBhwxgo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=YLrFTRkWgEHg65h8fMPOYHMxcspnqFY6DEoORnkOn1/DQR22ssPtdLNmDI2tBoqG6
+	 dplezYegIopryRgr4rXn1012qZC4eHH93UwdoTejkR2bbjPOVqV59IR5pgP0/iF/Tg
+	 Cl5l2HKO9M++6Xce7DoJom75ib8F3mvcpHBSTEUfrBU9fUhuJ9x7Rd3ell5COb/3aB
+	 LZtyiniTB71PWQi319UNvrzeL3ZSoWpTbq+m6wcMMfp0To+xx3/20D1/vTjoAx8rzr
+	 heJWOolfH9FbYOoZb8ZUcWzM3PSLUVUDjuO/GcDtzWfkOHmLF2SvIlRO5ATD9Cg/5T
+	 UWoc6sApqcSSg==
+Message-ID: <2815219e-3a20-4a5b-8573-d8a4ad2df1c9@kernel.org>
+Date: Fri, 27 Sep 2024 11:52:48 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: rockchip,inno-usb2phy: add
+ rk3576
 To: Frank Wang <frawang.cn@gmail.com>, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, heiko@sntech.de
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
  tim.chen@rock-chips.com, frank.wang@rock-chips.com
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: rockchip,inno-usb2phy: add rk3576
-Date: Fri, 27 Sep 2024 10:02:05 +0200
-Message-ID: <20816071.Yz81rIOvuz@phil>
-In-Reply-To: <4b98196a-c898-4d08-9101-31feb4e59b5c@kernel.org>
 References: <20240926103223.29538-1-frawang.cn@gmail.com>
+ <ed829240-d4f7-471f-84f6-3509f87f11a1@kernel.org>
  <7944f4dd-96f0-40df-8c91-523409e3cb20@gmail.com>
  <4b98196a-c898-4d08-9101-31feb4e59b5c@kernel.org>
-MIME-Version: 1.0
+ <a06af01a-656b-4ef6-84a6-bc1c35d5bafa@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <a06af01a-656b-4ef6-84a6-bc1c35d5bafa@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240927_010213_147854_35D38898 
-X-CRM114-Status: GOOD (  18.53  )
+X-CRM114-CacheID: sfid-20240927_025256_553533_404D0E55 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,106 +119,27 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-
-Am Freitag, 27. September 2024, 09:30:30 CEST schrieb Krzysztof Kozlowski:
-> On 27/09/2024 09:01, Frank Wang wrote:
-> > Hi Krzysztof,
-> > 
-> > On 2024/9/26 22:19, Krzysztof Kozlowski wrote:
-> >> On 26/09/2024 12:32, Frank Wang wrote:
-> >>> +  - if:
-> >>> +      properties:
-> >>> +        compatible:
-> >>> +          contains:
-> >>> +            enum:
-> >>> +              - rockchip,rk3576-usb2phy
-> >>> +    then:
-> >>> +      properties:
-> >>> +        clocks:
-> >>> +          minItems: 3
-> >>> +          maxItems: 3
-> >> Read one more time the example I gave you. Top-level constraints are
-> >> saying max one clock.
-> >>
-> >> Best regards,
-> >> Krzysztof
-> >>
-> > 
-> > Sorry for overlooking this, I will set both "clocks" and "clock-names" 
-> > to true, and add the else case below the above codes for the "old" SoCs.
-> > Just like the below.
-> > 
-> > -  clocks:
-> > -    maxItems: 1
-> > +  clocks: true
-> > 
-> > -  clock-names:
-> > -    const: phyclk
-> > +  clock-names: true
-> 
-> For the third time, read the code I gave you. Do you see something like
-> this there? Why doing all the time something different than existing code?
-
-On vacation right now so late to the party, and somewhat confused :-) .
-
-I've tried to find the code you mentioned, but did fail.
-In [0] you mention "maybe oneOf". The other replies in that version were
-about the ordering needing to stay for the older phy variants.
-
-[1] in v2 has that NAK thing and [2] from v3 references that example again
-
-I am probably just blind, but could use a pointer.
-
-
-Because I think going with a
-  - if:
-      properties:
-        compatible:
-          contains:
-            enum:
-              - rockchip,rk3576-usb2phy
-    then:
-      properties:
-        clocks:
-          minItems: 3
-          maxItems: 3
-        clock-names:
-          items:
-            - const: phyclk
-            - const: aclk
-            - const: aclk_slv
-    else:
-      properties:
-        clocks:
-          maxItems: 1
-        clock-names:
-          const: phyclk
-
-block should actually make sure each variant will check for the appropriate
-number of clocks?
-
-And having clocks:true in the main part then makes sure that the property
-is not getting marked as:
-arch/arm64/boot/dts/rockchip/rk3576-armsom-sige5.dtb: usb2-phy@0: 'clock-names', 'clocks' do not match any of the regexes: 'pinctrl-[0-9]+'
-        from schema $id: http://devicetree.org/schemas/phy/rockchip,inno-usb2phy.yaml#
-
-
-Heiko
-
-
-[0] https://lore.kernel.org/lkml/snccizbw6thn3lhwad4xppp7vqii4p56ttl2gufwc3ke7vfckf@e4b7nvwwtdfr/
-[1] https://lore.kernel.org/lkml/2a4200ac-3ea2-4449-94ac-c4b9f37ad800@kernel.org/#t
-[2] https://lore.kernel.org/lkml/ed829240-d4f7-471f-84f6-3509f87f11a1@kernel.org/
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMjcvMDkvMjAyNCAwOTo1OSwgRnJhbmsgV2FuZyB3cm90ZToKPj4+Cj4+PiAtwqAgY2xvY2tz
+Ogo+Pj4gLcKgwqDCoCBtYXhJdGVtczogMQo+Pj4gK8KgIGNsb2NrczogdHJ1ZQo+Pj4KPj4+IC3C
+oCBjbG9jay1uYW1lczoKPj4+IC3CoMKgwqAgY29uc3Q6IHBoeWNsawo+Pj4gK8KgIGNsb2NrLW5h
+bWVzOiB0cnVlCj4+IEZvciB0aGUgdGhpcmQgdGltZSwgcmVhZCB0aGUgY29kZSBJIGdhdmUgeW91
+LiBEbyB5b3Ugc2VlIHNvbWV0aGluZyBsaWtlCj4+IHRoaXMgdGhlcmU/IFdoeSBkb2luZyBhbGwg
+dGhlIHRpbWUgc29tZXRoaW5nIGRpZmZlcmVudCB0aGFuIGV4aXN0aW5nIGNvZGU/Cj4gCj4gUmVm
+ZXIgdG8gdGhlIGxpbmsgeW91IHNlbnQgbWUgdGhhdCBJIG11c3QgYWRkIG1pbkl0ZW1zIHByb3Bl
+cnR5IGZvciAKPiBjbG9ja3MsIGp1c3QgbGlrZSB0aGUgYmVsb3cgY29kZXM6Cj4gCj4gQEAgLTM1
+LDcgKzM1LDggQEAgcHJvcGVydGllczoKPiAgwqDCoMKgwqAgY29uc3Q6IDAKPiAKPiAgwqDCoCBj
+bG9ja3M6Cj4gLcKgwqDCoCBtYXhJdGVtczogMQo+ICvCoMKgwqAgbWluSXRlbXM6IDEKPiArwqDC
+oMKgIG1heEl0ZW1zOiAzCgpZZXMsIGZvciBhbGwgdmFyaWFibGUgcHJvcGVydGllcywgc28gYWxz
+byBuYW1lcy4KCj4gCj4gVGhhdCBjYW4gcGFzcyBkdF9iaW5kaW5nIGFuZCBkdGIgY2hlY2tpbmcs
+IGhvd2V2ZXIsICJjbG9ja3MiIGlzIHRoZSAKPiBvcHRpb25hbCBwcm9wZXJ0eSBmb3Igc29tZSBv
+bGQgUm9ja2NoaXAgUEhZcyzCoCBJIGFtIG5vdCBzdXJlIGlzIGl0IHJpZ2h0IAo+IHRvIGZvcmNl
+IHNldMKgIG1pbkl0ZW1zIGFzIDEgLgo+IElmIGp1c3Qga2VlcCBtYXhJdGVtcywgdGhlIGR0X2Jp
+bmRpbmcgY2hlY2tpbmcgaXMgZmFpbHVyZS4KClBsZWFzZSBzcGVjaWZ5IHRoZSBxdWVzdGlvbiB5
+b3Ugd2FudCB0byBhc2suCgoKQmVzdCByZWdhcmRzLApLcnp5c3p0b2YKCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
