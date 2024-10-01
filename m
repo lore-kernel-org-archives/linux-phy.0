@@ -4,84 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54AA1CCFA16
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Sep 2024 19:11:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65684CEB2E4
+	for <linux-phy@archiver.kernel.org>; Tue,  1 Oct 2024 03:45:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0P4Td33Q5A7bokzAGaDCEpHCzoFtw47Bw9VoOyRcGTE=; b=U82B9HTrCcWWiE
-	lOl6DyChcsRbERRKkP61S/DM/WeVvbr9G99alWI3vEZ669YXQU1XkdlRvl3QIPLt9KA0vGh11/XzJ
-	tCcmlAa9ZxsGf2+Xs7MQ35WHwRlXaRMd+361aensTit8LZcunyCKBipTcvnudPhWQ9hEziZzQBAmu
-	6Da9J2HcyvvQApJlmQMUbIaOlYl3lrbyc9iIbgpkMz9/mLfleAn9JmeFwDQNYkU5lCmxDKfX3nYD4
-	+DVkbk07tDn8N3Lp8v2E7Rpaxk0+ZnnrFo0Z5iK/0Nraqg8RvIQF91gUWnrYIfB89Ld8E9A4E3q4C
-	NsGpBOsD81EQgzyklEqg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I2a65VcMfhOi6bA2FJ+zDhlFKr1qoAwv3stmsx0CQrM=; b=v4TODDjtCyAaqi
+	xsGWJBLQEcPcaOSwEtLqK45EaMUr6dDVPbVcZ7UrqePZkqmh5+YJM7cXgxU608k0GtQxmoYFP4Pjg
+	7vuOUDf7ZhyZQtroNdt3tPaKRsoyvd7I3WJ41rQ1lKZOu5Iu7FC+vA/01+SXLoR7uOLeL5X7kiKd0
+	Uvbh7rjI6tPPJO//c7zOxGRRNUDYi3gUgwdMrRi34zG2XmJK5UhSMticwgp9ei60C+3UPSe/oANd3
+	yL7monvbxrPh+0+zfHc+4kcx/VD3XhrGjP4XJ8yww6dllNYv6N4nVZh2cHx/+YCqsU8v1JjHEdSKH
+	AkW2xk9SsgPVWe2QDXKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svLnd-00000000b7i-09Z1;
-	Mon, 30 Sep 2024 19:11:13 +0000
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+	id 1svTos-00000001VoR-3rVa;
+	Tue, 01 Oct 2024 03:45:02 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svLna-00000000b7N-1kLN
-	for linux-phy@lists.infradead.org;
-	Mon, 30 Sep 2024 19:11:12 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-207115e3056so41151885ad.2
-        for <linux-phy@lists.infradead.org>; Mon, 30 Sep 2024 12:11:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1727723469; x=1728328269; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=aCTSpjE7HL0LhWw7HAwvpibvAomrawMsBzaMkMKPJCs=;
-        b=S9z7UuuZ5v7Frc5iCeRxFU2uGsHkbxHlzfzBgXAS0gB7NfhPjprru54D+8ahjXt/nt
-         YC2JiDPrIxVV6DEgovE52owyaoBDGFXD0HD68MiThMPFUcHvRioogk5EXqmFQ6RgxH5i
-         71QwiCKOLc+06U3klESRzSnlcCHE2Iw7ppg8ss42vpgen/PUuOCbJ8vEYvAVUPFYfQXu
-         t+R50EQkGl9i1hqA9YlOL0PmvfTcwt3l+oMO1Qz0A29crKXFshQY6xzw3eYso3+MQ5ij
-         eR30nxaXhMK2hyOInH6iauNcvtEt36kkJcyiWfYRxLEFaTlf+SWsrX10460dvLNlJdVK
-         WkhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727723469; x=1728328269;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=aCTSpjE7HL0LhWw7HAwvpibvAomrawMsBzaMkMKPJCs=;
-        b=HvMl1vGk+WBqz89S+14vl5eWsXmzkSNT23/Omdi3xVYHJTEsWGz6wr4j5bDpyj7V/q
-         arYzBDT/W1m/Wk0cGI/xN3WJqxihgk9PGVvzyvu6MTO28sNR+fmgtXeTDxazm/QPxDHc
-         PV5diDfQiRqohy5v2BN+c7kGScv5CZfYra6s+OCDJFy0+zV2CVegsjCdiaeed03B0YMR
-         C0Lfk5fGa9+V0r6zfJu4H0AW3HOy8npr5Guqv9exDS4yvghvPRIUcyYN4iLqqLzLtQLf
-         V5aOdl3kTUigvd+RtOfRL+raSoRzbKp6Oe4yqNxbpLSKIL1qDNFzVDaTTzanMOmoFrtp
-         OLuw==
-X-Forwarded-Encrypted: i=1; AJvYcCWhHHwb++W0VhuTsM5vYsPU00N+5CJ9EMK8rzMRbWJZ9qf2Gz9hjKsxJPwkDz6yCDDpw/MZIoDZuD4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzM8Nf4Xugc5L3cSQbDhH8fSrzTmTSNaTzyTcFhbPnLU7PsghUY
-	/pI12APJhlddistpmtYGg1HREGQq5bEY+Yr8uP39/5ng5PhGN2Lsa6LkTrkr
-X-Google-Smtp-Source: AGHT+IGPKqgmSCwIUXXbGEMtmjlMHyUWhICIzjtK2cewowvU+9I7L/QxmmbWD2bHNlk1OGpGpmIQOQ==
-X-Received: by 2002:a17:902:e5cd:b0:20b:968e:2585 with SMTP id d9443c01a7336-20b968e285emr37146775ad.6.1727723468585;
-        Mon, 30 Sep 2024 12:11:08 -0700 (PDT)
-Received: from ubuntu.worldlink.com.np ([27.34.65.164])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-20b37e5fd40sm57598175ad.266.2024.09.30.12.11.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Sep 2024 12:11:08 -0700 (PDT)
-From: Dipendra Khadka <kdipendra88@gmail.com>
-To: jckuo@nvidia.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	thierry.reding@gmail.com,
-	jonathanh@nvidia.com,
-	nkristam@nvidia.com
-Cc: Dipendra Khadka <kdipendra88@gmail.com>,
-	linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: tegra: xusb: Add error pointer check in xusb.c
-Date: Mon, 30 Sep 2024 19:11:00 +0000
-Message-ID: <20240930191101.13184-1-kdipendra88@gmail.com>
-X-Mailer: git-send-email 2.43.0
+	id 1svTHh-00000001Ra7-2lpV;
+	Tue, 01 Oct 2024 03:10:47 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 4913ATmW103165;
+	Mon, 30 Sep 2024 22:10:29 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1727752229;
+	bh=kfwMURVy/yiodMLPMigVXkX4hDEnfqhR+Eng6XlVuaE=;
+	h=Date:From:To:CC:Subject:References:In-Reply-To;
+	b=p/ID9cEnKwPGSc2GLSxaMFuzMVU1dlKBLv9NmQ5NNBnJeNCxNfMNyobx8/3LpurOE
+	 ss0hO18Vlg1HnvswI6PHwZkCrg38NhgVB7ck4zK3uD8k1Ve/IYX9pyuSMobWXCh8dC
+	 25WIs4JvNK8mLiRfFQu+N2Jk4XcjHsQVe3R+5Tzs=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTP id 4913ATjL104314;
+	Mon, 30 Sep 2024 22:10:29 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 30
+ Sep 2024 22:10:29 -0500
+Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Mon, 30 Sep 2024 22:10:29 -0500
+Received: from localhost (uda0492258.dhcp.ti.com [10.24.72.81])
+	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 4913ARmS086854;
+	Mon, 30 Sep 2024 22:10:28 -0500
+Date: Tue, 1 Oct 2024 08:40:27 +0530
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: Roger Quadros <rogerq@kernel.org>
+CC: Siddharth Vadapalli <s-vadapalli@ti.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <thomas.richard@bootlin.com>,
+        <krzysztof.kozlowski@linaro.org>, <nichen@iscas.ac.cn>,
+        <c-vankar@ti.com>, <t-patil@ti.com>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <srk@ti.com>
+Subject: Re: [PATCH v2] phy: ti: phy-j721e-wiz: fix usxgmii configuration
+Message-ID: <c5ef5303-6390-4f2b-b9d2-3d1f3085e15f@ti.com>
+References: <20240930095745.3007057-1-s-vadapalli@ti.com>
+ <4b42b8e5-3246-4f58-b494-735930d2424a@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <4b42b8e5-3246-4f58-b494-735930d2424a@kernel.org>
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240930_121110_510658_73ACF0D9 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240930_201045_882079_2B3C8648 
+X-CRM114-Status: GOOD (  18.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,30 +86,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add error pointer check after tegra_xusb_find_lane().
+On Mon, Sep 30, 2024 at 05:06:35PM +0300, Roger Quadros wrote:
 
-Fixes: e8f7d2f409a1 ("phy: tegra: xusb: Add usb-phy support")
-Signed-off-by: Dipendra Khadka <kdipendra88@gmail.com>
----
- drivers/phy/tegra/xusb.c | 2 ++
- 1 file changed, 2 insertions(+)
+Hello Roger,
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index cfdb54b6070a..342f5ccf611d 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -699,6 +699,8 @@ static int tegra_xusb_setup_usb_role_switch(struct tegra_xusb_port *port)
- 		return -ENOMEM;
- 
- 	lane = tegra_xusb_find_lane(port->padctl, "usb2", port->index);
-+	if (IS_ERR(lane))
-+		return PTR_ERR(lane);
- 
- 	/*
- 	 * Assign phy dev to usb-phy dev. Host/device drivers can use phy
--- 
-2.43.0
+> Hi Siddharth,
+> 
+> On 30/09/2024 12:57, Siddharth Vadapalli wrote:
+> > Commit b64a85fb8f53 ("phy: ti: phy-j721e-wiz.c: Add usxgmii support in
+> > wiz driver") added support for USXGMII mode. In doing so, P0_REFCLK_SEL
+> > was set to "pcs_mac_clk_divx1_ln_0" (0x3) and P0_STANDARD_MODE was set to
+> > LANE_MODE_GEN1, which results in a data rate of 5.15625 Gbps. However,
+> > since the USXGMII mode can support up to 10.3125 Gbps data rate, the
+> > aforementioned fields should be set to "pcs_mac_clk_divx0_ln_0" (0x2) and
+> > LANE_MODE_GEN2 respectively. Fix the configuration accordingly to truly
+> > support USXGMII up to 10G.
+> > 
+> > Fixes: b64a85fb8f53 ("phy: ti: phy-j721e-wiz.c: Add usxgmii support in wiz driver")
+> > Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
 
+[...]
+
+> > diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+> > index a6c0c5607ffd..c6e846d385d2 100644
+> > --- a/drivers/phy/ti/phy-j721e-wiz.c
+> > +++ b/drivers/phy/ti/phy-j721e-wiz.c
+> > @@ -450,8 +450,8 @@ static int wiz_mode_select(struct wiz *wiz)
+> >  		} else if (wiz->lane_phy_type[i] == PHY_TYPE_USXGMII) {
+> >  			ret = regmap_field_write(wiz->p0_mac_src_sel[i], 0x3);
+> >  			ret = regmap_field_write(wiz->p0_rxfclk_sel[i], 0x3);
+> 
+> I'm not sure. Don't we have to change rxfclk as well?
+
+This patch was validated on a custom board with the J7200 SR 2.0 SoC.
+The signal corresponding to the USXGMII lane of the SERDES was measured
+to be 5 Gbps without this patch and 10 Gbps with this patch applied,
+with no other changes required. Apart from measuring the signal, ping
+was also validated.
+
+Regards,
+Siddharth.
 
 -- 
 linux-phy mailing list
