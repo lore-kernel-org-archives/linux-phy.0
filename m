@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C39ACF31B9
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Oct 2024 20:18:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7F2DCF31B9
+	for <linux-phy@archiver.kernel.org>; Wed,  2 Oct 2024 20:21:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I1MMiHs13+4g9tdxo+M+C+M4Pidmzpayy174nAglZpU=; b=roPTzCYcoec0oO
-	V8lA+ddneUJ89Oa9IEBE7aU9MuNXLMXd/5CMHb9L+d4N2qgBMK7FibRVeGnuiJj7UXHpAtQmB/YPk
-	VMV5lDF+GW8seElpnqRAeRa0x7frg0LZOs5L+IJCKm0X4lk4/aIoytDgUxWaitUT21ucCy/ERqLJv
-	+D+Mn6JKp4jOapDgNIZkTX+2X9to3luDmcbcZoCxIJCw1MHuNLhy5tZosqzkRwVuFbo9sGs+bY4gd
-	gb79u4a+g/2jHXrAPXBs8Cb53cR0MiJTiAbQIen3dZcrSIfyCYnPErndhHz558U6xUHv1nVQp0I4c
-	xXkfdU6oTgVMt6BBxshw==;
+	List-Owner; bh=jbGimrSlv6crqZgYYJAs8/hT/LUHQz+4uC82RN/ENMc=; b=ZDOlIMGhz5WKIx
+	fDOZY3ONVxKOFowYXf3M7nvQWWz18xtKI6YsVei+FOuTgRMAOK6dS8974CbuZmmozdPeFP1KpFse1
+	i7ZV0oXYUVpRETScnKyLafo6hiEBVHbnoqmd7psSkZplsSnNxQRfsDJlPxmoz5Qauabkdk1QXp0C+
+	mDFG6u2CBz+G/FoB+tgk/OvFSrFvCVhJagxwi7zR/1NyWZyvNrscNS9Fj0fIp5SS7oOBj9QzDeMxq
+	wx0hGIUha8oMtFQztwD3zu/vIgYl/vE0QAIgiTctWoqAa+3o/t19IKCxYGBdn5egpOFRgoZJ6yWqG
+	DXISOMrFdC/rdPuyZu8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sw5o6-00000007O6F-3TtQ;
-	Wed, 02 Oct 2024 20:18:46 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1sw5qX-00000007OPr-2Tb7;
+	Wed, 02 Oct 2024 20:21:17 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sw5lg-00000007Nnx-0VCV
+	id 1sw5li-00000007NpA-2QSn
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Oct 2024 20:16:17 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-42e82f7f36aso1237395e9.0
-        for <linux-phy@lists.infradead.org>; Wed, 02 Oct 2024 13:16:15 -0700 (PDT)
+	Wed, 02 Oct 2024 20:16:20 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-42cba6cdf32so1345635e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 02 Oct 2024 13:16:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1727900174; x=1728504974; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1727900177; x=1728504977; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=+jX211dAZAvJkuP8OIZ+el1p2Mcg021bO+6I10YA2EY=;
-        b=rK3hDPmiMu30+MrjP8OKO7OIWEVyLI30H0lG4L6gavBMqtPA1DsvZUXd4kMUoJb42p
-         lvnz5EVkxqWE3RFl3ML3wfDo0AEuHRbXPw0edCmZEoH255zWkhfzoatJ5UPRwLPytnf4
-         rxwXGBwuzkIl/I9Pd1oIPBjQGV04SoPwJlQipFs/gSK6PQe9+aXRv2SP/XcEHvkDLr4E
-         9cAiFyrea/eWebNhJWTCBN5/dfYvBuWw1oT7LIqqRLwnU4H8a8AJ3830+TNT/hFeIerG
-         sQhlVEZLsaPvwOEa8YHtKxaidKTBxcI3pbabaOcven7VhjNAHc5XqxZEfUya8YVvtOOx
-         jsgg==
+        bh=CkN9NRYd/noXKwaQRmVmIrVpTjpJo3NEqWIDvcUXohk=;
+        b=psrp5afpGznNGkBqoBWA0Lr/AGwZKPHnO6MOGY6LlOuqBQKXmyEqC2DU8Z19wdVlgc
+         lDhDqnSnXyMY5d+5XAxnctYQH9m5l9Z0aRwZYZQ/i/J11kIJZUv5HP/RnCWmU6/SPXCg
+         VXssnv5yURnMKvmeJmxmHWj9Z0F221vdROM+PGVwTEISsVMnW7wzO03TfhlW1zLqGlnS
+         hLfcIpn/R6dr71ZVKgxElZDF8svYX1qPCgIiCJJbDMrkilN+EZANuJRaMr37tMMh+TS/
+         IGsuPveSFEuqL/smI62MTBMzEEgpHOwLiC3kQKqjoaWD575H36OMymAKnC39uogfu+aD
+         2bBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727900174; x=1728504974;
+        d=1e100.net; s=20230601; t=1727900177; x=1728504977;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=+jX211dAZAvJkuP8OIZ+el1p2Mcg021bO+6I10YA2EY=;
-        b=wXnSFPTCTR4PjPz04mNabCij5G5eXVj9/s19zYNmJuEkywFsxx8FqF6quMFdmlO0td
-         +jFe/C7Hzh0r7052MVmepOf+QK5J5ARN2UVIlTKtwgMM0D2EhuPl2yLu9+4hbP63VOUP
-         DKqaYhxCvg+dC9/Me/vGWgqx95z21SFc9RwxR2LGgkLKHJnPD7QrMcQvuxA4Uo666McD
-         YmOsLSlLMPvrYlbQ/4XEBV6m8MNu9B1KFDgYb+/qAQWb0bDtdFr7H9Uyd0DFySr0cOCM
-         F4DmudU5V2uX03bW27iafBxQ77GdROlq7Dx+8PLQzZUosqPvEnB5W52EbtBouguA5c3O
-         KxmA==
-X-Forwarded-Encrypted: i=1; AJvYcCW/SoqeLyNJg8je5pps0qdEA/+HUxAHg2DcdtM7vjofb2cSG7PYh6Q1r7NNBTMWGj+20MGvpn/e4FE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxL3hSvlNYaUAqr5glci6Sjt5RdguUcM1vPXgyW+M5QNv9LhAnu
-	2n80ejAyK/LIfH72wbjkNd8LsjQK/pa4g9mYU8Whq4/+7ocE4dNzUNoOazOF34s=
-X-Google-Smtp-Source: AGHT+IHWRZVOeFFozi3DIiPiL+943vH2vaAy8MMudke5kiB5y6RE2CXPLw9EOtOlNRxTNhpGiUSfiA==
-X-Received: by 2002:a05:600c:3b05:b0:42c:b750:19ce with SMTP id 5b1f17b1804b1-42f777b628fmr32913575e9.1.1727900174107;
-        Wed, 02 Oct 2024 13:16:14 -0700 (PDT)
+        bh=CkN9NRYd/noXKwaQRmVmIrVpTjpJo3NEqWIDvcUXohk=;
+        b=HSRK0ZfAzMtCdv18lVWtib5g26UKXBU4yBLfL26p0rjESFQpqAMK0LsQ5I+Xe3JU2t
+         8dB+cddwsK++jMsaoRo/gL5qO0eo4DWCk1cHygb3TM7GR3VthqjaozSSwl+NLDGK5nee
+         egd5P6Ue0qPaX2VhWp1mwM3vifJhG/d2XyCYn7NokOpZdT+vlIlqoHQaKlQAj+ykPaLG
+         pBcPPKxRdfMwHDOLpMCiopLsG7u3uhZhJTpQC6iUPV8VAUFc8myfoJFDo/5xTqbkWAKF
+         4SbbCrxp0SpCu9qw07imlQZkcDfev5iTJ1CFhAcnd7Z2N3ZC5JR/n4aQJG83mRHK07qM
+         EEUw==
+X-Forwarded-Encrypted: i=1; AJvYcCUpn0txlixXNK+9lkAw5qWo7B3sY5H+qg1TWwXLRlFuMYyxXhVdHFFevizEzvKolPQ/FqU+PRJtek4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz2KitlPxv03jomUp2Vj7T/JubG0f36q4U1UMZMChva1kGwUvqE
+	mXytsFZk3/6TWeqXkSWlc1Uul/hmPmUml4uR5s1lAyNf2zzkxhQ4vHP/rVjeXC8=
+X-Google-Smtp-Source: AGHT+IFwyFuXYth7A8vslCHMAnUaIkp4wEUm+Zkv+c4fkaTohWk+qBC9lfK+MVzuhuapcRpBsdVkkA==
+X-Received: by 2002:adf:eac9:0:b0:374:b6f3:728d with SMTP id ffacd0b85a97d-37cfba07ac2mr2755315f8f.46.1727900176783;
+        Wed, 02 Oct 2024 13:16:16 -0700 (PDT)
 Received: from gpeter-l.lan ([145.224.66.77])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37cd564d2e8sm14850600f8f.18.2024.10.02.13.16.12
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37cd564d2e8sm14850600f8f.18.2024.10.02.13.16.15
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 02 Oct 2024 13:16:13 -0700 (PDT)
+        Wed, 02 Oct 2024 13:16:16 -0700 (PDT)
 From: Peter Griffin <peter.griffin@linaro.org>
 To: vkoul@kernel.org,
 	kishon@kernel.org,
@@ -77,16 +77,16 @@ Cc: tudor.ambarus@linaro.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org,
 	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH 1/3] phy: Add UFS phy hibernate modes
-Date: Wed,  2 Oct 2024 21:15:53 +0100
-Message-ID: <20241002201555.3332138-2-peter.griffin@linaro.org>
+Subject: [PATCH 3/3] phy: samsung: gs101-ufs: Add hibern8 enter and exit specific tuning values
+Date: Wed,  2 Oct 2024 21:15:55 +0100
+Message-ID: <20241002201555.3332138-4-peter.griffin@linaro.org>
 X-Mailer: git-send-email 2.46.1.824.gd892dcdcdd-goog
 In-Reply-To: <20241002201555.3332138-1-peter.griffin@linaro.org>
 References: <20241002201555.3332138-1-peter.griffin@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241002_131616_187769_5656BEA1 
-X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-CacheID: sfid-20241002_131618_642220_7F87FAE7 
+X-CRM114-Status: UNSURE (   9.83  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,33 +104,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some UFS phys need to write hibernation specific values
-when entering and exiting hibernate state.
-
-Add two new UFS phy modes to the phy framework so that this
-is possible. One such platform that requires this is Pixel 6
-which uses the gs101 SoC.
+Add the gs101 specific phy calibration values that need to be programmed
+when entering and exiting hibern8 state.
 
 Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 ---
- include/linux/phy/phy.h | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/phy/samsung/phy-gs101-ufs.c | 31 ++++++++++++++++++++++++++---
+ 1 file changed, 28 insertions(+), 3 deletions(-)
 
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 03cd5bae92d3..1874e55e2bb9 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -42,7 +42,9 @@ enum phy_mode {
- 	PHY_MODE_MIPI_DPHY,
- 	PHY_MODE_SATA,
- 	PHY_MODE_LVDS,
--	PHY_MODE_DP
-+	PHY_MODE_DP,
-+	PHY_MODE_UFS_HIBERN8_ENTER,
-+	PHY_MODE_UFS_HIBERN8_EXIT,
+diff --git a/drivers/phy/samsung/phy-gs101-ufs.c b/drivers/phy/samsung/phy-gs101-ufs.c
+index 17b798da5b57..5363d8be6c76 100644
+--- a/drivers/phy/samsung/phy-gs101-ufs.c
++++ b/drivers/phy/samsung/phy-gs101-ufs.c
+@@ -108,10 +108,35 @@ static const struct samsung_ufs_phy_cfg tensor_gs101_post_pwr_hs_config[] = {
+ 	END_UFS_PHY_CFG,
  };
  
- enum phy_media {
++static const struct samsung_ufs_phy_cfg tensor_gs101_post_h8_enter[] = {
++	PHY_TRSV_REG_CFG_GS101(0x262, 0x08, PWR_MODE_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x265, 0x0A, PWR_MODE_ANY),
++	PHY_COMN_REG_CFG(0x1, 0x8,  PWR_MODE_ANY),
++	PHY_COMN_REG_CFG(0x0, 0x86,  PWR_MODE_ANY),
++	PHY_COMN_REG_CFG(0x8, 0x60,  PWR_MODE_HS_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x222, 0x08, PWR_MODE_HS_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x246, 0x01, PWR_MODE_HS_ANY),
++	END_UFS_PHY_CFG,
++};
++
++static const struct samsung_ufs_phy_cfg tensor_gs101_pre_h8_exit[] = {
++	PHY_COMN_REG_CFG(0x0, 0xC6,  PWR_MODE_ANY),
++	PHY_COMN_REG_CFG(0x1, 0x0C,  PWR_MODE_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x262, 0x00, PWR_MODE_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x265, 0x00, PWR_MODE_ANY),
++	PHY_COMN_REG_CFG(0x8, 0xE0,  PWR_MODE_HS_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x246, 0x03, PWR_MODE_HS_ANY),
++	PHY_TRSV_REG_CFG_GS101(0x222, 0x18, PWR_MODE_HS_ANY),
++	END_UFS_PHY_CFG,
++};
++
++
+ static const struct samsung_ufs_phy_cfg *tensor_gs101_ufs_phy_cfgs[CFG_TAG_MAX] = {
+-	[CFG_PRE_INIT]		= tensor_gs101_pre_init_cfg,
+-	[CFG_PRE_PWR_HS]	= tensor_gs101_pre_pwr_hs_config,
+-	[CFG_POST_PWR_HS]	= tensor_gs101_post_pwr_hs_config,
++	[CFG_PRE_INIT]			= tensor_gs101_pre_init_cfg,
++	[CFG_PRE_PWR_HS]		= tensor_gs101_pre_pwr_hs_config,
++	[CFG_POST_PWR_HS]		= tensor_gs101_post_pwr_hs_config,
++	[CFG_POST_HIBERN8_ENTER]	= tensor_gs101_post_h8_enter,
++	[CFG_PRE_HIBERN8_EXIT]		= tensor_gs101_pre_h8_exit,
+ };
+ 
+ static const char * const tensor_gs101_ufs_phy_clks[] = {
 -- 
 2.46.1.824.gd892dcdcdd-goog
 
