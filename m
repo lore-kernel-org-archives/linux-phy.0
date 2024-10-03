@@ -4,89 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7F2DCF31B9
-	for <linux-phy@archiver.kernel.org>; Wed,  2 Oct 2024 20:21:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E026CF34A3
+	for <linux-phy@archiver.kernel.org>; Thu,  3 Oct 2024 12:34:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jbGimrSlv6crqZgYYJAs8/hT/LUHQz+4uC82RN/ENMc=; b=ZDOlIMGhz5WKIx
-	fDOZY3ONVxKOFowYXf3M7nvQWWz18xtKI6YsVei+FOuTgRMAOK6dS8974CbuZmmozdPeFP1KpFse1
-	i7ZV0oXYUVpRETScnKyLafo6hiEBVHbnoqmd7psSkZplsSnNxQRfsDJlPxmoz5Qauabkdk1QXp0C+
-	mDFG6u2CBz+G/FoB+tgk/OvFSrFvCVhJagxwi7zR/1NyWZyvNrscNS9Fj0fIp5SS7oOBj9QzDeMxq
-	wx0hGIUha8oMtFQztwD3zu/vIgYl/vE0QAIgiTctWoqAa+3o/t19IKCxYGBdn5egpOFRgoZJ6yWqG
-	DXISOMrFdC/rdPuyZu8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8d0H6CwIk+phb9AX9QFOTTFrpdb2+U401W2Ce56krnE=; b=lJK00nRwUzPKER
+	m2LgR6YkSC+Ko6L+VZeIojx0mPENtYqGSc/mBDG56einfXgP5pf8X8/myjMAWgm/9gFghvdWqBWsk
+	A2Pm6LiuDibvr5KX3uk+1K/bWZ9AB5Bc919+wxA2RCjx3SAYhhi2rn5Qf1ndPNfiLmNu+bhCd41D2
+	XFueIoadlP5ZnG6TX3fW/LrCw4hNvNlkFjRdCZF7oEDRAVAFVQihI10YnW8kvg+cGHtSAuxPeLLUn
+	hpScSWH19CJ0VmkS3J7aqbbG7HHh7Mat+XCY+hesfHPm3y15TkP6ric1L5bEVeHCMFbC5nYQ+3Rj2
+	WYpV8cF9rAXJCnysgD+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sw5qX-00000007OPr-2Tb7;
-	Wed, 02 Oct 2024 20:21:17 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1swL2c-000000091ni-3rSj;
+	Thu, 03 Oct 2024 12:34:46 +0000
+Received: from rcdn-iport-9.cisco.com ([173.37.86.80])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sw5li-00000007NpA-2QSn
+	id 1swL2Y-000000091n6-3Gig
 	for linux-phy@lists.infradead.org;
-	Wed, 02 Oct 2024 20:16:20 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-42cba6cdf32so1345635e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 02 Oct 2024 13:16:18 -0700 (PDT)
+	Thu, 03 Oct 2024 12:34:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1727900177; x=1728504977; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=CkN9NRYd/noXKwaQRmVmIrVpTjpJo3NEqWIDvcUXohk=;
-        b=psrp5afpGznNGkBqoBWA0Lr/AGwZKPHnO6MOGY6LlOuqBQKXmyEqC2DU8Z19wdVlgc
-         lDhDqnSnXyMY5d+5XAxnctYQH9m5l9Z0aRwZYZQ/i/J11kIJZUv5HP/RnCWmU6/SPXCg
-         VXssnv5yURnMKvmeJmxmHWj9Z0F221vdROM+PGVwTEISsVMnW7wzO03TfhlW1zLqGlnS
-         hLfcIpn/R6dr71ZVKgxElZDF8svYX1qPCgIiCJJbDMrkilN+EZANuJRaMr37tMMh+TS/
-         IGsuPveSFEuqL/smI62MTBMzEEgpHOwLiC3kQKqjoaWD575H36OMymAKnC39uogfu+aD
-         2bBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727900177; x=1728504977;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=CkN9NRYd/noXKwaQRmVmIrVpTjpJo3NEqWIDvcUXohk=;
-        b=HSRK0ZfAzMtCdv18lVWtib5g26UKXBU4yBLfL26p0rjESFQpqAMK0LsQ5I+Xe3JU2t
-         8dB+cddwsK++jMsaoRo/gL5qO0eo4DWCk1cHygb3TM7GR3VthqjaozSSwl+NLDGK5nee
-         egd5P6Ue0qPaX2VhWp1mwM3vifJhG/d2XyCYn7NokOpZdT+vlIlqoHQaKlQAj+ykPaLG
-         pBcPPKxRdfMwHDOLpMCiopLsG7u3uhZhJTpQC6iUPV8VAUFc8myfoJFDo/5xTqbkWAKF
-         4SbbCrxp0SpCu9qw07imlQZkcDfev5iTJ1CFhAcnd7Z2N3ZC5JR/n4aQJG83mRHK07qM
-         EEUw==
-X-Forwarded-Encrypted: i=1; AJvYcCUpn0txlixXNK+9lkAw5qWo7B3sY5H+qg1TWwXLRlFuMYyxXhVdHFFevizEzvKolPQ/FqU+PRJtek4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz2KitlPxv03jomUp2Vj7T/JubG0f36q4U1UMZMChva1kGwUvqE
-	mXytsFZk3/6TWeqXkSWlc1Uul/hmPmUml4uR5s1lAyNf2zzkxhQ4vHP/rVjeXC8=
-X-Google-Smtp-Source: AGHT+IFwyFuXYth7A8vslCHMAnUaIkp4wEUm+Zkv+c4fkaTohWk+qBC9lfK+MVzuhuapcRpBsdVkkA==
-X-Received: by 2002:adf:eac9:0:b0:374:b6f3:728d with SMTP id ffacd0b85a97d-37cfba07ac2mr2755315f8f.46.1727900176783;
-        Wed, 02 Oct 2024 13:16:16 -0700 (PDT)
-Received: from gpeter-l.lan ([145.224.66.77])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37cd564d2e8sm14850600f8f.18.2024.10.02.13.16.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 02 Oct 2024 13:16:16 -0700 (PDT)
-From: Peter Griffin <peter.griffin@linaro.org>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	krzysztof.kozlowski@linaro.org,
-	alim.akhtar@samsung.com
-Cc: tudor.ambarus@linaro.org,
-	andre.draszik@linaro.org,
-	kernel-team@android.com,
-	willmcvicker@google.com,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH 3/3] phy: samsung: gs101-ufs: Add hibern8 enter and exit specific tuning values
-Date: Wed,  2 Oct 2024 21:15:55 +0100
-Message-ID: <20241002201555.3332138-4-peter.griffin@linaro.org>
-X-Mailer: git-send-email 2.46.1.824.gd892dcdcdd-goog
-In-Reply-To: <20241002201555.3332138-1-peter.griffin@linaro.org>
-References: <20241002201555.3332138-1-peter.griffin@linaro.org>
+  d=cisco.com; i=@cisco.com; l=4947; q=dns/txt; s=iport;
+  t=1727958882; x=1729168482;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=Zc/rAQF015YaK9o693t/zYK9OANf7ZhArgT03L7FmX4=;
+  b=a2VZUWR+64FFUQdmtOT3GBF1/2xlXlrzRqMsOWFmcoAN0RZ6+N1rxhOR
+   4ws8ku81/KSAbGu6JGTA++xpgQt2Ilp7fmViQPIbzJySADDCmF0kAkcNN
+   YlrA21OOC5ekQsCFdUda3sXMw2cppc+jDmxJH86FMwfi49romoqefS4wy
+   0=;
+X-CSE-ConnectionGUID: AavTDHKjSKucg6DmFrYtzA==
+X-CSE-MsgGUID: WGSFNnRjTQeja32XygjPXA==
+X-IronPort-AV: E=Sophos;i="6.11,174,1725321600"; 
+   d="scan'208";a="268654812"
+Received: from rcdn-core-1.cisco.com ([173.37.93.152])
+  by rcdn-iport-9.cisco.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Oct 2024 12:34:35 +0000
+Received: from sjc-ads-7158.cisco.com (sjc-ads-7158.cisco.com [10.30.217.233])
+	by rcdn-core-1.cisco.com (8.15.2/8.15.2) with ESMTPS id 493CYZkw013187
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Thu, 3 Oct 2024 12:34:35 GMT
+Received: by sjc-ads-7158.cisco.com (Postfix, from userid 1776881)
+	id ED1BBCC1280; Thu,  3 Oct 2024 05:34:34 -0700 (PDT)
+From: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+        Bartosz Wawrzyniak <bwawrzyn@cisco.com>,
+        Aswath Govindraju <a-govindraju@ti.com>,
+        Swapnil Jakhade <sjakhade@cadence.com>, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+Cc: xe-linux-external@cisco.com, Daniel Walker <danielwa@cisco.com>,
+        Bartosz Stania <sbartosz@cisco.com>
+Subject: [PATCH] phy: cadence: Sierra: Fix offset of DEQ open eye algorithm control register
+Date: Thu,  3 Oct 2024 12:34:02 +0000
+Message-Id: <20241003123405.1101157-1-bwawrzyn@cisco.com>
+X-Mailer: git-send-email 2.28.0
 MIME-Version: 1.0
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-Outbound-SMTP-Client: 10.30.217.233, sjc-ads-7158.cisco.com
+X-Outbound-Node: rcdn-core-1.cisco.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241002_131618_642220_7F87FAE7 
-X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-CacheID: sfid-20241003_053443_375683_6751645C 
+X-CRM114-Status: UNSURE (   9.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,59 +87,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the gs101 specific phy calibration values that need to be programmed
-when entering and exiting hibern8 state.
+Fix the value of SIERRA_DEQ_OPENEYE_CTRL_PREG and add a definition for
+SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG. This fixes the SGMII single link
+register configuration.
 
-Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
+Fixes: 7a5ad9b4b98c ("phy: cadence: Sierra: Update single link PCIe register configuration")
+
+Signed-off-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
 ---
- drivers/phy/samsung/phy-gs101-ufs.c | 31 ++++++++++++++++++++++++++---
- 1 file changed, 28 insertions(+), 3 deletions(-)
+ drivers/phy/cadence/phy-cadence-sierra.c | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/phy/samsung/phy-gs101-ufs.c b/drivers/phy/samsung/phy-gs101-ufs.c
-index 17b798da5b57..5363d8be6c76 100644
---- a/drivers/phy/samsung/phy-gs101-ufs.c
-+++ b/drivers/phy/samsung/phy-gs101-ufs.c
-@@ -108,10 +108,35 @@ static const struct samsung_ufs_phy_cfg tensor_gs101_post_pwr_hs_config[] = {
- 	END_UFS_PHY_CFG,
- };
- 
-+static const struct samsung_ufs_phy_cfg tensor_gs101_post_h8_enter[] = {
-+	PHY_TRSV_REG_CFG_GS101(0x262, 0x08, PWR_MODE_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x265, 0x0A, PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x1, 0x8,  PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x0, 0x86,  PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x8, 0x60,  PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x222, 0x08, PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x246, 0x01, PWR_MODE_HS_ANY),
-+	END_UFS_PHY_CFG,
-+};
-+
-+static const struct samsung_ufs_phy_cfg tensor_gs101_pre_h8_exit[] = {
-+	PHY_COMN_REG_CFG(0x0, 0xC6,  PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x1, 0x0C,  PWR_MODE_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x262, 0x00, PWR_MODE_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x265, 0x00, PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x8, 0xE0,  PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x246, 0x03, PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x222, 0x18, PWR_MODE_HS_ANY),
-+	END_UFS_PHY_CFG,
-+};
-+
-+
- static const struct samsung_ufs_phy_cfg *tensor_gs101_ufs_phy_cfgs[CFG_TAG_MAX] = {
--	[CFG_PRE_INIT]		= tensor_gs101_pre_init_cfg,
--	[CFG_PRE_PWR_HS]	= tensor_gs101_pre_pwr_hs_config,
--	[CFG_POST_PWR_HS]	= tensor_gs101_post_pwr_hs_config,
-+	[CFG_PRE_INIT]			= tensor_gs101_pre_init_cfg,
-+	[CFG_PRE_PWR_HS]		= tensor_gs101_pre_pwr_hs_config,
-+	[CFG_POST_PWR_HS]		= tensor_gs101_post_pwr_hs_config,
-+	[CFG_POST_HIBERN8_ENTER]	= tensor_gs101_post_h8_enter,
-+	[CFG_PRE_HIBERN8_EXIT]		= tensor_gs101_pre_h8_exit,
- };
- 
- static const char * const tensor_gs101_ufs_phy_clks[] = {
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index aeec6eb6be23..dfc4f55d112e 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -174,8 +174,9 @@
+ #define SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG		0x150
+ #define SIERRA_DEQ_TAU_CTRL2_PREG			0x151
+ #define SIERRA_DEQ_TAU_CTRL3_PREG			0x152
+-#define SIERRA_DEQ_OPENEYE_CTRL_PREG			0x158
++#define SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG		0x158
+ #define SIERRA_DEQ_CONCUR_EPIOFFSET_MODE_PREG		0x159
++#define SIERRA_DEQ_OPENEYE_CTRL_PREG			0x15C
+ #define SIERRA_DEQ_PICTRL_PREG				0x161
+ #define SIERRA_CPICAL_TMRVAL_MODE1_PREG			0x170
+ #define SIERRA_CPICAL_TMRVAL_MODE0_PREG			0x171
+@@ -1733,7 +1734,7 @@ static const struct cdns_reg_pairs ml_pcie_100_no_ssc_ln_regs[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -1797,7 +1798,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_no_ssc_ln_regs[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -1874,7 +1875,7 @@ static const struct cdns_reg_pairs ml_pcie_100_int_ssc_ln_regs[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -1941,7 +1942,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_int_ssc_ln_regs[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -2012,7 +2013,7 @@ static const struct cdns_reg_pairs ml_pcie_100_ext_ssc_ln_regs[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -2079,7 +2080,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_ext_ssc_ln_regs[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -2140,7 +2141,7 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_no_ssc[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -2215,7 +2216,7 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_int_ssc[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
+@@ -2284,7 +2285,7 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_ext_ssc[] = {
+ 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
+ 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
+ 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
+-	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
++	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
+ 	{0x002B, SIERRA_CPI_TRIM_PREG},
+ 	{0x0003, SIERRA_EPI_CTRL_PREG},
+ 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
 -- 
-2.46.1.824.gd892dcdcdd-goog
+2.28.0
 
 
 -- 
