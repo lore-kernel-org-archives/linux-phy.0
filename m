@@ -4,93 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 054E3CF885E
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 21:02:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39C50CF884F
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 23:34:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=245AkTMe9F4qcB/PQFQKHsp+Y+i/qhtP7yNj2xJg/68=; b=bky2dvP80AJXCi
-	wPEtM5sDirqv/qyjnDm3AiwQa5vaLWdQRNA047BVIR5TrkSMv82BnxtjPbpdg5EdC7kVKxclbhC8T
-	y1bOfg7zEoyKNvq16YJEq+dSO5HuNEhTe25paMpA4rmjdsrJ1V4qYXP/GQbO5qYaGcEIFFEccQrfH
-	mR6kMaxivO6gwcThlJalrpRLaeCte3juEHtszToQTCRlWQMBe9CkhQIjMZ2x48JDQvytuYxECQMWn
-	FipuNwHzUN9TQx1g2GG3P2I8LlzhG0f/Qzwgpd5/W8yYWY6Ei6x+VVMgy0vDI+JsBzsYOQicxSasW
-	leqbSTGsUVAopk838uoA==;
+	List-Owner; bh=AJzGTKolgWJKKwV0z791DFUh/pqc4FOJM+vwbU0MKN4=; b=3SDY7Qv0x9PUrZ
+	ORicySAEoak0dH+qEQSyRuv12yu/P5I+c//Vfi6FhEuhAUb4GWzAV5SW9YEnAajw5nKlETDZefEZR
+	ftPSRIOR7c1uw6gA4lcKHAusntMoPCDueuoi9ZQ81XKqF7ode+LxNnBFzpyXvajsF2OH0t1ljfxpt
+	tN2W4f1A8F8YICk+hYLdhcA70l15g+k8eu9IVv1G9MdEYjK7hqoacIuRZ7QmTvTLNWHG7oWG8FaNl
+	2VmNGTi1d6voZEmT+UmTf3qYvcmcgskrgsqcMiEZVooNHV7ICfNVNjZUOkNCD5R1pxTRhGzqCHPCJ
+	ZA6vNZoWUa6fip2RK/vA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swpR9-0000000EE9A-2qmY;
-	Fri, 04 Oct 2024 21:02:07 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1swroI-0000000ERzz-1ROu;
+	Fri, 04 Oct 2024 23:34:10 +0000
+Received: from mail-qv1-xf31.google.com ([2607:f8b0:4864:20::f31])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swoQq-0000000E13q-0Uq3
-	for linux-phy@bombadil.infradead.org;
-	Fri, 04 Oct 2024 19:57:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=ENOGBk8X+eUq87I8HTpA/2gVrXQahUsEx8TMjQAwQoo=; b=gkB9GErwabfj6cG6WLWIR0BS1c
-	nrrBFBPqKQRXXzY0Z8AqNMFVS0O3ps92IJUyJkbSdK3CfVA7seX9GURQ7zAiEoDb+CiJFRxPjUgIf
-	JE9yfSbvgveZhYGL+TJi2YRLxxwsyDNy4DOpKigbzpR+KUA08KkUyFTkOF8uFiA7tuVPbB5AO22nY
-	iiy0J2r7GbljWpnYHSUJ4DMccGMW23zME+xGiYYNZO9TnXEkmguASPraVhVJxfTPQATzQjz6Ucfs/
-	sQT0Pa9HRLg2CZUHfIfIOYEIlxevLE/qLAchMZxwiTmZuHq5rveMdH0miAXZ/YPpRaDblwPmpCSiD
-	aVn36JZw==;
-Received: from mout.gmx.net ([212.227.17.22])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swoQl-00000003vw2-2g3W
+	id 1swroF-0000000ERzJ-27cb
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Oct 2024 19:57:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
-	s=s31663417; t=1728071836; x=1728676636;
-	i=markus.stockhausen@gmx.de;
-	bh=ENOGBk8X+eUq87I8HTpA/2gVrXQahUsEx8TMjQAwQoo=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
-	 References:MIME-Version:Content-Transfer-Encoding:cc:
-	 content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=t3C42UF2pkBWiq8MqF+839GSWwey6QYOVwvp7djQB63Ems76n9aqcWk0kzKh0YC+
-	 JCklHxBO7KH8qj83lb+BfMcs8Rzsdc1WrkUFAl2Y+FyaaxtctZdkXOLNwLbFu0oMh
-	 aN+uFNLMtLNuPjCfwN1k6vCzb3VgEMlAbAQxxJs4hhkofzM77iCFrywtBaa3Mp5OR
-	 KJskAS1oaCu47tMfCMmqDuB6rrTGwqpZCXxgcsWCW4zXaT3uhUWGCm0kxnnvVro6v
-	 9scE/paWPVtpv1DXEpqSqPy9p9iqQcwZBwUuxMnSQsEsHwrA1M0v01dVykh833Vrj
-	 wY0xcFmiBBe5wlB6SA==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from openwrt ([94.31.70.81]) by mail.gmx.net (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MxlzC-1tvwSA1Ppe-00uVLu; Fri, 04
- Oct 2024 21:57:16 +0200
-From: Markus Stockhausen <markus.stockhausen@gmx.de>
-To: linux-phy@lists.infradead.org,
-	chris.packham@alliedtelesis.co.nz
-Cc: Markus Stockhausen <markus.stockhausen@gmx.de>
-Subject: [PATCH 4/4] phy: Realtek Otto Serdes: add devicetree documentation
-Date: Fri,  4 Oct 2024 15:56:10 -0400
-Message-ID: <20241004195712.1891488-5-markus.stockhausen@gmx.de>
-X-Mailer: git-send-email 2.46.2
-In-Reply-To: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
-References: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
+	Fri, 04 Oct 2024 23:34:09 +0000
+Received: by mail-qv1-xf31.google.com with SMTP id 6a1803df08f44-6cb3d2ce75eso32978786d6.0
+        for <linux-phy@lists.infradead.org>; Fri, 04 Oct 2024 16:34:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1728084844; x=1728689644; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=aEr1bgGbdIhTRvJq6QQK1LSQE3Bvhn7MMNbTSr1CmZY=;
+        b=dXkV0Ha+M0KwLkZx40l2/UFD56TpF1aIMo+2isflfX5zrFayl/C/UiEJcZpHSbHrlI
+         uKWbaDA/EE9Ij0eAp8E1t3wQZOqnm2g3739b+xgInvSmRgqEO1t2yXyFgnPdbvL/H+cA
+         MjGqffhkCBgPSMhnb0jPOIH8isATF7Wmf4jZI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728084844; x=1728689644;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=aEr1bgGbdIhTRvJq6QQK1LSQE3Bvhn7MMNbTSr1CmZY=;
+        b=t0uEbzeMTxDkp+T94AMMjntlpZaB0ApZUbD8LKg7iuEF0MjwqVlQDRHDfxXSqeiiVI
+         vJ+1ojh1xQTVf46EbpxKBTh/WezLDu49CuSB2q+LyeKzQb/1gWZdoyDbsZtKdIDpuKsh
+         2tOaUDafI/kobiCaNi/8SzLgS0MKHfed/tn609GW2TiBQq/bXlCNfHx85+TUaCTIthNO
+         3hvQv6FrmcWvsWq71K+K19LyqMcOFxdBy3LpnbMKp+QmGbkvaTgtPXn3DofajJEVkwo4
+         DQ51/8fr9Lt0dE2uX52K2zjz0pPgYnsyinUHHqBoABKOvpVOKfpHe+e28gkEo30ZDS5H
+         RLVA==
+X-Forwarded-Encrypted: i=1; AJvYcCUizKydJDsbxBXSOm8fwEM3MHQnb9TLbCmYPanR5tPO13/iQz7yHkSbEY4dCzYLBYZsaSWb3OIivZo=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx4ljXcD2lJ4WsPZaU7nxyGSy3goMLOK287/cXoQqoce3WEOFZW
+	0TxzGWxAPTUVg0rWvMj2sB8l7RPbiJQIFZdSA5r1rzvMSDiBeKt0dqF/HW5mjL2THzVVV1dWl3B
+	2rGy9
+X-Google-Smtp-Source: AGHT+IGaquXlqirj+VXnsOr24B/0vE++hyztwT2o9zz/fzDRgzv3htgmjpxsPMvdfi3sF6F9ZqPKVQ==
+X-Received: by 2002:a05:6214:226a:b0:6cb:55e4:54d5 with SMTP id 6a1803df08f44-6cb9011ee5dmr153370606d6.10.1728084844502;
+        Fri, 04 Oct 2024 16:34:04 -0700 (PDT)
+Received: from [10.69.74.64] ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6cba4751032sm3438976d6.84.2024.10.04.16.34.02
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 04 Oct 2024 16:34:04 -0700 (PDT)
+Message-ID: <539c5456-b807-4bb5-b5cd-28eb1c22132a@broadcom.com>
+Date: Fri, 4 Oct 2024 16:34:02 -0700
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:V2yymqao580B3jJBfAD/X1WvigV+RxDv5yKAkgCQp5oVrhMPTVR
- AVCxGja98BQ5IqwJAjtjMgTyVDqmzYyMQsmDg43rXz5zHwCv1vxgX1BI3tfxLFN3dP28nrp
- y0l4pk9Ad7fizquGL3IoZsSrpcNKwc5iwum8hzwkxlor09AaqlTCWQrl39O07qvuA5fWgy7
- nlraGflh7zmXTUfsvkmTA==
-UI-OutboundReport: notjunk:1;M01:P0:mX9Uk5DTFEc=;6dD3jlZfjP5b+ykIloq5HRCfUk6
- 5iAdF6VWj941oChM0FLTwMDHLhKzL/PkECP+raaT2JDLJ6tmidB8xq/u9HsvTICqoHRrBLUzh
- H/Ej9dSwaK+qVjXiBEtmn+wZOiBFj9UjDxpgwxptXZoLg1G46tpqSfwM7ICxuS7Byu5jmrzF4
- 0lyPPxHIEg2Lr9SpuzBdMBjnnOcZyu1IAa62bcgRlhIh9BLo4rimKhpSzdZunPZchRgeOgDyU
- BBZWE3n3PpKSv3nU7OQCOcwjx+Hz5eKRYgQD4Cn4bUReBWx6z4EcAR8UtFWslVQiHwlPw0x1A
- wzCTRD6VQbsQ90P9LjguDPsTn1FBLIDV0V1RjwrxMFK0eyCkIssnxeTfSLV3oxcK8c/Qq+Fn7
- xzqkmQHVPzTDyhNEh/fsphsfpiMCGawkuqzKYaA0tM96utDVybpg4C76YAvYieWumBAOoVZlo
- 9u1J9CBRvejGy6eVnohDuMCwNX19upUkfWwC6MZ+3C+Xmn+jVNBvG6m28ts46QCwf9wc1bbYz
- zlpUwXMsSusCuHBoghrdavj0Ni958HVBZhoBNkb+3jJMqYlmFSoCzbUQTsQ8VVMRi4zaGDiBg
- FVx1PWWR7kgqLRunBHaP7DKKW6m08a6xZPzpFdcIFovjdIW2CAp/IIyUP4nEmvRCojjxi9pyl
- Q3cGYPzKHqsTh1e/423QVWg8WPfwIRWPr+oJ50tb+D1mjuc473DSl4MGpLthbs4r0oa+x3ZxL
- y4Nx3JaKCpOqSGTvURYGGJUFqfKSqpxCddplnGxgLGDlG4FmphIj5PSwjFSuj1LNwOmWdD0U7
- LiHuYQbWhmX443VZ6CRamLcA==
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/2] phy: usb: Fix missing elements in BCM4908 USB init
+ array
+To: Sam Edwards <cfsworks@gmail.com>, Al Cooper <alcooperx@gmail.com>
+Cc: Broadcom internal kernel review list
+ <bcm-kernel-feedback-list@broadcom.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Florian Fainelli <florian.fainelli@broadcom.com>,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+References: <20241004034131.1363813-1-CFSworks@gmail.com>
+ <20241004034131.1363813-2-CFSworks@gmail.com>
+Content-Language: en-US
+From: Justin Chen <justin.chen@broadcom.com>
+In-Reply-To: <20241004034131.1363813-2-CFSworks@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_205740_134097_C6F59B55 
-X-CRM114-Status: GOOD (  17.51  )
+X-CRM114-CacheID: sfid-20241004_163407_788162_0618A0DC 
+X-CRM114-Status: GOOD (  15.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,193 +92,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-To help others to integrate the driver provide the devicetree documentation.
----
- .../bindings/phy/realtek,otto-serdes.yaml     | 167 ++++++++++++++++++
- 1 file changed, 167 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml b/Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml
-new file mode 100644
-index 000000000000..b6dad1089c6f
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml
-@@ -0,0 +1,167 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/realtek,otto-serdes.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Realtek Otto SerDes controller
-+
-+maintainers:
-+  - Markus Stockhausen <markus.stockhausen@gmx.de>
-+
-+description: |
-+  The MIPS based Realtek Switch SoCs of the Realtek RTL838x, RTL839x, RTL930x and
-+  RTL931x series have multiple SerDes built in. They are linked to different single,
-+  quad or octa PHYs like the RTL8218B, RTL8218D or RTL8214FC and are the integral
-+  part of the up-to-52-port switch architecture.
-+  Although these SerDes controllers have common basics they behave differently on
-+  the SoC families and rely on heavy register magic. To keep the driver clean it can
-+  load patch sequences from devictree and execute them during the controller actions
-+  like phy_init(), ...
-+  The driver exposes the SerDes registers different from the hardware but instead
-+  gives a consistent view and programming interface. So the RTL838x series has 6 ports
-+  and 4 pages, the RTL839x has 14 ports and 12 pages, the RTL930x has 12 ports and
-+  64 pages and the RTL931x has 14 ports and 192 pages.
-+
-+properties:
-+  $nodename:
-+    pattern: "^serdes@[0-9a-f]+$"
-+
-+  compatible:
-+    items:
-+      - enum:
-+          - realtek,rtl8380-serdes
-+          - realtek,rtl8390-serdes
-+          - realtek,rtl9300-serdes
-+          - realtek,rtl9310-serdes
-+
-+  reg:
-+    items:
-+      - description: |
-+        The primary serdes register memory location. Other SerDes control and
-+        management registers are distributed all over the I/O memory space and
-+        identified by the driver automatically.
-+
-+  controlled-ports:
-+    description: |
-+      A bit mask defining the ports that are actively controlled by the driver. In
-+      case a bit is not set the driver will only process read operations on the
-+      SerDes. If not set the driver will run all ports in read only mode.
-+
-+  "#phy-cells":
-+    const: 4
-+    description: |
-+      The first number defines the SerDes to use. The second number a linked
-+      SerDes. E.g. if a octa 1G PHY is attached to two QSGMII SerDes. The third
-+      number is the first switch port this SerDes is working for, the fourth number
-+      is the last switch port the SerDes is working for.
-+
-+  cmd-setup:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers during driver setup.
-+
-+  cmd-init:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_init().
-+
-+  cmd-power-on:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_power_on().
-+
-+  cmd-pre-set-mode:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_set_mode() and before the driver
-+      actually sets the mode.
-+
-+  cmd-post-set-mode:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_set_mode() and after the driver
-+      has set the mode.
-+
-+  cmd-pre-reset:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_reset() and before the driver
-+      actually resets the SerDes.
-+
-+  cmd-post-reset:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_reset() and after the driver
-+      has reset the SerDes.
-+
-+  cmd-pre-power-off:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_power_off() and before the
-+      driver actually powers off the SerDes.
-+
-+  cmd-post-power-off:
-+    description: |
-+      A field of 16 bit values that contain a patch/command sequence to run on the
-+      SerDes registers when a controller calls phy_power_off() and after the driver
-+      has powered off the SerDes.
-+
-+reguired:
-+  - compatible
-+  - reg
-+  - port-count
-+  - page-count
-+  - "#phy-cells"
-+
-+additionalProperties:
-+  false
-+
-+examples:
-+  - |
-+    serdes: serdes@1b00e780 {
-+      compatible = "realtek,rtl8380-serdes", "realtek,otto-serdes";
-+      reg = <0x1b00e780 0x1200>;
-+      controlled-ports = <0x003f>;
-+      #phy-cells = <2>;
-+    };
-+  - |
-+    serdes: serdes@1b00a000 {
-+      compatible = "realtek,rtl8390-serdes", "realtek,otto-serdes";
-+      reg = <0x1b00a000 0x1c00>;
-+      controlled-ports = <0x3fff>;
-+      #phy-cells = <2>;
-+    };
-+  - |
-+    serdes: serdes@1b0003b0 {
-+      compatible = "realtek,rtl9300-serdes", "realtek,otto-serdes";
-+      reg = <0x1b0003b0 0x8>;
-+      controlled-ports = <0x0fff>;
-+      #phy-cells = <2>;
-+    };
-+  - |
-+    serdes: serdes@1b005638 {
-+      compatible = "realtek,rtl9310-serdes", "realtek,otto-serdes";
-+      reg = <0x1b005638 0x8>;
-+      controlled-ports = <0x3fff>;
-+      #phy-cells = <2>;
-+    };
-+  - |
-+    #define _MASK_ 1
-+    #define _WAIT_ 2
-+    serdes: serdes@1b00a000 {
-+      compatible = "realtek,rtl8390-serdes", "realtek,otto-serdes";
-+      reg = <0x1b00a000 0x1c00>;
-+      controlled-ports = <0x3fff>;
-+      #phy-cells = <2>;
-+      cmd-setup = /bits/ 16 <
-+        /*
-+         * set clock edge bit 14 during driver setup for ports 10-11 on page 0,
-+         * register 7. Wait 128 ms. Afterwards set whole register 0 on page 10
-+         * of ports 8, 9, 12, 13 to 0x5800.
-+         */
-+        _MASK_ 0x0c00 0x00 0x07 0x4000 0x4000
-+        _WAIT_ 0x0c00 0x00 0x00 0x0080 0x0000
-+        _MASK_ 0x3300 0x0a 0x00 0x5800 0xffff
-+      >;
-+    };
-\ No newline at end of file
---
-2.44.0
+
+On 10/3/24 8:41 PM, Sam Edwards wrote:
+> The Broadcom USB PHY driver contains a lookup table
+> (`reg_bits_map_tables`) to resolve register bitmaps unique to certain
+> versions of the USB PHY as found in various Broadcom chip families. A
+> recent commit (see 'fixes' tag) introduced two new elements to each chip
+> family in this table -- except for one: BCM4908. This resulted in the
+> xHCI controller not being initialized correctly, causing a panic on
+> boot.
+> 
+> The next patch will update this table to use designated initializers in
+> order to prevent this from happening again. For now, just add back the
+> missing array elements to resolve the regression.
+> 
+> Fixes: 4536fe9640b6 ("phy: usb: suppress OC condition for 7439b2")
+> Signed-off-by: Sam Edwards <CFSworks@gmail.com>
+
+Woops! Sorry I broke it.
+
+Reviewed-by: Justin Chen <justin.chen@broadcom.com>
+
+> ---
+>   drivers/phy/broadcom/phy-brcm-usb-init.c | 2 ++
+>   1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.c b/drivers/phy/broadcom/phy-brcm-usb-init.c
+> index 39536b6d96a9..5ebb3a616115 100644
+> --- a/drivers/phy/broadcom/phy-brcm-usb-init.c
+> +++ b/drivers/phy/broadcom/phy-brcm-usb-init.c
+> @@ -220,6 +220,8 @@ usb_reg_bits_map_table[BRCM_FAMILY_COUNT][USB_CTRL_SELECTOR_COUNT] = {
+>   		0, /* USB_CTRL_SETUP_SCB2_EN_MASK */
+>   		0, /* USB_CTRL_SETUP_SS_EHCI64BIT_EN_MASK */
+>   		0, /* USB_CTRL_SETUP_STRAP_IPP_SEL_MASK */
+> +		0, /* USB_CTRL_SETUP_OC3_DISABLE_PORT0_MASK */
+> +		0, /* USB_CTRL_SETUP_OC3_DISABLE_PORT1_MASK */
+>   		0, /* USB_CTRL_SETUP_OC3_DISABLE_MASK */
+>   		0, /* USB_CTRL_PLL_CTL_PLL_IDDQ_PWRDN_MASK */
+>   		0, /* USB_CTRL_USB_PM_BDC_SOFT_RESETB_MASK */
 
 
 -- 
