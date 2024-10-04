@@ -4,91 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60F0FCF8857
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9201DCF885D
 	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 21:02:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A5dYZyqFBnFu/H+je0bWPHcK+zD2EcqWk2D8ao8far8=; b=XnztHAK5cFcE6g
-	zAutvECY1EiPVw9CiwWkJ0UErvn1NuwiSV9Z/rYESha+uBuq1id5pUOBlh176Dy2t7ehjR2RpEwUm
-	C1gn1sQU8f4DT5VMDHfg81bG7CWtgnlLUaOavqbZpMOIJizpzwTQM70TVwKCkv3JyqRWN/uhsgPe0
-	ubz5nnKGpuojbQ3iINPhAD6Y9JbwsAPkAbUZYCqL10U7DH6t4+pWtYi0DTxTmHUpTYzqgom8dvd/e
-	9WoDoRlBEnb37Rhx+9mr5LyeEyDwg5rhccb4eiow1SHVNAFb2nliOQUbmLHGvS7E3jmgopYoF2GgA
-	mu1veeUpUxsg4Tz/7NQQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sucb3svdgaARBZBADtPtrhNjtGkNNKSpuAtzrHLLxgM=; b=El8g/SoFntBjIF
+	kd6NF16hKNPoMwtXAwhFRW5vHWf9Qpr1BK0pn/2bvgWQNRiw87+uQysMFYJn6b559XQjgOx6nv9vH
+	tEEVVT8jgk4kURZ2/ZHE539USW5mH8hoIBmgvrzZofcseS9inIzfXv3cFMaKj5IeOkjl1OaQj85TS
+	UPI9eww/0roIFWsESonXzcMomGx+PYPwztC6wQ5qzoY0NLRYH0j+Rh7yKwCYmYfBWK77Wv4hNrenI
+	xVkOapROOuqQYRnBokIe2bWyBO3sIbY5cew52EeyL0YAIoQF6TZT/dp/RJz+43vM6IWeKm68BuIRl
+	V0oQCG39xnHqcZ84HCxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swpR8-0000000EE8C-3tHm;
-	Fri, 04 Oct 2024 21:02:06 +0000
+	id 1swpR9-0000000EE8b-11a1;
+	Fri, 04 Oct 2024 21:02:07 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swoQp-0000000E13m-3f9s
+	id 1swoQp-0000000E13n-3fA0
 	for linux-phy@bombadil.infradead.org;
-	Fri, 04 Oct 2024 19:57:43 +0000
+	Fri, 04 Oct 2024 19:57:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=DlYeLSZ3m5Yzgp8AOoB3GbiMUe8xwG+/NWrSdhuYPpo=; b=KvK2F87pU9CTfrbRyASu6G9gZ6
-	0vd0zx61fSMl3+ZlZk1832WQEWlG8EKz6XTExwmFia4zP0/Gon370esv5IAKW15KnJ5tE/cKNfKL1
-	/U1Cf0Phav0x1Ov8F0BtJzUxZRJG6jL8nL7OOAKpssJUCVmmL5MP/wNUthfQFKHyQ4bP/lQWFeeLd
-	SKwmI8ggVThKPWIColH7FCaMa5ckV+p4Xn1wTpHZ/bwpjAHm8rGmZ1///r1RJX6Rh93Dc2ZCvtRA8
-	jZETyn9rhOrSwyg6K+kKQmk9GSqjlMW+aNEOem32ZBZhdsR9SjR87CNUNnMRORZLhGHWQB15R3/N3
-	OLozHBFQ==;
-Received: from mout.gmx.net ([212.227.17.21])
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=RBix+wqd4rPTZ9hwcpM5atQMEjXDAmOeIkKruBi46lc=; b=EKJAXJVALTjyZwfYvoJrNOi7KY
+	12OAZc7vaWX54ckyJJA/Qgy9vtNsv0ZqC2j2GjEpYQTMgetn+QNdGqsyM3qi7+YCm1HKt1M/X1o2r
+	iy9ZTXzLzdWumhvxIxphWbk2vP60k9MKI9W600OGZVZzlw9+iqCJW2BaiX8d6I448+2II7DS0UXVp
+	1dNfoaorasBp66bydmF9NCYB6PQkbnyye7fw9fKCiEzCvnArs1fAMbg14iQNeIlJIWFhHU7/bOAdr
+	vOixLJPEL8hYYn3emAdH0d5Xl/5fpWmfjOx2aER7eE8WeghfMrhG/1dQRwbOqNN/Ll3So/u5yZFo0
+	/wFt8OGg==;
+Received: from mout.gmx.net ([212.227.17.22])
 	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swoQi-00000003vvy-3mWi
+	id 1swoQl-00000003vw3-2gKl
 	for linux-phy@lists.infradead.org;
 	Fri, 04 Oct 2024 19:57:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
-	s=s31663417; t=1728071835; x=1728676635;
+	s=s31663417; t=1728071836; x=1728676636;
 	i=markus.stockhausen@gmx.de;
-	bh=DlYeLSZ3m5Yzgp8AOoB3GbiMUe8xwG+/NWrSdhuYPpo=;
-	h=X-UI-Sender-Class:From:To:Subject:Date:Message-ID:MIME-Version:
-	 Content-Transfer-Encoding:cc:content-transfer-encoding:
-	 content-type:date:from:message-id:mime-version:reply-to:subject:
-	 to;
-	b=VVrTSi3ZBt+Tqk0v8cRtuYpLTDYagxJynlA/XXjUaJFwNAsRrH1qBMLMSlpVjsSe
-	 7Vx4dhdhh9tj6kt/Xk9wzbJQIPyipiXRpWBbjDO39uaVli9Da8n6rmWZ5k/x8vCj1
-	 pJaJy+K6+JlLwK1svD6E8iOBlNPJ91AoGfg9dUHLOKWHG3jZu5djUaoeBtSvUasJO
-	 FFeZ8EM7J90eaPafmqXF/vnWUdG1ULPVbXGF/i5sPrl29CdGU0PUOZzai9InJ124v
-	 FVbchrEhs7SshIJZshWkgcBvbV9Or9LfdPgf/LG/ERI5qbqAoxxsPKGhyQL0ZJdSf
-	 J95bbXzKiLACMbYCoQ==
+	bh=RBix+wqd4rPTZ9hwcpM5atQMEjXDAmOeIkKruBi46lc=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
+	 References:MIME-Version:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=hbHoRiqypa8+2G1Tw3M0KdvmmGx0qaNWfV43sH9SKBe1mZElpnwy9REocsfhUQLo
+	 CwQWQivQnpSO8IukGwB/YlIxObgRUy/gA2PFs9JxInDcZUv2Dy1gMKrzm1DxHXAXM
+	 EDAeq//pNDYWo8XHNuTgMlg841hjQWk/S6TBAHek7uLSm5Ae/FMsLoa+BEiC5TFIY
+	 iSZHP7CWqF9IVMYPIep9DY7fvFJzFCKnsY+Y3pq4MAjg0vivvXNbPnigCWl7V0qRN
+	 JyC7cA3Kyv0/7GYkbEqmjiJxgBETbttU+nwwzc/4mNYHZhHy+TPK0ubvknn2xPUWX
+	 HqlOJ84z2pq6BNirEQ==
 X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
 Received: from openwrt ([94.31.70.81]) by mail.gmx.net (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MKKYx-1tISyS2y5v-00PYFv; Fri, 04
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MdefJ-1tWQI63XCj-00eBQT; Fri, 04
  Oct 2024 21:57:15 +0200
 From: Markus Stockhausen <markus.stockhausen@gmx.de>
 To: linux-phy@lists.infradead.org,
 	chris.packham@alliedtelesis.co.nz
-Subject: [PATCH 0/4] phy: Realtek Otto SerDes: add new driver
-Date: Fri,  4 Oct 2024 15:56:06 -0400
-Message-ID: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
+Cc: Markus Stockhausen <markus.stockhausen@gmx.de>
+Subject: [PATCH 1/4] phy: Realtek Otto SerDes: add header file
+Date: Fri,  4 Oct 2024 15:56:07 -0400
+Message-ID: <20241004195712.1891488-2-markus.stockhausen@gmx.de>
 X-Mailer: git-send-email 2.46.2
+In-Reply-To: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
+References: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:q5wVcW8qrY308x+S5AGXxC92Sqe7mW18UsHY/m5rflnu4+sNWRA
- e+366ztW6f3Aq0mDv+QbCr+7xTx9i/nVsb9z5Y1lYEkKZ5YjlhoYBEB/D89btvWndnmFRLS
- B9robGeTi0eD9RoOz3LygxZFU3zEyTrMhEzGNmbZGLQQikHI1+5W9ebo3vYIA7yAdJdGLj7
- qYPx+KS7lKarXJkQmf/kA==
-UI-OutboundReport: notjunk:1;M01:P0:Q7/KfWkA4TI=;9UgNWNbS4+IKcxNVrGfCsalcRaj
- x2lQcckR5iWvt5+sBEjsD4ocfkWPHxVFKJ219xy4pQLsZ9DWqhkx+Xj3vnoxK+KoV6PPq0hbF
- EKL+ZoINc5E3OSsp2OjGYtU7EP0gsPk0hWxUYkWOYTPxXkI//Ks5MXHwCkGVypJu/kmix5WLm
- VjuorWYz4fF++l6kQpRe3KuNI1KAnd5uh/fVRv8CwpPTeui+7xRp8brIDlRQGyH0NQ48MGcpD
- LCm+kenZL7/oxuoCgFBaxX/bUnnEk4nVZCigXx61gqqiV+kYSssagG73tQdO1rkdQh57zcTrK
- ll0RcsN7kvEnb3x1H3rk7Ve0AMSk5wTP9W5QjHz/frHzebfu6sZV7Q/m8voeE/ugahPN05Tcx
- BhuV/oeI9l7MEemsgv/Av0AfPynOepYU5gQAZQsgyQa7KMIGByGWbJrLEn4GWeFo13mTsb61N
- Nq0Z4Qy/FEDNDH8sBPv5dfGoTGnL4xlzyVzgtV06rF+iTzarue1d5WGY5K/2aa/U0LvVqh5z4
- Q9kDWjtUi7cTziNmE7+uDBDWIa0wf6xY3Cl4srX8hwuGbO0n4XfW3/AZ+KJDJNhcqZ+nAlaTv
- 72VwkuVb6FZ4WGN9W5Vl9L4BaNr6E4QH5za1HCtf7lclXZ6hzkRS/VYAjRdmbrkIdaSmTJOFj
- zt8O6EyzZebJGJ7S2Bfp7VEPpyICks3k3u4hOsn+nwy7o6VBX89mpaOcIpQm7fBRk0lIo3Swk
- Q57sLhtbDE+TbIuhiLefqC/PHsBDgj7pfpx2f2rzcgMtnGBlPW1L2ffk5dC98lVQWU9JLxjUI
- ke4koFOPRe6ZgY/DPylssV7Q==
+X-Provags-ID: V03:K1:PiA6jVv76VM4E+O1reVAfyMAhX63/z+7XCh6izc9atkugIA9evT
+ LTcWbV0lCNC1EJitDasPUQ79rSvc1mEKKBcJvdtHG946ySAc5X6AcuvS4lU8sxTvQpP+4vd
+ 3bAa+mcl5E7LrAj8BE3c+yH7ZNHzeuXG7FGAd1w3Pyl5F2nsSrZQtAUulfbcRF6HQhmtEf3
+ eJDTeBcEg5Pm9fSp9WTtA==
+UI-OutboundReport: notjunk:1;M01:P0:DRyco9o7Pso=;TV3/Ewbf+Plhm7NO/MP2AkVYzEC
+ HezziUjwIFMXjXwyvNNlSfbWKTgo0Eo7jht05cCvg/Oe7dCCQ8gb21ZUEO0K/g7jWIIInO0Ox
+ SvtonRwBIV9Jx3OdU0N5FWUp9xyT2ylM9bd3MLW4vdh4VXq0XldfzFWVUCs9q+O3Yil8gfpsA
+ fioZBMWi+ZQ0m6GL/xmiqrfrlxEjzUblbIFUX2ezsA+n1Z0xD8rF+BHdqNP8kWOiuCYfrBv8O
+ QTLHw3MwOcQETmHyvGBLN+hHN4J4n09+SLBwA8uSJQaTklwwtZ//2rOByoh4YYkgrJWPPXw8y
+ aw0sa5tnR+1jqcxsXIPXGmA5S4tdwpTqDaEvkaMtBDcs6B2+G20SBMvKTOMwDsWCnAmfkh6Nv
+ y9eM9T/j2dcoDCo6r6mT3xHZHrLhhaSRvIfwJYmBq3KYBl6MG8elU73oAr6LwGGYNMiE6VCD4
+ b6OTjYKzr285drtFzfTmU1udTVqTAHIa0ALpJtw/KlfOpWQQT7U0MejZaqjPoD1MYM1EJeN5l
+ 6mQJaagW0kE3EBp9NtHE4l/PM13bdf6vlch13X4KWHeG7K47CmIQEfPJ7Kht54ON69aVI2U7V
+ YgjNunpDSF/UehMku+suQEuKBJoHJ0uGUuCL5ksM4ShlpByJGP7ZXKpV5KXJZ+wq615CpBGYq
+ NBLbggLd/XiAVnExGixdmjoEnyPyy/fTECAsGoEszN8T5lho4MlfUmTxOKQEza4JcCrPrMgvh
+ NgmhRvqhgeATHUf6vQ4BuYUVjPLRjaRj8U1iuyZsfDaXt4f0LwmJ+ImfqR5wLhaxrwbfgcnpd
+ 8SEYQ1qQK2atXOjWXSQFwjeg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_205739_077633_C537B0E3 
-X-CRM114-Status: UNSURE (   8.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241004_205740_064895_EAD3155D 
+X-CRM114-Status: GOOD (  11.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,42 +107,147 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds support for the SerDes in the Realtek Otto platform.
-These are 8-52 port switch SoCs of the RTL83xx and RTL93xx series with MIPS
-cores. The ports are based on 1-8 port PHYs (e.g. RTL8218D) that are connected
-via multiple SerDes.
+This adds the header file for the new Otto SerDes driver.
+---
+ drivers/phy/realtek/phy-rtl-otto-serdes.h | 126 ++++++++++++++++++++++
+ 1 file changed, 126 insertions(+)
+ create mode 100644 drivers/phy/realtek/phy-rtl-otto-serdes.h
 
-The driver is based on the GPL source drops from the different switch vendors.
-It supports all 4 SoC series and was developed and tested on the following
-devices:
+diff --git a/drivers/phy/realtek/phy-rtl-otto-serdes.h b/drivers/phy/realtek/phy-rtl-otto-serdes.h
+new file mode 100644
+index 000000000000..4d951731c02c
+--- /dev/null
++++ b/drivers/phy/realtek/phy-rtl-otto-serdes.h
+@@ -0,0 +1,126 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Realtek RTL838x, RTL839x, RTL930x & RTL931x SerDes PHY driver
++ * Copyright (c) 2024 Markus Stockhausen <markus.stockhausen@gmx.de>
++ */
++
++#ifndef _PHY_RTL_OTTO_SERDES_H
++#define _PHY_RTL_OTTO_SERDES_H
++
++#include <linux/debugfs.h>
++#include <linux/delay.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/phy.h>
++#include <linux/phy/phy.h>
++#include <linux/platform_device.h>
++
++#define RTSDS_PAGE_SDS				0
++#define RTSDS_PAGE_SDS_EXT			1
++#define RTSDS_PAGE_FIB				2
++#define RTSDS_PAGE_FIB_EXT			3
++#define RTSDS_PAGE_NAMES			48
++
++#define RTSDS_INV_HSO				0x100
++#define RTSDS_INV_HSI				0x200
++
++#define RTSDS_EVENT_SETUP			0
++#define RTSDS_EVENT_INIT			1
++#define RTSDS_EVENT_POWER_ON			2
++#define RTSDS_EVENT_PRE_SET_MODE		3
++#define RTSDS_EVENT_POST_SET_MODE		4
++#define RTSDS_EVENT_PRE_RESET			5
++#define RTSDS_EVENT_POST_RESET			6
++#define RTSDS_EVENT_PRE_POWER_OFF		7
++#define RTSDS_EVENT_POST_POWER_OFF		8
++#define RTSDS_EVENT_MAX				8
++
++#define RTSDS_SEQ_STOP				0
++#define RTSDS_SEQ_MASK				1
++#define RTSDS_SEQ_WAIT				2
++
++#define RTSDS_SWITCH_ADDR_BASE			(0xbb000000)
++#define RTSDS_REG(x)				((void __iomem __force *)RTSDS_SWITCH_ADDR_BASE + (x))
++#define iomask32(mask, value, addr)		iowrite32((ioread32(addr) & ~(mask)) | (value), addr)
++
++#define RTSDS_838X_MAX_SDS			5
++#define RTSDS_838X_MAX_PAGE			3
++#define RTSDS_838X_SDS_MODE_SEL			RTSDS_REG(0x0028)
++#define RTSDS_838X_INT_MODE_CTRL		RTSDS_REG(0x005c)
++
++#define RTSDS_839X_MAX_SDS			13
++#define RTSDS_839X_MAX_PAGE			11
++#define RTSDS_839X_MAC_SERDES_IF_CTRL		RTSDS_REG(0x0008)
++
++#define RTSDS_930X_MAX_SDS			11
++#define RTSDS_930X_MAX_PAGE			63
++#define RTSDS_930X_SDS_MODE_SEL_0		RTSDS_REG(0x0194)
++#define RTSDS_930X_SDS_MODE_SEL_1		RTSDS_REG(0x02a0)
++#define RTSDS_930X_SDS_MODE_SEL_2		RTSDS_REG(0x02a4)
++#define RTSDS_930X_SDS_MODE_SEL_3		RTSDS_REG(0x0198)
++#define RTSDS_930X_SDS_SUBMODE_CTRL0		RTSDS_REG(0x01cc)
++#define RTSDS_930X_SDS_SUBMODE_CTRL1		RTSDS_REG(0x02d8)
++
++#define RTSDS_931X_MAX_SDS			13
++#define RTSDS_931X_MAX_PAGE			191
++#define RTSDS_931X_SERDES_MODE_CTRL		RTSDS_REG(0x13cc)
++#define RTSDS_931X_PS_SERDES_OFF_MODE_CTRL	RTSDS_REG(0x13f4)
++#define RTSDS_931X_SDS_FORCE_SETUP		0x80
++
++#define RTSDS_COMBOMODE(mode, submode)		(0x10000 | (mode << 8) | submode)
++#define RTSDS_MODE(combomode)			((combomode >> 8) & 0xff)
++#define RTSDS_SUBMODE(combomode)		(combomode & 0xff)
++
++struct __attribute__ ((__packed__)) rtsds_seq {
++	u16 action;
++	u16 ports;
++	u16 page;
++	u16 reg;
++	u16 val;
++	u16 mask;
++};
++
++struct rtsds_sds {
++	struct phy *phy;
++	int mode;
++	int link;
++	int min_port;
++	int max_port;
++};
++
++struct rtsds_ctrl {
++	struct device *dev;
++	void __iomem *base;
++	struct mutex lock;
++	u32 sds_mask;
++	struct rtsds_conf *conf;
++	struct rtsds_sds sds[RTSDS_930X_MAX_SDS + 1];
++	struct rtsds_seq *sequence[RTSDS_EVENT_MAX + 1];
++};
++
++struct rtsds_macro {
++	struct rtsds_ctrl *ctrl;
++	u32 sid;
++};
++
++struct rtsds_conf {
++	u32 max_sds;
++	u32 max_page;
++	int (*read)(struct rtsds_ctrl *ctrl, u32 idx, u32 page, u32 reg);
++	int (*mask)(struct rtsds_ctrl *ctrl, u32 idx, u32 page, u32 reg, u32 val, u32 mask);
++	int (*reset)(struct rtsds_ctrl *ctrl, u32 idx);
++	int (*set_mode)(struct rtsds_ctrl *ctrl, u32 idx, int mode);
++	int (*get_mode)(struct rtsds_ctrl *ctrl, u32 idx);
++	int mode_map[PHY_INTERFACE_MODE_MAX];
++};
++
++/*
++ * This SerDes module should be written in quite a clean way so that direct calls are
++ * not needed. The following functions are provided just in case ...
++ */
++
++int rtsds_read(struct phy *phy, u32 page, u32 reg);
++int rtsds_write(struct phy *phy, u32 page, u32 reg, u32 val);
++int rtsds_mask(struct phy *phy, u32 page, u32 reg, u32 val, u32 mask);
++
++#endif /* _PHY_RTL_OTTO_SERDES_H */
+--
+2.44.0
 
-RTL838x - codename maple - Linksys LGS310C
-RTL839x - codename cypress - Zyxel GS1920-24
-RTL930x - codename langon - Zyxel XGS1210-10
-RTL931x - codename mango - Linksys LGS352C
-
-Due to very little information and fundamentally different I/O port ranges
-of the devices this driver is the best we can achieve to provide a common
-consistent interface.
-
-Currently we only provide the most basic operations for mode set and device
-reset as well as some debugging information if enabled. The strength lies in
-the fact that the driver can run patch sequences for the SerDes registers at
-certain events, e.g. phy_power_on(). This allows us to run configuration
-operations to get the SerDes up and running. A lot of the sequences are
-totally undocumented and can never be implemented in the driver without
-further knowledge or vendor support.
-
-For more information see:
-
-https://svanheule.net/switches/gpl_source_drops
-https://svanheule.net/realtek/
-
-
-[PATCH 1/4] phy: Realtek Otto SerDes: add header file
-[PATCH 2/4] phy: Realtek Otto SerDes: add driver source
-[PATCH 3/4] phy: Realtek Otto SerDes: include driver
-[PATCH 4/4] phy: Realtek Otto Serdes: add devicetree documentation
 
 -- 
 linux-phy mailing list
