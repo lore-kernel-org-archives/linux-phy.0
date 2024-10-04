@@ -4,78 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CB0CCF34DD
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 02:19:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F35AECFA745
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 03:42:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ega6iwh9J6Ho2PIdVilm6PgeU9LZYzAGCFfNnOwrvfA=; b=kIqCa4VuzB2LS/
-	MmXtGwwrWEaJf06lqaJ5JBrwsbQRGjOm9sB2FX57q7+sbnKj/O4A7+lVMpmw15I6ILDOturCDGj6H
-	8hUex5VWCYeCIzNGojZF01yn2fzjUoT50wMZ0PEyiy+OMr4scj/BxhqpRbuJ1UDG9BKmzf9DYIV5I
-	NJriAwHICDT43CiHUqpbLrBpS8h3bSbL8KkikG+IDQ98TMuK07LZ3+Tx11uJxrCtjpnG46c7A4AG5
-	KjLtaVNT50/dp7/2tqnvIkExV9Hg59CUgBwE8vnF0gtAhUhkABnY4es3m+pqKc/6OceKYKTGMSzNn
-	PItcxPZAnJWxqXhysJLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=15Umia2zbSD7MYCtThPNPPIgz2o7h6luiK/vEC9fiqE=; b=j3hCWr2Vf6CQL0
+	G3YopwmJqO0sj7EdlUl4RBWGpL0y8t8hWKqQ7n5SPwQ7H+us+YIHwJYqxyf+oBDEkvYd5O9ofkgWE
+	jAPBAnWSQHOeevsfkw7W2HoxHbcQVdMRkY+3uWE6Bgh6TXJmQPQFhPOIsm1UlbNpW+Xi8dUV6/8/V
+	gEQEJiRJT5t0ZlD4aCh5DsY+FP9uknqfb3S+WAsvN6pJlGLPOjlljeo2+xe/Ak3kg0gH00NfkVPiT
+	ofb7253t95qDa9Lg4GwXLg58y1hD9vwpknS0h4Y56uTSNF2vLjPg69bjG/h0F1V4CH9S7Wy7sjfKM
+	5nOqkkEoFUBKylCMBgoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swXv6-0000000Arqk-0A7x;
-	Fri, 04 Oct 2024 02:19:52 +0000
-Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
+	id 1swZDD-0000000AxKu-25b3;
+	Fri, 04 Oct 2024 03:42:39 +0000
+Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swXv3-0000000ArqM-3bpc
+	id 1swZDA-0000000AxJy-07AN
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Oct 2024 02:19:51 +0000
-Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-2fabd2c4ac0so19745421fa.1
-        for <linux-phy@lists.infradead.org>; Thu, 03 Oct 2024 19:19:49 -0700 (PDT)
+	Fri, 04 Oct 2024 03:42:37 +0000
+Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-20bb610be6aso18886065ad.1
+        for <linux-phy@lists.infradead.org>; Thu, 03 Oct 2024 20:42:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1728008388; x=1728613188; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=4Kpa3DwSuusZ/ojSRABiA3m3vD/yFFaWn/vC3z7JZzQ=;
-        b=koCkyeh2ZOaSXeUuEJ9z05auhikfdnlwPyRpYS7CGsiGbOkYK+0Gb2lCIDCNazJq1+
-         WV9QBfehjeVfZ2oq0WYDdFzCQLT/Whn3tVkpxKDzPL0w72R45bmSJuGqBhIJSJv/uaba
-         LVF7MqZgjDClCgnRtziQ/2WhC82KOaOZvM2N+jOioH/GJA6PzXLYJ+ZAIXkuHa0NGB/8
-         wBye7HrH7OhHfhxJIoTRcGNoB1NBacE6/MyP3eaHzNx3HlAzK5iXQkUl3vAOlN6Ttun2
-         YA6Y6kpXP6wo7Ls5Wh5ngtBL80rua0Qsx4vGXZXAjTX0Nh5u3025C1WcHIc7kKj/04Ym
-         54Bw==
+        d=gmail.com; s=20230601; t=1728013355; x=1728618155; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=/k4t1X9HW0gv4C4rJatY6CF+LcH2LmAGsSgjwSUDdNc=;
+        b=Ks2xf0T5hc29MNi4xmDPoeV85UoBif66CBjpFA3lxVtjLqeaPtC/t/lMAMW3RgXIHc
+         SjPNlZla1znkreu7K/29qbY64Qfx4bvShNUItThyOhTWwLg4So9bq9hyGhEcj/VkYHGw
+         f33iD+4eL8Un0CKvYw+2Yw37+Sb1Qd99FnOl8zM6eiineKPWGf0dKdcNLbZ+E1Xm6MGh
+         BMZc1jYCNLBpS5ddPJeBIhF/IJ95WyrkoaLvaAf/3EPeXil4Fms70WX2RCNprO6A4EeM
+         dTed4Cwrq1lwIFdyKoiTbFHG3275ynO5jp2yeYGNJ69I7/xZPsXdZsSf4cM2NenhEMb4
+         SAHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728008388; x=1728613188;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=4Kpa3DwSuusZ/ojSRABiA3m3vD/yFFaWn/vC3z7JZzQ=;
-        b=T0NNDOdAB1HNXBQ8Mh+xiYTkdq77Av9qloZ+I4CSC071PDsb3lrLUNYvq82HsAgh/I
-         G0IHYdh8IRCtjNqVIgZlNHWr6d1wZLqAfDIMgiOYoE43UNmklKQ5UjvMqa25X8TSP01+
-         lnicWAKiCGr2NYKEKCbTZyJGzqXSbx4N4EnSZJSV2DV+oF/cvRf74c9cEcKUZDhZ2chn
-         asEMwB7nAQrwG++5Z3/b3dWntHYfa2BwVmNzi/lFKV/lW00qaPnMia6wx2uqHXMqbzaj
-         lSPjHtYgTo0TO6YU/P+kKvofPH5zPY9lO23/WE4enDzRhLXQiQcdrSqmQonHkp4W0CFP
-         X+Yg==
-X-Forwarded-Encrypted: i=1; AJvYcCVwiIBa3lc2ile61eParegIe6sI2PQ48RpJp9eVRra+rMfD+kluxKC7cssmBxV/ouzvJEI+ydCWWA4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyKJyA0xGMaSlyMUgOho96s2TaobrO2uc3zvWH7gQ3aIZuNUOoZ
-	LGro/7QD64L6Rth/xShmvDLhNULit3R/8QP4gd53ucZ8z1OmxFbFqSWw4xwAx49zy7Bgn8Ohj6z
-	zLTJpoNTegWD2EEErCqKaMgPxC/k=
-X-Google-Smtp-Source: AGHT+IHF4VPBKIS+sDYmzIH9bctmUXNB3P/PpWHCO+5NhQWj31HI3wo19MO+IB2pjH3uouNm3DUaP1bpq5XK+eSitd0=
-X-Received: by 2002:a2e:809:0:b0:2fa:de13:5c18 with SMTP id
- 38308e7fff4ca-2faf3da5c06mr4200651fa.42.1728008387530; Thu, 03 Oct 2024
- 19:19:47 -0700 (PDT)
-MIME-Version: 1.0
-References: <20241003211720.1339468-1-CFSworks@gmail.com> <697604f4-ea38-4cfd-a4a8-3a346d4735db@broadcom.com>
-In-Reply-To: <697604f4-ea38-4cfd-a4a8-3a346d4735db@broadcom.com>
+        d=1e100.net; s=20230601; t=1728013355; x=1728618155;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=/k4t1X9HW0gv4C4rJatY6CF+LcH2LmAGsSgjwSUDdNc=;
+        b=vdGZhSHzn9PkbCDI0rhUkcN27/Y9zGTS3vHtM9fQfZKTrBR8l6Koe/iQnDX1nDN3s1
+         t/nD8wU/M7HSJOIdIkzUvn2smvoEhzZ1NBfZ0H0lCoqzhJE1AEpBrCvtOWDK91i6Ykrj
+         PaPDyEn9GX0aNhOUcRYG7SfX3TZ0LqqSRSrSXiLPJTpoRwHafy7HloHCYXGxGv3mdyGW
+         oTCYoHe0XkYqXsx3kB52uXzelcnS36oI5KTz39Hq9rssWE+ux+b5g8Ix6P7nRcDt0qRh
+         mkJJ6V8BTxh29+dTpUd7MQTNAa23eVUHXJ5mZLsYOmXlNNb3DCfrji4ATeP0sh7WJeQ9
+         dlqA==
+X-Forwarded-Encrypted: i=1; AJvYcCUHGS4g/c+iPVyXGGteYDlRxOLioIo8n2uT1PRVCMWcbcEtyW6EMJdhY+bA3IVDsKu+V80l/V/Y33s=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwpEOmW8dc1uuBYy1dn/Blmcl7mtPlFt57dzctH/lXVCZ2mWQgt
+	jOUxTdYXXN9WgM5/y7I6dt+eg6xW+1Sk+iAEGQvSZdX6s6NqaCIZ
+X-Google-Smtp-Source: AGHT+IE4/oISY4qUDHtc5QkLC3khS3w3EkerY6i0U7q2FWl9om080gyDNLKdFV++fvUqPoIs07gpDQ==
+X-Received: by 2002:a17:902:f68f:b0:20b:54cc:b34e with SMTP id d9443c01a7336-20bfee34d54mr19636205ad.51.1728013354988;
+        Thu, 03 Oct 2024 20:42:34 -0700 (PDT)
+Received: from luna.turtle.lan ([2601:1c2:c184:dc00:b8ac:3fa:437b:85fa])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-20beef8ec6bsm15806365ad.158.2024.10.03.20.42.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 03 Oct 2024 20:42:34 -0700 (PDT)
 From: Sam Edwards <cfsworks@gmail.com>
-Date: Thu, 3 Oct 2024 19:19:36 -0700
-Message-ID: <CAH5Ym4gTtRTAn=rn8Hb1jctcCjuMurLNXjHSA2kQLbfRSDaQnA@mail.gmail.com>
-Subject: Re: [PATCH] phy: usb: fix Broadcom driver table indexing error
-To: Florian Fainelli <florian.fainelli@broadcom.com>
-Cc: Justin Chen <justin.chen@broadcom.com>, Al Cooper <alcooperx@gmail.com>, 
-	Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
+X-Google-Original-From: Sam Edwards <CFSworks@gmail.com>
+To: Justin Chen <justin.chen@broadcom.com>,
+	Al Cooper <alcooperx@gmail.com>
+Cc: Broadcom internal kernel review list <bcm-kernel-feedback-list@broadcom.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Florian Fainelli <florian.fainelli@broadcom.com>,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Sam Edwards <CFSworks@gmail.com>
+Subject: [PATCH v2 0/2] phy: usb: Broadcom BCM4908 USB init fixes
+Date: Thu,  3 Oct 2024 20:41:29 -0700
+Message-ID: <20241004034131.1363813-1-CFSworks@gmail.com>
+X-Mailer: git-send-email 2.44.2
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241003_191949_922291_13AF6A0A 
-X-CRM114-Status: GOOD (  20.08  )
+X-CRM114-CacheID: sfid-20241003_204236_092196_2DBCCABD 
+X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,42 +93,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBPY3QgMywgMjAyNCBhdCAzOjQ34oCvUE0gRmxvcmlhbiBGYWluZWxsaQo8Zmxvcmlh
-bi5mYWluZWxsaUBicm9hZGNvbS5jb20+IHdyb3RlOgo+Cj4gT24gMTAvMy8yNCAxNDoxNywgU2Ft
-IEVkd2FyZHMgd3JvdGU6Cj4gPiBUaGUgQnJvYWRjb20gVVNCIFBIWSBkcml2ZXIgY29udGFpbnMg
-YSBsb29rdXAgdGFibGUKPiA+IChgcmVnX2JpdHNfbWFwX3RhYmxlc2ApIHRvIHJlc29sdmUgcmVn
-aXN0ZXIgYml0bWFwcyB1bmlxdWUgdG8gY2VydGFpbgo+ID4gdmVyc2lvbnMgb2YgdGhlIFVTQiBQ
-SFkgYXMgZm91bmQgaW4gdmFyaW91cyBCcm9hZGNvbSBjaGlwIGZhbWlsaWVzLgo+ID4gSGlzdG9y
-aWNhbGx5LCB0aGlzIHRhYmxlIHdhcyBqdXN0IGtlcHQgY2FyZWZ1bGx5IGluIHN5bmMgd2l0aCB0
-aGUKPiA+ICJzZWxlY3RvciIgZW51bSBldmVyeSB0aW1lIHRoZSBsYXR0ZXIgY2hhbmdlZCB0byBl
-bnN1cmUgY29uc2lzdGVuY3kuCj4gPiBIb3dldmVyLCBhIHJlY2VudCBjb21taXQgKHNlZSAnZml4
-ZXMnIHRhZykgaW50cm9kdWNlZCB0d28gbmV3Cj4gPiBlbnVtZXJhdG9ycyBidXQgZGlkIG5vdCBh
-ZGp1c3QgdGhlIGFycmF5IGZvciBCQ000OTA4LCB0aHVzIGJyZWFraW5nIHRoZQo+ID4geEhDSSBj
-b250cm9sbGVyIChhbmQgYm9vdCBwcm9jZXNzKSBvbiB0aGlzIHBsYXRmb3JtIGFuZCByZXZlYWxp
-bmcgdGhlCj4gPiBmcmFnaWxpdHkgb2YgdGhpcyBhcHByb2FjaC4KPiA+Cj4gPiBTaW5jZSB0aGVz
-ZSBhcnJheXMgYXJlIGEgbGl0dGxlIHNwYXJzZSAobWFueSBlbGVtZW50cyBhcmUgemVybykgYW5k
-IHRoZQo+ID4gcG9zaXRpb24gb2YgdGhlIGFycmF5IGVsZW1lbnRzIGlzIHNpZ25pZmljYW50IG9u
-bHkgaW5zb2ZhciBhcyB0aGV5IGFncmVlCj4gPiB3aXRoIHRoZSBlbnVtZXJhdG9ycywgZGVzaWdu
-YXRlZCBpbml0aWFsaXplcnMgYXJlIGEgYmV0dGVyIGZpdCB0aGFuCj4gPiBwb3NpdGlvbmFsIGlu
-aXRpYWxpemVycyBoZXJlLiBDb252ZXJ0IHRoaXMgdGFibGUgYWNjb3JkaW5nbHksIGZpeGluZyB0
-aGUKPiA+IGJvb3QtdGltZSBjcmFzaCBvbiBCQ000OTA4IGluIHRoZSBwcm9jZXNzLgo+ID4KPiA+
-IEZpeGVzOiA0NTM2ZmU5NjQwYjYgKCJwaHk6IHVzYjogc3VwcHJlc3MgT0MgY29uZGl0aW9uIGZv
-ciA3NDM5YjIiKQo+ID4gU2lnbmVkLW9mZi1ieTogU2FtIEVkd2FyZHMgPENGU3dvcmtzQGdtYWls
-LmNvbT4KCkhpIEZsb3JpYW4sCgo+Cj4gVGhhbmtzIGEgYnVuY2ggZm9yIHRoZSBmaXgsIGdvb2Qg
-Y2F0Y2ghIFNvcnJ5IHRvIGFzayB5b3UgdGhpcywgYnV0IHNpbmNlCj4gdGhpcyBpcyBpbnRlbmRl
-ZCB0byBiZSBiYWNrcG9ydGVkIHRvIHN0YWJsZSB0cmVlcyBhdCBzb21lIHBvaW50LCB3b3VsZAo+
-IHlvdSBtaW5kIGJyZWFraW5nIHRoaXMgdXAgaW4gdHdvIGNvbW1pdHM6Cj4KPiAtIG9uZSB3aGlj
-aCBpcyBlYXN5IHRvIHJldmlldyBhbmQgYXVkaXQgYW5kIHdoaWNoIGFkanVzdHMgdGhlIEJDTTQ5
-MDggZW50cnkKPiAtIGFub3RoZXIgb25lIHdoaWNoIGNvbnZlcnRzIHRvIHVzaW5nIGRlc2lnbmF0
-ZWQgaW5kZXggY29uc3RhbnRzPwoKTm90IGEgcHJvYmxlbSBhdCBhbGwhIEknZCBtdWNoIHJhdGhl
-ciBhZGRyZXNzIGZlZWRiYWNrIGxpa2UgdGhpcwpteXNlbGYgc28gSSBjYW4gcHJhY3RpY2UgdGhl
-IHByb3BlciBmb3JtYXR0aW5nIHRoYW4gaGF2ZSB5b3UgdGFrZSBjYXJlCm9mIGl0LiBJJ2xsIHNl
-bmQgYSBzcGxpdC11cCB2MiBpbiBhIG1vbWVudC4gOikKCktpbmQgcmVnYXJkcywKU2FtCgo+Cj4g
-VGhhbmtzIQo+IC0tCj4gRmxvcmlhbgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Greetings list,
+
+This is v2 of my previous patch [1] targeted at resolving a crash-on-boot on
+the BCM4908 family due to a missized table.
+
+Changes v1->v2:
+- Florian requested this change be broken into an immediate bugfix (w/ the
+  'fixes' tag) and a second patch containing the coding change aimed at
+  preventing this problem from happening again
+
+Best,
+Sam
+
+[1]: https://lore.kernel.org/lkml/20241003211720.1339468-1-CFSworks@gmail.com/T/
+
+Sam Edwards (2):
+  phy: usb: Fix missing elements in BCM4908 USB init array
+  phy: usb: update Broadcom driver table to use designated initializers
+
+ drivers/phy/broadcom/phy-brcm-usb-init.c | 433 +++++++++++------------
+ 1 file changed, 215 insertions(+), 218 deletions(-)
+
+-- 
+2.44.2
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
