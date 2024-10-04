@@ -4,80 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C14B0CFA753
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 09:48:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E77ACCFA763
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 10:58:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5pUsAICbs5d+YBnxBo8aydh6yIpYdpM2ic+QOYtNwgI=; b=yugIMhHggz4Wrz
-	Fwx3zE/yGICNL571+Fzz5kePrs0BEoibY9D8w5saKLZ3mIdMTYYqm7jvk/nm9SXGiRnFWAm4gT/OX
-	+nRog25fj0O7OjuutKcWPoSzrIn9k4eib38Op9H7fDsRiLyOkyaFKY5vRbRcfk1dpVwvha7L6g0Xh
-	iJQqfrip8p1GSIwDGpNomaIp09rtDyrA7o+y6LJg2VZMDxfnCOuUFn/mv1h1kaKwXynL9P6ueQ9Yn
-	Nw16bWFPSdaum3WnQvKg2AOgFLbIPaWNHnY6H0oJYyLzUxioZxKXCkMsB1iEGxdWBwteV/MMWuOIE
-	lbBM9P/q73HVJqq33z0g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VGoW5V6qVBYWXWj3C6par+b38mjqsOnXrWkJtpBIqOk=; b=x8ACz4v7Sz78tV
+	VMZWCgEXU2uH6WNNrh6D4GYuaUSx1rlgpT1L7bgvMKKkKqko3FS7sdfBwJ/yBJw4ki5eurCqnVpwK
+	N6k71rkZsASGCCI5Bh68TKKXd4o+PQJlFntbogBeECM8nTNbutvkcMdWfzqGQv2A+uT7OgobXMvHo
+	y5sQhTeyuWfvAGWOuS/T68l8LjJI/Blc1l0CwTRQglA616MzBp9UFS4KVq0lQsBuW1ygOb8RUjBrs
+	LnEToAs0MFB2rOwmkETV3Ojiah+CgbGRBDkQvuJRHFvqUGZEMUdikg1r25mOqOAPb1AbJroRnoA2S
+	TJ1sHP91YkLqxypZ17rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sweuv-0000000Bht0-1vuF;
-	Fri, 04 Oct 2024 09:48:09 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1swg0r-0000000BzAP-2ghG;
+	Fri, 04 Oct 2024 10:58:21 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sweoe-0000000Bfxm-0zWf
+	id 1swfaR-0000000Brf0-29wO
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Oct 2024 09:41:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1728034900; x=1759570900;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=tCHvr0SyNGUYLTGRNDiC4xtq0W0bs2XnhsTdr2TIz+0=;
-  b=bF5mOBA419uyl0Mp96GuFXY8+xgBI+/w5thjbtZqDOO+FbZnAeQo3RjK
-   oTRrip/5BUkgm2F/f9XlQFplusZoP+OpdngYLMHWQ1Co4BfLqPliLUEe2
-   dWyor1y+FbKlbfeE3jbi0uSFqUC8/JXfh3TGobExkx6+sxccU/UdSvuN0
-   qW6naJmw7ZUL+ugURrznJ52OCumgLe57hXIpLbnJyhT8bNzz+F6oXpYeE
-   vASTj/eOJJ0Np5ueltntgMyum2W13N5H/lHZUKd6rlz5w/uORAjSL/265
-   ntO4RIqh0uxvFjPYJ1z8nVA5I2ar/7DgnjLILN19XVrGl9FhRgCInbWBQ
-   g==;
-X-CSE-ConnectionGUID: YKTJpgOIR+OMxwH4x2tY9A==
-X-CSE-MsgGUID: RcZaGNYnQ/yWNhW1ezFWfA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11214"; a="52656261"
-X-IronPort-AV: E=Sophos;i="6.11,177,1725346800"; 
-   d="scan'208";a="52656261"
-Received: from fmviesa010.fm.intel.com ([10.60.135.150])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Oct 2024 02:41:40 -0700
-X-CSE-ConnectionGUID: BOBigxYBTKORIaGr8fufmg==
-X-CSE-MsgGUID: hzHSQ45kTm2M430Gtu20Sw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,177,1725346800"; 
-   d="scan'208";a="74975103"
-Received: from turnipsi.fi.intel.com (HELO kekkonen.fi.intel.com) ([10.237.72.44])
-  by fmviesa010-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Oct 2024 02:41:39 -0700
-Received: from punajuuri.localdomain (punajuuri.localdomain [192.168.240.130])
-	by kekkonen.fi.intel.com (Postfix) with ESMTP id 4C4D4120E62;
-	Fri,  4 Oct 2024 12:41:34 +0300 (EEST)
-Received: from sailus by punajuuri.localdomain with local (Exim 4.96)
-	(envelope-from <sakari.ailus@linux.intel.com>)
-	id 1sweoY-000Tdn-0x;
-	Fri, 04 Oct 2024 12:41:34 +0300
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>
-Cc: linux-phy@lists.infradead.org
-Subject: [PATCH 34/51] phy: ti: phy-twl4030-usb: Switch to __pm_runtime_put_autosuspend()
-Date: Fri,  4 Oct 2024 12:41:34 +0300
-Message-Id: <20241004094134.113929-1-sakari.ailus@linux.intel.com>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
-References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
-MIME-Version: 1.0
+	Fri, 04 Oct 2024 10:31:05 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 493I0Pqq031312;
+	Fri, 4 Oct 2024 10:30:55 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:date:from:message-id:subject:to; s=qcppdkim1; bh=bxrxFrtH6bW0
+	HeKMnp9MknT77pwNQoSsvbOCnN7b2eo=; b=pk7iSuk1VoyuRuAZT0nz8DOzyV7v
+	os13dCfdaB7DAiuLH7O5PsxOnVQEjAl7Q8rPvtIH7J/6oiQo3NEI6JmUu23QNTe/
+	hBYTFi+9LJEXZ5BqgArDC55oNTYH9X/rBeLt3mPH7xrx/PoN3V/H3lEixLzUhpXE
+	+VhOtEgnXS3KGX6bHu2Gq5h/PD5GkHM96wcVlNqeR1FM61GO3Fq4E6+Y1uq9eXhR
+	1TlkUyVllBK2yDi6hj59d6R0/Rc4qwDOvtA3L6+s1DSc2sWZGbq7rWXkMVDgFWSU
+	Scgh+TzM8CZOyxgxiiwg02qAsbMF0pVBZOuHzngz5Nnkx2IVAf9/G8NwgA==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42205nhs2a-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 04 Oct 2024 10:30:55 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 494AUoRn005781;
+	Fri, 4 Oct 2024 10:30:50 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 41xavmrk0g-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Fri, 04 Oct 2024 10:30:50 +0000
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 494AUnSP005750;
+	Fri, 4 Oct 2024 10:30:49 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-mukhopad-hyd.qualcomm.com [10.147.244.250])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 494AUnxR005743;
+	Fri, 04 Oct 2024 10:30:49 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 3978529)
+	id BA8B25000AB; Fri,  4 Oct 2024 16:00:48 +0530 (+0530)
+From: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
+To: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org,
+        andersson@kernel.org, simona@ffwll.ch, dmitry.baryshkov@linaro.org,
+        abel.vesa@linaro.org, robdclark@gmail.com, quic_abhinavk@quicinc.com,
+        sean@poorly.run, marijn.suijten@somainline.org, airlied@gmail.com,
+        daniel@ffwll.ch, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+        tzimmermann@suse.de, robh@kernel.org, krzk+dt@kernel.org,
+        conor+dt@kernel.org, quic_khsieh@quicinc.com, konrad.dybcio@linaro.org,
+        quic_parellan@quicinc.com, quic_bjorande@quicinc.com
+Cc: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+        freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
+        quic_riteshk@quicinc.com, quic_vproddut@quicinc.com
+Subject: [PATCH v4 0/5] Add support for DisplayPort on SA8775P platform
+Date: Fri,  4 Oct 2024 16:00:41 +0530
+Message-Id: <20241004103046.22209-1-quic_mukhopad@quicinc.com>
+X-Mailer: git-send-email 2.17.1
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: KS5tIy_fXol3w3iNe_CgQ_wJdmLVRWO4
+X-Proofpoint-ORIG-GUID: KS5tIy_fXol3w3iNe_CgQ_wJdmLVRWO4
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ malwarescore=0 impostorscore=0 clxscore=1015 phishscore=0 adultscore=0
+ spamscore=0 suspectscore=0 bulkscore=0 priorityscore=1501
+ lowpriorityscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2409260000 definitions=main-2410040076
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_024140_314398_E0B536B3 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241004_033103_885126_B107323C 
+X-CRM114-Status: GOOD (  10.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,63 +103,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-pm_runtime_put_autosuspend() will soon be changed to include a call to
-pm_runtime_mark_last_busy(). This patch switches the current users to
-__pm_runtime_put_autosuspend() which will continue to have the
-functionality of old pm_runtime_put_autosuspend().
+This series adds support for the DisplayPort controller
+and eDP PHY v5 found on the Qualcomm SA8775P platform.
 
-Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
 ---
- drivers/phy/ti/phy-twl4030-usb.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+v2: Fixed review comments from Dmitry and Bjorn
+	- Made aux_cfg array as const.
+	- Reused edp_swing_hbr_rbr and edp_swing_hbr2_hbr3 for v5.
 
-diff --git a/drivers/phy/ti/phy-twl4030-usb.c b/drivers/phy/ti/phy-twl4030-usb.c
-index 6b265992d988..e0492b61c9aa 100644
---- a/drivers/phy/ti/phy-twl4030-usb.c
-+++ b/drivers/phy/ti/phy-twl4030-usb.c
-@@ -506,7 +506,7 @@ static int twl4030_phy_power_on(struct phy *phy)
- 	pm_runtime_get_sync(twl->dev);
- 	schedule_delayed_work(&twl->id_workaround_work, HZ);
- 	pm_runtime_mark_last_busy(twl->dev);
--	pm_runtime_put_autosuspend(twl->dev);
-+	__pm_runtime_put_autosuspend(twl->dev);
- 
- 	return 0;
- }
-@@ -599,7 +599,7 @@ static irqreturn_t twl4030_usb_irq(int irq, void *_twl)
- 			dev_dbg(twl->dev, "%s: cable disconnected %i\n",
- 				__func__, status);
- 			pm_runtime_mark_last_busy(twl->dev);
--			pm_runtime_put_autosuspend(twl->dev);
-+			__pm_runtime_put_autosuspend(twl->dev);
- 			twl->musb_mailbox_pending = true;
- 		}
- 	}
-@@ -637,7 +637,7 @@ static int twl4030_phy_init(struct phy *phy)
- 	twl->linkstat = MUSB_UNKNOWN;
- 	schedule_delayed_work(&twl->id_workaround_work, HZ);
- 	pm_runtime_mark_last_busy(twl->dev);
--	pm_runtime_put_autosuspend(twl->dev);
-+	__pm_runtime_put_autosuspend(twl->dev);
- 
- 	return 0;
- }
-@@ -782,7 +782,7 @@ static int twl4030_usb_probe(struct platform_device *pdev)
- 		return err;
- 
- 	pm_runtime_mark_last_busy(&pdev->dev);
--	pm_runtime_put_autosuspend(twl->dev);
-+	__pm_runtime_put_autosuspend(twl->dev);
- 
- 	dev_info(&pdev->dev, "Initialized TWL4030 USB module\n");
- 	return 0;
+v3: Fixed review comments from Dmitry, Konrad and Bjorn
+	- Used a for loop to write the dp_phy_aux_cfg registers.
+	- Pre-defined the aux_cfg size to prevent any magic numbers.
+	- Added all the necessary DPTX controllers for this platform.
+
+v4: Fixed review comments from Dmitry and Krzysztof
+	- Updated commit message.
+	 
+---
+
+Soutrik Mukhopadhyay (5):
+  dt-bindings: phy: Add eDP PHY compatible for sa8775p
+  phy: qcom: edp: Introduce aux_cfg array for version specific aux
+    settings
+  phy: qcom: edp: Add support for eDP PHY on SA8775P
+  dt-bindings: display: msm: dp-controller: document SA8775P compatible
+  drm/msm/dp: Add DisplayPort controller for SA8775P
+
+ .../bindings/display/msm/dp-controller.yaml   |  1 +
+ .../devicetree/bindings/phy/qcom,edp-phy.yaml |  1 +
+ drivers/gpu/drm/msm/dp/dp_display.c           |  9 +++
+ drivers/phy/qualcomm/phy-qcom-edp.c           | 74 +++++++++++++------
+ 4 files changed, 61 insertions(+), 24 deletions(-)
+
 -- 
-2.39.5
+2.17.1
 
 
 -- 
