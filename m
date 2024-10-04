@@ -4,115 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C9ACCF8853
-	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 17:31:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5D04CF885C
+	for <linux-phy@archiver.kernel.org>; Fri,  4 Oct 2024 21:02:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kUrwBkfd9nNnnj7Y7wCadcQz1zm1Bgj6SCX1toiR9XQ=; b=jJ2xnhQYYSDU6i
-	kQ5xlyepyvJXWRRXHlBEwZfVvjsbfAmAsMrYSc2LVe9Mdy1ua99uW4l4F7IjEka6Rv2Z58yzS5P+L
-	ne9go4cyjtwwieHKWRdFa3RC2E9j7An1GqMPeJYyoKaCZDwrQRxPbNq0yElM8G3zlJPFTs7LTf5NE
-	DILPYACWOv5KeVd2xw6iz2rCI+RM92aUvT0n10T9oGJ4AkeRBzx853SvxkD3cjcmxV7zbin3VdsYf
-	y7nGDJvj5wRU/lhkNJT0k5edrG7yaAk0E/tP3n0EDKutCdpyUIABQy00JNvl2AO4pn63sfxcerXHK
-	HfZMFueO8vUUtZLF9Dlg==;
+	List-Owner; bh=Ria9wMnSPYBXJA/c1/nDS4/IeMULAir/h2EF3Kngb5k=; b=Fp/UmSuzp/F9QW
+	xIZxnvnKjqpoEJSV7/L47zW4B7QtUHIcdNpXptWHTmcoOzUW9euJ849IFsLZR3/FOB2vp85PgK9mf
+	5bE4kaexC+egW2LWd6ie7FOZYa9MnvquJKHEGDYRldbpYXKqfLJ3C7/krUd2hD6PAOIxbK5R5tYkz
+	W4VxoEUG/eHl7MSqQ/TkkVjO3cHRE5+zH3cUKZmTmtyCZiNEUs7ouOWfK4tZpluUUnTRNZMewMnQw
+	GDjbums+/CsuPH6UgY6B/rPghBCczIIuCCGdGFIf/73nupAjs7R1TbSW9AvwGlhhJAu+kp+xlhxZC
+	R+zY+bjWRBxlrx23NquA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swm9i-0000000DWob-2eIe;
-	Fri, 04 Oct 2024 17:31:54 +0000
-Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
+	id 1swpR8-0000000EE7y-2Zm7;
+	Fri, 04 Oct 2024 21:02:06 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swlzk-0000000DUqr-09An
+	id 1swoQp-0000000E13l-3UNW
+	for linux-phy@bombadil.infradead.org;
+	Fri, 04 Oct 2024 19:57:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=BcN1ryMvOwwt2Dlfb4YKA2Wdv1MdcqwO9HnMeLljjgk=; b=UK2qvBilA50BBUzmEuKmI5+Bjm
+	pwndLTf64/nl7zTIeR3MNnsc69Az322kaGxNfMSwn7A5KOlcFw8Kn70E86VDda3zP4D0ldpIl/tCc
+	Be+Vs1eXPiOkTBD5zNaCJbLawMXi0M/SPGGs9Msy+QayRDnPT7WFJE6s0gsbN8Bw4ksI5aRyxJt2U
+	CoLUTLPAT7dJ3W8/Ejzw8UCmgW3K2+NNqYtFZmu3Vc2mPMAEmJ/SQet+XF0Xa3Wjtsbj5HiY3u6mZ
+	0VrEo7SxfdCXgEGnL132e7uG7yxnvFt0iW1p0UbR/uHSG7456apC5jFIBW9ZXNz8Uh6pzJv6nQroc
+	bwIuRS2A==;
+Received: from mout.gmx.net ([212.227.17.20])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1swoQk-00000003vw0-1cVF
 	for linux-phy@lists.infradead.org;
-	Fri, 04 Oct 2024 17:21:38 +0000
-Received: by mail-pf1-x42f.google.com with SMTP id d2e1a72fcca58-71de9e1f374so581998b3a.1
-        for <linux-phy@lists.infradead.org>; Fri, 04 Oct 2024 10:21:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1728062494; x=1728667294; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=MJ4o8q5oEQS7g8KtToOJ3ZqCZToccFWxlyH+Q49ZRYo=;
-        b=H/ThM7cyxJqIiHQeAQi0kBvROBnW0O1/H5Q4voHjS0TXjsgm+eBvvZa3q/ppsx/gbj
-         E492hNXYemZbTRDzRkMmyq+HUaTHbCq7Z7WezR6KSqkzLLgmiWB4zZvdHj1M/VAZRBf5
-         QNpOvho/CqQfTMcQ3uCQRqzA1UnOuZrHVUvos=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728062494; x=1728667294;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MJ4o8q5oEQS7g8KtToOJ3ZqCZToccFWxlyH+Q49ZRYo=;
-        b=Ik4vglMzCV/b0K+XDi3LSqAR2SIuLMusmIuefU9y7c1yZOOkGDWfnSR8c2JmiOsf+K
-         16QKjiyRH0n8soUxgOx75VmrGLkS7/re6UHbE16Ym5aHz6DZsYsYSLGyRZXogRMFF/eQ
-         mnJNf9zGyv3A/1t3prkPTEAtOVHh08aRoWHAlRhzhcWbAxCA/1Ei9wy5n5acpr9PH+7w
-         5wX5OkhklghPaB4ZC9/wJvW1L/jcVHEfC7UxaqxeYGaswy/g/rdroZ2I573yPgYquF1S
-         lnbvLaGcuxaN0nZj7SjTYU/aSrTAXecJwFv4y6U0DZ8IDgs5+P9ClXxWwe6oxCQWNNXD
-         YWcQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUZEH1YXgAxCuxa4KPFvwZWvf/YaehirZ5eDLkuQwE1aP+W2L+DPXd6Ca/9ZDkTXBVnAV2SR0wmYn4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxVhht5LJcfDBYfrgwk5RAuDWgmttwdJDmpEs+5hfhKdpxHWcQY
-	xwzLL/BCC4/4ZcTgR2OFJ7TDIpUdSIAh5E5GHUtRbKe+McNyVzxS9mwp++roEw==
-X-Google-Smtp-Source: AGHT+IELLRtiuNu+BB+69SzdV4WvLwhEBCEnPOGL+riehA3a4uXDke+DDE2tEOMEAhAaSJSQRUdtjQ==
-X-Received: by 2002:a05:6a20:6f9c:b0:1d1:13de:68c6 with SMTP id adf61e73a8af0-1d6dfa406b7mr5682364637.29.1728062494374;
-        Fri, 04 Oct 2024 10:21:34 -0700 (PDT)
-Received: from [10.67.48.245] ([192.19.223.252])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71df0d452a9sm97549b3a.123.2024.10.04.10.21.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 04 Oct 2024 10:21:33 -0700 (PDT)
-Message-ID: <1c35bb90-24f4-494d-b7f0-def4d9e598f5@broadcom.com>
-Date: Fri, 4 Oct 2024 10:21:32 -0700
+	Fri, 04 Oct 2024 19:57:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
+	s=s31663417; t=1728071836; x=1728676636;
+	i=markus.stockhausen@gmx.de;
+	bh=BcN1ryMvOwwt2Dlfb4YKA2Wdv1MdcqwO9HnMeLljjgk=;
+	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
+	 References:MIME-Version:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=E70nC+y9NespXruFfDzoKOIYaZ4IhE7bgBjsWI08XAaZcRto3wn6KfLXSK4AITnr
+	 BlrEcZ/MCc0PSv9EfUCezAVhW895ILj0JwVMgU4unW0lKPNs0D3K1CU+v5pOeyI2R
+	 DHZmzX8sCWXkdXW1bY/MDXC843St88LvNHnEGhGacIQ3fWZrlSUX9KChHDOka2O41
+	 zPwpKwAUtuQ8xONUJl2yM/4HeDSrM8aqxxA21qtQsAtxWEJxRuo07oAGeVvrq4zNq
+	 xtBeHuVY1kKaa8OIE0eCJdbqMQHMzj4+nNBmOaQpHMTf9+JeWZm3SC0pcB7agxQh/
+	 4dSHpA1CQ42RJqq/IQ==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from openwrt ([94.31.70.81]) by mail.gmx.net (mrgmx104
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MdNY8-1tW9Ay0i3M-00eSXc; Fri, 04
+ Oct 2024 21:57:16 +0200
+From: Markus Stockhausen <markus.stockhausen@gmx.de>
+To: linux-phy@lists.infradead.org,
+	chris.packham@alliedtelesis.co.nz
+Cc: Markus Stockhausen <markus.stockhausen@gmx.de>
+Subject: [PATCH 3/4] phy: Realtek Otto SerDes: include driver
+Date: Fri,  4 Oct 2024 15:56:09 -0400
+Message-ID: <20241004195712.1891488-4-markus.stockhausen@gmx.de>
+X-Mailer: git-send-email 2.46.2
+In-Reply-To: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
+References: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] phy: usb: update Broadcom driver table to use
- designated initializers
-To: Sam Edwards <cfsworks@gmail.com>, Justin Chen <justin.chen@broadcom.com>,
- Al Cooper <alcooperx@gmail.com>
-Cc: Broadcom internal kernel review list
- <bcm-kernel-feedback-list@broadcom.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20241004034131.1363813-1-CFSworks@gmail.com>
- <20241004034131.1363813-3-CFSworks@gmail.com>
-Content-Language: en-US
-From: Florian Fainelli <florian.fainelli@broadcom.com>
-Autocrypt: addr=florian.fainelli@broadcom.com; keydata=
- xsBNBFPAG8ABCAC3EO02urEwipgbUNJ1r6oI2Vr/+uE389lSEShN2PmL3MVnzhViSAtrYxeT
- M0Txqn1tOWoIc4QUl6Ggqf5KP6FoRkCrgMMTnUAINsINYXK+3OLe7HjP10h2jDRX4Ajs4Ghs
- JrZOBru6rH0YrgAhr6O5gG7NE1jhly+EsOa2MpwOiXO4DE/YKZGuVe6Bh87WqmILs9KvnNrQ
- PcycQnYKTVpqE95d4M824M5cuRB6D1GrYovCsjA9uxo22kPdOoQRAu5gBBn3AdtALFyQj9DQ
- KQuc39/i/Kt6XLZ/RsBc6qLs+p+JnEuPJngTSfWvzGjpx0nkwCMi4yBb+xk7Hki4kEslABEB
- AAHNMEZsb3JpYW4gRmFpbmVsbGkgPGZsb3JpYW4uZmFpbmVsbGlAYnJvYWRjb20uY29tPsLB
- IQQQAQgAywUCZWl41AUJI+Jo+hcKAAG/SMv+fS3xUQWa0NryPuoRGjsA3SAUAAAAAAAWAAFr
- ZXktdXNhZ2UtbWFza0BwZ3AuY29tjDAUgAAAAAAgAAdwcmVmZXJyZWQtZW1haWwtZW5jb2Rp
- bmdAcGdwLmNvbXBncG1pbWUICwkIBwMCAQoFF4AAAAAZGGxkYXA6Ly9rZXlzLmJyb2FkY29t
- Lm5ldAUbAwAAAAMWAgEFHgEAAAAEFQgJChYhBNXZKpfnkVze1+R8aIExtcQpvGagAAoJEIEx
- tcQpvGagWPEH/2l0DNr9QkTwJUxOoP9wgHfmVhqc0ZlDsBFv91I3BbhGKI5UATbipKNqG13Z
- TsBrJHcrnCqnTRS+8n9/myOF0ng2A4YT0EJnayzHugXm+hrkO5O9UEPJ8a+0553VqyoFhHqA
- zjxj8fUu1px5cbb4R9G4UAySqyeLLeqnYLCKb4+GklGSBGsLMYvLmIDNYlkhMdnnzsSUAS61
- WJYW6jjnzMwuKJ0ZHv7xZvSHyhIsFRiYiEs44kiYjbUUMcXor/uLEuTIazGrE3MahuGdjpT2
- IOjoMiTsbMc0yfhHp6G/2E769oDXMVxCCbMVpA+LUtVIQEA+8Zr6mX0Yk4nDS7OiBlvOwE0E
- U8AbwQEIAKxr71oqe+0+MYCc7WafWEcpQHFUwvYLcdBoOnmJPxDwDRpvU5LhqSPvk/yJdh9k
- 4xUDQu3rm1qIW2I9Puk5n/Jz/lZsqGw8T13DKyu8eMcvaA/irm9lX9El27DPHy/0qsxmxVmU
- pu9y9S+BmaMb2CM9IuyxMWEl9ruWFS2jAWh/R8CrdnL6+zLk60R7XGzmSJqF09vYNlJ6Bdbs
- MWDXkYWWP5Ub1ZJGNJQ4qT7g8IN0qXxzLQsmz6tbgLMEHYBGx80bBF8AkdThd6SLhreCN7Uh
- IR/5NXGqotAZao2xlDpJLuOMQtoH9WVNuuxQQZHVd8if+yp6yRJ5DAmIUt5CCPcAEQEAAcLB
- gQQYAQIBKwUCU8AbwgUbDAAAAMBdIAQZAQgABgUCU8AbwQAKCRCTYAaomC8PVQ0VCACWk3n+
- obFABEp5Rg6Qvspi9kWXcwCcfZV41OIYWhXMoc57ssjCand5noZi8bKg0bxw4qsg+9cNgZ3P
- N/DFWcNKcAT3Z2/4fTnJqdJS//YcEhlr8uGs+ZWFcqAPbteFCM4dGDRruo69IrHfyyQGx16s
- CcFlrN8vD066RKevFepb/ml7eYEdN5SRALyEdQMKeCSf3mectdoECEqdF/MWpfWIYQ1hEfdm
- C2Kztm+h3Nkt9ZQLqc3wsPJZmbD9T0c9Rphfypgw/SfTf2/CHoYVkKqwUIzI59itl5Lze+R5
- wDByhWHx2Ud2R7SudmT9XK1e0x7W7a5z11Q6vrzuED5nQvkhAAoJEIExtcQpvGagugcIAJd5
- EYe6KM6Y6RvI6TvHp+QgbU5dxvjqSiSvam0Ms3QrLidCtantcGT2Wz/2PlbZqkoJxMQc40rb
- fXa4xQSvJYj0GWpadrDJUvUu3LEsunDCxdWrmbmwGRKqZraV2oG7YEddmDqOe0Xm/NxeSobc
- MIlnaE6V0U8f5zNHB7Y46yJjjYT/Ds1TJo3pvwevDWPvv6rdBeV07D9s43frUS6xYd1uFxHC
- 7dZYWJjZmyUf5evr1W1gCgwLXG0PEi9n3qmz1lelQ8lSocmvxBKtMbX/OKhAfuP/iIwnTsww
- 95A2SaPiQZA51NywV8OFgsN0ITl2PlZ4Tp9hHERDe6nQCsNI/Us=
-In-Reply-To: <20241004034131.1363813-3-CFSworks@gmail.com>
+X-Provags-ID: V03:K1:QHc4NLpzmbXLlogmMNPyyDgcn4jHHopkniK7hviLrZoJRvYaN2D
+ dIfi10FAZaHY76DN2PZwHWRPJejbZaXAKMp3Cb4ZQUl/oRG5hAnZbhDovbMR/NtELy+mfSK
+ ARH7cU4mzhuOqPZ68yLhj+DyfhEyEB3AoaGEFEBHj+WiG6oZsc9syKzL11ZMJ6aeHufLSHE
+ TLnc3TbBrjed5zYQ3mO6g==
+UI-OutboundReport: notjunk:1;M01:P0:c/cHjFOoleA=;oxBe3N4fdBwS+40Qa9mnTstj+s3
+ 4o065wWSU9a2CuqLSweeRA8a9GoBAkSvY+cqwlsjuNoRBrpxn3stvaLKVprsqO4OxE0XDDzEl
+ HpZxaL2u+mWO8n6ZibPm5zCCrw1NgTusFhL7xT1sWeQYt2cZSeVJ6TVrVf7PbS9OSg0zLdvG8
+ mrKkWPdNZLxGFOoAeufhdDCDmip32PDqyTzId6aW/CEZMvHEoUfGl6c44pCGOJ9yFyqp8CAHq
+ KDrVS4h7rNCvlWy6aRQAsTrAZ2esFu+XqV9rkaI8FT285t8NKtX01QdcIuuLreeKcHRQDGv2A
+ F/8X4+PAhSEglb5T7iKgimwHmARE3g+Uvmk6KApp1r09dz/KWRmcSRm+fg9+cTvPCBvgX87EY
+ hPk1J6zzWZUeAIusE4eDWdFdRnbhIu4OAy8d9cqHJmG+y3gKFjMItcYBl4yZsmo2CeX+J2+PQ
+ ZlRQ0pMjJ8K/9N/7MRHYAcICQLNPGlZyYYgcy9cv3CYQuRTbv+08v/tgM3nvaAGLXOrVgEM2E
+ 3yVZkZp+ufNDCdpiZooEWtFxE8HL45102VKPDGaRzNj3ZxaIqCufgLLYXY2YDJ6VCcP7inLrL
+ QDlrX4ja/hHZlcfiI7C/TJeCj+hw4DvSQ+3HtLk1ujvpnTwTk+SIKFuMHl6mJw10ZTXD1+hhX
+ E2k2y2FL2W7ageubCZwyAA490L3dMlNhSZEsPriRJFcpGbmUDz1utrTcAPO0XJgI+anevFwvd
+ 6OsoQCgYxixsaVFleD0br9SvPXNxqrmjvlaI/4owieFJ1mdr9w16/UomMR4erq/VvrUaVszsj
+ 8cBH45/2PbZJa77JoYnq9mWQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_102136_221809_C4734EE5 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20241004_205739_209073_423CBF65 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,34 +103,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/3/24 20:41, Sam Edwards wrote:
-> The Broadcom USB PHY driver contains a lookup table
-> (`reg_bits_map_tables`) to resolve register bitmaps unique to certain
-> versions of the USB PHY as found in various Broadcom chip families.
-> Historically, this table was just kept carefully in sync with the
-> "selector" enum every time the latter changed to ensure consistency.
-> However, a recent commit [1] introduced two new enumerators but did not
-> adjust the array for BCM4908, thus breaking the xHCI controller (and
-> boot process) on this platform and revealing the fragility of this
-> approach.
-> 
-> Since these arrays are a little sparse (many elements are zero) and the
-> position of the array elements is significant only insofar as they agree
-> with the enumerators, designated initializers are a better fit than
-> positional initializers here. Convert this table accordingly.
-> 
-> [1] 4536fe9640b6 ("phy: usb: suppress OC condition for 7439b2")
-> 
-> Signed-off-by: Sam Edwards <CFSworks@gmail.com>
+Make the driver available in the build system.
+---
+ drivers/phy/realtek/Kconfig  | 7 +++++++
+ drivers/phy/realtek/Makefile | 1 +
+ 2 files changed, 8 insertions(+)
 
-Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
--- 
-Florian
+diff --git a/drivers/phy/realtek/Kconfig b/drivers/phy/realtek/Kconfig
+index 75ac7e7c31ae..2c711016952d 100644
+--- a/drivers/phy/realtek/Kconfig
++++ b/drivers/phy/realtek/Kconfig
+@@ -30,3 +30,10 @@ config PHY_RTK_RTD_USB3PHY
+ 	  of the parameters.
+
+ endif # ARCH_REALTEK || COMPILE_TEST
++
++config PHY_REALTEK_OTTO_SERDES
++	tristate "SerDes driver for the Realtek Otto platform"
++	depends on OF
++	select GENERIC_PHY
++	help
++	  Enable this for SerDes support in RTL83xx and RTL93xx switches.
+diff --git a/drivers/phy/realtek/Makefile b/drivers/phy/realtek/Makefile
+index ed7b47ff8a26..57e14961d851 100644
+--- a/drivers/phy/realtek/Makefile
++++ b/drivers/phy/realtek/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
+ obj-$(CONFIG_PHY_RTK_RTD_USB2PHY)	+= phy-rtk-usb2.o
+ obj-$(CONFIG_PHY_RTK_RTD_USB3PHY)	+= phy-rtk-usb3.o
++obj-$(CONFIG_PHY_REALTEK_OTTO_SERDES)	+= phy-rtl-otto-serdes.o
+--
+2.44.0
+
 
 -- 
 linux-phy mailing list
