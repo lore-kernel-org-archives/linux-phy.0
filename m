@@ -4,55 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72D20CFB424
-	for <linux-phy@archiver.kernel.org>; Sun,  6 Oct 2024 08:17:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A65AACFB424
+	for <linux-phy@archiver.kernel.org>; Sun,  6 Oct 2024 08:18:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o5ZVtm5YQ6AeFoeBgg/5tE5RvPC8UO+oF+5XFj94z5o=; b=t9DK9WYZzMqkpH
-	bJfS6OtBfDaMkyJ7SmvHXr5WKy4tImADACJb5GHNEFXCs/R6bh6K+a2ms7R9DpdyYBOaCL6BQG5/m
-	I2V9atuVonUOzT1KZjjMyiT3CBYdtNhrVLDU/4yr5TlbPfGxJfuqIpYzR+u+cQkZgwQJKmAIHi7Bk
-	ikp6YDA4KD7cysZX9bP8gp6hDzwGHsLWHaPaI2kaZ49OMb0ThIwRe85zXelwkzWeYNw/Cagv68qq0
-	BFE+immKSiPizPj5luiKY7KDBP2soXR3+H8Xir/PgDC6Nmb/TYsLPdFIDhterpDWhE0OjcKQpya8S
-	4s01Echf1iuTZBdRJi+A==;
+	List-Owner; bh=SeL5dP+bL63PsbAftB7hn4P0QucpWYE4I7Mu88wSRCg=; b=LDKMFgLLYQ5b+O
+	sMYrtrWZtpzHQoj23AnTf4kR8Bd/i5AhvLv5huYOysraZ7cTpLS02hVHMFNq2eGiZa2o2w+7R8ja4
+	ccegJ33Yw638aXEgFhP3xsUDyGvw4BvdZK+Z0g3eTES/cxrh1F7cYHImuS1ZsjG3SEYNTKiEMGwgu
+	pAAb6wDDzOJUzEie8u23OozL0JHkP63abRtbt/fYNMchErBzfpcVe7AThXC8cPZOCsgf7T7P8SdzC
+	XIUngathotKbdMLDy3OXFoo7cBrU0SW2dYLBSSVYOstArgdTOVbR2cFPka0rsDtOJH61+G1B0Ic9n
+	uG2sbrqFO07Zse8XNIog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxMSh-0000000HKFE-0A8y;
-	Sun, 06 Oct 2024 08:17:55 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sxMTT-0000000HKHn-1arp;
+	Sun, 06 Oct 2024 08:18:43 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxMSd-0000000HKEk-1tLK
+	id 1sxMTQ-0000000HKHO-35LL
 	for linux-phy@lists.infradead.org;
-	Sun, 06 Oct 2024 08:17:52 +0000
+	Sun, 06 Oct 2024 08:18:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 66EAF5C548D;
-	Sun,  6 Oct 2024 08:17:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 812B6C4CEC5;
-	Sun,  6 Oct 2024 08:17:48 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id AFBAF5C5755;
+	Sun,  6 Oct 2024 08:18:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C80BC4CEC5;
+	Sun,  6 Oct 2024 08:18:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728202670;
-	bh=xGCI2FGgHpzfQrpiTWZ0uhNTM+tB73Rm6p2+nfWO8BM=;
+	s=k20201202; t=1728202719;
+	bh=Qc7z33jtVEI1rdef/ofh3IAJna1XhyEiaCc2L+lX35g=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=LacZMBBlcLYbxi1Wa/VofDZOOb8JWA4kcu6bVOpdLZyUk6b49yRNGsvcgytNlzNWQ
-	 qJUOwMVQQml8uNusPljwvSgwfvogQe6UEMKeZ5YCK7+U0n2COqtRaqn9qkTb9yNfmS
-	 4+tg0ucKABGCrE19g+Tv96nbBC4/R5gqKdk+uGEI2Mm9OugTuFBOzqGki1UTg9o38L
-	 WGBM8fTwf42bCHutNNYZjVxylNt4Aoqrj2Ojz6Yr6kXAONSKxhr0t3Yn7RCb3R8Ut/
-	 1UcRaVr5i0rSLXEl5VpDeiTlLzVMfVgjKyQB17Z8tFRyjnPj7LVjG7TfKep2CNW4mP
-	 NIAFUYNRYLTGw==
-Message-ID: <bab322ef-9d7a-4152-ae95-22d097121e1c@kernel.org>
-Date: Sun, 6 Oct 2024 10:17:46 +0200
+	b=Oo9FkCiGgnlTzo/OhapBaSxkiczxSP9AKs6f4rw8ShulhQS4lNW0mc/v1b20v/R5b
+	 P9yIXTn6p6kf6ZBcZgH/d6wocRjwYLxkanwb0d6IFCGvBpJNHLCOEgh1xb/zIljXLG
+	 TkhoowFxXI7XGWxeTpXs70L2OMxHXkIkBBZpjB2AzHOuYiJboalYDC+eP/Trq6svcT
+	 p1ctHDNpBxByCxQPihXMLHDhP9qsXmbYVdRCExwHqdWtXrCYcUjpelodMbSv+g4yPq
+	 nSU6R63lZwnrvHwOI4ALqpwieazHyWv+k/GIpmsQuUj147b/A9h2s/LkYy5Mzn0/FH
+	 onbeIGDyxSUvA==
+Message-ID: <362ccc22-9f7d-43de-9670-380a1a57e886@kernel.org>
+Date: Sun, 6 Oct 2024 10:18:36 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: Aw: Re: [PATCH 3/4] phy: Realtek Otto SerDes: include driver
+Subject: Re: Aw: Re: [PATCH 4/4] phy: Realtek Otto Serdes: add devicetree
+ documentation
 To: Markus Stockhausen <Markus.Stockhausen@gmx.de>
 Cc: linux-phy@lists.infradead.org, chris.packham@alliedtelesis.co.nz
 References: <20241004195712.1891488-1-markus.stockhausen@gmx.de>
- <20241004195712.1891488-4-markus.stockhausen@gmx.de>
- <3765cbe1-1f3e-4dfa-8d5c-5956d7d3aa43@kernel.org>
- <trinity-8cffe44a-8a49-4447-916b-91c2a3b8272e-1728123162590@3c-app-gmx-bs38>
+ <20241004195712.1891488-5-markus.stockhausen@gmx.de>
+ <085c03f4-8b1e-413a-a72e-0dd3ec60a667@kernel.org>
+ <trinity-30f499cf-b454-4ee8-981b-51f950858c68-1728124094345@3c-app-gmx-bs38>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -98,10 +99,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <trinity-8cffe44a-8a49-4447-916b-91c2a3b8272e-1728123162590@3c-app-gmx-bs38>
+In-Reply-To: <trinity-30f499cf-b454-4ee8-981b-51f950858c68-1728124094345@3c-app-gmx-bs38>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241006_011751_605150_DED74AEF 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20241006_011840_899728_F9BD16E0 
+X-CRM114-Status: GOOD (  16.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,49 +114,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDUvMTAvMjAyNCAxMjoxMiwgTWFya3VzIFN0b2NraGF1c2VuIHdyb3RlOgo+PiBHZXNlbmRl
-dDrCoFNhbXN0YWcsIDA1LiBPa3RvYmVyIDIwMjQgdW0gMTE6MTIgVWhyCj4+IFZvbjrCoCJLcnp5
-c3p0b2YgS296bG93c2tpIiA8a3J6a0BrZXJuZWwub3JnPgo+PiBBbjrCoCJNYXJrdXMgU3RvY2to
-YXVzZW4iIDxtYXJrdXMuc3RvY2toYXVzZW5AZ214LmRlPiwgbGludXgtcGh5QGxpc3RzLmluZnJh
-ZGVhZC5vcmcsIGNocmlzLnBhY2toYW1AYWxsaWVkdGVsZXNpcy5jby5uego+PiBCZXRyZWZmOsKg
-UmU6IFtQQVRDSCAzLzRdIHBoeTogUmVhbHRlayBPdHRvIFNlckRlczogaW5jbHVkZSBkcml2ZXIK
-Pj4gT24gMDQvMTAvMjAyNCAyMTo1NiwgTWFya3VzIFN0b2NraGF1c2VuIHdyb3RlOgo+Pj4gTWFr
-ZSB0aGUgZHJpdmVyIGF2YWlsYWJsZSBpbiB0aGUgYnVpbGQgc3lzdGVtLgo+Pj4gLS0tCj4+PiBk
-cml2ZXJzL3BoeS9yZWFsdGVrL0tjb25maWcgfCA3ICsrKysrKysKPj4+IGRyaXZlcnMvcGh5L3Jl
-YWx0ZWsvTWFrZWZpbGUgfCAxICsKPj4+IDIgZmlsZXMgY2hhbmdlZCwgOCBpbnNlcnRpb25zKCsp
-Cj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JlYWx0ZWsvS2NvbmZpZyBiL2RyaXZl
-cnMvcGh5L3JlYWx0ZWsvS2NvbmZpZwo+Pj4gaW5kZXggNzVhYzdlN2MzMWFlLi4yYzcxMTAxNjk1
-MmQgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL3BoeS9yZWFsdGVrL0tjb25maWcKPj4+ICsrKyBi
-L2RyaXZlcnMvcGh5L3JlYWx0ZWsvS2NvbmZpZwo+Pj4gQEAgLTMwLDMgKzMwLDEwIEBAIGNvbmZp
-ZyBQSFlfUlRLX1JURF9VU0IzUEhZCj4+PiBvZiB0aGUgcGFyYW1ldGVycy4KPj4+Cj4+PiBlbmRp
-ZiAjIEFSQ0hfUkVBTFRFSyB8fCBDT01QSUxFX1RFU1QKPj4+ICsKPj4+ICtjb25maWcgUEhZX1JF
-QUxURUtfT1RUT19TRVJERVMKPj4+ICsgdHJpc3RhdGUgIlNlckRlcyBkcml2ZXIgZm9yIHRoZSBS
-ZWFsdGVrIE90dG8gcGxhdGZvcm0iCj4+Cj4+IFdoYXQgaXMgb3R0byBwbGF0Zm9ybT8KPj4KPj4g
-V2h5IHRoaXMgaXMgb3V0c2lkZSBvZiBhYm92ZSBBUkNIX1JFQUxURUs/Cj4gCj4gVGhlIE90dG8g
-cGxhdGZvcm0gaXMgYSBNSVBTIG5ldHdvcmsgU29DLiBBUkNIX1JFQUxURUsgaXMgQVJNdjguIFNl
-ZQo+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZh
-bGRzL2xpbnV4LmdpdC90cmVlL2RyaXZlcnMvY2xvY2tzb3VyY2UvdGltZXItcnRsLW90dG8uYz9o
-PXY2LjEyLXJjMQo+IGZvciBhbm90aGVyIGRyaXZlciBJIHdyb3RlIHNvbWUgdGltZSBhZ28gdGhh
-dCBnb3QgdXBzdHJlYW1lZCBsYXRlbHkgZnJvbSBDaHJpcyBQYWNraGFtLgoKTm90aGluZyBpbiBj
-b21taXQgbXNnIGdhdmUgYW55IGRldGFpbHMgb24gdGhhdC4KCj4gCj4+PiArIGRlcGVuZHMgb24g
-T0YKPj4+ICsgc2VsZWN0IEdFTkVSSUNfUEhZCj4+PiArIGhlbHAKPj4+ICsgRW5hYmxlIHRoaXMg
-Zm9yIFNlckRlcyBzdXBwb3J0IGluIFJUTDgzeHggYW5kIFJUTDkzeHggc3dpdGNoZXMuCj4+PiBk
-aWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcmVhbHRlay9NYWtlZmlsZSBiL2RyaXZlcnMvcGh5L3Jl
-YWx0ZWsvTWFrZWZpbGUKPj4+IGluZGV4IGVkN2I0N2ZmOGEyNi4uNTdlMTQ5NjFkODUxIDEwMDY0
-NAo+Pj4gLS0tIGEvZHJpdmVycy9waHkvcmVhbHRlay9NYWtlZmlsZQo+Pj4gKysrIGIvZHJpdmVy
-cy9waHkvcmVhbHRlay9NYWtlZmlsZQo+Pj4gQEAgLTEsMyArMSw0IEBACj4+PiAjIFNQRFgtTGlj
-ZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCj4+PiBvYmotJChDT05GSUdfUEhZX1JUS19SVERfVVNC
-MlBIWSkgKz0gcGh5LXJ0ay11c2IyLm8KPj4+IG9iai0kKENPTkZJR19QSFlfUlRLX1JURF9VU0Iz
-UEhZKSArPSBwaHktcnRrLXVzYjMubwo+Pj4gK29iai0kKENPTkZJR19QSFlfUkVBTFRFS19PVFRP
-X1NFUkRFUykgKz0gcGh5LXJ0bC1vdHRvLXNlcmRlcy5vCj4+Cj4+IFdoeSBhcmUgeW91IGludHJv
-ZHVjaW5nIG93biBuYW1pbmcgc3R5bGU/IEV2ZXJ5dGhpbmcgaXMgUlRLLCBubz8KPiAKPiBJIGp1
-c3QgY29waWVkIHRoZSB0aW1lciBuYW1pbmcgY29udmVudGlvbi4KClJhdGhlciBwbGVhc2UgYWxp
-Z24gd2l0aCB1cHN0cmVhbSBMaW51eCBrZXJuZWwgY29udmVudGlvbnMuCgpCZXN0IHJlZ2FyZHMs
-CktyenlzenRvZgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+On 05/10/2024 12:28, Markus Stockhausen wrote:
+>> ...
+>>> + The primary serdes register memory location. Other SerDes control and
+>>> + management registers are distributed all over the I/O memory space and
+>>> + identified by the driver automatically.
+>>> +
+>>> + controlled-ports:
+>>> + description: |
+>>> + A bit mask defining the ports that are actively controlled by the driver. In
+>>> + case a bit is not set the driver will only process read operations on the
+>>> + SerDes. If not set the driver will run all ports in read only mode.
+>>
+>> You have never tested it.
+> 
+> Maybe I left the wrong impression. I'm currently very hard trying to get this driver
+> working on 4 different SoCs. The only environment I can do this porperly is an OpenWrt
+> toolchain and a lot of patches. With other bits in place I can even start a Zyxel
+> GS1920 (RTL839x) through serial console, setup the SerDes and activate the attached
+> Realtek PHYs.
+> 
+> https://github.com/openwrt/openwrt/pull/16577
+> https://github.com/openwrt/openwrt/pull/16123
+
+I am talking about binding. You never tested the binding.
+
+Please run `make dt_binding_check` (see
+Documentation/devicetree/bindings/writing-schema.rst for instructions).
+Maybe you need to update your dtschema and yamllint.
+
+> 
+> An older DT from last weekend:
+> 
+> https://github.com/openwrt/openwrt/pull/16123/commits/716b01afd35fcc708c0204ca237d8541a8000ffa
+> 
+>>> +
+>>> + "#phy-cells":
+>>> + const: 4
+>>> + description: |
+>>> + The first number defines the SerDes to use. The second number a linked
+>>> + SerDes. E.g. if a octa 1G PHY is attached to two QSGMII SerDes. The third
+>>> + number is the first switch port this SerDes is working for, the fourth number
+>>> + is the last switch port the SerDes is working for.
+>>> +
+>>> + cmd-setup:
+>>> + description: |
+>>> + A field of 16 bit values that contain a patch/command sequence to run on the
+>>> + SerDes registers during driver setup.
+>>
+>> None of these fields match DT. Drop all of driver related stuff.
+> 
+> Hm, what would be the best way to run magic vendor patch sequences that setup
+> registers and do not pollute driver?
+
+These belong to driver. What do you mean "pollute"? The driver is the
+place for these, not DT!
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
