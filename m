@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81218CFB446
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 15:53:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7719ECFB44A
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 16:29:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uk7BUP8qPehlDS4tLEjNsEWmufHngUYCw1wqviR56gk=; b=pdKLz2Rh6GZpMy
-	amIaI1avvHXUk687y2MEqA5X+nqWrhsbN5i/HDCDNQLuUeCidWm6Q068TOJ+HiuwK3RWgbDPDCQFi
-	nDXIlmFmz9FJdkoL4VE4saplsjEEKNDQH2oLbjyJsbKWg2Lsv0EkJCEnQWl3NQHuI4vp3jUIoKpPu
-	l+Ipgz5xLkc1jNn83j2jrC7DRtKYQ2DM3xARMQ3iUliSJinbzIIh5AFGn2Kt4dh3xHnaeP5/WlzG2
-	1qL+ugmfPwq8UyLul+ey50d4dsbN+FLnoODfhlr/Q+/T/M5bWvPrzW0Uv7bqQ3iT8vteb3nLlyi43
-	+zeO2HaFjFnfAUIqEMFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oiSUSIOBQp3ctiGwm91uziaU9aIA6H02wdwWFoOfjOI=; b=f+ssUebJBJzMHc
+	O5KsMT0Za5kgozP57sMjLVSmf9quae+LYmf+sJ5fZ4w4kjGJQE91TLdOaHQuEW06WJJAgzTgY/owj
+	WBNLtndba1eOlTMzhNElCwzGqhLfiU653LVTN2GB+S0XO7YvqkcBznuw+VFLtyPGndrLrymtghCpu
+	0P0V6jLDYJRxaLt2hzShiBFd4LexPeOxQOhnKEeY3YmjbkHi83gPP59w0n2KUi9pfCqcKdXVtnbPn
+	Ou6LG6P1oogIPw1+jcux2j9yhFyywJQAhzNoxHJzOE6ceQsNzf8BIgFN2cX4pjIrWHKplZNIuECP8
+	pQjW3cJYrVudLCQK3gzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxq2f-000000032WP-47Wg;
-	Mon, 07 Oct 2024 15:53:01 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1sxqcM-00000003ADf-3mra;
+	Mon, 07 Oct 2024 16:29:54 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxpz6-000000031lk-0iuT
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Oct 2024 15:49:21 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C8A8BA40E1A;
-	Mon,  7 Oct 2024 15:49:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0AE2EC4CEC6;
-	Mon,  7 Oct 2024 15:49:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728316159;
-	bh=JZaodJsdbrVJ1iauYiNFyzN1+/9kUcGmGPzolkN7gTI=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=nvftFzmrpfdug87BcW+9XOkVMBjgc5z2GWWHwvyj5o+l0MFwZzHd3PpRQKO1NxlJs
-	 OlywJD6AkjfI7gif2jVIhWVfgQ5Tv/ogS9yEw45LOXW5CpNRLpJD3xRNsQe55StllM
-	 RJlC7ZWLYcJ05IRp4MPImZz5lwDNmvEu0ktgaKCKPb1M9tvFXLRAcrRm+DGs9J/yqU
-	 hI40BsM9WanCZ+/6ZnIFdU1N7lM6FFViwEq6TjbXxt0aKyGvWbzjiCkV0gMxi3ulSX
-	 QjFbImwzbMnBy1DKYdUiU+ZRQ0hK0X9vhB2TcaEiHVH77PY4nTAqfUsLCpJnKlh0hy
-	 vPT+eNQ83gQWw==
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Aswath Govindraju <a-govindraju@ti.com>, 
- Swapnil Jakhade <sjakhade@cadence.com>, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-Cc: xe-linux-external@cisco.com, Daniel Walker <danielwa@cisco.com>, 
- Bartosz Stania <sbartosz@cisco.com>
-In-Reply-To: <20241003123405.1101157-1-bwawrzyn@cisco.com>
-References: <20241003123405.1101157-1-bwawrzyn@cisco.com>
-Subject: Re: [PATCH] phy: cadence: Sierra: Fix offset of DEQ open eye
- algorithm control register
-Message-Id: <172831615566.134651.5873217062618720618.b4-ty@kernel.org>
-Date: Mon, 07 Oct 2024 21:19:15 +0530
+	id 1sxqaA-000000039cp-2t58;
+	Mon, 07 Oct 2024 16:27:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
+	Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=qy8O/TmsmzDYewUZ3qCB4nBDlcLj83mGmeo1Cj46QWA=; b=Zovv+n4pff8MEXXuktE+AXOoNe
+	6lNCbcBspcLrCRQWmyeMy4K3rmclXxRqpwFlmVLIoSotLC4PGQBdsp7hz+VuhHkpXTM6akvS10Coq
+	ld9QjxDwWYoxJcxwPsRt+NeMea6RaUHQxkna15fTsSdDVtj/wdHA1ghkFd6IjSTW+O7GTk4ZnIRKA
+	OGbZalQ/+jYzJ3PFn0gpTq4DFT9tJsV/W0UJibhPOC2G+NUBSKEpC58m03GA4krv85oAXrU/6798o
+	EK+5lKSzSKNpRVZOF9kV1du0znoXJpuMdPnT32NqLSdWzzmN9B+scOtficsXXR+pqOjLpuOs+1RuA
+	HPhEYKUw==;
+Received: from i5e860d18.versanet.de ([94.134.13.24] helo=phil.lan)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1sxqa9-0002o8-4T; Mon, 07 Oct 2024 18:27:37 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: vkoul@kernel.org,
+	kishon@kernel.org
+Cc: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] dt-bindings: phy: rk3228-hdmi-phy: convert to yaml
+Date: Mon,  7 Oct 2024 18:27:32 +0200
+Message-ID: <20241007162732.2450168-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_084920_323323_EF02921D 
-X-CRM114-Status: UNSURE (   5.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241007_092738_751235_EB93D293 
+X-CRM114-Status: GOOD (  17.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,26 +79,171 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Convert the binding to yaml and rename it according to its first
+compatible instead of the unspecific rockchip-inno-hdmi naming.
 
-On Thu, 03 Oct 2024 12:34:02 +0000, Bartosz Wawrzyniak wrote:
-> Fix the value of SIERRA_DEQ_OPENEYE_CTRL_PREG and add a definition for
-> SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG. This fixes the SGMII single link
-> register configuration.
-> 
-> Fixes: 7a5ad9b4b98c ("phy: cadence: Sierra: Update single link PCIe register configuration")
-> 
-> 
-> [...]
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+---
+ .../bindings/phy/phy-rockchip-inno-hdmi.txt   | 43 --------
+ .../phy/rockchip,rk3228-hdmi-phy.yaml         | 97 +++++++++++++++++++
+ 2 files changed, 97 insertions(+), 43 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/phy-rockchip-inno-hdmi.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3228-hdmi-phy.yaml
 
-Applied, thanks!
-
-[1/1] phy: cadence: Sierra: Fix offset of DEQ open eye algorithm control register
-      commit: 2d0f973b5f1c369671d0c59e103d15f4f6f775c9
-
-Best regards,
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-hdmi.txt b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-hdmi.txt
+deleted file mode 100644
+index 710cccd5ee56..000000000000
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-hdmi.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-ROCKCHIP HDMI PHY WITH INNO IP BLOCK
+-
+-Required properties:
+- - compatible : should be one of the listed compatibles:
+-	* "rockchip,rk3228-hdmi-phy",
+-	* "rockchip,rk3328-hdmi-phy";
+- - reg : Address and length of the hdmi phy control register set
+- - clocks : phandle + clock specifier for the phy clocks
+- - clock-names : string, clock name, must contain "sysclk" for system
+-	  control and register configuration, "refoclk" for crystal-
+-	  oscillator reference PLL clock input and "refpclk" for pclk-
+-	  based refeference PLL clock input.
+- - #clock-cells: should be 0.
+- - clock-output-names : shall be the name for the output clock.
+- - interrupts : phandle + interrupt specified for the hdmiphy interrupt
+- - #phy-cells : must be 0. See ./phy-bindings.txt for details.
+-
+-Optional properties for rk3328-hdmi-phy:
+- - nvmem-cells = phandle + nvmem specifier for the cpu-version efuse
+- - nvmem-cell-names : "cpu-version" to read the chip version, required
+-	  for adjustment to some frequency settings
+-
+-Example:
+-	hdmi_phy: hdmi-phy@12030000 {
+-		compatible = "rockchip,rk3228-hdmi-phy";
+-		reg = <0x12030000 0x10000>;
+-		#phy-cells = <0>;
+-		clocks = <&cru PCLK_HDMI_PHY>, <&xin24m>, <&cru DCLK_HDMIPHY>;
+-		clock-names = "sysclk", "refoclk", "refpclk";
+-		#clock-cells = <0>;
+-		clock-output-names = "hdmi_phy";
+-		status = "disabled";
+-	};
+-
+-Then the PHY can be used in other nodes such as:
+-
+-	hdmi: hdmi@200a0000 {
+-		compatible = "rockchip,rk3228-dw-hdmi";
+-		...
+-		phys = <&hdmi_phy>;
+-		phy-names = "hdmi";
+-		...
+-	};
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3228-hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3228-hdmi-phy.yaml
+new file mode 100644
+index 000000000000..ac15bf857ef9
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,rk3228-hdmi-phy.yaml
+@@ -0,0 +1,97 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,rk3228-hdmi-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip HDMI PHY with Innosilicon IP block
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    enum:
++      - rockchip,rk3228-hdmi-phy
++      - rockchip,rk3328-hdmi-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 3
++
++  clock-names:
++    items:
++      - const: sysclk
++      - const: refoclk
++      - const: refpclk
++
++  clock-output-names:
++    description:
++      The hdmiphy output clock name, that gets fed back to the CRU.
++
++  "#clock-cells":
++    const: 0
++
++  interrupts:
++    maxItems: 1
++
++  nvmem-cells:
++    maxItems: 1
++    description: A phandle + nvmem specifier for the cpu-version efuse
++      for adjustment to some frequency settings, depending on cpu-version
++
++  nvmem-cell-names:
++    items:
++      - const: cpu-version
++
++  '#phy-cells':
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - clock-output-names
++  - '#clock-cells'
++  - '#phy-cells'
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: rockchip,rk3228-hdmi-phy
++
++    then:
++      properties:
++        interrupts: false
++
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: rockchip,rk3328-hdmi-phy
++
++    then:
++      required:
++        - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++
++    #include <dt-bindings/clock/rk3228-cru.h>
++    hdmi_phy: phy@12030000 {
++      compatible = "rockchip,rk3228-hdmi-phy";
++      reg = <0x12030000 0x10000>;
++      #phy-cells = <0>;
++      clocks = <&cru PCLK_HDMI_PHY>, <&xin24m>, <&cru DCLK_HDMI_PHY>;
++      clock-names = "sysclk", "refoclk", "refpclk";
++      #clock-cells = <0>;
++
++      clock-output-names = "hdmi_phy";
++    };
 -- 
-~Vinod
-
+2.43.0
 
 
 -- 
