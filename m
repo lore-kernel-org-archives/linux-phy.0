@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A223CFB454
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 19:26:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF48ECFB456
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 19:27:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAt4Rj7f16Qy1BpndiQVUHq9ddsHH874LJkwOHeil4M=; b=uKrpNEKCMxxh0A
-	9OvJoyk3h5xkBA4mlrL97Mo+wq4nFBZ+ispEIljlsG8mLR5xPVNjEZLK5l0F0XMtoo0Ub80mGFyXl
-	VeoDTTRivl6XC92A2VbVAQL/ie8pd4v0NwWsqcYjplEZViDMSGekNd5fmwr9aAfBIYZ+0ho0C202Z
-	5wWDeTlxrCwadTPUs/hVqHH25yXjoMsgETwconiJzfOpiUCQBNhp+mK6U+TiQ+U1wR043Cy/Aoapj
-	odS042BA39baQstNtjlu3r3WByjjCCqrDK+BEo0k4WqFQXn4k5QnFgQpXxVgFwZiUup5sHSPC049S
-	HGRKcvEuZHm9OMctHhVg==;
+	List-Owner; bh=5Bw0kqOKYPM4yZHSRZt3uHPLFniyc6h2dusXHsl5QM0=; b=iuM8ZYLVuDK66k
+	CWqyrpd20QJv/gjKDciB06uygxW2rx/DkMSk4Rvsd+S3mWzb8dj1ovIrR2EIWOLIA5LHbLoPzHzIe
+	taxCvrYYz1j0fHsMa6KOp0n+I9XtNa/1lSLTH+ONISAzyWkbtYOnMhoJtsJt8K+nL2zOm0cJcupCZ
+	Fv9VFV0Tmdwl5orKKP+h69y3UKpfYqvAKQP5bO/67tCtTWY3iLQ0M27TfJD+dGGLeTy2XNT3uItmX
+	fC1v7kolSrFSCDxdyoM8ovBFXkKfMThUzK/fc2M0oeig+XKGVYcpfAlWazmL8udIO7enjAryrg/cF
+	/u7pvR2IrcsoUnPeD+1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxtNJ-00000003c2l-0JFg;
-	Mon, 07 Oct 2024 19:26:33 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1sxtO6-00000003c5k-1sQA;
+	Mon, 07 Oct 2024 19:27:22 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxtND-00000003c22-2vks
+	id 1sxtO3-00000003c5K-3rql
 	for linux-phy@lists.infradead.org;
-	Mon, 07 Oct 2024 19:26:31 +0000
+	Mon, 07 Oct 2024 19:27:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 45DAEA4213B;
-	Mon,  7 Oct 2024 19:26:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 92AF9C4CEC6;
-	Mon,  7 Oct 2024 19:26:24 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 5B481A4213B;
+	Mon,  7 Oct 2024 19:27:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 501D9C4CEC6;
+	Mon,  7 Oct 2024 19:27:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728329186;
-	bh=DxB6tP/1/54tXDZO+i+KzpSZ9NCOJyhjjOB+P87GCe4=;
+	s=k20201202; t=1728329238;
+	bh=7ZXHHVvYWUhRs9qVt1712wexj5EwK3FATrgE4xZMoTw=;
 	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=lqFdxo2GJC9Zy9zGz9oUo+j00CHiUZ8Mz9N+8Id7VmOFcGg8aFkXQRKBryeKGa7gI
-	 GZDI7cDFlf2k76IgoEUdLqZms8U2YTN/LH7uryUY3sfIFG9xFpdgBTNORM6zIB6rtN
-	 Z8EJiLGmS7KL+UQS/joLNRp2nwZ+pIS11uN5b/n91LUpw854UlrlJkRXMYSb/rWcfy
-	 RVblXPuhOh4hipnFY3Xt5qiae+w+lGok7+94aGBIkchU+8EGJpJwEthIFgvvnBnc8I
-	 7OJzNXWiqHwAunpisr53OAi48SAchWrtlR6D+JvjiDLXhesquz8WfEdLyGzVdoebHM
-	 WCy/nL3XCtipQ==
-Message-ID: <e0355f2b-9d77-4792-9405-14b0bf79ac32@kernel.org>
-Date: Mon, 7 Oct 2024 21:26:21 +0200
+	b=Ezx2Jez9WN18XbnnN9f5qgs+MIlKQtWTqwVG3YpLuwqfSehL73yzb8Stp9EW0SbvR
+	 Tk54Pdzisud2MGOsrBVDm1dyO6ttJxtVWXl3LdQzuSVGBWP6SwgvsXvY2cHahk01fQ
+	 DtOiDEhLl5avXrRIaAiLsMSq/93iAd8kr3o4qSyO166327+WE2Mk0vuXCGrrx2OUTm
+	 PxniCmm5wfUlMDfcq0BvTvQALYkeM+t7lsPo9Px/d629jjZSQCw13rGCbBTd8MlaOo
+	 nk27g1vZc+E9alxlyXLJxoZhEYt6xnLNLOsvdV0+4QLUaBdSjdm9MBcC2x/5+A/IHU
+	 J87x4V0pYg6Lw==
+Message-ID: <76ea0018-5d0b-4caa-910e-efb3f6a290db@kernel.org>
+Date: Mon, 7 Oct 2024 21:27:14 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY
- binding
+Subject: Re: [PATCH v2 3/3] phy: Integrate Realtek Otto SerDes driver into
+ build system
 To: Markus Stockhausen <markus.stockhausen@gmx.de>,
  linux-phy@lists.infradead.org, chris.packham@alliedtelesis.co.nz,
  devicetree@vger.kernel.org
 References: <20241007163623.3274510-1-markus.stockhausen@gmx.de>
- <20241007163623.3274510-2-markus.stockhausen@gmx.de>
+ <20241007163623.3274510-4-markus.stockhausen@gmx.de>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -98,10 +98,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241007163623.3274510-2-markus.stockhausen@gmx.de>
+In-Reply-To: <20241007163623.3274510-4-markus.stockhausen@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_122627_903071_63FA36F2 
-X-CRM114-Status: GOOD (  25.67  )
+X-CRM114-CacheID: sfid-20241007_122720_121790_1B2884D8 
+X-CRM114-Status: GOOD (  11.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,133 +119,32 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 07/10/2024 18:36, Markus Stockhausen wrote:
-> Add bindings for the SerDes of the Realtek Otto platform. These are
-> network Switch SoCs with up to 52 ports divided into four different
-> model lines.
+> Add the driver to the build system. The Otto platform currently has
+> only some drivers upstream and is missing a lot of platform bits.
+> Use only the bare minimum of dependencies.
 > 
 > Changes in v2:
-> - new subject
-> - removed patch command sequences
-> - renamed parameter controlled-ports to realtek,controlled-ports
-
-Changelog goes under ---.
-
-
+> - Change naming convention
+> - Add more help text
 > 
 > Signed-off-by: Markus Stockhausen <markus.stockhausen@gmx.de>
 > ---
->  .../bindings/phy/realtek,otto-serdes.yaml     | 95 +++++++++++++++++++
->  1 file changed, 95 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml b/Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml
-> new file mode 100644
-> index 000000000000..a72ac206b35f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/realtek,otto-serdes.yaml
+>  drivers/phy/realtek/Kconfig  | 10 ++++++++++
+>  drivers/phy/realtek/Makefile |  1 +
+>  2 files changed, 11 insertions(+)
 
-Nothing improved.
+Still no point in splitting this.
 
-> @@ -0,0 +1,95 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/realtek,otto-serdes.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Realtek Otto SerDes controller
-> +
-> +maintainers:
-> +  - Markus Stockhausen <markus.stockhausen@gmx.de>
-> +
-> +description:
-> +  The MIPS based Realtek Switch SoCs of the Realtek RTL838x, RTL839x, RTL930x and RTL931x series
-> +  have multiple SerDes built in. They are linked to single, quad or octa PHYs like the RTL8218B,
-> +  RTL8218D or RTL8214FC and are one of the integral part of the up-to-52-port switch architecture.
-> +
-> +  Although these SerDes controllers have common basics they behave differently on the SoC families
-> +  and rely on heavy register magic. To keep the driver clean it can load patch sequences from
-> +  devictree and execute them during the controller actions like phy_init(), ...
-> +
-> +  The driver exposes the SerDes registers different from the hardware but instead gives a
-> +  consistent view and programming interface. So the RTL838x series has 6 ports and 4 pages, the
-> +  RTL839x has 14 ports and 12 pages, the RTL930x has 12 ports and 64 pages and the RTL931x has
-> +  14 ports and 192 pages.
+<form letter>
+This is a friendly reminder during the review process.
 
-Totally messed wrapping. Please wrap your code as Linux coding style.
+It seems my or other reviewer's previous comments were not fully
+addressed. Maybe the feedback got lost between the quotes, maybe you
+just forgot to apply it. Please go back to the previous discussion and
+either implement all requested changes or keep discussing them.
 
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^serdes@[0-9a-f]+$"
-> +
-> +  compatible:
-> +    items:
-> +      - enum:
-> +          - realtek,rtl8380-serdes
-> +          - realtek,rtl8390-serdes
-> +          - realtek,rtl9300-serdes
-> +          - realtek,rtl9310-serdes
-> +
-> +  reg:
-> +    items:
-> +      description:
-> +        The primary SerDes paged register memory location. Other SerDes control and management
-> +        registers are distributed all over the I/O memory space and are identified by the driver.
-
-What happened here? I asked only about |. Why are you adding unrelated
-changes?
-
-Anyway, still not tested and still does not look any other binding.
-
-> +
-> +  "#phy-cells":
-> +    const: 4
-> +    description:
-> +      The first number defines the SerDes to use. The second number a linked SerDes. E.g. if a octa
-> +      1G PHY is attached to two QSGMII SerDes. The third number is the first switch port this
-> +      SerDes is working for, the fourth number is the last switch port the SerDes is working for.
-> +
-> +  realtek,controlled-ports:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description:
-> +      A bit mask defining the ports that are actively controlled by the driver. In case a bit is
-
-Driver? Bindings are not about drivers. Drop.
-
-I don't think you implemented my feedback.
-
-> +      not set the driver will only process read operations on the SerDes. This is just in case the
-> +      SerDes has been setup by U-Boot correctly and the driver malfunctions. If not set the driver
-> +      will control all SerDes.
-
-
-
-> +
-> +reguired:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +
-> +additionalProperties:
-> +  false
-
-Please open any existing binding and do it like there. Or start from
-scratch from example-schema.
-
-> +
-> +examples:
-> +  - |
-> +    serdes: serdes@1b00e780 {
-> +      compatible = "realtek,rtl8380-serdes", "realtek,otto-serdes";
-> +      reg = <0x1b00e780 0x1200>;
-> +      controlled-ports = <0x003f>;
-> +      #phy-cells = <4>;
-> +    };
-
-One example is enough.
-
-... and still not tested. Sending untested code is waste of our time.
+Thank you.
+</form letter>
 
 Best regards,
 Krzysztof
