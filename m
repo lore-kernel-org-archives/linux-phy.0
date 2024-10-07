@@ -4,63 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE15BCFB448
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 15:51:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A62C6CFB448
+	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 15:53:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HOP2pRrz8SsNdHwIeearhIMcPfbizXbiUUarRJgW5vg=; b=IiwidMqA1IJ732
-	Q3ECfNoIlQkPfaVDIa20bP5EWNBu7HpwZDOW3iFG5YAgDSBIYFMjZlNSE7gqtpK+qRBrOGe+xjOAH
-	scU5RGzylEtwpve38jrP/DUZDRqZCvbX9gLDB7JdpF+atuI3gMl4/3utDBHA3fe1jLXl6eXw21XfJ
-	0UMNibaKXqrt2ls0xL+kRyGJyrO7F5M0CDmR2Jc0cls0kPqQyg9QcsUZLo+a9p7BQCIwvc0MYV8eY
-	v/92I9OdD7WzjbAvNvZcZdJwShMHgIU8YnD/oJLHz7FpEXg/2d90eyCSe925wVqxvjhWMnLcG5RSR
-	jT7hcIwSnxLBjkLP7oVA==;
+	List-Owner; bh=/zZRnGfyeIcVjx5/kLQyJ5XVmeBKlAC5JZA4dtqy9vY=; b=TUo9c50A6Z50DK
+	RIAM9kyDcBEboc/JUNUchhORUpDGq83Vwhc/57aOLJiNWkAdSg9ar+Cz9kXUhq5ffqSliKQVIlRjr
+	VXgPsXNrYLEogrpqvwDm7kmwbB4vIH+9wEnH++0uIlr3lPGLDrVozBZ9IDAkcTOPZSaTQZTCEEhR+
+	DwVwJPGBgo0AIR0Qtv1P/m6ltNgX5Lneyd1o8PHxj6MwfcCobGAgdbFDSVsD8xRZBu24W58sbvnXd
+	2qKOLIqKk1d5YwV/Vo/kAp1gpljOKz9hqUkv4Z6n6xyT8H8S3roAPPu3oxjuDXZsmVFS2QHka5M2u
+	ccvtjZeWIwC4pPcYTFRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxq1M-000000032G6-1ftR;
-	Mon, 07 Oct 2024 15:51:40 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sxq2f-000000032W5-1coH;
+	Mon, 07 Oct 2024 15:53:01 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxpyr-000000031hD-0tv1;
-	Mon, 07 Oct 2024 15:49:06 +0000
+	id 1sxpyv-000000031ia-3dau;
+	Mon, 07 Oct 2024 15:49:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 7E2D85C5A64;
+	by nyc.source.kernel.org (Postfix) with ESMTP id 896BCA418B4;
 	Mon,  7 Oct 2024 15:49:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7203C4CED0;
-	Mon,  7 Oct 2024 15:49:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B5A1C4CEC6;
+	Mon,  7 Oct 2024 15:49:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728316144;
-	bh=fdQgCvkUVNcWgqqhdAJ2FjLhihD1asnc+B1Iuh/DpfY=;
+	s=k20201202; t=1728316148;
+	bh=S3COoiZdIFf6D1j3gJ1awjWFFgi6Ggt/jCMljKFYw7c=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=eLCBPb2Bfjd7B77CLVW4dY4aML/1Dwpq2AAxtMwfOaXWvlhfURh/YmDhXXP7C308J
-	 SOpjm2zRTcJiWo3ffieH1BQK6H2j1t6Ze8qJodEhZ03tgtRHnwVkbaIBZELYOzPkF6
-	 HP9fVq5LBsDneoPT0gQ5s0f0YNbdE4ou1wfZnyoWiTAVJ9j9aVVN8jnjp0R+Dk6r0H
-	 OJmxhB+zvA6u6mOv+fgGWMZUZbsrsXWAzfU3rlWK+q8sYHvk7uUWEteho1wOoYTrZ8
-	 E5u2p1XKXHLLnlgccfoFw66LLUDJT6vf291tjTyEaEaK6xXV7tPyLfrFSrlk8QJQpi
-	 Jv7NVoFbIu3hw==
+	b=qj5L/uuv3ULO/yuK/wZwH96zW+kuYsPsSlE2Y6I14/VBBpGnmNuIK7EYQIYiN3729
+	 tCFAPhyAU+F/mFguZO/OqX5ywRHu6TKrJ+r3MAhluXSmdR2b+W7ufcZ1LHgIV5jTi7
+	 anmS0YfWvg7YzipzbwN9uW1YQOw12HIbr4vx/cICJDq3aizL9MEeb10B2mXnuRVZ6l
+	 3a5P/qs60kHgwuEj0xDllF3PB3HqgGO0+l4Qs4t/94yWQRP8tKqZ47CUqrA17IcR7d
+	 YRAZOVhEsLhtTCs7B4V29TcslDKQKvNJyInpBZ5QBe9SadJRk+6nCcFO+mWX7Ws1nS
+	 9GsU0C4BkRbbQ==
 From: Vinod Koul <vkoul@kernel.org>
 To: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, mcoquelin.stm32@gmail.com, 
- alexandre.torgue@foss.st.com, p.zabel@pengutronix.de, 
- Christian Bruel <christian.bruel@foss.st.com>
+ conor+dt@kernel.org, sjakhade@cadence.com, yamonkar@cadence.com, 
+ Siddharth Vadapalli <s-vadapalli@ti.com>
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-stm32@st-md-mailman.stormreply.com, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- fabrice.gasnier@foss.st.com
-In-Reply-To: <20240930170847.948779-1-christian.bruel@foss.st.com>
-References: <20240930170847.948779-1-christian.bruel@foss.st.com>
-Subject: Re: (subset) [PATCH v9 0/5] Add STM32MP25 USB3/PCIE COMBOPHY
- driver
-Message-Id: <172831614044.134526.10151258840417457919.b4-ty@kernel.org>
-Date: Mon, 07 Oct 2024 21:19:00 +0530
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ conor.dooley@microchip.com, nm@ti.com, srk@ti.com
+In-Reply-To: <20240930095145.3004053-1-s-vadapalli@ti.com>
+References: <20240930095145.3004053-1-s-vadapalli@ti.com>
+Subject: Re: [PATCH v2] dt-bindings: phy: cadence-sierra: Allow PHY types
+ QSGMII and SGMII
+Message-Id: <172831614467.134526.16993157211985653714.b4-ty@kernel.org>
+Date: Mon, 07 Oct 2024 21:19:04 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_084905_328452_FA7768C5 
-X-CRM114-Status: UNSURE (   5.42  )
+X-CRM114-CacheID: sfid-20241007_084910_023793_1472255D 
+X-CRM114-Status: UNSURE (   5.54  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,24 +77,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 30 Sep 2024 19:08:42 +0200, Christian Bruel wrote:
-> Changes in v9:
->    - Fix bot clang warnings: uninitialized variables and
->      include bitfield.h for FIELD_GET
+On Mon, 30 Sep 2024 15:21:45 +0530, Siddharth Vadapalli wrote:
+> The Sierra SERDES can be configured for QSGMII and SGMII protocols. Hence,
+> update the bindings to treat "PHY_TYPE_QSGMII" and "PHY_TYPE_SGMII" as
+> valid values for the "cdns,phy-type" property.
 > 
-> Changes in v7/v8:
->    - MAINTAINERS: Reorder STM32MP25 DRIVER entry
 > 
-> [...]
 
 Applied, thanks!
 
-[1/5] dt-bindings: phy: Add STM32MP25 COMBOPHY bindings
-      commit: 8c7e955fac07ee11c76ddf2330587fe083fab1a2
-[2/5] phy: stm32: Add support for STM32MP25 COMBOPHY.
-      commit: 47e1bb6b4ba0987139ab790efa03c542ebc1b10d
-[3/5] MAINTAINERS: add entry for ST STM32MP25 COMBOPHY driver
-      commit: b6a713b92ebb9e7ee1495f009fd02a71e485184f
+[1/1] dt-bindings: phy: cadence-sierra: Allow PHY types QSGMII and SGMII
+      commit: bbcc9e2bde693ec3fc6aab650abaf748eb9f38f9
 
 Best regards,
 -- 
