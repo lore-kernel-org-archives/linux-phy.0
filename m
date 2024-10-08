@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2362FCED270
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 07:05:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0452ECED273
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 07:06:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H8JXJsa+Xq89iOOguk+V1exuxCOUGGvQe/4+fciRIUY=; b=X37PeBkOs9orA9
-	TlG0yE71nMAU+DDCzFo2LOxXwwK8iza60iJSIM8BckKfZzLykNtfMUrNhgFLe/8TXrPAkM7CsM4aP
-	FpVUj48MgWkANyQkK2tcGrkEbcUD/NjO2o1WB5nlfxtFt6EGhiRdJSvuwe3WjLv9Tgx6ScyN+rqw0
-	xe1+VgbG/J4YuazeSS0EpbYobbZERLq0dIt2LGvIe4DCv5SKdfBZ157b6CHC2hy5NSXodvyJ/oD+p
-	BQLSffqcXtR9MLYUiecTPnwl76rnsOcZgxI/jIfn1zzf7PAJa4fOvVGHlwjgBfXagwm4LUUWc99LZ
-	lrZmLlAxyPbFUunrK+gw==;
+	List-Owner; bh=dxfsrS5K1yCrfT6WKrlt6Pq4YrCy5V2MHD0hRa6OnEA=; b=2b4d9JBZ3DIjuI
+	BCtyBRc3hIVCfOnm02/ynPLxDguGA0P1J394fFjOexzB8a4NdACnk7S6EBTmgSWJFaxpq4MjBQHHi
+	2kPZB3VQiTqWBljc/z9BcEhsNOSqhUXkShUxaLK0+qOkiKSwRBJUXi4a7a11oWLqHWdn/Dpe1EVLN
+	CAkPPmuOG1jIkgtSkqt7Oppc8POtage0GMANQYEL5HFxNWVmq8Xpjk9efZ8CHHPBy4Ke1Rd7xY/X9
+	oOKEtFMy7/V6FRE9+oDqFcSqdZ5JRiO3zDo0ssXZny/iohZFU+9EMXAStwnNvUArF6G2bVb9iejia
+	z3h96hrNVpp9LkZF/q4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4HE-00000004k9L-3P02;
-	Tue, 08 Oct 2024 07:05:00 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sy4Ih-00000004kWW-2yL4;
+	Tue, 08 Oct 2024 07:06:31 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4GL-00000004jyl-3ONh
+	id 1sy4IJ-00000004kTf-0Jfn
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 07:04:07 +0000
+	Tue, 08 Oct 2024 07:06:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id CB2CD5C5490;
-	Tue,  8 Oct 2024 07:04:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E830C4CEC7;
-	Tue,  8 Oct 2024 07:04:02 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 93747A432A0;
+	Tue,  8 Oct 2024 07:05:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E918AC4CEC7;
+	Tue,  8 Oct 2024 07:06:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728371044;
-	bh=T1EkaNAmjXginEIHQ5Bufiw3/ttibaSxwHXb18Ubk3g=;
+	s=k20201202; t=1728371165;
+	bh=Mi74GsNR9ToTBakjvvZ/aB15liBiIJezVR+0aM3tInc=;
 	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=hYTxxcyWlL0vh++YQvfOs+36j4B+nJHFgBIgiE0tz/8xX0v80uI1rXr0C4nnXeSS7
-	 E0FTaXFH6VA2zylHzok6Wa5GZHa12crLy+H7DWfCbJO3k3EN4vIChZ6Ypsdz01nZbu
-	 T127L0OHN3duLxCHo5J6tt9Lkh1UzgbfwhYfnQKiFbKR2OxK81MbbGQpsV2gXBNKPG
-	 byHmmjNpE5lQHonM56DhyVRbS0UoMllHLV9xCzdKQbo6SqOrsVq+np3k15TWuwVz1R
-	 BxOEr+TuWrjKD76T39kOfi8Pf1zq2Y4MWG1MOCvSS5u0d0+LFZZB04t9I5ESjW6E72
-	 KKVEXEVfBW9kw==
-Message-ID: <8046eca4-8100-45f8-8c94-679a563d8a24@kernel.org>
-Date: Tue, 8 Oct 2024 09:04:00 +0200
+	b=MnijEbAfTBidXuCn0Dh/8aaI1TptgcUfO6tatl49aYTbeHj+xpb9ID9d/8xv93DwD
+	 7MWUWuXHW1T4k8SAbBh3GjH/bu+yS/DGg9CnS64JdFht/0W2ZAGTMi6xM3KDfszm4A
+	 hH3Qg2ou48jDTRLZj0tZkove/aS2ZYeAlopWu9eUtVsOHkpxwSpNTny5JMKdKTTY1q
+	 Ns15zOjwnpdIh1zLmoFxGAm+UzSsmzsIavNuzXKAEfyxWzwWOxaSxs+gYPUh2LAYUQ
+	 3tc0DjongHJZM9KsVqJLtaGth5AiHUGZIKJafU02Lsp3Ey9jLQIBddrLTH0f/Pq8N6
+	 xB/PTcYkrImJQ==
+Message-ID: <1ff119eb-bb89-407f-bd08-986a84ff7a0d@kernel.org>
+Date: Tue, 8 Oct 2024 09:06:01 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY
@@ -100,8 +100,8 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
 In-Reply-To: <20241007163623.3274510-2-markus.stockhausen@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_000405_976122_C24463B3 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20241008_000607_276315_FEA4FE76 
+X-CRM114-Status: UNSURE (   5.38  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -120,34 +120,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 07/10/2024 18:36, Markus Stockhausen wrote:
-> Add bindings for the SerDes of the Realtek Otto platform. These are
-> network Switch SoCs with up to 52 ports divided into four different
-> model lines.
-> 
-> Changes in v2:
-> - new subject
-> - removed patch command sequences
-> - renamed parameter controlled-ports to realtek,controlled-ports
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - realtek,rtl8380-serdes
+> +          - realtek,rtl8390-serdes
+> +          - realtek,rtl9300-serdes
 
-<form letter>
-Please use scripts/get_maintainers.pl to get a list of necessary people
-and lists to CC (and consider --no-git-fallback argument, so you will
-not CC people just because they made one commit years ago). It might
-happen, that command when run on an older kernel, gives you outdated
-entries. Therefore please be sure you base your patches on recent Linux
-kernel.
-
-Tools like b4 or scripts/get_maintainer.pl provide you proper list of
-people, so fix your workflow. Tools might also fail if you work on some
-ancient tree (don't, instead use mainline) or work on fork of kernel
-(don't, instead use mainline). Just use b4 and everything should be
-fine, although remember about `b4 prep --auto-to-cc` if you added new
-patches to the patchset.
-</form letter>
-
-I already commented on this. The Cc list is still wrong. Please start
-using tools which do it automatically and you do not have to perform any
-choice of addresses.
+It turns out there is no chip like 9300. Align with Chris Packham,
+because it is not a superposition-SoC (exists and does not exist the
+same time, unless you check in given binding).
 
 Best regards,
 Krzysztof
