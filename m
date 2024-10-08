@@ -4,107 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92B66CED27C
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 08:41:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30C1DCEF144
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 09:28:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A+nncejdHWUVIlFT8maSXY8MfRxBv65dgLeFK3iJge4=; b=EfYYvkNvp/Vvx4
-	YYBLTKT+2hvcAdfDBNAxbXoIgIZ2H31lRHaBZFB3CslQFxIEWYTa2TnKQ+Jy/clLhshgcE4vt3Rou
-	L+x+8y5HAEDjAPFMZP2ykD/OU6AjLvJNwAnzsWDfH0ojePJ2s6E0tMHkKML1MWWHnKVfxwFD9/2vb
-	PybPq+0MtLhLgWdh3G6Ed/s62NGX47KCW5q72HdGq8W3bl3B/AQgB5KuXoXaSdjr38e2B2eFq40lK
-	lL2u7Yt/niCLLK1D3bmekr9wcmVQKPRC6NMaC923/3X6pRZsI2r6fjbEjEWXF7ZVGjqdvnfrboNSi
-	G8di6iKaITf+amH8BOmg==;
+	List-Owner; bh=jWkhKQHMc9t77YYpyxhhOH0KodGmGINqG1Ikh3RBk3s=; b=ZYCwmtYq55EllS
+	Wl0EhX5qo2buxNnVeDTOO+UsT0C8IbQPbgR8nVsfjisQCluQqWwcUGJ2TeOo2/69iYc9T9WMbTGXv
+	Dz+/ZDTEol7JclxSRnObfb/g4BC/snpdqozEEeCPfAXvcMhA9aM7GPDZRtVQCthGC91UYHEqrqgB3
+	Eumdq43JB/9YYeCVhBsRuKEc8A/656Oki6al1xnS9VW3716yZPQRahSvzzm8ycHRulqapZ7okNq+O
+	y/JL4BVkRNzQBpBhwWQsaxZQDtEC/pyEdFVEdk+If0vkkQlazeOPlpwEKzncMn9s0tEembYuQRqRT
+	rs1INYy7+DY8Zf6r+/dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy5mI-0000000567a-0utY;
-	Tue, 08 Oct 2024 08:41:10 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1sy6Vm-00000005Iui-3fJD;
+	Tue, 08 Oct 2024 09:28:10 +0000
+Received: from mout.gmx.net ([212.227.15.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy5de-000000053R8-0mKq
+	id 1sy6VJ-00000005Imk-1n2p
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 08:32:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B22B6A43329;
-	Tue,  8 Oct 2024 08:32:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAC44C4CEC7;
-	Tue,  8 Oct 2024 08:32:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728376332;
-	bh=KAvEzdvGLdylleRurHPPFueDCpj/D9mJXk3WwK5dBqM=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=IV9SFAOE1lyoZ5PVvE7NEI7UwnxrBUqV5nnCc22b5h3H1S7On+vOs30SEZbY09Z1z
-	 7HssQnzRZGvdufXX+P4Bye6IAuMh4iiLqJ/ubLPiYzSdcEUhT192H8unJbWdPv8FsO
-	 hBgB0ev50p7+GemO23yZ84hy8mZC9cnl2U154Tyx0ZH+nvg5ajHW2KAvGs/xnvUTxx
-	 DVrJH4vtClDTyBOAAa5qCH+n0c0IJ3qhvlr9+aPTxACFuQjSIJF6hpCWqVKZzdKHBf
-	 F2A1uOeLX3NRmlgyZ7FgQ9OPbRcUtyX0iD78fPFBsOfTLSiENjTk7R3rnfw78BvHwf
-	 7MgxqThsN8zTQ==
-Message-ID: <30a71840-75ee-44d6-af6e-fca27af88750@kernel.org>
-Date: Tue, 8 Oct 2024 10:32:10 +0200
+	Tue, 08 Oct 2024 09:27:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
+	s=s31663417; t=1728379637; x=1728984437;
+	i=markus.stockhausen@gmx.de;
+	bh=RTylzWO0f7AgsLiIL3tJvlvA49O22v3qoJcAFWtddDY=;
+	h=X-UI-Sender-Class:From:To:References:In-Reply-To:Subject:Date:
+	 Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=pyJfvswLMQGvrSmtLfPFJXwq7k7RyHD+RwpJ/gBqttKBiOc3b4kJkCqBLSsokKWJ
+	 Fca25Eeei54747oxe6F/lpaxBW9rP9172r5kFPI6BSKhOC41tGhdDkVd2CifkWcKq
+	 4Sk9bgKx6wluAWyaSHPZ+JyK1m462Y0I/MHzI/g/H88+8xryZXAneuXoAJKNVhRQ/
+	 DU1Tgw8OmjjCsoRDUb19rZcBTZolhLb6Oi9SjZOMAhOXgMKsk4xzPxRSem6yyUgsr
+	 6yhwX4WFa/6WgQGAqpf6Hj2AUYcNLVF5NxGvsP9jbbBG/yjbkhlrUNfrG53SaFgpD
+	 WHXd3ARrFr5FG9HYNw==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from colnote55 ([94.31.70.45]) by mail.gmx.net (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1M4JmN-1syNc42IaH-005Pnb; Tue, 08
+ Oct 2024 11:27:17 +0200
+From: <markus.stockhausen@gmx.de>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>,
+	<linux-phy@lists.infradead.org>,
+	<chris.packham@alliedtelesis.co.nz>,
+	<devicetree@vger.kernel.org>
+References: <20241007163623.3274510-1-markus.stockhausen@gmx.de> <20241007163623.3274510-2-markus.stockhausen@gmx.de> <e0355f2b-9d77-4792-9405-14b0bf79ac32@kernel.org> <000b01db1944$5bd444b0$137cce10$@gmx.de> <d23ba989-2ada-4033-a890-928bf4e746b3@kernel.org> <000f01db194f$2d140880$873c1980$@gmx.de> <30a71840-75ee-44d6-af6e-fca27af88750@kernel.org>
+In-Reply-To: <30a71840-75ee-44d6-af6e-fca27af88750@kernel.org>
+Subject: AW: AW: AW: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY binding
+Date: Tue, 8 Oct 2024 11:27:15 +0200
+Message-ID: <001401db1964$44f0b010$ced21030$@gmx.de>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: AW: AW: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes
- PHY binding
-To: markus.stockhausen@gmx.de, linux-phy@lists.infradead.org,
- chris.packham@alliedtelesis.co.nz, devicetree@vger.kernel.org
-References: <20241007163623.3274510-1-markus.stockhausen@gmx.de>
- <20241007163623.3274510-2-markus.stockhausen@gmx.de>
- <e0355f2b-9d77-4792-9405-14b0bf79ac32@kernel.org>
- <000b01db1944$5bd444b0$137cce10$@gmx.de>
- <d23ba989-2ada-4033-a890-928bf4e746b3@kernel.org>
- <000f01db194f$2d140880$873c1980$@gmx.de>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <000f01db194f$2d140880$873c1980$@gmx.de>
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: de
+Thread-Index: AQFmt424TDky7oOEBHAYnHfWLjuWPwFdE8X8Ac4j3w8Bo7K4gQFrn2WmAl9/+/kBd/naN7MUxdeA
+X-Provags-ID: V03:K1:h1SdJmszbde4k0pq6JyhtbLWcCW4JuJAycn0DV04BZLHn8IeO1x
+ j/4KQ4oKv8cv8Aj1WGcA3mU6oD4ZgYF9MAbQnJKzr7E88CIdrro8rvc9led1nuAcPpFGorB
+ GlY+JKGKf8Obw4M4SZKPjLodzMpiPwtCxGs0ZwsdPToGXSb/1u3WDFyx13sSrZbjGvIGMsf
+ SOW60MZBLDajuYlj/y9zw==
+UI-OutboundReport: notjunk:1;M01:P0:l8O+JBtHtTw=;AHVyiKdiIHq+ISkc20K52rWeN1y
+ 4kv4xhSdcM2aVr43Jvl/fmYEe5aYteYdRP6m9Tj5aGuq8Cz5aHri1g404CjI6cq2perJElDEa
+ opWQWTUDPei3297+0BdMWgt5ptunZBrzQIn0gqY+VAyuMxyGJC2kW78CUzabri7lCctdWnuaq
+ wuxs8LQELYAMt/wDVfORTPDMz2wgnPMvN5HfFnA7udds/xQT0mxRI/jIfbrQ8U7YeT2oESHWH
+ jqzuVejnnBEqgWog6Y9VMxPoJ7fVSHJU5A1gXpOJozmFBeUmnZmbgxWbmL9LVRREf+HkeOpOu
+ Kj1gOj9GwEoczDrTWcp/2wCZLEmxkASessvPHhkb2HZ/suyN1gwf96gESct7AEUTgX4BVboY5
+ jv/g6yRwDZHanvcdvjxw/gERcPoXF90RUz4FMA3TxBRGsxqgWyeI/P7JRaS6Mkva219Y7xdOR
+ hOYo4p/aV5JoxZhuEfvK4kasgPTg80BPZFx+jY5gAW28eMDydU0pmHXkStQPVKkP/8AgnoPbY
+ sh21SUqI3192Unr2OowJpiu12ppeauQE5EPmXxnsiHWpJRZ+Ux9oPIQdnkeJO52nxN6Qq7Qo/
+ Lnj3skTt6lRI8zTMW+Ee/Dvsimt1tS7eRvpNzWU8kmDJALX8XfuGmbCSkcmLukHaC5Bh0EEpY
+ fBdhw5e9wikHDukmOtbPcua9u5mHs/cg5GH+Fh/2U0ywvPiCUdCTKAw0E0XZmlTW3BXK/fNZF
+ 9Q2hEiKutY1eq9Lx5X4Slc6IsLGiMqYJ7JBTfCx1jzQM/8t5PnbcvLXDWfV1dAK+aXvUvQ3QI
+ IjBMrHZ57BGEEIjVKKzIcp2g==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_013214_438976_60A89B65 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20241008_022741_775856_A32B6D03 
+X-CRM114-Status: GOOD (  15.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,47 +90,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/10/2024 08:56, markus.stockhausen@gmx.de wrote:
->>
->>> E.g. st,invert-ext. Something like this will be needed in the future 
->>> because the SerDes allow to swap polarity which must be changed 
->>> depending on the switch design. How to do this?
->>
->> I do not understand the hardware aspect discussed in the property description... probably because there is no hardware description at all, but instead you speak about driver.
->>
->> I do not understand how polarity has anything to do with U-Boot configuring serdes.
-> 
-> Maybe my lack of knowledge in platform driver programming or the naming
-> conventions leads to confusion. I'm searching for knobs to control the behaviour 
-> of the SerDes depending on the hardware. Two examples are (more may come):
-> 
-> - "ignore SerDes X": because the provided patch sequence confuses the SerDes
-> and overwrites registers with wrong values that vendor patched U-Boot has setup
-> correctly before. 
-
-And if someone updates the bootloader to a bit different one, the DTS
-becomes wrong? How do you handle then same board with two different
-bootloaders requiring two different DTS? DTS is software-independent
-description of the hardware, so this does not look like DTS property.
-
-> 
-> - "reverse polarity of SerDes X": same goes here. Some boards need inverted
-> signalling on some of the SerDes to work properly. This must be configurable
-> somehow.
-
-I do not see how this is related to "control ports" property. There are
-few bindings which already do this, so look at them.
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+PiAtLS0tLVVyc3Byw7xuZ2xpY2hlIE5hY2hyaWNodC0tLS0tCj4gVm9uOiBLcnp5c3p0b2YgS296
+bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+IAo+IEdlc2VuZGV0OiBEaWVuc3RhZywgOC4gT2t0b2Jl
+ciAyMDI0IDEwOjMyCj4gQW46IG1hcmt1cy5zdG9ja2hhdXNlbkBnbXguZGU7IGxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnOyBjaHJpcy5wYWNraGFtQGFsbGllZHRlbGVzaXMuY28ubno7IGRl
+dmljZXRyZWVAdmdlci5rZXJuZWwub3JnCj4gQmV0cmVmZjogUmU6IEFXOiBBVzogW1BBVENIIHYy
+IDEvM10gZHQtYmluZGluZ3M6IHBoeTogYWRkIHJlYWx0ZWssb3R0by1zZXJkZXMgUEhZIGJpbmRp
+bmcKPgo+IE9uIDA4LzEwLzIwMjQgMDg6NTYsIG1hcmt1cy5zdG9ja2hhdXNlbkBnbXguZGUgd3Jv
+dGU6Cj4gPj4KPiA+Pj4gRS5nLiBzdCxpbnZlcnQtZXh0LiBTb21ldGhpbmcgbGlrZSB0aGlzIHdp
+bGwgYmUgbmVlZGVkIGluIHRoZSBmdXR1cmUgCj4gPj4+IGJlY2F1c2UgdGhlIFNlckRlcyBhbGxv
+dyB0byBzd2FwIHBvbGFyaXR5IHdoaWNoIG11c3QgYmUgY2hhbmdlZCAKPiA+Pj4gZGVwZW5kaW5n
+IG9uIHRoZSBzd2l0Y2ggZGVzaWduLiBIb3cgdG8gZG8gdGhpcz8KPiA+Pgo+ID4+IEkgZG8gbm90
+IHVuZGVyc3RhbmQgdGhlIGhhcmR3YXJlIGFzcGVjdCBkaXNjdXNzZWQgaW4gdGhlIHByb3BlcnR5
+IGRlc2NyaXB0aW9uLi4uIHByb2JhYmx5IGJlY2F1c2UgdGhlcmUgaXMgbm8gaGFyZHdhcmUgZGVz
+Y3JpcHRpb24gYXQgYWxsLCBidXQgaW5zdGVhZCB5b3Ugc3BlYWsgYWJvdXQgZHJpdmVyLgo+ID4+
+Cj4gPj4gSSBkbyBub3QgdW5kZXJzdGFuZCBob3cgcG9sYXJpdHkgaGFzIGFueXRoaW5nIHRvIGRv
+IHdpdGggVS1Cb290IGNvbmZpZ3VyaW5nIHNlcmRlcy4KPiA+IAo+ID4gTWF5YmUgbXkgbGFjayBv
+ZiBrbm93bGVkZ2UgaW4gcGxhdGZvcm0gZHJpdmVyIHByb2dyYW1taW5nIG9yIHRoZSAKPiA+IG5h
+bWluZyBjb252ZW50aW9ucyBsZWFkcyB0byBjb25mdXNpb24uIEknbSBzZWFyY2hpbmcgZm9yIGtu
+b2JzIHRvIAo+ID4gY29udHJvbCB0aGUgYmVoYXZpb3VyIG9mIHRoZSBTZXJEZXMgZGVwZW5kaW5n
+IG9uIHRoZSBoYXJkd2FyZS4gVHdvIGV4YW1wbGVzIGFyZSAobW9yZSBtYXkgY29tZSk6Cj4gPiAK
+PiA+IC0gImlnbm9yZSBTZXJEZXMgWCI6IGJlY2F1c2UgdGhlIHByb3ZpZGVkIHBhdGNoIHNlcXVl
+bmNlIGNvbmZ1c2VzIHRoZSAKPiA+IFNlckRlcyBhbmQgb3ZlcndyaXRlcyByZWdpc3RlcnMgd2l0
+aCB3cm9uZyB2YWx1ZXMgdGhhdCB2ZW5kb3IgcGF0Y2hlZCAKPiA+IFUtQm9vdCBoYXMgc2V0dXAg
+Y29ycmVjdGx5IGJlZm9yZS4KPgo+IEFuZCBpZiBzb21lb25lIHVwZGF0ZXMgdGhlIGJvb3Rsb2Fk
+ZXIgdG8gYSBiaXQgZGlmZmVyZW50IG9uZSwgdGhlIERUUyAKPiBiZWNvbWVzIHdyb25nPyBIb3cg
+ZG8geW91IGhhbmRsZSB0aGVuIHNhbWUgYm9hcmQgd2l0aCB0d28gZGlmZmVyZW50IAo+IGJvb3Rs
+b2FkZXJzIHJlcXVpcmluZyB0d28gZGlmZmVyZW50IERUUz8gRFRTIGlzIHNvZnR3YXJlLWluZGVw
+ZW5kZW50Cj4gZGVzY3JpcHRpb24gb2YgdGhlIGhhcmR3YXJlLCBzbyB0aGlzIGRvZXMgbm90IGxv
+b2sgbGlrZSBEVFMgcHJvcGVydHkuCgpHb29kIHBvaW50LiBTbyB0aGUgaW5pdGlhbCBpZGVhIHRv
+IHByb3ZpZGUgZHluYW1pYyBwYXRjaCBzZXF1ZW5jZXMgd2FzCnRoZSByaWdodCBkaXJlY3Rpb24g
+YnV0IHN0b3JpbmcgaW4gZGV2aWNldHJlZSBpcyB3cm9uZy4gTGlrZSBDaHJpcyBtZW50aW9uZWQK
+SSB3b3VsZCBjaGFuZ2UgdGhlIGNvZGUgdG8gbWFrZSB1c2Ugb2YgYSBkeW5hbWljYWxseSBsb2Fk
+ZWQgZmlybXdhcmUgZmlsZS4KCi0gaWYgZXhpc3Q6IHJ1biBzZXF1ZW5jZXMgZnJvbSB0aGVyZQot
+IGlmIG5vdCBleGlzdDoga2VlcCByZWdpc3RlcnMgYXMgaXMuCgpSZWFzb25hYmxlIGlkZWE/CgpC
+ZXN0IHJlZ2FyZHMuCgpNYXJrdXMKCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
