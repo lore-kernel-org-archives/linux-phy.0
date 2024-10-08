@@ -4,108 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 991FECEF17D
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 14:42:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DF21CED278
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 14:53:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q2M/AoQzFksFFPmsjkKcldV5pjTX9i8iUR/6n5r0ia4=; b=Qz6nfw1X9Lyg4/
-	3kaNiC+mN9sXAcESnXW2OX2Nd+eBpm3kj+JqMvhFYYqy5hzm882HsEAFdNTUBQTqsPLXn2D5FsSBJ
-	Rt0gVSqcoDhywJ/wUVonOq47zZZDiHKn+HNxfTG98P6OHYzSQPPL+OEwZcuMYiBNwomUxrrNzLcp8
-	A0lse90QxqaSwzw4Ethn0ThYzFcJHKycZ4Ph5va5CozBKvuCIfiyPVGVJKBDxx5Ylm2do8OseqY5Z
-	87J5YCE30OYL+n66UwxkAWUmiUOA2cGt3WoVCFpjX99kdEBRQYGfjyAHM4SJ0gNCbPV659gg6/I5L
-	jyiEVpH6ht8AvN8Fdofw==;
+	List-Owner; bh=Y5TPyyI+HqB0SK6sFhxcVAWP2BwkIEzgbPnO0j9oov0=; b=1D1xBJoXicb8S1
+	0ikUHAPDEO6qXqF18TdbQ0Q0X2U1tWu1US/daBDQoB/2poTZ1S+acekKmhmg1GazOSbenxvcBXl9N
+	sdut5uGO2TFA7j+33aWxl6cptMKRzY0aCRcMfBAyF8QGTeabrWBFabXIQqrWxfHz2OZNL7OytbwSA
+	CQcJoF74WJhAKZmti4TfdUkEFfxZGj8Y981FM4KBSlqBa3kEkt2CHXBgi+VhT/Ug33td8GHysmHnG
+	zJdN5kvCN2JHTCDmIM2cJTmUwFF5mZbumXme5ss5pQhL+7NiJnVJJUcB6Utiv5kasjhSuOCV7JBYl
+	cK3xegfKzObMqr8baSLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1syBQA-00000006DZf-1Hpf;
-	Tue, 08 Oct 2024 14:42:42 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1syBas-00000006G62-0fsQ;
+	Tue, 08 Oct 2024 14:53:46 +0000
+Received: from mail-yb1-f179.google.com ([209.85.219.179])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1syBKb-00000006C0J-22QP;
-	Tue, 08 Oct 2024 14:36:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id D9B1CA41F43;
-	Tue,  8 Oct 2024 14:36:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1F88C4CEC7;
-	Tue,  8 Oct 2024 14:36:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728398216;
-	bh=oYAO6+RnfqjPS2tYqJIFO8e6XQXrhYZz+XrfGjL0Ufc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=EmxSa4+byuIFypF0CQ4LUE2nJ4QP+VhgDuYtB2KguvnZjhi5nEODDMa+ZWt+LqzwU
-	 jL8AoUBr3kyOMzjDzTj5sPXahJJKFawG9HqplnI2SIpN72E2A+/kiium2dbKoWyIB3
-	 tf7rV0I+xH7QRIg/Lf4ee3TCHkFTziDgAnw9Z3oxy5gd1zb+YW6cRJ7Jzc+jxsx9Ui
-	 khA5rzwKiHNtWx3eD7BwlYkwogY+4PRoTcrILH7ALP5gYdQvRgeqKQeWMNegVKgumx
-	 syOUqioLSNd9y+NwOfAkDQkco1/wxdRFB9nXE0bWTj1EdkH6vTBi2JOWYGkX/ftZqH
-	 hzSLLXbMmV7bg==
-Message-ID: <3a45f6c8-bf2f-4227-b03a-4cf07a43b8a3@kernel.org>
-Date: Tue, 8 Oct 2024 16:36:49 +0200
+	id 1syBTv-00000006EIn-0Bjf;
+	Tue, 08 Oct 2024 14:46:36 +0000
+Received: by mail-yb1-f179.google.com with SMTP id 3f1490d57ef6-e25cc9e94eeso4904531276.3;
+        Tue, 08 Oct 2024 07:46:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728398792; x=1729003592;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=XWmvaZP2QPicvk7Uow1+SNZ9QzFB05BEabMFglqaI/E=;
+        b=X6lrpDqgsiv/q8Fuui3KQx54rQfjcETHvxUt7GFLVRbNlVJvjGthHwcbu7CAejDIx3
+         mLN76lhX1BNiyMYd3ZeVjB8vo4SVSWuOmJn6q/EFW9H3RB/fwIB9yN+uNY/zvdKT1TE+
+         6HcpPHBz7YdFUEc7Brg8bNzF0zgkN5T7Ma8qVCmbP3EP72DwzqMb0L++tPxrdEoFgejq
+         BBhX8quZa6S5UeycmO6D3Mg+6U9DsfbDMmYGTNv1z1FaoyYtH7KJB1WQGB796ZZK/DiF
+         QXKNYc21+x7oQnjoCymIaJyolgtuXTk9SI/HBn+zob84GCTSoAADSEGZwV+gaWdhrVWH
+         hjiA==
+X-Forwarded-Encrypted: i=1; AJvYcCWlsFgbDjzNJBOluU84wLs59VveYEycx7jtSeWL3kGIIWFVSFm2yCw1kiJJB80VKOitfnj+1BenSssy@lists.infradead.org, AJvYcCXAtyCaXpl8eR9+wGD3wKo63sW/ej1/jJJjS3iHo4az+SztpEX6Egl1qnIwIIXyFbiEq+Cis75rgzdNyfcp0G7V@lists.infradead.org
+X-Gm-Message-State: AOJu0YwfDFcS6VOXf2IQCL+M6jK+QEKLRNJSLiZHHOWZZvmVFYnea2lQ
+	y4G1ciBFHp4eHakV9eKw7isSaUaSfXzxHDaPGLNiPUDcfSrHIAScHrgZMSj8
+X-Google-Smtp-Source: AGHT+IHmxXdZ7My2TloKEfURW+91qzLqGOWUsCi8taaAvHcJENdiM7NTmKWq3Q0pqfekiN7ytK/LOQ==
+X-Received: by 2002:a05:6902:124a:b0:e26:29dc:8dd2 with SMTP id 3f1490d57ef6-e28936c7b84mr12408786276.6.1728398792123;
+        Tue, 08 Oct 2024 07:46:32 -0700 (PDT)
+Received: from mail-yw1-f177.google.com (mail-yw1-f177.google.com. [209.85.128.177])
+        by smtp.gmail.com with ESMTPSA id 3f1490d57ef6-e28a5871cc2sm1292575276.0.2024.10.08.07.46.30
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 08 Oct 2024 07:46:30 -0700 (PDT)
+Received: by mail-yw1-f177.google.com with SMTP id 00721157ae682-6e2d2447181so31085997b3.1;
+        Tue, 08 Oct 2024 07:46:30 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCWEEZnmMy4oPY4QHTpgRTp+hG84luShtMZ/ugxa3hacHWQmQfwyozBWJKHEULDtBSUleOIXPPJ43w3F@lists.infradead.org, AJvYcCXvPHNkiGTruuFiD2mgH0M1tD6EZziCmJKVr7/tBviU5PwGCuFCIPLHJZ6J0AbNhAySHByyEzSKeWuygWul56cj@lists.infradead.org
+X-Received: by 2002:a05:690c:5889:b0:6e3:10e7:b418 with SMTP id
+ 00721157ae682-6e310e7bd0amr12032047b3.46.1728398790349; Tue, 08 Oct 2024
+ 07:46:30 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/3] dt-bindings: phy: rockchip,inno-usb2phy: add
- rk3576
-To: Frank Wang <frawang.cn@gmail.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, heiko@sntech.de, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- william.wu@rock-chips.com, tim.chen@rock-chips.com, frank.wang@rock-chips.com
-References: <20240929061025.3704-1-frawang.cn@gmail.com>
- <20240929061025.3704-2-frawang.cn@gmail.com>
- <4czjtesext2ulsmcym2cpjavni7zuve2sdgyiqxkjkaxrl2gpf@7nqylzgd5f55>
- <b3046637-7a35-49ef-a2b4-2f44355980a7@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <b3046637-7a35-49ef-a2b4-2f44355980a7@gmail.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com> <20240822152801.602318-7-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20240822152801.602318-7-claudiu.beznea.uj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 8 Oct 2024 16:46:17 +0200
+X-Gmail-Original-Message-ID: <CAMuHMdWAX66bRKApsN3kLpp6Cezjx7AjgDt_q2_Lt6Qg3BaQfQ@mail.gmail.com>
+Message-ID: <CAMuHMdWAX66bRKApsN3kLpp6Cezjx7AjgDt_q2_Lt6Qg3BaQfQ@mail.gmail.com>
+Subject: Re: [PATCH 06/16] dt-bindings: reset: renesas,rzg2l-usbphy-ctrl:
+ Document RZ/G3S SoC
+To: Claudiu <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, magnus.damm@gmail.com, 
+	gregkh@linuxfoundation.org, mturquette@baylibre.com, sboyd@kernel.org, 
+	yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com, 
+	ulf.hansson@linaro.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+	linux-pm@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_073657_800114_264C60C5 
-X-CRM114-Status: GOOD (  17.63  )
+X-CRM114-CacheID: sfid-20241008_074635_104904_E99F840D 
+X-CRM114-Status: GOOD (  18.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,135 +89,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/10/2024 05:04, Frank Wang wrote:
-> Hi Krzysztof,
-> 
-> On 2024/9/30 3:36, Krzysztof Kozlowski wrote:
->> On Sun, Sep 29, 2024 at 02:10:24PM +0800, Frank Wang wrote:
->>> From: Frank Wang <frank.wang@rock-chips.com>
->>>
->>> Add compatible for the USB2 phy in the Rockchip RK3576 SoC.
->>>
->>> This change also refactor the clocks list as there are new clocks
->>> adding used for the USB MMU in RK3576 SoC.
->>>
->>> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
->>> ---
->>> Changelog:
->>> v4:
->>>   - refactor the clocks list used if:then:
->>>
->>> v3:
->>>   - narrowed rk3576 clocks by compatible property.
->>>
->>> v2:
->>>   - Categorize clock names by oneOf keyword.
->>>
->>> v1:
->>>   - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10467-1-frank.wang@rock-chips.com/
->>>
->>>   .../bindings/phy/rockchip,inno-usb2phy.yaml   | 46 ++++++++++++++++++-
->>>   1 file changed, 44 insertions(+), 2 deletions(-)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
->>> index 5254413137c6..fc2c03d01a20 100644
->>> --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
->>> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
->>> @@ -20,6 +20,7 @@ properties:
->>>         - rockchip,rk3366-usb2phy
->>>         - rockchip,rk3399-usb2phy
->>>         - rockchip,rk3568-usb2phy
->>> +      - rockchip,rk3576-usb2phy
->>>         - rockchip,rk3588-usb2phy
->>>         - rockchip,rv1108-usb2phy
->>>   
->>> @@ -34,10 +35,12 @@ properties:
->>>       const: 0
->>>   
->>>     clocks:
->>> -    maxItems: 1
->>> +    minItems: 1
->>> +    maxItems: 3
->>>   
->>>     clock-names:
->>> -    const: phyclk
->>> +    minItems: 1
->>> +    maxItems: 3
->>>   
->>>     assigned-clocks:
->>>       description:
->>> @@ -172,6 +175,45 @@ allOf:
->>>               - interrupts
->>>               - interrupt-names
->>>   
->>> +  - if:
->>> +      properties:
->>> +        compatible:
->>> +          contains:
->>> +            enum:
->>> +              - rockchip,px30-usb2phy
->>> +              - rockchip,rk3128-usb2phy
->>> +              - rockchip,rk3228-usb2phy
->>> +              - rockchip,rk3308-usb2phy
->>> +              - rockchip,rk3328-usb2phy
->>> +              - rockchip,rk3366-usb2phy
->>> +              - rockchip,rk3399-usb2phy
->>> +              - rockchip,rk3568-usb2phy
->>> +              - rockchip,rk3588-usb2phy
->>> +              - rockchip,rv1108-usb2phy
->>> +    then:
->>> +      properties:
->>> +        clocks:
->>> +          maxItems: 1
->>> +        clock-names:
->>> +          const: phyclk
->> maxItems: 1 instead
-> 
-> Sorry for late reply.
-> 
-> Do you mean use "maxItems: 1" instead of "const: phyclk" ?
-> 
-> 
->>> +
->>> +  - if:
->>> +      properties:
->>> +        compatible:
->>> +          contains:
->>> +            enum:
->>> +              - rockchip,rk3576-usb2phy
->>> +    then:
->>> +      properties:
->>> +        clocks:
->>> +          minItems: 3
->>> +          maxItems: 3
->>> +        clock-names:
->>> +          items:
->>> +            - const: phyclk
->>> +            - const: aclk
->>> +            - const: aclk_slv
->> This list goes to the top property with minItems: 1. Here you have only
->> minItems: 3.
->>
->> This way you have only one definition of entire list with same order of
->> items between variants.
-> 
-> For rockchip,rk3576-usb2phy, three clocks are all required, and the 
-> driver does not care about the order of the clocks.
-> 
-> So is the above definition correct?
-
-Of course not. What I wrote is correct.
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgQ2xhdWRpdSwKCk9uIFRodSwgQXVnIDIyLCAyMDI0IGF0IDU6MjjigK9QTSBDbGF1ZGl1IDxj
+bGF1ZGl1LmJlem5lYUB0dXhvbi5kZXY+IHdyb3RlOgo+IEZyb206IENsYXVkaXUgQmV6bmVhIDxj
+bGF1ZGl1LmJlem5lYS51akBicC5yZW5lc2FzLmNvbT4KPgo+IERvY3VtZW50IHRoZSBSZW5lc2Fz
+IFJaL0czUyBVU0IgUEhZIENvbnRyb2wgSVAuIFRoaXMgaXMgc2ltaWxhciB3aXRoIHRoZQo+IG9u
+ZSBmb3VuZCBvbiB0aGUgUlovRzJMIFNvQyB0aGUgZXhjZXB0aW9uIGJlaW5nIHRoYXQgdGhlIFNZ
+U0MgVVNCIHNwZWNpZmljCj4gc2lnbmFsIG5lZWQgdG8gYmUgY29uZmlndXJlZCBiZWZvcmUgYWNj
+ZXNzaW5nIHRoZSBVU0IgYXJlYS4gVGhpcyBpcwo+IGRvbmUgdGhvdWdoIGEgcmVzZXQgc2lnbmFs
+Lgo+Cj4gU2lnbmVkLW9mZi1ieTogQ2xhdWRpdSBCZXpuZWEgPGNsYXVkaXUuYmV6bmVhLnVqQGJw
+LnJlbmVzYXMuY29tPgoKVGhhbmtzIGZvciB5b3VyIHBhdGNoIQoKPiAtLS0gYS9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcmVzZXQvcmVuZXNhcyxyemcybC11c2JwaHktY3RybC55
+YW1sCj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Jlc2V0L3JlbmVz
+YXMscnpnMmwtdXNicGh5LWN0cmwueWFtbAo+IEBAIC0xNSwxMiArMTUsMTUgQEAgZGVzY3JpcHRp
+b246Cj4KPiAgcHJvcGVydGllczoKPiAgICBjb21wYXRpYmxlOgo+IC0gICAgaXRlbXM6Cj4gLSAg
+ICAgIC0gZW51bToKPiAtICAgICAgICAgIC0gcmVuZXNhcyxyOWEwN2cwNDMtdXNicGh5LWN0cmwg
+IyBSWi9HMlVMIGFuZCBSWi9GaXZlCj4gLSAgICAgICAgICAtIHJlbmVzYXMscjlhMDdnMDQ0LXVz
+YnBoeS1jdHJsICMgUlovRzJ7TCxMQ30KPiAtICAgICAgICAgIC0gcmVuZXNhcyxyOWEwN2cwNTQt
+dXNicGh5LWN0cmwgIyBSWi9WMkwKPiAtICAgICAgLSBjb25zdDogcmVuZXNhcyxyemcybC11c2Jw
+aHktY3RybAo+ICsgICAgb25lT2Y6Cj4gKyAgICAgIC0gY29uc3Q6IHJlbmVzYXMscjlhMDhnMDQ1
+LXVzYnBoeS1jdHJsICMgUlovRzNTCj4gKwoKVW5uZWVkZWQgYmxhbmsgbGluZS4KCj4gKyAgICAg
+IC0gaXRlbXM6Cj4gKyAgICAgICAgICAtIGVudW06Cj4gKyAgICAgICAgICAgICAgLSByZW5lc2Fz
+LHI5YTA3ZzA0My11c2JwaHktY3RybCAjIFJaL0cyVUwgYW5kIFJaL0ZpdmUKPiArICAgICAgICAg
+ICAgICAtIHJlbmVzYXMscjlhMDdnMDQ0LXVzYnBoeS1jdHJsICMgUlovRzJ7TCxMQ30KPiArICAg
+ICAgICAgICAgICAtIHJlbmVzYXMscjlhMDdnMDU0LXVzYnBoeS1jdHJsICMgUlovVjJMCj4gKyAg
+ICAgICAgICAtIGNvbnN0OiByZW5lc2FzLHJ6ZzJsLXVzYnBoeS1jdHJsCgpOaXQ6IHVzdWFsbHkg
+dGhlc2UgYXJlIHNvcnRlZCBieSBwYXJ0IG51bWJlciwgc28gdGhlIFJaL0czUyBzZWN0aW9uCnNo
+b3VsZCBiZSBsYXN0LgoKRm9yIHRoZSBjb250ZW50czoKUmV2aWV3ZWQtYnk6IEdlZXJ0IFV5dHRl
+cmhvZXZlbiA8Z2VlcnQrcmVuZXNhc0BnbGlkZXIuYmU+CgpHcntvZXRqZSxlZXRpbmd9cywKCiAg
+ICAgICAgICAgICAgICAgICAgICAgIEdlZXJ0CgotLSAKR2VlcnQgVXl0dGVyaG9ldmVuIC0tIFRo
+ZXJlJ3MgbG90cyBvZiBMaW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51eC1tNjhrLm9yZwoK
+SW4gcGVyc29uYWwgY29udmVyc2F0aW9ucyB3aXRoIHRlY2huaWNhbCBwZW9wbGUsIEkgY2FsbCBt
+eXNlbGYgYSBoYWNrZXIuIEJ1dAp3aGVuIEknbSB0YWxraW5nIHRvIGpvdXJuYWxpc3RzIEkganVz
+dCBzYXkgInByb2dyYW1tZXIiIG9yIHNvbWV0aGluZyBsaWtlIHRoYXQuCiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgLS0gTGludXMgVG9ydmFsZHMKCi0tIApsaW51eC1waHkgbWFpbGlu
+ZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
