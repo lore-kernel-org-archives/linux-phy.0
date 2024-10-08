@@ -4,79 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C652CEF14D
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 10:37:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C2AACEF162
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 12:31:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ypGK/ptyHhfbHtKqEVA84e0G1nrZV98gqmm14NVYfEY=; b=rL+BEko5AmObzh
-	ozfBiVP9wApIBLvYtbA4U8ChhUWrwEYpmq+92lT+cB3XaoLaA6cO7sa9z4oZ38kGENd2Y8vv0i2iJ
-	MEBESBoE+O9/v3xfT21Btyj4Q5qa2WeEOKmGIWXvIodDHV8X4dyfQZ17subppPnE1+GJxF5vG8cmr
-	NwbdeipRTYe/9gtantM+zByX4ofHNsQbcXa86/xyY5WbeQDcIFLVvkvkCSwyMmMOec4ce7qhAqyBp
-	CAkOjBfjfkJ7d9bYrVvjjyDh/pkayawDeeom7QMZj5cTF8l/QN6LcEB3WqAj3gnxbHqJerFtd7It4
-	epd683iS0tqkNkNeLgBg==;
+	List-Owner; bh=tiYfCiv9yuaQZOfxZHg2Z9EubIUshTTFw/3zF0EPnik=; b=Yw7WLz+DgxQ0lO
+	aonslz7LeeyeEXkhlxJbuYxJoW/r6NxpJ5wjdlFXZRsrtBQr5HFlu8T+nvCFMni2yH97Ij7vteFS2
+	KtvLFIdcmlh8CPN1hTxdw0mOw2kmTI1ZZeINhtF+3Bf0u4iJSPptqWOwDYR/+1SFbMMEQGouEs7Cr
+	fmZu6EN2bw9rokmCbTXmCn/o6whhEDsEcJCbe4EL98ig1F/dDomAEnxU82+6q0mZjezSqBk7jNMKQ
+	vqnKu3eSUfTDbuOT86/u/TXwiftOeulb9oqQ+51RXbJqpjWEXsfUeuo9ob9sS4/UjMiz9V2H7w/QX
+	asuqAhT0gWWNrQ7NceIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy7av-00000005TkX-02fo;
-	Tue, 08 Oct 2024 10:37:33 +0000
-Received: from mail-oi1-x22e.google.com ([2607:f8b0:4864:20::22e])
+	id 1sy9NE-00000005p1f-4BnT;
+	Tue, 08 Oct 2024 12:31:33 +0000
+Received: from mout.gmx.net ([212.227.17.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy7UU-00000005Sr5-2Ddo
+	id 1sy9JZ-00000005oCu-36A5
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 10:30:56 +0000
-Received: by mail-oi1-x22e.google.com with SMTP id 5614622812f47-3e3ba403b57so3232885b6e.2
-        for <linux-phy@lists.infradead.org>; Tue, 08 Oct 2024 03:30:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1728383453; x=1728988253; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=RaHMxhDG9Q5VfYwqCidMK07jWJtcWPqFxkIOCBw9G7M=;
-        b=UaaWEqzba3BCM6RAIEE9bJceejmgAgTQ67xokwNdEZHCumLQ8sJ4xVdNCK6yX294l3
-         7zmVO2+1hOESXhi6olxVrrMfJTSXAnTzJds2YLRixhS0L5VczKd0eJcUF/A8Jb1FUqck
-         JlaDTmwzg7RUS+AAf72xSvGQoMeZ3w9ZvFfLjjtkITmpyl1IjSji0QtLxzOhtE8Ibf5f
-         icEFB33zIF2hb4dZ/k4G7oNQpfJ46Lu7io1Ic7QDRCWuEcgpy6yCB8ab1ozudZkaAslI
-         ikCLdWjiZvnT5nkUYepaREHCyokxk3Dym8EwV7ckcqB6XpCQMKyBrBCihM3wjPyw31ga
-         o0qw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728383453; x=1728988253;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=RaHMxhDG9Q5VfYwqCidMK07jWJtcWPqFxkIOCBw9G7M=;
-        b=rsdv/QlB6HQhhR3xnc5vN36/TvWis7w6jVUYjiPokznz7qm/Hwx5v5d0mRY2nAVtQX
-         egnlwtf1/KsQaH3NDjNYoUlwHh77Z6EGLxH27v0tW6Wrfh5ty773fphxb3LpuSeX5Xf3
-         y4jDxmy3X2KSRCvV7tX5AU5OA4jaNxTnK1qOKEbutg9cv9YKVeajTpnfDgPkcBU4O5S+
-         4+P3jZ7oaBqoTmMbLd1KEo2Jv1BV236EOJOZyH1TUGB2ummD2CIB3N8ojrWkwoV9C00G
-         sm7UTLtTXNQXpIYeYhprgVLQTqKrS65Idjs0LONK65IspWvW6VmEqKppwUmAxMfcAOoi
-         2+oA==
-X-Forwarded-Encrypted: i=1; AJvYcCXH02DPTKoyR4Oq61fIJJEJGoisVuoVBCd5q+GOEM4EiAcGDapCs+zeBkvUTUjCSw4FK/Ok4ucK338=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwWR8fFA1Yt36buGLXBBx1itisytiB4Eo42orxNQ9uzxXwwX7+/
-	LQyHSCEMjXs0CNa6v6T+YTHnWPzf0DJnzHD4Two1SXgPhmF3p4g07x33u1CoYEr2Tre4V4ZoxoT
-	IWUfQ3ztPfWQW8FTuFi2kq4z0y3C4YKWvXeXFfw==
-X-Google-Smtp-Source: AGHT+IECvbGsHbDZVwRBHFdZOxOBV8fzhLQbc98HH+KbY0vj5cIu1DHOWiwPL1MGN/TExuJHK09aKSFF/Y+e5zkJckg=
-X-Received: by 2002:a05:6808:1927:b0:3e0:49c6:d580 with SMTP id
- 5614622812f47-3e3c177c251mr9658210b6e.33.1728383451979; Tue, 08 Oct 2024
- 03:30:51 -0700 (PDT)
+	Tue, 08 Oct 2024 12:27:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
+	s=s31663417; t=1728390441; x=1728995241;
+	i=markus.stockhausen@gmx.de;
+	bh=1eE7bBm9hVIVa8mkUL7DOWfcwttFz7lKkwYrwCdnzMU=;
+	h=X-UI-Sender-Class:From:To:Cc:References:In-Reply-To:Subject:Date:
+	 Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=OG00GvxxMRfbyT52dFmFWmMiq+aLbkZQDZvxWMqCeXdC8ofze2zSzg6qoDN30OLr
+	 FZld8ozgLRePfSKNG3fn5yRSt3ZD4Ul4d97anXQMq/PJW8p2oGpC98Junxftvjtsd
+	 pHoRpWwFGfaknuDLCW6VxCSYNctAOzsMdQtrJZYeG47fX9xfVzhg3P8PJxNxmY4pM
+	 3aUJLEChmra0WxtWuuF0NuT81/M4u+Opw6zQUqUQYI4btIwI5+g2dmd7KNJzX3kGt
+	 ZUPU5Nv/92HvJRebL1XXa2B5YciA4ccBRkcjdHsANt69DU2l6UAg3II/NXhVNGN0W
+	 HDM+Bl3N2UiQe0z+SQ==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from colnote55 ([94.31.70.45]) by mail.gmx.net (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1N9Mtg-1u1ELt1k9M-010cpd; Tue, 08
+ Oct 2024 14:27:21 +0200
+From: <markus.stockhausen@gmx.de>
+To: "'Rob Herring'" <robh@kernel.org>
+Cc: <linux-phy@lists.infradead.org>,
+	<chris.packham@alliedtelesis.co.nz>,
+	<devicetree@vger.kernel.org>,
+	<krzk@kernel.org>
+References: <20241007163623.3274510-1-markus.stockhausen@gmx.de> <20241007163623.3274510-2-markus.stockhausen@gmx.de> <20241007193044.GA2255474-robh@kernel.org>
+In-Reply-To: <20241007193044.GA2255474-robh@kernel.org>
+Subject: AW: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY binding
+Date: Tue, 8 Oct 2024 14:27:18 +0200
+Message-ID: <001f01db197d$6c842e90$458c8bb0$@gmx.de>
 MIME-Version: 1.0
-References: <20241002201555.3332138-1-peter.griffin@linaro.org>
- <20241002201555.3332138-2-peter.griffin@linaro.org> <ZwN/d8l7Mk6x2GHP@vaman>
-In-Reply-To: <ZwN/d8l7Mk6x2GHP@vaman>
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Tue, 8 Oct 2024 11:30:41 +0100
-Message-ID: <CADrjBPrRrwEyg0p+6kfVoZGbPdvW6K3fa9paUoLyg_bHHScgHg@mail.gmail.com>
-Subject: Re: [PATCH 1/3] phy: Add UFS phy hibernate modes
-To: Vinod Koul <vkoul@kernel.org>
-Cc: kishon@kernel.org, krzysztof.kozlowski@linaro.org, alim.akhtar@samsung.com, 
-	tudor.ambarus@linaro.org, andre.draszik@linaro.org, kernel-team@android.com, 
-	willmcvicker@google.com, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: de
+Thread-Index: AQFmt424TDky7oOEBHAYnHfWLjuWPwFdE8X8AiR5ApazSXrHYA==
+X-Provags-ID: V03:K1:cR82ijsXV3rl3PO4cQlu69T5MLLvQgL62YJdCwh05i5IBTEdXE8
+ jt55/NnLgptUVBzq1CWO045G8SHtoRlPRyhNCyNgGrMAhLZpPLYI4Hg0NgNBZ+5LmCWUcHP
+ MBjaOW6uGDedX/6OLWcCXoGN554JwE7GYFHEJGtnEWI3w+ca7kON/bjbNtEYSRCl0LwSsCn
+ 0xmnnhUdF6vsSIbzegtbg==
+UI-OutboundReport: notjunk:1;M01:P0:lxAtLcTVHek=;qLacDJsKEGTvwRF+UOXxrnQjhU6
+ bAPp1a6N5q+6ptU/oWWVcVPQgBFEzRei/9r7R0O2U2ATlYJkkmhry+4sEvrUMo1Mjq2OPbfGB
+ wWmmX3u+4CzjnqJfOf+4C9kSW6ihpvIa+WKmEGe7psEcU8LVzKC/mGdZiC36CTZXhGJ9LFvK/
+ 6fFJUl4qLQ+StP4Cp4kRsF9r5OM/BxCKkTeHSdYmKkteNtPwOZ9b+JPPb+OuNutOaRc7VZ8nX
+ E2a61ptgKh/OqtlaTzfbxiqPomdNbdIon+OSvuggnu6xbj4eaP7oq2jwnzeLWPDA+2YFTA1tL
+ JExgD1r6JOMWEY0bkLPIudP8k+NfYnKc2hnb7V1auOB6AxnD8ydytM9S3kGIUDHw4UuFUjeCU
+ 1nSUxmQ1TUdfG57xlaZmBtbz3tvFf5PkYV5/EwCE+fJi3NLJ4GKR/5Q/I8dakIoWL6trDQoN1
+ JX3XiS3BXcQm0+PSH94/UYuOhAadDmepsXstZXwRvF2062A6AJ+0ySlIntMA0wFzdndEpES4V
+ KdqxgXK0Y4Ik5WSVWhiPYxyTPu0X1j3j/+CLTvvlgWiPizr+eRuiDHH+3A3gP0DdRkUmjNjgF
+ C/YmC9FoLhIYrIq2HzqUjVsidIV6OHLPxiLdnIFaCiaC2fXHTYgDNEP7msbt0OdTlEYMt8faQ
+ CezkQSNGZE5jIFNTS/A78ZAfR10CwTbtL6yRvR687dsMrOq88HC+Y6si3SpvOUVVp/i2mZtjZ
+ rmahNJhu6Izw1PTF54qaltKPy9+mgwsFauHKFmBGY9HECaDSt9wodMKIKBZfXD4jC8rhuov/m
+ fWjnLBrUNBst/JLTHyptrSDw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_033054_851873_852273BA 
-X-CRM114-Status: GOOD (  25.85  )
+X-CRM114-CacheID: sfid-20241008_052746_094186_2761874F 
+X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,81 +92,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+> -----Urspr=FCngliche Nachricht-----
+> Von: Rob Herring <robh@kernel.org> =
 
-Thanks for your review.
-
-On Mon, 7 Oct 2024 at 07:28, Vinod Koul <vkoul@kernel.org> wrote:
+> Gesendet: Montag, 7. Oktober 2024 21:31
+> An: Markus Stockhausen <markus.stockhausen@gmx.de>
+> Cc: linux-phy@lists.infradead.org; chris.packham@alliedtelesis.co.nz;
+devicetree@vger.kernel.org; krzk@kernel.org
+> Betreff: Re: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY
+binding
+> ...
+> > +
+> > +properties:
+> > +  $nodename:
+> > +    pattern: "^serdes@[0-9a-f]+$"
 >
-> Hi Peter,
->
-> On 02-10-24, 21:15, Peter Griffin wrote:
-> > Some UFS phys need to write hibernation specific values
-> > when entering and exiting hibernate state.
-> >
-> > Add two new UFS phy modes to the phy framework so that this
-> > is possible. One such platform that requires this is Pixel 6
-> > which uses the gs101 SoC.
-> >
-> > Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
-> > ---
-> >  include/linux/phy/phy.h | 4 +++-
-> >  1 file changed, 3 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-> > index 03cd5bae92d3..1874e55e2bb9 100644
-> > --- a/include/linux/phy/phy.h
-> > +++ b/include/linux/phy/phy.h
-> > @@ -42,7 +42,9 @@ enum phy_mode {
-> >       PHY_MODE_MIPI_DPHY,
-> >       PHY_MODE_SATA,
-> >       PHY_MODE_LVDS,
-> > -     PHY_MODE_DP
-> > +     PHY_MODE_DP,
-> > +     PHY_MODE_UFS_HIBERN8_ENTER,
-> > +     PHY_MODE_UFS_HIBERN8_EXIT,
->
-> I am not sure I like this. why should this be the model? Phy drivers
-> should listen to pm events and handle this in pm_suspend/resume calls,
-> why do we need this special mode here...
+> The node name for phy providers is 'phy'.
 
-There are a couple of reasons I added it here:
+Hi Rob,
 
-1) Whilst link hibern8 mode can be used as part of runtime PM and
-system PM, it is also used outside of those contexts by ufshcd.c. The
-host controller can enable UFSHCD_CAP_HIBERN8_WITH_CLK_GATING (which
-will be the case for gs101 / Pixel 6) and the UFS clocks are gated and
-link put into hibern8 mode for periods of inactivity. When that
-happens the rest of the system isn't entering any sort of sleep state.
+I found different configs in other files. E.g.
 
-2) From looking at the existing code upstream ufs-qcom.c and
-phy-qcom-qmp-ufs.c look to have similar requirements in that it needs
-to program a set of specific register values depending on the UFS
-gear. To achieve that they added PHY_MODE_UFS_HS_B and
-PHY_MODE_UFS_HS_A modes here and then use phy_set_mode_ext() API in
-ufs_qcom_power_up_sequence() to signal to the phy driver the UFS gear,
-which is then used to choose which set of values to program to the
-phy.
+- torrent-phy@f0fb500000
+- serdes: serdes@e2004010
+- serdes_phy: phy@8901000
 
-The two new UFS phy modes added here for hibern8 are for a very
-similar purpose (to choose a bunch of register values to program), so
-I considered it consistent with what was already being done upstream
-to signal between UFS host drivers and UFS phy drivers. Arguably I
-guess we could have one "mode" PHY_MODE_UFS_HIBERN8 and use the
-submode parameter to indicate whether we are entering (1) or exiting
-(0) from it. I wasn't really sure what the rules/guidelines for the
-submode parameter were though.
+Do I understand correctly that I should go with "serdes: phy@1b00e780"? =
 
-Thanks,
+If yes, adapt the $nodename pattern accordingly or drop it as in most other
+files?
 
-Peter
+Best regards.
 
--- 
+Markus
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
