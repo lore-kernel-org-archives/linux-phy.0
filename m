@@ -4,112 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EC64CEFC34
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 17:10:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCBC0CEFC3B
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 18:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=48+HCXMGrrxPQiuO4khjvuoOoc/cu6XVETvOg/UyAME=; b=egakkpA3mQiXFI
-	Tnw8Xt0V/+TEhIrbTkyZjjD+j7tVnMfkbx/W04sl37N8TicaybeN7TTDk+hNoZ0KI/r2XTroeWctY
-	mzuKSVC7t7GEmSNVbNZOfBZFijp873xiBYH2YT4ibLUZxEinSyJyspWytqcIvfQrKTEbM620AIhxh
-	YJmIeeDSgkZWAEPyzG06uSjInYLRz6LLSf0BAiNUwLn99LSYfu7hkYGbkM5AQRQAWTHdQBXOJaR0b
-	pIdmaDmGkSVuKa8d0AaB2ZMMqTQQ+i/NJ2WRqnlSFzGI6kmYkR2NtPjUhz10QUIwAjT9KoMpJGDJL
-	DvP/2aIpbKw62hza0pog==;
+	List-Owner; bh=RMOMsE8bD1lCuM0wSMD1uhNLfzNYxY8CKuWlyTrWofI=; b=QQ3ljvwX+nHwjy
+	Tvr2BfqOGs7nnMAUSd+2aI0Ja87SFc9enXseQGDja7+++eGtyLLIFLdJzahrfWmWGBcDrHHA9CYMH
+	yzEGfH5Su/VOgfMx8ErgsAvnKtBBTg8dPawiUlWGcnJKFMZXmqVPpa44n1iUm3haoyUlZMax5kqUR
+	pDBAA30Y0KoM0g7hEgJV+tgV4z/iu0Lk24gFivymqdd7Oj8KzWlLh6tbEc9rmq1ca+0LzR8hS5Rqs
+	3v4shN5bKS7k/bLxt7lfoAhmSA2C/pE2P96cBGayTGPkfGQ4LCk3uFrR6iP6GW/TPWhSM/5DcnjKl
+	awNaXr+hV1zRFi7+Mi6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1syDjV-00000006bnp-1F5U;
-	Tue, 08 Oct 2024 17:10:49 +0000
-Received: from rcdn-iport-1.cisco.com ([173.37.86.72])
+	id 1syExv-00000006myY-268w;
+	Tue, 08 Oct 2024 18:29:47 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1syDjS-00000006bmt-0vCK
-	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 17:10:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=cisco.com; i=@cisco.com; l=5044; q=dns/txt; s=iport;
-  t=1728407446; x=1729617046;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=cgf0xBsMQs7AQN/5YQYdocnpHKvx2IgkCpijo5VHKqc=;
-  b=kMS+32O9tREjFTTL2mjV0asjwjvkgwqwa8l3pxr0FBKOaunxx4G1H2Se
-   4AZb8xLuWMLGykPK2yRdilq9ZfRsLFhsCZhBHFJxF9dEi+pnLlxCeXSoH
-   fMPCwI8NmLHk2yTqwG7I7CwoOjz8JnSP1FWLIw/GFzUHppTwyK964FLRP
-   k=;
-X-CSE-ConnectionGUID: ev9OfBmXS8qNpg0KMJ/GeA==
-X-CSE-MsgGUID: MN48UY+2SzmGx+SNBbKxAg==
-X-IPAS-Result: =?us-ascii?q?A0AZAADpZgVngY7/Ja1aHAEBAQEBAQcBARIBAQQEAQGBe?=
- =?us-ascii?q?wcBAQsBhBlDSIxylUeSJIElA1YPAQEBD0QEAQGFBwKKFwImNAkOAQIEAQEBA?=
- =?us-ascii?q?QMCAwEBAQEBAQEBAQUBAQUBAQECAQcFFAEBPQUOO4YIhlwCAQMyAUYQGTgrK?=
- =?us-ascii?q?wYBEoMBgmUDrUOCLIEB3jOBbBiBMAGNQnCEdycbgUlEglCBPm+DeocNBJYrV?=
- =?us-ascii?q?w+CVoN1FolskURIgSEDWSECEQFVEw0KCwkFiTWDAAUhKYFrgQoWgnWCTAKCV?=
- =?us-ascii?q?4FnCWCEOoI7cGWBBy2BEYEfOkeBO4E2LxskC16BQ4EbARYGFQSBJUc/gktrT?=
- =?us-ascii?q?jkCDQI3giUkZIJWhhNAAwsYDUgRLDUGDhsGPm4HrGNGglKBDnxBbJNhsweEI?=
- =?us-ascii?q?qE8GjOEBaZFmHYigjShYYRmgWc6gVtwFYMiUhkPjlnHVEYyOwIHCwEBAwmOC?=
- =?us-ascii?q?AEB?=
-IronPort-Data: A9a23:y6K616zhafqHgfwBiux6t+fXxirEfRIJ4+MujC+fZmUNrF6WrkUGy
- TYcWmjXOfuNZ2HzL9ElbN+xoRsG78ODzYBgHABoq1hgHilAwSbn6Xt1DatR0we6dJCroJdPt
- p1GAjX4BJlpCCKa/FH1a+iJQUBUjcmgXqD7BPPPJhd/TAplTDZJoR94kobVuKYw6TSCK13L4
- IqaT/H3Ygf/h2csajJMsMpvlTs21BjMkGJA1rABTagjUG/2zxE9EJ8ZLKetGHr0KqE8NvK6X
- evK0Iai9Wrf+Ro3Yvv9+losWhRXKlJ6FVHmZkt+A8BOsDAbzsAB+vpT2M4nVKtio27hc+adZ
- zl6ncfYpQ8BZsUgkQmGOvVSO3kW0aZuoNcrLZUj2CCe5xWuTpfi/xlhJEwobKoW0ONHOjFX0
- +QXcBMoTFesisvjldpXSsE07igiBNPgMIVavjRryivUSK57B5vCWK7No9Rf2V/chOgXQq2YP
- JVfM2cyKk2cOXWjOX9PYH46tO23j2blYSxegFmUvqEwpWPUyWSd1ZC3b4KFJIXWFZ09ckCwg
- 0Sar1nIQUshJtmw2Xm+1Fimpf/mknauMG4VPOblrqEx2gL7KnYoIAYUXFi7qPW0okW3V99ZI
- EFS8S0rxYAx9VerSd/VXBCipnOA+BkGVLJ4De499QWlyafO5QudQG8eQVZpbN0gqd9zXTw7/
- luIhM/yQz1pvqecRX+U+vGTtzzaESFQImgcZCkIVwIH/vH/occ4iRenZtJiFrOly974Azf9x
- xiUoyUkwbYel8gG0+O851+vvt63joLCQghw4kDcWXioq1skIoWkfIevr1Pc6J6sMbp1UHGMo
- ikjleKb3NteFLeVm3SuZcdKM7yAsqPt3CLnvXZjGJwo9jKI8nGlfJxN7DwWGKuPGphYEdMOS
- BGP0T699KNu0G2Wgbibir9d6vjGL4C7SrwJtdiNMrKih6SdkifcrEmCgmbJhgjQfLAEy/1XB
- HtiWZ/E4YwmIapm1iGqYOwWzKUmwCszrUuKGsqrlEv4gOfFPSXEIVvgDLdoRr1phE9jiFiEm
- +uzy+PQk32zrcWnOHCOqt9JRbz0BSZqVcmqwyCoSgJzClE7QD56UaC5LUIJcI1+lKMdjfbT4
- ny4QQdZzlG57UAr2i3UAk2PnIjHBM4lxVpiZHREFQ/xhxAejXOHtvZ3m20fJ+h/rLQLID8dZ
- 6VtRvhs9dwRG22Zq25CPPEQbuVKLXyWuO5HBAL9CBBXQnKqb1WhFgPMFuc3yBQzMw==
-IronPort-HdrOrdr: A9a23:sf+asqxvDJ1WD+d5msMMKrPwEb1zdoMgy1knxilNoNJuHfBw8P
- re+8jzuiWUtN98YhwdcJW7Scu9qBDnhPpICPcqXYtKNTOO0ADDEGgh1/qG/9SKIUPDH4BmuZ
- uIWpIObuEYdWIK7voTJGKDYq4dKB7tytHQudvj
-X-Talos-CUID: =?us-ascii?q?9a23=3Ai/3Q42t+u3ZJdW/e6bbJ3eaU6IsobCz6wl3VE3T?=
- =?us-ascii?q?oEEBxR+W2bH3X165Nxp8=3D?=
-X-Talos-MUID: 9a23:JyRRlQRWZnJ9zPcRRXTJom0yCfYruZ+8DW8d0q4gkcOnJQV/bmI=
-X-IronPort-Anti-Spam-Filtered: true
-X-IronPort-AV: E=Sophos;i="6.11,187,1725321600"; 
-   d="scan'208";a="270861480"
-Received: from rcdn-l-core-05.cisco.com ([173.37.255.142])
-  by rcdn-iport-1.cisco.com with ESMTP/TLS/TLS_AES_256_GCM_SHA384; 08 Oct 2024 17:10:36 +0000
-Received: from sjc-ads-7158.cisco.com (sjc-ads-7158.cisco.com [10.30.217.233])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by rcdn-l-core-05.cisco.com (Postfix) with ESMTPS id 995DF18000238;
-	Tue,  8 Oct 2024 17:10:35 +0000 (GMT)
-Received: by sjc-ads-7158.cisco.com (Postfix, from userid 1776881)
-	id 1AFF0CC1280; Tue,  8 Oct 2024 10:10:35 -0700 (PDT)
-From: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Swapnil Jakhade <sjakhade@cadence.com>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: xe-linux-external@cisco.com,
-	Daniel Walker <danielwa@cisco.com>,
-	Bartosz Stania <sbartosz@cisco.com>,
-	Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-Subject: [PATCH v2] phy: cadence: Sierra: Fix offset of DEQ open eye algorithm control register
-Date: Tue,  8 Oct 2024 17:09:59 +0000
-Message-Id: <20241008171000.2665935-1-bwawrzyn@cisco.com>
-X-Mailer: git-send-email 2.28.0
-In-Reply-To: <ZwN+8xpOl4+Ggaha@vaman>
-References: <ZwN+8xpOl4+Ggaha@vaman>
+	id 1syEtQ-00000006mB2-2kG9;
+	Tue, 08 Oct 2024 18:25:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 56F845C5B34;
+	Tue,  8 Oct 2024 18:25:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 427B6C4CECE;
+	Tue,  8 Oct 2024 18:25:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728411907;
+	bh=gbTLwyB5anW/NVNa27O4GYEgcT7Zt8zwGlDOBl4w9X4=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=QWv3+c7hgheNar52dT93kuaRJqQGwrTlm+2qt+dJoGyQzAHIgU0jubrC8ThWhyZIZ
+	 RS8ECJijkXPnKWXZt/DHYo4oNlel2cdA7QmeMfgDuBLkCfLLpl6vQcl4DNTcV5EyFH
+	 5h8XYKukhwE21LUBMtMTij4WxRmO6XhWfjQaEwayPWgg9ncS5s6vbgtpgFKR2d4Ze1
+	 U8RaeSIFzvB8vNoypQgBEdP43kZiPZVbc5vt/+kjhif0hCbio5j23Z7Fbcd2MdU+Eu
+	 u4mqS8NwdiP912BRPYfCL4ckK1zD9U7UpC3cflIOLH9kTp0r9qM6ScGNZWHbmYuBvP
+	 5BPH6goJRp7XQ==
+Received: by mail-oo1-f53.google.com with SMTP id 006d021491bc7-5e5d0a80db4so3217625eaf.3;
+        Tue, 08 Oct 2024 11:25:07 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCU2XiXnKj1t73wvrzbcJdfVVoHCfOXVrAutCmntPFSr7BxXIEvb24APBh7R1+UvNZMwVrkNCFGp86mP@lists.infradead.org, AJvYcCUL1oVYCjTIKr+eKtAsHYn70N3ZN7GoMBIB+pXUdJeMTAzP3lSOcPyI/7PHHaUmpmgoNPT/QPyhMvrO@lists.infradead.org, AJvYcCV5ZOKTQbbuhhCg26y2eEkKRxXcxdExHP1vv1OruOsiVeXKKT+2v6AljAdfghZsFdmJ6pREtyVe1ucd45DA0r8=@lists.infradead.org, AJvYcCVajjV2zfQ41/AQjYHuEHuTIsoV5oqTkT2mHke8cId5t69hTCbJ6m0XCXoPzrfFhJlhMMMMFVNC9/F3CRHw58OX@lists.infradead.org, AJvYcCX8ic0M2IRUWsDrSjNgI1g2TfO8S6f/EcgoXRJ2XU+VeItEnvAylLIMMRHtH77vuoXHtbUpUqhqUyec@lists.infradead.org
+X-Gm-Message-State: AOJu0YzyXovsFSMGNvLTaibeugS3DnG87i1MaXYHV7g8rBYIpR0PLhN2
+	vyqdPiOhG3t7oNGXcdPxy17B468j9Ft2IEN4ISYTq4oVF1z7L9UjgOePJoXlxEMoqJbMsx56N2d
+	3xqgCbj0lZ6vUI7zhfGs1ASVFD+Y=
+X-Google-Smtp-Source: AGHT+IE8/UzrmOfg0dgL+a7sFpnmZmTmVZlVfZVXeH9h9sR6Zbx0f+k3/XHDUWx/NQFfJo1odWsZ7gtN5j50xL2u+GA=
+X-Received: by 2002:a05:6820:228e:b0:5e1:d741:6f04 with SMTP id
+ 006d021491bc7-5e7cc079979mr12626737eaf.3.1728411906564; Tue, 08 Oct 2024
+ 11:25:06 -0700 (PDT)
 MIME-Version: 1.0
-X-Auto-Response-Suppress: DR, OOF, AutoReply
-X-Outbound-SMTP-Client: 10.30.217.233, sjc-ads-7158.cisco.com
-X-Outbound-Node: rcdn-l-core-05.cisco.com
+References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
+ <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com>
+ <20241007184924.GH14766@pendragon.ideasonboard.com> <CAPDyKFpQVnF7eQv3dup8k-3EijnMjuveCG9sZ=Rpey1Y6MBJEg@mail.gmail.com>
+ <20241007222502.GG30699@pendragon.ideasonboard.com> <CAPDyKFrGNwna6Y2pqSRaBbRYHKRaD2ayqQHLtoqLPOu9Et7qTg@mail.gmail.com>
+In-Reply-To: <CAPDyKFrGNwna6Y2pqSRaBbRYHKRaD2ayqQHLtoqLPOu9Et7qTg@mail.gmail.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Tue, 8 Oct 2024 20:24:55 +0200
+X-Gmail-Original-Message-ID: <CAJZ5v0jvJyS7D5-wURi2kyWN-rmNa+YqupeQJ000pQRVd9VBcQ@mail.gmail.com>
+Message-ID: <CAJZ5v0jvJyS7D5-wURi2kyWN-rmNa+YqupeQJ000pQRVd9VBcQ@mail.gmail.com>
+Subject: Re: [PATCH 00/51] treewide: Switch to __pm_runtime_put_autosuspend()
+To: Ulf Hansson <ulf.hansson@linaro.org>, 
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+	Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
+	linux-bluetooth@vger.kernel.org, linux-clk@vger.kernel.org, 
+	linux-crypto@vger.kernel.org, dmaengine@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
+	nouveau@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com, 
+	linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org, 
+	linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org, 
+	linux-input@vger.kernel.org, patches@opensource.cirrus.com, 
+	iommu@lists.linux.dev, imx@lists.linux.dev, 
+	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org, 
+	netdev@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org, 
+	linux-sound@vger.kernel.org, linux-spi@vger.kernel.org, 
+	linux-staging@lists.linux.dev, linux-usb@vger.kernel.org, 
+	linux-serial@vger.kernel.org, greybus-dev@lists.linaro.org, 
+	asahi@lists.linux.dev, Andy Shevchenko <andy.shevchenko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_101046_369491_73F83CD3 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241008_112508_818533_882C8E59 
+X-CRM114-Status: GOOD (  39.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,125 +97,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix the value of SIERRA_DEQ_OPENEYE_CTRL_PREG and add a definition for
-SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG. This fixes the SGMII single link
-register configuration.
-
-Fixes: 7a5ad9b4b98c ("phy: cadence: Sierra: Update single link PCIe register configuration")
-Signed-off-by: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
----
-v2: Remove empty line in the commit message
-v1: Fix offset of DEQ open eye control register
----
- drivers/phy/cadence/phy-cadence-sierra.c | 21 +++++++++++----------
- 1 file changed, 11 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index aeec6eb6be23..dfc4f55d112e 100644
---- a/drivers/phy/cadence/phy-cadence-sierra.c
-+++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -174,8 +174,9 @@
- #define SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG		0x150
- #define SIERRA_DEQ_TAU_CTRL2_PREG			0x151
- #define SIERRA_DEQ_TAU_CTRL3_PREG			0x152
--#define SIERRA_DEQ_OPENEYE_CTRL_PREG			0x158
-+#define SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG		0x158
- #define SIERRA_DEQ_CONCUR_EPIOFFSET_MODE_PREG		0x159
-+#define SIERRA_DEQ_OPENEYE_CTRL_PREG			0x15C
- #define SIERRA_DEQ_PICTRL_PREG				0x161
- #define SIERRA_CPICAL_TMRVAL_MODE1_PREG			0x170
- #define SIERRA_CPICAL_TMRVAL_MODE0_PREG			0x171
-@@ -1733,7 +1734,7 @@ static const struct cdns_reg_pairs ml_pcie_100_no_ssc_ln_regs[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -1797,7 +1798,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_no_ssc_ln_regs[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -1874,7 +1875,7 @@ static const struct cdns_reg_pairs ml_pcie_100_int_ssc_ln_regs[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -1941,7 +1942,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_int_ssc_ln_regs[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -2012,7 +2013,7 @@ static const struct cdns_reg_pairs ml_pcie_100_ext_ssc_ln_regs[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -2079,7 +2080,7 @@ static const struct cdns_reg_pairs ti_ml_pcie_100_ext_ssc_ln_regs[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -2140,7 +2141,7 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_no_ssc[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -2215,7 +2216,7 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_int_ssc[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
-@@ -2284,7 +2285,7 @@ static const struct cdns_reg_pairs cdns_pcie_ln_regs_ext_ssc[] = {
- 	{0x3C0F, SIERRA_DEQ_TAU_CTRL1_SLOW_MAINT_PREG},
- 	{0x1C0C, SIERRA_DEQ_TAU_CTRL2_PREG},
- 	{0x0100, SIERRA_DEQ_TAU_CTRL3_PREG},
--	{0x5E82, SIERRA_DEQ_OPENEYE_CTRL_PREG},
-+	{0x5E82, SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG},
- 	{0x002B, SIERRA_CPI_TRIM_PREG},
- 	{0x0003, SIERRA_EPI_CTRL_PREG},
- 	{0x803F, SIERRA_SDFILT_H2L_A_PREG},
--- 
-2.28.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBPY3QgOCwgMjAyNCBhdCAxMjozNeKAr0FNIFVsZiBIYW5zc29uIDx1bGYuaGFuc3Nv
+bkBsaW5hcm8ub3JnPiB3cm90ZToKPgo+IE9uIFR1ZSwgOCBPY3QgMjAyNCBhdCAwMDoyNSwgTGF1
+cmVudCBQaW5jaGFydAo+IDxsYXVyZW50LnBpbmNoYXJ0QGlkZWFzb25ib2FyZC5jb20+IHdyb3Rl
+Ogo+ID4KPiA+IEhpIFVsZiwKPiA+Cj4gPiBPbiBUdWUsIE9jdCAwOCwgMjAyNCBhdCAxMjowODoy
+NEFNICswMjAwLCBVbGYgSGFuc3NvbiB3cm90ZToKPiA+ID4gT24gTW9uLCA3IE9jdCAyMDI0IGF0
+IDIwOjQ5LCBMYXVyZW50IFBpbmNoYXJ0IHdyb3RlOgo+ID4gPiA+IE9uIEZyaSwgT2N0IDA0LCAy
+MDI0IGF0IDA0OjM4OjM2UE0gKzAyMDAsIFVsZiBIYW5zc29uIHdyb3RlOgo+ID4gPiA+ID4gT24g
+RnJpLCA0IE9jdCAyMDI0IGF0IDExOjQxLCBTYWthcmkgQWlsdXMgd3JvdGU6Cj4gPiA+ID4gPiA+
+Cj4gPiA+ID4gPiA+IEhlbGxvIGV2ZXJ5b25lLAo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBUaGlz
+IHNldCB3aWxsIHN3aXRjaCB0aGUgdXNlcnMgb2YgcG1fcnVudGltZV9wdXRfYXV0b3N1c3BlbmQo
+KSB0bwo+ID4gPiA+ID4gPiBfX3BtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkgd2hpbGUgdGhl
+IGZvcm1lciB3aWxsIHNvb24gYmUgcmUtcHVycG9zZWQKPiA+ID4gPiA+ID4gdG8gaW5jbHVkZSBh
+IGNhbGwgdG8gcG1fcnVudGltZV9tYXJrX2xhc3RfYnVzeSgpLiBUaGUgdHdvIGFyZSBhbG1vc3QK
+PiA+ID4gPiA+ID4gYWx3YXlzIHVzZWQgdG9nZXRoZXIsIGFwYXJ0IGZyb20gYnVncyB3aGljaCBh
+cmUgbGlrZWx5IGNvbW1vbi4gR29pbmcKPiA+ID4gPiA+ID4gZm9yd2FyZCwgbW9zdCBuZXcgdXNl
+cnMgc2hvdWxkIGJlIHVzaW5nIHBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkuCj4gPiA+ID4g
+PiA+Cj4gPiA+ID4gPiA+IE9uY2UgdGhpcyBjb252ZXJzaW9uIGlzIGRvbmUgYW5kIHBtX3J1bnRp
+bWVfcHV0X2F1dG9zdXNwZW5kKCkgcmUtcHVycG9zZWQsCj4gPiA+ID4gPiA+IEknbGwgcG9zdCBh
+bm90aGVyIHNldCB0byBtZXJnZSB0aGUgY2FsbHMgdG8gX19wbV9ydW50aW1lX3B1dF9hdXRvc3Vz
+cGVuZCgpCj4gPiA+ID4gPiA+IGFuZCBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCkuCj4gPiA+
+ID4gPgo+ID4gPiA+ID4gVGhhdCBzb3VuZHMgbGlrZSBpdCBjb3VsZCBjYXVzZSBhIGxvdCBvZiBj
+aHVybnMuCj4gPiA+ID4gPgo+ID4gPiA+ID4gV2h5IG5vdCBhZGQgYSBuZXcgaGVscGVyIGZ1bmN0
+aW9uIHRoYXQgZG9lcyB0aGUKPiA+ID4gPiA+IHBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkg
+YW5kIHRoZSBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCkKPiA+ID4gPiA+IHRoaW5ncz8gVGhl
+biB3ZSBjYW4gc3RhcnQgbW92aW5nIHVzZXJzIG92ZXIgdG8gdGhpcyBuZXcgaW50ZXJmYWNlLAo+
+ID4gPiA+ID4gcmF0aGVyIHRoYW4gaGF2aW5nIHRoaXMgaW50ZXJtZWRpYXRlIHN0ZXA/Cj4gPiA+
+ID4KPiA+ID4gPiBJIHRoaW5rIHRoZSBBUEkgd291bGQgYmUgbmljZXIgaWYgd2UgdXNlZCB0aGUg
+c2hvcnRlc3QgYW5kIHNpbXBsZXN0Cj4gPiA+ID4gZnVuY3Rpb24gbmFtZXMgZm9yIHRoZSBtb3N0
+IGNvbW1vbiB1c2UgY2FzZXMuIEZvbGxvd2luZwo+ID4gPiA+IHBtX3J1bnRpbWVfcHV0X2F1dG9z
+dXNwZW5kKCkgd2l0aCBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCkgaXMgdGhhdAo+ID4gPiA+
+IG1vc3QgY29tbW9uIHVzZSBjYXNlLiBUaGF0J3Mgd2h5IEkgbGlrZSBTYWthcmkncyBhcHByb2Fj
+aCBvZiByZXB1cnBvc2luZwo+ID4gPiA+IHBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCksIGFu
+ZCBpbnRyb2R1Y2luZwo+ID4gPiA+IF9fcG1fcnVudGltZV9wdXRfYXV0b3N1c3BlbmQoKSBmb3Ig
+dGhlIG9kZCBjYXNlcyB3aGVyZQo+ID4gPiA+IHBtX3J1bnRpbWVfbWFya19sYXN0X2J1c3koKSBz
+aG91bGRuJ3QgYmUgY2FsbGVkLgo+ID4gPgo+ID4gPiBPa2F5LCBzbyB0aGUgcmVhc29uIGZvciB0
+aGlzIGFwcHJvYWNoIGlzIGJlY2F1c2Ugd2UgY291bGRuJ3QgZmluZCBhCj4gPiA+IHNob3J0IGFu
+ZCBkZXNjcmlwdGl2ZSBuYW1lIHRoYXQgY291bGQgYmUgdXNlZCBpbiBmYXZvciBvZgo+ID4gPiBw
+bV9ydW50aW1lX3B1dF9hdXRvc3VzcGVuZCgpLiBMZXQgbWUgdGhyb3cgc29tZSBpZGVhcyBhdCBp
+dCBhbmQgbWF5YmUKPiA+ID4geW91IGxpa2UgaXQgLSBvciBub3QuIDotKQo+ID4KPiA+IEkgbGlr
+ZSB0aGUgaWRlYSBhdCBsZWFzdCA6LSkKPiA+Cj4gPiA+IEkgZG9uJ3Qga25vdyB3aGF0IG9wdGlv
+bnMgeW91IGd1eXMgZGlzY3Vzc2VkLCBidXQgdG8gbWUgdGhlIGVudGlyZQo+ID4gPiAiYXV0b3N1
+c3BlbmQiLXN1ZmZpeCBpc24ndCByZWFsbHkgdGhhdCBuZWNlc3NhcnkgaW4gbXkgb3Bpbmlvbi4g
+VGhlcmUKPiA+ID4gYXJlIG1vcmUgd2F5cyB0aGFuIGNhbGxpbmcgcG1fcnVudGltZV9wdXRfYXV0
+b3N1c3BlbmQoKSB0aGF0IHRyaWdnZXJzCj4gPiA+IHVzIHRvIHVzZSB0aGUgUlBNX0FVVE8gZmxh
+ZyBmb3IgcnBtX3N1c3BlbmQoKS4gRm9yIGV4YW1wbGUsIGp1c3QKPiA+ID4gY2FsbGluZyBwbV9y
+dW50aW1lX3B1dCgpIGhhcyB0aGUgc2ltaWxhciBlZmZlY3QuCj4gPgo+ID4gVG8gYmUgaG9uZXN0
+LCBJJ20gbG9zdCB0aGVyZS4gcG1fcnVudGltZV9wdXQoKSBjYWxscwo+ID4gX19wbV9ydW50aW1l
+X2lkbGUoUlBNX0dFVF9QVVQgfCBSUE1fQVNZTkMpLCB3aGlsZQo+ID4gcG1fcnVudGltZV9wdXRf
+YXV0b3N1c3BlbmQoKSBjYWxscyBfX3BtX3J1bnRpbWVfc3VzcGVuZChSUE1fR0VUX1BVVCB8Cj4g
+PiBSUE1fQVNZTkMgfCBSUE1fQVVUTykuCj4KPiBfX3BtX3J1bnRpbWVfaWRsZSgpIGVuZHMgdXAg
+Y2FsbGluZyBycG1faWRsZSgpLCB3aGljaCBtYXkgY2FsbAo+IHJwbV9zdXNwZW5kKCkgLSBpZiBp
+dCBzdWNjZWVkcyB0byBpZGxlIHRoZSBkZXZpY2UuIEluIHRoYXQgY2FzZSwgaXQKPiB0YWdzIG9u
+IHRoZSBSUE1fQVVUTyBmbGFnIGluIHRoZSBjYWxsIHRvIHJwbV9zdXNwZW5kKCkuIFF1aXRlIHNp
+bWlsYXIKPiB0byB3aGF0IGlzIGhhcHBlbmluZyB3aGVuIGNhbGxpbmcgcG1fcnVudGltZV9wdXRf
+YXV0b3N1c3BlbmQoKS4KClJpZ2h0LgoKRm9yIGFsbW9zdCBldmVyeWJvZHksIGV4Y2VwdCBmb3Ig
+YSBzbWFsbCBidW5jaCBvZiBkcml2ZXJzIHRoYXQKYWN0dWFsbHkgaGF2ZSBhIC5ydW50aW1lX2lk
+bGUoKSBjYWxsYmFjaywgcG1fcnVudGltZV9wdXQoKSBpcwpsaXRlcmFsbHkgZXF1aXZhbGVudCB0
+byBwbV9ydW50aW1lX3B1dF9hdXRvc3VzcGVuZCgpLgoKU28gcmVhbGx5IHRoZSBxdWVzdGlvbiBp
+cyB3aHkgYW55b25lIHdobyBkb2Vzbid0IHByb3ZpZGUgYQoucnVudGltZV9pZGxlKCkgY2FsbGJh
+Y2sgYm90aGVycyB3aXRoIHVzaW5nIHRoaXMgc3BlY2lhbApwbV9ydW50aW1lX3B1dF9hdXRvc3Vz
+cGVuZCgpIHRoaW5nLCB3aGljaCByZWFsbHkgbWVhbnMgImRvIGEKcnVudGltZV9wdXQoKSwgYnV0
+IHNraXAgbXkgLnJ1bnRpbWVfaWRsZSgpIGNhbGxiYWNrIi4KCj4gPgo+ID4gPgo+ID4gPiBNb3Jl
+b3ZlciwgaXQncyBzaW1pbGFyIGZvciBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCksIGl0J3Mg
+Y2FsbGVkCj4gPiA+IGR1cmluZyBycG1fcmVzdW1lKCkgdG9vLCBmb3IgZXhhbXBsZS4gU28gd2h5
+IGJvdGhlciBhYm91dCBoYXZpbmcKPiA+ID4gIm1hcmtfbGFzdF9idXN5IiBpbiB0aGUgbmV3IG5h
+bWUgdG9vLgo+ID4gPgo+ID4gPiBUaGF0IHNhaWQsIG15IHN1Z2dlc3Rpb24gaXMgc2ltcGx5ICJw
+bV9ydW50aW1lX3B1dF9zdXNwZW5kIi4KPiA+Cj4gPiBDYW4gd2UgZG8gZXZlbiBiZXR0ZXIsIGFu
+ZCBtYWtlIHBtX3J1bnRpbWVfcHV0KCkgdG8gaGFuZGxlIGF1dG9zdXNwZW5kCj4gPiBhdXRvbWF0
+aWNhbGx5IHdoZW4gYXV0b3N1c3BlbmQgaXMgZW5hYmxlZCA/Cj4KPiBBcyBzdGF0ZWQgYWJvdmUs
+IHRoaXMgaXMgYWxyZWFkeSB0aGUgY2FzZS4KCldoYXQgcmVhbGx5IGlzIG5lZWRlZCBhcHBlYXJz
+IHRvIGJlIGEgY29tYmluYXRpb24gb2YKcG1fcnVudGltZV9tYXJrX2xhc3RfYnVzeSgpIHdpdGgg
+cG1fcnVudGltZV9wdXQoKS4KCkdyYW50ZWQsIHBtX3J1bnRpbWVfcHV0KCkgY291bGQgZG8gdGhl
+IHBtX3J1bnRpbWVfbWFya19sYXN0X2J1c3koKQp0aGluZyBhdXRvbWF0aWNhbGx5IGlmIGF1dG9z
+dXNwZW5kIGlzIGVuYWJsZWQgYW5kIHRoZSBvbmx5IGNvbnNlcXVlbmNlCm9mIGl0IG1pZ2h0IGJl
+IGRlbGF5aW5nIGEgc3VzcGVuZCBvZiB0aGUgZGV2aWNlIHVudGlsIGl0cyBhdXRvc3VzcGVuZAp0
+aW1lciBleHBpcmVzLCB3aGljaCBzaG91bGQgbm90IGJlIGEgcHJvYmxlbSBpbiB0aGUgdmFzdCBt
+YWpvcml0eSBvZgpjYXNlcy4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LXBoeQo=
