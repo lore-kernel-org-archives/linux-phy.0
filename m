@@ -4,81 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FCF1CED274
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 07:00:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2362FCED270
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 07:05:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
-	In-Reply-To:References:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AZSFCusC3fgnj1CZlnPAZQp4f/7uQYmsSvje7MYDEag=; b=nWvlLXcYHFiTOt
-	eEIgXFZWmTo1EH93p8zbSmuWXcl3wjT1m2n7rrWZTiI/5zo8JXm/n7hajBPpE21Tg9k2Xsp/5GVeL
-	zVAjkgcj7PXIhapqL36ACQuTm4ydep6ZOCXJz4RbkFN7UkGnk/SIaWQzDZrrfj2fkAx6rjlrLgJnx
-	SANYCy/LpSb+N4VO2d73jl+Xs3Ps1vdrXwn6SArnmGKhiOP658DofENVcBTxIZOGtv7Fv7EcXeDhO
-	1Y/ck1QWitFhe39TvoCi6GAjcxPnP8e1RLe9t5QM7dFon73wWMH8+HhvGUMonCX2nALP5yMtfP+I6
-	qpy/XoHa6lBDwa1h49Sw==;
+	List-Owner; bh=H8JXJsa+Xq89iOOguk+V1exuxCOUGGvQe/4+fciRIUY=; b=X37PeBkOs9orA9
+	TlG0yE71nMAU+DDCzFo2LOxXwwK8iza60iJSIM8BckKfZzLykNtfMUrNhgFLe/8TXrPAkM7CsM4aP
+	FpVUj48MgWkANyQkK2tcGrkEbcUD/NjO2o1WB5nlfxtFt6EGhiRdJSvuwe3WjLv9Tgx6ScyN+rqw0
+	xe1+VgbG/J4YuazeSS0EpbYobbZERLq0dIt2LGvIe4DCv5SKdfBZ157b6CHC2hy5NSXodvyJ/oD+p
+	BQLSffqcXtR9MLYUiecTPnwl76rnsOcZgxI/jIfn1zzf7PAJa4fOvVGHlwjgBfXagwm4LUUWc99LZ
+	lrZmLlAxyPbFUunrK+gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4DH-00000004jUh-0Whj;
-	Tue, 08 Oct 2024 07:00:55 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1sy4HE-00000004k9L-3P02;
+	Tue, 08 Oct 2024 07:05:00 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy49E-00000004ixw-1WW6
+	id 1sy4GL-00000004jyl-3ONh
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 06:56:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
-	s=s31663417; t=1728370578; x=1728975378;
-	i=markus.stockhausen@gmx.de;
-	bh=BdnwrYMQ8q458IvbO/00srYuvUdkTsJq5XLIp4S+PzI=;
-	h=X-UI-Sender-Class:From:To:References:In-Reply-To:Subject:Date:
-	 Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:cc:
-	 content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=QvH+gI52YS3b51PSOOjubuYDRTqKbVWeWndVp8tIzFS29+aUzu3/QMBWOylt54pA
-	 E/9Ebdo4cTYdnZoTM9RSotT5lbYoEH989jnXztc4KXiCz/V7Fz8ap2dqdEKHvsxZe
-	 /0lYgMA9SIV80tst1eQbDv0JVEghYnsGcsSwLRpxvUM7VRQSFKZF5NJB8ZRaB722e
-	 3Zp/66vjPvjs1tgZx/qwexVg97mG1VniFUzjFWWM11w1Ld3wefbbttGFOdl2HK2eg
-	 PmJ+K1lIBN6G1d+0t6QjvqhkHk3vWSRdBY+DHnknqCkju5pdtfII3mzkPFPIqYKr4
-	 nF+yHJy770IBHsV9Wg==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from colnote55 ([94.31.70.45]) by mail.gmx.net (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1M9Wuq-1t1LOQ068C-00283K; Tue, 08
- Oct 2024 08:56:18 +0200
-From: <markus.stockhausen@gmx.de>
-To: "'Krzysztof Kozlowski'" <krzk@kernel.org>,
-	<linux-phy@lists.infradead.org>,
-	<chris.packham@alliedtelesis.co.nz>,
-	<devicetree@vger.kernel.org>
-References: <20241007163623.3274510-1-markus.stockhausen@gmx.de> <20241007163623.3274510-2-markus.stockhausen@gmx.de> <e0355f2b-9d77-4792-9405-14b0bf79ac32@kernel.org> <000b01db1944$5bd444b0$137cce10$@gmx.de> <d23ba989-2ada-4033-a890-928bf4e746b3@kernel.org>
-In-Reply-To: <d23ba989-2ada-4033-a890-928bf4e746b3@kernel.org>
-Subject: AW: AW: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY binding
-Date: Tue, 8 Oct 2024 08:56:17 +0200
-Message-ID: <000f01db194f$2d140880$873c1980$@gmx.de>
+	Tue, 08 Oct 2024 07:04:07 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id CB2CD5C5490;
+	Tue,  8 Oct 2024 07:04:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E830C4CEC7;
+	Tue,  8 Oct 2024 07:04:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728371044;
+	bh=T1EkaNAmjXginEIHQ5Bufiw3/ttibaSxwHXb18Ubk3g=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=hYTxxcyWlL0vh++YQvfOs+36j4B+nJHFgBIgiE0tz/8xX0v80uI1rXr0C4nnXeSS7
+	 E0FTaXFH6VA2zylHzok6Wa5GZHa12crLy+H7DWfCbJO3k3EN4vIChZ6Ypsdz01nZbu
+	 T127L0OHN3duLxCHo5J6tt9Lkh1UzgbfwhYfnQKiFbKR2OxK81MbbGQpsV2gXBNKPG
+	 byHmmjNpE5lQHonM56DhyVRbS0UoMllHLV9xCzdKQbo6SqOrsVq+np3k15TWuwVz1R
+	 BxOEr+TuWrjKD76T39kOfi8Pf1zq2Y4MWG1MOCvSS5u0d0+LFZZB04t9I5ESjW6E72
+	 KKVEXEVfBW9kw==
+Message-ID: <8046eca4-8100-45f8-8c94-679a563d8a24@kernel.org>
+Date: Tue, 8 Oct 2024 09:04:00 +0200
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Content-Language: de
-Thread-Index: AQFmt424TDky7oOEBHAYnHfWLjuWPwFdE8X8Ac4j3w8Bo7K4gQFrn2WmszNTdnA=
-X-Provags-ID: V03:K1:kx5QxXM+bnda0qZUBDVjwGEJCajFlRP/tha8QxLEIUkn87t7Yjl
- PWQ43ROQ3D/zPJIic2Y3rgb1fGq6Ht1ddO9rEVl80HrzneGUQGoYGFVCbsvJVkqq6InS5S8
- //F7TsmuihPVbBM1SOvvYG6oKhmvHhI+wHgyb7cQFFNl7f9skJ1VkTVU3e78xYwdt4UJOek
- yT48ZVxEwxBBfRwYG80pA==
-UI-OutboundReport: notjunk:1;M01:P0:QB9Evo4yD6M=;nbyYBQOdvnArSwe/rJprbQqv3uf
- Hkw4XeBiBj3VcdehbUj0RaGA4Dz9NAESHoRFbtx+5VRbDmQ3QHNUPmilb9ILP3GJwdi7aEkFh
- 6ZXMNAUbsCXyjR5KdYgGzAwXrhJoJEiPoyH0oKoe7MBH7VPNICqOLbFjZ/QPy0HRKndHrJ1D4
- T/QL4toWcb8hEHAPSD5XnKsa6XQePL8erSc7F+7f2nV27Puu9EipqihQ8121bo/YzkFYgtNIe
- IZf+CGQxn6Rp1d6pvhM9iM4ZGsTX5CkZa5IPsWNjhaGIzfbEhnSucDaovhyGO7JvoaMUDttSp
- XIQlWM+hjPEYg1LvC1LmwdUGzaWDf2ok2mfipRM7aP5671QfSaHnEulxUwPtyDA92PlX9KF6m
- x65rq/s1HRyxPN4g7Lk2PbiHTB25Qg66ebE8j4bm8LUppfQSa89mQegGP1eUGgqB7jkQDBT8B
- t0pCYQJDYQg1tnQmo8gjcSEXVhbdJdUOA1AeJFYs7rALXT/hTACsDsgBX9jbrGxFpFLPL9921
- 8S4zdrziY8dM30GKJdn1vjMAgtsYmAcysvev3wCvwkqbUtGPYm4tIs4VjlrW6gj6V0Rsz1mIY
- G8gY+mAIj5AHs4cdH3AJWmE0JQQmdhXVPnIAc2jmK0e0zstX2ZDPcR7T/73stXicDS/xJj3qE
- /YVlUSFE9tV05ItP0KrCPeEqwfVqLx2izaSGQH+N1CduCHEm0/O36bpuMQ7po4q7EanADfF+z
- YvtZxwRHW5TjOvIHA0rxrVDxs1sfBWUUaAAm4Kit/IEzI9ZXYHT5RE5lHexu+nJmLG7JGVkzC
- snpcPaY9wakgpsRVkpK5myBw==
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes PHY
+ binding
+To: Markus Stockhausen <markus.stockhausen@gmx.de>,
+ linux-phy@lists.infradead.org, chris.packham@alliedtelesis.co.nz,
+ devicetree@vger.kernel.org
+References: <20241007163623.3274510-1-markus.stockhausen@gmx.de>
+ <20241007163623.3274510-2-markus.stockhausen@gmx.de>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20241007163623.3274510-2-markus.stockhausen@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_235644_727110_5C4560E2 
-X-CRM114-Status: GOOD (  20.52  )
+X-CRM114-CacheID: sfid-20241008_000405_976122_C24463B3 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,67 +114,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-PiAtLS0tLVVyc3Byw7xuZ2xpY2hlIE5hY2hyaWNodC0tLS0tCj4gVm9uOiBLcnp5c3p0b2YgS296
-bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+IAo+IEdlc2VuZGV0OiBEaWVuc3RhZywgOC4gT2t0b2Jl
-ciAyMDI0IDA4OjE3Cj4gQW46IG1hcmt1cy5zdG9ja2hhdXNlbkBnbXguZGU7IGxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnOyBjaHJpcy5wYWNraGFtQGFsbGllZHRlbGVzaXMuY28ubno7IGRl
-dmljZXRyZWVAdmdlci5rZXJuZWwub3JnCj4gQmV0cmVmZjogUmU6IEFXOiBbUEFUQ0ggdjIgMS8z
-XSBkdC1iaW5kaW5nczogcGh5OiBhZGQgcmVhbHRlayxvdHRvLXNlcmRlcyBQSFkgYmluZGluZwo+
-Cj4gT24gMDgvMTAvMjAyNCAwNzozOCwgbWFya3VzLnN0b2NraGF1c2VuQGdteC5kZSB3cm90ZToK
-PiA+PiAtLS0tLVVyc3Byw7xuZ2xpY2hlIE5hY2hyaWNodC0tLS0tCj4gPj4gVm9uOiBLcnp5c3p0
-b2YgS296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+Cj4gPj4gR2VzZW5kZXQ6IE1vbnRhZywgNy4g
-T2t0b2JlciAyMDI0IDIxOjI2Cj4gPj4gQW46IE1hcmt1cyBTdG9ja2hhdXNlbiA8bWFya3VzLnN0
-b2NraGF1c2VuQGdteC5kZT47IAo+ID4+IGxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnOyBj
-aHJpcy5wYWNraGFtQGFsbGllZHRlbGVzaXMuY28ubno7IAo+ID4+IGRldmljZXRyZWVAdmdlci5r
-ZXJuZWwub3JnCj4gPj4gQmV0cmVmZjogUmU6IFtQQVRDSCB2MiAxLzNdIGR0LWJpbmRpbmdzOiBw
-aHk6IGFkZCByZWFsdGVrLG90dG8tc2VyZGVzIAo+ID4+IFBIWSBiaW5kaW5nCj4gPj4KPiA+PiAu
-Li4gYW5kIHN0aWxsIG5vdCB0ZXN0ZWQuIFNlbmRpbmcgdW50ZXN0ZWQgY29kZSBpcyB3YXN0ZSBv
-ZiBvdXIgdGltZS4KPiA+IAo+ID4gSGkgS3J6eXN6dG9mLAo+ID4gCj4gPiBhcHByZWNpYXRlIHlv
-dXIgZmVlZGJhY2sgYW5kIEkgZG8gbm90IHdhbnQgdG8gd2FzdGUgeW91ciB0aW1lLiBNeSAKPiA+
-IGZpeGVzIHdoZXJlIGEgbWl4IG9mIHlvdXIgZmVlZGJhY2sgYW5kIHNvbWUgaGFsZi1iYWtlZCAi
-bWFrZSAKPiA+IGR0X2JpbmRpbmdfY2hlY2siIGZlZWRiYWNrcyAoYmVjYXVzZSBwYWNrYWdlcyB3
-aGVyZSBtaXNzaW5nKS4gTXkgZmF1bHQgYW5kIHNvcnJ5IGZvcnQgaGUgbm9pc2UuCj4gPiAKPiA+
-IFRvIGdldCBuZXh0IHZlcnNpb24gaW4gYmV0dGVyIHNoYXBlIHR3byBxdWVzdGlvbnMgcmVnYXJk
-aW5nIHlvdXIgZmVlZGJhY2s6Cj4gPiAKPiA+IDEuICJNZXNzZWQgd3JhcHBpbmciOiBBY2NvcmRp
-bmcgdG8gY2hlY2twYXRjaCAxMDAgY2hhcnMvbGluZSBhcmUgYWNjZXB0ZWQuIAo+ID4gU28gSSBk
-ZXNpZ25lZCB0aGUgY29tbWVudHMgaW4gdGhlIGRyaXZlci4gRG9lcyBkZXZpY2V0cmVlIGRpZmZl
-ciBmcm9tIHRoYXQ/Cj4KPiBjaGVja3BhdGNoIGlzIG5vdCBhIGNvZGluZyBzdHlsZS4gSSBhc2tl
-ZCB0byBmb2xsb3cgY29kaW5nIHN0eWxlLCBwbGVhc2UgcmVhZCBlbnRpcmUgZG9jdW1lbnQgaW4g
-RG9jdW1lbnRhdGlvbi9wcm9jZXNzLgoKVW5kZXJzdG9vZC4KCj4gPiAKPiA+IDIgIkJpbmRpbmdz
-IHZzIGRyaXZlcnMiLiBUaGUgaWRlYSBhYm91dCBjb250cm9sbGVkIHBvcnRzIGNhbWUgZnJvbSBv
-dGhlciBiaW5kaW5ncy4KPgo+IEVudGlyZSBwcm9wZXJ0eSBkZXNjcmlwdGlvbiBzcGVha3MgYWJv
-dXQgZHJpdmVyLCBub3QgYmluZGluZ3MuCj4KPiA+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHVi
-L3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC90cmUKPiA+IGUvRG9jdW1l
-bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL3N0LHN0aWg0
-MDctaXIKPiA+IHEtc3lzY2ZnLnlhbWw/aD12Ni4xMi1yYzIKPgo+IHN0aWggaXMgcmF0aGVyIHBv
-b3IgZXhhbXBsZSB0byB1c2UuIFRoZSBwcm9wZXJ0eSB3YXMgYWRkZWQgaW4gMjAxNSAoISkgd2l0
-aG91dCByZXZpZXcgKCEhISkuCj4KPgo+ID4gRS5nLiBzdCxpbnZlcnQtZXh0LiBTb21ldGhpbmcg
-bGlrZSB0aGlzIHdpbGwgYmUgbmVlZGVkIGluIHRoZSBmdXR1cmUgCj4gPiBiZWNhdXNlIHRoZSBT
-ZXJEZXMgYWxsb3cgdG8gc3dhcCBwb2xhcml0eSB3aGljaCBtdXN0IGJlIGNoYW5nZWQgCj4gPiBk
-ZXBlbmRpbmcgb24gdGhlIHN3aXRjaCBkZXNpZ24uIEhvdyB0byBkbyB0aGlzPwo+Cj4gSSBkbyBu
-b3QgdW5kZXJzdGFuZCB0aGUgaGFyZHdhcmUgYXNwZWN0IGRpc2N1c3NlZCBpbiB0aGUgcHJvcGVy
-dHkgZGVzY3JpcHRpb24uLi4gcHJvYmFibHkgYmVjYXVzZSB0aGVyZSBpcyBubyBoYXJkd2FyZSBk
-ZXNjcmlwdGlvbiBhdCBhbGwsIGJ1dCBpbnN0ZWFkIHlvdSBzcGVhayBhYm91dCBkcml2ZXIuCj4K
-PiBJIGRvIG5vdCB1bmRlcnN0YW5kIGhvdyBwb2xhcml0eSBoYXMgYW55dGhpbmcgdG8gZG8gd2l0
-aCBVLUJvb3QgY29uZmlndXJpbmcgc2VyZGVzLgoKTWF5YmUgbXkgbGFjayBvZiBrbm93bGVkZ2Ug
-aW4gcGxhdGZvcm0gZHJpdmVyIHByb2dyYW1taW5nIG9yIHRoZSBuYW1pbmcKY29udmVudGlvbnMg
-bGVhZHMgdG8gY29uZnVzaW9uLiBJJ20gc2VhcmNoaW5nIGZvciBrbm9icyB0byBjb250cm9sIHRo
-ZSBiZWhhdmlvdXIgCm9mIHRoZSBTZXJEZXMgZGVwZW5kaW5nIG9uIHRoZSBoYXJkd2FyZS4gVHdv
-IGV4YW1wbGVzIGFyZSAobW9yZSBtYXkgY29tZSk6CgotICJpZ25vcmUgU2VyRGVzIFgiOiBiZWNh
-dXNlIHRoZSBwcm92aWRlZCBwYXRjaCBzZXF1ZW5jZSBjb25mdXNlcyB0aGUgU2VyRGVzCmFuZCBv
-dmVyd3JpdGVzIHJlZ2lzdGVycyB3aXRoIHdyb25nIHZhbHVlcyB0aGF0IHZlbmRvciBwYXRjaGVk
-IFUtQm9vdCBoYXMgc2V0dXAKY29ycmVjdGx5IGJlZm9yZS4gCgotICJyZXZlcnNlIHBvbGFyaXR5
-IG9mIFNlckRlcyBYIjogc2FtZSBnb2VzIGhlcmUuIFNvbWUgYm9hcmRzIG5lZWQgaW52ZXJ0ZWQK
-c2lnbmFsbGluZyBvbiBzb21lIG9mIHRoZSBTZXJEZXMgdG8gd29yayBwcm9wZXJseS4gVGhpcyBt
-dXN0IGJlIGNvbmZpZ3VyYWJsZQpzb21laG93LgoKTG9va2luZyBhdCBzb21lIG1vcmUgbW9kZXJu
-IGltcGxlbWVudGF0aW9uL2RvY3VtZW50YXRpb24gSSBuZWVkIHNvZW10aGluZyAKbGlrZSBpbiBy
-ZWFsdGVrLHVzYjJwaHkueWFtbCAtIGUuZy4gcmVhbHRlayxkcml2aW5nLWxldmVsLWNvbXBlbnNh
-dGUuCgpTaG91bGQgSSBqdXN0IGxlYXZlICJkcml2ZXIiIG91dCBvZiB0aGUgZGVzY3JpcHRpb24/
-CgpCZXN0IHJlZ2FyZHMuCgpNYXJrdXMKCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 07/10/2024 18:36, Markus Stockhausen wrote:
+> Add bindings for the SerDes of the Realtek Otto platform. These are
+> network Switch SoCs with up to 52 ports divided into four different
+> model lines.
+> 
+> Changes in v2:
+> - new subject
+> - removed patch command sequences
+> - renamed parameter controlled-ports to realtek,controlled-ports
+
+<form letter>
+Please use scripts/get_maintainers.pl to get a list of necessary people
+and lists to CC (and consider --no-git-fallback argument, so you will
+not CC people just because they made one commit years ago). It might
+happen, that command when run on an older kernel, gives you outdated
+entries. Therefore please be sure you base your patches on recent Linux
+kernel.
+
+Tools like b4 or scripts/get_maintainer.pl provide you proper list of
+people, so fix your workflow. Tools might also fail if you work on some
+ancient tree (don't, instead use mainline) or work on fork of kernel
+(don't, instead use mainline). Just use b4 and everything should be
+fine, although remember about `b4 prep --auto-to-cc` if you added new
+patches to the patchset.
+</form letter>
+
+I already commented on this. The Cc list is still wrong. Please start
+using tools which do it automatically and you do not have to perform any
+choice of addresses.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
