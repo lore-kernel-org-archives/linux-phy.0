@@ -4,84 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8308CCED25B
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 03:07:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3789DCED25F
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 04:05:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zgxJpbtQMYdk/HSlNiUTwTDIDrujQkCCdfpoZ97PfaA=; b=AD7eUuR3YSJTVt
-	AD3NkgMw5msuua36bZh5o3VfUyyeSK9puggr2YXbMp6ftmv/3AUpLsPeFCKW+RDLmJ0ITy/st+FjB
-	zW0Gyp3tCNS+/c3C8fgEqpmQgfOP8BJrOKypW7CkATWTAjPrHa80TiH+7gT1CAM3UxMtLijKqQ05f
-	xlrwtOnmcV7et1YXkBrWpBrKWHYS49NNbgwFKgwZ8VtQEHOMypsCfSaL08kv/UZI3onlig6pDIDtb
-	Idhqu55hdQqiprJPqfN6K0v0TqoBL61Fvv2qTGSSlSjid7ufclLhwaOE9GWCN2x+luXP2ZspB35dA
-	Z463lvsIeahrpdOpViUA==;
+	List-Owner; bh=09k3jyM9k6btdR0rGUGHsLy7r1rq+T34SYbviLWE14o=; b=WCO8WG2OpUfAk2
+	NbNj8r6cLrbp9+UpHnqROagP4r5g7f/8xMEa0i8KX1Tsz2X4qPRIOKh88R84ALsnu0icooFAq8BMt
+	op43MIMaod5P/eOtCf8Ps+AcZ1c02TdYJVi3QxPYUHw3e5IfxbuhXKgkR2Ou7X+emTIM+OkN/u5Z6
+	bLICHoQVYgmBJPV/dJ2Fj8zDnUZzsyKkAWYHeHq7VDQr+qzwBLY9pPx9M9SSL/VGk9rhri+2myqMf
+	w+RXZ5Y8+peuyHcG0BNMDQKJfmnCWOOLbfRufHjpFn5eaENlcXg8I+sB1K0KTnUYjELO4ijAYLrRA
+	9dZA+KtZXPq9zivnoavQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy0ZC-00000004Mxc-0x9d;
-	Tue, 08 Oct 2024 03:07:18 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1sy1TB-00000004RyC-1oiG;
+	Tue, 08 Oct 2024 04:05:09 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy0Z9-00000004Mx3-1JeH;
-	Tue, 08 Oct 2024 03:07:16 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-2e13718283bso585219a91.3;
-        Mon, 07 Oct 2024 20:07:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1728356834; x=1728961634; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=iUEZcciJrrtCxrQ9GRGdW8hIdm0bQGx8cBqztK/kqVE=;
-        b=hamaoE02MvNgknbk4ke42XssFWY6qFhlSVYERxR/z1wDTvKu2jz89uRSBzvitjfGHQ
-         Ym4tc9EvFv7682CR+Whw+EM/mgUXtCP0Q59NoNqwmHAkKTTmG1UZErIittyLzrwmiGeP
-         oBjB998VL33aXwFsEZinVgX8wxAVIxNqI7ZB+3O/7Cyv1Y6LVGSz/+NKHTGigIv6FpSF
-         +2+Psz5ulWhTktBjbXbFWCJ7JY7u18hN1wJoV5SeF1rWAh9VX5i9Bh2fkPf0oWhcFAIc
-         B+VrDbP15yJVveGdTxDSp8+KWW1TL+DeHr8rVbpnltLmHE68SEJ8pnay5ntXf1P0y+fL
-         qY+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728356834; x=1728961634;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=iUEZcciJrrtCxrQ9GRGdW8hIdm0bQGx8cBqztK/kqVE=;
-        b=W0ZSZgRZ2ZovaUO1GUkC/Ane4/MC6J9DQgPPMNKvJ6iwxMXzgKwLXbDh/UOK8gaXQl
-         D4LeZcCIyBKm06+FYA+wEr+WvkcZAfZY8z7CuI7pXcWekuPYxuRQoMDEOTofxfUK4wh/
-         iIoC2lkMO1WzPptO+YlUTGz6hDVHcfAxxJZ4Dj7hf2ueiFlJowmut9mw4g37NkwZ+icb
-         cCNiS/bezm0l7r4lgTvsJmhaXx+DuB2Z6OSH+ojuP4uOGLYIG7ii7zls4mlDL+4L3kfG
-         NGFv5AtNy/rdzpWkEV8nzldB12Tj+JuI/kdGhNagjpipoK73SJCVmli/EE4yLSzKTVmx
-         ovWw==
-X-Forwarded-Encrypted: i=1; AJvYcCV1RrEnQdZgAXeDn5q0jrdqxIIIaBZwJ0Ga8iDuE/i57mrArAtrO56Bl45nffcq8KYEuSpUqSgwZTDE1oLuQnmi@lists.infradead.org, AJvYcCVbt2OVx8E8hkPVETQlcvgVfNJhZCe0601K38A1MLi1SZS3HylA9A3MwAR0IByLwszHnOSdwaKSssNn5ba9yEg=@lists.infradead.org, AJvYcCVgjwDRy8id8VDuFGmrkBAAMTfzXGNMEJMVF8uhJvUeeLyx9VoRApuFEP7YdebVLN1NS2Yavv+fmPJ6@lists.infradead.org
-X-Gm-Message-State: AOJu0YydIvJf2D7k0VzbmCcC787qmy7clHFSMXXmoeR8qFzi76bcuEuA
-	zTcVF6m4njXvMvO7y8ue90/AGFzw3O93eZRw/YRCvP3PHGbRQFm8
-X-Google-Smtp-Source: AGHT+IHI3PrHh1lJM0vzHu+NddQsCN10C7/Uq91IKP/BCHMuma6y//FuC0alSdAYUJMdSIanFBdlPw==
-X-Received: by 2002:a17:90a:d083:b0:2db:60b:9be5 with SMTP id 98e67ed59e1d1-2e1e63b35f2mr6898844a91.8.1728356834284;
-        Mon, 07 Oct 2024 20:07:14 -0700 (PDT)
-Received: from [192.168.60.56] ([103.29.142.67])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2e1e866583esm8018015a91.37.2024.10.07.20.07.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 07 Oct 2024 20:07:13 -0700 (PDT)
-Message-ID: <13fe91e1-2471-4a59-9581-628ce7773fdc@gmail.com>
-Date: Tue, 8 Oct 2024 11:07:09 +0800
+	id 1sy1Rr-00000004RoW-1hE4;
+	Tue, 08 Oct 2024 04:03:48 +0000
+X-UUID: 4f440dfa852a11efb3adad29d29602c1-20241007
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID; bh=mwTHTTsRLjvACOCxRw8N0aIBKWsdNo6TgCo9mXIoopg=;
+	b=iaHsXtf6Rw0jYxC0w/UHeGf/u82Oiul5qQOcx4Fymap1mSSh7OcuhZvigAfrEidjnhT+3feWte8eJssZq398qQX1uJJqaErGMf1Kmjs/BezRPWB+nESMlMbT08c0i7/il8ngl98T6NAwBJFhhCKdkqAjE96CsoqTwm1xds7HBPY=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.41,REQID:34e6372e-1849-4b8f-90fd-8d84a1644b69,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:6dc6a47,CLOUDID:7a94e764-444a-4b47-a99a-591ade3b04b2,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0|-5,EDM:-3,IP:ni
+	l,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES
+	:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0,NGT
+X-CID-BAS: 0,NGT,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-UUID: 4f440dfa852a11efb3adad29d29602c1-20241007
+Received: from mtkmbs09n1.mediatek.inc [(172.21.101.35)] by mailgw01.mediatek.com
+	(envelope-from <macpaul.lin@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 610000708; Mon, 07 Oct 2024 21:03:43 -0700
+Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
+ MTKMBS14N2.mediatek.inc (172.21.101.76) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.26; Tue, 8 Oct 2024 12:03:39 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkmbs11n2.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.2.1118.26 via Frontend
+ Transport; Tue, 8 Oct 2024 12:03:38 +0800
+Message-ID: <3a970560-2458-f5f3-87c5-925079fa12a4@mediatek.com>
+Date: Tue, 8 Oct 2024 12:03:37 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 1/3] phy: rockchip: inno-usb2: convert clock management
- to bulk
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, heiko@sntech.de, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- william.wu@rock-chips.com, tim.chen@rock-chips.com, frank.wang@rock-chips.com
-References: <20240929061025.3704-1-frawang.cn@gmail.com>
- <jx55slsincpzq6mugfsyc6qpbku2555azj7lithwggo733ggnb@rkqsxpsyoaw7>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.9.1
+Subject: Re: [PATCH] dt-bindings: phy: mediatek: tphy: add a property for
+ power-domains
 Content-Language: en-US
-From: Frank Wang <frawang.cn@gmail.com>
-In-Reply-To: <jx55slsincpzq6mugfsyc6qpbku2555azj7lithwggo733ggnb@rkqsxpsyoaw7>
+To: Conor Dooley <conor@kernel.org>, Jason-ch Chen
+	<Jason-ch.Chen@mediatek.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>, Chunfeng Yun
+	<chunfeng.yun@mediatek.com>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, Alexandre Mergnat <amergnat@baylibre.com>,
+	Bear Wang <bear.wang@mediatek.com>, Pablo Sun <pablo.sun@mediatek.com>,
+	Macpaul Lin <macpaul@gmail.com>, Sen Chu <sen.chu@mediatek.com>, "Chris-qj
+ chen" <chris-qj.chen@mediatek.com>, MediaTek Chromebook Upstream
+	<Project_Global_Chrome_Upstream_Group@mediatek.com>, Chen-Yu Tsai
+	<wenst@chromium.org>
+References: <20240926101804.22471-1-macpaul.lin@mediatek.com>
+ <20240926-treadmill-purr-b2e3279a14a4@spud>
+From: Macpaul Lin <macpaul.lin@mediatek.com>
+In-Reply-To: <20240926-treadmill-purr-b2e3279a14a4@spud>
+X-TM-AS-Product-Ver: SMEX-14.0.0.3152-9.1.1006-23728.005
+X-TM-AS-Result: No-10--12.403700-8.000000
+X-TMASE-MatchedRID: csPTYAMX1+EOwH4pD14DsPHkpkyUphL9mX+W7bzPOQEsElh8RiHU9TRO
+	5DLJAPjbbIezkMyOt2/FtYuDam42iwdNdS6cTLNYoaP4nSNLOYuwR/wKmchi2fJ/jS86DpPDFVk
+	w4X07kmgXw0prgDEKYG2UIwvQdMxgucM7lDuTbby8coKUcaOOvaOI1u80g4PZZ5yuplze9puVQ2
+	bE9K2FgiEn+59qml4SkZOl7WKIImrvXOvQVlExsFZ0V5tYhzdWxEHRux+uk8h+ICquNi0WJOQuX
+	NATtBTvuMcQkP5KqdH9y2dEXTBNtCv1l1GAoBYzftwZ3X11IV0=
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Result: 10--12.403700-8.000000
+X-TMASE-Version: SMEX-14.0.0.3152-9.1.1006-23728.005
+X-TM-SNTS-SMTP: C4C001A2C3E0140BF9ED2D1FF23C06F2DC8DAACE6EC962175BCD71A962969DD42000:8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_200715_393464_F1EE5E73 
-X-CRM114-Status: GOOD (  23.34  )
+X-CRM114-CacheID: sfid-20241007_210347_488098_D45E728A 
+X-CRM114-Status: GOOD (  14.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,121 +113,52 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-On 2024/9/30 3:38, Krzysztof Kozlowski wrote:
-> On Sun, Sep 29, 2024 at 02:10:23PM +0800, Frank Wang wrote:
->> From: Frank Wang <frank.wang@rock-chips.com>
+
+
+On 9/27/24 00:25, Conor Dooley wrote:
+> On Thu, Sep 26, 2024 at 06:18:04PM +0800, Macpaul Lin wrote:
+>> Some platforms requires a dependency for power-domains.
+> 
+> Some, so not all? Why isn't this restricted on a per compatible basis?
+
+After discussion with Chunfeng and double check tphy design in detail.
+Chunfeng commented that tphy dose not need to add mtcmos.
+It is not necessary to add it, if the power of the phy is turned off,
+it will affect other functions.
+
+ From the current USB hardware design perspective, even if mtcmos
+is added to the phy, it is always on.
+
+>> So we add property 'power-domains' and set 'maxItems: 1' in the
+>> DT Schema.
 >>
->> Since some Rockchip SoCs (e.g RK3576) have more than one clock,
->> this converts the clock management from single to bulk method to
->> make the driver more flexible.
->>
->> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+>> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 >> ---
->> Changelog:
->> v4:
->>   - a new patch split from the [PATCH v3 2/2], suggestions from Heiko.
+>>   Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 3 +++
+>>   1 file changed, 3 insertions(+)
 >>
->> v1-v3:
->>   - none
+>> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>> index 423b7c4e62f2..c77fe43c224a 100644
+>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+>> @@ -125,6 +125,9 @@ properties:
+>>       $ref: /schemas/types.yaml#/definitions/uint32
+>>       default: 28
+>>   
+>> +  power-domains:
+>> +    maxItems: 1
+>> +
+>>   # Required child node:
+>>   patternProperties:
+>>     "^(usb|pcie|sata)-phy@[0-9a-f]+$":
+>> -- 
+>> 2.45.2
 >>
->>   drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 43 ++++++++++++++++---
->>   1 file changed, 36 insertions(+), 7 deletions(-)
->>
->> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
->> index 4f71373ae6e1..ad3e65dc6aa4 100644
->> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
->> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
->> @@ -229,9 +229,10 @@ struct rockchip_usb2phy_port {
->>    * @dev: pointer to device.
->>    * @grf: General Register Files regmap.
->>    * @usbgrf: USB General Register Files regmap.
->> - * @clk: clock struct of phy input clk.
->> + * @clks: array of phy input clocks.
->>    * @clk480m: clock struct of phy output clk.
->>    * @clk480m_hw: clock struct of phy output clk management.
->> + * @num_clks: number of phy input clocks.
->>    * @phy_reset: phy reset control.
->>    * @chg_state: states involved in USB charger detection.
->>    * @chg_type: USB charger types.
->> @@ -246,9 +247,10 @@ struct rockchip_usb2phy {
->>   	struct device	*dev;
->>   	struct regmap	*grf;
->>   	struct regmap	*usbgrf;
->> -	struct clk	*clk;
->> +	struct clk_bulk_data	*clks;
->>   	struct clk	*clk480m;
->>   	struct clk_hw	clk480m_hw;
->> +	int			num_clks;
->>   	struct reset_control	*phy_reset;
->>   	enum usb_chg_state	chg_state;
->>   	enum power_supply_type	chg_type;
->> @@ -310,6 +312,13 @@ static int rockchip_usb2phy_reset(struct rockchip_usb2phy *rphy)
->>   	return 0;
->>   }
->>   
->> +static void rockchip_usb2phy_clk_bulk_disable(void *data)
->> +{
->> +	struct rockchip_usb2phy *rphy = data;
->> +
->> +	clk_bulk_disable_unprepare(rphy->num_clks, rphy->clks);
->> +}
->> +
->>   static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
->>   {
->>   	struct rockchip_usb2phy *rphy =
->> @@ -376,7 +385,9 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
->>   {
->>   	struct device_node *node = rphy->dev->of_node;
->>   	struct clk_init_data init;
->> +	struct clk *refclk = NULL;
->>   	const char *clk_name;
->> +	int i;
->>   	int ret = 0;
->>   
->>   	init.flags = 0;
->> @@ -386,8 +397,15 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
->>   	/* optional override of the clockname */
->>   	of_property_read_string(node, "clock-output-names", &init.name);
->>   
->> -	if (rphy->clk) {
->> -		clk_name = __clk_get_name(rphy->clk);
->> +	for (i = 0; i < rphy->num_clks; i++) {
->> +		if (!strncmp(rphy->clks[i].id, "phyclk", 6)) {
->> +			refclk = rphy->clks[i].clk;
->> +			break;
->> +		}
->> +	}
->> +
->> +	if (!IS_ERR(refclk)) {
->> +		clk_name = __clk_get_name(refclk);
->>   		init.parent_names = &clk_name;
->>   		init.num_parents = 1;
->>   	} else {
->> @@ -1406,18 +1424,29 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
->>   	if (IS_ERR(rphy->phy_reset))
->>   		return PTR_ERR(rphy->phy_reset);
->>   
->> -	rphy->clk = devm_clk_get_optional_enabled(dev, "phyclk");
->> -	if (IS_ERR(rphy->clk)) {
->> -		return dev_err_probe(&pdev->dev, PTR_ERR(rphy->clk),
->> +	ret = devm_clk_bulk_get_all(dev, &rphy->clks);
->> +	if (ret == -EPROBE_DEFER) {
-> This does not make much sense. Why would you proceed on other critical
-> errors?
->
-> You want to use optional variant, I guess?
 
-Yes, the clock properties are optional.
+Please drop this patch and I'll send a new fix to mt8195.dtsi.
 
-
-Best regards,
-Frank
-
-> Best regards,
-> Krzysztof
->
-
+Thanks
+Macpaul Lin
 
 -- 
 linux-phy mailing list
