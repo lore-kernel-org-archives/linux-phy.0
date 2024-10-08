@@ -4,77 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 547B8CED270
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 07:20:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C423CED274
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 08:37:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5humIJMoGki3xOkf3STKhIwR8fNLfWXZxRUFpw7x8U8=; b=SdABCtbOBpKWMe
-	OMdKhKyvvJsWdzboEh3Go+6Up0IA3C/oT1H5t9Cc3aBEdiFMEtNLMa93xawXdHS2nImrWdebw8Asn
-	v6MICDrTZXTcTKJcWpWm/VPjyG44xBctrf1KwtFzNs9LBLPlLwf9S7D6uediTdXfEE47zmT6RR+hu
-	cErbt3UDGiehy0o1U7umoWSQ4CTIG72lxrmVeFh2bI6RyS3BZEF49N/UkeAt3PF3ntTcahZTSY9u8
-	7WHH9tV61c8awBTUEH4sHIKX1A4kC+FbKI46BCEUIoH+J/mehoqRDJzTvETGPvhtCvMwhQVMbw1HY
-	jQZlHqWO+GM5OHo8R02Q==;
+	List-Owner; bh=hWw7crMEA+vcX0oXgkpnsf/rV7XX68tznLehmFT1WXs=; b=dPnyf8G6mdUXch
+	vJLoHmw65fdj0JzYqsU8sIXnQOkPRAj+BaNjz7kIengzbCPImWYuKtBkMrg45ouevRh6uaVE3MtkC
+	FIe8zbW1/w5J3m/09MA1v85oxWViYAXdCROXYg2Le18M5eOWDcGB9Qd4aQlR1VwZ1A4CiQYtEt7P7
+	BFpTdbP2nwiHfiPyOUcfX0RmGr7EG3aeYpC1B4L0js/WT9Y7idOJQ5JDYZV6pwef+l5H5aQ7EnA2g
+	CwsuiTysI91s0T0VREhxyhbWn9Syib+zahIxmdc5GMecODq6TEG5aYwvmBSOr3tDZqTh7ZfXXBJ1s
+	y/U2gcBYlG2C45db40pQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4WU-00000004lzZ-09ox;
-	Tue, 08 Oct 2024 07:20:46 +0000
-Received: from mgamail.intel.com ([192.198.163.14])
+	id 1sy5iM-000000054vo-1Svs;
+	Tue, 08 Oct 2024 08:37:06 +0000
+Received: from mgamail.intel.com ([198.175.65.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy4WQ-00000004lyB-42Wu
+	id 1sy5TV-0000000508R-3fBz
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 07:20:44 +0000
+	Tue, 08 Oct 2024 08:21:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1728372043; x=1759908043;
+  t=1728375706; x=1759911706;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=Rn1tdMF4LSwkuLbf4jm6VgwMbmYg+6fAZnOTNc7Z68U=;
-  b=SiYHCYF5fZXnpq7JWn6tVAu4eATdWNAqjMmURO4nM3uRLA4n3Gkl09O3
-   tyGNxcbAon7bOiKnNi3aY+RGx9lkI6vbU9wyHACoh6M6+oLnqrbuz72q6
-   /UEZ8XCRd8urHc5kRYn64khiebbDrHWShidgR6n1j/ttKzfHQeZDdJqkS
-   /d+TSD0IFn4UzIvuJam7yRy4ydwkr8Eqw5YBIY5Ml+/4tNsaGXK6cz8jd
-   KZ0gaIwN9wU8HqnszJD3mmn1hO/io/UJJAut6Mq//AYEIvXv7fWr9+n4D
-   t1Qm+5V3V9FGmevyeI69xsORFA7p7I72y69URn4keRtkdyWndDDgI7vlv
-   A==;
-X-CSE-ConnectionGUID: PlWYwuICTKmi6w4HXG6Smw==
-X-CSE-MsgGUID: +NdEM33PShK6xQUSGsisHA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11218"; a="27714326"
+  bh=VDpf9/wkNVw6+eD/6ygGxcYnIzmLwJk/4ULDXyGGR80=;
+  b=MPE78sLvSyNJKa4L8eGbfo1fw4RetNdi5rUbarg2yX9djR6wjj8Y4azq
+   P49PhjEn3dIzAH1ObNHbiB6T7a5arUlDfAHbib64xqeDEnVmCWYkj5QCP
+   QzvAl2d5AJ6dkym/WhXHSROXdsMDhiOm87pduxVPEOuJ87Vmn2BcqMpC/
+   i2+/wXv0VoqTho+mxvxc4NJgYtlDa4JQGksbgZUoZPZ2RtRcRpuv3KYU/
+   2we8+MDUdApRgUXrmqqA+BJqPF74OCZnGDVwcEAufYMYqEFzfs8TtKVzY
+   80KarGAFyETyFUzl94avG6F1bSGH04/YQsANKfqk3DjGQLZIDICHPxdLJ
+   g==;
+X-CSE-ConnectionGUID: loVmjYaDQHeRseCijSGR3A==
+X-CSE-MsgGUID: tO7hzsnHRGCQLVqHaKMiFg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11218"; a="38118280"
 X-IronPort-AV: E=Sophos;i="6.11,186,1725346800"; 
-   d="scan'208";a="27714326"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Oct 2024 00:20:42 -0700
-X-CSE-ConnectionGUID: 2kh+tj+rSnqnTCl+hUh0XQ==
-X-CSE-MsgGUID: aTJGazz7SLGMJjOmbvdKaQ==
+   d="scan'208";a="38118280"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Oct 2024 01:21:45 -0700
+X-CSE-ConnectionGUID: 7Oez9WmLSUuIu35SHXCIhw==
+X-CSE-MsgGUID: 3dZ7tbTCRUqnAvtDqZvINg==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.11,186,1725346800"; 
-   d="scan'208";a="75301280"
+   d="scan'208";a="113216392"
 Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 08 Oct 2024 00:20:40 -0700
+  by orviesa001.jf.intel.com with ESMTP; 08 Oct 2024 01:21:43 -0700
 Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1sy4WM-00062C-1A;
-	Tue, 08 Oct 2024 07:20:38 +0000
-Date: Tue, 8 Oct 2024 15:20:02 +0800
+	id 1sy5TQ-00065U-1a;
+	Tue, 08 Oct 2024 08:21:40 +0000
+Date: Tue, 8 Oct 2024 16:21:28 +0800
 From: kernel test robot <lkp@intel.com>
 To: Markus Stockhausen <markus.stockhausen@gmx.de>,
 	linux-phy@lists.infradead.org, chris.packham@alliedtelesis.co.nz,
 	devicetree@vger.kernel.org, krzk@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev,
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
 	Markus Stockhausen <markus.stockhausen@gmx.de>
 Subject: Re: [PATCH v2 3/3] phy: Integrate Realtek Otto SerDes driver into
  build system
-Message-ID: <202410081449.rLWpQtUj-lkp@intel.com>
+Message-ID: <202410081607.EKE62jfx-lkp@intel.com>
 References: <20241007163623.3274510-4-markus.stockhausen@gmx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20241007163623.3274510-4-markus.stockhausen@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_002043_086201_B015D752 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20241008_012145_988199_92F9A254 
+X-CRM114-Status: GOOD (  11.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,47 +105,78 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Markus-Stockhausen/dt-bin
 base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
 patch link:    https://lore.kernel.org/r/20241007163623.3274510-4-markus.stockhausen%40gmx.de
 patch subject: [PATCH v2 3/3] phy: Integrate Realtek Otto SerDes driver into build system
-config: alpha-allyesconfig (https://download.01.org/0day-ci/archive/20241008/202410081449.rLWpQtUj-lkp@intel.com/config)
-compiler: alpha-linux-gcc (GCC) 13.3.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241008/202410081449.rLWpQtUj-lkp@intel.com/reproduce)
+config: x86_64-allyesconfig (https://download.01.org/0day-ci/archive/20241008/202410081607.EKE62jfx-lkp@intel.com/config)
+compiler: clang version 18.1.8 (https://github.com/llvm/llvm-project 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241008/202410081607.EKE62jfx-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202410081449.rLWpQtUj-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202410081607.EKE62jfx-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
-   In file included from include/linux/debugfs.h:16,
-                    from drivers/phy/realtek/phy-rtk-otto-serdes.c:7:
-   drivers/phy/realtek/phy-rtk-otto-serdes.c: In function 'rtsds_dbg_mode_open':
->> drivers/phy/realtek/phy-rtk-otto-serdes.c:868:29: error: passing argument 2 of 'single_open' from incompatible pointer type [-Werror=incompatible-pointer-types]
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:490:15: warning: overlapping comparisons always evaluate to true [-Wtautological-overlap-compare]
+     490 |         if (sid >= 2 || sid <= 9)
+         |             ~~~~~~~~~^~~~~~~~~~~
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:509:15: warning: overlapping comparisons always evaluate to true [-Wtautological-overlap-compare]
+     509 |         if (sid >= 2 || sid <= 9)
+         |             ~~~~~~~~~^~~~~~~~~~~
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:686:6: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
+     686 |         if (ret)
+         |             ^~~
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:677:9: note: initialize the variable 'ret' to silence this warning
+     677 |         int ret;
+         |                ^
+         |                 = 0
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:706:6: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
+     706 |         if (ret)
+         |             ^~~
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:697:9: note: initialize the variable 'ret' to silence this warning
+     697 |         int ret;
+         |                ^
+         |                 = 0
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:723:7: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
+     723 |         if (!ret)
+         |              ^~~
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:717:9: note: initialize the variable 'ret' to silence this warning
+     717 |         int ret;
+         |                ^
+         |                 = 0
+>> drivers/phy/realtek/phy-rtk-otto-serdes.c:868:1: error: incompatible function pointer types passing 'ssize_t (struct seq_file *, void *)' (aka 'long (struct seq_file *, void *)') to parameter of type 'int (*)(struct seq_file *, void *)' [-Wincompatible-function-pointer-types]
      868 | DEFINE_SHOW_STORE_ATTRIBUTE(rtsds_dbg_mode);
-         |                             ^~~~~~~~~~~~~~
-         |                             |
-         |                             ssize_t (*)(struct seq_file *, void *) {aka long int (*)(struct seq_file *, void *)}
-   include/linux/seq_file.h:223:34: note: in definition of macro 'DEFINE_SHOW_STORE_ATTRIBUTE'
+         | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/seq_file.h:223:27: note: expanded from macro 'DEFINE_SHOW_STORE_ATTRIBUTE'
      223 |         return single_open(file, __name ## _show, inode->i_private);    \
-         |                                  ^~~~~~
-   include/linux/seq_file.h:176:32: note: expected 'int (*)(struct seq_file *, void *)' but argument is of type 'ssize_t (*)(struct seq_file *, void *)' {aka 'long int (*)(struct seq_file *, void *)'}
+         |                                  ^~~~~~~~~~~~~~~
+   <scratch space>:49:1: note: expanded from here
+      49 | rtsds_dbg_mode_show
+         | ^~~~~~~~~~~~~~~~~~~
+   include/linux/seq_file.h:176:38: note: passing argument to parameter here
      176 | int single_open(struct file *, int (*)(struct seq_file *, void *), void *);
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/phy/realtek/phy-rtk-otto-serdes.c: In function 'rtsds_dbg_reset_open':
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:891:29: error: passing argument 2 of 'single_open' from incompatible pointer type [-Werror=incompatible-pointer-types]
+         |                                      ^
+   drivers/phy/realtek/phy-rtk-otto-serdes.c:891:1: error: incompatible function pointer types passing 'ssize_t (struct seq_file *, void *)' (aka 'long (struct seq_file *, void *)') to parameter of type 'int (*)(struct seq_file *, void *)' [-Wincompatible-function-pointer-types]
      891 | DEFINE_SHOW_STORE_ATTRIBUTE(rtsds_dbg_reset);
-         |                             ^~~~~~~~~~~~~~~
-         |                             |
-         |                             ssize_t (*)(struct seq_file *, void *) {aka long int (*)(struct seq_file *, void *)}
-   include/linux/seq_file.h:223:34: note: in definition of macro 'DEFINE_SHOW_STORE_ATTRIBUTE'
+         | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/seq_file.h:223:27: note: expanded from macro 'DEFINE_SHOW_STORE_ATTRIBUTE'
      223 |         return single_open(file, __name ## _show, inode->i_private);    \
-         |                                  ^~~~~~
-   include/linux/seq_file.h:176:32: note: expected 'int (*)(struct seq_file *, void *)' but argument is of type 'ssize_t (*)(struct seq_file *, void *)' {aka 'long int (*)(struct seq_file *, void *)'}
+         |                                  ^~~~~~~~~~~~~~~
+   <scratch space>:54:1: note: expanded from here
+      54 | rtsds_dbg_reset_show
+         | ^~~~~~~~~~~~~~~~~~~~
+   include/linux/seq_file.h:176:38: note: passing argument to parameter here
      176 | int single_open(struct file *, int (*)(struct seq_file *, void *), void *);
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   cc1: some warnings being treated as errors
+         |                                      ^
+   5 warnings and 2 errors generated.
+
+Kconfig warnings: (for reference only)
+   WARNING: unmet direct dependencies detected for MODVERSIONS
+   Depends on [n]: MODULES [=y] && !COMPILE_TEST [=y]
+   Selected by [y]:
+   - RANDSTRUCT_FULL [=y] && (CC_HAS_RANDSTRUCT [=y] || GCC_PLUGINS [=n]) && MODULES [=y]
 
 
-vim +/single_open +868 drivers/phy/realtek/phy-rtk-otto-serdes.c
+vim +868 drivers/phy/realtek/phy-rtk-otto-serdes.c
 
 40f1aea80b53b8 Markus Stockhausen 2024-10-07  847  
 40f1aea80b53b8 Markus Stockhausen 2024-10-07  848  static ssize_t rtsds_dbg_mode_write(struct file *file, const char __user *userbuf,
