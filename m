@@ -4,96 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D90A3CED247
-	for <linux-phy@archiver.kernel.org>; Mon,  7 Oct 2024 22:35:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6A22CED25D
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 03:05:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4S+BNfb0PCotot/aGPEtUQKpApA8VRjz+BBjSpYzwwk=; b=YpEnW0vj/QNhTo
-	c6lQPG55RI4CfU8X9wB5qlqd74HutXWEjoggXMGrQt3+HYpa/wh1/AFreTHNkMi/Gm6TeuKSuLaKZ
-	xKCbjjq6xCZajwXxbQtHfIAYBJPtjcBD/aGx2G5tro3XK9bKOL5OtxqVa3JhMXbpA7eui4qH8f1Iw
-	nitssXoFa6H0V4JiRdXRoNzyXFn5lrkq1XsdOp4hvcx1vrFX2XQOqC8WEr4VRIo1ZBkqSvsWkmR6n
-	hKT1OwkhbxOBEQiATnGWXqBPJoDEYtAb6fyrzLIrKGjo+5bhPY9LYB/FXFfbZulrm4K1DoE9dQFKD
-	VT+5kziDQex+XBKQILGQ==;
+	List-Owner; bh=nBVJnLLp2UwvUIJ1oH2kTRrVF2zPjh7AwmR3e2DidFw=; b=EwOX/UAsBIwscJ
+	ZdNavo7/QjWKbqVh0BFyMcppmz9m3gfZRm9dIVYbKkafkprpbt+CVDWmM2yLB3Lo3Sv21IWYijk92
+	xtWGeTAGoFE4rjMMIJ61r2rWTtwcGrpA4yArC1YrmAljty8EqJUJdAtBcqd3BH3FIWQyxX5LN7UPa
+	iRmkoocUJm+HTII5N8YICwvqOa1SEwYSXw8HmmgL5IRSDIbiOxyvW0SpMfzM7wYYsbsmuEjwMrBUg
+	EeMtmhwkpuodPexdaol/QUPfxnu+Q/YR6/njwHI/dxyy+GaHKQGlHQZsrat6MTvkGJNVNzdPc0EWP
+	/2iVp9o7M46N2M4rVyNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxwKA-00000003viv-2Iia;
-	Mon, 07 Oct 2024 22:35:30 +0000
-Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
+	id 1sy0Wy-00000004MQZ-2gtJ;
+	Tue, 08 Oct 2024 03:05:00 +0000
+Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxwK7-00000003vgw-1kuI
-	for linux-phy@lists.infradead.org;
-	Mon, 07 Oct 2024 22:35:29 +0000
-Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-e026a2238d8so4471282276.0
-        for <linux-phy@lists.infradead.org>; Mon, 07 Oct 2024 15:35:27 -0700 (PDT)
+	id 1sy0Wu-00000004MMs-1bqC;
+	Tue, 08 Oct 2024 03:04:58 +0000
+Received: by mail-pg1-x52f.google.com with SMTP id 41be03b00d2f7-7c3d415f85eso573014a12.0;
+        Mon, 07 Oct 2024 20:04:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1728340526; x=1728945326; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=gesjil9Y0RZgbcjmX5qHd/S97rHztDCcedkOm+1cl0k=;
-        b=FXdr9fOc0xcoQusNaOGpQZLfkrM44nloVL/PV8iknAP3Nequ+eFAKlK3DXqXas0iYJ
-         scoBN5ICXkoZpkbXKsbiHN+RD2GgeeQrGWqAR39tsvR12d7Advai750/nfiOIZQwpDXd
-         +45hchc4BWSGGqUv6BJALwfjTjvSO7B3MMFarsbCa3TdIuZ+P7y1WxyCSLi+pRLExWyC
-         YD20zWS93VLyd5XhYNDqBZkpLVuoViZTxzueI19Jh8A5RC1+sjVTVFp2WCzoOapQ1bF+
-         J+6Lpy0ON0rEDvkPPBaTGhKLect2BildQBbqfhQOLzx4PKaMnzzinVUn6Ink5NaBxtFo
-         bIew==
+        d=gmail.com; s=20230601; t=1728356695; x=1728961495; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=0fEU5+LIRwpPcVtB5GFRw9EBx5GwZfZdi0DP3rpreiA=;
+        b=QzUR+w9dNLH6WOFmaxOq+177e8Fw4T0Gdt6cj69WT6R23ItUOTmxeW6Hho++Eu7hDn
+         j8jclGXQklyZQaqLTPuGNe2Q4j4WdYHYgX7qXRLbnUKCq80rsc/r69ctzKfCmBQyvSlb
+         3e5xLTh0TVkF35A2xO9GhEoWfOl622sntt/0LpsWrlA13l7pg+72Yny9X+00OkLaq/t5
+         p0k+QYrUjPEeAXLKWsrL/lxS2Re0+P5EDIed2RVSN/dYulaCkvztud53sbyXKcz/RbRb
+         gp71QUESnAd/aaE6ZIUCedr/Z5E7RlXvEAcoiGTmYLN0AtUJvFnw/uJ4FXSBIQa9kOpD
+         NhHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728340526; x=1728945326;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=gesjil9Y0RZgbcjmX5qHd/S97rHztDCcedkOm+1cl0k=;
-        b=eIjEzchGho2zU0RtXclZP21RxcQ6FPQ1QECIpLcV90Fcx1XGE8FVvhmIPLa0rWVDdC
-         zxXwUuJHNSfBuSA+Y2a6lGUm6qlbTnlmTrzZki1WcgapnPTvr6FtJkyuwtMnpAk7pJEI
-         /dosDK8NFnyVlakhUiOY1/Z1pZUf41/kVR4Ldoy7SFE2SDlo5o92DvZNzeC4bYm9zJTE
-         16LSc1BmNm5s7jYzy60M0DeaoHi/z2WFQ8BPTf6+IHnX0fWzteTG5PP8gyNqMw+hYCig
-         dZRI1iVQGObXeYanx3cmEwUlM4U2k2Ru6+fsLtGs0xbUb6Jg1dQbaCdaBDFRjxXkJ6EP
-         lCpw==
-X-Forwarded-Encrypted: i=1; AJvYcCULDbOndwx3GHBuqh3zYqckJojDVVsrtFzW54KP01GYWCb7r/Ha11VzU+3sGk0fsEO51TDlyNlEr2o=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwCVMFVQsjoHJHaJClVb+s8xF5LoYjKgmnlXI9E4cddEVnID8Sm
-	VvDhtRXxi3XD5w4BlVAlIdJjweGzbysE+Pvv2X+3HlJw6E7cGTAE2MTTAqtQEsN34R11ELH5Cye
-	wfwf57/OQTLVBmTR35KbMW2aBUtWp92Hz3zCNdw==
-X-Google-Smtp-Source: AGHT+IGYLLRVc3CeXKReIUVnntYlZ+ULRb29gPUl3UTx4hoqAUGdx6q2aFDzdnacRWqcM/cOYseo4GoEdp7e3a8qLZE=
-X-Received: by 2002:a05:6902:2305:b0:e28:6ec7:4353 with SMTP id
- 3f1490d57ef6-e2893964043mr10612649276.54.1728340526338; Mon, 07 Oct 2024
- 15:35:26 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1728356695; x=1728961495;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=0fEU5+LIRwpPcVtB5GFRw9EBx5GwZfZdi0DP3rpreiA=;
+        b=p1+RhxefKwk/v/3LimPQDkWMBxxOH7mFej3F10nDGjEDETurJwyFE8N7bSZ9ezdAES
+         bRFgYJijdaweHqs4LJehRAjqdU+HLL7od4tCrB6O+QpVwwBVySeCbNb1bt5ehfel1uDd
+         2vw1+mykK1T7HkfJ14FZ5KHqr86qWmCsUs3P+WnsJcDh7qkyjrdzj21/t2hQx/57BWhE
+         dFNcQYUPH5oZMWT5miE/1HBRDJ5JW9VZ/N1ICC5C+vYmoVnPhheClUxep/0hOsDfmfLU
+         M3+ddaCYL/3h9DKP/PvBGoJyQjKPfAdDB28jy8rvmfFFZsqD7+PR8RH4edwTmKDMG+Uh
+         TSpA==
+X-Forwarded-Encrypted: i=1; AJvYcCU7SFsJIaicjWRW5+V+W7EVQB+F62oUJ8rsyuJFcwYnpgKsm3wxrh2ZVcsUpH6gWZYlPZceHDksN44wQpJpznP0@lists.infradead.org, AJvYcCWGAyk11gHFZkDpiu+uViG63SD+7SMsd2BzpsAtGOkHwhbpwS/tFFoRg8o0OqfkdbQ2or6YEWRqe45rZ++405U=@lists.infradead.org, AJvYcCXkZrR3cV2PxOFu90ed2P3LUrhZAJ7n4a9E09B6rsgGbPrfh5WL2NtCpOT7bYStSVBbSIyh3KzRJRW3@lists.infradead.org
+X-Gm-Message-State: AOJu0YwI66ydA0ShUyEoSkEOc40z971+YoZ4cau2D3UTn0NStQ5fWAuZ
+	NhfQbfpMIi9wxhlzJ8hxqw39d2DxK6OLIcSKx55BvtOB5WofXURa
+X-Google-Smtp-Source: AGHT+IF/mYdHKvquiAn/wFf8QmUeywFZG+J2GcInNX9jsPC4w+KCpYqQSUbZsOsVRTg8hvdAg5XvQg==
+X-Received: by 2002:a17:902:eccf:b0:207:428d:ecc0 with SMTP id d9443c01a7336-20bfee35e78mr86055315ad.8.1728356694751;
+        Mon, 07 Oct 2024 20:04:54 -0700 (PDT)
+Received: from [192.168.60.56] ([103.29.142.67])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-20c138af9f7sm46708955ad.13.2024.10.07.20.04.50
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 07 Oct 2024 20:04:54 -0700 (PDT)
+Message-ID: <b3046637-7a35-49ef-a2b4-2f44355980a7@gmail.com>
+Date: Tue, 8 Oct 2024 11:04:49 +0800
 MIME-Version: 1.0
-References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
- <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com>
- <20241007184924.GH14766@pendragon.ideasonboard.com> <CAPDyKFpQVnF7eQv3dup8k-3EijnMjuveCG9sZ=Rpey1Y6MBJEg@mail.gmail.com>
- <20241007222502.GG30699@pendragon.ideasonboard.com>
-In-Reply-To: <20241007222502.GG30699@pendragon.ideasonboard.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 8 Oct 2024 00:34:49 +0200
-Message-ID: <CAPDyKFrGNwna6Y2pqSRaBbRYHKRaD2ayqQHLtoqLPOu9Et7qTg@mail.gmail.com>
-Subject: Re: [PATCH 00/51] treewide: Switch to __pm_runtime_put_autosuspend()
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, dri-devel@lists.freedesktop.org, 
-	linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org, 
-	linux-clk@vger.kernel.org, linux-crypto@vger.kernel.org, 
-	dmaengine@vger.kernel.org, linux-gpio@vger.kernel.org, 
-	amd-gfx@lists.freedesktop.org, nouveau@lists.freedesktop.org, 
-	linux-stm32@st-md-mailman.stormreply.com, 
-	linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org, 
-	linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org, 
-	linux-input@vger.kernel.org, patches@opensource.cirrus.com, 
-	iommu@lists.linux.dev, imx@lists.linux.dev, 
-	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org, 
-	netdev@vger.kernel.org, linux-wireless@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org, 
-	linux-sound@vger.kernel.org, linux-spi@vger.kernel.org, 
-	linux-staging@lists.linux.dev, linux-usb@vger.kernel.org, 
-	linux-serial@vger.kernel.org, greybus-dev@lists.linaro.org, 
-	asahi@lists.linux.dev, rafael@kernel.org, 
-	Andy Shevchenko <andy.shevchenko@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/3] dt-bindings: phy: rockchip,inno-usb2phy: add
+ rk3576
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, heiko@sntech.de, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ william.wu@rock-chips.com, tim.chen@rock-chips.com, frank.wang@rock-chips.com
+References: <20240929061025.3704-1-frawang.cn@gmail.com>
+ <20240929061025.3704-2-frawang.cn@gmail.com>
+ <4czjtesext2ulsmcym2cpjavni7zuve2sdgyiqxkjkaxrl2gpf@7nqylzgd5f55>
+Content-Language: en-US
+From: Frank Wang <frawang.cn@gmail.com>
+In-Reply-To: <4czjtesext2ulsmcym2cpjavni7zuve2sdgyiqxkjkaxrl2gpf@7nqylzgd5f55>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_153527_522945_2B92DDAA 
-X-CRM114-Status: GOOD (  36.68  )
+X-CRM114-CacheID: sfid-20241007_200456_489516_A927F2CD 
+X-CRM114-Status: GOOD (  19.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,100 +94,135 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 8 Oct 2024 at 00:25, Laurent Pinchart
-<laurent.pinchart@ideasonboard.com> wrote:
->
-> Hi Ulf,
->
-> On Tue, Oct 08, 2024 at 12:08:24AM +0200, Ulf Hansson wrote:
-> > On Mon, 7 Oct 2024 at 20:49, Laurent Pinchart wrote:
-> > > On Fri, Oct 04, 2024 at 04:38:36PM +0200, Ulf Hansson wrote:
-> > > > On Fri, 4 Oct 2024 at 11:41, Sakari Ailus wrote:
-> > > > >
-> > > > > Hello everyone,
-> > > > >
-> > > > > This set will switch the users of pm_runtime_put_autosuspend() to
-> > > > > __pm_runtime_put_autosuspend() while the former will soon be re-purposed
-> > > > > to include a call to pm_runtime_mark_last_busy(). The two are almost
-> > > > > always used together, apart from bugs which are likely common. Going
-> > > > > forward, most new users should be using pm_runtime_put_autosuspend().
-> > > > >
-> > > > > Once this conversion is done and pm_runtime_put_autosuspend() re-purposed,
-> > > > > I'll post another set to merge the calls to __pm_runtime_put_autosuspend()
-> > > > > and pm_runtime_mark_last_busy().
-> > > >
-> > > > That sounds like it could cause a lot of churns.
-> > > >
-> > > > Why not add a new helper function that does the
-> > > > pm_runtime_put_autosuspend() and the pm_runtime_mark_last_busy()
-> > > > things? Then we can start moving users over to this new interface,
-> > > > rather than having this intermediate step?
-> > >
-> > > I think the API would be nicer if we used the shortest and simplest
-> > > function names for the most common use cases. Following
-> > > pm_runtime_put_autosuspend() with pm_runtime_mark_last_busy() is that
-> > > most common use case. That's why I like Sakari's approach of repurposing
-> > > pm_runtime_put_autosuspend(), and introducing
-> > > __pm_runtime_put_autosuspend() for the odd cases where
-> > > pm_runtime_mark_last_busy() shouldn't be called.
-> >
-> > Okay, so the reason for this approach is because we couldn't find a
-> > short and descriptive name that could be used in favor of
-> > pm_runtime_put_autosuspend(). Let me throw some ideas at it and maybe
-> > you like it - or not. :-)
->
-> I like the idea at least :-)
->
-> > I don't know what options you guys discussed, but to me the entire
-> > "autosuspend"-suffix isn't really that necessary in my opinion. There
-> > are more ways than calling pm_runtime_put_autosuspend() that triggers
-> > us to use the RPM_AUTO flag for rpm_suspend(). For example, just
-> > calling pm_runtime_put() has the similar effect.
->
-> To be honest, I'm lost there. pm_runtime_put() calls
-> __pm_runtime_idle(RPM_GET_PUT | RPM_ASYNC), while
-> pm_runtime_put_autosuspend() calls __pm_runtime_suspend(RPM_GET_PUT |
-> RPM_ASYNC | RPM_AUTO).
+Hi Krzysztof,
 
-__pm_runtime_idle() ends up calling rpm_idle(), which may call
-rpm_suspend() - if it succeeds to idle the device. In that case, it
-tags on the RPM_AUTO flag in the call to rpm_suspend(). Quite similar
-to what is happening when calling pm_runtime_put_autosuspend().
+On 2024/9/30 3:36, Krzysztof Kozlowski wrote:
+> On Sun, Sep 29, 2024 at 02:10:24PM +0800, Frank Wang wrote:
+>> From: Frank Wang <frank.wang@rock-chips.com>
+>>
+>> Add compatible for the USB2 phy in the Rockchip RK3576 SoC.
+>>
+>> This change also refactor the clocks list as there are new clocks
+>> adding used for the USB MMU in RK3576 SoC.
+>>
+>> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+>> ---
+>> Changelog:
+>> v4:
+>>   - refactor the clocks list used if:then:
+>>
+>> v3:
+>>   - narrowed rk3576 clocks by compatible property.
+>>
+>> v2:
+>>   - Categorize clock names by oneOf keyword.
+>>
+>> v1:
+>>   - https://patchwork.kernel.org/project/linux-phy/patch/20240923025326.10467-1-frank.wang@rock-chips.com/
+>>
+>>   .../bindings/phy/rockchip,inno-usb2phy.yaml   | 46 ++++++++++++++++++-
+>>   1 file changed, 44 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+>> index 5254413137c6..fc2c03d01a20 100644
+>> --- a/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb2phy.yaml
+>> @@ -20,6 +20,7 @@ properties:
+>>         - rockchip,rk3366-usb2phy
+>>         - rockchip,rk3399-usb2phy
+>>         - rockchip,rk3568-usb2phy
+>> +      - rockchip,rk3576-usb2phy
+>>         - rockchip,rk3588-usb2phy
+>>         - rockchip,rv1108-usb2phy
+>>   
+>> @@ -34,10 +35,12 @@ properties:
+>>       const: 0
+>>   
+>>     clocks:
+>> -    maxItems: 1
+>> +    minItems: 1
+>> +    maxItems: 3
+>>   
+>>     clock-names:
+>> -    const: phyclk
+>> +    minItems: 1
+>> +    maxItems: 3
+>>   
+>>     assigned-clocks:
+>>       description:
+>> @@ -172,6 +175,45 @@ allOf:
+>>               - interrupts
+>>               - interrupt-names
+>>   
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - rockchip,px30-usb2phy
+>> +              - rockchip,rk3128-usb2phy
+>> +              - rockchip,rk3228-usb2phy
+>> +              - rockchip,rk3308-usb2phy
+>> +              - rockchip,rk3328-usb2phy
+>> +              - rockchip,rk3366-usb2phy
+>> +              - rockchip,rk3399-usb2phy
+>> +              - rockchip,rk3568-usb2phy
+>> +              - rockchip,rk3588-usb2phy
+>> +              - rockchip,rv1108-usb2phy
+>> +    then:
+>> +      properties:
+>> +        clocks:
+>> +          maxItems: 1
+>> +        clock-names:
+>> +          const: phyclk
+> maxItems: 1 instead
 
->
-> >
-> > Moreover, it's similar for pm_runtime_mark_last_busy(), it's called
-> > during rpm_resume() too, for example. So why bother about having
-> > "mark_last_busy" in the new name too.
-> >
-> > That said, my suggestion is simply "pm_runtime_put_suspend".
->
-> Can we do even better, and make pm_runtime_put() to handle autosuspend
-> automatically when autosuspend is enabled ?
+Sorry for late reply.
 
-As stated above, this is already the case.
+Do you mean use "maxItems: 1" instead of "const: phyclk" ?
 
->
-> > If you don't like it, I will certainly not object to your current
-> > approach, even if I think it leads to unnecessary churns.
-> >
-> > [...]
-> >
-> > Kind regards
-> > Uffe
->
-> --
-> Regards,
->
-> Laurent Pinchart
 
-Kind regards
-Uffe
+>> +
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - rockchip,rk3576-usb2phy
+>> +    then:
+>> +      properties:
+>> +        clocks:
+>> +          minItems: 3
+>> +          maxItems: 3
+>> +        clock-names:
+>> +          items:
+>> +            - const: phyclk
+>> +            - const: aclk
+>> +            - const: aclk_slv
+> This list goes to the top property with minItems: 1. Here you have only
+> minItems: 3.
+>
+> This way you have only one definition of entire list with same order of
+> items between variants.
+
+For rockchip,rk3576-usb2phy, three clocks are all required, and the 
+driver does not care about the order of the clocks.
+
+So is the above definition correct?
+
+
+Best regards,
+Frank
+
+> Best regards,
+> Krzysztof
+>
+
 
 -- 
 linux-phy mailing list
