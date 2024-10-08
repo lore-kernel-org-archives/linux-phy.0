@@ -4,77 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C423CED274
-	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 08:37:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92B66CED27C
+	for <linux-phy@archiver.kernel.org>; Tue,  8 Oct 2024 08:41:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hWw7crMEA+vcX0oXgkpnsf/rV7XX68tznLehmFT1WXs=; b=dPnyf8G6mdUXch
-	vJLoHmw65fdj0JzYqsU8sIXnQOkPRAj+BaNjz7kIengzbCPImWYuKtBkMrg45ouevRh6uaVE3MtkC
-	FIe8zbW1/w5J3m/09MA1v85oxWViYAXdCROXYg2Le18M5eOWDcGB9Qd4aQlR1VwZ1A4CiQYtEt7P7
-	BFpTdbP2nwiHfiPyOUcfX0RmGr7EG3aeYpC1B4L0js/WT9Y7idOJQ5JDYZV6pwef+l5H5aQ7EnA2g
-	CwsuiTysI91s0T0VREhxyhbWn9Syib+zahIxmdc5GMecODq6TEG5aYwvmBSOr3tDZqTh7ZfXXBJ1s
-	y/U2gcBYlG2C45db40pQ==;
+	List-Owner; bh=A+nncejdHWUVIlFT8maSXY8MfRxBv65dgLeFK3iJge4=; b=EfYYvkNvp/Vvx4
+	YYBLTKT+2hvcAdfDBNAxbXoIgIZ2H31lRHaBZFB3CslQFxIEWYTa2TnKQ+Jy/clLhshgcE4vt3Rou
+	L+x+8y5HAEDjAPFMZP2ykD/OU6AjLvJNwAnzsWDfH0ojePJ2s6E0tMHkKML1MWWHnKVfxwFD9/2vb
+	PybPq+0MtLhLgWdh3G6Ed/s62NGX47KCW5q72HdGq8W3bl3B/AQgB5KuXoXaSdjr38e2B2eFq40lK
+	lL2u7Yt/niCLLK1D3bmekr9wcmVQKPRC6NMaC923/3X6pRZsI2r6fjbEjEWXF7ZVGjqdvnfrboNSi
+	G8di6iKaITf+amH8BOmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy5iM-000000054vo-1Svs;
-	Tue, 08 Oct 2024 08:37:06 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	id 1sy5mI-0000000567a-0utY;
+	Tue, 08 Oct 2024 08:41:10 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sy5TV-0000000508R-3fBz
+	id 1sy5de-000000053R8-0mKq
 	for linux-phy@lists.infradead.org;
-	Tue, 08 Oct 2024 08:21:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1728375706; x=1759911706;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=VDpf9/wkNVw6+eD/6ygGxcYnIzmLwJk/4ULDXyGGR80=;
-  b=MPE78sLvSyNJKa4L8eGbfo1fw4RetNdi5rUbarg2yX9djR6wjj8Y4azq
-   P49PhjEn3dIzAH1ObNHbiB6T7a5arUlDfAHbib64xqeDEnVmCWYkj5QCP
-   QzvAl2d5AJ6dkym/WhXHSROXdsMDhiOm87pduxVPEOuJ87Vmn2BcqMpC/
-   i2+/wXv0VoqTho+mxvxc4NJgYtlDa4JQGksbgZUoZPZ2RtRcRpuv3KYU/
-   2we8+MDUdApRgUXrmqqA+BJqPF74OCZnGDVwcEAufYMYqEFzfs8TtKVzY
-   80KarGAFyETyFUzl94avG6F1bSGH04/YQsANKfqk3DjGQLZIDICHPxdLJ
-   g==;
-X-CSE-ConnectionGUID: loVmjYaDQHeRseCijSGR3A==
-X-CSE-MsgGUID: tO7hzsnHRGCQLVqHaKMiFg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11218"; a="38118280"
-X-IronPort-AV: E=Sophos;i="6.11,186,1725346800"; 
-   d="scan'208";a="38118280"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Oct 2024 01:21:45 -0700
-X-CSE-ConnectionGUID: 7Oez9WmLSUuIu35SHXCIhw==
-X-CSE-MsgGUID: 3dZ7tbTCRUqnAvtDqZvINg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,186,1725346800"; 
-   d="scan'208";a="113216392"
-Received: from lkp-server01.sh.intel.com (HELO a48cf1aa22e8) ([10.239.97.150])
-  by orviesa001.jf.intel.com with ESMTP; 08 Oct 2024 01:21:43 -0700
-Received: from kbuild by a48cf1aa22e8 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1sy5TQ-00065U-1a;
-	Tue, 08 Oct 2024 08:21:40 +0000
-Date: Tue, 8 Oct 2024 16:21:28 +0800
-From: kernel test robot <lkp@intel.com>
-To: Markus Stockhausen <markus.stockhausen@gmx.de>,
-	linux-phy@lists.infradead.org, chris.packham@alliedtelesis.co.nz,
-	devicetree@vger.kernel.org, krzk@kernel.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Markus Stockhausen <markus.stockhausen@gmx.de>
-Subject: Re: [PATCH v2 3/3] phy: Integrate Realtek Otto SerDes driver into
- build system
-Message-ID: <202410081607.EKE62jfx-lkp@intel.com>
-References: <20241007163623.3274510-4-markus.stockhausen@gmx.de>
+	Tue, 08 Oct 2024 08:32:16 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id B22B6A43329;
+	Tue,  8 Oct 2024 08:32:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAC44C4CEC7;
+	Tue,  8 Oct 2024 08:32:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728376332;
+	bh=KAvEzdvGLdylleRurHPPFueDCpj/D9mJXk3WwK5dBqM=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=IV9SFAOE1lyoZ5PVvE7NEI7UwnxrBUqV5nnCc22b5h3H1S7On+vOs30SEZbY09Z1z
+	 7HssQnzRZGvdufXX+P4Bye6IAuMh4iiLqJ/ubLPiYzSdcEUhT192H8unJbWdPv8FsO
+	 hBgB0ev50p7+GemO23yZ84hy8mZC9cnl2U154Tyx0ZH+nvg5ajHW2KAvGs/xnvUTxx
+	 DVrJH4vtClDTyBOAAa5qCH+n0c0IJ3qhvlr9+aPTxACFuQjSIJF6hpCWqVKZzdKHBf
+	 F2A1uOeLX3NRmlgyZ7FgQ9OPbRcUtyX0iD78fPFBsOfTLSiENjTk7R3rnfw78BvHwf
+	 7MgxqThsN8zTQ==
+Message-ID: <30a71840-75ee-44d6-af6e-fca27af88750@kernel.org>
+Date: Tue, 8 Oct 2024 10:32:10 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241007163623.3274510-4-markus.stockhausen@gmx.de>
+User-Agent: Mozilla Thunderbird
+Subject: Re: AW: AW: [PATCH v2 1/3] dt-bindings: phy: add realtek,otto-serdes
+ PHY binding
+To: markus.stockhausen@gmx.de, linux-phy@lists.infradead.org,
+ chris.packham@alliedtelesis.co.nz, devicetree@vger.kernel.org
+References: <20241007163623.3274510-1-markus.stockhausen@gmx.de>
+ <20241007163623.3274510-2-markus.stockhausen@gmx.de>
+ <e0355f2b-9d77-4792-9405-14b0bf79ac32@kernel.org>
+ <000b01db1944$5bd444b0$137cce10$@gmx.de>
+ <d23ba989-2ada-4033-a890-928bf4e746b3@kernel.org>
+ <000f01db194f$2d140880$873c1980$@gmx.de>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <000f01db194f$2d140880$873c1980$@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241008_012145_988199_92F9A254 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20241008_013214_438976_60A89B65 
+X-CRM114-Status: GOOD (  12.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,120 +121,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Markus,
+On 08/10/2024 08:56, markus.stockhausen@gmx.de wrote:
+>>
+>>> E.g. st,invert-ext. Something like this will be needed in the future 
+>>> because the SerDes allow to swap polarity which must be changed 
+>>> depending on the switch design. How to do this?
+>>
+>> I do not understand the hardware aspect discussed in the property description... probably because there is no hardware description at all, but instead you speak about driver.
+>>
+>> I do not understand how polarity has anything to do with U-Boot configuring serdes.
+> 
+> Maybe my lack of knowledge in platform driver programming or the naming
+> conventions leads to confusion. I'm searching for knobs to control the behaviour 
+> of the SerDes depending on the hardware. Two examples are (more may come):
+> 
+> - "ignore SerDes X": because the provided patch sequence confuses the SerDes
+> and overwrites registers with wrong values that vendor patched U-Boot has setup
+> correctly before. 
 
-kernel test robot noticed the following build errors:
+And if someone updates the bootloader to a bit different one, the DTS
+becomes wrong? How do you handle then same board with two different
+bootloaders requiring two different DTS? DTS is software-independent
+description of the hardware, so this does not look like DTS property.
 
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on krzk-dt/for-next linus/master v6.12-rc2 next-20241004]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> 
+> - "reverse polarity of SerDes X": same goes here. Some boards need inverted
+> signalling on some of the SerDes to work properly. This must be configurable
+> somehow.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Markus-Stockhausen/dt-bindings-phy-add-realtek-otto-serdes-PHY-binding/20241008-003929
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20241007163623.3274510-4-markus.stockhausen%40gmx.de
-patch subject: [PATCH v2 3/3] phy: Integrate Realtek Otto SerDes driver into build system
-config: x86_64-allyesconfig (https://download.01.org/0day-ci/archive/20241008/202410081607.EKE62jfx-lkp@intel.com/config)
-compiler: clang version 18.1.8 (https://github.com/llvm/llvm-project 3b5b5c1ec4a3095ab096dd780e84d7ab81f3d7ff)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241008/202410081607.EKE62jfx-lkp@intel.com/reproduce)
+I do not see how this is related to "control ports" property. There are
+few bindings which already do this, so look at them.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202410081607.EKE62jfx-lkp@intel.com/
+Best regards,
+Krzysztof
 
-All errors (new ones prefixed by >>):
-
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:490:15: warning: overlapping comparisons always evaluate to true [-Wtautological-overlap-compare]
-     490 |         if (sid >= 2 || sid <= 9)
-         |             ~~~~~~~~~^~~~~~~~~~~
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:509:15: warning: overlapping comparisons always evaluate to true [-Wtautological-overlap-compare]
-     509 |         if (sid >= 2 || sid <= 9)
-         |             ~~~~~~~~~^~~~~~~~~~~
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:686:6: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
-     686 |         if (ret)
-         |             ^~~
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:677:9: note: initialize the variable 'ret' to silence this warning
-     677 |         int ret;
-         |                ^
-         |                 = 0
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:706:6: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
-     706 |         if (ret)
-         |             ^~~
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:697:9: note: initialize the variable 'ret' to silence this warning
-     697 |         int ret;
-         |                ^
-         |                 = 0
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:723:7: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
-     723 |         if (!ret)
-         |              ^~~
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:717:9: note: initialize the variable 'ret' to silence this warning
-     717 |         int ret;
-         |                ^
-         |                 = 0
->> drivers/phy/realtek/phy-rtk-otto-serdes.c:868:1: error: incompatible function pointer types passing 'ssize_t (struct seq_file *, void *)' (aka 'long (struct seq_file *, void *)') to parameter of type 'int (*)(struct seq_file *, void *)' [-Wincompatible-function-pointer-types]
-     868 | DEFINE_SHOW_STORE_ATTRIBUTE(rtsds_dbg_mode);
-         | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/seq_file.h:223:27: note: expanded from macro 'DEFINE_SHOW_STORE_ATTRIBUTE'
-     223 |         return single_open(file, __name ## _show, inode->i_private);    \
-         |                                  ^~~~~~~~~~~~~~~
-   <scratch space>:49:1: note: expanded from here
-      49 | rtsds_dbg_mode_show
-         | ^~~~~~~~~~~~~~~~~~~
-   include/linux/seq_file.h:176:38: note: passing argument to parameter here
-     176 | int single_open(struct file *, int (*)(struct seq_file *, void *), void *);
-         |                                      ^
-   drivers/phy/realtek/phy-rtk-otto-serdes.c:891:1: error: incompatible function pointer types passing 'ssize_t (struct seq_file *, void *)' (aka 'long (struct seq_file *, void *)') to parameter of type 'int (*)(struct seq_file *, void *)' [-Wincompatible-function-pointer-types]
-     891 | DEFINE_SHOW_STORE_ATTRIBUTE(rtsds_dbg_reset);
-         | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/seq_file.h:223:27: note: expanded from macro 'DEFINE_SHOW_STORE_ATTRIBUTE'
-     223 |         return single_open(file, __name ## _show, inode->i_private);    \
-         |                                  ^~~~~~~~~~~~~~~
-   <scratch space>:54:1: note: expanded from here
-      54 | rtsds_dbg_reset_show
-         | ^~~~~~~~~~~~~~~~~~~~
-   include/linux/seq_file.h:176:38: note: passing argument to parameter here
-     176 | int single_open(struct file *, int (*)(struct seq_file *, void *), void *);
-         |                                      ^
-   5 warnings and 2 errors generated.
-
-Kconfig warnings: (for reference only)
-   WARNING: unmet direct dependencies detected for MODVERSIONS
-   Depends on [n]: MODULES [=y] && !COMPILE_TEST [=y]
-   Selected by [y]:
-   - RANDSTRUCT_FULL [=y] && (CC_HAS_RANDSTRUCT [=y] || GCC_PLUGINS [=n]) && MODULES [=y]
-
-
-vim +868 drivers/phy/realtek/phy-rtk-otto-serdes.c
-
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  847  
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  848  static ssize_t rtsds_dbg_mode_write(struct file *file, const char __user *userbuf,
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  849  				size_t count, loff_t *ppos)
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  850  {
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  851  	struct seq_file *seqf = file->private_data;
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  852  	struct rtsds_macro *macro = dev_get_drvdata(seqf->private);
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  853  	struct rtsds_ctrl *ctrl = macro->ctrl;
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  854  	int ret, hwmode, phymode, sid = macro->sid;
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  855  
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  856  	ret = kstrtou32_from_user(userbuf, count, 16, &hwmode);
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  857  	if (ret)
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  858  		return ret;
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  859  	/*
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  860  	 * Allow to set arbitrary modes into the SerDes to improve error analysis. Accept that
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  861  	 * this might confuse the internal state tracking.
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  862  	 */
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  863  	phymode = rtsds_hwmode_to_phymode(ctrl, hwmode);
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  864  	rtsds_phy_set_mode_int(ctrl, sid, phymode, hwmode);
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  865  
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  866  	return count;
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  867  }
-40f1aea80b53b8 Markus Stockhausen 2024-10-07 @868  DEFINE_SHOW_STORE_ATTRIBUTE(rtsds_dbg_mode);
-40f1aea80b53b8 Markus Stockhausen 2024-10-07  869  
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
