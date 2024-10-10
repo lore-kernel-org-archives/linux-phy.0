@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1339DCF07AA
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 06:14:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E89D3CF07A9
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 06:15:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H+jsqo3V4BhYCkJSl5OOF+TuFJXY/6ReiHWK/ONt+KM=; b=aXJcOlw+L0l7Cd
-	mCOpRvtMEw0Pug+IE65MVodkdSnJWDjrXDaHwjnyo8B4hMIv/ZFQw0k3Xfz0wMKjtRKExcL5lbsMQ
-	S/lcs3VnrCZNyXijupD3XfGlFcBFqXNRuKgMTfEfjav1yOMEpTUnjrsyIt6xP0OyF2uZhgffnuULE
-	i5RrD+L9ufJJYzgDLoeQWgtH0H/vEy7zPs7Lt8boxq06sQ6xeEonx6NjkZRgqCe2l6/gJq0gnN6Kb
-	3m/pLWgIkBLtXEGjnjx6sew3JoJsLtd65xgBrxFUAY90cipqNO6W5oNClgGpT75aQrn9a3IG8cWH0
-	tUDiepFCj8HhmIjgyhWw==;
+	List-Owner; bh=I+rUBB+iPLk1bh3YC/LbB0VtQwtd2Hp4kCMhKgwB5CA=; b=Fsi1n5OjwU+r9x
+	NVCASJznpY1T2nM+NmACSHMmtDJkDPjQCO73E4KMBqK5T5gfJYi7emv6HYkFHURQQ/cTuOdNR6oUL
+	oJA78FtGDnI+jAz1/bbdegoDKvM9xdIg5t7dyVdWcJIJaEjqxEmga92wLOxKLDLRzo38Yf9TY2s0Q
+	yH85P07PLmcZNzBjGB0UXhw8PdPmlp+utp4mkJDFDKMNAcixkvRyLfY1IhFMFMcsyQ7SR90T7Spzr
+	saJg8YSFlF2KyUNKCf2osMBIJyHHtB17osudvF2T3zrTvnBeW0TmlnX3GZCrB6CjqfrvYvEtoQwol
+	uz+UyAjCck6v3DQJWTcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1symRL-0000000BddS-3z80;
-	Thu, 10 Oct 2024 06:14:24 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1symS0-0000000BdjI-2B1h;
+	Thu, 10 Oct 2024 06:15:04 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1symRJ-0000000Bdd3-3cPU
+	id 1symRy-0000000BdiZ-0ZPz
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Oct 2024 06:14:23 +0000
+	Thu, 10 Oct 2024 06:15:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 780015C5E77;
-	Thu, 10 Oct 2024 06:14:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6721C4CEC5;
-	Thu, 10 Oct 2024 06:14:17 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id D2B655C5F68;
+	Thu, 10 Oct 2024 06:14:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16A70C4CECE;
+	Thu, 10 Oct 2024 06:14:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728540858;
-	bh=FxTECZqnW9pNr7u+VgkzICcIxD80UOH9F+iwyPfHBWI=;
+	s=k20201202; t=1728540900;
+	bh=GOnmLWrFgzrOd+f0EQl6aCDszrZ23nW8rO9vc93Vbyk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OsNvJ4bhqoaFr+qMoeKTOn/6ULa7o44aQovUhOImROdI6Dc4ImNyFTxO3UsladSdu
-	 X6Z6nCbkBuEYKVgY/255faFJFC/Eqz1DN6An9/2Jz/QuD6w8fTMWFEpKiMvzNLwdYa
-	 /a8NgJ1vhetoWpIHJqAyhMYWG/0/ISZ5EVMEdL25mYCV9GclIe23nDft5xa0oVXDxe
-	 xrHYf+Nf1HAerGCIC5sD7FR2aCTOutaqxxU1QNWH5JoQmumX2WVAd4FoQGOI+1XzEF
-	 MWxIHGAoDyFqhq8MPqKxkDpjb/krTiFGL7XvqvdzzSUFu8HlCw7Uw5rfNlWCHRrvU2
-	 UtQpmzaoO39kQ==
-Date: Thu, 10 Oct 2024 08:14:14 +0200
+	b=Grk7exM+qqT3LT56kTnk/kp2ohFJDeZaoefTO3m3Iogb4fCiC91syqVKOchaRbZ1X
+	 yieSxr7u+yIvqgubZbTjbKgSRnOCpxrP4d2xq8xYNcJMZ+XxyOubqG7YFeYpeuLdpa
+	 0xrQ3D1lNdtTetS2NjomuFoHI/9/tPZSlq/WRRQj3qeCVJhvnK0XK3J6nmuGorDv4v
+	 vVVOpZ66P+uz2oSHzDdxllUPYge/zrW2+tJFqgITjiGJKadVB6qGTR1M3KE9jfn6DP
+	 uGUnQ/VefRqq1zHZEwd/l0aMBZG+qwS9tem7i83JiV7sHDcsmuzJUwLxDz5AiQMS8J
+	 uOlWyuJo3CXKw==
+Date: Thu, 10 Oct 2024 08:14:57 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Yijie Yang <quic_yijiyang@quicinc.com>
 Cc: Vinod Koul <vkoul@kernel.org>, "David S. Miller" <davem@davemloft.net>, 
@@ -53,17 +53,17 @@ Cc: Vinod Koul <vkoul@kernel.org>, "David S. Miller" <davem@davemloft.net>,
 	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, netdev@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
 	quic_tingweiz@quicinc.com, quic_aiquny@quicinc.com
-Subject: Re: [PATCH 2/3] dt-bindings: phy: describe the Qualcomm SGMII PHY
-Message-ID: <y4zt6si7j4qrbwmipzjehdq2ggcjr5dlfrraozxtt42n2643yw@6c7h7fkzsjm4>
+Subject: Re: [PATCH 1/3] dt-bindings: net: qcom,ethqos: add description for
+ qcs615
+Message-ID: <24b46siwlah4omyqbr4gn4mrc3h3753yslwndr4v7zyvqr7dz6@6n4b3jbcxs6p>
 References: <20241010-schema-v1-0-98b2d0a2f7a2@quicinc.com>
- <20241010-schema-v1-2-98b2d0a2f7a2@quicinc.com>
+ <20241010-schema-v1-1-98b2d0a2f7a2@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241010-schema-v1-2-98b2d0a2f7a2@quicinc.com>
+In-Reply-To: <20241010-schema-v1-1-98b2d0a2f7a2@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241009_231421_968771_94B05812 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241009_231502_248646_E82610C0 
+X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,15 +80,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 10, 2024 at 10:03:44AM +0800, Yijie Yang wrote:
-> Describe the SGMII/SerDes PHY present on the qcs8300 platforms. Since
-> qcs8300 shares the same SerDes as sa8775p, so it fallback to the
+On Thu, Oct 10, 2024 at 10:03:43AM +0800, Yijie Yang wrote:
+> Add compatible for the MAC controller on qcs615 platform.
+> Since qcs615 shares the same EMAC as sm8150, so it fallback to that
 > compatible.
 > 
 > Signed-off-by: Yijie Yang <quic_yijiyang@quicinc.com>
 > ---
->  .../devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml      | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
+>  Documentation/devicetree/bindings/net/qcom,ethqos.yaml | 15 ++++++++++-----
+>  1 file changed, 10 insertions(+), 5 deletions(-)
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
