@@ -4,85 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51096CF11F5
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 13:51:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB182CF11F5
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 13:56:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wuNJPfSqU3lHiq97Eq5RgwjwK2JDBeIwjUbUE1P31+M=; b=0OVzZ8mKFOfmU6
-	uDgKmpfYTHYmoVdipg09zSWQAv9J02hqy/RY7MJWGnpJYzsTqZ69zJtrgy4Vl6+0DJX84my2oDKbl
-	RDy9UDyfys1vetKVBTVb1YLHCWmBvD1XbHWgsc1hDUCcwgwmOPuVApo+hgT41XjhzWEKgxwjJZPPX
-	TTjhGtLJFp1vvGAs5XQ6vku/RHcsiFOA7DwNR7JmYafrZU2kPTzFRGsx2J70tI87qFGRWjeGLwlgK
-	rcTjAKT6E5dLNwkKFhVuP5xwV7tw/oYQx0cUV3owh9x3IQpFKk/aiz63SSc5goZRUo1xZcdYe1QnL
-	FANHXSMv4NH8V3MGxALA==;
+	List-Owner; bh=/+m8b8YWnc4J8DDxEDWCzTAfZ65Bv9HO3DLRwjyhuMQ=; b=qp0ujbfKRC2zsj
+	mMLv9w0d9dQSFGplyK/a/fwd2xzQT/wh7Qi5gf0i6H0eieEgmG270wKN4PguQjOPe0/katksREfly
+	z/kwX5BeC9pNZ9KMTPxf+D7Hi1Ak0+PbYCJd5Z0e4PMydW5T1B2pgyegRljWcCB6Q8P7OIxPKm4uB
+	GIkx0wXIzGGfZQYCDpQ2cOMn63KcHhy+Bve1q5GnTn4kFAc6s2ENXpdSxvzt6o/Eb7kfvdxM1gC1L
+	cZaGgpzW8ot7Uo2q+JuCB8zg1b59Ta7J0YgrsB01ovspTC7Euvyj3KitJB7pYWiZPfAsKy0fWLyFq
+	iWyEteViR9yYgIczZHAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sytZL-0000000CzQ7-439a;
-	Thu, 10 Oct 2024 13:51:07 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1sytef-0000000D0Ub-2g99;
+	Thu, 10 Oct 2024 13:56:37 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sytZJ-0000000CzP3-1DOY
+	id 1syted-0000000D0Tm-0yBH
 	for linux-phy@lists.infradead.org;
-	Thu, 10 Oct 2024 13:51:06 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-53988c54ec8so1220163e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 10 Oct 2024 06:51:04 -0700 (PDT)
+	Thu, 10 Oct 2024 13:56:36 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-53995380bb3so1231891e87.1
+        for <linux-phy@lists.infradead.org>; Thu, 10 Oct 2024 06:56:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1728568263; x=1729173063; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1728568593; x=1729173393; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=cMqw76UFr3KyOj7RnEC3aqiu0YdHjPevmACOjAMgttE=;
-        b=yd5CqgmsGTy0vMKQhyQNiVZ5zlfExmUE+IVgC4W16hAlEts6VyTf83zBM9Uf0wFNKC
-         q3w9iNVYFPhdlR7e0UbnwcZWjXKKXylmPINrW3l+jko3e1kNjAWlGDGpWc40s0nLtFTP
-         wCd04wWk6ytNW56PPPCU2YdvTeKVROL9BAOgBAJvQ/HIp1DqveEcVUDcA32JPsdLH6C5
-         UyPGWCTqob0xm+4xdwMK5r9BA8eTpCoLNdbxODe1sXaKaZbRYTSN2YJXFzyejqg+IQc1
-         15oShjhFVA9/7/DwmzlgNrmhlFZEIL44S4kDWhaQKiLgtjxjq6Bo3qUQh1jASlswaQ5v
-         Thtw==
+        bh=MgEbP4QzXn0AIXKMH5GH9V//Wmvbs5ys1mABYvpoE90=;
+        b=n1vy5G8zlWrptXLBUyyTBbr6nV3KZcmbeLPIQIreLsHYHrpkUY2ZpjEI6wfx/h9vWe
+         PJVk5aFOyShlS7OfGHdu0ZOMp4Yjh7mVXFTDZaNhF5dnuPdlbTPenrDIXitqRSARhBVM
+         WYsHwiwzZ/wdrVKPdQXGsq+nc15riHomkvRdb2PvFwB5GLiC63G8wpHWl3Cw0Lf+S/OZ
+         kh86Q3tjFPYHP4t21fF914ldTRnwQbs07k/1tzKIWdGxFNXGyK3QTBjo/pMqzJpCUKV4
+         68+HRdgx1h2+jfc7/GJQHT4rodolS4Oy4uZEl4shxt0b6bFAFh27tM7Vam75mo+dr8w6
+         Hd0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728568263; x=1729173063;
+        d=1e100.net; s=20230601; t=1728568593; x=1729173393;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=cMqw76UFr3KyOj7RnEC3aqiu0YdHjPevmACOjAMgttE=;
-        b=vhyK2yyYE1jiQI2FbQOrEs3Nyh39QWC7xxNGl8YACZpFCvhxIhH0fINnVKZfzeeoBs
-         0eD6+r9HSFu7t71YndYi99bzKf3g1X9kyIAau3+hoz/IpnT5ftmPyJRh32yQGqAVsuHS
-         Q9oqXKD4dh+sUzRHOwS3TPgLrJjleD6pJx4ohK7Apm1llLmW3nYtQoUhSGjybG2NI05A
-         glLiqadpcbWUflgY26kFgRJiPjTQIDZxPdA8LoE1OmfFXiYBTPtox5xNW0zQ56Kk67Oo
-         zdubW2Rn8IByaIdhgyZDRoHBjhPc40U3g5J8WWPX0oyBji63NEHumSZczNyTUTXX+GKi
-         IHFQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUIgxDo1UNHG4shBMQly8cp/y4CRzXez90NgA3O7weklCZR3gMOMn8QW/lQBbuaICQT/p0aRxFgyhc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwtML/y2BsCkRXfzPjpmJ9Nwcy/N6XsjEHrA89PaC/AwEuJ46uF
-	70sM+b/rA6YMski0qhWdVkqnxsLjNxJcSr6Wv/DaePyK5eSL4i9PhNoZZr+kqoc=
-X-Google-Smtp-Source: AGHT+IEdFN6tHEPOV5BGfgasm+djxDl4woP34V2NNtQEEnSKQjbMo5AzUtpP2ZOqLjKUa8VMlGqcng==
-X-Received: by 2002:a05:6512:2808:b0:536:54fd:275b with SMTP id 2adb3069b0e04-539c4967edemr4294135e87.54.1728568263124;
-        Thu, 10 Oct 2024 06:51:03 -0700 (PDT)
+        bh=MgEbP4QzXn0AIXKMH5GH9V//Wmvbs5ys1mABYvpoE90=;
+        b=mtSsam7eyViuGX6srbicASJ8llmN12+BAFwYztqPWv4P+/AF96zQBq4oO+oDZ/gTG6
+         OmGJFenLoEbJoj8ztXpIDMkTSneOFH3rZFgpqYv52EL0ProYQFKz5mQKixMU6IY0IN3c
+         JhU55xAp1l9ZPhuwiWe+/OG1E15PqRG2tchlQSrPJf4Xa/Q6PeOM4nUY0o1NZpRbV3sJ
+         qwlrkTwdYapJ3aWBF07nRsmgCrtrKZGLHAj8qBcJHMp2QwPy6FIdgzd/gSeFlns+QlqE
+         WaBAMzrzyloQidyVzIuT6OLE8MGHno2/VOD5tEQ0twF1JlVA2wPL+UKL7n9cwBq+gjnJ
+         QMAQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWy3d5gyRmS1I7qnSol3cvXksKNf2YnLnc0ZNav0O7I/IsiogxWlOqwl2qxjbmziRz9S0QTWCkRd8I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxE95pkx0pCWnZ/qASwevszy/Pf6ripHY8272dLfLdKHCJw+eLa
+	kvh/VvccDoThwJaJ9s7Qbt6fA9p3cSya4Vmqt5Xh/IRiadXJLL0hbYea596LybM=
+X-Google-Smtp-Source: AGHT+IFRJFs0J18XIpOr4N2kPvG4CArMIUph3kbLtDpAlLjw8FFX7qYAc57/vRjXHgekvKWF8dqMFQ==
+X-Received: by 2002:a05:6512:acb:b0:52e:fd75:f060 with SMTP id 2adb3069b0e04-539c497940emr3386887e87.61.1728568592899;
+        Thu, 10 Oct 2024 06:56:32 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-539cb6c863bsm258410e87.87.2024.10.10.06.51.00
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-539cb8d8181sm260912e87.147.2024.10.10.06.56.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 10 Oct 2024 06:51:01 -0700 (PDT)
-Date: Thu, 10 Oct 2024 16:50:59 +0300
+        Thu, 10 Oct 2024 06:56:32 -0700 (PDT)
+Date: Thu, 10 Oct 2024 16:56:30 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Qiang Yu <quic_qianyu@quicinc.com>
-Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
-	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, mturquette@baylibre.com, sboyd@kernel.org, abel.vesa@linaro.org, 
-	quic_msarkar@quicinc.com, quic_devipriy@quicinc.com, kw@linux.com, lpieralisi@kernel.org, 
-	neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-clk@vger.kernel.org
-Subject: Re: [PATCH v5 6/7] PCI: qcom: Fix the ops for X1E80100 and SC8280X
- family SoC
-Message-ID: <otipwbhacorpdyjlhvf4g3tpg7ymtqmcuzjirewhkmwv3gbpka@2urxbhufrveb>
-References: <20241009091540.1446-1-quic_qianyu@quicinc.com>
- <20241009091540.1446-7-quic_qianyu@quicinc.com>
+To: Krishna Kurapati <quic_kriskura@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Bjorn Andersson <quic_bjorande@quicinc.com>, 
+	Wesley Cheng <quic_wcheng@quicinc.com>, Konrad Dybcio <konradybcio@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Mantas Pucka <mantas@8devices.com>, 
+	Abel Vesa <abel.vesa@linaro.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org, quic_ppratap@quicinc.com, 
+	quic_jackp@quicinc.com
+Subject: Re: [PATCH 4/4] phy: qcom: qmp: Add qmp configuration for QCS8300
+Message-ID: <cdhcojf4xypiym4icdkvwgqrsickw4qlwlp4vmovun5t3gc6mz@eqzgylg2z6uo>
+References: <20241009195348.2649368-1-quic_kriskura@quicinc.com>
+ <20241009195348.2649368-5-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241009091540.1446-7-quic_qianyu@quicinc.com>
+In-Reply-To: <20241009195348.2649368-5-quic_kriskura@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_065105_388052_09779867 
-X-CRM114-Status: GOOD (  17.94  )
+X-CRM114-CacheID: sfid-20241010_065635_313096_82B58109 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,69 +101,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 09, 2024 at 02:15:39AM GMT, Qiang Yu wrote:
-> On X1E80100 and SC8280X family SoC, PCIe controllers are connected to
-> SMMUv3, hence they don't need the config_sid() callback in ops_1_9_0
-> struct. Fix it by introducing a new ops struct, namely ops_1_21_0, so
-> that BDF2SID mapping won't be configured during init.
-
-Fixes tag missing. Cc:stable if required.
-
+On Thu, Oct 10, 2024 at 01:23:48AM GMT, Krishna Kurapati wrote:
+> Add qmp configuration for QCS8300. It is similar to SA8775P and
+> SC8280XP except for some Lane configuration settings specific to
+> QCS8300.
 > 
-> In addition, since it is recommended to disable ASPM L0s on X1E80100 as
-> same as SC8280X, hence X1E80100 can simply reuse cfg_sc8280xp as its
-> config.
-
-Separate commit, please with its own description and Fixes tag.
-
-> 
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
 > ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 14 ++++++++++++--
->  1 file changed, 12 insertions(+), 2 deletions(-)
+>  drivers/phy/qualcomm/phy-qcom-qmp-usb.c | 65 +++++++++++++++++++++++++
+>  1 file changed, 65 insertions(+)
 > 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 88a98be930e3..c533e6024ba2 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -1367,6 +1367,16 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
->  	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->  };
->  
-> +/* Qcom IP rev.: 1.21.0 */
-> +static const struct qcom_pcie_ops ops_1_21_0 = {
-> +	.get_resources = qcom_pcie_get_resources_2_7_0,
-> +	.init = qcom_pcie_init_2_7_0,
-> +	.post_init = qcom_pcie_post_init_2_7_0,
-> +	.host_post_init = qcom_pcie_host_post_init_2_7_0,
-> +	.deinit = qcom_pcie_deinit_2_7_0,
-> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
-> +};
-> +
->  static const struct qcom_pcie_cfg cfg_1_0_0 = {
->  	.ops = &ops_1_0_0,
->  };
-> @@ -1405,7 +1415,7 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
->  };
->  
->  static const struct qcom_pcie_cfg cfg_sc8280xp = {
-> -	.ops = &ops_1_9_0,
-> +	.ops = &ops_1_21_0,
->  	.no_l0s = true,
->  };
->  
-> @@ -1837,7 +1847,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->  	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &cfg_1_9_0 },
->  	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
->  	{ .compatible = "qcom,pcie-sm8550", .data = &cfg_1_9_0 },
-> -	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_1_9_0 },
-> +	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_sc8280xp },
->  	{ }
->  };
->  
-> -- 
-> 2.34.1
-> 
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 With best wishes
