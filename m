@@ -4,155 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A567DCF07D9
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 09:10:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B34ACF07DD
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 09:14:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yIrguRjemqS9AjBhn+Rotp1k6tpKGBExBEv2vonx/7A=; b=V/ebVq5RPpU/D7
-	PdnNbQWe+uBVVY1CA8wwa/YJ96Xn/jAy7sG0M585CWSLC3Q95KcxEDhak6WvGDjqBdRD3a1RzeiuD
-	xo+hPeFj6dInaWJscoHh4fT3JRJJNq8W+nVKzU+njkXvZV2CCI5fhMtjIj6Oa5ajSgQlhJxVqvQHe
-	Sw7reoWha+A2+/fjbG1OrikyIXDCJoXp8aN14biQOz7wNxB5LtJpHoTuRgUymvHnqP72FBNfyR5g3
-	WX4Aqsh+grn6zzZwZ4sZXahx8HvCDhzp5QfvlMSNfUOQ+8mW02pPwYAkHTf3Pgy/xydUydVVOnvSP
-	E0jHi7MR6FTS6aUNM5Aw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DCu6jUkcYtPvSQpfpysosc2YqjNQTTtVReeO5HPSNyU=; b=ZLZ4SfSGQn9r/a
+	LSgXxbmJIcBb6yPkFbe5z7fxb61/hD9aJTpZUaBw9RUClq+cm93JbouL/M/e52XF236Q/uR9q10ib
+	ZOVWsE4aVnSn2licbSNTmEEK3yVpO2VqVsFy+SV53YbZQqVHIw7DssgHY6m2fhwT5FUHpQqsLO5IN
+	mpC0YPcUyzIoYgKKcUqiyCSjmRG96iwNN61y0ADTPhRyEOC9zftb+Ele4+LXv9jchm0kfksKAzJDX
+	kunfxtr5oBZLp4A1s2hYH+N/jeKp2beGkFYdtnIdtZO9Q0NKAEaAPQMfgFvJ9fetlH+jf76fQ0wZr
+	dD0kMiM7XG14uG9wMPiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sypBV-0000000CAbO-1aEE;
-	Thu, 10 Oct 2024 09:10:13 +0000
-Received: from mail-am0eur02on2060c.outbound.protection.outlook.com ([2a01:111:f403:2606::60c] helo=EUR02-AM0-obe.outbound.protection.outlook.com)
+	id 1sypFU-0000000CBPt-0Ltx;
+	Thu, 10 Oct 2024 09:14:20 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1syp8y-0000000CA6z-3Ul4;
-	Thu, 10 Oct 2024 09:07:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=SZVzTLE6LclBL8zaHwR5LKp80YkAQrWQpxcQgpWfI9K6bgMAYgH1yucM6uiqxp8yzLI1ooyp42wcEgijv7H5wVbkskkDKAslgSsvxMuEHtdXAhVcNohinikWclSZgDdW0xuX3VFli+oiUwrVpOIXtgnIb5BaSE5YUWIxvfYzpXd1F//fq/2YyTWjYdKyKPd4nXbcBUOtcn+ZUK9rwkikDJS83tXoaKWUxcXQsb0EelMdTyF+DpSw7Qf6ck6ObIuX1oS/vV5alwp42pDJIHXJP51sfVpFnLy8wvttMQFYelUs5tnY19DkxEnGGpklgv05ePi9cpzSXRsjZoAl+5CUBQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=3+rsBZZC9zmDjNjvXt7xFGOuzWt9iuOBG3EX/9IP0Tw=;
- b=HQnMq8Zkfj8r1VJ144JjCXzPqO6ZL7RiW5pBUpzHqsa7q+Zec0L//IN4BntcbThXij84ykOqtXEntJ+ONZWw+WGZCO3FxCxmSzGMt2Qu7UBpHvdmB7OfHuNLtpu24HWftXPF2y1lEsN7BswmWH4QuFuerxdc3l8/P6Fz/J9fbwMJc/ojn7i6/2SatFDmJSA9dNkfsmX8/1bQqipR3CjW9IPijKbHKP4YnGwwAEyLfhaNycvT8nqG5qPk6MO3DDeLPgwmASJTrepOy7OI1k5tdnzn4+MnKBeLqJtDVEC+6hTL+bY57Yk+ZNJ4Y1/7tOzdn7ZMYdxhm3e8ibmVwzsB9w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3+rsBZZC9zmDjNjvXt7xFGOuzWt9iuOBG3EX/9IP0Tw=;
- b=cJG+9+fIMMVAnEvox1Evvs8ggW9FU+uoF+sdWTm6CV8nTyhM05f1DNOqdmwFQgaNMRNz6U/548GGd/LB9tzaQkeCiCqLQ1hjCIewhmiWYqe2J3FtgnKLNJ3Ascouzh7jeeYHmTux6gX4pKNeUlhCmTsoJqHvjKJBmF2rwAjl17UkCQSItwUTA+DoBFxKW8MrTkGIsO4ggdKfZYg0LtKBiwbyt78sFWikC1F1B/ShG0bxJzd7FGTmmtmxdBLE6XySm7uum2B9sf7LwIKEwE4IaUNWfHO1xmAaInnO8erXqXobKDYy7LI471THzVlInoTsINyEFsuVY5nc8B6x+OznLQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com (2603:10a6:10:2e1::11)
- by AM0PR04MB6851.eurprd04.prod.outlook.com (2603:10a6:208:182::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8048.18; Thu, 10 Oct
- 2024 09:07:31 +0000
-Received: from DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7]) by DU2PR04MB8822.eurprd04.prod.outlook.com
- ([fe80::4e24:c2c7:bd58:c5c7%4]) with mapi id 15.20.8048.013; Thu, 10 Oct 2024
- 09:07:31 +0000
-From: Xu Yang <xu.yang_2@nxp.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	kernel@pengutronix.de,
-	festevam@gmail.com,
-	gregkh@linuxfoundation.org,
-	peter.chen@kernel.org,
-	herve.codina@bootlin.com
+	id 1sypFS-0000000CBOg-0Mmk;
+	Thu, 10 Oct 2024 09:14:19 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-5369f1c7cb8so934292e87.1;
+        Thu, 10 Oct 2024 02:14:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1728551655; x=1729156455; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=iS1oowt3gWPxEnT3I7D8ZHwjyqV0wJkTaD5F8v/SXSs=;
+        b=ZgHN02O7NwVOkiUAjCEhN62RNHO2RMT2IfgSruCns3LVe4V/JUTaUFLz+Ge2mCVCfr
+         2X7BmSwUlFdFni7NYvNr6W1uW/Pm/6fPwJpCjoYEdwPFOhYaD6Wz17/uXXDx5Y6anjv9
+         xLN6BidWdRGNuXCCc9LyiCz80VcGI8AWXqi4TOZ+kpd6iQhh2CwWxUJeahBWbDpNgH7h
+         4fIIAeEJZw4t5UvosqP/8Vcf6t/9mGMFLnehK/x8+W80HztQafdDiq0qD+9LuYFzEghp
+         1wUsuoV1hcZoY8+qsNZGpJ02p6KjOgQjBdVAUoZjJOfqprjnBrndNcU4obGnhXZ9iROr
+         puSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728551655; x=1729156455;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=iS1oowt3gWPxEnT3I7D8ZHwjyqV0wJkTaD5F8v/SXSs=;
+        b=PQR+GVeEgD11jGU1oIz84a2qMw04bJX4+K2ZaHxWsuLKdxH4sG7N+g1ddd3vIC/3VJ
+         2U3j1WY6+cf/3CgSxEgKGadiodl6QkeVQSheTQScWlPKRW9B79O6/EJdfKzQ4RCfQJbD
+         O9atK87tCpE0k6/nuMNf+IRLG7HYp1K15YHcESikRkC1sprE+G4iV4d1S/DxQueYcTFR
+         Owmc4zHr7rnTB1E26ukBU7YPrT3Z2rsfs9Ex1e0RBq9GaEJUQmZb6NhmxpB9iCy8rpN4
+         N7nFFIRnvqYGkqmdE8QHYesDeVUh74bh24Gz2qDJj5gw+oFLI0/ms1KDCdDzQlchiCb2
+         jDqQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUXYa9LunXtUjYgIMIvlqR6K3g7zT21D6NqoX9GNW4dZlZ38el21aaMDiK/2NSdoQYIX54Sxz85p9uk/2MjArFy@lists.infradead.org
+X-Gm-Message-State: AOJu0YyIqob5I9pzW5izFgRzwaxV5B0dSvJdIkxfnUCrRmNui6HpFiGf
+	9O1/s8T/bU3TwR2bzkZM0JIWeaFOyLpxuI5sKcH62oXTSt6H23E1
+X-Google-Smtp-Source: AGHT+IEabdPS/80LwHHvN4O9JjXcErRt0X3jKi/SEPXwMmL1sjvbwwX0uamKQJdfuWuquTPkH2rYfw==
+X-Received: by 2002:a05:6512:104d:b0:535:6cde:5c4d with SMTP id 2adb3069b0e04-539c48926bamr3578673e87.3.1728551654907;
+        Thu, 10 Oct 2024 02:14:14 -0700 (PDT)
+Received: from void.void ([94.230.83.74])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-430d748f0a5sm42337895e9.48.2024.10.10.02.14.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Oct 2024 02:14:14 -0700 (PDT)
+From: Andrew Kreimer <algonell@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>
 Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	imx@lists.linux.dev,
 	linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	jun.li@nxp.com
-Subject: [PATCH v7 3/3] arm64: dts: imx95-19x19-evk: add typec nodes and enable usb3 node
-Date: Thu, 10 Oct 2024 17:08:22 +0800
-Message-Id: <20241010090822.3915064-3-xu.yang_2@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241010090822.3915064-1-xu.yang_2@nxp.com>
-References: <20241010090822.3915064-1-xu.yang_2@nxp.com>
-X-ClientProxiedBy: SG2PR01CA0187.apcprd01.prod.exchangelabs.com
- (2603:1096:4:189::12) To DU2PR04MB8822.eurprd04.prod.outlook.com
- (2603:10a6:10:2e1::11)
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	kernel-janitors@vger.kernel.org,
+	Andrew Kreimer <algonell@gmail.com>
+Subject: [PATCH] phy: sun4i-usb: Fix a typo
+Date: Thu, 10 Oct 2024 12:13:55 +0300
+Message-Id: <20241010091355.8271-1-algonell@gmail.com>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8822:EE_|AM0PR04MB6851:EE_
-X-MS-Office365-Filtering-Correlation-Id: 56d5c188-ef15-4143-1c23-08dce90af877
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|52116014|366016|376014|1800799024|38350700014|921020;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?6WVUlBfhDeesghbRrjo4VPwJUQx18FxdiGvxUxrUYKm2ZFfcNFGjtWswudZd?=
- =?us-ascii?Q?yRC1au6cmw2CK4PTkQG7ikwVqaAnIFO/5WqhhSO4dJ71XboLnJoxp5/92QJv?=
- =?us-ascii?Q?xQxP7eA3gGV3ex5aiJH0U/RDzOerRyhSswlf5jFBboeinsdZn9ygbz7BXkXn?=
- =?us-ascii?Q?rbi81umZg8Jb4yqnj6HPXY//KcEA5Nw61A4Chw6Lx2ISZJSUJemkWXW6cJPv?=
- =?us-ascii?Q?KK2ChkueEcjhp3BmKMzsTmcZ0G3/fcDxwtZSw5L6zKodqBrBEnyq2obwwArr?=
- =?us-ascii?Q?dSEuJIO3262lzPBDILmjA1T0a+cLc8XrwpHF1vkyiPWxIPNourKU/xE68a0N?=
- =?us-ascii?Q?rBiXqTrM9Z+JtnIRV5ZbfBQzWvAoUkIWEgo+/Cjjx/2OYk1LoFniLKGHficY?=
- =?us-ascii?Q?X+ogWuwz6babLYsNiWjS9Calb4/oFlkEn0HGTXUmK0zCPNsVIu5CExGx5dB4?=
- =?us-ascii?Q?HWcbaHJOC13GE0vsoJEQf/6/ozn9ItYVPXXabKoeGK42Xb7Y1pY9sNam6HXr?=
- =?us-ascii?Q?kx8E7Xk6ANlEC0a5HDNZQOatTDAwWyJeybL2hqQlcVfzftLFIswLzoIm8INo?=
- =?us-ascii?Q?Ev/aSsMk+/1DCD26cOhvjzBrJsMcO+3ZYbZ2zKApr1ctLz/Cp4Zl8b+EumM8?=
- =?us-ascii?Q?DpuwfoMq+EEI/K2sjLhFeRDmGv8J26zqIJyvANd5YDiESRrJdZycUA13O2B3?=
- =?us-ascii?Q?6lbrQsFCNgf11BmJf/p+m5O//1TH9/913bKDL7QBpilNC6PqpEOI6XZ63nKn?=
- =?us-ascii?Q?hhJZS1Mj5ELMviKKr/kXnoY7pvQcWyNFDfrlzVp96PXzgHoKjN6Yt9oNQrrk?=
- =?us-ascii?Q?ZdrRPYBeyyu/OeYlF82As6BQ4qLeBex0hVK/wJcuKGuyK/vpeC0FdVCRNpeX?=
- =?us-ascii?Q?Z/aJheMw6jYh6g8Ax5oCZUkDgtLxIoRJ/s5ytLvsHzB4b3GNxzCbHsBolC4P?=
- =?us-ascii?Q?jAhXC4zzlO1B0RTCBDUTrcOfSH6fUoVu3RDrd3Q9SfHCC36SBUE30j7Lpr2J?=
- =?us-ascii?Q?M1vVFQZJgdKKv08YqI8r5SH9xKl/Q2S6KahZO+21ZKQKYndSkYhuwy/adO/N?=
- =?us-ascii?Q?tDsbJgmVMNGXHiAs/J8NBBqDqgXJg1+eQS4hnVPILmaHeegrgkO/KTtwE2y3?=
- =?us-ascii?Q?JeOdOB3Hoq7S3mMy+P4lZBzioyBrb61ucb4nnWCSqejHJM6MUkS/zFlPNQCf?=
- =?us-ascii?Q?uEO6O9h5DRWBcFKjotnoQGa0iQNv2XsO9ylTbcvtFZzh8lUyMbIRvKzWRpyb?=
- =?us-ascii?Q?QUryM7rxV5B4iQlYzOGYPC7gcRpaWu3FbGtN8IqNUy2Czu27hy3Yc40TspZw?=
- =?us-ascii?Q?yD1/6AMWgcTr31gagxEz5qBG+ibuqxRoZdh+glK/yhJDrzhbBQx2wnL5SB74?=
- =?us-ascii?Q?5L84+qQ=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8822.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(52116014)(366016)(376014)(1800799024)(38350700014)(921020);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?TL6mP/hlhbSCJ6R0zvNI3JYyBxsa4jnqb5pvzJ6i2j18YMNiOsN0DeCmdUqT?=
- =?us-ascii?Q?Lx/eHoWIHLf/0322GGt2QSw03DOBZyjL2f1BBv8GaS64JanFu46gY8HTYVDX?=
- =?us-ascii?Q?vEEBXpoXWbL8cP40o0AlLYrzUqE/0Fw6rM/JtYb2vbdYVcbQpEf6MnQm0Bge?=
- =?us-ascii?Q?SSLlSMA0f8FpZyvzBdpEQSZYf++dAn1xkRX+aqT/ZruaFRZcKqzo8XUYZreS?=
- =?us-ascii?Q?hf7xi+GBmSDpLg1C7HVWEQAhlqZ5ZDYxzwsgnY/9mVzlczJUp2VcQ2SbEioQ?=
- =?us-ascii?Q?FlOzDKh8qsu4meouScnPk73e8DEHkn8CughyKen8CiQR2vX/AXwRki9uEeMs?=
- =?us-ascii?Q?g4WsBZa79TudFCTbK7gSw/er8Q7iIsGuX4kJPxwh1lcAX22F9elEZ3qLm3oI?=
- =?us-ascii?Q?l6NEMs9jZyO0j/ohg4QgnlHxxs7aJKVJyA3L5Yy+PmUEtEkB2FlKHyVjZW4z?=
- =?us-ascii?Q?lYSF22KdUQvRi/15VEhuuokh9ASHSBNxF36c/wQG6MaRuVUZmGtHU5TvsYBW?=
- =?us-ascii?Q?Kyq/VS90tuOEpje4gl+Ff/rlRcPlhr78TSAQq8M8wqvUWH2aw/PHMMat9cuX?=
- =?us-ascii?Q?RZlsay6ydMUViIUi1GQd7j/mhJEqJ1NxApkGFS+OA4Zvn9hE8vpToRLoBqSq?=
- =?us-ascii?Q?eIJmy+4UQ/xKQFzcYUkwDRsa2Gue0V69Da75LenErMKqP5KoppQlSxquX8fT?=
- =?us-ascii?Q?zPr+e2aQJjrjSlwkF/Am2bJ5IfwzwQO9EGfkfStwr3/911Tkcwmytvhh20Nd?=
- =?us-ascii?Q?yHxjyRl1nr/ZOKHhNYaR38sSLFLuBRtrUXmltoUPhu5C1TY3cPeIZXKW5THG?=
- =?us-ascii?Q?Wk56tdgUn8K0JUTnBuvifQHA9RFCf4AoXYEAyODaOUjXP3t7mhageh0YPm96?=
- =?us-ascii?Q?YoYrKujEb+7DG8mcj106swH0PKcR6Yng+/UzxHOLjJv4hxq9FTJhje0cvijk?=
- =?us-ascii?Q?99SqDo8SolxlheNAM0r6HAx7w4GIHHqfvZmL3KYM9hYttXVP5ysHlNUdoLiN?=
- =?us-ascii?Q?gKbymDiZSSH8nqobDuNMxthqkvU3L952FbeIBpEG1+a+R+WEM1sX3tDp/Lnf?=
- =?us-ascii?Q?vf3/IA6iPBLClhEWbDrFTVB22eKxPCsHAtZASJFfgM07pXB/hlJFT3fjXvY1?=
- =?us-ascii?Q?5J/Pc87+aC58dKtPF8nnSqrOXMeKgV4oPY4zYv00EsWoK6dBjEiSFAQXEbAN?=
- =?us-ascii?Q?Bevg8J+JGqMIQIRuCWt3WpCUxT0THcV1gooKsfOkD0i3yd41wvtB//QD6PDe?=
- =?us-ascii?Q?c2ctkPIvdj8mEFD+tzbK+l5qoNJWdLLHjCfZolCbFrAZiFDeQFNDKzW4K/Py?=
- =?us-ascii?Q?BLTytI5Gmlt3UTk6yepopzYzaZdEEzEJW/SOcd5HIclZ/lxKdBYwzi8kfulr?=
- =?us-ascii?Q?kf/DJnvwWP0m1Nk5HC6NZ5lq5dtwbj5+hRzD5R9d60NveOzMqC1l8eaUVSAw?=
- =?us-ascii?Q?q6aUQoLXCvR0Ovt001IkOqlXLzezVwvMbPof0SRUOzWw4QSDiRaMXNnpd5To?=
- =?us-ascii?Q?kGDfmIDSHuSPwgk1TWvWUPR3gePLnKH/s1OWffVJvGgkdl0dOAmPQjp8ToLT?=
- =?us-ascii?Q?357IIbo3Z1BI5+XqgYwF+PRe8K7XBkU50dP7TpBY?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 56d5c188-ef15-4143-1c23-08dce90af877
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8822.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Oct 2024 09:07:30.9816
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: yS2Otkssn7HMmC4UO1hmEhwroDfwiUAJPCd7N6yo8d0Kk5FRa9sI3LT3Q3upC/Z/ERGIqOpnHYz2JP6Blu0ZKw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6851
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_020736_905908_BFD25A6D 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20241010_021418_148340_97B010FF 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -169,143 +98,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This board has one Type-C port which has USB3 capability. This will
-add typec nodes and enable usb3 node.
+Fix a typo in comments: wether -> whether.
 
-Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-
+Signed-off-by: Andrew Kreimer <algonell@gmail.com>
 ---
-Changes in v2:
- - no changes
-Changes in v3:
- - no changes
-Changes in v4:
- - no changes
-Changes in v5:
- - correct nodes order
-Changes in v6:
- - rebase to latest
-Changes in v7:
- - no changes
----
- .../boot/dts/freescale/imx95-19x19-evk.dts    | 81 +++++++++++++++++++
- 1 file changed, 81 insertions(+)
+ include/linux/phy/phy-sun4i-usb.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts b/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
-index 37a1d4ca1b20..41a4ee4751ed 100644
---- a/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
-+++ b/arch/arm64/boot/dts/freescale/imx95-19x19-evk.dts
-@@ -6,6 +6,7 @@
- /dts-v1/;
+diff --git a/include/linux/phy/phy-sun4i-usb.h b/include/linux/phy/phy-sun4i-usb.h
+index 91eb755ee73b..f3e7b13608e4 100644
+--- a/include/linux/phy/phy-sun4i-usb.h
++++ b/include/linux/phy/phy-sun4i-usb.h
+@@ -11,7 +11,7 @@
+ /**
+  * sun4i_usb_phy_set_squelch_detect() - Enable/disable squelch detect
+  * @phy: reference to a sun4i usb phy
+- * @enabled: wether to enable or disable squelch detect
++ * @enabled: whether to enable or disable squelch detect
+  */
+ void sun4i_usb_phy_set_squelch_detect(struct phy *phy, bool enabled);
  
- #include <dt-bindings/pwm/pwm.h>
-+#include <dt-bindings/usb/pd.h>
- #include "imx95.dtsi"
- 
- / {
-@@ -250,6 +251,48 @@ i2c7_pcal6524: i2c7-gpio@22 {
- 		interrupt-parent = <&gpio5>;
- 		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
- 	};
-+
-+	ptn5110: tcpc@50 {
-+		compatible = "nxp,ptn5110", "tcpci";
-+		reg = <0x50>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_typec>;
-+		interrupt-parent = <&gpio5>;
-+		interrupts = <14 IRQ_TYPE_LEVEL_LOW>;
-+
-+		typec_con: connector {
-+			compatible = "usb-c-connector";
-+			label = "USB-C";
-+			power-role = "dual";
-+			data-role = "dual";
-+			try-power-role = "sink";
-+			source-pdos = <PDO_FIXED(5000, 3000, PDO_FIXED_USB_COMM)>;
-+			sink-pdos = <PDO_FIXED(5000, 0, PDO_FIXED_USB_COMM)>;
-+			op-sink-microwatt = <0>;
-+			self-powered;
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					typec_con_hs: endpoint {
-+						remote-endpoint = <&usb3_data_hs>;
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					typec_con_ss: endpoint {
-+						remote-endpoint = <&usb3_data_ss>;
-+					};
-+				};
-+			};
-+		};
-+	};
- };
- 
- &lpuart1 {
-@@ -332,6 +375,38 @@ &sai3 {
- 	status = "okay";
- };
- 
-+&usb3 {
-+	status = "okay";
-+};
-+
-+&usb3_dwc3 {
-+	dr_mode = "otg";
-+	hnp-disable;
-+	srp-disable;
-+	adp-disable;
-+	usb-role-switch;
-+	role-switch-default-mode = "peripheral";
-+	snps,dis-u1-entry-quirk;
-+	snps,dis-u2-entry-quirk;
-+	status = "okay";
-+
-+	port {
-+		usb3_data_hs: endpoint {
-+			remote-endpoint = <&typec_con_hs>;
-+		};
-+	};
-+};
-+
-+&usb3_phy {
-+	status = "okay";
-+
-+	port {
-+		usb3_data_ss: endpoint {
-+			remote-endpoint = <&typec_con_ss>;
-+		};
-+	};
-+};
-+
- &usdhc1 {
- 	pinctrl-names = "default", "state_100mhz", "state_200mhz", "sleep";
- 	pinctrl-0 = <&pinctrl_usdhc1>;
-@@ -538,6 +613,12 @@ IMX95_PAD_SD2_RESET_B__GPIO3_IO_BIT7		0x31e
- 		>;
- 	};
- 
-+	pinctrl_typec: typecgrp {
-+		fsl,pins = <
-+			IMX95_PAD_GPIO_IO34__GPIO5_IO_BIT14			0x31e
-+		>;
-+	};
-+
- 	pinctrl_usdhc2_gpio: usdhc2gpiogrp {
- 		fsl,pins = <
- 			IMX95_PAD_SD2_CD_B__GPIO3_IO_BIT0		0x31e
 -- 
-2.34.1
+2.39.5
 
 
 -- 
