@@ -4,75 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68E75CF11F5
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 13:37:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51096CF11F5
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 13:51:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date
-	:From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6bhicMnRbehNgO2JbYd49Hz4iHZ1UfEa7qeuQa0G+TE=; b=wMX2bNZ14tB4xf
-	arpEwOATjTIN9piPhhFALxkJdmkeZlSLhjh2CxCx2PI+ir3Eelay+9vnCNRRgAz2Ks9gqFOriSQsT
-	v3NwUtjDm5c7CqtxfpDfN7eLnIvfDUud4Zq5XVZ87niHIAlB6HTmswSnPDEqCUlGAcWNORw89emNB
-	HzetiGbq0+C//vjkBjUtdmsG/+08zz5dV5IwVY1VzdsU7ya/JJd+Y+3RmhTzHDyDCHl+Zj4p/2O7i
-	Mk9VLdefJFtqisIm/HFdeZHTSlCwuQ833wsxFpa6kHAVjkPPfJkeRl6OfQJgN2SCcgxZGD9yqMdeO
-	n2P610WGSoyrNNUOkkWw==;
+	List-Owner; bh=wuNJPfSqU3lHiq97Eq5RgwjwK2JDBeIwjUbUE1P31+M=; b=0OVzZ8mKFOfmU6
+	uDgKmpfYTHYmoVdipg09zSWQAv9J02hqy/RY7MJWGnpJYzsTqZ69zJtrgy4Vl6+0DJX84my2oDKbl
+	RDy9UDyfys1vetKVBTVb1YLHCWmBvD1XbHWgsc1hDUCcwgwmOPuVApo+hgT41XjhzWEKgxwjJZPPX
+	TTjhGtLJFp1vvGAs5XQ6vku/RHcsiFOA7DwNR7JmYafrZU2kPTzFRGsx2J70tI87qFGRWjeGLwlgK
+	rcTjAKT6E5dLNwkKFhVuP5xwV7tw/oYQx0cUV3owh9x3IQpFKk/aiz63SSc5goZRUo1xZcdYe1QnL
+	FANHXSMv4NH8V3MGxALA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sytMK-0000000CwGh-0VdZ;
-	Thu, 10 Oct 2024 13:37:40 +0000
-Received: from mail-lf1-f43.google.com ([209.85.167.43])
+	id 1sytZL-0000000CzQ7-439a;
+	Thu, 10 Oct 2024 13:51:07 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sytMG-0000000CwF5-3KV5;
-	Thu, 10 Oct 2024 13:37:38 +0000
-Received: by mail-lf1-f43.google.com with SMTP id 2adb3069b0e04-5398e33155fso1138807e87.3;
-        Thu, 10 Oct 2024 06:37:35 -0700 (PDT)
+	id 1sytZJ-0000000CzP3-1DOY
+	for linux-phy@lists.infradead.org;
+	Thu, 10 Oct 2024 13:51:06 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-53988c54ec8so1220163e87.0
+        for <linux-phy@lists.infradead.org>; Thu, 10 Oct 2024 06:51:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1728568263; x=1729173063; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=cMqw76UFr3KyOj7RnEC3aqiu0YdHjPevmACOjAMgttE=;
+        b=yd5CqgmsGTy0vMKQhyQNiVZ5zlfExmUE+IVgC4W16hAlEts6VyTf83zBM9Uf0wFNKC
+         q3w9iNVYFPhdlR7e0UbnwcZWjXKKXylmPINrW3l+jko3e1kNjAWlGDGpWc40s0nLtFTP
+         wCd04wWk6ytNW56PPPCU2YdvTeKVROL9BAOgBAJvQ/HIp1DqveEcVUDcA32JPsdLH6C5
+         UyPGWCTqob0xm+4xdwMK5r9BA8eTpCoLNdbxODe1sXaKaZbRYTSN2YJXFzyejqg+IQc1
+         15oShjhFVA9/7/DwmzlgNrmhlFZEIL44S4kDWhaQKiLgtjxjq6Bo3qUQh1jASlswaQ5v
+         Thtw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728567452; x=1729172252;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :reply-to:in-reply-to:references:mime-version:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ZzwzKkCp6jPszo6ZyDDEvEEJi7wd/je50oKdYYshjiU=;
-        b=uxs2XVUqwPKpa1f42OKbb/J5WdCmFyycq9DRhHdTZQcW3i5bxbXG2OhlmHhMrlXpPt
-         88xJVFKz17eB90IYqIuKxk7rszmFJv3RE7dyzFpFz3ch+affkpQJcx4PZa+f5cUWPHcj
-         I7eyi6g/VSFkp/PGkJsb4HeXiNBuYz5P2VWwRkvybcP/I2JDqRl6p7hqzMAEywOCVfLs
-         jRhGzMUoKXmBZHTdmQz/WX6s2BtFGOEJn9nBCMAFhQCeNJW1TfYioouw5QHBeTNQQsyZ
-         tp/l4hKs0zw7oJjTYnyiMoViWdh/dXuqmF2A1rSIkyg+sh4gUK033S8zAO41UHZ92Zy3
-         2cPA==
-X-Forwarded-Encrypted: i=1; AJvYcCUshsKe3AhFjqGL1+1pM9IgOZsecdDEduea+Tg0AQI6BxlVll8hxZmj/FKaUN7iSQU0Bjz5glOEvMFJ@lists.infradead.org, AJvYcCW3RmWMFn76yOq7N2sg5g1b12UD9YtsokDU1TApO0HEbEQLpmJwd1oUT+2DzzCcERbFfYBjlJgOTJinEUXE6/Id@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz6XEXJdI3oaYyNqC22ggS271Tbf8q/895ibpKEJOuU5p+7jnwA
-	aHa5YHqXQ/6L/oMQ5dVALzfD2Zs+Ah+S9jGMN4Mdc/AWA6zu2NYV2RuwVlSI
-X-Google-Smtp-Source: AGHT+IFID503MVLNy0HCftWjNRcC8i2WAZkORTcTtS3tGi8a6Wwpk/nNdiIFrl8IFB1pwZxLvXIE1A==
-X-Received: by 2002:a05:6512:3da8:b0:533:46cc:a71e with SMTP id 2adb3069b0e04-539c496ac4fmr4821769e87.54.1728567451723;
-        Thu, 10 Oct 2024 06:37:31 -0700 (PDT)
-Received: from mail-lj1-f176.google.com (mail-lj1-f176.google.com. [209.85.208.176])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-539cb6c8510sm260138e87.96.2024.10.10.06.37.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 10 Oct 2024 06:37:31 -0700 (PDT)
-Received: by mail-lj1-f176.google.com with SMTP id 38308e7fff4ca-2fac60ab585so9024531fa.0;
-        Thu, 10 Oct 2024 06:37:30 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCVAMRjrYHh1Luzx2neIqKzCvP+pL/gn2y9wrtgg1MWmN08/H6rxXOu+k/jn2SB7rY7AiezIEoG/yeB4nE6xmXcg@lists.infradead.org, AJvYcCX0Wgk0HduD+jxYPzmrrV25Kua3dw0xUZILAbdRBQw4PMwIrDl20MZ5EWBJy+ctfzgTebz1ITa27FyV@lists.infradead.org
-X-Received: by 2002:a2e:f19:0:b0:2fa:c57a:3b1c with SMTP id
- 38308e7fff4ca-2fb1873eca8mr32339161fa.17.1728567450394; Thu, 10 Oct 2024
- 06:37:30 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1728568263; x=1729173063;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=cMqw76UFr3KyOj7RnEC3aqiu0YdHjPevmACOjAMgttE=;
+        b=vhyK2yyYE1jiQI2FbQOrEs3Nyh39QWC7xxNGl8YACZpFCvhxIhH0fINnVKZfzeeoBs
+         0eD6+r9HSFu7t71YndYi99bzKf3g1X9kyIAau3+hoz/IpnT5ftmPyJRh32yQGqAVsuHS
+         Q9oqXKD4dh+sUzRHOwS3TPgLrJjleD6pJx4ohK7Apm1llLmW3nYtQoUhSGjybG2NI05A
+         glLiqadpcbWUflgY26kFgRJiPjTQIDZxPdA8LoE1OmfFXiYBTPtox5xNW0zQ56Kk67Oo
+         zdubW2Rn8IByaIdhgyZDRoHBjhPc40U3g5J8WWPX0oyBji63NEHumSZczNyTUTXX+GKi
+         IHFQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUIgxDo1UNHG4shBMQly8cp/y4CRzXez90NgA3O7weklCZR3gMOMn8QW/lQBbuaICQT/p0aRxFgyhc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwtML/y2BsCkRXfzPjpmJ9Nwcy/N6XsjEHrA89PaC/AwEuJ46uF
+	70sM+b/rA6YMski0qhWdVkqnxsLjNxJcSr6Wv/DaePyK5eSL4i9PhNoZZr+kqoc=
+X-Google-Smtp-Source: AGHT+IEdFN6tHEPOV5BGfgasm+djxDl4woP34V2NNtQEEnSKQjbMo5AzUtpP2ZOqLjKUa8VMlGqcng==
+X-Received: by 2002:a05:6512:2808:b0:536:54fd:275b with SMTP id 2adb3069b0e04-539c4967edemr4294135e87.54.1728568263124;
+        Thu, 10 Oct 2024 06:51:03 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-539cb6c863bsm258410e87.87.2024.10.10.06.51.00
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Oct 2024 06:51:01 -0700 (PDT)
+Date: Thu, 10 Oct 2024 16:50:59 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Qiang Yu <quic_qianyu@quicinc.com>
+Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
+	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, mturquette@baylibre.com, sboyd@kernel.org, abel.vesa@linaro.org, 
+	quic_msarkar@quicinc.com, quic_devipriy@quicinc.com, kw@linux.com, lpieralisi@kernel.org, 
+	neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-clk@vger.kernel.org
+Subject: Re: [PATCH v5 6/7] PCI: qcom: Fix the ops for X1E80100 and SC8280X
+ family SoC
+Message-ID: <otipwbhacorpdyjlhvf4g3tpg7ymtqmcuzjirewhkmwv3gbpka@2urxbhufrveb>
+References: <20241009091540.1446-1-quic_qianyu@quicinc.com>
+ <20241009091540.1446-7-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
-References: <20241010091355.8271-1-algonell@gmail.com>
-In-Reply-To: <20241010091355.8271-1-algonell@gmail.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Thu, 10 Oct 2024 22:37:16 +0900
-X-Gmail-Original-Message-ID: <CAGb2v64=WSCyKVyMtUv1d_WoLLnJjEx4WzC3mmF2uB+6O+0oZQ@mail.gmail.com>
-Message-ID: <CAGb2v64=WSCyKVyMtUv1d_WoLLnJjEx4WzC3mmF2uB+6O+0oZQ@mail.gmail.com>
-Subject: Re: [PATCH] phy: sun4i-usb: Fix a typo
-To: Andrew Kreimer <algonell@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
-	kernel-janitors@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <20241009091540.1446-7-quic_qianyu@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_063736_850302_1D886353 
-X-CRM114-Status: GOOD (  13.86  )
+X-CRM114-CacheID: sfid-20241010_065105_388052_09779867 
+X-CRM114-Status: GOOD (  17.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,27 +94,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@csie.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBPY3QgMTAsIDIwMjQgYXQgNjoxNOKAr1BNIEFuZHJldyBLcmVpbWVyIDxhbGdvbmVs
-bEBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gRml4IGEgdHlwbyBpbiBjb21tZW50czogd2V0aGVyIC0+
-IHdoZXRoZXIuCj4KPiBTaWduZWQtb2ZmLWJ5OiBBbmRyZXcgS3JlaW1lciA8YWxnb25lbGxAZ21h
-aWwuY29tPgoKQWNrZWQtYnk6IENoZW4tWXUgVHNhaSA8d2Vuc0Bjc2llLm9yZz4KCj4gLS0tCj4g
-IGluY2x1ZGUvbGludXgvcGh5L3BoeS1zdW40aS11c2IuaCB8IDIgKy0KPiAgMSBmaWxlIGNoYW5n
-ZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4KPiBkaWZmIC0tZ2l0IGEvaW5jbHVk
-ZS9saW51eC9waHkvcGh5LXN1bjRpLXVzYi5oIGIvaW5jbHVkZS9saW51eC9waHkvcGh5LXN1bjRp
-LXVzYi5oCj4gaW5kZXggOTFlYjc1NWVlNzNiLi5mM2U3YjEzNjA4ZTQgMTAwNjQ0Cj4gLS0tIGEv
-aW5jbHVkZS9saW51eC9waHkvcGh5LXN1bjRpLXVzYi5oCj4gKysrIGIvaW5jbHVkZS9saW51eC9w
-aHkvcGh5LXN1bjRpLXVzYi5oCj4gQEAgLTExLDcgKzExLDcgQEAKPiAgLyoqCj4gICAqIHN1bjRp
-X3VzYl9waHlfc2V0X3NxdWVsY2hfZGV0ZWN0KCkgLSBFbmFibGUvZGlzYWJsZSBzcXVlbGNoIGRl
-dGVjdAo+ICAgKiBAcGh5OiByZWZlcmVuY2UgdG8gYSBzdW40aSB1c2IgcGh5Cj4gLSAqIEBlbmFi
-bGVkOiB3ZXRoZXIgdG8gZW5hYmxlIG9yIGRpc2FibGUgc3F1ZWxjaCBkZXRlY3QKPiArICogQGVu
-YWJsZWQ6IHdoZXRoZXIgdG8gZW5hYmxlIG9yIGRpc2FibGUgc3F1ZWxjaCBkZXRlY3QKPiAgICov
-Cj4gIHZvaWQgc3VuNGlfdXNiX3BoeV9zZXRfc3F1ZWxjaF9kZXRlY3Qoc3RydWN0IHBoeSAqcGh5
-LCBib29sIGVuYWJsZWQpOwo+Cj4gLS0KPiAyLjM5LjUKPgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
-IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Wed, Oct 09, 2024 at 02:15:39AM GMT, Qiang Yu wrote:
+> On X1E80100 and SC8280X family SoC, PCIe controllers are connected to
+> SMMUv3, hence they don't need the config_sid() callback in ops_1_9_0
+> struct. Fix it by introducing a new ops struct, namely ops_1_21_0, so
+> that BDF2SID mapping won't be configured during init.
+
+Fixes tag missing. Cc:stable if required.
+
+> 
+> In addition, since it is recommended to disable ASPM L0s on X1E80100 as
+> same as SC8280X, hence X1E80100 can simply reuse cfg_sc8280xp as its
+> config.
+
+Separate commit, please with its own description and Fixes tag.
+
+> 
+> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+> ---
+>  drivers/pci/controller/dwc/pcie-qcom.c | 14 ++++++++++++--
+>  1 file changed, 12 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+> index 88a98be930e3..c533e6024ba2 100644
+> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+> @@ -1367,6 +1367,16 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
+>  	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+>  };
+>  
+> +/* Qcom IP rev.: 1.21.0 */
+> +static const struct qcom_pcie_ops ops_1_21_0 = {
+> +	.get_resources = qcom_pcie_get_resources_2_7_0,
+> +	.init = qcom_pcie_init_2_7_0,
+> +	.post_init = qcom_pcie_post_init_2_7_0,
+> +	.host_post_init = qcom_pcie_host_post_init_2_7_0,
+> +	.deinit = qcom_pcie_deinit_2_7_0,
+> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+> +};
+> +
+>  static const struct qcom_pcie_cfg cfg_1_0_0 = {
+>  	.ops = &ops_1_0_0,
+>  };
+> @@ -1405,7 +1415,7 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
+>  };
+>  
+>  static const struct qcom_pcie_cfg cfg_sc8280xp = {
+> -	.ops = &ops_1_9_0,
+> +	.ops = &ops_1_21_0,
+>  	.no_l0s = true,
+>  };
+>  
+> @@ -1837,7 +1847,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+>  	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &cfg_1_9_0 },
+>  	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
+>  	{ .compatible = "qcom,pcie-sm8550", .data = &cfg_1_9_0 },
+> -	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_1_9_0 },
+> +	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_sc8280xp },
+>  	{ }
+>  };
+>  
+> -- 
+> 2.34.1
+> 
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
