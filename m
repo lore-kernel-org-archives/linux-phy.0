@@ -4,70 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51F12CF11FC
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 15:21:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE704D24451
+	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 20:35:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=urOvM98iKZRIIO1v/N42rLDP9/oVhNvyNg8Xn6rcG0s=; b=z+5blGpz/1uhXi
-	ObLRE43LBDMO0XmT4Do82oYCOuew9MOq58Qpn3BQoD75lop8wbYyiJOuhxeo+daKb0LV0Rqk/1eoI
-	C+aMaoFoUBDkekZs26G8/l2Q9fkvkfX1PCQZtzJA3eDxkAsEBOKctrQc67mzskk2vHU3GZyUyXjf4
-	D9UewHVbzcDn/Upc8vCfWzRAhmjbCpdK1SkoHY7Z1MHLdKfqixTCzfg5aG6hdk4YRYg85+IIlGfHG
-	5u9i63Pe8jgymma1pavUtsEsVxk0sESVzXaRH3zSabQgiGiweGdo+lTRW3Io2Qnc6LyH8Igf8c+N6
-	uke+5YJk88BnWZ5ncO1w==;
+	List-Owner; bh=/CImXiEjEe7aUhBGMBRaJNmXvYEBaL/aJa5CBgkbWHg=; b=RxgC2YyxH2lnwO
+	hj6T+MA+f0BvVxw5JD5Mv6i3jHewDIQQecKQH4dy+buXXz5UvgA7gMOc9dCNMkpbDoPo5sSlygwwq
+	48Y//aGq/oINRdcfPSVmDHTcacHzq/f7p79ZMqzcsqK5FeEz29xukjSQZqA6YATigxzjMfJ+Iq4k8
+	mc2f2HsJEmulBX/ymXpQ3j1ELaLDhhXFj5wdyKnEMxg06hERu15eDY9IJ726ORSYkoPGttd3gIf7s
+	ho1l/qOQ6bU81WSWr1pkPXW/+vOwg+8ScA//Z/sutteQ/jrt0iDzSc5QLQiL2QyRhg6a0HsVM8TbO
+	UwFh5dPAH8n/XsNZPm2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1syuyt-0000000DJ0z-0Avw;
-	Thu, 10 Oct 2024 15:21:35 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1syzsN-0000000EHqL-1bfF;
+	Thu, 10 Oct 2024 20:35:11 +0000
+Received: from mail-qv1-xf29.google.com ([2607:f8b0:4864:20::f29])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1syuTR-0000000DBnN-1cc3;
-	Thu, 10 Oct 2024 14:49:06 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
-	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 49AEmpuP021072;
-	Thu, 10 Oct 2024 09:48:51 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1728571731;
-	bh=WGpzSHyv4hN94fLKBm9CwNkrtkCZrpk5DG6ytNR+FeA=;
-	h=From:To:CC:Subject:Date;
-	b=WLgcEIbKXfLnZ91cTr+LOArvhXCMZ86zG+YbXXv+i2efsHub0aMPmcuYov6ABwANB
-	 MkC4rpgRFPo//yKSe91dKc+CZEsiFjQlRj5+nKgVvtu9zX9nS/KVuJoKiX14c5xDNA
-	 IonJzatIK9xEAkVJmC7RZenBD9GRwyyQfo9udjJQ=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
-	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 49AEmpCK026303
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 10 Oct 2024 09:48:51 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Thu, 10
- Oct 2024 09:48:50 -0500
-Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Thu, 10 Oct 2024 09:48:50 -0500
-Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.72.81])
-	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 49AEmk7F011103;
-	Thu, 10 Oct 2024 09:48:47 -0500
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <thomas.richard@bootlin.com>,
-        <krzysztof.kozlowski@linaro.org>, <rogerq@kernel.org>,
-        <florian.fainelli@broadcom.com>, <c-vankar@ti.com>, <afd@ti.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
-        <s-vadapalli@ti.com>
-Subject: [PATCH] phy: ti: gmii-sel: Enable USXGMII mode for J7200
-Date: Thu, 10 Oct 2024 20:18:45 +0530
-Message-ID: <20241010144845.2555983-1-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.40.1
+	id 1syyIH-0000000E0Hl-4Bga
+	for linux-phy@lists.infradead.org;
+	Thu, 10 Oct 2024 18:53:51 +0000
+Received: by mail-qv1-xf29.google.com with SMTP id 6a1803df08f44-6cbd550b648so9947736d6.0
+        for <linux-phy@lists.infradead.org>; Thu, 10 Oct 2024 11:53:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1728586428; x=1729191228; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=q0vz9WSS8OYzcFI14VH3qHGhzUgVEMufNF/u1NNl44Q=;
+        b=O3NJXlwzgYaDwYn+fL6IeMxXsrJYhzj0zgP4b++JU9PQbmlsVXhX00f/Gvp5h20SOQ
+         BHCowMGckmm97zEbZPRPIEvrrCGvUxBVnJM/kSbQVQ87Hqnn4pTa+EDZiFYY5+jxvrF9
+         EWEdUoFjnnerrwQeT+Do+5Kd/6k8/G6Zn2Wok=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728586428; x=1729191228;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=q0vz9WSS8OYzcFI14VH3qHGhzUgVEMufNF/u1NNl44Q=;
+        b=eV34m1bwC2FXK9aNaIkxb/OCro1uNkq6b4IbZMFIIf5MZOhQ9NxoFoyUY2U3Q5/cN0
+         vbFVa6baifWbD+lnVqxsBZa0e+NZr5dS90q/T5ue1A9H6/2yhEnm1VnpCFudnnHyTonS
+         Z4Sg0CdWxgpXSQ/i/rDcYZ6GXaSo0Prf4S5GaLIblv0QgC29m7Rq+k5QrLSE8LnUnjIK
+         Gn25qLGIJgA8F9dvXQ2dUwc190RotrM9tfrwHWam6CB+yfC2bLi7jWf5AXY4XhzMB21X
+         oYRdI8IpWN5Sad1xkPimhTNGlc6ND1DSOKBdACsX9YEKO6VTPatoeKcaRF3tgp4lfZef
+         hl2g==
+X-Gm-Message-State: AOJu0YwiKjtHs/USloI92TbrZreqd1Ipgs+i/GfkCArv418Y3PuY7fIu
+	1x4Zh0dvgzDgfn8lU75CZpmiGGFL49JIJ9rc5yQW+Lw4TYViX+mLoMIScaW/6lcqClkRCS3L7Qd
+	GyEZq69z4AdbVhLINUtO7oN5QNCjn6SJIWPWQ8CwYMLmw+yoDiyiRW/hb/yVISHnTqdLkRBA16a
+	O3uI34ZsF59XQ1D5BEUkUSTuxWH/XSut09mSlgkSW8Y/JVee0aNns0DA==
+X-Google-Smtp-Source: AGHT+IHq4QVrHWyYcSIFYx/vaH/NttHm08mDWIDi8RHb4TEWTJxti5cMtxtf9E/sHSq4dbmLlMc3yA==
+X-Received: by 2002:a05:6214:4346:b0:6cb:ee89:9982 with SMTP id 6a1803df08f44-6cbf0013dcbmr561366d6.38.1728586427804;
+        Thu, 10 Oct 2024 11:53:47 -0700 (PDT)
+Received: from stbirv-lnx-1.igp.broadcom.net ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-6cbe85a5b95sm7912166d6.6.2024.10.10.11.53.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Oct 2024 11:53:47 -0700 (PDT)
+From: Justin Chen <justin.chen@broadcom.com>
+To: linux-phy@lists.infradead.org
+Cc: florian.fainelli@broadcom.com,
+	kishon@kernel.org,
+	vkoul@kernel.org,
+	bcm-kernel-feedback-list@broadcom.com,
+	alcooperx@gmail.com,
+	Justin Chen <justin.chen@broadcom.com>
+Subject: [PATCH] phy: usb: disable COMMONONN for dual mode
+Date: Thu, 10 Oct 2024 11:53:44 -0700
+Message-Id: <20241010185344.859865-1-justin.chen@broadcom.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_074905_537603_1503CC2D 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241010_115350_104458_989C30A9 
+X-CRM114-Status: GOOD (  12.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,38 +92,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-TI's J7200 SoC supports USXGMII mode with the CPSW5G instance's MAC Port1.
-Add USXGMII mode to the extra_modes member of J7200's SoC data.
+The COMMONONN bit suspends the phy when the port is put into a suspend
+state. However when the phy is shared between host and device in dual
+mode, this no longer works cleanly as there is no synchronization between
+the two.
 
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+Fixes: 5095d045a962 ("phy: usb: Turn off phy when port is in suspend")
+Signed-off-by: Justin Chen <justin.chen@broadcom.com>
 ---
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
 
-Hello,
-
-This patch is based on linux-next tagged next-20241010.
-
-Regards,
-Siddharth.
-
- drivers/phy/ti/phy-gmii-sel.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index 103b266fec77..e0ca59ae3153 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -230,7 +230,8 @@ static const
- struct phy_gmii_sel_soc_data phy_gmii_sel_cpsw5g_soc_j7200 = {
- 	.use_of_data = true,
- 	.regfields = phy_gmii_sel_fields_am654,
--	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) | BIT(PHY_INTERFACE_MODE_SGMII),
-+	.extra_modes = BIT(PHY_INTERFACE_MODE_QSGMII) | BIT(PHY_INTERFACE_MODE_SGMII) |
-+		       BIT(PHY_INTERFACE_MODE_USXGMII),
- 	.num_ports = 4,
- 	.num_qsgmii_main_ports = 1,
- };
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
+index 4c10cafded4e..950b7ae1d1a8 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
+@@ -153,7 +153,9 @@ static void xhci_soft_reset(struct brcm_usb_init_params *params,
+ 	} else {
+ 		USB_CTRL_SET(ctrl, USB_PM, XHC_SOFT_RESETB);
+ 		/* Required for COMMONONN to be set */
+-		USB_XHCI_GBL_UNSET(xhci_gbl, GUSB2PHYCFG, U2_FREECLK_EXISTS);
++		if (params->supported_port_modes != USB_CTLR_MODE_DRD)
++			USB_XHCI_GBL_UNSET(xhci_gbl, GUSB2PHYCFG,
++					   U2_FREECLK_EXISTS);
+ 	}
+ }
+ 
+@@ -328,8 +330,12 @@ static void usb_init_common_7216(struct brcm_usb_init_params *params)
+ 	/* 1 millisecond - for USB clocks to settle down */
+ 	usleep_range(1000, 2000);
+ 
+-	/* Disable PHY when port is suspended */
+-	USB_CTRL_SET(ctrl, P0_U2PHY_CFG1, COMMONONN);
++	/*
++	 * Disable PHY when port is suspended
++	 * Does not work in DRD mode
++	 */
++	if (params->supported_port_modes != USB_CTLR_MODE_DRD)
++		USB_CTRL_SET(ctrl, P0_U2PHY_CFG1, COMMONONN);
+ 
+ 	usb_wake_enable_7216(params, false);
+ 	usb_init_common(params);
 -- 
-2.40.1
+2.34.1
 
 
 -- 
