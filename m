@@ -4,62 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 321D6D2444F
-	for <linux-phy@archiver.kernel.org>; Thu, 10 Oct 2024 23:01:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E323CEDDA9
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 06:54:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+hkcpFgfd4cBiNsQqY3fdhmUhAVb/Pcl/1JsD9IoDA=; b=AAlvQiIusn9qtc
-	K73KH9NveLPT9/U04xubgb4dHIbKt0gL+TMGaC3IfaGiHhxdyPfVBz8ny5uY2jOxWSGVc7Lf92Qk+
-	96f18NOhO0eUZF4KCEElZnehLtw8F35cxJtrEk4+bGv4aFAax7wdFmb+GJoorQyUdbIxwZMXGD/Dq
-	0pJ6PWjLKlYlT6ZG5Z8ljP8k+aDMR3tjc9Aysz8EaK9Agy5l2TonAy2WU8/7LvdZhkMJlVb/ngSdG
-	LyNDuvaNAvJJPt9AWf/qa1KLccBRHBaYxyx7RphcrpPxPUgIQTcMiBpRABCBNmYKxb1B+IzrQc4K6
-	Vn2STbi7pWYcQY7aO6Kw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=P+5xWkzQ5aRbO/nG/YTwtBrHxpzIM5ZfNQwazYqn9Rg=; b=XRRdeDUrr1C7vY
+	renLGsaFeLVD8wQryxMLv8eiQoXLoMhqmJRKw1Zzlu/0aFbviLLlx7WGzVOVR3jkykxfAY4Cnkwf+
+	6szgepZqlpwP9+czZEAncDYgINGOZKgGlGhZciatLwEi8fUQozl+INA5TbtdCKlZ7O2ayZ3WTHoLs
+	dZYCo/Sy20y8GrhcfSNoVMvutsMyZVzfu8wJUkemPBybrn/u3aCx2alTod4C/Kf91Q8qBR/9jFgc3
+	zp6eztoq7kG7tajntJhKrkNAwIPT1ZPp2C2S6pZwP4Jtyz8IpHMpEHVIKvzlbWWcHqsfYvymaec8z
+	XFUxCHyWfztz6vBq83bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sz2A6-0000000EcFp-2QYU;
-	Thu, 10 Oct 2024 23:01:38 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1sz9Y8-0000000FScK-2Cwj;
+	Fri, 11 Oct 2024 06:54:56 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1syzM9-0000000EDak-0dXc;
-	Thu, 10 Oct 2024 20:01:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 15799A44C93;
-	Thu, 10 Oct 2024 20:01:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BD59AC4CEC5;
-	Thu, 10 Oct 2024 20:01:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728590511;
-	bh=dHcKPbdsy7bztUIL3nQ1holZJu15pDDcGKddst8ydn4=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=UNC1I7ptyGVcQ3iMOrP5ERKov1smya7HpiJEII4RIWdpt2wu7KsqFHgGH/t9An3qa
-	 RZOgSbvk7Es5AqAIcKHdkTeKtkzsr8wbJpZf+4duPl7G8oiII15jtQLYkl7yiLSzRe
-	 OPEdWoxPl9YGBcfo/6zCAsbHt+KYMVED+SO59Vvy/mmiqZRhd8WIRWEK/EOwmzyIqS
-	 TT2YAWqdfJ/QTeoB4bXE++mq1K022rzezYV4+QFwR/o0jD2hPBddff+G5t2XLD+Dzx
-	 7deBG6WcZ+sDxOHZLAg5YxrtQeTGT7AS5BgwnUyvXBS0uPifTBwT6UWeFEcqp1iI07
-	 RdTit902ysrow==
-Message-ID: <4f91147a-1284-4901-982e-29bcb1a5c41b@kernel.org>
-Date: Thu, 10 Oct 2024 23:01:45 +0300
+	id 1sz9Rm-0000000FR8O-366t;
+	Fri, 11 Oct 2024 06:48:24 +0000
+X-UUID: cc09489a879c11efba0aef63c0775dbf-20241010
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=y2T9fRA9uvlVR02QkoFnRdEwwHlGLql4m/SX4vgEwHo=;
+	b=GoGcYPsVH18eV2yFySiMsYYm1WP4DMT7fnZI9dlVcyPcHiNAti7DFcDS9GlGO/p89+X3GftJVU1kGkqZ0GIjHQ50h9VezV6CrdDGMrXcGTAUguyD+QFkXxCFxgiu0DFFUZ7Q8bGg35JTaVY7oo0cNpAE3JpWhze/rZrwHsemEig=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.41,REQID:b744213c-7b21-43d5-a046-a255472c04d1,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:6dc6a47,CLOUDID:2df01465-444a-4b47-a99a-591ade3b04b2,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,
+	SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0
+X-CID-BAS: 0,_,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-UUID: cc09489a879c11efba0aef63c0775dbf-20241010
+Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
+	(envelope-from <macpaul.lin@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 959974817; Thu, 10 Oct 2024 23:48:17 -0700
+Received: from mtkmbs13n1.mediatek.inc (172.21.101.193) by
+ MTKMBS14N1.mediatek.inc (172.21.101.75) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.26; Fri, 11 Oct 2024 14:48:13 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by
+ mtkmbs13n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.1118.26 via Frontend Transport; Fri, 11 Oct 2024 14:48:13 +0800
+From: Macpaul Lin <macpaul.lin@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>
+CC: Bear Wang <bear.wang@mediatek.com>, Pablo Sun <pablo.sun@mediatek.com>,
+	Macpaul Lin <macpaul.lin@mediatek.com>, Macpaul Lin <macpaul@gmail.com>,
+	<Project_Global_Chrome_Upstream_Group@mediatek.com>
+Subject: [PATCH v2] dt-bindings: phy: mediatek: tphy: add a property for power-domains
+Date: Fri, 11 Oct 2024 14:48:10 +0800
+Message-ID: <20241011064810.5103-1-macpaul.lin@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: ti: gmii-sel: Enable USXGMII mode for J7200
-To: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org,
- kishon@kernel.org, thomas.richard@bootlin.com,
- krzysztof.kozlowski@linaro.org, florian.fainelli@broadcom.com,
- c-vankar@ti.com, afd@ti.com
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, srk@ti.com
-References: <20241010144845.2555983-1-s-vadapalli@ti.com>
-Content-Language: en-US
-From: Roger Quadros <rogerq@kernel.org>
-In-Reply-To: <20241010144845.2555983-1-s-vadapalli@ti.com>
+X-TM-AS-Product-Ver: SMEX-14.0.0.3152-9.1.1006-23728.005
+X-TM-AS-Result: No-10--2.165100-8.000000
+X-TMASE-MatchedRID: k8Cd32tj8sGMNoAzq9nHoWNW0DAjL5p++OI6XsK3BWHfUZT83lbkEJVD
+	ZsT0rYWCqP2RhwqsDVhYSGAnlsUp3lAXAjgfNI2iRy+94mWbR+blOkM7VYqzaZi7/tnxUUyGo8W
+	MkQWv6iXBcIE78YqRWo6HM5rqDwqt7aENEMomdGuGxZsjVPBjfObxZIv/aSQArgevuQgg4NYHJD
+	IxduTwSZmxuzUAi+Dfup5+b9g7ZTRiF54b8Md0Br5sQoYg/dmD4sOrsb4iT/K/bbEolHIgZUOc7
+	GjOamnWv5a9cmIodEspRnLV2kwrLg==
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Result: 10--2.165100-8.000000
+X-TMASE-Version: SMEX-14.0.0.3152-9.1.1006-23728.005
+X-TM-SNTS-SMTP: 4AD9FFC112EA5D5D7D7DB547735B4F1CC3D11219A3110772C6367C57CD5144FB2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_130153_292842_4D6D0A6F 
-X-CRM114-Status: UNSURE (   3.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241010_234822_816705_E3F01E8D 
+X-CRM114-Status: GOOD (  10.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,15 +102,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+MediaTek TPHY should be existed in a power-domains.
+So we add property 'power-domains' and set 'maxItems: 1' in the
+DT Schema.
 
+A reminder is also added to the description of 'power-domains'
+property.
 
-On 10/10/2024 17:48, Siddharth Vadapalli wrote:
-> TI's J7200 SoC supports USXGMII mode with the CPSW5G instance's MAC Port1.
-> Add USXGMII mode to the extra_modes member of J7200's SoC data.
-> 
-> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+ .../devicetree/bindings/phy/mediatek,tphy.yaml         | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-Reviewed-by: Roger Quadros <rogerq@kernel.org>
+Changes for v2:
+ - Add a reminder in description of 'power-domains' property.
+ - Fix commit message from v1.
+
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index 423b7c4e62f2..6be3aa4557e5 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -125,6 +125,16 @@ properties:
+     $ref: /schemas/types.yaml#/definitions/uint32
+     default: 28
+ 
++  power-domains:
++    description:
++      The TPHY of MediaTek should exist within a power domain. The
++      developer should be aware that the hardware design of MediaTek TPHY
++      does not require the addition of MTCMOS. If the power to the TPHY
++      is turned off, it will impact other functions. From the current
++      perspective of USB hardware design, even if MTCMOS is added to the
++      TPHY, it should remain always on.
++    maxItems: 1
++
+ # Required child node:
+ patternProperties:
+   "^(usb|pcie|sata)-phy@[0-9a-f]+$":
+-- 
+2.45.2
+
 
 -- 
 linux-phy mailing list
