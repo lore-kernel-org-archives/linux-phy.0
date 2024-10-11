@@ -4,88 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E323CEDDA9
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 06:54:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66FE0D2447B
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 06:56:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=P+5xWkzQ5aRbO/nG/YTwtBrHxpzIM5ZfNQwazYqn9Rg=; b=XRRdeDUrr1C7vY
-	renLGsaFeLVD8wQryxMLv8eiQoXLoMhqmJRKw1Zzlu/0aFbviLLlx7WGzVOVR3jkykxfAY4Cnkwf+
-	6szgepZqlpwP9+czZEAncDYgINGOZKgGlGhZciatLwEi8fUQozl+INA5TbtdCKlZ7O2ayZ3WTHoLs
-	dZYCo/Sy20y8GrhcfSNoVMvutsMyZVzfu8wJUkemPBybrn/u3aCx2alTod4C/Kf91Q8qBR/9jFgc3
-	zp6eztoq7kG7tajntJhKrkNAwIPT1ZPp2C2S6pZwP4Jtyz8IpHMpEHVIKvzlbWWcHqsfYvymaec8z
-	XFUxCHyWfztz6vBq83bg==;
+	List-Owner; bh=bap6NcLh0pXaVf015NHqf3HEtrL+l/m7NKTGhXQVdDM=; b=t+zSfR/pgD6Aup
+	rt6UEla/rR5/Q2mZ/P4bhE/C+jWZrdlAkNiAqXK+xHzC/LZCsNslc7Hkq+rgoVOdH3WB3t/Jxi8VN
+	aJfCiL9pznisDY33ElSmhDlHV/WYxKZ9mi7zcrEaZo3lmXo3FShZnEJ73uWPrQT8Wq6UQ8X/JzUPY
+	qXIqH3ODYrGWMrUbVxmdYhlC5ynjErj6fbOsL3KfAq0/SWpRM3elyf6ZeFVqgK5oaJE5+jXqXqvyV
+	vw/sjvh0QjbhbqUrZ0nUBryv1kCos0iTw/vQUsFCYYdIF3rF0WfljpKRCGqVtDlnDLvLoTH/E8Am0
+	Gh0dbK/klZWdXO2rTtbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sz9Y8-0000000FScK-2Cwj;
-	Fri, 11 Oct 2024 06:54:56 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1sz9ZR-0000000FSqo-0PyJ;
+	Fri, 11 Oct 2024 06:56:17 +0000
+Received: from mail-pf1-x429.google.com ([2607:f8b0:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sz9Rm-0000000FR8O-366t;
-	Fri, 11 Oct 2024 06:48:24 +0000
-X-UUID: cc09489a879c11efba0aef63c0775dbf-20241010
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=y2T9fRA9uvlVR02QkoFnRdEwwHlGLql4m/SX4vgEwHo=;
-	b=GoGcYPsVH18eV2yFySiMsYYm1WP4DMT7fnZI9dlVcyPcHiNAti7DFcDS9GlGO/p89+X3GftJVU1kGkqZ0GIjHQ50h9VezV6CrdDGMrXcGTAUguyD+QFkXxCFxgiu0DFFUZ7Q8bGg35JTaVY7oo0cNpAE3JpWhze/rZrwHsemEig=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.41,REQID:b744213c-7b21-43d5-a046-a255472c04d1,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:6dc6a47,CLOUDID:2df01465-444a-4b47-a99a-591ade3b04b2,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,
-	SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-UUID: cc09489a879c11efba0aef63c0775dbf-20241010
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <macpaul.lin@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 959974817; Thu, 10 Oct 2024 23:48:17 -0700
-Received: from mtkmbs13n1.mediatek.inc (172.21.101.193) by
- MTKMBS14N1.mediatek.inc (172.21.101.75) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Fri, 11 Oct 2024 14:48:13 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by
- mtkmbs13n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Fri, 11 Oct 2024 14:48:13 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>
-CC: Bear Wang <bear.wang@mediatek.com>, Pablo Sun <pablo.sun@mediatek.com>,
-	Macpaul Lin <macpaul.lin@mediatek.com>, Macpaul Lin <macpaul@gmail.com>,
-	<Project_Global_Chrome_Upstream_Group@mediatek.com>
-Subject: [PATCH v2] dt-bindings: phy: mediatek: tphy: add a property for power-domains
-Date: Fri, 11 Oct 2024 14:48:10 +0800
-Message-ID: <20241011064810.5103-1-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+	id 1sz9V7-0000000FS06-49AZ;
+	Fri, 11 Oct 2024 06:51:51 +0000
+Received: by mail-pf1-x429.google.com with SMTP id d2e1a72fcca58-71e269db566so99600b3a.3;
+        Thu, 10 Oct 2024 23:51:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1728629508; x=1729234308; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=vUd+ptjyv9QJ5lB7HGC0V0YSPXyHnn+kNuvjqh6RNSw=;
+        b=l+YNEGMk+K+Sd6+RNZjkBAElP+7O52DJ9zCxRTn3Dev0kRiR+Q4ov+V8O7OK+TY8ED
+         To4UfvNgjBz+61QZIZEWIcHCditOXVmXoKg5WSArzGkL7hwJqxVt6M3vw5LUCjTaOQ+y
+         Zxkw8VDJOI01//uJojGRY/oQejgM+Rh/utNHfh/Byos1Jr6nD7YTH0FpkCDXhKcG87Gr
+         +61j9OdkBsXfybFWZCBHAno1GVVNSrXvwRN88A6XxYQYf7YrWtZmiubNuCY6UzVEG83f
+         AO7jcig1cqegLEafCAMSWBppx6wAjdxNnCoZ/rkKaf7jPowPlR+KwnFLjOFbCwA4GaKn
+         NRnA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728629508; x=1729234308;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=vUd+ptjyv9QJ5lB7HGC0V0YSPXyHnn+kNuvjqh6RNSw=;
+        b=VXQOs/GnEnXourtfQ5vQ6q3JpBS5JurimQV3RZy2t9Z02MYXKXStUYAwLzLscPTi+u
+         aEKTXfEHjhEkkmslTPQfGtcmqUDLHZLG+KbMnha28CK/vVoeZDPNQFq2D0BAYKjr3oAq
+         TUFby3ea3HnX7jp0N7mV1C/N1y1/F0IBJHSChxD75yxj0XLO1CU74NLcq6LKcRONEJfh
+         gVY+/Ni8VXqDQrQT4LpJcnNG/6hclPMrLABs+liKBel3j72QsTKIfOmym/LbUi4WMsVm
+         bAdgx0GNRn7jSP5Y0asOP8rs707YOrrcMGEGkbuMWhxN/U6BABvN8JdXvLEYZT2OIY44
+         s3WA==
+X-Forwarded-Encrypted: i=1; AJvYcCViImvJ05a3TChRC3ab68skflV2usXPyGJJ1E0jU/Uuu9druwh8FbJyrcVRHvbUJP8UIQsxrowhG9WHQKSYE4g=@lists.infradead.org, AJvYcCXEM5CoTG9QwNrn6AV/nrx4yyELxikg34v9iF8Ic0wNTiZ6BfNgSc48DLR/ptGIKgYFZ99xjZ1asjD9pRB8J4gY@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywe1hePt/ZmuwbHJfKQVzdcYR7JKAjrptAqYutDoGRZg/7mDVYn
+	OAWTR2WraRsZRxvcGM7IwuTLLKWO28davCuXs3ExVmdWwho+4bLI
+X-Google-Smtp-Source: AGHT+IHjExOTWS+ut51FciTmYkVQWJwbGbZ+dp9P/ObMFftp08A8WqGSO9KFwxV+tjO4x0yePjh8LQ==
+X-Received: by 2002:a05:6a00:8594:b0:718:e49f:4185 with SMTP id d2e1a72fcca58-71e38126090mr1026885b3a.7.1728629508440;
+        Thu, 10 Oct 2024 23:51:48 -0700 (PDT)
+Received: from localhost.localdomain ([103.29.142.67])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71e2ab109e4sm2036099b3a.206.2024.10.10.23.51.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Oct 2024 23:51:48 -0700 (PDT)
+From: Frank Wang <frawang.cn@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	william.wu@rock-chips.com,
+	tim.chen@rock-chips.com,
+	Frank Wang <frank.wang@rock-chips.com>
+Subject: [PATCH v5 1/3] phy: rockchip: inno-usb2: convert clock management to bulk
+Date: Fri, 11 Oct 2024 14:51:38 +0800
+Message-Id: <20241011065140.19999-1-frawang.cn@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-TM-AS-Product-Ver: SMEX-14.0.0.3152-9.1.1006-23728.005
-X-TM-AS-Result: No-10--2.165100-8.000000
-X-TMASE-MatchedRID: k8Cd32tj8sGMNoAzq9nHoWNW0DAjL5p++OI6XsK3BWHfUZT83lbkEJVD
-	ZsT0rYWCqP2RhwqsDVhYSGAnlsUp3lAXAjgfNI2iRy+94mWbR+blOkM7VYqzaZi7/tnxUUyGo8W
-	MkQWv6iXBcIE78YqRWo6HM5rqDwqt7aENEMomdGuGxZsjVPBjfObxZIv/aSQArgevuQgg4NYHJD
-	IxduTwSZmxuzUAi+Dfup5+b9g7ZTRiF54b8Md0Br5sQoYg/dmD4sOrsb4iT/K/bbEolHIgZUOc7
-	GjOamnWv5a9cmIodEspRnLV2kwrLg==
-X-TM-AS-User-Approved-Sender: No
-X-TM-AS-User-Blocked-Sender: No
-X-TMASE-Result: 10--2.165100-8.000000
-X-TMASE-Version: SMEX-14.0.0.3152-9.1.1006-23728.005
-X-TM-SNTS-SMTP: 4AD9FFC112EA5D5D7D7DB547735B4F1CC3D11219A3110772C6367C57CD5144FB2000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_234822_816705_E3F01E8D 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20241010_235150_109238_6B977D4E 
+X-CRM114-Status: GOOD (  19.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,44 +100,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-MediaTek TPHY should be existed in a power-domains.
-So we add property 'power-domains' and set 'maxItems: 1' in the
-DT Schema.
+From: Frank Wang <frank.wang@rock-chips.com>
 
-A reminder is also added to the description of 'power-domains'
-property.
+Since some Rockchip SoCs (e.g RK3576) have more than one clock,
+this converts the clock management from single to bulk method to
+make the driver more flexible.
 
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
 ---
- .../devicetree/bindings/phy/mediatek,tphy.yaml         | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Changelog:
+V5:
+ - use dev_err_probe() in clock enable error path in probe.
 
-Changes for v2:
- - Add a reminder in description of 'power-domains' property.
- - Fix commit message from v1.
+v4:
+ - a new patch split from the [PATCH v3 2/2], suggestions from Heiko.
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-index 423b7c4e62f2..6be3aa4557e5 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-@@ -125,6 +125,16 @@ properties:
-     $ref: /schemas/types.yaml#/definitions/uint32
-     default: 28
+v1-v3:
+ - none
+
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 45 +++++++++++++++----
+ 1 file changed, 37 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 6e5214862b8a3..f71266c27091e 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -229,9 +229,10 @@ struct rockchip_usb2phy_port {
+  * @dev: pointer to device.
+  * @grf: General Register Files regmap.
+  * @usbgrf: USB General Register Files regmap.
+- * @clk: clock struct of phy input clk.
++ * @clks: array of phy input clocks.
+  * @clk480m: clock struct of phy output clk.
+  * @clk480m_hw: clock struct of phy output clk management.
++ * @num_clks: number of phy input clocks.
+  * @phy_reset: phy reset control.
+  * @chg_state: states involved in USB charger detection.
+  * @chg_type: USB charger types.
+@@ -246,9 +247,10 @@ struct rockchip_usb2phy {
+ 	struct device	*dev;
+ 	struct regmap	*grf;
+ 	struct regmap	*usbgrf;
+-	struct clk	*clk;
++	struct clk_bulk_data	*clks;
+ 	struct clk	*clk480m;
+ 	struct clk_hw	clk480m_hw;
++	int			num_clks;
+ 	struct reset_control	*phy_reset;
+ 	enum usb_chg_state	chg_state;
+ 	enum power_supply_type	chg_type;
+@@ -310,6 +312,13 @@ static int rockchip_usb2phy_reset(struct rockchip_usb2phy *rphy)
+ 	return 0;
+ }
  
-+  power-domains:
-+    description:
-+      The TPHY of MediaTek should exist within a power domain. The
-+      developer should be aware that the hardware design of MediaTek TPHY
-+      does not require the addition of MTCMOS. If the power to the TPHY
-+      is turned off, it will impact other functions. From the current
-+      perspective of USB hardware design, even if MTCMOS is added to the
-+      TPHY, it should remain always on.
-+    maxItems: 1
++static void rockchip_usb2phy_clk_bulk_disable(void *data)
++{
++	struct rockchip_usb2phy *rphy = data;
 +
- # Required child node:
- patternProperties:
-   "^(usb|pcie|sata)-phy@[0-9a-f]+$":
++	clk_bulk_disable_unprepare(rphy->num_clks, rphy->clks);
++}
++
+ static int rockchip_usb2phy_clk480m_prepare(struct clk_hw *hw)
+ {
+ 	struct rockchip_usb2phy *rphy =
+@@ -376,7 +385,9 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
+ {
+ 	struct device_node *node = rphy->dev->of_node;
+ 	struct clk_init_data init;
++	struct clk *refclk = NULL;
+ 	const char *clk_name;
++	int i;
+ 	int ret = 0;
+ 
+ 	init.flags = 0;
+@@ -386,8 +397,15 @@ rockchip_usb2phy_clk480m_register(struct rockchip_usb2phy *rphy)
+ 	/* optional override of the clockname */
+ 	of_property_read_string(node, "clock-output-names", &init.name);
+ 
+-	if (rphy->clk) {
+-		clk_name = __clk_get_name(rphy->clk);
++	for (i = 0; i < rphy->num_clks; i++) {
++		if (!strncmp(rphy->clks[i].id, "phyclk", 6)) {
++			refclk = rphy->clks[i].clk;
++			break;
++		}
++	}
++
++	if (!IS_ERR(refclk)) {
++		clk_name = __clk_get_name(refclk);
+ 		init.parent_names = &clk_name;
+ 		init.num_parents = 1;
+ 	} else {
+@@ -1399,15 +1417,26 @@ static int rockchip_usb2phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(rphy->phy_reset))
+ 		return PTR_ERR(rphy->phy_reset);
+ 
+-	rphy->clk = devm_clk_get_optional_enabled(dev, "phyclk");
+-	if (IS_ERR(rphy->clk))
+-		return dev_err_probe(&pdev->dev, PTR_ERR(rphy->clk),
+-				     "failed to get phyclk\n");
++	ret = devm_clk_bulk_get_all(dev, &rphy->clks);
++	if (ret == -EPROBE_DEFER)
++		return dev_err_probe(&pdev->dev, -EPROBE_DEFER,
++				     "failed to get phy clock\n");
++
++	/* Clocks are optional */
++	rphy->num_clks = ret < 0 ? 0 : ret;
+ 
+ 	ret = rockchip_usb2phy_clk480m_register(rphy);
+ 	if (ret)
+ 		return dev_err_probe(dev, ret, "failed to register 480m output clock\n");
+ 
++	ret = clk_bulk_prepare_enable(rphy->num_clks, rphy->clks);
++	if (ret)
++		return dev_err_probe(dev, ret, "failed to enable phy clock\n");
++
++	ret = devm_add_action_or_reset(dev, rockchip_usb2phy_clk_bulk_disable, rphy);
++	if (ret)
++		return ret;
++
+ 	if (rphy->phy_cfg->phy_tuning) {
+ 		ret = rphy->phy_cfg->phy_tuning(rphy);
+ 		if (ret)
 -- 
 2.45.2
 
