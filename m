@@ -4,66 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6641D0D79C
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 14:37:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16703D0D79F
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 14:40:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HqlL8FFzTVH1/Nuizu6xCfm1tFt/BOyu2DqRcvXv0RI=; b=jp3gCWZPV9yeeY
-	uB7jFcF/HEne0riv7DvwBVvBWLSf358yVVl5IHahkl4KsHxBuWplMl1es1CU+pLdPKvbTq1FvNlbl
-	6N7mjzF0ZMKyOoFxTYh3WpbDAf3ZociTWBMJ6jymF3FIHXVrEA/vo1UOF/gHK6WI3hNeEvFyQknLF
-	SYaDcxB6rxs3r88kZ54KczhyzBQA32L7YKJrLozVXYQpKr+NQjXYmJGxGhAmxzQPAPIahxO9y+GaO
-	cr/9eMP/r68KO33ykrOVLAv4oGnRb21ZcB95QvLOgSIXIHSRHZUVVEXLs+DUN4A+O4rWT74s/wVI6
-	SKXzRZRTMQMSv0qEOY2Q==;
+	List-Owner; bh=vGjssjKxr1h3u7fMq5Be2WZ6qWJlSSvtBOzlEkjRUg4=; b=f+WshRHyn8It4w
+	Mr+umTvXBQFrVoLINknMJn3Tu1Z3pmO/12cwgk1JnI9aXwwNc3Nj4JFHI9XSsp19lO+KPwXQzfQrD
+	kAKKvBFuZ2qZjW2iYSAVh7hEkkSs85uaiYCXNxqJ1OrwPWHapY5VJ3lY1ykM0CkedJOKnkmq3R1Il
+	tfLBT5uz7+fR74q3IbCxdyB0QUnEQF7d553GxMQg8Dq5L1FQseKDtj/B2nTkBb+uUaZ1TpDi/1MRx
+	NXAw1Wupbotg9hV5cV8ycEo1rIlJhCft/+d0yMRjxs2NWI3aJV9RCY26Kz4VbpI7V7vGY24paXOuG
+	D2TIO9e0EvqrWziqFTFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1szGmA-0000000Gd4M-1vA1;
-	Fri, 11 Oct 2024 14:37:54 +0000
+	id 1szGos-0000000GdkE-36T3;
+	Fri, 11 Oct 2024 14:40:42 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1szGiR-0000000GcHK-0m1e
+	id 1szGkt-0000000Gcj7-1rQO
 	for linux-phy@lists.infradead.org;
-	Fri, 11 Oct 2024 14:34:04 +0000
+	Fri, 11 Oct 2024 14:36:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 704A0A44909;
-	Fri, 11 Oct 2024 14:33:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FDC9C4CEC3;
-	Fri, 11 Oct 2024 14:34:00 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id E4444A44914;
+	Fri, 11 Oct 2024 14:36:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF95CC4CEC7;
+	Fri, 11 Oct 2024 14:36:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728657241;
-	bh=WPP/cksWSY6sZJvpmvmFHWLmcM1V/s10fU0P9R11wbE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=N9+fB3D91ueFo0rcVbNGGeCY53sSPiqiTZHwpMI9y6jrVisKiZq/RG6RdBYSGdRSH
-	 pozVZXC+Ud2N1R+ytURHEXJ6gFW89uDhDzCbWYG4uU+NdlnkZCXU2kRki0IaCd1s1W
-	 DovK66my0/K7NBkYnslOQM+ilcJ4J1o8lPPF2LGpRu7jgNdVY9KpxPSM2S/FxU04Ts
-	 OGYOVld079NgpX2CZLZ+7e9gAJtQzp0KHQHdHxp7f5Q4Odybzy00NPjGhX+utkFMQk
-	 k5KKKUS9w9cVgyDq0v9QbZn+yWTPDA7QVHv8nHqG0oGLOIdsZoYOFv0xBCd8jOfTjS
-	 VG+mdfSCtfXKQ==
-Date: Fri, 11 Oct 2024 16:33:58 +0200
+	s=k20201202; t=1728657394;
+	bh=elTTuQlhe68qlI7O7q5tMA03WudpGcGqjtAOdfqvfuA=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=sF4QHqW9rn0Q59fdNsnpCmNanVUU2iXqmZSnV0CgncA2F1ARM2OUZVpqgD2L3CEye
+	 jFnBiBX4SG5yxNlwDYR43PCmLkCcmGMsfeQM744V5BEt97bQ38/0VJE5jsBoHDphg4
+	 7uCuL8GP3lUbVXcOgpjQl410CkV+l6nddbhGTJd5L+78HkU9Z0jWgdBUU1OhCRrlCI
+	 Pni0UIT36/oseekkB3W2T7dLs1lwWnXxKvp+nji4aB3/x7msrmZAJjBl9Uf4rAZ4to
+	 aA6BJntRAP5vu7+AjdUXohpjbg3091gMQUonHRc5Sy4UeC0QRCWga8w8Oj82LKVMEt
+	 mDUo6hTBRGLjQ==
+Message-ID: <937d3d61-482a-4a14-a594-615f10baf5f0@kernel.org>
+Date: Fri, 11 Oct 2024 16:36:22 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 3/8] dt-bindings: PCI: qcom,pcie-x1e80100: Add 'global'
+ interrupt
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Qiang Yu <quic_qianyu@quicinc.com>
-Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org, 
-	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, mturquette@baylibre.com, sboyd@kernel.org, abel.vesa@linaro.org, 
-	quic_msarkar@quicinc.com, quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org, 
-	kw@linux.com, lpieralisi@kernel.org, neil.armstrong@linaro.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH v6 3/8] dt-bindings: PCI: qcom,pcie-x1e80100: Add
- 'global' interrupt
-Message-ID: <eyxkgcmgv5mejjifzsevkzm2yqdknilizrvhwryd745pkfalgk@kau4lq4cd7g3>
+Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+ robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+ krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
+ sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
+ quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org, kw@linux.com,
+ lpieralisi@kernel.org, neil.armstrong@linaro.org,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-clk@vger.kernel.org
 References: <20241011104142.1181773-1-quic_qianyu@quicinc.com>
  <20241011104142.1181773-4-quic_qianyu@quicinc.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241011104142.1181773-4-quic_qianyu@quicinc.com>
+ <eyxkgcmgv5mejjifzsevkzm2yqdknilizrvhwryd745pkfalgk@kau4lq4cd7g3>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
+ QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
+ gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
+ /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
+ iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
+ VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
+ 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
+ xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
+ eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
+ AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
+ MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
+ Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
+ ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
+ vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
+ oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
+ lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
+ t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
+ uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
+ 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
+ 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
+In-Reply-To: <eyxkgcmgv5mejjifzsevkzm2yqdknilizrvhwryd745pkfalgk@kau4lq4cd7g3>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241011_073403_318788_0413EDB2 
-X-CRM114-Status: UNSURE (   7.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241011_073635_653840_2B9C69E6 
+X-CRM114-Status: GOOD (  10.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,24 +126,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 11, 2024 at 03:41:37AM -0700, Qiang Yu wrote:
-> Document 'global' SPI interrupt along with the existing MSI interrupts so
-> that QCOM PCIe RC driver can make use of it to get events such as PCIe
-> link specific events, safety events, etc.
-
-Describe the hardware, not what the driver will do.
-
+On 11/10/2024 16:33, Krzysztof Kozlowski wrote:
+> On Fri, Oct 11, 2024 at 03:41:37AM -0700, Qiang Yu wrote:
+>> Document 'global' SPI interrupt along with the existing MSI interrupts so
+>> that QCOM PCIe RC driver can make use of it to get events such as PCIe
+>> link specific events, safety events, etc.
 > 
-> Though adding a new interrupt will break the ABI, it is required to
-> accurately describe the hardware.
+> Describe the hardware, not what the driver will do.
+> 
+>>
+>> Though adding a new interrupt will break the ABI, it is required to
+>> accurately describe the hardware.
+> 
+> That's poor reason. Hardware was described and missing optional piece
+> (because according to your description above everything was working
+> fine) is not needed to break ABI.
+> 
+> Sorry, if your driver changes the ABI for this poor reason.
+> 
+> NAK.
+> 
 
-That's poor reason. Hardware was described and missing optional piece
-(because according to your description above everything was working
-fine) is not needed to break ABI.
+Plus you did not test DTS, not fixed existing users.
 
-Sorry, if your driver changes the ABI for this poor reason.
-
-NAK.
+That's v6, so we assume you already know how to test it and do the
+testing before posting new versions.
 
 Best regards,
 Krzysztof
