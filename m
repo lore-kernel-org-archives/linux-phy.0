@@ -4,86 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DCBECEDDBD
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 07:06:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44851CFD316
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 10:44:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uv9z04F++7K6gxfP8hoJxRtnIlzTkflI9zj+Rxj6PsA=; b=eowV6k0sajfzoW
-	92ckp8cCFeWKfxsMvw9UpUL/aif4hKiQdknAWsk98mKlyvp1SRRurt9UoC2GaQ1utyWZXQ/OkOF+z
-	7HnlVB3x7h4zwLKF4LhLUZC9I9rHfhv1zI8Y7XEtllZs3NxfE0eVJAG6XgtKr0DgxqOEajt6+27T9
-	bU+lxclX6IdszhgwKwuPkciVZPSIjDRcAjBi6negHwcUd6htGOcv+isjICpG/C87agby6bQkKyNYC
-	ziB3fNI8Eh5UHUCWDKfa/dphY06x1kEjka35CF+k5KVsnfKehktfzj2ZSd2NlHwDhWtsqk1stUyP0
-	VYFJ+j2fdWV60yPrnOGA==;
+	List-Owner; bh=WCSVR38YuqpQsMf2zPNBMBnhf4mdrzfHAY0uYnaEFYU=; b=wEycyyhen+ZTuA
+	ZbBfMy8/MUApsFgntkW0BFyB9F9gU11h7TgeJTL+h1+2gwl4o3R4kegUD4q9CUfvL4n9c03RYTWkX
+	7vvlAf0q4AnbAvNw2Gjfhf3X3BdG/1avZVbFZA9eEKPlQNd9eWW3Ru6E+bSPpBN3Q8k8HxI89S1OO
+	Vpj51g7udfF7Krlj/pePSxiOj0NJd/UFoq2SBHrnnRJSFopFKAM6InHLm+Ga0HzCF46Gb1s0JNpNO
+	A6lMXp9vASIb9Xkv4M57WoUXzYxaDW/bvVSLZhjsABSVQKaMW/qTTbTav8Lbba0IYNRf93oa8gslM
+	REcP+Z1OLnv3INU8xExw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sz9is-0000000FUQU-17ok;
-	Fri, 11 Oct 2024 07:06:02 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1szD8A-0000000G2WQ-45pJ;
+	Fri, 11 Oct 2024 10:44:22 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sz9ZZ-0000000FStL-0ELt;
-	Fri, 11 Oct 2024 06:56:26 +0000
-X-UUID: ec048956879d11efb3adad29d29602c1-20241010
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID; bh=8I6A2olOCtmG5k5rmKmYtyOQFqvwL84wIi1DSFnmSP4=;
-	b=DhDTtYN7VILXZEY+98qOUyp4UqI61eyLpzzTIeiunRvIDx6XTFEh0X75rthRuaoQUrCI+mq1eyTgpIDhXUM8gXK5lOcUa5R0SYS3bztCesFmUgRiyia4wyyCxUr/yv3EjAT6mu9/nan51goeW47r2+Iojdoaozc1X2blvNx3jm4=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.41,REQID:be2aaae4-c5d7-4c8e-951a-ba4a8083d733,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:6dc6a47,CLOUDID:97101565-444a-4b47-a99a-591ade3b04b2,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0|-5,EDM:-3,IP:ni
-	l,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES
-	:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0,NGT
-X-CID-BAS: 0,NGT,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-UUID: ec048956879d11efb3adad29d29602c1-20241010
-Received: from mtkmbs14n1.mediatek.inc [(172.21.101.75)] by mailgw01.mediatek.com
-	(envelope-from <macpaul.lin@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 2078057091; Thu, 10 Oct 2024 23:56:21 -0700
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- MTKMBS09N1.mediatek.inc (172.21.101.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Fri, 11 Oct 2024 14:56:18 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkmbs11n2.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.2.1118.26 via Frontend
- Transport; Fri, 11 Oct 2024 14:56:16 +0800
-Message-ID: <30955c9f-2133-46fe-aaa8-6709d6e301c5@mediatek.com>
-Date: Fri, 11 Oct 2024 14:56:15 +0800
+	id 1szD5z-0000000G1DK-3AqA
+	for linux-phy@bombadil.infradead.org;
+	Fri, 11 Oct 2024 10:42:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=fM+DrFtFwy1+oio8hpHJjcoOsNaQT5+Glmr5yzAR83g=; b=N0fNfnTjYXKJ14ILVPP5eybfbP
+	h6DJpuexHAgZr40wkO7BrjdHFtH4OL5iRDrqQqBscMzaTFjj8De8DflW2ieBOWuc3Uab/lDlrUmcW
+	karBmN14xuSFRtk9LMybxrf41F4kxW93LEsnu4fpma9e8+bx2Fgmn9oSmJ7r/KyPADqLH/9aO6aRH
+	piavXZSb+RxmdCT2CTqvZpeqFORQpKQdZAPxzoW+XEWvSzv1aSn5/SHdR2BaDcZ9PGymX+kjgSJPM
+	8YzbMjvQhCr6lAk4utaSFZLuXOEZD4Hshj/StzcXaXYpmuk2jqdpfV9RivNPe1+m6/Lcn1hSLUQtX
+	tpOUeXWw==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1szD5s-00000005rGy-31Kn
+	for linux-phy@lists.infradead.org;
+	Fri, 11 Oct 2024 10:42:06 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49B3aUd8027261;
+	Fri, 11 Oct 2024 10:41:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=fM+DrFtFwy1
+	+oio8hpHJjcoOsNaQT5+Glmr5yzAR83g=; b=lKaxJGWH32hvgH5dZe2CPNjm/TJ
+	azew8lrajBRWhcKR5JWAKWRiKjJ0COzmebUogISxwyCMGOd/Vyv4Bdy0nELzMahq
+	KySVnC3KuB4YKuWxbdNjEEULnjkwriTbsp5H+xpJTcO/AxU8zZOyrhuswMFOSQ/H
+	NVkJ8E4Fv9zNxdGlg1T24CZ7o/g7S1EVFDRFldbHHpIXEGB441IWsWS5i4W4IQvG
+	iq/h5sItCOOvJ3HJUzGwVIjbfJSZaSBvumkDgLLda/2qLV/XKg3hz8E8NVAPluSv
+	viC72vxtbiUNVELFUbM7LFpxRg4ZGUvsw403Zl+1jIT6tra3MURW12qrhRw==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 426fj6u1a1-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 11 Oct 2024 10:41:48 +0000 (GMT)
+Received: from pps.filterd (NALASPPMTA02.qualcomm.com [127.0.0.1])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 49BAU4NY016719;
+	Fri, 11 Oct 2024 10:41:47 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by NALASPPMTA02.qualcomm.com (PPS) with ESMTPS id 426uxek3yb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 11 Oct 2024 10:41:47 +0000
+Received: from NALASPPMTA02.qualcomm.com (NALASPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 49BAfl4a000500;
+	Fri, 11 Oct 2024 10:41:47 GMT
+Received: from hu-devc-lv-u22-c.qualcomm.com (hu-qianyu-lv.qualcomm.com [10.81.25.114])
+	by NALASPPMTA02.qualcomm.com (PPS) with ESMTPS id 49BAfkjj000499
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 11 Oct 2024 10:41:47 +0000
+Received: by hu-devc-lv-u22-c.qualcomm.com (Postfix, from userid 4098150)
+	id DA296651; Fri, 11 Oct 2024 03:41:46 -0700 (PDT)
+From: Qiang Yu <quic_qianyu@quicinc.com>
+To: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+        robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
+        sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
+        quic_devipriy@quicinc.com
+Cc: dmitry.baryshkov@linaro.org, kw@linux.com, lpieralisi@kernel.org,
+        neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-clk@vger.kernel.org, Qiang Yu <quic_qianyu@quicinc.com>,
+        stable@vger.kernel.org, Mike Tipton <quic_mdtipton@quicinc.com>,
+        Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH v6 5/8] clk: qcom: gcc-x1e80100: Fix halt_check for pipediv2 clocks
+Date: Fri, 11 Oct 2024 03:41:39 -0700
+Message-Id: <20241011104142.1181773-6-quic_qianyu@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241011104142.1181773-1-quic_qianyu@quicinc.com>
+References: <20241011104142.1181773-1-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.1
-Subject: Re: [PATCH] dt-bindings: phy: mediatek: tphy: add a property for
- power-domains
-Content-Language: en-US
-To: Conor Dooley <conor@kernel.org>
-CC: Jason-ch Chen <Jason-ch.Chen@mediatek.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>, Chunfeng Yun
-	<chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Matthias
- Brugger <matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Alexandre
- Mergnat <amergnat@baylibre.com>, Bear Wang <bear.wang@mediatek.com>, Pablo
- Sun <pablo.sun@mediatek.com>, Macpaul Lin <macpaul@gmail.com>, Sen Chu
-	<sen.chu@mediatek.com>, Chris-qj chen <chris-qj.chen@mediatek.com>, MediaTek
- Chromebook Upstream <Project_Global_Chrome_Upstream_Group@mediatek.com>,
-	Chen-Yu Tsai <wenst@chromium.org>
-References: <20240926101804.22471-1-macpaul.lin@mediatek.com>
- <20240926-treadmill-purr-b2e3279a14a4@spud>
- <3a970560-2458-f5f3-87c5-925079fa12a4@mediatek.com>
- <20241008-disorder-slacking-d8196ceb68f7@spud>
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-In-Reply-To: <20241008-disorder-slacking-d8196ceb68f7@spud>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: CkvloQ8YEJCuLTC0qJycda0ol7u3FqzL
+X-Proofpoint-ORIG-GUID: CkvloQ8YEJCuLTC0qJycda0ol7u3FqzL
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 mlxlogscore=954
+ lowpriorityscore=0 spamscore=0 malwarescore=0 adultscore=0 suspectscore=0
+ clxscore=1015 mlxscore=0 impostorscore=0 priorityscore=1501 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2410110073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241010_235625_136761_93E3054A 
-X-CRM114-Status: GOOD (  21.03  )
+X-CRM114-CacheID: sfid-20241011_114201_728249_D3AF3670 
+X-CRM114-Status: GOOD (  12.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,75 +122,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The pipediv2_clk's source from the same mux as pipe clock. So they have
+same limitation, which is that the PHY sequence requires to enable these
+local CBCs before the PHY is actually outputting a clock to them. This
+means the clock won't actually turn on when we vote them. Hence, let's
+skip the halt bit check of the pipediv2_clk, otherwise pipediv2_clk may
+stuck at off state during bootup.
 
+Cc: stable@vger.kernel.org
+Fixes: 161b7c401f4b ("clk: qcom: Add Global Clock controller (GCC) driver for X1E80100")
+Suggested-by: Mike Tipton <quic_mdtipton@quicinc.com>
+Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+Reviewed-by: Konrad Dybcio <konradybcio@kernel.org>
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+---
+ drivers/clk/qcom/gcc-x1e80100.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-On 10/9/24 00:31, Conor Dooley wrote:
-> On Tue, Oct 08, 2024 at 12:03:37PM +0800, Macpaul Lin wrote:
->>
->>
->> On 9/27/24 00:25, Conor Dooley wrote:
->>> On Thu, Sep 26, 2024 at 06:18:04PM +0800, Macpaul Lin wrote:
->>>> Some platforms requires a dependency for power-domains.
->>>
->>> Some, so not all? Why isn't this restricted on a per compatible basis?
->>
->> After discussion with Chunfeng and double check tphy design in detail.
->> Chunfeng commented that tphy dose not need to add mtcmos.
->> It is not necessary to add it, if the power of the phy is turned off,
->> it will affect other functions.
->>
->>  From the current USB hardware design perspective, even if mtcmos
->> is added to the phy, it is always on.
-> 
-> Firstly, I have no idea what "mtcmos" means, sorry. I am a dt-bindings
-> guy, not someone familiar with mediatek hardware.
-> Secondly, it sounds like this /does/ have a power domain, so it should
-> be in the binding. That it is turned on by something else and must
-> remain on doesn't mean it shouldn't be documented here. What if those
-> things try to turn it off while the tphy is using it?
+diff --git a/drivers/clk/qcom/gcc-x1e80100.c b/drivers/clk/qcom/gcc-x1e80100.c
+index 0f578771071f..81ba5ceab342 100644
+--- a/drivers/clk/qcom/gcc-x1e80100.c
++++ b/drivers/clk/qcom/gcc-x1e80100.c
+@@ -3123,7 +3123,7 @@ static struct clk_branch gcc_pcie_3_pipe_clk = {
+ 
+ static struct clk_branch gcc_pcie_3_pipediv2_clk = {
+ 	.halt_reg = 0x58060,
+-	.halt_check = BRANCH_HALT_VOTED,
++	.halt_check = BRANCH_HALT_SKIP,
+ 	.clkr = {
+ 		.enable_reg = 0x52020,
+ 		.enable_mask = BIT(5),
+@@ -3248,7 +3248,7 @@ static struct clk_branch gcc_pcie_4_pipe_clk = {
+ 
+ static struct clk_branch gcc_pcie_4_pipediv2_clk = {
+ 	.halt_reg = 0x6b054,
+-	.halt_check = BRANCH_HALT_VOTED,
++	.halt_check = BRANCH_HALT_SKIP,
+ 	.clkr = {
+ 		.enable_reg = 0x52010,
+ 		.enable_mask = BIT(27),
+@@ -3373,7 +3373,7 @@ static struct clk_branch gcc_pcie_5_pipe_clk = {
+ 
+ static struct clk_branch gcc_pcie_5_pipediv2_clk = {
+ 	.halt_reg = 0x2f054,
+-	.halt_check = BRANCH_HALT_VOTED,
++	.halt_check = BRANCH_HALT_SKIP,
+ 	.clkr = {
+ 		.enable_reg = 0x52018,
+ 		.enable_mask = BIT(19),
+@@ -3511,7 +3511,7 @@ static struct clk_branch gcc_pcie_6a_pipe_clk = {
+ 
+ static struct clk_branch gcc_pcie_6a_pipediv2_clk = {
+ 	.halt_reg = 0x31060,
+-	.halt_check = BRANCH_HALT_VOTED,
++	.halt_check = BRANCH_HALT_SKIP,
+ 	.clkr = {
+ 		.enable_reg = 0x52018,
+ 		.enable_mask = BIT(28),
+@@ -3649,7 +3649,7 @@ static struct clk_branch gcc_pcie_6b_pipe_clk = {
+ 
+ static struct clk_branch gcc_pcie_6b_pipediv2_clk = {
+ 	.halt_reg = 0x8d060,
+-	.halt_check = BRANCH_HALT_VOTED,
++	.halt_check = BRANCH_HALT_SKIP,
+ 	.clkr = {
+ 		.enable_reg = 0x52010,
+ 		.enable_mask = BIT(28),
+-- 
+2.34.1
 
-After discussion in MediaTek internal. Chunfeng agreed to
-add 'power-domains' property to DT schema. The v2 patch will
-also adding the reminder in the description for developers.
-
->>
->>>> So we add property 'power-domains' and set 'maxItems: 1' in the
->>>> DT Schema.
->>>>
->>>> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
->>>> ---
->>>>    Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 3 +++
->>>>    1 file changed, 3 insertions(+)
->>>>
->>>> diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>> index 423b7c4e62f2..c77fe43c224a 100644
->>>> --- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>> +++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
->>>> @@ -125,6 +125,9 @@ properties:
->>>>        $ref: /schemas/types.yaml#/definitions/uint32
->>>>        default: 28
->>>> +  power-domains:
->>>> +    maxItems: 1
->>>> +
->>>>    # Required child node:
->>>>    patternProperties:
->>>>      "^(usb|pcie|sata)-phy@[0-9a-f]+$":
->>>> -- 
->>>> 2.45.2
->>>>
->>
-
-[snip]
-
-V2 of this patch has been send.
-
-Thanks
-Macpaul Lin.
 
 -- 
 linux-phy mailing list
