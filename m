@@ -4,112 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16703D0D79F
-	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 14:40:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F28CD0D79C
+	for <linux-phy@archiver.kernel.org>; Fri, 11 Oct 2024 14:43:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vGjssjKxr1h3u7fMq5Be2WZ6qWJlSSvtBOzlEkjRUg4=; b=f+WshRHyn8It4w
-	Mr+umTvXBQFrVoLINknMJn3Tu1Z3pmO/12cwgk1JnI9aXwwNc3Nj4JFHI9XSsp19lO+KPwXQzfQrD
-	kAKKvBFuZ2qZjW2iYSAVh7hEkkSs85uaiYCXNxqJ1OrwPWHapY5VJ3lY1ykM0CkedJOKnkmq3R1Il
-	tfLBT5uz7+fR74q3IbCxdyB0QUnEQF7d553GxMQg8Dq5L1FQseKDtj/B2nTkBb+uUaZ1TpDi/1MRx
-	NXAw1Wupbotg9hV5cV8ycEo1rIlJhCft/+d0yMRjxs2NWI3aJV9RCY26Kz4VbpI7V7vGY24paXOuG
-	D2TIO9e0EvqrWziqFTFA==;
+	List-Owner; bh=w791wV6ey31nn5dbE7vEdjXUnodU/7D6tWcrw8ePPMc=; b=VmSrdw7jEdNOQt
+	k7rrCH3HtHD3xIxxg+PFzIqN83B7/soa7l9OlnNBIzkm+lGyhwBq0jke64y7Zzpz4MnukpJVbcnuM
+	6DafJeuvw5JhECz3kp0FCda+uUxrQxeFrssdwI6qBKnv4wL+Zj73vWur4aP6zx2i7+rBsxG+HqNge
+	VBaQX3DLLOYb/VgFeHjAOaRZzScgEhqx6Fn+/DvOGgjAGGhqV2c3IEAsECnQedSlvClWWoRER1hvV
+	sg05JMcko8ETIAOQCtGE4agua4PJiKBsqrHU5FfFsIWjNfDoOyL35TMMyhIeNiChRFi3AdSPh/pm9
+	qyW2QtR64BoI4iFBYUVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1szGos-0000000GdkE-36T3;
-	Fri, 11 Oct 2024 14:40:42 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1szGra-0000000Gehv-0ocG;
+	Fri, 11 Oct 2024 14:43:30 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1szGkt-0000000Gcj7-1rQO
-	for linux-phy@lists.infradead.org;
-	Fri, 11 Oct 2024 14:36:36 +0000
+	id 1szGn4-0000000GdCx-02Y5;
+	Fri, 11 Oct 2024 14:38:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id E4444A44914;
-	Fri, 11 Oct 2024 14:36:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EF95CC4CEC7;
-	Fri, 11 Oct 2024 14:36:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id DB6C25C5BA3;
+	Fri, 11 Oct 2024 14:38:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA666C4CEC3;
+	Fri, 11 Oct 2024 14:38:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728657394;
-	bh=elTTuQlhe68qlI7O7q5tMA03WudpGcGqjtAOdfqvfuA=;
-	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
-	b=sF4QHqW9rn0Q59fdNsnpCmNanVUU2iXqmZSnV0CgncA2F1ARM2OUZVpqgD2L3CEye
-	 jFnBiBX4SG5yxNlwDYR43PCmLkCcmGMsfeQM744V5BEt97bQ38/0VJE5jsBoHDphg4
-	 7uCuL8GP3lUbVXcOgpjQl410CkV+l6nddbhGTJd5L+78HkU9Z0jWgdBUU1OhCRrlCI
-	 Pni0UIT36/oseekkB3W2T7dLs1lwWnXxKvp+nji4aB3/x7msrmZAJjBl9Uf4rAZ4to
-	 aA6BJntRAP5vu7+AjdUXohpjbg3091gMQUonHRc5Sy4UeC0QRCWga8w8Oj82LKVMEt
-	 mDUo6hTBRGLjQ==
-Message-ID: <937d3d61-482a-4a14-a594-615f10baf5f0@kernel.org>
-Date: Fri, 11 Oct 2024 16:36:22 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 3/8] dt-bindings: PCI: qcom,pcie-x1e80100: Add 'global'
- interrupt
+	s=k20201202; t=1728657528;
+	bh=Hgd6/MnZlw7QnHGiY+zYelPvbloqyZAOn1X5DsWCAek=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=pmdA/Zqws1TABjcWPDhTbDQuItzuA1vihySaNY+7mjcOBZzRcRvcUqSg0ixVEk6aK
+	 4tKvrquUaakBeBcNaipW5ufjZXN5exR5eC5OhoaGP7s/ujVWkkeLuNrtTS/VEVXVJq
+	 I9FXtriA2VvA+qUHKtVvf8SCK5pP63PgbMf4diLaNochyxZkg8cmZ3+LBf+hULVP//
+	 ZAp8bnw75SgcyuDlRWbYsrsvecs8VGyC/O8OInb4EVU5nt0j46UuBJquZsFbR+bRk/
+	 YUEehXdWfxsF8hYyXMpAdhmCKZ5TaWC2EXGpf3irnLGdwdJH4j86Llxo0qriRDFa1I
+	 ub8dfONZU9vnA==
+Date: Fri, 11 Oct 2024 16:38:44 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Qiang Yu <quic_qianyu@quicinc.com>
-Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
- sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
- quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org, kw@linux.com,
- lpieralisi@kernel.org, neil.armstrong@linaro.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-clk@vger.kernel.org
-References: <20241011104142.1181773-1-quic_qianyu@quicinc.com>
- <20241011104142.1181773-4-quic_qianyu@quicinc.com>
- <eyxkgcmgv5mejjifzsevkzm2yqdknilizrvhwryd745pkfalgk@kau4lq4cd7g3>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <eyxkgcmgv5mejjifzsevkzm2yqdknilizrvhwryd745pkfalgk@kau4lq4cd7g3>
+To: Frank Wang <frawang.cn@gmail.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, heiko@sntech.de, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, william.wu@rock-chips.com, 
+	tim.chen@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>
+Subject: Re: [PATCH v5 2/3] dt-bindings: phy: rockchip,inno-usb2phy: add
+ rk3576
+Message-ID: <vauotttw6efm6krwcn2krw47gq6zhgb4nvs3ctv2e4khvizi5z@vwsu7imdbf5t>
+References: <20241011065140.19999-1-frawang.cn@gmail.com>
+ <20241011065140.19999-2-frawang.cn@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241011065140.19999-2-frawang.cn@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241011_073635_653840_2B9C69E6 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20241011_073850_111440_6E044C47 
+X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,31 +77,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/10/2024 16:33, Krzysztof Kozlowski wrote:
-> On Fri, Oct 11, 2024 at 03:41:37AM -0700, Qiang Yu wrote:
->> Document 'global' SPI interrupt along with the existing MSI interrupts so
->> that QCOM PCIe RC driver can make use of it to get events such as PCIe
->> link specific events, safety events, etc.
+On Fri, Oct 11, 2024 at 02:51:39PM +0800, Frank Wang wrote:
+> From: Frank Wang <frank.wang@rock-chips.com>
 > 
-> Describe the hardware, not what the driver will do.
+> Add compatible for the USB2 phy in the Rockchip RK3576 SoC.
 > 
->>
->> Though adding a new interrupt will break the ABI, it is required to
->> accurately describe the hardware.
+> This change also refactor the clocks list as there are new clocks
+> adding used for the USB MMU in RK3576 SoC.
 > 
-> That's poor reason. Hardware was described and missing optional piece
-> (because according to your description above everything was working
-> fine) is not needed to break ABI.
-> 
-> Sorry, if your driver changes the ABI for this poor reason.
-> 
-> NAK.
-> 
+> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+> ---
 
-Plus you did not test DTS, not fixed existing users.
+Thanks for the changes.
 
-That's v6, so we assume you already know how to test it and do the
-testing before posting new versions.
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
