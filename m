@@ -4,64 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30C18CF2571
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Oct 2024 17:37:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2686DCF2572
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Oct 2024 17:50:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NZwUawS1mbsRJmRwhRWjbhx1uBdUkA9snYYI26ToXUs=; b=Yv10ugraCBXqcb
-	f8JflRByG4mKgctPinjrHfxD3aIMdyvHsP/4x0n0IRbJnsbMboQwCp1aRWUTiXg0zX18piFhCuU+G
-	u7lsSGLsnor3rB5byzDeDnmPaGEKDdVB4k5jqhszm02TjqVrIssgSuB3Kz2gSraM4aGfEgry7iCna
-	8bpH+mjsO9xIWwOzfXnCpb5aBYfJkaDGNJTf4jNpZL88R97VvbVYQSv3YhpYAtoFiHJR1krYZ/sZ0
-	5Fjjnk6Cm35o5Xwya5bt1W4niGdN7RgtECrc8zKgI2PEIidcA/fOiahk6yLiuyLyL2TsTNShJADy8
-	gpWnVBIIN9mdlSQleszw==;
+	List-Owner; bh=MNbjZvEjDb5v2pM21U1R6H01tqFcKDqG6akSxX4K8AM=; b=ZiCPxGlAYYzGzM
+	A9uo5kaHXaSL06JGW0Yhhfr+ZUQytZKTZ7NCI+scoR8GlyGA5iHi6uNdk6JK7nhfGynwkEKcWH98y
+	pXSArfnMhN7GVyl4X4YrsFGbgLjpOEvNcDwJ1vq1ttmVBnV1vSs0Li8mviK1neHKOwc/lWtf/J3YV
+	QDCX+6i9+Wvb8LfBRXdaOFGoMLi8B3V4IzdoczKeMT7WLrElp1LwQLtMkpR/xwIeOZibGL3P91UVc
+	D2xwN+4gqruiySUJWjjrv1QTrJgU1olK/juYrYX7ELx20CELZkPBDOoKxWMunvqw0hAXslVJ+vEIm
+	cMLtUhDzgou/iPjFWdWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1szg3A-00000001Yh0-3gEZ;
-	Sat, 12 Oct 2024 17:37:08 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1szgFz-00000001avU-2yWi;
+	Sat, 12 Oct 2024 17:50:23 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1szg1l-00000001YWE-43aV;
-	Sat, 12 Oct 2024 17:35:43 +0000
+	id 1szgFx-00000001av5-0GXN
+	for linux-phy@lists.infradead.org;
+	Sat, 12 Oct 2024 17:50:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 649255C4DAF;
-	Sat, 12 Oct 2024 17:35:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8EAF8C4CEC6;
-	Sat, 12 Oct 2024 17:35:39 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id F40D05C53EA;
+	Sat, 12 Oct 2024 17:50:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01879C4CEC6;
+	Sat, 12 Oct 2024 17:50:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728754540;
-	bh=FUj3m7AxwKhLtalglvHoMqNJU6DbmtxgHK1NyIs6RcE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=pqvg0FvxCGiQuZMNtxbF4TyokIAWf4Hg79BMflKEdfKw7Caj5+5ycLeJMn3QBXXuu
-	 fHEAaRDcLutjB4jesWjt2XEmWwoYBmXBhOuvxBbbzFaBqiVE61CXV/W+p9Q4x41EPK
-	 A5hCJLF0UwM8AK3KbKIUozTMuOjuRy1kP3422JnPe9w2jd3njjTpK5hD53erQz4AS8
-	 tjD1XVYIlSgMMNLIyhvo5oEJkUIcoyWtz/BhSsrFHIfJmlrO8xtu/Ld/AxAgkbnrYa
-	 cVH654pGqdpPuMGL2LR9hFQMuw+3A+VvulMumunCHNfsdF1rIXYumtbniMj2WJwXh9
-	 2X9AHxlxpThqg==
-Date: Sat, 12 Oct 2024 23:05:36 +0530
+	s=k20201202; t=1728755420;
+	bh=cx6Pvdv1nHHzFGthHhK4crRNguO0nM8fiCJWTSJKPtg=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=RPt2qnIa95w5D+ow6FMQKKSgb/qjFNY3e/ovL1pG3eAWfiOdk/yHs7rVGnzG3Fu6Q
+	 k1FkFM1zyagH2OZi5JXEefIj3I8ECl7KUJS8vwpJ3ruGHRPVsX583VlY5NLJk9r1tb
+	 ZZsnrgsV93wm3mTuOzYLwxhooPUQwSqM5UBKksFPmZrfoVgSOJqr+ZsYhVmNaicWzS
+	 EhvMAy6UQN77CXcBq4c9f9SV7rOBHdEgqoREiWxfah3u5JYXsPH3Moo189VYyvQlP8
+	 8x50u5Czi+PrHxCxdOHLnlFQ6QM3V2PM+pK3aQJSRHJilD7KAUVVMNRIpDx/tmUaDt
+	 /U2H3Yc0bgHVA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
-	kernel@pengutronix.de, festevam@gmail.com,
-	gregkh@linuxfoundation.org, peter.chen@kernel.org,
-	herve.codina@bootlin.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org,
-	jun.li@nxp.com
-Subject: Re: [PATCH v7 1/3] phy: fsl-imx8mq-usb: add tca function driver for
- imx95
-Message-ID: <ZwqzaKH9Ub8poNgX@vaman>
-References: <20241010090822.3915064-1-xu.yang_2@nxp.com>
+To: linux-phy@lists.infradead.org, Justin Chen <justin.chen@broadcom.com>
+Cc: florian.fainelli@broadcom.com, kishon@kernel.org, 
+ bcm-kernel-feedback-list@broadcom.com, alcooperx@gmail.com
+In-Reply-To: <20241010185344.859865-1-justin.chen@broadcom.com>
+References: <20241010185344.859865-1-justin.chen@broadcom.com>
+Subject: Re: [PATCH] phy: usb: disable COMMONONN for dual mode
+Message-Id: <172875541748.55871.12396930604564807795.b4-ty@kernel.org>
+Date: Sat, 12 Oct 2024 23:20:17 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241010090822.3915064-1-xu.yang_2@nxp.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241012_103542_132630_90476E23 
-X-CRM114-Status: GOOD (  35.65  )
+X-CRM114-CacheID: sfid-20241012_105021_185635_64601AD8 
+X-CRM114-Status: UNSURE (   5.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,370 +73,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10-10-24, 17:08, Xu Yang wrote:
-> The i.MX95 USB3 phy has a Type-C Assist block (TCA). This block consists
-> two functional blocks (XBar assist and VBus assist) and one system
-> access interface using APB.
-> 
-> The primary functionality of XBar assist is:
->  - switching lane for flip
->  - moving unused lanes into lower power states.
-> 
-> This info can be get from:
-> i.MX95 RM Chapter 163.3.8 Type-C assist (TCA) block.
-> 
-> This will add support for TCA block to achieve lane switching and tca
-> lower power functionality.
-> 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> Reviewed-by: Jun Li <jun.li@nxp.com>
-> 
-> ---
-> Changes in v2:
->  - return the value of imx95_usb_phy_get_tca()
-> Changes in v3:
->  - no changes
-> Changes in v4:
->  - remove compatible check for imx95
->  - check whether tca register region exist or not, yes means has tca,
->    otherwise skip tca setup
-> Changes in v5:
->  - no changes
-> Changes in v6:
->  - no changes
-> Changes in v7:
->  - fix sparse warnings in imx95_usb_phy_get_tca()
-> ---
->  drivers/phy/freescale/Kconfig              |   1 +
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 243 +++++++++++++++++++++
->  2 files changed, 244 insertions(+)
-> 
-> diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-> index dcd9acff6d01..81f53564ee15 100644
-> --- a/drivers/phy/freescale/Kconfig
-> +++ b/drivers/phy/freescale/Kconfig
-> @@ -5,6 +5,7 @@ if (ARCH_MXC && ARM64) || COMPILE_TEST
->  config PHY_FSL_IMX8MQ_USB
->  	tristate "Freescale i.MX8M USB3 PHY"
->  	depends on OF && HAS_IOMEM
-> +	depends on TYPEC || TYPEC=n
->  	select GENERIC_PHY
->  	default ARCH_MXC && ARM64
->  
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> index adc6394626ce..661191276b27 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -10,6 +10,7 @@
->  #include <linux/phy/phy.h>
->  #include <linux/platform_device.h>
->  #include <linux/regulator/consumer.h>
-> +#include <linux/usb/typec_mux.h>
->  
->  #define PHY_CTRL0			0x0
->  #define PHY_CTRL0_REF_SSP_EN		BIT(2)
-> @@ -50,11 +51,66 @@
->  
->  #define PHY_TUNE_DEFAULT		0xffffffff
->  
-> +#define TCA_CLK_RST			0x00
-> +#define TCA_CLK_RST_SW			BIT(9)
-> +#define TCA_CLK_RST_REF_CLK_EN		BIT(1)
-> +#define TCA_CLK_RST_SUSPEND_CLK_EN	BIT(0)
-> +
-> +#define TCA_INTR_EN			0x04
-> +#define TCA_INTR_STS			0x08
-> +
-> +#define TCA_GCFG			0x10
-> +#define TCA_GCFG_ROLE_HSTDEV		BIT(4)
-> +#define TCA_GCFG_OP_MODE		GENMASK(1, 0)
-> +#define TCA_GCFG_OP_MODE_SYSMODE	0
-> +#define TCA_GCFG_OP_MODE_SYNCMODE	1
-> +
-> +#define TCA_TCPC			0x14
-> +#define TCA_TCPC_VALID			BIT(4)
-> +#define TCA_TCPC_LOW_POWER_EN		BIT(3)
-> +#define TCA_TCPC_ORIENTATION_NORMAL	BIT(2)
-> +#define TCA_TCPC_MUX_CONTRL		GENMASK(1, 0)
-> +#define TCA_TCPC_MUX_CONTRL_NO_CONN	0
-> +#define TCA_TCPC_MUX_CONTRL_USB_CONN	1
-> +
-> +#define TCA_SYSMODE_CFG			0x18
-> +#define TCA_SYSMODE_TCPC_DISABLE	BIT(3)
-> +#define TCA_SYSMODE_TCPC_FLIP		BIT(2)
-> +
-> +#define TCA_CTRLSYNCMODE_CFG0		0x20
-> +#define TCA_CTRLSYNCMODE_CFG1           0x20
-> +
-> +#define TCA_PSTATE			0x30
-> +#define TCA_PSTATE_CM_STS		BIT(4)
-> +#define TCA_PSTATE_TX_STS		BIT(3)
-> +#define TCA_PSTATE_RX_PLL_STS		BIT(2)
-> +#define TCA_PSTATE_PIPE0_POWER_DOWN	GENMASK(1, 0)
-> +
-> +#define TCA_GEN_STATUS			0x34
-> +#define TCA_GEN_DEV_POR			BIT(12)
-> +#define TCA_GEN_REF_CLK_SEL		BIT(8)
-> +#define TCA_GEN_TYPEC_FLIP_INVERT	BIT(4)
-> +#define TCA_GEN_PHY_TYPEC_DISABLE	BIT(3)
-> +#define TCA_GEN_PHY_TYPEC_FLIP		BIT(2)
-> +
-> +#define TCA_VBUS_CTRL			0x40
-> +#define TCA_VBUS_STATUS			0x44
-> +
-> +#define TCA_INFO			0xFC
 
-lowercase please
+On Thu, 10 Oct 2024 11:53:44 -0700, Justin Chen wrote:
+> The COMMONONN bit suspends the phy when the port is put into a suspend
+> state. However when the phy is shared between host and device in dual
+> mode, this no longer works cleanly as there is no synchronization between
+> the two.
+> 
+> 
 
-> +
-> +struct tca_blk {
-> +	struct typec_switch_dev *sw;
-> +	void __iomem *base;
-> +	struct mutex mutex;
-> +	enum typec_orientation orientation;
-> +};
-> +
->  struct imx8mq_usb_phy {
->  	struct phy *phy;
->  	struct clk *clk;
->  	void __iomem *base;
->  	struct regulator *vbus;
-> +	struct tca_blk *tca;
->  	u32 pcs_tx_swing_full;
->  	u32 pcs_tx_deemph_3p5db;
->  	u32 tx_vref_tune;
-> @@ -64,6 +120,175 @@ struct imx8mq_usb_phy {
->  	u32 comp_dis_tune;
->  };
->  
-> +
-> +static void tca_blk_orientation_set(struct tca_blk *tca,
-> +				enum typec_orientation orientation);
-> +
-> +#ifdef CONFIG_TYPEC
-> +
-> +static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
-> +				enum typec_orientation orientation)
-> +{
-> +	struct imx8mq_usb_phy *imx_phy = typec_switch_get_drvdata(sw);
-> +	struct tca_blk *tca = imx_phy->tca;
-> +	int ret;
-> +
-> +	if (tca->orientation == orientation)
-> +		return 0;
-> +
-> +	ret = clk_prepare_enable(imx_phy->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	tca_blk_orientation_set(tca, orientation);
-> +	clk_disable_unprepare(imx_phy->clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
-> +					struct imx8mq_usb_phy *imx_phy)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct typec_switch_dev *sw;
-> +	struct typec_switch_desc sw_desc = { };
-> +
-> +	sw_desc.drvdata = imx_phy;
-> +	sw_desc.fwnode = dev->fwnode;
-> +	sw_desc.set = tca_blk_typec_switch_set;
-> +	sw_desc.name = NULL;
-> +
-> +	sw = typec_switch_register(dev, &sw_desc);
-> +	if (IS_ERR(sw)) {
-> +		dev_err(dev, "Error register tca orientation switch: %ld",
-> +				PTR_ERR(sw));
-> +		return NULL;
-> +	}
-> +
-> +	return sw;
-> +}
-> +
-> +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
-> +{
-> +	typec_switch_unregister(sw);
-> +}
+Applied, thanks!
 
-Why to put a wrapper over an API, call this instead?
+[1/1] phy: usb: disable COMMONONN for dual mode
+      commit: 1e48fd0574ee697e87f9c9bbd64d9a121d271f7a
 
-> +
-> +#else
-> +
-> +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
-> +			struct imx8mq_usb_phy *imx_phy)
-> +{
-> +	return NULL;
-> +}
-> +
-> +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw) {}
-> +
-> +#endif /* CONFIG_TYPEC */
-> +
-> +static void tca_blk_orientation_set(struct tca_blk *tca,
-> +				enum typec_orientation orientation)
-> +{
-> +	u32 val;
-> +
-> +	mutex_lock(&tca->mutex);
-> +
-> +	if (orientation == TYPEC_ORIENTATION_NONE) {
-> +		/*
-> +		 * use Controller Synced Mode for TCA low power enable and
-> +		 * put PHY to USB safe state.
-> +		 */
-> +		val = readl(tca->base + TCA_GCFG);
-> +		val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYNCMODE);
-> +		writel(val, tca->base + TCA_GCFG);
-> +
-> +		val = readl(tca->base + TCA_TCPC);
-> +		val = TCA_TCPC_VALID | TCA_TCPC_LOW_POWER_EN;
-> +		writel(val, tca->base + TCA_TCPC);
-> +
-> +		goto out;
-> +	}
-> +
-> +	/* use System Configuration Mode for TCA mux control. */
-> +	val = readl(tca->base + TCA_GCFG);
-> +	val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYSMODE);
-> +	writel(val, tca->base + TCA_GCFG);
-> +
-> +	/* Disable TCA module */
-> +	val = readl(tca->base + TCA_SYSMODE_CFG);
-> +	val |= TCA_SYSMODE_TCPC_DISABLE;
-> +	writel(val, tca->base + TCA_SYSMODE_CFG);
-> +
-> +	if (orientation == TYPEC_ORIENTATION_REVERSE)
-> +		val |= TCA_SYSMODE_TCPC_FLIP;
-> +	else if (orientation == TYPEC_ORIENTATION_NORMAL)
-> +		val &= ~TCA_SYSMODE_TCPC_FLIP;
-> +
-> +	writel(val, tca->base + TCA_SYSMODE_CFG);
-> +
-> +	/* Enable TCA module */
-> +	val &= ~TCA_SYSMODE_TCPC_DISABLE;
-> +	writel(val, tca->base + TCA_SYSMODE_CFG);
-> +
-> +out:
-> +	tca->orientation = orientation;
-> +	mutex_unlock(&tca->mutex);
-> +}
-> +
-> +static void tca_blk_init(struct tca_blk *tca)
-> +{
-> +	u32 val;
-> +
-> +	/* reset XBar block */
-> +	val = readl(tca->base + TCA_CLK_RST);
-> +	val &= ~TCA_CLK_RST_SW;
-> +	writel(val, tca->base + TCA_CLK_RST);
-> +
-> +	udelay(100);
-> +
-> +	/* clear reset */
-> +	val |= TCA_CLK_RST_SW;
-> +	writel(val, tca->base + TCA_CLK_RST);
-> +
-> +	tca_blk_orientation_set(tca, tca->orientation);
-> +}
-> +
-> +static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
-> +				struct imx8mq_usb_phy *imx_phy)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct resource *res;
-> +	struct tca_blk *tca;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-> +	if (!res)
-> +		return NULL;
-> +
-> +	tca = devm_kzalloc(dev, sizeof(*tca), GFP_KERNEL);
-> +	if (!tca)
-> +		return ERR_PTR(-ENOMEM);
-> +
-> +	tca->base = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(tca->base))
-> +		return ERR_CAST(tca->base);
-> +
-> +	mutex_init(&tca->mutex);
-> +
-> +	tca->orientation = TYPEC_ORIENTATION_NORMAL;
-> +	tca->sw = tca_blk_get_typec_switch(pdev, imx_phy);
-> +
-> +	return tca;
-> +}
-> +
-> +static void imx95_usb_phy_put_tca(struct imx8mq_usb_phy *imx_phy)
-> +{
-> +	struct tca_blk *tca = imx_phy->tca;
-> +
-> +	if (!tca)
-> +		return;
-> +
-> +	tca_blk_put_typec_switch(tca->sw);
-> +}
-> +
->  static u32 phy_tx_vref_tune_from_property(u32 percent)
->  {
->  	percent = clamp(percent, 94U, 124U);
-> @@ -315,6 +540,9 @@ static int imx8mp_usb_phy_init(struct phy *phy)
->  
->  	imx8m_phy_tune(imx_phy);
->  
-> +	if (imx_phy->tca)
-> +		tca_blk_init(imx_phy->tca);
-> +
->  	return 0;
->  }
->  
-> @@ -359,6 +587,8 @@ static const struct of_device_id imx8mq_usb_phy_of_match[] = {
->  	 .data = &imx8mq_usb_phy_ops,},
->  	{.compatible = "fsl,imx8mp-usb-phy",
->  	 .data = &imx8mp_usb_phy_ops,},
-> +	{.compatible = "fsl,imx95-usb-phy",
-> +	 .data = &imx8mp_usb_phy_ops,},
->  	{ }
->  };
->  MODULE_DEVICE_TABLE(of, imx8mq_usb_phy_of_match);
-> @@ -398,6 +628,11 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
->  
->  	phy_set_drvdata(imx_phy->phy, imx_phy);
->  
-> +	imx_phy->tca = imx95_usb_phy_get_tca(pdev, imx_phy);
-> +	if (IS_ERR(imx_phy->tca))
-> +		return dev_err_probe(dev, PTR_ERR(imx_phy->tca),
-> +					"failed to get tca\n");
-> +
->  	imx8m_get_phy_tuning_data(imx_phy);
->  
->  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> @@ -405,8 +640,16 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
->  	return PTR_ERR_OR_ZERO(phy_provider);
->  }
->  
-> +static void imx8mq_usb_phy_remove(struct platform_device *pdev)
-> +{
-> +	struct imx8mq_usb_phy *imx_phy = platform_get_drvdata(pdev);
-> +
-> +	imx95_usb_phy_put_tca(imx_phy);
-> +}
-> +
->  static struct platform_driver imx8mq_usb_phy_driver = {
->  	.probe	= imx8mq_usb_phy_probe,
-> +	.remove = imx8mq_usb_phy_remove,
->  	.driver = {
->  		.name	= "imx8mq-usb-phy",
->  		.of_match_table	= imx8mq_usb_phy_of_match,
-> -- 
-> 2.34.1
-
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
