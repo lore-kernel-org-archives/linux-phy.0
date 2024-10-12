@@ -4,84 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64A0FCF2566
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Oct 2024 13:49:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30C18CF2571
+	for <linux-phy@archiver.kernel.org>; Sat, 12 Oct 2024 17:37:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NlEouhifV2PHNL6DCehCYFFunOSMvLcTz1jj5u8ZmJE=; b=kx+C6+0nTsiYSz
-	SlAZEPMRVBTsaoz4ExAoqoqY6HR10gxIKT+5jstXoLDawPlDVv2mjvgaUGg/toqN4AyX01WUSKk52
-	na6Bn8jW/3qKCucL5Ed8zV2O4//wr/tobnrqKzrywxkxWuCZEn1H78IXXYHqKgBhs+0JfNcp3mEdb
-	8UeBvvqW40TTTu7MOFn/SNlaC0+5AZojLWqyqOq+FRkNTFJ1zIICY1dFcpMtFjv0VowT17mNlZmZe
-	ONo5ql5y7XNdWSlAtTD7VIZXUyFGFsMu9diPvCK/hsU3Fi6ByYmLAhgq/6xbl/o/4Eo/mw6pI+xwE
-	OcCVhZxViV9MfdbDJ5hg==;
+	List-Owner; bh=NZwUawS1mbsRJmRwhRWjbhx1uBdUkA9snYYI26ToXUs=; b=Yv10ugraCBXqcb
+	f8JflRByG4mKgctPinjrHfxD3aIMdyvHsP/4x0n0IRbJnsbMboQwCp1aRWUTiXg0zX18piFhCuU+G
+	u7lsSGLsnor3rB5byzDeDnmPaGEKDdVB4k5jqhszm02TjqVrIssgSuB3Kz2gSraM4aGfEgry7iCna
+	8bpH+mjsO9xIWwOzfXnCpb5aBYfJkaDGNJTf4jNpZL88R97VvbVYQSv3YhpYAtoFiHJR1krYZ/sZ0
+	5Fjjnk6Cm35o5Xwya5bt1W4niGdN7RgtECrc8zKgI2PEIidcA/fOiahk6yLiuyLyL2TsTNShJADy8
+	gpWnVBIIN9mdlSQleszw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1szcUT-00000001I8Y-0VXa;
-	Sat, 12 Oct 2024 13:49:05 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1szg3A-00000001Yh0-3gEZ;
+	Sat, 12 Oct 2024 17:37:08 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1szcUQ-00000001I7j-1b7a
-	for linux-phy@lists.infradead.org;
-	Sat, 12 Oct 2024 13:49:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
-	s=s31663417; t=1728740918; x=1729345718;
-	i=markus.stockhausen@gmx.de;
-	bh=GYj5Y8dYhOKGETE0dKfWIyajVQoJN4CpNoHfjXbDEw0=;
-	h=X-UI-Sender-Class:From:To:Cc:Subject:Date:Message-ID:In-Reply-To:
-	 References:MIME-Version:Content-Transfer-Encoding:cc:
-	 content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=eSZg2bNWfIOZ/GwPF5WKUmEib+CiafTTHmabaYMmpS9aIXBTt/gMabrwcYgvUFHc
-	 vFpllSAbKmzIK2+ZI6JDMzt4tUYGS22kAin5B+RfTxNLJYZCVtU4S/SmiyhYvRN2e
-	 i+5rOtZkumtxrH1XyaxFykUm5fNCJmpFBy2q+qFmqqqkU4zg+UofeXYNya1xvdOdf
-	 e0OXtd5ZpKxCeLomQKoEWJ7CKB8mlU1gmX98uylbHo5C7W1BPWDUDTd1fBglHECYq
-	 yaZl1mQTDvgWv9C6/u9lRalS7FXL5fvoekUvM5tBBKQlmjzL51XMscSaJDQmkuv9f
-	 iOxmI1Q2UWLhoAMcbA==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from openwrt ([94.31.70.17]) by mail.gmx.net (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MJVDW-1tEwRi2yUa-00JZeS; Sat, 12
- Oct 2024 15:48:38 +0200
-From: Markus Stockhausen <markus.stockhausen@gmx.de>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	chris.packham@alliedtelesis.co.nz
-Cc: Markus Stockhausen <markus.stockhausen@gmx.de>
-Subject: [PATCH v3 1/2] dt-bindings: phy: add realtek,rtl8380m-serdes
-Date: Sat, 12 Oct 2024 09:48:33 -0400
-Message-ID: <20241012134834.1306992-2-markus.stockhausen@gmx.de>
-X-Mailer: git-send-email 2.46.2
-In-Reply-To: <20241012134834.1306992-1-markus.stockhausen@gmx.de>
-References: <20241012134834.1306992-1-markus.stockhausen@gmx.de>
+	id 1szg1l-00000001YWE-43aV;
+	Sat, 12 Oct 2024 17:35:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 649255C4DAF;
+	Sat, 12 Oct 2024 17:35:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8EAF8C4CEC6;
+	Sat, 12 Oct 2024 17:35:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728754540;
+	bh=FUj3m7AxwKhLtalglvHoMqNJU6DbmtxgHK1NyIs6RcE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=pqvg0FvxCGiQuZMNtxbF4TyokIAWf4Hg79BMflKEdfKw7Caj5+5ycLeJMn3QBXXuu
+	 fHEAaRDcLutjB4jesWjt2XEmWwoYBmXBhOuvxBbbzFaBqiVE61CXV/W+p9Q4x41EPK
+	 A5hCJLF0UwM8AK3KbKIUozTMuOjuRy1kP3422JnPe9w2jd3njjTpK5hD53erQz4AS8
+	 tjD1XVYIlSgMMNLIyhvo5oEJkUIcoyWtz/BhSsrFHIfJmlrO8xtu/Ld/AxAgkbnrYa
+	 cVH654pGqdpPuMGL2LR9hFQMuw+3A+VvulMumunCHNfsdF1rIXYumtbniMj2WJwXh9
+	 2X9AHxlxpThqg==
+Date: Sat, 12 Oct 2024 23:05:36 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+	kernel@pengutronix.de, festevam@gmail.com,
+	gregkh@linuxfoundation.org, peter.chen@kernel.org,
+	herve.codina@bootlin.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org,
+	jun.li@nxp.com
+Subject: Re: [PATCH v7 1/3] phy: fsl-imx8mq-usb: add tca function driver for
+ imx95
+Message-ID: <ZwqzaKH9Ub8poNgX@vaman>
+References: <20241010090822.3915064-1-xu.yang_2@nxp.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:xPlqO6n/Cw0yXYnx4nmw5uYX2LUN0f8/ahCnFjTfIsppaB24i1h
- o5ilD3MEXm2yBtsXgBfSwdWEv9+bkv9gekGBtKV9ZzYEf2Ne9wUWzdVetxKH4K3v5nPq3lf
- SoxGl53rtjkweVRzuxWSLOYYXeGZYE41giDd6I5sboIjyO65zFsmcHK7ts+dO7NeWcswPmB
- dm5rxXEfZzceD8olLzK5w==
-UI-OutboundReport: notjunk:1;M01:P0:vw5mg7WeZQw=;e9lhV4cdZ7dGzOthZEypc9Rjbpx
- ZzE2ubHcng7Qi6MiG33eU19D+wqkkHELvUEJi2q1Ob4WMXN57H3+yCzV2GXefRBPh6MFfmjQI
- oBanb5Wt/dta3cTfMFjYo+2VJHlgF9NIpCWsoqHCv/MFAwDODLzTApqo99hYjYItrExm+7AjA
- LTh699sVdNp/o2fFiB7Dxzv8uWNCCpH/L7HpyBlRMHOfZoMpFgUsW1LwFFBOPMtHRQkwaB8mR
- lwqXpsEo+jNIYj+U8QNINRA329zzTUUPorrxZDje8+YsGx9/44+uSOV8BvRY0T4ckIRoiUzJY
- tQwl99xRfcuF2VPzpmFBgHL551O8VyRa7MnYKc4OdhTI5CPw5zn3yeeu2EAVskohtU8kGJc7Z
- J7YgosHoBeRBasEywSSQU6CjkOpCWJiPGZhftOl3W16dqbM/8Pfyg5SCM2IxguNNo2fayUJIJ
- q1ZGa96y/nA2I92MxJALRa23T+dVjpLQuaK2bUQOHutf/w+mkc7wX9EfGSoe6KfL/ae7R2nFG
- nLG4xouS9yzeJ3UjNC7JmxRc7d3qhoE/M9LL9kAxxedYDu8tf04Wl8hTpOtZL21F++vKM7SK/
- pplJpMPAHVl/tyu59uCDwmI/v/nx+ufHsXRdPZ6HgzqWUbs5ZzIoq7Aq4k7NDWXbMZTPeJpgH
- azu7JlH2alV6EQ60wzaRR8rEzkebgckj3mojGvBbaCOBFzBZZ0W2SjI1EgHBZ2KRX4HfALU3a
- At5mKperEWp/ItH1tmQmfeGocB10h60UlMvQwFiCEg9QQl990wuSHMydYyzQHPSLJFoy9jFxN
- /0LSB5He8DrF/uguurlv0UIw==
+Content-Disposition: inline
+In-Reply-To: <20241010090822.3915064-1-xu.yang_2@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241012_064902_730658_AF38BEDD 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20241012_103542_132630_90476E23 
+X-CRM114-Status: GOOD (  35.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,105 +78,370 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add bindings for the SerDes of the Realtek Otto platform. These are
-MIPS based network Switch SoCs with up to 52 ports divided into four
-different model lines.
+On 10-10-24, 17:08, Xu Yang wrote:
+> The i.MX95 USB3 phy has a Type-C Assist block (TCA). This block consists
+> two functional blocks (XBar assist and VBus assist) and one system
+> access interface using APB.
+> 
+> The primary functionality of XBar assist is:
+>  - switching lane for flip
+>  - moving unused lanes into lower power states.
+> 
+> This info can be get from:
+> i.MX95 RM Chapter 163.3.8 Type-C assist (TCA) block.
+> 
+> This will add support for TCA block to achieve lane switching and tca
+> lower power functionality.
+> 
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> Reviewed-by: Jun Li <jun.li@nxp.com>
+> 
+> ---
+> Changes in v2:
+>  - return the value of imx95_usb_phy_get_tca()
+> Changes in v3:
+>  - no changes
+> Changes in v4:
+>  - remove compatible check for imx95
+>  - check whether tca register region exist or not, yes means has tca,
+>    otherwise skip tca setup
+> Changes in v5:
+>  - no changes
+> Changes in v6:
+>  - no changes
+> Changes in v7:
+>  - fix sparse warnings in imx95_usb_phy_get_tca()
+> ---
+>  drivers/phy/freescale/Kconfig              |   1 +
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 243 +++++++++++++++++++++
+>  2 files changed, 244 insertions(+)
+> 
+> diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
+> index dcd9acff6d01..81f53564ee15 100644
+> --- a/drivers/phy/freescale/Kconfig
+> +++ b/drivers/phy/freescale/Kconfig
+> @@ -5,6 +5,7 @@ if (ARCH_MXC && ARM64) || COMPILE_TEST
+>  config PHY_FSL_IMX8MQ_USB
+>  	tristate "Freescale i.MX8M USB3 PHY"
+>  	depends on OF && HAS_IOMEM
+> +	depends on TYPEC || TYPEC=n
+>  	select GENERIC_PHY
+>  	default ARCH_MXC && ARM64
+>  
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> index adc6394626ce..661191276b27 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -10,6 +10,7 @@
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regulator/consumer.h>
+> +#include <linux/usb/typec_mux.h>
+>  
+>  #define PHY_CTRL0			0x0
+>  #define PHY_CTRL0_REF_SSP_EN		BIT(2)
+> @@ -50,11 +51,66 @@
+>  
+>  #define PHY_TUNE_DEFAULT		0xffffffff
+>  
+> +#define TCA_CLK_RST			0x00
+> +#define TCA_CLK_RST_SW			BIT(9)
+> +#define TCA_CLK_RST_REF_CLK_EN		BIT(1)
+> +#define TCA_CLK_RST_SUSPEND_CLK_EN	BIT(0)
+> +
+> +#define TCA_INTR_EN			0x04
+> +#define TCA_INTR_STS			0x08
+> +
+> +#define TCA_GCFG			0x10
+> +#define TCA_GCFG_ROLE_HSTDEV		BIT(4)
+> +#define TCA_GCFG_OP_MODE		GENMASK(1, 0)
+> +#define TCA_GCFG_OP_MODE_SYSMODE	0
+> +#define TCA_GCFG_OP_MODE_SYNCMODE	1
+> +
+> +#define TCA_TCPC			0x14
+> +#define TCA_TCPC_VALID			BIT(4)
+> +#define TCA_TCPC_LOW_POWER_EN		BIT(3)
+> +#define TCA_TCPC_ORIENTATION_NORMAL	BIT(2)
+> +#define TCA_TCPC_MUX_CONTRL		GENMASK(1, 0)
+> +#define TCA_TCPC_MUX_CONTRL_NO_CONN	0
+> +#define TCA_TCPC_MUX_CONTRL_USB_CONN	1
+> +
+> +#define TCA_SYSMODE_CFG			0x18
+> +#define TCA_SYSMODE_TCPC_DISABLE	BIT(3)
+> +#define TCA_SYSMODE_TCPC_FLIP		BIT(2)
+> +
+> +#define TCA_CTRLSYNCMODE_CFG0		0x20
+> +#define TCA_CTRLSYNCMODE_CFG1           0x20
+> +
+> +#define TCA_PSTATE			0x30
+> +#define TCA_PSTATE_CM_STS		BIT(4)
+> +#define TCA_PSTATE_TX_STS		BIT(3)
+> +#define TCA_PSTATE_RX_PLL_STS		BIT(2)
+> +#define TCA_PSTATE_PIPE0_POWER_DOWN	GENMASK(1, 0)
+> +
+> +#define TCA_GEN_STATUS			0x34
+> +#define TCA_GEN_DEV_POR			BIT(12)
+> +#define TCA_GEN_REF_CLK_SEL		BIT(8)
+> +#define TCA_GEN_TYPEC_FLIP_INVERT	BIT(4)
+> +#define TCA_GEN_PHY_TYPEC_DISABLE	BIT(3)
+> +#define TCA_GEN_PHY_TYPEC_FLIP		BIT(2)
+> +
+> +#define TCA_VBUS_CTRL			0x40
+> +#define TCA_VBUS_STATUS			0x44
+> +
+> +#define TCA_INFO			0xFC
 
-Changes in v3
+lowercase please
 
- - renamed to realtek,rtl8380m-serdes.yaml
- - removed parameter controlled-ports
- - verified with make dt_binding_check
- - recipient list according to get_maintainers
+> +
+> +struct tca_blk {
+> +	struct typec_switch_dev *sw;
+> +	void __iomem *base;
+> +	struct mutex mutex;
+> +	enum typec_orientation orientation;
+> +};
+> +
+>  struct imx8mq_usb_phy {
+>  	struct phy *phy;
+>  	struct clk *clk;
+>  	void __iomem *base;
+>  	struct regulator *vbus;
+> +	struct tca_blk *tca;
+>  	u32 pcs_tx_swing_full;
+>  	u32 pcs_tx_deemph_3p5db;
+>  	u32 tx_vref_tune;
+> @@ -64,6 +120,175 @@ struct imx8mq_usb_phy {
+>  	u32 comp_dis_tune;
+>  };
+>  
+> +
+> +static void tca_blk_orientation_set(struct tca_blk *tca,
+> +				enum typec_orientation orientation);
+> +
+> +#ifdef CONFIG_TYPEC
+> +
+> +static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
+> +				enum typec_orientation orientation)
+> +{
+> +	struct imx8mq_usb_phy *imx_phy = typec_switch_get_drvdata(sw);
+> +	struct tca_blk *tca = imx_phy->tca;
+> +	int ret;
+> +
+> +	if (tca->orientation == orientation)
+> +		return 0;
+> +
+> +	ret = clk_prepare_enable(imx_phy->clk);
+> +	if (ret)
+> +		return ret;
+> +
+> +	tca_blk_orientation_set(tca, orientation);
+> +	clk_disable_unprepare(imx_phy->clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
+> +					struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct typec_switch_dev *sw;
+> +	struct typec_switch_desc sw_desc = { };
+> +
+> +	sw_desc.drvdata = imx_phy;
+> +	sw_desc.fwnode = dev->fwnode;
+> +	sw_desc.set = tca_blk_typec_switch_set;
+> +	sw_desc.name = NULL;
+> +
+> +	sw = typec_switch_register(dev, &sw_desc);
+> +	if (IS_ERR(sw)) {
+> +		dev_err(dev, "Error register tca orientation switch: %ld",
+> +				PTR_ERR(sw));
+> +		return NULL;
+> +	}
+> +
+> +	return sw;
+> +}
+> +
+> +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
+> +{
+> +	typec_switch_unregister(sw);
+> +}
 
-Changes in v2:
+Why to put a wrapper over an API, call this instead?
 
- - new subject
- - removed patch command sequences
- - renamed parameter controlled-ports to realtek,controlled-ports
+> +
+> +#else
+> +
+> +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
+> +			struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	return NULL;
+> +}
+> +
+> +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw) {}
+> +
+> +#endif /* CONFIG_TYPEC */
+> +
+> +static void tca_blk_orientation_set(struct tca_blk *tca,
+> +				enum typec_orientation orientation)
+> +{
+> +	u32 val;
+> +
+> +	mutex_lock(&tca->mutex);
+> +
+> +	if (orientation == TYPEC_ORIENTATION_NONE) {
+> +		/*
+> +		 * use Controller Synced Mode for TCA low power enable and
+> +		 * put PHY to USB safe state.
+> +		 */
+> +		val = readl(tca->base + TCA_GCFG);
+> +		val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYNCMODE);
+> +		writel(val, tca->base + TCA_GCFG);
+> +
+> +		val = readl(tca->base + TCA_TCPC);
+> +		val = TCA_TCPC_VALID | TCA_TCPC_LOW_POWER_EN;
+> +		writel(val, tca->base + TCA_TCPC);
+> +
+> +		goto out;
+> +	}
+> +
+> +	/* use System Configuration Mode for TCA mux control. */
+> +	val = readl(tca->base + TCA_GCFG);
+> +	val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYSMODE);
+> +	writel(val, tca->base + TCA_GCFG);
+> +
+> +	/* Disable TCA module */
+> +	val = readl(tca->base + TCA_SYSMODE_CFG);
+> +	val |= TCA_SYSMODE_TCPC_DISABLE;
+> +	writel(val, tca->base + TCA_SYSMODE_CFG);
+> +
+> +	if (orientation == TYPEC_ORIENTATION_REVERSE)
+> +		val |= TCA_SYSMODE_TCPC_FLIP;
+> +	else if (orientation == TYPEC_ORIENTATION_NORMAL)
+> +		val &= ~TCA_SYSMODE_TCPC_FLIP;
+> +
+> +	writel(val, tca->base + TCA_SYSMODE_CFG);
+> +
+> +	/* Enable TCA module */
+> +	val &= ~TCA_SYSMODE_TCPC_DISABLE;
+> +	writel(val, tca->base + TCA_SYSMODE_CFG);
+> +
+> +out:
+> +	tca->orientation = orientation;
+> +	mutex_unlock(&tca->mutex);
+> +}
+> +
+> +static void tca_blk_init(struct tca_blk *tca)
+> +{
+> +	u32 val;
+> +
+> +	/* reset XBar block */
+> +	val = readl(tca->base + TCA_CLK_RST);
+> +	val &= ~TCA_CLK_RST_SW;
+> +	writel(val, tca->base + TCA_CLK_RST);
+> +
+> +	udelay(100);
+> +
+> +	/* clear reset */
+> +	val |= TCA_CLK_RST_SW;
+> +	writel(val, tca->base + TCA_CLK_RST);
+> +
+> +	tca_blk_orientation_set(tca, tca->orientation);
+> +}
+> +
+> +static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
+> +				struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct resource *res;
+> +	struct tca_blk *tca;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+> +	if (!res)
+> +		return NULL;
+> +
+> +	tca = devm_kzalloc(dev, sizeof(*tca), GFP_KERNEL);
+> +	if (!tca)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	tca->base = devm_ioremap_resource(&pdev->dev, res);
+> +	if (IS_ERR(tca->base))
+> +		return ERR_CAST(tca->base);
+> +
+> +	mutex_init(&tca->mutex);
+> +
+> +	tca->orientation = TYPEC_ORIENTATION_NORMAL;
+> +	tca->sw = tca_blk_get_typec_switch(pdev, imx_phy);
+> +
+> +	return tca;
+> +}
+> +
+> +static void imx95_usb_phy_put_tca(struct imx8mq_usb_phy *imx_phy)
+> +{
+> +	struct tca_blk *tca = imx_phy->tca;
+> +
+> +	if (!tca)
+> +		return;
+> +
+> +	tca_blk_put_typec_switch(tca->sw);
+> +}
+> +
+>  static u32 phy_tx_vref_tune_from_property(u32 percent)
+>  {
+>  	percent = clamp(percent, 94U, 124U);
+> @@ -315,6 +540,9 @@ static int imx8mp_usb_phy_init(struct phy *phy)
+>  
+>  	imx8m_phy_tune(imx_phy);
+>  
+> +	if (imx_phy->tca)
+> +		tca_blk_init(imx_phy->tca);
+> +
+>  	return 0;
+>  }
+>  
+> @@ -359,6 +587,8 @@ static const struct of_device_id imx8mq_usb_phy_of_match[] = {
+>  	 .data = &imx8mq_usb_phy_ops,},
+>  	{.compatible = "fsl,imx8mp-usb-phy",
+>  	 .data = &imx8mp_usb_phy_ops,},
+> +	{.compatible = "fsl,imx95-usb-phy",
+> +	 .data = &imx8mp_usb_phy_ops,},
+>  	{ }
+>  };
+>  MODULE_DEVICE_TABLE(of, imx8mq_usb_phy_of_match);
+> @@ -398,6 +628,11 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>  
+>  	phy_set_drvdata(imx_phy->phy, imx_phy);
+>  
+> +	imx_phy->tca = imx95_usb_phy_get_tca(pdev, imx_phy);
+> +	if (IS_ERR(imx_phy->tca))
+> +		return dev_err_probe(dev, PTR_ERR(imx_phy->tca),
+> +					"failed to get tca\n");
+> +
+>  	imx8m_get_phy_tuning_data(imx_phy);
+>  
+>  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> @@ -405,8 +640,16 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>  	return PTR_ERR_OR_ZERO(phy_provider);
+>  }
+>  
+> +static void imx8mq_usb_phy_remove(struct platform_device *pdev)
+> +{
+> +	struct imx8mq_usb_phy *imx_phy = platform_get_drvdata(pdev);
+> +
+> +	imx95_usb_phy_put_tca(imx_phy);
+> +}
+> +
+>  static struct platform_driver imx8mq_usb_phy_driver = {
+>  	.probe	= imx8mq_usb_phy_probe,
+> +	.remove = imx8mq_usb_phy_remove,
+>  	.driver = {
+>  		.name	= "imx8mq-usb-phy",
+>  		.of_match_table	= imx8mq_usb_phy_of_match,
+> -- 
+> 2.34.1
 
-Signed-off-by: Markus Stockhausen <markus.stockhausen@gmx.de>
----
- .../bindings/phy/realtek,rtl8380m-serdes.yaml | 67 +++++++++++++++++++
- 1 file changed, 67 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
-
-diff --git a/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml b/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
-new file mode 100644
-index 000000000000..c1deef8ec63c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
-@@ -0,0 +1,67 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/realtek,rtl8380m-serdes.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Realtek Otto SerDes controller
-+
-+maintainers:
-+  - Markus Stockhausen <markus.stockhausen@gmx.de>
-+
-+description:
-+  The MIPS based Realtek Switch SoCs of the Realtek RTL838x, RTL839x, RTL930x
-+  and RTL931x series have multiple SerDes built in. They are linked to single,
-+  quad or octa PHYs like the RTL8218B, RTL8218D or RTL8214FC and are one of
-+  the integral part of the up-to-52-port switch architecture. Although these
-+  SerDes controllers have common basics they are designed differently in the
-+  SoC families.
-+
-+properties:
-+  $nodename:
-+    pattern: "^phy@[0-9a-f]+$"
-+
-+  compatible:
-+    items:
-+      - enum:
-+          - realtek,rtl8380m-serdes
-+          - realtek,rtl8392m-serdes
-+          - realtek,rtl9302b-serdes
-+          - realtek,rtl9311-serdes
-+
-+  reg:
-+    items:
-+      description:
-+        The primary register memory location. On RTL83xx devices this is the
-+        address to the I/O register range, on RTL93xx devices this is the
-+        address of the MDIO style command/data registers.
-+
-+  "#phy-cells":
-+    const: 4
-+    description:
-+      The first number defines the SerDes to use. The second number a linked
-+      SerDes. E.g. if a octa 1G PHY is attached to two QSGMII SerDes. The third
-+      number is the first switch port this SerDes is working for, the fourth
-+      number is the last switch port the SerDes is working for.
-+
-+  firmware-name:
-+    maxItems: 1
-+    description:
-+      An alternative name of the SerDes firmware image file located in the
-+      firmware search path. Set to "" to disable firmware loading.
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    serdes: phy@1b00e780 {
-+      compatible = "realtek,rtl9302b-serdes";
-+      reg = <0x1b0003b0 0x8>;
-+      firmware-name = "zyxel-xgs1210-12-serdes.fw";
-+      #phy-cells = <4>;
-+    };
---
-2.46.2
-
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
