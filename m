@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8815DCF259D
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 06:54:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 577B5CFC501
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 07:18:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zZBNxJCfETKSZQ1Z0qWPrGXXHo2k9t4D/kme3PuQW5Y=; b=zUAWlwHOrUteJL
-	E8WYFOuXYL9LQqZZyLq3PKZZYVFQSvrv1jjz2kUJW5I9jd40sdbkV6mF6F3IyWg4KrsYzFO/2Pkbi
-	kbctdYM19L7eirs/RnhMyguj5tDXZrN90CmAfBvghwARB+9fZFrwoa0kce8PBkISTym2D/C8yb2uC
-	pU0ufWuVyGSObKsWjqUZYWjQVPriKRDTA5t+6KBZrwQoNBX8gb+7TrrXmbar+xlI6asVOz7BwuaH/
-	8Pza12JcyXzlyS8Cj6tyTAuSrbJ02TqiPZS1KHlQUkv8GkQ48O5f306FzxWtB5WYWtkBgB+Nh1sda
-	k0b/ioKH4I43Z0CeiWBg==;
+	List-Owner; bh=Fr8cr+pzGoQLsQjLEKl1zVnfYlNiqgBIOvknEe+geUA=; b=jvZPj5jGC4IW2G
+	bNSv4GWPRHr8bv4yIaV7N8Vq02ApFdb/4vjnpfnXL/RhrU6TMm2dfjT8hg5H2rRYV7BZAerKopn8W
+	D+fW3y76/Eqn6bNn1x9f32njrtEzjYr6azD+tJPU5G3h5D1P7/qBepZYJ/SMhfPqB1+hte0DbrLxE
+	YPEvYtn/wti9b0jUL5E9+2gl3zbVUverleFW0+kUf9M7/v5TABuw1oLswl0xhbvd+HTBZgi4DfeI3
+	Z7DMsn4KK8oQ6J4UohgRxNhCZ0p9NZPpVOND9ab8QWrGw+1jz8GiyveilwcRuv3uB+BXl7QLN7BLV
+	TIZiz4Rfq+9uZaWUZcPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Eyb-00000003xVb-0gHC;
-	Mon, 14 Oct 2024 06:54:45 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1t0FLQ-000000041qq-0AqE;
+	Mon, 14 Oct 2024 07:18:20 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Ev4-00000003x0b-1Z2u;
-	Mon, 14 Oct 2024 06:51:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=bDIJc0lzPWFuK32g4GsXmjt7r9miciNd9/zrnLYf/jQ=; b=E8v1l2Vk8bPbWumsFcQAJiVwME
-	rnrK+33WV59LVA3WiXWQHpnWVLMlOiLK5r3sLOJlDiJ1sWT/6cTtMijybEkBzPiqNijepaEbGRnoz
-	klaB+0dKyA1E7oLoT0FlW18xetZ00+U/1KnsnledyT7x7SwnbJmwm3O1TnX/gz9nCLcNEEUKZbh8p
-	V0xGc46QoHsArYKdf/EJx4fZ4tK/RmcDLd9hqhc9CMYveJA/GrOfBBBp8KRFq0HEs1lG0NyuaODAv
-	4e5Bxmr44e3L/TAZl36plB+YQhpa0qBxsMyNBLCWlRBu9vELtoCALZgDQLRgMu0JAKpyd9ZhRltNY
-	+FhJISbw==;
-Received: from i53875b34.versanet.de ([83.135.91.52] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1t0Euz-0005Vq-2C; Mon, 14 Oct 2024 08:51:01 +0200
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, Frank Wang <frawang.cn@gmail.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
- tim.chen@rock-chips.com, yubing.zhang@rock-chips.com,
- Frank Wang <frank.wang@rock-chips.com>
-Subject: Re: [PATCH 2/2] phy: rockchip: usbdp: add rk3576 device match data
-Date: Mon, 14 Oct 2024 08:50:59 +0200
-Message-ID: <13616137.uLZWGnKmhe@diego>
-In-Reply-To: <20241014020342.15974-2-frawang.cn@gmail.com>
-References: <20241014020342.15974-1-frawang.cn@gmail.com>
- <20241014020342.15974-2-frawang.cn@gmail.com>
+	id 1t0FLM-000000041p3-35Mf
+	for linux-phy@lists.infradead.org;
+	Mon, 14 Oct 2024 07:18:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 15DAEA4139B;
+	Mon, 14 Oct 2024 07:18:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8807EC4CEC3;
+	Mon, 14 Oct 2024 07:18:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728890295;
+	bh=S1utHm/xnR4E60uk3XBCaXk9y0n3j7/N34HZYkGL7vo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=RFaLrK5qrJ/MeNuLMqikMSYb+aMVUNZoDzWDnBTmGvaHqz0PMeYE4xkicaz2OQwdd
+	 NWglYcrQlQbsmVA4LFcvKC2eWljEgLjA9fWOGXG4qlzIVrZxwQbpULnKLjrfVuMM67
+	 0SZS8ZpeAJt/aFD5WeurNUX1OYZbhOD7a1Xed2lDgbp1HWNWq6qMRgI0Cyqeodee7J
+	 XtjlXcV/+lD6q6iraGmH/j/IMAd/abBesH34K6nBVZA/U2um7jwd/so1Y+z0CXcvdM
+	 iSwTMdgyQ2sEBw9h0wBVD+IxYY43L+Z6MLmAamsgT8x1tMpRCE5MLHzukFAaf2QmSs
+	 uGWC8sSytaW1A==
+Date: Mon, 14 Oct 2024 09:18:11 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Markus Stockhausen <markus.stockhausen@gmx.de>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, chris.packham@alliedtelesis.co.nz
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: add realtek,rtl8380m-serdes
+Message-ID: <sck3hvr6vtdsnseyzdoxdwasd47c7m5yzavpyodc7rj3cwbu26@kqxistduok3u>
+References: <20241012134834.1306992-1-markus.stockhausen@gmx.de>
+ <20241012134834.1306992-2-markus.stockhausen@gmx.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241012134834.1306992-2-markus.stockhausen@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241013_235106_611724_3B5215F3 
-X-CRM114-Status: GOOD (  16.87  )
+X-CRM114-CacheID: sfid-20241014_001816_978004_79F35722 
+X-CRM114-Status: GOOD (  24.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,84 +74,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Montag, 14. Oktober 2024, 04:03:42 CEST schrieb Frank Wang:
-> From: Frank Wang <frank.wang@rock-chips.com>
+On Sat, Oct 12, 2024 at 09:48:33AM -0400, Markus Stockhausen wrote:
+> Add bindings for the SerDes of the Realtek Otto platform. These are
+> MIPS based network Switch SoCs with up to 52 ports divided into four
+> different model lines.
 > 
-> This adds RK3576 device match data support.
+> Changes in v3
 > 
-> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
 
-Nice, that the rk3576 support fits in so easily :-)
+<form letter>
+This is a friendly reminder during the review process.
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+It seems my or other reviewer's previous comments were not fully
+addressed. Maybe the feedback got lost between the quotes, maybe you
+just forgot to apply it. Please go back to the previous discussion and
+either implement all requested changes or keep discussing them.
 
+Thank you.
+</form letter>
+
+>  - renamed to realtek,rtl8380m-serdes.yaml
+>  - removed parameter controlled-ports
+>  - verified with make dt_binding_check
+>  - recipient list according to get_maintainers
+> 
+> Changes in v2:
+> 
+>  - new subject
+>  - removed patch command sequences
+>  - renamed parameter controlled-ports to realtek,controlled-ports
+> 
+> Signed-off-by: Markus Stockhausen <markus.stockhausen@gmx.de>
 > ---
->  drivers/phy/rockchip/phy-rockchip-usbdp.c | 41 +++++++++++++++++++++++
->  1 file changed, 41 insertions(+)
+>  .../bindings/phy/realtek,rtl8380m-serdes.yaml | 67 +++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> index 2c51e5c62d3e..5b1e8a3806ed 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> @@ -1538,6 +1538,43 @@ static const char * const rk_udphy_rst_list[] = {
->  	"init", "cmn", "lane", "pcs_apb", "pma_apb"
->  };
->  
-> +static const struct rk_udphy_cfg rk3576_udphy_cfgs = {
-> +	.num_phys = 1,
-> +	.phy_ids = { 0x2b010000 },
-> +	.num_rsts = ARRAY_SIZE(rk_udphy_rst_list),
-> +	.rst_list = rk_udphy_rst_list,
-> +	.grfcfg	= {
-> +		/* u2phy-grf */
-> +		.bvalid_phy_con		= RK_UDPHY_GEN_GRF_REG(0x0010, 1, 0, 0x2, 0x3),
-> +		.bvalid_grf_con		= RK_UDPHY_GEN_GRF_REG(0x0000, 15, 14, 0x1, 0x3),
+> diff --git a/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml b/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
+> new file mode 100644
+> index 000000000000..c1deef8ec63c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/realtek,rtl8380m-serdes.yaml
+> @@ -0,0 +1,67 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/realtek,rtl8380m-serdes.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +		/* usb-grf */
-> +		.usb3otg0_cfg		= RK_UDPHY_GEN_GRF_REG(0x0030, 15, 0, 0x1100, 0x0188),
+> +title: Realtek Otto SerDes controller
 > +
-> +		/* usbdpphy-grf */
-> +		.low_pwrn		= RK_UDPHY_GEN_GRF_REG(0x0004, 13, 13, 0, 1),
-> +		.rx_lfps		= RK_UDPHY_GEN_GRF_REG(0x0004, 14, 14, 0, 1),
-> +	},
-> +	.vogrfcfg = {
-> +		{
-> +			.hpd_trigger	= RK_UDPHY_GEN_GRF_REG(0x0000, 11, 10, 1, 3),
-> +			.dp_lane_reg    = 0x0000,
-> +		},
-> +	},
-> +	.dp_tx_ctrl_cfg = {
-> +		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-> +		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-> +		rk3588_dp_tx_drv_ctrl_hbr2,
-> +		rk3588_dp_tx_drv_ctrl_hbr3,
-> +	},
-> +	.dp_tx_ctrl_cfg_typec = {
-> +		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-> +		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-> +		rk3588_dp_tx_drv_ctrl_hbr2,
-> +		rk3588_dp_tx_drv_ctrl_hbr3,
-> +	},
-> +};
+> +maintainers:
+> +  - Markus Stockhausen <markus.stockhausen@gmx.de>
 > +
->  static const struct rk_udphy_cfg rk3588_udphy_cfgs = {
->  	.num_phys = 2,
->  	.phy_ids = {
-> @@ -1584,6 +1621,10 @@ static const struct rk_udphy_cfg rk3588_udphy_cfgs = {
->  };
->  
->  static const struct of_device_id rk_udphy_dt_match[] = {
-> +	{
-> +		.compatible = "rockchip,rk3576-usbdp-phy",
-> +		.data = &rk3576_udphy_cfgs
-> +	},
->  	{
->  		.compatible = "rockchip,rk3588-usbdp-phy",
->  		.data = &rk3588_udphy_cfgs
-> 
+> +description:
+> +  The MIPS based Realtek Switch SoCs of the Realtek RTL838x, RTL839x, RTL930x
+> +  and RTL931x series have multiple SerDes built in. They are linked to single,
+> +  quad or octa PHYs like the RTL8218B, RTL8218D or RTL8214FC and are one of
+> +  the integral part of the up-to-52-port switch architecture. Although these
+> +  SerDes controllers have common basics they are designed differently in the
+> +  SoC families.
+> +
+> +properties:
+> +  $nodename:
+> +    pattern: "^phy@[0-9a-f]+$"
+> +
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - realtek,rtl8380m-serdes
+> +          - realtek,rtl8392m-serdes
+> +          - realtek,rtl9302b-serdes
+> +          - realtek,rtl9311-serdes
+> +
+> +  reg:
+> +    items:
+> +      description:
+> +        The primary register memory location. On RTL83xx devices this is the
+> +        address to the I/O register range, on RTL93xx devices this is the
+> +        address of the MDIO style command/data registers.
+
+Not much improved, still missing constraints.
+
+I don't understand why you introduce changes like this.
 
 
+> +
+> +  "#phy-cells":
+> +    const: 4
+> +    description:
+> +      The first number defines the SerDes to use. The second number a linked
+> +      SerDes. E.g. if a octa 1G PHY is attached to two QSGMII SerDes. The third
+> +      number is the first switch port this SerDes is working for, the fourth
+> +      number is the last switch port the SerDes is working for.
+> +
+> +  firmware-name:
+> +    maxItems: 1
+> +    description:
+> +      An alternative name of the SerDes firmware image file located in the
+> +      firmware search path. Set to "" to disable firmware loading.
 
+Missing property, not empty string, should rather indicate unneeded
+firmware.
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    serdes: phy@1b00e780 {
+> +      compatible = "realtek,rtl9302b-serdes";
+> +      reg = <0x1b0003b0 0x8>;
+
+This does notmatch unit address... and again: this was not an issue in
+previous version. Your new versions of patchset introduce errors and
+bugs. This is not how the process should look like. Review should
+improve the patch, not reduce its quality.
+
+Please start carefully reviewing your changes *before* you post.
+
+Best regards,
+Krzysztof
 
 
 -- 
