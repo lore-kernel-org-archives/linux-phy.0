@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E502D16256
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 12:32:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8F28D1625A
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 12:42:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N1OoZkzbI6MWxcP2vU1oHskv5wVMV7ZsRvjFqkaI0dc=; b=BOEhKcp2qyUVNG
-	Ce716pcLCRC1RQAJ3zC+shvbN28evLDtsR9HWVFBzZrLenu/hQ9bGtD2z9gC4O0ZU5vM3EUnnRdSW
-	IZgRdoc2LrBNQT2421Diw4m+Co3iwQ21i+o3OlYRhYX51tTPXd7nngo0jp9pLZ9HdqeGemsHU/+sc
-	NFpKN61zJBqllnIiuceP+ZgwtZslxAeMBiFooS0unfSTZuvbL3/0SjTI3VgZ1xdY27DUbJ+fptnuz
-	2KHmUPH4RbvDSjJ7rd8+GbLhVFUa1HNKtvks+WEI1CKkeo/6gE30SK5d4ZbTf6VOsPnrv9EIxZJDI
-	4AAz/Bj2d7uTjEP5RaaA==;
+	List-Owner; bh=hVeuZaLMt7YzZ/8kcW+mIQZ0c92J0DDlemASWVbSsJU=; b=M5pcpnrwC9FSBh
+	8StIKrZZAmyjKHjW3LaV6OLmKGJpRMyvphgxNuNS91FdunoY2rK0m7jzVV8Z4U662hm1whxpW4ZWg
+	hi/4gjJOcvrucTrSvYp2YC2EZthWy7rUcuK1zn/HXRf8vbe70qPpjwxy53GbTX2fpyTSz3wDtW83X
+	2Z6+kZFBZNgnwpY9iomUpSMyWGbidKliDKEZGT0zfP0lHVr1ucpFjKDQHJ+qkDkvgBacQmyJUbHPY
+	Lwt9oZCwxkYIosYqwg/K+cqNHIlg1pbF/cvHWqEDm6MUNDzq6vQNA01WiGFLvlP6pcGlacIn73lrc
+	d2vBhzx500rJIpdf98Vg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0KFu-000000055p4-1FKD;
-	Mon, 14 Oct 2024 12:32:58 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1t0KPS-000000057AT-2Saw;
+	Mon, 14 Oct 2024 12:42:50 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Ipr-00000004odl-1Ryf
+	id 1t0IqC-00000004opo-3n5f
 	for linux-phy@lists.infradead.org;
-	Mon, 14 Oct 2024 11:02:01 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-539e59dadebso2346236e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 14 Oct 2024 04:01:58 -0700 (PDT)
+	Mon, 14 Oct 2024 11:02:23 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-539f6e1f756so884667e87.0
+        for <linux-phy@lists.infradead.org>; Mon, 14 Oct 2024 04:02:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1728903717; x=1729508517; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1728903739; x=1729508539; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=VKpzCOMXDiogLxX30wOP2UvN2nyiYIuu5MpkOOY7CK8=;
-        b=dsX/VkpkP5YBF3i/VXAy/4sMHVcgSwc/IeDSDUwC7Z5nf26rCKmpaFd+MVWa+swj9k
-         MzNXgT+pJGpRlwKbqil4sQXbWnes20bZJdoHmR0PpA6fmwzJfUidoUR46zznnnA7YseV
-         v/duoaP6CH6rStxxjNwbRCohJa8MgXLasrATpVDXnv/nB3V/eKL7R6oxvjeNOnzoOGw5
-         0/p/8+VpJvNMir1SlfWsm5y+raVZrK0Tnu4YYuBYtiDaKjgx+StSpGDyQlq3nhM8hAUn
-         2YhqYmsttXa4vqbmxD3MJ5O2pbQuxfiBV+leKFHT+PsW7fG1N/QZOAkHyUr6mcw/b0kp
-         ud9w==
+        bh=YPG5syvQmdIElZ3OPvKI1tUxnKFtCrmS600/6uIfwrs=;
+        b=RCAj7iAV9/QECtNfwyOCQQ86/PO7YzDGSd2sGMCOuBIBWnoBw5/rUjFzKo3aSITrtI
+         8HOZXDEwKSlyXveQnKKQ6VADahqnGsx5wYBnuje5Lo+2Alg80nEhMPet1Is07qmheYyu
+         AZS8OhvYyr3wQ5vB6x8BDbewUnKzG4Pxaoa/x6ZZeEyfo066GhggpvHoof8sE/F6Ia7F
+         FT/g7tM/Kp28P40av0y/T7u6zmOkpRvKZ2JqDt/HYsVkxg2PpTlH6Rgu+fR6sHkjI1Z1
+         AX6TCX4wtPiUfQEgCYKCOitKQy3GqpyIk+9IF4/RyWY/VtGl9tPh83jroSyl87RzO9o7
+         TKJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728903717; x=1729508517;
+        d=1e100.net; s=20230601; t=1728903739; x=1729508539;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=VKpzCOMXDiogLxX30wOP2UvN2nyiYIuu5MpkOOY7CK8=;
-        b=oWnl3p2xYg44ZS4w88j5g4H3NKxJfeHDPJ9Xv4nyqS8SzK0QFYoMKlEr1Ripm+4/El
-         AZ9vEWcB/g9QvbETGAL0qYsvq0n95fzYQOdi2KdI0Bzdn8MUx5mJyWkqNwFkydT2cKf4
-         gEzT+vxAoIc7DC05ah3nZ3iRXwAW2qPWh0O/U4YUhDcTAZFsk17IirBTageR/jBkTw2f
-         dy7pQPkbkfB0chl9xtHp3xYjzw6386atIJBooTjHiseYaJftnIz5eiMxvVqjpI9eFoWf
-         bVUMfmCtCPMNCu5hYzn3xO/0/6Wv0kEoDr7F36n+2YQPHqQDWluUcaG9al8hZzibTH+n
-         Fcug==
-X-Forwarded-Encrypted: i=1; AJvYcCXvDFqgrRc4/shPrl7lF534b0zohys+MUmcF52/z4zDHp1xUScrsfMi463UxgKPBFl83gEm1EA4G2o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxx514dsDxRqautUQZiRel2VQ63ZEHrc0wRYkxTev8ChumB18Ij
-	SMsmGRuE01O13gkmKo+iyZlax52AedEA0NPqm6ih6hs00jGIHu+Ggh5tIxlUcno=
-X-Google-Smtp-Source: AGHT+IGQSb0K8lAOmKTKazlWY9udy/M828sx4SUbiGbOle9pMo3c21JNq4Lq6GrYVpjPk+GdedJWEQ==
-X-Received: by 2002:a05:6512:1295:b0:533:46cc:a71e with SMTP id 2adb3069b0e04-539da5954b8mr5060410e87.54.1728903716948;
-        Mon, 14 Oct 2024 04:01:56 -0700 (PDT)
+        bh=YPG5syvQmdIElZ3OPvKI1tUxnKFtCrmS600/6uIfwrs=;
+        b=d3TzyZO7HXulX1/ix5dreCP9mq1AZATazEvMdVvlqtxRBNBDsu7WDj5u9x2+/BJcSk
+         m+tcCMZDZOzgBKCBaisp28YWs6vAoOnJm7oTZpyeA0DIMux2DncTguYuQjJ4fbTvzY7C
+         G2IRGbGwmj6g7eYtltg55c7QzszCCg79XJW8BgQLlB/VuMDHMc/v5UbDa8s1tqdUnj7p
+         pm6K/xlXPR/Mp9TPj6CzV6l0P8Fk+dgptTANn8DYyAVLG9t7jmbNU02myfqXcP3wX2pD
+         7g87s01E8P9Wx1SX10xs3OFOgPO4FckdY21FO/69V2Im6jWNl2ZKZhz0VrBSwo0jlMjv
+         3dcg==
+X-Forwarded-Encrypted: i=1; AJvYcCWOTP6maFKWQxjzuB2QG4KAPAIIHGxtUz2K+3lY+SB+bkRYvfDCaTjz+OJXTzoppw+qUWUGTBDiiVk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzMaYRtJe1yj9cVg9PvFFcKrAoY+YR39ipGtL3VVcIrJ+peQqZB
+	yfTbOj6sHALvoBmW0qkwnObknt5yttBr1R1Km8K9fjTteKsbqqluDR3vy5DAutM=
+X-Google-Smtp-Source: AGHT+IEuiWssWlxRsSEt59sxgm4J1iwV9VrCy52qiaQ6PWdHX7Ga7KTuh7tgvmtXbf+UOvM8fdAF8w==
+X-Received: by 2002:a05:6512:a93:b0:535:6ba7:7725 with SMTP id 2adb3069b0e04-539da3b6c23mr5260919e87.3.1728903738909;
+        Mon, 14 Oct 2024 04:02:18 -0700 (PDT)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-539ee16a07asm620043e87.45.2024.10.14.04.01.55
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-539e44b766esm1031460e87.239.2024.10.14.04.02.16
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 14 Oct 2024 04:01:55 -0700 (PDT)
-Date: Mon, 14 Oct 2024 14:01:54 +0300
+        Mon, 14 Oct 2024 04:02:17 -0700 (PDT)
+Date: Mon, 14 Oct 2024 14:02:15 +0300
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Krishna Kurapati <quic_kriskura@quicinc.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -73,16 +73,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
 	quic_ppratap@quicinc.com, quic_jackp@quicinc.com
-Subject: Re: [PATCH 4/5] phy: qcom-qusb2: Add support for QCS615
-Message-ID: <zvrvhcemcozy7swsvrwcngm4k3qa4czkbfsq2s33hndu46regx@o7xk2g6wqpdf>
+Subject: Re: [PATCH 5/5] phy: qcom: qmp-usbc: Add qmp configuration for QCS615
+Message-ID: <arqe2egym2ljme75lpb52mkkchn7ojs7xkozbgdw2jn3lmhiry@oixcxrsteszy>
 References: <20241014084432.3310114-1-quic_kriskura@quicinc.com>
- <20241014084432.3310114-5-quic_kriskura@quicinc.com>
+ <20241014084432.3310114-6-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241014084432.3310114-5-quic_kriskura@quicinc.com>
+In-Reply-To: <20241014084432.3310114-6-quic_kriskura@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_040159_550786_F80550CD 
-X-CRM114-Status: GOOD (  16.47  )
+X-CRM114-CacheID: sfid-20241014_040221_004145_19EA7417 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,77 +100,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 14, 2024 at 02:14:31PM +0530, Krishna Kurapati wrote:
-> Add init sequence and phy configuration for QCS615.
+On Mon, Oct 14, 2024 at 02:14:32PM +0530, Krishna Kurapati wrote:
+> Provide PHY configuration for the USB QMP PHY for QCS615 Platform.
 > 
 > Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qusb2.c | 29 +++++++++++++++++++++++++++
->  1 file changed, 29 insertions(+)
+>  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> index c52655a383ce..227041e096bc 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> @@ -151,6 +151,19 @@ static const struct qusb2_phy_init_tbl ipq6018_init_tbl[] = {
->  	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_AUTOPGM_CTL1, 0x9F),
->  };
->  
-> +static const struct qusb2_phy_init_tbl qcs615_init_tbl[] = {
-> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE1, 0xC8),
-> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE2, 0xB3),
 
-Lowcase hex numbers.
-
-> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE3, 0x83),
-> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE4, 0xC0),
-> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_TUNE, 0x30),
-> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL1, 0x79),
-> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL2, 0x21),
-> +	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TEST2, 0x14),
-> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_AUTOPGM_CTL1, 0x9F),
-> +	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_PWR_CTRL, 0x00),
-> +};
-> +
->  static const unsigned int ipq6018_regs_layout[] = {
->  	[QUSB2PHY_PLL_STATUS]              = 0x38,
->  	[QUSB2PHY_PORT_TUNE1]              = 0x80,
-> @@ -331,6 +344,19 @@ static const struct qusb2_phy_cfg ipq6018_phy_cfg = {
->  	.autoresume_en   = BIT(0),
->  };
->  
-> +static const struct qusb2_phy_cfg qcs615_phy_cfg = {
-> +	.tbl            = qcs615_init_tbl,
-> +	.tbl_num        = ARRAY_SIZE(qcs615_init_tbl),
-> +	.regs           = ipq6018_regs_layout,
-> +
-> +	.has_pll_override = false,
-> +	.se_clk_scheme_default = false,
-
-Drop false values, please
-
-> +	.disable_ctrl   = (CLAMP_N_EN | FREEZIO_N | POWER_DOWN),
-> +	.mask_core_ready = PLL_LOCKED,
-> +	/* autoresume not used */
-> +	.autoresume_en   = BIT(0),
-> +};
-> +
->  static const struct qusb2_phy_cfg qusb2_v2_phy_cfg = {
->  	.tbl		= qusb2_v2_init_tbl,
->  	.tbl_num	= ARRAY_SIZE(qusb2_v2_init_tbl),
-> @@ -922,6 +948,9 @@ static const struct of_device_id qusb2_phy_of_match_table[] = {
->  	}, {
->  		.compatible	= "qcom,msm8998-qusb2-phy",
->  		.data		= &msm8998_phy_cfg,
-> +	}, {
-> +		.compatible	= "qcom,qcs615-qusb2-phy",
-> +		.data		= &qcs615_phy_cfg,
->  	}, {
->  		.compatible	= "qcom,qcm2290-qusb2-phy",
->  		.data		= &sm6115_phy_cfg,
-> -- 
-> 2.34.1
-> 
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 With best wishes
