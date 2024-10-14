@@ -4,60 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17EF7CF2571
-	for <linux-phy@archiver.kernel.org>; Sat, 12 Oct 2024 17:53:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99E6DCF2592
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 02:05:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I29i9kCS40ILjG4YSeVI/qaouN5r8GimgxdnXgEF94U=; b=Z4VzcJtxRB65d0
-	h+LV2N6d29KNwT2S4EnPlob00UElMsudD4ooteqPkWceXGfs5AaK9j+udb3GBtKGH8CDU17xxYT9k
-	pv21dHLPV3zO3Zc0/SgFupwui7n6MdMaBi2gxHoZfJUneirgOslNgA1tJnrSvGx3CbX5+rH79LaWk
-	k9NsiuTHz6VdzLMAwWelzMohR2z4UVQmLCeMbLqBqz3YUBnRGvqADN6NCMzV3wC7XldUB+jw4jxnF
-	eVKICEEaTRwzNXhh8XcgfOcB9XFv8rQkKux21KgnwqKzvwuHAgFP2KS4OKmJ5t0HyQ/YkYD9OztEY
-	KeO7hUnPD8WiyN//eilQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N+qZSE/KIIKBfPq8TQNkmuYdbVJyX/RuN8PjM4Adxk8=; b=Rzfxbc8tglFv81
+	D/VcESLuUoWuyQ6zcI6NBdXWyGYDU74J9XJnc57HiFRFqhkQoZ+oZzCr7XWJ3D6iUIkAUr9J8IZs/
+	bl/O+s3FkQPblQWx9vmttENi0eFedGEhPplR+lD7s0zfUCGrw48tDZxWC1srbw20mkj4UpL52RAbN
+	D+Oikm1Q2J0+mm98Vlg6PPqwa0CizOPn+FL3ysL3Fxk8A6vCYNTFbIQ6eXB1VZK8WRLzxYQNwP+7b
+	lM8V98hwshPnCUnvcmEtxZrew4kU+ZuLpkAD12b65BzKZGchhodtAr3E6hSvbuZ+inqFQGfPUDR6g
+	UX5QXqFJpxzv9SasDElw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1szgIt-00000001bAU-2t02;
-	Sat, 12 Oct 2024 17:53:23 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1t0ASR-00000003WDF-1E0w;
+	Mon, 14 Oct 2024 02:05:15 +0000
+Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1szgGJ-00000001axQ-1vWh;
-	Sat, 12 Oct 2024 17:50:44 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id F40A5A40790;
-	Sat, 12 Oct 2024 17:50:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7971C4CEC6;
-	Sat, 12 Oct 2024 17:50:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728755442;
-	bh=IrGrdRYv8ot8a1VdA94PIoD/MYZEgPGcLz0JZgh4aWI=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=cNuw7kMF5i+IXjEudpdcQl84hpakGHv9yFK0fFIbT4mnDELCrgfcb0zFsdj9GP+PO
-	 B94zZ7Uqi3NPpcyttfo309rKRKnv/2NQh9A0WSGJFgeRx4E9JUSulP1mtZ+87P2vGs
-	 G2u5vlkv+t9rw+NByEdzqdYZLULTID1USBSLWp2KbIIENdcd2Jb8qk4Dp6pVu/YSl9
-	 7S0NbL6qOgxbK2bGktUAPSapgDCYPo2cqgDyFyorCUuyiGIEEVdtNOXXRn13ivTxtm
-	 so5k+o4drBBcIUoWTNa/uAqxV5EoWS0vyipDG8VAZDjY2y+R/+ONDt376RPBjmofN2
-	 UfaEgzHHaXO0Q==
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Samuel Holland <samuel@sholland.org>, Andrew Kreimer <algonell@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
- kernel-janitors@vger.kernel.org
-In-Reply-To: <20241010091355.8271-1-algonell@gmail.com>
-References: <20241010091355.8271-1-algonell@gmail.com>
-Subject: Re: [PATCH] phy: sun4i-usb: Fix a typo
-Message-Id: <172875543924.55946.332622987727413836.b4-ty@kernel.org>
-Date: Sat, 12 Oct 2024 23:20:39 +0530
+	id 1t0AR5-00000003W11-3QYd;
+	Mon, 14 Oct 2024 02:03:53 +0000
+Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-20c78a10eb3so1557405ad.0;
+        Sun, 13 Oct 2024 19:03:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1728871430; x=1729476230; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=t8XtIqCB450e+VMFf/Ma1ifuCcLIUz75aLQRgCsC9As=;
+        b=RWx9PiikW/oo/+7XpntY1SdBoMJD0OMs4FnypB+JOv4bFOEEO0agJIJYugb+2rRbPZ
+         k3IxLHL07Kau2jVdSVOUwklK4hK047Bd6HwdoNj+BFK5Xr89QgsYVHBoMVROiJ9n4YxO
+         pJFvy064LvrT8ROOeTyek3Ox/xxU03mpjNKgQPIEuAvLjvGax+krcr6Kk5RKBi0rij75
+         SN/GsU6XOnIOL9+BYDB5WqqUJHvZzutwMApajfHbvkBwkuOb9DY8y1GcjzZ6FiRtmwOp
+         qxxBwH9oXG5qCXmzkkqvbWdYhecHh36Q97FCvOcbtnnd+DgiaOAJRG+PuQkokFJa4UqD
+         XMXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728871430; x=1729476230;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=t8XtIqCB450e+VMFf/Ma1ifuCcLIUz75aLQRgCsC9As=;
+        b=pm/32C6Hy6XOcK1Vjs8PtRfrXzWSAm1eQwnVapKdSf6N6tCobLwRYiq4E6qXue848B
+         koGbgnGMrf+Fl+HV4ac7z9/Lf+lD3zD0ApWeGiO9nS14LA6u52V5VMwtmKVkH13FN1aR
+         z4IewpxF44kBGHwRgi9+awNvsv7EWucQW0wW9y3BRVJwZ2BXhOKcsP45e4A6NXBfBf54
+         keCQE23pTKoUskdc6mRtyZEHwLKPOnwPFSu2N34Yamg5XWooDIHvupLN+iN/sZUdAX1z
+         YnQ3KirrLn20YfKOOxkwmvchJXNfwCiajvOF98QCu3pWIDNI6w2YaECmCqJgL0vq7U8M
+         ayLg==
+X-Forwarded-Encrypted: i=1; AJvYcCVDXACJSAdFm9AqcQygQbI2aYtog2rLQk/fFERd/mvYbgTmhbdN7g7th/e/hDxNRFsr+UXIUTUOYmcINZ8KVJI=@lists.infradead.org, AJvYcCWX23OfrijCJHE53h7leyIeD0jwhFNT8sAa8l0mXXSX6Qq2aX1KXuaKT7kkPpsR279AoSmzlvnMOobmXzTiOUo3@lists.infradead.org
+X-Gm-Message-State: AOJu0YzQezLvN4/GU56qJ3i9BkFad4gA9NSZF2kN97fAXn33zN2/DWvQ
+	+S9oTlPUJ9pmYOxPuTSQF3Qgsc9g24T6U6nzgrPkELDUzIxpl3b+
+X-Google-Smtp-Source: AGHT+IHKs+nDs/o7NtLyvmjRfk3RZ9OpnxvjxX2ffV/xeBEuv2cHhDtoH5EYcBK2N21UFloGOjqChg==
+X-Received: by 2002:a17:902:f549:b0:20c:ee32:7595 with SMTP id d9443c01a7336-20cee32779emr10437525ad.2.1728871430035;
+        Sun, 13 Oct 2024 19:03:50 -0700 (PDT)
+Received: from localhost.localdomain ([103.29.142.67])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-20c8bc1a59asm55794795ad.113.2024.10.13.19.03.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 13 Oct 2024 19:03:49 -0700 (PDT)
+From: Frank Wang <frawang.cn@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	william.wu@rock-chips.com,
+	tim.chen@rock-chips.com,
+	yubing.zhang@rock-chips.com,
+	Frank Wang <frank.wang@rock-chips.com>
+Subject: [PATCH 1/2] dt-bindings: phy: rockchip-usbdp: add rk3576
+Date: Mon, 14 Oct 2024 10:03:41 +0800
+Message-Id: <20241014020342.15974-1-frawang.cn@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241012_105043_590938_274C1F33 
-X-CRM114-Status: UNSURE (   3.78  )
+X-CRM114-CacheID: sfid-20241013_190351_903514_16BE83BF 
+X-CRM114-Status: UNSURE (   8.23  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,21 +102,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Frank Wang <frank.wang@rock-chips.com>
 
-On Thu, 10 Oct 2024 12:13:55 +0300, Andrew Kreimer wrote:
-> Fix a typo in comments: wether -> whether.
-> 
-> 
+Add compatible for the USBDP phy in the Rockchip RK3576 SoC.
 
-Applied, thanks!
+Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+---
+ Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-[1/1] phy: sun4i-usb: Fix a typo
-      commit: 11dad94b50263bbe87d015041c77be61c8c44161
-
-Best regards,
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
+index 1f1f8863b80d..b42f1272903d 100644
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-rockchip-usbdp.yaml
+@@ -13,6 +13,7 @@ maintainers:
+ properties:
+   compatible:
+     enum:
++      - rockchip,rk3576-usbdp-phy
+       - rockchip,rk3588-usbdp-phy
+ 
+   reg:
 -- 
-~Vinod
-
+2.34.1
 
 
 -- 
