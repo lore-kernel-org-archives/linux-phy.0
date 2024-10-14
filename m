@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A049CCFC504
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 08:54:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8007CFC506
+	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 08:54:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0LlwnvijlUSXlDoAYlGcHHrYlOVv9ZzlvU9TvI2qHIc=; b=yrnCatCUl0AgEZ
-	zPoY9OPPtyo2d3TV0Q+z5f2TddnXbN7lyPvX1AyTHq8t1yCRFiGi+Fsqx7ZFhvcH/a62cVejgnMRZ
-	+PLQkoY65aeP4xWUl9O3TeZVrmdaZOskHG6kqyNi3TsvjUmReyYt0fj69UnS1r03SMJOjYdhzbkm/
-	EBoJbpsBISrH7soiPuEqJxUfViBtnX1nm9bJoW+lmCv/ii9+d2D4VOu0xhFd/j54KFSub6OWqnn1+
-	Wwd8m5ezyw9rW1cr/PzrMmFaiSIckPUfvp4qcf277hHuUHhelQMpsFyVApSKcieJ9WLQ5GHLTNUWy
-	9xWtjDEWp1jUibbePxhw==;
+	List-Owner; bh=NqkNWM8wkRLj6madlDN4ce0dbuTD9+NRQ8XdReQMkqs=; b=Xrcp70u7evBcwp
+	ymz0xGpUKsm0MVaLQil7we1oArzep3XPcrjJvGDKx3+kTIW8OWd7QkryXa25mzB9ZSI4EyS65WbKI
+	hY7dVKAqmXZVUM6GXiHH36ce2V/EjYXZabYLmC6YPBmiuC7l0TAz2b2mJ0nlUxHIe2AwM+2a/eJjI
+	USj1AdtUN4PZ5aeZwMoSp6AOEsgNSyqPy7PmxvwXoYC36aLkfY1KkirWG7T2yy0JjQxt1Nl/2XV+4
+	I71aOHVbMl99HmtCrJsNi9sFzaSt9Y2W6lbaBhr1nmcRfohP5tXiHIRspB/36Y3aDp5jEqdW2xLY4
+	cgprcp/PS5zHoreopMBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0GqJ-00000004NHr-0pJS;
-	Mon, 14 Oct 2024 08:54:19 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1t0GqK-00000004NIi-0bO8;
+	Mon, 14 Oct 2024 08:54:20 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0GhL-00000004Ktj-2Oqw
+	id 1t0GhX-00000004Kxt-1sxo
 	for linux-phy@lists.infradead.org;
-	Mon, 14 Oct 2024 08:45:05 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49DN52KP032568;
-	Mon, 14 Oct 2024 08:44:57 GMT
+	Mon, 14 Oct 2024 08:45:16 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49DJhElD011572;
+	Mon, 14 Oct 2024 08:45:10 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	LG8ZnoZ2WF6hQExUSwM1I/ltIow0xA7vHdQQv8f3ILc=; b=e6r9UL8smwVoX67j
-	V9SJMs0JG5KkU45rotBf3/2Tx7Dyyxvy0WJelANQ5pKKtfcKz/SqZTLA2QNm07ni
-	eY9w6f7QpkIT/uu7odMe44sMNT6aqLsznSwEG9WCqh4gT3xfQveakJJFJeJfi5rE
-	4AerPkNVVrdkBCRLmdOXvjlHqu4kG9xWXihvyLVQr4Kkl1+nfatX+y+DSILRY6iz
-	c84m3adrN6nyVxY8dDdOFsqHCEijhbqvOeGopTIsgR6gHbzrC2lJilo+P4fjAG4R
-	kkaXYJy1iaeEE/nKOOePqizoLn2J7p99cJEpTKSLn09h10pQABO2XEH8OK+zefAz
-	XOqoLg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 427g2rkvmr-1
+	jlHMt3MffT9f6fQhgD9Iu+WrOKOlKkVezF8+GY/BOTQ=; b=iBB1IR8KPU4Kl40J
+	75xJ6tWy2nLtD2vYLONITMjMPimvXw7/IM04LERq9FDC4NP4xEnNtiGXFjDR/YFw
+	JkSdOJIDss8c/ZZFg+nHUDXg2kvT/6H7DEouvNSQdBnNoy2sSZ/3c+A3TwGBSHO7
+	ek45GlaGaXIdCgnR/NnMn50Sz9KzRfYPK9dtb8utD2Dg17eqvtzqa0F5a0nxZu59
+	hcwFV/fpoVBeePTc5wUm5HRDiK8IfW+iIPM65V5pD+EgZRcY5XeLSEJb3OaMc5Cf
+	KXEjFcdae07txHirvaNv2sh6cMBfMB2nRMS9gaGjJPvYpCCiyVxyI749fUYpOVeb
+	TCMhJQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 427g45bvdm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Oct 2024 08:44:56 +0000 (GMT)
+	Mon, 14 Oct 2024 08:45:10 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49E8iudN029181
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49E8j9bJ016401
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Oct 2024 08:44:56 GMT
+	Mon, 14 Oct 2024 08:45:09 GMT
 Received: from hu-kriskura-hyd.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 14 Oct 2024 01:44:50 -0700
+ 15.2.1544.9; Mon, 14 Oct 2024 01:45:03 -0700
 From: Krishna Kurapati <quic_kriskura@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Rob Herring <robh@kernel.org>,
@@ -70,9 +70,9 @@ CC: <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-phy@lists.infradead.org>, <quic_ppratap@quicinc.com>,
         <quic_jackp@quicinc.com>, Krishna Kurapati <quic_kriskura@quicinc.com>
-Subject: [PATCH 1/5] dt-bindings: usb: qcom,dwc3: Add QCS615 to USB DWC3 bindings
-Date: Mon, 14 Oct 2024 14:14:28 +0530
-Message-ID: <20241014084432.3310114-2-quic_kriskura@quicinc.com>
+Subject: [PATCH 3/5] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add support for QCS615
+Date: Mon, 14 Oct 2024 14:14:30 +0530
+Message-ID: <20241014084432.3310114-4-quic_kriskura@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241014084432.3310114-1-quic_kriskura@quicinc.com>
 References: <20241014084432.3310114-1-quic_kriskura@quicinc.com>
@@ -82,20 +82,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: GU6NZIoBMc2ZHQdxcQFJhtbuXDfwyJ3U
-X-Proofpoint-GUID: GU6NZIoBMc2ZHQdxcQFJhtbuXDfwyJ3U
+X-Proofpoint-GUID: tpnj82OGi-co9HUlHXjjOkJSyT_U52Jo
+X-Proofpoint-ORIG-GUID: tpnj82OGi-co9HUlHXjjOkJSyT_U52Jo
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- lowpriorityscore=0 suspectscore=0 phishscore=0 malwarescore=0
- clxscore=1015 spamscore=0 adultscore=0 mlxlogscore=420 impostorscore=0
- mlxscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=859
+ lowpriorityscore=0 malwarescore=0 spamscore=0 impostorscore=0 bulkscore=0
+ mlxscore=0 priorityscore=1501 adultscore=0 clxscore=1015 suspectscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2409260000 definitions=main-2410140063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_014503_646796_C761CEB9 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241014_014515_649729_4FCE843F 
+X-CRM114-Status: GOOD (  10.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,49 +111,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Update dt-bindings to add primary controller of QCS615 to USB
-DWC3 controller list.
-
-Although this controller has a QUSB2 Phy, it belongs to a
-generation of SoCs like SDM670/SDM845/SM6350 where DP/DM is
-used for wakeup instead of qusb2_phy interrupt.
+Update dt-bindings to add QCS615 to QMP Phy list.
 
 Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
 ---
-Patch rebased on top of [1] to avoid conflict:
-https://lore.kernel.org/all/20241009195348.2649368-2-quic_kriskura@quicinc.com/
+ .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml      | 2 ++
+ 1 file changed, 2 insertions(+)
 
- Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-index f7be05641930..76f78ed6ac9b 100644
---- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-@@ -26,6 +26,7 @@ properties:
-           - qcom,msm8998-dwc3
-           - qcom,qcm2290-dwc3
-           - qcom,qcs404-dwc3
-+          - qcom,qcs615-dwc3
-           - qcom,qcs8300-dwc3
-           - qcom,qdu1000-dwc3
-           - qcom,sa8775p-dwc3
-@@ -340,6 +341,7 @@ allOf:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+index f1f4e4f83352..1636285fbe53 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+     enum:
+       - qcom,msm8998-qmp-usb3-phy
+       - qcom,qcm2290-qmp-usb3-phy
++      - qcom,qcs615-qmp-usb3-phy
+       - qcom,sdm660-qmp-usb3-phy
+       - qcom,sm6115-qmp-usb3-phy
+ 
+@@ -96,6 +97,7 @@ allOf:
            contains:
              enum:
-               - qcom,qcm2290-dwc3
-+              - qcom,qcs615-dwc3
-               - qcom,sc8180x-dwc3
-               - qcom,sc8180x-dwc3-mp
-               - qcom,sm6115-dwc3
-@@ -467,6 +469,7 @@ allOf:
-               - qcom,ipq4019-dwc3
-               - qcom,ipq8064-dwc3
-               - qcom,msm8994-dwc3
-+              - qcom,qcs615-dwc3
-               - qcom,qcs8300-dwc3
-               - qcom,qdu1000-dwc3
-               - qcom,sa8775p-dwc3
+               - qcom,msm8998-qmp-usb3-phy
++              - qcom,qcs615-qmp-usb3-phy
+               - qcom,sdm660-qmp-usb3-phy
+     then:
+       properties:
 -- 
 2.34.1
 
