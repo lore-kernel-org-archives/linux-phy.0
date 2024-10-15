@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94B39CFC270
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 06:23:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5A2FCFC270
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 06:23:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XD2MHRfp8Xfcxpe99UxG3tSTmT+wvfKZcFFbdnwmW4I=; b=ZiBx4N9NcrPEQh
-	WqDCO55rDtTssHTmP1kX/BgMEmdovPPGYxeWhKjvYQRfg5iSVR7VuE5LyUidvv+Q7icQ7VO4r1etv
-	L/fVlfRZcKx4sFYalwksSEaOHQ/me4eXBlUSuYYFCbEd9D8b9O9PpHMbfSXmEQoG+nIt2zECpQkUo
-	78vyMyR3xIrTBnyZSGRQZn1U8GQrn0prkpkqdcFwsPFBwTA/cMbLh9SkVz0/cRbtmCJTEb7Poypyb
-	WygJOAiLx+E2/ni8vmE31ypzO7+9gvzVbPGNcvFkEjW6bR/ZjKd3jbqXYcFx/JcOHXlLtz8cVC/nJ
-	9kiUPDVCH45hkA9L8XQw==;
+	List-Owner; bh=Wygw83gRo0yRTJvcHIkmuYe2X2Erirvck8PLywQYn9A=; b=hyFWzQPi4kxBYO
+	NelYlDOpIiPMU2UBziErhTgKdqtd0UfTyX4I9u4Ex4+uXO935MOVvwS6c/NIFlh+Ucpzm31f19H0r
+	e3966qBjgUTUnjuDaBtCLqwKJz1gxUYi9QfGKWf9/ODQ4kW//K5HUYm+x7rIZpOlFPsQ7DG7DXBWB
+	K/C6UpHmanNh3I71lsU1BxCItvW3rNQ10+hq4gWvdRkaqermekMRMUF/rtwlXZcs6G6r/8xvGMBwM
+	lqy1Jn/oSQDNQMxSXnAhwhgd48Rm2YVy7mT6dAe0DwaIbB8jkoTdv6jiMJBYlMuw//bLZCFHNMD84
+	pXCpfLxocUW//QK7Y1Xw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0axQ-00000007CRi-1M8D;
-	Tue, 15 Oct 2024 06:23:00 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1t0axu-00000007CWu-1Sl4;
+	Tue, 15 Oct 2024 06:23:30 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0axN-00000007CQX-0Stf
+	id 1t0axr-00000007CWI-3V69
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Oct 2024 06:22:58 +0000
+	Tue, 15 Oct 2024 06:23:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id EFF495C5C84;
-	Tue, 15 Oct 2024 06:22:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ECEDDC4CECD;
-	Tue, 15 Oct 2024 06:22:54 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id BDC815C1020;
+	Tue, 15 Oct 2024 06:23:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BF45CC4CEC7;
+	Tue, 15 Oct 2024 06:23:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728973376;
-	bh=V9KJcARXDedlgSnmljYjhAlMHx38oslz1LVgv0iCuZk=;
+	s=k20201202; t=1728973406;
+	bh=69X/Uq1A2tTUdqIb/0WrWh+7qgAKnfOmdDZTUgq8+yE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NdYWXV2RaZCVrgCnKfaKvl5kTEvgrchehunbdh0S0wmJgMCRIqoPqbIl4upbWyy6D
-	 JP1M3EBOD/UY1CEe2GojGrBhJL440d+1IU1P/RDCfvH3ojTcuPh4U5MWqcfm49ZKq4
-	 p7n2U0vKIG+N8YVA7EKStTcOp7mCXP4I5M0N1kTLzw/BErWxUYMBmJ32EzD8GktC6r
-	 bglN8sE1bxWkFJIb6lfkt4Qqo2cPqOPekAFQuwuKWkaJvW95JlJ2WIw504NlI7lMYM
-	 CDnS/k4vUgaHG5hgQ3Sqz2H2NOspWywlYPw6rGATt6WzFVHI5/36+8c9ITrGw5nNOl
-	 ojKZqCsTmfe2w==
-Date: Tue, 15 Oct 2024 08:22:51 +0200
+	b=XSfdC1Kzj/bItGtCu96rR9w1XOJeXcP1m52bb94lW/QgGGqNKbF066t8D4GV/fe+8
+	 RGnYE3ZH65f1hQimmSB0pgJXg7kW5V0QGpjRNDc+9amRNHQrDt436dV8qDj8M0eni2
+	 7QjNPfMmhAvoUY1U5tXb118Og7d/U9UO6N0j/4nS+PLCrN8g5lQgs3Pn12dEntdXJ0
+	 88/10QFvMdyEG7vDYI2gwmvirSV+Xvx8BJ5BG9qdZYxgGWIQuApYmuBCGLSqFoLHN7
+	 g7IR7cNvq35aO89d/HTSE26cHy0kr4h8G7ZmVB7nshtW0SHoE0bvcwlaG55c3j3Q8H
+	 vZW8NK3Hn+5EA==
+Date: Tue, 15 Oct 2024 08:23:22 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Krishna Kurapati <quic_kriskura@quicinc.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -54,17 +54,16 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
 	devicetree@vger.kernel.org, linux-phy@lists.infradead.org, quic_ppratap@quicinc.com, 
 	quic_jackp@quicinc.com
-Subject: Re: [PATCH 3/5] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add
- support for QCS615
-Message-ID: <6mma3sulerihegjsmkje574f6gkg5qdduq5b52nttpeevdcj5v@ri2q2hstfyr5>
+Subject: Re: [PATCH 2/5] dt-bindings: phy: qcom,qusb2: Add bindings for QCS615
+Message-ID: <32zp2wldpqzn5wezcw6hg4cj5n5vc4xs32vl2og5mmsh2hr3fj@jkxg3bafdrd3>
 References: <20241014084432.3310114-1-quic_kriskura@quicinc.com>
- <20241014084432.3310114-4-quic_kriskura@quicinc.com>
+ <20241014084432.3310114-3-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241014084432.3310114-4-quic_kriskura@quicinc.com>
+In-Reply-To: <20241014084432.3310114-3-quic_kriskura@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_232257_210051_6E2EFABD 
-X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-CacheID: sfid-20241014_232327_936183_F216C7B6 
+X-CRM114-Status: UNSURE (   7.84  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,13 +81,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 14, 2024 at 02:14:30PM +0530, Krishna Kurapati wrote:
-> Update dt-bindings to add QCS615 to QMP Phy list.
+On Mon, Oct 14, 2024 at 02:14:29PM +0530, Krishna Kurapati wrote:
+> Update dt-bindings to add QCS615 to QUSB2 Phy list.
 > 
 > Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
 > ---
->  .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml      | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
