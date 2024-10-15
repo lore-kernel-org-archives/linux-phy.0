@@ -4,119 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35B90CFC272
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 07:07:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8C05CFC272
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 07:23:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UMuSCUPuDL/P4sfsJ0P3HNu2D48r7tX5GtA1pe7JUz4=; b=f9eFUcgosNiPRV
-	Plxp24cS6AS6AvfdqYua8w9TmbFO06UA61bkvmMiNaG38kUQi5YRWfZ3O46Uo1QOsRjBoj7JKF9xs
-	9IScg7mGB4KAt369/8V9PyQa4augnKYymAxLAENfuqbpwtw6MVMQORz4ZhB68xLQdMYPMGGXulKJP
-	2cSGCkVLDvYnnT4dQj+tG1PxZXSwNwZRifqfsdTy/HdppWTE4C/CkjUaAxQuMv1hNAXMkP0jZ6I8v
-	MJw9GNHhw1QBsxUnk4v6Wxx4lSYqAmAnar9WL7MDOF6xOiEHag8UlKyvVUtcA+GZ84V4mYCxynT0u
-	ExOHtpdykXtM2LXnY7aw==;
+	List-Owner; bh=nM5SFcaZ0L4/QfO/kRtOp/ahttLRzG7XbGqw66YsJMQ=; b=zs5m2VNs8XZiY2
+	QWkRUKz/zzzlFJfnnnr4PAB0fis8vpL+1GaEsfAw0Te7ASqs7TwPYZNEh7wt9X/7kjJPPfm3zQpOM
+	qKkG+oYFK4OhAgsh9+mF5OVvt9w/i6D9DjqVdJifsEag7J/uPScanitC0e04AqE++DH+CgT2KBhih
+	YvULgIRUPsqJITgrMrLCGzEDGsV8RCvFvwJx7aym4X7fAQzoPli+Vkf94IGWE/ZVIxGHixSCpV8Wu
+	wrRCHpBA1mGA0Llv8P2i9TRtNeOEyG+MM+mjMxMQE5JsR4EAZd945Y4TgI7aKyzKFVpLvy/50aAw1
+	TihjyNTso68iYPhCv6Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0beU-00000007J98-3WGq;
-	Tue, 15 Oct 2024 07:07:30 +0000
-Received: from mail-bjschn02on2071d.outbound.protection.partner.outlook.cn ([2406:e500:4440:2::71d] helo=CHN02-BJS-obe.outbound.protection.partner.outlook.cn)
+	id 1t0btU-00000007Keo-11ef;
+	Tue, 15 Oct 2024 07:23:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0bcM-00000007In6-05kZ
+	id 1t0btR-00000007KeS-3HjM
 	for linux-phy@lists.infradead.org;
-	Tue, 15 Oct 2024 07:05:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cjThpktzg9QDmyBbL5itfVlx21on0LPXnr1pY8HuFpaBGfA6S/vysstFxdDKlMhcjJHfITpk7RV/3qBR4Ed45eZwF3cOWVEu3A3EMxCN/MNMxjNZRRwSpGsmk8/MXrH8PHUvCWTdyVS6PVkbKUQgy3ZpKssLnjxqxZNE7KG6dCq1ag5/cFSirx5bZ0a0HCvqPZwrUIpMQnPDuCIHuK2Q/0EihbqiiIXmJDuyMMqI4Jz4yuDdaP8X3MDok3Z2jsJFuI4JytFlk8GkUXj3rw8hg9ZAuyXC3EdcFC7DtE3uEhMmLTiX2a6WU3TXHQaaE3iEird4+Je6MLsPpp9oHTnugA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Q73KT/RcXCPhUGu3CmQc+8QN2avphxQYytMMMPhQkL8=;
- b=UB2FccsRYPEfTrDGD2Fpa62NyA2LDGQMsSG7v2p66+bfx91+ahHQ6SQCJJ2ZF/LPqGTbOhn+3yEU8mqRWjbU1V9YILULzO+H5ufEB4FWNpZ3iXxFWutSRQddFCbK8bBzLJAL5fzj997DYCsiQmnD1AqQn+Wb5ORUni3ZSBzwMQGpBWCSDfeL/nHjy60QTtKlT35c297rW8N/t9/h6HzTeqevWy5kmS3kTksPcLEUWTyjSKNbSQOie868OWmU+zyvMiLPlylwaHKfm8Rx9NQQHyZtXf43CUdet9Uwsxbx+KEmxB4oCGtclMSUxyYxXYZuTi/wVVMeoV3tpQkEAkXdKQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=starfivetech.com; dmarc=pass action=none
- header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=starfivetech.com;
-Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn (10.43.107.79) by
- SHXPR01MB0496.CHNPR01.prod.partner.outlook.cn (10.43.109.149) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.8048.27; Tue, 15 Oct 2024 07:05:00 +0000
-Received: from SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
- ([fe80::3f35:8db2:7fdf:9ffb]) by
- SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn ([fe80::3f35:8db2:7fdf:9ffb%6])
- with mapi id 15.20.8048.020; Tue, 15 Oct 2024 07:05:00 +0000
-From: Minda Chen <minda.chen@starfivetech.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jan Kiszka <jan.kiszka@siemens.com>,
-	linux-phy@lists.infradead.org
-Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Conor Dooley <conor@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Minda Chen <minda.chen@starfivetech.com>
-Subject: [PATCH v4 1/1] phy: starfive: jh7110-usb: Fix link configuration to controller
-Date: Tue, 15 Oct 2024 15:04:44 +0800
-Message-Id: <20241015070444.20972-2-minda.chen@starfivetech.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20241015070444.20972-1-minda.chen@starfivetech.com>
-References: <20241015070444.20972-1-minda.chen@starfivetech.com>
-X-ClientProxiedBy: ZQ0PR01CA0014.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c550:5::19) To SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:25::15)
+	Tue, 15 Oct 2024 07:22:59 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49F0wpcn005958;
+	Tue, 15 Oct 2024 07:22:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Noeq/Q6PCzpdA62n3cgxt8GWl/mH2ef5XhQLRlw9v0Q=; b=pChQ8LZs/1c3H+iS
+	AZoDQRYDAQcYvn1WAndrYb0KpqC/Ck4fywzNyxLwWDQg4qyUu4QQpuaERrM60Yt+
+	oPsSRaQexcaKXNJUjBYZQ7h70XxQfIyjw/B+AflR+Yv1WJINmIoXA2ESdHdC8WNN
+	yXkwHX1aNij0SX06elJBLd/ASUPOV6GRXyB4ibTwX0Hs+d4N9rzQkd0xlgDbcrkL
+	jVnwsLZ3WwxTkwBKXWnvHw0Fmc8eUbI5qinUNsPxyimxAY4hvzTAhklDUIWyhYZL
+	CphU5ZIh4Jn0uw2QToySO6kSxExUNrO2H1G2JgRtz+7KSDw+q7y5MZJ0IeE5Puwx
+	AI38/Q==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 427g2rprtq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 15 Oct 2024 07:22:50 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49F7Mntg032032
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 15 Oct 2024 07:22:49 GMT
+Received: from [10.253.76.164] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 15 Oct
+ 2024 00:22:43 -0700
+Message-ID: <56df7acd-100f-4402-9529-20e0bb825f07@quicinc.com>
+Date: Tue, 15 Oct 2024 15:22:41 +0800
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SHXPR01MB0863:EE_|SHXPR01MB0496:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9b955a0d-19ca-4ab1-ee86-08dcece7af17
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;ARA:13230040|41320700013|1800799024|52116014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: kvQBP2mo5G6woXloYe+cHRRlWKXMLjPxHwmQq7vbM/xd0lHVf9M2NAbnDIPFEOqPkrGO3551NK2y4ZDypnvkMMP5uKMLH9ZoHDoZYPkHPadB13vByi2D7T30A7vO0wUGGQrQCSCav1lJoJIONbpnGRYLYQg5niniw4Oo1oTlmL3Xrx8NMUanom8uLP7L+yywHYUVTGTTdTfiB0pUeaRD0s0wKE0XEtZybyJ4FJHMaCC6dshRA31xhEBnW/VZBKCWTEduS/ZAxmTHIUf+bBFo+VagjzFz3DuJPDmsxXGozM9V+JVnHAE/APEpm8YM2Y+g6bs588/oE4PhfxQdtkiOT3lL5AT8rR1BnKOL/FW2Dz1fhChiJ64FEcZfhkMzmBgIWTGFYQXHAgdKJ8OaGzU0otZse6bwUu58MAhg4+7qSqU9yk6hvGsDjAHQUc1PnTSbPin38nTYsNfOXOdiOwCKFLDLlAEjzEeEt+m17bh+lN0ckMb3p6+FfuqhbmL0Z4V0nHRMo6A0cjl5pggPTzxwHgopxLVa+tO3TwmwkekOIwwRs+V1E+UfgtrIHK1xw2EnGFUzoLTgmtZq8W5/8OPVJvOgZujutd2iEYsrknwLEea3bfIY9wm2YM+xRNlRRnZt
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(41320700013)(1800799024)(52116014)(366016)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?aqOg634tx62psuMZcvCFNEFGASSiVbCckTX+YG1R+EschhqLGIfDgVRsEAnx?=
- =?us-ascii?Q?TN4HqB7tfiufqeAXiVUYxd8QAm1ys11GNk0tQsg6nrJmNFPQ1h25YuBwa0j+?=
- =?us-ascii?Q?KewCkT4/9Y8lKk30lm7ePzrhGzCJ9oIDCh+kVLkDjjQIUu7RLhw04t6Tzlbg?=
- =?us-ascii?Q?bhvQ+h/SMvXZn18iZgils3R593DQdq5uWE6RtiO9QnEiw5peTKTwrgS4SGcV?=
- =?us-ascii?Q?7nMkOtRzTKoqtNOVxkayiC4gwKnrL86c2ZyyKD4uGTJ1IZHf3YbsL86LcoGX?=
- =?us-ascii?Q?KGueihfOL9PHnay8A0nSwGp5osufgEs9BVPxeuq3YW7GMaHRClyJ4y+P2TSS?=
- =?us-ascii?Q?w3p5wJSlplkvv69XBnP+2bdNbMUkW1NxpyE+uwBe2JJUddfsqsbSGH6OQS8R?=
- =?us-ascii?Q?gbNW6gRA7uXp/HTxzLWOoXbh1/0RJkykVSGddSJT1G2VPDr8Zy5g9SNx1sx6?=
- =?us-ascii?Q?jVCZTKBPIoUvFFy2fxfGaoF6RJMXJlBOsRM9042xT0xo91hofGL2otIZnKby?=
- =?us-ascii?Q?QXoLB+Q8uxWb0Dh32aQeLD2aDkP6KuQXlTvjD+uIA1C5XhNJNX4ar7pkOCcL?=
- =?us-ascii?Q?FgX08uxfEhi8htkBrc6Hg7GTsPoMDtgc8YLSmlGCtr+46fgfLhwzk5vyyaaD?=
- =?us-ascii?Q?OfYy627Pf++GIJsZglCBRPAGzThGXi6Yr9l3d0aDh7rTvjaVj31TyWhhBGE6?=
- =?us-ascii?Q?TolIkGckawvqKppNHdbYBP+j9D0SFZ39ZtvD4CVpjuRwFa9r8e6tSsr+JfvC?=
- =?us-ascii?Q?DFdwjEbGg+XO8h3W/YEa2zi0XxghyQFeHIp6b0d5O+6OQ54ZKjRmxA35Vz89?=
- =?us-ascii?Q?1gM+xRqIZ7a8btL60OnDmJY5KqpOBURxbRYW2FGBDVyIHZgrgCwnJyVNYVXa?=
- =?us-ascii?Q?DmoDSPZQsXn0Z6uPrfGVkvhUo+VM2yBts6aR3t3D/VEn5OdiL9MA/2Dxl35F?=
- =?us-ascii?Q?EZ3d8+oAI3axxH+qPQVz1Wt3DkrRwCA9RdiRCxpX1kDsWuo7P7xPKKjj5qSY?=
- =?us-ascii?Q?DJ8tW4CtfLVNe+LdBfPNv0T66QVgLpW2Ew59GAe0tkdQ82D/tidm8dpyyM6G?=
- =?us-ascii?Q?Y0FUvcIXgXM8gXjvTBBFklyDSpf3OQX0Db1zpZntGNWb0yT+M7EYpeySvV5j?=
- =?us-ascii?Q?fUSlfTUTYhD9dnu72pZophjf/ammkJ/ku3iYH4O/d0a/Z8d3rz43t0OrqzQf?=
- =?us-ascii?Q?UE4b79Y9ZTG4Bupg+A+Exfnx6S1sj1wwyHEmZwKahHm8XodRIwZk1CYzZ9n1?=
- =?us-ascii?Q?nD6eLeVOgngGkkozJ6zTOR4I44zqOXbnDgRGmhdO5ncFbQ9i1yP+iJg8vqCl?=
- =?us-ascii?Q?lstIb9rCNbf8qUm+meIe2W67SGYCEy+o4TkwYu9q89JsQRM1yBFh7JVUDfi/?=
- =?us-ascii?Q?uxMA+2f+fna7ZgBOs6KfK47RAi8DyflttxAd/DRFtVDzB8pn/VsROFr5TKsR?=
- =?us-ascii?Q?o/tmljURi+/BskHWZyA/ZJObo7tKK4/A0BZxb1S9DQlLRibKzxnKJd6IT0KT?=
- =?us-ascii?Q?LIs8+nRj1qGtbEpTqFrKh2RThvnXcgO+f+ML0COEtbLaCH/jz/oY++1Q+ntq?=
- =?us-ascii?Q?a32ffQAoUNQwzU33W3uO36UdZS+U+Ozux/kf7DyWZ2+lD7ENVnuyxi0WAwcY?=
- =?us-ascii?Q?Hw=3D=3D?=
-X-OriginatorOrg: starfivetech.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9b955a0d-19ca-4ab1-ee86-08dcece7af17
-X-MS-Exchange-CrossTenant-AuthSource: SHXPR01MB0863.CHNPR01.prod.partner.outlook.cn
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Oct 2024 07:04:59.9874
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: SkYfwdf0WC9J/msBwtXgVhKsxa+6TL3LWVJgC3bLYxcjZSmrUivmr25uURZENKwAnIawKiV5wei7o1FZPH6amlkF2Y7hIOkDmOSNvgyGSuo=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SHXPR01MB0496
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/3] dt-bindings: net: qcom,ethqos: add description for
+ qcs8300
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: Vinod Koul <vkoul@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        "Paolo
+ Abeni" <pabeni@redhat.com>, Rob Herring <robh@kernel.org>,
+        Krzysztof
+ Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bhupesh
+ Sharma <bhupesh.sharma@linaro.org>,
+        Kishon Vijay Abraham I
+	<kishon@kernel.org>,
+        Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+        <netdev@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <quic_tingweiz@quicinc.com>,
+        <quic_aiquny@quicinc.com>
+References: <20241010-schema-v1-0-98b2d0a2f7a2@quicinc.com>
+ <20241010-schema-v1-3-98b2d0a2f7a2@quicinc.com>
+ <da45vocnwnnnlo6nrxh6x4xwmnsgdp5axfvomzniw5vxlmerer@6ntl3ae4q2ci>
+ <b2f027d1-5b4a-4b73-aa26-a332df2a561b@quicinc.com>
+ <f96fe4a7-9903-4b15-9994-985004bd6d4c@kernel.org>
+Content-Language: en-US
+From: Yijie Yang <quic_yijiyang@quicinc.com>
+In-Reply-To: <f96fe4a7-9903-4b15-9994-985004bd6d4c@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: _RU-3SY2_i8C-E3F1f95gpIXbU29L_hr
+X-Proofpoint-GUID: _RU-3SY2_i8C-E3F1f95gpIXbU29L_hr
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ lowpriorityscore=0 suspectscore=0 phishscore=0 malwarescore=0
+ clxscore=1015 spamscore=0 adultscore=0 mlxlogscore=853 impostorscore=0
+ mlxscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410150049
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241015_000518_105036_1A2D7FFC 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20241015_002257_877626_7243B1C2 
+X-CRM114-Status: GOOD (  12.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,83 +112,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Jan Kiszka <jan.kiszka@siemens.com>
 
-In order to connect the USB 2.0 PHY to its controller, we also need to
-set "u0_pdrstn_split_sw_usbpipe_plugen" [1]. Some downstream U-Boot
-versions did that, but upstream firmware does not, and the kernel must
-not rely on such behavior anyway. Failing to set this left the USB
-gadget port invisible to connected hosts behind.
 
-Link: https://doc-en.rvspace.org/JH7110/TRM/JH7110_TRM/sys_syscon.html#sys_syscon__section_b3l_fqs_wsb [1]
-Fixes: 16d3a71c20cf ("phy: starfive: Add JH7110 USB 2.0 PHY driver")
-Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
----
- drivers/phy/starfive/phy-jh7110-usb.c | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+On 2024-10-15 14:27, Krzysztof Kozlowski wrote:
+> On 15/10/2024 08:21, Yijie Yang wrote:
+>>
+>>
+>> On 2024-10-10 14:15, Krzysztof Kozlowski wrote:
+>>> On Thu, Oct 10, 2024 at 10:03:45AM +0800, Yijie Yang wrote:
+>>>> Add compatible for the MAC controller on qcs8300 platforms.
+>>>> Since qcs8300 shares the same EMAC as sa8775p, so it fallback to the
+>>>> compatible.
+>>>>
+>>>> Signed-off-by: Yijie Yang <quic_yijiyang@quicinc.com>
+>>>> ---
+>>>>    Documentation/devicetree/bindings/net/qcom,ethqos.yaml | 4 ++++
+>>>>    1 file changed, 4 insertions(+)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/net/qcom,ethqos.yaml b/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
+>>>> index 8cf29493b822..3ee5367bdde1 100644
+>>>> --- a/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
+>>>> +++ b/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
+>>>> @@ -23,6 +23,10 @@ properties:
+>>>>              - enum:
+>>>>                  - qcom,qcs615-ethqos
+>>>>              - const: qcom,sm8150-ethqos
+>>>> +      - items:
+>>>> +          - enum:
+>>>> +              - qcom,qcs8300-ethqos
+>>>> +          - const: qcom,sa8775p-ethqos
+>>>
+>>> This block should go before earlier qcs615, to keep order by fallback.
+> 
+> --------------------------------------------------^^^^^^^^^^^^^^^^^^^^^^^
+> 
+> Here
+> 
+>>
+>> Why this block should positioned before qcs615, given that it comes
+>> later in alphabetical order?
+> 
+> sa < sm
 
-diff --git a/drivers/phy/starfive/phy-jh7110-usb.c b/drivers/phy/starfive/phy-jh7110-usb.c
-index 633912f8a05d..cb5454fbe2c8 100644
---- a/drivers/phy/starfive/phy-jh7110-usb.c
-+++ b/drivers/phy/starfive/phy-jh7110-usb.c
-@@ -10,18 +10,24 @@
- #include <linux/clk.h>
- #include <linux/err.h>
- #include <linux/io.h>
-+#include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/regmap.h>
- #include <linux/usb/of.h>
- 
- #define USB_125M_CLK_RATE		125000000
- #define USB_LS_KEEPALIVE_OFF		0x4
- #define USB_LS_KEEPALIVE_ENABLE		BIT(4)
- 
-+#define USB_PDRSTN_SPLIT		BIT(17)
-+#define SYSCON_USB_SPLIT_OFFSET		0x18
-+
- struct jh7110_usb2_phy {
- 	struct phy *phy;
- 	void __iomem *regs;
-+	struct regmap *sys_syscon;
- 	struct clk *usb_125m_clk;
- 	struct clk *app_125m;
- 	enum phy_mode mode;
-@@ -61,6 +67,10 @@ static int usb2_phy_set_mode(struct phy *_phy,
- 		usb2_set_ls_keepalive(phy, (mode != PHY_MODE_USB_DEVICE));
- 	}
- 
-+	/* Connect usb 2.0 phy mode */
-+	regmap_update_bits(phy->sys_syscon, SYSCON_USB_SPLIT_OFFSET,
-+			   USB_PDRSTN_SPLIT, USB_PDRSTN_SPLIT);
-+
- 	return 0;
- }
- 
-@@ -129,6 +139,12 @@ static int jh7110_usb_phy_probe(struct platform_device *pdev)
- 	phy_set_drvdata(phy->phy, phy);
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
- 
-+	phy->sys_syscon =
-+		syscon_regmap_lookup_by_compatible("starfive,jh7110-sys-syscon");
-+	if (IS_ERR(phy->sys_syscon))
-+		return dev_err_probe(dev, PTR_ERR(phy->sys_syscon),
-+				     "Failed to get sys-syscon\n");
-+
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
+Understood, thanks.
+
+> 
+> Best regards,
+> Krzysztof
+> 
+
 -- 
-2.17.1
+Best Regards,
+Yijie
 
 
 -- 
