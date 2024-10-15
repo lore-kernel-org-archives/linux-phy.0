@@ -4,92 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55519CFC501
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 02:46:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB61BCFC267
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 06:06:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=On7OO9KPQgwvyTEblKrpTJLltZc8l6+gt+9aqadQT9c=; b=AmEP7ER/uUlN+0
-	RUgh1KTy00Pe9hPVK+/PbFODixdwlQI/OjpQuug55NG+isT/7GNLL+oNF/BF12NRrCT2kuoYtleDD
-	hyrePCB0PRmc4+iW9ZJOynJjrHqUkSW2x3QtF6lIjc+aMvb+xJcSzR0WDK0WqnlZhYClXP8p9/qtL
-	ET9kS/gPjW+6LUE6Jy19xi2hscFZPOAc+//jhz6hvVY9AX9N3tThiu5PiWhhRYhwnK8Rl/pZVhwGY
-	SDAfNotNtHBxC9QlNEnjdAyYYL4J0Eu1T7MCeHYCds2W2281B81x3Tc9NLaaFIpkLNpbjmIHWOF3Q
-	rIN8Y7CODetYY2EFKaBA==;
+	List-Owner; bh=cXoQpVHW2ZtWrM7YSpaXDkzbrGcqLIRfb/x8QB9cN0M=; b=BZ5bWkvlsz8l5e
+	g3CZ8cLDQnfVbOHC6eW3XPo2g/r4rf2lfgsrMFB8uBjROmVGAdb5KXpixdFu8OPDWzJk/3JsOsJ4A
+	JH6QEih5uSW7bw48bS+oZr8XEteZbii0aFpCaTC4kJ+m9Lq62OJAWOG/3fR+fhGJcFyAh9N7+ulp+
+	F/dI297/ZXZO+jQxeS7sb73C6bdqS8tiG4QDFIh18+5TwbO/5mko0BRk1BC0DSpHpoSgu48YFTcTe
+	obVJgug7IH7VoKAS5OaQBtPLPu0pZ81R3rU8KKYYQQQusS1uA2+P7x/hYSGwEgkdFNygVXtDKYsJZ
+	qYbGcQPPamXwht0t4Wsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Xa3-00000006vQS-07qz;
-	Tue, 15 Oct 2024 02:46:39 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1t0ahH-00000007AaY-1x7Z;
+	Tue, 15 Oct 2024 06:06:19 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Xa0-00000006vPv-30rA
-	for linux-phy@lists.infradead.org;
-	Tue, 15 Oct 2024 02:46:38 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49F1pLdg028934;
-	Tue, 15 Oct 2024 02:46:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	pbEGIR5/6gy6kLcA5WidgDGnLnhumHi9DVqfOYna3Nk=; b=T46TAodUUVjBk9FV
-	lN+2YsTYwPAP8uHgd3/C+l+dGKcGfqVj6wQdQ5mxpAsTOSw7cZYyICXKGxjjf7VG
-	kAX1sjF2fbkvN1Dclq7q1bdhd54VoW/zvEjx/bWrpprmFprdOP6NIGRro3xAtpRt
-	jX0oDHghoS90XNPDhgQAJPZosbibbDkMnhyvgLm1OitWmyT2RAzBTdQnkTxPk11d
-	DZWTvgyJNcQrUJ6HCcVW6EMEVyUrt5DxPbEdPpNWSt09y+rggeqvjraAvlLuIN8x
-	eCj7S2Hlw4Ix0142SJlS0gqlotvAftKOmd7Bq5UC7gWmsa6KWuDkuC39Tu6bnPSr
-	Wy5U5g==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4292evhwcm-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 15 Oct 2024 02:46:24 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49F2kNHt003772
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 15 Oct 2024 02:46:23 GMT
-Received: from [10.239.29.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 14 Oct
- 2024 19:46:17 -0700
-Message-ID: <28567b77-9d0c-421a-8c2e-88a310a20704@quicinc.com>
-Date: Tue, 15 Oct 2024 10:46:15 +0800
+	id 1t0ahE-00000007Aa4-311e;
+	Tue, 15 Oct 2024 06:06:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=ASuBcpLVRHwqVESDWXGS90dfdjQqRtTA3nVmTt7XIHM=; b=DC0kyElXnIAgTkVIE9Yb6zwK8M
+	Sq02nthbwrp3zH3WKRRKi3FnyYVvFGtVyNJ94Az8FiXPCSGbpDX5pI7S8+mQAGeqDfiPVtM/vKVbK
+	MS5WXh2DxoGT5pGXL452jG70HztHWIrcdp0oB1iaczCTAkgQQ/8uyEwB3DdF/BhwRU2ZY1bxnf8ZL
+	JEbrM6P63miqJ43+Qw/8rpFa8kHdx4DC6njoCL8pP/FT7awk4ymNuLlFwdCaQrCdTtSGFSmQ5y+rU
+	qXDgy5b8GAmioztzwXyoPh+MWIOHzdqlh++3KK1pG1k8ILGjyG+vnSO8a7eY0B6DiyxbBvDiULG+x
+	9nvlPh0g==;
+Received: from i53875b34.versanet.de ([83.135.91.52] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1t0ah1-0006wa-AN; Tue, 15 Oct 2024 08:06:03 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, Frank Wang <frawang.cn@gmail.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
+ tim.chen@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: rockchip: add rk3576 compatible
+Date: Tue, 15 Oct 2024 08:06:02 +0200
+Message-ID: <3315048.aeNJFYEL58@diego>
+In-Reply-To: <20241015013351.4884-1-frawang.cn@gmail.com>
+References: <20241015013351.4884-1-frawang.cn@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 6/8] PCI: qcom: Fix the ops for SC8280X family SoC
-To: Bjorn Helgaas <helgaas@kernel.org>
-CC: <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
-        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
-        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
-        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>, Johan Hovold <johan+linaro@kernel.org>
-References: <20241014171807.GA612411@bhelgaas>
-Content-Language: en-US
-From: Qiang Yu <quic_qianyu@quicinc.com>
-In-Reply-To: <20241014171807.GA612411@bhelgaas>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 3wDoqdW48Ll3OwwhzQMMW2xvx-lvC8Qx
-X-Proofpoint-ORIG-GUID: 3wDoqdW48Ll3OwwhzQMMW2xvx-lvC8Qx
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
- priorityscore=1501 malwarescore=0 mlxlogscore=999 lowpriorityscore=0
- phishscore=0 adultscore=0 bulkscore=0 mlxscore=0 impostorscore=0
- suspectscore=0 clxscore=1011 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2409260000 definitions=main-2410150017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_194636_800586_0405C098 
-X-CRM114-Status: GOOD (  22.47  )
+X-CRM114-CacheID: sfid-20241014_230616_815046_F552F352 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,81 +71,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Am Dienstag, 15. Oktober 2024, 03:33:50 CEST schrieb Frank Wang:
+> From: Frank Wang <frank.wang@rock-chips.com>
+> 
+> Adds the compatible line to support RK3576 SoC.
+> 
+> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
 
-On 10/15/2024 1:18 AM, Bjorn Helgaas wrote:
-> [+cc Johan; if you tag a commit with Fixes:, please cc the author of
-> that commit!]
->
-> On Fri, Oct 11, 2024 at 03:41:40AM -0700, Qiang Yu wrote:
->> On SC8280X family SoC, PCIe controllers are connected to SMMUv3, hence
->> they don't need the config_sid() callback in ops_1_9_0 struct. Fix it by
->> introducing a new ops struct, namely ops_1_21_0, so that BDF2SID mapping
->> won't be configured during init.
-> Can you make the subject line say something specific about what this
-> patch does?  "Fix the ops" really doesn't include any useful
-> information.
-Sure, will directly say Remove BDF2SID mapping config for SC8280XP in 
-subject.
->
-> Based on the Fixes: below, this has to do with ASPM, so the subject
-> line (and the commit log) should probably say something about ASPM.
->
-> I don't see the connection between your mention of SMMUv3 and ASPM.
-> Are there two logical changes here that should be two separate
-> patches?
-This patch is to remove config_sid callback for sc8280x as it
-supports SMMUv3.
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-This patch is not related to ASPM. Look like using
-70574511f3f ("PCI: qcom: Add support for SC8280XP")
-in Fixes tag is better. Sorry for the confusion.
 
-Thanks,
-Qiang
->> Fixes: d1997c987814 ("PCI: qcom: Disable ASPM L0s for sc8280xp, sa8540p and sa8295p")
->> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
->> ---
->>   drivers/pci/controller/dwc/pcie-qcom.c | 12 +++++++++++-
->>   1 file changed, 11 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
->> index 88a98be930e3..468bd4242e61 100644
->> --- a/drivers/pci/controller/dwc/pcie-qcom.c
->> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
->> @@ -1367,6 +1367,16 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
->>   	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->>   };
->>   
->> +/* Qcom IP rev.: 1.21.0 */
->> +static const struct qcom_pcie_ops ops_1_21_0 = {
->> +	.get_resources = qcom_pcie_get_resources_2_7_0,
->> +	.init = qcom_pcie_init_2_7_0,
->> +	.post_init = qcom_pcie_post_init_2_7_0,
->> +	.host_post_init = qcom_pcie_host_post_init_2_7_0,
->> +	.deinit = qcom_pcie_deinit_2_7_0,
->> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->> +};
->> +
->>   static const struct qcom_pcie_cfg cfg_1_0_0 = {
->>   	.ops = &ops_1_0_0,
->>   };
->> @@ -1405,7 +1415,7 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
->>   };
->>   
->>   static const struct qcom_pcie_cfg cfg_sc8280xp = {
->> -	.ops = &ops_1_9_0,
->> +	.ops = &ops_1_21_0,
->>   	.no_l0s = true,
->>   };
->>   
->> -- 
->> 2.34.1
->>
 
 -- 
 linux-phy mailing list
