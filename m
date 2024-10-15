@@ -4,64 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CF51D18135
-	for <linux-phy@archiver.kernel.org>; Mon, 14 Oct 2024 17:20:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32179CFC501
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 01:34:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=3WeHbb6Eyyy5SK+xP2gX3EguwjxCFH1XYRXAvwrjpig=; b=UzNRfFkd8wHD51
-	tkqpq71HmHLSyloSTqKNFQs5dhV5cHRO2/+A2Ry0qFTPQT4PWmuP4XT4kg+vOzrQwh6+hx6h++u1C
-	k4wqNMuaATYoNRBXSsEf4qozZX9gJwq8KzoneeWDE1EuzdTVI4u+1KBC+EAGELTghQ4onb2EPFTle
-	EJI8donGbvcQgGW7cKzf81V3TcHz2o4jcA58xMvmwVWoB7Z0r5PyCrZ9w5VVXyGubeSKqjJSfruEK
-	hbsfGWQzftXc2KwyAiSyMuCqGkNvicgbT7WPWXMBM/wzHifIsIcTzE71pR1fmIuhPZKjUsazoas2F
-	Ja+61tUDxZGUSr0PUNKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dErZM/M25o7bD0ds9fDaVw/EP6s/hR/BYAcwOpLXLC8=; b=OXq/maoSQpwwIQ
+	ctA+hKg+A7sl7woWK0c3oxGULT/MnO2z9T4UFbZsI9nc48ayRZlcc6qsgk4pb1aDbh7rzvkFnUxzT
+	fmrnwGs+Z6VeO9kVwOblXy1r7VhWigeWotQupqjbFXh551Gr7UAo3nxKvN9oHvQCxVDAwB2u18GiP
+	CrqpHFy0CXjG7EdZmssATLnP1zBrLnh7whf95CoEhjJVSSG1RHbUxD+YOGAdLpVBEcztwgQBLLluh
+	8vWDrKdLJPrhbGodac6oM7jspOlijsptCAlvar/3w/FDLQlAvpeOWeWJNkLJX6MvoyfBBK2SJSmPg
+	LZgkeqZNORQECEV7Zv/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Ojm-000000061pK-364p;
-	Mon, 14 Oct 2024 17:20:06 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1t0WRo-00000006mz0-39CS;
+	Tue, 15 Oct 2024 01:34:04 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0Ojj-000000061oZ-1keB
-	for linux-phy@lists.infradead.org;
-	Mon, 14 Oct 2024 17:20:04 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 82836A41044;
-	Mon, 14 Oct 2024 17:19:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD114C4CEC3;
-	Mon, 14 Oct 2024 17:20:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1728926402;
-	bh=Np62Up9il5vG205tNL0IREXGDm1XoBvQ7ES3tBuqiSI=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=jspzCD3Aw3An6B7xeaJtD5Ud6xL8ZrkU8JKHagUm6ZeV/tFf4S2LVwyIhekC5k01B
-	 3PKDIXVihcupi6fa5Q4sslzbf1jWHiGD3lms0g4ZJ7GwTpZ8RjResdB6UG8EJ557VU
-	 jih+np1a8BCduiGQU21NjIDWK36NB7KJafvW8k5iKQdpznPNS5O6Na6C2YBppYlEiq
-	 lRVaduMQTW0etlOIzZgPvXngyx92wk+fCCIBya9A6XrRJqJZ0i9amqI6T63aCg0wwr
-	 sVQW0WK1os1tKPuOH68F7rA3u3lJIYn+GBoLxMprNKuDK0PjdoOS1TtTYikv/WGrAM
-	 YVu2VdGp9CRZg==
-Date: Mon, 14 Oct 2024 12:20:00 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Qiang Yu <quic_qianyu@quicinc.com>
-Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
-	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
-	sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
-	quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org,
-	kw@linux.com, lpieralisi@kernel.org, neil.armstrong@linaro.org,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-clk@vger.kernel.org
-Subject: Re: [PATCH v6 7/8] PCI: qcom: Fix the cfg for X1E80100 SoC
-Message-ID: <20241014172000.GA612658@bhelgaas>
+	id 1t0WRl-00000006mws-0FPl;
+	Tue, 15 Oct 2024 01:34:02 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-2e2d83f15f3so866174a91.0;
+        Mon, 14 Oct 2024 18:34:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1728956040; x=1729560840; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=mUSB48jKblX+14i4so+c9Ta99trL5DpEUPdHUcI05hk=;
+        b=Yu3wuT8zgQGEOskKF7gYcUQUHMMww6Go58lRaTNNDqnoJZswHkwXndt1yvBDuBBiT1
+         bFGQq0kBGd97QxDUWkai2ZCM+Yc4TS1nYB9R+9ARfFCRuZSgoOJZUJNX7YDzLQA4sZ8M
+         YZmaoyy0iF2Jy/VpuIrwUBXc8QN6yCzZD463eR/Rr69cRGZKV/D1HwdgBD7hnoYMLE03
+         fu6qtMrfqWEwZuWe973ixO2abVYlDARK6CTAH44T+z7Vkaq9WXSLeqRcTMqPkg5IGlgo
+         EBT+xlWFHdGdXUbccI9brAF9XlUV78l1IdYLyv4zgStYOgKRs33nvoTcx2mFK7uMw/m5
+         Aeig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728956040; x=1729560840;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=mUSB48jKblX+14i4so+c9Ta99trL5DpEUPdHUcI05hk=;
+        b=K+Aq9W7HfsQQSZ+jxPVRnplItDvbOPOM7EhJvYzJcxy3AbQJOlFSSnDnyHr4HUk1Vi
+         ZN2V+RK7tcx9k2QKCYSBsA3EctWTs8m7dzbzZzj2Tfypj2s4vmbBnGwmdPYIvOyjDDth
+         SndSqrkdLI7x9SnlAl6bG+akzGzS4f2zZHzWPCqpRWxgnYvk+nrdAamD3/1wazVShuv4
+         aoe8PL9404M7dSqgybBpZEmk7sVEsILk9sEQeiZzmdVeZ6DumhLEtrLD2uQjISHkmUdJ
+         yK/fuxGcPTFzlx3Y7im9ET9X66U+lAWb3VZGI3FZ2iLVm9cCvya5tl/FkHrJqyOPQX/8
+         lQuQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUBukRPbeB7MnxozdMfKghCjnMo9D5eyI0DoBFXxhrGbG06k3IBXuTA6Tbw8WkV2LynDhjPC3pGl9kmT/MthHMQ@lists.infradead.org, AJvYcCX51GGru6OWn4JgcQUdXbVQ1SZFtJ9WXDFXygWX6VMbkZVFy2MGAL1U971fRNnHMiXAt/zBOWCeCOR0B04W2Cg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxk17ZWXKSR1wK3um1Kn/xI0ftT43LkhkmxjalncnL51hxY98PG
+	zj/gLdirNazJZZkSPFwSewnEl65v+Ubog7Yg1B+k7qmGue5rHGIHXu0jTA==
+X-Google-Smtp-Source: AGHT+IGHSXYIt7zYTJi5YPOTp8mHB8F80Y8Z2Q2SeynbWepdjfTvIM3szHaTplQkTC5IisNHG/HBJg==
+X-Received: by 2002:a05:6a20:728c:b0:1cf:37d4:c50b with SMTP id adf61e73a8af0-1d8bcf14532mr10497697637.4.1728956039884;
+        Mon, 14 Oct 2024 18:33:59 -0700 (PDT)
+Received: from localhost.localdomain ([103.29.142.67])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71e774a4243sm189713b3a.131.2024.10.14.18.33.55
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 14 Oct 2024 18:33:59 -0700 (PDT)
+From: Frank Wang <frawang.cn@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de
+Cc: linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-rockchip@lists.infradead.org,
+	william.wu@rock-chips.com,
+	tim.chen@rock-chips.com,
+	Frank Wang <frank.wang@rock-chips.com>
+Subject: [PATCH 1/2] dt-bindings: phy: rockchip: add rk3576 compatible
+Date: Tue, 15 Oct 2024 09:33:50 +0800
+Message-Id: <20241015013351.4884-1-frawang.cn@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241011104142.1181773-8-quic_qianyu@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_102003_548227_D3223870 
-X-CRM114-Status: GOOD (  15.22  )
+X-CRM114-CacheID: sfid-20241014_183401_121862_91E0E952 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,38 +101,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 11, 2024 at 03:41:41AM -0700, Qiang Yu wrote:
-> Currently, the cfg_1_9_0 which is being used for X1E80100 has config_sid
-> callback in its ops and doesn't disable ASPM L0s. However, as same as
-> SC8280X, PCIe controllers on X1E80100 are connected to SMMUv3 and it is
-> recommended to disable ASPM L0s. Hence reuse cfg_sc8280xp for X1E80100.
+From: Frank Wang <frank.wang@rock-chips.com>
 
-Say something specific in the subject line.  Apparently you need to
-disable ASPM L0s for this SoC, which is important to know and much
-more useful than "Fix the cfg".
+Adds the compatible line to support RK3576 SoC.
 
-> Fixes: 6d0c39324c5f ("PCI: qcom: Add X1E80100 PCIe support")
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 468bd4242e61..c533e6024ba2 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -1847,7 +1847,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->  	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &cfg_1_9_0 },
->  	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
->  	{ .compatible = "qcom,pcie-sm8550", .data = &cfg_1_9_0 },
-> -	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_1_9_0 },
-> +	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_sc8280xp },
->  	{ }
->  };
->  
-> -- 
-> 2.34.1
-> 
+Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+---
+ .../devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml     | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+index d3cd7997879f..1b3de6678c08 100644
+--- a/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
++++ b/Documentation/devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml
+@@ -13,6 +13,7 @@ properties:
+   compatible:
+     enum:
+       - rockchip,rk3568-naneng-combphy
++      - rockchip,rk3576-naneng-combphy
+       - rockchip,rk3588-naneng-combphy
+ 
+   reg:
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
