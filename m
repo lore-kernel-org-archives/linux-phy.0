@@ -4,90 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F8F7CFC505
-	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 01:35:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55519CFC501
+	for <linux-phy@archiver.kernel.org>; Tue, 15 Oct 2024 02:46:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PfN6PqiGwYC+pIM+LuZ4okeEXt6mWBEJhdq9f8/qdgE=; b=hrAQJsxXKvnNkc
-	gKEqbMC9B7GlXG1ZK5cy24ELR+AynO+DAb1H8Z6xtUotrcYxS3Jo5OtWagZBtmWo69Te9CRQo2nal
-	dLxdCnkF6mdLi68hH+BRRxIQ/UEymkmW7KxaatmY+SU7k2tcSLmitrhm4M2W+4UuV8Nr2cbRiSgzk
-	5xaWcWn3DccByRh6bKmtg+k+cEPlySjQPd8kcRGMz/TvxutTb1N+F9mlBBZxf216kl/4im/udVaao
-	BaNVCAT59puITBLljpGkmW/FAywTr66TW8+Psdk/s31Fy4pDbca7GaTVDT5DeH7XrXJp4UFoNLr7x
-	1tHuaR46exOYpGHStkZw==;
+	List-Owner; bh=On7OO9KPQgwvyTEblKrpTJLltZc8l6+gt+9aqadQT9c=; b=AmEP7ER/uUlN+0
+	RUgh1KTy00Pe9hPVK+/PbFODixdwlQI/OjpQuug55NG+isT/7GNLL+oNF/BF12NRrCT2kuoYtleDD
+	hyrePCB0PRmc4+iW9ZJOynJjrHqUkSW2x3QtF6lIjc+aMvb+xJcSzR0WDK0WqnlZhYClXP8p9/qtL
+	ET9kS/gPjW+6LUE6Jy19xi2hscFZPOAc+//jhz6hvVY9AX9N3tThiu5PiWhhRYhwnK8Rl/pZVhwGY
+	SDAfNotNtHBxC9QlNEnjdAyYYL4J0Eu1T7MCeHYCds2W2281B81x3Tc9NLaaFIpkLNpbjmIHWOF3Q
+	rIN8Y7CODetYY2EFKaBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0WTH-00000006na1-0PK8;
-	Tue, 15 Oct 2024 01:35:35 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1t0Xa3-00000006vQS-07qz;
+	Tue, 15 Oct 2024 02:46:39 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0WRp-00000006mzK-3Dyf;
-	Tue, 15 Oct 2024 01:34:07 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-71e5417f8d4so79298b3a.3;
-        Mon, 14 Oct 2024 18:34:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1728956045; x=1729560845; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=GH3A6vmgsIOEd/hbrPIWDSgafEN9K6GfNlaS75g6hkg=;
-        b=JCm+GzQsIsuL1spQHdwi2+EEePP9rluH71YSotlw9BqAPCw+PqJS+a8wOtE7laELx9
-         zjSi1H923h1HAKgs22yPPifp51TWcghe+4ND2+Io4yeGtEQ6OC+HD/LE6fzP2onbPNOt
-         49DeDgAnky8LRcTiv0m6/jKSdrvhSFIT+lpGMo2n3OFjFFxOxFL/bRnLOgTJDTqgX0Gk
-         3LN7ku4WKT208ZYlD7ga1g13RWiqJqoYHp1qvkj+AF9qTau9e7d9wHXpIU6dyyGKZrf3
-         bH1801/MAoWF0pUBcKfSUZvZ3JzVzpK98X0OHmwC9qOztFl2jWBKH8td2wisqqiFMjAO
-         trfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728956045; x=1729560845;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=GH3A6vmgsIOEd/hbrPIWDSgafEN9K6GfNlaS75g6hkg=;
-        b=ssm8ixmdi8K0fwKY+Y+O8HFmMY4fq/6/E6fxgki5/0P4xqMBcrwyYtzVTJroEQwwhC
-         zGJCq152qiNqoUq5ujxR2zdAplT13CWgnOGaEjUzceyGlVyj8XXt3c2qDRZ7jAwaPIAi
-         FyVU/M0iV3hkYWAz+JipaGs3CmVCP34muwA9Crl3AwmzI55wamlVixoCKCOchGGmRS9K
-         oHa4RuTUuo6d+GPr4IJjqeBY7H3M8ZGVdtVocs0RNEKcOZfIsZBl9LosvDQ/NG4YgVrF
-         UWJgfJfDkVtoIea9Bb3m6uy3WgwOxpCY1lfgVcNGAMmLwymg0t59YxsjqpiEM+zsWs/G
-         7WZA==
-X-Forwarded-Encrypted: i=1; AJvYcCWZ6vtEzEzMt7mF9YKJFOptjckjyAWxsoqVrZy4//FGctABsMr9S6Q/mO4pTMcVA+1kQwVSsg36476dd/Mcd8wu@lists.infradead.org, AJvYcCWlLFIq2fE60Xly4xoQektOmq+Ak+FE+An8+L8kvmoaKjtmwaDLAb6Rrb//6vxgvgiyAIXlHVa7JXp5Eg4X458=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz6Z/Sz7xwsEpIyUw0/66OQmLb4nZhXlkN3zlSJnm0UoEUACFmX
-	14/qbuGBnKDgJjG+Ok7NHKgpmDf35sg61ysi+bZA6xcRnG7KHrzd
-X-Google-Smtp-Source: AGHT+IENbE5VfJLTsH3qhdrga+goKQnThLNGc16l2GIKEVjDEiHa1fFBGByWr8papJ5EnN6tQKh//w==
-X-Received: by 2002:a05:6a00:198e:b0:71e:594c:a812 with SMTP id d2e1a72fcca58-71e594caa26mr4591504b3a.0.1728956044402;
-        Mon, 14 Oct 2024 18:34:04 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-71e774a4243sm189713b3a.131.2024.10.14.18.34.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 14 Oct 2024 18:34:04 -0700 (PDT)
-From: Frank Wang <frawang.cn@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	heiko@sntech.de
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	william.wu@rock-chips.com,
-	tim.chen@rock-chips.com,
-	Kever Yang <kever.yang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>
-Subject: [PATCH 2/2] phy: rockchip-naneng-combo: Support rk3576
-Date: Tue, 15 Oct 2024 09:33:51 +0800
-Message-Id: <20241015013351.4884-2-frawang.cn@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20241015013351.4884-1-frawang.cn@gmail.com>
-References: <20241015013351.4884-1-frawang.cn@gmail.com>
+	id 1t0Xa0-00000006vPv-30rA
+	for linux-phy@lists.infradead.org;
+	Tue, 15 Oct 2024 02:46:38 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49F1pLdg028934;
+	Tue, 15 Oct 2024 02:46:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	pbEGIR5/6gy6kLcA5WidgDGnLnhumHi9DVqfOYna3Nk=; b=T46TAodUUVjBk9FV
+	lN+2YsTYwPAP8uHgd3/C+l+dGKcGfqVj6wQdQ5mxpAsTOSw7cZYyICXKGxjjf7VG
+	kAX1sjF2fbkvN1Dclq7q1bdhd54VoW/zvEjx/bWrpprmFprdOP6NIGRro3xAtpRt
+	jX0oDHghoS90XNPDhgQAJPZosbibbDkMnhyvgLm1OitWmyT2RAzBTdQnkTxPk11d
+	DZWTvgyJNcQrUJ6HCcVW6EMEVyUrt5DxPbEdPpNWSt09y+rggeqvjraAvlLuIN8x
+	eCj7S2Hlw4Ix0142SJlS0gqlotvAftKOmd7Bq5UC7gWmsa6KWuDkuC39Tu6bnPSr
+	Wy5U5g==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4292evhwcm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 15 Oct 2024 02:46:24 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49F2kNHt003772
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 15 Oct 2024 02:46:23 GMT
+Received: from [10.239.29.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 14 Oct
+ 2024 19:46:17 -0700
+Message-ID: <28567b77-9d0c-421a-8c2e-88a310a20704@quicinc.com>
+Date: Tue, 15 Oct 2024 10:46:15 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 6/8] PCI: qcom: Fix the ops for SC8280X family SoC
+To: Bjorn Helgaas <helgaas@kernel.org>
+CC: <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
+        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
+        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>, Johan Hovold <johan+linaro@kernel.org>
+References: <20241014171807.GA612411@bhelgaas>
+Content-Language: en-US
+From: Qiang Yu <quic_qianyu@quicinc.com>
+In-Reply-To: <20241014171807.GA612411@bhelgaas>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: 3wDoqdW48Ll3OwwhzQMMW2xvx-lvC8Qx
+X-Proofpoint-ORIG-GUID: 3wDoqdW48Ll3OwwhzQMMW2xvx-lvC8Qx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ priorityscore=1501 malwarescore=0 mlxlogscore=999 lowpriorityscore=0
+ phishscore=0 adultscore=0 bulkscore=0 mlxscore=0 impostorscore=0
+ suspectscore=0 clxscore=1011 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2409260000 definitions=main-2410150017
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241014_183405_879124_C69A5285 
-X-CRM114-Status: GOOD (  15.21  )
+X-CRM114-CacheID: sfid-20241014_194636_800586_0405C098 
+X-CRM114-Status: GOOD (  22.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,253 +101,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Kever Yang <kever.yang@rock-chips.com>
 
-phy0: pcie, sata
-phy1: pcie, sata, usb3
+On 10/15/2024 1:18 AM, Bjorn Helgaas wrote:
+> [+cc Johan; if you tag a commit with Fixes:, please cc the author of
+> that commit!]
+>
+> On Fri, Oct 11, 2024 at 03:41:40AM -0700, Qiang Yu wrote:
+>> On SC8280X family SoC, PCIe controllers are connected to SMMUv3, hence
+>> they don't need the config_sid() callback in ops_1_9_0 struct. Fix it by
+>> introducing a new ops struct, namely ops_1_21_0, so that BDF2SID mapping
+>> won't be configured during init.
+> Can you make the subject line say something specific about what this
+> patch does?  "Fix the ops" really doesn't include any useful
+> information.
+Sure, will directly say Remove BDF2SID mapping config for SC8280XP in 
+subject.
+>
+> Based on the Fixes: below, this has to do with ASPM, so the subject
+> line (and the commit log) should probably say something about ASPM.
+>
+> I don't see the connection between your mention of SMMUv3 and ASPM.
+> Are there two logical changes here that should be two separate
+> patches?
+This patch is to remove config_sid callback for sc8280x as it
+supports SMMUv3.
 
-Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
-Signed-off-by: William Wu <william.wu@rock-chips.com>
-Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
----
- .../rockchip/phy-rockchip-naneng-combphy.c    | 202 ++++++++++++++++++
- 1 file changed, 202 insertions(+)
+This patch is not related to ASPM. Look like using
+70574511f3f ("PCI: qcom: Add support for SC8280XP")
+in Fixes tag is better. Sorry for the confusion.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index 0a9989e41237..4c41317a8041 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -98,6 +98,7 @@ struct rockchip_combphy_grfcfg {
- 	struct combphy_reg pipe_rxterm_set;
- 	struct combphy_reg pipe_txelec_set;
- 	struct combphy_reg pipe_txcomp_set;
-+	struct combphy_reg pipe_clk_24m;
- 	struct combphy_reg pipe_clk_25m;
- 	struct combphy_reg pipe_clk_100m;
- 	struct combphy_reg pipe_phymode_sel;
-@@ -584,6 +585,203 @@ static const struct rockchip_combphy_cfg rk3568_combphy_cfgs = {
- 	.combphy_cfg	= rk3568_combphy_cfg,
- };
- 
-+static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
-+{
-+	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-+	unsigned long rate;
-+
-+	switch (priv->type) {
-+	case PHY_TYPE_PCIE:
-+		/* Set SSC downward spread spectrum */
-+		rockchip_combphy_updatel(priv, GENMASK(5, 4), BIT(4), 0x7c);
-+
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
-+		break;
-+	case PHY_TYPE_USB3:
-+		/* Set SSC downward spread spectrum */
-+		rockchip_combphy_updatel(priv, GENMASK(5, 4), BIT(4), 0x7c);
-+
-+		/* Enable adaptive CTLE for USB3.0 Rx */
-+		rockchip_combphy_updatel(priv, GENMASK(0, 0), BIT(0), 0x38);
-+
-+		/* Set PLL KVCO fine tuning signals */
-+		rockchip_combphy_updatel(priv, GENMASK(4, 2), BIT(3), 0x80);
-+
-+		/* Set PLL LPF R1 to su_trim[10:7]=1001 */
-+		writel(0x4, priv->mmio + (0xb << 2));
-+
-+		/* Set PLL input clock divider 1/2 */
-+		rockchip_combphy_updatel(priv, GENMASK(7, 6), BIT(6), 0x14);
-+
-+		/* Set PLL loop divider */
-+		writel(0x32, priv->mmio + (0x11 << 2));
-+
-+		/* Set PLL KVCO to min and set PLL charge pump current to max */
-+		writel(0xf0, priv->mmio + (0xa << 2));
-+
-+		/* Set Rx squelch input filler bandwidth */
-+		writel(0x0d, priv->mmio + (0x14 << 2));
-+
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txcomp_sel, false);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txelec_sel, false);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->usb_mode_set, true);
-+		break;
-+	case PHY_TYPE_SATA:
-+		/* Enable adaptive CTLE for SATA Rx */
-+		rockchip_combphy_updatel(priv, GENMASK(0, 0), BIT(0), 0x38);
-+
-+		/* Set tx_rterm = 50 ohm and rx_rterm = 43.5 ohm */
-+		writel(0x8F, priv->mmio + (0x06 << 2));
-+
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_sata, true);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_sata, true);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_sata, true);
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_sata, true);
-+		rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_con0_for_sata, true);
-+		rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_con1_for_sata, true);
-+		break;
-+	default:
-+		dev_err(priv->dev, "incompatible PHY type\n");
-+		return -EINVAL;
-+	}
-+
-+	rate = clk_get_rate(priv->refclk);
-+
-+	switch (rate) {
-+	case REF_CLOCK_24MHz:
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_24m, true);
-+		if (priv->type == PHY_TYPE_USB3 || priv->type == PHY_TYPE_SATA) {
-+			/* Set ssc_cnt[9:0]=0101111101 & 31.5KHz */
-+			rockchip_combphy_updatel(priv, GENMASK(7, 6), BIT(6), 0xe << 2);
-+
-+			rockchip_combphy_updatel(priv, GENMASK(7, 0), 0x5f, 0xf << 2);
-+		} else if (priv->type == PHY_TYPE_PCIE) {
-+			/* PLL KVCO tuning fine */
-+			rockchip_combphy_updatel(priv, GENMASK(4, 2), 0x4 << 2, 0x20 << 2);
-+
-+			/* Set up rx_trim */
-+			writel(0x0, priv->mmio + (0x1b << 2));
-+
-+			/* Set up su_trim: T0_1 */
-+			writel(0x90, priv->mmio + (0xa << 2));
-+			writel(0x02, priv->mmio + (0xb << 2));
-+			writel(0x57, priv->mmio + (0xd << 2));
-+
-+			writel(0x5f, priv->mmio + (0xf << 2));
-+		}
-+		break;
-+	case REF_CLOCK_25MHz:
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_25m, true);
-+		break;
-+	case REF_CLOCK_100MHz:
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
-+		if (priv->type == PHY_TYPE_PCIE) {
-+			/* gate_tx_pck_sel length select work for L1SS */
-+			writel(0xc0, priv->mmio + 0x74);
-+
-+			/* PLL KVCO tuning fine */
-+			rockchip_combphy_updatel(priv, GENMASK(4, 2), 0x4 << 2, 0x20 << 2);
-+
-+			/* Set up rx_trim: PLL LPF C1 85pf R1 1.25kohm */
-+			writel(0x4c, priv->mmio + (0x1b << 2));
-+
-+			/* Set up su_trim: T3_P1 650mv */
-+			writel(0x90, priv->mmio + (0xa << 2));
-+			writel(0x43, priv->mmio + (0xb << 2));
-+			writel(0x88, priv->mmio + (0xc << 2));
-+			writel(0x56, priv->mmio + (0xd << 2));
-+		} else if (priv->type == PHY_TYPE_SATA) {
-+			/* downward spread spectrum +500ppm */
-+			rockchip_combphy_updatel(priv, GENMASK(7, 4), 0x50, 0x1f << 2);
-+
-+			/* ssc ppm adjust to 3500ppm */
-+			rockchip_combphy_updatel(priv, GENMASK(3, 0), 0x7, 0x9 << 2);
-+		}
-+		break;
-+	default:
-+		dev_err(priv->dev, "Unsupported rate: %lu\n", rate);
-+		return -EINVAL;
-+	}
-+
-+	if (priv->ext_refclk) {
-+		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_ext, true);
-+		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_100MHz) {
-+			writel(0x10, priv->mmio + (0x20 << 2));
-+
-+			writel(0x0c, priv->mmio + (0x1b << 2));
-+
-+			/* Set up su_trim: T3_P1 650mv */
-+			writel(0x90, priv->mmio + (0xa << 2));
-+			writel(0x43, priv->mmio + (0xb << 2));
-+			writel(0x88, priv->mmio + (0xc << 2));
-+			writel(0x56, priv->mmio + (0xd << 2));
-+		}
-+	}
-+
-+	if (priv->enable_ssc) {
-+		rockchip_combphy_updatel(priv, GENMASK(4, 4), BIT(4), 0x7 << 2);
-+
-+		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
-+			/* Xin24M T0_1 650mV */
-+			writel(0x00, priv->mmio + (0x10 << 2));
-+			writel(0x32, priv->mmio + (0x11 << 2));
-+			writel(0x00, priv->mmio + (0x1b << 2));
-+			writel(0x90, priv->mmio + (0x0a << 2));
-+			writel(0x02, priv->mmio + (0x0b << 2));
-+			writel(0x08, priv->mmio + (0x0c << 2));
-+			writel(0x57, priv->mmio + (0x0d << 2));
-+			writel(0x40, priv->mmio + (0x0e << 2));
-+			writel(0x5f, priv->mmio + (0x0f << 2));
-+			writel(0x10, priv->mmio + (0x20 << 2));
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct rockchip_combphy_grfcfg rk3576_combphy_grfcfgs = {
-+	/* pipe-phy-grf */
-+	.pcie_mode_set		= { 0x0000, 5, 0, 0x00, 0x11 },
-+	.usb_mode_set		= { 0x0000, 5, 0, 0x00, 0x04 },
-+	.pipe_rxterm_set	= { 0x0000, 12, 12, 0x00, 0x01 },
-+	.pipe_txelec_set	= { 0x0004, 1, 1, 0x00, 0x01 },
-+	.pipe_txcomp_set	= { 0x0004, 4, 4, 0x00, 0x01 },
-+	.pipe_clk_24m		= { 0x0004, 14, 13, 0x00, 0x00 },
-+	.pipe_clk_25m		= { 0x0004, 14, 13, 0x00, 0x01 },
-+	.pipe_clk_100m		= { 0x0004, 14, 13, 0x00, 0x02 },
-+	.pipe_phymode_sel	= { 0x0008, 1, 1, 0x00, 0x01 },
-+	.pipe_rate_sel		= { 0x0008, 2, 2, 0x00, 0x01 },
-+	.pipe_rxterm_sel	= { 0x0008, 8, 8, 0x00, 0x01 },
-+	.pipe_txelec_sel	= { 0x0008, 12, 12, 0x00, 0x01 },
-+	.pipe_txcomp_sel	= { 0x0008, 15, 15, 0x00, 0x01 },
-+	.pipe_clk_ext		= { 0x000c, 9, 8, 0x02, 0x01 },
-+	.pipe_phy_status	= { 0x0034, 6, 6, 0x01, 0x00 },
-+	.con0_for_pcie		= { 0x0000, 15, 0, 0x00, 0x1000 },
-+	.con1_for_pcie		= { 0x0004, 15, 0, 0x00, 0x0000 },
-+	.con2_for_pcie		= { 0x0008, 15, 0, 0x00, 0x0101 },
-+	.con3_for_pcie		= { 0x000c, 15, 0, 0x00, 0x0200 },
-+	.con0_for_sata		= { 0x0000, 15, 0, 0x00, 0x0129 },
-+	.con1_for_sata		= { 0x0004, 15, 0, 0x00, 0x0000 },
-+	.con2_for_sata		= { 0x0008, 15, 0, 0x00, 0x80c1 },
-+	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x0407 },
-+	/* php-grf */
-+	.pipe_con0_for_sata	= { 0x001C, 2, 0, 0x00, 0x2 },
-+	.pipe_con1_for_sata	= { 0x0020, 2, 0, 0x00, 0x2 },
-+};
-+
-+static const struct rockchip_combphy_cfg rk3576_combphy_cfgs = {
-+	.num_phys = 2,
-+	.phy_ids = {
-+		0x2b050000,
-+		0x2b060000
-+	},
-+	.grfcfg		= &rk3576_combphy_grfcfgs,
-+	.combphy_cfg	= rk3576_combphy_cfg,
-+};
-+
- static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- {
- 	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-@@ -775,6 +973,10 @@ static const struct of_device_id rockchip_combphy_of_match[] = {
- 		.compatible = "rockchip,rk3568-naneng-combphy",
- 		.data = &rk3568_combphy_cfgs,
- 	},
-+	{
-+		.compatible = "rockchip,rk3576-naneng-combphy",
-+		.data = &rk3576_combphy_cfgs,
-+	},
- 	{
- 		.compatible = "rockchip,rk3588-naneng-combphy",
- 		.data = &rk3588_combphy_cfgs,
--- 
-2.34.1
-
+Thanks,
+Qiang
+>> Fixes: d1997c987814 ("PCI: qcom: Disable ASPM L0s for sc8280xp, sa8540p and sa8295p")
+>> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+>> ---
+>>   drivers/pci/controller/dwc/pcie-qcom.c | 12 +++++++++++-
+>>   1 file changed, 11 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+>> index 88a98be930e3..468bd4242e61 100644
+>> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+>> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+>> @@ -1367,6 +1367,16 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
+>>   	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+>>   };
+>>   
+>> +/* Qcom IP rev.: 1.21.0 */
+>> +static const struct qcom_pcie_ops ops_1_21_0 = {
+>> +	.get_resources = qcom_pcie_get_resources_2_7_0,
+>> +	.init = qcom_pcie_init_2_7_0,
+>> +	.post_init = qcom_pcie_post_init_2_7_0,
+>> +	.host_post_init = qcom_pcie_host_post_init_2_7_0,
+>> +	.deinit = qcom_pcie_deinit_2_7_0,
+>> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
+>> +};
+>> +
+>>   static const struct qcom_pcie_cfg cfg_1_0_0 = {
+>>   	.ops = &ops_1_0_0,
+>>   };
+>> @@ -1405,7 +1415,7 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
+>>   };
+>>   
+>>   static const struct qcom_pcie_cfg cfg_sc8280xp = {
+>> -	.ops = &ops_1_9_0,
+>> +	.ops = &ops_1_21_0,
+>>   	.no_l0s = true,
+>>   };
+>>   
+>> -- 
+>> 2.34.1
+>>
 
 -- 
 linux-phy mailing list
