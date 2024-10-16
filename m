@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC6DCD1AD2A
-	for <linux-phy@archiver.kernel.org>; Wed, 16 Oct 2024 08:47:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 700E6D1AD30
+	for <linux-phy@archiver.kernel.org>; Wed, 16 Oct 2024 08:57:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2JeqIDZA5LO1Xh5/iNmtPnep0OpCzn/aQHPDpq9wc8o=; b=3XL9CRk2IyTFGH
-	prsS3c8GzhWucMzChfMdkHOu1QfN5rUn/xyVMiyxDAl20BOl6CROp1t87sBUybhb1FExbqiZ36Pbx
-	FugF8iGWO9e81YQ/6UQunrpedjbOMYju5aKSvlWTcjNfuRe7dSqhzU928f2xGlql5mJ6VcARziSrN
-	lnpAaeESPo7fe3aR6OfkCqoxUSiQXB99GOe6sQFvxdct1x0WGQQ7hGyX6YWkRt0nzm/4KWbk/MeFt
-	WihMUQnI7cU+WJkrPhd+SCzDj2KrwBfF1TyEg5EAZ7jZ+DsfS5a+viqyrSu0XnApNG8222jcca4eK
-	MWKzPC2n9K6/WMBPzOCQ==;
+	List-Owner; bh=z/V0SFo+YoySnSffWMhVDNY7HlnxHT7lpXfZaGtbq48=; b=zsFrd7oSv+sw6q
+	rkBnmn4R/ExgvLULb9mWeesZydTNXqfsEvJaLnmBjg0LejeMZ/NzrWkrEdyaXNdC9JDLRXgw4UdQr
+	qP4iVH3p5B947RGwporh1uQjnSHjD8JL58+cnixAls/1djTotOTo1WIrK6HbbYF3ysnT9sA2WSJ/H
+	SE0NUMqKi3d77nLNBKCU4YQdvbywgEsxS2/FxAwxfzC2/F/l9Me79+7PcgCd8scZk5eyGW0l07EwA
+	8dAu0TzJHjKXJLBxIZ42vvD+ryZZW7XFoH5BCWq5sIektRl2aXxRdy9C2/jr4OeKEA8NoHVQddGEO
+	DD3qIrUT1SIRVqbAzL/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0zgQ-0000000B5pu-106y;
-	Wed, 16 Oct 2024 08:47:06 +0000
+	id 1t0zqO-0000000B874-3P8y;
+	Wed, 16 Oct 2024 08:57:24 +0000
 Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t0zYg-0000000B4CA-3yit;
-	Wed, 16 Oct 2024 08:39:08 +0000
+	id 1t0zn5-0000000B7ML-2Ocb;
+	Wed, 16 Oct 2024 08:54:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
   d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1729067947; x=1760603947;
+  t=1729068839; x=1760604839;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=Al16EzMBGhlTDMwmtBM4msdAumqBKH3tC5qZ61ZgNHo=;
-  b=YZ7RTp2kklKfxXedsS/IA5pSvy6oGLGdhJMoW5OaXCn6EtVz2QtJyUMv
-   3jC+QNajTrQMK68/ShcK5X0ezI5z1QFgRGsXi3l1UNdUlwrb49Wt9NTCM
-   Pe5moWHt4gwUZnPouLK56sgIO9P+Uvjy/nNH+Ttei7YBaQ0ZMpfFDyEDP
-   ztVw6eo9VWYGfNiI5+K6lyDv9ZAYeEZgqHNaMWkInY4HFiAIm/XlRG1G1
-   tLn6xLJxkRDIeFviBqmlDV4tiyHM48VNrHvDSD96sv0vQS9aowSy20dyW
-   kZzl21k55D0Te3zdCvk6Iv8/G63FKVyjleGfbMgdFBXjaaKzijSbn/9d/
-   A==;
-X-CSE-ConnectionGUID: Fi5IwMEnS1239q5Z2avZ4w==
-X-CSE-MsgGUID: B2edffbpQDayc5i4k+NcIw==
+  bh=k6T+vMrh8+eViQD0mNH7DcuKMC8arv9x+jXY+RWhEHY=;
+  b=kUjPRdnptEreX8hdcwj4QWjHfhodlkj7lb4MV6JEoIsaijQdqRwMkXZC
+   +olHIp+Bot4z80ag7TNb51urbnEdlGFTVzkowqTrizDD9GJ5I7CB52ENo
+   oBo5RXfERbsUHtamXixP0GJ295oKFgpDJ3MftDyF2zqX6rhlRLW0+9ny0
+   5MO8Ku8Isa6l3vzfSifGYWUvlQ/GYRDU8Rn3Egt7I1arvv5WBsVJpoArk
+   FW5YRpHZzQRAS+nKy5J6RRdwsK9jgOBaRsW0hdSA9U7V427Z7HpBr/sE+
+   pBZJgva/3PzlD+2e/1HukdKgLml5SyxfBqa3XnmNSRaJ7YKLHv5qbNME1
+   g==;
+X-CSE-ConnectionGUID: uiMi2LlbS4yrX1ZxLP23XA==
+X-CSE-MsgGUID: whIy4NY3Rh+x/VF+gai7Fw==
 X-IronPort-AV: E=Sophos;i="6.11,207,1725314400"; 
-   d="scan'208";a="39487747"
+   d="scan'208";a="39488222"
 Received: from vmailcow01.tq-net.de ([10.150.86.48])
-  by mx1.tq-group.com with ESMTP; 16 Oct 2024 10:39:03 +0200
-X-CheckPoint: {670F7BA7-24-8E59014-E6F31237}
-X-MAIL-CPID: FEC6AC4042E72B571F7164006AB52AB5_1
-X-Control-Analysis: str=0001.0A682F1E.670F7BA7.0111,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id DD23B169731;
-	Wed, 16 Oct 2024 10:38:56 +0200 (CEST)
+  by mx1.tq-group.com with ESMTP; 16 Oct 2024 10:53:56 +0200
+X-CheckPoint: {670F7F24-4F-65F98A6A-FADAF7F3}
+X-MAIL-CPID: BD98F773564CB09642D99A66B771562A_5
+X-Control-Analysis: str=0001.0A682F16.670F7F25.0060,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id DA47C169194;
+	Wed, 16 Oct 2024 10:53:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
-	s=dkim; t=1729067939;
+	s=dkim; t=1729068832;
 	h=from:subject:date:message-id:to:cc:mime-version:content-type:
 	 content-transfer-encoding:in-reply-to:references;
-	bh=Al16EzMBGhlTDMwmtBM4msdAumqBKH3tC5qZ61ZgNHo=;
-	b=cbUb64k0DGgAGUFfgmMKQ6F1/UnLGvEJdf3Iy/3oVwTiBiA84LPKazf5LEwLtuafRK48C/
-	MGLHRyLNif3HfiJMcCY/oQ94zla/JcR4D58sjU4nnQGbfKmHOIz/Sq4EI8eBYgmEY5AfKr
-	GM3SaGF5nwImNLYB7Uw51p3A6gylzmWdPWXCb/reUuO+NL5TeaMZu/wGGpPoi+E0ZeIWsS
-	8Vw6drhx9vNylbhz2fjx40m3Y75Drt/SYpCnx5g6xMO2dCsigiKcHB4mI1HHR7GtivzI+a
-	zAtV3FM3LknyPP0l6t5QHwnc7XeC7dbmI43HLBjR7I6ccsT8PVvv+m/Ah01hvQ==
+	bh=k6T+vMrh8+eViQD0mNH7DcuKMC8arv9x+jXY+RWhEHY=;
+	b=PQnu6w7snCIkADUXXcOfldKtAbC76TFuSiboRpcrqI5evPvutmXjR34KE5MOgcLdjtmE1w
+	tNDY/I9G5YD+Woe9TPbH/Kf5ED3siUbVs807u0thA2fWCdgj8yCJcVqr9XFc1ye/tM9/fl
+	0wb+Cy8U6/Q5l21w9cxP2uuXY7Gc8DJvFQkjTs880vt5Dd3IJvFIf4F5I1MmS4cZ5bAxkm
+	EDehLB4cktHPbIlf+B3gBIfWTibGz8D4hK14EzY8GuyMXVdtLxAb+uuWsRkshN424TRzyz
+	6lbtNUcGNnkKugv4sgsIWdDwuzQa4XIF9+V8i/MJWcMNVeLzgNIBCpy10s41xg==
 From: Alexander Stein <alexander.stein@ew.tq-group.com>
 To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, gregkh@linuxfoundation.org, peter.chen@kernel.org, herve.codina@bootlin.com, Xu Yang <xu.yang_2@nxp.com>
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org, jun.li@nxp.com
 Subject: Re: [PATCH v8 2/3] arm64: dts: imx95: add usb3 related nodes
-Date: Wed, 16 Oct 2024 10:38:52 +0200
-Message-ID: <3321333.aeNJFYEL58@steina-w>
+Date: Wed, 16 Oct 2024 10:53:50 +0200
+Message-ID: <22464382.EfDdHjke4D@steina-w>
 Organization: TQ-Systems GmbH
 In-Reply-To: <20241015111018.2388913-2-xu.yang_2@nxp.com>
 References: <20241015111018.2388913-1-xu.yang_2@nxp.com> <20241015111018.2388913-2-xu.yang_2@nxp.com>
 MIME-Version: 1.0
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241016_013907_519383_4200E572 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20241016_015400_205973_473B174A 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,7 +90,9 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
+Hi,
+
+another thing I just noticed.
 
 Am Dienstag, 15. Oktober 2024, 13:10:17 CEST schrieb Xu Yang:
 > Add usb3 phy and controller nodes for imx95.
@@ -156,16 +158,6 @@ ts/freescale/imx95.dtsi
 > +				phy-names =3D "usb2-phy", "usb3-phy";
 > +				snps,gfladj-refclk-lpm-sel-quirk;
 > +				snps,parkmode-disable-ss-quirk;
-
-Downstream kernel also configures
-> snps,tx-max-burst =3D /bits/ 8 <4>;
-> snps,tx-thr-num-pkt =3D /bits/ 8 <1>;
-
-is this not needed and omitted on purpose?
-
-Best regards,
-Alexander
-
 > +				iommus =3D <&smmu 0xe>;
 > +			};
 > +		};
@@ -180,6 +172,29 @@ Alexander
 > +			power-domains =3D <&scmi_devpd IMX95_PD_HSIO_TOP>;
 > +			orientation-switch;
 > +			status =3D "disabled";
+
+I got these dtbs check warnings:
+
+arch/arm64/boot/dts/freescale/imx95-tqma9596sa-mb-smarc-2.dtb:
+ phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
+        'port' is a required property
+        'ports' is a required property
+        from schema $id: http://devicetree.org/schemas/phy/fsl,imx8mq-usb-p=
+hy.yaml#
+arch/arm64/boot/dts/freescale/imx95-tqma9596sa-mb-smarc-2.dtb: =
+
+ phy@4c1f0040: Unevaluated properties are not allowed ('orientation-switch'=
+ was unexpected)
+        from schema $id: http://devicetree.org/schemas/phy/fsl,imx8mq-usb-p=
+hy.yaml#
+
+
+How am I supposed to specify a port when the usb3 is used in host mode, thus
+no USB Type-C connector and no 'port' OF-graph accordingly?
+
+Best regards,
+Alexander
+
 > +		};
 > +
 >  		pcie0: pcie@4c300000 {
