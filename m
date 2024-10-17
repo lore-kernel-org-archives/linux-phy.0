@@ -4,60 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F670D21276
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 10:17:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBF78D21275
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 10:17:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60/CH3S73I/m5ezRiS8BwMTQpfYTjjMdA9q/4jVYDfY=; b=O9oyYjlKQQRMZw
-	s1Wh3itYiVxlSjGow14lSqm+6Ct+Mtyhmh+bki3duR5jGp6cwLF7kbG4G/MWcIUUNkmqtt1C/dSyA
-	cKVCWqLJyLCMLYoBpdAahMBdoH4A5zvEnC/Oup+6i4xs1LldL7QWGglMPP8HmSSL4bGvr4hA8zHgG
-	S1R/NRtep1J0jNzLzQ2bT3oxJ9FoTa0NO5fl6bN5WgpNFA4n4i316aUryrobBwkfgus+r5dro21dR
-	g8tYm+VfAWqjbfI9rnQR5D8GnP2F88sOieBFCisAFueRT2J8BPtUMT2X5Z3LBJcTooCzYxaxs4B8R
-	yf3BU6dDjCSbnuU5Meqw==;
+	List-Owner; bh=QoGxk5ZfGBLxyOCQCDankPdfPRPbRlqEan2lNOy0To8=; b=RrZpZN/PPiwc18
+	zWP8Lsd2NE77oEVfb2roXFp4vtfuxhErvyKKzmOyjmdP4PMh6YwIWRlHOeiYOiTcMRTKTWCxgDd2B
+	3Dn3vWGy9Rzfx00MzH/3AOI1XanPyiQC0uZ+GqexdqPAK8n8z/ZGReRd13UvHozHvFzps91299OgR
+	n3fN1whbs1vNeLEkCPJqBng3Vx1JvlqjewhP7CpaT5Ac+j4LpJ7lGuKDHtnBE+K+4lg5lwC8Uq89d
+	vG4S9l1Ap+sQPXetsumUkS3te5eI+ASt8TlIjDXVY9MGnYWHsi9C4qb2HGCdX3LwT4msjEKGFH8cE
+	kFn4N21q7sl9YKbP/EMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1NZH-0000000EUdd-3HEl;
+	id 1t1NZH-0000000EUd9-1yff;
 	Thu, 17 Oct 2024 10:17:19 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1NCm-0000000EQbk-1yN3
+	id 1t1NCg-0000000EQYr-2i1U
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Oct 2024 09:54:08 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49H85h9R012387;
-	Thu, 17 Oct 2024 09:53:57 GMT
+	Thu, 17 Oct 2024 09:54:00 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49H9K3vq011278;
+	Thu, 17 Oct 2024 09:53:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	e1Z5zmDQ1OlpDM8knvCmKvl8qeoK7rF44pz04m5RQUg=; b=X7qSpJclIK8YEZJk
-	eKuMp2tARobUNSoZhJ9kck8dKTfFN57QSwR/uAMjLKeVDZSCNW6IDkQwD22/YCTl
-	fsdeuhCMjCTCC1ceTGnH9AkbkcBLEhlWEoqU+ORvssLRbm3QQ2T1TmEtFPApCoeM
-	lVKLJ4yY0odGofrH9yo4KJqY6fDqboQoIE+D6kTy3kJBS3rtX/r85y0mnsSO+mhO
-	OZmMahYxFCYsCiv220lXBCey8Z8PUe0TnK4MIacQVKnkk7AsaePK0qOcUea60lfi
-	8a6ec0sKH246k0sFMXwbUDG3BlSPDyUjDKrik5NE8z4h1NCFlNPU97e9b6HoMRro
-	0L7a1g==
-Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42abbxumn1-1
+	xVvDhdy9UwmXlEOuHMZND4WIdHH4PTsuwNOOcJfoPlM=; b=iDjfcukVy3tt2G+M
+	f1QqlpTBrEYTiDTA4dcizteJn1ILKDVFViMYQMczW6anuWdyu1q89bpPKNrHXUsU
+	ehrDc4q08W1bIYzHDT0l+KB5dACL7tjYN8nQhZgLYYe+s6AABySrJLbrHM6eK/F7
+	ctW2EN2ctglmaY9sSCBecvW6jqiD9cf7tibXFMHsFmoFfWZVNRYaTB16cFGg9qnA
+	MRdrUXCfA+9twK2UE8z9iLY6sbtl8jTY47LaCbCRmnBsOQqfK+ByCoFP1ercNe+6
+	e5D0rug8GMPoeRXQ5N7N4AD2gkx5tpLPH6wF7bRuA1O0MKqPghLKxb0j0W6xLwZ1
+	IpAvxA==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42abm5kjvs-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Oct 2024 09:53:56 +0000 (GMT)
+	Thu, 17 Oct 2024 09:53:50 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49H9rtLC007900
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49H9rnU8005197
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Oct 2024 09:53:55 GMT
+	Thu, 17 Oct 2024 09:53:49 GMT
 Received: from yijiyang-gv.ap.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 17 Oct 2024 02:53:49 -0700
+ 15.2.1544.9; Thu, 17 Oct 2024 02:53:43 -0700
 From: Yijie Yang <quic_yijiyang@quicinc.com>
-Date: Thu, 17 Oct 2024 17:52:39 +0800
-Subject: [PATCH v2 3/3] dt-bindings: net: qcom,ethqos: add description for
- qcs8300
+Date: Thu, 17 Oct 2024 17:52:38 +0800
+Subject: [PATCH v2 2/3] dt-bindings: phy: describe the Qualcomm SGMII PHY
 MIME-Version: 1.0
-Message-ID: <20241017-schema-v2-3-2320f68dc126@quicinc.com>
+Message-ID: <20241017-schema-v2-2-2320f68dc126@quicinc.com>
 References: <20241017-schema-v2-0-2320f68dc126@quicinc.com>
 In-Reply-To: <20241017-schema-v2-0-2320f68dc126@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, "David S. Miller" <davem@davemloft.net>,
@@ -79,11 +78,11 @@ CC: <netdev@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
         "Krzysztof
  Kozlowski" <krzysztof.kozlowski@linaro.org>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1729158811; l=997;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1729158811; l=1167;
  i=quic_yijiyang@quicinc.com; s=20240408; h=from:subject:message-id;
- bh=vUABZNOEU5zglsAKlfRDz3MXnciku93th5+5j2jXmAA=;
- b=tby6vQu9qH88iG15U/qaKWjOLc+dbzaT0wSQDW4m1xMAdnP1B/qoFa5vX9wS/SjMkNHcuDoES
- UvEvu21aKxhB9LnrY0wGrjqr5N0o1Yyq0iCL46yND3g+47RSr5C8glD
+ bh=9cNW7j6TUlFoD1BLDOBl2cAMAxZpuNjWlK3erXKFN0A=;
+ b=RGAXvmLtaKB26TgOu885KNG8TDml5v0BrNtwHuxsuWzyANunGmSASMPqkCNGrTV/xZW5h+Szg
+ Ig0VZP3PUYGAdarCG+cKkNcs6fvjcRIFGwQMaqgD7atJVslCuLuvDJl
 X-Developer-Key: i=quic_yijiyang@quicinc.com; a=ed25519;
  pk=XvMv0rxjrXLYFdBXoFjTdOdAwDT5SPbQ5uAKGESDihk=
 X-Originating-IP: [10.80.80.8]
@@ -91,19 +90,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: TF6qnuv2ur5_d99nYxsHI5iWBWe7TDK2
-X-Proofpoint-GUID: TF6qnuv2ur5_d99nYxsHI5iWBWe7TDK2
+X-Proofpoint-ORIG-GUID: bTf4jQMSx0ugbQW7ZKDmNCqwCpgvyjsj
+X-Proofpoint-GUID: bTf4jQMSx0ugbQW7ZKDmNCqwCpgvyjsj
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
- priorityscore=1501 impostorscore=0 mlxscore=0 mlxlogscore=773 bulkscore=0
- spamscore=0 malwarescore=0 lowpriorityscore=0 suspectscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2410170067
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
+ clxscore=1015 impostorscore=0 mlxscore=0 bulkscore=0 suspectscore=0
+ lowpriorityscore=0 phishscore=0 priorityscore=1501 spamscore=0
+ mlxlogscore=924 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410170065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_025404_662554_C0661763 
-X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-CacheID: sfid-20241017_025358_835515_70531D79 
+X-CRM114-Status: UNSURE (   9.68  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -121,31 +120,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add compatible for the MAC controller on qcs8300 platforms.
-Since qcs8300 shares the same EMAC as sa8775p, so it fallback to the
+Describe the SGMII/SerDes PHY present on the qcs8300 platforms. Since
+qcs8300 shares the same SerDes as sa8775p, so it fallback to the
 compatible.
 
 Signed-off-by: Yijie Yang <quic_yijiyang@quicinc.com>
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- Documentation/devicetree/bindings/net/qcom,ethqos.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml      | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/net/qcom,ethqos.yaml b/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
-index 8cf29493b8228967156758c0363a978daec84152..0bcd593a7bd093d4475908d82585c36dd6b3a284 100644
---- a/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
-+++ b/Documentation/devicetree/bindings/net/qcom,ethqos.yaml
-@@ -19,6 +19,10 @@ allOf:
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+index b9107759b2a51738d884f6bdce16bf0bff644056..90fc8c039219c739eae05cc17108a9a2fc6193df 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+@@ -15,7 +15,12 @@ description:
+ 
  properties:
    compatible:
-     oneOf:
+-    const: qcom,sa8775p-dwmac-sgmii-phy
++    oneOf:
 +      - items:
 +          - enum:
-+              - qcom,qcs8300-ethqos
-+          - const: qcom,sa8775p-ethqos
-       - items:
-           - enum:
-               - qcom,qcs615-ethqos
++              - qcom,qcs8300-dwmac-sgmii-phy
++          - const: qcom,sa8775p-dwmac-sgmii-phy
++      - const: qcom,sa8775p-dwmac-sgmii-phy
+ 
+   reg:
+     items:
 
 -- 
 2.34.1
