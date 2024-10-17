@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26592D2F7E5
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 04:24:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A005DD2F7EA
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 04:24:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/b/cEIApWQhN/2oC5hqM7sBrJ5E21H4Zo2bil2+YqtM=; b=zX0A7jo4nOhF6f
-	VL1RTWQbNzBFV4vh2uUtLg4M7aDlEuJ6/jJNKroKMEQgTsDQcayZsb9Oy0+tPacZnufllJlezHqVu
-	6MPRMI/B7g0HlBKgmSKcY9BBxUfo71orbhAsg3xA30U0VM7MLg7FekCuBYWtb1cUczWOQ6W2U5Oxr
-	UHJ7D78NeJgYtcC8GA2UelAtX/6mUwZt0QEjXjHezZN9jGs8x7diAl1aG4IJ1VHIywBHcVb45Rasf
-	NqFa7QdHgaiUpHyuiMv3cgblxguN/N23R1KtNWpEsmn61zdLo+M4hLtACjFJiX1JoDhRYn7OVgV/o
-	TayUiMc+w8y9Qd1kiEmg==;
+	List-Owner; bh=1tmltyLkXITY/osOgsqttDterMEzW0i0pmY4wQx78ec=; b=zAJPRcYCleEYbn
+	a7WTbKzlrQEDbnOVIvAHFMSUhLHOqKpO9ykU5BxKE9gxPFW7DmuBjyc/La4pC3jy4U7K5TEhdTftU
+	b/7aF3QDBa0PMwta4AiYCHzPo6zLIeVIbjMeJF4107/8pgyUYVnL+iHTBKksEIuIm0400qGMzy39x
+	xENt8ceMnmLly4IIvDYfYP1AFN6ce2iIXdl7IB/OZhid/3ByoFGHpq8csG7AU/WIS/i6gkrXTkV4e
+	c3a8GSkwCupjILqkHde/Id1L8sP5tYrgMhhIkomggGZMz/m4stzRQEDnypg3pgi00nUIxuVUvX1qK
+	W5hg3UuFLzpM7iHGiyeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1I3M-0000000DiOM-3bPY;
-	Thu, 17 Oct 2024 04:24:00 +0000
+	id 1t1I3T-0000000DiPL-1Fyi;
+	Thu, 17 Oct 2024 04:24:07 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1I3J-0000000DiNz-4Bq4
+	id 1t1I3N-0000000DiOc-13t4
 	for linux-phy@lists.infradead.org;
-	Thu, 17 Oct 2024 04:23:59 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49GFQ51p024266;
-	Thu, 17 Oct 2024 04:23:50 GMT
+	Thu, 17 Oct 2024 04:24:05 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49H0Mra6009999;
+	Thu, 17 Oct 2024 04:23:56 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	yusSvMeUgk17n7+pYAaRUtT07O+8JgiNlU00MmOBmTU=; b=CobKt4e/5qSOdHHe
-	IVnUIg74+ptYls759O1CnDXqcYlDhOKpqRZL77w0yk1hwCcNnSQUVMOsVLk7z5kO
-	DAh9iiIOAG0xnYH1XoD6SiL+YHcg24DQCvod0LpTAUqxX8YUbeyGoIowBY70bi+g
-	/+uOGhvKjDFFLaKk6u2NSTqRCAnaOj6dT6ERFJ+9sKyW/LZd+4RSi1JBujAkc88z
-	OFfBSdcxWcqho17s8fP31dTtBdkeAu+9unY4OiNJZ18THHI1D2LDmehBdnC6QRlc
-	lHbxKp0c4NOJljFUFpp5BcwbkU48fR0j6+lvilxrp/Wv3sphh8iKOZK18gxcCSqB
-	ra7SDg==
+	332hsrgsvSFUAnMA5jEA25gYpBbs3hj/sBAD875nn40=; b=DpmAwlw3Dsh6rWO2
+	mhrAOnAJYRa7I/YOc+dCce4a5G6fQJ9zR8VAgSnzI6sDVrzmXPWehoaAjofBrF83
+	9jUy87pxofRZxWOlHnpvUwnHU1rJQgK2QaDX50yNP2B5BRbrXHv9eIJuBvbZamw8
+	agsqkSS/glhNUx/7WMla6cs3rTaVGN0HdzHs37dfXmQYL7wdVtEdKBfnLvnqN/eP
+	ijCa1IpV0UVX39zVjWt/LrEj1adKqvkacy5aHXrFLNmxfX0Ztz07mXoNsyifmf0b
+	eWgGCBXypFLOdf5SF+BPuAVDMXNmCcclfrh/V6M/eq6SMCkYY7gcmg9eEQaeFvTk
+	LfHcJg==
 Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 429xdbd1dc-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42ar050ghg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Oct 2024 04:23:50 +0000 (GMT)
+	Thu, 17 Oct 2024 04:23:56 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49H4NnOM004757
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49H4NtwA004826
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 17 Oct 2024 04:23:49 GMT
+	Thu, 17 Oct 2024 04:23:55 GMT
 Received: from liuxin-gv.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 16 Oct 2024 21:23:43 -0700
+ 15.2.1544.9; Wed, 16 Oct 2024 21:23:49 -0700
 From: Xin Liu <quic_liuxin@quicinc.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
@@ -68,9 +68,9 @@ CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
         <linux-scsi@vger.kernel.org>, <quic_jiegan@quicinc.com>,
         <quic_aiquny@quicinc.com>, <quic_tingweiz@quicinc.com>,
         <quic_sayalil@quicinc.com>
-Subject: [PATCH v1 2/4] dt-bindings: ufs: qcom: Add UFS Host Controller for QCS615
-Date: Thu, 17 Oct 2024 12:22:58 +0800
-Message-ID: <20241017042300.872963-3-quic_liuxin@quicinc.com>
+Subject: [PATCH v1 3/4] arm64: dts: qcom: qcs615: add UFS node
+Date: Thu, 17 Oct 2024 12:22:59 +0800
+Message-ID: <20241017042300.872963-4-quic_liuxin@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241017042300.872963-1-quic_liuxin@quicinc.com>
 References: <20241017042300.872963-1-quic_liuxin@quicinc.com>
@@ -80,19 +80,19 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: IIznx4vubjnm93RoztwDlXrTuvFkWBSs
-X-Proofpoint-GUID: IIznx4vubjnm93RoztwDlXrTuvFkWBSs
+X-Proofpoint-GUID: i9KrA8D8HDicF6GBmL7aiXwOqtPSrAtE
+X-Proofpoint-ORIG-GUID: i9KrA8D8HDicF6GBmL7aiXwOqtPSrAtE
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
- priorityscore=1501 lowpriorityscore=0 mlxlogscore=946 impostorscore=0
- phishscore=0 clxscore=1015 adultscore=0 mlxscore=0 malwarescore=0
- bulkscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2410170028
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=999
+ clxscore=1015 spamscore=0 suspectscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 mlxscore=0 lowpriorityscore=0 malwarescore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410170029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241016_212358_069860_73847B57 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20241016_212401_327188_866FC567 
+X-CRM114-Status: UNSURE (   9.30  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -112,36 +112,100 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Sayali Lokhande <quic_sayalil@quicinc.com>	
 	
-Document the Universal Flash Storage(UFS) Host Controller on the Qualcomm
-QCS615 Platform.
+Add the UFS Host Controller node and its PHY for QCS615 SoC.
 
 Signed-off-by: Sayali Lokhande <quic_sayalil@quicinc.com>
 Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
 Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
 ---
- Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/boot/dts/qcom/qcs615.dtsi | 74 ++++++++++++++++++++++++++++
+ 1 file changed, 74 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-index cde334e3206b..a03fff5df5ef 100644
---- a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-+++ b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
-@@ -26,6 +26,7 @@ properties:
-           - qcom,msm8994-ufshc
-           - qcom,msm8996-ufshc
-           - qcom,msm8998-ufshc
-+          - qcom,qcs615-ufshc
-           - qcom,qcs8300-ufshc
-           - qcom,sa8775p-ufshc
-           - qcom,sc7180-ufshc
-@@ -243,6 +244,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,qcs615-ufshc
-               - qcom,sm6115-ufshc
-               - qcom,sm6125-ufshc
-     then:
+diff --git a/arch/arm64/boot/dts/qcom/qcs615.dtsi b/arch/arm64/boot/dts/qcom/qcs615.dtsi
+index fcba83fca7cf..689418466dc2 100644
+--- a/arch/arm64/boot/dts/qcom/qcs615.dtsi
++++ b/arch/arm64/boot/dts/qcom/qcs615.dtsi
+@@ -458,6 +458,80 @@ mmss_noc: interconnect@1740000 {
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 		};
+ 
++		ufs_mem_hc: ufs@1d84000 {
++			compatible = "qcom,qcs615-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
++			reg = <0x0 0x01d84000 0x0 0x3000>, <0x0 0x01d90000 0x0 0x8000>;
++			reg-names = "std", "ice";
++			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
++			phys = <&ufs_mem_phy>;
++			phy-names = "ufsphy";
++			lanes-per-direction = <1>;
++			#reset-cells = <1>;
++			resets = <&gcc GCC_UFS_PHY_BCR>;
++			reset-names = "rst";
++
++			power-domains = <&gcc UFS_PHY_GDSC>;
++			required-opps = <&rpmhpd_opp_nom>;
++
++			iommus = <&apps_smmu 0x300 0x0>;
++			dma-coherent;
++
++			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
++					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
++					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
++					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ALWAYS>;
++			interconnect-names = "ufs-ddr",
++					     "cpu-ufs";
++
++			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
++				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
++				 <&gcc GCC_UFS_PHY_AHB_CLK>,
++				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
++				 <&rpmhcc RPMH_CXO_CLK>,
++				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
++				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
++				 <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
++			clock-names = "core_clk",
++				      "bus_aggr_clk",
++				      "iface_clk",
++				      "core_clk_unipro",
++				      "ref_clk",
++				      "tx_lane0_sync_clk",
++				      "rx_lane0_sync_clk",
++				      "ice_core_clk";
++			freq-table-hz = <50000000 200000000>,
++					<0 0>,
++					<0 0>,
++					<37500000 150000000>,
++					<0 0>,
++					<0 0>,
++					<0 0>,
++					<75000000 300000000>;
++
++			status = "disabled";
++		};
++
++		ufs_mem_phy: phy@1d87000 {
++			compatible = "qcom,qcs615-qmp-ufs-phy", "qcom,sm6115-qmp-ufs-phy";
++			reg = <0x0 0x01d87000 0x0 0xe00>;
++			clocks = <&rpmhcc RPMH_CXO_CLK>,
++				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
++				 <&gcc GCC_UFS_MEM_CLKREF_CLK>;
++			clock-names = "ref",
++				      "ref_aux",
++				      "qref";
++
++			power-domains = <&gcc UFS_PHY_GDSC>;
++
++			resets = <&ufs_mem_hc 0>;
++			reset-names = "ufsphy";
++
++			#clock-cells = <1>;
++			#phy-cells = <0>;
++
++			status = "disabled";
++		};
++
+ 		tcsr_mutex: hwlock@1f40000 {
+ 			compatible = "qcom,tcsr-mutex";
+ 			reg = <0x0 0x01f40000 0x0 0x20000>;
 -- 
 2.34.1
 
