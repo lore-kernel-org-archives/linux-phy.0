@@ -4,59 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EB3ED37499
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 15:48:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7926DD37499
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 15:50:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yes+XOxzz0XzVEm+RvwLcM9iAXj5ECofl2yGFt/yWTM=; b=sabqrsim7LIhEb
-	7VWuqltrfLtAgsUPaJ12vwERsIgQdXbIgvbngKXU/vz1Qx+/nC1w8qBSz8fUc5K8ClMi/S1TnBaMc
-	mAQAp8AB3j2Owm/rpeaH97vGEabbY5tdP2ypvN/UsovHBjjVU3w8crpbWP2AQ/OLcGJhPjg9Qjn6O
-	x7AjPiAZW220Dy61jwL3dANSiRLNKVmHrY80MCALz34WjJhwiyDJPlkKa5y0RgYz0jm5XPgaoOakI
-	0+bB0iHKDpz/lxzyteYvtjWof+0anKD7boxLj/hR9I7UGqTuNbE2y8tWOf8YluETi/Zry59cmO4hG
-	Tiy18yglvKSDbXHrmc6w==;
+	List-Owner; bh=PEX5QGJ4NlN0SNDzMPq22/F+KGGMhYUN+Kc+oFmuHxc=; b=Ug3uWs1yXihSPr
+	zXm51n/Awm+jjsK8edMk9YwDwD+m4QTZpzpDHySie+ktuUlXHvPF01ht+jBIh90T5snee9NsziaeG
+	3ZrBfRwis04+RAjKb9v6F3AFrTw88UoGnQOrx5aWOwc3O5iDs7c3JemBXn2GJvv7puzwE5GYnmFxf
+	MZV/pj7jhq9WWKECUL+cbaFiB90Lio8wzqQtq0p4EPlme6qFZqUdQtoHYyNsPPISUdZWMxIpNipd/
+	/jnbbncg/3BTMpuv353hmX7b6prcl1XO3lonihn573ALW6QFROPGE9YQEy2pAj5gs1zOKLbCICuOt
+	4TK2HZa9SvBG4LITYzPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1Sjs-0000000FM5g-3IAm;
-	Thu, 17 Oct 2024 15:48:36 +0000
+	id 1t1SlL-0000000FMNi-0eJQ;
+	Thu, 17 Oct 2024 15:50:07 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1SXt-0000000FIz0-0GGp;
-	Thu, 17 Oct 2024 15:36:15 +0000
+	id 1t1SY0-0000000FJ2D-2xEZ
+	for linux-phy@lists.infradead.org;
+	Thu, 17 Oct 2024 15:36:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1C2F75C60F4;
-	Thu, 17 Oct 2024 15:36:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 923E8C4CEC3;
-	Thu, 17 Oct 2024 15:36:09 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id BF3655C60F4;
+	Thu, 17 Oct 2024 15:36:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC494C4CED0;
+	Thu, 17 Oct 2024 15:36:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729179372;
-	bh=fo+CHF9qHwWN/uBVKplYMXMd5ty02jFEE2Ox30uGgf4=;
+	s=k20201202; t=1729179379;
+	bh=NfsiDZCdruACQ2h/ZlKOCEcp2Rm4sKuLxJgt6pCpxC8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=KEgM85/zWOLKZ5N/8GHERiMJ5bO4Dj3IoNVywTfnEa4ZQ3HVCduEfskJZpsUNJpzy
-	 zx5dNSNwizZOtU7TNJotLf6rrjYuhftYzjySzP2oL+3RnCZvat2HtDd0zkPDn0jot4
-	 I12FQT+drgIh5tD1NBpb+HEWYpXwAO4ziZRpJmJjxwBe5ngVkSHJD2HirY7nigJZ3a
-	 YayW+dR1dkKY5gvw/GeAhzu8E5O0o/mD8Ra9xQsO/7J2nUfV8roariIrsgT3jJMxnS
-	 i0E6BQsvoY+0JXyPIWAD+zyuqzstxhvDJ4OdCn8Zlphkx1ZPX+C0KJWyCzC2IpoJf+
-	 EL9TTGdi8RsnA==
+	b=mcySTMRWCCeOzMzewoNtQoIPyP4dBZWRtec/7rLwk3CXE8Z8+OCKjBGL2ZYUWltcU
+	 9V4PFEKWudMrPaMg+zK00b5kMmZ7AsHBWK544Np6K2vqD7GpZeaSOxlhAP6yJ3FAZ7
+	 oggoJhinAFNVoyLzTUpo+v0iCKwJzdesl/6nN/a6p0bHHzT7gb8SSWjYDGgpfuZ3dJ
+	 y9svJdW6u3Ua0O6tplYjsqTgXJQx6gPnHqqYxwUgEzWk5CHAuOVKGoP8RmWu6bCX0m
+	 HsFv4D/CXJzjZ1G9dcF/o1UVarPF1duUjS0au6P94FGyAJAyBgVzGV9U1SQsg475UZ
+	 IVCVUIxqqY2QQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, Heiko Stuebner <heiko@sntech.de>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20241007162732.2450168-1-heiko@sntech.de>
-References: <20241007162732.2450168-1-heiko@sntech.de>
-Subject: Re: [PATCH] dt-bindings: phy: rk3228-hdmi-phy: convert to yaml
-Message-Id: <172917936923.288841.7317586355645803007.b4-ty@kernel.org>
-Date: Thu, 17 Oct 2024 21:06:09 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Konrad Dybcio <konradybcio@kernel.org>, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+In-Reply-To: <20240830-nxp-ptn3222-v2-0-4c6d8535cf6c@linaro.org>
+References: <20240830-nxp-ptn3222-v2-0-4c6d8535cf6c@linaro.org>
+Subject: Re: [PATCH v2 0/2] phy: add NXP PTN3222 eUSB2 to USB2 redriver
+Message-Id: <172917937640.288841.14254055553308923025.b4-ty@kernel.org>
+Date: Thu, 17 Oct 2024 21:06:16 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_083614_241933_3F7DF8E5 
-X-CRM114-Status: UNSURE (   4.80  )
+X-CRM114-CacheID: sfid-20241017_083620_819084_EB8E0C56 
+X-CRM114-Status: UNSURE (   4.65  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,16 +79,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 07 Oct 2024 18:27:32 +0200, Heiko Stuebner wrote:
-> Convert the binding to yaml and rename it according to its first
-> compatible instead of the unspecific rockchip-inno-hdmi naming.
+On Fri, 30 Aug 2024 11:20:44 +0300, Dmitry Baryshkov wrote:
+> The NXP PTN3222 is the single-port eUSB2 to USB2 redriver that performs
+> translation between eUSB2 and USB2 signalling schemes. It supports all
+> three data rates: Low Speed, Full Speed and High Speed.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] dt-bindings: phy: rk3228-hdmi-phy: convert to yaml
-      commit: de30906910f8c2a91b236ff77d7dd5edfb14bb55
+[1/2] dt-bindings: phy: add NXP PTN3222 eUSB2 to USB2 redriver
+      commit: 2df490e7374de8e940d353cfcafd3c91242841ea
+[2/2] phy: add NXP PTN3222 eUSB2 to USB2 redriver
+      commit: c9be539e11f0bf1665c03108d3b7881a5d67ae48
 
 Best regards,
 -- 
