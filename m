@@ -4,64 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9881DD37483
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 12:38:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D985CD37487
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 12:46:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cppibvx7sGrf+ztQHLNoVaILMWiKhiuFYn/ph6mmvPk=; b=d9+qzwzRNdpg8Q
-	fun+KvkORJGD4fY+nV/6kuRkLv8PmEP4NZLgsw7nf4LAH0jlW7MLp+K4ikDONIF+X4tqPrJWi/QL8
-	eWiKmIRNSttGs/vYRjd+ICEfenmX2GoAcJ9UAEFaJir0PZwmj6rIWuI4Bnr/0tL6fN5ziLRtvm/Gm
-	sQlGsv0mAMAL7GYmMeqTaypqpvSz7deQ6tWw5lZrL9etiU4YJQ3SzSCkKVTPC0bD8ptM6Eq0CtM7t
-	+MqGqnVT5gwRW5VQbblkQ9tP4l+WDZ41TWCD88VgeI+8Tsu+Mxa/Yimqg+wpFulvPOL8KzC1Nfw7d
-	3VGVj5fvYOYXoTGsADnw==;
+	List-Owner; bh=khrCZfnjMMoo0DAK4v986D8fClQwWOVKlZjxOn3r8Mg=; b=yKCoL+RUJFWjPc
+	OahGBnkYOy+0bF/3IaywgFCRv0jasKZjodNoAzB/WzV6wPZQLT8hG4MEIipvhkxQy25berOPzCGfa
+	6H3xTXtfRdJwn92Qh9loIxXxMCatvM187JY1aZqZAZe4+4uBg4gbCghN2JZQl67NBxmw9PfAsfeRh
+	BmaDTqS2n0dzxgXfDTyzhzhv6GZRqMjsCx3kqjdjZmpd5fZhaAdnaPptkdDsKi0vh3eYhQS97tAYH
+	dot1qf5sAQRuHlqeaX0BHkH3x0rL+6HO/Dz2YevUGBl53A2CZMahq51ZyprvrCJqF94J451Lz1ouZ
+	3kMscNjJnu+hQrBZgcWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1Pm8-0000000EnOU-11cn;
-	Thu, 17 Oct 2024 12:38:44 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1t1PtA-0000000Ep0F-2UE1;
+	Thu, 17 Oct 2024 12:46:00 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1PgM-0000000EmSS-0fb1;
-	Thu, 17 Oct 2024 12:32:51 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 50A48A43DB5;
-	Thu, 17 Oct 2024 12:32:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 43EB1C4CEC3;
-	Thu, 17 Oct 2024 12:32:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729168363;
-	bh=MmyhBPsP7B+6alUpYyICBc30T8TUU8WROQq2/A+3FNo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YPi2UEvMqb0/ynZUDJIHHD9oAbOmsP4g5VFQslhCB2IXZKdlhN18w4et2EpEFqUhF
-	 4peAeTabZNv3/VD7yiojC+RgVoHOwvqnt3oa7FTQjP6kC+9HWAa4QLTloUYgGljSWP
-	 OCFYKmE7FOYD28OWoI4O2V3yBgfK7axRKzqzvYnR+68PGCKSYbfwAN5TGHzJj9cRTn
-	 PxvjSpudzfuFNHPozL1UVSFCrqZPOpHP/hDWJQZ5ZO4hvcTUc9d4dfAEBJo7AYBJ56
-	 eIs8ODhNAQamkfIlScKD5upub//qchQs/boqoYExo6Oiwo8Uwzs0hQjk5RCvDNjfJE
-	 FDsjTZkhzcMEw==
-Date: Thu, 17 Oct 2024 18:02:39 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Peter Griffin <peter.griffin@linaro.org>
-Cc: kishon@kernel.org, krzysztof.kozlowski@linaro.org,
-	alim.akhtar@samsung.com, tudor.ambarus@linaro.org,
-	andre.draszik@linaro.org, kernel-team@android.com,
-	willmcvicker@google.com, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 1/3] phy: Add UFS phy hibernate modes
-Message-ID: <ZxED5/HdlBLWqesE@vaman>
-References: <20241002201555.3332138-1-peter.griffin@linaro.org>
- <20241002201555.3332138-2-peter.griffin@linaro.org>
- <ZwN/d8l7Mk6x2GHP@vaman>
- <CADrjBPrRrwEyg0p+6kfVoZGbPdvW6K3fa9paUoLyg_bHHScgHg@mail.gmail.com>
+	id 1t1Ora-0000000EeyT-15vM;
+	Thu, 17 Oct 2024 11:40:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1729165218; x=1760701218;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=kJuzgQVggSFZDvndl8gdAWLVRotKHx86fblnh5fFmd0=;
+  b=A0zrpxzNdlKpENz2gPQAYFb0nVMcfirVNkl1nZ0eqorZlDBy5Oy+YxJy
+   bVPb+Hu2zeLNcS5p+l+1hVhF5OBffZNy60eJ0aqOUk6bqMXKiRVSX2I47
+   v1MXIlCHMbpCyPW2gGwmqMIAInVqAkj7gaKKSfKmga7uV2Ct0L1O8RKL9
+   andMhMZXPK9mn52BufKlNLOKM5qwOkf6YBTk9K1JQ3NnVFLOzCqkKpjdT
+   H7Ff1mimbd8P2CB0ZqHlyfoUozsLf/Som+bmCZ0SarebUBDXUqIPHyMIV
+   rNWPSOPP3IKBkAAB0ohUlejU39AJcabIMryMcPMifrRAFivKdYaELRISV
+   w==;
+X-CSE-ConnectionGUID: mMs4STnGQGKSUKQeXL98tQ==
+X-CSE-MsgGUID: zdgezkh5QuO44LczNX/GRQ==
+X-IronPort-AV: E=Sophos;i="6.11,210,1725314400"; 
+   d="scan'208";a="39518762"
+Received: from vmailcow01.tq-net.de ([10.150.86.48])
+  by mx1.tq-group.com with ESMTP; 17 Oct 2024 13:40:13 +0200
+X-CheckPoint: {6710F79D-1F-65F98A6A-FADAF7F3}
+X-MAIL-CPID: 95AEEE99C7620A490EDDA5333648FD71_5
+X-Control-Analysis: str=0001.0A682F25.6710F79D.00C9,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id C62D916A787;
+	Thu, 17 Oct 2024 13:40:06 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
+	s=dkim; t=1729165209;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=kJuzgQVggSFZDvndl8gdAWLVRotKHx86fblnh5fFmd0=;
+	b=Njq8yjQscqnQppBZKWbdBYP0mmRqD6gNmkUf1KsNIpm4EWpUzQSOypBareewyf68w0i84D
+	DQxBiTN+2aBBxIy6cikVVZshOvuWIIvpq9HT8rRYp18Fz5+PRzrVPuzxgCgFXD/KVZnhnm
+	nQkn4ZThJ9Yc2dilD0vMYGfH6aA0rKg+qm2LMnjKDdR0+42aMqtUAj2d6Das8xxfDOpeps
+	YO5rqOUV/HtIUwOVLtyervM83AGbeavCNS2bOQXNvwGrUr2Hx3narUYBLa0ff1e3+l0c5z
+	AasvXn4OwCJmKhtF0/J+YgagCKE9iB1xvDPaGe/984/x5ajS0Q2vkB+Nq35iFA==
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Xu Yang <xu.yang_2@nxp.com>, robh@kernel.org, krzk+dt@kernel.org
+Cc: vkoul@kernel.org, kishon@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, gregkh@linuxfoundation.org, peter.chen@kernel.org, herve.codina@bootlin.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org, jun.li@nxp.com
+Subject: Re: [PATCH v8 2/3] arm64: dts: imx95: add usb3 related nodes
+Date: Thu, 17 Oct 2024 13:40:06 +0200
+Message-ID: <4386576.ejJDZkT8p0@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <20241017102811.oweshkoxavt2l4hi@hippo>
+References: <20241015111018.2388913-1-xu.yang_2@nxp.com> <3252989.5fSG56mABF@steina-w> <20241017102811.oweshkoxavt2l4hi@hippo>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CADrjBPrRrwEyg0p+6kfVoZGbPdvW6K3fa9paUoLyg_bHHScgHg@mail.gmail.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_053246_309281_01BE3C10 
-X-CRM114-Status: GOOD (  23.24  )
+X-CRM114-CacheID: sfid-20241017_044018_832847_0D0CA4E5 
+X-CRM114-Status: GOOD (  28.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,56 +85,179 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-10-24, 11:30, Peter Griffin wrote:
+Hi,
 
-> > > +     PHY_MODE_DP,
-> > > +     PHY_MODE_UFS_HIBERN8_ENTER,
-> > > +     PHY_MODE_UFS_HIBERN8_EXIT,
-> >
-> > I am not sure I like this. why should this be the model? Phy drivers
-> > should listen to pm events and handle this in pm_suspend/resume calls,
-> > why do we need this special mode here...
-> 
-> There are a couple of reasons I added it here:
-> 
-> 1) Whilst link hibern8 mode can be used as part of runtime PM and
-> system PM, it is also used outside of those contexts by ufshcd.c. The
-> host controller can enable UFSHCD_CAP_HIBERN8_WITH_CLK_GATING (which
-> will be the case for gs101 / Pixel 6) and the UFS clocks are gated and
-> link put into hibern8 mode for periods of inactivity. When that
-> happens the rest of the system isn't entering any sort of sleep state.
-> 
-> 2) From looking at the existing code upstream ufs-qcom.c and
-> phy-qcom-qmp-ufs.c look to have similar requirements in that it needs
-> to program a set of specific register values depending on the UFS
-> gear. To achieve that they added PHY_MODE_UFS_HS_B and
-> PHY_MODE_UFS_HS_A modes here and then use phy_set_mode_ext() API in
-> ufs_qcom_power_up_sequence() to signal to the phy driver the UFS gear,
-> which is then used to choose which set of values to program to the
-> phy.
-> 
-> The two new UFS phy modes added here for hibern8 are for a very
-> similar purpose (to choose a bunch of register values to program), so
-> I considered it consistent with what was already being done upstream
-> to signal between UFS host drivers and UFS phy drivers. Arguably I
-> guess we could have one "mode" PHY_MODE_UFS_HIBERN8 and use the
-> submode parameter to indicate whether we are entering (1) or exiting
-> (0) from it. I wasn't really sure what the rules/guidelines for the
-> submode parameter were though.
+Am Donnerstag, 17. Oktober 2024, 12:28:11 CEST schrieb Xu Yang:
+> On Wed, Oct 16, 2024 at 01:03:53PM +0200, Alexander Stein wrote:
+> > Hi,
+> > =
 
-Yes but not exactly. The HIBERN8_ENTER|EXIT sound like PM events rather
-than a PHY mode. If this is resultant from inactivity, then we should
-hook this up to runtime pm ?
+> > Am Mittwoch, 16. Oktober 2024, 12:41:40 CEST schrieb Xu Yang:
+> > > On Wed, Oct 16, 2024 at 10:53:50AM +0200, Alexander Stein wrote:
+> > > > Hi,
+> > > > =
 
--- 
-~Vinod
+> > > > another thing I just noticed.
+> > > > =
 
--- 
+> > > > Am Dienstag, 15. Oktober 2024, 13:10:17 CEST schrieb Xu Yang:
+> > > > > Add usb3 phy and controller nodes for imx95.
+> > > > > =
+
+> > > > > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> > > > > =
+
+> > > > > ---
+> > > > > Changes in v2:
+> > > > >  - no changes
+> > > > > Changes in v3:
+> > > > >  - no changes
+> > > > > Changes in v4:
+> > > > >  - reorder nodes
+> > > > > Changes in v5:
+> > > > >  - no changes
+> > > > > Changes in v6:
+> > > > >  - rebase to latest
+> > > > > Changes in v7:
+> > > > >  - no changes
+> > > > > Changes in v8:
+> > > > >  - no changes
+> > > > > ---
+> > > > >  arch/arm64/boot/dts/freescale/imx95.dtsi | 43 ++++++++++++++++++=
+++++++
+> > > > >  1 file changed, 43 insertions(+)
+> > > > > =
+
+> > > > > diff --git a/arch/arm64/boot/dts/freescale/imx95.dtsi b/arch/arm6=
+4/boot/dts/freescale/imx95.dtsi
+> > > > > index 03661e76550f..e3faa8462759 100644
+> > > > > --- a/arch/arm64/boot/dts/freescale/imx95.dtsi
+> > > > > +++ b/arch/arm64/boot/dts/freescale/imx95.dtsi
+> > > > > @@ -1473,6 +1473,49 @@ smmu: iommu@490d0000 {
+> > > > >  			};
+> > > > >  		};
+> > > > >  =
+
+> > > > > +		usb3: usb@4c010010 {
+> > > > > +			compatible =3D "fsl,imx95-dwc3", "fsl,imx8mp-dwc3";
+> > > > > +			reg =3D <0x0 0x4c010010 0x0 0x04>,
+> > > > > +			      <0x0 0x4c1f0000 0x0 0x20>;
+> > > > > +			clocks =3D <&scmi_clk IMX95_CLK_HSIO>,
+> > > > > +				 <&scmi_clk IMX95_CLK_32K>;
+> > > > > +			clock-names =3D "hsio", "suspend";
+> > > > > +			interrupts =3D <GIC_SPI 173 IRQ_TYPE_LEVEL_HIGH>;
+> > > > > +			#address-cells =3D <2>;
+> > > > > +			#size-cells =3D <2>;
+> > > > > +			ranges;
+> > > > > +			power-domains =3D <&scmi_devpd IMX95_PD_HSIO_TOP>;
+> > > > > +			dma-ranges =3D <0x0 0x0 0x0 0x0 0x10 0x0>;
+> > > > > +			status =3D "disabled";
+> > > > > +
+> > > > > +			usb3_dwc3: usb@4c100000 {
+> > > > > +				compatible =3D "snps,dwc3";
+> > > > > +				reg =3D <0x0 0x4c100000 0x0 0x10000>;
+> > > > > +				clocks =3D <&scmi_clk IMX95_CLK_HSIO>,
+> > > > > +					 <&scmi_clk IMX95_CLK_24M>,
+> > > > > +					 <&scmi_clk IMX95_CLK_32K>;
+> > > > > +				clock-names =3D "bus_early", "ref", "suspend";
+> > > > > +				interrupts =3D <GIC_SPI 175 IRQ_TYPE_LEVEL_HIGH>;
+> > > > > +				phys =3D <&usb3_phy>, <&usb3_phy>;
+> > > > > +				phy-names =3D "usb2-phy", "usb3-phy";
+> > > > > +				snps,gfladj-refclk-lpm-sel-quirk;
+> > > > > +				snps,parkmode-disable-ss-quirk;
+> > > > > +				iommus =3D <&smmu 0xe>;
+> > > > > +			};
+> > > > > +		};
+> > > > > +
+> > > > > +		usb3_phy: phy@4c1f0040 {
+> > > > > +			compatible =3D "fsl,imx95-usb-phy", "fsl,imx8mp-usb-phy";
+> > > > > +			reg =3D <0x0 0x4c1f0040 0x0 0x40>,
+> > > > > +			      <0x0 0x4c1fc000 0x0 0x100>;
+> > > > > +			clocks =3D <&scmi_clk IMX95_CLK_HSIO>;
+> > > > > +			clock-names =3D "phy";
+> > > > > +			#phy-cells =3D <0>;
+> > > > > +			power-domains =3D <&scmi_devpd IMX95_PD_HSIO_TOP>;
+> > > > > +			orientation-switch;
+> > > > > +			status =3D "disabled";
+> > > > =
+
+> > > > I got these dtbs check warnings:
+> > > > =
+
+> > > > arch/arm64/boot/dts/freescale/imx95-tqma9596sa-mb-smarc-2.dtb:
+> > > >  phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
+> > > >         'port' is a required property
+> > > >         'ports' is a required property
+> > > >         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8=
+mq-usb-phy.yaml#
+> > > > arch/arm64/boot/dts/freescale/imx95-tqma9596sa-mb-smarc-2.dtb: =
+
+> > > >  phy@4c1f0040: Unevaluated properties are not allowed ('orientation=
+-switch' was unexpected)
+> > > >         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8=
+mq-usb-phy.yaml#
+> > > =
+
+> > > Are you checking on usb tree? You need below two dt-binding patch.
+> > > =
+
+> > >  - dt-bindings: usb: dwc3-imx8mp: add compatible string for imx95
+> > >  - dt-bindings: phy: imx8mq-usb: add compatible "fsl,imx95-usb-phy"
+> > =
+
+> > Yes, these patches are already in linux-next. I'm on next-20241016.
+> > =
+
+> > > > =
+
+> > > > =
+
+> > > > How am I supposed to specify a port when the usb3 is used in host m=
+ode, thus
+> > > > no USB Type-C connector and no 'port' OF-graph accordingly?
+> > > =
+
+> > > Host-only mode with Type-A connector? No Typec-C connector?
+> > > Sorry, I do not get your meaning.
+> > =
+
+> > Yes, no Type-C connector. Actually not even a Type-A as there is an
+> > on-board USB hub attached to this host.
+> =
+
+> Understood. imx95 usb phy can work w/o typec. So I may need modify the
+> dt-binding to be similar to the following format:
+> =
+
+> If property "orientation-switch" exist and compatible contain "fsl,imx95-=
+usb-phy",
+> then refer to usb-switch.yaml.
+
+What 'works' is adding an empty port node to the usb3_phy. But this feels l=
+ike a workaround.
+
+> However, I'm not sure how to do that now. Do you know?
+
+DT guys, can you more input how to proceed?
+
+Best regards,
+Alexander
+-- =
+
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
+
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
