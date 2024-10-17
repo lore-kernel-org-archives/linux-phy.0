@@ -4,61 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD1E4D37499
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 15:39:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01B6DD37499
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 15:44:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HUN6emHP5BG9qsxBEST56wNKpwI9TaCK6sNVvdCHuU8=; b=yX6HChOgWHT3EZ
-	fuwvU11plcT3aZv3576zqSW0hQwYiAWsz61CEMXl8MugHPnd8AtlxUBX/KaPaeIildEYo3khIKbKB
-	uPH/bRQXJQUyOwKLkuYlETfTYGcXrg6LwE4U5+nVpRqkmcPPboANLtCRGPFNSyhNcYWW6ONLOmyez
-	Uy3QORFjieUS2c9BbT4++nMsrHTiEZBqlsrlJb6uTSS6UGAJl2v0c0dMwu8kpSKjzG1DCFq9SyKaK
-	uU2LQzlywH6A2ciKNYWh1beRy+B3ujeuCZtvBDFbGyy0vqnaiz0dJ2Hi+uwLFnnnZSaPwPpWXPrI3
-	6KZ5H0+iO2W2f6G3lnZw==;
+	List-Owner; bh=YV8OjwbhRH++EHgv6HqKmUE1u8/2UD+sNhKtJJy0Gyo=; b=C2Y4ijL4MIxiuz
+	wlDy5k9ttQuEdfAKKxcLTZAuDWA5kH5ms0s4NugqkxpovtOq/iwFu9SV2Bk3p0FOi2OCl7/lTppLJ
+	DM6QA8NdKaZEMa/aq04S/ceqIf0uC5/4IZdyD2xv1bJUuENvQTp7IPpQGTgoyDyEgtogSrEONaMJR
+	vFR2kX6IOpQzd269tiu3IIZctDScFiztRyZ7NYgG0vbRyUXj1bn3HmlTRlaPJFTUFJ9HOBS5h9/fe
+	IRLcwrnNfWTfgGR7rww0DHkwMHhnLV+rhJ9u8oW2PiJc+XCJ2XpKWevoYdS2H+2NM6T30qSB4Ar4k
+	KHFhQ2Q7lKqD0JmAetOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1SbG-0000000FK4L-2Wpb;
-	Thu, 17 Oct 2024 15:39:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1t1SfY-0000000FL6z-2vtJ;
+	Thu, 17 Oct 2024 15:44:08 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1SXb-0000000FIrC-0ONo;
-	Thu, 17 Oct 2024 15:35:56 +0000
+	id 1t1SXk-0000000FIuH-0YYG
+	for linux-phy@lists.infradead.org;
+	Thu, 17 Oct 2024 15:36:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2A72B5C61C3;
-	Thu, 17 Oct 2024 15:35:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 94151C4CEC7;
-	Thu, 17 Oct 2024 15:35:50 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 1C454A44137;
+	Thu, 17 Oct 2024 15:35:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1A788C4CECD;
+	Thu, 17 Oct 2024 15:35:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729179354;
-	bh=tQZtVVyCeRnI9TF1cSK9C2Pyi0D01P9dpdlS4+GOqAo=;
+	s=k20201202; t=1729179362;
+	bh=UaHTT/HCPSCBmEoLaaHxWZ8kYjvp79Mh62xxOcsCz3g=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=KioPyikL26+HrMcb/XoQ6mCUhqrcOWg77GM9etxhrPh2M04O1rkbspnA7DAS70dVj
-	 Npm2j6Si0m6kkpx0hqk1B+IsYJCBhcJ4FwODFiMeVtQ5IGH4vGvlAOmO4kuo8oxu4i
-	 EPPv7t4vtl/Cfav4BuRTcXqsx8f/iq4+YMbXLcOBDPqlTM+qCQ/+yx8iYZIn313RiU
-	 fIcmLKWaUrzope7I/b1xg3aZ0Lv5urH5Hyp6KHpGHOXnYk13DPwvSWv/iNyqVJqULk
-	 piQH1J6nuBOXmBWpaA8AkQqt+z8IZSJR09qwtFhLQ9GiQfaay9SOUSkdTg/mYeUYbN
-	 yk1OKEv0jWgyA==
+	b=MNF8iDpYfzr/MllJDBEf+0OjI4ejKzCH1MnIlFSj3P4DjmRkcLc722QW6DzmCk7tb
+	 1S7ib2J0Xvb1jpNMs8ytpfN5Qi0/0k0pt4cipphk4NUuSUB4jpl+Y1EAWfHf7rWRSa
+	 icZ9z1Sos4ktrwFWtVXMOXGqVnRCJT7cozsoxHWVqQjuFcQCqdVA1QI/844GH/yd+V
+	 8f1YDsifxmjrF6l1etNSasGvuP36bIXEnpVed/mSWTUqgTIctM5YWgegG1aYN1k/zp
+	 NKKkPLdfEjFrblCxAvJk0uBYR/PTRNXWlWhcg//OcuuGVzTLc7rR+XrqyJIu7cjE7z
+	 wdHyVJ1tpTIVg==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, heiko@sntech.de, Frank Wang <frawang.cn@gmail.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-rockchip@lists.infradead.org, william.wu@rock-chips.com, 
- tim.chen@rock-chips.com, yubing.zhang@rock-chips.com, 
- Frank Wang <frank.wang@rock-chips.com>
-In-Reply-To: <20241014020342.15974-1-frawang.cn@gmail.com>
-References: <20241014020342.15974-1-frawang.cn@gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: rockchip-usbdp: add rk3576
-Message-Id: <172917935024.288841.18254840723244928611.b4-ty@kernel.org>
-Date: Thu, 17 Oct 2024 21:05:50 +0530
+To: kishon@kernel.org, konradybcio@kernel.org, andersson@kernel.org, 
+ simona@ffwll.ch, dmitry.baryshkov@linaro.org, abel.vesa@linaro.org, 
+ robdclark@gmail.com, quic_abhinavk@quicinc.com, sean@poorly.run, 
+ marijn.suijten@somainline.org, airlied@gmail.com, 
+ maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, 
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+ quic_khsieh@quicinc.com, quic_parellan@quicinc.com, 
+ quic_bjorande@quicinc.com, Simona Vetter <simona.vetter@ffwll.ch>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, 
+ quic_riteshk@quicinc.com, quic_vproddut@quicinc.com
+In-Reply-To: <20241004103046.22209-1-quic_mukhopad@quicinc.com>
+References: <20241004103046.22209-1-quic_mukhopad@quicinc.com>
+Subject: Re: (subset) [PATCH v4 0/5] Add support for DisplayPort on SA8775P
+ platform
+Message-Id: <172917935474.288841.13832533870290794704.b4-ty@kernel.org>
+Date: Thu, 17 Oct 2024 21:05:54 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_083555_205388_B071A400 
-X-CRM114-Status: UNSURE (   4.02  )
+X-CRM114-CacheID: sfid-20241017_083604_273875_DF1786DF 
+X-CRM114-Status: UNSURE (   5.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,17 +86,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 14 Oct 2024 10:03:41 +0800, Frank Wang wrote:
-> Add compatible for the USBDP phy in the Rockchip RK3576 SoC.
-> 
+On Fri, 04 Oct 2024 16:00:41 +0530, Soutrik Mukhopadhyay wrote:
+> This series adds support for the DisplayPort controller
+> and eDP PHY v5 found on the Qualcomm SA8775P platform.
 > 
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: rockchip-usbdp: add rk3576
-      commit: b3e804ab9aad465ba7285aa5daf83656d5efc59f
-[2/2] phy: rockchip: usbdp: add rk3576 device match data
-      commit: a76de028c619dd18f89786805bcc7bb4d379ea9f
+[1/5] dt-bindings: phy: Add eDP PHY compatible for sa8775p
+      commit: 7adb3d221a4d6a4f5e0793c3bd35f1168934035c
+[2/5] phy: qcom: edp: Introduce aux_cfg array for version specific aux settings
+      commit: 913463587d528d766a8e12c7790995e273ec84fb
+[3/5] phy: qcom: edp: Add support for eDP PHY on SA8775P
+      commit: 3f12bf16213c30d8e645027efd94a19c13ee0253
 
 Best regards,
 -- 
