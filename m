@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 360C8D374A2
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 14:58:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EF03D374A2
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 15:06:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=APCwDuhiAKigiJElm8UaZ2nirBYwRzn18WJWzsDbVG8=; b=vTyhHVfkm472S1
-	QoWZ1CoAeTPaCBuiE1XmnfybnirCZer/698uRNSFXITA/BZ5tLfCpAWFi6Hd4FkuSgYeRIflwb7rp
-	OvoJLF91r1wXvwmDXlqqTamjQQP1DcHZhtEHjecz+0fVA9W6Gpygmt4BucSs810iCm5ZifJFyLFwt
-	IDwAKVu/U37lmPfsSq+OZie8i564P4gE7/ajijFMCndiXxBnHEHfKSV4ZIxtVa8FDHtku9BQkLKwk
-	cdCT7GmFs+7EoYaO+jgautwmhrnBTosNmDGjVHVSvyq4jbnVtPqgTV8jcLEb94Np8Hum8AbDgAAO0
-	Zp6dGjft2HfmUA7uyr2g==;
+	List-Owner; bh=4V7WI1mT9wofixDt5q3PbUhi/nn6eY1YWitIfwThkPU=; b=zT26HMV0xs0+hR
+	A59THsBfIpVNYb+4CDkTnKFT3ChawqEF07is1lRShp5004/qwtDBnLNoq1mEdcHAUIWY6/H0CSWXx
+	5oCFfzY6vhH1wVg3LZLcQA6vFtMgtnSCM4x4EA6ThN09vjWhJ1efqhmuUfsTlrTeVPdqBKUIoUHO6
+	Yd/ZyHEgXFPtG2egsnmwITVoyh0X2OVtxdutn/J6CZAldLzi03IUvduszfiXb7SRI/tyfMZVQEJ5S
+	wviNCTEBej2ix4d93HjeFhZRQtkEvGHFuApb5v02PXeu8gkVIglvKXUF01xL/6TZr+ORZ7xoai5Oa
+	kqUgHPXCk4RlE4Q8QFDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1RxI-0000000FC95-3fpC;
-	Thu, 17 Oct 2024 14:58:24 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1t1S5B-0000000FDzg-3Lex;
+	Thu, 17 Oct 2024 15:06:33 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1RxG-0000000FC7s-1OZ6
-	for linux-phy@lists.infradead.org;
-	Thu, 17 Oct 2024 14:58:23 +0000
+	id 1t1S3f-0000000FDaU-3LRF;
+	Thu, 17 Oct 2024 15:05:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 46DB45C558E;
-	Thu, 17 Oct 2024 14:58:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAA85C4CEC3;
-	Thu, 17 Oct 2024 14:58:20 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id E8F23A43FAA;
+	Thu, 17 Oct 2024 15:04:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1D9B2C4CEC3;
+	Thu, 17 Oct 2024 15:04:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729177101;
-	bh=avd8bg8mcUPAY+SpVapYfK6GAKFCET4ETNVrqu5Tgm0=;
+	s=k20201202; t=1729177498;
+	bh=/iUFQ/0rM9C2X/U7ch5ZgY6xRHDxFImBc3ZRlD2x5nA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fHYvmIA5ThfPAsfI9339n9u80VUiN+k4pRR20KZUgburi4X8DwCGDK/hJxlLCpJYP
-	 J6uAKF/W8JG2B73zorjmZiUf6ZbdlEsLD4hP8AonTJV4lqbNkV8RCMZYQps06yFA3e
-	 Cm5Fhy1+s/mHkoaebtE/QeMbLdEmdyCL73cjS2Ncb0y6fs/sCPuC18vwdffYCwxxL0
-	 uW2qSDYzMvPgZmhc0XH7xmgL7++mtX/JT1uLiwvaj/C2A3RHt5D84IbRAW30nhtwDk
-	 Aajiwxg9RFHNzv33tth1lhhpn0lPdgwbViWrX0uk024jl5r/Gm34dL5YlgOnX65jWI
-	 qQx5/CSXUOfMQ==
-Date: Thu, 17 Oct 2024 20:28:17 +0530
+	b=NlIgq/EhaOF6MeriKt0Alr74nqLElWpi7SUCS4995WT2g2jWvlb+Q/48edxfR35Kd
+	 tUxGEj7ZYXCSCbgFTIrtcnIDFSaE/WQs2TBFLqQp2LnNsMVPRrpcKMZRNFVQifLywC
+	 eSAYg3hsFk3LYx8Glm8EekiONP9grdbvtcNYodStd8SSFjltLabBq68S35SXTiz2fu
+	 P5LY3ZeeLlc7S1Tj+cJYb6QI0Ur018QsRnsD7bZrY9SyqJ7E1THr9PmGMl0PYGVnd9
+	 iV93PgIwV+OYB10EqqJEdegIR4f0TWq7xHYy1QlEZ/vBHggRjUmCbrlH/nLO3lx/rb
+	 wyitPFVa0W8yA==
+Date: Thu, 17 Oct 2024 20:34:55 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Bartosz Wawrzyniak <bwawrzyn@cisco.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Swapnil Jakhade <sjakhade@cadence.com>,
-	Aswath Govindraju <a-govindraju@ti.com>,
+To: Richard Zhu <hongxing.zhu@nxp.com>
+Cc: kishon@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+	festevam@gmail.com, Frank.Li@nxp.com, marcel.ziswiler@toradex.com,
 	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	xe-linux-external@cisco.com, Daniel Walker <danielwa@cisco.com>,
-	Bartosz Stania <sbartosz@cisco.com>
-Subject: Re: [PATCH v2] phy: cadence: Sierra: Fix offset of DEQ open eye
- algorithm control register
-Message-ID: <ZxEmCWsViATsffE/@vaman>
-References: <ZwN+8xpOl4+Ggaha@vaman>
- <20241008171000.2665935-1-bwawrzyn@cisco.com>
+	linux-arm-kernel@lists.infradead.org, imx@lists.linux.dev,
+	kernel@pengutronix.de, stable@vger.kernel.org
+Subject: Re: [PATCH] phy: freescale: imx8m-pcie: Do CMN_RST just before PHY
+ PLL lock check
+Message-ID: <ZxEnlx8n4rojC779@vaman>
+References: <1728444303-32416-1-git-send-email-hongxing.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241008171000.2665935-1-bwawrzyn@cisco.com>
+In-Reply-To: <1728444303-32416-1-git-send-email-hongxing.zhu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_075822_461444_BCE30AD9 
-X-CRM114-Status: UNSURE (   5.56  )
+X-CRM114-CacheID: sfid-20241017_080459_921049_4275C832 
+X-CRM114-Status: UNSURE (   6.05  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,14 +76,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08-10-24, 17:09, Bartosz Wawrzyniak wrote:
-> Fix the value of SIERRA_DEQ_OPENEYE_CTRL_PREG and add a definition for
-> SIERRA_DEQ_TAU_EPIOFFSET_MODE_PREG. This fixes the SGMII single link
-> register configuration.
+On 09-10-24, 11:25, Richard Zhu wrote:
+> When enable initcall_debug together with higher debug level below.
+> CONFIG_CONSOLE_LOGLEVEL_DEFAULT=9
+> CONFIG_CONSOLE_LOGLEVEL_QUIET=9
+> CONFIG_MESSAGE_LOGLEVEL_DEFAULT=7
+> 
+> The initialization of i.MX8MP PCIe PHY might be timeout failed randomly.
+> To fix this issue, adjust the sequence of the resets refer to the power
+> up sequence listed below.
 
-This does not apply for me on phy/fixes
-
-Can you please rebase and resend
+This fails to apply on the phy/fixes, can you please rebase and send
 
 -- 
 ~Vinod
