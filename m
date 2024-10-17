@@ -4,76 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D985CD37487
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 12:46:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CF7DD37485
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 13:11:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=khrCZfnjMMoo0DAK4v986D8fClQwWOVKlZjxOn3r8Mg=; b=yKCoL+RUJFWjPc
-	OahGBnkYOy+0bF/3IaywgFCRv0jasKZjodNoAzB/WzV6wPZQLT8hG4MEIipvhkxQy25berOPzCGfa
-	6H3xTXtfRdJwn92Qh9loIxXxMCatvM187JY1aZqZAZe4+4uBg4gbCghN2JZQl67NBxmw9PfAsfeRh
-	BmaDTqS2n0dzxgXfDTyzhzhv6GZRqMjsCx3kqjdjZmpd5fZhaAdnaPptkdDsKi0vh3eYhQS97tAYH
-	dot1qf5sAQRuHlqeaX0BHkH3x0rL+6HO/Dz2YevUGBl53A2CZMahq51ZyprvrCJqF94J451Lz1ouZ
-	3kMscNjJnu+hQrBZgcWQ==;
+	List-Owner; bh=V4Ifo9/iCsakq8lgpAPhbD3kjQ25OaLwvsLDA0vpKRQ=; b=Si8vfc5g9ylcZ7
+	docy7PDAY0Hp1EohGkzpUN0woeG3XDsQzJzlkFojqNe8FwxKUyjrF+p/d2GxykvJi9np1wCJ6KqYz
+	OWXn3WgcjBEYgy2R9C2cdrCU4fB8pkSfJ23NS5iQ6haaRe04qj+pPkMMoldOQ9fw+tO7xlGBetyaz
+	79maMewu0cVUTt60ZWRPIG1MWjyuWJF4utiGcKFJOoy4YMRwdqB0M/xlP2ei02sMMUoSkCSn+YrDw
+	tVSCFP2vkaOF86pUsaz/7gKhm51cMqmSQJZhTmAn4bQTIgamMHCDljoZpZa0fh0M/spBHcdFiTUcw
+	w2ygg/hP3WtEhdi4XvlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1PtA-0000000Ep0F-2UE1;
-	Thu, 17 Oct 2024 12:46:00 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1t1QHq-0000000Et4z-1QZR;
+	Thu, 17 Oct 2024 13:11:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1Ora-0000000EeyT-15vM;
-	Thu, 17 Oct 2024 11:40:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1729165218; x=1760701218;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=kJuzgQVggSFZDvndl8gdAWLVRotKHx86fblnh5fFmd0=;
-  b=A0zrpxzNdlKpENz2gPQAYFb0nVMcfirVNkl1nZ0eqorZlDBy5Oy+YxJy
-   bVPb+Hu2zeLNcS5p+l+1hVhF5OBffZNy60eJ0aqOUk6bqMXKiRVSX2I47
-   v1MXIlCHMbpCyPW2gGwmqMIAInVqAkj7gaKKSfKmga7uV2Ct0L1O8RKL9
-   andMhMZXPK9mn52BufKlNLOKM5qwOkf6YBTk9K1JQ3NnVFLOzCqkKpjdT
-   H7Ff1mimbd8P2CB0ZqHlyfoUozsLf/Som+bmCZ0SarebUBDXUqIPHyMIV
-   rNWPSOPP3IKBkAAB0ohUlejU39AJcabIMryMcPMifrRAFivKdYaELRISV
-   w==;
-X-CSE-ConnectionGUID: mMs4STnGQGKSUKQeXL98tQ==
-X-CSE-MsgGUID: zdgezkh5QuO44LczNX/GRQ==
-X-IronPort-AV: E=Sophos;i="6.11,210,1725314400"; 
-   d="scan'208";a="39518762"
-Received: from vmailcow01.tq-net.de ([10.150.86.48])
-  by mx1.tq-group.com with ESMTP; 17 Oct 2024 13:40:13 +0200
-X-CheckPoint: {6710F79D-1F-65F98A6A-FADAF7F3}
-X-MAIL-CPID: 95AEEE99C7620A490EDDA5333648FD71_5
-X-Control-Analysis: str=0001.0A682F25.6710F79D.00C9,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id C62D916A787;
-	Thu, 17 Oct 2024 13:40:06 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
-	s=dkim; t=1729165209;
-	h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=kJuzgQVggSFZDvndl8gdAWLVRotKHx86fblnh5fFmd0=;
-	b=Njq8yjQscqnQppBZKWbdBYP0mmRqD6gNmkUf1KsNIpm4EWpUzQSOypBareewyf68w0i84D
-	DQxBiTN+2aBBxIy6cikVVZshOvuWIIvpq9HT8rRYp18Fz5+PRzrVPuzxgCgFXD/KVZnhnm
-	nQkn4ZThJ9Yc2dilD0vMYGfH6aA0rKg+qm2LMnjKDdR0+42aMqtUAj2d6Das8xxfDOpeps
-	YO5rqOUV/HtIUwOVLtyervM83AGbeavCNS2bOQXNvwGrUr2Hx3narUYBLa0ff1e3+l0c5z
-	AasvXn4OwCJmKhtF0/J+YgagCKE9iB1xvDPaGe/984/x5ajS0Q2vkB+Nq35iFA==
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: Xu Yang <xu.yang_2@nxp.com>, robh@kernel.org, krzk+dt@kernel.org
-Cc: vkoul@kernel.org, kishon@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, gregkh@linuxfoundation.org, peter.chen@kernel.org, herve.codina@bootlin.com, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org, jun.li@nxp.com
-Subject: Re: [PATCH v8 2/3] arm64: dts: imx95: add usb3 related nodes
-Date: Thu, 17 Oct 2024 13:40:06 +0200
-Message-ID: <4386576.ejJDZkT8p0@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <20241017102811.oweshkoxavt2l4hi@hippo>
-References: <20241015111018.2388913-1-xu.yang_2@nxp.com> <3252989.5fSG56mABF@steina-w> <20241017102811.oweshkoxavt2l4hi@hippo>
+	id 1t1QE4-0000000EryR-1PCl
+	for linux-phy@lists.infradead.org;
+	Thu, 17 Oct 2024 13:07:42 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49HBATiH010224;
+	Thu, 17 Oct 2024 13:07:28 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	1UAFcd3ZD4uQoF/6HAQ0Vrw1Sa1r3AOt4zxqXgD1Ueg=; b=Wxaar+cVZ4JUeBMw
+	Rv8nSN/1N8oGhnzqB1faii1d5pV6H/nsd2jZ2ZIDNxlJ8ZdwKIH/XjjKMWm5oZmu
+	axkq6ur5C53crW7L6GRf58jZq/tnzHEJlknIRlntWlZkSKyxIaIfuSMxefhDeTNg
+	HxZLwMEnhtY6KjS+7QfPzLrjM/dsEJ2ZmGGEgzZI+ZFZPFiCurZ4p4on1V48jdKR
+	dlF0wOX/QcUeJHwkd3avxR+B8x1so6DcEdpMLS6eFsaUMVfKVaJouDyLraPUNoLx
+	MQvGshk4eape4OF5h9Ayc/+uAUE6vnk7azw2LZNel5Ewe4/P2UyqDUinRqv/zKFG
+	FHaDDg==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42ar051ut5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 17 Oct 2024 13:07:27 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49HD7Pxo011575
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 17 Oct 2024 13:07:25 GMT
+Received: from hu-kriskura-hyd.qualcomm.com (10.80.80.8) by
+ nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 17 Oct 2024 06:07:19 -0700
+From: Krishna Kurapati <quic_kriskura@quicinc.com>
+To: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bjorn Andersson <quic_bjorande@quicinc.com>,
+        Wesley Cheng
+	<quic_wcheng@quicinc.com>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        "Dmitry
+ Baryshkov" <dmitry.baryshkov@linaro.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+        Manivannan Sadhasivam
+	<manivannan.sadhasivam@linaro.org>
+CC: <linux-usb@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <quic_ppratap@quicinc.com>,
+        <quic_jackp@quicinc.com>, Krishna Kurapati <quic_kriskura@quicinc.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v2 1/5] dt-bindings: usb: qcom,dwc3: Add QCS615 to USB DWC3 bindings
+Date: Thu, 17 Oct 2024 18:36:57 +0530
+Message-ID: <20241017130701.3301785-2-quic_kriskura@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241017130701.3301785-1-quic_kriskura@quicinc.com>
+References: <20241017130701.3301785-1-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: BN_IYxA2mIEWP4Yk7N4Gp7-f9KFAVBms
+X-Proofpoint-ORIG-GUID: BN_IYxA2mIEWP4Yk7N4Gp7-f9KFAVBms
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxlogscore=555
+ clxscore=1015 spamscore=0 suspectscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 mlxscore=0 lowpriorityscore=0 malwarescore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410170090
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241017_044018_832847_0D0CA4E5 
-X-CRM114-Status: GOOD (  28.07  )
+X-CRM114-CacheID: sfid-20241017_060736_414474_6897000B 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,179 +108,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Update dt-bindings to add primary controller of QCS615 to USB
+DWC3 controller list.
 
-Am Donnerstag, 17. Oktober 2024, 12:28:11 CEST schrieb Xu Yang:
-> On Wed, Oct 16, 2024 at 01:03:53PM +0200, Alexander Stein wrote:
-> > Hi,
-> > =
+Although this controller has a QUSB2 Phy, it belongs to a
+generation of SoCs like SDM670/SDM845/SM6350 where DP/DM is
+used for wakeup instead of qusb2_phy interrupt.
 
-> > Am Mittwoch, 16. Oktober 2024, 12:41:40 CEST schrieb Xu Yang:
-> > > On Wed, Oct 16, 2024 at 10:53:50AM +0200, Alexander Stein wrote:
-> > > > Hi,
-> > > > =
+Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-> > > > another thing I just noticed.
-> > > > =
-
-> > > > Am Dienstag, 15. Oktober 2024, 13:10:17 CEST schrieb Xu Yang:
-> > > > > Add usb3 phy and controller nodes for imx95.
-> > > > > =
-
-> > > > > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> > > > > =
-
-> > > > > ---
-> > > > > Changes in v2:
-> > > > >  - no changes
-> > > > > Changes in v3:
-> > > > >  - no changes
-> > > > > Changes in v4:
-> > > > >  - reorder nodes
-> > > > > Changes in v5:
-> > > > >  - no changes
-> > > > > Changes in v6:
-> > > > >  - rebase to latest
-> > > > > Changes in v7:
-> > > > >  - no changes
-> > > > > Changes in v8:
-> > > > >  - no changes
-> > > > > ---
-> > > > >  arch/arm64/boot/dts/freescale/imx95.dtsi | 43 ++++++++++++++++++=
-++++++
-> > > > >  1 file changed, 43 insertions(+)
-> > > > > =
-
-> > > > > diff --git a/arch/arm64/boot/dts/freescale/imx95.dtsi b/arch/arm6=
-4/boot/dts/freescale/imx95.dtsi
-> > > > > index 03661e76550f..e3faa8462759 100644
-> > > > > --- a/arch/arm64/boot/dts/freescale/imx95.dtsi
-> > > > > +++ b/arch/arm64/boot/dts/freescale/imx95.dtsi
-> > > > > @@ -1473,6 +1473,49 @@ smmu: iommu@490d0000 {
-> > > > >  			};
-> > > > >  		};
-> > > > >  =
-
-> > > > > +		usb3: usb@4c010010 {
-> > > > > +			compatible =3D "fsl,imx95-dwc3", "fsl,imx8mp-dwc3";
-> > > > > +			reg =3D <0x0 0x4c010010 0x0 0x04>,
-> > > > > +			      <0x0 0x4c1f0000 0x0 0x20>;
-> > > > > +			clocks =3D <&scmi_clk IMX95_CLK_HSIO>,
-> > > > > +				 <&scmi_clk IMX95_CLK_32K>;
-> > > > > +			clock-names =3D "hsio", "suspend";
-> > > > > +			interrupts =3D <GIC_SPI 173 IRQ_TYPE_LEVEL_HIGH>;
-> > > > > +			#address-cells =3D <2>;
-> > > > > +			#size-cells =3D <2>;
-> > > > > +			ranges;
-> > > > > +			power-domains =3D <&scmi_devpd IMX95_PD_HSIO_TOP>;
-> > > > > +			dma-ranges =3D <0x0 0x0 0x0 0x0 0x10 0x0>;
-> > > > > +			status =3D "disabled";
-> > > > > +
-> > > > > +			usb3_dwc3: usb@4c100000 {
-> > > > > +				compatible =3D "snps,dwc3";
-> > > > > +				reg =3D <0x0 0x4c100000 0x0 0x10000>;
-> > > > > +				clocks =3D <&scmi_clk IMX95_CLK_HSIO>,
-> > > > > +					 <&scmi_clk IMX95_CLK_24M>,
-> > > > > +					 <&scmi_clk IMX95_CLK_32K>;
-> > > > > +				clock-names =3D "bus_early", "ref", "suspend";
-> > > > > +				interrupts =3D <GIC_SPI 175 IRQ_TYPE_LEVEL_HIGH>;
-> > > > > +				phys =3D <&usb3_phy>, <&usb3_phy>;
-> > > > > +				phy-names =3D "usb2-phy", "usb3-phy";
-> > > > > +				snps,gfladj-refclk-lpm-sel-quirk;
-> > > > > +				snps,parkmode-disable-ss-quirk;
-> > > > > +				iommus =3D <&smmu 0xe>;
-> > > > > +			};
-> > > > > +		};
-> > > > > +
-> > > > > +		usb3_phy: phy@4c1f0040 {
-> > > > > +			compatible =3D "fsl,imx95-usb-phy", "fsl,imx8mp-usb-phy";
-> > > > > +			reg =3D <0x0 0x4c1f0040 0x0 0x40>,
-> > > > > +			      <0x0 0x4c1fc000 0x0 0x100>;
-> > > > > +			clocks =3D <&scmi_clk IMX95_CLK_HSIO>;
-> > > > > +			clock-names =3D "phy";
-> > > > > +			#phy-cells =3D <0>;
-> > > > > +			power-domains =3D <&scmi_devpd IMX95_PD_HSIO_TOP>;
-> > > > > +			orientation-switch;
-> > > > > +			status =3D "disabled";
-> > > > =
-
-> > > > I got these dtbs check warnings:
-> > > > =
-
-> > > > arch/arm64/boot/dts/freescale/imx95-tqma9596sa-mb-smarc-2.dtb:
-> > > >  phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
-> > > >         'port' is a required property
-> > > >         'ports' is a required property
-> > > >         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8=
-mq-usb-phy.yaml#
-> > > > arch/arm64/boot/dts/freescale/imx95-tqma9596sa-mb-smarc-2.dtb: =
-
-> > > >  phy@4c1f0040: Unevaluated properties are not allowed ('orientation=
--switch' was unexpected)
-> > > >         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8=
-mq-usb-phy.yaml#
-> > > =
-
-> > > Are you checking on usb tree? You need below two dt-binding patch.
-> > > =
-
-> > >  - dt-bindings: usb: dwc3-imx8mp: add compatible string for imx95
-> > >  - dt-bindings: phy: imx8mq-usb: add compatible "fsl,imx95-usb-phy"
-> > =
-
-> > Yes, these patches are already in linux-next. I'm on next-20241016.
-> > =
-
-> > > > =
-
-> > > > =
-
-> > > > How am I supposed to specify a port when the usb3 is used in host m=
-ode, thus
-> > > > no USB Type-C connector and no 'port' OF-graph accordingly?
-> > > =
-
-> > > Host-only mode with Type-A connector? No Typec-C connector?
-> > > Sorry, I do not get your meaning.
-> > =
-
-> > Yes, no Type-C connector. Actually not even a Type-A as there is an
-> > on-board USB hub attached to this host.
-> =
-
-> Understood. imx95 usb phy can work w/o typec. So I may need modify the
-> dt-binding to be similar to the following format:
-> =
-
-> If property "orientation-switch" exist and compatible contain "fsl,imx95-=
-usb-phy",
-> then refer to usb-switch.yaml.
-
-What 'works' is adding an empty port node to the usb3_phy. But this feels l=
-ike a workaround.
-
-> However, I'm not sure how to do that now. Do you know?
-
-DT guys, can you more input how to proceed?
-
-Best regards,
-Alexander
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
+diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+index f7be05641930..76f78ed6ac9b 100644
+--- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
++++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
+@@ -26,6 +26,7 @@ properties:
+           - qcom,msm8998-dwc3
+           - qcom,qcm2290-dwc3
+           - qcom,qcs404-dwc3
++          - qcom,qcs615-dwc3
+           - qcom,qcs8300-dwc3
+           - qcom,qdu1000-dwc3
+           - qcom,sa8775p-dwc3
+@@ -340,6 +341,7 @@ allOf:
+           contains:
+             enum:
+               - qcom,qcm2290-dwc3
++              - qcom,qcs615-dwc3
+               - qcom,sc8180x-dwc3
+               - qcom,sc8180x-dwc3-mp
+               - qcom,sm6115-dwc3
+@@ -467,6 +469,7 @@ allOf:
+               - qcom,ipq4019-dwc3
+               - qcom,ipq8064-dwc3
+               - qcom,msm8994-dwc3
++              - qcom,qcs615-dwc3
+               - qcom,qcs8300-dwc3
+               - qcom,qdu1000-dwc3
+               - qcom,sa8775p-dwc3
+-- 
+2.34.1
 
 
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
