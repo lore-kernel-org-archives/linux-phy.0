@@ -4,91 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AABF3D2F7DA
-	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 02:55:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0E58D2F7E1
+	for <linux-phy@archiver.kernel.org>; Thu, 17 Oct 2024 03:04:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z9JcQ58rGwaXRVi9j1rKUkQ4C2Ohhp2h+wI49nKEDmQ=; b=flab0qdyZoyEfz
-	JKSMc3M110te3KjBgewMszjDr9hBvTQR5Ie4B/kOmv2LTtYpd556a7UbeTuw0o0G1bFrJnGtc53Ny
-	q+fVaNR2CUMK3PFi9/pXAlkpZkTia3GfyMG8CTfb4UkPSdnsjBjLzcYiBF8g+W7mf0a8DrdtLiIqK
-	+3xoCUU55dq09wSUh7N8yTLWOvqCwy5geXJa9kvJLSKhh0IozMCaNj/WPfG5UTxFBphNiNMr6ISKj
-	yoBDUk+lfVr8xPJ/bjmM/qtfRUyAhh9vLzfBorY0AyLyCasEpiGW30DU6ejsN02Nk8jp2y+LTTkny
-	gSN3H7m2G09IRKvYuLJw==;
+	List-Owner; bh=KGby0BiChdLFOykcAC3bk1c8fU7QdatBulf4qdXyDZ8=; b=SkU5tHzVLBw73O
+	w0MYSZu7yShWV7LCBTPwSJJBq5UiMnzo3H/bGAPh/0cW+KYtw+TKe2kYnxm4TWAcgd5yi2VPmsL7I
+	05Awt8xh2S5vcA7+utsXP918pjo5X6I8MPg37b7EFJbGuSRT6w/vpCxE6h2DrwvuEf4zWaKhGb8a1
+	GtrH4Gf+jcRR0RQj7QLpKSq1aGv/ZhuyTlwy4O86f/0f8EUrTtXqwzPMZn+gOUTfdFaLnzr7TbGb+
+	hGYRzdpv/gbKQpl4sH9PYrd8mw2I6ZPY96FRJHSVZl36nnZavwqd3QgP7Yq8HkTc2TQNBGdFe5bSH
+	n+WgQShWucoJAbSrP09w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1Gfx-0000000DbFo-1j9F;
-	Thu, 17 Oct 2024 02:55:45 +0000
-Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
+	id 1t1GoT-0000000DcF1-0gyg;
+	Thu, 17 Oct 2024 03:04:33 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1Gd7-0000000DajH-0HS3;
-	Thu, 17 Oct 2024 02:52:50 +0000
-Received: by mail-pj1-x102f.google.com with SMTP id 98e67ed59e1d1-2e29497f11cso76922a91.2;
-        Wed, 16 Oct 2024 19:52:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1729133568; x=1729738368; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Gf+PMX6YxweSXYAEzNrfFe+MZTHHEq+3Qule4g5FzBA=;
-        b=EnsO1sTv5RwXZfER/hWuBrMdXLw6WUZRhKfW8Qeek2j86ixN8cQ14VcQvvwww11trD
-         ntRDlHFf+kcyY4dxWEpb8vjbjcMPo4XILNa6PW8dpVCiiuwOwKwodIvX5E4S4u7V3kug
-         UzYGNm0JSG1Q0IQpkeJEFPTa1yAkKcJVozOczsTVUtPqPf54X/uIWnQ4IfntAq4jjkbu
-         rhBvs4rx+WO4dCWrVR3V4e71wJA8DcITIjPA3zLUQJsXEYKt+CYeqJ6KrHMFVMif/y46
-         DB/Jx+sbVSBY3YoC5oAU8CYUfk9YNCMb9fBGJ+PeOOsYDS7eFXY0eKfJyX53w3QPjB30
-         OBZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729133568; x=1729738368;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Gf+PMX6YxweSXYAEzNrfFe+MZTHHEq+3Qule4g5FzBA=;
-        b=q3Z9Ug+D5alXqpfR4FzqUcOb2urnTj4RUxwBSVgwl3Yn/O45UagwIGPDlgDOoBLvQB
-         +3LXEILXO9pHi6s5uuoWEwJesDo5VQ9QtQqtHLsUtKtt9lagkJld7kv3due0Bo29Ejjj
-         YXFmtQPgOG7rCD7YGnJLB6xPwj7RyST59xKtRqxYwDe0uR5MAMsT4Jv33YGlmpeI5U24
-         I/TRUy4dvItR5u0mLaCMPW+olM2nxgDI3DdutvwHjnH2JS3AsYMEwDqBQGifj4oNo9M0
-         ANF0E10SY6cTbbcItK3QsjwPyjFclb2oo21YrdBEUcEcMy4PYsDRibzAXOcKFKDfYkcS
-         zcRQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU8VIEVjIg7BbKrfVRBTSbV7wcKNrAfWtd4iFHcY692qhFaMOXlV/qDnplucGrcVCtAMPb3F4j5NLjXLc8CN8aV@lists.infradead.org, AJvYcCVagMOGCkT/xagCf7Obovv/uxaCpMwso9BGy2GR8MnZjrGy/gjmeXOJpXhNt4i8CrrUTlv8unXl5RS1HyrHk2w=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzu1g1XYVdpXa4oe3/3Nf6ACqPXiz/xxIKr2LcU/7TG0tyzTksO
-	0P2NRZGwcXcykHBfHz7xzEQv2BdjCf1umrNTyE/5j5VisvYSbL+cCWT+yA==
-X-Google-Smtp-Source: AGHT+IHEYEmjYlU0tYbqmxNPBntwEjtGskPlYMwZntBvTJCgBTEhOctyXNt80QCb485EeMieShL0Sg==
-X-Received: by 2002:a17:90a:bf85:b0:2e2:ada8:2984 with SMTP id 98e67ed59e1d1-2e3dc25fc19mr918337a91.4.1729133568018;
-        Wed, 16 Oct 2024 19:52:48 -0700 (PDT)
-Received: from localhost.localdomain ([103.29.142.67])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2e3e08d8b6esm628537a91.29.2024.10.16.19.52.43
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 16 Oct 2024 19:52:47 -0700 (PDT)
-From: Frank Wang <frawang.cn@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	heiko@sntech.de
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	william.wu@rock-chips.com,
-	tim.chen@rock-chips.com,
-	yubing.zhang@rock-chips.com,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Dragan Simic <dsimic@manjaro.org>
-Subject: [PATCH v2 3/3] phy: rockchip: usbdp: add rk3576 device match data
-Date: Thu, 17 Oct 2024 10:52:30 +0800
-Message-Id: <20241017025230.28752-3-frawang.cn@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20241017025230.28752-1-frawang.cn@gmail.com>
-References: <20241017025230.28752-1-frawang.cn@gmail.com>
+	id 1t1GoO-0000000DcDW-0Lny
+	for linux-phy@lists.infradead.org;
+	Thu, 17 Oct 2024 03:04:32 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49GJAs1B013221;
+	Thu, 17 Oct 2024 03:04:20 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=6A+Nb0queve
+	urvBNDd2vOP+w4mERVifM20uwHto3X1Q=; b=aCwUxNT8glttCjAVS00ZsVsB6Ws
+	R4YxPWTsOEST+qJY8O1rMkRreptXAreuQ6MfKRtPP2j5olDTQWN39RC9NdbuHM0S
+	kbKaav970jH6kgnHax5DVFHOmruW63ApgTDOhIn4NVXuwKCNsXYqKEF6gmvPo/ex
+	X3u568Ma1QCUmITDT7E2TSm9daIDgziZ6twKRkXcs2OdFc1Snq2FpsvxJ8Idh8Cl
+	h2JJWHhiG4n0nHyuFvVmTT3zkqhVhBjjy5YhgO+HYCDfYudpI+Jn/XCBgJSb1Uby
+	/lye1sl+c6MgocLGZZ1xLe8v3ek6MeDZYsyocyTQ8qcDE4nuSpC21bCjluA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42abbxtkjq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 17 Oct 2024 03:04:20 +0000 (GMT)
+Received: from pps.filterd (NALASPPMTA05.qualcomm.com [127.0.0.1])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 49H2wd5O019941;
+	Thu, 17 Oct 2024 03:04:19 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by NALASPPMTA05.qualcomm.com (PPS) with ESMTPS id 42aj55ku0w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 17 Oct 2024 03:04:19 +0000
+Received: from NALASPPMTA05.qualcomm.com (NALASPPMTA05.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 49H301hg021671;
+	Thu, 17 Oct 2024 03:04:18 GMT
+Received: from hu-devc-lv-u22-c.qualcomm.com (hu-qianyu-lv.qualcomm.com [10.81.25.114])
+	by NALASPPMTA05.qualcomm.com (PPS) with ESMTPS id 49H34ItY028351
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 17 Oct 2024 03:04:18 +0000
+Received: by hu-devc-lv-u22-c.qualcomm.com (Postfix, from userid 4098150)
+	id 81173650; Wed, 16 Oct 2024 20:04:18 -0700 (PDT)
+From: Qiang Yu <quic_qianyu@quicinc.com>
+To: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+        robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
+        sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
+        quic_devipriy@quicinc.com
+Cc: dmitry.baryshkov@linaro.org, kw@linux.com, lpieralisi@kernel.org,
+        neil.armstrong@linaro.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-clk@vger.kernel.org, johan+linaro@kernel.org,
+        Qiang Yu <quic_qianyu@quicinc.com>
+Subject: [PATCH v7 5/7] PCI: qcom: Remove BDF2SID mapping config for SC8280X family SoC
+Date: Wed, 16 Oct 2024 20:04:10 -0700
+Message-Id: <20241017030412.265000-6-quic_qianyu@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241017030412.265000-1-quic_qianyu@quicinc.com>
+References: <20241017030412.265000-1-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: PlsxN7ofUOsYMUc0WlTFl8elfxSH2X8-
+X-Proofpoint-GUID: PlsxN7ofUOsYMUc0WlTFl8elfxSH2X8-
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 clxscore=1015
+ priorityscore=1501 impostorscore=0 mlxscore=0 mlxlogscore=999 bulkscore=0
+ spamscore=0 malwarescore=0 lowpriorityscore=0 suspectscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2410170021
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241016_195249_131785_C36B5A79 
-X-CRM114-Status: GOOD (  10.60  )
+X-CRM114-CacheID: sfid-20241016_200428_267531_1280C5E6 
+X-CRM114-Status: GOOD (  11.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,85 +111,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Frank Wang <frank.wang@rock-chips.com>
+On SC8280X family SoC, PCIe controllers are connected to SMMUv3, hence
+they don't need the config_sid() callback in ops_1_9_0 struct. Fix it by
+introducing a new ops struct, namely ops_1_21_0 which is same as ops_1_9_0
+without config_sid() callback so that BDF2SID mapping won't be configured
+during init.
 
-This adds RK3576 device match data support.
-
-Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
-Acked-by: Dragan Simic <dsimic@manjaro.org>
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Fixes: 70574511f3fc ("PCI: qcom: Add support for SC8280XP")
+Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
-Changelog:
-v2:
- - add Reviewed and Acked tag.
+ drivers/pci/controller/dwc/pcie-qcom.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-v1:
- - https://patchwork.kernel.org/project/linux-phy/patch/20241014020342.15974-2-frawang.cn@gmail.com/
-
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 41 +++++++++++++++++++++++
- 1 file changed, 41 insertions(+)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 2c51e5c62d3eb..5b1e8a3806ed4 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1538,6 +1538,43 @@ static const char * const rk_udphy_rst_list[] = {
- 	"init", "cmn", "lane", "pcs_apb", "pma_apb"
+diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+index 88a98be930e3..468bd4242e61 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom.c
++++ b/drivers/pci/controller/dwc/pcie-qcom.c
+@@ -1367,6 +1367,16 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
+ 	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
  };
  
-+static const struct rk_udphy_cfg rk3576_udphy_cfgs = {
-+	.num_phys = 1,
-+	.phy_ids = { 0x2b010000 },
-+	.num_rsts = ARRAY_SIZE(rk_udphy_rst_list),
-+	.rst_list = rk_udphy_rst_list,
-+	.grfcfg	= {
-+		/* u2phy-grf */
-+		.bvalid_phy_con		= RK_UDPHY_GEN_GRF_REG(0x0010, 1, 0, 0x2, 0x3),
-+		.bvalid_grf_con		= RK_UDPHY_GEN_GRF_REG(0x0000, 15, 14, 0x1, 0x3),
-+
-+		/* usb-grf */
-+		.usb3otg0_cfg		= RK_UDPHY_GEN_GRF_REG(0x0030, 15, 0, 0x1100, 0x0188),
-+
-+		/* usbdpphy-grf */
-+		.low_pwrn		= RK_UDPHY_GEN_GRF_REG(0x0004, 13, 13, 0, 1),
-+		.rx_lfps		= RK_UDPHY_GEN_GRF_REG(0x0004, 14, 14, 0, 1),
-+	},
-+	.vogrfcfg = {
-+		{
-+			.hpd_trigger	= RK_UDPHY_GEN_GRF_REG(0x0000, 11, 10, 1, 3),
-+			.dp_lane_reg    = 0x0000,
-+		},
-+	},
-+	.dp_tx_ctrl_cfg = {
-+		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-+		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-+		rk3588_dp_tx_drv_ctrl_hbr2,
-+		rk3588_dp_tx_drv_ctrl_hbr3,
-+	},
-+	.dp_tx_ctrl_cfg_typec = {
-+		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-+		rk3588_dp_tx_drv_ctrl_rbr_hbr_typec,
-+		rk3588_dp_tx_drv_ctrl_hbr2,
-+		rk3588_dp_tx_drv_ctrl_hbr3,
-+	},
++/* Qcom IP rev.: 1.21.0 */
++static const struct qcom_pcie_ops ops_1_21_0 = {
++	.get_resources = qcom_pcie_get_resources_2_7_0,
++	.init = qcom_pcie_init_2_7_0,
++	.post_init = qcom_pcie_post_init_2_7_0,
++	.host_post_init = qcom_pcie_host_post_init_2_7_0,
++	.deinit = qcom_pcie_deinit_2_7_0,
++	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
 +};
 +
- static const struct rk_udphy_cfg rk3588_udphy_cfgs = {
- 	.num_phys = 2,
- 	.phy_ids = {
-@@ -1584,6 +1621,10 @@ static const struct rk_udphy_cfg rk3588_udphy_cfgs = {
+ static const struct qcom_pcie_cfg cfg_1_0_0 = {
+ 	.ops = &ops_1_0_0,
+ };
+@@ -1405,7 +1415,7 @@ static const struct qcom_pcie_cfg cfg_2_9_0 = {
  };
  
- static const struct of_device_id rk_udphy_dt_match[] = {
-+	{
-+		.compatible = "rockchip,rk3576-usbdp-phy",
-+		.data = &rk3576_udphy_cfgs
-+	},
- 	{
- 		.compatible = "rockchip,rk3588-usbdp-phy",
- 		.data = &rk3588_udphy_cfgs
+ static const struct qcom_pcie_cfg cfg_sc8280xp = {
+-	.ops = &ops_1_9_0,
++	.ops = &ops_1_21_0,
+ 	.no_l0s = true,
+ };
+ 
 -- 
-2.25.1
+2.34.1
 
 
 -- 
