@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73721D3000E
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Oct 2024 13:52:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77642D3000F
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Oct 2024 14:06:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/jtwdYLMDGp5vb4Rv6oVW7g1OrB92LerIvJXeGr9Kfw=; b=lKhcCBzpH57W/a
-	V5cH9ZRE0AaV6HovVfuf4/i++WWOCLFx73vYwqXdR6jBhk3rLXHSz20R6/U9+Tr+z33/B7SvFLltn
-	OWaZ9SdpqBHWs1Nt1l7XrQbMOmL2QKeZ7k8wYljK70oZvvvRVFHotvyGpYDURaZjDX9PLGOBPK4Oh
-	UtE/pGEJSYlAEUvAnKTHaQXmk12M5fjryHia2SQDejzxM5crH/cALsMhdL+XNDURyKzGrrTFgjrnk
-	81Kt+STWVX93PHk0l02kvDK+mw/1mY4DPsKHbI/BTn4UFIAZ4QUDyogeFQHQyx0c0/R2UB2uQdE4t
-	2iy5GKwWOenxbrRvMPkw==;
+	List-Owner; bh=PzRlXVCyCRzn+Cc9FCKxmRKPEdecq4KmGYprYpyXJyg=; b=WM7JLazMPtJ/8Q
+	4h5xICBumr2IoVFTvAtUSRlZMQNhvbf3GfDCZ+r83s1GKcWaqjl+ZGAPUobkU0Yv9+hBfz8WvntPn
+	mxk0iuioiHqrafBa4SAQ4sAdK6e8esACIN3jcNCbKEjxViHvj3VTkb/1pttGPf3dFkmTo9xjFkWVG
+	bwNpoV0+v2A+KeazkpBBqNll9knG8N3Z+QWeaGbz4HogVdRWt3iwHilJ4VKhh5Q64FzT/8t5pHIl1
+	gEaJTggkAo6ucviJ20oEDUvxYoMlJjRS0PROuEC1CPKfm/r4Sd2qStkI7h/Vmpf4Mv0ozX/pHVisB
+	A0Evpp6vG91L14Gc9Ayg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1nP9-00000000xry-0ETK;
-	Fri, 18 Oct 2024 13:52:35 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1t1nce-00000000zOx-0ajg;
+	Fri, 18 Oct 2024 14:06:32 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1nOw-00000000xns-1758
+	id 1t1ncb-00000000zOW-3wxs
 	for linux-phy@lists.infradead.org;
-	Fri, 18 Oct 2024 13:52:33 +0000
+	Fri, 18 Oct 2024 14:06:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C11195C5FE0;
-	Fri, 18 Oct 2024 13:52:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0279C4CEC3;
-	Fri, 18 Oct 2024 13:52:20 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 0DD97A440F0;
+	Fri, 18 Oct 2024 14:06:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 89A22C4CED8;
+	Fri, 18 Oct 2024 14:06:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729259540;
-	bh=ZM4EDtbQIRuZYDRskOrejqQI6sGJWvB8V8K3e9Fncdc=;
+	s=k20201202; t=1729260388;
+	bh=Mj/iyexBxfRCuYiXVkHqPW+rtTdpj3ONOaTfeF67GFU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SgDX+vTqqkFga5WU8i8c3F/ctmp7ocpvgizN+L8I9kjsLnNX/2UTfv5w5Dm04vOqb
-	 zDWSSzoLxJeFzLSqzvUkJCjnejljiJ0qy5nd//5aSYDGTPJX3cusTlLLvd3tWOopVg
-	 eXQxOy+2Nc50uxE+b/s4Sqdfhckc+tlz1nDngmYCIol8zzvOXloWN9Mr89Sar2C2/6
-	 tTrUc9XLJhyOkZdi2rAQNs/nyfO/gtj78WUybeO2iyDQyvldfyCUJXCZoWVHYkvfnw
-	 DnjiNuWfDoDaQMd+I4NBMwQJtDLy+YQhsGEjjWH56Z2i7qT2rrPFoVvHX29xo0+HAJ
-	 PwGiMaoo6ENhA==
+	b=Uem0mUIV9hqy8k5GJ0b1jautXF5iivKVCytpLXjKVdhgdRubFgE9dzSnTDs1EqrPO
+	 GFxkDurBDxlLefU2zdEuklxFegbnjyUgb8KUUt6asrNZgZZ2MKr+WQ9xG2G5lDY7cs
+	 KeV/c+8V9/tajfRmQuBg9jTekO/WX774JKiH9E8UUO/MDzRzEg7t1EJTBFxhSxks+z
+	 rOCEOcm8msrF9nt5XrnOwB4Tl0ooAeDHoTWI8ZpTydWGGSJj/2Aki8cAfrXPRGcbY3
+	 aOsKMF+1a+m6BDNrmPaHxt+xy7zKrcG9jRSH9+U+3WWi9UMkpGNrOy6ts+ljVVqF0M
+	 vuQatNbbK1fKQ==
 Received: from johan by xi.lan with local (Exim 4.97.1)
 	(envelope-from <johan@kernel.org>)
-	id 1t1nOX-0000000072J-0XfD;
-	Fri, 18 Oct 2024 15:51:57 +0200
-Date: Fri, 18 Oct 2024 15:51:57 +0200
+	id 1t1ncI-000000007Hw-00MJ;
+	Fri, 18 Oct 2024 16:06:10 +0200
+Date: Fri, 18 Oct 2024 16:06:09 +0200
 From: Johan Hovold <johan@kernel.org>
 To: Qiang Yu <quic_qianyu@quicinc.com>
 Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
@@ -58,18 +58,18 @@ Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
-	johan+linaro@kernel.org
-Subject: Re: [PATCH v7 5/7] PCI: qcom: Remove BDF2SID mapping config for
- SC8280X family SoC
-Message-ID: <ZxJn_Xf4NO3eAfey@hovoldconsulting.com>
+	johan+linaro@kernel.org, stable@vger.kernel.org
+Subject: Re: [PATCH v7 6/7] PCI: qcom: Disable ASPM L0s and remove BDF2SID
+ mapping config for X1E80100 SoC
+Message-ID: <ZxJrUQDGMDw3wI3Q@hovoldconsulting.com>
 References: <20241017030412.265000-1-quic_qianyu@quicinc.com>
- <20241017030412.265000-6-quic_qianyu@quicinc.com>
+ <20241017030412.265000-7-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241017030412.265000-6-quic_qianyu@quicinc.com>
+In-Reply-To: <20241017030412.265000-7-quic_qianyu@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241018_065222_426210_D0FAD73D 
-X-CRM114-Status: GOOD (  19.40  )
+X-CRM114-CacheID: sfid-20241018_070630_066229_F2FB1075 
+X-CRM114-Status: GOOD (  12.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,58 +86,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 16, 2024 at 08:04:10PM -0700, Qiang Yu wrote:
-> On SC8280X family SoC, PCIe controllers are connected to SMMUv3, hence
-> they don't need the config_sid() callback in ops_1_9_0 struct. Fix it by
-> introducing a new ops struct, namely ops_1_21_0 which is same as ops_1_9_0
-> without config_sid() callback so that BDF2SID mapping won't be configured
-> during init.
+Please use a more concise subject (e.g. try to stay within 72 chars)
+than:
 
-The sc8280xp PCIe devicetree nodes do not specify an 'iommu-map' so the
-config_sid() callback is effectively a no-op. Please rephrase this so
-that it becomes obvious that this is a clean up rather than fix.
+	PCI: qcom: Disable ASPM L0s and remove BDF2SID mapping config for X1E80100 SoC
 
-> Fixes: 70574511f3fc ("PCI: qcom: Add support for SC8280XP")
+Here you could drop "SoC", maybe "ASPM" and "config" for example.
 
-And drop the Fixes tag.
+On Wed, Oct 16, 2024 at 08:04:11PM -0700, Qiang Yu wrote:
+> Currently, the cfg_1_9_0 which is being used for X1E80100 has config_sid
+> callback in its ops and doesn't disable ASPM L0s. However, as same as
+> SC8280X, PCIe controllers on X1E80100 are connected to SMMUv3, hence don't
+> need config_sid() callback and hardware team has recommended to disable
+> L0s as it is broken in the controller. Hence reuse cfg_sc8280xp for
+> X1E80100.
 
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 12 +++++++++++-
->  1 file changed, 11 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index 88a98be930e3..468bd4242e61 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -1367,6 +1367,16 @@ static const struct qcom_pcie_ops ops_2_9_0 = {
->  	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
->  };
->  
-> +/* Qcom IP rev.: 1.21.0 */
+Since the x1e80100 dtsi, like sc8280xp, do not specify an iommu-map,
+that bit is effectively just a cleanup and all this patch does is to
+disable L0s.
 
-Is this the actual IP revision on sc8280xp (and not just the revision
-used on x1e80100)?
+Please rephrase to make this clear. This will also allow you to make the
+Subject even shorter (no need to mention the SID bit in Subject).
 
-Please also provide the Synopsis IP rev like the other configs do.
+Also say something about how L0s is broken so that it is more clear what
+the effect of this patch is. On sc8280xp enabling L0s lead to
+correctable errors for example.
 
-> +static const struct qcom_pcie_ops ops_1_21_0 = {
-> +	.get_resources = qcom_pcie_get_resources_2_7_0,
-> +	.init = qcom_pcie_init_2_7_0,
-> +	.post_init = qcom_pcie_post_init_2_7_0,
-> +	.host_post_init = qcom_pcie_host_post_init_2_7_0,
-> +	.deinit = qcom_pcie_deinit_2_7_0,
-> +	.ltssm_enable = qcom_pcie_2_3_2_ltssm_enable,
-> +};
-> +
->  static const struct qcom_pcie_cfg cfg_1_0_0 = {
->  	.ops = &ops_1_0_0,
->  };
-
-And try to keep these structs sorted by revision. At least put this one
-after ops_1_9_0.
+> Fixes: 6d0c39324c5f ("PCI: qcom: Add X1E80100 PCIe support")
+> Cc: stable@vger.kernel.org
 
 Johan
 
