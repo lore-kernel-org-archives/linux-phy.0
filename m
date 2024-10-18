@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95FDBD3C553
-	for <linux-phy@archiver.kernel.org>; Fri, 18 Oct 2024 07:13:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23AAED3C554
+	for <linux-phy@archiver.kernel.org>; Fri, 18 Oct 2024 07:13:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5W3sOFjhwaGE45q4DzScZ37kUk9Gv3Ls6cneP4PasE4=; b=QlsIn4CZatE/gi
-	o1Xg/hy9w4VCkH5YqEEOYN2rNUL+EU0O1yKhFQbojhsq8hoUd7Xnjnllc/hmj283vf9aBRS3JSba0
-	VGUUXRP36Iq7g20jiw7tJjWa27w60LrsNhQPVWdm92NMmlozeRCAWGCNzvKs7iut/uuW9HqqequOJ
-	iQOHCk6gbkdFk/I9i5Zxtor9Lmpy+KlG7zjFSYv8koo5ZyjgwiyAfdaUaHOj23JL5Hlo199UlOhZB
-	SfbipTC+UIi07PJfzvwzkVesJWP47K+5BoIeb98cSPAl11iz2KFyu+9Asj2BmdntiuDWX1SlNTF1S
-	E0uoe55reC0ooOnSgXnQ==;
+	List-Owner; bh=CYa1DGJO78VqcXykhiE1xnEH25NKjWgCBHMjSkMZraU=; b=Xgl1rq0QyTaDNV
+	S4AG5iM+V0rEepeB2jxVkJ4cVYI8eiFpn+x7cfxh4mcH2G8kYA/yF9Ceyx+cSZTeMog79BqbV34Eq
+	Yctj3zZNhOqTNQXtncEJCYy4eOVQm0tGDW37tRq22z8Dttn9kEcs9wc/1+dYk74wRjj5D6oQ/2Sgn
+	ZG4yglM4r5xF6z6P9j9cIdZthAKdedSBUDAeN5fgMSufOeGumKQyXEeNHyhUkFmRQ4GShd0fIY1qa
+	ji7hP9Md54Riz2drmJ1xcFp5H0dGTbmW/slJXLXQiG6ueC77DSN9BvE/NRpcF5Q+CP+lQkFP3bKQb
+	LwElDa1RCQgqkgTOSiXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1hAr-0000000HIKL-0WDn;
+	id 1t1hAr-0000000HIL9-2e8b;
 	Fri, 18 Oct 2024 07:13:25 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t1h51-0000000HGar-2Xwf
+	id 1t1h51-0000000HGak-2Xgj
 	for linux-phy@lists.infradead.org;
 	Fri, 18 Oct 2024 07:07:27 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49HMuj7Z019890;
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49I4v62Y016581;
 	Fri, 18 Oct 2024 07:07:14 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:date:from:in-reply-to:message-id:references:subject:to; s=
-	qcppdkim1; bh=917Hv2XwIy0TaQ3/M9jcDlniN14rpl3QPuuNQD8OQUg=; b=bS
-	rc66tqphy71Po0B68ihh8VTJ9WSngtnVgkXjretQn2IeKICoEnXAfeDfqFW1GRt/
-	UhcU/RF6EZPuDnhJpvJG/swFWOqQ96VgZnn/YngEcXsQiZzNzHiaZddjONMA0oKG
-	U8LKsArGfxR1x3IF03YwFx7xZN1F5vLTQMy9Pe/Si7C9q33rZH46LFXPelikN7WF
-	T3xSrgXbAtfxqDwm8wFTmgaHSC0ZKt9UBsLPYbQDdOXMpafJiIwYBEH73IG+vujw
-	nXnDazXZZlD4BRu+PYqAStkL6f1+G6OLOeuG+uAU6F0eFDb2F14EAYOwmwWlK9v+
-	27Tb30XWoBJFpvIdW5Rw==
+	qcppdkim1; bh=CvlibuVLdW+5TPwMTuW36yujfGkR3piP9ObRX1OFDU8=; b=TT
+	3zn70+ANqTuUCZyktrs4EGRyPfbJjlB0uNVz1qp9txSkkVFNZJnaBAVmSQ5JzxZh
+	jJJe5L/vwBIzX+05NL8VqoP44R6Zd3PBjiyFNMdgr+euBsonFlaywAoTjE5jQdWP
+	8re4tv1hrj582rqD9s5qhtv/3boT8GMd6RE0qs+6/ZljQpYz5tds4pAXlyCaOLG1
+	pzJo4reC84pvJCfJs+s9vvEhdaU/a+Bo4XdASgHMiYmCIXn1tUL656Rs/DpwnNmC
+	DkuS7N4XFnCvFRi28dSyHLW9H7y9jIPxk+au4MhbbfenL8Kjpzj3uZvz8J8GLnq7
+	nVrPnXUAweO4ziDzcd2Q==
 Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42b0rx31y2-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42bh3p8b1t-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 18 Oct 2024 07:07:14 +0000 (GMT)
+	Fri, 18 Oct 2024 07:07:13 +0000 (GMT)
 Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 49I779Qi019793;
-	Fri, 18 Oct 2024 07:07:09 GMT
+	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 49I779rh019791;
+	Fri, 18 Oct 2024 07:07:10 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 427j6mpjak-1
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 427j6mpjb2-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Fri, 18 Oct 2024 07:07:09 +0000
+	Fri, 18 Oct 2024 07:07:10 +0000
 Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 49I779O8019767;
-	Fri, 18 Oct 2024 07:07:09 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 49I779OA019767;
+	Fri, 18 Oct 2024 07:07:10 GMT
 Received: from hu-maiyas-hyd.qualcomm.com (hu-mukhopad-hyd.qualcomm.com [10.147.244.250])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 49I778sv019761;
-	Fri, 18 Oct 2024 07:07:09 +0000
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTP id 49I779b6019811;
+	Fri, 18 Oct 2024 07:07:10 +0000
 Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 3978529)
-	id EE6BE5299CD; Fri, 18 Oct 2024 12:37:07 +0530 (+0530)
+	id 02E0E5299CF; Fri, 18 Oct 2024 12:37:08 +0530 (+0530)
 From: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 To: vkoul@kernel.org, kishon@kernel.org, konradybcio@kernel.org,
         andersson@kernel.org, simona@ffwll.ch, dmitry.baryshkov@linaro.org,
@@ -72,9 +72,9 @@ Cc: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>,
         linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
         freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
         quic_riteshk@quicinc.com, quic_vproddut@quicinc.com
-Subject: [PATCH v5 3/5] phy: qcom: edp: Add support for eDP PHY on SA8775P
-Date: Fri, 18 Oct 2024 12:37:04 +0530
-Message-Id: <20241018070706.28980-4-quic_mukhopad@quicinc.com>
+Subject: [PATCH v5 5/5] drm/msm/dp: Add DisplayPort controller for SA8775P
+Date: Fri, 18 Oct 2024 12:37:06 +0530
+Message-Id: <20241018070706.28980-6-quic_mukhopad@quicinc.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20241018070706.28980-1-quic_mukhopad@quicinc.com>
 References: <20241018070706.28980-1-quic_mukhopad@quicinc.com>
@@ -82,19 +82,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: CdteVKDn9fiBeJGxDtaaHNHNwyjA_Ub5
-X-Proofpoint-ORIG-GUID: CdteVKDn9fiBeJGxDtaaHNHNwyjA_Ub5
+X-Proofpoint-GUID: rcAtnPzkPzszy898YCYciWbEPF_xGNZt
+X-Proofpoint-ORIG-GUID: rcAtnPzkPzszy898YCYciWbEPF_xGNZt
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 clxscore=1015
- mlxscore=0 priorityscore=1501 spamscore=0 suspectscore=0 impostorscore=0
- mlxlogscore=999 malwarescore=0 lowpriorityscore=0 adultscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ suspectscore=0 bulkscore=0 lowpriorityscore=0 mlxscore=0 malwarescore=0
+ clxscore=1015 phishscore=0 priorityscore=1501 spamscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2409260000 definitions=main-2410180044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241018_000723_677679_8945093C 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20241018_000723_822755_5DCC0AA3 
+X-CRM114-Status: GOOD (  11.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,82 +112,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for eDP PHY v5 found on the Qualcomm SA8775P platform.
+The Qualcomm SA8775P platform comes with 2 DisplayPort controllers
+for each mdss, having different base offsets than the previous
+SoCs. The support for all 4 DPTX have been added here, and
+validation of only MDSS0 DPTX0 and DPTX1 have been conducted.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Soutrik Mukhopadhyay <quic_mukhopad@quicinc.com>
 ---
-v2: Fixed review comments from Dmitry
-	- Reused edp_swing_hbr_rbr and edp_swing_hbr2_hbr3 for v5.
+v2: No change
 
-v3: No change
+v3: Fixed review comments from Konrad and Bjorn
+	-Added all the necessary DPTX controllers for this platform.
 
-v4: No change
+v4: Updated commit message to mention specifically about the validation
+    of MDSS0 DPTX0 and DPTX1.
 
-v5: No change
+v5: Aligned the register starting address for display port as part of
+    device description with respect to other targets.
 
 ---
- drivers/phy/qualcomm/phy-qcom-edp.c | 33 +++++++++++++++++++++++++++++
- 1 file changed, 33 insertions(+)
+ drivers/gpu/drm/msm/dp/dp_display.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index 2ecff164ec44..f1b51018683d 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -183,6 +183,31 @@ static const u8 edp_phy_aux_cfg_v4[10] = {
- 	0x00, 0x13, 0x24, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
+diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
+index e1228fb093ee..c34362bc16ba 100644
+--- a/drivers/gpu/drm/msm/dp/dp_display.c
++++ b/drivers/gpu/drm/msm/dp/dp_display.c
+@@ -118,6 +118,14 @@ struct msm_dp_desc {
+ 	bool wide_bus_supported;
  };
  
-+static const u8 edp_pre_emp_hbr_rbr_v5[4][4] = {
-+	{ 0x05, 0x11, 0x17, 0x1d },
-+	{ 0x05, 0x11, 0x18, 0xff },
-+	{ 0x06, 0x11, 0xff, 0xff },
-+	{ 0x00, 0xff, 0xff, 0xff }
++static const struct msm_dp_desc sa8775p_dp_descs[] = {
++	{ .io_start = 0x0af54000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
++	{ .io_start = 0x0af5c000, .id = MSM_DP_CONTROLLER_1, .wide_bus_supported = true },
++	{ .io_start = 0x22154000, .id = MSM_DP_CONTROLLER_2, .wide_bus_supported = true },
++	{ .io_start = 0x2215c000, .id = MSM_DP_CONTROLLER_3, .wide_bus_supported = true },
++	{}
 +};
 +
-+static const u8 edp_pre_emp_hbr2_hbr3_v5[4][4] = {
-+	{ 0x0c, 0x15, 0x19, 0x1e },
-+	{ 0x0b, 0x15, 0x19, 0xff },
-+	{ 0x0e, 0x14, 0xff, 0xff },
-+	{ 0x0d, 0xff, 0xff, 0xff }
-+};
-+
-+static const struct qcom_edp_swing_pre_emph_cfg edp_phy_swing_pre_emph_cfg_v5 = {
-+	.swing_hbr_rbr = &edp_swing_hbr_rbr,
-+	.swing_hbr3_hbr2 = &edp_swing_hbr2_hbr3,
-+	.pre_emphasis_hbr_rbr = &edp_pre_emp_hbr_rbr_v5,
-+	.pre_emphasis_hbr3_hbr2 = &edp_pre_emp_hbr2_hbr3_v5,
-+};
-+
-+static const u8 edp_phy_aux_cfg_v5[10] = {
-+	0x00, 0x13, 0xa4, 0x00, 0x0a, 0x26, 0x0a, 0x03, 0x37, 0x03
-+};
-+
- static int qcom_edp_phy_init(struct phy *phy)
- {
- 	struct qcom_edp *edp = phy_get_drvdata(phy);
-@@ -507,6 +532,13 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- 	.com_configure_ssc	= qcom_edp_com_configure_ssc_v4,
+ static const struct msm_dp_desc sc7180_dp_descs[] = {
+ 	{ .io_start = 0x0ae90000, .id = MSM_DP_CONTROLLER_0, .wide_bus_supported = true },
+ 	{}
+@@ -162,6 +170,7 @@ static const struct msm_dp_desc x1e80100_dp_descs[] = {
  };
  
-+static const struct qcom_edp_phy_cfg sa8775p_dp_phy_cfg = {
-+	.is_edp = false,
-+	.aux_cfg = edp_phy_aux_cfg_v5,
-+	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
-+	.ver_ops = &qcom_edp_phy_ops_v4,
-+};
-+
- static const struct qcom_edp_phy_cfg sc7280_dp_phy_cfg = {
- 	.aux_cfg = edp_phy_aux_cfg_v4,
- 	.ver_ops = &qcom_edp_phy_ops_v4,
-@@ -1101,6 +1133,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- }
- 
- static const struct of_device_id qcom_edp_phy_match_table[] = {
-+	{ .compatible = "qcom,sa8775p-edp-phy", .data = &sa8775p_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc7280-edp-phy", .data = &sc7280_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc8280xp-dp-phy", .data = &sc8280xp_dp_phy_cfg, },
+ static const struct of_device_id dp_dt_match[] = {
++	{ .compatible = "qcom,sa8775p-dp", .data = &sa8775p_dp_descs },
+ 	{ .compatible = "qcom,sc7180-dp", .data = &sc7180_dp_descs },
+ 	{ .compatible = "qcom,sc7280-dp", .data = &sc7280_dp_descs },
+ 	{ .compatible = "qcom,sc7280-edp", .data = &sc7280_dp_descs },
 -- 
 2.17.1
 
