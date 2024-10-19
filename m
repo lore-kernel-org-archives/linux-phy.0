@@ -4,93 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 976FED3C919
-	for <linux-phy@archiver.kernel.org>; Sat, 19 Oct 2024 15:03:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB870D3C91C
+	for <linux-phy@archiver.kernel.org>; Sat, 19 Oct 2024 15:45:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PAA94dbvUyLhuoPbACMA2TLL/6atkV/QWEAkgMhPx3Y=; b=aQbMSfXUxFrU2O
-	LMWeq8fWwHPrL22P/wRAGOjpsLm6e7GZlSoemsDwsbx/m6okaz2lLcmjgtr7aW0T8O9zIUSHo6Jdx
-	7uglu44OgdU4X9yLz5v7ApRANamivb5hB064MmMl/AJDO4cg+o/wlqiYbT48KFkUf7v+Y+Kl2wE8q
-	hRIxvqLOylL1drfb9/Mgqk/FTxvMCgsdW3UNwSuJi4CEKVvrn5yGFeTIadgFYrW3OCIxLTNjNe/se
-	UdEO1yQQ0Ws0zdIWXVvmfgapeoraQVdc9xwzefzdShE/42uDVt6FPesq+9EP27vcaVmDDHWKrZ62A
-	JX8+uF2jdT007r1BUyOA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2yif1sRiuHazQptMuom0R4/ckUStjC4AvGMH25dD5hI=; b=INTXMwfa7wh2QU
+	DLX5qBCV5SahOFJWKfkya22Rtp3s+334RwFZlOaRmAL/9hgooFYioXwqjBmeoJnxFHB7mY2IAv9c5
+	DoWBc/MHlEYli+T8oC+U9Ebtlpn4uk+q2zuQy6vY5+y6T2uyV4tMp90vtpYijgV/0tLME4fYUf/8K
+	rXcecGqLE0HeArDMZnGNzVdX5X4gadpZy4aENWJNgU94v4jPafze2vnXDBUclLCtQzMowfMYzgWk5
+	5e9qXwSty4KfILRz4Z25arju1uP82GgufCeXb8vIhoKcItMT4/N2D132TwOTzHx34hRBrQNtSmVA9
+	6vmcdlF5/Q59/nZlatIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2AzU-00000003Tb5-18Nq;
-	Sat, 19 Oct 2024 15:03:40 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1t2BdU-00000003XKA-1ktM;
+	Sat, 19 Oct 2024 15:45:00 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2Axz-00000003TTo-3QtK
+	id 1t2BdS-00000003XJj-0OIt
 	for linux-phy@lists.infradead.org;
-	Sat, 19 Oct 2024 15:02:09 +0000
-Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-53a007743e7so3759404e87.1
-        for <linux-phy@lists.infradead.org>; Sat, 19 Oct 2024 08:02:07 -0700 (PDT)
+	Sat, 19 Oct 2024 15:44:59 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-539f58c68c5so4811512e87.3
+        for <linux-phy@lists.infradead.org>; Sat, 19 Oct 2024 08:44:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1729350126; x=1729954926; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=guYBgtCfnmt51vtq+wHLI7UJ/djLSpHCurYx8X+7pZI=;
-        b=YlJ1MaQF2eeA61WFbiwRS1tylaK9Qwpaq3qTj2ue0W4BtJN6r3t2uSxbCEeG56J2wG
-         esbBv+H5QL4QX6UEG3dPvF/vduE2qIEg5ESgWRuR+Kgh5DOSGWWJgPoiL4gCZpkeUnoF
-         XApQLg+59L+B6a5hRGQvat4VMr4Tenw1kW2V9QAKpk4e1jeCEi6naXnonbqpWTX03mZp
-         3dPphTBMIFUTetOuesFl+n6LzYEzPTRzLNuIA5q7/8Xh3DKzXQKSDZhBgWjeTvO4hXYb
-         RQgwXnomgosYB/0gIwhvx62nFpM77C1hElRZV9W0ZOn3102tBcimxBezJlK6l6NwU1e4
-         So4A==
+        d=linaro.org; s=google; t=1729352696; x=1729957496; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=2vR7kUbPUlHuQXy/cfDXaepxmyC5kLsf2VWQ+zQ+f7k=;
+        b=ffDH0ysZIPgD60hoV5qpKgIJIlVQ1E0iWi2uE05G17auBE8iZfst/BGhR5FHysjls4
+         SPIXBTaiZjEv2/Zjimw0tBIpfWoIxmkz2e4PhiZD7C0S84i54s97ZlhFso66xPfLHeb9
+         y4el8HaeeOlv0+daGM/0J4YpIvz64zenyGC3jbjVO1PgaEYGCzN8qd8s5snTSp3KBwkx
+         DETOCJmVPkVKal28H+qyAvMDEgLwwqqvYBKxYY1ThvCqajCw0naqkMpsx+3N5Sl3JofW
+         gs39DeY0XlQiLSTbI9eKySBIm16DDq+3LOFLjQHCjV/g+8gikikq3wByHIEF/LgshfnG
+         X2jw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729350126; x=1729954926;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=guYBgtCfnmt51vtq+wHLI7UJ/djLSpHCurYx8X+7pZI=;
-        b=VV+9NSPgXgX4CXpv12QIWrXJdQSTDpHrwopR2OgEsiOM48vUU1txwzX+wCjqSknnoA
-         s6434BF2s7E7rcjhuu5D6XceTFENt8AHhmqA2JxSU9qcaHmpVcvxJDCr3x0bh8Ngg8A3
-         yiXcIcazVx60LFnoiwFiZENsdU4giEs9dbHcAlaXztNtPJK3la9qTKwb8ZZVB4U12Sz2
-         sO70AJKSHMopyZVtSo5Obx+RJXlIVVFZP11b1pKp/OIaoGA+OClXy3TF/M7cszLkErmo
-         Zaieq0Adry/wM2c8/1+9lr93cLvFGwqnRvnsr+2hx1V+/h8tymRXcq0W/o3FRgMW6YCj
-         LXhw==
-X-Forwarded-Encrypted: i=1; AJvYcCV88QdFUQl3MUNGdxJoTFHWB/Q9n9mqE2NBu+Sws1rVUcCaoPo3/AwKfLAzCEjCMG6LceDpjft84Y0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwDrLTlBMVcC1GWR2vty0vEhSzi+lPBD20AZ4m3P+IyFTziJudF
-	5UzE+sbDPO0bTYFanPqu7yjWIYtaDJ9DchS6H8kPm0LLyxvFWYxOBd8gG3ycb9Y=
-X-Google-Smtp-Source: AGHT+IFbD6430EduLAIFbkBXC5OVAGAbpWnd5KeVwCBq+BGsG53L9SnFx86xDc2NemUuq1czLOzHlw==
-X-Received: by 2002:a05:6512:b1a:b0:539:f2b9:560d with SMTP id 2adb3069b0e04-53a15512b16mr2803980e87.61.1729350125699;
-        Sat, 19 Oct 2024 08:02:05 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53a151b02e4sm552705e87.29.2024.10.19.08.02.03
+        d=1e100.net; s=20230601; t=1729352696; x=1729957496;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=2vR7kUbPUlHuQXy/cfDXaepxmyC5kLsf2VWQ+zQ+f7k=;
+        b=MVR8itkjg8KiDJmhGSdgfpXtcVxpptzl4NpCRb/ASJT9iULP297KkdSie6sfRa9VMv
+         3iQMqaUbFwKWITBKMeP7d3WC4AuVx492452PJ3fxjqMcuTT1a3Lvi2i0tGtyMu9cPCMw
+         sINrSdOs/b5fBtJ7ya7CwoibxBPGmXcl1Eh+B5yom022qBBzqIC+8dpQSpym7dkgSbA6
+         41tg4R4oQf3/ZTMjIkJ58J2lDtO590B9AV1KaE4RCJdHOjh+PF3wlCg2dpIu4p0QspMF
+         CrAadw5kRlVBZItkKcdRCAAfxaIG+AFxuSpDjg2VIe6xArG+iB7YYIRD3XNvJzhZby1W
+         oHWg==
+X-Forwarded-Encrypted: i=1; AJvYcCWtCB8ay6h2O+zgJ9zr3eU+2quNCSMzQydZimqzoIPqKTC63HfFDYe0WeUSxnbIRT2HsDqBzGMSTPU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw6lbwjPqNrPctsPllnDChBEycU2mEij9uaz1JHs33vj/qRuLEb
+	j8J6pv/s6ulMZY9bjyCTmk/rEOsNE3MGDVSaJWTZX0P0TIl3DFN/jrECEdR4F2o=
+X-Google-Smtp-Source: AGHT+IH8AFk38xnx11zVMuNDhcJQkJyvHrqNFF1D6rb1QmK8TDJTwNLhG0QSoTp1nPAbDgMMlKMb1A==
+X-Received: by 2002:a05:6512:3ca8:b0:536:a4f1:d214 with SMTP id 2adb3069b0e04-53a1544519emr4841543e87.19.1729352696015;
+        Sat, 19 Oct 2024 08:44:56 -0700 (PDT)
+Received: from [127.0.1.1] (2001-14ba-a0c3-3a00-70b-e6fc-b322-6a1b.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:70b:e6fc:b322:6a1b])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53a15211401sm562854e87.249.2024.10.19.08.44.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 19 Oct 2024 08:02:04 -0700 (PDT)
-Date: Sat, 19 Oct 2024 18:02:01 +0300
+        Sat, 19 Oct 2024 08:44:54 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Maxime Ripard <mripard@kernel.org>
-Cc: Sandor Yu <sandor.yu@nxp.com>, 
-	"andrzej.hajda@intel.com" <andrzej.hajda@intel.com>, "neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, 
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>, "jonas@kwiboo.se" <jonas@kwiboo.se>, 
-	"jernej.skrabec@gmail.com" <jernej.skrabec@gmail.com>, "airlied@gmail.com" <airlied@gmail.com>, 
-	"daniel@ffwll.ch" <daniel@ffwll.ch>, "robh+dt@kernel.org" <robh+dt@kernel.org>, 
-	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
-	"s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>, 
-	"vkoul@kernel.org" <vkoul@kernel.org>, 
-	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, "kernel@pengutronix.de" <kernel@pengutronix.de>, 
-	dl-linux-imx <linux-imx@nxp.com>, Oliver Brown <oliver.brown@nxp.com>, 
-	"alexander.stein@ew.tq-group.com" <alexander.stein@ew.tq-group.com>, "sam@ravnborg.org" <sam@ravnborg.org>
-Subject: Re: [PATCH v17 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Message-ID: <l27rc2lo4pt3mfwknjyy755li3q7vgqesoev25ulapwsenkkuj@w26ts47a2llz>
-References: <cover.1727159906.git.Sandor.yu@nxp.com>
- <8bdf573bfd7e3feb45d7ccb53765a978a685ce2d.1727159906.git.Sandor.yu@nxp.com>
- <20240924-mottled-psychedelic-lorikeet-ef8f4c@houat>
- <DB9PR04MB945284B95FAE4FE127E6568FF4752@DB9PR04MB9452.eurprd04.prod.outlook.com>
- <wdelo4zco6v5qchdupfvbrqin4n7fyjyo6yaqbpfihdkkhceoi@ja4zxmhk5isq>
+Subject: [PATCH 0/6] phy: qualcomm: add support for USB+DP and PCIe PHYs on
+ SAR2130P
+Date: Sat, 19 Oct 2024 18:44:49 +0300
+Message-Id: <20241019-sar2130p-phys-v1-0-bf06fcea2421@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <wdelo4zco6v5qchdupfvbrqin4n7fyjyo6yaqbpfihdkkhceoi@ja4zxmhk5isq>
+X-B4-Tracking: v=1; b=H4sIAPHTE2cC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIxNDA0Nz3eLEIiNDY4MC3YKMymJdEyMzc2PjJAsDQzNLJaCegqLUtMwKsHn
+ RsbW1AKS8XxlfAAAA
+X-Change-ID: 20241017-sar2130p-phys-426733b80169
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1542;
+ i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
+ bh=Vwq8dyZKEj2ygSd1yqgy0fl5gmIjHUGwyRng0MKb4hQ=;
+ b=owEBbQKS/ZANAwAKARTbcu2+gGW4AcsmYgBnE9PzYZWOONvC1WZ8PZ1mKMr6Opf7JrXjbI6m2
+ MuG5OluqPmJAjMEAAEKAB0WIQRdB85SOKWMgfgVe+4U23LtvoBluAUCZxPT8wAKCRAU23LtvoBl
+ uEHcD/4gLcV0Lbco6iiFQ+CfYZbWxZNV6Qx8VSQuh15OTmj1Z+XkqjCJlAuMR8vbj4LTrn8t8Sr
+ Nq0ApJUOP2m0dhsoDhP6L7rRJxHmNMRgu5xjSKWuU/YwNG+NaRuNFaLWE/2WzDbmbBYmMnf0IC/
+ bNVMvzDPY6NDB6X6CYCzoOdJYn4waPRly+0l86I2LKXPVSFQ4L/iz5LRxGmz7nZenesikXu/88i
+ SbUwoXl3u0zAYgkdOeaE4kn8QtWOLuhowmb+CMzEGHtr1jNxQdNDQ+ShUAd7FZ4ttGvSxZ1QRHw
+ aOpqfl24Xw7vTVHakbP0v7KB2A2E/U1slpY9KuGy6N3uvaAjfmf4tQny7vO2j1uEMSCxhD03VDz
+ bw41W8hfn0izP9IKN8yqkzhIqudR6dOLjsGe6VanZvUWbZnvgL/LPZtUokWrQvMZU+vkhoQL/BQ
+ L9Pdgd9RqgICCHSbAAfkHIdbVRZkc/taz0fG3VyI1JtAIi15Al5a+Hi/rnqXcArq+oDnSpjsLSJ
+ /EJxJ9HqPRWhuALrdDBtkhMP44Ur2e1W5fKjRpf4maRJ9Sky0vNr67lHnjb46hiqX1a7ul1tUYG
+ U7m7tqbyobhOKpD9wLp2cDhxwgc++NASzbXvnNJYaFiRCFjXqE+Blr1fjmxrTU+DRsN03Ha23yU
+ ALi0q+NAgB43eBQ==
+X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
+ fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241019_080207_896477_624CFD3B 
-X-CRM114-Status: GOOD (  34.48  )
+X-CRM114-CacheID: sfid-20241019_084458_175906_9CF313A4 
+X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,108 +116,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 30, 2024 at 10:18:06AM +0200, Maxime Ripard wrote:
-> On Sun, Sep 29, 2024 at 02:34:36AM GMT, Sandor Yu wrote:
-> > > > +static void cdns_hdmi_sink_config(struct cdns_mhdp8501_device *mhdp)
-> > > > +{
-> > > > +	struct drm_display_info *display = &mhdp->curr_conn->display_info;
-> > > > +	struct drm_connector_state *conn_state = mhdp->curr_conn->state;
-> > > 
-> > > That looks a bit hackish to me. We should probably provide a helper to get the
-> > > connector state the bridge is attached to.
-> > 
-> > How about code change to followed, is it more clear?
-> > 370         struct drm_connector *connector = mhdp->curr_conn;
-> > 371         struct drm_connector_state *conn_state = connector->state;
-> > 372         struct drm_display_info *display = &connector->display_info;
-> > 373         struct drm_scdc *scdc = &display->hdmi.scdc;
-> 
-> What I meant was that I wish bridges had a way to get their connector
-> pointer. It doesn't look like it's possible with drm_bridge_connector,
-> and we don't have access to drm_display_info anymore.
-> 
-> I don't really see a good way to do this yet, so maybe that kind of
-> workaround is ok. Eventually, I guess we'll have the scrambler setup in
-> the HDMI connector helpers anyway.
-> 
-> Dmitry, any idea?
+Add support for the USB+DP Combo PHY and PCIe PHY on the Qualcomm
+SAR2130P platform.
 
-Unfortunately nothing significant, I didn't have time to look at the
-scrambler yet. The platforms that I'm working with either do not support
-HDMI 2.0 or require no additional setup there.
+The DP part of the combo PHY wasn't yet tested, but it is not possible
+to support just the USB part of the PHY. DP part might require
+additional fixes later.
 
-Regarding the drm_connector_state, I had to go via the bridge->encoder,
-then drm_atomic_get_new_connector_for_encoder() and finally
-drm_atomic_get_new_connector_state(). I don't like the idea of storing
-the connector in drm_bridge driver data, it seems like a bad idea to me.
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+Dmitry Baryshkov (6):
+      dt-bindings: phy: qcom,sc8280xp-qmp-usb32dp: Add SAR2130P compatible
+      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add SAR2130P compatible
+      phy: qualcomm: qmp-combo: add support for SAR2130P
+      phy: qualcomm: qmp-pcie: split PCS_LANE1 region
+      phy: qualcomm: qmp-pcie: define several new registers
+      phy: qualcomm: qmp-pcie: add support for SAR2130P
 
-> 
-> > > > +static enum drm_mode_status
-> > > > +cdns_hdmi_tmds_char_rate_valid(const struct drm_bridge *bridge,
-> > > > +			       const struct drm_display_mode *mode,
-> > > > +			       unsigned long long tmds_rate) {
-> > > > +	struct cdns_mhdp8501_device *mhdp = bridge->driver_private;
-> > > > +	union phy_configure_opts phy_cfg;
-> > > > +	int ret;
-> > > > +
-> > > > +	phy_cfg.hdmi.tmds_char_rate = tmds_rate;
-> > > > +
-> > > > +	ret = phy_validate(mhdp->phy, PHY_MODE_HDMI, 0, &phy_cfg);
-> > > > +	if (ret < 0)
-> > > > +		return MODE_CLOCK_RANGE;
-> > > > +
-> > > > +	return MODE_OK;
-> > > > +}
-> > > > +
-> > > > +static enum drm_mode_status
-> > > > +cdns_hdmi_bridge_mode_valid(struct drm_bridge *bridge,
-> > > > +			    const struct drm_display_info *info,
-> > > > +			    const struct drm_display_mode *mode) {
-> > > > +	unsigned long long tmds_rate;
-> > > > +
-> > > > +	/* We don't support double-clocked and Interlaced modes */
-> > > > +	if (mode->flags & DRM_MODE_FLAG_DBLCLK ||
-> > > > +	    mode->flags & DRM_MODE_FLAG_INTERLACE)
-> > > > +		return MODE_BAD;
-> > > > +
-> > > > +	if (mode->hdisplay > 3840)
-> > > > +		return MODE_BAD_HVALUE;
-> > > > +
-> > > > +	if (mode->vdisplay > 2160)
-> > > > +		return MODE_BAD_VVALUE;
-> > > > +
-> > > > +	tmds_rate = mode->clock * 1000ULL;
-> > > > +	return cdns_hdmi_tmds_char_rate_valid(bridge, mode, tmds_rate); }
-> > > 
-> > > Didn't we agree on creating a mode_valid helper?
-> > 
-> > In fact, now I'm no idea where should add the mode_valid helper function.
-> > 
-> > In struct drm_bridge_funcs, it had mode_valid() and hdmi_tmds_char_rate_valid().
-> > 
-> > If create a new mode_valid helper function in struct drm_connector_hdmi_funcs,
-> > Is it appropriate to call another API function(tmds_char_rate_valid)
-> > at the same level within this API function?
-> 
-> I'm not quite sure what you mean, but a reasonable approach to me would
-> be to turn drm_hdmi_state_helper.c hdmi_clock_valid into a public
-> function, and then call it from drm_bridge_connector mode_valid hook.
-> 
-> It's a similar discussion to the previous one really: in order to
-> implement it properly, we need access to drm_display_info.
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   2 +
+ .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   2 +
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 100 ++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 173 ++++++++++++++++++++-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h |   5 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h |   5 +-
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h    |   3 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-v6.h         |   2 +
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6.h    |   1 +
+ 9 files changed, 284 insertions(+), 9 deletions(-)
+---
+base-commit: f2493655d2d3d5c6958ed996b043c821c23ae8d3
+change-id: 20241017-sar2130p-phys-426733b80169
 
-I've sent a proposal, [1]. I don't think we should be using
-hdmi_clock_valid() directly (at least not before sorting out the EDID /
-hotplug handling in the HDMI Connector code) exactly because of the
-info->max_tmds_clock. If it gets stale, we might filter modes
-incorrectly. Also, I'm not sure if it should be left at 0 by default (or
-in drm_parse_hdmi_forum_scds()).
-
-[1] https://lore.kernel.org/dri-devel/20241018-hdmi-mode-valid-v1-0-6e49ae4801f7@linaro.org/
-
+Best regards,
 -- 
-With best wishes
-Dmitry
+Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
 
 -- 
 linux-phy mailing list
