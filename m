@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4088D3C934
-	for <linux-phy@archiver.kernel.org>; Sun, 20 Oct 2024 05:28:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C260ED3C934
+	for <linux-phy@archiver.kernel.org>; Sun, 20 Oct 2024 05:28:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XONzYwTEhC8C1UlrhLBrH8dBAcL2eRPQOZdAi6vIsdI=; b=hywnsPbzZUfapV
-	qO7hBakfkYoL+SUCEPwJvuQaWFPOyQidOprPzYilrJaIY9EAUeEgkVbEE20JqjgXPUp887WAKKy7b
-	Zq2zVtKA2eg2lh3zltBe9h134h7JfNzHDPjDvAeGDSSUi/aSoj/Qpcm7f6hunm1hzOUw39ClE0Rce
-	VOAmD0ey0+B8iDWavEmNU0A7A87hdVwOPBvZpmR7iGR1dHPZYAbc9mefgl1RE6QFFk4lHt1zljoBS
-	kEXP1PP/O07ylzKzoxUim0hDJa8ovLTIbmE5gS6NFyHu2INi/xB1Tou03mOs9qs04qiFxMN8SyMyU
-	nSlxhda6dnHwr7JrMZ4A==;
+	List-Owner; bh=OMfPu6OONn3WfGSgjttAs/X4eb13kLSlXq2trcGSTck=; b=ssMwfZyoSSZ3Ch
+	kdiZ80sM7ZfiQIPlA+oXMOWEaJoEwjlGB2Sbe6u/fNYJG038U/p4L7LY+f0KbNDcerflemrs1fAXg
+	DDvqOroSkpXBPPZmPkCKHgfBNjtFHvNMQBmnP1D72gdwuEtDgfc5/cPWUe5P4yXSNLIIJiBUfZzUm
+	jMtXlDHnfU5BjawfMtJY752AoFk8M46mHpLp4zkzofD/S3tQsLe582NXXW2fizywfqMXBkhCkAmGH
+	dl8ivpbT6zgbWtToPXdt2blmOZuVFDVAFGVzFnduWwhPsPn6oWHKBe/1neOdSeAFXk0wDXHWBj8FR
+	pYYncCvpRf/ia/sAbADw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2OUl-00000004RqU-1wzI;
-	Sun, 20 Oct 2024 05:28:51 +0000
+	id 1t2OUr-00000004Rsl-0bzF;
+	Sun, 20 Oct 2024 05:28:57 +0000
 Received: from pv50p00im-hyfv10021501.me.com ([17.58.6.48])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2OUi-00000004Rpn-379B
+	id 1t2OUp-00000004Rra-05a1
 	for linux-phy@lists.infradead.org;
-	Sun, 20 Oct 2024 05:28:49 +0000
+	Sun, 20 Oct 2024 05:28:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
-	s=1a1hai; t=1729402128;
-	bh=bqgD9TqeRl3fISVSF8RjYIENXrO/0dTFirpvQNfH4Dk=;
+	s=1a1hai; t=1729402134;
+	bh=rVON13sMMqtKSwCrl4E1Uhkm6hLNfvRtGi981NVB7Gs=;
 	h=From:Date:Subject:MIME-Version:Content-Type:Message-Id:To;
-	b=gpwA6Nebi6sHyPqVwriErkrRAhyENlFTXgZcArARP8mEwzKBlNqcKlFYAJFtkECLL
-	 ya6kIrNGTXEdErFwr9yHehnypMbo9TDrumZZVglnayEeMonZDR5aZs/1tiJDj2Fw9+
-	 J3ydjynv9shdosxmzgJvzSjJPXAjWXXdlUQ+szT2HoIjJhJYbHqH6eXd1vvyxofr2f
-	 GmoO62berrK2gd/Yg3SXJDmt9x+R3qrzq0AgXDWFse12ZjC6bDj+QnAWaW6//FYFKY
-	 gNmBNGcpgnjES50eYR2OZ5vIeOUL4gQ8+J7hbss9dMaXasTJCXA6ivJJwcJs6DTzZa
-	 vefo6h7EQZJsg==
+	b=ou5YHP16ry9CgCybtpG62r35ZB2cpiklwmT1he10nlofB7CO0oQAY7P6knGVfStrr
+	 yBHd4FL3CbryCTpHZiGvlUqpAwIJuCz1SGhnCSMegnb0s4chbCotaXY5qCM7iwVsNm
+	 x9gTXClBdLxoOSTIa/hsOwn5k/IFUpuhe8+O84o2bpcvE9ZNYahhHOm/NMzj5flyGg
+	 Gu69Wosh8q8FpXgoaGr5LnQQpxlJcHOliGHy+88OWLHps3KIDYPV0MJ8y0AbgpBwuY
+	 p4f0Qq0jSPQ1Ae9OWaKCljqZAv3IVssLla7cnWNzd4dazBw8+ni3tVqzaGCfj3xMCd
+	 fj92LWGujUoww==
 Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
-	by pv50p00im-hyfv10021501.me.com (Postfix) with ESMTPSA id 7D78D2C013F;
-	Sun, 20 Oct 2024 05:28:42 +0000 (UTC)
+	by pv50p00im-hyfv10021501.me.com (Postfix) with ESMTPSA id CD6C22C0130;
+	Sun, 20 Oct 2024 05:28:48 +0000 (UTC)
 From: Zijun Hu <zijun_hu@icloud.com>
-Date: Sun, 20 Oct 2024 13:27:49 +0800
-Subject: [PATCH 4/6] phy: core: Add missing of_node_put() for an error
- handling path of _of_phy_get()
+Date: Sun, 20 Oct 2024 13:27:50 +0800
+Subject: [PATCH 5/6] phy: core: Add missing of_node_put() in
+ of_phy_provider_lookup()
 MIME-Version: 1.0
-Message-Id: <20241020-phy_core_fix-v1-4-078062f7da71@quicinc.com>
+Message-Id: <20241020-phy_core_fix-v1-5-078062f7da71@quicinc.com>
 References: <20241020-phy_core_fix-v1-0-078062f7da71@quicinc.com>
 In-Reply-To: <20241020-phy_core_fix-v1-0-078062f7da71@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -58,8 +58,8 @@ Cc: Zijun Hu <zijun_hu@icloud.com>, stable@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Zijun Hu <quic_zijuhu@quicinc.com>
 X-Mailer: b4 0.14.1
-X-Proofpoint-ORIG-GUID: UKGJg6bDUiFHKz2zU5QVA92RCrgayaQo
-X-Proofpoint-GUID: UKGJg6bDUiFHKz2zU5QVA92RCrgayaQo
+X-Proofpoint-ORIG-GUID: hKZD5y-4RY3sylApKTy1YAx6Oj9Jx6jl
+X-Proofpoint-GUID: hKZD5y-4RY3sylApKTy1YAx6Oj9Jx6jl
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
  definitions=2024-10-20_02,2024-10-17_01,2024-09-30_01
@@ -69,8 +69,8 @@ X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015 spa
  scancount=1 engine=8.19.0-2308100000 definitions=main-2410200032
 X-Apple-Remote-Links: v=1;h=KCk=;charset=UTF-8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241019_222848_833750_F83DCD0E 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20241019_222855_114819_53256621 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,36 +89,48 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Zijun Hu <quic_zijuhu@quicinc.com>
 
-It is wrong for _of_phy_get()  not to decrease the OF node refcount which
-was increased by previous of_parse_phandle_with_args() when returns due to
-of_device_is_compatible() error.
+The for_each_child_of_node() macro automatically decrements the child
+refcount at the end of every iteration. On early exits, of_node_put()
+must be used to manually decrement the refcount and avoid memory leaks.
 
-Fixed by adding of_node_put() before the error return.
+The macro called by of_phy_provider_lookup() has such early exit, but
+it does not call of_node_put() before early exit.
 
-Fixes: b7563e2796f8 ("phy: work around 'phys' references to usb-nop-xceiv devices")
+Fixed by adding missing of_node_put() in of_phy_provider_lookup().
+
+Fixes: 2a4c37016ca9 ("phy: core: Fix of_phy_provider_lookup to return PHY provider for sub node")
 Cc: stable@vger.kernel.org
 Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
+
 ---
- drivers/phy/phy-core.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+The impact of this change is wide since of_phy_provider_lookup()
+is indirectly called by APIs phy_get(), of_phy_get(), and
+devm_of_phy_get_by_index().
+
+The following kernel mainline commit has similar fix:
+Commit: b337cc3ce475 ("backlight: lm3509_bl: Fix early returns in for_each_child_of_node()")
+---
+ drivers/phy/phy-core.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 52ca590a58b9..967878b78797 100644
+index 967878b78797..24bd619a33dd 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -629,8 +629,11 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
- 		return ERR_PTR(-ENODEV);
+@@ -143,10 +143,11 @@ static struct phy_provider *of_phy_provider_lookup(struct device_node *node)
+ 	list_for_each_entry(phy_provider, &phy_provider_list, list) {
+ 		if (phy_provider->dev->of_node == node)
+ 			return phy_provider;
+-
+ 		for_each_child_of_node(phy_provider->children, child)
+-			if (child == node)
++			if (child == node) {
++				of_node_put(child);
+ 				return phy_provider;
++			}
+ 	}
  
- 	/* This phy type handled by the usb-phy subsystem for now */
--	if (of_device_is_compatible(args.np, "usb-nop-xceiv"))
-+	if (of_device_is_compatible(args.np, "usb-nop-xceiv")) {
-+		/* Put refcount above of_parse_phandle_with_args() got */
-+		of_node_put(args.np);
- 		return ERR_PTR(-ENODEV);
-+	}
- 
- 	mutex_lock(&phy_provider_mutex);
- 	phy_provider = of_phy_provider_lookup(args.np);
+ 	return ERR_PTR(-EPROBE_DEFER);
 
 -- 
 2.34.1
