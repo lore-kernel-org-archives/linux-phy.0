@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60341D0E6EA
-	for <linux-phy@archiver.kernel.org>; Mon, 21 Oct 2024 10:33:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C855D0E6E8
+	for <linux-phy@archiver.kernel.org>; Mon, 21 Oct 2024 10:33:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3u1JK1uEjVeRzf+Jn7ocdw7f8OoV6EGrtwpNUPvlvdg=; b=Zfbg3PJcefzAsO
-	bZpVaPQJgONGgi3GDqFhrutvHswgys7JTH26sdfoICeUynFRreu/jWbHHwTf+edDTDHWxPoKgWbPK
-	LZ+tBblz4m6KJBogrYEzQFhfNdKn2wdy6z/s+VARHpjqkchYNO4SCVNuFPS9U3X+9atLrlSgaKAkp
-	HYvWAiPbUKt/37KjF06gBFR8EG15j/mU2sgRsSCKYP1/OKkBdTKeOwKmWx96oAjXrZ5c/XbERL0yU
-	2KLWvsgA6JRjrZ9/x8uvkapT+Od5/kbtzcPiXWzmxyjMGtKOUiLMvIgJY5Z/K+hckoc1Uw5Glexil
-	cj7RZ/keulvdy8sPoU7g==;
+	List-Owner; bh=KAgBIF+SOWGDHgDZw84apfmFlCgRVQ+AkljzEzNfTKk=; b=D3lkBCWMelCplL
+	4AX74iTK0m1N7VIg4JOKcMGB7RnIwAi+I04mAfQCsyhM0FcahzKGwBCV1GZgf3hnhfW6xZEceJZOt
+	O3H54ZioY/lvpBa4TSBSghMbKDs7Hm9pXuUOBiBaagwzMrAIVL0XiAguhT/nC9MO5XhS86qjClckl
+	YsuF5vVpbfvzgvpx81HYvGVCo7ySSt0DQ6PDHcpexcgAnqrCelxOLSvgjdBatCqGi2W/ZGHk5ZfDw
+	2N9Sxs/ag/IV8A2AlvDG17BzJIefWuZEtKVNKkeV2nvmSqYaEhQnuHzoiUVwDWih8LnWOC3yLKLq1
+	y1q+FI2eneq6ws4gKAeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2pj3-00000006u1V-07iu;
-	Mon, 21 Oct 2024 10:33:25 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1t2pj5-00000006u2i-3Hh4;
+	Mon, 21 Oct 2024 10:33:27 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2pix-00000006tyO-2FCm
+	id 1t2pj0-00000006u04-0iyr
 	for linux-phy@lists.infradead.org;
-	Mon, 21 Oct 2024 10:33:21 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-539e63c8678so5086311e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 21 Oct 2024 03:33:19 -0700 (PDT)
+	Mon, 21 Oct 2024 10:33:23 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-539f6e1f756so4934641e87.0
+        for <linux-phy@lists.infradead.org>; Mon, 21 Oct 2024 03:33:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1729506797; x=1730111597; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1729506801; x=1730111601; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=LdncSAoP0KhDyf2xplN8lueVHyRZUHitLAgflAowdNI=;
-        b=bPRqcHtQSSGWYKSQoQxiniq5cGwNRVLLMdF1gnPTnLvjvwUV+g+Rm/T+4XvJKoV03J
-         sWGrAsw/qRFDpGL4pHN/H+4yy+3P17alxgNhloQnNp8778EFfm8RjkoY8agn+c9RpNgj
-         uIhTeBM8p42aCvxQ6l9PXXZal8AsJZH5+9bN1xcl7AjLCEvvuIqZsu1aPHhPfxV927Vz
-         xt1wMO0qWCF0s+VNc34q/GpDcEo0DDQik4zbGggZdGa3di+52NFkn3UKUAEmf/t28K+U
-         /Io3I3XkujAymAeU79Ycs8DwcAjGHgEWWlbONwZo5ythKeBYFcGsmZl/YqSPXf4jxwym
-         Lg0Q==
+        bh=j8gd1TRUah4UlBv9ZsEU3Mqp5q0KNFXM5pn6NKjKpmw=;
+        b=OO5tEKd4PVJhiVJZZjxUiXoZD83fy3kgSKt+scF6rzQKhAF/HX08kgG5uSkPPgAC/u
+         cpRk16lSx4HzXk8UXHEFkp71lN+6iExfeCLtv7nVGnqLQgSvRQMUA1NDthN2ZcwzTElH
+         V1VSFl8zWr4s1dKtTq8txD0839XGFHKI90YEOhFgvtNATpXrU5l1ZNv5w4q5f7w7iP5F
+         CByzGuSnqs7/3XsVCV3zMBytTeKQ/H2TnMYYEUXFjyvQ2+L6zsRIzl9gYRrETNjhmG2g
+         wl1gkx9+OQ7hsiVJsNbJbD9sdEHyrLIEgQZiTqBAbq/fM/oXG//RYUE5MVH5wi+3heix
+         yVbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729506797; x=1730111597;
+        d=1e100.net; s=20230601; t=1729506801; x=1730111601;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=LdncSAoP0KhDyf2xplN8lueVHyRZUHitLAgflAowdNI=;
-        b=XeW95t4+ZEjFx1QXLbXc9TGIuYlvzoesnUrsCJMn5qYHAa3vvabsIo/nDQPoun4mB8
-         5vQoq816TH80AWLpCy/LNW1zqVn0qiFTif9WdRenv/mz8Ru/aD3qm8DCLuyHCwFIMT7p
-         GUHG9tyN3hgc3MCJoCo1vwvrCbvruPLimsDubqLz8+/TA1v7aIXJzrZoetytA2SIAPEw
-         UFObfux/g61QkrTDhmY/Xjo28o00rSxraTBA9VC5bC6yTvrMycNefntB+VvQaTC94jnE
-         zMApuBIVuNLySwDWFkbJavDsNWsX9uhLCnzdDDTMiUUWCSJ4Uss1k8G/aozEqUPaHhT/
-         CvkA==
-X-Forwarded-Encrypted: i=1; AJvYcCXjKXqwOhiiOzWeJYsi64icrlEXqV/hSTbRvAINmvtNr7rFgKK7N/RHNQcR3EFocBATDwkXX/WOV2M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyZ8f6wtvFjMeZz68L1db6t7NT33Mo86dnWKGt9qQG2F/H34IaN
-	FympmEi5XoFX38W6QX5xJZXQK6kmVKpADXHvBan9WvqUG5d0AGATECXXhqALH1g=
-X-Google-Smtp-Source: AGHT+IEgTPbomFd3kO9GHICosRN/Yx8eZwp6HYOXT9lgepGaY23MR9/ZMzyGsQpSPnpqzZTAFmKDTQ==
-X-Received: by 2002:a05:6512:31c3:b0:539:e1c6:2128 with SMTP id 2adb3069b0e04-53a154f901amr5172688e87.39.1729506797443;
-        Mon, 21 Oct 2024 03:33:17 -0700 (PDT)
+        bh=j8gd1TRUah4UlBv9ZsEU3Mqp5q0KNFXM5pn6NKjKpmw=;
+        b=DzEPvjgWDsOcAHZvIgap+tEAt/+/jy8HP3igdvHkmr4g2MFfD6qmDabBPpl5aZISrR
+         WoLGqlm3iPyl0U3QNFDFT4kTvSFZQugGWduZ4FSyJFJzDo2JVOAODaNtLBVeXoobZsXU
+         4cGF9trrHYca2VuMWCEYSa9M+7ySUJzm+0wshIZWYuhWGmDK3jfO6JIxJM6P87L47cJO
+         DlNWbUXo0R4VhAJ/j7PsUtPBRW3IZrpduzTom6O7Jk/vX1rBST0KXcKk5CWupPaFrcJa
+         JaGkYw196z24nlGHrMulSDN3egUDHO4NoPq1QtFwxb4PAJ4sVpGhry6iDgEKbHAOXsOx
+         rtXg==
+X-Forwarded-Encrypted: i=1; AJvYcCWjqHnUIE4SQjKP4SYH8w0DsVg7VZk7e+/YxP6dZfCOgjaJHmI/427nG4AQtxW5VnvePh1sA7svVis=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzvdgyNVxWTTPfWtnp+TxzQ3NepkvU76yxSw5ELemNOG82peyZU
+	4mD8SyXLcD6oHHv1rEiqFLaKstW+v7AROIaRVwb+UJcIRhkdvIc6QtkiKsIn2d4=
+X-Google-Smtp-Source: AGHT+IGmj57mtq465eQeNEM3MJbB1FH4T/C55hHZQXWyS33zmmMnbFslGOovmnW593TY87rhPFRh9A==
+X-Received: by 2002:a05:6512:3f18:b0:539:e60a:6dd0 with SMTP id 2adb3069b0e04-53a1545f5c1mr5230828e87.51.1729506800541;
+        Mon, 21 Oct 2024 03:33:20 -0700 (PDT)
 Received: from [127.0.1.1] (2001-14ba-a0c3-3a00-70b-e6fc-b322-6a1b.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:70b:e6fc:b322:6a1b])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53a22420015sm454132e87.123.2024.10.21.03.33.16
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53a22420015sm454132e87.123.2024.10.21.03.33.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 21 Oct 2024 03:33:17 -0700 (PDT)
+        Mon, 21 Oct 2024 03:33:19 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 21 Oct 2024 13:33:10 +0300
-Subject: [PATCH v2 4/6] phy: qualcomm: qmp-pcie: split PCS_LANE1 region
+Date: Mon, 21 Oct 2024 13:33:12 +0300
+Subject: [PATCH v2 6/6] phy: qualcomm: qmp-pcie: add support for SAR2130P
 MIME-Version: 1.0
-Message-Id: <20241021-sar2130p-phys-v2-4-d883acf170f7@linaro.org>
+Message-Id: <20241021-sar2130p-phys-v2-6-d883acf170f7@linaro.org>
 References: <20241021-sar2130p-phys-v2-0-d883acf170f7@linaro.org>
 In-Reply-To: <20241021-sar2130p-phys-v2-0-d883acf170f7@linaro.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -78,26 +78,27 @@ Cc: Johan Hovold <johan+linaro@kernel.org>, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=7955;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=8219;
  i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=UXDmPJ/23z2ls62ryM86x4tjZRAeCfpbFyCc69y6OPU=;
- b=owEBbQKS/ZANAwAKARTbcu2+gGW4AcsmYgBnFi3l+CdWZbHkwyIW5A7LUrs3BwjflFZIUiQVh
- eq53nVGLZmJAjMEAAEKAB0WIQRdB85SOKWMgfgVe+4U23LtvoBluAUCZxYt5QAKCRAU23LtvoBl
- uDTbD/4ydF3XTmXHXflRaxXCI6+ciQOzj2RBmrdndl8b3L8uZ1qeh4vTCMPxLZ0LNxqBIL1aU1S
- /c2cGzUiuBCeOYn3sU9FhbZYJxQblb8wXL/qld0mvINo9/CPv/qIrzQTkQNUNzmXKIJVv/Kw6no
- EyId6VriIsduhucUtw0vzmMmdY/LSztwHxCQIw+xALZ/sr6MTA+/qEv+x37BW5XcU2QxdetIiz1
- h6KgiVv/zXg1Ft1hUdygBnQR0XgGLypF6LY9cs0Q9vheEhEnIQA4kBPAUokYIndwwfDkYmP7oC8
- Yp6gOPvBaQmj45ga1PWG8NAcU8eB6I4W2Fd2OWwE8bu2fImgIPY9zIjbKga+4N7Vu4rQKswbYpB
- qbUpWGmhsYkvbxUCL7x2Kv/G6uaxddJzZDKNkaaG23NxMrUkpQx/YCJosj/qu6O5vWh2FBqZDpD
- 1ubc1TAH+Bc3+I5PW3osJlnqxciLb8mnAcZNylpKokE0dIYtYJ+dl02PKyWB4sj6AI63lCiTmV/
- r0UikhNUpJLt7+sdm+GMGggXTgzUu3MO3R4PxqWAMJzUI3ljq5PsocAdhpPkP/R4Yn+BFqD4hF0
- AxZ4wuifh1CiXjXFZw5m3inoZB2nVN2v82yxe+F+o37ZrOrv0NKGp25jR3eQu648nQPDBQpAjxD
- DvRzOALuk353m1A==
+ bh=C8i0BK5hjIYTgbsrEcYZTdHLVO8L8ePy9YX6HVa1xfY=;
+ b=owEBbQKS/ZANAwAKARTbcu2+gGW4AcsmYgBnFi3mDhUTzkMc3QYJyKmmx/dbbincKxTdi831X
+ p9cTn1PN9uJAjMEAAEKAB0WIQRdB85SOKWMgfgVe+4U23LtvoBluAUCZxYt5gAKCRAU23LtvoBl
+ uCEhD/9t0nsRG105zPFKyeZFtE/RQ/E2qhGKXgcEZGX4UZPRllM1yjkdvGso2O90rCzDJt/2MKL
+ e8pDxGTHGcuaa2te2RK6RFOMPjJPdNp359+QMWVKkoAMYDMPGgq37/mZaW8eViVfuQk3/dIIU4E
+ 3G/BHZbypAavtgYmEg060ZlzPfPmWFMqi9dPvBA9MUHvrDVJDRdFARDx3SGCMYooB4pkQTvrIZZ
+ IHlrHYcvClWV1JnNqDpuk8Vu8cfOIP0n/7kTwfL/sKALAOn4wmRB79MZUoOmCUl6Q8JrZt3dDU0
+ CUCG7OMhBBwPM4hzAUWkm77CSwDMJq+30CDtg++MouGeNh5lB4Cok7bjaz4zP5P+mZd+zS8mQN1
+ UwhXyX9obQRtYdNLm1DyrypenLG2+/XaZoE3gmVksAVB2ARKR2b+fa15QR03hRrMwa4URlAc3RA
+ mViwPCHHwlcQKjWEKxvqbRhIHPvSu+aewJhXUFk6qrDLz5mldxKWZDmkRWHX3e25zhLof44zB7F
+ LpgLGONxiR5eNf5a/QY0cyZ0A33PVnYHRz5mbgADLiTbVC5BlU2GYBWHUTzb1QPm6QUE4rm9bA5
+ 7aW5Cbr8ee4F/lpSFbMezfF89VSCtMQog1nF8pt47Kre7qb+0ZiyMjZXqSnXpaWq70BmvsSAWdO
+ uPai0xvx1BTZXaA==
 X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241021_033319_601297_7FDB9129 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20241021_033322_267106_C8356C35 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,190 +115,179 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCS_LANE1 region isn't a part of the PCS_PCIE region. It was handled
-this way as it simplified handled of devices with the old bindings.
-Nowadays it can be handled as is, without hacks.
-
-Split the PCS_LANE1 region from the PCS_PCIE / PCS_MISC region space.
+Add PCIe QMP PHY configuration for the Qualcomm SAR2130P platform.
 
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 32 ++++++++++++++++++----
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h |  5 ++--
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h |  5 ++--
- 3 files changed, 33 insertions(+), 9 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 141 +++++++++++++++++++++++++++++++
+ 1 file changed, 141 insertions(+)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 873f2f9844c66d7bd0b3bb3ab4bbd8be9a37cebd..1ca1f21b1cc225f435da9c775c97dfa142117f95 100644
+index 1ca1f21b1cc225f435da9c775c97dfa142117f95..c2ba411c6c90fbbc1b3e96b02e8e63c565f254f9 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -1773,7 +1773,7 @@ static const struct qmp_phy_init_tbl sdx55_qmp_pcie_rc_pcs_misc_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V4_20_PCS_PCIE_OSC_DTCT_ACTIONS, 0x00),
+@@ -2725,6 +2725,101 @@ static const struct qmp_phy_init_tbl sa8775p_qmp_gen4x2_pcie_ep_pcs_alt_tbl[] =
+ 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_INSIG_SW_CTRL7, 0x00),
  };
  
--static const struct qmp_phy_init_tbl sdx55_qmp_pcie_ep_pcs_misc_tbl[] = {
-+static const struct qmp_phy_init_tbl sdx55_qmp_pcie_ep_pcs_lane1_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V4_20_PCS_LANE1_INSIG_SW_CTRL2, 0x00),
- 	QMP_PHY_INIT_CFG(QPHY_V4_20_PCS_LANE1_INSIG_MX_CTRL2, 0x00),
- };
-@@ -1907,6 +1907,9 @@ static const struct qmp_phy_init_tbl sdx65_qmp_pcie_pcs_misc_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_G4_EQ_CONFIG2, 0x0d),
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_G4_EQ_CONFIG5, 0x02),
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_PCIE_G4_PRE_GAIN, 0x2e),
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_rc_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x31),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER2, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0x4c),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CLK_ENABLE1, 0x90),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYS_CLK_CTRL, 0x82),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x42),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x08),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x82),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x68),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0xea),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE1, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE1, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CLK_SELECT, 0x34),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADDITIONAL_MISC_3, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0xa0),
 +};
 +
-+static const struct qmp_phy_init_tbl sdx65_qmp_pcie_pcs_lane1_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_LANE1_INSIG_SW_CTRL2, 0x00),
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_LANE1_INSIG_MX_CTRL2, 0x00),
- };
-@@ -2582,8 +2585,6 @@ static const struct qmp_phy_init_tbl sa8775p_qmp_gen4_pcie_rc_pcs_misc_tbl[] = {
- static const struct qmp_phy_init_tbl sa8775p_qmp_gen4x2_pcie_pcs_alt_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_EQ_CONFIG4, 0x16),
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_EQ_CONFIG5, 0x22),
--	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_LANE1_INSIG_SW_CTRL2, 0x00),
--	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_LANE1_INSIG_MX_CTRL2, 0x00),
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_G3S2_PRE_GAIN, 0x2e),
- 	QMP_PHY_INIT_CFG(QPHY_V5_20_PCS_RX_SIGDET_LVL, 0x66),
- };
-@@ -2728,6 +2729,7 @@ struct qmp_pcie_offsets {
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_pcs_lane1_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_LANE1_INSIG_SW_CTRL2, 0x01),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_LANE1_INSIG_MX_CTRL2, 0x01),
++};
++
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_rc_tx_tbl[] = {
++	QMP_PHY_INIT_CFG_LANE(QSERDES_V6_TX_BIST_MODE_LANENO, 0x00, 2),
++};
++
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_rc_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_G12S1_TXDEEMPH_M6DB, 0x17),
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_G3S2_PRE_GAIN, 0x2e),
++};
++
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_ep_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYS_CLK_CTRL, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x28),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x28),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x0d),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x0d),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x42),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x09),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x19),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_INTEGLOOP_GAIN0_MODE0, 0xfb),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_INTEGLOOP_GAIN1_MODE0, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_INTEGLOOP_GAIN0_MODE1, 0xfb),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_INTEGLOOP_GAIN1_MODE1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_MODE, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0xa0),
++};
++
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_ep_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V6_PCS_G12S1_TXDEEMPH_M6DB, 0x17),
++};
++
++static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_ep_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_EQ_CONFIG1, 0x1e),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG2, 0x14),
++	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
++};
++
+ struct qmp_pcie_offsets {
  	u16 serdes;
  	u16 pcs;
- 	u16 pcs_misc;
-+	u16 pcs_lane1;
- 	u16 tx;
- 	u16 rx;
- 	u16 tx2;
-@@ -2752,6 +2754,8 @@ struct qmp_phy_cfg_tbls {
- 	int pcs_num;
- 	const struct qmp_phy_init_tbl *pcs_misc;
- 	int pcs_misc_num;
-+	const struct qmp_phy_init_tbl *pcs_lane1;
-+	int pcs_lane1_num;
- 	const struct qmp_phy_init_tbl *ln_shrd;
- 	int ln_shrd_num;
+@@ -3290,6 +3385,49 @@ static const struct qmp_phy_cfg msm8998_pciephy_cfg = {
+ 	.skip_start_delay	= true,
  };
-@@ -2811,6 +2815,7 @@ struct qmp_pcie {
- 	void __iomem *serdes;
- 	void __iomem *pcs;
- 	void __iomem *pcs_misc;
-+	void __iomem *pcs_lane1;
- 	void __iomem *tx;
- 	void __iomem *rx;
- 	void __iomem *tx2;
-@@ -2927,6 +2932,7 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v4_20 = {
- 	.serdes		= 0x1000,
- 	.pcs		= 0x1200,
- 	.pcs_misc	= 0x1600,
-+	.pcs_lane1	= 0x1e00,
- 	.tx		= 0x0000,
- 	.rx		= 0x0200,
- 	.tx2		= 0x0800,
-@@ -2957,6 +2963,7 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v5_20 = {
- 	.serdes		= 0x1000,
- 	.pcs		= 0x1200,
- 	.pcs_misc	= 0x1400,
-+	.pcs_lane1	= 0x1e00,
- 	.tx		= 0x0000,
- 	.rx		= 0x0200,
- 	.tx2		= 0x0800,
-@@ -3440,8 +3447,8 @@ static const struct qmp_phy_cfg sdx55_qmp_pciephy_cfg = {
- 	.tbls_ep = &(const struct qmp_phy_cfg_tbls) {
- 		.serdes		= sdx55_qmp_pcie_ep_serdes_tbl,
- 		.serdes_num	= ARRAY_SIZE(sdx55_qmp_pcie_ep_serdes_tbl),
--		.pcs_misc	= sdx55_qmp_pcie_ep_pcs_misc_tbl,
--		.pcs_misc_num	= ARRAY_SIZE(sdx55_qmp_pcie_ep_pcs_misc_tbl),
-+		.pcs_lane1	= sdx55_qmp_pcie_ep_pcs_lane1_tbl,
-+		.pcs_lane1_num	= ARRAY_SIZE(sdx55_qmp_pcie_ep_pcs_lane1_tbl),
- 	},
  
- 	.reset_list		= sdm845_pciephy_reset_l,
-@@ -3540,6 +3547,8 @@ static const struct qmp_phy_cfg sdx65_qmp_pciephy_cfg = {
- 			.pcs_num        = ARRAY_SIZE(sdx65_qmp_pcie_pcs_tbl),
- 			.pcs_misc       = sdx65_qmp_pcie_pcs_misc_tbl,
- 			.pcs_misc_num   = ARRAY_SIZE(sdx65_qmp_pcie_pcs_misc_tbl),
-+			.pcs_lane1       = sdx65_qmp_pcie_pcs_lane1_tbl,
-+			.pcs_lane1_num   = ARRAY_SIZE(sdx65_qmp_pcie_pcs_lane1_tbl),
- 		},
- 	.reset_list             = sdm845_pciephy_reset_l,
- 	.num_resets             = ARRAY_SIZE(sdm845_pciephy_reset_l),
-@@ -3739,6 +3748,8 @@ static const struct qmp_phy_cfg sa8775p_qmp_gen4x2_pciephy_cfg = {
- 		.pcs_num		= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_pcs_alt_tbl),
- 		.pcs_misc		= sa8775p_qmp_gen4_pcie_pcs_misc_tbl,
- 		.pcs_misc_num	= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_pcs_misc_tbl),
-+		.pcs_lane1	= sdx65_qmp_pcie_pcs_lane1_tbl,
-+		.pcs_lane1_num	= ARRAY_SIZE(sdx65_qmp_pcie_pcs_lane1_tbl),
- 	},
- 
- 	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
-@@ -3945,6 +3956,7 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
- 	void __iomem *rx2 = qmp->rx2;
- 	void __iomem *pcs = qmp->pcs;
- 	void __iomem *pcs_misc = qmp->pcs_misc;
-+	void __iomem *pcs_lane1 = qmp->pcs_lane1;
- 	void __iomem *ln_shrd = qmp->ln_shrd;
- 
- 	if (!tbls)
-@@ -3969,6 +3981,7 @@ static void qmp_pcie_init_registers(struct qmp_pcie *qmp, const struct qmp_phy_c
- 
- 	qmp_configure(qmp->dev, pcs, tbls->pcs, tbls->pcs_num);
- 	qmp_configure(qmp->dev, pcs_misc, tbls->pcs_misc, tbls->pcs_misc_num);
-+	qmp_configure(qmp->dev, pcs_lane1, tbls->pcs_lane1, tbls->pcs_lane1_num);
- 
- 	if (cfg->lanes >= 4 && qmp->tcsr_4ln_config) {
- 		qmp_configure(qmp->dev, serdes, cfg->serdes_4ln_tbl,
-@@ -4420,6 +4433,14 @@ static int qmp_pcie_parse_dt_legacy(struct qmp_pcie *qmp, struct device_node *np
- 		}
- 	}
- 
-+	/*
-+	 * For all platforms where legacy bindings existed, PCS_LANE1 was
-+	 * mapped as a part of the PCS_MISC region.
-+	 */
-+	if (!IS_ERR(qmp->pcs_misc) && cfg->offsets->pcs_lane1 != 0)
-+		qmp->pcs_lane1 = qmp->pcs_misc +
-+			(cfg->offsets->pcs_lane1 - cfg->offsets->pcs_misc);
++static const struct qmp_phy_cfg sar2130p_qmp_gen3x2_pciephy_cfg = {
++	.lanes = 2,
 +
- 	clk = devm_get_clk_from_child(dev, np, NULL);
- 	if (IS_ERR(clk)) {
- 		return dev_err_probe(dev, PTR_ERR(clk),
-@@ -4487,6 +4508,7 @@ static int qmp_pcie_parse_dt(struct qmp_pcie *qmp)
- 	qmp->serdes = base + offs->serdes;
- 	qmp->pcs = base + offs->pcs;
- 	qmp->pcs_misc = base + offs->pcs_misc;
-+	qmp->pcs_lane1 = base + offs->pcs_lane1;
- 	qmp->tx = base + offs->tx;
- 	qmp->rx = base + offs->rx;
- 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h
-index ac872a9eff9a8fe7fc3307759288aee15d17bd24..ab892d1067c219e8db0ba0591921b38a9cebebe7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v4_20.h
-@@ -13,7 +13,8 @@
- #define QPHY_V4_20_PCS_PCIE_G4_RXEQEVAL_TIME		0x0f4
- #define QPHY_V4_20_PCS_PCIE_G4_EQ_CONFIG2		0x0fc
- #define QPHY_V4_20_PCS_PCIE_G4_EQ_CONFIG5		0x108
--#define QPHY_V4_20_PCS_LANE1_INSIG_SW_CTRL2		0x824
--#define QPHY_V4_20_PCS_LANE1_INSIG_MX_CTRL2		0x828
++	.offsets		= &qmp_pcie_offsets_v5,
 +
-+#define QPHY_V4_20_PCS_LANE1_INSIG_SW_CTRL2		0x024
-+#define QPHY_V4_20_PCS_LANE1_INSIG_MX_CTRL2		0x028
- 
- #endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h
-index cdf8c04ea078a985be82d561ad0918dfdece9987..283d63c8159338b57a5026b6c2a86e3cce21097c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v5_20.h
-@@ -17,7 +17,8 @@
- #define QPHY_V5_20_PCS_PCIE_G4_EQ_CONFIG5		0x108
- #define QPHY_V5_20_PCS_PCIE_G4_PRE_GAIN			0x15c
- #define QPHY_V5_20_PCS_PCIE_RX_MARGINING_CONFIG3	0x184
--#define QPHY_V5_20_PCS_LANE1_INSIG_SW_CTRL2		0xa24
--#define QPHY_V5_20_PCS_LANE1_INSIG_MX_CTRL2		0xa28
++	.tbls = {
++		.tx		= sm8550_qmp_gen3x2_pcie_tx_tbl,
++		.tx_num		= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_tx_tbl),
++		.rx		= sm8550_qmp_gen3x2_pcie_rx_tbl,
++		.rx_num		= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_rx_tbl),
++		.pcs		= sm8550_qmp_gen3x2_pcie_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_pcs_tbl),
++		.pcs_lane1	= sar2130p_qmp_gen3x2_pcie_pcs_lane1_tbl,
++		.pcs_lane1_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_pcs_lane1_tbl),
++	},
++	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
++		.serdes		= sar2130p_qmp_gen3x2_pcie_rc_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_rc_serdes_tbl),
++		.tx		= sar2130p_qmp_gen3x2_pcie_rc_tx_tbl,
++		.tx_num		= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_rc_tx_tbl),
++		.pcs		= sar2130p_qmp_gen3x2_pcie_rc_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_rc_pcs_tbl),
++		.pcs_misc	= sm8550_qmp_gen3x2_pcie_pcs_misc_tbl,
++		.pcs_misc_num	= ARRAY_SIZE(sm8550_qmp_gen3x2_pcie_pcs_misc_tbl),
++	},
++	.tbls_ep = &(const struct qmp_phy_cfg_tbls) {
++		.serdes		= sar2130p_qmp_gen3x2_pcie_ep_serdes_tbl,
++		.serdes_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_ep_serdes_tbl),
++		.pcs		= sar2130p_qmp_gen3x2_pcie_ep_pcs_tbl,
++		.pcs_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_ep_pcs_tbl),
++		.pcs_misc	= sar2130p_qmp_gen3x2_pcie_ep_pcs_misc_tbl,
++		.pcs_misc_num	= ARRAY_SIZE(sar2130p_qmp_gen3x2_pcie_ep_pcs_misc_tbl),
++	},
++	.reset_list		= sdm845_pciephy_reset_l,
++	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
++	.vreg_list		= qmp_phy_vreg_l,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs			= pciephy_v5_regs_layout,
 +
-+#define QPHY_V5_20_PCS_LANE1_INSIG_SW_CTRL2		0x024
-+#define QPHY_V5_20_PCS_LANE1_INSIG_MX_CTRL2		0x028
++	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
++	.phy_status		= PHYSTATUS,
++};
++
+ static const struct qmp_phy_cfg sc8180x_pciephy_cfg = {
+ 	.lanes			= 2,
  
- #endif
+@@ -4639,6 +4777,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,sa8775p-qmp-gen4x4-pcie-phy",
+ 		.data = &sa8775p_qmp_gen4x4_pciephy_cfg,
++	}, {
++		.compatible = "qcom,sar2130p-qmp-gen3x2-pcie-phy",
++		.data = &sar2130p_qmp_gen3x2_pciephy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sc8180x-qmp-pcie-phy",
+ 		.data = &sc8180x_pciephy_cfg,
 
 -- 
 2.39.5
