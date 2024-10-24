@@ -4,165 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70E54CE8E83
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 14:40:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90122CE8E83
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 14:44:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cIqjinWsfacg16utpsonAg+CPM578Y6jfpwnn93/e6I=; b=WGb1xzUDSDtnQi
-	lfr6QKxK3ey2Cn6u5HOeVMOTCQ/nbvQNBA42LDkjB8U8fU/4ADg2UcpbkVWQviYKK4ppx24dkaYR9
-	taeeNXapg44n3PGlKSHm2H5CZ4LXBC5sL5+HD19678ptP0zD7Bw158rwK4Um1C5s/0IU6Tg2d3ong
-	eblKw5MsV4lkUG7Qe5QnTNdlNYtykEyKdiu7pOxjrymb9edyjAIGqfdRfxGHxXnQ0++QilCzsvwfy
-	uPXZI1mlHsQR19tSIl6C2otPoI6gODTu8Uyw62HPqkE5FAh4j5jg/PAED9xLFB0XbUM5NLngWV0hr
-	rv9wYzf+aKSCsUzT/qGw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UPmEIvLNoeOBZkdRZ+1t7F2J4McvxkUYEjoUI2q+ZQk=; b=hBiLSm1nWDnePx
+	KQbKhsFPz5hs+5M0OM0QQZoNfdNAXA5FxfdhpilbPmo/XljOIp6wwn3PKBjoYUPQaosgxX2iBJyzK
+	lm0SeA+jTBy5zwKo++WQ8FDXxoeCCWbpHS7lHoIIpgUyqv7+UiBpSNzYvzHvfJIR0YfU844x5W2sH
+	YYodnNRDasijiIrz9d9NC8sXLWI/RjQfr76KZZ088cHBJeD/CLr5Wq9saJoY6FHfmyz6V4XnVYRRd
+	YghuRC5x+YqJWxs7P8JGlrddDXRUPi2/GQFBzTLTci1NtepI8O5pX8fQ4WpU4b1c6rHqZXZQZdg/T
+	stGmKirrS+RsTA7m5Lag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3z18-00000000mIj-38d4;
-	Thu, 24 Oct 2024 14:40:50 +0000
-Received: from mail-db8eur05on20618.outbound.protection.outlook.com ([2a01:111:f403:2614::618] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1t3z4E-00000000nKQ-1KFQ;
+	Thu, 24 Oct 2024 14:44:02 +0000
+Received: from pv50p00im-hyfv10011601.me.com ([17.58.6.43])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3ym1-00000000iNQ-425H;
-	Thu, 24 Oct 2024 14:25:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=v9Fpc6hpIBgBHPD7GFXSuMkEip97R1TOc4nLqZFqwdBNerxUgOfCQBmaP3t2n1eHCW3hsnRwT0jnSd/OuJQb7RWAJWn1JnQAv+NsvI95Z+LcJyCSiekwHw7eDle9LFe16ChggRzibzzmjypig3aLu/OUbH2tcGUBEuFMF7lVSULvxsUiuEoFMBL9clSyQhn5yG4sBYFn74zCYiRJ7L1iQyfuIgbrHugILgDPedc+iVpY5FzNbfkYF/Z0xOIN0GxumLFVOkPt3SMiFO1KAB4OsfljuPbwIhbnhdZhKQ9kM4sNdILURBJoJoUd57npxr5tWIXOBwwMLN00hZtMSx2WyQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=RuOC82yznwSVlpRaCxZc5NpYRcHS7b38sQYtMg9Jk2U=;
- b=R5O9clgfY369ul+1UMrBIjyQRADcOG1YN/Z9E9Kr7u03OU4NGwKe9DpE2IknIhKeN+KRyE1cn4weoxEmKD15zTBqN88Ofe87BtzppUEVtDNzcjiheVpFedpMEY261L4IcypzdMFcXXecI5tUjVtdj5z92qQJiqh+seAbGLvsp18mEtUwidaQiN1cH43cb2gbzBuY+Mqk62FsPzQMUHgU6fZLysaA/2spE3k+m8QwRnvieuFAm7b3e6HBIqAjYBL7QZkYG43QVbzrKM1u+nISelOqxvKI2rY2tMHXigP5Q6PiHt2wfAKrXLHp+if7fnLi/R1g4OzwEdKYdPyHOyangA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RuOC82yznwSVlpRaCxZc5NpYRcHS7b38sQYtMg9Jk2U=;
- b=Jgkzt7rmb3BygPRzWA8sFTghqhEtfkyQjfOxBl8NH8LrnQJ8zIAo9f8TWCXTePaV8JcUVmuI7bImuQOaNESHVDeZNrhw/gxBjwzZ3U71SHq48RxDzBpX+9M8/t17GGWLjbWj0ytdP5iHgsK/mIDOBHpK/pzwIhdX3QFjYE7nBOzWyXEA3oQqT5uWaVkrRKwKeh0Z8H8zcRqZqpDwUug83XlHtG6J45QQ+Z1Z1WA+b3jFoZnxZUsQYkPOWkv2I5DxqKwsBSVA6sw7RfiY6/3+09LAcEW82Rcg8PuW5MKzB2thhOkEKjWQbilresR5DOSMYOB2JIh7l/ZXyRy0Xd4YsQ==
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com (2603:10a6:102:2b1::21)
- by AS8PR04MB8149.eurprd04.prod.outlook.com (2603:10a6:20b:3fd::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8093.20; Thu, 24 Oct
- 2024 14:25:01 +0000
-Received: from PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::51ae:5f12:9744:1abc]) by PAXPR04MB9448.eurprd04.prod.outlook.com
- ([fe80::51ae:5f12:9744:1abc%6]) with mapi id 15.20.8069.027; Thu, 24 Oct 2024
- 14:25:01 +0000
-From: Sandor Yu <sandor.yu@nxp.com>
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Maxime Ripard
-	<mripard@kernel.org>
-CC: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>,
-	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, Laurent Pinchart
-	<laurent.pinchart@ideasonboard.com>, "jonas@kwiboo.se" <jonas@kwiboo.se>,
-	"jernej.skrabec@gmail.com" <jernej.skrabec@gmail.com>, "airlied@gmail.com"
-	<airlied@gmail.com>, "daniel@ffwll.ch" <daniel@ffwll.ch>,
-	"robh+dt@kernel.org" <robh+dt@kernel.org>,
-	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
-	"shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
-	<s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
-	"vkoul@kernel.org" <vkoul@kernel.org>, "dri-devel@lists.freedesktop.org"
-	<dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "kernel@pengutronix.de"
-	<kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, Oliver Brown
-	<oliver.brown@nxp.com>, "alexander.stein@ew.tq-group.com"
-	<alexander.stein@ew.tq-group.com>, "sam@ravnborg.org" <sam@ravnborg.org>
-Subject: Re: [PATCH v17 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
-Thread-Topic: [PATCH v17 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI
- driver
-Thread-Index: AQHbJiCCV28fXZo0AEWS4RUUOAfgDQ==
-Date: Thu, 24 Oct 2024 14:25:01 +0000
-Message-ID: <PAXPR04MB9448C42CB5AD837DEAE01182F44E2@PAXPR04MB9448.eurprd04.prod.outlook.com>
-References: <cover.1727159906.git.Sandor.yu@nxp.com>
- <8bdf573bfd7e3feb45d7ccb53765a978a685ce2d.1727159906.git.Sandor.yu@nxp.com>
- <20240924-mottled-psychedelic-lorikeet-ef8f4c@houat>
- <DB9PR04MB945284B95FAE4FE127E6568FF4752@DB9PR04MB9452.eurprd04.prod.outlook.com>
- <wdelo4zco6v5qchdupfvbrqin4n7fyjyo6yaqbpfihdkkhceoi@ja4zxmhk5isq>
- <l27rc2lo4pt3mfwknjyy755li3q7vgqesoev25ulapwsenkkuj@w26ts47a2llz>
-In-Reply-To: <l27rc2lo4pt3mfwknjyy755li3q7vgqesoev25ulapwsenkkuj@w26ts47a2llz>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PAXPR04MB9448:EE_|AS8PR04MB8149:EE_
-x-ms-office365-filtering-correlation-id: 67356af8-7b30-47cd-c796-08dcf437a534
-x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|1800799024|7416014|38070700018;
-x-microsoft-antispam-message-info: =?us-ascii?Q?1NNAswaXGWjHsYpVPQRgj7PYJeJT1Guvt53NO7U81mrQpGUMkipeYUULoL6U?=
- =?us-ascii?Q?GnzMXt31O7DM67K1HHVtEmZJdFEs3e+v/Gg9/sJxTA7KbSfLyrZ/sJvvTytw?=
- =?us-ascii?Q?uv1aUOWf73aBotuwBeVJAGM29cgWf/6OkCdT36oW1EgeNc3CCh43LXTJgOwE?=
- =?us-ascii?Q?iD2e5YCUrUpME4RXhhzlPeE5nBphkY9t0j31AlSXFraqxs7apZ++Jd676CZZ?=
- =?us-ascii?Q?D8JNHHavW3++/MqKwewGYS4XHeV8aGpWJPx2dGIbCv4i6KTgcmuXzoDwE0b8?=
- =?us-ascii?Q?mUMsY22z3MExPqpTiy7IFETGEPB3sm4xRsBkwwXJo+nS28S/Z9t4RwLR9EQ+?=
- =?us-ascii?Q?E+MmZVK/9jsKS7OAEKsnr61Mzq66aLwtD3p4HD6jkfq1UFfOypjqDkCDvSR3?=
- =?us-ascii?Q?4fa2zQBYwyHz75Bn36quPCeVfb6IrYHT11apmbyUITn9L8m9Rxggf+3b6fmU?=
- =?us-ascii?Q?0nh8KW8NqBxzJFg7Ymo5vpOZmgdpYJxbhTAAgecoQYBDv8EikTz3XBlQerrR?=
- =?us-ascii?Q?BkxJd0PdGj94pfxIBmV/H5spNbrOKyBX7fsQUunCEkWt+Gx0cBPpSObzQfR2?=
- =?us-ascii?Q?1EcAkDzNDTGkAqEq6Wh7+CoLlpFg1LR6CCVlOr+sdX+Lp3cj2M1p05XReBkN?=
- =?us-ascii?Q?HTfYZW2hg9OB1UlaH51P8+gLMN9Q3vs9FhmY1VP0vSHemEY4OmFnne66GP7Y?=
- =?us-ascii?Q?pdgDO6rXDCC1rszW5xCy/LgldwnMr1LZo3v7PVHBqilMNqSOoA1WivADvPcf?=
- =?us-ascii?Q?jBpIQGEg2OWC+9x8OP/F//woXu9oH3Jg3TFo02BLRidgiVjnrrOwDCWpaR56?=
- =?us-ascii?Q?F0Km4IyW0j1WJzOw7jUX9XQnAYpwBolAtAXyq/zI0gBECMALotvvl2ye44PX?=
- =?us-ascii?Q?e/EPUqxLj3AO9bKhdOKZiQaTWxfG2oRZjr/HmatZ5lhYiEWsUVhEDjtnUToA?=
- =?us-ascii?Q?QxViLdPr+H3bPNYQ5EQh4Hy6nOJBoKdmJO9/iXuPsCUT0vXy3ODs8tDkkM3m?=
- =?us-ascii?Q?KeMu4frxxAkCBtQsfEOc70gmN/EnbYwVO/ib+cKQB1A+LlnKZfgQMvGMC0cO?=
- =?us-ascii?Q?fkGPtB9EuHZY0s4XLTx84h0UBgueTtB7P0Hw6v+xCZs7WLAp+A3pGVvds7EY?=
- =?us-ascii?Q?72v+bXIofgRZgejBC3S9vq/wWyVsxSXPIvYdQefWsqBi18H6FTfVLaFID3VW?=
- =?us-ascii?Q?GVeXzQodkvuqBYvS3BANl6UGxOsWdFWvH4o8P3o7FnYXrZSSTGwLtC1VDIFl?=
- =?us-ascii?Q?sAc5lKXY7+gj4/n+XXkktR7yVVLW9T9g5fEGmP2BzOD2EzoKjV+sEJlq0cf9?=
- =?us-ascii?Q?iX7rxtK/tgwECGO3rcFgFoYl?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9448.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(7416014)(38070700018);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?vbR/cUXf84Y6QPogvr8KjwgAXkiRxoClMhTto/vIEs3x3bhHdEKkALyTSxKw?=
- =?us-ascii?Q?wC6RTtjPL2aJKlPhWJIdbz0Yf0PkBN2rji8BAvQ/8wVUejX3rWkRP1UzXTdD?=
- =?us-ascii?Q?SY0/AnKxlJEiJY0yHAdDwhaVJc0r1e62cDB36D7NX+jHUvT605N6csCoeD2K?=
- =?us-ascii?Q?Nlb/R+0h8L7A+PtgYEn24NafVHqibSIbkzPNc5OyM6fMgwkoHCp56SlT3AwA?=
- =?us-ascii?Q?DbWT+qaMet11WiEraZYFl0LKbmgq+k3JaW/OBUgTJ+FthRPiG70SNG7FeVCj?=
- =?us-ascii?Q?srtU8YZyb65svqAtSHMM+aBvcQrsFMIRkx8RCrf8QZ8f7plrwzbpRsWmaZwf?=
- =?us-ascii?Q?5X59oHl8kfU790sHWpEmBW2/aPnQmKdm8QA5QR4YSY533bymTJVv0LSlNoBt?=
- =?us-ascii?Q?XleaMVzVmUB39mCgC+vVtn+7xYvNkBlCZ2P5EKQxKogXyg3IfL2zngWpmPaC?=
- =?us-ascii?Q?kWzu05eqKAPn7W8e7inOIExFy3KekRZibZI4E1SFeA+VHtFoSViogp4e17xJ?=
- =?us-ascii?Q?lgDIlAaymO34AZTJhbIMFWBjOPsT0fzzYAuacEOGMGdzVgcZxnRCKn/qzKvP?=
- =?us-ascii?Q?ybk3VfW4fdV9inNhAaKz+N/g0lX9scoIvGMo4y7YGnqiH7iAmu5/TavpImqP?=
- =?us-ascii?Q?XvICDJMfa98wB/WSSYxJWZcBOaL6mdg9BKN/ZMHeGqC8nnG0q8+GAAAjgkqc?=
- =?us-ascii?Q?Dw9T65itKTjAcsGNeOkJWujxIuamZHNVIfJl99RhX3paXAiRBHPi6Fh2HVsk?=
- =?us-ascii?Q?ot0iFZgTZdKnGdH1StdBCUXyGi6a3QC4nXU4dY17/kIJEr9tMABXFl34CTw6?=
- =?us-ascii?Q?6PWWdRBfkuBH1IzejyN+bOdccSn+PwZfYobx7pUOKBSWTy4Eoo/Neh0qziix?=
- =?us-ascii?Q?G9X/3yceUBPb0E2XoA4Jo+yYLFQIUx88B4IzhZFhKTuoehikfm6PmdUkAZkE?=
- =?us-ascii?Q?Mml+TVaSgUGSpEvx2Njm7leEuOO+RuRfjCQ1oChBnEOaYx2fTKT1nPauyOmk?=
- =?us-ascii?Q?mYs2hPIP8bJv6ZRC/Thnn71FkPm4vGfiUC3IBybovjkNWlI0qhCZU6/jlqv8?=
- =?us-ascii?Q?ppieTx4Y5ngYweRbi8LzYGDg1+GyQHq2YrVGSNOsBXehU0BFTY0dq6tcpT40?=
- =?us-ascii?Q?umaDxJuJQ4u7cZjWklyKtuL5GNKQifU2FQn9YVhOpntVLFU1QjcVoU23NTfd?=
- =?us-ascii?Q?nJbg58Fum0mTS4oExKC+2tcO8EGk+kaBgD943xwOWGfmNVyFxiLydOMYmHS3?=
- =?us-ascii?Q?TTBA/J3pndqPw5cmksrmkRnNtkZKtSD1McWKHjlNPckyCmQ+K/gobAP3hBg9?=
- =?us-ascii?Q?WgbWQOabUpRprJPMxrNGxZWg5cKpSGkVqHQLz2ebreg+PTV4z8t6i8P9i+bm?=
- =?us-ascii?Q?ZfAGsAcXkjFi7k/zSqDiNW2zchskmjrnVOFeCeAsjWvRlwDWN2aDxxG8EsbZ?=
- =?us-ascii?Q?d4ow2HGmRtvLUZxfD9qh2Yk4R4e5dKiNDoM9D2ZmPB5ON4KYE8hKeeh4Tc28?=
- =?us-ascii?Q?2jbxjcDZimQbZ3g+6yrwu191CjD9ZhBnvD4sJ+9DwAlPpuWADyMaGIRNklGl?=
- =?us-ascii?Q?bZK/VMysJT3/forTgWU=3D?=
+	id 1t3z0h-00000000m7J-1tAR
+	for linux-phy@lists.infradead.org;
+	Thu, 24 Oct 2024 14:40:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
+	s=1a1hai; t=1729780806;
+	bh=ElEUXfsmj+BGFWeZ+4fY2pT8AL/H58IUKyHjLlkrc24=;
+	h=From:Subject:Date:Message-Id:MIME-Version:Content-Type:To;
+	b=SOyz2ggUisFgCRAISxeuflGhAWUdYDibnEcSe2fLViYcwdcLBUsm0gngWCzf76JFY
+	 3/zkx1p/7gXKY3gDwpeQNV2tWOpJHmpX8GZy7J3SjqxBzCH0ZIRNpCvcjm3kgCZbiN
+	 FxSOfUsu74IktD+xLB/jiK6pFZ8XyazGKnwMMJvtgj4Fac5wCaiqKULrlXEm+PjHno
+	 oO4htjxXKMrs/vWd7sHflKTDclbOJyPxef7QvooGMrTORo/S3IzZdeLP8OVJEPB2nT
+	 Fb5TaByocIkgdIyuuoX1BLmEAOS9UkaWGjoBTVYC2YtND977+3krTufz+XsBeVE1Dg
+	 DPhqeS/EZS9Bw==
+Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
+	by pv50p00im-hyfv10011601.me.com (Postfix) with ESMTPSA id DD8D3C8018B;
+	Thu, 24 Oct 2024 14:39:59 +0000 (UTC)
+From: Zijun Hu <zijun_hu@icloud.com>
+Subject: [PATCH v2 0/6] phy: core: Fix bugs for several APIs and simplify
+ an API
+Date: Thu, 24 Oct 2024 22:39:25 +0800
+Message-Id: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9448.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 67356af8-7b30-47cd-c796-08dcf437a534
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Oct 2024 14:25:01.1533
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /cZ06DdHYpGK2gQYCGl1GtnbY4SSJkkcnybMiUA2wZrGgPyaN82jPN9xsvV33Y86XUG400AUnyTZMjAsTyvI8A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8149
+X-B4-Tracking: v=1; b=H4sIAB1cGmcC/3WMQQ7CIBAAv9LsWQygltqT/zBNg7DIHiwVlNg0/
+ F3s3eNMMrNCwkiYoG9WiJgpUZgqyF0DxuvpjoxsZZBcHgWXnM1+GU2IODr6MDxo257s7dw5BTW
+ ZI1a97a5DZU/pFeKy3bP42T+jLBhnXHW8lU5ZrcTl+SZDk9mb8IChlPIF43ttYKoAAAA=
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>, 
+ Lee Jones <lee@kernel.org>
+Cc: Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>, 
+ Zijun Hu <zijun_hu@icloud.com>, stable@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Zijun Hu <quic_zijuhu@quicinc.com>
+X-Mailer: b4 0.14.1
+X-Proofpoint-ORIG-GUID: 9n3-w7T1ahFC5qSBvrhN7QQIjqgA1PEY
+X-Proofpoint-GUID: 9n3-w7T1ahFC5qSBvrhN7QQIjqgA1PEY
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
+ definitions=2024-10-24_15,2024-10-24_02,2024-09-30_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=631 clxscore=1011
+ mlxscore=0 spamscore=0 phishscore=0 malwarescore=0 adultscore=0
+ suspectscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2308100000 definitions=main-2410240120
+X-Apple-Remote-Links: v=1;h=KCk=;charset=UTF-8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_072514_730654_9AE466FE 
-X-CRM114-Status: GOOD (  32.30  )
+X-CRM114-CacheID: sfid-20241024_074023_510053_7BD250A2 
+X-CRM114-Status: UNSURE (   5.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -179,183 +94,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
->
-> On Mon, Sep 30, 2024 at 10:18:06AM +0200, Maxime Ripard wrote:
-> > On Sun, Sep 29, 2024 at 02:34:36AM GMT, Sandor Yu wrote:
-> > > > > +static void cdns_hdmi_sink_config(struct cdns_mhdp8501_device
-> > > > > +*mhdp) {
-> > > > > +       struct drm_display_info *display =
-> &mhdp->curr_conn->display_info;
-> > > > > +       struct drm_connector_state *conn_state =
-> > > > > +mhdp->curr_conn->state;
-> > > >
-> > > > That looks a bit hackish to me. We should probably provide a
-> > > > helper to get the connector state the bridge is attached to.
-> > >
-> > > How about code change to followed, is it more clear?
-> > > 370         struct drm_connector *connector = mhdp->curr_conn;
-> > > 371         struct drm_connector_state *conn_state =
-> connector->state;
-> > > 372         struct drm_display_info *display =
-> &connector->display_info;
-> > > 373         struct drm_scdc *scdc = &display->hdmi.scdc;
-> >
-> > What I meant was that I wish bridges had a way to get their connector
-> > pointer. It doesn't look like it's possible with drm_bridge_connector,
-> > and we don't have access to drm_display_info anymore.
-> >
-> > I don't really see a good way to do this yet, so maybe that kind of
-> > workaround is ok. Eventually, I guess we'll have the scrambler setup
-> > in the HDMI connector helpers anyway.
-> >
-> > Dmitry, any idea?
->
-> Unfortunately nothing significant, I didn't have time to look at the scrambler
-> yet. The platforms that I'm working with either do not support HDMI 2.0 or
-> require no additional setup there.
->
-> Regarding the drm_connector_state, I had to go via the bridge->encoder, then
-> drm_atomic_get_new_connector_for_encoder() and finally
-> drm_atomic_get_new_connector_state(). I don't like the idea of storing the
-> connector in drm_bridge driver data, it seems like a bad idea to me.
->
+This patch series is to fix bugs for below APIs:
 
-Some DRM drivers save the connector and its state after calling bridge_atomic_enable.
-They then reference connector state in other parts of the driver.
-Could there be any problems with this approach, assuming all subsequent uses happen after the bridge_atomic_enable call?
+devm_phy_put()
+devm_of_phy_provider_unregister()
+devm_phy_destroy()
+phy_get()
+of_phy_get()
+devm_phy_get()
+devm_of_phy_get()
+devm_of_phy_get_by_index()
 
-For the drm_connector_state in cdns_hdmi_sink_config function,
-it could be removed and replace by tmds_char_rate, the parameter could be passed from bridge_atomic_enable.
+And simplify below API:
 
-For scrambler setup,
-I'm thinking of proposing this function as a new SCDC API.
-If it's okay, I'll create a patch and send it out for review.
-We can use this API to set scrambling and clock_ratio in both my current and future drivers.
-290 bool
-291 drm_scdc_configure_hdmi_sink_tmds(struct drm_connector *connector,
-292                                   unsigned long long tmds_char_rate,
-293                                   bool scrambling_low_rates)
-294 {
-295         struct drm_display_info *info = &connector->display_info;
-296         struct drm_scdc *scdc = &info->hdmi.scdc;
-297         bool hdmi_scrambling = false;
-298         bool hdmi_high_tmds_clock_ratio = false;
-299
-300         /* check HDMI sink type, HDMI2.0+ or not */
-301         if (!info->is_hdmi || !scdc->supported)
-302                 return false;
-303
-304         if (tmds_char_rate > HDMI_14_MAX_TMDS_CLK) {
-305                 /*
-306                  * TMDS Character Rate above 340MHz should
-307                  * enable scrambling and TMDS_Bit_Clock_Ratio
-308                  */
-309                 hdmi_scrambling = true;
-310                 hdmi_high_tmds_clock_ratio = true;
-311         } else if (scrambling_low_rates && scdc->scrambling.low_rates) {
-312                 /*
-313                  * Enable scrambling when its capability be indicated
-314                  * in the HF-VSDB LTE_340Mcsc_scramble bit
-315                  */
-316                 hdmi_scrambling = true;
-317         }
-318
-319         /* Set TMDS bit clock ratio to 1/40 or 1/10, and enable/disable scrambling */
-320         return  drm_scdc_set_scrambling(connector, hdmi_scrambling) &&
-321                 drm_scdc_set_high_tmds_clock_ratio(connector, hdmi_high_tmds_clock_ratio);
-322
-323 }
-324 EXPORT_SYMBOL(drm_scdc_configure_hdmi_sink_tmds);
+of_phy_simple_xlate().
 
-> >
-> > > > > +static enum drm_mode_status
-> > > > > +cdns_hdmi_tmds_char_rate_valid(const struct drm_bridge *bridge,
-> > > > > +                              const struct drm_display_mode
-> *mode,
-> > > > > +                              unsigned long long tmds_rate) {
-> > > > > +       struct cdns_mhdp8501_device *mhdp =
-> bridge->driver_private;
-> > > > > +       union phy_configure_opts phy_cfg;
-> > > > > +       int ret;
-> > > > > +
-> > > > > +       phy_cfg.hdmi.tmds_char_rate = tmds_rate;
-> > > > > +
-> > > > > +       ret = phy_validate(mhdp->phy, PHY_MODE_HDMI, 0,
-> &phy_cfg);
-> > > > > +       if (ret < 0)
-> > > > > +               return MODE_CLOCK_RANGE;
-> > > > > +
-> > > > > +       return MODE_OK;
-> > > > > +}
-> > > > > +
-> > > > > +static enum drm_mode_status
-> > > > > +cdns_hdmi_bridge_mode_valid(struct drm_bridge *bridge,
-> > > > > +                           const struct drm_display_info *info,
-> > > > > +                           const struct drm_display_mode
-> *mode) {
-> > > > > +       unsigned long long tmds_rate;
-> > > > > +
-> > > > > +       /* We don't support double-clocked and Interlaced modes
-> */
-> > > > > +       if (mode->flags & DRM_MODE_FLAG_DBLCLK ||
-> > > > > +           mode->flags & DRM_MODE_FLAG_INTERLACE)
-> > > > > +               return MODE_BAD;
-> > > > > +
-> > > > > +       if (mode->hdisplay > 3840)
-> > > > > +               return MODE_BAD_HVALUE;
-> > > > > +
-> > > > > +       if (mode->vdisplay > 2160)
-> > > > > +               return MODE_BAD_VVALUE;
-> > > > > +
-> > > > > +       tmds_rate = mode->clock * 1000ULL;
-> > > > > +       return cdns_hdmi_tmds_char_rate_valid(bridge, mode,
-> > > > > + tmds_rate); }
-> > > >
-> > > > Didn't we agree on creating a mode_valid helper?
-> > >
-> > > In fact, now I'm no idea where should add the mode_valid helper function.
-> > >
-> > > In struct drm_bridge_funcs, it had mode_valid() and
-> hdmi_tmds_char_rate_valid().
-> > >
-> > > If create a new mode_valid helper function in struct
-> > > drm_connector_hdmi_funcs, Is it appropriate to call another API
-> > > function(tmds_char_rate_valid) at the same level within this API function?
-> >
-> > I'm not quite sure what you mean, but a reasonable approach to me
-> > would be to turn drm_hdmi_state_helper.c hdmi_clock_valid into a
-> > public function, and then call it from drm_bridge_connector mode_valid
-> hook.
-> >
-> > It's a similar discussion to the previous one really: in order to
-> > implement it properly, we need access to drm_display_info.
->
-> I've sent a proposal, [1]. I don't think we should be using
-> hdmi_clock_valid() directly (at least not before sorting out the EDID / hotplug
-> handling in the HDMI Connector code) exactly because of the
-> info->max_tmds_clock. If it gets stale, we might filter modes
-> incorrectly. Also, I'm not sure if it should be left at 0 by default (or in
-> drm_parse_hdmi_forum_scds()).
->
-I ran into the same problem about info->max_tmds_clock when I tried to use hdmi_clock_valid to check mode_valid.
-You create a function drm_hdmi_connector_mode_valid in patch[1] that does exactly what I need.
+Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
+---
+Changes in v2:
+- Correct title, commit message, and inline comments.
+- Link to v1: https://lore.kernel.org/r/20241020-phy_core_fix-v1-0-078062f7da71@quicinc.com
 
-Thanks,
-Sandor
+---
+Zijun Hu (6):
+      phy: core: Fix that API devm_phy_put() fails to release the phy
+      phy: core: Fix that API devm_of_phy_provider_unregister() fails to unregister the phy provider
+      phy: core: Fix that API devm_phy_destroy() fails to destroy the phy
+      phy: core: Fix an OF node refcount leakage in _of_phy_get()
+      phy: core: Fix an OF node refcount leakage in of_phy_provider_lookup()
+      phy: core: Simplify API of_phy_simple_xlate() implementation
 
-> [1]
-> https://lore.ke/
-> rnel.org%2Fdri-devel%2F20241018-hdmi-mode-valid-v1-0-6e49ae4801f7%40
-> linaro.org%2F&data=05%7C02%7Csandor.yu%40nxp.com%7Cb6594cde65474
-> 3f8f1fe08dcf04effb5%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7
-> C638649469314303142%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAw
-> MDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C
-> &sdata=t3B356GQ5b7NYN1tspIuTmMLf3fQZCycbJ8UrSswnEk%3D&reserved
-> =0
->
-> --
-> With best wishes
-> Dmitry
+ drivers/phy/phy-core.c | 39 +++++++++++++++++++--------------------
+ 1 file changed, 19 insertions(+), 20 deletions(-)
+---
+base-commit: e70d2677ef4088d59158739d72b67ac36d1b132b
+change-id: 20241020-phy_core_fix-e3ad65db98f7
+
+Best regards,
+-- 
+Zijun Hu <quic_zijuhu@quicinc.com>
+
 
 -- 
 linux-phy mailing list
