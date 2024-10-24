@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 029E1CE8E80
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 14:45:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F45CCE8E85
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 14:45:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=es/Gnqqbr494DKEOLI4Yjh7lkPqyqHkW+z5XhWYpXrE=; b=ltVP0zU0wofNjN
-	WOCaR83xQJmbgdtgPgXrZOmFMnIzxXLfqsO6HvgncBG/SQOHX/mvyBIdKlyIUQJPirClxcHJ0U3+9
-	+U9u6NXCLb0DZhj/lL9ZLGsgm1QZx0X8FlUR6rynPsg9Zd/rr5edefWXZ0gC2sTecJ8+lS9yfAi9g
-	RGtUZ7Ua1OH0JR9BCDZ9mfIzxxd2MZ4+NVoqHBnrOsW45c5J/0rrvMPG3hVSfJN8YR6ICYXvu6apL
-	sEqDLR9bzhY5Ge7xW9pmwtGAV6lbfcS1d1zUdG3H4Oqc1dprEZr/gDTSACtEGWHeqgHjUOwozCa2j
-	6652ntrCkNrfva/H445A==;
+	List-Owner; bh=vxt8G44i+91TRaWv2ce+hU6+P8QKAVNl9vQvG/6Vpw8=; b=cdQdPNz0DwwG45
+	96pExOQR7KiiCjX8XQcOH5AtKpMEMyqhOwLY+pvSCtYob1o6k1FupsS99TJIIGX+/QMQyG+DfGBGU
+	JTKrmKDVZVDDnWOj6/avlwMMddQ0PSuU6evBPcl4tqdtM7f7PjQEsLhln2ZN+YT6XDMyTV7UcaT4R
+	jNnleTaiMeKTqFRpZLxMQSLe4/82DcoJFD+xdNEotObX9L+t19kijEk9KPWLlShSMBRjZSb0qAQDF
+	6kcyANg/wuwqOZ6chXchNsRUWEoee6TEMLNjTMZvUlacLR5tl/dO7nFOkTUVBNSM4H+LInsqL++Ot
+	BBVmaNr6IUAjMKtjGQlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3z5l-00000000nYN-2bAs;
+	id 1t3z5l-00000000nYk-40Li;
 	Thu, 24 Oct 2024 14:45:37 +0000
 Received: from pv50p00im-hyfv10011601.me.com ([17.58.6.43])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3z12-00000000mG6-1e4M
+	id 1t3z14-00000000mH4-16oR
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Oct 2024 14:40:45 +0000
+	Thu, 24 Oct 2024 14:40:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
-	s=1a1hai; t=1729780838;
-	bh=7SUVDbgSA2VfVZU2rqgQuLCciZm9GwyAD6JqO4qnFgM=;
+	s=1a1hai; t=1729780845;
+	bh=Ao26SUIb49PEusAusFKVqbKwYbs2RGsKMlMvZlYTPaY=;
 	h=From:Date:Subject:MIME-Version:Content-Type:Message-Id:To;
-	b=0+NSNjFn68dgCW5i+v659pv1usu51fd/8QHQfjydDrEI8ejVud+tearBU0ObxZTVf
-	 JpNieaL0NLuqvGSOw/15WMy26cetH4U/OujVejp+bEe1+iSRkZxTvLJnX1jeIGCFF4
-	 ZglqrvNS9Lagq+8K5LqGe+yTTdI9gEg4iCExgDAuNA3FVxh/7aCxzquFFfDtS0wwMG
-	 28XxVJR6ciRKinzYnBgNYhOMR4sOTQFGPd0oLj5snh6yP2LMvWF1Ik5zLaa5+NhwBp
-	 khLKBDAESVRkVZO6OPu5NHVlqiDQb+uomDxmo39lD0beHHGS4/C9XJmP56DWWuysEN
-	 LexEakwQIrZUA==
+	b=puj7eOkviFui+XPsW59+5X+gEPwLIDDj0ip2kCBMb9ckgcCVO9y5WMle8LC90hCgo
+	 TVnZsLZyu+M8qJMqsedVLqBZIsZI7w+GcPbPl9B8vijaUh8TQq6f7bZKcc1wEMHy4G
+	 BaVir5Mv6CGeSFFjByPwTi7MM8ollBCiM/IjgLK09hanfsj9Ra0iP7aUlsoQbDvdnP
+	 DYoB8GcELq6Iyu+G6mnSZetOJpfw6oZ198ec1wI+4YRE/f+LI4Rcm2qow2hTurNpe8
+	 aDairxQYm+uLUxJitzL2TqyOfd0VGNNs/7wH/EJJvN9sFT1LSsHCzyPamlyF0Fmn7E
+	 syLDcInm2fFqQ==
 Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
-	by pv50p00im-hyfv10011601.me.com (Postfix) with ESMTPSA id A1A1FC80102;
-	Thu, 24 Oct 2024 14:40:31 +0000 (UTC)
+	by pv50p00im-hyfv10011601.me.com (Postfix) with ESMTPSA id F3D3EC801D5;
+	Thu, 24 Oct 2024 14:40:38 +0000 (UTC)
 From: Zijun Hu <zijun_hu@icloud.com>
-Date: Thu, 24 Oct 2024 22:39:29 +0800
-Subject: [PATCH v2 4/6] phy: core: Fix an OF node refcount leakage in
- _of_phy_get()
+Date: Thu, 24 Oct 2024 22:39:30 +0800
+Subject: [PATCH v2 5/6] phy: core: Fix an OF node refcount leakage in
+ of_phy_provider_lookup()
 MIME-Version: 1.0
-Message-Id: <20241024-phy_core_fix-v2-4-fc0c63dbfcf3@quicinc.com>
+Message-Id: <20241024-phy_core_fix-v2-5-fc0c63dbfcf3@quicinc.com>
 References: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
 In-Reply-To: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -63,8 +63,8 @@ Cc: Lorenzo Pieralisi <lpieralisi@kernel.org>,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
  Zijun Hu <quic_zijuhu@quicinc.com>
 X-Mailer: b4 0.14.1
-X-Proofpoint-ORIG-GUID: A5fzWN84D0-VXZjY7cEVmNuokoA0ioi1
-X-Proofpoint-GUID: A5fzWN84D0-VXZjY7cEVmNuokoA0ioi1
+X-Proofpoint-ORIG-GUID: ljF3k-k6RczWgU4HR65qjNpZTcRZvZNQ
+X-Proofpoint-GUID: ljF3k-k6RczWgU4HR65qjNpZTcRZvZNQ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
  definitions=2024-10-24_15,2024-10-24_02,2024-09-30_01
@@ -74,8 +74,8 @@ X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999 c
  engine=8.19.0-2308100000 definitions=main-2410240120
 X-Apple-Remote-Links: v=1;h=KCk=;charset=UTF-8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_074044_612270_F51FFB08 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20241024_074046_357513_B8284D61 
+X-CRM114-Status: GOOD (  10.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,36 +94,51 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Zijun Hu <quic_zijuhu@quicinc.com>
 
-It will leak refcount of OF node @args.np for _of_phy_get() not to
-decrease refcount increased by previous of_parse_phandle_with_args()
-when returns due to of_device_is_compatible() error.
+For macro for_each_child_of_node(parent, child), refcount of @child has
+been increased before entering its loop body, so normally needs to call
+of_node_put(@child) before returning from the loop body to avoid refcount
+leakage.
 
-Fix by adding of_node_put() before the error return.
+of_phy_provider_lookup() has such usage but does not call of_node_put()
+before returning, so cause leakage of the OF node refcount.
 
-Fixes: b7563e2796f8 ("phy: work around 'phys' references to usb-nop-xceiv devices")
+Fixed by simply calling of_node_put() before returning from the loop body.
+
+The APIs affected by this issue are shown below since they indirectly
+invoke problematic of_phy_provider_lookup().
+phy_get()
+of_phy_get()
+devm_phy_get()
+devm_of_phy_get()
+devm_of_phy_get_by_index()
+
+Fixes: 2a4c37016ca9 ("phy: core: Fix of_phy_provider_lookup to return PHY provider for sub node")
 Cc: stable@vger.kernel.org
 Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
+
 ---
- drivers/phy/phy-core.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+The following kernel mainline commit fixes a similar issue:
+Commit: b337cc3ce475 ("backlight: lm3509_bl: Fix early returns in for_each_child_of_node()")
+---
+ drivers/phy/phy-core.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 52ca590a58b9..967878b78797 100644
+index 967878b78797..de0264dfc387 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -629,8 +629,11 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
- 		return ERR_PTR(-ENODEV);
+@@ -145,8 +145,10 @@ static struct phy_provider *of_phy_provider_lookup(struct device_node *node)
+ 			return phy_provider;
  
- 	/* This phy type handled by the usb-phy subsystem for now */
--	if (of_device_is_compatible(args.np, "usb-nop-xceiv"))
-+	if (of_device_is_compatible(args.np, "usb-nop-xceiv")) {
-+		/* Put refcount above of_parse_phandle_with_args() got */
-+		of_node_put(args.np);
- 		return ERR_PTR(-ENODEV);
-+	}
+ 		for_each_child_of_node(phy_provider->children, child)
+-			if (child == node)
++			if (child == node) {
++				of_node_put(child);
+ 				return phy_provider;
++			}
+ 	}
  
- 	mutex_lock(&phy_provider_mutex);
- 	phy_provider = of_phy_provider_lookup(args.np);
+ 	return ERR_PTR(-EPROBE_DEFER);
 
 -- 
 2.34.1
