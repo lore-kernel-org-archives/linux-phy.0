@@ -4,68 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7E11D0BB69
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 07:15:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9AE49D0BB6D
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 08:01:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qHodab424kMZlTJxNJnxPsOCTYwsSvgePFsQ2Hmsfpk=; b=k4sBu9k/9imBNh
-	/2HitUzTV510Ud22NrzMFWL4j8LmbwkC0vPT98uzsYnDb4UwplJtrwHosuW9SDZ0GPo2bf23TPa2x
-	mHgmsZSpUe0j9uJ54nq95CTU0ClAc24tIRbDkTF2pr8nP9Ane0g0oyU0RGj7pKPAaaF3Z39TWha99
-	zzYE108170YMsP6FsMzaXgZTsuNFQvcfJM521K8YQ9PttscCg13YuT9qriFxrTJK/80uo01ns4r3e
-	kZSfrw4+gvEaL0s8a7GADkvRGJLxYs1+1EDbYXRrBnyvqqgWHdOxbYDbnCWCB4Zq3WI4tUQ4QQ552
-	t90GOMvGBWF7ES6c3kTg==;
+	List-Owner; bh=0/FRIFGFGfmpGmgSJyjOrlqyRAZVMYgBtvMZvRoyxRU=; b=mYczonjLlhxaYt
+	iEEAF9KoqYUMKJDJ4j6t3+pw2m+WDboTvFsJuVa1ZeQ5Qt8ctBc2tIPxjtCDIZUd4tuy+9acgKXms
+	1gsmV2/jl5rsyhMw8h5SrfOKH9Q7FPhBHy+Ezoch27nzB6bCSkSAs2ktuOnH7uM41RRdJEOdIrs8y
+	5PWKoJ2rW2FkRs8nm+8e1iz6rCWgNQ2AXnrBbYIqA9MUA25Vm+ESfTywgmouyiE0Pchn8Ah/rCHdf
+	8nJh+tqZRXwKEisdx81iCr+nqNoY1MU0DqLdasRccTH5i80J7k/gwQb8bi0b4EbzHfebeWgmOXLVO
+	KlkqURrbFdgh8EVscE9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3s4V-0000000H3jo-2Cb2;
-	Thu, 24 Oct 2024 07:15:51 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1t3smD-0000000HCPJ-3qgX;
+	Thu, 24 Oct 2024 08:01:01 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3rxC-0000000H1lt-276A;
-	Thu, 24 Oct 2024 07:08:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AE0AB5C5570;
-	Thu, 24 Oct 2024 07:08:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 659C3C4CEC7;
-	Thu, 24 Oct 2024 07:08:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1729753696;
-	bh=PKc1Ezq4d15KDwftSYsYrCXzavd/TwVvK03GAg5yH8g=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EXDsSjLYy/i5gU8PDLYZ96TpQdUoX/l3LzwwOhNGiQ1i+55LFSBuh0KUoAjION0q1
-	 3/eyAr6Zj4/7bU9Gcyj+8Ai+3vS1gTwNeUYvxBUXoUwnGvVSURyPzfUtq7S8GHfSBw
-	 CQqZiDGcF6YDPG6noOQlLhky4XPIh7s+ddxatdR4=
-Date: Thu, 24 Oct 2024 09:08:06 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Saravana Kannan <saravanak@google.com>
-Cc: "Rafael J. Wysocki" <rafael@kernel.org>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Thierry Reding <thierry.reding@gmail.com>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	=?iso-8859-1?Q?N=EDcolas_F=2E_R=2E_A=2E?= Prado <nfraprado@collabora.com>,
-	kernel-team@android.com, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org
-Subject: Re: [PATCH 0/3] A few minor fw_devlink fixes
-Message-ID: <2024102457-manager-counting-ff68@gregkh>
-References: <20241024061347.1771063-1-saravanak@google.com>
+	id 1t3rcp-0000000Gy6U-1VcA
+	for linux-phy@lists.infradead.org;
+	Thu, 24 Oct 2024 06:47:17 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49NLthH8009114;
+	Thu, 24 Oct 2024 06:47:03 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	6/oSOlR+Cn9d7qsNYO1Ey7vDelnpMSv1JnrdKavwbT0=; b=JlPkR6atudhxNSYT
+	cwygBU9IhFBxCkcztk1nRwW6J6bLnxX+e6MQOtMjWaOTNsN+LIIjLVUbMfBy+IKv
+	TOXtxq8Sb3s3BFJwCEObG/I10NaL+mELpoHGeaX+/FO4NhdDEVg5smyGTWIPPlut
+	Aegds0tHvDc8BaP9/y/TMuGM/2z9lNWhV8sqEElZ/HIJk6DbHZyT0jZ2r5kSTT5V
+	v+8CZA1Apr1SPxGSvjipl28Mx7Y2kqQhM13b2sN3zwsiBOIPM+wYEFjBFn6IWf/l
+	cBcI1EkKRsySAwXHJZKChz3f2TKsAyJXcbG/sERufpDKRsQVkMjKHM+6svRIEzRV
+	4+3F9w==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em43cq6r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 24 Oct 2024 06:47:02 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49O6l1i1020134
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 24 Oct 2024 06:47:01 GMT
+Received: from [10.239.29.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 23 Oct
+ 2024 23:46:56 -0700
+Message-ID: <ca62ee1a-5681-4840-b9b4-ed45e731c449@quicinc.com>
+Date: Thu, 24 Oct 2024 14:46:53 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241024061347.1771063-1-saravanak@google.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 6/7] PCI: qcom: Disable ASPM L0s and remove BDF2SID
+ mapping config for X1E80100 SoC
+To: Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>
+CC: <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
+        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
+        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-clk@vger.kernel.org>, <johan+linaro@kernel.org>,
+        <stable@vger.kernel.org>
+References: <20241017030412.265000-1-quic_qianyu@quicinc.com>
+ <20241017030412.265000-7-quic_qianyu@quicinc.com>
+ <ZxJvxvxlHuQ9Zze5@hu-bjorande-lv.qualcomm.com>
+Content-Language: en-US
+From: Qiang Yu <quic_qianyu@quicinc.com>
+In-Reply-To: <ZxJvxvxlHuQ9Zze5@hu-bjorande-lv.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: trgz8nXFd8XFNP3u6wQx1f_VCTWOFuiV
+X-Proofpoint-ORIG-GUID: trgz8nXFd8XFNP3u6wQx1f_VCTWOFuiV
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
+ adultscore=0 mlxlogscore=999 spamscore=0 malwarescore=0 impostorscore=0
+ phishscore=0 bulkscore=0 clxscore=1015 priorityscore=1501 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2410240050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_000818_609886_F0D9366D 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20241023_234715_625613_F91A03CB 
+X-CRM114-Status: GOOD (  20.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,29 +105,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 23, 2024 at 11:13:41PM -0700, Saravana Kannan wrote:
-> Probably easiest for Greg to pull in these changes?
-> 
-> PSA: Do not pull any of these patches into stable kernels. fw_devlink
-> had a lot of changes that landed in the last year. It's hard to ensure
-> cherry-picks have picked up all the dependencies correctly. If any of
-> these really need to get cherry-picked into stable kernels, cc me and
-> wait for my explicit Ack.
 
-You can do that with the correct tag in the commit as per the stable
-documentation if you really want to :)
+On 10/18/2024 10:25 PM, Bjorn Andersson wrote:
+> On Wed, Oct 16, 2024 at 08:04:11PM -0700, Qiang Yu wrote:
+>> Currently, the cfg_1_9_0 which is being used for X1E80100 has config_sid
+>> callback in its ops and doesn't disable ASPM L0s. However, as same as
+>> SC8280X, PCIe controllers on X1E80100 are connected to SMMUv3, hence don't
+> Would be nice to document the connection between SMMUv3 and "don't need
+> config_sid()" is because we don't have support for the SMMUv3.
+We don't need config_sid because we have support for SMMUv3 on HW.
+SMMUv3 is able to use BDF as SID, so BDF2SID mapping is not required
+and removed on HW.
 
-But why would these not be able to go backwards?  What changed to
-require them now and not be ok for older kernels?
-
-thanks,
-
-greg k-h
+Thanks,
+Qiang
+>> need config_sid() callback and hardware team has recommended to disable
+>> L0s as it is broken in the controller. Hence reuse cfg_sc8280xp for
+> I expect that config_sid() and "disable L0s" are two separate issues.
+> I'm fine with you solving both in a single commit, but I'd prefer the
+> two subjects to be covered in at least two separate sentences.
+>
+> Regards,
+> Bjorn
+>
+>> X1E80100.
+>>
+>> Fixes: 6d0c39324c5f ("PCI: qcom: Add X1E80100 PCIe support")
+>> Cc: stable@vger.kernel.org
+>> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+>> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+>> ---
+>>   drivers/pci/controller/dwc/pcie-qcom.c | 2 +-
+>>   1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+>> index 468bd4242e61..c533e6024ba2 100644
+>> --- a/drivers/pci/controller/dwc/pcie-qcom.c
+>> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
+>> @@ -1847,7 +1847,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+>>   	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &cfg_1_9_0 },
+>>   	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
+>>   	{ .compatible = "qcom,pcie-sm8550", .data = &cfg_1_9_0 },
+>> -	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_1_9_0 },
+>> +	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_sc8280xp },
+>>   	{ }
+>>   };
+>>   
+>> -- 
+>> 2.34.1
+>>
+>>
+>> -- 
+>> linux-phy mailing list
+>> linux-phy@lists.infradead.org
+>> https://lists.infradead.org/mailman/listinfo/linux-phy
 
 -- 
 linux-phy mailing list
