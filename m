@@ -4,85 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 491EACE8E6A
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:50:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC14AD0E3F9
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 19:47:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2rQ3vlDO1Gu9zJ+9Ci0J0fLgGf0NTGI8m+VrYuBHVs0=; b=3LbR+CjgE0RFjy5v3U3akry+yH
-	eE7XcA4jV9CN/7FH0zcVZq6SVsgxKKGjyRd0e9uMiIS/3+YHu9KW1VK1hv4U9wgyW4YEE0z+1WJOx
-	sGIO4cBI/Rv5qmophleSdOeKG/k8+A8PcCwcfeixLfvfySQdqiK+eZEh8YXf/pBHC7cQTvvDR+R3V
-	FsfcjgWUgFCw9gK1zWgP6FAyI3Bg4+lSG3UcbJUtzrXQ6kGzWsI8cS86WrE5pxuTGIpsLgamC9Pcq
-	0nGMHuCaIlRW5Oaa9BgULdLIrvpgZaQ17KtirvReZOHXQ9d9/I3+JiW2rSVlzeLO8o7EuWt+qWF+q
-	SQUE74dA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VcgwJVWlzPEuuHH5Ob49x3tyit0LaUMJN0j41yxlCMA=; b=Q1KhFtE+Q+FmB3
+	6ceTvyI25BloOfzWapbaKCoRniKuq1byheWvskiHdrJPFbk50rPk0euskQh+EIb5TE4N2DMe9EuUV
+	xrDDnAONpytSBO24KcF9N+3bELBnreD8aJCS2DxWjtAbiR1N3YfMIbA4K81I6Y7vEllyPEMk8mDgK
+	ZBKWIU9xxqBticLbP3ARDLIIJQS7yA2C0cH+22FQnWy+Yr0QeUtleEDqfc76DQMRsf9I6L9wnsD9n
+	IgnZDi52t5VLkPnk6nDXaq5nKGIIMBMEcVVZpCTgjabZ5dSusreW3oTOfUVi+atSAwxjePQ6Y3Vlv
+	NCNcNW8lkpFun+B8kKRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41yx-00000001Lfh-3w2o;
-	Thu, 24 Oct 2024 17:50:47 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41cO-00000001Hiu-0W6g;
-	Thu, 24 Oct 2024 17:27:29 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4315df7b43fso12652135e9.0;
-        Thu, 24 Oct 2024 10:27:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1729790846; x=1730395646; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=UaHpkghq9cuCMb2HJRZAym0CXgOFGdaTduY6J1n9ZMw=;
-        b=no0kT5/oUlzOqrUQBfYUsTq4IfCzYRzFWCjHP91hVom7XX6pwX0xaS2BBW6N8BxSFE
-         gSybF+c1UPCFdlwySx5a7CfUhLTwW8tlq3cp4fFsGFeiUl+II5UEm14mp7/h6RU24Upg
-         A0eIqPVlFgH+hXmgNf9Y0r7tVs/v9MYjBCNy4NlkPUOkol/OH4LTPHRGGbjHHQlsxpeB
-         mPBigw3hNg6v9ArbO0+p4C9r3wzOIM0+BOtb3vcG/4o7lrFSttspy1L6DtxoaZuPMNrL
-         vxx4/nbwPcj4kumvDkrfaIgNy/y5Fsq7O/NFxI5qQKQBSuNHETOQVKC6FtNgjqZuga+i
-         ttmQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729790846; x=1730395646;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=UaHpkghq9cuCMb2HJRZAym0CXgOFGdaTduY6J1n9ZMw=;
-        b=wY8Xoh8Q8JYYD65YxrAlm7mhztaD8elVvEWqzcI6kXUSSHAWEO3/8Znvgo4XJZyh6G
-         yqL2SXYpCq/OeUvsyVEGQJWMEwtPqJKbvDrCpkwDusnVHqaEWSe8KteSpxj0Bv+mFOxv
-         ktYOZ8KFh8RTy71ot3a5yA2i52wJaFgSSQAUoxFLYR3cTowfyrqy3xTYfSsS+XSr7gLm
-         4iEzKSVqc0lwjq83HEr1lBc1nwLLiMWuI7H7NRQxWQQlBlT6xi78CIEmqBperZBWEkPY
-         F4wnGooW7epgk5xZXsCxUi0SaSZ2721dzu1rHZoY072tz8Q9tUfN27BvN/p4s/a8fBX5
-         no0A==
-X-Forwarded-Encrypted: i=1; AJvYcCWeTDs1wwi+DJ+rMR7ydjcwLgqAureEeiUd6vhi5K7c1ZKyi6hJGp4pdjCPsT6X/j3BffDMxxSm16a43YMORYfX@lists.infradead.org, AJvYcCXOAFJvGxm8wrfxwDhtTPvvEfFK1ZmHn4HJ5JgCYxhsB173sEzKZQuOsSq3hAFgb83Q3egG1fGnvJ66xFn78ts=@lists.infradead.org, AJvYcCXaqMzRxHMKFcIW2k0aSRc1vRFjnu/s8ohT3dJ8NuprDsyjvKtPjTB7IwP751mXWTgwW2ZLdxAdfuh6@lists.infradead.org
-X-Gm-Message-State: AOJu0YyOQY/UXV7/MizY/5lHrF3d1TGEIhCX876hkSbfopn33YXri7W2
-	rudclw0LAqOPU2KAXUuWI/XGUefdE1UDpTsjWjr4SUUT3w/8AS1j
-X-Google-Smtp-Source: AGHT+IH9aeFR7EI/JBQU2YhJkoiZcmX9vYZf/rP1GuS53R5NLbNpUfaTaV9YEHJNgi6VOgAWwW1HsQ==
-X-Received: by 2002:a05:6000:1faa:b0:37d:53dd:4dec with SMTP id ffacd0b85a97d-3803ac9725fmr2225519f8f.15.1729790844879;
-        Thu, 24 Oct 2024 10:27:24 -0700 (PDT)
-Received: from orome (p200300e41f26ec00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f26:ec00:f22f:74ff:fe1f:3a53])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-37ee0b9413fsm11839544f8f.74.2024.10.24.10.27.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 24 Oct 2024 10:27:24 -0700 (PDT)
-Date: Thu, 24 Oct 2024 19:27:22 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Saravana Kannan <saravanak@google.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	"Rafael J. Wysocki" <rafael@kernel.org>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, JC Kuo <jckuo@nvidia.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	=?utf-8?B?TsOtY29sYXMgRi4gUi4gQS4=?= Prado <nfraprado@collabora.com>, kernel-team@android.com, linux-kernel@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
-Subject: Re: [PATCH 2/3] phy: tegra: xusb: Set fwnode for xusb port devices
-Message-ID: <h7lfhtsb4qmrtmcgkeykfwdqzwmby6jfspd6hguxyx3huilu3o@sfl5dqcsc45d>
-References: <20241024061347.1771063-1-saravanak@google.com>
- <20241024061347.1771063-3-saravanak@google.com>
+	id 1t43nV-00000001dfs-0USk;
+	Thu, 24 Oct 2024 19:47:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1t43Q1-00000001ak3-3Okv;
+	Thu, 24 Oct 2024 19:22:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05BC0339;
+	Thu, 24 Oct 2024 12:23:16 -0700 (PDT)
+Received: from minigeek.lan (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D6E593F528;
+	Thu, 24 Oct 2024 12:22:42 -0700 (PDT)
+Date: Thu, 24 Oct 2024 20:22:33 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Cody Eksal <masterr3c0rd@epochal.quest>
+Cc: linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
+ Abraham I <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec
+ <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, Yangtao
+ Li <frank@allwinnertech.com>, Florian Fainelli
+ <florian.fainelli@broadcom.com>, Krzysztof Kozlowski
+ <krzysztof.kozlowski@linaro.org>, Parthiban <parthiban@linumiz.com>, Linus
+ Walleij <linus.walleij@linaro.org>, Thierry Reding <treding@nvidia.com>,
+ Maxime Ripard <mripard@kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Yangtao Li <tiny.windzz@gmail.com>, Viresh
+ Kumar <vireshk@kernel.org>, Nishanth Menon <nm@ti.com>, Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+ <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, "Rafael J.
+ Wysocki" <rafael@kernel.org>
+Subject: Re: [PATCH 06/13] phy: sun4i-usb: add support for A100 USB PHY
+Message-ID: <20241024202216.6cded8c4@minigeek.lan>
+In-Reply-To: <20241024170540.2721307-7-masterr3c0rd@epochal.quest>
+References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
+	<20241024170540.2721307-7-masterr3c0rd@epochal.quest>
+Organization: Arm Ltd.
+X-Mailer: Claws Mail 4.2.0 (GTK 3.24.31; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20241024061347.1771063-3-saravanak@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_102728_193831_869951FC 
-X-CRM114-Status: GOOD (  15.16  )
+X-CRM114-CacheID: sfid-20241024_122249_989969_FFC1BB7F 
+X-CRM114-Status: GOOD (  20.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,78 +73,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5521551528496290159=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, 24 Oct 2024 14:05:24 -0300
+Cody Eksal <masterr3c0rd@epochal.quest> wrote:
 
---===============5521551528496290159==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="twcjumikk4cgqnzo"
-Content-Disposition: inline
+Hi,
 
-
---twcjumikk4cgqnzo
-Content-Type: text/plain; protected-headers=v1; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 2/3] phy: tegra: xusb: Set fwnode for xusb port devices
-MIME-Version: 1.0
-
-On Wed, Oct 23, 2024 at 11:13:43PM -0700, Saravana Kannan wrote:
-> fwnode needs to be set for a device for fw_devlink to be able to
-> track/enforce its dependencies correctly. Without this, you'll see error
-> messages like this when the supplier has probed and tries to make sure
-> all its fwnode consumers are linked to it using device links:
->=20
-> tegra-xusb-padctl 3520000.padctl: Failed to create device link (0x180) wi=
-th 1-0008
->=20
-> Reported-by: Jon Hunter <jonathanh@nvidia.com>
-> Closes: https://lore.kernel.org/all/20240910130019.35081-1-jonathanh@nvid=
-ia.com/
-> Tested-by: Jon Hunter <jonathanh@nvidia.com>
-> Suggested-by: "N=C3=ADcolas F. R. A. Prado" <nfraprado@collabora.com>
-> Signed-off-by: Saravana Kannan <saravanak@google.com>
+> From: Yangtao Li <frank@allwinnertech.com>
+> 
+> Add support for a100's usb phy, which with 2 PHYs.
+> 
+> Signed-off-by: Yangtao Li <frank@allwinnertech.com>
+> [masterr3c0rd@epochal.quest: modified to use quirk flags]
+> Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
 > ---
->  drivers/phy/tegra/xusb.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/phy/allwinner/phy-sun4i-usb.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+> index b0f19e950601..a3942b2ee90b 100644
+> --- a/drivers/phy/allwinner/phy-sun4i-usb.c
+> +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+> @@ -1006,6 +1006,16 @@ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
+>  	.phy0_dual_route = true,
+>  };
+>  
+> +static const struct sun4i_usb_phy_cfg sun50i_a100_cfg = {
+> +	.num_phys = 2,
+> +	.disc_thresh = 3,
 
-Acked-by: Thierry Reding <treding@nvidia.com>
+This member is never used when .siddq_in_base is true (and yes, this is
+wrong for the H616 too), ...
 
---twcjumikk4cgqnzo
-Content-Type: application/pgp-signature; name="signature.asc"
+> +	.phyctl_offset = REG_PHYCTL_A33,
+> +	.dedicated_clocks = true,
+> +	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
+> +	.phy0_dual_route = true,
+> +	.siddq_in_base = true,
 
------BEGIN PGP SIGNATURE-----
+... which makes this whole description identical to the D1 version.
+So at the very least we wouldn't this new a100_cfg, but instead just
+point to the existing d1_cfg.
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmcag3oACgkQ3SOs138+
-s6E0jA/9Hrx9YAv2LNCLCxeOKL/DQUk66osQ3tcAQYkyXH1Lf8zsvymHrcUdbWBM
-95AoBk6VHHrDM/3mW1riHBZy7wiSLA7ZH+nXiFscRZcisWchkrcSFd1Oy1LgRj2Y
-N268oEbko8jjmyKx0yTojbbilbsZtXZkKsaVhxkBgAchQ8lYuAQg4nPRABMJB6F3
-eZKMHGXBm6YQFOvV+Ahasj88hN+0WceHJNvzIQPXyWY2U6ixPpsup5J/uikzHqpI
-rmlb5zqPUHtHtG/U/ku39cIgiiOBE73/OW1r0qM5ez+UiTYWukXAQyBSCjtoWBrm
-JguDu8m/fS1Iqn+NmxlOBto5gRRABLwBb3PHWfW7XEuVk8ZdGpycBxQ0+ZOglfSC
-PUn/XxgW99w/KbP6401Bomy+Qj9MXJap2cytyVNrMGda1xlwnAPFVPDZ6qNCxZRc
-Bw1dD6hZeWOsKlFZcY9mBhn4D7nAalV/t+zKe9YdEe7zdkTv6CL4o79JjjIACdsh
-GJjfZOlG7FsLE2D5KscHSf7vxRKG2xOcpQyc892MLa2tm4MngYKUGsIEPZJOsnHF
-vkw+QmOdblNPJSILIH9uyAwwb3YDkivpKILxPTgMB2eywmWnxQaMh96hc97eipNh
-H0hKPDvcuendN6+xsu5VM4VQSp5VdAbX+YumtsJ06Dhdqt4kdoY=
-=GeOf
------END PGP SIGNATURE-----
+> +};
+> +
+>  static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
+>  	.num_phys = 4,
+>  	.phyctl_offset = REG_PHYCTL_A33,
+> @@ -1040,6 +1050,7 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
+>  	{ .compatible = "allwinner,sun20i-d1-usb-phy", .data = &sun20i_d1_cfg },
+>  	{ .compatible = "allwinner,sun50i-a64-usb-phy",
+>  	  .data = &sun50i_a64_cfg},
+> +	{ .compatible = "allwinner,sun50i-a100-usb-phy", .data = &sun50i_a100_cfg },
 
---twcjumikk4cgqnzo--
+And this also brings up the question whether we need a new compatible
+string. As it stands now, we could also use:
+	compatible = "allwinner,sun50i-a100-usb-phy",
+		     "allwinner,sun20i-d1-usb-phy";
+
+and wouldn't need any driver changes at all. Which would have the neat
+side effect to make USB work already with v5.18 kernels.
+
+The only downside is the somewhat weird ordering of the compatible
+strings, with the much newer chip as the fallback.
+
+What do other people think here?
+
+Cheers,
+Andre
 
 
---===============5521551528496290159==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
+>  	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
+>  	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5521551528496290159==--
-
