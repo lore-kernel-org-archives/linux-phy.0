@@ -4,81 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA60FCE8E99
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:25:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30EEDCE8E6A
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:49:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Ul+DlIzgSE6vs+6hcuTac3vXZq0QwOoWeXvhKgdgGw=; b=i2kOdS0i0eHSdJ
-	m8di03eSlfYVfhC6FyUjqWdeZn+b49VYQnxexIYcYxdZipk1kE0nNj+cle8EBBXG+S4I0j7NWvMAH
-	/M/BOSxCXdSWECf4XBQAEgAA1j/lxbBDew+0+aDR5x8FEqoZ/AlJ2cT5VpRO+qD/CiMQn+YOvGq1S
-	AVswEEwW7erJDO1W0hswOKFflo1jDn5DsmekRNpm+A+INzpG2CwtMT4gFOK53i/KsrV3HK55yaarv
-	+SLksAzwVM17MUL7vg0kLXu2YWQZ2MZvljSrWs2+Up4Uw7dPbEe+I+DOWb7NhPkeuz1oK+axjD9eN
-	EmXJ8nS6d0mT044YhfrQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=6DAnPRFx9/fzY8TcybUjYHdoKaGxuU7s/vU4A84d5Bs=; b=FLi3tv1oDkBBUsP4GaMKo+vPeH
+	AAczEMq5/LX++DU7Hf+3o34b/ziba1QvSQ5vjTWtIXDg2P4Ob2oDSy0pEiKHhEmAT0CFKoFcsCPWk
+	vvCOwoiJkF052t3wTJruwjsCC/hlY5gqwD8ZYOh5ByN04LCwboQSGWu/VVcB0DSwfiPrMCsgaphzu
+	t6V7Ph/rQ+7iDd8AFt6Stfeu7jaUseuHBTm0aSz1pTuwCPwbevx0MqZ1K7lXmhl341U3AHukvNdhR
+	tCu98Aas41aJn5zU2Ekb9sX7BukoF0jNkXVlqO+r4gj8Srf+HTiNUN0TfdbYeaMmYlIVJWlWYqj4s
+	7mZCJhdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41aQ-00000001HEZ-2nTQ;
-	Thu, 24 Oct 2024 17:25:26 +0000
-Received: from thales.epochal.quest ([2607:5300:205:200::3a30])
+	id 1t41xO-00000001LMS-32QJ;
+	Thu, 24 Oct 2024 17:49:10 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41LL-00000001DqY-2khf;
-	Thu, 24 Oct 2024 17:09:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=epochal.quest;
-	s=default; t=1729789790;
-	bh=1G2LVJhU97J4DTWThVt0tTikaaKuPtmpeH+bT9okCBU=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=MAASwq7ORI7ZT3sVWFfuTOlPZQOdoxDtK/m5YeTHXPC/3qT8SBCISpuG392WlbZoe
-	 F5BdY2BHriUtHtZfpGaH0lW2EeqaPMOU+V/unY2YO4L7A/QGArA+RhGp4peKXLBkkC
-	 duPIlLmesyLFF25IrZwusYwUK75n4g7fXtaa6Jz2vVsIuRol2SuG39QfjmMvm+dDBs
-	 yaph0UKC2QkO84jpwnczlZ/SObzqZP0IldY+gQTIMeAl01ZZO9oN66hl399HecH2t+
-	 0Jd0JKmOLvQ6BPlyXtl7YgCRB5FL3UHdXenB3a9C7XCBsPV6xyfa0Q72XeBZvkKKat
-	 ox8t9Zqe2guBA==
-X-Virus-Scanned: by epochal.quest
-From: Cody Eksal <masterr3c0rd@epochal.quest>
-To: linux-pm@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>
-Cc: Cody Eksal <masterr3c0rd@epochal.quest>,
-	Andre Przywara <andre.przywara@arm.com>,
-	Parthiban <parthiban@linumiz.com>,
-	Yangtao Li <frank@allwinnertech.com>,
-	Florian Fainelli <florian.fainelli@broadcom.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Thierry Reding <treding@nvidia.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Maxime Ripard <mripard@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Yangtao Li <tiny.windzz@gmail.com>,
-	Viresh Kumar <vireshk@kernel.org>,
-	Nishanth Menon <nm@ti.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Shuosheng Huang <huangshuosheng@allwinnertech.com>
-Subject: [PATCH 13/13] arm64: dts: allwinner: a100: Add CPU Operating Performance Points table
-Date: Thu, 24 Oct 2024 14:05:31 -0300
-Message-ID: <20241024170540.2721307-14-masterr3c0rd@epochal.quest>
-X-Mailer: git-send-email 2.47.0
-In-Reply-To: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
-References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
+	id 1t41c8-00000001Hcu-0Ipi;
+	Thu, 24 Oct 2024 17:27:13 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4316e9f4a40so12466795e9.2;
+        Thu, 24 Oct 2024 10:27:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1729790830; x=1730395630; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=6RF+0h3uJVvZLYuGZLW/jZ/HEsnjwutDdO799XJGlDs=;
+        b=Zzj4ER+HapTjBokYAbPaekLN8zF2ABddzRLkQmJV0Epro7WRPRpzJi5+0K5yo6muGT
+         +v7RFNu45bQcT+DRvfi3YEsIMaCoZ+q3u3m5dO5Oo6DWN/JiE6JsJAQSefPkkZcIKGOC
+         nYIMIVJNQTvIvceMg4TaU8dYWZUvvdw94mrpI4vEZA55UNpSuG5k+8LjPrCUjXJJ3Uzs
+         vIMV8pqmBDG5WS1G+yz/0+zC9q54lWOotJHzQYjeVV5D356RTXZgjFswWzQBHA7tkn2w
+         BVdEG2d0iNpOa6hEw+yZk+M0RODkXZcoR70b0KsQwWSnIEWlQA7rhFiVtn9RtZC1Z/th
+         mEHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1729790830; x=1730395630;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=6RF+0h3uJVvZLYuGZLW/jZ/HEsnjwutDdO799XJGlDs=;
+        b=wJOui4WY6Sdd1pCify90Nf6dV81GcS2Dgn1Mh0kQ4xHJgBZj89gMncuOuEkyE9cV5Z
+         MLvsDYsgIxfZ2DFQefLzXosVsskrPxCvo/JA5AbRlUYZSSWiG63ya98XuZZlePjk6s1I
+         lvbwO7Q487dT5rBBOPPNdx2kyLT5TRuNOfcFRf1m2NqVLl7+vub07tS5v1y262wSjY/g
+         3ia8PD0MdXZQSXnYh4hUXGr6xewUhDy9hIm0YeW678vxnn6mdR+Afc1a1yyklPoK974w
+         BVpYnB98k4qz1DnCN6HcVBW6mh33z+LeLkOaf/Em9IaBqsOLFKLIhhJoayY/klS7hMku
+         emig==
+X-Forwarded-Encrypted: i=1; AJvYcCWDQw7sAymKo+wi61wQ9wVcpZiOgRGTS4HTiP5qa0JG200bTRhJoa05Ye7tz8PXXUDhoYk++LOsa70o9xgRkjU=@lists.infradead.org, AJvYcCX1GA2/AlhxqHRT/PJVKk2IBJ5wzM7oBLH4D4ZT+4lZ+4mbbunZqEf7xSNYzRf1aoPAGnnksKKHXjHE@lists.infradead.org, AJvYcCX6vy5OYbxeJ1ABItR9RZDh7RxxJtVbRFwDU4yWJ0kW/2CvZ1g9cgJjmDNXOBEY1wc5ZJCqzT+gVe4cVzz0NWXp@lists.infradead.org
+X-Gm-Message-State: AOJu0YzWs+fVxSfImqvFDmUJADIj1tAiHg/CeefjTznsssfjF0F3iUXB
+	du6+1dhVHJxkc/BeivQzv25Sg2N25uqIXEVXpnkldeWJR5ZDVz/1
+X-Google-Smtp-Source: AGHT+IHQ7I/9aI1UHxXx6X/2TOQl2Yy1ybsuEFl90rIKNP8aItf1olbwHtlsGOqqhIDJTGHDheR+WQ==
+X-Received: by 2002:a05:600c:1552:b0:42c:b750:1a1e with SMTP id 5b1f17b1804b1-4318beb62e6mr24564425e9.0.1729790830026;
+        Thu, 24 Oct 2024 10:27:10 -0700 (PDT)
+Received: from orome (p200300e41f26ec00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f26:ec00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43186bfcfd0sm52020785e9.26.2024.10.24.10.27.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 24 Oct 2024 10:27:09 -0700 (PDT)
+Date: Thu, 24 Oct 2024 19:27:07 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Saravana Kannan <saravanak@google.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, JC Kuo <jckuo@nvidia.com>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Jonathan Hunter <jonathanh@nvidia.com>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+	=?utf-8?B?TsOtY29sYXMgRi4gUi4gQS4=?= Prado <nfraprado@collabora.com>, kernel-team@android.com, linux-kernel@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
+Subject: Re: [PATCH 1/3] drm: display: Set fwnode for aux bus devices
+Message-ID: <sn3q2kloect5pdsyks2xwiiu7avhaovl62rn3wzhs4qpznwegq@zaq3o3fuc7i2>
+References: <20241024061347.1771063-1-saravanak@google.com>
+ <20241024061347.1771063-2-saravanak@google.com>
 MIME-Version: 1.0
+In-Reply-To: <20241024061347.1771063-2-saravanak@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_100951_830830_D7043B85 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20241024_102712_133176_E83AA00B 
+X-CRM114-Status: GOOD (  15.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,197 +94,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7929823628417519684=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Shuosheng Huang <huangshuosheng@allwinnertech.com>
 
-Add an Operating Performance Points table for the CPU cores to
-enable Dynamic Voltage & Frequency Scaling on the A100.
+--===============7929823628417519684==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="hfzjdm3gfakfovch"
+Content-Disposition: inline
 
-Signed-off-by: Shuosheng Huang <huangshuosheng@allwinnertech.com>
-[masterr3c0rd@epochal.quest: fix typos in -cpu-opp, use compatible]
-Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
----
- .../allwinner/sun50i-a100-allwinner-perf1.dts |  5 ++
- .../dts/allwinner/sun50i-a100-cpu-opp.dtsi    | 90 +++++++++++++++++++
- .../arm64/boot/dts/allwinner/sun50i-a100.dtsi |  8 ++
- 3 files changed, 103 insertions(+)
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a100-cpu-opp.dtsi
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts
-index 29e9d24da8b6..99b1b2f7b92a 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts
-@@ -6,6 +6,7 @@
- /dts-v1/;
- 
- #include "sun50i-a100.dtsi"
-+#include "sun50i-a100-cpu-opp.dtsi"
- 
- #include <dt-bindings/gpio/gpio.h>
- 
-@@ -67,6 +68,10 @@ &usb_otg {
- 	status = "okay";
- };
- 
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
- &pio {
- 	vcc-pb-supply = <&reg_dcdc1>;
- 	vcc-pc-supply = <&reg_eldo1>;
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a100-cpu-opp.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a100-cpu-opp.dtsi
-new file mode 100644
-index 000000000000..eeb8d20f3fb4
---- /dev/null
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a100-cpu-opp.dtsi
-@@ -0,0 +1,90 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (c) 2020 Yangtao Li <frank@allwinnertech.com>
-+// Copyright (c) 2020 ShuoSheng Huang <huangshuosheng@allwinnertech.com>
-+
-+/ {
-+	cpu_opp_table: cpu-opp-table {
-+		compatible = "allwinner,sun50i-a100-operating-points";
-+		nvmem-cells = <&cpu_speed_grade>;
-+		opp-shared;
-+
-+		opp@408000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <408000000>;
-+
-+			opp-microvolt-speed0 = <900000 900000 1200000>;
-+			opp-microvolt-speed1 = <900000 900000 1200000>;
-+			opp-microvolt-speed2 = <900000 900000 1200000>;
-+		};
-+
-+		opp@600000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <600000000>;
-+
-+			opp-microvolt-speed0 = <900000 900000 1200000>;
-+			opp-microvolt-speed1 = <900000 900000 1200000>;
-+			opp-microvolt-speed2 = <900000 900000 1200000>;
-+		};
-+
-+		opp@816000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <816000000>;
-+
-+			opp-microvolt-speed0 = <940000 940000 1200000>;
-+			opp-microvolt-speed1 = <900000 900000 1200000>;
-+			opp-microvolt-speed2 = <900000 900000 1200000>;
-+		};
-+
-+		opp@1080000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <1080000000>;
-+
-+			opp-microvolt-speed0 = <1020000 1020000 1200000>;
-+			opp-microvolt-speed1 = <980000 980000 1200000>;
-+			opp-microvolt-speed2 = <950000 950000 1200000>;
-+		};
-+
-+		opp@1200000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <1200000000>;
-+
-+			opp-microvolt-speed0 = <1100000 1100000 1200000>;
-+			opp-microvolt-speed1 = <1020000 1020000 1200000>;
-+			opp-microvolt-speed2 = <1000000 1000000 1200000>;
-+		};
-+
-+		opp@1320000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <1320000000>;
-+
-+			opp-microvolt-speed0 = <1160000 1160000 1200000>;
-+			opp-microvolt-speed1 = <1060000 1060000 1200000>;
-+			opp-microvolt-speed2 = <1030000 1030000 1200000>;
-+		};
-+
-+		opp@1464000000 {
-+			clock-latency-ns = <244144>; /* 8 32k periods */
-+			opp-hz = /bits/ 64 <1464000000>;
-+
-+			opp-microvolt-speed0 = <1180000 1180000 1200000>;
-+			opp-microvolt-speed1 = <1180000 1180000 1200000>;
-+			opp-microvolt-speed2 = <1130000 1130000 1200000>;
-+		};
-+	};
-+};
-+
-+&cpu0 {
-+	operating-points-v2 = <&cpu_opp_table>;
-+};
-+
-+&cpu1 {
-+	operating-points-v2 = <&cpu_opp_table>;
-+};
-+
-+&cpu2 {
-+	operating-points-v2 = <&cpu_opp_table>;
-+};
-+
-+&cpu3 {
-+	operating-points-v2 = <&cpu_opp_table>;
-+};
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi
-index 6dca766ea222..747a0292ef98 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi
-@@ -23,6 +23,7 @@ cpu0: cpu@0 {
- 			device_type = "cpu";
- 			reg = <0x0>;
- 			enable-method = "psci";
-+			clocks = <&ccu CLK_CPUX>;
- 		};
- 
- 		cpu1: cpu@1 {
-@@ -30,6 +31,7 @@ cpu1: cpu@1 {
- 			device_type = "cpu";
- 			reg = <0x1>;
- 			enable-method = "psci";
-+			clocks = <&ccu CLK_CPUX>;
- 		};
- 
- 		cpu2: cpu@2 {
-@@ -37,6 +39,7 @@ cpu2: cpu@2 {
- 			device_type = "cpu";
- 			reg = <0x2>;
- 			enable-method = "psci";
-+			clocks = <&ccu CLK_CPUX>;
- 		};
- 
- 		cpu3: cpu@3 {
-@@ -44,6 +47,7 @@ cpu3: cpu@3 {
- 			device_type = "cpu";
- 			reg = <0x3>;
- 			enable-method = "psci";
-+			clocks = <&ccu CLK_CPUX>;
- 		};
- 	};
- 
-@@ -142,6 +146,10 @@ efuse@3006000 {
- 			ths_calibration: calib@14 {
- 				reg = <0x14 8>;
- 			};
-+
-+			cpu_speed_grade: cpu-speed-grade@1c {
-+				reg = <0x1c 0x2>;
-+			};
- 		};
- 
- 		watchdog@30090a0 {
--- 
-2.47.0
+--hfzjdm3gfakfovch
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH 1/3] drm: display: Set fwnode for aux bus devices
+MIME-Version: 1.0
 
+On Wed, Oct 23, 2024 at 11:13:42PM -0700, Saravana Kannan wrote:
+> fwnode needs to be set for a device for fw_devlink to be able to
+> track/enforce its dependencies correctly. Without this, you'll see error
+> messages like this when the supplier has probed and tries to make sure
+> all its fwnode consumers are linked to it using device links:
+>=20
+> mediatek-drm-dp 1c500000.edp-tx: Failed to create device link (0x180) wit=
+h backlight-lcd0
+>=20
+> Reported-by: "N=C3=ADcolas F. R. A. Prado" <nfraprado@collabora.com>
+> Closes: https://lore.kernel.org/all/7b995947-4540-4b17-872e-e107adca4598@=
+notapiano/
+> Tested-by: "N=C3=ADcolas F. R. A. Prado" <nfraprado@collabora.com>
+> Signed-off-by: Saravana Kannan <saravanak@google.com>
+> ---
+>  drivers/gpu/drm/display/drm_dp_aux_bus.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+
+Reviewed-by: Thierry Reding <treding@nvidia.com>
+
+--hfzjdm3gfakfovch
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmcag2sACgkQ3SOs138+
+s6Hj0hAAhMZxiCkgmHPpzOfFMLqQaRfXX70z+C/EbrTzA3OUMgMVTiRAMXm9USIS
+SgjCLtThw+TN8T0NPDlAi/x53qr2/K1+ifxrgdjVcukCIcvH5xda17KWjl5lMbUy
+OVUJP98lx/BCDvcsTH4HjWdNk52GLn99I31Ipkc8KXdndg/huxA9uYb5bdb5oSdB
+S3l/6TUoLTnyb6e2PAg8G2UNwF0z8fOgPrm6bn1fPAHezUuZXYu7h+2tYidyzY0M
+eh7RyFTL7Y+aX4jPJlHIKe/88qmAC2f8dKvpKuUe/FFbsjBkTIrSZK69Ynz5pXmF
+K1sErSfkghxrbLGxjJMfQ1rU7Gy8vNwiP14Nbik2EFT+KAT6y1LCFCqpsv1fF3KB
+tkzQYps46T3VBCljzQeZfV7/4ARml5DGv+Kv/CpiZV1lt2PKQTU+DHPoV8x4bzyG
+GsW8JVuWqFjeSkPyf4APslY535lufQclLzS7yI6qalJ+30XDOixO4nJ3VUXawkHX
+gJfEljNUTO5xEggz8QZ1wRSUVWV0Ik6PyYh/HneSiGCKn5D11kYTIv9ZX2d2bNBV
+yb2OI9VOjn8/T7tfB6T36coLT1xNATeLQPX56+IQC0yw5NMfu7T55/S3amfn34rv
+Wk3ki1ZLcI0tvP88rKMqTjGQSmuMDTJgPG2V41FZbUhDhfLy2Ls=
+=i3zE
+-----END PGP SIGNATURE-----
+
+--hfzjdm3gfakfovch--
+
+
+--===============7929823628417519684==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7929823628417519684==--
+
