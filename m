@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B8C0CE8E96
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 927D7CE8E99
 	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:21:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,30 +12,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UbF1RkH5b23ghcgX572GAkTf/jlNABD7uv+fhmkHpp4=; b=tpb7AYTYSvLVZC
-	lT3Bn75ISZ3pfrM9LCSlfmx9hGvctYKqT/InhvGNYEsAy7nEH+j5mpAigahyQu/N7khy2fRQ1Q8h/
-	YoTUkCknDeouVR9zQBjeK6IKtbCEi0AjzTriWlj7iT2XYOuTFoWiZD8vtS7n46JyNPyn8c7O0V+5H
-	CUp5/rhKMmb5HKmdYgr9nGdRxjpmM4uCnhcfds1Q/4JImTqk/OnypVtA8lPU+fP28ecnbnXJ3eruH
-	OxxIgl924ITQdHdKXplwDaJqZC8yHiH7Sjy8EQxhDcuiUF6HO7AudIWXFBb9E9NQtCJOsVDKLwyny
-	6rj2X5U2R4+3Sj9VINOg==;
+	List-Owner; bh=XIQuOX8sWYNiyDRDUwxUPmh7zrmzee3QPQ0KSUHge+s=; b=xLmf8JFuImGUia
+	FsHVh8CF1LvC5ndQKtB5W4h8KlMtoaylF2hoC2Dch32+g52uO5BS2l7ozs0HW+VZu2hz1YGsxmTmc
+	m9eo2n20QxehWn/txpLrPCOV6Ws0xDXy8tQ+amQWOE23+/4vBHk5+h0R17GyEIlmrAExStz3MVJte
+	aCTIS50JNx7NEKzSbGoWTl25uiNwC95+V3cAHNsopjj8wCjZWy6tiym8GAXSQiJNXK9FXHavALmTF
+	lJfJUWx40GPdJnXF8/Pcn5lmVI2+AEk8kNnrWRq3qNu+csgB7HTQ3IrfOVWteAifAKbWvtnUIXoFZ
+	yUgvFz1re6qQLzEAkiOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41WP-00000001G1K-3TR8;
-	Thu, 24 Oct 2024 17:21:17 +0000
+	id 1t41WQ-00000001G1Z-0mFQ;
+	Thu, 24 Oct 2024 17:21:18 +0000
 Received: from thales.epochal.quest ([2607:5300:205:200::3a30])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41LI-00000001DnM-0Rc7;
-	Thu, 24 Oct 2024 17:09:49 +0000
+	id 1t41LI-00000001DnN-0VKE;
+	Thu, 24 Oct 2024 17:09:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=epochal.quest;
-	s=default; t=1729789786;
-	bh=SXlv9B8AoJX1K/LjIPZJ5S+TFLEbtezksBkekZtH358=;
+	s=default; t=1729789783;
+	bh=LIXJN7WyqZbUIo6zFt/nMh6Am1vcombr30b63lmOUnw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=SA0QNzYQV4gTjTYnKFIEcdb3jDoLhhKKll25bO7rw3IkEcEfI+DB+wxCqvdgtSNOY
-	 GW/fOm7PZ8gaLs5uJIYAlXz+efQuBajSudGYQ/xI6ga6lnjRA2sAllK1wVLpuUE80g
-	 I3QwHnZhd+PzrNXdDzxQ7dzwF6aWFsfsfUsxQA4Yk/PTFKBaCXsdM8AAw7cNdnbw9J
-	 xPmhAGUB5wjMxtwNnhi82GjOKdjs+/cP1q09n1ZlCpvyKTIngTA5JfHr/4V+wrt7d6
-	 QClQQ1sYyz9l0rNrw8YuirKraWliqG7YWtWiSzqKP9rUnUUiaKExexvIJHOdn/t43q
-	 rlSeOKqnCX4cA==
+	b=jpK+LRwAyINXIUY2QUYqrQYDafODoy+OCx/WIRluz3+tup0nE0CF9Vavkfw+vt6AH
+	 dsEFQB1U0j7su8mzUmoj2G9otG40x41feD/OkfJwR1J6y7B9PPdY/zGxFaAKDCIrp2
+	 w8DCkw7P8fKCBcx512aZvLtJuPL0gT97cXESWCBOw56LuDaxMpU4dQipwgjP2tKq7o
+	 uPQTnoQUdPLdm9nfnMscbLsGl7bScPLf2Rei4En/Iu/VVGTFaZP386i1pTBZzqnTDA
+	 cilvq2WgrzIMe3Fa9tS5lEO9a49NHDtahB5aBG/1jKjXqKC5MsHb5rDH98JHBUc2/G
+	 kvA0Fc+KlyKOw==
 X-Virus-Scanned: by epochal.quest
 From: Cody Eksal <masterr3c0rd@epochal.quest>
 To: linux-pm@vger.kernel.org,
@@ -45,12 +45,14 @@ To: linux-pm@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
 	Chen-Yu Tsai <wens@csie.org>,
 	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>
+	Samuel Holland <samuel@sholland.org>,
+	Maxime Ripard <mripard@kernel.org>
 Cc: Cody Eksal <masterr3c0rd@epochal.quest>,
 	Andre Przywara <andre.przywara@arm.com>,
 	Parthiban <parthiban@linumiz.com>,
@@ -60,24 +62,22 @@ Cc: Cody Eksal <masterr3c0rd@epochal.quest>,
 	Linus Walleij <linus.walleij@linaro.org>,
 	Thierry Reding <treding@nvidia.com>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Maxime Ripard <mripard@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	Yangtao Li <tiny.windzz@gmail.com>,
 	Viresh Kumar <vireshk@kernel.org>,
 	Nishanth Menon <nm@ti.com>,
 	Stephen Boyd <sboyd@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	"Rafael J. Wysocki" <rafael@kernel.org>
-Subject: [PATCH 07/13] arm64: dts: allwinner: a100: add usb related nodes
-Date: Thu, 24 Oct 2024 14:05:25 -0300
-Message-ID: <20241024170540.2721307-8-masterr3c0rd@epochal.quest>
+Subject: [PATCH 05/13] dt-bindings: usb: sunxi-musb: Add A100 compatible string
+Date: Thu, 24 Oct 2024 14:05:23 -0300
+Message-ID: <20241024170540.2721307-6-masterr3c0rd@epochal.quest>
 X-Mailer: git-send-email 2.47.0
 In-Reply-To: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
 References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_100948_289775_92D1CEEE 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20241024_100948_354916_DA9C9001 
+X-CRM114-Status: UNSURE (   7.85  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,120 +95,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Yangtao Li <frank@allwinnertech.com>
+The A100 MUSB peripheral has 10 endpoints, and thus is compatible with
+the A33 version.
 
-Allwinner A64 have two HCI USB controllers, a OTG controller and a USB
-PHY device, let's add nodes on dts.
-
-Signed-off-by: Yangtao Li <frank@allwinnertech.com>
-[masterr3c0rd@epochal.quest: fallback to a33-musb instead of h3-musb]
 Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
 ---
- .../arm64/boot/dts/allwinner/sun50i-a100.dtsi | 91 +++++++++++++++++++
- 1 file changed, 91 insertions(+)
+ .../devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml        | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi
-index adb11b26045f..0aee1b578661 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi
-@@ -302,6 +302,97 @@ ths: thermal-sensor@5070400 {
- 			#thermal-sensor-cells = <1>;
- 		};
- 
-+		usbphy: phy@5100400 {
-+			#phy-cells = <1>;
-+			compatible = "allwinner,sun50i-a100-usb-phy";
-+			reg = <0x05100400 0x14>,
-+			      <0x05101800 0x4>,
-+			      <0x05200800 0x4>;
-+			reg-names = "phy_ctrl",
-+				    "pmu0",
-+				    "pmu1";
-+			clocks = <&ccu CLK_USB_PHY0>,
-+				 <&ccu CLK_USB_PHY1>;
-+			clock-names = "usb0_phy",
-+				      "usb1_phy";
-+			resets = <&ccu RST_USB_PHY0>,
-+				 <&ccu RST_USB_PHY1>;
-+			reset-names = "usb0_reset",
-+				      "usb1_reset";
-+			status = "disabled";
-+		};
-+
-+		ehci0: usb@5101000 {
-+			compatible = "allwinner,sun50i-a100-ehci",
-+				     "generic-ehci";
-+			reg = <0x05101000 0x100>;
-+			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI0>,
-+				 <&ccu CLK_BUS_EHCI0>,
-+				 <&ccu CLK_USB_OHCI0>;
-+			resets = <&ccu RST_BUS_OHCI0>,
-+				 <&ccu RST_BUS_EHCI0>;
-+			phys = <&usbphy 0>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		ohci0: usb@5101400 {
-+			compatible = "allwinner,sun50i-a100-ohci",
-+				     "generic-ohci";
-+			reg = <0x05101400 0x100>;
-+			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI0>,
-+				 <&ccu CLK_USB_OHCI0>;
-+			resets = <&ccu RST_BUS_OHCI0>;
-+			phys = <&usbphy 0>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		usb_otg: usb@5100000 {
-+			compatible = "allwinner,sun50i-a100-musb",
-+				     "allwinner,sun8i-a33-musb";
-+			reg = <0x05100000 0x0400>;
-+			clocks = <&ccu CLK_BUS_OTG>;
-+			resets = <&ccu RST_BUS_OTG>;
-+			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "mc";
-+			phys = <&usbphy 0>;
-+			phy-names = "usb";
-+			extcon = <&usbphy 0>;
-+			dr_mode = "otg";
-+			status = "disabled";
-+		};
-+
-+		ehci1: usb@5200000 {
-+			compatible = "allwinner,sun50i-a100-ehci",
-+				     "generic-ehci";
-+			reg = <0x05200000 0x100>;
-+			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI1>,
-+				 <&ccu CLK_BUS_EHCI1>,
-+				 <&ccu CLK_USB_OHCI1>;
-+			resets = <&ccu RST_BUS_OHCI1>,
-+				 <&ccu RST_BUS_EHCI1>;
-+			phys = <&usbphy 1>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
-+		ohci1: usb@5200400 {
-+			compatible = "allwinner,sun50i-a100-ohci",
-+				     "generic-ohci";
-+			reg = <0x05200400 0x100>;
-+			interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_OHCI1>,
-+				 <&ccu CLK_USB_OHCI1>;
-+			resets = <&ccu RST_BUS_OHCI1>;
-+			phys = <&usbphy 1>;
-+			phy-names = "usb";
-+			status = "disabled";
-+		};
-+
- 		r_ccu: clock@7010000 {
- 			compatible = "allwinner,sun50i-a100-r-ccu";
- 			reg = <0x07010000 0x300>;
+diff --git a/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml b/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml
+index f972ce976e86..d4993336a29b 100644
+--- a/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml
++++ b/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml
+@@ -24,6 +24,7 @@ properties:
+               - allwinner,sun8i-a83t-musb
+               - allwinner,sun20i-d1-musb
+               - allwinner,sun50i-h6-musb
++              - allwinner,sun50i-a100-musb
+           - const: allwinner,sun8i-a33-musb
+       - items:
+           - const: allwinner,sun50i-h616-musb
 -- 
 2.47.0
 
