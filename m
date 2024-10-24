@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BE33CE8E84
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 14:44:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A16BACE8E84
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 14:45:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tu3vYbUYX65icKdL4ea8jG+CuFvokagO6Ziqk/EiGAw=; b=3UxMtXsaRZgaPZ
-	yiLzBjsNFdCmBYHQjQY9LoEJIg99FKDrlekqW0IzQWGBHtnqYWtYt8ewOHl/5+QHujrEOPn7gA+lf
-	7KWYD+9fnwtSGAxKbTV8jlJofI2Hq3cd/JnU1HQnIwb5R1oiw7BNdPg6G4hm8g+TAg1QMBZ5eDQHh
-	UFvBXHmiMPTfvtqt9ZETFi0ROdRSXpnRJTb0njIsHf/3RQnL0mSt3KzTlI4jIfvzNWpRlqksGbpHM
-	6ZSYJZWKAvcoLj54QxI8h9iCyiLZYvZsiaLySWY3bhFfr5779dBFD2d3YvUxDWdolrYXNAgzynDQZ
-	GPxNL8mAgxgQ1mSiIF9A==;
+	List-Owner; bh=ebKC7ftwcFMXQV6Fu+yz+G9CZTuFMlfbkEJgiWMZT5g=; b=uY6H+SfyXmsJzU
+	JlehKfavyUxsTtzS1mW627uSyo85o/iiNb+GVeRovdqRvVG3cVLknjitnSPVFzvHHMJ5nEdHHjcfN
+	pqfsRiElDkbl/h0shnYW3O+K+vhpi7cAyGiT9pN5Wq5NZJNOdlB1GvgqrcocTZTSQYYesyZc7j688
+	gxhb4iqEP6jiHxa9FwchaLkCq6vNw1X15XSQLAB3oIObQ8lVNg98kXgvaR5uRGu5FbDhue9v5+R+t
+	vK5L/Q1I8zkR2LhZ0quCAYr4lGYK8InmWtm0VWdssG7BiJ+SctmwZzUDdk4X/G0Rspdol7cLwMguh
+	mWRN+5ShWkXyp/KR6CRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3z4E-00000000nL0-4BVu;
-	Thu, 24 Oct 2024 14:44:03 +0000
+	id 1t3z5l-00000000nYB-1NCi;
+	Thu, 24 Oct 2024 14:45:37 +0000
 Received: from pv50p00im-hyfv10011601.me.com ([17.58.6.43])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3z0n-00000000mAn-09Sc
+	id 1t3z0r-00000000mDS-1cv3
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Oct 2024 14:40:30 +0000
+	Thu, 24 Oct 2024 14:40:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
-	s=1a1hai; t=1729780823;
-	bh=IY7OGHzpIoCsCwScK85J8CO2WsYIPvSqixH8c9pokf4=;
+	s=1a1hai; t=1729780831;
+	bh=6mqxkWzrEpyKrm2lpF26RrivIenk/tZDn/SIHzzqvlg=;
 	h=From:Date:Subject:MIME-Version:Content-Type:Message-Id:To;
-	b=k426lwDDQoSxAd4KQQjcHBMp1GyyzoV+SsgcdF4/QW/eHVgQokUXNSlX8r6twXqUV
-	 DXAJ/TfRp5ccEuPEc2xAKHsrgcfnG9sayIk1MS4im0Squ1WB8BPBDbVAf/8ZTSmc79
-	 jwROAqpAyH5/bhLHZfJHzp1UJlg8DifF5dMsuIYZhOTgSSaGqwE9XDQGfeKHTKQUmi
-	 KtiHH6VFuVT77JbNk4Da76627pgJx1ZuYns40q7QCdjXuYQt4pSILR+1Y16pS/Raqh
-	 06XqMOo6pnR1InXhmHEPUhPAgU3RIXU5lGVnzNhVDR/ioLPahNanLjI36piojW+N6T
-	 c+oKmnxJr/mJQ==
+	b=0cta08Hk5UECwqRpw5sluAfg5bJQ6gK0HPTl9zMqQxM/V7njFvXlIb+fxlfYW+n9g
+	 8aHVK2PtPjAV9FtP2sfCaCVJdJ3YEu6yJWYV7sW/CC3f2WV4eckB2rcbB9lF2L0CZI
+	 6ZBtYp90HX8ZSycHjgNbbuNaaeJwjFxzSEPa1GxQFOUBhCSfMhXt1umDrX9i0WJzAP
+	 B8VQybrGH6mrcbVlEwxFHSc9W4fcZmP0pWOStZ3UYQQed6WE0e/L+S8tyqOYO403UX
+	 uylJ+x54W+NaG7vVrdwai1nmzw4WLunIA0m6L/VF00cGW0i8PVahs30cmYAROR/Wnf
+	 8BKxKf6KBwQug==
 Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
-	by pv50p00im-hyfv10011601.me.com (Postfix) with ESMTPSA id 4F6E2C8010A;
-	Thu, 24 Oct 2024 14:40:17 +0000 (UTC)
+	by pv50p00im-hyfv10011601.me.com (Postfix) with ESMTPSA id 53724C8019D;
+	Thu, 24 Oct 2024 14:40:24 +0000 (UTC)
 From: Zijun Hu <zijun_hu@icloud.com>
-Date: Thu, 24 Oct 2024 22:39:27 +0800
-Subject: [PATCH v2 2/6] phy: core: Fix that API
- devm_of_phy_provider_unregister() fails to unregister the phy provider
+Date: Thu, 24 Oct 2024 22:39:28 +0800
+Subject: [PATCH v2 3/6] phy: core: Fix that API devm_phy_destroy() fails to
+ destroy the phy
 MIME-Version: 1.0
-Message-Id: <20241024-phy_core_fix-v2-2-fc0c63dbfcf3@quicinc.com>
+Message-Id: <20241024-phy_core_fix-v2-3-fc0c63dbfcf3@quicinc.com>
 References: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
 In-Reply-To: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -63,8 +63,8 @@ Cc: Lorenzo Pieralisi <lpieralisi@kernel.org>,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
  Zijun Hu <quic_zijuhu@quicinc.com>
 X-Mailer: b4 0.14.1
-X-Proofpoint-ORIG-GUID: SioPm7yDGhdwDsR-7_Tlo6gC-OHYN77Z
-X-Proofpoint-GUID: SioPm7yDGhdwDsR-7_Tlo6gC-OHYN77Z
+X-Proofpoint-ORIG-GUID: suBrFoxD-WoAD9TMyXHHqMf0w4lir4hd
+X-Proofpoint-GUID: suBrFoxD-WoAD9TMyXHHqMf0w4lir4hd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.272,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
  definitions=2024-10-24_15,2024-10-24_02,2024-09-30_01
@@ -74,8 +74,8 @@ X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999 c
  engine=8.19.0-2308100000 definitions=main-2410240120
 X-Apple-Remote-Links: v=1;h=KCk=;charset=UTF-8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_074029_134825_452AD5C7 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20241024_074033_508455_F59702DD 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,14 +94,11 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Zijun Hu <quic_zijuhu@quicinc.com>
 
-For devm_of_phy_provider_unregister(), its comment says it needs to invoke
-of_phy_provider_unregister() to unregister the phy provider, but it does
-not invoke the function actually since devres_destroy() will not call
-devm_phy_provider_release() at all which will call the function, and the
-missing of_phy_provider_unregister() call will case:
-
-- The phy provider fails to be unregistered.
-- Leak both memory and the OF node refcount.
+For devm_phy_destroy(), its comment says it needs to invoke phy_destroy()
+to destroy the phy, but it does not invoke the function actually since
+devres_destroy() will not call devm_phy_consume() at all which will call
+the function, and the missing phy_destroy() call will case that the phy
+fails to be destroyed.
 
 Fixed by using devres_release() instead of devres_destroy() within the API.
 
@@ -109,29 +106,22 @@ Fixes: ff764963479a ("drivers: phy: add generic PHY framework")
 Cc: stable@vger.kernel.org
 Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
 ---
- drivers/phy/phy-core.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/phy/phy-core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index f190d7126613..de07e1616b34 100644
+index de07e1616b34..52ca590a58b9 100644
 --- a/drivers/phy/phy-core.c
 +++ b/drivers/phy/phy-core.c
-@@ -1259,12 +1259,12 @@ EXPORT_SYMBOL_GPL(of_phy_provider_unregister);
-  * of_phy_provider_unregister to unregister the phy provider.
-  */
- void devm_of_phy_provider_unregister(struct device *dev,
--	struct phy_provider *phy_provider)
-+				     struct phy_provider *phy_provider)
+@@ -1121,7 +1121,7 @@ void devm_phy_destroy(struct device *dev, struct phy *phy)
  {
  	int r;
  
--	r = devres_destroy(dev, devm_phy_provider_release, devm_phy_match,
--		phy_provider);
-+	r = devres_release(dev, devm_phy_provider_release, devm_phy_match,
-+			   phy_provider);
- 	dev_WARN_ONCE(dev, r, "couldn't find PHY provider device resource\n");
+-	r = devres_destroy(dev, devm_phy_consume, devm_phy_match, phy);
++	r = devres_release(dev, devm_phy_consume, devm_phy_match, phy);
+ 	dev_WARN_ONCE(dev, r, "couldn't find PHY resource\n");
  }
- EXPORT_SYMBOL_GPL(devm_of_phy_provider_unregister);
+ EXPORT_SYMBOL_GPL(devm_phy_destroy);
 
 -- 
 2.34.1
