@@ -4,86 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78CC7CE8E96
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 16:51:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAF0FCE8E97
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:11:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CNeWUg8unUlNf4aA615iTO+dyvFE9xsxkgCdGaBWVmc=; b=msY380KvXdMyZk
-	uqkL8uej/2BFUirBqli57yquHf0Ep+paNHvt+vUs1aJoe/6ZkNNpKOITpADddUt5UeflZLBzE4XrY
-	z2JKD3WObOZrvqmBZAkhITCIGF6nSDPYAg+cztvFG0FtJ7bTi2J/FbzFsfN+cKpv9xGAtRmsY6NN/
-	5kzYs8qs0/vLfXRg8B1E7v1p0hzfXckiUd08KOUrljIrt+SQ9VluOFP/mJrH7uUL06k+1vq4/MJbR
-	pvlaDS5UUasXeK2bRsJTWN2REYjPnygCBYZ/RFIlv1EV9G9qoJTPdU0zgbSg3j+puTDG+G0+BiBn6
-	TXTL+yCgbFE6aJZoA8+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0Vo7ktdTuNETWRevUe9B6M8gGYIS6d4/PHq5xXaSagc=; b=Xkf+lqqtT1mEgk
+	fpm2IcVHt6Y4CZuScJWIMPYKRf7ysfRq1f00VNKDZu2XKpPSKxj7S8VR+eUAmlHlPeJOlUi7sxD5/
+	tcEonr/K5N6U0d6hWVJ3sFNZfB2OXpkxgU1INb70QSZ+Oh9tA9cKxW028zqiao83zrDv+T8IUys3+
+	qEpsZZ7LVi60meb61yfd3+l4+Er9Iju8gWRrq+pq2J/h3X7NCJ6SfYxdpbPHf0MeSJGtFKup9fUAy
+	2w+n8LxGmBnzbuwNO77akQV2H44CVc9iKiwnsJrx8P3tBTqRC3FcXJGytnEH4GeMCY40YKOxoxLn0
+	56g7DIi2PrgEuD2wccNA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4139-00000001AUQ-3B49;
-	Thu, 24 Oct 2024 16:51:03 +0000
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
+	id 1t41N1-00000001EGZ-1lHG;
+	Thu, 24 Oct 2024 17:11:35 +0000
+Received: from thales.epochal.quest ([2607:5300:205:200::3a30])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t40y8-000000018va-33l7
-	for linux-phy@lists.infradead.org;
-	Thu, 24 Oct 2024 16:45:55 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id d2e1a72fcca58-71e93d551a3so839636b3a.1
-        for <linux-phy@lists.infradead.org>; Thu, 24 Oct 2024 09:45:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1729788351; x=1730393151; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=sbcx/f+avMo0nfnfoFrvHy0s7zMVYb5RcXeOKVfhBB0=;
-        b=kAmEBD32H4nk51HvIdrW0PaqB+CI41/mad8dzHciF50dDrihiFZFYDktN+yJkG7Z+C
-         F/WYa0xp2SPvdX+42dn0rplsfV02+WiXakbS5gbdJ+dW2rgV0WKoVkGNr8u4knNmh5Dg
-         oZpEOkli4U8xJXzCch8quoepD/n8x6Q2Xc2Zt37mcEUYZV1ZawxEhYcs7hWcFHFzKnYd
-         Hmcd6hSFaAYNCAngNQaTzYfeORgV8XyBDz7jbn8dyVtVHsm85LvIF3owIgE8Mza5vNGy
-         YyHBcOyN9HmXWmkyoP6RvVfRZYdk2/PPFPXX5Phx1kKC3C8upooILvNg3dCx6tCEIjhG
-         Nqjg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729788351; x=1730393151;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=sbcx/f+avMo0nfnfoFrvHy0s7zMVYb5RcXeOKVfhBB0=;
-        b=CKalaFyuoLjcvXbw5YHzZ2H2YqyBuaIYnvGGoDQii1NEiqUnirQh6rTbmSI7k3/dqh
-         xLPEXMH05NVqPIjkxWBTXblGi+algCLfuoWOK9l5XgsuBFIaySYcZ3E53k5/lU1gBxve
-         +ppfmGqfGcnn7hhNPvZpTzAt76HMbg7+VnRDHJjizkZdCDYpjrYaCs7/61BXkGdwbeCK
-         3GPs5q3w/iZoYpFRdd6BVKilbF+rBVts+CO6AJeyv8OIWd4X6A+u/dUG4pM83TEOW1G3
-         /B/clTn2xEJiujffQ7rkHW7QkKIiPtsEsKLyIE5ao8NEOLsDnrxiL4bFUIccOHf8+ya9
-         tYiQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWc1uvLoFRq2AgcGY5QCeLm0y6neXOb7z+E2JKzg439qb6YCiUWpz+Ze0KM2lDK4ZYAhsPOJ1V1030=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx3s0UMDAb7ba65pao1plTtQN/kjAZruuRQmm96hICO79DiQK16
-	XSa4+x4IvdUDe3uAo6cUjkUmLkjmxko4IaiFwlp+DBetx6FUJwuQ0LTC0clA77ksy68mNE0T7Yd
-	+Ws8eEpWD88x1JtA0De1T4MtUXkU2/ZeVlJ5L
-X-Google-Smtp-Source: AGHT+IGyVGhrIax31DbYyaNPPps689qKUUGZ/dBmIonlf0Ms5Q31B+FIXf7PnrvX0k/Y2NDzzkEVUzrdywoXgv6bmrc=
-X-Received: by 2002:a05:6a21:9d91:b0:1d7:1277:8d0f with SMTP id
- adf61e73a8af0-1d978bd6450mr8093124637.48.1729788350739; Thu, 24 Oct 2024
- 09:45:50 -0700 (PDT)
+	id 1t41LF-00000001Dlm-13CI;
+	Thu, 24 Oct 2024 17:09:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=epochal.quest;
+	s=default; t=1729789781;
+	bh=s7xzMFvJ4Cag5AvnrOIpgkj1EGCgsWQbCxPj4HldfhU=;
+	h=From:To:Cc:Subject:Date:From;
+	b=XV3L7CAWsqfMo1+ztn5WJZFeVtrIN2TalAaxLuOyWtU0K6CierjqNvMA7qIxXIygT
+	 /3edWKT7iFdUrQQeitM9eKoXXPz/1+YTBxLPnE6AGmGSbguryxK+m0ao7t0RhgVlwh
+	 djaT0WBOlfhLbDGAah2KRenKKJG7MWaW+MpcVAnNOYI2XKCGNV6CbxajODgBEAG4Xs
+	 g4fxBfMffN8VuFIi84Bj0lRJswbnM1rjyhSluGgSpPmzeflhMOTqDQ7CYKEAj0KpYz
+	 QInLLVqWJP39DHxkarJgZmFkAZRuO0LAtXUr5gOQyGBVstgjUdtd27JnkYOmSXCRSM
+	 vbs5ewMt05EeQ==
+X-Virus-Scanned: by epochal.quest
+From: Cody Eksal <masterr3c0rd@epochal.quest>
+To: linux-pm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org
+Cc: Cody Eksal <masterr3c0rd@epochal.quest>,
+	Andre Przywara <andre.przywara@arm.com>,
+	Parthiban <parthiban@linumiz.com>,
+	Yangtao Li <frank@allwinnertech.com>,
+	Florian Fainelli <florian.fainelli@broadcom.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Thierry Reding <treding@nvidia.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Yangtao Li <tiny.windzz@gmail.com>,
+	Viresh Kumar <vireshk@kernel.org>,
+	Nishanth Menon <nm@ti.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>
+Subject: [PATCH 00/13] sunxi: A100/A133 second stage support
+Date: Thu, 24 Oct 2024 14:05:18 -0300
+Message-ID: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
+X-Mailer: git-send-email 2.47.0
 MIME-Version: 1.0
-References: <20241024061347.1771063-1-saravanak@google.com> <2024102457-manager-counting-ff68@gregkh>
-In-Reply-To: <2024102457-manager-counting-ff68@gregkh>
-From: Saravana Kannan <saravanak@google.com>
-Date: Thu, 24 Oct 2024 09:45:10 -0700
-Message-ID: <CAGETcx_BD_G3oOHvT7aRr98Ag7-XvrMX=NW_wm9Cx9M5+qr-aw@mail.gmail.com>
-Subject: Re: [PATCH 0/3] A few minor fw_devlink fixes
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: "Rafael J. Wysocki" <rafael@kernel.org>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Thierry Reding <thierry.reding@gmail.com>, 
-	Jonathan Hunter <jonathanh@nvidia.com>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	=?UTF-8?B?TsOtY29sYXMgRi4gUi4gQS4gUHJhZG8=?= <nfraprado@collabora.com>, 
-	kernel-team@android.com, linux-kernel@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, 
-	linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-mediatek@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_094552_782739_64AE09B8 
-X-CRM114-Status: GOOD (  18.06  )
+X-CRM114-CacheID: sfid-20241024_100945_388618_EF0CED3E 
+X-CRM114-Status: GOOD (  16.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,30 +87,92 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBPY3QgMjQsIDIwMjQgYXQgMTI6MDjigK9BTSBHcmVnIEtyb2FoLUhhcnRtYW4KPGdy
-ZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPiB3cm90ZToKPgo+IE9uIFdlZCwgT2N0IDIzLCAyMDI0
-IGF0IDExOjEzOjQxUE0gLTA3MDAsIFNhcmF2YW5hIEthbm5hbiB3cm90ZToKPiA+IFByb2JhYmx5
-IGVhc2llc3QgZm9yIEdyZWcgdG8gcHVsbCBpbiB0aGVzZSBjaGFuZ2VzPwo+ID4KPiA+IFBTQTog
-RG8gbm90IHB1bGwgYW55IG9mIHRoZXNlIHBhdGNoZXMgaW50byBzdGFibGUga2VybmVscy4gZndf
-ZGV2bGluawo+ID4gaGFkIGEgbG90IG9mIGNoYW5nZXMgdGhhdCBsYW5kZWQgaW4gdGhlIGxhc3Qg
-eWVhci4gSXQncyBoYXJkIHRvIGVuc3VyZQo+ID4gY2hlcnJ5LXBpY2tzIGhhdmUgcGlja2VkIHVw
-IGFsbCB0aGUgZGVwZW5kZW5jaWVzIGNvcnJlY3RseS4gSWYgYW55IG9mCj4gPiB0aGVzZSByZWFs
-bHkgbmVlZCB0byBnZXQgY2hlcnJ5LXBpY2tlZCBpbnRvIHN0YWJsZSBrZXJuZWxzLCBjYyBtZSBh
-bmQKPiA+IHdhaXQgZm9yIG15IGV4cGxpY2l0IEFjay4KPgo+IFlvdSBjYW4gZG8gdGhhdCB3aXRo
-IHRoZSBjb3JyZWN0IHRhZyBpbiB0aGUgY29tbWl0IGFzIHBlciB0aGUgc3RhYmxlCj4gZG9jdW1l
-bnRhdGlvbiBpZiB5b3UgcmVhbGx5IHdhbnQgdG8gOikKPgo+IEJ1dCB3aHkgd291bGQgdGhlc2Ug
-bm90IGJlIGFibGUgdG8gZ28gYmFja3dhcmRzPyAgV2hhdCBjaGFuZ2VkIHRvCj4gcmVxdWlyZSB0
-aGVtIG5vdyBhbmQgbm90IGJlIG9rIGZvciBvbGRlciBrZXJuZWxzPwoKRGVwZW5kaW5nIG9uIGhv
-dyBmYXIgYmFjayB3ZSBnbyBpbiB0ZXJtcyBvZiBrZXJuZWwgdmVyc2lvbiwgaXQnZCBiZSBhCmJ1
-bmNoIG9mIGN5Y2xlIGRldGVjdGlvbiBsb2dpYywgZGVmZXJyZWQgcHJvYmUgYmVoYXZpb3IgY2hh
-bmdlLCBldGMuCkFuZCB0aG9zZSBwYXRjaGVzIG1pZ2h0IGhhdmUgb3RoZXIgZGVwZW5kZW5jaWVz
-IHRoZW1zZWx2ZXMsIGV0Yy4KCkhlJ3Mgb25lIGV4YW1wbGUgb2Ygc3VjaCBhIGJyZWFrYWdlOgpo
-dHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNDEwMjQtZml4dXAtNS0xNS12MS0xLTc0ZDM2
-MGJkMzAwMkBtZWRpYXRlay5jb20vCgotU2FyYXZhbmEKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
-aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hello! This is my first submission, so please be gentle :)
+
+Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
+submitted a patch series for the A100 series of SoCs; [1] intended to add
+support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
+implemented DVFS support. Some patches from the first series landed, but
+the rest were seemingly abandoned.
+
+Although references to the A100 have been removed by Allwinner, it is
+believed that the A133 and A133 Plus, which are still available, are simply
+better binned variants of the A100; no other differences have been noted
+thus far, and the drivers for the A100 work on the A133 without any
+additional modifications. There has been a resurgence of interest in the
+A133; patches to allow mainline U-Boot to run on these devices are
+currently in progress.
+
+I have rebased the patches that failed to land, applying the feedback
+provided by maintainers at the time. Some DT binding patches were added, as
+there were a few cases where compatibles were used without being
+documented. Minor reworks were necessary to apply certain patches, as the
+drivers they modified have matured over time.
+
+Patches 1 and 2 add PMU and watchdog nodes to the device tree. This is
+followed by patches 3-8, which implement support for the USB host and OTG
+peripherals. Patches 9 and 10 add MMC nodes, rounding out what originally
+made up the first patch series; support for these already exists from
+earlier patches. Patches 11-13 finish the job of the second original
+series and this series, implementing OPP and enabling DVFS on these SoCs.
+
+This series is also available on GitHub [3].
+
+A sincere thanks to Andre for encouraging me to submit these patches,
+Parthiban for testing this tree on his board, and to the linux-sunxi
+community and its resources for pointing me to these abandoned series in
+the first place [4].
+
+[1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=380887&archive=both&state=*
+[2] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=396055&archive=both&state=*
+[3] https://github.com/BrokenR3C0RD/linux-a100/compare/c2ee9f59..allwinner-a100
+[4] https://linux-sunxi.org/Linux_mainlining_effort#Work_In_Progress
+
+Cody Eksal (4):
+  dt-bindings: phy: sun50i-a64: add a100 compatible
+  dt-bindings: usb: Add A100 compatible string
+  dt-bindings: usb: sunxi-musb: Add A100 compatible string
+  dt-bindings: opp: h6: Add A100 operating points
+
+Shuosheng Huang (2):
+  cpufreq: sun50i: add a100 cpufreq support
+  arm64: dts: allwinner: a100: Add CPU Operating Performance Points
+    table
+
+Yangtao Li (7):
+  arm64: dts: allwinner: A100: Add PMU mode
+  arm64: dts: allwinner: a100: add watchdog node
+  phy: sun4i-usb: add support for A100 USB PHY
+  arm64: dts: allwinner: a100: add usb related nodes
+  arm64: allwinner: A100: enable EHCI, OHCI and USB PHY nodes in Perf1
+  arm64: allwinner: a100: Add MMC related nodes
+  arm64: dts: allwinner: a100: perf1: Add eMMC and MMC node
+
+ .../allwinner,sun50i-h6-operating-points.yaml |   1 +
+ .../phy/allwinner,sun50i-a64-usb-phy.yaml     |   1 +
+ .../usb/allwinner,sun4i-a10-musb.yaml         |   1 +
+ .../devicetree/bindings/usb/generic-ehci.yaml |   1 +
+ .../devicetree/bindings/usb/generic-ohci.yaml |   1 +
+ .../allwinner/sun50i-a100-allwinner-perf1.dts |  59 ++++++
+ .../dts/allwinner/sun50i-a100-cpu-opp.dtsi    |  90 ++++++++
+ .../arm64/boot/dts/allwinner/sun50i-a100.dtsi | 193 +++++++++++++++++-
+ drivers/cpufreq/sun50i-cpufreq-nvmem.c        |  28 +++
+ drivers/phy/allwinner/phy-sun4i-usb.c         |  11 +
+ 10 files changed, 383 insertions(+), 3 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a100-cpu-opp.dtsi
+
+
+base-commit: c2ee9f594da826bea183ed14f2cc029c719bf4da
+-- 
+2.47.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
