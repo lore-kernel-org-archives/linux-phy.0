@@ -4,64 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC14AD0E3F9
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 19:47:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62E04D10388
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 21:36:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VcgwJVWlzPEuuHH5Ob49x3tyit0LaUMJN0j41yxlCMA=; b=Q1KhFtE+Q+FmB3
-	6ceTvyI25BloOfzWapbaKCoRniKuq1byheWvskiHdrJPFbk50rPk0euskQh+EIb5TE4N2DMe9EuUV
-	xrDDnAONpytSBO24KcF9N+3bELBnreD8aJCS2DxWjtAbiR1N3YfMIbA4K81I6Y7vEllyPEMk8mDgK
-	ZBKWIU9xxqBticLbP3ARDLIIJQS7yA2C0cH+22FQnWy+Yr0QeUtleEDqfc76DQMRsf9I6L9wnsD9n
-	IgnZDi52t5VLkPnk6nDXaq5nKGIIMBMEcVVZpCTgjabZ5dSusreW3oTOfUVi+atSAwxjePQ6Y3Vlv
-	NCNcNW8lkpFun+B8kKRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N8vKWQQ3ZxgYRD+X1/ieHZGcP75H8aRP40xcfFGX2u0=; b=lmSP2YIbZrKf/1
+	FpF1f7siEEiPpTk91C3jW6cMpuCa+hdv7KjyGeeGweYECaTdPZ10firD71fRQTfZ+x8tiLP8PAD5M
+	qUy/iF5p9xGM8aj9Hp/JHXV1gydqM5amNiTYLIZMvewDMdPyvxrFZUt9dpnH287xZIxICqpdvXfz9
+	JcRENwbv34Wa4YbPph9PJH4SPOZ+Zt9E6rTwhVVHUDGpGBeS3KS3+dm/aNktOppSJBOWEhb/XyWfW
+	0QUSiBbKUVuk+JHITvIhklXcBVcA5xBS8Fo6fQ71pn+eJL/5pHKfouJL6oOW9FyqE63lAs5/8Ypau
+	1CQT9gVBSUGfdBDDOhXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t43nV-00000001dfs-0USk;
-	Thu, 24 Oct 2024 19:47:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t43Q1-00000001ak3-3Okv;
-	Thu, 24 Oct 2024 19:22:51 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05BC0339;
-	Thu, 24 Oct 2024 12:23:16 -0700 (PDT)
-Received: from minigeek.lan (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D6E593F528;
-	Thu, 24 Oct 2024 12:22:42 -0700 (PDT)
-Date: Thu, 24 Oct 2024 20:22:33 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Cody Eksal <masterr3c0rd@epochal.quest>
-Cc: linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec
- <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, Yangtao
- Li <frank@allwinnertech.com>, Florian Fainelli
- <florian.fainelli@broadcom.com>, Krzysztof Kozlowski
- <krzysztof.kozlowski@linaro.org>, Parthiban <parthiban@linumiz.com>, Linus
- Walleij <linus.walleij@linaro.org>, Thierry Reding <treding@nvidia.com>,
- Maxime Ripard <mripard@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Yangtao Li <tiny.windzz@gmail.com>, Viresh
- Kumar <vireshk@kernel.org>, Nishanth Menon <nm@ti.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
- <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, "Rafael J.
- Wysocki" <rafael@kernel.org>
-Subject: Re: [PATCH 06/13] phy: sun4i-usb: add support for A100 USB PHY
-Message-ID: <20241024202216.6cded8c4@minigeek.lan>
-In-Reply-To: <20241024170540.2721307-7-masterr3c0rd@epochal.quest>
-References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
-	<20241024170540.2721307-7-masterr3c0rd@epochal.quest>
-Organization: Arm Ltd.
-X-Mailer: Claws Mail 4.2.0 (GTK 3.24.31; x86_64-slackware-linux-gnu)
+	id 1t45VX-00000001sb0-3zbf;
+	Thu, 24 Oct 2024 21:36:39 +0000
+Received: from mail-ot1-x32c.google.com ([2607:f8b0:4864:20::32c])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1t45Ut-00000001sYd-2pbU
+	for linux-phy@lists.infradead.org;
+	Thu, 24 Oct 2024 21:36:01 +0000
+Received: by mail-ot1-x32c.google.com with SMTP id 46e09a7af769-71807ad76a8so900565a34.0
+        for <linux-phy@lists.infradead.org>; Thu, 24 Oct 2024 14:35:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=broadcom.com; s=google; t=1729805757; x=1730410557; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=TRMWESW1RM91+bOrr8Fk3PAnLYyspN3RchZfhlUjRQM=;
+        b=CDlbMCpB6G9xWf/SM24ZSRKvckOo/IqEqHZgV+sLqdpcCgawNPK9vrdhVXK07/xbiW
+         6R5Znlq0hHzIdu7jRQSa0as+XoB34VfO/SMRD+TRx/tw1VneWovi6/F/agxKKyLF5liU
+         5rbvfg82R+nW3HEoADA+wc2gdpCg1CvP4ECSY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1729805757; x=1730410557;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=TRMWESW1RM91+bOrr8Fk3PAnLYyspN3RchZfhlUjRQM=;
+        b=HyxLgs69QMB5IjrhNRLal6vPQpgS8f0KvP5rrGYxhhBcPFwGEMTZDQZk6m/gAaG3Ih
+         Ik3qL73g/8ENZJWZv5BLTEE9lOxfmumY45cukl96addQ1cw+YiSnaHAygXSDJX5Ej7J1
+         QPr5kaSW/0cJCCHs8qrMJT34bdVslTQmzk4L+rwYfwa2eHUadHDA2kH31cF+Tjk2G9Z+
+         bop4T522jKR//YVb8lDOjYOBcPR+p3O5APSe2WGdz85Vb0IlEIxJARd9grV9F//1uix3
+         gFevzB8NyuQ66A3MOBmVwJ5WeycW9CvYp4eZA8DY2Vls3rQyi1xqBm11OJK/tFIX4zwV
+         2P+A==
+X-Gm-Message-State: AOJu0Yxj84590NtZ+fBKutWkkxni/vFBhKe0U1SJDx/5gUNPm9yHlbbm
+	QcJGSZHXtGME29VOCwhNHAb4oOVIoKnHbpUp2A79EUwBkYeMYHGvOc7tRwXEPUkoxw79gMI5/AL
+	YedvEABe+N1wwX35n6byyC5v6R7GwG4ARsdcPuF5ocinw30UYvj6iuCM4W6mmkHiCcRmGAYgULI
+	JpyyKbfpwQME78SfukQ2BF/FiG00tkDjsslkbnm7zMU0pikQH9LsY=
+X-Google-Smtp-Source: AGHT+IHzm0aTR1kYtX5MHKkuMwge/m+Q0yZS+6BXcDc8a+DmMbAEb2HRSeVZUpKJspPVvT+Zyp5c5A==
+X-Received: by 2002:a05:6358:71cd:b0:1c3:7866:591f with SMTP id e5c5f4694b2df-1c3d80db58fmr572202355d.10.1729805757054;
+        Thu, 24 Oct 2024 14:35:57 -0700 (PDT)
+Received: from stbirv-lnx-1.igp.broadcom.net ([192.19.223.252])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-7b177acd5b1sm305333585a.120.2024.10.24.14.35.55
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 24 Oct 2024 14:35:56 -0700 (PDT)
+From: Justin Chen <justin.chen@broadcom.com>
+To: linux-phy@lists.infradead.org
+Cc: f.fainelli@gmail.com,
+	kishon@kernel.org,
+	vkoul@kernel.org,
+	bcm-kernel-feedback-list@broadcom.com,
+	Justin Chen <justin.chen@broadcom.com>
+Subject: [PATCH] phy: usb: Toggle the PHY power during init
+Date: Thu, 24 Oct 2024 14:35:40 -0700
+Message-Id: <20241024213540.1059412-1-justin.chen@broadcom.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_122249_989969_FFC1BB7F 
-X-CRM114-Status: GOOD (  20.51  )
+X-CRM114-CacheID: sfid-20241024_143559_962965_DE3B24D6 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,78 +91,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 24 Oct 2024 14:05:24 -0300
-Cody Eksal <masterr3c0rd@epochal.quest> wrote:
+When bringing up the PHY, it might be in a bad state if left powered.
+One case is we lose the PLL lock if the PLL is gated while the PHY
+is powered. Toggle the PHY power so we can start from a known state.
 
-Hi,
+Fixes: 4e5b9c9a73b3 ("phy: usb: Add support for new Synopsys USB controller on the 7216")
+Signed-off-by: Justin Chen <justin.chen@broadcom.com>
+---
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-> From: Yangtao Li <frank@allwinnertech.com>
-> 
-> Add support for a100's usb phy, which with 2 PHYs.
-> 
-> Signed-off-by: Yangtao Li <frank@allwinnertech.com>
-> [masterr3c0rd@epochal.quest: modified to use quirk flags]
-> Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
-> ---
->  drivers/phy/allwinner/phy-sun4i-usb.c | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-> index b0f19e950601..a3942b2ee90b 100644
-> --- a/drivers/phy/allwinner/phy-sun4i-usb.c
-> +++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-> @@ -1006,6 +1006,16 @@ static const struct sun4i_usb_phy_cfg sun50i_a64_cfg = {
->  	.phy0_dual_route = true,
->  };
->  
-> +static const struct sun4i_usb_phy_cfg sun50i_a100_cfg = {
-> +	.num_phys = 2,
-> +	.disc_thresh = 3,
-
-This member is never used when .siddq_in_base is true (and yes, this is
-wrong for the H616 too), ...
-
-> +	.phyctl_offset = REG_PHYCTL_A33,
-> +	.dedicated_clocks = true,
-> +	.hci_phy_ctl_clear = PHY_CTL_SIDDQ,
-> +	.phy0_dual_route = true,
-> +	.siddq_in_base = true,
-
-... which makes this whole description identical to the D1 version.
-So at the very least we wouldn't this new a100_cfg, but instead just
-point to the existing d1_cfg.
-
-> +};
-> +
->  static const struct sun4i_usb_phy_cfg sun50i_h6_cfg = {
->  	.num_phys = 4,
->  	.phyctl_offset = REG_PHYCTL_A33,
-> @@ -1040,6 +1050,7 @@ static const struct of_device_id sun4i_usb_phy_of_match[] = {
->  	{ .compatible = "allwinner,sun20i-d1-usb-phy", .data = &sun20i_d1_cfg },
->  	{ .compatible = "allwinner,sun50i-a64-usb-phy",
->  	  .data = &sun50i_a64_cfg},
-> +	{ .compatible = "allwinner,sun50i-a100-usb-phy", .data = &sun50i_a100_cfg },
-
-And this also brings up the question whether we need a new compatible
-string. As it stands now, we could also use:
-	compatible = "allwinner,sun50i-a100-usb-phy",
-		     "allwinner,sun20i-d1-usb-phy";
-
-and wouldn't need any driver changes at all. Which would have the neat
-side effect to make USB work already with v5.18 kernels.
-
-The only downside is the somewhat weird ordering of the compatible
-strings, with the much newer chip as the fallback.
-
-What do other people think here?
-
-Cheers,
-Andre
-
-
->  	{ .compatible = "allwinner,sun50i-h6-usb-phy", .data = &sun50i_h6_cfg },
->  	{ .compatible = "allwinner,sun50i-h616-usb-phy", .data = &sun50i_h616_cfg },
->  	{ .compatible = "allwinner,suniv-f1c100s-usb-phy",
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
+index 4c10cafded4e..530b571607c0 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsys.c
+@@ -323,6 +323,12 @@ static void usb_init_common_7216(struct brcm_usb_init_params *params)
+ 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
+ 
+ 	USB_CTRL_UNSET(ctrl, USB_PM, XHC_S2_CLK_SWITCH_EN);
++
++	/*
++	 * The PHY might be in a bad state if it is already powered
++	 * up. Toggle the power just in case.
++	 */
++	USB_CTRL_SET(ctrl, USB_PM, USB_PWRDN);
+ 	USB_CTRL_UNSET(ctrl, USB_PM, USB_PWRDN);
+ 
+ 	/* 1 millisecond - for USB clocks to settle down */
+-- 
+2.34.1
 
 
 -- 
