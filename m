@@ -4,72 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA67BD0BB61
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9965D0BB5E
 	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 06:15:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:References:
-	Mime-Version:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=40/UnIWeLTa0TAoUnvMWcwUGsrAyDJptNdjU386k0w0=; b=3B3QdJ+p/pjBAKbt9EhqajCgiK
-	IRW1YLcVWB/MPh8pBOnLYsjmKfGgLekjAzRrrbIYp4Qx1xNTCV54DlDJk91H/DNtlEl/kzqnbvvJn
-	KrRAhMmsx94DK6tvf9OF9fIw+AiG6k2wRIc9MZvEhPaxlmSQ8ymxFLqCrxGdJqlbvXd3d3Dn+swNb
-	0qg8bS0q2qWWgqCdy6pCKJEEWjzOhkzzqfN1Hc3Udkd7KFXhTJPt+yRDFN6Js2+HejJ9WdPqyvkMT
-	w5P+h8i6t7wd+JIPcrvd9NwWXDYImREQOW1B3Afdow3w24r9OqcmOl1rJmO18GOm9xtBAlQ2gTVpC
-	jeE5/5Fw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Mime-Version:
+	Message-Id:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kES2+idVr/63sCBr9sw4IzvXSmlB2BdORX7x7eqabUE=; b=IsD
+	5Ftnaq0t5SXzMd8hnYfvVOTLPixUiWc8cBGarGGYzzk3hCnr0sRsVEoTv4+dzID4GaErXcrr2iJur
+	tupmmgXLFo2Y9TEv0ASnMzs1EzkRS6Xe2OLuhw9SP/nZWCLUKyGcDaF/nEOXGFhy9X1H/z6Aj+2ih
+	Xhqe07EncBRM8WNMREtciJ7W2e2p0Apy3SxUL3N6HfzeACqXj9dfc8/RoU6l3l7399PDFYH/ogaTk
+	axatYiQqcreW1Um9mfPv68w8kWt/0lydEunENLBtyv6LZt29O9Gr5BLiyGtIry1RCWRVUqPa4HXT4
+	oxCQH2y0U9bvpCce5kQu8XStmeWlVDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3r89-0000000Gstn-2jpT;
+	id 1t3r89-0000000GstW-0CZL;
 	Thu, 24 Oct 2024 06:15:33 +0000
 Received: from mail-yw1-x1149.google.com ([2607:f8b0:4864:20::1149])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3r6b-0000000GsRc-2amq
+	id 1t3r6X-0000000GsQ1-2cn2
 	for linux-phy@lists.infradead.org;
-	Thu, 24 Oct 2024 06:13:59 +0000
-Received: by mail-yw1-x1149.google.com with SMTP id 00721157ae682-6e3705b2883so11402387b3.3
-        for <linux-phy@lists.infradead.org>; Wed, 23 Oct 2024 23:13:56 -0700 (PDT)
+	Thu, 24 Oct 2024 06:13:55 +0000
+Received: by mail-yw1-x1149.google.com with SMTP id 00721157ae682-6e376aa4586so10675867b3.1
+        for <linux-phy@lists.infradead.org>; Wed, 23 Oct 2024 23:13:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1729750436; x=1730355236; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:from:subject:references
-         :mime-version:message-id:in-reply-to:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ULy+zyN1BivKyLwzuPRCl/8UJCnpTGDPYrNtb9eDcL4=;
-        b=S5iA2AnUVrc0O90c8bMEmAoqaAOjPdur9H2qrQVSoQPNOjbEexy5sCUCwqc4eTOhpe
-         ZPFy+svQphhU7lltTDVlvc4HvNm0eidlgMKQ4ZAct7ZctrPEuWQmZZBYRf4yYtXwlcVD
-         LdQMCkMY7lJdn0Rbc2AS+hD9mA8TEodr0VZJgqru62zChy1s2Fez42w1A8Tt8mEZElmr
-         00Exta0e/vWfsdejyxKdiKHi56O4056WRN6E35SveeXlOpt0j14n2bdYpyaGnw8abDJm
-         ykppa4LlGcGdd3J2Wt8do63Q9hwHTv2hnNrjcbU5hHshsGaJzQMWfKz2kIDfcQ3+gu5y
-         HeWQ==
+        d=google.com; s=20230601; t=1729750431; x=1730355231; darn=lists.infradead.org;
+        h=cc:to:from:subject:mime-version:message-id:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=55/hvgYNWdvBpZX8vS6a0ZNEj9vu+ZIZIEdADHyK4mM=;
+        b=JyIGXFWLIIpMxi/683kNseP2042jk+74Yz8RRNOJ1MYsg+LXg/gcWY5DL8d7UW4ttT
+         vRMjKEtU2cuBlXNksv3tJJqzLrU37tGLYma15m1PNDs8amLdIHMW7TpmvyV0qOkfE9V2
+         hM80Y8ZdETXsx2T1yTngdjAVTVfoVnbEs6wy9UdZzbpLlNWobxPAu0mhVnooKikjWGli
+         t60+0Px7AdBaRulPTnlZlqCZ10AA5sTVbBKhyNBEGL+JsUZpa5/dpiHQrc+I+Ebgi+5w
+         ocbm11V3HWvluqDmyAiI7SNljkeooy2ukuVM5Vw8VzsaQD/eJ3SBavljU8LfO6k+eRjM
+         IqPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729750436; x=1730355236;
-        h=content-transfer-encoding:cc:to:from:subject:references
-         :mime-version:message-id:in-reply-to:date:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=ULy+zyN1BivKyLwzuPRCl/8UJCnpTGDPYrNtb9eDcL4=;
-        b=Y6r+XY5SZT1sJqsPGbqF9LzlxitKlpARLpLpLF404u8WSnHPWbyKvURSD5e6cSbs6K
-         AA35dPIXjJC/g6XMblZuSHzuHGMHHem/XB9H796upnTtVNKh8vmZ/gZoh4KwuumqsKGj
-         p/Q+pW81B9pnezCsG3NnBzOsdhUO2MHa0Rshk5v3/XI0L5EzrP2kP5tdBmZxnU9exxfr
-         je0EEmzFsC8Y3RVJenxJPQV9rEaemwGgTg/5cTcmwdtESDWhv0zte7R0rSzC886P+/3W
-         17OoF+Z5gSgNGt5esFqt1LrCNVXaQ3qOiJfqolgXv7jz+zw7DkuzICbM+xxTgGlw5cDQ
-         0glw==
-X-Forwarded-Encrypted: i=1; AJvYcCU3ymNt1UG5Jyagq5Vo5hdtr8ahIuM9bNzpr5Uz5j1SLudPE1bfcYV5v8LbSaljFPEoTs2qXouO3X4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YydrJyK1mPP7lgvR4ozy4qW/3jqSC9S9rzWYhFMNe/eS9tsKUMS
-	3dZESI1rJVc8uJLLLlebXQnHJ5JslwWzDJ/iG8mgxKWhKs+8D3eNnDM5z+Px03/JMW7Xo/cN9xe
-	fNdipfH8xjicnJw==
-X-Google-Smtp-Source: AGHT+IHCEMkQ2RfyYdNtjaLmn7Q1IV6vv3d2IoDuURVXiH0KtdFNDJTv0BNk9TxANKxuJUTxCoodn7NIA1qQz7g=
+        d=1e100.net; s=20230601; t=1729750431; x=1730355231;
+        h=cc:to:from:subject:mime-version:message-id:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=55/hvgYNWdvBpZX8vS6a0ZNEj9vu+ZIZIEdADHyK4mM=;
+        b=wdAsc20Y/43SqCw7s8WIonnOM+G6so+izgNjGsObchv8IwVsaeaZapaNlwRLYogYvM
+         Ej9yzQrTvH3FqCeaSQDv0zHFwP/IJBDK10R7i6K0RmLxTr6KqDLWDaO5wYK2O1dM4NiK
+         Rr76P2dO8luvB6ijhqSBklaLYu5b2IO7KlSAXwfIwLSh7cdWmdhO+3QFAkje4yHNbpUB
+         7vEMB4aDAPSg1c/bsupS3b2tVilpb71aZDRgZlRfi/g+lxj0pgVvUyZzgsAXgqn6oeSE
+         dyr49mSDsAAbbBOKUOOPZEKVNeWiaFObBwGC3C8ZFk4qS9wU8pgM6/Vf6NXcA+/moKbs
+         y1NA==
+X-Forwarded-Encrypted: i=1; AJvYcCUSt2/LKbxD+0nPoySgn0pUvSiMMaxAg1EfgC21KDh097GyUUn2St9oZQPnWtJhbms//Y/CS7DXDP8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxGNfUYBEZb28jTty9EwlBXYSkQvTPEDDHW02GPWtpSLXJ1H61P
+	lTvp7hc5Tj4Q/hTRvjMQmIy5EbvkwQXF4KttBkCNVIL4a5n2r2Y19EIHR8LHQvPgfHrwjBKRYPR
+	U5agR+Tpb87yU6g==
+X-Google-Smtp-Source: AGHT+IEjm5xZ8oWEf7u6//TA4Kt5HjH6iFnxvFJipXmVy8asdr1VaVjmTPVebbvVpJLKuPZgRMsL7ilkx4vd+j0=
 X-Received: from saravanak.san.corp.google.com ([2620:15c:2d:3:965e:f81d:c9fb:b352])
- (user=saravanak job=sendgmr) by 2002:a05:690c:6811:b0:6e3:19d7:382a with SMTP
- id 00721157ae682-6e85813d7f5mr589267b3.1.1729750435897; Wed, 23 Oct 2024
- 23:13:55 -0700 (PDT)
-Date: Wed, 23 Oct 2024 23:13:42 -0700
-In-Reply-To: <20241024061347.1771063-1-saravanak@google.com>
-Message-Id: <20241024061347.1771063-2-saravanak@google.com>
+ (user=saravanak job=sendgmr) by 2002:a05:690c:7082:b0:6e7:e493:2db6 with SMTP
+ id 00721157ae682-6e86632ee4bmr196737b3.3.1729750431239; Wed, 23 Oct 2024
+ 23:13:51 -0700 (PDT)
+Date: Wed, 23 Oct 2024 23:13:41 -0700
+Message-Id: <20241024061347.1771063-1-saravanak@google.com>
 Mime-Version: 1.0
-References: <20241024061347.1771063-1-saravanak@google.com>
 X-Mailer: git-send-email 2.47.0.105.g07ac214952-goog
-Subject: [PATCH 1/3] drm: display: Set fwnode for aux bus devices
+Subject: [PATCH 0/3] A few minor fw_devlink fixes
 From: Saravana Kannan <saravanak@google.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Rafael J. Wysocki" <rafael@kernel.org>, 
 	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
@@ -84,8 +79,9 @@ Cc: Saravana Kannan <saravanak@google.com>,
 	linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241023_231357_684243_01B05953 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20241023_231353_670632_21DE8C6E 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,35 +93,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Zndub2RlIG5lZWRzIHRvIGJlIHNldCBmb3IgYSBkZXZpY2UgZm9yIGZ3X2RldmxpbmsgdG8gYmUg
-YWJsZSB0bwp0cmFjay9lbmZvcmNlIGl0cyBkZXBlbmRlbmNpZXMgY29ycmVjdGx5LiBXaXRob3V0
-IHRoaXMsIHlvdSdsbCBzZWUgZXJyb3IKbWVzc2FnZXMgbGlrZSB0aGlzIHdoZW4gdGhlIHN1cHBs
-aWVyIGhhcyBwcm9iZWQgYW5kIHRyaWVzIHRvIG1ha2Ugc3VyZQphbGwgaXRzIGZ3bm9kZSBjb25z
-dW1lcnMgYXJlIGxpbmtlZCB0byBpdCB1c2luZyBkZXZpY2UgbGlua3M6CgptZWRpYXRlay1kcm0t
-ZHAgMWM1MDAwMDAuZWRwLXR4OiBGYWlsZWQgdG8gY3JlYXRlIGRldmljZSBsaW5rICgweDE4MCkg
-d2l0aCBiYWNrbGlnaHQtbGNkMAoKUmVwb3J0ZWQtYnk6ICJOw61jb2xhcyBGLiBSLiBBLiBQcmFk
-byIgPG5mcmFwcmFkb0Bjb2xsYWJvcmEuY29tPgpDbG9zZXM6IGh0dHBzOi8vbG9yZS5rZXJuZWwu
-b3JnL2FsbC83Yjk5NTk0Ny00NTQwLTRiMTctODcyZS1lMTA3YWRjYTQ1OThAbm90YXBpYW5vLwpU
-ZXN0ZWQtYnk6ICJOw61jb2xhcyBGLiBSLiBBLiBQcmFkbyIgPG5mcmFwcmFkb0Bjb2xsYWJvcmEu
-Y29tPgpTaWduZWQtb2ZmLWJ5OiBTYXJhdmFuYSBLYW5uYW4gPHNhcmF2YW5ha0Bnb29nbGUuY29t
-PgotLS0KIGRyaXZlcnMvZ3B1L2RybS9kaXNwbGF5L2RybV9kcF9hdXhfYnVzLmMgfCAyICstCiAx
-IGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQg
-YS9kcml2ZXJzL2dwdS9kcm0vZGlzcGxheS9kcm1fZHBfYXV4X2J1cy5jIGIvZHJpdmVycy9ncHUv
-ZHJtL2Rpc3BsYXkvZHJtX2RwX2F1eF9idXMuYwppbmRleCBkODEwNTI5ZWJmYjYuLmVjN2VhYzZi
-NTk1ZiAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL2Rpc3BsYXkvZHJtX2RwX2F1eF9idXMu
-YworKysgYi9kcml2ZXJzL2dwdS9kcm0vZGlzcGxheS9kcm1fZHBfYXV4X2J1cy5jCkBAIC0yOTIs
-NyArMjkyLDcgQEAgaW50IG9mX2RwX2F1eF9wb3B1bGF0ZV9idXMoc3RydWN0IGRybV9kcF9hdXgg
-KmF1eCwKIAlhdXhfZXAtPmRldi5wYXJlbnQgPSBhdXgtPmRldjsKIAlhdXhfZXAtPmRldi5idXMg
-PSAmZHBfYXV4X2J1c190eXBlOwogCWF1eF9lcC0+ZGV2LnR5cGUgPSAmZHBfYXV4X2RldmljZV90
-eXBlX3R5cGU7Ci0JYXV4X2VwLT5kZXYub2Zfbm9kZSA9IG9mX25vZGVfZ2V0KG5wKTsKKwlkZXZp
-Y2Vfc2V0X25vZGUoJmF1eF9lcC0+ZGV2LCBvZl9md25vZGVfaGFuZGxlKG9mX25vZGVfZ2V0KG5w
-KSkpOwogCWRldl9zZXRfbmFtZSgmYXV4X2VwLT5kZXYsICJhdXgtJXMiLCBkZXZfbmFtZShhdXgt
-PmRldikpOwogCiAJcmV0ID0gZGV2aWNlX3JlZ2lzdGVyKCZhdXhfZXAtPmRldik7Ci0tIAoyLjQ3
-LjAuMTA1LmcwN2FjMjE0OTUyLWdvb2cKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+Probably easiest for Greg to pull in these changes?
+
+PSA: Do not pull any of these patches into stable kernels. fw_devlink
+had a lot of changes that landed in the last year. It's hard to ensure
+cherry-picks have picked up all the dependencies correctly. If any of
+these really need to get cherry-picked into stable kernels, cc me and
+wait for my explicit Ack.
+
+Thanks,
+Saravana
+
+Saravana Kannan (3):
+  drm: display: Set fwnode for aux bus devices
+  phy: tegra: xusb: Set fwnode for xusb port devices
+  drivers: core: fw_devlink: Make the error message a bit more useful
+
+ drivers/base/core.c                      | 4 ++--
+ drivers/gpu/drm/display/drm_dp_aux_bus.c | 2 +-
+ drivers/phy/tegra/xusb.c                 | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+-- 
+2.47.0.105.g07ac214952-goog
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
