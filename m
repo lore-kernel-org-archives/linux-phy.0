@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C9FFCE8E99
-	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:22:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36B08CE8E99
+	for <linux-phy@archiver.kernel.org>; Thu, 24 Oct 2024 17:23:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3JUU7ucLoC7JLecU1Aa33zSCZP43BNgle+XToLGq/cM=; b=hSkAvpsVxrQROW
-	19Y/+00IlXy/QuW4iYnKyxB4szvFYJRFsp8sAFlEgWpIlZnb6fQtdFajpY9wWbJ29yLYKyXRiJhB5
-	K4vA49+KFQV6WF2MRVFKTYVuGsLOXQnkFIIwRMwkq8YxsepofDtmNhAl0YZ+sJp0ZdGdMnd44G0fy
-	8pwWwfoB6QJsPLSnOPhuHUkidW3DhKCYnnHRx1MS1n/IShTJhDuSieFbU8qsG/RHT9ODKIoN9+F9r
-	bPaf0/UONTvgPls2+ieGxqF+v6kOrTITIomXQDIxebUBabuwY2+k9ZJ4RKdWJ+WNqG4y/lK/pIoSW
-	hvedooUW7knWqg6zbYmg==;
+	List-Owner; bh=dN7rKn0DMSrQehYOETXY+IYuAyJ77ZIRro/EtoBBorE=; b=CzPCKPf/WUxTso
+	CNIEOWLdEXurNfnvEnbSfWE561b0wDQHDgx0IlnsXGcuvZrnsY19em0PQWjJCK/HjLpu5W5R6yiAb
+	35FAG0vgD1spfuOqW3mjeTtt9X7EQZsDk8uG/eZjuiTmlpzL9uarIISF9E6/xEtF2+YhJ0RH4XcSe
+	kw7v1CWBv7AprjhJ5ZNJT8CgSzODdD1g7cQVh6rSCGjev/fX3e7gzy0kv6yBfo0zYVUXtA82il7Fm
+	6n63sdynnXUcprImu8zBcc9KTe2p+KGEQV0qXJkwJWMfQRM/Pq7PCsTf1rOF7gHtcrRCJBW16AfUG
+	Ey5Te1VCoFglE4tkECxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41X6-00000001GLA-3MPh;
-	Thu, 24 Oct 2024 17:22:00 +0000
-Received: from thales.epochal.quest ([51.222.15.28])
+	id 1t41Ys-00000001GsQ-3usk;
+	Thu, 24 Oct 2024 17:23:50 +0000
+Received: from thales.epochal.quest ([2607:5300:205:200::3a30])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t41LJ-00000001Dol-1hsA;
+	id 1t41LJ-00000001DpE-4C4X;
 	Thu, 24 Oct 2024 17:09:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=epochal.quest;
-	s=default; t=1729789787;
-	bh=E2aCqTy48x9i6+PsxlngJvQsrJiGAg5xpa3iVpu+v2U=;
+	s=default; t=1729789788;
+	bh=i9M0xbrAcc2zYjmRWvSGZudanxzGOPy6UtlMgUT0VHA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=NepmM36TzV2U6xaCSVHRU/CIYMlTPDEr4bPPeSfDbp9dXqcFssTWFuH/ZR96S3kCx
-	 fhbqR7nSuSWJBCZ6p8zjhkTmFFYg4Zk4qVg2laTKyZLqZBExxRRGUgfZyBdnb/1lbZ
-	 GrLQvfSBQCdKRMiBz2LFf5YPpnLRVglnSVo4PApQW1LttSTZCW4gG3hCmDfH3eY4QU
-	 2JKq6gcv8aK2u7TM9Bvu+oyNvnCV38F0XKu+XwzPnCmRyGgmzzwDcY1tc9+G6hsyco
-	 nLgxzq7ngs+mUJQhJHLLiytzjjLabFUFdXlIUVJLS7tVA1gjjpKfnxd3LTxdpY8+Wz
-	 LfS3wWOe/ovHQ==
+	b=SyMKLYIkLV4yt/rvAYObv3DEnh9SXBhd82PdHYAMcxFUOhicASPhb3gJrWrSfRWBz
+	 O/U6QxXbYc6HPKOFA5QPSfJSQImr49xa9bgMprIcyy7uPVlErv/ofO4gpqqIB36Z7v
+	 IvrodmRgzh0xOcmVgYzvukEji0Omi2XYhV8r1mwdLpJlBY5azK4akyhY747tzA41w5
+	 rnyDGdomBrHYYGdGGz3hr5RA8YBdIpfozoIV4JoqXp3Cst+dEqbQvU8qD2hBoFTkTY
+	 lpCHV7vX5FmdzYrTTH4rE3QRK/r7HB27rDlJfsKR+0U/FdostLHe3aGZuIjzoRiJw1
+	 DeQcPUq8p9NbA==
 X-Virus-Scanned: by epochal.quest
 From: Cody Eksal <masterr3c0rd@epochal.quest>
 To: linux-pm@vger.kernel.org,
@@ -45,9 +45,9 @@ To: linux-pm@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
+	Yangtao Li <tiny.windzz@gmail.com>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Viresh Kumar <viresh.kumar@linaro.org>,
 	Chen-Yu Tsai <wens@csie.org>,
 	Jernej Skrabec <jernej.skrabec@gmail.com>,
 	Samuel Holland <samuel@sholland.org>
@@ -62,23 +62,24 @@ Cc: Cody Eksal <masterr3c0rd@epochal.quest>,
 	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
 	Maxime Ripard <mripard@kernel.org>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Yangtao Li <tiny.windzz@gmail.com>,
 	Viresh Kumar <vireshk@kernel.org>,
 	Nishanth Menon <nm@ti.com>,
 	Stephen Boyd <sboyd@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>
-Subject: [PATCH 10/13] arm64: dts: allwinner: a100: perf1: Add eMMC and MMC node
-Date: Thu, 24 Oct 2024 14:05:28 -0300
-Message-ID: <20241024170540.2721307-11-masterr3c0rd@epochal.quest>
+	Shuosheng Huang <huangshuosheng@allwinnertech.com>
+Subject: [PATCH 12/13] cpufreq: sun50i: add a100 cpufreq support
+Date: Thu, 24 Oct 2024 14:05:30 -0300
+Message-ID: <20241024170540.2721307-13-masterr3c0rd@epochal.quest>
 X-Mailer: git-send-email 2.47.0
 In-Reply-To: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
 References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_100949_691090_1C29A4C8 
-X-CRM114-Status: UNSURE (   8.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241024_100950_300387_879E49A3 
+X-CRM114-Status: GOOD (  12.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,43 +96,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Yangtao Li <frank@allwinnertech.com>
+From: Shuosheng Huang <huangshuosheng@allwinnertech.com>
 
-A100 perf1 hava MicroSD slot and on-board eMMC module, add support for them.
+Let's add cpufreq nvmem based for allwinner a100 soc. It's similar to h6,
+let us use efuse_xlate to extract the differentiated part.
 
-Signed-off-by: Yangtao Li <frank@allwinnertech.com>
+Signed-off-by: Shuosheng Huang <huangshuosheng@allwinnertech.com>
+[masterr3c0rd@epochal.quest: add A100 to opp_match_list]
 Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
 ---
- .../allwinner/sun50i-a100-allwinner-perf1.dts    | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/cpufreq/sun50i-cpufreq-nvmem.c | 28 ++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts
-index c6d8264b91b7..29e9d24da8b6 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dts
-@@ -39,6 +39,22 @@ &ehci1 {
- 	status = "okay";
+diff --git a/drivers/cpufreq/sun50i-cpufreq-nvmem.c b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
+index 293921acec93..3a29c026d364 100644
+--- a/drivers/cpufreq/sun50i-cpufreq-nvmem.c
++++ b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
+@@ -22,6 +22,9 @@
+ #define NVMEM_MASK	0x7
+ #define NVMEM_SHIFT	5
+ 
++#define SUN50I_A100_NVMEM_MASK	0xf
++#define SUN50I_A100_NVMEM_SHIFT	12
++
+ static struct platform_device *cpufreq_dt_pdev, *sun50i_cpufreq_pdev;
+ 
+ struct sunxi_cpufreq_data {
+@@ -45,6 +48,23 @@ static u32 sun50i_h6_efuse_xlate(u32 speedbin)
+ 		return 0;
+ }
+ 
++static u32 sun50i_a100_efuse_xlate(u32 speedbin)
++{
++	u32 efuse_value;
++
++	efuse_value = (speedbin >> SUN50I_A100_NVMEM_SHIFT) &
++		      SUN50I_A100_NVMEM_MASK;
++
++	switch (efuse_value) {
++	case 0b100:
++		return 2;
++	case 0b010:
++		return 1;
++	default:
++		return 0;
++	}
++}
++
+ static int get_soc_id_revision(void)
+ {
+ #ifdef CONFIG_HAVE_ARM_SMCCC_DISCOVERY
+@@ -108,6 +128,10 @@ static struct sunxi_cpufreq_data sun50i_h6_cpufreq_data = {
+ 	.efuse_xlate = sun50i_h6_efuse_xlate,
  };
  
-+&mmc0 {
-+	vmmc-supply = <&reg_dcdc1>;
-+	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
-+	bus-width = <4>;
-+	status = "okay";
++static struct sunxi_cpufreq_data sun50i_a100_cpufreq_data = {
++	.efuse_xlate = sun50i_a100_efuse_xlate,
 +};
 +
-+&mmc2 {
-+	vmmc-supply = <&reg_dcdc1>;
-+	vqmmc-supply = <&reg_aldo1>;
-+	cap-mmc-hw-reset;
-+	non-removable;
-+	bus-width = <8>;
-+	status = "okay";
-+};
-+
- &ohci0 {
- 	status = "okay";
+ static struct sunxi_cpufreq_data sun50i_h616_cpufreq_data = {
+ 	.efuse_xlate = sun50i_h616_efuse_xlate,
  };
+@@ -116,6 +140,9 @@ static const struct of_device_id cpu_opp_match_list[] = {
+ 	{ .compatible = "allwinner,sun50i-h6-operating-points",
+ 	  .data = &sun50i_h6_cpufreq_data,
+ 	},
++	{ .compatible = "allwinner,sun50i-a100-operating-points",
++	  .data = &sun50i_a100_cpufreq_data,
++	},
+ 	{ .compatible = "allwinner,sun50i-h616-operating-points",
+ 	  .data = &sun50i_h616_cpufreq_data,
+ 	},
+@@ -291,6 +318,7 @@ static struct platform_driver sun50i_cpufreq_driver = {
+ 
+ static const struct of_device_id sun50i_cpufreq_match_list[] = {
+ 	{ .compatible = "allwinner,sun50i-h6" },
++	{ .compatible = "allwinner,sun50i-a100" },
+ 	{ .compatible = "allwinner,sun50i-h616" },
+ 	{ .compatible = "allwinner,sun50i-h618" },
+ 	{ .compatible = "allwinner,sun50i-h700" },
 -- 
 2.47.0
 
