@@ -4,85 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7996BD1171E
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Oct 2024 08:15:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D40DFD0C5F8
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Oct 2024 10:11:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tH8tGMqmSdb5haxWNFnM4CFV5eAIlABHshz7HtCaDgk=; b=TNfXjbCVZLmbfB
-	COJXy3YqGe3P+jQZvS7x5b7i21XcASjfv+aFawQAkFQQGdNF5jBCKoFgEDCI3twKSK0baJv5Xtaoi
-	FQT/XHrm4UuMPNDDXsyC1FlyW3Xf2McUnuO2u4F3VLM9LjlmuV4PYsCfoN2VVROeXV5aJs9Hu1rgD
-	jVqypNzblsoWHvst52x6IA9jhOPCxuoIreAdgt07TiBSkN3dPq+hf8eAyZLqe02LPJlkk+d1sX4Ij
-	BxDgzySb+dPBhseGVpRcVPX863UUJok5KlOlUZiPzY6bIfMwXkz5oq5ccZoT0UKghg1JnkgjMA57V
-	KxzKs3KmHMrAB6A4xfcA==;
+	List-Owner; bh=ic8nKE63Smzn6pmBdqUGSQs3bnHHt0aWVzukqVQ/e9o=; b=W2xa7jniMGt92U
+	icWtC449uzK1yijAUa3n9MJiBukk/oYfAAL6L5I0kBCxzs4rhyzOBWcW1O7gs+VGgIF1QgS88SJge
+	+4JYfQGvL1Or/j4GDZhj0VNwOAOmAOa8WSn93Trv2/oB1MUn3bT++l8xB2bnDgQRNDbqSuU+DK0Re
+	1oQxS3xY/IKTQkhKgFFUDXFmOz+fmjMncTaBYwVzNjtw1zEZYb6KSUgWQHT709v9si0EMrI5KUNR1
+	eKPtc0UsWRZEtD9AmTvHUh3UFUS5VyguJq+Fxsx1V2rSCzktCRfpAKdWJ3/6sRWj4svwQ/vglrqUB
+	AKGNlA9m1oG/udcTT40A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4FTy-00000002wvx-2elW;
-	Fri, 25 Oct 2024 08:15:42 +0000
-Received: from bulk0.mail-out.lima-city.de ([91.216.248.212])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4FKj-00000002v1r-28LA;
-	Fri, 25 Oct 2024 08:06:11 +0000
-From: mailinglist1@johanneskirchmair.de
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=johanneskirchmair.de;
-	s=securedbylima-20161106; t=1729843565;
-	bh=P3R6bpWXHVToa3o5mnFLcdTIAER9hOUy5GkSK3oxbIU=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=dClucyDY1RF8+yabq5q7fGMmYV0yilRAK4cAeI6j/16NJ/0+n0VCZ1uDg18uP5/DZ
-	 E9YptnsWHT40GY0Oeylm2JwhtJZz8unLpwecO7ppMg+Vw1ND8U0laH6sdlAAhg6YCF
-	 qjnfFRZm8I/4Lph4zPSAPiQDmt+7CQtlyx7q7n5s=
-To: aford173@gmail.com
-Cc: johannes.kirchmair@skidata.com,
-	Laurent.pinchart@ideasonboard.com,
-	airlied@gmail.com,
-	alexander.stein@ew.tq-group.com,
-	andrzej.hajda@intel.com,
-	catalin.marinas@arm.com,
-	conor+dt@kernel.org,
-	daniel@ffwll.ch,
-	devicetree@vger.kernel.org,
-	dri-devel@lists.freedesktop.org,
-	festevam@gmail.com,
-	frieder.schrempf@kontron.de,
-	jernej.skrabec@gmail.com,
-	jonas@kwiboo.se,
-	kernel@pengutronix.de,
-	kishon@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	l.stach@pengutronix.de,
-	linux-arm-kernel@lists.infradead.org,
-	linux-imx@nxp.com,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org,
-	maarten.lankhorst@linux.intel.com,
-	marex@denx.de,
-	mripard@kernel.org,
-	neil.armstrong@linaro.org,
-	p.zabel@pengutronix.de,
-	rfoss@kernel.org,
-	robh+dt@kernel.org,
-	s.hauer@pengutronix.de,
-	shawnguo@kernel.org,
-	tzimmermann@suse.de,
-	ulf.hansson@linaro.org,
-	victor.liu@nxp.com,
-	vkoul@kernel.org,
-	will@kernel.org
-Subject: imx8mp: HDMI display blank/black problems
-Date: Fri, 25 Oct 2024 10:05:44 +0200
-Message-Id: <20241025080544.136280-1-mailinglist1@johanneskirchmair.de>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20240203165307.7806-1-aford173@gmail.com>
-References: <20240203165307.7806-1-aford173@gmail.com>
+	id 1t4HHt-00000003K1u-1gsV;
+	Fri, 25 Oct 2024 10:11:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1t4HGD-00000003JXT-0166;
+	Fri, 25 Oct 2024 10:09:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F00F3339;
+	Fri, 25 Oct 2024 03:10:03 -0700 (PDT)
+Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8419C3F73B;
+	Fri, 25 Oct 2024 03:09:29 -0700 (PDT)
+Date: Fri, 25 Oct 2024 11:09:26 +0100
+From: Andre Przywara <andre.przywara@arm.com>
+To: Cody Eksal <masterr3c0rd@epochal.quest>
+Cc: "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-sunxi@lists.linux.dev"
+ <linux-sunxi@lists.linux.dev>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+ <linux-phy@lists.infradead.org>, "linux-usb@vger.kernel.org"
+ <linux-usb@vger.kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+ Parthiban <parthiban@linumiz.com>, Yangtao Li <frank@allwinnertech.com>,
+ Florian Fainelli <florian.fainelli@broadcom.com>, Vinod Koul
+ <vkoul@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, Thierry
+ Reding <treding@nvidia.com>, Krzysztof Kozlowski
+ <krzysztof.kozlowski@linaro.org>, Chen-Yu Tsai <wens@csie.org>, Maxime
+ Ripard <mripard@kernel.org>, Yangtao Li <tiny.windzz@gmail.com>, Viresh
+ Kumar <vireshk@kernel.org>, Nishanth Menon <nm@ti.com>, Stephen Boyd
+ <sboyd@kernel.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel
+ Holland <samuel@sholland.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>
+Subject: Re: [PATCH 04/13] dt-bindings: usb: Add A100 compatible string
+Message-ID: <20241025110926.6e033dfc@donnerap.manchester.arm.com>
+In-Reply-To: <20241024170540.2721307-5-masterr3c0rd@epochal.quest>
+References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
+	<20241024170540.2721307-5-masterr3c0rd@epochal.quest>
+Organization: ARM
+X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241025_010609_992288_602AD6A1 
-X-CRM114-Status: UNSURE (   8.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241025_030937_175842_4B79EB9A 
+X-CRM114-Status: GOOD (  13.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,25 +77,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGV5LCAKV2UgaGFkIHNvbWUgcHJvYmxlbXMgd2l0aCB0aGUgaGRtaSBvbiB0aGUgaW14OG1wIGFu
-ZCB3YW50ZWQgdG8gbGVhdmUsIHdoYXQgd2UgZm91bmQgb3V0IGFib3V0IGl0LCBzb21ld2hlcmUg
-Zm9yIG90aGVycyB0byBmaW5kIGl0LgoKVGhlIHByb2JsZW0gd2FzIHRoYXQgb3VyIGhkbWkgZGlz
-cGxheSBzb21ldGltZXMgc3RheWVkIGJsYW5rIGFmdGVyIGhvdCBwbHVnZ2luZyBhbmQgc29tZXRp
-bWVzIGF0IHN0YXJ0dXAuIE9uIG9sZGVyIGtlcm5lbCB2ZXJzaW9ucyA2LjYgd2UgZGlkIG5vdCBo
-YXZlIHRoZSBwcm9ibGVtIHdpdGggdGhlIG5vdCBtYWlubGluZWQgaGRtaSBwYXRjaGVzLiAKV2Ug
-dHJhY2tlZCB0aGUgY29tbWl0IGRvd24gdGhhdCBpbnRyb2R1Y2VkIHRoZSBwcm9ibGVtIGZvciB1
-cy4gSXQgd2FzIHRoZSBmb2xsb3dpbmcg4oCcZHJpdmVyIGNvcmU6IEVuYWJsZSBmd19kZXZsaW5r
-PXJwbSBieSBkZWZhdWx04oCdICBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzIwMjMxMTEz
-MjIwOTQ4LjgwMDg5LTEtc2FyYXZhbmFrQGdvb2dsZS5jb20vClNvIHdlIHN3aXRjaGVkIGJhY2sg
-dG8gRldfREVWTElOS19GTEFHU19PTiB2aWEga2VybmVsIHBhcmFtZXRlci4gRG9u4oCZdCByZWFs
-bHkgdW5kZXJzdGFuZCB3aGF0IHRoZSBwcm9ibGVtIHdpdGggUlBNIGlzLgoKU28sIHRoaXMgaW5m
-b3JtYXRpb24gaXMganVzdCBmb3IgcmVmZXJlbmNlLiBNYXliZSBzb21lb25lIGhhcyBhbiBpZGVh
-IHdoYXQgaXMgZ29pbmcgb24gaGVyZS4gQW5kIGhvdyB0byBmaXggdGhlIHByb2JsZW0gaW4gYSBt
-b3JlIHByb3BlciB3YXkuCgpCZXN0IHJlZ2FyZHMgSm9oYW5uZXMKCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Thu, 24 Oct 2024 18:05:22 +0100
+Cody Eksal <masterr3c0rd@epochal.quest> wrote:
+
+> The Allwinner A100 contains two fully OHCI/EHCI compatible USB host
+> controllers. Add their compatible strings to the list of
+> generic OHCI/EHCI controllers.
+> 
+> Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
+
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+
+Cheers,
+Andre
+
+> ---
+>  Documentation/devicetree/bindings/usb/generic-ehci.yaml | 1 +
+>  Documentation/devicetree/bindings/usb/generic-ohci.yaml | 1 +
+>  2 files changed, 2 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/generic-ehci.yaml b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
+> index 2ed178f16a78..e00e98dd04af 100644
+> --- a/Documentation/devicetree/bindings/usb/generic-ehci.yaml
+> +++ b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
+> @@ -30,6 +30,7 @@ properties:
+>                - allwinner,sun4i-a10-ehci
+>                - allwinner,sun50i-a64-ehci
+>                - allwinner,sun50i-h6-ehci
+> +              - allwinner,sun50i-a100-ehci
+>                - allwinner,sun50i-h616-ehci
+>                - allwinner,sun5i-a13-ehci
+>                - allwinner,sun6i-a31-ehci
+> diff --git a/Documentation/devicetree/bindings/usb/generic-ohci.yaml b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+> index b9576015736b..6ce81979781b 100644
+> --- a/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+> +++ b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
+> @@ -17,6 +17,7 @@ properties:
+>                - allwinner,sun4i-a10-ohci
+>                - allwinner,sun50i-a64-ohci
+>                - allwinner,sun50i-h6-ohci
+> +              - allwinner,sun50i-a100-ohci
+>                - allwinner,sun50i-h616-ohci
+>                - allwinner,sun5i-a13-ohci
+>                - allwinner,sun6i-a31-ohci
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
