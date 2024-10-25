@@ -4,72 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C4A0D0C614
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Oct 2024 14:07:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F913D149EC
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Oct 2024 19:55:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=nyHLHaDg1k4MCgqj4zbzUsuAHlW0ztlp0z8W90ons60=; b=v/Dq/gfIDkxiglQQdpEVFHnBxB
-	N0jOGFYW723kpfYcKkjKM70fXyw6B5l31D3tDpgSRGNxFPuvASuSctnWp055hBDgu0O6FFVsmWbub
-	fdCLc0SR7DsHdEGhMxtp3qqFD0I1wD881+rsRSO/I4qSf8RNBkTKNWxj671Pf/Dp6Pas/PS4PeSOO
-	4KH0F6+UUOIU0OqXs8Xhn+Aw4CwLF23PUp0qcFpAtjP4ntbJR1x3oAbXoD04WfJTPuvNRZfjPKW/U
-	VzuYgvNTPIrD90a1t75DRlxr4DKWdAPBLExYzwTW0OyMNkRTPo4cu8QLHNExVAZWS5sDJ14Vophfu
-	hgCCGy/A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9qjQI+2iOg8ph9AhGn7133CCM9fD4sD/M6dm+sKOeZM=; b=M9kt8HQJ4tZiHa
+	ojh4YZatDF3lOCjRRx3Wws554ecwzSFVehvrRDhqkvyG78w6VvUXrCMM5b9WfEHo801PbNl2P2Gm4
+	i+A128+/Pp1Vq9uuty/ujUL4Z6Gj3b0b7Azg3xog63AGV0FsZg4FnPsFH98l0QMW1P0Y76ofJqKRn
+	K3LKd7KA3SAAZSp9IW0GGnY7rvuVSRYMtclddBZhLSDRSX7KNMwe8U+4yiDedtUlQsNbCVPAkBkOP
+	Tgm3PUpLfokgiR4H1LXDVgEr6vY6/vc0F+lWIs43IXw9WLRSZ7vhMmu37yxEbqCf88upejIBIcTm6
+	sza15o57nhseyMX3xDmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4KyO-00000003w6D-2e0m;
-	Fri, 25 Oct 2024 14:07:28 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1t4QP7-00000005355-3h1q;
+	Fri, 25 Oct 2024 19:55:25 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4Kmf-00000003tUk-2XhV;
-	Fri, 25 Oct 2024 13:55:23 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 8F9355C5B30;
-	Fri, 25 Oct 2024 13:54:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4A9F1C4CECD;
-	Fri, 25 Oct 2024 13:55:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1729864520;
-	bh=sP9ddLOzD4XD7oJ2gtfjgcFVXKonwqzmaiwnFgWwUl0=;
-	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
-	b=namopyTXYcR+34VhDW1DJIeNZwRgeHEHzEyji0zywrSQfrpLnmi4N0g858xJziiRR
-	 6zTQo1Ekfw2dF157XXMsOV+u1y7gZY7WSnLI7Uz01DHRdU+wK1aMxF7qSgY6K3Rn5C
-	 5v72aoRCh1oYtyP2potY5imnUGIYgPf5EPQIgbXgRgBcJ8bmRLzW8/52XekJ9R/Ye2
-	 0bDdVeawSgA84pWaZVFz9HmHwVm5u8V+sq4C529Qjq6ANnVGMiu4OYKbUT8r/cPcjw
-	 HDPCCknnrEqiTWcra0NeX7UVlQbC2bSQVsaMPleqhVXO0/ttgsKa/NR6SFue4b7zWA
-	 GOKW2dvPYviLQ==
-Date: Fri, 25 Oct 2024 08:55:19 -0500
+	id 1t4Pvg-00000004yP1-3TSU
+	for linux-phy@bombadil.infradead.org;
+	Fri, 25 Oct 2024 19:25:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=MVK7yFV+LSKHjauEJCgphRRBdSUgRulvWMCx8A+MGTw=; b=GyRIROG7HrAxYjaM9ZvgkGPdb0
+	QDzGwPVaj2Nv+IVGnGPQlY05KmiTY31v5Acu0Od/AnIEEUr2V9y4u/7imD1G38DXMUqTDUZWCO3F/
+	ZLxPKXTlgEPEWXrkVMhfamV1dYkMGJ0OwfhuNMVAfUtPKgeUJikDqsoQU2ktg9EPY4H+SXSDn2BP6
+	bQ5T8+GeL+3+etp83CP+QXpppg9nBkdEgTny/dQBhVqEVOzltDOIsd7/SXTf6qK4y8JNBcAoUIu7n
+	XWVus2MHPKKogdFdkk4WJ/TRkpNxd+5AlcXnzusYMPqV0IIEay7BImnzftGa1ACPuPcVp0qxb5/9B
+	Qi9nFRgg==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1t4Pvb-000000092RL-0hN2
+	for linux-phy@lists.infradead.org;
+	Fri, 25 Oct 2024 19:24:59 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49PAwqnf029454
+	for <linux-phy@lists.infradead.org>; Fri, 25 Oct 2024 19:24:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	MVK7yFV+LSKHjauEJCgphRRBdSUgRulvWMCx8A+MGTw=; b=pilsUO3CatOHV8oW
+	VU53v9FNxi70IZmBSiMwjHY4vFcl/0ngdFyqcE68VfhNIED8UbYaqZ5lXFRC7kMY
+	g/HFKibekvyeDXm7pvqNopylvpKpz71EWVbfcGF40RG1Q8Jx15bYDLhEc5uFEXkz
+	jplBfOFsd4SsuwdVo5TaNopXKcZigxACA8YilqmG7Pz3Zyf8LDQO5v/JpbgQQcFY
+	2cXIpSs7LZjIXJ9jB/VdPZJ/FWG3I3UiK3SEIFdm5tN2HkDj828cvAklz/DLjlNR
+	RUseSQ/rVv8RevAfLcIXC2UnsC2zey92nTyoCi9qIECUqFGpXKmV6JmrWIhaA+sI
+	wcbMqw==
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42em3wa6fr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 25 Oct 2024 19:24:51 +0000 (GMT)
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-6cbe5e8658fso4735866d6.0
+        for <linux-phy@lists.infradead.org>; Fri, 25 Oct 2024 12:24:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1729884290; x=1730489090;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MVK7yFV+LSKHjauEJCgphRRBdSUgRulvWMCx8A+MGTw=;
+        b=mV9Mn8jmeCITHR4cj5418Hjb/JQCxi13gxlf4C4EZODkfMEvKRTNZZul2Lq7fI20xY
+         u3pa8DOjY1BWrZZiUvl/fcCPU0nEOnnm3B50j5YiSqiDMCHH/snwCsFW0dcPyXyl/I79
+         JGUUew1OKDHnwSfnPi7LMePiuKAt6AsR0hlXM+bDTGE1ZggMhMrnVXmHLAuA6IIMWlJA
+         6P7if6nIK5diGeLKZeSdO3JqzFDRxoLzb3h55W8TKnEx+9qPUhuJHSKzi3xTt7yQ/zrD
+         k2T8h7ES84t3f5tswSoYB1njXagw+YYTFAPov/6lGAVnYYPEdSPuapUXNGQaqhTmSLkq
+         TXHw==
+X-Forwarded-Encrypted: i=1; AJvYcCWSiVYfPaY6upaQJp6YVfiPBBWqp4Be/QjVO/XfHkyw+rTDHLkAnPcCrzzTgbnxFirS+jz/+bDwvBY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz2WQV2MKhe3haCaUTvns8uOdDjXYLq4S4FEwFtOQRiv1jXKl8q
+	W974iMyD9JpjKP8jIBTCIbX4mWe2Yt3dE0wdNGD5JmqlpdxHFuMYbcFwu1aJMw3bLGaGfe4/syC
+	yYG4UFKZKexAgOSCXgu5i6bIbWKj5tAwK0PlQcVcZA7DFa/MbAkH1P0Xs/zYDkd7r
+X-Received: by 2002:a05:6214:246a:b0:6cb:bc57:d840 with SMTP id 6a1803df08f44-6d1856b5615mr3813256d6.3.1729884289991;
+        Fri, 25 Oct 2024 12:24:49 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEFLFymaf4R41fHwjqkvWTwAkfwHaKv/afK0j85pTCGuheLL7dDzp+Y9LhFBEJGXlVq7rzUSA==
+X-Received: by 2002:a05:6214:246a:b0:6cb:bc57:d840 with SMTP id 6a1803df08f44-6d1856b5615mr3813166d6.3.1729884289641;
+        Fri, 25 Oct 2024 12:24:49 -0700 (PDT)
+Received: from [192.168.212.120] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-a9b307b5375sm99385966b.155.2024.10.25.12.24.46
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 25 Oct 2024 12:24:49 -0700 (PDT)
+Message-ID: <5fe37609-ed58-4617-bd5f-90edc90f5d8b@oss.qualcomm.com>
+Date: Fri, 25 Oct 2024 21:24:46 +0200
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Cody Eksal <masterr3c0rd@epochal.quest>
-Cc: linux-arm-kernel@lists.infradead.org, 
- Yangtao Li <frank@allwinnertech.com>, linux-usb@vger.kernel.org, 
- linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
- Florian Fainelli <florian.fainelli@broadcom.com>, 
- Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Samuel Holland <samuel@sholland.org>, Parthiban <parthiban@linumiz.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-sunxi@lists.linux.dev, 
- Thierry Reding <treding@nvidia.com>, Viresh Kumar <vireshk@kernel.org>, 
- devicetree@vger.kernel.org, Yangtao Li <tiny.windzz@gmail.com>, 
- Andre Przywara <andre.przywara@arm.com>, Stephen Boyd <sboyd@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org, 
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
- linux-pm@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- "Rafael J. Wysocki" <rafael@kernel.org>, 
- Linus Walleij <linus.walleij@linaro.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Nishanth Menon <nm@ti.com>
-In-Reply-To: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
-References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
-Message-Id: <172986441154.1907923.9460630831085493840.robh@kernel.org>
-Subject: Re: [PATCH 00/13] sunxi: A100/A133 second stage support
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v1 3/4] arm64: dts: qcom: qcs615: add UFS node
+To: Xin Liu <quic_liuxin@quicinc.com>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>, Andy Gross <agross@kernel.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-scsi@vger.kernel.org, quic_jiegan@quicinc.com,
+        quic_aiquny@quicinc.com, quic_tingweiz@quicinc.com,
+        quic_sayalil@quicinc.com
+References: <20241017042300.872963-1-quic_liuxin@quicinc.com>
+ <20241017042300.872963-4-quic_liuxin@quicinc.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20241017042300.872963-4-quic_liuxin@quicinc.com>
+X-Proofpoint-ORIG-GUID: fS0UU5sc_KflGYWMVYegK4eAlF_G_HJt
+X-Proofpoint-GUID: fS0UU5sc_KflGYWMVYegK4eAlF_G_HJt
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 mlxlogscore=999
+ priorityscore=1501 impostorscore=0 bulkscore=0 lowpriorityscore=0
+ clxscore=1015 suspectscore=0 spamscore=0 malwarescore=0 mlxscore=0
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410250149
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241025_065521_967501_7D9ADBA3 
-X-CRM114-Status: GOOD (  29.04  )
+X-CRM114-CacheID: sfid-20241025_202457_232595_C05F840F 
+X-CRM114-Status: GOOD (  16.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,116 +142,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 17.10.2024 6:22 AM, Xin Liu wrote:
+> From: Sayali Lokhande <quic_sayalil@quicinc.com>	
+> 	
+> Add the UFS Host Controller node and its PHY for QCS615 SoC.
+> 
+> Signed-off-by: Sayali Lokhande <quic_sayalil@quicinc.com>
+> Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
+> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
+> ---
 
-On Thu, 24 Oct 2024 14:05:18 -0300, Cody Eksal wrote:
-> Hello! This is my first submission, so please be gentle :)
++ Taniya (see below)
+
+>  arch/arm64/boot/dts/qcom/qcs615.dtsi | 74 ++++++++++++++++++++++++++++
+>  1 file changed, 74 insertions(+)
 > 
-> Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
-> submitted a patch series for the A100 series of SoCs; [1] intended to add
-> support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
-> implemented DVFS support. Some patches from the first series landed, but
-> the rest were seemingly abandoned.
-> 
-> Although references to the A100 have been removed by Allwinner, it is
-> believed that the A133 and A133 Plus, which are still available, are simply
-> better binned variants of the A100; no other differences have been noted
-> thus far, and the drivers for the A100 work on the A133 without any
-> additional modifications. There has been a resurgence of interest in the
-> A133; patches to allow mainline U-Boot to run on these devices are
-> currently in progress.
-> 
-> I have rebased the patches that failed to land, applying the feedback
-> provided by maintainers at the time. Some DT binding patches were added, as
-> there were a few cases where compatibles were used without being
-> documented. Minor reworks were necessary to apply certain patches, as the
-> drivers they modified have matured over time.
-> 
-> Patches 1 and 2 add PMU and watchdog nodes to the device tree. This is
-> followed by patches 3-8, which implement support for the USB host and OTG
-> peripherals. Patches 9 and 10 add MMC nodes, rounding out what originally
-> made up the first patch series; support for these already exists from
-> earlier patches. Patches 11-13 finish the job of the second original
-> series and this series, implementing OPP and enabling DVFS on these SoCs.
-> 
-> This series is also available on GitHub [3].
-> 
-> A sincere thanks to Andre for encouraging me to submit these patches,
-> Parthiban for testing this tree on his board, and to the linux-sunxi
-> community and its resources for pointing me to these abandoned series in
-> the first place [4].
-> 
-> [1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=380887&archive=both&state=*
-> [2] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=396055&archive=both&state=*
-> [3] https://github.com/BrokenR3C0RD/linux-a100/compare/c2ee9f59..allwinner-a100
-> [4] https://linux-sunxi.org/Linux_mainlining_effort#Work_In_Progress
-> 
-> Cody Eksal (4):
->   dt-bindings: phy: sun50i-a64: add a100 compatible
->   dt-bindings: usb: Add A100 compatible string
->   dt-bindings: usb: sunxi-musb: Add A100 compatible string
->   dt-bindings: opp: h6: Add A100 operating points
-> 
-> Shuosheng Huang (2):
->   cpufreq: sun50i: add a100 cpufreq support
->   arm64: dts: allwinner: a100: Add CPU Operating Performance Points
->     table
-> 
-> Yangtao Li (7):
->   arm64: dts: allwinner: A100: Add PMU mode
->   arm64: dts: allwinner: a100: add watchdog node
->   phy: sun4i-usb: add support for A100 USB PHY
->   arm64: dts: allwinner: a100: add usb related nodes
->   arm64: allwinner: A100: enable EHCI, OHCI and USB PHY nodes in Perf1
->   arm64: allwinner: a100: Add MMC related nodes
->   arm64: dts: allwinner: a100: perf1: Add eMMC and MMC node
-> 
->  .../allwinner,sun50i-h6-operating-points.yaml |   1 +
->  .../phy/allwinner,sun50i-a64-usb-phy.yaml     |   1 +
->  .../usb/allwinner,sun4i-a10-musb.yaml         |   1 +
->  .../devicetree/bindings/usb/generic-ehci.yaml |   1 +
->  .../devicetree/bindings/usb/generic-ohci.yaml |   1 +
->  .../allwinner/sun50i-a100-allwinner-perf1.dts |  59 ++++++
->  .../dts/allwinner/sun50i-a100-cpu-opp.dtsi    |  90 ++++++++
->  .../arm64/boot/dts/allwinner/sun50i-a100.dtsi | 193 +++++++++++++++++-
->  drivers/cpufreq/sun50i-cpufreq-nvmem.c        |  28 +++
->  drivers/phy/allwinner/phy-sun4i-usb.c         |  11 +
->  10 files changed, 383 insertions(+), 3 deletions(-)
->  create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a100-cpu-opp.dtsi
-> 
-> 
-> base-commit: c2ee9f594da826bea183ed14f2cc029c719bf4da
-> --
-> 2.47.0
-> 
-> 
-> 
+> diff --git a/arch/arm64/boot/dts/qcom/qcs615.dtsi b/arch/arm64/boot/dts/qcom/qcs615.dtsi
+> index fcba83fca7cf..689418466dc2 100644
+> --- a/arch/arm64/boot/dts/qcom/qcs615.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/qcs615.dtsi
+> @@ -458,6 +458,80 @@ mmss_noc: interconnect@1740000 {
+>  			qcom,bcm-voters = <&apps_bcm_voter>;
+>  		};
+>  
+> +		ufs_mem_hc: ufs@1d84000 {
+
+ufshc@ would be consistent with other files in dts/qcom
 
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+> +			compatible = "qcom,qcs615-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
+> +			reg = <0x0 0x01d84000 0x0 0x3000>, <0x0 0x01d90000 0x0 0x8000>;
+> +			reg-names = "std", "ice";
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
+One per line, please
 
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
+> +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+> +			phys = <&ufs_mem_phy>;
+> +			phy-names = "ufsphy";
+> +			lanes-per-direction = <1>;
+> +			#reset-cells = <1>;
+> +			resets = <&gcc GCC_UFS_PHY_BCR>;
+> +			reset-names = "rst";
+> +
+> +			power-domains = <&gcc UFS_PHY_GDSC>;
+> +			required-opps = <&rpmhpd_opp_nom>;
+> +
+> +			iommus = <&apps_smmu 0x300 0x0>;
+> +			dma-coherent;
+> +
+> +			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
+> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
+> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
+> +					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ALWAYS>;
+> +			interconnect-names = "ufs-ddr",
+> +					     "cpu-ufs";
+> +
+> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
+> +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
+> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
+> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
+> +				 <&rpmhcc RPMH_CXO_CLK>,
+> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
+> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
+> +				 <&gcc GCC_UFS_PHY_ICE_CORE_CLK>;
+> +			clock-names = "core_clk",
+> +				      "bus_aggr_clk",
+> +				      "iface_clk",
+> +				      "core_clk_unipro",
+> +				      "ref_clk",
+> +				      "tx_lane0_sync_clk",
+> +				      "rx_lane0_sync_clk",
+> +				      "ice_core_clk";
+> +			freq-table-hz = <50000000 200000000>,
+> +					<0 0>,
+> +					<0 0>,
+> +					<37500000 150000000>,
+> +					<0 0>,
+> +					<0 0>,
+> +					<0 0>,
+> +					<75000000 300000000>;
 
-  pip3 install dtschema --upgrade
+Please try to match the order of properties present in sm8650.dtsi
 
+And please use an OPP table instead of freq-table-hz (see sm8*5*50.dtsi)
 
-New warnings running 'make CHECK_DTBS=y allwinner/sun50i-a100-allwinner-perf1.dtb' for 20241024170540.2721307-1-masterr3c0rd@epochal.quest:
+> +
+> +			status = "disabled";
+> +		};
+> +
+> +		ufs_mem_phy: phy@1d87000 {
+> +			compatible = "qcom,qcs615-qmp-ufs-phy", "qcom,sm6115-qmp-ufs-phy";
+> +			reg = <0x0 0x01d87000 0x0 0xe00>;
 
-arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dtb: cpu-opp-table: $nodename:0: 'cpu-opp-table' does not match '^opp-table(-[a-z0-9]+)?$'
-	from schema $id: http://devicetree.org/schemas/opp/allwinner,sun50i-h6-operating-points.yaml#
-arch/arm64/boot/dts/allwinner/sun50i-a100-allwinner-perf1.dtb: cpu-opp-table: 'opp@1080000000', 'opp@1200000000', 'opp@1320000000', 'opp@1464000000', 'opp@408000000', 'opp@600000000', 'opp@816000000' do not match any of the regexes: '^opp-[0-9]+$', 'pinctrl-[0-9]+'
-	from schema $id: http://devicetree.org/schemas/opp/allwinner,sun50i-h6-operating-points.yaml#
+This register region is a bit longer
 
+> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
+> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
+> +				 <&gcc GCC_UFS_MEM_CLKREF_CLK>;
+> +			clock-names = "ref",
+> +				      "ref_aux",
+> +				      "qref";
+> +
+> +			power-domains = <&gcc UFS_PHY_GDSC>;
+> +
+> +			resets = <&ufs_mem_hc 0>;
+> +			reset-names = "ufsphy";
+> +
+> +			#clock-cells = <1>;
 
+The PHY is a clock provider. Normally, it's a parent of
+gcc_ufs_phy_[rt]x_symbol_n clocks.
 
+Taniya, could you please wire that up in your patchset?
 
-
+Konrad
 
 -- 
 linux-phy mailing list
