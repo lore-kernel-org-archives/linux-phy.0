@@ -4,89 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01F5CD10399
-	for <linux-phy@archiver.kernel.org>; Fri, 25 Oct 2024 00:22:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 994EBD11708
+	for <linux-phy@archiver.kernel.org>; Fri, 25 Oct 2024 06:59:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JcqmtRkSgQGGN+PJLeocVlCuOz+mcOf+yFNpXJQ2lqQ=; b=X5YQeCOcV9cgNM
-	b0vTiPaklDI1J8E3UL/q5DGwS06PpjSizH50iLGFXjfk5sDdIvLrcLj3GoyRoUyaOsmzIcQrDCKiT
-	DTp44yDetZywRSGAIvaNtAvcaWiO2R7F/dRe92Ta/qmTi2MbiK8r82Slf/wJA5nYBGE6hV/qzSWdF
-	sAIMw3zp5IcOExNUN2h5oxN8elhHUvJxR+UXPVBtfXWfRM3KiSaqyaGejPaB1FsN5PXwpEJoiWvWY
-	lja9Orlw+78uyx0yH66MjO34h7pN1vkz+YK/i/65sVOq1qqvZlG/KiJxwllfXV693XgNDT5frTTT/
-	9JJg9Dy4pU7lKJ+xf1WA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+EU/pE/3b56dKJcUPPBp0T0aJ/+awOnVWzZwcWzWR+g=; b=d/8jPOqxb4VVGl
+	rK8IOvCi8uT4hirvs78wMOngwpLgqQXbnKmstNxob61uR+xSv2m37/ZINktJV6x05qPpMtYhq/3U3
+	J83UjVbxHVjAeAdY0uYbovseyVOPfqPXg5T0FKynKA8nGG/DsgXor+5gdPFbWJ9I/980+u4V5L2AP
+	RjFZoE9KT//RINnPHKf5Oibni/SYsFrJn16RgzMPEunXH+hWr1uZy+ZKW+r9TXfzHRUXXD4XvVbOc
+	RFknP3VknxR63LWN5E/AqpWqC3aK0IElM5P3yjnE3Smhm+93J/R53fvSoDKUYdxfK/5auIWu2pbqd
+	6SnCIt6kPxywIxwvS6ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t485t-000000025EY-0EZX;
-	Fri, 25 Oct 2024 00:22:21 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1t4EIP-00000002kR7-1EbV;
+	Fri, 25 Oct 2024 06:59:41 +0000
+Received: from unicom145.biz-email.net ([210.51.26.145])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t485q-000000025Bz-0gWn
+	id 1t4EIM-00000002kPS-01ZO
 	for linux-phy@lists.infradead.org;
-	Fri, 25 Oct 2024 00:22:20 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-53a007743e7so1819773e87.1
-        for <linux-phy@lists.infradead.org>; Thu, 24 Oct 2024 17:22:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1729815736; x=1730420536; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=R5EDM7WCg2HOqPHWF0Z+QG+aYFeqPcDdQtBhvkydGgw=;
-        b=k1e0g1ajcGE9RboUGt5RCLhLl7eTbdisFByI94CMYtnwDosCS2oj3cIytrIOkpHD0z
-         ecC6ZHizshpHQqgw46yLi2hjEKTaf3YCabYvznMj95/lCdYr0eplO3zsDMsw08gqErPF
-         jQMCI3sWzKQ2nAhDpL0bXi0cVwAUMw8bTR9VD5nzoqFTUgCe8UBT8HoFxetc86ZLW6Cr
-         SkFrZDzoN4aW59lEopyl783wb3oB/9ZPuMs/fZp+0oKPylwDEiWLxGPXeiRdDmymlzDk
-         9InqPmYUaQ/p8JVq5UJWAiNFPoJSMQf/2f+mCxhnztzEoego7tjiKo9kdqJhDTH4FAJz
-         YZSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729815736; x=1730420536;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=R5EDM7WCg2HOqPHWF0Z+QG+aYFeqPcDdQtBhvkydGgw=;
-        b=Q1jMasHXNQcq3a1dR0pBWx+wxnyKMoFCylPCUyetfyrUdFOiIPUqD35jpvMx/5eVd9
-         qPwfoFB3hqtMdbjf4d1BmZaXx5BbXuSz3JnKND8wkr5VSSeZ2M6DZd2/N9alKlsp5psB
-         7o2koGAgWWdr7wFj81alCsoZJAr9LT5nsQs4oIObiDCUbwgTtgO9SaBa8l8NIgf520C1
-         XgHyAmjItHdiAJhImnD+EQvdJzbA3FTg7KmBj15lTrlJIV5fOSNZD3SE9jn6uH1JPXii
-         BjRSW0FmlQPEzheyoCxLgzSt05PGptBqdRaRBhXg8MAG6keP5xtgSakJPk0EjrWF6dc2
-         NEmQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWh7yIKsA4nlm2rLAUS+50Lg4/RbbqgvyS+ojDuuhcdM91NVDXLyanLfEXzycDKkpUAg0b3rxFjDsM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy0bxsXylxTWGyT7bQ6sCqcfJp75ukGMeCjZsnoA+jhLfGA6YE/
-	7wMebjKfvwj2JpV7x1/cSAajtmTsZPh2ErHZYRWhtMDZmjztndngxcU2rMNC5Ts=
-X-Google-Smtp-Source: AGHT+IEwuZSNpMSc/jRW5N16zJFZH30TVd1uv/g/woovx2Ntbz3yvr/09wQ54BLmhll7f9heX5zoUg==
-X-Received: by 2002:a05:6512:10c5:b0:535:699b:b076 with SMTP id 2adb3069b0e04-53b1a31f1d6mr4467181e87.16.1729815736306;
-        Thu, 24 Oct 2024 17:22:16 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53b2e1afe39sm6621e87.140.2024.10.24.17.22.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 24 Oct 2024 17:22:15 -0700 (PDT)
-Date: Fri, 25 Oct 2024 03:22:13 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Saravana Kannan <saravanak@google.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	"Rafael J. Wysocki" <rafael@kernel.org>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, JC Kuo <jckuo@nvidia.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Thierry Reding <thierry.reding@gmail.com>, Jonathan Hunter <jonathanh@nvidia.com>, 
-	Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
-	=?utf-8?B?TsOtY29sYXMgRi4gUi4gQS4=?= Prado <nfraprado@collabora.com>, kernel-team@android.com, linux-kernel@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
-Subject: Re: [PATCH 1/3] drm: display: Set fwnode for aux bus devices
-Message-ID: <dz2tfpufzgmvxls2stxagz73x3krbammkc2zdycqsiy62tnlog@ztg4yujvyeob>
-References: <20241024061347.1771063-1-saravanak@google.com>
- <20241024061347.1771063-2-saravanak@google.com>
+	Fri, 25 Oct 2024 06:59:40 +0000
+Received: from unicom145.biz-email.net
+        by unicom145.biz-email.net ((D)) with ASMTP (SSL) id VGG00015;
+        Fri, 25 Oct 2024 14:59:15 +0800
+Received: from jtjnmail201607.home.langchao.com (10.100.2.7) by
+ jtjnmail201623.home.langchao.com (10.100.2.23) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.39; Fri, 25 Oct 2024 14:59:15 +0800
+Received: from localhost.localdomain (10.94.19.204) by
+ jtjnmail201607.home.langchao.com (10.100.2.7) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.39; Fri, 25 Oct 2024 14:59:14 +0800
+From: Charles Han <hanchunchao@inspur.com>
+To: <stanley_chang@realtek.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
+	<gregkh@linuxfoundation.org>
+CC: <u.kleine-koenig@baylibre.com>, <linux-phy@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Charles Han <hanchunchao@inspur.com>
+Subject: [PATCH] phy: realtek: usb: fix NULL deref in rtk_usb2phy_probe
+Date: Fri, 25 Oct 2024 14:59:12 +0800
+Message-ID: <20241025065912.143692-1-hanchunchao@inspur.com>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241024061347.1771063-2-saravanak@google.com>
+X-Originating-IP: [10.94.19.204]
+X-ClientProxiedBy: Jtjnmail201614.home.langchao.com (10.100.2.14) To
+ jtjnmail201607.home.langchao.com (10.100.2.7)
+tUid: 20241025145915850c3bc1032dc40d09b9ab1aae06b497
+X-Abuse-Reports-To: service@corp-email.com
+Abuse-Reports-To: service@corp-email.com
+X-Complaints-To: service@corp-email.com
+X-Report-Abuse-To: service@corp-email.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241024_172218_232894_2DFB5E2A 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20241024_235938_363296_784A86F5 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,42 +71,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 23, 2024 at 11:13:42PM -0700, Saravana Kannan wrote:
-> fwnode needs to be set for a device for fw_devlink to be able to
-> track/enforce its dependencies correctly. Without this, you'll see error
-> messages like this when the supplier has probed and tries to make sure
-> all its fwnode consumers are linked to it using device links:
-> =
+In rtk_usb2phy_probe() devm_kzalloc() may return NULL
+but this returned value is not checked.
 
-> mediatek-drm-dp 1c500000.edp-tx: Failed to create device link (0x180) wit=
-h backlight-lcd0
-> =
+Fixes: 134e6d25f6bd ("phy: realtek: usb: Add driver for the Realtek SoC USB 2.0 PHY")
+Signed-off-by: Charles Han <hanchunchao@inspur.com>
+---
+ drivers/phy/realtek/phy-rtk-usb2.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-> Reported-by: "N=EDcolas F. R. A. Prado" <nfraprado@collabora.com>
-> Closes: https://lore.kernel.org/all/7b995947-4540-4b17-872e-e107adca4598@=
-notapiano/
-> Tested-by: "N=EDcolas F. R. A. Prado" <nfraprado@collabora.com>
-> Signed-off-by: Saravana Kannan <saravanak@google.com>
-> ---
->  drivers/gpu/drm/display/drm_dp_aux_bus.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> =
+diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
+index c3e131a64131..248550ef98ca 100644
+--- a/drivers/phy/realtek/phy-rtk-usb2.c
++++ b/drivers/phy/realtek/phy-rtk-usb2.c
+@@ -1023,6 +1023,8 @@ static int rtk_usb2phy_probe(struct platform_device *pdev)
+ 
+ 	rtk_phy->dev			= &pdev->dev;
+ 	rtk_phy->phy_cfg = devm_kzalloc(dev, sizeof(*phy_cfg), GFP_KERNEL);
++	if (!rtk_phy->phy_cfg)
++		return -ENOMEM;
+ 
+ 	memcpy(rtk_phy->phy_cfg, phy_cfg, sizeof(*phy_cfg));
+ 
+-- 
+2.31.1
 
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-
--- =
-
-With best wishes
-Dmitry
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
