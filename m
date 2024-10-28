@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47767D3399E
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Oct 2024 16:37:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C32B7D3399B
+	for <linux-phy@archiver.kernel.org>; Mon, 28 Oct 2024 16:37:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
 	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mhrw8V4IZRHfBFPyyglgNdCF0lgwda4tiQ3YDodhcfA=; b=f8L0aEhjQ2xyWM8jNdFeh6ercg
-	I9m+3/FKZ87fQcsDgc1ZRWoEIO7vfLB1aHt7ZJ/BhANaAGdZVvxqTPXuW+7crVv0YlMfraB0hJklq
-	3nv0WXH0t9AZXynlWi3BWtRi2vOuqRGID6QGIIsuUt1YcBLaDPtJkiS8I+1nZ/59aYbFj4m3PZU6K
-	42IVxJxFqke2cgqp2yZM9oVY7hmB1EHsj1ltySni4fqx8VKKaKgkv/u96xdnWVlK11P1EPODs/KgG
-	P6wMViI3ZE2epWn0unOKT/4oXHi5HEx7A6D8E1t01w36ELif0RqZ9I2xkPKPKhTNDmOkeY0oCGdWV
-	999JU/lg==;
+	bh=gC4+SObOjGCG/S2QfITMreJdBuCo5/YuiTxUidKuip8=; b=s+a9VK8ta46No5xTB9z1qA1Y9g
+	jK+ByodIwgRf4uUhL8C9Nf1r84RHkD0MbqnYrgHIotWZodiXbduvVfWe7GWEqU3ZZIFc4Qg+v9jgD
+	wU5AMLoVcJxMxQN0cS+WFWSnmYLSUgO8WQm+I/LNmJBbMShJYbOFW+sAhHesPvQzbd0+cgOW0Nrrc
+	itjMpmmEQtqHaZ+wOSPL4kLVxFkJXZDW9lQsFlOuVkIyWrfiHDdF3y/HCvbmNqmIaCxv6JMFL+4kh
+	99oT9jnMPY/XBc8XXfmgndiTvjJJIzs22Rr9RO6YVxJ55MLdHyrqE88EM9jC5ZhwrLaMO6Eco8QcA
+	DptBaB0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5SkL-0000000BVp7-2ft8;
-	Mon, 28 Oct 2024 16:37:37 +0000
+	id 1t5SkN-0000000BVpr-27Hm;
+	Mon, 28 Oct 2024 16:37:39 +0000
 Received: from thales.epochal.quest ([51.222.15.28])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5SCn-0000000BPMq-06Wv;
-	Mon, 28 Oct 2024 16:02:58 +0000
+	id 1t5SGZ-0000000BQDA-1wI3;
+	Mon, 28 Oct 2024 16:06:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=epochal.quest;
-	s=default; t=1730131373;
-	bh=sGz1MZtYtIAXCdIv2GYocDtQn9poOcj8dVPhnWb0PYY=;
+	s=default; t=1730131609;
+	bh=Bu58v2gr38UKxgFPQsmkozo+upmq0xR+OgYGP8APTu0=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=gcagMSusHy1ACi/Ypcm2ButvGGg3WyRpHpAQ3vvktCAOaTDx+T7ghwQlXxq4XCn1a
-	 GFxkunPHHdItCgFmDb7ca+o0t0L+mYL0oe/ykXK1M+kjt0yAh4X4qpQkQNyUYeG89U
-	 O9ynTWBHiV0Nhf51J6mmMBO/0K9VkfnDYmvOD1ZphmQUefhT2vdKRxWtj8QamTcJ4A
-	 pzaXixyp5eEE7BYZ2FGxlmQWVa18ggjr7LupZy6u7jvi84+udIbgkqgBDrziSZEzEy
-	 NG3vqot4ywjU8hxFqPbwLi6nlHos29LkfCWmPHjbEZQD/gA+UVUg0acK5zy0GuX985
-	 EoyOSwey4ogsQ==
+	b=IM7SQiOvG7FJObmipWN8JTq47jKeael3a2b8Q6gnuceSY6J+yNMxhDmxAmuWj7EkP
+	 YuV92LsR4eoZvbj4dnYwmDRIV/S1AEqQ+kidPEm42ZjWfu+dYcu9DlcYoJJn89i8CP
+	 WhhNvG52oeCzbGaB4InOH+YCHsC+0f+OT4qPUEYHOi4nwQiSpj+IMsfyVZAU9cqUeM
+	 iMvgq1Ek/lqRbMk/xeCB3dQWrvMQBneH5vdSGfXvJXlM+t8Lv6F20fUEDC/hROSHO8
+	 8Y5TvAWX/92Q2t/G7gFHn8jNsYr7Nk3UYO9Hq4jt6krloaONiYqfBW9XDWI9tEqZvw
+	 tv/pc+yqAHLGw==
 X-Virus-Scanned: by epochal.quest
 MIME-Version: 1.0
-Date: Mon, 28 Oct 2024 13:02:50 -0300
+Date: Mon, 28 Oct 2024 13:06:48 -0300
 From: Cody Eksal <masterr3c0rd@epochal.quest>
-To: Rob Herring <robh@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org, Nishanth
- Menon <nm@ti.com>, Stephen Boyd <sboyd@kernel.org>, Chen-Yu Tsai
- <wens@csie.org>, "Rafael J. Wysocki" <rafael@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, linux-sunxi@lists.linux.dev, Yangtao Li
- <tiny.windzz@gmail.com>, Viresh Kumar <vireshk@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, linux-pm@vger.kernel.org, Andre Przywara
- <andre.przywara@arm.com>, Yangtao Li <frank@allwinnertech.com>,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, Linus
- Walleij <linus.walleij@linaro.org>, Parthiban <parthiban@linumiz.com>,
- Jernej Skrabec <jernej.skrabec@gmail.com>, Maxime Ripard
- <mripard@kernel.org>, linux-usb@vger.kernel.org, Samuel Holland
- <samuel@sholland.org>, Florian Fainelli <florian.fainelli@broadcom.com>,
- linux-kernel@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, Thierry Reding
- <treding@nvidia.com>, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH 04/13] dt-bindings: usb: Add A100 compatible string
-In-Reply-To: <20241027212253.GA98977-robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej
+ Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>,
+ Maxime Ripard <mripard@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
+ Parthiban <parthiban@linumiz.com>, Yangtao Li <frank@allwinnertech.com>,
+ Florian Fainelli <florian.fainelli@broadcom.com>, Vinod Koul
+ <vkoul@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, Thierry Reding
+ <treding@nvidia.com>, Yangtao Li <tiny.windzz@gmail.com>, Viresh Kumar
+ <vireshk@kernel.org>, Nishanth Menon <nm@ti.com>, Stephen Boyd
+ <sboyd@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, "Rafael J.
+ Wysocki" <rafael@kernel.org>
+Subject: Re: [PATCH 05/13] dt-bindings: usb: sunxi-musb: Add A100 compatible
+ string
+In-Reply-To: <cdfocja5u4jh6xh2jkouzyztsjinggep45ymbdwxc4zpscy376@i5voj36oqrrf>
 References: <20241024170540.2721307-1-masterr3c0rd@epochal.quest>
- <20241024170540.2721307-5-masterr3c0rd@epochal.quest>
- <173006354857.88418.13246529686874362124.robh@kernel.org>
- <20241027212253.GA98977-robh@kernel.org>
-Message-ID: <e3c1d138f2916736dc2a825a0f431066@epochal.quest>
+ <20241024170540.2721307-6-masterr3c0rd@epochal.quest>
+ <cdfocja5u4jh6xh2jkouzyztsjinggep45ymbdwxc4zpscy376@i5voj36oqrrf>
+Message-ID: <91fc635a58ce647a3183d17c35e33ba4@epochal.quest>
 X-Sender: masterr3c0rd@epochal.quest
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241028_090257_180629_79C226B0 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20241028_090651_671816_333C1C0D 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,27 +84,29 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2024/10/27 6:22 pm, Rob Herring wrote:
-> On Sun, Oct 27, 2024 at 04:12:29PM -0500, Rob Herring (Arm) wrote:
->> 
->> On Thu, 24 Oct 2024 14:05:22 -0300, Cody Eksal wrote:
->> > The Allwinner A100 contains two fully OHCI/EHCI compatible USB host
->> > controllers. Add their compatible strings to the list of
->> > generic OHCI/EHCI controllers.
->> >
->> > Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
->> > ---
->> >  Documentation/devicetree/bindings/usb/generic-ehci.yaml | 1 +
->> >  Documentation/devicetree/bindings/usb/generic-ohci.yaml | 1 +
->> >  2 files changed, 2 insertions(+)
->> >
->> 
->> Acked-by: Rob Herring (Arm) <robh@kernel.org>
+On 2024/10/27 5:47 pm, Krzysztof Kozlowski wrote:
+> On Thu, Oct 24, 2024 at 02:05:23PM -0300, Cody Eksal wrote:
+>> diff --git 
+>> a/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml 
+>> b/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml
+>> index f972ce976e86..d4993336a29b 100644
+>> --- 
+>> a/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml
+>> +++ 
+>> b/Documentation/devicetree/bindings/usb/allwinner,sun4i-a10-musb.yaml
+>> @@ -24,6 +24,7 @@ properties:
+>>                - allwinner,sun8i-a83t-musb
+>>                - allwinner,sun20i-d1-musb
+>>                - allwinner,sun50i-h6-musb
+>> +              - allwinner,sun50i-a100-musb
 > 
-> Well, except that the compatibles should be alphabetical order.
-Will be fixed in V2, thanks!
+> List looked ordered, now doesn't.... are you sure you keep intented
+> ordering here?
+I'll move this entry to fit the expected order for V2, thanks!
+
 - Cody
-> Rob
+> Best regards,
+> Krzysztof
 
 -- 
 linux-phy mailing list
