@@ -4,87 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87E54D3A692
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 19:23:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06A2FD3A696
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 20:08:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RArAzENJhWcDhu1LIJA1SZ0nEIm4sGFcBOwDpsBXcxc=; b=BAY7vS7Pk8+KaP
-	f4bQMZcRDDo9rIyEi9rTPKKM8wNrsYjUMO1Ril+ro6rwiNmYiiflkuBhbH7dsu1RAkYX0LxRMcIMV
-	598GhA/Tkm1NwxXEeEKzkXF3bgGBeLxIKBPF/NcEcMOfE2K83hWHQ1aoZy7bjz3pfUs6fFH0TK2b7
-	mnxYzL5v9AAet1REhyad9YWqMA3yWob4CqBMlvsxpJwulGJXcYa5KTwRE47nEzyCsPAt8bBngbXNE
-	CYLXjPH7IiLAReX1ZxxlkTdBx41dRl6zBprx80TdZ86BotBRy/IlQvXiF6/BI4UmP2Mv0gBI/kU1g
-	9QSao1Ps45A7kbF7R+6Q==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3g/bRx8/S7v3doz68c1Y1Afm82yMCWSj65Q7IDyj5dk=; b=IZM80R1bou2ezH
+	nK4Qw1j+cI7yrrdLG1sYMfnk3AZ93Heu+f5mpGgv6gr19IQokUSYu94GldQcaEMHHjTNH5WUhkhDl
+	Lpg58xYtEfN+Byt8QqCnYbkz3lCpcGb5Ch0uxsCW4J5kkuRnuuiayKROWD2yAnER/kix3VeK2ojd/
+	7qBNDILYBDVBAIwaaorJ7XgQOuohnoGcgOVly/TJAmB111UewMH/Z6GaRE3yw+58I5bV2TrI9o0Kj
+	6fHbEBpbBrc1cdq7BqdZbkNmaX76eRCSzprhHxgbUHS6tWtdyvWEMfRzBA7jeiA9zDkJqNNFvcCx+
+	Y7IguAa7IyIPWxhxNQgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5roQ-0000000Fela-3lRJ;
-	Tue, 29 Oct 2024 19:23:30 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1t5sVm-0000000Fivw-1sNx;
+	Tue, 29 Oct 2024 20:08:18 +0000
+Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5rmE-0000000FeNf-0uCr
+	id 1t5sU7-0000000Fijv-3kJw
 	for linux-phy@lists.infradead.org;
-	Tue, 29 Oct 2024 19:21:15 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4315e9e9642so53267115e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 29 Oct 2024 12:21:13 -0700 (PDT)
+	Tue, 29 Oct 2024 20:06:37 +0000
+Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-e290e857d56so5498308276.1
+        for <linux-phy@lists.infradead.org>; Tue, 29 Oct 2024 13:06:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1730229672; x=1730834472; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=x0XI8AhmhnWxIwBb5nhzbNedpBYemfsEhJh3VU8fjT4=;
-        b=w0X0RTejWYm238lAxaUAH4W7OhJnPUCB/03LLdU8WfuBuVc0ePH2bvWu31l9lcqTVu
-         Z9t9remv7GSAZZmjw6HgooM59Nf1yeRsalzoJ59lnKuHFvjmYQq8EP9pK5T2Fr4Jo/JJ
-         ex2+nfApPgqxXOr40qP4Alq1t/vLCkYv8laY3cZ2256OuGu/NCg3IbEsWO5z5HOamXl7
-         mYkLLJaW5xvg9mqHMaPasEU4demZkN5Vaywnp6Y3IUcsldMmY8j9v+2bodW7tTztz7nU
-         xUgWdjNtH9x1TbSz4emBgJX25sSeTnCtAwZk8uRG3lekJFZ9EkhrI7rT9OptbHpViCnt
-         MYuA==
+        d=linaro.org; s=google; t=1730232394; x=1730837194; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=H3NttoA5WxBHMHxzBK9jMzti32CvvOP6K0PZcY+FhbE=;
+        b=nwaq8GEPjzK8xGggG/uA8qwKU6mmeZFXvmsr3rEnyF6YkcJRYHYHgD+XErvrwMI+l5
+         7Wa86N/HO3ERHmdDSbO9EeMfMUoquF5KO8clfBHKOgyd/9IKaRx3rsarPQynjEXfyPtO
+         D5YUJoQTRbCQu8EGj9NxYHOqf9c2GklZupmhO+hpZqZRavFhuNF8D/MO+lmOovI0TXeQ
+         QZtrtqrUtjSuaT72EeH+pSpi9K25m6pXUrfoNUHTdC0M3DZ7wq5njqH9blz5N1ECzD51
+         RO8PMJtbYJhm87zj7fBUO4vGnfx/Xp7mF0akZc37GtNHSmFwjG1zNPaOCPhTVNZ8/2cF
+         /JQA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1730229672; x=1730834472;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=x0XI8AhmhnWxIwBb5nhzbNedpBYemfsEhJh3VU8fjT4=;
-        b=OPmpAtw47r13QxaCpqJKILq78gNmmsnz5HYRFNMjNi/HfmsqJb7nFsc9uhrsTp1WIq
-         wLC4+BRfNGbPjMe/XDea/JF6cJCTb41qQ/Ss+qFf9sYGNqw/K4Ol5j/VW55CUe5vMV1n
-         I3+k80wuFKODUP+9K3x97fE4K+YPcu87+NhKE0ot5hU8B22UXMlE8k8ZEmPSaPTRCdst
-         XhUUkkmFxd9dvjZLnS3ktTdWnE4FjUvwD62GxAZ2RjCyWnaZ2QiBFSd2yDpt9G6tMTj/
-         E4JGYjmZt7kjzu2wkyFEiLi/aUvkp8rd4ncuhlwIqpSJoBsJDH0zvq6hi4StQukyJ/Yy
-         YrCA==
-X-Forwarded-Encrypted: i=1; AJvYcCU6CSrVIkcpV/0FLPnvSWORPBwtuDA0M3p3yYwg7QI16wbaTvhLwuY+Fm+ST+S6FNWKeR70n0+27lg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxkZb+bpA9PU9GXVHPOGbeW8HIU3YHtVfD5uF02jyUf3g+ZXOD+
-	jI6yqUwp8Zb/UrFXaIhru4sjy6MrwmIsH8lkXCki6wvjCKMSei9lU0KvOMba6NzZnY8cjvf4s10
-	TxSk=
-X-Google-Smtp-Source: AGHT+IGHMHqNaQuwakaAsQmPTNJ5IJ7w2nk9odL/D7VFnJmp9SBayW4GuwAbU+nObFDT/w1xv3DyDA==
-X-Received: by 2002:adf:fcd1:0:b0:37d:4cd5:fff2 with SMTP id ffacd0b85a97d-380610f4961mr9250210f8f.6.1730229671917;
-        Tue, 29 Oct 2024 12:21:11 -0700 (PDT)
-Received: from gpeter-l.lan ([145.224.65.239])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38058981ae4sm13436572f8f.0.2024.10.29.12.21.10
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 29 Oct 2024 12:21:10 -0700 (PDT)
-From: Peter Griffin <peter.griffin@linaro.org>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	krzysztof.kozlowski@linaro.org,
-	alim.akhtar@samsung.com
-Cc: tudor.ambarus@linaro.org,
-	andre.draszik@linaro.org,
-	kernel-team@android.com,
-	willmcvicker@google.com,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	Peter Griffin <peter.griffin@linaro.org>
-Subject: [PATCH] phy: samsung-ufs: switch back to syscon_regmap_lookup_by_phandle()
-Date: Tue, 29 Oct 2024 19:21:07 +0000
-Message-ID: <20241029192107.2344279-1-peter.griffin@linaro.org>
-X-Mailer: git-send-email 2.47.0.163.g1226f6d8fa-goog
+        d=1e100.net; s=20230601; t=1730232394; x=1730837194;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=H3NttoA5WxBHMHxzBK9jMzti32CvvOP6K0PZcY+FhbE=;
+        b=sHUz1wNQ83zE42aGbKYKUtriMuQV89k7qO4n+QW0w3La184tHLIv7CWeDzCmwd+vgk
+         qgle9nD5VOkfV7FNfzsGOH2JJzxPLsP18yInhWphF8pQ+Hs0OUuF/7g2WJzA/PfXUygd
+         9PzR6ROja3gpea8/2k831r78CH6eEfAs7/UmDTwv4TTdE9W0tI3OP6PCqSHv+4axnrCA
+         v1VQfJXTR5Xs6BBrI240hlihqUnwePz5he9O2okKGsy+fLACPkwX+AfIqKDzteZaGSXC
+         zxbf53vyMTTjvltLS8W6kGnZAXd85gl7Ehltm5j938PK1oz56hWg3xYTqqaGaWzxANRN
+         gJNw==
+X-Forwarded-Encrypted: i=1; AJvYcCWriLycOewX9wKhVCoXqja0m65RNNZxEeiKg4zn4l9mdZNH5cU2691dIzweKVhWMuffmCP9tRU8KTU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzFJMmBhpt0PnXG+C2WF868GLXp1dPzR1uvHMwoee5qVyyxZp1g
+	HYVLzv7I4ovXj+0s2q9zME76VvVpvflV0fhPo1+tbbVjcx8WSx1aSiQyJz5fRUYsJMpaVcoXYtn
+	96p0CuleRcpAAI6IRngh+ZQHo5vUmVmzPs1JS6A==
+X-Google-Smtp-Source: AGHT+IHJIZjJm0+Hsxf3gPKdK8yBtqrSRKRjmh10LGyKq5VrJEw8ofGWS0qIV7jYqKH4wMYRbrhheBmDRAEt5XkqPpk=
+X-Received: by 2002:a05:6902:1109:b0:e30:6dea:3ab4 with SMTP id
+ 3f1490d57ef6-e3087a6060fmr12587842276.23.1730232393985; Tue, 29 Oct 2024
+ 13:06:33 -0700 (PDT)
 MIME-Version: 1.0
+References: <20241029192107.2344279-1-peter.griffin@linaro.org>
+In-Reply-To: <20241029192107.2344279-1-peter.griffin@linaro.org>
+From: Sam Protsenko <semen.protsenko@linaro.org>
+Date: Tue, 29 Oct 2024 15:06:23 -0500
+Message-ID: <CAPLW+4k7wd4Wix8xEB8+Aeb10_D9XU9jbxhCZ_OMn1fW5OOAtg@mail.gmail.com>
+Subject: Re: [PATCH] phy: samsung-ufs: switch back to syscon_regmap_lookup_by_phandle()
+To: Peter Griffin <peter.griffin@linaro.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, krzysztof.kozlowski@linaro.org, 
+	alim.akhtar@samsung.com, tudor.ambarus@linaro.org, andre.draszik@linaro.org, 
+	kernel-team@android.com, willmcvicker@google.com, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_122114_283244_5DCE725D 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20241029_130635_947163_FAC701DA 
+X-CRM114-Status: GOOD (  17.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,68 +88,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Now exynos-pmu can register its custom regmap for gs101 via
-of_syscon_register_regmap() we can switch back to the standard
-syscon_regmap_lookup_by_phandle() api for obtaining the regmap.
-
-Additionally add a Kconfig dependency for MFD_SYSCON.
-
-Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
----
- drivers/phy/samsung/Kconfig           | 1 +
- drivers/phy/samsung/phy-samsung-ufs.c | 6 +++---
- 2 files changed, 4 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
-index f10afa3d7ff5..e2330b0894d6 100644
---- a/drivers/phy/samsung/Kconfig
-+++ b/drivers/phy/samsung/Kconfig
-@@ -33,6 +33,7 @@ config PHY_SAMSUNG_UFS
- 	tristate "Exynos SoC series UFS PHY driver"
- 	depends on OF && (ARCH_EXYNOS || COMPILE_TEST)
- 	select GENERIC_PHY
-+	select MFD_SYSCON
- 	help
- 	  Enable this to support the Samsung Exynos SoC UFS PHY driver for
- 	  Samsung Exynos SoCs. This driver provides the interface for UFS host
-diff --git a/drivers/phy/samsung/phy-samsung-ufs.c b/drivers/phy/samsung/phy-samsung-ufs.c
-index 6c5d41552649..8e9ccd39f97e 100644
---- a/drivers/phy/samsung/phy-samsung-ufs.c
-+++ b/drivers/phy/samsung/phy-samsung-ufs.c
-@@ -13,11 +13,11 @@
- #include <linux/of.h>
- #include <linux/io.h>
- #include <linux/iopoll.h>
-+#include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
--#include <linux/soc/samsung/exynos-pmu.h>
- 
- #include "phy-samsung-ufs.h"
- 
-@@ -268,8 +268,8 @@ static int samsung_ufs_phy_probe(struct platform_device *pdev)
- 		goto out;
- 	}
- 
--	phy->reg_pmu = exynos_get_pmu_regmap_by_phandle(dev->of_node,
--							"samsung,pmu-syscon");
-+	phy->reg_pmu = syscon_regmap_lookup_by_phandle(dev->of_node,
-+						       "samsung,pmu-syscon");
- 	if (IS_ERR(phy->reg_pmu)) {
- 		err = PTR_ERR(phy->reg_pmu);
- 		dev_err(dev, "failed syscon remap for pmu\n");
--- 
-2.47.0.163.g1226f6d8fa-goog
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBPY3QgMjksIDIwMjQgYXQgMjoyMeKAr1BNIFBldGVyIEdyaWZmaW4gPHBldGVyLmdy
+aWZmaW5AbGluYXJvLm9yZz4gd3JvdGU6Cj4KPiBOb3cgZXh5bm9zLXBtdSBjYW4gcmVnaXN0ZXIg
+aXRzIGN1c3RvbSByZWdtYXAgZm9yIGdzMTAxIHZpYQo+IG9mX3N5c2Nvbl9yZWdpc3Rlcl9yZWdt
+YXAoKSB3ZSBjYW4gc3dpdGNoIGJhY2sgdG8gdGhlIHN0YW5kYXJkCj4gc3lzY29uX3JlZ21hcF9s
+b29rdXBfYnlfcGhhbmRsZSgpIGFwaSBmb3Igb2J0YWluaW5nIHRoZSByZWdtYXAuCj4KPiBBZGRp
+dGlvbmFsbHkgYWRkIGEgS2NvbmZpZyBkZXBlbmRlbmN5IGZvciBNRkRfU1lTQ09OLgo+Cj4gU2ln
+bmVkLW9mZi1ieTogUGV0ZXIgR3JpZmZpbiA8cGV0ZXIuZ3JpZmZpbkBsaW5hcm8ub3JnPgo+IC0t
+LQoKUmV2aWV3ZWQtYnk6IFNhbSBQcm90c2Vua28gPHNlbWVuLnByb3RzZW5rb0BsaW5hcm8ub3Jn
+PgoKPiAgZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnICAgICAgICAgICB8IDEgKwo+ICBkcml2
+ZXJzL3BoeS9zYW1zdW5nL3BoeS1zYW1zdW5nLXVmcy5jIHwgNiArKystLS0KPiAgMiBmaWxlcyBj
+aGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEv
+ZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnIGIvZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmln
+Cj4gaW5kZXggZjEwYWZhM2Q3ZmY1Li5lMjMzMGIwODk0ZDYgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVy
+cy9waHkvc2Ftc3VuZy9LY29uZmlnCj4gKysrIGIvZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmln
+Cj4gQEAgLTMzLDYgKzMzLDcgQEAgY29uZmlnIFBIWV9TQU1TVU5HX1VGUwo+ICAgICAgICAgdHJp
+c3RhdGUgIkV4eW5vcyBTb0Mgc2VyaWVzIFVGUyBQSFkgZHJpdmVyIgo+ICAgICAgICAgZGVwZW5k
+cyBvbiBPRiAmJiAoQVJDSF9FWFlOT1MgfHwgQ09NUElMRV9URVNUKQo+ICAgICAgICAgc2VsZWN0
+IEdFTkVSSUNfUEhZCj4gKyAgICAgICBzZWxlY3QgTUZEX1NZU0NPTgo+ICAgICAgICAgaGVscAo+
+ICAgICAgICAgICBFbmFibGUgdGhpcyB0byBzdXBwb3J0IHRoZSBTYW1zdW5nIEV4eW5vcyBTb0Mg
+VUZTIFBIWSBkcml2ZXIgZm9yCj4gICAgICAgICAgIFNhbXN1bmcgRXh5bm9zIFNvQ3MuIFRoaXMg
+ZHJpdmVyIHByb3ZpZGVzIHRoZSBpbnRlcmZhY2UgZm9yIFVGUyBob3N0Cj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LXNhbXN1bmctdWZzLmMgYi9kcml2ZXJzL3BoeS9zYW1z
+dW5nL3BoeS1zYW1zdW5nLXVmcy5jCj4gaW5kZXggNmM1ZDQxNTUyNjQ5Li44ZTljY2QzOWY5N2Ug
+MTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvc2Ftc3VuZy9waHktc2Ftc3VuZy11ZnMuYwo+ICsr
+KyBiL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LXNhbXN1bmctdWZzLmMKPiBAQCAtMTMsMTEgKzEz
+LDExIEBACj4gICNpbmNsdWRlIDxsaW51eC9vZi5oPgo+ICAjaW5jbHVkZSA8bGludXgvaW8uaD4K
+PiAgI2luY2x1ZGUgPGxpbnV4L2lvcG9sbC5oPgo+ICsjaW5jbHVkZSA8bGludXgvbWZkL3N5c2Nv
+bi5oPgo+ICAjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9waHkv
+cGh5Lmg+Cj4gICNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiAgI2luY2x1ZGUg
+PGxpbnV4L3JlZ21hcC5oPgo+IC0jaW5jbHVkZSA8bGludXgvc29jL3NhbXN1bmcvZXh5bm9zLXBt
+dS5oPgo+Cj4gICNpbmNsdWRlICJwaHktc2Ftc3VuZy11ZnMuaCIKPgo+IEBAIC0yNjgsOCArMjY4
+LDggQEAgc3RhdGljIGludCBzYW1zdW5nX3Vmc19waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rl
+dmljZSAqcGRldikKPiAgICAgICAgICAgICAgICAgZ290byBvdXQ7Cj4gICAgICAgICB9Cj4KPiAt
+ICAgICAgIHBoeS0+cmVnX3BtdSA9IGV4eW5vc19nZXRfcG11X3JlZ21hcF9ieV9waGFuZGxlKGRl
+di0+b2Zfbm9kZSwKPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICJzYW1zdW5nLHBtdS1zeXNjb24iKTsKPiArICAgICAgIHBoeS0+cmVnX3Bt
+dSA9IHN5c2Nvbl9yZWdtYXBfbG9va3VwX2J5X3BoYW5kbGUoZGV2LT5vZl9ub2RlLAo+ICsgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAic2Ftc3Vu
+ZyxwbXUtc3lzY29uIik7Cj4gICAgICAgICBpZiAoSVNfRVJSKHBoeS0+cmVnX3BtdSkpIHsKPiAg
+ICAgICAgICAgICAgICAgZXJyID0gUFRSX0VSUihwaHktPnJlZ19wbXUpOwo+ICAgICAgICAgICAg
+ICAgICBkZXZfZXJyKGRldiwgImZhaWxlZCBzeXNjb24gcmVtYXAgZm9yIHBtdVxuIik7Cj4gLS0K
+PiAyLjQ3LjAuMTYzLmcxMjI2ZjZkOGZhLWdvb2cKPgo+CgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
