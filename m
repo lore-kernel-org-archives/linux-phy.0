@@ -4,89 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6B4FD2AB20
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 11:47:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB9CFD2AB3C
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 13:42:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	Mime-Version:References:In-Reply-To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jlcCKluzDUCTeICCWr4O/964qk+wpGGgBt7+B9iFpuQ=; b=kwyMZabyZJ+5pdEIGadnXrRuFs
-	2klM4myzeZD3gcGBK9iGUDOruUEJqDxqVGhhGVPnnSx2bFZdWb2uT/fewsNWcEvQowE2LWEHLld0q
-	1OVL+E+d6Yk2QAVENrD3ifkHOlO5RqsKbL9jTi8G/Eqs14CMsD09vgGwQJS1IGPWwaVOxLuc5efCN
-	TOBGwY+smoFlb+TkRNoMY/MSZhNPEjBxFGJZLSLcGhXtj19nS7Hzpx/sWV+/h+BWmmeijH1RKOfpU
-	9vNQrFKdUcSz/GBgu1ik41keENOZptbTz0EDFvMoDrYfEAJrwG2Pyrb9bY0GKQKC2rQvRrDhChmFE
-	pJmKPiLw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LLbjQX48kyKYibsDehmyUjKWWRdBMUxYV8f+irLGL6o=; b=s3tPRbt1+LIZJe
+	qNZDCVjKoDvKiGY0hMCQkCPyVMHyt1I2dDiJtlupIUUDqxpf1RHbI+ij+O8asq9t9+FknpA2PExeT
+	Yoz30f3iPmIJlqfeVVqxu0VveBRGwC7cR4vcbTKXsc6FC95yXcMroEKCwL0GKmAPx0w8x6Urtl79T
+	r/vSxUt1+mgScshe5uQ4VYiAVGZFqd3a2abTq7VD2WfpHIflrjV+lzbWmS9OWF/rntGEgwNKCW1ZJ
+	LXGSUD2prW78138aWDcGjrAC9tkCcnCOo821iopoLVcXZGC8uVuhNvlJGCI1hyNAW3P/dulxdiHRl
+	PSaxCXCsLT0vVJz0/jxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5kha-0000000EHiT-46WR;
-	Tue, 29 Oct 2024 11:47:58 +0000
-Received: from smtp-relay-internal-0.canonical.com ([185.125.188.122])
+	id 1t5mUc-0000000Ebkl-1r7g;
+	Tue, 29 Oct 2024 13:42:42 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5kMe-0000000EEQq-48Lw
+	id 1t5mRl-0000000EbIn-0J4S
 	for linux-phy@lists.infradead.org;
-	Tue, 29 Oct 2024 11:26:22 +0000
-Received: from mail-ot1-f72.google.com (mail-ot1-f72.google.com [209.85.210.72])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id B39424121B
-	for <linux-phy@lists.infradead.org>; Tue, 29 Oct 2024 11:26:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
-	s=20210705; t=1730201177;
-	bh=v61ehPphC3SpuWBobmkEMN1kDRB/yHy45WnKnBTik4Y=;
-	h=From:In-Reply-To:References:Mime-Version:Date:Message-ID:Subject:
-	 To:Cc:Content-Type;
-	b=TPc6VxiETpv+l2wpr/mrGQ/CcLZuJEUSvddDiaVOe4cxUDrVZwfxp+Rwy45vuCS+T
-	 2Df4AgshOPi16oSPxXxOjwxXSZ1QfNZrkaIoVrmoRoyKuQ8yzRt50cE7M7c5NQ/soT
-	 xzfBknLybnaloXQ/0PiF18USII0UCmsLDrJu/RAVq3MsRyCEHuBPaClA7A/QwLvtHU
-	 82ddWTZf3m0lAeDwYUxBupoVlXkK0ZMyJNQGsX6XLmuqA7M6e1oU/EpdJ2lKgDI8zc
-	 1BD7Pvxvsdbcas7Pojp8RuLkrNOSheX5ftW8FJRyAdmg31lEHfE2wlEJSsCKV8L7FR
-	 Rx/h70PRnu0Dw==
-Received: by mail-ot1-f72.google.com with SMTP id 46e09a7af769-718058978bdso4875899a34.1
-        for <linux-phy@lists.infradead.org>; Tue, 29 Oct 2024 04:26:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1730201176; x=1730805976;
-        h=cc:to:subject:message-id:date:mime-version:references:in-reply-to
-         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=v61ehPphC3SpuWBobmkEMN1kDRB/yHy45WnKnBTik4Y=;
-        b=ZeyDhcuYZ081ai5Hq+ag+z9x+UdafVUT0vfOT/lVsHGGZ/cx7E+81bri2PeTQjpaHN
-         ixEqEQrwHoOc7HEUSF5TD986/laQSJxgTzhefA1QAF4CcFZFTRFgkeX7HhZzmmNEa2gs
-         AhD07omTWiKAMYTEvBg+A+2xDdwxpD5l35Di45yD9MYrCQJQwd22k/GCKJV/kf4GBOjj
-         irtceG98AIqMHSeblDRvmxgKngToJbqBJ/TFSpeHaSRIZd24kLnAfDMc5lwelN9fDWf2
-         X2LOvZ5CG82UMriHJEDTIraySuwEtvQCey0FcAjiRD8I9KnNxAENs8zRqiX3jLBkoV7c
-         sB5w==
-X-Forwarded-Encrypted: i=1; AJvYcCWHByvZKSMGv63htr7DhL49A0ohn1U4uzhgML5t30+fUX4ssNB2V0H42NgOAVmZ8cGgsOuai42mCAE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxzwnyC0iekDgtNc2HkiZI9xug5J7KsZdx9Hhzr0ylv02r9SKwc
-	RGY2byiCNKpH+LqVRTjxC2JhYqrMsPGOQhOBYcASAcW1KF8KnFY60i5OMDtFwOyuW7QCxOHDTxZ
-	gEL98X2p44LL2Ry8Nss6fKXfyAtakJPRSn//GJSWQYKjH4usbvGkIl3BBOR3D6efud1fPMKe4Gr
-	fHQPiSalkmpPwVaPBdey48grXbAZo7q8qNZtZYg1whGonOh9GkXIODdw==
-X-Received: by 2002:a05:6870:46a7:b0:251:2755:5a33 with SMTP id 586e51a60fabf-29051dd2a1fmr9702104fac.39.1730201176522;
-        Tue, 29 Oct 2024 04:26:16 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IH6KUynuQ+DlJ0SAdxk9knLJkp8MoDFJfgMWvvrdfES/yU5CoPOQxKysfhlo/J2oaPVpFrqPL817POZllpwwZI=
-X-Received: by 2002:a05:6870:46a7:b0:251:2755:5a33 with SMTP id
- 586e51a60fabf-29051dd2a1fmr9702093fac.39.1730201176239; Tue, 29 Oct 2024
- 04:26:16 -0700 (PDT)
-Received: from 348282803490 named unknown by gmailapi.google.com with
- HTTPREST; Tue, 29 Oct 2024 04:26:15 -0700
-From: Emil Renner Berthing <emil.renner.berthing@canonical.com>
-In-Reply-To: <20240902111127.15155-2-minda.chen@starfivetech.com>
-References: <20240902111127.15155-1-minda.chen@starfivetech.com> <20240902111127.15155-2-minda.chen@starfivetech.com>
-Mime-Version: 1.0
-Date: Tue, 29 Oct 2024 04:26:15 -0700
-Message-ID: <CAJM55Z9sm6TVbjK4GpHN1yc5uub1uLh3++SPPP+h-T=CYhU25w@mail.gmail.com>
-Subject: Re: [PATCH v3 1/1] phy: starfive: jh7110-usb: Fix link configuration
- to controller
-To: Minda Chen <minda.chen@starfivetech.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Jan Kiszka <jan.kiszka@siemens.com>, 
-	linux-phy@lists.infradead.org
-Cc: Emil Renner Berthing <emil.renner.berthing@canonical.com>, Rob Herring <robh+dt@kernel.org>, 
-	Conor Dooley <conor@kernel.org>, linux-kernel@vger.kernel.org
+	Tue, 29 Oct 2024 13:39:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 4B21CA42E51;
+	Tue, 29 Oct 2024 13:37:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6AB20C4CEE9;
+	Tue, 29 Oct 2024 13:39:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730209182;
+	bh=jj3QSdkt7HgsL+0jGXGGXLBhwpp0NyA9zHvIeDdUtTE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=JlQU7Zt7jiwk9oGNwjU/HMTb+2ShaKBDK3O13vtfL6/WB7HRJJYLCl1rqUBzYdEUe
+	 eZuHFdL6nUO1EEhjVSJ+/5NpgSk5fmXUP5+afqGLerGgrVHmq0uP6phi7bejFgu2z7
+	 dAeUC1718KlSGe5fMjmI5Y7c5oupjs9Pb9mL1a36/KOxe6a2wcD5o4yGCvOEgNacJn
+	 63s7piaIyFOU8crfHtuD8AIEDu1mb0R062/UQhz1aSPRUcCfRmcYb6bci46MIIPIjE
+	 mWiG7FjWvnueEVZ41aJvxiVBcRsc8rPI9AnGrhvwoauqL1nGQ8ZdTzJdkwypUf+bKo
+	 OD55CyBv0ZoFg==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1t5mS1-000000002sW-3cst;
+	Tue, 29 Oct 2024 14:40:01 +0100
+Date: Tue, 29 Oct 2024 14:40:01 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Zijun Hu <zijun_hu@icloud.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Felipe Balbi <balbi@ti.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+	Lee Jones <lee@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+	stable@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, Zijun Hu <quic_zijuhu@quicinc.com>
+Subject: Re: [PATCH v2 1/6] phy: core: Fix that API devm_phy_put() fails to
+ release the phy
+Message-ID: <ZyDlsWaA5aiRa_ry@hovoldconsulting.com>
+References: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
+ <20241024-phy_core_fix-v2-1-fc0c63dbfcf3@quicinc.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241024-phy_core_fix-v2-1-fc0c63dbfcf3@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_042621_176451_6E4270A5 
-X-CRM114-Status: GOOD (  19.25  )
+X-CRM114-CacheID: sfid-20241029_063945_242514_8760E444 
+X-CRM114-Status: GOOD (  17.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,92 +86,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Minda Chen wrote:
-> From: Jan Kiszka <jan.kiszka@siemens.com>
->
-> In order to connect the USB 2.0 PHY to its controller, we also need to
-> set "u0_pdrstn_split_sw_usbpipe_plugen" [1]. Some downstream U-Boot
-> versions did that, but upstream firmware does not, and the kernel must
-> not rely on such behavior anyway. Failing to set this left the USB
-> gadget port invisible to connected hosts behind.
->
-> Link: https://doc-en.rvspace.org/JH7110/TRM/JH7110_TRM/sys_syscon.html#sys_syscon__section_b3l_fqs_wsb [1]
-> Fixes: 16d3a71c20cf ("phy: starfive: Add JH7110 USB 2.0 PHY driver")
-> Signed-off-by: Jan Kiszka <jan.kiszka@siemens.com>
-> Signed-off-by: Minda Chen <minda.chen@starfivetech.com>
-
-Apologies if this was already applied somewhere, but I don't see message that
-it was. In any case this looks good to me, thanks.
-
-Reviewed-by: Emil Renner Berthing <emil.renner.berthing@canonical.com>
-
-> ---
->  drivers/phy/starfive/phy-jh7110-usb.c | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
->
-> diff --git a/drivers/phy/starfive/phy-jh7110-usb.c b/drivers/phy/starfive/phy-jh7110-usb.c
-> index 633912f8a05d..dabe59953070 100644
-> --- a/drivers/phy/starfive/phy-jh7110-usb.c
-> +++ b/drivers/phy/starfive/phy-jh7110-usb.c
-> @@ -10,18 +10,24 @@
->  #include <linux/clk.h>
->  #include <linux/err.h>
->  #include <linux/io.h>
-> +#include <linux/mfd/syscon.h>
->  #include <linux/module.h>
->  #include <linux/phy/phy.h>
->  #include <linux/platform_device.h>
-> +#include <linux/regmap.h>
->  #include <linux/usb/of.h>
->
->  #define USB_125M_CLK_RATE		125000000
->  #define USB_LS_KEEPALIVE_OFF		0x4
->  #define USB_LS_KEEPALIVE_ENABLE		BIT(4)
->
-> +#define USB_PDRSTN_SPLIT		BIT(17)
-> +#define SYSCON_USB_SPLIT_OFFSET		0x18
-> +
->  struct jh7110_usb2_phy {
->  	struct phy *phy;
->  	void __iomem *regs;
-> +	struct regmap *sys_syscon;
->  	struct clk *usb_125m_clk;
->  	struct clk *app_125m;
->  	enum phy_mode mode;
-> @@ -61,6 +67,10 @@ static int usb2_phy_set_mode(struct phy *_phy,
->  		usb2_set_ls_keepalive(phy, (mode != PHY_MODE_USB_DEVICE));
->  	}
->
-> +	/* Connect usb 2.0 phy mode */
-> +	regmap_update_bits(phy->sys_syscon, SYSCON_USB_SPLIT_OFFSET,
-> +			   USB_PDRSTN_SPLIT, USB_PDRSTN_SPLIT);
-> +
->  	return 0;
->  }
->
-> @@ -129,6 +139,12 @@ static int jh7110_usb_phy_probe(struct platform_device *pdev)
->  	phy_set_drvdata(phy->phy, phy);
->  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
->
-> +	phy->sys_syscon =
-> +		syscon_regmap_lookup_by_compatible("starfive,jh7110-sys-syscon");
-> +	if (IS_ERR(phy->sys_syscon))
-> +		return dev_err_probe(dev, PTR_ERR(phy->sys_syscon),
-> +			"Failed to get sys-syscon\n");
-> +
->  	return PTR_ERR_OR_ZERO(phy_provider);
->  }
->
-> --
-> 2.17.1
->
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBPY3QgMjQsIDIwMjQgYXQgMTA6Mzk6MjZQTSArMDgwMCwgWmlqdW4gSHUgd3JvdGU6
+Cj4gRnJvbTogWmlqdW4gSHUgPHF1aWNfemlqdWh1QHF1aWNpbmMuY29tPgo+IAo+IEZvciBkZXZt
+X3BoeV9wdXQoKSwgaXRzIGNvbW1lbnQgc2F5cyBpdCBuZWVkcyB0byBpbnZva2UgcGh5X3B1dCgp
+IHRvCj4gcmVsZWFzZSB0aGUgcGh5LCBidXQgaXQgZG9lcyBub3QgaW52b2tlIHRoZSBmdW5jdGlv
+biBhY3R1YWxseSBzaW5jZQo+IGRldnJlc19kZXN0cm95KCkgd2lsbCBub3QgY2FsbCBkZXZtX3Bo
+eV9yZWxlYXNlKCkgYXQgYWxsIHdoaWNoIHdpbGwKPiBjYWxsIHRoZSBmdW5jdGlvbiwgYW5kIHRo
+ZSBtaXNzaW5nIHBoeV9wdXQoKSBjYWxsIHdpbGwgY2F1c2U6CgpQbGVhc2Ugc3BsaXQgdGhlIGFi
+b3ZlIHVwIGluIGF0IGxlYXN0IHR3byBzZW50ZW5jZXMgdG8gbWFrZSBpdCBlYXNpZXIgdG8KcGFy
+c2UuIFNwbGl0IGl0IGFmdGVyIGRldm1fcGh5X3JlbGVhc2UoKSBhbmQgcmVwaHJhc2UgdGhlIGxh
+dHRlciBwYXJ0CihlLmcuIGJ5IGRyb3BwaW5nICJhdCBhbGwgd2hpY2ggd2lsbCBjYWxsIHRoZSBm
+dW5jdGlvbiIpLgogCj4gLSBUaGUgcGh5IGZhaWxzIHRvIGJlIHJlbGVhc2VkLgo+IC0gZGV2bV9w
+aHlfcHV0KCkgY2FuIG5vdCBmdWxseSB1bmRvIHdoYXQgQVBJIGRldm1fcGh5X2dldCgpIGRvZXMu
+Cj4gLSBMZWFrIHJlZmNvdW50IG9mIGJvdGggdGhlIG1vZHVsZSBhbmQgZGV2aWNlIGZvciBiZWxv
+dyB0eXBpY2FsIHVzYWdlOgo+IAo+ICAgZGV2bV9waHlfZ2V0KCk7IC8vIG9yIGl0cyB2YXJpYW50
+Cj4gICAuLi4KPiAgIGVyciA9IGRvX3NvbWV0aGluZygpOwo+ICAgaWYgKGVycikKPiAgICAgICBn
+b3RvIGVycl9vdXQ7Cj4gICAuLi4KPiAgIGVycl9vdXQ6Cj4gICBkZXZtX3BoeV9wdXQoKTsKPiAK
+PiAgIFRoZSBmaWxlKHMpIGFmZmVjdGVkIGJ5IHRoaXMgaXNzdWUgYXJlIHNob3duIGJlbG93IHNp
+bmNlIHRoZXkgaGF2ZSBzdWNoCj4gICB0eXBpY2FsIHVzYWdlLgo+ICAgZHJpdmVycy9wY2kvY29u
+dHJvbGxlci9jYWRlbmNlL3BjaWUtY2FkZW5jZS5jCj4gICBkcml2ZXJzL25ldC9ldGhlcm5ldC90
+aS9hbTY1LWNwc3ctbnVzcy5jCj4gCj4gRml4ZWQgYnkgdXNpbmcgZGV2cmVzX3JlbGVhc2UoKSBp
+bnN0ZWFkIG9mIGRldnJlc19kZXN0cm95KCkgd2l0aGluIHRoZSBBUEkKPiAKPiBGaXhlczogZmY3
+NjQ5NjM0NzlhICgiZHJpdmVyczogcGh5OiBhZGQgZ2VuZXJpYyBQSFkgZnJhbWV3b3JrIikKPiBD
+Yzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwo+IENjOiBMb3JlbnpvIFBpZXJhbGlzaSA8bHBpZXJh
+bGlzaUBrZXJuZWwub3JnPgo+IENjOiAiS3J6eXN6dG9mIFdpbGN6ecWEc2tpIiA8a3dAbGludXgu
+Y29tPgo+IENjOiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29tPgo+IENjOiAiRGF2
+aWQgUy4gTWlsbGVyIiA8ZGF2ZW1AZGF2ZW1sb2Z0Lm5ldD4KPiBDYzogRXJpYyBEdW1hemV0IDxl
+ZHVtYXpldEBnb29nbGUuY29tPgo+IENjOiBKYWt1YiBLaWNpbnNraSA8a3ViYUBrZXJuZWwub3Jn
+Pgo+IENjOiBQYW9sbyBBYmVuaSA8cGFiZW5pQHJlZGhhdC5jb20+Cj4gU2lnbmVkLW9mZi1ieTog
+WmlqdW4gSHUgPHF1aWNfemlqdWh1QHF1aWNpbmMuY29tPgoKRGlmZiBpdHNlbGYgbG9va3MgZ29v
+ZC4gTmljZSBmaW5kLgoKSm9oYW4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
+eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LXBoeQo=
