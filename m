@@ -4,79 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71FA2D3A661
-	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 16:00:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88726D3A66D
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 16:03:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HoEbJTCvnbGojzaFQ70anjX8hvrIuOZzc0JT9AB4mgs=; b=YYLKG2rOK+g8FL
-	i4S5Rr36ggB9C3g4skRKThlQ4UsCYNdp3rcZWXQ8UyfMVUnfunYPimB2PygJccAtYXToF52yQN4lZ
-	ew3ree2EQsZtVZ7AjTULi9vbiy/edhlJvWld3cTk20Hc9OZYE48fMgKKe+ZPYkfNKx9po5EmRXNEK
-	5sNqHWxAXkQ+HezqFjeReznVkrGv26EDagnBXiBwT5HpHODd9n12Qw80O/af95brladRmufIdTEgb
-	mgxJRZGN9Mojl4TYUt0BT99RvDBDQonMpQzpsERG7qkn8Kj7O2UDjfKXsep51SnInygc7RfEHJHZs
-	uUwsXaDTF9AfFaRUsYNQ==;
+	List-Owner; bh=lJM+15kXHZHH3Bx9WObVf5/W3fU5BrS8upVVb0daPp0=; b=d3Jc9i38VCTcjz
+	Aww16zwuhkyBdxASKGakTzbGUh8eg1qw4LqcSXWvPvpIoloAgYqRpbAWN0o2fEz13A75GCDhkfA30
+	GNqXZc8N3VkJADLh/C+498XcWCHwjd6cZWO0rl3yOhlM7AHL6rt6ht2WNlKBl29v9uq99aXYTRJR5
+	8xn/YLrcH1YCUg4n8Bf0U56AU7T+pcvWJhJggUiRjeWP/cw7/XUDf2P5EjIWUmWGimOI6QzhEGVbz
+	/HozhMBvidK+ziOvlcngPCfRdW524eUDUBCSx9+39A88/TN8BKaqnle5p5Xc9ibLGSHGueXxfTvj/
+	RHEb9LX8GR5TJzL2jXaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5oe4-0000000F2iv-3ovN;
-	Tue, 29 Oct 2024 16:00:36 +0000
-Received: from pv50p00im-tydg10011801.me.com ([17.58.6.52])
+	id 1t5ohH-0000000F3G7-15y8;
+	Tue, 29 Oct 2024 16:03:55 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5oLz-0000000Exh9-1YAW
-	for linux-phy@lists.infradead.org;
-	Tue, 29 Oct 2024 15:41:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
-	s=1a1hai; t=1730216514;
-	bh=2T9klOPnu2KdY6zwuhVfSQ5C8cDsFs4HRhNmLFusli0=;
-	h=Message-ID:Date:MIME-Version:Subject:To:From:Content-Type;
-	b=dK3dMChyBUvej/LwJmH3r2B4RTyi+AFoFPFo3mkfI4rKKuBPQC1oxW3iGN+OWbUgl
-	 0mt5bh81zqnoKs0QcMGMKf7xX1bOoZwOGtJqXyhpoc8KdI5MDQ6MwpEoLqSqeCeKVK
-	 cKp5+JW4/TIyGBpaGdMsWE5UV45bZ/+T1B/UBXJr+3ID9XY54H5GqqkzWlOOb6C6+o
-	 O+kElmhVoWWhX7+S4HieTSw0BDj5ja5Rk54g7WUj5U4HcSJLmqhuHlHDf2D6pI66tw
-	 UDDYlQcix4O+W1QXT0jXica5yLHBFj/bbQhMTRgG3bLeUrMrvTYNSJ6wApsl4dul+A
-	 NUYVr73LrttLA==
-Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
-	by pv50p00im-tydg10011801.me.com (Postfix) with ESMTPSA id 5A03A80010A;
-	Tue, 29 Oct 2024 15:41:44 +0000 (UTC)
-Message-ID: <9ddb14c5-b425-474a-9a53-d34a414c3d17@icloud.com>
-Date: Tue, 29 Oct 2024 23:41:41 +0800
+	id 1t5oM9-0000000Exi8-1vkl;
+	Tue, 29 Oct 2024 15:42:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1730216525; x=1761752525;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=lNiIgMzqjD7JnSewZ3IhEBUr+kDPKJaLJNDhMEfOTU4=;
+  b=lxLTEbL9cJEU7xVWIwlSWlhu0os5tV7Ywn0TxVFkCBtS0galuDmfn+89
+   RD7QgOtpBm4lCiDkqYAk7WlmtH63OnbmiS7A7N4htz7OSvmW9ag6pdCiK
+   gXHjyeb8HExapJiQGKyTJfNqe7TsfVW51C9ir0SASe7pxqj7yr/3ar+gf
+   aZbhDiGKX0CQDlOXsWkkkxV04OCuFikWZB42KrDmrTGqbw2moxl+1EJRu
+   /RL91wUPaAOYIipp5BvRV9kVvLLOUBDnE5bBz9sOTXDdqyOkzmbXQXAhE
+   jL3guTe1Us4YjN2aY9jXV4hrsgnVIB0Fuj3Z9dqMaYUuc8mm+T37Lzf9f
+   w==;
+X-CSE-ConnectionGUID: EJO/soQAQBiuZRY5p2q1WQ==
+X-CSE-MsgGUID: yDbm1SmPS9mGLdueEux2rA==
+X-IronPort-AV: E=Sophos;i="6.11,241,1725314400"; 
+   d="scan'208";a="39741195"
+Received: from vmailcow01.tq-net.de ([10.150.86.48])
+  by mx1.tq-group.com with ESMTP; 29 Oct 2024 16:42:02 +0100
+X-CheckPoint: {6721024A-2C-D31EDE1A-D52D6119}
+X-MAIL-CPID: 86EBC639FFD8A347FFFA3158577E90EE_5
+X-Control-Analysis: str=0001.0A682F18.6721024B.001A,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 4E9BA165CDD;
+	Tue, 29 Oct 2024 16:41:57 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
+	s=dkim; t=1730216518;
+	h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=lNiIgMzqjD7JnSewZ3IhEBUr+kDPKJaLJNDhMEfOTU4=;
+	b=d43V220x7dVdOZSIsV/ABOigjAWn9QuNLSkmlQvULgSyyfG5B4o9WUVvZ6wU6AQAhrDZ/B
+	OHFJ24703OI7si9qkf0jNYI4+f49ms4xEDARF1fEsSrSK9C7NPopRClbjW44EL5fHoM9t4
+	TfHkVZfwjcXp9Gx7e5AEjToGbaNQ4kvt37ma5drCtu2sP9DkhYu3ax82X/j/mmz+NT4vs0
+	pBvubsZCNbnNuzUks36q1/D2IwEoHePM0tv8ec6Dqveiu64FqtMNwDGuaJOhqkeUu/s21u
+	JRAoOtUu6WDvBGV+bS9Flpn2cYufQx2C58yMN2q8FcNTAqkFMaVs8LtiZNAFDg==
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Frank Li <Frank.li@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, Xu Yang <xu.yang_2@nxp.com>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 0/5] dtbs_check warning clean up against fsl, mxs-usbphy.yaml
+Date: Tue, 29 Oct 2024 16:41:56 +0100
+Message-ID: <4608791.LvFx2qVVIh@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <ZyD/QzKS7xqQ2QF8@lizhi-Precision-Tower-5810>
+References: <20240926073951.783869-1-xu.yang_2@nxp.com> <6099458.lOV4Wx5bFT@steina-w> <ZyD/QzKS7xqQ2QF8@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 4/6] phy: core: Fix an OF node refcount leakage in
- _of_phy_get()
-To: Johan Hovold <johan@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Lee Jones <lee@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
- =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>, stable@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- Zijun Hu <quic_zijuhu@quicinc.com>
-References: <20241024-phy_core_fix-v2-0-fc0c63dbfcf3@quicinc.com>
- <20241024-phy_core_fix-v2-4-fc0c63dbfcf3@quicinc.com>
- <ZyDnc7HpMTnwEs-2@hovoldconsulting.com>
-Content-Language: en-US
-From: Zijun Hu <zijun_hu@icloud.com>
-In-Reply-To: <ZyDnc7HpMTnwEs-2@hovoldconsulting.com>
-X-Proofpoint-GUID: 9cGynE53Sln1BWunVrvjJpHU5b_1TIuj
-X-Proofpoint-ORIG-GUID: 9cGynE53Sln1BWunVrvjJpHU5b_1TIuj
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
- definitions=2024-10-29_11,2024-10-29_01,2024-09-30_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0 malwarescore=0 adultscore=0
- spamscore=0 mlxscore=0 suspectscore=0 clxscore=1015 phishscore=0
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2308100000 definitions=main-2410290120
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241029_084155_455452_09638061 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20241029_084206_011992_987ACB31 
+X-CRM114-Status: GOOD (  16.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,63 +85,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2024/10/29 21:47, Johan Hovold wrote:
-> On Thu, Oct 24, 2024 at 10:39:29PM +0800, Zijun Hu wrote:
->> From: Zijun Hu <quic_zijuhu@quicinc.com>
->>
->> It will leak refcount of OF node @args.np for _of_phy_get() not to
->> decrease refcount increased by previous of_parse_phandle_with_args()
->> when returns due to of_device_is_compatible() error.
->>
->> Fix by adding of_node_put() before the error return.
->>
->> Fixes: b7563e2796f8 ("phy: work around 'phys' references to usb-nop-xceiv devices")
->> Cc: stable@vger.kernel.org
->> Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
->> ---
->>  drivers/phy/phy-core.c | 5 ++++-
->>  1 file changed, 4 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
->> index 52ca590a58b9..967878b78797 100644
->> --- a/drivers/phy/phy-core.c
->> +++ b/drivers/phy/phy-core.c
->> @@ -629,8 +629,11 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
->>  		return ERR_PTR(-ENODEV);
->>  
->>  	/* This phy type handled by the usb-phy subsystem for now */
->> -	if (of_device_is_compatible(args.np, "usb-nop-xceiv"))
->> +	if (of_device_is_compatible(args.np, "usb-nop-xceiv")) {
->> +		/* Put refcount above of_parse_phandle_with_args() got */
-> 
-> No need for a comment as this is already handled in the later paths.
-> 
+Hi Frank,
 
-will remove it within v3
+Am Dienstag, 29. Oktober 2024, 16:29:07 CET schrieb Frank Li:
+> On Tue, Oct 29, 2024 at 04:15:54PM +0100, Alexander Stein wrote:
+> > Hi Vinod,
+> >
+> > Am Donnerstag, 17. Oktober 2024, 17:36:12 CET schrieb Vinod Koul:
+> > >
+> > > On Thu, 26 Sep 2024 15:39:46 +0800, Xu Yang wrote:
+> > > > Some changes to clean up dtbs_check warning against fsl,mxs-usbphy.=
+yaml.
+> > > >
+> > > > The first 4 patches are used to fix below warning, "nxp,sim" is only
+> > > > needed by i.MX7ULP:
+> > > >  - 'nxp,sim' is a required property
+> > > >
+> > > > The last patch is used to fix below warning:
+> > > >  - fsl,tx-d-cal: 5 is less than the minimum of 79
+> > > >
+> > > > [...]
+> > >
+> > > Applied, thanks!
+> > >
+> > > [1/5] dt-bindings: phy: mxs-usb-phy: add imx8qxp compatible
+> > >       commit: 76b4f2a5cec59e842de4b5989eb990a2ee8cedf3
+> > > [2/5] arm64: dts: imx8dxl-ss-conn: change usbphy1 compatible
+> > >       (no commit info)
+> > > [3/5] arm64: dts: imx8qm: change usbphy1 compatible
+> > >       (no commit info)
+> > > [4/5] arm64: dts: imx8qxp: change usbphy1 compatible
+> > >       (no commit info)
+> > > [5/5] ARM: dts: imx6qdl: convert fsl,tx-d-cal to correct value
+> > >       (no commit info)
+> >
+> > Did maybe something go wrong while merging? Only patch 1 has a commit S=
+HA1
+> > in this mail.
+> > Also only patch 1 is available in linux-next
+> =
 
->> +		of_node_put(args.np);
-> 
-> For that reason you should probably initialise ret and add a new label
-> out_put_node that you jump to here instead.
-> 
+> Supposed script report issue. Only dt-bindings go to through DMA tree.
+> Other dts should go through shawn's tree.
+> =
 
-will try  to do it within v3.
+> Still wait for shawn pick dts patches.
 
->>  		return ERR_PTR(-ENODEV);
->> +	}
->>  
->>  	mutex_lock(&phy_provider_mutex);
->>  	phy_provider = of_phy_provider_lookup(args.np);
-> 
-> Johan
+Aah, thanks for clearing up.
+
+Best regards,
+Alexander
+-- =
+
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
 
 
--- 
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
