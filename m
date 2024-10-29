@@ -4,92 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70186D5B847
-	for <linux-phy@archiver.kernel.org>; Mon, 28 Oct 2024 22:34:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AD05D5B865
+	for <linux-phy@archiver.kernel.org>; Tue, 29 Oct 2024 02:17:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETSwjRmrGTt6CC3mRPZmN8qYCJUS5an2cqUQ6JHedFI=; b=NO69oEcABim7fE
-	HqmXhDx6eqGtaN6nJRzBSsNsXiFquBGK6QoEWFnWT9WeFJ6EQv+oOTLJIZQpGPAeH5fFgjIud+DKk
-	q6MKBvbcBHffZ0Ehb9nQxzE9GsV/M2k1ptRPTYQxLhKTAQ66KQmfZBaphCp1qkt5CRJbob6ysgASn
-	FXnCrIudrJj0vjEQzu0ZpD3fi/s28yrjDyNRnenKeCUzRAtCdWQ1HopBAgCXqp3V4Lzyvdepizusq
-	42981rKI2eLz8D5a0WkS2ZUiKqBI+yNqrQi16rgEDJ+sIbD4E9+ZtvgKRBuqtqffTxHSosbjAx7m+
-	CDE0eq9l0RislLOoFPqQ==;
+	List-Owner; bh=SK2g0vsn7EZCwGiVww6Is58We4bOiWjGCsgb7nMOcGg=; b=I40Mo8saD/7ZTu
+	7KEoNpv84+yJJnalD8LBz/9YTWFRwL+kwZpWMC0jUc6ORBkP5rVnOF6SDApfnkeE6gs/ZuuPCc02o
+	ApdFxHymDDt16mDD+uwMbzRxv0BSP9hGAEElAZQxL1qw3fErOv8iKM5OhyTkvejfx6sFj9u60thfj
+	EnLj1+fH6DxBL6aby0a6PJUEqJdRSw/rM/tz//3MDUUL1UNYLg/pGPFfWAGynsVuupP6HujSmY+zX
+	Xzs9KAq3IDDmODH6f+sNLhrTmrVOZfygCQX7iMQvwhQ83cT5pGPRAGU40Qn5wkTCYWuHOE2OfHAG6
+	JWRl2PMY0I6jyNf4F0hQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5YJt-0000000CWxP-302H;
-	Mon, 28 Oct 2024 22:34:42 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1t5bnV-0000000Cx8i-1z9v;
+	Tue, 29 Oct 2024 02:17:29 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t5YJq-0000000CWvv-0iAi
+	id 1t5bnS-0000000Cx8B-1AjF
 	for linux-phy@lists.infradead.org;
-	Mon, 28 Oct 2024 22:34:39 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-43168d9c6c9so49484325e9.3
-        for <linux-phy@lists.infradead.org>; Mon, 28 Oct 2024 15:34:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1730154876; x=1730759676; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=K3K5jfKAz+0lJ+9yVU83P5b7BV0bnKpsmzNSdRQX9b8=;
-        b=jsuiukEh2+XcT4gl9eY1H5Z+F4Jjf0JJbGRPaO38BUdJCYZI8IIs9cnjucZW2KbRpO
-         wn9ASQZ0TG+SPrFwIJTbsL+wjIgLIsVe8dccfck8gh4GGcCl04wsROdyfdc7wF09R/+E
-         XZECCCbovrYBu/cFqkqqylRnCjp5/3R4MW6c+BmE0psG9WuvlzDWYwJSYKgDslocnprV
-         nvCzEDLTFj6JK4Vv/A3TAsg8nkNxVu63xJjtLF+G+D123IN7Jt3TYUw0pv5UfgkbS26/
-         h9//TlOYwIokQPmQlQsGR9Luv33VS4ljrvjsI45AQV7RxJbFGU5KO4LyRje/l/Azr2+S
-         YOHw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1730154876; x=1730759676;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=K3K5jfKAz+0lJ+9yVU83P5b7BV0bnKpsmzNSdRQX9b8=;
-        b=Ub6eNRDfN5p9skzsc3GTs/cuemZQ9SAi2ebm0jAhZdFRVu+TfBd07Y/IY/i/i2OOtj
-         ZinBEvv8tVxaBvx61xH9gjLSHkz5Wx44mqaKXfxIINKg/G0fWHR6+jwhIqbtAsJzH90c
-         wWKQZumuwsVfXCuRDup3iFyIsOLd9ihiUVRt2NeqD/QQoLE4JXj+uo2LdiwLAdDNtklu
-         qZHGLLP3bQWp2XzOUF8AklsDDfBaWSXlKw4fT/Qy172pXPHtAsglPOsaCIzk5A5g69BV
-         MFsrbVu8KebRr73NAV3WGwbsE1A9OCgPSblEz90XwZDycd+RN4ef4xEN9mlfKVgmHp6R
-         Vg0w==
-X-Forwarded-Encrypted: i=1; AJvYcCWV6xtijsu2yHaEx4rAE2EXfV8x+WDWVRpD8jht8U+T/rkHno7wFIW7aqZWIV/7WBkSFx7spdxs794=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyKMqRtB1Rjl+2Go1xNZaQJ/O0nWA/xwBFAuCOBb9dbwgGELx+t
-	h7jMlH9Li9r9KBS22MhVR41ydHIS4EpLwpqVp5zGlIfVnA9nsoKJ
-X-Google-Smtp-Source: AGHT+IEde5iw0He7F0LFyazRrBmm2/W/T0eRjGPmeLjtvDNEqAOpB5BmIqMtQsyL281eqhTV69MTow==
-X-Received: by 2002:a05:600c:1390:b0:431:5d4f:73a3 with SMTP id 5b1f17b1804b1-4319acb226amr63557385e9.18.1730154875937;
-        Mon, 28 Oct 2024 15:34:35 -0700 (PDT)
-Received: from [127.0.1.1] (2a02-8389-41cf-e200-b273-88b2-f83b-5936.cable.dynamic.v6.surfer.at. [2a02:8389:41cf:e200:b273:88b2:f83b:5936])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-431935f7213sm123899495e9.32.2024.10.28.15.34.34
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 28 Oct 2024 15:34:35 -0700 (PDT)
-From: Javier Carrasco <javier.carrasco.cruz@gmail.com>
-Date: Mon, 28 Oct 2024 23:33:59 +0100
-Subject: [PATCH 2/2] phy: tegra: xusb: fix device node release in
- tegra210_xusb_padctl_probe
+	Tue, 29 Oct 2024 02:17:28 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 49SIfaK7022936;
+	Tue, 29 Oct 2024 02:17:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	DlKmic9dACLOMQPRMfL+5WmhlfgUgYve9EN1vzHwzxQ=; b=AdYbSrODo7mPPIJm
+	j7M7oC9uEVphz2GLWjswi1TD9qIkRkKCQMrs478DHo9nga8I1nO1eWQxiqQYu8uM
+	RzN+P/pANTorjmk0NSH/S8of2+UZ9sdFwiMx6ECHO3GqoYT5liB5P2vgrFP94DQl
+	XOoY+Bt7HzV3p1vamlAlsWAxHHFfItbitW8vYPWUYT2VR3z2XEl7KlIQWJxYFNr7
+	eaO0QlkPhkZfxaYBmoKGBCZ0KtW/TweHuZWiqLl6NRE4zFMezeihVIJajfNUf9lQ
+	H2OmsJvMB8XK907ApDFOCFKTEugVvbDiLfAQN52iLBUsaFK0alP7cfmFnqPL1myi
+	v7a8+Q==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42grn4xxh3-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 29 Oct 2024 02:17:18 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 49T2HId1021983
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 29 Oct 2024 02:17:18 GMT
+Received: from [10.253.11.110] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 28 Oct
+ 2024 19:17:12 -0700
+Message-ID: <3d717bdc-4b8a-4e85-9bcf-e25b75d9fecf@quicinc.com>
+Date: Tue, 29 Oct 2024 10:17:09 +0800
 MIME-Version: 1.0
-Message-Id: <20241028-phy-tegra-xusb-tegra210-put_device-v1-2-28f74368c9ba@gmail.com>
-References: <20241028-phy-tegra-xusb-tegra210-put_device-v1-0-28f74368c9ba@gmail.com>
-In-Reply-To: <20241028-phy-tegra-xusb-tegra210-put_device-v1-0-28f74368c9ba@gmail.com>
-To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Thierry Reding <thierry.reding@gmail.com>, 
- Jonathan Hunter <jonathanh@nvidia.com>
-Cc: Thierry Reding <treding@nvidia.com>, linux-phy@lists.infradead.org, 
- linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Javier Carrasco <javier.carrasco.cruz@gmail.com>, stable@vger.kernel.org
-X-Mailer: b4 0.14-dev
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1730154870; l=944;
- i=javier.carrasco.cruz@gmail.com; s=20240312; h=from:subject:message-id;
- bh=gKmGr/5ZnbM158J5N7jUh0J54APzNpxKlRD/E0i5/nw=;
- b=KpcDPrw47pH11bD3BEXoFXs1mAg0X+fkMwnitv4El8oVws91tHTegbMBR8eatX78+ife0YUKS
- wYuBrsZ6YOlCVGkVRhAhsdX9BmDmUtpEHYFJGUsxyFE6FVqn5E5TqYm
-X-Developer-Key: i=javier.carrasco.cruz@gmail.com; a=ed25519;
- pk=lzSIvIzMz0JhJrzLXI0HAdPwsNPSSmEn6RbS+PTS9aQ=
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/3] Add ethernet dts schema for qcs615/qcs8300
+To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        "David S. Miller" <davem@davemloft.net>,
+        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        Paolo Abeni <pabeni@redhat.com>, "Rob
+ Herring" <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        "Conor
+ Dooley" <conor+dt@kernel.org>,
+        Bhupesh Sharma <bhupesh.sharma@linaro.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Bartosz Golaszewski
+	<bartosz.golaszewski@linaro.org>
+CC: <netdev@vger.kernel.org>, <linux-arm-msm@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <quic_tingweiz@quicinc.com>,
+        <quic_aiquny@quicinc.com>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>
+References: <20241017-schema-v2-0-2320f68dc126@quicinc.com>
+ <132a8e29-3be7-422a-bc83-d6be00fac3e8@kernel.org>
+Content-Language: en-US
+From: Yijie Yang <quic_yijiyang@quicinc.com>
+In-Reply-To: <132a8e29-3be7-422a-bc83-d6be00fac3e8@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: cXPft-qHqazelOYVa8i5wIudbMRB9Q1I
+X-Proofpoint-ORIG-GUID: cXPft-qHqazelOYVa8i5wIudbMRB9Q1I
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 phishscore=0
+ impostorscore=0 lowpriorityscore=0 priorityscore=1501 mlxlogscore=999
+ malwarescore=0 clxscore=1015 bulkscore=0 suspectscore=0 adultscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2410290016
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241028_153438_249434_3754B53D 
-X-CRM114-Status: UNSURE (   8.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241028_191726_378780_C8BC85AC 
+X-CRM114-Status: GOOD (  16.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,40 +109,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A device_node acquired via of_parse_phandle() needs a call to
-of_node_put() when the it is no longer required to decrement its
-refcount and avoid leaking the resource.
 
-Add the missing call to of_node_put() as soon as 'np' is no longer
-required.
 
-Cc: stable@vger.kernel.org
-Fixes: 2d1021487273 ("phy: tegra: xusb: Add wake/sleepwalk for Tegra210")
-Signed-off-by: Javier Carrasco <javier.carrasco.cruz@gmail.com>
----
- drivers/phy/tegra/xusb-tegra210.c | 1 +
- 1 file changed, 1 insertion(+)
+On 2024-10-28 19:04, Krzysztof Kozlowski wrote:
+> On 17/10/2024 11:52, Yijie Yang wrote:
+>> Document the ethernet and SerDes compatible for qcs8300. This platform
+>> shares the same EMAC and SerDes as sa8775p, so the compatible fallback to
+>> it.
+>> Document the ethernet compatible for qcs615. This platform shares the
+>> same EMAC as sm8150, so the compatible fallback to it.
+>> Document the compatible for revision 2 of the qcs8300-ride board.
+>>
+>> Signed-off-by: Yijie Yang <quic_yijiyang@quicinc.com>
+>> ---
+>> This patch series depends on below patch series:
+>> https://lore.kernel.org/all/20240925-qcs8300_initial_dtsi-v2-0-494c40fa2a42@quicinc.com/
+>> https://lore.kernel.org/all/20240926-add_initial_support_for_qcs615-v3-0-e37617e91c62@quicinc.com/
+> 
+> So it cannot be merged...
+> 
+> Instead please decouple your works. I don't get why do you claim there
+> is dependency in the first place, but anyway. Fix up your patchsets to
+> fix that (if there is something to fix).
+> 
 
-diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
-index 9c7fdd29b7c4..a77127d6c4fa 100644
---- a/drivers/phy/tegra/xusb-tegra210.c
-+++ b/drivers/phy/tegra/xusb-tegra210.c
-@@ -3164,6 +3164,7 @@ tegra210_xusb_padctl_probe(struct device *dev,
- 	}
- 
- 	pdev = of_find_device_by_node(np);
-+	of_node_put(np);
- 	if (!pdev) {
- 		dev_warn(dev, "PMC device is not available\n");
- 		goto out;
+Actually, the dependency is unnecessary here. I will remove it together 
+with the merged patch in the upcoming version.
+
+> Best regards,
+> Krzysztof
+> 
 
 -- 
-2.43.0
+Best Regards,
+Yijie
 
 
 -- 
