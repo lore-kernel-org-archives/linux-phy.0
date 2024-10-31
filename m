@@ -4,152 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00025D767F6
-	for <linux-phy@archiver.kernel.org>; Thu, 31 Oct 2024 18:22:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 415EBD767FC
+	for <linux-phy@archiver.kernel.org>; Thu, 31 Oct 2024 19:52:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A2fBckX8PkIr2YRqbgzUVFJJSItY8xBH9vhaVOwoKvU=; b=icFBC7vyjhZR5d
-	1z+bC9MnFCkmKg0/IAkTpxxOFmCehijsbwln5p3uRdTpU6H2EmNLmqgrDkKpiHNjqmvbu4YhVfBgB
-	z31TtibJdR9aLc/DGYGIvzX3y3kDFiWhLsAgCW2FoWBF7L0a2rsTm678v+aT3+lodtvhuspzyih1c
-	Shr0ucWJ/L4Cs+qK59kQB4oo+nKdrKAwlC3XI48RFGiOWIM9kzvSlfUkH8a7sGAbNoZbAprBk57Rv
-	8iTFbUZLvr5fu2TP0Ba7vGStycV+vUL+AWsfeER4KPlUFgNUyT7Ntp0+Sju53lr6QriZOwUsxm+C+
-	yygtq/JNp9C92t/NiM6w==;
+	List-Owner; bh=l6pJWsgarSFhXttynjAwULcnZFPwKBpTVC6mrfsYk/0=; b=4y6Xq9VLTx3BZ4
+	hzmlUD81509xWXxcLlwTiwHvDrQSkx/a700b5QdDsg3EB7XuKWWuJFQHcBTFCYz+MQBvP4okuwlMc
+	RWzVw6ZCz4r/QvnAyCHjMPw+0ColflHWkD3rgvyW2p//dUOc8vSig+gzVIzVigyiKJZ8GrLCX0Wzg
+	b8OrpCFWyi31DqStLq/u4rWPlrG7Vut+5b/xyP5aLm6mXq8r7Y1h3GioiI9ye7SN1uIyY2CIpg7H+
+	GlxrFblnGQeQ3QpD5nJxVXN84MhEZRwUuLyUFEBzU1CHCQ38JlL/Y5CM4xuEnwWgBhSCLs5zDXidc
+	H7bRIG36u0R18siHTSaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6Zoc-00000004UTN-1P0H;
-	Thu, 31 Oct 2024 18:22:38 +0000
-Received: from mail-bn8nam11on20707.outbound.protection.outlook.com ([2a01:111:f403:2414::707] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1t6bDg-00000004gph-1pGM;
+	Thu, 31 Oct 2024 19:52:36 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6ZoO-00000004UQy-3z7K
+	id 1t6bCw-00000004gez-3UXj
 	for linux-phy@lists.infradead.org;
-	Thu, 31 Oct 2024 18:22:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=i4PHAtKlLX+hN7Ix4LY+HkpOX1zVodn/2dlUyNw5nIXNLQkhr8HD7+j2buozBR9esxqvcp5yNlBzR44DYTFltubzbKdQ3lIxBTcfJyr/0oxXMjKxU/T6TCid0U8NbZTw+OGWDMEbhyWi5XO2DA0ftNZqyrsD8fiw2kimdldnkLvecGX/oT6jnm3mgA6WOladlLnFRX9rS1q9AmVHGOBIXxRkSONwyUXlM5VcrzsoKvCOozagI8rtpVNjMiTPOWWQF564vKtu0bR16K0/7R4aHpGwlKHfp61y8Qv3HM9s5Z0C3l8HjCvp8SeXucSkEmcNvRRPIHsrofHaLlnKq7c8Gg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=swMeq/QptfxJhl3lOFIjTnzH62hWLRVNZN7atVeBpFQ=;
- b=PjkHJYa/ZlOlN+WQNoqniWuOl/IE58hVyPucT5HITnEWTGb3Se/LFELQfqgE3AIMFHc4cHs1rrC8QQnzxxOuloQnHTdZY4YCNaykMj0ZO5iHX53Xu7TuPTCWziXDRc33gaCFl2oJu5dy80awlFNYQa9954WUiaHVuiPhEtWVtMC29greq7IF1x8DhUraqGpYI698MbyVa8pnjesGQ3c6r/a/JlyJZjyJbgNqiYi14aSh3sJa47lyg2zhdipXfyVLCChriiBFTowCuU+yI0HMInjg7d87bFlqY2eA4pl1K2vgJSRHnqtDiQzFBhURgrjHkcfJgjiB/lqYq6jr5FDSwQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=in-advantage.com; dmarc=pass action=none
- header.from=in-advantage.com; dkim=pass header.d=in-advantage.com; arc=none
+	Thu, 31 Oct 2024 19:51:52 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-539f84907caso1510723e87.3
+        for <linux-phy@lists.infradead.org>; Thu, 31 Oct 2024 12:51:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=inadvantage.onmicrosoft.com; s=selector2-inadvantage-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=swMeq/QptfxJhl3lOFIjTnzH62hWLRVNZN7atVeBpFQ=;
- b=SmXQr7OCpeztyNEIbhp3aMDE9OyNuvdNYIJwXTKHY0Vupb+aq4ML6jROyt3UN5sjsOwVEKp380zsMzXZBaXCP8d8vam3J/o2GJpYqkT82ExzdkB8I9bjoMxGez3way/TIK2fFYvnS6ggkXsiQKQx63rXiELmTHwOewxfiIIVmxE=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=in-advantage.com;
-Received: from DS0PR10MB6974.namprd10.prod.outlook.com (2603:10b6:8:148::12)
- by LV8PR10MB7776.namprd10.prod.outlook.com (2603:10b6:408:1e7::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8114.20; Thu, 31 Oct
- 2024 18:22:20 +0000
-Received: from DS0PR10MB6974.namprd10.prod.outlook.com
- ([fe80::7603:d234:e4ab:3fea]) by DS0PR10MB6974.namprd10.prod.outlook.com
- ([fe80::7603:d234:e4ab:3fea%6]) with mapi id 15.20.8093.024; Thu, 31 Oct 2024
- 18:22:20 +0000
-Date: Thu, 31 Oct 2024 13:22:15 -0500
-From: Colin Foster <colin.foster@in-advantage.com>
-To: Markus Elfring <Markus.Elfring@web.de>
-Cc: Jinjie Ruan <ruanjinjie@huawei.com>, linux-phy@lists.infradead.org,
-	"David S. Miller" <davem@davemloft.net>,
-	Florian Fainelli <florian.fainelli@broadcom.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Thierry Reding <treding@nvidia.com>, Vinod Koul <vkoul@kernel.org>,
-	LKML <linux-kernel@vger.kernel.org>
-Subject: Re: phy: ocelot-serdes: Fix IS_ERR vs NULL bug in serdes_probe()
-Message-ID: <ZyPK12UOTR7LrAyO@colin-ia-desktop>
-References: <ZyOUr7iDa9nFBxgq@colin-ia-desktop>
- <28bef742-84ca-4d52-8d19-258f1a3d695b@web.de>
- <ZyPCgOByeVNZC5rt@colin-ia-desktop>
- <9d381d9a-3d4e-455e-a1e0-ac737f8d7852@web.de>
-Content-Disposition: inline
-In-Reply-To: <9d381d9a-3d4e-455e-a1e0-ac737f8d7852@web.de>
-X-ClientProxiedBy: BL1PR13CA0147.namprd13.prod.outlook.com
- (2603:10b6:208:2bb::32) To DS0PR10MB6974.namprd10.prod.outlook.com
- (2603:10b6:8:148::12)
+        d=linaro.org; s=google; t=1730404309; x=1731009109; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=mCNx5SWiMhDfIKH3tg1AN/AN9mri+8q+ByDcJD6vDiY=;
+        b=fxKwr3QFBtVw/Z7vz4CvrDNeQDBwckVS45nnUjIBzqCiobM4EttChcls52BSHg0NSB
+         3lJefehEC4wipw/pULqECZ2qjgWDt1Yrig3ftRHr2N7FPORIlZRMdhvvU5uRTHj2f01S
+         YUNI5z4aW+Lf6E0APIGN70vg0Q4Kj6qATdUF8f0+gYL+w/b6W6s/jBa7cqVNVXbbcSzF
+         Sx4kLw1atuzVXHiES/FqGSV8gG3AlJOUzBeCV6if9eAVt0S+qlHMODxatgNiFaXGZZo8
+         BK1jlL7p5pex22prTKeqJtT0vanloe1qufurDkLztmwza7tygRpgpKVVl/qN14HsNRB0
+         5esg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1730404309; x=1731009109;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=mCNx5SWiMhDfIKH3tg1AN/AN9mri+8q+ByDcJD6vDiY=;
+        b=ZgmFjaVYrHDJf/L2KvBhBbLsohjPZ+TUv8JLApLPE/BTCpFjnbdzVTp0KLGUq7Kvpj
+         yW1YxANpt98y3uznEbA7/gjY4UwQsrtzSkmc/zVyka5l/i/+zrdxGrj/RlmwQe7cQPMg
+         yWhJ7EQhyf/KQ4VhvZzcJaaGY5D1y8d8b2VGoFuIguL32BJdaIMREJHvLmcDpOwYGpBo
+         Gp3tInAcuWbeNBxXu5pA7QNsp1Ea27Kj4JkSuWrR3jg/6Or5aA89L70rOCnYisbeWBl8
+         bvzLstG9V80jyek95Y30Nyh7cvLOqzuvTRHHWkliqx0YFKXa/DHjE1hfPljEjjUN82uf
+         dRpg==
+X-Forwarded-Encrypted: i=1; AJvYcCWcZFt89a05jsbKYyqeJKpYM6YxHm+5FyFo8wVdqERXJ+t1aonFJF6pPHb55TSyGB2VHMfoBal68xg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzFpgSn9Dboe+voei6QV7z0og+gvQrvgsm/kTgYrxEjIevCpGHn
+	igsIswtxUqblyAinzoimPkVrTBwdCOmBAD3o5X12hc0rA6SL2PPPX33xvqfUXZA=
+X-Google-Smtp-Source: AGHT+IEEgY7F5uzF4hI0U2w97PBObBX1oM6l43lOxL41hlmg2ee+jW5k6ynm0t2JiTbir/TN4GM3Jg==
+X-Received: by 2002:a05:6512:3e26:b0:53b:2114:92a7 with SMTP id 2adb3069b0e04-53b34c8e61fmr12732597e87.52.1730404308684;
+        Thu, 31 Oct 2024 12:51:48 -0700 (PDT)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53c7bcce69esm306167e87.157.2024.10.31.12.51.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 31 Oct 2024 12:51:47 -0700 (PDT)
+Date: Thu, 31 Oct 2024 21:51:45 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org, 
+	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, 
+	daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, 
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, mripard@kernel.org, 
+	kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
+	alexander.stein@ew.tq-group.com, sam@ravnborg.org
+Subject: Re: [PATCH v18 1/8] drm: bridge: Cadence: Create MHDP helper driver
+Message-ID: <txezouzqnw6hzn7c6bmp3mgp6b3vjnsuf2txcbeotklekipl7w@m45grnhct2sj>
+References: <cover.1730172244.git.Sandor.yu@nxp.com>
+ <9fe153c4f0b8616782fba1f7c8c2223c4f0c1d78.1730172244.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DS0PR10MB6974:EE_|LV8PR10MB7776:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5f290f90-01e7-4632-bfa7-08dcf9d8f4ec
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|7416014|366016;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?AqEe01V2t29umczQgRyQjWqNu9dSgCZh6JQ4o9k5K19XmQHdWDXyy61Z9qJt?=
- =?us-ascii?Q?00xAzQv9PMAdUw4CwrRy+4wlMoIwyqIl5YKanpMk0/EvXnfTffId5XFGYwFB?=
- =?us-ascii?Q?706BStN4qPoOlUn2mn8hIlAs2kQmCcxv3rt9P9h4qFzNabHzewFISGA2N7on?=
- =?us-ascii?Q?tKFoVrUPV86ogB/+/vLTRJ2XFJ+UbwmHEgy8KRVOGZ/Beihey7+TVAjvqVZB?=
- =?us-ascii?Q?xTlpa1scj0o8/7U40sVciCiwdUPHB3Qw9mpj5I7lWelU7uI5/01gduKdPcWi?=
- =?us-ascii?Q?4D0rsKipkLVGZK/CG/QNcIdA8+yAVh8ZJqNOodKPvoCb4M1pCuyyHpu3KPiq?=
- =?us-ascii?Q?e62QGqHrO0ZjnxjL1D9NEC37wBiZJyKFSrOHpVtNvnKHsfcypE0J4+tMQELr?=
- =?us-ascii?Q?kzsHsRQPylEMkLO8LZyY3U2OnCi4hb0YA9vRRjOHOhfPScpZPk9/SPJhSGz/?=
- =?us-ascii?Q?taUMvrAvz8fMTtx/D6XV4SwGWr7/LWE1rHJ5syXBXnQIYeDNWWNHA70L0qfB?=
- =?us-ascii?Q?e9ZwR6WJio7dOQgBOgJj9oj9G/dxVHD/amsPN5GMaXomAtCP6MkfswU4CZua?=
- =?us-ascii?Q?KjFrOec/jcwur2FMdZxCtYBTWn7w5wrgzA1ngERBbbMfTkQ1SCkm53ysrb+U?=
- =?us-ascii?Q?HPQQ8aQuih68x5xdNQU280GkaNGRp3/nsg2n7ZwmJpKcrrPY9b6xPrVSSl5E?=
- =?us-ascii?Q?nwsKEtwGHXGIINK1SmRj7ODo0wNFrL92qrDpMPk3ZrkVv/066yx/xnOJTUUH?=
- =?us-ascii?Q?2z8LMs3aSsfEyXz3x49JLa1LGkNEWZjsX8OswOA5DMew0lPpE+HptjjFHBO0?=
- =?us-ascii?Q?Q48Bexo75dQwBN95z9WK4ArEBDod6JBOAPm+cvaYxaZPJVKdOBiSGJNZp/TK?=
- =?us-ascii?Q?/HQRnDF1OsSArFHM6IrtekCIEAwWOBpRnkXdI2SGo0AP+Cws2Z7Q52w9T2tX?=
- =?us-ascii?Q?HuwvzzbgaEUbkTiGu2rsXJLKzMgQa6jKAVBbWhCA9+sH25DRmC4ZXk5gj0Qh?=
- =?us-ascii?Q?HkA/RzBDKZuPhEL8S0178+Hk/Q0GFTcm/d+AF4FKMghrms5/35w/GhsasBk6?=
- =?us-ascii?Q?btU8OerFcFdGYNP5uHzWDplgbVEO4r/300zstwQaNq4qXp4qxhCOB4M0q/Bm?=
- =?us-ascii?Q?En2jHQ5tE2KRTkqiS/yUlErENiWO0ronqzBUFFzDn2If0ejF0RIO2Erlpa28?=
- =?us-ascii?Q?g9v+JmOllv1caoeFw61P0qz9vx/9kiVkB4P3REQvXAdNFWVJQdhYHR83KgjZ?=
- =?us-ascii?Q?1+sJyAHt2zk9Xy5IKjPoE6RTwtJ5TXoDcSAvy3OiT+7v1Y/rnr9WATHKAQYW?=
- =?us-ascii?Q?Vz1sdJjVoV4cuhvoJ/BRlnsY?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS0PR10MB6974.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(7416014)(366016);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?xJ0ZqmD2n5aQXiLFH3A6cqauRKJLpgmaGdEwWDrhOSKIHFSbnKYBfMUnLI7m?=
- =?us-ascii?Q?LU8XzNfw9tlfXSyirpNRlNw2oaLoVPiy4kCNDFkhB402RusU3AU/2J/cNnsY?=
- =?us-ascii?Q?SQXnZ1S/+zcGD5TjP5nLeh5DMz7bL4LU1PB1gP60th0jyBYZqycKey3xGxeu?=
- =?us-ascii?Q?49mCGkVrUT6uT0FaiBaZy8XhFDlKO2lioVj3YFNcb/uR2sVgTfTWTQwQA9Tz?=
- =?us-ascii?Q?SARz5/DPBLxaCfaRCArGgmRVIhhWD254AsRYcsMvvm2RPMS6aWUx2VcTB9Os?=
- =?us-ascii?Q?WO0T3HUzSVzLGyQe0uQ6K7TWiMS6/5rOGM4bFJv4XjEx5EEvmT12RvPWofPp?=
- =?us-ascii?Q?6lbcFoiGntd4zfy94XnIjVHZY44gmGbR/FY3VfF/+j/bkwWdobhlfkB3r+Wh?=
- =?us-ascii?Q?fwJ9YucSBjD+DoCrmJTPENqcBFLxxf4ytU4uGdF+7hc16ttYIrM/xYF1Eqsg?=
- =?us-ascii?Q?2u3uyn4bYL3dzZERwkN9GzV8gviHct4jSZlRRI74ws23A1ZT2rnIq2GmmTTq?=
- =?us-ascii?Q?B2Egobois5qnwyOGAjvynD8o5gGNQOm+1hxDrur7vqW8xn/g+pBZDjRCj5Q/?=
- =?us-ascii?Q?Ha2lgk6LRMI8XK30kWgvueo1reJHyLn3RvWKSTUK1ePVHwrGSScY9uTreW1/?=
- =?us-ascii?Q?WdR61FJNPZE3lbAhoZVy4YM3W2pqqr214nmGzmBTQXdAABLh+i9HjmgZIIff?=
- =?us-ascii?Q?dwnZ2wA5sIGKu+geOGEuUxh00aeTHF8vRaPRz1gYTwt0WWSVzSwVSQBqDiFy?=
- =?us-ascii?Q?Gnnz53tjQ7uQi5b46l/W1uO9wjMLhDeDtmL8t3XbeD4yiZRjNuPNh6eH5lG1?=
- =?us-ascii?Q?JgAQHk4efjiqIQp1rJJ51HZp3WcYdMIl90usFh1TMVfWMHhI6megGaodBC2F?=
- =?us-ascii?Q?cKOEoA+k3K/yR+Z25f0VROVZCKEmQB81TtCELOb0qeqN4bQc21AhjdacMMO+?=
- =?us-ascii?Q?wAX1Ct9oa/OxJZqcXj3vIUimHSJ7C0z0BbWzyi5uoKPYAYZblRBgm4s+46Hr?=
- =?us-ascii?Q?PpMiDpnQDtrUQQCp4kwia5RGrIexxcrAshxz+m1omFiD9ywhDgbO4HFG/+0/?=
- =?us-ascii?Q?nQX8vJ7jqu+y3Nn7V6OuAR9a6pOexwAWARjY7Hqxl0m7HFTL7saxFhNFrveE?=
- =?us-ascii?Q?b9QN0ecmVtWT83v5HXSneuxyUcHcUxTeEH6eJNfPx70kkFti4gjjMyxdm1mZ?=
- =?us-ascii?Q?LIcEMbpg4BtEyqrM6c0FB7hf+OY0+fMF7vlviENr/oi70FDU2Z7fenpTDUdS?=
- =?us-ascii?Q?cLmyK48qzlfcES06EOH+Jo0MZfI5bi7FIgpMN06XxDDkzPjekIbEjaSC/Be0?=
- =?us-ascii?Q?VHuTjKxLB/nI8kyqfjtOwmbFZiT1a7DoCP7gsajFYAhgWfcfOkvvHNIf0beA?=
- =?us-ascii?Q?vjZg3U4v/Vu6JeywlSFGsrXqQogpm9hgGF2nXn64Cxq9z7Z7Tdc+3rzwy7KP?=
- =?us-ascii?Q?waVGKmukV6GTRLQr2mK5wUnTG6bCP9s179oR1AQdIhANX3QtjqCT/s2r417Y?=
- =?us-ascii?Q?OxV2VMgyxZdaT9HcDHB8uPFBw0DuKDEYF9pmfALO2hubkvc8it4VJvm3GaNU?=
- =?us-ascii?Q?AzXe+nute9AyojUnykAqORVkKgOVQHsEcP02ML32mZllDXjsgIhFKczpm4L0?=
- =?us-ascii?Q?A1Tf1z/yH8nO82ckx9aJPOE=3D?=
-X-OriginatorOrg: in-advantage.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5f290f90-01e7-4632-bfa7-08dcf9d8f4ec
-X-MS-Exchange-CrossTenant-AuthSource: DS0PR10MB6974.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Oct 2024 18:22:19.8413
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 48e842ca-fbd8-4633-a79d-0c955a7d3aae
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: PJ4VhHjU4YXzNOrJK+1DUXeCnVYKHHSxnV7uDk60CY10QAgJmYQcezDZNizdKDBN0TWl5aE/CG54qqYhK6SxTB/ql3zMmi1rOJeVtKxE5m0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV8PR10MB7776
+Content-Disposition: inline
+In-Reply-To: <9fe153c4f0b8616782fba1f7c8c2223c4f0c1d78.1730172244.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241031_112225_016323_A42E6F30 
-X-CRM114-Status: UNSURE (   7.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241031_125150_953737_C9CB46D2 
+X-CRM114-Status: GOOD (  39.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,16 +99,558 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 31, 2024 at 07:09:17PM +0100, Markus Elfring wrote:
-> > You're absolutely right. Apologies.
-> >
-> > Acked-by: Colin Foster <colin.foster@in-advantage.com>
-> > Revieved-by: Colin Foster <colin.foster@in-advantage.com>
-> Please choose one of these tags (without a typo).
+On Tue, Oct 29, 2024 at 02:02:09PM +0800, Sandor Yu wrote:
+> Mailbox access functions in MHDP8546 will be share to other MHDP driver
+> and Cadence HDP-TX HDMI/DP PHY drivers.
+> 
+> Create a new MHDP helper driver and move all mailbox access functions into.
+> According the mailbox access sequence and type of security.
+> Six mailbox access API functions are introduced.
+> Three APIs for non-secure mailbox access:
+>  - cdns_mhdp_mailbox_send()
+>  - cdns_mhdp_mailbox_send_recv()
+>  - cdns_mhdp_mailbox_send_recv_multi()
+> The other three APIs for secure mailbox access:
+>  - cdns_mhdp_secure_mailbox_send()
+>  - cdns_mhdp_secure_mailbox_send_recv()
+>  - cdns_mhdp_secure_mailbox_send_recv_multi()
+> 
+> All MHDP commands that need to be passed through the mailbox
+> have been rewritten using those new API functions.
+> 
+> The register read/write and DP DPCD read/write command functions
+> are also included in this new helper driver.
+> 
+> Function cdns_mhdp_reg_write() is renamed to cdns_mhdp_dp_reg_write(),
+> because it use the DPTX command ID DPTX_WRITE_REGISTER.
+> New cdns_mhdp_reg_write() is added with the general command ID
+> GENERAL_REGISTER_WRITE.
+> 
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+> v17->v18:
+> - Create three ordinary mailbox access APIs
+>     cdns_mhdp_mailbox_send
+>     cdns_mhdp_mailbox_send_recv
+>     cdns_mhdp_mailbox_send_recv_multi
+> - Create three secure mailbox access APIs
+>     cdns_mhdp_secure_mailbox_send
+>     cdns_mhdp_secure_mailbox_send_recv
+>     cdns_mhdp_secure_mailbox_send_recv_multi
+> - MHDP8546 DP and HDCP commands that need access mailbox are rewrited
+>   with above 6 API functions.
+> 
+> v16->v17:
+> - Replaces the local mutex mbox_mutex with a global mutex mhdp_mailbox_mutex
+> 
+> v12->v16:
+>  *No change.
+> 
+>  drivers/gpu/drm/bridge/cadence/Kconfig        |   4 +
+>  drivers/gpu/drm/bridge/cadence/Makefile       |   1 +
+>  .../gpu/drm/bridge/cadence/cdns-mhdp-helper.c | 414 +++++++++++++++
+>  .../drm/bridge/cadence/cdns-mhdp8546-core.c   | 487 +++---------------
+>  .../drm/bridge/cadence/cdns-mhdp8546-core.h   |  47 +-
+>  .../drm/bridge/cadence/cdns-mhdp8546-hdcp.c   | 236 +--------
+>  .../drm/bridge/cadence/cdns-mhdp8546-hdcp.h   |  18 +-
+>  include/drm/bridge/cdns-mhdp-helper.h         | 130 +++++
+>  8 files changed, 658 insertions(+), 679 deletions(-)
+>  create mode 100644 drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c
+>  create mode 100644 include/drm/bridge/cdns-mhdp-helper.h
+> 
+> diff --git a/drivers/gpu/drm/bridge/cadence/Kconfig b/drivers/gpu/drm/bridge/cadence/Kconfig
+> index cced81633ddcd..e0973339e9e33 100644
+> --- a/drivers/gpu/drm/bridge/cadence/Kconfig
+> +++ b/drivers/gpu/drm/bridge/cadence/Kconfig
+> @@ -21,6 +21,9 @@ config DRM_CDNS_DSI_J721E
+>  	  the routing of the DSS DPI signal to the Cadence DSI.
+>  endif
+>  
+> +config CDNS_MHDP_HELPER
+> +	tristate
+> +
 
-Sigh... Today is not my day. I don't know if there are any actions for
-me at this point. If there are please let me know.
+I'm not sure if the placement for the helper is suitable. Especially if
+you want to reuse the helper by some other subsystem. As far as I don't
+like it, maybe drivers/soc is a better option.
 
+>  config DRM_CDNS_MHDP8546
+>  	tristate "Cadence DPI/DP bridge"
+>  	select DRM_DISPLAY_DP_HELPER
+> @@ -28,6 +31,7 @@ config DRM_CDNS_MHDP8546
+>  	select DRM_DISPLAY_HELPER
+>  	select DRM_KMS_HELPER
+>  	select DRM_PANEL_BRIDGE
+> +	select CDNS_MHDP_HELPER
+>  	depends on OF
+>  	help
+>  	  Support Cadence DPI to DP bridge. This is an internal
+> diff --git a/drivers/gpu/drm/bridge/cadence/Makefile b/drivers/gpu/drm/bridge/cadence/Makefile
+> index c95fd5b81d137..087dc074820d7 100644
+> --- a/drivers/gpu/drm/bridge/cadence/Makefile
+> +++ b/drivers/gpu/drm/bridge/cadence/Makefile
+> @@ -2,6 +2,7 @@
+>  obj-$(CONFIG_DRM_CDNS_DSI) += cdns-dsi.o
+>  cdns-dsi-y := cdns-dsi-core.o
+>  cdns-dsi-$(CONFIG_DRM_CDNS_DSI_J721E) += cdns-dsi-j721e.o
+> +obj-$(CONFIG_CDNS_MHDP_HELPER) += cdns-mhdp-helper.o
+>  obj-$(CONFIG_DRM_CDNS_MHDP8546) += cdns-mhdp8546.o
+>  cdns-mhdp8546-y := cdns-mhdp8546-core.o cdns-mhdp8546-hdcp.o
+>  cdns-mhdp8546-$(CONFIG_DRM_CDNS_MHDP8546_J721E) += cdns-mhdp8546-j721e.o
+> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c b/drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c
+> new file mode 100644
+> index 0000000000000..f39228a78c7cb
+> --- /dev/null
+> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp-helper.c
+> @@ -0,0 +1,414 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (C) 2023, 2024 NXP Semiconductor, Inc.
+> + *
+> + */
+> +#include <drm/bridge/cdns-mhdp-helper.h>
+> +#include <linux/dev_printk.h>
+> +#include <linux/module.h>
+> +
+> +/* Protects mailbox communications with the firmware */
+> +static DEFINE_MUTEX(mhdp_mailbox_mutex);
+> +
+> +/* Mailbox helper functions */
+> +static int mhdp_mailbox_read(void __iomem *regs)
+> +{
+> +	int ret, empty;
+> +
+> +	WARN_ON(!mutex_is_locked(&mhdp_mailbox_mutex));
+> +
+> +	ret = readx_poll_timeout(readl, regs + CDNS_MAILBOX_EMPTY,
+> +				 empty, !empty, MAILBOX_RETRY_US,
+> +				 MAILBOX_TIMEOUT_US);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return readl(regs + CDNS_MAILBOX_RX_DATA) & 0xff;
+> +}
+> +
+> +static int mhdp_mailbox_write(void __iomem *regs, u8 val)
+> +{
+> +	int ret, full;
+> +
+> +	WARN_ON(!mutex_is_locked(&mhdp_mailbox_mutex));
+> +
+> +	ret = readx_poll_timeout(readl, regs + CDNS_MAILBOX_FULL,
+> +				 full, !full, MAILBOX_RETRY_US,
+> +				 MAILBOX_TIMEOUT_US);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	writel(val, regs + CDNS_MAILBOX_TX_DATA);
+> +
+> +	return 0;
+> +}
+> +
+> +static int mhdp_mailbox_recv_header(void __iomem *regs,
+> +				    u8 module_id, u8 opcode,
+> +				    u16 req_size)
+> +{
+> +	u32 mbox_size, i;
+> +	u8 header[4];
+> +	int ret;
+> +
+> +	/* read the header of the message */
+> +	for (i = 0; i < sizeof(header); i++) {
+> +		ret = mhdp_mailbox_read(regs);
+> +		if (ret < 0)
+> +			return ret;
+> +
+> +		header[i] = ret;
+> +	}
+> +
+> +	mbox_size = get_unaligned_be16(header + 2);
+> +
+> +	if (opcode != header[0] || module_id != header[1] ||
+> +	   (opcode != HDCP_TRAN_IS_REC_ID_VALID && req_size != mbox_size)) {
+
+Could you please explain the second clause?
+
+> +		/*
+> +		 * If the message in mailbox is not what we want, we need to
+> +		 * clear the mailbox by reading its contents.
+> +		 */
+> +		for (i = 0; i < mbox_size; i++)
+> +			if (mhdp_mailbox_read(regs) < 0)
+> +				break;
+> +
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int mhdp_mailbox_recv_data(void __iomem *regs,
+> +				  u8 *buff, u16 buff_size)
+> +{
+> +	u32 i;
+> +	int ret;
+> +
+> +	for (i = 0; i < buff_size; i++) {
+> +		ret = mhdp_mailbox_read(regs);
+> +		if (ret < 0)
+> +			return ret;
+> +
+> +		buff[i] = ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int mhdp_mailbox_send(void __iomem *regs, u8 module_id,
+> +			     u8 opcode, u16 size, u8 *message)
+> +{
+> +	u8 header[4];
+> +	int ret, i;
+> +
+> +	header[0] = opcode;
+> +	header[1] = module_id;
+> +	put_unaligned_be16(size, header + 2);
+> +
+> +	for (i = 0; i < sizeof(header); i++) {
+> +		ret = mhdp_mailbox_write(regs, header[i]);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+> +	for (i = 0; i < size; i++) {
+> +		ret = mhdp_mailbox_write(regs, message[i]);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+
+Please add kerneldocs for all new API. It's obvious for the simple ones,
+but not for the more complex functions.
+
+> +int cdns_mhdp_mailbox_send(struct cdns_mhdp_base *base, u8 module_id,
+> +			   u8 opcode, u16 size, u8 *message)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&mhdp_mailbox_mutex);
+
+guard(mutex)(&mhdp_mailbox_mutex);
+
+return mhdp_mailbox_send(...);
+
+Similar changes can be applied further on.
+
+> +
+> +	ret = mhdp_mailbox_send(base->regs, module_id, opcode, size, message);
+> +
+> +	mutex_unlock(&mhdp_mailbox_mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_mailbox_send);
+> +
+> +int cdns_mhdp_mailbox_send_recv(struct cdns_mhdp_base *base,
+> +				u8 module_id, u8 opcode,
+> +				u16 msg_size, u8 *msg,
+> +				u16 resp_size, u8 *resp)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&mhdp_mailbox_mutex);
+> +
+> +	ret = mhdp_mailbox_send(base->regs, module_id,
+> +				opcode, msg_size, msg);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_header(base->regs, module_id,
+> +				       opcode, resp_size);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_data(base->regs, resp, resp_size);
+> +out:
+> +	mutex_unlock(&mhdp_mailbox_mutex);
+> +
+> +	if (ret)
+> +		dev_err(base->dev, "ModuleID=%d, CMD=%d failed: %d\n",
+> +			module_id, opcode, ret);
+
+Using guard() would allow you to use precise messages, e.g. failed to
+send, failed to received header, failed to receive data.
+
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_mailbox_send_recv);
+> +
+
+Like what is _multi? Why do you need to fetch into two separate buffers?
+Can you fetch into one and then parse it accordingly? Please don't make
+the API more complicated than necessary.
+
+> +int cdns_mhdp_mailbox_send_recv_multi(struct cdns_mhdp_base *base,
+> +				      u8 module_id, u8 opcode,
+> +				      u16 msg_size, u8 *msg,
+> +				      u8 opcode_resp,
+> +				      u16 resp1_size, u8 *resp1,
+> +				      u16 resp2_size, u8 *resp2)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&mhdp_mailbox_mutex);
+> +
+> +	ret = mhdp_mailbox_send(base->regs, module_id,
+> +				opcode, msg_size, msg);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_header(base->regs, module_id, opcode_resp,
+> +				       resp1_size + resp2_size);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_data(base->regs, resp1, resp1_size);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_data(base->regs, resp2, resp2_size);
+> +out:
+> +	mutex_unlock(&mhdp_mailbox_mutex);
+> +
+> +	if (ret)
+> +		dev_err(base->dev, "ModuleID=%d, MSG_CMD=%d Resp_CMD=%d failed: %d\n",
+> +			module_id, opcode, opcode_resp, ret);
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_mailbox_send_recv_multi);
+> +
+> +/*
+> + * Secure mailbox access functions:
+> + * These functions handle secure mailbox communication, which differs
+> + * from non-secure mailbox access. They use the secure address.
+> + */
+> +int cdns_mhdp_secure_mailbox_send(struct cdns_mhdp_base *base, u8 module_id,
+> +				  u8 opcode, u16 size, u8 *message)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&mhdp_mailbox_mutex);
+> +
+> +	ret = mhdp_mailbox_send(base->sapb_regs, module_id, opcode, size, message);
+> +
+> +	mutex_unlock(&mhdp_mailbox_mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_secure_mailbox_send);
+> +
+> +int cdns_mhdp_secure_mailbox_send_recv(struct cdns_mhdp_base *base,
+> +				       u8 module_id, u8 opcode,
+> +				       u16 msg_size, u8 *msg,
+> +				       u16 resp_size, u8 *resp)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&mhdp_mailbox_mutex);
+> +
+> +	ret = mhdp_mailbox_send(base->sapb_regs, module_id,
+> +				opcode, msg_size, msg);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_header(base->sapb_regs, module_id,
+> +				       opcode, resp_size);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_data(base->sapb_regs, resp, resp_size);
+> +out:
+> +	mutex_unlock(&mhdp_mailbox_mutex);
+> +
+> +	if (ret)
+> +		dev_err(base->dev, "ModuleID=%d, CMD=%d failed: %d\n",
+> +			module_id, opcode, ret);
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_secure_mailbox_send_recv);
+> +
+> +int cdns_mhdp_secure_mailbox_send_recv_multi(struct cdns_mhdp_base *base,
+> +					     u8 module_id, u8 opcode,
+> +					     u16 msg_size, u8 *msg,
+> +					     u8 opcode_resp,
+> +					     u16 resp1_size, u8 *resp1,
+> +					     u16 resp2_size, u8 *resp2)
+> +{
+> +	int ret;
+> +
+> +	mutex_lock(&mhdp_mailbox_mutex);
+> +
+> +	ret = mhdp_mailbox_send(base->sapb_regs, module_id,
+> +				opcode, msg_size, msg);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_header(base->sapb_regs, module_id,
+> +				       opcode_resp,
+> +				       resp1_size + resp2_size);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = mhdp_mailbox_recv_data(base->sapb_regs, resp1, resp1_size);
+> +	if (ret)
+> +		goto out;
+> +
+> +	if (module_id == MB_MODULE_ID_HDCP_TX &&
+> +	    opcode == HDCP_TRAN_IS_REC_ID_VALID)
+
+comment, please.
+
+> +		ret = mhdp_mailbox_recv_data(base->sapb_regs, resp2, 5 * resp1[0]);
+> +	else
+> +		ret = mhdp_mailbox_recv_data(base->sapb_regs, resp2, resp2_size);
+> +out:
+> +	mutex_unlock(&mhdp_mailbox_mutex);
+> +
+> +	if (ret)
+> +		dev_err(base->dev, "ModuleID=%d, CMD=%d failed: %d\n",
+> +			module_id, opcode, ret);
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_secure_mailbox_send_recv_multi);
+> +
+> +/* General read/write helper functions */
+> +int cdns_mhdp_reg_read(struct cdns_mhdp_base *base, u32 addr, u32 *value)
+> +{
+> +	u8 msg[4], resp[8];
+> +	int ret;
+> +
+> +	put_unaligned_be32(addr, msg);
+> +
+> +	ret = cdns_mhdp_mailbox_send_recv(base, MB_MODULE_ID_GENERAL,
+> +					  GENERAL_REGISTER_READ,
+> +					  sizeof(msg), msg, sizeof(resp), resp);
+> +	if (ret)
+> +		goto out;
+> +
+> +	/* Returned address value should be the same as requested */
+> +	if (memcmp(msg, resp, sizeof(msg))) {
+> +		ret = -EINVAL;
+> +		goto out;
+> +	}
+> +
+> +	*value = get_unaligned_be32(resp + 4);
+> +out:
+> +	if (ret) {
+> +		dev_err(base->dev, "Failed to read register\n");
+> +		*value = 0;
+> +	}
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_reg_read);
+> +
+> +int cdns_mhdp_reg_write(struct cdns_mhdp_base *base, u32 addr, u32 val)
+> +{
+> +	u8 msg[8];
+> +
+> +	put_unaligned_be32(addr, msg);
+> +	put_unaligned_be32(val, msg + 4);
+> +
+> +	return cdns_mhdp_mailbox_send(base, MB_MODULE_ID_GENERAL,
+> +				     GENERAL_REGISTER_WRITE,
+> +				     sizeof(msg), msg);
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_reg_write);
+> +
+> +/* DPTX helper functions */
+> +int cdns_mhdp_dp_reg_write(struct cdns_mhdp_base *base, u16 addr, u32 val)
+> +{
+> +	u8 msg[6];
+> +
+> +	put_unaligned_be16(addr, msg);
+> +	put_unaligned_be32(val, msg + 2);
+> +
+> +	return cdns_mhdp_mailbox_send(base, MB_MODULE_ID_DP_TX,
+> +				      DPTX_WRITE_REGISTER, sizeof(msg), msg);
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_dp_reg_write);
+
+Please don't add API without a user. If the function is required in the
+following patch, add it there.
+
+> +
+> +int cdns_mhdp_dp_reg_write_bit(struct cdns_mhdp_base *base, u16 addr,
+> +			       u8 start_bit, u8 bits_no, u32 val)
+> +{
+> +	u8 field[8];
+> +
+> +	put_unaligned_be16(addr, field);
+> +	field[2] = start_bit;
+> +	field[3] = bits_no;
+> +	put_unaligned_be32(val, field + 4);
+> +
+> +	return cdns_mhdp_mailbox_send(base, MB_MODULE_ID_DP_TX,
+> +				      DPTX_WRITE_FIELD, sizeof(field), field);
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_dp_reg_write_bit);
+> +
+> +int cdns_mhdp_dpcd_read(struct cdns_mhdp_base *base,
+> +			u32 addr, u8 *data, u16 len)
+> +{
+> +	u8 msg[5], reg[5];
+> +
+> +	put_unaligned_be16(len, msg);
+> +	put_unaligned_be24(addr, msg + 2);
+> +
+> +	return cdns_mhdp_mailbox_send_recv_multi(base,
+> +						 MB_MODULE_ID_DP_TX,
+> +						 DPTX_READ_DPCD,
+> +						 sizeof(msg), msg,
+> +						 DPTX_READ_DPCD,
+> +						 sizeof(reg), reg,
+> +						 len, data);
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_dpcd_read);
+> +
+> +int cdns_mhdp_dpcd_write(struct cdns_mhdp_base *base, u32 addr, u8 value)
+> +{
+> +	u8 msg[6], reg[5];
+> +	int ret;
+> +
+> +	put_unaligned_be16(1, msg);
+> +	put_unaligned_be24(addr, msg + 2);
+> +	msg[5] = value;
+> +
+> +	ret = cdns_mhdp_mailbox_send_recv(base, MB_MODULE_ID_DP_TX,
+> +					  DPTX_WRITE_DPCD,
+> +					  sizeof(msg), msg, sizeof(reg), reg);
+> +	if (ret) {
+> +		dev_err(base->dev, "dpcd write failed: %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	if (addr != get_unaligned_be24(reg + 2)) {
+> +		dev_err(base->dev, "Invalid response: expected address 0x%06x, got 0x%06x\n",
+> +			addr, get_unaligned_be24(reg + 2));
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(cdns_mhdp_dpcd_write);
+> +
+> +MODULE_DESCRIPTION("Cadence MHDP Helper driver");
+> +MODULE_AUTHOR("Sandor Yu <Sandor.yu@nxp.com>");
+> +MODULE_LICENSE("GPL");
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
