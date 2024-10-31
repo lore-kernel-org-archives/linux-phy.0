@@ -4,67 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 432EBD767D8
-	for <linux-phy@archiver.kernel.org>; Thu, 31 Oct 2024 14:47:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4924D767EA
+	for <linux-phy@archiver.kernel.org>; Thu, 31 Oct 2024 17:00:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:Cc:To:From
-	:Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uk8Pneaj9u23tW95Pg0xlqIoNQmd3GyAO16dzA3/HcI=; b=QmlsE00Y1TxEQOPBWMeoY9cSfc
-	NZrljfVTQakHar50XZS4Ugy+y97PlO9H+jfrboSkEL7XCfQDTey7PlYten+UK1douGunlFcBbnK5t
-	tY923r9PFla7DhW5QZPEgHdAmhF1w8B8YjKmIOqi2QQtFqgzgNUFCB5OywCK2DBICp5abOr1SPYbw
-	8/RQDC0+5ijx+nwQsP7jAFbzmb/AEJiQvIaYb1OEaORah/Zj4D/uyIOGYSC3Xw2LZteqHEXhgrYly
-	IxzK3Ong9w4QKU5qIF90Efe4Bs8NGs+Y/Z1C1NHpQgK0FrzHEeXCyaen5QvzyTW9hpaDrdLgnIQRH
-	WuZOWnSw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
+	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2xLlz8lbw4GcICPj+Eis/sTHgvJEQv8tk/ig4EwfIUk=; b=GKeiOWhjTbzC4g
+	o4Obx8Bdcu95FrRIqlCoSKvNd7sIVUfrJYDkcRs5U8ul76qQJY6mSNPBCzZk4XV9f1NIE/TzjFtJq
+	dsblqBCbaRCGl7+jAuaLb2UTPA9vdY7uare1IUz1Hvqm5yHzZFrzBWN16/ZyxHNdWlrY2tVGxQHyu
+	88WzgHU5V7koO2ZftQv3ZprFuPWWe3xIl/QmhAC/sf8N3yp74IHU+ni+C1Z2VAPXuI9DcRkC19NVA
+	Inyl1Qex+Y5NRqUO/ABpYbiC1Tcd7Q6lcNPHlkXUFoZNo5UtKCNQ76+VeZ3V6nXqpsRGLk/d8n2g/
+	Gyjh2WqH2PJ84g7me2JQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6WRz-00000003rRl-3JIY;
-	Thu, 31 Oct 2024 14:47:03 +0000
-Received: from thales.epochal.quest ([51.222.15.28])
+	id 1t6YXD-00000004HDC-2XVc;
+	Thu, 31 Oct 2024 17:00:35 +0000
+Received: from mout.web.de ([212.227.15.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6WGe-00000003pSv-2h67;
-	Thu, 31 Oct 2024 14:35:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=epochal.quest;
-	s=default; t=1730385317;
-	bh=6n3NaF0whd9qg4xGC826BnFf5iZrFxIuvNVTdKeKwyM=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=hwRJQmwrFYT6ykY/ekESOcjW3v6tFj2bE6QIxkApk2LVsQ51qNSthzZqb8dSJ+z5G
-	 H/GcYPVNWoY/Ej3t9YBiWx1xYdWb6RL8h3g+EnMpb88MPsfadobQIrk//LevFeQxl6
-	 hNOunhUXMtH5rxkINUbaIcrHxGjbEMtDQGnEZEyuYd01qaN9o9Cqx6Ti8krK3Meunw
-	 9F/H9rU1hJV/NBS1di/pFs0U/A1DD0qHYUupljp46SIEe010i+rQ4JXVEeh+TudFQ9
-	 22NmFJ45YBztNlsIUaMUnCzw52CxxEToVHsQjof6SdjVhDQteeKKOCaTpM+9Z8Wjdf
-	 Nb2hnr4GwfkRw==
-X-Virus-Scanned: by epochal.quest
+	id 1t6YW9-00000004H3V-3DQI
+	for linux-phy@lists.infradead.org;
+	Thu, 31 Oct 2024 16:59:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1730393944; x=1730998744; i=markus.elfring@web.de;
+	bh=zihZv8JaQyeTBRL3c7USYyTDomdye18v6SbgC8QVntg=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
+	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 cc:content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=hnviXS6xzHpHhUG4/l4SRYILsdkpux1c8gUwVr3gOOy6iUEOE38Lr+o1l0aGwsQk
+	 Kf6UwC7aOhVfhsgdLCSUYYQmXf9iNaHOUCFo7vkvZK9tzzAmZXEjbEWhqAyrgU/4j
+	 IKib+g6uwDRll8tr07p1t9cHJaLqz2mCHKYziwAp5tZDbD+/yQuU3beei77Pfrcem
+	 20HH/ftYDDHZBgA/Vi5TyS7BfOobGK4JTPtqL1yK/JLHy1gzfJKwL8KOsDBVtKgOk
+	 DLenkIj/mxB5UyeULs7bOFFEEYaEp3TAduas/uhLHfMarGqVwhwI0GTtaxgPw5x0e
+	 R4747KoKgE5OzVpOgg==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.21] ([94.31.83.95]) by smtp.web.de (mrweb005
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1MRk0k-1tH2tG3Yb4-00MOig; Thu, 31
+ Oct 2024 17:59:04 +0100
+Message-ID: <56f80d5d-3b92-466c-adf6-5f1374cf9622@web.de>
+Date: Thu, 31 Oct 2024 17:59:02 +0100
 MIME-Version: 1.0
-Date: Thu, 31 Oct 2024 11:35:14 -0300
-From: Cody Eksal <masterr3c0rd@epochal.quest>
-To: Andre Przywara <andre.przywara@arm.com>, Rob Herring <robh@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
- <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai
- <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland
- <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, Michael Turquette
- <mturquette@baylibre.com>, Nishanth Menon <nm@ti.com>, "Rafael J. Wysocki"
- <rafael@kernel.org>, Stephen Boyd <sboyd@kernel.org>, Viresh Kumar
- <vireshk@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, Yangtao Li
- <tiny.windzz@gmail.com>, Parthiban <parthiban@linumiz.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 03/13] dt-bindings: phy: sun50i-a64: add a100
- compatible
-In-Reply-To: <20241031113651.4ab4f8c7@donnerap.manchester.arm.com>
-References: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
- <20241031070232.1793078-4-masterr3c0rd@epochal.quest>
- <20241031113651.4ab4f8c7@donnerap.manchester.arm.com>
-Message-ID: <f33a995dc08e03af06f3f78864d77503@epochal.quest>
-X-Sender: masterr3c0rd@epochal.quest
+User-Agent: Mozilla Thunderbird
+To: Jinjie Ruan <ruanjinjie@huawei.com>, linux-phy@lists.infradead.org,
+ Colin Foster <colin.foster@in-advantage.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Florian Fainelli <florian.fainelli@broadcom.com>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Thierry Reding
+ <treding@nvidia.com>, Vinod Koul <vkoul@kernel.org>
+Cc: LKML <linux-kernel@vger.kernel.org>
+References: <20241031123847.1356808-1-ruanjinjie@huawei.com>
+Subject: Re: [PATCH] phy: ocelot-serdes: Fix IS_ERR vs NULL bug in
+ serdes_probe()
+Content-Language: en-GB
+From: Markus Elfring <Markus.Elfring@web.de>
+In-Reply-To: <20241031123847.1356808-1-ruanjinjie@huawei.com>
+X-Provags-ID: V03:K1:9h3N7nZodewEH5ksgQ5nVq7VnUGJyxQ6DWBT09YUdvHV1dYoQQk
+ HFXFpf6pp7mwboNN0B8oWSJLvOxT4E95VFMqonrJlyeNNNbWbHgj+vtesaW6l9lwh5XNGg4
+ JVzJdZiBI1Dk7ajqkupCQaZagw4kwPyZc2Nl2MC13dYpB62MLWo8Jax04Nj3vi4PmBNGXw5
+ 6wM130MIg7MCAEjhaIkew==
+UI-OutboundReport: notjunk:1;M01:P0:pQK5qY5zieM=;SZNDGVx9Zjqtqdt3zeYkTsXQx/3
+ WrzWXy1jDhiKXb9CgRGdoM7jx5h/QqVICjkO1AfpNsRh0TlCMOyV+GQV5Yc9GwGrDaetG205N
+ VptfiRf4NwzpODS2J1sGLCF/9Ibs8WF8V7B8D1TpdWGgq9zzz9fd074tW/HfHIq6kuqcPaNdz
+ mazvmexfZJsi+pE9b8mABGqDf4oAsFxL2kJ3SSNPx8tq9/abc7Re8fyWb1XcsYyjni/TZ4Ebz
+ e4qwWG/FnsEgkcsOuqgoMeMgLWJZrO00u3VPEOxGgkY+NEF/hDQK/VuYTWdfX6pMEK/NHuWqE
+ QsJ9B9KAVYFDVqPe9BIL3VwS59Z0zyBrUI8zcIsIwtUNjTKUWXq7qfyLFl2KFgfrgUiZLM2K3
+ 0UT4+GtwB9+PVQWCzXDDgXZYj31HzEG1Mkhxt9VzfWGNzL2u2ED/CpBSNPQ59oI8+niiZWWLj
+ xGTvE+BdmQTiNSb8LBCsfEopoqLDyKiFK0ch7BQ4BZenFjCJ4iEcz+R1r7fIoOzpl57qOqD4L
+ ULxhUAFR+hTe4N8SZHh5rHr0VJeVAg5isZXXF9Wb3K3F50roxjf57AE3fnw0RNtEzi5krJlSR
+ 34y7SZfDrEswl5Ta2CYZ5qyHSXwJBVxqhU37KHgYLMGx50F4bZ4wadMzL1kA/xcINtXF6h2Rj
+ TwVoNNCYI/cm+jfR2DKZFB8/Q6vdW7dgc/n0nrVdate3vhsU57hiCgoXhwMdacyD7peNcYsw1
+ yXfUzhFgW4ME4c0SGhBSkgbLy22FfiY9rEqetFttA0r52YvLcz4+5VSkKcOaB/piaMhBJYdOn
+ qAQw9YZVzsr0Ek2V3Ru5GiEQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241031_073520_799119_88C0F4D2 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20241031_095930_210511_C5CB6A3B 
+X-CRM114-Status: UNSURE (   4.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,70 +95,24 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2024/10/31 8:36 am, Andre Przywara wrote:
-> On Thu, 31 Oct 2024 04:02:16 -0300
-> Cody Eksal <masterr3c0rd@epochal.quest> wrote:
-> 
->> The USB PHY found in the A100 is similar to that found in the D1. Add 
->> a
->> compatible for the A100.
->> 
->> Signed-off-by: Cody Eksal <masterr3c0rd@epochal.quest>
-> 
-> Reviewed-by: Andre Przywara <andre.przywara@arm.com>
-> 
->> Acked-by: Rob Herring (Arm) <robh@kernel.org>
-> 
-> Careful with that: you made quite some changes compared to v1, which 
-> Rob
-> ACKed, so I wouldn't carry over his tag here.
-I had made a note of this a few days ago, but it slipped through my 
-pre-submission review. I'm terribly sorry; won't make this mistake in 
-the future.
+> dev_get_regmap() return NULL and never return ERR_PTR().
 
-- Cody
+                   call can return a null pointer.
+It will not return error pointers.
 
-> Cheers,
-> Andre
-> 
->> ---
->> Changes in V2:
->>  - Update binding to allow using the D1 as a compatible.
->> 
->>  .../bindings/phy/allwinner,sun50i-a64-usb-phy.yaml     | 10 
->> +++++++---
->>  1 file changed, 7 insertions(+), 3 deletions(-)
->> 
->> diff --git 
->> a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml 
->> b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
->> index f557feca9763..21209126ed00 100644
->> --- 
->> a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
->> +++ 
->> b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
->> @@ -15,9 +15,13 @@ properties:
->>      const: 1
->> 
->>    compatible:
->> -    enum:
->> -      - allwinner,sun20i-d1-usb-phy
->> -      - allwinner,sun50i-a64-usb-phy
->> +    oneOf:
->> +      - enum:
->> +          - allwinner,sun20i-d1-usb-phy
->> +          - allwinner,sun50i-a64-usb-phy
->> +      - items:
->> +          - const: allwinner,sun50i-a100-usb-phy
->> +          - const: allwinner,sun20i-d1-usb-phy
->> 
->>    reg:
->>      items:
+
+> check NULL to fix it.
+
+Thus apply a null pointer check instead.
+
+
+Regards,
+Markus
 
 -- 
 linux-phy mailing list
