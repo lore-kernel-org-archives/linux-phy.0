@@ -4,79 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13CB4E6894B
-	for <linux-phy@archiver.kernel.org>; Sat,  2 Nov 2024 03:55:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DA9EE677FC
+	for <linux-phy@archiver.kernel.org>; Sat,  2 Nov 2024 11:51:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bvc5FiASusxG1OEaBp/rqbFUHIBVbPEsLAqTA5WUKdE=; b=r1tTAcUZRe7OJs
-	7cQgFoC15gBoHGhI2EYRwNPfSoH01m04n926zwVFVJ1/Zl4KnDuyevEy/AI6QiqWzIAF7RCkMFnWA
-	OaSJifHd25v7gwaLyD7mTqN7iOlB1fB+f9uWGkQJWM/InXkgEbV/Cl0NwqyEnmr1v8XlF7ASvhVrn
-	w8xfJT8tkJTILy117g6xzY2VqKKMVauaxjy5amZ85qZz9rSonduRUtltKWoYH+doc23//ptWRt2ik
-	JjT96bUxRnnanoQ+nZ896JjcaQ5T1LVj8AEWfwqi/ykVpf2rxKcsS4C4Qlx8HiTFsFmzyUGRbRiH+
-	txfmkbtgMiZp076BlUDw==;
+	List-Owner; bh=59auWkOW8a8R+8vVfOvuofsSufIyLsxiXa7FNbYq4iM=; b=aq/gSnPICY+yG/
+	7PtJmZ3y7wKfko04R9oSxy0R6NlbvdXtG7PttvbhnfSI7oucooSEM4ohxeCQS/dj7W//BTPrZ+9Di
+	VAevnDt7I2VihyLpKcpTY3IU3k9bx39WceX0wxC4qY9p3yj8blvGCN9nqkkM2FmMeOXdRoqU2YUZc
+	gJ1HPVaTrmlX433fmdOL6R2r80GvTtkMSsNJqeJspJe3IvnOgG1HVpHHFHu7hixZVXth8UvkJ63bI
+	8Ms57ETQ7R31RRNHhVk4eNDfXhQ0g35fQYkdUocr2feskIhSQZtYnLxFUQSBBaVPORl4P6pG66TNU
+	oCeVSSH9LHHsf06G5JHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t75Eo-00000008z29-2hyp;
-	Sat, 02 Nov 2024 03:55:46 +0000
-Received: from pv50p00im-zteg10021401.me.com ([17.58.6.47])
+	id 1t7CfT-00000009d50-33of;
+	Sat, 02 Nov 2024 11:51:47 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t75El-00000008z1A-47aj
-	for linux-phy@lists.infradead.org;
-	Sat, 02 Nov 2024 03:55:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
-	s=1a1hai; t=1730519738;
-	bh=06XEXE3RdGyDqIVZgj7Hd7CzsKtHn4L7U6k0cu73Blg=;
-	h=From:Date:Subject:MIME-Version:Content-Type:Message-Id:To:
-	 x-icloud-hme;
-	b=COvujrbRwoQZyFJcH82UdPbs47EQ+luVL7mkAfhryXRBczX/QWQRmgDECixzcxqRo
-	 1SlWhQeNOrCeNJ3hHTep0rEWseWyK79yQpNXSn0jj//D6IpsS8rFdg0WnNNRFWl/Ti
-	 Wct4fUKlINGdKRZzpsT1i6P7ztYIEEw7LyfCqy934fKFffDVEWZlrJ4ivYDWwJ/AN4
-	 LOfTS9tpSD0THAr0q87ppBFNJF19WkiugENQPD1MSAeYZSB/XnTR60T1Ap00I6G/G9
-	 HKgPOB5d3maht5SBOo82ePwGiz/lIPG8I+pqrdwrn6MMPvM6R0WbmqVe1WClcm6kqG
-	 hbQLd5tYdvv5g==
-Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
-	by pv50p00im-zteg10021401.me.com (Postfix) with ESMTPSA id A67858E01B7;
-	Sat,  2 Nov 2024 03:55:27 +0000 (UTC)
-From: Zijun Hu <zijun_hu@icloud.com>
-Date: Sat, 02 Nov 2024 11:53:48 +0800
-Subject: [PATCH v4 6/6] phy: core: Simplify API of_phy_simple_xlate()
- implementation
-MIME-Version: 1.0
-Message-Id: <20241102-phy_core_fix-v4-6-4f06439f61b1@quicinc.com>
-References: <20241102-phy_core_fix-v4-0-4f06439f61b1@quicinc.com>
-In-Reply-To: <20241102-phy_core_fix-v4-0-4f06439f61b1@quicinc.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>, 
+	id 1t7CaU-00000009c5R-2hoT;
+	Sat, 02 Nov 2024 11:46:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id DCB155C32DC;
+	Sat,  2 Nov 2024 11:45:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 286AEC4CEC3;
+	Sat,  2 Nov 2024 11:46:37 +0000 (UTC)
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 2061F5F9F2;
+	Sat,  2 Nov 2024 19:46:34 +0800 (CST)
+From: Chen-Yu Tsai <wens@csie.org>
+To: linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pm@vger.kernel.org, linux-sunxi@lists.linux.dev, 
+ linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+ Cody Eksal <masterr3c0rd@epochal.quest>
+Cc: Conor Dooley <conor+dt@kernel.org>, 
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>, 
- Lee Jones <lee@kernel.org>
-Cc: Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>, 
- Johan Hovold <johan@kernel.org>, Zijun Hu <zijun_hu@icloud.com>, 
- stable@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, Zijun Hu <quic_zijuhu@quicinc.com>
-X-Mailer: b4 0.14.1
-X-Proofpoint-ORIG-GUID: QuSC-0nx-vVo5COz6hbbnQz0mp8EobP4
-X-Proofpoint-GUID: QuSC-0nx-vVo5COz6hbbnQz0mp8EobP4
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1051,Hydra:6.0.680,FMLib:17.12.62.30
- definitions=2024-11-02_02,2024-11-01_01,2024-09-30_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0 clxscore=1015
- mlxlogscore=999 malwarescore=0 adultscore=0 mlxscore=0 phishscore=0
- suspectscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2308100000 definitions=main-2411020032
-X-Apple-Remote-Links: v=1;h=KCk=;charset=UTF-8
+ Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Maxime Ripard <mripard@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, Nishanth Menon <nm@ti.com>, 
+ "Rafael J. Wysocki" <rafael@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Samuel Holland <samuel@sholland.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Viresh Kumar <vireshk@kernel.org>, 
+ Viresh Kumar <viresh.kumar@linaro.org>, Yangtao Li <tiny.windzz@gmail.com>, 
+ Parthiban <parthiban@linumiz.com>, Andre Przywara <andre.przywara@arm.com>
+In-Reply-To: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
+References: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
+Subject: Re: (subset) [PATCH v2 00/13] sunxi: A100/A133 second stage
+ support
+Message-Id: <173054799410.64486.11694812401132710377.b4-ty@csie.org>
+Date: Sat, 02 Nov 2024 19:46:34 +0800
+MIME-Version: 1.0
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241101_205544_073821_648420F3 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20241102_044638_774501_AE946935 
+X-CRM114-Status: GOOD (  11.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,63 +79,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Zijun Hu <quic_zijuhu@quicinc.com>
+On Thu, 31 Oct 2024 04:02:13 -0300, Cody Eksal wrote:
+> This is V2 of this series [5], with some changes that were requested and
+> others that were made after testing on more devices. Thank you for all of
+> your feedback! A changelog is available below.
+> 
+> ==================
+> Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
+> submitted a patch series for the A100 series of SoCs; [1] intended to add
+> support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
+> implemented DVFS support. Some patches from the first series landed, but
+> the rest were seemingly abandoned.
+> 
+> [...]
 
-Simplify of_phy_simple_xlate() implementation by API
-class_find_device_by_of_node().
+Applied to dt-for-6.13 in git@github.com:linux-sunxi/linux-sunxi.git, thanks!
 
-Also correct comments to mark its parameter @dev as unused instead of
-@args in passing.
+[01/13] arm64: dts: allwinner: A100: Add PMU mode
+        commit: 248b20ed03545656bd1775ed115369854f58f55c
+[02/13] arm64: dts: allwinner: a100: add watchdog node
+        commit: f84a3aa7782687ca0fa54f768fc6bb825575f91a
+[03/13] dt-bindings: phy: sun50i-a64: add a100 compatible
+        commit: 4402ef303d4b90748646568cf48f52eea035057a
+[04/13] dt-bindings: usb: Add A100 compatible string
+        commit: 1e7d0e2a53e6bf4b43f78858b1fb10aa38259375
+[05/13] dt-bindings: usb: sunxi-musb: Add A100 compatible string
+        commit: e144e89de0e491ea191847b0dc15a5aeb27951eb
+[06/13] arm64: dts: allwinner: a100: add usb related nodes
+        commit: c3cc9b02f7490d93635692cf58b0a4e517a60ab2
+[09/13] arm64: allwinner: a100: Add MMC related nodes
+        commit: fcfbb8d9ec584c256c0a6e1ae3174a21b007f399
 
-Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
----
- drivers/phy/phy-core.c | 20 +++++++-------------
- 1 file changed, 7 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 9d4cc64a0865..39476ca9e51c 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -749,8 +749,8 @@ EXPORT_SYMBOL_GPL(devm_phy_put);
- 
- /**
-  * of_phy_simple_xlate() - returns the phy instance from phy provider
-- * @dev: the PHY provider device
-- * @args: of_phandle_args (not used here)
-+ * @dev: the PHY provider device (not used here)
-+ * @args: of_phandle_args
-  *
-  * Intended to be used by phy provider for the common case where #phy-cells is
-  * 0. For other cases where #phy-cells is greater than '0', the phy provider
-@@ -760,20 +760,14 @@ EXPORT_SYMBOL_GPL(devm_phy_put);
- struct phy *of_phy_simple_xlate(struct device *dev,
- 				const struct of_phandle_args *args)
- {
--	struct phy *phy;
--	struct class_dev_iter iter;
--
--	class_dev_iter_init(&iter, &phy_class, NULL, NULL);
--	while ((dev = class_dev_iter_next(&iter))) {
--		phy = to_phy(dev);
--		if (args->np != phy->dev.of_node)
--			continue;
-+	struct device *target_dev;
- 
--		class_dev_iter_exit(&iter);
--		return phy;
-+	target_dev = class_find_device_by_of_node(&phy_class, args->np);
-+	if (target_dev) {
-+		put_device(target_dev);
-+		return to_phy(target_dev);
- 	}
- 
--	class_dev_iter_exit(&iter);
- 	return ERR_PTR(-ENODEV);
- }
- EXPORT_SYMBOL_GPL(of_phy_simple_xlate);
-
+Best regards,
 -- 
-2.34.1
+Chen-Yu Tsai <wens@csie.org>
 
 
 -- 
