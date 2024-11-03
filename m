@@ -4,65 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DA9EE677FC
-	for <linux-phy@archiver.kernel.org>; Sat,  2 Nov 2024 11:51:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE79AD1118C
+	for <linux-phy@archiver.kernel.org>; Sun,  3 Nov 2024 21:04:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=59auWkOW8a8R+8vVfOvuofsSufIyLsxiXa7FNbYq4iM=; b=aq/gSnPICY+yG/
-	7PtJmZ3y7wKfko04R9oSxy0R6NlbvdXtG7PttvbhnfSI7oucooSEM4ohxeCQS/dj7W//BTPrZ+9Di
-	VAevnDt7I2VihyLpKcpTY3IU3k9bx39WceX0wxC4qY9p3yj8blvGCN9nqkkM2FmMeOXdRoqU2YUZc
-	gJ1HPVaTrmlX433fmdOL6R2r80GvTtkMSsNJqeJspJe3IvnOgG1HVpHHFHu7hixZVXth8UvkJ63bI
-	8Ms57ETQ7R31RRNHhVk4eNDfXhQ0g35fQYkdUocr2feskIhSQZtYnLxFUQSBBaVPORl4P6pG66TNU
-	oCeVSSH9LHHsf06G5JHw==;
+	List-Owner; bh=iqsukGl2D5Tn5BYefvvch5jpjueHJ0FCiXaSsYeyPe4=; b=NAXrEDpcegqhDh
+	AX4Y9x9mWvjLAx4qTX7nRB7XA1sKYDQJs8BXXMo5p5oJ1h9v5a9TwT4ujLQCWIWEHO2y7SgUB6NPs
+	IOcwgJC2hPG+mOVc7j0+ngB31JUS4p9rRuYzguSu4G4z5gVf7gUM8Ycy+Yr/TL2zqMbWb547jlNJo
+	D+6SfrFZplAcODjlQ/hZEHdZf6+zaqOXfcsUlo4jzvMgu7pbWgAU4lRpPQ/qOloatZyNPipVq2Tw9
+	0j/0JzId50erPvYyY7k4W0yVQFxYu1u8tTwUVw8Ldn2UvPdmOJ1n0frZj4KEnGyunGtw1/veKGqjq
+	y8LJRhHzhzKhKRYMj2bA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t7CfT-00000009d50-33of;
-	Sat, 02 Nov 2024 11:51:47 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1t7hlh-0000000C2SL-0Ela;
+	Sun, 03 Nov 2024 21:04:17 +0000
+Received: from mail-pl1-f181.google.com ([209.85.214.181])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t7CaU-00000009c5R-2hoT;
-	Sat, 02 Nov 2024 11:46:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DCB155C32DC;
-	Sat,  2 Nov 2024 11:45:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 286AEC4CEC3;
-	Sat,  2 Nov 2024 11:46:37 +0000 (UTC)
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 2061F5F9F2;
-	Sat,  2 Nov 2024 19:46:34 +0800 (CST)
-From: Chen-Yu Tsai <wens@csie.org>
-To: linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-pm@vger.kernel.org, linux-sunxi@lists.linux.dev, 
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
- Cody Eksal <masterr3c0rd@epochal.quest>
-Cc: Conor Dooley <conor+dt@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Maxime Ripard <mripard@kernel.org>, 
- Michael Turquette <mturquette@baylibre.com>, Nishanth Menon <nm@ti.com>, 
- "Rafael J. Wysocki" <rafael@kernel.org>, Rob Herring <robh@kernel.org>, 
- Samuel Holland <samuel@sholland.org>, Stephen Boyd <sboyd@kernel.org>, 
- Vinod Koul <vkoul@kernel.org>, Viresh Kumar <vireshk@kernel.org>, 
- Viresh Kumar <viresh.kumar@linaro.org>, Yangtao Li <tiny.windzz@gmail.com>, 
- Parthiban <parthiban@linumiz.com>, Andre Przywara <andre.przywara@arm.com>
-In-Reply-To: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
-References: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
-Subject: Re: (subset) [PATCH v2 00/13] sunxi: A100/A133 second stage
- support
-Message-Id: <173054799410.64486.11694812401132710377.b4-ty@csie.org>
-Date: Sat, 02 Nov 2024 19:46:34 +0800
+	id 1t7hld-0000000C2Rs-2Ymi
+	for linux-phy@lists.infradead.org;
+	Sun, 03 Nov 2024 21:04:15 +0000
+Received: by mail-pl1-f181.google.com with SMTP id d9443c01a7336-20caccadbeeso37242625ad.2
+        for <linux-phy@lists.infradead.org>; Sun, 03 Nov 2024 13:04:13 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1730667852; x=1731272652;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=iyk/tHp3wM7ZJ+kBBA3UsNzDpyC6CZHEFHkxEbaxlrA=;
+        b=cZeO+w+BayyGhuKbt4XfqhgPSTvK+HeDZp1haNztX595TY46C6vhYbcNOhfsF4xjkn
+         foFu4oQYzdWAJixZ2Ey9sCeiSg+8B1wW6lxFZHw94TH+5SV0uUCJB3ziPadwUUxn4nBc
+         lrWEJcHrfqSHxYHWuKdr/q4YKpX2iO0E/nLV9aS+vcF30m4D9QnH6Vk6/sPOJKUY6AyW
+         np/2tTtAq1JbUCftmjEo1fAzG/00RivlXgGjGgX20ontw0WJWNL3CPgU4mgF7BqzCNnl
+         6Wquyo5W74pehMBC4v5WPT9PHwt1V9b1tD8W8WGd4LPUVvC9O5MJAEebwoOkLsokRfdG
+         OSeQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXvR9yPx7ak1wWtzqSUlKv2MOxewPMEl+BudNfMeWpO59vgg9RdtZa7KnEPIOVvLHXO+D0+otaAAl4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyHlgVt35b+nD88QMkOXLCTURLambbzgYtXdwhvVM6gvF53ycTK
+	I6KOeyU62GwOZXBrpv9e5oscrl3Zs8ZxyGPgyiwk/UHzJJxkMab7
+X-Google-Smtp-Source: AGHT+IEuBWJcoxFyodqaLltsAgGc1DHq3aBd4Exho6fhd7kC5UnQpnx06MfS33ABD5bBS6JPZdF+Yw==
+X-Received: by 2002:a17:902:e850:b0:20b:6d8c:463 with SMTP id d9443c01a7336-21103b34f6dmr193025595ad.35.1730667852188;
+        Sun, 03 Nov 2024 13:04:12 -0800 (PST)
+Received: from localhost (fpd11144dd.ap.nuro.jp. [209.17.68.221])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-211057a2ec3sm49960975ad.140.2024.11.03.13.04.11
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 03 Nov 2024 13:04:11 -0800 (PST)
+Date: Mon, 4 Nov 2024 06:04:09 +0900
+From: Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>
+To: Qiang Yu <quic_qianyu@quicinc.com>
+Cc: manivannan.sadhasivam@linaro.org, vkoul@kernel.org, kishon@kernel.org,
+	robh@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, mturquette@baylibre.com,
+	sboyd@kernel.org, abel.vesa@linaro.org, quic_msarkar@quicinc.com,
+	quic_devipriy@quicinc.com, dmitry.baryshkov@linaro.org,
+	lpieralisi@kernel.org, neil.armstrong@linaro.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
+	johan+linaro@kernel.org
+Subject: Re: [PATCH v8 0/5] Add support for PCIe3 on x1e80100
+Message-ID: <20241103210409.GK237624@rocinante>
+References: <20241101030902.579789-1-quic_qianyu@quicinc.com>
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
+Content-Disposition: inline
+In-Reply-To: <20241101030902.579789-1-quic_qianyu@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241102_044638_774501_AE946935 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20241103_130413_668738_808E8456 
+X-CRM114-Status: UNSURE (   6.55  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,41 +90,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 31 Oct 2024 04:02:13 -0300, Cody Eksal wrote:
-> This is V2 of this series [5], with some changes that were requested and
-> others that were made after testing on more devices. Thank you for all of
-> your feedback! A changelog is available below.
+> This series add support for PCIe3 on x1e80100.
 > 
-> ==================
-> Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
-> submitted a patch series for the A100 series of SoCs; [1] intended to add
-> support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
-> implemented DVFS support. Some patches from the first series landed, but
-> the rest were seemingly abandoned.
-> 
-> [...]
+> PCIe3 needs additional set of clocks, regulators and new set of PCIe QMP
+> PHY configuration compare other PCIe instances on x1e80100. Hence add
+> required resource configuration and usage for PCIe3.
 
-Applied to dt-for-6.13 in git@github.com:linux-sunxi/linux-sunxi.git, thanks!
+Applied to controller/qcom, thank you!
 
-[01/13] arm64: dts: allwinner: A100: Add PMU mode
-        commit: 248b20ed03545656bd1775ed115369854f58f55c
-[02/13] arm64: dts: allwinner: a100: add watchdog node
-        commit: f84a3aa7782687ca0fa54f768fc6bb825575f91a
-[03/13] dt-bindings: phy: sun50i-a64: add a100 compatible
-        commit: 4402ef303d4b90748646568cf48f52eea035057a
-[04/13] dt-bindings: usb: Add A100 compatible string
-        commit: 1e7d0e2a53e6bf4b43f78858b1fb10aa38259375
-[05/13] dt-bindings: usb: sunxi-musb: Add A100 compatible string
-        commit: e144e89de0e491ea191847b0dc15a5aeb27951eb
-[06/13] arm64: dts: allwinner: a100: add usb related nodes
-        commit: c3cc9b02f7490d93635692cf58b0a4e517a60ab2
-[09/13] arm64: allwinner: a100: Add MMC related nodes
-        commit: fcfbb8d9ec584c256c0a6e1ae3174a21b007f399
+[01/04] dt-bindings: PCI: qcom: Move OPP table to qcom,pcie-common.yaml
+        https://git.kernel.org/pci/pci/c/39a06b55df6c
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@csie.org>
+[02/04] dt-bindings: PCI: qcom,pcie-x1e80100: Add 'global' interrupt
+        https://git.kernel.org/pci/pci/c/66dc205962c5
 
+[03/04] PCI: qcom: Remove BDF2SID mapping config for SC8280X family SoC
+        https://git.kernel.org/pci/pci/c/66cc06169fcf
+
+[04/04] PCI: qcom: Disable ASPM L0s for X1E80100
+        https://git.kernel.org/pci/pci/c/fc69fb202beb
+
+	Krzysztof
 
 -- 
 linux-phy mailing list
