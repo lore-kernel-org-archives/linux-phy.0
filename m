@@ -4,71 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3228D2C114
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Nov 2024 14:55:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2DF4D31769
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Nov 2024 17:30:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iKOk2O7VJw7WKoBmfTQwMr4rvgL6eYmjiFe3IBFk58M=; b=U05j1+p8mIi2OyRqFRFe7Uxfdh
-	vcpVN6k530Nny2BaYn0/5ITtYcnB5l+2Su9whq+aj5sBG4u3Whhf/p5jn0c397VHjSgIju51nRlTW
-	/EUa+DZzfCWU3MU+ZkropPD316Vuhn0y3aND2ICNCSHtZhRs6hjqbOx8RgWkTH/WivxxeCjlShgwi
-	t+jp/rVR377ouEX5krS+Jo1J840uqwnwhbMXRqr0sPjBIrzEdF/MuWaVHYwm8Rsn/5TJGXyMnJFUc
-	mFlmEcJ46n0IZgoqbRb69Pb3qSQcHqDjwfcGathucdTEKlSgdh1mmmBnlVuIgIqZa/6G9+A1K/h8n
-	OSkx+NAA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=81I5XstEwnKEdaimxfBifNbS6H7rBPi8qvGP9XBm/G4=; b=3y7qX5oNE8wO0N
+	xU0wB6nB13WC2nfaVSX80VrocGj7QJp/KmXoAdtLhFhSS17rtzTQxoJhBgXSg8ybW2EHmr4VEMC9N
+	M0EB42sJiIB3G/wZ3MyS/myMG64sKk8W96dmE2OXLYEjOeGXCQ9o04SXGkD1hxF3c8dBxKEofA2ni
+	IRb+/XttQ8GRtL7fng9mECYxlgzjVdBAToS7gzk8pudrpSCP8y07Wy0uFAxXheRrr9HgUX5i6GJlo
+	GqjILip66N8Qh9s9x4+Am9CbXUIzwMUAA9B3hk3RIvGFYefnhxEsjCDjXrwloV+5f4pNfwNMy/NPh
+	BJn/wHhUOTiU+220Amng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8Ky7-0000000HLOj-1YnH;
-	Tue, 05 Nov 2024 14:55:43 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1t8NO0-00000000D6o-3VWT;
+	Tue, 05 Nov 2024 17:30:36 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8KwM-0000000HKzE-0ovd;
-	Tue, 05 Nov 2024 14:53:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1730818427; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=jxi2GQmxwbDRHoAb/jV/nhdQX7emwZgYCiM1D7UWm/jb0SghLxNUkj9Ickp6rB73yWEqWFlvITJIGIXOC7hmcD2qxvjPMXtGeWYMCCdijaPrfIbyIkiKsee5xDyRS0M4yPijxYbEmk2daNQb4z/sMUFnPop3LNXa7q3wuD75dV0=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1730818427; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=Ee32TdMulUx3I73v+H9UKmfuOkSjV3xf62bP7n6clmg=; 
-	b=M9mfj52Qug8z93qsGiDGcSjsT0Yy9Zn2lGkBB0gboQqQ4XnuHmw0HiZ9d0lQrZ8O2WstyvIp+SV7ZO0wt2p9RLk3z74827eKc9eRb7S1FSnX09eJbsWxjhyYl8FHNkzfO8C1a2CI3/hijQLBAhqCVRNL2t5JJon9OcuPGiRh2AE=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1730818427;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=Ee32TdMulUx3I73v+H9UKmfuOkSjV3xf62bP7n6clmg=;
-	b=arTxF/M2IohZlL4d+0q9FMY/vZrAbFVQQ1Gff5Mx38cL5CKqDx8zuxiECbxZUMSI
-	J3F+mhj7lY7P3g6QZ9yXz3j4twt3ltOhEF4PGnqlSkyT7dOfXyMv0W35WwSV5U2HPjm
-	KY6tlGpJ6atorq0rsmcebvn2OFAXozf5fA7WS6NA=
-Received: by mx.zohomail.com with SMTPS id 1730818425742722.1607904366261;
-	Tue, 5 Nov 2024 06:53:45 -0800 (PST)
-Received: by mercury (Postfix, from userid 1000)
-	id A289A10604C3; Tue, 05 Nov 2024 15:53:40 +0100 (CET)
-Date: Tue, 5 Nov 2024 15:53:40 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, quentin.schulz@cherry.de, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Heiko Stuebner <heiko.stuebner@cherry.de>
-Subject: Re: [PATCH v2 2/2] phy: rockchip: Add Samsung CSI/DSI Combo DCPHY
- driver
-Message-ID: <fynyo2amqillioxwfyydvztakba5ecwa2qrtdtuoaffyvwc62c@3vizyubfqvsf>
-References: <20241104111121.99274-1-heiko@sntech.de>
- <20241104111121.99274-3-heiko@sntech.de>
+	id 1t8N7Y-00000000B2o-1dnB
+	for linux-phy@lists.infradead.org;
+	Tue, 05 Nov 2024 17:13:37 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 4CA13A43709;
+	Tue,  5 Nov 2024 17:11:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E617AC4CECF;
+	Tue,  5 Nov 2024 17:13:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1730826815;
+	bh=lkpmN3vsfZtO6cDirzgiuE357QAQvJ3r+L0Hlwna7Ic=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=LCC2z8FJt4xw1wAuL0Gjhx7kImmaJ8s5bG6bPX8rzOU5ATOzKplBa58yxMbPHEXyN
+	 uUrBRl0BnwYTeCQ4E4GoKonU9AYCkBdHslwtbmOXwZjK8E7Mtwk+TFPXgaBq/yrtqV
+	 giXrGM0VjpgGwfDMymM0+TBAK4d2KTAVbgKH3FxKc9V5kkGZsOuaK9hRcwgiGEpGqP
+	 JWCMDzzjTLNjCsOrW2llEixCEl9ajJ3vqEemCYrqRn396wRC1HTJEsWod6/VvWAoPx
+	 zZfZYzJZBLKANYJq+hF0Ma4YN0TW+uB7PRH6kgR8da8LtF/TRVwl5bdhTBFwYr5QGk
+	 ps9Ha0NiEJDyA==
+Received: from johan by xi.lan with local (Exim 4.97.1)
+	(envelope-from <johan@kernel.org>)
+	id 1t8N7V-000000008Tc-3Nfi;
+	Tue, 05 Nov 2024 18:13:34 +0100
+Date: Tue, 5 Nov 2024 18:13:33 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Zijun Hu <zijun_hu@icloud.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Felipe Balbi <balbi@ti.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+	Lee Jones <lee@kernel.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+	stable@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, Zijun Hu <quic_zijuhu@quicinc.com>
+Subject: Re: [PATCH v4 1/6] phy: core: Fix that API devm_phy_put() fails to
+ release the phy
+Message-ID: <ZypSPb7qSR9zYSFv@hovoldconsulting.com>
+References: <20241102-phy_core_fix-v4-0-4f06439f61b1@quicinc.com>
+ <20241102-phy_core_fix-v4-1-4f06439f61b1@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <20241104111121.99274-3-heiko@sntech.de>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.3.1/230.797.52
-X-ZohoMailClient: External
+Content-Disposition: inline
+In-Reply-To: <20241102-phy_core_fix-v4-1-4f06439f61b1@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241105_065354_331896_C6E06435 
-X-CRM114-Status: GOOD (  36.73  )
+X-CRM114-CacheID: sfid-20241105_091336_576782_2BDFD48B 
+X-CRM114-Status: GOOD (  16.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,381 +86,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7869793582636814382=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============7869793582636814382==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="i6mir4f2i4nre6yc"
-Content-Disposition: inline
-
-
---i6mir4f2i4nre6yc
-Content-Type: text/plain; protected-headers=v1; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v2 2/2] phy: rockchip: Add Samsung CSI/DSI Combo DCPHY
- driver
-MIME-Version: 1.0
-
-Hi,
-
-On Mon, Nov 04, 2024 at 12:11:16PM +0100, Heiko Stuebner wrote:
-> From: Heiko Stuebner <heiko.stuebner@cherry.de>
->=20
-> Add phy driver needed to drive either a MIPI DSI output to a DSI display
-> or MIPI CSI input from a camera on rk3588.
->=20
-> Right now only the DSI portion is implemented as the whole camera part
-> needs more work in general.
->=20
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
-> ---
-
-Do you have a git branch with the DSI controller driver, so that
-this can actually be tested? :)
-
->  drivers/phy/rockchip/Kconfig                  |   12 +
->  drivers/phy/rockchip/Makefile                 |    1 +
->  .../phy/rockchip/phy-rockchip-samsung-dcphy.c | 1654 +++++++++++++++++
->  3 files changed, 1667 insertions(+)
->  create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
->=20
-> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-> index 2f7a05f21dc5..2bfb42996503 100644
-> --- a/drivers/phy/rockchip/Kconfig
-> +++ b/drivers/phy/rockchip/Kconfig
-> @@ -83,6 +83,18 @@ config PHY_ROCKCHIP_PCIE
->  	help
->  	  Enable this to support the Rockchip PCIe PHY.
-> =20
-> +config PHY_ROCKCHIP_SAMSUNG_DCPHY
-> +	tristate "Rockchip Samsung MIPI DCPHY driver"
-> +	depends on (ARCH_ROCKCHIP || COMPILE_TEST)
-> +	select GENERIC_PHY
-> +	select GENERIC_PHY_MIPI_DPHY
-> +	help
-> +	  Enable this to support the Rockchip MIPI DCPHY with
-> +	  Samsung IP block.
-> +
-> +	  To compile this driver as a module, choose M here: the module
-> +	  will be called phy-rockchip-samsung-dcphy
-> +
->  config PHY_ROCKCHIP_SAMSUNG_HDPTX
->  	tristate "Rockchip Samsung HDMI/eDP Combo PHY driver"
->  	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
-> diff --git a/drivers/phy/rockchip/Makefile b/drivers/phy/rockchip/Makefile
-> index 010a824e32ce..117aaffd037d 100644
-> --- a/drivers/phy/rockchip/Makefile
-> +++ b/drivers/phy/rockchip/Makefile
-> @@ -8,6 +8,7 @@ obj-$(CONFIG_PHY_ROCKCHIP_INNO_HDMI)	+=3D phy-rockchip-in=
-no-hdmi.o
->  obj-$(CONFIG_PHY_ROCKCHIP_INNO_USB2)	+=3D phy-rockchip-inno-usb2.o
->  obj-$(CONFIG_PHY_ROCKCHIP_NANENG_COMBO_PHY)	+=3D phy-rockchip-naneng-com=
-bphy.o
->  obj-$(CONFIG_PHY_ROCKCHIP_PCIE)		+=3D phy-rockchip-pcie.o
-> +obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_DCPHY)	+=3D phy-rockchip-samsung-dcphy=
-=2Eo
->  obj-$(CONFIG_PHY_ROCKCHIP_SAMSUNG_HDPTX)	+=3D phy-rockchip-samsung-hdptx=
-=2Eo
->  obj-$(CONFIG_PHY_ROCKCHIP_SNPS_PCIE3)	+=3D phy-rockchip-snps-pcie3.o
->  obj-$(CONFIG_PHY_ROCKCHIP_TYPEC)	+=3D phy-rockchip-typec.o
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c b/drivers/=
-phy/rockchip/phy-rockchip-samsung-dcphy.c
-> new file mode 100644
-> index 000000000000..a2f897fa5516
-> --- /dev/null
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-> @@ -0,0 +1,1654 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright (C) Rockchip Electronics Co.Ltd
-> + * Author:
-> + *      Guochun Huang <hero.huang@rock-chips.com>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/init.h>
-> +#include <linux/kernel.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/module.h>
-> +#include <linux/of_device.h>
-
-I think this should be
-
-#include <linux/mod_devicetable.h>
-
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
-> +#include <linux/regmap.h>
-> +#include <linux/reset.h>
-> +
-
-[...]
-
-> +static void samsung_mipi_dcphy_bias_block_enable(struct samsung_mipi_dcp=
-hy *samsung)
-> +{
-> +	u32 bias_con2 =3D 0x3223;
-> +
-> +	regmap_write(samsung->regmap, BIAS_CON0, 0x0010);
-> +	regmap_write(samsung->regmap, BIAS_CON1, 0x0110);
-> +	regmap_write(samsung->regmap, BIAS_CON2, bias_con2);
-> +
-> +	/* default output voltage select:
-> +	 * dphy: 400mv
-> +	 * cphy: 530mv
-> +	 */
-> +	regmap_update_bits(samsung->regmap, BIAS_CON4,
-> +			   I_MUX_SEL_MASK, I_MUX_SEL_400MV);
-> +}
-> +
-> +static void samsung_mipi_dcphy_bias_block_disable(struct samsung_mipi_dc=
-phy *samsung)
-> +{
-> +}
-
-uhm? :)
-
-[...]
-
-> +static const struct samsung_mipi_dphy_timing *
-> +samsung_mipi_dphy_get_timing(struct samsung_mipi_dcphy *samsung)
-> +{
-> +	const struct samsung_mipi_dphy_timing *timings;
-> +	unsigned int num_timings;
-> +	unsigned int lane_mbps =3D div64_ul(samsung->pll.rate, USEC_PER_SEC);
-> +	unsigned int i;
-> +
-> +	timings =3D samsung_mipi_dphy_timing_table;
-> +	num_timings =3D ARRAY_SIZE(samsung_mipi_dphy_timing_table);
-> +
-> +	for (i =3D num_timings; i > 0; i--)
-> +		if (lane_mbps <=3D timings[i - 1].max_lane_mbps)
-> +			break;
-> +
-> +	if (i =3D=3D 0)
-> +		++i;
-
-I guess you can just do 'for (i =3D max; i > 1; i--)' instead of
-counting to 0 and then go back to 1?
-
-> +
-> +	return &timings[i - 1];
-> +}
-
-[...]
-
-> +static int samsung_mipi_dphy_power_on(struct samsung_mipi_dcphy *samsung)
-> +{
-> +	int ret;
-> +
-> +	reset_control_assert(samsung->m_phy_rst);
-> +
-> +	samsung_mipi_dcphy_bias_block_enable(samsung);
-> +	samsung_mipi_dcphy_pll_configure(samsung);
-> +	samsung_mipi_dphy_clk_lane_timing_init(samsung);
-> +	samsung_mipi_dphy_data_lane_timing_init(samsung);
-> +	ret =3D samsung_mipi_dcphy_pll_enable(samsung);
-> +	if (ret < 0) {
-> +		samsung_mipi_dcphy_bias_block_disable(samsung);
-> +		return ret;
-> +	}
-> +
-> +	samsung_mipi_dphy_lane_enable(samsung);
-> +
-> +	reset_control_deassert(samsung->m_phy_rst);
-> +
-> +	/* The TSKEWCAL maximum is 100 =B5sec
-> +	 * at initial calibration.
-> +	 */
-> +	usleep_range(100, 110);
-> +
-> +	return 0;
-> +}
-> +
-> +static int samsung_mipi_dcphy_power_on(struct phy *phy)
-> +{
-> +	struct samsung_mipi_dcphy *samsung =3D phy_get_drvdata(phy);
-> +	enum phy_mode mode =3D phy_get_mode(phy);
-> +
-> +	pm_runtime_get_sync(samsung->dev);
-
-This already happened in samsung_mipi_dcphy_init?
-
-> +	reset_control_assert(samsung->apb_rst);
-> +	udelay(1);
-> +	reset_control_deassert(samsung->apb_rst);
-> +
-> +	switch (mode) {
-> +	case PHY_MODE_MIPI_DPHY:
-> +		return samsung_mipi_dphy_power_on(samsung);
-> +	default:
-> +		/* CSI cphy part to be implemented later */
-> +		return -EOPNOTSUPP;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int samsung_mipi_dcphy_power_off(struct phy *phy)
-> +{
-> +	struct samsung_mipi_dcphy *samsung =3D phy_get_drvdata(phy);
-> +	enum phy_mode mode =3D phy_get_mode(phy);
-> +
-> +	switch (mode) {
-> +	case PHY_MODE_MIPI_DPHY:
-> +		samsung_mipi_dphy_lane_disable(samsung);
-> +		break;
-> +	default:
-> +		/* CSI cphy part to be implemented later */
-> +		return -EOPNOTSUPP;
-> +	}
-> +
-> +	samsung_mipi_dcphy_pll_disable(samsung);
-> +	samsung_mipi_dcphy_bias_block_disable(samsung);
-> +
-> +	pm_runtime_put(samsung->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int samsung_mipi_dcphy_set_mode(struct phy *phy, enum phy_mode mo=
-de,
-> +				       int submode)
-> +{
-> +	return 0;
-> +}
-
-You can just remove this. phy_set_mode_ext() will return 0 byself if
-the callback is NULL.
-
-[...]
-
-> +static int samsung_mipi_dcphy_init(struct phy *phy)
-> +{
-> +	struct samsung_mipi_dcphy *samsung =3D phy_get_drvdata(phy);
-> +
-> +	pm_runtime_get_sync(samsung->dev);
-
-return pm_runtime_resume_and_get(samsung->dev);
-
-> +	return 0;
-> +}
-> +
-> +static int samsung_mipi_dcphy_exit(struct phy *phy)
-> +{
-> +	struct samsung_mipi_dcphy *samsung =3D phy_get_drvdata(phy);
-> +
-> +	pm_runtime_put(samsung->dev);
-
-return pm_runtime_put(samsung->dev);
-
-> +
-> +	return 0;
-> +}
-
-[...]
-
-> +static __maybe_unused int samsung_mipi_dcphy_runtime_suspend(struct devi=
-ce *dev)
-> +{
-> +	struct samsung_mipi_dcphy *samsung =3D dev_get_drvdata(dev);
-> +
-> +	clk_disable_unprepare(samsung->pclk);
-> +	clk_disable_unprepare(samsung->ref_clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static __maybe_unused int samsung_mipi_dcphy_runtime_resume(struct devic=
-e *dev)
-> +{
-> +	struct samsung_mipi_dcphy *samsung =3D dev_get_drvdata(dev);
-> +
-> +	clk_prepare_enable(samsung->pclk);
-> +	clk_prepare_enable(samsung->ref_clk);
-> +
-> +	return 0;
-> +}
-
-No error checking for managing the clocks?
-
-[...]
-
-> +static const struct of_device_id samsung_mipi_dcphy_of_match[] =3D {
-> +	{
-> +		.compatible =3D "rockchip,rk3576-mipi-dcphy",
-> +		.data =3D &rk3576_samsung_mipi_dcphy_plat_data,
-> +	}, {
-> +		.compatible =3D "rockchip,rk3588-mipi-dcphy",
-> +		.data =3D &rk3588_samsung_mipi_dcphy_plat_data,
-> +	},
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, samsung_mipi_dcphy_of_match);
-> +
-> +static struct platform_driver samsung_mipi_dcphy_driver =3D {
-> +	.driver =3D {
-> +		.name =3D "samsung-mipi-dcphy",
-> +		.of_match_table	=3D of_match_ptr(samsung_mipi_dcphy_of_match),
-
-drop of_match_ptr(). The way it is used right now just brings
-a compiler warning for CONFIG_OF=3Dn.
-
-> +		.pm =3D &samsung_mipi_dcphy_pm_ops,
-> +	},
-> +	.probe	=3D samsung_mipi_dcphy_probe,
-> +};
-> +module_platform_driver(samsung_mipi_dcphy_driver);
-> +
-> +MODULE_AUTHOR("Guochun Huang<hero.huang@rock-chips.com>");
-
-space before <
-
-> +MODULE_DESCRIPTION("Samsung MIPI DCPHY Driver");
-> +MODULE_LICENSE("GPL");
-
-Greetings,
-
--- Sebastian
-
---i6mir4f2i4nre6yc
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmcqMWgACgkQ2O7X88g7
-+pqVJg/7BGqrI9xyIPDlozpRxfCLRIU82nO2vXrSxFG+rkgDHEdifsnhLRhYX2k9
-Jf886rm7pohlqTxtViKnn4hOE4yqNW3NuSXuKjZO6TnWHldvUzt4s7/fFQkViQEi
-Pr+/QJ9AUZxGH0hhN9FmUUcjhi0qShlqnsLiO42t9aaxyLktdp8N68xw9ZpX8F9K
-avZ8xSHbKBI37kMyqgU9cjFZ9pkAcf5JpMQusVCT6IqeuDzfvEbM08P7yPxPusPc
-UKxYS/YQGTOniKmpSZHQKtIcf6AFNZS1JoakYgv7tzWtNY7Vgswlg9KrzCEmFvIg
-aXNfFA1IUXngFtzlJL9KDOwqwMEowDjZzLUJCkzWl9DNo/qM2XjVXVwer6uDMdMm
-bIV3AVGamiBlvBghK+Rjd/9CiCFKUz4rl3rjgpFE+odrUvxff9gFYT/xow3YyvNN
-OBwD5VGijFHPq6jbra+nY/v6BroGSStHoY+JB4NVta515BI3ZYALpKxW4HTW5kcV
-5eABPItHa9+3rw23N6y/cGpjwbRBavnI1PJYclo5hLc4mDRW9O6j2C9luRxXVOnF
-Hq/sXX+c6h50U63Kd6msyt8qBIokhm7bxn6YGVvC23XoXhbZfg8yrYHEthkXl6bG
-2NM7FHwRAmylSkstCg9gzYfxdwSP8p3m8RA9ubJ7HVoHPGLML9I=
-=O1X7
------END PGP SIGNATURE-----
-
---i6mir4f2i4nre6yc--
-
-
---===============7869793582636814382==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7869793582636814382==--
-
+T24gU2F0LCBOb3YgMDIsIDIwMjQgYXQgMTE6NTM6NDNBTSArMDgwMCwgWmlqdW4gSHUgd3JvdGU6
+Cj4gRnJvbTogWmlqdW4gSHUgPHF1aWNfemlqdWh1QHF1aWNpbmMuY29tPgo+IAo+IEZvciBkZXZt
+X3BoeV9wdXQoKSwgaXRzIGNvbW1lbnQgc2F5cyBpdCBuZWVkcyB0byBpbnZva2UgcGh5X3B1dCgp
+IHRvCj4gcmVsZWFzZSB0aGUgcGh5LCBidXQgaXQgd2lsbCBub3QgYWN0dWFsbHkgaW52b2tlIHRo
+ZSBmdW5jdGlvbiBzaW5jZQo+IGRldnJlc19kZXN0cm95KCkgZG9lcyBub3QgY2FsbCBkZXZtX3Bo
+eV9yZWxlYXNlKCksIGFuZCB0aGUgbWlzc2luZwo+IHBoeV9wdXQoKSBjYWxsIHdpbGwgY2F1c2U6
+CgpJIHN0aWxsIHRoaW5rIHRoZSBhYm92ZSBzaG91bGQgaGF2ZSBiZWVuIHNwbGl0IGluIHR3byBz
+ZW50ZW5jZXMsIGJ1dAp0aGlzIGFsc28gd29ya3MuCgo+IC0gVGhlIHBoeSBmYWlscyB0byBiZSBy
+ZWxlYXNlZC4KPiAtIGRldm1fcGh5X3B1dCgpIGNhbiBub3QgZnVsbHkgdW5kbyB3aGF0IEFQSSBk
+ZXZtX3BoeV9nZXQoKSBkb2VzLgo+IC0gTGVhayByZWZjb3VudCBvZiBib3RoIHRoZSBtb2R1bGUg
+YW5kIGRldmljZSBmb3IgYmVsb3cgdHlwaWNhbCB1c2FnZToKPiAKPiAgIGRldm1fcGh5X2dldCgp
+OyAvLyBvciBpdHMgdmFyaWFudAo+ICAgLi4uCj4gICBlcnIgPSBkb19zb21ldGhpbmcoKTsKPiAg
+IGlmIChlcnIpCj4gICAgICAgZ290byBlcnJfb3V0Owo+ICAgLi4uCj4gICBlcnJfb3V0Ogo+ICAg
+ZGV2bV9waHlfcHV0KCk7IC8vIGxlYWsgcmVmY291bnQgaGVyZQo+IAo+ICAgVGhlIGZpbGUocykg
+YWZmZWN0ZWQgYnkgdGhpcyBpc3N1ZSBhcmUgc2hvd24gYmVsb3cgc2luY2UgdGhleSBoYXZlIHN1
+Y2gKPiAgIHR5cGljYWwgdXNhZ2UuCj4gICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVuY2Uv
+cGNpZS1jYWRlbmNlLmMKPiAgIGRyaXZlcnMvbmV0L2V0aGVybmV0L3RpL2FtNjUtY3Bzdy1udXNz
+LmMKPiAKPiBGaXhlZCBieSB1c2luZyBkZXZyZXNfcmVsZWFzZSgpIGluc3RlYWQgb2YgZGV2cmVz
+X2Rlc3Ryb3koKSB3aXRoaW4gdGhlIEFQSS4KCk5pdDogaW4gdGhlIGZ1dHVyZSwgdHJ5IHRvIHVz
+ZSBpbXBlcmF0aXZlIG1vb2QgaW4geW91ciBjb21taXQgbWVzc2FnZXMKKGUuZy4gImZpeCIgaW5z
+dGVhZCBvZiAiZml4ZWQiKSBhcyB0aGUgcHJvY2VzcyBkb2N1bWVudGF0aW9uIHN1Z2dlc3RzLgoK
+PiBGaXhlczogZmY3NjQ5NjM0NzlhICgiZHJpdmVyczogcGh5OiBhZGQgZ2VuZXJpYyBQSFkgZnJh
+bWV3b3JrIikKPiBDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwo+IENjOiBMb3JlbnpvIFBpZXJh
+bGlzaSA8bHBpZXJhbGlzaUBrZXJuZWwub3JnPgo+IENjOiAiS3J6eXN6dG9mIFdpbGN6ecWEc2tp
+IiA8a3dAbGludXguY29tPgo+IENjOiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29t
+Pgo+IENjOiAiRGF2aWQgUy4gTWlsbGVyIiA8ZGF2ZW1AZGF2ZW1sb2Z0Lm5ldD4KPiBDYzogRXJp
+YyBEdW1hemV0IDxlZHVtYXpldEBnb29nbGUuY29tPgo+IENjOiBKYWt1YiBLaWNpbnNraSA8a3Vi
+YUBrZXJuZWwub3JnPgo+IENjOiBQYW9sbyBBYmVuaSA8cGFiZW5pQHJlZGhhdC5jb20+Cj4gQ2M6
+IEpvaGFuIEhvdm9sZCA8am9oYW5Aa2VybmVsLm9yZz4KPiBTaWduZWQtb2ZmLWJ5OiBaaWp1biBI
+dSA8cXVpY196aWp1aHVAcXVpY2luYy5jb20+CgpSZXZpZXdlZC1ieTogSm9oYW4gSG92b2xkIDxq
+b2hhbitsaW5hcm9Aa2VybmVsLm9yZz4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
+LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
