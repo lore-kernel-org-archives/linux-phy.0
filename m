@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2DF4D31769
-	for <linux-phy@archiver.kernel.org>; Tue,  5 Nov 2024 17:30:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD7F1D31769
+	for <linux-phy@archiver.kernel.org>; Tue,  5 Nov 2024 17:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=81I5XstEwnKEdaimxfBifNbS6H7rBPi8qvGP9XBm/G4=; b=3y7qX5oNE8wO0N
-	xU0wB6nB13WC2nfaVSX80VrocGj7QJp/KmXoAdtLhFhSS17rtzTQxoJhBgXSg8ybW2EHmr4VEMC9N
-	M0EB42sJiIB3G/wZ3MyS/myMG64sKk8W96dmE2OXLYEjOeGXCQ9o04SXGkD1hxF3c8dBxKEofA2ni
-	IRb+/XttQ8GRtL7fng9mECYxlgzjVdBAToS7gzk8pudrpSCP8y07Wy0uFAxXheRrr9HgUX5i6GJlo
-	GqjILip66N8Qh9s9x4+Am9CbXUIzwMUAA9B3hk3RIvGFYefnhxEsjCDjXrwloV+5f4pNfwNMy/NPh
-	BJn/wHhUOTiU+220Amng==;
+	List-Owner; bh=eBJ6GkBcNO/oMj/bvxmPaelzfu2oowPB0QcMqAAyHTM=; b=NrXMAkYvhmUovt
+	yzN5FEsVVbo1q5av3l/EDOJqdd7jwJG000EFKAZD3qRZI5fyrkDO5vr/nyoO1JwyWoDka5od6Qj6q
+	TJuTHdNZl8aH/qQSjtnY/dfHRcoXGBxC/ldnZ1TcJ0KjTZAvdXYFHkA4hNxpOxJ7XyEFDMVZEdwfS
+	TIaQxGfYux7uoQM5P4XCMToIfNGF/qZEKTqZJDahdMnHG+A9NPH73s2RtCm0F/WPDYZTtqJTM7BWf
+	kvljvDBcQPwuC7gNDVhA9joxBuUgfiMLkMuGgdl7x78vAjIL7yhBGG2lfgul3fB90nrNaheSoUuST
+	xH12KM88chfcQEWYViAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8NO0-00000000D6o-3VWT;
-	Tue, 05 Nov 2024 17:30:36 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1t8NO5-00000000DAw-14Hq;
+	Tue, 05 Nov 2024 17:30:41 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8N7Y-00000000B2o-1dnB
+	id 1t8N90-00000000BDd-0nR6
 	for linux-phy@lists.infradead.org;
-	Tue, 05 Nov 2024 17:13:37 +0000
+	Tue, 05 Nov 2024 17:15:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 4CA13A43709;
-	Tue,  5 Nov 2024 17:11:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E617AC4CECF;
-	Tue,  5 Nov 2024 17:13:34 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3CA3FA43773;
+	Tue,  5 Nov 2024 17:13:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CF4CFC4CECF;
+	Tue,  5 Nov 2024 17:15:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1730826815;
-	bh=lkpmN3vsfZtO6cDirzgiuE357QAQvJ3r+L0Hlwna7Ic=;
+	s=k20201202; t=1730826904;
+	bh=yPytFdz6f1L1SYg6SCEa40uxUwZxSLiELY6Dcv785F8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LCC2z8FJt4xw1wAuL0Gjhx7kImmaJ8s5bG6bPX8rzOU5ATOzKplBa58yxMbPHEXyN
-	 uUrBRl0BnwYTeCQ4E4GoKonU9AYCkBdHslwtbmOXwZjK8E7Mtwk+TFPXgaBq/yrtqV
-	 giXrGM0VjpgGwfDMymM0+TBAK4d2KTAVbgKH3FxKc9V5kkGZsOuaK9hRcwgiGEpGqP
-	 JWCMDzzjTLNjCsOrW2llEixCEl9ajJ3vqEemCYrqRn396wRC1HTJEsWod6/VvWAoPx
-	 zZfZYzJZBLKANYJq+hF0Ma4YN0TW+uB7PRH6kgR8da8LtF/TRVwl5bdhTBFwYr5QGk
-	 ps9Ha0NiEJDyA==
+	b=t1ORN88vKrpnA073v9R8XZmFatwTb3I9dLnCneq8cdHEkB8ZdUgWShCLp6cRD7Pio
+	 4U9ZcDlj7zlWqOQRA2NFoylpDLXdC2hqTJDKaOVCwhfXJtzNcqGBnaKnQ9JoAiJ7TG
+	 wwSq0w+zQcJX3IXxXKJKjheLaD4QPA4Tn761O2VzPSCVUrhr3phLmY79T72Sgjeu4k
+	 c4gUMA0pptapaqlDGMf5+sZ2VbBCH9Vw6YXmk8K0BJPWZpuwLLtXFSHea7xjvHQIfu
+	 f8fiPjGY81cJFNa1Uye+5FMG6JgFd+pkbm+WMOD4hw0dYq410+QArx4Jlp5xhBUP1X
+	 DRIEB/98L5Y0A==
 Received: from johan by xi.lan with local (Exim 4.97.1)
 	(envelope-from <johan@kernel.org>)
-	id 1t8N7V-000000008Tc-3Nfi;
-	Tue, 05 Nov 2024 18:13:34 +0100
-Date: Tue, 5 Nov 2024 18:13:33 +0100
+	id 1t8N8y-000000008W9-3TZl;
+	Tue, 05 Nov 2024 18:15:04 +0100
+Date: Tue, 5 Nov 2024 18:15:04 +0100
 From: Johan Hovold <johan@kernel.org>
 To: Zijun Hu <zijun_hu@icloud.com>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -64,17 +64,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
 	stable@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org, Zijun Hu <quic_zijuhu@quicinc.com>
-Subject: Re: [PATCH v4 1/6] phy: core: Fix that API devm_phy_put() fails to
- release the phy
-Message-ID: <ZypSPb7qSR9zYSFv@hovoldconsulting.com>
+Subject: Re: [PATCH v4 2/6] phy: core: Fix that API
+ devm_of_phy_provider_unregister() fails to unregister the phy provider
+Message-ID: <ZypSmAiJhimXbC3Y@hovoldconsulting.com>
 References: <20241102-phy_core_fix-v4-0-4f06439f61b1@quicinc.com>
- <20241102-phy_core_fix-v4-1-4f06439f61b1@quicinc.com>
+ <20241102-phy_core_fix-v4-2-4f06439f61b1@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241102-phy_core_fix-v4-1-4f06439f61b1@quicinc.com>
+In-Reply-To: <20241102-phy_core_fix-v4-2-4f06439f61b1@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241105_091336_576782_2BDFD48B 
-X-CRM114-Status: GOOD (  16.53  )
+X-CRM114-CacheID: sfid-20241105_091506_317084_AB4597F5 
+X-CRM114-Status: GOOD (  13.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,41 +86,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU2F0LCBOb3YgMDIsIDIwMjQgYXQgMTE6NTM6NDNBTSArMDgwMCwgWmlqdW4gSHUgd3JvdGU6
-Cj4gRnJvbTogWmlqdW4gSHUgPHF1aWNfemlqdWh1QHF1aWNpbmMuY29tPgo+IAo+IEZvciBkZXZt
-X3BoeV9wdXQoKSwgaXRzIGNvbW1lbnQgc2F5cyBpdCBuZWVkcyB0byBpbnZva2UgcGh5X3B1dCgp
-IHRvCj4gcmVsZWFzZSB0aGUgcGh5LCBidXQgaXQgd2lsbCBub3QgYWN0dWFsbHkgaW52b2tlIHRo
-ZSBmdW5jdGlvbiBzaW5jZQo+IGRldnJlc19kZXN0cm95KCkgZG9lcyBub3QgY2FsbCBkZXZtX3Bo
-eV9yZWxlYXNlKCksIGFuZCB0aGUgbWlzc2luZwo+IHBoeV9wdXQoKSBjYWxsIHdpbGwgY2F1c2U6
-CgpJIHN0aWxsIHRoaW5rIHRoZSBhYm92ZSBzaG91bGQgaGF2ZSBiZWVuIHNwbGl0IGluIHR3byBz
-ZW50ZW5jZXMsIGJ1dAp0aGlzIGFsc28gd29ya3MuCgo+IC0gVGhlIHBoeSBmYWlscyB0byBiZSBy
-ZWxlYXNlZC4KPiAtIGRldm1fcGh5X3B1dCgpIGNhbiBub3QgZnVsbHkgdW5kbyB3aGF0IEFQSSBk
-ZXZtX3BoeV9nZXQoKSBkb2VzLgo+IC0gTGVhayByZWZjb3VudCBvZiBib3RoIHRoZSBtb2R1bGUg
-YW5kIGRldmljZSBmb3IgYmVsb3cgdHlwaWNhbCB1c2FnZToKPiAKPiAgIGRldm1fcGh5X2dldCgp
-OyAvLyBvciBpdHMgdmFyaWFudAo+ICAgLi4uCj4gICBlcnIgPSBkb19zb21ldGhpbmcoKTsKPiAg
-IGlmIChlcnIpCj4gICAgICAgZ290byBlcnJfb3V0Owo+ICAgLi4uCj4gICBlcnJfb3V0Ogo+ICAg
-ZGV2bV9waHlfcHV0KCk7IC8vIGxlYWsgcmVmY291bnQgaGVyZQo+IAo+ICAgVGhlIGZpbGUocykg
-YWZmZWN0ZWQgYnkgdGhpcyBpc3N1ZSBhcmUgc2hvd24gYmVsb3cgc2luY2UgdGhleSBoYXZlIHN1
-Y2gKPiAgIHR5cGljYWwgdXNhZ2UuCj4gICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVuY2Uv
-cGNpZS1jYWRlbmNlLmMKPiAgIGRyaXZlcnMvbmV0L2V0aGVybmV0L3RpL2FtNjUtY3Bzdy1udXNz
-LmMKPiAKPiBGaXhlZCBieSB1c2luZyBkZXZyZXNfcmVsZWFzZSgpIGluc3RlYWQgb2YgZGV2cmVz
-X2Rlc3Ryb3koKSB3aXRoaW4gdGhlIEFQSS4KCk5pdDogaW4gdGhlIGZ1dHVyZSwgdHJ5IHRvIHVz
-ZSBpbXBlcmF0aXZlIG1vb2QgaW4geW91ciBjb21taXQgbWVzc2FnZXMKKGUuZy4gImZpeCIgaW5z
-dGVhZCBvZiAiZml4ZWQiKSBhcyB0aGUgcHJvY2VzcyBkb2N1bWVudGF0aW9uIHN1Z2dlc3RzLgoK
-PiBGaXhlczogZmY3NjQ5NjM0NzlhICgiZHJpdmVyczogcGh5OiBhZGQgZ2VuZXJpYyBQSFkgZnJh
-bWV3b3JrIikKPiBDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwo+IENjOiBMb3JlbnpvIFBpZXJh
-bGlzaSA8bHBpZXJhbGlzaUBrZXJuZWwub3JnPgo+IENjOiAiS3J6eXN6dG9mIFdpbGN6ecWEc2tp
-IiA8a3dAbGludXguY29tPgo+IENjOiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29t
-Pgo+IENjOiAiRGF2aWQgUy4gTWlsbGVyIiA8ZGF2ZW1AZGF2ZW1sb2Z0Lm5ldD4KPiBDYzogRXJp
-YyBEdW1hemV0IDxlZHVtYXpldEBnb29nbGUuY29tPgo+IENjOiBKYWt1YiBLaWNpbnNraSA8a3Vi
-YUBrZXJuZWwub3JnPgo+IENjOiBQYW9sbyBBYmVuaSA8cGFiZW5pQHJlZGhhdC5jb20+Cj4gQ2M6
-IEpvaGFuIEhvdm9sZCA8am9oYW5Aa2VybmVsLm9yZz4KPiBTaWduZWQtb2ZmLWJ5OiBaaWp1biBI
-dSA8cXVpY196aWp1aHVAcXVpY2luYy5jb20+CgpSZXZpZXdlZC1ieTogSm9oYW4gSG92b2xkIDxq
-b2hhbitsaW5hcm9Aa2VybmVsLm9yZz4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Sat, Nov 02, 2024 at 11:53:44AM +0800, Zijun Hu wrote:
+> From: Zijun Hu <quic_zijuhu@quicinc.com>
+> 
+> For devm_of_phy_provider_unregister(), its comment says it needs to invoke
+> of_phy_provider_unregister() to unregister the phy provider, but it will
+> not actually invoke the function since devres_destroy() does not call
+> devm_phy_provider_release(), and the missing of_phy_provider_unregister()
+> call will case:
+> 
+> - The phy provider fails to be unregistered.
+> - Leak both memory and the OF node refcount.
+> 
+> Fortunately, the faulty API has not been used by current kernel tree.
+> Fixed by using devres_release() instead of devres_destroy() within the API.
+> 
+> Fixes: ff764963479a ("drivers: phy: add generic PHY framework")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
+
+Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
