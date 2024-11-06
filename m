@@ -4,61 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA44DD44D78
-	for <linux-phy@archiver.kernel.org>; Wed,  6 Nov 2024 14:24:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25278D29FBB
+	for <linux-phy@archiver.kernel.org>; Wed,  6 Nov 2024 15:28:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:To:From:Subject:Cc:Message-Id:Date:Mime-Version:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=7bZa+hydu68aJuq5ordTNhEZf3+xgrxDPSUxCN53WRo=; b=bg1+yRczV+f+tYyJm4X93qp7Bb
-	N492Cy/blkDJGPzK8OhUs7/EC+//XlfInyZqFg46iz4Vz4R2jvW8U7aFueCEGRD7NaFhdh+oqLXds
-	B8xhFHMJPJ1wuBtNt9TQVOTi2DfGsUU+FC1ua6EdnmnKpb1eE+NHeA/Rmm2JqjeeTkYfhXQCY37wt
-	ooZe3zibPl2qqQh/Wp+YSGWRzMbb0/9EFhSIAtX57KcjdQI6/4awFNUk6hiJwZqOUItkv0uWOUI8d
-	pSPiarl/PW++t9jRDXHyjaPKE4lLirF7imw7CExKD3v9saBtUhpMJmRbkm8tcRnPX3FGUEGKB1iMy
-	oAutPTpw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/jvM3W3W2WErVZPJOAc1r/dKRKQ4q5x5koKYhx1MIEA=; b=bAWTb1GWMG7Nib
+	IVMTZKln9HwbpcE/Vpm3ABIqApvnvMmuuk+XryPoffxGWRJ1SU+0TYstkuem/qdUn2pUmQ8URoQIW
+	COgQ2mnA5F4S+OKWKjuhnglZjt5Jpgpn2EGTmpT7CeMghZ54MXSya+g1lPHrTalYBGKLuY0jjXNDn
+	WaglDQlH/8UDMBhLDxl5W7YB3sxyFZXglUQN+SCyRQRPksL/kXz8uZQjM9R5RT9xM7RDm/XBcEbU3
+	5m/dL1R2pH3dMqz8pTHLmrdIags7aBalr0INkGplIyGjok1/aQBOegJIDnWDLG+U1zHP/W0YUtd0q
+	aLwe6U5E4ppOHmUSETIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8gxl-00000003agn-2G8p;
-	Wed, 06 Nov 2024 14:24:49 +0000
-Received: from out-183.mta0.migadu.com ([2001:41d0:1004:224b::b7])
+	id 1t8hxn-00000003oYn-2gRl;
+	Wed, 06 Nov 2024 15:28:55 +0000
+Received: from pv50p00im-ztdg10011201.me.com ([17.58.6.39])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8gqV-00000003ZPf-2oT4
+	id 1t8hxk-00000003oXr-3O1J
 	for linux-phy@lists.infradead.org;
-	Wed, 06 Nov 2024 14:17:21 +0000
-Mime-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
-	t=1730902636;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=sdmqNqqp4Bk7buEsWzjxk7mkEA62rn6czo4XC8c0f/Q=;
-	b=u+LcAaXyxYZ1m5RiP1Q6G4WEQS06mhDv0LvBxdrkpeyfdAWqHbev4lfFLZhV3OrmnQC9vo
-	qf3VfilxFSAJEFs3p2N9BlbKWXtgG2PCOUkgkBaj/Fy2fAYk0RyhKT3EYgyN1w6y0Ur9FA
-	ht7w0lw1sg8wv2Bl4XQu+kToVM3pK2lYfeaHXZSh1WGj6973fbCUoLLBH3YTZVRx/0WCkq
-	rFOYgk8eicCxYfCL5y8xGko3wWZtD8wLtwSkNJdQ28QYRtxfFOKoQK44n592ptKmBnNIM+
-	duIlk1CHEAOqUnC3KtcSYxifGZ4qw2Rvl5C9JGfJm+AMeEAc2PpP8QAbb2ddsQ==
-Date: Wed, 06 Nov 2024 15:17:02 +0100
-Message-Id: <D5F5RRFVMP7R.19G82R4S878IL@cknow.org>
-Cc: <robh@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
- <quentin.schulz@cherry.de>, <linux-phy@lists.infradead.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- "Heiko Stuebner" <heiko.stuebner@cherry.de>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY
- schema
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: "Diederik de Haas" <didi.debian@cknow.org>
-To: "Heiko Stuebner" <heiko@sntech.de>, <vkoul@kernel.org>,
- <kishon@kernel.org>
-References: <20241104111121.99274-1-heiko@sntech.de>
- <20241104111121.99274-2-heiko@sntech.de>
-In-Reply-To: <20241104111121.99274-2-heiko@sntech.de>
-X-Migadu-Flow: FLOW_OUT
+	Wed, 06 Nov 2024 15:28:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
+	s=1a1hai; t=1730906928;
+	bh=oR3Va8z9d2Tc/eVUOUoRWon9Mc7HjZ0n4MCseiNIfUE=;
+	h=Message-ID:Date:MIME-Version:Subject:To:From:Content-Type:
+	 x-icloud-hme;
+	b=BtUBpuCWlzNwrPRuZx1Gl/wat4SdtvMIzO3ohgAsqQ+nR+cqBHpu7Kx2DtaDnCQ3R
+	 dwNT2CnL6ZGUcsn8i4E/ZxoaKI5ukwlKStoknKsxfS8nCPP4lv0hqWHY68PFOIzqKu
+	 zQkOlHI2iO1dEMX59fOEVs8q3loyH+BGR6s4w1uUsS6AY6Io38DLo8emoktuqZZHh/
+	 cwhuxqgfcB2bkfvJd5fWT8j9q2XVXLOZtf/iIa+VduvWGhAxm5kQ6spwM1aXM2ER7N
+	 WOGOD3Yr2MNpMHHaAmuDv2yHYqucD1MtcsBB02xyrmJKp/E7UVVy2x02rbSNOLYeAn
+	 Q8lUXnp9e4Q1Q==
+Received: from [192.168.1.26] (pv50p00im-dlb-asmtp-mailmevip.me.com [17.56.9.10])
+	by pv50p00im-ztdg10011201.me.com (Postfix) with ESMTPSA id A862768038A;
+	Wed,  6 Nov 2024 15:28:41 +0000 (UTC)
+Message-ID: <0699ed24-9603-48f5-b5bd-859dbed1da5c@icloud.com>
+Date: Wed, 6 Nov 2024 23:28:37 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 4/6] phy: core: Fix an OF node refcount leakage in
+ _of_phy_get()
+To: Johan Hovold <johan@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Felipe Balbi <balbi@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Lee Jones <lee@kernel.org>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>, stable@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Zijun Hu <quic_zijuhu@quicinc.com>
+References: <20241102-phy_core_fix-v4-0-4f06439f61b1@quicinc.com>
+ <20241102-phy_core_fix-v4-4-4f06439f61b1@quicinc.com>
+ <ZypT18RpHSd_Vb-o@hovoldconsulting.com>
+Content-Language: en-US
+From: Zijun Hu <zijun_hu@icloud.com>
+In-Reply-To: <ZypT18RpHSd_Vb-o@hovoldconsulting.com>
+X-Proofpoint-GUID: P0XKrIbDBhf3WsrRJ3b3UEMcTA5BM8fK
+X-Proofpoint-ORIG-GUID: P0XKrIbDBhf3WsrRJ3b3UEMcTA5BM8fK
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.62.30
+ definitions=2024-11-06_05,2024-11-05_01,2024-09-30_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015 mlxlogscore=999
+ bulkscore=0 mlxscore=0 phishscore=0 suspectscore=0 malwarescore=0
+ spamscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2308100000 definitions=main-2411060085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241106_061719_903502_276AF921 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20241106_072852_900875_9E2C9BD8 
+X-CRM114-Status: GOOD (  17.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,165 +89,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7845802295797557879=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============7845802295797557879==
-Content-Type: multipart/signed;
- boundary=621d1a8e6e304e3c77a7347e6f41048798e325c45aa75fa6ab48b67fb5d0;
- micalg=pgp-sha256; protocol="application/pgp-signature"
+On 2024/11/6 01:20, Johan Hovold wrote:
+> On Sat, Nov 02, 2024 at 11:53:46AM +0800, Zijun Hu wrote:
+>> From: Zijun Hu <quic_zijuhu@quicinc.com>
+>>
+>> _of_phy_get() will directly return when suffers of_device_is_compatible()
+>> error, but it forgets to decrease refcount of OF node @args.np before error
+>> return, the refcount was increased by previous of_parse_phandle_with_args()
+>> so causes the OF node's refcount leakage.
+>>
+>> Fix by decreasing the refcount via of_node_put() before the error return.
+>>
+>> Fixes: b7563e2796f8 ("phy: work around 'phys' references to usb-nop-xceiv devices")
+>> Cc: stable@vger.kernel.org
+>> Signed-off-by: Zijun Hu <quic_zijuhu@quicinc.com>
+>> ---
+>>  drivers/phy/phy-core.c | 9 ++++++---
+>>  1 file changed, 6 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+>> index 52ca590a58b9..3127c5d9c637 100644
+>> --- a/drivers/phy/phy-core.c
+>> +++ b/drivers/phy/phy-core.c
+>> @@ -624,13 +624,15 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+>>  	struct of_phandle_args args;
+>>  
+>>  	ret = of_parse_phandle_with_args(np, "phys", "#phy-cells",
+>> -		index, &args);
+>> +					 index, &args);
+> 
+> This is an unrelated change which do not belong in this patch (and even
+> more so as it is a fix that is marked for backporting).
+> 
 
---621d1a8e6e304e3c77a7347e6f41048798e325c45aa75fa6ab48b67fb5d0
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+make sense.
+will remove it for next revision. (^^)
 
-Hi,
+>>  	if (ret)
+>>  		return ERR_PTR(-ENODEV);
+>>  
+>>  	/* This phy type handled by the usb-phy subsystem for now */
+>> -	if (of_device_is_compatible(args.np, "usb-nop-xceiv"))
+>> -		return ERR_PTR(-ENODEV);
+>> +	if (of_device_is_compatible(args.np, "usb-nop-xceiv")) {
+>> +		phy = ERR_PTR(-ENODEV);
+>> +		goto out_put_node;
+>> +	}
+>>  
+>>  	mutex_lock(&phy_provider_mutex);
+>>  	phy_provider = of_phy_provider_lookup(args.np);
+>> @@ -652,6 +654,7 @@ static struct phy *_of_phy_get(struct device_node *np, int index)
+>>  
+>>  out_unlock:
+>>  	mutex_unlock(&phy_provider_mutex);
+>> +out_put_node:
+>>  	of_node_put(args.np);
+>>  
+>>  	return phy;A
+> 
+> With the above fixed:
+> 
+> Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
 
-On Mon Nov 4, 2024 at 12:11 PM CET, Heiko Stuebner wrote:
-> From: Heiko Stuebner <heiko.stuebner@cherry.de>
->
-> Add dt-binding schema for the MIPI CSI/DSI PHY found on
-> Rockchip RK3588 SoCs.
->
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
-> ---
->  .../phy/rockchip,rk3588-mipi-dcphy.yaml       | 82 +++++++++++++++++++
->  1 file changed, 82 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588=
--mipi-dcphy.yaml
->
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-d=
-cphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcph=
-y.yaml
-> new file mode 100644
-> index 000000000000..5ee8d7246fa0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.ya=
-ml
-> @@ -0,0 +1,82 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip,rk3588-mipi-dcphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip MIPI CSI/DSI PHY with Samsung IP block
-> +
-> +maintainers:
-> +  - Guochun Huang <hero.huang@rock-chips.com>
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - rockchip,rk3576-mipi-dcphy
-> +      - rockchip,rk3588-mipi-dcphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: pclk
-> +      - const: ref
-> +
-> +  resets:
-> +    maxItems: 4
-> +
-> +  reset-names:
-> +    items:
-> +      - const: m_phy
-> +      - const: apb
-> +      - const: grf
-> +      - const: s_phy
-> +
-> +  rockchip,grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the syscon managing the 'mipi dcphy general register fi=
-les'.
-
-Should this dt-binding have a power-domains property?
-RK3588 TRM v1.0 part 1 page 1097 has ALIVE(PD_BUS) for
-MIPI_DC_PHY0~MIPI_DC_PHY1
-
-FTR: I made a similar remark on another patch sent by Heiko today. While
-that was incorrect, I do think it's appropriate for this binding after
-which it could also be added to the respective phy nodes in the dts(i)
-file(s).
-
-Cheers,
-  Diederik
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
-> +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
-> +
-> +    soc {
-> +      #address-cells =3D <2>;
-> +      #size-cells =3D <2>;
-> +
-> +      phy@feda0000 {
-> +        compatible =3D "rockchip,rk3588-mipi-dcphy";
-> +        reg =3D <0x0 0xfeda0000 0x0 0x10000>;
-> +        clocks =3D <&cru PCLK_MIPI_DCPHY0>,
-> +                 <&cru CLK_USBDPPHY_MIPIDCPPHY_REF>;
-> +        clock-names =3D "pclk", "ref";
-> +        resets =3D <&cru SRST_M_MIPI_DCPHY0>,
-> +                 <&cru SRST_P_MIPI_DCPHY0>,
-> +                 <&cru SRST_P_MIPI_DCPHY0_GRF>,
-> +                 <&cru SRST_S_MIPI_DCPHY0>;
-> +        reset-names =3D "m_phy", "apb", "grf", "s_phy";
-> +        rockchip,grf =3D <&mipidcphy0_grf>;
-> +        #phy-cells =3D <0>;
-> +      };
-> +    };
-
-
---621d1a8e6e304e3c77a7347e6f41048798e325c45aa75fa6ab48b67fb5d0
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCZyt6YwAKCRDXblvOeH7b
-bi/sAPkBV9EJ6lxI2snofBThwqWbOjtpT4jPd/NnpQy6YWvmEQEAoUUz2gsMxZzy
-NTI0fYtiF0lrdWJnjQbXBvaGYJy3jww=
-=aVJh
------END PGP SIGNATURE-----
-
---621d1a8e6e304e3c77a7347e6f41048798e325c45aa75fa6ab48b67fb5d0--
-
-
---===============7845802295797557879==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7845802295797557879==--
-
