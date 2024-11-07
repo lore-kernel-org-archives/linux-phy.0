@@ -4,94 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28D3CD4335D
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Nov 2024 13:45:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C184CD5D674
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Nov 2024 17:33:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+zUtlYF3Z6XnXNq85L70g3WhCMynoRVjvD4QjmdFkPo=; b=vrXxkuD4e8Lp2v
-	bYnkRhOnO7td4DTiTa4cBHGe0tkB66t/t1fWsExhdX6I5tzsKXbPOQo1OKyEfQtiXXKtaJa+6fLGb
-	CAjDDeAd4b7zG/rerNvw5rcZGz3k4nbRDo64VmtOVYGNYpNCS6+qm2V0UVTvIhnlZDH0ApAW7TsRq
-	lkhspwg1pxo4yJqw0eeAMM254lpOwhLjlK9kFEJe4OrVXm78ljCcKSeqZssf66eTAH4gsmWhvbF/r
-	zzYM5psBAhwBfY7Z3ddOBrLx3BPDqzEtuOOtecSee9N1bZG0USYwk8Gdku+J2q+/pplptSUkuKfpd
-	EjBc/meK9IY+iMJPR4rA==;
+	List-Owner; bh=SLBKV68XhsaoLDAXI6NxbesYydw0/oo9hKNiBg1UICE=; b=WwQmN4RrOXEq9v
+	Pa5DdfVsJYWW1s48DMnmC7brrUQUlrLzvK4yXgVBy4RctYa+ItX3mYwXkxIN3HPQG9FcTOYC+Hf3z
+	zbNWgXyyd+ePd5CSQVijavKpeeJaFb8BSbqcdvqhrxANlS6gaJGQvt7MMfUm30X9leNmzRU8h8Np5
+	+QkIvvXK/db8D8kjJnE4PKmULKPtKo0wsDC4E21L1hK1YMI75egz8MXqfjRF8CUp3vqPXFXaR3PQ8
+	ADEL92SGkqmd5jNz5EwN+W7VcpQ8yYvUDnqdj5snkGSR/FsLBpoUPhon9yzeYsd0aRPOh6BREI+oG
+	cMF8Pn82LM+f5HR9GZDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t92p4-000000079uC-3Kdf;
-	Thu, 07 Nov 2024 13:45:18 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1t96Ng-00000007pCR-3yKD;
+	Thu, 07 Nov 2024 17:33:17 +0000
+Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t92nF-000000079JY-3MLj
+	id 1t96Nf-00000007pBO-0BPd
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Nov 2024 13:43:28 +0000
-Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2fb518014b9so8911961fa.3
-        for <linux-phy@lists.infradead.org>; Thu, 07 Nov 2024 05:43:25 -0800 (PST)
+	Thu, 07 Nov 2024 17:33:16 +0000
+Received: by mail-pg1-x52a.google.com with SMTP id 41be03b00d2f7-7e9e38dd5f1so1020988a12.0
+        for <linux-phy@lists.infradead.org>; Thu, 07 Nov 2024 09:33:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1730987004; x=1731591804; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=lTaMwPBJtQ/LdLyLH+A1iubTYFAHCFT/bM+1zUoljkk=;
-        b=Dvwhwa7LQ2wyG7YpB626szmE1RY2RiFwjQ25FSzHN5OxT71kOppw0OAfidXdghiOvE
-         +2CvteRdwHT3t/8ILuEEkOpI57+w7mNgo+eLfMcB856NzAnpsd/LYnTWCeSRzwZIw5xc
-         hmefk2nstV9rx81Gw8ML/ap/U1EBo0zOqD+g9ZEbAXWAFbQe/yE+i4/8ETO0AEmVxpNN
-         bosGJFjc/xkm929DRnnk5FktgFVZExJtconoTxMVGfIsv7Uy/r9b7DNsrcT31XlhcJZB
-         7OVUX/NEIujwHfcVGWTdQkBylB8DK677LSUPUkRtptkK45/Hxu+u64KaNCbL2g/pO/XH
-         NI8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1730987004; x=1731591804;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+        d=gmail.com; s=20230601; t=1731000793; x=1731605593; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=lTaMwPBJtQ/LdLyLH+A1iubTYFAHCFT/bM+1zUoljkk=;
-        b=Lrag+SwjWEfMWnQvxQB+ztKxqhO7NQCBLUMGIt8Gg8xYG8c5j4vAE3Ulr7QS78UxP5
-         5MMjhqPKJqc52Jdj289KOH2ltAMIfVi0GbTnyRbYTKQFb9MAvojCf7JDTrQJyHlDtJzP
-         ov8vjGrjoHV1PYrfd96DjlpS9WwRzZ+dsN9ENYF6Wgwo9nmUZuyt6tOITNXrvQVWUEIL
-         MHrzYNLbXwKxWmJFlXPMzT7e6ajQrY0pdZy4Ttq7weP8A/81pWep8GNLWhZ4uF2KxOLX
-         eWDg3/laG9Qug3zyVLGg0yNl9xz5IiEWScnf43pDDyP+08+3l2GVRFCVNmzED8cv2+Iq
-         lBnQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXQHYnZPo7KrFOPvuYbzQAo6afv4SMAOzwz1KWBlY1qtrGsSqz3FijMnGOD6A4JITpY1eLkANH+c/M=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxdv3DhZ6mS61vjoWY4L+RwB02ILB+QyDbWsHhveG6tFqkdnRJP
-	kB72O+oTykLtKw7hAiHE6DAuv9rPSi76KQ3w2mpkfJ36amVEE5WKw6nLgwJbRBI=
-X-Google-Smtp-Source: AGHT+IEEXrpAS4axbz2EtICI+fGeaZacL297HQJJZ5R8O8wDOSGkjXWDf4lfkDOD+6Bag7+pFG1qiQ==
-X-Received: by 2002:a05:651c:2209:b0:2fb:4c08:be08 with SMTP id 38308e7fff4ca-2fcbdf6ff42mr222407471fa.11.1730987003678;
-        Thu, 07 Nov 2024 05:43:23 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ff178dfe0asm2220701fa.23.2024.11.07.05.43.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 07 Nov 2024 05:43:22 -0800 (PST)
-Date: Thu, 7 Nov 2024 15:43:20 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Sandor Yu <sandor.yu@nxp.com>
-Cc: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>, 
-	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
-	"jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@gmail.com" <jernej.skrabec@gmail.com>, 
-	"airlied@gmail.com" <airlied@gmail.com>, "daniel@ffwll.ch" <daniel@ffwll.ch>, 
-	"robh+dt@kernel.org" <robh+dt@kernel.org>, 
-	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
-	"s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>, 
-	"vkoul@kernel.org" <vkoul@kernel.org>, 
-	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, "mripard@kernel.org" <mripard@kernel.org>, 
-	"kernel@pengutronix.de" <kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, 
-	Oliver Brown <oliver.brown@nxp.com>, 
-	"alexander.stein@ew.tq-group.com" <alexander.stein@ew.tq-group.com>, "sam@ravnborg.org" <sam@ravnborg.org>
-Subject: Re: [PATCH v18 6/8] phy: freescale: Add DisplayPort/HDMI Combo-PHY
- driver for i.MX8MQ
-Message-ID: <z6p6bewmykmufsghdojr4lvziurmmfpnrr5m4w3pfjlqzobpwr@zq2d2ukjvtac>
-References: <cover.1730172244.git.Sandor.yu@nxp.com>
- <411e42c70e71dce33a80059f663fb6c58fb2ac8c.1730172244.git.Sandor.yu@nxp.com>
- <efciuvoptv7qxwauswfseb6zlt5w4fmjdbm3huxfsn63a6bm7u@kfgkkvqoz5x4>
- <PAXPR04MB9448F638D47B5495CF78007AF4522@PAXPR04MB9448.eurprd04.prod.outlook.com>
+        bh=6HftcmsOOs+Ls9qs/ilXFXGyq529PGQ4QO+JwXX/wik=;
+        b=PokBaFpNxgfMcDamPZxXdIH9qWQ6M3Yg2Cwo9Imm6jXp6nMmULpiB06iOw9/FnDudA
+         Is8vdGi2YyGoUlsKYO1V4xW0GnTfYt0NPwjmHMgnx+IbITDiOJVCPqYFCJm8WQdSvjc6
+         Zb+dK/bVD73hXOkVu/QDu9Hhum5meYd3ChyXfIruulkVEVfJGx2oqa5dq+4M4UirUKsC
+         F8yaYBp/b93YW9DYs+jhb7owVayXL5YYC9LpgSFFAQ66DCfv/J0AvlBAQCHkL0HTMAMP
+         ImXK3+vQLtNRmtYhh5BS217BFQakI37eQf8Lqt7W+N61rJEeeR500jU4cYibSCDEaqZY
+         QUYw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1731000793; x=1731605593;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=6HftcmsOOs+Ls9qs/ilXFXGyq529PGQ4QO+JwXX/wik=;
+        b=EvzV3634MPFLGNUMaHvmttv3M3yS6uy0XI/ORccNRxUV3wcp2RAdAXTcN+ezI0HJcO
+         40jskOBJKtvgwrqg8yrJ58gpxeY0D7HRvQvsg1kGOyHuJtWYh+fROlDLyFqxW0nEB/VO
+         DJwWkhEvDnRmgeCF9Vi2LzmmvdRcht4VZ1pGqho89kBvCBoPliUXus9o5zsm74mvYNlO
+         o14yBMgPz3cgt34YnAiwS4gNHgOprFI0hPMHuR7rEr70sBMuB8Gyl9HUVm2tzOjjrX1p
+         zTDF8dmu3fNT8fAArPrwgst87gyXbLXTbQqEFbukwmy7xY4+Bn18iRlA9Y2Jvfj/Qb3v
+         mpRQ==
+X-Gm-Message-State: AOJu0Yzc3zaY52I6pEwaYzmJO4Y6/6mRmtHXq1sNMZDC2hRQ6N8IqUYu
+	BFuXLKnsubmW7bzXKceBe+FUu20HySNzr37GKQ5xghn0h/rVlGTs/rhIH89dhODMpOouFJs+SPW
+	+9v5Z4FgeFjLfrKnIHC7IEyItUp9cVw==
+X-Google-Smtp-Source: AGHT+IEJ8zWmzbfoKjIq//36/+CYuY7j1PnwnpoNb20YuudbiCyf8+lGcJqZlqV568JLMcy5XcjBjUGlLD8TC4ubmdw=
+X-Received: by 2002:a17:90b:2f03:b0:2e9:20d8:4147 with SMTP id
+ 98e67ed59e1d1-2e9b1475c8fmr54805a91.33.1731000793175; Thu, 07 Nov 2024
+ 09:33:13 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <PAXPR04MB9448F638D47B5495CF78007AF4522@PAXPR04MB9448.eurprd04.prod.outlook.com>
+References: <20241026132014.73050-1-aford173@gmail.com>
+In-Reply-To: <20241026132014.73050-1-aford173@gmail.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Thu, 7 Nov 2024 11:33:01 -0600
+Message-ID: <CAHCN7x+Mdp72oiuLb3dM+sOy7DfdVWoakxH92yxvmW3oSPNPLw@mail.gmail.com>
+Subject: Re: [PATCH V2 1/3] phy: freescale: fsl-samsung-hdmi: Expand Integer
+ divider range
+To: linux-phy@lists.infradead.org
+Cc: aford@beaconembedded.com, sandor.yu@nxp.com, 
+	Frieder Schrempf <frieder.schrempf@kontron.de>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Dominique Martinet <dominique.martinet@atmark-techno.com>, 
+	Marco Felsch <m.felsch@pengutronix.de>, 
+	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
+	Lucas Stach <l.stach@pengutronix.de>, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241107_054325_893499_3113B2CB 
-X-CRM114-Status: GOOD (  30.09  )
+X-CRM114-CacheID: sfid-20241107_093315_103050_4EE7C8E2 
+X-CRM114-Status: GOOD (  17.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,136 +90,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 05, 2024 at 02:05:51PM +0000, Sandor Yu wrote:
-> > 
-> > On Tue, Oct 29, 2024 at 02:02:14PM +0800, Sandor Yu wrote:
-> > > Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
-> > >
-> > > Cadence HDP-TX PHY could be put in either DP mode or
-> > > HDMI mode base on the configuration chosen.
-> > > DisplayPort or HDMI PHY mode is configured in the driver.
-> > >
-> > > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> > > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> > > ---
-> > > v17->v18:
-> > > - fix build error as code rebase to latest kernel version.
-> > >
-> > >  drivers/phy/freescale/Kconfig                |   10 +
-> > >  drivers/phy/freescale/Makefile               |    1 +
-> > >  drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c | 1337
-> > ++++++++++++++++++
-> > >  3 files changed, 1348 insertions(+)
-> > >  create mode 100644 drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c
-> > >
-> > > diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-> > > index dcd9acff6d01a..2b1210367b31c 100644
-> > > --- a/drivers/phy/freescale/Kconfig
-> > > +++ b/drivers/phy/freescale/Kconfig
-
-[...]
-
-I'm sorry, my email client cut the email.
-
-> > > +static int cdns_hdptx_dp_configure(struct phy *phy,
-> > > +                                union phy_configure_opts *opts)
-> > > +{
-> > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
-> > > +
-> > > +     cdns_phy->dp.link_rate = opts->dp.link_rate;
-> > > +     cdns_phy->dp.lanes = opts->dp.lanes;
-> > 
-> > Shouldn't this be conditional on set_rate / set_lanes ?
-> 
-> PHY do not support reconfigure link rate and lane count.
-
-So, you don't support reconfiguring the rate / count, but you still copy
-the new rate and lanes into your driver data. That sounds strange.
-
-[...]
-
-> 
-> > 
-> > > +
-> > > +static int cdns_hdptx_phy_set_mode(struct phy *phy, enum phy_mode
-> > mode, int submode)
-> > > +{
-> > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
-> > > +     int ret = 0;
-> > > +
-> > > +     if (mode == PHY_MODE_DP) {
-> > > +             hdptx_dp_phy_ref_clock_type(cdns_phy);
-> > > +
-> > > +             /* PHY power up */
-> > > +             ret = hdptx_dp_phy_power_up(cdns_phy);
-> > > +             if (ret < 0)
-> > > +                     return ret;
-> > > +
-> > > +             hdptx_dp_aux_cfg(cdns_phy);
-> > 
-> > Why? Don't power up the PHY if you haven't been told to.
-> 
-> Power on the PHY to enable DP AUX, which is necessary for reading EDID and training the link.
-
-Call phy_power_on() from the DP driver.
-
-> 
-> > 
-> > > +     } else if (mode != PHY_MODE_HDMI) {
-> > > +             dev_err(&phy->dev, "Invalid PHY mode: %u\n", mode);
-> > > +             return -EINVAL;
-> > > +     }
-> > > +
-> > > +     return ret;
-> > > +}
-> > > +
-> > > +static int cdns_hdptx_hdmi_configure(struct phy *phy,
-> > > +                                  union phy_configure_opts
-> > *opts)
-> > > +{
-> > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
-> > > +     int ret;
-> > > +
-> > > +     cdns_phy->hdmi.tmds_char_rate = opts->hdmi.tmds_char_rate;
-> > > +
-> > > +     /* Check HDMI FW alive before HDMI PHY init */
-> > > +     ret = hdptx_phy_check_alive(cdns_phy);
-> > > +     if (!ret) {
-> > > +             dev_err(cdns_phy->dev, "NO HDMI FW running\n");
-> > > +             return -ENXIO;
-> > > +     }
-> > > +
-> > > +     /* Configure PHY */
-> > > +     if (hdptx_hdmi_phy_cfg(cdns_phy, cdns_phy->hdmi.tmds_char_rate)
-> > < 0) {
-> > > +             dev_err(cdns_phy->dev, "failed to set phy pclock\n");
-> > > +             return -EINVAL;
-> > > +     }
-> > > +
-> > > +     ret = hdptx_hdmi_phy_power_up(cdns_phy);
-> > 
-> > it seems to be all over the place :-(
-> 
-> The PHY has different power-up rules depending on whether it's in DP or HDMI mode. 
-> In DP mode, it needs to power up first to enable DP AUX. 
-> In HDMI mode, it can power up last.
-
-The main question is why are you powering the PHY from the configure
-path at all? There is a phy_power_on() API which should be used by your
-HDMI / DP driver instead of handling that in an automagic way.
-
-> 
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU2F0LCBPY3QgMjYsIDIwMjQgYXQgODoyMOKAr0FNIEFkYW0gRm9yZCA8YWZvcmQxNzNAZ21h
+aWwuY29tPiB3cm90ZToKPgo+IFRoZSBJbnRlZ2VyIGRpdmRlciB1c2VzIHZhbHVlcyBvZiBQLE0s
+IGFuZCBTIHRvIGRldGVybWluZSB0aGUgUExMCj4gcmF0ZS4gIEN1cnJlbnRseSwgdGhlIHJhbmdl
+IG9mIE0gd2FzIHNldCBiYXNlZCBvbiBhIHNlcmllcyBvZgo+IHRhYmxlIGVudHJpZXMgd2hlcmUg
+dGhlIHJhbmdlIHdhcyBsaW1pdGVkLiAgU2luY2UgdGhlIHJlZiBtYW51YWwKPiBzaG93cyBpdCBp
+cyA4LWJpdCB3aWRlLCBleHBhbmQgdGhlIHJhbmdlIHRvIGJlIHVwIHRvIDI1NS4KPgo+IFNpZ25l
+ZC1vZmYtYnk6IEFkYW0gRm9yZCA8YWZvcmQxNzNAZ21haWwuY29tPgo+IFJldmlld2VkLWJ5OiBG
+cmllZGVyIFNjaHJlbXBmIDxmcmllZGVyLnNjaHJlbXBmQGtvbnRyb24uZGU+Cj4gLS0tCj4gVjI6
+ICBGaXggdHlwbyBpbiBjb21tZW50CgpWaW5vZCwKCklzIHRoZXJlIGFueSBjaGFuY2UgdGhpcyBz
+ZXJpZXMgY291bGQgYWxzbyBiZSBhcHBsaWVkIGZvciB0aGUgbmV4dApyZWxlYXNlPyAgSSBkb24n
+dCBrbm93IHdoYXQgdGhlIGN1dG9mZiBkZWFkbGluZSBpcywgc28gaWYgSSdtIHRvbwpsYXRlLCBJ
+IGFwb2xvZ2l6ZS4KCmFkYW0KPgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUv
+cGh5LWZzbC1zYW1zdW5nLWhkbWkuYyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNh
+bXN1bmctaGRtaS5jCj4gaW5kZXggMmM4MDM4ODY0MzU3Li40MTJjMDNiN2RjZDYgMTAwNjQ0Cj4g
+LS0tIGEvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMKPiArKysg
+Yi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYwo+IEBAIC00MDYs
+MTYgKzQwNiwxNSBAQCBzdGF0aWMgdW5zaWduZWQgbG9uZyBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9m
+aW5kX3Btcyh1bnNpZ25lZCBsb25nIGZvdXQsIHU4ICpwLCB1MQo+ICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgY29udGludWU7Cj4KPiAgICAgICAgICAgICAgICAgICAgICAgICAvKgo+
+IC0gICAgICAgICAgICAgICAgICAgICAgICAqIFRPRE86IFJlZiBNYW51YWwgZG9lc24ndCBzdGF0
+ZSB0aGUgcmFuZ2Ugb2YgX20KPiAtICAgICAgICAgICAgICAgICAgICAgICAgKiBzbyB0aGlzIHNo
+b3VsZCBiZSBmdXJ0aGVyIHJlZmluZWQgaWYgcG9zc2libGUuCj4gLSAgICAgICAgICAgICAgICAg
+ICAgICAgICogVGhpcyByYW5nZSB3YXMgc2V0IGJhc2VkIG9uIHRoZSBvcmlnaW5hbCB2YWx1ZXMK
+PiAtICAgICAgICAgICAgICAgICAgICAgICAgKiBpbiB0aGUgbG9va3VwIHRhYmxlCj4gKyAgICAg
+ICAgICAgICAgICAgICAgICAgICogVGhlIFJlZiBtYW51YWwgZG9lc24ndCBleHBsaWNpdGx5IHN0
+YXRlIHRoZSByYW5nZSBvZiBNLAo+ICsgICAgICAgICAgICAgICAgICAgICAgICAqIGJ1dCBpdCBk
+b2VzIHNob3cgaXQgYXMgYW4gOC1iaXQgdmFsdWUsIHNvIHJlamVjdAo+ICsgICAgICAgICAgICAg
+ICAgICAgICAgICAqIGFueSB2YWx1ZSBhYm92ZSAyNTUuCj4gICAgICAgICAgICAgICAgICAgICAg
+ICAgICovCj4gICAgICAgICAgICAgICAgICAgICAgICAgdG1wID0gKHU2NClmb3V0ICogKF9wICog
+X3MpOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIGRvX2Rpdih0bXAsIDI0ICogTUhaKTsKPiAt
+ICAgICAgICAgICAgICAgICAgICAgICBfbSA9IHRtcDsKPiAtICAgICAgICAgICAgICAgICAgICAg
+ICBpZiAoX20gPCAweDMwIHx8IF9tID4gMHg3YikKPiArICAgICAgICAgICAgICAgICAgICAgICBp
+ZiAodG1wID4gMjU1KQo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29udGludWU7
+Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgX20gPSB0bXA7Cj4KPiAgICAgICAgICAgICAgICAg
+ICAgICAgICAvKgo+ICAgICAgICAgICAgICAgICAgICAgICAgICAqIFJldiAyIG9mIHRoZSBSZWYg
+TWFudWFsIHN0YXRlcyB0aGUKPiAtLQo+IDIuNDUuMgo+CgotLSAKbGludXgtcGh5IG1haWxpbmcg
+bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
