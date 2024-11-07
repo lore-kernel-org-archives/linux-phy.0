@@ -4,60 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6A4CD29FBC
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Nov 2024 01:28:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EA71D5AE7D
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Nov 2024 10:08:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kqfqofWTXiCx9zlpRqXhvX2i+qetEPlSzbQptd1FZRM=; b=OHGpMFF9sMXPO0
-	zNGKp3GHaTd2x1I3pAVG1mnYoodGiPHi2d0x5JYODobQ7fmSZZF1mFQbtWnEq7oIg4YOudg5PBkXv
-	AtEjCmAhNiKXvys0gDM3iPsfQD8Eg8ph5vfp+i7u9rswQJBgxx0cu42GO2ujf9aAf0u8PWVvfjqPh
-	K4KOpeCPwQnH3iL/TqIr8NrQ4zzMVE6z/uTeYiHM54+6cWUl8n40AVYbp+jsJgVec0XWBRWOTiHt+
-	ZgLsuaizoaPP+mCFfCHe5ctcgVYzJtVu3dKh00Ty8PoztftaUxSH7cMYIqBhoemsSMjdniNYEV/HW
-	KHeNCJ4YvVqT5wZMjvIg==;
+	List-Owner; bh=Kka3o3b/41+xGJIk6o+fvYS1/KWmAQ7Z3zaUyZmYCxw=; b=R3Wn8xjsyexLSb
+	Kf0o5IdJ7hE69S/FJrWx7nm2fXOdH7QEkQhu9GVcuD3m27Mc/Yh7hA+CwxOk6UmFlmn3H/UxoVq0g
+	GwraGuRq6EBaaS5sdZJHmJMJtEdxrV59GhS46EDAVsjhBWXkCp61CpLoXTjlUOe2TaN8qV9T3WRdn
+	w3hhQw88m1QRBpO/2NPbkB5+BLbES0Vb9y4llUjMzlCUE5sKUBq+sPO9nZfL0ZjxcWxtniDewm5ig
+	JkzG2MwfmXXp09tYhg5bJonvpGxO8sr9KzgtEtmQv2pBlfIFFNdEMDYIjA/Rs5/XNU1hIZF/RjUB/
+	UIqM0tZX52ujAI55zrAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8rJZ-00000005Gg7-42kC;
-	Thu, 07 Nov 2024 01:28:01 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35])
+	id 1t8zRX-00000006PRt-2t9y;
+	Thu, 07 Nov 2024 10:08:47 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8rJX-00000005Gfb-23rO
+	id 1t8zJD-00000006Nnk-0AGV
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Nov 2024 01:28:01 +0000
-Received: from mail.maildlp.com (unknown [172.19.88.163])
-	by szxga07-in.huawei.com (SkyGuard) with ESMTP id 4XkPXv3c7fz1SCCT;
-	Thu,  7 Nov 2024 09:26:07 +0800 (CST)
-Received: from kwepemg200008.china.huawei.com (unknown [7.202.181.35])
-	by mail.maildlp.com (Postfix) with ESMTPS id E4F07180042;
-	Thu,  7 Nov 2024 09:27:49 +0800 (CST)
-Received: from [10.67.109.254] (10.67.109.254) by
- kwepemg200008.china.huawei.com (7.202.181.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.11; Thu, 7 Nov 2024 09:27:49 +0800
-Message-ID: <ee6521c6-9038-ab16-0773-c9425aae54fd@huawei.com>
-Date: Thu, 7 Nov 2024 09:27:48 +0800
+	Thu, 07 Nov 2024 10:00:14 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-37d495d217bso631935f8f.0
+        for <linux-phy@lists.infradead.org>; Thu, 07 Nov 2024 02:00:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1730973609; x=1731578409; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:references:cc:to:from
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=R02EDs+did3sWf/l/M/xZDeb+Ibpap6rP6djlTEoJvs=;
+        b=oiD9NqA3DLQtH/MAdj/Si0IoKGCXW7POiJq9DDN68QsqUlncSiTtOum8k9lI2f/mWl
+         /afMwkrilacLCMTnWdsbN5PhdwQwAWgTCJZZjo3hj9FTZodnnaxYWODqIr6ROSeQPl+S
+         gs1ro/37lC5nrEfDdtr5YVuNzfBjRHbbKFYHzaak+u+VDm/QkCRCAn5JX9sA1jAwaRs5
+         v5uUE7jHTuNkNspCaURDZ9JSOs29fQQxz80LqLKNoqPNANx7P8WN6m3XlvnLKZi4LLxk
+         tKLuT6xC4rn/nlD+QtMzKWgtsRnaqwAYq7vbprjnRa23/jYLTRTndG4Aviyk8RS1Tgsy
+         nZ8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1730973609; x=1731578409;
+        h=content-transfer-encoding:in-reply-to:references:cc:to:from
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=R02EDs+did3sWf/l/M/xZDeb+Ibpap6rP6djlTEoJvs=;
+        b=gMOB64b/tlVUA5Me9YQbxHnJaj++aW8rTZuiXdFAujZA+qUHiYCXsQV5k1l7oG8RzO
+         ZphzlPveum8TeTEhdEIv3e66vIARhTTsTzMKrqIGC0luGgqYyBP9vR+hE2hvteaZwWI7
+         pwtkOTsuFdjmO7Y/f/5tnDunqyUwQHRkcYRhkZRg+miP+SObGgmf60KtmPlbH/7hg/rz
+         nY1DS3ht41QjL8xYOXNblHNxHkB9JkxwKpzdZ7ZY8gng42LPzZ9SHNk0oEV043Y1sP0M
+         PruV6LAClnWVrl2DcrppGYVp6Uic/tOFA7q3mKXQFz/6vV0aGMAoF4mKjJ6VdhaD1CwD
+         ZiAw==
+X-Forwarded-Encrypted: i=1; AJvYcCV4n6fP2as74Xg1OkKG+nkmOP3ewSgeACd83FjyJ9nbO2qIcJVekQKeHvXJIn2cvdIExAoSwhzheRE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzHGya13Kaj/U7PXVrq+DVbg3r5PXVfDN2rzDfM0NDtKTSe3oIn
+	s9v71Bpprd+xIuSQ5ELqUkPMBGEUAsK5a/C3nxYZNG5jmKCGrpOKrX/6yahf/NY=
+X-Google-Smtp-Source: AGHT+IEffb2xJDgmV6dLSuFyO1fmxJvqSnlcu1KUumgCd4EHyMTsYXx5V2d5rZ79w6rYl9OZ0LDdOw==
+X-Received: by 2002:a5d:47ac:0:b0:37d:48f2:e749 with SMTP id ffacd0b85a97d-381c7a4636cmr23082414f8f.10.1730973608986;
+        Thu, 07 Nov 2024 02:00:08 -0800 (PST)
+Received: from [192.168.50.4] ([82.78.167.28])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-432b05e5871sm17547405e9.37.2024.11.07.02.00.05
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 07 Nov 2024 02:00:07 -0800 (PST)
+Message-ID: <91916297-8156-44d9-b56f-9a67e651a9a4@tuxon.dev>
+Date: Thu, 7 Nov 2024 12:00:05 +0200
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.2.0
-Subject: Re: [PATCH v2] phy: ocelot-serdes: Fix IS_ERR() vs NULL bug in
- serdes_probe()
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
 Content-Language: en-US
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <krzysztof.kozlowski@linaro.org>,
-	<florian.fainelli@broadcom.com>, <colin.foster@in-advantage.com>,
-	<davem@davemloft.net>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>
-References: <20241101061145.2282501-1-ruanjinjie@huawei.com>
-From: Jinjie Ruan <ruanjinjie@huawei.com>
-In-Reply-To: <20241101061145.2282501-1-ruanjinjie@huawei.com>
-X-Originating-IP: [10.67.109.254]
-X-ClientProxiedBy: dggems701-chm.china.huawei.com (10.3.19.178) To
- kwepemg200008.china.huawei.com (7.202.181.35)
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+To: Biju Das <biju.das.jz@bp.renesas.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
+ "kishon@kernel.org" <kishon@kernel.org>, "robh@kernel.org"
+ <robh@kernel.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+ "conor+dt@kernel.org" <conor+dt@kernel.org>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "geert+renesas@glider.be" <geert+renesas@glider.be>,
+ "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
+ <35dc7414-f5bd-4ed4-bfa1-f723f4f0078c@tuxon.dev>
+ <TY3PR01MB11346A4814F83FE296A1DED8886922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <TY3PR01MB1134648BF51F1B52BFE34DD6D86932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <fbfa9179-2f52-429f-8b69-f7f4064e796b@tuxon.dev>
+ <TYCPR01MB11332EF1A8D064C491D8F261286932@TYCPR01MB11332.jpnprd01.prod.outlook.com>
+ <f7c57e76-b890-491f-880d-62d060b7b31e@tuxon.dev>
+ <TYCPR01MB11332BE2EDB318950B9C7B54C86932@TYCPR01MB11332.jpnprd01.prod.outlook.com>
+ <TY3PR01MB113469FC8A9F49D9B1FA432FD86932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <0b73544b-0253-43b9-b631-6578b48eaca8@tuxon.dev>
+ <TY3PR01MB1134689573A785E91A9041E1886932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <5bcdc677-e61e-4312-a19b-57b4600685d3@tuxon.dev>
+ <TY3PR01MB1134690F9D37E3BB4814D864386932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
+ <d64243fe-48ea-4cb5-b6d6-e9f820e1b8a3@tuxon.dev>
+In-Reply-To: <d64243fe-48ea-4cb5-b6d6-e9f820e1b8a3@tuxon.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241106_172759_723530_537B5B99 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20241107_020011_513322_AD4D1F23 
+X-CRM114-Status: GOOD (  23.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,39 +127,172 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Gentle ping.
+Hi, all,
 
-On 2024/11/1 14:11, Jinjie Ruan wrote:
-> dev_get_regmap() call can return a null pointer. It will not return
-> error pointers. Thus apply a null pointer check instead.
+On 03.09.2024 17:48, claudiu beznea wrote:
 > 
-> Cc: stable@vger.kernel.org
-> Fixes: 672faa7bbf60 ("phy: phy-ocelot-serdes: add ability to be used in a non-syscon configuration")
-> Acked-by: Colin Foster <colin.foster@in-advantage.com>
-> Signed-off-by: Jinjie Ruan <ruanjinjie@huawei.com>
-> ---
-> v2:
-> - Add Acked-by.
-> - Update the commit message as Markus suggested.
-> ---
->  drivers/phy/mscc/phy-ocelot-serdes.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/phy/mscc/phy-ocelot-serdes.c b/drivers/phy/mscc/phy-ocelot-serdes.c
-> index 1cd1b5db2ad7..77ca67ce6e91 100644
-> --- a/drivers/phy/mscc/phy-ocelot-serdes.c
-> +++ b/drivers/phy/mscc/phy-ocelot-serdes.c
-> @@ -512,8 +512,8 @@ static int serdes_probe(struct platform_device *pdev)
->  						    res->name);
->  	}
->  
-> -	if (IS_ERR(ctrl->regs))
-> -		return PTR_ERR(ctrl->regs);
-> +	if (!ctrl->regs)
-> +		return -EINVAL;
->  
->  	for (i = 0; i < SERDES_MAX; i++) {
->  		ret = serdes_phy_create(ctrl, i, &ctrl->phys[i]);
+> On 03.09.2024 16:45, Biju Das wrote:
+>> Hi Claudiu,
+>>
+>>> -----Original Message-----
+>>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
+>>> Sent: Tuesday, September 3, 2024 1:57 PM
+>>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
+>>>
+>>>
+>>>
+>>> On 03.09.2024 15:37, Biju Das wrote:
+>>>>
+>>>>
+>>>>> -----Original Message-----
+>>>>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
+>>>>> Sent: Tuesday, September 3, 2024 1:26 PM
+>>>>> To: Biju Das <biju.das.jz@bp.renesas.com>; Ulf Hansson
+>>>>> <ulf.hansson@linaro.org>
+>>>>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+>>>>> krzk+dt@kernel.org; conor+dt@kernel.org; p.zabel@pengutronix.de;
+>>>>> geert+renesas@glider.be; magnus.damm@gmail.com;
+>>>>> gregkh@linuxfoundation.org; mturquette@baylibre.com;
+>>>>> sboyd@kernel.org; Yoshihiro Shimoda
+>>>>> <yoshihiro.shimoda.uh@renesas.com>;
+>>>>> linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
+>>>>> linux-kernel@vger.kernel.org; linux- renesas-soc@vger.kernel.org;
+>>>>> linux-usb@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+>>>>> linux- clk@vger.kernel.org; linux-pm@vger.kernel.org; Claudiu Beznea
+>>>>> <claudiu.beznea.uj@bp.renesas.com>
+>>>>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas
+>>>>> RZ/G3S SoC
+>>>>>
+>>>>>
+>>>>>
+>>>>> On 03.09.2024 15:00, Biju Das wrote:
+>>>>>>
+>>>>>>
+>>>>>>> -----Original Message-----
+>>>>>>> From: Biju Das <biju.das.jz@bp.renesas.com>
+>>>>>>> Sent: Tuesday, September 3, 2024 12:07 PM
+>>>>>>> To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>; Ulf Hansson
+>>>>>>> <ulf.hansson@linaro.org>
+>>>>>>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
+>>>>>>> krzk+dt@kernel.org; conor+dt@kernel.org; p.zabel@pengutronix.de;
+>>>>>>> geert+renesas@glider.be; magnus.damm@gmail.com;
+>>>>>>> gregkh@linuxfoundation.org; mturquette@baylibre.com;
+>>>>>>> sboyd@kernel.org; Yoshihiro Shimoda
+>>>>>>> <yoshihiro.shimoda.uh@renesas.com>;
+>>>>>>> linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
+>>>>>>> linux-kernel@vger.kernel.org; linux- renesas-soc@vger.kernel.org;
+>>>>>>> linux-usb@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+>>>>>>> linux- clk@vger.kernel.org; linux-pm@vger.kernel.org; Claudiu
+>>>>>>> Beznea <claudiu.beznea.uj@bp.renesas.com>
+>>>>>>> Subject: RE: [PATCH 00/16] Add initial USB support for the Renesas
+>>>>>>> RZ/G3S SoC
+>>>>>>>
+>>>>>>> Hi Claudiu,
+>>>>>>>
+>>>>>>>> -----Original Message-----
+>>>>>>>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
+>>>>>>>> Sent: Tuesday, September 3, 2024 12:00 PM
+>>>>>>>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas
+>>>>>>>> RZ/G3S SoC
+>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> On 03.09.2024 13:31, Biju Das wrote:
+>>>>>>>>>>> During boot clr USB PWR READY signal in TF-A.
+>>>>>>>>>>> STR case, suspend set USB PWR READY signal in TF-A.
+>>>>>>>>>>> STR case, resume clr USB PWR READY signal in TF-A.
+>>>>>>>>>> As I said previously, it can be done in different ways. My point
+>>>>>>>>>> was to let Linux set what it needs for all it's devices to work.
+>>>>>>>>>> I think the way to go forward is a
+>>>>>>>> maintainer decision.
+>>>>>>>>>
+>>>>>>>>> I agree, there can be n number of solution for a problem.
+>>>>>>>>>
+>>>>>>>>> Since you modelled system state signal (USB PWRRDY) as reset
+>>>>>>>>> control signal, it is reset/DT maintainer's decision to say the
+>>>>>>>>> final word whether this signal fits in reset
+>>>>>>>> system framework or not?
+>>>>>>>>
+>>>>>>>> I was thinking:
+>>>>>>>> 1/ Geert would be the best to say if he considers it OK to handle this
+>>>>>>>>    in Linux
+>>>>>>>
+>>>>>>> I agree Geert is the right person for taking SYSTEM decisions,
+>>>>>>> since the signal is used only during state transitions (Table
+>>>>>>> 41.6.4 AWO to ALL_ON and 41.6.3 ALL_ON to AWO)
+>>>>>>
+>>>>>> One more info, as per [1], this USB PWRRDY signal setting to be before Linux kernel boots.
+>>>>>
+>>>>> The "controlled by" column mentions CA-55 on PWRRDY signal control
+>>>>> line and it is b/w steps "DDR exits from retention mode" and  "clock
+>>>>> start settings for system bus and peripheral modules". AFAICT, after DDR exists retention mode
+>>> Linux is ready to run.
+>>>>
+>>>> DDR retention exit happens in TF-A and it jumps into reset code where it executes BL2 in TF_A. Bl2
+>>> checks for warm or cold reset.
+>>>> If it is warm reset, it sets required minimal clocks/resets and pass
+>>>> the control to linux by calling the SMC callback handler. Which in turn calls resume(step 11-->14)
+>>> path.
+>>>
+>>> Is this from HW manual or some specific documentation? I'm referring at "resume" == "steps 11-->14"
+>>>
+>>>>
+>>>> Step 8, Cortex-A55 Exit from DDR retention mode (when using) Setting
+>>>> for exiting form DDR retention mode Step 9, Cortex-A55 USB PHY PWRRDY
+>>>> signal control (if use USB) SYS_USB_PWRRDY Step 10, Cortex-A55 PCIe
+>>>> RST_RSM_B signal control (if use PCIe) SYS_PCIE_RST_RSM_B
+>>>
+>>> Note *if use*: how does the TF-A know if USB/PCIe is used by Linux? The documentation mention to set
+>>> it *if use*. Same note is on ALL_ON to VBATT transition documentation (namely "if using USB", "if
+>>> using PCIe"). If TF-A will do this it should set this signals unconditionally. It will not be
+>>> something wrong though. We don't know at the moment what this involves in terms of power consumption,
+>>> if it means something...
+>>
+>> IIUC,
+>> The only information we have is,
+>>
+>> "SYS_USB_PWRRDY and SYS_PCIE_RST_RSM_B are used when transition from ALL_ON to AWO (or from AWO to ALL_ON).
+>> "When turning off USB PHY and PCIe PHY, if they are not controlled, PHY may break"
+>>
+>> ALL_ON to AWO_MODE state transition: 
+>> USB/PCIe are part of PD_ISOVCC power domain and before turning PD_ISOVCC to off,
+>> we need to set USBPWRRDY signal.
+>>
+>> AWO_MODE to ALL_ON state transition:
+>>
+>> Turn on PD_ISOVCC first, then clr USBPWRRDY signal for USB usage in linux.
+>>
+>> Maybe we need to ask hw team, exact usage of USBPWRRDY signal other than state transition.
+> 
+> As you may already know, this is open for quite some time and is ongoing.
+
+I got more clarification about the USB PWRRDY signal from the HW team.
+
+The conclusion is that the USB PWRRDY is a signal controlled by SYSC
+controller that goes to the USB PHY and it tells the USB PHY if the power
+supply is ready or not.
+
+In the diagram at [1] the PWRRDY signal need to be asserted/de-asserted
+before/after G6, G7, G8, G9, G10 signals.
+
+Philipp,
+
+Can you please confirm that you don't want this signal to be implemented as
+a reset signal to know clearly your input on it? I would like to start
+looking for another approach in that case.
+
+Thank you,
+Claudiu Beznea
+
+[1] https://pasteboard.co/0a1zYBFZXZVb.png
+
+> 
+>>
+>> Cheers,
+>> Biju
+>>
+>>
 
 -- 
 linux-phy mailing list
