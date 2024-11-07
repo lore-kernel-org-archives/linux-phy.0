@@ -4,113 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EA71D5AE7D
-	for <linux-phy@archiver.kernel.org>; Thu,  7 Nov 2024 10:08:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28D3CD4335D
+	for <linux-phy@archiver.kernel.org>; Thu,  7 Nov 2024 13:45:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kka3o3b/41+xGJIk6o+fvYS1/KWmAQ7Z3zaUyZmYCxw=; b=R3Wn8xjsyexLSb
-	Kf0o5IdJ7hE69S/FJrWx7nm2fXOdH7QEkQhu9GVcuD3m27Mc/Yh7hA+CwxOk6UmFlmn3H/UxoVq0g
-	GwraGuRq6EBaaS5sdZJHmJMJtEdxrV59GhS46EDAVsjhBWXkCp61CpLoXTjlUOe2TaN8qV9T3WRdn
-	w3hhQw88m1QRBpO/2NPbkB5+BLbES0Vb9y4llUjMzlCUE5sKUBq+sPO9nZfL0ZjxcWxtniDewm5ig
-	JkzG2MwfmXXp09tYhg5bJonvpGxO8sr9KzgtEtmQv2pBlfIFFNdEMDYIjA/Rs5/XNU1hIZF/RjUB/
-	UIqM0tZX52ujAI55zrAg==;
+	List-Owner; bh=+zUtlYF3Z6XnXNq85L70g3WhCMynoRVjvD4QjmdFkPo=; b=vrXxkuD4e8Lp2v
+	bYnkRhOnO7td4DTiTa4cBHGe0tkB66t/t1fWsExhdX6I5tzsKXbPOQo1OKyEfQtiXXKtaJa+6fLGb
+	CAjDDeAd4b7zG/rerNvw5rcZGz3k4nbRDo64VmtOVYGNYpNCS6+qm2V0UVTvIhnlZDH0ApAW7TsRq
+	lkhspwg1pxo4yJqw0eeAMM254lpOwhLjlK9kFEJe4OrVXm78ljCcKSeqZssf66eTAH4gsmWhvbF/r
+	zzYM5psBAhwBfY7Z3ddOBrLx3BPDqzEtuOOtecSee9N1bZG0USYwk8Gdku+J2q+/pplptSUkuKfpd
+	EjBc/meK9IY+iMJPR4rA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8zRX-00000006PRt-2t9y;
-	Thu, 07 Nov 2024 10:08:47 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1t92p4-000000079uC-3Kdf;
+	Thu, 07 Nov 2024 13:45:18 +0000
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t8zJD-00000006Nnk-0AGV
+	id 1t92nF-000000079JY-3MLj
 	for linux-phy@lists.infradead.org;
-	Thu, 07 Nov 2024 10:00:14 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-37d495d217bso631935f8f.0
-        for <linux-phy@lists.infradead.org>; Thu, 07 Nov 2024 02:00:10 -0800 (PST)
+	Thu, 07 Nov 2024 13:43:28 +0000
+Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-2fb518014b9so8911961fa.3
+        for <linux-phy@lists.infradead.org>; Thu, 07 Nov 2024 05:43:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1730973609; x=1731578409; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=R02EDs+did3sWf/l/M/xZDeb+Ibpap6rP6djlTEoJvs=;
-        b=oiD9NqA3DLQtH/MAdj/Si0IoKGCXW7POiJq9DDN68QsqUlncSiTtOum8k9lI2f/mWl
-         /afMwkrilacLCMTnWdsbN5PhdwQwAWgTCJZZjo3hj9FTZodnnaxYWODqIr6ROSeQPl+S
-         gs1ro/37lC5nrEfDdtr5YVuNzfBjRHbbKFYHzaak+u+VDm/QkCRCAn5JX9sA1jAwaRs5
-         v5uUE7jHTuNkNspCaURDZ9JSOs29fQQxz80LqLKNoqPNANx7P8WN6m3XlvnLKZi4LLxk
-         tKLuT6xC4rn/nlD+QtMzKWgtsRnaqwAYq7vbprjnRa23/jYLTRTndG4Aviyk8RS1Tgsy
-         nZ8Q==
+        d=linaro.org; s=google; t=1730987004; x=1731591804; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=lTaMwPBJtQ/LdLyLH+A1iubTYFAHCFT/bM+1zUoljkk=;
+        b=Dvwhwa7LQ2wyG7YpB626szmE1RY2RiFwjQ25FSzHN5OxT71kOppw0OAfidXdghiOvE
+         +2CvteRdwHT3t/8ILuEEkOpI57+w7mNgo+eLfMcB856NzAnpsd/LYnTWCeSRzwZIw5xc
+         hmefk2nstV9rx81Gw8ML/ap/U1EBo0zOqD+g9ZEbAXWAFbQe/yE+i4/8ETO0AEmVxpNN
+         bosGJFjc/xkm929DRnnk5FktgFVZExJtconoTxMVGfIsv7Uy/r9b7DNsrcT31XlhcJZB
+         7OVUX/NEIujwHfcVGWTdQkBylB8DK677LSUPUkRtptkK45/Hxu+u64KaNCbL2g/pO/XH
+         NI8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1730973609; x=1731578409;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=R02EDs+did3sWf/l/M/xZDeb+Ibpap6rP6djlTEoJvs=;
-        b=gMOB64b/tlVUA5Me9YQbxHnJaj++aW8rTZuiXdFAujZA+qUHiYCXsQV5k1l7oG8RzO
-         ZphzlPveum8TeTEhdEIv3e66vIARhTTsTzMKrqIGC0luGgqYyBP9vR+hE2hvteaZwWI7
-         pwtkOTsuFdjmO7Y/f/5tnDunqyUwQHRkcYRhkZRg+miP+SObGgmf60KtmPlbH/7hg/rz
-         nY1DS3ht41QjL8xYOXNblHNxHkB9JkxwKpzdZ7ZY8gng42LPzZ9SHNk0oEV043Y1sP0M
-         PruV6LAClnWVrl2DcrppGYVp6Uic/tOFA7q3mKXQFz/6vV0aGMAoF4mKjJ6VdhaD1CwD
-         ZiAw==
-X-Forwarded-Encrypted: i=1; AJvYcCV4n6fP2as74Xg1OkKG+nkmOP3ewSgeACd83FjyJ9nbO2qIcJVekQKeHvXJIn2cvdIExAoSwhzheRE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzHGya13Kaj/U7PXVrq+DVbg3r5PXVfDN2rzDfM0NDtKTSe3oIn
-	s9v71Bpprd+xIuSQ5ELqUkPMBGEUAsK5a/C3nxYZNG5jmKCGrpOKrX/6yahf/NY=
-X-Google-Smtp-Source: AGHT+IEffb2xJDgmV6dLSuFyO1fmxJvqSnlcu1KUumgCd4EHyMTsYXx5V2d5rZ79w6rYl9OZ0LDdOw==
-X-Received: by 2002:a5d:47ac:0:b0:37d:48f2:e749 with SMTP id ffacd0b85a97d-381c7a4636cmr23082414f8f.10.1730973608986;
-        Thu, 07 Nov 2024 02:00:08 -0800 (PST)
-Received: from [192.168.50.4] ([82.78.167.28])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-432b05e5871sm17547405e9.37.2024.11.07.02.00.05
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 07 Nov 2024 02:00:07 -0800 (PST)
-Message-ID: <91916297-8156-44d9-b56f-9a67e651a9a4@tuxon.dev>
-Date: Thu, 7 Nov 2024 12:00:05 +0200
+        d=1e100.net; s=20230601; t=1730987004; x=1731591804;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lTaMwPBJtQ/LdLyLH+A1iubTYFAHCFT/bM+1zUoljkk=;
+        b=Lrag+SwjWEfMWnQvxQB+ztKxqhO7NQCBLUMGIt8Gg8xYG8c5j4vAE3Ulr7QS78UxP5
+         5MMjhqPKJqc52Jdj289KOH2ltAMIfVi0GbTnyRbYTKQFb9MAvojCf7JDTrQJyHlDtJzP
+         ov8vjGrjoHV1PYrfd96DjlpS9WwRzZ+dsN9ENYF6Wgwo9nmUZuyt6tOITNXrvQVWUEIL
+         MHrzYNLbXwKxWmJFlXPMzT7e6ajQrY0pdZy4Ttq7weP8A/81pWep8GNLWhZ4uF2KxOLX
+         eWDg3/laG9Qug3zyVLGg0yNl9xz5IiEWScnf43pDDyP+08+3l2GVRFCVNmzED8cv2+Iq
+         lBnQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXQHYnZPo7KrFOPvuYbzQAo6afv4SMAOzwz1KWBlY1qtrGsSqz3FijMnGOD6A4JITpY1eLkANH+c/M=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxdv3DhZ6mS61vjoWY4L+RwB02ILB+QyDbWsHhveG6tFqkdnRJP
+	kB72O+oTykLtKw7hAiHE6DAuv9rPSi76KQ3w2mpkfJ36amVEE5WKw6nLgwJbRBI=
+X-Google-Smtp-Source: AGHT+IEEXrpAS4axbz2EtICI+fGeaZacL297HQJJZ5R8O8wDOSGkjXWDf4lfkDOD+6Bag7+pFG1qiQ==
+X-Received: by 2002:a05:651c:2209:b0:2fb:4c08:be08 with SMTP id 38308e7fff4ca-2fcbdf6ff42mr222407471fa.11.1730987003678;
+        Thu, 07 Nov 2024 05:43:23 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ff178dfe0asm2220701fa.23.2024.11.07.05.43.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 07 Nov 2024 05:43:22 -0800 (PST)
+Date: Thu, 7 Nov 2024 15:43:20 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Sandor Yu <sandor.yu@nxp.com>
+Cc: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>, 
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+	"jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@gmail.com" <jernej.skrabec@gmail.com>, 
+	"airlied@gmail.com" <airlied@gmail.com>, "daniel@ffwll.ch" <daniel@ffwll.ch>, 
+	"robh+dt@kernel.org" <robh+dt@kernel.org>, 
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+	"s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>, 
+	"vkoul@kernel.org" <vkoul@kernel.org>, 
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, "mripard@kernel.org" <mripard@kernel.org>, 
+	"kernel@pengutronix.de" <kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, 
+	Oliver Brown <oliver.brown@nxp.com>, 
+	"alexander.stein@ew.tq-group.com" <alexander.stein@ew.tq-group.com>, "sam@ravnborg.org" <sam@ravnborg.org>
+Subject: Re: [PATCH v18 6/8] phy: freescale: Add DisplayPort/HDMI Combo-PHY
+ driver for i.MX8MQ
+Message-ID: <z6p6bewmykmufsghdojr4lvziurmmfpnrr5m4w3pfjlqzobpwr@zq2d2ukjvtac>
+References: <cover.1730172244.git.Sandor.yu@nxp.com>
+ <411e42c70e71dce33a80059f663fb6c58fb2ac8c.1730172244.git.Sandor.yu@nxp.com>
+ <efciuvoptv7qxwauswfseb6zlt5w4fmjdbm3huxfsn63a6bm7u@kfgkkvqoz5x4>
+ <PAXPR04MB9448F638D47B5495CF78007AF4522@PAXPR04MB9448.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
-Content-Language: en-US
-From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-To: Biju Das <biju.das.jz@bp.renesas.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>
-Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
- "kishon@kernel.org" <kishon@kernel.org>, "robh@kernel.org"
- <robh@kernel.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
- "conor+dt@kernel.org" <conor+dt@kernel.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "geert+renesas@glider.be" <geert+renesas@glider.be>,
- "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-References: <20240822152801.602318-1-claudiu.beznea.uj@bp.renesas.com>
- <35dc7414-f5bd-4ed4-bfa1-f723f4f0078c@tuxon.dev>
- <TY3PR01MB11346A4814F83FE296A1DED8886922@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <TY3PR01MB1134648BF51F1B52BFE34DD6D86932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <fbfa9179-2f52-429f-8b69-f7f4064e796b@tuxon.dev>
- <TYCPR01MB11332EF1A8D064C491D8F261286932@TYCPR01MB11332.jpnprd01.prod.outlook.com>
- <f7c57e76-b890-491f-880d-62d060b7b31e@tuxon.dev>
- <TYCPR01MB11332BE2EDB318950B9C7B54C86932@TYCPR01MB11332.jpnprd01.prod.outlook.com>
- <TY3PR01MB113469FC8A9F49D9B1FA432FD86932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <0b73544b-0253-43b9-b631-6578b48eaca8@tuxon.dev>
- <TY3PR01MB1134689573A785E91A9041E1886932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <5bcdc677-e61e-4312-a19b-57b4600685d3@tuxon.dev>
- <TY3PR01MB1134690F9D37E3BB4814D864386932@TY3PR01MB11346.jpnprd01.prod.outlook.com>
- <d64243fe-48ea-4cb5-b6d6-e9f820e1b8a3@tuxon.dev>
-In-Reply-To: <d64243fe-48ea-4cb5-b6d6-e9f820e1b8a3@tuxon.dev>
+Content-Disposition: inline
+In-Reply-To: <PAXPR04MB9448F638D47B5495CF78007AF4522@PAXPR04MB9448.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241107_020011_513322_AD4D1F23 
-X-CRM114-Status: GOOD (  23.53  )
+X-CRM114-CacheID: sfid-20241107_054325_893499_3113B2CB 
+X-CRM114-Status: GOOD (  30.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,172 +108,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, all,
+On Tue, Nov 05, 2024 at 02:05:51PM +0000, Sandor Yu wrote:
+> > 
+> > On Tue, Oct 29, 2024 at 02:02:14PM +0800, Sandor Yu wrote:
+> > > Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
+> > >
+> > > Cadence HDP-TX PHY could be put in either DP mode or
+> > > HDMI mode base on the configuration chosen.
+> > > DisplayPort or HDMI PHY mode is configured in the driver.
+> > >
+> > > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> > > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> > > ---
+> > > v17->v18:
+> > > - fix build error as code rebase to latest kernel version.
+> > >
+> > >  drivers/phy/freescale/Kconfig                |   10 +
+> > >  drivers/phy/freescale/Makefile               |    1 +
+> > >  drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c | 1337
+> > ++++++++++++++++++
+> > >  3 files changed, 1348 insertions(+)
+> > >  create mode 100644 drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c
+> > >
+> > > diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
+> > > index dcd9acff6d01a..2b1210367b31c 100644
+> > > --- a/drivers/phy/freescale/Kconfig
+> > > +++ b/drivers/phy/freescale/Kconfig
 
-On 03.09.2024 17:48, claudiu beznea wrote:
+[...]
+
+I'm sorry, my email client cut the email.
+
+> > > +static int cdns_hdptx_dp_configure(struct phy *phy,
+> > > +                                union phy_configure_opts *opts)
+> > > +{
+> > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
+> > > +
+> > > +     cdns_phy->dp.link_rate = opts->dp.link_rate;
+> > > +     cdns_phy->dp.lanes = opts->dp.lanes;
+> > 
+> > Shouldn't this be conditional on set_rate / set_lanes ?
 > 
-> 
-> On 03.09.2024 16:45, Biju Das wrote:
->> Hi Claudiu,
->>
->>> -----Original Message-----
->>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
->>> Sent: Tuesday, September 3, 2024 1:57 PM
->>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas RZ/G3S SoC
->>>
->>>
->>>
->>> On 03.09.2024 15:37, Biju Das wrote:
->>>>
->>>>
->>>>> -----Original Message-----
->>>>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
->>>>> Sent: Tuesday, September 3, 2024 1:26 PM
->>>>> To: Biju Das <biju.das.jz@bp.renesas.com>; Ulf Hansson
->>>>> <ulf.hansson@linaro.org>
->>>>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
->>>>> krzk+dt@kernel.org; conor+dt@kernel.org; p.zabel@pengutronix.de;
->>>>> geert+renesas@glider.be; magnus.damm@gmail.com;
->>>>> gregkh@linuxfoundation.org; mturquette@baylibre.com;
->>>>> sboyd@kernel.org; Yoshihiro Shimoda
->>>>> <yoshihiro.shimoda.uh@renesas.com>;
->>>>> linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
->>>>> linux-kernel@vger.kernel.org; linux- renesas-soc@vger.kernel.org;
->>>>> linux-usb@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
->>>>> linux- clk@vger.kernel.org; linux-pm@vger.kernel.org; Claudiu Beznea
->>>>> <claudiu.beznea.uj@bp.renesas.com>
->>>>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas
->>>>> RZ/G3S SoC
->>>>>
->>>>>
->>>>>
->>>>> On 03.09.2024 15:00, Biju Das wrote:
->>>>>>
->>>>>>
->>>>>>> -----Original Message-----
->>>>>>> From: Biju Das <biju.das.jz@bp.renesas.com>
->>>>>>> Sent: Tuesday, September 3, 2024 12:07 PM
->>>>>>> To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>; Ulf Hansson
->>>>>>> <ulf.hansson@linaro.org>
->>>>>>> Cc: vkoul@kernel.org; kishon@kernel.org; robh@kernel.org;
->>>>>>> krzk+dt@kernel.org; conor+dt@kernel.org; p.zabel@pengutronix.de;
->>>>>>> geert+renesas@glider.be; magnus.damm@gmail.com;
->>>>>>> gregkh@linuxfoundation.org; mturquette@baylibre.com;
->>>>>>> sboyd@kernel.org; Yoshihiro Shimoda
->>>>>>> <yoshihiro.shimoda.uh@renesas.com>;
->>>>>>> linux-phy@lists.infradead.org; devicetree@vger.kernel.org;
->>>>>>> linux-kernel@vger.kernel.org; linux- renesas-soc@vger.kernel.org;
->>>>>>> linux-usb@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
->>>>>>> linux- clk@vger.kernel.org; linux-pm@vger.kernel.org; Claudiu
->>>>>>> Beznea <claudiu.beznea.uj@bp.renesas.com>
->>>>>>> Subject: RE: [PATCH 00/16] Add initial USB support for the Renesas
->>>>>>> RZ/G3S SoC
->>>>>>>
->>>>>>> Hi Claudiu,
->>>>>>>
->>>>>>>> -----Original Message-----
->>>>>>>> From: claudiu beznea <claudiu.beznea@tuxon.dev>
->>>>>>>> Sent: Tuesday, September 3, 2024 12:00 PM
->>>>>>>> Subject: Re: [PATCH 00/16] Add initial USB support for the Renesas
->>>>>>>> RZ/G3S SoC
->>>>>>>>
->>>>>>>>
->>>>>>>>
->>>>>>>> On 03.09.2024 13:31, Biju Das wrote:
->>>>>>>>>>> During boot clr USB PWR READY signal in TF-A.
->>>>>>>>>>> STR case, suspend set USB PWR READY signal in TF-A.
->>>>>>>>>>> STR case, resume clr USB PWR READY signal in TF-A.
->>>>>>>>>> As I said previously, it can be done in different ways. My point
->>>>>>>>>> was to let Linux set what it needs for all it's devices to work.
->>>>>>>>>> I think the way to go forward is a
->>>>>>>> maintainer decision.
->>>>>>>>>
->>>>>>>>> I agree, there can be n number of solution for a problem.
->>>>>>>>>
->>>>>>>>> Since you modelled system state signal (USB PWRRDY) as reset
->>>>>>>>> control signal, it is reset/DT maintainer's decision to say the
->>>>>>>>> final word whether this signal fits in reset
->>>>>>>> system framework or not?
->>>>>>>>
->>>>>>>> I was thinking:
->>>>>>>> 1/ Geert would be the best to say if he considers it OK to handle this
->>>>>>>>    in Linux
->>>>>>>
->>>>>>> I agree Geert is the right person for taking SYSTEM decisions,
->>>>>>> since the signal is used only during state transitions (Table
->>>>>>> 41.6.4 AWO to ALL_ON and 41.6.3 ALL_ON to AWO)
->>>>>>
->>>>>> One more info, as per [1], this USB PWRRDY signal setting to be before Linux kernel boots.
->>>>>
->>>>> The "controlled by" column mentions CA-55 on PWRRDY signal control
->>>>> line and it is b/w steps "DDR exits from retention mode" and  "clock
->>>>> start settings for system bus and peripheral modules". AFAICT, after DDR exists retention mode
->>> Linux is ready to run.
->>>>
->>>> DDR retention exit happens in TF-A and it jumps into reset code where it executes BL2 in TF_A. Bl2
->>> checks for warm or cold reset.
->>>> If it is warm reset, it sets required minimal clocks/resets and pass
->>>> the control to linux by calling the SMC callback handler. Which in turn calls resume(step 11-->14)
->>> path.
->>>
->>> Is this from HW manual or some specific documentation? I'm referring at "resume" == "steps 11-->14"
->>>
->>>>
->>>> Step 8, Cortex-A55 Exit from DDR retention mode (when using) Setting
->>>> for exiting form DDR retention mode Step 9, Cortex-A55 USB PHY PWRRDY
->>>> signal control (if use USB) SYS_USB_PWRRDY Step 10, Cortex-A55 PCIe
->>>> RST_RSM_B signal control (if use PCIe) SYS_PCIE_RST_RSM_B
->>>
->>> Note *if use*: how does the TF-A know if USB/PCIe is used by Linux? The documentation mention to set
->>> it *if use*. Same note is on ALL_ON to VBATT transition documentation (namely "if using USB", "if
->>> using PCIe"). If TF-A will do this it should set this signals unconditionally. It will not be
->>> something wrong though. We don't know at the moment what this involves in terms of power consumption,
->>> if it means something...
->>
->> IIUC,
->> The only information we have is,
->>
->> "SYS_USB_PWRRDY and SYS_PCIE_RST_RSM_B are used when transition from ALL_ON to AWO (or from AWO to ALL_ON).
->> "When turning off USB PHY and PCIe PHY, if they are not controlled, PHY may break"
->>
->> ALL_ON to AWO_MODE state transition: 
->> USB/PCIe are part of PD_ISOVCC power domain and before turning PD_ISOVCC to off,
->> we need to set USBPWRRDY signal.
->>
->> AWO_MODE to ALL_ON state transition:
->>
->> Turn on PD_ISOVCC first, then clr USBPWRRDY signal for USB usage in linux.
->>
->> Maybe we need to ask hw team, exact usage of USBPWRRDY signal other than state transition.
-> 
-> As you may already know, this is open for quite some time and is ongoing.
+> PHY do not support reconfigure link rate and lane count.
 
-I got more clarification about the USB PWRRDY signal from the HW team.
+So, you don't support reconfiguring the rate / count, but you still copy
+the new rate and lanes into your driver data. That sounds strange.
 
-The conclusion is that the USB PWRRDY is a signal controlled by SYSC
-controller that goes to the USB PHY and it tells the USB PHY if the power
-supply is ready or not.
-
-In the diagram at [1] the PWRRDY signal need to be asserted/de-asserted
-before/after G6, G7, G8, G9, G10 signals.
-
-Philipp,
-
-Can you please confirm that you don't want this signal to be implemented as
-a reset signal to know clearly your input on it? I would like to start
-looking for another approach in that case.
-
-Thank you,
-Claudiu Beznea
-
-[1] https://pasteboard.co/0a1zYBFZXZVb.png
+[...]
 
 > 
->>
->> Cheers,
->> Biju
->>
->>
+> > 
+> > > +
+> > > +static int cdns_hdptx_phy_set_mode(struct phy *phy, enum phy_mode
+> > mode, int submode)
+> > > +{
+> > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
+> > > +     int ret = 0;
+> > > +
+> > > +     if (mode == PHY_MODE_DP) {
+> > > +             hdptx_dp_phy_ref_clock_type(cdns_phy);
+> > > +
+> > > +             /* PHY power up */
+> > > +             ret = hdptx_dp_phy_power_up(cdns_phy);
+> > > +             if (ret < 0)
+> > > +                     return ret;
+> > > +
+> > > +             hdptx_dp_aux_cfg(cdns_phy);
+> > 
+> > Why? Don't power up the PHY if you haven't been told to.
+> 
+> Power on the PHY to enable DP AUX, which is necessary for reading EDID and training the link.
+
+Call phy_power_on() from the DP driver.
+
+> 
+> > 
+> > > +     } else if (mode != PHY_MODE_HDMI) {
+> > > +             dev_err(&phy->dev, "Invalid PHY mode: %u\n", mode);
+> > > +             return -EINVAL;
+> > > +     }
+> > > +
+> > > +     return ret;
+> > > +}
+> > > +
+> > > +static int cdns_hdptx_hdmi_configure(struct phy *phy,
+> > > +                                  union phy_configure_opts
+> > *opts)
+> > > +{
+> > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
+> > > +     int ret;
+> > > +
+> > > +     cdns_phy->hdmi.tmds_char_rate = opts->hdmi.tmds_char_rate;
+> > > +
+> > > +     /* Check HDMI FW alive before HDMI PHY init */
+> > > +     ret = hdptx_phy_check_alive(cdns_phy);
+> > > +     if (!ret) {
+> > > +             dev_err(cdns_phy->dev, "NO HDMI FW running\n");
+> > > +             return -ENXIO;
+> > > +     }
+> > > +
+> > > +     /* Configure PHY */
+> > > +     if (hdptx_hdmi_phy_cfg(cdns_phy, cdns_phy->hdmi.tmds_char_rate)
+> > < 0) {
+> > > +             dev_err(cdns_phy->dev, "failed to set phy pclock\n");
+> > > +             return -EINVAL;
+> > > +     }
+> > > +
+> > > +     ret = hdptx_hdmi_phy_power_up(cdns_phy);
+> > 
+> > it seems to be all over the place :-(
+> 
+> The PHY has different power-up rules depending on whether it's in DP or HDMI mode. 
+> In DP mode, it needs to power up first to enable DP AUX. 
+> In HDMI mode, it can power up last.
+
+The main question is why are you powering the PHY from the configure
+path at all? There is a phy_power_on() API which should be used by your
+HDMI / DP driver instead of handling that in an automagic way.
+
+> 
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
