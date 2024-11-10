@@ -4,62 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13419D5E381
-	for <linux-phy@archiver.kernel.org>; Sat,  9 Nov 2024 22:13:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2C48D5E38F
+	for <linux-phy@archiver.kernel.org>; Sun, 10 Nov 2024 09:29:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BjAl7FN5NqvWnUSj/OParDSd15XwrZCIpOdAU48kx6w=; b=S4br7EKkuzvPlN
-	pYpLbaY+GLr3oDGfGBUsW3owT/CKMLZkXnNQSbDsXQ4eWLo8EETh4frjuaE+4nFUTmHBupwR3bhut
-	gOc304gw3SXK+Gd6eYLbWQiVdGWnxdIFxLJYv8uaD2kjgWIADfCMgTRm057nWq6pY3vmmiTgoqjl5
-	kBh3RD4DJX/d0mZSMzpTt8jJFZKRrH3rHBHqqh9tS0kAd4xai+uO9FzsxK8hGUNvEanNyB1KOsoph
-	M3qGtVZ6GZAMK9FVxQH5eh/8bHIbhLd+VHmS2+D/Q0dTDS/YjTVpCKQdEE9lkzVIQPjNy4yWtuExL
-	GyaIfWSbwcU0OsE2V9kg==;
+	List-Owner; bh=bY89xGeMaABh3WxC0RI6aGvYFVwsSAw9CFsV+F0hebo=; b=jaAI3oUIwPP9pq
+	D1ndjnZ7pvbQUv0yZan28JBOE3Gz5Z/9Z5xhzS/g+y/c6roofJ0QbQ0LS2IBuU+APyqXp1zfdw1Mj
+	WPXqXkZZoaRT6J+YUPX2TJuwx2vo9vHtwH3YmvnrtdDJbqnoBpz7KNqt7ecvmZkEvtnYQHwCninZe
+	3pBkLuMDhr9s1tY2uTAmf3nyROLM9nyLO3H9dGxjWTwxEGsQpjyttnMU0Re4pRSeq8zMH+gDNBD1L
+	ukCw1p5/nZCdYZSgvyZ74nz/UWjkAeUIxb262S2GwJY9+S+idOuMG3flQx1jERC8/ppdkqSNAPS42
+	clp50NbCnQj8VM55RU8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t9ths-0000000E2Nf-0ZuV;
-	Sat, 09 Nov 2024 22:13:24 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tA4Fl-0000000EcdW-0Tr2;
+	Sun, 10 Nov 2024 09:29:05 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t9thp-0000000E2N6-1t07;
-	Sat, 09 Nov 2024 22:13:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=YAHRAxJSwzztjtgUr/pm/xjqAckdpHljo3U56gQulB4=; b=b7TmA8P+zt9VVlbT2CbrQ4yO/i
-	iyWxPoOmYtOwbclzs8HBS5o68gZ8o4VPcQpd1EY3ctT/uXvME2u/hwlPfliGg/etMRE9167Y76CNB
-	1JBKRxzjnsSVYSkbfYu1V8+haNISofv4oaacnXdMgnUu90rHTPVR3r+1eNIauR7UF7vtl8hyphT3P
-	4BUH5/mJ/1pp0STTyUbctw8EnOW6jfd1/ixLgOUElr97+XLfBHOaNA6hOsRSLvYUjbzQ4qVWvFjZN
-	5YkTeZVrINI5F0MrtgWyAFqbHnhXlkPBLS9HUwdDf64yTL/P3TffVrRg9Kj+Gq4sW9ISHAek1eR1X
-	9AnBu1Mg==;
-Received: from i53875b28.versanet.de ([83.135.91.40] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1t9thh-0000Br-5E; Sat, 09 Nov 2024 23:13:13 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Algea Cao <algea.cao@rock-chips.com>,
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, Dmitry Osipenko <dmitry.osipenko@collabora.com>
-Subject: Re: [PATCH] phy: rockchip: samsung-hdptx: Set drvdata before enabling runtime
- PM
-Date: Sat, 09 Nov 2024 23:13:12 +0100
-Message-ID: <1876958.atdPhlSkOF@diego>
-In-Reply-To: <20241023-phy-sam-hdptx-rpm-fix-v1-1-87f4c994e346@collabora.com>
-References: <20241023-phy-sam-hdptx-rpm-fix-v1-1-87f4c994e346@collabora.com>
+	id 1tA4Ck-0000000EcOy-2F2a;
+	Sun, 10 Nov 2024 09:25:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id EC892A408AA;
+	Sun, 10 Nov 2024 09:24:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED6E9C4CECD;
+	Sun, 10 Nov 2024 09:25:56 +0000 (UTC)
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 66C5F5F836;
+	Sun, 10 Nov 2024 17:25:54 +0800 (CST)
+From: Chen-Yu Tsai <wens@csie.org>
+To: linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pm@vger.kernel.org, linux-sunxi@lists.linux.dev, 
+ linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+ Cody Eksal <masterr3c0rd@epochal.quest>
+Cc: Conor Dooley <conor+dt@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Maxime Ripard <mripard@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, Nishanth Menon <nm@ti.com>, 
+ "Rafael J. Wysocki" <rafael@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Samuel Holland <samuel@sholland.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Viresh Kumar <vireshk@kernel.org>, 
+ Viresh Kumar <viresh.kumar@linaro.org>, Yangtao Li <tiny.windzz@gmail.com>, 
+ Parthiban <parthiban@linumiz.com>, Andre Przywara <andre.przywara@arm.com>
+In-Reply-To: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
+References: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
+Subject: Re: (subset) [PATCH v2 00/13] sunxi: A100/A133 second stage
+ support
+Message-Id: <173123075439.3498315.14594380373540297845.b4-ty@csie.org>
+Date: Sun, 10 Nov 2024 17:25:54 +0800
 MIME-Version: 1.0
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241109_141321_542715_91391203 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20241110_012558_669868_2AB195B1 
+X-CRM114-Status: GOOD (  10.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,19 +79,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Mittwoch, 23. Oktober 2024, 19:29:54 CET schrieb Cristian Ciocaltea:
-> In some cases, rk_hdptx_phy_runtime_resume() may be invoked before
-> platform_set_drvdata() is executed in ->probe(), leading to a NULL
-> pointer dereference when using the return of dev_get_drvdata().
+On Thu, 31 Oct 2024 04:02:13 -0300, Cody Eksal wrote:
+> This is V2 of this series [5], with some changes that were requested and
+> others that were made after testing on more devices. Thank you for all of
+> your feedback! A changelog is available below.
 > 
-> Ensure platform_set_drvdata() is called before devm_pm_runtime_enable().
+> ==================
+> Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
+> submitted a patch series for the A100 series of SoCs; [1] intended to add
+> support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
+> implemented DVFS support. Some patches from the first series landed, but
+> the rest were seemingly abandoned.
 > 
-> Reported-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
-> Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY driver")
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> [...]
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+Applied to dt-for-6.13 in git@github.com:linux-sunxi/linux-sunxi.git, thanks!
 
+[10/13] arm64: dts: allwinner: a100: perf1: Add eMMC and MMC node
+        commit: af1ad5675a2b5feebb49df0e0ac7dab1aeabfaa8
+
+Best regards,
+-- 
+Chen-Yu Tsai <wens@csie.org>
 
 
 -- 
