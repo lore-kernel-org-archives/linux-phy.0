@@ -4,65 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2C48D5E38F
-	for <linux-phy@archiver.kernel.org>; Sun, 10 Nov 2024 09:29:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECEE5D12D5C
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Nov 2024 01:32:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bY89xGeMaABh3WxC0RI6aGvYFVwsSAw9CFsV+F0hebo=; b=jaAI3oUIwPP9pq
-	D1ndjnZ7pvbQUv0yZan28JBOE3Gz5Z/9Z5xhzS/g+y/c6roofJ0QbQ0LS2IBuU+APyqXp1zfdw1Mj
-	WPXqXkZZoaRT6J+YUPX2TJuwx2vo9vHtwH3YmvnrtdDJbqnoBpz7KNqt7ecvmZkEvtnYQHwCninZe
-	3pBkLuMDhr9s1tY2uTAmf3nyROLM9nyLO3H9dGxjWTwxEGsQpjyttnMU0Re4pRSeq8zMH+gDNBD1L
-	ukCw1p5/nZCdYZSgvyZ74nz/UWjkAeUIxb262S2GwJY9+S+idOuMG3flQx1jERC8/ppdkqSNAPS42
-	clp50NbCnQj8VM55RU8Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9Ovi5yQd9CmkbjrR1NicS/VN+i70iJGT1QVYsWPN75Q=; b=uuBXS2mWV6gg2i
+	Na6R5jNXYVCZFE6iDAAPL6oa3pzGucIwIqmeUxb2kXwULBcqd+gt8fPy+Zh+S8xEpjqe4yAt6V8sY
+	8Q4kXwDKas5Os8tKH1ysP4JaUWlKfRa3vbl8PHmVbtcxNyMyovE0/Rx6zAHIPa4VLnnZyD80PlXva
+	RhU1p0346r6EXWjKTZApw1+hWWtTUy9sZ7Cy84kVUtZKICj1v8fT5lizXk3aTvYmpgBWVvbbt+56U
+	tf57PJ7S200UTS48PHx7tCiS1jjr+19fKPeD0s3XrtDxE7yOV0QquOCyVr5JM+/7EhHig8DOJbL74
+	cu2RZDhEbNf7fEUhSOXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tA4Fl-0000000EcdW-0Tr2;
-	Sun, 10 Nov 2024 09:29:05 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tA4Ck-0000000EcOy-2F2a;
-	Sun, 10 Nov 2024 09:25:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id EC892A408AA;
-	Sun, 10 Nov 2024 09:24:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED6E9C4CECD;
-	Sun, 10 Nov 2024 09:25:56 +0000 (UTC)
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 66C5F5F836;
-	Sun, 10 Nov 2024 17:25:54 +0800 (CST)
-From: Chen-Yu Tsai <wens@csie.org>
-To: linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-pm@vger.kernel.org, linux-sunxi@lists.linux.dev, 
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
- Cody Eksal <masterr3c0rd@epochal.quest>
-Cc: Conor Dooley <conor+dt@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Maxime Ripard <mripard@kernel.org>, 
- Michael Turquette <mturquette@baylibre.com>, Nishanth Menon <nm@ti.com>, 
- "Rafael J. Wysocki" <rafael@kernel.org>, Rob Herring <robh@kernel.org>, 
- Samuel Holland <samuel@sholland.org>, Stephen Boyd <sboyd@kernel.org>, 
- Vinod Koul <vkoul@kernel.org>, Viresh Kumar <vireshk@kernel.org>, 
- Viresh Kumar <viresh.kumar@linaro.org>, Yangtao Li <tiny.windzz@gmail.com>, 
- Parthiban <parthiban@linumiz.com>, Andre Przywara <andre.przywara@arm.com>
-In-Reply-To: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
-References: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
-Subject: Re: (subset) [PATCH v2 00/13] sunxi: A100/A133 second stage
- support
-Message-Id: <173123075439.3498315.14594380373540297845.b4-ty@csie.org>
-Date: Sun, 10 Nov 2024 17:25:54 +0800
+	id 1tAJIH-0000000G2IC-1qGn;
+	Mon, 11 Nov 2024 01:32:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tAJGQ-0000000G1oK-43M3;
+	Mon, 11 Nov 2024 01:30:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E61113D5;
+	Sun, 10 Nov 2024 17:31:16 -0800 (PST)
+Received: from localhost.localdomain (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DFB6E3F66E;
+	Sun, 10 Nov 2024 17:30:42 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>
+Cc: devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	linux-mmc@vger.kernel.org,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	linux-watchdog@vger.kernel.org,
+	Gregory CLEMENT <gregory.clement@bootlin.com>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	linux-i2c@vger.kernel.org,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-usb@vger.kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	linux-rtc@vger.kernel.org
+Subject: [PATCH 00/14] arm64: dts: allwinner: Add basic Allwinner A523 support
+Date: Mon, 11 Nov 2024 01:30:19 +0000
+Message-ID: <20241111013033.22793-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.46.2
 MIME-Version: 1.0
-X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241110_012558_669868_2AB195B1 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20241110_173047_119167_30FE8C27 
+X-CRM114-Status: GOOD (  23.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,28 +83,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 31 Oct 2024 04:02:13 -0300, Cody Eksal wrote:
-> This is V2 of this series [5], with some changes that were requested and
-> others that were made after testing on more devices. Thank you for all of
-> your feedback! A changelog is available below.
-> 
-> ==================
-> Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
-> submitted a patch series for the A100 series of SoCs; [1] intended to add
-> support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
-> implemented DVFS support. Some patches from the first series landed, but
-> the rest were seemingly abandoned.
-> 
-> [...]
+Hi,
 
-Applied to dt-for-6.13 in git@github.com:linux-sunxi/linux-sunxi.git, thanks!
+this series adds basic DT support for the Allwinner A523 SoC, plus the
+Avaota-A1 router board using the T527 package variant of that SoC.[1]
+Functionality-wise it relies on the pinctrl[2] and clock[3] support
+series, though there is no direct code dependency series to this series
+(apart from the respective binding patches in the two series').
 
-[10/13] arm64: dts: allwinner: a100: perf1: Add eMMC and MMC node
-        commit: af1ad5675a2b5feebb49df0e0ac7dab1aeabfaa8
+Most of the patches add DT binding documentation for the most basic
+peripherals, the vast majority of them actually being already supported,
+courtesy of identical IP being used. This includes MMC and USB 2.0, so
+with the above mentioned clock and pinctrl support this gives an already
+somewhat usable mainline support for this new SoC family.
+The watchdog is not completely compatible, but is an easy addition, so
+this bit is included in here as well.
 
-Best regards,
+The A523 features 8 Arm Cortex-A55 cores, organised in two clusters,
+clocked separately, with different OPP limits, in some kind of
+little/LITTLE configuration. The GPU is a Arm Mali G57 MC01, and the chip
+also features a single PCIe 2.1 lane, sharing a PHY with some USB 3.1
+controller - which means only one of the two can be used.
+The rest of the SoC is the usual soup of multimedia SoC IP, with eDP
+support and two Gigabit Ethernet MACs among the highlights.
+
+The main feature is patch 11/14, which adds the SoC .dtsi. This for now
+is limited to the parts that are supported and could be tested. At the
+moment there is no PSCI firmware, even the TF-A port from the BSP does
+not seem to work for me. That's why the secondary cores have been omitted
+for now, among other instances of some IP that I couldn't test yet.
+I plan to add them in one of the next revisions.
+
+The last patch adds basic support for the Avaota-A1 router board,
+designed by YuzukiHD, with some boards now built by Pine64.
+
+The mainline firmware side in general is somewhat lacking still: I have
+basic U-Boot support working (including MMC and USB), although still
+without DRAM support. This is for now covered by some binary blob found
+in the (otherwise Open Source) Syterkit firmware, which also provides
+the BSP versions of TF-A and the required (RISC-V) management core
+firmware. Fortunately we have indications that DRAM support is not that
+tricky, as the IP blocks are very similar to already supported, and dev
+boards are on their way to the right people.
+
+Meanwhile I would like people to have a look at those DT bits here. Please
+compare them to the available user manual, and test them if you have access
+to hardware.
+
+Based on v6.12-rc1.
+I pushed a branch with all the three series combined here:
+https://github.com/apritzel/linux/commits/a523-v1/
+
+Cheers,
+Andre
+
+[1] https://linux-sunxi.org/A523#Family_of_sun55iw3
+[2] https://lore.kernel.org/linux-sunxi/20241111005750.13071-1-andre.przywara@arm.com/T/#t
+[3] https://lore.kernel.org/linux-sunxi/20241111004722.10130-1-andre.przywara@arm.com/T/#t
+
+Andre Przywara (14):
+  dt-bindings: mmc: sunxi: Simplify compatible string listing
+  dt-bindings: mmc: sunxi: add compatible strings for Allwinner A523
+  dt-bindings: watchdog: sunxi: add Allwinner A523 compatible string
+  watchdog: sunxi_wdt: Add support for Allwinner A523
+  dt-bindings: i2c: mv64xxx: Add Allwinner A523 compatible string
+  dt-bindings: irq: sun7i-nmi: document the Allwinner A523 NMI
+    controller
+  dt-bindings: phy: document Allwinner A523 USB-2.0 PHY
+  dt-bindings: usb: sunxi-musb: add Allwinner A523 compatible string
+  dt-bindings: usb: add A523 compatible string for EHCI and OCHI
+  dt-bindings: rtc: sun6i: Add Allwinner A523 support
+  arm64: dts: allwinner: Add Allwinner A523 .dtsi file
+  dt-bindings: vendor-prefixes: Add YuzukiHD name
+  dt-bindings: arm: sunxi: Add Avaota A1 board
+  arm64: dts: allwinner: a523: add Avaota-A1 router support
+
+ .../devicetree/bindings/arm/sunxi.yaml        |   5 +
+ .../bindings/i2c/marvell,mv64xxx-i2c.yaml     |   1 +
+ .../allwinner,sun7i-a20-sc-nmi.yaml           |   1 +
+ .../bindings/mmc/allwinner,sun4i-a10-mmc.yaml |  40 +-
+ .../phy/allwinner,sun50i-a64-usb-phy.yaml     |  10 +-
+ .../bindings/rtc/allwinner,sun6i-a31-rtc.yaml |   4 +-
+ .../usb/allwinner,sun4i-a10-musb.yaml         |   1 +
+ .../devicetree/bindings/usb/generic-ehci.yaml |   1 +
+ .../devicetree/bindings/usb/generic-ohci.yaml |   1 +
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ .../watchdog/allwinner,sun4i-a10-wdt.yaml     |   2 +
+ arch/arm64/boot/dts/allwinner/Makefile        |   1 +
+ .../arm64/boot/dts/allwinner/sun55i-a523.dtsi | 386 ++++++++++++++++++
+ .../dts/allwinner/sun55i-t527-avaota-a1.dts   | 311 ++++++++++++++
+ drivers/watchdog/sunxi_wdt.c                  |  11 +
+ 15 files changed, 751 insertions(+), 26 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
+
 -- 
-Chen-Yu Tsai <wens@csie.org>
+2.46.2
 
 
 -- 
