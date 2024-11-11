@@ -4,63 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77F5FD2E9D6
-	for <linux-phy@archiver.kernel.org>; Mon, 11 Nov 2024 10:39:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EB0BD12D61
+	for <linux-phy@archiver.kernel.org>; Mon, 11 Nov 2024 15:34:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=840CzabebloFKKIODlRm0fQj+f4Vin31gBxfysdXiEw=; b=IEDceC8uZSAcw0
-	oEj9wzrahG/mgY33+lQeemGlfr79HQ2JQX+lOz2Dg8sHy3wk/Fp0j9OpcNl4aWo2nlmnZJLkeAODW
-	u44ycFUXZjJBhefRKm3/WoWmzATMy4Nlt3T/lcWVm7cEgaUwHmaQ086Km5sVx2N6tQlwnfmG/H42F
-	OGfhmgkzueCRVN2euhHCdK/p6jrg5EyAASwKBCzJQiBRu3sxifLI0Gzq14pwR17w2kTsBl9kLc/MO
-	fvlW4yFzONekBnWeyKfw1D1bhYvRrVm3mxnT109ka/mK9QOQP9ClzzQIlsoOGlQetDz08Q7yDGTty
-	hhJMfOcbOiUULrh3ztkw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+jppouZGLOahuz35r97MtSN0JrMK17ugxCyqx/cPE9I=; b=ueceek+qAmJlVcU+q1LaHy04H5
+	peF6/b8s0rG5ZCQomPxaTCTrrXI1uEAN49zQN2ywmg6bG4sew0M6F/N081FlgA/jlPnLL8prT9qoA
+	evXm09Xp3EMEvQFrlfghVxDwid4Bi5UVJLdwqaJmwxRv4kOQea3oW1HTRbG6HhDjZx5dRAxR/O+tr
+	J20ZqNP7V0U1enoFyUalWS4VILceZHwjAoAaDQVtDrwQXEVFxc1ekUWlHDK1IYDstS527qdtyWJOA
+	+gIWD9+rsgfL4ezgjMgTe0xScwkwGT5YmMroe9oNQNWrKw5l0GgS+cjq6uOYxHblE/18w+rGja2UC
+	WSPmO+Ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tARp9-0000000HJad-0qyr;
-	Mon, 11 Nov 2024 10:39:11 +0000
+	id 1tAWRE-00000000TVA-1DIu;
+	Mon, 11 Nov 2024 15:34:48 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tARnL-0000000HJG8-31pI;
-	Mon, 11 Nov 2024 10:37:21 +0000
+	id 1tAWPQ-00000000TBA-3O7G;
+	Mon, 11 Nov 2024 15:32:58 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 75965A41462;
-	Mon, 11 Nov 2024 10:35:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B86C0C4CED5;
-	Mon, 11 Nov 2024 10:37:15 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id E174FA41782;
+	Mon, 11 Nov 2024 15:31:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B86B5C4CED6;
+	Mon, 11 Nov 2024 15:32:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1731321438;
-	bh=jNP3EEmQCRYGu8RVX1ba7R/suetM+TihlMSotd59zHY=;
-	h=From:To:Cc:Subject:Date:From;
-	b=jKHBPUQefIWzQGovAC+9QQCjuqX7+leHBXJqOsNjgQVSuF6OiCpOvaHlnDumrDreH
-	 l2Sk+t9JTwk7SoJJPguosMtJAkKG6CDeAekLy7lKKSH2wryDDqNbimLwO//CQB4Idx
-	 a77AcUqMxzLlJSEA78CqGMWrwmOnNSo2qQXNOpky4nQnB1cKdvGWtidhTnv/2C8ocF
-	 f8Rh98ltcCqJBU8Xgvj74dIudRl4SRHRVdVGkf0eW34ixl/xgPLdeqpFll9FUIxJwK
-	 dZICPzDmfB4A46avMMOYb0Li9M5siGskf591O0h/7RUw/2jPKHmj9YjdUcjhENPNE1
-	 C5GEMWT8gvBKw==
-From: Arnd Bergmann <arnd@kernel.org>
-To: Christian Bruel <christian.bruel@foss.st.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>
-Cc: Arnd Bergmann <arnd@arndb.de>,
-	Yang Li <yang.lee@linux.alibaba.com>,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: stm32: work around constant-value overflow assertion
-Date: Mon, 11 Nov 2024 11:37:02 +0100
-Message-Id: <20241111103712.3520611-1-arnd@kernel.org>
-X-Mailer: git-send-email 2.39.5
+	s=k20201202; t=1731339175;
+	bh=r8avJOgeVnHmCQ1tIPDEAoD6KMM+18rldtBBgroTd4s=;
+	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+	b=Dq4ZRtgXjHZZ63uC5JzTAgqwfrl+cT85RYM80IhD1SuvaTaZaAeWymI4w9P6DAtyb
+	 TK1RZx6nYV1FxYpZ2aCtjgxxUCP/FbEZXXYrDW+kY48Ze7jqHHx9MnFr6+Vo9D/DYT
+	 xC8VqlmWRzcf330Zg8HtIFjZHdSJEa8lDToAg/uItkY36sJhJmX+HMKE8twd/OQCpP
+	 HqFCFnUYebC4+kGGiTc6mdU0mSguLM5NBK1yRokiZLRHEDxX+g4zLO+PUnJnObDVND
+	 1XeHxRM2JIENzbyjH6qgry5qx3hmAOZntzliUZw957ALIbxfB776IHt7LZEiIiSJps
+	 yk14S8C0s4gCw==
+Date: Mon, 11 Nov 2024 09:32:53 -0600
 MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-mmc@vger.kernel.org, Gregory CLEMENT <gregory.clement@bootlin.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Wim Van Sebroeck <wim@linux-watchdog.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, devicetree@vger.kernel.org, 
+ linux-rtc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-sunxi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ linux-i2c@vger.kernel.org, Andi Shyti <andi.shyti@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, linux-watchdog@vger.kernel.org, 
+ Thomas Gleixner <tglx@linutronix.de>, Chen-Yu Tsai <wens@csie.org>, 
+ Samuel Holland <samuel@sholland.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+ linux-usb@vger.kernel.org, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Guenter Roeck <linux@roeck-us.net>, Conor Dooley <conor+dt@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+In-Reply-To: <20241111013033.22793-1-andre.przywara@arm.com>
+References: <20241111013033.22793-1-andre.przywara@arm.com>
+Message-Id: <173133346581.1281779.16221268010355943435.robh@kernel.org>
+Subject: Re: [PATCH 00/14] arm64: dts: allwinner: Add basic Allwinner A523
+ support
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241111_023719_917285_82FF27BF 
-X-CRM114-Status: GOOD (  13.44  )
+X-CRM114-CacheID: sfid-20241111_073257_008151_BB32E792 
+X-CRM114-Status: GOOD (  38.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,98 +84,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
 
-FIELD_PREP() checks that a constant fits into the available bitfield,
-but if one of the two lookup tables in stm32_impedance_tune() does
-not find a matching entry, the index is out of range, which gcc
-correctly complains about:
+On Mon, 11 Nov 2024 01:30:19 +0000, Andre Przywara wrote:
+> Hi,
+> 
+> this series adds basic DT support for the Allwinner A523 SoC, plus the
+> Avaota-A1 router board using the T527 package variant of that SoC.[1]
+> Functionality-wise it relies on the pinctrl[2] and clock[3] support
+> series, though there is no direct code dependency series to this series
+> (apart from the respective binding patches in the two series').
+> 
+> Most of the patches add DT binding documentation for the most basic
+> peripherals, the vast majority of them actually being already supported,
+> courtesy of identical IP being used. This includes MMC and USB 2.0, so
+> with the above mentioned clock and pinctrl support this gives an already
+> somewhat usable mainline support for this new SoC family.
+> The watchdog is not completely compatible, but is an easy addition, so
+> this bit is included in here as well.
+> 
+> The A523 features 8 Arm Cortex-A55 cores, organised in two clusters,
+> clocked separately, with different OPP limits, in some kind of
+> little/LITTLE configuration. The GPU is a Arm Mali G57 MC01, and the chip
+> also features a single PCIe 2.1 lane, sharing a PHY with some USB 3.1
+> controller - which means only one of the two can be used.
+> The rest of the SoC is the usual soup of multimedia SoC IP, with eDP
+> support and two Gigabit Ethernet MACs among the highlights.
+> 
+> The main feature is patch 11/14, which adds the SoC .dtsi. This for now
+> is limited to the parts that are supported and could be tested. At the
+> moment there is no PSCI firmware, even the TF-A port from the BSP does
+> not seem to work for me. That's why the secondary cores have been omitted
+> for now, among other instances of some IP that I couldn't test yet.
+> I plan to add them in one of the next revisions.
+> 
+> The last patch adds basic support for the Avaota-A1 router board,
+> designed by YuzukiHD, with some boards now built by Pine64.
+> 
+> The mainline firmware side in general is somewhat lacking still: I have
+> basic U-Boot support working (including MMC and USB), although still
+> without DRAM support. This is for now covered by some binary blob found
+> in the (otherwise Open Source) Syterkit firmware, which also provides
+> the BSP versions of TF-A and the required (RISC-V) management core
+> firmware. Fortunately we have indications that DRAM support is not that
+> tricky, as the IP blocks are very similar to already supported, and dev
+> boards are on their way to the right people.
+> 
+> Meanwhile I would like people to have a look at those DT bits here. Please
+> compare them to the available user manual, and test them if you have access
+> to hardware.
+> 
+> Based on v6.12-rc1.
+> I pushed a branch with all the three series combined here:
+> https://github.com/apritzel/linux/commits/a523-v1/
+> 
+> Cheers,
+> Andre
+> 
+> [1] https://linux-sunxi.org/A523#Family_of_sun55iw3
+> [2] https://lore.kernel.org/linux-sunxi/20241111005750.13071-1-andre.przywara@arm.com/T/#t
+> [3] https://lore.kernel.org/linux-sunxi/20241111004722.10130-1-andre.przywara@arm.com/T/#t
+> 
+> Andre Przywara (14):
+>   dt-bindings: mmc: sunxi: Simplify compatible string listing
+>   dt-bindings: mmc: sunxi: add compatible strings for Allwinner A523
+>   dt-bindings: watchdog: sunxi: add Allwinner A523 compatible string
+>   watchdog: sunxi_wdt: Add support for Allwinner A523
+>   dt-bindings: i2c: mv64xxx: Add Allwinner A523 compatible string
+>   dt-bindings: irq: sun7i-nmi: document the Allwinner A523 NMI
+>     controller
+>   dt-bindings: phy: document Allwinner A523 USB-2.0 PHY
+>   dt-bindings: usb: sunxi-musb: add Allwinner A523 compatible string
+>   dt-bindings: usb: add A523 compatible string for EHCI and OCHI
+>   dt-bindings: rtc: sun6i: Add Allwinner A523 support
+>   arm64: dts: allwinner: Add Allwinner A523 .dtsi file
+>   dt-bindings: vendor-prefixes: Add YuzukiHD name
+>   dt-bindings: arm: sunxi: Add Avaota A1 board
+>   arm64: dts: allwinner: a523: add Avaota-A1 router support
+> 
+>  .../devicetree/bindings/arm/sunxi.yaml        |   5 +
+>  .../bindings/i2c/marvell,mv64xxx-i2c.yaml     |   1 +
+>  .../allwinner,sun7i-a20-sc-nmi.yaml           |   1 +
+>  .../bindings/mmc/allwinner,sun4i-a10-mmc.yaml |  40 +-
+>  .../phy/allwinner,sun50i-a64-usb-phy.yaml     |  10 +-
+>  .../bindings/rtc/allwinner,sun6i-a31-rtc.yaml |   4 +-
+>  .../usb/allwinner,sun4i-a10-musb.yaml         |   1 +
+>  .../devicetree/bindings/usb/generic-ehci.yaml |   1 +
+>  .../devicetree/bindings/usb/generic-ohci.yaml |   1 +
+>  .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+>  .../watchdog/allwinner,sun4i-a10-wdt.yaml     |   2 +
+>  arch/arm64/boot/dts/allwinner/Makefile        |   1 +
+>  .../arm64/boot/dts/allwinner/sun55i-a523.dtsi | 386 ++++++++++++++++++
+>  .../dts/allwinner/sun55i-t527-avaota-a1.dts   | 311 ++++++++++++++
+>  drivers/watchdog/sunxi_wdt.c                  |  11 +
+>  15 files changed, 751 insertions(+), 26 deletions(-)
+>  create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
+>  create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
+> 
+> --
+> 2.46.2
+> 
+> 
+> 
 
-In file included from <command-line>:
-In function 'stm32_impedance_tune',
-    inlined from 'stm32_combophy_pll_init' at drivers/phy/st/phy-stm32-combophy.c:247:9:
-include/linux/compiler_types.h:517:38: error: call to '__compiletime_assert_447' declared with attribute error: FIELD_PREP: value too large for the field
-  517 |  _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
-      |                                      ^
-include/linux/bitfield.h:68:3: note: in expansion of macro 'BUILD_BUG_ON_MSG'
-   68 |   BUILD_BUG_ON_MSG(__builtin_constant_p(_val) ?  \
-  115 |   __BF_FIELD_CHECK(_mask, 0ULL, _val, "FIELD_PREP: "); \
-      |   ^~~~~~~~~~~~~~~~
-drivers/phy/st/phy-stm32-combophy.c:162:8: note: in expansion of macro 'FIELD_PREP'
-  162 |        FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
-      |        ^~~~~~~~~~
 
-Rework this so the field value gets set inside of the loop and otherwise
-set to zero.
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
 
-Fixes: 47e1bb6b4ba0 ("phy: stm32: Add support for STM32MP25 COMBOPHY.")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/phy/st/phy-stm32-combophy.c | 21 +++++++++++++++------
- 1 file changed, 15 insertions(+), 6 deletions(-)
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
 
-diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
-index 765bb34fe358..49e9fa90a681 100644
---- a/drivers/phy/st/phy-stm32-combophy.c
-+++ b/drivers/phy/st/phy-stm32-combophy.c
-@@ -122,6 +122,7 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
- 	u32 min_vswing = imp_lookup[0].vswing[0];
- 	u32 val;
-+	u32 regval;
- 
- 	if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
- 		if (val < min_imp || val > max_imp) {
-@@ -129,16 +130,20 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 			return -EINVAL;
- 		}
- 
--		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++)
--			if (imp_lookup[imp_of].microohm <= val)
-+		regval = 0;
-+		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
-+			if (imp_lookup[imp_of].microohm <= val) {
-+				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of);
- 				break;
-+			}
-+		}
- 
- 		dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
- 			imp_lookup[imp_of].microohm);
- 
- 		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
- 				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
--				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
-+				   regval);
- 	} else {
- 		regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
- 		imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
-@@ -150,16 +155,20 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 			return -EINVAL;
- 		}
- 
--		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++)
--			if (imp_lookup[imp_of].vswing[vswing_of] >= val)
-+		regval = 0;
-+		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++) {
-+			if (imp_lookup[imp_of].vswing[vswing_of] >= val) {
-+				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of);
- 				break;
-+			}
-+		}
- 
- 		dev_dbg(combophy->dev, "Set %u microvolt swing\n",
- 			 imp_lookup[imp_of].vswing[vswing_of]);
- 
- 		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
- 				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
--				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
-+				   regval);
- 	}
- 
- 	return 0;
--- 
-2.39.5
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+New warnings running 'make CHECK_DTBS=y allwinner/sun55i-t527-avaota-a1.dtb' for 20241111013033.22793-1-andre.przywara@arm.com:
+
+In file included from arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts:6:
+arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi:6:10: fatal error: dt-bindings/clock/sun55i-a523-ccu.h: No such file or directory
+    6 | #include <dt-bindings/clock/sun55i-a523-ccu.h>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[3]: *** [scripts/Makefile.dtbs:129: arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb] Error 1
+make[2]: *** [scripts/Makefile.build:478: arch/arm64/boot/dts/allwinner] Error 2
+make[2]: Target 'arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dtb' not remade because of errors.
+make[1]: *** [/home/rob/proj/linux-dt-testing/Makefile:1399: allwinner/sun55i-t527-avaota-a1.dtb] Error 2
+make: *** [Makefile:224: __sub-make] Error 2
+make: Target 'allwinner/sun55i-t527-avaota-a1.dtb' not remade because of errors.
+
+
+
+
 
 
 -- 
