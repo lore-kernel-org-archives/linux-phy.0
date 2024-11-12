@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D29C1D42BBA
-	for <linux-phy@archiver.kernel.org>; Tue, 12 Nov 2024 18:05:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05D90D42BBF
+	for <linux-phy@archiver.kernel.org>; Tue, 12 Nov 2024 18:05:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=DxAFgY8xHiSQiL/rkLzDbU0dpO/HkX9rVcZc5dofOrU=; b=GyJSGURsmR3aQmZ8ZCYT+aYOyR
-	WKd0mSiGlJlkg37fW1SPrqo9wjzYSswM77fBV6JhG82cI04zZ1WnEsKJjBD/QF9ZvdaPqS+pyFHp2
-	4qnOZXIxWTwtzluZeZymWie57oWB4fwrtRFa1xW8pG2NF1Ge+d/U13q5+97bGWD/eyzE+0plz3b3t
-	4zL6wDt7xRJmMdsTRXws58n5+n4te+HEkJ7x31XZsQrx0ue5L9s6dQn9AaCqini+6envEw6j+Z5zQ
-	6KYeiTxCc7Dvp0AaDpRXDO+Giuv+dbM1Fa8LAI4aazbqgr5wi2pwEyi+AxnXzQRuzpAStTVFvwdgk
-	bXLGIvdw==;
+	bh=bPV/MncafFTZFR3IlJ8FuaoyGg5aBzn7ll0f76JQa/g=; b=ft36KtYBYNX18IwuUFmhRVo/Ga
+	6OiOAbmnW2KU598/SkWkNfeVEjMvry+E6Y/eHlXK2ExDM+klK/glv57/ce4mro0G7VGGp69RFoCUx
+	SatU/eEUCGb9SRjFOO9gCXC8znwsP7gQDeLOoSLeQg7kz+OsLlaAMYykHbHg0eia9J8jVTvfCmXgF
+	6t5DDk0XGEsNUSKW1Qzcy6SLb/ndELecC/ytzWYUd1CUPTDdulaA2O2jPQYTMRLoZxXwUzcca6tSe
+	ir5fW2bRDRAO7eBJKBiWFpWag0Er8qUSsu/zFkWzkTDBzcmOzB/A4U7QcZzW9gmdFvf2G5O7A1Npt
+	4c6iqK+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tAvGw-00000004Ud1-1j2p;
+	id 1tAvGw-00000004UdJ-31Om;
 	Tue, 12 Nov 2024 18:05:50 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tAv4r-00000004Rgg-21cq
+	id 1tAv5A-00000004RlL-3hAE
 	for linux-phy@lists.infradead.org;
-	Tue, 12 Nov 2024 17:53:22 +0000
+	Tue, 12 Nov 2024 17:53:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A06395C5493;
-	Tue, 12 Nov 2024 17:52:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8A28C4CECD;
-	Tue, 12 Nov 2024 17:53:16 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 12C8A5C5780;
+	Tue, 12 Nov 2024 17:52:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5973BC4CECD;
+	Tue, 12 Nov 2024 17:53:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1731434000;
-	bh=CdNwh4TngMkwAITvnYjnGJi43aRzrH2WAmIdAF6r2Dk=;
+	s=k20201202; t=1731434020;
+	bh=mjaZInMpBAbkCA4E5OU9QfNO4D8qD2vAuWT2Q/jQS5g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=c33DwffK4W91A1K6v2sh8AoMP06Tnu6dfrknLd0+J4QkGUyXjZQHYhRW1tRln+1X4
-	 DRe+T0NHBsOtHkpyMEHJ5UD9f78QqPJ26ttMalzIZAn9Vm3LeVAPRNcNjWx1WJg26e
-	 wySH0Sul5B3fyUr9Tvt9pRpUFyGlIDR4/YhbQ0IQC7zdp5ugQ7NHGzg48QK6gjl1j6
-	 UxO40FAHMGRCpN9Xa32bvUV+Kn1cK1gqjK6fayAHaEus0tzgNV43DMztJSuUMIbXTr
-	 n3cKHyOZ+CG/3nM/caaimGBd4Tl96xQL1xts1Xk+cfDmCaxb+hfsTlxLkTK+Gqr1ON
-	 NHGA5RH5GuNHQ==
-Date: Tue, 12 Nov 2024 17:53:14 +0000
+	b=Lnnh/sKjKv+RHS6oskPYA9NGkaNCdP4vd0WXfoFlrUDn84S/nQAlO5NzSz3qwh311
+	 HTwIG0mEMfVsjmOyEvvE3kdYvg0eHb+bOFvdyJlIeDY4wT0oIKprFKrdZbjYUWXSbA
+	 pQUNTWd3v0z9/xNOo4HnvGgxJ9z5QvfKHAR447HGTNI34YnwKJX9cR5UPcNAs94ZXR
+	 0jq+IETui39IiQjL2Djq4PauC+9LZWz7Z534CxkTB/Y6vqpPik5yF8kva4PL7TynfZ
+	 irQ+QhLcsPcvWpw00lPKZwS1+Cv1gHNjOwSnubFg9CR2SdXyUfZxJDsBoX29B6HPR6
+	 ftN8cu6PiN7Hg==
+Date: Tue, 12 Nov 2024 17:53:34 +0000
 From: Conor Dooley <conor@kernel.org>
 To: Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
@@ -55,16 +55,16 @@ Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v1 3/6] dt-bindings: phy: qcom,qmp-usb: Add IPQ5424 USB3
- PHY
-Message-ID: <20241112-salvation-dad-3a0577bcb9ce@spud>
+Subject: Re: [PATCH v1 1/6] dt-bindings: phy: qcom,qusb2: Document IPQ5424
+ compatible
+Message-ID: <20241112-proud-moisten-13900b835e29@spud>
 References: <20241112091355.2028018-1-quic_varada@quicinc.com>
- <20241112091355.2028018-4-quic_varada@quicinc.com>
+ <20241112091355.2028018-2-quic_varada@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <20241112091355.2028018-4-quic_varada@quicinc.com>
+In-Reply-To: <20241112091355.2028018-2-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_095321_581622_EBF2C934 
-X-CRM114-Status: UNSURE (   6.46  )
+X-CRM114-CacheID: sfid-20241112_095340_992351_AFC6F7AF 
+X-CRM114-Status: UNSURE (   7.06  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,43 +77,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8942179926324749176=="
+Content-Type: multipart/mixed; boundary="===============1286607867839379570=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============8942179926324749176==
+--===============1286607867839379570==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="uEd4HNO5pLge7WAs"
+	protocol="application/pgp-signature"; boundary="HEptGeQSGxI0F2Id"
 Content-Disposition: inline
 
 
---uEd4HNO5pLge7WAs
+--HEptGeQSGxI0F2Id
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Nov 12, 2024 at 02:43:52PM +0530, Varadarajan Narayanan wrote:
-> Add dt-bindings for USB3 PHY found on Qualcomm IPQ5424
+On Tue, Nov 12, 2024 at 02:43:50PM +0530, Varadarajan Narayanan wrote:
+> Document the compatible string used for the qusb2 phy in IPQ5424.
 >=20
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 
 Acked-by: Conor Dooley <conor.dooley@microchip.com>
 
---uEd4HNO5pLge7WAs
+--HEptGeQSGxI0F2Id
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZzOWCgAKCRB4tDGHoIJi
-0r5DAP40niOs5uZ96CY9WXnzZbHEwAwoHSs3p/xuq3PQvb7fxwEA8iX6Sj5WwHTP
-gO1xpITVwnGMUTH2usuOvbTBbT6rnws=
-=JwNr
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZzOWHgAKCRB4tDGHoIJi
+0mTcAQCv3BSj7k0bxTkdDbn6NXaI13elDe2ReD+NRb36KT9RTQEAuViXZO3eWe0i
+l/g+guT1pbcTWXO5vT9c0xpTwap0OAU=
+=lPxM
 -----END PGP SIGNATURE-----
 
---uEd4HNO5pLge7WAs--
+--HEptGeQSGxI0F2Id--
 
 
---===============8942179926324749176==
+--===============1286607867839379570==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -124,5 +125,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============8942179926324749176==--
+--===============1286607867839379570==--
 
