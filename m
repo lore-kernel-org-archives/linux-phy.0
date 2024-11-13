@@ -4,98 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B5F7D597C8
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Nov 2024 03:15:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BC0FD41C0B
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Nov 2024 07:02:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNXDXj+++fYR5YYccRwr/6dVq3Yy3hNC6+3g6MtPdfA=; b=AMnszLuWwG7Qha
-	1RvWAZMMbESNevBZPF0JdY2bmICNAVROrHbo3dNPUZStrwIcsq1f3Ls8iOvG+UyltelZXO0ZrUtOc
-	Ci0H5AXpSsKYv4uADXYKN8tzTCABFaCAiS++NpgMITpfkxmvxwyWbPrtEQgHR3uUcesa5wEwcdx3W
-	njwzQPi6OxAKh5G6zj9FnyUGT1sHbqOdZ4nuxGeZk8jdvLBMKTVt3i2MEWDDOYLUL1Xt64HF9yJT9
-	ZQ78bVwgVlAA+ae88oJxsww7+jemtNs6V9croai0Vz6icl6gdykTCr1Sz8KQj9h1XTDarhpWFSaeX
-	DRDWlcip8t1AvHu9Dplg==;
+	List-Owner; bh=mF360y9gXkOfzQCbicBi9h3KoZwvZHitJbCRqgwiIRA=; b=HpXeCD4u5TfpuJ
+	VhimQ6gwColQIuyU7EmnAV6U3sm1tx2AUGhqDQFp6sUOMWIIZvvmAWY1Dl75r6IiXOQU/bPStIebG
+	RBPqYrwpXkvy/H/53jXdKIF49apNy39WApvgGtlRRIxyPnr7R+LgneWL2KnBwXgpVxqlp7QQ+10FC
+	FRea9BtCbahZPKWvY3BxwS0FQfv8Cldkuqs4FW0KV+rY8T26UrndOEQaSjL/Jt3YxB7UPb/fm0tFJ
+	gEdXogMJdKv/GHeDx1Q57rtL49TpDpFg+iJrKn4RSaedPSgoQ3EGDOh66GVWEBJCrF2YmRItx539M
+	kpc9OWllf9C0xQoj+9FQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB3rH-00000005ei0-0AX7;
-	Wed, 13 Nov 2024 03:15:55 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tB7OB-00000005x2g-0CFo;
+	Wed, 13 Nov 2024 07:02:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB3rE-00000005ehW-3PH5
+	id 1tB7O8-00000005x2H-16eg
 	for linux-phy@lists.infradead.org;
-	Wed, 13 Nov 2024 03:15:54 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMRgqn020160;
-	Wed, 13 Nov 2024 03:15:45 GMT
+	Wed, 13 Nov 2024 07:02:05 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMS6RV019322;
+	Wed, 13 Nov 2024 07:01:57 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+0nLDjWPpDSaIUWRpCkibPRwNwq3e9MLwoKzDakWg+w=; b=JX1qTyrT7zAKVhlY
-	RlEkMRqXDsI6mLayZ37Tij6MjkOAABzd7vU7rTN3cRkaAMtIL4s6WtUbLWD2PE41
-	7858slkiUsa/VNI9mseBJ/vZsM51j5zzOL6gRMbxLVFsSnC21GbHiBZA19pMypFi
-	wVibfE9gQv/f7vwkeB8EcGQLETrSTm5Swok5GJdOvMwOhPGg93B3w4FuJTvwrqoc
-	IJbFbvtEZmzwWxFzmzGisGc7nmkxAoaH8Y9SQRuR8ToH+uUtYRj+QDfgPGHU3mxC
-	DLa9HJP/7g5zqt3p00icl279ejEt7J914d7Z0eqJm0PfaA5NANgwcMRi/V44ioIu
-	Ppdidw==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42uc60e0te-1
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=VvV/bpHM+sl/aBVkRsDepmI3
+	ENDt94Z7ytMRVdSGL0s=; b=m2WpGeDgK3R6+dBSOE2HIxnkgV+gi6Mvyd2zShjo
+	XDXWQEKj9s5poiSkYNafDQqv8GVZ2PM/I5EM9jwS5pUQPilmVefabos4lxEho7/b
+	tPU7r7zx2wHH7p12qOx/X05P7NV0LbUEh8G2M5jYH1yEu2b58fJUa4CMy35r5DZC
+	WDYTMWcz4m/Pdbj0Y/xwVtHuFPcxv3ZfybyCi3py0lgB/0LVzSaLYHFBQbUg5BbP
+	3bYk55bfTpQd6Zx39xyL5KQ7jNBYS2dnuJppVkKg0LHd1CZucdntfQFJsNsiZmPj
+	jxfDWaNVagBdkd7VlKEmKkn6N9fpCesus4F8onMKgK57/g==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42v4kqu37r-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 03:15:45 +0000 (GMT)
+	Wed, 13 Nov 2024 07:01:57 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD3FiTU000592
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD71utn000633
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 03:15:44 GMT
-Received: from [10.239.29.179] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 12 Nov
- 2024 19:15:38 -0800
-Message-ID: <ef37236d-8856-4981-82fa-c0194d7b3dfc@quicinc.com>
-Date: Wed, 13 Nov 2024 11:15:35 +0800
+	Wed, 13 Nov 2024 07:01:56 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 12 Nov 2024 23:01:50 -0800
+Date: Wed, 13 Nov 2024 12:31:46 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Krishna Kurapati <quic_kriskura@quicinc.com>
+CC: <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <gregkh@linuxfoundation.org>,
+        <robh@kernel.org>, <abel.vesa@linaro.org>, <johan+linaro@kernel.org>,
+        <dmitry.baryshkov@linaro.org>, <mantas@8devices.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <quic_kbajaj@quicinc.com>,
+        <linux-kernel@vger.kernel.org>, <quic_wcheng@quicinc.com>,
+        <vkoul@kernel.org>, <linux-usb@vger.kernel.org>,
+        <andersson@kernel.org>, <kishon@kernel.org>, <konradybcio@kernel.org>
+Subject: Re: [PATCH v1 6/6] arm64: dts: qcom: Add USB controller and phy
+ nodes for IPQ5424
+Message-ID: <ZzRO2uXHCRVqqq08@hu-varada-blr.qualcomm.com>
+References: <20241112091355.2028018-1-quic_varada@quicinc.com>
+ <20241112091355.2028018-7-quic_varada@quicinc.com>
+ <e541fd10-7037-4cbf-b07a-6cac8a7a9452@quicinc.com>
+ <ZzNEecwbh63soh5J@hu-varada-blr.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 5/5] arm64: dts: qcom: x1e80100: Add support for PCIe3
- on x1e80100
-To: Johan Hovold <johan@kernel.org>
-CC: <manivannan.sadhasivam@linaro.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <robh@kernel.org>, <andersson@kernel.org>,
-        <konradybcio@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>, <abel.vesa@linaro.org>,
-        <quic_msarkar@quicinc.com>, <quic_devipriy@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <kw@linux.com>, <lpieralisi@kernel.org>,
-        <neil.armstrong@linaro.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-clk@vger.kernel.org>, <johan+linaro@kernel.org>
-References: <20241101030902.579789-1-quic_qianyu@quicinc.com>
- <20241101030902.579789-6-quic_qianyu@quicinc.com>
- <ZyjbrLEn8oSJjaZN@hovoldconsulting.com>
- <de5f40ab-90b7-4c75-b981-dd5824650660@quicinc.com>
- <c558f9eb-d190-4b77-b5a3-7af6b7de68d8@quicinc.com>
- <ZzOQi0PpRZYts-B0@hovoldconsulting.com>
-Content-Language: en-US
-From: Qiang Yu <quic_qianyu@quicinc.com>
-In-Reply-To: <ZzOQi0PpRZYts-B0@hovoldconsulting.com>
+Content-Disposition: inline
+In-Reply-To: <ZzNEecwbh63soh5J@hu-varada-blr.qualcomm.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: GcnROkpzv1BlU-MSswyL8At-npoyDzuB
-X-Proofpoint-ORIG-GUID: GcnROkpzv1BlU-MSswyL8At-npoyDzuB
+X-Proofpoint-ORIG-GUID: mOsWURAirdCvSrraPqNZiNyzC3qRAdMs
+X-Proofpoint-GUID: mOsWURAirdCvSrraPqNZiNyzC3qRAdMs
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 malwarescore=0
- phishscore=0 suspectscore=0 impostorscore=0 mlxlogscore=812 adultscore=0
- lowpriorityscore=0 priorityscore=1501 clxscore=1015 mlxscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
- definitions=main-2411130027
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 impostorscore=0
+ adultscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
+ malwarescore=0 spamscore=0 clxscore=1015 mlxscore=0 mlxlogscore=963
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411130061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_191553_009499_4A325A98 
-X-CRM114-Status: GOOD (  15.38  )
+X-CRM114-CacheID: sfid-20241112_230204_339866_9D9B6D66 
+X-CRM114-Status: GOOD (  22.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,32 +101,228 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ck9uIDExLzEzLzIwMjQgMToyOSBBTSwgSm9oYW4gSG92b2xkIHdyb3RlOgo+IE9uIE1vbiwgTm92
-IDExLCAyMDI0IGF0IDExOjQ0OjE3QU0gKzA4MDAsIFFpYW5nIFl1IHdyb3RlOgo+PiBPbiAxMS81
-LzIwMjQgMToyOCBQTSwgUWlhbmcgWXUgd3JvdGU6Cj4+PiBPbiAxMS80LzIwMjQgMTA6MzUgUE0s
-IEpvaGFuIEhvdm9sZCB3cm90ZToKPj4+PiBPbiBUaHUsIE9jdCAzMSwgMjAyNCBhdCAwODowOTow
-MlBNIC0wNzAwLCBRaWFuZyBZdSB3cm90ZToKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-cmFuZ2VzID0gPDB4MDEwMDAwMDAgMHgwIDB4MDAwMDAwMDAgMHgwIDB4NzgyMDAwMDAgMHgwCj4+
-Pj4+IDB4MTAwMDAwPiwKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDww
-eDAyMDAwMDAwIDB4MCAweDc4MzAwMDAwIDB4MCAweDc4MzAwMDAwIDB4MAo+Pj4+PiAweDNkMDAw
-MDA+LAo+Pj4+IENhbiB5b3UgZG91YmxlIGNoZWNrIHRoZSBzaXplIGhlcmUgc28gdGhhdCBpdCBp
-cyBpbmRlZWQgY29ycmVjdCBhbmQgbm90Cj4+Pj4ganVzdCBjb3BpZWQgZnJvbSB0aGUgb3RoZXIg
-bm9kZXMgd2hpY2ggaW5pdGlhbGx5IGdvdCBpdCB3cm9uZzoKPj4+Pgo+Pj4+ICDCoMKgwqDCoGh0
-dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xrbWwvMjAyNDA3MTAtdG9waWMtYmFybWFuLXYxLTEtNWY2
-M2ZjYThkMGZjQGxpbmFyby5vcmcvCj4+IEJUVywgcmVnaW9ucyBvZiBQQ0llNmEsIFBDSWU0LCBQ
-Q0llNSBhcmUgNjRNQiwgMzJNQiwgMzJNQiwgcmVzcGVjdGl2ZWx5Lgo+PiBXaHkgcmFuZ2Ugc2l6
-ZSBpcyBzZXQgdG8gMHgxZDAwMDAwIGZvciBQQ0llNmEsIGFueSBpc3N1ZSBpcyByZXBvcnRlZCBv
-bgo+PiBQQ0llNmE/Cj4gVGhhbmtzIGZvciBjaGVja2luZy4gSXQgc2VlbXMgdGhlIHBhdGNoIGxp
-bmtlZCB0byBhYm92ZSB3YXMgYnJva2VuIGZvcgo+IFBDSWU2YSB0aGVuLgo+Cj4gV2UgZGlkIHNl
-ZSBQQ0llNSBwcm9iZSBicmVha2luZyBkdWUgdG8gdGhlIG92ZXJsYXAgd2l0aCBQQ0llNCBidXQg
-dGhlCj4gcGF0Y2ggcHJlZGF0ZXMgUENJZTUgc3VwcG9ydCBiZWluZyBwb3N0ZWQgYW5kIG1lcmdl
-ZCBzbyBpdCB3YXMgcHJvYmFibHkKPiBqdXN0IGJhc2VkIG9uIGluc3BlY3Rpb24uCj4KPiBDb3Vs
-ZCB5b3Ugc2VuZCBhIGZpeCBmb3IgUENJZTZhPwpTdXJlLCB3aWxsIHNlbmQgdGhlIGZpeC4KClRo
-YW5rcywKUWlhbmcgWXUKPgo+IEpvaGFuCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Tue, Nov 12, 2024 at 05:35:13PM +0530, Varadarajan Narayanan wrote:
+> On Tue, Nov 12, 2024 at 03:05:57PM +0530, Krishna Kurapati wrote:
+> >
+> >
+> > On 11/12/2024 2:43 PM, Varadarajan Narayanan wrote:
+> > > The IPQ5424 SoC has both USB2.0 and USB3.0 controllers. The USB3.0
+> > > can connect to either of USB2.0 or USB3.0 phy and operate in the
+> > > respective mode.
+> > >
+> > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> > > ---
+> > >   arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts |  67 +++++++++
+> > >   arch/arm64/boot/dts/qcom/ipq5424.dtsi       | 153 ++++++++++++++++++++
+> > >   2 files changed, 220 insertions(+)
+> > >
+> >
+> > [...]
+> >
+> > > diff --git a/arch/arm64/boot/dts/qcom/ipq5424.dtsi b/arch/arm64/boot/dts/qcom/ipq5424.dtsi
+> > > index 5e219f900412..d8c045a311c2 100644
+> > > --- a/arch/arm64/boot/dts/qcom/ipq5424.dtsi
+> > > +++ b/arch/arm64/boot/dts/qcom/ipq5424.dtsi
+> > > @@ -233,6 +233,159 @@ intc: interrupt-controller@f200000 {
+> > >   			msi-controller;
+> > >   		};
+> > > +		qusb_phy_1: phy@71000 {
+> > > +			compatible = "qcom,ipq5424-qusb2-phy";
+> > > +			reg = <0 0x00071000 0 0x180>;
+> > > +			#phy-cells = <0>;
+> > > +
+> > > +			clocks = <&gcc GCC_USB1_PHY_CFG_AHB_CLK>,
+> > > +				<&xo_board>;
+> > > +			clock-names = "cfg_ahb", "ref";
+> > > +
+> > > +			resets = <&gcc GCC_QUSB2_1_PHY_BCR>;
+> > > +			status = "disabled";
+> > > +		};
+> > > +
+> > > +		usb2: usb2@1e00000 {
+> > > +			compatible = "qcom,ipq5424-dwc3", "qcom,dwc3";
+> > > +			reg = <0 0x01ef8800 0 0x400>;
+> > > +			#address-cells = <2>;
+> > > +			#size-cells = <2>;
+> > > +			ranges;
+> > > +
+> > > +			clocks = <&gcc GCC_USB1_MASTER_CLK>,
+> > > +				 <&gcc GCC_USB1_SLEEP_CLK>,
+> > > +				 <&gcc GCC_USB1_MOCK_UTMI_CLK>,
+> > > +				 <&gcc GCC_USB1_PHY_CFG_AHB_CLK>,
+> > > +				 <&gcc GCC_CNOC_USB_CLK>;
+> > > +
+> > > +			clock-names = "core",
+> > > +				      "sleep",
+> > > +				      "mock_utmi",
+> > > +				      "iface",
+> > > +				      "cfg_noc";
+> > > +
+> > > +			assigned-clocks = <&gcc GCC_USB1_MASTER_CLK>,
+> > > +					  <&gcc GCC_USB1_MOCK_UTMI_CLK>;
+> > > +			assigned-clock-rates = <200000000>,
+> > > +					       <24000000>; > +
+> >
+> > Shouldn't this be 19.2MHz ?
+>
+> XO is 24MHz in this SoC.
+>
+> > > +			interrupts-extended = <&intc GIC_SPI 395 IRQ_TYPE_LEVEL_HIGH>,
+> > > +					      <&intc GIC_SPI 397 IRQ_TYPE_LEVEL_HIGH>,
+> > > +					      <&intc GIC_SPI 387 IRQ_TYPE_LEVEL_HIGH>,
+> > > +					      <&intc GIC_SPI 388 IRQ_TYPE_LEVEL_HIGH>;
+> > > +			interrupt-names = "pwr_event",
+> > > +					  "qusb2_phy",
+> > > +					  "dm_hs_phy_irq",
+> > > +					  "dp_hs_phy_irq";
+> > > +
+> >
+> > Please check the hs_phy_irq as well and add it if its present.
+>
+> Will add.
+
+Checked with HW team, there is no hs_phy_irq in this case.
+
+> > > +			resets = <&gcc GCC_USB1_BCR>;
+> > > +			qcom,select-utmi-as-pipe-clk;
+> > > +			status = "disabled";
+> > > +
+> > > +			dwc_1: usb@1e00000 {
+> > > +				compatible = "snps,dwc3";
+> > > +				reg = <0 0x01e00000 0 0xe000>;
+> > > +				clocks = <&gcc GCC_USB1_MOCK_UTMI_CLK>;
+> > > +				clock-names = "ref";
+> >
+> > Another clock in dwc3 node ?
+
+Not sure if I understand the above comment. Per bindings [1] a
+clock entry is expected in this node.
+
+1 - https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/Documentation/devicetree/bindings/usb/snps,dwc3.yaml#n57
+
+Thanks
+Varada
+
+> > > +				interrupts = <GIC_SPI 396 IRQ_TYPE_LEVEL_HIGH>;
+> > > +				phys = <&qusb_phy_1>;
+> > > +				phy-names = "usb2-phy";
+> > > +				tx-fifo-resize;
+> > > +				snps,is-utmi-l1-suspend;
+> > > +				snps,hird-threshold = /bits/ 8 <0x0>;
+> > > +				snps,dis_u2_susphy_quirk;
+> > > +				snps,dis_u3_susphy_quirk;
+> > > +			};
+> > > +		};
+> > > +
+> > > +		qusb_phy_0: phy@7b000 {
+> > > +			compatible = "qcom,ipq5424-qusb2-phy";
+> > > +			reg = <0 0x0007b000 0 0x180>;
+> > > +			#phy-cells = <0>;
+> > > +
+> > > +			clocks = <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
+> > > +				<&xo_board>;
+> > > +			clock-names = "cfg_ahb", "ref";
+> > > +
+> > > +			resets = <&gcc GCC_QUSB2_0_PHY_BCR>;
+> > > +			status = "disabled";
+> > > +		};
+> > > +
+> > > +		ssphy_0: phy@7d000 {
+> > > +			compatible = "qcom,ipq5424-qmp-usb3-phy";
+> > > +			reg = <0 0x0007d000 0 0xa00>;
+> > > +			#phy-cells = <0>;
+> > > +
+> > > +			clocks = <&gcc GCC_USB0_AUX_CLK>,
+> > > +				 <&xo_board>,
+> > > +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
+> > > +				 <&gcc GCC_USB0_PIPE_CLK>;
+> > > +			clock-names = "aux",
+> > > +				      "ref",
+> > > +				      "cfg_ahb",
+> > > +				      "pipe";
+> > > +
+> > > +			resets = <&gcc GCC_USB0_PHY_BCR>,
+> > > +				 <&gcc GCC_USB3PHY_0_PHY_BCR>;
+> > > +			reset-names = "phy",
+> > > +				      "phy_phy";
+> > > +
+> > > +			#clock-cells = <0>;
+> > > +			clock-output-names = "usb0_pipe_clk";
+> > > +
+> > > +			status = "disabled";
+> > > +		};
+> > > +
+> > > +		usb3: usb3@8a00000 {
+> > > +			compatible = "qcom,ipq5424-dwc3", "qcom,dwc3";
+> > > +			reg = <0 0x08af8800 0 0x400>;
+> > > +
+> > > +			#address-cells = <2>;
+> > > +			#size-cells = <2>;
+> > > +			ranges;
+> > > +
+> > > +			clocks = <&gcc GCC_USB0_MASTER_CLK>,
+> > > +				 <&gcc GCC_USB0_SLEEP_CLK>,
+> > > +				 <&gcc GCC_USB0_MOCK_UTMI_CLK>,
+> > > +				 <&gcc GCC_USB0_PHY_CFG_AHB_CLK>,
+> > > +				 <&gcc GCC_CNOC_USB_CLK>;
+> > > +
+> > > +			clock-names = "core",
+> > > +				      "sleep",
+> > > +				      "mock_utmi",
+> > > +				      "iface",
+> > > +				      "cfg_noc";
+> > > +
+> > > +			assigned-clocks = <&gcc GCC_USB0_MASTER_CLK>,
+> > > +					  <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> > > +			assigned-clock-rates = <200000000>,
+> > > +					       <24000000>;
+> > > +
+> >
+> > same comment as above, isn't this supposed to be 19.2MHz ?
+>
+> XO is 24MHz in this SoC.
+>
+> > > +			interrupts-extended = <&intc GIC_SPI 412 IRQ_TYPE_LEVEL_HIGH>,
+> > > +					      <&intc GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH>;
+> > > +			interrupt-names = "pwr_event",
+> > > +					  "qusb2_phy";
+> > > +
+> >
+> > DP/ DM interrupts ?
+>
+> Will add.
+>
+> > > +			resets = <&gcc GCC_USB_BCR>;
+> > > +			status = "disabled";
+> > > +
+> > > +			dwc_0: usb@8a00000 {
+> > > +				compatible = "snps,dwc3";
+> > > +				reg = <0 0x08a00000 0 0xcd00>;
+> > > +				clocks = <&gcc GCC_USB0_MOCK_UTMI_CLK>;
+> > > +				clock-names = "ref";
+> > > +				interrupts = <GIC_SPI 409 IRQ_TYPE_LEVEL_HIGH>;
+> > > +				phys = <&qusb_phy_0>, <&ssphy_0>;
+> > > +				phy-names = "usb2-phy", "usb3-phy";
+> > > +				tx-fifo-resize;
+> > > +				snps,is-utmi-l1-suspend;
+> > > +				snps,hird-threshold = /bits/ 8 <0x0>;
+> > > +				snps,dis_u2_susphy_quirk;
+> > > +				snps,dis_u3_susphy_quirk;
+> >
+> > Disable u1/u2 entry as well please.
+>
+> Will add.
+>
+> Thanks
+> Varada
+>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
