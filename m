@@ -4,70 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91913D637A4
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Nov 2024 18:12:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04796D637A8
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Nov 2024 18:51:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bCZ24tXn/qF8+z2CYObNCu1UQDiA4SPqucmjcKwfMYU=; b=36t6kbzt0Ltg6F
-	EXktkjKlQd9StuVO3cdF0jUeqrw6qm8XueotuU+S3ZpdpmFmcltKAA3wDxy5Qq7ghez+To2PVBM6o
-	4J0r9/6rFEeMr2YmrU3v+xCxfe8mxpy7WChFjJxVTNlLzmcovFM9UnpnV93sLgnoIlxpn7g86vzHs
-	BWb5fa65B6rWfIxEHRiFjyDSq+Rz2/MEoFQD36barvhIcS3++y8MDivelrjZ6zZecV1XR3VeD//4q
-	CHIIWjkXb0qBgLNgzqwsuoI+Auay8iTxD9WlFgk+eLOVzHWX400mMLLQiEr+Nml/xeff9caxO1KSw
-	yTcfxYuOwwMHyy9EQR3Q==;
+	List-Owner; bh=wyuKM70Q5qkkExRsIQ0iOJptbz/yMiEDrDH9mr09g+E=; b=wZjmCKNkEN4Lu7
+	O1n9yHnmkrG8srCIQqL2oXv/ViEAMUMUbtCQ+7dD/uFqmAOJl4Hh/FkKuQXftZrKwAHikbi6H0UKf
+	JOzL0H1FbCyWLNp6FKZvME6I+tgsOVWuR45zIOBKCoK0xtVPenFzP0VpLODpXQz1IgotSwL45BfdS
+	AF2k0VRvmBMZs89reGmN99DyX+lGH6PcewDvheHE1lGie+XBFDyTqy4XTybb8lkF5Ef8s5ERr8D5O
+	uLvJMNqKQjXFQ2lnChmRGqFGqF4PWjzjJOWs+H4xH8lrtPnIOFyJT79Nn2gJx3aatQVvqItxGZ8Eh
+	njV615+FDnasDAWr7URw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBHqi-00000007fhW-0Lom;
-	Wed, 13 Nov 2024 18:12:16 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tBISU-00000007lmX-3y81;
+	Wed, 13 Nov 2024 18:51:18 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBHq9-00000007fcP-3V59
-	for linux-phy@lists.infradead.org;
-	Wed, 13 Nov 2024 18:11:43 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D1D4A5C5535;
-	Wed, 13 Nov 2024 18:10:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2694C4CEC3;
-	Wed, 13 Nov 2024 18:11:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1731521500;
-	bh=fujGutBZp/9h60ZjqyqAyU+r1u3fFTWP8gNIzYxYXF8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EvEgU1c4XeLEl4tM1nBnAJKfew+cCYyosddh3FVACqg1LvKag0LOQNC6wrJWurQdN
-	 OtqRufZ0Ii3nSM7M/7CTJXf+O3LPP1CUc2ciI2QQ2ELw2TkgUEw530Zbc2ZOWDmeQd
-	 nuFgV2I2jxOVN1yad45n2NwOhKG1EmCZvP+oM90uhbqz5dYfVFF5VwdXuqtbA/6/rK
-	 mvQsxzwCX3oduGiMERauuj47XlLN4iRjQExcPUCSS3VehlrBRKVjJPjD5xxRzy7IeT
-	 X+wPkphC0cymvvG4UNhUJijEnKly14hRP3TXoJh61De8RlmIwOLleWapkVYRE9aq5s
-	 BN+YYj3Mi2CoQ==
-Date: Wed, 13 Nov 2024 12:11:38 -0600
-From: Rob Herring <robh@kernel.org>
-To: Johan Hovold <johan@kernel.org>
-Cc: Varadarajan Narayanan <quic_varada@quicinc.com>, vkoul@kernel.org,
-	kishon@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	gregkh@linuxfoundation.org, andersson@kernel.org,
-	konradybcio@kernel.org, dmitry.baryshkov@linaro.org,
-	mantas@8devices.com, quic_rohiagar@quicinc.com,
-	quic_kriskura@quicinc.com, manivannan.sadhasivam@linaro.org,
-	abel.vesa@linaro.org, quic_kbajaj@quicinc.com,
-	quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v2 6/6] arm64: dts: qcom: Add USB controller and phy
- nodes for IPQ5424
-Message-ID: <20241113181138.GA1011553-robh@kernel.org>
-References: <20241113072316.2829050-1-quic_varada@quicinc.com>
- <20241113072316.2829050-7-quic_varada@quicinc.com>
- <ZzSYU61pmFTcPf5_@hovoldconsulting.com>
+	id 1tBIRt-00000007lhk-3SVt;
+	Wed, 13 Nov 2024 18:51:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=I7JJZhAX8z9gRFDAWAcDXD3U4FI9dk8vMX7/dG8H+68=; b=LTpU2ZYiSGXxkQ8LPvYKYfpjro
+	C9lf2uCVCc5YZ8E1Vky4JMigB7MC1ZQi/sqDOfXsS1OVlmvLUBwn+8IvHW7KuSQrmAZl/XwqY4U5/
+	4MZy/6vSEfnPdvBpq9AM+4XoBQyivJeVlkIyKYb3VAabBumbBraXRnJOzNgsqyhMspHcH091jHrds
+	6wM3fadwyJHU1tomnCnFKq1UAnS5QwMxcATOZ2+MwelZq3C45uhuL/aquNOr1UToG3lhJDpJX4dQc
+	9x3aeB0+wO5SqR0CblnDaKxZ6riN4b3XIxMr9hk2uU498e3ocikNw3Tw57DNT7cZgAU+wr2rabyHH
+	uKOr3xFA==;
+Received: from i53875a30.versanet.de ([83.135.90.48] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tBIRm-0005Cc-O5; Wed, 13 Nov 2024 19:50:34 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: vkoul@kernel.org, kishon@kernel.org,
+ Diederik de Haas <didi.debian@cknow.org>
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ quentin.schulz@cherry.de, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY schema
+Date: Wed, 13 Nov 2024 19:50:33 +0100
+Message-ID: <18621846.sWSEgdgrri@diego>
+In-Reply-To: <D5F5RRFVMP7R.19G82R4S878IL@cknow.org>
+References: <20241104111121.99274-1-heiko@sntech.de>
+ <20241104111121.99274-2-heiko@sntech.de>
+ <D5F5RRFVMP7R.19G82R4S878IL@cknow.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZzSYU61pmFTcPf5_@hovoldconsulting.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241113_101141_948991_5B5E3DBF 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241113_105041_921312_0840DB4C 
+X-CRM114-Status: GOOD (  25.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,25 +78,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 13, 2024 at 01:15:15PM +0100, Johan Hovold wrote:
-> On Wed, Nov 13, 2024 at 12:53:16PM +0530, Varadarajan Narayanan wrote:
-> 
-> > --- a/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
-> > +++ b/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
-> > @@ -16,12 +16,71 @@ / {
-> >  	aliases {
-> >  		serial0 = &uart1;
-> >  	};
+Hi,
+
+Am Mittwoch, 6. November 2024, 15:17:02 CET schrieb Diederik de Haas:
+> On Mon Nov 4, 2024 at 12:11 PM CET, Heiko Stuebner wrote:
+> > From: Heiko Stuebner <heiko.stuebner@cherry.de>
+> >
+> > Add dt-binding schema for the MIPI CSI/DSI PHY found on
+> > Rockchip RK3588 SoCs.
+> >
+> > Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > ---
+> >  .../phy/rockchip,rk3588-mipi-dcphy.yaml       | 82 +++++++++++++++++++
+> >  1 file changed, 82 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> >
+> > diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> > new file mode 100644
+> > index 000000000000..5ee8d7246fa0
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> > @@ -0,0 +1,82 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/rockchip,rk3588-mipi-dcphy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> > +	regulator_fixed_3p3: s3300 {
+> > +title: Rockchip MIPI CSI/DSI PHY with Samsung IP block
+> > +
+> > +maintainers:
+> > +  - Guochun Huang <hero.huang@rock-chips.com>
+> > +  - Heiko Stuebner <heiko@sntech.de>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - rockchip,rk3576-mipi-dcphy
+> > +      - rockchip,rk3588-mipi-dcphy
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  "#phy-cells":
+> > +    const: 0
+> > +
+> > +  clocks:
+> > +    maxItems: 2
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: pclk
+> > +      - const: ref
+> > +
+> > +  resets:
+> > +    maxItems: 4
+> > +
+> > +  reset-names:
+> > +    items:
+> > +      - const: m_phy
+> > +      - const: apb
+> > +      - const: grf
+> > +      - const: s_phy
+> > +
+> > +  rockchip,grf:
+> > +    $ref: /schemas/types.yaml#/definitions/phandle
+> > +    description:
+> > +      Phandle to the syscon managing the 'mipi dcphy general register files'.
 > 
-> Fixed regulator nodes should have a "regulator-" prefix in their name.
+> Should this dt-binding have a power-domains property?
+> RK3588 TRM v1.0 part 1 page 1097 has ALIVE(PD_BUS) for
+> MIPI_DC_PHY0~MIPI_DC_PHY1
 
-Specifically, regulator-<voltage> is preferred. So "regulator-3300000"
+I don't think so. As you write, the dcphy is part of the PD_BUS(ALIVE)
+power-domain on at least rk3588 and the new rk3576.
 
-Not enforced because there are some exceptions.
+This power-domain is actually non-controllable and also contains things
+like the main GIC - so will be always on.
 
-Rob
+And for that reason probably, that domain also is not even exposed
+in the rk3588 devicetree (nor the driver implementation).
+
+Similarly the hdptx phy binding (in a similar situation) also does not
+handle a power-domain. So my thinking is, we'll stay like this for now.
+
+
+Heiko
+
+> FTR: I made a similar remark on another patch sent by Heiko today. While
+> that was incorrect, I do think it's appropriate for this binding after
+> which it could also be added to the respective phy nodes in the dts(i)
+> file(s).
+> 
+> Cheers,
+>   Diederik
+> 
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +  - resets
+> > +  - reset-names
+> > +  - "#phy-cells"
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
+> > +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
+> > +
+> > +    soc {
+> > +      #address-cells = <2>;
+> > +      #size-cells = <2>;
+> > +
+> > +      phy@feda0000 {
+> > +        compatible = "rockchip,rk3588-mipi-dcphy";
+> > +        reg = <0x0 0xfeda0000 0x0 0x10000>;
+> > +        clocks = <&cru PCLK_MIPI_DCPHY0>,
+> > +                 <&cru CLK_USBDPPHY_MIPIDCPPHY_REF>;
+> > +        clock-names = "pclk", "ref";
+> > +        resets = <&cru SRST_M_MIPI_DCPHY0>,
+> > +                 <&cru SRST_P_MIPI_DCPHY0>,
+> > +                 <&cru SRST_P_MIPI_DCPHY0_GRF>,
+> > +                 <&cru SRST_S_MIPI_DCPHY0>;
+> > +        reset-names = "m_phy", "apb", "grf", "s_phy";
+> > +        rockchip,grf = <&mipidcphy0_grf>;
+> > +        #phy-cells = <0>;
+> > +      };
+> > +    };
+> 
+> 
+
+
+
+
 
 -- 
 linux-phy mailing list
