@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAA8AD41C0E
-	for <linux-phy@archiver.kernel.org>; Wed, 13 Nov 2024 07:24:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E485D41C0E
+	for <linux-phy@archiver.kernel.org>; Wed, 13 Nov 2024 07:24:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFvIkGY48bZ6xiOnKh0CbGeYQmLN+9ULg7DeRTBeahc=; b=1txCqA1CBzrWcv
-	19s8bwYlMEsnPwzVuYgt58lVBSvYSVe9elQ0KqJb7G3Tlgo1JBV3Vz2bjF8fshIWdDULTm0PcsG9u
-	eBWJn4aTISrBBtUGt8EFZNgDdBFxYB4yOVcwS6fpidNCTe+1qyozequ9bFbh0BWOMC/OcV72lTR0W
-	qPsrrljv4uC5c4Rj5Xacyv4uUeNCwUV6QURGOqknOdiIH3Jfx9bMrJloHUPkuu3NafO/om96njhSY
-	lXlgJBpOj3cJAq7eBTknOqKRYLGvWFFlXBRPgfGCztdxUViAmhk6YNKJNS56AbwRd6/qM5izBjstb
-	JEZxxoMT/x0bzDD0cG1A==;
+	List-Owner; bh=baehkF9suZy4LiUbmxnMfNTANb4HT19J3gOnPaSgY4Q=; b=iFY7y+j1BXtkrM
+	ZtTbwiVdOKc6yPHQdulsxG1ZSN3BjNNJWZCYV0Am0qTPaSVWcQ5fh2dLS53sQdGweUbUe5cI28ewN
+	bpnJosM0YhWUx2E7GdjTg/OTSj5njQmioihcxAo9xvSAzQ9zX+4/clJDrEHdNqR2npuqZV2rXZMVU
+	bRheWLl+rozrU6G4ngAnh4CpdSqHhPlWvekEjRgt/cU10YNfKcmPYJt6tm3WQ7DNMTEqyjKofjCzT
+	k9WlC+UIp94XcbJ1e3g292IlBlEDEtbZ1v2Axg4aIDvFe+T4I9XLzZL4KFuNjwM/4CTGNQeRjF91e
+	UA3J70Qb+CKBsdsCf9nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB7jf-00000005z53-2EL6;
-	Wed, 13 Nov 2024 07:24:19 +0000
+	id 1tB7jk-00000005z6K-41WV;
+	Wed, 13 Nov 2024 07:24:24 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB7jd-00000005z4b-0gk8
+	id 1tB7ji-00000005z5s-0NUf
 	for linux-phy@lists.infradead.org;
-	Wed, 13 Nov 2024 07:24:18 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMSwQE020483;
-	Wed, 13 Nov 2024 07:24:12 GMT
+	Wed, 13 Nov 2024 07:24:23 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ACMRsYk003810;
+	Wed, 13 Nov 2024 07:24:18 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	+VFSsKtYH6xy/ibGA9AcMWaIiDfg2L6aF9GA0bgCtfY=; b=Ezu0Sl4Rw5zZUqhE
-	YT96LXjtp84Ad8aR/u9X3uion7USt2FUFtALfKldU3vJn4mzylv/RgQWhkwFneGx
-	kgznad7BzurTHNueg4i0rhEZQ1+UY37xbPySGikrmQ4Y/NTWGlkbW+o9i5DQJs8s
-	0upMW3s0U4h/gf5fe29xaFG9Q5I2uXqG1OH5t62rsnQ/uIA/qU9prYqsuiimu7r7
-	2LPOBn8NgtTQ3sFTINdEUCUy4NC4nnvy7fvMK8hy1M8QwqkKas5Dc4Gh90WhA9sl
-	9rLTblw1SZSiMiQFeBz8qgwlIIPx1kzC8cjek4FLhddt/wQA/ZHpF8sHKEZ6WI09
-	daobJw==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42v4kqu54r-1
+	TMgQgoLan1HP16gyJdOM9dhL8YY0ODCk3d3n4OX8yq4=; b=oq9ZMK/20eY2B7/p
+	0ihP6DPxVMKNYvA8kMVpDj3aYeQu/diZ+WaclmcbwAggD02dDsbLXA942f7Y9d3V
+	kdyaziwl+edJgGl+Ka9TziYYJDeIOKFtLYXqpiiCMynKB/iE1HwKF7fLD2GVXLqn
+	ZTZkyMwJOwONrJfszjl0BABXktv06wd6rHBMCcsBO/+IxwpDwUk1wIVjcdbSW7FE
+	yACtEixo/EkLKRfzl/rEazPLP1L4TzRTZE2OJpEV/5JW2ecWN4bLd30zyEVm7Esh
+	dctIqZ46MQ1RaEFYk2RGGxUlMMZT4xcjD7eZV10KH2lqWgWOC42r/fXvp7L5VBZj
+	ajrt+w==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42t0gm1uht-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 07:24:11 +0000 (GMT)
+	Wed, 13 Nov 2024 07:24:18 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD7OAVd003593
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AD7OHww005669
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 13 Nov 2024 07:24:11 GMT
+	Wed, 13 Nov 2024 07:24:17 GMT
 Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
  nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 12 Nov 2024 23:24:04 -0800
+ 15.2.1544.9; Tue, 12 Nov 2024 23:24:10 -0800
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
         <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
@@ -64,9 +64,10 @@ To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
         <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>
-Subject: [PATCH v2 2/6] phy: qcom-qusb2: add QUSB2 support for IPQ5424
-Date: Wed, 13 Nov 2024 12:53:12 +0530
-Message-ID: <20241113072316.2829050-3-quic_varada@quicinc.com>
+CC: Conor Dooley <conor.dooley@microchip.com>
+Subject: [PATCH v2 3/6] dt-bindings: phy: qcom,qmp-usb: Add IPQ5424 USB3 PHY
+Date: Wed, 13 Nov 2024 12:53:13 +0530
+Message-ID: <20241113072316.2829050-4-quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241113072316.2829050-1-quic_varada@quicinc.com>
 References: <20241113072316.2829050-1-quic_varada@quicinc.com>
@@ -76,19 +77,20 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: fgi4F_kaDLy2FxwFy2CjZDsj6AdW6jsG
-X-Proofpoint-GUID: fgi4F_kaDLy2FxwFy2CjZDsj6AdW6jsG
+X-Proofpoint-ORIG-GUID: 1szfeM_v_uZypB-FPmZ9_w8GLeIqnN2K
+X-Proofpoint-GUID: 1szfeM_v_uZypB-FPmZ9_w8GLeIqnN2K
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 impostorscore=0
- adultscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
- malwarescore=0 spamscore=0 clxscore=1015 mlxscore=0 mlxlogscore=999
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411130064
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 phishscore=0
+ spamscore=0 clxscore=1015 mlxscore=0 mlxlogscore=804 lowpriorityscore=0
+ impostorscore=0 adultscore=0 priorityscore=1501 malwarescore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2409260000
+ definitions=main-2411130064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241112_232417_230565_1A9C13CF 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20241112_232422_154447_BFD22180 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,69 +107,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the phy init sequence for the Super Speed ports found
-on IPQ5424.
+Add dt-bindings for USB3 PHY found on Qualcomm IPQ5424
 
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 ---
-v2: Change uppercase hexdigits to lowercase
+v2: Add 'Acked-by: Conor Dooley'
 ---
- drivers/phy/qualcomm/phy-qcom-qusb2.c | 28 +++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-index c52655a383ce..2d8fe9bc40f9 100644
---- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-@@ -151,6 +151,21 @@ static const struct qusb2_phy_init_tbl ipq6018_init_tbl[] = {
- 	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_AUTOPGM_CTL1, 0x9F),
- };
- 
-+static const struct qusb2_phy_init_tbl ipq5424_init_tbl[] = {
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL, 0x14),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE1, 0x00),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE2, 0x53),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE4, 0xc3),
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_TUNE, 0x30),
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL1, 0x79),
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_USER_CTL2, 0x21),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TUNE5, 0x00),
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_PWR_CTRL, 0x00),
-+	QUSB2_PHY_INIT_CFG_L(QUSB2PHY_PORT_TEST2, 0x14),
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_TEST, 0x80),
-+	QUSB2_PHY_INIT_CFG(QUSB2PHY_PLL_AUTOPGM_CTL1, 0x9f),
-+};
-+
- static const unsigned int ipq6018_regs_layout[] = {
- 	[QUSB2PHY_PLL_STATUS]              = 0x38,
- 	[QUSB2PHY_PORT_TUNE1]              = 0x80,
-@@ -331,6 +346,16 @@ static const struct qusb2_phy_cfg ipq6018_phy_cfg = {
- 	.autoresume_en   = BIT(0),
- };
- 
-+static const struct qusb2_phy_cfg ipq5424_phy_cfg = {
-+	.tbl            = ipq5424_init_tbl,
-+	.tbl_num        = ARRAY_SIZE(ipq5424_init_tbl),
-+	.regs           = ipq6018_regs_layout,
-+
-+	.disable_ctrl   = POWER_DOWN,
-+	.mask_core_ready = PLL_LOCKED,
-+	.autoresume_en   = BIT(0),
-+};
-+
- static const struct qusb2_phy_cfg qusb2_v2_phy_cfg = {
- 	.tbl		= qusb2_v2_init_tbl,
- 	.tbl_num	= ARRAY_SIZE(qusb2_v2_init_tbl),
-@@ -905,6 +930,9 @@ static const struct phy_ops qusb2_phy_gen_ops = {
- 
- static const struct of_device_id qusb2_phy_of_match_table[] = {
- 	{
-+		.compatible	= "qcom,ipq5424-qusb2-phy",
-+		.data		= &ipq5424_phy_cfg,
-+	}, {
- 		.compatible	= "qcom,ipq6018-qusb2-phy",
- 		.data		= &ipq6018_phy_cfg,
- 	}, {
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+index baf5134ea3d8..a1b55168e050 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml
+@@ -16,6 +16,7 @@ description:
+ properties:
+   compatible:
+     enum:
++      - qcom,ipq5424-qmp-usb3-phy
+       - qcom,ipq6018-qmp-usb3-phy
+       - qcom,ipq8074-qmp-usb3-phy
+       - qcom,ipq9574-qmp-usb3-phy
+@@ -89,6 +90,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,ipq5424-qmp-usb3-phy
+               - qcom,ipq6018-qmp-usb3-phy
+               - qcom,ipq8074-qmp-usb3-phy
+               - qcom,ipq9574-qmp-usb3-phy
 -- 
 2.34.1
 
