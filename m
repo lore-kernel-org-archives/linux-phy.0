@@ -4,63 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9920D68BCF
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Nov 2024 18:35:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87C53D68BD5
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Nov 2024 20:49:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=f4owhitHaJqSHOdO9IC/ujjAdg9yLUUlEQu3FvdBGwc=; b=GevGYxKVwfLO825eJvLjRcS2aG
-	xciatNcBIJjT+WdtIMxsdWRfidnDjDC5iVk+cpW64IC9ArIOseLDQgmHyZ/hbxnivhIf3d15OkfnS
-	T3IUKJlwm7XSViUbq1N8RpcAvYaZk+nGdir8urSOhcbtQoEVo1i40MchwOpSUGxQGB2AUEPDE8cd6
-	tu8wt6aPG6BAlErXSkvFAYd3SyRgM0ZllWjGvT8O0YNrue2yE9I8IeBlOU75hEpH5Nd94mVXfD12Z
-	y6VOqxZqEa2JmxPtV120nXoAlrnDmmYfu7/1uzSv5ru/upg7kr8MCsaCyg0Y28vvL87kWEHZIbYQB
-	RF8S0LBg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=luVXv4ia43+ZTegCo+hMYu2YmQEjiVV0v4VWumD6Ze0=; b=vSSVF/IE3znaUz
+	tdnujuRTqm9G9xgOMv9HZB9UydvUpzXC9UPRGQaiscRzEax8qA4I5tABkC9XAANxLD5HbFnVhFyTD
+	rdRIfwHRmmC6UJc4A1BdScn6cNLcjMCh7xUR9uX3s3u+dzwVzb8cQlTBJLNKDCNBslymbiz9ISEtt
+	fBe7/f2VxGT5uVI4nBrHVBR7nj4KTWpc9poL5k9VgkpbbRHsdpm5KAZH3+YrzdnFF0sb08qWDqg+Q
+	NMIxRzq2ZaXpMHmDyonaUeT/mqlW4omxTdsX/SBrq3VyruDmgIT3pHXu8ukNj+8V9eO/DvLHTCJRD
+	A9ArR9DlATVlvqZjT+IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tC1Ai-00000003igz-1nE6;
-	Fri, 15 Nov 2024 18:35:56 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tC3GB-000000045xD-2K9k;
+	Fri, 15 Nov 2024 20:49:43 +0000
+Received: from mail-lj1-x231.google.com ([2a00:1450:4864:20::231])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tC19l-00000003iTF-3wj4;
-	Fri, 15 Nov 2024 18:34:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id EB8225C64DD;
-	Fri, 15 Nov 2024 18:34:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02047C4CECF;
-	Fri, 15 Nov 2024 18:34:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1731695695;
-	bh=X9vWYFVz8BcjMAxz3u0utMXx6m8g2WY5vbDXySCXt6A=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tTTcZkCTMkcgCbLKF12B7wo9jFmgkOedDi1F09VwVuBVzlALusVFrk9ZzxpWco/WM
-	 gWn5QYPE+lL5V3uclzDbF+96nts3psn/sE2s8g2YRHwbKAWXgJI2n4lqFLTmKAQYv3
-	 0Xww5hv/Hgm5rps8193SwsiebhD6eCVqz2Kf5CUD5hfcl3+d+qnyapyvr4dbeJ9V+5
-	 pqsEc074oOuVWjcZAT7lJiKgo2nDvEyHEuaMus/sRALo3jsJIShF1mJOFlnYgBSPwC
-	 ABvX8DXAIpbm6Acb3Yd7ZWUuuKaZNAdxZxBucyW1sGy1ROJwJvAvZS8xRKzfJ5EHPv
-	 OPj5vnrW0ZF8Q==
-Date: Fri, 15 Nov 2024 18:34:50 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	jun.li@nxp.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: phy: imx8mq-usb: optionally refer to
- usb-switch.yaml
-Message-ID: <20241115-bladder-legislate-7daef7a750ad@spud>
-References: <20241114102203.4065533-1-xu.yang_2@nxp.com>
- <20241114-marmalade-bottling-8fe656515ee7@spud>
- <20241115020045.qlrkyrelpgdwpxxk@hippo>
+	id 1tC3G9-000000045wO-3Fbc
+	for linux-phy@lists.infradead.org;
+	Fri, 15 Nov 2024 20:49:43 +0000
+Received: by mail-lj1-x231.google.com with SMTP id 38308e7fff4ca-2fb49510250so11510871fa.0
+        for <linux-phy@lists.infradead.org>; Fri, 15 Nov 2024 12:49:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1731703779; x=1732308579; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=CjYoXr1c/e18FI2TdM2K5pasMyhee97taoyWD1KNeJE=;
+        b=UbZEFFab+tMLUjIQl6ft/UT8+jTWVSKWWZqVTzA71aFyn3A//ax0v8T2ktb5TW70vx
+         UXyDs2f8v1v4JURqe6ecB7cKbhSQ9Vs3CuLd/dWg6VQJ+dcJI5+ibcj+5S8HUtXCr+Kh
+         3f8XaP848y19F+fmmGX5zN+jJezTaK2Uy2sdjYRi1QG2INVM84GVDJ2/GC1yOlX/M18m
+         L/02G14bONY9WOU8qlUt1zQIAGLYaV5iz3eddCiZnsaawqm37JMiQFi2fGkOUL8RONXM
+         SCu10Bbn0IAY7XlqsBt1aVyUcSqGRw1ecQHkEUS7oyvEbC1ThM1oitnfZhtHwYuY/4o6
+         kMgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1731703779; x=1732308579;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=CjYoXr1c/e18FI2TdM2K5pasMyhee97taoyWD1KNeJE=;
+        b=vivURUSdc4Muli2vufdcluMBYCYKWiXT1+8JzmaBZPm+JtbcDG0NfL9NZi05ykN7oe
+         +p8Fw5CBPvVBXP413CExjMCFfgQ51P3lG62NyMefudGqEVobZPOq4TEpDfxOUxgWaLOd
+         Q33IqX3ECBd8EcpVnuKFHoMRn0F763KuuqIjpbuxlHB1yZlmjE/dQ16WwudR1DQVKizZ
+         Wh6TJfn8qqrKhcDAShXUvVatdEdc+t1FyF4bhXwb5WAETd7yszPgA6pVMt1DgK6LivMB
+         1ZilncOrRnqusZlBdLEjZyP/nOVi9MSrrz7N8S0e32HDZCHybuDuMwmy8nE45DeG9dVU
+         Kg0g==
+X-Forwarded-Encrypted: i=1; AJvYcCWOZ3yYC63/+LjaiFpjDRTKo8ipLbWk+bYLfTruU69k6Rb51HT32F02K0kBMDvBcwSj1d96yWtRsGM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzyEX933SgZyEUPObTicTjxs5ruMK+4WO/EDJ1XIg9HdgOumXeS
+	GNyKBW+nx7jJHc+yfkc+ZUqItkZEZQ+arVxe4ojxosRuZb1POklvaAxuqSSqyNM=
+X-Google-Smtp-Source: AGHT+IHDw1nSJp6JrS4UrDhL1uYX+VrsqdWEdSsG7SMPlrb85ao1TsV+hOPLPValyHydklEGSDOhZg==
+X-Received: by 2002:a05:651c:12c8:b0:2fb:8920:99c6 with SMTP id 38308e7fff4ca-2ff606944f8mr26665191fa.23.1731703779420;
+        Fri, 15 Nov 2024 12:49:39 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ff6995980bsm229991fa.41.2024.11.15.12.49.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 15 Nov 2024 12:49:38 -0800 (PST)
+Date: Fri, 15 Nov 2024 22:49:35 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org, 
+	quic_qianyu@quicinc.com, conor+dt@kernel.org, neil.armstrong@linaro.org, 
+	andersson@kernel.org, konradybcio@kernel.org, quic_shashim@quicinc.com, 
+	quic_kaushalk@quicinc.com, quic_tdas@quicinc.com, quic_tingweiz@quicinc.com, 
+	quic_aiquny@quicinc.com, kernel@quicinc.com, linux-arm-msm@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 2/5] phy: qcom-qmp-pcie: add dual lane PHY support for
+ QCS8300
+Message-ID: <vfl3mvq7wn5f4ke2df3hsdd65cmhb6lw4kbzpharo75ufzmayt@e4w76fjipy2m>
+References: <20241114095409.2682558-1-quic_ziyuzhan@quicinc.com>
+ <20241114095409.2682558-3-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <20241115020045.qlrkyrelpgdwpxxk@hippo>
+Content-Disposition: inline
+In-Reply-To: <20241114095409.2682558-3-quic_ziyuzhan@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241115_103458_067692_5198AD06 
-X-CRM114-Status: GOOD (  26.20  )
+X-CRM114-CacheID: sfid-20241115_124941_832677_B2086EBF 
+X-CRM114-Status: GOOD (  10.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,130 +94,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5424365758227293001=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, Nov 14, 2024 at 05:54:06PM +0800, Ziyue Zhang wrote:
+> The PCIe Gen4x2 PHY for qcs8300 has a lot of difference with sa8775p.
+> So the qcs8300_qmp_gen4x2_pcie_rx_alt_tbl for qcs8300 is added.
+> 
+> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 89 ++++++++++++++++++++++++
+>  1 file changed, 89 insertions(+)
+> 
 
---===============5424365758227293001==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qWspPwlOiJv9Bk4P"
-Content-Disposition: inline
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-
---qWspPwlOiJv9Bk4P
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Nov 15, 2024 at 10:00:45AM +0800, Xu Yang wrote:
-> On Thu, Nov 14, 2024 at 05:45:07PM +0000, Conor Dooley wrote:
-> > On Thu, Nov 14, 2024 at 06:22:03PM +0800, Xu Yang wrote:
-> > > The i.MX95 usb-phy can work with or without orientation-switch. With
-> > > current setting, if usb-phy works without orientation-switch, the
-> > > dt-schema check will show below error:
-> > >=20
-> > > phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
-> > >         'port' is a required property
-> > >         'ports' is a required property
-> > >         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8mq=
--usb-phy.yaml#
-> > >=20
-> > > This will add a condition to optionally refer to usb-switch.yaml.
-> > >=20
-> > > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> >=20
-> > $subject is not what the patch does.
->=20
-> I look through other yaml and find below format could achieve the
-> restriction on one property:
->=20
-> https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/tree/Docum=
-entation/devicetree/bindings/usb/gpio-sbu-mux.yaml?h=3Dusb-testing#n54
->=20
->   - if:
->       required:
->         - mode-switch
->     then:
->       required:
->         - enable-gpios
->=20
-> If mode-switch is present, then enable-gpios is required. If not, then
-> enable-gpios is not required.
->=20
-> For my case, if compatible contains "fsl,imx95-usb-phy" and orientation-s=
-witch
-> is present, then this schema needs to refer to usb-switch.yaml. If not. t=
-hen
-> this schema will not refer to usb-switch.yaml. So the subject could refle=
-ct
-> the thing this patch does.
->=20
-> Is this feasible? If not, could you give some advices?=20
-
-Hmm, I guess I can now see an interpretation of the wording that
-reflects what the patch contents contains. However, you need a hardware
-based justification for the condition you're adding since it disables
-mode-switch and defining port nodes etc if orientation-switch isn't present.
-That's fine if that hardware doesn't support mode switching or ports
-without orientation switching, but not if it does.
-
-Cheers,
-Conor.
-
->=20
-> Thanks,
-> Xu Yang
->=20
-> >=20
-> > > ---
-> > >  Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml | 2 ++
-> > >  1 file changed, 2 insertions(+)
-> > >=20
-> > > diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy=
-=2Eyaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> > > index 6d6d211883ae..1238792157f8 100644
-> > > --- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
-> > > @@ -118,6 +118,8 @@ allOf:
-> > >            contains:
-> > >              enum:
-> > >                - fsl,imx95-usb-phy
-> > > +      required:
-> > > +        - orientation-switch
-> > >      then:
-> > >        $ref: /schemas/usb/usb-switch.yaml#
-> > > =20
-> > > --=20
-> > > 2.34.1
-> > >=20
->=20
->=20
-
---qWspPwlOiJv9Bk4P
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZzeUSgAKCRB4tDGHoIJi
-0nmLAP41b2HVcBe/oDDoqT3FelaZ+a2IvuVeK6Hmd+l+FjRdbAD+NvRvcHrjfcUp
-l7LuK5Nnt6oS3qIiOHl2p00S970odgw=
-=TUzT
------END PGP SIGNATURE-----
-
---qWspPwlOiJv9Bk4P--
-
-
---===============5424365758227293001==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5424365758227293001==--
-
