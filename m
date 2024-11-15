@@ -4,95 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09925D6DDED
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Nov 2024 10:04:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C97B6D68BC8
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Nov 2024 15:59:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YzYvvft3JXRdnps2cCqnYKau7s0cwBrfXyncvjg+I9w=; b=DuqFZ73lw3DBih
-	smiTHapmK2RwrhY+XbIic9tlCaOPdR5lbx46ucGWeIaQumtpp0q4LMr5KBsHd0jXRBnQjedPTn/tR
-	9vjvCC2ONC/DC89vQyBgt1+ldzhL40OQN0G/TQ6i9x4+8zZ+YskspXTcBVajUBg3tYnh3rSWiIp1Y
-	TVnqJ2Vx5ESpBBvSe4FI+piLxdIw/gmslP9xQGw7R0cn29P9pfAavcEWv78LSr73TFgmnWHZNPTl+
-	dqQeFRZTd93uvmrbfbBgLkUvLuJzFC/ndezbmiua/ZP6sU/6LmGKH1cgLjMPk7ILcjBptzFWlHoee
-	nWl5oYzy/Aogp/Dx9sOg==;
+	List-Owner; bh=oosDOFjakX85NnapCaEaSx+1irRY/oU9vyjiUo+2fXg=; b=mQDiz32Wrv5EoZ
+	rZ2M1wv1yDLtIP1lwHDyHdXB/l5LYEt7u/fFxe4MoijfIvvhXUud/jk/NtPr4oZUWF+6xn5+s3MVz
+	LKLQZXPHx3oDLxfcHwfhDo1FI6mPLz2Y/WC27HgNJ1uNI3rRUCckyTdFOhGzhX2m/DIYVsvb99C4+
+	5Hx9IQ78U56UsDGEZDQEbJM5Cs8y3uOMjyKVOfWUyke/R/qMPDW6sxAeTwMJghRNFAsXZS5FxtEja
+	OZd4Jc5DtiS5WAIVHAQxVmZj6BmyOwCaONFfEuzpzpuFq3atP6H/kKhV3g5rO+X4cCCk7WLs4Rjw6
+	wIhctbTy8ai7Gl1mu6Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBtBt-00000002I9X-2Df9;
-	Fri, 15 Nov 2024 10:04:37 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tByj5-00000003GVN-07Ge;
+	Fri, 15 Nov 2024 15:59:15 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBtBq-00000002I8i-01AE
+	id 1tByj2-00000003GUj-1VJx
 	for linux-phy@lists.infradead.org;
-	Fri, 15 Nov 2024 10:04:35 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AF9E4pv005348;
-	Fri, 15 Nov 2024 10:04:25 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	YBEDWQZtdymf1KBKctBQPowv3p8NG/u/Z9yDmTzan6k=; b=pbkLVcQWJP80ohAY
-	IxYePwVcLi8wpuzqNZDztu8jUIkR6izt2xNI+eh86n5Tdgx0NSZ50jAULSDSfmoD
-	gFTx0vKdlDuYzplZm2j4AvUicZHzIXh/jpgIatNkqWT2dOkde+6J6RhwywVrYI9w
-	mNoykMiih3xhE4Wp6TbomvMO0TV4QavMVcw1f6c6pYmb17bdCgqnbIBbW9Y5bqdU
-	X0oDrf96GDTpJX05Hd7w7j47p/t3aijkkOV/cKXyzYYoFrRuKQOg5ax4W408HI1H
-	yGaf1LTiSK5GejECn69Y1IdTTWphB1BxNtlizkB2+k2Ylomzx+3xAv8bWn44aXeD
-	ushMMw==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42x3g0r5du-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 15 Nov 2024 10:04:25 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AFA4OPb014965
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 15 Nov 2024 10:04:24 GMT
-Received: from [10.50.13.152] (10.80.80.8) by nasanex01b.na.qualcomm.com
- (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 15 Nov
- 2024 02:04:14 -0800
-Message-ID: <558364dc-d701-4996-83d7-56afab37eb08@quicinc.com>
-Date: Fri, 15 Nov 2024 15:34:10 +0530
+	Fri, 15 Nov 2024 15:59:13 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-53da5a27771so2288993e87.2
+        for <linux-phy@lists.infradead.org>; Fri, 15 Nov 2024 07:59:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1731686351; x=1732291151; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=gMfxO2Ju8vEjnQTSKznfl18LDxvCiGquG5jWu4YVQBI=;
+        b=mvRCgUEpyjpOKem8B8S9ZDuBe+JbDd1YWSRSW5yo8eePgnUcM817Y98OFTxaa7f/5P
+         i4UrFz/TGXSAIUlc8x+7/jV//a6l95CbS6RkeuiDE+lop89Ng9haC6iHiXdz16kBpkW+
+         iylmNLZq62mLnBgBh8iZjOSsrx5mrPn71FJ8mw4t7VbSGbdpSSQYCsCVOfd7nImRiDrV
+         9WgZXz1adgvrvuxM0ZpXMKkd1e/N6bselcvCm/orzPZMx3SIswn0wDATVe0AO2LSOe04
+         KQGzvNu/DVJ69OsZryRQI1Fvy73dNHL315WH9eu7/zeqrmMX3hxaStEy20Xlqz6aGdhd
+         +zKA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1731686351; x=1732291151;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gMfxO2Ju8vEjnQTSKznfl18LDxvCiGquG5jWu4YVQBI=;
+        b=a2+XJahsaxBs6kPlEMbhlsOvK0E+6WwC6xbwlW7pfMBM74v2M96M0H71k1/P+k/tu8
+         WVgNh2EY+u2Fei+C9AVQNTXC+Ml0j5H2GN3ETUB/yHrnardE72TFiClfanV2EMU3LOOi
+         mkGNUqfGs1jjlM4U+azKIVxR3RnOLXzvt9sheGMhnimLGIjqyknFVE3hpy2QtxtbjxG4
+         uILeC8goESSylKKB0kg9dwSZukONDTD8JwfxtytGfGJaCqzoEZ3LsMNF42lx2jsrfQPP
+         SyQaHxjIbRp7elTCfXX+afFhXjmw0BXrHniMeVKKhsbZxmUNWC4330DhbNwEzvnmwwGg
+         Hh4g==
+X-Forwarded-Encrypted: i=1; AJvYcCVQdQac63chGQEL3vjgiQa+F4CROmLPJg6reKzzUth3oTdteKN5FUbAfAmg6PDLPF3XgNpHKqUsVcY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzrFenZis0KyMr5qXgPHeIV0bleKGmUvjKhSp+lzD3uXEmjxeHh
+	nXwhidIDv0fXmca871BkhEDd37MKlqA16mKaTMfGO/XBpbtKObWO9pGbq1UpoYo=
+X-Google-Smtp-Source: AGHT+IGM7mU2Z7NRzQuZyYKrHQmac88PdjbXj6OEF7ihDrIv75j0NtxGn8TGk54rYau4nJmsS7JKLw==
+X-Received: by 2002:a05:6512:1594:b0:539:93e8:7eca with SMTP id 2adb3069b0e04-53dab2b3c5dmr1925115e87.35.1731686350401;
+        Fri, 15 Nov 2024 07:59:10 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53da6548b79sm615903e87.242.2024.11.15.07.59.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 15 Nov 2024 07:59:08 -0800 (PST)
+Date: Fri, 15 Nov 2024 17:59:06 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Krishna Kurapati <quic_kriskura@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Bjorn Andersson <quic_bjorande@quicinc.com>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Andy Gross <agross@kernel.org>, 
+	Stephen Boyd <swboyd@chromium.org>, linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+	linux-phy@lists.infradead.org, quic_ppratap@quicinc.com, quic_jackp@quicinc.com, 
+	stable@vger.kernel.org
+Subject: Re: [PATCH 5.15.y] phy: qcom: qmp: Fix NULL pointer dereference for
+ USB Uni PHYs
+Message-ID: <ibh3n7gl5qcawpiyjgxy2yum6jsmfv5lpfefuun3m2ktldcswl@odhjnmkj5jre>
+References: <20241115091545.2358156-1-quic_kriskura@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 00/10] Add PCIe support for Qualcomm IPQ5332
-To: Manivannan Sadhasivam <mani@kernel.org>,
-        Praveenkumar I
-	<quic_ipkumar@quicinc.com>
-CC: <agross@kernel.org>, <andersson@kernel.org>, <konrad.dybcio@linaro.org>,
-        <mturquette@baylibre.com>, <sboyd@kernel.org>, <robh+dt@kernel.org>,
-        <krzysztof.kozlowski+dt@linaro.org>, <conor+dt@kernel.org>,
-        <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <quic_nsekar@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-clk@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <quic_varada@quicinc.com>, <quic_devipriy@quicinc.com>,
-        <quic_kathirav@quicinc.com>, <quic_anusha@quicinc.com>
-References: <20231214062847.2215542-1-quic_ipkumar@quicinc.com>
- <20240310132915.GE3390@thinkpad>
-Content-Language: en-US
-From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-In-Reply-To: <20240310132915.GE3390@thinkpad>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 4wvOCydZtOm9zbwrUAVBPnncYQvO79Sa
-X-Proofpoint-GUID: 4wvOCydZtOm9zbwrUAVBPnncYQvO79Sa
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- lowpriorityscore=0 adultscore=0 bulkscore=0 priorityscore=1501
- impostorscore=0 malwarescore=0 clxscore=1011 spamscore=0 mlxlogscore=704
- mlxscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411150085
+Content-Disposition: inline
+In-Reply-To: <20241115091545.2358156-1-quic_kriskura@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241115_020434_183983_70A80EA9 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20241115_075912_396000_5F4EA89F 
+X-CRM114-Status: GOOD (  21.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,32 +92,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Fri, Nov 15, 2024 at 02:45:45PM +0530, Krishna Kurapati wrote:
+> Commit [1] introduced DP support to QMP driver. While doing so, the
+> dp and usb configuration structures were added to a combo_phy_cfg
+> structure. During probe, the match data is used to parse and identify the
+> dp and usb configs separately. While doing so, the usb_cfg variable
+> represents the configuration parameters for USB part of the phy (whether
+> it is DP-Cobo or Uni). during probe, one corner case of parsing usb_cfg
+> for Uni PHYs is left incomplete and it is left as NULL. This NULL variable
+> further percolates down to qmp_phy_create() call essentially getting
+> de-referenced and causing a crash.
 
+The UNI PHY platforms don't have usb3-phy subnode. As such the usb_cfg
+variable should not be used in the for_each_available_child_of_node()
+loop.
 
-On 3/10/2024 6:59 PM, Manivannan Sadhasivam wrote:
-> On Thu, Dec 14, 2023 at 11:58:37AM +0530, Praveenkumar I wrote:
->> Patch series adds support for enabling the PCIe controller and
->> UNIPHY found on Qualcomm IPQ5332 platform. PCIe0 is Gen3 X1 and
->> PCIe1 is Gen3 X2 are added.
->>
->> UNIPHY changes depends on
->> https://lore.kernel.org/all/20231003120846.28626-1-quic_nsekar@quicinc.com/
->> PCIe driver change depends on
->> https://lore.kernel.org/all/20230519090219.15925-1-quic_devipriy@quicinc.com/
->>
+Please provide details for the platform on which you observe the crash
+and the backtrace.
+
 > 
-> Any plan on this series and the dependencies?
+> Subsequently, commit [2] split the driver into multiple files, each
+> handling a specific PHY type (USB, DP-Combo, UFS, PCIe). During this
+> refactoring, the probing process was modified, and the NULL pointer
+> dereference issue no longer showed up.
 > 
-Yeah, Sorry for the delay, will post in the coming week.
+> [1]: https://lore.kernel.org/all/20200916231202.3637932-8-swboyd@chromium.org/
+> [2]: https://lore.kernel.org/all/20220607213203.2819885-1-dmitry.baryshkov@linaro.org/
+> 
+> Fixes: 52e013d0bffa ("phy: qcom-qmp: Add support for DP in USB3+DP combo phy")
+> Cc: stable@vger.kernel.org # 5.15.y
+> Signed-off-by: Krishna Kurapati <quic_kriskura@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.c b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> index eef863108bfe..e22ee71aa060 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp.c
+> @@ -5714,6 +5714,8 @@ static int qcom_qmp_phy_probe(struct platform_device *pdev)
+>  
+>  		usb_cfg = combo_cfg->usb_cfg;
+>  		cfg = usb_cfg; /* Setup clks and regulators */
+> +	} else {
+> +		usb_cfg = cfg;
+>  	}
+>  
+>  	/* per PHY serdes; usually located at base address */
+> -- 
+> 2.34.1
+> 
 
-Regards,
-  Sricharan
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
