@@ -4,87 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D65DFD6DDD5
-	for <linux-phy@archiver.kernel.org>; Fri, 15 Nov 2024 06:55:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FB35D6DDDA
+	for <linux-phy@archiver.kernel.org>; Fri, 15 Nov 2024 07:03:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2vqRZldYyNhF7CagwbUy5aHQJ9g9QDUlL2qXz9pXhN0=; b=NxnQhIdRCJBgAO
-	J00giR/K1sl+0sqfdTpTjwO6LJboLzXYZgpRUi1On9OkU/DYIsdTMV8BSZaERsoYwSkWbJeFhj4g9
-	pDeFNcyKg/0uxRu6yL2hYLIIEDT66/dFLw3X/rVNFQn93M7FGklpuocIGQM6cM4aR4UVcreqIiO9t
-	tbUAcjcHXWWOxqKxA4Kf+VGW6xxg0WpXOrDeSILaAP/TYxqS2+rCtBASeC9n+0mythluR+fFTHWTb
-	2lCgvKR83piu0YmCh5iQM4HuRuqtWG7SbvQM0RblFD3Wnk/fS1Hvft2ROfz7vWZE88qJ/gswsoIcY
-	DGzcXwPlerox0g8WyoGg==;
+	List-Owner; bh=4xb2ysyEKGcfvfsIx/9kLsYf+679CNvAqZUUy2UWKTI=; b=v6ppjRHrYb2s/0
+	iMlr7Zt3uvqZxlf9b44bJ/wfDBT9DYJKY8G5YXEGshQsoqE5kjOLC4LA1u3ijgfL+pgpJFujvMnFr
+	2EOTwjlJnGjTOdBpy+f7AZSI0XLgMHWoA58J7f7bVQB7FZZwHUPnIwnh29gUPeGYPX4euHm7xJgCf
+	hE0W8kv1OcIjdUzWnAK2d7EVutTFxgHRbE/moxk1gtO69o6ZKczZgaA7b2iCdi1LDp4Ru3dlhuTjw
+	3WkdRpH210k4bxY54wwD8/U1e9LviyfPTMsuVHJmphFjJg1WGXqnEHimnvpEQvG/twp61CfBeIMGH
+	6mBOKS72pTJ5algNtEgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBqEj-00000001qlq-2UUS;
-	Fri, 15 Nov 2024 06:55:21 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1tBqMu-00000001sBG-0GgL;
+	Fri, 15 Nov 2024 07:03:48 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBqEH-00000001qgl-3B1D
+	id 1tBqMg-00000001s9h-1ClK
 	for linux-phy@lists.infradead.org;
-	Fri, 15 Nov 2024 06:54:55 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-539d9fffea1so1388065e87.2
-        for <linux-phy@lists.infradead.org>; Thu, 14 Nov 2024 22:54:53 -0800 (PST)
+	Fri, 15 Nov 2024 07:03:35 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-53da4fd084dso1462260e87.0
+        for <linux-phy@lists.infradead.org>; Thu, 14 Nov 2024 23:03:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1731653692; x=1732258492; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1731654212; x=1732259012; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=MjKLBvWETSBADZGUV6yqhakCmIaLRuQjCHp/Lt9M3AA=;
-        b=NWkawXHZUuxGPWIOBszKcRm07+GAYNvwK6SNKg+kkL0SU80ab6I0aOZtPrP+RkFPqh
-         XchlT5WCzzarjJ8H0WALK+XnSj8/Y2StbewHnhI50PXI95PhEV/smlHhzMJcr/CPFRFM
-         xx+FXhYekqF8zKoPDNTTqqgq06cjoq66YavBSSHq70OuxP1R4fYcjHFExNLQ7nA2DgrP
-         z7bdrrmOJO6GR+Tr/0NWrHU+nmAiJ4XziHOYqhEsMQbXIXOa+pVqyFzUAxXHZA8efO6s
-         DDuhk8QPcVmaLnEJXMEfK0rWpttDqTa3UCO9kZZt7e/RoxMvetyULPDDM5k4BDHTlX1o
-         BCZA==
+        bh=q+XXpl77AsqnMSW/X4uwuxdnVb5E7QETWZtbP20KJGw=;
+        b=k02sd9/e3jZ1w4ZQ0iH+MifA37l6/MLsam07+pk7tfZ1O5ggXy1pulpG619yQcHpAg
+         ruLdgHRufRYUmo1F3dv6wuQ9P3Q6WYxbhFHMGldvMWhDMVaxfuvXDBYMKkVRlf5yKm3d
+         WF/6vyNiTe7KHMPUkdokWtgfrAi0LCrKlps4BGKnhSv+jzxhHNH5/LebTcHI5MSTJ/1a
+         KlS+1BqZ6DtrJ5v0weaX2pAs0KpB4q5SWzdNpJx33WbpdRNAMSyC8Qm5afz2mOCJVZCX
+         CO6AROFOz8vutyKPPx/W4bgHnOzEMqW1BzpmKCNwkGCmqEVX0IsuaeYT2xborVvclZy4
+         xRKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1731653692; x=1732258492;
+        d=1e100.net; s=20230601; t=1731654212; x=1732259012;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=MjKLBvWETSBADZGUV6yqhakCmIaLRuQjCHp/Lt9M3AA=;
-        b=NQGfOjZdNBP3j9K7D+fwZoMPYXVecBPIIxcM5tYzK+Zj3h8vNuGQTxiRswSCdnut+3
-         9LqXC3vvO85CGnPqUuSOScG/zYd8GNRIElFAPwNwnFu9JH1lOKk5IKzFKQdFXr65NZqv
-         6GSsaTsUec8Mtf9nA4IzKOFJKyI5vbFMywIuUsktdKeWbii7ftJJPUKRlJzc/pJKIcGY
-         HWkQWjgI4YN1qMi8QVl2FRGEX3Bl1JFhHyJODzlD0I5n0/+DzD0OU4mhqDgJraioVsmI
-         1cM+y0aFh9kHRGzSHBG5Um6Lf/Ow0ntDK19GqhwJAmkKRu+HesW6Lubw7DWLgzA91Si3
-         shfA==
-X-Forwarded-Encrypted: i=1; AJvYcCUpyekXGnS9TxnCBgm5aANesG503FT2tVLpSpAPbXGmQM+yOpcZYTF3BlGF519gjhMKIw1x0clCuZY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxgF3K2DkSfY7hm5iem94F7knlkzOdnUZrZjjIxuwf2ufd+yPQu
-	WZXkMCwxe9VFstM6lFl/FidRUdPO4Shd32Fs0QJQ4FJyjlAU976wB67PKv84u/8=
-X-Google-Smtp-Source: AGHT+IFYT9QcCK1sZ7kStHf5ogo5eN6v02g0qjiZW9C6KciiPEArLV3TRbiCPgAuKP6fFkQC+XS51w==
-X-Received: by 2002:a05:6512:3ba1:b0:53b:1f90:576f with SMTP id 2adb3069b0e04-53dab2a6022mr601193e87.22.1731653691696;
-        Thu, 14 Nov 2024 22:54:51 -0800 (PST)
+        bh=q+XXpl77AsqnMSW/X4uwuxdnVb5E7QETWZtbP20KJGw=;
+        b=VCBNp2ABU3RelkcoOPVIBYhOVqWvHwA6mlrHK4CNKoyPv1QhQK6X1pdpE1Yyfj97k0
+         b33rnRlsx32aZ9Rbx+CPJZ1betkCUfhhNMV0eLq9kkizXft+AvyCiG+q9uYS5PKtVKKS
+         xRX3/YGw/+04w9LG3glM/0WnFyQ6fKX+LMzQzFCqyBsH5X/mkOqnlYum8SeLzz83rRbA
+         xAirk2x5B6ssvT4qNU+JaBnlawBZlf2yKyDcZiFbgv91DSlrB5zOBcgbuW07LwuFUuvK
+         R2lbaNmJjP8ejgB3P4mv4NlQ00hBzyCTABpYzTKdF0NGAbaPz84IK7RT1cHRavxOMAFA
+         G6NA==
+X-Forwarded-Encrypted: i=1; AJvYcCUighbuBK58T03EXhnBtPtVjn7WsjoZE14sdyEVhxuY2YTvxFf0EJs5s2myuBiE/wi7ZxVloZl677c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwQQk/x/KonrR7sxMTTWPp2oYKm0zMyT5+AuUFFZTTwQdv4SH+U
+	0z8IwcXz40CHR9y/pPQ2ILuLnIPXmhUQFbxpQS2D1p9iG+nuLmzELZk6qR4JOJ8=
+X-Google-Smtp-Source: AGHT+IHM3zGQ1oqt1miJAq+kPUmZOKc2Lgbol5o9QIqKe1inLvN5UGopKJienSpRrvOBH9LrMKG0Iw==
+X-Received: by 2002:a05:6512:3b12:b0:53d:a895:7fb9 with SMTP id 2adb3069b0e04-53dab03f96emr531496e87.26.1731654212135;
+        Thu, 14 Nov 2024 23:03:32 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53da6548eb8sm457776e87.255.2024.11.14.22.54.49
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53da653125asm452597e87.154.2024.11.14.23.03.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 14 Nov 2024 22:54:50 -0800 (PST)
-Date: Fri, 15 Nov 2024 08:54:47 +0200
+        Thu, 14 Nov 2024 23:03:30 -0800 (PST)
+Date: Fri, 15 Nov 2024 09:03:28 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, gregkh@linuxfoundation.org, 
-	andersson@kernel.org, konradybcio@kernel.org, mantas@8devices.com, 
-	quic_kbajaj@quicinc.com, quic_kriskura@quicinc.com, quic_rohiagar@quicinc.com, 
-	abel.vesa@linaro.org, quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 6/6] arm64: dts: qcom: Add USB controller and phy
- nodes for IPQ5424
-Message-ID: <qx22rgezkym3guofdxwmvhrjjwjzshngb4cvpdhqahlykeeqhg@wc4zy3gicrsb>
-References: <20241114074722.4085319-1-quic_varada@quicinc.com>
- <20241114074722.4085319-7-quic_varada@quicinc.com>
- <CAA8EJpr6xb=TPPgk7ERhKVp7OnYdPGCK6+1_2TBRLBt_eWM43A@mail.gmail.com>
- <ZzbZGnKEovwoDPrP@hu-varada-blr.qualcomm.com>
+To: Tingwei Zhang <quic_tingweiz@quicinc.com>
+Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+	Ziyue Zhang <quic_ziyuzhan@quicinc.com>, vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org, 
+	quic_qianyu@quicinc.com, conor+dt@kernel.org, neil.armstrong@linaro.org, 
+	andersson@kernel.org, konradybcio@kernel.org, quic_shashim@quicinc.com, 
+	quic_kaushalk@quicinc.com, quic_tdas@quicinc.com, quic_aiquny@quicinc.com, 
+	kernel@quicinc.com, linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 4/5] arm64: dts: qcom: qcs8300: enable pcie0 for QCS8300
+Message-ID: <nr4xt5pefd3jngml6bkbgrfhsuxmre44v3qs6uyxz7qp5dzqad@6dss6lwhb35n>
+References: <20241114095409.2682558-1-quic_ziyuzhan@quicinc.com>
+ <20241114095409.2682558-5-quic_ziyuzhan@quicinc.com>
+ <rg4isufmnhnbsiljm34rfdsn46gfpatbsiscynaqtsnykbhnm3@ovcaulkfj4nk>
+ <26943ea3-109c-473d-818b-2a08dba859ab@oss.qualcomm.com>
+ <288be342-952b-4210-afe7-6e194dfd54a9@quicinc.com>
+ <cp2g6j43zlx2njou5qz5tmwsnnzahqtk2hsxkj2ftrzbcmy742@ysca5ica4mvr>
+ <bb6ae010-5dbf-455c-a53c-6c0e688f0ebc@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ZzbZGnKEovwoDPrP@hu-varada-blr.qualcomm.com>
+In-Reply-To: <bb6ae010-5dbf-455c-a53c-6c0e688f0ebc@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241114_225453_825023_C114B7AB 
-X-CRM114-Status: GOOD (  21.88  )
+X-CRM114-CacheID: sfid-20241114_230334_355147_60AD754E 
+X-CRM114-Status: GOOD (  28.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,90 +104,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Nov 15, 2024 at 10:46:10AM +0530, Varadarajan Narayanan wrote:
-> On Thu, Nov 14, 2024 at 03:28:36PM +0200, Dmitry Baryshkov wrote:
-> > On Thu, 14 Nov 2024 at 09:48, Varadarajan Narayanan
-> > <quic_varada@quicinc.com> wrote:
-> > >
-> > > The IPQ5424 SoC has both USB2.0 and USB3.0 controllers. The USB3.0
-> > > can connect to either of USB2.0 or USB3.0 phy and operate in the
-> > > respective mode.
-> > >
-> > > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > > ---
-> > > v3: Regulator node names, labels and 'regulator-name' changed per review suggestions
-> > >     Stray newline removed
-> > >
-> > > v2: Add dm/dp_hs_phy_irq to usb3@8a00000 node
-> > >     Add u1/u2-entry quirks to usb@8a00000 node
-> > > ---
-> > >  arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts |  66 ++++++++
-> > >  arch/arm64/boot/dts/qcom/ipq5424.dtsi       | 159 ++++++++++++++++++++
-> > >  2 files changed, 225 insertions(+)
-> > >
-> > > diff --git a/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts b/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
-> > > index d4d31026a026..859e15befb3f 100644
-> > > --- a/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
-> > > +++ b/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
-> > > @@ -16,12 +16,70 @@ / {
-> > >         aliases {
-> > >                 serial0 = &uart1;
-> > >         };
-> > > +
-> > > +       vreg_misc_3p3: regulator-3300000 {
-> >
-> > Technically these names are correct. However they don't match the
-> > approach that Qualcomm DT files have been using up to now.
-> > You can compare your data with the output of `git grep :.regulator-
-> > arch/arm64/boot/dts/qcom/`
-> 
-> Dmitry,
-> 
-> This name was suggested by Rob Herring [1]. Shall I rename them as follows
-> 
-> 	regulator-usb-3p3
-> 	regulator-usb-1p8
-> 	regulator-usb-0p925
+On Fri, Nov 15, 2024 at 02:42:47PM +0800, Tingwei Zhang wrote:
+> On 11/15/2024 2:26 PM, Dmitry Baryshkov wrote:
+> > On Fri, Nov 15, 2024 at 12:59:12PM +0800, Tingwei Zhang wrote:
+> > > On 11/14/2024 9:03 PM, Konrad Dybcio wrote:
+> > > > On 14.11.2024 1:10 PM, Dmitry Baryshkov wrote:
+> > > > > On Thu, Nov 14, 2024 at 05:54:08PM +0800, Ziyue Zhang wrote:
+> > > > > > Add configurations in devicetree for PCIe0, including registers, clocks,
+> > > > > > interrupts and phy setting sequence.
+> > > > > > 
+> > > > > > Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> > > > > > ---
+> > > > > >    arch/arm64/boot/dts/qcom/qcs8300-ride.dts |  44 +++++-
+> > > > > >    arch/arm64/boot/dts/qcom/qcs8300.dtsi     | 176 ++++++++++++++++++++++
+> > > > > >    2 files changed, 219 insertions(+), 1 deletion(-)
+> > > > > > 
+> > > > > > diff --git a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+> > > > > > index 7eed19a694c3..9d7c8555ed38 100644
+> > > > > > --- a/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+> > > > > > +++ b/arch/arm64/boot/dts/qcom/qcs8300-ride.dts
+> > > > > > @@ -213,7 +213,7 @@ vreg_l9c: ldo9 {
+> > > > > >    &gcc {
+> > > > > 
+> > > > > The patch doesn't seem to update the gcc node in qcs8300.dtsi. Is there
+> > > > > any reason to have the clocks property in the board data file?
+> > > > 
+> > > > Definitely not. Ziyue, please move that change to the soc dtsi
+> > > 
+> > > Gcc node is updated in board device tree due to sleep_clk is defined in
+> > > board device tree. Sleep_clk is from PMIC instead SoC so we were requested
+> > > to move sleep_clk to board device tree in previous review [1].
+> > 
+> > Note, the review doesn't talk about sleep_clk at all. The recent
+> > examples (sm8650, x1e80100, sa8775p) still pull the clocks into the SoC
+> > dtsi, but without the freq.
+> > 
+> It's begining of the discussion of the PMIC clock for SoC. Sleep clock
+> specific discussion is here [2].
+> [2]https://lore.kernel.org/all/be8b573c-db4e-4eec-a9a6-3cd83d04156d@kernel.org/
 
-I'd say so. Rob clearly stated that this is not a strict rule. It's
-always better to follow the customs of the particular platform, it helps
-other developers. Also in _many_ cases just defining the voltage is not
-enough, usually there are multiple networks providing 0.925 V or 1.8 V.
+Please note how the recent platforms describe those clocks: the node in
+the SoC dtsi, the frequency in the board dtsi. X1E80100 is a step
+backwards, the clock are completely defined in the x1e80100.dtsi. There
+seems to be no strict rule on how to handle board clocks. I've sent an
+RFC patchset, trying to move them to a single logical location. Let's
+see what kind of response it will get. We probably need to define and
+follow a common rule for all Qualcomm platforms. Please give it a couple
+of days for the dust to settle. However, I think there should be no
+reason to keep GCC's clock definitions in the board DTS.
 
+> > > 
+> > > [1]https://lore.kernel.org/all/10914199-1e86-4a2e-aec8-2a48cc49ef14@kernel.org/
+> > > > 
+> > > > Konrad
+> > > 
+> > > 
+> > > -- 
+> > > Thanks,
+> > > Tingwei
+> > > 
+> > > -- 
+> > > linux-phy mailing list
+> > > linux-phy@lists.infradead.org
+> > > https://lists.infradead.org/mailman/listinfo/linux-phy
+> > 
 > 
-> Thanks
-> Varada
 > 
-> 1 - https://lore.kernel.org/linux-arm-msm/20241113181138.GA1011553-robh@kernel.org/
-> 
-> > > +               compatible = "regulator-fixed";
-> > > +               regulator-min-microvolt = <3300000>;
-> > > +               regulator-max-microvolt = <3300000>;
-> > > +               regulator-boot-on;
-> > > +               regulator-always-on;
-> > > +               regulator-name = "usb_hs_vdda_3p3";
-> > > +       };
-> > > +
-> > > +       vreg_misc_1p8: regulator-1800000 {
-> > > +               compatible = "regulator-fixed";
-> > > +               regulator-min-microvolt = <1800000>;
-> > > +               regulator-max-microvolt = <1800000>;
-> > > +               regulator-boot-on;
-> > > +               regulator-always-on;
-> > > +               regulator-name = "vdda_1p8_usb";
-> > > +       };
-> > > +
-> > > +       vreg_misc_0p925: regulator-0925000 {
-> > > +               compatible = "regulator-fixed";
-> > > +               regulator-min-microvolt = <925000>;
-> > > +               regulator-max-microvolt = <925000>;
-> > > +               regulator-boot-on;
-> > > +               regulator-always-on;
-> > > +               regulator-name = "vdd_core_usb";
-> > > +       };
-> > > +};
-> 
-> [. . .]
+> -- 
+> Thanks,
+> Tingwei
 
 -- 
 With best wishes
