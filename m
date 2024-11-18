@@ -4,86 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80D8CD49210
-	for <linux-phy@archiver.kernel.org>; Mon, 18 Nov 2024 11:29:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F344BD49219
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Nov 2024 12:56:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tdP4AJDtihqIsikoziBzZrhCQ5aO1QctkNsgRva2144=; b=LZZ1KhcbC10Kww
-	VlO4Lm40Fs6B1fSt4VeWPZuwqFlOTP1gQB5hYcRfLEGfnVhKJOcH+Q2o9md8ZjNPhIrC6Ficbxk0h
-	tDACbSV9sJ5t1ymn85XIDNI/PQWNrSwDZh8yaHmsRQ9lXXcSXllAQJSnNArk2LNHdy17ztr5UKFvF
-	FsgpMR5dh1pOjf6CRVBO0/o3aFxud65eeepZMTHV9p4fEqe5jgh13SUcl8owrFrj3A0p9fJr2lhW7
-	eO7ZKHA5cU15KxJmoiBGXMELDv/tvaqZHiZwVovnJiG1TP6a4o+rMcL97U8r5rz2RqCCzx1G5xhaJ
-	E7+UMy3x2tm6d9o8rkXg==;
+	List-Owner; bh=N2bPmtGFSgAdy+Tf8RIQa8D1yCSxzfyGYMl0RKgMcVE=; b=sbH4XH9WHRt5iz
+	FU4SEJot66S6pKtDT0/PDtDPXWOq0dYOERF0CaCJwykMMJ55gYF459LOnYLfpIIecbbvVcT0pB+4s
+	Z5QENwNpJaqUb6hkEPv9GHCQBWJxPYoeL3X+JxPq47h6gyM1DtwNTpmJ7/oBGs7R2yV2q4HQp2lds
+	bsidm/s0jMwtVBsobGvMCNJMne8R99uBhd+OmkfEobnYx2amu9Pqp+IGBVkdDjxkW18GKFA1T7V7a
+	pOU8ZP1Gpl1tG5I1ds65yFI/8nBIRw+K82BHTQT4nJYA/tro3lkXd/aDP82i5i/n6SEQCuxK5DxsV
+	tQoJ9lgHleJn6V2fi2kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tCzwp-00000009GSm-33pF;
-	Mon, 18 Nov 2024 11:29:39 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1tD1Ie-00000009Sfq-0JIc;
+	Mon, 18 Nov 2024 12:56:16 +0000
+Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tCzwo-00000009GSL-00Re
+	id 1tD1IX-00000009Sew-38k0
 	for linux-phy@lists.infradead.org;
-	Mon, 18 Nov 2024 11:29:39 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-53a007743e7so3186757e87.1
-        for <linux-phy@lists.infradead.org>; Mon, 18 Nov 2024 03:29:37 -0800 (PST)
+	Mon, 18 Nov 2024 12:56:14 +0000
+Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-539e8607c2aso4279672e87.3
+        for <linux-phy@lists.infradead.org>; Mon, 18 Nov 2024 04:56:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1731929376; x=1732534176; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1731934568; x=1732539368; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=6+F1c07+mVwAqV5uUU9D6sA4NJCxNvjYMVVxQX72lwM=;
-        b=c1pqIfC8x9ZXsgZM8gmrxuBrN6m/CrarZtdECuUL8qI1IqNXnESXIro+KWxwPWm04A
-         pIdnZd5beQTkQYtQbbdA9gCqbUJ/FLp/X+k4XIfw1HyHWPdcadUwatGUkP7WesYHXzzY
-         CL0+fS/nXsRTQuh2PLOzRGkLhCe8jzQzefwpnKiB04BCtO4c9EWT2gL88l47IsUDD043
-         z73jEsSj4ZFJu8c7gQFXHmPvwc27TVW9uZCzVNXl603A0uoX4KN/2ePHwvTISNukAHOA
-         jX32tOgcKgqVs2FKVCZCq8wIbvFMZfFlYVhcIrwOkFfQkrBrLXzn0ELNClBrmUa+nNAv
-         ULCQ==
+        bh=jAqwMGBkTmHKZ4CNoWBz4QXL8qsRGD9BwJ8T1sZ1LU8=;
+        b=H75DsFUYlExvGvnR/euaiY0snf5HotdJv4HTWtRWy/5W3LPwpADIQo6Fq8k569OP9y
+         12M+xEmDt7Gt6QH0ZnEhpK/PNoJg/S2sKbtHEba6WspVLYBkHoBi1bhFuxknDl65vwL1
+         48N0L/P03MVzF4aS1+DoPcMtWMjkrFJD4ewIpCtl7+NqvkZQE2TkFSNMk9u2FacIbQCm
+         P6Z5Tsa2m+HXtf1tmR1VrTSRyd2DqH9skOzqTN4lsWgPga5h/shg409TCKHJW4xBAMoY
+         JANNO5Hs+L1TOYvF05rJdWNBCb86peQhIdRCg+05DTXq3s2Xqo7dkm6cVjqWj6Csz5Ie
+         MzDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1731929376; x=1732534176;
+        d=1e100.net; s=20230601; t=1731934568; x=1732539368;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=6+F1c07+mVwAqV5uUU9D6sA4NJCxNvjYMVVxQX72lwM=;
-        b=aMKLQn9WkLIUASs14GdAF0hXCuj/95PezCPf8h8bBkcQRqlPDlqPvbUhEr2uut1ZHX
-         dzGEb5l29BTALX9sioD+ZmZeOFrotpnplSPJs7ggbFqPhfVjJZAVlnCPHQGWKfmilt6d
-         aIQAvLBxuP/oYEQeQCZFW3TCEddgixHhSGumnl9k2K8qgVKxAqLxkL2+cqHIVa95kJjQ
-         9U1k6rCUXm4Np4+tuXIw/EZqe40ZdVK+X9hfg1VlgmucuIXGocbXnRwblFtPP+I4lGVU
-         8LKDbmJIZ+14p3tg0lg/hxYrELVeSV846pX/i0FktIMH/SfRb0gNjPeXHeDU9NY0Sy70
-         2iLg==
-X-Forwarded-Encrypted: i=1; AJvYcCVqCEtisGTRdC8jUiZGB9emsxVeuw7OB23X589MmYtqQIHhr9bXXLKOsLT/Xe1FOqJjyoSuKLLL/Xs=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz4dwaczx1dVp6U1KSrszafE4xCKKH/xFsAmfySEVGaZWGrqbtH
-	SlgmlkMYzKNtlsm95/+DkaKll12lew7BPgquxYuqImQpXzXBC0grtFMFliig3TU=
-X-Google-Smtp-Source: AGHT+IFEZqxXgk+9U3MgdABwpoiyQ/Uhmu+oBjqI0WpVEI3t/hTC8H0NsASHj/gLT+Me6/W8C4z/KA==
-X-Received: by 2002:ac2:4bc1:0:b0:539:8fcd:524 with SMTP id 2adb3069b0e04-53dab2a6af0mr4817753e87.30.1731929376123;
-        Mon, 18 Nov 2024 03:29:36 -0800 (PST)
+        bh=jAqwMGBkTmHKZ4CNoWBz4QXL8qsRGD9BwJ8T1sZ1LU8=;
+        b=Obw4ciobHQukafUWuDeZ8GXPoxtfmXkNgxNJVyjJnDsYvNp6dNc6O2F5PXxUEHFU50
+         XbscFjv4sYA4JIdL2E/OqBj+FDn0sUdTuiNdxW2+KNl5Vo832NYsQCa9O5sRGQEF9Zxi
+         FfNL8qeP47hAZozYGJlBwqSLZcWQba7upK7QNqsDoH0M0slgGX40W4LZ4xLoJJmyrMgD
+         /W/IzdAltTF6t6Itcrgu0wL/6i5Nd+JJqfdhDLFb3xzpw+Hj2MqCJObX0BUEi4PbjF6K
+         qDH7+HVGlgI0HHkoo5Im0fxBRLlL2n3sdXJWVhucwBm6c93iVoIqdDw3dYot/I41Qm0L
+         CP+g==
+X-Forwarded-Encrypted: i=1; AJvYcCUXR5Q59oKojm3oGPOguLo0r5gC3JhnR5V7454Ms9eq2P3M4dpibin22xYBamXTAVGSny0eOYr6WyY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yynyi1WmTwCEwYKpLnM0VpB34Hu9qs1gkXgEk26vcKCayUqwuVB
+	PXXlDBzDYQjOP9Sx4rMDZihzi1QsGrxAmfhWWJs2/BOQTc8ZpKrDKDkGz7EVD1M=
+X-Google-Smtp-Source: AGHT+IE1rwlqvuyY2O92e5DgZac5q8JPauzE9y+A00EL2MXWGS+FvI+OvGI5kWfZ80rMTLt0Z01AUQ==
+X-Received: by 2002:a05:6512:398e:b0:53c:7652:6c7a with SMTP id 2adb3069b0e04-53dab298aedmr3661459e87.8.1731934567633;
+        Mon, 18 Nov 2024 04:56:07 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53da6531338sm1592768e87.134.2024.11.18.03.29.33
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53da6548e40sm1594497e87.258.2024.11.18.04.56.06
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 18 Nov 2024 03:29:34 -0800 (PST)
-Date: Mon, 18 Nov 2024 13:29:32 +0200
+        Mon, 18 Nov 2024 04:56:06 -0800 (PST)
+Date: Mon, 18 Nov 2024 14:56:04 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
-	manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org, 
-	quic_qianyu@quicinc.com, conor+dt@kernel.org, neil.armstrong@linaro.org, 
-	andersson@kernel.org, konradybcio@kernel.org, quic_shashim@quicinc.com, 
-	quic_kaushalk@quicinc.com, quic_tdas@quicinc.com, quic_tingweiz@quicinc.com, 
-	quic_aiquny@quicinc.com, kernel@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	Krishna chaitanya chundru <quic_krichai@quicinc.com>
-Subject: Re: [PATCH 5/5] arm64: dts: qcom: qcs615: enable pcie for qcs615
-Message-ID: <u6wy6w5yfchbmhyvthhibyrhdp2pmusagxyalcanxvhg7ncbfn@vq6x6iwxtn2g>
-References: <20241118082619.177201-1-quic_ziyuzhan@quicinc.com>
- <20241118082619.177201-6-quic_ziyuzhan@quicinc.com>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, gregkh@linuxfoundation.org, 
+	andersson@kernel.org, konradybcio@kernel.org, mantas@8devices.com, 
+	manivannan.sadhasivam@linaro.org, abel.vesa@linaro.org, quic_kriskura@quicinc.com, 
+	quic_rohiagar@quicinc.com, quic_kbajaj@quicinc.com, quic_wcheng@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v4 6/6] arm64: dts: qcom: Add USB controller and phy
+ nodes for IPQ5424
+Message-ID: <q3twp57aiwvsj2wimvszp7ecr5s4ldacxghzzepmxzcasgy5a4@nnqvq6tgruaa>
+References: <20241118052839.382431-1-quic_varada@quicinc.com>
+ <20241118052839.382431-7-quic_varada@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241118082619.177201-6-quic_ziyuzhan@quicinc.com>
+In-Reply-To: <20241118052839.382431-7-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241118_032938_099228_E9A8CED2 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241118_045609_788371_D00C3153 
+X-CRM114-Status: GOOD (  10.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,22 +99,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 18, 2024 at 04:26:19PM +0800, Ziyue Zhang wrote:
-> From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+On Mon, Nov 18, 2024 at 10:58:39AM +0530, Varadarajan Narayanan wrote:
+> The IPQ5424 SoC has both USB2.0 and USB3.0 controllers. The USB3.0
+> can connect to either of USB2.0 or USB3.0 phy and operate in the
+> respective mode.
 > 
-> Add configurations in devicetree for PCIe0, including registers, clocks,
-> interrupts and phy setting sequence.
-> 
-> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
-> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
->  arch/arm64/boot/dts/qcom/qcs615-ride.dts |  42 ++++++
->  arch/arm64/boot/dts/qcom/qcs615.dtsi     | 158 +++++++++++++++++++++++
->  2 files changed, 200 insertions(+)
+> v4: Fix regulator names to match with other Qualcomm DT files
+> 
+> v3: Regulator node names, labels and 'regulator-name' changed per review suggestions
+>     Stray newline removed
+> 
+> v2: Add dm/dp_hs_phy_irq to usb3@8a00000 node
+>     Add u1/u2-entry quirks to usb@8a00000 node
+> ---
+>  arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts |  66 ++++++++
+>  arch/arm64/boot/dts/qcom/ipq5424.dtsi       | 159 ++++++++++++++++++++
+>  2 files changed, 225 insertions(+)
+> 
 
-Split into platform and SoC changes.
-
-
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 -- 
 With best wishes
 Dmitry
