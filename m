@@ -4,80 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B20AD68BFA
-	for <linux-phy@archiver.kernel.org>; Sun, 17 Nov 2024 12:57:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CECE3D10F37
+	for <linux-phy@archiver.kernel.org>; Mon, 18 Nov 2024 05:29:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8IIukaklk8LKrCRW+V+PzpCfxNRziQhSS1ZpORM6b4=; b=zWXz9r6ta9Jx0H
-	5HuQU/zJzvrByzVhbyGElzvaLz6hsvt2iS1PgyKq1bmUK4cTGROLyGiBtuntBSZV+CagZPIhqghql
-	PLUk3zsm5lkwrf8QDzgpbgfFQeVTKwFEo6k0OK3rBb+8cC5Otgx5RYnCDV8lInl5KDvAxusBHGHF1
-	M+wGC0IJRcajh8Jcmduta/SZeMtIkB2b2DjMNhWkC2ijr2fo/nBBQR65rd7pJfvanAlO6QaWCNdmc
-	2NRWS1eAu822AG+WVe0D5qJOSClSoUTHaPDGXKkpQEg6Euj3EKWKqSUPCBJYBJZaqsHxyeu1s3Hbh
-	295nKW+dfoDnPY0bSUrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=28UgOkn1AcWgl3W6R3gIkHg/P8LIaJKZ/Anz5dZio9g=; b=ZK9Q8wMZaFTxZD
+	koL7f3NESJ1RPikM2QTPRktdIa8LLlH8Js5ExbqgLWtBNB8JUiD5ct+y/VJka9LEAYGvsUpml85LF
+	MrUft9kdb0ivZ/idAadtafe6SNyPBlbuGFW+kE2fkauZRUyhO+JynxzHwxDu4ejKePM7j7iy0+YW+
+	tMz4A4P0UUVxaWaanagwTCLl9kyX7m7VgGQVkaexnjg1zN4KCBXHXOGo/9RKM0myS3Pw+BNYKkySJ
+	Wlf5U1jJ7KuWCI7em1lpDSNGGF2rx3LvMtyDpjzFykmwaScHQZMvSFb/qCsS01yhTB/Ew5P1ikYMJ
+	tUDAXigzqH+Lu7Rk4iaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tCeqC-00000007LJU-2b0A;
-	Sun, 17 Nov 2024 12:57:24 +0000
-Received: from mail-yw1-x112e.google.com ([2607:f8b0:4864:20::112e])
+	id 1tCuJw-00000008Ou6-04J2;
+	Mon, 18 Nov 2024 05:29:08 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tCeqA-00000007LJ8-0WkO
+	id 1tCuJt-00000008OtU-0oBQ
 	for linux-phy@lists.infradead.org;
-	Sun, 17 Nov 2024 12:57:23 +0000
-Received: by mail-yw1-x112e.google.com with SMTP id 00721157ae682-6eb0e90b729so10417047b3.1
-        for <linux-phy@lists.infradead.org>; Sun, 17 Nov 2024 04:57:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1731848240; x=1732453040; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=NodmpFT+qxaaF/PGLm9mRIZsGR/VQH6X8ujv94bXnj0=;
-        b=MhmxtVSORHnTNmfk9qGlKBcU2C7X4M6D2YZDwJ1+fM/Dp8vfIxuiZh9NhSKQNbPIA0
-         ezM14YGV1CETpGfVDgUuvyHgFIupt0ENJpPNbQPBKlJvvcnT91bHNlbgBci3y3odh6Zf
-         5Jir+PIwMQqRf9G9PppI4RnR8wypxZ0JHz5lG3tb1OhASkAlbg2bbzYI/8isZX+DbaJX
-         24QIYLZoYbSlt9fbbPpvRciMunvZ+UFO8WD7tfzs5FqcoUwWVfguetcdFXusSupVxoMs
-         ceQ4dfGGrd8opf/eGak6083Eh1D+Eoi+XnaI/IJEvCUKVZ/dawcwra8aWzMFTmmAinCE
-         gaCA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1731848240; x=1732453040;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=NodmpFT+qxaaF/PGLm9mRIZsGR/VQH6X8ujv94bXnj0=;
-        b=OIZcaobY5RQW7K6RzRufjaoXOMdnZA+beK9DqO2VIcwtHwrw5TCLlXEpYE3ah7TYRS
-         2zzSqba3jPcWJEhpdx7s3Gq38+23lGGwiVwv7lEGfb46VDrbOYoUmEPbSEkw+ZIzNXwj
-         9mMDlXIVC0au4o8saiC5Mal4ZKSGDkyYuTHByy6YayBKgScSGyfZ5EdypBzesZn0/8mB
-         w1XalLHJ3rxDbA4IVZgEJbeKz9eszfqZ2TwWk21y3GOMIL7g2mvO8Zd/UiM1mHy9gJSH
-         FvYcp361m4ue5KLJnYB825dZcEuXTIPs+pP31icJzCZNB+1aP+YYX05/siGFdQ+5/OjD
-         8O7g==
-X-Forwarded-Encrypted: i=1; AJvYcCVEj9rTvF7BtKbppc6UPISLag7sE93DiyWCEHOteoEhqXDhqiWlKfV/jWYqjst+dAZEVQcUeMpKbl0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzBUcgPChqYYyXUK/8utcgX6sRalefohRIOtvnbjUQ7kFlAqf8w
-	180k3gCcMxwifMQnOYhcT986TLaWHHW85eN1vT5MFchVgcxCssdp3gaB20Ufkk6H7TZHUZgwS1h
-	ivUojWpHFfViYg9331RfHcRFK0ASWM4ntFAbl+g==
-X-Google-Smtp-Source: AGHT+IGHhP6z6uzaMe/SjD7VuC2yupm/LLWj/hEg1VYAOasj1HmGbygRyNh0RqshUk1xmkg0eGSyb+eZTIFDMSpJNeg=
-X-Received: by 2002:a05:690c:4b86:b0:6e3:2361:df8c with SMTP id
- 00721157ae682-6ee55f1c99dmr80383367b3.42.1731848240497; Sun, 17 Nov 2024
- 04:57:20 -0800 (PST)
+	Mon, 18 Nov 2024 05:29:06 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AI5RdYR020043;
+	Mon, 18 Nov 2024 05:28:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=pwZBh2RtGY9XMlaWBuSL6g
+	ry5U44OKq8gOb0pkJc/zQ=; b=ou9PHM6GG8GhJGVl1F1KRWsR1rrd2MVHWLQ784
+	4iRSH2KcXW9tUB0V7AkkK+5L76O1PhNqbHz+7pc/0LZQUYa6kNv8TZ0Mxl+oZUH1
+	Dhduwtcniip2tTAlRAYYQrdcNGnGbYplGiTzNbcohzsS0oHrmUuPFDi/7YtGv1KC
+	IZqQr/9AzGGFb6LEEtlAkg3BruG2nPCVvnZrv/Y6VpFFZpxmJDvYFjZAsvsrzsCM
+	wrzQEKkRqstsZW/hDj1hfpkVFThWZIiBTlqmXwzjwKZFBNa06rtVHrUPDQqTfvME
+	Iv2rclw+QzbuYfe+7yZ2UquX3AtQGu5gRY2TuwbCIXi5OLxQ==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 42xksqkfux-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 18 Nov 2024 05:28:58 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AI5SvKK004184
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 18 Nov 2024 05:28:57 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Sun, 17 Nov 2024 21:28:51 -0800
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <gregkh@linuxfoundation.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <dmitry.baryshkov@linaro.org>,
+        <mantas@8devices.com>, <manivannan.sadhasivam@linaro.org>,
+        <abel.vesa@linaro.org>, <quic_kriskura@quicinc.com>,
+        <quic_rohiagar@quicinc.com>, <quic_kbajaj@quicinc.com>,
+        <quic_varada@quicinc.com>, <quic_wcheng@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-usb@vger.kernel.org>
+Subject: [PATCH v4 0/6] Enable IPQ5424 USB support
+Date: Mon, 18 Nov 2024 10:58:33 +0530
+Message-ID: <20241118052839.382431-1-quic_varada@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <20241115091545.2358156-1-quic_kriskura@quicinc.com>
- <ibh3n7gl5qcawpiyjgxy2yum6jsmfv5lpfefuun3m2ktldcswl@odhjnmkj5jre> <51f7cfa8-3362-46e3-a9e5-e43d585d4ac0@quicinc.com>
-In-Reply-To: <51f7cfa8-3362-46e3-a9e5-e43d585d4ac0@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sun, 17 Nov 2024 14:57:09 +0200
-Message-ID: <CAA8EJpoxzEdJ5d8RtEb7a6=NHvCVhnisK7QLpqpp8EBHAvsBhw@mail.gmail.com>
-Subject: Re: [PATCH 5.15.y] phy: qcom: qmp: Fix NULL pointer dereference for
- USB Uni PHYs
-To: Krishna Kurapati <quic_kriskura@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Bjorn Andersson <quic_bjorande@quicinc.com>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Andy Gross <agross@kernel.org>, Stephen Boyd <swboyd@chromium.org>, linux-kernel@vger.kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	quic_ppratap@quicinc.com, quic_jackp@quicinc.com, stable@vger.kernel.org
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: jKxq4ZRDHj_iPZeYKlei5NIlD3r3-bZg
+X-Proofpoint-ORIG-GUID: jKxq4ZRDHj_iPZeYKlei5NIlD3r3-bZg
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ mlxlogscore=700 impostorscore=0 adultscore=0 spamscore=0 bulkscore=0
+ lowpriorityscore=0 malwarescore=0 clxscore=1015 phishscore=0 mlxscore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411180046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241117_045722_194749_F3999A68 
-X-CRM114-Status: GOOD (  27.62  )
+X-CRM114-CacheID: sfid-20241117_212905_371487_DB732EB8 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,144 +103,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 17 Nov 2024 at 13:51, Krishna Kurapati
-<quic_kriskura@quicinc.com> wrote:
->
->
->
-> On 11/15/2024 9:29 PM, Dmitry Baryshkov wrote:
-> > On Fri, Nov 15, 2024 at 02:45:45PM +0530, Krishna Kurapati wrote:
-> >> Commit [1] introduced DP support to QMP driver. While doing so, the
-> >> dp and usb configuration structures were added to a combo_phy_cfg
-> >> structure. During probe, the match data is used to parse and identify the
-> >> dp and usb configs separately. While doing so, the usb_cfg variable
-> >> represents the configuration parameters for USB part of the phy (whether
-> >> it is DP-Cobo or Uni). during probe, one corner case of parsing usb_cfg
-> >> for Uni PHYs is left incomplete and it is left as NULL. This NULL variable
-> >> further percolates down to qmp_phy_create() call essentially getting
-> >> de-referenced and causing a crash.
-> >
-> > The UNI PHY platforms don't have usb3-phy subnode. As such the usb_cfg
-> > variable should not be used in the for_each_available_child_of_node()
-> > loop.
-> >
-> > Please provide details for the platform on which you observe the crash
-> > and the backtrace.
-> >
->
-> I got this error when I started working on multiport support (begining
-> of 2023). Initially I tried testing on my code on 5.15, hence this patch
-> was raised on the same.
->
-> The 2 qmp phys on sa8195 and sa8295 (based on sc8280xp) are uni phy and
-> the following was the DT node that worked out for me on 5.15 codebase:
->
->
->         usb_1_qmpphy: ssphy@88eb000 {
->                 compatible = "qcom,sm8150-qmp-usb3-uni-phy";
->                 reg = <0x088eb000 0x200>;
->                 #address-cells = <1>;
->                 #size-cells = <1>;
->                 ranges;
->                 //status = "disabled";
->                 clocks = <&gcc GCC_USB3_MP_PHY_AUX_CLK>,
->                          <&rpmhcc RPMH_CXO_CLK>,
->                          <&gcc GCC_USB3_SEC_CLKREF_CLK>,
->                          <&gcc GCC_USB3_MP_PHY_COM_AUX_CLK>;
->                 clock-names = "aux", "ref_clk_src", "ref", "com_aux";
->
->                 resets = <&gcc GCC_USB3UNIPHY_PHY_MP0_BCR>,
->                          <&gcc GCC_USB3_UNIPHY_MP0_BCR>;
->                 reset-names = "phy", "common";
->
->                 //vdda-phy-supply = <&L3C>;
->                 vdda-pll-supply = <&L5E>;
->
->                 usb_1_ssphy: usb3-phy@88eb200 {
+The IPQ5424 SoC has both USB2.0 and USB3.0 controllers. The USB3.0
+can connect to either of USB2.0 or USB3.0 phy and operate in the
+respective mode.
 
-As this is a UNI PHY and not a combo PHY, the child node should be
-just phy@, not usb3-phy@. See
-Documentation/devicetree/bindings/phy/qcom,qmp-phy.yaml
+v4: Fix regulator names to match with other Qualcomm DT files
 
->                         reg = <0x088eb200 0x200>,
->                               <0x088eb400 0x200>,
->                               <0x088eb800 0x800>,
->                               <0x088eb600 0x200>;
->                         #clock-cells = <0>;
->                         #phy-cells = <0>;
->                         clocks = <&gcc GCC_USB3_MP_PHY_PIPE_0_CLK>;
->                         clock-names = "pipe0";
->                         clock-output-names = "usb3_uni_phy_pipe_clk_src";
->                 };
->         };
->
->
-> I was hitting the bug when I write the DT above way on top of 5.15 baseline.
->
-> In 5.15.y, the SM8150 usb_2_qmpphy dT is as follows:
->
->                  usb_2_qmpphy: phy@88eb000 {
->                          compatible = "qcom,sm8150-qmp-usb3-uni-phy";
->                          reg = <0 0x088eb000 0 0x200>;
->                          status = "disabled";
->                          #address-cells = <2>;
->                          #size-cells = <2>;
->                          ranges;
->
->                          clocks = <&gcc GCC_USB3_SEC_PHY_AUX_CLK>,
->                                   <&rpmhcc RPMH_CXO_CLK>,
->                                   <&gcc GCC_USB3_SEC_CLKREF_CLK>,
->                                   <&gcc GCC_USB3_SEC_PHY_COM_AUX_CLK>;
->                          clock-names = "aux", "ref_clk_src", "ref",
-> "com_aux";
->
->                          resets = <&gcc GCC_USB3PHY_PHY_SEC_BCR>,
->                                   <&gcc GCC_USB3_PHY_SEC_BCR>;
->                          reset-names = "phy", "common";
->
->                          usb_2_ssphy: phy@88eb200 {
+v3: Added reviewed-by to one of the patches
+    dts: regulator node names changed
 
-Just as I wrote, this one correctly uses phy@
+v2: Added acked-by and reviewed-by to few of the patches
+    Changed uppercase hex digits to lowercase
+    dts: add more interrupts & quirks as suggested in the review
 
->                                  reg = <0 0x088eb200 0 0x200>,
->                                        <0 0x088eb400 0 0x200>,
->                                        <0 0x088eb800 0 0x800>,
->                                        <0 0x088eb600 0 0x200>;
->                                  #clock-cells = <0>;
->                                  #phy-cells = <0>;
->                                  clocks = <&gcc GCC_USB3_SEC_PHY_PIPE_CLK>;
->                                  clock-names = "pipe0";
->                                  clock-output-names =
-> "usb3_uni_phy_pipe_clk_src";
->                          };
->                  };
->
-> IIRC, when I tried using the above sm8150 dt on 5.15.y, the phy_create
-> was (either not getting called) or crashing. Probably because
-> "of_node_name_eq()" didn't find either "dp-phy" or "usb3-phy" and cfg
-> variable was NULL.
+Varadarajan Narayanan (6):
+  dt-bindings: phy: qcom,qusb2: Document IPQ5424 compatible
+  phy: qcom-qusb2: add QUSB2 support for IPQ5424
+  dt-bindings: phy: qcom,qmp-usb: Add IPQ5424 USB3 PHY
+  phy: qcom: qmp: Enable IPQ5424 support
+  dt-bindings: usb: qcom,dwc3: Add IPQ5424 to USB DWC3 bindings
+  arm64: dts: qcom: Add USB controller and phy nodes for IPQ5424
 
-Unless somebody backported some patch in an incorrect way, the SM8150
-DT entry is correct, while SA8xxx is not,
-
->
-> I can try reproducing the issue and get back again in a week.
-
-Yes, please.
-
->
-> Apologies if I have misunderstood something and this patch doesn't make
-> sense. Let me know if I have made any mistake anywhere (either in my DT)
-> or in understanding.
->
-> Regards,
-> Krishna,
+ .../bindings/phy/qcom,qusb2-phy.yaml          |   1 +
+ .../phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   |   2 +
+ .../devicetree/bindings/usb/qcom,dwc3.yaml    |   1 +
+ arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts   |  66 ++++++++
+ arch/arm64/boot/dts/qcom/ipq5424.dtsi         | 159 ++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb.c       |   3 +
+ drivers/phy/qualcomm/phy-qcom-qusb2.c         |  28 +++
+ 7 files changed, 260 insertions(+)
 
 
-
+base-commit: 744cf71b8bdfcdd77aaf58395e068b7457634b2c
 -- 
-With best wishes
-Dmitry
+2.34.1
+
 
 -- 
 linux-phy mailing list
