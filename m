@@ -4,90 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FDEAD44171
-	for <linux-phy@archiver.kernel.org>; Wed, 20 Nov 2024 09:37:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1A73D63937
+	for <linux-phy@archiver.kernel.org>; Wed, 20 Nov 2024 12:43:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wnyof9VuPaJqg9Ky9ycx4xUKJOaaA40wKPUKjUaKBfk=; b=w4GuND4muDet8B
-	CFb3y2uUCFc24V+HWO056MJUZRgDuTGlD56oLk0Dg7cvCzqGG/3Q97zvhIvECmmt+XvJSERRfaUbg
-	BVdWEIBDKG7rUJR91tpX2RhmdmRcMiSjVOQVlpedprRBVA9bWwjnHoXAfayiQ3DxAiOkUN6ADQ+Kd
-	xuh2UopxCqwIdPWjGa/alJ5LRLd8wvWGxMh2uf5BxEO64kNZRpdl3l7Z8zyJCrJh1ZFIdBUzWLSQD
-	BenIg8vgiXgrVjb2J/dZyuzd+XLK+q2oXS225P56W54nyDKDZ8gDcJirslEPKYcBKXoMITNv9u0DH
-	4awZtFC0ZYDKqVcTVSzg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rdHcyQOM5/efPw85rSRjYCydIEYvrWvNmRXsQrt2hbE=; b=nIIjt+gJ7TIb83
+	FyUS9kPrvhFoxgdzpq4Ujb7BYNgQOUYVpRzNLmshAe8AYdDdK+vuG+crmrIW6dBVxG2lBBo8V7e0t
+	ximh60vBaiVGiti32WcPRp+dvSbRChkjZNepN+Oj7MxksTTpmZ3wejrBH3a7lqGFH5+gLZCuoupIb
+	uNdrpqu/gRdGPwJGEf1MERrfjGVCF8Y8W6SjzBZFRxGCGimCpfn2YA7st2Fu8XFu+eMgGjtkh+ytu
+	rw3LNnbl/XFnd5/popoFCm000Y+miv5f0sRRqBwQK3NoyLjm28uizk61Xnz53Ja++CVM9QOsjkjhA
+	HcnIo/4A38PEBpGYnDGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tDh9Q-0000000EvxW-3K9M;
-	Wed, 20 Nov 2024 09:37:32 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1tDk3T-0000000FJZ0-3qpT;
+	Wed, 20 Nov 2024 12:43:35 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tDh9N-0000000Evw8-3yNL
-	for linux-phy@lists.infradead.org;
-	Wed, 20 Nov 2024 09:37:31 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-38231e9d518so3319049f8f.0
-        for <linux-phy@lists.infradead.org>; Wed, 20 Nov 2024 01:37:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=thaumatec-com.20230601.gappssmtp.com; s=20230601; t=1732095447; x=1732700247; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=U4fsqGfyvQJKmn8zoPFdQOQX2dN/AEtzDhH6yM067EA=;
-        b=WQW5J6pUCscOdiVoDvq90TJYiLCgW40PLpQ2KX6Mj6DT+QldqFCWyTHZbHPZ6oGlp8
-         TP3DhsoNv371Ux5eEtPhtcBe1G1ax5kpPOw6bZZIlt17Pt4g+rOUDXO6HoOTrrLQshFQ
-         auq1keDfG7I/27L+P7WNSWUojRTEF6NCRFgaWRyywxLiLliY4Pn+oHY+Nz4xOFhfmGbi
-         cTToV0Cm2meuTSO5mfKEQC3ejo+senxZ7WaECSLYdYiaJEGnZRKrpgWNsx0cgPv00UPs
-         /ukXi2op8O+chFTmFH1/sDa+ii2US5qXA7bxCMduXFVP/IQ/GRxFLhxMJN11qRdwuuDT
-         Pf/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732095447; x=1732700247;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=U4fsqGfyvQJKmn8zoPFdQOQX2dN/AEtzDhH6yM067EA=;
-        b=DVOirpYZASHlS99MG4/XUiNiN6sB4PYmDugdSh6p4Q/8j7orQVmvB9Oml6oskjiRES
-         QaC+kQ0gHaoNbwpNI0vtiy6OWw/K3E3dmgjRfwbQI6H7/WDIxlL4YgRuNXpT9KVhgdZ3
-         Z9Q1ImDguMJjMN52DbdHg/tzxj1MMKhCd2RYvgiPkT12YFLDFtmO5ctWBQQ+CGectv+J
-         S1gqWgIIpGjTpElZ6tGUz0/B6YGElzomushZhfG5Znc/yQnD9ZHBZyUgPxt/xXkSpXA7
-         aY0uXH769eoYRCCnDAtY8wEGQaVY1S8qM2jSdi/s/+HKrOMKPC3vSyfZQ7I7heSqXTBh
-         UZOg==
-X-Forwarded-Encrypted: i=1; AJvYcCXMmA0HEHsyBTlCnnMBQd60P1I3oQj36DuBpi49Ni+UnaHcK5K3JMoUWB+Ve6Ej6LDqKkVCNYT1Ihc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxVJ52s0cYTUU6cW8aGMlCuTxCboTPLwBMX7jlPFs3/2ub+YYKZ
-	XUQBj1UVOs54IXx0atHFC7ZpJlV53UQEm7/1C7qg56LBcU3y/60IOk+L+GFX0uw=
-X-Google-Smtp-Source: AGHT+IERdcVQmp8I/UOWOPIWa5oeyrgUNsR/Mbrq7h+WHYexcjQUaJAOdjbwnyqP/omN2/s+hyZreg==
-X-Received: by 2002:a5d:47aa:0:b0:382:6f2:df7b with SMTP id ffacd0b85a97d-38254adf3camr1373292f8f.12.1732095447599;
-        Wed, 20 Nov 2024 01:37:27 -0800 (PST)
-Received: from fedora.. ([91.90.172.13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38254933c32sm1555709f8f.70.2024.11.20.01.37.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 20 Nov 2024 01:37:27 -0800 (PST)
-From: Daniel Semkowicz <dse@thaumatec.com>
-To: heiko@sntech.de
-Cc: conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	kishon@kernel.org,
-	krzk+dt@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	quentin.schulz@cherry.de,
-	robh@kernel.org,
-	sebastian.reichel@collabora.com,
+	id 1tDk2W-0000000FJRr-273G;
+	Wed, 20 Nov 2024 12:42:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1732106553;
+	bh=X6Vm3LbhTsKjq12wJ9i8bHP6qgWeslNJ7NDL3Hegox8=;
+	h=From:To:Cc:Subject:Date:From;
+	b=OdDtjyWSfEWPYZfn20vNe03opNz9HuPAm+BUkkT5+zS4QD1Y7eogL8TG/iVVUG8Rq
+	 1qX5U4qqIIpvdF1szZjtSPAuvIay/yJQFmlGL2Mw3VgcupaEV+lYRjh5xFZIbAIH6g
+	 RJLkr2T/LVjvHrJQaV1F6Px9kwOZIhq7Rq70+GAucWxzIoLxE5Kq1L/IYubuyVW+ws
+	 GM7E83aQGuszkLDj8eDLHMYD8H1nDWFssGyCHA/w5yrcYDs41WSG4Z8oWM/jNrBhR8
+	 1PibaFFibJvErdY3GXFBynq3TZVOV7Tpn3YoIpDE9hmYVvSZWz/gKr7L6WZ0SkN9B1
+	 dUaSeJXTSVytA==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id EF41417E365E;
+	Wed, 20 Nov 2024 13:42:32 +0100 (CET)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: chunkuang.hu@kernel.org
+Cc: p.zabel@pengutronix.de,
+	chunfeng.yun@mediatek.com,
 	vkoul@kernel.org,
-	Daniel Semkowicz <dse@thaumatec.com>
-Subject: Re: [PATCH v3 0/2] MIPI DSI phy for rk3588
-Date: Wed, 20 Nov 2024 10:36:38 +0100
-Message-ID: <20241120093702.9018-1-dse@thaumatec.com>
+	kishon@kernel.org,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	dri-devel@lists.freedesktop.org,
+	linux-mediatek@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	kernel@collabora.com
+Subject: [PATCH] phy: mediatek: phy-mtk-hdmi: Register PHY provided regulator
+Date: Wed, 20 Nov 2024 13:41:43 +0100
+Message-ID: <20241120124143.132637-1-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.47.0
-In-Reply-To: <20241113221018.62150-1-heiko@sntech.de>
-References: <20241113221018.62150-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241120_013730_209576_B1521337 
-X-CRM114-Status: GOOD (  20.81  )
+X-CRM114-CacheID: sfid-20241120_044236_694261_6374738A 
+X-CRM114-Status: GOOD (  15.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,66 +81,177 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Heiko,
+At least version 2 of the HDMI PHY, found in MediaTek MT8195 and
+MT8188 SoCs, does provide hardware support to switch on/off the
+HDMI 5V pins (which are also used for DDC), and this translates
+to this being a fixed regulator.
 
-> This adds the phy driver need for DSI output on rk3588.
-> 
-> The phy itself is used for both DSI output and CSI input, though the
-> CSI part for the whole chain needs a lot more work, so is left out for
-> now and only the DSI part implemented.
-> 
-> This allows the rk3588 with its current VOP support to drive a DSI display
-> using the DSI2 controller driver I'll submit in a next step.
-> 
-> Only generic phy interfaces are used, so the DSI part is pretty straight
-> forward.
-> 
-> changes in v3:
-> - add Krzysztof review tag to the binding
-> - address Sebastian's review comments
->   - better error handling
->   - dropping empty function
->   - headers
->   - not using of_match_ptr - this should also make the
->     test-robot happier
-> 
-> changes in v2:
-> - fix error in dt-binding example
-> - drop unused frequency table
-> - pull in some more recent improvements from the vendor-kernel
->   which includes a lot less magic values
-> - already include the support for rk3576
-> - use dev_err_probe
-> 
-> Heiko Stuebner (2):
->   dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY schema
->   phy: rockchip: Add Samsung CSI/DSI Combo DCPHY driver
-> 
->  .../phy/rockchip,rk3588-mipi-dcphy.yaml       |   82 +
->  drivers/phy/rockchip/Kconfig                  |   12 +
->  drivers/phy/rockchip/Makefile                 |    1 +
->  .../phy/rockchip/phy-rockchip-samsung-dcphy.c | 1647 +++++++++++++++++
->  4 files changed, 1742 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
->  create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-> 
-> -- 
-> 2.45.2
+Register this PHY-provided regulator so that it can be fed to the
+hdmi-connector driver to manage the HDMI +5V PWR rail.
 
-Thank you very much for these patches!
+Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+---
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c | 44 ++++++++++++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h |  3 ++
+ drivers/phy/mediatek/phy-mtk-hdmi.c        | 28 ++++++++++++++
+ drivers/phy/mediatek/phy-mtk-hdmi.h        |  4 ++
+ 4 files changed, 79 insertions(+)
 
-I tested this series on top of v6.12 with DSI/LVDS bridge
-in the following configuration:
-
-RK3588 Tiger SoM (dsi0) --> TC358775 DSI/LVDS bridge --> LVDS display
-
-I did not observe any undesirable artifacts on the display.
-Display blank/unblank works correctly.
-
-Tested-by: Daniel Semkowicz <dse@thaumatec.com>
-
-Kind regards
-Daniel
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+index bbfe11d6a69d..b38f3ae26b3f 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.c
+@@ -9,6 +9,8 @@
+ #include <linux/module.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/regulator/driver.h>
++#include <linux/regulator/of_regulator.h>
+ #include <linux/types.h>
+ #include <linux/units.h>
+ #include <linux/nvmem-consumer.h>
+@@ -478,8 +480,50 @@ static int mtk_hdmi_phy_configure(struct phy *phy, union phy_configure_opts *opt
+ 	return ret;
+ }
+ 
++static int mtk_hdmi_phy_pwr5v_enable(struct regulator_dev *rdev)
++{
++	struct mtk_hdmi_phy *hdmi_phy = rdev_get_drvdata(rdev);
++
++	mtk_phy_set_bits(hdmi_phy->regs + HDMI_CTL_1, RG_HDMITX_PWR5V_O);
++
++	return 0;
++}
++
++static int mtk_hdmi_phy_pwr5v_disable(struct regulator_dev *rdev)
++{
++	struct mtk_hdmi_phy *hdmi_phy = rdev_get_drvdata(rdev);
++
++	mtk_phy_clear_bits(hdmi_phy->regs + HDMI_CTL_1, RG_HDMITX_PWR5V_O);
++
++	return 0;
++}
++
++static int mtk_hdmi_phy_pwr5v_is_enabled(struct regulator_dev *rdev)
++{
++	struct mtk_hdmi_phy *hdmi_phy = rdev_get_drvdata(rdev);
++
++	return !!(readl(hdmi_phy->regs + HDMI_CTL_1) & RG_HDMITX_PWR5V_O);
++}
++
++static const struct regulator_ops mtk_hdmi_pwr5v_regulator_ops = {
++	.enable = mtk_hdmi_phy_pwr5v_enable,
++	.disable = mtk_hdmi_phy_pwr5v_disable,
++	.is_enabled = mtk_hdmi_phy_pwr5v_is_enabled
++};
++
++static const struct regulator_desc mtk_hdmi_phy_pwr5v_desc = {
++	.name = "hdmi-pwr5v",
++	.id = -1,
++	.n_voltages = 1,
++	.fixed_uV = 5000000,
++	.ops = &mtk_hdmi_pwr5v_regulator_ops,
++	.type = REGULATOR_VOLTAGE,
++	.owner = THIS_MODULE,
++};
++
+ struct mtk_hdmi_phy_conf mtk_hdmi_phy_8195_conf = {
+ 	.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_GATE,
++	.hdmi_phy_regulator_desc = &mtk_hdmi_phy_pwr5v_desc,
+ 	.hdmi_phy_clk_ops = &mtk_hdmi_pll_ops,
+ 	.hdmi_phy_enable_tmds = mtk_hdmi_phy_enable_tmds,
+ 	.hdmi_phy_disable_tmds = mtk_hdmi_phy_disable_tmds,
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h
+index 22a68dc9550c..e26caaf4d104 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h
++++ b/drivers/phy/mediatek/phy-mtk-hdmi-mt8195.h
+@@ -103,6 +103,9 @@
+ #define HDMI_ANA_CTL 0x7c
+ #define REG_ANA_HDMI20_FIFO_EN BIT(16)
+ 
++#define HDMI_CTL_1 0xc4
++#define RG_HDMITX_PWR5V_O BIT(9)
++
+ #define HDMI_CTL_3 0xcc
+ #define REG_HDMITXPLL_DIV GENMASK(4, 0)
+ #define REG_HDMITX_REF_XTAL_SEL BIT(7)
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.c b/drivers/phy/mediatek/phy-mtk-hdmi.c
+index d2e824771f9d..52a7d525ff9b 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.c
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.c
+@@ -75,6 +75,28 @@ static void mtk_hdmi_phy_clk_get_data(struct mtk_hdmi_phy *hdmi_phy,
+ 	clk_init->ops = hdmi_phy->conf->hdmi_phy_clk_ops;
+ }
+ 
++static int mtk_hdmi_phy_register_regulators(struct mtk_hdmi_phy *hdmi_phy)
++{
++	const struct regulator_desc *vreg_desc = hdmi_phy->conf->hdmi_phy_regulator_desc;
++	const struct regulator_init_data vreg_init_data = {
++		.constraints = {
++			.valid_ops_mask = REGULATOR_CHANGE_STATUS,
++		}
++	};
++	struct regulator_config vreg_config = {
++		.dev = hdmi_phy->dev,
++		.driver_data = hdmi_phy,
++		.init_data = &vreg_init_data,
++		.of_node = hdmi_phy->dev->of_node
++	};
++
++	hdmi_phy->rdev = devm_regulator_register(hdmi_phy->dev, vreg_desc, &vreg_config);
++	if (IS_ERR(hdmi_phy->rdev))
++		return PTR_ERR(hdmi_phy->rdev);
++
++	return 0;
++}
++
+ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -150,6 +172,12 @@ static int mtk_hdmi_phy_probe(struct platform_device *pdev)
+ 	if (hdmi_phy->conf->pll_default_off)
+ 		hdmi_phy->conf->hdmi_phy_disable_tmds(hdmi_phy);
+ 
++	if (hdmi_phy->conf->hdmi_phy_regulator_desc) {
++		ret = mtk_hdmi_phy_register_regulators(hdmi_phy);
++		if (ret)
++			return ret;
++	}
++
+ 	return of_clk_add_provider(dev->of_node, of_clk_src_simple_get,
+ 				   hdmi_phy->pll);
+ }
+diff --git a/drivers/phy/mediatek/phy-mtk-hdmi.h b/drivers/phy/mediatek/phy-mtk-hdmi.h
+index 71c02d043485..99d917e0036a 100644
+--- a/drivers/phy/mediatek/phy-mtk-hdmi.h
++++ b/drivers/phy/mediatek/phy-mtk-hdmi.h
+@@ -13,6 +13,8 @@
+ #include <linux/module.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/regulator/driver.h>
++#include <linux/regulator/machine.h>
+ #include <linux/types.h>
+ 
+ struct mtk_hdmi_phy;
+@@ -20,6 +22,7 @@ struct mtk_hdmi_phy;
+ struct mtk_hdmi_phy_conf {
+ 	unsigned long flags;
+ 	bool pll_default_off;
++	const struct regulator_desc *hdmi_phy_regulator_desc;
+ 	const struct clk_ops *hdmi_phy_clk_ops;
+ 	void (*hdmi_phy_enable_tmds)(struct mtk_hdmi_phy *hdmi_phy);
+ 	void (*hdmi_phy_disable_tmds)(struct mtk_hdmi_phy *hdmi_phy);
+@@ -32,6 +35,7 @@ struct mtk_hdmi_phy {
+ 	struct mtk_hdmi_phy_conf *conf;
+ 	struct clk *pll;
+ 	struct clk_hw pll_hw;
++	struct regulator_dev *rdev;
+ 	unsigned long pll_rate;
+ 	unsigned char drv_imp_clk;
+ 	unsigned char drv_imp_d2;
+-- 
+2.47.0
 
 
 -- 
