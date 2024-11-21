@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09269D75BC8
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Nov 2024 07:40:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E39D9D75BCC
+	for <linux-phy@archiver.kernel.org>; Thu, 21 Nov 2024 07:42:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3ii9n6grvV4p/C+rODa9TOZa3PD7oIIPMgN22NTi7b0=; b=pyAmxrlVpnF36y
-	p7i6MvX7Vul+Ez6l0J4VIcg2DXHVdBNjVO0Gb0N0HTJvTvVJ+ipgvZ9FInKIgjJWex+uldB/isRfC
-	MLGVqfJE0w0bCKnajCQ7JaXuTm9l4rCG2UjVSeANpFoYFTeDBkEjZ1NQr5oKxusYEAGT8Y5R4UN0F
-	dnXXQ2UgqR2tcVFyVy0txF4RN+Ghn/wvye7KRUzjpYU/TeR8AuRll7B2FZvQqUwClEMAK33yGZ8Nn
-	l95BbOs4eZh6A0Co35HOR+4uQoQfXolfq7ynzKtpSCWi35s3vVkGPCkB4FivrnOW8DWsM3N8mr4hQ
-	cjQ0CwGaX9ukddJkp7yg==;
+	List-Owner; bh=FAVMYPRx6Wg70p18Gz9TXh3mNLI3qyr+YKW/DgQX6rg=; b=cJ0MAk3jAr5r0d
+	IsPwx8p1O0kLYnLthZSkMjIKvtCO+pqcacC93zZTKe+xu72bxhxTEVTiwUAW7mgAAdhhv2mO56GHZ
+	R8fG5Cv6MeUIMsaeRpj6nU2MT13B2rnw1Z2Eqd5yy6AVkq7uJ9VC/HQyHlOB3DUQAZtIHo+y0neY5
+	u6N3cZFZiQQFFMYpbj1fgowmLiNTlUCCGuEgAAm+HdXtT98JZUAGOxwA+UTyGSJCrgqcwckVUkf9I
+	iiyaoilN6kpHEjxxnx/etH9Tl3R4N035JUeHmXjs2enrL4C2z9CO+guM1CnTvCnW0ggQI2WbN7RxF
+	m3MLVdI4Y+dbqw1Ne0QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE1nv-0000000H13x-14IZ;
-	Thu, 21 Nov 2024 07:40:43 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tE1pG-0000000H19b-2WOh;
+	Thu, 21 Nov 2024 07:42:06 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tE1ns-0000000H13a-0iSh
+	id 1tE1pE-0000000H19G-01uJ
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Nov 2024 07:40:41 +0000
+	Thu, 21 Nov 2024 07:42:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id DD43EA40A4D;
-	Thu, 21 Nov 2024 07:38:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 675CBC4CECC;
-	Thu, 21 Nov 2024 07:40:31 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id BFFF9A40A6B;
+	Thu, 21 Nov 2024 07:40:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C55FC4CECC;
+	Thu, 21 Nov 2024 07:41:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732174838;
-	bh=piHP2NesSEkc/KD2xC1WcuLZkBEuN7Qzn8qXkrknO4s=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=gHqY7qUibmEepixtENPDydu5WUuSKf4YjPvsAkTbepouywa2opdQxQxMtnzwOEZlm
-	 8OOeJwshnizsukiQmFoN6XWaZ1XfgQQ86o4wbDkf6wHbTOybIOJtVDqwBTlokO8QvW
-	 rYil275ljR27korW9tcTeTE2/l32lxfpDHTm55AeUCdFzAfj9YEDTM0Fyvdo3Nt4rq
-	 UqPThVJFFa+LwmP95Kb0IJ7zieb8B9iwlDhXGtIxoIA8+5pAQsdmkqLo9WWQmIqSqg
-	 92/ckbVs1Nrduuyk0InlQ24f9P88TS4NY+uTuYVuTgKS/80Hq5e2/YNG2lvyI3rA1x
-	 ZcO68aILWkZMA==
-Message-ID: <eae9d141-9c88-4856-9287-2ba6ea6f4a06@kernel.org>
-Date: Thu, 21 Nov 2024 08:40:29 +0100
+	s=k20201202; t=1732174922;
+	bh=GM6k3W0TB0s+geDrt+JmszN/+Ajtk5eChMYhgg6SVvU=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=J9xOyJeVnaN3rAekvvHnmXhQEMvqXHvaNwxaEP8hZobYWrHrvjcw2gXvlkkZqJIIy
+	 7F9+3H4HZSccdv/YAz02chUDHJ8dJljvvJMrHgn8UkUMPj2ObhSwvHHWJeC255dJyc
+	 Nbw+sWVrEXLPi51Z5ic8rrOse9UO+MSEChaF2loeyWorgbLJXJ21s3NNO+Hzd0hdah
+	 qB5UpZUU4gXOH7pAcyu+Q2sqZrN464iTHe0k2mmIZaINIoFvR2UqFtT/0b5yOTAMh3
+	 OIkQe8tKOnKZZrLEuaekgGC51W3BG/fKxG46DdDSuxV0Ekx1roasJyqwx3KYNwpAFF
+	 nYwI9iX1O1yKg==
+Message-ID: <f5b40d0c-defc-4b91-9313-9e454af22fb8@kernel.org>
+Date: Thu, 21 Nov 2024 08:41:53 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/3] dt-bindings: ufs: qcom: Add UFS Host Controller
- for QCS615
+Subject: Re: [PATCH v2 2/3] arm64: dts: qcom: qcs615: add UFS node
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Xin Liu <quic_liuxin@quicinc.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>,
@@ -61,12 +61,10 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
  quic_jiegan@quicinc.com, quic_aiquny@quicinc.com, quic_tingweiz@quicinc.com,
- quic_sayalil@quicinc.com,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+ quic_sayalil@quicinc.com
 References: <20241119022050.2995511-1-quic_liuxin@quicinc.com>
- <20241119022050.2995511-2-quic_liuxin@quicinc.com>
- <d9c3dc82-24e5-465d-bd1c-7a7c97e17136@kernel.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <20241119022050.2995511-3-quic_liuxin@quicinc.com>
+ <4bf9ea1f-4a45-4536-82c0-032f72b28807@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -111,10 +109,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <d9c3dc82-24e5-465d-bd1c-7a7c97e17136@kernel.org>
+In-Reply-To: <4bf9ea1f-4a45-4536-82c0-032f72b28807@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241120_234040_352331_01D5F4B5 
-X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-CacheID: sfid-20241120_234204_178757_3ECD3958 
+X-CRM114-Status: UNSURE (   6.39  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -132,25 +130,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/11/2024 17:57, Krzysztof Kozlowski wrote:
+On 20/11/2024 17:58, Krzysztof Kozlowski wrote:
 > On 19/11/2024 03:20, Xin Liu wrote:
 >> From: Sayali Lokhande <quic_sayalil@quicinc.com>
 >>
->> Document the Universal Flash Storage(UFS) Host Controller on the Qualcomm
->> QCS615 Platform.
+>> Add the UFS Host Controller node and its PHY for QCS615 SoC.
 >>
->> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
->> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 >> Signed-off-by: Sayali Lokhande <quic_sayalil@quicinc.com>
 >> Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
 >> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
-> That's a bit odd SoB chain. First, these are just one-liners. Second,
-> who authored the patches?
-To be clear: SoB regarding authorship is correct, but regarding Acks and
-Reviews is not. Savali did not receive these tags. If so, please point
-to lore discussion with it.
-
-All this needs fixing.
+> 
+> Confusing. Who is the FIRST author? Please carefully read submitting
+> patches.
+I retract my comment: It is actually correct here.
 
 Best regards,
 Krzysztof
