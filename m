@@ -4,119 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2142D75E3B
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 12:56:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3508FE69186
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 18:17:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GwjVtYE7m8HF9cv9da+t4OlyOf99SBHbdJxeShX0bXo=; b=xHG3B0ME18rIjJ
-	ShwL8zLBZUxA/jn3Z0JsPqTIzx6Kl85DLjZEoiVq4ibcif4I9HY0no+Xl74Z9RLsllHzSupWmP4XS
-	UnYQ7NDu2O0HdwSDCOGkMaX45xf9ANvjkNjuZjoKG6R92G13kWq7sAOeTnPZP4LPhrxKJsaF4FkT3
-	uCbKyeoXFTIvjxgt9qo9tnsPOxY7BVd+3p/Igdf+isE3WLwslfiWDCVi582F5YW+IKMhl4iBW95yN
-	G9uXovTlM6YR8xBEcTKHctzhJoAqvoHsGdiom76l77ZkxU2SjugqzHfzKkCuiqWa9hC6G6qvntG+B
-	IL3DTZTngpdXKJ9Rzq5w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=hYTql3n5igKwIiarSq7hOCb26PkDqEJdfYIhNWJ17jM=; b=gz+nNSBOw8f04RYEDeNyQn5RTj
+	R3wkcM4Mar71Q/jBo8Nta61U7Pay7v5nVVTiU/zMnp0akFX6h10aJg39htF4QAQ9SpadxUiB1OvyZ
+	nnBBozKoU56RBqn0gCkOHZYb12tk2eISZv56BD9z29zTErGpWd8Rvs9yinjlQ0aY4EuASaOB5UvIq
+	dzD5LAFbTBsExkCNuTf5vC+dl+M77l5LYkxt9/SlFVKYvg69emETwg0WC8EB9xSAlBjgg7/m+VZt/
+	FZlw4xCEAiE4huU9sXSuhmnx0DFIGyotJzWI1Eh6sWX5Cexcj7vPFdcGHROE4U8MP6418H28eqBCp
+	nHdZ8oiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tETD2-00000002UzM-0wEU;
-	Fri, 22 Nov 2024 12:56:28 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tEYDl-000000035pi-0cNk;
+	Fri, 22 Nov 2024 18:17:33 +0000
+Received: from sender4-op-o12.zoho.com ([136.143.188.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tETCz-00000002Ux3-11Mg
-	for linux-phy@lists.infradead.org;
-	Fri, 22 Nov 2024 12:56:26 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AM8wa3E003963
-	for <linux-phy@lists.infradead.org>; Fri, 22 Nov 2024 12:56:17 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tUW1JtHByRPvJW3av3yXvdSnDSeT0Wq/tBStqi3Mqhk=; b=BJr8FhGuZpvWhucl
-	5S4DJ53D8opMhrDATMHKsaoJlru1mf5X6WoHhqRyA8oj91xbWY560QD0RJLSdBLq
-	nGVvh/YTUdN5L8UdqrIzSBk9v25tLmIcqs7FaLp+Cmo6mcpO93XkYxx2QMwY+YnF
-	TTFBTuQnRTJPlrMnTfaJa3+yDbvJCTqnYsvc6x0pWLmGHCBXZVD1kb/DscD6YQ4A
-	Z1SR8nXTWDKQ1rxJxE4RQvqPdR/3cP41EVZRgNg3RGvebngcpfwzCBX0UKHbIPQD
-	d1k9/zvVoA68/VBfLdR9zeJkhR+5s6IZG+xfTVPfo+HNuxo9A4QRauR/YTTEbXSZ
-	ORQOmg==
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 431ce3fckc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 22 Nov 2024 12:56:16 +0000 (GMT)
-Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-460a7a53e1cso4336001cf.0
-        for <linux-phy@lists.infradead.org>; Fri, 22 Nov 2024 04:56:16 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732280174; x=1732884974;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=tUW1JtHByRPvJW3av3yXvdSnDSeT0Wq/tBStqi3Mqhk=;
-        b=AT/PG1tD53rNdMOdOF61R9tNbpPrFF1mRcpZj7Wnw7FhZqaQxBW/kWRxLZsRLOoswR
-         Ba+p4yAqeSMpnLlLmBZ6Wo0aj34f3YZdWJzODzxfnYj4SCuYB6Ewir74ZcI6QL/HWJ5a
-         +Ei58XPitAaW6vdhCjizMem2ibpDG1NMPUIIO9MT3iguxK/kyfO/wOKfuhPi/OVeMVty
-         lab+f4MNopIYZYyW4ecWqMaHSl/QdKOJ02GAXp9SMw67pJvdt0eyHsVG/rTI6+FZRLiN
-         sbTNRjuwN+oCVP7npGd3XFXsKEUbNZ66HC/+1pkWdqY2s/CH4575SmrjZ42bK8p28eNL
-         fScw==
-X-Forwarded-Encrypted: i=1; AJvYcCUZiSfkRq9xfumpexDJWUNaPXakgAFo0wKr5fMHTu4kMYRF2NpCXfMnBTaXAaN4yQf+UfnSfCjwuRg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx/hA3S8wPPBag1slLkTq+9JZCNXTAQZsfbDg0rf6ymwJ9DX6l8
-	aPvG4zy185Dst/Q0XTJtPHNyhVX2uEL+RmyMXXL8BGlar7FgEbDPytSxt+IXa4rIx0x/K/DKBEe
-	EzbNiA1a44dc64c0qbul+8zVpxqgC2Qq5j9aVnoB1oG2qUJyDfKP1uAuTmmIjgJjv
-X-Gm-Gg: ASbGncsUr+6FcixOmMWYgiJjBPujIEMNdknuqIfkJtjA92tX4t+nOQpJx5neELyjenr
-	PX1kfazGFtSmDcYG5yMTgPKygA99TLbbaEvObm8wL1ddKko42tCbHJNdna+Ssa9j/hJV77+02NA
-	ZChJvb43yGYCTmvCJBNc9ej/AEokjeyjoJuV3MJp5n+wwBIEM0Ga9R9a9CHRSNBYIxjRY6jF1Zh
-	sgZvSN4YZUs60FtruHqMtSuU8JBLq/ZgAeG9rrGzboav/9/lyqnbHHBJYpMknwjTNtqs9NW0lKg
-	20cgrVl7ggCwo26H/+bu431TpOQ0Xko=
-X-Received: by 2002:ac8:7d49:0:b0:461:3cd2:390 with SMTP id d75a77b69052e-4653d6207ebmr18354561cf.12.1732280173690;
-        Fri, 22 Nov 2024 04:56:13 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHXp5AlSiVdDRiJeviQopjOcYQO2cIs6n/WiIeQPHdV9fV3//vnc5hbPIVnUu+s0vmPw9sPYg==
-X-Received: by 2002:ac8:7d49:0:b0:461:3cd2:390 with SMTP id d75a77b69052e-4653d6207ebmr18354171cf.12.1732280173259;
-        Fri, 22 Nov 2024 04:56:13 -0800 (PST)
-Received: from [192.168.212.120] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5d01d3a3bfdsm897816a12.5.2024.11.22.04.56.11
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 22 Nov 2024 04:56:12 -0800 (PST)
-Message-ID: <e107da7e-cc12-405d-b5d8-589959df072c@oss.qualcomm.com>
-Date: Fri, 22 Nov 2024 13:56:10 +0100
+	id 1tEYCo-000000035ds-1LrQ;
+	Fri, 22 Nov 2024 18:16:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1732299385; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=mWrR/MIIKZNZpZ/6AdRpQLm0JkRVejo7tOKMih3WC6BlYMNy8dZHjhYTz5das4bdLRGL78LyIgDOWIt9flw9jLDXYvEFDmR55jm+fOnh7jNWYjmLPVlVxgTbiAxZJh9KEWusQ6kKxRVe/c8AwIggDicXX88i83sQrtV0CnYyhlk=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1732299385; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=t9pP/PHvr2gDzzkISxCFjGDZOpY33IndDzzlRxuzxkQ=; 
+	b=oCp3eeZD4WUeQ879DZYzGLtozGj360keC4hRwBG35JYsFrUE8QxyaxKuhs4Wa2md4ACMRPOsOTAEPv8jyygw4tJmE/jmRbma/WKpS1uy15PsV3FICLsqaDXSpr2JMddrz+xdzr8JCnyHPe/dWwyGEenHLnHoWsTQ5li6WH6LpjM=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1732299385;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=t9pP/PHvr2gDzzkISxCFjGDZOpY33IndDzzlRxuzxkQ=;
+	b=XfoqYq5M7uwqyIpsohWgrhRdlWGFrMP+UuAr0PvWE1OTZZM7TtKZrEfQeAoezQjN
+	BRu9QY+lNYf7mo5pysaAv67aEt8oxi3JCecT3UaqpRG8Sfqesv57edcyls6laO8dM8u
+	0TZmV33+/Agq1Yu+pvlRgu5QuUpLqahmD0ZKJl/w=
+Received: by mx.zohomail.com with SMTPS id 1732299383586840.2282759601966;
+	Fri, 22 Nov 2024 10:16:23 -0800 (PST)
+Received: by mercury (Postfix, from userid 1000)
+	id 26BDC10604B0; Fri, 22 Nov 2024 19:16:19 +0100 (CET)
+Date: Fri, 22 Nov 2024 19:16:19 +0100
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, quentin.schulz@cherry.de, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 0/2] MIPI DSI phy for rk3588
+Message-ID: <iwmyaf3ygr6kpjfrspox52yt32xbw4vjuwg2ggqi7knr75b542@yldac2lh6dhy>
+References: <20241113221018.62150-1-heiko@sntech.de>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/5] dt-bindings: PCI: qcom: Document the QCS615 PCIe
- Controller
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>,
-        "Rob Herring (Arm)" <robh@kernel.org>
-Cc: robh+dt@kernel.org, devicetree@vger.kernel.org, quic_shashim@quicinc.com,
-        kernel@quicinc.com, quic_tdas@quicinc.com, quic_aiquny@quicinc.com,
-        quic_qianyu@quicinc.com, quic_tingweiz@quicinc.com,
-        neil.armstrong@linaro.org, andersson@kernel.org,
-        linux-kernel@vger.kernel.org, kishon@kernel.org,
-        manivannan.sadhasivam@linaro.org, kw@linux.com, lpieralisi@kernel.org,
-        bhelgaas@google.com, linux-phy@lists.infradead.org,
-        conor+dt@kernel.org, konradybcio@kernel.org,
-        Krishna chaitanya chundru
- <quic_krichai@quicinc.com>,
-        vkoul@kernel.org, linux-arm-msm@vger.kernel.org,
-        quic_kaushalk@quicinc.com
-References: <20241118082619.177201-1-quic_ziyuzhan@quicinc.com>
- <20241118082619.177201-4-quic_ziyuzhan@quicinc.com>
- <173192264707.1449621.6365585789543415603.robh@kernel.org>
- <4226d136-034f-4b7f-a82b-e370ef265958@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <4226d136-034f-4b7f-a82b-e370ef265958@quicinc.com>
-X-Proofpoint-GUID: I2KQ1iybEFRf16pBOC9D1Ap-7Bm4hCQ-
-X-Proofpoint-ORIG-GUID: I2KQ1iybEFRf16pBOC9D1Ap-7Bm4hCQ-
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- malwarescore=0 clxscore=1015 priorityscore=1501 impostorscore=0
- bulkscore=0 mlxscore=0 adultscore=0 spamscore=0 mlxlogscore=744
- suspectscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2409260000 definitions=main-2411220110
+In-Reply-To: <20241113221018.62150-1-heiko@sntech.de>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-1.3.1/232.230.92
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241122_045625_289137_C820FE4B 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241122_101634_432056_5E4DFBD0 
+X-CRM114-Status: GOOD (  22.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,25 +77,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============3599241595801127966=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21.11.2024 8:22 AM, Ziyue Zhang wrote:
-> The dependency is missing, I will update in coverletter
-> 
-> On 11/18/2024 5:37 PM, Rob Herring (Arm) wrote:
->> My bot found errors running 'make dt_binding_check' on your patch:
+
+--===============3599241595801127966==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="uvan6vjaye2so442"
+Content-Disposition: inline
 
 
-Please don't top-post
+--uvan6vjaye2so442
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v3 0/2] MIPI DSI phy for rk3588
+MIME-Version: 1.0
 
-https://lore.kernel.org/lkml/YH%2FfM%2FTsbmcZzwnX@kroah.com/
+Hi,
 
-Konrad
+On Wed, Nov 13, 2024 at 11:10:16PM +0100, Heiko Stuebner wrote:
+> This adds the phy driver need for DSI output on rk3588.
+>=20
+> The phy itself is used for both DSI output and CSI input, though the
+> CSI part for the whole chain needs a lot more work, so is left out for
+> now and only the DSI part implemented.
+>=20
+> This allows the rk3588 with its current VOP support to drive a DSI display
+> using the DSI2 controller driver I'll submit in a next step.
+>=20
+> Only generic phy interfaces are used, so the DSI part is pretty straight
+> forward.
+>=20
+> changes in v3:
+> - add Krzysztof review tag to the binding
+> - address Sebastian's review comments
+>   - better error handling
+>   - dropping empty function
+>   - headers
+>   - not using of_match_ptr - this should also make the
+>     test-robot happier
+>=20
+> changes in v2:
+> - fix error in dt-binding example
+> - drop unused frequency table
+> - pull in some more recent improvements from the vendor-kernel
+>   which includes a lot less magic values
+> - already include the support for rk3576
+> - use dev_err_probe
+>=20
+> Heiko Stuebner (2):
+>   dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY schema
+>   phy: rockchip: Add Samsung CSI/DSI Combo DCPHY driver
+>=20
+>  .../phy/rockchip,rk3588-mipi-dcphy.yaml       |   82 +
+>  drivers/phy/rockchip/Kconfig                  |   12 +
+>  drivers/phy/rockchip/Makefile                 |    1 +
+>  .../phy/rockchip/phy-rockchip-samsung-dcphy.c | 1647 +++++++++++++++++
+>  4 files changed, 1742 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588=
+-mipi-dcphy.yaml
+>  create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+
+The series works for me on the RK3588 EVB1:
+
+Tested-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+Greetings,
+
+-- Sebastian
+
+--uvan6vjaye2so442
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmdAym8ACgkQ2O7X88g7
++poztw//Q8nMPJS+hjF2Kk1qa3Q6fvMbFbG6oEuQmaFHMvJRRXZ0bS2H8DXEi75o
+D6XHgJTAsk05z6NXwMa8kGwVhL5YYzUHvBlVbDuRmFfVBsCvl+ETVKGnpebcXxkS
+jzn9UcyE+Qt1yrhJ/Q8oAWOHRgbkR+2PvVPsj/mwLNOFejFD1JSil9O+GOjUbFBH
+LETPO0PDdVjRUJUcWF3T31mWOfgFW3njT5tzFx56EX3Nsvrz1aIx9RsD/c1GWN35
+919EZBuXoT7E7nxFAlNEQ/VUtwPbuexd7ejtdoezJaoCHgK8vn3sZckHUjQgMllk
+m9s/V8ILJv/wyDoTkk3Ywn9DgIeWAgFNInCw0fi8/kGlF6Ju9AfIanGD7BHa0WxK
+3JfARYErXMllyv3V/zWjBkKPOrHSg/npZ6bnzC44VVHthoHvkJUez1Vifeh3Nmmr
+k/1VmCmIeBATIK92K8gcsj0tsiIBITDNyrbZsX1jZ+DAI/4jHz1NbOSw0gzezy7e
+WiyqB857c2S3caWftU8nfuFSGk5aKnhB9FZG7SGlQ/ln2jKmmTxmggVu/rBJZwh1
+KzONElwB2FyODDKuxnnQR0sBS30V/nhyovM45tMa5/5nfisut8b1i56lWx1KwmWg
+ey1nGl0SAkZLX4SdWDZd6shlm4+WWrBVfgwBzy2Pp+74P9qvi2U=
+=LZU3
+-----END PGP SIGNATURE-----
+
+--uvan6vjaye2so442--
+
+
+--===============3599241595801127966==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============3599241595801127966==--
+
