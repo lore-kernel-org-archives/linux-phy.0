@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 011F6E65D2C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 011C3E65D0C
 	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 06:45:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5GclHSy9Z/xvIfNvWOhbKPYc3cPhTsABByDBDYzm5Yg=; b=2JWJ8kl4OUJ4Up
-	57gC9kXCkLXRLByD1FC/xa9Ktzt0j+xbi18Z2fyQq6SLMUr/0Ed9XZy8oOVfV48voXHcapA437QyZ
-	IYemiKrDZrH/AlKe4xwiosrmr+pW72i2yjfollg9lGDEVj82M734VcDmKL+dbRcUemFSplGcxTww+
-	iFkn23w/itUge+9xRykGdkcK0AnK0mqpbGdlnvKjrjTRG+cOvwCqShzrmyolQb2A2Rc/IXQnZvJHJ
-	bYyL7LkY/ZBBxCQavyO77a6gHD6fl1G0UU5rYycY0vOGJgLkX+Og1jKWgM4u4+VVltpULdwkHQ/dc
-	n84Nt+DX1DwnJDSlcgDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z3Z4IE71qSJbWUq/BqiNHfTeDnCzEyJk+D2e/O+b3g8=; b=UBrxwfRFoZXJTa
+	ENCRnOgjDw1bbghjlqg5ErjmTT+Wn5QLTcbDHwDGZj4YcmLyNw9k8KQeKJ9mLZsmPVCb3ntaVnqTD
+	hDttqG6J99XtS6I5Es8PfsjmTveFTElf7xZJ+8PoA1UwkngfswW9Injrohg+RffoyXKdi13Z/xTHb
+	OcrliCUQSkWizUKLIYlfUeeF+diy8w+jrDU2i8tpDLsrXHV4gaPwQEZ6F/5DitvBJchfAyWigdgRP
+	70JCWQCwcF0+z+UgJQz+zDL0Q3Cc0ucQ9dp6HeL/vyP8gOZRWvrZIdxj01hDs9nA+1a5CFo59e2PF
+	Ae4pzZFIoVhSXTxmXueQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tENQN-00000001ky1-2FlC;
+	id 1tENQN-00000001kxv-19iX;
 	Fri, 22 Nov 2024 06:45:51 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tENQL-00000001kxF-0KnJ
+	id 1tENQL-00000001kxG-0Kec
 	for linux-phy@lists.infradead.org;
 	Fri, 22 Nov 2024 06:45:50 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ALLq70U025794;
-	Fri, 22 Nov 2024 06:45:26 GMT
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ALI3dic003948;
+	Fri, 22 Nov 2024 06:45:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=tbKLAjjCAf8TU9t077o0XL
-	3kurqhHGsoTh1gttK03u4=; b=P2YjtVahfk5OAjxm2Nf20bPqNAGz9nE0W/Q0F7
-	dS8Bb5VRQv6pik46RenAiScj/DmG8MhH0TOaTAwCSTJ0BTuuTE1jK1u+Rt7JxbHK
-	ctshmnJEv/AcOPQv4hIP9m0cz7Po/O2jQN53LxHisQsrh2c2wdBG5k5k2YBDs6QG
-	YjSoMUMddzIjmRYYdrGFJ6oaO+Ene1pRWc3s45mg/C8tfAjykXfJWWLQ/6bAxqTa
-	N27EDhSh3xusX/letnrRc2WOoAHLq/zXI/GYBteZhjzY6EOQSMJpIiVxzhSLETo7
-	4Bk7h9OxjeejN/qBkof3v+85cyGQuI+F9PvmlGymvIGnfTCg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 432d5b11tb-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	uUE3tRB9XophDfLLN1/bhuNeRGbIsPz+qQHLVwmY5oU=; b=h1Vb/TA8UiCBWBBl
+	EU/HpAtnbqCINQRlWld3JxqfuGM0Mxa9bGoSmXizcA4eyrECKHPgaG/gha8JwVQi
+	R2JLTDUBegV/Bzb8XtZqTZ05NYke+hBLTOsYF02VbKbZyKsyLpFWO4tab8hPqsOI
+	OFmFmnqqwww3s1S7169HPcgUyrA8/3u+o+5gHTB4mfF8FKR8855/ptvTeFIPF2/M
+	h5jR+snZfvBJbh7zO4yVW7c33CIi0pXjkcwCMqrcaL/JFUi1sRg3Cg2Ru79mn8HK
+	2YYnpKOSJkFmFYe4GKi6SghXb6+PkYgcByWNXlxyJzfV0Wi71uEaVb7Fsuj3pGNi
+	frMNCA==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 431ce3eee0-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 22 Nov 2024 06:45:26 +0000 (GMT)
+	Fri, 22 Nov 2024 06:45:32 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AM6jPBY019640
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AM6jWmj011361
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 22 Nov 2024 06:45:25 GMT
+	Fri, 22 Nov 2024 06:45:32 GMT
 Received: from liuxin-gv.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 21 Nov 2024 22:45:19 -0800
+ 15.2.1544.9; Thu, 21 Nov 2024 22:45:25 -0800
 From: Xin Liu <quic_liuxin@quicinc.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
@@ -66,30 +67,34 @@ CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-scsi@vger.kernel.org>, <quic_jiegan@quicinc.com>,
         <quic_aiquny@quicinc.com>, <quic_tingweiz@quicinc.com>,
-        <quic_sayalil@quicinc.com>
-Subject: [PATCH v3 0/3] Enable UFS on QCS615
-Date: Fri, 22 Nov 2024 14:44:25 +0800
-Message-ID: <20241122064428.278752-1-quic_liuxin@quicinc.com>
+        <quic_sayalil@quicinc.com>,
+        Krzysztof Kozlowski
+	<krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v3 1/3] dt-bindings: ufs: qcom: Add UFS Host Controller for QCS615
+Date: Fri, 22 Nov 2024 14:44:26 +0800
+Message-ID: <20241122064428.278752-2-quic_liuxin@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241122064428.278752-1-quic_liuxin@quicinc.com>
+References: <20241122064428.278752-1-quic_liuxin@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Tfkh1FnCMxjpK9blMGMDSbu6vnxeG_Sr
-X-Proofpoint-ORIG-GUID: Tfkh1FnCMxjpK9blMGMDSbu6vnxeG_Sr
+X-Proofpoint-GUID: x3D2UQ-_F_s4Tcz9ccJrvpo3kpedY2yf
+X-Proofpoint-ORIG-GUID: x3D2UQ-_F_s4Tcz9ccJrvpo3kpedY2yf
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- phishscore=0 adultscore=0 clxscore=1015 impostorscore=0 suspectscore=0
- spamscore=0 bulkscore=0 lowpriorityscore=0 mlxlogscore=999 mlxscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411220054
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ malwarescore=0 clxscore=1015 priorityscore=1501 impostorscore=0
+ bulkscore=0 mlxscore=0 adultscore=0 spamscore=0 mlxlogscore=950
+ suspectscore=0 phishscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2409260000 definitions=main-2411220054
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241121_224549_124535_ADD728FB 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20241121_224549_134466_056206AD 
+X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,41 +106,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RnJvbTogU2F5YWxpIExva2hhbmRlIDxxdWljX3NheWFsaWxAcXVpY2luYy5jb20+CgpBZGQgVUZT
-IHN1cHBvcnQgdG8gdGhlIFFDUzYxNSBSaWRlIHBsYXRmb3JtLiBUaGUgVUZTIGhvc3QgY29udHJv
-bGxlciBhbmQKUU1QIFVGUyBQSFkgaGFyZHdhcmUgb2YgUUNTNjE1IGFyZSBkZXJpdmVkIGZyb20g
-U002MTE1LiBJbmNsdWRlIHRoZQpyZWxldmFudCBiaW5kaW5nIGRvY3VtZW50cyBhY2NvcmRpbmds
-eS4gQWRkaXRpb25hbGx5LCBjb25maWd1cmUgVUZTLXJlbGF0ZWQKY2xvY2ssIHBvd2VyLCBhbmQg
-aW50ZXJjb25uZWN0IHNldHRpbmdzIGluIHRoZSBkZXZpY2UgdHJlZS4KClRoaXMgcGF0Y2ggc2Vy
-aWVzIGRlcGVuZHMgb24gYmVsb3cgcGF0Y2ggc2VyaWVzOgpodHRwczovL2xvcmUua2VybmVsLm9y
-Zy9hbGwvMjAyNDA5MjYtYWRkX2luaXRpYWxfc3VwcG9ydF9mb3JfcWNzNjE1LXYzLTAtZTM3NjE3
-ZTkxYzYyQHF1aWNpbmMuY29tLwpodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNDEwMTEw
-NjMxMTIuMTkwODctMS1xdWljX3FxemhvdUBxdWljaW5jLmNvbS8KClNpZ25lZC1vZmYtYnk6IFhp
-biBMaXUgPHF1aWNfbGl1eGluQHF1aWNpbmMuY29tPgotLS0KQ2hhbmdlcyBpbiB2MzoKLSBQQVRD
-SCAxLzM6IEFkanVzdCB0aGUgb3JkZXIgb2YgU09CLgotIFBBVENIIDIvM++8mk1vZGlmeSBzb21l
-IGZvcm1hdHRpbmcgaXNzdWVzOiBXcm9uZyBpbmRlbnRhdGlvbiwgCiAgc3BsaXQgaW50byBvbmUg
-ZW50cnkgcGVyIGxpbmUuCi0gTGluayB0byB2MjogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxs
-LzIwMjQxMTE5MDIyMDUwLjI5OTU1MTEtMS1xdWljX2xpdXhpbkBxdWljaW5jLmNvbS8KQ2hhbmdl
-cyBpbiB2MjoKLSBQQVRDSCAxLzM6IFJldmlld2VkLWJ5OiBLcnp5c3p0b2YgS296bG93c2tpIDxr
-cnp5c3p0b2Yua296bG93c2tpQGxpbmFyby5vcmc+CiAgQWNrZWQtYnk6IE1hbml2YW5uYW4gU2Fk
-aGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQGxpbmFyby5vcmc+Ci0gUEFUQ0ggMi8z77ya
-VXNlIGFuIE9QUCB0YWJsZSBpbnN0ZWFkIG9mIGZyZXEtdGFibGUtaHouQW5kIG1vZGlmeQogIHNv
-bWUgZm9ybWF0dGluZyBpc3N1ZXMuCi0gUEFUQ0ggMy8z77yaUmV2aWV3ZWQtYnk6IEtvbnJhZCBE
-eWJjaW8gPGtvbnJhZC5keWJjaW9Ab3NzLnF1YWxjb21tLmNvbT4KLSBMaW5rIHRvIHYxOiBodHRw
-czovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNDEwMTcwNDIzMDAuODcyOTYzLTEtcXVpY19saXV4
-aW5AcXVpY2luYy5jb20vCgotLS0gCgpYaW4gTGl1ICgzKToKICBkdC1iaW5kaW5nczogdWZzOiBx
-Y29tOiBBZGQgVUZTIEhvc3QgQ29udHJvbGxlciBmb3IgUUNTNjE1CiAgYXJtNjQ6IGR0czogcWNv
-bTogcWNzNjE1OiBhZGQgVUZTIG5vZGUKICBhcm02NDogZHRzOiBxY29tOiBxY3M2MTUtcmlkZTog
-RW5hYmxlIFVGUyBub2RlCgogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvdWZzL3Fjb20sdWZzLnlh
-bWwgICAgIHwgICAyICsKIGFyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9xY3M2MTUtcmlkZS5kdHMg
-ICAgICB8ICAxNiArKysKIGFyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9xY3M2MTUuZHRzaSAgICAg
-ICAgICB8IDExNCArKysrKysrKysrKysrKysrKysKIDMgZmlsZXMgY2hhbmdlZCwgMTMyIGluc2Vy
-dGlvbnMoKykKLS0tCmJhc2UtY29tbWl0OiBjODNmMGI4MjU3NDFiY2I5ZDhhN2JlNjdjNjNmNmI5
-MDQ1ZDMwZjVhCgotLSAKMi4zNC4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+From: Sayali Lokhande <quic_sayalil@quicinc.com>
+
+Document the Universal Flash Storage(UFS) Host Controller on the Qualcomm
+QCS615 Platform.
+
+Signed-off-by: Sayali Lokhande <quic_sayalil@quicinc.com>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
+Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
+---
+ Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+index cde334e3206b..a03fff5df5ef 100644
+--- a/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
++++ b/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+@@ -26,6 +26,7 @@ properties:
+           - qcom,msm8994-ufshc
+           - qcom,msm8996-ufshc
+           - qcom,msm8998-ufshc
++          - qcom,qcs615-ufshc
+           - qcom,qcs8300-ufshc
+           - qcom,sa8775p-ufshc
+           - qcom,sc7180-ufshc
+@@ -243,6 +244,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,qcs615-ufshc
+               - qcom,sm6115-ufshc
+               - qcom,sm6125-ufshc
+     then:
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
