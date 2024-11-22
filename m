@@ -4,86 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 934F8E64025
-	for <linux-phy@archiver.kernel.org>; Thu, 21 Nov 2024 22:24:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC0CEE65D14
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 02:08:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=03hEt5IxIbcRTDK6I2L1HZznuHB7sa58e0ZbPG3wp8w=; b=qmd4NVLU6qj3gZ
-	KJxR03KOWARsK+3buThlUOt69JeDLwkwKCEgYDs5rRzUJt+xaVcyaK9YzneW2abAqnyH9JEIgoVUs
-	WBYSBd6Gb8E1Tiis5JOOthTWD+urfXaehYXf2bi4A+if+tCHpY767xBlf77GcXjEDfFwOobve74V2
-	d4AbmyzN5xG2HPIth4BHo/2esCJGyxF0x0W39wE/OmkHStyaKUz+ov7OoisNtFjERGLVitJswjH21
-	8QAL7dtXV5PiF97fSf7i7I+KVToxXGeXg/uSpGA+jB5S+Kj8+C3kVyFIVnhWo8yvajC8Rs8hxEKXk
-	0R6GnKxwpncx2XrVph+A==;
+	List-Owner; bh=UMfYD9dTSf8dRTiZobyJnuoa47qjTQTury5E6CUXiP4=; b=Jr2yuPYdymnU7l
+	m5YC6nyf/3pL223uwANYKnbcEc40ju0X6gM53hEn7GBiND4iC+EJ8ea2iy6CR1/005lfrd7bks2oI
+	9UvEGWZoaXRA0bGjWeo85mkPLtYyRPNZNIL4ykwmubbyrx729hHlbwEkGpwBKVk9wwqfw/w/jjdnQ
+	3RR3+az8H83z0ufSMRlCQECXni3souM2DWz7mijXx6lU2ZFQhXLfZ8tbj4f8xwCR2a9mjfoRQWwOY
+	FUBrxP9Uoajqn2XyYTWMKoxL7ScSfi/TLl/VgwvrGSqF/WojSQxnFepunAzd0QHYnj7a1hUUD+sSU
+	Iak6xWXBUuBpe0PtctGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEFbX-000000013xS-3xVL;
-	Thu, 21 Nov 2024 22:24:51 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1tEJ5X-00000001QyH-17UY;
+	Fri, 22 Nov 2024 02:08:03 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEFbW-000000013x3-03Xw
+	id 1tEJ0x-00000001Q31-3tk2
 	for linux-phy@lists.infradead.org;
-	Thu, 21 Nov 2024 22:24:51 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-53da07b78dfso1637812e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 21 Nov 2024 14:24:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1732227888; x=1732832688; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=h9qF8j45CSfYdsmm+Dydm51y3aJn8tF9GxFB43niHJc=;
-        b=uoq4uKDpIHwz4LyJq8qxM2FETvNvta/D6q9QiZ8QpakzVc6UOnlImnUWRjajeoSzie
-         YEpmFnsgmKduotjpaiyq65eojKqvHs/xS0zOSskfoSrtYsZBIvIr0Cdpmh+Mrdi9fYNX
-         1B7UTlRN2g7DOZOOjPGQXh9fQ0Pkj6mUKNVbA59zn9lFWwD9mCL8OWJG3ulo3kHWaSsR
-         peOngkKT0jr7sAVmafjQaATW4Y2P3csTc0gkOsRUY5rpU5HPkI0sIbTglTzsU5086w84
-         i9Sm6/MUgLZBoIhcKuQZIP0xD5NyUhomTClAHmrrZELn8xMqTyn0BX3HEqUOTVS3qEaP
-         TggA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732227888; x=1732832688;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=h9qF8j45CSfYdsmm+Dydm51y3aJn8tF9GxFB43niHJc=;
-        b=tLYBObqMcyvijgZXU8XziHizv/9Zs5Afv+jVB2FOt+LY8VSEe674ik4ApgkuhHQLZ4
-         xlBXtz8I0oSezSEh9UuYHgNpmsEAbRENUSz+5rUp9CpfNe2l/xjN59gXhZguNSiapAVm
-         0/NpaEYbMvnbyaESCYGmyAGvZAbunK0nHOCI/epuLQ7NV9rm9jvlBw+GFcN3Skj77EvN
-         RmYFCj1VRdoPjoBB5M7YFVRLiaXg5GWUo6ofseNKjHF0ecIqiUvH0ioAKbW+ioid1H50
-         UyvqVmrXaGSBv8QGvkchLdfQMp5LscKH0haPaDxrq7jIx08TtTTXEi0BYU4vZPs4Tlra
-         +Rsw==
-X-Forwarded-Encrypted: i=1; AJvYcCW010Z3a+nO0/8Qa027KEhMG9MfHT+AchtOFP0H5en+TWJ+mEopCPMr3a6Vob+fh2OxZabI363H4Ss=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyXDiBvlHC5zLO0Rue2eGmN7B/FspY6scm5poa6RidnYS6GjHip
-	xZkEKtFPRQ9J46deVKOa2v6FT6huOMSF0zFKtokB6cti5hgJh11q1aoi/K31IlM=
-X-Gm-Gg: ASbGncvB0MmK8KNrf0qHpSfdX/7Ao4aw/8GHRFtahwSTEL/e0TnCxs+4SPVWM0izPzW
-	nSB39L80ZANZDUJmgO3sM2TJ/bqPTSLth5auAWG/n2dJvgzKEPFUUNQLxWnNWD03RL/n9dT7W7P
-	/PonHyt5jHEqe09wkp+YR/BAd6jgnrNsMuIxcO++CiOwnzhNpf8CbnOWyUQKug42Z7GyT5lIu59
-	ElIXUmqcsVIpx0zOOexy4br/SZhlOBdRxcMqpvV1LrYgfFHuTF9107XZRhIKAzRsqepZ9fEjShF
-	XNvPo5NUhjNB1Edx+TuzuTPLY6R/MA==
-X-Google-Smtp-Source: AGHT+IE2T2Pj6r6Y1ycGgpu7KwhyGxrz0hWNZVwX6ZaXIy5LqSV1VBAcT58vN5h6glzEjVd3g7gW/w==
-X-Received: by 2002:ac2:410d:0:b0:53d:d3f1:2f4b with SMTP id 2adb3069b0e04-53dd3f12f92mr106226e87.30.1732227887928;
-        Thu, 21 Nov 2024 14:24:47 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53dd24519b6sm99737e87.106.2024.11.21.14.24.45
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 21 Nov 2024 14:24:46 -0800 (PST)
-Date: Fri, 22 Nov 2024 00:24:44 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Song Xue <quic_songxue@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Manu Gautam <mgautam@codeaurora.org>, 
-	Vivek Gautam <vivek.gautam@codeaurora.org>, kernel@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
- usb phy
-Message-ID: <7qj4szkw365ve45hm5w475xs2vlfsfg5pcpc44bo3s5vhrcmuu@bh5swbug4ywi>
-References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
+	Fri, 22 Nov 2024 02:03:21 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ALE5VDG019747;
+	Fri, 22 Nov 2024 02:03:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=zTPLR5hLIF5
+	LQT9T1Uh5rIfJS+MF/e8sT7lrFs1bcnI=; b=d+Rv8assc1vxYZDz8f5LxfuKGcj
+	jbmmqg1MaUIw7pGEU2lcMOBbaZRKc0slRaQ8I98/KRnv4A5k/ssNXgLh7XyNJGqB
+	Ng0cR9OX3bC8ZWKnjr6g0q9dzkjHLkUboSens9wvxkReUZvPpVfvIvhs+n59hgYv
+	yErCks/NemyivBhZ3fkUC8jDEQ0G/430MHsfT7ibpSXqXDIh7tVb49ta2N4Kwbqd
+	p1E0S8oH0sf/jvnk/TzM8g4MQ0weeXismtZHEiD39HygU5CpM/+1mJDw5tQq9WsT
+	64aRbYMDmXN/MJDnWZ27nkqFVf1PxElld0eqIvWMpgtUHuNMXyaJoGWO1lA==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4326at9kaa-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 22 Nov 2024 02:03:12 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4AM239ck017837;
+	Fri, 22 Nov 2024 02:03:10 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 42xmfkueus-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 22 Nov 2024 02:03:10 +0000
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4AM239RA017908;
+	Fri, 22 Nov 2024 02:03:09 GMT
+Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4AM239t3017823
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 22 Nov 2024 02:03:09 +0000
+Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
+	id 62B4217FB; Fri, 22 Nov 2024 10:03:08 +0800 (CST)
+From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+To: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+        manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com,
+        lpieralisi@kernel.org, quic_qianyu@quicinc.com, conor+dt@kernel.org,
+        neil.armstrong@linaro.org, andersson@kernel.org,
+        konradybcio@kernel.org
+Cc: quic_tsoni@quicinc.com, quic_shashim@quicinc.com,
+        quic_kaushalk@quicinc.com, quic_tdas@quicinc.com,
+        quic_tingweiz@quicinc.com, quic_aiquny@quicinc.com, kernel@quicinc.com,
+        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        Krishna chaitanya chundru <quic_krichai@quicinc.com>,
+        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Subject: [PATCH v2 4/6] PCI: qcom: Add QCS615 PCIe support
+Date: Fri, 22 Nov 2024 10:03:03 +0800
+Message-Id: <20241122020305.1584577-5-quic_ziyuzhan@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241122020305.1584577-1-quic_ziyuzhan@quicinc.com>
+References: <20241122020305.1584577-1-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: nYQGrdcJrn3G2e12v5BpeanwlCUYR2wx
+X-Proofpoint-GUID: nYQGrdcJrn3G2e12v5BpeanwlCUYR2wx
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
+ malwarescore=0 clxscore=1015 mlxlogscore=999 lowpriorityscore=0
+ phishscore=0 adultscore=0 priorityscore=1501 bulkscore=0 spamscore=0
+ mlxscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411220015
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241121_142450_083672_077F7B33 
-X-CRM114-Status: GOOD (  27.24  )
+X-CRM114-CacheID: sfid-20241121_180319_970752_41F40195 
+X-CRM114-Status: GOOD (  11.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,81 +112,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
-> Set the current load before enable regulator supplies at QUSB phy.
-> 
-> Encountered one issue where the board powered down instantly once the UVC
-> camera was attached to USB port while adding host mode on usb port and
-> testing a UVC camera with the driver on QCS615 platform. The extensible
-> boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
-> from regulators-0 upon powered on board again. That indicates that the
-> current load set for QUSB phy, which use the regulator supply, is lower
-> than expected.
-> 
-> As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
-> load when attach a device to the USB port.
-> 
-> Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
-> Signed-off-by: Song Xue <quic_songxue@quicinc.com>
-> ---
-> Changes in v2:
-> - Removed "---" above the Fixes. 
-> - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
-> ---
->  drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
->  1 file changed, 12 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
->  	return ret;
->  }
->  
-> +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
-> +
->  static int qusb2_phy_init(struct phy *phy)
->  {
->  	struct qusb2_phy *qphy = phy_get_drvdata(phy);
->  	const struct qusb2_phy_cfg *cfg = qphy->cfg;
->  	unsigned int val = 0;
->  	unsigned int clk_scheme;
-> -	int ret;
-> +	int ret, i;
->  
->  	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
->  
-> +	/* set the current load */
-> +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
-> +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
+From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
 
-Please use regulator_set_mode() instead. Or just fix the mode in the
-device tree, if the device can not operate if the regulator is in
-non-HPM mode.
+Add the compatible and the driver data for QCS615 PCIe controller.
 
-> +		if (ret) {
-> +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
-> +			return ret;
-> +		}
-> +	}
-> +
->  	/* turn on regulator supplies */
->  	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
->  	if (ret)
-> 
-> ---
-> base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
-> change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
-> 
-> Best regards,
-> -- 
-> Song Xue <quic_songxue@quicinc.com>
-> 
+There is only one controller instance found on this platform, out of which
+is Gen3 with speeds of up to 8.0GT/s.
 
+The version of the controller is 1.38.0 for all instances, but they are
+compatible with 1.9.0 config.
+
+Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+---
+ drivers/pci/controller/dwc/pcie-qcom.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+index ef44a82be058..da7200b56b1e 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom.c
++++ b/drivers/pci/controller/dwc/pcie-qcom.c
+@@ -1830,6 +1830,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+ 	{ .compatible = "qcom,pcie-ipq8074-gen3", .data = &cfg_2_9_0 },
+ 	{ .compatible = "qcom,pcie-msm8996", .data = &cfg_2_3_2 },
+ 	{ .compatible = "qcom,pcie-qcs404", .data = &cfg_2_4_0 },
++	{ .compatible = "qcom,pcie-qcs615", .data = &cfg_1_9_0 },
+ 	{ .compatible = "qcom,pcie-sa8540p", .data = &cfg_sc8280xp },
+ 	{ .compatible = "qcom,pcie-sa8775p", .data = &cfg_1_34_0},
+ 	{ .compatible = "qcom,pcie-sc7280", .data = &cfg_1_9_0 },
 -- 
-With best wishes
-Dmitry
+2.34.1
+
 
 -- 
 linux-phy mailing list
