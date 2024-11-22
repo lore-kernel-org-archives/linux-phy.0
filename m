@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98385E65D2C
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 07:30:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31213E65D29
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 07:38:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wg2fqVul48+bQ03gtUMP2J0xYjq/atR3IE3OOHXI5AI=; b=jP45z6LDHcTjxR
-	eAU73M/pO9q/cDVw+a6z742ZigpL+mCJbdU8yqWg/iwhdFWqiFwRU1UFZQUF+AXmYCW53UdrtvN5U
-	OUmYmiyH8SRSgPPRmF1FcJpFv2aAdiMwoV96HMH8jOxpFiLPyVkBk4f62/ItZqsYFDFeHszLkERti
-	bkiEf5ovsQD62uzlEo3eS9TKJ8b7J9RAiCwICFvCX2DYIq7aZgoHbqdiCAdzJo99Ei6+mzCvk68Bo
-	pqH15iVW+QQIB/RcQa0fQEYeOP27kuNxgsaGlp3yWlBry6e6kn8+OQ9JaZcqS5bBZWTZnT+9+MLvd
-	iYvBEocXC/c26lLXiYTA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2UqzA68swrcJTuyDW3WK2qSsQaZdFP/DQ/Jxt076lrs=; b=ljcywZghepbyGU
+	Jx5BrJK0pvC8rFcq8wkJ1flN5SiqwdZhVcOWE7DzOmQxp1saVD2yPfYtTobWRRQNFEVdk8jF3uoFp
+	pZp/0z8AG78AxPQMEwLtcN0pGybBGJU1q5dhdftAA0TL70bO8kWcmKWt1hpZ/0lqsyy8bx0INvy50
+	ViBfQkrmFohOjBgORtRHacIul/gMm+9ePsX5lMZy9l5OOWWZTpZtQzDeIlrSla12iMASVw8HwxuLE
+	GbgIHR37ekf2y3z+ZLect92/E/G2aIWz/48De4byClXUuLbf0Mbm1PuQgwNkVBB/YUAhW0puEDiBF
+	QOceTWvYfTHJnR/fUYpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEO7U-00000001oPZ-1Rd4;
-	Fri, 22 Nov 2024 07:30:24 +0000
-Received: from mail-m155101.qiye.163.com ([101.71.155.101])
+	id 1tEOFY-00000001pKs-3t8M;
+	Fri, 22 Nov 2024 07:38:44 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEO7R-00000001oMe-2bld;
-	Fri, 22 Nov 2024 07:30:23 +0000
-Received: from amadeus-Vostro-3710.lan (unknown [IPV6:240e:3b3:2c04:2930::1])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 3848de84;
-	Fri, 22 Nov 2024 15:30:09 +0800 (GMT+08:00)
-From: Chukun Pan <amadeus@jmu.edu.cn>
-To: Heiko Stuebner <heiko@sntech.de>
-Cc: Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Yifeng Zhao <yifeng.zhao@rock-chips.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	Chukun Pan <amadeus@jmu.edu.cn>
-Subject: [PATCH 1/2] arm64: dts: rockchip: rk3568: add reset-names for combphy
-Date: Fri, 22 Nov 2024 15:30:05 +0800
-Message-Id: <20241122073006.99309-1-amadeus@jmu.edu.cn>
-X-Mailer: git-send-email 2.25.1
+	id 1tEOFW-00000001pKW-0iFa
+	for linux-phy@lists.infradead.org;
+	Fri, 22 Nov 2024 07:38:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 26824A407D9;
+	Fri, 22 Nov 2024 07:36:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3F754C4CECE;
+	Fri, 22 Nov 2024 07:38:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1732261121;
+	bh=Il4u2JmKDCqigPfRRYGfxmRB1iP4DLOiIY1PedxhxEo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=U7gAYW49N2xAlLY+uS+rUOgVk2yvCC40uzA0KE8BvOaEPCmP0L4ti3VAEea5+eidP
+	 8AjTLg4COd0PPjfAPm28xiafKY2YinZXcdWbK88MyAfzxRZIT2+nnAodi7qGSW2GNz
+	 UaaD89+d9An15M/84bRSyiXb1QX6X0t84Ny0KyuoirP84M7NFblj+YcIyramAFmQAD
+	 r2eW1w6AZI4ErSacmpdjVUi3oM7mni+1FyOMlpkZJzNL87ON+Jfyjni5PBeY35l1ux
+	 RKn+kJaTUhFu+766u3FZcMwHH8XP7dK4qXoI36hSk1EvPrMSuK/GkblOA+RI4S2SNa
+	 6R86tJqYS7R5g==
+Date: Fri, 22 Nov 2024 08:38:38 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org, 
+	quic_qianyu@quicinc.com, conor+dt@kernel.org, neil.armstrong@linaro.org, 
+	andersson@kernel.org, konradybcio@kernel.org, quic_tsoni@quicinc.com, 
+	quic_shashim@quicinc.com, quic_kaushalk@quicinc.com, quic_tdas@quicinc.com, 
+	quic_tingweiz@quicinc.com, quic_aiquny@quicinc.com, kernel@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, Krishna chaitanya chundru <quic_krichai@quicinc.com>
+Subject: Re: [PATCH v2 1/6] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Document the QCS615 QMP PCIe PHY Gen3 x1
+Message-ID: <dpuqj6hsqourl7ln66maezhcpmdrnnju22u5vs7mvre5aotkki@y6p2bbkre6pf>
+References: <20241122023314.1616353-1-quic_ziyuzhan@quicinc.com>
+ <20241122023314.1616353-2-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlDQxhKVhgZQ0tDTUNPTE1NTVYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJT0seQUgZSEFJGEtPQUlCSEtBQUpZV1kWGg8SFR0UWUFZT0tIVUpLSUJDQ0
-	1VSktLVUtZBg++
-X-HM-Tid: 0a9352c73fde03a2kunm3848de84
-X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Oj46Eww4PTIjTj8QECk*Tx8y
-	QjkaClZVSlVKTEhJSU1LTUpKSktCVTMWGhIXVRoWGh8eDgg7ERYOVR4fDlUYFUVZV1kSC1lBWUlP
-	Sx5BSBlIQUkYS09BSUJIS0FBSllXWQgBWUFKTU5CNwY+
+Content-Disposition: inline
+In-Reply-To: <20241122023314.1616353-2-quic_ziyuzhan@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241121_233021_885778_5BF06E07 
-X-CRM114-Status: UNSURE (   6.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241121_233842_272602_C13EBF99 
+X-CRM114-Status: GOOD (  11.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,48 +80,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The reset-names of combphy are missing, add it.
+On Fri, Nov 22, 2024 at 10:33:09AM +0800, Ziyue Zhang wrote:
+> From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> 
+> Document the QMP PCIe PHY on the QCS615 platform.
+> 
+> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> ---
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml     | 2 ++
+>  1 file changed, 2 insertions(+)
 
-Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
 ---
- arch/arm64/boot/dts/rockchip/rk3568.dtsi      | 1 +
- arch/arm64/boot/dts/rockchip/rk356x-base.dtsi | 2 ++
- 2 files changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3568.dtsi b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
-index ecaefe208e3e..695cccbdab0f 100644
---- a/arch/arm64/boot/dts/rockchip/rk3568.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3568.dtsi
-@@ -350,6 +350,7 @@ combphy0: phy@fe820000 {
- 		assigned-clocks = <&pmucru CLK_PCIEPHY0_REF>;
- 		assigned-clock-rates = <100000000>;
- 		resets = <&cru SRST_PIPEPHY0>;
-+		reset-names = "phy";
- 		rockchip,pipe-grf = <&pipegrf>;
- 		rockchip,pipe-phy-grf = <&pipe_phy_grf0>;
- 		#phy-cells = <1>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi b/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi
-index 62be06f3b863..e55390629114 100644
---- a/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk356x-base.dtsi
-@@ -1681,6 +1681,7 @@ combphy1: phy@fe830000 {
- 		assigned-clocks = <&pmucru CLK_PCIEPHY1_REF>;
- 		assigned-clock-rates = <100000000>;
- 		resets = <&cru SRST_PIPEPHY1>;
-+		reset-names = "phy";
- 		rockchip,pipe-grf = <&pipegrf>;
- 		rockchip,pipe-phy-grf = <&pipe_phy_grf1>;
- 		#phy-cells = <1>;
-@@ -1697,6 +1698,7 @@ combphy2: phy@fe840000 {
- 		assigned-clocks = <&pmucru CLK_PCIEPHY2_REF>;
- 		assigned-clock-rates = <100000000>;
- 		resets = <&cru SRST_PIPEPHY2>;
-+		reset-names = "phy";
- 		rockchip,pipe-grf = <&pipegrf>;
- 		rockchip,pipe-phy-grf = <&pipe_phy_grf2>;
- 		#phy-cells = <1>;
--- 
-2.25.1
+<form letter>
+This is an automated instruction, just in case, because many review tags
+are being ignored. If you know the process, you can skip it (please do
+not feel offended by me posting it here - no bad intentions intended).
+If you do not know the process, here is a short explanation:
+
+Please add Acked-by/Reviewed-by/Tested-by tags when posting new
+versions, under or above your Signed-off-by tag. Tag is "received", when
+provided in a message replied to you on the mailing list. Tools like b4
+can help here. However, there's no need to repost patches *only* to add
+the tags. The upstream maintainer will do that for tags received on the
+version they apply.
+
+https://elixir.bootlin.com/linux/v6.5-rc3/source/Documentation/process/submitting-patches.rst#L577
+</form letter>
+
+Best regards,
+Krzysztof
 
 
 -- 
