@@ -4,65 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F31DEE65D32
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 08:13:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EB6FE65D39
+	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 09:27:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XOGhrMG7QXzXYqy0SNmICuU9vtEXSAaBUfWEYdEuAOc=; b=pLnSEQ2kEMrMWu
-	uah8xuMWgpSUYfbCN8cXMd0qjhqWj3DzmJHuLRafLP4wt8f7Q0xgI8+O3dwTNPlRxT0rsO+PlX6Iz
-	qioywTCKnffuXwDvKZhhOY143RT0lUA1YbMIeix6qvb2D//lrtmFG9GQmw4usBokbSrAtU2NVchjS
-	qpKrYwJ6/adVTvqnDnugtODg72ii1IKTAYCRETB807rpLF77VAbAT/68dZMml9eo0mZuDNnT99IEP
-	QPlGpo0OVkn276w/UvKWjFR3tXCyjjfNbx5kE2CuCTkINH95qaFa5k+jLpv6jUp/N7TMgCYSCdmwS
-	tm2rRF4wtP5hyCRGs97g==;
+	List-Owner; bh=KqcI94zrlcJvwZNSzWhGBPnuoIzCwTt6ceUX6WmZo1Q=; b=XSGKg3KDCTq4a+
+	afWTkX4lrreQh+FHDFLR2LYY196yebVWjMoD5kHQLpt0HiEb8toLundpwOQkPene2Bw2/G/L9oaIq
+	SJKboAcTTEByOwbqugz0O1xuvC0yoJW1Yx+5l4n0HT7PDmSd48/cY8DM4ROHgrtnNtUCB0F9b38Rj
+	AeTMcdPHkJcmRSfRwP6F/jbM85FEph0Dh+OSK9E5xO4PQWvyJPkT2Gy16ug+ypc8jH4VTgBO6/AHr
+	wvk7f3dERkn/mbDMKrIkJWxH70PS5f/UlSYnps+KZpCjxpT39G/rbYU/dklSSYUJ/LGzrH2YVzgb9
+	AUVoqfI9QHXGCmpQ460w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEOn0-00000001tqt-35CG;
-	Fri, 22 Nov 2024 08:13:18 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tEPwt-000000025uw-01w3;
+	Fri, 22 Nov 2024 09:27:35 +0000
+Received: from mail-lf1-x12b.google.com ([2a00:1450:4864:20::12b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEOm3-00000001tkJ-1oON;
-	Fri, 22 Nov 2024 08:12:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=95m9sEz4jpY+nXaTdtFnwpBIrBHSe/OWl4KFwSyfVK4=; b=HwZjZ7E5ah5YUK4f/LAs3dej5y
-	VQaeqiIw7QaFLBsKS6xktq9M0R8Rdhg2s13olioGIrFk+7sS0DzKGZSzBpPKwm4z5mJfHG/+qF4hz
-	C8lBCLs/fOxCi1YXIo9yuLQMuz6EHKA2c0+yKLaFagTb2cXRPmHFQfIu/VRu7qyiqbV+QnWmR/uL1
-	nd3FFFtXaTshut/LD77DlttZKT9VIzFjc89siOIvmMs3XzJGZENS/Qg/f+Zcvzxjd92hCxwzEKi2n
-	trda/bEh6zXgIzoupe/ykeZAQZm64J+qi4f/QdIh7P8jatWOMBR6opKF7oISK1e/+8sCQaGIFp0L6
-	+LwSAxRg==;
-Received: from [185.156.123.69] (helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tEOlx-0004My-7t; Fri, 22 Nov 2024 09:12:13 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Chukun Pan <amadeus@jmu.edu.cn>,
- Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Conor Dooley <conor+dt@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Yifeng Zhao <yifeng.zhao@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, Chukun Pan <amadeus@jmu.edu.cn>
-Subject: Re: [PATCH 1/2] arm64: dts: rockchip: rk3568: add reset-names for combphy
-Date: Fri, 22 Nov 2024 09:12:12 +0100
-Message-ID: <2757577.mvXUDI8C0e@phil>
-In-Reply-To: <12563257.O9o76ZdvQC@phil>
-References: <20241122073006.99309-1-amadeus@jmu.edu.cn> <12563257.O9o76ZdvQC@phil>
+	id 1tEPqh-000000024kk-3M0x
+	for linux-phy@lists.infradead.org;
+	Fri, 22 Nov 2024 09:21:12 +0000
+Received: by mail-lf1-x12b.google.com with SMTP id 2adb3069b0e04-53a007743e7so2086721e87.1
+        for <linux-phy@lists.infradead.org>; Fri, 22 Nov 2024 01:21:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1732267270; x=1732872070; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=LO/T9KKXXkkfpYB9cAxNeBeflDg4LqQIxBh3rr4lV2o=;
+        b=jE61uIOO328b84xSBhqjQgoENhhlGsrUS0+ELL8TSrgt9oiIo3kQmS20g44WH1xczP
+         0+bUCGDeEcfsLx99oTQgahDpRWnNIC6dRw+pqA2wnV3a2W8IGp4yGtDZ+7NV8EQCbXvb
+         fctgQwLNksrT1bCEBC8MIDYVskcT5okhhnd53xSKBINwbNoTlcFau6cruyMW8mPBV3E0
+         RlBvyZYKsz5/pPdPhYxl5rP9ZoUXh/E0cJpxkuonTihMLmKFtM8HIh7sm0LVpc9ewFLv
+         IHVber4yKoYr3HhejZLNznlQzqosmFXi3SRNI+iqAfF+usrOZYQ7pm3Z5ZdOL8OLvoTz
+         GsiQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1732267270; x=1732872070;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=LO/T9KKXXkkfpYB9cAxNeBeflDg4LqQIxBh3rr4lV2o=;
+        b=jz18X/+XUH70UujFO0e8k+mOfs+9s1MXi8SAw1nQ9IgZf+bK2NKocthIFQrDI99NO8
+         WYCqHxDEtDQMKbhg+4fJ9VQl8ikjHHAmsWYJS3fhe6PM3iT2jG3tFx4EZi7s7pRLtpQm
+         8L2SuKMySnO1e1HaxbVVh5lLS/dKTXeFg1SRFNoSG33GuWsahJjOulFEndizev8O91M4
+         MLbN/rl6ChDB2ukzUIHkOVsuVZ5sKWRnUSb43Q+QHnp0nN560oJuef5SX6/eehBmFHFo
+         LrrDbdmU7GWbFur5aImJQO8mtbrzpMD8mcZJQm+BZEcR9EujKeDi9LlGFR/qzsyfdR4x
+         LoUw==
+X-Forwarded-Encrypted: i=1; AJvYcCV4irbtaTBPo4H7Lz9URA5w5XtqrTPd9NrvMrRArdSkzS6NLT2p7dq7WMr37SdU7vM6GJs4OtC+wds=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx7THN9h5Xf1hkmelc2mXHzPfUmk1qtLZgZy0az/c4OD+W3ZSLi
+	0AfwcMAqeaxewRw3EiZwZWB4OzyZqRoZ0G88sX2DwkM9ufaX9/EUKu1EuGbLz3c=
+X-Gm-Gg: ASbGncuzmTq3lrQi7FE6T2xQjC0NxDxUjpqYcIZU9C6FZjPaamyI5XKe91tVjXzySLW
+	B+ifjx8kwag12VgM3/ARtXz5hJp4120ymZ5D28FVKFDl1LTrxueTYsz+mXfrJ8zb+/hsSsRMQnY
+	me2eKHF5v9GZHaDqclhE8MpCvTlDo51hcSoFK8N29hDU4XSB2Cyxvi8R0QvIQea5lt8hQX1U7N7
+	6F716h9jYIHDx+mr6C6vv0PfxY2EuliJigOXD6lCVkt0YpHWSkryj2OwIWj+7QCO14LuorZVc8l
+	dKqMJVHQ/NAMLiL+wDi5i0L3NtDSGw==
+X-Google-Smtp-Source: AGHT+IFFTnawBn5hQYvJKNcfaecxBmcU/11dXb9HtL1BCFqTi+wvt7hCbGfqNPY2ydrBRo9pZXh1SQ==
+X-Received: by 2002:a05:6512:1247:b0:536:56d8:24b4 with SMTP id 2adb3069b0e04-53dd35a4f22mr926317e87.5.1732267270110;
+        Fri, 22 Nov 2024 01:21:10 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53dd2497df2sm299121e87.245.2024.11.22.01.21.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 22 Nov 2024 01:21:08 -0800 (PST)
+Date: Fri, 22 Nov 2024 11:21:06 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
+	manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org, 
+	quic_qianyu@quicinc.com, conor+dt@kernel.org, neil.armstrong@linaro.org, 
+	andersson@kernel.org, konradybcio@kernel.org, quic_tsoni@quicinc.com, 
+	quic_shashim@quicinc.com, quic_kaushalk@quicinc.com, quic_tdas@quicinc.com, 
+	quic_tingweiz@quicinc.com, quic_aiquny@quicinc.com, kernel@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, Krishna chaitanya chundru <quic_krichai@quicinc.com>
+Subject: Re: [PATCH v2 2/6] phy: qcom: qmp: Add phy register and clk setting
+ for QCS615 PCIe
+Message-ID: <xhcly5e5efbarmlfkczyq2qz3ektfggop4qz6qe2oip4cfeiig@5n2uyndasn6v>
+References: <20241122023314.1616353-1-quic_ziyuzhan@quicinc.com>
+ <20241122023314.1616353-3-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241122023314.1616353-3-quic_ziyuzhan@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241122_001219_475338_3DA1299C 
-X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-CacheID: sfid-20241122_012111_833773_59E3FA36 
+X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,14 +106,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Freitag, 22. November 2024, 08:56:17 CET schrieb Heiko Stuebner:
-> No need to resend for this, as I think b4 will just pick up this
-> addition when I grab the series from the list.
+On Fri, Nov 22, 2024 at 10:33:10AM +0800, Ziyue Zhang wrote:
+> From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> 
+> Add support for GEN3 x1 PCIe PHY found on Qualcomm QCS615 platform.
+> 
+> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c   | 105 +++++++++++++++++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v2.h |   1 +
+>  2 files changed, 106 insertions(+)
+> 
 
-Of course, I'll just grab this patch, not the series.
-The phy driver change will go through the phy tree :-)
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
