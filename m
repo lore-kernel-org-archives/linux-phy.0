@@ -4,89 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 596C5E6ADE3
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Nov 2024 16:32:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0DBBE6688C
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Nov 2024 22:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0r5w5G5FXx4a+Mu7/wt7GYMG5SPq9GAvqYNas1jMKUk=; b=PU93lxKdiTIDAW
-	WLhjqT7+KwmcWi1hk5K8xpRCP3y+pVsoVJnhbTCePaJ9XmU1dHfans5RabRtXeZdSpWyvtYSIyX3Y
-	XOHBwQbkCrDrjjdkD49VCDzK5fmnmRNDsSg23LJ0wHPmk1I8sRczvWH0Ie3As0aEQ4ZCSK0ocTyKP
-	g+0XY4raneZwjgK6JLxQlkvMtSolebjx0NjiibUpNaX36mFwPDnPxGAxnEb1h7qH3vQJkjwaCgXGE
-	9MqhcySnYdiQ034WZ4s6nZCsxNBFlf+F39OSbdnAblIJahsuDMAKNcq6C5FkaWlL55pAJTT8TkFFM
-	XvyAI4/J3Bcoi9JEoOOg==;
+	List-Owner; bh=RzE7BRd0Q8DPuq5G3ywHE33ZGcnv4IScxEHzZngJ58s=; b=dEfaYuHsvA2fUk
+	bGVBsmvboREfbzhDcNAKIsIVAr9bHDUNZbOB3l4oTW3tILgXx5Q/aXyPxIQ4ZBM9OFvXvmqEqTIKk
+	atFuBvlxhFe+whEHjnMi4sR7kBxszZfI1McNB5Lx5YwIt58EpZMwQiD88Xswsk3+AFz2gNp9WFyPX
+	FxEUXnnXsn+Rjw769EyPX+OJILt0tARlPeZJvusoY6hR0xtAP0H0dT2KTuBXUp/XYq9fSOt2VT64T
+	0UqVusx1c0Grx4jvustMdECXz0kbjQJU8WEspwsrX4lzqQ5WNJqTrFK8oedpSG3DrekOh5IWN7Kap
+	sWL2KzTeZEv4i8vthBWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEt3Q-00000004boz-0Wi7;
-	Sat, 23 Nov 2024 16:32:16 +0000
-Received: from mail-lf1-x12e.google.com ([2a00:1450:4864:20::12e])
+	id 1tEyeH-00000004yQf-3iS0;
+	Sat, 23 Nov 2024 22:30:41 +0000
+Received: from [52.59.177.22] (helo=smtpbgeu1.qq.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEt3N-00000004boa-36tv
-	for linux-phy@lists.infradead.org;
-	Sat, 23 Nov 2024 16:32:15 +0000
-Received: by mail-lf1-x12e.google.com with SMTP id 2adb3069b0e04-53d9ff92edaso3622513e87.1
-        for <linux-phy@lists.infradead.org>; Sat, 23 Nov 2024 08:32:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1732379531; x=1732984331; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=0MxevDa9VlZfQk/6diKJ/RQ0XTFV8JaAse1FnOzuzGI=;
-        b=jo+il7kL2EcjyAyGyZrtNjhoTIWgmth9asty0Kkj7I+h6VO22FXYAlnirBZg7ko/Jb
-         I8aPGxbmSXu0O3sNv+79ncTtOSM2F6elhdfsufyibRe6t8k59zlSFwc72dkNf1b1eUV2
-         2KsxV2abNb51vyd9bOdYASVVtxzHUVSqOK0/TP2wylRZ6NZ+nPBDY8yIPHXfitZIsKj3
-         nIuDeJp/hHgMb4mwuKUopiUAhNibKZLq8rlN3DdK3BlojYwQ5rXAINYIUtyiNjiOWVdQ
-         cMxwEfj125hXD2xa5T74TCfn2QrEL1UVTU+7NFOpFdvXF8s/ctnsGE5Fph0jMeQ0Sqwh
-         swWg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732379531; x=1732984331;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=0MxevDa9VlZfQk/6diKJ/RQ0XTFV8JaAse1FnOzuzGI=;
-        b=tPlDRtmNmHV3DgMBG0seARPZOcxf8ARGjMdUiiDyn0/gxHJZy79KFBd4KsTCTi4Ygm
-         JBbhbEOszmIElBg9ON+t+bBMJNCN+Ds9GcW/b/KqkbcvNkcpGsJRzlO4sECngZzWVwB+
-         b7j8eFBJRpaQj2Fy7KGkuoR/nAzFan9Ye51uk3+rPF7oTDudnFsxUa5tdfpT15FbHVLE
-         EecRXsKY/3omqLRkIX281i57ZznEztTOnYba4PLbS+FMhJ3tbkxdv3R8KEgks44bhmPz
-         WAlLBHl15n9luywCL+QtcH/QAbjYfHD3cWrmD6jyOwgyqrRs/bIUo8j3zSKnZZQy/UVO
-         DkJw==
-X-Forwarded-Encrypted: i=1; AJvYcCUowpBhNPWXpqUfiKU0Z2npGEeG+ZHm2m9qdNQKC8her/EqQUZJ4FawdKuGEk2sfM8r+A7K/TI4p+Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwqiidqQ02DuAhhHiNvXsmhzBUxImoNd1XRK9qpaUU9iUKaJMX9
-	v0NdQ6jYPvTAGOxBmgHvPGzYT69BlDC6BtNUU4ChaIoi+BmL0FdxapC6DXB86htNWCQwC41g8I8
-	f
-X-Gm-Gg: ASbGncuYV3Qja4beh4h2+ehBcEYgiOlSAPRiAPm1GVSlffHr5F6enlBkR9516u2ewCD
-	Jsqr/mSwzuIkr6OaeMaUdUD5RcEE2f7Tkexw0VPSCFE5omnbiemm2kYxijenBoZdD2HTF59Qy29
-	aYVt226/VOOEKiWA4rNXAXiDCMAvFNpWgH1mDXkH1CTD5PGKGuXMMAwyphkEpUd06xedfEWRWQX
-	zUBDFg3e/lf+QFLcI0JLsvZIOreURpzrhJpHtjjzijF+/9EfLyZTnd6S5DGtqR9zhrXdr2uQxMK
-	JRNq+7/Il2BND1lItJseXedgIFXFPw==
-X-Google-Smtp-Source: AGHT+IE/kpuKX9Z55uF4fzpcyiUmNjnR2bVsf+7KIIGnKThLK7KcQSqBM0gFxYOZnj/rPZs2stSn0Q==
-X-Received: by 2002:a05:6512:3b97:b0:53d:c37d:3378 with SMTP id 2adb3069b0e04-53dd35a5531mr3263454e87.5.1732379531348;
-        Sat, 23 Nov 2024 08:32:11 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53dd2450a7dsm970118e87.59.2024.11.23.08.32.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 23 Nov 2024 08:32:09 -0800 (PST)
-Date: Sat, 23 Nov 2024 18:32:07 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Song Xue <quic_songxue@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Manu Gautam <mgautam@codeaurora.org>, 
-	Vivek Gautam <vivek.gautam@codeaurora.org>, kernel@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
- usb phy
-Message-ID: <3zvstdxhgobn64ttcggmk44ejsroxmwe7y25rraebh3p4evsy6@3g64a5tuvt7w>
-References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
- <7qj4szkw365ve45hm5w475xs2vlfsfg5pcpc44bo3s5vhrcmuu@bh5swbug4ywi>
- <b8cd1434-8096-4d52-8499-9d25cf3805b8@quicinc.com>
+	id 1tEydC-00000004yFJ-44cS;
+	Sat, 23 Nov 2024 22:29:43 +0000
+X-QQ-mid: bizesmtpip4t1732400922t0vaiy3
+X-QQ-Originating-IP: lDJQcHGmgBgcXATVztEHXy/UIVbd5/CbMKaLCYIJt3Y=
+Received: from [IPV6:240f:10b:7440:1:bec2:7020 ( [localhost])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Sun, 24 Nov 2024 06:28:39 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 16923298256935240573
+Message-ID: <7F8BEC114E3AF523+2ad7c5ce-ca20-4ea0-9a37-15b07ad2cbcc@radxa.com>
+Date: Sun, 24 Nov 2024 07:28:38 +0900
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b8cd1434-8096-4d52-8499-9d25cf3805b8@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/2] phy: rockchip: naneng-combphy: fix phy reset
+To: Chukun Pan <amadeus@jmu.edu.cn>, Heiko Stuebner <heiko@sntech.de>
+Cc: Conor Dooley <conor+dt@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Yifeng Zhao <yifeng.zhao@rock-chips.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, Michael Zimmermann <sigmaepsilon92@gmail.com>
+References: <20241122073006.99309-1-amadeus@jmu.edu.cn>
+ <20241122073006.99309-2-amadeus@jmu.edu.cn>
+Content-Language: en-US
+From: FUKAUMI Naoki <naoki@radxa.com>
+In-Reply-To: <20241122073006.99309-2-amadeus@jmu.edu.cn>
+X-QQ-SENDSIZE: 520
+Feedback-ID: bizesmtpip:radxa.com:qybglogicsvrgz:qybglogicsvrgz8a-1
+X-QQ-XMAILINFO: M5aCtjAndv5O13Z/VZi4XiKKD5ROoi6OTgPdUTAi8dPJWNIr+tNiTH2l
+	+Qob2Si7IonXxSHU+5BPbgviiuN/mkXXPPYo7ki4sdnRYYVBsOMxufxhv6Z8olgr9s1xCvS
+	Oy840M71xjlTz9X4U58tfrXIVTtgObY4FHaZtV3aBdFI1s+pC7c+Oh4reB/fjN2R9RYWR5B
+	C5YfsYHY9MldaBzUxHQ5u4V7J2elnQmwQ6tVWU9DBUKDgcLCVsARynko1ad99F6+k00/6F7
+	acvk99Dn1KSXZNdfJ/MxD9M4/fwxcxu4pUA8M8q/y6FWsa03MInDbqlL8up3GdDs+6cXwyO
+	dYfzDFJ6MA7XtxD3Fpl5zLgG04jNGKWfN/bbGV+45RUn7jTLHrbs3Fn/44vEZM5R9P85l5p
+	yq3rLqeODJMzOPWW6k85xi7L9UcQpqj0ahrfOPAwmim0ghw91d7drRTQRT/fiQwdO2pslve
+	YHafR7oRhqsXwwyvTicaptHc2zPtzxjXuvUV2c+ZbiMQYs76IbQYpOqUXAYa/lZlKrzfYSb
+	Ru5gt8DCFgdlJ4lM66NUKvJBtJhGmWmHOztRmydej/y0sYL+QbEsksYVHWx+rFnXAiPjmlP
+	SiRgb+3eXfVlwT3myizobfMIpScIXdK3zAEbLy/I4SQB8MklLT4zYurKgn7Y5OywmVvg0H2
+	qC1Eg1r0hq/LLPb7jrGRSJ5HWg6wNDhck4yIn2GN8XNGHmAZmEjBzl6OvCwSDg3Sm0U6vcL
+	uHIPheMOH4abOzoOPqRfuUnbDN0MZGlQS+L+XVP51882+r6zENgeYwlSFavs0X7dAwP/GUD
+	uSboF4as5mwdCaFNmo4Vf+nVj/Ma/qXBzEO1ohWe3aPN3Ovvjn4RnRLrckuDTEx45NeV8kS
+	kAoNgejVSHxRkKiCKPt1TgIRugLfS1Zm
+X-QQ-XMRINFO: MSVp+SPm3vtS1Vd6Y4Mggwc=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241123_083213_795076_D640BE66 
-X-CRM114-Status: GOOD (  35.92  )
+X-CRM114-CacheID: sfid-20241123_142935_498933_3F0ED102 
+X-CRM114-Status: GOOD (  13.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,110 +85,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Nov 23, 2024 at 01:07:06PM +0800, Song Xue wrote:
-> 
-> 
-> On 11/22/2024 6:24 AM, Dmitry Baryshkov wrote:
-> > On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
-> > > Set the current load before enable regulator supplies at QUSB phy.
-> > > 
-> > > Encountered one issue where the board powered down instantly once the UVC
-> > > camera was attached to USB port while adding host mode on usb port and
-> > > testing a UVC camera with the driver on QCS615 platform. The extensible
-> > > boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
-> > > from regulators-0 upon powered on board again. That indicates that the
-> > > current load set for QUSB phy, which use the regulator supply, is lower
-> > > than expected.
-> > > 
-> > > As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
-> > > load when attach a device to the USB port.
-> > > 
-> > > Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
-> > > Signed-off-by: Song Xue <quic_songxue@quicinc.com>
-> > > ---
-> > > Changes in v2:
-> > > - Removed "---" above the Fixes.
-> > > - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
-> > > ---
-> > >   drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
-> > >   1 file changed, 12 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
-> > >   	return ret;
-> > >   }
-> > > +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
-> > > +
-> > >   static int qusb2_phy_init(struct phy *phy)
-> > >   {
-> > >   	struct qusb2_phy *qphy = phy_get_drvdata(phy);
-> > >   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
-> > >   	unsigned int val = 0;
-> > >   	unsigned int clk_scheme;
-> > > -	int ret;
-> > > +	int ret, i;
-> > >   	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
-> > > +	/* set the current load */
-> > > +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
-> > > +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
-> > 
-> > Please use regulator_set_mode() instead. Or just fix the mode in the
-> > device tree, if the device can not operate if the regulator is in
-> > non-HPM mode.
-> > 
-> Thanks for comment.
-> 
-> From my point, regulator_set_mode() will change the regulator's operating
-> mode including current and voltage, which will also influence the other
-> shared consumers. Meanwhile it is unacceptable to fix mode in the device
-> tree because it is determined by regulator's device tree.
-> 
-> According to the required fix, regulator_set_load() simply aggregates the
-> current load for the regulator and does not affect other shared consumers.
-> Setting the current load is relevant to the issue.
+Hi,
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+On 11/22/24 16:30, Chukun Pan wrote:
+> Currently, the USB port via combophy on the RK3528/RK3588 SoC is broken.
+> 
+>    usb usb8-port1: Cannot enable. Maybe the USB cable is bad?
+> 
+> This is due to the combphy of RK3528/RK3588 SoC has multiple resets, but
+> only "phy resets" need assert and deassert, "apb resets" don't need.
+> So change the driver to only match the phy resets, which is also what
+> the vendor kernel does.
+> 
+> Fixes: 7160820d742a ("phy: rockchip: add naneng combo phy for RK3568")
+> Cc: FUKAUMI Naoki <naoki@radxa.com>
+> Cc: Michael Zimmermann <sigmaepsilon92@gmail.com>
+> Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
+> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
 
-> 
-> Regards,
-> Song
-> > > +		if (ret) {
-> > > +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
-> > > +			return ret;
-> > > +		}
-> > > +	}
-> > > +
-> > >   	/* turn on regulator supplies */
-> > >   	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
-> > >   	if (ret)
-> > > 
-> > > ---
-> > > base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
-> > > change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
-> > > 
-> > > Best regards,
-> > > -- 
-> > > Song Xue <quic_songxue@quicinc.com>
-> > > 
-> > 
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+Tested-by: FUKAUMI Naoki <naoki@radxa.com>
 
--- 
-With best wishes
-Dmitry
+Best regards,
+
+--
+FUKAUMI Naoki
+Radxa Computer (Shenzhen) Co., Ltd.
+
+> ---
+>   drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> index 0a9989e41237..2eb3329ca23f 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> @@ -309,7 +309,7 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
+>   
+>   	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+>   
+> -	priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
+> +	priv->phy_rst = devm_reset_control_get(dev, "phy");
+>   	if (IS_ERR(priv->phy_rst))
+>   		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
+>   
+
 
 -- 
 linux-phy mailing list
