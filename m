@@ -4,71 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 372DDE69188
-	for <linux-phy@archiver.kernel.org>; Fri, 22 Nov 2024 18:50:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4436E6ADE4
+	for <linux-phy@archiver.kernel.org>; Sat, 23 Nov 2024 05:07:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YzLJy/n5SIMvkCl5XIJ38eVMP/fa2xJKCJDTvPAJcUA=; b=bOttQ47XI8zvoFy8hGLuyFB1KY
-	9HDkfBgJ/S8ioh40sTPNjxX0p6OSsasK3q/+DcBWk09wP0wTnwZWPwl0hCQWJH3vR0egHnZ0gGTTD
-	/7emWOYuEkKknyVEaC1GZWMHWiYx1qSNnfpjNTQpNft00v/uyps24Dr3W0EBDryL5FHd9DxS7Rn5b
-	Hf/AZzflhCqlGjUnmNOReBFvNoKHJ3+ocRNdL1/5Wm6JItm9knhJNxudPsk8xmMcx6ZBJugSwF2Pu
-	eBIvIMiZplCwE5OEus3yJxcLvOU6vwEZ3vcDCEL/TYJdmaMz1MKLm9diqwsEJO5c/sAlR3fEIaGJ6
-	8oYzn4Jw==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ec+2WEztYejheC5EV0Y8JMGWQUHRgxkqt3c54LVAcG4=; b=EPiSfiF/i5usdP
+	XLRvfY4UKtBLfiggaru4qC0q96l67t/IDUhgtEI7X8KvcxIVlTgOGndQaXBPmm/CPmEeeUpDYH+zU
+	lFiWTVGaJj5Sswf/rLMYEiab6TmPU1cHvFPD44/pCXq1TPK3YdlNpR+QZE/hVsCvkG3gAevPA9OtW
+	0FIY8chVJAMWINfpUdc3oetAjOM+tCn8e7pH/aY2EbM2PUbk9HsRmKQf3JuG18pZqbj5u7MUdS0wg
+	cxfP6GEVvzzeV+VU5uoZatfAF2JXg6pIvf6uVzCSu9+Zoy672lo2oVNLQLwUqqX1r53wZcR0WvrOe
+	Izl7LQS9gOiIt38Kp5Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEYjg-000000039Ak-2TJ9;
-	Fri, 22 Nov 2024 18:50:32 +0000
-Received: from sender4-op-o12.zoho.com ([136.143.188.12])
+	id 1tEiN5-00000003mGD-2DFF;
+	Sat, 23 Nov 2024 05:07:51 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEYii-0000000396C-3kQR;
-	Fri, 22 Nov 2024 18:49:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1732301366; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=moKpI0Y1wfyp0zDTN+J7fb0RabdMywL/MPTswotmSA+KTZJOEPvVZBYQ6zlN8apO60/z20bkDuHLQxJubWsP7jRoV4xsV7QNCqg+80jltLdjdDda0kTAIZL3vDMQHPlV2WFnDD2LWuBbRhsVCShsnpHUtN2VdzQEjpbu7m2hVTI=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1732301366; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=pXXGQ+H4K+o+xkKJh/Eib8vedMAVJhzcT61sVNMDK18=; 
-	b=etErkPXOgA/o2PY0rmoNMNz5lETz28KLwWLF5s/Rw1o3luzgxPET4Dgn0jEHziDzE6ttWFJ6o8r3A3xNMwPA8kO3k4Wqc9Y2wGyjfxEo6t0sGz7UYHdKLEB0q5q4o67kD2mOD512rFtdfWGPIPcONMXpEKkZ8+2HtLBPtgVL7Nc=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1732301366;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=pXXGQ+H4K+o+xkKJh/Eib8vedMAVJhzcT61sVNMDK18=;
-	b=DWMis2ORyFa/Pf0JrjQCTPO8S503ZcLD+FfkCKMKyij0evInMtsSAmy5fdKNNYGL
-	iNdrxoVmBcowkrEe4U6TW1J044EnZKsdr4spTFkzL6Co2fTJU7vLCgHY059ZVFpB5mq
-	Qmq3JANa/lN+q8A4wTGp9SCU5s62xvQeokqdYkCM=
-Received: by mx.zohomail.com with SMTPS id 1732301365255675.6070960311865;
-	Fri, 22 Nov 2024 10:49:25 -0800 (PST)
-Received: by mercury (Postfix, from userid 1000)
-	id BF04A10604B0; Fri, 22 Nov 2024 19:49:20 +0100 (CET)
-Date: Fri, 22 Nov 2024 19:49:20 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, quentin.schulz@cherry.de, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Heiko Stuebner <heiko.stuebner@cherry.de>, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY
- schema
-Message-ID: <udad4qf3o7kt45nuz6gxsvsmprh4rnyfxfogopmih6ucznizih@7oj2jrnlfonz>
-References: <20241113221018.62150-1-heiko@sntech.de>
- <20241113221018.62150-2-heiko@sntech.de>
+	id 1tEiN2-00000003mFl-3AHs
+	for linux-phy@lists.infradead.org;
+	Sat, 23 Nov 2024 05:07:50 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AN4epau026083;
+	Sat, 23 Nov 2024 05:07:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	iHPi2UueuCGaZwoFZeuex97y1jXPUPoI3V5NZS7xEm4=; b=H+i9TyOe9PMZqaUF
+	o9Pm6De8nkv0etlK3xwzCELp9ZbuF3Mp3+6nBMScGwkjojlPRHnYERb+KBPCwEIV
+	fGF+XDE2Ef8+2Tu5jItAz3gRyCk44SpnHF+6UqzzS4WEO4V1KEBhSYfRAFzpC1R6
+	C7rELBDITc+N+OJGKO/0KEeT2eaKiEeQIrTU2Stqp52XbfJAgDAh6t/A33dwfPiG
+	MOj77jnpN4Sy97XzWdDluun/m6IBZ9XP6aztxrTA/2NcCltsGwpzcBgapp+vDp7M
+	gxZKdjYJKMcvFNz6RusISlzxoAO3oTcx/YOgAFj7eK21quoWwQmzPkmSUmnzKagV
+	H9Mnpg==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43387j812y-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 23 Nov 2024 05:07:15 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AN57EwZ027870
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 23 Nov 2024 05:07:14 GMT
+Received: from [10.253.78.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 22 Nov
+ 2024 21:07:08 -0800
+Message-ID: <b8cd1434-8096-4d52-8499-9d25cf3805b8@quicinc.com>
+Date: Sat, 23 Nov 2024 13:07:06 +0800
 MIME-Version: 1.0
-In-Reply-To: <20241113221018.62150-2-heiko@sntech.de>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.3.1/232.230.92
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
+ usb phy
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Manu Gautam <mgautam@codeaurora.org>,
+        Vivek Gautam
+	<vivek.gautam@codeaurora.org>, <kernel@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
+ <7qj4szkw365ve45hm5w475xs2vlfsfg5pcpc44bo3s5vhrcmuu@bh5swbug4ywi>
+Content-Language: en-US
+From: Song Xue <quic_songxue@quicinc.com>
+In-Reply-To: <7qj4szkw365ve45hm5w475xs2vlfsfg5pcpc44bo3s5vhrcmuu@bh5swbug4ywi>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: IaaVYCvSpmgEqtHfHqQFO8o_pzagdxtR
+X-Proofpoint-GUID: IaaVYCvSpmgEqtHfHqQFO8o_pzagdxtR
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
+ lowpriorityscore=0 clxscore=1015 phishscore=0 malwarescore=0
+ suspectscore=0 priorityscore=1501 mlxlogscore=999 bulkscore=0
+ impostorscore=0 mlxscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2409260000 definitions=main-2411230038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241122_104933_017361_40790B97 
-X-CRM114-Status: GOOD (  21.72  )
+X-CRM114-CacheID: sfid-20241122_210748_806589_F036A84B 
+X-CRM114-Status: GOOD (  23.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,196 +99,102 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0560330747138511219=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============0560330747138511219==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="ziaozgegtmqy67sl"
-Content-Disposition: inline
 
+On 11/22/2024 6:24 AM, Dmitry Baryshkov wrote:
+> On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
+>> Set the current load before enable regulator supplies at QUSB phy.
+>>
+>> Encountered one issue where the board powered down instantly once the UVC
+>> camera was attached to USB port while adding host mode on usb port and
+>> testing a UVC camera with the driver on QCS615 platform. The extensible
+>> boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
+>> from regulators-0 upon powered on board again. That indicates that the
+>> current load set for QUSB phy, which use the regulator supply, is lower
+>> than expected.
+>>
+>> As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
+>> load when attach a device to the USB port.
+>>
+>> Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
+>> Signed-off-by: Song Xue <quic_songxue@quicinc.com>
+>> ---
+>> Changes in v2:
+>> - Removed "---" above the Fixes.
+>> - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
+>>   1 file changed, 12 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+>> index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
+>> @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
+>>   	return ret;
+>>   }
+>>   
+>> +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
+>> +
+>>   static int qusb2_phy_init(struct phy *phy)
+>>   {
+>>   	struct qusb2_phy *qphy = phy_get_drvdata(phy);
+>>   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
+>>   	unsigned int val = 0;
+>>   	unsigned int clk_scheme;
+>> -	int ret;
+>> +	int ret, i;
+>>   
+>>   	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
+>>   
+>> +	/* set the current load */
+>> +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
+>> +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
+> 
+> Please use regulator_set_mode() instead. Or just fix the mode in the
+> device tree, if the device can not operate if the regulator is in
+> non-HPM mode.
+> 
+Thanks for comment.
 
---ziaozgegtmqy67sl
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY
- schema
-MIME-Version: 1.0
+ From my point, regulator_set_mode() will change the regulator's 
+operating mode including current and voltage, which will also influence 
+the other shared consumers. Meanwhile it is unacceptable to fix mode in 
+the device tree because it is determined by regulator's device tree.
 
-Hi,
+According to the required fix, regulator_set_load() simply aggregates 
+the current load for the regulator and does not affect other shared 
+consumers. Setting the current load is relevant to the issue.
 
-On Wed, Nov 13, 2024 at 11:10:17PM +0100, Heiko Stuebner wrote:
-> From: Heiko Stuebner <heiko.stuebner@cherry.de>
->=20
-> Add dt-binding schema for the MIPI CSI/DSI PHY found on
-> Rockchip RK3588 SoCs.
->=20
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
-> ---
->  .../phy/rockchip,rk3588-mipi-dcphy.yaml       | 82 +++++++++++++++++++
->  1 file changed, 82 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588=
--mipi-dcphy.yaml
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-d=
-cphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcph=
-y.yaml
-> new file mode 100644
-> index 000000000000..5ee8d7246fa0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.ya=
-ml
-> @@ -0,0 +1,82 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/rockchip,rk3588-mipi-dcphy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Rockchip MIPI CSI/DSI PHY with Samsung IP block
-> +
-> +maintainers:
-> +  - Guochun Huang <hero.huang@rock-chips.com>
-> +  - Heiko Stuebner <heiko@sntech.de>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - rockchip,rk3576-mipi-dcphy
-> +      - rockchip,rk3588-mipi-dcphy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
+Regards,
+Song
+>> +		if (ret) {
+>> +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
+>> +			return ret;
+>> +		}
+>> +	}
+>> +
+>>   	/* turn on regulator supplies */
+>>   	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
+>>   	if (ret)
+>>
+>> ---
+>> base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
+>> change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
+>>
+>> Best regards,
+>> -- 
+>> Song Xue <quic_songxue@quicinc.com>
+>>
+> 
 
-I would expect an argument to select between D-PHY and C-PHY mode,
-so that the binding is ready for it even when the driver does not
-yet support it. E.g. something like
-
-  '#phy-cells':
-    const: 1
-    description: |
-      Supported modes are:
-        - PHY_TYPE_DPHY
-        - PHY_TYPE_CPHY
-      See include/dt-bindings/phy/phy.h for constants.
-
-This would match how it works for the naneng Combo PHY to switch
-between PCIe/SATA/USB3. Also Mediatek CSI DC-PHY handles it that
-way upstream (with just D-PHY being supported). I see that the
-driver stack you send upstream expects, that the PHY user (e.g.
-the DSI controller) instead manually calls phy_set_mode(phy, <mode>).
-To me it seems more sensible to just get this automaically from DT.
-
-Otherwise the whole series LGTM.
-
-Greetings,
-
--- Sebastian
-
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: pclk
-> +      - const: ref
-> +
-> +  resets:
-> +    maxItems: 4
-> +
-> +  reset-names:
-> +    items:
-> +      - const: m_phy
-> +      - const: apb
-> +      - const: grf
-> +      - const: s_phy
-> +
-> +  rockchip,grf:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the syscon managing the 'mipi dcphy general register fi=
-les'.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - "#phy-cells"
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
-> +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
-> +
-> +    soc {
-> +      #address-cells =3D <2>;
-> +      #size-cells =3D <2>;
-> +
-> +      phy@feda0000 {
-> +        compatible =3D "rockchip,rk3588-mipi-dcphy";
-> +        reg =3D <0x0 0xfeda0000 0x0 0x10000>;
-> +        clocks =3D <&cru PCLK_MIPI_DCPHY0>,
-> +                 <&cru CLK_USBDPPHY_MIPIDCPPHY_REF>;
-> +        clock-names =3D "pclk", "ref";
-> +        resets =3D <&cru SRST_M_MIPI_DCPHY0>,
-> +                 <&cru SRST_P_MIPI_DCPHY0>,
-> +                 <&cru SRST_P_MIPI_DCPHY0_GRF>,
-> +                 <&cru SRST_S_MIPI_DCPHY0>;
-> +        reset-names =3D "m_phy", "apb", "grf", "s_phy";
-> +        rockchip,grf =3D <&mipidcphy0_grf>;
-> +        #phy-cells =3D <0>;
-> +      };
-> +    };
-> --=20
-> 2.45.2
->=20
->=20
-
---ziaozgegtmqy67sl
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmdA0iYACgkQ2O7X88g7
-+pqCVxAAjfX56csgOp+pRFu/Lzsmgy2PJnA+ahOcXVFpjer1P7y6mePQgwN4QfRt
-njnHJ9CdSLqwpOoBH3igShSlZ7Udd1gXzgigk3LsjpLOLqOe66L7Yzq/pS9LDPM0
-O6o5sAlvkDCMBwZx+NFzBK3FsVZ8w+yHPFw6pcIqBATAMsT5iC+7L6v1+VKbJ0Hj
-Rc9btYfxmUfUPGUvM/fDTEoAxK3b/R6hrrIzbp6mh+IFmU0Jg8pzCxdBbAJvHclP
-CTAFeXzNZ7t2mO20zp/ErvhR71e1zKsqVhddQWg5FkEb2hVAh6QqmdYaJmhzDSqN
-/7VC0nRX9Ck9Uj/XMAOo+u/QaVSrJp8uSfygtt8xjKac4KSbi8I1K8zUcPBhnESr
-LlsbjLKOYiXL9mDOcWcsNRwQCjofWviPUz571uchvhUNnDmZAS5tgD5AmI2Bfpor
-bfF63gY1/i+eAghsyIua091anZGpZfpUhghHHz9WP7Kr3ZrhIhe3fww29H0Z0gLa
-+pIS0BLCXjlzx/OYEV6JPou2zuFrMHIX4N4XaCx4oAi7S9Fh4c05yt4VljWMB0mr
-Kn4FHuM9Hf6z6ZrR70IeCtElmK/gXPXag5olucUIKy/x/cso++EDu05tXX7Rys6e
-USpG+9j6rfzZh49dTkgNU2ijnwpovTblFjae10YAMBVNlGturPk=
-=D23f
------END PGP SIGNATURE-----
-
---ziaozgegtmqy67sl--
-
-
---===============0560330747138511219==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0560330747138511219==--
-
