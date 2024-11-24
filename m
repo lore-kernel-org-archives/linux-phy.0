@@ -4,64 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FC6DE6688D
-	for <linux-phy@archiver.kernel.org>; Sun, 24 Nov 2024 11:40:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 995C8E668B6
+	for <linux-phy@archiver.kernel.org>; Sun, 24 Nov 2024 15:00:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nBucMVHYAISzkqxW7a9MZp54yDeKYNynYgaDGSKDfE4=; b=xKuIGjki9DnN2e
-	gPYAi2Q+7t2ZSASLyvAXZKuG/vvhQ5fEShi8ahxKpovtHreycf3EK59PBh0Dmpu+d5V8V/vQqgPtf
-	qYMgn3DyMAR9GfWseUR55+2dR2yc/DNmpGypkq65KJeMeMGLF9kOQTvu6KEef81QJtEpNrtLqor08
-	LudN+qyffwNBrGQ5mAPE+6tps4LhoJYBfIzriiJUcIrGZ1OIG5EAPwtK5N60Ceod4fp6REbWd5FXY
-	/dh4YGO5wPqeERi4KexDplAu33tgOT//fSnouuxKKMbpqTtAA87E1rT1K3Lz3i8ObqqWnR1XnnVyX
-	HeFKXDVXuxTd7w06d5mw==;
+	List-Owner; bh=n4jfOKiOfjPsYwwD2oHHz/IZMFmVLhU1aCbQXU+yVuM=; b=rWMk3Gw1/dtPte
+	MpwrTkQ+Nq5XlCl2PTCLdaUS85E8aNALpgKjQlYj+tGx5L7TUiFkLfB7KvwoWvavu6KkKzf4xiKxe
+	CZtn30MXLZ/3bDbUj2naw8IvjczFBTqRFC7Bb3t2Hm4raGWCbHXDIC+2zXdik6GoeW2y/hwtVwIj+
+	qvHNFzAWLP2HwfAEymLgqy+XN6ApXjyWi3IigiC93pXr9eVYnFUhpwhs9q6f8qd/zvuvXMbi0j11Y
+	IsRoL2SdCkPnWWNAzUX6xLjSEmzEog7E+mmPcnsnHpL15xz7+aWdPlBsJJX8+Ge1IQ33KyG62ltWE
+	xJ3Pp5qNyC3OXQ/2tyCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFAyP-00000005h4g-1qLU;
-	Sun, 24 Nov 2024 11:40:18 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tFE6U-00000006BqV-1yYj;
+	Sun, 24 Nov 2024 15:00:50 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFAyL-00000005h46-3ggc;
-	Sun, 24 Nov 2024 11:40:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=J3BQnHmMzJvRzOGoxvKw6fbWVPHb009ceAjCw5kM6Qk=; b=FcQwNb1Nxc86U2alMAKKQijXNV
-	5BVPN2Tp0UqXl5qkKq7DIEA9jHHTZucMj98AqTokHXNRwUyIYA8rM24FF58r/vPu+ZYbRoW2jUbRl
-	h7dyNgeBbYFl5ytnPtVTFb5TOMurDcszoejPbvXlSH3IDz/1rhecHcctN4oSqyJSxx1KQkiHYRabV
-	R3lNBZcleSSsxMWX6EP2N66v1A0ZuQbbPNe5hE9Exqdhe/igS7mIls5fVDaWtfOL7AbPq3EuTaLm6
-	cNM67DvtSyO7z0aytWmPPOYY1Euod7ueersLrJYo2CMRdXIK5kD/BhUcsfPqzXHFMMB78ZsAzpwYl
-	vHoAjocQ==;
-Received: from i5e86190f.versanet.de ([94.134.25.15] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tFAyF-00047c-Or; Sun, 24 Nov 2024 12:40:07 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, quentin.schulz@cherry.de, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- Heiko Stuebner <heiko.stuebner@cherry.de>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY schema
-Date: Sun, 24 Nov 2024 12:40:06 +0100
-Message-ID: <8454190.T7Z3S40VBb@diego>
-In-Reply-To: <udad4qf3o7kt45nuz6gxsvsmprh4rnyfxfogopmih6ucznizih@7oj2jrnlfonz>
-References: <20241113221018.62150-1-heiko@sntech.de>
- <20241113221018.62150-2-heiko@sntech.de>
- <udad4qf3o7kt45nuz6gxsvsmprh4rnyfxfogopmih6ucznizih@7oj2jrnlfonz>
+	id 1tFE6S-00000006Bpu-2IOf
+	for linux-phy@lists.infradead.org;
+	Sun, 24 Nov 2024 15:00:49 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-2e9e377aeadso3194103a91.1
+        for <linux-phy@lists.infradead.org>; Sun, 24 Nov 2024 07:00:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1732460447; x=1733065247; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=uGc1S2wYIhfLQogroy29pKHU2o6lK/gHyYeLMurEVxY=;
+        b=pvPsUsmT91gT5GV/O0Mzg6H3VVaaNH+1gAC1AQlk4Er+iUf8fSN8feFjudYGkcTWPY
+         RR4E9scrYZvnHixoBQEs2pcKDayWVS8JS/sYp1X+UYwWPsWxGpO6IYRiA2EAMbSXIzx0
+         vZ/8lJ+qiQ+k+/LyG3ir+fiTfvfTN9xIzqyHTCNhR41tWgLDju+RR4th3eTkPxdu27/6
+         I3M26gmoSgCmr0q9Idiov7Htnakj1R3TwYasu9BAlOw9QjnvyXf5bkw7f/Xj86xYwMt7
+         08ZtskJoZZ00xgNM973a8Fqlf2dkdZBTL5+5+fewCk0K15yBop9KiMHqFYG6dgVu9Un9
+         H4xg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1732460447; x=1733065247;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=uGc1S2wYIhfLQogroy29pKHU2o6lK/gHyYeLMurEVxY=;
+        b=PiowP8kybcRq8r6WsTMSdnIUmAikOUjxI7JIi0nNPpOuaDXXrZ5XXS4581bNIrfxwT
+         nWZeBUacFBiYesRRuGqQDsuPVHgS/OXMgH78vKfbT7j8IQzcZ6hrKfreaLs2jZTS0pgO
+         SfG7ZKKihGL607cn2VxOEUz33ARBq26xONNqPve/gxLOmTPMyPXcuQsENs9N7mF7twA8
+         LkhlWhS1I+L4x7S9gdN+P5rJ5BYY9JeAVmYVSUW0/wCSFhChvY3D4nO3KB+3TVmA/Aao
+         zU6wDduolkSTZMF8VvkDF3ABL0lBiK3KTYRlYc7Qhbin3GcCa/dD2e0H/SKqOLBfoGrs
+         WNmw==
+X-Forwarded-Encrypted: i=1; AJvYcCWHASHVIpcXH9Iah4HpqcgVgjIoVeZWN/Xs0L4pVtwoqnSH8VTgPxsGwmxjel+1oPN/by9q4VYwAXo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwrgMYDap+fxzN1EcO1weQgb9VZvHkFPQI9m+9VPBymyiWpWI0w
+	QOZ5mkBBEOIehnQWxHd6RX1wsIuJ7OgaiH017lgyWtwqMBXg8FWOtJ55klU4SA==
+X-Gm-Gg: ASbGnctjLv4uxR9ouv3YHFq1bdKjk16E6XklKvT9qMNevS6RCh9VFF7ZZ7a514+xt4r
+	OFmXTWby++f/EUou2KKQEBMlRs2Vgag1/zza7s94FLd90OV7mr2s15wpL18CcJQ21CPUribo1hB
+	rLRh6RKaq527uvcQxWLk3E8CI90boBLlrqc5eEHrVPF4VJRRDUp/vla61kpehXKj78GjnzbNJZ6
+	eaJ+CjIpvTltx+IOFGDWYUtyUn2HAFOmdSZXpuohzfQ4mHvlp8FQWOgwQsK
+X-Google-Smtp-Source: AGHT+IGSIxvkw6uzHJU66ROMlaDDTKSfeX3BN4E33A4cnjvrKqZLF5VEOAWjCg4WJIQuCYjdbk/27w==
+X-Received: by 2002:a17:90b:3a88:b0:2ea:47f1:7a03 with SMTP id 98e67ed59e1d1-2eb0e87c077mr12722997a91.30.1732460447156;
+        Sun, 24 Nov 2024 07:00:47 -0800 (PST)
+Received: from thinkpad ([36.255.17.192])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2eb0cfe448esm4893619a91.8.2024.11.24.07.00.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 24 Nov 2024 07:00:46 -0800 (PST)
+Date: Sun, 24 Nov 2024 20:30:39 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org,
+	bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org,
+	quic_qianyu@quicinc.com, conor+dt@kernel.org,
+	neil.armstrong@linaro.org, andersson@kernel.org,
+	konradybcio@kernel.org, quic_tsoni@quicinc.com,
+	quic_shashim@quicinc.com, quic_kaushalk@quicinc.com,
+	quic_tdas@quicinc.com, quic_tingweiz@quicinc.com,
+	quic_aiquny@quicinc.com, kernel@quicinc.com,
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	Krishna chaitanya chundru <quic_krichai@quicinc.com>
+Subject: Re: [PATCH v2 4/6] PCI: qcom: Add QCS615 PCIe support
+Message-ID: <20241124150039.cjp5g6pnulf5xnp5@thinkpad>
+References: <20241122023314.1616353-1-quic_ziyuzhan@quicinc.com>
+ <20241122023314.1616353-5-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241122023314.1616353-5-quic_ziyuzhan@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241124_034013_978970_55FADEFB 
-X-CRM114-Status: GOOD (  30.75  )
+X-CRM114-CacheID: sfid-20241124_070048_585751_00F59768 
+X-CRM114-Status: GOOD (  16.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,164 +102,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Freitag, 22. November 2024, 19:49:20 CET schrieb Sebastian Reichel:
-> Hi,
-> 
-> On Wed, Nov 13, 2024 at 11:10:17PM +0100, Heiko Stuebner wrote:
-> > From: Heiko Stuebner <heiko.stuebner@cherry.de>
-> > 
-> > Add dt-binding schema for the MIPI CSI/DSI PHY found on
-> > Rockchip RK3588 SoCs.
-> > 
-> > Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> > Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
-> > ---
-> >  .../phy/rockchip,rk3588-mipi-dcphy.yaml       | 82 +++++++++++++++++++
-> >  1 file changed, 82 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
-> > new file mode 100644
-> > index 000000000000..5ee8d7246fa0
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
-> > @@ -0,0 +1,82 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/phy/rockchip,rk3588-mipi-dcphy.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Rockchip MIPI CSI/DSI PHY with Samsung IP block
-> > +
-> > +maintainers:
-> > +  - Guochun Huang <hero.huang@rock-chips.com>
-> > +  - Heiko Stuebner <heiko@sntech.de>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - rockchip,rk3576-mipi-dcphy
-> > +      - rockchip,rk3588-mipi-dcphy
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#phy-cells":
-> > +    const: 0
-> 
-> I would expect an argument to select between D-PHY and C-PHY mode,
-> so that the binding is ready for it even when the driver does not
-> yet support it. E.g. something like
-> 
->   '#phy-cells':
->     const: 1
->     description: |
->       Supported modes are:
->         - PHY_TYPE_DPHY
->         - PHY_TYPE_CPHY
->       See include/dt-bindings/phy/phy.h for constants.
-> 
-> This would match how it works for the naneng Combo PHY to switch
-> between PCIe/SATA/USB3. Also Mediatek CSI DC-PHY handles it that
-> way upstream (with just D-PHY being supported). I see that the
-> driver stack you send upstream expects, that the PHY user (e.g.
-> the DSI controller) instead manually calls phy_set_mode(phy, <mode>).
-> To me it seems more sensible to just get this automaically from DT.
-
-The mode-selection for the phy is definitly tied to the hardware-design.
-Depending on how the board is designed, it'll always do either D-PHY
-or C-PHY mode.
-
-I guess it mostly just feels strange when so far the parameter was
-used to identify say an individual clock from the clock controller.
-
-But reading the Medietek discussion (up to [0]) it looks like that is
-a nice way to do this, so I'll adapt things in the next version.
-
-
-Heiko
-
-
-[0] https://lore.kernel.org/all/20230608200552.GA3303349-robh@kernel.org/
-
-
-> Otherwise the whole series LGTM.
-> 
-> Greetings,
-> 
-> -- Sebastian
-> 
-> > +  clocks:
-> > +    maxItems: 2
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: pclk
-> > +      - const: ref
-> > +
-> > +  resets:
-> > +    maxItems: 4
-> > +
-> > +  reset-names:
-> > +    items:
-> > +      - const: m_phy
-> > +      - const: apb
-> > +      - const: grf
-> > +      - const: s_phy
-> > +
-> > +  rockchip,grf:
-> > +    $ref: /schemas/types.yaml#/definitions/phandle
-> > +    description:
-> > +      Phandle to the syscon managing the 'mipi dcphy general register files'.
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - clock-names
-> > +  - resets
-> > +  - reset-names
-> > +  - "#phy-cells"
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
-> > +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
-> > +
-> > +    soc {
-> > +      #address-cells = <2>;
-> > +      #size-cells = <2>;
-> > +
-> > +      phy@feda0000 {
-> > +        compatible = "rockchip,rk3588-mipi-dcphy";
-> > +        reg = <0x0 0xfeda0000 0x0 0x10000>;
-> > +        clocks = <&cru PCLK_MIPI_DCPHY0>,
-> > +                 <&cru CLK_USBDPPHY_MIPIDCPPHY_REF>;
-> > +        clock-names = "pclk", "ref";
-> > +        resets = <&cru SRST_M_MIPI_DCPHY0>,
-> > +                 <&cru SRST_P_MIPI_DCPHY0>,
-> > +                 <&cru SRST_P_MIPI_DCPHY0_GRF>,
-> > +                 <&cru SRST_S_MIPI_DCPHY0>;
-> > +        reset-names = "m_phy", "apb", "grf", "s_phy";
-> > +        rockchip,grf = <&mipidcphy0_grf>;
-> > +        #phy-cells = <0>;
-> > +      };
-> > +    };
-> 
-
-
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBOb3YgMjIsIDIwMjQgYXQgMTA6MzM6MTJBTSArMDgwMCwgWml5dWUgWmhhbmcgd3Jv
+dGU6Cj4gRnJvbTogS3Jpc2huYSBjaGFpdGFueWEgY2h1bmRydSA8cXVpY19rcmljaGFpQHF1aWNp
+bmMuY29tPgo+IAo+IEFkZCB0aGUgY29tcGF0aWJsZSBhbmQgdGhlIGRyaXZlciBkYXRhIGZvciBR
+Q1M2MTUgUENJZSBjb250cm9sbGVyLgo+IAo+IFRoZXJlIGlzIG9ubHkgb25lIGNvbnRyb2xsZXIg
+aW5zdGFuY2UgZm91bmQgb24gdGhpcyBwbGF0Zm9ybSwgb3V0IG9mIHdoaWNoCgonb3V0IG9mIHdo
+aWNoJz8geW91IHNhaWQgdGhlcmUgaXMgb25seSBvbmUgaW5zdGFuY2UuCgo+IGlzIEdlbjMgd2l0
+aCBzcGVlZHMgb2YgdXAgdG8gOC4wR1Qvcy4KPiAKPiBUaGUgdmVyc2lvbiBvZiB0aGUgY29udHJv
+bGxlciBpcyAxLjM4LjAgZm9yIGFsbCBpbnN0YW5jZXMsIGJ1dCB0aGV5IGFyZQoKQWdhaW4sIG9u
+bHkgb25lIGluc3RhbmNlLgoKPiBjb21wYXRpYmxlIHdpdGggMS45LjAgY29uZmlnLgo+IAo+IFNp
+Z25lZC1vZmYtYnk6IEtyaXNobmEgY2hhaXRhbnlhIGNodW5kcnUgPHF1aWNfa3JpY2hhaUBxdWlj
+aW5jLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBaaXl1ZSBaaGFuZyA8cXVpY196aXl1emhhbkBxdWlj
+aW5jLmNvbT4KCldpdGggYWJvdmUgZml4ZWQsCgpSZXZpZXdlZC1ieTogTWFuaXZhbm5hbiBTYWRo
+YXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1AbGluYXJvLm9yZz4KCi0gTWFuaQoKPiAtLS0K
+PiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1xY29tLmMgfCAxICsKPiAgMSBmaWxl
+IGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2Nv
+bnRyb2xsZXIvZHdjL3BjaWUtcWNvbS5jIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNp
+ZS1xY29tLmMKPiBpbmRleCBlZjQ0YTgyYmUwNTguLmRhNzIwMGI1NmIxZSAxMDA2NDQKPiAtLS0g
+YS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2llLXFjb20uYwo+ICsrKyBiL2RyaXZlcnMv
+cGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtcWNvbS5jCj4gQEAgLTE4MzAsNiArMTgzMCw3IEBAIHN0
+YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIHFjb21fcGNpZV9tYXRjaFtdID0gewo+ICAJ
+eyAuY29tcGF0aWJsZSA9ICJxY29tLHBjaWUtaXBxODA3NC1nZW4zIiwgLmRhdGEgPSAmY2ZnXzJf
+OV8wIH0sCj4gIAl7IC5jb21wYXRpYmxlID0gInFjb20scGNpZS1tc204OTk2IiwgLmRhdGEgPSAm
+Y2ZnXzJfM18yIH0sCj4gIAl7IC5jb21wYXRpYmxlID0gInFjb20scGNpZS1xY3M0MDQiLCAuZGF0
+YSA9ICZjZmdfMl80XzAgfSwKPiArCXsgLmNvbXBhdGlibGUgPSAicWNvbSxwY2llLXFjczYxNSIs
+IC5kYXRhID0gJmNmZ18xXzlfMCB9LAo+ICAJeyAuY29tcGF0aWJsZSA9ICJxY29tLHBjaWUtc2E4
+NTQwcCIsIC5kYXRhID0gJmNmZ19zYzgyODB4cCB9LAo+ICAJeyAuY29tcGF0aWJsZSA9ICJxY29t
+LHBjaWUtc2E4Nzc1cCIsIC5kYXRhID0gJmNmZ18xXzM0XzB9LAo+ICAJeyAuY29tcGF0aWJsZSA9
+ICJxY29tLHBjaWUtc2M3MjgwIiwgLmRhdGEgPSAmY2ZnXzFfOV8wIH0sCj4gLS0gCj4gMi4zNC4x
+Cj4gCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCu
+ruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
