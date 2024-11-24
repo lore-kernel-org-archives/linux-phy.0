@@ -4,76 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0DBBE6688C
-	for <linux-phy@archiver.kernel.org>; Sat, 23 Nov 2024 22:30:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FC6DE6688D
+	for <linux-phy@archiver.kernel.org>; Sun, 24 Nov 2024 11:40:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RzE7BRd0Q8DPuq5G3ywHE33ZGcnv4IScxEHzZngJ58s=; b=dEfaYuHsvA2fUk
-	bGVBsmvboREfbzhDcNAKIsIVAr9bHDUNZbOB3l4oTW3tILgXx5Q/aXyPxIQ4ZBM9OFvXvmqEqTIKk
-	atFuBvlxhFe+whEHjnMi4sR7kBxszZfI1McNB5Lx5YwIt58EpZMwQiD88Xswsk3+AFz2gNp9WFyPX
-	FxEUXnnXsn+Rjw769EyPX+OJILt0tARlPeZJvusoY6hR0xtAP0H0dT2KTuBXUp/XYq9fSOt2VT64T
-	0UqVusx1c0Grx4jvustMdECXz0kbjQJU8WEspwsrX4lzqQ5WNJqTrFK8oedpSG3DrekOh5IWN7Kap
-	sWL2KzTeZEv4i8vthBWA==;
+	List-Owner; bh=nBucMVHYAISzkqxW7a9MZp54yDeKYNynYgaDGSKDfE4=; b=xKuIGjki9DnN2e
+	gPYAi2Q+7t2ZSASLyvAXZKuG/vvhQ5fEShi8ahxKpovtHreycf3EK59PBh0Dmpu+d5V8V/vQqgPtf
+	qYMgn3DyMAR9GfWseUR55+2dR2yc/DNmpGypkq65KJeMeMGLF9kOQTvu6KEef81QJtEpNrtLqor08
+	LudN+qyffwNBrGQ5mAPE+6tps4LhoJYBfIzriiJUcIrGZ1OIG5EAPwtK5N60Ceod4fp6REbWd5FXY
+	/dh4YGO5wPqeERi4KexDplAu33tgOT//fSnouuxKKMbpqTtAA87E1rT1K3Lz3i8ObqqWnR1XnnVyX
+	HeFKXDVXuxTd7w06d5mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEyeH-00000004yQf-3iS0;
-	Sat, 23 Nov 2024 22:30:41 +0000
-Received: from [52.59.177.22] (helo=smtpbgeu1.qq.com)
+	id 1tFAyP-00000005h4g-1qLU;
+	Sun, 24 Nov 2024 11:40:18 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tEydC-00000004yFJ-44cS;
-	Sat, 23 Nov 2024 22:29:43 +0000
-X-QQ-mid: bizesmtpip4t1732400922t0vaiy3
-X-QQ-Originating-IP: lDJQcHGmgBgcXATVztEHXy/UIVbd5/CbMKaLCYIJt3Y=
-Received: from [IPV6:240f:10b:7440:1:bec2:7020 ( [localhost])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Sun, 24 Nov 2024 06:28:39 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 16923298256935240573
-Message-ID: <7F8BEC114E3AF523+2ad7c5ce-ca20-4ea0-9a37-15b07ad2cbcc@radxa.com>
-Date: Sun, 24 Nov 2024 07:28:38 +0900
+	id 1tFAyL-00000005h46-3ggc;
+	Sun, 24 Nov 2024 11:40:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=J3BQnHmMzJvRzOGoxvKw6fbWVPHb009ceAjCw5kM6Qk=; b=FcQwNb1Nxc86U2alMAKKQijXNV
+	5BVPN2Tp0UqXl5qkKq7DIEA9jHHTZucMj98AqTokHXNRwUyIYA8rM24FF58r/vPu+ZYbRoW2jUbRl
+	h7dyNgeBbYFl5ytnPtVTFb5TOMurDcszoejPbvXlSH3IDz/1rhecHcctN4oSqyJSxx1KQkiHYRabV
+	R3lNBZcleSSsxMWX6EP2N66v1A0ZuQbbPNe5hE9Exqdhe/igS7mIls5fVDaWtfOL7AbPq3EuTaLm6
+	cNM67DvtSyO7z0aytWmPPOYY1Euod7ueersLrJYo2CMRdXIK5kD/BhUcsfPqzXHFMMB78ZsAzpwYl
+	vHoAjocQ==;
+Received: from i5e86190f.versanet.de ([94.134.25.15] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tFAyF-00047c-Or; Sun, 24 Nov 2024 12:40:07 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, quentin.schulz@cherry.de, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Heiko Stuebner <heiko.stuebner@cherry.de>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: Add Rockchip MIPI CSI/DSI PHY schema
+Date: Sun, 24 Nov 2024 12:40:06 +0100
+Message-ID: <8454190.T7Z3S40VBb@diego>
+In-Reply-To: <udad4qf3o7kt45nuz6gxsvsmprh4rnyfxfogopmih6ucznizih@7oj2jrnlfonz>
+References: <20241113221018.62150-1-heiko@sntech.de>
+ <20241113221018.62150-2-heiko@sntech.de>
+ <udad4qf3o7kt45nuz6gxsvsmprh4rnyfxfogopmih6ucznizih@7oj2jrnlfonz>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/2] phy: rockchip: naneng-combphy: fix phy reset
-To: Chukun Pan <amadeus@jmu.edu.cn>, Heiko Stuebner <heiko@sntech.de>
-Cc: Conor Dooley <conor+dt@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Yifeng Zhao <yifeng.zhao@rock-chips.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, Michael Zimmermann <sigmaepsilon92@gmail.com>
-References: <20241122073006.99309-1-amadeus@jmu.edu.cn>
- <20241122073006.99309-2-amadeus@jmu.edu.cn>
-Content-Language: en-US
-From: FUKAUMI Naoki <naoki@radxa.com>
-In-Reply-To: <20241122073006.99309-2-amadeus@jmu.edu.cn>
-X-QQ-SENDSIZE: 520
-Feedback-ID: bizesmtpip:radxa.com:qybglogicsvrgz:qybglogicsvrgz8a-1
-X-QQ-XMAILINFO: M5aCtjAndv5O13Z/VZi4XiKKD5ROoi6OTgPdUTAi8dPJWNIr+tNiTH2l
-	+Qob2Si7IonXxSHU+5BPbgviiuN/mkXXPPYo7ki4sdnRYYVBsOMxufxhv6Z8olgr9s1xCvS
-	Oy840M71xjlTz9X4U58tfrXIVTtgObY4FHaZtV3aBdFI1s+pC7c+Oh4reB/fjN2R9RYWR5B
-	C5YfsYHY9MldaBzUxHQ5u4V7J2elnQmwQ6tVWU9DBUKDgcLCVsARynko1ad99F6+k00/6F7
-	acvk99Dn1KSXZNdfJ/MxD9M4/fwxcxu4pUA8M8q/y6FWsa03MInDbqlL8up3GdDs+6cXwyO
-	dYfzDFJ6MA7XtxD3Fpl5zLgG04jNGKWfN/bbGV+45RUn7jTLHrbs3Fn/44vEZM5R9P85l5p
-	yq3rLqeODJMzOPWW6k85xi7L9UcQpqj0ahrfOPAwmim0ghw91d7drRTQRT/fiQwdO2pslve
-	YHafR7oRhqsXwwyvTicaptHc2zPtzxjXuvUV2c+ZbiMQYs76IbQYpOqUXAYa/lZlKrzfYSb
-	Ru5gt8DCFgdlJ4lM66NUKvJBtJhGmWmHOztRmydej/y0sYL+QbEsksYVHWx+rFnXAiPjmlP
-	SiRgb+3eXfVlwT3myizobfMIpScIXdK3zAEbLy/I4SQB8MklLT4zYurKgn7Y5OywmVvg0H2
-	qC1Eg1r0hq/LLPb7jrGRSJ5HWg6wNDhck4yIn2GN8XNGHmAZmEjBzl6OvCwSDg3Sm0U6vcL
-	uHIPheMOH4abOzoOPqRfuUnbDN0MZGlQS+L+XVP51882+r6zENgeYwlSFavs0X7dAwP/GUD
-	uSboF4as5mwdCaFNmo4Vf+nVj/Ma/qXBzEO1ohWe3aPN3Ovvjn4RnRLrckuDTEx45NeV8kS
-	kAoNgejVSHxRkKiCKPt1TgIRugLfS1Zm
-X-QQ-XMRINFO: MSVp+SPm3vtS1Vd6Y4Mggwc=
-X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241123_142935_498933_3F0ED102 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20241124_034013_978970_55FADEFB 
+X-CRM114-Status: GOOD (  30.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,54 +73,161 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 11/22/24 16:30, Chukun Pan wrote:
-> Currently, the USB port via combophy on the RK3528/RK3588 SoC is broken.
+Am Freitag, 22. November 2024, 19:49:20 CET schrieb Sebastian Reichel:
+> Hi,
 > 
->    usb usb8-port1: Cannot enable. Maybe the USB cable is bad?
+> On Wed, Nov 13, 2024 at 11:10:17PM +0100, Heiko Stuebner wrote:
+> > From: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > 
+> > Add dt-binding schema for the MIPI CSI/DSI PHY found on
+> > Rockchip RK3588 SoCs.
+> > 
+> > Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> > Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > ---
+> >  .../phy/rockchip,rk3588-mipi-dcphy.yaml       | 82 +++++++++++++++++++
+> >  1 file changed, 82 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> > new file mode 100644
+> > index 000000000000..5ee8d7246fa0
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+> > @@ -0,0 +1,82 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/rockchip,rk3588-mipi-dcphy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Rockchip MIPI CSI/DSI PHY with Samsung IP block
+> > +
+> > +maintainers:
+> > +  - Guochun Huang <hero.huang@rock-chips.com>
+> > +  - Heiko Stuebner <heiko@sntech.de>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - rockchip,rk3576-mipi-dcphy
+> > +      - rockchip,rk3588-mipi-dcphy
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  "#phy-cells":
+> > +    const: 0
 > 
-> This is due to the combphy of RK3528/RK3588 SoC has multiple resets, but
-> only "phy resets" need assert and deassert, "apb resets" don't need.
-> So change the driver to only match the phy resets, which is also what
-> the vendor kernel does.
+> I would expect an argument to select between D-PHY and C-PHY mode,
+> so that the binding is ready for it even when the driver does not
+> yet support it. E.g. something like
 > 
-> Fixes: 7160820d742a ("phy: rockchip: add naneng combo phy for RK3568")
-> Cc: FUKAUMI Naoki <naoki@radxa.com>
-> Cc: Michael Zimmermann <sigmaepsilon92@gmail.com>
-> Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
-> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-
-Tested-by: FUKAUMI Naoki <naoki@radxa.com>
-
-Best regards,
-
---
-FUKAUMI Naoki
-Radxa Computer (Shenzhen) Co., Ltd.
-
-> ---
->   drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>   '#phy-cells':
+>     const: 1
+>     description: |
+>       Supported modes are:
+>         - PHY_TYPE_DPHY
+>         - PHY_TYPE_CPHY
+>       See include/dt-bindings/phy/phy.h for constants.
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> index 0a9989e41237..2eb3329ca23f 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> @@ -309,7 +309,7 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
->   
->   	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
->   
-> -	priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
-> +	priv->phy_rst = devm_reset_control_get(dev, "phy");
->   	if (IS_ERR(priv->phy_rst))
->   		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
->   
+> This would match how it works for the naneng Combo PHY to switch
+> between PCIe/SATA/USB3. Also Mediatek CSI DC-PHY handles it that
+> way upstream (with just D-PHY being supported). I see that the
+> driver stack you send upstream expects, that the PHY user (e.g.
+> the DSI controller) instead manually calls phy_set_mode(phy, <mode>).
+> To me it seems more sensible to just get this automaically from DT.
+
+The mode-selection for the phy is definitly tied to the hardware-design.
+Depending on how the board is designed, it'll always do either D-PHY
+or C-PHY mode.
+
+I guess it mostly just feels strange when so far the parameter was
+used to identify say an individual clock from the clock controller.
+
+But reading the Medietek discussion (up to [0]) it looks like that is
+a nice way to do this, so I'll adapt things in the next version.
+
+
+Heiko
+
+
+[0] https://lore.kernel.org/all/20230608200552.GA3303349-robh@kernel.org/
+
+
+> Otherwise the whole series LGTM.
+> 
+> Greetings,
+> 
+> -- Sebastian
+> 
+> > +  clocks:
+> > +    maxItems: 2
+> > +
+> > +  clock-names:
+> > +    items:
+> > +      - const: pclk
+> > +      - const: ref
+> > +
+> > +  resets:
+> > +    maxItems: 4
+> > +
+> > +  reset-names:
+> > +    items:
+> > +      - const: m_phy
+> > +      - const: apb
+> > +      - const: grf
+> > +      - const: s_phy
+> > +
+> > +  rockchip,grf:
+> > +    $ref: /schemas/types.yaml#/definitions/phandle
+> > +    description:
+> > +      Phandle to the syscon managing the 'mipi dcphy general register files'.
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +  - clocks
+> > +  - clock-names
+> > +  - resets
+> > +  - reset-names
+> > +  - "#phy-cells"
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/clock/rockchip,rk3588-cru.h>
+> > +    #include <dt-bindings/reset/rockchip,rk3588-cru.h>
+> > +
+> > +    soc {
+> > +      #address-cells = <2>;
+> > +      #size-cells = <2>;
+> > +
+> > +      phy@feda0000 {
+> > +        compatible = "rockchip,rk3588-mipi-dcphy";
+> > +        reg = <0x0 0xfeda0000 0x0 0x10000>;
+> > +        clocks = <&cru PCLK_MIPI_DCPHY0>,
+> > +                 <&cru CLK_USBDPPHY_MIPIDCPPHY_REF>;
+> > +        clock-names = "pclk", "ref";
+> > +        resets = <&cru SRST_M_MIPI_DCPHY0>,
+> > +                 <&cru SRST_P_MIPI_DCPHY0>,
+> > +                 <&cru SRST_P_MIPI_DCPHY0_GRF>,
+> > +                 <&cru SRST_S_MIPI_DCPHY0>;
+> > +        reset-names = "m_phy", "apb", "grf", "s_phy";
+> > +        rockchip,grf = <&mipidcphy0_grf>;
+> > +        #phy-cells = <0>;
+> > +      };
+> > +    };
+> 
+
+
+
 
 
 -- 
