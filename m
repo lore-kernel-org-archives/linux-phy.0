@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6411BD59D93
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 09:21:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E97FD58D62
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 09:21:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0/7vIuB8Us2vy2aS4Isu9bc0bsElEwtkSeDYYG5k0Gw=; b=QXqCYykb9eMdN4
-	yzjPy2wpH7x5ai2TT3VBBO72l+ydCSq9n0jimPjXi6/AQdFHUvDTNBBqkKWSuiGQf2Wka7S/hmSTy
-	EOtN78wQRkEMHhWc6pE9cPOiaoppUN2hwgFD4fNigjDSXpoZg3S8lEJROVyGLYNj4FGwm+dUODARv
-	IPgIQ1rHyn/0RHr7FKmAHML5Tv0P6oxO9SfnNW44tQv6LbOaF1VgsBpaII1gzeggsrE087h9wb49i
-	Z2W8AjUBYtzlm7aSn0UHokqAu0k6PaIZUpdAR7Q4M+iePYDO+6peBT+lBpz3SLq/sOxSESFc1zULQ
-	7R3yYg6bU+Jrf8pOaFDg==;
+	List-Owner; bh=Cy8knLtwEJj2fjT3zzsOP3zRDnVzbKzdcgvK0S0E4qc=; b=mjCC1djIkx+oz+
+	6bhOxNLfEcP9K87s1qr8kNJYXSfOY9RnXNPHwhEnEx6ykWiZ7Ihnj0X4u8zYbfAyc5h7JiYBvR8Am
+	z7GBC4dMkMi95DvTYm1tP0XloxrmbDi0A40pS18LeYUd5o2ibUZBEqvUR4UCu25Rtm3GR9BSC7lSf
+	sM4nuihHgHYr7QpRG9Qk+yMpugo8U8OuDn84X5kEri4XB59sANN8vaqS/eRr+xrxhcPOPpbBILGg9
+	2SAG7L37UcwesxS50x3NOhkdiVg+OCCR7dfQTk+/2S43DHII1wT7FAuiz+08wiqO6dK0Kc3fHN9xW
+	3QsVVEGDcETIDpM2rSHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrlG-0000000A7MQ-42ks;
-	Tue, 26 Nov 2024 09:21:34 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1tFrlI-0000000A7Os-3vIT;
+	Tue, 26 Nov 2024 09:21:36 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrl6-0000000A7BY-2QKt
+	id 1tFrl9-0000000A7CT-2uAD
 	for linux-phy@lists.infradead.org;
-	Tue, 26 Nov 2024 09:21:26 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-434a83c6b01so927575e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 26 Nov 2024 01:21:24 -0800 (PST)
+	Tue, 26 Nov 2024 09:21:29 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4349e1467fbso17704385e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 26 Nov 2024 01:21:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1732612883; x=1733217683; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1732612886; x=1733217686; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=GaBexvzYFyRAvmFf5CNX0T/OFU5Y8NOKhiyYn5h/HqM=;
-        b=OiWKCVIBa0JUX7RhwZnA6HDeFV2GlMwkiMC++gN6Ltbw2durLuN18vVQWHKIe08R1Y
-         mri6ipdzZeZY1GSKzZBWnEtP4n7SOt15KNZyb2ip9VXiPvOSN4fbCKU3jcer5k+2GIr9
-         CnpEjXbD5nxIs7R1vSKFBuP9Y96KerJ4QTn6y4W1YRJ3rQsoDo0+AGNwv+6OCIQhau5r
-         VfECySspxMpUl8EILouj8OcWg2+y80CiRwL0moAExiysE3cKOc148znRbuhaxU6Bm4Io
-         0cbq21WM1Nde9uruPzjP1nzGntLn5v5VBEXxepw6KSN64rvfV876n1G05ND+8AD2DyTh
-         36nw==
+        bh=E4M5g4cOSJdZAIQtrKw1Bn/YMzw7ikJ/cpvkoOSwCx8=;
+        b=PyNrQQTmQAerhYO+YNm4NGDsXHU/OGUomVhBl8QP/ly7SDSGjyivg/ApWu8o08+drZ
+         BmyO4AKj0Hunx0p901hT3eB3g1jlqoxPD8A8kXKilT3eVXr9yjWTO8O+CxX6Yk8hRDGV
+         Johyk68BnEcA1G4qYFsgupTlVWu5ud8wC23hxJHXrAvQ0IvFSGY/Q1/DSKY6uKhVEcaA
+         Yyzfgq/wah8B1jxRzBHENDJaJ4htfF22aqr8zWyAyuNrknvtzlE0QthBM3trcOa7DuOV
+         4CATFjm7vHLX2GDJi9QAKXtPLtoehYHH2phvh6EatIBExsrf49DPC4HX4Ulx68LHVHja
+         P0MQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732612883; x=1733217683;
+        d=1e100.net; s=20230601; t=1732612886; x=1733217686;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=GaBexvzYFyRAvmFf5CNX0T/OFU5Y8NOKhiyYn5h/HqM=;
-        b=sMUjE/zevkAo3XN4kUEiRSFOkzR+TmDm1ONWlWMrEpioox7aNdMfaICITHO8+Ofvad
-         wzZ6OFZTEJPkJY5kHFu/RuSlqyB79HJO+9ms4RdHddQXxzh0ISJ0YixMccPF3UGk07FR
-         fin12xy0c7Kf0nQA2Pw1FpgUSW7b2YeBhquEcmQ1yv2plYXPlH74ZyKxyu4qdvatZ8BK
-         z0mpqhkF1x2gcUzzcta+9rnYlX6YzJIqTZ84k09yPHCJy9Im3FcSeEbsSammALiE0nLf
-         2Q5K8jOgOKZEceUkt5fhXoArDGerABhL2Lpr8G5+ePDqmmOFPN/ca+WntnwZL6/tOzD5
-         jsVw==
-X-Gm-Message-State: AOJu0YwEOHJ0viU/PrnxkxlYYsLQ3+uEKNBZi3a7nz+rl8h/WkWfP6aY
-	yoko5Yv/aAzA4iGkxLs8GIulH8mjYWpQlmcK3O/2pot+Gc0fsGm0IPmTmj1/r0Q=
-X-Gm-Gg: ASbGncvDmmcbT/x0+FAeapauiVeIL//GLbBGgYS16tyN2E9sB1TedCeHCslXRGOefh0
-	BH3oeiCSkne8CWKuzO9KJKI4EQlA1FLB5egt4SlYCTDemElfxRXlOZMYC6sk+ATJhwoxS/EnNnA
-	WoqJVTIbnXVERtBhZjZ5NmXiYxjWzrSZb5gx55dFyq45QhVt1YNQUIAb8lHPn5X3Xu0E8T5D0NB
-	4PG23Rs7Czd51F5Dn1bjP6+g/dEov7KxjVLGJMvgxfukyWyfGVVS2ahpuNjLluUUpNsXesLrVK5
-	UrE=
-X-Google-Smtp-Source: AGHT+IGx29P8JteJsbR7aMf1tNqIx4rHFyFlQRbqnmSPeJkN3FtdMhddq6elNPOMjEa7BoKccqaeCw==
-X-Received: by 2002:a05:6000:1f8c:b0:382:4378:462a with SMTP id ffacd0b85a97d-38260b759c0mr13201703f8f.24.1732612882831;
-        Tue, 26 Nov 2024 01:21:22 -0800 (PST)
+        bh=E4M5g4cOSJdZAIQtrKw1Bn/YMzw7ikJ/cpvkoOSwCx8=;
+        b=WPiwZualX2DF6xemBGSVyuH8/yXBB8GvPyliUN3xUAIsOqUGKnrrHZuHfjZj6+ui5O
+         mgAMj020FqorJI1tzAQpbWKLgEIozDI54NcrsIjC2bBoIBo37V9mgKnnmOQ2GTYCbSmN
+         D0avKWN+hphvjc7yCoVbffIO0KQ6nPnqveXBCR+0/LSaRwTWW5mkkqSaWE776UsHqDOg
+         aGUei1mEO3TbwxU1ZQazsGH8/NcdwXJ6+LiRc/VojfEniPyYs5Oqlz7UAUCOMRSqf55I
+         2zgsULrZZ9OQzf9+Fu3FmjI5SXF/ngemAAEI4QtRYrtN5SWCpN1vLnp8He2aTsOQS6Dz
+         nPnw==
+X-Gm-Message-State: AOJu0YwOur5y3HdcWlmI9bv5EGJoIvN0rz9dhAc/WjtbjtTqcFXGq0Rz
+	46ZT5+AhfXa0j+DkiKsrVVDNYsaE8G6WhLCYlfBcY/PPgRGoKHvRMuBy/hoGCjs=
+X-Gm-Gg: ASbGnctx+5iWXLJm86I2kMT+DaIXRmVv07kquBqzpKcW97S0RAicqXBDaRBNle7tzXo
+	vAywBhYDgMc+dWOS3iD9tYkI4RhdK7/e+p4nON+OphB0KiujgNr1I4PdnGTYumd8VrCM5a80ZyE
+	TKgnQ6GrEDyCr8SVv78XtwxJ2zenw8VeQQ4jK02z9JZRhvuZy76kwSEXhp2uiZf6fm5qNlakmOF
+	6ILZdTANqMMfALaLC7UdiFhcoH8dFq60WCydb/LtvIBfpo7T+HOQ+ZUp4OrGrFhruxd3TTeN8tt
+	xRM=
+X-Google-Smtp-Source: AGHT+IFFCuS7xBS3otNkuGr2IzoMyH/CTvsuJMT+O34OiuKVD91ks7D0BrVopsaLaBF4QZUasDuXXQ==
+X-Received: by 2002:a05:6000:18ac:b0:37c:d1bc:2666 with SMTP id ffacd0b85a97d-38260b502dcmr12951812f8f.4.1732612885919;
+        Tue, 26 Nov 2024 01:21:25 -0800 (PST)
 Received: from claudiu-X670E-Pro-RS.. ([82.78.167.28])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3825fbc3a47sm13027694f8f.73.2024.11.26.01.21.21
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3825fbc3a47sm13027694f8f.73.2024.11.26.01.21.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 26 Nov 2024 01:21:22 -0800 (PST)
+        Tue, 26 Nov 2024 01:21:25 -0800 (PST)
 From: Claudiu <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
 To: vkoul@kernel.org,
@@ -87,16 +87,17 @@ Cc: linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
 	claudiu.beznea@tuxon.dev,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v2 10/15] phy: renesas: rcar-gen3-usb2: Add support for PWRRDY
-Date: Tue, 26 Nov 2024 11:20:45 +0200
-Message-Id: <20241126092050.1825607-11-claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v2 12/15] arm64: dts: renesas: Add #renesas,sysc-signal-cells to system controller node
+Date: Tue, 26 Nov 2024 11:20:47 +0200
+Message-Id: <20241126092050.1825607-13-claudiu.beznea.uj@bp.renesas.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
 References: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_012124_622894_A390F3E1 
-X-CRM114-Status: GOOD (  20.40  )
+X-CRM114-CacheID: sfid-20241126_012127_728563_298A6C2B 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,19 +116,10 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-On the Renesas RZ/G3S SoC, the USB PHY has an input signal called PWRRDY.
-This signal is managed by the system controller and must be de-asserted
-after powering on the area where USB PHY resides and asserted before
-powering it off.
-
-The connection b/w the system controller and the USB PHY is implemented
-through the renesas,sysc-signal device tree property. This property
-specifies the register offset and the bitmask required to control the
-signal. The system controller exports the syscon regmap, and the read/write
-access to the memory area of the PWRRDY signal is reference-counted, as the
-same system controller signal is connected to both RZ/G3S USB PHYs.
-
-Add support for the PWRRDY signal control.
+The system controller on RZ/G3S can provide control access to its signals.
+To enable this, add the #renesas,sysc-signal-cells DT property. Consumers
+can use the renesas,sysc-signal DT property to reference the specific SYSC
+signal that needs to be controlled.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
@@ -136,134 +128,90 @@ Changes in v2:
 - none; this patch is new
 
 
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 66 ++++++++++++++++++++++++
- 1 file changed, 66 insertions(+)
+ arch/arm64/boot/dts/renesas/r9a07g043.dtsi | 3 ++-
+ arch/arm64/boot/dts/renesas/r9a07g044.dtsi | 3 ++-
+ arch/arm64/boot/dts/renesas/r9a07g054.dtsi | 3 ++-
+ arch/arm64/boot/dts/renesas/r9a08g045.dtsi | 3 ++-
+ 4 files changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index 59f74aa993ac..84459755adf5 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -12,12 +12,14 @@
- #include <linux/extcon-provider.h>
- #include <linux/interrupt.h>
- #include <linux/io.h>
-+#include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/mutex.h>
- #include <linux/of.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
-+#include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <linux/reset.h>
- #include <linux/string.h>
-@@ -111,6 +113,12 @@ struct rcar_gen3_phy {
- 	bool powered;
- };
+diff --git a/arch/arm64/boot/dts/renesas/r9a07g043.dtsi b/arch/arm64/boot/dts/renesas/r9a07g043.dtsi
+index 593c66b27ad1..2ebb951e6a39 100644
+--- a/arch/arm64/boot/dts/renesas/r9a07g043.dtsi
++++ b/arch/arm64/boot/dts/renesas/r9a07g043.dtsi
+@@ -585,8 +585,9 @@ cpg: clock-controller@11010000 {
+ 		};
  
-+struct rcar_gen3_pwrrdy {
-+	struct regmap *regmap;
-+	u32 offset;
-+	u32 mask;
-+};
-+
- struct rcar_gen3_chan {
- 	void __iomem *base;
- 	struct device *dev;	/* platform_device's device */
-@@ -118,6 +126,7 @@ struct rcar_gen3_chan {
- 	struct rcar_gen3_phy rphys[NUM_OF_PHYS];
- 	struct regulator *vbus;
- 	struct reset_control *rstc;
-+	struct rcar_gen3_pwrrdy *pwrrdy;
- 	struct work_struct work;
- 	struct mutex lock;	/* protects rphys[...].powered */
- 	enum usb_dr_mode dr_mode;
-@@ -133,6 +142,7 @@ struct rcar_gen3_phy_drv_data {
- 	const struct phy_ops *phy_usb2_ops;
- 	bool no_adp_ctrl;
- 	bool init_bus;
-+	bool pwrrdy;
- };
+ 		sysc: system-controller@11020000 {
+-			compatible = "renesas,r9a07g043-sysc";
++			compatible = "renesas,r9a07g043-sysc", "syscon";
+ 			reg = <0 0x11020000 0 0x10000>;
++			#renesas,sysc-signal-cells = <2>;
+ 			status = "disabled";
+ 		};
  
- /*
-@@ -587,6 +597,7 @@ static const struct rcar_gen3_phy_drv_data rz_g3s_phy_usb2_data = {
- 	.phy_usb2_ops = &rcar_gen3_phy_usb2_ops,
- 	.no_adp_ctrl = true,
- 	.init_bus = true,
-+	.pwrrdy = true,
- };
+diff --git a/arch/arm64/boot/dts/renesas/r9a07g044.dtsi b/arch/arm64/boot/dts/renesas/r9a07g044.dtsi
+index 6b1c77cd8261..9dd229cbf288 100644
+--- a/arch/arm64/boot/dts/renesas/r9a07g044.dtsi
++++ b/arch/arm64/boot/dts/renesas/r9a07g044.dtsi
+@@ -877,7 +877,7 @@ cpg: clock-controller@11010000 {
+ 		};
  
- static const struct of_device_id rcar_gen3_phy_usb2_match_table[] = {
-@@ -707,6 +718,55 @@ static int rcar_gen3_phy_usb2_init_bus(struct rcar_gen3_chan *channel)
- 	return ret;
- }
+ 		sysc: system-controller@11020000 {
+-			compatible = "renesas,r9a07g044-sysc";
++			compatible = "renesas,r9a07g044-sysc", "syscon";
+ 			reg = <0 0x11020000 0 0x10000>;
+ 			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>,
+@@ -885,6 +885,7 @@ sysc: system-controller@11020000 {
+ 				     <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupt-names = "lpm_int", "ca55stbydone_int",
+ 					  "cm33stbyr_int", "ca55_deny";
++			#renesas,sysc-signal-cells = <2>;
+ 			status = "disabled";
+ 		};
  
-+static void rcar_gen3_phy_usb2_set_pwrrdy(struct rcar_gen3_chan *channel, bool power_on)
-+{
-+	struct rcar_gen3_pwrrdy *pwrrdy = channel->pwrrdy;
-+
-+	/* N/A on this platform. */
-+	if (!pwrrdy)
-+		return;
-+
-+	regmap_update_bits(pwrrdy->regmap, pwrrdy->offset, pwrrdy->mask, !power_on);
-+}
-+
-+static void rcar_gen3_phy_usb2_pwrrdy_off(void *data)
-+{
-+	rcar_gen3_phy_usb2_set_pwrrdy(data, false);
-+}
-+
-+static int rcar_gen3_phy_usb2_init_pwrrdy(struct rcar_gen3_chan *channel)
-+{
-+	struct device *dev = channel->dev;
-+	struct rcar_gen3_pwrrdy *pwrrdy;
-+	struct of_phandle_args args;
-+	int ret;
-+
-+	pwrrdy = devm_kzalloc(dev, sizeof(*pwrrdy), GFP_KERNEL);
-+	if (!pwrrdy)
-+		return -ENOMEM;
-+
-+	ret = of_parse_phandle_with_args(dev->of_node, "renesas,sysc-signal",
-+					 "#renesas,sysc-signal-cells", 0, &args);
-+	if (ret)
-+		return ret;
-+
-+	pwrrdy->regmap = syscon_node_to_regmap(args.np);
-+	pwrrdy->offset = args.args[0];
-+	pwrrdy->mask = args.args[1];
-+
-+	of_node_put(args.np);
-+
-+	if (IS_ERR(pwrrdy->regmap))
-+		return PTR_ERR(pwrrdy->regmap);
-+
-+	channel->pwrrdy = pwrrdy;
-+
-+	/* Power it ON. */
-+	rcar_gen3_phy_usb2_set_pwrrdy(channel, true);
-+
-+	return devm_add_action_or_reset(dev, rcar_gen3_phy_usb2_pwrrdy_off, channel);
-+}
-+
- static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- {
- 	const struct rcar_gen3_phy_drv_data *phy_data;
-@@ -763,6 +823,12 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, channel);
- 	channel->dev = dev;
+diff --git a/arch/arm64/boot/dts/renesas/r9a07g054.dtsi b/arch/arm64/boot/dts/renesas/r9a07g054.dtsi
+index 01f59914dd09..31550b8c3143 100644
+--- a/arch/arm64/boot/dts/renesas/r9a07g054.dtsi
++++ b/arch/arm64/boot/dts/renesas/r9a07g054.dtsi
+@@ -884,7 +884,7 @@ cpg: clock-controller@11010000 {
+ 		};
  
-+	if (phy_data->pwrrdy) {
-+		ret = rcar_gen3_phy_usb2_init_pwrrdy(channel);
-+		if (ret)
-+			goto error;
-+	}
-+
- 	if (phy_data->init_bus) {
- 		ret = rcar_gen3_phy_usb2_init_bus(channel);
- 		if (ret)
+ 		sysc: system-controller@11020000 {
+-			compatible = "renesas,r9a07g054-sysc";
++			compatible = "renesas,r9a07g054-sysc", "syscon";
+ 			reg = <0 0x11020000 0 0x10000>;
+ 			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>,
+@@ -892,6 +892,7 @@ sysc: system-controller@11020000 {
+ 				     <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupt-names = "lpm_int", "ca55stbydone_int",
+ 					  "cm33stbyr_int", "ca55_deny";
++			#renesas,sysc-signal-cells = <2>;
+ 			status = "disabled";
+ 		};
+ 
+diff --git a/arch/arm64/boot/dts/renesas/r9a08g045.dtsi b/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
+index be8a0a768c65..169561386f35 100644
+--- a/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
++++ b/arch/arm64/boot/dts/renesas/r9a08g045.dtsi
+@@ -198,7 +198,7 @@ cpg: clock-controller@11010000 {
+ 		};
+ 
+ 		sysc: system-controller@11020000 {
+-			compatible = "renesas,r9a08g045-sysc";
++			compatible = "renesas,r9a08g045-sysc", "syscon";
+ 			reg = <0 0x11020000 0 0x10000>;
+ 			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>,
+ 				     <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
+@@ -206,6 +206,7 @@ sysc: system-controller@11020000 {
+ 				     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+ 			interrupt-names = "lpm_int", "ca55stbydone_int",
+ 					  "cm33stbyr_int", "ca55_deny";
++			#renesas,sysc-signal-cells = <2>;
+ 			status = "disabled";
+ 		};
+ 
 -- 
 2.39.2
 
