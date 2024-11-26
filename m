@@ -4,67 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C02BAD3B7C1
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 08:44:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DADAD5A6FD
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 08:53:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y1LjfUsamUx1vQgAesBv2e5uWBLAV58s1rENS8PTgTc=; b=c0S0ksazAOZgAl/72h71D3jPHC
-	CkHz+bxi7R+ZQbALn+Z/Z7hkQeoFak/FFrf1RjUtsJa0zWC2pIx7zBOLCxAUWxP3zSxwa2bWJB7Sr
-	xF/Aohd0BiGzBekkwx48PGf0oLbtaBsgY8iWekEenxXPTVoeS/UjccKHyZfLAXx1LVu8ld1/kbMtl
-	+9h8fG4je9b+8QldSEKFbrJFVLklyLTvXvSh2M5SX6QyKUohrh2gmhRRSP73xwsBRj2sFoHkSxiy9
-	S89e9qIuuoXnXim5uaWrwVEqmyPV1ap90bzDwtlD5XYE8uSvkQFdL8xzhfb7ZUL6yvHIAh5CxhXZO
-	gw7UBcfQ==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ctIaP/bx9VbaKI0mO5xvUIHDdwhAxvZU7AOXPIuE6Ro=; b=CQsT2mzWjg0AXm
+	1MgFLxKQxkhMI5wFOBHJeBBOxcWSMOWoB+8hNcheZXntA6woBLnu72uL8xX0NwKFrk/I9E1mWU8Hi
+	3UCfzy/JeTr42opw+PyPJwlK5TfeXxYrl62J6OHiO8NfP6nHKFkXIpre8syEOseQJFfRjXG4PcYqb
+	lkTT7BA3stxIbMrEQ6xcwMt49T5XGfhJCx1B9Mh+EAOPXw9Uh9ekbah77lyHy0TOoGkajIViMhClS
+	ssHJ+D4FdMyJ+KIFuCAD/plLX/sdccNXHeOrI1lj1EvaWeYYB+hH5tlmWpYntu4g8OlZYAJDBsJX+
+	EiEo3piYEoG9+Y9qop4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrBF-00000009zUG-3bk6;
-	Tue, 26 Nov 2024 08:44:21 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tFrJe-0000000A0Yx-0oFi;
+	Tue, 26 Nov 2024 08:53:02 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrAG-00000009zGD-3naM;
-	Tue, 26 Nov 2024 08:43:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B7AFC5C5D15;
-	Tue, 26 Nov 2024 08:42:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5ADDDC4CECF;
-	Tue, 26 Nov 2024 08:43:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732610599;
-	bh=KO4QChkeXAG6Ye9voL0kF1b9b0iezByykeh0B91eWOU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LysdB1sjC85kARHi4P1uA6mphsyY2WNeU6Uoxlf4hYuWmaSplc0EO98GwvqXyuGtj
-	 eC67M2vKoBHT0dpJxsNGcS0A87DyoJOWyZ1PUfXZhYL0J82fETMOmOlOT5+9iFh75F
-	 G43EGLPROxWeYcr2AXeve0GXF3zj4UdtjYPFQVkpd1yTceukMTw5xY91uef8jFiEua
-	 0u3ARhK5hIugNZ0UiPnvbhYm/ZxOMmZ7CQm3urOdgFDnaFK0cxWD9jyaM4S9gsTk4P
-	 Mm1fbOdhSW3QDg3zZcP8RpjamEowa7SlewSs+efHysJ/fvyV1o7iEVn1iGlgGTvP8L
-	 ZwuS+fw6CB1+g==
-Date: Tue, 26 Nov 2024 09:43:17 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Liu Ying <victor.liu@nxp.com>
-Cc: Francesco Dolcini <francesco@dolcini.it>, 
-	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, imx@lists.linux.dev, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	p.zabel@pengutronix.de, maarten.lankhorst@linux.intel.com, tzimmermann@suse.de, 
-	airlied@gmail.com, simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
-	kernel@pengutronix.de, festevam@gmail.com, glx@linutronix.de, vkoul@kernel.org, 
-	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org, frank.li@nxp.com, 
-	dmitry.baryshkov@linaro.org
-Subject: Re: [DO NOT MERGE PATCH v4 16/19] arm64: dts: imx8qxp: Add display
- controller subsystem
-Message-ID: <20241126-overjoyed-futuristic-saluki-cb6cc7@houat>
-References: <20241125093316.2357162-1-victor.liu@nxp.com>
- <20241125093316.2357162-17-victor.liu@nxp.com>
- <Z0RXCYZ_7fBvpcvd@gaggiata.pivistrello.it>
- <d004dfe7-d019-4f53-8373-c8c4e031748c@nxp.com>
+	id 1tFrIg-0000000A0NK-0F5n;
+	Tue, 26 Nov 2024 08:52:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1732611120;
+	bh=ZNiXeKu3VMMs+mJ7Uwi6rVoXAummZLmskjT7q9ZCRRY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=UgSfkvuohiJ/eL0XEasFCiJVAiiPRbwOzbGyu6aUkpF5x2Hlo46RU8rF8X8wbUAMd
+	 bAorUi1ky8OaHMZZ3WmJ/m6Zqx4KN3jDhE5d1dhRzEbtvSD0grHRlCh8z40IINJ/KF
+	 0jMu4emeu5GM/bVZA38Xk2Hg6Y/0e/uxtvrcObaLdHs+H2CVDH5dHT5Hruk30HDQcZ
+	 Ml4w9+BDleTqVxnxP5y0fCd8m428B+sbgLoA1omHdCG6v9nNP5K1S5tvuaEYWJyoV2
+	 OPU4RHrISvl6sgIA79t6xor1PO+XzW6YOV7nuEmlEJy8uqIYWObBJQ6A80kWEsHZkY
+	 Th/0Kia2KLO3Q==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id EB63117E1366;
+	Tue, 26 Nov 2024 09:51:59 +0100 (CET)
+Message-ID: <4901ecf5-8cd1-4d82-a240-f56794f46429@collabora.com>
+Date: Tue, 26 Nov 2024 09:51:59 +0100
 MIME-Version: 1.0
-In-Reply-To: <d004dfe7-d019-4f53-8373-c8c4e031748c@nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add property to set
+ disconnect threshold
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20241126025859.29923-1-chunfeng.yun@mediatek.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20241126025859.29923-1-chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_004321_030920_12EF1608 
-X-CRM114-Status: GOOD (  15.56  )
+X-CRM114-CacheID: sfid-20241126_005202_244313_98B21275 
+X-CRM114-Status: GOOD (  12.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,102 +74,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8650149749756577838=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Il 26/11/24 03:58, Chunfeng Yun ha scritto:
+> Add a property to tune usb2 phy's disconnect threshold.
+> And add a compatible for mt8196.
+> 
 
---===============8650149749756577838==
-Content-Type: multipart/signed; micalg=pgp-sha384;
-	protocol="application/pgp-signature"; boundary="fgeuvrs34ws7krrf"
-Content-Disposition: inline
+Is this a board-specific property? If so, can you please describe the reason?
 
+Thanks,
+Angelo
 
---fgeuvrs34ws7krrf
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [DO NOT MERGE PATCH v4 16/19] arm64: dts: imx8qxp: Add display
- controller subsystem
-MIME-Version: 1.0
-
-On Tue, Nov 26, 2024 at 10:08:26AM +0800, Liu Ying wrote:
-> On 11/25/2024, Francesco Dolcini wrote:
-> > On Mon, Nov 25, 2024 at 05:33:13PM +0800, Liu Ying wrote:
-> >> Add display controller subsystem in i.MX8qxp SoC.
-> >>
-> >> Signed-off-by: Liu Ying <victor.liu@nxp.com>
-> >=20
-> > ...
-> >=20
-> >> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/b=
-oot/dts/freescale/imx8qxp.dtsi
-> >> index 05138326f0a5..35cc82cbbcd1 100644
-> >> --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> >> +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> >> @@ -20,6 +20,27 @@ / {
-> >>  	#size-cells =3D <2>;
-> >> =20
-> >>  	aliases {
-> >> +		dc0 =3D &dc0;
-> >> +		dc0-constframe0 =3D &dc0_constframe0;
-> >> +		dc0-constframe1 =3D &dc0_constframe1;
-> >> +		dc0-constframe4 =3D &dc0_constframe4;
-> >> +		dc0-constframe5 =3D &dc0_constframe5;
-> >> +		dc0-display-engine0 =3D &dc0_display_engine0;
-> >> +		dc0-display-engine1 =3D &dc0_display_engine1;
-> >> +		dc0-extdst0 =3D &dc0_extdst0;
-> >> +		dc0-extdst1 =3D &dc0_extdst1;
-> >> +		dc0-extdst4 =3D &dc0_extdst4;
-> >> +		dc0-extdst5 =3D &dc0_extdst5;
-> >> +		dc0-fetchlayer0 =3D &dc0_fetchlayer0;
-> >> +		dc0-fetchwarp2 =3D &dc0_fetchwarp2;
-> >> +		dc0-framegen0 =3D &dc0_framegen0;
-> >> +		dc0-framegen1 =3D &dc0_framegen1;
-> >> +		dc0-layerblend0 =3D &dc0_layerblend0;
-> >> +		dc0-layerblend1 =3D &dc0_layerblend1;
-> >> +		dc0-layerblend2 =3D &dc0_layerblend2;
-> >> +		dc0-layerblend3 =3D &dc0_layerblend3;
-> >> +		dc0-tcon0 =3D &dc0_tcon0;
-> >> +		dc0-tcon1 =3D &dc0_tcon1;
-> >=20
-> > what would you use those aliases for?
->=20
-> They are used to get the instance numbers of display controller
-> and display controller's internal processing units from display
-> driver, e.g., patch 9 & 10 get instance numbers of some display
-> controller's internal processing units.
-
-AFAIK, it's not listed anywhere in your bindings. Did you get an
-acked-by from a DT maintainer for those aliases as well?
-
-Maxime
-
---fgeuvrs34ws7krrf
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iJUEABMJAB0WIQTkHFbLp4ejekA/qfgnX84Zoj2+dgUCZ0WKJAAKCRAnX84Zoj2+
-dv4FAX967eYE5R0RWLQVTJQQ3qJdNEVy6ugNTjWr8xtIy2N8MIIRzNEYEwwM1k4I
-4XQfvwoBgKYYryHo1ibtm7ah1MNmHl1h0R5wMhd+pMQv6UR7szQ8hWR4Bz3qc4SU
-9QJkkLsfPQ==
-=oNFh
------END PGP SIGNATURE-----
-
---fgeuvrs34ws7krrf--
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+>   Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8 ++++++++
+>   1 file changed, 8 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> index a9e3139fd421..2e012d5e1da1 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> @@ -49,6 +49,7 @@ properties:
+>         - enum:
+>             - mediatek,mt3611-xsphy
+>             - mediatek,mt3612-xsphy
+> +          - mediatek,mt8196-xsphy
+>         - const: mediatek,xsphy
+>   
+>     reg:
+> @@ -129,6 +130,13 @@ patternProperties:
+>           minimum: 1
+>           maximum: 7
+>   
+> +      mediatek,discth:
+> +        description:
+> +          The selection of disconnect threshold (U2 phy)
+> +        $ref: /schemas/types.yaml#/definitions/uint32
+> +        minimum: 1
+> +        maximum: 15
+> +
+>         mediatek,efuse-intr:
+>           description:
+>             The selection of Internal Resistor (U2/U3 phy)
 
 
---===============8650149749756577838==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8650149749756577838==--
-
