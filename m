@@ -4,161 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47995D3B7C1
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 09:44:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8716ED3B98E
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 13:23:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pvWknqxeVLQqm4Ek+EOSl+/5yB2kJeW934CdlqAniTQ=; b=NcXQoe2eh1m3Gi
-	P9ndOGrHIjsGb+opYsGCEUKtF3OLBk5J9Gne8Mb1mAHy1RLCm9NYXNGK+clC8RB0UZs1inXSDCMi/
-	3zBSt6QQasIE1UKv9IenbsIyczj6MFCyqna/4AARIZQoL2q2Bh11KLJNNzBa3sxzmEy/5zH4oFySu
-	gdAWuguKVGiq1ZfUg+tLQxBSyLJKFTFNcANs7j5O3de+rGdi1tHZ5ugzy84lIJwDYOPujsDwEiYGA
-	YLphoB2NYWTLuzKIZMwoHgpJToau17rY8GyOidLFPBmlpPssMSjoOWFtyNmncRs/rvDAWxD39HuI1
-	9c3HoZTy+d0tr9uFuZwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=753WKPE0HQtRgpdM1AS+sqeV16VQSv9xqGFwKaaRJhM=; b=y1dHqwMCh1/Mjb
+	OGRCnPY2YQAajXB7EhKCEsorG9lZMLClz+pwctPHtrRWcTv4EiK9oS1i/V2fkTla1gaTNhnuWwTSo
+	Y+ZQQv/amMq9pn91Xu8MG/DLPxSK/S754kaOx+CIETz0zFBviJ0xnetWTEjC7Z17LxFg3td3kecZy
+	K1+MKY2WOE4KTFW8zkgGsYMprvy0Kkqx39EjBc0VCcqyzdrZyI+j0uOY+jA1SdYQjN+ynWB8reb58
+	Afb2831bLh2ixgz/pmQBNsMWtCumaXxGUL/FLmIh4MGL83HJU6uZijTe3Q5pDU+H8NbaXe6LqyRJq
+	d4B3lK9s5M8kComddXoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFs7t-0000000ACcY-04c3;
-	Tue, 26 Nov 2024 09:44:57 +0000
-Received: from mail-japanwestazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c406::1] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1tFvXr-0000000Aiaf-1EDy;
+	Tue, 26 Nov 2024 13:23:59 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrtg-0000000A9jz-38g3
-	for linux-phy@lists.infradead.org;
-	Tue, 26 Nov 2024 09:30:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=cBbcKtQhRacsItp8RcQIrKqNRY4+lAeenP8QC8W0asN4DZBd+TGSpmOhl/iFDbgmRPULLfRLP8CWz5H7TkQTPjCAH0Dahc+wiKuEse6q05g4pThj/fCqv7nr+HlP2EOEaNEKUb+ud37/Y/cy9CtsYR2Jm8B/wKJCsPrZKfB7p15H5f+6H5TUHTLtYMN2lc7uMhYDyJU11UkqiRpj/mOm4xICd0hhq4WzKI1ApFbjntYsNoX6tIvT6pTgkrXvpjBf57TPL1UDJMiUvhaGhuD9FUxdAw91pfqsrZxV+6SbHKMybZk7mHvdN8fahUtlC/jPBLJQzuqAJCNDGqEqTtj0HA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=3YKmFQvndwZhkwK2B1ef9XeMeguPAX/yFv4c8ooTt6c=;
- b=SDng4j9A/pbL2IfIEjjLM8TvURXA8TqMVFV1sMy+R9GgHrO9ZarcZzzdOnnyxNdD4qoOfVTAXnrAu9EdnLeIPCqx6IwlP9rnaXYQEatKE9tj8iaOvjgbsvu4+SaN/UQE3moHnyGp94sigTzNRp4OzBuGkkZshu2JwwDDd9hrY5VDHqKyGzbNTjBT97SGIDV/IKGmPcSjlfr+OtFzazPOF2XTQXQIAWaAvo31bXCLjeZRm9CaW/i7aKuEcG8O2Z0NbBU3WaDwPGt3ORzWByeI16IqIi+PXXYWQ76e3o7rJEvaz0QGUDejFc2uSloi3jAeAFVhUkd51PZXUOZQ2yC3gQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3YKmFQvndwZhkwK2B1ef9XeMeguPAX/yFv4c8ooTt6c=;
- b=smeLuzdV9+C3+A0P4Gs86tzi64qgTJ2strZgRwQb4zy/+WzNb19qscUC5w3gqDKRSAEOPMwrUIJdDen1pHH7h0iuIAHikyT2sb3HMloPrI4Fnby4sq+7Vqo2hRYWvIbbLp96BqrxJ/Kjjd8XGInOqT9nkHAXRyaY0UvecKTSgh0=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYAPR01MB5804.jpnprd01.prod.outlook.com (2603:1096:404:8059::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8182.18; Tue, 26 Nov
- 2024 09:30:10 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::86ef:ca98:234d:60e1%5]) with mapi id 15.20.8182.019; Tue, 26 Nov 2024
- 09:30:10 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "kishon@kernel.org" <kishon@kernel.org>,
-	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>, "geert+renesas@glider.be"
-	<geert+renesas@glider.be>, "magnus.damm@gmail.com" <magnus.damm@gmail.com>,
-	"gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>, Yoshihiro Shimoda
-	<yoshihiro.shimoda.uh@renesas.com>, "christophe.jaillet@wanadoo.fr"
-	<christophe.jaillet@wanadoo.fr>
-CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
-	"linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>, Claudiu.Beznea
-	<claudiu.beznea@tuxon.dev>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: RE: [PATCH v2 04/15] soc: renesas: rz-sysc: Add SoC detection support
-Thread-Topic: [PATCH v2 04/15] soc: renesas: rz-sysc: Add SoC detection
- support
-Thread-Index: AQHbP+SnlSc2Dd2xWkefoVnBXnqXF7LJS6rg
-Date: Tue, 26 Nov 2024 09:30:10 +0000
-Message-ID: <TY3PR01MB113465C1C90AC41B281208B30862F2@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
- <20241126092050.1825607-5-claudiu.beznea.uj@bp.renesas.com>
-In-Reply-To: <20241126092050.1825607-5-claudiu.beznea.uj@bp.renesas.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYAPR01MB5804:EE_
-x-ms-office365-filtering-correlation-id: 863887c5-2845-46ad-651b-08dd0dfcec33
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|366016|921020|38070700018;
-x-microsoft-antispam-message-info: =?us-ascii?Q?uRi+QWycfMxWSoip1JbLSX7u3jFFwq6V/KugjZhkOswtZUlmhi7/unePOCSF?=
- =?us-ascii?Q?/vMxpz0wnarjidGCLjJ1YRowMYdDrvhwHAoWx6VLLiMwHQuATdxELUIkO6Uj?=
- =?us-ascii?Q?QXSsF0lqxzaQFDylybSS3+Z1YXYLVUGzZSxkqvL8jH7QqwyF0SsveIT0oTRu?=
- =?us-ascii?Q?r9SQLJ4VH6GrO2IUQUjQRFe61OascHWyUI6rDgozAImrziWHx6eO99/l+dq6?=
- =?us-ascii?Q?K7Pbj6cGssopoYZdkdrxNW6jkWRFnGnn5AwVkrAjUeibpQXpRzFQUJoa3Id2?=
- =?us-ascii?Q?b6DIlhILud2DVfzm7lFwkn153sTO/pX1VSLf8+LWUFb4gNAU7CbWgFMyRrZH?=
- =?us-ascii?Q?vBz4mKpNDpwrIpYdqYy/m99PZ+824qLREfl1vZZgJ/kitQoaR5xt1jkK58du?=
- =?us-ascii?Q?j5c11gQpjINspITnwTtvLAnNzAoOv2cN+cl6t6oa8L+qV/pryBPhoplywJbX?=
- =?us-ascii?Q?cAGoWe5BvKmvZ2ZqvRvHA84n+WhECxEyOrjJ/C5/aLX1vnYQkxp/hq6XdBcT?=
- =?us-ascii?Q?LsDIb06/gmj/i8eZj3ZY4YI0Vg8+V6LIoVBEQwOew3HFzZwTypN5HUbACwJe?=
- =?us-ascii?Q?yAvtK5HBNFg61f/2H5VocoNryxVWFCINa8MZKUPcYE1L0t3t84URwqo2z1pi?=
- =?us-ascii?Q?I8CowSzE6HnfjM52FSnfSCOs28PcdhPuK3FxPj1cP7CTMzq0oc+1qMmeEN4X?=
- =?us-ascii?Q?CPFWqocKBWATzHrdBbUFuxBbpPT9258/r9SQPvb/8TqJqijtB4+zsrVWInHR?=
- =?us-ascii?Q?Zi+baVZtKCEAZZ+rNAQ70girBb4kEI3qmgLkMiboGzt81ZPR7PgIVkmEGa3K?=
- =?us-ascii?Q?SF6ttjFMe5Rh7JZYvN++tyL9ksGrbJY2N2Gu+ZRimNYv9zWTSMsa/ZgF/nB4?=
- =?us-ascii?Q?yQQ5jboMLB5b6L2RXcOltrCplhahmRhvKAAYBlVrR/pkflPMvwWjoZ2S0QdK?=
- =?us-ascii?Q?Zb/DYS1VC2Tl8uomxQF34jg+31DF4cyWZAQGLfhw6UeBW0NAcvUQY6VkwNAU?=
- =?us-ascii?Q?BdixCU3D8nWMtsoqUvSP8rFJELWyZeXxgrAZ9QVnmbFt2s5xS2pGl4FtHiDz?=
- =?us-ascii?Q?0RkgvT2pduWgoq6HkepcJRd3ekk4JXNtAgNZNzG2oABRecR6+bWQu3MSHmPm?=
- =?us-ascii?Q?artLcko28whXBGvSnYFejDPWZAjwBZrfBnePPwKZ6yHVcncGQwBJGa4qHpNq?=
- =?us-ascii?Q?QRorq6UzTWPN+bV04df372phfozTXK6dN4k6JyntVz5DVEdSsIIkg9cdHIsz?=
- =?us-ascii?Q?LwBt3ZfxlpHeRtPLVchpSnVPJtxBn01yv2ntLHvahKqrE3x+DFhBp2K/W9c+?=
- =?us-ascii?Q?LldlD78L0wnsseDUmbspMcAX5T723Xm0x0wkZy0Z2I80zLg96gTdWk/UiSso?=
- =?us-ascii?Q?SD1T+T2dnjMLIGdPArPtZAGEZIWCi5sdWQ59lenSslH4TOulurw6AR9rMTNC?=
- =?us-ascii?Q?3aci0QYXj0Y=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(366016)(921020)(38070700018);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?0M5hLZ+zcgsVxf9g36vHo0qynQeU91B+FMUD7VY4I0u59pO9DLjiBloTplsz?=
- =?us-ascii?Q?fAuHMfLLAe3gnnHNdS49yu7gKXBmAKuzufiNBk8iaVg/sSQckrjsDZVJiqHo?=
- =?us-ascii?Q?rwTmPK9iT1ZjdurWt5o6vQVIwuW1idqYRd4ttYiB/2eWJrnkrjKga5dZtTqH?=
- =?us-ascii?Q?vCfpl48gXFJbezWSqo9LhS7htIq1ahvZ3qDgLOeRwTFHwlxjmA7/EJPatLiv?=
- =?us-ascii?Q?v0KL6XQE3K1hslgTlcFzNYrr4YbT7PM73ejFQBwi7y1IYQQdmE/1SG0Tk9U5?=
- =?us-ascii?Q?uNoXin2rm+FF/PTZfmCGxONIKKCkmn8q0Qfn69Yd/1dCurpC1NJ5yIbyQTIr?=
- =?us-ascii?Q?kIyOCap/N23UbuMG7Bd/z8+mpXx8VrCDNqy9/Gd3GzuFpEjn6Jf1TTnzePKp?=
- =?us-ascii?Q?KNeLYjE03vKfKKeLaPzmglYgLhR7tR2f8UC8UW8+0IH/SrCvg5xeawBzkbLj?=
- =?us-ascii?Q?EIPQXqZwzPUQuUBCTgUniYsm9VABc2dXJCAUXg/kz7zPRfrgCL4nHhADW2H/?=
- =?us-ascii?Q?j9fHqnp4JhnEKADzl9ygrNiIYDN1PZ56uP6H7bIJ60iKD+UIavKwY9vIRBut?=
- =?us-ascii?Q?HGKuLVqYv3IgE0kRFDzhlcgC67Vn77haojKjkiSourP2yx34WUgtcrSUui0o?=
- =?us-ascii?Q?RSkjwv4xu9PyJsB16ReYt0LL3ZJtpVeZaTKUdj8M0lv0wf+MJT2Bkvz+/AFv?=
- =?us-ascii?Q?iUUgIyFkhCeexQmj1js4i2AxEmwMq9TEHKGKxWn/7IKpCYgqVcIaOgiG3RB/?=
- =?us-ascii?Q?rsizK/z4CQUxZOQlKjkO+omZ6cMIf6MF55Kovf+bujdv9wG+druhfMrLdtc+?=
- =?us-ascii?Q?btE6di/W6ah83TqIEVZtGr5zob4TTgqseFzvM/eIfciTZ7MTnEjdWqGucKnB?=
- =?us-ascii?Q?gwMQhH4CRTaH1rvxVay0nIftUjZczfc20/Hqyh4uQ92D1Vz8k6JpLMJFXn7y?=
- =?us-ascii?Q?HWbFJPdyvA8zc8UT8Gt3LRuBf5xXfItvJlnhyGXjX827Nzu3xG/HUabot1x+?=
- =?us-ascii?Q?2477gODbpLp9Zhjta9Jb23bTcRJiKeZ9OITZKjiCvEgubfWMTxxSGMXuPUEJ?=
- =?us-ascii?Q?cHKFQ9d7GRuAwDlf/bOnJ3lxL6aKJB4SSYKI4PHjekoYW0DjyHJ9y7oKDRlu?=
- =?us-ascii?Q?kBGL9+kGGvniwuXeldEElIdhDksToGcO77Jik4SugAcAzNXWQmz5ZFzMTeek?=
- =?us-ascii?Q?OkdnophaThJvKaPW3398aQwPFVCDQ+dUNtnPEwlJSh/LMWG4yZznL/QoaJO+?=
- =?us-ascii?Q?5V9aPMLUnPGFZgCFBymhAIePtqpg9r6YUQHyce209e/48Lvd0OMYbmjw9RZw?=
- =?us-ascii?Q?tb/UbGrFMbvuWdNps/Y3mTJsCEa4nP8kTvZOh9iAxUO82POjlI53XiCW9yuS?=
- =?us-ascii?Q?pnTIoMo95urkEgJEtQXhNlVO7iEcpImxhT0FUIHKWUzKyXUnNhuIKMfMxj26?=
- =?us-ascii?Q?tK28hV26m098UJeoq4RbF13+fOMVSqeEDV9vzlfU6R6T9cadgW/DfLOlFn1g?=
- =?us-ascii?Q?sZr/B9IGitEL5E/iQU3jyGnwVGhdYprIEYGYF2FHCT3g2PJryEjZcJaSjiRW?=
- =?us-ascii?Q?DnYUD04fFtAVYriJUlXCF2W7LyjmxUZBd2mEaT5kVweBPhIaN64n+aAhV9Wk?=
- =?us-ascii?Q?6Q=3D=3D?=
+	id 1tFvRp-0000000AgbN-1PIH;
+	Tue, 26 Nov 2024 13:17:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
+	Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=4/koaIM9Q80mkdAO8h6VeJJ2lCEZ0Z0nfGBdynTc+f8=; b=nmF8GsAYVNNoUw56AGl8jYnHcJ
+	GnPjzYIrZzPdF6Q3wGhtlFHPsIxjSlNrfDr9mIj3L60IlxHdOgHXNOFw0sJFKs0jXWwiLgOR6eojd
+	0ZsWVJLUgsA94jpXRNNcD1ORh4FI9sc8YfwjY9hTadnv6E27qlfXH+vmnU2NkCGH8Uiq/P6lMhTdc
+	NqDed/14NJt/WvG3vWf2sT7BOQ/RyaKY3YlfLcqpJi/9xIOVLI96BritZ4NQMw3ex6QMs40WytqoC
+	9IYZeOyVmTbdaDvKgUZvdH9XojJUMOcaCHPwd5XoHz10FsqNiEcKa6/iAvx1PxYojEdZt6JOs5fRe
+	gnjq83tg==;
+Received: from i5e86190f.versanet.de ([94.134.25.15] helo=phil..)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tFvRh-0007zi-ST; Tue, 26 Nov 2024 14:17:37 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: vkoul@kernel.org,
+	kishon@kernel.org
+Cc: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	quentin.schulz@cherry.de,
+	sebastian.reichel@collabora.com,
+	heiko@sntech.de,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	dse@thaumatec.com
+Subject: [PATCH v4 0/2] MIPI DSI phy for rk3588
+Date: Tue, 26 Nov 2024 14:17:33 +0100
+Message-ID: <20241126131736.465111-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 863887c5-2845-46ad-651b-08dd0dfcec33
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Nov 2024 09:30:10.1845
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hi72uJKBSs8mZn1St4BH9sReOBrqA6GsP5u6fRZyx4fyY9j/UXZwGHq0clOU8tXxhj//XK+dkChXy5p6/VTfzFehjRwDdlbm0tdQhvbxkZc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB5804
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_013016_906677_5D8B64D7 
-X-CRM114-Status: GOOD (  26.00  )
+X-CRM114-CacheID: sfid-20241126_051745_404596_BE909D9B 
+X-CRM114-Status: GOOD (  17.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -175,192 +82,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Claudiu,
+This adds the phy driver need for DSI output on rk3588.
 
-Thanks for the patch.
+The phy itself is used for both DSI output and CSI input, though the
+CSI part for the whole chain needs a lot more work, so is left out for
+now and only the DSI part implemented.
 
-> -----Original Message-----
-> From: Claudiu <claudiu.beznea@tuxon.dev>
-> Sent: 26 November 2024 09:21
-> Subject: [PATCH v2 04/15] soc: renesas: rz-sysc: Add SoC detection support
-> 
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> 
-> The RZ SYSC controller has registers that keep the SoC ID data. Add driver support to retrieve the SoC
-> ID and register a SoC driver.
-> 
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+This allows the rk3588 with its current VOP support to drive a DSI display
+using the DSI2 controller driver I'll submit in a next step.
 
-Reviewed-by: Biju Das <biju.das.jz@bp.renesas.com>
+Only generic phy interfaces are used, so the DSI part is pretty straight
+forward.
 
-Cheers,
-Biju
+changes in v4:
+- moved to #phy-cells = 1 as suggested by Sebastian, with the argument
+  denoting the requested phy-type (C-PHY, D-PHY). This works similarly
+  how the Mediatek C/D-PHY already implements this, see mails around:
+  https://lore.kernel.org/all/20230608200552.GA3303349-robh@kernel.org/
+- dropped Krzysztof's review tag from the binding because of this
+- dropped custom UPDATE macro and use FIELD_PREP instead
+- build a FIELD_PREP_HIWORD macro for the GRF settings
+- add received Tested-by tags
 
-> ---
-> 
-> Changes in v2:
-> - this was patch 05/16 in v1
-> - changed patch title and description
-> - added SoC initialization code in its own function
-> - addressed the review comments
-> - introduced struct rz_sysc_soc_id_init_data and adjusted the code
->   accordingly
-> - dropped the RZ/G3S SoC detection code (it will be introduced in
->   a separate patch)
-> 
->  drivers/soc/renesas/rz-sysc.c | 72 +++++++++++++++++++++++++++++++++--
->  drivers/soc/renesas/rz-sysc.h | 18 +++++++++
->  2 files changed, 86 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/soc/renesas/rz-sysc.c b/drivers/soc/renesas/rz-sysc.c index
-> dc0edacd7170..d34d295831b8 100644
-> --- a/drivers/soc/renesas/rz-sysc.c
-> +++ b/drivers/soc/renesas/rz-sysc.c
-> @@ -14,9 +14,12 @@
->  #include <linux/refcount.h>
->  #include <linux/regmap.h>
->  #include <linux/seq_file.h>
-> +#include <linux/sys_soc.h>
-> 
->  #include "rz-sysc.h"
-> 
-> +#define field_get(_mask, _reg) (((_reg) & (_mask)) >> (ffs(_mask) - 1))
-> +
->  /**
->   * struct rz_sysc - RZ SYSC private data structure
->   * @base: SYSC base address
-> @@ -211,6 +214,59 @@ static int rz_sysc_signals_init(struct rz_sysc *sysc,
->  	return 0;
->  }
-> 
-> +static int rz_sysc_soc_init(struct rz_sysc *sysc, const struct
-> +of_device_id *match) {
-> +	const struct rz_sysc_init_data *sysc_data = match->data;
-> +	const struct rz_sysc_soc_id_init_data *soc_data = sysc_data->soc_id_init_data;
-> +	struct soc_device_attribute *soc_dev_attr;
-> +	const char *soc_id_start, *soc_id_end;
-> +	u32 val, revision, specific_id;
-> +	struct soc_device *soc_dev;
-> +	char soc_id[32] = {0};
-> +	u8 size;
-> +
-> +	if (!soc_data || !soc_data->family || !soc_data->offset ||
-> +	    !soc_data->revision_mask)
-> +		return -EINVAL;
-> +
-> +	soc_id_start = strchr(match->compatible, ',') + 1;
-> +	soc_id_end = strchr(match->compatible, '-');
-> +	size = soc_id_end - soc_id_start;
-> +	if (size > 32)
-> +		size = 32;
-> +	strscpy(soc_id, soc_id_start, size);
-> +
-> +	soc_dev_attr = devm_kzalloc(sysc->dev, sizeof(*soc_dev_attr), GFP_KERNEL);
-> +	if (!soc_dev_attr)
-> +		return -ENOMEM;
-> +
-> +	soc_dev_attr->family = soc_data->family;
-> +	soc_dev_attr->soc_id = devm_kstrdup(sysc->dev, soc_id, GFP_KERNEL);
-> +	if (!soc_dev_attr->soc_id)
-> +		return -ENOMEM;
-> +
-> +	val = readl(sysc->base + soc_data->offset);
-> +	revision = field_get(soc_data->revision_mask, val);
-> +	specific_id = field_get(soc_data->specific_id_mask, val);
-> +	soc_dev_attr->revision = devm_kasprintf(sysc->dev, GFP_KERNEL, "%u", revision);
-> +	if (!soc_dev_attr->revision)
-> +		return -ENOMEM;
-> +
-> +	if (soc_data->id && specific_id != soc_data->id) {
-> +		dev_warn(sysc->dev, "SoC mismatch (product = 0x%x)\n", specific_id);
-> +		return -ENODEV;
-> +	}
-> +
-> +	dev_info(sysc->dev, "Detected Renesas %s %s Rev %s\n", soc_dev_attr->family,
-> +		 soc_dev_attr->soc_id, soc_dev_attr->revision);
-> +
-> +	soc_dev = soc_device_register(soc_dev_attr);
-> +	if (IS_ERR(soc_dev))
-> +		return PTR_ERR(soc_dev);
-> +
-> +	return 0;
-> +}
-> +
->  static struct regmap_config rz_sysc_regmap = {
->  	.name = "rz_sysc_regs",
->  	.reg_bits = 32,
-> @@ -235,14 +291,15 @@ MODULE_DEVICE_TABLE(of, rz_sysc_match);  static int rz_sysc_probe(struct
-> platform_device *pdev)  {
->  	const struct rz_sysc_init_data *data;
-> +	const struct of_device_id *match;
->  	struct device *dev = &pdev->dev;
-> -	struct rz_sysc *sysc;
->  	struct regmap *regmap;
-> +	struct rz_sysc *sysc;
->  	int ret;
-> 
-> -	data = device_get_match_data(dev);
-> -	if (!data || !data->max_register_offset)
-> -		return -EINVAL;
-> +	match = of_match_node(rz_sysc_match, dev->of_node);
-> +	if (!match || !match->data)
-> +		return -ENODEV;
-> 
->  	sysc = devm_kzalloc(dev, sizeof(*sysc), GFP_KERNEL);
->  	if (!sysc)
-> @@ -253,6 +310,13 @@ static int rz_sysc_probe(struct platform_device *pdev)
->  		return PTR_ERR(sysc->base);
-> 
->  	sysc->dev = dev;
-> +	ret = rz_sysc_soc_init(sysc, match);
-> +	if (ret)
-> +		return ret;
-> +
-> +	data = match->data;
-> +	if (!data->max_register_offset)
-> +		return -EINVAL;
-> 
->  	ret = rz_sysc_signals_init(sysc, data->signals_init_data, data->num_signals);
->  	if (ret)
-> diff --git a/drivers/soc/renesas/rz-sysc.h b/drivers/soc/renesas/rz-sysc.h index
-> bb850310c931..babca9c743c7 100644
-> --- a/drivers/soc/renesas/rz-sysc.h
-> +++ b/drivers/soc/renesas/rz-sysc.h
-> @@ -35,13 +35,31 @@ struct rz_sysc_signal {
->  	refcount_t refcnt;
->  };
-> 
-> +/**
-> + * struct rz_syc_soc_id_init_data - RZ SYSC SoC identification
-> +initialization data
-> + * @family: RZ SoC family
-> + * @id: RZ SoC expected ID
-> + * @offset: SYSC SoC ID register offset
-> + * @revision_mask: SYSC SoC ID revision mask
-> + * @specific_id_mask: SYSC SoC ID specific ID mask  */ struct
-> +rz_sysc_soc_id_init_data {
-> +	const char * const family;
-> +	u32 id;
-> +	u32 offset;
-> +	u32 revision_mask;
-> +	u32 specific_id_mask;
-> +};
-> +
->  /**
->   * struct rz_sysc_init_data - RZ SYSC initialization data
-> + * @soc_id_init_data: RZ SYSC SoC ID initialization data
->   * @signals_init_data: RZ SYSC signals initialization data
->   * @num_signals: number of SYSC signals
->   * @max_register_offset: Maximum SYSC register offset to be used by the regmap config
->   */
->  struct rz_sysc_init_data {
-> +	const struct rz_sysc_soc_id_init_data *soc_id_init_data;
->  	const struct rz_sysc_signal_init_data *signals_init_data;
->  	u32 num_signals;
->  	u32 max_register_offset;
-> --
-> 2.39.2
-> 
+changes in v3:
+- add Krzysztof review tag to the binding
+- address Sebastian's review comments
+  - better error handling
+  - dropping empty function
+  - headers
+  - not using of_match_ptr - this should also make the
+    test-robot happier
+
+changes in v2:
+- fix error in dt-binding example
+- drop unused frequency table
+- pull in some more recent improvements from the vendor-kernel
+  which includes a lot less magic values
+- already include the support for rk3576
+- use dev_err_probe
+
+Heiko Stuebner (2):
+  dt-bindings: phy: Add Rockchip MIPI C-/D-PHY schema
+  phy: rockchip: Add Samsung MIPI D-/C-PHY driver
+
+ .../phy/rockchip,rk3588-mipi-dcphy.yaml       |   87 +
+ drivers/phy/rockchip/Kconfig                  |   12 +
+ drivers/phy/rockchip/Makefile                 |    1 +
+ .../phy/rockchip/phy-rockchip-samsung-dcphy.c | 1602 +++++++++++++++++
+ 4 files changed, 1702 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
+
+-- 
+2.45.2
 
 
 -- 
