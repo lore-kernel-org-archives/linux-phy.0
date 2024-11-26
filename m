@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 081D1D59D90
-	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 09:21:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFD55D3B7CA
+	for <linux-phy@archiver.kernel.org>; Tue, 26 Nov 2024 09:21:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9H697P9X3PoZ5Yz/rZNOCfwJlikK9wJNj+yDlw4cf1Q=; b=GOaw74BxzCzluU
-	W+2LKxlJducS7ZsuNbWP/+I8Q7Xs/0kDFutb6SH6+88xLhhaN0gAQBPxKURT/J/19X3f4cLeAkc4b
-	HIpLLzVuJkhett/qxGgp7OfaSiLJaNyMzMdULQavYTR5Uil1+vENlgp7fwRLg87E20YRaNx9p0//N
-	Btio9KzUXiBSA0vP4WvBiaTluEiEXftd2q4R/HPTKvCPE69Z2plfmNXwhdAE8M5JPoJeFGJgwevp2
-	Upediudj/ZPV55Xyp3DK58F0mVmvkdYDoiPwyh7o+f7Up0Y5qKw2p3PnWxj7rnqiJ/7Gdq1QjQTAG
-	dFuX8GkQPPJUF25F5sdA==;
+	List-Owner; bh=AKuA3Q7/auxnVy9hZN8GemA4dPVvENQ1dHd0BSTFoYk=; b=3kzBlp1oe5CBlJ
+	3e237LXxUW+OrMR1q0DtSDN/dtqQh7ai0BBfaFqT4PgyG4YsKpxmJPJIU7JmxdG6b/w2XXUua5yly
+	NZlUAIS0yQjDdVT4x6RkmXS73gjA+RjNPwm7TZEUgSYG1SagW8F281k4wX+MLHTgHWdqKx1CzNjcc
+	/qhb5AsX9tInUKt2KdTIQBT9GzWqlxl4h8TtnMQdRRIgV86uQT1YC+yL3rrWa67ECQ4tGvH2xtgog
+	rCwzjsfWsyk49KZYtuCw71cUnAPOJmn/wEWsryscnrS9q/DW8tFjuUQ/dbmkLYQyYW3bEVOLt8uHc
+	GZ21vuh6V9J4JOTtNJzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrlF-0000000A7Kt-3028;
+	id 1tFrlF-0000000A7K8-1axA;
 	Tue, 26 Nov 2024 09:21:33 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tFrl0-0000000A77l-1r9q
+	id 1tFrkx-0000000A768-35eU
 	for linux-phy@lists.infradead.org;
-	Tue, 26 Nov 2024 09:21:19 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-3824a8a5c56so3632216f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 26 Nov 2024 01:21:18 -0800 (PST)
+	Tue, 26 Nov 2024 09:21:18 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-43162cf1eaaso67086835e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 26 Nov 2024 01:21:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1732612877; x=1733217677; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1732612874; x=1733217674; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=DWc+F6Re5lYpUThTPl2Jyvuy/tQl0uxdBQ2YGVSL9kM=;
-        b=WqlgxbYxUlUPLbmhAFMdQQ7W8bSpfCoQi/KdRFg5JSZ9roHcwW9mv1HrysS9mAHa5s
-         DtDjqatPc3b/r1Lox0H7Wf11xWPJ0Yf7GBki5z3WrI6t2wguC4Z8eknCvV2AYeUk2Yj0
-         zSAFB8Vfiv91NNykMhDKprAxz5FE8Xqzte07Tr1BVHSaIpVEdGbHcnaodF6kcD5ArCh1
-         DKkebTRRITVCtiizXbpxG2F+t72kHXcL6dOsPX9MntEfvdnuHA64ZCECvrfNT6vz8qbs
-         raDWv6646jbROKK5ya+bZGP70jxJOZr7R0iIUGP4Im1xKzcJKSDCvus5oQ6iAHYy43iO
-         eKJA==
+        bh=LKW3EfLpg9xj1NAX34ulRBb1/poqN6qEBq3WFAZfenM=;
+        b=Pb09nx0+9zGEwk+QjwF+6xyTy00YUDdn7oQDv9+Ohjqqj0mS/iiI2eMDrere6zqUjX
+         7PwHVMyI98k7q/hNttASVltH6P9cdzhVLOxMNIaTLcKkawQxw1jR/Ie3fRwP40LCApls
+         rH7ApZhiIMMYnpvvYpjIu1GTpz25SVkWp0K2bliU/9kKaQkPGCwuvs6BFEza4JPBqioP
+         fSdWeqTl8rzrYS6o5OlPuTE/NWIC/YR6aFK/ArIDFh6AG8/dItwVYcpEajB1aF3W17+p
+         XPmVmBI+NHRAty7eP36HDjF+koX+fBfLx4xmmqGENKx3saKB5FAfO2/JXauU6mKRGzC9
+         zvsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732612877; x=1733217677;
+        d=1e100.net; s=20230601; t=1732612874; x=1733217674;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=DWc+F6Re5lYpUThTPl2Jyvuy/tQl0uxdBQ2YGVSL9kM=;
-        b=LwjuqF/YsGwuJkWTONb4rRIRR7v7mHYkWsHnHk9lPRF9HaKPlm95SrwYqjulCYCcrK
-         HlzS2vwZiFMxCKarcSOeuafwayRpBv8TeZFH5u/v5LgIw5wrXnsMrHuyrFkaPScldclE
-         /R2oA3IGEZV89B2H9qm9HnoTW/dDsyQ0tSxa9e2GB/8YGB9oRfbw6F4NULDHcvvhBI6v
-         E32KV2miPO1vU5+RUCJLxUu5DjdUCdsQ1Z8TyiJp9rjhRMJMIXGqYA1SQrd8lcVIwgc6
-         rw5hPC5WLWPrPjvV9SomUcomo6rY0za3vv6ZU2Ata3QW1OLING9lAJn7prz6WiBwNIvh
-         Vl9g==
-X-Gm-Message-State: AOJu0YxvMP71yK5c5pTP75rG2JRAu2BWyPnKHEfHKPWxHNdlJWMACM/s
-	iEwMLgXAczFmAkPRaZ9rjRDz+FUd71zFB5BusOo9+YfnNYsVcLPb96M/O2C1I+0=
-X-Gm-Gg: ASbGncsaYDKQxa4VS3MbcPAO5ThXeV12PPz9eYdKOVZ9IegTurDoeh//Uj5w23ordQN
-	CIYmcK61A7ADFrcW1PCOiKjYeoDA2ZcFRByUnBF8jm6kgvGw/PvB9PBkhqRMHuBVH3ODyki9t0M
-	+j/GHTrW8WxEju3ckYsR9kLEwv5sxca9EtZk6QsPXHfXdFvjWzgJYet0OshDv9iRDsgA7xv4Bv3
-	EIY7e+vpRm4lJpPvRhVHh8XVb2cOlfaAUdLop6GWNfPDXx/jtM1v8izIfg/8yxcornCG8KF804R
-	Mls=
-X-Google-Smtp-Source: AGHT+IG3dGq/ZJlhJq/NurIWM/G3VWbjsNdFTR8iP7hMyFJIs0S9/bgfBkT4zkY71Su/dQBJNJTAFQ==
-X-Received: by 2002:a5d:6da4:0:b0:382:4115:1ccb with SMTP id ffacd0b85a97d-38260b45f98mr11753556f8f.7.1732612877138;
-        Tue, 26 Nov 2024 01:21:17 -0800 (PST)
+        bh=LKW3EfLpg9xj1NAX34ulRBb1/poqN6qEBq3WFAZfenM=;
+        b=GnA330RX2lOgzVca1ED1yfSFTrEpGpERyWOGMJaigeDRGjRwFhRK1PKdBTT3B7l8gS
+         OcUfnTPqrUy3jKzfj65uzqmSrKoSd9PI/zsvX4IXcUh+pQpuUjA34jf5Y2x309yVfihg
+         CLacC2b5hUBCLHiSGJ9fecdKWnRj/71bKtjwc6KYgmFG8j/1HuIDAQEUvnStMfFLkcHM
+         h/xW4qXVdPaS0vo04SPZTfJTl7HoIE+GoNdg19eehzZgS7ZqQ07K56DJIlzIKxGN5M/o
+         J5bOTJfXD65t4Tk8VCf9tBKRK9Pp4ssFrcm8ewo6VRQ3Vdaku5yF54/cVLGh1fkWkZml
+         PwdQ==
+X-Gm-Message-State: AOJu0YxM5G8Qs47dW7l0bLk4WXL0RvPtapqTycnLH2JZq9+yd4AxyWSF
+	oTLrt77MEsgT5wlpHHWy/aazLckkNCSbYh+b7N36j50MqKR6pRYc3bH4Bz8UaI8=
+X-Gm-Gg: ASbGnctfUoA7aa15seJk7lUoF81iwDpKQ+QFpBe74PYqS6fyGKjVhPFJKoQikYvZy/z
+	ATvbBWHlBl+3JbCiPmQPI7ViCDhPgq0M6bXO/07P5MO+6ypqW2jVuUzPRP2qAelZ6KMQ8G1Be3w
+	hCzhO0fmyh0H+EPoOHkt5a2dPwwBHF0Ebt8Qbx1dKHu42LQXWvTSNa79Oq4S6Q8C8RqQG/dnCsq
+	k9siTw1ZVItPKwPuRxoJcAL5xQBUr+ZUVDRRHHUnXWkqDcsP0jLRq/mRVlQV3hYpJw5dR3xlpx8
+	0bM=
+X-Google-Smtp-Source: AGHT+IE7w+dBoCGCxxbUApCfNcapHwRVn5rVPYIN6Suv5fX7t/i3bspO7Ak4XFCK5NYSFpFy53f9sQ==
+X-Received: by 2002:a05:600c:5122:b0:428:d31:ef25 with SMTP id 5b1f17b1804b1-433ce41ffc9mr177417025e9.12.1732612874002;
+        Tue, 26 Nov 2024 01:21:14 -0800 (PST)
 Received: from claudiu-X670E-Pro-RS.. ([82.78.167.28])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3825fbc3a47sm13027694f8f.73.2024.11.26.01.21.15
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3825fbc3a47sm13027694f8f.73.2024.11.26.01.21.12
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 26 Nov 2024 01:21:16 -0800 (PST)
+        Tue, 26 Nov 2024 01:21:13 -0800 (PST)
 From: Claudiu <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
 To: vkoul@kernel.org,
@@ -87,17 +87,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-usb@vger.kernel.org,
 	claudiu.beznea@tuxon.dev,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v2 07/15] dt-bindings: phy: renesas,usb2-phy: Mark resets as required for RZ/G3S
-Date: Tue, 26 Nov 2024 11:20:42 +0200
-Message-Id: <20241126092050.1825607-8-claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v2 05/15] soc: renesas: rz-sysc: Move RZ/G3S SoC detection to the SYSC driver
+Date: Tue, 26 Nov 2024 11:20:40 +0200
+Message-Id: <20241126092050.1825607-6-claudiu.beznea.uj@bp.renesas.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
 References: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_012118_502933_FFB91C61 
-X-CRM114-Status: UNSURE (   9.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241126_012115_800741_A4ABEF00 
+X-CRM114-Status: GOOD (  12.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,35 +115,88 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-The reset lines are mandatory for the Renesas RZ/G3S platform and must be
-explicitly defined in device tree.
+Now that we have SoC detection in the RZ SYSC driver, move the RZ/G3S
+SoC detection to it. The SYSC provides SoC ID in its own registers.
 
-Fixes: f3c849855114 ("dt-bindings: phy: renesas,usb2-phy: Document RZ/G3S phy bindings")
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
 
 Changes in v2:
-- none; this patch is new
+- this was handled though patch 05/16 in v1 
+- provide SoC specific init data through the SoC specific driver
 
+ drivers/soc/renesas/r9a08g045-sysc.c | 12 ++++++++++++
+ drivers/soc/renesas/renesas-soc.c    | 12 ------------
+ 2 files changed, 12 insertions(+), 12 deletions(-)
 
- Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-index af275cea3456..2babd200bd98 100644
---- a/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml
-@@ -105,7 +105,9 @@ allOf:
-       properties:
-         compatible:
-           contains:
--            const: renesas,rzg2l-usb2-phy
-+            enum:
-+              - renesas,rzg2l-usb2-phy
-+              - renesas,usb2-phy-r9a08g045
-     then:
-       required:
-         - resets
+diff --git a/drivers/soc/renesas/r9a08g045-sysc.c b/drivers/soc/renesas/r9a08g045-sysc.c
+index ceea738aee72..81970db300b2 100644
+--- a/drivers/soc/renesas/r9a08g045-sysc.c
++++ b/drivers/soc/renesas/r9a08g045-sysc.c
+@@ -11,6 +11,9 @@
+ 
+ #include "rz-sysc.h"
+ 
++#define SYS_LSI_DEVID		0xa04
++#define SYS_LSI_DEVID_REV	GENMASK(31, 28)
++#define SYS_LSI_DEVID_SPECIFIC	GENMASK(27, 0)
+ #define SYS_USB_PWRRDY		0xd70
+ #define SYS_USB_PWRRDY_PWRRDY_N	BIT(0)
+ #define SYS_MAX_REG		0xe20
+@@ -24,7 +27,16 @@ static const struct rz_sysc_signal_init_data rzg3s_sysc_signals_init_data[] __in
+ 	}
+ };
+ 
++static const struct rz_sysc_soc_id_init_data rzg3s_sysc_soc_id_init_data __initconst = {
++	.family = "RZ/G3S",
++	.id = 0x85e0447,
++	.offset = SYS_LSI_DEVID,
++	.revision_mask = SYS_LSI_DEVID_REV,
++	.specific_id_mask = SYS_LSI_DEVID_SPECIFIC
++};
++
+ const struct rz_sysc_init_data rzg3s_sysc_init_data = {
++	.soc_id_init_data = &rzg3s_sysc_soc_id_init_data,
+ 	.signals_init_data = rzg3s_sysc_signals_init_data,
+ 	.num_signals = ARRAY_SIZE(rzg3s_sysc_signals_init_data),
+ 	.max_register_offset = SYS_MAX_REG,
+diff --git a/drivers/soc/renesas/renesas-soc.c b/drivers/soc/renesas/renesas-soc.c
+index 172d59e6fbcf..425d9037dcd0 100644
+--- a/drivers/soc/renesas/renesas-soc.c
++++ b/drivers/soc/renesas/renesas-soc.c
+@@ -71,10 +71,6 @@ static const struct renesas_family fam_rzg2ul __initconst __maybe_unused = {
+ 	.name	= "RZ/G2UL",
+ };
+ 
+-static const struct renesas_family fam_rzg3s __initconst __maybe_unused = {
+-	.name	= "RZ/G3S",
+-};
+-
+ static const struct renesas_family fam_rzv2h __initconst __maybe_unused = {
+ 	.name	= "RZ/V2H",
+ };
+@@ -176,11 +172,6 @@ static const struct renesas_soc soc_rz_g2ul __initconst __maybe_unused = {
+ 	.id     = 0x8450447,
+ };
+ 
+-static const struct renesas_soc soc_rz_g3s __initconst __maybe_unused = {
+-	.family = &fam_rzg3s,
+-	.id	= 0x85e0447,
+-};
+-
+ static const struct renesas_soc soc_rz_v2h __initconst __maybe_unused = {
+ 	.family = &fam_rzv2h,
+ 	.id     = 0x847a447,
+@@ -410,9 +401,6 @@ static const struct of_device_id renesas_socs[] __initconst __maybe_unused = {
+ #ifdef CONFIG_ARCH_R9A07G054
+ 	{ .compatible = "renesas,r9a07g054",	.data = &soc_rz_v2l },
+ #endif
+-#ifdef CONFIG_ARCH_R9A08G045
+-	{ .compatible = "renesas,r9a08g045",	.data = &soc_rz_g3s },
+-#endif
+ #ifdef CONFIG_ARCH_R9A09G011
+ 	{ .compatible = "renesas,r9a09g011",	.data = &soc_rz_v2m },
+ #endif
 -- 
 2.39.2
 
