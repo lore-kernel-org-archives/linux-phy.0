@@ -4,48 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37E2AD6D231
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 19:35:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 497D0D6D232
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 19:43:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qOWetMDNqQkRVZgOPgpAigL7luvSU/WVVDwKZ91YrxM=; b=ozLDU9UpF+xgZ7
-	Sx+tJKZw/z8lBHSxCw2OZLSzlU++52vv8x4boxxjDQ5RlAu6CUhg4NgTZFndi6iBnNdTmPnAGItPw
-	4QvE/f7blouUwqQi2N4Uuf0iMC8367G75EljGB8Ak7fUjol1gd7bh1KMeRJRAUkpB7DA4YpOi117k
-	qmaIevJlcvhBvNM1xDd0/mwzTq2WDduCvYe4I1d+86qC6eI7ybcFN2ftk3dk1usSeo/GYpayP1DP8
-	MrFhq0OMiZIFkhTY3xQHtoFGjmWcjFZdhjBFD5zDqNn9SizKn3VXH6iOaqRkm1SEDNyk9UwDK2SOO
-	rYfXbTL4VTMjR0uGT9Zg==;
+	List-Owner; bh=vFw5N7nsJbTk1lhBuyVcQr/LBliwdxy1AN4Xd5GfQfk=; b=3E73AHAUki3cQe
+	KmtGK0ZHZuUMboaHZJRAvf+RuJQTgB99kqS4tlN6tfM9Vo3FErsCIsM49ia65wLfAwGSe5mSDwtXc
+	M4gvxTQBujNoKjitVt5byFTp7XU2gAwkBn3bHe03bB8pgVCrXbn5EkhdGyh385KgxD9iMhlK0wj2W
+	xUGBCnqlb3XX+JvTKECTTlEaoLaHaA1rmHOrMP/KDXqRdYd+rEnW5kuSsEiQYlW2w2/Civ8fi+JwP
+	DGhHBqgdwtEFNXpkunRuAAMqGcEnANo/8hgDUR5sTU6rooLHrM0ujcL8q8kwgHVgYyQa4ltp/zM1m
+	IdHtRkgzjliu2esOjVwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGNoe-0000000DxCT-46B8;
-	Wed, 27 Nov 2024 19:35:12 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tGNwo-0000000Dy9q-3bag;
+	Wed, 27 Nov 2024 19:43:38 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGNlk-0000000DwhF-2mWw;
-	Wed, 27 Nov 2024 19:32:13 +0000
+	id 1tGNvr-0000000Dy3G-0lSx;
+	Wed, 27 Nov 2024 19:42:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=cGWAPKAtzXZu4K5ZIRh3+XBhTM5l2hSjEzu/UyA8Ljc=; b=iOqYgz0yKACD+T483gfhN2WoHo
+	S2796mECAKM4MGqPIVPdx6SbWkfLTP17A3Da0PKLEHVADURJOxauukqXc/1JRmqFbTp9b+O/fhRPi
+	Bmmb7r0agwNGNUSzZnM6c/PYQxVjh+holoi9gBWXARa1T0QvONvJvV5UCdhiiA2cQl25P8eSGtAlD
+	NBsI/R+AGFkSadDPw7i/XX8+cjOhl4Y9NFt9U4N/1UfqC0U0sCw83+OmjEPkFdEJ4NQKcFhCgmeez
+	ImnELbWQKXP7oZlgGIMPdgmLgdl16obpHnvRd4TQfnLdAd9wyANW0UdLA6lctjsGQB4Q361/BMCrz
+	iQ81vULg==;
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tGNvo-00000001TQb-0v2q;
+	Wed, 27 Nov 2024 19:42:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B300BA439FA;
-	Wed, 27 Nov 2024 19:30:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 446E7C4CECC;
-	Wed, 27 Nov 2024 19:32:05 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id CC227A439EF;
+	Wed, 27 Nov 2024 19:40:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7DBCC4CED3;
+	Wed, 27 Nov 2024 19:42:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732735931;
-	bh=SIV3PPrG1BrQ4co3ZSC9TrCcKJvkfKh5dqI+Y2Bkkjc=;
+	s=k20201202; t=1732736552;
+	bh=dswcy1ZZJ4Jdg/t0i6eEfZvvYxKdYNlOtCDcuvoqhig=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=GqwYaQvvmqz6EhDpRw6/Leia2A+F7OUVcFolVlwearYNm9A+OCcwYuO+b3EQQUkUj
-	 3DnHWK19L3CChRRI9BjgRD1LH/4PJBWe7a1YNprlXKIShAjUr5iSsRLdQDKc4ZCDMr
-	 VWRd7NsMAlKGJ7d3bgCA47XIscSLh0meueTNsK0UFtAvLDWdnbpQP195mNz8j+S62o
-	 RM3Zk2ORitKYigOEw0o3v8VDKcVkwxLEQjFROqtmEUTs+qO+N83K+Zk7nlUaIXO41E
-	 IdQ2WW3TfRSqZRDwuCGne4X5Iacj5mGF9E9qaRvgSgfCWu0q6yc+YtzHUGTrYLvPjW
-	 1HojGGBCx//3Q==
-Message-ID: <fefdc47e-d030-47d4-9c24-ada0604243ff@kernel.org>
-Date: Wed, 27 Nov 2024 20:32:02 +0100
+	b=RWD9A5qTH5U9yHYo9C/1u/ByaoL5OYT+pnbc/x705vfYU6v2oSCStp+oUsHXpa9Xd
+	 xDTX2HTI+hShw/wmSffVXHCFhBrGPHOv3X79q9kGkepDL/FEMcbuKp9f8UpxU4a/Ad
+	 CdwGRtEwZAq0I7Gsvq4N82mM8Po7saBr6u44p8WuRXMR/2xwTqngReDCa0UUHzQ/vI
+	 CqlNqDhT5sWJOoVNVrjqTp/rc68Y9mdrSHAu9C+AwbDyH2SK7FTeHJvVRbMgQ7nD+H
+	 1hsYQ3FNTm9IsDFGIoe+kGlB/gyKswjMltykEn94dY9MPgJwyzM1S4hTBshIn1pMYB
+	 fbQ7ZISBoJJlw==
+Message-ID: <82f94ea4-2533-4ebd-a9e5-96ed64bfbc05@kernel.org>
+Date: Wed, 27 Nov 2024 20:42:23 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/9] phy: exynos5-usbdrd: convert to dev_err_probe
+Subject: Re: [PATCH 6/9] phy: exynos5-usbdrd: gs101: ensure power is gated to
+ SS phy in phy_exit()
 To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -61,7 +76,7 @@ Cc: Peter Griffin <peter.griffin@linaro.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 References: <20241127-gs101-phy-lanes-orientation-phy-v1-0-1b7fce24960b@linaro.org>
- <20241127-gs101-phy-lanes-orientation-phy-v1-4-1b7fce24960b@linaro.org>
+ <20241127-gs101-phy-lanes-orientation-phy-v1-6-1b7fce24960b@linaro.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -107,10 +122,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241127-gs101-phy-lanes-orientation-phy-v1-4-1b7fce24960b@linaro.org>
+In-Reply-To: <20241127-gs101-phy-lanes-orientation-phy-v1-6-1b7fce24960b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_113212_831436_D078D932 
-X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-CacheID: sfid-20241127_194236_478393_661214A1 
+X-CRM114-Status: UNSURE (   8.06  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -128,12 +143,13 @@ Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMjcvMTEvMjAyNCAxMTo1OCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gZGV2X2Vycl9wcm9i
-ZSgpIGV4aXN0cyB0byBzaW1wbGlmeSBjb2RlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFuZHLDqSBE
-cmFzemlrIDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+Cj4gLS0tCj4gIGRyaXZlcnMvcGh5L3Nh
-bXN1bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMgfCAyMSArKysrKysrKystLS0tLS0tLS0tLS0KPiAg
-MSBmaWxlIGNoYW5nZWQsIDkgaW5zZXJ0aW9ucygrKSwgMTIgZGVsZXRpb25zKC0pCgoKUmV2aWV3
-ZWQtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAbGluYXJvLm9y
-Zz4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+T24gMjcvMTEvMjAyNCAxMTo1OCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gV2UgY3VycmVudGx5
+IGRvbid0IGdhdGUgdGhlIHBvd2VyIHRvIHRoZSBTUyBwaHkgaW4gcGh5X2V4aXQoKS4KPiAKPiBT
+aHVmZmxlIHRoZSBjb2RlIHNsaWdodGx5IHRvIGVuc3VyZSB0aGUgcG93ZXIgaXMgZ2F0ZWQgdG8g
+dGhlIFNTIHBoeSBhcwo+IHdlbGwuCj4gCj4gU2lnbmVkLW9mZi1ieTogQW5kcsOpIERyYXN6aWsg
+PGFuZHJlLmRyYXN6aWtAbGluYXJvLm9yZz4KPiAtLS0KCgpJIHRoaW5rIHRoaXMgc2hvdWxkIGJl
+IGFjdHVhbGx5IGEgZml4IHdpdGggY2Mtc3RhYmxlLgoKUmV2aWV3ZWQtYnk6IEtyenlzenRvZiBL
+b3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAbGluYXJvLm9yZz4KCgpCZXN0IHJlZ2FyZHMs
+CktyenlzenRvZgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcGh5Cg==
