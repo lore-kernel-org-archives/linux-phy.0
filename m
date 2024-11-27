@@ -4,86 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9C6ED6ACF4
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 17:06:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C26BD6ACFC
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 18:29:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HsQDzwhoB3MaG3hBbmOelAp3q+BvjPfwoZxDT08xcXo=; b=kjDiR85hhK6mAKBTwPmBFc9J0Z
-	dPCkPKeIGqvVK8qcpnqAzAYHk3SOUlrYPyvHEcGpy8V3YQuCo6U5qrTxpSowq2FHwuMyZ3ZB1eAyP
-	JyhS7hiTUOrswgs2yVhRkd5vQc+Nu8hdaIJi86Kmz0iXujEyRrjFz+LQNDgsAk/QkPKba5B62nnEo
-	f5w+gy0YhdslOJbVq1w0wo86xlnQwH1ba8zkbIzndspwnJzz8MwmcHTpYtG9fbfKJjPMqucf7yV+v
-	1tw4IsWwssMGrcsJ+4nAYJr5CsFIB/P9d9S5/9Az2GtiOGvV7U7hNPsduyQ49iHNL+xn+/B8Baevw
-	IyFcs7BA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GuzPycNvrKjwt9j13ad6gXjzUo4Sxzyiy69S3l3JOiM=; b=TOiLJBfi8aK/Qp
+	lePmK2Q6oD7scCYWFZv0ww7UdRHWauk/MxA7t+V6M5uePC9DSjZpB6YsHcgfBeqSxKnQvofCOL62t
+	gLks/LLm8N6gXSQXfj9lUZQQhf9La1UbVRtfrefz2aU2xtyeolxndv1GRRbYBKVyS9IEHcJVvRkJv
+	Kl7cQAqKUg79m2ZtvF7rp2tj9H0AHUvEigfP+wqqb0h/9GNdUE2XadAsQCg6OyAe4CHaibx8foPhL
+	4rOQyLfO9eFwrrBPlhByka4UlY6d5xyIzC5e+r4OfBgMsftvLAOMaL5Y/yjw0xs64HpMjYn+KpTE3
+	577f6sR9+LFHUAg1hMFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGLV9-0000000Dil0-09yn;
-	Wed, 27 Nov 2024 17:06:55 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1tGMmg-0000000DpXk-0Xep;
+	Wed, 27 Nov 2024 18:29:06 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGKTK-0000000Da3O-297b;
-	Wed, 27 Nov 2024 16:00:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=DKTujO+9f1re05ADax+ozv7MtSPN4e1YJbR8IePIpuc=; b=R1r0hUsH+swjmsDANLl7rRQ+au
-	NjfI61WaHhbAzORf7JWGw8wPecV140VD2cHgQuQBINnnixYSq1bC7juQF5GQmJtFI/ndH2qzx/FSM
-	Yw74+iPdkbupVkOQP5Bhc6dZ5JwowBpzFqQb2jQ25/yI5ouVUFVFu7a0HKGhzwC6MIArVLfTMsrkV
-	hxbRNXVvvgdw58VExUPHVTS2CFwpDXjNePgPbeKHf6JFSOZkke4rb0wlIK2Cygcujx3Mo3voFaBcq
-	ZKVIMJtBswbfOeBBtCBe1xFHpAoPQBoxo7Tcwitb6LuvHbPiUy1ZmLZ4koBFsRS4eJkInBdyFtDuA
-	NacPtOYQ==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGKTH-00000001QwB-21sM;
-	Wed, 27 Nov 2024 16:00:57 +0000
+	id 1tGMmd-0000000DpX9-1P9M
+	for linux-phy@lists.infradead.org;
+	Wed, 27 Nov 2024 18:29:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 41E005C54BE;
-	Wed, 27 Nov 2024 16:00:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0396C4CECC;
-	Wed, 27 Nov 2024 16:00:41 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id B55C0A439A3;
+	Wed, 27 Nov 2024 18:27:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68651C4CECC;
+	Wed, 27 Nov 2024 18:28:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732723245;
-	bh=yF7xcJbfXxYMQO5rvQ21+IZrDicfnlmOQqUSNtru+hc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=i+Nuv89mAx90D/dR6NKNX+bQsT0PIlhoudP/UkDzMlNdtL17CPv9n0j5J5kuPL7OQ
-	 CVQIP36y+FGKuuosv74aKMTFUbGp7cKuEyX0vjxise9gNVIY25pPPnSRYrv7BYhO+0
-	 L2UXVgZc1xEsnbwiVEYrZgJJ9Sa0qv4oHREY/OhU8X+/4rJZ/stleNW1TMoUA/GyeH
-	 vEODU7eQXIohQ6bRj8ilMbbQf2ndl8vyNMbGW3xmBwmwlqTLDtdvtt2a4kjQoJB45v
-	 hfZEGcyH3lJqn9coQUm/IGOR6EFnySTcqCnEH0xF73BbXAYrWFcv/qDEfJhfneiQB0
-	 ibET4vMft5e4g==
-Date: Wed, 27 Nov 2024 16:00:39 +0000
-From: Conor Dooley <conor@kernel.org>
-To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Sam Protsenko <semen.protsenko@linaro.org>,
-	Will McVicker <willmcvicker@google.com>,
-	Roy Luo <royluo@google.com>, kernel-team@android.com,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 3/9] dt-bindings: phy: samsung,usb3-drd-phy: gs101:
- require Type-C properties
-Message-ID: <20241127-majorette-decorated-44dc1e7dd121@spud>
-References: <20241127-gs101-phy-lanes-orientation-phy-v1-0-1b7fce24960b@linaro.org>
- <20241127-gs101-phy-lanes-orientation-phy-v1-3-1b7fce24960b@linaro.org>
+	s=k20201202; t=1732732142;
+	bh=hsvAzJbsOippFpgaQxLr33LtX30TWw3xnnUFBVplrpY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=M9gqIb5gWafJ07ZhcUqkbVFDi717sJVbne+4d64HlGCKeYc9fyzN2VR3s2ffAwPV5
+	 csiCYh7nyzCqzyi5CZqh1aWQoEkCXpj0YFxI2nwcFAh47hCqyWig3uxq3ejblPA2dz
+	 4Qzmm+gqwG0B/fI9vSzzlaaNW/eNXRJSA9Y52z89kcZxj17mOsNKKQaGNfnwiGkF9Q
+	 UXT6eZs1nobLg6vyEWxNSd2KOJHwYEWDhGoDfJ5AOaCX7cJDKvjWKjcGEuaiHREMwu
+	 dbDUp2u45OrZ5kuMRS3ujnMy3ExeXxPETnw8gWKTZ6zjhIQNCPmP7V1O9B369vbwSM
+	 b8/uQh8OGUaKQ==
+Message-ID: <3729bdcb-5f3d-4845-8f96-dbb0616b88f4@kernel.org>
+Date: Wed, 27 Nov 2024 19:28:52 +0100
 MIME-Version: 1.0
-In-Reply-To: <20241127-gs101-phy-lanes-orientation-phy-v1-3-1b7fce24960b@linaro.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/4] dt-bindings: phy: Add eDP PHY compatible for qcs8300
+To: Yongxing Mou <quic_yongmou@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Sean Paul <sean@poorly.run>,
+ Marijn Suijten <marijn.suijten@somainline.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Kuogee Hsieh <quic_khsieh@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+ Ritesh Kumar <quic_riteshk@quicinc.com>
+References: <20241127-qcs8300_dp-v1-0-0d30065c8c58@quicinc.com>
+ <20241127-qcs8300_dp-v1-1-0d30065c8c58@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20241127-qcs8300_dp-v1-1-0d30065c8c58@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_160055_864303_9CC06A34 
-X-CRM114-Status: GOOD (  18.89  )
+X-CRM114-CacheID: sfid-20241127_102903_501051_B5013AE4 
+X-CRM114-Status: UNSURE (   5.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,84 +125,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3607910248554125805=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============3607910248554125805==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="YfeHRpG0fb111QcS"
-Content-Disposition: inline
+On 27/11/2024 09:15, Yongxing Mou wrote:
+> Add compatible string for the supported eDP PHY on qcs8300 platform.
 
 
---YfeHRpG0fb111QcS
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+What is supported eDP PHY? Can it be unsupported? Anyway, this repeats
+the diff. Say something useful instead, like why this is not compatible
+with sa8775p.
 
-On Wed, Nov 27, 2024 at 10:58:13AM +0000, Andr=E9 Draszik wrote:
-> The USB PHY on gs101 needs to be configured based on the orientation of
-> the connector. For that the DTS needs a link between the phy's port and
-> a TCPCi, and we'll need to inform the phy driver that it should handle
-> the orientation (register a handler).
->=20
-> Update the schema to enforce that by requiring the orientation-switch
-> and port properties (on gs101 only).
->=20
-> Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
-
-What is your driver doing if these are not provided? New required
-properties are an ABI break after all and I don't see a mention of how
-you're handling it here.
-
-> ---
->  Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml | 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.y=
-aml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> index 6c17a44718aa..0659fc1ce13e 100644
-> --- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
-> @@ -142,6 +142,8 @@ allOf:
-> =20
->        required:
->          - reg-names
-> +        - orientation-switch
-> +        - port
->          - pll-supply
->          - dvdd-usb20-supply
->          - vddh-usb20-supply
->=20
-> --=20
-> 2.47.0.338.g60cca15819-goog
->=20
-
---YfeHRpG0fb111QcS
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ0dCJwAKCRB4tDGHoIJi
-0lp7AP9eJ/6d5zdEWP9v2k55ubqTTtGLXjJ3y2n5cdYQK3npIgEA/QzZvHonPznn
-Q7ozX444DBEExV0qrgNhQZkg5Szw5QQ=
-=Pect
------END PGP SIGNATURE-----
-
---YfeHRpG0fb111QcS--
-
-
---===============3607910248554125805==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============3607910248554125805==--
-
