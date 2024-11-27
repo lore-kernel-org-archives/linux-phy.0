@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49E54D6ACF4
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 16:35:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FAAAD6ACF4
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 16:36:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=hd4ny99+AQZRYijCf4aQUWA5V+MsgMARw7wfnBkvIcs=; b=H+uxQBDuRaIMI8obXZmq5MGiZm
-	vwTkoBK7rzl8cwjsx8wncuEjEzI4mYyunRvawDy90FMmxEoUwD+ihw9dA+PT+ZKP4U1OT2TVjyKoO
-	5r0uHSN9BN4e6YZxKfTP/3W4ATZtqNTMH8ytj1a2r7ezj3MWwEPiASEsOuwPsHmOfTxI/qu7pmN9G
-	Wi+fCUJkpFjFUUmgwPyB1J4BWSXIeUfE9qCM5XTOdWQONMW5PhUzxo8OTx+5db7G0q5ToP1iGcUx2
-	+IxkD3L6ZdSMDqFBtm88GnggEtZbIq6RV0QPcG9cft4uSIGn+dqizvOhinbjnQr5hR4RuWGjd4bUn
-	/UlhkAQA==;
+	bh=dJOya+wX+34hROlCLYPmkPozWXmS08lNYZjB7t4K48g=; b=4FLfddaMy2suJAqnXmCSJiaI5p
+	6e714jyj1SBOwXXD+tq17RCD31Bv23dlVwcC3RjH1Jv6LS6jHIzegZgb2G57nowZ7ed65zz33A+tT
+	rB1e/kAjGpt6m0fCYAZzFuY30s9zspR2C8tiEkT3fXKJLbzHtC1ThThUIINI5puKPHlTghRl8sayc
+	BLeADpH95fZfFRgmq/rx6hwB2KLJU+nCQqY8+uwNYUpTKTrrrtBi9PP2OHKUkuICsko/Z7IvXojuf
+	TJbdpxzUT0V0FHf+vCv/Cmou6nrsiEldtDZuFDH1gZJLTezbnmMI90mCHkDCqgGEoEoSsY3PqZOcx
+	Qs7ceo6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGL0U-0000000DeD0-2A3c;
-	Wed, 27 Nov 2024 16:35:14 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tGL1R-0000000DeMc-1gkJ;
+	Wed, 27 Nov 2024 16:36:13 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGKzV-0000000De2d-3vjo;
-	Wed, 27 Nov 2024 16:34:15 +0000
+	id 1tGKzs-0000000De69-3iUl;
+	Wed, 27 Nov 2024 16:34:37 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 58F3AA43962;
-	Wed, 27 Nov 2024 16:32:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44F29C4CECC;
-	Wed, 27 Nov 2024 16:34:09 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id AF7125C56F5;
+	Wed, 27 Nov 2024 16:33:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26921C4CECC;
+	Wed, 27 Nov 2024 16:34:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732725252;
-	bh=hDuzp2NmlbEoolqNz7tS5zWguegqWZEB4qmgDT93Sh0=;
+	s=k20201202; t=1732725275;
+	bh=hB9Xh72VW9EY+zK59eMd1FIwzbZov0foAMkTJrept4A=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VaoZ2EHAt7Qfxz1Jd4yaT56/sHHn+ppPf00joDkMgjcCFy/VVPPWQFaaWf80Xrrph
-	 YfiT77Eojcg/c3bu6R6UvPzjx0DoF+4qzrrxKcWDBaZo+5pMpDyO4sGa2DR3RblziL
-	 Dfa6Q3d97VURedCKP079RJrBUfzOzqBDMQwRy6Uej2W5+LfPSJpesmMxgQKUNz7N74
-	 LzP0dYYP4Pb6SfsT6U9dykZHOonswPV546D+CoIoB2fFkrgKLmeOj23encHDacywML
-	 nVmI0iW0gfu3r01jeDQT+q+mobkGvfW0rKZtB+SJFF5IbmcjDezPd57+aG3mEXq6rJ
-	 itSiSD04kiSBA==
-Date: Wed, 27 Nov 2024 16:34:06 +0000
+	b=d9leOM0c59TbObqiL7+ozbJjH+pRogDcMZald3bYtsytIBPo/9hxKdBD8ixnrtz+l
+	 p4SrWcQRxuIlMdi3vL37Wfy2OEwgIREgB8vFAe5s6ty24kjdqG/VS9yMzJJgtxXZzK
+	 EkwwUfvcy1RLoZ1dFraUB5XG1INf0TMlRCexal6JacrXTH5h+ejGET89D3FG27i3Rx
+	 kW1zIYLGgP6vc9M6knzHeVOwt6TK7v4VyvO4JjERv7oezhYt3kKZlWp+i3TsWAqQQV
+	 vC8OWd+rTirsFnxqPUeCE9qfylWQzRt0XLx/L+9yHVpt72YNX1FE4/cHjPHGtmZEgz
+	 CJl/sjUuhQJqw==
+Date: Wed, 27 Nov 2024 16:34:29 +0000
 From: Conor Dooley <conor@kernel.org>
 To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -60,18 +60,19 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH 3/9] dt-bindings: phy: samsung,usb3-drd-phy: gs101:
- require Type-C properties
-Message-ID: <20241127-hazily-shininess-263835b86a76@spud>
+Subject: Re: [PATCH 2/9] dt-bindings: phy: samsung,usb3-drd-phy: add optional
+ orientation-switch
+Message-ID: <20241127-expedited-worried-89e3603eb0e3@spud>
 References: <20241127-gs101-phy-lanes-orientation-phy-v1-0-1b7fce24960b@linaro.org>
- <20241127-gs101-phy-lanes-orientation-phy-v1-3-1b7fce24960b@linaro.org>
- <20241127-majorette-decorated-44dc1e7dd121@spud>
- <813713d8ac62be0782bcf36d1d23bec5f4a3c08e.camel@linaro.org>
+ <20241127-gs101-phy-lanes-orientation-phy-v1-2-1b7fce24960b@linaro.org>
+ <20241127-unturned-powdered-d9d1b695732d@spud>
+ <20241127-pushing-baboon-4afafcf8322f@spud>
+ <fba9c9df33dc2e060238a9bb3466a2fea020efde.camel@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <813713d8ac62be0782bcf36d1d23bec5f4a3c08e.camel@linaro.org>
+In-Reply-To: <fba9c9df33dc2e060238a9bb3466a2fea020efde.camel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_083414_102265_7CC9A583 
-X-CRM114-Status: GOOD (  21.39  )
+X-CRM114-CacheID: sfid-20241127_083437_009403_206A58DF 
+X-CRM114-Status: GOOD (  20.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,72 +84,70 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5084273731842021025=="
+Content-Type: multipart/mixed; boundary="===============0191752612672413997=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5084273731842021025==
+--===============0191752612672413997==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="c8M+h+w9DKAEhDaA"
+	protocol="application/pgp-signature"; boundary="ZR1J5D9xohh12xiE"
 Content-Disposition: inline
 
 
---c8M+h+w9DKAEhDaA
+--ZR1J5D9xohh12xiE
 Content-Type: text/plain; charset=iso-8859-1
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Nov 27, 2024 at 04:24:08PM +0000, Andr=E9 Draszik wrote:
+On Wed, Nov 27, 2024 at 04:27:09PM +0000, Andr=E9 Draszik wrote:
 > Hi Conor,
 >=20
-> On Wed, 2024-11-27 at 16:00 +0000, Conor Dooley wrote:
-> > On Wed, Nov 27, 2024 at 10:58:13AM +0000, Andr=E9 Draszik wrote:
-> > > The USB PHY on gs101 needs to be configured based on the orientation =
-of
-> > > the connector. For that the DTS needs a link between the phy's port a=
-nd
-> > > a TCPCi, and we'll need to inform the phy driver that it should handle
-> > > the orientation (register a handler).
+> Thanks for your review.
+>=20
+> On Wed, 2024-11-27 at 16:02 +0000, Conor Dooley wrote:
+> > On Wed, Nov 27, 2024 at 04:00:59PM +0000, Conor Dooley wrote:
+> > > On Wed, Nov 27, 2024 at 10:58:12AM +0000, Andr=E9 Draszik wrote:
+> > > > orientation-switch is the standard declaration to inform the Type-C
+> > > > mux
+> > > > layer that a remote-endpoint is capable of processing orientation
+> > > > change messages.
+> > > >=20
+> > > > Add as an optional since not all versions of this phy currently
+> > > > support
+> > > > or even need the orientation-switch.
+> > > >=20
+> > > > Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
 > > >=20
-> > > Update the schema to enforce that by requiring the orientation-switch
-> > > and port properties (on gs101 only).
-> > >=20
-> > > Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
+> > > Acked-by: Conor Dooley <conor.dooley@microchip.com>
 > >=20
-> > What is your driver doing if these are not provided? New required
-> > properties are an ABI break after all and I don't see a mention of how
-> > you're handling it here.
+> > Actually, this patch unconditionally adds the property to the binding.
+> > Is it valid for !gs101?
 >=20
-> This is hooked-in in patch 8 of this series in
-> exynos5_usbdrd_setup_notifiers(). The new behaviour is gated off
->=20
->     if (device_property_present(phy_drd->dev, "orientation-switch")) {
->         ...
->=20
-> Without that property (i.e. old DTS or !gs101), the driver will behave as
-> before (meaning for gs101 it will work in SS mode in one orientation only=
-).
->=20
-> Does that address your concern?
+> Good point. I've only made it required for gs101 in the next patch, but a=
+s-
+> is, somebody could still add it (in error) in !gs101 cases.
 
-Aye, but it'd be good to call that out in your commit message.
+> I guess it's best to squash patches 3 and 4 in that case, and update it to
+> disallow for !gs101.
 
---c8M+h+w9DKAEhDaA
+SGTM, go ahead.
+
+--ZR1J5D9xohh12xiE
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ0dJ/gAKCRB4tDGHoIJi
-0uE8AP4xieE2w7MVLlioQY/EzB7WNxxZkSBijdbdgKHeVBmpCAEAvg0mUlHd9e5B
-HhD6UoGTOBy3QKdFgrcuKRKcPf5nAgg=
-=ZhMC
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ0dKFQAKCRB4tDGHoIJi
+0tYOAP9rTl2TqNpo8uGk6OWIn9r76xINLkrcaIkMySG1Pa/oQAEArFBtipMlzKaR
+UVQkQlpV6fOug4+hBcQK5BIJfyo3YwU=
+=Vv35
 -----END PGP SIGNATURE-----
 
---c8M+h+w9DKAEhDaA--
+--ZR1J5D9xohh12xiE--
 
 
---===============5084273731842021025==
+--===============0191752612672413997==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -159,5 +158,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5084273731842021025==--
+--===============0191752612672413997==--
 
