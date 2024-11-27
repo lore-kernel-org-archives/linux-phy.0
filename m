@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 064C4D609AD
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 08:19:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 312D4D609B0
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 08:19:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W9i7mPLwgbxxBe7a0gg1Fciz0Ps64t1SRdn7d4uIKBE=; b=MxUEU60wr8LJ6L
-	1JIHoDtuSIhDSkG3BoDGm8caXJ707KAkvQcmyrzq2Rxr1rRpEiSso6qARD7UdTzjucO6KQPv0uL+a
-	dRTENbWSL3Kn3LTe79QXiYcxbutneEhQbQ5coDe9YMtHOcFAIlg/pkw8T58kSklOvcDVER4/jjDbP
-	hH74ua8jpcQw1AwRtThp3Mu2hpIRrm45MyL7lXiB5tM2zDWQwOOFYjlH0iKtS32WR9sJDyNKtBrP8
-	i/NVZ1ctSlMVbh44/TEp7ViUDgXBVQsOuLqEWlmx4FHQoyev4MV6ZL1DtlIIIY19YHAFHn2uBdvb0
-	a8MXAmdC1kiaYxNRQIJg==;
+	List-Owner; bh=PA1AvCHM0p37l0J45PaGyL+z0Ea/U0ac8FehEaJPlX8=; b=pw+zRbntsemTsp
+	ICRfgL5N3+9waaNQSDsNQxqo5BjqPAtIdQ22/Lz2DhwXECJyHL9gXRuxmMYTKo0KWOboygS7HjOUo
+	YWEGZsnvjyG62TYz7t4DKkDXLo7NQ/RGzKK9iTreKFhOIdXavNT8owC3CQfduzu5WPNF6oc1yATOJ
+	XchIAcPxCy6Miy5uDG5EywZQSKo88B640AF90SyxUg+F9Zo2i5VI8fGl7I1CGzH2beG9M82kgwR4S
+	wwiYOcmtvtBnVx6tsCAtfvE4FYQL3wy9QeAZo2CzN/yLibCHKF8L7imJS9a4HAVfmQ/NQMXAIsVV+
+	YXltE4bAJWJmD66ebzqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGDGi-0000000CYVT-2iBI;
+	id 1tGDGi-0000000CYWB-3vhe;
 	Wed, 27 Nov 2024 08:19:28 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGDFu-0000000CYG3-3yBK
+	id 1tGDG0-0000000CYIv-3jxw
 	for linux-phy@lists.infradead.org;
-	Wed, 27 Nov 2024 08:18:40 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AQKLHSk013709;
-	Wed, 27 Nov 2024 08:18:33 GMT
+	Wed, 27 Nov 2024 08:18:45 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AQLCneE006382;
+	Wed, 27 Nov 2024 08:18:40 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1GGUeQevJqrCM6zzxTxYMArPmxYnSoodpZJnXPQLP2Y=; b=h/iFENqHpo4RqgJ3
-	OVVLOdWUhvDqQJbx1e6Wlvi2r+gw//TLfLlD2X0S5QN9/tj/hPFh04F4YIdvpyF/
-	2wkKvnooef+ivZ+gqFL/1uNEJLwLShcipWxFoUatmbbPcu6INt/w5N4O9yFeBPPP
-	x8UiN5SzQlUL8XMcOz8fFoB0ZWOKfUbY8/Di4IS3fFLaz3onsh+A1OgXfkZ/w+8x
-	3ZPrHVN0MVBKjv1ef2fys+CcRF3pgPtXonvGEDzyN4toabcPuQKST8qu0VGFQwpR
-	XSf6Lal4uO0BNhpdoq/i6e0E8O+iwM6C2TuOft4DBtbKVt6KlUaZCUBWZtMDqXyE
-	84DCLA==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 435epqasf2-1
+	IWOyrgcQBIgCckUrB4P7v4r5DODtFdE/eoCXEIdHXbM=; b=LjI1T8xCWJZAMFWu
+	jvabdgn0rEELYfPunzSYHnF9BVSZfhfdPNbEeAEnCQqQJwTBUCd6Ci0t77dIcgsA
+	lVL4U0Yw36QGQZbQwNDPv9yqyV8KHXPg7MHjkgyglVLTiFpm16i7SOiTI7Y7034L
+	KPPwDN9jQUY03ayph+0UqRLHMe5hjDllwyWCWQRMOWkyRWjVcQkG7H1WCsVUaU7o
+	vliEW4yykUgDMd0zrb+Q7K+PsJ7ihQrckILuzJ2vjP3t3eaqBD8X3tTwpLoCF3x2
+	76wFpJayTOKUJHgwtzCyk+meH1cVcrKMMJw3EKrHQzRInp4VbRD3Q05ztA0Wb3RR
+	kl/tuQ==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 435p22sgsv-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Nov 2024 08:18:33 +0000 (GMT)
+	Wed, 27 Nov 2024 08:18:39 +0000 (GMT)
 Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AR8IWCF025600
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AR8Id5O003709
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Nov 2024 08:18:32 GMT
+	Wed, 27 Nov 2024 08:18:39 GMT
 Received: from cse-cd01-lnx.ap.qualcomm.com (10.80.80.8) by
  nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 27 Nov 2024 00:18:26 -0800
+ 15.2.1544.9; Wed, 27 Nov 2024 00:18:32 -0800
 From: Yongxing Mou <quic_yongmou@quicinc.com>
-Date: Wed, 27 Nov 2024 16:15:49 +0800
-Subject: [PATCH 2/4] phy: qcom: edp: Add support for eDP PHY on QCS8300
+Date: Wed, 27 Nov 2024 16:15:50 +0800
+Subject: [PATCH 3/4] dt-bindings: display: msm: dp-controller: document
+ QCS8300 compatible
 MIME-Version: 1.0
-Message-ID: <20241127-qcs8300_dp-v1-2-0d30065c8c58@quicinc.com>
+Message-ID: <20241127-qcs8300_dp-v1-3-0d30065c8c58@quicinc.com>
 References: <20241127-qcs8300_dp-v1-0-0d30065c8c58@quicinc.com>
 In-Reply-To: <20241127-qcs8300_dp-v1-0-0d30065c8c58@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -82,11 +83,11 @@ CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         Ritesh Kumar
 	<quic_riteshk@quicinc.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1732695491; l=1431;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1732695492; l=862;
  i=quic_yongmou@quicinc.com; s=20241121; h=from:subject:message-id;
- bh=bYcWuM1MZj078n52o973JsHiGfYxhrYI6uzPLe1A4oQ=;
- b=ZmUybd4RJfpI9daDccx+0oUa2dAFRhdirMkJN+gyh2bP8xc+bjM6Dq53I038eiucIQ8RE3uCO
- n4GZXyX6CEMDH/RO+TuB0N3aqKTnyeoEuq6vmTpPXXny708B2gpkf+s
+ bh=KM+bgZuvEVelSq2qk8ZtEdVDLVu5t+0uC8t97ZACYY8=;
+ b=3q4sNfYYDQxtC/MTa3A+8CvhuYTivp28nCtEszjWf4i1c/ow6YuWMARlOuzKPauFB/eIyfpbk
+ +TmZdU1WpUqDFAtAJFvaAKTlxLmfOhccI9dB4/v7Z9//Zow0He41A7g
 X-Developer-Key: i=quic_yongmou@quicinc.com; a=ed25519;
  pk=zeCnFRUqtOQMeFvdwex2M5o0Yf67UHYfwCyBRQ3kFbU=
 X-Originating-IP: [10.80.80.8]
@@ -94,19 +95,20 @@ X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nalasex01c.na.qualcomm.com (10.47.97.35)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ko1OPWMx0dQAx96xesA83PXQjrWdvYX4
-X-Proofpoint-ORIG-GUID: ko1OPWMx0dQAx96xesA83PXQjrWdvYX4
+X-Proofpoint-ORIG-GUID: CaYUCH1kHdCKqWkAMXNolVdupo8NBUWG
+X-Proofpoint-GUID: CaYUCH1kHdCKqWkAMXNolVdupo8NBUWG
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011
- priorityscore=1501 malwarescore=0 phishscore=0 mlxlogscore=999 spamscore=0
- suspectscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0 mlxscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2409260000 definitions=main-2411270068
+ lowpriorityscore=0 suspectscore=0 priorityscore=1501 impostorscore=0
+ malwarescore=0 phishscore=0 adultscore=0 mlxlogscore=999 spamscore=0
+ bulkscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411270066
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_001839_004926_EEB180E5 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20241127_001844_939654_CAA7F2A4 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,39 +125,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for eDP PHY v5 found on the Qualcomm QCS8300 platform.
+Add compatible string for the DisplayPort controller found on the
+Qualcomm QCS8300 platform.
 
 Signed-off-by: Yongxing Mou <quic_yongmou@quicinc.com>
 ---
- drivers/phy/qualcomm/phy-qcom-edp.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ Documentation/devicetree/bindings/display/msm/dp-controller.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-index f1b51018683d51df064f60440864c6031638670c..90e0a399c25299ad1b2fb5df8512ba3888661046 100644
---- a/drivers/phy/qualcomm/phy-qcom-edp.c
-+++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-@@ -532,6 +532,13 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v4 = {
- 	.com_configure_ssc	= qcom_edp_com_configure_ssc_v4,
- };
- 
-+static const struct qcom_edp_phy_cfg qcs8300_dp_phy_cfg = {
-+	.is_edp = false,
-+	.aux_cfg = edp_phy_aux_cfg_v5,
-+	.swing_pre_emph_cfg = &edp_phy_swing_pre_emph_cfg_v5,
-+	.ver_ops = &qcom_edp_phy_ops_v4,
-+};
-+
- static const struct qcom_edp_phy_cfg sa8775p_dp_phy_cfg = {
- 	.is_edp = false,
- 	.aux_cfg = edp_phy_aux_cfg_v5,
-@@ -1133,6 +1140,7 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
- }
- 
- static const struct of_device_id qcom_edp_phy_match_table[] = {
-+	{ .compatible = "qcom,qcs8300-edp-phy", .data = &qcs8300_dp_phy_cfg, },
- 	{ .compatible = "qcom,sa8775p-edp-phy", .data = &sa8775p_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc7280-edp-phy", .data = &sc7280_dp_phy_cfg, },
- 	{ .compatible = "qcom,sc8180x-edp-phy", .data = &sc7280_dp_phy_cfg, },
+diff --git a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
+index a212f335d5ffae545d2e5bacec95299ca45e8405..eb14cf624da6f835523499a619c09a50586ecb30 100644
+--- a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
++++ b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
+@@ -17,6 +17,7 @@ properties:
+   compatible:
+     oneOf:
+       - enum:
++          - qcom,qcs8300-dp
+           - qcom,sa8775p-dp
+           - qcom,sc7180-dp
+           - qcom,sc7280-dp
 
 -- 
 2.34.1
