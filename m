@@ -4,65 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4ABB6D609A9
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 07:26:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01CEAD609AD
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 07:53:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H2wQAJBjhLAruIe34DeONJ7zIs506Wj3maqMv6HMJpI=; b=EebHMnVLc4c1ef
-	0GDnGKQg2joCZ0LOI1SlA9Z88fjAMY9USNYQS47Blnu0BvhL/+rD7KdmvLqH//DL0UlJxLfkxv36x
-	HwffgnGJWMGK18aCjyjkfM2Stf1JOuqboE/r2eUtGsElmmAqEwkGOp9qfd28y/BLeNkoGcywpl/wQ
-	ObPyJqHF1v4iQ/2Lh93ngMOo+Ad9Fdie+9H4MBe5GgUwo193X7pNSzchl74m6KqyHoIDWHkaOb+SF
-	RDWdblqEYwsWU7uv3yQgpyWrCKw+llQMh3kBuVNZAX3c57m6wQ4AnaIB71e0zK6rQY2OMfY4pJVGv
-	UDSxTSByI12nNWQ+GQRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=C5rVTivkDH5b/hnFtkLAko1cnvvPcoR4zf4GYtOjnKw=; b=d6AD1XIS0sB6SI
+	oh8ImxKCIZ7NZTYMHxZ9AcuDnd4+qa6E42Gs8S7ew128mQ4Xy5mru7UK8PNGuk/JajsDOzdiwfPpy
+	OonacqmkfCCS4F35XT5Bnpx+c1xXDOKG+nuSoj6PeMaO3n0ARJpY0PPl6qxMXr4pOcqcmwO3l5VBE
+	ZlGM4PtQ81Y0WVPuADXrO3zYscxV+MftW4RHe9gkCb30METRAfc+pVE6k6MdWdxiS1xWr8VAXb01k
+	pqyJ0Vm7CD/vqbJzT5LE4ozed2VFYS3bv9ByZex6tRHMwx9ZRLPLl5DVXkADNRbeRFkJpDHC7knG6
+	fpWibYRnlgMT8Hneo8yw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGCRs-0000000CR4r-25Iy;
-	Wed, 27 Nov 2024 07:26:56 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tGCr9-0000000CUTA-1Z6Z;
+	Wed, 27 Nov 2024 07:53:03 +0000
+Received: from mail-m12799.qiye.163.com ([115.236.127.99])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGCQt-0000000CQqI-1PNx;
-	Wed, 27 Nov 2024 07:25:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id AFD1CA4008C;
-	Wed, 27 Nov 2024 07:24:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 908BFC4CECC;
-	Wed, 27 Nov 2024 07:25:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732692354;
-	bh=pGn4kfUpOcmSqIS3vciAoVzfQoYoykNksqMjg/m4A7A=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dkPR3K+q9/8URcH8C1V9tbKnvOkEYNvce4wjGS+JjcSOtIg5zBrEcLGV/FjQpBoiI
-	 ipMIk0Tc4GMhmo6IlkpOsvurupAzoNNZHQEq+E7eCOQfXaC6JFVUstjXQkXMK4tukD
-	 sGMvEigQ0Ibn2NNbdGs+L3Q2e2/rJci+OmZXZjvLUYPBOE+I1Bp+4RXrhd1yBtCPdr
-	 YSXXYfuzl8PblXfiBkBASVJgPZHNHeJItzyM6T4Vxv+/ePAzlaPIhmJtK4GgqD/vqW
-	 edPmHNHnOp1pAjmOYklohnnAMTkXUVLMa+XSIFzxtaSpP4RBlyV0DUOTJkx65xXVwN
-	 Skzfg2Zxdd5Zg==
-Date: Wed, 27 Nov 2024 08:25:50 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Sandor Yu <Sandor.yu@nxp.com>
-Cc: dmitry.baryshkov@linaro.org, andrzej.hajda@intel.com, 
-	neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, 
-	jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, 
-	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, 
-	vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	mripard@kernel.org, kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
-	alexander.stein@ew.tq-group.com, sam@ravnborg.org
-Subject: Re: [PATCH v19 3/8] dt-bindings: display: bridge: Add Cadence
- MHDP8501
-Message-ID: <b6m4c5qbjbwdwuycunhoe6hj3akmqb257havourydry4wlrmkn@hmzkyodyqz4n>
-References: <cover.1732627815.git.Sandor.yu@nxp.com>
- <e495a40a0add052d4f8cdeb4a81ea7408cdccaf6.1732627815.git.Sandor.yu@nxp.com>
+	id 1tGCr5-0000000CURi-3y64;
+	Wed, 27 Nov 2024 07:53:01 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 3f86cd6b;
+	Wed, 27 Nov 2024 15:52:49 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: heiko@sntech.de
+Cc: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	rfoss@kernel.org,
+	vkoul@kernel.org,
+	sebastian.reichel@collabora.com,
+	cristian.ciocaltea@collabora.com,
+	l.stach@pengutronix.de,
+	andy.yan@rock-chips.com,
+	hjc@rock-chips.com,
+	algea.cao@rock-chips.com,
+	kever.yang@rock-chips.com,
+	dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v1 00/10] Add eDP support for RK3588
+Date: Wed, 27 Nov 2024 15:51:47 +0800
+Message-Id: <20241127075157.856029-1-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e495a40a0add052d4f8cdeb4a81ea7408cdccaf6.1732627815.git.Sandor.yu@nxp.com>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGh5LQ1ZKGhoaQkkeSR5NTRpWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
+	NVSktLVUpCS0tZBg++
+X-HM-Tid: 0a936c9bcbb803a3kunm3f86cd6b
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6M0k6Qxw6STIjCS9CLwJLTR0d
+	SAkwCUhVSlVKTEhJTUJIQkxKTUhPVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJQkpPNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=DrsNEaPaYgr1HW/MTl00CQnNBm8VDBvfgHCJv8Usqq45qIkkCQPPbJdAgVdC3OwVHMFyy6bTBM4aVqtVHhD8YzpqJQ7tbXqGdR9DlEt25/ZaoFudD2b33/lpP59HkUKUfcVZVA18V+IHcDnh2w65XXDbDcRbzT+I8cphm7wytjQ=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=CcgRIo+XJmQI6DQwJ0KECoH/PzQlSX6iB9aios6JJS0=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241126_232555_502905_395F87C0 
-X-CRM114-Status: GOOD (  16.07  )
+X-CRM114-CacheID: sfid-20241126_235300_501378_DB5189C9 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,114 +87,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 26, 2024 at 10:11:48PM +0800, Sandor Yu wrote:
-> Add bindings for Cadence MHDP8501 DisplayPort/HDMI bridge.
-> 
-> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> ---
-> v18->v19:
-> - move data-lanes property to endpoint of port@1
-> 
-> v17->v18:
-> - remove lane-mapping and replace it with data-lanes
-> - remove r-b tag as property changed.
-> 
-> v16->v17:
-> - Add lane-mapping property
-> 
-> v9->v16:
->  *No change
-> 
->  .../display/bridge/cdns,mhdp8501.yaml         | 120 ++++++++++++++++++
->  1 file changed, 120 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> new file mode 100644
-> index 0000000000000..24abd8447a28c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/cdns,mhdp8501.yaml
-> @@ -0,0 +1,120 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/cdns,mhdp8501.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Cadence MHDP8501 DP/HDMI bridge
-> +
-> +maintainers:
-> +  - Sandor Yu <Sandor.yu@nxp.com>
-> +
-> +description:
-> +  Cadence MHDP8501 DisplayPort/HDMI interface.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx8mq-mhdp8501
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: MHDP8501 DP/HDMI APB clock.
-> +
-> +  phys:
-> +    maxItems: 1
-> +    description:
-> +      phandle to the DP/HDMI PHY
-> +
-> +  interrupts:
-> +    items:
-> +      - description: Hotplug cable plugin.
-> +      - description: Hotplug cable plugout.
-> +
-> +  interrupt-names:
-> +    items:
-> +      - const: plug_in
-> +      - const: plug_out
-> +
-> +  ports:
-> +    $ref: /schemas/graph.yaml#/properties/ports
-> +
-> +    properties:
-> +      port@0:
-> +        $ref: /schemas/graph.yaml#/properties/port
-> +        description:
-> +          Input port from display controller output.
-> +
-> +      port@1:
-> +        $ref: /schemas/graph.yaml#/$defs/port-base
-> +        unevaluatedProperties: false
-> +        description:
-> +          Output port to DisplayPort or HDMI connector.
-> +
-> +        properties:
-> +          endpoint:
-> +            $ref: /schemas/media/video-interfaces.yaml#
-> +            unevaluatedProperties: false
-> +
-> +            properties:
-> +              data-lanes:
-> +                $ref: /schemas/media/video-interfaces.yaml#/properties/data-lanes
+These patchs have been tested with a 1536x2048p60 eDP panel on
+RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
+on RK3588 EVB1 board.
 
-Drop, not needed.
+Patch 1~3 are the RK3588 eDP support of Rockchip analogix_dp driver.
+Patch 4   is the eDP mode support of samsung hdptx phy driver.
+Patch 5~6 are the Rk3588 eDP support of Aanalogix DP driver. Add phy
+          interfaces is to configure the HDMI/eDP TX Combo PHY.
+Patch 7~8 are the renaming of hdptxphy node. It is not only used by
+          HDMI display but also for the eDP display.
+Patch 9   is the addition of RK3588 eDP0 node.
+Patch 10  is to enable the eDP0 display on RK3588S EVB1 board.
 
-> +                minItems: 4
-> +                maxItems: 4
-> +                description: Lane reordering for HDMI or DisplayPort interface.
+Damon Ding (10):
+  drm/rockchip: analogix_dp: Use formalized struct definition for grf
+    field
+  dt-bindings: display: rockchip: analogix-dp: Add support for RK3588
+  drm/rockchip: analogix_dp: Add support for RK3588
+  phy: phy-rockchip-samsung-hdptx: Add support for eDP mode
+  drm/bridge: analogix_dp: add support for RK3588
+  drm/bridge: analogix_dp: Add support for phy configuration.
+  dt-bindings: display: rockchip: Fix label name of hdptxphy for RK3588
+    HDMI TX Controller
+  arm64: dts: rockchip: Fix label name of hdptxphy for RK3588
+  arm64: dts: rockchip: Add eDP0 node for RK3588
+  arch64: dts: rockchip: Enable eDP0 display on RK3588S EVB1 board
 
-Blank line
+ .../rockchip/rockchip,analogix-dp.yaml        |   1 +
+ .../rockchip/rockchip,rk3588-dw-hdmi-qp.yaml  |   2 +-
+ arch/arm64/boot/dts/rockchip/rk3588-base.dtsi |  33 +-
+ .../dts/rockchip/rk3588-coolpi-cm5-evb.dts    |   2 +-
+ .../rockchip/rk3588-coolpi-cm5-genbook.dts    |   2 +-
+ .../boot/dts/rockchip/rk3588-evb1-v10.dts     |   2 +-
+ .../rk3588-friendlyelec-cm3588-nas.dts        |   2 +-
+ .../arm64/boot/dts/rockchip/rk3588-jaguar.dts |   2 +-
+ .../boot/dts/rockchip/rk3588-nanopc-t6.dtsi   |   2 +-
+ .../dts/rockchip/rk3588-orangepi-5-plus.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588-rock-5b.dts      |   2 +-
+ .../boot/dts/rockchip/rk3588-tiger-haikou.dts |   2 +-
+ .../boot/dts/rockchip/rk3588s-coolpi-4b.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588s-evb1-v10.dts    |  84 ++
+ .../dts/rockchip/rk3588s-indiedroid-nova.dts  |   2 +-
+ .../boot/dts/rockchip/rk3588s-nanopi-r6.dtsi  |   2 +-
+ .../boot/dts/rockchip/rk3588s-odroid-m2.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588s-orangepi-5.dtsi |   2 +-
+ .../boot/dts/rockchip/rk3588s-rock-5a.dts     |   2 +-
+ .../boot/dts/rockchip/rk3588s-rock-5c.dts     |   2 +-
+ .../drm/bridge/analogix/analogix_dp_core.c    |   8 +-
+ .../drm/bridge/analogix/analogix_dp_core.h    |   2 +
+ .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  90 ++
+ .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 112 ++-
+ .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 936 +++++++++++++++++-
+ include/drm/bridge/analogix_dp.h              |   3 +-
+ 26 files changed, 1206 insertions(+), 97 deletions(-)
 
-> +            required:
-> +              - data-lanes
-
-Blank line
-
-Best regards,
-Krzysztof
+-- 
+2.34.1
 
 
 -- 
