@@ -4,67 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14555D609C1
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 09:30:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AD73D609C6
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 09:58:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U5KL6dV6uuKibur/QoHM4RCOrybmx6soqEf3Mr9bNzs=; b=1iqqPr9Ac1yWlM
-	xsC3q8/WXzohfkbj2HylcHDL8AoDC1YFGLRwn1TCAE09I8JYicpF/g2ui9PyiUhEELVpguKU0PYVs
-	Oslt74EYQiiwPGKxAAEIxyCcoI7uv7/ZUgtUWXtuTX49tu8oNcYppbea0KsgY1gFjwxCNHnp+KJHv
-	aMa4vq6w7mFdCX8VXt3LUWbVslI2YyfhD1NPOh8KHQVrgkMMdpN3JiTvocJCfBgYHTCoDVyvrwF6B
-	8+tz0IDb90FS2E9WoUc5dzxYuEnYCvfTBPO7/cze6NFcnBI30T2suhfJHV0Es7cIvR44RSJ04rv9A
-	sorEXtBNikcWIGZ/CuPA==;
+	List-Owner; bh=u8sw7cjcoWGug+/aVQNn3VlnOK35M5GwX/4V3NAyEss=; b=laSBI8/XqBTA4y
+	DMa8IVnA0tsR0KRUnbU8yMfmCgdbqXk94CB8jdTajCBhgj8+5aYh1pH9xPTMbuvuTg/Meq+R3PK9O
+	PLV02kO/Zxf8qjIwzyDIxzJyVLLXNiBCWg4UCwnPz2ekMnG0imthG7zyVVsCxsMdfD39GamrqlZdz
+	MDgBFfszxw4pIfG5MhOIX1ewhlU4uWlwaqdc34dy1CK8EeZE3gmFeg1OmwlRrzxfyJNNfBSUVCdQ8
+	jyHe3syb0EUNQ+hcihd9JlTyURArXqpeFwu/e+sBGzOU3i+4bZ54jlAoHQn1n6xp/6IMYvlNZpLHk
+	4y3/dqO94ZeAjeRRLyng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGENH-0000000ChaK-2BmE;
-	Wed, 27 Nov 2024 09:30:19 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tGEos-0000000Cl7m-0zNn;
+	Wed, 27 Nov 2024 09:58:50 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGEMG-0000000ChUR-0gO5;
-	Wed, 27 Nov 2024 09:29:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=US6YPwHGZjjY/0o2sbSCg5NuQ0NYboqqQtTlEz4XOBo=; b=DNiHHf5igtfm+55scaCjyZ70X7
-	iuSqoFzaV3fG6GsxmRNtB0hU+YItLw9Kt1xc9qvPlnKftzC5IUJL3cswmUB+durrrkwlkVff3QvL0
-	oW/WUQ4VENUS3go8z/eNA53dD5V82fV/Ub4F+EJb7EjER23M5HtZZG0OhCpgS52/ylbltk4fkF2df
-	IKXxYTRzp07YGOJjLfjr6Hgs0mNiwvA+cvN6OcfjyE2k0lqR5Mrcu042p6kmfnA3EF5Y5h7pqMKxu
-	e158u8PPCV38GUdV5KUReHvHOWNJANjHf7bWIGMXg98bcgU0FxyzxgG5tD9n5rlr1GxijAG/IVzpb
-	Ttb1A31A==;
-Received: from i5e86190f.versanet.de ([94.134.25.15] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tGEMA-0006nM-HZ; Wed, 27 Nov 2024 10:29:10 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Damon Ding <damon.ding@rock-chips.com>,
- sebastian.reichel@collabora.com
-Subject: Re: [PATCH v1 04/10] phy: phy-rockchip-samsung-hdptx: Add support for eDP
- mode
-Date: Wed, 27 Nov 2024 10:29:09 +0100
-Message-ID: <4260470.1IzOArtZ34@diego>
-In-Reply-To: <20241127075157.856029-5-damon.ding@rock-chips.com>
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
- <20241127075157.856029-5-damon.ding@rock-chips.com>
+	id 1tGEnF-0000000Ckv6-12KC
+	for linux-phy@lists.infradead.org;
+	Wed, 27 Nov 2024 09:57:10 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AR9JE1J006025;
+	Wed, 27 Nov 2024 09:56:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	IE5v750NhfcBCh+HTstqz8SDcyR6ATb9vcpl8k+7QvQ=; b=gYnJ4UEtWpzjKNm4
+	k6o4zGbeBYs6LrJADAxNpAg7yL2mT7WaHFcOGJW61gpZm9Dvi+8bO2fw1H47zUyU
+	mpxSvo9aMvZYBVaciA0nMxhzK2ZjNkGKka6i5FLfaNDE8zUYTaQlGKoqSIicuV9j
+	hFcZTBAdVlZaBrXsK5P41uu68j4lm1Yu29TI4w7urJnvcvVstks1s+Fn4pfGmfQi
+	qwj4wdc6kBP+2ZHCHGiTFMOFSddS+kQ76mYYRfcq+0aaV67hoWdeKaNxqYAe9Lv2
+	7o7k03Z5uQI81ispFKU4iijf7mRmSS5jEkREf5iZyG7onv71+PqTMHCtK4tGEyAq
+	b3mXig==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 434ts1p2pf-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 27 Nov 2024 09:56:58 +0000 (GMT)
+Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AR9uw5D001804
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 27 Nov 2024 09:56:58 GMT
+Received: from [10.64.68.102] (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 27 Nov
+ 2024 01:56:48 -0800
+Message-ID: <b3fa1fa6-3ed5-4f4c-a3bb-607b06774cdb@quicinc.com>
+Date: Wed, 27 Nov 2024 17:56:45 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 4/5] arm64: dts: qcom: qcs8300: enable pcie0 for QCS8300
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <robh+dt@kernel.org>,
+        <manivannan.sadhasivam@linaro.org>, <bhelgaas@google.com>,
+        <kw@linux.com>, <lpieralisi@kernel.org>, <quic_qianyu@quicinc.com>,
+        <conor+dt@kernel.org>, <neil.armstrong@linaro.org>,
+        <andersson@kernel.org>, <konradybcio@kernel.org>
+CC: <quic_shashim@quicinc.com>, <quic_kaushalk@quicinc.com>,
+        <quic_tdas@quicinc.com>, <quic_tingweiz@quicinc.com>,
+        <quic_aiquny@quicinc.com>, <kernel@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+References: <20241114095409.2682558-1-quic_ziyuzhan@quicinc.com>
+ <20241114095409.2682558-5-quic_ziyuzhan@quicinc.com>
+ <a02925d7-2d09-4902-97e4-5e7f09d7ef21@oss.qualcomm.com>
+Content-Language: en-US
+From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+In-Reply-To: <a02925d7-2d09-4902-97e4-5e7f09d7ef21@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: tTg52swv73q9BIT9C6iEByOmYqdiO0Sv
+X-Proofpoint-ORIG-GUID: tTg52swv73q9BIT9C6iEByOmYqdiO0Sv
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
+ lowpriorityscore=0 mlxlogscore=999 spamscore=0 adultscore=0 malwarescore=0
+ impostorscore=0 phishscore=0 priorityscore=1501 mlxscore=0 suspectscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2409260000 definitions=main-2411270082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_012916_215274_5620B18B 
-X-CRM114-Status: GOOD (  17.53  )
+X-CRM114-CacheID: sfid-20241127_015709_313359_B27D01F9 
+X-CRM114-Status: GOOD (  17.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,67 +103,178 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Damon,
 
-Am Mittwoch, 27. November 2024, 08:51:51 CET schrieb Damon Ding:
-> Add basic support for RBR/HBR/HBR2 link rates, and the voltage swing and
-> pre-emphasis configurations of each link rate have been verified according
-> to the eDP 1.3 requirements.
-> 
-> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> ---
+On 11/14/2024 9:02 PM, Konrad Dybcio wrote:
+> On 14.11.2024 10:54 AM, Ziyue Zhang wrote:
+>> Add configurations in devicetree for PCIe0, including registers, clocks,
+>> interrupts and phy setting sequence.
+>>
+>> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+>> ---
+>>   arch/arm64/boot/dts/qcom/qcs8300-ride.dts |  44 +++++-
+>>   arch/arm64/boot/dts/qcom/qcs8300.dtsi     | 176 ++++++++++++++++++++++
+> This implies this patch should be two separate ones
+>
+>
+> [...]
+>
+>
+>> +&tlmm {
+>> +	pcie0_default_state: pcie0-default-state {
+>> +		perst-pins {
+>> +			pins = "gpio2";
+>> +			function = "gpio";
+>> +			drive-strength = <2>;
+>> +			bias-pull-down;
+>> +		};
+>> +
+>> +		clkreq-pins {
+>> +			pins = "gpio1";
+>> +			function = "pcie0_clkreq";
+>> +			drive-strength = <2>;
+>> +			bias-pull-up;
+>> +		};
+>> +
+>> +		wake-pins {
+>> +			pins = "gpio0";
+> Sorting these in an increasing order would be welcome
+>
+>
+>>   
+>> +		pcie0: pci@1c00000 {
+>> +			compatible = "qcom,pcie-qcs8300","qcom,pcie-sa8775p";
+> Missing ' ' after ','
+>
+>> +			reg = <0x0 0x01c00000 0x0 0x3000>,
+>> +			      <0x0 0x40000000 0x0 0xf20>,
+>> +			      <0x0 0x40000f20 0x0 0xa8>,
+>> +			      <0x0 0x40001000 0x0 0x4000>,
+>> +			      <0x0 0x40100000 0x0 0x100000>,
+>> +			      <0x0 0x01c03000 0x0 0x1000>;
+>> +
+>> +			reg-names = "parf",
+>> +				    "dbi",
+>> +				    "elbi",
+>> +				    "atu",
+>> +				    "config",
+>> +				    "mhi";
+>> +
+>> +			device_type = "pci";
+> Please try to match the style in x1e80100, it's mostly coherent but
+> things like newlines differ, which is tiny but mildly annoying
+>
+>> +
+>> +			#address-cells = <3>;
+>> +			#size-cells = <2>;
+>> +			ranges = <0x01000000 0x0 0x00000000 0x0 0x40200000 0x0 0x100000>,
+>> +				 <0x02000000 0x0 0x40300000 0x0 0x40300000 0x0 0x1fd00000>;
+> Looks like there's a bit more space in there
+>> +			bus-range = <0x00 0xff>;
+>> +
+>> +			dma-coherent;
+>> +
+>> +			linux,pci-domain = <0>;
+>> +			num-lanes = <2>;
+>> +
+>> +			interrupts = <GIC_SPI 307 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 308 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 309 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 313 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 374 IRQ_TYPE_LEVEL_HIGH>,
+>> +				     <GIC_SPI 375 IRQ_TYPE_LEVEL_HIGH>;
+>> +
+>> +			interrupt-names = "msi0",
+>> +					  "msi1",
+>> +					  "msi2",
+>> +					  "msi3",
+>> +					  "msi4",
+>> +					  "msi5",
+>> +					  "msi6",
+>> +					  "msi7";
+> Please also add a "global" interrupt.. looks like it's GIC_SPI 166, but
+> please confirm
+> okay
+>> +
+>> +			#interrupt-cells = <1>;
+>> +			interrupt-map-mask = <0 0 0 0x7>;
+>> +			interrupt-map = <0 0 0 1 &intc GIC_SPI 434 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0 0 0 2 &intc GIC_SPI 435 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0 0 0 3 &intc GIC_SPI 438 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0 0 0 4 &intc GIC_SPI 439 IRQ_TYPE_LEVEL_HIGH>;
+>> +
+>> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
+>> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
+>> +				 <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
+>> +				 <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>;
+>> +
+>> +			clock-names = "aux",
+>> +				      "cfg",
+>> +				      "bus_master",
+>> +				      "bus_slave",
+>> +				      "slave_q2a";
+>> +
+>> +			assigned-clocks = <&gcc GCC_PCIE_0_AUX_CLK>;
+>> +			assigned-clock-rates = <19200000>;
+>> +
+>> +			interconnects = <&pcie_anoc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
+> QCOM_ICC_TAG_ALWAYS
+> okay
+>> +					<&gem_noc MASTER_APPSS_PROC 0 &config_noc SLAVE_PCIE_0 0>;
+> QCOM_ICC_TAG_ACTIVE_ONLY
+>
+> [...]
+> okay
+>> +
+>> +			pcieport0: pcie@0 {
+>> +				device_type = "pci";
+>> +				reg = <0x0 0x0 0x0 0x0 0x0>;
+>> +				#address-cells = <3>;
+>> +				#size-cells = <2>;
+>> +				ranges;
+>> +				bus-range = <0x01 0xff>;
+>> +			};
+> Are you going to use this? If not, please drop
 
-[ ... huge block of DP phy support ...]
+its required by wlan driver we need it
 
-yes that block was huge, but I also don't see a way to split that up in a
-useful way, so it should be fine.
+BRs
 
+Ziyue
 
-> +static int rk_hdptx_phy_set_mode(struct phy *phy, enum phy_mode mode,
-> +				 int submode)
-> +{
-> +	return 0;
-> +}
-
-I think it might make sense to go the same way as the DCPHY and also
-naneng combophy, to use #phy-cells = 1 to select the phy-mode via DT .
-
-See [0] for Sebastians initial suggestion regarding the DC-PHY.
-The naneng combophy already uses that scheme of mode-selection too.
-
-There is of course the issue of backwards-compatibility, but that can be
-worked around in the binding with something like:
-
- '#phy-cells':
-    enum: [0, 1]
-    description: |
-      If #phy-cells is 0, PHY mode is set to PHY_TYPE_HDMI
-      If #phy-cells is 1 mode is set in the PHY cells. Supported modes are:
-        - PHY_TYPE_HDMI
-        - PHY_TYPE_DP
-      See include/dt-bindings/phy/phy.h for constants.
-
-PHY_TYPE_HDMI needs to be added to include/dt-bindings/phy/phy.h
-but PHY_TYPE_DP is already there.
-
-That way we would standardize on one form of accessing phy-types
-on rk3588 :-) .
-
-Also see the Mediatek CSI rx phy doing this too already [1]
-
-
-Heiko
-
-[0] https://lore.kernel.org/linux-rockchip/udad4qf3o7kt45nuz6gxsvsmprh4rnyfxfogopmih6ucznizih@7oj2jrnlfonz/
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml
-
-
-
+>
+>> +		};
+>> +
+>> +		pcie0_phy: phy@1c04000 {
+>> +			compatible = "qcom,qcs8300-qmp-gen4x2-pcie-phy";
+>> +			reg = <0x0 0x1c04000 0x0 0x2000>;
+>> +
+>> +			clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
+> This clock goes to the RC, it should be _PHY_AUX (which you put below
+> as phy_aux), please replace it.
+> will do it
+>> +				 <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE_CLKREF_EN>,
+>> +				 <&gcc GCC_PCIE_0_PHY_RCHNG_CLK>,
+>> +				 <&gcc GCC_PCIE_0_PIPE_CLK>,
+>> +				 <&gcc GCC_PCIE_0_PIPEDIV2_CLK>,
+>> +				 <&gcc GCC_PCIE_0_PHY_AUX_CLK>;
+>> +
+>> +			clock-names = "aux",
+>> +				      "cfg_ahb",
+>> +				      "ref",
+>> +				      "rchng",
+>> +				      "pipe",
+>> +				      "pipediv2",
+>> +				      "phy_aux";
+> Konrad
 
 -- 
 linux-phy mailing list
