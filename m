@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C26BD6ACFC
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 18:29:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37E2AD6D231
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 19:35:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GuzPycNvrKjwt9j13ad6gXjzUo4Sxzyiy69S3l3JOiM=; b=TOiLJBfi8aK/Qp
-	lePmK2Q6oD7scCYWFZv0ww7UdRHWauk/MxA7t+V6M5uePC9DSjZpB6YsHcgfBeqSxKnQvofCOL62t
-	gLks/LLm8N6gXSQXfj9lUZQQhf9La1UbVRtfrefz2aU2xtyeolxndv1GRRbYBKVyS9IEHcJVvRkJv
-	Kl7cQAqKUg79m2ZtvF7rp2tj9H0AHUvEigfP+wqqb0h/9GNdUE2XadAsQCg6OyAe4CHaibx8foPhL
-	4rOQyLfO9eFwrrBPlhByka4UlY6d5xyIzC5e+r4OfBgMsftvLAOMaL5Y/yjw0xs64HpMjYn+KpTE3
-	577f6sR9+LFHUAg1hMFA==;
+	List-Owner; bh=qOWetMDNqQkRVZgOPgpAigL7luvSU/WVVDwKZ91YrxM=; b=ozLDU9UpF+xgZ7
+	Sx+tJKZw/z8lBHSxCw2OZLSzlU++52vv8x4boxxjDQ5RlAu6CUhg4NgTZFndi6iBnNdTmPnAGItPw
+	4QvE/f7blouUwqQi2N4Uuf0iMC8367G75EljGB8Ak7fUjol1gd7bh1KMeRJRAUkpB7DA4YpOi117k
+	qmaIevJlcvhBvNM1xDd0/mwzTq2WDduCvYe4I1d+86qC6eI7ybcFN2ftk3dk1usSeo/GYpayP1DP8
+	MrFhq0OMiZIFkhTY3xQHtoFGjmWcjFZdhjBFD5zDqNn9SizKn3VXH6iOaqRkm1SEDNyk9UwDK2SOO
+	rYfXbTL4VTMjR0uGT9Zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGMmg-0000000DpXk-0Xep;
-	Wed, 27 Nov 2024 18:29:06 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tGNoe-0000000DxCT-46B8;
+	Wed, 27 Nov 2024 19:35:12 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGMmd-0000000DpX9-1P9M
-	for linux-phy@lists.infradead.org;
-	Wed, 27 Nov 2024 18:29:04 +0000
+	id 1tGNlk-0000000DwhF-2mWw;
+	Wed, 27 Nov 2024 19:32:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B55C0A439A3;
-	Wed, 27 Nov 2024 18:27:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68651C4CECC;
-	Wed, 27 Nov 2024 18:28:54 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id B300BA439FA;
+	Wed, 27 Nov 2024 19:30:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 446E7C4CECC;
+	Wed, 27 Nov 2024 19:32:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732732142;
-	bh=hsvAzJbsOippFpgaQxLr33LtX30TWw3xnnUFBVplrpY=;
+	s=k20201202; t=1732735931;
+	bh=SIV3PPrG1BrQ4co3ZSC9TrCcKJvkfKh5dqI+Y2Bkkjc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=M9gqIb5gWafJ07ZhcUqkbVFDi717sJVbne+4d64HlGCKeYc9fyzN2VR3s2ffAwPV5
-	 csiCYh7nyzCqzyi5CZqh1aWQoEkCXpj0YFxI2nwcFAh47hCqyWig3uxq3ejblPA2dz
-	 4Qzmm+gqwG0B/fI9vSzzlaaNW/eNXRJSA9Y52z89kcZxj17mOsNKKQaGNfnwiGkF9Q
-	 UXT6eZs1nobLg6vyEWxNSd2KOJHwYEWDhGoDfJ5AOaCX7cJDKvjWKjcGEuaiHREMwu
-	 dbDUp2u45OrZ5kuMRS3ujnMy3ExeXxPETnw8gWKTZ6zjhIQNCPmP7V1O9B369vbwSM
-	 b8/uQh8OGUaKQ==
-Message-ID: <3729bdcb-5f3d-4845-8f96-dbb0616b88f4@kernel.org>
-Date: Wed, 27 Nov 2024 19:28:52 +0100
+	b=GqwYaQvvmqz6EhDpRw6/Leia2A+F7OUVcFolVlwearYNm9A+OCcwYuO+b3EQQUkUj
+	 3DnHWK19L3CChRRI9BjgRD1LH/4PJBWe7a1YNprlXKIShAjUr5iSsRLdQDKc4ZCDMr
+	 VWRd7NsMAlKGJ7d3bgCA47XIscSLh0meueTNsK0UFtAvLDWdnbpQP195mNz8j+S62o
+	 RM3Zk2ORitKYigOEw0o3v8VDKcVkwxLEQjFROqtmEUTs+qO+N83K+Zk7nlUaIXO41E
+	 IdQ2WW3TfRSqZRDwuCGne4X5Iacj5mGF9E9qaRvgSgfCWu0q6yc+YtzHUGTrYLvPjW
+	 1HojGGBCx//3Q==
+Message-ID: <fefdc47e-d030-47d4-9c24-ada0604243ff@kernel.org>
+Date: Wed, 27 Nov 2024 20:32:02 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/4] dt-bindings: phy: Add eDP PHY compatible for qcs8300
-To: Yongxing Mou <quic_yongmou@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Sean Paul <sean@poorly.run>,
- Marijn Suijten <marijn.suijten@somainline.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Kuogee Hsieh <quic_khsieh@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+Subject: Re: [PATCH 4/9] phy: exynos5-usbdrd: convert to dev_err_probe
+To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>
+Cc: Peter Griffin <peter.griffin@linaro.org>,
+ Tudor Ambarus <tudor.ambarus@linaro.org>,
+ Sam Protsenko <semen.protsenko@linaro.org>,
+ Will McVicker <willmcvicker@google.com>, Roy Luo <royluo@google.com>,
+ kernel-team@android.com, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- Ritesh Kumar <quic_riteshk@quicinc.com>
-References: <20241127-qcs8300_dp-v1-0-0d30065c8c58@quicinc.com>
- <20241127-qcs8300_dp-v1-1-0d30065c8c58@quicinc.com>
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+References: <20241127-gs101-phy-lanes-orientation-phy-v1-0-1b7fce24960b@linaro.org>
+ <20241127-gs101-phy-lanes-orientation-phy-v1-4-1b7fce24960b@linaro.org>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -109,10 +107,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241127-qcs8300_dp-v1-1-0d30065c8c58@quicinc.com>
+In-Reply-To: <20241127-gs101-phy-lanes-orientation-phy-v1-4-1b7fce24960b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_102903_501051_B5013AE4 
-X-CRM114-Status: UNSURE (   5.26  )
+X-CRM114-CacheID: sfid-20241127_113212_831436_D078D932 
+X-CRM114-Status: UNSURE (   6.91  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,23 +123,17 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/11/2024 09:15, Yongxing Mou wrote:
-> Add compatible string for the supported eDP PHY on qcs8300 platform.
-
-
-What is supported eDP PHY? Can it be unsupported? Anyway, this repeats
-the diff. Say something useful instead, like why this is not compatible
-with sa8775p.
-
-Best regards,
-Krzysztof
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMjcvMTEvMjAyNCAxMTo1OCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gZGV2X2Vycl9wcm9i
+ZSgpIGV4aXN0cyB0byBzaW1wbGlmeSBjb2RlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFuZHLDqSBE
+cmFzemlrIDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+Cj4gLS0tCj4gIGRyaXZlcnMvcGh5L3Nh
+bXN1bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMgfCAyMSArKysrKysrKystLS0tLS0tLS0tLS0KPiAg
+MSBmaWxlIGNoYW5nZWQsIDkgaW5zZXJ0aW9ucygrKSwgMTIgZGVsZXRpb25zKC0pCgoKUmV2aWV3
+ZWQtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAbGluYXJvLm9y
+Zz4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
+aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
