@@ -4,63 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D43F1D6ACDD
-	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 14:27:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6632AD6ACF1
+	for <linux-phy@archiver.kernel.org>; Wed, 27 Nov 2024 16:02:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iZefJXV3hmdNuG3jqFpm0XCDdOf9GFleZujXtJTV+zY=; b=O28GbAdBhYVqF8
-	l60wgQczmpzSoBAuW1/lqvO1RfwbGzwswtxWeUz2lHMWm2RXaavh2Bt07olgkR0yNMMdJAUTDfOXh
-	VpDNJVgriyYnv30JovPj3CDUnrN7eCzZJEoAhp74v2mY5Bae6R8KvSIF7I1qlCBlg0QA6+wwS5G/6
-	Pt54CDyaNAhQCgxpL/WihxM+HRIgIrihrcV8UzzXIAkkXq0YbNAlEzJfUoXLd/a6VJIJieVDUfFsT
-	VzQ7/VdKSmDlRzSxEKb5l9qHd0bAhG18KHWSmjMW0HHyKZ6afw9ChIg5xji9oNXKKtwTVcBCiFzeZ
-	2bUj7DARNGYJBQnS+vXQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+4ffMMNdbEGTasZwKn+tTRlEOaUe9JwJAmKS8TegyWE=; b=noyXDp1DCo3MgPd4bCWH7eeo2A
+	3kS/TjTkk2rjCTtD3ecovGbicQu43NgOjFfjOqdT3xsNazrwvPvtQLEK7ijex8ZYed1Wpoyjczvp7
+	7qVZ08lIuiSaRWisTKuYkZoRbvjqMXWnvnGtDCfDE+zdG4ned/vexRimJw/EpgfKGKMRVrSnqueiQ
+	2fBzRo/V4YJpEtboPOmWbog4TGwKFAd7Gq9CJudnTw7Ugb7htIVp/Jk2x9wn8IEbO1xbANZAsdCo+
+	XpLtSzO2ynFjgaBqztAE4k5nJ9IKKMr1GxT86IzP59rkzPBs+aUwAFFSzJ9bQydjmLhWd7dQKWixG
+	7buNOKhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGJ14-0000000DMyp-3t5F;
-	Wed, 27 Nov 2024 14:27:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tGKVD-0000000DaL9-34Dh;
+	Wed, 27 Nov 2024 16:02:55 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGJ06-0000000DMsq-1KTv;
-	Wed, 27 Nov 2024 14:26:43 +0000
+	id 1tGKTR-0000000Da5D-2sh6;
+	Wed, 27 Nov 2024 16:01:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 5F8125C561C;
-	Wed, 27 Nov 2024 14:25:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 364EFC4CECC;
-	Wed, 27 Nov 2024 14:26:41 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id BECCD5C5506;
+	Wed, 27 Nov 2024 16:00:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A377C4CECC;
+	Wed, 27 Nov 2024 16:01:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732717601;
-	bh=kqNvddmDWtm7j0n7cbl9AqMJ+Ww39KyF2qb8khHv7zI=;
+	s=k20201202; t=1732723264;
+	bh=M4M6enDTU22SNfTcxSEVD3rydp3BImCdb+4g0awKJZU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LRLk2Hg5BpC0e6D0gRHZqBuTAPOfn5yC7hHhwuYPB0lNR1lkzn8BPdkRXQND30GiD
-	 kA+REhHwzGNrRa7v6pgsRV7dxWg1QEmPT9Lj6HT+FKmcEh8/pqn4Le5Ac9EjITV+4E
-	 8XyIMonYyRKGN14kythItJj9u66rhGmFmk49A5cEd1EosxgZ57DFaIj8gnAn/6kmY2
-	 dWXcG6zLfbtnzOae30JpagghRoLjg5408etK/cP3/pKPBXR7tptbhgsybi8sjS37dl
-	 A/IP8OjkpLkuL42MfLMib0ANQxoqkaXpKO3LJLvalJ84GkKfj4ftkURwyezrbi31T6
-	 VoU36du1t828Q==
-Date: Wed, 27 Nov 2024 08:26:39 -0600
-From: Rob Herring <robh@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	b=GvIC2dvQOfcpqRNRSWrZjx7szrZxab8KBhgVklQCkJRs62rN/IbYxrS0cQHAyO7BM
+	 aSL6LoNc78LPGwriQJ3Q2V25qeHrhsXQxrSK/VZYebr+zSk0vijH8iKuOUuWxeH1H6
+	 NxXQqM53JDaOugceU/Tc42yWYRSrhN+KWp8fSQtTclLULu9DBiD1HmF8vHaHWYf5vC
+	 EB2F8J6NAEKmuXxgWO7uKcnq1zeba5WZzhrbeR2vbW05L5Tz9NY26DXtckClQOIuEc
+	 BWE0J2C+UB3nvnlB8kVhrycnRi7XOMNRKsYVziZo4bjVFfjYWJg1Gejx6PDTEyLiEC
+	 Mld4Rxlp+OwOg==
+Date: Wed, 27 Nov 2024 16:00:59 +0000
+From: Conor Dooley <conor@kernel.org>
+To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add property to
- set disconnect threshold
-Message-ID: <20241127142639.GA3451514-robh@kernel.org>
-References: <20241126025859.29923-1-chunfeng.yun@mediatek.com>
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	Tudor Ambarus <tudor.ambarus@linaro.org>,
+	Sam Protsenko <semen.protsenko@linaro.org>,
+	Will McVicker <willmcvicker@google.com>,
+	Roy Luo <royluo@google.com>, kernel-team@android.com,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org
+Subject: Re: [PATCH 2/9] dt-bindings: phy: samsung,usb3-drd-phy: add optional
+ orientation-switch
+Message-ID: <20241127-unturned-powdered-d9d1b695732d@spud>
+References: <20241127-gs101-phy-lanes-orientation-phy-v1-0-1b7fce24960b@linaro.org>
+ <20241127-gs101-phy-lanes-orientation-phy-v1-2-1b7fce24960b@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241126025859.29923-1-chunfeng.yun@mediatek.com>
+In-Reply-To: <20241127-gs101-phy-lanes-orientation-phy-v1-2-1b7fce24960b@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_062642_403125_2EF92FD8 
-X-CRM114-Status: GOOD (  14.47  )
+X-CRM114-CacheID: sfid-20241127_080105_768635_F507D1C0 
+X-CRM114-Status: GOOD (  11.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,54 +81,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============9177185360570571642=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 26, 2024 at 10:58:58AM +0800, Chunfeng Yun wrote:
-> Add a property to tune usb2 phy's disconnect threshold.
-> And add a compatible for mt8196.
-> 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> ---
->  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8 ++++++++
->  1 file changed, 8 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> index a9e3139fd421..2e012d5e1da1 100644
-> --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> @@ -49,6 +49,7 @@ properties:
->        - enum:
->            - mediatek,mt3611-xsphy
->            - mediatek,mt3612-xsphy
-> +          - mediatek,mt8196-xsphy
->        - const: mediatek,xsphy
->  
->    reg:
-> @@ -129,6 +130,13 @@ patternProperties:
->          minimum: 1
->          maximum: 7
->  
-> +      mediatek,discth:
 
-That's not understandable. Spell it out: mediatek,disconnect-thres
+--===============9177185360570571642==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="Tx/fOhQTJ3HpCf6w"
+Content-Disposition: inline
 
-> +        description:
-> +          The selection of disconnect threshold (U2 phy)
-> +        $ref: /schemas/types.yaml#/definitions/uint32
-> +        minimum: 1
-> +        maximum: 15
-> +
->        mediatek,efuse-intr:
->          description:
->            The selection of Internal Resistor (U2/U3 phy)
-> -- 
-> 2.46.0
-> 
+
+--Tx/fOhQTJ3HpCf6w
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Nov 27, 2024 at 10:58:12AM +0000, Andr=E9 Draszik wrote:
+> orientation-switch is the standard declaration to inform the Type-C mux
+> layer that a remote-endpoint is capable of processing orientation
+> change messages.
+>=20
+> Add as an optional since not all versions of this phy currently support
+> or even need the orientation-switch.
+>=20
+> Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
+
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+
+--Tx/fOhQTJ3HpCf6w
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ0dCOgAKCRB4tDGHoIJi
+0mROAQCOFefWLQAVOt/TEa+0oQfLTwQShkoYl/YCu/c7vWNwcAEAu9WuT8ESwSD2
+YQdYtCGtqVtkqoOWtMJh9sjaJ2XwPQw=
+=hKKJ
+-----END PGP SIGNATURE-----
+
+--Tx/fOhQTJ3HpCf6w--
+
+
+--===============9177185360570571642==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============9177185360570571642==--
+
