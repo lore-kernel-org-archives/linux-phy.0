@@ -4,92 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 356C1D69109
-	for <linux-phy@archiver.kernel.org>; Thu, 28 Nov 2024 13:22:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E10B9D69114
+	for <linux-phy@archiver.kernel.org>; Thu, 28 Nov 2024 14:18:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kf1Uoiq7dtTTnUdoPswU+URK+wxi2pXs+LnTpZ5b5Kk=; b=15V2jVRj8nNY4c
-	QEuW/WdlwScfosqVIp3HzxlAUXVTYaSFrz6U+OM58q29hvKl+AfoRSKB9FiiIFdlsy3AWxa3WguE6
-	V9fXrOPctHpwwkIofNaiHyM4+lnIb6X9UJiCzO5hYnNTlkxDLqfnyTHrIXO9koTJlAdszhbyHF2Yh
-	NiRTyQitsXzMoYuT2unNNVqb2UUo21E+v+G/zZGfCszgTWFD7gPclvqak458Ko2n1tJjZXMNCnrIX
-	SVTL6vfXhkORy2nSaiBA9tvue6UkKHrjFeY65xGzo3PvrQu6XRb2t+pTzoc8uINMi+cvsT8YUbmVJ
-	XWsIzlUU7H6ppzso46zg==;
+	List-Owner; bh=BG4CbFIsEoiELlCCq0c21P70bwShzflI6S6YcCn6PsQ=; b=qSpBXPYRX0R38R
+	NevRiwOC04bl0BmConojO3vQgp7NErz8RCWbnKcNGUnL4gcJ90kqYJ2jgYFKVzuJzG1kt4t5O7pvw
+	2jmXdGekKl74E6XbIVgzScjoPQscvoR2TO4P1NCa5GrpmOfNsiekn8pDyEurtEH7kgiZGy1iM/YXS
+	GCxCWamo1mY+TBJmh+lA8GgZLM3G14hupOrq2pd6hz3GX4tUC+OxXquYsaUQWqHbSAtaES9MKAT9r
+	DTH3VClkI4QWQucTk3AiclDMDZ/NZhXcLj3Z1jXkHPPmGiH7maoQ1toLDF04czGzZTUMb6fBkcNyA
+	7mil/E2WXK9wDxMpBoqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGeTn-0000000FcI7-43ge;
-	Thu, 28 Nov 2024 13:22:47 +0000
+	id 1tGfLo-0000000FkCf-2cgg;
+	Thu, 28 Nov 2024 14:18:36 +0000
 Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGeTl-0000000FcHb-3zmr
+	id 1tGfLm-0000000FkBv-1DLP
 	for linux-phy@lists.infradead.org;
-	Thu, 28 Nov 2024 13:22:47 +0000
-Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2ffd6882dcbso7033521fa.0
-        for <linux-phy@lists.infradead.org>; Thu, 28 Nov 2024 05:22:45 -0800 (PST)
+	Thu, 28 Nov 2024 14:18:35 +0000
+Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-2ffc357ea33so9507941fa.0
+        for <linux-phy@lists.infradead.org>; Thu, 28 Nov 2024 06:18:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1732800164; x=1733404964; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1732803512; x=1733408312; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=0trBlkAARfcalt0wvM3utILQ/svffGiHUkuNkTIjo9g=;
-        b=N0FQKhjkgPEsjQUy8suCBnAygeeGUWBboWEMF1LIwEqpcdj83FyxFOFSdOyr26Gjxc
-         DiKN/mOe874VNl4lDEs7EZdbBfPIoHKUtrl+u5u6GPnToTKEYDdOqVUp+sHIr+8KcOwE
-         ag81tikI9d7U0eNOe4H13rgvSZHAe6yWNPg7AFnJp2BHVhD/HzDTxmCRv6HdWVxb3A/s
-         wh35/LMoaHmiVVL8dm9Z7VvheCmgBcDVk5ZbqV4rhEcfqMFazq/s0KGt1gNukBDmOR3O
-         /OAznn6tjtgM2r8QOiOwOveCBPeZ0eOQX7X08Hj7BiXqbmX66+4pV87yqcCZKG6m8FBG
-         pp2w==
+        bh=xA8QccDB7jDinpTszrKQcVtNkmKlzXFjmJDa5bO0Mmg=;
+        b=ghFTctlgUrOBXrGO8g9HduiQPyZoSnjKXYjGAj7fvoJvFpOcsorseYjmF+7ScYKQ32
+         YJUfUHcwvrrbXKDdmrOcUv8YLxmfXCXRpMSmZQblTH4eN2RRSLVbk6hiQSzgzyp0yv1l
+         VfdTR1CztOitzFOmb47gUoMPEmpRk7rl75eYiOBOuLJKX11AmE+557LY3SKHbIAI4CA6
+         ZRuGgoK8AZHT2bSsd5MEaJK35On4oK4HWyxtFPFiACNkutJhm1j0CBZqsQo+8iJu77R+
+         P7SZfDryTuLrpAlrHHLCf30lcQEYIN8SYKJqi0CSs6nbn94cBcp8dpHauzG82i6xr9uI
+         xeCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732800164; x=1733404964;
+        d=1e100.net; s=20230601; t=1732803512; x=1733408312;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=0trBlkAARfcalt0wvM3utILQ/svffGiHUkuNkTIjo9g=;
-        b=CJtqdy4+q7P9vnkRXttjZb6OD3TW7PHCAeKPZqQGitVo4MmDnsmbFGTiH41lcasryF
-         Jj0wmKtp17eZH9VPhaNZHMDmiMKaqRy2GYDl4Z2MifR3v5HzLodDKDLZIiC5a9bwWNdW
-         JUz0xpDIOKmKJ3OjgV6bbgACeW/DnE2xqpjVCuGiiyCu92i/F+jyTlOF8ky2Nc3qzzn1
-         PCJAC58EzCMgSudyrq05VDBEGvKWx6un+EaI3WZN2pnkHHmcNYrVGe+bDMX+ifMgw+I/
-         GAhpbLjm7huoGL2OAp39D018ijpoGaDXdviPVhheNsbqw2tZPaF5DXUbLDwUUVucjs5V
-         IEXw==
-X-Forwarded-Encrypted: i=1; AJvYcCVn51dR//xIVtM6Bh8wAWACjI6VifpbqCWYj6jQya5R6IX0jllNzS10lFnsKOWkGNFPw2u+VO22S+M=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz8qUlAeruMOezCfRPYjKtPIV/GRzPSFAMfcGLlhEgILgAV+o8k
-	zunuZvHnLS3ZvZrGkoOmJild3jfQIZLZwwtKtkLfNTsyb0oFloEbKPbXMJD23Zk=
-X-Gm-Gg: ASbGncvVgP1JZTmHh8eq9CrMGS7YLKMcZV7fMHlLEfpi55Hl8oFsPMxagipCVqx7o9x
-	aaJZvTpqiq+QBQp41wWaTndmOqyXUimbE6PnyagGEwux1J2NjeMCukumeWFYF1Eg+n2noqDg7O7
-	+6BFfyD6QC500kfDUCWCtfz2w+zAVdSOWrvlZRvqNHPfVxc18Hcw2OwhTT4CZQV1VGgvrhrgXpd
-	IhT23fElKBUmQ1syN6bImO298ix36YILIuk3yKp16z9GXfwBMJgMG0dIXklL4++uHQd80ufxdP4
-	ROFfbh9CEh428I+bWY+L1lDUKL0sgg==
-X-Google-Smtp-Source: AGHT+IHEvVWrBgLarPrP+szMgf0Kt+2464HFdoUTduj2gmCoJGkPBz1dSTuSfhoY5FnSXf3ADQPMpA==
-X-Received: by 2002:a05:651c:150e:b0:2ff:d41e:d1eb with SMTP id 38308e7fff4ca-2ffd60dc0b8mr25239271fa.37.1732800163793;
-        Thu, 28 Nov 2024 05:22:43 -0800 (PST)
+        bh=xA8QccDB7jDinpTszrKQcVtNkmKlzXFjmJDa5bO0Mmg=;
+        b=lUF8BqZ/84ShBXTx5aosCatT17G4SsJkiRmpRwJS5e1RYdeTkqPLUZ6wAIDsPLrZJS
+         w+aQ7ZjrvJLbkXPKvp1PGq8+ZZHCewMCMbaQWvnqpBK+JubHoK9ATVs/OuVydVdcmjne
+         wCP8A+QmWQ40S8LaKh2riPgM7Ld3L3MGNXeFsusGH61Y8O4Ym6gyEKSTWn1v3wTlOVf0
+         IX3DQuRIJlun+dKAF/og/1mDMglMTtEVWC+VRAOqXIQ+q7T5BQZJqf50EkwvSuMlbefS
+         qUdF+Iax75J3CXehfMlmYhX6AtFuhB8mlL5FF9AD3kgp/D4ixVl1du0mGjF/vluPbR4Z
+         M0VA==
+X-Forwarded-Encrypted: i=1; AJvYcCWSFEhkGn4gfs6XvT2L4QX3WhvX8MNxYqlkmeJBWvw/zY4nUAgfKV6TwbNgRMMy3MW9lPnUsebb/yk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyVyC6TDxM4ZCkFt9sxmNISIj7tx4OC7nLJNhsCFstZTHHoRQPo
+	2L/4gk6g4OIpp1429F9uKSSjrdi4+NmyStBsAxQ5mYQ78veYpmr1Eed6U0tX128=
+X-Gm-Gg: ASbGncveVI93ZTS2X0RLFO4XGPGI4PbVnVl/rE7zAfmTwiOt+HgQr0p0+m+fJOs9RVg
+	9+FEiP/AYfdNcMD+2f7yWIBQjpWmgBSMHHWbZ5B7hCtTnozNAf+rmbO2PIEZ5X9sxkvT6DqwH2j
+	V+W2ih7UFRWhOMMKCo00FQaHU+bEwTXMXbiEapxRx5fbanj2Kl/c5PwKmD7AyUifKrD95cEuX6k
+	6Du5XyoL9TcRoSgRGb+T3rspU0MqLNKZ6M+fQAEa29u88TID4olneTpVShJORbJe/tQvyR6aKNn
+	H54L9+DBLbigP9BH5yIn/mrUY7tm4A==
+X-Google-Smtp-Source: AGHT+IEWrfuUcnXV1iqJHqdNEOSGIK8M6/LbygKUp+v7qqACcol4zNxR8qGEVUdI0pmwpuF4EUOzaA==
+X-Received: by 2002:a05:651c:887:b0:2fb:8920:99c6 with SMTP id 38308e7fff4ca-2ffd604fc7fmr46439611fa.23.1732803512212;
+        Thu, 28 Nov 2024 06:18:32 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ffdfc7503dsm1894131fa.75.2024.11.28.05.22.41
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ffdfc75452sm2022861fa.85.2024.11.28.06.18.29
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 28 Nov 2024 05:22:42 -0800 (PST)
-Date: Thu, 28 Nov 2024 15:22:40 +0200
+        Thu, 28 Nov 2024 06:18:30 -0800 (PST)
+Date: Thu, 28 Nov 2024 16:18:28 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, robh+dt@kernel.org, 
-	manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com, lpieralisi@kernel.org, 
-	quic_qianyu@quicinc.com, conor+dt@kernel.org, neil.armstrong@linaro.org, 
-	andersson@kernel.org, konradybcio@kernel.org, quic_tsoni@quicinc.com, 
-	quic_shashim@quicinc.com, quic_kaushalk@quicinc.com, quic_tdas@quicinc.com, 
-	quic_tingweiz@quicinc.com, quic_aiquny@quicinc.com, kernel@quicinc.com, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 2/8] phy: qcom-qmp-pcie: add dual lane PHY support for
- QCS8300
-Message-ID: <3azkbn5grdficfn3ojuckfawug65piodgs4jvcaukxkvgrhtkf@2vfm3qwv23vl>
-References: <20241128081056.1361739-1-quic_ziyuzhan@quicinc.com>
- <20241128081056.1361739-3-quic_ziyuzhan@quicinc.com>
+To: Sui Jingfeng <sui.jingfeng@linux.dev>
+Cc: Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org, 
+	devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, p.zabel@pengutronix.de, 
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com, 
+	simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, 
+	festevam@gmail.com, glx@linutronix.de, vkoul@kernel.org, kishon@kernel.org, 
+	aisheng.dong@nxp.com, agx@sigxcpu.org, francesco@dolcini.it, frank.li@nxp.com
+Subject: Re: [v4,09/19] drm/imx: Add i.MX8qxp Display Controller display
+ engine
+Message-ID: <kixewphwyawbyrfu6pxtqx5fywqmq7ms2sa5j5pzogetmebcjz@ouhpohk7twbc>
+References: <20241125093316.2357162-10-victor.liu@nxp.com>
+ <c4334c9b-833b-4923-8188-64d662231512@linux.dev>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241128081056.1361739-3-quic_ziyuzhan@quicinc.com>
+In-Reply-To: <c4334c9b-833b-4923-8188-64d662231512@linux.dev>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241128_052245_991031_B7A8C784 
-X-CRM114-Status: UNSURE (   9.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241128_061834_352461_3803E9FC 
+X-CRM114-Status: GOOD (  17.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,18 +105,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 28, 2024 at 04:10:50PM +0800, Ziyue Zhang wrote:
-> The PCIe Gen4x2 PHY for qcs8300 has a lot of difference with sa8775p.
-> So the qcs8300_qmp_gen4x2_pcie_rx_alt_tbl for qcs8300 is added.
+On Thu, Nov 28, 2024 at 04:46:53PM +0800, Sui Jingfeng wrote:
+> Hi,
 > 
-> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 89 ++++++++++++++++++++++++
->  1 file changed, 89 insertions(+)
+> On 2024/11/25 17:33, Liu Ying wrote:
+> > i.MX8qxp Display Controller display engine consists of all processing
+> > units that operate in a display clock domain.  Add minimal feature
+> > support with FrameGen and TCon so that the engine can output display
+> > timings.  The display engine driver as a master binds FrameGen and
+> > TCon drivers as components.  While at it, the display engine driver
+> > is a component to be bound with the upcoming DRM driver.
+> > 
+> > Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> > ---
+> > v4:
+> > * Use regmap to define register map for all registers. (Dmitry)
+> > * Use regmap APIs to access registers. (Dmitry)
+> > * Inline some small functions. (Dmitry)
+> 
+> 
+> Why?
+> 
+> Its seems that the switch to regmap APIs is not very necessary,
+> as ioremap/writel/readl are simple enough and easier to use.
+> 
+> Isn't that this just introduce an intermediate layer? It's okay
+> for display bridges/panels that behind I2C bus or SPI bus. But
+> then, why drm/msm still haven't be converted to use the regmap
+> APIs ?
+> 
+> Just a few questions, has no opinions to your patch.
 
-v1 was already reviewed and got a tag which you've ignored. Please fix
-your process to use b4 tool. While doing so, please collect all the tags
-from v1.
+Please respond to the original review comment. Then we might be able to
+discuss if the suggested change was logical or not. Discussing changelog
+doesn't make sense becasue there is no context here.
 
 -- 
 With best wishes
