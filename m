@@ -4,68 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1DB5D70E09
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 02:44:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01C6CD6EBE5
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 07:58:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hQfXJidqlg9z1Flh33MWMZ6hVMyI4sStCOVdhYikIjY=; b=2cRchu/sB4O9bu
-	8EGbwpQvfaeX2xqAE0n6KaIUnVxql9KoPQMNlv1ZxHMx2LYlWBgEdPuqPDLXHMy7dpZS83aVDGxCg
-	b5q8vFsUelrLSFdcDA4iqzkJn8+BH5ia/Uq6C3m8G8qO70McFFXGDcnYTYmRE1I9kUbVW+VKpEPHh
-	xZHNVZnY6vleR34hCjQ4mY+zPJrw0crEQTZ7gyxiXKC7kMW+Lru3+6Sd0L8rosvvTrVvd4SYUdZQq
-	Pkl4I7BKafP/DhEfV8Xf5w9+juSGgEzPFcH9zenIKejtH869nEhrIU4dejGL34QSayy4bvCTzNSLq
-	F4aTJO6lMdzooEcUUW7Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yY1znhNzuHTRh9ez5HaMTchVsZBOpQ0a3M9NNXIgtnM=; b=ctnzUxEnWxdqFC
+	nnByvqPgvlMCZizsLuCBWH+Xo6HeXN6DGeObImQuADvjuFSFY7VycJr0iuo2vr26c38umpYiSyWle
+	JsRUuUQutvHfiJoKn+YYoJILYB4WcViYyUrh9eJI7NTNJVtGangMDlAZWKy87MaMVCiXqIP/3gkNk
+	UslLBh+l3dA5FEed/Atb0OkBeZAI/hFjlKoRGOikgU/Y7dj+JVZjqwxNwKRa4zdxwj/ixWMVdcicZ
+	z6/ZUgHjKPjT/XrHkhg5Al9T8181Oy8t2jwdiSz/A6WLvQDJIev1j+BZMXJr8TeMISE/YEraKVBmu
+	4c3kn/CydCA7i+HDo9cQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGqzO-0000000Gl6s-2Vjg;
-	Fri, 29 Nov 2024 02:44:14 +0000
-Received: from mail-m21473.qiye.163.com ([117.135.214.73])
+	id 1tGvts-0000000H7Bh-1u6s;
+	Fri, 29 Nov 2024 07:58:52 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGqzL-0000000Gl40-0JGr;
-	Fri, 29 Nov 2024 02:44:12 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 42b18083;
-	Fri, 29 Nov 2024 10:43:57 +0800 (GMT+08:00)
-Message-ID: <6e1f35c0-5ea8-414f-b3ea-4e7222c605ef@rock-chips.com>
-Date: Fri, 29 Nov 2024 10:43:57 +0800
+	id 1tGvtp-0000000H7AT-21YA
+	for linux-phy@lists.infradead.org;
+	Fri, 29 Nov 2024 07:58:51 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4ASLZ9lV032583;
+	Fri, 29 Nov 2024 07:58:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=wmDwwPYdRhYwNyIOV1zgnK
+	J886oOT+Cnazeu21JtPFo=; b=Kn5UV2/R4aHp64GS44iiYZBnw+84mnisIBU0ZY
+	8wt8xAAIiWzEzPCTRqynn+dxiKV2nicF8w/9kSR4n1dn6aPwCjldlPASq3XBcSGI
+	nSRs0Q3TuLsMEU0B0YvtNnpyhpc/3x9SPS2af4g/jwQnpUaYj8KJZPGGc1XzJ+GZ
+	GvQNc7CA+dC8T85AoPK6H5RjeFhoV7drU37wtiyHw4EeYFEcg0yNJFoXridQUxy8
+	Y/2l1EspoF55N+AHTtxfSKfo98Toc/TyrxR7UW01uMNPG+4B+Xct7Xoh9K7fN01J
+	LF3+C2j4O1V8UCG4TTuLddkgGTcztDA+1DReVnSoTMG6TgaQ==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43671ecrcs-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Nov 2024 07:58:33 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4AT7wX3m028949
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 29 Nov 2024 07:58:33 GMT
+Received: from szioemm-lnxbld002.qualcomm.com (10.80.80.8) by
+ nasanex01c.na.qualcomm.com (10.45.79.139) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 28 Nov 2024 23:58:25 -0800
+From: Xiangxu Yin <quic_xiangxuy@quicinc.com>
+Subject: [PATCH 0/8] Add DisplayPort support for QCS615 platform
+Date: Fri, 29 Nov 2024 15:57:40 +0800
+Message-ID: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 04/10] phy: phy-rockchip-samsung-hdptx: Add support for
- eDP mode
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
- <4260470.1IzOArtZ34@diego>
- <8df0acc8-b7aa-453f-b55c-30144f51d7cf@rock-chips.com>
- <2131853.KlZ2vcFHjT@diego>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <2131853.KlZ2vcFHjT@diego>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0seTVZOHUxJTx1MQh8eT0lWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZS1VLVUtVS1kG
-X-HM-Tid: 0a9375cdbbee03a3kunm42b18083
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pk06MTo5DzIoFSEqNTY2LAo6
-	Iz0KCj1VSlVKTEhJQ09DSUhCTU5MVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFITk9LNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=bL/N3Unq55qSkA26JYoRtN15Zz23QknxZHD/t3byhVLAxtGQaDu8Vi0Y838Nayz2QgaE46cZpnKAmZ/I0Q41VPh89kl26riBDRD6ePNIsmUD9gvj5luW7GmvLFlikXGeWmb033lk9ZmjxL6Ht8auxKsmbc/UY9vu1VhuKgKFw88=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=kpe86r9iOvjOisEL0baYQ/8aMf7jHymtGoN0ZQJx9H0=;
-	h=date:mime-version:subject:message-id:from;
+X-B4-Tracking: v=1; b=H4sIAPdzSWcC/x3NwQrCMBAE0F8pe3bBTbUYf0V6iNlEF7SJ2SpK6
+ b+79DQ8BmYW0NQkKZy7BVr6iEqZDLTrIN7DdEsobAa3dwci5zEwI4vWR/jV0mbUd90yl4avqAM
+ d0brZ+MTc03XgeOo9ebDF2lKW7/Z2Gdf1D6bApOl9AAAA
+X-Change-ID: 20241129-add-displayport-support-for-qcs615-platform-f31b6dc83919
+To: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+	<quic_abhinavk@quicinc.com>,
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard
+	<mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie
+	<airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring
+	<robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>,
+        Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul
+	<vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Linus Walleij
+	<linus.walleij@linaro.org>,
+        Bartosz Golaszewski <brgl@bgdev.pl>, <quic_lliu6@quicinc.com>,
+        <quic_fangez@quicinc.com>
+CC: <linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-gpio@vger.kernel.org>, Xiangxu Yin <quic_xiangxuy@quicinc.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1732867102; l=1753;
+ i=quic_xiangxuy@quicinc.com; s=20241125; h=from:subject:message-id;
+ bh=Fd1OV19tKe/iRpJtP65nSl/tyRA4w5O73ceQTpa9AhM=;
+ b=wGx2t6A6cR5ttTbyh1L6muXBC2nNyPEJEHutJc+jkfQVdR4jkzt4NRc6+2V7HLBPHztZpzht8
+ pc06a+nec4QCswG4jagVbKXhTlaG4ZIZ3KqPr/xp91omKCftMJqu8Sw
+X-Developer-Key: i=quic_xiangxuy@quicinc.com; a=ed25519;
+ pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Hfd54WROFUaa1CI-iA_qBkFYE0apdKyE
+X-Proofpoint-GUID: Hfd54WROFUaa1CI-iA_qBkFYE0apdKyE
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ impostorscore=0 mlxscore=0 phishscore=0 priorityscore=1501 clxscore=1011
+ bulkscore=0 lowpriorityscore=0 spamscore=0 adultscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2411290064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241128_184411_379162_3BBAC8E3 
-X-CRM114-Status: GOOD (  23.50  )
+X-CRM114-CacheID: sfid-20241128_235849_552626_533A057C 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,71 +126,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiAyMDI0LzExLzI3IDE5OjA0LCBIZWlrbyBTdMO8Ym5lciB3cm90ZToKPiBI
-aSBEYW1vbiwKPiAKPiBBbSBNaXR0d29jaCwgMjcuIE5vdmVtYmVyIDIwMjQsIDEyOjAwOjEwIENF
-VCBzY2hyaWViIERhbW9uIERpbmc6Cj4+IEhpIEhlaWtvOgo+Pgo+PiBPbiAyMDI0LzExLzI3IDE3
-OjI5LCBIZWlrbyBTdMO8Ym5lciB3cm90ZToKPj4+IEhpIERhbW9uLAo+Pj4KPj4+IEFtIE1pdHR3
-b2NoLCAyNy4gTm92ZW1iZXIgMjAyNCwgMDg6NTE6NTEgQ0VUIHNjaHJpZWIgRGFtb24gRGluZzoK
-Pj4+PiBBZGQgYmFzaWMgc3VwcG9ydCBmb3IgUkJSL0hCUi9IQlIyIGxpbmsgcmF0ZXMsIGFuZCB0
-aGUgdm9sdGFnZSBzd2luZyBhbmQKPj4+PiBwcmUtZW1waGFzaXMgY29uZmlndXJhdGlvbnMgb2Yg
-ZWFjaCBsaW5rIHJhdGUgaGF2ZSBiZWVuIHZlcmlmaWVkIGFjY29yZGluZwo+Pj4+IHRvIHRoZSBl
-RFAgMS4zIHJlcXVpcmVtZW50cy4KPj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6IERhbW9uIERpbmcg
-PGRhbW9uLmRpbmdAcm9jay1jaGlwcy5jb20+Cj4+Pj4gLS0tCj4+Pgo+Pj4gWyAuLi4gaHVnZSBi
-bG9jayBvZiBEUCBwaHkgc3VwcG9ydCAuLi5dCj4+Pgo+Pj4geWVzIHRoYXQgYmxvY2sgd2FzIGh1
-Z2UsIGJ1dCBJIGFsc28gZG9uJ3Qgc2VlIGEgd2F5IHRvIHNwbGl0IHRoYXQgdXAgaW4gYQo+Pj4g
-dXNlZnVsIHdheSwgc28gaXQgc2hvdWxkIGJlIGZpbmUuCj4+Pgo+Pgo+PiBBcyBmb3IgdGhlIGh1
-Z2UgYmxvY2sgb2YgRFAgcGh5IHN1cHBvcnQsIEkgd2lsbCB0cnkgdG8gdXNlIHRoZSBleGlzdGlu
-Zwo+PiBya19oZHB0eF9tdWx0aV9yZWdfd3JpdGUoKSB0byBzZXQgcmVncyBpbiBuZXh0IHZlcnNp
-b24sIG1heWJlIHRoZSB3YXkKPj4gY2FuIG1ha2UgdGhlIGNvZGVzIG1vcmUgY29uY2lzZS4KPiAK
-PiBJIGFjdHVhbGx5IGRpZCBsaWtlIHRoZSB0aGUgZHAtc2lkZSBvZiB0aGUgcGh5IGNvZGUuCj4g
-Cj4gVGhhdCB5b3UgbmVlZCB0byBhZGQgYWxsIHRoZSBEUCBzdHVmZiBjYW4ndCBiZSBoZWxwZWQg
-YW5kIEkgYWN0dWFsbHkgZmluZAo+IHJlYWwgZnVuY3Rpb25zIG5pY2VyIHRoYW4gaGF2aW5nIGFu
-b255bW91cyByZWdpc3RlciB3cml0ZXMuCj4gCj4gSS5lLiB0aGUgaGRtaS1zaWRlIHdpdGggaXRz
-IHJlZ2lzdGVyIGxpc3RzIGRvZXMgd3JpdGUgIm1hZ2ljIiB2YWx1ZXMgdG8KPiByZWdpc3RlcnMu
-Cj4gCj4gU28gcGVyc29uYWxseSBJJ2QganVzdCBsZWF2ZSB0aGUgZHAtZnVuY3Rpb25zIGFzIGlz
-IHBsZWFzZSwgdW50aWwgc29tZW9uZQo+IGRvZXMgY29tcGxhaW4gKEkgd2FzIG5vdCB0cnlpbmcg
-dG8gY29tcGxhaW4sIGp1c3QgbWVudGlvbmVkIHdoeSBJIGN1dAo+IGl0IGZyb20gdGhlIHJlcGx5
-IDotKSApCj4gCj4gCj4gVGhhbmtzCj4gSGVpa28KPiAKPiAKPj4+PiArc3RhdGljIGludCBya19o
-ZHB0eF9waHlfc2V0X21vZGUoc3RydWN0IHBoeSAqcGh5LCBlbnVtIHBoeV9tb2RlIG1vZGUsCj4+
-Pj4gKwkJCQkgaW50IHN1Ym1vZGUpCj4+Pj4gK3sKPj4+PiArCXJldHVybiAwOwo+Pj4+ICt9Cj4+
-Pgo+Pj4gSSB0aGluayBpdCBtaWdodCBtYWtlIHNlbnNlIHRvIGdvIHRoZSBzYW1lIHdheSBhcyB0
-aGUgRENQSFkgYW5kIGFsc28KPj4+IG5hbmVuZyBjb21ib3BoeSwgdG8gdXNlICNwaHktY2VsbHMg
-PSAxIHRvIHNlbGVjdCB0aGUgcGh5LW1vZGUgdmlhIERUIC4KPj4+Cj4+PiBTZWUgWzBdIGZvciBT
-ZWJhc3RpYW5zIGluaXRpYWwgc3VnZ2VzdGlvbiByZWdhcmRpbmcgdGhlIERDLVBIWS4KPj4+IFRo
-ZSBuYW5lbmcgY29tYm9waHkgYWxyZWFkeSB1c2VzIHRoYXQgc2NoZW1lIG9mIG1vZGUtc2VsZWN0
-aW9uIHRvby4KPj4+Cj4+PiBUaGVyZSBpcyBvZiBjb3Vyc2UgdGhlIGlzc3VlIG9mIGJhY2t3YXJk
-cy1jb21wYXRpYmlsaXR5LCBidXQgdGhhdCBjYW4gYmUKPj4+IHdvcmtlZCBhcm91bmQgaW4gdGhl
-IGJpbmRpbmcgd2l0aCBzb21ldGhpbmcgbGlrZToKPj4+Cj4+PiAgICAnI3BoeS1jZWxscyc6Cj4+
-PiAgICAgICBlbnVtOiBbMCwgMV0KPj4+ICAgICAgIGRlc2NyaXB0aW9uOiB8Cj4+PiAgICAgICAg
-IElmICNwaHktY2VsbHMgaXMgMCwgUEhZIG1vZGUgaXMgc2V0IHRvIFBIWV9UWVBFX0hETUkKPj4+
-ICAgICAgICAgSWYgI3BoeS1jZWxscyBpcyAxIG1vZGUgaXMgc2V0IGluIHRoZSBQSFkgY2VsbHMu
-IFN1cHBvcnRlZCBtb2RlcyBhcmU6Cj4+PiAgICAgICAgICAgLSBQSFlfVFlQRV9IRE1JCj4+PiAg
-ICAgICAgICAgLSBQSFlfVFlQRV9EUAo+Pj4gICAgICAgICBTZWUgaW5jbHVkZS9kdC1iaW5kaW5n
-cy9waHkvcGh5LmggZm9yIGNvbnN0YW50cy4KPj4+Cj4+PiBQSFlfVFlQRV9IRE1JIG5lZWRzIHRv
-IGJlIGFkZGVkIHRvIGluY2x1ZGUvZHQtYmluZGluZ3MvcGh5L3BoeS5oCj4+PiBidXQgUEhZX1RZ
-UEVfRFAgaXMgYWxyZWFkeSB0aGVyZS4KPj4+Cj4+PiBUaGF0IHdheSB3ZSB3b3VsZCBzdGFuZGFy
-ZGl6ZSBvbiBvbmUgZm9ybSBvZiBhY2Nlc3NpbmcgcGh5LXR5cGVzCj4+PiBvbiByazM1ODggOi0p
-IC4KPj4+Cj4+PiBBbHNvIHNlZSB0aGUgTWVkaWF0ZWsgQ1NJIHJ4IHBoeSBkb2luZyB0aGlzIHRv
-byBhbHJlYWR5IFsxXQo+Pj4KPj4+Cj4+PiBIZWlrbwo+Pj4KPj4+IFswXSBodHRwczovL2xvcmUu
-a2VybmVsLm9yZy9saW51eC1yb2NrY2hpcC91ZGFkNHFmM283a3Q0NW51ejZneHN2c21wcmg0cm55
-Znhmb2dvcG1paDZ1Y3puaXppaEA3b2oyanJubGZvbnovCj4+PiBbMV0gaHR0cHM6Ly9naXQua2Vy
-bmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMvbGludXguZ2l0L3RyZWUv
-RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9tZWRpYXRlayxtdDgzNjUtY3Np
-LXJ4LnlhbWwKPj4+Cj4+Cj4+IEl0IGlzIHJlYWxseSBhIG5pY2Ugd2F5IHRvIHNlcGFyYXRlIEhE
-TUkgYW5kIERQIG1vZGVzLgoKSSBhcG9sb2dpemUgZm9yIHJlb3BlbmluZyB0aGUgZGlzY3Vzc2lv
-biBhYm91dCB0aGUgcGh5LXR5cGVzIHNldHRpbmcuCgpXaXRoIHRoZSAuc2V0X21vZGUoKSBvZiBz
-dHJ1Y3QgcGh5X29wcywgdGhlIEhETUkgYW5kIGVEUCBkeW5hbWljIApzd2l0Y2hpbmcgY2FuIGJl
-IGFjaGlldmVkLCB3aGljaCBqdXN0IGRlcGVuZHMgb24gdGhlIHJpZ2h0IHNldHRpbmcgb2YKZW51
-bSBwaHlfbW9kZSBpbiBpbmNsdWRlL2xpbnV4L3BoeS9waHkuaC4gU28gdGhlIHByZXZpb3VzIHdh
-eSBvZiAKY29uZmlndXJpbmcgcGh5IG1vZGUgbWF5IGJlIGFsc28gZ29vZC4KCkFuZCBvdGhlciBw
-aHlzIG1heSB3YW50IHRvIHN1cHBvcnQgZHluYW1pYyBzd2l0Y2hpbmcgdG9vLCBsaWtlIHRoZSAK
-Um9ja2NoaXAgVVNCRFAgY29tYm8gcGh5LgoKPj4KPj4+Cj4+Pgo+Pj4KPj4+Cj4+Cj4+IEJlc3Qg
-cmVnYXJkcywKPj4gRGFtb24KPj4KPj4KPiAKPiAKPiAKPiAKPiAKPiAKQmVzdCByZWdhcmRzLApE
-YW1vbgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-cGh5Cg==
+This series aims to extend the USB-C PHY to support DP mode and enable
+DisplayPort on the Qualcomm QCS615 platform.
+
+The devicetree modification for DisplayPort on QCS615 will be provided
+in a future patch.
+
+Signed-off-by: Xiangxu Yin <quic_xiangxuy@quicinc.com>
+---
+Xiangxu Yin (8):
+      dt-bindings: display/msm: Document DP on QCS615
+      dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add DP support for QCS615
+      phy: qcom: qmp-usbc: Add DP phy mode support on QCS615
+      drm/msm/dp: Add DisplayPort support for QCS615
+      drm/msm/dp: Add support for lane mapping configuration
+      drm/msm/dp: Add maximum width limitation for modes
+      drm/msm/dp: Retry Link Training 2 with lower pattern
+      drm/msm/dp: Support external GPIO HPD with 3rd pinctrl chip
+
+ .../bindings/display/msm/dp-controller.yaml        |   13 +
+ .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml    |   21 +-
+ drivers/gpu/drm/msm/dp/dp_catalog.c                |   11 +-
+ drivers/gpu/drm/msm/dp/dp_catalog.h                |    2 +-
+ drivers/gpu/drm/msm/dp/dp_ctrl.c                   |   36 +-
+ drivers/gpu/drm/msm/dp/dp_display.c                |   87 ++
+ drivers/gpu/drm/msm/dp/dp_display.h                |    1 +
+ drivers/gpu/drm/msm/dp/dp_panel.c                  |   26 +-
+ drivers/gpu/drm/msm/dp/dp_panel.h                  |    4 +
+ drivers/phy/qualcomm/phy-qcom-qmp-dp-phy.h         |    1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c           | 1453 +++++++++++++++++---
+ 11 files changed, 1438 insertions(+), 217 deletions(-)
+---
+base-commit: f486c8aa16b8172f63bddc70116a0c897a7f3f02
+change-id: 20241129-add-displayport-support-for-qcs615-platform-f31b6dc83919
+
+Best regards,
+-- 
+xiangxuy <quic_xiangxuy@quicinc.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
