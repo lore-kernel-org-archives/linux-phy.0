@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA567D6EC0D
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 13:53:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FC54D6EC0E
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 13:53:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UbTEfNTbGQ0lgdNyLfHlB5WinXMpHkXVFnsldvlirAg=; b=dMxc3GM5Dj3z9h
-	vw40c5y7Uctmf5bBoeWNi/nPtQgRQI6yNmOengKKLr7yZjmkLCnxJ4pMaMOfMoTCCqEKbBmYiAiaP
-	jSFM8veMwyw6fC/Z6WxKUSwZ2tz2Nt8W1gnR5cvjIykmdwfYMqXKkRLWJTEyStLjBhvbR7LEh9bZB
-	rn6AVx04HYcFCkK0xndyqz99zizy5kukImOWSIsh7Wo0Nfg8Oypam4uTNdl58KVQhfVBi62cLYULV
-	OBtIu2KA4HaK5MlQcxRMHYWCMjNRaqaykS6eeg/7sDnynM0fFSeg/6gAio9mREorAzunG05VJUE39
-	to+fJL3cJrqLU+XjHMbg==;
+	List-Owner; bh=7QvTmfB5eMaoQvD/LC2su6L1tT+CtKIISZzl8ogaj90=; b=QxDsta4ZWOdty3
+	6hgIFNZniT/eNjdvGDOg5n97cpOVjLD4+E18BNkhUPJsZMcfDyPJvDtkShotWS6CIOZ9Dz/7oZGbI
+	HKPK9ykaDPvdmLKle2sbqRkYs9s8+8tDEtc0xnAQE7LDFw0LHDcaqhTgvYg00GWXFER2RrwwSGu+Z
+	+xv+poMOHb/v1vR8kChxTknFOt3QJ8u8sGhSbxM/0DjjsA/nXUT5/zpAqQeThyu8v/EERTZ82kIlO
+	EKexPvgH6CpTLKmH+e5BIdsCWeFTQurlKNqCZGBxnof0NB39jNX0JnsDSMpKqLANQh3BJdyVYyTSm
+	2bHDP144jkuIMc6slLXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tH1Qk-00000000Ff4-1ugH;
-	Fri, 29 Nov 2024 13:53:10 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1tH1RN-00000000FlV-3YJV;
+	Fri, 29 Nov 2024 13:53:49 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tH1Qh-00000000FeH-49mR
+	id 1tH1RL-00000000Fko-1KQJ
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Nov 2024 13:53:09 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-5d0bdeb0419so364195a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 29 Nov 2024 05:53:07 -0800 (PST)
+	Fri, 29 Nov 2024 13:53:48 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-5cec9609303so2118874a12.1
+        for <linux-phy@lists.infradead.org>; Fri, 29 Nov 2024 05:53:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1732888386; x=1733493186; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1732888425; x=1733493225; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=y/6PyCBkY1vrkX+kqfrrIcFxpzFnIRWJUtmo58vJb+0=;
-        b=t4WuLLVgNjsCgj39pmrazHIb7ZtOFh7oMv7b0kjhzpLI0jdHWiGimN/47NaaAjeQuW
-         Olo3GhqaVwue3HAQyeUFEBFBw4JnkM1ngP+vml0wt4nIHIHKiQGBefQ9YJcv21baBqN0
-         0bjTzyLgAiMDBcmceynD2SpQCRCDvi4pOnqSQQTbYzuHrFahVMZGps9na44phDz4rnfz
-         eeUgWHvNlP5IjQN/u7tuACyAupf1+seT8wUFLvdENhOuf9OJlRdjaFHMNPXaCrZL7+ix
-         ZoyXXUqEua1YjPl6xNu2fDpK6bDnToHXoEZV3z7dRC8doMQq2VNBgBIWKpik09VtjwVV
-         XhNQ==
+        bh=n/Ur8aJlkZb2O0WBY+Ja+CLRvhD2wQCX6NK6ury26eQ=;
+        b=rpHO2lw4lQHUyfain16Rd7w6i9As2xNYcVEbGqyG5SyQpnCksArlU45hlTP8YcHxCb
+         manmo3YXjOL1MIk4DbFuha+2qdDSsgOGQ/0ASUNVb8lohVRg/uEnjrfEJQ6PaQytwmNx
+         N3hdS+ey+T6tF9ApfcoyQsZerJkIGEkmMkv3p/Ak1l/oaCLDUSYw/fkeLJVhX2ZtRW2z
+         eULZCj4RSL60J6ypEERmh3MXVazjnL6wTrmJafa6b6Vs6hMTuRswKV1eudyIZID6/4FK
+         o57iMl07fjQwm5sqJDnNvgmJfGledr4wDtayQUWRRm7ClgVjgih7b0zKFzqbWVgYhIdE
+         lhgw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732888386; x=1733493186;
+        d=1e100.net; s=20230601; t=1732888425; x=1733493225;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=y/6PyCBkY1vrkX+kqfrrIcFxpzFnIRWJUtmo58vJb+0=;
-        b=t4F8bJSTJVUhFfy1MYcD6PRBCf8IOAn5W2nVr07M6HrZUa8quL/pdr1MzaEZ+hytTK
-         uPjrpwNpUINg0cHPTHPisYqhbIDaEWGIcw62a6J+UJSgd6GIrzzZ+MPmqIMQDqLqJnex
-         8ec8rb1mpxzb1ORRFJXZEKntf3tFVxDOeW+y0NX0gxY3/Jbi1RMcXvJF35ACFKowmbI/
-         iIxC25jIXm04Cfi2KC1QHhNM7XOGNTKFJFuRVJNRhhM+etuzNfHNx9vnQFC3dQncWcLp
-         HR9EO1WeuEZklMtf0ebB74dkOLfY0q/kL6V/2tukNDsRvEwnESNMIVjemVfdiQ4ckEcs
-         qcxg==
-X-Forwarded-Encrypted: i=1; AJvYcCU19cMDAC56QPYKoJbnXBA9B96MyoyQA8yCeuk/P7ShQBz83s+9skc9zAxAIllu7kMNZacKdVyfg/8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz15d4eCArJbmb32CCnF09namju0AOWuyfoUbQ8XfPV1V1tm28Q
-	VghhUtB7rzz5CWV/ufMIKWy7+8IoANHSa9kmNelZC707qcr/y/mzslPGmrYsEc2Sc3Tl3TAkyV0
-	K4f0eIjrnCv2C23shN/RBxlpGjXWkL+e69zN2xw==
-X-Gm-Gg: ASbGncuW28P9bFZLsz0eQ6r+Du3SYp9Y8o7wR9zeO0fbQ0V7e+wYBOxNA7lGWD08TC+
-	+xqI7Mko46Z86KvR0BgHSHLGHUa82Otc=
-X-Google-Smtp-Source: AGHT+IEXbo3g37x6S9nud/YDl8MMhJ+axeHFVYybn/OHHchZEd90wPzaHJLOrky8M8F0K8J+KDpTyQqUYKWH/+5/E5M=
-X-Received: by 2002:a05:6402:4409:b0:5cf:ead2:2a8f with SMTP id
- 4fb4d7f45d1cf-5d080c6c4admr11268097a12.33.1732888385859; Fri, 29 Nov 2024
- 05:53:05 -0800 (PST)
+        bh=n/Ur8aJlkZb2O0WBY+Ja+CLRvhD2wQCX6NK6ury26eQ=;
+        b=uF+EsF/bOWSsQ4DevNOjLnCYjD2i1PoYmswBr8liXFf608NPAIZxHQZUU7I/o7Y1GV
+         iswaq4as7nsFrGLpuBYdE18gPE/To6BkHNTcEuB/M+RQzD5cLYa+np54DbXApDy4QZuM
+         x91sMqGnqJ2Qr7wEN7Cez3UUrW7p8RJLfivMHdQACt+Wny1jktRrOgGV9mZCwtg2w1kW
+         32wMxREYw/0yEVP0PQoj4eS6KgeP6+P+SdCTU7VLLPHU09zge/4cmVsPr29K1HW06wnu
+         Jd8m2yuwMZmglu5QcITBcqk3IdmVSiRMcnRf6hzl02dRzvU5gQ5/lvM//t9l8NFdHnrC
+         bQDg==
+X-Forwarded-Encrypted: i=1; AJvYcCVUEOATUfgWRItSmUi8xPwLf1pB1yI1+qp9G4mYrpVUABPgZeQRHZURJ4TC70nMSGPyv3QH3/Nff/4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yweyj3H4Lr7eish6q+UQtKQqf6+V9JKoyvpqEd9Vbxs31Jc4TtM
+	vNiUXScVVlBF6JBqzc+YUqXI7y5AERm8+0ZZmdDQDCueTOOlpyGjqc2J6/XtfVYMLcHgytVnHEa
+	MvN2CrfJx/6PWfWRA1WFaAJzzNDMW2Vw5zq5mFw==
+X-Gm-Gg: ASbGncsXo6plKbQOP7GuJegJuo0xE9OVD71Svv42s9Teml7hD+iHiLNo282K4AqKqz/
+	Gbx6yY649Weq1ZJX/n18a9mfslaORshs=
+X-Google-Smtp-Source: AGHT+IGCwqeDEnJNo83WNtmzKMJUwft+OKQaPAZ33baZKMDUQiMMr0XiZGEiUd02VQ36AikNgL9bZwlAshMXxuPC8CM=
+X-Received: by 2002:a05:6402:5194:b0:5cf:f319:4525 with SMTP id
+ 4fb4d7f45d1cf-5d080c4d37fmr10845661a12.22.1732888425147; Fri, 29 Nov 2024
+ 05:53:45 -0800 (PST)
 MIME-Version: 1.0
 References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-6-09a4338d93ef@quicinc.com>
-In-Reply-To: <20241129-add-displayport-support-for-qcs615-platform-v1-6-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
+In-Reply-To: <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 29 Nov 2024 15:52:59 +0200
-Message-ID: <CAA8EJpprTGRTxO+9BC6GRwxE4A3CuvmySsxS2Nh4Tqj0nDRT_Q@mail.gmail.com>
-Subject: Re: [PATCH 6/8] drm/msm/dp: Add maximum width limitation for modes
+Date: Fri, 29 Nov 2024 15:53:37 +0200
+Message-ID: <CAA8EJpoN1qBHyZrQJT_=e_26+tcaKRnSrhtxrK6zBP4BwpL=Hg@mail.gmail.com>
+Subject: Re: [PATCH 7/8] drm/msm/dp: Retry Link Training 2 with lower pattern
 To: Xiangxu Yin <quic_xiangxuy@quicinc.com>
 Cc: Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
 	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
@@ -84,8 +84,8 @@ Cc: Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-gpio@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241129_055308_045409_40AE1C67 
-X-CRM114-Status: GOOD (  19.68  )
+X-CRM114-CacheID: sfid-20241129_055347_358547_DB85789B 
+X-CRM114-Status: GOOD (  19.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,104 +104,79 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Fri, 29 Nov 2024 at 09:59, Xiangxu Yin <quic_xiangxuy@quicinc.com> wrote:
 >
-> Introduce a maximum width constraint for modes during validation. This
-> ensures that the modes are filtered based on hardware capabilities,
-> specifically addressing the line buffer limitations of individual pipes.
+> Add a mechanism to retry Link Training 2 by lowering the pattern level
+> when the link training #2 first attempt fails. This approach enhances
+> compatibility, particularly addressing issues caused by certain hub
+> configurations.
 
-This doesn't describe, why this is necessary. What does "buffer
-limitations of individual pipes" mean?
-If the platforms have hw capabilities like being unable to support 8k
-or 10k, it should go to platform data
+Please reference corresponding part of the standard, describing this lowering.
 
 >
 > Signed-off-by: Xiangxu Yin <quic_xiangxuy@quicinc.com>
 > ---
->  drivers/gpu/drm/msm/dp/dp_display.c |  3 +++
->  drivers/gpu/drm/msm/dp/dp_display.h |  1 +
->  drivers/gpu/drm/msm/dp/dp_panel.c   | 13 +++++++++++++
->  drivers/gpu/drm/msm/dp/dp_panel.h   |  1 +
->  4 files changed, 18 insertions(+)
+>  drivers/gpu/drm/msm/dp/dp_ctrl.c | 34 ++++++++++++++++++++++++++++++----
+>  1 file changed, 30 insertions(+), 4 deletions(-)
 >
-> diff --git a/drivers/gpu/drm/msm/dp/dp_display.c b/drivers/gpu/drm/msm/dp/dp_display.c
-> index 4c83402fc7e0d41cb7621fa2efda043269d0a608..eb6fb76c68e505fafbec563440e9784f51e1894b 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_display.c
-> +++ b/drivers/gpu/drm/msm/dp/dp_display.c
-> @@ -944,6 +944,9 @@ enum drm_mode_status msm_dp_bridge_mode_valid(struct drm_bridge *bridge,
->         msm_dp_display = container_of(dp, struct msm_dp_display_private, msm_dp_display);
->         link_info = &msm_dp_display->panel->link_info;
->
-> +       if (mode->hdisplay > msm_dp_display->panel->max_dp_width)
-> +               return MODE_BAD;
-> +
->         if (drm_mode_is_420_only(&dp->connector->display_info, mode) &&
->             msm_dp_display->panel->vsc_sdp_supported)
->                 mode_pclk_khz /= 2;
-> diff --git a/drivers/gpu/drm/msm/dp/dp_display.h b/drivers/gpu/drm/msm/dp/dp_display.h
-> index ecbc2d92f546a346ee53adcf1b060933e4f54317..7a11f7eeb691976f06afc7aff67650397d7deb90 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_display.h
-> +++ b/drivers/gpu/drm/msm/dp/dp_display.h
-> @@ -11,6 +11,7 @@
->  #include "disp/msm_disp_snapshot.h"
->
->  #define DP_MAX_PIXEL_CLK_KHZ   675000
-> +#define DP_MAX_WIDTH   7680
->
->  struct msm_dp {
->         struct drm_device *drm_dev;
-> diff --git a/drivers/gpu/drm/msm/dp/dp_panel.c b/drivers/gpu/drm/msm/dp/dp_panel.c
-> index 8654180aa259234bbd41f4f88c13c485f9791b1d..10501e301c5e073d8d34093b86a15d72e646a01f 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_panel.c
-> +++ b/drivers/gpu/drm/msm/dp/dp_panel.c
-> @@ -4,6 +4,7 @@
->   */
->
->  #include "dp_panel.h"
-> +#include "dp_display.h"
->  #include "dp_utils.h"
->
->  #include <drm/drm_connector.h>
-> @@ -455,6 +456,16 @@ static u32 msm_dp_panel_link_frequencies(struct device_node *of_node)
->         return frequency;
+> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> index 49c8ce9b2d0e57a613e50865be3fe98e814d425a..b1862294cb98c9f756b0108b7670cb42de37bae4 100644
+> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> @@ -1220,7 +1220,7 @@ static void msm_dp_ctrl_clear_training_pattern(struct msm_dp_ctrl_private *ctrl)
 >  }
 >
-> +static u32 msm_dp_panel_max_width(struct device_node *of_node)
-> +{
-> +       u32 max_width = 0;
-> +
-> +       if (of_property_read_u32(of_node, "max-width", &max_width))
-> +               max_width = DP_MAX_WIDTH;
-> +
-> +       return max_width;
-
-msm_dp_panel->max_dp_width = DP_MAX_WIDTH;
-of_property_read_u32(of_node, "max-width", &msm_dp_panel->max_dp_width);
-
-> +}
-> +
->  static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
+>  static int msm_dp_ctrl_link_train_2(struct msm_dp_ctrl_private *ctrl,
+> -                       int *training_step)
+> +                       int *training_step, bool downgrade)
 >  {
->         struct msm_dp_panel_private *panel;
-> @@ -490,6 +501,8 @@ static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
->         if (!msm_dp_panel->max_dp_link_rate)
->                 msm_dp_panel->max_dp_link_rate = DP_LINK_RATE_HBR2;
+>         int tries = 0, ret = 0;
+>         u8 pattern;
+> @@ -1243,6 +1243,28 @@ static int msm_dp_ctrl_link_train_2(struct msm_dp_ctrl_private *ctrl,
+>                 state_ctrl_bit = 2;
+>         }
 >
-> +       msm_dp_panel->max_dp_width = msm_dp_panel_max_width(of_node);
+> +       /*
+> +        * DP link training uses the highest allowed pattern by default.
+> +        * If it fails, the pattern is downgraded to improve cable and monitor compatibility.
+> +        */
+> +       if (downgrade) {
+> +               switch (pattern) {
+> +               case DP_TRAINING_PATTERN_4:
+> +                       pattern = DP_TRAINING_PATTERN_3;
+> +                       state_ctrl_bit = 3;
+> +                       break;
+> +               case DP_TRAINING_PATTERN_3:
+> +                       pattern = DP_TRAINING_PATTERN_2;
+> +                       state_ctrl_bit = 2;
+> +                       break;
+> +               default:
+> +                       break;
+> +               }
+> +       }
 > +
->         return 0;
->  }
+> +       drm_dbg_dp(ctrl->drm_dev, "pattern(%d) state_ctrl_bit(%d) downgrade(%d)\n",
+> +               pattern, state_ctrl_bit, downgrade);
+> +
+>         ret = msm_dp_catalog_ctrl_set_pattern_state_bit(ctrl->catalog, state_ctrl_bit);
+>         if (ret)
+>                 return ret;
+> @@ -1311,10 +1333,14 @@ static int msm_dp_ctrl_link_train(struct msm_dp_ctrl_private *ctrl,
+>         /* print success info as this is a result of user initiated action */
+>         drm_dbg_dp(ctrl->drm_dev, "link training #1 successful\n");
 >
-> diff --git a/drivers/gpu/drm/msm/dp/dp_panel.h b/drivers/gpu/drm/msm/dp/dp_panel.h
-> index 7603b92c32902bd3d4485539bd6308537ff75a2c..61513644161209c243bbb623ee4ded951b2a0597 100644
-> --- a/drivers/gpu/drm/msm/dp/dp_panel.h
-> +++ b/drivers/gpu/drm/msm/dp/dp_panel.h
-> @@ -51,6 +51,7 @@ struct msm_dp_panel {
->         u32 lane_map[DP_MAX_NUM_DP_LANES];
->         u32 max_dp_lanes;
->         u32 max_dp_link_rate;
-> +       u32 max_dp_width;
+> -       ret = msm_dp_ctrl_link_train_2(ctrl, training_step);
+> +       ret = msm_dp_ctrl_link_train_2(ctrl, training_step, false);
+>         if (ret) {
+> -               DRM_ERROR("link training #2 failed. ret=%d\n", ret);
+> -               goto end;
+> +               drm_dbg_dp(ctrl->drm_dev, "link training #2 failed, retry downgrade.\n");
+> +               ret = msm_dp_ctrl_link_train_2(ctrl, training_step, true);
+> +               if (ret) {
+> +                       DRM_ERROR("link training #2 failed. ret=%d\n", ret);
+> +                       goto end;
+> +               }
+>         }
 >
->         u32 max_bw_code;
->  };
+>         /* print success info as this is a result of user initiated action */
 >
 > --
 > 2.25.1
