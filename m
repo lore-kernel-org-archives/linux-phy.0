@@ -4,91 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BD17D6EBFC
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 10:27:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23076D6EC04
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 12:13:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hFpSnaavjG8ywA6aQvSNnHXpVvtoIaBTobYDZ1MnPv0=; b=QdA0QzikLhBESw
-	D7BE4houLZRHpRIkAQdY5ySKZvsZH+wkZsPrhsZagPrNrttviMnwxadGn794vlQP1rCQkdaOJmmdD
-	6iR1Ro/P4+cJT0tOV/lKg3v59SqgBejs3K1+Ousdbe4YNJSml+Ck/lpYP6ZnsbED8c3pIido2t/oC
-	vWHpMBvEpRv8xxKIBkXosblKRqpe7NethEYG7HL8oiTjUU/3sMVeKksh+MJegqv6DIAZQMUaoYtlQ
-	g6l1wjO/OXUeesGZz+4rnNbA18lC7JCzcdvFVOduMV5R0DXSVI37G5FljaQm9GtjhPQ0O7HZ0Pq8K
-	3til2c0XkUw9FYPX7Yvg==;
+	List-Owner; bh=bqt9e+1AfbZBqPx6I9Fv/29/79RJM3ztiiM7Y5hdYsY=; b=jXoM2o02C9MbPL
+	kl72600uCZQi0bQYM0UgspWA8Y/j/fglrvXo5Gr2t/JIcNUHv1dUmQNTXZ+VBsuwOVLPXsFdauXVx
+	weQT0hQR9kjN1RdwGtRLV4rck1jlqf0Au06lGyEPd1XQffomEgnoHjIgtwZ22Znzslbs6a3S9jr/J
+	IeXiTMCw35SuLi81BhJJ5UzRgaosXdjD+W77qO/2irzuMflQQBq2drEWJs5cwv4dF0BvogZYav3M7
+	8hR98rtxwz8NimjLjgtaFeROhVojyjJgC+Xsgp2wCYLKJ80gH8egWgn/wwIzwfnEfs/IDt9p7RWDn
+	EhzEf5ljlkb/RSz608dg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGyDS-0000000HQXA-3dKv;
-	Fri, 29 Nov 2024 10:27:14 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tGzrt-000000002qp-3LOW;
+	Fri, 29 Nov 2024 12:13:05 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGyDP-0000000HQWG-1qlr
+	id 1tGzrq-000000002q9-3vPU
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Nov 2024 10:27:13 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4AT7ka6b021741;
-	Fri, 29 Nov 2024 10:26:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	c2aGFLtbPSrW2lem99GXveM1MWvzpMsUHGSM4GWK95A=; b=nt6+phb8GbZ1nniq
-	mj7aHmh/fTNsDhA2bGtjiXezuRi7ip489SqqYNhQ4KvshtRUQvb1BDBMooc+7d9+
-	lJaWOcaL352Ezgwwh06VaYNM5H8jK2xO0UE7ANLuB1Ou+wGNx2VihELafdTZOqWl
-	wxe9in5MECdkkAxSOBDLUuYjKbS522nCvDnu84QmnYQM7kWkG9jX65aIVbhSWaPj
-	5Lu/9ab6urbjcLUKs8NCobRwKgwwhRIuzlXuynWkqamyQR6VNZNLp0d2demoFKpy
-	343acNEyHKz5IZU/FnY+5mK34DL/aZCsCfqjEnZCHuP+HzMwfFR+8n6K5oeoBjbA
-	xjXNiA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4379h68dqv-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Nov 2024 10:26:40 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4ATAQep5018940
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 29 Nov 2024 10:26:40 GMT
-Received: from [10.233.17.145] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 29 Nov
- 2024 02:26:33 -0800
-Message-ID: <18e40154-f4ea-4100-9f4f-9c9aa5e251d7@quicinc.com>
-Date: Fri, 29 Nov 2024 18:26:30 +0800
+	Fri, 29 Nov 2024 12:13:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1732882383; x=1764418383;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=ocQppVVNFhRwq7ha/VHFUhe3KayUiaBEiHqz3BhEtu0=;
+  b=hWTm9YpbmQi5kKIo8gy2zY9bu1xG6cNPx6GhWtrRQULxUYNunqCyXRfd
+   QbH2te0szxSyNujOXL0pZwk4LDEI/kkyRFKk7LwhMlSTX6p9B3T4njjxz
+   ryNJKM4QOOBfsG3ahUnUBy+wFuVtLrcWASaZKIyRfkkJPl+SUSnFoW71V
+   m51n0YgRGPwrWxGQ4LUT9hqveexjRUHXGbSmORdHAqpHFNsnpfhA3BJjs
+   Y78x/4kTedmbZbDmKIFenWf1lvPAM974p3LnlGkyzYZZOenNSZIs4bREF
+   hTjRImva/2sMQuqDdnq1nyFbPdlMFGRJAplA0FJTPL4zA+pZUBijxsPIJ
+   w==;
+X-CSE-ConnectionGUID: zraXlIjHR8C1M5HRD18u5Q==
+X-CSE-MsgGUID: DjK9az+PSrSWby0Jq5GPeA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11270"; a="32486082"
+X-IronPort-AV: E=Sophos;i="6.12,195,1728975600"; 
+   d="scan'208";a="32486082"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Nov 2024 04:13:02 -0800
+X-CSE-ConnectionGUID: vwrFvSoWRaiFVOXbhsOqwg==
+X-CSE-MsgGUID: fJbP48qZT6m6AmlfXsrmzQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,195,1728975600"; 
+   d="scan'208";a="97577588"
+Received: from lkp-server01.sh.intel.com (HELO 5e2646291792) ([10.239.97.150])
+  by orviesa004.jf.intel.com with ESMTP; 29 Nov 2024 04:12:56 -0800
+Received: from kbuild by 5e2646291792 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tGzrh-0000It-18;
+	Fri, 29 Nov 2024 12:12:53 +0000
+Date: Fri, 29 Nov 2024 20:12:22 +0800
+From: kernel test robot <lkp@intel.com>
+To: Xiangxu Yin <quic_xiangxuy@quicinc.com>,
+	Rob Clark <robdclark@gmail.com>,
+	Abhinav Kumar <quic_abhinavk@quicinc.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Sean Paul <sean@poorly.run>,
+	Marijn Suijten <marijn.suijten@somainline.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kuogee Hsieh <quic_khsieh@quicinc.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>, quic_lliu6@quicinc.com,
+	quic_fangez@quicinc.com
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-gpio@vger.kernel.org, Xiangxu Yin <quic_xiangxuy@quicinc.com>
+Subject: Re: [PATCH 3/8] phy: qcom: qmp-usbc: Add DP phy mode support on
+ QCS615
+Message-ID: <202411292042.NDeS4BGv-lkp@intel.com>
+References: <20241129-add-displayport-support-for-qcs615-platform-v1-3-09a4338d93ef@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
- usb phy
-To: Bjorn Andersson <andersson@kernel.org>,
-        Song Xue
-	<quic_songxue@quicinc.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Manu Gautam <mgautam@codeaurora.org>,
-        Vivek Gautam
-	<vivek.gautam@codeaurora.org>, <kernel@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
- <vbuo2yel2pdcwnmz32f4t5pb6v3ptt2bcs2t6ybab2jxnkd6e7@rjnsbawj4zpb>
-From: Tingwei Zhang <quic_tingweiz@quicinc.com>
-In-Reply-To: <vbuo2yel2pdcwnmz32f4t5pb6v3ptt2bcs2t6ybab2jxnkd6e7@rjnsbawj4zpb>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: hWKtQbM08weiGwECLW0VKe1_HafroQCL
-X-Proofpoint-ORIG-GUID: hWKtQbM08weiGwECLW0VKe1_HafroQCL
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- malwarescore=0 mlxlogscore=999 mlxscore=0 suspectscore=0
- priorityscore=1501 lowpriorityscore=0 bulkscore=0 phishscore=0
- adultscore=0 spamscore=0 clxscore=1011 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2411120000 definitions=main-2411290086
+Content-Disposition: inline
+In-Reply-To: <20241129-add-displayport-support-for-qcs615-platform-v1-3-09a4338d93ef@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241129_022711_512036_68C0B000 
-X-CRM114-Status: GOOD (  30.07  )
+X-CRM114-CacheID: sfid-20241129_041302_992231_29C750FC 
+X-CRM114-Status: GOOD (  15.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,117 +105,151 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/29/2024 12:43 AM, Bjorn Andersson wrote:
-> On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
->> Set the current load before enable regulator supplies at QUSB phy.
->>
->> Encountered one issue where the board powered down instantly once the UVC
->> camera was attached to USB port while adding host mode on usb port and
->> testing a UVC camera with the driver on QCS615 platform. The extensible
->> boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
->> from regulators-0 upon powered on board again. That indicates that the
->> current load set for QUSB phy, which use the regulator supply, is lower
->> than expected.
->>
->> As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
->> load when attach a device to the USB port.
->>
->> Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
->> Signed-off-by: Song Xue <quic_songxue@quicinc.com>
-> 
-> The patch looks good. But if we describe the regulator(s) with
-> regulator-allow-set-load; and not all the consumers vote for load, the
-> sum of the load when USB phy is disabled goes to 0 and we will enter
-> LPM.
+Hi Xiangxu,
 
-That's exactly the issue we encountered on QCS615 ride. Qualcomm UFS 
-driver sets load while USB phy doesn't set load. That's the reason we 
-raised this patch.
-> 
-> For this reason we're not doing any load requests today. Can you confirm
+kernel test robot noticed the following build warnings:
 
-When I grep regulator_set_load in Kernel, there are 27 hits in drivers. 
-You are correct, it will trigger issue when some consumers set load 
-while some don't.
-However, how can we prevent other drivers outside of Qualcomm to use 
-regulator_set_load? It will trigger the same issue.
-Is there something we can do in regulator driver to prevent this issue? 
-If consumer doesn't set load, regulator works in HPM even another 
-consumer set load to 0?
+[auto build test WARNING on f486c8aa16b8172f63bddc70116a0c897a7f3f02]
 
-> that this works fine with a dtb where only HPM is permitted (as well as
-> LPM and HPM)? If so I'd be in favor of us merging this change, but
+url:    https://github.com/intel-lab-lkp/linux/commits/Xiangxu-Yin/dt-bindings-display-msm-Document-DP-on-QCS615/20241129-160612
+base:   f486c8aa16b8172f63bddc70116a0c897a7f3f02
+patch link:    https://lore.kernel.org/r/20241129-add-displayport-support-for-qcs615-platform-v1-3-09a4338d93ef%40quicinc.com
+patch subject: [PATCH 3/8] phy: qcom: qmp-usbc: Add DP phy mode support on QCS615
+config: arm64-allmodconfig (https://download.01.org/0day-ci/archive/20241129/202411292042.NDeS4BGv-lkp@intel.com/config)
+compiler: clang version 20.0.0git (https://github.com/llvm/llvm-project 592c0fe55f6d9a811028b5f3507be91458ab2713)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241129/202411292042.NDeS4BGv-lkp@intel.com/reproduce)
 
-Do you mean test with HPM only regulator and regulator which allows to 
-be set to HPM and LPM?
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202411292042.NDeS4BGv-lkp@intel.com/
 
-> keeping the dts HPM-only until someone confirms that all consumers of
-> these regulators specify load-votes.
-> 
-> Regards,
-> Bjorn
-> 
->> ---
->> Changes in v2:
->> - Removed "---" above the Fixes.
->> - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
->> ---
->>   drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
->>   1 file changed, 12 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
->>   	return ret;
->>   }
->>   
->> +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
->> +
->>   static int qusb2_phy_init(struct phy *phy)
->>   {
->>   	struct qusb2_phy *qphy = phy_get_drvdata(phy);
->>   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
->>   	unsigned int val = 0;
->>   	unsigned int clk_scheme;
->> -	int ret;
->> +	int ret, i;
->>   
->>   	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
->>   
->> +	/* set the current load */
->> +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
->> +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
->> +		if (ret) {
->> +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
->> +			return ret;
->> +		}
->> +	}
->> +
->>   	/* turn on regulator supplies */
->>   	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
->>   	if (ret)
->>
->> ---
->> base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
->> change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
->>
->> Best regards,
->> -- 
->> Song Xue <quic_songxue@quicinc.com>
->>
->>
+All warnings (new ones prefixed by >>):
 
+   In file included from drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:17:
+   In file included from include/linux/phy/phy.h:17:
+   In file included from include/linux/regulator/consumer.h:35:
+   In file included from include/linux/suspend.h:5:
+   In file included from include/linux/swap.h:9:
+   In file included from include/linux/memcontrol.h:21:
+   In file included from include/linux/mm.h:2223:
+   include/linux/vmstat.h:504:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     504 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     505 |                            item];
+         |                            ~~~~
+   include/linux/vmstat.h:511:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     511 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     512 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/vmstat.h:518:36: warning: arithmetic between different enumeration types ('enum node_stat_item' and 'enum lru_list') [-Wenum-enum-conversion]
+     518 |         return node_stat_name(NR_LRU_BASE + lru) + 3; // skip "nr_"
+         |                               ~~~~~~~~~~~ ^ ~~~
+   include/linux/vmstat.h:524:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
+     524 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
+     525 |                            NR_VM_NUMA_EVENT_ITEMS +
+         |                            ~~~~~~~~~~~~~~~~~~~~~~
+>> drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:721:24: warning: variable 'pre_emphasis_cfg' is uninitialized when used here [-Wuninitialized]
+     721 |         if ((v_level > 4) || (pre_emphasis_cfg > 4)) {
+         |                               ^~~~~~~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:708:40: note: initialize the variable 'pre_emphasis_cfg' to silence this warning
+     708 |         u8 voltage_swing_cfg, pre_emphasis_cfg;
+         |                                               ^
+         |                                                = '\0'
+>> drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:1801:47: warning: variable 'ret' is uninitialized when used here [-Wuninitialized]
+    1801 |                 dev_err(dev, "get resource fail, ret:%d\n", ret);
+         |                                                             ^~~
+   include/linux/dev_printk.h:154:65: note: expanded from macro 'dev_err'
+     154 |         dev_printk_index_wrap(_dev_err, KERN_ERR, dev, dev_fmt(fmt), ##__VA_ARGS__)
+         |                                                                        ^~~~~~~~~~~
+   include/linux/dev_printk.h:110:23: note: expanded from macro 'dev_printk_index_wrap'
+     110 |                 _p_func(dev, fmt, ##__VA_ARGS__);                       \
+         |                                     ^~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:1797:9: note: initialize the variable 'ret' to silence this warning
+    1797 |         int ret;
+         |                ^
+         |                 = 0
+>> drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:2082:13: warning: variable 'np' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+    2082 |         } else if (qmp->type == QMP_PHY_USBC_DP) {
+         |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:2150:14: note: uninitialized use occurs here
+    2150 |         of_node_put(np);
+         |                     ^~
+   drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:2082:9: note: remove the 'if' if its condition is always true
+    2082 |         } else if (qmp->type == QMP_PHY_USBC_DP) {
+         |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-qmp-usbc.c:2027:24: note: initialize the variable 'np' to silence this warning
+    2027 |         struct device_node *np;
+         |                               ^
+         |                                = NULL
+   7 warnings generated.
+
+
+vim +/pre_emphasis_cfg +721 drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+
+   699	
+   700	static int qcs615_qmp_configure_dp_voltages(struct qmp_usbc *qmp)
+   701	{
+   702		struct qmp_phy_dp_layout *layout = to_dp_layout(qmp);
+   703		struct qmp_phy_dp_cfg *cfg = to_dp_cfg(qmp);
+   704		const struct phy_configure_opts_dp *dp_opts = &layout->dp_opts;
+   705		void __iomem *tx = layout->dp_tx;
+   706		void __iomem *tx2 = layout->dp_tx2;
+   707		unsigned int v_level = 0, p_level = 0;
+   708		u8 voltage_swing_cfg, pre_emphasis_cfg;
+   709		int i;
+   710	
+   711		if (dp_opts->lanes > 4) {
+   712			dev_err(qmp->dev, "Invalid lane_num(%d)\n", dp_opts->lanes);
+   713			return -EINVAL;
+   714		}
+   715	
+   716		for (i = 0; i < dp_opts->lanes; i++) {
+   717			v_level = max(v_level, dp_opts->voltage[i]);
+   718			p_level = max(p_level, dp_opts->pre[i]);
+   719		}
+   720	
+ > 721		if ((v_level > 4) || (pre_emphasis_cfg > 4)) {
+   722			dev_err(qmp->dev, "Invalid v(%d) | p(%d) level)\n",
+   723				v_level, pre_emphasis_cfg);
+   724			return -EINVAL;
+   725		}
+   726	
+   727		voltage_swing_cfg = (*cfg->swing_tbl)[v_level][p_level];
+   728		pre_emphasis_cfg = (*cfg->pre_emphasis_tbl)[v_level][p_level];
+   729	
+   730		/* Enable MUX to use Cursor values from these registers */
+   731		voltage_swing_cfg |= DP_PHY_TXn_TX_DRV_LVL_MUX_EN;
+   732		pre_emphasis_cfg |= DP_PHY_TXn_TX_EMP_POST1_LVL_MUX_EN;
+   733	
+   734		if (voltage_swing_cfg == 0xFF && pre_emphasis_cfg == 0xFF)
+   735			return -EINVAL;
+   736	
+   737		/* program default setting first */
+   738		writel(0x2A, tx + QSERDES_V3_TX_TX_DRV_LVL);
+   739		writel(0x20, tx + QSERDES_V3_TX_TX_EMP_POST1_LVL);
+   740		writel(0x2A, tx2 + QSERDES_V3_TX_TX_DRV_LVL);
+   741		writel(0x20, tx2 + QSERDES_V3_TX_TX_EMP_POST1_LVL);
+   742	
+   743		writel(voltage_swing_cfg, tx + QSERDES_V3_TX_TX_DRV_LVL);
+   744		writel(pre_emphasis_cfg, tx + QSERDES_V3_TX_TX_EMP_POST1_LVL);
+   745		writel(voltage_swing_cfg, tx2 + QSERDES_V3_TX_TX_DRV_LVL);
+   746		writel(pre_emphasis_cfg, tx2 + QSERDES_V3_TX_TX_EMP_POST1_LVL);
+   747	
+   748		return 0;
+   749	}
+   750	
 
 -- 
-Thanks,
-Tingwei
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
