@@ -4,49 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88D2ED6EBE6
-	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 08:11:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FF51D6EBE6
+	for <linux-phy@archiver.kernel.org>; Fri, 29 Nov 2024 08:14:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IutBhrviT4IZMVmFy1bZmSAdx/ynp9FWWZxJDqi7mmg=; b=vNQzcbrLBHaPCf
-	asFMU/OXcgZ42nh/93JsXAc4FrV0SwoeD4znvF1GIA54ZC9nmYiz8ZW0Tbgi40C07X0Fg+CnlsFVL
-	1WA3Nzn6UV89n9x/SACwuTYT61oKOxmNQudck9RhVZmglI9mRd2NH0uEQm49iZMWcQWoY7Y/a43cV
-	BJwJ7ia6DN+YF+ps2oy6zfpKWIDS1xdertjTi/5RKkxHDTvfx27R10lyOT0kbOF0ixY48agdQ6uD9
-	W69NwVmtghnCtzCt7IED6WqJpEIQXdmSLrkgWjDPz+OB+nN/tYCq/FKhiHkKIZO0FoFog98Va685m
-	v8IvNcoVhH8ya+0Vn/zg==;
+	List-Owner; bh=Ei6ETeN9AfucHp+vX1cxYqYm3XCPXxf19PKMwzepn3k=; b=XK4xClCKJKqWCH
+	4C84FlbwHbg6MlhrnLVUL4cOqQVj8z1KxLwKvJwNtTZzSHR/+sJ8S48FnyUClnpZKmHiF02curl7T
+	y0DTSZSGIlzVa71grfY1t16o5IyVR7xTHG3Fl2jjs6nCSdGkZzNTGqkauDime8Qc+opfNVTBhyguX
+	fJNb1/tDiu1JqIY4GOqVPeoe4PIbvMymzVs4AzzAGBJMpqFijUpZKH2LjFqhuPcUbzOj7nkF8k4DB
+	75u8JcMcfkfKU72uEwTVwQwyphH2tDpuo+KJEjs2bb1onObv51739fHtI0/+t7ak37DMeCRzqvzjp
+	VxiBiHiTZUi6wKfA5k7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGw6Z-0000000H9F7-1FTe;
-	Fri, 29 Nov 2024 08:11:59 +0000
+	id 1tGw9O-0000000HA21-0bo8;
+	Fri, 29 Nov 2024 08:14:54 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGw6W-0000000H9EB-3rUq
+	id 1tGw9M-0000000HA18-1TXS
 	for linux-phy@lists.infradead.org;
-	Fri, 29 Nov 2024 08:11:58 +0000
+	Fri, 29 Nov 2024 08:14:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 22DBE5C4CCC;
-	Fri, 29 Nov 2024 08:11:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45E32C4CECF;
-	Fri, 29 Nov 2024 08:11:46 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 525205C5AF8;
+	Fri, 29 Nov 2024 08:14:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BDECC4CED4;
+	Fri, 29 Nov 2024 08:14:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732867916;
-	bh=AiJGowtHIo1rzk5BX2SihIa4VHmiP8g4FSFO5Tp/vgo=;
+	s=k20201202; t=1732868091;
+	bh=qMkzk6aRKRtywYcgiPjU1mfsswe8+rD4pkz2MbkpaRA=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Ozj3eVRE2B4Xfraaf9xGTcamEH1wgUHuep/fSaiyvGsB1MgKdkcv9ceMg/tYg+v1M
-	 s5g8y2asddbXCwWSHZG/yUqhbJkvfoTZfNO+mULTKG3MhSMVN9lMKti5ady6AwKOO4
-	 Isgn+mGhO0VZnBhVc4sC+buohU/YQiMgmoR3jCzVeXFBh9RxRRiTe7lSAz0pQ9KyjU
-	 TkqzKu67OKKeppO1+uezQNB6WlPqO3RDkuDNNeDJvKRM23EQXo9WP8iatYUQ9rHWuw
-	 3Dbly7K36aa3vW5uNLENQC+e6WBKJ1+ifcWInNhg//iiaEmxbVb6FDv0VGN9FBaeYk
-	 pat95dwmE27MA==
-Message-ID: <69185db0-7fe7-4acf-b0c8-c1d8fe90535f@kernel.org>
-Date: Fri, 29 Nov 2024 09:11:45 +0100
+	b=p3x4MbjkIOvylfcfh5vcZ5+oEyRhtZUdDNqgDU/CFrXjDOYDlElMFez5hKcc29HLT
+	 mUH88VFNEzotbSD0+E7togd2fpINZfnlSVcAVvwS56iVvivOOHfd/OrIYzZTMKzF9J
+	 w/B1a4r3GxqVKl+tIzzoyuW9AjIcLJO+u9BYAIxfWsfoyrzczbarwf8h5ApEqnibg3
+	 kpxsN7zCalF7wGHCfaAlteD1Zxbmt8Y0PNjuQt60Ioh7BvlU61/VjGUH+mLg+9wvLd
+	 YNQ84m793FDvcx0VoynsjhSIo6ggCAhKBL92aZ5CAHbbPa5H2MSyY7sQQT0KKN5t1b
+	 f0bJQyjvmFfAQ==
+Message-ID: <dffc023f-186d-4316-a022-2344f0849ba1@kernel.org>
+Date: Fri, 29 Nov 2024 09:14:39 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/8] dt-bindings: display/msm: Document DP on QCS615
+Subject: Re: [PATCH 2/8] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add DP
+ support for QCS615
 To: Xiangxu Yin <quic_xiangxuy@quicinc.com>, Rob Clark <robdclark@gmail.com>,
  Abhinav Kumar <quic_abhinavk@quicinc.com>,
  Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Sean Paul <sean@poorly.run>,
@@ -64,7 +65,7 @@ Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-gpio@vger.kernel.org
 References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-1-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-2-09a4338d93ef@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -110,10 +111,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241129-add-displayport-support-for-qcs615-platform-v1-1-09a4338d93ef@quicinc.com>
+In-Reply-To: <20241129-add-displayport-support-for-qcs615-platform-v1-2-09a4338d93ef@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241129_001157_049108_6345DE89 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20241129_001452_483775_7C40BC82 
+X-CRM114-Status: GOOD (  15.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,56 +132,76 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29/11/2024 08:57, Xiangxu Yin wrote:
-> Document the DP hardware found on the Qualcomm QCS615 platform.
+> Declare the DP QMP PHY present on the Qualcomm QCS615 platforms.
 > 
 > Signed-off-by: Xiangxu Yin <quic_xiangxuy@quicinc.com>
 > ---
->  .../devicetree/bindings/display/msm/dp-controller.yaml      | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
+>  .../bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml     | 21 +++++++++++++++++++--
+>  1 file changed, 19 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
-> index a212f335d5ffae545d2e5bacec95299ca45e8405..a609245ae601bdc60b65f19d3e59c559886a969d 100644
-> --- a/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
-> +++ b/Documentation/devicetree/bindings/display/msm/dp-controller.yaml
-> @@ -26,6 +26,7 @@ properties:
->            - qcom,sc8280xp-dp
->            - qcom,sc8280xp-edp
->            - qcom,sdm845-dp
-> +          - qcom,sm6150-dp
-
-I see sm6150, not qcs615.
-
->            - qcom,sm8350-dp
->            - qcom,sm8650-dp
->        - items:
-> @@ -109,6 +110,18 @@ properties:
->    vdda-1p2-supply:
->      deprecated: true
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+> index 1636285fbe535c430fdf792b33a5e9c523de323b..eb21cfe734526fce670c540212a607a016cedf2c 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml
+> @@ -18,6 +18,7 @@ properties:
+>      enum:
+>        - qcom,msm8998-qmp-usb3-phy
+>        - qcom,qcm2290-qmp-usb3-phy
+> +      - qcom,qcs615-qmp-dp-phy
+>        - qcom,qcs615-qmp-usb3-phy
+>        - qcom,sdm660-qmp-usb3-phy
+>        - qcom,sm6115-qmp-usb3-phy
+> @@ -47,7 +48,7 @@ properties:
+>      const: 0
 >  
-> +  max-width:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: Maximum allowed width for display modes
-> +    default: 7680
+>    clock-output-names:
+> -    maxItems: 1
+> +    maxItems: 2
 
-I don't see why this is a property of board. Drop. Anyway, missing
-vendor prefix or unnecessary $ref, if it comes from other schema.
 
-> +
-> +  dp-hpd-gpio:
+Why all devices now have two clocks? No, this needs lower constraints
+and further customization per each variant.
 
-gpios
+>  
+>    "#phy-cells":
+>      const: 0
+> @@ -62,7 +63,8 @@ properties:
+>      items:
+>        - items:
+>            - description: phandle to TCSR hardware block
+> -          - description: offset of the VLS CLAMP register
+> +          - description: offset of the VLS CLAMP register in USB mode
+> +                         and offset of the DP Phy mode register in DP mode
 
-> +    description: External GPIO for controlling HPD when a 3rd pinctrl is used
-> +    items:
-> +      - description: phandle to 3rd GPIO controller
-> +      - description: GPIO pin number
-> +      - description: Optional GPIO flags
+You change all existing devices, no.
 
-Nope, that's not how GPIOs are created. Please take a look at any other
-schema.
+>      description: Clamp register present in the TCSR
+>  
+>    ports:
+> @@ -128,6 +130,21 @@ allOf:
+>              - const: com_aux
+>              - const: pipe
+>  
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - qcom,qcs615-qmp-dp-phy
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 2
+> +        clock-names:
+> +          items:
+> +            - const: cfg_ahb
+> +            - const: ref
 
-Anyway, I doubt that you need this property. See common bindings for
-display pieces.
+Top level says you have minimum 4 clocks, not 2. You need to fix that,
+if this devices stays in this schema. Anyway your changes suggest device
+is quite different, so probably should not be here in the first place
+but in different schema, maybe new one.
+
 
 
 Best regards,
