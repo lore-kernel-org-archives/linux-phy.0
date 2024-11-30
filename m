@@ -4,89 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F0F5D735FA
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 08:54:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A938CD7360C
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 17:37:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/1du7BVG5xuSUtpzjZfa/Sm4ewgrmVLEE0HuzSiF+Hg=; b=HmP0dfQsaKPf3q
-	9MGMUpWcOiW1BVw3vlfPwYkZ90kpDfjn/Hh8T73QXfnsXaDuCZlsgbXoCRVn+hBTebDrS35ml39f7
-	egwQLu5dhE4es1QXpuxPqTT+XAB9t5X/oEfl7iUvDhLFHmBfBWTmklR53UP3u6DZOkm9fRqtHIWzG
-	lN0o8SoeSrJd6xqbbeDn4MvY2C3kF1/IkCMXzpjzQ/ZqauNhXndNEF6R3/yhLFXv79U6Arw0/yfdF
-	Duy6mf6oshsjFa3smsMOU3R0YLmqfW5veJoEEB+V6wAmUjFOpcn+Sdcrb1UkiaVNehnhvACrl+E/U
-	k5L8uHBvn9DqkdQu4FOA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=2+EGYeYS91QEqLrbipWlfjNTSvM9E6WdGn1uAp+G6Ek=; b=KFFt/VTDU/DadVYC+bn1Lo13Mr
+	TsCGUam9uGYaIodDEfJF6qRl1XZi74yaknxV+eBcft7mJG/pRipUEXKLkXt27+Iu7EfJKVsBd9PfN
+	5IOplRKbFTg6joFTaGN2lE5qxGVAcN9OEJgW3upYjsIKosY3Svt3qxt4NnBnsDnY0jSnFgRywHF68
+	1MRM5FgiWDIRjfovGkTgOMJU8url1dP3kW95BsFeveXPZASmsq4zKdlltNbX5clbYITui4xjKAXkC
+	Ga5tPUjjjqv3dSQwi4+lr1Nbr4JEya5NAz/SPZvGqIdosiHFbBkF5Vm2vwGebQNn6Vo3DSv8bsKmv
+	mgxrcBfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHJEn-00000001eRi-2hHX;
-	Sat, 30 Nov 2024 08:54:01 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1tHRPX-00000002Mtx-3VlO;
+	Sat, 30 Nov 2024 17:37:39 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHJEj-00000001eQH-0MRW
+	id 1tHRPU-00000002Mt8-3nd8
 	for linux-phy@lists.infradead.org;
-	Sat, 30 Nov 2024 08:53:59 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-53df80eeeedso2626661e87.2
-        for <linux-phy@lists.infradead.org>; Sat, 30 Nov 2024 00:53:56 -0800 (PST)
+	Sat, 30 Nov 2024 17:37:38 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-385dece873cso832340f8f.0
+        for <linux-phy@lists.infradead.org>; Sat, 30 Nov 2024 09:37:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1732956835; x=1733561635; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1732988255; x=1733593055; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=MCRiyMdK31NndjkRy/3fWARIEqrVAn7I6TcjbFNOugw=;
-        b=M/O0tEth3MsGzoUjxII8hdK5W3irxjLpNYwKgyRZFCittNZ0h23xM36zp06GH7qtIY
-         dsRxe7Zc5L3CCH6Qaje//rkBznTal9+v2GNFbxejh2mRjWltkhcjLYWfSEa2vGuK7fK7
-         zS+NDenGdLmrNr+Hf5vyMZVUniHlF8SXWxOSiV1s/CPD6yZvICKX26MQfcpTAF2lhvUr
-         LydNoYuZaGo2qzw3S0Qe1FsJf4bTWmC7d6olLjPaJIwdGMlP7fsMUvwd9Jkevb4yXAmU
-         3gLwNA64AbnNGgozXFYmeiQyNzpCydacep7idzRgoJqzAaNwo9qEETxPxSNiLpp+DiG1
-         eP2Q==
+        bh=OHsN6TaNp1079VuBOcy+ma3PsSKaKXviIRckoZ4F6Sg=;
+        b=BQWWsLTrQSLNg9Mxsv7wn2S7Ko4w4Ws06wQn0uLS6qIRKEs5b4fCfjWJAQzFERbMpn
+         hwMMZD6T+/AU9FzS4VcJ6wOf6MD+Swc8OqJqk469Rhbl4OkJtHiPC6eKhVtH6s5brdfS
+         mqPyltrVNnYylbzNOsfAQK2+pNNp+B7cI32YoonDzBvlR86R73bUsqB9EZcXjkmggr8o
+         iOA41dyu2W42qxxl5F3JSwC+hRdqxvrgIURbeQlru7s2zcc+n+4t6sGvRGHPtrzmfpdj
+         6tTDlmWsAMWPrOGbN8iZzMil4uFXKgHRv/sNRo6iM1kEmS46VTgABwg4nGZASmS8NW7e
+         Y0wA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732956835; x=1733561635;
+        d=1e100.net; s=20230601; t=1732988255; x=1733593055;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=MCRiyMdK31NndjkRy/3fWARIEqrVAn7I6TcjbFNOugw=;
-        b=sbF8dwscSDHsUHvC0Dknrsak6zoNyBsYGnT6iNo1IFPzX3laUUa0FpUn5VrhgcfjGW
-         MtFPhMe50i/hY/84GNigHX3WIDONnEZrke1D+bV9GAEqj4oM8nymTmGB2pkDuhZV/e9s
-         e5lS2VlyQQ9BhLUM76V+Sn/aJ2qT8QIGNgHTpCNJPxXZPrDg6tuLUgEUwqpXkxX1a9Mw
-         wBYyyJBTgGxpp/zmRs72cvAftbpe13tSA3LghZvkXx/0Bw2d3+mOula4oQvl9fhhe0yS
-         y4VRmGieGKhn0bmD0JgoVVeEMEXejNPnJm1hT5YI5yR8KxbXDi8crnoEXUDBe6fdyEIz
-         QqCA==
-X-Forwarded-Encrypted: i=1; AJvYcCU2yU8738E4Mh3WX6myqgRklQLgZSeR4L5n3+sNL4uA0EgJZEtnE6lK6RgsLKoy4FLjGHo0DBrrEn8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwKGvObkPnyGef2PzMuGOeVYp8HEZ59eb7aWxBogKebW+ItsDmW
-	lJpjZWzCfiZlHGTmfvyKBg4R95JzGXOIW9PZuNIotjPmTVHt24u4RVnA/xoRZpo=
-X-Gm-Gg: ASbGncsvoDylge9nJd7E4tHPz4bMuBnX/YU87upwDHEZFCw1q1NZ1PXkPR5WRPgRyX4
-	YYuFQe0HOHKss4OzucUai5VX+HUk3YfWrPLxv2ZFB+9C5Uc0onJuiCc8S6o7NNHwdGZV/R5mk+c
-	blH9Pc2gvyC+B+9DZU2VItvybqOApJ5prmUaH0MiKTpCDTizYN2LKsSjwJIupiZTbchCHzwNp23
-	yyNEWL6mfhAqimEr/HQn0XmPP+4TRczGN0nhq3WnYjrsLmk7gPHHhTqT8J2/O5FjEG4WeyOqItX
-	LXp2gx+hpKB/pQIKL6VN9GkXc70N2w==
-X-Google-Smtp-Source: AGHT+IEW2arMDWGqYZ1mh73vhp8aH4A2JUPywHSwLMM0QAhe/TE1+vmLynKojA+Q9JDxHrSsDsIweA==
-X-Received: by 2002:a05:6512:280e:b0:53d:e50a:7031 with SMTP id 2adb3069b0e04-53df00c6063mr8808918e87.3.1732956835260;
-        Sat, 30 Nov 2024 00:53:55 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53df646f2cesm695508e87.121.2024.11.30.00.53.52
+        bh=OHsN6TaNp1079VuBOcy+ma3PsSKaKXviIRckoZ4F6Sg=;
+        b=BmJpz/S2Bx7MqSMbygHg8mtLTHO/ZXYF6tHwjfeaHib3+9Svko7QvrdMxtSZHRsAnu
+         SoiCdWOIY9is5d24gUIN2le9gWkPVgqoZsF//ltvJJnNcyhDsdD9FbPJ2W38K1GCdQyy
+         CWVDGSTULUbbVe2PCUWZINFVB6CMBpoq0bEMdwZbNKkzyz9DlnBDb4UAFVJKUSVt+UWO
+         IhBIJR6VXVr+bGNdMXMJndcVnMxGox6XpbJ2grz9T1RmgBZK3cEpmO8vdIKij5N4m/fb
+         NJgIaRXLaNu8LBNWwmeJymR936GCQDA0TyI+jPfIYxU/767hfVyPybN5AGwD+DIXtZcH
+         li2Q==
+X-Forwarded-Encrypted: i=1; AJvYcCXIr1QNCwQKRpWwfIayEl16i5FXo5qZd4CnhfCubIKvuvqCpdhDxLSijPq22N88VYKbQ+bCSpTx1Ow=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzcPIXjo1RVlZqUK5eu0bel6RMGj+TMSG5okGxbzqoLEvNz2Am1
+	GrbpSKJbqWHbn9JmjBwS7fF4J37H0q4jNJIC819770UN3ZTAdXT3p2G8jsKNys8=
+X-Gm-Gg: ASbGncugE+dHZL4YR0gEsHirloQeWg+jRV3DuLm0NLlmzzOj3NeZpa1Jka79XG6cGGA
+	5WQwN0yTtvXRfLf32pjuSPRka560P+zb34YL+70U7sde5XH3eNMQJupPSrkGMSMZqDHfIgqhy/q
+	JXVIZAu65NK9GsxrzUxLruw/3jhFvYT8ygK50Aa92YX47tkV+bFz+ousXHJasOgCgJBHFMcc08H
+	YXYSufYujfmR28VF6cC6G0xVgJuTudTf23HPSOTzRM2TN9UF1YR8o4=
+X-Google-Smtp-Source: AGHT+IFwFQ2rSjeB0u3yaS6t10AI+CYIIMAsPZIeMkH7fQN0rD+w3+XGwsQFyRldnEvjiwCvxiOdhQ==
+X-Received: by 2002:a5d:59a3:0:b0:385:cf9d:271d with SMTP id ffacd0b85a97d-385cf9d2858mr8248469f8f.21.1732988254848;
+        Sat, 30 Nov 2024 09:37:34 -0800 (PST)
+Received: from localhost ([2a02:8071:b783:6940:36f3:9aff:fec2:7e46])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-385eb10bf7esm453594f8f.14.2024.11.30.09.37.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 30 Nov 2024 00:53:53 -0800 (PST)
-Date: Sat, 30 Nov 2024 10:53:51 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: heiko@sntech.de, robh@kernel.org, conor+dt@kernel.org, 
-	algea.cao@rock-chips.com, rfoss@kernel.org, devicetree@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, sebastian.reichel@collabora.com, 
-	dri-devel@lists.freedesktop.org, hjc@rock-chips.com, kever.yang@rock-chips.com, 
-	linux-rockchip@lists.infradead.org, vkoul@kernel.org, andy.yan@rock-chips.com, krzk+dt@kernel.org, 
-	linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
-Subject: Re: [PATCH v1 06/10] drm/bridge: analogix_dp: Add support for phy
- configuration.
-Message-ID: <twhosvpoyafo472gqsblpvxmuewe2lkqufxabp2q7o636uinfm@unzyfv2pchqn>
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
- <20241127075157.856029-7-damon.ding@rock-chips.com>
+        Sat, 30 Nov 2024 09:37:34 -0800 (PST)
+Date: Sat, 30 Nov 2024 18:37:32 +0100
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, p.zabel@pengutronix.de, 
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com, 
+	simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, 
+	festevam@gmail.com, glx@linutronix.de, vkoul@kernel.org, kishon@kernel.org, 
+	aisheng.dong@nxp.com, agx@sigxcpu.org, francesco@dolcini.it, frank.li@nxp.com, 
+	dmitry.baryshkov@linaro.org
+Subject: Re: [PATCH v4 09/19] drm/imx: Add i.MX8qxp Display Controller
+ display engine
+Message-ID: <gyt3z6jisr4cea4wwk32hgzbatbczibppgrv6copcl4qo2chlx@w5kcqulhoe2p>
+References: <20241125093316.2357162-1-victor.liu@nxp.com>
+ <20241125093316.2357162-10-victor.liu@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241127075157.856029-7-damon.ding@rock-chips.com>
+In-Reply-To: <20241125093316.2357162-10-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241130_005357_952484_E11AC215 
-X-CRM114-Status: GOOD (  21.89  )
+X-CRM114-CacheID: sfid-20241130_093736_943543_E26B38D7 
+X-CRM114-Status: GOOD (  10.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,232 +99,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8986687973486225543=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 27, 2024 at 03:51:53PM +0800, Damon Ding wrote:
-> Add support to configurate link rate, lane count, voltage swing and
-> pre-emphasis with phy_configure(). It is helpful in application scenarios
-> where analogix controller is mixed with the phy of other vendors.
-> 
-> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> ---
->  .../drm/bridge/analogix/analogix_dp_core.c    |  4 +-
->  .../drm/bridge/analogix/analogix_dp_core.h    |  2 +
->  .../gpu/drm/bridge/analogix/analogix_dp_reg.c | 90 +++++++++++++++++++
->  3 files changed, 94 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> index 6f10d88a34c5..7624ed13cdbf 100644
-> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> @@ -1672,7 +1672,7 @@ EXPORT_SYMBOL_GPL(analogix_dp_probe);
->  
->  int analogix_dp_suspend(struct analogix_dp_device *dp)
->  {
-> -	phy_power_off(dp->phy);
-> +	analogix_dp_phy_power_off(dp);
 
-Why?
+--===============8986687973486225543==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="4chv2ajqebpzf4n4"
+Content-Disposition: inline
 
->  
->  	if (dp->plat_data->power_off)
->  		dp->plat_data->power_off(dp->plat_data);
-> @@ -1696,7 +1696,7 @@ int analogix_dp_resume(struct analogix_dp_device *dp)
->  	if (dp->plat_data->power_on)
->  		dp->plat_data->power_on(dp->plat_data);
->  
-> -	phy_power_on(dp->phy);
-> +	analogix_dp_phy_power_on(dp);
 
-Why?
+--4chv2ajqebpzf4n4
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Subject: Re: [PATCH v4 09/19] drm/imx: Add i.MX8qxp Display Controller
+ display engine
+MIME-Version: 1.0
 
->  
->  	analogix_dp_init_dp(dp);
->  
-> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.h b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.h
-> index 774d11574b09..a76079d61768 100644
-> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.h
-> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.h
-> @@ -232,5 +232,7 @@ int analogix_dp_send_psr_spd(struct analogix_dp_device *dp,
->  			     struct dp_sdp *vsc, bool blocking);
->  ssize_t analogix_dp_transfer(struct analogix_dp_device *dp,
->  			     struct drm_dp_aux_msg *msg);
-> +void analogix_dp_phy_power_on(struct analogix_dp_device *dp);
-> +void analogix_dp_phy_power_off(struct analogix_dp_device *dp);
->  
->  #endif /* _ANALOGIX_DP_CORE_H */
-> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c
-> index 3afc73c858c4..809bb0c72d18 100644
-> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c
-> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c
-> @@ -11,6 +11,7 @@
->  #include <linux/gpio/consumer.h>
->  #include <linux/io.h>
->  #include <linux/iopoll.h>
-> +#include <linux/phy/phy.h>
->  
->  #include <drm/bridge/analogix_dp.h>
->  
-> @@ -513,10 +514,27 @@ void analogix_dp_enable_sw_function(struct analogix_dp_device *dp)
->  void analogix_dp_set_link_bandwidth(struct analogix_dp_device *dp, u32 bwtype)
->  {
->  	u32 reg;
-> +	int ret;
->  
->  	reg = bwtype;
->  	if ((bwtype == DP_LINK_BW_2_7) || (bwtype == DP_LINK_BW_1_62))
->  		writel(reg, dp->reg_base + ANALOGIX_DP_LINK_BW_SET);
-> +
-> +	if (dp->phy) {
-> +		union phy_configure_opts phy_cfg = {0};
-> +
-> +		phy_cfg.dp.lanes = dp->link_train.lane_count;
+Hello,
 
-You can drop this, .set_lanes is false.
+On Mon, Nov 25, 2024 at 05:33:06PM +0800, Liu Ying wrote:
+> +struct platform_driver dc_de_driver = {
+> +	.probe = dc_de_probe,
+> +	.remove_new = dc_de_remove,
 
-> +		phy_cfg.dp.link_rate =
-> +			drm_dp_bw_code_to_link_rate(dp->link_train.link_rate) / 100;
-> +		phy_cfg.dp.set_lanes = false;
-> +		phy_cfg.dp.set_rate = true;
-> +		phy_cfg.dp.set_voltages = false;
+Please use .remove here. Also in a few other patches of this series.
 
-You don't need to set those to false, it's cleared by = {0};
+Best regards
+Uwe
 
-> +		ret = phy_configure(dp->phy, &phy_cfg);
-> +		if (ret && ret != -EOPNOTSUPP) {
-> +			dev_err(dp->dev, "%s: phy_configure() failed: %d\n", __func__, ret);
-> +			return;
-> +		}
-> +	}
->  }
->  
->  void analogix_dp_get_link_bandwidth(struct analogix_dp_device *dp, u32 *bwtype)
-> @@ -530,9 +548,24 @@ void analogix_dp_get_link_bandwidth(struct analogix_dp_device *dp, u32 *bwtype)
->  void analogix_dp_set_lane_count(struct analogix_dp_device *dp, u32 count)
->  {
->  	u32 reg;
-> +	int ret;
->  
->  	reg = count;
->  	writel(reg, dp->reg_base + ANALOGIX_DP_LANE_COUNT_SET);
-> +
-> +	if (dp->phy) {
-> +		union phy_configure_opts phy_cfg = {0};
-> +
-> +		phy_cfg.dp.lanes = dp->link_train.lane_count;
-> +		phy_cfg.dp.set_lanes = true;
-> +		phy_cfg.dp.set_rate = false;
-> +		phy_cfg.dp.set_voltages = false;
+> +	.driver = {
+> +		.name = "imx8-dc-display-engine",
+> +		.suppress_bind_attrs = true,
+> +		.of_match_table = dc_de_dt_ids,
+> +		.pm = pm_sleep_ptr(&dc_de_pm_ops),
+> +	},
+> +};
 
-Likewise
+--4chv2ajqebpzf4n4
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> +		ret = phy_configure(dp->phy, &phy_cfg);
-> +		if (ret && ret != -EOPNOTSUPP) {
-> +			dev_err(dp->dev, "%s: phy_configure() failed: %d\n", __func__, ret);
-> +			return;
-> +		}
-> +	}
->  }
->  
->  void analogix_dp_get_lane_count(struct analogix_dp_device *dp, u32 *count)
-> @@ -546,10 +579,39 @@ void analogix_dp_get_lane_count(struct analogix_dp_device *dp, u32 *count)
->  void analogix_dp_set_lane_link_training(struct analogix_dp_device *dp)
->  {
->  	u8 lane;
-> +	int ret;
->  
->  	for (lane = 0; lane < dp->link_train.lane_count; lane++)
->  		writel(dp->link_train.training_lane[lane],
->  		       dp->reg_base + ANALOGIX_DP_LN0_LINK_TRAINING_CTL + 4 * lane);
-> +
-> +	if (dp->phy) {
-> +		union phy_configure_opts phy_cfg = {0};
-> +
-> +		for (lane = 0; lane < dp->link_train.lane_count; lane++) {
-> +			u8 training_lane = dp->link_train.training_lane[lane];
-> +			u8 vs, pe;
-> +
-> +			vs = (training_lane & DP_TRAIN_VOLTAGE_SWING_MASK) >>
-> +			     DP_TRAIN_VOLTAGE_SWING_SHIFT;
-> +			pe = (training_lane & DP_TRAIN_PRE_EMPHASIS_MASK) >>
-> +			     DP_TRAIN_PRE_EMPHASIS_SHIFT;
-> +			phy_cfg.dp.voltage[lane] = vs;
-> +			phy_cfg.dp.pre[lane] = pe;
-> +		}
-> +
-> +		phy_cfg.dp.lanes = dp->link_train.lane_count;
-> +		phy_cfg.dp.link_rate =
-> +			drm_dp_bw_code_to_link_rate(dp->link_train.link_rate) / 100;
+-----BEGIN PGP SIGNATURE-----
 
-You can drop these two.
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmdLTVoACgkQj4D7WH0S
+/k4Tewf9EssJcTTmbhrMd+Z9OEMUakhfq+ufnw7+fdnL5bSz1UG4O6BpXKdSHEOG
+3GVGRRTto7bFTDc8d6AjAymdKak5N9qoiKUvbjXBcqqw/yrQnatqoSbVaGXl1AhM
+bC3ACa2Jk+hpxBLZ0ADQNIsiTHt1JsD25oyDT+LdjtBWwGcao8CWuPNQY9vu/+np
+jeqbvSKy0ZxJyb9DtQkAErXp6TDgbDIus7W/t+SER/BSZVQuZQH1cZ/Il8Fyf41K
+jlKO+ARu3pWEngcNyxZmR5mUzZdh6+0Gfoy31/tdmao58gaN/fLFirQ0NruQFDEM
+3M2Ee3lQXE8MXaOGn2uhWj312eKAZw==
+=RpIh
+-----END PGP SIGNATURE-----
 
-> +		phy_cfg.dp.set_lanes = false;
-> +		phy_cfg.dp.set_rate = false;
-> +		phy_cfg.dp.set_voltages = true;
-> +		ret = phy_configure(dp->phy, &phy_cfg);
-> +		if (ret && ret != -EOPNOTSUPP) {
-> +			dev_err(dp->dev, "%s: phy_configure() failed: %d\n", __func__, ret);
-> +			return;
-> +		}
-> +	}
->  }
->  
->  u32 analogix_dp_get_lane_link_training(struct analogix_dp_device *dp, u8 lane)
-> @@ -1053,3 +1115,31 @@ ssize_t analogix_dp_transfer(struct analogix_dp_device *dp,
->  
->  	return -EREMOTEIO;
->  }
-> +
-> +void analogix_dp_phy_power_on(struct analogix_dp_device *dp)
-> +{
-> +	int ret;
-> +
-> +	ret = phy_set_mode(dp->phy, PHY_MODE_DP);
-> +	if (ret) {
-> +		dev_err(dp->dev, "%s: phy_set_mode() failed: %d\n", __func__, ret);
-> +		return;
-> +	}
-> +
-> +	ret = phy_power_on(dp->phy);
-> +	if (ret) {
-> +		dev_err(dp->dev, "%s: phy_power_on() failed: %d\n", __func__, ret);
+--4chv2ajqebpzf4n4--
 
-There is already a dev_err() call in phy_power_on().
 
-> +		return;
-> +	}
-> +}
-> +
-> +void analogix_dp_phy_power_off(struct analogix_dp_device *dp)
-> +{
-> +	int ret;
-> +
-> +	ret = phy_power_off(dp->phy);
-> +	if (ret) {
-> +		dev_err(dp->dev, "%s: phy_power_off() failed: %d\n", __func__, ret);
-
-There is already a dev_err() call in phy_power_off().
-
-> +		return;
-> +	}
-> +}
-> -- 
-> 2.34.1
-> 
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-
--- 
-With best wishes
-Dmitry
+--===============8986687973486225543==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8986687973486225543==--
+
