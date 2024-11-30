@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6076FD735F9
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 08:28:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0A04D735F8
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 08:30:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pivWDu//VELrXrbA5ENC7eTRrWxwRHzcYehW6PCRH0o=; b=vzojqGwCRiUgE3
-	1Lc3eW6xB+eiZmIRejjNrYw46cq+RqrASV+1duuoqvZ6rjr7vx3o1ZVTyxAjPxzfu6H0Yz3NQTSGF
-	SjnDdT7svxSU3bhdiGPP8g49ajUywrzd00BlTrC8kSdzcoA5Q0zDCaueBlHNuel7FTiRhscc1eP0l
-	oIYXn7sr3Biaag92isMufnIqxIhHCg2608JS10mGhPQcbSPDgecuxbxvB/ALrz33HzL0kt5RahZkY
-	AQc/PHSVuCzRTLvJ0zYmNnQRyvrbtxVjebDdJXDEgIRJZnGFi2o6zxNpxLTy84HUX5mSEBl+eHG16
-	PFbw3tUbP08kAIce+R6g==;
+	List-Owner; bh=zPzeCwTgsby86gK2MB4cnW3pXzlRIuKEAgCjbadYMQA=; b=R2cNkaD8swDwHH
+	khLMzWm9k62a1mHK2fIC4S3vK/RRkLyrN41uGpaGrQmT21B/nYE5GwnojrjUf4OxtQH3jXA3cXixF
+	u/GOddu52dMI0o6ROGca5yiFj8ntM/ss2TeB2DVYgxQVIW+0ydvzASdNH+I1JE/wJuQbIOcD/inpH
+	G2f/dapyrcSOVZx9Y4KkhF+oPqgNPpK6Gxe1yjB6C61hv0r1IPz7ytxw4/qwYuM2gt4ebHrboeAiW
+	XW60eaeGUFOAehLPp3C3iWNadBXNy9bWZCjYK+ZNiBDuTpJhYduB+IClja9iNi1lLR1gN2aUUtZrl
+	7uXIHlsfB+0Kr4ZrS1QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHIpr-00000001cnc-0Pue;
-	Sat, 30 Nov 2024 08:28:15 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1tHIsN-00000001d81-2SDs;
+	Sat, 30 Nov 2024 08:30:51 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHIpn-00000001cmf-3OIM
+	id 1tHIrM-00000001cz9-3rmH
 	for linux-phy@lists.infradead.org;
-	Sat, 30 Nov 2024 08:28:13 +0000
-Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-53dde5262fdso2895737e87.2
-        for <linux-phy@lists.infradead.org>; Sat, 30 Nov 2024 00:28:11 -0800 (PST)
+	Sat, 30 Nov 2024 08:29:50 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-53dd57589c8so3815417e87.1
+        for <linux-phy@lists.infradead.org>; Sat, 30 Nov 2024 00:29:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1732955289; x=1733560089; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1732955387; x=1733560187; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=cbSnMoGC544U7zX5fIfp831y8T12sKgnt66TAb2i060=;
-        b=skGJKF75LCfELQVC8liH9KHPLmOx6BJKOC3A3zi3cN8Pe/EjHzRRBVODCF+nWJA0s5
-         xsF508nN8Du9V2D6+UvFaDo3Y3vHe0foqvq4VGPqN0jzEGdtHGsLs9P1Nj3L9ShYuNfW
-         r+Rvd3khFHC2EyJWoeLNzxYi5VzgbUoSxiYfQNF8vFvbzxFXxndNRfmk4E3JWe6VTPnt
-         A4FRl31M3jfJpwCDQulz1I+sV2v97OCWq8C/V+GkgSLZufrAm2+1fFlgsjnHo3bYDc1X
-         OjjFN3JcQIr3qCxewJfNf1LrVniLG5XZ4T7f2h+mltnJGRsBPzoK6JjKJBP5uIBuII4v
-         3N7A==
+        bh=YwEfcn5Pby1DuMjHVg1b1o/lcfJvv/jFNZtuiy5rgCw=;
+        b=MOiz832q7g7BF210yDVgJLuzGhahM3EaCYzHVny0YM/y1bax7vyulOc3vDO3WkD5d1
+         wcGHtEGSRTE4dZVaL6KHmYGcPkJe//xzcj3ODRtw9AhNBxrV2oBABUlxMaxxP/EvmTfD
+         XrPxbBYqqh5HMfFjqAmZTpE/cbTljctxYYpnHflB9Am67aNwAlC94/TZKhg74o7oSDD7
+         yC+C+eLMGQUoWO5f/Brn+ZpAVLMy07SjiGrbNhIE/bTfOrNxcn+ZRdzKiD8HREpsWFN9
+         ji5KmTCqWJ3hlsNDSpKsiSwQ8d+5WJ4Y1DFiNSvD05gTrYhsu9GEcIri2x6Z+Syq9P2t
+         Niwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1732955289; x=1733560089;
+        d=1e100.net; s=20230601; t=1732955387; x=1733560187;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=cbSnMoGC544U7zX5fIfp831y8T12sKgnt66TAb2i060=;
-        b=AgZzIv+OEZGr9xSt7DiGNFTDGjC6ZgFGvruNNFHEZHYwUgj3IGrqGHmVEQEA8DUbCy
-         cZDH+U/dFWuEMWIr1RPVLYBLxGsSElVYp9At79oHn+vYFP2vdN+Yd9jcZBe9mQlkZQvO
-         pRL9urzBIYcJA6wHuZD+kBgUQcLx5TjZiCvFyLj8KVvPJWcHSdkI+P/BlB1wW8ndc4rM
-         LdJoK3KT9rri4eRdlKR4ooaD1ntSy0Ahr0FOrNhwOh7fjXOJdtb9o/a9hfBVMwsL8pj6
-         YnmMzJJXPTshOXWk1No8sE8WCDt3XV1qP5QmPjJYwJh/mIYEJTzke7wjSft1kK9nkqy9
-         IUEQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXjAVQLO5sjurUal+Qy3ltLBRgdR3HgFYQDlByBrgj0cDotbOLN4CD3O7rB0hdI2AAAMI6d9p5U32I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YytWoxVhDxjZgwWWZyGqI+hQsPxX2Z44wD3+j0B9gmq+KeRrKLP
-	L9jymqX5MbgT2+ceDwR+tdVWt8SfHQix+/7ToQLv2QMKDznCDnUhmHPyvTcK9XI=
-X-Gm-Gg: ASbGncsSaSR0gTDwlbDHv3WrJeyQOffvEFCtWOehJdLyFBpZrmWmovnghBl4dzNByOL
-	oB5m6PxeRFw2d0VPDmGmI8kIciJ9nZpkNM8Rqjw5vFH2zoqdAmvshTFHeUMhLTyKAlOLwxtQxyE
-	gpjYC7KBDamU+ghydd3GDlh3scvah7xHJGT2fajusnUF1BTdrlmGfmgpIiF0eYTwonNf/drYsM9
-	jMhiCy6ZEUWKoCS2ZlTcU77DSvj/amMlf0OkV8q/Dkcnc57UVmpx02MfbHSXmNiseHi2D++PjIg
-	X8qIOMeffn34BFGMigNI8IUVqfcBvw==
-X-Google-Smtp-Source: AGHT+IFgWR3gAkOG9mafLXj/TmNlCERT2tB84SZRTKkdRAWB1jZom71zptQRqQUiP9OjF7eSxCiFOQ==
-X-Received: by 2002:a05:6512:3c9c:b0:53d:e544:3fda with SMTP id 2adb3069b0e04-53df0114865mr9728745e87.55.1732955288602;
-        Sat, 30 Nov 2024 00:28:08 -0800 (PST)
+        bh=YwEfcn5Pby1DuMjHVg1b1o/lcfJvv/jFNZtuiy5rgCw=;
+        b=licK4yFUfCBEKbMMajJfHmeXmwm4idIaKq1BEFZt1UolPzQS81E6/lStu2FA8732oG
+         ZCKWZXVGfV9JBdovZBouOWtf4bXqjTOVW81e49AYRhcmzLVN0wREznnJMTN0HbbhQBIA
+         Ca+cIrzGsrYBIT2O/u1WZZ42ilMgTyWTlFbzeQ3ZEYNaE9bFxCD2lGerhy43/Qw9KR8t
+         +Kii+sCeXSKOoOYedJbsaRosLWim361HeuasKwg24wwyNnnlN2R5oMm1egtQ0ZFU4j8p
+         wpQXv+xYw42K7iw/0CG39hq909tTr07gPb2SzxTFTieOzmGvlFqwGC9XpJ9CIHxI0BV9
+         m1fg==
+X-Forwarded-Encrypted: i=1; AJvYcCX2/lwBX1cu5ems+XyoSV+V870sQ10swHsZqnCpqcrxA2kbKedfCRy/s3F4JDotk9CHxiNbJh9qFz0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxAZV7t9GBPALfRjfKn4rjI8f4ZqT3i8DCZjtfoOigUwewmaREZ
+	HhglCEsRmqayhe2cvmien/SmGdWz9BDvDjnzWphBPYQParvtjYmhP0lUqMk3k3g=
+X-Gm-Gg: ASbGncvIkzgUhy5vW3MaiC/5q7722qicCTIrHhwnZr+5tInSBIjpEhln35ogrqGUg9Q
+	J9lRFM23jmJvrlGJpAUYX/COv8e+eLaUbPUT56MJVQW6NMjXsb3/uw+RkTJse78kB6NomKviOMW
+	Hunhq9mQP9BIk4ef/MFQoNnXn3vsDFL0FLn7WdxCMUY8ZcKqLNf88YtkWaCEcAFmCGq5knj+6oo
+	SLHSuQ8gknPSDPgM6x356qsLRaVoI4a0kHIMH5KZ4uAES82TDtPwVLwVJgDVuADO2+/lJrxACaP
+	0DMAFLGJ49CQNMKbrwYDSxy+f7IcnQ==
+X-Google-Smtp-Source: AGHT+IG7msEs9hgIu3ta16vL9mWEiaIEtxRrnODIuHdyaMtVbZhaiQTdxZhi9NhcUgHBW26OK3t30w==
+X-Received: by 2002:a05:6512:3f7:b0:53d:f583:81df with SMTP id 2adb3069b0e04-53df5838209mr2781109e87.28.1732955387112;
+        Sat, 30 Nov 2024 00:29:47 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53df646f2cesm689752e87.121.2024.11.30.00.28.06
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53df64a05ebsm703544e87.255.2024.11.30.00.29.44
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 30 Nov 2024 00:28:07 -0800 (PST)
-Date: Sat, 30 Nov 2024 10:28:04 +0200
+        Sat, 30 Nov 2024 00:29:45 -0800 (PST)
+Date: Sat, 30 Nov 2024 10:29:43 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Sandor Yu <sandor.yu@nxp.com>
 Cc: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>, 
@@ -84,21 +84,21 @@ Cc: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>,
 	"kernel@pengutronix.de" <kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, 
 	Oliver Brown <oliver.brown@nxp.com>, 
 	"alexander.stein@ew.tq-group.com" <alexander.stein@ew.tq-group.com>, "sam@ravnborg.org" <sam@ravnborg.org>
-Subject: Re: [PATCH v18 6/8] phy: freescale: Add DisplayPort/HDMI Combo-PHY
- driver for i.MX8MQ
-Message-ID: <ux55oif6kyp6thojj55ymlcjjgsmqbrc35wtmmfbaun7qlxfuw@k6fi3ea5laty>
+Subject: Re: [EXT] Re: [PATCH v18 6/8] phy: freescale: Add DisplayPort/HDMI
+ Combo-PHY driver for i.MX8MQ
+Message-ID: <foi2sizfkppmunq4yqt4pex47alsvsjyqi3rk32fwyz4f5xepn@zdsx74bzzda4>
 References: <cover.1730172244.git.Sandor.yu@nxp.com>
  <411e42c70e71dce33a80059f663fb6c58fb2ac8c.1730172244.git.Sandor.yu@nxp.com>
  <efciuvoptv7qxwauswfseb6zlt5w4fmjdbm3huxfsn63a6bm7u@kfgkkvqoz5x4>
  <PAXPR04MB9448F638D47B5495CF78007AF4522@PAXPR04MB9448.eurprd04.prod.outlook.com>
- <76D430C8-3DBB-4D89-9361-9B5D3EDCF067@linaro.org>
- <PAXPR04MB9448A7F6973D9DAE98115716F42F2@PAXPR04MB9448.eurprd04.prod.outlook.com>
+ <z6p6bewmykmufsghdojr4lvziurmmfpnrr5m4w3pfjlqzobpwr@zq2d2ukjvtac>
+ <PAXPR04MB9448D68A5CA9755036E9B23DF42F2@PAXPR04MB9448.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <PAXPR04MB9448A7F6973D9DAE98115716F42F2@PAXPR04MB9448.eurprd04.prod.outlook.com>
+In-Reply-To: <PAXPR04MB9448D68A5CA9755036E9B23DF42F2@PAXPR04MB9448.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241130_002811_863736_5338F8BA 
-X-CRM114-Status: GOOD (  32.85  )
+X-CRM114-CacheID: sfid-20241130_002948_959246_2D5F7F88 
+X-CRM114-Status: GOOD (  25.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,94 +115,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 26, 2024 at 02:12:04PM +0000, Sandor Yu wrote:
+On Tue, Nov 26, 2024 at 02:12:19PM +0000, Sandor Yu wrote:
+>  
 > > 
+> > On Tue, Nov 05, 2024 at 02:05:51PM +0000, Sandor Yu wrote:
+> > > >
+> > > > On Tue, Oct 29, 2024 at 02:02:14PM +0800, Sandor Yu wrote:
+> > > > > Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
+> > > > >
+> > > > > Cadence HDP-TX PHY could be put in either DP mode or HDMI mode
+> > > > > base on the configuration chosen.
+> > > > > DisplayPort or HDMI PHY mode is configured in the driver.
+> > > > >
+> > > > > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> > > > > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> > > > > ---
+> > > > > v17->v18:
+> > > > > - fix build error as code rebase to latest kernel version.
+> > > > >
+> > > > >  drivers/phy/freescale/Kconfig                |   10 +
+> > > > >  drivers/phy/freescale/Makefile               |    1 +
+> > > > >  drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c | 1337
+> > > > ++++++++++++++++++
+> > > > >  3 files changed, 1348 insertions(+)  create mode 100644
+> > > > > drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c
+> > > > >
+> > > > > diff --git a/drivers/phy/freescale/Kconfig
+> > > > > b/drivers/phy/freescale/Kconfig index dcd9acff6d01a..2b1210367b31c
+> > > > > 100644
+> > > > > --- a/drivers/phy/freescale/Kconfig
+> > > > > +++ b/drivers/phy/freescale/Kconfig
 > > 
-> > On 5 November 2024 14:05:51 GMT, Sandor Yu <sandor.yu@nxp.com> wrote:
-> > >>
-> > >> On Tue, Oct 29, 2024 at 02:02:14PM +0800, Sandor Yu wrote:
-> > >> > Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
-> > >> >
-> > >> > Cadence HDP-TX PHY could be put in either DP mode or HDMI mode
-> > base
-> > >> > on the configuration chosen.
-> > >> > DisplayPort or HDMI PHY mode is configured in the driver.
-> > >> >
-> > >> > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
-> > >> > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> > >> > ---
-> > >> > v17->v18:
-> > >> > - fix build error as code rebase to latest kernel version.
-> > >> >
-> > >> >  drivers/phy/freescale/Kconfig                |   10 +
-> > >> >  drivers/phy/freescale/Makefile               |    1 +
-> > >> >  drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c | 1337
-> > >> ++++++++++++++++++
-> > >> >  3 files changed, 1348 insertions(+)  create mode 100644
-> > >> > drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c
-> > >> >
-> > >> > diff --git a/drivers/phy/freescale/Kconfig
-> > >> > b/drivers/phy/freescale/Kconfig index dcd9acff6d01a..2b1210367b31c
-> > >> > 100644
-> > >> > --- a/drivers/phy/freescale/Kconfig
-> > >> > +++ b/drivers/phy/freescale/Kconfig
-> > >> > @@ -35,6 +35,16 @@ config PHY_FSL_IMX8M_PCIE
-> > >> >         Enable this to add support for the PCIE PHY as found on
-> > >> >         i.MX8M family of SOCs.
-> > >> >
-> > >> > +config PHY_FSL_IMX8MQ_HDPTX
-> > >> > +     tristate "Freescale i.MX8MQ DP/HDMI PHY support"
-> > >> > +     depends on OF && HAS_IOMEM
-> > >> > +     depends on COMMON_CLK
-> > >> > +     select GENERIC_PHY
-> > >> > +     select CDNS_MHDP_HELPER
-> > >>
-> > >> This can have problems with being satisfied on randconfig builds,
-> > >> because CDNS_MHDP_HELPER is deep inside the DRM tree.
+> > [...]
+> > 
+> > I'm sorry, my email client cut the email.
+> > 
+> > > > > +static int cdns_hdptx_dp_configure(struct phy *phy,
+> > > > > +                                union phy_configure_opts
+> > *opts) {
+> > > > > +     struct cdns_hdptx_phy *cdns_phy = phy_get_drvdata(phy);
+> > > > > +
+> > > > > +     cdns_phy->dp.link_rate = opts->dp.link_rate;
+> > > > > +     cdns_phy->dp.lanes = opts->dp.lanes;
+> > > >
+> > > > Shouldn't this be conditional on set_rate / set_lanes ?
 > > >
-> > >Yes, it should be. Change it to "depend on CDNS_MHDP_HELPER" will
-> > eliminate this problem.
+> > > PHY do not support reconfigure link rate and lane count.
 > > 
-> > No, depending on a non-user-selectable symbol is a bad idea. You should
-> > either depend/select all necessary symbols or, better in my opinion, move
-> > your helpers out of the DRM tree.
+> > So, you don't support reconfiguring the rate / count, but you still copy the new
+> > rate and lanes into your driver data. That sounds strange.
 > 
-> How about change CDNS_MHDP_HELPER to user selectable? such as
-> 
->  config CDNS_MHDP_HELPER
->          tristate "Cadence MHDP Helper driver"
->          help
->            Enable Cadence MHDP helpers for mailbox, HDMI and DP.
->            This driver provides a foundational layer of mailbox communication for
->            various Cadence MHDP IP implementations, such as HDMI and DisplayPort
+> The PHY will use link rate and lane count to configure its registers
 
-I'd say, it's a bad idea. Helpers should be automatically selected.
-
-> 
-> Finding a suitable location for the helper code is challenging. 
-> It needs to be shared among various IP versions (essentially different SoCs) 
-> and across different driver types to facilitate mailbox access.
-> I've searched the kernel code but haven't found a good precedent. 
-> Placing this helper in either drivers/gpu/drm/bridge/cadence or drivers/soc/ (as you previously suggested) has its drawbacks. 
-> drivers/gpu/drm/bridge/cadence at least provides better context for readers.
-
-Yes, I understand the issue. However you might as well use drivers/phy/
-for the helpers: your DRM driver already depends on GENERIC_PHY, but
-there is no dependency from the PHY onto the DRM.
-
-> 
-> > 
-> > 
-> > >
-> > >>
-> > >> > +     help
-> > >> > +       Enable this to support the Cadence HDPTX DP/HDMI PHY
-> > driver
-> > >> > +       on i.MX8MQ SOC.
-> > >> > +
-> > >> >  config PHY_FSL_IMX8QM_HSIO
-> > >> >       tristate "Freescale i.MX8QM HSIO PHY"
-> > >> >       depends on OF && HAS_IOMEM
+I'm not sure if I follow it. Do you mean that rate / count configuration
+is static?
 
 -- 
 With best wishes
