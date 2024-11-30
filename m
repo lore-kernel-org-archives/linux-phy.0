@@ -4,63 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B4E6D735EE
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 03:59:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6076FD735F9
+	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 08:28:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=saCKP+RGhzD9MeQFp8auvBb5oNom72Mm8ZwQWQOBpns=; b=W92F5TarKT4JJI
-	/jsn2CRINhi+3nQl0QswWNJjql+lJP6JYfCpIRF0UC3kZyIfBEzItovdNYinVQZB4hZwYQz6dnuLg
-	T3nE6HadxR9j/8HS36MzI23icwInF6Ojr3zRQdWRZuS4W8SwsXElrl4jTI8od8dZcC9nFKgsIiYKC
-	xuNFUsivafqj8Vvvq27G5L++lDm6RHLea3Yhzv+MrQZXB4X87kKGugoC31uJrIqEeuxjiG57MsYJD
-	yrdO3B53aGPRqVcuaWyNi3PHiOx8t25+bRcw0WXJOlKD3Votg5et9XdeC/tGMmOCBa0S19GlEm4n9
-	F8xk1EZ5VZaw1IMuaAhA==;
+	List-Owner; bh=pivWDu//VELrXrbA5ENC7eTRrWxwRHzcYehW6PCRH0o=; b=vzojqGwCRiUgE3
+	1Lc3eW6xB+eiZmIRejjNrYw46cq+RqrASV+1duuoqvZ6rjr7vx3o1ZVTyxAjPxzfu6H0Yz3NQTSGF
+	SjnDdT7svxSU3bhdiGPP8g49ajUywrzd00BlTrC8kSdzcoA5Q0zDCaueBlHNuel7FTiRhscc1eP0l
+	oIYXn7sr3Biaag92isMufnIqxIhHCg2608JS10mGhPQcbSPDgecuxbxvB/ALrz33HzL0kt5RahZkY
+	AQc/PHSVuCzRTLvJ0zYmNnQRyvrbtxVjebDdJXDEgIRJZnGFi2o6zxNpxLTy84HUX5mSEBl+eHG16
+	PFbw3tUbP08kAIce+R6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHEdZ-00000001OrN-0N43;
-	Sat, 30 Nov 2024 03:59:17 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tHIpr-00000001cnc-0Pue;
+	Sat, 30 Nov 2024 08:28:15 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHEdV-00000001Oqq-3TR8
+	id 1tHIpn-00000001cmf-3OIM
 	for linux-phy@lists.infradead.org;
-	Sat, 30 Nov 2024 03:59:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D55FC5C5526;
-	Sat, 30 Nov 2024 03:58:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DB561C4CECC;
-	Sat, 30 Nov 2024 03:59:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1732939151;
-	bh=0GOBdCGWWrSL7+vSv3osD3eqYgmfi9cR5h0KH+QDgL4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HpN7QEkZZr+sR0ngqdiBz3KXhOzEvzNde7uFgolSfCYKZ6FmCwqzGvyNUPdqv9iDE
-	 H/AYrxVzeL2HrWDVIIE/tM0mwpFvjU1lLYEQGus2cy3vQozDJgx1LijfOfOpTiO7RG
-	 WecoDuYVrHgS7nRC1gsfuTuQrC4eiAbAg/33LfQQKUVm+MBH0cm+OraoHSVs513cI5
-	 2m1susl6PHvBM1Yh4Q3VD9UcU4mZCqOy/MmIAGUKB6lb9fvepyf+xWvJeWM0dyhAqq
-	 epF6hAgZ02eAthApQzNcEpjTD7NhUMd4DyFN6GcJfNoG+rvLo27qzM5y3gTVWcrDLi
-	 UmvB2LvQxhQeA==
-Date: Fri, 29 Nov 2024 21:59:08 -0600
-From: Bjorn Andersson <andersson@kernel.org>
-To: Tingwei Zhang <quic_tingweiz@quicinc.com>
-Cc: Song Xue <quic_songxue@quicinc.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Manu Gautam <mgautam@codeaurora.org>, 
-	Vivek Gautam <vivek.gautam@codeaurora.org>, kernel@quicinc.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
- usb phy
-Message-ID: <5tbevb5wv2s43pccytv4qol4yhq4s7iw2mmqp23vt3ujqd6xev@hkioqmwoitbd>
-References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
- <vbuo2yel2pdcwnmz32f4t5pb6v3ptt2bcs2t6ybab2jxnkd6e7@rjnsbawj4zpb>
- <18e40154-f4ea-4100-9f4f-9c9aa5e251d7@quicinc.com>
+	Sat, 30 Nov 2024 08:28:13 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-53dde5262fdso2895737e87.2
+        for <linux-phy@lists.infradead.org>; Sat, 30 Nov 2024 00:28:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1732955289; x=1733560089; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=cbSnMoGC544U7zX5fIfp831y8T12sKgnt66TAb2i060=;
+        b=skGJKF75LCfELQVC8liH9KHPLmOx6BJKOC3A3zi3cN8Pe/EjHzRRBVODCF+nWJA0s5
+         xsF508nN8Du9V2D6+UvFaDo3Y3vHe0foqvq4VGPqN0jzEGdtHGsLs9P1Nj3L9ShYuNfW
+         r+Rvd3khFHC2EyJWoeLNzxYi5VzgbUoSxiYfQNF8vFvbzxFXxndNRfmk4E3JWe6VTPnt
+         A4FRl31M3jfJpwCDQulz1I+sV2v97OCWq8C/V+GkgSLZufrAm2+1fFlgsjnHo3bYDc1X
+         OjjFN3JcQIr3qCxewJfNf1LrVniLG5XZ4T7f2h+mltnJGRsBPzoK6JjKJBP5uIBuII4v
+         3N7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1732955289; x=1733560089;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=cbSnMoGC544U7zX5fIfp831y8T12sKgnt66TAb2i060=;
+        b=AgZzIv+OEZGr9xSt7DiGNFTDGjC6ZgFGvruNNFHEZHYwUgj3IGrqGHmVEQEA8DUbCy
+         cZDH+U/dFWuEMWIr1RPVLYBLxGsSElVYp9At79oHn+vYFP2vdN+Yd9jcZBe9mQlkZQvO
+         pRL9urzBIYcJA6wHuZD+kBgUQcLx5TjZiCvFyLj8KVvPJWcHSdkI+P/BlB1wW8ndc4rM
+         LdJoK3KT9rri4eRdlKR4ooaD1ntSy0Ahr0FOrNhwOh7fjXOJdtb9o/a9hfBVMwsL8pj6
+         YnmMzJJXPTshOXWk1No8sE8WCDt3XV1qP5QmPjJYwJh/mIYEJTzke7wjSft1kK9nkqy9
+         IUEQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXjAVQLO5sjurUal+Qy3ltLBRgdR3HgFYQDlByBrgj0cDotbOLN4CD3O7rB0hdI2AAAMI6d9p5U32I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YytWoxVhDxjZgwWWZyGqI+hQsPxX2Z44wD3+j0B9gmq+KeRrKLP
+	L9jymqX5MbgT2+ceDwR+tdVWt8SfHQix+/7ToQLv2QMKDznCDnUhmHPyvTcK9XI=
+X-Gm-Gg: ASbGncsSaSR0gTDwlbDHv3WrJeyQOffvEFCtWOehJdLyFBpZrmWmovnghBl4dzNByOL
+	oB5m6PxeRFw2d0VPDmGmI8kIciJ9nZpkNM8Rqjw5vFH2zoqdAmvshTFHeUMhLTyKAlOLwxtQxyE
+	gpjYC7KBDamU+ghydd3GDlh3scvah7xHJGT2fajusnUF1BTdrlmGfmgpIiF0eYTwonNf/drYsM9
+	jMhiCy6ZEUWKoCS2ZlTcU77DSvj/amMlf0OkV8q/Dkcnc57UVmpx02MfbHSXmNiseHi2D++PjIg
+	X8qIOMeffn34BFGMigNI8IUVqfcBvw==
+X-Google-Smtp-Source: AGHT+IFgWR3gAkOG9mafLXj/TmNlCERT2tB84SZRTKkdRAWB1jZom71zptQRqQUiP9OjF7eSxCiFOQ==
+X-Received: by 2002:a05:6512:3c9c:b0:53d:e544:3fda with SMTP id 2adb3069b0e04-53df0114865mr9728745e87.55.1732955288602;
+        Sat, 30 Nov 2024 00:28:08 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53df646f2cesm689752e87.121.2024.11.30.00.28.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 30 Nov 2024 00:28:07 -0800 (PST)
+Date: Sat, 30 Nov 2024 10:28:04 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Sandor Yu <sandor.yu@nxp.com>
+Cc: "andrzej.hajda@intel.com" <andrzej.hajda@intel.com>, 
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>, Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+	"jonas@kwiboo.se" <jonas@kwiboo.se>, "jernej.skrabec@gmail.com" <jernej.skrabec@gmail.com>, 
+	"airlied@gmail.com" <airlied@gmail.com>, "daniel@ffwll.ch" <daniel@ffwll.ch>, 
+	"robh+dt@kernel.org" <robh+dt@kernel.org>, 
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+	"s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>, 
+	"vkoul@kernel.org" <vkoul@kernel.org>, 
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>, "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, "mripard@kernel.org" <mripard@kernel.org>, 
+	"kernel@pengutronix.de" <kernel@pengutronix.de>, dl-linux-imx <linux-imx@nxp.com>, 
+	Oliver Brown <oliver.brown@nxp.com>, 
+	"alexander.stein@ew.tq-group.com" <alexander.stein@ew.tq-group.com>, "sam@ravnborg.org" <sam@ravnborg.org>
+Subject: Re: [PATCH v18 6/8] phy: freescale: Add DisplayPort/HDMI Combo-PHY
+ driver for i.MX8MQ
+Message-ID: <ux55oif6kyp6thojj55ymlcjjgsmqbrc35wtmmfbaun7qlxfuw@k6fi3ea5laty>
+References: <cover.1730172244.git.Sandor.yu@nxp.com>
+ <411e42c70e71dce33a80059f663fb6c58fb2ac8c.1730172244.git.Sandor.yu@nxp.com>
+ <efciuvoptv7qxwauswfseb6zlt5w4fmjdbm3huxfsn63a6bm7u@kfgkkvqoz5x4>
+ <PAXPR04MB9448F638D47B5495CF78007AF4522@PAXPR04MB9448.eurprd04.prod.outlook.com>
+ <76D430C8-3DBB-4D89-9361-9B5D3EDCF067@linaro.org>
+ <PAXPR04MB9448A7F6973D9DAE98115716F42F2@PAXPR04MB9448.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <18e40154-f4ea-4100-9f4f-9c9aa5e251d7@quicinc.com>
+In-Reply-To: <PAXPR04MB9448A7F6973D9DAE98115716F42F2@PAXPR04MB9448.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241129_195913_959839_5A4531F3 
-X-CRM114-Status: GOOD (  46.19  )
+X-CRM114-CacheID: sfid-20241130_002811_863736_5338F8BA 
+X-CRM114-Status: GOOD (  32.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,126 +115,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Nov 29, 2024 at 06:26:30PM +0800, Tingwei Zhang wrote:
-> On 11/29/2024 12:43 AM, Bjorn Andersson wrote:
-> > On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
-> > > Set the current load before enable regulator supplies at QUSB phy.
-> > > 
-> > > Encountered one issue where the board powered down instantly once the UVC
-> > > camera was attached to USB port while adding host mode on usb port and
-> > > testing a UVC camera with the driver on QCS615 platform. The extensible
-> > > boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
-> > > from regulators-0 upon powered on board again. That indicates that the
-> > > current load set for QUSB phy, which use the regulator supply, is lower
-> > > than expected.
-> > > 
-> > > As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
-> > > load when attach a device to the USB port.
-> > > 
-> > > Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
-> > > Signed-off-by: Song Xue <quic_songxue@quicinc.com>
+On Tue, Nov 26, 2024 at 02:12:04PM +0000, Sandor Yu wrote:
 > > 
-> > The patch looks good. But if we describe the regulator(s) with
-> > regulator-allow-set-load; and not all the consumers vote for load, the
-> > sum of the load when USB phy is disabled goes to 0 and we will enter
-> > LPM.
-> 
-> That's exactly the issue we encountered on QCS615 ride. Qualcomm UFS driver
-> sets load while USB phy doesn't set load. That's the reason we raised this
-> patch.
 > > 
-> > For this reason we're not doing any load requests today. Can you confirm
-> 
-> When I grep regulator_set_load in Kernel, there are 27 hits in drivers. You
-> are correct, it will trigger issue when some consumers set load while some
-> don't.
-> However, how can we prevent other drivers outside of Qualcomm to use
-> regulator_set_load?
-
-We can avoid this by not specifying "regulator-allow-set-load" in
-DeviceTree.
-
-That said, this isn't the correct solution, we shouldn't use the
-hardware description to deal with implementation issues. It is however
-the currently chosen pragmatic solution, so feel free to follow this.
-
-> It will trigger the same issue.
-> Is there something we can do in regulator driver to prevent this issue? If
-> consumer doesn't set load, regulator works in HPM even another consumer set
-> load to 0?
-> 
-> > that this works fine with a dtb where only HPM is permitted (as well as
-> > LPM and HPM)? If so I'd be in favor of us merging this change, but
-> 
-> Do you mean test with HPM only regulator and regulator which allows to be
-> set to HPM and LPM?
-> 
-
-Yes, please double check that your patch works with and without
-regulator-allow-set-load.
-
-Regards,
-Bjorn
-
-> > keeping the dts HPM-only until someone confirms that all consumers of
-> > these regulators specify load-votes.
+> > On 5 November 2024 14:05:51 GMT, Sandor Yu <sandor.yu@nxp.com> wrote:
+> > >>
+> > >> On Tue, Oct 29, 2024 at 02:02:14PM +0800, Sandor Yu wrote:
+> > >> > Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
+> > >> >
+> > >> > Cadence HDP-TX PHY could be put in either DP mode or HDMI mode
+> > base
+> > >> > on the configuration chosen.
+> > >> > DisplayPort or HDMI PHY mode is configured in the driver.
+> > >> >
+> > >> > Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> > >> > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> > >> > ---
+> > >> > v17->v18:
+> > >> > - fix build error as code rebase to latest kernel version.
+> > >> >
+> > >> >  drivers/phy/freescale/Kconfig                |   10 +
+> > >> >  drivers/phy/freescale/Makefile               |    1 +
+> > >> >  drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c | 1337
+> > >> ++++++++++++++++++
+> > >> >  3 files changed, 1348 insertions(+)  create mode 100644
+> > >> > drivers/phy/freescale/phy-fsl-imx8mq-hdptx.c
+> > >> >
+> > >> > diff --git a/drivers/phy/freescale/Kconfig
+> > >> > b/drivers/phy/freescale/Kconfig index dcd9acff6d01a..2b1210367b31c
+> > >> > 100644
+> > >> > --- a/drivers/phy/freescale/Kconfig
+> > >> > +++ b/drivers/phy/freescale/Kconfig
+> > >> > @@ -35,6 +35,16 @@ config PHY_FSL_IMX8M_PCIE
+> > >> >         Enable this to add support for the PCIE PHY as found on
+> > >> >         i.MX8M family of SOCs.
+> > >> >
+> > >> > +config PHY_FSL_IMX8MQ_HDPTX
+> > >> > +     tristate "Freescale i.MX8MQ DP/HDMI PHY support"
+> > >> > +     depends on OF && HAS_IOMEM
+> > >> > +     depends on COMMON_CLK
+> > >> > +     select GENERIC_PHY
+> > >> > +     select CDNS_MHDP_HELPER
+> > >>
+> > >> This can have problems with being satisfied on randconfig builds,
+> > >> because CDNS_MHDP_HELPER is deep inside the DRM tree.
+> > >
+> > >Yes, it should be. Change it to "depend on CDNS_MHDP_HELPER" will
+> > eliminate this problem.
 > > 
-> > Regards,
-> > Bjorn
+> > No, depending on a non-user-selectable symbol is a bad idea. You should
+> > either depend/select all necessary symbols or, better in my opinion, move
+> > your helpers out of the DRM tree.
+> 
+> How about change CDNS_MHDP_HELPER to user selectable? such as
+> 
+>  config CDNS_MHDP_HELPER
+>          tristate "Cadence MHDP Helper driver"
+>          help
+>            Enable Cadence MHDP helpers for mailbox, HDMI and DP.
+>            This driver provides a foundational layer of mailbox communication for
+>            various Cadence MHDP IP implementations, such as HDMI and DisplayPort
+
+I'd say, it's a bad idea. Helpers should be automatically selected.
+
+> 
+> Finding a suitable location for the helper code is challenging. 
+> It needs to be shared among various IP versions (essentially different SoCs) 
+> and across different driver types to facilitate mailbox access.
+> I've searched the kernel code but haven't found a good precedent. 
+> Placing this helper in either drivers/gpu/drm/bridge/cadence or drivers/soc/ (as you previously suggested) has its drawbacks. 
+> drivers/gpu/drm/bridge/cadence at least provides better context for readers.
+
+Yes, I understand the issue. However you might as well use drivers/phy/
+for the helpers: your DRM driver already depends on GENERIC_PHY, but
+there is no dependency from the PHY onto the DRM.
+
+> 
 > > 
-> > > ---
-> > > Changes in v2:
-> > > - Removed "---" above the Fixes.
-> > > - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
-> > > ---
-> > >   drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
-> > >   1 file changed, 12 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> > > @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
-> > >   	return ret;
-> > >   }
-> > > +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
-> > > +
-> > >   static int qusb2_phy_init(struct phy *phy)
-> > >   {
-> > >   	struct qusb2_phy *qphy = phy_get_drvdata(phy);
-> > >   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
-> > >   	unsigned int val = 0;
-> > >   	unsigned int clk_scheme;
-> > > -	int ret;
-> > > +	int ret, i;
-> > >   	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
-> > > +	/* set the current load */
-> > > +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
-> > > +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
-> > > +		if (ret) {
-> > > +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
-> > > +			return ret;
-> > > +		}
-> > > +	}
-> > > +
-> > >   	/* turn on regulator supplies */
-> > >   	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
-> > >   	if (ret)
-> > > 
-> > > ---
-> > > base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
-> > > change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
-> > > 
-> > > Best regards,
-> > > -- 
-> > > Song Xue <quic_songxue@quicinc.com>
-> > > 
-> > > 
-> 
-> 
-> -- 
-> Thanks,
-> Tingwei
+> > 
+> > >
+> > >>
+> > >> > +     help
+> > >> > +       Enable this to support the Cadence HDPTX DP/HDMI PHY
+> > driver
+> > >> > +       on i.MX8MQ SOC.
+> > >> > +
+> > >> >  config PHY_FSL_IMX8QM_HSIO
+> > >> >       tristate "Freescale i.MX8QM HSIO PHY"
+> > >> >       depends on OF && HAS_IOMEM
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
