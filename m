@@ -4,67 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 451C7D7360D
-	for <linux-phy@archiver.kernel.org>; Sat, 30 Nov 2024 20:26:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA687D7361B
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Dec 2024 00:25:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=chkLjTsv5dO6rN596rNYWsy51C5MT1Hw7aPVLTl1coA=; b=s+1fOY0u1aBGbL
-	JPmWoZkb09E0QcmCGfv4NtnRrx1gjoe/f7O16MQvX7qwMtDn5x8sVQPIBBZEn8OPkb9LjoZOjlKa0
-	vZq8GB+S0wSSojUSlH8m8rAfIbeYKSvHHDW9Z9LEfJmwUfmwwe8AKqvpJQhK9G1dPmNCNqxS8xjve
-	jREJdDKPc5Mu46GgzcuttLksEcRu7hhJ/FPgUqbZltUzF+t4sWb3zykPMvoWE48NoasfhpCNR+nO5
-	XUMgkwRoTblIKcM5a6FYqO3dSHaUNdCf0AkFRBcnz1K96Rp7c3SFdj7WZe+OqSos6EOb28INnX1uU
-	G9hQCytpxdRVzbl4OmzQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7Ylr5vNC/nAVCN2eoakTmZVilrsXdo2Zl5uEUAKepbk=; b=VnoN3ONxN/wFj0
+	KLVIJGAROZxNA9qlUEGdUJ+YjvyE0k8R9CEu+U6tSlpAxmFFbJaG5PaxX21nk8bN6vBqi6sD2kCwM
+	bj1NfIGBO0I3Ome5Q2lN8y9xrEaT+3R3+REW1WFE8jy+NbffQQsr2t0JqKczKqVrxN8UGHO25K3FV
+	0l62qFs5JBRyCX4nPPVYtL3+sjmYjqS+XNctrsFf1/TdIqEMJAckDxFH0ilbxLRY9rG+HDGHePqEL
+	I2F6p/AtknnOK5eUWhybjAwZ21YJyg4osImCVif/PbaYUzgt4QBKQYsI56oQHVfI+2K6Eqg7vXzeQ
+	DRdnm+WRgNfjtfyyL9bA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHU2x-00000002XJn-1bL0;
-	Sat, 30 Nov 2024 20:26:31 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tHXme-00000002ndf-3AWR;
+	Sun, 01 Dec 2024 00:25:56 +0000
+Received: from www381.your-server.de ([78.46.137.84])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHU1x-00000002XDe-0llL;
-	Sat, 30 Nov 2024 20:25:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=7zLaGCMDGsCJKOc1IwLPI+bZJjfcisw70zunW0yk10M=; b=0zKLputJip9nTRlXLWyCCTQ13n
-	1f/TZEKJPD/pkyR4NLE51GUwc7dCni98FZE/XXSaF9f0Ih5jKhQoUMWm2vcG4vAw95L/qERg2x67l
-	S/tTkfeWDzDr38USyDKIzP6O9sjp1tWRMpBoYORU8GccFAXgGaqL2rwEihHXg2QhAixwg/fPfAK3K
-	7ivms/2XXWzV6dkE8eX6HVMxNkZjX2yXpXFVz193aqEhvOG2i6w8TylQrCdRgFrKRB4K/6hv9tCPj
-	7egDlw08oLvW1tEHuAJv819qMZFd1gnkaBft7CofvqxX6l9FROxThpBfvGdWuUY9VXvjqqFZCoPh1
-	B4GIpIOg==;
-Received: from i5e86190f.versanet.de ([94.134.25.15] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tHU1h-0005Ux-7S; Sat, 30 Nov 2024 21:25:13 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v1 04/10] phy: phy-rockchip-samsung-hdptx: Add support for eDP
- mode
-Date: Sat, 30 Nov 2024 21:25:12 +0100
-Message-ID: <2886747.Y6S9NjorxK@diego>
-In-Reply-To: <6e1f35c0-5ea8-414f-b3ea-4e7222c605ef@rock-chips.com>
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
- <2131853.KlZ2vcFHjT@diego>
- <6e1f35c0-5ea8-414f-b3ea-4e7222c605ef@rock-chips.com>
+	id 1tHXmc-00000002ncy-2Tet
+	for linux-phy@lists.infradead.org;
+	Sun, 01 Dec 2024 00:25:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=metafoo.de;
+	s=default2002; h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:
+	Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References;
+	bh=X9062Dfv8TGUoF2iBJOb2+MW2me1B5nX84/ndMJ30qc=; b=FcOTDjbTmUP/2ov3omHD9ntSwL
+	WQkSpjduPCJmpMNpAZahuUNbMW/Jc0DHQnomr1Vpc43nysiKH510fPKNRYZfOYGTurM0owztl2285
+	+iPXUbpikz1lapMbd9++Dg8ZVsPgyAf1SoK1A4crG0Jo+JjqxL5J5mkWmNfEKJ0+PPqNo5mJUTnpq
+	mag2M8Sffm54jZAJgPtuflcLaIw45XwtIQhWzEdy1y1jvVOhMVdKw7Zifgzy0hBDyM57pWGSMUqcl
+	TEkrF/3DZD0DmiabU1jx7iwvSZxG9ZOJS5SbFijuenPN/wuydISP9jcnUq+x5MV/hayrag6Dg12WG
+	bQoEfw7g==;
+Received: from sslproxy03.your-server.de ([88.198.220.132])
+	by www381.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <lars@metafoo.de>)
+	id 1tHXmV-0005ZS-2j;
+	Sun, 01 Dec 2024 01:25:47 +0100
+Received: from [136.25.87.181] (helo=lars-desktop.lan)
+	by sslproxy03.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <lars@metafoo.de>)
+	id 1tHXmU-000B26-1a;
+	Sun, 01 Dec 2024 01:25:47 +0100
+From: Lars-Peter Clausen <lars@metafoo.de>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>,
+	Vidya Sagar <vidyas@nvidia.com>,
+	linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org,
+	Lars-Peter Clausen <lars@metafoo.de>
+Subject: [PATCH] phy: tegra194: p2u: Allow to enable driver on Tegra234
+Date: Sat, 30 Nov 2024 16:25:19 -0800
+Message-Id: <20241201002519.3468-1-lars@metafoo.de>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
+X-Authenticated-Sender: lars@metafoo.de
+X-Virus-Scanned: Clear (ClamAV 1.0.7/27473/Sat Nov 30 10:41:04 2024)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241130_122529_212988_D02BD88E 
-X-CRM114-Status: GOOD (  24.21  )
+X-CRM114-CacheID: sfid-20241130_162554_631264_978A4550 
+X-CRM114-Status: GOOD (  11.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,117 +80,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Damon,
+Commit de6026682569 ("phy: tegra: Add PCIe PIPE2UPHY support for Tegra234")
+add support for Tegra234 to the tegra194-p2u PHY driver. But the driver is
+currently not selectable when Tegra234 SoC support is enabled.
 
-Am Freitag, 29. November 2024, 03:43:57 CET schrieb Damon Ding:
-> On 2024/11/27 19:04, Heiko St=FCbner wrote:
-> > Am Mittwoch, 27. November 2024, 12:00:10 CET schrieb Damon Ding:
-> >> On 2024/11/27 17:29, Heiko St=FCbner wrote:
-> >>> Am Mittwoch, 27. November 2024, 08:51:51 CET schrieb Damon Ding:
-> >>>> +static int rk_hdptx_phy_set_mode(struct phy *phy, enum phy_mode mod=
-e,
-> >>>> +				 int submode)
-> >>>> +{
-> >>>> +	return 0;
-> >>>> +}
-> >>>
-> >>> I think it might make sense to go the same way as the DCPHY and also
-> >>> naneng combophy, to use #phy-cells =3D 1 to select the phy-mode via D=
-T .
-> >>>
-> >>> See [0] for Sebastians initial suggestion regarding the DC-PHY.
-> >>> The naneng combophy already uses that scheme of mode-selection too.
-> >>>
-> >>> There is of course the issue of backwards-compatibility, but that can=
- be
-> >>> worked around in the binding with something like:
-> >>>
-> >>>    '#phy-cells':
-> >>>       enum: [0, 1]
-> >>>       description: |
-> >>>         If #phy-cells is 0, PHY mode is set to PHY_TYPE_HDMI
-> >>>         If #phy-cells is 1 mode is set in the PHY cells. Supported mo=
-des are:
-> >>>           - PHY_TYPE_HDMI
-> >>>           - PHY_TYPE_DP
-> >>>         See include/dt-bindings/phy/phy.h for constants.
-> >>>
-> >>> PHY_TYPE_HDMI needs to be added to include/dt-bindings/phy/phy.h
-> >>> but PHY_TYPE_DP is already there.
-> >>>
-> >>> That way we would standardize on one form of accessing phy-types
-> >>> on rk3588 :-) .
-> >>>
-> >>> Also see the Mediatek CSI rx phy doing this too already [1]
-> >>>
-> >>>
-> >>> Heiko
-> >>>
-> >>> [0] https://lore.kernel.org/linux-rockchip/udad4qf3o7kt45nuz6gxsvsmpr=
-h4rnyfxfogopmih6ucznizih@7oj2jrnlfonz/
-> >>> [1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.gi=
-t/tree/Documentation/devicetree/bindings/phy/mediatek,mt8365-csi-rx.yaml
-> >>>
-> >>
-> >> It is really a nice way to separate HDMI and DP modes.
-> =
+Update the Kconfig entry to allow the driver to be built when support the
+Tegra234 SoC is enabled.
 
-> I apologize for reopening the discussion about the phy-types setting.
+Signed-off-by: Lars-Peter Clausen <lars@metafoo.de>
+---
+ drivers/phy/tegra/Kconfig | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-there is definitly no need to apologize. We're trying to find the best
-solution afterall :-) .
+diff --git a/drivers/phy/tegra/Kconfig b/drivers/phy/tegra/Kconfig
+index c591c958f1ebc..f30cfb42b2103 100644
+--- a/drivers/phy/tegra/Kconfig
++++ b/drivers/phy/tegra/Kconfig
+@@ -13,7 +13,8 @@ config PHY_TEGRA_XUSB
+ 
+ config PHY_TEGRA194_P2U
+ 	tristate "NVIDIA Tegra194 PIPE2UPHY PHY driver"
+-	depends on ARCH_TEGRA_194_SOC || COMPILE_TEST
++	depends on ARCH_TEGRA_194_SOC || ARCH_TEGRA_234_SOC || COMPILE_TEST
+ 	select GENERIC_PHY
+ 	help
+-	  Enable this to support the P2U (PIPE to UPHY) that is part of Tegra 19x SOCs.
++	  Enable this to support the P2U (PIPE to UPHY) that is part of Tegra 19x
++	  and 234 SOCs.
+-- 
+2.39.5
 
 
-> With the .set_mode() of struct phy_ops, the HDMI and eDP dynamic =
-
-> switching can be achieved, which just depends on the right setting of
-> enum phy_mode in include/linux/phy/phy.h. So the previous way of =
-
-> configuring phy mode may be also good.
-
-I think the deciding factor is, is there a use-case for needing to switch
-modes at runtime.
-
-I do think the mode for the dc-phy and also the hdptx-phy is pretty much
-decided by the board design.
-
-I.e. when you end up in a DP-connector (or eDP-panel) on your board you
-need DP mode, and when you end up in a hdmi-connector you need the
-HDMI phy mode.
-
-So I think the phy-mode for the hdptx-phy is largely dictated by the static
-board definition (like devicetree), hence going with the dt-argument for
-the mode.
-
-Like similar to the Naneng combophy, selecting its mode via argument
-because deciding if it ends up in a sata port is a board-design thing.
-
-
-Is there a use-case where you need to switch at runtime between
-hdmi and eDP? Like starting the phy in eDP mode but then needing
-to switch to HDMI mode, while the device is running?
-
-
-> And other phys may want to support dynamic switching too, like the =
-
-> Rockchip USBDP combo phy.
-
-I guess USBDP is special in that in also does both modes dynamical
-depending on its use (like type-c with option DP altmode)
-
-
-Have a great weekend
-Heiko
-
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
