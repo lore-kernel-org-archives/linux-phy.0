@@ -4,90 +4,168 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 972A1D10DDD
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 09:32:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0B01D729FB
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 09:41:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GruaP4Zw/rIdVHrr2vIJN0yLP+jPVFdI/Topw5Apcmk=; b=wz2HWFIDC5CeTx
-	bW0jq4FgymzZutmmul2dkPnctFUp207JClWwkXYT9NBF/hy0SBQYt1lqr4VEZtTcMVuWudVrsDX0t
-	2f5MW1qib4fhf0w00DHXmjwLXDF5yq0UQ8ZPYXBbmpHrg0oOLyWAPZQrvZZ+7POceDnh8OzXRPkIq
-	L11aXXxY0ZAT/6NUMMdcEjRzPM0GUHi1cOz0pCzGrbvqOSbBtxXmMFrcejLfUIA5w3Z1PiLq7WrvO
-	LQqrPlJaHODw1OzjSFkx7jnrPAn4KY2BrTC6WnWNu+QPIvgFPnWWnHKdswO7WBt/sBxkQgaMJ5BRh
-	T0q82tX2tJit0fEm+94A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ZJfZyjz0c1oTo25v9CbebMs05PCOgzPYQEWZsOdsdIk=; b=YTZfqsO3BqZ4q3diEDAN190ykZ
+	+dzy0NsRKtkdKK29H/XmxexxqXv+TlmEilS2XxTGMvMeEF26fDqkL7JL2wXGkucAygBShEYcBtzYH
+	WiUe4aED6XK5gCm0wOb6cyzXC0Dc2xncviA7aRs4A2bgkYOxXC8/mG+kAoxo3tfKlmn9Uvomj+HyG
+	Paq2yptkeWC2l1B2br0n8SChPI7IGBsiYotVsnYbxwd4nNSUf4NeRIcg/vzom8yMllO1zS/POtTZr
+	UqAG0Y+3eycSo0dTLt6lfDG5wfO/i9CsTSptInpGO2z+cfa20fTK+Z4Ebw9f2qBeQU8HUaXf3wSOf
+	au37Mizw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI2nV-00000005aG1-3UXj;
-	Mon, 02 Dec 2024 09:32:53 +0000
-Received: from mail-yb1-xb30.google.com ([2607:f8b0:4864:20::b30])
+	id 1tI2vk-00000005bOU-1KAu;
+	Mon, 02 Dec 2024 09:41:24 +0000
+Received: from mail-am6eur05on20613.outbound.protection.outlook.com ([2a01:111:f403:2612::613] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI2nT-00000005aEW-25NJ
-	for linux-phy@lists.infradead.org;
-	Mon, 02 Dec 2024 09:32:52 +0000
-Received: by mail-yb1-xb30.google.com with SMTP id 3f1490d57ef6-e3982e9278bso2893122276.2
-        for <linux-phy@lists.infradead.org>; Mon, 02 Dec 2024 01:32:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1733131970; x=1733736770; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ykJ4gnZ8OI+lNlsS7GnWz+Q0GYuAZsbDat/k0gHdcy0=;
-        b=IwyFX7iary493B597IYWmjMzL4Ts1Um0HG9fzZ1vXwYS5s8cU+PvcujDCrWijBB0rY
-         8pQcTAoPYXJOdyUMPjJKU/BApAnjPTZX2xRFkRbEfKMizncLAFYsuBTzvaIy5ZrUS/MM
-         t14h7hC0G4z5eEEnM209Iu143mCNpoKaIz8DeEPLiThjtlceaDZqz6SyqvP9CdzexezD
-         xDtuxfCsvWyZd8mitXRu+8XZzbqpxBcrZV4u+/tqpccFZHNJ5eaP9QDOZC0c7we1j1kb
-         VIBsaog88jgJUO5Mk8GdwP8of+jK+91u1G7mxHhF2Bq1Zuzy6xCDLU7hpxk4XOfbSd3M
-         a9Hw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733131970; x=1733736770;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=ykJ4gnZ8OI+lNlsS7GnWz+Q0GYuAZsbDat/k0gHdcy0=;
-        b=gPCMzIc6Axg+9IKKPAakkttn//2nWMoEAQmX9hfu/fAVINfDSKe3RoMDnNRD0vJtuC
-         Q+ck8DUjQDTCEgQLQI2x5oTbsu3/CT6ynFhoyGMS7O0VVC6Km9doWOX4LFljZQM6zPRc
-         V62sQh+VDiATnI+GGaTZdljivJAoByax6BB5UrlcW9vdIVPULuzo9D+9oC8YAl4ccDce
-         FkQ6vlqP8RwwE3dTghsP6sKwD22G53gDbSe0VocAOHba1tCCpzFAj79DR4uxsTNCcvQm
-         ToW6PF8B8Jl3eeXpQhP1H5LXF1+yP2vRwvNKalD+Sot6xXBsDrAMw1jYXL/FpxYKjaIi
-         av8g==
-X-Forwarded-Encrypted: i=1; AJvYcCXmoFEOCAmjtmcLc1NhW/JpZi5CmLM8NxiyBlEGxWDOBYiplZaGUB3tUsn30ekoPgUZxnr1XcAP/YY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyA87rnDfoW/SWHk9AmdyzsF9shL8M5u7PoiGjgWzwgS5SpQYDU
-	K1ReH3DUIN4GGpkWxqlJ5PMCowSwFGB+ayhTPc1+1VomH8aC0sEbdYfOg76F52fElBrJafcMmw8
-	Cw55rSFDVhubBS1M+0pd/UKDK/LB1syCUxJmJDg==
-X-Gm-Gg: ASbGncsRvwAS5c2zFaZBCjDlRhNUIy7TNb5eprR5SVO2CGZ58huGhUMcogygnRoED8e
-	xJ61rMFR6wccLIMHqkKnLMnITZf/LSw==
-X-Google-Smtp-Source: AGHT+IGT3z3TbHSFBQBWWQ1KvYeMAU20/kLWtZdyfcltpfmv3iUgGjIOBFmp2Bw/pBAtCruUtd0beWsC6yrtxdL0HE0=
-X-Received: by 2002:a05:6902:150d:b0:e38:b889:7eff with SMTP id
- 3f1490d57ef6-e395b870d38mr18514341276.6.1733131969951; Mon, 02 Dec 2024
- 01:32:49 -0800 (PST)
+	id 1tI2vh-00000005bNe-3vAu;
+	Mon, 02 Dec 2024 09:41:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=liQjnh8q1EaTv2ecF4rGJfPr5w0ZK5osSXs3AaY8n2Pe/Cdu+SKfWaty+ob9088SU9svZUJhxQBooIjZTPhN2HSZlnTiYHIEqjgdVWssn+5af408HpzjqOUYIdKEWIb51SYYjH3xrOF7NaamUSV1CVXu2+POQFVrwlsirWTgsVuufqxk/aeVcr03mhFjTkfx2wwGnV6tWNT4zhosK+lefDgfgfID6fETcKiGPaH9LsR8h5euM36iG9kUDvD1g7MHUnfvNJ/UQUA2ldrb2FQMzBpo/jZGUAEeiSN64LM0u8ezol3HMLrY5Ta9TY0PkoDf5eQY9mtwxTW1sl8IeO2FIw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=GCTD/Wu4vtAF96L3OwyHQEgfc87DLHotYJ9ibFgMN/o=;
+ b=PFd/Qur5cxrMdTCeu5lgU2oLPGmSb2f+Fp142bBmUrH5zxmr1WLIt7KNyRj6zW82TDrPm6zA29d8NmvTXnlG6bwsH5NLMATj0bLOVCu6S6DEIt3FMt4mF+9d5px0wd+4aGMnmMD+PvpNCXDwtDCF/bhBZ3MWOXvpZRPILVsHskMnKanGwsQ5ydNUX+gTe/WPhhugsReXCHoMpg5hm3rs6PKr6a1iuaIsp86YBU5gGkmltXyeBpBPNy8jf3H1jHkzY5djkTZMF+6HEizUkHwNt55+kMfcg8hka283Bk4N+wWjtzZFpiQ7ZqvFlzbLCdFNy5FPKaubr+tcbi5IYakApQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GCTD/Wu4vtAF96L3OwyHQEgfc87DLHotYJ9ibFgMN/o=;
+ b=Dzv2c3OAdBvBIifIbkqDtLM+CtBy82DojGwxErMoYsINg0hMMLUr+iEav/tbJ7tvfCC5lFH5ODTCxtc1IKeZp+VFJPOwwQjZtGl0ldTCWMPHijRZmGiUJ4UerrLZc4pjRue+Ci8JP80YVMrUROO9XdalhqINeEEPsln1iD3mu5LrY9vUFxZSyt3v2cbn8XObtnhL2XSrDE/NUjRyZPd6Bs2TCokd3XyEaoXqEWigYLkFKzJZVRhw95TTz+ecUmredRpcOwfNu2NkA28fM27vXQ8UYYRM62onit+uGfJmJScVPyIB2H1QUFlOcz7tb4dnZ7FRvdzR23jYpcn+hzhikA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by DB9PR04MB9378.eurprd04.prod.outlook.com (2603:10a6:10:36a::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.17; Mon, 2 Dec
+ 2024 09:41:16 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::d1ce:ea15:6648:6f90]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::d1ce:ea15:6648:6f90%6]) with mapi id 15.20.8207.017; Mon, 2 Dec 2024
+ 09:41:15 +0000
+Message-ID: <bc08993d-3672-452a-a29e-3a85199a0dcb@nxp.com>
+Date: Mon, 2 Dec 2024 17:41:49 +0800
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 10/19] drm/imx: Add i.MX8qxp Display Controller pixel
+ engine
+To: kernel test robot <lkp@intel.com>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, imx@lists.linux.dev,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+Cc: oe-kbuild-all@lists.linux.dev, p.zabel@pengutronix.de,
+ maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de,
+ airlied@gmail.com, simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, glx@linutronix.de,
+ vkoul@kernel.org, kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org,
+ francesco@dolcini.it, frank.li@nxp.com, dmitry.baryshkov@linaro.org,
+ u.kleine-koenig@baylibre.com
+References: <20241202025635.1274467-11-victor.liu@nxp.com>
+ <202412021617.HmlPGJLh-lkp@intel.com>
+From: Liu Ying <victor.liu@nxp.com>
+Content-Language: en-US
+In-Reply-To: <202412021617.HmlPGJLh-lkp@intel.com>
+X-ClientProxiedBy: SG2PR04CA0176.apcprd04.prod.outlook.com
+ (2603:1096:4:14::14) To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
 MIME-Version: 1.0
-References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-6-09a4338d93ef@quicinc.com>
- <CAA8EJpprTGRTxO+9BC6GRwxE4A3CuvmySsxS2Nh4Tqj0nDRT_Q@mail.gmail.com> <95a78722-8266-4d5d-8d2f-e8efa1aa2e87@quicinc.com>
-In-Reply-To: <95a78722-8266-4d5d-8d2f-e8efa1aa2e87@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Mon, 2 Dec 2024 11:32:45 +0200
-Message-ID: <CAA8EJpo-1o9i4JhZgdbvRxvoYQE2v18Lz_8dVg=Za7a_pk5EDA@mail.gmail.com>
-Subject: Re: [PATCH 6/8] drm/msm/dp: Add maximum width limitation for modes
-To: Xiangxu Yin <quic_xiangxuy@quicinc.com>
-Cc: Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
-	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, 
-	Bartosz Golaszewski <brgl@bgdev.pl>, quic_lliu6@quicinc.com, quic_fangez@quicinc.com, 
-	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-gpio@vger.kernel.org
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM7PR04MB7046:EE_|DB9PR04MB9378:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4d27ffd4-a055-4beb-24d3-08dd12b57739
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|366016;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?elVlUU5TY0FESUZ2eE9NK0M0ZEhtWGc3ZmViNnp4SlJFQlAxTFlHbWdQblRG?=
+ =?utf-8?B?RFpPNnkvS29wSnVVTFZ1dEc2Y28wU2FxaEdxd3kxZzhycDlTOWo1cUVKdGoz?=
+ =?utf-8?B?SHlsZVJsL3VwQ0hzZ0h4cXNjdzdyeUxneXZwZzBPMVIxR0toVHgwYnBmR3Ju?=
+ =?utf-8?B?N1hDSVVOOGkxd3hZSyt1K3cwKzV5MGk2RytpZy9FeVhPMlg2aW9jdGhsREQ2?=
+ =?utf-8?B?KzZBWDFQeXRFc3VCQTdtOFNSTE8zOXFHZ2NqRzk4S0JIT1pndWNrMjdSNng4?=
+ =?utf-8?B?OEVvNjJFdkNMLzllSkJqdkorQnhMMldINFR6NFNBYjNGV3NFMkx6Q0hmY09J?=
+ =?utf-8?B?OE5jNno2WWVpaDJqcmtiRm1Cakk0QVA4VDFQTWRQTEdTUUJTaTZwbkJCMmxa?=
+ =?utf-8?B?TndWYWF6ZmRXMm82RjZVRWxFUk9MUFJJd1JtNjI4YUxycms0UVJmQm51RWV2?=
+ =?utf-8?B?djRnOFJ2OXNSaGpEcEo4Qk1zazJRendRSGJudlkwTW1kRHMzY05GbFNvd2JV?=
+ =?utf-8?B?REQ1YlJvVmRYSWpWKzY1b1Z4c3FYcWZXeDBtVzBtTlpRM3RFYWd4dzlXKzJU?=
+ =?utf-8?B?WEVXKzlyT1VlY0xpYnY0aHI2OUEwU0hBTTJac3BmWE5KZWo5Rjd1RmVONUV0?=
+ =?utf-8?B?VkNUSCttcHRvOUxOS2pTekpGSFYyZWd4WnBxd0tLN2V5MEVtTC96TG5CYkJ6?=
+ =?utf-8?B?YzRKbUNyOGtFNHZNYWJPZkkxTUFCcVNrTUNuMWpjRld5bGhIVXg4U243YlJR?=
+ =?utf-8?B?N2JWYUpFZU5vRXdvS2drZUVHeGFlSUhFeWlWY1o1SGdCMUVUZ0ZvVGNZRXNx?=
+ =?utf-8?B?WVlGU0xHRitLT0xJRDlpMTdYWWw1OTFNVzhkQXRhVDFOaGRGQ1JoMUpGYUpV?=
+ =?utf-8?B?YitVc01UWmZRUDFKV1pLNzloRHZvcWsrS2RnOTkzdGNBWUd2YmZJMnVWMXMz?=
+ =?utf-8?B?SEdrVWhaZ0ZmYUd6WmJ4cjRRcHpGMUZLbFJnUTlkOHl1OXVtU3FJK3BHWGRD?=
+ =?utf-8?B?ZGFMRHcra2FFZXBrZlA0L1ZXOFYrNjJOZ1ZNWUtOdm9aWkxHZm1LU2QvbDNh?=
+ =?utf-8?B?SGFqSVVYYVdMcnZUWkRwTERxSGNTMVF5Y3lQazRWRFRhNTR1aklROG9EN21C?=
+ =?utf-8?B?OHZqdVJWNU5wZnJCWSt4Sk4rM1o5d2dTa25kcmdqSlhrSlpqUzhHWFAzS0lt?=
+ =?utf-8?B?cHNGZHdBVHBzemlyVTZRVmtBSUJseGN6dFU5eW5pVW1ZLzlDVVpxcUhrQVh0?=
+ =?utf-8?B?Z25GdzB4TkYydmdvNHF6UVcrNGtibndyK3ZSNnFRNVBVYVh3TnZpajNpbE1u?=
+ =?utf-8?B?TmJNRXNhZEozSGlPMUZPNjltaDBvRDgyL2FPSEduaGFjQnE5TUdwMmV3WEJn?=
+ =?utf-8?B?VVlGVHptcWNHeFArWktlbE9Cd2JZdG9oeWxFVE1Cak5iL0xSeHZQMG9rekpD?=
+ =?utf-8?B?aEJDZVJQdWVHNVhzczE3UElQMW9tZUVTUktsZ1VFRzJwRnp6eU1rMkczYjlM?=
+ =?utf-8?B?MWh0L2xnTFhVMUo4TEp2aHRDelJ5SXNDY1J4SEVYY2Uwb1h6MFNualp0THVH?=
+ =?utf-8?B?ekgzdWJuU3QvQmhOUkwxNGZGM2N3ZmhNWjVKWGE5R2RYR3RpOE92aWE3aXRC?=
+ =?utf-8?B?Zm9Xc0NoR21lZVd3bFQ1Y3VyR25pdFVBVmtoc1JUWXNhMFc1OVRRdjlSdXls?=
+ =?utf-8?B?T1dtS3VVOXpEOUR2Vm01aG1wdEZoOGhDV25VZHRFREVKWGdPbUdDSmlxNkZS?=
+ =?utf-8?Q?pGwbaWb8FM0j7ybW70=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?YjhHZDl4dVA3TDVnZnV2ZmQ4b1BXVXRnRXB4QlpOQ0hCQk5VRldlV1JSd245?=
+ =?utf-8?B?VDZKYzl1M3RDUGg1WEl5UFJRbk8yT04veFpPMlczZDlaWS8vSFNRWWJTRThO?=
+ =?utf-8?B?bUpNZWpaRWVUbG9KMFpqVlBZUWNWSkdMWUtkUEFzVEd1VmdITmhYYjRibWU2?=
+ =?utf-8?B?akp6eHM1eVYxT1dTay9OOWU0Q1VGMXhGc1BzSkhDQkp4VlVZeFVUdDJrNVI2?=
+ =?utf-8?B?RlBSWXE4QnhHK3JoUm9JTEN1b1hmTTZmdHZRdmFDYXJsSE9BUWJTRmpDRlkz?=
+ =?utf-8?B?eTVSTHlyblFpeklNSVNEVjEvcHkxWVRXMXJQWm94eTZ1czZpK0dsT3FKbUdk?=
+ =?utf-8?B?NWxRN3RDWFVOcHZER3lIRGViZlg0RkgwZ3JVekVNblFqYnJYd3B1M3I0MUln?=
+ =?utf-8?B?Y1pZMUJ6S2dTMWdHU1BUSWFPMzJPdWQwQmNIWHlzZFRhNitGTUI1UDBvK3Ju?=
+ =?utf-8?B?ekVFTzBNQVg3ZUxCN1FEVDU4cmFhem5tOGNXMytmOUZTTE9zei9DL0crVHNU?=
+ =?utf-8?B?N0ZwOXJETGs2dnM0bFZkOFdYNFRVMlF0MmhvQmxTZXNMQ0o1UEFCV2ZyaC9S?=
+ =?utf-8?B?RVY5aEVyKzBBd1Z5MXBVQnhqUlVId0hNTWpSa3ZKcWovMjdUckdzcUo4Z3hz?=
+ =?utf-8?B?NXBqRTVZZUkwUldWYlM0RTVqVHd0cU5VemtoSW1vZDhqMlUzckpHYXB2NW1M?=
+ =?utf-8?B?d2JFMEhGTTk4SXBMcHh6ZTd5UUVaNm0xNHFsampHOXYyMkFObk4vSFptUlFi?=
+ =?utf-8?B?bi9DUTZvMnRSS1ZBV0VDTUd4UHNFV2Z5cnE5bHpTOFRrOEFON0F0V3VMZml3?=
+ =?utf-8?B?WmUrRjg2WFcrdWcraXY3cUhXL1JoVmtkY04xcHJ3ZWpWQmpQcktoRGhoMmJ0?=
+ =?utf-8?B?eUx5MFk5Q2lNM0cyc3ZRTEVRcmM5c0hDZll1L2kxMzBPSDNZZDJ5cEJEdDdL?=
+ =?utf-8?B?RHNpclNuWGRWRjhoOVpYVkpBU1FsakQ0d1hPWXpQQ0R0RFZ3R0xaM0pQZHho?=
+ =?utf-8?B?Y1hxN1Q1V00vaTR5TUg1MDFVK1FMWjhibUI0RG1rVVR4MjJ6K2t4S055aXhn?=
+ =?utf-8?B?bzVhbFdWNjNreFZ4aU14UWxGcWF4clkyN2pHVDkvQkU4VWkxYjUzMmNZUVQ2?=
+ =?utf-8?B?aFZiTGR3RVgvMWk0enNlWmhiZ012WmxIQWp2b1FoUy9CNC9tVGU0cFlIb3pz?=
+ =?utf-8?B?RWZBVzVqbmFMYzNSRkpaMWdnTTdPdmlGOUprbWFkL3NYbXRoWFU2RkVmMkNv?=
+ =?utf-8?B?TnUwWHZFOS9TRFFzNS9QWUJEa0lGemtyeG1FcjJHUXQ3U0xKN2NuLy84ZnFL?=
+ =?utf-8?B?RUk3MlNDMnR4V1E1R0FTYldEWHBiZVcwQmdkUCtzQUxHUm5EY0lyNkQxMFFB?=
+ =?utf-8?B?OGNsUFVDNjVzOUUzb0NLR3pEandrUW1TOXhYMWxoNHJ6SUhlVXBDc04wR3F2?=
+ =?utf-8?B?ZTMzeWN5TVdXZlBaUWlocDJxVjkrSlhyRnNtbEd6WnlVVHhUQTlNUUtIOXR1?=
+ =?utf-8?B?d09wK1hyZGtFK1pXWHZ1Z0cwOE9SL2QraUtHdmNrazNnMFh6S01SWHlEZDlS?=
+ =?utf-8?B?MzBRa1p0VjkvNzJlYjRjYTBneU5pWU56RE0xVUtSZmZoZngvTEhRdHIydm90?=
+ =?utf-8?B?U1EvMUVPaDdqQzdRRUJBQUZDT1dhNnY2R1FUbW5kcUlZaFgydEFCekN5NXIz?=
+ =?utf-8?B?Nms5Umd3cFplR2lNcDJrQmcraGtHNHVmNlBiVzZhMWdjSXlVSUZMa1FOZFFQ?=
+ =?utf-8?B?MFlHb084MDlWVFp5MElFSlFOMlRjSGpPNDlwNVFXcjMxWmJnUWZ5eEJBRVl5?=
+ =?utf-8?B?ZHhXQiswVHQrNFdEYzdBd2NkSTIxR0RMSDdua05yTzBtRzhmeWZ3K1JBY2Nz?=
+ =?utf-8?B?ZEFzS1hRWDFhbWNJU3RsbFNaOUlTeXNDMW50TEVnaHFKMFVOMXFHT1g4NDNs?=
+ =?utf-8?B?VTVLNGNVSHBhdmlGMkdPT2NCcitRaHQ5VFZCTDNpS3IrMDEweUFPVi9KOUdN?=
+ =?utf-8?B?RXkwSnhyQ3l2ZXRQcDRta1FGQkc5NkVVOFJPb0NCTEk4SS9xK0I1aHVUdVBM?=
+ =?utf-8?B?aHd6dnljbGUxc0FNNG1Pblc5THdWblpLOVkzaXBaZ2FHb3FpL2xucHJTS1Vy?=
+ =?utf-8?Q?G0mJSURt8wojwhXWN7JwzyCvM?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4d27ffd4-a055-4beb-24d3-08dd12b57739
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2024 09:41:15.8666
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 0d/2heo32+NNSn4LaSAbBXZ8X9SI0H02+sXkrKtIjQLVjBkOpuiAYI9c4wWggCVYcgaTmswY3woL2E2Xe/6srA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9378
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241202_013251_542237_ED128372 
-X-CRM114-Status: GOOD (  16.05  )
+X-CRM114-CacheID: sfid-20241202_014122_167556_874BA6F3 
+X-CRM114-Status: GOOD (  18.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,35 +177,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCAyIERlYyAyMDI0IGF0IDExOjA1LCBYaWFuZ3h1IFlpbiA8cXVpY194aWFuZ3h1eUBx
-dWljaW5jLmNvbT4gd3JvdGU6Cj4KPgo+Cj4gT24gMTEvMjkvMjAyNCA5OjUyIFBNLCBEbWl0cnkg
-QmFyeXNoa292IHdyb3RlOgo+ID4gT24gRnJpLCAyOSBOb3YgMjAyNCBhdCAwOTo1OSwgWGlhbmd4
-dSBZaW4gPHF1aWNfeGlhbmd4dXlAcXVpY2luYy5jb20+IHdyb3RlOgo+ID4+Cj4gPj4gSW50cm9k
-dWNlIGEgbWF4aW11bSB3aWR0aCBjb25zdHJhaW50IGZvciBtb2RlcyBkdXJpbmcgdmFsaWRhdGlv
-bi4gVGhpcwo+ID4+IGVuc3VyZXMgdGhhdCB0aGUgbW9kZXMgYXJlIGZpbHRlcmVkIGJhc2VkIG9u
-IGhhcmR3YXJlIGNhcGFiaWxpdGllcywKPiA+PiBzcGVjaWZpY2FsbHkgYWRkcmVzc2luZyB0aGUg
-bGluZSBidWZmZXIgbGltaXRhdGlvbnMgb2YgaW5kaXZpZHVhbCBwaXBlcy4KPiA+Cj4gPiBUaGlz
-IGRvZXNuJ3QgZGVzY3JpYmUsIHdoeSB0aGlzIGlzIG5lY2Vzc2FyeS4gV2hhdCBkb2VzICJidWZm
-ZXIKPiA+IGxpbWl0YXRpb25zIG9mIGluZGl2aWR1YWwgcGlwZXMiIG1lYW4/Cj4gPiBJZiB0aGUg
-cGxhdGZvcm1zIGhhdmUgaHcgY2FwYWJpbGl0aWVzIGxpa2UgYmVpbmcgdW5hYmxlIHRvIHN1cHBv
-cnQgOGsKPiA+IG9yIDEwaywgaXQgc2hvdWxkIGdvIHRvIHBsYXRmb3JtIGRhdGEKPiA+Cj4gSXQn
-cyBTU1BQIGxpbmUgYnVmZmVyIGxpbWl0YXRpb24gZm9yIHRoaXMgcGxhdGZvcm0gYW5kIG9ubHkg
-c3VwcG9ydCB0byAyMTYwIG1vZGUgd2lkdGguCj4gVGhlbiwgc2hhbGwgSSBhZGQgbWF4X3dpZHRo
-IGNvbmZpZyB0byBzdHJ1Y3QgbXNtX2RwX2Rlc2MgaW4gbmV4dCBwYXRjaD8gZm9yIG90aGVyIHBs
-YXRmb3JtIHdpbGwgc2V0IGRlZnVhbHQgdmFsdWUgdG8g4oCYRFBfTUFYX1dJRFRIIDc2ODAnCgpT
-U1BQIGxpbmUgYnVmZmVyIGxpbWl0YXRpb25zIGFyZSB0byBiZSBoYW5kbGVkIGluIHRoZSBEUFUg
-ZHJpdmVyLiBUaGUKRFAgZHJpdmVyIHNob3VsZG4ndCBjYXJlIGFib3V0IHRob3NlLgoKPiA+Pgo+
-ID4+IFNpZ25lZC1vZmYtYnk6IFhpYW5neHUgWWluIDxxdWljX3hpYW5neHV5QHF1aWNpbmMuY29t
-Pgo+ID4+IC0tLQo+ID4+ICBkcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuYyB8ICAz
-ICsrKwo+ID4+ICBkcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuaCB8ICAxICsKPiA+
-PiAgZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9wYW5lbC5jICAgfCAxMyArKysrKysrKysrKysr
-Cj4gPj4gIGRyaXZlcnMvZ3B1L2RybS9tc20vZHAvZHBfcGFuZWwuaCAgIHwgIDEgKwo+ID4+ICA0
-IGZpbGVzIGNoYW5nZWQsIDE4IGluc2VydGlvbnMoKykKCgotLSAKV2l0aCBiZXN0IHdpc2hlcwpE
-bWl0cnkKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LXBoeQo=
+On 12/02/2024, kernel test robot wrote:
+> Hi Liu,
+> 
+> kernel test robot noticed the following build warnings:
+> 
+> [auto build test WARNING on shawnguo/for-next]
+> [also build test WARNING on linus/master v6.13-rc1 next-20241128]
+> [If your patch is applied to the wrong git tree, kindly drop us a note.
+> And when submitting patch, we suggest to use '--base' as documented in
+> https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> 
+> url:    https://github.com/intel-lab-lkp/linux/commits/Liu-Ying/dt-bindings-display-imx-Add-i-MX8qxp-Display-Controller-processing-units/20241202-110331
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git for-next
+> patch link:    https://lore.kernel.org/r/20241202025635.1274467-11-victor.liu%40nxp.com
+> patch subject: [PATCH v5 10/19] drm/imx: Add i.MX8qxp Display Controller pixel engine
+> config: alpha-allyesconfig (https://download.01.org/0day-ci/archive/20241202/202412021617.HmlPGJLh-lkp@intel.com/config)
+> compiler: alpha-linux-gcc (GCC) 14.2.0
+> reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241202/202412021617.HmlPGJLh-lkp@intel.com/reproduce)
+> 
+> If you fix the issue in a separate patch/commit (i.e. not just a new version of
+> the same patch/commit), kindly add following tags
+> | Reported-by: kernel test robot <lkp@intel.com>
+> | Closes: https://lore.kernel.org/oe-kbuild-all/202412021617.HmlPGJLh-lkp@intel.com/
+> 
+> All warnings (new ones prefixed by >>):
+> 
+>    drivers/gpu/drm/imx/dc/dc-fl.c: In function 'dc_fl_bind':
+>>> drivers/gpu/drm/imx/dc/dc-fl.c:136:57: warning: '%d' directive output may be truncated writing between 1 and 10 bytes into a region of size 3 [-Wformat-truncation=]
+>      136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+>          |                                                         ^~
+>    drivers/gpu/drm/imx/dc/dc-fl.c:136:46: note: directive argument in the range [0, 2147483647]
+>      136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+>          |                                              ^~~~~~~~~~~~~~
+>    drivers/gpu/drm/imx/dc/dc-fl.c:136:9: note: 'snprintf' output between 12 and 21 bytes into a destination of size 13
+
+Will expand sizeof(fu->name) from 13 to 21.
+Thanks for the report.
+
+>      136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+>          |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> --
+>    drivers/gpu/drm/imx/dc/dc-fw.c: In function 'dc_fw_bind':
+>>> drivers/gpu/drm/imx/dc/dc-fw.c:175:56: warning: '%u' directive output may be truncated writing between 1 and 10 bytes into a region of size 4 [-Wformat-truncation=]
+>      175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
+>          |                                                        ^~
+>    drivers/gpu/drm/imx/dc/dc-fw.c:175:46: note: directive argument in the range [0, 2147483647]
+>      175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
+>          |                                              ^~~~~~~~~~~~~
+>    drivers/gpu/drm/imx/dc/dc-fw.c:175:9: note: 'snprintf' output between 11 and 20 bytes into a destination of size 13
+>      175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
+>          |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> 
+> 
+> vim +136 drivers/gpu/drm/imx/dc/dc-fl.c
+> 
+>     92	
+>     93	static int dc_fl_bind(struct device *dev, struct device *master, void *data)
+>     94	{
+>     95		struct platform_device *pdev = to_platform_device(dev);
+>     96		struct dc_drm_device *dc_drm = data;
+>     97		struct dc_pe *pe = dc_drm->pe;
+>     98		void __iomem *base_cfg;
+>     99		struct dc_fl *fl;
+>    100		struct dc_fu *fu;
+>    101		int i;
+>    102	
+>    103		fl = devm_kzalloc(dev, sizeof(*fl), GFP_KERNEL);
+>    104		if (!fl)
+>    105			return -ENOMEM;
+>    106	
+>    107		fu = &fl->fu;
+>    108	
+>    109		base_cfg = devm_platform_ioremap_resource_byname(pdev, "cfg");
+>    110		if (IS_ERR(base_cfg))
+>    111			return PTR_ERR(base_cfg);
+>    112	
+>    113		fu->reg_cfg = devm_regmap_init_mmio(dev, base_cfg,
+>    114						    &dc_fl_cfg_regmap_config);
+>    115		if (IS_ERR(fu->reg_cfg))
+>    116			return PTR_ERR(fu->reg_cfg);
+>    117	
+>    118		fl->id = of_alias_get_id(dev->of_node, "dc0-fetchlayer");
+>    119		if (fl->id < 0) {
+>    120			dev_err(dev, "failed to get alias id: %d\n", fl->id);
+>    121			return fl->id;
+>    122		}
+>    123	
+>    124		fu->link_id = LINK_ID_FETCHLAYER0;
+>    125		fu->id = DC_FETCHUNIT_FL0;
+>    126		for (i = 0; i < DC_FETCHUNIT_FRAC_NUM; i++) {
+>    127			fu->reg_baseaddr[i]		  = BASEADDRESS(i);
+>    128			fu->reg_sourcebufferattributes[i] = SOURCEBUFFERATTRIBUTES(i);
+>    129			fu->reg_sourcebufferdimension[i]  = SOURCEBUFFERDIMENSION(i);
+>    130			fu->reg_layeroffset[i]		  = LAYEROFFSET(i);
+>    131			fu->reg_clipwindowoffset[i]	  = CLIPWINDOWOFFSET(i);
+>    132			fu->reg_clipwindowdimensions[i]	  = CLIPWINDOWDIMENSIONS(i);
+>    133			fu->reg_constantcolor[i]	  = CONSTANTCOLOR(i);
+>    134			fu->reg_layerproperty[i]	  = LAYERPROPERTY(i);
+>    135		}
+>  > 136		snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+>    137	
+>    138		dc_fl_set_ops(fu);
+>    139	
+>    140		pe->fu_disp[fu->id] = fu;
+>    141	
+>    142		return 0;
+>    143	}
+>    144	
+> 
+
+-- 
+Regards,
+Liu Ying
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
