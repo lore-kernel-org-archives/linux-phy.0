@@ -4,92 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D38CED78305
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 10:32:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D88DD78303
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 10:32:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BWre82tBV/5vVXp+Peh8JRKif4syNfHJzOs6pF6GqNc=; b=DWZ8HV2Pxe9MXp
-	y6sG8GdP+MFmAt2mvRvmMUvQAotl7/TIGHRvxOxvDv/pGq7qXBU9Pm2ZksUhdkkpLmb4Y0lwjHk0m
-	vABeYw46pRnC/+VV7Iu0rfCkxs4HTPsN798hq85gYn47Cmzr1yWisqI6Cb8MVHwPPk97HB6nOViYD
-	PSER2hqJB9YvFk9Bd66ETJZUup9rmGMDCV6lCVGH9NK31UzmPu1RtuIV03P+UlTeeFpiUqi8NoLkj
-	tu0JnXC0p1H35VbRcqPkDEVMZne29hT3ponw8saXz6jcyrKALlJSkeH+Qy3cYjpDqSy02m9koGLxY
-	Jki60mCFYhfRC40Yg+2g==;
+	List-Owner; bh=zPXDDvnliJxwyVMwVb0nx2EbUefuHiZPQ4WuJgFKmao=; b=op+ggFtBne8/D1
+	DyC2qOKeJFunr4/T2459gFj/oJE8tTD0KEGEENJirhN+Gqdghc43w5oy1zhhf2pOI5g+3oSsDGMdc
+	D0cRg4npBrK4MZ2k38wC/6iqEneJ09TNRQtz0w/n4tVGa8wehyaPFOJKkJ80v+w6mZ2I5pfo4C/Ga
+	4js4wemgAaIXqRBOfnhrm4BKHRCjvYIsVLl/UpCk/R54P8RNXYFFQ0KqbU8eUfIrlEFt95+w6D/Cb
+	gJVv2FNN2bcWt+bUpMrKQW1CtZkfeW6Cn1oZVDhO6lu9KPCmDV+rD+Ts2yUb8RZBsJqJwfWOU0ArQ
+	UsrvmpazevhELbWhrJ/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI3jI-00000005jyr-2Y4U;
-	Mon, 02 Dec 2024 10:32:36 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tI3jJ-00000005jzC-0F0B;
+	Mon, 02 Dec 2024 10:32:37 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI3ik-00000005jrK-1LVN
+	id 1tI3il-00000005jrd-1iP7
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Dec 2024 10:32:03 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B28gCCM031568;
-	Mon, 2 Dec 2024 10:31:30 GMT
+	Mon, 02 Dec 2024 10:32:04 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B28PD8r030509;
+	Mon, 2 Dec 2024 10:31:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	p/DdNkotzWXXhJhcfX2/UUVLN4GplZH+o2EyPdnTKmI=; b=ddEy7qfcp9aNKCU5
-	pIsDynzHrdV5NX/lei/fEpzhfFwPsiuwz9zQzHVD7mTL37evINoL9/N4qORkqG0Y
-	CaNhQEew0aehRTRjv/BxKKDZlp1u6rPNTo5r73x86XDneJN2dreDLQ+FNF88XEVS
-	Tk5m5jM1bSeN7DzU8edtGtuEH5S19MB1S8fVQJdIYfOXAcAQ8lsLBWuVpc7AXrN4
-	xIp1wZPwnIaxGajZex9i0LlvnAXSVgRjaMtxq3Id11e2EgrADLxQSZP0MuJv2isI
-	MIdi0YwwQF1C4WfLEICco+0vVVqamqv2TrXqQTQZyK+vogQ0RTUqxcYqbHWnK8oh
-	xPillA==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437v07mcnq-1
+	V9JKIx72ZzU6OqC05+Y0cV4EzX/9xl6Xv4DQi1WQZEY=; b=gPHIHzQAq5b3PbBr
+	5zksYJJH7AjoF0Cyyx4OcUXfLi2YtKe126piVvjWtAqQTkkwGaWWoiG4ziEvSaY9
+	t7+xhLEOjKZyIldwADuzca1oFHHg7u6rEuqkdW6T9OjfWFzX35H01yfck7j6LTsD
+	58sGy1dVSAaSrbC1JTAw4HS6NhGKJhn+jvu6dhzbkqsracwkV2SCqN875hebPIEV
+	/U6HM5bawBWTrh4c9khrUgEWtnqmbcrztDA2i248cVi/gnLXZWWVG7CyG4fzNcCT
+	IacBlmyiTWeO+QPXTN0gkvVhln2k4dLXJ9AaTivY8AamMAgOM6Se+N9V5rNePG9C
+	/m9ujQ==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437sq64hfe-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 02 Dec 2024 10:31:29 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B2AVTsu002055
+	Mon, 02 Dec 2024 10:31:54 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B2AVr7m000301
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 2 Dec 2024 10:31:29 GMT
-Received: from [10.233.17.145] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+	Mon, 2 Dec 2024 10:31:53 GMT
+Received: from [10.64.16.135] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 2 Dec 2024
- 02:31:23 -0800
-Message-ID: <cae67925-bfa9-44c1-9cf8-824c5a32a3bd@quicinc.com>
-Date: Mon, 2 Dec 2024 18:31:20 +0800
+ 02:31:46 -0800
+Message-ID: <22600892-3b0d-4b0f-9c46-e74241960dda@quicinc.com>
+Date: Mon, 2 Dec 2024 18:31:44 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
- usb phy
-To: Bjorn Andersson <andersson@kernel.org>
-CC: Song Xue <quic_songxue@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
-        "Kishon Vijay Abraham I" <kishon@kernel.org>,
-        Manu Gautam
-	<mgautam@codeaurora.org>,
-        Vivek Gautam <vivek.gautam@codeaurora.org>, <kernel@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
- <vbuo2yel2pdcwnmz32f4t5pb6v3ptt2bcs2t6ybab2jxnkd6e7@rjnsbawj4zpb>
- <18e40154-f4ea-4100-9f4f-9c9aa5e251d7@quicinc.com>
- <5tbevb5wv2s43pccytv4qol4yhq4s7iw2mmqp23vt3ujqd6xev@hkioqmwoitbd>
-From: Tingwei Zhang <quic_tingweiz@quicinc.com>
-In-Reply-To: <5tbevb5wv2s43pccytv4qol4yhq4s7iw2mmqp23vt3ujqd6xev@hkioqmwoitbd>
+Subject: Re: [PATCH 3/8] phy: qcom: qmp-usbc: Add DP phy mode support on
+ QCS615
+To: Krzysztof Kozlowski <krzk@kernel.org>, Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar <quic_abhinavk@quicinc.com>,
+        Dmitry Baryshkov
+	<dmitry.baryshkov@linaro.org>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten
+	<marijn.suijten@somainline.org>,
+        Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        "Kuogee
+ Hsieh" <quic_khsieh@quicinc.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon
+ Vijay Abraham I" <kishon@kernel.org>,
+        Linus Walleij
+	<linus.walleij@linaro.org>,
+        Bartosz Golaszewski <brgl@bgdev.pl>, <quic_lliu6@quicinc.com>,
+        <quic_fangez@quicinc.com>
+CC: <linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-gpio@vger.kernel.org>
+References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-3-09a4338d93ef@quicinc.com>
+ <b310587f-c6c3-41dd-83bf-6affbcc65730@kernel.org>
+From: Xiangxu Yin <quic_xiangxuy@quicinc.com>
+In-Reply-To: <b310587f-c6c3-41dd-83bf-6affbcc65730@kernel.org>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: th-N7LjwSxospAAPdhm1dpM6a4IJeDNy
-X-Proofpoint-GUID: th-N7LjwSxospAAPdhm1dpM6a4IJeDNy
+X-Proofpoint-GUID: ouCZElGXG-cUky1JI7neTh2rj2duVt65
+X-Proofpoint-ORIG-GUID: ouCZElGXG-cUky1JI7neTh2rj2duVt65
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
- adultscore=0 mlxlogscore=999 bulkscore=0 suspectscore=0 priorityscore=1501
- impostorscore=0 lowpriorityscore=0 spamscore=0 mlxscore=0 clxscore=1011
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2412020093
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 bulkscore=0
+ priorityscore=1501 mlxscore=0 clxscore=1011 lowpriorityscore=0
+ suspectscore=0 adultscore=0 spamscore=0 impostorscore=0 mlxlogscore=999
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412020093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241202_023202_369998_B91F83A2 
-X-CRM114-Status: GOOD (  34.07  )
+X-CRM114-CacheID: sfid-20241202_023203_563602_F364B97B 
+X-CRM114-Status: GOOD (  21.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,150 +121,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/30/2024 11:59 AM, Bjorn Andersson wrote:
-> On Fri, Nov 29, 2024 at 06:26:30PM +0800, Tingwei Zhang wrote:
->> On 11/29/2024 12:43 AM, Bjorn Andersson wrote:
->>> On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
->>>> Set the current load before enable regulator supplies at QUSB phy.
->>>>
->>>> Encountered one issue where the board powered down instantly once the UVC
->>>> camera was attached to USB port while adding host mode on usb port and
->>>> testing a UVC camera with the driver on QCS615 platform. The extensible
->>>> boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
->>>> from regulators-0 upon powered on board again. That indicates that the
->>>> current load set for QUSB phy, which use the regulator supply, is lower
->>>> than expected.
->>>>
->>>> As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
->>>> load when attach a device to the USB port.
->>>>
->>>> Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
->>>> Signed-off-by: Song Xue <quic_songxue@quicinc.com>
->>>
->>> The patch looks good. But if we describe the regulator(s) with
->>> regulator-allow-set-load; and not all the consumers vote for load, the
->>> sum of the load when USB phy is disabled goes to 0 and we will enter
->>> LPM.
->>
->> That's exactly the issue we encountered on QCS615 ride. Qualcomm UFS driver
->> sets load while USB phy doesn't set load. That's the reason we raised this
->> patch.
->>>
->>> For this reason we're not doing any load requests today. Can you confirm
->>
->> When I grep regulator_set_load in Kernel, there are 27 hits in drivers. You
->> are correct, it will trigger issue when some consumers set load while some
->> don't.
->> However, how can we prevent other drivers outside of Qualcomm to use
->> regulator_set_load?
-> 
-> We can avoid this by not specifying "regulator-allow-set-load" in
-> DeviceTree.
-> 
-> That said, this isn't the correct solution, we shouldn't use the
-> hardware description to deal with implementation issues. It is however
-> the currently chosen pragmatic solution, so feel free to follow this.
-> 
-In that case, shall we set all regulator to HPM-only and not specifying 
-"regulator-allow-set-load" in device tree? This will make it safe 
-whether driver sets load or not. With this, drivers can gradually add 
-set load support and "regulator-allow-set-load" can be enabled in device 
-tree once all consumer drivers have set load support.
-
->> It will trigger the same issue.
->> Is there something we can do in regulator driver to prevent this issue? If
->> consumer doesn't set load, regulator works in HPM even another consumer set
->> load to 0?
->>
->>> that this works fine with a dtb where only HPM is permitted (as well as
->>> LPM and HPM)? If so I'd be in favor of us merging this change, but
->>
->> Do you mean test with HPM only regulator and regulator which allows to be
->> set to HPM and LPM?
->>
-> 
-> Yes, please double check that your patch works with and without
-> regulator-allow-set-load.
-> 
-Unfortunatly, it won't work for regulator with regulator-allow-set-load 
-when there's another consumer driver doesn't set load. Once this USB phy 
-driver disable regulator and clear it's load. Regualtor will go to LPM 
-even other consumer still votes enable for this regulator.
-
-> Regards,
-> Bjorn
-> 
->>> keeping the dts HPM-only until someone confirms that all consumers of
->>> these regulators specify load-votes.
->>>
->>> Regards,
->>> Bjorn
->>>
->>>> ---
->>>> Changes in v2:
->>>> - Removed "---" above the Fixes.
->>>> - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
->>>> ---
->>>>    drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
->>>>    1 file changed, 12 insertions(+), 1 deletion(-)
->>>>
->>>> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->>>> index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
->>>> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
->>>> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->>>> @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
->>>>    	return ret;
->>>>    }
->>>> +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
->>>> +
->>>>    static int qusb2_phy_init(struct phy *phy)
->>>>    {
->>>>    	struct qusb2_phy *qphy = phy_get_drvdata(phy);
->>>>    	const struct qusb2_phy_cfg *cfg = qphy->cfg;
->>>>    	unsigned int val = 0;
->>>>    	unsigned int clk_scheme;
->>>> -	int ret;
->>>> +	int ret, i;
->>>>    	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
->>>> +	/* set the current load */
->>>> +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
->>>> +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
->>>> +		if (ret) {
->>>> +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
->>>> +			return ret;
->>>> +		}
->>>> +	}
->>>> +
->>>>    	/* turn on regulator supplies */
->>>>    	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
->>>>    	if (ret)
->>>>
->>>> ---
->>>> base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
->>>> change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
->>>>
->>>> Best regards,
->>>> -- 
->>>> Song Xue <quic_songxue@quicinc.com>
->>>>
->>>>
->>
->>
->> -- 
->> Thanks,
->> Tingwei
-
-
--- 
-Thanks,
-Tingwei
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAxMS8yOS8yMDI0IDQ6MTggUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gT24g
+MjkvMTEvMjAyNCAwODo1NywgWGlhbmd4dSBZaW4gd3JvdGU6Cj4+IEV4dGVuZGVkIERQIHN1cHBv
+cnQgZm9yIFFDUzYxNSBVU0Igb3IgRFAgcGh5LiBEaWZmZXJlbnRpYXRlZCBiZXR3ZWVuCj4+IFVT
+QkMgYW5kIERQIFBIWSB1c2luZyB0aGUgbWF0Y2ggdGFibGXigJlzIHR5cGUsIGR5bmFtaWNhbGx5
+IGdlbmVyYXRpbmcKPj4gZGlmZmVyZW50IHR5cGVzIG9mIGNmZyBhbmQgbGF5b3V0IGF0dHJpYnV0
+ZXMgZHVyaW5nIGluaXRpYWxpemF0aW9uIGJhc2VkCj4+IG9uIHRoaXMgdHlwZS4gU3RhdGljIHZh
+cmlhYmxlcyBhcmUgc3RvcmVkIGluIGNmZywgd2hpbGUgcGFyc2VkIHZhbHVlcwo+PiBhcmUgb3Jn
+YW5pemVkIGludG8gdGhlIGxheW91dCBzdHJ1Y3R1cmUuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IFhp
+YW5neHUgWWluIDxxdWljX3hpYW5neHV5QHF1aWNpbmMuY29tPgo+PiAtLS0KPj4gIGRyaXZlcnMv
+cGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1kcC1waHkuaCB8ICAgIDEgKwo+PiAgZHJpdmVycy9w
+aHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVzYmMuYyAgIHwgMTQ1MyArKysrKysrKysrKysrKysr
+KysrKysrKystLS0tCj4+ICAyIGZpbGVzIGNoYW5nZWQsIDEyNTQgaW5zZXJ0aW9ucygrKSwgMjAw
+IGRlbGV0aW9ucygtKQo+IAo+IAo+IAo+IC4uLgo+IAo+PiArCS8qIHByb2dyYW0gZGVmYXVsdCBz
+ZXR0aW5nIGZpcnN0ICovCj4+ICsJd3JpdGVsKDB4MkEsIHR4ICsgUVNFUkRFU19WM19UWF9UWF9E
+UlZfTFZMKTsKPj4gKwl3cml0ZWwoMHgyMCwgdHggKyBRU0VSREVTX1YzX1RYX1RYX0VNUF9QT1NU
+MV9MVkwpOwo+PiArCXdyaXRlbCgweDJBLCB0eDIgKyBRU0VSREVTX1YzX1RYX1RYX0RSVl9MVkwp
+Owo+PiArCXdyaXRlbCgweDIwLCB0eDIgKyBRU0VSREVTX1YzX1RYX1RYX0VNUF9QT1NUMV9MVkwp
+Owo+PiArCj4+ICsJd3JpdGVsKHZvbHRhZ2Vfc3dpbmdfY2ZnLCB0eCArIFFTRVJERVNfVjNfVFhf
+VFhfRFJWX0xWTCk7Cj4+ICsJd3JpdGVsKHByZV9lbXBoYXNpc19jZmcsIHR4ICsgUVNFUkRFU19W
+M19UWF9UWF9FTVBfUE9TVDFfTFZMKTsKPj4gKwl3cml0ZWwodm9sdGFnZV9zd2luZ19jZmcsIHR4
+MiArIFFTRVJERVNfVjNfVFhfVFhfRFJWX0xWTCk7Cj4+ICsJd3JpdGVsKHByZV9lbXBoYXNpc19j
+ZmcsIHR4MiArIFFTRVJERVNfVjNfVFhfVFhfRU1QX1BPU1QxX0xWTCk7Cj4+ICsKPj4gKwlyZXR1
+cm4gMDsKPj4gK30KPj4gKwo+PiArc3RhdGljIGludCBxY3M2MTVfcW1wX2NvbmZpZ3VyZV9kcF9w
+aHkoc3RydWN0IHFtcF91c2JjICpxbXApCj4+ICt7Cj4+ICsJc3RydWN0IHFtcF9waHlfZHBfbGF5
+b3V0ICpsYXlvdXQgPSB0b19kcF9sYXlvdXQocW1wKTsKPj4gKwl1MzIgc3RhdHVzOwo+PiArCj4+
+ICsJd3JpdGVsKDB4MDEsIGxheW91dC0+ZHBfcGh5ICsgUVNFUkRFU19EUF9QSFlfQ0ZHKTsKPj4g
+Kwl3cml0ZWwoMHgwNSwgbGF5b3V0LT5kcF9waHkgKyBRU0VSREVTX0RQX1BIWV9DRkcpOwo+PiAr
+CXdyaXRlbCgweDAxLCBsYXlvdXQtPmRwX3BoeSArIFFTRVJERVNfRFBfUEhZX0NGRyk7Cj4+ICsJ
+d3JpdGVsKDB4MDksIGxheW91dC0+ZHBfcGh5ICsgUVNFUkRFU19EUF9QSFlfQ0ZHKTsKPj4gKwo+
+PiArCXdyaXRlbCgweDIwLCBsYXlvdXQtPmRwX3NlcmRlcyArIFFTRVJERVNfQ09NX1JFU0VUU01f
+Q05UUkwpOwo+PiArCj4+ICsJLy8gQ19SRUFEWQo+IAo+IFVzZSBMaW51eCBjb2Rpbmcgc3R5bGUu
+Cj4gCj4gQW55d2F5LCBkcm9wIGFsbCB1c2VsZXNzIGNvbW1lbnRzLiBTYXkgc29tZXRoaW5nIHVz
+ZWZ1bCBvciBkb24ndCBzYXkKPiBhbnl0aGluZy4KPiAKT2ssIHdpbGwgdXBkYXRlIGluIG5leHQg
+c2VwZXJhdGVkIHBhdGNoZXMuCj4+ICsJaWYgKHJlYWRsX3BvbGxfdGltZW91dChsYXlvdXQtPmRw
+X3NlcmRlcyArIFFTRVJERVNfQ09NX0NfUkVBRFlfU1RBVFVTLAo+PiArCQkJc3RhdHVzLAo+PiAr
+CQkJKChzdGF0dXMgJiBCSVQoMCkpID4gMCksCj4+ICsJCQk1MDAsCj4+ICsJCQkxMDAwMCkpIHsK
+Pj4gKwkJZGV2X2VycihxbXAtPmRldiwgIkNfUkVBRFkgbm90IHJlYWR5XG4iKTsKPj4gKwkJcmV0
+dXJuIC1FVElNRURPVVQ7Cj4+ICsJfQo+PiArCj4+ICsJLy8gRlJFUV9ET05FCj4+ICsJaWYgKHJl
+YWRsX3BvbGxfdGltZW91dChsYXlvdXQtPmRwX3NlcmRlcyArIFFTRVJERVNfQ09NX0NNTl9TVEFU
+VVMsCj4+ICsJCQlzdGF0dXMsCj4+ICsJCQkoKHN0YXR1cyAmIEJJVCgwKSkgPiAwKSwKPj4gKwkJ
+CTUwMCwKPj4gKwkJCTEwMDAwKSl7Cj4+ICsJCWRldl9lcnIocW1wLT5kZXYsICJGUkVRX0RPTkUg
+bm90IHJlYWR5XG4iKTsKPj4gKwkJcmV0dXJuIC1FVElNRURPVVQ7Cj4+ICsJfQo+PiArCj4+ICsJ
+Ly8gUExMX0xPQ0tFRAo+PiArCWlmIChyZWFkbF9wb2xsX3RpbWVvdXQobGF5b3V0LT5kcF9zZXJk
+ZXMgKyBRU0VSREVTX0NPTV9DTU5fU1RBVFVTLAo+PiArCQkJc3RhdHVzLAo+PiArCQkJKChzdGF0
+dXMgJiBCSVQoMSkpID4gMCksCj4+ICsJCQk1MDAsCj4+ICsJCQkxMDAwMCkpewo+PiArCQlkZXZf
+ZXJyKHFtcC0+ZGV2LCAiUExMX0xPQ0tFRCBub3QgcmVhZHlcbiIpOwo+PiArCQlyZXR1cm4gLUVU
+SU1FRE9VVDsKPj4gKwl9Cj4+ICsKPj4gKwl3cml0ZWwoMHgxOSwgbGF5b3V0LT5kcF9waHkgKyBR
+U0VSREVTX0RQX1BIWV9DRkcpOwo+PiArCXVkZWxheSgxMCk7Cj4+ICsKPj4gKwkvLyBUU1lOQ19E
+T05FCj4+ICsJaWYgKHJlYWRsX3BvbGxfdGltZW91dChsYXlvdXQtPmRwX3BoeSArIFFTRVJERVNf
+VjNfRFBfUEhZX1NUQVRVUywKPj4gKwkJCXN0YXR1cywKPj4gKwkJCSgoc3RhdHVzICYgQklUKDAp
+KSA+IDApLAo+PiArCQkJNTAwLAo+PiArCQkJMTAwMDApKXsKPj4gKwkJZGV2X2VycihxbXAtPmRl
+diwgIlRTWU5DX0RPTkUgbm90IHJlYWR5XG4iKTsKPj4gKwkJcmV0dXJuIC1FVElNRURPVVQ7Cj4+
+ICsJfQo+PiArCj4+ICsJLy8gUEhZX1JFQURZCj4+ICsJaWYgKHJlYWRsX3BvbGxfdGltZW91dChs
+YXlvdXQtPmRwX3BoeSArIFFTRVJERVNfVjNfRFBfUEhZX1NUQVRVUywKPj4gKwkJCXN0YXR1cywK
+Pj4gKwkJCSgoc3RhdHVzICYgQklUKDEpKSA+IDApLAo+PiArCQkJNTAwLAo+PiArCQkJMTAwMDAp
+KXsKPj4gKwkJZGV2X2VycihxbXAtPmRldiwgIlBIWV9SRUFEWSBub3QgcmVhZHlcbiIpOwo+PiAr
+CQlyZXR1cm4gLUVUSU1FRE9VVDsKPj4gKwl9Cj4+ICsKPj4gKwl3cml0ZWwoMHgzZiwgbGF5b3V0
+LT5kcF90eCArIFFTRVJERVNfVjNfVFhfVFJBTlNDRUlWRVJfQklBU19FTik7Cj4+ICsJd3JpdGVs
+KDB4MTAsIGxheW91dC0+ZHBfdHggKyBRU0VSREVTX1YzX1RYX0hJR0haX0RSVlJfRU4pOwo+PiAr
+CXdyaXRlbCgweDBhLCBsYXlvdXQtPmRwX3R4ICsgUVNFUkRFU19WM19UWF9UWF9QT0xfSU5WKTsK
+Pj4gKwl3cml0ZWwoMHgzZiwgbGF5b3V0LT5kcF90eDIgKyBRU0VSREVTX1YzX1RYX1RSQU5TQ0VJ
+VkVSX0JJQVNfRU4pOwo+PiArCXdyaXRlbCgweDEwLCBsYXlvdXQtPmRwX3R4MiArIFFTRVJERVNf
+VjNfVFhfSElHSFpfRFJWUl9FTik7Cj4+ICsJd3JpdGVsKDB4MGEsIGxheW91dC0+ZHBfdHgyICsg
+UVNFUkRFU19WM19UWF9UWF9QT0xfSU5WKTsKPj4gKwo+PiArCXdyaXRlbCgweDE4LCBsYXlvdXQt
+PmRwX3BoeSArIFFTRVJERVNfRFBfUEhZX0NGRyk7Cj4+ICsJd3JpdGVsKDB4MTksIGxheW91dC0+
+ZHBfcGh5ICsgUVNFUkRFU19EUF9QSFlfQ0ZHKTsKPj4gKwo+PiArCWlmIChyZWFkbF9wb2xsX3Rp
+bWVvdXQobGF5b3V0LT5kcF9waHkgKyBRU0VSREVTX1YzX0RQX1BIWV9TVEFUVVMsCj4+ICsJCQlz
+dGF0dXMsCj4+ICsJCQkoKHN0YXR1cyAmIEJJVCgxKSkgPiAwKSwKPj4gKwkJCTUwMCwKPj4gKwkJ
+CTEwMDAwKSl7Cj4+ICsJCWRldl9lcnIocW1wLT5kZXYsICJQSFlfUkVBRFkgbm90IHJlYWR5XG4i
+KTsKPj4gKwkJcmV0dXJuIC1FVElNRURPVVQ7Cj4+ICsJfQo+PiArCj4+ICsJcmV0dXJuIDA7Cj4+
+ICt9Cj4+ICsKPj4gK3N0YXRpYyBpbnQgcWNzNjE1X3FtcF9jYWxpYnJhdGVfZHBfcGh5KHN0cnVj
+dCBxbXBfdXNiYyAqcW1wKQo+PiArewo+PiArCXN0YXRpYyBjb25zdCB1OCBjZmcxX3NldHRpbmdz
+W10gPSB7MHgxMywgMHgyMywgMHgxZH07Cj4+ICsJc3RydWN0IHFtcF9waHlfZHBfbGF5b3V0ICps
+YXlvdXQgPSB0b19kcF9sYXlvdXQocW1wKTsKPj4gKwl1OCB2YWw7Cj4+ICsKPj4gKwlsYXlvdXQt
+PmRwX2F1eF9jZmcrKzsKPj4gKwlsYXlvdXQtPmRwX2F1eF9jZmcgJT0gQVJSQVlfU0laRShjZmcx
+X3NldHRpbmdzKTsKPj4gKwl2YWwgPSBjZmcxX3NldHRpbmdzW2xheW91dC0+ZHBfYXV4X2NmZ107
+Cj4+ICsKPj4gKwl3cml0ZWwodmFsLCBsYXlvdXQtPmRwX3BoeSArIFFTRVJERVNfRFBfUEhZX0FV
+WF9DRkcxKTsKPj4gKwo+PiArCXFtcF91c2JjX2NoZWNrX2RwX3BoeShxbXAsICJwb3NfY2FsaWJy
+YXRlIik7Cj4+ICsKPj4gKwlyZXR1cm4gMDsKPj4gK30KPj4gKwo+PiArc3RhdGljIGludCBxbXBf
+dXNiY19jb21faW5pdChzdHJ1Y3QgcGh5ICpwaHkpCj4+ICB7Cj4+ICAJc3RydWN0IHFtcF91c2Jj
+ICpxbXAgPSBwaHlfZ2V0X2RydmRhdGEocGh5KTsKPj4gLQljb25zdCBzdHJ1Y3QgcW1wX3BoeV9j
+ZmcgKmNmZyA9IHFtcC0+Y2ZnOwo+PiAtCXZvaWQgX19pb21lbSAqcGNzID0gcW1wLT5wY3M7Cj4+
+ICsJaW50IG51bV92cmVnczsKPj4gIAl1MzIgdmFsID0gMDsKPj4gIAlpbnQgcmV0Owo+PiArCXVu
+c2lnbmVkIGludCByZWdfcHdyX2RuOwo+PiAgCj4+IC0JcmV0ID0gcmVndWxhdG9yX2J1bGtfZW5h
+YmxlKGNmZy0+bnVtX3ZyZWdzLCBxbXAtPnZyZWdzKTsKPj4gKwlpZiAocW1wLT50eXBlID09IFFN
+UF9QSFlfVVNCQ19VU0IpIHsKPiAKPiAKPiBTb3JyeSwgYWxsIHRoaXMgY29kZSBpcyB1bnJldmll
+d2FibGUuIE9yZ2FuaXplIHlvdXIgY2hhbmdlcyBpbiBsb2dpY2FsLAo+IHJldmlld2FibGUgY2h1
+bmtzLgo+IApXaWxsIGNyZWF0ZSBuZXcgcGF0Y2ggbGlzdCBhbmQgc2VwZXJhdGUgcGF0Y2hzZXRz
+Lgo+PiArCQlzdHJ1Y3QgcW1wX3BoeV91c2JfY2ZnICpjZmcgPSB0b191c2JfY2ZnKHFtcCk7Cj4+
+ICsKPj4gKwkJbnVtX3ZyZWdzID0gY2ZnLT5udW1fdnJlZ3M7Cj4+ICsJCXJlZ19wd3JfZG4gPSBj
+ZmctPnJlZ3NbUVBIWV9QQ1NfUE9XRVJfRE9XTl9DT05UUk9MXTsKPj4gKwl9IGVsc2Ugewo+IAo+
+IC4uLgo+IAo+PiArCQkuY29tcGF0aWJsZSA9ICJxY29tLHFjczYxNS1xbXAtZHAtcGh5IiwKPj4g
+KwkJLmRhdGEgPSAgJihzdHJ1Y3QgZGV2X2NmZykgewo+PiArCQkJLnR5cGUgPSBRTVBfUEhZX1VT
+QkNfRFAsCj4+ICsJCQkuY2ZnID0gJnFjczYxNV9kcHBoeV9jZmcsCj4+ICsJCX0sCj4+ICAJfSwg
+ewo+PiAgCQkuY29tcGF0aWJsZSA9ICJxY29tLHNkbTY2MC1xbXAtdXNiMy1waHkiLAo+PiAtCQku
+ZGF0YSA9ICZzZG02NjBfdXNiM3BoeV9jZmcsCj4+ICsJCS5kYXRhID0gICYoc3RydWN0IGRldl9j
+ZmcpIHsKPj4gKwkJCS50eXBlID0gUU1QX1BIWV9VU0JDX1VTQiwKPj4gKwkJCS5jZmcgPSAmc2Rt
+NjYwX3VzYjNwaHlfY2ZnLAo+PiArCQl9LAo+PiAgCX0sIHsKPj4gIAkJLmNvbXBhdGlibGUgPSAi
+cWNvbSxzbTYxMTUtcW1wLXVzYjMtcGh5IiwKPj4gLQkJLmRhdGEgPSAmcWNtMjI5MF91c2IzcGh5
+X2NmZywKPj4gKwkJLmRhdGEgPSAgJihzdHJ1Y3QgZGV2X2NmZykgewo+PiArCQkJLnR5cGUgPSBR
+TVBfUEhZX1VTQkNfVVNCLAo+PiArCQkJLmNmZyA9ICZxY20yMjkwX3VzYjNwaHlfY2ZnLAo+PiAr
+CQl9LAo+PiAgCX0sCj4+ICAJeyB9LAo+PiAgfTsKPj4gKwo+IAo+IAo+IFlvdSBtYWtlIHNvbWUg
+cmFuZG9tIGNoYW5nZXMgYWxsIG92ZXIgdGhpcyBmaWxlLiBObywgY2xlYW4gaXQgdXAuCj4gCj4+
+ICBNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBxbXBfdXNiY19vZl9tYXRjaF90YWJsZSk7Cj4+ICAK
+Pj4gIHN0YXRpYyBzdHJ1Y3QgcGxhdGZvcm1fZHJpdmVyIHFtcF91c2JjX2RyaXZlciA9IHsKPj4K
+PiAKPiAKPiBCZXN0IHJlZ2FyZHMsCj4gS3J6eXN6dG9mCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5n
+IGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
