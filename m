@@ -4,97 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2706D78306
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 10:46:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E91ED78326
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 14:26:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bvhV470w3a7i+huzvofGcpvmgo0WexEY+pA/jBQzSAY=; b=Z3BPwQhL5Y+eY3
-	fC2CYooa8uqwaeSbA+TfaxwA8FO4lydV5VwRAW+wEC5pro1RBNx3J01QRyC4MYVSrXc4sNGqtIoGm
-	J/Bo8dKcrTgzuzKftd+2HU/osEpxl4qnjMy8nFLnbSUHHBltcdJ0/m+cUWBi/O8j4h5Gl7YCRAhPO
-	0NAXKpBSJjngb+9uvjU+6fF2axK06yK/DqpZfimgDz9Wyj1KyuYD6j5rLoc7IFNqxy6rcjU5KGGVC
-	qJEucePFJUZJc1s4S8SKrsvnRjQQeUXqEnJ1rNrGzed71OrTnWPIRBr/Iyl6uwFv7/YGe7dUkkXtI
-	Mkhn6ahwXI1Tnq09RZPQ==;
+	List-Owner; bh=46ZtTWVPx1OMLVs3vwsQf95jFSSbjhPUHAx+L+fxpCw=; b=LYTTQXLCC6BQXz
+	kr3VmndkR9YSts1MC8YVNqNDeupwmtccnsECaxgZr3dQcLfdaV4p/uzzP0nOE3aa0FKtHbL5G9YMf
+	2/6hkLq81qmEOlEa+n/3VMzDJeOCh4YBN9YpiBqAJbaaVJ3Nu8hiaPgOkVPXK9bWyAXPv8TiJ5rYi
+	2EfYvBj/Gy0/Ek3BLgpQWypDGhlmWFCHD12knpexPMVwLknVa8Irysf5meghtXHPlfzYuRARptmlJ
+	5hk6s/cK2HOteuEvAwTBSdgdt1jdWZ0zI4+Wq3JISAbmJKtxIZsfiXeTbW/ZmEANCNwmnta21wTs6
+	65ZpHs1W8IwIc7gIjs9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI3wa-00000005lpj-2P9T;
-	Mon, 02 Dec 2024 10:46:20 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1tI7NU-00000006Q5h-2XHK;
+	Mon, 02 Dec 2024 14:26:20 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI3wX-00000005loZ-16jb
+	id 1tI7NR-00000006Q4v-4B4h
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Dec 2024 10:46:18 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-53df1d1b6e8so4291834e87.1
-        for <linux-phy@lists.infradead.org>; Mon, 02 Dec 2024 02:46:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1733136375; x=1733741175; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=sW5g5zNCxuwuA9CkgMzqa+U4e2iYbFVfy38zh54cXVg=;
-        b=U0hltT81EEzy6jiWpQrxGjV1/WoqlABVVrjfbuZkEQ9LuWu4xpdwL8+95w4jfO1hE4
-         Ua3GCSgBraTqNO/7hkwwE1ptJijcjICNYfzU4umbM2L1qOKxHJSkBSKrTZGEh2vAFFAX
-         8GjFGKlbOdzDauC072BUfCStZ0GHpfeXQ1vc3kK8aYo2lCdiu68b6HCLY2jqRAppq0ZJ
-         AvYSSWqfMujdRWrokVrSvy84BXP1+3HLeZmltNbzEwDbX4B0U+Wk/G5OyLZ1Sgzwcp2x
-         4tKNsf3lQMSic0uGkA2AFKjYbFZNW+BGjQJcrI9T3m3PuvoNmoUJiE8H35Nrrb601DI4
-         zmlQ==
+	Mon, 02 Dec 2024 14:26:19 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B28gfnY003967
+	for <linux-phy@lists.infradead.org>; Mon, 2 Dec 2024 14:26:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	C9+aPPZFAJemDOGMrrzpUMQVAlKiCGsFemq1XONcpZk=; b=akdzHQk2JJvu6c+o
+	cnFE7I42krUUOtwqd6rQMddEcSyZd066KzphvS2c5B8jHDcf8YX5ToDEA/uDVnt6
+	hWGds3Ugt3t7R9qfBjptMG7h2noyxlp4Ese/lk4TC5iDt1Ip7ZaqZ3Dbd1uwVSNe
+	Yf1fdh74no9Uc3h98tFdTt3NSQws5xi5geUPf1pDYGD4MoUONLk60xfR8bfHfKmQ
+	KmZzIRxZfUeG+UQLOB3XBC3owX97GqPJjTarEcsQ/PRE3ZaY7Syg3kkCXqo7ztCC
+	4WWR5SAGdxobqnE6fC50Fciu8kPSLUJCtWLZh0uayWxFFcQUvBYOThAWt0Ocdf7q
+	YDzpmw==
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com [209.85.219.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437rded84j-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 02 Dec 2024 14:26:16 +0000 (GMT)
+Received: by mail-qv1-f69.google.com with SMTP id 6a1803df08f44-6d88a5bb5e6so7516546d6.2
+        for <linux-phy@lists.infradead.org>; Mon, 02 Dec 2024 06:26:16 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733136375; x=1733741175;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=sW5g5zNCxuwuA9CkgMzqa+U4e2iYbFVfy38zh54cXVg=;
-        b=ZbRXe9jmuueQZuVA9P8yx3Nfh/7RHDtd/Qrfs6YipHbwAIZVqq3POZ8aaG0PNVQCGW
-         VQa5e3kekJMp3f5v1gcBQJo7jIhTyghxRfZLlq071eeTJxCu+oWYxOGNyrpudV1/bG9x
-         nSdfafIcyAVlqdp0RmO/AF+J4QmY1VdkWAOAPjo61h3DWMyKHQOdl0p9ka3PKgH2M4z1
-         v63w/IwC2Se5tEBcfkcGVf3kcaNmWOxiAU5OK+EazAXdM89ExQcHMdBd/Dh8dHkBIdYE
-         H1V8nWhQ5UuwHpW+Ze0UYJANyCBGpmPEJdhpclwLghURqrbiUBdSbhlITtaTjFbuLNss
-         OBhw==
-X-Forwarded-Encrypted: i=1; AJvYcCWVtQtTjsvdY3IUZdbCUmJ04Rg5nsjh7QrBriXiqZ/V3MIPlWt2MTMxwlDzuISroX9tqZjuLDl4oms=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwT3D/nd+WsBI0RwuxTZdegpJlcdZ2UNfVw967mbGUdJxcncXdV
-	2TlZOuL+AvMYvywFkXE3QlFpegbKVNFblR19W46JJy11AKVl5kR3zBC8znQJWPw=
-X-Gm-Gg: ASbGncvS2SvrzVbsxfht+BOuE8ZS/glPWNlbua6F6sCFLZeTyIG3fcSIx12kXPHiUC6
-	Lv6OEoO8YRUjHHWu84210jTCcbS94pNvvXTxAwjqfyWB1Gt/bQcOIGRUTryPsAHxgS8WjL8xjtA
-	QHy8Hwkkl/Xdmj6P5QUh9QaRztwB0nazk0eCM9vfEAWAbBjeVYvQA8Lh5fXqJ2A8yF2RpQHN+dY
-	J+o1KW/QFJjXuvJdGvSMSS0kBgH7mM6xEEyAZd5wMlhUEGJ297dnh9hgxqIeeL2FsU5MkvkbBQc
-	p4Pwd2AlvtwZdwE/cei6pSKVxgUGCA==
-X-Google-Smtp-Source: AGHT+IHSCZMOjWupesy5/0HxHZeda2UBmkbWGoOoF1ozJXCQtPgXFWsr4uPvfC7x0xE42+mBQm6WWA==
-X-Received: by 2002:a05:6512:124e:b0:53d:d3bc:cc11 with SMTP id 2adb3069b0e04-53df0112095mr7509493e87.48.1733136374959;
-        Mon, 02 Dec 2024 02:46:14 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53df644341bsm1424070e87.99.2024.12.02.02.46.13
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 02 Dec 2024 02:46:14 -0800 (PST)
-Date: Mon, 2 Dec 2024 12:46:12 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Xiangxu Yin <quic_xiangxuy@quicinc.com>
-Cc: Rob Clark <robdclark@gmail.com>, 
-	Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>, 
-	Marijn Suijten <marijn.suijten@somainline.org>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, 
-	Bartosz Golaszewski <brgl@bgdev.pl>, quic_lliu6@quicinc.com, quic_fangez@quicinc.com, 
-	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH 5/8] drm/msm/dp: Add support for lane mapping
- configuration
-Message-ID: <zvapsvfftai4fp6vwrn33edqsyuuprq2pxz6spij6j7t4y6xmn@zzgp7gbsivbk>
-References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-5-09a4338d93ef@quicinc.com>
- <CAA8EJpoY8hySQd00yODGeHjSpVZpEBLjF3aBiKGJPUhpr-2mgw@mail.gmail.com>
- <d2a3cd6f-1077-4edb-9f0c-0c940a639050@quicinc.com>
+        d=1e100.net; s=20230601; t=1733149575; x=1733754375;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=C9+aPPZFAJemDOGMrrzpUMQVAlKiCGsFemq1XONcpZk=;
+        b=OqBnVHT40/Dw2EpHvOOIRdUdp3AQC5Fo6USUAUcn3wpZ+F1kQ+ZVhuY+dB1z+ySyBX
+         GOHJKsT+kOzT594XKYbazCqaJTZrkS24rbNyp60v5w7I6qrC+ELauzo+5OLDv1xTn0lG
+         OOYYEg7cpEWlyEUiaWaXlqWO/krHRXAUZH1oKg1AVhd4JpCAMImkb11ffoBmLZLiyouQ
+         DWMpM1jMo/iJTRwhuzytB7rG50duWPCjgrkBZOzPkhWhTebrcwLnnt/jEk1e+7CxruzF
+         a1JmNugXOifZJfVub2UYtWKJG9VL7oS27tmLDSF9MvOrZc6ZAuYIkFSAUvc30wRDAimJ
+         yo+A==
+X-Forwarded-Encrypted: i=1; AJvYcCXKhhy+5WbKjoATomUH/AEbM69PUTnxtQXxhDhzOfZ2WuMWprY+OnmVHBpY92m75RGeRAe/Pt377So=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwSjgNZJAf2/uejzGAGAX/G33n+kEUK4GJl3vcbtfhPnDRYbG8I
+	uSPw7E95mqvzGLypuoByBTtCUT0V0LLmKtewOQqi/ZKmK3UK1yHDgws/fUPqanGQZIUiIHncFK/
+	csfoniu3tfaWJThjjkKh1b0+Tfjt+AYc7vnkE2qDn+aAlYhQ2JaTN1csoI7grOJoR
+X-Gm-Gg: ASbGncsq37Ch3qBu00rxSvtMLvT4bnXgdrD/P4P72c1lMq8lqL+hjLFTJs17GsQzt0X
+	HE3AxJ1TFx+YBguMjR3U0qMHEYnefeeeeahMKrP8iY3d82AQz7NlncMZ1Fw8qvaGd3e9X8ema+x
+	y8lG1d1tFiSEzMzmE3/SrLkGnFBLxwhaC1h9eKolI5wTb855b16oYTP+oNyYjX56mPcuQ0jYrJ8
+	TYo4U3fMYuoKUQUihuofw/o1e/to4alRE07Tf8naxciOfqC/NA/xBMBZRs2inJqC4IxaMVcGLTW
+	D9DHc830Yqk8jUYmkS3OM74sbgVP/WI=
+X-Received: by 2002:ac8:5f46:0:b0:466:85eb:6114 with SMTP id d75a77b69052e-466b34eb098mr142606581cf.4.1733149575120;
+        Mon, 02 Dec 2024 06:26:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEks5Q89gw/Ra65Tb+SUhB7kvtV72Gy/kgkC1JbMoRUkpqIZ4f3DHNc/WA4iENdSFUUHOA4+w==
+X-Received: by 2002:ac8:5f46:0:b0:466:85eb:6114 with SMTP id d75a77b69052e-466b34eb098mr142606291cf.4.1733149574666;
+        Mon, 02 Dec 2024 06:26:14 -0800 (PST)
+Received: from [192.168.212.120] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-aa599800a6dsm515436666b.90.2024.12.02.06.26.10
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 02 Dec 2024 06:26:14 -0800 (PST)
+Message-ID: <25873cef-2871-46c0-a764-9b5ee85e9a58@oss.qualcomm.com>
+Date: Mon, 2 Dec 2024 15:26:10 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d2a3cd6f-1077-4edb-9f0c-0c940a639050@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 6/6] arm64: dts: qcom: qcs615: enable pcie for qcs615
+ platform dts
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, vkoul@kernel.org,
+        kishon@kernel.org, robh+dt@kernel.org,
+        manivannan.sadhasivam@linaro.org, bhelgaas@google.com, kw@linux.com,
+        lpieralisi@kernel.org, quic_qianyu@quicinc.com, conor+dt@kernel.org,
+        neil.armstrong@linaro.org, andersson@kernel.org,
+        konradybcio@kernel.org
+Cc: quic_tsoni@quicinc.com, quic_shashim@quicinc.com,
+        quic_kaushalk@quicinc.com, quic_tdas@quicinc.com,
+        quic_tingweiz@quicinc.com, quic_aiquny@quicinc.com, kernel@quicinc.com,
+        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        Krishna chaitanya chundru <quic_krichai@quicinc.com>
+References: <20241122020305.1584577-1-quic_ziyuzhan@quicinc.com>
+ <20241122020305.1584577-7-quic_ziyuzhan@quicinc.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20241122020305.1584577-7-quic_ziyuzhan@quicinc.com>
+X-Proofpoint-ORIG-GUID: 0op3aJO7Ws5M7ByNkn1JAzYQd-Xp46r3
+X-Proofpoint-GUID: 0op3aJO7Ws5M7ByNkn1JAzYQd-Xp46r3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
+ adultscore=0 malwarescore=0 mlxlogscore=782 phishscore=0 suspectscore=0
+ impostorscore=0 clxscore=1015 lowpriorityscore=0 bulkscore=0
+ priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412020124
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241202_024617_311778_F5B0A1C0 
-X-CRM114-Status: GOOD (  32.30  )
+X-CRM114-CacheID: sfid-20241202_062618_040058_6DEEEE0B 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,117 +129,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 02, 2024 at 04:40:05PM +0800, Xiangxu Yin wrote:
+On 22.11.2024 3:03 AM, Ziyue Zhang wrote:
+> From: Krishna chaitanya chundru <quic_krichai@quicinc.com>
 > 
+> Add platform configurations in devicetree for PCIe, board related
+> gpios, PMIC regulators, etc.
 > 
-> On 11/29/2024 9:50 PM, Dmitry Baryshkov wrote:
-> > On Fri, 29 Nov 2024 at 09:59, Xiangxu Yin <quic_xiangxuy@quicinc.com> wrote:
-> >>
-> >> Add the ability to configure lane mapping for the DP controller. This is
-> >> required when the platform's lane mapping does not follow the default
-> >> order (0, 1, 2, 3). The mapping rules are now configurable via the
-> >> `data-lane` property in the devicetree. This property defines the
-> >> logical-to-physical lane mapping sequence, ensuring correct lane
-> >> assignment for non-default configurations.
-> >>
-> >> Signed-off-by: Xiangxu Yin <quic_xiangxuy@quicinc.com>
-> >> ---
-> >>  drivers/gpu/drm/msm/dp/dp_catalog.c | 11 +++++------
-> >>  drivers/gpu/drm/msm/dp/dp_catalog.h |  2 +-
-> >>  drivers/gpu/drm/msm/dp/dp_ctrl.c    |  2 +-
-> >>  drivers/gpu/drm/msm/dp/dp_panel.c   | 13 ++++++++++---
-> >>  drivers/gpu/drm/msm/dp/dp_panel.h   |  3 +++
-> >>  5 files changed, 20 insertions(+), 11 deletions(-)
-> >>
+> Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+> ---
 
-> >> @@ -461,6 +460,7 @@ static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
-> >>         struct msm_dp_panel_private *panel;
-> >>         struct device_node *of_node;
-> >>         int cnt;
-> >> +       u32 lane_map[DP_MAX_NUM_DP_LANES] = {0, 1, 2, 3};
-> >>
-> >>         panel = container_of(msm_dp_panel, struct msm_dp_panel_private, msm_dp_panel);
-> >>         of_node = panel->dev->of_node;
-> >> @@ -474,10 +474,17 @@ static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
-> >>                 cnt = drm_of_get_data_lanes_count(of_node, 1, DP_MAX_NUM_DP_LANES);
-> >>         }
-> >>
-> >> -       if (cnt > 0)
-> >> +       if (cnt > 0) {
-> >> +               struct device_node *endpoint;
-> >> +
-> >>                 msm_dp_panel->max_dp_lanes = cnt;
-> >> -       else
-> >> +               endpoint = of_graph_get_endpoint_by_regs(of_node, 1, -1);
-> >> +               of_property_read_u32_array(endpoint, "data-lanes", lane_map, cnt);
-> >> +       } else {
-> >>                 msm_dp_panel->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
-> >> +       }
-> > 
-> > Why? This sounds more like dp_catalog or (after the refactoring at
-> > [1]) dp_ctrl. But not the dp_panel.
-> > 
-> > [1] https://patchwork.freedesktop.org/project/freedreno/series/?ordering=-last_updated
-> > 
-> We are used the same prop 'data-lanes = <3 2 0 1>' in mdss_dp_out to keep similar behaviour with dsi_host_parse_lane_data.
-> From the modules used, catalog seems more appropriate, but since the max_dp_lanes is parsed at dp_panel, it has been placed here.
-> Should lane_map parsing in msm_dp_catalog_get, and keep max_dp_lanes parsing at the dp_panel?
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-msm_dp_catalog_get() is going to be removed. Since the functions that
-are going to use it are in dp_ctrl module, I thought that dp_ctrl.c is
-the best place. A better option might be to move max_dp_lanes and
-max_dp_link_rate to dp_link.c as those are link params. Then
-lane_mapping also logically becomes a part of dp_link module.
-
-But now I have a more important question (triggered by Krishna's email
-about SAR2130P's USB): if the lanes are swapped, does USB 3 work on that
-platform? Or is it being demoted to USB 2 with nobody noticing that?
-
-If lanes 0/1 and 2/3 are swapped, shouldn't it be handled in the QMP
-PHY, where we handle lanes and orientation switching?
-
-> >> +
-> >> +       memcpy(msm_dp_panel->lane_map, lane_map, msm_dp_panel->max_dp_lanes * sizeof(u32));
-> >>
-> >>         msm_dp_panel->max_dp_link_rate = msm_dp_panel_link_frequencies(of_node);
-> >>         if (!msm_dp_panel->max_dp_link_rate)
-> >> diff --git a/drivers/gpu/drm/msm/dp/dp_panel.h b/drivers/gpu/drm/msm/dp/dp_panel.h
-> >> index 0e944db3adf2f187f313664fe80cf540ec7a19f2..7603b92c32902bd3d4485539bd6308537ff75a2c 100644
-> >> --- a/drivers/gpu/drm/msm/dp/dp_panel.h
-> >> +++ b/drivers/gpu/drm/msm/dp/dp_panel.h
-> >> @@ -11,6 +11,8 @@
-> >>  #include "dp_aux.h"
-> >>  #include "dp_link.h"
-> >>
-> >> +#define DP_MAX_NUM_DP_LANES    4
-> >> +
-> >>  struct edid;
-> >>
-> >>  struct msm_dp_display_mode {
-> >> @@ -46,6 +48,7 @@ struct msm_dp_panel {
-> >>         bool video_test;
-> >>         bool vsc_sdp_supported;
-> >>
-> >> +       u32 lane_map[DP_MAX_NUM_DP_LANES];
-> >>         u32 max_dp_lanes;
-> >>         u32 max_dp_link_rate;
-> >>
-> >>
-> >> --
-> >> 2.25.1
-> >>
-> > 
-> > 
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
-
--- 
-With best wishes
-Dmitry
+Konrad
 
 -- 
 linux-phy mailing list
