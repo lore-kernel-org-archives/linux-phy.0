@@ -4,70 +4,165 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20BCFD49798
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 03:31:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79974D49795
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 03:32:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KRcAnkZ2PAX5/6cPQZwSpsf4FeTHoOvtKWBR7fdqC2Q=; b=iRbCjd+ShXhO4t
-	q6WSbAfn2oB/fn7/cFOUHK8U9uV+toSHqJkpmQR7ORCky+wLfYWn8zEtyMG0VORsywkeLLMuhU1gL
-	bmx9pc/bMZL8OzyPHHb94ira4/W1wSMTuSO8NpAu1xgtduaan6KbrE3CAXSvS2Or2QxghOMWEFLw6
-	dpZrMeH/5fe132kQUDU5jhcILK2TTVD7nGewgZmO6sgwHuPLS7Bflp5YjbyEhJfhDa1K5BJLL/Rm5
-	jpm7A+wsB0Txuh5YKNRvlCWG/+6DP4DodqrYzpJ6DIzIYpxyN3jOK2ocjgmavpIOcs1GHZny4lv9w
-	wQiFM2l+jv5Y7TqBqNQA==;
+	List-Owner; bh=po5EO4jp+0hzsvx81RXNBlQIrYvYYJ0R0UM8OG2rB6Y=; b=YMtw1wjnhK6E5W
+	7iXs+IiJeOI4PJUgeVfPDkICx1FviSqMFN1571X3u6mVd7r16dBIvhm67ZmbJkprBa6jsH0CHPAHl
+	3KvgjGXx5PFnzKArwKffb2aUm45vhihzg2cvKZYHSVRuNm1R2KjmhwEffKen4vi3Hh2TMLLhdZ8/5
+	FBX+H4MyEKvsi6P8EhRztrNq+GojmnU8obbLU0iBQXFgs2DsijY0DJpQZywDtEMFn1dAUPlS5X1xl
+	R4xFwN9jhmzU7YRtGmkWdk2apuWYR6p6ta+I1LPVh5Q7Vy7VQsYBW/VDVsLNb5lhSISIapt6D8yD0
+	2X8S6l6s3h6ht/qG177g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHx9r-00000004xPB-3aYh;
-	Mon, 02 Dec 2024 03:31:35 +0000
-Received: from mail-m32120.qiye.163.com ([220.197.32.120])
+	id 1tHxAm-00000004xty-0tuM;
+	Mon, 02 Dec 2024 03:32:32 +0000
+Received: from mail-db8eur05on20610.outbound.protection.outlook.com ([2a01:111:f403:2614::610] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHx6k-00000004wWx-44lq;
-	Mon, 02 Dec 2024 03:28:24 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 464683d7;
-	Mon, 2 Dec 2024 11:28:13 +0800 (GMT+08:00)
-Message-ID: <2342f342-672c-447e-90d8-674b748af6a4@rock-chips.com>
-Date: Mon, 2 Dec 2024 11:28:13 +0800
+	id 1tHx9L-00000004xEt-35BW;
+	Mon, 02 Dec 2024 03:31:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=dBP1vhISjf75gEsvKqLwi2dXLpPNF5NK+0ljvvJveinclBtiBq3kC85qIKIGQOPD07WfNXh4HIlS/saSVeC1fZQNJB8fi9nf3kK3Zeh1LfwUY58Tr/krWJSfBWdApnfbJYM2r0SbajYWIAacbcCV+Y6XAwguBB0b8I4KwBnT7/JktR7M/F83kdebJ6EACSBnG73AMi3MfcXFNgxqUiBYjb1JPMdJCgcF+8VzorkycDWIA/ozkIsv9GkzcrjLIiTn1S2XqPl1i/vJo+zve+m//a88oSxlUVJ2UmdCAWv9vC4Zc+LPrfelAI7tjBkXwk6PKUXASQdP5Gc7Mud3Qy4Acw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=TspDlAGAo547NwgAFno/jIClDZr2pKfdfxf0JB2YyAY=;
+ b=dpxqVlzYOHtjr3A5mpt+2NcNRYUlDZ9aauqwTc1BcpvBwIBNn5+kZT6M9s3X67xRctfPYcmJTnHOcuq0z3rGfI3/7hwmh3iN1HFhz0UN9d9dQlg7MHjuFAmdv0bznzR6CWRG3u7xoi8r0Ql1ArwBMCDJSGx6vDoUvSgj+4Iq8iL2G9kA8aZlYUPU6bj48JCXi6GGtO01f5LVdCNyX9iS6yHQlf/qp3UlIVhgM7SMRjFP+Df1lUSd7SGTI+8VOWXjVh7bECMIDn9hIv6lJDM4BRgt3CH1eFhPIPzUpK/YWFDDE3sYr7twsM5EBAJxmWf/D5AML7J4EqP0CkPDMp7p1w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TspDlAGAo547NwgAFno/jIClDZr2pKfdfxf0JB2YyAY=;
+ b=dkkL52THqoHBfFhQZwABNuPimaZhNdqGR3lH8D7IF6qOV9KxaomdpasOXQbcKKhPsjQcm2vvqQw+ZkWxpaZm42YHlVo/SR1cRoKpBxV/NCdJuNn1DsjqDIUG2JsewlKDCQBrjTs3rmUU4PVKaYoYKvDb7JQcqAToA9Ck/ipEpRWFLOIypMadUe2QDSTxNJPLOi3Fi7rESOu9avfvuCUHPHanNIR3cifCi3r58eXx3ZaKCyaAudh64OogwCXjkYVfe6fD/3MuJ0dTQqB0YPMt60oM480pgc0rQeqke3eE304ZphqLoBf6kLMEGu+qAuJv8YJAc6deojNk67Z9U6TMlg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by PA4PR04MB9318.eurprd04.prod.outlook.com (2603:10a6:102:2a5::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.17; Mon, 2 Dec
+ 2024 02:57:20 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::d1ce:ea15:6648:6f90]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::d1ce:ea15:6648:6f90%6]) with mapi id 15.20.8207.017; Mon, 2 Dec 2024
+ 02:57:20 +0000
+From: Liu Ying <victor.liu@nxp.com>
+To: dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: p.zabel@pengutronix.de,
+	maarten.lankhorst@linux.intel.com,
+	mripard@kernel.org,
+	tzimmermann@suse.de,
+	airlied@gmail.com,
+	simona@ffwll.ch,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	glx@linutronix.de,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	aisheng.dong@nxp.com,
+	agx@sigxcpu.org,
+	francesco@dolcini.it,
+	frank.li@nxp.com,
+	dmitry.baryshkov@linaro.org,
+	u.kleine-koenig@baylibre.com
+Subject: [PATCH v5 07/19] dt-bindings: interrupt-controller: Add i.MX8qxp Display Controller interrupt controller
+Date: Mon,  2 Dec 2024 10:56:23 +0800
+Message-Id: <20241202025635.1274467-8-victor.liu@nxp.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241202025635.1274467-1-victor.liu@nxp.com>
+References: <20241202025635.1274467-1-victor.liu@nxp.com>
+X-ClientProxiedBy: SI2PR06CA0005.apcprd06.prod.outlook.com
+ (2603:1096:4:186::12) To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 04/10] phy: phy-rockchip-samsung-hdptx: Add support for
- eDP mode
-To: Sebastian Reichel <sebastian.reichel@collabora.com>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, cristian.ciocaltea@collabora.com,
- l.stach@pengutronix.de, andy.yan@rock-chips.com, hjc@rock-chips.com,
- algea.cao@rock-chips.com, kever.yang@rock-chips.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
- <2131853.KlZ2vcFHjT@diego>
- <6e1f35c0-5ea8-414f-b3ea-4e7222c605ef@rock-chips.com>
- <2886747.Y6S9NjorxK@diego>
- <h4giob7bcrh7qmtepti6huym2llw4ujfmeff76vrgpahb5zy6x@dz6zghsifww5>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <h4giob7bcrh7qmtepti6huym2llw4ujfmeff76vrgpahb5zy6x@dz6zghsifww5>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQhgYT1ZLT05OHh1JSkIYS0lWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
-	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a938569573e03a3kunm464683d7
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NVE6NDo*LTIvARwqHjYRLSIs
-	GAoKCilVSlVKTEhISkpLS0JOSE1NVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFNTE1LNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=FwPs+mgLMwp68zTG3bQWxeiIZ8ov1pFf6HC8h8Y1jUaZPur5mKpIg3OQm7hTItUn0SEhpu1zzicOw9goEnCXOK/Oh3N1OuPZZ1CGRE7oZpPt2ZMKGodcg2kkYgFMR7GFl7lrX9Aso4fOo/IhdFD/GS1wF4kGfIVjZZKpoTBoWsw=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=vInghskew2dflu0c8gMWmhPKWVHVkA65wStDFK4/TW0=;
-	h=date:mime-version:subject:message-id:from;
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM7PR04MB7046:EE_|PA4PR04MB9318:EE_
+X-MS-Office365-Filtering-Correlation-Id: dd0d876a-9f76-4473-a7d9-08dd127d0983
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|52116014|7416014|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?TlORTwG9O1EHYsfuQjqFN9YbW52xEtoVpnIa06+fPUvKESp9Hs/lxvYCHSW+?=
+ =?us-ascii?Q?de48k68wkL6K0zCZypyfwTHogOB+Xm2wmSVunbUECQ31b516z9hGCsh4S7d/?=
+ =?us-ascii?Q?BG0IoyE+wLDHfCjOi/80aaHMRAIeZo0A7+5S8FepjUXygDtRCWwgaY0I0mkL?=
+ =?us-ascii?Q?fNXvdxrpWggpDvcBNw3HUKuMEfoqaIXoKEdz6KBFjacNao8UcjTxCWZ3amfY?=
+ =?us-ascii?Q?9Xd8FyMRlB4lnTCuZ+PgJHpmijaTvU2ulWoeQoiAPMwW7uqfkudJaNHOTeEp?=
+ =?us-ascii?Q?eInpTdlQp6AhO3sUh8sCYJ3bWCCdwdgPmjGNb+ZdGoho6ca7UAkP/DyKYHIz?=
+ =?us-ascii?Q?EG16SioKQNHHdb9DYDjtKFlsP69kJMLsVQHuELrUYFz/fmF6xu4ikRWi5Fit?=
+ =?us-ascii?Q?SKBSAbp5h+Kq4eoWDqmVIun62J9ZxRL6UNOoNCdqzzBrPpdM4n9F7I8wGL0z?=
+ =?us-ascii?Q?VPDdkBayypmkd/Pvp3tRMASaHNokVWvAvkbXEQ+C/FvmbwM5bEG/YK9It3FU?=
+ =?us-ascii?Q?1MtRdROv8L1QtbnNIZT4aG5jOP49GpxFET0a7FDvRcE9s5Ke8HwK6Ywfha3s?=
+ =?us-ascii?Q?R9CebjU+ABoHNIv2K2FjKP5Ofl6tzZQBSquTStmeNc8eEgwXXpyPPqQ5TMCS?=
+ =?us-ascii?Q?QEQ91X8cUA/i46Aesiw37o7IkaOcRPVWqSGfR3/T36m0par7l8rb3oemwuON?=
+ =?us-ascii?Q?Z2FhVGuoXOWuUup9t5bRlEePi07M4wPVg58x7OdLYfJHjnpHtZifEXgZpdr1?=
+ =?us-ascii?Q?xV8rA8bNyZ6fO2j29j8fs/bQuGNNOrxgp4tL6KLb7ZMCHK91aCFBYcdG+xOt?=
+ =?us-ascii?Q?jI+NytcmgeKiEYbb6dohmPLoYC1c63iZDYfcxcOSNfjbeaCLK1hmVxzzLOwV?=
+ =?us-ascii?Q?dvY3MwPidn44DCkPTGO9Y31m0UGRZn53ZPGWS/J25s5kiHlOM4apkVPl0Kik?=
+ =?us-ascii?Q?IX66B52BEEVD9kH4bQvR032AtdnnA+EFQyZpUkLJdRTlPCwOPlLFkU85LE3k?=
+ =?us-ascii?Q?sJqFTPkP5NwLPmDXr5lP3bGn6wc4CqPXoqbQIltbuoQFhaa/Q48BPSrURkPW?=
+ =?us-ascii?Q?YNg58aqpz7pSSoU0WLyc5To+DdBEjoCQHgyxAoAc3Ex69A76SRK4jq6tTmRS?=
+ =?us-ascii?Q?ug4vZ2fHtb327sdmfQr4S8jwFzMUw7zH8JvCpHa6NYGN694DCKAv+vYjLbBx?=
+ =?us-ascii?Q?mL/7YrJ4rx0N8LXXzWzrV+5v/LHvOvniw8JH+hbef9g3LacAw65ZIrxQ1KKT?=
+ =?us-ascii?Q?WxSf50S9voVXWs3AYyhhrUC6LOEkG4s3HIBjgYblIn1jaF9XvnggTzQHA812?=
+ =?us-ascii?Q?3wCdsCQNsFjIYniaK7eZTddNA9d/H9HPI4AlWIizZ0f5F0XVunVu0wEhXdmm?=
+ =?us-ascii?Q?bPOtpZ8=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(52116014)(7416014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?GfXQzSK3UdfePD+hMU3stZW7frki7Lj4uojN1Vy9lr9MdtJtwU7nj7B/KYNk?=
+ =?us-ascii?Q?veIMc8y1zcINcCZIT3ufha0SdNXGW0vKilEM5jh+0OXorkCYb+iYp9O/5fK+?=
+ =?us-ascii?Q?aZmTJNQzC2II/ja7ZPsQ6GtBu+ZlzKx7cVqeFQtyLorwc7aCi1Iq8okAMmG7?=
+ =?us-ascii?Q?/v0fseKGws6Hl4IyYOrZW2NtwPMNukotrib76+LChPZNmypFuWExkzmEZywd?=
+ =?us-ascii?Q?NsDOiTG2xaA6/voO0UNTn0TKV27JnLn3kPZtZH8vGTrS35ftz9ga9kXlho51?=
+ =?us-ascii?Q?8beu7UY9j7fZPfxCPoKsvJq2lp0sP8xTg2kltSBLdlN/boAInHh0qgzaFD5n?=
+ =?us-ascii?Q?gVZm4QkT5xSzLE1rG8uv5Vgru/7iHkrcccomEh4HXsvNYsg8nfQDOg2DhVZ8?=
+ =?us-ascii?Q?HAXzqqVPlRC8kM9cCjDEi1oRzlmgiEXVKBqxCULm2yWAPhtj3QYyMcBhElk6?=
+ =?us-ascii?Q?6hkeVZfGTR0egQabNKUHsVbDeZTAWv+pIF8bldL7E2i053PLLNMAXukFLBeN?=
+ =?us-ascii?Q?2pX2oWSmySPReLKrF8i8jdLQIq1r1L+NHA9kRuG2bqRlEdGEBIDE5icw+io6?=
+ =?us-ascii?Q?EGK3ox0PkZzAuWRmPv4zrGNHEKRS6E1QoNUHpQ9rekq3xO+86UARFJC/h2oZ?=
+ =?us-ascii?Q?3XQWuloA+JRrii+QG7bBkGyd5dBHp9DBG7pUoiNlVR3AtIrZYONAnWoeXWi5?=
+ =?us-ascii?Q?uRPftxhYYXxfW3MZdB1iFuYTrzUSu0wtPwELntRpiUUPRWVYYn+3VLFAocwR?=
+ =?us-ascii?Q?N9WCPGoDqetfJm9+hw3PpD4rEV5wGpKkmh2IgnrOyAzEd3l79GSKF1klWjXF?=
+ =?us-ascii?Q?ih10h23ldvqY30swPwsNLxjMx5suROgtKtn8Hk01hTFszFNoW4Tekbs7Kqjp?=
+ =?us-ascii?Q?k+mGhDZdKkViqYU7tIuUbS7kg67vpwup7MqGkcsYxa58dIuE4gjsc6Hr/dVX?=
+ =?us-ascii?Q?f2tV5IBBdGuGlUnwEqvXR6ebeTRM6oBcq5sGd4W8/tSgqoq+ebnYw5CYTMov?=
+ =?us-ascii?Q?3Aq/NXOoB3D8oK77AVkakdh7hwFyeFIF/GKxIyYzxtFYmTBWRt+1Lg3f4pu4?=
+ =?us-ascii?Q?adfquScwmndqWVbX0dsPznBYx3wfovCiy0s3HtNfY55U1dgB0vCDpw2sO7bz?=
+ =?us-ascii?Q?jaz9Pkvv71UdCrDebTlPVd++sdBuUAm228n0l90GHLeGq1Q1PVUAXSFJEZLv?=
+ =?us-ascii?Q?RdMFed4uNo+mhfbsJOc3A5MM7tE3UL/xQIrNSzegB60xK4+ERV3eGDR288AG?=
+ =?us-ascii?Q?V5zP62g7CA+mdOqjXIWdI5icTUFTVB+0HvbFX9KA9fd0SXkalh9X/GvsDWJk?=
+ =?us-ascii?Q?DMgfh+k2uKEeyUzV67O1pOsCwOcrrmzv4xVzdv4zgOVX3X998YbP8cbkC6KI?=
+ =?us-ascii?Q?snWRDy+09TCmSctaZlRtETF9F6hYW792AvCWR386t+9X97ed3uGgbZPJU2//?=
+ =?us-ascii?Q?g3CIk89XwtzqwxY4ceUZbE247dyF/IxK8FJJ7JwxJYB9MytH8etDkN/dC6ND?=
+ =?us-ascii?Q?0ahfmwmjYlEJl1HI59tEiUBHhYyVmUxvfcxxIGyUWMYKOikiDkdlM9EbTOiO?=
+ =?us-ascii?Q?Jjw2ptGOLXMmt1ZLjXL6x/7lVjmygTSEKr54dHo9?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd0d876a-9f76-4473-a7d9-08dd127d0983
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2024 02:57:19.9603
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 15N4/5NnNomLBsrfHCJ2qcf7NEjVXo9XAsUupJyO9q6hpkvB8IdjA71mkidn3L7wqJA5mYdrZFX1lbr0rUdI9A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9318
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241201_192823_536025_4034F5B0 
-X-CRM114-Status: GOOD (  40.54  )
+X-CRM114-CacheID: sfid-20241201_193103_922521_D3BB88F3 
+X-CRM114-Status: GOOD (  12.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,126 +174,362 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGksCgpPbiAyMDI0LzEyLzIgNjo1OSwgU2ViYXN0aWFuIFJlaWNoZWwgd3JvdGU6Cj4gSGksCj4g
-Cj4gT24gU2F0LCBOb3YgMzAsIDIwMjQgYXQgMDk6MjU6MTJQTSArMDEwMCwgSGVpa28gU3TDvGJu
-ZXIgd3JvdGU6Cj4+IEFtIEZyZWl0YWcsIDI5LiBOb3ZlbWJlciAyMDI0LCAwMzo0Mzo1NyBDRVQg
-c2NocmllYiBEYW1vbiBEaW5nOgo+Pj4gT24gMjAyNC8xMS8yNyAxOTowNCwgSGVpa28gU3TDvGJu
-ZXIgd3JvdGU6Cj4+Pj4gQW0gTWl0dHdvY2gsIDI3LiBOb3ZlbWJlciAyMDI0LCAxMjowMDoxMCBD
-RVQgc2NocmllYiBEYW1vbiBEaW5nOgo+Pj4+PiBPbiAyMDI0LzExLzI3IDE3OjI5LCBIZWlrbyBT
-dMO8Ym5lciB3cm90ZToKPj4+Pj4+IEFtIE1pdHR3b2NoLCAyNy4gTm92ZW1iZXIgMjAyNCwgMDg6
-NTE6NTEgQ0VUIHNjaHJpZWIgRGFtb24gRGluZzoKPj4+Pj4+PiArc3RhdGljIGludCBya19oZHB0
-eF9waHlfc2V0X21vZGUoc3RydWN0IHBoeSAqcGh5LCBlbnVtIHBoeV9tb2RlIG1vZGUsCj4+Pj4+
-Pj4gKwkJCQkgaW50IHN1Ym1vZGUpCj4+Pj4+Pj4gK3sKPj4+Pj4+PiArCXJldHVybiAwOwo+Pj4+
-Pj4+ICt9Cj4+Pj4+PiBhbmFsb2dpeF9kcF9waHlfcG93ZXJfb24KPj4+Pj4+IEkgdGhpbmsgaXQg
-bWlnaHQgbWFrZSBzZW5zZSB0byBnbyB0aGUgc2FtZSB3YXkgYXMgdGhlIERDUEhZIGFuZCBhbHNv
-Cj4+Pj4+PiBuYW5lbmcgY29tYm9waHksIHRvIHVzZSAjcGh5LWNlbGxzID0gMSB0byBzZWxlY3Qg
-dGhlIHBoeS1tb2RlIHZpYSBEVCAuCj4+Pj4+Pgo+Pj4+Pj4gU2VlIFswXSBmb3IgU2ViYXN0aWFu
-cyBpbml0aWFsIHN1Z2dlc3Rpb24gcmVnYXJkaW5nIHRoZSBEQy1QSFkuCj4+Pj4+PiBUaGUgbmFu
-ZW5nIGNvbWJvcGh5IGFscmVhZHkgdXNlcyB0aGF0IHNjaGVtZSBvZiBtb2RlLXNlbGVjdGlvbiB0
-b28uCj4+Pj4+Pgo+Pj4+Pj4gVGhlcmUgaXMgb2YgY291cnNlIHRoZSBpc3N1ZSBvZiBiYWNrd2Fy
-ZHMtY29tcGF0aWJpbGl0eSwgYnV0IHRoYXQgY2FuIGJlCj4+Pj4+PiB3b3JrZWQgYXJvdW5kIGlu
-IHRoZSBiaW5kaW5nIHdpdGggc29tZXRoaW5nIGxpa2U6Cj4+Pj4+Pgo+Pj4+Pj4gICAgICcjcGh5
-LWNlbGxzJzoKPj4+Pj4+ICAgICAgICBlbnVtOiBbMCwgMV0KPj4+Pj4+ICAgICAgICBkZXNjcmlw
-dGlvbjogfAo+Pj4+Pj4gICAgICAgICAgSWYgI3BoeS1jZWxscyBpcyAwLCBQSFkgbW9kZSBpcyBz
-ZXQgdG8gUEhZX1RZUEVfSERNSQo+Pj4+Pj4gICAgICAgICAgSWYgI3BoeS1jZWxscyBpcyAxIG1v
-ZGUgaXMgc2V0IGluIHRoZSBQSFkgY2VsbHMuIFN1cHBvcnRlZCBtb2RlcyBhcmU6Cj4+Pj4+PiAg
-ICAgICAgICAgIC0gUEhZX1RZUEVfSERNSQo+Pj4+Pj4gICAgICAgICAgICAtIFBIWV9UWVBFX0RQ
-Cj4+Pj4+PiAgICAgICAgICBTZWUgaW5jbHVkZS9kdC1iaW5kaW5ncy9waHkvcGh5LmggZm9yIGNv
-bnN0YW50cy4KPj4+Pj4+Cj4+Pj4+PiBQSFlfVFlQRV9IRE1JIG5lZWRzIHRvIGJlIGFkZGVkIHRv
-IGluY2x1ZGUvZHQtYmluZGluZ3MvcGh5L3BoeS5oCj4+Pj4+PiBidXQgUEhZX1RZUEVfRFAgaXMg
-YWxyZWFkeSB0aGVyZS4KPj4+Pj4+Cj4+Pj4+PiBUaGF0IHdheSB3ZSB3b3VsZCBzdGFuZGFyZGl6
-ZSBvbiBvbmUgZm9ybSBvZiBhY2Nlc3NpbmcgcGh5LXR5cGVzCj4+Pj4+PiBvbiByazM1ODggOi0p
-IC4KPj4+Pj4+Cj4+Pj4+PiBBbHNvIHNlZSB0aGUgTWVkaWF0ZWsgQ1NJIHJ4IHBoeSBkb2luZyB0
-aGlzIHRvbyBhbHJlYWR5IFsxXQo+Pj4+Pj4KPj4+Pj4+Cj4+Pj4+PiBIZWlrbwo+Pj4+Pj4KPj4+
-Pj4+IFswXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1yb2NrY2hpcC91ZGFkNHFmM283
-a3Q0NW51ejZneHN2c21wcmg0cm55Znhmb2dvcG1paDZ1Y3puaXppaEA3b2oyanJubGZvbnovCj4+
-Pj4+PiBbMV0gaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQv
-dG9ydmFsZHMvbGludXguZ2l0L3RyZWUvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L3BoeS9tZWRpYXRlayxtdDgzNjUtY3NpLXJ4LnlhbWwKPj4+Pj4+Cj4+Pj4+Cj4+Pj4+IEl0IGlz
-IHJlYWxseSBhIG5pY2Ugd2F5IHRvIHNlcGFyYXRlIEhETUkgYW5kIERQIG1vZGVzLgo+Pj4KPj4+
-IEkgYXBvbG9naXplIGZvciByZW9wZW5pbmcgdGhlIGRpc2N1c3Npb24gYWJvdXQgdGhlIHBoeS10
-eXBlcyBzZXR0aW5nLgo+Pgo+PiB0aGVyZSBpcyBkZWZpbml0bHkgbm8gbmVlZCB0byBhcG9sb2dp
-emUuIFdlJ3JlIHRyeWluZyB0byBmaW5kIHRoZSBiZXN0Cj4+IHNvbHV0aW9uIGFmdGVyYWxsIDot
-KSAuCj4+Cj4+PiBXaXRoIHRoZSAuc2V0X21vZGUoKSBvZiBzdHJ1Y3QgcGh5X29wcywgdGhlIEhE
-TUkgYW5kIGVEUCBkeW5hbWljCj4+PiBzd2l0Y2hpbmcgY2FuIGJlIGFjaGlldmVkLCB3aGljaCBq
-dXN0IGRlcGVuZHMgb24gdGhlIHJpZ2h0IHNldHRpbmcgb2YKPj4+IGVudW0gcGh5X21vZGUgaW4g
-aW5jbHVkZS9saW51eC9waHkvcGh5LmguIFNvIHRoZSBwcmV2aW91cyB3YXkgb2YKPj4+IGNvbmZp
-Z3VyaW5nIHBoeSBtb2RlIG1heSBiZSBhbHNvIGdvb2QuCj4+Cj4+IEkgdGhpbmsgdGhlIGRlY2lk
-aW5nIGZhY3RvciBpcywgaXMgdGhlcmUgYSB1c2UtY2FzZSBmb3IgbmVlZGluZyB0byBzd2l0Y2gK
-Pj4gbW9kZXMgYXQgcnVudGltZS4KPj4KPj4gSSBkbyB0aGluayB0aGUgbW9kZSBmb3IgdGhlIGRj
-LXBoeSBhbmQgYWxzbyB0aGUgaGRwdHgtcGh5IGlzIHByZXR0eSBtdWNoCj4+IGRlY2lkZWQgYnkg
-dGhlIGJvYXJkIGRlc2lnbi4KPj4KPj4gSS5lLiB3aGVuIHlvdSBlbmQgdXAgaW4gYSBEUC1jb25u
-ZWN0b3IgKG9yIGVEUC1wYW5lbCkgb24geW91ciBib2FyZCB5b3UKPj4gbmVlZCBEUCBtb2RlLCBh
-bmQgd2hlbiB5b3UgZW5kIHVwIGluIGEgaGRtaS1jb25uZWN0b3IgeW91IG5lZWQgdGhlCj4+IEhE
-TUkgcGh5IG1vZGUuCj4+Cj4+IFNvIEkgdGhpbmsgdGhlIHBoeS1tb2RlIGZvciB0aGUgaGRwdHgt
-cGh5IGlzIGxhcmdlbHkgZGljdGF0ZWQgYnkgdGhlIHN0YXRpYwo+PiBib2FyZCBkZWZpbml0aW9u
-IChsaWtlIGRldmljZXRyZWUpLCBoZW5jZSBnb2luZyB3aXRoIHRoZSBkdC1hcmd1bWVudCBmb3IK
-Pj4gdGhlIG1vZGUuCj4+Cj4+IExpa2Ugc2ltaWxhciB0byB0aGUgTmFuZW5nIGNvbWJvcGh5LCBz
-ZWxlY3RpbmcgaXRzIG1vZGUgdmlhIGFyZ3VtZW50Cj4+IGJlY2F1c2UgZGVjaWRpbmcgaWYgaXQg
-ZW5kcyB1cCBpbiBhIHNhdGEgcG9ydCBpcyBhIGJvYXJkLWRlc2lnbiB0aGluZy4KPj4KPj4gSXMg
-dGhlcmUgYSB1c2UtY2FzZSB3aGVyZSB5b3UgbmVlZCB0byBzd2l0Y2ggYXQgcnVudGltZSBiZXR3
-ZWVuCj4+IEhETUkgYW5kIGVEUD8gTGlrZSBzdGFydGluZyB0aGUgcGh5IGluIGVEUCBtb2RlIGJ1
-dCB0aGVuIG5lZWRpbmcKPj4gdG8gc3dpdGNoIHRvIEhETUkgbW9kZSwgd2hpbGUgdGhlIGRldmlj
-ZSBpcyBydW5uaW5nPwoKSW5kZWVkLCB3ZSBoYXZlIHRoZSBib2FyZCBhcyB5b3UgZGVzY3JpYmVk
-LCBvbiB3aGljaCB0aGUgRFAtY29ubmVjdG9yIAphbmQgSERNSS1jb25uZWN0b3IgYm90aCBoYXZl
-IGJlZW4gY29uZmlndXJlZC4KCkFuZCB0aGUgZHluYW1pYyBzd2l0Y2hpbmcgaXMgbW9yZSB1c2Vm
-dWwgZm9yIFJLMzU3Niwgd2hpY2ggaGFzIHRoZSBzYW1lIAplRFAvSERNSSBkZXNpZ24gYXMgUksz
-NTg4IGJ1dCBvbmx5IG9uZSBlRFAgY29udHJvbGxlci9IRE1JIApjb250cm9sbGVyL0hEUFRYIHBo
-eS4gV2UgY2FuIG9ubHkgZW5hYmxlIGJvdGggb2YgZURQL0hETUkgYnkgdGhpcyB3YXkuCgo+IAo+
-IEkgYmVsaWV2ZSB0aGUgZURQIGNvbnRyb2xsZXIgY2FuIG9ubHkgdXNlIHRoZSBQSFkgaW4gZURQ
-IG1vZGUgYW5kCj4gdGhlIEhETUkgY29udHJvbGxlciBjYW4gb25seSB1c2UgaXQgaW4gSERNSSBt
-b2RlLiBTbyBpbiBvcmRlciB0bwo+IHN1cHBvcnQgcnVudGltZSBzd2l0Y2hpbmcsIHRoZSBmb2xs
-b3dpbmcgb3B0aW9ucyBhcmUgcG9zc2libGU6Cj4gCj4gMS4gRW5hYmxlIGJvdGggY29udHJvbGxl
-cnMsIHRoZSBQSFkgZGVjaWRlcyB3aGljaCBvbmUgaXMgcmVhbGx5Cj4gICAgIHVzZWQsIHRoZSBv
-dGhlciBvbmUgaXMgYmFzaWNhbGx5IGEgbm9uLWZ1bmN0aW9uYWwgZHVtbXkgZGV2aWNlCj4gICAg
-IHVudGlsIHRoZSBQSFkgaXMgcmVjb25maWd1cmVkLiBUaGlzIHJlcXVpcmVzIHRoZSBzZXRfbW9k
-ZSgpCj4gICAgIGNhbGxiYWNrLCBzaW5jZSB0aGUgSERNSSBhbmQgZURQIGRyaXZlcnMgYm90aCBl
-eHBlY3QgdGhlaXIKPiAgICAgUEhZIHRvIGJlIGVuYWJsZWQuCj4gCj4gMi4gUHJvcGVybHkgZW5h
-YmxlIC8gZGlzYWJsZSB0aGUgdXNlZCBjb250cm9sbGVyLCBzbyB0aGF0IG9ubHkgb25lCj4gICAg
-IGNvbnRyb2xsZXIgaXMgYWN0aXZlIGF0IHRoZSBzYW1lIHRpbWUuIEluIHRoaXMgY2FzZSB0aGUg
-c3dpdGNoaW5nCj4gICAgIGlzIGhhbmRsZWQgb25lIGxheWVyIGFib3ZlIGFuZCB0aGUgUEhZIGhh
-cyBub3RoaW5nIHRvIGRvIHdpdGggaXQuCj4gICAgIFRoZSBwaHlfZW5hYmxlIGNhbGwgZnJvbSBl
-YWNoIGNvbnRyb2xsZXIgd291bGQganVzdCBzZXQgaXQgdXAgaW4KPiAgICAgdGhlIHJpZ2h0IG1v
-ZGUuCj4gCj4gSSBndWVzcyBvcHRpb24gMSBpcyB0aGUgaGFja2VkIHNvbHV0aW9uLCB3aGljaCBp
-cyBlYXNpZXIgdG8KPiBpbXBsZW1lbnQgYXMgRFJNJ3MgaG90cGx1ZyBhYmlsaXRpZXMgYXJlIHF1
-aXRlIGxpbWl0ZWQgYXQgdGhlIG1vbWVudAo+IGFzIGZhciBhcyBJIGtub3cuIEkgdGhpbmsgdGhl
-IHNlY29uZCBzb2x1dGlvbiBsb29rcyBtdWNoIGNsZWFuZXIgYW5kCj4gc2hvdWxkIGJlIHByZWZl
-cmVkIGZvciB1cHN0cmVhbS4gVGhhdCBzb2x1dGlvbiBkb2VzIG5vdCByZXF1aXJlCj4gY2FsbGlu
-ZyBzZXRfbW9kZSgpIGZvciBydW50aW1lIHN3aXRjaGluZyBtYWtpbmcgdGhpcyB3aG9sZSBhcmd1
-bWVudAo+IHZvaWQgOikKPiAKCllvdXIgZnJpZW5kbHkgYW5kIGRldGFpbGVkIGFuYWx5c2lzIGhh
-cyBicm91Z2h0IG1lIHNvbWUgdmFsdWFibGUgCmluc2lnaHRzLiA6KQoKVGhlIG9wdGlvbiAyIGlz
-IHJlYWxseSBhIGJldHRlciB3YXkgdG8gc3VwcG9ydCB0aGUgZHluYW1pYyBzd2l0Y2hpbmcsIAph
-bmQgd2Ugc3RpbGwgbmVlZCB0aGUgLnNldF9tb2RlKCkgdG8gc2VsZWN0IHRoZSBjb25maWd1cmF0
-aW9ucyBmb3IgCmVpdGhlciBlRFAgb3IgSERNSSBpbiBIRFBUWCBwaHkgYXQgdGhlIGNvbnRyb2xs
-ZXIgbGV2ZWwuIFdvdWxkIHlvdSBtaW5kCmVsYWJvcmF0aW5nIG9uIHRoZSB1c2VmdWwgd2F5IHRv
-IGNob29zZSB0aGUgcGh5IG1vZGUgZm9yIHRoZSBzZWNvbmQgCnNvbHV0aW9uPwoKPiBGV0lXIEkg
-dGhpbmsgdGhlIERUIGFyZ3VtZW50IGJhc2VkIG1vZGUgc2V0dGluZyBhbmQgdGhlIHJ1bnRpbWUg
-c2V0X21vZGUKPiBhcmUgbm90IG5lY2Vzc2FyaWx5IG11dHVhbCBleGNsdXNpdmUuIEluIHRoZW9y
-eSBvbmUgY291bGQgc3VwcG9ydCBib3RoCj4gYW5kIGFkZGluZyBzZXRfbW9kZSBzdXBwb3J0IGxh
-dGVyIGRvZXMgbm90IGNoYW5nZSBhbnkgQUJJIGFzIGZhciBhcwo+IEkgY2FuIHNlZS4gQmFzaWNh
-bGx5IGhhbmRsZSBpdCBsaWtlIHBpbiBtdXgvY29uZmlndXJhdGlvbiBzZXR0aW5ncywKPiB3aGlj
-aCBhcmUgdXN1YWxseSBhdXRvbWF0aWNhbGx5IGhhbmRsZWQgYnkgdGhlIGRldmljZSBjb3JlIGJh
-c2VkIG9uCj4gRFQgaW5mb3JtYXRpb24sIGV4Y2VwdCBmb3Igc29tZSBkcml2ZXJzIHdoaWNoIGhh
-dmUgc3BlY2lhbCBuZWVkcy4KPiAKCj4+PiBBbmQgb3RoZXIgcGh5cyBtYXkgd2FudCB0byBzdXBw
-b3J0IGR5bmFtaWMgc3dpdGNoaW5nIHRvbywgbGlrZSB0aGUKPj4+IFJvY2tjaGlwIFVTQkRQIGNv
-bWJvIHBoeS4KPj4KPj4gSSBndWVzcyBVU0JEUCBpcyBzcGVjaWFsIGluIHRoYXQgaW4gYWxzbyBk
-b2VzIGJvdGggbW9kZXMgZHluYW1pY2FsCj4+IGRlcGVuZGluZyBvbiBpdHMgdXNlIChsaWtlIHR5
-cGUtYyB3aXRoIG9wdGlvbiBEUCBhbHRtb2RlKQo+IAo+IFRoZSBVU0JEUCBQSFkgaXMgaW5kZWVk
-IHF1aXRlIGRpZmZlcmVudCBmcm9tIHRoZSBQSFlzIGluIHlvdXIgbGlzdAo+IGFib3ZlLCBidXQg
-Zm9yIGEgZGlmZmVyZW50IHJlYXNvbjogQWxsIHRoZSBjb21iaW5lZCBQSFlzIHlvdSBsaXN0ZWQK
-PiBhYm92ZSBvbmx5IHN1cHBvcnQgb25lIG1vZGUgYXQgdGhlIHNhbWUgdGltZS4gRS5nLiB5b3Ug
-bmVlZCB0bwo+IGRlY2lkZSBiZXR3ZWVuIFBDSWUsIFNBVEEgYW5kIFVTQjMgbW9kZSBmb3IgdGhl
-IE5hbmVuZyBjb21ib3BoeS4KPiAKPiBGb3IgdGhlIFVTQkRQIFBIWSB0aGUgbW9kZXMgYXJlIG5v
-dCBtdXR1YWxseSBleGNsdXNpdmUuIFRoZSBVU0IKPiBjb250cm9sbGVyIGNhbiByZXF1ZXN0IHRo
-ZSBVU0JEUCBQSFkgaW4gVVNCIG1vZGUgYXQgdGhlIHNhbWUgdGltZQo+IGFzIHRoZSBEUCBjb250
-cm9sbGVyIHJlcXVlc3RzIGl0IGluIERQIG1vZGUuIFNvbWUgYWRkaXRpb25hbAo+IHJlZ2lzdGVy
-cyBjb25maWd1cmUgaG93IHRoZSBsYW5lcyBhcmUgYmVpbmcgbXV4ZWQuIEEgdHlwY2lhbCBzZXR1
-cAo+IHdvdWxkIGJlIDIgbGFuZXMgZm9yIFVTQjMgYW5kIDIgbGFuZXMgZm9yIERQLgo+IAo+IEdy
-ZWV0aW5ncywKPiAKPiAtLSBTZWJhc3RpYW4KCkJlc3QgcmVnYXJkcywKRGFtb24KCgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+i.MX8qxp Display Controller has a built-in interrupt controller to support
+Enable/Status/Preset/Clear interrupt bit.
+
+Signed-off-by: Liu Ying <victor.liu@nxp.com>
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+---
+v5:
+* No change.
+
+v4:
+* No change.
+
+v3:
+* Collect Rob's R-b tag.
+
+v2:
+* Drop unneeded "|". (Krzysztof)
+
+ .../fsl,imx8qxp-dc-intc.yaml                  | 318 ++++++++++++++++++
+ 1 file changed, 318 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml
+
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml b/Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml
+new file mode 100644
+index 000000000000..6985ee644a25
+--- /dev/null
++++ b/Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml
+@@ -0,0 +1,318 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/interrupt-controller/fsl,imx8qxp-dc-intc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX8qxp Display Controller interrupt controller
++
++description: |
++  The Display Controller has a built-in interrupt controller with the following
++  features for all relevant HW events:
++
++  * Enable bit (mask)
++  * Status bit (set by an HW event)
++  * Preset bit (can be used by SW to set status)
++  * Clear bit (used by SW to reset the status)
++
++  Each interrupt can be connected as IRQ (maskable) and/or NMI (non-maskable).
++  Alternatively the un-masked trigger signals for all HW events are provided,
++  allowing it to use a global interrupt controller instead.
++
++  Each interrupt can be protected against SW running in user mode. In that case,
++  only privileged AHB access can control the interrupt status.
++
++maintainers:
++  - Liu Ying <victor.liu@nxp.com>
++
++properties:
++  compatible:
++    const: fsl,imx8qxp-dc-intc
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  interrupt-controller: true
++
++  "#interrupt-cells":
++    const: 1
++
++  interrupts:
++    items:
++      - description: store9 shadow load interrupt(blit engine)
++      - description: store9 frame complete interrupt(blit engine)
++      - description: store9 sequence complete interrupt(blit engine)
++      - description:
++          extdst0 shadow load interrupt
++          (display controller, content stream 0)
++      - description:
++          extdst0 frame complete interrupt
++          (display controller, content stream 0)
++      - description:
++          extdst0 sequence complete interrupt
++          (display controller, content stream 0)
++      - description:
++          extdst4 shadow load interrupt
++          (display controller, safety stream 0)
++      - description:
++          extdst4 frame complete interrupt
++          (display controller, safety stream 0)
++      - description:
++          extdst4 sequence complete interrupt
++          (display controller, safety stream 0)
++      - description:
++          extdst1 shadow load interrupt
++          (display controller, content stream 1)
++      - description:
++          extdst1 frame complete interrupt
++          (display controller, content stream 1)
++      - description:
++          extdst1 sequence complete interrupt
++          (display controller, content stream 1)
++      - description:
++          extdst5 shadow load interrupt
++          (display controller, safety stream 1)
++      - description:
++          extdst5 frame complete interrupt
++          (display controller, safety stream 1)
++      - description:
++          extdst5 sequence complete interrupt
++          (display controller, safety stream 1)
++      - description:
++          disengcfg0 shadow load interrupt
++          (display controller, display stream 0)
++      - description:
++          disengcfg0 frame complete interrupt
++          (display controller, display stream 0)
++      - description:
++          disengcfg0 sequence complete interrupt
++          (display controller, display stream 0)
++      - description:
++          framegen0 programmable interrupt0
++          (display controller, display stream 0)
++      - description:
++          framegen0 programmable interrupt1
++          (display controller, display stream 0)
++      - description:
++          framegen0 programmable interrupt2
++          (display controller, display stream 0)
++      - description:
++          framegen0 programmable interrupt3
++          (display controller, display stream 0)
++      - description:
++          signature0 shadow load interrupt
++          (display controller, display stream 0)
++      - description:
++          signature0 measurement valid interrupt
++          (display controller, display stream 0)
++      - description:
++          signature0 error condition interrupt
++          (display controller, display stream 0)
++      - description:
++          disengcfg1 shadow load interrupt
++          (display controller, display stream 1)
++      - description:
++          disengcfg1 frame complete interrupt
++          (display controller, display stream 1)
++      - description:
++          disengcfg1 sequence complete interrupt
++          (display controller, display stream 1)
++      - description:
++          framegen1 programmable interrupt0
++          (display controller, display stream 1)
++      - description:
++          framegen1 programmable interrupt1
++          (display controller, display stream 1)
++      - description:
++          framegen1 programmable interrupt2
++          (display controller, display stream 1)
++      - description:
++          framegen1 programmable interrupt3
++          (display controller, display stream 1)
++      - description:
++          signature1 shadow load interrupt
++          (display controller, display stream 1)
++      - description:
++          signature1 measurement valid interrupt
++          (display controller, display stream 1)
++      - description:
++          signature1 error condition interrupt
++          (display controller, display stream 1)
++      - description: reserved
++      - description:
++          command sequencer error condition interrupt(command sequencer)
++      - description:
++          common control software interrupt0(common control)
++      - description:
++          common control software interrupt1(common control)
++      - description:
++          common control software interrupt2(common control)
++      - description:
++          common control software interrupt3(common control)
++      - description:
++          framegen0 synchronization status activated interrupt
++          (display controller, safety stream 0)
++      - description:
++          framegen0 synchronization status deactivated interrupt
++          (display controller, safety stream 0)
++      - description:
++          framegen0 synchronization status activated interrupt
++          (display controller, content stream 0)
++      - description:
++          framegen0 synchronization status deactivated interrupt
++          (display controller, content stream 0)
++      - description:
++          framegen1 synchronization status activated interrupt
++          (display controller, safety stream 1)
++      - description:
++          framegen1 synchronization status deactivated interrupt
++          (display controller, safety stream 1)
++      - description:
++          framegen1 synchronization status activated interrupt
++          (display controller, content stream 1)
++      - description:
++          framegen1 synchronization status deactivated interrupt
++          (display controller, content stream 1)
++    minItems: 49
++
++  interrupt-names:
++    items:
++      - const: store9_shdload
++      - const: store9_framecomplete
++      - const: store9_seqcomplete
++      - const: extdst0_shdload
++      - const: extdst0_framecomplete
++      - const: extdst0_seqcomplete
++      - const: extdst4_shdload
++      - const: extdst4_framecomplete
++      - const: extdst4_seqcomplete
++      - const: extdst1_shdload
++      - const: extdst1_framecomplete
++      - const: extdst1_seqcomplete
++      - const: extdst5_shdload
++      - const: extdst5_framecomplete
++      - const: extdst5_seqcomplete
++      - const: disengcfg_shdload0
++      - const: disengcfg_framecomplete0
++      - const: disengcfg_seqcomplete0
++      - const: framegen0_int0
++      - const: framegen0_int1
++      - const: framegen0_int2
++      - const: framegen0_int3
++      - const: sig0_shdload
++      - const: sig0_valid
++      - const: sig0_error
++      - const: disengcfg_shdload1
++      - const: disengcfg_framecomplete1
++      - const: disengcfg_seqcomplete1
++      - const: framegen1_int0
++      - const: framegen1_int1
++      - const: framegen1_int2
++      - const: framegen1_int3
++      - const: sig1_shdload
++      - const: sig1_valid
++      - const: sig1_error
++      - const: reserved
++      - const: cmdseq_error
++      - const: comctrl_sw0
++      - const: comctrl_sw1
++      - const: comctrl_sw2
++      - const: comctrl_sw3
++      - const: framegen0_primsync_on
++      - const: framegen0_primsync_off
++      - const: framegen0_secsync_on
++      - const: framegen0_secsync_off
++      - const: framegen1_primsync_on
++      - const: framegen1_primsync_off
++      - const: framegen1_secsync_on
++      - const: framegen1_secsync_off
++    minItems: 49
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - interrupt-controller
++  - "#interrupt-cells"
++  - interrupts
++  - interrupt-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx8-lpcg.h>
++
++    interrupt-controller@56180040 {
++        compatible = "fsl,imx8qxp-dc-intc";
++        reg = <0x56180040 0x60>;
++        clocks = <&dc0_lpcg IMX_LPCG_CLK_5>;
++        interrupt-controller;
++        interrupt-parent = <&dc0_irqsteer>;
++        #interrupt-cells = <1>;
++        interrupts = <448>, <449>, <450>,  <64>,
++                      <65>,  <66>,  <67>,  <68>,
++                      <69>,  <70>, <193>, <194>,
++                     <195>, <196>, <197>,  <72>,
++                      <73>,  <74>,  <75>,  <76>,
++                      <77>,  <78>,  <79>,  <80>,
++                      <81>, <199>, <200>, <201>,
++                     <202>, <203>, <204>, <205>,
++                     <206>, <207>, <208>,   <5>,
++                       <0>,   <1>,   <2>,   <3>,
++                       <4>,  <82>,  <83>,  <84>,
++                      <85>, <209>, <210>, <211>,
++                     <212>;
++        interrupt-names = "store9_shdload",
++                          "store9_framecomplete",
++                          "store9_seqcomplete",
++                          "extdst0_shdload",
++                          "extdst0_framecomplete",
++                          "extdst0_seqcomplete",
++                          "extdst4_shdload",
++                          "extdst4_framecomplete",
++                          "extdst4_seqcomplete",
++                          "extdst1_shdload",
++                          "extdst1_framecomplete",
++                          "extdst1_seqcomplete",
++                          "extdst5_shdload",
++                          "extdst5_framecomplete",
++                          "extdst5_seqcomplete",
++                          "disengcfg_shdload0",
++                          "disengcfg_framecomplete0",
++                          "disengcfg_seqcomplete0",
++                          "framegen0_int0",
++                          "framegen0_int1",
++                          "framegen0_int2",
++                          "framegen0_int3",
++                          "sig0_shdload",
++                          "sig0_valid",
++                          "sig0_error",
++                          "disengcfg_shdload1",
++                          "disengcfg_framecomplete1",
++                          "disengcfg_seqcomplete1",
++                          "framegen1_int0",
++                          "framegen1_int1",
++                          "framegen1_int2",
++                          "framegen1_int3",
++                          "sig1_shdload",
++                          "sig1_valid",
++                          "sig1_error",
++                          "reserved",
++                          "cmdseq_error",
++                          "comctrl_sw0",
++                          "comctrl_sw1",
++                          "comctrl_sw2",
++                          "comctrl_sw3",
++                          "framegen0_primsync_on",
++                          "framegen0_primsync_off",
++                          "framegen0_secsync_on",
++                          "framegen0_secsync_off",
++                          "framegen1_primsync_on",
++                          "framegen1_primsync_off",
++                          "framegen1_secsync_on",
++                          "framegen1_secsync_off";
++    };
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
