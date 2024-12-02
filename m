@@ -4,111 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6728DD10DC0
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 08:40:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D0AED10DCF
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 08:58:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OSV4YKs/rbUQL7PO9kSMjphQTaSHoHj0ECqbNQSp5OM=; b=wt0PmK3D8Rqn4X
-	EcdSHnpJlqeS1fO82e7fBr8lIO2AXL2yhhu72YZuiK6XxX3DEWJ6ow+h2/SqfQdKgqgL+dRIU1j1d
-	vqyPG4aPNZSbM7HrJBR6EJsym0uPTfDh91DZHNmq0mKupkawiOCtVTZ7VWfheFSezbVAeiwB2crvh
-	wV0qnShRKcTLN7xbVEMEnLd+Qi0P/JjH7e8fB7VkXo/H+i2fdOEbiogQnVMa/Ls0+CRTQx93Ci01T
-	s6WmLRQBGs8+2wlCwX190z5I4RWlPTcMwlF7IYu5309034HZJD9N3o1G3zegGy1ZxDeqfYHUq/+74
-	Xink397Ec3CAKHZPsXaw==;
+	List-Owner; bh=U9O3wQ2wdFnKMid/Pn+4vuTsYuiSEBLkx0tZRFFrj1k=; b=decD+myExlti1m
+	GpDgbdyXitwaRFWuXjUGpGaDkAS371I2ghEh+1LaJmGsqLldjlbstmc8WjlwQc3K9yF1v97Uv94y9
+	VeVjl1/GA2rRN7N0SnzKtu/51hgjXhVH6sKByZX9Pg6yrTEVtbgtWa73QvfzIfwrQjWoBi6Q+zF+M
+	etEDp13h0MT2Y5iNURupV1oCVFD24zGpsY2znHFmCE1ygt6tHYzVCguln9qdtQlHNBgO0lYbe7y3K
+	+uxdN4pcC/sFwfFXhcOC9yNylq9Usw13/CciqeQnqRqRF/UHN/kWm2RWeeP4GUKVtWroarylbP8Vl
+	B+TJXGYjmwVKRdT3wWvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI1yp-00000005Rio-1kSE;
-	Mon, 02 Dec 2024 08:40:31 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tI2Fr-00000005U6h-1aYy;
+	Mon, 02 Dec 2024 08:58:07 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI1ym-00000005RiL-2vJk
-	for linux-phy@lists.infradead.org;
-	Mon, 02 Dec 2024 08:40:30 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B28Uu2k021119;
-	Mon, 2 Dec 2024 08:40:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	HeL2iecHpxNbwU1PE2soIu8EgoaRWstR/yFhgFxBzAI=; b=fSai7UVmscAa1/Bb
-	IXx0N4tS8w/LgVA2oP07N6HigPqB3r3MDp+s+UaNjzBCbF26+sGg/S6LvedqU0y2
-	5ouabkHm0Ks0tEyhkQ/PlHuCKOBNKeeHe9LUZO0n1yfJWK+CVuQ56LKer0ZnmTRW
-	8c5aA29vvcios1O1/vxB4VeOaqsy6yLwpcWPogKgKP9j+NcOvejYRLTWkT2vrstI
-	ddK5dhCmC9VzAXn7kywIuGlvKmy63Q2uzaLLfpw/GycqwrTDqF6eXAXhAAaouLpi
-	SvrCb58aaMPrSzfWv6k8fbaxp0d6ckBehullwi7UCvcuL7HPd+bz8vIwF2xvEvqI
-	3+5rKg==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437u36c55r-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 02 Dec 2024 08:40:15 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B28eECo025659
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 2 Dec 2024 08:40:14 GMT
-Received: from [10.64.16.135] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 2 Dec 2024
- 00:40:08 -0800
-Message-ID: <d2a3cd6f-1077-4edb-9f0c-0c940a639050@quicinc.com>
-Date: Mon, 2 Dec 2024 16:40:05 +0800
+	id 1tI2CW-00000005TWR-1lXz;
+	Mon, 02 Dec 2024 08:54:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1733129680; x=1764665680;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=PONq1d8jm/n+OrIxFNgIUfhJojAh81OCYaZRqCUvHDM=;
+  b=GLVtrtt/aAbItUqzV/qYTzxF012gM5ZaJs+v9jGcRskl4qG0xIp8kDpt
+   FzcfznccpqtjGYHE+aWK1gBjttK/zsIEL4GSs3vH7P+n7XM7+3g8phU05
+   t9K6hwDy3/ovHIOD6vmEV+tJywcYRUV98ZOInf/s5iSmI6UYKpCX0vZ3O
+   Kg5PtI42aKzaytXD+wx4m/4uPvhDNPFga6nsm9J6wvXoac1o0Fle0P5RV
+   HsFvctoPVRhp6MYQKWY5i0KZEeRIrEodAaSgAIqLU7Z0y4X6o+ig9xQtZ
+   B1//p5/DBIAE4gCJszS+xCR6jTykMJSmjIznmSeKDCxk8qpLpk+jnFJes
+   Q==;
+X-CSE-ConnectionGUID: EjpEVMk9TemjahyETT5Hfg==
+X-CSE-MsgGUID: /vaqinjjQ3G+crSfdtHchA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11273"; a="50700522"
+X-IronPort-AV: E=Sophos;i="6.12,201,1728975600"; 
+   d="scan'208";a="50700522"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Dec 2024 00:54:35 -0800
+X-CSE-ConnectionGUID: qbAJGnRwRRCsBXcsRguvnA==
+X-CSE-MsgGUID: WaVyTQKOSeCg2uYFMgFRUw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,201,1728975600"; 
+   d="scan'208";a="123902060"
+Received: from lkp-server02.sh.intel.com (HELO 36a1563c48ff) ([10.239.97.151])
+  by orviesa002.jf.intel.com with ESMTP; 02 Dec 2024 00:54:29 -0800
+Received: from kbuild by 36a1563c48ff with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tI2CI-0002Dj-12;
+	Mon, 02 Dec 2024 08:54:26 +0000
+Date: Mon, 2 Dec 2024 16:54:11 +0800
+From: kernel test robot <lkp@intel.com>
+To: Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Cc: oe-kbuild-all@lists.linux.dev, p.zabel@pengutronix.de,
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+	festevam@gmail.com, glx@linutronix.de, vkoul@kernel.org,
+	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org,
+	francesco@dolcini.it, frank.li@nxp.com, dmitry.baryshkov@linaro.org,
+	u.kleine-koenig@baylibre.com
+Subject: Re: [PATCH v5 10/19] drm/imx: Add i.MX8qxp Display Controller pixel
+ engine
+Message-ID: <202412021617.HmlPGJLh-lkp@intel.com>
+References: <20241202025635.1274467-11-victor.liu@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 5/8] drm/msm/dp: Add support for lane mapping
- configuration
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: Rob Clark <robdclark@gmail.com>,
-        Abhinav Kumar
-	<quic_abhinavk@quicinc.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten
-	<marijn.suijten@somainline.org>,
-        Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Rob Herring <robh@kernel.org>,
-        "Krzysztof
- Kozlowski" <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        "Kuogee
- Hsieh" <quic_khsieh@quicinc.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon
- Vijay Abraham I" <kishon@kernel.org>,
-        Linus Walleij
-	<linus.walleij@linaro.org>,
-        Bartosz Golaszewski <brgl@bgdev.pl>, <quic_lliu6@quicinc.com>,
-        <quic_fangez@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>
-References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-5-09a4338d93ef@quicinc.com>
- <CAA8EJpoY8hySQd00yODGeHjSpVZpEBLjF3aBiKGJPUhpr-2mgw@mail.gmail.com>
-From: Xiangxu Yin <quic_xiangxuy@quicinc.com>
-In-Reply-To: <CAA8EJpoY8hySQd00yODGeHjSpVZpEBLjF3aBiKGJPUhpr-2mgw@mail.gmail.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: PHJmxWI0XMzeCBQZZmYhYTGnRQH3TbOp
-X-Proofpoint-ORIG-GUID: PHJmxWI0XMzeCBQZZmYhYTGnRQH3TbOp
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 mlxscore=0
- clxscore=1011 bulkscore=0 adultscore=0 lowpriorityscore=0 impostorscore=0
- mlxlogscore=999 phishscore=0 suspectscore=0 spamscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2412020076
+Content-Disposition: inline
+In-Reply-To: <20241202025635.1274467-11-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241202_004028_875364_435AAA67 
-X-CRM114-Status: GOOD (  23.91  )
+X-CRM114-CacheID: sfid-20241202_005440_495097_ED10CF49 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,161 +98,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Liu,
+
+kernel test robot noticed the following build warnings:
+
+[auto build test WARNING on shawnguo/for-next]
+[also build test WARNING on linus/master v6.13-rc1 next-20241128]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Liu-Ying/dt-bindings-display-imx-Add-i-MX8qxp-Display-Controller-processing-units/20241202-110331
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git for-next
+patch link:    https://lore.kernel.org/r/20241202025635.1274467-11-victor.liu%40nxp.com
+patch subject: [PATCH v5 10/19] drm/imx: Add i.MX8qxp Display Controller pixel engine
+config: alpha-allyesconfig (https://download.01.org/0day-ci/archive/20241202/202412021617.HmlPGJLh-lkp@intel.com/config)
+compiler: alpha-linux-gcc (GCC) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241202/202412021617.HmlPGJLh-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202412021617.HmlPGJLh-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+   drivers/gpu/drm/imx/dc/dc-fl.c: In function 'dc_fl_bind':
+>> drivers/gpu/drm/imx/dc/dc-fl.c:136:57: warning: '%d' directive output may be truncated writing between 1 and 10 bytes into a region of size 3 [-Wformat-truncation=]
+     136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+         |                                                         ^~
+   drivers/gpu/drm/imx/dc/dc-fl.c:136:46: note: directive argument in the range [0, 2147483647]
+     136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+         |                                              ^~~~~~~~~~~~~~
+   drivers/gpu/drm/imx/dc/dc-fl.c:136:9: note: 'snprintf' output between 12 and 21 bytes into a destination of size 13
+     136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+         |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--
+   drivers/gpu/drm/imx/dc/dc-fw.c: In function 'dc_fw_bind':
+>> drivers/gpu/drm/imx/dc/dc-fw.c:175:56: warning: '%u' directive output may be truncated writing between 1 and 10 bytes into a region of size 4 [-Wformat-truncation=]
+     175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
+         |                                                        ^~
+   drivers/gpu/drm/imx/dc/dc-fw.c:175:46: note: directive argument in the range [0, 2147483647]
+     175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
+         |                                              ^~~~~~~~~~~~~
+   drivers/gpu/drm/imx/dc/dc-fw.c:175:9: note: 'snprintf' output between 11 and 20 bytes into a destination of size 13
+     175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
+         |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-On 11/29/2024 9:50 PM, Dmitry Baryshkov wrote:
-> On Fri, 29 Nov 2024 at 09:59, Xiangxu Yin <quic_xiangxuy@quicinc.com> wrote:
->>
->> Add the ability to configure lane mapping for the DP controller. This is
->> required when the platform's lane mapping does not follow the default
->> order (0, 1, 2, 3). The mapping rules are now configurable via the
->> `data-lane` property in the devicetree. This property defines the
->> logical-to-physical lane mapping sequence, ensuring correct lane
->> assignment for non-default configurations.
->>
->> Signed-off-by: Xiangxu Yin <quic_xiangxuy@quicinc.com>
->> ---
->>  drivers/gpu/drm/msm/dp/dp_catalog.c | 11 +++++------
->>  drivers/gpu/drm/msm/dp/dp_catalog.h |  2 +-
->>  drivers/gpu/drm/msm/dp/dp_ctrl.c    |  2 +-
->>  drivers/gpu/drm/msm/dp/dp_panel.c   | 13 ++++++++++---
->>  drivers/gpu/drm/msm/dp/dp_panel.h   |  3 +++
->>  5 files changed, 20 insertions(+), 11 deletions(-)
->>
->> diff --git a/drivers/gpu/drm/msm/dp/dp_catalog.c b/drivers/gpu/drm/msm/dp/dp_catalog.c
->> index b4c8856fb25d01dd1b30c5ec33ce821aafa9551d..34439d0709d2e1437e5669fd0b995936420ee16f 100644
->> --- a/drivers/gpu/drm/msm/dp/dp_catalog.c
->> +++ b/drivers/gpu/drm/msm/dp/dp_catalog.c
->> @@ -361,17 +361,16 @@ void msm_dp_catalog_ctrl_config_ctrl(struct msm_dp_catalog *msm_dp_catalog, u32
->>         msm_dp_write_link(catalog, REG_DP_CONFIGURATION_CTRL, cfg);
->>  }
->>
->> -void msm_dp_catalog_ctrl_lane_mapping(struct msm_dp_catalog *msm_dp_catalog)
->> +void msm_dp_catalog_ctrl_lane_mapping(struct msm_dp_catalog *msm_dp_catalog, u32 *l_map)
-> 
-> lane_map, not l_map.
-> 
-Ok, will update in next patch.
->>  {
->>         struct msm_dp_catalog_private *catalog = container_of(msm_dp_catalog,
->>                                 struct msm_dp_catalog_private, msm_dp_catalog);
->> -       u32 ln_0 = 0, ln_1 = 1, ln_2 = 2, ln_3 = 3; /* One-to-One mapping */
->>         u32 ln_mapping;
->>
->> -       ln_mapping = ln_0 << LANE0_MAPPING_SHIFT;
->> -       ln_mapping |= ln_1 << LANE1_MAPPING_SHIFT;
->> -       ln_mapping |= ln_2 << LANE2_MAPPING_SHIFT;
->> -       ln_mapping |= ln_3 << LANE3_MAPPING_SHIFT;
->> +       ln_mapping = l_map[0] << LANE0_MAPPING_SHIFT;
->> +       ln_mapping |= l_map[1] << LANE1_MAPPING_SHIFT;
->> +       ln_mapping |= l_map[2] << LANE2_MAPPING_SHIFT;
->> +       ln_mapping |= l_map[3] << LANE3_MAPPING_SHIFT;
->>
->>         msm_dp_write_link(catalog, REG_DP_LOGICAL2PHYSICAL_LANE_MAPPING,
->>                         ln_mapping);
->> diff --git a/drivers/gpu/drm/msm/dp/dp_catalog.h b/drivers/gpu/drm/msm/dp/dp_catalog.h
->> index e932b17eecbf514070cd8cd0b98ca0fefbe81ab7..8b8de2a7d3ad561c1901e1bdaad92d4fab12e808 100644
->> --- a/drivers/gpu/drm/msm/dp/dp_catalog.h
->> +++ b/drivers/gpu/drm/msm/dp/dp_catalog.h
->> @@ -69,7 +69,7 @@ u32 msm_dp_catalog_aux_get_irq(struct msm_dp_catalog *msm_dp_catalog);
->>  /* DP Controller APIs */
->>  void msm_dp_catalog_ctrl_state_ctrl(struct msm_dp_catalog *msm_dp_catalog, u32 state);
->>  void msm_dp_catalog_ctrl_config_ctrl(struct msm_dp_catalog *msm_dp_catalog, u32 config);
->> -void msm_dp_catalog_ctrl_lane_mapping(struct msm_dp_catalog *msm_dp_catalog);
->> +void msm_dp_catalog_ctrl_lane_mapping(struct msm_dp_catalog *msm_dp_catalog, u32 *l_map);
->>  void msm_dp_catalog_ctrl_mainlink_ctrl(struct msm_dp_catalog *msm_dp_catalog, bool enable);
->>  void msm_dp_catalog_ctrl_psr_mainlink_enable(struct msm_dp_catalog *msm_dp_catalog, bool enable);
->>  void msm_dp_catalog_setup_peripheral_flush(struct msm_dp_catalog *msm_dp_catalog);
->> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
->> index bc2ca8133b790fc049e18ab3b37a629558664dd4..49c8ce9b2d0e57a613e50865be3fe98e814d425a 100644
->> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
->> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
->> @@ -177,7 +177,7 @@ static void msm_dp_ctrl_configure_source_params(struct msm_dp_ctrl_private *ctrl
->>  {
->>         u32 cc, tb;
->>
->> -       msm_dp_catalog_ctrl_lane_mapping(ctrl->catalog);
->> +       msm_dp_catalog_ctrl_lane_mapping(ctrl->catalog, ctrl->panel->lane_map);
->>         msm_dp_catalog_ctrl_mainlink_ctrl(ctrl->catalog, true);
->>         msm_dp_catalog_setup_peripheral_flush(ctrl->catalog);
->>
->> diff --git a/drivers/gpu/drm/msm/dp/dp_panel.c b/drivers/gpu/drm/msm/dp/dp_panel.c
->> index 5d7eaa31bf3176566f40f01ff636bee64e81c64f..8654180aa259234bbd41f4f88c13c485f9791b1d 100644
->> --- a/drivers/gpu/drm/msm/dp/dp_panel.c
->> +++ b/drivers/gpu/drm/msm/dp/dp_panel.c
->> @@ -11,7 +11,6 @@
->>  #include <drm/drm_of.h>
->>  #include <drm/drm_print.h>
->>
->> -#define DP_MAX_NUM_DP_LANES    4
->>  #define DP_LINK_RATE_HBR2      540000 /* kbytes */
->>
->>  struct msm_dp_panel_private {
->> @@ -461,6 +460,7 @@ static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
->>         struct msm_dp_panel_private *panel;
->>         struct device_node *of_node;
->>         int cnt;
->> +       u32 lane_map[DP_MAX_NUM_DP_LANES] = {0, 1, 2, 3};
->>
->>         panel = container_of(msm_dp_panel, struct msm_dp_panel_private, msm_dp_panel);
->>         of_node = panel->dev->of_node;
->> @@ -474,10 +474,17 @@ static int msm_dp_panel_parse_dt(struct msm_dp_panel *msm_dp_panel)
->>                 cnt = drm_of_get_data_lanes_count(of_node, 1, DP_MAX_NUM_DP_LANES);
->>         }
->>
->> -       if (cnt > 0)
->> +       if (cnt > 0) {
->> +               struct device_node *endpoint;
->> +
->>                 msm_dp_panel->max_dp_lanes = cnt;
->> -       else
->> +               endpoint = of_graph_get_endpoint_by_regs(of_node, 1, -1);
->> +               of_property_read_u32_array(endpoint, "data-lanes", lane_map, cnt);
->> +       } else {
->>                 msm_dp_panel->max_dp_lanes = DP_MAX_NUM_DP_LANES; /* 4 lanes */
->> +       }
-> 
-> Why? This sounds more like dp_catalog or (after the refactoring at
-> [1]) dp_ctrl. But not the dp_panel.
-> 
-> [1] https://patchwork.freedesktop.org/project/freedreno/series/?ordering=-last_updated
-> 
-We are used the same prop 'data-lanes = <3 2 0 1>' in mdss_dp_out to keep similar behaviour with dsi_host_parse_lane_data.
-From the modules used, catalog seems more appropriate, but since the max_dp_lanes is parsed at dp_panel, it has been placed here.
-Should lane_map parsing in msm_dp_catalog_get, and keep max_dp_lanes parsing at the dp_panel?
->> +
->> +       memcpy(msm_dp_panel->lane_map, lane_map, msm_dp_panel->max_dp_lanes * sizeof(u32));
->>
->>         msm_dp_panel->max_dp_link_rate = msm_dp_panel_link_frequencies(of_node);
->>         if (!msm_dp_panel->max_dp_link_rate)
->> diff --git a/drivers/gpu/drm/msm/dp/dp_panel.h b/drivers/gpu/drm/msm/dp/dp_panel.h
->> index 0e944db3adf2f187f313664fe80cf540ec7a19f2..7603b92c32902bd3d4485539bd6308537ff75a2c 100644
->> --- a/drivers/gpu/drm/msm/dp/dp_panel.h
->> +++ b/drivers/gpu/drm/msm/dp/dp_panel.h
->> @@ -11,6 +11,8 @@
->>  #include "dp_aux.h"
->>  #include "dp_link.h"
->>
->> +#define DP_MAX_NUM_DP_LANES    4
->> +
->>  struct edid;
->>
->>  struct msm_dp_display_mode {
->> @@ -46,6 +48,7 @@ struct msm_dp_panel {
->>         bool video_test;
->>         bool vsc_sdp_supported;
->>
->> +       u32 lane_map[DP_MAX_NUM_DP_LANES];
->>         u32 max_dp_lanes;
->>         u32 max_dp_link_rate;
->>
->>
->> --
->> 2.25.1
->>
-> 
-> 
+vim +136 drivers/gpu/drm/imx/dc/dc-fl.c
 
+    92	
+    93	static int dc_fl_bind(struct device *dev, struct device *master, void *data)
+    94	{
+    95		struct platform_device *pdev = to_platform_device(dev);
+    96		struct dc_drm_device *dc_drm = data;
+    97		struct dc_pe *pe = dc_drm->pe;
+    98		void __iomem *base_cfg;
+    99		struct dc_fl *fl;
+   100		struct dc_fu *fu;
+   101		int i;
+   102	
+   103		fl = devm_kzalloc(dev, sizeof(*fl), GFP_KERNEL);
+   104		if (!fl)
+   105			return -ENOMEM;
+   106	
+   107		fu = &fl->fu;
+   108	
+   109		base_cfg = devm_platform_ioremap_resource_byname(pdev, "cfg");
+   110		if (IS_ERR(base_cfg))
+   111			return PTR_ERR(base_cfg);
+   112	
+   113		fu->reg_cfg = devm_regmap_init_mmio(dev, base_cfg,
+   114						    &dc_fl_cfg_regmap_config);
+   115		if (IS_ERR(fu->reg_cfg))
+   116			return PTR_ERR(fu->reg_cfg);
+   117	
+   118		fl->id = of_alias_get_id(dev->of_node, "dc0-fetchlayer");
+   119		if (fl->id < 0) {
+   120			dev_err(dev, "failed to get alias id: %d\n", fl->id);
+   121			return fl->id;
+   122		}
+   123	
+   124		fu->link_id = LINK_ID_FETCHLAYER0;
+   125		fu->id = DC_FETCHUNIT_FL0;
+   126		for (i = 0; i < DC_FETCHUNIT_FRAC_NUM; i++) {
+   127			fu->reg_baseaddr[i]		  = BASEADDRESS(i);
+   128			fu->reg_sourcebufferattributes[i] = SOURCEBUFFERATTRIBUTES(i);
+   129			fu->reg_sourcebufferdimension[i]  = SOURCEBUFFERDIMENSION(i);
+   130			fu->reg_layeroffset[i]		  = LAYEROFFSET(i);
+   131			fu->reg_clipwindowoffset[i]	  = CLIPWINDOWOFFSET(i);
+   132			fu->reg_clipwindowdimensions[i]	  = CLIPWINDOWDIMENSIONS(i);
+   133			fu->reg_constantcolor[i]	  = CONSTANTCOLOR(i);
+   134			fu->reg_layerproperty[i]	  = LAYERPROPERTY(i);
+   135		}
+ > 136		snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
+   137	
+   138		dc_fl_set_ops(fu);
+   139	
+   140		pe->fu_disp[fu->id] = fu;
+   141	
+   142		return 0;
+   143	}
+   144	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
