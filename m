@@ -4,84 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D0AED10DCF
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 08:58:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71AA6D10DCF
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 09:06:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U9O3wQ2wdFnKMid/Pn+4vuTsYuiSEBLkx0tZRFFrj1k=; b=decD+myExlti1m
-	GpDgbdyXitwaRFWuXjUGpGaDkAS371I2ghEh+1LaJmGsqLldjlbstmc8WjlwQc3K9yF1v97Uv94y9
-	VeVjl1/GA2rRN7N0SnzKtu/51hgjXhVH6sKByZX9Pg6yrTEVtbgtWa73QvfzIfwrQjWoBi6Q+zF+M
-	etEDp13h0MT2Y5iNURupV1oCVFD24zGpsY2znHFmCE1ygt6tHYzVCguln9qdtQlHNBgO0lYbe7y3K
-	+uxdN4pcC/sFwfFXhcOC9yNylq9Usw13/CciqeQnqRqRF/UHN/kWm2RWeeP4GUKVtWroarylbP8Vl
-	B+TJXGYjmwVKRdT3wWvg==;
+	List-Owner; bh=H2lktCL12dp8BRfmdRQfXa4cIke41klAxBCM+S9HGx0=; b=qf2UdPnruJF7Km
+	FO/XnhtkcOqSutNFza7RyjKIdjbFowCzmoBs1arhypwXPtcSjrpTOUrun5UjTOA+8gzEvOKXHD7Xp
+	oL6grAd2aIaxDfFbwYAFfasrYTfB3URe15vjO2PGqHxTkjfB7MFx2B2XS6JaRCk2kx186SuFPsyg5
+	JN7v+wEqCDDTyFuOYCPOwG/bIpnaUkZ1XJ1RtC+qjX4LmOFWXIzCkjys2pCU7RiHxmhNC9oyZBFmH
+	xc/dV4px/cY4iDoIi/L8KV5IyF3rzitf2F8mkYnCYLC9H8UykD0cEQlLEOOOSquoW5mNKVfo4250n
+	UGz73Wo11+wc3ekTJpnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI2Fr-00000005U6h-1aYy;
-	Mon, 02 Dec 2024 08:58:07 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	id 1tI2NY-00000005VTa-0x24;
+	Mon, 02 Dec 2024 09:06:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI2CW-00000005TWR-1lXz;
-	Mon, 02 Dec 2024 08:54:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1733129680; x=1764665680;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=PONq1d8jm/n+OrIxFNgIUfhJojAh81OCYaZRqCUvHDM=;
-  b=GLVtrtt/aAbItUqzV/qYTzxF012gM5ZaJs+v9jGcRskl4qG0xIp8kDpt
-   FzcfznccpqtjGYHE+aWK1gBjttK/zsIEL4GSs3vH7P+n7XM7+3g8phU05
-   t9K6hwDy3/ovHIOD6vmEV+tJywcYRUV98ZOInf/s5iSmI6UYKpCX0vZ3O
-   Kg5PtI42aKzaytXD+wx4m/4uPvhDNPFga6nsm9J6wvXoac1o0Fle0P5RV
-   HsFvctoPVRhp6MYQKWY5i0KZEeRIrEodAaSgAIqLU7Z0y4X6o+ig9xQtZ
-   B1//p5/DBIAE4gCJszS+xCR6jTykMJSmjIznmSeKDCxk8qpLpk+jnFJes
-   Q==;
-X-CSE-ConnectionGUID: EjpEVMk9TemjahyETT5Hfg==
-X-CSE-MsgGUID: /vaqinjjQ3G+crSfdtHchA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11273"; a="50700522"
-X-IronPort-AV: E=Sophos;i="6.12,201,1728975600"; 
-   d="scan'208";a="50700522"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Dec 2024 00:54:35 -0800
-X-CSE-ConnectionGUID: qbAJGnRwRRCsBXcsRguvnA==
-X-CSE-MsgGUID: WaVyTQKOSeCg2uYFMgFRUw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,201,1728975600"; 
-   d="scan'208";a="123902060"
-Received: from lkp-server02.sh.intel.com (HELO 36a1563c48ff) ([10.239.97.151])
-  by orviesa002.jf.intel.com with ESMTP; 02 Dec 2024 00:54:29 -0800
-Received: from kbuild by 36a1563c48ff with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tI2CI-0002Dj-12;
-	Mon, 02 Dec 2024 08:54:26 +0000
-Date: Mon, 2 Dec 2024 16:54:11 +0800
-From: kernel test robot <lkp@intel.com>
-To: Liu Ying <victor.liu@nxp.com>, dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: oe-kbuild-all@lists.linux.dev, p.zabel@pengutronix.de,
-	maarten.lankhorst@linux.intel.com, mripard@kernel.org,
-	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
-	festevam@gmail.com, glx@linutronix.de, vkoul@kernel.org,
-	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org,
-	francesco@dolcini.it, frank.li@nxp.com, dmitry.baryshkov@linaro.org,
-	u.kleine-koenig@baylibre.com
-Subject: Re: [PATCH v5 10/19] drm/imx: Add i.MX8qxp Display Controller pixel
- engine
-Message-ID: <202412021617.HmlPGJLh-lkp@intel.com>
-References: <20241202025635.1274467-11-victor.liu@nxp.com>
+	id 1tI2NV-00000005VRg-1p9U
+	for linux-phy@lists.infradead.org;
+	Mon, 02 Dec 2024 09:06:02 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B290TwE010338;
+	Mon, 2 Dec 2024 09:05:53 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Q+PjIrCert+/x3e/5SEkFOVcd9o7Q54etqy826imJuw=; b=Lvk0Nskf1gPfvfDw
+	6oiXQJKJretf1FbX6tCF65Oin00bzsNqPMVLSqto5EjPwoOpWEPYgs+gRxPnYPvJ
+	OugShnOB3gSM79fEDqRmEQ8XPhpWD3KqT1LC5gxg6NKa8wQee/sdLBKJLOJl84Ml
+	z+puN4qOi2uAEjJAArl7BULURcrB2m5egdBKKGFp/IT0RtKVgs+rMAS1BZAtm56/
+	9edM3NsNnYyqQnpTLI6H7otEPojliXVkq7xuuxMSf5t+cW/0HXwfYHh0sttMSi+0
+	OipxLk/k6/UWv5z098AG+rtXMIaiTw8GXzuHuhrR3+ki+ByzTzCeacU2DFtjVHIh
+	9ZfvvQ==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 437v07m479-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 02 Dec 2024 09:05:52 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B295qEj015760
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 2 Dec 2024 09:05:52 GMT
+Received: from [10.64.16.135] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 2 Dec 2024
+ 01:05:45 -0800
+Message-ID: <95a78722-8266-4d5d-8d2f-e8efa1aa2e87@quicinc.com>
+Date: Mon, 2 Dec 2024 17:05:37 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241202025635.1274467-11-victor.liu@nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 6/8] drm/msm/dp: Add maximum width limitation for modes
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+	<quic_abhinavk@quicinc.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten
+	<marijn.suijten@somainline.org>,
+        Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        "Kuogee
+ Hsieh" <quic_khsieh@quicinc.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon
+ Vijay Abraham I" <kishon@kernel.org>,
+        Linus Walleij
+	<linus.walleij@linaro.org>,
+        Bartosz Golaszewski <brgl@bgdev.pl>, <quic_lliu6@quicinc.com>,
+        <quic_fangez@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>
+References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-6-09a4338d93ef@quicinc.com>
+ <CAA8EJpprTGRTxO+9BC6GRwxE4A3CuvmySsxS2Nh4Tqj0nDRT_Q@mail.gmail.com>
+From: Xiangxu Yin <quic_xiangxuy@quicinc.com>
+In-Reply-To: <CAA8EJpprTGRTxO+9BC6GRwxE4A3CuvmySsxS2Nh4Tqj0nDRT_Q@mail.gmail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: GJp2ATP3aUD-3hgyB8FaFF86sI5EXzVQ
+X-Proofpoint-GUID: GJp2ATP3aUD-3hgyB8FaFF86sI5EXzVQ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 phishscore=0
+ adultscore=0 mlxlogscore=999 bulkscore=0 suspectscore=0 priorityscore=1501
+ impostorscore=0 lowpriorityscore=0 spamscore=0 mlxscore=0 clxscore=1015
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2412020079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241202_005440_495097_ED10CF49 
-X-CRM114-Status: GOOD (  13.65  )
+X-CRM114-CacheID: sfid-20241202_010601_478921_32442B24 
+X-CRM114-Status: GOOD (  18.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,120 +119,86 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Liu,
-
-kernel test robot noticed the following build warnings:
-
-[auto build test WARNING on shawnguo/for-next]
-[also build test WARNING on linus/master v6.13-rc1 next-20241128]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Liu-Ying/dt-bindings-display-imx-Add-i-MX8qxp-Display-Controller-processing-units/20241202-110331
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git for-next
-patch link:    https://lore.kernel.org/r/20241202025635.1274467-11-victor.liu%40nxp.com
-patch subject: [PATCH v5 10/19] drm/imx: Add i.MX8qxp Display Controller pixel engine
-config: alpha-allyesconfig (https://download.01.org/0day-ci/archive/20241202/202412021617.HmlPGJLh-lkp@intel.com/config)
-compiler: alpha-linux-gcc (GCC) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241202/202412021617.HmlPGJLh-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202412021617.HmlPGJLh-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   drivers/gpu/drm/imx/dc/dc-fl.c: In function 'dc_fl_bind':
->> drivers/gpu/drm/imx/dc/dc-fl.c:136:57: warning: '%d' directive output may be truncated writing between 1 and 10 bytes into a region of size 3 [-Wformat-truncation=]
-     136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
-         |                                                         ^~
-   drivers/gpu/drm/imx/dc/dc-fl.c:136:46: note: directive argument in the range [0, 2147483647]
-     136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
-         |                                              ^~~~~~~~~~~~~~
-   drivers/gpu/drm/imx/dc/dc-fl.c:136:9: note: 'snprintf' output between 12 and 21 bytes into a destination of size 13
-     136 |         snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
-         |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
---
-   drivers/gpu/drm/imx/dc/dc-fw.c: In function 'dc_fw_bind':
->> drivers/gpu/drm/imx/dc/dc-fw.c:175:56: warning: '%u' directive output may be truncated writing between 1 and 10 bytes into a region of size 4 [-Wformat-truncation=]
-     175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
-         |                                                        ^~
-   drivers/gpu/drm/imx/dc/dc-fw.c:175:46: note: directive argument in the range [0, 2147483647]
-     175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
-         |                                              ^~~~~~~~~~~~~
-   drivers/gpu/drm/imx/dc/dc-fw.c:175:9: note: 'snprintf' output between 11 and 20 bytes into a destination of size 13
-     175 |         snprintf(fu->name, sizeof(fu->name), "FetchWarp%u", fw->id);
-         |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-vim +136 drivers/gpu/drm/imx/dc/dc-fl.c
-
-    92	
-    93	static int dc_fl_bind(struct device *dev, struct device *master, void *data)
-    94	{
-    95		struct platform_device *pdev = to_platform_device(dev);
-    96		struct dc_drm_device *dc_drm = data;
-    97		struct dc_pe *pe = dc_drm->pe;
-    98		void __iomem *base_cfg;
-    99		struct dc_fl *fl;
-   100		struct dc_fu *fu;
-   101		int i;
-   102	
-   103		fl = devm_kzalloc(dev, sizeof(*fl), GFP_KERNEL);
-   104		if (!fl)
-   105			return -ENOMEM;
-   106	
-   107		fu = &fl->fu;
-   108	
-   109		base_cfg = devm_platform_ioremap_resource_byname(pdev, "cfg");
-   110		if (IS_ERR(base_cfg))
-   111			return PTR_ERR(base_cfg);
-   112	
-   113		fu->reg_cfg = devm_regmap_init_mmio(dev, base_cfg,
-   114						    &dc_fl_cfg_regmap_config);
-   115		if (IS_ERR(fu->reg_cfg))
-   116			return PTR_ERR(fu->reg_cfg);
-   117	
-   118		fl->id = of_alias_get_id(dev->of_node, "dc0-fetchlayer");
-   119		if (fl->id < 0) {
-   120			dev_err(dev, "failed to get alias id: %d\n", fl->id);
-   121			return fl->id;
-   122		}
-   123	
-   124		fu->link_id = LINK_ID_FETCHLAYER0;
-   125		fu->id = DC_FETCHUNIT_FL0;
-   126		for (i = 0; i < DC_FETCHUNIT_FRAC_NUM; i++) {
-   127			fu->reg_baseaddr[i]		  = BASEADDRESS(i);
-   128			fu->reg_sourcebufferattributes[i] = SOURCEBUFFERATTRIBUTES(i);
-   129			fu->reg_sourcebufferdimension[i]  = SOURCEBUFFERDIMENSION(i);
-   130			fu->reg_layeroffset[i]		  = LAYEROFFSET(i);
-   131			fu->reg_clipwindowoffset[i]	  = CLIPWINDOWOFFSET(i);
-   132			fu->reg_clipwindowdimensions[i]	  = CLIPWINDOWDIMENSIONS(i);
-   133			fu->reg_constantcolor[i]	  = CONSTANTCOLOR(i);
-   134			fu->reg_layerproperty[i]	  = LAYERPROPERTY(i);
-   135		}
- > 136		snprintf(fu->name, sizeof(fu->name), "FetchLayer%d", fl->id);
-   137	
-   138		dc_fl_set_ops(fu);
-   139	
-   140		pe->fu_disp[fu->id] = fu;
-   141	
-   142		return 0;
-   143	}
-   144	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAxMS8yOS8yMDI0IDk6NTIgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gT24gRnJp
+LCAyOSBOb3YgMjAyNCBhdCAwOTo1OSwgWGlhbmd4dSBZaW4gPHF1aWNfeGlhbmd4dXlAcXVpY2lu
+Yy5jb20+IHdyb3RlOgo+Pgo+PiBJbnRyb2R1Y2UgYSBtYXhpbXVtIHdpZHRoIGNvbnN0cmFpbnQg
+Zm9yIG1vZGVzIGR1cmluZyB2YWxpZGF0aW9uLiBUaGlzCj4+IGVuc3VyZXMgdGhhdCB0aGUgbW9k
+ZXMgYXJlIGZpbHRlcmVkIGJhc2VkIG9uIGhhcmR3YXJlIGNhcGFiaWxpdGllcywKPj4gc3BlY2lm
+aWNhbGx5IGFkZHJlc3NpbmcgdGhlIGxpbmUgYnVmZmVyIGxpbWl0YXRpb25zIG9mIGluZGl2aWR1
+YWwgcGlwZXMuCj4gCj4gVGhpcyBkb2Vzbid0IGRlc2NyaWJlLCB3aHkgdGhpcyBpcyBuZWNlc3Nh
+cnkuIFdoYXQgZG9lcyAiYnVmZmVyCj4gbGltaXRhdGlvbnMgb2YgaW5kaXZpZHVhbCBwaXBlcyIg
+bWVhbj8KPiBJZiB0aGUgcGxhdGZvcm1zIGhhdmUgaHcgY2FwYWJpbGl0aWVzIGxpa2UgYmVpbmcg
+dW5hYmxlIHRvIHN1cHBvcnQgOGsKPiBvciAxMGssIGl0IHNob3VsZCBnbyB0byBwbGF0Zm9ybSBk
+YXRhCj4gCkl0J3MgU1NQUCBsaW5lIGJ1ZmZlciBsaW1pdGF0aW9uIGZvciB0aGlzIHBsYXRmb3Jt
+IGFuZCBvbmx5IHN1cHBvcnQgdG8gMjE2MCBtb2RlIHdpZHRoLgpUaGVuLCBzaGFsbCBJIGFkZCBt
+YXhfd2lkdGggY29uZmlnIHRvIHN0cnVjdCBtc21fZHBfZGVzYyBpbiBuZXh0IHBhdGNoPyBmb3Ig
+b3RoZXIgcGxhdGZvcm0gd2lsbCBzZXQgZGVmdWFsdCB2YWx1ZSB0byDigJhEUF9NQVhfV0lEVEgg
+NzY4MCcKPj4KPj4gU2lnbmVkLW9mZi1ieTogWGlhbmd4dSBZaW4gPHF1aWNfeGlhbmd4dXlAcXVp
+Y2luYy5jb20+Cj4+IC0tLQo+PiAgZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9kaXNwbGF5LmMg
+fCAgMyArKysKPj4gIGRyaXZlcnMvZ3B1L2RybS9tc20vZHAvZHBfZGlzcGxheS5oIHwgIDEgKwo+
+PiAgZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9wYW5lbC5jICAgfCAxMyArKysrKysrKysrKysr
+Cj4+ICBkcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX3BhbmVsLmggICB8ICAxICsKPj4gIDQgZmls
+ZXMgY2hhbmdlZCwgMTggaW5zZXJ0aW9ucygrKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9n
+cHUvZHJtL21zbS9kcC9kcF9kaXNwbGF5LmMgYi9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rp
+c3BsYXkuYwo+PiBpbmRleCA0YzgzNDAyZmM3ZTBkNDFjYjc2MjFmYTJlZmRhMDQzMjY5ZDBhNjA4
+Li5lYjZmYjc2YzY4ZTUwNWZhZmJlYzU2MzQ0MGU5Nzg0ZjUxZTE4OTRiIDEwMDY0NAo+PiAtLS0g
+YS9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuYwo+PiArKysgYi9kcml2ZXJzL2dw
+dS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuYwo+PiBAQCAtOTQ0LDYgKzk0NCw5IEBAIGVudW0gZHJt
+X21vZGVfc3RhdHVzIG1zbV9kcF9icmlkZ2VfbW9kZV92YWxpZChzdHJ1Y3QgZHJtX2JyaWRnZSAq
+YnJpZGdlLAo+PiAgICAgICAgIG1zbV9kcF9kaXNwbGF5ID0gY29udGFpbmVyX29mKGRwLCBzdHJ1
+Y3QgbXNtX2RwX2Rpc3BsYXlfcHJpdmF0ZSwgbXNtX2RwX2Rpc3BsYXkpOwo+PiAgICAgICAgIGxp
+bmtfaW5mbyA9ICZtc21fZHBfZGlzcGxheS0+cGFuZWwtPmxpbmtfaW5mbzsKPj4KPj4gKyAgICAg
+ICBpZiAobW9kZS0+aGRpc3BsYXkgPiBtc21fZHBfZGlzcGxheS0+cGFuZWwtPm1heF9kcF93aWR0
+aCkKPj4gKyAgICAgICAgICAgICAgIHJldHVybiBNT0RFX0JBRDsKPj4gKwo+PiAgICAgICAgIGlm
+IChkcm1fbW9kZV9pc180MjBfb25seSgmZHAtPmNvbm5lY3Rvci0+ZGlzcGxheV9pbmZvLCBtb2Rl
+KSAmJgo+PiAgICAgICAgICAgICBtc21fZHBfZGlzcGxheS0+cGFuZWwtPnZzY19zZHBfc3VwcG9y
+dGVkKQo+PiAgICAgICAgICAgICAgICAgbW9kZV9wY2xrX2toeiAvPSAyOwo+PiBkaWZmIC0tZ2l0
+IGEvZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9kaXNwbGF5LmggYi9kcml2ZXJzL2dwdS9kcm0v
+bXNtL2RwL2RwX2Rpc3BsYXkuaAo+PiBpbmRleCBlY2JjMmQ5MmY1NDZhMzQ2ZWU1M2FkY2YxYjA2
+MDkzM2U0ZjU0MzE3Li43YTExZjdlZWI2OTE5NzZmMDZhZmM3YWZmNjc2NTAzOTdkN2RlYjkwIDEw
+MDY0NAo+PiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuaAo+PiArKysg
+Yi9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuaAo+PiBAQCAtMTEsNiArMTEsNyBA
+QAo+PiAgI2luY2x1ZGUgImRpc3AvbXNtX2Rpc3Bfc25hcHNob3QuaCIKPj4KPj4gICNkZWZpbmUg
+RFBfTUFYX1BJWEVMX0NMS19LSFogICA2NzUwMDAKPj4gKyNkZWZpbmUgRFBfTUFYX1dJRFRIICAg
+NzY4MAo+Pgo+PiAgc3RydWN0IG1zbV9kcCB7Cj4+ICAgICAgICAgc3RydWN0IGRybV9kZXZpY2Ug
+KmRybV9kZXY7Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX3BhbmVs
+LmMgYi9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX3BhbmVsLmMKPj4gaW5kZXggODY1NDE4MGFh
+MjU5MjM0YmJkNDFmNGY4OGMxM2M0ODVmOTc5MWIxZC4uMTA1MDFlMzAxYzVlMDczZDhkMzQwOTNi
+ODZhMTVkNzJlNjQ2YTAxZiAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9ncHUvZHJtL21zbS9kcC9k
+cF9wYW5lbC5jCj4+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9tc20vZHAvZHBfcGFuZWwuYwo+PiBA
+QCAtNCw2ICs0LDcgQEAKPj4gICAqLwo+Pgo+PiAgI2luY2x1ZGUgImRwX3BhbmVsLmgiCj4+ICsj
+aW5jbHVkZSAiZHBfZGlzcGxheS5oIgo+PiAgI2luY2x1ZGUgImRwX3V0aWxzLmgiCj4+Cj4+ICAj
+aW5jbHVkZSA8ZHJtL2RybV9jb25uZWN0b3IuaD4KPj4gQEAgLTQ1NSw2ICs0NTYsMTYgQEAgc3Rh
+dGljIHUzMiBtc21fZHBfcGFuZWxfbGlua19mcmVxdWVuY2llcyhzdHJ1Y3QgZGV2aWNlX25vZGUg
+Km9mX25vZGUpCj4+ICAgICAgICAgcmV0dXJuIGZyZXF1ZW5jeTsKPj4gIH0KPj4KPj4gK3N0YXRp
+YyB1MzIgbXNtX2RwX3BhbmVsX21heF93aWR0aChzdHJ1Y3QgZGV2aWNlX25vZGUgKm9mX25vZGUp
+Cj4+ICt7Cj4+ICsgICAgICAgdTMyIG1heF93aWR0aCA9IDA7Cj4+ICsKPj4gKyAgICAgICBpZiAo
+b2ZfcHJvcGVydHlfcmVhZF91MzIob2Zfbm9kZSwgIm1heC13aWR0aCIsICZtYXhfd2lkdGgpKQo+
+PiArICAgICAgICAgICAgICAgbWF4X3dpZHRoID0gRFBfTUFYX1dJRFRIOwo+PiArCj4+ICsgICAg
+ICAgcmV0dXJuIG1heF93aWR0aDsKPiAKPiBtc21fZHBfcGFuZWwtPm1heF9kcF93aWR0aCA9IERQ
+X01BWF9XSURUSDsKPiBvZl9wcm9wZXJ0eV9yZWFkX3UzMihvZl9ub2RlLCAibWF4LXdpZHRoIiwg
+Jm1zbV9kcF9wYW5lbC0+bWF4X2RwX3dpZHRoKTsKPiAKPj4gK30KPj4gKwo+PiAgc3RhdGljIGlu
+dCBtc21fZHBfcGFuZWxfcGFyc2VfZHQoc3RydWN0IG1zbV9kcF9wYW5lbCAqbXNtX2RwX3BhbmVs
+KQo+PiAgewo+PiAgICAgICAgIHN0cnVjdCBtc21fZHBfcGFuZWxfcHJpdmF0ZSAqcGFuZWw7Cj4+
+IEBAIC00OTAsNiArNTAxLDggQEAgc3RhdGljIGludCBtc21fZHBfcGFuZWxfcGFyc2VfZHQoc3Ry
+dWN0IG1zbV9kcF9wYW5lbCAqbXNtX2RwX3BhbmVsKQo+PiAgICAgICAgIGlmICghbXNtX2RwX3Bh
+bmVsLT5tYXhfZHBfbGlua19yYXRlKQo+PiAgICAgICAgICAgICAgICAgbXNtX2RwX3BhbmVsLT5t
+YXhfZHBfbGlua19yYXRlID0gRFBfTElOS19SQVRFX0hCUjI7Cj4+Cj4+ICsgICAgICAgbXNtX2Rw
+X3BhbmVsLT5tYXhfZHBfd2lkdGggPSBtc21fZHBfcGFuZWxfbWF4X3dpZHRoKG9mX25vZGUpOwo+
+PiArCj4+ICAgICAgICAgcmV0dXJuIDA7Cj4+ICB9Cj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L2dwdS9kcm0vbXNtL2RwL2RwX3BhbmVsLmggYi9kcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX3Bh
+bmVsLmgKPj4gaW5kZXggNzYwM2I5MmMzMjkwMmJkM2Q0NDg1NTM5YmQ2MzA4NTM3ZmY3NWEyYy4u
+NjE1MTM2NDQxNjEyMDljMjQzYmJiNjIzZWU0ZGVkOTUxYjJhMDU5NyAxMDA2NDQKPj4gLS0tIGEv
+ZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9wYW5lbC5oCj4+ICsrKyBiL2RyaXZlcnMvZ3B1L2Ry
+bS9tc20vZHAvZHBfcGFuZWwuaAo+PiBAQCAtNTEsNiArNTEsNyBAQCBzdHJ1Y3QgbXNtX2RwX3Bh
+bmVsIHsKPj4gICAgICAgICB1MzIgbGFuZV9tYXBbRFBfTUFYX05VTV9EUF9MQU5FU107Cj4+ICAg
+ICAgICAgdTMyIG1heF9kcF9sYW5lczsKPj4gICAgICAgICB1MzIgbWF4X2RwX2xpbmtfcmF0ZTsK
+Pj4gKyAgICAgICB1MzIgbWF4X2RwX3dpZHRoOwo+Pgo+PiAgICAgICAgIHUzMiBtYXhfYndfY29k
+ZTsKPj4gIH07Cj4+Cj4+IC0tCj4+IDIuMjUuMQo+Pgo+IAo+IAoKCi0tIApsaW51eC1waHkgbWFp
+bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
