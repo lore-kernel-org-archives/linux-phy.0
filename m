@@ -4,80 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D8F8D78333
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 16:17:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 363E2E69E99
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 23:33:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ltFLXG/3wTpTiMdDHqiffVlnBBEaY0MJxb7iohnIg9A=; b=oxgRFzLAdqv3Kf
-	zTTBzyYIa8rv9Gx0+FJKPslyhdLE9hv3FLPgC9znuHwbzXzb4DdBZ64pZmon/eVIvlF0iH65KauSZ
-	/CjjySdT8us3Ayiak4lb4jzLbD4a4y2SNARu7CoSc6tl3JWXUy5TW0BBEnMSQqNAdO6R6Tt4dINzX
-	Gq26qm9f92D/yPkzYtjNfJB+K7I/HDM+Mrro5syFWH9zl/EPj59uFT2A+sbFIKohZUn33fz3/mT++
-	01WWwSfCGu28OfeD9MVUYHrAIX0zRLxjhC/URsilUA0TXT/gdmpyoVFaHoehFE0FHgfk6XAF8wRJF
-	/UqufXewaipdTdEmK3+A==;
+	List-Owner; bh=mmo7HyBXAFcn1OzXIHIAiAunl1jFdS1lednvK1bhurU=; b=Do6yo4qO6pihOy
+	l41KJhhn4yqoLBimZXEjy7+XpwGIgLELSOPhATcDtZwzRxxSEqpVD6cBfkMhZbF01ASt32fWkwJGR
+	oEXsQyg/c7nvi6Pu79O+NAyyPotdV5wxBOpdxvDnKCuoSuL8x39xWRpLPFENDKmrvBP7yBpnXZBEj
+	KRK9olL0ooqk1beCrNegEQgGLvKCPckZICb60y2jIZIda2XufJHEzxorqlv7H/6JDPSFC4eDZaiGC
+	e5PuTmH/pTo+dMFI3sl2mSrkN+lLs5MaMPbv5TwWtAgSuVmnPCKKFzS8Z9IFySzERuQ0RTLQGeKK0
+	2AzIBzr1VeTWhr5xKx9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI97U-00000006obN-17Ok;
-	Mon, 02 Dec 2024 16:17:56 +0000
-Received: from mail-ej1-x62d.google.com ([2a00:1450:4864:20::62d])
+	id 1tIFv4-00000007jLK-3xjr;
+	Mon, 02 Dec 2024 23:33:34 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI8rs-00000006lU9-03X0;
-	Mon, 02 Dec 2024 16:01:49 +0000
-Received: by mail-ej1-x62d.google.com with SMTP id a640c23a62f3a-aa5366d3b47so718595966b.0;
-        Mon, 02 Dec 2024 08:01:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1733155306; x=1733760106; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=KcIwgDwhH0r2JEAbp50oSCByWlOCYMPyzaBWedWcxxE=;
-        b=BenBxHKtWpHdDSVMHdooT14R3MNQo0/zKoGDlWx45rtz2B/NtfRi7ak+//BWFvy+ZC
-         8b2+WSunq97TfCDxhwtlyZ6xx5of043qOKeYxxyO8GlokosZvU5CSzS4DFOvZ3oZwgYp
-         iLERrGu0RP78hRTIAZsTYm3Fr55zbJhZDW6ZhpaixJMheiv9w6ItF3i2WUYFi4NGc4vL
-         M9lFDJvmPwZ1yD0+2gT4MDnj4/LB9qNpHzmekMJGwzv5L2y79X8Kybt5+wht9JXLDzfc
-         l3Psn4OMWg3oBF7/q7L/hsHVnc66R+NvLcrPBInupIfshd0PwVc14z5cKQEWDxfz8Pq9
-         JEZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733155306; x=1733760106;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=KcIwgDwhH0r2JEAbp50oSCByWlOCYMPyzaBWedWcxxE=;
-        b=pSYeJB21oXWAKHTC65y/2/YN+wlAHK/lEZWv7SyiUpzeDAQ1PQgGvadwEUBQ7mXV8Q
-         8pVIltV8KGEZjpUeUBkqonOqaMzP7IhucYaAKl5qtr2pM/QhP5v8WPKjG1Rl/xHh9amt
-         AV+mIvtO8sV6lxZkpXzBhdOqXvW3J7a4wN05qvS6R4D3kPf01V7M2fEM4hvM+wqxI84O
-         KJD4FyctGCxIriR2Cau6vVaPOvTaAWHn8FYtM0hNcY6Bv6ucwLjQu0q/fvh5UwCCHszP
-         Tx6CUpROUAVezvsiFqWiN6SQraPz85paVCg0roDkIN48311nkQzwnqluA1mj2ESGQBNW
-         mzDg==
-X-Forwarded-Encrypted: i=1; AJvYcCUsMKhl9KNS9nSLHbKiLoMnpwhktvcEgt7oZLiew8/CMRSDGSU4V8QAZUHzGmXbQ7MaycEFLsWScZp9KAchHn0=@lists.infradead.org, AJvYcCW5mSIO8NPy1/hyQJdqd6Q3oGtv5WUa1wfWNnpkaJtIxtrV4/HzuKSiJah3mTwAWuyA2RW/ARQtwgIc@lists.infradead.org, AJvYcCX/i6qfExZMyceWepnwCN6nZL6oCv4O37B+jcmnOVap0NCD0fVA1tK1JrZ6cm9seQ9LIyWOWWMrnKMW5Sxx0Y9L@lists.infradead.org
-X-Gm-Message-State: AOJu0YwZPjy6CwRzJV4YeHfDUYC1wzNsAZp8axAqn8Z/CNwCsSLf0yDt
-	B0TbeJ049yvP/Ds60EJDHiSYNrF/VTnYyzQBPcupR0SDc5ResvRrKCmo1e962llVmu4zBBVqLeM
-	0obfW3bdVkCzqC9UQKR6QE0b/rxQ=
-X-Gm-Gg: ASbGncv2AnW7L0GGFD2OLaFjXubr6RssRchCZffZQ0SSY9Ku6fBiOAdZERH4VDwbImp
-	SIzkJPWTh8gtNAiGiVFBe5qOP0/cfPZ4X
-X-Google-Smtp-Source: AGHT+IGFABNZQaOPRburPWloYkSi4CpGPxba8eF7BykGzMmRWWY/MWtNoKOUl7owa7F4QGuaqVaPpnIxNrEo8kH/2NE=
-X-Received: by 2002:a17:906:846c:b0:aa5:2a71:1646 with SMTP id
- a640c23a62f3a-aa580f56a7fmr1829897466b.33.1733155303815; Mon, 02 Dec 2024
- 08:01:43 -0800 (PST)
+	id 1tIFrI-00000007ihS-3St0;
+	Mon, 02 Dec 2024 23:29:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Transfer-Encoding:Content-Type:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=LXjlLr10nL652nOirJQGwQvnZ/wVzDxyYQeBTmt9Ex8=; b=XkormIfKy0bQwW9lEejYRetW0r
+	R233wHdQwvqZ2nfj73Wkt7VeS27IAGG6VHETUq3MpLKyiJWSO0OA/fijtKCvne/OyoY5OLKgn3JCL
+	ayZvnqF4Zed1JhvLfxN6QHKusFjilhGXldsorlCQUMi1a9uWQEOs2XgoNJkyprLI6CM4ZI8J2cyEF
+	/JEW7r5Rm/3xIKufsDB6VtNTLgJ0/e5zwsFt9EfusZ+uAOSRHJKBWFxgwRAckmX/7fY9BiLcci9o4
+	S+MIMdue6RewhnfXgt1OsbG9CC/OBsiayJ7y0cyTd6zSfl3zlpvZqnNqOo880VGe+CZrUMr3id4wm
+	ENE79gGg==;
+Received: from i53875bc4.versanet.de ([83.135.91.196] helo=localhost.localdomain)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tIFr6-0000OB-IN; Tue, 03 Dec 2024 00:29:28 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Chukun Pan <amadeus@jmu.edu.cn>
+Cc: Heiko Stuebner <heiko@sntech.de>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Yifeng Zhao <yifeng.zhao@rock-chips.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: Re: (subset) [PATCH 1/2] arm64: dts: rockchip: rk3568: add reset-names for combphy
+Date: Tue,  3 Dec 2024 00:29:14 +0100
+Message-ID: <173318214612.1403925.12222889205247999008.b4-ty@sntech.de>
+X-Mailer: git-send-email 2.45.2
+In-Reply-To: <20241122073006.99309-1-amadeus@jmu.edu.cn>
+References: <20241122073006.99309-1-amadeus@jmu.edu.cn>
 MIME-Version: 1.0
-References: <20241012071919.3726-1-linux.amoon@gmail.com>
-In-Reply-To: <20241012071919.3726-1-linux.amoon@gmail.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 2 Dec 2024 21:31:26 +0530
-Message-ID: <CANAwSgSusXfr73LNySLJVnYPDNsyYmK_=2+YXAwm6bLE+NsWdQ@mail.gmail.com>
-Subject: Re: [PATCH v3 0/6] RK3399: PCie Phy using new helper function
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	"open list:GENERIC PHY FRAMEWORK" <linux-phy@lists.infradead.org>, 
-	"moderated list:ARM/Rockchip SoC support" <linux-arm-kernel@lists.infradead.org>, 
-	"open list:ARM/Rockchip SoC support" <linux-rockchip@lists.infradead.org>, 
-	open list <linux-kernel@vger.kernel.org>
-Cc: Dan Carpenter <dan.carpenter@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241202_080148_051314_FDC2DCF1 
-X-CRM114-Status: GOOD (  14.39  )
+X-CRM114-CacheID: sfid-20241202_152940_858155_80F72FC9 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,48 +84,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi All,
 
-On Sat, 12 Oct 2024 at 12:49, Anand Moon <linux.amoon@gmail.com> wrote:
->
-> Few clean of the phy change and Using guard notation makes the code
-> more compact and error handling for mutex_lock/mutex_unlock.
->
-> Plz review te code changes, I tend to do silly mistake.
->
-> v1:
-> [1] https://lore.kernel.org/all/20240901183221.240361-5-linux.amoon@gmail.com/
-> v2: Fix some typo in the subjects.
-> [2] https://lore.kernel.org/all/20241006182445.3713-1-linux.amoon@gmail.com/
->
+On Fri, 22 Nov 2024 15:30:05 +0800, Chukun Pan wrote:
+> The reset-names of combphy are missing, add it.
+> 
+> 
 
-Do you have any device comments on these code changes?
+Applied, thanks!
 
-> Thanks
-> -Anand
->
-Thank
--Anand
+[1/2] arm64: dts: rockchip: rk3568: add reset-names for combphy
+      commit: 8b9c12757f919157752646faf3821abf2b7d2a64
 
-> Anand Moon (6):
->   phy: rockchip-pcie: Simplify error handling with dev_err_probe()
->   phy: rockchip-pcie: Use devm_clk_get_enabled() helper
->   phy: rockchip-pcie: Use regmap_read_poll_timeout() for PCIe reference
->     clk PLL status
->   phy: rockchip-pcie: Refactor mutex handling in
->     rockchip_pcie_phy_power_off()
->   phy: rockchip-pcie: Refactor mutex handling in
->     rockchip_pcie_phy_power_on()
->   phy: rockchip-pcie: Use guard notation when acquiring mutex
->
->  drivers/phy/rockchip/phy-rockchip-pcie.c | 148 +++++++----------------
->  1 file changed, 47 insertions(+), 101 deletions(-)
->
->
-> base-commit: 09f6b0c8904bfaa1e0601bc102e1b6aa6de8c98f
-> --
-> 2.44.0
->
+Best regards,
+-- 
+Heiko Stuebner <heiko@sntech.de>
 
 -- 
 linux-phy mailing list
