@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79974D49795
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 03:32:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A2BED49798
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Dec 2024 03:34:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=po5EO4jp+0hzsvx81RXNBlQIrYvYYJ0R0UM8OG2rB6Y=; b=YMtw1wjnhK6E5W
-	7iXs+IiJeOI4PJUgeVfPDkICx1FviSqMFN1571X3u6mVd7r16dBIvhm67ZmbJkprBa6jsH0CHPAHl
-	3KvgjGXx5PFnzKArwKffb2aUm45vhihzg2cvKZYHSVRuNm1R2KjmhwEffKen4vi3Hh2TMLLhdZ8/5
-	FBX+H4MyEKvsi6P8EhRztrNq+GojmnU8obbLU0iBQXFgs2DsijY0DJpQZywDtEMFn1dAUPlS5X1xl
-	R4xFwN9jhmzU7YRtGmkWdk2apuWYR6p6ta+I1LPVh5Q7Vy7VQsYBW/VDVsLNb5lhSISIapt6D8yD0
-	2X8S6l6s3h6ht/qG177g==;
+	List-Owner; bh=Ut3eUBS1eX8szKdiGTwvF1YWDDHC/RcYUQFBRXnpID8=; b=tMHIdwinLRS62C
+	C12aP0hBKw2R6AZKtUoQSSF0IHva5ySeIJV1QSlBDA8Wl+yGxdEMQqWeZMCyqyvKsLie7K+89FfNY
+	g06dW+WjzGGv8L2aPowhllsq13KPmxT+NlBsts902EnKhgDJsR+Uye0TZvP/mYvwVwxeyGvjzth61
+	S64FwV2D4dAi40gDuAVtE3i85NGpezHsyzx4stue0Sep+AYR/kxO7vlucOeUXE1yAYb6oZ69GwDrx
+	YJIkFvROF3/fthVZhcV4XQuixp40JjH5wMcfklLNKebhm2AqC5VmWvyAndZglo6oIKfGiJ09K8Ssn
+	6LLPzEus5LDQKMjm06qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHxAm-00000004xty-0tuM;
-	Mon, 02 Dec 2024 03:32:32 +0000
-Received: from mail-db8eur05on20610.outbound.protection.outlook.com ([2a01:111:f403:2614::610] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1tHxCi-00000004y9w-1Xtb;
+	Mon, 02 Dec 2024 03:34:32 +0000
+Received: from mail-vi1eur02on20610.outbound.protection.outlook.com ([2a01:111:f403:2607::610] helo=EUR02-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tHx9L-00000004xEt-35BW;
-	Mon, 02 Dec 2024 03:31:08 +0000
+	id 1tHxA6-00000004xaM-1G1v;
+	Mon, 02 Dec 2024 03:31:51 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dBP1vhISjf75gEsvKqLwi2dXLpPNF5NK+0ljvvJveinclBtiBq3kC85qIKIGQOPD07WfNXh4HIlS/saSVeC1fZQNJB8fi9nf3kK3Zeh1LfwUY58Tr/krWJSfBWdApnfbJYM2r0SbajYWIAacbcCV+Y6XAwguBB0b8I4KwBnT7/JktR7M/F83kdebJ6EACSBnG73AMi3MfcXFNgxqUiBYjb1JPMdJCgcF+8VzorkycDWIA/ozkIsv9GkzcrjLIiTn1S2XqPl1i/vJo+zve+m//a88oSxlUVJ2UmdCAWv9vC4Zc+LPrfelAI7tjBkXwk6PKUXASQdP5Gc7Mud3Qy4Acw==
+ b=Ob8U4vty68i4ZGtCj/t8F8Wcz05Z3Q2huXncdJbdWmnL9C7l8ul3gPrGRTh6L0vhSPKrxjg5m5Eglh4V5DWEETp9LbCcuFbDA5m+l++ZCLkI17tE/gd1K9zbHf7UL1d8mdgKBcpLYGFPtBGXmFVKQhiQUFgypnHiiKnt4DImUfTl6KyHsUNgdibTXTHeRFqq44cCOXr3rbpDYcCzpgs2K+EYxF7Sfq3DzzNJGr9indKs0hHvNYz2BdTyrbWgrq5YyGsyzhrkr+/eWT+yYaueBAe3zceperPETc6KmDaEm3gCY4PpvA3HUTDo82ijtDc87GTkcm6W+9e54x2hG0/v3Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=TspDlAGAo547NwgAFno/jIClDZr2pKfdfxf0JB2YyAY=;
- b=dpxqVlzYOHtjr3A5mpt+2NcNRYUlDZ9aauqwTc1BcpvBwIBNn5+kZT6M9s3X67xRctfPYcmJTnHOcuq0z3rGfI3/7hwmh3iN1HFhz0UN9d9dQlg7MHjuFAmdv0bznzR6CWRG3u7xoi8r0Ql1ArwBMCDJSGx6vDoUvSgj+4Iq8iL2G9kA8aZlYUPU6bj48JCXi6GGtO01f5LVdCNyX9iS6yHQlf/qp3UlIVhgM7SMRjFP+Df1lUSd7SGTI+8VOWXjVh7bECMIDn9hIv6lJDM4BRgt3CH1eFhPIPzUpK/YWFDDE3sYr7twsM5EBAJxmWf/D5AML7J4EqP0CkPDMp7p1w==
+ bh=eAWa0pdu4KjiDW09QDwcFh09K+uOagshDRrFKtuI4uk=;
+ b=ZQvNxYTaxb66qQ9Rk6snd4/5nEqwAeKgaIBq6B6sHF1PUrCDXFacB6MGvctTV7fde6SdN0ObiywPp9NvdxsVK7XXpRPi2zwTlSks5mhQHzRhWM97VR36LE0g9+TPZE7ECqW3xBlI4sWHgG8ww9Y0g4IrtWzdRCJeaUWyzWm6r2kLiRabo/m68s5mUrrnD0PU6zM1sncawlqH4Ml9ljIeqPwXD1rFR8oVQzIx8x8Ebc1LMBj6kflkIWPoSmxmhWHDHKQTTrVTSlq/pHSuKruurlEOP7ue3eCNoUO7UrQUDfmW5ISZRvOiRVTF7hlxV47AawzoFyMgDMwnH/Bowgl6Lg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TspDlAGAo547NwgAFno/jIClDZr2pKfdfxf0JB2YyAY=;
- b=dkkL52THqoHBfFhQZwABNuPimaZhNdqGR3lH8D7IF6qOV9KxaomdpasOXQbcKKhPsjQcm2vvqQw+ZkWxpaZm42YHlVo/SR1cRoKpBxV/NCdJuNn1DsjqDIUG2JsewlKDCQBrjTs3rmUU4PVKaYoYKvDb7JQcqAToA9Ck/ipEpRWFLOIypMadUe2QDSTxNJPLOi3Fi7rESOu9avfvuCUHPHanNIR3cifCi3r58eXx3ZaKCyaAudh64OogwCXjkYVfe6fD/3MuJ0dTQqB0YPMt60oM480pgc0rQeqke3eE304ZphqLoBf6kLMEGu+qAuJv8YJAc6deojNk67Z9U6TMlg==
+ bh=eAWa0pdu4KjiDW09QDwcFh09K+uOagshDRrFKtuI4uk=;
+ b=O3MsrhSOYZFTChNiZ+UnytfncFsD3HUXpGbj4zH0QuNCHIRSV3cIGWS0dcUQhhVzP2gQ0WnX+iMXfvly3bjIfELWquAZPzKnN3erTJiuaVSoiAQbS82MUJVavoj3O6vaPjCEPdcKUPMqnl/rf1Ork7EFkg5Bl4j7ZMvgwYNNTlNy4Ab9ki1FMo3r/suldYYdiXZPyevPuIAzKurq/39Y9LzSL1MdfzSlyQRrcRoTxVLlvVIVO9Vq64To2aWaPs8oV5/P4nMbaP5JnOFeVUK4+CPh/oMtgL2jqpyTTTPOlFDO/ahIpSPMj8N8Dx6frqohFtLSKWrTflfLnsFlzWh3Cg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
- by PA4PR04MB9318.eurprd04.prod.outlook.com (2603:10a6:102:2a5::10) with
+ by DBBPR04MB7643.eurprd04.prod.outlook.com (2603:10a6:10:203::11) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.17; Mon, 2 Dec
- 2024 02:57:20 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.18; Mon, 2 Dec
+ 2024 02:58:30 +0000
 Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
  ([fe80::d1ce:ea15:6648:6f90]) by AM7PR04MB7046.eurprd04.prod.outlook.com
  ([fe80::d1ce:ea15:6648:6f90%6]) with mapi id 15.20.8207.017; Mon, 2 Dec 2024
- 02:57:20 +0000
+ 02:58:30 +0000
 From: Liu Ying <victor.liu@nxp.com>
 To: dri-devel@lists.freedesktop.org,
 	devicetree@vger.kernel.org,
@@ -80,9 +80,9 @@ Cc: p.zabel@pengutronix.de,
 	frank.li@nxp.com,
 	dmitry.baryshkov@linaro.org,
 	u.kleine-koenig@baylibre.com
-Subject: [PATCH v5 07/19] dt-bindings: interrupt-controller: Add i.MX8qxp Display Controller interrupt controller
-Date: Mon,  2 Dec 2024 10:56:23 +0800
-Message-Id: <20241202025635.1274467-8-victor.liu@nxp.com>
+Subject: [DO NOT MERGE PATCH v5 16/19] arm64: dts: imx8qxp: Add display controller subsystem
+Date: Mon,  2 Dec 2024 10:56:32 +0800
+Message-Id: <20241202025635.1274467-17-victor.liu@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241202025635.1274467-1-victor.liu@nxp.com>
 References: <20241202025635.1274467-1-victor.liu@nxp.com>
@@ -91,78 +91,78 @@ X-ClientProxiedBy: SI2PR06CA0005.apcprd06.prod.outlook.com
  (2603:10a6:20b:113::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM7PR04MB7046:EE_|PA4PR04MB9318:EE_
-X-MS-Office365-Filtering-Correlation-Id: dd0d876a-9f76-4473-a7d9-08dd127d0983
+X-MS-TrafficTypeDiagnostic: AM7PR04MB7046:EE_|DBBPR04MB7643:EE_
+X-MS-Office365-Filtering-Correlation-Id: b6ba386a-9b7b-4ad1-6c85-08dd127d3353
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|52116014|7416014|376014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?TlORTwG9O1EHYsfuQjqFN9YbW52xEtoVpnIa06+fPUvKESp9Hs/lxvYCHSW+?=
- =?us-ascii?Q?de48k68wkL6K0zCZypyfwTHogOB+Xm2wmSVunbUECQ31b516z9hGCsh4S7d/?=
- =?us-ascii?Q?BG0IoyE+wLDHfCjOi/80aaHMRAIeZo0A7+5S8FepjUXygDtRCWwgaY0I0mkL?=
- =?us-ascii?Q?fNXvdxrpWggpDvcBNw3HUKuMEfoqaIXoKEdz6KBFjacNao8UcjTxCWZ3amfY?=
- =?us-ascii?Q?9Xd8FyMRlB4lnTCuZ+PgJHpmijaTvU2ulWoeQoiAPMwW7uqfkudJaNHOTeEp?=
- =?us-ascii?Q?eInpTdlQp6AhO3sUh8sCYJ3bWCCdwdgPmjGNb+ZdGoho6ca7UAkP/DyKYHIz?=
- =?us-ascii?Q?EG16SioKQNHHdb9DYDjtKFlsP69kJMLsVQHuELrUYFz/fmF6xu4ikRWi5Fit?=
- =?us-ascii?Q?SKBSAbp5h+Kq4eoWDqmVIun62J9ZxRL6UNOoNCdqzzBrPpdM4n9F7I8wGL0z?=
- =?us-ascii?Q?VPDdkBayypmkd/Pvp3tRMASaHNokVWvAvkbXEQ+C/FvmbwM5bEG/YK9It3FU?=
- =?us-ascii?Q?1MtRdROv8L1QtbnNIZT4aG5jOP49GpxFET0a7FDvRcE9s5Ke8HwK6Ywfha3s?=
- =?us-ascii?Q?R9CebjU+ABoHNIv2K2FjKP5Ofl6tzZQBSquTStmeNc8eEgwXXpyPPqQ5TMCS?=
- =?us-ascii?Q?QEQ91X8cUA/i46Aesiw37o7IkaOcRPVWqSGfR3/T36m0par7l8rb3oemwuON?=
- =?us-ascii?Q?Z2FhVGuoXOWuUup9t5bRlEePi07M4wPVg58x7OdLYfJHjnpHtZifEXgZpdr1?=
- =?us-ascii?Q?xV8rA8bNyZ6fO2j29j8fs/bQuGNNOrxgp4tL6KLb7ZMCHK91aCFBYcdG+xOt?=
- =?us-ascii?Q?jI+NytcmgeKiEYbb6dohmPLoYC1c63iZDYfcxcOSNfjbeaCLK1hmVxzzLOwV?=
- =?us-ascii?Q?dvY3MwPidn44DCkPTGO9Y31m0UGRZn53ZPGWS/J25s5kiHlOM4apkVPl0Kik?=
- =?us-ascii?Q?IX66B52BEEVD9kH4bQvR032AtdnnA+EFQyZpUkLJdRTlPCwOPlLFkU85LE3k?=
- =?us-ascii?Q?sJqFTPkP5NwLPmDXr5lP3bGn6wc4CqPXoqbQIltbuoQFhaa/Q48BPSrURkPW?=
- =?us-ascii?Q?YNg58aqpz7pSSoU0WLyc5To+DdBEjoCQHgyxAoAc3Ex69A76SRK4jq6tTmRS?=
- =?us-ascii?Q?ug4vZ2fHtb327sdmfQr4S8jwFzMUw7zH8JvCpHa6NYGN694DCKAv+vYjLbBx?=
- =?us-ascii?Q?mL/7YrJ4rx0N8LXXzWzrV+5v/LHvOvniw8JH+hbef9g3LacAw65ZIrxQ1KKT?=
- =?us-ascii?Q?WxSf50S9voVXWs3AYyhhrUC6LOEkG4s3HIBjgYblIn1jaF9XvnggTzQHA812?=
- =?us-ascii?Q?3wCdsCQNsFjIYniaK7eZTddNA9d/H9HPI4AlWIizZ0f5F0XVunVu0wEhXdmm?=
- =?us-ascii?Q?bPOtpZ8=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(52116014)(7416014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|52116014|1800799024|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?xNuV1pZyLOi04qYqPDm/MtMZB5K8HtrlzdW2QZ0krhwD3rLYEod4rAgE1Ur5?=
+ =?us-ascii?Q?ZSBqgOnxWS45TwjnvZaPjJTIAViVR8s6VEsnAHuN+4PKSpllKrnk4AuFEStR?=
+ =?us-ascii?Q?yVCDSt0jcDj1BEU7Wx6Cd/f2GqWta1fnW9CrcF11i9se0vn1YBPhVuAJtO1F?=
+ =?us-ascii?Q?D/J960EuLBFMHWJPwVJKerxdUrz0BzfY/F45wZberLXgJI1bgN/44WepBh/I?=
+ =?us-ascii?Q?XEppsmIF316MbCBDMdIk3/ughA1NzCb6DptDmBpKnc5h2BIJ5ZEa0g4iXYbv?=
+ =?us-ascii?Q?Dt7Q5xhWRVYZ1rKjyFQ7w2L91paS+ad3BzkjRKXxmcEkz4D/U2S8elTz3gXY?=
+ =?us-ascii?Q?eh9zYgrOaasyqTGgDQEEC+pVv4j8IMIr7OfjMIF1ta2LogQtYjoCzhj53hmy?=
+ =?us-ascii?Q?bBfK39qi1Tb8M8HfEtGGN6TU+SPsgvEe2PZIaIMwNyugi00Iw2hg7ESi6LMU?=
+ =?us-ascii?Q?T1JjbDnhWdqUa90UdUgDddbcRcyjylxLabWFLgnTtSOp8ClisybasLsS5yuq?=
+ =?us-ascii?Q?/1TOi6Pn5++w7hdyfwUlaAzyYZ8RW/eMzJYk0A2VHcMIUf+ktH6y7R6tuBr3?=
+ =?us-ascii?Q?6dg7c9WVaiF7WzuIS/xzxBP4UnIgXwjRZfy6b/9JgX4ukTLrn7+qLDljRcnP?=
+ =?us-ascii?Q?PWEPrnJK8tWQ9xf/XsdALWhuMoa+p4OJzWEgLU5OLS1ePbZXa+QOq641gq+8?=
+ =?us-ascii?Q?6osH5A4ZchW0VLG2P4m/yHQWUSQYBWrwaVRwwX+gMTkAcUse/hgqTcr4WJMG?=
+ =?us-ascii?Q?D3ruUh/Gk9m5dgCPUvbpX4T+fVtbdccI8V4lfJKd6qsJNsNayVAq8LBehDZQ?=
+ =?us-ascii?Q?wpAS06dKZMIRIVBOptVQC4NO3nKIw0f8ipF/rsWOd1Iytgx3CW0B9ZUjvej9?=
+ =?us-ascii?Q?L9FypX6/5iwdAINStx6SiaMDeLwwJHH8yaAVaITxN9UtMA/c0z3nTc98amDk?=
+ =?us-ascii?Q?lR3+y5/HzJgBGRbsSDUXpWFrbrMvKbmbuvNjgNirktBx1Mxuf+5ciKqhbOHy?=
+ =?us-ascii?Q?gLBlCYxJnNDJGLqBYzl8YD6eMHi4XFZdW7WKhAOxcsC8w2nZPFhyI5kx+w7P?=
+ =?us-ascii?Q?YT2KZWcSB6YzV5Tw684fuHZ9oPe4Fb0AwMFWOFTbrrDiWbA3oCuayufSqp4k?=
+ =?us-ascii?Q?MDlKHDS/+MtQIJeIH5AwdoDPO+YaBINVaIJsOOZUyYir9A2KZ9zmnERsSj+V?=
+ =?us-ascii?Q?Be03LE4oCEwYoQFOkjfLVAv2UzVfjcxdEPZ7tyGMrDYzw9A7yPVj8GXoD1jj?=
+ =?us-ascii?Q?1oiNmeV8p4gk91JmH9gzXmvKmjvNpYtFYdNiiDjp846SKm4RfurajG7dITDx?=
+ =?us-ascii?Q?PK+iGZMs0CLc97qnPG/E3/2ydW24DGk47rVlnPkxZCoFQVxqTbDDGJEr0UMb?=
+ =?us-ascii?Q?gJItlakOWdNFz3v/gmFvpeTjgL6jCCmMz77Y9KMIUSjnHhX5lA=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(52116014)(1800799024)(366016)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?GfXQzSK3UdfePD+hMU3stZW7frki7Lj4uojN1Vy9lr9MdtJtwU7nj7B/KYNk?=
- =?us-ascii?Q?veIMc8y1zcINcCZIT3ufha0SdNXGW0vKilEM5jh+0OXorkCYb+iYp9O/5fK+?=
- =?us-ascii?Q?aZmTJNQzC2II/ja7ZPsQ6GtBu+ZlzKx7cVqeFQtyLorwc7aCi1Iq8okAMmG7?=
- =?us-ascii?Q?/v0fseKGws6Hl4IyYOrZW2NtwPMNukotrib76+LChPZNmypFuWExkzmEZywd?=
- =?us-ascii?Q?NsDOiTG2xaA6/voO0UNTn0TKV27JnLn3kPZtZH8vGTrS35ftz9ga9kXlho51?=
- =?us-ascii?Q?8beu7UY9j7fZPfxCPoKsvJq2lp0sP8xTg2kltSBLdlN/boAInHh0qgzaFD5n?=
- =?us-ascii?Q?gVZm4QkT5xSzLE1rG8uv5Vgru/7iHkrcccomEh4HXsvNYsg8nfQDOg2DhVZ8?=
- =?us-ascii?Q?HAXzqqVPlRC8kM9cCjDEi1oRzlmgiEXVKBqxCULm2yWAPhtj3QYyMcBhElk6?=
- =?us-ascii?Q?6hkeVZfGTR0egQabNKUHsVbDeZTAWv+pIF8bldL7E2i053PLLNMAXukFLBeN?=
- =?us-ascii?Q?2pX2oWSmySPReLKrF8i8jdLQIq1r1L+NHA9kRuG2bqRlEdGEBIDE5icw+io6?=
- =?us-ascii?Q?EGK3ox0PkZzAuWRmPv4zrGNHEKRS6E1QoNUHpQ9rekq3xO+86UARFJC/h2oZ?=
- =?us-ascii?Q?3XQWuloA+JRrii+QG7bBkGyd5dBHp9DBG7pUoiNlVR3AtIrZYONAnWoeXWi5?=
- =?us-ascii?Q?uRPftxhYYXxfW3MZdB1iFuYTrzUSu0wtPwELntRpiUUPRWVYYn+3VLFAocwR?=
- =?us-ascii?Q?N9WCPGoDqetfJm9+hw3PpD4rEV5wGpKkmh2IgnrOyAzEd3l79GSKF1klWjXF?=
- =?us-ascii?Q?ih10h23ldvqY30swPwsNLxjMx5suROgtKtn8Hk01hTFszFNoW4Tekbs7Kqjp?=
- =?us-ascii?Q?k+mGhDZdKkViqYU7tIuUbS7kg67vpwup7MqGkcsYxa58dIuE4gjsc6Hr/dVX?=
- =?us-ascii?Q?f2tV5IBBdGuGlUnwEqvXR6ebeTRM6oBcq5sGd4W8/tSgqoq+ebnYw5CYTMov?=
- =?us-ascii?Q?3Aq/NXOoB3D8oK77AVkakdh7hwFyeFIF/GKxIyYzxtFYmTBWRt+1Lg3f4pu4?=
- =?us-ascii?Q?adfquScwmndqWVbX0dsPznBYx3wfovCiy0s3HtNfY55U1dgB0vCDpw2sO7bz?=
- =?us-ascii?Q?jaz9Pkvv71UdCrDebTlPVd++sdBuUAm228n0l90GHLeGq1Q1PVUAXSFJEZLv?=
- =?us-ascii?Q?RdMFed4uNo+mhfbsJOc3A5MM7tE3UL/xQIrNSzegB60xK4+ERV3eGDR288AG?=
- =?us-ascii?Q?V5zP62g7CA+mdOqjXIWdI5icTUFTVB+0HvbFX9KA9fd0SXkalh9X/GvsDWJk?=
- =?us-ascii?Q?DMgfh+k2uKEeyUzV67O1pOsCwOcrrmzv4xVzdv4zgOVX3X998YbP8cbkC6KI?=
- =?us-ascii?Q?snWRDy+09TCmSctaZlRtETF9F6hYW792AvCWR386t+9X97ed3uGgbZPJU2//?=
- =?us-ascii?Q?g3CIk89XwtzqwxY4ceUZbE247dyF/IxK8FJJ7JwxJYB9MytH8etDkN/dC6ND?=
- =?us-ascii?Q?0ahfmwmjYlEJl1HI59tEiUBHhYyVmUxvfcxxIGyUWMYKOikiDkdlM9EbTOiO?=
- =?us-ascii?Q?Jjw2ptGOLXMmt1ZLjXL6x/7lVjmygTSEKr54dHo9?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ERFWnTDrb94RcVPfmsy/xHT3xxF4gIhOoUFM8Wtj8efIR7zY94hMd7vIabY0?=
+ =?us-ascii?Q?vbkJsKXiOGZL26lQlk1k7/zmq91gFSH0aFkjZvAcMIDd6f2YXHQ9qIqLfBLJ?=
+ =?us-ascii?Q?oOiDrJ8niIrevGTjPkLjJW05UBfUJR2M620TKGLG5x4jGkwhJgFAdhFS/dB9?=
+ =?us-ascii?Q?gCQWofRJkML8S+A+CcW+KEhSYFrrGqJg5ofRMFNhUw34hx5aTnPeNy9T0beC?=
+ =?us-ascii?Q?eJe1XbQsTH4yKCvVkOXkKJPUxBPm02cwZ294xrK3wKq7oDP0kojJaXmf5VWw?=
+ =?us-ascii?Q?y/AtAXIKhuF09mtDP7Hrk7FHCZb7bnTdOnT9ah4LA0Qh/+fL3PIozIdq5EYw?=
+ =?us-ascii?Q?gJOVNMP+XUyCVW7RMNwarLVqbkKg5ZW5684F9dq1vjNZpHdkuqjO0V1nYPED?=
+ =?us-ascii?Q?uMY7VfDne7rpuakJXtfHHRuvw7F4PapLOrlWNmQKgd5bcizBdTy9Cd931UMv?=
+ =?us-ascii?Q?e7aGrEDzJVU/w3yQDMzQcFJDDY46hmKrKVb41QyPWIPQJ0WqlM9utHTm6HIX?=
+ =?us-ascii?Q?O3aQIr9z3ViV2oh7l27E+PHc2rOcvDrhI20Ed62xdMTiLks/nYrxbkOMmDwH?=
+ =?us-ascii?Q?hCP4/DM2yCvrarZ9oUxTI5gjvHDQosOEsAgNxSzRC4SCWyWB14KsNzxFvpqO?=
+ =?us-ascii?Q?K9DNkCCazqVGlhG70SfpfPbU/+1ml0cPtrct7bSfgBQaQlOvNdBLyCaXBZNy?=
+ =?us-ascii?Q?mS2U1gXRUnnqv2uh/iseivHUJT4OXVPtLG5FFLGgI0hQiBW1xPycqO8EZUG7?=
+ =?us-ascii?Q?aWXeKXMGhbyqw/cw+jBFvRKxBD2NlXKjzqioholdd8NL5NkavGEWBlIzwDqU?=
+ =?us-ascii?Q?WE6LMYoDao1+BB8XTSLKz1XFxgWzUW2ea88HKLLK4SNdUJyXjFPqSMsPWdGq?=
+ =?us-ascii?Q?Ztbje4Bi5cfjcSE8cWfubUnY+gQnqRHSgbJ5I72bCc3ZpdH/kdxPX2k5if1z?=
+ =?us-ascii?Q?Bw6u99zLNDy0wh3KE8RWG+phqfEOA+KFKyyaOjWjJfDnGRJdOICgYc/JG/0I?=
+ =?us-ascii?Q?T3csKR2wlb6MZM1/3bVh+peXYyXhgAb1FFiPPqV2jqc9tX0pd69Eedw+O8D7?=
+ =?us-ascii?Q?gEa/8IR+T+rbVwfNhRn4MQEr3Gdos1vtkMkDBoK2K6houxyl/Y1YNW5qrGSI?=
+ =?us-ascii?Q?1dDL4qat3F/wV1G09zJTs/bsgt2sY8hk9Sf6EypY4o36slR0DsF6vZjaU6AH?=
+ =?us-ascii?Q?Z/OHTZWD4RFh+B1kf6awjRf2zEgmfDOz/UcgHVOIuxK1PsgxoSN6JC/PpHLr?=
+ =?us-ascii?Q?fueosXSrUs0sH2odkn5TOhXhSSpF18acNmr+gMEXYkw+lbhdFBmbQtB2b/Kg?=
+ =?us-ascii?Q?pwUe2resjNtoaIlaycJ8F7gmhcuM6MgIn42JmTbsjRIvaaEc88LUcNsl4IIV?=
+ =?us-ascii?Q?a9NmAVQDxgLgFnaLYmsnkSbgLIFywpaSby4IN2Pc5tH+mG9Mio/3wuiEUm0f?=
+ =?us-ascii?Q?B/Q+Tmtra2VfMiOkM34+o6f3on/vxW5cpfz0j4NsURqFhTdmXkjYG9mg6usG?=
+ =?us-ascii?Q?M1bRAQLapn24VrfuKMQ2fDfEU0mJohu6Gi9dGeQmm0OaqDbeESoRZBxBHuwY?=
+ =?us-ascii?Q?hOgVfXqlEuE+vtk2SNDa0xUYxPxXaqO3SSlR0t60?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dd0d876a-9f76-4473-a7d9-08dd127d0983
+X-MS-Exchange-CrossTenant-Network-Message-Id: b6ba386a-9b7b-4ad1-6c85-08dd127d3353
 X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2024 02:57:19.9603
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2024 02:58:30.0805
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 15N4/5NnNomLBsrfHCJ2qcf7NEjVXo9XAsUupJyO9q6hpkvB8IdjA71mkidn3L7wqJA5mYdrZFX1lbr0rUdI9A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9318
+X-MS-Exchange-CrossTenant-UserPrincipalName: o76dZetdb7KA8gKd586vCBc+qBQGv106mbXh2RFhzvSC8+tpYFbh19160/ejWScMHfdDljZ+jIZUc8ua6My3dA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7643
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241201_193103_922521_D3BB88F3 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20241201_193150_503987_3A909AD8 
+X-CRM114-Status: GOOD (  12.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -179,11 +179,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-i.MX8qxp Display Controller has a built-in interrupt controller to support
-Enable/Status/Preset/Clear interrupt bit.
+Add display controller subsystem in i.MX8qxp SoC.
 
 Signed-off-by: Liu Ying <victor.liu@nxp.com>
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 ---
 v5:
 * No change.
@@ -192,339 +190,731 @@ v4:
 * No change.
 
 v3:
-* Collect Rob's R-b tag.
+* No change.
 
 v2:
-* Drop unneeded "|". (Krzysztof)
+* New patch. (Krzysztof)
 
- .../fsl,imx8qxp-dc-intc.yaml                  | 318 ++++++++++++++++++
- 1 file changed, 318 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml
+ .../arm64/boot/dts/freescale/imx8-ss-dc0.dtsi | 408 ++++++++++++++++++
+ .../boot/dts/freescale/imx8qxp-ss-dc.dtsi     | 236 ++++++++++
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi    |  25 +-
+ 3 files changed, 668 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8-ss-dc0.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-ss-dc.dtsi
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml b/Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml
+diff --git a/arch/arm64/boot/dts/freescale/imx8-ss-dc0.dtsi b/arch/arm64/boot/dts/freescale/imx8-ss-dc0.dtsi
 new file mode 100644
-index 000000000000..6985ee644a25
+index 000000000000..0db345204b89
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/interrupt-controller/fsl,imx8qxp-dc-intc.yaml
-@@ -0,0 +1,318 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/interrupt-controller/fsl,imx8qxp-dc-intc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
++++ b/arch/arm64/boot/dts/freescale/imx8-ss-dc0.dtsi
+@@ -0,0 +1,408 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright 2024 NXP
++ */
 +
-+title: Freescale i.MX8qxp Display Controller interrupt controller
++#include <dt-bindings/clock/imx8-lpcg.h>
++#include <dt-bindings/firmware/imx/rsrc.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
 +
-+description: |
-+  The Display Controller has a built-in interrupt controller with the following
-+  features for all relevant HW events:
++dc0_axi_ext_clk: clock-dc0-axi-ext {
++	compatible = "fixed-clock";
++	#clock-cells = <0>;
++	clock-frequency = <800000000>;
++	clock-output-names = "dc0_axi_ext_clk";
++};
 +
-+  * Enable bit (mask)
-+  * Status bit (set by an HW event)
-+  * Preset bit (can be used by SW to set status)
-+  * Clear bit (used by SW to reset the status)
++dc0_axi_int_clk: clock-dc0-axi-int {
++	compatible = "fixed-clock";
++	#clock-cells = <0>;
++	clock-frequency = <400000000>;
++	clock-output-names = "dc0_axi_int_clk";
++};
 +
-+  Each interrupt can be connected as IRQ (maskable) and/or NMI (non-maskable).
-+  Alternatively the un-masked trigger signals for all HW events are provided,
-+  allowing it to use a global interrupt controller instead.
++dc0_cfg_clk: clock-dc0-cfg {
++	compatible = "fixed-clock";
++	#clock-cells = <0>;
++	clock-frequency = <100000000>;
++	clock-output-names = "dc0_cfg_clk";
++};
 +
-+  Each interrupt can be protected against SW running in user mode. In that case,
-+  only privileged AHB access can control the interrupt status.
++dc0_subsys: bus@56000000 {
++	compatible = "simple-bus";
++	#address-cells = <1>;
++	#size-cells = <1>;
++	ranges = <0x56000000 0x0 0x56000000 0x1000000>;
 +
-+maintainers:
-+  - Liu Ying <victor.liu@nxp.com>
++	dc0_irqsteer: interrupt-controller@56000000 {
++		compatible = "fsl,imx-irqsteer";
++		reg = <0x56000000 0x1000>;
++		interrupt-controller;
++		interrupt-parent = <&gic>;
++		#interrupt-cells = <1>;
++		interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 46 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
++		clocks = <&dc0_lis_lpcg IMX_LPCG_CLK_4>;
++		clock-names = "ipg";
++		fsl,channel = <0>;
++		fsl,num-irqs = <512>;
++	};
 +
-+properties:
-+  compatible:
-+    const: fsl,imx8qxp-dc-intc
++	dc0_disp_lpcg: clock-controller@56010000 {
++		reg = <0x56010000 0x4>;
++		#clock-cells = <1>;
++		clocks = <&clk IMX_SC_R_DC_0 IMX_SC_PM_CLK_MISC0>,
++			 <&clk IMX_SC_R_DC_0 IMX_SC_PM_CLK_MISC1>;
++		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>;
++		clock-output-names = "dc0_disp0_lpcg_clk", "dc0_disp1_lpcg_clk";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++	};
 +
-+  reg:
-+    maxItems: 1
++	dc0_lis_lpcg: clock-controller@56010004 {
++		reg = <0x56010004 0x4>;
++		#clock-cells = <1>;
++		clocks = <&dc0_cfg_clk>;
++		clock-indices = <IMX_LPCG_CLK_4>;
++		clock-output-names = "dc0_lis_lpcg_ipg_clk";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++	};
 +
-+  clocks:
-+    maxItems: 1
++	dc0_disp_ctrl_link_mst0_lpcg: clock-controller@56010008 {
++		reg = <0x56010008 0x4>;
++		#clock-cells = <1>;
++		clocks = <&dc0_cfg_clk>;
++		clock-indices = <IMX_LPCG_CLK_4>;
++		clock-output-names = "dc0_disp_ctrl_link_mst0_lpcg_msi_clk";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++	};
 +
-+  interrupt-controller: true
++	dc0_pixel_combiner_lpcg: clock-controller@56010010 {
++		reg = <0x56010010 0x4>;
++		#clock-cells = <1>;
++		clocks = <&dc0_cfg_clk>;
++		clock-indices = <IMX_LPCG_CLK_4>;
++		clock-output-names = "dc0_pixel_combiner_lpcg_apb_clk";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++	};
 +
-+  "#interrupt-cells":
-+    const: 1
++	dc0_lpcg: clock-controller@56010014 {
++		reg = <0x56010014 0x4>;
++		#clock-cells = <1>;
++		clocks = <&dc0_cfg_clk>, <&dc0_axi_int_clk>;
++		clock-indices = <IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>;
++		clock-output-names = "dc0_lpcg_cfg_clk",
++				     "dc0_lpcg_axi_clk";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++	};
 +
-+  interrupts:
-+    items:
-+      - description: store9 shadow load interrupt(blit engine)
-+      - description: store9 frame complete interrupt(blit engine)
-+      - description: store9 sequence complete interrupt(blit engine)
-+      - description:
-+          extdst0 shadow load interrupt
-+          (display controller, content stream 0)
-+      - description:
-+          extdst0 frame complete interrupt
-+          (display controller, content stream 0)
-+      - description:
-+          extdst0 sequence complete interrupt
-+          (display controller, content stream 0)
-+      - description:
-+          extdst4 shadow load interrupt
-+          (display controller, safety stream 0)
-+      - description:
-+          extdst4 frame complete interrupt
-+          (display controller, safety stream 0)
-+      - description:
-+          extdst4 sequence complete interrupt
-+          (display controller, safety stream 0)
-+      - description:
-+          extdst1 shadow load interrupt
-+          (display controller, content stream 1)
-+      - description:
-+          extdst1 frame complete interrupt
-+          (display controller, content stream 1)
-+      - description:
-+          extdst1 sequence complete interrupt
-+          (display controller, content stream 1)
-+      - description:
-+          extdst5 shadow load interrupt
-+          (display controller, safety stream 1)
-+      - description:
-+          extdst5 frame complete interrupt
-+          (display controller, safety stream 1)
-+      - description:
-+          extdst5 sequence complete interrupt
-+          (display controller, safety stream 1)
-+      - description:
-+          disengcfg0 shadow load interrupt
-+          (display controller, display stream 0)
-+      - description:
-+          disengcfg0 frame complete interrupt
-+          (display controller, display stream 0)
-+      - description:
-+          disengcfg0 sequence complete interrupt
-+          (display controller, display stream 0)
-+      - description:
-+          framegen0 programmable interrupt0
-+          (display controller, display stream 0)
-+      - description:
-+          framegen0 programmable interrupt1
-+          (display controller, display stream 0)
-+      - description:
-+          framegen0 programmable interrupt2
-+          (display controller, display stream 0)
-+      - description:
-+          framegen0 programmable interrupt3
-+          (display controller, display stream 0)
-+      - description:
-+          signature0 shadow load interrupt
-+          (display controller, display stream 0)
-+      - description:
-+          signature0 measurement valid interrupt
-+          (display controller, display stream 0)
-+      - description:
-+          signature0 error condition interrupt
-+          (display controller, display stream 0)
-+      - description:
-+          disengcfg1 shadow load interrupt
-+          (display controller, display stream 1)
-+      - description:
-+          disengcfg1 frame complete interrupt
-+          (display controller, display stream 1)
-+      - description:
-+          disengcfg1 sequence complete interrupt
-+          (display controller, display stream 1)
-+      - description:
-+          framegen1 programmable interrupt0
-+          (display controller, display stream 1)
-+      - description:
-+          framegen1 programmable interrupt1
-+          (display controller, display stream 1)
-+      - description:
-+          framegen1 programmable interrupt2
-+          (display controller, display stream 1)
-+      - description:
-+          framegen1 programmable interrupt3
-+          (display controller, display stream 1)
-+      - description:
-+          signature1 shadow load interrupt
-+          (display controller, display stream 1)
-+      - description:
-+          signature1 measurement valid interrupt
-+          (display controller, display stream 1)
-+      - description:
-+          signature1 error condition interrupt
-+          (display controller, display stream 1)
-+      - description: reserved
-+      - description:
-+          command sequencer error condition interrupt(command sequencer)
-+      - description:
-+          common control software interrupt0(common control)
-+      - description:
-+          common control software interrupt1(common control)
-+      - description:
-+          common control software interrupt2(common control)
-+      - description:
-+          common control software interrupt3(common control)
-+      - description:
-+          framegen0 synchronization status activated interrupt
-+          (display controller, safety stream 0)
-+      - description:
-+          framegen0 synchronization status deactivated interrupt
-+          (display controller, safety stream 0)
-+      - description:
-+          framegen0 synchronization status activated interrupt
-+          (display controller, content stream 0)
-+      - description:
-+          framegen0 synchronization status deactivated interrupt
-+          (display controller, content stream 0)
-+      - description:
-+          framegen1 synchronization status activated interrupt
-+          (display controller, safety stream 1)
-+      - description:
-+          framegen1 synchronization status deactivated interrupt
-+          (display controller, safety stream 1)
-+      - description:
-+          framegen1 synchronization status activated interrupt
-+          (display controller, content stream 1)
-+      - description:
-+          framegen1 synchronization status deactivated interrupt
-+          (display controller, content stream 1)
-+    minItems: 49
++	dc0_pc: pixel-combiner@56020000 {
++		#address-cells = <1>;
++		#size-cells = <0>;
++		reg = <0x56020000 0x10000>;
++		clocks = <&dc0_pixel_combiner_lpcg IMX_LPCG_CLK_4>;
++		clock-names = "apb";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++		status = "disabled";
 +
-+  interrupt-names:
-+    items:
-+      - const: store9_shdload
-+      - const: store9_framecomplete
-+      - const: store9_seqcomplete
-+      - const: extdst0_shdload
-+      - const: extdst0_framecomplete
-+      - const: extdst0_seqcomplete
-+      - const: extdst4_shdload
-+      - const: extdst4_framecomplete
-+      - const: extdst4_seqcomplete
-+      - const: extdst1_shdload
-+      - const: extdst1_framecomplete
-+      - const: extdst1_seqcomplete
-+      - const: extdst5_shdload
-+      - const: extdst5_framecomplete
-+      - const: extdst5_seqcomplete
-+      - const: disengcfg_shdload0
-+      - const: disengcfg_framecomplete0
-+      - const: disengcfg_seqcomplete0
-+      - const: framegen0_int0
-+      - const: framegen0_int1
-+      - const: framegen0_int2
-+      - const: framegen0_int3
-+      - const: sig0_shdload
-+      - const: sig0_valid
-+      - const: sig0_error
-+      - const: disengcfg_shdload1
-+      - const: disengcfg_framecomplete1
-+      - const: disengcfg_seqcomplete1
-+      - const: framegen1_int0
-+      - const: framegen1_int1
-+      - const: framegen1_int2
-+      - const: framegen1_int3
-+      - const: sig1_shdload
-+      - const: sig1_valid
-+      - const: sig1_error
-+      - const: reserved
-+      - const: cmdseq_error
-+      - const: comctrl_sw0
-+      - const: comctrl_sw1
-+      - const: comctrl_sw2
-+      - const: comctrl_sw3
-+      - const: framegen0_primsync_on
-+      - const: framegen0_primsync_off
-+      - const: framegen0_secsync_on
-+      - const: framegen0_secsync_off
-+      - const: framegen1_primsync_on
-+      - const: framegen1_primsync_off
-+      - const: framegen1_secsync_on
-+      - const: framegen1_secsync_off
-+    minItems: 49
++		channel@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++			status = "disabled";
 +
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - interrupt-controller
-+  - "#interrupt-cells"
-+  - interrupts
-+  - interrupt-names
++			port@0 {
++				reg = <0>;
 +
-+additionalProperties: false
++				dc0_pixel_combiner_ch0_dc0_disp0: endpoint {
++					remote-endpoint = <&dc0_disp0_dc0_pixel_combiner_ch0>;
++				};
++			};
 +
-+examples:
-+  - |
-+    #include <dt-bindings/clock/imx8-lpcg.h>
++			port@1 {
++				reg = <1>;
 +
-+    interrupt-controller@56180040 {
-+        compatible = "fsl,imx8qxp-dc-intc";
-+        reg = <0x56180040 0x60>;
-+        clocks = <&dc0_lpcg IMX_LPCG_CLK_5>;
-+        interrupt-controller;
-+        interrupt-parent = <&dc0_irqsteer>;
-+        #interrupt-cells = <1>;
-+        interrupts = <448>, <449>, <450>,  <64>,
-+                      <65>,  <66>,  <67>,  <68>,
-+                      <69>,  <70>, <193>, <194>,
-+                     <195>, <196>, <197>,  <72>,
-+                      <73>,  <74>,  <75>,  <76>,
-+                      <77>,  <78>,  <79>,  <80>,
-+                      <81>, <199>, <200>, <201>,
-+                     <202>, <203>, <204>, <205>,
-+                     <206>, <207>, <208>,   <5>,
-+                       <0>,   <1>,   <2>,   <3>,
-+                       <4>,  <82>,  <83>,  <84>,
-+                      <85>, <209>, <210>, <211>,
-+                     <212>;
-+        interrupt-names = "store9_shdload",
-+                          "store9_framecomplete",
-+                          "store9_seqcomplete",
-+                          "extdst0_shdload",
-+                          "extdst0_framecomplete",
-+                          "extdst0_seqcomplete",
-+                          "extdst4_shdload",
-+                          "extdst4_framecomplete",
-+                          "extdst4_seqcomplete",
-+                          "extdst1_shdload",
-+                          "extdst1_framecomplete",
-+                          "extdst1_seqcomplete",
-+                          "extdst5_shdload",
-+                          "extdst5_framecomplete",
-+                          "extdst5_seqcomplete",
-+                          "disengcfg_shdload0",
-+                          "disengcfg_framecomplete0",
-+                          "disengcfg_seqcomplete0",
-+                          "framegen0_int0",
-+                          "framegen0_int1",
-+                          "framegen0_int2",
-+                          "framegen0_int3",
-+                          "sig0_shdload",
-+                          "sig0_valid",
-+                          "sig0_error",
-+                          "disengcfg_shdload1",
-+                          "disengcfg_framecomplete1",
-+                          "disengcfg_seqcomplete1",
-+                          "framegen1_int0",
-+                          "framegen1_int1",
-+                          "framegen1_int2",
-+                          "framegen1_int3",
-+                          "sig1_shdload",
-+                          "sig1_valid",
-+                          "sig1_error",
-+                          "reserved",
-+                          "cmdseq_error",
-+                          "comctrl_sw0",
-+                          "comctrl_sw1",
-+                          "comctrl_sw2",
-+                          "comctrl_sw3",
-+                          "framegen0_primsync_on",
-+                          "framegen0_primsync_off",
-+                          "framegen0_secsync_on",
-+                          "framegen0_secsync_off",
-+                          "framegen1_primsync_on",
-+                          "framegen1_primsync_off",
-+                          "framegen1_secsync_on",
-+                          "framegen1_secsync_off";
-+    };
++				dc0_pixel_combiner_ch0_dc0_pixel_link0: endpoint {
++					remote-endpoint = <&dc0_pixel_link0_dc0_pixel_combiner_ch0>;
++				};
++			};
++		};
++
++		channel@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++			status = "disabled";
++
++			port@0 {
++				reg = <0>;
++
++				dc0_pixel_combiner_ch1_dc0_disp1: endpoint {
++					remote-endpoint = <&dc0_disp1_dc0_pixel_combiner_ch1>;
++				};
++			};
++
++			port@1 {
++				reg = <1>;
++
++				dc0_pixel_combiner_ch1_dc0_pixel_link1: endpoint {
++					remote-endpoint = <&dc0_pixel_link1_dc0_pixel_combiner_ch1>;
++				};
++			};
++		};
++	};
++
++	dc0: display-controller@56180000 {
++		reg = <0x56180000 0x40000>;
++		clocks = <&dc0_lpcg IMX_LPCG_CLK_4>;
++		power-domains = <&pd IMX_SC_R_DC_0>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges;
++		status = "disabled";
++
++		dc0_intc: interrupt-controller@56180040 {
++			reg = <0x56180040 0x60>;
++			clocks = <&dc0_lpcg IMX_LPCG_CLK_5>;
++			interrupt-controller;
++			interrupt-parent = <&dc0_irqsteer>;
++			#interrupt-cells = <1>;
++			interrupts = <448>, <449>, <450>,  <64>,
++				      <65>,  <66>,  <67>,  <68>,
++				      <69>,  <70>, <193>, <194>,
++				     <195>, <196>, <197>,  <72>,
++				      <73>,  <74>,  <75>,  <76>,
++				      <77>,  <78>,  <79>,  <80>,
++				      <81>, <199>, <200>, <201>,
++				     <202>, <203>, <204>, <205>,
++				     <206>, <207>, <208>,   <5>,
++				       <0>,   <1>,   <2>,   <3>,
++				       <4>,  <82>,  <83>,  <84>,
++				      <85>, <209>, <210>, <211>,
++				     <212>;
++			interrupt-names = "store9_shdload",
++					  "store9_framecomplete",
++					  "store9_seqcomplete",
++					  "extdst0_shdload",
++					  "extdst0_framecomplete",
++					  "extdst0_seqcomplete",
++					  "extdst4_shdload",
++					  "extdst4_framecomplete",
++					  "extdst4_seqcomplete",
++					  "extdst1_shdload",
++					  "extdst1_framecomplete",
++					  "extdst1_seqcomplete",
++					  "extdst5_shdload",
++					  "extdst5_framecomplete",
++					  "extdst5_seqcomplete",
++					  "disengcfg_shdload0",
++					  "disengcfg_framecomplete0",
++					  "disengcfg_seqcomplete0",
++					  "framegen0_int0",
++					  "framegen0_int1",
++					  "framegen0_int2",
++					  "framegen0_int3",
++					  "sig0_shdload",
++					  "sig0_valid",
++					  "sig0_error",
++					  "disengcfg_shdload1",
++					  "disengcfg_framecomplete1",
++					  "disengcfg_seqcomplete1",
++					  "framegen1_int0",
++					  "framegen1_int1",
++					  "framegen1_int2",
++					  "framegen1_int3",
++					  "sig1_shdload",
++					  "sig1_valid",
++					  "sig1_error",
++					  "reserved",
++					  "cmdseq_error",
++					  "comctrl_sw0",
++					  "comctrl_sw1",
++					  "comctrl_sw2",
++					  "comctrl_sw3",
++					  "framegen0_primsync_on",
++					  "framegen0_primsync_off",
++					  "framegen0_secsync_on",
++					  "framegen0_secsync_off",
++					  "framegen1_primsync_on",
++					  "framegen1_primsync_off",
++					  "framegen1_secsync_on",
++					  "framegen1_secsync_off";
++		};
++
++		dc0_pixel_engine: pixel-engine@56180800 {
++			reg = <0x56180800 0xac00>;
++			clocks = <&dc0_lpcg IMX_LPCG_CLK_5>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			dc0_constframe0: constframe@56180960 {
++				reg = <0x56180960 0xc>, <0x56184400 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_extdst0: extdst@56180980 {
++				reg = <0x56180980 0x1c>, <0x56184800 0x28>;
++				reg-names = "pec", "cfg";
++				interrupt-parent = <&dc0_intc>;
++				interrupts = <3>, <4>, <5>;
++				interrupt-names = "shdload", "framecomplete", "seqcomplete";
++			};
++
++			dc0_constframe4: constframe@561809a0 {
++				reg = <0x561809a0 0xc>, <0x56184c00 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_extdst4: extdst@561809c0 {
++				reg = <0x561809c0 0x1c>, <0x56185000 0x28>;
++				reg-names = "pec", "cfg";
++				interrupt-parent = <&dc0_intc>;
++				interrupts = <6>, <7>, <8>;
++				interrupt-names = "shdload", "framecomplete", "seqcomplete";
++			};
++
++			dc0_constframe1: constframe@561809e0 {
++				reg = <0x561809e0 0xc>, <0x56185400 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_extdst1: extdst@56180a00 {
++				reg = <0x56180a00 0x1c>, <0x56185800 0x28>;
++				reg-names = "pec", "cfg";
++				interrupt-parent = <&dc0_intc>;
++				interrupts = <9>, <10>, <11>;
++				interrupt-names = "shdload", "framecomplete", "seqcomplete";
++			};
++
++			dc0_constframe5: constframe@56180a20 {
++				reg = <0x56180a20 0xc>, <0x56185c00 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_extdst5: extdst@56180a40 {
++				reg = <0x56180a40 0x1c>, <0x56186000 0x28>;
++				reg-names = "pec", "cfg";
++				interrupt-parent = <&dc0_intc>;
++				interrupts = <12>, <13>, <14>;
++				interrupt-names = "shdload", "framecomplete", "seqcomplete";
++			};
++
++			dc0_fetchwarp2: fetchwarp@56180a60 {
++				reg = <0x56180a60 0x10>, <0x56186400 0x190>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_fetchlayer0: fetchlayer@56180ac0 {
++				reg = <0x56180ac0 0xc>, <0x56188400 0x404>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_layerblend0: layerblend@56180ba0 {
++				reg = <0x56180ba0 0x10>, <0x5618a400 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_layerblend1: layerblend@56180bc0 {
++				reg = <0x56180bc0 0x10>, <0x5618a800 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_layerblend2: layerblend@56180be0 {
++				reg = <0x56180be0 0x10>, <0x5618ac00 0x20>;
++				reg-names = "pec", "cfg";
++			};
++
++			dc0_layerblend3: layerblend@56180c00 {
++				reg = <0x56180c00 0x10>, <0x5618b000 0x20>;
++				reg-names = "pec", "cfg";
++			};
++		};
++
++		dc0_display_engine0: display-engine@5618b400 {
++			reg = <0x5618b400 0x14>, <0x5618b800 0x1c00>;
++			reg-names = "top", "cfg";
++			interrupt-parent = <&dc0_intc>;
++			interrupts = <15>, <16>, <17>;
++			interrupt-names = "shdload", "framecomplete", "seqcomplete";
++			power-domains = <&pd IMX_SC_R_DC_0_PLL_0>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			dc0_framegen0: framegen@5618b800 {
++				reg = <0x5618b800 0x98>;
++				clocks = <&dc0_disp_lpcg IMX_LPCG_CLK_0>;
++				interrupt-parent = <&dc0_intc>;
++				interrupts = <18>, <19>, <20>, <21>,
++					     <41>, <42>, <43>, <44>;
++				interrupt-names = "int0", "int1", "int2", "int3",
++						  "primsync_on", "primsync_off",
++						  "secsync_on", "secsync_off";
++			};
++
++			dc0_tcon0: tcon@5618c800 {
++				reg = <0x5618c800 0x588>;
++
++				port {
++					dc0_disp0_dc0_pixel_combiner_ch0: endpoint {
++						remote-endpoint = <&dc0_pixel_combiner_ch0_dc0_disp0>;
++					};
++				};
++			};
++		};
++
++		dc0_display_engine1: display-engine@5618b420 {
++			reg = <0x5618b420 0x14>, <0x5618d400 0x1c00>;
++			reg-names = "top", "cfg";
++			interrupt-parent = <&dc0_intc>;
++			interrupts = <25>, <26>, <27>;
++			interrupt-names = "shdload", "framecomplete", "seqcomplete";
++			power-domains = <&pd IMX_SC_R_DC_0_PLL_1>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			dc0_framegen1: framegen@5618d400 {
++				reg = <0x5618d400 0x98>;
++				clocks = <&dc0_disp_lpcg IMX_LPCG_CLK_1>;
++				interrupt-parent = <&dc0_intc>;
++				interrupts = <28>, <29>, <30>, <31>,
++					     <45>, <46>, <47>, <48>;
++				interrupt-names = "int0", "int1", "int2", "int3",
++						  "primsync_on", "primsync_off",
++						  "secsync_on", "secsync_off";
++			};
++
++			dc0_tcon1: tcon@5618e400 {
++				reg = <0x5618e400 0x588>;
++
++				port {
++					dc0_disp1_dc0_pixel_combiner_ch1: endpoint {
++						remote-endpoint = <&dc0_pixel_combiner_ch1_dc0_disp1>;
++					};
++				};
++			};
++		};
++	};
++
++	dc0_pl_msi_bus: bus@56200000 {
++		reg = <0x56200000 0x100000>;
++		#address-cells = <1>;
++		#size-cells = <1>;
++		interrupt-parent = <&dc0_irqsteer>;
++		interrupts = <320>;
++		ranges;
++		clocks = <&dc0_disp_ctrl_link_mst0_lpcg IMX_LPCG_CLK_4>,
++			 <&dc0_disp_ctrl_link_mst0_lpcg IMX_LPCG_CLK_4>;
++		clock-names = "msi", "ahb";
++		power-domains = <&pd IMX_SC_R_DC_0>;
++	};
++};
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-ss-dc.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp-ss-dc.dtsi
+new file mode 100644
+index 000000000000..299720d8c99e
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-ss-dc.dtsi
+@@ -0,0 +1,236 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Copyright 2024 NXP
++ */
++
++&dc0 {
++	compatible = "fsl,imx8qxp-dc";
++};
++
++&dc0_constframe0 {
++	compatible = "fsl,imx8qxp-dc-constframe";
++};
++
++&dc0_constframe1 {
++	compatible = "fsl,imx8qxp-dc-constframe";
++};
++
++&dc0_constframe4 {
++	compatible = "fsl,imx8qxp-dc-constframe";
++};
++
++&dc0_constframe5 {
++	compatible = "fsl,imx8qxp-dc-constframe";
++};
++
++&dc0_disp_ctrl_link_mst0_lpcg {
++	compatible = "fsl,imx8qxp-lpcg";
++};
++
++&dc0_disp_lpcg {
++	compatible = "fsl,imx8qxp-lpcg";
++};
++
++&dc0_display_engine0 {
++	compatible = "fsl,imx8qxp-dc-display-engine";
++};
++
++&dc0_display_engine1 {
++	compatible = "fsl,imx8qxp-dc-display-engine";
++};
++
++&dc0_extdst0 {
++	compatible = "fsl,imx8qxp-dc-extdst";
++};
++
++&dc0_extdst1 {
++	compatible = "fsl,imx8qxp-dc-extdst";
++};
++
++&dc0_extdst4 {
++	compatible = "fsl,imx8qxp-dc-extdst";
++};
++
++&dc0_extdst5 {
++	compatible = "fsl,imx8qxp-dc-extdst";
++};
++
++&dc0_fetchlayer0 {
++	compatible = "fsl,imx8qxp-dc-fetchlayer";
++};
++
++&dc0_fetchwarp2 {
++	compatible = "fsl,imx8qxp-dc-fetchwarp";
++};
++
++&dc0_framegen0 {
++	compatible = "fsl,imx8qxp-dc-framegen";
++};
++
++&dc0_framegen1 {
++	compatible = "fsl,imx8qxp-dc-framegen";
++};
++
++&dc0_intc {
++	compatible = "fsl,imx8qxp-dc-intc";
++};
++
++&dc0_layerblend0 {
++	compatible = "fsl,imx8qxp-dc-layerblend";
++};
++
++&dc0_layerblend1 {
++	compatible = "fsl,imx8qxp-dc-layerblend";
++};
++
++&dc0_layerblend2 {
++	compatible = "fsl,imx8qxp-dc-layerblend";
++};
++
++&dc0_layerblend3 {
++	compatible = "fsl,imx8qxp-dc-layerblend";
++};
++
++&dc0_lis_lpcg {
++	compatible = "fsl,imx8qxp-lpcg";
++};
++
++&dc0_lpcg {
++	compatible = "fsl,imx8qxp-lpcg";
++};
++
++&dc0_pc {
++	compatible = "fsl,imx8qxp-pixel-combiner";
++};
++
++&dc0_pixel_combiner_lpcg {
++	compatible = "fsl,imx8qxp-lpcg";
++};
++
++&dc0_pixel_engine {
++	compatible = "fsl,imx8qxp-dc-pixel-engine";
++};
++
++&dc0_pl_msi_bus {
++	compatible = "fsl,imx8qxp-display-pixel-link-msi-bus", "simple-pm-bus";
++};
++
++&dc0_tcon0 {
++	compatible = "fsl,imx8qxp-dc-tcon";
++};
++
++&dc0_tcon1 {
++	compatible = "fsl,imx8qxp-dc-tcon";
++};
++
++&scu {
++	dc0_pixel_link0: dc0-pixel-link0 {
++		compatible = "fsl,imx8qxp-dc-pixel-link";
++		fsl,dc-id = /bits/ 8 <0>;
++		fsl,dc-stream-id = /bits/ 8 <0>;
++		status = "disabled";
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			/* from dc0 pixel combiner channel0 */
++			port@0 {
++				reg = <0>;
++
++				dc0_pixel_link0_dc0_pixel_combiner_ch0: endpoint {
++					remote-endpoint = <&dc0_pixel_combiner_ch0_dc0_pixel_link0>;
++				};
++			};
++
++			/* to PXL2DPIs in MIPI/LVDS combo subsystems */
++			port@1 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <1>;
++				status = "disabled";
++
++				dc0_pixel_link0_mipi_lvds_0_pxl2dpi: endpoint@0 {
++					reg = <0>;
++				};
++
++				dc0_pixel_link0_mipi_lvds_1_pxl2dpi: endpoint@1 {
++					reg = <1>;
++				};
++			};
++
++			/* unused */
++			port@2 {
++				reg = <2>;
++				status = "disabled";
++			};
++
++			/* unused */
++			port@3 {
++				reg = <3>;
++				status = "disabled";
++			};
++
++			/* to imaging subsystem */
++			port@4 {
++				reg = <4>;
++				status = "disabled";
++			};
++		};
++	};
++
++	dc0_pixel_link1: dc0-pixel-link1 {
++		compatible = "fsl,imx8qxp-dc-pixel-link";
++		fsl,dc-id = /bits/ 8 <0>;
++		fsl,dc-stream-id = /bits/ 8 <1>;
++		status = "disabled";
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			/* from dc0 pixel combiner channel1 */
++			port@0 {
++				reg = <0>;
++
++				dc0_pixel_link1_dc0_pixel_combiner_ch1: endpoint {
++					remote-endpoint = <&dc0_pixel_combiner_ch1_dc0_pixel_link1>;
++				};
++			};
++
++			/* to PXL2DPIs in MIPI/LVDS combo subsystems */
++			port@1 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <1>;
++				status = "disabled";
++
++				dc0_pixel_link1_mipi_lvds_1_pxl2dpi: endpoint@0 {
++					reg = <0>;
++				};
++
++				dc0_pixel_link1_mipi_lvds_0_pxl2dpi: endpoint@1 {
++					reg = <1>;
++				};
++			};
++
++			/* to parallel display interface in ADMA subsystem */
++			port@2 {
++				reg = <2>;
++				status = "disabled";
++			};
++
++			/* unused */
++			port@3 {
++				reg = <3>;
++				status = "disabled";
++			};
++
++			/* unused */
++			port@4 {
++				reg = <4>;
++				status = "disabled";
++			};
++		};
++	};
++};
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index 05138326f0a5..35cc82cbbcd1 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -20,6 +20,27 @@ / {
+ 	#size-cells = <2>;
+ 
+ 	aliases {
++		dc0 = &dc0;
++		dc0-constframe0 = &dc0_constframe0;
++		dc0-constframe1 = &dc0_constframe1;
++		dc0-constframe4 = &dc0_constframe4;
++		dc0-constframe5 = &dc0_constframe5;
++		dc0-display-engine0 = &dc0_display_engine0;
++		dc0-display-engine1 = &dc0_display_engine1;
++		dc0-extdst0 = &dc0_extdst0;
++		dc0-extdst1 = &dc0_extdst1;
++		dc0-extdst4 = &dc0_extdst4;
++		dc0-extdst5 = &dc0_extdst5;
++		dc0-fetchlayer0 = &dc0_fetchlayer0;
++		dc0-fetchwarp2 = &dc0_fetchwarp2;
++		dc0-framegen0 = &dc0_framegen0;
++		dc0-framegen1 = &dc0_framegen1;
++		dc0-layerblend0 = &dc0_layerblend0;
++		dc0-layerblend1 = &dc0_layerblend1;
++		dc0-layerblend2 = &dc0_layerblend2;
++		dc0-layerblend3 = &dc0_layerblend3;
++		dc0-tcon0 = &dc0_tcon0;
++		dc0-tcon1 = &dc0_tcon1;
+ 		ethernet0 = &fec1;
+ 		ethernet1 = &fec2;
+ 		gpio0 = &lsio_gpio0;
+@@ -206,7 +227,7 @@ psci {
+ 		method = "smc";
+ 	};
+ 
+-	system-controller {
++	scu: system-controller {
+ 		compatible = "fsl,imx-scu";
+ 		mbox-names = "tx0",
+ 			     "rx0",
+@@ -323,6 +344,7 @@ map0 {
+ 	#include "imx8-ss-vpu.dtsi"
+ 	#include "imx8-ss-cm40.dtsi"
+ 	#include "imx8-ss-gpu0.dtsi"
++	#include "imx8-ss-dc0.dtsi"
+ 	#include "imx8-ss-adma.dtsi"
+ 	#include "imx8-ss-conn.dtsi"
+ 	#include "imx8-ss-ddr.dtsi"
+@@ -332,6 +354,7 @@ map0 {
+ 
+ #include "imx8qxp-ss-img.dtsi"
+ #include "imx8qxp-ss-vpu.dtsi"
++#include "imx8qxp-ss-dc.dtsi"
+ #include "imx8qxp-ss-adma.dtsi"
+ #include "imx8qxp-ss-conn.dtsi"
+ #include "imx8qxp-ss-lsio.dtsi"
 -- 
 2.34.1
 
