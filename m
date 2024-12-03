@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F3A1E64AAD
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Dec 2024 13:59:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 988C7E64AB0
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Dec 2024 14:07:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/VoiYSRHP7M750bBM0pKVerN7DuoCwnVMrqQvyyX/KY=; b=Y4jnhjDlWi8GTy
-	ljFu0JdMfI3FrGpufWmUFO9RPuAs6EHD8tJW0Mh0w2eenQZijQh/ISNcC/k8BGxp4Qw9lFaZXEZPF
-	Hw/YoNie9uAzGhay0F2vgzk6O6KizBkVsPksXtZ9ui0dvdSvpEHIE/F/RwLeaIzAEDelnYuvJJ41e
-	9UnlxSahrKocAxs7+wrp5zEe/OZ8eQpNFC0iPb7vFfnHaapegK3XGXdhGY766HjdydGmll7Qct/Mw
-	EfGYxNKvKklvrpDx9l7SzMY4FasEK9QZEX6I2QMKxuxFaYFPZWuU+xd1C9UFK9ZnzbUsHcX0aIcWw
-	dZSx5+aIDiFkBQapnF7Q==;
+	List-Owner; bh=EkNzKicnuwt+bdXXi9Xifgfy3a/p/HOjvXVL/XUFZuo=; b=GX7Kcw1eYDXNw6
+	G/qjWfAbuYhDZ/kzoR8aj13ZGK+uXFS7qIYJdhGhIA4LELqhPys3VgEFniM1q2ZGRJVmBTw4pzu5t
+	QJLFMUY/H18gTDKToFKN5XE4s2duCqx8Bi1HJAyvUNvf33RJfywCOQI2KAZlhpIK1ltmTLh6kyrLW
+	R530CiISeNQwWMaxDLKQgbWN0uGhGgrQaR9BqbPoLFcoSBfqxbf1LvNU7b+GkP5Q7oGlwDAfYm6H/
+	zp27nqm7w5iol0bh38mbtYBLNcztXJoty61jknH4ZFR5D3w/HYuf9XmUjHdcwmpEZQ2D8ajtqH00B
+	VLFcawBQT6t84CbMyL+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tITQr-00000009hzZ-1y74;
-	Tue, 03 Dec 2024 13:59:17 +0000
-Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	id 1tITZ0-00000009jFK-1dBL;
+	Tue, 03 Dec 2024 14:07:42 +0000
+Received: from mail-lj1-x232.google.com ([2a00:1450:4864:20::232])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tITQa-00000009hvE-0Dkx
+	id 1tITYx-00000009jES-2eyK
 	for linux-phy@lists.infradead.org;
-	Tue, 03 Dec 2024 13:59:01 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-53df6322ea7so9601698e87.0
-        for <linux-phy@lists.infradead.org>; Tue, 03 Dec 2024 05:58:59 -0800 (PST)
+	Tue, 03 Dec 2024 14:07:40 +0000
+Received: by mail-lj1-x232.google.com with SMTP id 38308e7fff4ca-2ffced84ba8so53779451fa.2
+        for <linux-phy@lists.infradead.org>; Tue, 03 Dec 2024 06:07:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1733234338; x=1733839138; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=ratoXWp/EmolcxNUAUNGQ1kmRPcGIDYTBbsytoKVT70=;
-        b=Rx+nzpc3YZiCfZG/x+kCNObYg00XOM+4A1NZSvrGtYGUTtDk5TdxNYyJ82PBvKDfad
-         LnK9bOAPZdzO9vStEKyMIRMgMWbTenpeUahNgkcJxOZ7jwhwDl6qcIuDd/3WJUZbOJlu
-         DN8n+Oflu3eEhCpNom8J+sf+6qw3Dt9jNXygLmgaHZDZPxdW87NeR6ot0T2gbje5F1Lc
-         qFKv3fn512ENZGUP7iTKajxgq+FJ4a+tTL/OwX/7EjrckiZyd436KvLb09v7RU9/Gnt/
-         PoQhjdyC43TH0rzk3u/AokLlGmM1SbN7ZXTKdBPAqNHQv0fTqs87mPz1/IFcxsAlVnaB
-         OU5w==
+        d=linaro.org; s=google; t=1733234857; x=1733839657; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=alsc9vr73lToVKNbHqTqZ3F3g1arQk5UqwKIUtPE6Ps=;
+        b=AFWy4qZ1QiWp1/aYShXMzgz9QElt99PmjQDt6knPMDtsH88aRQFn/VsY/fakz+zgzo
+         YUDlU0tFdq5qwmXIhAJ4HA3Jt333hmM6QV6B82Tbbb7zYjgpYrXQE4EOIUP1ZMOcNDZA
+         5oLbELreXYrbzAZfwh715pJL0nsgst5cC5eCEkm8REak1h9vw3hynWWaerFHa8/K8Xpn
+         UGIxUV6xtvLzWidf0WiUnfSkyWgABvcEHADZqXQDJiGnHMnU7EibJS6W+oUbFs/R5AVQ
+         F93VbI3KNjbgIflFEFLWzgTcLyqBuP5yKUHriSTDv9PqPxYjGMN5/KPghxOWb4yMYrXF
+         hELQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733234338; x=1733839138;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ratoXWp/EmolcxNUAUNGQ1kmRPcGIDYTBbsytoKVT70=;
-        b=sy8LB5fF1p8+uikqbEx7bNgOCkVYXHMA83OCysLQZfyJZBgN012d+M/VyzAUdFqfvd
-         9JU9b2etlSFJj8MHYIPlrguOK0WLM02bdczBeZUtsvLfO/eLVylgreHLE38nBWyrpvSX
-         5sgzxOdTh2bLHkYL8oD31fU94mXaZ5JL4ic0RnNVVJkShwhkAEkrHlMGXGyM7f9zUBYK
-         YAQrGvKtRWXPwBpQb7Vv/fZ1JVI+jlXGrvbd+IsQL9j39agppRVIeiYN5hS62MqKmUds
-         edo1RoPGzVJBbzlM3r1WH1FNd9/+LcWqBKCVFZ3Z8ZJCJCzfenbNE0HGTHTWSB7rH57W
-         ztFA==
-X-Forwarded-Encrypted: i=1; AJvYcCXrQm03+U8SOI0Wt9sGRR2lmYY8wz5DHvR4UFLqBNK2gcW6Bz9TyRKBOGU8xYDe06SBhY1fwa3R+Co=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwXbccezK4ii3aZzD0pg6M/Fva3YYg8UEtw5DqF8RK9Uo2EPTXc
-	+OTQily4Ldu4wPZXl/s1x1v1DCKi7XTz0rbSKNOMpK2U7Xs5qb1K1Xlpz31RRfs=
-X-Gm-Gg: ASbGnct8LWVYd4Q9BzyAqyR2JP427KRjfBwRVFuvBB+EsfZpdIpMWD+2Dg9PMg9ZeZ8
-	hnhkGAPTruRWWzKLrX1ZwGxZomdMRM5HZJDPKhqZf/G1Ze+rXZqrz4ot1C9kH6Cp8S9PNPsKpUw
-	0xmbbydJhR5ls5O0IrC7NeJ6HUtL01s4yzBPTxIdIrjMrinyegS4giMqwoKC2EGaaifAKLQBaPD
-	mGtyutXlvYlPdg+JG9o8FkdreYIsWGmBt9fndtUsKyiF10UmfSwOs1JFV/bVt5McYMo81zA6M52
-	j9tHt69pdReaLDwk8z5Mky1AkxtbQQ==
-X-Google-Smtp-Source: AGHT+IGXwu7iAMc0T7nz4ZWr7DVCTldVmrbcWesEg5VeYru0HhyDfTDMH7KA7Bk8Gf9p7i1oKm3lyg==
-X-Received: by 2002:a05:6512:3182:b0:53d:a025:1142 with SMTP id 2adb3069b0e04-53e12a39336mr2285402e87.54.1733234338202;
-        Tue, 03 Dec 2024 05:58:58 -0800 (PST)
+        d=1e100.net; s=20230601; t=1733234857; x=1733839657;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=alsc9vr73lToVKNbHqTqZ3F3g1arQk5UqwKIUtPE6Ps=;
+        b=bgNuwI7RJ417YWZMdu/v/WGt3IHTv9rCrubmXd9SW3pthYPdrpEHRQmHoPNQKS6Mw4
+         H0QP3tZmePK3SsBdg3zDnJDimIkhqiaj+hgzVoZRnhj1JZ9FqBpeOoRfIktJPK+SXZEV
+         H+SVRIVbRjzorXv+EH/bt0xoftjurXlqzQMUDYpZCoTXXNK2aSlU+W3SERkP+55O3xxG
+         KKtYYsFzm137lDvi3d0ase2wisNtXGgaXIFRI0KxFeV3V2mZNDLPzIEXBITLgKUN+T2G
+         eGfYBdOsOHtoijV1IixRYFzoCZs/Ma3JKwqmLJg+mu4CK9hXAmJFv4sTv8re0R4fUPU6
+         SYrQ==
+X-Forwarded-Encrypted: i=1; AJvYcCX5E8ZTsImD9AjAos/wcDNJBiNDjpZNkgbonhtk4QT2txSEyGdLVqBDfpWFx9yd+n+TagKjk5oB2kw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YylbjeU/BW84QuWvd1kLUWSuK288iPf/YWakjZs2oVpDGZJY7XC
+	MOLXLD6ZeRLnNvoIlIz4YuyNY4IwVFia14NxbovhzBtbL0J7JlDANUrNxvCQhp0=
+X-Gm-Gg: ASbGncvqb2iNUzeZ0h7I5ZvFYr66GC3DZ+BScNYje4vA4iolaF/bj2OEFSqThZaxlt+
+	0Uunq25o8d0O3UD45DDja+xD6uGkPJlZUeWkN3xRm9rXQnQrGexvsAdEVbgdXXLO7l6YXge0jtq
+	FNRHz8ujmSgR0Hpxkye9s25HwWG7nyDbeCxxPtjKcI5T6RjmuXSLymj+gX3M8r5d4IoZYlc/CfD
+	/SfwZICzec6o3RdcJeM/kXO9mPiFHIjtW4oqDM+3Ehg4Q7iPIrVG43ukWgSFCQS3Mq281uI2b1t
+	1AI2Ni696g0V/8LtxUX2SqMgyjWveA==
+X-Google-Smtp-Source: AGHT+IGzMeET4siJUKFgW4BnmqUwqvzwcdd9B9sOmlcJgCBnOeScvQxwQ4zyH6t4AC935j3xTebwFQ==
+X-Received: by 2002:a2e:bd82:0:b0:2fb:5ebe:ed40 with SMTP id 38308e7fff4ca-30009c3443dmr15745541fa.15.1733234855610;
+        Tue, 03 Dec 2024 06:07:35 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-53df64a06fesm1843812e87.258.2024.12.03.05.58.55
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-2ffdfc74a1csm16403761fa.69.2024.12.03.06.07.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Dec 2024 05:58:56 -0800 (PST)
-Date: Tue, 3 Dec 2024 15:58:54 +0200
+        Tue, 03 Dec 2024 06:07:33 -0800 (PST)
+Date: Tue, 3 Dec 2024 16:07:31 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Xiangxu Yin <quic_xiangxuy@quicinc.com>
 Cc: Rob Clark <robdclark@gmail.com>, 
@@ -83,20 +82,18 @@ Cc: Rob Clark <robdclark@gmail.com>,
 	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH 6/8] drm/msm/dp: Add maximum width limitation for modes
-Message-ID: <fb6enh3wzusadc6r7clg7n7ik2jsucimoi7dnecnsstcz4r6e6@dtahvlm522jj>
+Subject: Re: [PATCH 7/8] drm/msm/dp: Retry Link Training 2 with lower pattern
+Message-ID: <xlmgdysjah3ueypdrdu5b6botvidb2wn4rfm4qpeysclscmuwy@vpfv2ymprblj>
 References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-6-09a4338d93ef@quicinc.com>
- <CAA8EJpprTGRTxO+9BC6GRwxE4A3CuvmySsxS2Nh4Tqj0nDRT_Q@mail.gmail.com>
- <95a78722-8266-4d5d-8d2f-e8efa1aa2e87@quicinc.com>
- <CAA8EJpo-1o9i4JhZgdbvRxvoYQE2v18Lz_8dVg=Za7a_pk5EDA@mail.gmail.com>
- <86b9a8be-8972-4c19-af0c-da6b3667cbf4@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-7-09a4338d93ef@quicinc.com>
+ <CAA8EJpoN1qBHyZrQJT_=e_26+tcaKRnSrhtxrK6zBP4BwpL=Hg@mail.gmail.com>
+ <b4345b9e-62c6-470d-b1b0-4758cef7f175@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <86b9a8be-8972-4c19-af0c-da6b3667cbf4@quicinc.com>
+In-Reply-To: <b4345b9e-62c6-470d-b1b0-4758cef7f175@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241203_055900_091474_66738E21 
-X-CRM114-Status: GOOD (  19.01  )
+X-CRM114-CacheID: sfid-20241203_060739_676040_A67A3813 
+X-CRM114-Status: GOOD (  24.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,40 +105,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBEZWMgMDMsIDIwMjQgYXQgMDM6NDE6NTNQTSArMDgwMCwgWGlhbmd4dSBZaW4gd3Jv
-dGU6Cj4gCj4gCj4gT24gMTIvMi8yMDI0IDU6MzIgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6
-Cj4gPiBPbiBNb24sIDIgRGVjIDIwMjQgYXQgMTE6MDUsIFhpYW5neHUgWWluIDxxdWljX3hpYW5n
-eHV5QHF1aWNpbmMuY29tPiB3cm90ZToKPiA+Pgo+ID4+Cj4gPj4KPiA+PiBPbiAxMS8yOS8yMDI0
-IDk6NTIgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gPj4+IE9uIEZyaSwgMjkgTm92IDIw
-MjQgYXQgMDk6NTksIFhpYW5neHUgWWluIDxxdWljX3hpYW5neHV5QHF1aWNpbmMuY29tPiB3cm90
-ZToKPiA+Pj4+Cj4gPj4+PiBJbnRyb2R1Y2UgYSBtYXhpbXVtIHdpZHRoIGNvbnN0cmFpbnQgZm9y
-IG1vZGVzIGR1cmluZyB2YWxpZGF0aW9uLiBUaGlzCj4gPj4+PiBlbnN1cmVzIHRoYXQgdGhlIG1v
-ZGVzIGFyZSBmaWx0ZXJlZCBiYXNlZCBvbiBoYXJkd2FyZSBjYXBhYmlsaXRpZXMsCj4gPj4+PiBz
-cGVjaWZpY2FsbHkgYWRkcmVzc2luZyB0aGUgbGluZSBidWZmZXIgbGltaXRhdGlvbnMgb2YgaW5k
-aXZpZHVhbCBwaXBlcy4KPiA+Pj4KPiA+Pj4gVGhpcyBkb2Vzbid0IGRlc2NyaWJlLCB3aHkgdGhp
-cyBpcyBuZWNlc3NhcnkuIFdoYXQgZG9lcyAiYnVmZmVyCj4gPj4+IGxpbWl0YXRpb25zIG9mIGlu
-ZGl2aWR1YWwgcGlwZXMiIG1lYW4/Cj4gPj4+IElmIHRoZSBwbGF0Zm9ybXMgaGF2ZSBodyBjYXBh
-YmlsaXRpZXMgbGlrZSBiZWluZyB1bmFibGUgdG8gc3VwcG9ydCA4awo+ID4+PiBvciAxMGssIGl0
-IHNob3VsZCBnbyB0byBwbGF0Zm9ybSBkYXRhCj4gPj4+Cj4gPj4gSXQncyBTU1BQIGxpbmUgYnVm
-ZmVyIGxpbWl0YXRpb24gZm9yIHRoaXMgcGxhdGZvcm0gYW5kIG9ubHkgc3VwcG9ydCB0byAyMTYw
-IG1vZGUgd2lkdGguCj4gPj4gVGhlbiwgc2hhbGwgSSBhZGQgbWF4X3dpZHRoIGNvbmZpZyB0byBz
-dHJ1Y3QgbXNtX2RwX2Rlc2MgaW4gbmV4dCBwYXRjaD8gZm9yIG90aGVyIHBsYXRmb3JtIHdpbGwg
-c2V0IGRlZnVhbHQgdmFsdWUgdG8g4oCYRFBfTUFYX1dJRFRIIDc2ODAnCj4gPiAKPiA+IFNTUFAg
-bGluZSBidWZmZXIgbGltaXRhdGlvbnMgYXJlIHRvIGJlIGhhbmRsZWQgaW4gdGhlIERQVSBkcml2
-ZXIuIFRoZQo+ID4gRFAgZHJpdmVyIHNob3VsZG4ndCBjYXJlIGFib3V0IHRob3NlLgo+ID4gCj4g
-T2ssIFdpbGwgZHJvcCB0aGlzIHBhcnQgaW4gbmV4dCBwYXRjaC4KCklmIHlvdSBkcm9wIGl0LCB3
-aGF0IHdpbGwgYmUgbGVmdCBmcm9tIHRoZSBwYXRjaCBpdHNlbGY/Cgo+ID4+Pj4KPiA+Pj4+IFNp
-Z25lZC1vZmYtYnk6IFhpYW5neHUgWWluIDxxdWljX3hpYW5neHV5QHF1aWNpbmMuY29tPgo+ID4+
-Pj4gLS0tCj4gPj4+PiAgZHJpdmVycy9ncHUvZHJtL21zbS9kcC9kcF9kaXNwbGF5LmMgfCAgMyAr
-KysKPiA+Pj4+ICBkcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX2Rpc3BsYXkuaCB8ICAxICsKPiA+
-Pj4+ICBkcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX3BhbmVsLmMgICB8IDEzICsrKysrKysrKysr
-KysKPiA+Pj4+ICBkcml2ZXJzL2dwdS9kcm0vbXNtL2RwL2RwX3BhbmVsLmggICB8ICAxICsKPiA+
-Pj4+ICA0IGZpbGVzIGNoYW5nZWQsIDE4IGluc2VydGlvbnMoKykKPiA+IAo+ID4gCj4gCgotLSAK
-V2l0aCBiZXN0IHdpc2hlcwpEbWl0cnkKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4
-LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Tue, Dec 03, 2024 at 04:13:22PM +0800, Xiangxu Yin wrote:
+> 
+> 
+> On 11/29/2024 9:53 PM, Dmitry Baryshkov wrote:
+> > On Fri, 29 Nov 2024 at 09:59, Xiangxu Yin <quic_xiangxuy@quicinc.com> wrote:
+> >>
+> >> Add a mechanism to retry Link Training 2 by lowering the pattern level
+> >> when the link training #2 first attempt fails. This approach enhances
+> >> compatibility, particularly addressing issues caused by certain hub
+> >> configurations.
+> > 
+> > Please reference corresponding part of the standard, describing this lowering.
+> > 
+> Per DisplayPort 1.4a specification Section 3.5.1.2 and Table 3-10, while the standard doesn't explicitly define a TPS downgrade mechanism, it does specify:
+
+Anything in DP 2.1?
+
+> - All devices shall support TPS1 and TPS2
+> - HDR2-capable devices shall support TPS3
+> - HDR3-capable devices shall support TPS4
+> While these capabilities are explicitly defined DPCD for sink devices, source device capabilities are less strictly defined, with the minimum requirement being support for TPS1 and TPS2.
+> In QCS615 DP phy is only supporting to HBR2, we observed a critical interoperability scenario with a DP->HDMI bridge. When link training at TPS4 consistently failed, downgrading to the next lower training pattern successfully established the link and display output successfully.
+
+Any other driver doing such TPS lowering? Or maybe we should be
+selecting TPS3 for HBR2-only devices?
+
+> 
+> This experience suggests that implementing a flexible link training pattern downgrade mechanism can significantly improve compatibility with third-party, non-standard hubs and displays,
+> especially in scenarios where strict adherence to the highest training pattern might prevent successful connection.
+> >>
+> >> Signed-off-by: Xiangxu Yin <quic_xiangxuy@quicinc.com>
+> >> ---
+> >>  drivers/gpu/drm/msm/dp/dp_ctrl.c | 34 ++++++++++++++++++++++++++++++----
+> >>  1 file changed, 30 insertions(+), 4 deletions(-)
+> >>
+> >> diff --git a/drivers/gpu/drm/msm/dp/dp_ctrl.c b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> >> index 49c8ce9b2d0e57a613e50865be3fe98e814d425a..b1862294cb98c9f756b0108b7670cb42de37bae4 100644
+> >> --- a/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> >> +++ b/drivers/gpu/drm/msm/dp/dp_ctrl.c
+> >> @@ -1220,7 +1220,7 @@ static void msm_dp_ctrl_clear_training_pattern(struct msm_dp_ctrl_private *ctrl)
+> >>  }
+> >>
+> >>  static int msm_dp_ctrl_link_train_2(struct msm_dp_ctrl_private *ctrl,
+> >> -                       int *training_step)
+> >> +                       int *training_step, bool downgrade)
+> >>  {
+> >>         int tries = 0, ret = 0;
+> >>         u8 pattern;
+> >> @@ -1243,6 +1243,28 @@ static int msm_dp_ctrl_link_train_2(struct msm_dp_ctrl_private *ctrl,
+> >>                 state_ctrl_bit = 2;
+> >>         }
+> >>
+> >> +       /*
+> >> +        * DP link training uses the highest allowed pattern by default.
+> >> +        * If it fails, the pattern is downgraded to improve cable and monitor compatibility.
+> >> +        */
+> >> +       if (downgrade) {
+> >> +               switch (pattern) {
+> >> +               case DP_TRAINING_PATTERN_4:
+> >> +                       pattern = DP_TRAINING_PATTERN_3;
+> >> +                       state_ctrl_bit = 3;
+> >> +                       break;
+> >> +               case DP_TRAINING_PATTERN_3:
+> >> +                       pattern = DP_TRAINING_PATTERN_2;
+> >> +                       state_ctrl_bit = 2;
+> >> +                       break;
+> >> +               default:
+> >> +                       break;
+> >> +               }
+> >> +       }
+> >> +
+> >> +       drm_dbg_dp(ctrl->drm_dev, "pattern(%d) state_ctrl_bit(%d) downgrade(%d)\n",
+> >> +               pattern, state_ctrl_bit, downgrade);
+> >> +
+> >>         ret = msm_dp_catalog_ctrl_set_pattern_state_bit(ctrl->catalog, state_ctrl_bit);
+> >>         if (ret)
+> >>                 return ret;
+> >> @@ -1311,10 +1333,14 @@ static int msm_dp_ctrl_link_train(struct msm_dp_ctrl_private *ctrl,
+> >>         /* print success info as this is a result of user initiated action */
+> >>         drm_dbg_dp(ctrl->drm_dev, "link training #1 successful\n");
+> >>
+> >> -       ret = msm_dp_ctrl_link_train_2(ctrl, training_step);
+> >> +       ret = msm_dp_ctrl_link_train_2(ctrl, training_step, false);
+> >>         if (ret) {
+> >> -               DRM_ERROR("link training #2 failed. ret=%d\n", ret);
+> >> -               goto end;
+> >> +               drm_dbg_dp(ctrl->drm_dev, "link training #2 failed, retry downgrade.\n");
+> >> +               ret = msm_dp_ctrl_link_train_2(ctrl, training_step, true);
+> >> +               if (ret) {
+> >> +                       DRM_ERROR("link training #2 failed. ret=%d\n", ret);
+> >> +                       goto end;
+> >> +               }
+> >>         }
+> >>
+> >>         /* print success info as this is a result of user initiated action */
+> >>
+> >> --
+> >> 2.25.1
+> >>
+> > 
+> > 
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
