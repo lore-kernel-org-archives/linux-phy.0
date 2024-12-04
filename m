@@ -4,64 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6A17E7716D
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Dec 2024 23:11:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 216D0E77172
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Dec 2024 23:39:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=/RsJ1MPhCtOt2/DiWTkR0cmpCnfQG7zq58s7K8o11I8=; b=N5rqwjqeBUV28h
-	sCxZkTMBStrrYkliwD3jmC05efLxQq4uht8ccW2YHATH5RJJqJVAM+7BDTFhMtkLSpmYePftGoDPy
-	7ir5A/4Oip32wRwiDPBmfVDWKD8kOsJSaZHCl+TN3+XpjECvJdnrTpcMLEhvBRmHH7DwLZrVKgErZ
-	r1T6ClSIyEGfvwzMGFfStrCjjUNMDYNy/mDys6fQMgQK7UVQviexh9kbZYBRLbRKsPso+GlRws6xi
-	MnKziFLV8/hDcYbjF8odASIKDPEIDIdAld2pS44dqySPxvTNRr7FOz417inus4reZq25ZYbI0Dib+
-	rh/VBPoq8BXqC4+Ztzig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2VfRzssQg+VUfx8q8cidRnJR4wr63qom8eFq1jxFwzE=; b=GWVil9sfeADojl
+	XtH+V4S9xjnpI2GTB7cn1vL7bcj9qZX9ALKM45gRcPqyUK86eZ3BPqTLPKBjA313NPG2+IpJPfAfq
+	P4XMwGNzB/64tLWL+ScrjjoSTtk0Dr8Cb1Th1sI3cZwbi1ibAHvAqWA7opfcvD/a5wWVT4Gtsx21E
+	rQxZ5ex8Q8VSIhfJlMIzG4mfH/sjPNPtlewBMgnu3geqyGjSVi/C/13p13ZyPdGHTiZXc0zXjWWN+
+	9hpPCWmWkYg+kB53lLLphJQe7WL1FBxEVNFgAX6CLcAbEMLKQ3jK7gYrzDPzdgGig4mkekfcMPmAX
+	P2pBCjiVpv5OCFyxEB7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIyWM-0000000E6m3-2Jn8;
-	Wed, 04 Dec 2024 23:11:02 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tIyxi-0000000ECQB-1z55;
+	Wed, 04 Dec 2024 23:39:18 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIyWK-0000000E6lg-1hRX
+	id 1tIymt-0000000E9La-0BbC
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Dec 2024 23:11:01 +0000
+	Wed, 04 Dec 2024 23:28:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4D9295C7087;
-	Wed,  4 Dec 2024 23:10:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4CD4C4CECD;
-	Wed,  4 Dec 2024 23:10:58 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id A1CBE5C7168;
+	Wed,  4 Dec 2024 23:27:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B796FC4CED2;
+	Wed,  4 Dec 2024 23:28:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733353858;
-	bh=7XpoUhfG8MJEb4Fmy8iGPH/58klFSTC5STKYSZRdPQ4=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=YT0nZoWGHpepu2vQiyPAF527lbR3ZNU77EGCUanhHJ0GR2NX7HGuJ2Zcb2mUNzvN9
-	 F0vxJRbNdB7uch7LnST0dlKcrNVXV2rRPnX5/pjMkYHsQwObfG416NeTW+IBsCQqPg
-	 FniktmAElhIppocLFaR7yyGbgV7qYGKzQdCvHK6ZyRCbMMwBmFKYWcKbGc5s+TCi4d
-	 zPcdCptwyvqZBi5y7YdqUYIiIT4OCGmLc5hQpZdZXHLrq2V32fvtkAp/jYIe4iiYp/
-	 BO9vfBmSMRdZiJh9024capOJ3W+pTRtag30efwd9yB8ccNh3mb592XD2iyNJKwHaUK
-	 teATnJWy4pbJQ==
-Date: Wed, 4 Dec 2024 17:10:57 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
-	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	andersson@kernel.org, konradybcio@kernel.org,
-	p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
-	dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Praveenkumar I <quic_ipkumar@quicinc.com>
-Subject: Re: [PATCH v2 4/6] pci: qcom: Add support for IPQ5332
-Message-ID: <20241204231057.GA3026683@bhelgaas>
+	s=k20201202; t=1733354886;
+	bh=Eui2HQ4Hgc+MEWR+/Z9ZyS66EVROKvhofo2EgPXu/LY=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=S9Xl0WaznqnOjxeJxrLeQB9k2VBdNI6TjczRCgRv3/vnzSfwblJhGKTtC+D/ljGqN
+	 BSy+g/WFtPUytPeIi9QVuXwFZo56U8n2mGgoGc0b8KCqOLdzuSMosnkYPM7EjJM4gX
+	 r5b71bLVQFFAm4EqP9mykAwJldk/5HEoU91wDAhB6rHvqVbhwiiztLl/Ec6Tnn0yRq
+	 4WTkaMCT76v4CUmfCQCaWOMMwsEvGYLv6AD5Mj0R9HS3Mt6CXqr4pULVBPpzQgJb5a
+	 KqEHWjXEA19xkMWMfhJHEFjwch7OAJ+OwiBP4/5k7F1uMeqdP5Ya5JfP4gYg1A9iUO
+	 Neuh6TT0m7+Ig==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Saravana Kannan <saravanak@google.com>,
+	Jon Hunter <jonathanh@nvidia.com>,
+	=?UTF-8?q?N=C3=ADcolas=20F=20=2E=20R=20=2E=20A=20=2E=20Prado?= <nfraprado@collabora.com>,
+	Thierry Reding <treding@nvidia.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Sasha Levin <sashal@kernel.org>,
+	jckuo@nvidia.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	thierry.reding@gmail.com,
+	linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org
+Subject: [PATCH AUTOSEL 6.12 09/15] phy: tegra: xusb: Set fwnode for xusb port devices
+Date: Wed,  4 Dec 2024 17:16:03 -0500
+Message-ID: <20241204221627.2247598-9-sashal@kernel.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20241204221627.2247598-1-sashal@kernel.org>
+References: <20241204221627.2247598-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241204113329.3195627-5-quic_varada@quicinc.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.12.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_151100_488049_5D82A623 
-X-CRM114-Status: GOOD (  17.38  )
+X-CRM114-CacheID: sfid-20241204_152807_136332_C4C70760 
+X-CRM114-Status: GOOD (  11.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,58 +81,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 04, 2024 at 05:03:27PM +0530, Varadarajan Narayanan wrote:
-> From: Praveenkumar I <quic_ipkumar@quicinc.com>
-> 
-> The Qualcomm IPQ5332 PCIe controller instances are based on
-> SNPS core 5.90a with Gen3 Single-lane and Dual-lane support.
-> The Qualcomm IP can be handled by the 2.9.0 ops, hence using
-> that for IPQ5332.
-
-If you have occasion to update this series, please update the subject
-to follow the drivers/pci convention (use "git log --oneline
-drivers/pci/controller/dwc/pcie-qcom.c" and match the capitalization
-style):
-
-  PCI: qcom: Add IPQ5332 support
-
-> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
-> v2: Removed dependency on [1]
-> 
-> 1. https://lore.kernel.org/all/20230519090219.15925-1-quic_devipriy@quicinc.com/
-> ---
->  drivers/pci/controller/dwc/pcie-qcom.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-> index dc102d8bd58c..68e6f97535db 100644
-> --- a/drivers/pci/controller/dwc/pcie-qcom.c
-> +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-> @@ -1835,6 +1835,7 @@ static const struct of_device_id qcom_pcie_match[] = {
->  	{ .compatible = "qcom,pcie-apq8064", .data = &cfg_2_1_0 },
->  	{ .compatible = "qcom,pcie-apq8084", .data = &cfg_1_0_0 },
->  	{ .compatible = "qcom,pcie-ipq4019", .data = &cfg_2_4_0 },
-> +	{ .compatible = "qcom,pcie-ipq5332", .data = &cfg_2_9_0 },
->  	{ .compatible = "qcom,pcie-ipq6018", .data = &cfg_2_9_0 },
->  	{ .compatible = "qcom,pcie-ipq8064", .data = &cfg_2_1_0 },
->  	{ .compatible = "qcom,pcie-ipq8064-v2", .data = &cfg_2_1_0 },
-> -- 
-> 2.34.1
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogU2FyYXZhbmEgS2FubmFuIDxzYXJhdmFuYWtAZ29vZ2xlLmNvbT4KClsgVXBzdHJlYW0g
+Y29tbWl0IDc0ZmZlNDNiYWQzYWYzZTJhNzg2Y2EwMTdjMjA1NTU1YmE4N2ViYWQgXQoKZndub2Rl
+IG5lZWRzIHRvIGJlIHNldCBmb3IgYSBkZXZpY2UgZm9yIGZ3X2RldmxpbmsgdG8gYmUgYWJsZSB0
+bwp0cmFjay9lbmZvcmNlIGl0cyBkZXBlbmRlbmNpZXMgY29ycmVjdGx5LiBXaXRob3V0IHRoaXMs
+IHlvdSdsbCBzZWUgZXJyb3IKbWVzc2FnZXMgbGlrZSB0aGlzIHdoZW4gdGhlIHN1cHBsaWVyIGhh
+cyBwcm9iZWQgYW5kIHRyaWVzIHRvIG1ha2Ugc3VyZQphbGwgaXRzIGZ3bm9kZSBjb25zdW1lcnMg
+YXJlIGxpbmtlZCB0byBpdCB1c2luZyBkZXZpY2UgbGlua3M6Cgp0ZWdyYS14dXNiLXBhZGN0bCAz
+NTIwMDAwLnBhZGN0bDogRmFpbGVkIHRvIGNyZWF0ZSBkZXZpY2UgbGluayAoMHgxODApIHdpdGgg
+MS0wMDA4CgpSZXBvcnRlZC1ieTogSm9uIEh1bnRlciA8am9uYXRoYW5oQG52aWRpYS5jb20+CkNs
+b3NlczogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjQwOTEwMTMwMDE5LjM1MDgxLTEt
+am9uYXRoYW5oQG52aWRpYS5jb20vClRlc3RlZC1ieTogSm9uIEh1bnRlciA8am9uYXRoYW5oQG52
+aWRpYS5jb20+ClN1Z2dlc3RlZC1ieTogTsOtY29sYXMgRi4gUi4gQS4gUHJhZG8gPG5mcmFwcmFk
+b0Bjb2xsYWJvcmEuY29tPgpTaWduZWQtb2ZmLWJ5OiBTYXJhdmFuYSBLYW5uYW4gPHNhcmF2YW5h
+a0Bnb29nbGUuY29tPgpBY2tlZC1ieTogVGhpZXJyeSBSZWRpbmcgPHRyZWRpbmdAbnZpZGlhLmNv
+bT4KTGluazogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDI0MTAyNDA2MTM0Ny4xNzcxMDYz
+LTMtc2FyYXZhbmFrQGdvb2dsZS5jb20KU2lnbmVkLW9mZi1ieTogR3JlZyBLcm9haC1IYXJ0bWFu
+IDxncmVna2hAbGludXhmb3VuZGF0aW9uLm9yZz4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4g
+PHNhc2hhbEBrZXJuZWwub3JnPgotLS0KIGRyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYyB8IDIgKy0K
+IDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdp
+dCBhL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYwpp
+bmRleCAzNDJmNWNjZjYxMWQ4Li5kNTM2OTk4Mjg4YWNiIDEwMDY0NAotLS0gYS9kcml2ZXJzL3Bo
+eS90ZWdyYS94dXNiLmMKKysrIGIvZHJpdmVycy9waHkvdGVncmEveHVzYi5jCkBAIC01NDMsNyAr
+NTQzLDcgQEAgc3RhdGljIGludCB0ZWdyYV94dXNiX3BvcnRfaW5pdChzdHJ1Y3QgdGVncmFfeHVz
+Yl9wb3J0ICpwb3J0LAogCiAJZGV2aWNlX2luaXRpYWxpemUoJnBvcnQtPmRldik7CiAJcG9ydC0+
+ZGV2LnR5cGUgPSAmdGVncmFfeHVzYl9wb3J0X3R5cGU7Ci0JcG9ydC0+ZGV2Lm9mX25vZGUgPSBv
+Zl9ub2RlX2dldChucCk7CisJZGV2aWNlX3NldF9ub2RlKCZwb3J0LT5kZXYsIG9mX2Z3bm9kZV9o
+YW5kbGUob2Zfbm9kZV9nZXQobnApKSk7CiAJcG9ydC0+ZGV2LnBhcmVudCA9IHBhZGN0bC0+ZGV2
+OwogCiAJZXJyID0gZGV2X3NldF9uYW1lKCZwb3J0LT5kZXYsICIlcy0ldSIsIG5hbWUsIGluZGV4
+KTsKLS0gCjIuNDMuMAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXBoeQo=
