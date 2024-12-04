@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B188CE7716B
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Dec 2024 10:53:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 788B8E7716B
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Dec 2024 10:53:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gnYSiHkPwl7xxr8BuZpgK8u4A3/DUNBcSJV75/U8+zU=; b=M6qpiRe6fpfihe
-	tyZETKmZkjGCTvTuJEfh3b1jkmTVBvEcGEC3a+QSxe79Le7cgxvJuUMCHFWz+NDvlsXzW0VsicSRs
-	REdfRe4Zecj+6skwqFaNTWnncGYu9orlNWALAMg8CofZnutqSBu67LlFINhamDnLItCTYr7ulRTpo
-	rWQ1ZBF1o1HR27xw5fRteFZZqlE8OKcn8XDc0YXPsUWAOQu/vTkr/QPw/IxZqJgR0PdtoJD25ZDZr
-	hX0uCnUxUUYwdsI3IBsqnwZod/C8S6cYBAxaSUS/Hzj31oPfviEFppVwDffyy9tG46L1wZQqGaIQC
-	PIKaWspmFKo0nvSHHcEw==;
+	List-Owner; bh=PhIxYKZVwBFNCGXkrdVNu6EVXBDUJ3crNttpHg5oySQ=; b=K3z2VOVuYYeR3j
+	nfKw8pz/6THbWAaS981f4Mkd0IQc0ANCvkjP3RazfkmetEtwUNitucv42itZ0lYD05wwoQ0TxnerR
+	lx7aFC3mCaPX90YY5C8WzYnFi68UNF3SXfoO+UaNFdIdl6YARAx4elQQyjpSH4pe3EukKhOv9AwOg
+	B2TaBQaGRid2y/l799nhNqkhw3Cet+RccNRwgZf7lw7n3WtAnFF/Pi8SnRsSfHDwMuJZxA89IK8ki
+	mB1FdXruTaEbvO7GBuHyvQTTZxMrgDffaBtKuX3b11PEEXL5X47D5Zku0Eq0LaQ44fCMIggw+D6ma
+	ylvcPeRyj0aLxsUId66Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIn0A-0000000CHFa-20Af;
-	Wed, 04 Dec 2024 10:53:02 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tIn0D-0000000CHH6-10cY;
+	Wed, 04 Dec 2024 10:53:05 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIn08-0000000CHF8-3ivh
+	id 1tIn0A-0000000CHFP-1ebm
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Dec 2024 10:53:01 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B44BEQU020051;
+	Wed, 04 Dec 2024 10:53:03 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B47FHP6024766;
 	Wed, 4 Dec 2024 10:52:58 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=4A6Y9HvhCtq
-	ouJ4cSCdLpXkCUHrUT28yTc4cC4sxQhs=; b=Gmfqu2N5zJ2gKryhJwvtIPLr9wN
-	+u1wpvMlhc0EhIJ0UhRwXplTbZHyOr2VzLR7gUCMRuDD7HFvsU5etdZV3Sbqod4D
-	XrOV2HUzgeQYwTU8T9xUQiJM4+WJnJA8yb1EdTLoeBmE8o87qz5J8PNLCIVMcc7M
-	ASO6h42FMy3MxbGL0sGDqCNPPZWqVxS8ha0KH03AMrNGV/QURoomcSeSfxNNeDyN
-	BI5EAhZz2N8Z0WX/fEqhVS9Tu38oyKLW0UQ2sdZSX6FgEy+0iVJtGGXCoYp2dBac
-	+NDFCbf1dK1LFbkNSRNsotvvgmGqIhCABNjtixPAWQ4M61rWzgKCvHRx1Lw==
+	:mime-version:references:subject:to; s=qcppdkim1; bh=ndaeEycShep
+	uNA8YzZcaOi84nQFXF657VVUeij9O+bk=; b=BKuGG3mI/nDpstJ9GOlbO3Hof8E
+	QiqFNQZySQQPnCucdLsN1q/thqV/zDdGBVHBXED+Yj/wB6FzQqFJOmudFZMql3xY
+	1BBbzdurlUH3O4itZsES78XN7qii+D8lW97CYhCjUDeOyqCzn4HG6JxZDvt7lYHX
+	iyOUd/0pX8Ljc3ylDFst0D/8C70fdDu11s5PVynKtlKqPIqrzyFL9qwntqiuKGGG
+	M7h+qvcppj7sqES0u3BqclCRPWcYRUG/uW+RuEaB7fJrbxOjOp/u2VXZgRFJGaJr
+	RIqSI2n/3Iv94ziNFob1rmMeL7/OsHYR54AfEHHkvy2Y9ULbIlRQgOPSOLQ==
 Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43a3exaw0f-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 439vnyuyft-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 04 Dec 2024 10:52:57 +0000 (GMT)
+	Wed, 04 Dec 2024 10:52:58 +0000 (GMT)
 Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4B4Aqs1J008977;
-	Wed, 4 Dec 2024 10:52:54 GMT
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4B4AqtOk008986;
+	Wed, 4 Dec 2024 10:52:55 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 437uskmrth-1
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 437uskmrtm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 04 Dec 2024 10:52:54 +0000
+	Wed, 04 Dec 2024 10:52:55 +0000
 Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4B4AqsSX008972;
-	Wed, 4 Dec 2024 10:52:54 GMT
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4B4AqsDt008980;
+	Wed, 4 Dec 2024 10:52:55 GMT
 Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4B4AqrSO008893
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4B4AqsHj008971
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
 	Wed, 04 Dec 2024 10:52:54 +0000
 Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id E3D7419E4; Wed,  4 Dec 2024 18:52:52 +0800 (CST)
+	id 5568219E7; Wed,  4 Dec 2024 18:52:53 +0800 (CST)
 From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 To: vkoul@kernel.org, kishon@kernel.org, dmitry.baryshkov@linaro.org,
         abel.vesa@linaro.org, neil.armstrong@linaro.org,
@@ -68,9 +68,9 @@ To: vkoul@kernel.org, kishon@kernel.org, dmitry.baryshkov@linaro.org,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
         Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Subject: [PATCH 1/3] dt-bindings: phy: qcom,qmp-pcie: add optional current load properties
-Date: Wed,  4 Dec 2024 18:52:47 +0800
-Message-Id: <20241204105249.3544114-2-quic_ziyuzhan@quicinc.com>
+Subject: [PATCH 2/3] phy: qcom: qmp-pcie: add current load vote/devote for PCIe PHY
+Date: Wed,  4 Dec 2024 18:52:48 +0800
+Message-Id: <20241204105249.3544114-3-quic_ziyuzhan@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241204105249.3544114-1-quic_ziyuzhan@quicinc.com>
 References: <20241204105249.3544114-1-quic_ziyuzhan@quicinc.com>
@@ -79,19 +79,19 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 7MnpvqgsvsAYFISoTdlQfAIribvmbCgW
-X-Proofpoint-GUID: 7MnpvqgsvsAYFISoTdlQfAIribvmbCgW
+X-Proofpoint-ORIG-GUID: igVsU6bqkqVrkfhZhbB7AnerrjJHwSGZ
+X-Proofpoint-GUID: igVsU6bqkqVrkfhZhbB7AnerrjJHwSGZ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 lowpriorityscore=0
- mlxlogscore=999 clxscore=1011 phishscore=0 adultscore=0 suspectscore=0
- malwarescore=0 spamscore=0 priorityscore=1501 impostorscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2412040085
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 adultscore=0
+ mlxlogscore=999 bulkscore=0 impostorscore=0 mlxscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412040085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_025300_927993_9AD2B0A4 
-X-CRM114-Status: GOOD (  11.69  )
+X-CRM114-CacheID: sfid-20241204_025302_555617_74C06020 
+X-CRM114-Status: GOOD (  18.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,60 +108,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On some platforms, the power supply for PCIe PHY is not able to provide
-enough current when it works in LPM mode. Hence, PCIe PHY driver needs to
-set current load to vote the regulator to HPM mode.
-
-Document the current load as properties for each power supply PCIe PHY
-required, namely vdda-phy-max-microamp, vdda-pll-max-microamp and
-vdda-qref-max-microamp, respectively.PCIe PHY driver should parse them to
-set appropriate current load during PHY power on.
-
-This three properties are optional and not mandatory for those platforms
-that PCIe PHY can still work with power supply.
+On some platform (eg.qcs615), the current that phy consumes will exceed
+the maximum current the regulator can provide in LPM mode, leading to
+over current protection and system boot up stuck. Fix this issue by
+setting regulator load to an expected value getting from phy device tree
+node during init so that the regulator can scale up to HPM to allow a
+larger current load.
+This change will also set load to zero during deinit to let regulator
+scale down to LPM mode to reduce itself's power consumptionif PCIe
+suspend.
 
 Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 ---
- .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml          | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 35 ++++++++++++++++++++++--
+ 1 file changed, 33 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 34d977af9263..0e2715301c54 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -78,10 +78,16 @@ properties:
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index c8e39c147ba4..782d51ab5cf1 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -39,6 +39,7 @@
+ #include "phy-qcom-qmp-pcie-qhp.h"
  
-   vdda-phy-supply: true
+ #define PHY_INIT_COMPLETE_TIMEOUT		10000
++#define MAX_PROP_SIZE		   32
  
-+  vdda-phy-max-microamp: true
+ /* set of registers with offsets different per-PHY */
+ enum qphy_reg_layout {
+@@ -2905,6 +2906,7 @@ struct qmp_pcie {
+ 	struct reset_control_bulk_data *resets;
+ 	struct reset_control *nocsr_reset;
+ 	struct regulator_bulk_data *vregs;
++	u32 *max_current_load;
+ 
+ 	struct phy *phy;
+ 	int mode;
+@@ -4087,6 +4089,17 @@ static int qmp_pcie_init(struct phy *phy)
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	int ret;
+ 
++	for (int i = 0; i < cfg->num_vregs; i++) {
++		if (qmp->max_current_load[i]) {
++			ret = regulator_set_load(qmp->vregs[i].consumer, qmp->max_current_load[i]);
++			if (ret) {
++				dev_err(&phy->dev,
++					"failed to set load at %s\n", qmp->vregs[i].supply);
++				return ret;
++			}
++		}
++	}
 +
-   vdda-pll-supply: true
+ 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+ 	if (ret) {
+ 		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
+@@ -4129,6 +4142,7 @@ static int qmp_pcie_init(struct phy *phy)
  
-+  vdda-pll-max-microamp: true
+ static int qmp_pcie_exit(struct phy *phy)
+ {
++	int ret;
+ 	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 
+@@ -4137,7 +4151,16 @@ static int qmp_pcie_exit(struct phy *phy)
+ 	clk_bulk_disable_unprepare(ARRAY_SIZE(qmp_pciephy_clk_l), qmp->clks);
+ 
+ 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
+-
++	for (int i = 0; i < cfg->num_vregs; i++) {
++		if (qmp->max_current_load[i]) {
++			ret = regulator_set_load(qmp->vregs[i].consumer, 0);
++			if (ret) {
++				dev_err(&phy->dev,
++					"failed to set load at %s\n", qmp->vregs[i].supply);
++				return ret;
++			}
++		}
++	}
+ 	return 0;
+ }
+ 
+@@ -4274,14 +4297,22 @@ static int qmp_pcie_vreg_init(struct qmp_pcie *qmp)
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 	struct device *dev = qmp->dev;
+ 	int num = cfg->num_vregs;
++	char prop_name[MAX_PROP_SIZE];
+ 	int i;
+ 
+ 	qmp->vregs = devm_kcalloc(dev, num, sizeof(*qmp->vregs), GFP_KERNEL);
+ 	if (!qmp->vregs)
+ 		return -ENOMEM;
+ 
+-	for (i = 0; i < num; i++)
++	qmp->max_current_load = devm_kcalloc(dev, num, sizeof(*qmp->max_current_load), GFP_KERNEL);
++	if (!qmp->max_current_load)
++		return -ENOMEM;
 +
-   vdda-qref-supply: true
++	for (i = 0; i < num; i++) {
+ 		qmp->vregs[i].supply = cfg->vreg_list[i];
++		snprintf(prop_name, MAX_PROP_SIZE, "%s-max-microamp", qmp->vregs[i].supply);
++		of_property_read_u32(qmp->dev->of_node, prop_name, &qmp->max_current_load[i]);
++	}
  
-+  vdda-qref-max-microamp: true
-+
-   qcom,4ln-config-sel:
-     description: PCIe 4-lane configuration
-     $ref: /schemas/types.yaml#/definitions/phandle-array
-@@ -261,6 +267,7 @@ examples:
- 
-       vdda-phy-supply = <&vreg_l6d>;
-       vdda-pll-supply = <&vreg_l4d>;
-+      vdda-pll-max-microamp = <165000>;
- 
-       #clock-cells = <0>;
-       clock-output-names = "pcie_2b_pipe_clk";
-@@ -288,6 +295,7 @@ examples:
- 
-       vdda-phy-supply = <&vreg_l6d>;
-       vdda-pll-supply = <&vreg_l4d>;
-+      vdda-pll-max-microamp = <165000>;
- 
-       qcom,4ln-config-sel = <&tcsr 0xa044 0>;
- 
+ 	return devm_regulator_bulk_get(dev, num, qmp->vregs);
+ }
 -- 
 2.34.1
 
