@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C398E7716D
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Dec 2024 23:41:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3D28E7716D
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Dec 2024 23:42:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6zk2wtna2EFHdaR8AInSjK7k6b9qU+XPjPnf1qjWrfk=; b=1Z+G+WDRGcXFUc
-	lB2wiAKxcLU4Vzyx15BeekruxU2l4regSvat0/BM1O/5azWhKOkhSp3UyEvFTFr0Yq8/CPcFDLSul
-	jvvj1vWPJa+nuwQdG9twb40PfWPOMJDiVghQg4qVVuTHTCriPyM0c5Sx8axf5UU8GJHYEwL7sy/dP
-	70BKKgzwQX8AAerunOt0pO0IhKyXy1vBDf+yxVIYEkht/Kdjwmo4QOe17B+QZBsi7p/Gw+PjHQXUL
-	rE2n4+K/xkvE5ksKCbK605O79A4Yyc0EAdGaMIQCu5l6KQBKSpBp+F+NYHTKADOBVC7Itsur/LZoH
-	n1WdFZ+009rt2YciRl7g==;
+	List-Owner; bh=SUH9nZ3u4AmMmcFTioQK/5uoplfl8Eh5+/gpvcF1R6o=; b=k2qokxPrMER5vE
+	rT4Mi+5f3YzbFOfuUPWbGAubHCkMPlnDwKZx4utgmow80c1rBpzSCDWfjTDw4mwkGeJgPlPJvfwRY
+	0UqA7YvxJo60hwnCD0YR/ahSjU5+TSZ+AqCjvr1/v5YJKC8g50qPVPfLXUJQvQ+BJWNKZhuYMet/f
+	Q+B1SlQi7wMkFXheu9bRQLfA63XIVg4Z3Sio0KeBR5CxhjQWjgy4t+CiIRWjn2LhVl8hhbDktVSx1
+	Y1/LV/PJGCpao8Gbb8mKPgCTWJPbbv9HD4cx4drdoa0FKa7cojGYn+DyNlpYZBG9gki/ksKV0vULk
+	XKhp77aAlXMhst+0xJfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIyzh-0000000ECzL-1NES;
-	Wed, 04 Dec 2024 23:41:21 +0000
+	id 1tIz0g-0000000EDIY-25mr;
+	Wed, 04 Dec 2024 23:42:22 +0000
 Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIynq-0000000E9b7-1TNm
+	id 1tIyoa-0000000E9nP-0Jdt
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Dec 2024 23:29:07 +0000
+	Wed, 04 Dec 2024 23:29:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 8A6B0A413A7;
-	Wed,  4 Dec 2024 23:27:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D3436C4CED2;
-	Wed,  4 Dec 2024 23:29:03 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 35137A413FB;
+	Wed,  4 Dec 2024 23:27:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 84F5BC4CED2;
+	Wed,  4 Dec 2024 23:29:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733354945;
-	bh=17fR4FlNixmYgnxJ8I5eyuntaOEYca3juX0Bc9dcT7g=;
+	s=k20201202; t=1733354991;
+	bh=hxtNF2rBxU1e7TSL3gd0s5IgM6jW2PE2/nfSOLEvQQw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=h9lss/2dbwMECYynmL2ctyOiKOU+x9NIatI0yrVpmjMMc2x/JCwf7cWZ96qxpiHPo
-	 QmgNjROGVCoxi7L0+6DMWw/NMwqSo/eqqpQ4bB2bQnyVsm/4AWedcTFOQnMLpbFE8Q
-	 Y6Xw/UNW+dzwvG6S5IwX/YgEK9OkkG/tdU5xuLg6B+8fEcHlnwmO+wdBTBLD0e7du1
-	 2uNsr5qPdfjgbzRI+VsK33kojPhsmF3RK+YHOjx3AJu/Cpb+YpaBf8O3GgQCQes14h
-	 /Nyogll3hRK5BrVLY/6fonxREZaea/sPnKYtwwZNTgkjmzb8Q42qNjz5V46y5hDelP
-	 9r39wy+/g8wKw==
+	b=jZ+tUr+dsxdhkdwffNuKKbkfbIRx//QuRsfHKsAjV9DTo54Tp16JzBniq+gTxgls9
+	 OaohWsVpDa/CVeuWxWDBnRkd0tMTfNXe6XgmAcXFm07f4KIl0hRs132x3O8OM7wLuB
+	 VTS9oCY0yvYKZkBAIQ9S7pp22BkP03OgSp4oq6N7JjFLeQgum+swq+SisJMpdrqdUy
+	 BY4tsYe0i0d5BNYCCdo+QOWo09d+gE+ndPtPB2x+joulCJKjhgyeLi4Z8NexR3DYh6
+	 xmM5hlw941eIMQXleSN7x6S66Cl48Xszz0WGWumKJ/4wwk8D6lchAOL3QSsYQbRxCn
+	 9fsTkgmcNmflg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -57,19 +57,19 @@ Cc: Saravana Kannan <saravanak@google.com>,
 	thierry.reding@gmail.com,
 	linux-phy@lists.infradead.org,
 	linux-tegra@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.11 09/15] phy: tegra: xusb: Set fwnode for xusb port devices
-Date: Wed,  4 Dec 2024 17:17:03 -0500
-Message-ID: <20241204221726.2247988-9-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.6 05/10] phy: tegra: xusb: Set fwnode for xusb port devices
+Date: Wed,  4 Dec 2024 17:18:03 -0500
+Message-ID: <20241204221820.2248367-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20241204221726.2247988-1-sashal@kernel.org>
-References: <20241204221726.2247988-1-sashal@kernel.org>
+In-Reply-To: <20241204221820.2248367-1-sashal@kernel.org>
+References: <20241204221820.2248367-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.11.10
+X-stable-base: Linux 6.6.63
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_152906_459164_F310B826 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20241204_152952_176563_D350A466 
+X-CRM114-Status: GOOD (  11.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,7 +106,7 @@ IDxncmVna2hAbGludXhmb3VuZGF0aW9uLm9yZz4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4g
 PHNhc2hhbEBrZXJuZWwub3JnPgotLS0KIGRyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYyB8IDIgKy0K
 IDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdp
 dCBhL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYwpp
-bmRleCBjZmRiNTRiNjA3MGE0Li4wYTIwOTYwODU5NzFjIDEwMDY0NAotLS0gYS9kcml2ZXJzL3Bo
+bmRleCA5ODNhNmU2MTczYmQyLi43NjVhZTUzYzg1NjY0IDEwMDY0NAotLS0gYS9kcml2ZXJzL3Bo
 eS90ZWdyYS94dXNiLmMKKysrIGIvZHJpdmVycy9waHkvdGVncmEveHVzYi5jCkBAIC01NDMsNyAr
 NTQzLDcgQEAgc3RhdGljIGludCB0ZWdyYV94dXNiX3BvcnRfaW5pdChzdHJ1Y3QgdGVncmFfeHVz
 Yl9wb3J0ICpwb3J0LAogCiAJZGV2aWNlX2luaXRpYWxpemUoJnBvcnQtPmRldik7CiAJcG9ydC0+
