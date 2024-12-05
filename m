@@ -4,64 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A1A3E77170
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Dec 2024 09:40:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02025E7716C
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Dec 2024 09:59:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EYcbHl2Y/JsygOJuuHAP8nDe/IXVVAGs/Gu+2EUsIyY=; b=wtjyG6goNL5yUn
-	QjFLgg6/7Mzl3OCgWRBJ1WaBkS7OfPixJp7mgETgFxoLZxZLXg9zY4mJH025+dpV1JoxV8nyYWEG7
-	rHoUVUTB5rNimo35q/lCemlBR6ZwBOQfqNQX3we4b0NrcbeVBghflHNeZiFGn4Jh0rgH9hp5jEvxM
-	wqa3nIu8vpYVdyCA9Dcmyc/0Pa8JS4duKhGyS6pS5IuNOXrUH0M+P5Tk3nHA1OUmWxyW69m8s8oHK
-	GqqVNbq9UMJzK2py3pGMl18npUxfyjRvUNwG6P3jf7uPQUy1zrF5f+hPHApwY4RHA2Ak3t89VBhX/
-	kqd9xXRPZC9EiJ4eOdVA==;
+	List-Owner; bh=eKjENMGmiPzbKYBTlUTeSmXKLrvqAF4ESM1+t8JCRi8=; b=rvsHMsNk/7zmUt
+	JaBfhIEeA59onuZ4J+OwbWU8ZpdIGIlULP303whsrr2/B0kTNdO+l/gOfRMTnzMhTlCdNse8XaXGa
+	J+R9dS+Nkp2EP+tZcqLiWtxd2VUf+RAXQ8gl8J18yFGIs11npQG/FND0oT4io3HKF9/7HwYeu3Egn
+	o288TEkgrWRnq1W9UJwNmapyboM/3lYJygX1zRpqcXSsxRXUfZTVQQk5hZonh/ha0VVi5rGC/F58p
+	7V4CWx6loQkN5H9litKCAT8pqrvOfEMjMFPeqSCfOTRM+eBRSik1lOasAX2K6eW7UI9hOhDL+XYNK
+	Fn5Vg+6iB91N+32P7RpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJ8Lx-0000000FOcn-3P9B;
-	Thu, 05 Dec 2024 09:40:57 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tJ8dY-0000000FQzz-0DgU;
+	Thu, 05 Dec 2024 09:59:08 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJ8Lv-0000000FOc3-2UCj
-	for linux-phy@lists.infradead.org;
-	Thu, 05 Dec 2024 09:40:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id CE521A41D95;
-	Thu,  5 Dec 2024 09:39:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 031DCC4CED6;
-	Thu,  5 Dec 2024 09:40:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733391654;
-	bh=5ROpg4tyy9Zr0FNDj5tkTa7O3Ob1JCqoHg4b4OHAoKw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HEywny6vCtZ6O1yZ4OB5Q4IVM5/WAOz7K5EkjdMhzMQx+gojGyCEgks+w+tYxQ9K4
-	 1q4JfnW//05XU3N+gYiYckdpxisa96txECEuQXgA96a55lv0QEyqdeZrE3eHui/Rbl
-	 Zv0SfxxayRKEcjKS/C+wMK8GKNMTxf6TIgZHI/8W1XdfkDw05DQjfFO5t+lzZhYVNU
-	 t8inZMOZDP1wzkY75Lxv0b4rCQi6x4vMcPkKiLKNQdvksZx7yTMwoQ0Zj5S8Tx40BF
-	 amJMJX/YA/RiTQaeAAgtALig+wDHF2EoZ+7Sh6hKYOT9Y5tKt/XpBHsi0ZEcb64OUs
-	 fWse9Xj0hNSog==
-Date: Thu, 5 Dec 2024 10:40:52 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org, 
-	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
-	p.zabel@pengutronix.de, quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org, 
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	Praveenkumar I <quic_ipkumar@quicinc.com>
-Subject: Re: [PATCH v2 3/6] dt-bindings: PCI: qcom: Add IPQ5332 SoC
-Message-ID: <zgu3ygylkuayheq5lampite7dpli2sxsbgaa2cgwcshmm2sax4@6uprsoldacof>
-References: <20241204113329.3195627-1-quic_varada@quicinc.com>
- <20241204113329.3195627-4-quic_varada@quicinc.com>
+	id 1tJ7WB-0000000FE2s-26Dx;
+	Thu, 05 Dec 2024 08:47:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=aDWgYQBwKAkBmU8mqem4U1vbpJlKGSSLkLEYV7hJT08=; b=T7dlqbKmvwTVZtpFGTgWTJbQQA
+	z0/UiMGJTOOtg9RVil7EH64Ebusx+/DQ9aEZ9K0brLm9c4Oa9j6kuQ4v2DOWzP6ONh+G+gGSqyEAj
+	xVo2WIb/dvHz7Sn/jBQ+2rwXByqEvpoTACDPQgzoaE9mBMcSxueK3BDVDlXY+Pod5tdXc815ykB04
+	ARqMEL1UzSATuOZJTDl7ZRZY95PXLKyqkIgckYhGkbdz9dIgOK6XkoItVbQ+Uf3YnWP16A1Wy7DsJ
+	p5krd8w6io0MVMmYoSLOKHDRgVqyPvyuBsTm9SyLGKJ5K4MTwe6p2TTKvcg4hz0ugq0ljHq1FtjCP
+	4ryQniDQ==;
+Received: from gloria.sntech.de ([185.11.138.130])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tJ7W8-00000002o6E-2xN9;
+	Thu, 05 Dec 2024 08:47:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=aDWgYQBwKAkBmU8mqem4U1vbpJlKGSSLkLEYV7hJT08=; b=oP8OJjsWLoKfVicRB2LCXen8Vl
+	wH0npdneX8nZoBc05jmy+wn01h/O79FQyoNgPNcTc8jghL1U22uxnxEpjIlQpY4AagQwBuZtxNAno
+	hkG5CHYLT4yA4bZTLhJzflIO4ZR8LVMwJdLym5YbBZgHkS1FxoVpgSBzyU9aEsEhUApUUvJeAlMoA
+	WDvYf6r2yPGQyZMRcP9AbgqR3pViyuS5kGpBLgl+P71FeW+ZbX9pX/EcXIoyUlXlMl4A49AFSpztn
+	6PTFygzbmF1nJhH8VpI4V1LuETGyxsRLGGFIZ8hSZOxjg72rCjkhy83WoBzXpHI5VOWqWeSFfqfL4
+	ERYaTxqg==;
+Received: from i5e86190f.versanet.de ([94.134.25.15] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tJ7Vv-0001iq-2o; Thu, 05 Dec 2024 09:47:11 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Frank Wang <frawang.cn@gmail.com>, vkoul@kernel.org, kishon@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ Kever Yang <kever.yang@rock-chips.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
+ tim.chen@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>
+Subject: Re: [RESEND PATCH v3 2/2] phy: rockchip-naneng-combo: add rk3576 support
+Date: Thu, 05 Dec 2024 09:47:10 +0100
+Message-ID: <5541205.29KlJPOoH8@diego>
+In-Reply-To: <e853b62f-2ebd-4520-8dea-15d8102f25d8@rock-chips.com>
+References: <20241106021357.19782-1-frawang.cn@gmail.com>
+ <20241106021357.19782-2-frawang.cn@gmail.com>
+ <e853b62f-2ebd-4520-8dea-15d8102f25d8@rock-chips.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241204113329.3195627-4-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241205_014055_691651_070A1AC4 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20241205_084724_915062_85330424 
+X-CRM114-Status: GOOD (  11.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,35 +92,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 04, 2024 at 05:03:26PM +0530, Varadarajan Narayanan wrote:
-> From: Praveenkumar I <quic_ipkumar@quicinc.com>
-> 
-> Add support for the PCIe controller on the Qualcomm
-> IPQ5332 SoC to the bindings.
-> 
-> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
-> v2: Use ipq9574 clock & reset details instead of a new one for ipq5332
-> ---
->  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> index bd87f6b49d68..a7c5d0ce7de8 100644
-> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> @@ -21,6 +21,7 @@ properties:
->            - qcom,pcie-apq8064
->            - qcom,pcie-apq8084
->            - qcom,pcie-ipq4019
-> +          - qcom,pcie-ipq5332
+Hi Kever,
 
-Looks like qcom,pcie-ipq6018 to me. Don't grow ID table in your driver
-needlessly, but use proper fallbacks.
+Am Donnerstag, 5. Dezember 2024, 09:21:07 CET schrieb Kever Yang:
+> On 2024/11/6 10:13, Frank Wang wrote:
+> > From: Kever Yang <kever.yang@rock-chips.com>
+> >
+> > Rockchip RK3576 integrates two naneng-combo PHY, PHY0 is used for
+> > PCIE and SATA, PHY1 is used for PCIE, SATA and USB3.
+> >
+> > This adds device specific data support.
+> >
+> > Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
+> > Signed-off-by: William Wu <william.wu@rock-chips.com>
+> > Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+> Test on rk3576 evb with pcie port.
+> Test-by: Kever Yang <kever.yang@rock-chips.com>
 
-Best regards,
-Krzysztof
+nitpick: the tag should be named
+
+Tested-by: Kever Yang <kever.yang@rock-chips.com>
+
+
+
 
 
 -- 
