@@ -4,83 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D7E5E7716C
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Dec 2024 16:41:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B010CE77170
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Dec 2024 17:11:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FDXtTr9tSJOSE1E3ACF82vKxNcI5NBeZywtTE1plBOo=; b=PRt2V3J+pRht4d
-	IpzbQWrLN9jWVADuRfonAVyfYESEKGq+t4icBGj9zf/sF13Yhn1GFxooatfzpUHnLTuk3CGpAo8TT
-	jSqaUuQowZL+lfE9TVyu8ktGKqX607IlQlN/ZsZzmRlu3WdOUQh558ShbEjDwkysWPHyQbYO36/WG
-	CFe1l1MA+Ov+Mv2160kCNnyUhSozM+BaiMXiJB3cOj8erI97+M5uJblYx1dWyoiOKd8rG6bkqdqaa
-	FeYpHsPXRckl8rJy7LYO3nsrvQE38lpmYCSUvQfexmFolCQ5Tyi0kE5+JI81IXVERtreDCMV5UKlL
-	gqo7Mom9Jf+HNI9JxzBQ==;
+	List-Owner; bh=RVmQt9BBNlFztarLcUhA39yf0H2KGGdBPR2iHkUX3dQ=; b=tYMsWaAQdVWjaH
+	QXwy+OCsIPrM5RqWclXQpB+tna4bxe47P/hMyA2HPZwFqw0pJBMoBeF7TqKcD9YIGZ22Vy0Hh1YgM
+	oeyROk2Xs0ZYVuXhrGdUUUHfjGodQqLmFz5c3u42/kizt1i+6RTBoylI2kvxuJPLqTPSaCoa72Kk1
+	kemzXz1rf2gvY/ROuAsT0QtcZUxiJI+OiNlRP/1a2cI0ZCc3/k4mhxuxX9UARXTWi4nDFXkweuih/
+	768+o8m2fPFDeID+zq+BvW648MwkuYwpPeuxx8C/UcnEQQiVGc8mNKBKj0OWExBCllGUNf/aSolZz
+	lAXTNlQ8kcMVhybGG25Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJEum-0000000Gmf2-1MtM;
-	Thu, 05 Dec 2024 16:41:20 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tJFNl-0000000GtCa-3ybB;
+	Thu, 05 Dec 2024 17:11:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJEtq-0000000GmWN-2W8O
+	id 1tJF8X-0000000GqLM-1ucp
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Dec 2024 16:40:23 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B5Bt2L5026094
-	for <linux-phy@lists.infradead.org>; Thu, 5 Dec 2024 16:40:22 GMT
+	Thu, 05 Dec 2024 16:55:34 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B5GMmT6010475
+	for <linux-phy@lists.infradead.org>; Thu, 5 Dec 2024 16:55:32 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	aLw29Pi7z7qUWfxhLPSPGB8n/z1YvzoWA9mAxcNsR00=; b=Ix/GHlMDJO3GphmL
-	0kssS+ysRF1FXwcUqysgaOG59L1dsLB+SnhVEesECmxDmsngOXD/aqlEcjpo9h8J
-	608+KDEiyX0yqmbUi7mjbEgLN/WOAJJy+Q8LfRXnE5h1iGTMqsVQ4rFpmmZnXtB6
-	n/wKN4wWpiG1offZU8IaAKTTN+oJ5I6NGSpppjUq6c/B8/J8HsU6+eW2JQV45yZ0
-	AF8RWTPw0bOEc6sI2kev7EeteMfL0j8cwtwekdYc1tj3Gta0fQvYhCYy0TV/uh7M
-	wJumsAvk+3VTA01InyV6dk8XUWzm5IdRmzzgUTFV8pxz0VuDQczWrZHUUFiWYYjt
-	e2gWJg==
-Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43bbqm0s64-1
+	VOFQylGJgYNMCJcUBcofUAuX/+VKBXcVVeUUlHN8vVk=; b=hH3uGaren9vGIINs
+	j2WI3cccYIp5+se1M6em2KECJk7kR2vZz6OIlY/IpflNiTiuYAtyRxbl+OrAOn+t
+	l0/K+xO8ZdylPDpgUmQQK3kbVFjdJ8GQs7Vojxoy02N9jm/1/tTRC1NTp3nV+2mq
+	reumS8wt8cUtz8hwlZEme0OdSdeA0Y4euv5rf/vmahH0KReq4TBuAatGX3Y/K24s
+	fUxAakPP1/9ra3Z9Mu8YFvLu5uVZhN/MU3fWAJDJvUCJxyl7V3zTJewQt6UnKtbI
+	N8JddbJ86tf0VyHP+VXNqmA5cof4Wzj35ofsOE8UfYbYp2525rxxLyW68d95fdFP
+	8YjmmA==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 439v800e4j-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 05 Dec 2024 16:40:21 +0000 (GMT)
-Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-6d8a3cb9dbfso2840496d6.1
-        for <linux-phy@lists.infradead.org>; Thu, 05 Dec 2024 08:40:21 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Thu, 05 Dec 2024 16:55:32 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-466c5605601so2539601cf.2
+        for <linux-phy@lists.infradead.org>; Thu, 05 Dec 2024 08:55:32 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733416820; x=1734021620;
+        d=1e100.net; s=20230601; t=1733417731; x=1734022531;
         h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:to:subject:user-agent:mime-version:date:message-id
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=aLw29Pi7z7qUWfxhLPSPGB8n/z1YvzoWA9mAxcNsR00=;
-        b=aN+hvzFKxn654IIyDuKlsNntXigUrLvh5J2iWOtGHU+P/Nv2iReo8FjXdcdsLP6wpW
-         lmet1foY1RfDUIISiErWYNVYgyWymWZAy7JMx0WfBlA01uhuotw9GDb46yTL6BglM9bx
-         VCASrjwVh+BG7hl+Jqfs9c9xyaz5DoxB7iDJj+4NhNe/aBydijL5Dt1LBhu3MunWTyAw
-         Z9FQdoDGfFD6CpF61bS7geUyrh9+WhPWba0KR17JlQ4WbujJBHSiBGfJiqtEMCB2bSGr
-         Xk+cKKg6XPyTawgS6XumewWnOEtXlgfqvE94xFuaDYVp3ympQyrfgyAnqZ7C8M8b3evH
-         yX0Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXQgYpyu1475luB4mH3DeprH45wP8uyh25hubHJVtHbk1T5aWR4wTYYmBFmK9LKxqEEp9wdeG7pjcE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxKSUMHb3zyx1khJY7mXZteVx6tQtcne74ttnSBrPTdXyL3C7Wq
-	JCQk/tCSAzBQueEKsiXavewYMQd0btjYOsflqa8phMf5XhWzY1uAealuJKHWMTwKYrq02Bh0R19
-	UCBU4C+dj1SKjfJ38mwO/QEsgdOO+PUHOSbsEvykDnAgmN4oTd7uPXq1i4tNaQDGu
-X-Gm-Gg: ASbGncvTXa39sQjK7EVq+hjAwfs5uewPs+UeYOWmzDfJ+QgwN94ju3IpvXKn24pCJk8
-	vVj8560Ze2EKl6Hw+v7Q5vduntbCpfnOKlYuLxSKqvp9YSLwnBjmh8kxmYc1P9zgr9c4dCF9V1X
-	eXLUb8tf9bzNLcoBdT749dPsGK4DU6HiJAdHT1gz4Ev+kCXXw1+3WWOs2HwowwSxgHn/xSBJe2Y
-	fyqUO66mRXlbeORSf8EYBsAWPs01kyW6m4ISWN2n//FnYC570XvRD/FiIM0+qxKhVSReLC5uTxI
-	nXAPNu0AHyl7lE2BBVd2msUyXLdmbz0=
-X-Received: by 2002:ad4:576c:0:b0:6d8:a67e:b2ff with SMTP id 6a1803df08f44-6d8bb81ffdamr62000506d6.8.1733416819950;
-        Thu, 05 Dec 2024 08:40:19 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGQx8n0UgIEsXZ8s+AlTdnCo2VrzHdMoxFqa+DhiPMk0FP4LFAb01Hav3JtSk0XoXhGnAOfHA==
-X-Received: by 2002:ad4:576c:0:b0:6d8:a67e:b2ff with SMTP id 6a1803df08f44-6d8bb81ffdamr62000196d6.8.1733416819528;
-        Thu, 05 Dec 2024 08:40:19 -0800 (PST)
+        bh=VOFQylGJgYNMCJcUBcofUAuX/+VKBXcVVeUUlHN8vVk=;
+        b=dCHdyrsnuu6c8bw/NVk9rq3rQTGwnnM4MPBytyziv6E44BLtFwgAFjgh3Kj2nHF5X7
+         r5u4DCYNE+3x5Su3DT3hcjt798rDEig2INNJdi7ezMLc27eKOh3csl3wnnXyqS8roTCb
+         ZfsdPFXcUvAa30Zr8NnXqbAUt60J7v1f2RMADdOY8VO7aaXWXT3srxNPcWCkaxcYY2Fe
+         1UspXuLI4uA8+cnV5OF89KQ6OPXLP+8byu6dlBpmBJO35NHTv/bMwYo3SLQef3Iig8Yh
+         SAoh46EXpYXIGW8Gv4ZHQmfqSlJY2sKBMSGMXlg1boWQ0C4JUHbAUhP6rvPD1veIgKIy
+         vSoQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXD1RsOla2gyzD6T8+FROvUUt81f97k1DlD9RtOwHnMcdhUhi4d/mO1/orSsBaLp8tvvXTshZfWmAw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxo2tns/Xamr9KL4zm2MtuwWrnEWqpSYHpc5RvruB7Y44TvDqnX
+	Bye7GpPEJPacEFEEKzZLUpZ7mQQdZ+x0M57PfkYZWabUzK1F2ES04vJCQT7YdMQvCGCyry3Hq6C
+	02i5tXsxqfj/P3z++4gAbVkxXL2YgirUGhqd7r7gMtD0ngAB968UioUVUQCOIurp2
+X-Gm-Gg: ASbGnctGLQ9L6oXtzPPdMRxz1tFBvgPMyRsRaHqoBEovYE0Z2yX2T6j5IQ8wZSiEu1e
+	0qxOEb1KmaglKX5ziZiP2yNiqI0yU1XRCC6HtZur6KNvKqIMvGaxE6P4TSlkgxdWpw0akIlTD3I
+	IkiF7La5QoES1YRYXJOEPB75Do5sQa4uKCPpxFrPMfnI2AgzNOOw8jS0Wicvfd5ROpbnPFAr40F
+	8QAei1DVkuE3FCdcSdr6oIc5F8vL6bG1fpwIiWL+kPeIpjnNNjhjlpPqEPHON9Rq/1YUiveBphD
+	37HhjZ6r3mdT2BSvScm4Ts5K1Q629vY=
+X-Received: by 2002:a05:622a:58c:b0:466:92d8:737f with SMTP id d75a77b69052e-4670c0c19d8mr67579541cf.8.1733417731428;
+        Thu, 05 Dec 2024 08:55:31 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGpOyIz3ExEZb6pa6ljRFBJV3XGl7gjiUagmYMxGVfn+2598vcJKlgl8xXch7qaXTeppX9Nrg==
+X-Received: by 2002:a05:622a:58c:b0:466:92d8:737f with SMTP id d75a77b69052e-4670c0c19d8mr67579291cf.8.1733417730950;
+        Thu, 05 Dec 2024 08:55:30 -0800 (PST)
 Received: from [192.168.212.120] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-aa625e4db6csm114422066b.39.2024.12.05.08.40.15
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-aa625e4dc95sm115378266b.38.2024.12.05.08.55.28
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 05 Dec 2024 08:40:18 -0800 (PST)
-Message-ID: <710aa948-d27f-49f6-a4a8-73f6208502c3@oss.qualcomm.com>
-Date: Thu, 5 Dec 2024 17:40:15 +0100
+        Thu, 05 Dec 2024 08:55:30 -0800 (PST)
+Message-ID: <6fe09de4-c94c-495d-92a4-aa902d2519ef@oss.qualcomm.com>
+Date: Thu, 5 Dec 2024 17:55:27 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
+Subject: Re: [PATCH v2 5/6] arm64: dts: qcom: ipq5332: Add PCIe related nodes
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, lpieralisi@kernel.org,
         kw@linux.com, manivannan.sadhasivam@linaro.org, robh@kernel.org,
         bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org,
@@ -90,24 +90,25 @@ To: Varadarajan Narayanan <quic_varada@quicinc.com>, lpieralisi@kernel.org,
         linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         linux-phy@lists.infradead.org
+Cc: Praveenkumar I <quic_ipkumar@quicinc.com>
 References: <20241204113329.3195627-1-quic_varada@quicinc.com>
- <20241204113329.3195627-3-quic_varada@quicinc.com>
+ <20241204113329.3195627-6-quic_varada@quicinc.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20241204113329.3195627-3-quic_varada@quicinc.com>
-X-Proofpoint-GUID: 5feKZd_V6DgOcBkoirPujOMLVEgZKEUd
-X-Proofpoint-ORIG-GUID: 5feKZd_V6DgOcBkoirPujOMLVEgZKEUd
+In-Reply-To: <20241204113329.3195627-6-quic_varada@quicinc.com>
+X-Proofpoint-ORIG-GUID: XXaQZlsLC7PCrVFjcZURmV8R0i5Xe_k5
+X-Proofpoint-GUID: XXaQZlsLC7PCrVFjcZURmV8R0i5Xe_k5
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015
- lowpriorityscore=0 mlxlogscore=999 spamscore=0 adultscore=0 suspectscore=0
- malwarescore=0 mlxscore=0 impostorscore=0 bulkscore=0 phishscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412050121
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
+ impostorscore=0 adultscore=0 priorityscore=1501 clxscore=1015
+ lowpriorityscore=0 suspectscore=0 mlxlogscore=999 malwarescore=0
+ bulkscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412050123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241205_084022_650357_3AF4887D 
-X-CRM114-Status: GOOD (  18.04  )
+X-CRM114-CacheID: sfid-20241205_085533_616042_026F61B6 
+X-CRM114-Status: GOOD (  12.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,133 +126,118 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 4.12.2024 12:33 PM, Varadarajan Narayanan wrote:
-> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> From: Praveenkumar I <quic_ipkumar@quicinc.com>
 > 
-> Add Qualcomm PCIe UNIPHY 28LP driver support present
-> in Qualcomm IPQ5332 SoC and the phy init sequence.
+> Add phy and controller nodes for pcie0_x1 and pcie1_x2.
 > 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
 
 [...]
 
-> +struct qcom_uniphy_pcie_regs {
-> +	unsigned int offset;
-> +	unsigned int val;
+> +		pcie0: pcie@20000000 {
+> +			compatible = "qcom,pcie-ipq5332";
+> +			reg =  <0x20000000 0xf1d>,
+> +			       <0x20000F20 0xa8>,
 
-u32
+Please use lowercase hex
 
-> +};
+> +			       <0x20001000 0x1000>,
+> +			       <0x00080000 0x3000>,
+> +			       <0x20100000 0x1000>;
+> +			reg-names = "dbi", "elbi", "atu", "parf", "config";
+
+Please also add the MHI region
+> +			device_type = "pci";
+> +			linux,pci-domain = <0>;
+> +			bus-range = <0x00 0xff>;
+> +			num-lanes = <1>;
+> +			#address-cells = <3>;
+> +			#size-cells = <2>;
 > +
-> +struct qcom_uniphy_pcie_data {
-> +	int lanes;
-> +	/* 2nd lane offset */
-> +	int lane_offset;
+> +			ranges = <0x01000000 0 0x20200000 0x20200000 0 0x00100000>, /* I/O */
+> +				 <0x02000000 0 0x20300000 0x20300000 0 0x0fd00000>; /* MEM */
 
-'lanes', 'lane_offset' and '2nd lane' together imply one of:
-
-- there can be more lines, all at an equal offset
-- there can only ever be two lines
-
-Please specify which one is the case
-
-> +	unsigned int phy_type;
-> +	const struct qcom_uniphy_pcie_regs *init_seq;
-> +	unsigned int init_seq_num;
-> +	unsigned int pipe_clk_rate;
-> +};
+Please drop these comments
 > +
-> +struct qcom_uniphy_pcie {
-> +	struct phy phy;
-> +	struct device *dev;
-> +	const struct qcom_uniphy_pcie_data *data;
-> +	struct clk_bulk_data *clks;
-> +	int num_clks;
-> +	struct reset_control *resets;
-> +	void __iomem *base;
-> +};
+> +			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>,
+> +				     <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupt-names = "msi0",
+> +					  "msi1",
+> +					  "msi2",
+> +					  "msi3",
+> +					  "msi4",
+> +					  "msi5",
+> +					  "msi6",
+> +					  "msi7";
 > +
-> +#define	phy_to_dw_phy(x)	container_of((x), struct qca_uni_pcie_phy, phy)
+> +			#interrupt-cells = <1>;
+> +			interrupt-map-mask = <0 0 0 0x7>;
+> +			interrupt-map = <0 0 0 1 &intc 0 0 35 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
+> +					<0 0 0 2 &intc 0 0 36 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
+> +					<0 0 0 3 &intc 0 0 37 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
+> +					<0 0 0 4 &intc 0 0 38 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
 
-A space after #define, please
-
-> +
-> +static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
-> +	{
-> +		.offset = PHY_CFG_PLLCFG,
-> +		.val = 0x30,
-> +	}, {
-> +		.offset = PHY_CFG_EIOS_DTCT_REG,
-> +		.val = 0x53ef,
-> +	}, {
-> +		.offset = PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME,
-> +		.val = 0xCf,
-
-mixed case hex.. please make it lowercase
-
-> +	},
-> +};
-> +
-> +static const struct qcom_uniphy_pcie_data ipq5332_x1_data = {
-> +	.lanes		= 1,
-> +	.phy_type	= PHY_TYPE_PCIE_GEN3,
-> +	.init_seq	= ipq5332_regs,
-> +	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
-> +	.pipe_clk_rate	= 250000000,
-> +};
-> +
-> +static const struct qcom_uniphy_pcie_data ipq5332_x2_data = {
-> +	.lanes		= 2,
-> +	.lane_offset	= 0x800,
-> +	.phy_type	= PHY_TYPE_PCIE_GEN3,
-> +	.init_seq	= ipq5332_regs,
-> +	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
-> +	.pipe_clk_rate	= 250000000,
-> +};
-
-Are there going to be more UNIPHY-equipped SoCs?
-
+And these too
 
 > +
-> +static void qcom_uniphy_pcie_init(struct qcom_uniphy_pcie *phy)
-> +{
-> +	const struct qcom_uniphy_pcie_data *data = phy->data;
-> +	const struct qcom_uniphy_pcie_regs *init_seq;
-> +	void __iomem *base = phy->base;
-> +	int lane, i;
+> +			clocks = <&gcc GCC_PCIE3X1_0_AXI_M_CLK>,
+> +				 <&gcc GCC_PCIE3X1_0_AXI_S_CLK>,
+> +				 <&gcc GCC_PCIE3X1_0_AXI_S_BRIDGE_CLK>,
+> +				 <&gcc GCC_PCIE3X1_0_RCHG_CLK>,
+> +				 <&gcc GCC_PCIE3X1_0_AHB_CLK>,
+> +				 <&gcc GCC_PCIE3X1_0_AUX_CLK>;
 > +
-> +	for (lane = 0; lane != data->lanes; lane++) {
+Stray newline
 
-while effectively the same, < would be less eyebrow-raising
-
-> +		init_seq = data->init_seq;
+> +			clock-names = "axi_m",
+> +				      "axi_s",
+> +				      "axi_bridge",
+> +				      "rchng",
+> +				      "ahb",
+> +				      "aux";
 > +
-> +		for (i = 0; i < data->init_seq_num; i++, init_seq++)
-> +			writel(init_seq->val, base + init_seq->offset);
-
-writel(init_seq[i].val, ...)
-
+> +			resets = <&gcc GCC_PCIE3X1_0_PIPE_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_CORE_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_AXI_S_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_AXI_S_CLK_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_AXI_M_STICKY_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_AXI_M_CLK_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_AUX_CLK_ARES>,
+> +				 <&gcc GCC_PCIE3X1_0_AHB_CLK_ARES>;
 > +
-> +		base += data->lane_offset;
-> +	}
-> +}
+Ditto
+
+> +			reset-names = "pipe",
+> +				      "sticky",
+> +				      "axi_s_sticky",
+> +				      "axi_s",
+> +				      "axi_m_sticky",
+> +				      "axi_m",
+> +				      "aux",
+> +				      "ahb";
 > +
-> +static int qcom_uniphy_pcie_power_off(struct phy *x)
-> +{
-> +	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
+> +			phys = <&pcie0_phy>;
+> +			phy-names = "pciephy";
 > +
-> +	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
+> +			interconnects = <&gcc MASTER_SNOC_PCIE3_1_M &gcc SLAVE_SNOC_PCIE3_1_M>,
+> +					<&gcc MASTER_ANOC_PCIE3_1_S &gcc SLAVE_ANOC_PCIE3_1_S>;
+> +			interconnect-names = "pcie-mem", "cpu-pcie";
 > +
-> +	reset_control_assert(phy->resets);
+> +			msi-map = <0x0 &v2m0 0x0 0xffd>;
+> +			status = "disabled";
+> +		};
+> +
+> +		pcie1: pcie@18000000 {
 
-This can fail, return it instead of zero
-
-[...]
-
-> +MODULE_LICENSE("Dual BSD/GPL");
-
-I think this is too vague, there are many BSD variants
+Same comments as pcie0
 
 Konrad
 
