@@ -4,64 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 486DEE7716D
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Dec 2024 01:17:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1173E7716C
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Dec 2024 07:34:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VXj4CXNA0Kk4gnkGT9hT8OA2l/Xj3SHfp6jLDfuqsrI=; b=Z9xkl7TiSVV45M
-	25AHKQm0nPto6+48n3VMrAMBB3fdS+prT0OE77teWKhMr7X28r/gxnIg96Rj9qG2wMgAm6rQDibV4
-	67EDTGMuLOD+aGE0gApS2c30Ud/LQR+syvBUNdpJL/tegTBYgY8XHTVrnG+5VLMl/wJaokkN8m3NL
-	G0hHstuY8ijqJ0G97ZKFsLbzUcLu1jTNDdOoWkz1HSGVvE7JHG5zbF8Ai4uBYtDNEzqlt4SI1WvW4
-	EcBwz+iSmyr2ghNRc1KzBOZ8M/lBzNJ/IzSjMkkQPk1uWjUJg0e2IpVhsIO5VAKblgfhHWNxa66BE
-	khqHMSQP2OVqc3N6lKhA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dt0y4jAWtgsN6h0kYKN/cFVfKV7C4TK3+B7RcFGtmDU=; b=A1Q6Cp+DN29vkM
+	DRGPjPO94wd5lUqgiaeODty6ZATKobOQYPbMAkEabE/99H12vs6WqYhf3Uxr5csBbbJ8yZhyJtyTh
+	b8H5DiNVsJZrZ/VMwQ/TsPvBBsf4PaWZd6ADrlWtGxhNSmUdYWvIB0L0bUPCtqrJF0NfKUxzrw7PM
+	UFSsfWCTaoz97Ilnk30kR/cvjEiFCltJ3hRVDNyEWC/gTp8vPCnydmVPeJYITlwab5eLpsGkQOAxH
+	hTdvNXDHQWmVLjVjs41JKRnC9i93MxacezN1sX6aBSd4yyPC8MqfIPhqvy5I4jvKN+EP5dJnGj2Re
+	MEWj4k3BdHzRDZJ7z1aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJ0Ud-0000000ESLx-09NR;
-	Thu, 05 Dec 2024 01:17:23 +0000
-Received: from mail-m21472.qiye.163.com ([117.135.214.72])
+	id 1tJ6Nr-0000000F2FS-48mu;
+	Thu, 05 Dec 2024 07:34:47 +0000
+Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJ0Ua-0000000ESLF-0evB;
-	Thu, 05 Dec 2024 01:17:21 +0000
-Received: from [172.16.12.67] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 4bd59019;
-	Thu, 5 Dec 2024 09:17:13 +0800 (GMT+08:00)
-Message-ID: <11439cc8-82e7-4054-b5f1-e932c8ab5a4f@rock-chips.com>
-Date: Thu, 5 Dec 2024 09:17:12 +0800
+	id 1tJ6MM-0000000F1hB-3Z3V
+	for linux-phy@lists.infradead.org;
+	Thu, 05 Dec 2024 07:33:17 +0000
+Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-a9a0ef5179dso66773266b.1
+        for <linux-phy@lists.infradead.org>; Wed, 04 Dec 2024 23:33:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1733383993; x=1733988793; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=jyPCCbXGwL2HX2ZQQ75iZPGtqkwk+FZ+xBNeL3SfQvk=;
+        b=ZXsaHppg0rACEdHk4jsIzGM+26GMEZf3W+DRYIw6XEg40e7B6pIAbWOOsh7lUf9PNu
+         LDKLtsNKwDp1MjO6AYl73FAUhcf1LVU5DwuCcDM02etS4Jg7CXCrODn39JrV4lvHC4Fx
+         D68DgDOaYiTblq+kV1Ik7UvXv/fLpvaO0nU5n3glcNx6MHiMHtnO43i5p4Rmn6oVN1vO
+         UowW81XcesnTuKStL30KDCw8dLxJW4uvHGzhYtcG2BCBFvQfBRbo0E+7gdn/57E3EW6F
+         NV90V/yX8yXKVfr5MmZ0SMyf1Qct974AIfJPPb647vS/2bwnT2n68gMLa1yBUNjbsGIK
+         egcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1733383993; x=1733988793;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=jyPCCbXGwL2HX2ZQQ75iZPGtqkwk+FZ+xBNeL3SfQvk=;
+        b=it2FaqyThyaQMtJzZST8O97FyRzfLVpEPMftnH3GZ4Gvxrk600pw/mZsMB9JrvZWGv
+         cgWCn80ukrSlYVvRqoVmf2jQPwnnvPB7zfnhj4/GJmKbFjB1lMDCWoTwKqOu92sJAd7X
+         VS4iQy4XJK1JWzaHOV+zto8h18ywOrFRMNLDC4kYLDDEG65Eqb++4TW/7hXy/3a/yYrd
+         97KsA/SQOxhoXt+NcaZROvsSEk5tqOnRD2htoMYJfq4yu5G/JgMlpklAtl8YkQtiJh3p
+         XmbO0fIXNPYOgDR0Ds+uUSKXWKEhliOgU/1iZBJHA22bgm2gO2bYFA5xpHWRlshRq9sG
+         T+Ow==
+X-Forwarded-Encrypted: i=1; AJvYcCWthPhRtPxsl1y1m2xlRPlZWlqjW5YmobcTaz+ymSrAetsaAiXT5b+j5xmMd6DUa2CcV+yAyL/vK6U=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyifDeUoGkdNB4DQkec38qQFzoOIBoydgg/wYfInXzCnzLmXU5K
+	81P/HNPiFZ8h159XCCx4IeE8t10vcTV1RB4RWntAUOQU7Y4RAleeM6a9EymeGFs=
+X-Gm-Gg: ASbGnctxr+OJNZMClxEdAMGdp8arZA6PzV1L/RePRQlob8l7zoVy5iBA3nbN01gPQlT
+	tJB4bO8P+ThcsJRI9D/K9vZwqwfKmsglSIeoH1pd5uSt/A5dNVrPL+9QK6YGGUvw/9wX+mkgYrv
+	hET4HIxwUcbDTctRVFuUeXTKJp0qy9wQTEXDyqCgi72T8/afrN8fLdlO8vcPNrjswkPUmpLuZ10
+	kQYzjG+pmHFT+Iy/mWcW3mbVOWZqBH9R9iHPt1CKF/L+wXOLeqfq/sGnsMJBEXorOJ7X9Lpviky
+	jixUIo0rGB1MbqZgbbOGCxEzeOqSuPZg5g==
+X-Google-Smtp-Source: AGHT+IHfI+UCHItr2vvHKPBrNf3u5if9tiRttGFiL6E80p15Kq2YgAQozShUjLutF89S1nrAwt0aIw==
+X-Received: by 2002:a17:907:1ded:b0:aa5:2d9a:1528 with SMTP id a640c23a62f3a-aa5f7f40800mr661936566b.60.1733383993082;
+        Wed, 04 Dec 2024 23:33:13 -0800 (PST)
+Received: from puffmais.c.googlers.com (64.227.90.34.bc.googleusercontent.com. [34.90.227.64])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-aa6260888casm53371766b.133.2024.12.04.23.33.12
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 04 Dec 2024 23:33:12 -0800 (PST)
+From: =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
+Subject: [PATCH v3 0/8] USB31DRD phy updates for Google Tensor gs101
+ (orientation & DWC3 rpm)
+Date: Thu, 05 Dec 2024 07:33:11 +0000
+Message-Id: <20241205-gs101-phy-lanes-orientation-phy-v3-0-32f721bed219@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RESEND PATCH v3 2/2] phy: rockchip-naneng-combo: add rk3576
- support
-To: Frank Wang <frawang.cn@gmail.com>, vkoul@kernel.org, kishon@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, heiko@sntech.de
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, william.wu@rock-chips.com,
- tim.chen@rock-chips.com, Frank Wang <frank.wang@rock-chips.com>
-References: <20241106021357.19782-1-frawang.cn@gmail.com>
- <20241106021357.19782-2-frawang.cn@gmail.com>
-Content-Language: en-US
-From: Kever Yang <kever.yang@rock-chips.com>
-In-Reply-To: <20241106021357.19782-2-frawang.cn@gmail.com>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGRpIHVYfTUsaQx9KQk1JTUtWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
-	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a9394647b8303afkunm4bd59019
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Oi46Ezo*ETIqNwgLHklMPQMD
-	ATUaCgxVSlVKTEhISE1KT0hOSkJLVTMWGhIXVRAeDR4JVQIaFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFKSENCTjcG
-DKIM-Signature: a=rsa-sha256;
-	b=FFd8SyEaaIKikGPsuF6Jef4Sei3ZG5QnXtOuDqDBc+jsTJ/rUmy0QHN+b9NbShmFrJ42+pNzaXbim8n8IxPyZlIR1xAo6bcULkGO9B7v2cBmBaJMeSNlwy2zEAg2KbaCq7iX2ZBGTiVZfYifRZ3tiwQrDuHEs+Krk4Pjr/F+suE=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=LCe66WQL0rgFD4dnX/1euk0tuvPmIe8MhqHcV6BvUJ8=;
-	h=date:mime-version:subject:message-id:from;
+X-B4-Tracking: v=1; b=H4sIADdXUWcC/43NQQqDMBQE0KtI1k35+QatXXmP0kVMogYkkURCR
+ bx7v25KV+1yBubNxpKNziZ2LzYWbXbJBU+hvBRMj8oPljtDmSGgFAJrPiQBgs/jyiflbeKB5n5
+ RC+3OFhuDoCtzkwYZKXO0vXudD48n5dGlJcT1PMziaP+3s+DARVf32qJsKujayXkVwzXEgR14x
+ g+IUP4GkUAJRvekVjWYL3Df9zelo8+vIAEAAA==
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Alim Akhtar <alim.akhtar@samsung.com>
+Cc: Peter Griffin <peter.griffin@linaro.org>, 
+ Tudor Ambarus <tudor.ambarus@linaro.org>, 
+ Sam Protsenko <semen.protsenko@linaro.org>, 
+ Will McVicker <willmcvicker@google.com>, Roy Luo <royluo@google.com>, 
+ kernel-team@android.com, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ stable@vger.kernel.org
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_171720_749468_64C7A445 
-X-CRM114-Status: GOOD (  22.08  )
+X-CRM114-CacheID: sfid-20241204_233314_889859_F783A3AC 
+X-CRM114-Status: GOOD (  12.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,389 +109,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
-
-On 2024/11/6 10:13, Frank Wang wrote:
-> From: Kever Yang <kever.yang@rock-chips.com>
->
-> Rockchip RK3576 integrates two naneng-combo PHY, PHY0 is used for
-> PCIE and SATA, PHY1 is used for PCIE, SATA and USB3.
->
-> This adds device specific data support.
->
-> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
-> Signed-off-by: William Wu <william.wu@rock-chips.com>
-> Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
-
-Test on rk3576 evb with pcie port.
-
-Test-by: Kever Yang <kever.yang@rock-chips.com>
-
-
-Thanks,
-
-- Kever
-
-> ---
-> Changelog:
-> v3:
->   - add detail commit contents.
->   - using FIELD_PREP() instead of bit shift.
->   - leave a blank line after each switch break case.
->
-> v2:
->   - using constants macro instead of magic values.
->   - add more comments for PHY tuning operations.
->
-> v1:
->   - https://patchwork.kernel.org/project/linux-phy/patch/20241015013351.4884-2-frawang.cn@gmail.com/
->
->   .../rockchip/phy-rockchip-naneng-combphy.c    | 279 ++++++++++++++++++
->   1 file changed, 279 insertions(+)
->
-> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> index 0a9989e41237f..eceb798567859 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> @@ -37,6 +37,10 @@
->   #define PHYREG8				0x1C
->   #define PHYREG8_SSC_EN			BIT(4)
->   
-> +#define PHYREG10			0x24
-> +#define PHYREG10_SSC_PCM_MASK		GENMASK(3, 0)
-> +#define PHYREG10_SSC_PCM_3500PPM	7
-> +
->   #define PHYREG11			0x28
->   #define PHYREG11_SU_TRIM_0_7		0xF0
->   
-> @@ -61,17 +65,26 @@
->   #define PHYREG16			0x3C
->   #define PHYREG16_SSC_CNT_VALUE		0x5f
->   
-> +#define PHYREG17			0x40
-> +
->   #define PHYREG18			0x44
->   #define PHYREG18_PLL_LOOP		0x32
->   
-> +#define PHYREG21			0x50
-> +#define PHYREG21_RX_SQUELCH_VAL		0x0D
-> +
->   #define PHYREG27			0x6C
->   #define PHYREG27_RX_TRIM_RK3588		0x4C
->   
-> +#define PHYREG30			0x74
-> +
->   #define PHYREG32			0x7C
->   #define PHYREG32_SSC_MASK		GENMASK(7, 4)
-> +#define PHYREG32_SSC_DIR_MASK		GENMASK(5, 4)
->   #define PHYREG32_SSC_DIR_SHIFT		4
->   #define PHYREG32_SSC_UPWARD		0
->   #define PHYREG32_SSC_DOWNWARD		1
-> +#define PHYREG32_SSC_OFFSET_MASK	GENMASK(7, 6)
->   #define PHYREG32_SSC_OFFSET_SHIFT	6
->   #define PHYREG32_SSC_OFFSET_500PPM	1
->   
-> @@ -79,6 +92,7 @@
->   #define PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
->   #define PHYREG33_PLL_KVCO_SHIFT		2
->   #define PHYREG33_PLL_KVCO_VALUE		2
-> +#define PHYREG33_PLL_KVCO_VALUE_RK3576	4
->   
->   struct rockchip_combphy_priv;
->   
-> @@ -98,6 +112,7 @@ struct rockchip_combphy_grfcfg {
->   	struct combphy_reg pipe_rxterm_set;
->   	struct combphy_reg pipe_txelec_set;
->   	struct combphy_reg pipe_txcomp_set;
-> +	struct combphy_reg pipe_clk_24m;
->   	struct combphy_reg pipe_clk_25m;
->   	struct combphy_reg pipe_clk_100m;
->   	struct combphy_reg pipe_phymode_sel;
-> @@ -584,6 +599,266 @@ static const struct rockchip_combphy_cfg rk3568_combphy_cfgs = {
->   	.combphy_cfg	= rk3568_combphy_cfg,
->   };
->   
-> +static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
-> +{
-> +	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-> +	unsigned long rate;
-> +	u32 val;
-> +
-> +	switch (priv->type) {
-> +	case PHY_TYPE_PCIE:
-> +		/* Set SSC downward spread spectrum */
-> +		val = FIELD_PREP(PHYREG32_SSC_MASK, PHYREG32_SSC_DOWNWARD);
-> +		rockchip_combphy_updatel(priv, PHYREG32_SSC_MASK, val, PHYREG32);
-> +
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
-> +		break;
-> +
-> +	case PHY_TYPE_USB3:
-> +		/* Set SSC downward spread spectrum */
-> +		val = FIELD_PREP(PHYREG32_SSC_MASK, PHYREG32_SSC_DOWNWARD);
-> +		rockchip_combphy_updatel(priv, PHYREG32_SSC_MASK, val, PHYREG32);
-> +
-> +		/* Enable adaptive CTLE for USB3.0 Rx */
-> +		val = readl(priv->mmio + PHYREG15);
-> +		val |= PHYREG15_CTLE_EN;
-> +		writel(val, priv->mmio + PHYREG15);
-> +
-> +		/* Set PLL KVCO fine tuning signals */
-> +		rockchip_combphy_updatel(priv, PHYREG33_PLL_KVCO_MASK, BIT(3), PHYREG33);
-> +
-> +		/* Set PLL LPF R1 to su_trim[10:7]=1001 */
-> +		writel(PHYREG12_PLL_LPF_ADJ_VALUE, priv->mmio + PHYREG12);
-> +
-> +		/* Set PLL input clock divider 1/2 */
-> +		val = FIELD_PREP(PHYREG6_PLL_DIV_MASK, PHYREG6_PLL_DIV_2);
-> +		rockchip_combphy_updatel(priv, PHYREG6_PLL_DIV_MASK, val, PHYREG6);
-> +
-> +		/* Set PLL loop divider */
-> +		writel(PHYREG18_PLL_LOOP, priv->mmio + PHYREG18);
-> +
-> +		/* Set PLL KVCO to min and set PLL charge pump current to max */
-> +		writel(PHYREG11_SU_TRIM_0_7, priv->mmio + PHYREG11);
-> +
-> +		/* Set Rx squelch input filler bandwidth */
-> +		writel(PHYREG21_RX_SQUELCH_VAL, priv->mmio + PHYREG21);
-> +
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txcomp_sel, false);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_txelec_sel, false);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->usb_mode_set, true);
-> +		break;
-> +
-> +	case PHY_TYPE_SATA:
-> +		/* Enable adaptive CTLE for SATA Rx */
-> +		val = readl(priv->mmio + PHYREG15);
-> +		val |= PHYREG15_CTLE_EN;
-> +		writel(val, priv->mmio + PHYREG15);
-> +
-> +		/* Set tx_rterm = 50 ohm and rx_rterm = 43.5 ohm */
-> +		val = PHYREG7_TX_RTERM_50OHM << PHYREG7_TX_RTERM_SHIFT;
-> +		val |= PHYREG7_RX_RTERM_44OHM << PHYREG7_RX_RTERM_SHIFT;
-> +		writel(val, priv->mmio + PHYREG7);
-> +
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_sata, true);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_sata, true);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_sata, true);
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_sata, true);
-> +		rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_con0_for_sata, true);
-> +		rockchip_combphy_param_write(priv->pipe_grf, &cfg->pipe_con1_for_sata, true);
-> +		break;
-> +
-> +	default:
-> +		dev_err(priv->dev, "incompatible PHY type\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	rate = clk_get_rate(priv->refclk);
-> +
-> +	switch (rate) {
-> +	case REF_CLOCK_24MHz:
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_24m, true);
-> +		if (priv->type == PHY_TYPE_USB3 || priv->type == PHY_TYPE_SATA) {
-> +			/* Set ssc_cnt[9:0]=0101111101 & 31.5KHz */
-> +			val = FIELD_PREP(PHYREG15_SSC_CNT_MASK, PHYREG15_SSC_CNT_VALUE);
-> +			rockchip_combphy_updatel(priv, PHYREG15_SSC_CNT_MASK,
-> +						 val, PHYREG15);
-> +
-> +			writel(PHYREG16_SSC_CNT_VALUE, priv->mmio + PHYREG16);
-> +		} else if (priv->type == PHY_TYPE_PCIE) {
-> +			/* PLL KVCO tuning fine */
-> +			val = FIELD_PREP(PHYREG33_PLL_KVCO_MASK, PHYREG33_PLL_KVCO_VALUE_RK3576);
-> +			rockchip_combphy_updatel(priv, PHYREG33_PLL_KVCO_MASK,
-> +						 val, PHYREG33);
-> +
-> +			/* Set up rx_pck invert and rx msb to disable */
-> +			writel(0x00, priv->mmio + PHYREG27);
-> +
-> +			/*
-> +			 * Set up SU adjust signal:
-> +			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-> +			 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b011
-> +			 * su_trim[31:24], CKDRV adjust
-> +			 */
-> +			writel(0x90, priv->mmio + PHYREG11);
-> +			writel(0x02, priv->mmio + PHYREG12);
-> +			writel(0x57, priv->mmio + PHYREG14);
-> +
-> +			writel(PHYREG16_SSC_CNT_VALUE, priv->mmio + PHYREG16);
-> +		}
-> +		break;
-> +
-> +	case REF_CLOCK_25MHz:
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_25m, true);
-> +		break;
-> +
-> +	case REF_CLOCK_100MHz:
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
-> +		if (priv->type == PHY_TYPE_PCIE) {
-> +			/* gate_tx_pck_sel length select work for L1SS */
-> +			writel(0xc0, priv->mmio + PHYREG30);
-> +
-> +			/* PLL KVCO tuning fine */
-> +			val = FIELD_PREP(PHYREG33_PLL_KVCO_MASK, PHYREG33_PLL_KVCO_VALUE_RK3576);
-> +			rockchip_combphy_updatel(priv, PHYREG33_PLL_KVCO_MASK,
-> +						 val, PHYREG33);
-> +
-> +			/* Set up rx_trim: PLL LPF C1 85pf R1 1.25kohm */
-> +			writel(0x4c, priv->mmio + PHYREG27);
-> +
-> +			/*
-> +			 * Set up SU adjust signal:
-> +			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-> +			 * su_trim[15:8],  bypass PLL loop divider code, and
-> +			 *                 PLL LPF R1 adujst bits[9:7]=3'b101
-> +			 * su_trim[23:16], CKRCV adjust
-> +			 * su_trim[31:24], CKDRV adjust
-> +			 */
-> +			writel(0x90, priv->mmio + PHYREG11);
-> +			writel(0x43, priv->mmio + PHYREG12);
-> +			writel(0x88, priv->mmio + PHYREG13);
-> +			writel(0x56, priv->mmio + PHYREG14);
-> +		} else if (priv->type == PHY_TYPE_SATA) {
-> +			/* downward spread spectrum +500ppm */
-> +			val = FIELD_PREP(PHYREG32_SSC_DIR_MASK, PHYREG32_SSC_DOWNWARD);
-> +			val |= FIELD_PREP(PHYREG32_SSC_OFFSET_MASK, PHYREG32_SSC_OFFSET_500PPM);
-> +			rockchip_combphy_updatel(priv, PHYREG32_SSC_MASK, val, PHYREG32);
-> +
-> +			/* ssc ppm adjust to 3500ppm */
-> +			rockchip_combphy_updatel(priv, PHYREG10_SSC_PCM_MASK,
-> +						 PHYREG10_SSC_PCM_3500PPM,
-> +						 PHYREG10);
-> +		}
-> +		break;
-> +
-> +	default:
-> +		dev_err(priv->dev, "Unsupported rate: %lu\n", rate);
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (priv->ext_refclk) {
-> +		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_ext, true);
-> +		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_100MHz) {
-> +			val = FIELD_PREP(PHYREG33_PLL_KVCO_MASK, PHYREG33_PLL_KVCO_VALUE_RK3576);
-> +			rockchip_combphy_updatel(priv, PHYREG33_PLL_KVCO_MASK,
-> +						 val, PHYREG33);
-> +
-> +			/* Set up rx_trim: PLL LPF C1 85pf R1 2.5kohm */
-> +			writel(0x0c, priv->mmio + PHYREG27);
-> +
-> +			/*
-> +			 * Set up SU adjust signal:
-> +			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-> +			 * su_trim[15:8],  bypass PLL loop divider code, and
-> +			 *                 PLL LPF R1 adujst bits[9:7]=3'b101.
-> +			 * su_trim[23:16], CKRCV adjust
-> +			 * su_trim[31:24], CKDRV adjust
-> +			 */
-> +			writel(0x90, priv->mmio + PHYREG11);
-> +			writel(0x43, priv->mmio + PHYREG12);
-> +			writel(0x88, priv->mmio + PHYREG13);
-> +			writel(0x56, priv->mmio + PHYREG14);
-> +		}
-> +	}
-> +
-> +	if (priv->enable_ssc) {
-> +		val = readl(priv->mmio + PHYREG8);
-> +		val |= PHYREG8_SSC_EN;
-> +		writel(val, priv->mmio + PHYREG8);
-> +
-> +		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
-> +			/* Set PLL loop divider */
-> +			writel(0x00, priv->mmio + PHYREG17);
-> +			writel(PHYREG18_PLL_LOOP, priv->mmio + PHYREG18);
-> +
-> +			/* Set up rx_pck invert and rx msb to disable */
-> +			writel(0x00, priv->mmio + PHYREG27);
-> +
-> +			/*
-> +			 * Set up SU adjust signal:
-> +			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-> +			 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
-> +			 * su_trim[23:16], CKRCV adjust
-> +			 * su_trim[31:24], CKDRV adjust
-> +			 */
-> +			writel(0x90, priv->mmio + PHYREG11);
-> +			writel(0x02, priv->mmio + PHYREG12);
-> +			writel(0x08, priv->mmio + PHYREG13);
-> +			writel(0x57, priv->mmio + PHYREG14);
-> +			writel(0x40, priv->mmio + PHYREG15);
-> +
-> +			writel(PHYREG16_SSC_CNT_VALUE, priv->mmio + PHYREG16);
-> +
-> +			val = FIELD_PREP(PHYREG33_PLL_KVCO_MASK, PHYREG33_PLL_KVCO_VALUE_RK3576);
-> +			writel(val, priv->mmio + PHYREG33);
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct rockchip_combphy_grfcfg rk3576_combphy_grfcfgs = {
-> +	/* pipe-phy-grf */
-> +	.pcie_mode_set		= { 0x0000, 5, 0, 0x00, 0x11 },
-> +	.usb_mode_set		= { 0x0000, 5, 0, 0x00, 0x04 },
-> +	.pipe_rxterm_set	= { 0x0000, 12, 12, 0x00, 0x01 },
-> +	.pipe_txelec_set	= { 0x0004, 1, 1, 0x00, 0x01 },
-> +	.pipe_txcomp_set	= { 0x0004, 4, 4, 0x00, 0x01 },
-> +	.pipe_clk_24m		= { 0x0004, 14, 13, 0x00, 0x00 },
-> +	.pipe_clk_25m		= { 0x0004, 14, 13, 0x00, 0x01 },
-> +	.pipe_clk_100m		= { 0x0004, 14, 13, 0x00, 0x02 },
-> +	.pipe_phymode_sel	= { 0x0008, 1, 1, 0x00, 0x01 },
-> +	.pipe_rate_sel		= { 0x0008, 2, 2, 0x00, 0x01 },
-> +	.pipe_rxterm_sel	= { 0x0008, 8, 8, 0x00, 0x01 },
-> +	.pipe_txelec_sel	= { 0x0008, 12, 12, 0x00, 0x01 },
-> +	.pipe_txcomp_sel	= { 0x0008, 15, 15, 0x00, 0x01 },
-> +	.pipe_clk_ext		= { 0x000c, 9, 8, 0x02, 0x01 },
-> +	.pipe_phy_status	= { 0x0034, 6, 6, 0x01, 0x00 },
-> +	.con0_for_pcie		= { 0x0000, 15, 0, 0x00, 0x1000 },
-> +	.con1_for_pcie		= { 0x0004, 15, 0, 0x00, 0x0000 },
-> +	.con2_for_pcie		= { 0x0008, 15, 0, 0x00, 0x0101 },
-> +	.con3_for_pcie		= { 0x000c, 15, 0, 0x00, 0x0200 },
-> +	.con0_for_sata		= { 0x0000, 15, 0, 0x00, 0x0129 },
-> +	.con1_for_sata		= { 0x0004, 15, 0, 0x00, 0x0000 },
-> +	.con2_for_sata		= { 0x0008, 15, 0, 0x00, 0x80c1 },
-> +	.con3_for_sata		= { 0x000c, 15, 0, 0x00, 0x0407 },
-> +	/* php-grf */
-> +	.pipe_con0_for_sata	= { 0x001C, 2, 0, 0x00, 0x2 },
-> +	.pipe_con1_for_sata	= { 0x0020, 2, 0, 0x00, 0x2 },
-> +};
-> +
-> +static const struct rockchip_combphy_cfg rk3576_combphy_cfgs = {
-> +	.num_phys = 2,
-> +	.phy_ids = {
-> +		0x2b050000,
-> +		0x2b060000
-> +	},
-> +	.grfcfg		= &rk3576_combphy_grfcfgs,
-> +	.combphy_cfg	= rk3576_combphy_cfg,
-> +};
-> +
->   static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
->   {
->   	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-> @@ -775,6 +1050,10 @@ static const struct of_device_id rockchip_combphy_of_match[] = {
->   		.compatible = "rockchip,rk3568-naneng-combphy",
->   		.data = &rk3568_combphy_cfgs,
->   	},
-> +	{
-> +		.compatible = "rockchip,rk3576-naneng-combphy",
-> +		.data = &rk3576_combphy_cfgs,
-> +	},
->   	{
->   		.compatible = "rockchip,rk3588-naneng-combphy",
->   		.data = &rk3588_combphy_cfgs,
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGksCgpUaGlzIHNlcmllcyBlbmFibGVzIFVTQjMgVHlwZS1DIGxhbmUgb3JpZW50YXRpb24gZGV0
+ZWN0aW9uIGFuZApjb25maWd1cmF0aW9uIG9uIHBsYXRmb3JtcyB0aGF0IHN1cHBvcnQgdGhpcyAo
+R29vZ2xlIGdzMTAxKSwgYW5kIGl0CmFsc28gYWxsb3dzIHRoZSBEV0MzIGNvcmUgdG8gZW50ZXIg
+cnVudGltZSBzdXNwZW5kIGV2ZW4gd2hlbiBVREMgaXMKYWN0aXZlLgoKRm9yIGxhbmUgb3JpZW50
+YXRpb24sIHRoaXMgZHJpdmVyIG5vdyBvcHRpb25hbGx5IChiYXNlZCBvbiBEVCkKc3Vic2NyaWJl
+cyB0byB0aGUgVENQQydzIGxhbmUgb3JpZW50YXRpb24gbm90aWZpZXIgYW5kIHJlbWVtYmVycyB0
+aGUKb3JpZW50YXRpb24gdG8gbGF0ZXIgYmUgdXNlZCBkdXJpbmcgcGh5X2luaXQoKS4KClRvIGVu
+YWJsZSBEV0MzIHJ1bnRpbWUgc3VzcGVuZCwgdGhlIGdhZGdldCBuZWVkcyB0byBpbmZvcm0gdGhl
+IGNvcmUgdmlhCmR3YzNfZ2FkZ2V0X2ludGVycnVwdCgpIHdpdGggZXZlbnQgdHlwZSA9PSBEV0Mz
+X0RFVklDRV9FVkVOVF9ESVNDT05ORUNUCm9mIGEgY2FibGUgZGlzY29ubmVjdC4gRm9yIHRoYXQg
+dG8gYWxsb3cgdG8gaGFwcGVuLCB0aGlzIGRyaXZlcgp0aGVyZWZvcmUgbmVlZHMgdG8gc3RvcCBm
+b3JjaW5nIHRoZSBWYnVzIGFuZCBidmFsaWQgc2lnbmFscyB0byBhY3RpdmUKYW5kIGluc3RlYWQg
+Y2hhbmdlIHRoZWlyIHN0YXRlIGJhc2VkIG9uIGFjdHVhbCBjb25kaXRpb25zLiBUaGUgc2FtZQpU
+Q1BDIG5vdGlmaWVyIGlzIHVzZWQgdG8gZGV0ZWN0IHRoaXMsIGFuZCBwcm9ncmFtIHRoZSBoYXJk
+d2FyZQphY2NvcmRpbmdseS4KClRoYXQgc2lnbmFsIHN0YXRlIGlzIGJhc2VkIG9uIGFkdmljZSBn
+aXZlbiBieSBUaGluaCBpbgpodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNDA4MTMyMzA2
+MjUuamdrYXRxc3R5aGNtcGV6dkBzeW5vcHN5cy5jb20vCgpCb3RoIGNoYW5nZXMgdG9nZXRoZXIg
+bm93IGFsbG93IGNhYmxlIG9yaWVudGF0aW9uIGRldGVjdGlvbiB0byB3b3JrLCBhcwp0aGUgRFdD
+MyB3aWxsIG5vdyBjYWxsIHBoeV9leGl0KCkgb24gY2FibGUgZGlzY29ubmVjdCwgYW5kIHdlIGNh
+bgpyZXByb2dyYW0gdGhlIGxhbmUgbXV4IGluIHBoeV9pbml0KCkuCgpPbiB0b3Agb2YgdGhhdCwg
+dGhlcmUgYXJlIHNvbWUgc21hbGwgcmVsYXRlZCBjbGVhbnVwIHBhdGNoZXMuCgpTaWduZWQtb2Zm
+LWJ5OiBBbmRyw6kgRHJhc3ppayA8YW5kcmUuZHJhc3ppa0BsaW5hcm8ub3JnPgotLS0KQ2hhbmdl
+cyBpbiB2MzoKLSBwYXRjaGVzIDEgJiAyOiB1cGRhdGUgYXMgcGVyIFJvYidzIHN1Z2dlc3Rpb25z
+Ci0gcGF0Y2ggNyAmIDg6IGRyb3AgaW5pdCB0byAtMSBvZiBwaHlfZHJkLT5vcmllbnRhdGlvbiAo
+Vmlub2QpCi0gcGF0Y2ggNzogYXZvaWQgYW4gI2lmZGVmIAotIExpbmsgdG8gdjI6IGh0dHBzOi8v
+bG9yZS5rZXJuZWwub3JnL3IvMjAyNDEyMDMtZ3MxMDEtcGh5LWxhbmVzLW9yaWVudGF0aW9uLXBo
+eS12Mi0wLTQwZGNmMWI3NjcwZEBsaW5hcm8ub3JnCgpDaGFuZ2VzIGluIHYyOgotIHNxdWFzaCBw
+YXRjaGVzICMyIGFuZCAjMyBmcm9tIHYxIHRvIGFjdHVhbGx5IGRpc2FsbG93CiAgb3JpZW50YXRp
+b24tc3dpdGNoIG9uICFnczEwMSAobm90IGp1c3Qgb3B0aW9uYWwpIChDb25vcikKLSB1cGRhdGUg
+YmluZGluZ3MgY29tbWl0IG1lc3NhZ2UgdG8gY2xhcmlmeSB0aGF0IHRoZSBpbnRlbnRpb24gZm9y
+IHRoZQogIGRyaXZlciBpcyB0byB3b3JrIHdpdGggb2xkIGFuZCBuZXcgRFRTIChDb25vcikKLSBh
+ZGQgY2Mtc3RhYmxlIGFuZCBmaXhlcyB0YWdzIHRvIHBvd2VyIGdhdGluZyBwYXRjaCAoS3J6eXN6
+dG9mKQotIGZpeCBhbiAjaW5jbHVkZSBhbmQgdHlwbyAoUGV0ZXIpCi0gTGluayB0byB2MTogaHR0
+cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDI0MTEyNy1nczEwMS1waHktbGFuZXMtb3JpZW50YXRp
+b24tcGh5LXYxLTAtMWI3ZmNlMjQ5NjBiQGxpbmFyby5vcmcKCi0tLQpBbmRyw6kgRHJhc3ppayAo
+OCk6CiAgICAgIGR0LWJpbmRpbmdzOiBwaHk6IHNhbXN1bmcsdXNiMy1kcmQtcGh5OiBhZGQgYmxh
+bmsgbGluZXMgYmV0d2VlbiBEVCBwcm9wZXJ0aWVzCiAgICAgIGR0LWJpbmRpbmdzOiBwaHk6IHNh
+bXN1bmcsdXNiMy1kcmQtcGh5OiBnczEwMTogcmVxdWlyZSBUeXBlLUMgcHJvcGVydGllcwogICAg
+ICBwaHk6IGV4eW5vczUtdXNiZHJkOiBjb252ZXJ0IHRvIGRldl9lcnJfcHJvYmUKICAgICAgcGh5
+OiBleHlub3M1LXVzYmRyZDogZml4IEVEUyBkaXN0cmlidXRpb24gdHVuaW5nIChnczEwMSkKICAg
+ICAgcGh5OiBleHlub3M1LXVzYmRyZDogZ3MxMDE6IGVuc3VyZSBwb3dlciBpcyBnYXRlZCB0byBT
+UyBwaHkgaW4gcGh5X2V4aXQoKQogICAgICBwaHk6IGV4eW5vczUtdXNiZHJkOiBnczEwMTogY29u
+ZmlndXJlIFNTIGxhbmVzIGJhc2VkIG9uIG9yaWVudGF0aW9uCiAgICAgIHBoeTogZXh5bm9zNS11
+c2JkcmQ6IHN1YnNjcmliZSB0byBvcmllbnRhdGlvbiBub3RpZmllciBpZiByZXF1aXJlZAogICAg
+ICBwaHk6IGV4eW5vczUtdXNiZHJkOiBhbGxvdyBEV0MzIHJ1bnRpbWUgc3VzcGVuZCB3aXRoIFVE
+QyBib3VuZCAoRTg1MCspCgogLi4uL2JpbmRpbmdzL3BoeS9zYW1zdW5nLHVzYjMtZHJkLXBoeS55
+YW1sICAgICAgICAgfCAgMjEgKy0KIGRyaXZlcnMvcGh5L3NhbXN1bmcvS2NvbmZpZyAgICAgICAg
+ICAgICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5vczUt
+dXNiZHJkLmMgICAgICAgICAgIHwgMjE1ICsrKysrKysrKysrKysrKystLS0tLQogMyBmaWxlcyBj
+aGFuZ2VkLCAxOTAgaW5zZXJ0aW9ucygrKSwgNDcgZGVsZXRpb25zKC0pCi0tLQpiYXNlLWNvbW1p
+dDogYzI0NWE3YTc5NjAyY2NiZWU3ODBjMDA0YzFlNGFiY2RhNjZhZWMzMgpjaGFuZ2UtaWQ6IDIw
+MjQxMTI3LWdzMTAxLXBoeS1sYW5lcy1vcmllbnRhdGlvbi1waHktMjlkMjBjNmQ4NGQyCgpCZXN0
+IHJlZ2FyZHMsCi0tIApBbmRyw6kgRHJhc3ppayA8YW5kcmUuZHJhc3ppa0BsaW5hcm8ub3JnPgoK
+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
