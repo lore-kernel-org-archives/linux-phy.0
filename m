@@ -4,66 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A61E9E77173
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 10:49:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B48BFE77179
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 10:52:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dVeNTUmi+Dav4b31JmdG0LpEYDQ/WCStkstSpvn9AZ0=; b=DcTJpOjjpwd/o2
-	ImHbkXeJWwR4hTJuz7qc5KBoiARu7Me7TdRGuzlB2bq2+cQ8AYQTpZD4zpHS/BOrlQ0PbcMFWDZwQ
-	ZcqGVs+p3cFJlKJMexpkjKx9fdjBvVlAYIYJ9qpIw24OPJE2Aq5gYgx59to2f4yYR7K4ISFfOnhG1
-	fIo1R4BcxnQmxfDVDaTM8FgOZuPuv49A/uJuAYwl1/JpuAVZNEbQRNEIzeWX721TDGkJa34t9B+X+
-	0HxIHjYyE56AoQG1eR84lpm11lzXygu3BltZOBb+12Nw7/l0CjL+ybKYCY1qNosXgU1CUsWcbJP5H
-	mtcwaskAJ4MtuED/HYiw==;
+	List-Owner; bh=/drE+SOysowtGDLvpdB1JK4RPVR3kvmfFgazF4Oj13o=; b=EMaKqxcY/F6PB7
+	Ustj/28x8J6oddPlVtaij92JNqloAc4FzZnUojVEYDyoXfxObn6c0aBL+6OSRdFAbGANLS5uhXQ2Z
+	b0xIy2+Pr6yMIP1J9m/1ae4SB7QBih5x+goF0xYWjOecS9t8unQy3B/BT38Mc+8hTnjlF+nCwBM6l
+	wLa8gVR3W0bBEJ8nUkhAvX9wgiMJQuePccNTI6auuBJ4d9HkHNIcO6a9GHTa161pbTV5GA4wBKhX4
+	eA2/k7tNa7xfWlq3/BO+cUbhUw2nsbtYBkl1oGb2cIdCk8vheTIVSGA/Sv4pEZaTCJpU3Hv6lc/6I
+	yw3Xzkt+YKDJD6GxX7QA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJVtU-00000001MC6-1oxr;
-	Fri, 06 Dec 2024 10:49:08 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tJVwz-00000001N7u-1qcT;
+	Fri, 06 Dec 2024 10:52:45 +0000
+Received: from mx1.tq-group.com ([93.104.207.81])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJVfL-00000001JTs-3NZ4;
-	Fri, 06 Dec 2024 10:34:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=1UN1KsYoShLP+jnqNIAIPC6ZRY2mrO3AN1No45ThK+A=; b=mzzy5mD5NWF6ZSh19e3QQ5MydT
-	S5w2G+L96caWc7NlxMc1pxfCni2jc1+nhvTDAOp0652BZqOQOn7zpvMrBMZNef69oIJ8S2EjbrAkz
-	pSB5htNJrn9KGuTcM/t9QQyr/2NbBPKZF0MBsTvKVTmfeohLMeGyP2UpgSW9IIyGX4gefdeKl0mjz
-	5jWZQ1+1tuZwfuZ23ntF+1ZJkS4G9UMXzL8HxOyFXux6580OnWhyI03SRtOPJNdkQT6LznCuP0YxA
-	JREvhPDW2uI5gKotYB4zCR2T1paeX8zLjB/un6zWB9f7sh0rXMxuHQtBI+J+ZGF+0WIchelknuohz
-	Vd9/2/ow==;
-Received: from i53875bc4.versanet.de ([83.135.91.196] helo=localhost.localdomain)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tJVfI-0007XU-FB; Fri, 06 Dec 2024 11:34:28 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: vkoul@kernel.org,
-	kishon@kernel.org
-Cc: heiko@sntech.de,
-	cristian.ciocaltea@collabora.com,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	quentin.schulz@cherry.de,
-	Heiko Stuebner <heiko.stuebner@cherry.de>
-Subject: [PATCH 2/2] phy: phy-rockchip-samsung-hdptx: Don't use dt aliases to determine phy-id
-Date: Fri,  6 Dec 2024 11:34:01 +0100
-Message-ID: <20241206103401.1780416-3-heiko@sntech.de>
-X-Mailer: git-send-email 2.45.2
-In-Reply-To: <20241206103401.1780416-1-heiko@sntech.de>
-References: <20241206103401.1780416-1-heiko@sntech.de>
+	id 1tJVvv-00000001Mkb-1Abf;
+	Fri, 06 Dec 2024 10:51:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
+  t=1733482299; x=1765018299;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=F1K6BotclyzmRObSFZIO2A0hKib3MOWsiz+TlXGAmxc=;
+  b=HFBUGwNy0VxacCvAJViRLdfvV6vRGWgauK41uSzab5leji2bsdxBOk5J
+   qKK2vn3V73yyouhNa3t6ZPb9NsiUr4QOqyYZZ4GU8SAxNkEuRme4Cbbhn
+   tF96PZ+su/MbauICHzTeEG50unC/n2a9XMD/fXmaQixEA4292yV35/Woj
+   1hIhXtanpE4gVJjph9H3eN5N3zZHzsWmHam6zdjn0wbJO/gj2VORCUjFr
+   h3+n+MMx7i8aKsCLsKqf83jutDi4vSpVaFSP0mGhBmsCfu5G0okC+qCtm
+   nPqpKOS3JNFv3N2xDt27u17XZBjd5tXlQeLURUURjbzzcHApAKOMHg4R6
+   g==;
+X-CSE-ConnectionGUID: Nr4ED2PbSn2oGJ8BLG7i9A==
+X-CSE-MsgGUID: tUYxYd5BQ4WlWKKikxkI2w==
+X-IronPort-AV: E=Sophos;i="6.12,213,1728943200"; 
+   d="scan'208";a="40452975"
+Received: from vmailcow01.tq-net.de ([10.150.86.48])
+  by mx1.tq-group.com with ESMTP; 06 Dec 2024 11:51:37 +0100
+X-CheckPoint: {6752D739-7-90CD5875-E0265C0B}
+X-MAIL-CPID: 972FC9E7E870117C395C4F65784787D5_3
+X-Control-Analysis: str=0001.0A682F1F.6752D739.005D,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 71066164926;
+	Fri,  6 Dec 2024 11:51:31 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
+	s=dkim; t=1733482292;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=F1K6BotclyzmRObSFZIO2A0hKib3MOWsiz+TlXGAmxc=;
+	b=LO/xgI7DGn6iDyh5XslOY4AvGoNhHbAMnoOaa7knn6D4ugQoHDBwQHgT/9qPt9r4BEzYV9
+	uYM63IazZYWFilFq7/prjw0AXnf7nuWWjdC14Dua5oGfHE2WNB9UC7GcnhqgSf9XXVkj6u
+	6bleNTrQ7erBJ6ntD7wvBvse7c4TMqflMhqNfr1MbQRHPnek7p9MQ3XJaSJzD6sY1/fpMW
+	r3UinKv+dMXCbpIhSO2s78edpRf+eWPWK0Q6sEuoSdEX2zu0eBcoL7U1tM28FE7FZdHAVO
+	zRA+oty+H76aFZTULGw1xRziNCkFWpJd+7E21LaLRSQTDQQqhsxkV1utLdUNUw==
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, gregkh@linuxfoundation.org, jun.li@nxp.com, Xu Yang <xu.yang_2@nxp.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v2] dt-bindings: phy: imx8mq-usb: correct reference to usb-switch.yaml
+Date: Fri, 06 Dec 2024 11:51:31 +0100
+Message-ID: <3326164.aeNJFYEL58@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <20241119105017.917833-1-xu.yang_2@nxp.com>
+References: <20241119105017.917833-1-xu.yang_2@nxp.com>
 MIME-Version: 1.0
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_023431_868087_7ACF6AA4 
-X-CRM114-Status: GOOD (  21.03  )
+X-CRM114-CacheID: sfid-20241206_025139_808278_0F1F49E4 
+X-CRM114-Status: UNSURE (   6.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,139 +88,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@cherry.de>
+Am Dienstag, 19. November 2024, 11:50:17 CET schrieb Xu Yang:
+> The i.MX95 usb-phy can work with or without orientation-switch. With
+> current setting, if usb-phy works without orientation-switch, the
+> dt-schema check will show below error:
+> =
 
-The phy needs to know its identity in the system (phy0 or phy1 on rk3588)
-for some actions and the driver currently contains code abusing of_alias
-for that.
+> phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
+>         'port' is a required property
+>         'ports' is a required property
+>         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8mq-usb=
+-phy.yaml#
+> =
 
-Devicetree aliases are always optional and should not be used for core
-device functionality, so instead keep a list of phys on a soc in the
-of_device_data and find the phy-id by comparing against the mapped
-register-base.
+> This will correct the behavior of referring to usb-switch.yaml.
+> =
 
-Fixes: c4b09c562086 ("phy: phy-rockchip-samsung-hdptx: Add clock provider support")
-Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
----
- .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 50 ++++++++++++++++---
- 1 file changed, 44 insertions(+), 6 deletions(-)
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index c5c64c209e96..b137f8c4d157 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -385,11 +385,22 @@ enum rk_hdptx_reset {
- 	RST_MAX
- };
- 
-+#define MAX_HDPTX_PHY_NUM	2
-+
-+struct rk_hdptx_phy_cfg {
-+	unsigned int num_phys;
-+	unsigned int phy_ids[MAX_HDPTX_PHY_NUM];
-+};
-+
- struct rk_hdptx_phy {
- 	struct device *dev;
- 	struct regmap *regmap;
- 	struct regmap *grf;
- 
-+	/* PHY const config */
-+	const struct rk_hdptx_phy_cfg *cfgs;
-+	int phy_id;
-+
- 	struct phy *phy;
- 	struct phy_config *phy_cfg;
- 	struct clk_bulk_data *clks;
-@@ -1857,15 +1868,14 @@ static int rk_hdptx_phy_clk_register(struct rk_hdptx_phy *hdptx)
- 	struct device *dev = hdptx->dev;
- 	const char *name, *pname;
- 	struct clk *refclk;
--	int ret, id;
-+	int ret;
- 
- 	refclk = devm_clk_get(dev, "ref");
- 	if (IS_ERR(refclk))
- 		return dev_err_probe(dev, PTR_ERR(refclk),
- 				     "Failed to get ref clock\n");
- 
--	id = of_alias_get_id(dev->of_node, "hdptxphy");
--	name = id > 0 ? "clk_hdmiphy_pixel1" : "clk_hdmiphy_pixel0";
-+	name = hdptx->phy_id > 0 ? "clk_hdmiphy_pixel1" : "clk_hdmiphy_pixel0";
- 	pname = __clk_get_name(refclk);
- 
- 	hdptx->hw.init = CLK_HW_INIT(name, pname, &hdptx_phy_clk_ops,
-@@ -1908,8 +1918,9 @@ static int rk_hdptx_phy_probe(struct platform_device *pdev)
- 	struct phy_provider *phy_provider;
- 	struct device *dev = &pdev->dev;
- 	struct rk_hdptx_phy *hdptx;
-+	struct resource *res;
- 	void __iomem *regs;
--	int ret;
-+	int ret, id;
- 
- 	hdptx = devm_kzalloc(dev, sizeof(*hdptx), GFP_KERNEL);
- 	if (!hdptx)
-@@ -1917,11 +1928,27 @@ static int rk_hdptx_phy_probe(struct platform_device *pdev)
- 
- 	hdptx->dev = dev;
- 
--	regs = devm_platform_ioremap_resource(pdev, 0);
-+	regs = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
- 	if (IS_ERR(regs))
- 		return dev_err_probe(dev, PTR_ERR(regs),
- 				     "Failed to ioremap resource\n");
- 
-+	hdptx->cfgs = device_get_match_data(dev);
-+	if (!hdptx->cfgs)
-+		return dev_err_probe(dev, -EINVAL, "missing match data\n");
-+
-+	/* find the phy-id from the io address */
-+	hdptx->phy_id = -ENODEV;
-+	for (id = 0; id < hdptx->cfgs->num_phys; id++) {
-+		if (res->start == hdptx->cfgs->phy_ids[id]) {
-+			hdptx->phy_id = id;
-+			break;
-+		}
-+	}
-+
-+	if (hdptx->phy_id < 0)
-+		return dev_err_probe(dev, -ENODEV, "no matching device found\n");
-+
- 	ret = devm_clk_bulk_get_all(dev, &hdptx->clks);
- 	if (ret < 0)
- 		return dev_err_probe(dev, ret, "Failed to get clocks\n");
-@@ -1981,8 +2008,19 @@ static const struct dev_pm_ops rk_hdptx_phy_pm_ops = {
- 		       rk_hdptx_phy_runtime_resume, NULL)
- };
- 
-+static const struct rk_hdptx_phy_cfg rk3588_hdptx_phy_cfgs = {
-+	.num_phys = 2,
-+	.phy_ids = {
-+		0xfed60000,
-+		0xfed70000,
-+	},
-+};
-+
- static const struct of_device_id rk_hdptx_phy_of_match[] = {
--	{ .compatible = "rockchip,rk3588-hdptx-phy", },
-+	{
-+		.compatible = "rockchip,rk3588-hdptx-phy",
-+		.data = &rk3588_hdptx_phy_cfgs
-+	},
- 	{}
- };
- MODULE_DEVICE_TABLE(of, rk_hdptx_phy_of_match);
--- 
-2.45.2
+Acked-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+
+-- =
+
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
 
 
--- 
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
