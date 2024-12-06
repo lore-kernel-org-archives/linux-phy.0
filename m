@@ -4,74 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FB29E77170
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 03:28:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F5BAE77173
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 08:47:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HuRu+zbaqDelLCsff3OfuLQwLHpSmiGwdvoMvuIZ4qU=; b=CYUEm1bkUQlM3R
-	OuF88amBwIJkSVVbjWkqRn6GDLKpsY9Wzkcu/At5kUki9CjZAQv+JpfjAR/J4CkqLFL5ZCzZ+x5Qp
-	8HdVod9kd3PutGJ4hlQixORQrUUtcuuwTgXANB22NgBbgb9OWpf4dNWQQ9F8lNKAPxCNgOGBiBvGB
-	DkyYUN/ve9UuR8+/q9xh/l35BvuhpWJgfm2yIxZmb3CuyijXQoC7z1CshxzE8htdBEPaPFSiru59q
-	cUKyCY0hXyiR1H6bteRlDe63nuYCUsPVpry6nuZBYv7no1yRguD8xbsFv8v9DnybiXnzz49/bJedg
-	Zaqenbl/rRZdNX6TCkcw==;
+	List-Owner; bh=+y2lil3pPJtvcm08U4yBoOFEQu1jvySTcCcbl6AHbSs=; b=cTuqhxxehyCy7O
+	Iu6ebj579mc7NL5VY8h0pEV7XCsPRD4svfFcDSyFGN7wyDS95kCDlVw9klYsJe3svmlf8Lq98LCDg
+	lZGN4231KMlraIqqe0uc0K/R7k9Uz34Od1+W819dy7C/TIeVPF0iwvzZpLUtPOdBZ4RhQ0peVQ67/
+	PCVNZA6PIz+OJIZCGwDcsbuWP01VmBKSXlLheMpv+j+lRPt3VbyfVYZc2c8kKoY+RnPtAh0pY3GwE
+	VkovLAeyn7usx0g+IiQZ7G9AZdrZ6IZq5rQYJm+s9cJ18F1gDbsQB3113GBsx1ZVYBUv9EmfpHdvl
+	U3WCS68pljuj0KT11NoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJP18-00000000R2O-24T4;
-	Fri, 06 Dec 2024 03:28:34 +0000
-Received: from mail-m49232.qiye.163.com ([45.254.49.232])
+	id 1tJTzT-00000000yJC-0cy6;
+	Fri, 06 Dec 2024 08:47:11 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJP16-00000000R0P-0GHX;
-	Fri, 06 Dec 2024 03:28:33 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 4df43c1a;
-	Fri, 6 Dec 2024 11:28:21 +0800 (GMT+08:00)
-Message-ID: <c0bc25b7-6e41-4ed8-ae8d-692a908607df@rock-chips.com>
-Date: Fri, 6 Dec 2024 11:28:21 +0800
+	id 1tJTzQ-00000000yIf-1lyG
+	for linux-phy@lists.infradead.org;
+	Fri, 06 Dec 2024 08:47:09 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 8C2C9A43F23;
+	Fri,  6 Dec 2024 08:45:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F25BC4CEDE;
+	Fri,  6 Dec 2024 08:47:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1733474827;
+	bh=ntQntrMcoMQcohT5GNsDUsdLbzTe+wRIqoumWMWyBNE=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=TWLROggNzzzREkuGBwC45z2owo66TOlDDdpCQZWnrj9actygXuXHX+v3uutFkPmzg
+	 IZyABXcUihu+OblkBodhX4LOmtUs1W2+nYod4clOVeVDsnrqChyrj7Vjt0XAbaXvFh
+	 hbMz/rM+FDOUE7xbRnwfLPa1hYfj90lMwaufRXPaMYpyGQTSLIT0YrSZgj9NddT0BU
+	 tQBvqDQkt94XGhHZUakhHLklOtNZUXpi/bx6U3NgGyArH5BnNwFpp14AArJcoF79Hc
+	 Eo0leQWktto9O4SW0YLrqY5/cBNJQoGEkGhNg6X0hXB/RpO2ckVtgP60w1Cjn848Px
+	 BwaYbb8v8Mrtg==
+Message-ID: <800e3635-f496-4c2f-8037-d565404a3691@kernel.org>
+Date: Fri, 6 Dec 2024 09:46:58 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 04/10] phy: phy-rockchip-samsung-hdptx: Add support for
- eDP mode
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+Subject: Re: [PATCH v2 2/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
+ robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
+ conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ andersson@kernel.org, konradybcio@kernel.org, p.zabel@pengutronix.de,
+ quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
- <2131853.KlZ2vcFHjT@diego>
- <6e1f35c0-5ea8-414f-b3ea-4e7222c605ef@rock-chips.com>
- <2886747.Y6S9NjorxK@diego>
- <h4giob7bcrh7qmtepti6huym2llw4ujfmeff76vrgpahb5zy6x@dz6zghsifww5>
- <2342f342-672c-447e-90d8-674b748af6a4@rock-chips.com>
- <abzu2chif2g3urxoqbm3gbe6cciexbmqvn44qezrx4hgllfkkn@7bzi5jl3stqe>
- <42035ebe-09b7-4005-912a-8ec72d5dabcc@rock-chips.com>
- <5ncdog66jtc4s7vxk2yt4jkknf2es3whvweuqmrxbot3azi5ge@t6s3xadkiasp>
+References: <20241204113329.3195627-1-quic_varada@quicinc.com>
+ <20241204113329.3195627-3-quic_varada@quicinc.com>
+ <gawyxbgql7pru43e6rz4luhefaayrwiw3fplzj3k5cahzkppzr@uhuemcq5djw7>
 Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <5ncdog66jtc4s7vxk2yt4jkknf2es3whvweuqmrxbot3azi5ge@t6s3xadkiasp>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0JDQlYdSBoZS0sfTx0dTx9WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
-	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a939a02e70703a3kunm4df43c1a
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MhQ6GTo4OjIpSgEZKCkWFzww
-	FhVPCilVSlVKTEhIT05OTEtITkhNVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJTUtLNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=kPHScr159WsiJG96Ork6FzwSMNbCQmUyQiTo49UIfTNDjTnurol/onZC7EOZpN8egR0d5Wltmfu4s4A1J2M/lM0yadBTKzrhmL5jyZk8oBUo6Ei1RJqUkOFc+a+RMgvgkwTIS2d4wyBGm1zAptOnnzrxcMoGdC5S+7C9miLNpcc=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=OkOQFcENXzlE05E2GhFQKZHqHer5Jyvf4HzPjb5KtAk=;
-	h=date:mime-version:subject:message-id:from;
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <gawyxbgql7pru43e6rz4luhefaayrwiw3fplzj3k5cahzkppzr@uhuemcq5djw7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241205_192832_611635_50897D0D 
-X-CRM114-Status: GOOD (  18.04  )
+X-CRM114-CacheID: sfid-20241206_004708_624972_01D1E58B 
+X-CRM114-Status: GOOD (  14.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,68 +119,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Sebastian,
-
-On 2024/12/6 2:04, Sebastian Reichel wrote:
-> Hello Damon,
+On 05/12/2024 10:39, Krzysztof Kozlowski wrote:
+> On Wed, Dec 04, 2024 at 05:03:25PM +0530, Varadarajan Narayanan wrote:
+>> +	return 0;
+>> +}
+>> +
+>> +static struct platform_driver qcom_uniphy_pcie_driver = {
+>> +	.probe		= qcom_uniphy_pcie_probe,
+>> +	.driver		= {
+>> +		.name	= "qcom-uniphy-pcie",
+>> +		.owner	= THIS_MODULE,
 > 
-> On Thu, Dec 05, 2024 at 09:13:33AM +0800, Damon Ding wrote:
->> Firstly, the term "the HDMI and eDP dynamic switching" can be somewhat
->> misleading, because the eDP usually does not support hot plug. The RK3588
->> eDP is often used as DP, and it actually supports DP 1.2. Therefore, it is
->> better to use the "the HDMI and DP dynamic switching" description.
+> Srsly, upstreaming 10 year old code? No one figured out to fix 10 year
+> old code before sending it upstream or entirely drop it and use new code
+> as template?
 > 
-> The part unclear to me is how the dynamic switching is supposed to
-> happen. Looking at the TRM the hotplug detect signals also seem to be
-> shared between HDMI and eDP. Can the RK3588S EVB distinguish if HDMI
-> or eDP has been plugged, or does this require some user interaction
-> to set the right mode?
+> NAK
 
-Indeed, HDMI and eDP share the same pin for hotplug detect. However, 
-some users may connect the hotplug detection pin of DP-connector with an 
-unexpected pin that can not support the iomux of hotplug detect function 
-on RK3588 SoC. This could be due to a flaw in the hardware design, a 
-conflict in pin multiplexing, or other factors. Therefore, we support 
-the GPIO HDP function for the eDP, as DP also supports this for the same 
-reasons.
+I should express clearer what is the problem. You sent code which looks
+like 10-or-more years old driver. This means that you have there all the
+issues we fixed over last 10 years. It is really meaningless for the
+reviewers to point out all the things we already fixed. It is much
+better if you start from new driver from scratch, thus not replicating
+10-year old bugs or deprecated styles.
 
-If the dynamic switching is enabled, HDMI detects the HPD signal through 
-  the hotplug detect function pin, while eDP uses one of the available 
-GPIO pins to do this.
+I suggest dropping this driver entirely and starting from scratch from
+the newest accepted driver.
 
-What's more, if the user connects an HDMI cable first and than connects 
-a DP cable as well, despite our clear instruction against using HDMI and 
-eDP simultaneously, the status register of GRF will indicate that HDMI 
-has been connected. Meanwhile, during the HPD detection process for eDP, 
-it will return "connector_status_disconnected". The reverse scenario 
-also applies.
+Whatever you choose, be 100% sure that standard tools are happy, see
+below instruction:
 
-> 
->> Indeed, the devm_phy_get(dp->dev, "dp") and devm_of_phy_get_by_index() will
->> help to get the phy reference in .probe() or .bind().
->>
->> However, the phy_set_mode() may be still needed in the HDMI and DP dynamic
->> switching application scenarios. We need the enum phy_mode
->> PHY_MODE_DP/PHY_MODE_HDMI to differentiate the configuration processes in
->> .power_on(), .power_off() and .configure() of struct phy_ops, which will be
->> called in conjunction with plugging in and unplugging an HDMI or DP cable.
-> 
-> I suppose you could fetch the PHY in power_on() and release it in
-> power_off(). But using phy_set_mode() might indeed be better here.
-> 
-
-As a future expansion, the .set_mode() can also be helpful in the txffe 
-level adjustment for HDMI 2.1. :)
-
-> -- Sebastian
+Please run standard kernel tools for static analysis, like coccinelle,
+smatch and sparse, and fix reported warnings. Also please check for
+warnings when building with W=1. Most of these commands (checks or W=1
+build) can build specific targets, like some directory, to narrow the
+scope to only your code. The code here looks like it needs a fix. Feel
+free to get in touch if the warning is not clear.
 
 Best regards,
-Damon
+Krzysztof
 
 -- 
 linux-phy mailing list
