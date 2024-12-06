@@ -4,110 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F5BAE77173
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 08:47:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A42E4E77173
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 10:47:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+y2lil3pPJtvcm08U4yBoOFEQu1jvySTcCcbl6AHbSs=; b=cTuqhxxehyCy7O
-	Iu6ebj579mc7NL5VY8h0pEV7XCsPRD4svfFcDSyFGN7wyDS95kCDlVw9klYsJe3svmlf8Lq98LCDg
-	lZGN4231KMlraIqqe0uc0K/R7k9Uz34Od1+W819dy7C/TIeVPF0iwvzZpLUtPOdBZ4RhQ0peVQ67/
-	PCVNZA6PIz+OJIZCGwDcsbuWP01VmBKSXlLheMpv+j+lRPt3VbyfVYZc2c8kKoY+RnPtAh0pY3GwE
-	VkovLAeyn7usx0g+IiQZ7G9AZdrZ6IZq5rQYJm+s9cJ18F1gDbsQB3113GBsx1ZVYBUv9EmfpHdvl
-	U3WCS68pljuj0KT11NoA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oPh22WiFUc1aZMkztqjdXC5lmOrQCuQQfPoLMZ8B1T0=; b=VSBO6CSzbDnGpH
+	+oLpRXh3RslQU19XryL527OUbpwC1YW43P0cK/uE4oZ9k5sEJpqYqy0ESe1C+n8h4oehghDIE9R/r
+	PeYymg6Xl2ZeTSomHUFetZQBeRdHHw+x/Bydw8iB9FlgRKDNQQoldTvD0naXuo+3PNccuQ8PNnwex
+	Wx4wb0rgOs/t/eUpAiKucMyG6uuPdoVVhCsI1aSgryNL+xDLd7HyQ+CL5GbJSTOwiT7hNsIdWT3df
+	J30DEHZ1SRDmo2rcp4GkS75PIh3dBS1hbSBxdxLGpWcqDT5Hr/UgFd7UEpHUY+vJpi+0Zt9hX3JTf
+	D1kjOsPv02DawqD+0FkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJTzT-00000000yJC-0cy6;
-	Fri, 06 Dec 2024 08:47:11 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tJVrV-00000001Lra-15Qi;
+	Fri, 06 Dec 2024 10:47:05 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJTzQ-00000000yIf-1lyG
-	for linux-phy@lists.infradead.org;
-	Fri, 06 Dec 2024 08:47:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 8C2C9A43F23;
-	Fri,  6 Dec 2024 08:45:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F25BC4CEDE;
-	Fri,  6 Dec 2024 08:47:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733474827;
-	bh=ntQntrMcoMQcohT5GNsDUsdLbzTe+wRIqoumWMWyBNE=;
-	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
-	b=TWLROggNzzzREkuGBwC45z2owo66TOlDDdpCQZWnrj9actygXuXHX+v3uutFkPmzg
-	 IZyABXcUihu+OblkBodhX4LOmtUs1W2+nYod4clOVeVDsnrqChyrj7Vjt0XAbaXvFh
-	 hbMz/rM+FDOUE7xbRnwfLPa1hYfj90lMwaufRXPaMYpyGQTSLIT0YrSZgj9NddT0BU
-	 tQBvqDQkt94XGhHZUakhHLklOtNZUXpi/bx6U3NgGyArH5BnNwFpp14AArJcoF79Hc
-	 Eo0leQWktto9O4SW0YLrqY5/cBNJQoGEkGhNg6X0hXB/RpO2ckVtgP60w1Cjn848Px
-	 BwaYbb8v8Mrtg==
-Message-ID: <800e3635-f496-4c2f-8037-d565404a3691@kernel.org>
-Date: Fri, 6 Dec 2024 09:46:58 +0100
+	id 1tJVfL-00000001JTa-2nGY;
+	Fri, 06 Dec 2024 10:34:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
+	Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=KOB2lRuRgc5c5Cx+z4l+rgFqNRL2xohrcJNSDIsVogs=; b=F4fZ6994jjC53bMEsZmmff8qaP
+	XkcpOrjvd5t5eRx/0gGyTrmiB/ozlNgkaYWj5MWvwqVe/V6b44E1euanIUN+qVBUu6VoyquYqYYvn
+	qr1IVUw4Oxx+0xKtqVUfacx/n6JW0d1fvJKJLUiKo+4W9erAc3F3V3PC3Dogcoh0swtHzdXdcwoSA
+	yVZRDDAsbNKcSots0IUIW97JgxrQb2xPDOof7mJuAHMp8Pqv/2ipMFt17+JCtYCYypF2WCTqVWfWM
+	487M+75KLxZFBtvhelHsG0nA5co64GQXnGXYr4mQemcx3h6ZslrdOFj29C4wF5nBcTNfFBw7p1mPq
+	709sjeHA==;
+Received: from i53875bc4.versanet.de ([83.135.91.196] helo=localhost.localdomain)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tJVfH-0007XU-GF; Fri, 06 Dec 2024 11:34:27 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: vkoul@kernel.org,
+	kishon@kernel.org
+Cc: heiko@sntech.de,
+	cristian.ciocaltea@collabora.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	quentin.schulz@cherry.de
+Subject: [PATCH 0/2] phy: phy-rockchip-samsung-hdptx: don't use of-alias
+Date: Fri,  6 Dec 2024 11:33:59 +0100
+Message-ID: <20241206103401.1780416-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
- robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
- conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
- andersson@kernel.org, konradybcio@kernel.org, p.zabel@pengutronix.de,
- quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org,
- linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20241204113329.3195627-1-quic_varada@quicinc.com>
- <20241204113329.3195627-3-quic_varada@quicinc.com>
- <gawyxbgql7pru43e6rz4luhefaayrwiw3fplzj3k5cahzkppzr@uhuemcq5djw7>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <gawyxbgql7pru43e6rz4luhefaayrwiw3fplzj3k5cahzkppzr@uhuemcq5djw7>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_004708_624972_01D1E58B 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20241206_023431_724648_6743F18D 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,45 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/12/2024 10:39, Krzysztof Kozlowski wrote:
-> On Wed, Dec 04, 2024 at 05:03:25PM +0530, Varadarajan Narayanan wrote:
->> +	return 0;
->> +}
->> +
->> +static struct platform_driver qcom_uniphy_pcie_driver = {
->> +	.probe		= qcom_uniphy_pcie_probe,
->> +	.driver		= {
->> +		.name	= "qcom-uniphy-pcie",
->> +		.owner	= THIS_MODULE,
-> 
-> Srsly, upstreaming 10 year old code? No one figured out to fix 10 year
-> old code before sending it upstream or entirely drop it and use new code
-> as template?
-> 
-> NAK
+One nice comment addition and removal of of_alias usage for core
+device functionality.
 
-I should express clearer what is the problem. You sent code which looks
-like 10-or-more years old driver. This means that you have there all the
-issues we fixed over last 10 years. It is really meaningless for the
-reviewers to point out all the things we already fixed. It is much
-better if you start from new driver from scratch, thus not replicating
-10-year old bugs or deprecated styles.
+Heiko Stuebner (2):
+  phy: phy-rockchip-samsung-hdptx: annotate regmap register-callback
+  phy: phy-rockchip-samsung-hdptx: Don't use dt aliases to determine
+    phy-id
 
-I suggest dropping this driver entirely and starting from scratch from
-the newest accepted driver.
+ .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 64 +++++++++++++++----
+ 1 file changed, 51 insertions(+), 13 deletions(-)
 
-Whatever you choose, be 100% sure that standard tools are happy, see
-below instruction:
+-- 
+2.45.2
 
-Please run standard kernel tools for static analysis, like coccinelle,
-smatch and sparse, and fix reported warnings. Also please check for
-warnings when building with W=1. Most of these commands (checks or W=1
-build) can build specific targets, like some directory, to narrow the
-scope to only your code. The code here looks like it needs a fix. Feel
-free to get in touch if the warning is not clear.
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
