@@ -4,68 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD0EFE77173
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 17:00:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81C4AE77173
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 17:36:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uCjwC2DNibd3ejxWRl/ILHXkLYsoap7oV2NEX8hvfHk=; b=2vbZqzkCKmeKcHy4wY6pGeR0Qr
-	toX/GQqv19riLAv4itnFItOYE31mkFhG4QSSX+9me8lk2wFpXXbB2ILfPXIebF10E1gwC+fmfgPuG
-	N2LD1eS+GbwZ8GX0OszORpIc922HlZrTf4hL/Eo51TuyH0yYlIFTnjmYch8BwAg0sY/5dKrTRApjI
-	wqeL9P2FwvQ9IlP6Pfao9jI4M+CpUBmNSgdky84y3oku9LDLAYHFn4U8qG5CcWX7ypxCOkXVTjVzc
-	+gKprg4apvBDZ9flUTycP4tyNiKRLSsfMz9kb/xrEelxg9A4ofcZuunEcOJsNeMknJXHANN6KAI9G
-	WSuD3Ncw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NZvzDGSvoL19NGF42uoBg9rXIZzUkNzFym3ogv/qjzI=; b=Wc4AClyHR0Q6Go
+	lZfCbdqRTDwHnVI71whVyroKyy4U7UcAJ/VwgKD5E+Rtmkkh84n4JQSn1862Fl3Tl84LHyPm5Nyym
+	7ea+SbN/folNsbFMYbarVN1+i6X7GQFzAAM1n6IYdglaFrXhgFC2SbFagfP88QEOzoF7MvCNipYFH
+	UrQBoa3OLJ7rUP3bdLdAcpTcxXPsIRgFLRCOkWBpwu/cNXL0wwuhyhcmG0qH1RSjHMSqHV1jzYoSR
+	mTzPkAqlXyllYXcu7csIQl4CWrtquOG8gsPrvMMhzrobDNq9O8J2ziLwpXQOhDLDNq4+r3+5WjV4U
+	+E06iZjPII5Ynd4/Sarg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJbhD-00000002Glm-1jS7;
-	Fri, 06 Dec 2024 17:00:51 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1tJcG8-00000002MeU-3Aha;
+	Fri, 06 Dec 2024 17:36:56 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJbgA-00000002GZY-3j0s;
-	Fri, 06 Dec 2024 16:59:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1733504381; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=f3isgZAAVQROAKB+sviCZjpp+zyjQkj3XLS2laHyVCgdIS6VbzZ+hgvGPUyWHygzutpftzalS9U3d7i47FTbl7ZtG6lamZxjMdzh/z9Bql1/mnTN+9CqBBZ2Kn+srr4jJWVEoNfZUWeWvIgBApLVXAs0uRVt8RJRpG5YgDk6uoM=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1733504381; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=xNVPYInbDo/m1K6u9klXT99pnNhKMyXFgxqw/lq+NuI=; 
-	b=gIpulh8Wx1CKWzRm+av2DP7FEjUT/S37R3Ict6LXvMj0k7I7sSZMipW/x18RM58RJlm3XStpg4Lu89EQWDMSunPnH/ezDrZPlYzMuwjpUq/RueaA8p0Kva5IHCMSnxdWcyLkwhm4a8N9L9jCrC7NWjyzZGGmP047L2wVSaIZs90=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1733504381;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=xNVPYInbDo/m1K6u9klXT99pnNhKMyXFgxqw/lq+NuI=;
-	b=VXhh32cJhKQWXTCE+qIlBthQ3aWC4Sak6KpF5yhkVCajBpZWrhHDCDe3klV9H6me
-	rL4cIIUMELdF0gPCJCxDLJ7Pd8hwMQ+bMJJ+6+7zqzC4QzLFy4CqGxFbaR1jW+zdmrv
-	WZv8HMxyEeLWCs/CQKfMpFI/j5ScAMDJnxLK5yF8=
-Received: by mx.zohomail.com with SMTPS id 1733504379368564.8733754480363;
-	Fri, 6 Dec 2024 08:59:39 -0800 (PST)
-Received: by mercury (Postfix, from userid 1000)
-	id 3F86810604B0; Fri, 06 Dec 2024 17:59:35 +0100 (CET)
-Date: Fri, 6 Dec 2024 17:59:35 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Heiko Stuebner <heiko@sntech.de>
-Cc: vkoul@kernel.org, kishon@kernel.org, cristian.ciocaltea@collabora.com, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, quentin.schulz@cherry.de
-Subject: Re: [PATCH 0/2] phy: phy-rockchip-samsung-hdptx: don't use of-alias
-Message-ID: <vdg36bpis2bzawbei6eacojttuth5ihtp7o5fabs6f6rkctikl@hofd3mjepunv>
+	id 1tJcG6-00000002Mdw-2AJQ;
+	Fri, 06 Dec 2024 17:36:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=jQPhfD23YTFu2k8PG7PzToLjH9H9SzaXg3NW46Iyzwk=; b=OAsSaXPmNKWbDvZAt2FfJrx+NN
+	INUzGPq8N1RuCnmRfnPcnrecc3H2wSuYkENTEjfdewM3VyK/Ta145Y7zhhTcdaWfHXXpYcz4er1Ol
+	mcWZFZtppOyfOt+L0KXOI9MLHQntSMP38xR/IOMzod27BqxmTJ3dGavZmQorAtPvY31bRmcC7eR2i
+	r6WrGUjO46+7E6vTrc4oLURq4lgF7mj56R4Z4997/z2/UrS+zpBcfqAVZISIOszZRRfKMfowKEBET
+	Uc3qFkGmmBCuRfF+DCzrOwDMWB+ho1+Id9Ey2E/MGzXC+x4YZV9DlSG1LhENOUcXRQkxhZ1hDSyHj
+	9KxtPopQ==;
+Received: from i53875bc4.versanet.de ([83.135.91.196] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tJcG1-00032U-VI; Fri, 06 Dec 2024 18:36:50 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: vkoul@kernel.org, kishon@kernel.org,
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ quentin.schulz@cherry.de, Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: Re: [PATCH 1/2] phy: phy-rockchip-samsung-hdptx: annotate regmap
+ register-callback
+Date: Fri, 06 Dec 2024 18:36:49 +0100
+Message-ID: <2287157.Dhsi8hcfAM@diego>
+In-Reply-To: <e6172204-2f3f-4a9c-892c-be85d19ad031@collabora.com>
 References: <20241206103401.1780416-1-heiko@sntech.de>
+ <20241206103401.1780416-2-heiko@sntech.de>
+ <e6172204-2f3f-4a9c-892c-be85d19ad031@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20241206103401.1780416-1-heiko@sntech.de>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.3.1/233.478.56
-X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_085947_000438_D6E2962A 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241206_093654_576853_71191BB4 
+X-CRM114-Status: GOOD (  19.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,77 +72,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2230955366434667839=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Am Freitag, 6. Dezember 2024, 12:18:56 CET schrieb Cristian Ciocaltea:
+> On 12/6/24 12:34 PM, Heiko Stuebner wrote:
+> > From: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > 
+> > The variant of the driver in the vendor-tree contained those handy
+> > comments in the regmap register callback. Having the different ranges
+> > describe what they are looks helpful.
+> > 
+> > Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > ---
+> >  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 14 +++++++-------
+> >  1 file changed, 7 insertions(+), 7 deletions(-)
+> > 
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> > index 4ced1479e2dc..c5c64c209e96 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> > @@ -766,13 +766,13 @@ static struct tx_drv_ctrl tx_drv_ctrl_hbr2[4][4] = {
+> >  static bool rk_hdptx_phy_is_rw_reg(struct device *dev, unsigned int reg)
+> >  {
+> >  	switch (reg) {
+> > -	case 0x0000 ... 0x029c:
+> > -	case 0x0400 ... 0x04a4:
+> > -	case 0x0800 ... 0x08a4:
+> > -	case 0x0c00 ... 0x0cb4:
+> > -	case 0x1000 ... 0x10b4:
+> > -	case 0x1400 ... 0x14b4:
+> > -	case 0x1800 ... 0x18b4:
+> > +	case 0x0000 ... 0x029c: /* CMN Register */
+> > +	case 0x0400 ... 0x04a4: /* Sideband Register */
+> > +	case 0x0800 ... 0x08a4: /* Lane Top Register */
+> > +	case 0x0c00 ... 0x0cb4: /* Lane 0 Register */
+> > +	case 0x1000 ... 0x10b4: /* Lane 1 Register */
+> > +	case 0x1400 ... 0x14b4: /* Lane 2 Register */
+> > +	case 0x1800 ... 0x18b4: /* Lane 3 Register */
+> >  		return true;
+> >  	}
+> >  
+> 
+> Nice finding!  The HDMI variant of the driver which I used as an
+> implementation reference (i.e. phy-rockchip-samsung-hdptx-hdmi.c)
+> doesn't provide these comments.
 
---===============2230955366434667839==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="zxls2fxk2byapnnk"
-Content-Disposition: inline
-
-
---zxls2fxk2byapnnk
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 0/2] phy: phy-rockchip-samsung-hdptx: don't use of-alias
-MIME-Version: 1.0
-
-Hi,
-
-On Fri, Dec 06, 2024 at 11:33:59AM +0100, Heiko Stuebner wrote:
-> One nice comment addition and removal of of_alias usage for core
-> device functionality.
->=20
-> Heiko Stuebner (2):
->   phy: phy-rockchip-samsung-hdptx: annotate regmap register-callback
->   phy: phy-rockchip-samsung-hdptx: Don't use dt aliases to determine
->     phy-id
->=20
->  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 64 +++++++++++++++----
->  1 file changed, 51 insertions(+), 13 deletions(-)
-
-Full series is
-
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
--- Sebastian
-
---zxls2fxk2byapnnk
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmdTLXAACgkQ2O7X88g7
-+pr8sg/7BNdpQkGIGLwMdrX+F3YVz8wFfbFq5Kg+BrqM4O1w10VcTOOxMriGEdxw
-OMJpE3WksnBMT7EXGHtczqL8nexDnv9r+rHla8Jp0myRKMj4LAo7gKhLBv7W0sgB
-XN6mj5oLM1dx6YgQDNUBCGkiAdY7MK1j4NRIcdHEVTJ4zOaeLl0wZCkXQK1H1/XW
-XQjtubsowP1+6I3tQ+QfyYCIyvzAGVV6//yYAHDNSIjHrdEKULp6puGkCrJ2Y4NZ
-CAcO+Ee7i9vttFDpZwDg6u5RS08vjBc7HBCNcQ+/wHsMl7I3BjbcWvgEvdIN0DXy
-LeeNR8EJ7wZmlaCZX1I8WzXEhsS0Ek/TsaGW5u98eV2/sqqHO6yBNnddVQa4c9j2
-tcVS/XVK9WsBR/9NPFxgOyuod+6xoOufI7QAEXcGdoQDMrCW7tKoDmmEmuqMLfCv
-v1u65jqKi8GgaLXW02MsJb/Kx3myUaQMBiJocZ6eHUIO7IbAFnJpGureYaWFUOpD
-O0YpUQFxK08GOnMJkvMICml8J2E8UiEjgpjL2ZbZtuxVZrDq8U1j7PCiyfMMm0mh
-ISpMivLqTTRjAOHYdQU+kWNOvRmqwXgHTRJD7rOKo3I0gGt4NP53084kPEtyb6oD
-t+jsJDOw6CmdGW6zXa28gFrMbbO40X7ih24VGfKXIXFVzgN9lHQ=
-=Wj79
------END PGP SIGNATURE-----
-
---zxls2fxk2byapnnk--
+yep, those comments were in the displayport variant of the phy-driver ;-) .
+I don't really understand why the vendor tree contains 2 separate drivers
+written by two different people, but at least it looks like we're getting
+one driver in mainline, thanks to Damon's work :-)
 
 
---===============2230955366434667839==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2230955366434667839==--
-
