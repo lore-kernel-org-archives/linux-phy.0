@@ -4,79 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B48BFE77179
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 10:52:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE421E77173
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 11:20:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/drE+SOysowtGDLvpdB1JK4RPVR3kvmfFgazF4Oj13o=; b=EMaKqxcY/F6PB7
-	Ustj/28x8J6oddPlVtaij92JNqloAc4FzZnUojVEYDyoXfxObn6c0aBL+6OSRdFAbGANLS5uhXQ2Z
-	b0xIy2+Pr6yMIP1J9m/1ae4SB7QBih5x+goF0xYWjOecS9t8unQy3B/BT38Mc+8hTnjlF+nCwBM6l
-	wLa8gVR3W0bBEJ8nUkhAvX9wgiMJQuePccNTI6auuBJ4d9HkHNIcO6a9GHTa161pbTV5GA4wBKhX4
-	eA2/k7tNa7xfWlq3/BO+cUbhUw2nsbtYBkl1oGb2cIdCk8vheTIVSGA/Sv4pEZaTCJpU3Hv6lc/6I
-	yw3Xzkt+YKDJD6GxX7QA==;
+	List-Owner; bh=41J+WbfUihaaqSfssEu+J7kqHtaTfXj0eAXh1yL3l0I=; b=uMMYzu9LnO7x78
+	yNHrNCvb8baPs2+FPU6x02GtAlumZ8GHVY7hKaoQ3UiXevsFEpxrzbfHSU2XyfKMN9SxnuImemu+3
+	lCMMZ3tmuWAKogvH3ilGT71i8AwvdyQdWrV/3iV/ZTb6W+1KQiFbcAjbQGaQC1TkcwpmI1RDy22iy
+	C/BpcEu59qBNB8tYcMgBjGkRAfZtCYrrbfvQ2PUmcIbJeMr6lBSDiwyx22fyxEHQejAYQ2weRuzJm
+	MzznUjx8GRjD5mI98uGrM8M3c3ic1vdWU+eSj5nLlS+303Pp0pk9eXZY32yyVlUx3jbWFWlAhGrgf
+	Id1kDxoNZce53uBUG5AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJVwz-00000001N7u-1qcT;
-	Fri, 06 Dec 2024 10:52:45 +0000
-Received: from mx1.tq-group.com ([93.104.207.81])
+	id 1tJWNT-00000001QxM-0fkd;
+	Fri, 06 Dec 2024 11:20:07 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJVvv-00000001Mkb-1Abf;
-	Fri, 06 Dec 2024 10:51:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-  d=tq-group.com; i=@tq-group.com; q=dns/txt; s=key1;
-  t=1733482299; x=1765018299;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=F1K6BotclyzmRObSFZIO2A0hKib3MOWsiz+TlXGAmxc=;
-  b=HFBUGwNy0VxacCvAJViRLdfvV6vRGWgauK41uSzab5leji2bsdxBOk5J
-   qKK2vn3V73yyouhNa3t6ZPb9NsiUr4QOqyYZZ4GU8SAxNkEuRme4Cbbhn
-   tF96PZ+su/MbauICHzTeEG50unC/n2a9XMD/fXmaQixEA4292yV35/Woj
-   1hIhXtanpE4gVJjph9H3eN5N3zZHzsWmHam6zdjn0wbJO/gj2VORCUjFr
-   h3+n+MMx7i8aKsCLsKqf83jutDi4vSpVaFSP0mGhBmsCfu5G0okC+qCtm
-   nPqpKOS3JNFv3N2xDt27u17XZBjd5tXlQeLURUURjbzzcHApAKOMHg4R6
-   g==;
-X-CSE-ConnectionGUID: Nr4ED2PbSn2oGJ8BLG7i9A==
-X-CSE-MsgGUID: tUYxYd5BQ4WlWKKikxkI2w==
-X-IronPort-AV: E=Sophos;i="6.12,213,1728943200"; 
-   d="scan'208";a="40452975"
-Received: from vmailcow01.tq-net.de ([10.150.86.48])
-  by mx1.tq-group.com with ESMTP; 06 Dec 2024 11:51:37 +0100
-X-CheckPoint: {6752D739-7-90CD5875-E0265C0B}
-X-MAIL-CPID: 972FC9E7E870117C395C4F65784787D5_3
-X-Control-Analysis: str=0001.0A682F1F.6752D739.005D,ss=1,re=0.000,recu=0.000,reip=0.000,cl=1,cld=1,fgs=0
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 71066164926;
-	Fri,  6 Dec 2024 11:51:31 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ew.tq-group.com;
-	s=dkim; t=1733482292;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=F1K6BotclyzmRObSFZIO2A0hKib3MOWsiz+TlXGAmxc=;
-	b=LO/xgI7DGn6iDyh5XslOY4AvGoNhHbAMnoOaa7knn6D4ugQoHDBwQHgT/9qPt9r4BEzYV9
-	uYM63IazZYWFilFq7/prjw0AXnf7nuWWjdC14Dua5oGfHE2WNB9UC7GcnhqgSf9XXVkj6u
-	6bleNTrQ7erBJ6ntD7wvBvse7c4TMqflMhqNfr1MbQRHPnek7p9MQ3XJaSJzD6sY1/fpMW
-	r3UinKv+dMXCbpIhSO2s78edpRf+eWPWK0Q6sEuoSdEX2zu0eBcoL7U1tM28FE7FZdHAVO
-	zRA+oty+H76aFZTULGw1xRziNCkFWpJd+7E21LaLRSQTDQQqhsxkV1utLdUNUw==
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, gregkh@linuxfoundation.org, jun.li@nxp.com, Xu Yang <xu.yang_2@nxp.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v2] dt-bindings: phy: imx8mq-usb: correct reference to usb-switch.yaml
-Date: Fri, 06 Dec 2024 11:51:31 +0100
-Message-ID: <3326164.aeNJFYEL58@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <20241119105017.917833-1-xu.yang_2@nxp.com>
-References: <20241119105017.917833-1-xu.yang_2@nxp.com>
+	id 1tJWMP-00000001Qfg-09z7;
+	Fri, 06 Dec 2024 11:19:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1733483937;
+	bh=febNccnQ8RS5XqmrWaBISIo5m25NOTjYjc5TdIMoPfA=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=L41VGT5FtAoj+V8dV/MdyYwwwGpY8uG+Xq+sc+GsYpYTor4ZXKf37LSBrLo0gHG55
+	 luGesglz/Qw4rszdWkRLoMYtquLUV+r8tw3xBZCWXmm4uI/sP0WyBudHKgEbUTxPF5
+	 oFxtvcsE9uFxxjgnhTbIwQAcqTnsnur1tyrRyAr7y+3FNC2K7ySKTMXztZIoEnGGIF
+	 +yyNXronPYeFfRe1M2H60bNjm3JUuHDBz9Md91nVk2ni63DEu1fkL5GoBVvGeca0J+
+	 VRBXE+7WsimNnV/uzggEutqBgI2Q446hp+cmkCk+1otGKv6e8NRXyxTJx80+EYWzoq
+	 riOeZ2uWHj/nw==
+Received: from [192.168.1.90] (unknown [188.27.48.199])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C13B717E362F;
+	Fri,  6 Dec 2024 12:18:56 +0100 (CET)
+Message-ID: <e6172204-2f3f-4a9c-892c-be85d19ad031@collabora.com>
+Date: Fri, 6 Dec 2024 13:18:56 +0200
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/2] phy: phy-rockchip-samsung-hdptx: annotate regmap
+ register-callback
+To: Heiko Stuebner <heiko@sntech.de>, vkoul@kernel.org, kishon@kernel.org
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ quentin.schulz@cherry.de, Heiko Stuebner <heiko.stuebner@cherry.de>
+References: <20241206103401.1780416-1-heiko@sntech.de>
+ <20241206103401.1780416-2-heiko@sntech.de>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20241206103401.1780416-2-heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_025139_808278_0F1F49E4 
-X-CRM114-Status: UNSURE (   6.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241206_031901_257545_40EAE13A 
+X-CRM114-Status: GOOD (  13.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,42 +72,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Dienstag, 19. November 2024, 11:50:17 CET schrieb Xu Yang:
-> The i.MX95 usb-phy can work with or without orientation-switch. With
-> current setting, if usb-phy works without orientation-switch, the
-> dt-schema check will show below error:
-> =
+On 12/6/24 12:34 PM, Heiko Stuebner wrote:
+> From: Heiko Stuebner <heiko.stuebner@cherry.de>
+> 
+> The variant of the driver in the vendor-tree contained those handy
+> comments in the regmap register callback. Having the different ranges
+> describe what they are looks helpful.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 14 +++++++-------
+>  1 file changed, 7 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index 4ced1479e2dc..c5c64c209e96 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -766,13 +766,13 @@ static struct tx_drv_ctrl tx_drv_ctrl_hbr2[4][4] = {
+>  static bool rk_hdptx_phy_is_rw_reg(struct device *dev, unsigned int reg)
+>  {
+>  	switch (reg) {
+> -	case 0x0000 ... 0x029c:
+> -	case 0x0400 ... 0x04a4:
+> -	case 0x0800 ... 0x08a4:
+> -	case 0x0c00 ... 0x0cb4:
+> -	case 0x1000 ... 0x10b4:
+> -	case 0x1400 ... 0x14b4:
+> -	case 0x1800 ... 0x18b4:
+> +	case 0x0000 ... 0x029c: /* CMN Register */
+> +	case 0x0400 ... 0x04a4: /* Sideband Register */
+> +	case 0x0800 ... 0x08a4: /* Lane Top Register */
+> +	case 0x0c00 ... 0x0cb4: /* Lane 0 Register */
+> +	case 0x1000 ... 0x10b4: /* Lane 1 Register */
+> +	case 0x1400 ... 0x14b4: /* Lane 2 Register */
+> +	case 0x1800 ... 0x18b4: /* Lane 3 Register */
+>  		return true;
+>  	}
+>  
 
-> phy@4c1f0040: 'oneOf' conditional failed, one must be fixed:
->         'port' is a required property
->         'ports' is a required property
->         from schema $id: http://devicetree.org/schemas/phy/fsl,imx8mq-usb=
--phy.yaml#
-> =
+Nice finding!  The HDMI variant of the driver which I used as an
+implementation reference (i.e. phy-rockchip-samsung-hdptx-hdmi.c)
+doesn't provide these comments.
 
-> This will correct the behavior of referring to usb-switch.yaml.
-> =
+Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-
-Acked-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
-
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
