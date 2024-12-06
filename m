@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D4AAE77173
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 14:37:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0D43E77173
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 14:59:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=63Fnlc3bMjZiGRUiQpV73sXgwuaBqFoMPT6i791YISI=; b=rpuqYhByNAN/DM
-	hDNWbQLQ+/jXkuUV5U9FmkdfPSqyxBQW5BNsD3iPEFKx6FIn7GjqQZYdkLjfAqRpo5NBI45pKTvuU
-	XGul7bnXPwnzD/umQSGpVQ0SAk4kCvGx/Fw9gST1bbHEcRFMweueaCLu2kII8L4aiNePqCNTeOdAS
-	GFl3WaMSVMotwRCprKjAUVGvbdGz39VnwQtIFNlKIipOysaOUwPpZkjHzvI7TyUqgPCYHL1wafxQT
-	n1Qhi38LVdNp5SgkXhLG7cBBSGNrLkzfkuAM9fukeu7ZXf74WHRokVuDY/Qz2uIycP9TGUWcsWPI6
-	2h02QhSRBFSt5l4e1hnA==;
+	List-Owner; bh=CIjR5m1JfFU7m2BYpVAIm4aAEjtnjnGAnUUOzdN4ymk=; b=CkT3OzCplajYBW
+	hTeKZucJq0VJWNKNcuFJ4wO+UTLAy7niMkNlDNTK0ZAbvyLifmP45iUzdTW6GgDV8t884JQo7gccq
+	sWGu9NlDUw4OLFDDCaSxSJgYnvMJ8A7CORULvajiUYxX9eW5Dhm5y1iJNZvjP2+7IohqpW2xrjszn
+	afrPFbyqNfIJGdwE+eF9esdgWXq//riY8SV3HYUnCN+8pql/wsdksmNkbwy22HKj/J/cAnOk0tao7
+	pR/hMRMwnL4sb9+wbmyNyUYkfsfXRZZ11E8doiC5+YNIFzbhYN8B2bJc8pQopMOLAH/Xko/7h3IO1
+	VeUV4zd2A7+8UpT3eTWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJZS3-00000001sbI-09Nm;
-	Fri, 06 Dec 2024 14:37:03 +0000
+	id 1tJZnb-00000001uzu-3vZt;
+	Fri, 06 Dec 2024 14:59:19 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJZQk-00000001sM0-21hc;
-	Fri, 06 Dec 2024 14:35:43 +0000
+	id 1tJYli-00000001mYt-2tkn;
+	Fri, 06 Dec 2024 13:53:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
 	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
 	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
 	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=lXAYhpdfsf+gOIdq60uXPUI1h1U4aSY+52/5Tzkwy3o=; b=zGqZu5nmmiMR40kS1ag20bkZPn
-	34/WeQB+p3pPf5pLsBw3pnqEJbt/Oo/WuvhzsETmFIx3NcWETcipC+hKsTXGu93XASq00fG7IiRhY
-	ugoku54YtHBQCHd2dIrEF8RZto8uUUd2BPnAXualbTHQyzVf/HDdnXKEVNswMpIhJlD2+8YJWA/ZR
-	w2AR0CD0BSddg0M0kJN9aiTdyRi/PwU/fPifztlnuqZVfCvzMjPIi26kxT2H2TsWf1LAD9tDN28/1
-	0Kl1t9kLx7MQzvLaV4zLiQkE/kJ9RIFCW6VuRaphGb3r2RZvay3zfzCXbuZXcCfwy8zIPWpCN5DDT
-	U5xMwHLA==;
+	bh=ZbYJrhkQc0nvUHQDz7CHZJDyBA/Z0++rFcxDzUyd6KA=; b=wJquaEgZ8eQk7upw2fXmwkzvEb
+	ROAcLrOufdlHgtSYsjWmNv5XPCMzML1UhZnRf+c1MBkbFItVt1uLgoF2IxvJOvK1Kk41XASnk/8ry
+	2lRgNuW2aEDsIvGQb3kwfoeiZx/e1vSWU7KCwLQrVVrgwv5QqfuvggH18yy7WnbphtpbjdgERexro
+	MBUZwdAqML56vLfu/UuWHMP3Bx4cbPTWkt4EgehUj5r6JwI36ud8GcbPdyLjahkAQP4yD3CDdDrhF
+	oPQS9Yoi5Me8b6tK0G6FhSPKNkfAcCkMIKNKurGgEvZnGneNBWgBbSAD+pIvyUacvoUM7Qh5rh035
+	2x89O6bw==;
 Received: from i53875bc4.versanet.de ([83.135.91.196] helo=diego.localnet)
 	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.94.2)
 	(envelope-from <heiko@sntech.de>)
-	id 1tJZQW-00011Y-Hy; Fri, 06 Dec 2024 15:35:28 +0100
+	id 1tJYld-0000cM-0l; Fri, 06 Dec 2024 14:53:13 +0100
 From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+To: vkoul@kernel.org, kishon@kernel.org,
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, Damon Ding <damon.ding@rock-chips.com>
-Subject: Re: [PATCH v1 00/10] Add eDP support for RK3588
-Date: Fri, 06 Dec 2024 15:35:27 +0100
-Message-ID: <5939852.zQ0Gbyo6oJ@diego>
-In-Reply-To: <20241127075157.856029-1-damon.ding@rock-chips.com>
-References: <20241127075157.856029-1-damon.ding@rock-chips.com>
+ quentin.schulz@cherry.de, Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: Re: [PATCH 2/2] phy: phy-rockchip-samsung-hdptx: Don't use dt aliases to
+ determine phy-id
+Date: Fri, 06 Dec 2024 14:53:12 +0100
+Message-ID: <11259672.BaYr0rKQ5T@diego>
+In-Reply-To: <87273a36-07f9-4224-bfff-63e905be9b0a@collabora.com>
+References: <20241206103401.1780416-1-heiko@sntech.de>
+ <20241206103401.1780416-3-heiko@sntech.de>
+ <87273a36-07f9-4224-bfff-63e905be9b0a@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_063542_512710_42E029EC 
-X-CRM114-Status: GOOD (  19.68  )
+X-CRM114-CacheID: sfid-20241206_055318_773004_1898BE2E 
+X-CRM114-Status: GOOD (  27.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,89 +77,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Daemon,
+Hi Cristian,
 
-Am Mittwoch, 27. November 2024, 08:51:47 CET schrieb Damon Ding:
-> These patchs have been tested with a 1536x2048p60 eDP panel on
-> RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
-> on RK3588 EVB1 board.
+Am Freitag, 6. Dezember 2024, 12:26:35 CET schrieb Cristian Ciocaltea:
+> On 12/6/24 12:34 PM, Heiko Stuebner wrote:
+> > From: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > 
+> > The phy needs to know its identity in the system (phy0 or phy1 on rk3588)
+> > for some actions and the driver currently contains code abusing of_alias
+> > for that.
+> > 
+> > Devicetree aliases are always optional and should not be used for core
+> > device functionality, so instead keep a list of phys on a soc in the
+> > of_device_data and find the phy-id by comparing against the mapped
+> > register-base.
+> > 
+> > Fixes: c4b09c562086 ("phy: phy-rockchip-samsung-hdptx: Add clock provider support")
+> > Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+> > ---
+> >  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 50 ++++++++++++++++---
+> >  1 file changed, 44 insertions(+), 6 deletions(-)
+> > 
+> > diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> > index c5c64c209e96..b137f8c4d157 100644
+> > --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> > +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> > @@ -385,11 +385,22 @@ enum rk_hdptx_reset {
+> >  	RST_MAX
+> >  };
 > 
-> Patch 1~3 are the RK3588 eDP support of Rockchip analogix_dp driver.
-> Patch 4   is the eDP mode support of samsung hdptx phy driver.
-> Patch 5~6 are the Rk3588 eDP support of Aanalogix DP driver. Add phy
->           interfaces is to configure the HDMI/eDP TX Combo PHY.
-> Patch 7~8 are the renaming of hdptxphy node. It is not only used by
->           HDMI display but also for the eDP display.
-> Patch 9   is the addition of RK3588 eDP0 node.
-> Patch 10  is to enable the eDP0 display on RK3588S EVB1 board.
+> [...]
+> 
+> > +
+> > +	/* find the phy-id from the io address */
+> > +	hdptx->phy_id = -ENODEV;
+> > +	for (id = 0; id < hdptx->cfgs->num_phys; id++) {
+> > +		if (res->start == hdptx->cfgs->phy_ids[id]) {
+> > +			hdptx->phy_id = id;
+> > +			break;
+> > +		}
+> > +	}
+> > +
+> > +	if (hdptx->phy_id < 0)
+> > +		return dev_err_probe(dev, -ENODEV, "no matching device found\n");
+> 
+> Maybe we could simply fallback to assume phy1 doesn't exist in this
+> case, which avoids the need to provide a match data with a single entry.
 
-Could you maybe also bring over functionality for real bridge-handling?
-That way we'd have support for things like the dp-connector bridge.
+Personally I'm a fan of consistent behaviour, not things working
+accidentially ;-) . See the usbdp phy for example, also declaring just
+one phy using the same mechanism.
 
-In the 6.1 vendor-tree I've found commits
-94e598190128 ("drm/rockchip: analogix_dp: Add support for external bridge")
-437e0a901b14 ("drm/bridge: analogix_dp: Support split mode for bridge chain")
-
-needing a bit of cleanup of course, but that would get rid of the driver
-not handling the DRM_BRIDGE_ATTACH_NO_CONNECTOR flag too.
-
-With a bit of streamlining, we could maybe even get rid of the panel-part
-completely, similar to how the dw-dsi controllers do it [0]
+Also I really don't trust the hdptxphy-grf being stable over time.
+Rockchip engineers always move bts around in those, so there will be a
+need for platform-data at some point anyway.
 
 
-Thanks
+> Regardless,
+> 
+> Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+
+thanks :-)
+
 Heiko
-
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c#n335
-devm_drm_of_get_bridge() combines drm_of_find_panel_or_bridge()
-with devm_drm_panel_bridge_add(), so indepent of it being either a
-panel or other bridge, the driver below only needs to handle bridges.
-
-> Damon Ding (10):
->   drm/rockchip: analogix_dp: Use formalized struct definition for grf
->     field
->   dt-bindings: display: rockchip: analogix-dp: Add support for RK3588
->   drm/rockchip: analogix_dp: Add support for RK3588
->   phy: phy-rockchip-samsung-hdptx: Add support for eDP mode
->   drm/bridge: analogix_dp: add support for RK3588
->   drm/bridge: analogix_dp: Add support for phy configuration.
->   dt-bindings: display: rockchip: Fix label name of hdptxphy for RK3588
->     HDMI TX Controller
->   arm64: dts: rockchip: Fix label name of hdptxphy for RK3588
->   arm64: dts: rockchip: Add eDP0 node for RK3588
->   arch64: dts: rockchip: Enable eDP0 display on RK3588S EVB1 board
-> 
->  .../rockchip/rockchip,analogix-dp.yaml        |   1 +
->  .../rockchip/rockchip,rk3588-dw-hdmi-qp.yaml  |   2 +-
->  arch/arm64/boot/dts/rockchip/rk3588-base.dtsi |  33 +-
->  .../dts/rockchip/rk3588-coolpi-cm5-evb.dts    |   2 +-
->  .../rockchip/rk3588-coolpi-cm5-genbook.dts    |   2 +-
->  .../boot/dts/rockchip/rk3588-evb1-v10.dts     |   2 +-
->  .../rk3588-friendlyelec-cm3588-nas.dts        |   2 +-
->  .../arm64/boot/dts/rockchip/rk3588-jaguar.dts |   2 +-
->  .../boot/dts/rockchip/rk3588-nanopc-t6.dtsi   |   2 +-
->  .../dts/rockchip/rk3588-orangepi-5-plus.dts   |   2 +-
->  .../boot/dts/rockchip/rk3588-rock-5b.dts      |   2 +-
->  .../boot/dts/rockchip/rk3588-tiger-haikou.dts |   2 +-
->  .../boot/dts/rockchip/rk3588s-coolpi-4b.dts   |   2 +-
->  .../boot/dts/rockchip/rk3588s-evb1-v10.dts    |  84 ++
->  .../dts/rockchip/rk3588s-indiedroid-nova.dts  |   2 +-
->  .../boot/dts/rockchip/rk3588s-nanopi-r6.dtsi  |   2 +-
->  .../boot/dts/rockchip/rk3588s-odroid-m2.dts   |   2 +-
->  .../boot/dts/rockchip/rk3588s-orangepi-5.dtsi |   2 +-
->  .../boot/dts/rockchip/rk3588s-rock-5a.dts     |   2 +-
->  .../boot/dts/rockchip/rk3588s-rock-5c.dts     |   2 +-
->  .../drm/bridge/analogix/analogix_dp_core.c    |   8 +-
->  .../drm/bridge/analogix/analogix_dp_core.h    |   2 +
->  .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  90 ++
->  .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 112 ++-
->  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 936 +++++++++++++++++-
->  include/drm/bridge/analogix_dp.h              |   3 +-
->  26 files changed, 1206 insertions(+), 97 deletions(-)
-> 
-> 
-
-
 
 
 
