@@ -4,92 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 253EEE77179
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 14:16:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D4AAE77173
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Dec 2024 14:37:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ptkqp1hxHFmNWOFAC8X3Jur3au3ZvYg/xwQuPmLTnIA=; b=IEromWcOwaJpMa
-	eiUn31SaBmk8OwlBFXvc3SqsHcs7GTiSs6mbBgMXf0GBMUecHlaLays4R5p6sc89eiuovxraGAc17
-	eCs/YdmKCG9bNjord59faPkoA/91Tcc42buxjwCaJOTVHZo+zw8IrBwge980wKAInYBT8CMmut+X4
-	4pPL1qhkDGkV3lsQEuauinfNPN1w2dT2xylmDDmeIp2K9X69gIL1QQ7y28T5i1KJm7Mcdxmjtgj/F
-	TjIOy7mlagBusueHeVJnSeRhf2eHfrYkIBiDfuNExQ8lFsSkNJ+kB9y8eyZoW4pqIOMP9m3RaeUsg
-	4Amt1sgIR6CFenwHL82g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=63Fnlc3bMjZiGRUiQpV73sXgwuaBqFoMPT6i791YISI=; b=rpuqYhByNAN/DM
+	hDNWbQLQ+/jXkuUV5U9FmkdfPSqyxBQW5BNsD3iPEFKx6FIn7GjqQZYdkLjfAqRpo5NBI45pKTvuU
+	XGul7bnXPwnzD/umQSGpVQ0SAk4kCvGx/Fw9gST1bbHEcRFMweueaCLu2kII8L4aiNePqCNTeOdAS
+	GFl3WaMSVMotwRCprKjAUVGvbdGz39VnwQtIFNlKIipOysaOUwPpZkjHzvI7TyUqgPCYHL1wafxQT
+	n1Qhi38LVdNp5SgkXhLG7cBBSGNrLkzfkuAM9fukeu7ZXf74WHRokVuDY/Qz2uIycP9TGUWcsWPI6
+	2h02QhSRBFSt5l4e1hnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJZ7t-00000001qNV-3nh4;
-	Fri, 06 Dec 2024 14:16:13 +0000
-Received: from mo4-p00-ob.smtp.rzone.de ([81.169.146.220])
+	id 1tJZS3-00000001sbI-09Nm;
+	Fri, 06 Dec 2024 14:37:03 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJZ7n-00000001qKM-1CBb
-	for linux-phy@lists.infradead.org;
-	Fri, 06 Dec 2024 14:16:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1733494542; cv=none;
-    d=strato.com; s=strato-dkim-0002;
-    b=mft91VMrMqOPpdW0b7SKcYchr31zgpbOJbCOA8X3Xh0ho3mQ6rFCeTyhOmlj4P+jEg
-    L1ym/j3TRPnqhSie82hwfMv76MC5DOFKt00iZXKxrtWMXyx48eEkj+CyC7HQR0sYVW1V
-    2MI/llLJ/7J9LL0svlvGn5bHYqauos40Eyu+DHDK+ZHdIsi702/EKiDj6+2pOG5oLobY
-    bTCp1ym2Jj9fHNRKqz+3cY38l+xXDw8iu84zh5Rar1QMfR8v1mBm+4q1Bd6rwvsuDAJC
-    53q5BHHC5bXXeVHAondQHBbfWTvK4oiDuq5RlRqE5quppwE1reTHLiVDAn8tdBFKhbhC
-    mK1w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1733494542;
-    s=strato-dkim-0002; d=strato.com;
-    h=Message-ID:Date:Subject:Cc:To:From:Cc:Date:From:Subject:Sender;
-    bh=Z58+uiVgBPQkke6BcCMA/Ak1YSRMhYCJjTVUw2AGcec=;
-    b=BnIdCibFXMZRPq+3fq+O2RFDeCenveNeStzpF93r2YTbwQ4jOMRbpUxP6uyjeR7crU
-    XshCGcJT6++qNzV2icUYG5fg0UyQDvQg3aTXYP1aDiCed7eksPyOx+vne0rnQQob3F84
-    v38e8UiqYQZuF5YxBmwr3wSaGtZvMJxcWxrkr0qTAq06mqhjf71NJTDV3LUfFNLZGk7g
-    cHryS5FpfOihFLbOn1PAAyfb4n8wEJSwOGSjrehrXkfJgWPugv5tAvHUAfqaNniF6LAc
-    pS0dyWFoOrNs8FLyNOpC2YduFxbrNO/iqmNbJXA8iwTPbxJnjgg8CyYyxu+JALhVo4LA
-    fzuw==
-ARC-Authentication-Results: i=1; strato.com;
-    arc=none;
-    dkim=none
-X-RZG-CLASS-ID: mo00
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1733494542;
-    s=strato-dkim-0002; d=goldelico.com;
-    h=Message-ID:Date:Subject:Cc:To:From:Cc:Date:From:Subject:Sender;
-    bh=Z58+uiVgBPQkke6BcCMA/Ak1YSRMhYCJjTVUw2AGcec=;
-    b=jFvcutz6RXCyfYwhyGr1jkrRUgx+SIgtsF/kbalTLUYAMVAFvpbV7D1/i1xaDboTTs
-    sWUVs/4bwEykV5eX8AZCEosnONtdJePeXLZURq1wOFvQjez9Tpf0RqCgEDIvUlIkUQv6
-    puH+AjlxpVhTBa3x+5zxSlo6d4srY/m1aS8tHs+dWCRSGe3mv8sMh5RF5rU1DSuR76yA
-    bSRoTK4sV/gY6xcLItxKSM3uGCtCmFKio8hxNHsrlHTtlANP36rLImjcI5IfYVWKJPp+
-    U/9LB27Tzcw2KuiooANHXmpVMukVE7nvPiArwJqPAxdQ16SWeDvdMAD7+otK4bzsXl/t
-    mEng==
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1733494542;
-    s=strato-dkim-0003; d=goldelico.com;
-    h=Message-ID:Date:Subject:Cc:To:From:Cc:Date:From:Subject:Sender;
-    bh=Z58+uiVgBPQkke6BcCMA/Ak1YSRMhYCJjTVUw2AGcec=;
-    b=1yoHfBetc6222DtH2uP7I5kP8ZnzeQaoCUA2ardu61p2bVDHAHQYiNBLI5M2OL5tl2
-    g0mZk1jQSyrnZuH+XaDg==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o12DNOsPj0lFzL1yfjEZ"
-Received: from localhost.localdomain
-    by smtp.strato.de (RZmta 51.2.11 DYNA|AUTH)
-    with ESMTPSA id Qb7e400B6EFfkqc
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
-	(Client did not present a certificate);
-    Fri, 6 Dec 2024 15:15:41 +0100 (CET)
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Zhou Yanjie <zhouyanjie@wanyeetech.com>,
-	Paul Cercueil <paul@crapouillou.net>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	letux-kernel@openphoenux.org,
-	"H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: [PATCH] phy: ingenic: fix unbalanced regulator_disable() warning
-Date: Fri,  6 Dec 2024 15:15:34 +0100
-Message-ID: <52768c120a6999ce9275bcb15d74a4255f2ef790.1733494534.git.hns@goldelico.com>
-X-Mailer: git-send-email 2.47.0
+	id 1tJZQk-00000001sM0-21hc;
+	Fri, 06 Dec 2024 14:35:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=lXAYhpdfsf+gOIdq60uXPUI1h1U4aSY+52/5Tzkwy3o=; b=zGqZu5nmmiMR40kS1ag20bkZPn
+	34/WeQB+p3pPf5pLsBw3pnqEJbt/Oo/WuvhzsETmFIx3NcWETcipC+hKsTXGu93XASq00fG7IiRhY
+	ugoku54YtHBQCHd2dIrEF8RZto8uUUd2BPnAXualbTHQyzVf/HDdnXKEVNswMpIhJlD2+8YJWA/ZR
+	w2AR0CD0BSddg0M0kJN9aiTdyRi/PwU/fPifztlnuqZVfCvzMjPIi26kxT2H2TsWf1LAD9tDN28/1
+	0Kl1t9kLx7MQzvLaV4zLiQkE/kJ9RIFCW6VuRaphGb3r2RZvay3zfzCXbuZXcCfwy8zIPWpCN5DDT
+	U5xMwHLA==;
+Received: from i53875bc4.versanet.de ([83.135.91.196] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tJZQW-00011Y-Hy; Fri, 06 Dec 2024 15:35:28 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Damon Ding <damon.ding@rock-chips.com>
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
+ cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
+ andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
+ kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Damon Ding <damon.ding@rock-chips.com>
+Subject: Re: [PATCH v1 00/10] Add eDP support for RK3588
+Date: Fri, 06 Dec 2024 15:35:27 +0100
+Message-ID: <5939852.zQ0Gbyo6oJ@diego>
+In-Reply-To: <20241127075157.856029-1-damon.ding@rock-chips.com>
+References: <20241127075157.856029-1-damon.ding@rock-chips.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241206_061607_583039_98FAF5B2 
-X-CRM114-Status: UNSURE (   8.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241206_063542_512710_42E029EC 
+X-CRM114-Status: GOOD (  19.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,39 +78,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-if ingenic_usb_phy_exit is called the regulator is already disabled
-through ingenic_usb_phy_power_off() leading to
+Hi Daemon,
 
-[    5.367301] WARNING: CPU: 0 PID: 20 at drivers/regulator/core.c:2953 _regulator_disable+0x200/0x230
-[    5.368209] unbalanced disables for regulator-dummy
-[    5.370364] Modules linked in: phy_ingenic_usb
-...
-[    5.373441] [<8054601c>] regulator_disable+0x40/0x80
-[    5.372952] [<c02450f8>] ingenic_usb_phy_exit+0x48/0x60 [phy_ingenic_usb]
-[    5.374283] [<8050839c>] phy_exit+0xd8/0x104
-[    5.373104] [<80657a24>] __dwc2_lowlevel_hw_disable+0xe0/0xe8
-[    5.373393] [<80658ad4>] dwc2_driver_probe+0x818/0x834
-...
+Am Mittwoch, 27. November 2024, 08:51:47 CET schrieb Damon Ding:
+> These patchs have been tested with a 1536x2048p60 eDP panel on
+> RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
+> on RK3588 EVB1 board.
+> 
+> Patch 1~3 are the RK3588 eDP support of Rockchip analogix_dp driver.
+> Patch 4   is the eDP mode support of samsung hdptx phy driver.
+> Patch 5~6 are the Rk3588 eDP support of Aanalogix DP driver. Add phy
+>           interfaces is to configure the HDMI/eDP TX Combo PHY.
+> Patch 7~8 are the renaming of hdptxphy node. It is not only used by
+>           HDMI display but also for the eDP display.
+> Patch 9   is the addition of RK3588 eDP0 node.
+> Patch 10  is to enable the eDP0 display on RK3588S EVB1 board.
 
-Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
----
- drivers/phy/ingenic/phy-ingenic-usb.c | 1 -
- 1 file changed, 1 deletion(-)
+Could you maybe also bring over functionality for real bridge-handling?
+That way we'd have support for things like the dp-connector bridge.
 
-diff --git a/drivers/phy/ingenic/phy-ingenic-usb.c b/drivers/phy/ingenic/phy-ingenic-usb.c
-index eb2721f72a4c1..35984dd8a1bd7 100644
---- a/drivers/phy/ingenic/phy-ingenic-usb.c
-+++ b/drivers/phy/ingenic/phy-ingenic-usb.c
-@@ -124,7 +124,6 @@ static int ingenic_usb_phy_exit(struct phy *phy)
- 	struct ingenic_usb_phy *priv = phy_get_drvdata(phy);
- 
- 	clk_disable_unprepare(priv->clk);
--	regulator_disable(priv->vcc_supply);
- 
- 	return 0;
- }
--- 
-2.47.0
+In the 6.1 vendor-tree I've found commits
+94e598190128 ("drm/rockchip: analogix_dp: Add support for external bridge")
+437e0a901b14 ("drm/bridge: analogix_dp: Support split mode for bridge chain")
+
+needing a bit of cleanup of course, but that would get rid of the driver
+not handling the DRM_BRIDGE_ATTACH_NO_CONNECTOR flag too.
+
+With a bit of streamlining, we could maybe even get rid of the panel-part
+completely, similar to how the dw-dsi controllers do it [0]
+
+
+Thanks
+Heiko
+
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c#n335
+devm_drm_of_get_bridge() combines drm_of_find_panel_or_bridge()
+with devm_drm_panel_bridge_add(), so indepent of it being either a
+panel or other bridge, the driver below only needs to handle bridges.
+
+> Damon Ding (10):
+>   drm/rockchip: analogix_dp: Use formalized struct definition for grf
+>     field
+>   dt-bindings: display: rockchip: analogix-dp: Add support for RK3588
+>   drm/rockchip: analogix_dp: Add support for RK3588
+>   phy: phy-rockchip-samsung-hdptx: Add support for eDP mode
+>   drm/bridge: analogix_dp: add support for RK3588
+>   drm/bridge: analogix_dp: Add support for phy configuration.
+>   dt-bindings: display: rockchip: Fix label name of hdptxphy for RK3588
+>     HDMI TX Controller
+>   arm64: dts: rockchip: Fix label name of hdptxphy for RK3588
+>   arm64: dts: rockchip: Add eDP0 node for RK3588
+>   arch64: dts: rockchip: Enable eDP0 display on RK3588S EVB1 board
+> 
+>  .../rockchip/rockchip,analogix-dp.yaml        |   1 +
+>  .../rockchip/rockchip,rk3588-dw-hdmi-qp.yaml  |   2 +-
+>  arch/arm64/boot/dts/rockchip/rk3588-base.dtsi |  33 +-
+>  .../dts/rockchip/rk3588-coolpi-cm5-evb.dts    |   2 +-
+>  .../rockchip/rk3588-coolpi-cm5-genbook.dts    |   2 +-
+>  .../boot/dts/rockchip/rk3588-evb1-v10.dts     |   2 +-
+>  .../rk3588-friendlyelec-cm3588-nas.dts        |   2 +-
+>  .../arm64/boot/dts/rockchip/rk3588-jaguar.dts |   2 +-
+>  .../boot/dts/rockchip/rk3588-nanopc-t6.dtsi   |   2 +-
+>  .../dts/rockchip/rk3588-orangepi-5-plus.dts   |   2 +-
+>  .../boot/dts/rockchip/rk3588-rock-5b.dts      |   2 +-
+>  .../boot/dts/rockchip/rk3588-tiger-haikou.dts |   2 +-
+>  .../boot/dts/rockchip/rk3588s-coolpi-4b.dts   |   2 +-
+>  .../boot/dts/rockchip/rk3588s-evb1-v10.dts    |  84 ++
+>  .../dts/rockchip/rk3588s-indiedroid-nova.dts  |   2 +-
+>  .../boot/dts/rockchip/rk3588s-nanopi-r6.dtsi  |   2 +-
+>  .../boot/dts/rockchip/rk3588s-odroid-m2.dts   |   2 +-
+>  .../boot/dts/rockchip/rk3588s-orangepi-5.dtsi |   2 +-
+>  .../boot/dts/rockchip/rk3588s-rock-5a.dts     |   2 +-
+>  .../boot/dts/rockchip/rk3588s-rock-5c.dts     |   2 +-
+>  .../drm/bridge/analogix/analogix_dp_core.c    |   8 +-
+>  .../drm/bridge/analogix/analogix_dp_core.h    |   2 +
+>  .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  90 ++
+>  .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 112 ++-
+>  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 936 +++++++++++++++++-
+>  include/drm/bridge/analogix_dp.h              |   3 +-
+>  26 files changed, 1206 insertions(+), 97 deletions(-)
+> 
+> 
+
+
+
 
 
 -- 
