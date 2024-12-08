@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC73FE77173
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Dec 2024 17:01:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 951F7E77173
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Dec 2024 17:02:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VOrp7qM3+WyZsoSm2KTLEACrE8KKWl8ED7nlx6B7tW0=; b=V/MZWRGAFr5F6h
-	e/4Azp+//5Y60zI1D0IjBXVMZUCiePXNUN/hnJZe/rjWjXCR8+7A275l0+rF0gcO7WVpFarPYq/30
-	Ie5UxbwcpROptFMeFzKWp/6vaGgqvIIFVPxJXXtkrNjohSLkGjYCWuGOp+qE0CY4H2Uh2qsy/tMG/
-	h5eJ+9Dh+Lkcu+f8qJ6gXVCPIYcNi2gyYd7BsuelOzf8afEDimc/JK0wXlXB4wjs+s86rtQew9x5f
-	yhsUt29+Vrm4lWSehcOfo2A/uuGmbqgGoELMGDxS4SOxRSfBEUxBt1x99YGNy7jeEk1neqSzBP9fH
-	pTetkD6LOvDkjc4RNCMQ==;
+	List-Owner; bh=YVUIPPSQT+diqVBlX3inOgZhTXVcvs0uLnJ6cpvexmo=; b=PRtNHf2y0C847w
+	/aBgD9TL0DRkYfWgzaZPev8OyXdv/+Y0rp4jue7bm8SReBCXGkCIKdCZOCdhOxv9HL+XEfgfxsaO2
+	a14RJr3tgkBHWgorhmZG9+6tT4O8rbn7QefM07P/nXDNMgPcEf6RkzsCxF3qt2hpbJiE+/IM+OmbP
+	eThndIksCsb0gBjLq7lw+42bn+olPolBYt1PDf1om/R861aFXe1pMIvYcTInKf/eLPoO+Vg1KsE9G
+	tDnsVA5I/qd0co0f+5sROfKJMrkQqzdz/3MCDvsp8e/HrV+Ea+cEZGBztH1eNfOwi333wpfFeQand
+	ItsRPD6NuThg9iZDbF+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKKeS-00000005bWo-1rah;
-	Sun, 08 Dec 2024 17:01:00 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tKKfT-00000005bdl-1XL8;
+	Sun, 08 Dec 2024 17:02:03 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKKcZ-00000005b8u-0DPA;
-	Sun, 08 Dec 2024 16:59:04 +0000
+	id 1tKKcc-00000005b9f-397V;
+	Sun, 08 Dec 2024 16:59:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 962E7A40C61;
-	Sun,  8 Dec 2024 16:57:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 487EEC4CED2;
-	Sun,  8 Dec 2024 16:58:58 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9F05E5C4A42;
+	Sun,  8 Dec 2024 16:58:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A92D3C4CED2;
+	Sun,  8 Dec 2024 16:59:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733677142;
-	bh=toOsgRuEWOhHn9FOC604OTu6l2exJPo4BC7XHhbdWEo=;
+	s=k20201202; t=1733677146;
+	bh=csE7uy0VuBahmgf5oPd1u9Pm9Uuc0fog2i/ia7R4hUU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=DcwdN23m6ERs8sHSF54Cs3zdlAnAHoIvQLu9QM8FseNB7dXYYwrbcaT9dZ7gYMclV
-	 Fx0gIMS3GCzAa+JVPD5g8xblWLuo32yKC8mxwKdWe8a3626FpSut7T62RpkWK/shYu
-	 y7fnZluusiAQGkplCvDLy1dScye9kG3dTMP3lCMiZ3BKxOKbRARHGXl0XlQIO93Iag
-	 IM4lJkOqJNh/6sUfWld5GWk/Vh+DHqdAnCqGhCobNVMGAVpraMNeLvh51OJrR4giTC
-	 DyMUxLT3yPwnrWVSKd5MNfDGaDyEiLRUZqAMM7VFJyamA6No0oAzFl2dQJpa36n8hH
-	 ezHls67pDIMKA==
+	b=Htw7HIZdEhe2LScDIEdOM+f1t+IatbxgCkTl9b3LP718mi7na7alIiOpLSxG+JICo
+	 umt8rYK0wr+amLvDz8KOXr7b7jOe3uiCD37W7IAQSUDBdYQ9sa3q+otw9UelCNoAsu
+	 xYuX2h9qNRv77t3X3GHauTM1+BW4C+IvD3Gg1yoYlVriNAoVtBrCBwXbjSHTPNX+wh
+	 L+oSYYouNXI/08BOwkm/zqExYNCBz03HM1gqceE1BocBGzjqb6y3YYOdIFe5XOERJ8
+	 T3QC5YX75OTcz8d9hAQYJkk6UWTPD0ZHsfNOKxDckN8TkDMDuwxTFrOgpclIYdO3NJ
+	 B8d8lrUdUiaqQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Christian Bruel <christian.bruel@foss.st.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
- Alexandre Torgue <alexandre.torgue@foss.st.com>, 
- Arnd Bergmann <arnd@kernel.org>
-Cc: Arnd Bergmann <arnd@arndb.de>, Yang Li <yang.lee@linux.alibaba.com>, 
- linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20241111103712.3520611-1-arnd@kernel.org>
-References: <20241111103712.3520611-1-arnd@kernel.org>
-Subject: Re: [PATCH] phy: stm32: work around constant-value overflow
- assertion
-Message-Id: <173367713788.1031947.8609520201420590738.b4-ty@kernel.org>
-Date: Sun, 08 Dec 2024 22:28:57 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Dmitry Osipenko <dmitry.osipenko@collabora.com>
+In-Reply-To: <20241023-phy-sam-hdptx-rpm-fix-v1-1-87f4c994e346@collabora.com>
+References: <20241023-phy-sam-hdptx-rpm-fix-v1-1-87f4c994e346@collabora.com>
+Subject: Re: [PATCH] phy: rockchip: samsung-hdptx: Set drvdata before
+ enabling runtime PM
+Message-Id: <173367714219.1031947.13630149874442977785.b4-ty@kernel.org>
+Date: Sun, 08 Dec 2024 22:29:02 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241208_085903_154155_EB0838F7 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20241208_085906_840792_70055F84 
+X-CRM114-Status: UNSURE (   5.79  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,32 +78,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 11 Nov 2024 11:37:02 +0100, Arnd Bergmann wrote:
-> FIELD_PREP() checks that a constant fits into the available bitfield,
-> but if one of the two lookup tables in stm32_impedance_tune() does
-> not find a matching entry, the index is out of range, which gcc
-> correctly complains about:
+On Wed, 23 Oct 2024 20:29:54 +0300, Cristian Ciocaltea wrote:
+> In some cases, rk_hdptx_phy_runtime_resume() may be invoked before
+> platform_set_drvdata() is executed in ->probe(), leading to a NULL
+> pointer dereference when using the return of dev_get_drvdata().
 > 
-> In file included from <command-line>:
-> In function 'stm32_impedance_tune',
->     inlined from 'stm32_combophy_pll_init' at drivers/phy/st/phy-stm32-combophy.c:247:9:
-> include/linux/compiler_types.h:517:38: error: call to '__compiletime_assert_447' declared with attribute error: FIELD_PREP: value too large for the field
->   517 |  _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
->       |                                      ^
-> include/linux/bitfield.h:68:3: note: in expansion of macro 'BUILD_BUG_ON_MSG'
->    68 |   BUILD_BUG_ON_MSG(__builtin_constant_p(_val) ?  \
->   115 |   __BF_FIELD_CHECK(_mask, 0ULL, _val, "FIELD_PREP: "); \
->       |   ^~~~~~~~~~~~~~~~
-> drivers/phy/st/phy-stm32-combophy.c:162:8: note: in expansion of macro 'FIELD_PREP'
->   162 |        FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
->       |        ^~~~~~~~~~
+> Ensure platform_set_drvdata() is called before devm_pm_runtime_enable().
+> 
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: stm32: work around constant-value overflow assertion
-      commit: 2de679ecd724b823c2cb58caab8508c7eec8aefc
+[1/1] phy: rockchip: samsung-hdptx: Set drvdata before enabling runtime PM
+      commit: 9d23e48654620fdccfcc74cc2cef04eaf7353d07
 
 Best regards,
 -- 
