@@ -4,58 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37F69E77173
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Dec 2024 16:58:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0282E77173
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Dec 2024 16:59:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/PRl8VVbZswEj3qA7fNFaUyEQwIwLDoxJlQDEovlxDU=; b=V/qGHqSHl7HxRg
-	nTuIck/ZC9r5x2t0zOsvlvr/dLY9kGcfopcsTLfFzV6+lqcdPHWn56hN1gfVrEHrf2Hc3aNN1fr+d
-	0sP3dhrzfxXcG9jrkdZHAA9TQbjPh2KbE3kjvMka0uk45QmomARQvKs7ZjCucN4B92C1G8JuPiyVY
-	1H7OClnjQbZZOtzi3HOdG7kx13Gp6CnQGkOaDdoNaHtGAsBsBzX9YUqoVFXnRuvGAAkx2xtimuutT
-	YatWJaUhrIKaktlmnxCsaD3prtvdVEtHGFSNxLIx7qaR+nHTdSz/srOfnirGL52W0HMZ2hNpvr30G
-	VrCuAyRG2BIyxz6DdFXg==;
+	List-Owner; bh=slIYPmO1aseXLS44rF0Cwft9N2THtlF0o9yYyrzZuiw=; b=xFHWS4RxaDL9fA
+	xMAJQyqB4Gq3ISk246/Pw18vd+E2W16RgNPVkZ8uZM8sKL5lYIYLasomGKo+xSZRzgXRnXyqpMmRW
+	FsWrNcYERvNTFjO1MPvfH6HgTjxbAzZ2XdoOZZOwb0W0Zo1s4yYHDlNJTFihc95b0x49oTedJkqKE
+	y4r6ROMclLCieQjK3/dhq8+OEGTcuW97FsT8o8VVoH57H589mLr7bhBqXmNhvxODgZVLVSHmlo8IH
+	Ln5zlggBEjrJIuey097IRf0q3cvDmc/NWXq9fBhOpCTegN/POeNksMDECQFYvsfSTNzRxDAMHwo4+
+	aMWSaUvJ4bEKF9pY1gcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKKcO-00000005b5P-2gWd;
-	Sun, 08 Dec 2024 16:58:52 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tKKdS-00000005bL1-2XSl;
+	Sun, 08 Dec 2024 16:59:58 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKKcL-00000005b50-2PqP
-	for linux-phy@lists.infradead.org;
-	Sun, 08 Dec 2024 16:58:50 +0000
+	id 1tKKcP-00000005b5X-2Cxn;
+	Sun, 08 Dec 2024 16:58:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 217D25C4A2D;
-	Sun,  8 Dec 2024 16:58:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABAD6C4CED2;
-	Sun,  8 Dec 2024 16:58:46 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 467B85C4A2D;
+	Sun,  8 Dec 2024 16:58:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 12D8EC4CEDD;
+	Sun,  8 Dec 2024 16:58:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733677128;
-	bh=5IOKo9J5hlH0BhVeG4p+x8nwui+eCYe8Qq9H8/+LkJI=;
+	s=k20201202; t=1733677132;
+	bh=c0/oRVMKi8RM3KwoeAcA/Gjd8kM3l17avco564yZ2a4=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=jdvflYg/xJqwFRt8RlUDaSP13DIYB4X7lTg2Mr9Tpen2HV7fEIkFDO9DCF9AKbq/c
-	 ztWtYi87mHJRv2igmUvupW5C+HFikgWhcAqpXgPpaivfr6dvF9Z1gbRgeNcT4atBSD
-	 dItH9FCWKZ9bB8tecImDI3wElbcTdVDP65e9jRbiQ1OcrNftSf0FlcbuHBKPjegL2e
-	 e5FsXJ6X13DW5ZYgy8fMnQ/N12JB1ZI0c712eeB97VU9qS1yMWu+wZrjpUlHveJwCd
-	 XLc4ltqplUfc+BPKWb3qGootBeJZzbVoRP9UeqZNaw459TV65Yn+iFBQw7dhd3qtqC
-	 QGt7FnChGm3uA==
+	b=K1TMMbtSwtNRoSSGL5/o42luALup4wGtbz8DdgNYee88KT0cI2Iunz3HRGwvRzXe7
+	 8NQOspNB9we09oCA9fNlDyPkbaeIJxbU7vl5SrgE+CEHqD/4IX/B/P8EtzqfAdI8PH
+	 UIGIHe3kMff5sZY2QqruBfc1vX2bHGzZRwtVg1EhffH33gXWX5eQT2doWN4lO0Q+Lk
+	 jpX8t5DukEZ2JFmyJ7t8pS2tmhuiX9vElu8tUKprlVuTeHr4ObvCRVAVTNE0DHEB3R
+	 RC10gEhmmSKZpsh0CkvB8rJnNXYobyoP8vrq3XniSZYw6qM31sBHaAzGQ1qwCmW4mu
+	 6RIFzFgBLMmhQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, Justin Chen <justin.chen@broadcom.com>
-Cc: f.fainelli@gmail.com, kishon@kernel.org, 
- bcm-kernel-feedback-list@broadcom.com
-In-Reply-To: <20241024213540.1059412-1-justin.chen@broadcom.com>
-References: <20241024213540.1059412-1-justin.chen@broadcom.com>
-Subject: Re: [PATCH] phy: usb: Toggle the PHY power during init
-Message-Id: <173367712623.1031947.1651840155290171990.b4-ty@kernel.org>
-Date: Sun, 08 Dec 2024 22:28:46 +0530
+To: Heiko Stuebner <heiko@sntech.de>, Chukun Pan <amadeus@jmu.edu.cn>
+Cc: Conor Dooley <conor+dt@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Yifeng Zhao <yifeng.zhao@rock-chips.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+In-Reply-To: <20241122073006.99309-1-amadeus@jmu.edu.cn>
+References: <20241122073006.99309-1-amadeus@jmu.edu.cn>
+Subject: Re: (subset) [PATCH 1/2] arm64: dts: rockchip: rk3568: add
+ reset-names for combphy
+Message-Id: <173367712869.1031947.3262464465649332012.b4-ty@kernel.org>
+Date: Sun, 08 Dec 2024 22:28:48 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241208_085849_673006_B6ED6495 
-X-CRM114-Status: UNSURE (   5.08  )
+X-CRM114-CacheID: sfid-20241208_085853_620575_1558059A 
+X-CRM114-Status: UNSURE (   4.39  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,17 +79,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 24 Oct 2024 14:35:40 -0700, Justin Chen wrote:
-> When bringing up the PHY, it might be in a bad state if left powered.
-> One case is we lose the PLL lock if the PLL is gated while the PHY
-> is powered. Toggle the PHY power so we can start from a known state.
+On Fri, 22 Nov 2024 15:30:05 +0800, Chukun Pan wrote:
+> The reset-names of combphy are missing, add it.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: usb: Toggle the PHY power during init
-      commit: 0a92ea87bdd6f77ca4e17fe19649882cf5209edd
+[2/2] phy: rockchip: naneng-combphy: fix phy reset
+      commit: fbcbffbac994aca1264e3c14da96ac9bfd90466e
 
 Best regards,
 -- 
