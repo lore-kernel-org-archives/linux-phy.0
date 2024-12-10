@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D538E77180
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Dec 2024 18:45:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B26CE7717F
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Dec 2024 22:16:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+yyB0cHrw+88SwxoD7KS3wvrEI/puLCHUbDFe3LGs4g=; b=qjVrCewXv0v2w+
-	dXrRhzBkrixmdOpU7m3hODoqJ2fj3MSWZZRM1pQQh0r7Jux+wZ+Z35LWq9NaC/yAQj5G+936vPPJj
-	DsJArytO+nDjSJAUqK2azwSmIt0RPS19ukQ/y+W1p19uedOO8U+Sp4OjmMzUFdmPpcFC/Kb0hEdd/
-	sWXfFhV9Vx+BeRTum8JlWuUZqFMK8Wav9bbuzTbGI36yM+paYSLcWV1rmsDWUwUQUqUM8Or3zPItT
-	76YfQXSyPENZly9lTtU3ujswJRwbfpjdh8M0J3c6RsK4TDhppUA/pxXMdOImfPDaLAEA83OViShvq
-	ReR9wyYAqbIrmSzpQwPA==;
+	List-Owner; bh=5bK6aY0ympH19ctzfC+O8hmT64wMpWFSKmU46QMLY3c=; b=Kay28ydhuScxgQ
+	V598ndwa10oW+DcnaOKQYzUeIyOgp74BOpRGLOJYqBEwcdw+QDZ/KhVhyV78s/Es3MFucLCiebX3L
+	g71DyVQG6oa232iwJ2+DsNiTngIdZpFvoPEwSpx6awkT0Q0vs8LbY4K94U4skmGPem54IhfOVAjN9
+	w2CPDCo/3sxMOPV/D4BshRLDNcmHEawzSvQ4P/SaRLcVET7RNpyRA7KSWM+4OF/KFjOb7pq3mHbbV
+	ATxH2etZddmGE5DCi8oog3Tl5ybvaOWzcS6HPkvIKNCx+AtLNnCjeRznuQddWoJG8V+nyhJri1+FD
+	iyy1+8oOluUjKcu//BgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tL5Ex-0000000CRVx-1PmB;
-	Tue, 10 Dec 2024 18:45:47 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tL8Wf-0000000CyBE-3Mgl;
+	Tue, 10 Dec 2024 22:16:17 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tL5Ev-0000000CRVC-3EmG
-	for linux-phy@lists.infradead.org;
-	Tue, 10 Dec 2024 18:45:46 +0000
+	id 1tL8Vb-0000000Cxrg-290z;
+	Tue, 10 Dec 2024 22:15:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id A9C3FA41966;
-	Tue, 10 Dec 2024 18:43:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9C80DC4CED6;
-	Tue, 10 Dec 2024 18:45:44 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 344C55C5B5E;
+	Tue, 10 Dec 2024 22:14:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 351F7C4CED6;
+	Tue, 10 Dec 2024 22:15:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733856344;
-	bh=OB5DgYuePvYBlbGv8W3gJQ1FsMSp+KmUVfAIg9wjr8M=;
+	s=k20201202; t=1733868910;
+	bh=3x4SgvgxpD/lcEUf3nJ+mjH3qTFRRg7PIFRh0uDdLlA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=l6S36KueRi870kpf9AOxkZRG7YV24Ph05U8fJBCcU1qmYjUe5Wo6ro9oCAH96EK8P
-	 u2q9VKDFig43EadBkj4bumesqcumc2XBav6oTqS3cV7Bh31aH11kLtx371WtwSOnlg
-	 C4Vki6vtERNHDxJMdeLSYv8VcYX8a46hJNWX6IMBanfcqd8RYSIwa2ef9y62fBlkO/
-	 ECYwMhopKBWsnOVkPZ/jBgwmeMEuhdisurdadEno6NpuMnD+6YxsqBPXpKPwzyt2y6
-	 2ifO4nGrYvCGaqEaIuFaikHl94gZpT0rJFniFm1orY7KeGSQmzV0d0yFgauSnybni+
-	 7y+EAR299GbKQ==
-Date: Tue, 10 Dec 2024 12:45:42 -0600
+	b=rHc4FdumgPQ+I6A2FJ6RnWwGc0HaSnQsLrVKxDly7JbPsBhnwWvn72/Nn689Wuqkm
+	 obCpEtWZitbcfbR65XcrDV/ZhF9KBPAoEvHEQ0gvmNkSJCwGbxyACOTAAc/sCcWNlD
+	 nFZSD0zH2HLB+8Yv6/0Yh4Ie4n/whG3Nb3x/j2pxJdYenYJHFhg5TO2ufhJQRvGA4Q
+	 +UFz8q5+HJMcMI66JctRNjv809VrNHAfyNTEDNrP3aUSdghd/CE2os5bhRmPMO/E15
+	 6cTTsq0ykol5TEDftvEIQmGtULteXOkL2wj2Y4Eq1SfoRbPQ5x0XXoSTYOuunzSJwo
+	 0B2TTlBlYVglA==
+Date: Tue, 10 Dec 2024 16:15:08 -0600
 From: Rob Herring <robh@kernel.org>
-To: Claudiu <claudiu.beznea@tuxon.dev>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, p.zabel@pengutronix.de,
-	geert+renesas@glider.be, magnus.damm@gmail.com,
-	gregkh@linuxfoundation.org, yoshihiro.shimoda.uh@renesas.com,
-	christophe.jaillet@wanadoo.fr, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-usb@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: Re: [PATCH v2 01/15] dt-bindings: soc: renesas: renesas,rzg2l-sysc:
- Add #renesas,sysc-signal-cells
-Message-ID: <20241210184542.GA4077820-robh@kernel.org>
-References: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
- <20241126092050.1825607-2-claudiu.beznea.uj@bp.renesas.com>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	p.zabel@pengutronix.de, maarten.lankhorst@linux.intel.com,
+	mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com,
+	simona@ffwll.ch, krzk+dt@kernel.org, conor+dt@kernel.org,
+	shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+	festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org,
+	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org,
+	francesco@dolcini.it, frank.li@nxp.com, dmitry.baryshkov@linaro.org,
+	u.kleine-koenig@baylibre.com
+Subject: Re: [PATCH v6 01/19] dt-bindings: display: imx: Add i.MX8qxp Display
+ Controller processing units
+Message-ID: <20241210221508.GA550635-robh@kernel.org>
+References: <20241209033923.3009629-1-victor.liu@nxp.com>
+ <20241209033923.3009629-2-victor.liu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241126092050.1825607-2-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20241209033923.3009629-2-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241210_104545_937609_D74F57CF 
-X-CRM114-Status: GOOD (  27.59  )
+X-CRM114-CacheID: sfid-20241210_141511_635136_84C7E4A4 
+X-CRM114-Status: GOOD (  15.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,135 +82,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 26, 2024 at 11:20:36AM +0200, Claudiu wrote:
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+On Mon, Dec 09, 2024 at 11:39:05AM +0800, Liu Ying wrote:
+> Freescale i.MX8qxp Display Controller is implemented as construction set of
+> building blocks with unified concept and standardized interfaces.  Document
+> all existing processing units.
 > 
-> The RZ/G3S system controller (SYSC) has registers to control signals that
-> are routed to various IPs. These signals must be controlled during
-> configuration of the respective IPs. One such signal is the USB PWRRDY,
-> which connects the SYSC and the USB PHY. This signal must to be controlled
-> before and after the power to the USB PHY is turned off/on.
-> 
-> Other similar signals include the following (according to the RZ/G3S
-> hardware manual):
-> 
-> * PCIe:
-> - ALLOW_ENTER_L1 signal controlled through the SYS_PCIE_CFG register
-> - PCIE_RST_RSM_B signal controlled through the SYS_PCIE_RST_RSM_B
->   register
-> - MODE_RXTERMINATION signal controlled through SYS_PCIE_PHY register
-> 
-> * SPI:
-> - SEL_SPI_OCTA signal controlled through SYS_IPCONT_SEL_SPI_OCTA
->   register
-> 
-> * I2C/I3C:
-> - af_bypass I2C signals controlled through SYS_I2Cx_CFG registers
->   (x=0..3)
-> - af_bypass I3C signal controlled through SYS_I3C_CFG register
-> 
-> * Ethernet:
-> - FEC_GIGA_ENABLE Ethernet signals controlled through SYS_GETHx_CFG
->   registers (x=0..1)
-> 
-> Add #renesas,sysc-signal-cells DT property to allow different SYSC signals
-> consumers to manage these signals.
-> 
-> The goal is to enable consumers to specify the required access data for
-> these signals (through device tree) and let their respective drivers
-> control these signals via the syscon regmap provided by the system
-> controller driver. For example, the USB PHY will describe this relation
-> using the following DT property:
-> 
-> usb2_phy1: usb-phy@11e30200 {
-> 	// ...
-> 	renesas,sysc-signal = <&sysc 0xd70 0x1>;
-> 	// ...
-> };
-> 
-> Along with it, add the syscon to the compatible list as it will be
-> requested by the consumer drivers. The syscon was added to the rest of
-> system controller variants as these are similar with RZ/G3S and can
-> benefit from the implementation proposed in this series.
-> 
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> Signed-off-by: Liu Ying <victor.liu@nxp.com>
 > ---
+> v6:
+> * No change.
 > 
-> Changes in v2:
-> - none; this patch is new
+> v5:
+> * Document aliases for processing units which have multiple instances in
+>   the Display Controller.  Drop Rob's previous R-b tag. (Maxime)
 > 
+> v4:
+> * Collect Rob's R-b tag.
 > 
->  .../soc/renesas/renesas,rzg2l-sysc.yaml       | 23 ++++++++++++++-----
->  1 file changed, 17 insertions(+), 6 deletions(-)
+> v3:
+> * Combine fsl,imx8qxp-dc-fetchunit-common.yaml,
+>   fsl,imx8qxp-dc-fetchlayer.yaml and fsl,imx8qxp-dc-fetchwarp.yaml
+>   into 1 schema doc fsl,imx8qxp-dc-fetchunit.yaml. (Rob)
+> * Document all processing units. (Rob)
 > 
-> diff --git a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
-> index 4386b2c3fa4d..90f827e8de3e 100644
-> --- a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
-> +++ b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
-> @@ -19,11 +19,13 @@ description:
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - renesas,r9a07g043-sysc # RZ/G2UL and RZ/Five
-> -      - renesas,r9a07g044-sysc # RZ/G2{L,LC}
-> -      - renesas,r9a07g054-sysc # RZ/V2L
-> -      - renesas,r9a08g045-sysc # RZ/G3S
-> +    items:
-> +      - enum:
-> +          - renesas,r9a07g043-sysc # RZ/G2UL and RZ/Five
-> +          - renesas,r9a07g044-sysc # RZ/G2{L,LC}
-> +          - renesas,r9a07g054-sysc # RZ/V2L
-> +          - renesas,r9a08g045-sysc # RZ/G3S
-> +      - const: syscon
->  
->    reg:
->      maxItems: 1
-> @@ -42,9 +44,17 @@ properties:
->        - const: cm33stbyr_int
->        - const: ca55_deny
->  
-> +  "#renesas,sysc-signal-cells":
-> +    description:
-> +      The number of cells needed to configure a SYSC controlled signal. First
-> +      cell specifies the SYSC offset of the configuration register, second cell
-> +      specifies the bitmask in register.
-> +    const: 2
-
-If there's only one possible value, then just fix the size in the users. 
-We don't need #foo-cells until things are really generic. Plus patch 
-8 already ignores this based on the schema. And there's implications to 
-defining them. For example, the pattern is that the consumer property 
-name is renesas,sysc-signals, not renesas,sysc-signal.
-
-Maybe someone wants to create a 'h/w (signal) control' subsystem (and 
-binding) that is just 'read, assert, or deassert a h/w signal'. Perhaps 
-even the reset subsystem could be morphed into that as I think there 
-would be a lot of overlap. Maybe that would cut down on a lot of these 
-syscon phandle properties. I would find that a lot more acceptable than 
-the generic 'syscons' and '#syscon-cells' binding that was proposed at 
-some point.
-
-
+> v2:
+> * Drop fsl,dc-*-id DT properties. (Krzysztof)
+> * Add port property to fsl,imx8qxp-dc-tcon.yaml. (Krzysztof)
+> * Fix register range sizes in examples.
+> 
+>  .../display/imx/fsl,imx8qxp-dc-blitblend.yaml |  46 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-clut.yaml      |  49 ++++++
+>  .../imx/fsl,imx8qxp-dc-constframe.yaml        |  49 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-dither.yaml    |  49 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-extdst.yaml    |  77 +++++++++
+>  .../display/imx/fsl,imx8qxp-dc-fetchunit.yaml | 147 ++++++++++++++++++
+>  .../display/imx/fsl,imx8qxp-dc-filter.yaml    |  47 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-framegen.yaml  |  68 ++++++++
+>  .../display/imx/fsl,imx8qxp-dc-gammacor.yaml  |  38 +++++
+>  .../imx/fsl,imx8qxp-dc-layerblend.yaml        |  45 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-matrix.yaml    |  48 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-rop.yaml       |  48 ++++++
+>  .../display/imx/fsl,imx8qxp-dc-safety.yaml    |  34 ++++
+>  .../imx/fsl,imx8qxp-dc-scaling-engine.yaml    |  89 +++++++++++
+>  .../display/imx/fsl,imx8qxp-dc-signature.yaml |  58 +++++++
+>  .../display/imx/fsl,imx8qxp-dc-store.yaml     | 100 ++++++++++++
+>  .../display/imx/fsl,imx8qxp-dc-tcon.yaml      |  50 ++++++
+>  17 files changed, 1042 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-clut.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-constframe.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-dither.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-extdst.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-fetchunit.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-filter.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-framegen.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-gammacor.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-layerblend.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-matrix.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-rop.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-safety.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-scaling-engine.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-signature.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-store.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-tcon.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml
+> new file mode 100644
+> index 000000000000..7f800e72c3f3
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml
+> @@ -0,0 +1,46 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,imx8qxp-dc-blitblend.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
->  required:
->    - compatible
->    - reg
-> +  - "#renesas,sysc-signal-cells"
+> +title: Freescale i.MX8qxp Display Controller Blit Blend Unit
+> +
+> +description: |
+> +  Combines two input frames to a single output frame, all frames having the
+> +  same dimension.
+> +
+> +  Each Blit Blend Unit device should have an alias in the aliases node, in the
+> +  form of dc<x>-blitblend<y>, where <x> is an integer specifying the Display
+> +  Controller instance and <y> is an integer specifying the Blit Blend Unit
+> +  device instance.
 
-New required properties are an ABI break.
-
->  
->  additionalProperties: false
->  
-> @@ -53,7 +63,7 @@ examples:
->      #include <dt-bindings/interrupt-controller/arm-gic.h>
->  
->      sysc: system-controller@11020000 {
-> -            compatible = "renesas,r9a07g044-sysc";
-> +            compatible = "renesas,r9a07g044-sysc", "syscon";
-
-What happens on a new kernel and a DT without this change?
+That's really an abuse of aliases. If you need to describe connections 
+between components, use the graph binding like everyone else does for 
+display path components.
 
 Rob
 
