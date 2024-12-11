@@ -4,92 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74181E7717D
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Dec 2024 12:23:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8952E7717D
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Dec 2024 13:02:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sTbEahjtym9uk/MOLCFlpBunpNFy/kEsNLL5C35UsyQ=; b=QGMJLI5tgR5MR5
-	9AwW5ksCP5TTVHemBBydhZqS5DaYN8dy9/Wmse7LW4n7fok/Io5vFt16zg2RqD/He4SRsjGVUs8PH
-	X/PXfYm6ZhmikRs7+RrkMAg8JTZCcQrelI05Uq+KMal19z0W7qaR9tJompWMntChRAK3b3nHA2fga
-	2d8U6mLgaeNjlzP+wmYechgi2qUAON4PuIyjJCEF2Kofdu9i0F3dMl+z4qd8pRJ1O2TCLNaP5yEY8
-	HHOJrKhxNW/l4of26O0ltVevycFXyhewCjiCrqY9dMpZm6dHj8I3WyDE+m5fq2pXcOvRMsyCmLyJw
-	xdvUspjt4ojXUroQ7x5A==;
+	List-Owner; bh=n0Gp5T/Cl+ipQCLhg+v/yLwLdZ9YfSdGUjiO12SfpTg=; b=zFeQ7HwyNJbUEL
+	Q87/qO9/mB+YNjzkmL787SQQTjV/zo6YhlrdK1MZyNTcUPE8JJP2THFbyQYHKmLtD3CpNLehYh05h
+	IVYWsW3XvWymGKWeRGLBpwvHU4cd/fxfAPvyEtlcStc6l12oWoX4n8TKk85C6qMyOXExDDrrJjEOM
+	PfqnSuwlo66OEXkhJE1UMLy/B033S8PG7MDSOan6nqsNkrZ96pY8RcRrCZEEeS7UptS1TkIf5avp/
+	P7oVe65Zi/oO0ExQvJGlus7KnDRiY3pFA5m1VvzimMfoJEuR2XZ710uh6E48aCnmF6kqwOh1MEsWx
+	VR7cpaNcQKak3DC9JHwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLLkG-0000000EoYA-0OI2;
-	Wed, 11 Dec 2024 12:23:12 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1tLMLr-0000000EuiN-1D06;
+	Wed, 11 Dec 2024 13:02:03 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLLkE-0000000EoXa-0Lwq
+	id 1tLMAa-0000000Esso-3gBk
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Dec 2024 12:23:11 +0000
-Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-5d3ea065b79so5715568a12.3
-        for <linux-phy@lists.infradead.org>; Wed, 11 Dec 2024 04:23:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1733919788; x=1734524588; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=ASQKGpCO7s4KPkalfOXfelNyrTTyYMkGNmfArDEmeBM=;
-        b=reZe0RijiO3wCKXHb/2k8aKqmUFbfqxp5rIHuJdOPiwTj/HuF3eBwBV118euNxADV8
-         4aBXpu71jDFz/EyP8zzYdo1qc4zVn6ENpEhePJGLSFNow6kv3wIn+b5VWU+jb/PT/TR/
-         jeTnb/K5IDXVk/Lejv/PeJG1at5RlWiI+Xtro/c4J+PtUMg9+0pjUxtVpLZw7ozF/hAE
-         BdxRNgzkwDClSxbzCecm+2WHJfne6t+CsYbbFTD3aFCoULyRYNBeeRzkk3bjpqpLX0h5
-         u9dAtX2Zzxthpj5jusbbCgU7A+6eQE0ZdYtuhFB4HILBj6ve1MjgGrfh9+p8EgkFsy+h
-         uzvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733919788; x=1734524588;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=ASQKGpCO7s4KPkalfOXfelNyrTTyYMkGNmfArDEmeBM=;
-        b=Bc4fRajE6o3IOJvEBa8TxO8asAx+GH8uf8XOsN0z1fyZZ6Q0DzMmBsqkkWHBnpUhJE
-         GKpsQZc+uSfE1ON7rMsiPGil3DSRIe9d0pzNVQ8ohkwFH2OrfPDZZl9isetrf9u7s/5y
-         NUHWvU9YWKCYJh9fb3/68mnT/jcM2iAvpWMp3QWHyJqWwdQcq4XXfH44J39Q89/PiZhb
-         rPOflftvL/7yY8OpmckSQW43DjWGZlg/4hPwPejw63P1SuEeu1jMlx6IhxBUbfivjtCt
-         +xKr9PsbxNWMQ0Im807c3eQtT1uETg7J7AqnXgeQ8VfIFq13ba5RZR/8Jkiu2LRI4Juu
-         ph9w==
-X-Forwarded-Encrypted: i=1; AJvYcCVgIVsQ+JySZpBxnX/Ipmuth+FtOX8VDIzO3W5q5Mp67s9T2HEmzOw5T11AOMeR/KhNdgT2PfHgnM0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyWkfMlpEzK7Vz+ekKnq3vx6xEB/oMai3DdLu6ESY7PgiU6+dYB
-	/6r5mJzGVC3uWfQ6UdZ7hlRwQqNG8MiVltlpg2nGel6pJ2R9lYP0BTqFviRFOQU=
-X-Gm-Gg: ASbGncv7xm/w+Z+xCMssD2EllLvnJhVVkg0fuHQIUHvEmJN1WnFpURZRfLAzkDN8aEo
-	l8ikwqih1DpfolzgOysPI1ZmVNmuNRcnIf0p1qbImF0u5v8KzvWceY+duwzP45FXIsZmbAaAlTx
-	FJapdo8PBUVcdksIbsfRxbQh4C59sfXBC/VZ011OWC/HvjBW4b17vyfLcbQPKcwD/9RrtbtyS8L
-	+XQFUw07CvNZq20AqUDwQEETXoBuXldqRwTmkLNraXyzojmY9MWkCUCTQS55BI=
-X-Google-Smtp-Source: AGHT+IGes3nVxEDSBxlaHGZVONLhxg58Ob1fOjsVMtO4m5ilIn457hh6A+FzVBWpzlcY83VX6o4HaQ==
-X-Received: by 2002:a05:6402:4305:b0:5d0:8498:8bed with SMTP id 4fb4d7f45d1cf-5d4330a5ce2mr2727865a12.15.1733919787869;
-        Wed, 11 Dec 2024 04:23:07 -0800 (PST)
-Received: from [192.168.50.4] ([82.78.167.161])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5d14c7aa441sm8847370a12.72.2024.12.11.04.23.03
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 11 Dec 2024 04:23:07 -0800 (PST)
-Message-ID: <437b8d13-8ec1-40c7-b95c-ddb836e123d6@tuxon.dev>
-Date: Wed, 11 Dec 2024 14:23:02 +0200
+	Wed, 11 Dec 2024 12:50:26 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BBAokM2006981;
+	Wed, 11 Dec 2024 12:50:13 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	zk4s7vhB2asnvEBnYuTFCimLlmm/nGDu1HLQOKCWzJw=; b=bKHlB12Jc8cR9Zp4
+	/EF33Rrz2D9AwqIyHOV5F1upJtrVWdK1NJn3tfowkFdhpPIj7/wGLCiGjgx7KchR
+	tHdxHg8Vt/dadt2UERt8XsQ1wpOEudK1WorLRGBu2l6EQb4U8avn0yxwThtrA+eN
+	XeNR8i2DeyOjPcQ8t1vNVl925MX25zjNjb/pVjitF8WQNyOaWQ12CobMMICCWgCT
+	OQIgvGu9ppiUGoMr9H/8nv26lrxm0qUYRME+Irxx0dpEEZSArssg0mSygxrYgdfT
+	DJkBAyM0Gh2mVkb2C6i51qmsUBHECMAlhZyGC8qOi4dHLo3SyAQYzQZXnlXt/i2s
+	RKsFhw==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43f0r9swvp-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 11 Dec 2024 12:50:13 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BBCoCuX026022
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 11 Dec 2024 12:50:12 GMT
+Received: from [10.64.16.135] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 11 Dec
+ 2024 04:50:05 -0800
+Message-ID: <d5151b82-5f05-4826-99b4-e925c20550b4@quicinc.com>
+Date: Wed, 11 Dec 2024 20:50:02 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 01/15] dt-bindings: soc: renesas: renesas,rzg2l-sysc:
- Add #renesas,sysc-signal-cells
-Content-Language: en-US
-To: Rob Herring <robh@kernel.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, p.zabel@pengutronix.de, geert+renesas@glider.be,
- magnus.damm@gmail.com, gregkh@linuxfoundation.org,
- yoshihiro.shimoda.uh@renesas.com, christophe.jaillet@wanadoo.fr,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-usb@vger.kernel.org, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-References: <20241126092050.1825607-1-claudiu.beznea.uj@bp.renesas.com>
- <20241126092050.1825607-2-claudiu.beznea.uj@bp.renesas.com>
- <20241210184542.GA4077820-robh@kernel.org>
-From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <20241210184542.GA4077820-robh@kernel.org>
+Subject: Re: [PATCH 3/8] phy: qcom: qmp-usbc: Add DP phy mode support on
+ QCS615
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+	<quic_abhinavk@quicinc.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten
+	<marijn.suijten@somainline.org>,
+        Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Rob Herring <robh@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        "Kuogee
+ Hsieh" <quic_khsieh@quicinc.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon
+ Vijay Abraham I" <kishon@kernel.org>,
+        Linus Walleij
+	<linus.walleij@linaro.org>,
+        Bartosz Golaszewski <brgl@bgdev.pl>, <quic_lliu6@quicinc.com>,
+        <quic_fangez@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>
+References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
+ <20241129-add-displayport-support-for-qcs615-platform-v1-3-09a4338d93ef@quicinc.com>
+ <CAA8EJppOR_UXoVpMt-dhfWdCz3UNfsXGdz8X9NqpaSmYj3AZDg@mail.gmail.com>
+ <5ea14162-567b-462d-be02-b73b954b7507@quicinc.com>
+ <5whv4z7u6fkfwlv5muox5dmv6fow4mga76ammapw7wph7vwv3f@xibcjdfqorgf>
+ <iqcofcntirmlwcpyfr4yabymqfcgyrij57bibf337tmxpa73t6@npkt6wquenf6>
+ <527baded-f348-48a8-81cd-3f84c0ff1077@quicinc.com>
+ <t5vcjlf44fhae4f2h75cfs3f7r6tdstw4ysmkapvvawj6xp23x@xnxqnxvyhshe>
+From: Xiangxu Yin <quic_xiangxuy@quicinc.com>
+In-Reply-To: <t5vcjlf44fhae4f2h75cfs3f7r6tdstw4ysmkapvvawj6xp23x@xnxqnxvyhshe>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: YEcBUSMTawlFVl6QGG7shl_PtInvRli7
+X-Proofpoint-GUID: YEcBUSMTawlFVl6QGG7shl_PtInvRli7
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ impostorscore=0 phishscore=0 spamscore=0 clxscore=1015 mlxlogscore=999
+ malwarescore=0 lowpriorityscore=0 mlxscore=0 bulkscore=0 suspectscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412110093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_042310_129775_37ADE026 
-X-CRM114-Status: GOOD (  29.59  )
+X-CRM114-CacheID: sfid-20241211_045025_044483_8EBFD602 
+X-CRM114-Status: GOOD (  25.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,171 +125,90 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi, Rob,
-
-On 10.12.2024 20:45, Rob Herring wrote:
-> On Tue, Nov 26, 2024 at 11:20:36AM +0200, Claudiu wrote:
->> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->>
->> The RZ/G3S system controller (SYSC) has registers to control signals that
->> are routed to various IPs. These signals must be controlled during
->> configuration of the respective IPs. One such signal is the USB PWRRDY,
->> which connects the SYSC and the USB PHY. This signal must to be controlled
->> before and after the power to the USB PHY is turned off/on.
->>
->> Other similar signals include the following (according to the RZ/G3S
->> hardware manual):
->>
->> * PCIe:
->> - ALLOW_ENTER_L1 signal controlled through the SYS_PCIE_CFG register
->> - PCIE_RST_RSM_B signal controlled through the SYS_PCIE_RST_RSM_B
->>   register
->> - MODE_RXTERMINATION signal controlled through SYS_PCIE_PHY register
->>
->> * SPI:
->> - SEL_SPI_OCTA signal controlled through SYS_IPCONT_SEL_SPI_OCTA
->>   register
->>
->> * I2C/I3C:
->> - af_bypass I2C signals controlled through SYS_I2Cx_CFG registers
->>   (x=0..3)
->> - af_bypass I3C signal controlled through SYS_I3C_CFG register
->>
->> * Ethernet:
->> - FEC_GIGA_ENABLE Ethernet signals controlled through SYS_GETHx_CFG
->>   registers (x=0..1)
->>
->> Add #renesas,sysc-signal-cells DT property to allow different SYSC signals
->> consumers to manage these signals.
->>
->> The goal is to enable consumers to specify the required access data for
->> these signals (through device tree) and let their respective drivers
->> control these signals via the syscon regmap provided by the system
->> controller driver. For example, the USB PHY will describe this relation
->> using the following DT property:
->>
->> usb2_phy1: usb-phy@11e30200 {
->> 	// ...
->> 	renesas,sysc-signal = <&sysc 0xd70 0x1>;
->> 	// ...
->> };
->>
->> Along with it, add the syscon to the compatible list as it will be
->> requested by the consumer drivers. The syscon was added to the rest of
->> system controller variants as these are similar with RZ/G3S and can
->> benefit from the implementation proposed in this series.
->>
->> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->> ---
->>
->> Changes in v2:
->> - none; this patch is new
->>
->>
->>  .../soc/renesas/renesas,rzg2l-sysc.yaml       | 23 ++++++++++++++-----
->>  1 file changed, 17 insertions(+), 6 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
->> index 4386b2c3fa4d..90f827e8de3e 100644
->> --- a/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
->> +++ b/Documentation/devicetree/bindings/soc/renesas/renesas,rzg2l-sysc.yaml
->> @@ -19,11 +19,13 @@ description:
->>  
->>  properties:
->>    compatible:
->> -    enum:
->> -      - renesas,r9a07g043-sysc # RZ/G2UL and RZ/Five
->> -      - renesas,r9a07g044-sysc # RZ/G2{L,LC}
->> -      - renesas,r9a07g054-sysc # RZ/V2L
->> -      - renesas,r9a08g045-sysc # RZ/G3S
->> +    items:
->> +      - enum:
->> +          - renesas,r9a07g043-sysc # RZ/G2UL and RZ/Five
->> +          - renesas,r9a07g044-sysc # RZ/G2{L,LC}
->> +          - renesas,r9a07g054-sysc # RZ/V2L
->> +          - renesas,r9a08g045-sysc # RZ/G3S
->> +      - const: syscon
->>  
->>    reg:
->>      maxItems: 1
->> @@ -42,9 +44,17 @@ properties:
->>        - const: cm33stbyr_int
->>        - const: ca55_deny
->>  
->> +  "#renesas,sysc-signal-cells":
->> +    description:
->> +      The number of cells needed to configure a SYSC controlled signal. First
->> +      cell specifies the SYSC offset of the configuration register, second cell
->> +      specifies the bitmask in register.
->> +    const: 2
-> 
-> If there's only one possible value, then just fix the size in the users. 
-> We don't need #foo-cells until things are really generic. Plus patch 
-> 8 already ignores this based on the schema. And there's implications to 
-> defining them. For example, the pattern is that the consumer property 
-> name is renesas,sysc-signals, not renesas,sysc-signal.
-
-OK, I'll fix the size in users.
-
-> 
-> Maybe someone wants to create a 'h/w (signal) control' subsystem (and 
-> binding) that is just 'read, assert, or deassert a h/w signal'. Perhaps 
-
-Until then, is it OK for you to keep it as proposed here?
-
-> even the reset subsystem could be morphed into that as I think there 
-> would be a lot of overlap. 
-
-The USB PWRRDY signal handling has been initially implemented though a
-reset controller driver but, after discussion with Philipp it has been
-concluded that it should be handled differently, since it is not a reset
-signal.
-
-> Maybe that would cut down on a lot of these 
-> syscon phandle properties. I would find that a lot more acceptable than 
-> the generic 'syscons' and '#syscon-cells' binding that was proposed at 
-> some point.
-> 
-> 
->> +
->>  required:
->>    - compatible
->>    - reg
->> +  - "#renesas,sysc-signal-cells"
-> 
-> New required properties are an ABI break.
-
-I've added it as in the old DTs the system-controller node is disabled.
-With that, do you consider it OK to keep it?
-
-> 
->>  
->>  additionalProperties: false
->>  
->> @@ -53,7 +63,7 @@ examples:
->>      #include <dt-bindings/interrupt-controller/arm-gic.h>
->>  
->>      sysc: system-controller@11020000 {
->> -            compatible = "renesas,r9a07g044-sysc";
->> +            compatible = "renesas,r9a07g044-sysc", "syscon";
-> 
-> What happens on a new kernel and a DT without this change?
-
-The older DT have the system-controller node disabled, thus nothing will be
-probed for it.
-
-Thank you for your review,
-Claudiu
-
-> 
-> Rob
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAxMi8xMS8yMDI0IDU6NDYgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gT24gV2Vk
+LCBEZWMgMTEsIDIwMjQgYXQgMDg6NDY6MTZBTSArMDgwMCwgWGlhbmd4dSBZaW4gd3JvdGU6Cj4+
+Cj4+Cj4+IE9uIDEyLzEwLzIwMjQgMTE6MDkgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4+
+PiBPbiBUaHUsIERlYyAwNSwgMjAyNCBhdCAwODozMToyNFBNICswMjAwLCBEbWl0cnkgQmFyeXNo
+a292IHdyb3RlOgo+Pj4+IE9uIFRodSwgRGVjIDA1LCAyMDI0IGF0IDA5OjI2OjQ3UE0gKzA4MDAs
+IFhpYW5neHUgWWluIHdyb3RlOgo+Pj4+Pgo+Pj4+Pgo+Pj4+PiBPbiAxMS8yOS8yMDI0IDEwOjMz
+IFBNLCBEbWl0cnkgQmFyeXNoa292IHdyb3RlOgo+Pj4+Pj4gT24gRnJpLCAyOSBOb3YgMjAyNCBh
+dCAwOTo1OSwgWGlhbmd4dSBZaW4gPHF1aWNfeGlhbmd4dXlAcXVpY2luYy5jb20+IHdyb3RlOgo+
+Pj4+Pj4+Cj4+Pj4+Pj4gRXh0ZW5kZWQgRFAgc3VwcG9ydCBmb3IgUUNTNjE1IFVTQiBvciBEUCBw
+aHkuIERpZmZlcmVudGlhdGVkIGJldHdlZW4KPj4+Pj4+PiBVU0JDIGFuZCBEUCBQSFkgdXNpbmcg
+dGhlIG1hdGNoIHRhYmxl4oCZcyB0eXBlLCBkeW5hbWljYWxseSBnZW5lcmF0aW5nCj4+Pj4+Pj4g
+ZGlmZmVyZW50IHR5cGVzIG9mIGNmZyBhbmQgbGF5b3V0IGF0dHJpYnV0ZXMgZHVyaW5nIGluaXRp
+YWxpemF0aW9uIGJhc2VkCj4+Pj4+Pj4gb24gdGhpcyB0eXBlLiBTdGF0aWMgdmFyaWFibGVzIGFy
+ZSBzdG9yZWQgaW4gY2ZnLCB3aGlsZSBwYXJzZWQgdmFsdWVzCj4+Pj4+Pj4gYXJlIG9yZ2FuaXpl
+ZCBpbnRvIHRoZSBsYXlvdXQgc3RydWN0dXJlLgo+Pj4+Pj4KPj4+Pj4+IFdlIGRpZG4ndCBoYXZl
+IGFuIHVuZGVyc3RhbmRpbmcgLyBjb25jbHVzaW9uIHdoZXRoZXIKPj4+Pj4+IHFjb20sdXNiLXNz
+cGh5LXFtcC11c2IzLW9yLWRwIFBIWXMgYXJlIGFjdHVhbGx5IGEgc2luZ2xlIGRldmljZSAvIFBI
+WQo+Pj4+Pj4gb3IgdHdvIFBIWXMgYmVpbmcgcGxhY2VkIG5leHQgdG8gZWFjaCBvdGhlci4gQ291
+bGQgeW91IHBsZWFzZSBzdGFydAo+Pj4+Pj4geW91ciBjb21taXQgbWVzc2FnZSBieSBleHBsYWlu
+aW5nIGl0PyBPciBldmVuIGJldHRlciwgbWFrZSB0aGF0IGEgcGFydAo+Pj4+Pj4gb2YgdGhlIGNv
+dmVyIGxldHRlciBmb3IgYSBuZXcgc2VyaWVzIHRvdWNoaW5nIGp1c3QgdGhlIFVTQkMgUEhZCj4+
+Pj4+PiBkcml2ZXIuIERQIGNoYW5nZXMgZG9uJ3QgaGF2ZSBhbnl0aGluZyBpbiBjb21tb24gd2l0
+aCB0aGUgUEhZIGNoYW5nZXMsCj4+Pj4+PiBzbyB5b3UgY2FuIHNwbGl0IHRoZSBzZXJpZXMgaW50
+byB0d28uCj4+Pj4+Pgo+Pj4+PiBCZWZvcmUgaW1wbGVtZW50IERQIGV4dGVuc2lvbiwgd2UgaGF2
+ZSBkaXNjdXNzZWQgd2l0aCBhYmhpbmF2IGFuZCBrcmlzaG5hIGFib3V0IHdoZXRoZXIgdXNlIGNv
+bWJvLCB1c2JjIG9yIHNlcGFyYXRlIHBoeS4KPj4+Pgo+Pj4+IFdoYXQgaXMgIkRQIGV4dGVuc2lv
+biI/Cj4+Pj4KPj4gSSdtIHNvcnJ5IGNvbmZ1c2lvbiBjYXN1ZWQgYnkgbXkgZGVzY3JpcHRpb24u
+IEl0J3MgbWVhbnMgZXh0ZW5kIERQIGltcGxlbW50IGZvciBVU0JDIHBoeSBkcml2ZXIuCj4+Pj4+
+Cj4+Pj4+IFdlIGlkZW50aWZpZWQgdGhhdCBEUCBhbmQgVVNCIHNoYXJlIHNvbWUgY29tbW9uIGNv
+bnRyb2xzIGZvciBwaHlfbW9kZSBhbmQgb3JpZW50YXRpb24uCj4+Pj4+IFNwZWNpZmljYWxseSwg
+J1RDU1JfVVNCM18wX0RQX1BIWU1PREUnIGNvbnRyb2xzIHdobyBtdXN0IHVzZSB0aGUgbGFuZXMg
+LSBVU0Igb3IgRFAsCj4+Pj4+IHdoaWxlIFBFUklQSF9TU19VU0IwX1VTQjNQSFlfUENTX01JU0Nf
+VFlQRUNfQ1RSTCBjb250cm9scyB0aGUgb3JpZW50YXRpb24uCj4+Pj4+IEl0IHdvdWxkIGJlIG1v
+cmUgZWZmaWNpZW50IGZvciBhIHNpbmdsZSBkcml2ZXIgdG8gbWFuYWdlIHRoZXNlIGNvbnRyb2xz
+LiAKPj4+Pgo+Pj4+IFRoZSBxdWVzdGlvbiBpcyBhYm91dCB0aGUgaGFyZHdhcmUsIG5vdCBhYm91
+dCB0aGUgZHJpdmVyLgo+Pj4+Cj4+Pj4+IEFkZGl0aW9uYWxseSwgdGhpcyBQSFkgZG9lcyBub3Qg
+c3VwcG9ydCBBbHQgTW9kZSwgYW5kIHRoZSB0d28gY29udHJvbCByZWdpc3RlcnMgYXJlIGxvY2F0
+ZWQgaW4gc2VwYXJhdGUgYWRkcmVzcyBzcGFjZXMuIAo+Pj4+PiBUaGVyZWZvcmUsIGV2ZW4gdGhv
+dWdoIHRoZSBvcmllbnRhdGlvbiBmb3IgRFAgb24gdGhpcyBwbGF0Zm9ybSBpcyBhbHdheXMgbm9y
+bWFsIGFuZCBjb25uZWN0ZWQgdG8gdGhlIHZpZGVvIG91dHB1dCBib2FyZCwgCj4+Pj4+IHdlIHN0
+aWxsIGRlY2lkZWQgdG8gYmFzZSBpdCBvbiB0aGUgVVNCQyBleHRlbnNpb24uCj4+Pj4KPj4+PiBD
+b3VsZCB5b3UgcGxlYXNlIGNsYXJpZnksIGRvIHVzYjMtb3ItZHAgUEhZcyBzdXBwb3J0IERQLW92
+ZXItVVNCLUM/IEkKPj4+PiB0aG91Z2h0IHRoYXQgdXNiYy1vci1kcCBwbGF0Zm9ybXMgc3VwcG9y
+dCB0aGF0LCBidXQgdGhleSBkb24ndAo+Pj4+IHN1cHBvcnQgRFArVVNCIHBpbiBjb25maWd1cmF0
+aW9uLiBOb3RlLCB0aGUgcXVlc3Rpb24gaXMgYnJvYWRlciB0aGFuCj4+Pj4ganVzdCBRQ1M2MTUs
+IGl0IGNvdmVycyB0aGUgUEhZIHR5cGUgaXRzZWxmLgo+Pj4+Cj4+Pj4gQWxzbywgaXMgVENTUiBj
+b25maWd1cmF0aW9uIHJlYWQvd3JpdGUgb3IgcmVhZC1vbmx5PyBBcmUgd2Ugc3VwcG9zZWQgdG8K
+Pj4+PiBzZXQgdGhlIHJlZ2lzdGVyIGZyb20gT1Mgb3IgYXJlIHdlIHN1cHBvc2VkIHRvIHJlYWQg
+aXQgYW5kIHRodXMgZGV0ZW1pbmUKPj4+PiB0aGUgUEhZIG1vZGU/Cj4+Pgo+Pj4gQW55IHVwZGF0
+ZXMgb24gdGhlc2UgdHdvIHRvcGljcz8KPj4+Cj4+IFN0aWxsIGNvbmZpcm1pbmcgZGV0YWlsIGlu
+Zm8gd2l0aCBIVyAmIGRlc2lnbiB0ZWFtLgo+PiBJ4oCZbGwgdXBkYXRlIHRoZSBpbmZvcm1hdGlv
+biB0aGF0IGhhcyBiZWVuIGNvbmZpcm1lZCBzbyBmYXIuCj4+IFRoaXMgcGh5IHN1cHBvcnQgRFAt
+b3Zlci1VU0ItQyxidXQgaXQncyBub3Qgc3VwcG9ydCBhbHQtbW9kZSB3aGljaCAyIGxhbmUgd29y
+ayBmb3IgRFAsIG90aGVyIDIgbGFuZSB3b3JrIGZvciBVU0IuCj4+IFRDU1IgcGh5IG1vZGUgaXMg
+cmVhZC93cml0ZSByZWcgYW5kIHdlIGNhbiByZWFkIGZvciBkZXRlcm1pbmUgcGh5IG1vZGUuCj4g
+Cj4gT2ssIHRoYW5rcyBmb3IgdGhlIGV4cGxhbmF0aW9uLiBGcm9tIG15IHBvaW50IG9mIHZpZXc6
+Cj4gCj4gLSBJbXBsZW1lbnQgdGhlIERQIFBIWSB0byBiZSBhIHBhcnQgb2YgdGhlIHNhbWUgZHJp
+dmVyLiBFYWNoIGRldmljZQo+ICAgc3VwcG9ydGVkIGJ5IHRoZSB1c2JjIGRyaXZlciBzaG91bGQg
+Z2V0IGJvdGggUEhZcy4KPiAKPiAtIE1ha2Ugc3VyZSBub3QgdG8gYnJlYWsgdGhlIEFCSTogI3Bo
+eS1jZWxscyA9IDwwPiBzaG91bGQgc3RpbGwgd29yayBhbmQKPiAgIHJldHVybiBVU0IgUEhZLCBr
+ZWVwaW5nIGJhY2t3YXJkcyBjb21wYXRpYmlsaXR5LiBOZXdlciBkZXZpY2VzIG9yCj4gICB1cGdy
+YWRlZCBEVCBmb3Igb2xkIGRldmljZXMgc2hvdWxkIHJldHVybiBVU0IgUEhZIGZvciA8Li4uIDA+
+IGFuZCBEUAo+ICAgUEhZIGZvciA8Li4uIDE+Lgo+IApZZXMsIGN1cnJlbnRseSB3ZSBoYXZlIGlt
+cGxlbWVudGVkIGxpa2UgeW91ciBkZXNjcmlwdGlvbiwKRWFjaCBkZWl2Y2Ugc2hvdWQgZ2V0IGJv
+dGggUEhZcywgRFAgUEhZIGZvciA8Li4uIDE+IGFuZCBVU0IgUEhZIGZvciA8Li4uIDA+Lgo+IC0g
+SSdtIG5vdCBzaHVyZSBob3cgdG8gaGFuZGxlIHRoZSBVU0IgYW5kIERQIGNvZXhpc3RlbmNlLCBl
+c3BlY2lhbGx5IGluCj4gICB5b3VyIGNhc2Ugb2YgdGhlIFVTQi1vci1EUCBQSFkuCj4gCkZvciBj
+b2V4aXN0ZW5jZSBwcm9jZXNzOgoKV2hlbiB3ZSBzdGFydCBpbXBsZW1lbnQgRFAgcGFydCwgdXNi
+IGRyaXZlciB0ZWFtIHNhaWQgb25seSBuZWVkIGNvbmZpZyBUQ1NSIHBoeSBtb2RlIGFuZCBvcmll
+bnRhdGlvbiBkdXJpbmcgc3dpdGNoIGluIFVTQi1DIHBvcnQuCkJhc2VkIG9uIHlvdXIgcHJldmlv
+dXMgY29tbWVudHMgYXZvdXQgU1dfUFdSRE4sIEknbSBjb25maXJtaW5nIHdpdGggdGhlIFVTQiB0
+ZWFtIHdoZXRoZXIgU1dfUkVTVC9TV1BXUkROL1NUQVJUX0NUUkwgcmVnaXN0ZXJzIG1pZ2h0IGFm
+ZmVjdCBEUC4KCkFueXdheSwgZXZlbiB0aG91Z2ggdGhlIG9yaWdpbmFsIFNvQyBkZXNpZ24gc3Vw
+cG9ydHMgRFAgb3IgVVNCIG92ZXIgVHlwZS1D77yMCmJ1dCBvbiBRQ1M2MTUgQURQIEFJUiBwbGF0
+Zm9ybSwgdGhlcmUgYXJlIG9ubHkgZm91ciBVU0ItQSBwb3J0IHdoaWNoIHdvcmtzIHdpdGggJ3Fj
+czYxNS1xbXAtdXNiMy1waHknIGRyaXZlciwgYW5kIG5vIFVTQi1DIHBvcnQuCkRQIHBvcnQgaXMg
+bWFwcHBlZCBmcm9tIHVzYiBwaW4gdG8gdGhlIHZpZGVvIG91dCBzdWItYm9hcmQuCnNvIHdlIGFy
+ZSB1bmFibGUgdG8gdmVyaWZ5IHRoZSBzd2l0Y2hpbmcgY2FzZSBiZXR3ZWVuIERQIGFuZCBVU0Ig
+ZGV2aWNlcyB1bmRlciBVU0ItQy4KCkhvd2V2ZXIsIEknbSBhbHNvIGNvbmZpcm1pbmcgd2hldGhl
+ciBhbnl0aGluZyBvdGhlciB3aWxsIGFmZmVjdCBVU0IgYW5kIERQIGVhY2ggb3RoZXIuCgoKCi0t
+IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
