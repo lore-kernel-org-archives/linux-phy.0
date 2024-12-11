@@ -4,114 +4,168 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A88AE7717F
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Dec 2024 00:46:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6CC2E77180
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Dec 2024 03:05:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=75rNwDqCgy3XN7VCQcwjqGhRSMLpfdoHj4TIIRm9G5M=; b=ntATu5mT3SKo84
-	SuUze0tRgLRHQPNm02c3RTYa8PTQgCoZ7AVo3rsJBmlXzWg9Ox3GFipSRNzBhqknOGJ6e8nF7S06J
-	60O9v7hlcv/OhTeAJ8p6xVEGZ26f1D00fHXtbu6e0Pl9DRwks5SgLMzDQpaaLWi8aFiQLAzRov+p2
-	ABUW5sYPisvYLlkOygZj3l3ktsXS4awg5xglCFDgzcznLvYhPZRuXi75MpuqWDNaFcf6weGU0Uf56
-	Wsnw7/bFOsGhNN/QLWNvsaNuWF937UVSNlAi9Lfq63LkWtrVRmAhaVA7mJWZnukbFZaOXe3CZFRja
-	oJRVDyo4c8Q7EHgn25JQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=8Mjw1UqPG+dmcoemUtj6bTx7lL39ye858uR+UVwpAPk=; b=RTPLY3zOLHzMioPCL4mC4AVu20
+	Sg1wd/c4WMb5kerlNR7rgLG/JaAtGPmLNrvd42N6jtdyBo4yJ23uRasC0sg5affYgRiKMi7SmI/ck
+	lGbl3WfQKAjpwWnxwKWbjTgbqEEjoOB3C+zLqp1g3kmzGWLOlNpZmopqjEPgHvSr51vorXWpDfG3E
+	tHEc0qF+htECpDvA9MVqLba0IblMcAXZQnHwRHeUwnxsYl25u9ob5KNS+Z8rovMaoilpuugO3MV7d
+	DOE7uuILiUvEeOAadNc1fc/mm8LD9wEz6xepJzjVIdiJFmjElAxPdixK6e3KdpB9LybcCsMErcLN6
+	L1a90BgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLAs9-0000000DKSJ-3O84;
-	Wed, 11 Dec 2024 00:46:37 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tLD2Y-0000000Da8r-2HpD;
+	Wed, 11 Dec 2024 03:05:30 +0000
+Received: from mail-vi1eur03on20608.outbound.protection.outlook.com ([2a01:111:f403:260c::608] helo=EUR03-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLAs6-0000000DKRs-3MxZ
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Dec 2024 00:46:35 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BADXbp4014608;
-	Wed, 11 Dec 2024 00:46:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	pOvQ4kEW5+JbIoo3oLAx3A6GmkI7mBSEDvoz1mE4eXw=; b=KjCTQrhBUH38ytjN
-	RUtbiO/IEO49nRXsFTPDMtuOEqVqcvodDRVk5i8iitWNs2a8WE6Q1ZwVJo7OQi7y
-	cXvEum9l7opxX4RhHY4nXSUoZsL2bnmNBCwwS2+i05Q2THqox6sGVMGx7mueioXY
-	PnJ24Hy3X644/kanKm5OxEu7Os4VR507b4b6Wm9pTB6GcvB/TTJC5aJ+0XbD6rzn
-	nSCS2LnaRLNzK70P7nXChTrJVcaCll0nh3ht+BLRbF9pxgvZaw1g9vaoNCmRVKt9
-	/HP8JdX0Ahy2FZwpmOoN0CqY5JBJvx+jsnKQqYu0uoY2F/nhObKJp11xoPFcKtLd
-	4MFU3Q==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43ee3nb71x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 11 Dec 2024 00:46:25 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BB0kPcP029536
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 11 Dec 2024 00:46:25 GMT
-Received: from [10.64.16.135] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 10 Dec
- 2024 16:46:18 -0800
-Message-ID: <527baded-f348-48a8-81cd-3f84c0ff1077@quicinc.com>
-Date: Wed, 11 Dec 2024 08:46:16 +0800
-MIME-Version: 1.0
+	id 1tLD2V-0000000Da7Y-2oI6;
+	Wed, 11 Dec 2024 03:05:29 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=EtQJFQG70Z4gZdt0Z8eI7XeFLJSlDxVObfIcfd49PK4at+o8dMYvWUOkFW0raiN/590reAbs08ZUmTI++vqDFPk27d9TK0mxP/P8EegPJ9TddF8A2spnLcZ5g26DrD8Bu5WekqZDsUemSd1+DufPQwS213gb5u7CpelDnUbVLOvxjIQZZQVVY0ld4HJ4wLOr2PrMwK8yhlgDmreLbw/pNCwZryh9qoEj978EngJrEx0k0CyRvHpyfuDF8/9qrXRuzQ6z3fexInS63o+GohkS8RrMxtDdONVQkRsRWCNQF4PNyGdwplyT1EDsLXpsYi49cSAOnEI+SIlWTJzeCPtuQA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=49O67RjYN008j3nT+bo7EiTy/I2vOFY9KSuq6DtrJ4Y=;
+ b=FO58ZcGkLUIh58fiUt3ZG9OLvKNfVrZomxGs/U9mcQL+0n/g5uY9Cx/rOjLVevgI56PjpC8kSt8FRsYFE6z0VNxunkiE+l5Nk7RBwzO/gQNUDbLVFDB8Iu5ZmaffC5wscejIDaCwN4l9hMe71pvDpYIkLPyTucNitJavg1wL0P5qbYNsx6eDCzFkjHUoJW3tbcoFZVh1IwZXr53OxQHZ6ee4SeYeyfxkZD0L5Gt0AS+Z+VdUChsu/L/RKWciVTdUm3ane/vY1iI5g1/Sv0Za3V/UfmvtIiJ3m0Pi9h215VeaaIVwmDvOOr/+jjV4GD6KSFKLgziEG10AS6fE94ws0w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=49O67RjYN008j3nT+bo7EiTy/I2vOFY9KSuq6DtrJ4Y=;
+ b=arPk7mifvFE79J+ETa8wrzPiX0+i5i6lyOpJQ+NHgPD2hajglTIlbd43R4jP3i08L+ude5IVm6LCgVzxo1/ancYDW02Qj9WoCY0/W1LeldDYiUj9v1814SJmUj/PZKKUSNAIlZxLTT3qEHXlMAy3uUmVZ+zntQpqOYJkJXGsOhcKbDMuhxu/g21Ns9XTBEbQBUIq9OBWEMLe4HVjPLLnvshI7P4vh1JaTMZGSFFY42YbQZ3r6nEVesIpeXKj3qEr3PmZ0Hq+FazI1mI1JmZ7afhpR4KhL9wy/VAZ83kPSj4mmUmbIK3WoFj60s2Q/Uqhq23lFLTxB84oSJ7f6Jlz5Q==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
+ by AM8PR04MB7314.eurprd04.prod.outlook.com (2603:10a6:20b:1df::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8251.15; Wed, 11 Dec
+ 2024 03:05:18 +0000
+Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::d1ce:ea15:6648:6f90]) by AM7PR04MB7046.eurprd04.prod.outlook.com
+ ([fe80::d1ce:ea15:6648:6f90%6]) with mapi id 15.20.8230.016; Wed, 11 Dec 2024
+ 03:05:18 +0000
+Message-ID: <30924a9e-7d01-46f6-9e47-405c08acdde3@nxp.com>
+Date: Wed, 11 Dec 2024 11:05:52 +0800
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/8] phy: qcom: qmp-usbc: Add DP phy mode support on
- QCS615
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-CC: Rob Clark <robdclark@gmail.com>,
-        Abhinav Kumar
-	<quic_abhinavk@quicinc.com>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten
-	<marijn.suijten@somainline.org>,
-        Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard <mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        Rob Herring <robh@kernel.org>,
-        "Krzysztof
- Kozlowski" <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        "Kuogee
- Hsieh" <quic_khsieh@quicinc.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon
- Vijay Abraham I" <kishon@kernel.org>,
-        Linus Walleij
-	<linus.walleij@linaro.org>,
-        Bartosz Golaszewski <brgl@bgdev.pl>, <quic_lliu6@quicinc.com>,
-        <quic_fangez@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>
-References: <20241129-add-displayport-support-for-qcs615-platform-v1-0-09a4338d93ef@quicinc.com>
- <20241129-add-displayport-support-for-qcs615-platform-v1-3-09a4338d93ef@quicinc.com>
- <CAA8EJppOR_UXoVpMt-dhfWdCz3UNfsXGdz8X9NqpaSmYj3AZDg@mail.gmail.com>
- <5ea14162-567b-462d-be02-b73b954b7507@quicinc.com>
- <5whv4z7u6fkfwlv5muox5dmv6fow4mga76ammapw7wph7vwv3f@xibcjdfqorgf>
- <iqcofcntirmlwcpyfr4yabymqfcgyrij57bibf337tmxpa73t6@npkt6wquenf6>
-From: Xiangxu Yin <quic_xiangxuy@quicinc.com>
-In-Reply-To: <iqcofcntirmlwcpyfr4yabymqfcgyrij57bibf337tmxpa73t6@npkt6wquenf6>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ygGzruQ_LQRZ7QNeIARNz0cm5J1Cy4Os
-X-Proofpoint-ORIG-GUID: ygGzruQ_LQRZ7QNeIARNz0cm5J1Cy4Os
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 suspectscore=0
- malwarescore=0 spamscore=0 priorityscore=1501 mlxscore=0 impostorscore=0
- mlxlogscore=999 lowpriorityscore=0 adultscore=0 clxscore=1015 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2412110004
+Subject: Re: [PATCH v6 01/19] dt-bindings: display: imx: Add i.MX8qxp Display
+ Controller processing units
+To: Rob Herring <robh@kernel.org>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ p.zabel@pengutronix.de, maarten.lankhorst@linux.intel.com,
+ mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
+ krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ tglx@linutronix.de, vkoul@kernel.org, kishon@kernel.org,
+ aisheng.dong@nxp.com, agx@sigxcpu.org, francesco@dolcini.it,
+ frank.li@nxp.com, dmitry.baryshkov@linaro.org, u.kleine-koenig@baylibre.com
+References: <20241209033923.3009629-1-victor.liu@nxp.com>
+ <20241209033923.3009629-2-victor.liu@nxp.com>
+ <20241210221508.GA550635-robh@kernel.org>
+From: Liu Ying <victor.liu@nxp.com>
+Content-Language: en-US
+In-Reply-To: <20241210221508.GA550635-robh@kernel.org>
+X-ClientProxiedBy: SI2PR01CA0046.apcprd01.prod.exchangelabs.com
+ (2603:1096:4:193::18) To AM7PR04MB7046.eurprd04.prod.outlook.com
+ (2603:10a6:20b:113::22)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM7PR04MB7046:EE_|AM8PR04MB7314:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7bb85225-fe51-4e93-5df9-08dd1990a41f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|366016;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?YnIwc0liM3ZPWmNveVNWanBMcXNKU3ZDZ1RUak9GQVoyMlFYN1dJM0pXb1dT?=
+ =?utf-8?B?NFZNUFVqeURpYkNLanZUODkxcUZNbjV1UzFxcGxJSlVTa3lVNGFmL1hRYXlU?=
+ =?utf-8?B?NFc1T29tQkxjeFFoOXhWU3BsZ3A3a0plRy9USUpKenlCdEpOS3JicUdYLzdJ?=
+ =?utf-8?B?YkV0QjNEaTNlQnlXeEhPYWZ1UzVmTlN3cTk5bStCZmFsSzVPZXlQVjNzYlUv?=
+ =?utf-8?B?N21pY3hXeVd4dmhtTjJFVUJ5cXdnRUpiUVA3M0VEaEFyNXJNWkJyNTI5dFMw?=
+ =?utf-8?B?bkFCOHBjUldkTForWVNnUTREQ3REd1RkU2tXOG9QcEt2UEgvRUNuN1RwTTFQ?=
+ =?utf-8?B?VmM1ck54N0NYU0IvTDlZVjlBc0FLaWtJZ0I0ZkJyZjlqcUNGZDA0S1A0Y3hM?=
+ =?utf-8?B?dVBqUEdaaTN5clZBb2JMRGs4SWJvRjlDbkFHWEJkSUg5ZnFwQXNwMGVGZ2lX?=
+ =?utf-8?B?RDF1MWh2SlVnY2RBOUVpUnp5TDUrUVRpdzZVcnNkd3pFc2ZqaXJvSzlFQmdY?=
+ =?utf-8?B?NHRtRUxOVUVzZ1diMWhzK3lNRVVwTmJYeHBIdGZqQmFrYWovc0NOcS8vVmdJ?=
+ =?utf-8?B?cnNMSkFwdnAzS09nSVRBL0NkckVjd3hvZk1neHZXdWlPUlRPQVRyOGtuUjV6?=
+ =?utf-8?B?TFBOWHlIVVRQYTdrclgvckxMM205eXk5OGVlOUdQRUo4K1luYy91SEpLU3FG?=
+ =?utf-8?B?K2JXMVVIVnVjVUJXd2lEL0N6OTJXSDd1WUU1bFI1TEg5TmhnZ1N4ZzdoSml1?=
+ =?utf-8?B?T09YdEthcXpBODJ5cmZjV2hqQ2dUR0VPSFFzTU0xdHFBcVMrdUtUU09BZWg1?=
+ =?utf-8?B?VUZJdVNIM29DTElWTWRFc0paTXR6dTNtWnlZamJsa3c4WUhmRTI4dTdhbnZp?=
+ =?utf-8?B?bkRORmxtMWlDNDNwTkt4Y3FoV0hyeWltblEweU14Q1NBRmlnTnl2OWc0SUdE?=
+ =?utf-8?B?d1RBN1Y5OXV6SzloZWw0emd4SGszTjl6cm9OTDI4Wkw1OVgyWnN1MTFjRlVs?=
+ =?utf-8?B?d1JwUWJ1RDBITTZRRDdjQ3UzNDcrUHA2MlEwSUptL2xTTGZqNjZIUm1SSmRC?=
+ =?utf-8?B?bFp5NXUyTmFUdW1Ic2pONjF6OVdoQTdvajJwbGYwL0EzVnNZRmExK1hDMUlv?=
+ =?utf-8?B?d2E5RE52UFpTa1hUZ1ErNDdldXA5TXVUWk4wSy9DemhqdEUyN1V6SjVFUmN4?=
+ =?utf-8?B?d2NNNDJsbzV2cUpONGZYaTNmL09RK3pKREtkMm9wd0NkcWp3TFlxUkdxZkw3?=
+ =?utf-8?B?eER6YmlzaUd6RVFYNTg3dUhHRk9aaU5Vd1lmbUF1V2M2NXp6VVNkMTlZVGFL?=
+ =?utf-8?B?TUl6THBVc2NEMEtFcmUyazBKbFlNUjd5VTJoUFpvVmVMKzE5Mk1TakZzVlUz?=
+ =?utf-8?B?Si80ZTRkeWg0UVFQL05RalVKdmNmdTFPVVZXYzZpM1crVCtrY052cDgwMlZs?=
+ =?utf-8?B?NkVlR0hzVUZoNTF3SG9SLzNJWXRXWGFubGdkeTV4YldQUFppWkdadFNkaUxT?=
+ =?utf-8?B?QXNVN2tCUVRwU0JRT24rNVhDb2tFWEZrTmxHQ21qK1BrT2xJNzZndjBDN083?=
+ =?utf-8?B?VzV4RmcwNUxYdklXT1l5V2k2bmRzL1AwVzFUbHY1YjJMZEttOEJVek9HRVA0?=
+ =?utf-8?B?Y3E2ZjViWllSalhZL3dsSTJiSHRmdWMzODhhMkJIcGZjU2hpZ3dEVFd4UnZv?=
+ =?utf-8?B?bzAxYjZzSGRBbjh0bTFUN2lPbDQ3RVpOdjQxeHpGaWJiVDQ1TmNYL0xlTFdR?=
+ =?utf-8?Q?9kzvAQxe5jhUpgLYng=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?USsrY0FGVTZJblJpNk9CQldhYXNBUENXckdvWjVaNkdic0I1TStFOVJxdzd3?=
+ =?utf-8?B?Zkd5RzBYVzBEVUhmQUNDSGk0M05ENHBIWlpnanRGSTN6QWpUTXpFT0hIdDJT?=
+ =?utf-8?B?RGFPWUdWdGNhTW9JQWMrRXp3RTlFTmwwcENlNVA4amo1ejgxY09RU3dmdzV2?=
+ =?utf-8?B?UTA3cDduelNGMHJnTVlYcWZCZGh2N3gzYVpBMlVTZEVIYXJQUzgvVGg4YVJC?=
+ =?utf-8?B?SlN5dnIzOTQzM1BSNUdpWEZKc0pXemdDSy9kYUdVUEVHdWU4d1FCaWxZbmgz?=
+ =?utf-8?B?Y3Vta3dMUGJocERXRytabERXYkJEdW5sNmZocU9Ia1l1MkVaWFl6WnI0TFVk?=
+ =?utf-8?B?Qm1xNmkrOEZEeGozbHZncW5sVGJjQUZtWUlINHZob0VsRGw1UXpBTzlhQURr?=
+ =?utf-8?B?b3g5a3JSY0c1ejNzcmRBbzFTUDAyZCtiUUpkRmJXM3l3UVM1SG1YT3kyQWxE?=
+ =?utf-8?B?WHZ6TTJya2o2SzNueHpsN0RGYk5GYk04SlRpTjdCcWdFaVpqNkhraHhtUnBz?=
+ =?utf-8?B?cUxYTlpzVitFcFRES3M4bnJUc2tPS1owd3RKZmdQZlpka0ZqemJWUUcwdEdN?=
+ =?utf-8?B?RCt2UVIrd0N1eW9CTW5JU0FFQU1YSWdNZm0rT0Q2dFhEaWVnTHJDUUlUVnIw?=
+ =?utf-8?B?M0V3STN4YUFXV0ZSY2s5Tk4yejZYNEczODhTbmRQRjNhUmM3eVRZUm9Ic3dH?=
+ =?utf-8?B?Qy91QUNxRjRlaDdEMU5hV0JNdVlWQVFpQ3dNOTZRVFE0UGtMZEpWdmNvTVlu?=
+ =?utf-8?B?aTB2ajZMK2VXMlErNnJXSmVOTzczQTdaZVlsMlNKUDBrMFNhMytDc3BnQ1J2?=
+ =?utf-8?B?cjRqVlMxdU1VUkNhOVZIZWQ2U2s1dW8xQ2IxR05OaVZwM0QwOW1XN01oazdN?=
+ =?utf-8?B?bUZHZ1J5QXdmSmpiY29USy8zRWJab2V1TzhLYnYrZjRpbVZsMEUzWnVUL2Ev?=
+ =?utf-8?B?M3RoK1B5ZW05N0xwTGpSUGhsQkxKdFlXMzVIZW9SdGhQT2Z1bksxKzQvbC9r?=
+ =?utf-8?B?YVYvd3lXMG1YL3pid1pCdDlYb2MrNy9TZDhVNVZpOE9BOUpmbjhVRkNoRVUr?=
+ =?utf-8?B?aUhaNGI3anhEd0pDVG1hVWt0Qmg0d1AvcXdvL21NVldRSWJtU3I5aW1JRm8z?=
+ =?utf-8?B?Rnd6MFNCWFpFdVVRZ1Q3dFJPUTdhNUI0cE85SktHMlZpdHJpUlVBSGdKZzNB?=
+ =?utf-8?B?M1R3QkdLemoyZUF0dkp3Ri9qUDRrT2lxazcxL2VEVnp3aXgxZlFlQ00wVjhn?=
+ =?utf-8?B?YkpBSzFPTlRURk5HR2I0ZzhvUG83VllFV25Zd1lUNldXc2lsUnduRWkwN1dj?=
+ =?utf-8?B?YllXeGdXQ1dyOFFpYjBCN3NlWVFRQWxoRkE1S0pxTFpQaTY3cWFJbDN1UFJJ?=
+ =?utf-8?B?MWpBTlp3YUdCYnJwMEt2eDZac05TSFNsaVlQaTRJNjl4RFBxZlUvb2ZuZzFV?=
+ =?utf-8?B?U2RUcWtkS3czaXlRY1FqWmliUGVZbis1dVo4cWt1S2IrNTgyMTJWVkdHdHR4?=
+ =?utf-8?B?QWg0VUF6R1RXbmtRdVgxY3NZREc1dllBSXlhS0ltWjFhWFQ3RWdLcE9YK21F?=
+ =?utf-8?B?TExWS3N5TFNKMkNZNmEzVGhadHVLaVJMVnVkRW1LV3RhUVFDaldkejVVZFdz?=
+ =?utf-8?B?OTVJOUZSWmNDZUxSc0VlME9admMrVTZDenBmU1FRYVRmTVZreVhwOVduUW1Y?=
+ =?utf-8?B?S1BBWlhrOUpoYUVpcmJmdzlpQUx6QXZzWU1HczFVRHJkZWRDb1l5b1U4bVJq?=
+ =?utf-8?B?dzQxSHY0NE9UMHBIemUrWVFZckl3d2laekJtTHBES2VvL2xFNEZqbnk2OXRJ?=
+ =?utf-8?B?MDBrQzhWSm1TTWVUamMrVGVzdUNzVzZNbGZvREpCT3BMSE0wSlg0N1lCK2FF?=
+ =?utf-8?B?Mk5iQjBFRWVxb0kzM1ZpTHpoQzllUWJlTE8rcVJURlNCOGdWNGRHWmg4YWRt?=
+ =?utf-8?B?NHJuRzVqMmx2Njl3NGgxbGZ1NmlRK200d0tucCswTTBxUm9YU0hYa3hySlFF?=
+ =?utf-8?B?ZWs4WjJwN3hZeDlJRFJOYkh2WjdQZk5lMXdFMkJQM0lUL0hqNXpNdkhmcVNk?=
+ =?utf-8?B?bGY4eWU1aFlIRTdXYlNHaVJ2NkxRYTBrSjZKMmcxWHFmU3k4eC9YdGdROUc0?=
+ =?utf-8?Q?jTflMBwRuYmI4JPhselp4r3z8?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7bb85225-fe51-4e93-5df9-08dd1990a41f
+X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Dec 2024 03:05:18.0794
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 0h3WJJbKZqeK1wPrh5PGpUgHit4Oal4yFRJOQfdehXTC8hplLwdysahC78TtuWWJ6S6WyN88XiyeYCPzET0yHg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7314
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241210_164634_846368_BDD6EAC6 
-X-CRM114-Status: GOOD (  19.31  )
+X-CRM114-CacheID: sfid-20241210_190527_862488_50E677CE 
+X-CRM114-Status: GOOD (  17.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,61 +177,118 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAxMi8xMC8yMDI0IDExOjA5IFBNLCBEbWl0cnkgQmFyeXNoa292IHdyb3RlOgo+IE9uIFRo
-dSwgRGVjIDA1LCAyMDI0IGF0IDA4OjMxOjI0UE0gKzAyMDAsIERtaXRyeSBCYXJ5c2hrb3Ygd3Jv
-dGU6Cj4+IE9uIFRodSwgRGVjIDA1LCAyMDI0IGF0IDA5OjI2OjQ3UE0gKzA4MDAsIFhpYW5neHUg
-WWluIHdyb3RlOgo+Pj4KPj4+Cj4+PiBPbiAxMS8yOS8yMDI0IDEwOjMzIFBNLCBEbWl0cnkgQmFy
-eXNoa292IHdyb3RlOgo+Pj4+IE9uIEZyaSwgMjkgTm92IDIwMjQgYXQgMDk6NTksIFhpYW5neHUg
-WWluIDxxdWljX3hpYW5neHV5QHF1aWNpbmMuY29tPiB3cm90ZToKPj4+Pj4KPj4+Pj4gRXh0ZW5k
-ZWQgRFAgc3VwcG9ydCBmb3IgUUNTNjE1IFVTQiBvciBEUCBwaHkuIERpZmZlcmVudGlhdGVkIGJl
-dHdlZW4KPj4+Pj4gVVNCQyBhbmQgRFAgUEhZIHVzaW5nIHRoZSBtYXRjaCB0YWJsZeKAmXMgdHlw
-ZSwgZHluYW1pY2FsbHkgZ2VuZXJhdGluZwo+Pj4+PiBkaWZmZXJlbnQgdHlwZXMgb2YgY2ZnIGFu
-ZCBsYXlvdXQgYXR0cmlidXRlcyBkdXJpbmcgaW5pdGlhbGl6YXRpb24gYmFzZWQKPj4+Pj4gb24g
-dGhpcyB0eXBlLiBTdGF0aWMgdmFyaWFibGVzIGFyZSBzdG9yZWQgaW4gY2ZnLCB3aGlsZSBwYXJz
-ZWQgdmFsdWVzCj4+Pj4+IGFyZSBvcmdhbml6ZWQgaW50byB0aGUgbGF5b3V0IHN0cnVjdHVyZS4K
-Pj4+Pgo+Pj4+IFdlIGRpZG4ndCBoYXZlIGFuIHVuZGVyc3RhbmRpbmcgLyBjb25jbHVzaW9uIHdo
-ZXRoZXIKPj4+PiBxY29tLHVzYi1zc3BoeS1xbXAtdXNiMy1vci1kcCBQSFlzIGFyZSBhY3R1YWxs
-eSBhIHNpbmdsZSBkZXZpY2UgLyBQSFkKPj4+PiBvciB0d28gUEhZcyBiZWluZyBwbGFjZWQgbmV4
-dCB0byBlYWNoIG90aGVyLiBDb3VsZCB5b3UgcGxlYXNlIHN0YXJ0Cj4+Pj4geW91ciBjb21taXQg
-bWVzc2FnZSBieSBleHBsYWluaW5nIGl0PyBPciBldmVuIGJldHRlciwgbWFrZSB0aGF0IGEgcGFy
-dAo+Pj4+IG9mIHRoZSBjb3ZlciBsZXR0ZXIgZm9yIGEgbmV3IHNlcmllcyB0b3VjaGluZyBqdXN0
-IHRoZSBVU0JDIFBIWQo+Pj4+IGRyaXZlci4gRFAgY2hhbmdlcyBkb24ndCBoYXZlIGFueXRoaW5n
-IGluIGNvbW1vbiB3aXRoIHRoZSBQSFkgY2hhbmdlcywKPj4+PiBzbyB5b3UgY2FuIHNwbGl0IHRo
-ZSBzZXJpZXMgaW50byB0d28uCj4+Pj4KPj4+IEJlZm9yZSBpbXBsZW1lbnQgRFAgZXh0ZW5zaW9u
-LCB3ZSBoYXZlIGRpc2N1c3NlZCB3aXRoIGFiaGluYXYgYW5kIGtyaXNobmEgYWJvdXQgd2hldGhl
-ciB1c2UgY29tYm8sIHVzYmMgb3Igc2VwYXJhdGUgcGh5Lgo+Pgo+PiBXaGF0IGlzICJEUCBleHRl
-bnNpb24iPwo+PgpJJ20gc29ycnkgY29uZnVzaW9uIGNhc3VlZCBieSBteSBkZXNjcmlwdGlvbi4g
-SXQncyBtZWFucyBleHRlbmQgRFAgaW1wbGVtbnQgZm9yIFVTQkMgcGh5IGRyaXZlci4KPj4+Cj4+
-PiBXZSBpZGVudGlmaWVkIHRoYXQgRFAgYW5kIFVTQiBzaGFyZSBzb21lIGNvbW1vbiBjb250cm9s
-cyBmb3IgcGh5X21vZGUgYW5kIG9yaWVudGF0aW9uLgo+Pj4gU3BlY2lmaWNhbGx5LCAnVENTUl9V
-U0IzXzBfRFBfUEhZTU9ERScgY29udHJvbHMgd2hvIG11c3QgdXNlIHRoZSBsYW5lcyAtIFVTQiBv
-ciBEUCwKPj4+IHdoaWxlIFBFUklQSF9TU19VU0IwX1VTQjNQSFlfUENTX01JU0NfVFlQRUNfQ1RS
-TCBjb250cm9scyB0aGUgb3JpZW50YXRpb24uCj4+PiBJdCB3b3VsZCBiZSBtb3JlIGVmZmljaWVu
-dCBmb3IgYSBzaW5nbGUgZHJpdmVyIHRvIG1hbmFnZSB0aGVzZSBjb250cm9scy4gCj4+Cj4+IFRo
-ZSBxdWVzdGlvbiBpcyBhYm91dCB0aGUgaGFyZHdhcmUsIG5vdCBhYm91dCB0aGUgZHJpdmVyLgo+
-Pgo+Pj4gQWRkaXRpb25hbGx5LCB0aGlzIFBIWSBkb2VzIG5vdCBzdXBwb3J0IEFsdCBNb2RlLCBh
-bmQgdGhlIHR3byBjb250cm9sIHJlZ2lzdGVycyBhcmUgbG9jYXRlZCBpbiBzZXBhcmF0ZSBhZGRy
-ZXNzIHNwYWNlcy4gCj4+PiBUaGVyZWZvcmUsIGV2ZW4gdGhvdWdoIHRoZSBvcmllbnRhdGlvbiBm
-b3IgRFAgb24gdGhpcyBwbGF0Zm9ybSBpcyBhbHdheXMgbm9ybWFsIGFuZCBjb25uZWN0ZWQgdG8g
-dGhlIHZpZGVvIG91dHB1dCBib2FyZCwgCj4+PiB3ZSBzdGlsbCBkZWNpZGVkIHRvIGJhc2UgaXQg
-b24gdGhlIFVTQkMgZXh0ZW5zaW9uLgo+Pgo+PiBDb3VsZCB5b3UgcGxlYXNlIGNsYXJpZnksIGRv
-IHVzYjMtb3ItZHAgUEhZcyBzdXBwb3J0IERQLW92ZXItVVNCLUM/IEkKPj4gdGhvdWdodCB0aGF0
-IHVzYmMtb3ItZHAgcGxhdGZvcm1zIHN1cHBvcnQgdGhhdCwgYnV0IHRoZXkgZG9uJ3QKPj4gc3Vw
-cG9ydCBEUCtVU0IgcGluIGNvbmZpZ3VyYXRpb24uIE5vdGUsIHRoZSBxdWVzdGlvbiBpcyBicm9h
-ZGVyIHRoYW4KPj4ganVzdCBRQ1M2MTUsIGl0IGNvdmVycyB0aGUgUEhZIHR5cGUgaXRzZWxmLgo+
-Pgo+PiBBbHNvLCBpcyBUQ1NSIGNvbmZpZ3VyYXRpb24gcmVhZC93cml0ZSBvciByZWFkLW9ubHk/
-IEFyZSB3ZSBzdXBwb3NlZCB0bwo+PiBzZXQgdGhlIHJlZ2lzdGVyIGZyb20gT1Mgb3IgYXJlIHdl
-IHN1cHBvc2VkIHRvIHJlYWQgaXQgYW5kIHRodXMgZGV0ZW1pbmUKPj4gdGhlIFBIWSBtb2RlPwo+
-IAo+IEFueSB1cGRhdGVzIG9uIHRoZXNlIHR3byB0b3BpY3M/Cj4gClN0aWxsIGNvbmZpcm1pbmcg
-ZGV0YWlsIGluZm8gd2l0aCBIVyAmIGRlc2lnbiB0ZWFtLgpJ4oCZbGwgdXBkYXRlIHRoZSBpbmZv
-cm1hdGlvbiB0aGF0IGhhcyBiZWVuIGNvbmZpcm1lZCBzbyBmYXIuClRoaXMgcGh5IHN1cHBvcnQg
-RFAtb3Zlci1VU0ItQyxidXQgaXQncyBub3Qgc3VwcG9ydCBhbHQtbW9kZSB3aGljaCAyIGxhbmUg
-d29yayBmb3IgRFAsIG90aGVyIDIgbGFuZSB3b3JrIGZvciBVU0IuClRDU1IgcGh5IG1vZGUgaXMg
-cmVhZC93cml0ZSByZWcgYW5kIHdlIGNhbiByZWFkIGZvciBkZXRlcm1pbmUgcGh5IG1vZGUuCgoK
-Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 12/11/2024, Rob Herring wrote:
+> On Mon, Dec 09, 2024 at 11:39:05AM +0800, Liu Ying wrote:
+>> Freescale i.MX8qxp Display Controller is implemented as construction set of
+>> building blocks with unified concept and standardized interfaces.  Document
+>> all existing processing units.
+>>
+>> Signed-off-by: Liu Ying <victor.liu@nxp.com>
+>> ---
+>> v6:
+>> * No change.
+>>
+>> v5:
+>> * Document aliases for processing units which have multiple instances in
+>>   the Display Controller.  Drop Rob's previous R-b tag. (Maxime)
+>>
+>> v4:
+>> * Collect Rob's R-b tag.
+>>
+>> v3:
+>> * Combine fsl,imx8qxp-dc-fetchunit-common.yaml,
+>>   fsl,imx8qxp-dc-fetchlayer.yaml and fsl,imx8qxp-dc-fetchwarp.yaml
+>>   into 1 schema doc fsl,imx8qxp-dc-fetchunit.yaml. (Rob)
+>> * Document all processing units. (Rob)
+>>
+>> v2:
+>> * Drop fsl,dc-*-id DT properties. (Krzysztof)
+>> * Add port property to fsl,imx8qxp-dc-tcon.yaml. (Krzysztof)
+>> * Fix register range sizes in examples.
+>>
+>>  .../display/imx/fsl,imx8qxp-dc-blitblend.yaml |  46 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-clut.yaml      |  49 ++++++
+>>  .../imx/fsl,imx8qxp-dc-constframe.yaml        |  49 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-dither.yaml    |  49 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-extdst.yaml    |  77 +++++++++
+>>  .../display/imx/fsl,imx8qxp-dc-fetchunit.yaml | 147 ++++++++++++++++++
+>>  .../display/imx/fsl,imx8qxp-dc-filter.yaml    |  47 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-framegen.yaml  |  68 ++++++++
+>>  .../display/imx/fsl,imx8qxp-dc-gammacor.yaml  |  38 +++++
+>>  .../imx/fsl,imx8qxp-dc-layerblend.yaml        |  45 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-matrix.yaml    |  48 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-rop.yaml       |  48 ++++++
+>>  .../display/imx/fsl,imx8qxp-dc-safety.yaml    |  34 ++++
+>>  .../imx/fsl,imx8qxp-dc-scaling-engine.yaml    |  89 +++++++++++
+>>  .../display/imx/fsl,imx8qxp-dc-signature.yaml |  58 +++++++
+>>  .../display/imx/fsl,imx8qxp-dc-store.yaml     | 100 ++++++++++++
+>>  .../display/imx/fsl,imx8qxp-dc-tcon.yaml      |  50 ++++++
+>>  17 files changed, 1042 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-clut.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-constframe.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-dither.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-extdst.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-fetchunit.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-filter.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-framegen.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-gammacor.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-layerblend.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-matrix.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-rop.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-safety.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-scaling-engine.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-signature.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-store.yaml
+>>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-tcon.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml
+>> new file mode 100644
+>> index 000000000000..7f800e72c3f3
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-blitblend.yaml
+>> @@ -0,0 +1,46 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/display/imx/fsl,imx8qxp-dc-blitblend.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Freescale i.MX8qxp Display Controller Blit Blend Unit
+>> +
+>> +description: |
+>> +  Combines two input frames to a single output frame, all frames having the
+>> +  same dimension.
+>> +
+>> +  Each Blit Blend Unit device should have an alias in the aliases node, in the
+>> +  form of dc<x>-blitblend<y>, where <x> is an integer specifying the Display
+>> +  Controller instance and <y> is an integer specifying the Blit Blend Unit
+>> +  device instance.
+> 
+> That's really an abuse of aliases. If you need to describe connections 
+> between components, use the graph binding like everyone else does for 
+> display path components.
+
+I need to describe components' instance numbers which imply the connections
+between components but not vice versa. If I use the graph binding, I cannot
+get the instance numbers(0 or 1) of the two display engines(documented by
+fsl,imx8qxp-dc-display-engine.yaml). If you have no objections, I may add the
+instance numbers to compatible strings, like brcm,bcm2835-pixelvalve0.yaml.
+What do you think?
+
+> 
+> Rob
+
+-- 
+Regards,
+Liu Ying
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
