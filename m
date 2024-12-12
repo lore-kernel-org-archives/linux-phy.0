@@ -4,57 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7803FE7717F
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Dec 2024 07:30:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 172C4E7717F
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Dec 2024 07:32:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aoNUbfUASIrxchYMtu/Zl8NeWpdlNuuuyAOlT9xKonM=; b=rQ3cEiE/V+nr6v
-	SjSkUumjDia72nYyCZ98I5I03AIZr7a33PFKTdIx7zovrY7ZdHIoSa1tbWFJ0AUA9+NeQG9ZGeiJI
-	AcOo8CwmJU0E0UC9fBOJZEvgn+zNk/d1fQirFovos/kqS7Z6ig98yWyTd8ooW/1CFvEODWp8TjO26
-	xxPZfH9Ab9/hMkwxZ6jTQ36Fc84YKPClfaEm3uZG5j6YvxA6ZSPhXDFgZDCBwy/3N1j6fA+gPkNgM
-	+mwm1uDRy5Ouyl4w7UkBenTLszVo092el4+NehvABk9ZXw2O2zBlhZEYSdSdSA/TmEjcaNIhcFgQ2
-	cp+5La7XVcCi/mXcVSLg==;
+	List-Owner; bh=QJF1wjmtV43foXfX4JOCEydiYOzYy2VHV9/XrXzsj00=; b=T9/+qy6YtFmZRv
+	IPaI/dZjo3wkGu+RzdwzElj9IZsgvrGILsR65lbALrCUyJzvQ5QIAfVw08AqHCBjXuV7nwgrMYEdl
+	CxdsUcWwu4L1xB+FtACH/hk23jMb9t9TCu8mZa14CEj1Aal/aNbG2F6jGH2VjX7sePgqi0mMEOgTl
+	03DSnUJGfQrP8GII9VSNmFFSBVffKmKeZUBoI+V5upSkvpNkl8m/diT95rSbId0cPbiQweZdVdWuY
+	kdkM2niAAfhqAa2IXkkr8Vm+6o2b9SSTaYWZ0gO2Ov4Pfa9majbsNGVuSD0+3CMPyTLqEhuwsuS+f
+	AkQSD8ubdPKV+ej7dJBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLdf0-0000000HAGS-14K8;
-	Thu, 12 Dec 2024 07:30:58 +0000
+	id 1tLdg9-0000000HANu-3aY5;
+	Thu, 12 Dec 2024 07:32:09 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLdey-0000000HAFm-0Thu
+	id 1tLdg7-0000000HANV-0Dpf
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Dec 2024 07:30:57 +0000
+	Thu, 12 Dec 2024 07:32:08 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 08B15A425DE;
-	Thu, 12 Dec 2024 07:29:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CF9C5C4CECE;
-	Thu, 12 Dec 2024 07:30:49 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 037DDA42614;
+	Thu, 12 Dec 2024 07:30:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 841B6C4CECE;
+	Thu, 12 Dec 2024 07:32:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733988655;
-	bh=02WbMay/6n5pohBRn8sk6qrHHfJNfrDwwyguwwmAKAw=;
+	s=k20201202; t=1733988725;
+	bh=2FGnnWS3Ex5N+GpBLva4y8IY2r8xTzbM3LdEMhOI6Rg=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=aZgcWHW7Lkvf1rxORFRhk+WEP1WFSaMGKTWXUJH3hcjNCgtDC6/TKVsdy1li+T0l7
-	 GF0PHqs8U+07bPDWM1z0HhOLuAiiyokHVnsMjsdqpxly2MoxM5h5Usugk2TbNTncex
-	 Lwkmdbxc93zARixUd7vMeFRlM6uiH3hmD9zRwCursOGO4OU3RKUQ3z+bo1y2ku4QaD
-	 kYT0df8yZlhG5qqZ5oI1KWlQMgbMprxx2qi43SAuqCpiiylafLpcwhBJ3z/rxe+afC
-	 t//FPlai/oEEoy7+GixsITRgn6k+DgJmRl2iVYpIDIHh7iHu3AGrEvg22k9sXtMGgM
-	 sv9zQRltecDbQ==
-Message-ID: <6030c66b-b6fe-4a9f-a766-cbea8b3ad2d0@kernel.org>
-Date: Thu, 12 Dec 2024 08:30:46 +0100
+	b=C+K6a9CSV5FS9+70UATIeWvMSRZfAMiO3+DjQ0DVX/mA9bzcoyNhEi6Gn9yPia5wV
+	 eoP6lhMxlhgxLHl7BofhNwoU8qQE5RNwTgxWkM2/H8BVQypp254iYsbEGI2gwHXfVx
+	 4rhrxxRPiZxU3Aa7LH4dfyUF09cajJ6EFsGdpjwtx2PMjlIUWN0y9KmVuir7h/F48C
+	 MZzDV8I7sEZw79Cr/pEpwkiIlCPAI97Cm14n8lLjatfiEmy4c5E8pYDmXNxK/HyNuf
+	 QTpcDphzodEZTwKKovZRdlkajIdiTpNw4UAf0JrBAHW0wizD7y8X0OxfQ6+VdeZ0ZB
+	 snAtZ5zwZVqqw==
+Message-ID: <d803ead8-af3d-438a-9d9f-6194a7a5431a@kernel.org>
+Date: Thu, 12 Dec 2024 08:31:58 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,qmp-pcie: add optional current
  load properties
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Cc: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, vkoul@kernel.org,
- kishon@kernel.org, dmitry.baryshkov@linaro.org, abel.vesa@linaro.org,
- neil.armstrong@linaro.org, andersson@kernel.org, konradybcio@kernel.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Cc: vkoul@kernel.org, kishon@kernel.org, dmitry.baryshkov@linaro.org,
+ abel.vesa@linaro.org, neil.armstrong@linaro.org, andersson@kernel.org,
+ konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, quic_qianyu@quicinc.com
 References: <20241204105249.3544114-1-quic_ziyuzhan@quicinc.com>
  <20241204105249.3544114-2-quic_ziyuzhan@quicinc.com>
  <qvjtwilukxbeaxnbyzfkdsfkktm6p4yv3sgx3rbugpb6qkcbjy@rohvixslizhh>
@@ -63,8 +64,9 @@ References: <20241204105249.3544114-1-quic_ziyuzhan@quicinc.com>
  <20241211082404.p7fbmhooikmipxvm@thinkpad>
  <3c7ddb08-38db-44b3-a7a7-ec7b270a408f@kernel.org>
  <20241211115034.4hrpmninbx5uryev@thinkpad>
-Content-Language: en-US
+ <16d109d8-d1be-4ecb-ba25-8e21e9d48dad@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -108,10 +110,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20241211115034.4hrpmninbx5uryev@thinkpad>
+In-Reply-To: <16d109d8-d1be-4ecb-ba25-8e21e9d48dad@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_233056_294428_BA5BF596 
-X-CRM114-Status: GOOD (  30.00  )
+X-CRM114-CacheID: sfid-20241211_233207_238602_878AEAC4 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,132 +131,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/12/2024 12:50, Manivannan Sadhasivam wrote:
-> On Wed, Dec 11, 2024 at 10:52:11AM +0100, Krzysztof Kozlowski wrote:
->> On 11/12/2024 09:24, Manivannan Sadhasivam wrote:
->>> On Wed, Dec 11, 2024 at 09:09:18AM +0100, Krzysztof Kozlowski wrote:
->>>> On 11/12/2024 07:20, Manivannan Sadhasivam wrote:
->>>>> On Thu, Dec 05, 2024 at 11:23:11AM +0100, Krzysztof Kozlowski wrote:
->>>>>> On Wed, Dec 04, 2024 at 06:52:47PM +0800, Ziyue Zhang wrote:
->>>>>>> On some platforms, the power supply for PCIe PHY is not able to provide
->>>>>>> enough current when it works in LPM mode. Hence, PCIe PHY driver needs to
->>>>>>> set current load to vote the regulator to HPM mode.
->>>>>>>
->>>>>>> Document the current load as properties for each power supply PCIe PHY
->>>>>>> required, namely vdda-phy-max-microamp, vdda-pll-max-microamp and
->>>>>>> vdda-qref-max-microamp, respectively.PCIe PHY driver should parse them to
->>>>>>> set appropriate current load during PHY power on.
->>>>>>>
->>>>>>> This three properties are optional and not mandatory for those platforms
->>>>>>> that PCIe PHY can still work with power supply.
->>>>>>
->>>>>>
->>>>>> Uh uh, so the downstream comes finally!
->>>>>>
->>>>>> No sorry guys, use existing regulator bindings for this.
->>>>>>
->>>>>
->>>>> Maybe they got inspired by upstream UFS bindings?
->>>>> Documentation/devicetree/bindings/ufs/ufs-common.yaml:
->>>>>
->>>>> vcc-max-microamp
->>>>> vccq-max-microamp
->>>>> vccq2-max-microamp
->>>>
->>>> And it is already an ABI, so we cannot do anything about it.
->>>>
->>>>>
->>>>> Regulator binding only describes the min/max load for the regulators and not
->>>>
->>>> No, it exactly describes min/max consumers can use. Let's quote:
->>>> "largest current consumers may set"
->>>> It is all about consumers.
->>>>
->>>>> consumers. What if the consumers need to set variable load per platform? Should
->>>>
->>>> Then each platform uses regulator API or regulator bindings to set it? I
->>>> don't see the problem here.
->>>>
->>>>> they hardcode the load in driver? (even so, the load should not vary for each
->>>>> board).
->>>>
->>>> The load must vary per board, because regulators vary per board. Of
->>>> course in practice most designs could be the same, but regulators and
->>>> their limits are always properties of the board, not the SoC.
->>>>
->>>
->>> How the consumer drivers are supposed to know the optimum load?
->>>
->>> I don't see how the consumer drivers can set the load without hardcoding the
->>> values. And I could see from UFS properties that each board has different
->>> values.
->>
->>
->> Drivers do not need to know, it's not the driver's responsibility. If
+On 12/12/2024 08:29, Ziyue Zhang wrote:
+>
+>> In that case, I was wondering if the load set by the driver is going to vary
+>> between platforms (boards) or not (question to Ziyue Zhang). If it varies
+>> between SoC, then we can hardcode the load in driver based on compatible.
 > 
-> What? I think there is a misunderstanding here. The intention of these proposed
-> properties is to allow the PHY driver to set the required load of the regulator
-> using regulator_set_load() API. As per the API description:
-
-This makes sense. I referred to property description to learn what it is
-really doing. I found nothing, because it is empty, so that's how we
-waste time...
-
+> Hi Mani, Krzystof
 > 
-> 'Consumer devices notify their supply regulator of the maximum power they will
-> require (can be taken from device datasheet in the power consumption tables)
-> when they change operational status and hence power state'.
-> 
-> IIUC, your concern is that the devicetree shouldn't specify the load for each
+> Now we set  the current to 165mA which is the max power supply the regulator
+> can provide, so this is platform(boards) related. But we think PCIe PHY needs
 
-My concern is that Qualcomm put here regulator constraints and call them
-device load. And empty property name does not help me to think other way.
+Yeah, so that's the answer to what I asked just a second ago - you do
+not put there device load. You put there regulator constraints.
 
-How can I verify the number that it was taken from UFS device manual,
-not from PMIC?
+> to set the current value we need, which is soc related.
 
-> consumer but just the min/max load of the regulator. And the consumer driver
-> should figure out the load and set it accordingly.
-
-With your above explanation I think the actual consumer load, if it is
-depending on the board, have place in DT. But:
-
-> 
-> Correct me if I'm wrong.
-> 
-> In that case, I was wondering if the load set by the driver is going to vary
-> between platforms (boards) or not (question to Ziyue Zhang). If it varies
-> between SoC, then we can hardcode the load in driver based on compatible.
-
-Yeah, maybe each  it is implied by compatible and not board dependent.
-Then just like everything implied by compatibles: should not be placed
-in DT.
-
-We already follow this approach for several other Qualcomm drivers, e.g.
-display.
-
-> 
->> If
->> these are constraints per board, then regulator properties apply and
->> there is no difference between this "vdd-max-microamp = 10" and
->> "regulator-max-microamp".
->>
-> 
-> There is a difference. Regulator properties are just threshold. So unless the
-> consumer sets the load, they won't take effect. I think you got confused by the
-> 'max' wording in the proposed properties?
-
-Yes and confused by its description in the binding.
-
-> 
->> If this varies runtime, then your property is already not suitable and
->> very limited and you should use OPP table.
->>
-> 
-> The consumer driver may request different loads based on their operational
-> state.
-
-Then anyway maybe this should be OPP table (assuming it is board specific).
+So move it away from DT. I don't care what's in the driver, so you can
+put there whatever fake value.
 
 Best regards,
 Krzysztof
