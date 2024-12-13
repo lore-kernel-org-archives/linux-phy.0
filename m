@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2548E7717F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C8A4E77180
 	for <linux-phy@archiver.kernel.org>; Fri, 13 Dec 2024 13:53:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=j9ZiXShFeOdSyRPTSjATsjh8uf4c020qrMyeNBMay2E=; b=nuY4/6tnPat0OG
-	+jhGmpY8zHn+UMGFguEvZ689+/ALoE8h8EtTWrsi2Cq8COZzuOjVejN40ZOzi3e76U3JPZLegpEhc
-	VVMz6qDFPlE0632aIPQ39dotVdX8v/27w/oAy9O2svLgaYzpIfUEtn+yYxAl/qm7sKE/+AeCbIhEo
-	eNUL+Vb3biYYsHdSAGnNOmg90PmxGID0obUiFdbgcZbvJSnuNc+2m4b56G5g+3Kq8itvRSMoGiFGL
-	rJvXbv9B/JGqgzZj5dSM5kd1eRZbVi0jZspr8yV3n/N0voY36xRwnqO6aIMyqy+JYpJ4NZtdJdwqi
-	wJss+YsSQZ5Ppd/ov97Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l5KqvsOWq7t+oujUN/Cm7qJtmBOOi+4sYvZjphwYz9A=; b=ZGlRFdCYmLwP8s
+	DToCoCSLnybmwumbiHKcPlaAUlK7hWgoozPza7sXiyYGTI7sk4mFFa2yTSv4vKllHtsFLNRirF0lY
+	OJyfudu4vv05LnhKZvWrFg1Cg4HdAmFojh4eT4Ye+4nI/HGYnqY2QO6Mq3qiCf5vnRBhZT33zwq52
+	oFAe3LYHL8R8+E+uDSJCepGtkCvSqFIf8z0ym3JpKgYjDdqNVj4x35sFQUU0curluNSLJlrBvNigg
+	QkVU9RSI46ReyW6veqGI3EWpTodwgPMCGLL0ssVq6nXsnqj6y06ZZkE3hQ01Ceyx083HAGLfH4+cP
+	srrnFxbX+LVRi3KmntLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM66x-00000003u63-3sDa;
-	Fri, 13 Dec 2024 13:53:43 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tM66y-00000003u76-2yxF;
+	Fri, 13 Dec 2024 13:53:44 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM64K-00000003tCU-1moM
+	id 1tM64c-00000003tLy-440A
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Dec 2024 13:51:01 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BD81XTY022106;
-	Fri, 13 Dec 2024 13:50:51 GMT
+	Fri, 13 Dec 2024 13:51:20 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BD9pMCa018931;
+	Fri, 13 Dec 2024 13:51:13 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=jOC9nOhDr9jq4AtuIBHj+8
-	zR/D+ZeUbHj/hHK/7AGvU=; b=l9F57L+uQz/Dkc6XkGG3delsj1IpuaWxs7r2WQ
-	k3MZxB7/MKbf0xL07tdoF2jIesdgMdfm5W95myFxsKLl/605oEuErxPkc8p8PH0L
-	C7BvTDSKhqUu7PttbxdK3FkqJ9OJVq/PRmiWc0Gkm41o0kXsdiFOAnu/OwEhBfwd
-	SjKdd0GZeepddVkB9GU1FsPSsBXJHKbqR4ij/K4X6XyEd8MEDCr5VbrQhYGx54XT
-	X3d6uXNOXr6RipGUxumKtiLnENAnrmb6LIiInMAW8lUC4hS9xl/yUWjwydTFXZrJ
-	t9kZjARnkytr2QY9wbhIbwCWjogh18cbkALbrfij/uNhzchA==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43gh271043-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	QY3x+fvaGYsolbcf2gLHAsROmiERfQsyGe0qtS0BT9U=; b=Jkzf+ODmacZVK8gE
+	3Y5Xd/MfD41vCi166jEbzPPvO3JGWD63bagFcbxEc4mIn7hBOzGiJW2EbS763NeZ
+	6TsQV4KgqslBsrEqBsFj+Tb4CfmIjOJUjvbLDaiuqQl77Aivfo1v/ok86edw5d1C
+	01XL7Kz2xKQoaUN7ibiu4AcLx1yAzLlUhJsx5SxPXvckKEKk7vo6xPPrFVYBl49e
+	RaG1ypvre6+SQxQgbSI54GchuA7AN8YGBLHKW2q0yLxQS0ifyR5dLhPJcFvc+CKx
+	6su3lHFjbpG+x5u+N/Wmu4i6qfNpPD8irixOL6UmxmNqhBope9vuchAUK9Sld1K+
+	JJeF/A==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43gjnb0nw9-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Dec 2024 13:50:50 +0000 (GMT)
+	Fri, 13 Dec 2024 13:51:13 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BDDonZU014540
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BDDpBf4003420
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Dec 2024 13:50:49 GMT
+	Fri, 13 Dec 2024 13:51:11 GMT
 Received: from hu-mmanikan-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 13 Dec 2024 05:50:44 -0800
+ 15.2.1544.9; Fri, 13 Dec 2024 05:51:06 -0800
 From: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
 To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
         <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
@@ -60,30 +61,31 @@ To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>
 CC: <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>
-Subject: [PATCH 0/4] Add PCIe support for IPQ5424
-Date: Fri, 13 Dec 2024 19:19:46 +0530
-Message-ID: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
+Subject: [PATCH 4/4] arm64: dts: qcom: ipq5424: Enable PCIe PHYs and controllers
+Date: Fri, 13 Dec 2024 19:19:50 +0530
+Message-ID: <20241213134950.234946-5-quic_mmanikan@quicinc.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
+References: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: nbneuj_EhbWNdlFAkyiJQC1rtLKTGG4P
-X-Proofpoint-GUID: nbneuj_EhbWNdlFAkyiJQC1rtLKTGG4P
+X-Proofpoint-ORIG-GUID: JPxU4yIbrG50UIYmaEt5--DFMAljZriY
+X-Proofpoint-GUID: JPxU4yIbrG50UIYmaEt5--DFMAljZriY
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
- priorityscore=1501 spamscore=0 mlxlogscore=719 impostorscore=0
- suspectscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0
- clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412130097
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0
+ lowpriorityscore=0 bulkscore=0 clxscore=1015 phishscore=0
+ priorityscore=1501 impostorscore=0 adultscore=0 malwarescore=0 mlxscore=0
+ suspectscore=0 mlxlogscore=923 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2412130098
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241213_055100_579243_B6FB9BA4 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241213_055119_009671_B30460F0 
+X-CRM114-Status: GOOD (  10.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,33 +102,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series adds support for enabling the PCIe host devices (PCIe0,
-PCIe1, PCIe2, PCIe3) found on IPQ5424 platform. The PCIe0 & PCIe1
-are 1-lane Gen3 host and PCIe2 & PCIe3 are 2-lane Gen3 host.
+Enable the PCIe controller and PHY nodes corresponding to RDP466.
 
-Depends On:
-https://lore.kernel.org/linux-arm-msm/20241205064037.1960323-1-quic_mmanikan@quicinc.com/
-https://lore.kernel.org/linux-arm-msm/20241213105808.674620-1-quic_varada@quicinc.com/
+Signed-off-by: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
+---
+ arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts | 43 +++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-Manikanta Mylavarapu (4):
-  dt-bindings: PCI: qcom: Document the IPQ5424 PCIe controller
-  dt-bindings: phy: qcom,ipq8074-qmp-pcie: Document the IPQ5424 QMP PCIe
-    PHYs
-  arm64: dts: qcom: ipq5424: Add PCIe PHYs and controller nodes
-  arm64: dts: qcom: ipq5424: Enable PCIe PHYs and controllers
-
- .../devicetree/bindings/pci/qcom,pcie.yaml    |   4 +
- .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |  21 +-
- arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts   |  43 ++
- arch/arm64/boot/dts/qcom/ipq5424.dtsi         | 482 +++++++++++++++++-
- 4 files changed, 539 insertions(+), 11 deletions(-)
-
-
-base-commit: 3e42dc9229c5950e84b1ed705f94ed75ed208228
-prerequisite-patch-id: 8ca651806ea679db4420e18aaa9f43aea27a519d
-prerequisite-patch-id: 3c4107e3b3a47df73db7ae672b55fa5d995c1f30
-prerequisite-patch-id: 56470ae6a75766d02d7db8f04c03a028de0c901a
-prerequisite-patch-id: abf79dda8233d882c345774ca693e48dafaeadaa
+diff --git a/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts b/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
+index d4d31026a026..8857b64df1be 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
++++ b/arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts
+@@ -45,6 +45,26 @@ data-pins {
+ 			bias-pull-up;
+ 		};
+ 	};
++
++	pcie2_default_state: pcie2-default-state {
++		perst-n-pins {
++			pins = "gpio31";
++			function = "gpio";
++			drive-strength = <8>;
++			bias-pull-up;
++			output-low;
++		};
++	};
++
++	pcie3_default_state: pcie3-default-state {
++		perst-n-pins {
++			pins = "gpio34";
++			function = "gpio";
++			drive-strength = <8>;
++			bias-pull-up;
++			output-low;
++		};
++	};
+ };
+ 
+ &uart1 {
+@@ -57,3 +77,26 @@ &xo_board {
+ 	clock-frequency = <24000000>;
+ };
+ 
++&pcie2_phy {
++	status = "okay";
++};
++
++&pcie2 {
++	pinctrl-0 = <&pcie2_default_state>;
++	pinctrl-names = "default";
++
++	perst-gpios = <&tlmm 31 GPIO_ACTIVE_LOW>;
++	status = "okay";
++};
++
++&pcie3_phy {
++	status = "okay";
++};
++
++&pcie3 {
++	pinctrl-0 = <&pcie3_default_state>;
++	pinctrl-names = "default";
++
++	perst-gpios = <&tlmm 34 GPIO_ACTIVE_LOW>;
++	status = "okay";
++};
 -- 
 2.34.1
 
