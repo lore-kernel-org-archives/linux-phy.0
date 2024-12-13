@@ -4,54 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF218E7717D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2548E7717F
 	for <linux-phy@archiver.kernel.org>; Fri, 13 Dec 2024 13:53:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=waGoRmg6KE6sWTmIYLNQYVK/k12elBL0VqjOcHwnX2M=; b=Ir2EbPOseB8B8p
-	RktY1QuBvhm0YteU65ZI7VgJoWqYahezDVkCwbFT2TXw2db7p6PRnQcr9R2JvKYt9bAt1vt5BlPUR
-	l2POHRH5QVnzFEL7P6rNl92v4L+KmGN6xR4lQJUESiJaZx5k932QonJJ1uUEQ5gUDn7Ql0AvdrU6t
-	TjRCGEl0Ki4EEgDEQqUrfvJ2RrzFMmIWfbf/kuVL0EGTkM/VqHyB/DlbHoq6uZdk2VhWrjhjGJSoY
-	2SFGEa8xUwXb8VnybtE4fH/O2g6urAkL/QoDkwQ4BOK5niwxoSZkYe9lKimDmXajm4xjJt7v4sddV
-	0glLMa0iDu6TtqwlrgNQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=j9ZiXShFeOdSyRPTSjATsjh8uf4c020qrMyeNBMay2E=; b=nuY4/6tnPat0OG
+	+jhGmpY8zHn+UMGFguEvZ689+/ALoE8h8EtTWrsi2Cq8COZzuOjVejN40ZOzi3e76U3JPZLegpEhc
+	VVMz6qDFPlE0632aIPQ39dotVdX8v/27w/oAy9O2svLgaYzpIfUEtn+yYxAl/qm7sKE/+AeCbIhEo
+	eNUL+Vb3biYYsHdSAGnNOmg90PmxGID0obUiFdbgcZbvJSnuNc+2m4b56G5g+3Kq8itvRSMoGiFGL
+	rJvXbv9B/JGqgzZj5dSM5kd1eRZbVi0jZspr8yV3n/N0voY36xRwnqO6aIMyqy+JYpJ4NZtdJdwqi
+	wJss+YsSQZ5Ppd/ov97Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM66y-00000003u6h-1sLK;
-	Fri, 13 Dec 2024 13:53:44 +0000
+	id 1tM66x-00000003u63-3sDa;
+	Fri, 13 Dec 2024 13:53:43 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM64S-00000003tGh-25Y2
+	id 1tM64K-00000003tCU-1moM
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Dec 2024 13:51:09 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BD9Zpj1006041;
-	Fri, 13 Dec 2024 13:51:01 GMT
+	Fri, 13 Dec 2024 13:51:01 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BD81XTY022106;
+	Fri, 13 Dec 2024 13:50:51 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	tPxQLS6L9qg4PnYBRfZP6c11YFbfwHkjvedsJyuKDtk=; b=AjB2TWVtbq4Wi6yS
-	DXr232mx1W3zMm+inV9lI4wOSp4hQsPR+VADeE0LKseMCB9AUg+AUWvfpwG72J24
-	eDO2aitGTyWOQqFH+hb2RZaSrfAWPV+DQML7Su8ydHUR1tuALesjFxC5kzy3N9XV
-	NHK1nYJ07HVjBE3q8T+bx0Nd+mwxcNbePdeaSvqKp38PbEe1eRzgdh1Tw0Sjamir
-	n+ridMYugHSUOvzbOhNotEJDFUHIKlW6vNUvCXgr+xoBOw1JuEAdAH+mBMMs8hU+
-	NCQsvH90vl3fYnIF+FmrgSpZxc+4LUfdoRf7WAQNQvhUZyMLhRKVCKtLk0qGJrRt
-	gRgHEg==
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=jOC9nOhDr9jq4AtuIBHj+8
+	zR/D+ZeUbHj/hHK/7AGvU=; b=l9F57L+uQz/Dkc6XkGG3delsj1IpuaWxs7r2WQ
+	k3MZxB7/MKbf0xL07tdoF2jIesdgMdfm5W95myFxsKLl/605oEuErxPkc8p8PH0L
+	C7BvTDSKhqUu7PttbxdK3FkqJ9OJVq/PRmiWc0Gkm41o0kXsdiFOAnu/OwEhBfwd
+	SjKdd0GZeepddVkB9GU1FsPSsBXJHKbqR4ij/K4X6XyEd8MEDCr5VbrQhYGx54XT
+	X3d6uXNOXr6RipGUxumKtiLnENAnrmb6LIiInMAW8lUC4hS9xl/yUWjwydTFXZrJ
+	t9kZjARnkytr2QY9wbhIbwCWjogh18cbkALbrfij/uNhzchA==
 Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43g6xutawa-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43gh271043-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Dec 2024 13:51:01 +0000 (GMT)
+	Fri, 13 Dec 2024 13:50:50 +0000 (GMT)
 Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BDDp0F1014645
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BDDonZU014540
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Dec 2024 13:51:00 GMT
+	Fri, 13 Dec 2024 13:50:49 GMT
 Received: from hu-mmanikan-blr.qualcomm.com (10.80.80.8) by
  nalasex01a.na.qualcomm.com (10.47.209.196) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Fri, 13 Dec 2024 05:50:55 -0800
+ 15.2.1544.9; Fri, 13 Dec 2024 05:50:44 -0800
 From: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
 To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
         <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
@@ -61,31 +60,30 @@ To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>
 CC: <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>
-Subject: [PATCH 2/4] dt-bindings: phy: qcom,ipq8074-qmp-pcie: Document the IPQ5424 QMP PCIe PHYs
-Date: Fri, 13 Dec 2024 19:19:48 +0530
-Message-ID: <20241213134950.234946-3-quic_mmanikan@quicinc.com>
+Subject: [PATCH 0/4] Add PCIe support for IPQ5424
+Date: Fri, 13 Dec 2024 19:19:46 +0530
+Message-ID: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
-References: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 8K-98vrUQl7pTPSfJ339j17zbYxGDDlz
-X-Proofpoint-GUID: 8K-98vrUQl7pTPSfJ339j17zbYxGDDlz
+X-Proofpoint-ORIG-GUID: nbneuj_EhbWNdlFAkyiJQC1rtLKTGG4P
+X-Proofpoint-GUID: nbneuj_EhbWNdlFAkyiJQC1rtLKTGG4P
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- impostorscore=0 clxscore=1015 malwarescore=0 adultscore=0 mlxlogscore=999
- suspectscore=0 spamscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
+ priorityscore=1501 spamscore=0 mlxlogscore=719 impostorscore=0
+ suspectscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0
+ clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2411120000 definitions=main-2412130097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241213_055108_648927_F4D8B8A2 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20241213_055100_579243_B6FB9BA4 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,47 +100,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the PCIe phy on the IPQ5424 platform using the
-IPQ9574 bindings as a fallback, since the PCIe phy on the
-IPQ5424 is similar to IPQ9574.
+This series adds support for enabling the PCIe host devices (PCIe0,
+PCIe1, PCIe2, PCIe3) found on IPQ5424 platform. The PCIe0 & PCIe1
+are 1-lane Gen3 host and PCIe2 & PCIe3 are 2-lane Gen3 host.
 
-Signed-off-by: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
----
- .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        | 21 +++++++++++++------
- 1 file changed, 15 insertions(+), 6 deletions(-)
+Depends On:
+https://lore.kernel.org/linux-arm-msm/20241205064037.1960323-1-quic_mmanikan@quicinc.com/
+https://lore.kernel.org/linux-arm-msm/20241213105808.674620-1-quic_varada@quicinc.com/
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-index 58ce2d91d28c..f60804687412 100644
---- a/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml
-@@ -15,12 +15,21 @@ description:
- 
- properties:
-   compatible:
--    enum:
--      - qcom,ipq6018-qmp-pcie-phy
--      - qcom,ipq8074-qmp-gen3-pcie-phy
--      - qcom,ipq8074-qmp-pcie-phy
--      - qcom,ipq9574-qmp-gen3x1-pcie-phy
--      - qcom,ipq9574-qmp-gen3x2-pcie-phy
-+    oneOf:
-+      - enum:
-+          - qcom,ipq6018-qmp-pcie-phy
-+          - qcom,ipq8074-qmp-gen3-pcie-phy
-+          - qcom,ipq8074-qmp-pcie-phy
-+          - qcom,ipq9574-qmp-gen3x1-pcie-phy
-+          - qcom,ipq9574-qmp-gen3x2-pcie-phy
-+      - items:
-+          - enum:
-+              - qcom,ipq5424-qmp-gen3x1-pcie-phy
-+          - const: qcom,ipq9574-qmp-gen3x1-pcie-phy
-+      - items:
-+          - enum:
-+              - qcom,ipq5424-qmp-gen3x2-pcie-phy
-+          - const: qcom,ipq9574-qmp-gen3x2-pcie-phy
- 
-   reg:
-     items:
+Manikanta Mylavarapu (4):
+  dt-bindings: PCI: qcom: Document the IPQ5424 PCIe controller
+  dt-bindings: phy: qcom,ipq8074-qmp-pcie: Document the IPQ5424 QMP PCIe
+    PHYs
+  arm64: dts: qcom: ipq5424: Add PCIe PHYs and controller nodes
+  arm64: dts: qcom: ipq5424: Enable PCIe PHYs and controllers
+
+ .../devicetree/bindings/pci/qcom,pcie.yaml    |   4 +
+ .../phy/qcom,ipq8074-qmp-pcie-phy.yaml        |  21 +-
+ arch/arm64/boot/dts/qcom/ipq5424-rdp466.dts   |  43 ++
+ arch/arm64/boot/dts/qcom/ipq5424.dtsi         | 482 +++++++++++++++++-
+ 4 files changed, 539 insertions(+), 11 deletions(-)
+
+
+base-commit: 3e42dc9229c5950e84b1ed705f94ed75ed208228
+prerequisite-patch-id: 8ca651806ea679db4420e18aaa9f43aea27a519d
+prerequisite-patch-id: 3c4107e3b3a47df73db7ae672b55fa5d995c1f30
+prerequisite-patch-id: 56470ae6a75766d02d7db8f04c03a028de0c901a
+prerequisite-patch-id: abf79dda8233d882c345774ca693e48dafaeadaa
 -- 
 2.34.1
 
