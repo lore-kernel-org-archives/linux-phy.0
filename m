@@ -4,90 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0BD3E7717F
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Dec 2024 08:16:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FF89E7717D
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Dec 2024 08:32:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZEhdszG4CruBdi1ugSH/mrl2+fKzLt8Lpe+fPIZBwTI=; b=zconKvcvgzJErg
-	c0dReP0W3ni53ix8cEIsMDyyUBizFmRiHe4HebQOvrZAAQ2CQ9psDJOKqsINX+sDCj6dAoSnd2QmB
-	HGMbIQguKqhU1QhEcd9wQfOr68iEupaTDx8VZ5taHz4t/LK44T3PHm72XugtarFZ/UhZDHsiC6Z72
-	6alh6XrdIWS6BGPSLCCgrKVp/ca919GxFXbkJIixW6Tqsx5jM1B+u1Sxbzuldav6UMkpo10eXqGVX
-	MlpxZJHQCA3k9HitJ5uJH4e2uHq5/FLiMApQleq40tpC2+MplDhSJbmqXTi5frF5OQMOBFK1KjRDQ
-	2kVW/n5vgEO61OH5e1AA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WYZpM6bimFezrWiTf7a8nzD94AioXIrm+jha2v1UOY8=; b=KJyqief+q+EOU1
+	GmhRChDNHPaLZ0i0Q7KHuQTat+Y9Mjk22xAx4kAJEbkHa+36esycBW6DITuDA1Nt3mP4uk+CmSxj7
+	tpznUP7PnDNqAnr4XKueqe3CpgeHuq7kKD5Z7X9T/z/ZK7bm2wYF06WfaxLRPxRA4JO+n0od+dA7D
+	3nr/pGvmfzVhTEy4fN7HBBHX6MeF4iJi0ZqcevMo4+wEMNgO8ErWxObSAS/B4YW8zHhx3H5CBnr9w
+	4uGN714Vup1al/O9KNg9PUZTr12eFPmHKYl8PW2/jhoGYNHQmULOZ5eLd0ywCEZhtLTwggoCkybIN
+	Nr0/nPZX2ZEPDCA5Lzog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM0q8-000000033qk-31km;
-	Fri, 13 Dec 2024 08:16:00 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tM15o-000000035hF-1z5s;
+	Fri, 13 Dec 2024 08:32:12 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tM0q6-000000033qH-1c6O
-	for linux-phy@lists.infradead.org;
-	Fri, 13 Dec 2024 08:15:59 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BD7ulu5029837;
-	Fri, 13 Dec 2024 08:15:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	vLAICILLjIfyIA1ULZ2JLrUpUY1KfziegLW0IZav2cE=; b=Nv0OBx/HJFOjOxk7
-	6rQtYFHUiPcIxQSVx845QsOUt5CI20VBxjXiks3ab2hgYmwm1jnQPnsGv6rvlFv6
-	1eL73g9grkNwOTgrUanoX4yzxEOLlUczWpertv/mDnBT/9IySjEGES6G7S1HN8V8
-	aE/O6NrXSI7FdJ9kD6J3Ygxc5c6fbCmLaF4xFtBlUqj0f9z/ZjWoRWS+EfWA1bmM
-	NKJY77MUbV7OSy+OSZGJ4RLKWmf3l7u7zatAci6oS4HGPUZQ5D4VSBxLh2Te3uLm
-	NyCqKfd2N51loCbj6Z1klbjQDJUN0R62kvXFrbsigy4oQJgxbB+fu45Op31v/1G4
-	XFanRA==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43dxw4dy53-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Dec 2024 08:15:19 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BD8FImL009787
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 13 Dec 2024 08:15:18 GMT
-Received: from [10.239.133.118] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 13 Dec
- 2024 00:15:13 -0800
-Message-ID: <0a16d52c-eebe-40da-ba02-7f68a7849039@quicinc.com>
-Date: Fri, 13 Dec 2024 16:15:10 +0800
+	id 1tM14i-000000035ZD-1Ygj;
+	Fri, 13 Dec 2024 08:31:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 55FD85C6A73;
+	Fri, 13 Dec 2024 08:30:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8982FC4CED0;
+	Fri, 13 Dec 2024 08:31:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1734078663;
+	bh=OmnbKPvHVM7MdfRx5FYkdNzBzuqOqnCvvH25yQuyNBA=;
+	h=From:To:Cc:Subject:Date:From;
+	b=VNk8HE/5qYbZuBa988qzCP0ljdU8d8JT1z7lwgU/ujrmlqidCLhSdNvcuNPKF8uI5
+	 EKWmpL9T5FLfBvMoOi213/5kdb/id+Y9DkDKlLpxzsFlttMq9OMJnHm0OaovoooBC9
+	 QyxzZ8gW4dlEW4i3CJzv5xQcz+Gs4kXEDxa6KKxgSPyJPfrIDgh7pu8R9D86wcKOT+
+	 IgqsZjlQ2GoEEijNseArr7zADkeSQkp93wtce8Xl2xcBKQyCEHPN69rjQH1muW5PBg
+	 c8OReZ8kuGiSmWUDwTUH3DY6rnqwxq7nkl1ERJYxFQ0qsyRpdBLkk0PCRCCa5aR/Tz
+	 Quc23IjDMmUJA==
+From: Arnd Bergmann <arnd@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: Arnd Bergmann <arnd@arndb.de>,
+	Phi-bang Nguyen <pnguyen@baylibre.com>,
+	Jacob Keller <jacob.e.keller@intel.com>,
+	Daniel Golle <daniel@makrotopia.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: mediatek: phy-mtk-hdmi: add regulator dependency
+Date: Fri, 13 Dec 2024 09:30:51 +0100
+Message-Id: <20241213083056.2596499-1-arnd@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: qcom-qusb2: Add regulator_set_load to Qualcomm
- usb phy
-To: Bjorn Andersson <andersson@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Manu Gautam <mgautam@codeaurora.org>,
-        Vivek Gautam
-	<vivek.gautam@codeaurora.org>, <kernel@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20241121-add_set_load_to_qusb_phy-v2-1-1c5da1befec0@quicinc.com>
- <vbuo2yel2pdcwnmz32f4t5pb6v3ptt2bcs2t6ybab2jxnkd6e7@rjnsbawj4zpb>
-Content-Language: en-US
-From: Song Xue <quic_songxue@quicinc.com>
-In-Reply-To: <vbuo2yel2pdcwnmz32f4t5pb6v3ptt2bcs2t6ybab2jxnkd6e7@rjnsbawj4zpb>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: XnpzsuXAGzRKEPNTTywcpOk98YOndc0Q
-X-Proofpoint-GUID: XnpzsuXAGzRKEPNTTywcpOk98YOndc0Q
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
- suspectscore=0 priorityscore=1501 adultscore=0 mlxlogscore=999
- clxscore=1015 spamscore=0 mlxscore=0 lowpriorityscore=0 phishscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412130056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241213_001558_563128_556B8E2F 
-X-CRM114-Status: GOOD (  27.44  )
+X-CRM114-CacheID: sfid-20241213_003104_451348_7E829849 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,110 +75,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Arnd Bergmann <arnd@arndb.de>
 
+The driver no longer builds when regulator support is unavailable:
 
-On 11/29/2024 12:43 AM, Bjorn Andersson wrote:
-> On Thu, Nov 21, 2024 at 04:09:27PM +0800, Song Xue wrote:
->> Set the current load before enable regulator supplies at QUSB phy.
->>
->> Encountered one issue where the board powered down instantly once the UVC
->> camera was attached to USB port while adding host mode on usb port and
->> testing a UVC camera with the driver on QCS615 platform. The extensible
->> boot loader mentioned that OCP(Over Current Protection) occurred at LDO12
->> from regulators-0 upon powered on board again. That indicates that the
->> current load set for QUSB phy, which use the regulator supply, is lower
->> than expected.
->>
->> As per QUSB spec, set the maximum current load at 30mA to avoid overcurrent
->> load when attach a device to the USB port.
->>
->> Fixes: 937e17f36a32 ("phy: qcom-qusb2: Power-on PHY before initialization")
->> Signed-off-by: Song Xue <quic_songxue@quicinc.com>
-> 
-> The patch looks good. But if we describe the regulator(s) with
-> regulator-allow-set-load; and not all the consumers vote for load, the
-> sum of the load when USB phy is disabled goes to 0 and we will enter
-> LPM.
-> 
-Hi, Bjorn
+arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi.o: in function `mtk_hdmi_phy_register_regulators':
+phy-mtk-hdmi.c:(.text.unlikely+0x3e): undefined reference to `devm_regulator_register'
+arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_phy_pwr5v_is_enabled':
+phy-mtk-hdmi-mt8195.c:(.text+0x326): undefined reference to `rdev_get_drvdata'
+arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_phy_pwr5v_disable':
+phy-mtk-hdmi-mt8195.c:(.text+0x346): undefined reference to `rdev_get_drvdata'
+arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_phy_pwr5v_enable':
 
-Thanks for comment.
+Fixes: 49393b2da1cd ("phy: mediatek: phy-mtk-hdmi: Register PHY provided regulator")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/phy/mediatek/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-We dived into the code and found the other all Qualcomm platform's 
-device tree using the phy-qcom-qusb2's compatible don't use the 
-"regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>" and 
-"regulator-allow-set-load" together at the same time. We think the patch 
-is safe now.
-
-Therefore, can we merge the patch?
-
-Thanks,
-Song
-> For this reason we're not doing any load requests today. Can you confirm
-> that this works fine with a dtb where only HPM is permitted (as well as
-> LPM and HPM)? If so I'd be in favor of us merging this change, but
-> keeping the dts HPM-only until someone confirms that all consumers of
-> these regulators specify load-votes.
-> 
-> Regards,
-> Bjorn
-> 
->> ---
->> Changes in v2:
->> - Removed "---" above the Fixes.
->> - Link to v1: https://lore.kernel.org/r/20241121-add_set_load_to_qusb_phy-v1-1-0f44f3a3290e@quicinc.com
->> ---
->>   drivers/phy/qualcomm/phy-qcom-qusb2.c | 13 ++++++++++++-
->>   1 file changed, 12 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> index c52655a383cef008552ed4533b9f31d1cbf34a13..80f0d17c42717e843937255a9a780bbae5998535 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
->> @@ -722,16 +722,27 @@ static int __maybe_unused qusb2_phy_runtime_resume(struct device *dev)
->>   	return ret;
->>   }
->>   
->> +#define QUSB2PHY_HPM_LOAD 30000 /*uA*/
->> +
->>   static int qusb2_phy_init(struct phy *phy)
->>   {
->>   	struct qusb2_phy *qphy = phy_get_drvdata(phy);
->>   	const struct qusb2_phy_cfg *cfg = qphy->cfg;
->>   	unsigned int val = 0;
->>   	unsigned int clk_scheme;
->> -	int ret;
->> +	int ret, i;
->>   
->>   	dev_vdbg(&phy->dev, "%s(): Initializing QUSB2 phy\n", __func__);
->>   
->> +	/* set the current load */
->> +	for (i = 0; i < ARRAY_SIZE(qphy->vregs); i++) {
->> +		ret = regulator_set_load(qphy->vregs[i].consumer, QUSB2PHY_HPM_LOAD);
->> +		if (ret) {
->> +			dev_err(&phy->dev, "failed to set load at %s\n", qphy->vregs[i].supply);
->> +			return ret;
->> +		}
->> +	}
->> +
->>   	/* turn on regulator supplies */
->>   	ret = regulator_bulk_enable(ARRAY_SIZE(qphy->vregs), qphy->vregs);
->>   	if (ret)
->>
->> ---
->> base-commit: decc701f41d07481893fdea942c0ac6b226e84cd
->> change-id: 20241121-add_set_load_to_qusb_phy-d1327c797ffe
->>
->> Best regards,
->> -- 
->> Song Xue <quic_songxue@quicinc.com>
->>
->>
+diff --git a/drivers/phy/mediatek/Kconfig b/drivers/phy/mediatek/Kconfig
+index 60e00057e8bc..ba6461350951 100644
+--- a/drivers/phy/mediatek/Kconfig
++++ b/drivers/phy/mediatek/Kconfig
+@@ -65,6 +65,7 @@ config PHY_MTK_HDMI
+ 	depends on ARCH_MEDIATEK || COMPILE_TEST
+ 	depends on COMMON_CLK
+ 	depends on OF
++	depends on REGULATOR
+ 	select GENERIC_PHY
+ 	help
+ 	  Support HDMI PHY for Mediatek SoCs.
+-- 
+2.39.5
 
 
 -- 
