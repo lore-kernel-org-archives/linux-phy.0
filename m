@@ -4,91 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DBF1E7717F
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Dec 2024 06:31:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3753E7717F
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Dec 2024 08:07:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WP88lnbxWS7K3KQfY/4hbRkXqowLJ+i4zdjBrU6EMIQ=; b=3BpJNYeRmc22uW
-	+dA4II2RitrjOihClDOGEI7lurKVzqOJgwqRNnKXgIYoX7t1kpUIdosDEIM6x/u7nniaNN8OMuY83
-	OqWGDKEY1UxVY4Et69fj21SSha41wgxM0c1hGCtd9gWQKGZyD4ttCA9Azw9SFJCNTUF747Og9LKGG
-	xoVmVaLqCsFS3U6XXcEAZXNHeT2691yAUU5DiampwC+f8o7NsafesZLc7TO5DGYvyoLOf/tfXGqd5
-	uDQ+OZnbV8qgKp+0Pc1ov93lTaZVYyZINM+bWw44p5FPgG6zMcI8bs6QRQ63oY7EtwsbetWe0hOux
-	4UEDgqs1zWMYAFWwCM2w==;
+	List-Owner; bh=E/aL+h6Ur1Og1ntARJx5FQZsS/UHGmVYCkZPaXx/lNE=; b=oUanyc2q8HS66T
+	H3vMKc4bAWtqiXby0idzcAl9/sxjRNd1RNiUpHNMhk3vajSUdncIOEL9A1sVH3hxiSOFiw5BBLAgw
+	beXD3leSTMj/7WwmGSpl2tQsY//BUfLzV8HuY0FaJroKbwWX9cgrajMINsC85duuQAZURVxQZUgBS
+	LK9XhvIffFvKv7+8KdA+tZBZcFJR439PzX+jU4mc9291IgqhlGX4i6e9E7xHNAPSkeaJ30ZA4IX2o
+	ZdjHwM55/q+hW1zKKJdObNjo+dT5vI/GvRiNjvh9y1JOce0eyOqLsmyQdO02vxyZVHcDuAHAYn5ro
+	qAwEGJ4B6cnFD1x2OTzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tN4dS-00000009Bqj-2jxQ;
-	Mon, 16 Dec 2024 06:31:18 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tN685-00000009LS4-2N5M;
+	Mon, 16 Dec 2024 08:07:01 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tN4dO-00000009Bpy-3lez
-	for linux-phy@lists.infradead.org;
-	Mon, 16 Dec 2024 06:31:16 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BG3HGhr021637;
-	Mon, 16 Dec 2024 06:31:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=/vSVfCXOF4iVZRrIFkv7hhmD
-	VMvNpOocSjbRo9mQITU=; b=BmOjfsjVHLp1M9R8BSW27K9xTZbzK3OjEAF0y8l2
-	YF5gLVqmzbwd2wsYe6a+6NWwcv8RAvsoDb3nmEjgJMz0lI6GajPUvxo5sRDHCqfD
-	QyqRi3b7pAD6KkXCZ7dnemjtXL1ktnHpCyEixbT3TKX35nv/stc5AkdUpIb29+3+
-	qDzQmzrAMDEp8Ruft1kRoe3pLv8n105OOv9zx0C0HkjhF6yFZLMCzBXQw/WEfj/k
-	AlarKoDKNyHRusI8olN2XIQN+g2VGnn00XzorqJpHYI3fG4n++CYC22Z6nuuJ+u5
-	UgVON49lnbTbxKNVZ3y/mKOeBbnlG6rKLoeyEE2RFPCkPg==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43jc5kgdjc-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 16 Dec 2024 06:31:05 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BG6V44g021652
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 16 Dec 2024 06:31:04 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 15 Dec 2024 22:30:58 -0800
-Date: Mon, 16 Dec 2024 12:00:51 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-CC: <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <bhelgaas@google.com>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <andersson@kernel.org>,
-        <konradybcio@kernel.org>, <p.zabel@pengutronix.de>,
-        <quic_nsekar@quicinc.com>, <dmitry.baryshkov@linaro.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v2 2/6] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-Message-ID: <Z1/JG+RkTBW9JuMO@hu-varada-blr.qualcomm.com>
-References: <20241204113329.3195627-1-quic_varada@quicinc.com>
- <20241204113329.3195627-3-quic_varada@quicinc.com>
- <710aa948-d27f-49f6-a4a8-73f6208502c3@oss.qualcomm.com>
+	id 1tN683-00000009LQv-1AWL;
+	Mon, 16 Dec 2024 08:07:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=ykA8HuFeO2n9T33KOENfQTgct9xH6AMqa65lfTAavAs=; b=OfUN9qq8QBMIKqzkSTNA6oo+1w
+	nyIpksqusAh8oyE7v1ko9vZ54cD4+HGcKA8JGaESkRP8ra9XuRRQW+H1sFc+Hp3EH7vJJnPrrF8L0
+	1KO872C3v0n5Tcb7NFZSLH72RlzlU9ncumD+pKzRPIH16b2eK0JnOg1Qq+MVrTYfOjIpxr5NRiF6M
+	ERCqI6ro/T9y/+RltH5UURIuw++KlPvzuHv8PxK/xt1FaoRC61Ljc8M197JbMhwwG2z54rp5eTeWC
+	aW/npIjztmeG0Ppmo+Evw9djr8vzmIJWhxNE4S/cv9K9dThR2myxXBuepZirty5G+9k4r1xqJripN
+	N1PE6M/Q==;
+Received: from i5e86190a.versanet.de ([94.134.25.10] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tN67y-0002wV-1N; Mon, 16 Dec 2024 09:06:54 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: kishon@kernel.org, linux-phy@lists.infradead.org, vkoul@kernel.org,
+ Andy Yan <andyshrk@163.com>
+Cc: linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ kever.yang@rock-chips.com, sebastian.reichel@collabora.com,
+ Andy Yan <andy.yan@rock-chips.com>
+Subject: Re: [PATCH] phy: rockchip: phy-rockchip-typec: Fix Copyright description
+Date: Mon, 16 Dec 2024 09:06:53 +0100
+Message-ID: <1813498.VLH7GnMWUR@diego>
+In-Reply-To: <20241215092441.3447155-1-andyshrk@163.com>
+References: <20241215092441.3447155-1-andyshrk@163.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <710aa948-d27f-49f6-a4a8-73f6208502c3@oss.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: j_eREXnaHXyx9uLLkPXB50WXUkT3bRAy
-X-Proofpoint-GUID: j_eREXnaHXyx9uLLkPXB50WXUkT3bRAy
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 adultscore=0
- impostorscore=0 clxscore=1015 mlxlogscore=924 priorityscore=1501
- mlxscore=0 phishscore=0 suspectscore=0 lowpriorityscore=0 bulkscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412160051
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241215_223115_071613_B1F0C2B6 
-X-CRM114-Status: GOOD (  24.66  )
+X-CRM114-CacheID: sfid-20241216_000659_319730_E709D806 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,158 +75,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 05, 2024 at 05:40:15PM +0100, Konrad Dybcio wrote:
-> On 4.12.2024 12:33 PM, Varadarajan Narayanan wrote:
-> > From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> >
-> > Add Qualcomm PCIe UNIPHY 28LP driver support present
-> > in Qualcomm IPQ5332 SoC and the phy init sequence.
-> >
-> > Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
->
-> [...]
->
-> > +struct qcom_uniphy_pcie_regs {
-> > +	unsigned int offset;
-> > +	unsigned int val;
->
-> u32
+Am Sonntag, 15. Dezember 2024, 10:24:40 CET schrieb Andy Yan:
+> From: Andy Yan <andy.yan@rock-chips.com>
+> 
+> The company name has update to Rockchip Electronics Co., Ltd.
+> since 2021.
+> And change Co.Ltd to Co., Ltd. to fix mail server warning:
+> DBL_SPAM(6.50)[co.ltd:url];
+> 
+> Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
 
-ok.
+Acked-by: Heiko Stuebner <heiko@sntech.de>
 
-> > +};
-> > +
-> > +struct qcom_uniphy_pcie_data {
-> > +	int lanes;
-> > +	/* 2nd lane offset */
-> > +	int lane_offset;
->
-> 'lanes', 'lane_offset' and '2nd lane' together imply one of:
->
-> - there can be more lines, all at an equal offset
-> - there can only ever be two lines
->
-> Please specify which one is the case
 
-There can be more lines all at an equal offset. However, it is
-just 2 lines in this SoC's case. Will remove the "2nd lane offset"
-comment.
-
-> > +	unsigned int phy_type;
-> > +	const struct qcom_uniphy_pcie_regs *init_seq;
-> > +	unsigned int init_seq_num;
-> > +	unsigned int pipe_clk_rate;
-> > +};
-> > +
-> > +struct qcom_uniphy_pcie {
-> > +	struct phy phy;
-> > +	struct device *dev;
-> > +	const struct qcom_uniphy_pcie_data *data;
-> > +	struct clk_bulk_data *clks;
-> > +	int num_clks;
-> > +	struct reset_control *resets;
-> > +	void __iomem *base;
-> > +};
-> > +
-> > +#define	phy_to_dw_phy(x)	container_of((x), struct qca_uni_pcie_phy, phy)
->
-> A space after #define, please
-
-ok
-
-> > +
-> > +static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
-> > +	{
-> > +		.offset = PHY_CFG_PLLCFG,
-> > +		.val = 0x30,
-> > +	}, {
-> > +		.offset = PHY_CFG_EIOS_DTCT_REG,
-> > +		.val = 0x53ef,
-> > +	}, {
-> > +		.offset = PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME,
-> > +		.val = 0xCf,
->
-> mixed case hex.. please make it lowercase
-
-ok
-
-> > +	},
-> > +};
-> > +
-> > +static const struct qcom_uniphy_pcie_data ipq5332_x1_data = {
-> > +	.lanes		= 1,
-> > +	.phy_type	= PHY_TYPE_PCIE_GEN3,
-> > +	.init_seq	= ipq5332_regs,
-> > +	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
-> > +	.pipe_clk_rate	= 250000000,
-> > +};
-> > +
-> > +static const struct qcom_uniphy_pcie_data ipq5332_x2_data = {
-> > +	.lanes		= 2,
-> > +	.lane_offset	= 0x800,
-> > +	.phy_type	= PHY_TYPE_PCIE_GEN3,
-> > +	.init_seq	= ipq5332_regs,
-> > +	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
-> > +	.pipe_clk_rate	= 250000000,
-> > +};
->
-> Are there going to be more UNIPHY-equipped SoCs?
-
-Not sure. Since this driver was initially posted for ipq5018 and
-ipq5332 suport was added later, there are two sets of data one
-for 5018 and one for 5332.
-
-> > +static void qcom_uniphy_pcie_init(struct qcom_uniphy_pcie *phy)
-> > +{
-> > +	const struct qcom_uniphy_pcie_data *data = phy->data;
-> > +	const struct qcom_uniphy_pcie_regs *init_seq;
-> > +	void __iomem *base = phy->base;
-> > +	int lane, i;
-> > +
-> > +	for (lane = 0; lane != data->lanes; lane++) {
->
-> while effectively the same, < would be less eyebrow-raising
-
-ok.
-
-> > +		init_seq = data->init_seq;
-> > +
-> > +		for (i = 0; i < data->init_seq_num; i++, init_seq++)
-> > +			writel(init_seq->val, base + init_seq->offset);
->
-> writel(init_seq[i].val, ...)
-
-ok.
-
-> > +
-> > +		base += data->lane_offset;
-> > +	}
-> > +}
-> > +
-> > +static int qcom_uniphy_pcie_power_off(struct phy *x)
-> > +{
-> > +	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
-> > +
-> > +	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
-> > +
-> > +	reset_control_assert(phy->resets);
->
-> This can fail, return it instead of zero
-
-ok.
-
-> [...]
->
-> > +MODULE_LICENSE("Dual BSD/GPL");
->
-> I think this is too vague, there are many BSD variants
-
-Will change it to "GPL v2"
-
-Thanks
-Varada
 
 -- 
 linux-phy mailing list
