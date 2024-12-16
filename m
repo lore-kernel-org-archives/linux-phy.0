@@ -4,67 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CACAE7717F
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Dec 2024 09:13:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DD3EE77184
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Dec 2024 09:44:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2dBEW4Nfu2Rpt02zSvWrqvfyXpUwhEeXKcBLLpYaXnM=; b=uMi6WfCMYB/bQ4
-	rc6SHv1UNVgNIdUAPUnD5DuXgbPmfZd72EINXerBJCVPNV+FFv1gcg+XEV5DOw0Zxc0tCGJLojZu3
-	Ps0Xq4bESGWsy6CeOG3ha0L0CNhA7VPMGiybeDvB0WatFCkxDGh9rxBO2HsgaDfzSavbvqUtXGld8
-	SD9Jy/RsqamoKvXMzrBIlLi75zUgLk7G/+FH40rA5hZdKxCl2CxG1ntx/pfqMcLcBa6R45QYPBjf+
-	uIADUQN4BX/0R6SorwCFgdXxcKrtyrRBDgue5w/BhNELTqKbMB4peEqjieLjUjn1JhjBBXyPfrqXI
-	zWOosVeruY+Ma3dWyLYA==;
+	List-Owner; bh=P0wWx7SNiqo7qDWXpEZ/4xAIWEaKy8Kw4YA/CgUd2rE=; b=Mr+/xPJ/CX2zpN
+	fWaSNBzhM25t2t6nXkgJnLdrRla8SRFJZSQ3TGXT7uL88OlrAPzPkQydhZUTLqA97snEQbWsC1Y9O
+	saa2Kfvq3v/TMKTflkQ8Y14KWUjTNI+VbZ44lWGzZJEXZ4yfy4fi+BLQL7MXgCaI3izj5yjme+TEd
+	Cl+iGVIKfy4YRCXazGI0GSIbz+N+/Hk681zaLhUeZGxgWij+aNCAh/ebHBKH9OMtR7SZnmkG/SKRF
+	t65w9g0dDuufzXzUiCVZDqlnmXHn7C3RnzdesrIxxeSdlE0llW+AHmrYYVyx5mDC2dvQKmhr/lHjR
+	2mxGvXN65EYfsVBi+Rng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tN7AD-00000009VWr-15Qc;
-	Mon, 16 Dec 2024 09:13:17 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tN7eP-00000009Za1-3rK5;
+	Mon, 16 Dec 2024 09:44:29 +0000
+Received: from mail-yb1-xb30.google.com ([2607:f8b0:4864:20::b30])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tN796-00000009VMX-2oe1;
-	Mon, 16 Dec 2024 09:12:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=bUiHe4Qn1i6vcEIv1EhyIUEpJIZINJxDWotkRPJwW4A=; b=HZq04+ev4NMsn0ngmTDuAcTY2i
-	P+3kLn4K3obHdW4QelHxx5kkNXgaHUveDJ8HQuzIyYrmz0kzsKngknfX8sG5jgOuG6V4bE30xhrnB
-	kX7XshIWUBSObLsiYxyOezA0YIOwYzaSfBOzIEjV9eWicwlUNbboKGAZZ/ZK2O8n8/P3+WXi/fE9c
-	tiaM6Ctwk0SMStcfMaUL1KRkpvqLtvroX7ILA+5encAR45NEZySnCPq+Qd6AYJJIYwhTx7+VYoXJB
-	OflPvto6piPMC+OokZKDnHNL6M+41MqI4/o1FB1xFVD5FlE2y10+jQKQYGkfUZpzL04HJwIvmgvGh
-	XKpk3t6Q==;
-Received: from i5e86190a.versanet.de ([94.134.25.10] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tN78t-0003mo-Uy; Mon, 16 Dec 2024 10:11:55 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Damon Ding <damon.ding@rock-chips.com>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH v2 03/11] drm/rockchip: analogix_dp: Add support for RK3588
-Date: Mon, 16 Dec 2024 10:11:54 +0100
-Message-ID: <4395748.ejJDZkT8p0@diego>
-In-Reply-To: <gwogudb5vae7wu452zwuqmdlyaibenoso4f5pjmu3uttckhy2w@shndol4mz5n4>
-References: <20241216031225.3746-1-damon.ding@rock-chips.com>
- <20241216031225.3746-4-damon.ding@rock-chips.com>
- <gwogudb5vae7wu452zwuqmdlyaibenoso4f5pjmu3uttckhy2w@shndol4mz5n4>
+	id 1tN7eM-00000009ZYC-116x
+	for linux-phy@lists.infradead.org;
+	Mon, 16 Dec 2024 09:44:28 +0000
+Received: by mail-yb1-xb30.google.com with SMTP id 3f1490d57ef6-e460717039fso1613729276.0
+        for <linux-phy@lists.infradead.org>; Mon, 16 Dec 2024 01:44:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1734342265; x=1734947065; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=JuUwiwam2NLEhcEaeDlZ9kN1aj2SGwFO1wzDqoeRp0Q=;
+        b=as23InBBhAZieTUxIwrKJde7uh05hCcQbl+g0eW892+NLUzLUB/N4Xhzoyqbr3vNdG
+         5Z+MtpTC8/JRk0WJxE05IaOIyNLB3/gIPxxo1DiUN5wLLf+f9dxrmi0TYxaJxsh1CEYo
+         B+gBKrgoqE26aPdAUCNTE5MrvvKjy24v8wjKAVlxPT4CuPz68I9pV1nwrcWXGMAxIiR/
+         BCo5HecVblx82PmBo8m4y8aCmd0uSv1NO9QPazZ5lq1le4K0khWk3xAeex/gYD8iiZTn
+         sNYdKo0on+kIZSZUFGkmQvMUhpUMYezcWoEGYz9F+6ZomoYqIyDEtk0/ZkbNS7Pa52yT
+         9ALQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1734342265; x=1734947065;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JuUwiwam2NLEhcEaeDlZ9kN1aj2SGwFO1wzDqoeRp0Q=;
+        b=LAEp1gl+Q3Hh+yUP7+qRqvaGlocJ1ULNF9b0mw1OcLXXvliyDVosK9B6JkeIJm8y0p
+         8Vi+6wHueEmvEimYaU5gXW1Hz/h11mDo6s402treIhY6wYFrEy63ltNhWJYtpiTQaEYi
+         OUg01jnRU6uUIsxguIOrRHc58ofqddWBsg6V164CfH5uAZvqjdgol0Q4ALxbRaZw1TkJ
+         Jco02Em/687QXBrPKrZjX6ncn3vJAuKAM1on1BUX43g3kwHCFMdcUTlI4Da5B1lX/ayc
+         vmjILlKOTLDWPjrqws2sIn8u4q9jghdApaZPmwZ+iqv+szbSfSDYQUVtJq+vf2zr+Kea
+         IaYw==
+X-Forwarded-Encrypted: i=1; AJvYcCX6LscT2JZ0Wl/FiI8rld38bdjKfSAPODdChiQhtH0sOz1TtDren28I+Twejk5TCdU0Rwf6HegJpC0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxX4tStCq5ac8kt8lmg6PQ/HY/My747tnnqy0hs8z2PqTLMZ5Ms
+	6Wc7T1Mqc6tWK64enZuwYqSm2TdHlWJaZXBxKC9vGI9vvQ9AUnfodnmo3i96bOK0RISMQ1NJDRR
+	9UY+4wwTbIf0o+RX8jD3jt2w8O6Ep2nqtTXnZEw==
+X-Gm-Gg: ASbGncv1BXr5uJxl5JjKuIAUxHJ/ZIob9/8ukjFjc/LxoCM9JMUYdp11jm6djWTbEAM
+	88G585EaTM15qTFcMshQEfpfhGTGp9keEm0g6OIV15SZbF4x/vakN
+X-Google-Smtp-Source: AGHT+IEaxgr5zAENdkbhHhWLUWeddBiATkm12WTcfnkIBrtIL6G9ABG6kqvlOs/mlL45ibQg3MGgK6n9x3gh6NKZnko=
+X-Received: by 2002:a05:6902:1587:b0:e4d:d319:ba6 with SMTP id
+ 3f1490d57ef6-e4dd3190cc0mr2042157276.39.1734342265011; Mon, 16 Dec 2024
+ 01:44:25 -0800 (PST)
 MIME-Version: 1.0
+References: <20241209033923.3009629-1-victor.liu@nxp.com> <20241209033923.3009629-13-victor.liu@nxp.com>
+ <3j4fguv4oienfaj4fghpiqpmnq3aczu4azhdo5jzvywc5mawm5@hh33p3dhf6xa>
+ <db4d9d4e-855f-4647-9b93-ccc5ec0202b3@nxp.com> <q6pdop6ucowtoxxr66czq7yooujyvp6qs5vcg6gpmi3q4rs4l3@szyqt5pxteoz>
+ <b02fb998-9420-4954-8e48-82447493bbb7@nxp.com> <CAA8EJppBpeMA3aSzk025tvzfTW-bFxeZS4kj0Ujk_AuCyoxnEg@mail.gmail.com>
+ <95a5c779-941a-4942-8988-65fbe1c4cf82@nxp.com>
+In-Reply-To: <95a5c779-941a-4942-8988-65fbe1c4cf82@nxp.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 16 Dec 2024 11:44:13 +0200
+Message-ID: <CAA8EJpoUa9y9nfrrDf47aLs5zr4XKSghySXNLnCGwDyYdOvMog@mail.gmail.com>
+Subject: Re: [PATCH v6 12/19] drm/imx: Add i.MX8qxp Display Controller KMS
+To: Liu Ying <victor.liu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	p.zabel@pengutronix.de, maarten.lankhorst@linux.intel.com, mripard@kernel.org, 
+	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, 
+	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, 
+	tglx@linutronix.de, vkoul@kernel.org, kishon@kernel.org, aisheng.dong@nxp.com, 
+	agx@sigxcpu.org, francesco@dolcini.it, frank.li@nxp.com, 
+	u.kleine-koenig@baylibre.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241216_011208_846870_A94E5656 
-X-CRM114-Status: GOOD (  35.02  )
+X-CRM114-CacheID: sfid-20241216_014426_335775_A0CE851F 
+X-CRM114-Status: GOOD (  30.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,186 +103,413 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Montag, 16. Dezember 2024, 09:57:41 CET schrieb Dmitry Baryshkov:
-> On Mon, Dec 16, 2024 at 11:12:17AM +0800, Damon Ding wrote:
-> > RK3588 integrates the analogix eDP 1.3 TX controller IP and the HDMI/eDP
-> > TX Combo PHY based on a Samsung IP block, and there are also two
-> > independent eDP display interface on RK3588 Soc.
-> > 
-> > Add just the basic support for now, i.e. RGB output up to 4K@60Hz, without
-> > the tests of audio, PSR and other eDP 1.3 specific features.
-> > 
-> > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> > 
-> > ---
-> > 
-> > Changes in v2:
-> > - Add support for the other eDP output edp1
-> > ---
-> >  .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 82 ++++++++++++++++---
-> >  include/drm/bridge/analogix_dp.h              |  3 +-
-> >  2 files changed, 74 insertions(+), 11 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-> > index 871606a31ef1..4c9a55776ada 100644
-> > --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-> > +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
-> > @@ -51,10 +51,12 @@ struct rockchip_grf_reg_field {
-> >  /**
-> >   * struct rockchip_dp_chip_data - splite the grf setting of kind of chips
-> >   * @lcdc_sel: grf register field of lcdc_sel
-> > + * @edp_mode: grf register field of edp_mode
-> >   * @chip_type: specific chip type
-> >   */
-> >  struct rockchip_dp_chip_data {
-> >  	const struct rockchip_grf_reg_field lcdc_sel;
-> > +	const struct rockchip_grf_reg_field edp_mode;
-> >  	u32	chip_type;
-> >  };
-> >  
-> > @@ -134,12 +136,21 @@ static int rockchip_dp_poweron(struct analogix_dp_plat_data *plat_data)
-> >  		return ret;
-> >  	}
-> >  
-> > +	ret = rockchip_grf_field_write(dp->grf, &dp->data->edp_mode, 1);
-> > +	if (ret != 0)
-> > +		DRM_DEV_ERROR(dp->dev, "failed to set edp mode %d\n", ret);
-> 
-> Is it to be called for non-eDP hosts too? Or for older hosts?
+On Mon, 16 Dec 2024 at 08:28, Liu Ying <victor.liu@nxp.com> wrote:
+>
+> On 12/13/2024, Dmitry Baryshkov wrote:
+> > On Fri, 13 Dec 2024 at 08:06, Liu Ying <victor.liu@nxp.com> wrote:
+> >>
+> >> On 12/12/2024, Dmitry Baryshkov wrote:
+> >>> On Wed, Dec 11, 2024 at 03:43:20PM +0800, Liu Ying wrote:
+> >>>> On 12/10/2024, Dmitry Baryshkov wrote:
+> >>>>> On Mon, Dec 09, 2024 at 11:39:16AM +0800, Liu Ying wrote:
+> >>>>>> i.MX8qxp Display Controller(DC) is comprised of three main components that
+> >>>>>> include a blit engine for 2D graphics accelerations, display controller for
+> >>>>>> display output processing, as well as a command sequencer.  Add kernel
+> >>>>>> mode setting support for the display controller part with two CRTCs and
+> >>>>>> two primary planes(backed by FetchLayer and FetchWarp respectively).  The
+> >>>>>> registers of the display controller are accessed without command sequencer
+> >>>>>> involved, instead just by using CPU.  The command sequencer is supposed to
+> >>>>>> be used by the blit engine.
+> >>>>>>
+> >>>>>> Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> >>>>>> ---
+> >>>>>> v6:
+> >>>>>> * No change.
+> >>>>>>
+> >>>>>> v5:
+> >>>>>> * Replace .remove_new with .remove in dc-drv.c. (Uwe)
+> >>>>>>
+> >>>>>> v4:
+> >>>>>> * Move dc_fg_displaymode(), dc_fg_panic_displaymode() and dc_lb_blendcontrol()
+> >>>>>>   function calls from KMS routine to initialization stage. (Dmitry)
+> >>>>>> * Drop dc-crtc.h and dc-plane.h header files and move relevant defines to
+> >>>>>>   appropriate .h header files or .c source files. (Dmitry)
+> >>>>>> * Drop futile "else" clause from dc_crtc_common_irq_handler(). (Dmitry)
+> >>>>>> * Drop dc_drm->pe_rpm_count. (Dmitry)
+> >>>>>> * Drop DC_{CRTCS,ENCODERS,PRIMARYS} macros and only use DC_DISPLAYS. (Dmitry)
+> >>>>>> * Drop drmm_kcalloc() function call to allocate an array for storing IRQs.
+> >>>>>>   Instead, put it in struct dc_crtc.  (Dmitry)
+> >>>>>> * Call devm_request_irq() to request IRQs, instead of using drmm action.
+> >>>>>>   (Dmitry)
+> >>>>>> * Call devm_drm_of_get_bridge() to find the next bridge. (Dmitry)
+> >>>>>> * Select DRM_CLIENT_SELECTION due to rebase.
+> >>>>>> * Select the missing DRM_DISPLAY_HELPER and DRM_BRIDGE_CONNECTOR.
+> >>>>>> * Use DRM_FBDEV_DMA_DRIVER_OPS due to rebase.
+> >>>>>> * Replace drm_fbdev_dma_setup() with drm_client_setup_with_fourcc() due to
+> >>>>>>   rebase.
+> >>>>>> * Replace drmm_add_action_or_reset() with devm_add_action_or_reset() to
+> >>>>>>   register dc_drm_component_unbind_all() action.
+> >>>>>> * Request interrupts in dc_crtc_post_init() after encoder initialization to
+> >>>>>>   make sure next bridge is found first.
+> >>>>>>
+> >>>>>> v3:
+> >>>>>> * No change.
+> >>>>>>
+> >>>>>> v2:
+> >>>>>> * Find next bridge from TCon's port.
+> >>>>>> * Drop drm/drm_module.h include from dc-drv.c.
+> >>>>>>
+> >>>>>>  drivers/gpu/drm/imx/dc/Kconfig    |   5 +
+> >>>>>>  drivers/gpu/drm/imx/dc/Makefile   |   5 +-
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-crtc.c  | 558 ++++++++++++++++++++++++++++++
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-de.h    |   3 +
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-drv.c   | 244 +++++++++++++
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-drv.h   |  19 +
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-kms.c   | 143 ++++++++
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-kms.h   |  58 ++++
+> >>>>>>  drivers/gpu/drm/imx/dc/dc-plane.c | 241 +++++++++++++
+> >>>>>>  9 files changed, 1274 insertions(+), 2 deletions(-)
+> >>>>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-crtc.c
+> >>>>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.c
+> >>>>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.h
+> >>>>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-plane.c
+> >>>>>>
 
-The implementation of rockchip_grf_field_write (in patch1) seems to
-take care of checking if that field actually exists and doing nothing if
-not.
+> >>>>>
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static const struct component_master_ops dc_drm_ops = {
+> >>>>>> +  .bind = dc_drm_bind,
+> >>>>>> +  .unbind = dc_drm_unbind,
+> >>>>>> +};
+> >>>>>> +
+> >>>>>> +static int dc_probe(struct platform_device *pdev)
+> >>>>>> +{
+> >>>>>> +  struct component_match *match = NULL;
+> >>>>>> +  struct dc_priv *priv;
+> >>>>>> +  int ret;
+> >>>>>> +
+> >>>>>> +  priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> >>>>>> +  if (!priv)
+> >>>>>> +          return -ENOMEM;
+> >>>>>> +
+> >>>>>> +  priv->clk_cfg = devm_clk_get(&pdev->dev, NULL);
+> >>>>>> +  if (IS_ERR(priv->clk_cfg))
+> >>>>>> +          return dev_err_probe(&pdev->dev, PTR_ERR(priv->clk_cfg),
+> >>>>>> +                               "failed to get cfg clock\n");
+> >>>>>> +
+> >>>>>> +  dev_set_drvdata(&pdev->dev, priv);
+> >>>>>> +
+> >>>>>> +  ret = dma_set_mask_and_coherent(&pdev->dev, DMA_BIT_MASK(32));
+> >>>>>> +  if (ret)
+> >>>>>> +          return ret;
+> >>>>>> +
+> >>>>>> +  ret = devm_pm_runtime_enable(&pdev->dev);
+> >>>>>> +  if (ret)
+> >>>>>> +          return ret;
+> >>>>>> +
+> >>>>>> +  ret = devm_of_platform_populate(&pdev->dev);
+> >>>>>> +  if (ret)
+> >>>>>> +          return ret;
+> >>>>>> +
+> >>>>>> +  dc_add_components(&pdev->dev, &match);
+> >>>>>> +
+> >>>>>> +  ret = component_master_add_with_match(&pdev->dev, &dc_drm_ops, match);
+> >>>>>> +  if (ret)
+> >>>>>> +          return dev_err_probe(&pdev->dev, ret,
+> >>>>>> +                               "failed to add component master\n");
+> >>>>>> +
+> >>>>>> +  return 0;
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static void dc_remove(struct platform_device *pdev)
+> >>>>>> +{
+> >>>>>> +  component_master_del(&pdev->dev, &dc_drm_ops);
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static int dc_runtime_suspend(struct device *dev)
+> >>>>>> +{
+> >>>>>> +  struct dc_priv *priv = dev_get_drvdata(dev);
+> >>>>>> +
+> >>>>>> +  clk_disable_unprepare(priv->clk_cfg);
+> >>>>>> +
+> >>>>>> +  return 0;
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static int dc_runtime_resume(struct device *dev)
+> >>>>>> +{
+> >>>>>> +  struct dc_priv *priv = dev_get_drvdata(dev);
+> >>>>>> +  int ret;
+> >>>>>> +
+> >>>>>> +  ret = clk_prepare_enable(priv->clk_cfg);
+> >>>>>> +  if (ret)
+> >>>>>> +          dev_err(dev, "failed to enable cfg clock: %d\n", ret);
+> >>>>>> +
+> >>>>>> +  return ret;
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static int dc_suspend(struct device *dev)
+> >>>>>> +{
+> >>>>>> +  struct dc_priv *priv = dev_get_drvdata(dev);
+> >>>>>> +
+> >>>>>> +  return drm_mode_config_helper_suspend(priv->drm);
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static int dc_resume(struct device *dev)
+> >>>>>> +{
+> >>>>>> +  struct dc_priv *priv = dev_get_drvdata(dev);
+> >>>>>> +
+> >>>>>> +  return drm_mode_config_helper_resume(priv->drm);
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static void dc_shutdown(struct platform_device *pdev)
+> >>>>>> +{
+> >>>>>> +  struct dc_priv *priv = dev_get_drvdata(&pdev->dev);
+> >>>>>> +
+> >>>>>> +  drm_atomic_helper_shutdown(priv->drm);
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +static const struct dev_pm_ops dc_pm_ops = {
+> >>>>>> +  RUNTIME_PM_OPS(dc_runtime_suspend, dc_runtime_resume, NULL)
+> >>>>>> +  SYSTEM_SLEEP_PM_OPS(dc_suspend, dc_resume)
+> >>>>>> +};
+> >>>>>> +
+> >>>>>> +static const struct of_device_id dc_dt_ids[] = {
+> >>>>>> +  { .compatible = "fsl,imx8qxp-dc", },
+> >>>>>> +  { /* sentinel */ }
+> >>>>>> +};
+> >>>>>> +MODULE_DEVICE_TABLE(of, dc_dt_ids);
+> >>>>>> +
+> >>>>>> +static struct platform_driver dc_driver = {
+> >>>>>> +  .probe = dc_probe,
+> >>>>>> +  .remove = dc_remove,
+> >>>>>> +  .shutdown = dc_shutdown,
+> >>>>>> +  .driver = {
+> >>>>>> +          .name = "imx8-dc",
+> >>>>>> +          .of_match_table = dc_dt_ids,
+> >>>>>> +          .pm = pm_sleep_ptr(&dc_pm_ops),
+> >>>>>> +  },
+> >>>>>> +};
+> >>>>>> +
+> >>>>>>  static struct platform_driver * const dc_drivers[] = {
+> >>>>>>    &dc_cf_driver,
+> >>>>>>    &dc_de_driver,
+> >>>>>> @@ -19,6 +262,7 @@ static struct platform_driver * const dc_drivers[] = {
+> >>>>>>    &dc_lb_driver,
+> >>>>>>    &dc_pe_driver,
+> >>>>>>    &dc_tc_driver,
+> >>>>>> +  &dc_driver,
+> >>>>>>  };
+> >>>>>>
+> >>>>>>  static int __init dc_drm_init(void)
+> >>>>>> diff --git a/drivers/gpu/drm/imx/dc/dc-drv.h b/drivers/gpu/drm/imx/dc/dc-drv.h
+> >>>>>> index 3b11f4862c6c..39a771a13933 100644
+> >>>>>> --- a/drivers/gpu/drm/imx/dc/dc-drv.h
+> >>>>>> +++ b/drivers/gpu/drm/imx/dc/dc-drv.h
+> >>>>>> @@ -6,19 +6,38 @@
+> >>>>>>  #ifndef __DC_DRV_H__
+> >>>>>>  #define __DC_DRV_H__
+> >>>>>>
+> >>>>>> +#include <linux/container_of.h>
+> >>>>>>  #include <linux/platform_device.h>
+> >>>>>>
+> >>>>>>  #include <drm/drm_device.h>
+> >>>>>> +#include <drm/drm_encoder.h>
+> >>>>>>
+> >>>>>>  #include "dc-de.h"
+> >>>>>> +#include "dc-kms.h"
+> >>>>>>  #include "dc-pe.h"
+> >>>>>>
+> >>>>>>  struct dc_drm_device {
+> >>>>>>    struct drm_device base;
+> >>>>>> +  struct dc_crtc dc_crtc[DC_DISPLAYS];
+> >>>>>> +  struct dc_plane dc_primary[DC_DISPLAYS];
+> >>>>>> +  struct drm_encoder encoder[DC_DISPLAYS];
+> >>>>>>    struct dc_de *de[DC_DISPLAYS];
+> >>>>>>    struct dc_pe *pe;
+> >>>>>>  };
+> >>>>>>
+> >>>>>> +static inline struct dc_drm_device *to_dc_drm_device(struct drm_device *drm)
+> >>>>>> +{
+> >>>>>> +  return container_of(drm, struct dc_drm_device, base);
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +int dc_crtc_init(struct dc_drm_device *dc_drm, int crtc_index);
+> >>>>>> +int dc_crtc_post_init(struct dc_drm_device *dc_drm, int crtc_index);
+> >>>>>> +
+> >>>>>> +int dc_kms_init(struct dc_drm_device *dc_drm);
+> >>>>>> +void dc_kms_uninit(struct dc_drm_device *dc_drm);
+> >>>>>> +
+> >>>>>> +int dc_plane_init(struct dc_drm_device *dc_drm, struct dc_plane *dc_plane);
+> >>>>>> +
+> >>>>>>  extern struct platform_driver dc_cf_driver;
+> >>>>>>  extern struct platform_driver dc_ed_driver;
+> >>>>>>  extern struct platform_driver dc_de_driver;
+> >>>>>> diff --git a/drivers/gpu/drm/imx/dc/dc-kms.c b/drivers/gpu/drm/imx/dc/dc-kms.c
+> >>>>>> new file mode 100644
+> >>>>>> index 000000000000..2b18aa37a4a8
+> >>>>>> --- /dev/null
+> >>>>>> +++ b/drivers/gpu/drm/imx/dc/dc-kms.c
+> >>>>>> @@ -0,0 +1,143 @@
+> >>>>>> +// SPDX-License-Identifier: GPL-2.0+
+> >>>>>> +/*
+> >>>>>> + * Copyright 2024 NXP
+> >>>>>> + */
+> >>>>>> +
+> >>>>>> +#include <linux/of.h>
+> >>>>>> +#include <linux/of_graph.h>
+> >>>>>> +
+> >>>>>> +#include <drm/drm_atomic_helper.h>
+> >>>>>> +#include <drm/drm_bridge.h>
+> >>>>>> +#include <drm/drm_bridge_connector.h>
+> >>>>>> +#include <drm/drm_connector.h>
+> >>>>>> +#include <drm/drm_crtc.h>
+> >>>>>> +#include <drm/drm_device.h>
+> >>>>>> +#include <drm/drm_encoder.h>
+> >>>>>> +#include <drm/drm_gem_framebuffer_helper.h>
+> >>>>>> +#include <drm/drm_mode_config.h>
+> >>>>>> +#include <drm/drm_print.h>
+> >>>>>> +#include <drm/drm_probe_helper.h>
+> >>>>>> +#include <drm/drm_simple_kms_helper.h>
+> >>>>>> +#include <drm/drm_vblank.h>
+> >>>>>> +
+> >>>>>> +#include "dc-de.h"
+> >>>>>> +#include "dc-drv.h"
+> >>>>>> +#include "dc-kms.h"
+> >>>>>> +
+> >>>>>> +static const struct drm_mode_config_funcs dc_drm_mode_config_funcs = {
+> >>>>>> +  .fb_create = drm_gem_fb_create,
+> >>>>>> +  .atomic_check = drm_atomic_helper_check,
+> >>>>>> +  .atomic_commit = drm_atomic_helper_commit,
+> >>>>>> +};
+> >>>>>> +
+> >>>>>> +static int dc_kms_init_encoder_per_crtc(struct dc_drm_device *dc_drm,
+> >>>>>> +                                  int crtc_index)
+> >>>>>> +{
+> >>>>>> +  struct dc_crtc *dc_crtc = &dc_drm->dc_crtc[crtc_index];
+> >>>>>> +  struct drm_device *drm = &dc_drm->base;
+> >>>>>> +  struct drm_crtc *crtc = &dc_crtc->base;
+> >>>>>> +  struct drm_connector *connector;
+> >>>>>> +  struct device *dev = drm->dev;
+> >>>>>> +  struct drm_encoder *encoder;
+> >>>>>> +  struct drm_bridge *bridge;
+> >>>>>> +  int ret;
+> >>>>>> +
+> >>>>>> +  bridge = devm_drm_of_get_bridge(dev, dc_crtc->de->tc->dev->of_node,
+> >>>>>> +                                  0, 0);
+> >>>>>> +  if (IS_ERR(bridge)) {
+> >>>>>> +          ret = PTR_ERR(bridge);
+> >>>>>> +          if (ret == -ENODEV)
+> >>>>>> +                  return 0;
+> >>>>>> +
+> >>>>>> +          return dev_err_probe(dev, ret,
+> >>>>>> +                               "failed to find bridge for CRTC%u\n",
+> >>>>>> +                               crtc->index);
+> >>>>>> +  }
+> >>>>>> +
+> >>>>>> +  encoder = &dc_drm->encoder[crtc_index];
+> >>>>>> +  ret = drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_NONE);
+> >>>>>> +  if (ret) {
+> >>>>>> +          dev_err(dev, "failed to initialize encoder for CRTC%u: %d\n",
+> >>>>>> +                  crtc->index, ret);
+> >>>>>> +          return ret;
+> >>>>>> +  }
+> >>>>>> +
+> >>>>>> +  encoder->possible_crtcs = drm_crtc_mask(crtc);
+> >>>>>> +
+> >>>>>> +  ret = drm_bridge_attach(encoder, bridge, NULL,
+> >>>>>> +                          DRM_BRIDGE_ATTACH_NO_CONNECTOR);
+> >>>>>> +  if (ret) {
+> >>>>>> +          dev_err(dev,
+> >>>>>> +                  "failed to attach bridge to encoder for CRTC%u: %d\n",
+> >>>>>> +                  crtc->index, ret);
+> >>>>>> +          return ret;
+> >>>>>> +  }
+> >>>>>> +
+> >>>>>> +  connector = drm_bridge_connector_init(drm, encoder);
+> >>>>>> +  if (IS_ERR(connector)) {
+> >>>>>> +          ret = PTR_ERR(connector);
+> >>>>>> +          dev_err(dev, "failed to init bridge connector for CRTC%u: %d\n",
+> >>>>>> +                  crtc->index, ret);
+> >>>>>> +          return ret;
+> >>>>>> +  }
+> >>>>>> +
+> >>>>>> +  ret = drm_connector_attach_encoder(connector, encoder);
+> >>>>>> +  if (ret)
+> >>>>>> +          dev_err(dev,
+> >>>>>> +                  "failed to attach encoder to connector for CRTC%u: %d\n",
+> >>>>>> +                  crtc->index, ret);
+> >>>>>> +
+> >>>>>> +  return ret;
+> >>>>>> +}
+> >>>>>> +
+> >>>>>> +int dc_kms_init(struct dc_drm_device *dc_drm)
+> >>>>>> +{
+> >>>>>> +  struct drm_device *drm = &dc_drm->base;
+> >>>>>> +  int ret, i;
+> >>>>>> +
+> >>>>>> +  ret = drmm_mode_config_init(drm);
+> >>>>>> +  if (ret)
+> >>>>>> +          return ret;
+> >>>>>> +
+> >>>>>> +  drm->mode_config.min_width = 60;
+> >>>>>> +  drm->mode_config.min_height = 60;
+> >>>>>> +  drm->mode_config.max_width = 8192;
+> >>>>>> +  drm->mode_config.max_height = 8192;
+> >>>>>> +  drm->mode_config.funcs = &dc_drm_mode_config_funcs;
+> >>>>>> +
+> >>>>>> +  drm->vblank_disable_immediate = true;
+> >>>>>> +  drm->max_vblank_count = DC_FRAMEGEN_MAX_FRAME_INDEX;
+> >>>>>> +
+> >>>>>> +  for (i = 0; i < DC_DISPLAYS; i++) {
+> >>>>>> +          ret = dc_crtc_init(dc_drm, i);
+> >>>>>> +          if (ret)
+> >>>>>> +                  return ret;
+> >>>>>> +
+> >>>>>> +          ret = dc_kms_init_encoder_per_crtc(dc_drm, i);
+> >>>>>> +          if (ret)
+> >>>>>> +                  return ret;
+> >>>>>> +  }
+> >>>>>> +
+> >>>>>> +  for (i = 0; i < DC_DISPLAYS; i++) {
+> >>>>>> +          ret = dc_crtc_post_init(dc_drm, i);
+> >>>>>
+> >>>>> Can you use .late_register for this?
+> >>>>
+> >>>> Kerneldoc of struct drm_crtc_funcs::late_register says it's used to register
+> >>>> additional userspace interfaces like debugfs interfaces. And, it seems that
+> >>>> everyone implementing this uses it to add debugfs interfaces. So, it will
+> >>>> kind of abuse it to do CRTC post initialization.
+> >>>
+> >>> Why can't they be requested earlier then?
+> >>
+> >> If I request them earlier in dc_crtc_init(), then they cannot be freed by
+> >> devm_irq_release() when devm_drm_of_get_bridge() called by
+> >> dc_kms_init_encoder_per_crtc() returns -EPROBE_DEFER(which means failing
+> >> to find the first DRM bridge for the CRTC).  Why can't they be freed by
+> >> devm_irq_release()?  Because they are requested by the devices of ExtDsts
+> >> and Display Engines and their drivers are not removed during the probe
+> >> deferral dance.  Furthermore, -EPROBE_DEFER won't be returned after
+> >> dc_crtc_post_init() since the later called drm_vblank_init() doesn't
+> >> return -EPROBE_DEFER anyway, so it's fine to call dc_crtc_post_init() here.
+> >>
+> >> I met the irq free issue on my i.MX8qxp MEK board before, i.e., -EBUSY is
+> >> returned when requesting them again, so it's tested.
+> >
+> > A typical solution is to request all resources before binding the
+> > device as a component. Don't tell me that your interrupt controller is
+> > another component of the DRM device :-)
+>
+> The IRQ handlers are _highly_ related to the CRTC driver(especially the
+> dc_crtc_dec_framecomplete_irq_handler() where vblank is handled), so maybe
+> it's more appropriate to request the IRQs and implement the IRQ handlers in
+> dc-crtc.c instead of doing them in dc-{de,ed}.c. No?
 
-I think eDP/DP is more a naming thing, the Analogix controller is called
-an eDP controller in all documentation things.
+And CRTCs don't exist before master_bind(). Ack.
 
-Even back on rk3288, the Analogix-DP, still is called an eDP controller in
-documentation, with the only difference being that it does not contain
-another additional "dedicated" DP controller
-
-> > @@ -396,6 +425,7 @@ static int rockchip_dp_probe(struct platform_device *pdev)
-> >  	const struct rockchip_dp_chip_data *dp_data;
-> >  	struct drm_panel *panel = NULL;
-> >  	struct rockchip_dp_device *dp;
-> > +	int id, i;
-> >  	int ret;
-> >  
-> >  	dp_data = of_device_get_match_data(dev);
-> > @@ -410,9 +440,22 @@ static int rockchip_dp_probe(struct platform_device *pdev)
-> >  	if (!dp)
-> >  		return -ENOMEM;
-> >  
-> > +	id = of_alias_get_id(dev->of_node, "edp");
-> > +	if (id < 0)
-> > +		id = 0;
-> 
-> Alias is not documented.
-
-additionally, aliases should never be used to determine actual device
-functionionality - e.g. the hw-device-number
-
-> Please check how other platforms handle device -> ID conversion and
-> consider following it (yes, the best option currently known is to
-> hardcode bus addresses into the driver data).
-
-see for example the dw-dsi + dw-dsi2 for existing implementations.
-
-
-
-> > +	i = 0;
-> > +	while (is_rockchip(dp_data[i].chip_type))
-> > +		i++;
-> > +
-> > +	if (id >= i) {
-> > +		DRM_DEV_ERROR(dev, "invalid edp id: %d\n", id);
-> > +		return -ENODEV;
-> > +	}
-> 
-> Is it applicable to non-eDP case?
-
-same as above, it's always called eDP in all pieces of documentation,
-(Compliant with DP 1.2 and eDP 1.3)
-
-Heiko
-
-> > +
-> >  	dp->dev = dev;
-> >  	dp->adp = ERR_PTR(-ENODEV);
-> > -	dp->data = dp_data;
-> > +	dp->data = &dp_data[id];
-> >  	dp->plat_data.panel = panel;
-> >  	dp->plat_data.dev_type = dp->data->chip_type;
-> >  	dp->plat_data.power_on = rockchip_dp_poweron;
-> > @@ -464,19 +507,38 @@ static int rockchip_dp_resume(struct device *dev)
-> >  static DEFINE_RUNTIME_DEV_PM_OPS(rockchip_dp_pm_ops, rockchip_dp_suspend,
-> >  		rockchip_dp_resume, NULL);
-> >  
-> > -static const struct rockchip_dp_chip_data rk3399_edp = {
-> > -	.lcdc_sel = GRF_REG_FIELD(0x6250, 5, 5),
-> > -	.chip_type = RK3399_EDP,
-> > +static const struct rockchip_dp_chip_data rk3399_edp[] = {
-> > +	{
-> > +		.lcdc_sel = GRF_REG_FIELD(0x6250, 5, 5),
-> > +		.chip_type = RK3399_EDP,
-> > +	},
-> > +	{ /* sentinel */ }
-> > +};
-> > +
-> > +static const struct rockchip_dp_chip_data rk3288_dp[] = {
-> > +	{
-> > +		.lcdc_sel = GRF_REG_FIELD(0x025c, 5, 5),
-> > +		.chip_type = RK3288_DP,
-> > +	},
-> > +	{ /* sentinel */ }
-> >  };
-> >  
-> > -static const struct rockchip_dp_chip_data rk3288_dp = {
-> > -	.lcdc_sel = GRF_REG_FIELD(0x025c, 5, 5),
-> > -	.chip_type = RK3288_DP,
-> > +static const struct rockchip_dp_chip_data rk3588_edp[] = {
-> > +	{
-> > +		.edp_mode = GRF_REG_FIELD(0x0000, 0, 0),
-> > +		.chip_type = RK3588_EDP,
-> > +	},
-> > +	{
-> > +		.edp_mode = GRF_REG_FIELD(0x0004, 0, 0),
-> > +		.chip_type = RK3588_EDP,
-> > +	},
-> > +	{ /* sentinel */ }
-> >  };
-> >  
-> >  static const struct of_device_id rockchip_dp_dt_ids[] = {
-> >  	{.compatible = "rockchip,rk3288-dp", .data = &rk3288_dp },
-> >  	{.compatible = "rockchip,rk3399-edp", .data = &rk3399_edp },
-> > +	{.compatible = "rockchip,rk3588-edp", .data = &rk3588_edp },
-> >  	{}
-> >  };
-> >  MODULE_DEVICE_TABLE(of, rockchip_dp_dt_ids);
-> > diff --git a/include/drm/bridge/analogix_dp.h b/include/drm/bridge/analogix_dp.h
-> > index 6002c5666031..54086cb2d97d 100644
-> > --- a/include/drm/bridge/analogix_dp.h
-> > +++ b/include/drm/bridge/analogix_dp.h
-> > @@ -15,11 +15,12 @@ enum analogix_dp_devtype {
-> >  	EXYNOS_DP,
-> >  	RK3288_DP,
-> >  	RK3399_EDP,
-> > +	RK3588_EDP,
-> >  };
-> >  
-> >  static inline bool is_rockchip(enum analogix_dp_devtype type)
-> >  {
-> > -	return type == RK3288_DP || type == RK3399_EDP;
-> > +	return type == RK3288_DP || type == RK3399_EDP || type == RK3588_EDP;
-> >  }
-> >  
-> >  struct analogix_dp_plat_data {
-> 
-> 
-
-
-
-
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
