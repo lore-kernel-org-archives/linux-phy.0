@@ -4,90 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A68AFE77188
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Dec 2024 10:11:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBBE1E77184
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Dec 2024 11:07:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=josfU//S7+IKl1iBGyfrFRbC59Due1Yqe4P4kD67Z8s=; b=u7Rb8MPdWj1MPU
-	1R/PMG5JRRBAAY3qHBZHicsprTjq2/ukYb6mvDKVUHO866JIYyfQkoQVyZu64dGQCgIvHlECFmvWu
-	fPTpbUGNHp6PcpPEgqPSOFg+IEZ475cXeq7+97HKXcv83drugTGplydBcoNLctOdBFgweA01gOx6o
-	/ZGu57IcmlDb8VXPEAWbVl+fqYdIzI9jeLEPhJixKleJTiBgZ+M9n6OGpbAburzhv7sfJGHA657jn
-	GABqjNgDaqEjttj8PipJjkaqr/p1nUZAkI73qh3Ydxs9cjjDfEGDn/Oo1kWD72+8r9YxYOBGUKIAu
-	4mvLimx4FAQvg3yyi1zA==;
+	List-Owner; bh=n+vDaIcf16NGSusXh4mRBJwVn2A+FJHxQaU3pLhuom8=; b=TMeLRaf909vZKX
+	xFs+3nCGU/qfj+tXPBWPz8iuMYeSnkmI9BZYHFssUtXNYh+ZuRkc+YtfZw5SYrHKjFrvZkp8rqTFB
+	1BNSvEEjdiB91J/QzNKAbEDi7BEVYoU2Bee1SvwDk8aEa6vSsen6GpGcVz42VRAYhtJmUOWXSC27q
+	AsI6w4IBH9ahx5Yw2Z0lgjbkSdL8yahS6O91yGokn5vUu3lu3ZSQaXPIIZeb8cZM8FLbLnXqEP+t8
+	TJHTGy6V5Or/PPhZ/aQqTAIwz25i7C+Ca2HNR6858ptnJs/OuAjL+zHX9YEzSozKiiMPmjpKY5fe/
+	hR3NjB+g30OUc7bNJC8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNUYA-0000000D4lf-1eQV;
-	Tue, 17 Dec 2024 10:11:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tNVPz-0000000DDH6-2zDq;
+	Tue, 17 Dec 2024 11:07:11 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNUS9-0000000D2xL-38QK
+	id 1tNVPw-0000000DDFg-2oEI
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Dec 2024 10:05:22 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BH9sptp012176;
-	Tue, 17 Dec 2024 10:04:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	yu7YgqN2nrc8ynkibn+3q09CupDgDNnszhFzFN/wNx8=; b=fS5m6B+t9CFxoJDC
-	IpdrrHL5KIBsiUjPsL4wSk+36flPafao5ZVH/C8kS1nNSo16tJBKDhI5P64CUKPj
-	VmASgBr6Ww4Mk3NmT+yj69YScgJ8EZYRq1G7btnCCWUK2Wg7uznmrpYGKwQMDQxo
-	Pu6r5T8Fa+MDgDill3J+k6xPHIxRmY8pjeNVW4lN0icCYlh+e1KE2RBIs2mlDsUc
-	iEBSIjIQVE58RvjgfXuUj3mtK2rMXepeIjIB0JqdwnUrH3n7IeFVD1LEId6JCyoE
-	R/8ab0g/v8qrGvZPiwJzNgEOBurXOSZsGzq+RdyJU1aydNPoFEXWn1Y3Z6Ony0zH
-	rS3S6g==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43jw069h72-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 17 Dec 2024 10:04:49 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BHA4luD008464
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 17 Dec 2024 10:04:48 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 17 Dec 2024 02:04:41 -0800
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <quic_varada@quicinc.com>,
-        <quic_nsekar@quicinc.com>, <dmitry.baryshkov@linaro.org>,
-        <quic_srichara@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-CC: Praveenkumar I <quic_ipkumar@quicinc.com>
-Subject: [PATCH v3 5/5] arm64: dts: qcom: ipq5332-rdp441: Enable PCIe phys and controllers
-Date: Tue, 17 Dec 2024 15:33:59 +0530
-Message-ID: <20241217100359.4017214-6-quic_varada@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241217100359.4017214-1-quic_varada@quicinc.com>
-References: <20241217100359.4017214-1-quic_varada@quicinc.com>
+	Tue, 17 Dec 2024 11:07:09 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-5401c52000dso5577428e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 17 Dec 2024 03:07:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1734433627; x=1735038427; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=AfuoU4NCeZC6i1F3LvimU1oXmmt7Zka/LPketmVAjnQ=;
+        b=kziX2/Y5b543SW0z+aAakPe7x9zi2rl36fnJPkizrIjH5VMySJP6UsApwfl0n5n1tn
+         iJ+Q6xCUcEG6+EtFtLSDv2gsNuLdlrebti/alFCcFBAyCk/TQhDchqz7QzyNtYPWJqJQ
+         8dZaGZF3TtSIMKmIUXto1AueJI83wSDXjc8qsly9wPJipZuZ1yMcB2lH70kq+ZWbFxCU
+         Ty37xo64b6yhDag/mQYVcpn1mFasTcl1Fc/By/1+ppT348ix2NM3xea0BFGXFwGL4UfR
+         1ZogSb1p+tlHx1We3vJJwFz2E1vqDTlCejUoPDV7aQh0MHtf3rpLP+w0fYUxVsVJMK2N
+         Kbmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1734433627; x=1735038427;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=AfuoU4NCeZC6i1F3LvimU1oXmmt7Zka/LPketmVAjnQ=;
+        b=YeHU6xAfDodDkV+1yuUMidO/t69yi7daoNf3jC59LBnlDq8AyMYMpS27onnYUGEA4s
+         ipeZ0NOU1dbb+3p/DktHmrUOT7A/aWH2KvaHz/VaElgyIwX+4QBRj/Eba+g26VF3SoK6
+         mfD+4Ur30QvDRuBuCDA+DSmLZ2zEhOF/GjoJQypsf1JNL7SMcg6LySI2KJSiyXCQCuei
+         y/jzGUOW8RlCsuN9VW2SpoAo1KYjuClQ+KTYmiT7e0+iMiKJjRzE8QYhA2Xtpkx3ly6Y
+         lH6W+KzAfJvniWwxsYhJFUaPYg++Mm1JwVUfpMjEUYO5zX2asQxg7n6MZZF0G3UA7POn
+         vKkw==
+X-Forwarded-Encrypted: i=1; AJvYcCVm7Pf+N+ZbgBzip33BN7PDz6MJbB99Xiznj7wyquOOhlCAs9mPDUIo0M7dMjeTwr4Cm+4gnCsf94E=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzdvQytWRlmMzY4Ewzk3w3OPSZKWnylOV2UhipOjijYblaOkv86
+	O+WvZjTCh8bs/mVPV/frGaX3zCJYU0am3HvQ8KlRcGFHRSspPukaL6VBNNqgIew=
+X-Gm-Gg: ASbGnctRsOT4vFTfwHS+V6c+IJjFZgm1ydmsrg5w//qpFq/b88gg5dJ4fNyDDhBQM4T
+	zYgKw8fpswg0e2JI++K4R03xz41/RK+3xges5l8lN7bSrOMbG7C/ia78N8r9TwKUl7EmrOWIToJ
+	1O28H7fDoj3+Ll5/n8vwvA9uDDRd9iHxcMLu/Dlw/BySVR65fOexgrHH/ESoo8JURa47A0yqkfG
+	yzWTKKga0RLzMiH62zvSuSeJqxn8LhIgFQuQVdPkHejoP0VMQlYTk3VDpcfmPRC7gYMzLhHnBvV
+	176HQn8nHkIoyLz+1KxZ6YV1fB6ecW3P8DF0
+X-Google-Smtp-Source: AGHT+IGORYjhudTQdAvMdm8g3LCUxmZy1h6j52DQHamk5YqQ8TrNPXiGHtV+PtxV/2H4doZcZuIeCQ==
+X-Received: by 2002:a05:6512:2392:b0:540:20eb:80c5 with SMTP id 2adb3069b0e04-540905a6f84mr5483487e87.37.1734433626614;
+        Tue, 17 Dec 2024 03:07:06 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54120c13d69sm1118592e87.217.2024.12.17.03.07.04
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Dec 2024 03:07:05 -0800 (PST)
+Date: Tue, 17 Dec 2024 13:07:02 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: andrzej.hajda@intel.com, neil.armstrong@linaro.org, 
+	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, jernej.skrabec@gmail.com, airlied@gmail.com, 
+	daniel@ffwll.ch, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, 
+	shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, vkoul@kernel.org, 
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, mripard@kernel.org, 
+	kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
+	alexander.stein@ew.tq-group.com, sam@ravnborg.org
+Subject: Re: [PATCH v20 1/9] soc: cadence: Create helper functions for
+ Cadence MHDP
+Message-ID: <rew4x4qxemig7rq4kossrn7cybihrgsizh43wnllgv2daf75gm@ziqsakm7gm56>
+References: <cover.1734340233.git.Sandor.yu@nxp.com>
+ <7fd5d54e2594aadd66598888ddf512f3d6d30e5d.1734340233.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: acak2HG5KYTFAtI1zPr-sDOtJO1jEkkG
-X-Proofpoint-GUID: acak2HG5KYTFAtI1zPr-sDOtJO1jEkkG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
- mlxscore=0 bulkscore=0 priorityscore=1501 malwarescore=0
- lowpriorityscore=0 phishscore=0 adultscore=0 clxscore=1015 mlxlogscore=999
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412170082
+Content-Disposition: inline
+In-Reply-To: <7fd5d54e2594aadd66598888ddf512f3d6d30e5d.1734340233.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241217_020521_904608_4F5FFC0C 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20241217_030708_718702_10D3AD94 
+X-CRM114-Status: GOOD (  21.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,114 +105,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Praveenkumar I <quic_ipkumar@quicinc.com>
+On Tue, Dec 17, 2024 at 02:51:43PM +0800, Sandor Yu wrote:
+> Cadence MHDP IP includes a firmware. Driver and firmware communicate
+> through a mailbox. The basic mailbox access functions in this patch
+> are derived from the DRM bridge MHDP8546 driver.
+> New mailbox access functions have been created based on different mailbox
+> return values and security types, making them reusable across different
+> MHDP driver versions and SOCs.
+> 
+> These helper fucntions will be reused in both the DRM bridge driver MDHP8501
+> and the i.MX8MQ HDPTX PHY driver.
+> 
+> Six mailbox access helper functions are introduced.
+> Three for non-secure mailbox access:
+>  - cdns_mhdp_mailbox_send()
+>  - cdns_mhdp_mailbox_send_recv()
+>  - cdns_mhdp_mailbox_send_recv_multi()
+> The other three for secure mailbox access:
+>  - cdns_mhdp_secure_mailbox_send()
+>  - cdns_mhdp_secure_mailbox_send_recv()
+>  - cdns_mhdp_secure_mailbox_send_recv_multi()
+> 
+> All MHDP commands that need to be passed through the mailbox
+> should be rewritten using these new helper functions.
+> 
+> The register read/write and DP DPCD read/write command functions
+> are also included in this new helper driver.
+> 
+> Signed-off-by: Sandor Yu <Sandor.yu@nxp.com>
+> ---
+> v19->v20:
+> - new patch in v20.
+>   The patch split from Patch #1 in v19 and move to a new folder drivers/soc/cadence
 
-Enable the PCIe controller and PHY nodes for RDP 441.
+It makes it harder to review, but granted that we have already past
+that, I think it's fine.
 
-Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
----
-v3: Reorder nodes alphabetically
-    Fix commit subject
----
- arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts | 74 +++++++++++++++++++++
- 1 file changed, 74 insertions(+)
+> 
+> diff --git a/drivers/soc/cadence/Kconfig b/drivers/soc/cadence/Kconfig
+> new file mode 100644
+> index 0000000000000..b668790660fa5
+> --- /dev/null
+> +++ b/drivers/soc/cadence/Kconfig
+> @@ -0,0 +1,9 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +
+> +config CDNS_MHDP_HELPER
+> +	tristate "Cadence MHDP Helper driver"
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts b/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-index 846413817e9a..2be23827b481 100644
---- a/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-@@ -32,6 +32,32 @@ &sdhc {
- 	status = "okay";
- };
- 
-+&pcie0_phy {
-+	status = "okay";
-+};
-+
-+&pcie0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie0_default>;
-+
-+	perst-gpios = <&tlmm 38 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 39 GPIO_ACTIVE_LOW>;
-+	status = "okay";
-+};
-+
-+&pcie1_phy {
-+	status = "okay";
-+};
-+
-+&pcie1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie1_default>;
-+
-+	perst-gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 48 GPIO_ACTIVE_LOW>;
-+	status = "okay";
-+};
-+
- &tlmm {
- 	i2c_1_pins: i2c-1-state {
- 		pins = "gpio29", "gpio30";
-@@ -40,6 +66,54 @@ i2c_1_pins: i2c-1-state {
- 		bias-pull-up;
- 	};
- 
-+	pcie0_default: pcie0-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio37";
-+			function = "pcie0_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio38";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio39";
-+			function = "pcie0_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
-+	pcie1_default: pcie1-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio46";
-+			function = "pcie1_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio47";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio48";
-+			function = "pcie1_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	sdc_default_state: sdc-default-state {
- 		clk-pins {
- 			pins = "gpio13";
+This symbol isn't supposed to be selected by the user. Please leave just
+tristate without the menu entry text (the help text is fine, please keep
+it).
+
+LGTM otherwise.
+
+> +	help
+> +	  Enable Cadence MHDP helpers for mailbox, HDMI and DP.
+> +	  This driver provides a foundational layer of mailbox communication for
+> +	  various Cadence MHDP IP implementations, such as HDMI and DisplayPort.
+> +
+
 -- 
-2.34.1
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
