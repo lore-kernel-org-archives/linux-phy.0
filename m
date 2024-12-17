@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2BFBE7716A
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Dec 2024 07:45:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B15F7E7716A
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Dec 2024 08:07:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wQ7T+TgR98exSx/S6Kdj9wB+K9BJ91/JRdNfZIHCRXM=; b=tAgsJKEN5Iwipu
-	n4CvBV5dnbhM/EZJO9PEEWPwIaEV7y5bmCfK5SU9a5hMkNSfm3wyj36Ykm47IDpTZHvVrB+6sUvri
-	49uy2DQqRRVmpFzAJ9zz5bFl+MY6bd/UCdwgu6k+cVK3Tz5rCoFQHV5YT0+AYsHHsmcFelMQ3fOBr
-	VpGRON5T9sChLgGYWapEODL7rwMntek09y5nFTh5/DSFxYxPyayt03APZ4xV4wizf2hRYLrKGSi/3
-	xRGVG28qfgKMRNYpZS3CRu7J97GQL8stbv4z+VxGKXfZHiBCf4ou7tmxNJ1WZFYTmtJ8QmDQUie1G
-	vaAz3nB3SYUm/MywJ0sA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AknAPDVM1L3CKdfN9TTLmPgYBR/h+XVeuvJyZIXtWgo=; b=bAvVixLJPFSYmOI2bpCtrupEzA
+	ZJ8RkUrBYzt79uTPt+kACjq/gOvFr61N1U3t73We5tNK9Yms8vipPeLWo1wYRX4pb76XiXkjHt/kV
+	+NMFJDhRC/VIgVjSdzs3n+5QjHUKjob11rbqPljFgbVz+f+xJRXXyC58PG6f06Awd4BcKHXcSEXlW
+	OgiluIIpQ3qehYCwLJQ+MJ5yA9WjG4CQRLw5WBdb4JNtDQFpeYPQtzms4hmIgbAFoLsI9ETZceQcb
+	dBuj6WPqoFLIXy+4mb9P4TdeacWrmWxQn9uXFE0f3YQiKBKHzNr9FZdWg5Rjt3NEdpRWRx/rIR9ic
+	BvqEn6Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNSGu-0000000CcMV-2aIY;
-	Tue, 17 Dec 2024 07:45:36 +0000
-Received: from m16.mail.163.com ([117.135.210.2])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNSGs-0000000CcLz-0Cb4
-	for linux-phy@lists.infradead.org;
-	Tue, 17 Dec 2024 07:45:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:Subject:Date:Message-Id:MIME-Version; bh=SNECs
-	J0XKp8vy5JU0Zqz2v1x01Madw93zTND8IbZ038=; b=hRhpjsdg5OkoVnR0WKaEL
-	JBWLl5dmD080kRNjcv/z36HN6RRatBjNCG63NvR03oGH2PKeyy7l0bzTWe4G5XG+
-	a8qmPIrvKxfmUUBpYBq/1NVNR3jnw6oxxDcjVZBUC0F6DpX0roTi6hLkYiA6O1Wy
-	l87C8NqMq11LRAbPx6hYpU=
-Received: from icess-ProLiant-DL380-Gen10.. (unknown [])
-	by gzga-smtp-mtada-g0-2 (Coremail) with SMTP id _____wC3P7_6K2FnmKuTBA--.3033S4;
-	Tue, 17 Dec 2024 15:45:07 +0800 (CST)
-From: Ma Ke <make_ruc2021@163.com>
-To: jckuo@nvidia.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	thierry.reding@gmail.com,
-	jonathanh@nvidia.com
-Cc: linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Ma Ke <make_ruc2021@163.com>,
-	stable@vger.kernel.org
-Subject: [PATCH] phy: Fix error handling in tegra_xusb_port_init
-Date: Tue, 17 Dec 2024 15:44:57 +0800
-Message-Id: <20241217074457.2909598-1-make_ruc2021@163.com>
-X-Mailer: git-send-email 2.25.1
+	id 1tNScQ-0000000CfAG-0Fkt;
+	Tue, 17 Dec 2024 08:07:50 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tNSbK-0000000Cf1m-1YM1;
+	Tue, 17 Dec 2024 08:06:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 6566AA41D95;
+	Tue, 17 Dec 2024 08:04:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0607FC4CED3;
+	Tue, 17 Dec 2024 08:06:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1734422800;
+	bh=lezp6EOr1sTrbOd8jVW8DSk++wf4bf36AnptRA4PyH8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=X+vowBXnjBaLUcuH3ZNTlxuYXFlQoFs+HB+3snpwxM1GcMu32ovTLikNU/IGawtnc
+	 r3cwON5Peqm4GfLiMitiu+BtPNNxdYI8go7HgZO2CYqt9dw1OWu9tKL71pWVzzY++4
+	 vZB2IcRIxWiznIJeOfvJzgWru5L9OGuWaUBz711FfpLvLU7lx3S95Jfwz57W8GzpM+
+	 28k3ygSVqpUKOCM03xWFzm7svkTDrNjht5c0paP7Y5FDr0ng6aTkQiUpTA3uN2vL2a
+	 swxqAfXJIO6wbed7cknFYAUCK3x/CJxvG2mIu2B1jqCZ4tLzKzFUY2JSUaoWL/DohT
+	 OvNixEsVkwTJg==
+Date: Tue, 17 Dec 2024 09:06:37 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Sandor Yu <Sandor.yu@nxp.com>
+Cc: dmitry.baryshkov@linaro.org, andrzej.hajda@intel.com, 
+	neil.armstrong@linaro.org, Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se, 
+	jernej.skrabec@gmail.com, airlied@gmail.com, daniel@ffwll.ch, robh+dt@kernel.org, 
+	krzysztof.kozlowski+dt@linaro.org, shawnguo@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, 
+	vkoul@kernel.org, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	kernel@pengutronix.de, linux-imx@nxp.com, oliver.brown@nxp.com, 
+	alexander.stein@ew.tq-group.com, sam@ravnborg.org
+Subject: Re: [PATCH v20 5/9] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
+Message-ID: <20241217-judicious-stereotyped-centipede-5ddb27@houat>
+References: <cover.1734340233.git.Sandor.yu@nxp.com>
+ <fbd12029fab1f60e2ba4fad75ef650298a59cb15.1734340233.git.Sandor.yu@nxp.com>
 MIME-Version: 1.0
-X-CM-TRANSID: _____wC3P7_6K2FnmKuTBA--.3033S4
-X-Coremail-Antispam: 1Uf129KBjvdXoW7Gr15JF48GryxJFy3Zr1UKFg_yoWkXrgEkr
-	nYv3s3WrWvga1kCr15Crn3ZryIkF42qFyIqr4IqF93AayrXrs2vryDWrZxZr47Wws8ur1U
-	Ga45ur48Zr1SgjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7sRNtxhDUUUUU==
-X-Originating-IP: [183.174.60.14]
-X-CM-SenderInfo: 5pdnvshuxfjiisr6il2tof0z/xtbBXx+4C2dhH7fIsgABsm
+In-Reply-To: <fbd12029fab1f60e2ba4fad75ef650298a59cb15.1734340233.git.Sandor.yu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241216_234534_512384_E6E722D8 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241217_000642_481618_FBF7A3EC 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,55 +72,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2057246751892999660=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The reference count of the device incremented in device_initialize() is
-not decremented when device_add() fails. Add a put_device() call before
-returning from the function to decrement reference count for cleanup.
-Or it could cause memory leak.
 
-Found by code review.
+--===============2057246751892999660==
+Content-Type: multipart/signed; micalg=pgp-sha384;
+	protocol="application/pgp-signature"; boundary="f3jzfinrd3s3htcj"
+Content-Disposition: inline
 
-Cc: stable@vger.kernel.org
-Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
-Signed-off-by: Ma Ke <make_ruc2021@163.com>
----
- drivers/phy/tegra/xusb.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
-index 79d4814d758d..c89df95aa6ca 100644
---- a/drivers/phy/tegra/xusb.c
-+++ b/drivers/phy/tegra/xusb.c
-@@ -548,16 +548,16 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
- 
- 	err = dev_set_name(&port->dev, "%s-%u", name, index);
- 	if (err < 0)
--		goto unregister;
-+		goto put_device;
- 
- 	err = device_add(&port->dev);
- 	if (err < 0)
--		goto unregister;
-+		goto put_device;
- 
- 	return 0;
- 
--unregister:
--	device_unregister(&port->dev);
-+put_device:
-+	put_device(&port->dev);
- 	return err;
- }
- 
--- 
-2.25.1
+--f3jzfinrd3s3htcj
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Subject: Re: [PATCH v20 5/9] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
+MIME-Version: 1.0
 
+Hi,
+
+On Tue, Dec 17, 2024 at 02:51:47PM +0800, Sandor Yu wrote:
+> +static ssize_t firmware_version_show(struct device *dev,
+> +				     struct device_attribute *attr, char *buf);
+> +static struct device_attribute firmware_version = __ATTR_RO(firmware_version);
+> +
+> +ssize_t firmware_version_show(struct device *dev,
+> +			      struct device_attribute *attr, char *buf)
+> +{
+> +	struct cdns_mhdp8501_device *mhdp = dev_get_drvdata(dev);
+> +
+> +	u32 version = readl(mhdp->base.regs + VER_L) | readl(mhdp->base.regs + VER_H) << 8;
+> +	u32 lib_version = readl(mhdp->base.regs + VER_LIB_L_ADDR) |
+> +			  readl(mhdp->base.regs + VER_LIB_H_ADDR) << 8;
+> +
+> +	return sprintf(buf, "FW version %d, Lib version %d\n", version, lib_version);
+> +}
+> +
+> +static void cdns_mhdp8501_create_device_files(struct cdns_mhdp8501_device *mhdp)
+> +{
+> +	if (device_create_file(mhdp->dev, &firmware_version)) {
+> +		DRM_ERROR("Unable to create firmware_version sysfs\n");
+> +		device_remove_file(mhdp->dev, &firmware_version);
+> +	}
+> +}
+
+sysfs files are part of the uABI, and need to be stable and documented.
+
+For these kind of things, you should use debugfs.
+
+Maxime
+
+--f3jzfinrd3s3htcj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iJUEABMJAB0WIQTkHFbLp4ejekA/qfgnX84Zoj2+dgUCZ2ExDQAKCRAnX84Zoj2+
+dnc4AYCqAZF9d60JM6qP2gOgYAn6lAKF42a7J9At1vpspnjLkxWeo82wwxsVUN3q
+dX1sPvsBf0FnUgCipeCjavvQGCADOKKD3bokWMMWhfpqBINEp3TxubYkPBBuPx7Q
+x5ViCYwzhw==
+=BgFt
+-----END PGP SIGNATURE-----
+
+--f3jzfinrd3s3htcj--
+
+
+--===============2057246751892999660==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2057246751892999660==--
+
