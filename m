@@ -4,60 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FD91E77187
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Dec 2024 10:28:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0207CE77187
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Dec 2024 11:40:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rBe4W9lo72MunrgSrstCF3SXhqBPKx2PaaMiwGzymIY=; b=AN50vrRWjyNUp6
-	E3ydV1ewyMbwXyZp84T12nVUzSVGzFU8vfqWyddNQS6c0055lsHu5PUHkwCvVMOamQ99vjd6+uAmU
-	9YoMjADPVocs2pPxFfMDSwP+ODypqAp/O6b5g3seh5GjWGxytz9oG1/gihktZfBFErsFiUdEE3QXj
-	1f8fleUYEME3a8vTAKVHg1YR2qXTnLpnrh7EcBm6hhUuAC9BbcFDucRHwqhuuj/oRTsr97FaRRti3
-	8xLvLXQwr2W08pKedC78dLp5YQ1G2FjfWHbCUhblA8r8EOwfs9FD4G5Z/9OR3GAwU2CVmuMg0SvLG
-	pd0CZ3S/JKeP9wrh5KvQ==;
+	List-Owner; bh=7unbmcEMvCavDEfs+z8EMd3v76fm6C2VtbAnqKuukUs=; b=w61umjbL9Rr8j4
+	TY/SzZlz61IToSRailbftJTLKvNjZlUnOYFQrN5IMFzHXcnH0WQs2xY8ZmzTRNg03mfLu+Lkc6iLa
+	bOdUWrXU5NilaCB22HT7kFwEIHodrydoCwRxSbw7sWLiLSAgA0EOtFWis7JC4b0cyfSuP5RKqBklu
+	4BIiyGr11sLfy95H8mc/HglrLl02JL2Uhh9xhGb7URqR+FidRt1neYkThZtxODwfbDrIwLgsqtiwG
+	xMTE541IIrHvA+EPnD7ewSLCOLgs24jxUByEkAlcBYG6rRszZWBM95JdALwuQcrAtmgZe88z0IPj7
+	9fVMb6SJwiy28/5wLNWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNrI3-0000000GGAM-3Upp;
-	Wed, 18 Dec 2024 10:28:27 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNrI2-0000000GGA8-45Wc
-	for linux-phy@bombadil.infradead.org;
-	Wed, 18 Dec 2024 10:28:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=hD3zywQMQ7JdY8V2JnK0a4J9xe+mYdsRUqbUFNKf1o0=; b=BXGOHumezl+8x2v3psYVDt8Y/C
-	MJKMd2PIiYLz4PC1dKvVSvjwMuK1uc6SHmMIB+y5Fi9j+pSXEFLFkpKOeyLZ/56sMeDFbtJ+SFhzs
-	828EeM7RIL2ADNRri8F/UVzQfg3RqqPZLWExWgqd1cvPqDf1pE4sz9ox8zqNPgDSncksLlvQ/KaYh
-	LrFFNYHpOFozy9sdkKy40CoMjWFhFeqfkF8PFfBjIqoRTa9WM3JPdKPCZjGtYYizXqGss7R4JF3dm
-	yMg1Xgnr35IYdxtss3mSUamgOSNczjbciNrGzvXUZK9HIkM/FG2vKNpkB6cBSqdAyK/+fBCQVT4nb
-	PtzBGRpg==;
+	id 1tNsPP-0000000GTok-34DL;
+	Wed, 18 Dec 2024 11:40:07 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tNrHz-00000005EsO-3HqZ
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tNrIr-0000000GGJ3-16UB
 	for linux-phy@lists.infradead.org;
-	Wed, 18 Dec 2024 10:28:25 +0000
+	Wed, 18 Dec 2024 10:29:18 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 9A226A42586;
-	Wed, 18 Dec 2024 10:26:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45A7EC4CEDE;
-	Wed, 18 Dec 2024 10:28:19 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id E82A9A42599;
+	Wed, 18 Dec 2024 10:27:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F103C4CEDD;
+	Wed, 18 Dec 2024 10:29:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1734517700;
-	bh=ZyNEU8QU2txiWxFgL+CfpQh+6WZpOy7/8BMkAj3HqDY=;
+	s=k20201202; t=1734517756;
+	bh=rVXq692XhX8/BrFOI5DCC52Q9mZNMtBW9bToWcfXw04=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YgycJBKNg4T2v+Y4Htiiso4uOPnn6obIjcqs4DxZAqjeuxZS6JdfZcyOE0NN7KKyj
-	 Ni3+dJ/MdOe7KK/t4WRmATJ6RGShXbclE8erM2+AmqwrdSrAM/S2VKJIQ1bf/yblwd
-	 J+HdEEVq5gUIncG6CFklUGzHVHfthQ4vUiMekuNhmuHdRWQOFeTCOKCpO7ksO2kxDv
-	 RtSU4xsUId6tCiTdmrOxdEXqf2PFf3SAvjnbt2XyoEFJZs1J2F9vT6W8Nk58ZfL/4f
-	 eTEiWs1h7AY94CeLmCwvmCJSX/AK/4d3Exn/fON3PLNKzNcg3M45LJ+QZDgYUhGL1g
-	 lzSs4DAQh3DOQ==
-Date: Wed, 18 Dec 2024 11:28:18 +0100
+	b=PM1rSXQrGhvqnFXDucTAEykU8xpJnI8LTMJDPQEFai2RxVbx5MaeCpJI7VTsXezjk
+	 SL+ZPpF8KRb3vA35Uf3ylG2radHGPkByoOXEcDN6wCNauag0+t0VvAUkHsJgebL378
+	 suP/Zve0BHzKV5UBBPwoiwrcPnd+eJexiHX3oRS0QZJTfgTlTXkLUNJ6sspId3Eh4r
+	 yiH1hVlxyfepthR6sKmBtqjdFvijZ4vnuO5YBiXs3SiOIyzbSPrXclkuVaOFAwm2YR
+	 87uq/nOB8NFwA8Ly1FPrnYpd294ygG/azLqoV3BSGF/J4qyl9qe5uJGOnvCWy4NRsM
+	 mMYPO31PhgrwQ==
+Date: Wed, 18 Dec 2024 11:29:12 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
@@ -66,17 +51,18 @@ Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
 	p.zabel@pengutronix.de, quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org, 
 	quic_srichara@quicinc.com, linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 1/5] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
- uniphy
-Message-ID: <nhzbr4knneo5k3zxvjy2ozx6ciqg2hivwyr2qxdld2x63vlzeb@mjrlqeqiykzp>
+Subject: Re: [PATCH v3 3/5] dt-bindings: PCI: qcom: Reuse 'pcie-sdx55' reg
+ bindings for ipq9574
+Message-ID: <72gjhqpzaszfb36pjl4g4t5x6kyc3xclwaenbzkgrkz6wtkx5j@6dw7stv76sr3>
 References: <20241217100359.4017214-1-quic_varada@quicinc.com>
- <20241217100359.4017214-2-quic_varada@quicinc.com>
+ <20241217100359.4017214-4-quic_varada@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241217100359.4017214-2-quic_varada@quicinc.com>
+In-Reply-To: <20241217100359.4017214-4-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241218_102824_090912_6B61BDC4 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20241218_022917_362981_FCFDC282 
+X-CRM114-Status: UNSURE (   6.54  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,99 +79,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Dec 17, 2024 at 03:33:55PM +0530, Varadarajan Narayanan wrote:
-> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> 
-> Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5332.
-> 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
-> v3: Fix compatible string to be similar to other phys and rename file accordingly
->     Fix clocks minItems -> maxItems
+On Tue, Dec 17, 2024 at 03:33:57PM +0530, Varadarajan Narayanan wrote:
+> IPQ5332 PCIe is similar to IPQ9574 except for the 'reg' bindings.
+> Hence use the reg bindings that could be applicable for both and
+> avoid adding a new binding for IPQ5332.
 
-I think there was just one clock, so you increased it to two.
+My comment was about driver, not binding.
 
->     Change one of the maintainer from Sricharan to Varadarajan
-> 
-> v2: Rename the file to match the compatible
->     Drop 'driver' from title
->     Dropped 'clock-names'
->     Fixed 'reset-names'
-> --
->  .../phy/qcom,ipq5332-uniphy-pcie-phy.yaml     | 82 +++++++++++++++++++
->  1 file changed, 82 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
-> new file mode 100644
-> index 000000000000..0634d4fb85d1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
-> @@ -0,0 +1,82 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-uniphy-pcie-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm UNIPHY PCIe 28LP PHY
-> +
-> +maintainers:
-> +  - Nitheesh Sekar <quic_nsekar@quicinc.com>
-> +  - Varadarajan Narayanan <quic_varada@quicinc.com>
-> +
-> +description:
-> +  PCIe and USB combo PHY found in Qualcomm IPQ5332 SoC
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - qcom,ipq5332-uniphy-gen3x1-pcie-phy
-> +      - qcom,ipq5332-uniphy-gen3x2-pcie-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 2
-
-I should have been more specific last time, but I assumed you will take
-other bindings as example.  well, so now proper review: you need to list
-tiems.
-
-> +
-> +  resets:
-> +    minItems: 2
-> +    maxItems: 3
-
-No answer to my previous question. Question stands.
-
-> +
-> +  reset-names:
-> +    minItems: 2
-> +    items:
-> +      - const: phy
-> +      - const: phy_ahb
-> +      - const: phy_cfg
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  "#clock-cells":
-> +    const: 0
-> +
-> +  clock-output-names:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - resets
-> +  - reset-names
-> +  - clocks
-
-Keep the same order as in properties block.
+You cannot reuse bindings. Use fallbacks.
 
 Best regards,
 Krzysztof
