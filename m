@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F986E7718B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36FE3E77184
 	for <linux-phy@archiver.kernel.org>; Thu, 19 Dec 2024 08:17:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,23 +12,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OESedSrWiFatOmSgWWpkko3canP7Y8m+mmMOKHZMXGU=; b=PA5NPv4H2kcZHY
-	c2Os6SQQuniaYp4xEbvK84Fzj6yomStabDYdzD/p4d5uEc5ljN74cDX6AthQ78eOC6P7MPYa4uk3a
-	cgxtcHV7L7lgLaQJzAAIgY6AzFmmgyI5+h01uIdNLTiXdVu8cdr++2dZ3BXItgwxADtvdjNDFI/Vg
-	WgNYm6Wk1cGXNvVstqBV8uk+0hSfPsQO3AJOnYTJfG7VBOZMzdHDQvcwLE+STkX2+78yKQzjJ3Y6E
-	IL/ikUus2RnlxuaU3MyY5GAMYEMj3pblkM6ClEVFvVb+Zs6p669p2LZMufkG9hGBPiqVeRyAciI1m
-	69jb79X33sAS/ifc/FMA==;
+	List-Owner; bh=o1kBo+FPV/H2W0Yjd8mK7hucme6RnfdwkJOUMzPW/vo=; b=0ceXBj7q5lxMnJ
+	D4vdnvFljeMXoQwMslVHu3Voye1wEGypEUsFpqLqPW5GwOvtiYR8sTlUEdciu3Hd/Pa/y6K+Tx0iC
+	F1ZOec2K7GrPfC6AaVvuSw9KIl6y7ffQlPmeeC/avqMu5W+kIirvNKo9HzDAyA30pcznngFWhDByF
+	wI7nC1Zx/qNaITyxM75j5X1pkzfNV009JcBzOcqbzGJlgD1n2tjkXtYtx+dPVPO5yGTkEvStfRx9u
+	7gW1UI2oaLyOvUqT05q8PD/5W6pvqVbYYlf+CO8zN0J2vrQmK48fB4ZHTIr6TkCJiXlhgUT9wz/Xs
+	bYbzJifmRun/Rn3lnKiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOBj2-00000001FHh-0Gjl;
-	Thu, 19 Dec 2024 08:17:40 +0000
-Received: from mail-m1973199.qiye.163.com ([220.197.31.99])
+	id 1tOBj1-00000001FHJ-1s7z;
+	Thu, 19 Dec 2024 08:17:39 +0000
+Received: from mail-m32124.qiye.163.com ([220.197.32.124])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOBYS-00000001D6P-3bqF;
-	Thu, 19 Dec 2024 08:06:46 +0000
+	id 1tOBYS-00000001D7O-3EHJ;
+	Thu, 19 Dec 2024 08:06:45 +0000
 Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 633dd684;
-	Thu, 19 Dec 2024 16:06:39 +0800 (GMT+08:00)
+	by smtp.qiye.163.com (Hmail) with ESMTP id 633f41d6;
+	Thu, 19 Dec 2024 16:06:41 +0800 (GMT+08:00)
 From: Damon Ding <damon.ding@rock-chips.com>
 To: heiko@sntech.de
 Cc: robh@kernel.org,
@@ -50,29 +50,29 @@ Cc: robh@kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v3 10/15] dt-bindings: display: rockchip: analogix-dp: Add support to get panel from the DP AUX bus
-Date: Thu, 19 Dec 2024 16:05:59 +0800
-Message-Id: <20241219080604.1423600-11-damon.ding@rock-chips.com>
+Subject: [PATCH v3 11/15] dt-bindings: display: rockchip: Fix label name of hdptxphy for RK3588 HDMI TX Controller
+Date: Thu, 19 Dec 2024 16:06:00 +0800
+Message-Id: <20241219080604.1423600-12-damon.ding@rock-chips.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241219080604.1423600-1-damon.ding@rock-chips.com>
 References: <20241219080604.1423600-1-damon.ding@rock-chips.com>
 MIME-Version: 1.0
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQk4dQlYdTExJSE9JT0oYS05WFRQJFh
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGh1ISFZPSh0ZGkJOTRpNTUlWFRQJFh
 	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
 	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a93ddf45b8603a3kunm633dd684
+X-HM-Tid: 0a93ddf4629c03a3kunm633f41d6
 X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MRw6PDo5STIWPhU6HzkDDB86
-	AxhPCyFVSlVKTEhPTkJOTUtLQkhLVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFDQks3Bg++
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OjY6Hyo6QjIIEBVLHzgTDBoD
+	GTEaCzVVSlVKTEhPTkJOTUtJTUJCVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFKSEtPNwY+
 DKIM-Signature: a=rsa-sha256;
-	b=PbC2+UZ5ue2tIuXkb1z3GNOb7tfnQf9ktP+fPC6SE6KZjNO/Ghxtohp7/N8ugEPwVn2zbJR4TFRSTb0DxAvnbV1hM45nqXJ/a3BUGR5Lzao5onqN8RwgcRw1aCpMFDveunOOfCPHsuPfPnRd011VXamn69fqC5lianD9MC+UIhs=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=jdZLRbj5Qu9T/Yq8V2XQTDpxqJDXZsuKPPN9ZHB0moQ=;
+	b=Jw24EbCuxzrULC/IulMLk3axdYC4L0nGxGa+amTLlJhbfQJs+orY8B5B1eOQDnKxu+uZK2IxokQXAXQv/1yPczUZtIImsqZAfnoxHjQqntvLnRjbN6pOCDOm66t/r3dPHVH1OY1ouksBnl3i/tGaJG9XldZJnkgs/Qb4QX88yzg=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=DsE1WkVNoF+Jwn/u5/eTYNhUxfmsWFSRl9E2p5GwmYk=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_000645_054676_CC03AF8A 
-X-CRM114-Status: UNSURE (   6.95  )
+X-CRM114-CacheID: sfid-20241219_000644_957887_0C9BB075 
+X-CRM114-Status: UNSURE (   8.73  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -90,28 +90,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to Documentation/devicetree/bindings/display/dp-aux-bus.yaml,
-it is a good way to get panel through the DP AUX bus.
+The hdptxphy is a combo transmit-PHY for HDMI2.1 TMDS Link, FRL Link, DP
+and eDP Link. Therefore, it is better to name it hdptxphy0 other than
+hdptxphy_hdmi0, which will be referenced by both hdmi0 and edp0 nodes.
 
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
 ---
- .../bindings/display/rockchip/rockchip,analogix-dp.yaml        | 3 +++
- 1 file changed, 3 insertions(+)
+ .../bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml   | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-index 4f84e8849876..c45d92a2d901 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
-@@ -49,6 +49,9 @@ properties:
-     description:
-       This SoC makes use of GRF regs.
- 
-+  aux-bus:
-+    $ref: /schemas/display/dp-aux-bus.yaml#
-+
- required:
-   - compatible
-   - clocks
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml
+index d8e761865f27..7a1ae31cc535 100644
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml
+@@ -156,7 +156,7 @@ examples:
+                      <GIC_SPI 172 IRQ_TYPE_LEVEL_HIGH 0>,
+                      <GIC_SPI 360 IRQ_TYPE_LEVEL_HIGH 0>;
+         interrupt-names = "avp", "cec", "earc", "main", "hpd";
+-        phys = <&hdptxphy_hdmi0>;
++        phys = <&hdptxphy0>;
+         power-domains = <&power RK3588_PD_VO1>;
+         resets = <&cru SRST_HDMITX0_REF>, <&cru SRST_HDMIHDP0>;
+         reset-names = "ref", "hdp";
 -- 
 2.34.1
 
