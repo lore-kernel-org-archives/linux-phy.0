@@ -4,85 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8328EE7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 05:38:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98CC4E77188
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 05:54:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WffxgUeY9H3L7WF+CLVM98MB496MqtrLDhf+fnvXfpI=; b=payDowwrKymv05
-	h9ohitaox3zq+Z0lXN5cZ+f9RJg2NCO0x7AvhAPwW8B7DRvnkiMkK2fXfDTQED7+kie8F1Qd2NQAc
-	5mV20GwPgf7SCtO/5BXj96sKQ+KMqqpvg+zyX9mjO+9QbyG9DdJ8P+NQgJLbWLBD2QNMJkVoj2qOt
-	AQ+T0ODrhebLmv5SPdJ5dQpC4IcxMXBbehiCQ8VRF6zbdEIM3d3r1mxEJWwjwdbH6RWlyH8eFKM0E
-	70DkzutWJ4mlf4/RsUU63Xt5gqPRbAQskK/ABe9P8ROBenNwHV0CstC+l4IHm37InOMGw0/l/GDQ7
-	5UEn/0/3zsdNav8l+JPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gGA+rwprDV3nNzTw0jb0eT5khhUfyI88cGBSW8UU2bM=; b=Jm4Src1GHKIYLC
+	kwRCg0zkm01Wis7VVJkYjOkmzQB0100Eh3o85K1qB1E3RPtfvS4RA1PlFvSvxMi07G8ri1PATYErS
+	6OVTWwU3VYEcrxDqvIIadwrYAJ10vTHZWdXw1uK0uujOKMZz5wo/qu85gkfADN9np63/ILhTz4iU3
+	ZDp5JAwRtNr0h6POA7XfKLWeeBGDfZ1Gt6Y+n4znbufieoxLpNN3yxz7wMZVnFaWEM3IHQB5t7K5Z
+	RFUmY7HkX3wcDWeNIfNkF5FPHhmdLW/57zKq6Jy6bUXWr1IMKhRcaa3qGuwo4ZzhJV7UhWPnn8UW7
+	HehhztYhGrQMDgnBwuig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOVin-00000003zRz-2WTW;
-	Fri, 20 Dec 2024 05:38:45 +0000
-Received: from mail-yw1-x1131.google.com ([2607:f8b0:4864:20::1131])
+	id 1tOVxo-0000000411d-1Ndf;
+	Fri, 20 Dec 2024 05:54:16 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOVhT-00000003z9q-3MbR
+	id 1tOVxl-000000040z5-1YhJ
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Dec 2024 05:37:26 +0000
-Received: by mail-yw1-x1131.google.com with SMTP id 00721157ae682-6f00da6232bso12581117b3.2
-        for <linux-phy@lists.infradead.org>; Thu, 19 Dec 2024 21:37:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1734673042; x=1735277842; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=eLpODaYRyFEauMGVSyk9T1QhhMdmd8z0vW52xuJIe/8=;
-        b=nMRIw+3BPnsDyIpE0WiZRE5GnNX/z7weFeefNZksvEG2JMh90P68MiPP+VafPEL3Xp
-         D+8WGCkx/sN757njB0Y5Pnv6cZIIj1+BGX/2Fg4PClyZJqdZ4herPZ55mbs21rGSt/me
-         8ypb9V6Ken2J+9VBnRegA4hAMHIG4DXlRQcHfU5Qzw52yVKKOxKvGhDnLaBAWR413AyU
-         JST2pHJHtAcw8DNaeCkbxNPt9/MlYLlUUlaDIlr1N+UUFXVYMRO0PZP09iga1IrY6atZ
-         EMXkOUpYC9FgSHxVtV8+uHLOEanl4n8qvm7NmBNAndVUmmJTnTWUfJCIj7CKHB2m0EcX
-         2skw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1734673042; x=1735277842;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=eLpODaYRyFEauMGVSyk9T1QhhMdmd8z0vW52xuJIe/8=;
-        b=sYfZtNuGoHUnUkQNCOfgX95xGMYCWmGnmvtpVBCRdDmYi7OxZXGXjFPnbbndPO8nU6
-         ULn5o3vQfyFU+WmZuMjMHw/m2d1SboWvOEwSVRtjQdddJdbjbvVuY4YerSYsLqIqfcxR
-         DuZtHeb37u2gKWYuLMcQ5S7BbcYTtoUk31d3PgGgyyao/z0JFhHojpoBAT2zFWjFDOpW
-         66XitbaPvhdyN17Zi8GfAdd4lakHCdj/jYbj6t/3ujxxByhzWVIplq73dRF+pSh+J6e5
-         hnswk3JFYHPvWeEkDdOpN5Eb9AB7dgyM8lTv6Bc3+iAEqYpvjYWRZO1fJLxgU9z4dkay
-         sILw==
-X-Forwarded-Encrypted: i=1; AJvYcCVoUXG/obxzfcZVrt/jpaEn+/RBty2ik4KY710npoooLIHbVocAo5AaXvP8RB5zOQ3j8yBfzcV5rNA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YznbV9Rd/WEAtBbAzEKtdg1Vb/V9//GswvWlZqwy91kIWmT1tvg
-	XnTcvOecfsPN9aMRZpIDwmyXkt7UhTFsKn4vnrzv4OO9OXOXR7bPUezVCWxY6daVLVAGukC/nyt
-	CCGNfleBT5gYD9WK66omxC1tx30rLIhLg5y0+3g==
-X-Gm-Gg: ASbGnctDkZZJ1BB+2YXjka9Vl7U0VmvPSX8BhJWkl2UtV+emkfhyMa5ovN5PIcDDWrh
-	7f8w5XvZnWClTP5qjnwmucc0/zt7laUKCdiiw9+2J0LE1Yp2KpSyl
-X-Google-Smtp-Source: AGHT+IFGtCjCZ+VojYNyMK2Y/K7VXCStGJjA+69HR5EsAR1bloqgbrLQAQ6WEmjrZhxmttZwb8bmMWY+OJBKwRQPbj4=
-X-Received: by 2002:a05:690c:f84:b0:6ef:9017:3cc8 with SMTP id
- 00721157ae682-6f3f8219d5bmr11574697b3.31.1734673042550; Thu, 19 Dec 2024
- 21:37:22 -0800 (PST)
+	Fri, 20 Dec 2024 05:54:14 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK4PZON024611;
+	Fri, 20 Dec 2024 05:54:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=x1HPUkh0Nxv+8Nqj9cHIhTM180n9lKWJNV0
+	B0w0N3xo=; b=pFoGs40LUlmlPj8b0dh/8nHq1XIkZXwN5lL8XLsGohD+ed3mf3Z
+	wI1yiOFriDjsWcWVmCcSyOUrCtQwNDUvDsVbVfreFWCO9TerlcUHP6EAxPkVERQL
+	mKDH1g7U+d3RrHjQodMFGEKb+LoJzdowvLHTAdeYwqhZGM6FTpJnRLV35/YRWgGu
+	+/q7J/rd1nZlDZ8817GsQRO3weL2vhnVI+hjxniP9nMJ3AzCIPDldGep6ycTvZlp
+	ndVDT99m9ytu3NBhTEkYYWDLpBAZhNxDEjUA7ZckE9HEB7aKCpymovGeQbQKCDwZ
+	6Xign+Syu+ikc04XIhZW+KRshgWgWfd+HBA==
+Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43n1hx05fh-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Dec 2024 05:54:05 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK5s3PH023962;
+	Fri, 20 Dec 2024 05:54:03 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 43h33kv4q7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Dec 2024 05:54:03 +0000
+Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4BK5s3w9023955;
+	Fri, 20 Dec 2024 05:54:03 GMT
+Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4BK5s27a023942
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 20 Dec 2024 05:54:03 +0000
+Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
+	id 0DB621C38; Fri, 20 Dec 2024 13:54:01 +0800 (CST)
+From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+        conor+dt@kernel.org, dmitry.baryshkov@linaro.org,
+        neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, kw@linux.com,
+        bhelgaas@google.com, andersson@kernel.org, konradybcio@kernel.org
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-pci@vger.kernel.org, quic_qianyu@quicinc.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Subject: [PATCH v3 0/8] pci: qcom: Add QCS8300 PCIe support
+Date: Fri, 20 Dec 2024 13:52:31 +0800
+Message-Id: <20241220055239.2744024-1-quic_ziyuzhan@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <20241219080604.1423600-1-damon.ding@rock-chips.com>
- <20241219080604.1423600-8-damon.ding@rock-chips.com> <a6vvydjbx3hbckoy74iiyzguyyacwvdh6iirqydjfvhwgocw3a@knecggjcbcid>
- <654c30ec-7d7e-4956-9a48-15bfcea34acc@rock-chips.com>
-In-Reply-To: <654c30ec-7d7e-4956-9a48-15bfcea34acc@rock-chips.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Fri, 20 Dec 2024 07:37:11 +0200
-Message-ID: <CAA8EJpqk-iim668ZTzQaROJmkTr2COBwA5G9Eg73uLE28XHYpg@mail.gmail.com>
-Subject: Re: [PATCH v3 07/15] drm/bridge: analogix_dp: Add support for phy configuration.
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com, 
-	cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
-	andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
-	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: AsbRgjc-J_-ttTvhMMYgSXB1rsMACo-i
+X-Proofpoint-ORIG-GUID: AsbRgjc-J_-ttTvhMMYgSXB1rsMACo-i
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 suspectscore=0
+ phishscore=0 adultscore=0 bulkscore=0 mlxlogscore=841 impostorscore=0
+ malwarescore=0 priorityscore=1501 spamscore=0 lowpriorityscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412200048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_213723_862992_9DCF6480 
-X-CRM114-Status: GOOD (  27.11  )
+X-CRM114-CacheID: sfid-20241219_215413_416713_AB5FA6EA 
+X-CRM114-Status: GOOD (  11.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,173 +108,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 20 Dec 2024 at 05:37, Damon Ding <damon.ding@rock-chips.com> wrote:
->
-> Hi Dmitry,
->
-> On 2024/12/20 8:13, Dmitry Baryshkov wrote:
-> > On Thu, Dec 19, 2024 at 04:05:56PM +0800, Damon Ding wrote:
-> >> Add support to configurate link rate, lane count, voltage swing and
-> >> pre-emphasis with phy_configure(). It is helpful in application scenarios
-> >> where analogix controller is mixed with the phy of other vendors.
-> >>
-> >> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> >>
-> >> ---
-> >>
-> >> Changes in v2:
-> >> - remove needless assignments for phy_configure()
-> >> - remove unnecessary changes for phy_power_on()/phy_power_off()
-> >> ---
-> >>   .../drm/bridge/analogix/analogix_dp_core.c    |  1 +
-> >>   .../gpu/drm/bridge/analogix/analogix_dp_reg.c | 56 +++++++++++++++++++
-> >>   2 files changed, 57 insertions(+)
-> >>
-> >> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> >> index 6f10d88a34c5..9429c50cc1bc 100644
-> >> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> >> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> >> @@ -1696,6 +1696,7 @@ int analogix_dp_resume(struct analogix_dp_device *dp)
-> >>      if (dp->plat_data->power_on)
-> >>              dp->plat_data->power_on(dp->plat_data);
-> >>
-> >> +    phy_set_mode(dp->phy, PHY_MODE_DP);
-> >>      phy_power_on(dp->phy);
-> >>
-> >>      analogix_dp_init_dp(dp);
-> >> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c
-> >> index 3afc73c858c4..613ce504bea6 100644
-> >> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c
-> >> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_reg.c
-> >> @@ -11,6 +11,7 @@
-> >>   #include <linux/gpio/consumer.h>
-> >>   #include <linux/io.h>
-> >>   #include <linux/iopoll.h>
-> >> +#include <linux/phy/phy.h>
-> >>
-> >>   #include <drm/bridge/analogix_dp.h>
-> >>
-> >> @@ -513,10 +514,25 @@ void analogix_dp_enable_sw_function(struct analogix_dp_device *dp)
-> >>   void analogix_dp_set_link_bandwidth(struct analogix_dp_device *dp, u32 bwtype)
-> >>   {
-> >>      u32 reg;
-> >> +    int ret;
-> >>
-> >>      reg = bwtype;
-> >>      if ((bwtype == DP_LINK_BW_2_7) || (bwtype == DP_LINK_BW_1_62))
-> >>              writel(reg, dp->reg_base + ANALOGIX_DP_LINK_BW_SET);
-> >> +
-> >> +    if (dp->phy) {
-> >> +            union phy_configure_opts phy_cfg = {0};
-> >> +
-> >> +            phy_cfg.dp.lanes = dp->link_train.lane_count;
-> >
-> > Should not be necessary, you are only setting the .set_rate.
->
-> Indeed, this can be dropped.
->
-> >
-> >> +            phy_cfg.dp.link_rate =
-> >> +                    drm_dp_bw_code_to_link_rate(dp->link_train.link_rate) / 100;
-> >> +            phy_cfg.dp.set_rate = true;
-> >> +            ret = phy_configure(dp->phy, &phy_cfg);
-> >> +            if (ret && ret != -EOPNOTSUPP) {
-> >> +                    dev_err(dp->dev, "%s: phy_configure() failed: %d\n", __func__, ret);
-> >> +                    return;
-> >> +            }
-> >> +    }
-> >>   }
-> >>
-> >>   void analogix_dp_get_link_bandwidth(struct analogix_dp_device *dp, u32 *bwtype)
-> >> @@ -530,9 +546,22 @@ void analogix_dp_get_link_bandwidth(struct analogix_dp_device *dp, u32 *bwtype)
-> >>   void analogix_dp_set_lane_count(struct analogix_dp_device *dp, u32 count)
-> >>   {
-> >>      u32 reg;
-> >> +    int ret;
-> >>
-> >>      reg = count;
-> >>      writel(reg, dp->reg_base + ANALOGIX_DP_LANE_COUNT_SET);
-> >> +
-> >> +    if (dp->phy) {
-> >> +            union phy_configure_opts phy_cfg = {0};
-> >> +
-> >> +            phy_cfg.dp.lanes = dp->link_train.lane_count;
-> >> +            phy_cfg.dp.set_lanes = true;
-> >> +            ret = phy_configure(dp->phy, &phy_cfg);
-> >> +            if (ret && ret != -EOPNOTSUPP) {
-> >> +                    dev_err(dp->dev, "%s: phy_configure() failed: %d\n", __func__, ret);
-> >> +                    return;
-> >> +            }
-> >> +    }
-> >>   }
-> >>
-> >>   void analogix_dp_get_lane_count(struct analogix_dp_device *dp, u32 *count)
-> >> @@ -546,10 +575,37 @@ void analogix_dp_get_lane_count(struct analogix_dp_device *dp, u32 *count)
-> >>   void analogix_dp_set_lane_link_training(struct analogix_dp_device *dp)
-> >>   {
-> >>      u8 lane;
-> >> +    int ret;
-> >>
-> >>      for (lane = 0; lane < dp->link_train.lane_count; lane++)
-> >>              writel(dp->link_train.training_lane[lane],
-> >>                     dp->reg_base + ANALOGIX_DP_LN0_LINK_TRAINING_CTL + 4 * lane);
-> >> +
-> >> +    if (dp->phy) {
-> >> +            union phy_configure_opts phy_cfg = {0};
-> >> +
-> >> +            for (lane = 0; lane < dp->link_train.lane_count; lane++) {
-> >> +                    u8 training_lane = dp->link_train.training_lane[lane];
-> >> +                    u8 vs, pe;
-> >> +
-> >> +                    vs = (training_lane & DP_TRAIN_VOLTAGE_SWING_MASK) >>
-> >> +                         DP_TRAIN_VOLTAGE_SWING_SHIFT;
-> >> +                    pe = (training_lane & DP_TRAIN_PRE_EMPHASIS_MASK) >>
-> >> +                         DP_TRAIN_PRE_EMPHASIS_SHIFT;
-> >> +                    phy_cfg.dp.voltage[lane] = vs;
-> >> +                    phy_cfg.dp.pre[lane] = pe;
-> >> +            }
-> >> +
-> >> +            phy_cfg.dp.lanes = dp->link_train.lane_count;
-> >> +            phy_cfg.dp.link_rate =
-> >> +                    drm_dp_bw_code_to_link_rate(dp->link_train.link_rate) / 100;
-> >
-> > This two should not be necessary, please drop them.
->
-> These two are necessary for rk_hdptx_phy_set_voltage(), so they cannot
-> be dropped.
+This series adds document, phy, configs support for PCIe in QCS8300.
+The series depend on the following devicetree.
 
-Please review the documentation for struct phy_configure_opts_dp and
-fix your PHY driver to skip the values for which the .set_foo isn't
-set. Then you might have to change this part.
-You are setting just .set_voltages. It means that the rate and .lanes
-shouldn't be changed and can be used as they were set by the previous
-calls to phy_configure().
+Have follwing changes:
+	- Document the QMP PCIe PHY on the QCS8300 platform.
+	- Add dedicated schema for the PCIe controllers found on QCS8300.
+	- Add compatible for qcs8300 platform.
+	- Add configurations in devicetree for PCIe0, including registers, clocks, interrupts and phy setting sequence.
+	- Add configurations in devicetree for PCIe1, including registers, clocks, interrupts and phy setting sequence.
 
->
-> >
-> >> +            phy_cfg.dp.set_voltages = true;
-> >> +            ret = phy_configure(dp->phy, &phy_cfg);
-> >> +            if (ret && ret != -EOPNOTSUPP) {
-> >> +                    dev_err(dp->dev, "%s: phy_configure() failed: %d\n", __func__, ret);
-> >> +                    return;
-> >> +            }
-> >> +    }
-> >>   }
-> >>
-> >>   u32 analogix_dp_get_lane_link_training(struct analogix_dp_device *dp, u8 lane)
-> >> --
-> >> 2.34.1
-> >>
-> >
->
-> Best regards,
-> Damon
->
+Signed-off-by: Krishna chaitanya chundru <quic_krichai@quicinc.com>
+Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+---
+Changes in v3:
+- Add received tag(Rob & Dmitry)
+- Update pcie_phy in gcc node to soc dtsi(Dmitry & Konrad)
+- remove pcieprot0 node(Konrad & Mani)
+- Fix format comments(Konrad)
+- Update base-commit to tag: next-20241213(Bjorn)
+- Corrected of_device_id.data from 1.9.0 to 1.34.0.
+- Link to v2: https://lore.kernel.org/all/20241128081056.1361739-1-quic_ziyuzhan@quicinc.com/
+
+Changes in v2:
+- Fix some format comments and match the style in x1e80100(Konrad)
+- Add global interrupt for PCIe0 and PCIe1(Konrad)
+- split the soc dtsi and the platform dts into two changes(Konrad)
+- Link to v1: https://lore.kernel.org/all/20241114095409.2682558-1-quic_ziyuzhan@quicinc.com/
+
+Ziyue Zhang (8):
+  dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP
+    PCIe PHY Gen4 x2
+  phy: qcom-qmp-pcie: add dual lane PHY support for QCS8300
+  dt-bindings: PCI: qcom,pcie-sa8775p: document qcs8300
+  PCI: qcom: Add QCS8300 PCIe support
+  arm64: dts: qcom: qcs8300: enable pcie0 for qcs8300 soc
+  arm64: dts: qcom: qcs8300: enable pcie0 for qcs8300 platform
+  arm64: dts: qcom: qcs8300: enable pcie1 for qcs8300 soc
+  arm64: dts: qcom: qcs8300: enable pcie1 for qcs8300 platform
+
+ .../bindings/pci/qcom,pcie-sa8775p.yaml       |   7 +-
+ .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml       |   2 +
+ arch/arm64/boot/dts/qcom/qcs8300-ride.dts     |  82 ++++
+ arch/arm64/boot/dts/qcom/qcs8300.dtsi         | 349 +++++++++++++++++-
+ drivers/pci/controller/dwc/pcie-qcom.c        |   1 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      |  89 +++++
+ 6 files changed, 527 insertions(+), 3 deletions(-)
 
 
+base-commit: 4176cf5c5651c33769de83bb61b0287f4ec7719f
 -- 
-With best wishes
-Dmitry
+2.34.1
+
 
 -- 
 linux-phy mailing list
