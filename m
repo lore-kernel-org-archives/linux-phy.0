@@ -4,97 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1B76E7718E
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 05:54:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAD56E7718A
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 06:11:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tSfjmLge5WSur2zLKA/LfON1slo6hg48dSdzeax+HU0=; b=phiM1gO0N0jVaA
-	djmwni4+Lt7pdH5o4H/8HX/a3evkxUMMb8iXqE8jv5CHNI7Lq+0vdw72ySKzvxTYgtK6T6vKq3q/o
-	Yo3Tg/T0EjZz9FDjRkvZTFNbp3JhOUugN/ZLf3T1vfe/7Hh9bA8c2raPFZ2V/bhtfkwmZDvSmcL0d
-	kuRmP8jrlgPkL0alcd5d93TjdO4r0kCO2VLLdY7EGz3/IUtm4AH5vIiuz0tmuI2QeLeUQ9r9ipS5Y
-	UmQBxdsBSje++4UM8eGkiVQJqForkK3f8C8+rpxvJ6FjX+SiNk2HFAUuEJ5tb0LR1o+af6zvy+78G
-	l6iMaelZRBVEiP9ziyqg==;
+	List-Owner; bh=CEiyuD1qToWTu5rRSsTKs3ThfR52/BgBMhXjBPK7U5o=; b=zaqrpsUKXGF/i8
+	F0Zu0zo+/RQJTXcsxOsFL2fEDI3927k1u2ZGrAeKeD85+9diF9AlnP+FGiiZGySnIARf1navxMqwo
+	OS0T65OzDCM1Z8OCNVJLtiFDg3DhMMonpOW6Omsk/67cIQl5mShbuq3ru42/DpNEKCD1kYnq7TV4l
+	PF+yrVtWtVIP/NGuu5qHOpJ3acXN1TiDcIsSKneD7YB0TV0c/cZFRSFVyl3MRJ3Dfo1AVrR078/43
+	R0gOXNnaj2h7HQ9/uA1FAsMBXmTHmQk1/Vgjc787mlolLfjnSScRQZv+VxUDVqUpy6SvL2sPzk84b
+	2TtAOoVBfzojWvXP/tkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOVxr-00000004156-1vAs;
-	Fri, 20 Dec 2024 05:54:19 +0000
+	id 1tOWE5-000000043Br-2t8K;
+	Fri, 20 Dec 2024 06:11:06 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOVxo-0000000411q-2Akd
+	id 1tOWCy-0000000432j-2DJ9
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Dec 2024 05:54:17 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJHKee2014800;
-	Fri, 20 Dec 2024 05:54:06 GMT
+	Fri, 20 Dec 2024 06:09:57 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK45a5j028900;
+	Fri, 20 Dec 2024 06:09:44 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=BwryoXx8LtZ
-	meRLR8RHKNl7ubgPQaSEjg3ZBHCo6Mrc=; b=FtZo5gqBQcT+YxEzZyiGdhyKwQC
-	uq5+YOgaVmjnEzPHa5ADeqFdYKXHf+oZhKjWnfudfNtXAeJg6UTjOiIs5o4KNO5C
-	/ymZQ6aUvBVz7XHhpoDZTUsJJldBsx4mPjwAJhiRqZ0yM/M1mX9PErIGxwvOJ8Kc
-	G3+x8/UG5XTx2RyvYjGZNoRqNF+13mmUiUr5c+y+FGLvmOfGyi3EBLiSC8RkniQs
-	U7HR86ck1zkeuzMOqfbcNR9Zpw0gsEr5SFQZ6GYAj+P7+dMulSd+lTnsfhISFNd6
-	UL7GbZN/w55wqc0wbhQ35rt1BUx8dfagdOK1QG0f6WIt0TZghenv01FhFTA==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mqt81e4w-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	8U7tneMvbmJGLnzZtcRMnfor+X1SskoicqA/MrREYr8=; b=Of4RG8Jx0tTTPPBU
+	z8KGWKOAlAtCZS2ZzZj28cF0FZtquY/cuaRDEJ+DusvEBYPfXEHCFUxTb86sCmbA
+	87LrYFh+HKBOHnyojVFAxqT1S/rusMwzt2XXhMaN7+Gf/Z4FlWrjIZN+nyw4t82m
+	BnJ5fZawW/gapa44ceJ08+5kBhtQ9XcHFwI2+amr1eDcNSr/U/+ldwLqZ0UzNwYX
+	l9Xxa25Hht0DDyXCgEEMhj1DRWjQkU7k0NDBKwV0PBv4qSMuL8Da8EAQIm0C7R95
+	bMez9ID5lvynWiv78B562M/RtFdL5Mtk044z/a3quZyPYLHuPP9eNA7cExM3TBbr
+	qqfurg==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mntf1w6n-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 05:54:05 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK5s3Nw031774;
-	Fri, 20 Dec 2024 05:54:03 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 43h33kuy0b-1
+	Fri, 20 Dec 2024 06:09:44 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BK69hH4017136
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 05:54:03 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4BK5s3Uh031766;
-	Fri, 20 Dec 2024 05:54:03 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4BK5s213031761
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 05:54:03 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id ADAEF1C3B; Fri, 20 Dec 2024 13:54:01 +0800 (CST)
-From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-        conor+dt@kernel.org, dmitry.baryshkov@linaro.org,
-        neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org, kw@linux.com,
-        bhelgaas@google.com, andersson@kernel.org, konradybcio@kernel.org
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-pci@vger.kernel.org, quic_qianyu@quicinc.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Subject: [PATCH v3 1/8] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP PCIe PHY Gen4 x2
-Date: Fri, 20 Dec 2024 13:52:32 +0800
-Message-Id: <20241220055239.2744024-2-quic_ziyuzhan@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241220055239.2744024-1-quic_ziyuzhan@quicinc.com>
-References: <20241220055239.2744024-1-quic_ziyuzhan@quicinc.com>
+	Fri, 20 Dec 2024 06:09:43 GMT
+Received: from [10.152.195.140] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 19 Dec
+ 2024 22:09:37 -0800
+Message-ID: <3ac003e7-7a3c-4769-8a3f-462bb7389b23@quicinc.com>
+Date: Fri, 20 Dec 2024 11:39:34 +0530
 MIME-Version: 1.0
-X-QCInternal: smtphost
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/4] arm64: dts: qcom: ipq5424: Add PCIe PHYs and
+ controller nodes
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <bhelgaas@google.com>,
+        <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+CC: <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>
+References: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
+ <20241213134950.234946-4-quic_mmanikan@quicinc.com>
+ <69dffe54-939d-47c3-b951-4a4dea11eae0@oss.qualcomm.com>
+Content-Language: en-US
+From: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
+In-Reply-To: <69dffe54-939d-47c3-b951-4a4dea11eae0@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: s-03A5mmRp867SDDdtr7wE8Tefnc0sRY
-X-Proofpoint-GUID: s-03A5mmRp867SDDdtr7wE8Tefnc0sRY
+X-Proofpoint-GUID: N3rM-ti90XKfeauLnvSnhujJtDIwYB4n
+X-Proofpoint-ORIG-GUID: N3rM-ti90XKfeauLnvSnhujJtDIwYB4n
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 bulkscore=0
- suspectscore=0 priorityscore=1501 spamscore=0 mlxlogscore=999
- malwarescore=0 impostorscore=0 phishscore=0 clxscore=1011
- lowpriorityscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2411120000 definitions=main-2412200048
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 suspectscore=0
+ impostorscore=0 adultscore=0 priorityscore=1501 bulkscore=0
+ lowpriorityscore=0 clxscore=1015 mlxscore=0 malwarescore=0 mlxlogscore=999
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412200050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_215416_570915_33380FDF 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241219_220956_577563_84000536 
+X-CRM114-Status: GOOD (  18.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,37 +107,193 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document the QMP PCIe PHY on the QCS8300 platform.
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
-Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
----
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml     | 2 ++
- 1 file changed, 2 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 8b82f8ee1cb4..bfb28737295b 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -17,6 +17,7 @@ properties:
-   compatible:
-     enum:
-       - qcom,qcs615-qmp-gen3x1-pcie-phy
-+      - qcom,qcs8300-qmp-gen4x2-pcie-phy
-       - qcom,sa8775p-qmp-gen4x2-pcie-phy
-       - qcom,sa8775p-qmp-gen4x4-pcie-phy
-       - qcom,sar2130p-qmp-gen3x2-pcie-phy
-@@ -190,6 +191,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,qcs8300-qmp-gen4x2-pcie-phy
-               - qcom,sa8775p-qmp-gen4x2-pcie-phy
-               - qcom,sa8775p-qmp-gen4x4-pcie-phy
-     then:
--- 
-2.34.1
+On 12/13/2024 8:36 PM, Konrad Dybcio wrote:
+> On 13.12.2024 2:49 PM, Manikanta Mylavarapu wrote:
+>> Add PCIe0, PCIe1, PCIe2, PCIe3 (and corresponding PHY) devices
+>> found on IPQ5424 platform. The PCIe0 & PCIe1 are 1-lane Gen3
+>> host whereas PCIe2 & PCIe3 are 2-lane Gen3 host.
+>>
+>> Signed-off-by: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
+>> ---
+>>  arch/arm64/boot/dts/qcom/ipq5424.dtsi | 482 +++++++++++++++++++++++++-
+>>  1 file changed, 477 insertions(+), 5 deletions(-)
+>>
+>> diff --git a/arch/arm64/boot/dts/qcom/ipq5424.dtsi b/arch/arm64/boot/dts/qcom/ipq5424.dtsi
+>> index 5e219f900412..ade512bcb180 100644
+>> --- a/arch/arm64/boot/dts/qcom/ipq5424.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/ipq5424.dtsi
+>> @@ -9,6 +9,7 @@
+>>  #include <dt-bindings/interrupt-controller/arm-gic.h>
+>>  #include <dt-bindings/clock/qcom,ipq5424-gcc.h>
+>>  #include <dt-bindings/reset/qcom,ipq5424-gcc.h>
+>> +#include <dt-bindings/interconnect/qcom,ipq5424.h>
+>>  #include <dt-bindings/gpio/gpio.h>
+>>  
+>>  / {
+>> @@ -143,7 +144,99 @@ soc@0 {
+>>  		compatible = "simple-bus";
+>>  		#address-cells = <2>;
+>>  		#size-cells = <2>;
+>> -		ranges = <0 0 0 0 0x10 0>;
+>> +		ranges = <0 0 0 0 0x0 0xffffffff>;
+> 
+> This must be a separate change, with a clear explanation
+> 
 
+Thank you for reviewing the patch.
+Okay, sure.
+
+>> +
+>> +		pcie0_phy: phy@84000 {
+>> +			compatible = "qcom,ipq5424-qmp-gen3x1-pcie-phy",
+>> +				     "qcom,ipq9574-qmp-gen3x1-pcie-phy";
+>> +			reg = <0 0x00084000 0 0x2000>;
+>> +			clocks = <&gcc GCC_PCIE0_AUX_CLK>,
+>> +				 <&gcc GCC_PCIE0_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE0_PIPE_CLK>;
+>> +			clock-names = "aux", "cfg_ahb", "pipe";
+>> +
+>> +			assigned-clocks = <&gcc GCC_PCIE0_AUX_CLK>;
+>> +			assigned-clock-rates = <20000000>;
+>> +
+>> +			resets = <&gcc GCC_PCIE0_PHY_BCR>,
+>> +				 <&gcc GCC_PCIE0PHY_PHY_BCR>;
+>> +			reset-names = "phy", "common";
+>> +
+>> +			#clock-cells = <0>;
+>> +			clock-output-names = "gcc_pcie0_pipe_clk_src";
+>> +
+>> +			#phy-cells = <0>;
+>> +			status = "disabled";
+>> +		};
+>> +
+>> +		pcie1_phy: phy@8c000 {
+>> +			compatible = "qcom,ipq5424-qmp-gen3x1-pcie-phy",
+>> +				     "qcom,ipq9574-qmp-gen3x1-pcie-phy";
+>> +			reg = <0 0x0008c000 0 0x2000>;
+>> +			clocks = <&gcc GCC_PCIE1_AUX_CLK>,
+>> +				 <&gcc GCC_PCIE1_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE1_PIPE_CLK>;
+>> +			clock-names = "aux", "cfg_ahb", "pipe";
+>> +
+>> +			assigned-clocks = <&gcc GCC_PCIE1_AUX_CLK>;
+>> +			assigned-clock-rates = <20000000>;
+>> +
+>> +			resets = <&gcc GCC_PCIE1_PHY_BCR>,
+>> +				 <&gcc GCC_PCIE1PHY_PHY_BCR>;
+>> +			reset-names = "phy", "common";
+>> +
+>> +			#clock-cells = <0>;
+>> +			clock-output-names = "gcc_pcie1_pipe_clk_src";
+>> +
+>> +			#phy-cells = <0>;
+>> +			status = "disabled";
+>> +		};
+>> +
+>> +		pcie2_phy: phy@f4000 {
+>> +			compatible = "qcom,ipq5424-qmp-gen3x2-pcie-phy",
+>> +				     "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+>> +			reg = <0 0x000f4000 0 0x2000>;
+>> +			clocks = <&gcc GCC_PCIE2_AUX_CLK>,
+>> +				 <&gcc GCC_PCIE2_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE2_PIPE_CLK>;
+>> +			clock-names = "aux", "cfg_ahb", "pipe";
+>> +
+>> +			assigned-clocks = <&gcc GCC_PCIE2_AUX_CLK>;
+>> +			assigned-clock-rates = <20000000>;
+>> +
+>> +			resets = <&gcc GCC_PCIE2_PHY_BCR>,
+>> +				 <&gcc GCC_PCIE2PHY_PHY_BCR>;
+>> +			reset-names = "phy", "common";
+>> +
+>> +			#clock-cells = <0>;
+>> +			clock-output-names = "gcc_pcie2_pipe_clk_src";
+>> +
+>> +			#phy-cells = <0>;
+>> +			status = "disabled";
+>> +		};
+>> +
+>> +		pcie3_phy: phy@fc000 {
+>> +			compatible = "qcom,ipq5424-qmp-gen3x2-pcie-phy",
+>> +				     "qcom,ipq9574-qmp-gen3x2-pcie-phy";
+>> +			reg = <0 0x000fc000 0 0x2000>;
+>> +			clocks = <&gcc GCC_PCIE3_AUX_CLK>,
+>> +				 <&gcc GCC_PCIE3_AHB_CLK>,
+>> +				 <&gcc GCC_PCIE3_PIPE_CLK>;
+>> +			clock-names = "aux", "cfg_ahb", "pipe";
+>> +
+>> +			assigned-clocks = <&gcc GCC_PCIE3_AUX_CLK>;
+>> +			assigned-clock-rates = <20000000>;
+>> +
+>> +			resets = <&gcc GCC_PCIE3_PHY_BCR>,
+>> +				 <&gcc GCC_PCIE3PHY_PHY_BCR>;
+>> +			reset-names = "phy", "common";
+>> +
+>> +			#clock-cells = <0>;
+>> +			clock-output-names = "gcc_pcie3_pipe_clk_src";
+>> +
+>> +			#phy-cells = <0>;
+>> +			status = "disabled";
+>> +		};
+>>  
+>>  		tlmm: pinctrl@1000000 {
+>>  			compatible = "qcom,ipq5424-tlmm";
+>> @@ -168,11 +261,11 @@ gcc: clock-controller@1800000 {
+>>  			reg = <0 0x01800000 0 0x40000>;
+>>  			clocks = <&xo_board>,
+>>  				 <&sleep_clk>,
+>> +				 <&pcie0_phy>,
+>> +				 <&pcie1_phy>,
+>>  				 <0>,
+> 
+> This leftover zero needs to be removed too, currently the wrong
+> clocks are used as parents
+> 
+>> -				 <0>,
+>> -				 <0>,
+>> -				 <0>,
+>> -				 <0>;
+>> +				 <&pcie2_phy>,
+>> +				 <&pcie3_phy>;
+>>  			#clock-cells = <1>;
+>>  			#reset-cells = <1>;
+>>  			#interconnect-cells = <1>;
+>> @@ -292,6 +385,385 @@ frame@f42d000 {
+>>  			};
+>>  		};
+>>  
+>> +		pcie3: pcie@40000000 {
+>> +			compatible = "qcom,pcie-ipq5424",
+>> +				     "qcom,pcie-ipq9574";
+>> +			reg = <0 0x40000000 0 0xf1d>,
+>> +			      <0 0x40000f20 0 0xa8>,
+>> +			      <0 0x40001000 0 0x1000>,
+>> +			      <0 0x000f8000 0 0x3000>,
+>> +			      <0 0x40100000 0 0x1000>;
+>> +			reg-names = "dbi", "elbi", "atu", "parf", "config";
+> 
+> Please make this a vertical list, in all nodes
+> 
+
+Okay, sure.
+
+> [...]
+> 
+>> +			phys = <&pcie3_phy>;
+>> +			phy-names = "pciephy";
+>> +			interconnects = <&gcc MASTER_ANOC_PCIE3 &gcc SLAVE_ANOC_PCIE3>,
+>> +					<&gcc MASTER_CNOC_PCIE3 &gcc SLAVE_CNOC_PCIE3>;
+>> +			interconnect-names = "pcie-mem", "cpu-pcie";
+>> +			status = "disabled";
+> 
+> And add a newline above status
+
+Okay, sure.
+
+Thanks & Regards,
+Manikanta.
 
 -- 
 linux-phy mailing list
