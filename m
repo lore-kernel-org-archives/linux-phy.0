@@ -4,95 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07112E77188
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 11:33:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4089DE7718A
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 12:22:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JZYWoXSEsImiJ/YIK00ud0G4MU/RLO12t1e9uZHO+QY=; b=z8vkKSSk3XCrVG
-	HktNojfv4uvlkaRNbDRqnpr0whKssxw3Mzo4SguDlFHjIao0vJS1I0Yi65Yx4k5ZDyuVnXw65BRs7
-	+RzozU6wqz7Xv9if36RvPsn4kZNjmECd/ZbyCqrBaONcVY4bJvc5mNwUys2rIm1/rTdcUP7Cl2U+p
-	ZXKyqIdiNHWnza4QA7kQnHGk/eq0WukFm5M0EMP52arBfkex8AQSqUom1xujlrCH/2WmNI9zdbsin
-	BM7zjwx/tVowanhB2fBgvyHXEBdxq2B9d9W4d0sJzMGkVTDluGbZvNcvabRbbGTny/bpImPbzROQL
-	APM3zcTkzIlI4fKbTT1g==;
+	List-Owner; bh=Qv2b0CdSp+UQ0efyDsdKJ7g/+Gr4PSPK3yUF0OcSu+Y=; b=LlLbHtBSpjwvEO
+	bye35UXp0daqrqMpTKKzMX5F7B4haacWRMHfeGsBo2OV1SBq7txrGBs0wYiBuFbi9/6yqLgZV/KSl
+	oxBL6WAQt2o8anO2rOehCauB/SDBG5IMnmTR2118rBxpkzRaWZUIYN0fxY6MIDCtNe4WQUd1mZ0Ym
+	evSGuQyfmZzmvyKCfyvG/PqbhDZinE+YHcEOQvnTUxAWGjiVQj4Ulg4UAVZ8lE2SDRSm5r0OG85X9
+	ZYauUF2enc5MuWhYED3y5qYHvt/pzN6Qrf0D4UwUBhsMEUY+xu/fgyKYgi2SEBnbWYzKiXhWX9QeQ
+	SKJkNitOm6DHkYSeh/fQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tObFf-00000004mlm-39WF;
-	Fri, 20 Dec 2024 11:33:03 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tOc12-00000004sHp-23YI;
+	Fri, 20 Dec 2024 12:22:00 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tObBy-00000004lva-0Bra
-	for linux-phy@lists.infradead.org;
-	Fri, 20 Dec 2024 11:29:16 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK6n0EH028591;
-	Fri, 20 Dec 2024 11:29:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MPWkcTcIYJFDpVK5XdmX72WZWvyJATmGLKiYjjvUxyk=; b=lARRes2yO1cckMn/
-	aRJcXX9jFE0TYkSR2jsIi3ipcd3yWcOs8FnTtucriIVxt/YDdnzYrbb2q7yQZqim
-	3OiEVBH0zAOspaKs9M+Yj+XDZfoSRCpYLv4X8tnZZOvQ3dUL9n0+nj5VffpyV3zV
-	IGv0KlYE1NmCR1/OqouguBN68Gr9BBNCMvjybpaV96gkpa9THUFhCMSTKohqmcK2
-	iJQD9SNCkM+cm5rvUVp8rdzkBHSpNYf6EckYIIORC51/cPqOTRTHf5u8Lf/4dJvy
-	sRDHLCT1ir8WP2Osn6zQGyCCAQRnhgq7MBiJnA3ZmLbgZqbtI3fwQeRqclX6lnXK
-	08aMrQ==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43n3mxrr0p-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 11:29:05 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BKBT46d028128
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 11:29:04 GMT
-Received: from [10.152.195.140] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Fri, 20 Dec
- 2024 03:28:56 -0800
-Message-ID: <0c7c1979-6fc3-4059-bf08-c94f6424b1dd@quicinc.com>
-Date: Fri, 20 Dec 2024 16:58:53 +0530
+	id 1tOc10-00000004sH6-0DYx;
+	Fri, 20 Dec 2024 12:21:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id EBEE4A41B25;
+	Fri, 20 Dec 2024 12:20:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02B3BC4CECD;
+	Fri, 20 Dec 2024 12:21:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1734697316;
+	bh=JduFaswRmxN5tGLStvzwUiaywMEIItZVTSmKsVx9nOI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Yq+tb1psbAD0EEaGVo62BeRkwh9Xj1zwGjU1RnX9bPc3zuKVZ+vFaKjzZirLF0O5Q
+	 cWqZTrj/8oUOashMDH0in9idt9Jf9pCN3xfKSbuna7zWsHJDYmyLi1Jgqy+04F5+b+
+	 WkFCtRLWZn13uCsuIFDP/5NAmVeHVQ3OLBfdEu0A=
+Date: Fri, 20 Dec 2024 13:21:51 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Kever Yang <kever.yang@rock-chips.com>
+Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org,
+	Simon Xue <xxm@rock-chips.com>, Lee Jones <lee@kernel.org>,
+	dri-devel@lists.freedesktop.org, Zhang Rui <rui.zhang@intel.com>,
+	Elaine Zhang <zhangqing@rock-chips.com>, linux-clk@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>, FUKAUMI Naoki <naoki@radxa.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Andrew Lunn <andrew+netdev@lunn.ch>, Andy Yan <andyshrk@163.com>,
+	Michael Riesch <michael.riesch@wolfvision.net>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+	linux-pm@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
+	linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-spi@vger.kernel.org, Jakub Kicinski <kuba@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Jose Abreu <joabreu@synopsys.com>, Jamie Iles <jamie@jamieiles.com>,
+	Detlev Casanova <detlev.casanova@collabora.com>,
+	Chris Morgan <macromorgan@hotmail.com>,
+	Frank Wang <frank.wang@rock-chips.com>, linux-mmc@vger.kernel.org,
+	Linus Walleij <linus.walleij@linaro.org>, linux-i2c@vger.kernel.org,
+	Simona Vetter <simona@ffwll.ch>,
+	Finley Xiao <finley.xiao@rock-chips.com>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-watchdog@vger.kernel.org, David Wu <david.wu@rock-chips.com>,
+	Shresth Prasad <shresthprasad7@gmail.com>,
+	linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	Lukasz Luba <lukasz.luba@arm.com>,
+	Jisheng Zhang <jszhang@kernel.org>,
+	Guenter Roeck <linux@roeck-us.net>, linux-iio@vger.kernel.org,
+	linux-pci@vger.kernel.org, David Airlie <airlied@gmail.com>,
+	linux-phy@lists.infradead.org, Jonas Karlman <jonas@kwiboo.se>,
+	Maxime Ripard <mripard@kernel.org>,
+	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	Jiri Slaby <jirislaby@kernel.org>, linux-pwm@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>, Mark Brown <broonie@kernel.org>,
+	Dragan Simic <dsimic@manjaro.org>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Lars-Peter Clausen <lars@metafoo.de>,
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Stephen Boyd <sboyd@kernel.org>, Johan Jonker <jbx6244@gmail.com>,
+	Shawn Lin <shawn.lin@rock-chips.com>,
+	Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+	linux-serial@vger.kernel.org,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	devicetree@vger.kernel.org,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Tim Lunn <tim@feathertop.org>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>,
+	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>
+Subject: Re: [PATCH 00/38] rockchip: Add rk3562 support
+Message-ID: <2024122018-groove-glitzy-f3bc@gregkh>
+References: <20241220103825.3509421-1-kever.yang@rock-chips.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/4] arm64: dts: qcom: ipq5424: Add PCIe PHYs and
- controller nodes
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, <bhelgaas@google.com>,
-        <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-CC: <quic_srichara@quicinc.com>, <quic_varada@quicinc.com>
-References: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
- <20241213134950.234946-4-quic_mmanikan@quicinc.com>
- <69dffe54-939d-47c3-b951-4a4dea11eae0@oss.qualcomm.com>
- <08fbde92-a827-4270-a143-cca56a274e6c@quicinc.com>
- <71d2135f-664a-465d-bc1f-051cc07c8537@oss.qualcomm.com>
-Content-Language: en-US
-From: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
-In-Reply-To: <71d2135f-664a-465d-bc1f-051cc07c8537@oss.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: ZzBnjh2nN8OwLgERvuK6_pJLmUbpRQ1g
-X-Proofpoint-ORIG-GUID: ZzBnjh2nN8OwLgERvuK6_pJLmUbpRQ1g
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 mlxscore=0
- spamscore=0 suspectscore=0 malwarescore=0 phishscore=0 priorityscore=1501
- lowpriorityscore=0 impostorscore=0 clxscore=1015 adultscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2412200095
+Content-Disposition: inline
+In-Reply-To: <20241220103825.3509421-1-kever.yang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_032914_224112_E713AEB4 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20241220_042158_247302_8B58886D 
+X-CRM114-Status: GOOD (  11.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,58 +128,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 12/20/2024 3:18 PM, Konrad Dybcio wrote:
-> On 20.12.2024 7:42 AM, Manikanta Mylavarapu wrote:
->>
->>
->> On 12/13/2024 8:36 PM, Konrad Dybcio wrote:
->>> On 13.12.2024 2:49 PM, Manikanta Mylavarapu wrote:
->>>> Add PCIe0, PCIe1, PCIe2, PCIe3 (and corresponding PHY) devices
->>>> found on IPQ5424 platform. The PCIe0 & PCIe1 are 1-lane Gen3
->>>> host whereas PCIe2 & PCIe3 are 2-lane Gen3 host.
->>>>
->>>> Signed-off-by: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
->>>> ---
+On Fri, Dec 20, 2024 at 06:37:46PM +0800, Kever Yang wrote:
 > 
-> [...]
+> This patch set adds rk3562 SoC and its evb support.
 > 
->>>>  		tlmm: pinctrl@1000000 {
->>>>  			compatible = "qcom,ipq5424-tlmm";
->>>> @@ -168,11 +261,11 @@ gcc: clock-controller@1800000 {
->>>>  			reg = <0 0x01800000 0 0x40000>;
->>>>  			clocks = <&xo_board>,
->>>>  				 <&sleep_clk>,
->>>> +				 <&pcie0_phy>,
->>>> +				 <&pcie1_phy>,
->>>>  				 <0>,
->>>
->>> This leftover zero needs to be removed too, currently the wrong
->>> clocks are used as parents
->>>
->>
->> Hi Konrad,
->>
->> The '<0>' entry is for "USB PCIE wrapper pipe clock source".
->> And, will update the pcie entries as follows
->> 	<&pcie0_phy GCC_PCIE0_PIPE_CLK>
->> 	<&pcie1_phy GCC_PCIE1_PIPE_CLK>
->> 	<&pcie2_phy GCC_PCIE2_PIPE_CLK>
->> 	<&pcie3_phy GCC_PCIE3_PIPE_CLK>
->>
->> Please correct me if i am wrong.
-> 
-> The order of these is fixed by the first enum in
-> drivers/clk/qcom/gcc-ipq5424.c. The <0> entry must be at the end of
-> the clocks list for it to do what you want it to.
-> 
+> The patch number is a little bit too big, some of them may need to split
+> out for different maintainers, please let me know which patch need to
+> split out.
 
-I understand your point. I will move the <0> entry to the end and 
-incorporate this change in the next version.
+I recommend you doing the split-apart as you know the dependencies here
+the best, right?  Otherwise we all will just probably ignore them
+assuming someone else is going to review/accept them...
 
-Thanks & Regards,
-Manikanta.
+thanks,
+
+greg k-h
 
 -- 
 linux-phy mailing list
