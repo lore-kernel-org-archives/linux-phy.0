@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19B8FE7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 00:21:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E827E7718C
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 00:22:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Aq8gkAdZOLsnIOM7vj1Vuy76nck3DBWbaFDuwR5+LkA=; b=JGBvz+Rq0wNxFS
-	uiUwloqqwI499xD56ziSxoli6a5z83MaNW3FQAfbNkYTdvoGwRrmx//YHQ7sDiHDee6lSsT/dbJuv
-	GuW3asleqI9bn9HHNwnvoNoeJK2eC6n8ttHZ3z1yVjV7IGzViqkOAGvvk5QEpNVKfCmxlC+X8Hl//
-	1N83zlywX8NsDNULJDiZAMVWczfQ7Ofp2+Hchegc3Fr2FHGuP9mST69w7YY69z70go9Ppf/M93lf3
-	vC6Udws4D9iu/631XZp//4C3Bv/BamVuq0cJLJM0cTIVO5h/eUzAH4CfGHzs4qd/P5/hmeYsOjgUS
-	lv/kWD/xdpfRhOO5NUTA==;
+	List-Owner; bh=3Ka4l7Q6A+Za2h7nH5qYO9PCTg9uCpi6vNfLE9UrRUQ=; b=PVqKIraU/7xoPw
+	vW+RCCUFZM3J0SW30d3w0pk3ucyk2HAtbrAvXfLWzAh8Q6gUI9ZvQ002PFnaoCkC6cJbEWvFRZLZh
+	U4B+rTHqMof8oDORV1p3gY0i0TzzTyaLiKBC+V9HKc2yN/L4T7G5ZItk8GDV7lZA5G2LCMhZHK76l
+	TD1qau0dDNCpZY1LUpPnMw7k8vua7WxQD/GQkNNy5RsaZwX0X2QU0jPVzpNAeKQTXOxAPVkvwjqjP
+	SktedYPb2+bFRTIxfC5ZrNe1dRkQbdNJtlPemxmK2SK6rc48fiOhRZF7biPwzGMFiRtmovYWRQ5tr
+	cpuRsu4pISe4lDrcoKnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOQlf-00000003SLr-3ge7;
-	Fri, 20 Dec 2024 00:21:23 +0000
+	id 1tOQmu-00000003SZZ-1jdW;
+	Fri, 20 Dec 2024 00:22:40 +0000
 Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOQke-00000003S5F-12Sf
+	id 1tOQms-00000003SY2-0pHU
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Dec 2024 00:20:21 +0000
-Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-53ff1f7caaeso1346337e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 19 Dec 2024 16:20:20 -0800 (PST)
+	Fri, 20 Dec 2024 00:22:39 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-5401c52000dso1382575e87.3
+        for <linux-phy@lists.infradead.org>; Thu, 19 Dec 2024 16:22:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1734654018; x=1735258818; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1734654157; x=1735258957; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=aGfaJoG1T2GqAeho5K1MGIVQ1DuQHl43bpzlBdelgis=;
-        b=Ey+YsyHIiMGhzhsnEp7jbJeeEW+3qkhxt6z6nth8BdpQNGCFkKUJUytNX58Z0vhMAW
-         Sv9NsBPidrICY4qi1umwRCHbNuub+SIl9dYPooUJLwx6LHRjLI1m0XpIUhkatvEgVYHi
-         6kDN0tlU7RzRiPU2i2GA0Adh37HPa12ZfuFCaOONpr4brntSyLQYhzwcfQZCB3pczMjx
-         AKf8ucd/gm3tjrpM8VX5oWtOn1bQAvoWWSWTlF5mnQB32OmWUW0r55LQCexkdGzwloBh
-         wtNzWX9KLNxj1nbcNoy+vA/l70jool/L/4cSY7+fG569PGyuJwqRViCpr9o+MM2YJiJr
-         6GNw==
+        bh=AAbh6kvzri8ctYwKqJBe83JxMpEXpUs+Ep0IfsaKnoM=;
+        b=gcQ4DqUu2WZGGZjangUp2YLnClUMKWfg12z44Tia5lMTU5HiBZOWMrKqOt8QGtiLgq
+         faNl9K8mAlg1okhM4RsOqPhviUAfdBczzXt3alJaQs9mhrs1G7yN3y+SQsnr6XZ11dMh
+         nzfCo4vTlPPCoN4OJaEhgtzILOjBDHQ0RYhUlN2irp9aIaR5lqC9wjACMV4h9n7SeMIf
+         t4/wJzyAIbVg32OGiV0hf2PHVHQdZCKFOJFpzzR/xjSb4RCzQwBQOOn5uMMTIg77dm1L
+         jmj8FiZRg0fNIWcLXM+nr/DkCe4/VQxsKY73Qax96r5Sjw5LYXnYXbuNEhzzOHAJAqN8
+         aVYQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1734654018; x=1735258818;
+        d=1e100.net; s=20230601; t=1734654157; x=1735258957;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=aGfaJoG1T2GqAeho5K1MGIVQ1DuQHl43bpzlBdelgis=;
-        b=NwIHkirpeElVpaaA802COxAoY5WhfIBy+ZHL90ddiQjeBUi8KFXkf0BNHKDfg0CVw3
-         3ulUxkPYlCuozN2kklrqYGBrUs556nX/4o0daTrYUOmbjLICBilzEzPUE8NW2bJKXK4G
-         ye5qju6zu4PySMw+sdnY5ADDvgBIRMYTNEQMji0bfE7WE92vxUcsh8YkhUdTvLrZbVBJ
-         HcuCwY+QAWXebc49ntEDaYWWnDAP3w1i6WuHLDlqgjt4tfH6eRwQ7e4bs8E2zKISnaeT
-         sKjt6W5++AIbOay/so+daNLMUMUwMpJfXiNDcKPFNLw+5m+Mual6L0H3lr0MBaQSAX5d
-         gUhA==
-X-Forwarded-Encrypted: i=1; AJvYcCX/3CVGO4nyfhDwBmdX4m+MAtHt2t+ISiiZf58BOpJBF5SlvX4K0ZJh/BiO92qjWt4f8Uad4KndR4Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz5v0vgGLQ/VdAWieG1Knrk83PXADc7MpBvm4cdFRny2k+f2qsF
-	GnKhuGkGIoHWCJv/c7dUdRzNfhzb5uLbAiMoFBU072PBr5b+/tbM8ScLSf4v5RaD8w+7ZbUckmg
-	o
-X-Gm-Gg: ASbGnctFEGn4K4DLJbwxXycx1DJdD2PK4a4DtMCeFQzZp2YdkraPvx0NvdJmmmIX+eF
-	5iHg5ntOevILh+Bip2+ycTQ8yyhzD4mEZssKHYb24mIt6UT9kh51yMmXYkATJ2EBHWe4NDBawtp
-	3u4zj25hu3CIncyozyyYfQWxuDvNk51Ex1hNneLj1XriydzRZLcTj1RDTcPUz0LiuSAfYkKbMEM
-	roX+oapz+DDxuF/L8pDSocy+nuqTsDv/DezoHv/Nfy9k4dydMWjAgrGLuPGFh7m78JsAy3TAfHi
-	hCysWet+HvmmvpWw9xdXa+XFy/BJ4puyl6CK
-X-Google-Smtp-Source: AGHT+IFre8iAJ8qmAC/GMNvKWBPlrLOwqvhJV/vx+wZq/0GVkU2u75qwt0RAs2Qd9uPRT+dmO47+yQ==
-X-Received: by 2002:a05:6512:114a:b0:540:1d0a:5812 with SMTP id 2adb3069b0e04-54229533ad6mr159865e87.23.1734654018559;
-        Thu, 19 Dec 2024 16:20:18 -0800 (PST)
+        bh=AAbh6kvzri8ctYwKqJBe83JxMpEXpUs+Ep0IfsaKnoM=;
+        b=qLQDpnV/hn166/L4Ug+hwNnD+kziRcrBii/jGyJqWmW1tyX/+0a/0AGVsxubuGIbRy
+         CAoj4sWsVsPWjRiMsE+q2Q3QtTzL4n0OyN8R1ClSfWZg+T1PcnLZVQbrESZXVvn3GuaV
+         8rC3xgelx3oWJA78/6UDA7QW+MWTqZY5kO0zK9ArgfBjydQUOES/Cn30LFRF6FnSv2Pb
+         /QoFhtz7v5PR2evx04Mo24ttVCSOvJ48/rsLTX1vxuqX0dNczeoBzGYPNad7e+zw2QhW
+         ZnweeJ3zxHhu8K6R+PWX65+uh6B6wfQZVLG9+Q5mmVe1Ifg3lHZFPaU3arjfFMgXI2kY
+         228w==
+X-Forwarded-Encrypted: i=1; AJvYcCVKsmlSWHmmLvvClBjTDG43EDx5par3uw+F7VxXG0tAIxzgqyIG5z1aBu8MDj9fpy5O1puJll73TC8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx7nEMom3FYFAZBPkA9+kU0RiQwwQEfJMNQc1Rs5+v6bPV7ZuGg
+	r46JSIV0XulBOXxGGKGGj8NqCZ8spMi5P0QmBvRfcPqQn61R298eB9vh6BuNT6U=
+X-Gm-Gg: ASbGncs2RcUci08HjaX3vJhW0UsbQ0/3eKiJ6q9WAraG1U7wTK482xhtcDAWy6OUBH/
+	I6q6IcfcznXMynDc+RI94FuQbIHhcGescc1OALy99c3OZqcqlLVv+OYJyWqgMQy49UBzYprhFgK
+	C056OyL4Vd1qdFQ/EZGneQSQntv7J/jSJeFaM2wDe+E+aGENjZSIcZyISZ7O9xhQVKMANFcO/jS
+	S4+AgJp2wYM0IPrRRo1wAm6JdSNmCLf7RrOkN4kcRI/r3wwEOmxYSpNwzD+xRuerFFcwABwmcC7
+	ehLT6xZ2465c/r6lzNq9AD+I0zpXsT9dhK1t
+X-Google-Smtp-Source: AGHT+IHBDB0DL2HFPmb1YTVLVej9ZBG0paM1gMbp8tkms3Vb7rT70j9ksKteZoAkcn4DVOlUEs7IFg==
+X-Received: by 2002:a05:6512:3f25:b0:540:353a:5b1f with SMTP id 2adb3069b0e04-542294a1623mr189444e87.0.1734654156655;
+        Thu, 19 Dec 2024 16:22:36 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-542238136a8sm317995e87.163.2024.12.19.16.20.17
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54223832b6csm318735e87.273.2024.12.19.16.22.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 19 Dec 2024 16:20:18 -0800 (PST)
-Date: Fri, 20 Dec 2024 02:20:15 +0200
+        Thu, 19 Dec 2024 16:22:35 -0800 (PST)
+Date: Fri, 20 Dec 2024 02:22:33 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Damon Ding <damon.ding@rock-chips.com>
 Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, 
@@ -78,17 +77,17 @@ Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
 	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
 	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 14/15] arm64: dts: rockchip: Enable eDP0 display on
- RK3588S EVB1 board
-Message-ID: <cg7bnhol4gvzji7agxazas7nkxy7zammzy67rjvhp35yqyraju@73daepsbmuae>
+Subject: Re: [PATCH v3 04/15] phy: phy-rockchip-samsung-hdptx: Rename some
+ register names related to DP
+Message-ID: <rkdp44csph6stq2e7emhgjziiwypcas7uqsvcdo7i6ypvg64uz@gnqikl5fzxqd>
 References: <20241219080604.1423600-1-damon.ding@rock-chips.com>
- <20241219080604.1423600-15-damon.ding@rock-chips.com>
+ <20241219080604.1423600-5-damon.ding@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241219080604.1423600-15-damon.ding@rock-chips.com>
+In-Reply-To: <20241219080604.1423600-5-damon.ding@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_162020_303834_3B908B87 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20241219_162238_242061_5198424B 
+X-CRM114-Status: GOOD (  17.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,112 +104,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 19, 2024 at 04:06:03PM +0800, Damon Ding wrote:
-> Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
-> - Add edp-panel node
-> - Set pinctrl of pwm12 for backlight
-> - Enable edp0/hdptxphy0/vp2
+On Thu, Dec 19, 2024 at 04:05:53PM +0800, Damon Ding wrote:
+> The modifications of DP register names are as follows:
+> - Add the '_MASK' suffix to some registers to ensure consistency.
+> - Complete the names of some register to their full names.
+> - Swap the definitions of LCPLL_REF and ROPLL_REF.
+
+Three unrelated changes, ideally means three commits (I won't insist on
+that though). Also please mention that LCPLL_REF and ROPLL_REF were not
+used by the existing driver, so it's not a bug and there is no need to
+backport it.
+
 > 
+> Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY driver")
 > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> 
 > ---
+>  .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 64 +++++++++----------
+>  1 file changed, 32 insertions(+), 32 deletions(-)
 > 
-> Changes in v2:
-> - Remove brightness-levels and default-brightness-level properties in
->   backlight node.
-> - Add the detail DT changes to commit message.
-> 
-> Changes in v3:
-> - Use aux-bus instead of platform bus for edp-panel.
-> ---
->  .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 52 +++++++++++++++++++
->  1 file changed, 52 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-> index bc4077575beb..9547ab18e596 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-> @@ -9,6 +9,7 @@
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/input/input.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
-> +#include <dt-bindings/soc/rockchip,vop2.h>
->  #include <dt-bindings/usb/pd.h>
->  #include "rk3588s.dtsi"
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index ceab9c71d3b5..c1b9c73f5f9f 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -69,41 +69,41 @@
+>  #define ROPLL_PMS_IQDIV_RSTN		BIT(5)
+>  /* CMN_REG(005e) */
+>  #define ROPLL_SDM_EN_MASK		BIT(6)
+> -#define ROPLL_SDM_FRAC_EN_RBR		BIT(3)
+> -#define ROPLL_SDM_FRAC_EN_HBR		BIT(2)
+> -#define ROPLL_SDM_FRAC_EN_HBR2		BIT(1)
+> -#define ROPLL_SDM_FRAC_EN_HBR3		BIT(0)
+> +#define ROPLL_SDC_FRAC_EN_RBR_MASK	BIT(3)
+> +#define ROPLL_SDC_FRAC_EN_HBR_MASK	BIT(2)
+> +#define ROPLL_SDC_FRAC_EN_HBR2_MASK	BIT(1)
+> +#define ROPLL_SDM_FRAC_EN_HBR3_MASK	BIT(0)
+>  /* CMN_REG(0064) */
+>  #define ROPLL_SDM_NUM_SIGN_RBR_MASK	BIT(3)
+>  /* CMN_REG(0069) */
+>  #define ROPLL_SDC_N_RBR_MASK		GENMASK(2, 0)
+>  /* CMN_REG(0074) */
+> -#define ROPLL_SDC_NDIV_RSTN		BIT(2)
+> -#define ROPLL_SSC_EN			BIT(0)
+> +#define ROPLL_SDC_NDIV_RSTN_MASK	BIT(2)
+> +#define ROPLL_SSC_EN_MASK		BIT(0)
+>  /* CMN_REG(0081) */
+> -#define OVRD_PLL_CD_CLK_EN		BIT(8)
+> -#define PLL_CD_HSCLK_EAST_EN		BIT(0)
+> +#define OVRD_PLL_CD_CLK_EN_MASK		BIT(8)
+> +#define ANA_PLL_CD_HSCLK_EAST_EN_MASK	BIT(0)
+>  /* CMN_REG(0086) */
+>  #define PLL_PCG_POSTDIV_SEL_MASK	GENMASK(7, 4)
+>  #define PLL_PCG_CLK_SEL_MASK		GENMASK(3, 1)
+ >  #define PLL_PCG_CLK_EN			BIT(0)
+>  /* CMN_REG(0087) */
+> -#define PLL_FRL_MODE_EN			BIT(3)
+> -#define PLL_TX_HS_CLK_EN		BIT(2)
+> +#define ANA_PLL_FRL_MODE_EN_MASK	BIT(3)
+> +#define ANA_PLL_TX_HS_CLK_EN_MASK	BIT(2)
+>  /* CMN_REG(0089) */
+>  #define LCPLL_ALONE_MODE		BIT(1)
+>  /* CMN_REG(0097) */
+> -#define DIG_CLK_SEL			BIT(1)
+> -#define ROPLL_REF			BIT(1)
+> -#define LCPLL_REF			0
+> +#define DIG_CLK_SEL_MASK		BIT(1)
+> +#define LCPLL_REF			BIT(1)
+> +#define ROPLL_REF			0
+>  /* CMN_REG(0099) */
+>  #define CMN_ROPLL_ALONE_MODE		BIT(2)
+>  #define ROPLL_ALONE_MODE		BIT(2)
+>  /* CMN_REG(009a) */
+> -#define HS_SPEED_SEL			BIT(0)
+> +#define HS_SPEED_SEL_MASK		BIT(0)
+>  #define DIV_10_CLOCK			BIT(0)
+>  /* CMN_REG(009b) */
+> -#define IS_SPEED_SEL			BIT(4)
+> +#define LS_SPEED_SEL_MASK		BIT(4)
+>  #define LINK_SYMBOL_CLOCK		BIT(4)
+>  #define LINK_SYMBOL_CLOCK1_2		0
 >  
-> @@ -238,6 +239,41 @@ &combphy2_psu {
->  	status = "okay";
->  };
+> @@ -165,32 +165,32 @@
+>  #define HDMI_MODE			BIT(2)
+>  #define HDMI_TMDS_FRL_SEL		BIT(1)
+>  /* LNTOP_REG(0206) */
+> -#define DATA_BUS_SEL			BIT(0)
+> +#define DATA_BUS_WIDTH_SEL_MASK		BIT(0)
+>  #define DATA_BUS_36_40			BIT(0)
+>  /* LNTOP_REG(0207) */
+>  #define LANE_EN				0xf
+>  #define ALL_LANE_EN			0xf
 >  
-> +&edp0 {
-> +	force-hpd;
-> +	status = "okay";
-> +
-> +	aux-bus {
-> +		panel {
-> +			compatible = "lg,lp079qx1-sp0v";
-
-Why do you need the particular compat string here? Can you use the
-generic "edp-panel" instead? What if the user swaps the panel?
-
-> +			backlight = <&backlight>;
-> +			power-supply = <&vcc3v3_lcd_edp>;
-> +
-> +			port {
-> +				panel_in_edp: endpoint {
-> +					remote-endpoint = <&edp_out_panel>;
-> +				};
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&edp0_in {
-> +	edp0_in_vp2: endpoint {
-> +		remote-endpoint = <&vp2_out_edp0>;
-> +	};
-> +};
-> +
-> +&edp0_out {
-> +	edp_out_panel: endpoint {
-> +		remote-endpoint = <&panel_in_edp>;
-> +	};
-> +};
-> +
-> +&hdptxphy0 {
-> +	status = "okay";
-> +};
-> +
->  &i2c3 {
->  	status = "okay";
+>  /* LANE_REG(0312) */
+> -#define LN0_TX_SER_RATE_SEL_RBR		BIT(5)
+> -#define LN0_TX_SER_RATE_SEL_HBR		BIT(4)
+> -#define LN0_TX_SER_RATE_SEL_HBR2	BIT(3)
+> -#define LN0_TX_SER_RATE_SEL_HBR3	BIT(2)
+> +#define LN0_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
+> +#define LN0_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
+> +#define LN0_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
+> +#define LN0_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
+>  /* LANE_REG(0412) */
+> -#define LN1_TX_SER_RATE_SEL_RBR		BIT(5)
+> -#define LN1_TX_SER_RATE_SEL_HBR		BIT(4)
+> -#define LN1_TX_SER_RATE_SEL_HBR2	BIT(3)
+> -#define LN1_TX_SER_RATE_SEL_HBR3	BIT(2)
+> +#define LN1_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
+> +#define LN1_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
+> +#define LN1_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
+> +#define LN1_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
+>  /* LANE_REG(0512) */
+> -#define LN2_TX_SER_RATE_SEL_RBR		BIT(5)
+> -#define LN2_TX_SER_RATE_SEL_HBR		BIT(4)
+> -#define LN2_TX_SER_RATE_SEL_HBR2	BIT(3)
+> -#define LN2_TX_SER_RATE_SEL_HBR3	BIT(2)
+> +#define LN2_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
+> +#define LN2_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
+> +#define LN2_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
+> +#define LN2_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
+>  /* LANE_REG(0612) */
+> -#define LN3_TX_SER_RATE_SEL_RBR		BIT(5)
+> -#define LN3_TX_SER_RATE_SEL_HBR		BIT(4)
+> -#define LN3_TX_SER_RATE_SEL_HBR2	BIT(3)
+> -#define LN3_TX_SER_RATE_SEL_HBR3	BIT(2)
+> +#define LN3_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
+> +#define LN3_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
+> +#define LN3_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
+> +#define LN3_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
 >  
-> @@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
->  };
+>  #define HDMI20_MAX_RATE			600000000
 >  
->  &pwm12 {
-> +	pinctrl-0 = <&pwm12m1_pins>;
->  	status = "okay";
->  };
->  
-> @@ -1168,3 +1205,18 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
->  		};
->  	};
->  };
-> +
-> +&vop_mmu {
-> +	status = "okay";
-> +};
-> +
-> +&vop {
-> +	status = "okay";
-> +};
-> +
-> +&vp2 {
-> +	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
-> +		reg = <ROCKCHIP_VOP2_EP_EDP0>;
-> +		remote-endpoint = <&edp0_in_vp2>;
-> +	};
-> +};
 > -- 
 > 2.34.1
 > 
