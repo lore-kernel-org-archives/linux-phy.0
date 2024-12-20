@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21B09E7718D
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 05:54:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75716E7718F
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 05:54:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sbtHaTk+exftHjhxi4xGYha7sUol3j3NtFx37h/yOsA=; b=Y3N2wsMbXcfIbO
-	PUJ8+JA1C54RU+JUJzv7IJKHJA4CVZjlmiWXEOumoKEx6Z0TybS7r90NfTJI5NhIzVFhJ2EzCyuFz
-	kOmvvYsqZzNLKPZWxo1Pv90ilbNxvwDKEJGy33GKXMHbdSnu5i6mVhMCheIZze6Kej/T68mSLAyt2
-	k3wBmwnTZ6yA5iKd8YSRrem66gbuvd7K/S2LBdgzMahZ8jClhkDB3PE16pHuV3crhmXiK8njRe2oH
-	lcnOtg66R9B+ZmF0NyRfHCzLd+HDu1t7ll82hzdta+LTpZMWUMSDlowaUTMuafTvMyMpxPf3Ze5ek
-	S8SFY1dDFiahtRd0zF0Q==;
+	List-Owner; bh=qfzQDnmcSXb3MX0/Pduan8MqtcpSr/Z+QN3zlehk3lI=; b=2C6QhJ2u7wQzMb
+	4i6+I9neB5X2sK0c7d0qAJM32lXGHmjSqmgxPg+9GxXDDx6LOTZqg5e7dsQH3tVdE1lAG3bUYwrd+
+	tkEF6n9VEWpvouYZhtBgBXferCiWA34o6LIcTMdED4OxW0sanW74VwkwcAOYsOfefK13PJxE8vXmO
+	j8qgjSTefXdQOLkwShDrCkofB7ruaan/aFn3ryY832m3hJZHtvO7Cg1IGMMZ0IguuL4epgYYhhmcV
+	JpHZGmG1k57vkqUj4Ak2hfGFrl9Vnt6a3pQlCGHOD+GFfBQrTkDSldH55CiB85PqZAvSwK3Gbee96
+	B4urDR6uL+NpZGqt8F2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOVxq-00000004145-3hkE;
-	Fri, 20 Dec 2024 05:54:18 +0000
+	id 1tOVxs-0000000415o-0wYG;
+	Fri, 20 Dec 2024 05:54:20 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOVxn-0000000410v-11jl
+	id 1tOVxp-0000000413K-2yf5
 	for linux-phy@lists.infradead.org;
-	Fri, 20 Dec 2024 05:54:16 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJJrfjH024821;
+	Fri, 20 Dec 2024 05:54:19 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BJHKrpY015075;
 	Fri, 20 Dec 2024 05:54:06 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=BEcvvYZbZnC
-	nyU6S1b4jP3ruLfMtMgMJZvUaq9/r+8g=; b=lMEhpMTI/PLsjzUK9QQfRX/GgQB
-	RQD11dZYENYjC2SFdIDMcEP6v5vxCHbQzM0GfbT/BMjVMh+OnhwRTA7mmSjY8HAQ
-	tQx54qxKsldLOvKFr02nM5KjRyjbijV3/FopVCzjt0taruB7Ptk9aGzah546ggKq
-	XSMFaJENjRwZH1EpFp9YwK6TBMX99aSyKj6hckUV19RLOMES429E/7DbQrpjWbGn
-	wtDF5o+LOg2JqKD4DOyVdLjhRL6EEDWaOhzl3hV5WgKLyYv5WO6ztidhmj2P949d
-	wvU2rZJ0zg2SK5Rv8fbmJMbji04d3XptnOZP9823vHDt8h7gAp6P9WKYSBQ==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mt1ws4hn-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=9lq+2NYwzqu
+	nGCZ2Xfc9UUA8f4aGQkhgfBDDji8ziLY=; b=N7sthofOppRv92B7Ahal5deFevE
+	nNCWJFsHRWCZIcDp6UybUlvvtVO9p8SOYC5N0C0SmEoi5fHxEwehF2Rs1bFn8k4x
+	dBgUdswll2DrZE9EXaNbneFjZxoZ9IOQChywV9BTTLZLWckQGjCVr+cNXzp9if4B
+	jaE8O74Y429NBkHfAnMFjCZeHn4AqG+D0WCqvj4WMJEjjzTr24DGtQF9zguxu6Gx
+	pvDi3GJKVDHTm7yz7xRJNzWZ1ZyxHMoqhcDeX7YflRIxxWh3dYAfulPx6DsTOfIO
+	LLXOfY6Bk6cFofMJ4Pr5b+kvAD+qwE2/BByFcAHPlJ3EUnQ3vLFOLto4syw==
+Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43mqt81e4x-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 05:54:05 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK5s3Hf031779;
-	Fri, 20 Dec 2024 05:54:03 GMT
+	Fri, 20 Dec 2024 05:54:06 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 4BK5s4hF023979;
+	Fri, 20 Dec 2024 05:54:04 GMT
 Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 43h33kuy0e-1
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 43h33kv4qf-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 05:54:03 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4BK5s3HH031771;
-	Fri, 20 Dec 2024 05:54:03 GMT
+	Fri, 20 Dec 2024 05:54:04 +0000
+Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 4BK5s4Ek023972;
+	Fri, 20 Dec 2024 05:54:04 GMT
 Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4BK5s3VT031764
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4BK5s3Nq023961
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 20 Dec 2024 05:54:03 +0000
+	Fri, 20 Dec 2024 05:54:04 +0000
 Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 206A31C3C; Fri, 20 Dec 2024 13:54:02 +0800 (CST)
+	id C387F1C3E; Fri, 20 Dec 2024 13:54:02 +0800 (CST)
 From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
         conor+dt@kernel.org, dmitry.baryshkov@linaro.org,
@@ -70,9 +70,9 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-pci@vger.kernel.org, quic_qianyu@quicinc.com,
         quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
         Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Subject: [PATCH v3 2/8] phy: qcom-qmp-pcie: add dual lane PHY support for QCS8300
-Date: Fri, 20 Dec 2024 13:52:33 +0800
-Message-Id: <20241220055239.2744024-3-quic_ziyuzhan@quicinc.com>
+Subject: [PATCH v3 4/8] PCI: qcom: Add QCS8300 PCIe support
+Date: Fri, 20 Dec 2024 13:52:35 +0800
+Message-Id: <20241220055239.2744024-5-quic_ziyuzhan@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20241220055239.2744024-1-quic_ziyuzhan@quicinc.com>
 References: <20241220055239.2744024-1-quic_ziyuzhan@quicinc.com>
@@ -81,19 +81,20 @@ X-QCInternal: smtphost
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: W9t0vhn27t6_H0ELJyez19VmES3sQt4K
-X-Proofpoint-ORIG-GUID: W9t0vhn27t6_H0ELJyez19VmES3sQt4K
+X-Proofpoint-ORIG-GUID: UK4ZwxP1mwLWiegJlhx16gS3NxrhSKY4
+X-Proofpoint-GUID: UK4ZwxP1mwLWiegJlhx16gS3NxrhSKY4
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0
- suspectscore=0 mlxlogscore=999 priorityscore=1501 mlxscore=0 spamscore=0
- clxscore=1015 phishscore=0 bulkscore=0 malwarescore=0 adultscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412200048
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 bulkscore=0
+ suspectscore=0 priorityscore=1501 spamscore=0 mlxlogscore=999
+ malwarescore=0 impostorscore=0 phishscore=0 clxscore=1015
+ lowpriorityscore=0 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2412200048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241219_215415_291231_797F6AC3 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20241219_215417_756105_FA8F301F 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,129 +111,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCIe Gen4x2 PHY for qcs8300 has a lot of difference with sa8775p.
-So the qcs8300_qmp_gen4x2_pcie_rx_alt_tbl for qcs8300 is added.
+Add support for QCS8300 SoC that uses controller version 5.90 so reusing
+the 1.34.0 config.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 89 ++++++++++++++++++++++++
- 1 file changed, 89 insertions(+)
+ drivers/pci/controller/dwc/pcie-qcom.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 018bbb300830..9efc5a75edb7 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -805,6 +805,58 @@ static const struct qmp_phy_init_tbl qcs615_pcie_pcs_tbl[] = {
- 	QMP_PHY_INIT_CFG(QPHY_V2_PCS_TXDEEMPH_M3P5DB_V0, 0xe),
- };
- 
-+static const struct qmp_phy_init_tbl qcs8300_qmp_gen4x2_pcie_rx_alt_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_UCDR_PI_CONTROLS, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_DFE_CTLE_POST_CAL_OFFSET, 0x38),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B0, 0x9b),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B1, 0xb0),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B2, 0xd2),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B3, 0xf0),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B4, 0x42),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B5, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE_0_1_B6, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B0, 0x9b),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B1, 0xfb),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B2, 0xd2),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B3, 0xec),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B4, 0x43),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B5, 0xdd),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE2_B6, 0x0d),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B0, 0xf3),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B1, 0xf8),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B2, 0xec),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B3, 0xd6),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B4, 0x83),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B5, 0xf5),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MODE_RATE3_B6, 0x5e),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_PHPRE_CTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_AUX_DATA_THRESH_BIN_RATE_0_1, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_AUX_DATA_THRESH_BIN_RATE_2_3, 0x37),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_DFE_3, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH1_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH2_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH3_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH4_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH5_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH6_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH1_RATE210, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH2_RATE210, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_MARG_COARSE_THRESH3_RATE210, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_Q_PI_INTRINSIC_BIAS_RATE32, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_UCDR_FO_GAIN_RATE2, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_UCDR_FO_GAIN_RATE3, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_UCDR_SO_GAIN_RATE3, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_VGA_CAL_CNTRL1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_VGA_CAL_MAN_VAL, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_EQU_ADAPTOR_CNTRL4, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x7c),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_RX_IDAC_SAOFFSET, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_DFE_DAC_ENABLE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_GM_CAL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_TX_ADAPT_POST_THRESH1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V5_20_RX_TX_ADAPT_POST_THRESH2, 0x1f),
-+};
-+
- static const struct qmp_phy_init_tbl sdm845_qmp_pcie_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_CLK_SELECT, 0x30),
-@@ -3336,6 +3388,40 @@ static const struct qmp_phy_cfg qcs615_pciephy_cfg = {
- 	.phy_status		= PHYSTATUS,
- };
- 
-+static const struct qmp_phy_cfg qcs8300_qmp_gen4x2_pciephy_cfg = {
-+	.lanes			= 2,
-+	.offsets		= &qmp_pcie_offsets_v5_20,
-+
-+	.tbls = {
-+		.serdes		= sa8775p_qmp_gen4x2_pcie_serdes_alt_tbl,
-+		.serdes_num		= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_serdes_alt_tbl),
-+		.tx		= sa8775p_qmp_gen4_pcie_tx_tbl,
-+		.tx_num		= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_tx_tbl),
-+		.rx		= qcs8300_qmp_gen4x2_pcie_rx_alt_tbl,
-+		.rx_num		= ARRAY_SIZE(qcs8300_qmp_gen4x2_pcie_rx_alt_tbl),
-+		.pcs		= sa8775p_qmp_gen4x2_pcie_pcs_alt_tbl,
-+		.pcs_num		= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_pcs_alt_tbl),
-+		.pcs_misc		= sa8775p_qmp_gen4_pcie_pcs_misc_tbl,
-+		.pcs_misc_num	= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_pcs_misc_tbl),
-+	},
-+
-+	.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
-+		.serdes		= sa8775p_qmp_gen4x2_pcie_rc_serdes_alt_tbl,
-+		.serdes_num	= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_rc_serdes_alt_tbl),
-+		.pcs_misc	= sa8775p_qmp_gen4_pcie_rc_pcs_misc_tbl,
-+		.pcs_misc_num	= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_rc_pcs_misc_tbl),
-+	},
-+
-+	.reset_list		= sdm845_pciephy_reset_l,
-+	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= pciephy_v5_20_regs_layout,
-+
-+	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+	.phy_status		= PHYSTATUS_4_20,
-+};
-+
- static const struct qmp_phy_cfg sdm845_qmp_pciephy_cfg = {
- 	.lanes			= 1,
- 
-@@ -4876,6 +4962,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,qcs615-qmp-gen3x1-pcie-phy",
- 		.data = &qcs615_pciephy_cfg,
-+	}, {
-+		.compatible = "qcom,qcs8300-qmp-gen4x2-pcie-phy",
-+		.data = &qcs8300_qmp_gen4x2_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,sa8775p-qmp-gen4x2-pcie-phy",
- 		.data = &sa8775p_qmp_gen4x2_pciephy_cfg,
+diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
+index dc102d8bd58c..e4e77facfb47 100644
+--- a/drivers/pci/controller/dwc/pcie-qcom.c
++++ b/drivers/pci/controller/dwc/pcie-qcom.c
+@@ -1843,6 +1843,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+ 	{ .compatible = "qcom,pcie-ipq9574", .data = &cfg_2_9_0 },
+ 	{ .compatible = "qcom,pcie-msm8996", .data = &cfg_2_3_2 },
+ 	{ .compatible = "qcom,pcie-qcs404", .data = &cfg_2_4_0 },
++	{ .compatible = "qcom,pcie-qcs8300", .data = &cfg_1_34_0 },
+ 	{ .compatible = "qcom,pcie-sa8540p", .data = &cfg_sc8280xp },
+ 	{ .compatible = "qcom,pcie-sa8775p", .data = &cfg_1_34_0},
+ 	{ .compatible = "qcom,pcie-sc7280", .data = &cfg_1_9_0 },
 -- 
 2.34.1
 
