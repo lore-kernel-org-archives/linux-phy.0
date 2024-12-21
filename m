@@ -4,114 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4089DE7718A
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Dec 2024 12:22:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D30FE77184
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Dec 2024 06:14:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qv2b0CdSp+UQ0efyDsdKJ7g/+Gr4PSPK3yUF0OcSu+Y=; b=LlLbHtBSpjwvEO
-	bye35UXp0daqrqMpTKKzMX5F7B4haacWRMHfeGsBo2OV1SBq7txrGBs0wYiBuFbi9/6yqLgZV/KSl
-	oxBL6WAQt2o8anO2rOehCauB/SDBG5IMnmTR2118rBxpkzRaWZUIYN0fxY6MIDCtNe4WQUd1mZ0Ym
-	evSGuQyfmZzmvyKCfyvG/PqbhDZinE+YHcEOQvnTUxAWGjiVQj4Ulg4UAVZ8lE2SDRSm5r0OG85X9
-	ZYauUF2enc5MuWhYED3y5qYHvt/pzN6Qrf0D4UwUBhsMEUY+xu/fgyKYgi2SEBnbWYzKiXhWX9QeQ
-	SKJkNitOm6DHkYSeh/fQ==;
+	List-Owner; bh=+KlHeTrPFKBS7j8EnxVaHM/VCfqktvGxIJiDmQZ0DYY=; b=3S1NPXXacjxBtm
+	B8QtFPydzeJSr9fvdyg3ouNh3SsrtaRiKFXhtB4do9K+7e8w3h3sstxvwvH7DvWx0OaKk3IC/eQa0
+	qC5uHA1cpq3li9SFVE0gxzIHGJzN10YltgOSMGFW5HGvMatLfzta8GECxKw8cL6rTCJa6xmPafVBb
+	IXQuZAHFKrgbxK3R63w24ycgaYNdUe+a82ztcVJZ8tyK4sfmaMKQymw+AbTUYXEhlbQ/7mn1ccfNQ
+	7zUO53cAjIrtCVmcaOy8mZQ5RznPKQ8ns3IUP8t3oY1YVFDBRDFQmGq/MeWAyxByI3LRkrMlihpnt
+	Onyj8eIB/dz2uqpO5vWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOc12-00000004sHp-23YI;
-	Fri, 20 Dec 2024 12:22:00 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tOske-00000006crD-0a7J;
+	Sat, 21 Dec 2024 06:14:12 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tOc10-00000004sH6-0DYx;
-	Fri, 20 Dec 2024 12:21:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id EBEE4A41B25;
-	Fri, 20 Dec 2024 12:20:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02B3BC4CECD;
-	Fri, 20 Dec 2024 12:21:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1734697316;
-	bh=JduFaswRmxN5tGLStvzwUiaywMEIItZVTSmKsVx9nOI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Yq+tb1psbAD0EEaGVo62BeRkwh9Xj1zwGjU1RnX9bPc3zuKVZ+vFaKjzZirLF0O5Q
-	 cWqZTrj/8oUOashMDH0in9idt9Jf9pCN3xfKSbuna7zWsHJDYmyLi1Jgqy+04F5+b+
-	 WkFCtRLWZn13uCsuIFDP/5NAmVeHVQ3OLBfdEu0A=
-Date: Fri, 20 Dec 2024 13:21:51 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Kever Yang <kever.yang@rock-chips.com>
-Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org,
-	Simon Xue <xxm@rock-chips.com>, Lee Jones <lee@kernel.org>,
-	dri-devel@lists.freedesktop.org, Zhang Rui <rui.zhang@intel.com>,
-	Elaine Zhang <zhangqing@rock-chips.com>, linux-clk@vger.kernel.org,
-	Conor Dooley <conor+dt@kernel.org>, FUKAUMI Naoki <naoki@radxa.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Andrew Lunn <andrew+netdev@lunn.ch>, Andy Yan <andyshrk@163.com>,
-	Michael Riesch <michael.riesch@wolfvision.net>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	linux-pm@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
-	linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-spi@vger.kernel.org, Jakub Kicinski <kuba@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Jose Abreu <joabreu@synopsys.com>, Jamie Iles <jamie@jamieiles.com>,
-	Detlev Casanova <detlev.casanova@collabora.com>,
-	Chris Morgan <macromorgan@hotmail.com>,
-	Frank Wang <frank.wang@rock-chips.com>, linux-mmc@vger.kernel.org,
-	Linus Walleij <linus.walleij@linaro.org>, linux-i2c@vger.kernel.org,
-	Simona Vetter <simona@ffwll.ch>,
-	Finley Xiao <finley.xiao@rock-chips.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-watchdog@vger.kernel.org, David Wu <david.wu@rock-chips.com>,
-	Shresth Prasad <shresthprasad7@gmail.com>,
-	linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	Lukasz Luba <lukasz.luba@arm.com>,
-	Jisheng Zhang <jszhang@kernel.org>,
-	Guenter Roeck <linux@roeck-us.net>, linux-iio@vger.kernel.org,
-	linux-pci@vger.kernel.org, David Airlie <airlied@gmail.com>,
-	linux-phy@lists.infradead.org, Jonas Karlman <jonas@kwiboo.se>,
-	Maxime Ripard <mripard@kernel.org>,
-	Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Jiri Slaby <jirislaby@kernel.org>, linux-pwm@vger.kernel.org,
-	Rob Herring <robh@kernel.org>,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>, Mark Brown <broonie@kernel.org>,
-	Dragan Simic <dsimic@manjaro.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Lars-Peter Clausen <lars@metafoo.de>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Stephen Boyd <sboyd@kernel.org>, Johan Jonker <jbx6244@gmail.com>,
-	Shawn Lin <shawn.lin@rock-chips.com>,
-	Jonathan Cameron <Jonathan.Cameron@huawei.com>,
-	linux-serial@vger.kernel.org,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	devicetree@vger.kernel.org,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Tim Lunn <tim@feathertop.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
-	netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>
-Subject: Re: [PATCH 00/38] rockchip: Add rk3562 support
-Message-ID: <2024122018-groove-glitzy-f3bc@gregkh>
-References: <20241220103825.3509421-1-kever.yang@rock-chips.com>
+	id 1tOskb-00000006cqq-2mq8
+	for linux-phy@lists.infradead.org;
+	Sat, 21 Dec 2024 06:14:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1734761650; x=1766297650;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=JjY37SxMSkdhtyrhtTKrP4oq+y277V+a81pZHzt3KNs=;
+  b=iq4Q2rfh2A1n+4evNXGQd2Zt+vTMS8BhrzvuZNx6pdqkqm16KQykElai
+   CrP804IT0S70JBcU860rL/BNa6+Esjqcp1m8oqbrmTjRHe2HIZ76Ic/wd
+   Kr6SPSKBfQGgvdOrwTgIKaqWaYjWfG+xtv3O5RxIaPYle+ssGWQ6+8VrQ
+   UgAwYjOu/1eZ3QTlSIRB3IIUJmI8AkiYXRcLIxYCo5aCVDN9utOXTbm/k
+   4ZMEOUYnNBbvxb6lltB/+lnnriVHNcg3qsA0FQa5LnJRNeNdd+Gplttz3
+   VZ6Ihq1wmVrrw8Fx6h9NmzstQCP5C4sDHPbSPGeSyh4pteS76+rpYMMtI
+   Q==;
+X-CSE-ConnectionGUID: jahrPOxoQVWAGW7KBZEpqQ==
+X-CSE-MsgGUID: Dv9Iom0RQ/yZCNwjapRoeA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11292"; a="35202139"
+X-IronPort-AV: E=Sophos;i="6.12,253,1728975600"; 
+   d="scan'208";a="35202139"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Dec 2024 22:14:05 -0800
+X-CSE-ConnectionGUID: GBtUTgiERLmNzgFa33UeTQ==
+X-CSE-MsgGUID: FFtxWLWrTGaxb2gCb7B1vw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,253,1728975600"; 
+   d="scan'208";a="129529030"
+Received: from lkp-server01.sh.intel.com (HELO a46f226878e0) ([10.239.97.150])
+  by orviesa002.jf.intel.com with ESMTP; 20 Dec 2024 22:13:59 -0800
+Received: from kbuild by a46f226878e0 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tOskP-0001xb-1y;
+	Sat, 21 Dec 2024 06:13:57 +0000
+Date: Sat, 21 Dec 2024 14:13:27 +0800
+From: kernel test robot <lkp@intel.com>
+To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>, vkoul@kernel.org,
+	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, dmitry.baryshkov@linaro.org,
+	neil.armstrong@linaro.org, abel.vesa@linaro.org,
+	manivannan.sadhasivam@linaro.org, lpieralisi@kernel.org,
+	kw@linux.com, bhelgaas@google.com, andersson@kernel.org,
+	konradybcio@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	quic_qianyu@quicinc.com, quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com, Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Subject: Re: [PATCH v3 2/8] phy: qcom-qmp-pcie: add dual lane PHY support for
+ QCS8300
+Message-ID: <202412211301.bQO6vXpo-lkp@intel.com>
+References: <20241220055239.2744024-3-quic_ziyuzhan@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241220103825.3509421-1-kever.yang@rock-chips.com>
+In-Reply-To: <20241220055239.2744024-3-quic_ziyuzhan@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_042158_247302_8B58886D 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20241220_221409_753386_751EAEB0 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,21 +99,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 20, 2024 at 06:37:46PM +0800, Kever Yang wrote:
-> 
-> This patch set adds rk3562 SoC and its evb support.
-> 
-> The patch number is a little bit too big, some of them may need to split
-> out for different maintainers, please let me know which patch need to
-> split out.
+Hi Ziyue,
 
-I recommend you doing the split-apart as you know the dependencies here
-the best, right?  Otherwise we all will just probably ignore them
-assuming someone else is going to review/accept them...
+kernel test robot noticed the following build errors:
 
-thanks,
+[auto build test ERROR on 4176cf5c5651c33769de83bb61b0287f4ec7719f]
 
-greg k-h
+url:    https://github.com/intel-lab-lkp/linux/commits/Ziyue-Zhang/dt-bindings-phy-qcom-sc8280xp-qmp-pcie-phy-Document-the-QCS8300-QMP-PCIe-PHY-Gen4-x2/20241220-135722
+base:   4176cf5c5651c33769de83bb61b0287f4ec7719f
+patch link:    https://lore.kernel.org/r/20241220055239.2744024-3-quic_ziyuzhan%40quicinc.com
+patch subject: [PATCH v3 2/8] phy: qcom-qmp-pcie: add dual lane PHY support for QCS8300
+config: arm64-randconfig-004-20241221 (https://download.01.org/0day-ci/archive/20241221/202412211301.bQO6vXpo-lkp@intel.com/config)
+compiler: aarch64-linux-gcc (GCC) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20241221/202412211301.bQO6vXpo-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202412211301.bQO6vXpo-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+>> drivers/phy/qualcomm/phy-qcom-qmp-pcie.c:3419:35: error: 'pciephy_v5_20_regs_layout' undeclared here (not in a function); did you mean 'pciephy_v5_regs_layout'?
+    3419 |         .regs                   = pciephy_v5_20_regs_layout,
+         |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+         |                                   pciephy_v5_regs_layout
+
+
+vim +3419 drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+
+  3390	
+  3391	static const struct qmp_phy_cfg qcs8300_qmp_gen4x2_pciephy_cfg = {
+  3392		.lanes			= 2,
+  3393		.offsets		= &qmp_pcie_offsets_v5_20,
+  3394	
+  3395		.tbls = {
+  3396			.serdes		= sa8775p_qmp_gen4x2_pcie_serdes_alt_tbl,
+  3397			.serdes_num		= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_serdes_alt_tbl),
+  3398			.tx		= sa8775p_qmp_gen4_pcie_tx_tbl,
+  3399			.tx_num		= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_tx_tbl),
+  3400			.rx		= qcs8300_qmp_gen4x2_pcie_rx_alt_tbl,
+  3401			.rx_num		= ARRAY_SIZE(qcs8300_qmp_gen4x2_pcie_rx_alt_tbl),
+  3402			.pcs		= sa8775p_qmp_gen4x2_pcie_pcs_alt_tbl,
+  3403			.pcs_num		= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_pcs_alt_tbl),
+  3404			.pcs_misc		= sa8775p_qmp_gen4_pcie_pcs_misc_tbl,
+  3405			.pcs_misc_num	= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_pcs_misc_tbl),
+  3406		},
+  3407	
+  3408		.tbls_rc = &(const struct qmp_phy_cfg_tbls) {
+  3409			.serdes		= sa8775p_qmp_gen4x2_pcie_rc_serdes_alt_tbl,
+  3410			.serdes_num	= ARRAY_SIZE(sa8775p_qmp_gen4x2_pcie_rc_serdes_alt_tbl),
+  3411			.pcs_misc	= sa8775p_qmp_gen4_pcie_rc_pcs_misc_tbl,
+  3412			.pcs_misc_num	= ARRAY_SIZE(sa8775p_qmp_gen4_pcie_rc_pcs_misc_tbl),
+  3413		},
+  3414	
+  3415		.reset_list		= sdm845_pciephy_reset_l,
+  3416		.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
+  3417		.vreg_list		= qmp_phy_vreg_l,
+  3418		.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+> 3419		.regs			= pciephy_v5_20_regs_layout,
+  3420	
+  3421		.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
+  3422		.phy_status		= PHYSTATUS_4_20,
+  3423	};
+  3424	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
