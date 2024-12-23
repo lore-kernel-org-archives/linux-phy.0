@@ -4,92 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D533FE7718B
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Dec 2024 07:50:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CED3E7718B
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Dec 2024 10:27:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iPCxECAracaWJn6Knp5PM66ouSlG51c/9BBfJ39GpOs=; b=IKDmZ5VkMdEI2C
-	23M4XLXZrowF+kz6BUdKQt5VmLf+on6IxR/75z49M4iTqUOJ5ZcLe86xZkRC+Zah4tB4PHVgY/qRu
-	gm+kG7MzVchOr4rpSE/rz3C2vKPzq9uufZlYDazqK6TR0Ckm6bHm/VpDJs6HE45dRxqxxi3ZLhuL8
-	ZeIABVQw2kyT+FSf2NNgvcKB2DQLHaHIwZId5Q1E8h2koH61O1OiBeSABWnW6hDTBzkmfYsRne97M
-	ewfGNyJBdZobS/LnXfQZjxCpcCC6vra5gOJTg7A6UK4OIHiigVWOG7A4H77nD9KeU/xDmzBZ3fclk
-	L71T1S9DbhNK8uRHAnsw==;
+	List-Owner; bh=Rb7GhOBKQIqskVwN54JaGFgonvrSBmZPYTamabUY3Ic=; b=x79b9PnCvuR8xJ
+	2CcH/l+XfxuKwAHRh4ByzAVHE2kZoXe24YUBcyapFg6+P+BqlSYvBcs2oQH7XIoihc8aGjCKqXozw
+	5xYRU3ZoN/ddXSYaoRCPwNMiIrmPdDuUM5l3kMcQxRRxKIfe59LwzHkEPb5KuwFQnDKdx+JiUJzyR
+	6bWySFgFK+znf9pzP4y4JBx2Rs8PDmj4YclfDVJqlrmXYsmGZGTaAh0+QgnmCn+1pPN981rJ+BR2U
+	iASe73ztps/kAtYPX+VSUSSdDyl27xlNgUv+jQu+D8r4+Zl2qDx7krjR50fRmlnsno4WZC3dppeFx
+	VxB8abN6+yw+9wKriy1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPdCn-00000009Y4E-3PXT;
-	Mon, 23 Dec 2024 07:50:21 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tPff9-00000009n8d-3126;
+	Mon, 23 Dec 2024 10:27:47 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPdCl-00000009Y3n-0v2d
+	id 1tPfdw-00000009mzy-14uo
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Dec 2024 07:50:20 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BN6mbwA004776;
-	Mon, 23 Dec 2024 07:50:08 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=o0ylRwCleiLePsy/R7nCCMSI
-	zCh9GGBByF9fUZV3WJo=; b=dCBOF2Y9bcfzYzkpPCbsZTO47lTzNynhM+D9tR5A
-	JCH/AJ4yl215RyWRNHdXxFz9EL5kw92yCTmgZNwuiNeRY5wVywF/GkwTFNUkU2NN
-	jdhqEzp19eWYbxw7PGm6NJD2VNJJ6bnzFwB+sGpQSi/SzlZ/XyGv02qKzER7WV/+
-	jv4jAVZxV4U+15PEuqPq/487WS7BDLQK1xtlMjVurjObYl49hXRuCv0iTDhD5cGP
-	6A8qSUsxa7WWiF2PBaA/4tqpeKXoDU1WIJsdD9kjs0bdcBJoB6x96BOQtUH8Pvyt
-	AAuDYkZgQVcjB2FS9X6PFJAXiVA8HkQZQW6gAM7Zv4yvcw==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43q2ww88bn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 07:50:07 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BN7o6Nm027292
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Dec 2024 07:50:06 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 22 Dec 2024 23:50:00 -0800
-Date: Mon, 23 Dec 2024 13:19:57 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <quic_srichara@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v3 1/5] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
- uniphy
-Message-ID: <Z2kWJb/77vunIPDg@hu-varada-blr.qualcomm.com>
-References: <20241217100359.4017214-1-quic_varada@quicinc.com>
- <20241217100359.4017214-2-quic_varada@quicinc.com>
- <nhzbr4knneo5k3zxvjy2ozx6ciqg2hivwyr2qxdld2x63vlzeb@mjrlqeqiykzp>
+	Mon, 23 Dec 2024 10:26:34 +0000
+Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-53ff1f7caaeso4307258e87.0
+        for <linux-phy@lists.infradead.org>; Mon, 23 Dec 2024 02:26:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1734949590; x=1735554390; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=LpcAPRrti2Mspwvvh0HkUfdkgM+x6sKmtKugtmBINFQ=;
+        b=lzgFCarX3QkfsAbcX/dxESO4I2dV/RXxVxtOuOdkQCZglb5X9yoNSXkw/V9rxkGw+q
+         5O7yOqDg+wsXddQa4Rwe8XMoLQY51CgPmitpqBKwYxdi/pUhekIq7W1j5sCHCyjyzjED
+         wwCJe61pQ5hLMAV6oBZJwh29iJkp1pFWlRAf8bszkwd6yxYMeO9OpIGrSkK84g7R6nz9
+         O9IFuY1qwpOavz6+nPPbOHdt1ypQZAzOV6jj6Vg5XZYFBbww+EwEASCYONQCXQ2hjaof
+         Sv6Yk/zwOAmX+bPGQasuu1WwtABgYDz7o/xgCJCDSrkYXc5AUAk/E+U/tYID/U9p89u3
+         iyow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1734949590; x=1735554390;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=LpcAPRrti2Mspwvvh0HkUfdkgM+x6sKmtKugtmBINFQ=;
+        b=XOsVjN9UJU6SzHo+ze5a5S6oIHHr/kq7G+gACWFET8r01hBhB8eTbjlFNX1pN1KozZ
+         1IOgKQ5Yv4puhmnyzhAYLvOlOO3K61p5THGzxRcLIvYnnISeuHb7rUMk6RrxcORoF2UQ
+         XzNOMV3NbkMdnopi5XVJfE5v85ovzSOG/G/dkmry/jk+A6OX+sPLYpiz7wIBj35vBrbJ
+         zE89jPTbG188GYY+DCwwHKhrERHjZ2OS8+ra04aipSmg2d/uzLcLFcDTdVoKkC57xIZ1
+         8GXl81l2DO0MT+cTr8ZCo/3MZTU2MdzSRIlJHoEAipYNrvGZcmKntzmHj6jGcJ7t9AK0
+         q9cQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWrvSoWtc6+ZUR4B+O4CgjnqSsEWpJ5xw4+nzxCP7L4pNF0DKOVQMNIY7t33NhEjdldQyLsCT7PPHA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx0LlPujRpHt2bq2Ivgu4Ij3weTZAI3sHtNvyQwq03ffMDYzPfx
+	rjqHpu5paxmubit4umZ3xq9RQ6AXFqwI+Zne9Kh9lxlThOczyPp8eLRDQ+VETiM=
+X-Gm-Gg: ASbGncvREPdUA2BF3pOm7ZY1fieCrbMw987kNO9sTT3dnDWDtbteKfyH8u6MWa2hOGB
+	W5y478WxdAK53YPQyDVfSK5F5dCRAI6avxdZfj8Rb9+Z2ZihHktk7ftcjX6Dkomhqs/QPkRD74K
+	77/ljl3/QqFkAYjSZHGPnoE4k0Iab9qiILQ77SFalyXAFFX4V3WBYE4rNz6XNziIKEaafFt82/c
+	qRl1LEWX5cUz996/ytD8etP51P9tFXyHpN+Gj/wSBnB2PbBHIBOMsAal4njIYqSJ97k4s66MJ0y
+	QkseU5d47EWUYpa0ox4gCexYtKCc+HWGTRe0
+X-Google-Smtp-Source: AGHT+IFbBpruzFpAgIIU0n0/jwU07GmTaDXBwkrAj3El2zSPjw4bqzUyTtJuARVLHLA0cBnGaJX8lw==
+X-Received: by 2002:a05:6512:1044:b0:542:218a:71a with SMTP id 2adb3069b0e04-5422953ac6bmr3140370e87.26.1734949589912;
+        Mon, 23 Dec 2024 02:26:29 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-542235f5efbsm1241435e87.39.2024.12.23.02.26.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Dec 2024 02:26:29 -0800 (PST)
+Date: Mon, 23 Dec 2024 12:26:27 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Liu Ying <victor.liu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, p.zabel@pengutronix.de, 
+	airlied@gmail.com, simona@ffwll.ch, maarten.lankhorst@linux.intel.com, 
+	mripard@kernel.org, tzimmermann@suse.de, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de, 
+	kernel@pengutronix.de, festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org, 
+	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org, 
+	u.kleine-koenig@baylibre.com, francesco@dolcini.it, frank.li@nxp.com
+Subject: Re: [PATCH v7 03/19] dt-bindings: display: imx: Add i.MX8qxp Display
+ Controller display engine
+Message-ID: <kpem2w4wu7ywc5pvbk3ls5hsyttrwcylomzfh567ejlxkymeqd@cujrbfxgrntc>
+References: <20241223064147.3961652-1-victor.liu@nxp.com>
+ <20241223064147.3961652-4-victor.liu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <nhzbr4knneo5k3zxvjy2ozx6ciqg2hivwyr2qxdld2x63vlzeb@mjrlqeqiykzp>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: G7LY8sYViYMibK_Ix7Wj0HgbzslH0iz9
-X-Proofpoint-GUID: G7LY8sYViYMibK_Ix7Wj0HgbzslH0iz9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 malwarescore=0
- spamscore=0 lowpriorityscore=0 bulkscore=0 phishscore=0 adultscore=0
- mlxlogscore=999 clxscore=1015 suspectscore=0 impostorscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2412230068
+In-Reply-To: <20241223064147.3961652-4-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241222_235019_301781_FF09602B 
-X-CRM114-Status: GOOD (  25.75  )
+X-CRM114-CacheID: sfid-20241223_022632_312179_31A55DB1 
+X-CRM114-Status: GOOD (  17.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,118 +106,289 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 18, 2024 at 11:28:18AM +0100, Krzysztof Kozlowski wrote:
-> On Tue, Dec 17, 2024 at 03:33:55PM +0530, Varadarajan Narayanan wrote:
-> > From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> >
-> > Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5332.
-> >
-> > Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> > v3: Fix compatible string to be similar to other phys and rename file accordingly
-> >     Fix clocks minItems -> maxItems
->
-> I think there was just one clock, so you increased it to two.
+On Mon, Dec 23, 2024 at 02:41:31PM +0800, Liu Ying wrote:
+> i.MX8qxp Display Controller display engine consists of all processing units
+> that operate in a display clock domain.
+> 
+> Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> ---
+> v7:
+> * Drop DT alias documentations and add instance numbers to compatible strings.
+>   (Rob)
+> 
+> v6:
+> * No change.
+> 
+> v5:
+> * Document aliases.  Drop Rob's previous R-b tag. (Maxime)
+> 
+> v4:
+> * Collect Rob's R-b tag.
+> 
+> v3:
+> * No change.
+> 
+> v2:
+> * Drop fsl,dc-*-id DT properties. (Krzysztof)
+> * Drop port property. (Krzysztof)
+> * Fix register range sizes in example.
+> 
+>  .../imx/fsl,imx8qxp-dc-display-engine0.yaml   | 235 ++++++++++++++++++
+>  1 file changed, 235 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml
+> new file mode 100644
+> index 000000000000..60d1e0a4a5dd
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml
+> @@ -0,0 +1,235 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/display/imx/fsl,imx8qxp-dc-display-engine0.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX8qxp Display Controller Display Engine
+> +
+> +description:
+> +  All Processing Units that operate in a display clock domain. Pixel pipeline
+> +  is driven by a video timing and cannot be stalled. Implements all display
+> +  specific processing.
+> +
+> +maintainers:
+> +  - Liu Ying <victor.liu@nxp.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - fsl,imx8qxp-dc-display-engine0
+> +      - fsl,imx8qxp-dc-display-engine1
 
-IPQ5018 patch series had one clock. IPQ5332 introduced additional
-clocks and it became four. Of the four clocks, two were NoC
-related clocks. Since the NoC clocks are handled in icc-clk based
-interconnect driver, have dropped those two and have incldued the
-two here.
+Is there actual difference between engines 0 and 1? If there is none,
+why are you artificially adding one here?
 
-> >     Change one of the maintainer from Sricharan to Varadarajan
-> >
-> > v2: Rename the file to match the compatible
-> >     Drop 'driver' from title
-> >     Dropped 'clock-names'
-> >     Fixed 'reset-names'
-> > --
-> >  .../phy/qcom,ipq5332-uniphy-pcie-phy.yaml     | 82 +++++++++++++++++++
-> >  1 file changed, 82 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
-> > new file mode 100644
-> > index 000000000000..0634d4fb85d1
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
-> > @@ -0,0 +1,82 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/phy/qcom,ipq5332-uniphy-pcie-phy.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Qualcomm UNIPHY PCIe 28LP PHY
-> > +
-> > +maintainers:
-> > +  - Nitheesh Sekar <quic_nsekar@quicinc.com>
-> > +  - Varadarajan Narayanan <quic_varada@quicinc.com>
-> > +
-> > +description:
-> > +  PCIe and USB combo PHY found in Qualcomm IPQ5332 SoC
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - qcom,ipq5332-uniphy-gen3x1-pcie-phy
-> > +      - qcom,ipq5332-uniphy-gen3x2-pcie-phy
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 2
->
-> I should have been more specific last time, but I assumed you will take
-> other bindings as example.  well, so now proper review: you need to list
-> tiems.
+> +
+> +  reg:
+> +    maxItems: 2
+> +
+> +  reg-names:
+> +    items:
+> +      - const: top
+> +      - const: cfg
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 3
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: shdload
+> +      - const: framecomplete
+> +      - const: seqcomplete
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 1
+> +
+> +  ranges: true
+> +
+> +patternProperties:
+> +  "^dither@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - fsl,imx8qxp-dc-dither0
+> +          - fsl,imx8qxp-dc-dither1
+> +
+> +  "^framegen@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - fsl,imx8qxp-dc-framegen0
+> +          - fsl,imx8qxp-dc-framegen1
+> +
+> +  "^gammacor@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - fsl,imx8qxp-dc-gammacor0
+> +          - fsl,imx8qxp-dc-gammacor1
+> +
+> +  "^matrix@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - fsl,imx8qxp-dc-matrix0
+> +          - fsl,imx8qxp-dc-matrix1
+> +
+> +  "^signature@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - fsl,imx8qxp-dc-signature0
+> +          - fsl,imx8qxp-dc-signature1
+> +
+> +  "^tcon@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - fsl,imx8qxp-dc-tcon0
+> +          - fsl,imx8qxp-dc-tcon1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - interrupt-names
+> +  - power-domains
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - ranges
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: fsl,imx8qxp-dc-display-engine0
+> +    then:
+> +      patternProperties:
+> +        "^dither@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-dither0
+> +
+> +        "^framegen@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-framegen0
+> +
+> +        "^gammacor@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-gammacor0
+> +
+> +        "^matrix@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-matrix0
+> +
+> +        "^signature@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-signature0
+> +
+> +        "^tcon@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-tcon0
+> +    else:
+> +      patternProperties:
+> +        "^dither@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-dither1
+> +
+> +        "^framegen@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-framegen1
+> +
+> +        "^gammacor@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-gammacor1
+> +
+> +        "^matrix@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-matrix1
+> +
+> +        "^signature@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-signature1
+> +
+> +        "^tcon@[0-9a-f]+$":
+> +          properties:
+> +            compatible:
+> +              const: fsl,imx8qxp-dc-tcon1
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/imx8-lpcg.h>
+> +    #include <dt-bindings/firmware/imx/rsrc.h>
+> +
+> +    display-engine@5618b400 {
+> +        compatible = "fsl,imx8qxp-dc-display-engine0";
+> +        reg = <0x5618b400 0x14>, <0x5618b800 0x1c00>;
+> +        reg-names = "top", "cfg";
+> +        interrupt-parent = <&dc0_intc>;
+> +        interrupts = <15>, <16>, <17>;
+> +        interrupt-names = "shdload", "framecomplete", "seqcomplete";
+> +        power-domains = <&pd IMX_SC_R_DC_0_PLL_0>;
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +        ranges;
+> +
+> +        framegen@5618b800 {
+> +            compatible = "fsl,imx8qxp-dc-framegen0";
+> +            reg = <0x5618b800 0x98>;
+> +            clocks = <&dc0_disp_lpcg IMX_LPCG_CLK_0>;
+> +            interrupt-parent = <&dc0_intc>;
+> +            interrupts = <18>, <19>, <20>, <21>, <41>, <42>, <43>, <44>;
+> +            interrupt-names = "int0", "int1", "int2", "int3",
+> +                              "primsync_on", "primsync_off",
+> +                              "secsync_on", "secsync_off";
+> +        };
+> +
+> +        tcon@5618c800 {
+> +            compatible = "fsl,imx8qxp-dc-tcon0";
+> +            reg = <0x5618c800 0x588>;
+> +
+> +            port {
+> +                dc0_disp0_dc0_pixel_combiner_ch0: endpoint {
+> +                    remote-endpoint = <&dc0_pixel_combiner_ch0_dc0_disp0>;
+> +                };
+> +            };
+> +        };
+> +    };
+> -- 
+> 2.34.1
+> 
 
-Sure.
-
-> > +
-> > +  resets:
-> > +    minItems: 2
-> > +    maxItems: 3
->
-> No answer to my previous question. Question stands.
-
-I assume this question:- "So where are three items?" [1]
-Will remove this and list the items.
-
-> > +
-> > +  reset-names:
-> > +    minItems: 2
-> > +    items:
-> > +      - const: phy
-> > +      - const: phy_ahb
-> > +      - const: phy_cfg
-> > +
-> > +  "#phy-cells":
-> > +    const: 0
-> > +
-> > +  "#clock-cells":
-> > +    const: 0
-> > +
-> > +  clock-output-names:
-> > +    maxItems: 1
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - resets
-> > +  - reset-names
-> > +  - clocks
->
-> Keep the same order as in properties block.
-
-Ok.
-
-Thanks
-Varada
-
-1. https://lore.kernel.org/linux-arm-msm/c685ca4e-3992-4deb-adfb-da3bbcb59685@linaro.org/
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
