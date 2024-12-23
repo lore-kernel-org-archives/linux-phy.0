@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CED3E7718B
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Dec 2024 10:27:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D275E7718B
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Dec 2024 11:23:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rb7GhOBKQIqskVwN54JaGFgonvrSBmZPYTamabUY3Ic=; b=x79b9PnCvuR8xJ
-	2CcH/l+XfxuKwAHRh4ByzAVHE2kZoXe24YUBcyapFg6+P+BqlSYvBcs2oQH7XIoihc8aGjCKqXozw
-	5xYRU3ZoN/ddXSYaoRCPwNMiIrmPdDuUM5l3kMcQxRRxKIfe59LwzHkEPb5KuwFQnDKdx+JiUJzyR
-	6bWySFgFK+znf9pzP4y4JBx2Rs8PDmj4YclfDVJqlrmXYsmGZGTaAh0+QgnmCn+1pPN981rJ+BR2U
-	iASe73ztps/kAtYPX+VSUSSdDyl27xlNgUv+jQu+D8r4+Zl2qDx7krjR50fRmlnsno4WZC3dppeFx
-	VxB8abN6+yw+9wKriy1w==;
+	List-Owner; bh=ZpLtJeeaZCEWlNU6hqtYUd7UwZlHaQccyyiO0fOcMbs=; b=YUMZM3J3/cpekB
+	nhS6pRWtmVtwaeB912PK2xG3cz9BDNynrNv8p0PP4y8J1mLHDiTAHZYDJAjxHT6cf/wUXmO/Nzd1n
+	kNo5ryAan2z4jiJbBvzJ3E7IhXGudq/em65bcVkKbqGAaL3baVDQDyA4emTqikRPdQAeKGnN4RtO8
+	8DATGavlgZaG7QgwnvT3XNaWU+mTsju/whEAryN8l0bS1GBfj2lUXndVXTn5kb9ovJTB79ESW4tDI
+	ACRc06oLTCIlvTXt/pVTGSP6K8SGHzn9Oyk3U3t407DpyqpqiMeZiBDDO2TE7LgRntA0lyQ+6x0U5
+	8lmvT2dQ8BYslHlgeL1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPff9-00000009n8d-3126;
-	Mon, 23 Dec 2024 10:27:47 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1tPgX3-00000009tI7-3Nky;
+	Mon, 23 Dec 2024 11:23:29 +0000
+Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tPfdw-00000009mzy-14uo
+	id 1tPgPZ-00000009sIy-0vUu
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Dec 2024 10:26:34 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-53ff1f7caaeso4307258e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 23 Dec 2024 02:26:31 -0800 (PST)
+	Mon, 23 Dec 2024 11:15:47 +0000
+Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-3022c61557cso51163881fa.0
+        for <linux-phy@lists.infradead.org>; Mon, 23 Dec 2024 03:15:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1734949590; x=1735554390; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1734952543; x=1735557343; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=LpcAPRrti2Mspwvvh0HkUfdkgM+x6sKmtKugtmBINFQ=;
-        b=lzgFCarX3QkfsAbcX/dxESO4I2dV/RXxVxtOuOdkQCZglb5X9yoNSXkw/V9rxkGw+q
-         5O7yOqDg+wsXddQa4Rwe8XMoLQY51CgPmitpqBKwYxdi/pUhekIq7W1j5sCHCyjyzjED
-         wwCJe61pQ5hLMAV6oBZJwh29iJkp1pFWlRAf8bszkwd6yxYMeO9OpIGrSkK84g7R6nz9
-         O9IFuY1qwpOavz6+nPPbOHdt1ypQZAzOV6jj6Vg5XZYFBbww+EwEASCYONQCXQ2hjaof
-         Sv6Yk/zwOAmX+bPGQasuu1WwtABgYDz7o/xgCJCDSrkYXc5AUAk/E+U/tYID/U9p89u3
-         iyow==
+        bh=3mo6MP2QToWKxW6CHGPpfwk7yms3zeJ7L1O8Z7JM6ls=;
+        b=bzP9LD0uBjzNkyZMlzlRtAfhXHSY5/4aNIwWwcUauda0bgrVC58CncWRfRTfasIFom
+         wzby+K0w+UWVfAUubUENw2ZVqKObzVq/lXh0DI/Cnz+PEzEFcr3rnaosgVgFhFM4GeBV
+         Tnas+A2e1pWdFPq48uBRlp5fR07856698/aZwHHjpjGOTiWrqj6C9azbG2Zd6AdXwU3A
+         wKKjd4W1H0hrPBdpReYSkjwowxonp2E2Ju2z72/drgOUC2s9z+NcFvG+G+ThdrIvrpoJ
+         w2F4MDCjbRMRrQoxNaszv9rEDceQEfCYormUDNic1Im+ja1bCT3BYEuixKWjuBSwnyJc
+         im+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1734949590; x=1735554390;
+        d=1e100.net; s=20230601; t=1734952543; x=1735557343;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=LpcAPRrti2Mspwvvh0HkUfdkgM+x6sKmtKugtmBINFQ=;
-        b=XOsVjN9UJU6SzHo+ze5a5S6oIHHr/kq7G+gACWFET8r01hBhB8eTbjlFNX1pN1KozZ
-         1IOgKQ5Yv4puhmnyzhAYLvOlOO3K61p5THGzxRcLIvYnnISeuHb7rUMk6RrxcORoF2UQ
-         XzNOMV3NbkMdnopi5XVJfE5v85ovzSOG/G/dkmry/jk+A6OX+sPLYpiz7wIBj35vBrbJ
-         zE89jPTbG188GYY+DCwwHKhrERHjZ2OS8+ra04aipSmg2d/uzLcLFcDTdVoKkC57xIZ1
-         8GXl81l2DO0MT+cTr8ZCo/3MZTU2MdzSRIlJHoEAipYNrvGZcmKntzmHj6jGcJ7t9AK0
-         q9cQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWrvSoWtc6+ZUR4B+O4CgjnqSsEWpJ5xw4+nzxCP7L4pNF0DKOVQMNIY7t33NhEjdldQyLsCT7PPHA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0LlPujRpHt2bq2Ivgu4Ij3weTZAI3sHtNvyQwq03ffMDYzPfx
-	rjqHpu5paxmubit4umZ3xq9RQ6AXFqwI+Zne9Kh9lxlThOczyPp8eLRDQ+VETiM=
-X-Gm-Gg: ASbGncvREPdUA2BF3pOm7ZY1fieCrbMw987kNO9sTT3dnDWDtbteKfyH8u6MWa2hOGB
-	W5y478WxdAK53YPQyDVfSK5F5dCRAI6avxdZfj8Rb9+Z2ZihHktk7ftcjX6Dkomhqs/QPkRD74K
-	77/ljl3/QqFkAYjSZHGPnoE4k0Iab9qiILQ77SFalyXAFFX4V3WBYE4rNz6XNziIKEaafFt82/c
-	qRl1LEWX5cUz996/ytD8etP51P9tFXyHpN+Gj/wSBnB2PbBHIBOMsAal4njIYqSJ97k4s66MJ0y
-	QkseU5d47EWUYpa0ox4gCexYtKCc+HWGTRe0
-X-Google-Smtp-Source: AGHT+IFbBpruzFpAgIIU0n0/jwU07GmTaDXBwkrAj3El2zSPjw4bqzUyTtJuARVLHLA0cBnGaJX8lw==
-X-Received: by 2002:a05:6512:1044:b0:542:218a:71a with SMTP id 2adb3069b0e04-5422953ac6bmr3140370e87.26.1734949589912;
-        Mon, 23 Dec 2024 02:26:29 -0800 (PST)
+        bh=3mo6MP2QToWKxW6CHGPpfwk7yms3zeJ7L1O8Z7JM6ls=;
+        b=m2NOyap7ZZj0jNOycJ4FhW+fQOTu6ntYlmlrf7CSRQ/cnMLm7a30/cT4BOsDqVKdUh
+         iMrASPhlVEFFnLuoORmKrciOlNysFi+Av2NxEzTHyWZWqodNaUKrf84gHrcNZ+uHCz0p
+         f/7B/nEvIdVaJn6Qib/6f+KFP68bzJ28+oFEVmzbZDVU8Wq1G7cee1eJksrSvhC21HjK
+         uqjZgvgATpwmeZR9aUTRr1jfTr+anloMAPrPny3Jj1oJ1FkGBKCDrw6dwXECW1I2matk
+         R0kLLmhQylHsHxdB6xPFHKSEblatVj1Bhr2b/RVxK34Xr+4W3wAYCzOIQ0e5ITA0AUFp
+         5GYA==
+X-Forwarded-Encrypted: i=1; AJvYcCXSYSqCQcd8F1URihMgW3qcAOMTA8Q87DZH+JvqHdK2EaMoHM7iJtaeiILMNx4DC9jQKs6AzpnZgn4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwzEQN8/c6axORtKzc7fzTAluu5fddvwGg9Ef71/Im7ypQEoDfM
+	AcPAHlQ1thVQ+Gj/eSPK7kFxTBIeZdf8wfmX8JXn40Rby1T/MeHG5YDL9khUn0U=
+X-Gm-Gg: ASbGncvD5Qguav/Pf0GK4itIuGRAmOll+yN3Wzdqz19DOFXNO6TXU0dmEKfjDF3b4Ka
+	pAUTmEqqolJuZVfbAgzMt6KsX9RCy2pu3/r/Mj9AMQJU2Qz2pvHZlFc3VPxAMZUV/F+TZquHNj/
+	xOxJVxQMusD+meGS7XDZo75+NAjJ1VsLyk5LCVLjTy81SYOJFDvB/b8YKdPLfEyLxW2J2eYEpyB
+	biHFWt84R584Su6hpbYK22ZsgHpgkHpWi62AqSPqMWii86tMrYwLaSuw6lLZDVlHjiwKmAtYuJZ
+	H3Pmac1Ob0QFrdXQuaEUT7bYz9W1oEO4t1i9
+X-Google-Smtp-Source: AGHT+IEgmX/5ATGHYxkBwsAFplT1zESRogm6vsP2Mbb2JNoPZ4jUEIIAF7+Dio6FJRuZVz2+3nzV0g==
+X-Received: by 2002:a05:651c:b0a:b0:304:4cac:d8ef with SMTP id 38308e7fff4ca-304685487c2mr37661981fa.7.1734952543223;
+        Mon, 23 Dec 2024 03:15:43 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-542235f5efbsm1241435e87.39.2024.12.23.02.26.28
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3045b083e92sm12807641fa.116.2024.12.23.03.15.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Dec 2024 02:26:29 -0800 (PST)
-Date: Mon, 23 Dec 2024 12:26:27 +0200
+        Mon, 23 Dec 2024 03:15:41 -0800 (PST)
+Date: Mon, 23 Dec 2024 13:15:39 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Liu Ying <victor.liu@nxp.com>
 Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
@@ -79,17 +79,17 @@ Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
 	kernel@pengutronix.de, festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org, 
 	kishon@kernel.org, aisheng.dong@nxp.com, agx@sigxcpu.org, 
 	u.kleine-koenig@baylibre.com, francesco@dolcini.it, frank.li@nxp.com
-Subject: Re: [PATCH v7 03/19] dt-bindings: display: imx: Add i.MX8qxp Display
- Controller display engine
-Message-ID: <kpem2w4wu7ywc5pvbk3ls5hsyttrwcylomzfh567ejlxkymeqd@cujrbfxgrntc>
+Subject: Re: [PATCH v7 10/19] drm/imx: Add i.MX8qxp Display Controller pixel
+ engine
+Message-ID: <7k2jqpkpagm3x7shywgzvtst364f6dmmhuz2covpbvghoa5rzc@3dvlbdgtnjck>
 References: <20241223064147.3961652-1-victor.liu@nxp.com>
- <20241223064147.3961652-4-victor.liu@nxp.com>
+ <20241223064147.3961652-11-victor.liu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241223064147.3961652-4-victor.liu@nxp.com>
+In-Reply-To: <20241223064147.3961652-11-victor.liu@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241223_022632_312179_31A55DB1 
-X-CRM114-Status: GOOD (  17.07  )
+X-CRM114-CacheID: sfid-20241223_031545_284286_D4B2B1B9 
+X-CRM114-Status: GOOD (  26.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,285 +106,179 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 23, 2024 at 02:41:31PM +0800, Liu Ying wrote:
-> i.MX8qxp Display Controller display engine consists of all processing units
-> that operate in a display clock domain.
+On Mon, Dec 23, 2024 at 02:41:38PM +0800, Liu Ying wrote:
+> i.MX8qxp Display Controller pixel engine consists of all processing
+> units that operate in the AXI bus clock domain.  Add drivers for
+> ConstFrame, ExtDst, FetchLayer, FetchWarp and LayerBlend units, as
+> well as a pixel engine driver, so that two displays with primary
+> planes can be supported.  The pixel engine driver and those unit
+> drivers are components to be aggregated by a master registered in
+> the upcoming DRM driver.
 > 
+> Reviewed-by: Maxime Ripard <mripard@kernel.org>
 > Signed-off-by: Liu Ying <victor.liu@nxp.com>
 > ---
 > v7:
-> * Drop DT alias documentations and add instance numbers to compatible strings.
->   (Rob)
+> * Add kernel doc for struct dc_drm_device. (Dmitry)
+> * Fix regmap_config definitions by correcting name field, correcting read
+>   ranges and setting max_register field.
+> * Get instance numbers from device data(compatible strings) instead of OF
+>   aliases.
+> * Collect Maxime's R-b tag.
+> * Trivial tweaks.
 > 
 > v6:
-> * No change.
+> * Fix build warning by expanding sizeof(fu->name) from 13 to 21.
+>   (kernel test robot)
 > 
 > v5:
-> * Document aliases.  Drop Rob's previous R-b tag. (Maxime)
+> * Replace .remove_new with .remove in dc-{cf,de,fl,fw,lb,pe}.c. (Uwe)
+> * Fix commit message to state that pixel engine driver is a component driver
+>   instead of a master/aggregate driver.
 > 
 > v4:
-> * Collect Rob's R-b tag.
+> * Use regmap to define register map for all registers. (Dmitry)
+> * Use regmap APIs to access registers. (Dmitry)
+> * Inline some small functions. (Dmitry)
+> * Move dc_lb_blendcontrol() function call from KMS routine to initialization
+>   stage. (Dmitry)
+> * Use devm_kzalloc() to drmm_kzalloc() to allocate dc_* data strutures.
+> * Drop unnecessary private struct dc_*_priv.
+> * Set suppress_bind_attrs driver flag to true to avoid unnecessary sys
+>   interfaces to bind/unbind the drivers.
+> * Make some fetch unit operations be aware of fractional fetch unit index(0-7).
 > 
 > v3:
 > * No change.
 > 
 > v2:
-> * Drop fsl,dc-*-id DT properties. (Krzysztof)
-> * Drop port property. (Krzysztof)
-> * Fix register range sizes in example.
-> 
->  .../imx/fsl,imx8qxp-dc-display-engine0.yaml   | 235 ++++++++++++++++++
->  1 file changed, 235 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml
-> new file mode 100644
-> index 000000000000..60d1e0a4a5dd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/imx/fsl,imx8qxp-dc-display-engine0.yaml
-> @@ -0,0 +1,235 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/imx/fsl,imx8qxp-dc-display-engine0.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale i.MX8qxp Display Controller Display Engine
-> +
-> +description:
-> +  All Processing Units that operate in a display clock domain. Pixel pipeline
-> +  is driven by a video timing and cannot be stalled. Implements all display
-> +  specific processing.
-> +
-> +maintainers:
-> +  - Liu Ying <victor.liu@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx8qxp-dc-display-engine0
-> +      - fsl,imx8qxp-dc-display-engine1
+> * Use OF alias id to get instance id.
 
-Is there actual difference between engines 0 and 1? If there is none,
-why are you artificially adding one here?
+Carrying several comments from previous patch:
+- shdld vs shdload
+- use of indices in the compat strings
+- bind() behaviour depending on the particular order of device bindings
+
+> 
+> +
+> +void dc_fu_common_hw_init(struct dc_fu *fu)
+> +{
+> +	enum dc_fu_frac frac;
+> +	int i;
+> +
+> +	dc_fu_baddr_autoupdate(fu, 0x0);
+> +	dc_fu_enable_shden(fu);
+> +	dc_fu_set_linemode(fu, LINEMODE_DISPLAY);
+> +	dc_fu_set_numbuffers(fu, 16);
+> +
+> +	for (i = 0; i < ARRAY_SIZE(dc_fetchunit_all_fracs); i++) {
+
+for (i = DC_FETCHUNIT_FRAC0 ; i < DC_FETCHUNIT_FRAC_NUM; i++) ?
+
+> +		frac = dc_fetchunit_all_fracs[i];
+> +
+> +		dc_fu_layeroffset(fu, frac, 0, 0);
+> +		dc_fu_clipoffset(fu, frac, 0, 0);
+> +		dc_fu_clipdimensions(fu, frac, 1, 1);
+> +		dc_fu_disable_src_buf(fu, frac);
+> +		dc_fu_set_pixel_blend_mode(fu, frac);
+> +	}
+> +}
+> +
+
+[...]
+
+> +enum dc_link_id dc_lb_get_link_id(struct dc_lb *lb)
+> +{
+> +	return lb->link;
+> +}
+> +
+> +void dc_lb_pec_dynamic_prim_sel(struct dc_lb *lb, enum dc_link_id prim)
+> +{
+> +	int fixed_sels_num = ARRAY_SIZE(prim_sels) - 4;
+> +	int i;
+> +
+> +	for (i = 0; i < fixed_sels_num + lb->id; i++) {
+
+This function and the next one silently skip writing link ID if it is
+incorrect. Can it actually become incorrect? If not, I'd say, it is
+better to drop the loop and the array. If you are not sure, there should
+be some kind of dev_warn() or drm_warn().
+
+> +		if (prim_sels[i] == prim) {
+> +			regmap_write_bits(lb->reg_pec, PIXENGCFG_DYNAMIC,
+> +					  PIXENGCFG_DYNAMIC_PRIM_SEL_MASK,
+> +					  PIXENGCFG_DYNAMIC_PRIM_SEL(prim));
+> +			return;
+> +		}
+> +	}
+> +}
+> +
+> +void dc_lb_pec_dynamic_sec_sel(struct dc_lb *lb, enum dc_link_id sec)
+> +{
+> +	int i;
+> +
+> +	for (i = 0; i < ARRAY_SIZE(sec_sels); i++) {
+> +		if (sec_sels[i] == sec) {
+> +			regmap_write_bits(lb->reg_pec, PIXENGCFG_DYNAMIC,
+> +					  PIXENGCFG_DYNAMIC_SEC_SEL_MASK,
+> +					  PIXENGCFG_DYNAMIC_SEC_SEL(sec));
+> +			return;
+> +		}
+> +	}
+> +}
+> +
+
+[...]
 
 > +
-> +  reg:
-> +    maxItems: 2
+> +static int dc_lb_bind(struct device *dev, struct device *master, void *data)
+> +{
+> +	struct platform_device *pdev = to_platform_device(dev);
+> +	struct dc_drm_device *dc_drm = data;
+> +	struct dc_pe *pe = dc_drm->pe;
+> +	void __iomem *base_pec;
+> +	void __iomem *base_cfg;
+> +	struct dc_lb *lb;
 > +
-> +  reg-names:
-> +    items:
-> +      - const: top
-> +      - const: cfg
+> +	lb = devm_kzalloc(dev, sizeof(*lb), GFP_KERNEL);
+> +	if (!lb)
+> +		return -ENOMEM;
 > +
-> +  resets:
-> +    maxItems: 1
+> +	lb->id = (enum dc_lb_id)(uintptr_t)device_get_match_data(dev);
 > +
-> +  interrupts:
-> +    maxItems: 3
+> +	base_pec = devm_platform_ioremap_resource_byname(pdev, "pec");
+> +	if (IS_ERR(base_pec))
+> +		return PTR_ERR(base_pec);
 > +
-> +  interrupt-names:
-> +    items:
-> +      - const: shdload
-> +      - const: framecomplete
-> +      - const: seqcomplete
+> +	base_cfg = devm_platform_ioremap_resource_byname(pdev, "cfg");
+> +	if (IS_ERR(base_cfg))
+> +		return PTR_ERR(base_cfg);
 > +
-> +  power-domains:
-> +    maxItems: 1
+> +	lb->reg_pec = devm_regmap_init_mmio(dev, base_pec,
+> +					    &dc_lb_pec_regmap_config);
+> +	if (IS_ERR(lb->reg_pec))
+> +		return PTR_ERR(lb->reg_pec);
 > +
-> +  "#address-cells":
-> +    const: 1
+> +	lb->reg_cfg = devm_regmap_init_mmio(dev, base_cfg,
+> +					    &dc_lb_cfg_regmap_config);
+> +	if (IS_ERR(lb->reg_cfg))
+> +		return PTR_ERR(lb->reg_cfg);
 > +
-> +  "#size-cells":
-> +    const: 1
+> +	lb->link = lb_links[lb->id];
+
+lb->link = LINK_ID_LAYERBLEND0 + lb->id ?
+
 > +
-> +  ranges: true
+> +	pe->lb[lb->id] = lb;
 > +
-> +patternProperties:
-> +  "^dither@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
+> +	return 0;
+> +}
 > +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - fsl,imx8qxp-dc-dither0
-> +          - fsl,imx8qxp-dc-dither1
+> +static const struct component_ops dc_lb_ops = {
+> +	.bind = dc_lb_bind,
+> +};
 > +
-> +  "^framegen@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - fsl,imx8qxp-dc-framegen0
-> +          - fsl,imx8qxp-dc-framegen1
-> +
-> +  "^gammacor@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - fsl,imx8qxp-dc-gammacor0
-> +          - fsl,imx8qxp-dc-gammacor1
-> +
-> +  "^matrix@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - fsl,imx8qxp-dc-matrix0
-> +          - fsl,imx8qxp-dc-matrix1
-> +
-> +  "^signature@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - fsl,imx8qxp-dc-signature0
-> +          - fsl,imx8qxp-dc-signature1
-> +
-> +  "^tcon@[0-9a-f]+$":
-> +    type: object
-> +    additionalProperties: true
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - fsl,imx8qxp-dc-tcon0
-> +          - fsl,imx8qxp-dc-tcon1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - interrupts
-> +  - interrupt-names
-> +  - power-domains
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +  - ranges
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: fsl,imx8qxp-dc-display-engine0
-> +    then:
-> +      patternProperties:
-> +        "^dither@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-dither0
-> +
-> +        "^framegen@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-framegen0
-> +
-> +        "^gammacor@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-gammacor0
-> +
-> +        "^matrix@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-matrix0
-> +
-> +        "^signature@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-signature0
-> +
-> +        "^tcon@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-tcon0
-> +    else:
-> +      patternProperties:
-> +        "^dither@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-dither1
-> +
-> +        "^framegen@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-framegen1
-> +
-> +        "^gammacor@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-gammacor1
-> +
-> +        "^matrix@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-matrix1
-> +
-> +        "^signature@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-signature1
-> +
-> +        "^tcon@[0-9a-f]+$":
-> +          properties:
-> +            compatible:
-> +              const: fsl,imx8qxp-dc-tcon1
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8-lpcg.h>
-> +    #include <dt-bindings/firmware/imx/rsrc.h>
-> +
-> +    display-engine@5618b400 {
-> +        compatible = "fsl,imx8qxp-dc-display-engine0";
-> +        reg = <0x5618b400 0x14>, <0x5618b800 0x1c00>;
-> +        reg-names = "top", "cfg";
-> +        interrupt-parent = <&dc0_intc>;
-> +        interrupts = <15>, <16>, <17>;
-> +        interrupt-names = "shdload", "framecomplete", "seqcomplete";
-> +        power-domains = <&pd IMX_SC_R_DC_0_PLL_0>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +        ranges;
-> +
-> +        framegen@5618b800 {
-> +            compatible = "fsl,imx8qxp-dc-framegen0";
-> +            reg = <0x5618b800 0x98>;
-> +            clocks = <&dc0_disp_lpcg IMX_LPCG_CLK_0>;
-> +            interrupt-parent = <&dc0_intc>;
-> +            interrupts = <18>, <19>, <20>, <21>, <41>, <42>, <43>, <44>;
-> +            interrupt-names = "int0", "int1", "int2", "int3",
-> +                              "primsync_on", "primsync_off",
-> +                              "secsync_on", "secsync_off";
-> +        };
-> +
-> +        tcon@5618c800 {
-> +            compatible = "fsl,imx8qxp-dc-tcon0";
-> +            reg = <0x5618c800 0x588>;
-> +
-> +            port {
-> +                dc0_disp0_dc0_pixel_combiner_ch0: endpoint {
-> +                    remote-endpoint = <&dc0_pixel_combiner_ch0_dc0_disp0>;
-> +                };
-> +            };
-> +        };
-> +    };
-> -- 
-> 2.34.1
-> 
 
 -- 
 With best wishes
