@@ -4,62 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F18FAE77188
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Dec 2024 15:21:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C52D6E77188
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Dec 2024 15:23:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RZ4lnZnuh+GKhhEU0KQOKYMkBXIctatQrF2yr1rLXro=; b=H3Or89RZjw/y1V
-	ot7FSsffB1GWffhmoW3fyoRFHBKtf4Fz6AH+pJlGMcWSu1B3CZOJst2tZXYaU7ABwmYVXzigUK1e/
-	LZKllezJrm4tCzkJeaoYmprKbZP+O36XmCrZqL0NqhwSP8/P8qAnAZ+SOv4/8D64S56Jwv4SX80LY
-	lYpYDoIs9qtC9XykxxzU2LC3cwhS1/m17U7iXYZnFHBWAgHyddALB7wshl94SlGAI9SK15Q2Muilh
-	03Tz5QV/UFo5iBYTqErrGj1L5gnLX0nUa0hgw2b6Xh30ebhHcwoYUsAHHpx27QmCJIxApinFeoX4Z
-	Hv6cZj8JNO9a7LrdmIIg==;
+	List-Owner; bh=2zoIbF7a0Sgwurpz3gHGGUvBp4N8NnP+7wj5yj3y3YQ=; b=1V89pTiIq6GnFf
+	7K4rVROFL4BqmDtmVJPjiRe4QV/zeuH3+6LspYeTy0ZUS+v16bCWwHu2xQE6oO02+m6ky2dP7HUi+
+	XqqmYWXOHsIsy12/7QR+dqgyD6SYYFZa+CDDPSuogNgotzwlie9NzOC2ScFefdJo18RNNEmTLhVOI
+	p8QE8w7lwKmuWWmS17qf4ZiBhWwPrdQWw6Uz4J+SpvXT/OBJGWu0xApBTB9lVPpKfQfK+BdmEyKQU
+	mFpVtaoyGtUfGmN8vkt/QiMa7GB8hzdEVjeKZqgRL8pvDY2a1d98EEbHOJX2M5JtnVf2f3qxHIDbu
+	RBM+VHpthqtuM+bWqzeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQ6jH-0000000CCej-0gIi;
-	Tue, 24 Dec 2024 15:21:51 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tQ6kX-0000000CCnM-1ng9;
+	Tue, 24 Dec 2024 15:23:09 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQ6jF-0000000CCeL-02yO
-	for linux-phy@lists.infradead.org;
-	Tue, 24 Dec 2024 15:21:50 +0000
+	id 1tQ6jJ-0000000CCf4-1O8t;
+	Tue, 24 Dec 2024 15:21:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 9A25D5C5E92;
-	Tue, 24 Dec 2024 15:21:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E257AC4CED0;
-	Tue, 24 Dec 2024 15:21:45 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 535B7A4136F;
+	Tue, 24 Dec 2024 15:20:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF058C4CED4;
+	Tue, 24 Dec 2024 15:21:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735053708;
-	bh=vsOGpKGzpuPxLI06uuBtj+kjs5RFXus+apFhvehtZgo=;
+	s=k20201202; t=1735053712;
+	bh=yvTwjcPFCXziWoCEwTpDuRjia4TlhnWYZlHomyZyD3U=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Le6Gx1Urc6s5pxK+FxIao9hNeaLiXf5qM+GdisAAV52u3e7yggRVCsOBsEAo4bh4z
-	 V4T+ABTh0Dua46MCI78zIv+xekLdPl1d7jRmW29yZCqUW73821M9KyahjJmKXIbEfo
-	 LbLs2HohNQLZvyI5V4PSawMxJt+rCoxKZobCFk53gyOKevOZnfIUViEJMQRsWygMzs
-	 CyD+R6gCwidmfspfpOA9C9kjyQAkdLa6+yJnHzygUeJPh6kXDKqEOksROP+WSzQGMc
-	 3mwkYw26AP4zUGL5oWrPjaKaQ8UokXqAfM1pJ19M/Gz92o7pVr82mQHUPSQ+kNg0/m
-	 7r2iLTzFqa0WA==
+	b=syy2uPPSD382zy5qOsps++x06T4mrQH7DQIBBO/sJcSiGIwYwl0LX4FG4Jk4NRRuq
+	 5stayDWxJrqpP+rwCKcqsNS302Jgsb05Iez/tT6NFqwaffH8zXyLBjERgyGNmx+FYw
+	 SE0y2+eGeWwfUcLKMYk6hrEpZ7OiUJmz+0MoZHrJ9FXeVDBBpOTK1QBUspqxHWBYsO
+	 IPR3EgDaMDvZ1dtOMIMD3H89Br8eFfH6bLgCnR3Jd4VCU9htvgZ1TWcIR+D7+3Vb1S
+	 kSy9m13ctPRLD1a8OiATUublr0OaZDT31ofxM9aYheTeEb3UaMsbOjEJErMcXNAazo
+	 SOVNoCzMoteNQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, Adam Ford <aford173@gmail.com>
-Cc: aford@beaconembedded.com, kernel test robot <lkp@intel.com>, 
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
- Frieder Schrempf <frieder.schrempf@kontron.de>, 
- Dominique Martinet <dominique.martinet@atmark-techno.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Arnd Bergmann <arnd@kernel.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, Phi-bang Nguyen <pnguyen@baylibre.com>, 
+ Jacob Keller <jacob.e.keller@intel.com>, 
+ Daniel Golle <daniel@makrotopia.org>, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
  linux-kernel@vger.kernel.org
-In-Reply-To: <20241215220555.99113-1-aford173@gmail.com>
-References: <20241215220555.99113-1-aford173@gmail.com>
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: Fix 64-by-32
- division cocci warnings
-Message-Id: <173505370554.939749.2097418009884160447.b4-ty@kernel.org>
-Date: Tue, 24 Dec 2024 20:51:45 +0530
+In-Reply-To: <20241213083056.2596499-1-arnd@kernel.org>
+References: <20241213083056.2596499-1-arnd@kernel.org>
+Subject: Re: [PATCH] phy: mediatek: phy-mtk-hdmi: add regulator dependency
+Message-Id: <173505370834.939749.17404501549961037412.b4-ty@kernel.org>
+Date: Tue, 24 Dec 2024 20:51:48 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241224_072149_107117_6C31CC0A 
-X-CRM114-Status: UNSURE (   5.13  )
+X-CRM114-CacheID: sfid-20241224_072153_446947_4F105F06 
+X-CRM114-Status: UNSURE (   5.09  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,20 +80,23 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sun, 15 Dec 2024 16:05:55 -0600, Adam Ford wrote:
-> The Kernel test robot returns the following warning:
->  do_div() does a 64-by-32 division, please consider using div64_ul instead.
+On Fri, 13 Dec 2024 09:30:51 +0100, Arnd Bergmann wrote:
+> The driver no longer builds when regulator support is unavailable:
 > 
-> To prevent the 64-by-32 divsion, consolidate both the multiplication
-> and the do_div into one line which explicitly uses u64 sizes.
-> 
+> arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi.o: in function `mtk_hdmi_phy_register_regulators':
+> phy-mtk-hdmi.c:(.text.unlikely+0x3e): undefined reference to `devm_regulator_register'
+> arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_phy_pwr5v_is_enabled':
+> phy-mtk-hdmi-mt8195.c:(.text+0x326): undefined reference to `rdev_get_drvdata'
+> arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_phy_pwr5v_disable':
+> phy-mtk-hdmi-mt8195.c:(.text+0x346): undefined reference to `rdev_get_drvdata'
+> arm-linux-gnueabi-ld: drivers/phy/mediatek/phy-mtk-hdmi-mt8195.o: in function `mtk_hdmi_phy_pwr5v_enable':
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: freescale: fsl-samsung-hdmi: Fix 64-by-32 division cocci warnings
-      commit: 739214dd1c209e34323814fb815fb17cccb9f95b
+[1/1] phy: mediatek: phy-mtk-hdmi: add regulator dependency
+      commit: 17194c2998d39ab366a2ecbc4d1f3281e00d6a05
 
 Best regards,
 -- 
