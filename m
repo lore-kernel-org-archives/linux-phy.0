@@ -4,99 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17005E77188
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 17:38:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81787E77188
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 20:19:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fLu2+/wjk15D+3hkPZYbLcOCCnNi1JhqLWAS5ZrV20A=; b=QmgmxttLTZtfP+
-	/xIwrv6yB92j4Mo/ghAzQRFeGGS2UgBJDkq3Tsh8y83tcUM36qaPbgMeRo3mP2e+tRjt9l6mleK8u
-	GFTJdrOfuTBmdCZvYhQfWQ4U5xaMxb4Z66gAfgkKj1dq2fZfs5uM11em2HiH4IuYFXG8HsiKDI+fi
-	S0Q4MAlVNFwDrASQS5UG3OfSs/EqxewFae4RkWvPnQJxIn8O8WGzrrmc1tSWKVNupYk4R8hpv7MHv
-	gPWDsuZWq+M8a34BN6HoBfuzY37BRP12iD0HeRVKfxrzKhBkgK25QvyTjGKgJ/hTwhDcc/edALvCJ
-	3gxner5o5UFFBSTDkFRA==;
+	List-Owner; bh=u69S/9Jt12hJMziwRw2/RY5KovINLRS51N37hxERxr8=; b=4TJPSxg7o1YheF
+	EpflLrT1eM+T2X2XcbgVLa0pIWgvl7cBSbOM2JtAooH30EuK5licpK9Pa+oGB7GccEMqMY1Coy9UZ
+	HClAS8jgzfK4FPMlBTdPusm++c3+DKQxRuDYBvMlbG14jxqYr9kMod9n7DBQuAG1pKkcs0IHBFiIj
+	wQ8H4qc0b8wYlkjQ7yD2MgEDuMC6m9puo8wJKUp/D7/TnFLK4baEVl/OQ75dXWJ2v73yYk1UgMC13
+	68+o7nYv3FzCeJQyt6jpoDfyUnYCXx+7IQJ13qKqGaPN+LYj6wKqXJIl3R24A8gZxaEEVzDBGXz5H
+	iIuV1F8wkJHhNxu0UEGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQroT-0000000G9q2-3USg;
-	Thu, 26 Dec 2024 17:38:21 +0000
-Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	id 1tQuKf-0000000GMFp-18Wa;
+	Thu, 26 Dec 2024 20:19:45 +0000
+Received: from mail-yb1-xb32.google.com ([2607:f8b0:4864:20::b32])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQrkZ-0000000G9IO-1XXo
+	id 1tQuKc-0000000GMDn-2W5W
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Dec 2024 17:34:20 +0000
-Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-2ef89dbd8eeso5713847a91.0
-        for <linux-phy@lists.infradead.org>; Thu, 26 Dec 2024 09:34:18 -0800 (PST)
+	Thu, 26 Dec 2024 20:19:43 +0000
+Received: by mail-yb1-xb32.google.com with SMTP id 3f1490d57ef6-e455bf1f4d3so5976258276.2
+        for <linux-phy@lists.infradead.org>; Thu, 26 Dec 2024 12:19:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1735234458; x=1735839258; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=UpfjO3nCfSKSU/F6ZQHVcOz1mCD2+D/yZzyTSXWn/XA=;
-        b=cGDeAdL6f0pDJR8HguzKjZ28LRIWt9Asub3VBozrlnMmX+sjTFGefBctvYXY8EDnIp
-         J1pfn2nOMjlRfGJJg0FRqp9Cr4a8ihcBDfNKZjFDxnpdglbau47I1RNp0o1czqD7Ysax
-         SHgbs0dDIVMWoPQ4hU6hrxMNjD4jr0lB1cnuu6+Mix7/DkSRaT44SyYRgv4NWbW2xQRk
-         a2P2v7wCPkJ5kBuhAESZVkgRC5tNY8if/QIQxv8xe0riL2F8/+iawy78EDYhOvlmw0gg
-         Pk2j9iV4/wn48Of1/darbFeeZayEFapiHAWrDZqb4pqkaPK2zbQLpKpXSHuhWuyrBkzo
-         OSXA==
+        d=linaro.org; s=google; t=1735244381; x=1735849181; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=Sb98FCKmeyAT2DVLwKOv3zAbNwq73exSEOZGxjhvBeY=;
+        b=eEzEpwDRgpBeGWB2nEjIjQPOowrx1JMGlVAEuIQ/lawNqP3eObxmS+sc9ZS4B2YGOT
+         GQzgyEBJaevzzc0MYKtHHNGrIbBF/XeXbZrj5aLM6vKaNViv/WamCmauX7plx7Q5X7UX
+         GlpR8890qtJl/Nqqlm6w1mn2G3aqFhxIinthUFayHA/IzSzp91pmydWQj0wa4YEaYShz
+         or8mXlpm+P+hyzmd21TYqzILXweLQCTPspPYIIl9GULdDcIXX5A+m6RAaiajgkzuw4Qx
+         gmTzIKoT0hXI5BAqBjBEgWArnak1wEqi643kTuHzQ5Qw8Y6oOfLIvesw3WRE910c2ntH
+         YX6Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735234458; x=1735839258;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=UpfjO3nCfSKSU/F6ZQHVcOz1mCD2+D/yZzyTSXWn/XA=;
-        b=p5Um2oqVOk8jYjaD0bqk3ZKTJrIxn9MUS6FarOelsXzgDXW1t3H/t2/azqQBvRQNpp
-         e9UhB4jw5X+G2roFkMKlgE4bm7b3pYPkC6Xsd18gvoAEYsWN83mJntFzLUDH7t/ekYiu
-         nRyctgJz9wjUCF8ZR/xQAbJxdG1gicfBvP35oHYeUJ9zCb7rSVqIxvw0ox6zGnpHS0I/
-         HQpGYr8JQBQPKuqeE0bW4SJIynknyQBoOMYEyJvKQh0OMb9TQybY1NtpR2ft4Nh61zbe
-         f4O9PrMY4SEAZL4EPQOauhR/h69Jo9Q1PA7/PxjF3quHsiPyNOxfwdNip0Rci52rKtIQ
-         S0kw==
-X-Forwarded-Encrypted: i=1; AJvYcCWI5lpKFbYlmpIMbRhKJNH14vJIW30C9SzScOyDhYexpi4YfhpqvdGtZ/i0YFChr0ZAuu05pCiMlQY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxHQ8WjswHnEiXGMpDHQuGu1uQ+tzXYJPHx/Ljkc0Wb4b/27gd2
-	SIJdoaLpdYyifQGRDs/liklLps667Ta6/HLQisheFrmsQ0DMjSDuS0+c0StdCg==
-X-Gm-Gg: ASbGncvB6Z0ijNBakDsgFYxnBZxbEMHKyMj7C81BI/Brw2UziMRmt4PwbK6qSRaiqz9
-	UGuWUyaOGzOnVK/lvCLJf+jnQgVgMAVrkt2S468TNcTxn8ABmNh8Oiuw/rnc9kn1Ah1YWCRezid
-	baWGU0jc7s8bF4OA+R0/y6BoQwG8qntvjC2U2vrfbox+LOCnI48K+yW4ewWe+bMDAMHVeRMaqbj
-	6/vTVD62qqAsXnk6OSdtM/dSupnk1yG7isnryqNLOFo7QKw1UFeVYihFpuEJ/HGJO64guH5sicw
-	QNRQfOK7lg5q7JOIaDo40LGF
-X-Google-Smtp-Source: AGHT+IEXR2tW0UBVoELj4Ujtb5xezOwJU19NdsTJFIlGuhV4cKpQboh3iQ1wj0Q6nDV1+6ZatyEKfA==
-X-Received: by 2002:a17:90a:c2c8:b0:2ee:b2be:f390 with SMTP id 98e67ed59e1d1-2f452ec3780mr32597910a91.28.1735234457983;
-        Thu, 26 Dec 2024 09:34:17 -0800 (PST)
-Received: from google.com (123.65.230.35.bc.googleusercontent.com. [35.230.65.123])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f4477c8542sm14223370a91.17.2024.12.26.09.34.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Dec 2024 09:34:17 -0800 (PST)
-Date: Thu, 26 Dec 2024 09:34:14 -0800
-From: William McVicker <willmcvicker@google.com>
-To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Sylwester Nawrocki <s.nawrocki@samsung.com>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Sam Protsenko <semen.protsenko@linaro.org>,
-	Roy Luo <royluo@google.com>, kernel-team@android.com,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v4 7/7] phy: exynos5-usbdrd: allow DWC3 runtime suspend
- with UDC bound (E850+)
-Message-ID: <Z22TljXrbBNazNwW@google.com>
-References: <20241206-gs101-phy-lanes-orientation-phy-v4-0-f5961268b149@linaro.org>
- <20241206-gs101-phy-lanes-orientation-phy-v4-7-f5961268b149@linaro.org>
+        d=1e100.net; s=20230601; t=1735244381; x=1735849181;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Sb98FCKmeyAT2DVLwKOv3zAbNwq73exSEOZGxjhvBeY=;
+        b=CuVUvrfU5rg6zCeYtxMFteH5MaqhfJ+bpl6RI+HrYdLBGu2SY6tlkmpwdUO8Ruk5Z4
+         b2M9CcPKrFZam+HZlSZMwdNWb7DuLT1Q7zPUJq3tP+wVy3+WNyvdbNc1o7+FsUSyWh0L
+         W4L55aGvW6uY66L5OPwvY35S8eGPSQd+H5c+BdH9WadY/W6NjeBYL7CA1wm7lxvchOq9
+         vsfKGXz9Eg/qvVn7L3qB6zbz6du+o/5ITPs66JDESEakVF9bPtHOl1rk7B5l9cRSLvDB
+         0cn1UmxUNoWMGTb9o9OmdkXCMioOqOmdQJ4c3Uw2Sh9s6ZgKFcbd3urVLXXhahOAX0LO
+         yZhA==
+X-Forwarded-Encrypted: i=1; AJvYcCVsb409tGrU8x2Osxyz3dDthstgCpzQuHwzMgGOO9B0edPFto4q1afN66h/ugkkkxqphNrQHOnQMxU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxPdIjOqhuF8ZSu/xc9kDPyO5bWObbOeuehW/jH1v/HQSG7pynM
+	cW456ODE0jggBMYgkzszRdPraARUfo9bSWYlwy0/11cNLJ0VuDTSoGvMi8RrEYn7YHJF0w1hWyG
+	fbxLIgaeR6tNzw21CV2Z0UE4Q9uSPL7wiGVZp5Q==
+X-Gm-Gg: ASbGncumnUDKqjbauXPZQjlC3Nd2mPCjxegQGpU7fSrFkxNKZC6VVwoYbQ/9Z1pwuM9
+	TAYa0mCVASQPTuKpQJjfJqzFlaiAqgBFk+s1ZZRYzl6BcCOCJnKteVJjxzjNQt9c3TxQcUA==
+X-Google-Smtp-Source: AGHT+IGoBxXuv5ahv6Ndnqrf1Xf1S/+gYnZ7NrPaaZ39WftDOcJ5Lr0nHUjNy/jMupZW6W2JyistA+0q73RmPyQIxNE=
+X-Received: by 2002:a05:690c:62c6:b0:6ef:59ef:f194 with SMTP id
+ 00721157ae682-6f3f80de678mr165847907b3.4.1735244380669; Thu, 26 Dec 2024
+ 12:19:40 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241206-gs101-phy-lanes-orientation-phy-v4-7-f5961268b149@linaro.org>
+References: <20241223064147.3961652-1-victor.liu@nxp.com> <20241223064147.3961652-13-victor.liu@nxp.com>
+ <wpxxedxabgo2kxf5wuosu76i5ud3ce2tywm2imhvad4nyy5u2d@qgfhev2hndba> <77540387-b1ac-46c1-a3c0-afbd34337d61@nxp.com>
+In-Reply-To: <77540387-b1ac-46c1-a3c0-afbd34337d61@nxp.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Thu, 26 Dec 2024 22:19:29 +0200
+Message-ID: <CAA8EJpqwRfkjGCYfeRPj7u5hb_8fkMFDtcK1+YDG4nsez1WNXw@mail.gmail.com>
+Subject: Re: [PATCH v7 12/19] drm/imx: Add i.MX8qxp Display Controller KMS
+To: Liu Ying <victor.liu@nxp.com>
+Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	p.zabel@pengutronix.de, airlied@gmail.com, simona@ffwll.ch, 
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, 
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org, 
+	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com, 
+	tglx@linutronix.de, vkoul@kernel.org, kishon@kernel.org, aisheng.dong@nxp.com, 
+	agx@sigxcpu.org, u.kleine-koenig@baylibre.com, francesco@dolcini.it, 
+	frank.li@nxp.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241226_093419_409493_EA31AB6D 
-X-CRM114-Status: GOOD (  14.43  )
+X-CRM114-CacheID: sfid-20241226_121942_665943_5A99B4E7 
+X-CRM114-Status: GOOD (  28.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,55 +95,125 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/06/2024, Andr=E9 Draszik wrote:
-> To make USB runtime suspend work when a UDC has been bound, the phy
-> needs to inform the USBDRD controller (DWC3) that Vbus and bvalid are
-> gone, so that it can in turn raise the respective gadget interrupt with
-> event =3D=3D DWC3_DEVICE_EVENT_DISCONNECT, which will cause the USB stack
-> to clean up, allowing DWC3 to enter runtime suspend.
-> =
+On Wed, 25 Dec 2024 at 09:18, Liu Ying <victor.liu@nxp.com> wrote:
+>
+> On 12/23/2024, Dmitry Baryshkov wrote:
+> > On Mon, Dec 23, 2024 at 02:41:40PM +0800, Liu Ying wrote:
+> >> i.MX8qxp Display Controller(DC) is comprised of three main components that
+> >> include a blit engine for 2D graphics accelerations, display controller for
+> >> display output processing, as well as a command sequencer.  Add kernel
+> >> mode setting support for the display controller part with two CRTCs and
+> >> two primary planes(backed by FetchLayer and FetchWarp respectively).  The
+> >> registers of the display controller are accessed without command sequencer
+> >> involved, instead just by using CPU.  The command sequencer is supposed to
+> >> be used by the blit engine.
+> >>
+> >> Reviewed-by: Maxime Ripard <mripard@kernel.org>
+> >> Signed-off-by: Liu Ying <victor.liu@nxp.com>
+> >> ---
+> >> v7:
+> >> * Drop using typeof in macros and explicitly define variable types. (Dmitry)
+> >> * Add a comment for disable_irq_nosync() to explain why _nosync. (Dmitry)
+> >> * Inline dc_crtc_check_clock(). (Dmitry)
+> >> * Use global drm_dc->pe. (Dmitry)
+> >> * Drop dc_crtc_disable_at_unbind(). (Dmitry)
+> >> * Add kernel doc for struct dc_{crtc,drm_device,plane}. (Dmitry)
+> >> * Define common IRQ handlers separately for each IRQs. (Dmitry)
+> >> * Rebase this patch upon next-20241220, so drop date entry from drm_driver
+> >>   and correctly include drm/clients/drm_client_setup.h.
+> >> * Collect Maxime's R-b tag.
+> >>
+> >> v6:
+> >> * No change.
+> >>
+> >> v5:
+> >> * Replace .remove_new with .remove in dc-drv.c. (Uwe)
+> >>
+> >> v4:
+> >> * Move dc_fg_displaymode(), dc_fg_panic_displaymode() and dc_lb_blendcontrol()
+> >>   function calls from KMS routine to initialization stage. (Dmitry)
+> >> * Drop dc-crtc.h and dc-plane.h header files and move relevant defines to
+> >>   appropriate .h header files or .c source files. (Dmitry)
+> >> * Drop futile "else" clause from dc_crtc_common_irq_handler(). (Dmitry)
+> >> * Drop dc_drm->pe_rpm_count. (Dmitry)
+> >> * Drop DC_{CRTCS,ENCODERS,PRIMARYS} macros and only use DC_DISPLAYS. (Dmitry)
+> >> * Drop drmm_kcalloc() function call to allocate an array for storing IRQs.
+> >>   Instead, put it in struct dc_crtc.  (Dmitry)
+> >> * Call devm_request_irq() to request IRQs, instead of using drmm action.
+> >>   (Dmitry)
+> >> * Call devm_drm_of_get_bridge() to find the next bridge. (Dmitry)
+> >> * Select DRM_CLIENT_SELECTION due to rebase.
+> >> * Select the missing DRM_DISPLAY_HELPER and DRM_BRIDGE_CONNECTOR.
+> >> * Use DRM_FBDEV_DMA_DRIVER_OPS due to rebase.
+> >> * Replace drm_fbdev_dma_setup() with drm_client_setup_with_fourcc() due to
+> >>   rebase.
+> >> * Replace drmm_add_action_or_reset() with devm_add_action_or_reset() to
+> >>   register dc_drm_component_unbind_all() action.
+> >> * Request interrupts in dc_crtc_post_init() after encoder initialization to
+> >>   make sure next bridge is found first.
+> >>
+> >> v3:
+> >> * No change.
+> >>
+> >> v2:
+> >> * Find next bridge from TCon's port.
+> >> * Drop drm/drm_module.h include from dc-drv.c.
+> >>
+> >>  drivers/gpu/drm/imx/dc/Kconfig    |   5 +
+> >>  drivers/gpu/drm/imx/dc/Makefile   |   5 +-
+> >>  drivers/gpu/drm/imx/dc/dc-crtc.c  | 556 ++++++++++++++++++++++++++++++
+> >>  drivers/gpu/drm/imx/dc/dc-de.h    |   3 +
+> >>  drivers/gpu/drm/imx/dc/dc-drv.c   | 238 +++++++++++++
+> >>  drivers/gpu/drm/imx/dc/dc-drv.h   |  22 ++
+> >>  drivers/gpu/drm/imx/dc/dc-kms.c   | 143 ++++++++
+> >>  drivers/gpu/drm/imx/dc/dc-kms.h   | 131 +++++++
+> >>  drivers/gpu/drm/imx/dc/dc-plane.c | 241 +++++++++++++
+> >>  9 files changed, 1342 insertions(+), 2 deletions(-)
+> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-crtc.c
+> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.c
+> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.h
+> >>  create mode 100644 drivers/gpu/drm/imx/dc/dc-plane.c
+> >>
+> >
+> >
+> >> +
+> >> +static int dc_plane_check_no_off_screen(struct drm_plane_state *state,
+> >> +                                    struct drm_crtc_state *crtc_state)
+> >> +{
+> >> +    if (state->dst.x1 < 0 || state->dst.y1 < 0 ||
+> >> +        state->dst.x2 > crtc_state->adjusted_mode.hdisplay ||
+> >> +        state->dst.y2 > crtc_state->adjusted_mode.vdisplay) {
+> >> +            dc_plane_dbg(state->plane, "no off screen\n");
+> >> +            return -EINVAL;
+> >> +    }
+> >
+> > Nit: doesn't drm_atomic_helper_check_plane_state() ensure in this already?
+>
+> The can_position argument is set to true, though it is a bit unusual
+> for primary plane.  If can_position is false, I think this should be
+> ensured already by drm_atomic_helper_check_plane_state().
 
-> On e850 and gs101 this isn't working, as the respective signals are not
-> directly connected, and instead this driver uses override bits in the
-> PHY IP to set those signals. It currently forcefully sets them to 'on',
-> so the above mentioned interrupt will not be raised, preventing runtime
-> suspend.
-> =
+The function still calls drm_rect_clip_scaled() to clip the
+plane_state->dst, does it not?
 
-> To detect that state, update this driver to act on the TCPC's
-> orientation signal - when orientation =3D=3D NONE, Vbus is gone and we can
-> clear the respective bits. Similarly, for other orientation values we
-> re-enable them.
-> =
+> > With that in mind
+> >
+> > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>
+> Thanks.
 
-> This makes runtime suspend work on platforms with a TCPC (like Pixel6),
-> while keeping compatibility with platforms without (e850-96).
-> =
 
-> With runtime suspend working, USB-C cable orientation detection now
-> also fully works on such platforms, and the link comes up as Superspeed
-> as expected irrespective of the cable orientation and whether UDC /
-> gadget are configured and active.
-> =
 
-> Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
+-- 
+With best wishes
+Dmitry
 
-Verified on my Pixel 6 Pro.
-
-Tested-by: Will McVicker <willmcvicker@google.com>
-
-Thanks,
-Will
-
-<snip>
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
