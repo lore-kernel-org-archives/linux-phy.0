@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFB68E77188
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 17:37:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17005E77188
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 17:38:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LguzY/UhAg1ODUQGKPml7nWpQgOt9sV9vZow1XOkDh8=; b=WeRNxzicP28Mbs
-	q+YZmXM5L11+tfm6IdcWzD4jIoR6mxmLPL3Q+PMhatka01wLleLPGZfzbgAKqHTGcUTn7/mb+sbyT
-	8ES9yfoer68fUwTHMd0B/02f7dTOM+ZE/Q2CqO7jkjxkOT2qAJGr6hoi2UqhUP8bxTzyXzCJ+IKRP
-	FNqeXLy7OtBpY7MRtDRIBien9IqsT6BOc0C0ZKMUjg0jKKpTxQ6eFZwpMkC3iWaYtQGvSXMMg2sPK
-	fjw9tjAqRc2LIhRn0PspoOSl2F0dHRQC8+51LI5SZF95wG/yJN6z19mre5kCbplf9Y6g/r7pnBJWL
-	KZxh93aVV/tzDZwM0Bjg==;
+	List-Owner; bh=fLu2+/wjk15D+3hkPZYbLcOCCnNi1JhqLWAS5ZrV20A=; b=QmgmxttLTZtfP+
+	/xIwrv6yB92j4Mo/ghAzQRFeGGS2UgBJDkq3Tsh8y83tcUM36qaPbgMeRo3mP2e+tRjt9l6mleK8u
+	GFTJdrOfuTBmdCZvYhQfWQ4U5xaMxb4Z66gAfgkKj1dq2fZfs5uM11em2HiH4IuYFXG8HsiKDI+fi
+	S0Q4MAlVNFwDrASQS5UG3OfSs/EqxewFae4RkWvPnQJxIn8O8WGzrrmc1tSWKVNupYk4R8hpv7MHv
+	gPWDsuZWq+M8a34BN6HoBfuzY37BRP12iD0HeRVKfxrzKhBkgK25QvyTjGKgJ/hTwhDcc/edALvCJ
+	3gxner5o5UFFBSTDkFRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQrnK-0000000G9i6-2WX3;
-	Thu, 26 Dec 2024 17:37:10 +0000
-Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
+	id 1tQroT-0000000G9q2-3USg;
+	Thu, 26 Dec 2024 17:38:21 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQrjp-0000000G9BK-1a68
+	id 1tQrkZ-0000000G9IO-1XXo
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Dec 2024 17:33:34 +0000
-Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-21661be2c2dso69282245ad.1
-        for <linux-phy@lists.infradead.org>; Thu, 26 Dec 2024 09:33:33 -0800 (PST)
+	Thu, 26 Dec 2024 17:34:20 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-2ef89dbd8eeso5713847a91.0
+        for <linux-phy@lists.infradead.org>; Thu, 26 Dec 2024 09:34:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1735234413; x=1735839213; darn=lists.infradead.org;
+        d=google.com; s=20230601; t=1735234458; x=1735839258; darn=lists.infradead.org;
         h=in-reply-to:content-transfer-encoding:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=tU2DgvDvdkYRJ/UA+n5FQrbOcfdyXNL9khgRhEzfCzg=;
-        b=txH2U0UvCucWIEbSRp1mieZB5r2MntsJccGpo0+Hn5g2pUPl9aDnw0ogb+Ox53kFHE
-         hNX/1vng42HqCthrv32taivUp2BYu36tF0Yd0HtdwSBW9yf2JEuC8N24lbceGr7oJHf0
-         zzoAET3qmlZ6xCEeEtu6qL3Wz7rvh12h5bQiRI4jgeqOK0iQIorkwxgsFLyufMglOIWi
-         LouBM9S0zjMDm88rQy1p5gsg4ZL05fW4qd/w60iGG3yOdsE+rAN64BmXXt0hlqc8VvgI
-         Yo/XtJTlB0rkqjqOUkq5FRWgB2ZKHECmYqk5tGBKKiBXgyjCh1SsAoz8mrTdb0u+tuUt
-         j3Jg==
+        bh=UpfjO3nCfSKSU/F6ZQHVcOz1mCD2+D/yZzyTSXWn/XA=;
+        b=cGDeAdL6f0pDJR8HguzKjZ28LRIWt9Asub3VBozrlnMmX+sjTFGefBctvYXY8EDnIp
+         J1pfn2nOMjlRfGJJg0FRqp9Cr4a8ihcBDfNKZjFDxnpdglbau47I1RNp0o1czqD7Ysax
+         SHgbs0dDIVMWoPQ4hU6hrxMNjD4jr0lB1cnuu6+Mix7/DkSRaT44SyYRgv4NWbW2xQRk
+         a2P2v7wCPkJ5kBuhAESZVkgRC5tNY8if/QIQxv8xe0riL2F8/+iawy78EDYhOvlmw0gg
+         Pk2j9iV4/wn48Of1/darbFeeZayEFapiHAWrDZqb4pqkaPK2zbQLpKpXSHuhWuyrBkzo
+         OSXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735234413; x=1735839213;
+        d=1e100.net; s=20230601; t=1735234458; x=1735839258;
         h=in-reply-to:content-transfer-encoding:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=tU2DgvDvdkYRJ/UA+n5FQrbOcfdyXNL9khgRhEzfCzg=;
-        b=KJ7o42grj16xMWegZKnoQmLK5nfRAt8hKli8rGyg6NYngspCUQq4xHNuYxmhDN8Hyn
-         D9b6Tlj4jkXcbHdt3X948xsGYQpDV74SxhHI88Ztk1TWWqIGAYtlc856Dj8AdoZ9w1II
-         rKiHM0FqDEG/ngIcOzhhYc6Q2K5FmO2VQyz9lh3s3ZPA4gdDtXsSNVmLAMwkLErNx78w
-         OMEOjjnq232fBBP3qzm6+Xk8DoXEb2ewN924Z8xq8V5R+jwIi9KdZJp2N8CxBbYU5AGL
-         imTyY3M8/tDsn935l/BjLa3D8x+xH7VxDxnVIHlKCzLgCLdPx7f/mfkO/ESzkqVFB3OC
-         /5Mw==
-X-Forwarded-Encrypted: i=1; AJvYcCWh4lQBsbUIRyy2h269yt88uwbdI97zylffSpCeBGXBdFZZhL38SNgU1/2TZuvjtOUEKK2lS2082IU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwWJD3c02BCbTLJfUeGsFGS2NJuTv4WhYGO59XRnJk+J0nd8bRx
-	c37QWXAbLgYB8WIN5MkcG93x8eC7GE1olUqr/KWyG0lhb6qVYZ1dNVuGyy3YfA==
-X-Gm-Gg: ASbGncscnfPS56ckfnxoLvEwRRdiugFXRbFaKhgGCjC5SVA03CdZDroXdetnRZPlLZ6
-	dy110cn+U0J0mXAm38curttZXtzKCvgEoNG4zdZIxaVBfKo7rmx13nTqW0gqkaDEaCAJpOMExxg
-	ZnqK2kQei4/R92EOjuxdHXrbxokEwYUvXNaTQzzQzQfnLvyGmvQqXNdANWGbHc3LzcQ6rYjuJHm
-	fHMqPyR7NmzcVHnqk0u0Os2hac5JFvwYbAmo1b6Oat3NNlENpM8EwXWW9lnutEFofWKdNCodROa
-	CXDbjmTOOSHkA85BKOL8UTA0
-X-Google-Smtp-Source: AGHT+IE+RbsmD3Zf9RNfUiqXZbLMpBzhTHXlQkE7VbdmcxZNIAB/IcMMJ416yI3GXCiiIa7UXuAU0Q==
-X-Received: by 2002:a05:6a00:4ac5:b0:725:b12e:604c with SMTP id d2e1a72fcca58-72abdd3c467mr32014218b3a.4.1735234412566;
-        Thu, 26 Dec 2024 09:33:32 -0800 (PST)
+        bh=UpfjO3nCfSKSU/F6ZQHVcOz1mCD2+D/yZzyTSXWn/XA=;
+        b=p5Um2oqVOk8jYjaD0bqk3ZKTJrIxn9MUS6FarOelsXzgDXW1t3H/t2/azqQBvRQNpp
+         e9UhB4jw5X+G2roFkMKlgE4bm7b3pYPkC6Xsd18gvoAEYsWN83mJntFzLUDH7t/ekYiu
+         nRyctgJz9wjUCF8ZR/xQAbJxdG1gicfBvP35oHYeUJ9zCb7rSVqIxvw0ox6zGnpHS0I/
+         HQpGYr8JQBQPKuqeE0bW4SJIynknyQBoOMYEyJvKQh0OMb9TQybY1NtpR2ft4Nh61zbe
+         f4O9PrMY4SEAZL4EPQOauhR/h69Jo9Q1PA7/PxjF3quHsiPyNOxfwdNip0Rci52rKtIQ
+         S0kw==
+X-Forwarded-Encrypted: i=1; AJvYcCWI5lpKFbYlmpIMbRhKJNH14vJIW30C9SzScOyDhYexpi4YfhpqvdGtZ/i0YFChr0ZAuu05pCiMlQY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxHQ8WjswHnEiXGMpDHQuGu1uQ+tzXYJPHx/Ljkc0Wb4b/27gd2
+	SIJdoaLpdYyifQGRDs/liklLps667Ta6/HLQisheFrmsQ0DMjSDuS0+c0StdCg==
+X-Gm-Gg: ASbGncvB6Z0ijNBakDsgFYxnBZxbEMHKyMj7C81BI/Brw2UziMRmt4PwbK6qSRaiqz9
+	UGuWUyaOGzOnVK/lvCLJf+jnQgVgMAVrkt2S468TNcTxn8ABmNh8Oiuw/rnc9kn1Ah1YWCRezid
+	baWGU0jc7s8bF4OA+R0/y6BoQwG8qntvjC2U2vrfbox+LOCnI48K+yW4ewWe+bMDAMHVeRMaqbj
+	6/vTVD62qqAsXnk6OSdtM/dSupnk1yG7isnryqNLOFo7QKw1UFeVYihFpuEJ/HGJO64guH5sicw
+	QNRQfOK7lg5q7JOIaDo40LGF
+X-Google-Smtp-Source: AGHT+IEXR2tW0UBVoELj4Ujtb5xezOwJU19NdsTJFIlGuhV4cKpQboh3iQ1wj0Q6nDV1+6ZatyEKfA==
+X-Received: by 2002:a17:90a:c2c8:b0:2ee:b2be:f390 with SMTP id 98e67ed59e1d1-2f452ec3780mr32597910a91.28.1735234457983;
+        Thu, 26 Dec 2024 09:34:17 -0800 (PST)
 Received: from google.com (123.65.230.35.bc.googleusercontent.com. [35.230.65.123])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72aad8fb851sm13146587b3a.132.2024.12.26.09.33.32
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f4477c8542sm14223370a91.17.2024.12.26.09.34.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Dec 2024 09:33:32 -0800 (PST)
-Date: Thu, 26 Dec 2024 09:33:29 -0800
+        Thu, 26 Dec 2024 09:34:17 -0800 (PST)
+Date: Thu, 26 Dec 2024 09:34:14 -0800
 From: William McVicker <willmcvicker@google.com>
 To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -86,17 +86,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v4 6/7] phy: exynos5-usbdrd: subscribe to orientation
- notifier if required
-Message-ID: <Z22TaVlsIiMw6jwk@google.com>
+Subject: Re: [PATCH v4 7/7] phy: exynos5-usbdrd: allow DWC3 runtime suspend
+ with UDC bound (E850+)
+Message-ID: <Z22TljXrbBNazNwW@google.com>
 References: <20241206-gs101-phy-lanes-orientation-phy-v4-0-f5961268b149@linaro.org>
- <20241206-gs101-phy-lanes-orientation-phy-v4-6-f5961268b149@linaro.org>
+ <20241206-gs101-phy-lanes-orientation-phy-v4-7-f5961268b149@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241206-gs101-phy-lanes-orientation-phy-v4-6-f5961268b149@linaro.org>
+In-Reply-To: <20241206-gs101-phy-lanes-orientation-phy-v4-7-f5961268b149@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241226_093333_424356_C439877C 
-X-CRM114-Status: GOOD (  17.02  )
+X-CRM114-CacheID: sfid-20241226_093419_409493_EA31AB6D 
+X-CRM114-Status: GOOD (  14.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,35 +114,34 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 12/06/2024, Andr=E9 Draszik wrote:
-> gs101's SS phy needs to be configured differently based on the
-> connector orientation, as the SS link can only be established if the
-> mux is configured correctly.
+> To make USB runtime suspend work when a UDC has been bound, the phy
+> needs to inform the USBDRD controller (DWC3) that Vbus and bvalid are
+> gone, so that it can in turn raise the respective gadget interrupt with
+> event =3D=3D DWC3_DEVICE_EVENT_DISCONNECT, which will cause the USB stack
+> to clean up, allowing DWC3 to enter runtime suspend.
 > =
 
-> The code to handle programming of the mux is in place already, this commit
-> now adds the missing pieces to subscribe to the Type-C orientation
-> switch event.
+> On e850 and gs101 this isn't working, as the respective signals are not
+> directly connected, and instead this driver uses override bits in the
+> PHY IP to set those signals. It currently forcefully sets them to 'on',
+> so the above mentioned interrupt will not be raised, preventing runtime
+> suspend.
 > =
 
-> Note that for this all to work we rely on the USB controller
-> re-initialising us. It should invoke our .exit() upon cable unplug, and
-> during cable plug we'll receive the orientation event after which we
-> expect our .init() to be called.
+> To detect that state, update this driver to act on the TCPC's
+> orientation signal - when orientation =3D=3D NONE, Vbus is gone and we can
+> clear the respective bits. Similarly, for other orientation values we
+> re-enable them.
 > =
 
-> Above reinitialisation happens if the DWC3 controller can enter runtime
-> suspend automatically. For the DWC3 driver, this is an opt-in:
->     echo auto > /sys/devices/.../11110000.usb/power/control
-> Once done, things work as long as the UDC is not bound as otherwise it
-> stays busy because it doesn't cancel / stop outstanding TRBs. For now
-> we have to manually unbind the UDC in that case:
->      echo "" > sys/kernel/config/usb_gadget/.../UDC
+> This makes runtime suspend work on platforms with a TCPC (like Pixel6),
+> while keeping compatibility with platforms without (e850-96).
 > =
 
-> Note that if the orientation-switch property is missing from the DT,
-> the code will behave as before this commit (meaning for gs101 it will
-> work in SS mode in one orientation only). Other platforms are not
-> affected either way.
+> With runtime suspend working, USB-C cable orientation detection now
+> also fully works on such platforms, and the link comes up as Superspeed
+> as expected irrespective of the cable orientation and whether UDC /
+> gadget are configured and active.
 > =
 
 > Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
