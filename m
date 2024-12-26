@@ -4,63 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96602E7718D
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 05:11:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0E97E7718D
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 06:33:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/DhcV3oDPjnc372yfCu/or/5dAfXkK/WOs60rxfpH5o=; b=Xv1EQvdhkTNQK0
-	3+hXr3NaVIak9rC/9/6H6+7qT2sxfNAnUfp8o8Q5RXN3z3iydW6oW86U4NuwvUPI3uLfoWCc/MUbf
-	4RmXDdBFn8X+f6KH9Ic0rJhBGdUpyt1/j2PL/JZwjjiS1Q75kIVyh5OKc5UgIMWkPfUzQ/ui/WAmT
-	m9n7kMidxip6oVW1mUywx/Ln9Dy3oZz5cjxDl4IKjj/LniajSMy7MvW693/7vCxMUv5Sn5mqZjDvX
-	ZKd6Z5/5LCS/V+81nK8cC0uiqJ3UyH9o1EJDqSA45ngIrPtxK5/8JsMwt4ZT+64c3GDXgVegFY53i
-	zo3W9uepf91mjPDgfcYQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JCcvcOw4TQcR5bQRFF7OCx0+Tnt4vMOo8AktXwcfHTM=; b=UDeI4yhnFTu5rt
+	gJexX3NFqfkyvilXL9G31qEBqKVGDQVcaaPMXcbE3k8PiC9c/Ud0xMG4RcnEQuebyubCV4KTsVQGo
+	MZlhmSlLmgIoQ+aFk0DBctki85eB74jaeiEec7V98Hzm9zAGqFiXb5KaIob01WYzG2TG8gonm3Ruw
+	J8ArhJzKJlHNEHYZXXybhCToLnJuzxNEKp3p+Y3vipB91oBWf8l+wp3mI+NQFlMR2UCESCfkDw9q7
+	GRRtqp0rXO4WXfh/cBkak7ooy46tBEL2U9Awo97+4hKC8oVbRLd4F+MOfMMeYSprVEMzzpFNDaSjU
+	4TKE6i5NDf2EWn2TRkXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQg9K-0000000F8Oj-2sTX;
-	Thu, 26 Dec 2024 05:11:06 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tQhRA-0000000FIY3-3BMD;
+	Thu, 26 Dec 2024 06:33:36 +0000
+Received: from mail-m49208.qiye.163.com ([45.254.49.208])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQg7N-0000000F7xF-3823
-	for linux-phy@lists.infradead.org;
-	Thu, 26 Dec 2024 05:09:06 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id E709FA40BB7;
-	Thu, 26 Dec 2024 05:07:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 62300C4CED1;
-	Thu, 26 Dec 2024 05:09:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735189744;
-	bh=vbEYz7VTSc/9TiJZ9hHDACf4zMFs+jaf6mhgV00O4jQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rLC9FyvNEZ9Nkv0gv6iW1sx1YqhP716br9UjWB9P/LsrNIQzvkGjQdcSvMcSDWOEI
-	 1pvqCy+d4Wa7aFj9AqKImFJdbT4kM7vewpL32xmewDJYqmuhteVb1WWW3IVJm3k3eE
-	 4NUlMl3DEWWDQ1iU7zbgI8ZKPW0NJq+6Se0AAAl9zBZdUjbJ+mBjhsZF2OmXjyeVaq
-	 kzvkiJVyDX99yKOIDMog1l4Ws76v1+8w//TLqlj/oye8xKGUxCSzDzFJATcr7fDRoY
-	 p/TkyCI9lBnJNhWhNTzLKVL3SCYBNmfysigQ5BtMOT5RRRzZzH0pJx8KDr2aAn2yky
-	 b5WTkdn9pnpXw==
-Date: Wed, 25 Dec 2024 23:09:01 -0600
-From: Bjorn Andersson <andersson@kernel.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, dmitry.baryshkov@linaro.org, 
-	abel.vesa@linaro.org, neil.armstrong@linaro.org, manivannan.sadhasivam@linaro.org, 
-	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH 3/3] arm64: dts: qcom: qcs615: add pcie phy max current
- property
-Message-ID: <hughcvp6indpkjadvx3z3s3umkgqkbnqfp3wvle4jm4xdzkniy@e2oqjinaaa65>
-References: <20241204105249.3544114-1-quic_ziyuzhan@quicinc.com>
- <20241204105249.3544114-4-quic_ziyuzhan@quicinc.com>
+	id 1tQhR7-0000000FIWe-2Vlk;
+	Thu, 26 Dec 2024 06:33:35 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 6dc5110e;
+	Thu, 26 Dec 2024 14:33:26 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: heiko@sntech.de
+Cc: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	rfoss@kernel.org,
+	vkoul@kernel.org,
+	sebastian.reichel@collabora.com,
+	cristian.ciocaltea@collabora.com,
+	l.stach@pengutronix.de,
+	andy.yan@rock-chips.com,
+	hjc@rock-chips.com,
+	algea.cao@rock-chips.com,
+	kever.yang@rock-chips.com,
+	dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v4 00/17] Add eDP support for RK3588
+Date: Thu, 26 Dec 2024 14:32:56 +0800
+Message-Id: <20241226063313.3267515-1-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241204105249.3544114-4-quic_ziyuzhan@quicinc.com>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQkhIS1YYGk0dQ09MTEJOHUpWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCS0
+	NVSktLVUpCWQY+
+X-HM-Tid: 0a9401ab8ab803a3kunm6dc5110e
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6ODY6Tgw4DTIOCEwOGk49ETdO
+	MB4wFD5VSlVKTEhOSkJPQ0tDTU5MVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFITUJLNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=LS4C2XH5YX3jpuM0BRLyZjigaXN2JeKdAZASXp4dqcfoBypO3KrU2CkUuPKM7quHE4Rf4ZmcvUVmRJ3G7TwpQ/A6IaoLGRPnHarNgp32+to0CQ6dRmWDMUD/k3dAqbsE0TSV6s1VqPsYq9dhD6xmqzeI2FILScel/mDiHZDWv+Q=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=WtDvYzoJBC9gaqFxvXZe9/0NcEOfevXaBFtnWX74jvo=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241225_210905_861275_2AA4B840 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20241225_223334_223622_500A7005 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,52 +88,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 04, 2024 at 06:52:49PM +0800, Ziyue Zhang wrote:
-> Add vdda-pll-max-microamp for vdda-pll-supply. The value of this property
-> is from the power grid guide. It is the maximum current the regulator can
-> provide. The property will be parsed by PCIe PHY driver to set the current
-> load.
-> 
-> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-> ---
->  arch/arm64/boot/dts/qcom/qcs615-ride.dts | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/qcs615-ride.dts b/arch/arm64/boot/dts/qcom/qcs615-ride.dts
-> index 18f131ae9e07..6d93ef0d886b 100644
-> --- a/arch/arm64/boot/dts/qcom/qcs615-ride.dts
-> +++ b/arch/arm64/boot/dts/qcom/qcs615-ride.dts
-> @@ -215,6 +215,7 @@ &pcie {
->  &pcie_phy {
->  	vdda-phy-supply = <&vreg_l5a>;
->  	vdda-pll-supply = <&vreg_l12a>;
-> +	vdda-pll-max-microamp = <165000>;
+These patchs have been tested with a 1536x2048p60 eDP panel on
+RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
+on RK3588 EVB1 board. Furthermore, the eDP display has been rechecked
+on RK3399 sapphire excavator board.
 
-It seems from the driver patch (patch 2/3) that you will apply this
-load-request at init and release it at exit, which I believe will hold
-the regulator at HPM always.
+Patch 1~3   are the RK3588 eDP support of Rockchip analogix_dp driver.
+Patch 4~7   are the eDP mode support of samsung hdptx phy driver.
+Patch 8~9   are the RK3588 eDP support of Aanalogix DP driver. Add phy
+            interfaces is to configure the HDMI/eDP TX Combo PHY.
+Patch 10~13 are to support to get panel from the DP AUX bus.
+Patch 14~15 are the renaming of hdptxphy node. It is not only used by
+            HDMI display but also for the eDP display.
+Patch 16    is the addition of RK3588 eDP0 node.
+Patch 17    is to enable the eDP0 display on RK3588S EVB1 board.
 
-If that's the case, why is vreg_l12a declared with
-regulator-allow-set-load and support LPM on this board?
+Damon Ding (17):
+  drm/rockchip: analogix_dp: Use formalized struct definition for grf
+    field
+  dt-bindings: display: rockchip: analogix-dp: Add support for RK3588
+  drm/rockchip: analogix_dp: Add support for RK3588
+  phy: phy-rockchip-samsung-hdptx: Swap the definitions of LCPLL_REF and
+    ROPLL_REF
+  phy: phy-rockchip-samsung-hdptx: Supplement some register names with
+    their full version
+  phy: phy-rockchip-samsung-hdptx: Add the '_MASK' suffix to all
+    registers
+  phy: phy-rockchip-samsung-hdptx: Add support for eDP mode
+  drm/bridge: analogix_dp: Add support for RK3588
+  drm/bridge: analogix_dp: Add support for phy configuration.
+  dt-bindings: display: rockchip: analogix-dp: Add support to get panel
+    from the DP AUX bus
+  drm/bridge: analogix_dp: Add a new member aux to struct
+    analogix_dp_plat_data
+  drm/rockchip: analogix_dp: Add support to get panel from the DP AUX
+    bus
+  drm/bridge: analogix_dp: Convert &analogix_dp_device.aux into a
+    pointer
+  dt-bindings: display: rockchip: Fix label name of hdptxphy for RK3588
+    HDMI TX Controller
+  arm64: dts: rockchip: Fix label name of hdptxphy for RK3588
+  arm64: dts: rockchip: Add eDP0 node for RK3588
+  arm64: dts: rockchip: Enable eDP0 display on RK3588S EVB1 board
 
-If the regulator needs to be in HPM on this board, remove
-regulator-allow-set-load and the LPM mode from the regulator.
+ .../rockchip/rockchip,analogix-dp.yaml        |  12 +-
+ .../rockchip/rockchip,rk3588-dw-hdmi-qp.yaml  |   2 +-
+ arch/arm64/boot/dts/rockchip/rk3588-base.dtsi |  32 +-
+ .../dts/rockchip/rk3588-coolpi-cm5-evb.dts    |   2 +-
+ .../rockchip/rk3588-coolpi-cm5-genbook.dts    |   2 +-
+ .../boot/dts/rockchip/rk3588-evb1-v10.dts     |   2 +-
+ .../rk3588-friendlyelec-cm3588-nas.dts        |   2 +-
+ .../arm64/boot/dts/rockchip/rk3588-jaguar.dts |   2 +-
+ .../boot/dts/rockchip/rk3588-nanopc-t6.dtsi   |   2 +-
+ .../dts/rockchip/rk3588-orangepi-5-plus.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588-rock-5b.dts      |   2 +-
+ .../boot/dts/rockchip/rk3588-tiger-haikou.dts |   2 +-
+ .../boot/dts/rockchip/rk3588s-coolpi-4b.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588s-evb1-v10.dts    |  52 +
+ .../dts/rockchip/rk3588s-indiedroid-nova.dts  |   2 +-
+ .../boot/dts/rockchip/rk3588s-nanopi-r6.dtsi  |   2 +-
+ .../boot/dts/rockchip/rk3588s-odroid-m2.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588s-orangepi-5.dtsi |   2 +-
+ .../boot/dts/rockchip/rk3588s-rock-5a.dts     |   2 +-
+ .../boot/dts/rockchip/rk3588s-rock-5c.dts     |   2 +-
+ .../drm/bridge/analogix/analogix_dp_core.c    |  97 +-
+ .../drm/bridge/analogix/analogix_dp_core.h    |   2 +-
+ .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  54 +-
+ .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 217 +++-
+ .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 988 +++++++++++++++++-
+ include/drm/bridge/analogix_dp.h              |   5 +-
+ 26 files changed, 1326 insertions(+), 167 deletions(-)
 
+-- 
+2.34.1
 
-In fact, you (all of you) should remove all regulator-allow-set-load and
-LPM modes from the DT until you know what that implies - and then
-provide specific patches with clear description of the impact when you
-add it back.
-
-Regards,
-Bjorn
-
->  
->  	status = "okay";
->  };
-> -- 
-> 2.34.1
-> 
 
 -- 
 linux-phy mailing list
