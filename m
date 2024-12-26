@@ -4,75 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 528ABE77188
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 06:54:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EAF1E77188
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 09:43:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4feazKsLr+BNqQlf9dJi8S6HnvVY3Yhu52k/MWPHajU=; b=Ky+Pq66v5o87nd
-	XHYH6TyXIeENg7sbMRRo07lfpdT+aWTFjsxyztrpRTHlPdXaMYZyFHvXSg9krNjujQHFx8rGEayYN
-	QuLTNozED6zpivihP7HVOI3aNqnQ7pCzt3iEg8LvNkmCoTiTBqRe+K/Sz+pXNm9LwrTYwJt58DbyE
-	ci6T/Hw+5ifdgOgFsb7k+OJbRRzg2rh0K4fCu0HwdIZ6gCI4Q5WIEv86aBvn+laHYXV3FDWZ+Coh4
-	eGLwNDgDkLmIBnxsS9ghBG5OFqdJc6mObomuKtE6pgxFGZPB731rY90cNUbfHlBY64hKH0ceV+ZbE
-	YqYfaP5n/ySwQDXQnp2w==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kUU9W9Af3kr2nkaCoL/ZucI+liPqE43aluzm9NMK58U=; b=nrrsireFAgx246
+	aItf+Nk7Q/HVeeQXw94A8I1mcmhTjBbrg3zQnCT36LUZq9dyCaOsyBvfl4OUao2vJrBkmX1JTJiwg
+	MSTDiWtmJDHxJWZwvMIwgol9GYU+cyN9Gon9DfRkWxdBBxysOBCkjNPE4ZcMYvBmxuiM2qA1Eegj9
+	bmrvYpzrBOy0O1Q3sktFu4j8rSXoH4lsSWg6h9PEbjX3EONKRrYP/4C23WuP+ks85b9oTwfLkgLhM
+	D3zsB57bICE0dlcvIwMDJx0IzwHPupyMcPS9TN8ee8VMLF0BoWA0CfU+YBLBjShPtujIOsVDazKnL
+	E6QnEnDGsoCmdNW0selw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQhkx-0000000FLze-0Lvt;
-	Thu, 26 Dec 2024 06:54:03 +0000
-Received: from mail-m127223.xmail.ntesmail.com ([115.236.127.223])
+	id 1tQkOp-0000000FY9G-3gjo;
+	Thu, 26 Dec 2024 09:43:23 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQhRb-0000000FIpy-2uKl;
-	Thu, 26 Dec 2024 06:34:05 +0000
-Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 6dc511c7;
-	Thu, 26 Dec 2024 14:33:59 +0800 (GMT+08:00)
-From: Damon Ding <damon.ding@rock-chips.com>
-To: heiko@sntech.de
-Cc: robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	rfoss@kernel.org,
-	vkoul@kernel.org,
-	sebastian.reichel@collabora.com,
-	cristian.ciocaltea@collabora.com,
-	l.stach@pengutronix.de,
-	andy.yan@rock-chips.com,
-	hjc@rock-chips.com,
-	algea.cao@rock-chips.com,
-	kever.yang@rock-chips.com,
-	dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v4 17/17] arm64: dts: rockchip: Enable eDP0 display on RK3588S EVB1 board
-Date: Thu, 26 Dec 2024 14:33:13 +0800
-Message-Id: <20241226063313.3267515-18-damon.ding@rock-chips.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241226063313.3267515-1-damon.ding@rock-chips.com>
-References: <20241226063313.3267515-1-damon.ding@rock-chips.com>
+	id 1tQkOm-0000000FY8Y-1hU8
+	for linux-phy@lists.infradead.org;
+	Thu, 26 Dec 2024 09:43:22 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BQ8BgEc022659;
+	Thu, 26 Dec 2024 09:43:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=QKhHf4JbsWGTY3FFN4/3Hj
+	rj/7m02iv0le2h5LxDSos=; b=ehv1lB/2Xvy+ufv2ehZLckFG+Zd1kXKqa1KstK
+	2fcojaaeZmirZFcpk+Kc62C/5oqVeA72CsgUHjpbcXsNtO3NE2F/mFbCO8TIrn/h
+	Rus+zvJ+qBfk+dGbzAWYZMZ6YjX85CaXuk8zkJv+FPE5U5FsKJ3YW03HBRevg4FA
+	EIw3Ue/KWDpFoypsq3hoH2Xmyvmses01wHDcu3RRs74MyY+v0Z20cTA0CMdDV/c9
+	vFgpwOkCOWuZKEITauh70hSG6zsNz+l7/3txz5CMxLbZuzZqqzZ+DfaftB+YcUKe
+	0GnvIn8KAdmZfPBafBMEgsG4t6L3vDPk/nTPIb9ucpgS4r9A==
+Received: from nalasppmta01.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43s3dwrr10-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 26 Dec 2024 09:43:11 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4BQ9h9ko026118
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 26 Dec 2024 09:43:09 GMT
+Received: from cse-cd01-lnx.ap.qualcomm.com (10.80.80.8) by
+ nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 26 Dec 2024 01:43:03 -0800
+From: Yongxing Mou <quic_yongmou@quicinc.com>
+Subject: [PATCH v2 0/5] Display enablement changes for Qualcomm QCS8300
+ platform
+Date: Thu, 26 Dec 2024 17:40:44 +0800
+Message-ID: <20241226-mdssdt_qcs8300-v2-0-acba0db533ce@quicinc.com>
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGRkeSVZCTUxCGB5MTx5KGU5WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
-	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a9401ac08c403a3kunm6dc511c7
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OC46TDo5KjIPLkxNGT8tKi43
-	Gh9PCRxVSlVKTEhOSkJPQ09LQklCVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJTUpDNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=cCSsbex0/dNbjMxMb+bOn8b53C7EuH34QH7lBYq53lq3uQpawZb4GDqkhvSFUs3hPRNipZIrFd/At9+v0Kug6zdGm5pxhlLqI29ARGW37MSqLUJaZsBql+aCt/QZ9rzKG9obGR5a9XBpocRvX2jYdrjMSLI9yBI5l66uI6vyP1c=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=5B+165n+MzbVRJTh4JVbKwkFxA7nXZdCiikkY2/r/tA=;
-	h=date:mime-version:subject:message-id:from;
+X-B4-Tracking: v=1; b=H4sIALckbWcC/43Ry2rDMBAF0F8JWneKXrbkUEr/owQjj0aNqB+Jp
+ ZqWkH+v8iiEZpOFFjNIRxfugSWaIyW2Xh3YTEtMcRrLIJ9WDLdu/CCIvsxMcqmFlBoGn5LP7R6
+ TVZyDEJ2xVnmsecfKo91MIX6fwffNZZ5p/1XcfFmygVJyZ3e9ermwXMHVa+MYc3R963OKsGiQ4
+ A02ldJWl6tvRcI44jNOw+vpu3tM8PoPg2GAncu4pQSLAg6hFsLZYE0Q1SOU0LcUIvh8AWERIMC
+ 4xuiKWzSqfoArBzwFnMYQP9rkrDHVrsV+ws+2LPM89T3NJaostmtIoHfkjb2P2rlEUIYh5vXKi
+ qrqNAWl6zpwkrYhGxAbqqmWQQXtkcihZKc6tjHlaf45173Icx/XZqv/zZYYpV6O2AVFlcXmNgb
+ bHI/HX9VmbhQ9AgAA
+X-Change-ID: 20241224-mdssdt_qcs8300-11b7883dc60b
+To: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+	<quic_abhinavk@quicinc.com>,
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        "Maarten
+ Lankhorst" <maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard
+	<mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>,
+        Rob Herring
+	<robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        "Kuogee
+ Hsieh" <quic_khsieh@quicinc.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon
+ Vijay Abraham I" <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>
+CC: Yongxing Mou <quic_yongmou@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1735206178; l=3711;
+ i=quic_yongmou@quicinc.com; s=20241121; h=from:subject:message-id;
+ bh=HrZixsa4o407w0QLd9DyL3Cx7C9rBv6UU13xVhOl9Bg=;
+ b=bIaX7B/2+vkGmUQj9+iXg/N1jRIRdrjxQwdHYd5XFggH0hbBeB9az5La2tFVsJDXAa8lvUSKW
+ h0YTS/kz1bYDU184yG4Dt3zLsoN4rf8ys5zcOGPAGCOVEnK3HZYqz3O
+X-Developer-Key: i=quic_yongmou@quicinc.com; a=ed25519;
+ pk=zeCnFRUqtOQMeFvdwex2M5o0Yf67UHYfwCyBRQ3kFbU=
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: KTiTMKdPGR80sw1UqhDk1UCgks9G9HG8
+X-Proofpoint-ORIG-GUID: KTiTMKdPGR80sw1UqhDk1UCgks9G9HG8
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 clxscore=1015
+ suspectscore=0 lowpriorityscore=0 mlxlogscore=999 impostorscore=0
+ bulkscore=0 malwarescore=0 priorityscore=1501 adultscore=0 phishscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412260085
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241225_223403_944260_F26474F8 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20241226_014320_589536_E8AAC785 
+X-CRM114-Status: GOOD (  12.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,121 +135,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
-- Set pinctrl of pwm12 for backlight
-- Enable edp0/hdptxphy0/vp2
-- Add aux-bus/panel nodes
+This series introduces support to enable the Mobile Display Subsystem (MDSS)
+, Display Processing Unit (DPU), DisplayPort controller and eDP PHY for 
+the Qualcomm QCS8300 target. It includes the addition of the hardware catalog,
+compatible string, and their YAML bindings.
 
-The eDP panel model used on this board is LP079QX1_SP0V. Due to the
-broken identification, the compatible of panel node is set to
-"lg,lp079qx1-sp0v" rather than "edp-panel". The log related to this
-issue may be like:
-
-[    0.623793] panel-simple-dp-aux aux-fdec0000.edp: Unknown panel ETC
-0x0000, using conservative timings
-
-Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+Signed-off-by: Yongxing Mou <quic_yongmou@quicinc.com>
+---
+This series depends on following series:
+https://lore.kernel.org/all/20241203-qcs8300_initial_dtsi-v4-2-d7c953484024@quicinc.com/
+https://lore.kernel.org/all/20241106-qcs8300-mm-patches-v3-0-f611a8f87f15@quicinc.com/
+https://lore.kernel.org/all/20241114-qcs8300-mm-cc-dt-patch-v1-1-7a974508c736@quicinc.com/
+https://lore.kernel.org/all/20241024-defconfig_sa8775p_clock_controllers-v2-1-a9e1cdaed785@quicinc.com/
+---
+Changes in v2:Fixed review comments from Krzysztof, Dmitry, Rob.
+- Decouple the devicetree changes from this series.[Dmitry][Krzysztof]
+- Drop the dpu driver changes and reuse SA8775P DPU driver.[Dmitry]
+- Fix compilation issues in MDSS bindings.[Rob][Krzysztof]
+- Correct formatting errors and remove unnecessary status in MDSS
+  bindings.[Krzysztof]
+- Add the the necessary information in MDSS changes commit msg.[Dmitry]
+- Rebase MDSS driver changes to https://lore.kernel.org/dri-devel/
+  20241127-msm-mdss-ubwc-v3-0-9782a7c2b023@linaro.org/.[Dmitry]
+- Package the DisplayPort controller and eDP PHY bindings document to
+  this patch series.
+- Collecting MDSS changes reviewd-by Dmitry.
+- Reuse the sa8775p eDP PHY as a fallback compat.[Dmitry]
+- Reuse the sm8650 DP controller as a fallback compat.[Dmitry]
+- Link to v1: https://lore.kernel.org/r/20241127-mdss_qcs8300-v1-0-29b2c3ee95b8@quicinc.com
+~
 
 ---
+Yongxing Mou (5):
+      dt-bindings: display/msm: Document the DPU for QCS8300
+      dt-bindings: display: msm: dp-controller: document QCS8300 compatible
+      dt-bindings: display/msm: Document MDSS on QCS8300
+      dt-bindings: phy: Add eDP PHY compatible for QCS8300
+      drm/msm: mdss: Add QCS8300 support
 
-Changes in v2:
-- Remove brightness-levels and default-brightness-level properties in
-  backlight node.
-- Add the detail DT changes to commit message.
-
-Changes in v3:
-- Use aux-bus instead of platform bus for edp-panel.
-
-Changes in v4:
-- Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
-  in the commit message.
+ .../bindings/display/msm/dp-controller.yaml        |   4 +
+ .../bindings/display/msm/qcom,qcs8300-mdss.yaml    | 244 +++++++++++++++++++++
+ .../bindings/display/msm/qcom,sm8650-dpu.yaml      |  13 +-
+ .../devicetree/bindings/phy/qcom,edp-phy.yaml      |  19 +-
+ drivers/gpu/drm/msm/msm_mdss.c                     |  11 +
+ 5 files changed, 280 insertions(+), 11 deletions(-)
 ---
- .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 52 +++++++++++++++++++
- 1 file changed, 52 insertions(+)
+base-commit: 8155b4ef3466f0e289e8fcc9e6e62f3f4dceeac2
+change-id: 20241224-mdssdt_qcs8300-11b7883dc60b
+prerequisite-message-id: <20241203-qcs8300_initial_dtsi-v4-2-d7c953484024@quicinc.com>
+prerequisite-patch-id: 33f2488a8eb133431f200e17aac743598508dcf3
+prerequisite-patch-id: 7b653ebeaf1ca3f87620ccf7d876e3d1fe496c4a
+prerequisite-patch-id: e1b60af8a64332e5f0ecbd3a4ea2b6e090bd97cf
+prerequisite-patch-id: b823d744d2fb302e2496eaf0cf0c9c66312dcf2a
+prerequisite-message-id: <20241106-qcs8300-mm-patches-v3-0-f611a8f87f15@quicinc.com>
+prerequisite-patch-id: 367d9c742fe5087cfa6fb8e7b05ebe9bc78d68f3
+prerequisite-patch-id: ee0513c070ab96e63766d235b38ee53ca9b19181
+prerequisite-patch-id: 970974160bcdc837ccbe5ea3b5dcac582e90bc0d
+prerequisite-patch-id: 5b2bd9cc44a529b0b9e5d73128dca5d2ff9f2f44
+prerequisite-patch-id: 6a0a81242e1d0f051e3102533bf0191615c6e96b
+prerequisite-patch-id: 322540ce6d45c32f813ecef50e5135c6f08d9019
+prerequisite-message-id: <20241114-qcs8300-mm-cc-dt-patch-v1-1-7a974508c736@quicinc.com>
+prerequisite-patch-id: 8faad5c6d8ca255935d3e4d317dcbcc32b8261ff
+prerequisite-message-id: <20241024-defconfig_sa8775p_clock_controllers-v2-1-a9e1cdaed785@quicinc.com>
+prerequisite-patch-id: 81378ec66ab6e569bd828401c43c4f5af55db32c
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-index bc4077575beb..9547ab18e596 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-@@ -9,6 +9,7 @@
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/input/input.h>
- #include <dt-bindings/pinctrl/rockchip.h>
-+#include <dt-bindings/soc/rockchip,vop2.h>
- #include <dt-bindings/usb/pd.h>
- #include "rk3588s.dtsi"
- 
-@@ -238,6 +239,41 @@ &combphy2_psu {
- 	status = "okay";
- };
- 
-+&edp0 {
-+	force-hpd;
-+	status = "okay";
-+
-+	aux-bus {
-+		panel {
-+			compatible = "lg,lp079qx1-sp0v";
-+			backlight = <&backlight>;
-+			power-supply = <&vcc3v3_lcd_edp>;
-+
-+			port {
-+				panel_in_edp: endpoint {
-+					remote-endpoint = <&edp_out_panel>;
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&edp0_in {
-+	edp0_in_vp2: endpoint {
-+		remote-endpoint = <&vp2_out_edp0>;
-+	};
-+};
-+
-+&edp0_out {
-+	edp_out_panel: endpoint {
-+		remote-endpoint = <&panel_in_edp>;
-+	};
-+};
-+
-+&hdptxphy0 {
-+	status = "okay";
-+};
-+
- &i2c3 {
- 	status = "okay";
- 
-@@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
- };
- 
- &pwm12 {
-+	pinctrl-0 = <&pwm12m1_pins>;
- 	status = "okay";
- };
- 
-@@ -1168,3 +1205,18 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
- 		};
- 	};
- };
-+
-+&vop_mmu {
-+	status = "okay";
-+};
-+
-+&vop {
-+	status = "okay";
-+};
-+
-+&vp2 {
-+	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
-+		reg = <ROCKCHIP_VOP2_EP_EDP0>;
-+		remote-endpoint = <&edp0_in_vp2>;
-+	};
-+};
+Best regards,
 -- 
-2.34.1
+Yongxing Mou <quic_yongmou@quicinc.com>
 
 
 -- 
