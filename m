@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4C05E7718F
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 17:34:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFB68E77188
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Dec 2024 17:37:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=04OjfX8X2sIpJ0UUdje4IBfs9ZVwOyInIBu+KXRHe6Q=; b=0nb6wYcxV1qMj4
-	VfAjpRLdWvsKijLSnaZY0BREAt0c+GhRJdkhZuKMFdS0dVf/TC6Vr+FAlFFQvrrVEN9naXwj141d6
-	Le3fnwDTnmIl+rlAr5Njmnufj+XYVi7LpiXfG9GjmBBxDCbL90//B89Wfy4xbR8RPXmtqDieL6M4/
-	lUL3Z/NWCMPPeFlcTqpnPzC1GLm47aOxP7+ftr9vnBcj5lhlUyqfcS78KVE8G19QbG7L/QJml3dpJ
-	zFS9VSLNZm1N4+BHvrl7zyFoQAsdWfHaB5CskCa+EIBLYcN1z/kEMA/wtBgMgIxguFJIZmJ8q7r3M
-	J96frBCyQIcT0GXckKsA==;
+	List-Owner; bh=LguzY/UhAg1ODUQGKPml7nWpQgOt9sV9vZow1XOkDh8=; b=WeRNxzicP28Mbs
+	q+YZmXM5L11+tfm6IdcWzD4jIoR6mxmLPL3Q+PMhatka01wLleLPGZfzbgAKqHTGcUTn7/mb+sbyT
+	8ES9yfoer68fUwTHMd0B/02f7dTOM+ZE/Q2CqO7jkjxkOT2qAJGr6hoi2UqhUP8bxTzyXzCJ+IKRP
+	FNqeXLy7OtBpY7MRtDRIBien9IqsT6BOc0C0ZKMUjg0jKKpTxQ6eFZwpMkC3iWaYtQGvSXMMg2sPK
+	fjw9tjAqRc2LIhRn0PspoOSl2F0dHRQC8+51LI5SZF95wG/yJN6z19mre5kCbplf9Y6g/r7pnBJWL
+	KZxh93aVV/tzDZwM0Bjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQrl3-0000000G9OH-2hbI;
-	Thu, 26 Dec 2024 17:34:49 +0000
-Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
+	id 1tQrnK-0000000G9i6-2WX3;
+	Thu, 26 Dec 2024 17:37:10 +0000
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tQriL-0000000G90Z-18fq
+	id 1tQrjp-0000000G9BK-1a68
 	for linux-phy@lists.infradead.org;
-	Thu, 26 Dec 2024 17:32:02 +0000
-Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-21619108a6bso70228445ad.3
-        for <linux-phy@lists.infradead.org>; Thu, 26 Dec 2024 09:32:01 -0800 (PST)
+	Thu, 26 Dec 2024 17:33:34 +0000
+Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-21661be2c2dso69282245ad.1
+        for <linux-phy@lists.infradead.org>; Thu, 26 Dec 2024 09:33:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1735234321; x=1735839121; darn=lists.infradead.org;
+        d=google.com; s=20230601; t=1735234413; x=1735839213; darn=lists.infradead.org;
         h=in-reply-to:content-transfer-encoding:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=fZq8gTOhd/HrF2N/ypBV//FltCA9lQr1B5nofEk6FbE=;
-        b=xX2YhLR+ryZk1U/wJ3pSgeriV60bYAU0nHT0kI/G1ZE0E7hCfvvpBRG9yjOkiMRHjW
-         XNCrSVz1x95m1RhPm6FA1xj679fgNS+eN3u+3Xo773z4pQf8LW8MHXu0ZiuMZkHH53eY
-         B2g6wTE64xkXCXxsdxvHWwKfI0sWmDeCnt6NLl1ulvvkugGEalHxz5Uvv/9f2OTpE0ly
-         UxK4FByxewn3rl59Z/iV8QXlsQLkuaRs7AST2tv0SSVmCBsJtoh11pFy0GHvHWeUYvIZ
-         zuR8gRfDil5kIctVNohLxnvi2rxO+zjrYxQCcGqHt0ru2fLz4wdC1LbYcLEwZsCYKu3k
-         IcoA==
+        bh=tU2DgvDvdkYRJ/UA+n5FQrbOcfdyXNL9khgRhEzfCzg=;
+        b=txH2U0UvCucWIEbSRp1mieZB5r2MntsJccGpo0+Hn5g2pUPl9aDnw0ogb+Ox53kFHE
+         hNX/1vng42HqCthrv32taivUp2BYu36tF0Yd0HtdwSBW9yf2JEuC8N24lbceGr7oJHf0
+         zzoAET3qmlZ6xCEeEtu6qL3Wz7rvh12h5bQiRI4jgeqOK0iQIorkwxgsFLyufMglOIWi
+         LouBM9S0zjMDm88rQy1p5gsg4ZL05fW4qd/w60iGG3yOdsE+rAN64BmXXt0hlqc8VvgI
+         Yo/XtJTlB0rkqjqOUkq5FRWgB2ZKHECmYqk5tGBKKiBXgyjCh1SsAoz8mrTdb0u+tuUt
+         j3Jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735234321; x=1735839121;
+        d=1e100.net; s=20230601; t=1735234413; x=1735839213;
         h=in-reply-to:content-transfer-encoding:content-disposition
          :mime-version:references:message-id:subject:cc:to:from:date
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=fZq8gTOhd/HrF2N/ypBV//FltCA9lQr1B5nofEk6FbE=;
-        b=pjp9sPM9O756Zwu9WZXa+wyW6HyE7bX7tY+eSCm+7gM6ViKtFu0928+53L9yoFxBcu
-         U1F5bPAhDfa5i+AaITgqJ1Mho9xnJXtt2hMLbaCPMQD3reHvpbeu2zYR2gVIkbMq/weS
-         2ddmYNw90WaCupGB9x75zhQcxkY4OZEwH3GffJ4voM6FL2UDGcGB/hS5xV5qIAsggpS2
-         YSpcbN2TeVut0hdAhLjpV3mq6AZTmszobPvNzubA8Ty5hzIrxRhiqs5jQpT4//XvagA4
-         1zQ+9ncnKHvS1tNxtloffOGcY/wHww6wFf8jsE6GIXnrIJwatvbBzFib+mNJ5jkIJLVg
-         k3zw==
-X-Forwarded-Encrypted: i=1; AJvYcCUNe6XY5ETHyNXOT58lYerqBX48FHzFGV/G5hNmKDanCk5a8HolEe9OxNWa6BFv6Mo/K2Iq/27X4j4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw1bOYMZx/MIyBssP9drSfp6F+kpmwYZbEX8R1wGHpIeW4Xd4Ky
-	NwGNqSMIXgrWZxP1V1dQmTGrWqwRF3AQExbCXbUwkCiEqa3BXvecgWymvRvnBQ==
-X-Gm-Gg: ASbGncvkxyXO/FS+EgkBiDAwVfCSrDs41RVDud3vKLOt6VKMVAO9DcNMfFXVtb9yBYd
-	2WxvNDPNaVbOrmRXitiH9dSIP4mMLD3/tm2l623WYw1dRUerfOHg5cGIlWz+A+eMHyD72YxaZOD
-	PCt5V77ZbAGMEGG4waFiGGeosronLfawIzl/TnwwM2Zq0ediOwAgN5o8JtMZFyEplAaRnOFCGat
-	CJJX0HBpbaT8niJNgD003UJ6qjJGdYSwsVzA0QOfBOkHkCYI9aOsdq2pHRlQHcVUeDLXG+s1x4F
-	H24kXGHBGrjrZ0iEZkfQ2beQ
-X-Google-Smtp-Source: AGHT+IGMiawar/mU5KvWb2BzVuABUtr4oiv5toBR6JEErmfnPl/aBnhoZzQMhDzJD2wfGufTegEhmw==
-X-Received: by 2002:a17:902:e802:b0:216:5e6b:e23 with SMTP id d9443c01a7336-219e6eb6305mr303933895ad.30.1735234320475;
-        Thu, 26 Dec 2024 09:32:00 -0800 (PST)
+        bh=tU2DgvDvdkYRJ/UA+n5FQrbOcfdyXNL9khgRhEzfCzg=;
+        b=KJ7o42grj16xMWegZKnoQmLK5nfRAt8hKli8rGyg6NYngspCUQq4xHNuYxmhDN8Hyn
+         D9b6Tlj4jkXcbHdt3X948xsGYQpDV74SxhHI88Ztk1TWWqIGAYtlc856Dj8AdoZ9w1II
+         rKiHM0FqDEG/ngIcOzhhYc6Q2K5FmO2VQyz9lh3s3ZPA4gdDtXsSNVmLAMwkLErNx78w
+         OMEOjjnq232fBBP3qzm6+Xk8DoXEb2ewN924Z8xq8V5R+jwIi9KdZJp2N8CxBbYU5AGL
+         imTyY3M8/tDsn935l/BjLa3D8x+xH7VxDxnVIHlKCzLgCLdPx7f/mfkO/ESzkqVFB3OC
+         /5Mw==
+X-Forwarded-Encrypted: i=1; AJvYcCWh4lQBsbUIRyy2h269yt88uwbdI97zylffSpCeBGXBdFZZhL38SNgU1/2TZuvjtOUEKK2lS2082IU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwWJD3c02BCbTLJfUeGsFGS2NJuTv4WhYGO59XRnJk+J0nd8bRx
+	c37QWXAbLgYB8WIN5MkcG93x8eC7GE1olUqr/KWyG0lhb6qVYZ1dNVuGyy3YfA==
+X-Gm-Gg: ASbGncscnfPS56ckfnxoLvEwRRdiugFXRbFaKhgGCjC5SVA03CdZDroXdetnRZPlLZ6
+	dy110cn+U0J0mXAm38curttZXtzKCvgEoNG4zdZIxaVBfKo7rmx13nTqW0gqkaDEaCAJpOMExxg
+	ZnqK2kQei4/R92EOjuxdHXrbxokEwYUvXNaTQzzQzQfnLvyGmvQqXNdANWGbHc3LzcQ6rYjuJHm
+	fHMqPyR7NmzcVHnqk0u0Os2hac5JFvwYbAmo1b6Oat3NNlENpM8EwXWW9lnutEFofWKdNCodROa
+	CXDbjmTOOSHkA85BKOL8UTA0
+X-Google-Smtp-Source: AGHT+IE+RbsmD3Zf9RNfUiqXZbLMpBzhTHXlQkE7VbdmcxZNIAB/IcMMJ416yI3GXCiiIa7UXuAU0Q==
+X-Received: by 2002:a05:6a00:4ac5:b0:725:b12e:604c with SMTP id d2e1a72fcca58-72abdd3c467mr32014218b3a.4.1735234412566;
+        Thu, 26 Dec 2024 09:33:32 -0800 (PST)
 Received: from google.com (123.65.230.35.bc.googleusercontent.com. [35.230.65.123])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-219dc96e94dsm122897285ad.67.2024.12.26.09.32.00
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72aad8fb851sm13146587b3a.132.2024.12.26.09.33.32
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Dec 2024 09:32:00 -0800 (PST)
-Date: Thu, 26 Dec 2024 09:31:57 -0800
+        Thu, 26 Dec 2024 09:33:32 -0800 (PST)
+Date: Thu, 26 Dec 2024 09:33:29 -0800
 From: William McVicker <willmcvicker@google.com>
 To: =?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -86,17 +86,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v4 5/7] phy: exynos5-usbdrd: gs101: configure SS lanes
- based on orientation
-Message-ID: <Z22TDXvD3AKdhr-S@google.com>
+Subject: Re: [PATCH v4 6/7] phy: exynos5-usbdrd: subscribe to orientation
+ notifier if required
+Message-ID: <Z22TaVlsIiMw6jwk@google.com>
 References: <20241206-gs101-phy-lanes-orientation-phy-v4-0-f5961268b149@linaro.org>
- <20241206-gs101-phy-lanes-orientation-phy-v4-5-f5961268b149@linaro.org>
+ <20241206-gs101-phy-lanes-orientation-phy-v4-6-f5961268b149@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241206-gs101-phy-lanes-orientation-phy-v4-5-f5961268b149@linaro.org>
+In-Reply-To: <20241206-gs101-phy-lanes-orientation-phy-v4-6-f5961268b149@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241226_093201_314693_18C72468 
-X-CRM114-Status: GOOD (  14.43  )
+X-CRM114-CacheID: sfid-20241226_093333_424356_C439877C 
+X-CRM114-Status: GOOD (  17.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,31 +114,37 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 12/06/2024, Andr=E9 Draszik wrote:
-> USB SS lanes need to be configured based on the connector orientation -
-> at most two lanes will be in use for USB (and the remaining two for
-> alternate modes like DP).
+> gs101's SS phy needs to be configured differently based on the
+> connector orientation, as the SS link can only be established if the
+> mux is configured correctly.
 > =
 
-> For the USB link to come up in SS, the lane configuration registers
-> have to be programmed accordingly.
+> The code to handle programming of the mux is in place already, this commit
+> now adds the missing pieces to subscribe to the Type-C orientation
+> switch event.
 > =
 
-> While we still need a way to be notified of the actual connector
-> orientation and then reprogram the registers accordingly (at the moment
-> the configuration happens just once during phy_init() and never again),
-> we can prepare the code doing the configuration to take the orientation
-> into account.
+> Note that for this all to work we rely on the USB controller
+> re-initialising us. It should invoke our .exit() upon cable unplug, and
+> during cable plug we'll receive the orientation event after which we
+> expect our .init() to be called.
 > =
 
-> Do so.
+> Above reinitialisation happens if the DWC3 controller can enter runtime
+> suspend automatically. For the DWC3 driver, this is an opt-in:
+>     echo auto > /sys/devices/.../11110000.usb/power/control
+> Once done, things work as long as the UDC is not bound as otherwise it
+> stays busy because it doesn't cancel / stop outstanding TRBs. For now
+> we have to manually unbind the UDC in that case:
+>      echo "" > sys/kernel/config/usb_gadget/.../UDC
 > =
 
-> Note: the mutex is needed to synchronize this with the upcoming
-> connector orientation callback.
+> Note that if the orientation-switch property is missing from the DT,
+> the code will behave as before this commit (meaning for gs101 it will
+> work in SS mode in one orientation only). Other platforms are not
+> affected either way.
 > =
 
-> Reviewed-by: Peter Griffin <peter.griffin@linaro.org>
-> Tested-by: Peter Griffin <peter.griffin@linaro.org>
 > Signed-off-by: Andr=E9 Draszik <andre.draszik@linaro.org>
 
 Verified on my Pixel 6 Pro.
