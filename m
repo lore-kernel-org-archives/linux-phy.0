@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B5E1E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 11:14:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 716F3E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 11:15:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E+3ZOjZdCawlo8iagw9jm9g0VL9uJApKjn9ErkgLc/U=; b=xLaRosnUqomt7K
-	PCBQYjZuHOQmkGeon6dNEueU7MSNAB03E8QJWKkFKBZ4hHKajQ0NN2egml9Nao27IqvtnMlYgHZHO
-	GsfVGhhEp7ijRa1IccW8Wj/47+q0wJgV+aGbddVINq/zKxn/ufhAmoR5CQ/pAo6Cyqsg2NpDnNdOk
-	x4F62kq0gIg4kGxJudVj+aCYSKr1JE8GKvxvBui+LN0usHrljubfk5or+cmApg0qNgudBdHO3XlUv
-	G0sRMYxF6e/YNW0L/MopdSj/rXpHPDpb1cXOsIIUHDMRGEAgtSlLO/xl1ZNyU4TMPha+1SY3iy7bF
-	2aJBKgm7oEX1cgTwLX4g==;
+	List-Owner; bh=0RohaXeql67JzQHks3Xrgxe43s+4b1lRxJANvb4KoD4=; b=bEG5FcxCc8q6d2
+	pkrGZj8s2NiXusocIJ/1X2++0/dnKwyP/qLclbOeQzANQ84XDSncFpaYsFeimV1KpNJSVkcwbiESS
+	pTP0e1PvyOxdShNLERvdLxOfwM7DD70pOBMJmwFUJAaiEk6tt7BCHLzyCo+KtBF99o/W+XmXLSn1S
+	dKj46/nqPSJmhdKZRBiQiARKYOgsG7QxiynRioqO227oG2o65ey6jHab7L2WbJHcbhcI4M/g9iy8q
+	7rsOPuuC/5rOc+PoMUasy4TfgU8yPc/6GjT6EzvD1o0qkjXkmzivVbJ45vVWbCM6PxNLEy8p/K7dW
+	I3mAyNJ3k/hBsjS2biiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR8IY-000000004Ic-1790;
-	Fri, 27 Dec 2024 11:14:30 +0000
-Received: from omta034.useast.a.cloudfilter.net ([44.202.169.33])
+	id 1tR8Ji-000000004RT-0uD6;
+	Fri, 27 Dec 2024 11:15:42 +0000
+Received: from omta040.useast.a.cloudfilter.net ([44.202.169.39])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR8DA-000000002gI-3s4s
+	id 1tR8DD-000000002iT-2znA
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Dec 2024 11:08:58 +0000
-Received: from eig-obgw-6001a.ext.cloudfilter.net ([10.0.30.140])
+	Fri, 27 Dec 2024 11:09:00 +0000
+Received: from eig-obgw-5008a.ext.cloudfilter.net ([10.0.29.246])
 	by cmsmtp with ESMTPS
-	id QyXwtzwVMrKrbR8DAtWllO; Fri, 27 Dec 2024 11:08:56 +0000
+	id R46etb95SnNFGR8DDtXDI8; Fri, 27 Dec 2024 11:08:59 +0000
 Received: from md-in-79.webhostbox.net ([43.225.55.182])
 	by cmsmtp with ESMTPS
-	id R8D7toDpR2Zy0R8D9ttMiM; Fri, 27 Dec 2024 11:08:55 +0000
-X-Authority-Analysis: v=2.4 cv=Q4EZ4J2a c=1 sm=1 tr=0 ts=676e8ac7
+	id R8DAtwrrrN0LRR8DCtphVe; Fri, 27 Dec 2024 11:08:59 +0000
+X-Authority-Analysis: v=2.4 cv=erfZzJpX c=1 sm=1 tr=0 ts=676e8acb
  a=LfuyaZh/8e9VOkaVZk0aRw==:117 a=kofhyyBXuK/oEhdxNjf66Q==:17
  a=IkcTkHD0fZMA:10 a=RZcAm9yDv7YA:10 a=-pn6D5nKLtMA:10 a=vU9dKmh3AAAA:8
- a=6Yv2FhbjKrII3ob1PCcA:9 a=QEXdDO2ut3YA:10 a=rsP06fVo5MYu2ilr0aT5:22
+ a=WudEoZjip3EUb6QGksoA:9 a=QEXdDO2ut3YA:10 a=rsP06fVo5MYu2ilr0aT5:22
  a=ZCPYImcxYIQFgLOT52_G:22
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
 	; s=default; h=Cc:To:In-Reply-To:References:Message-Id:
@@ -44,24 +44,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
 	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=6cTQ7dIuLzDTMKdT4MZZitwWUZLarutprzerK3v04Kw=; b=E5rKyaXLBkL0k6g40Z9SbhDYkq
-	y1n1ZtiKbjkn02haPNPqqREEJ53tFu/5EwZ9ldPshbyoojgwF4KYjxafkQQSRLWEtCryhXMOe4IJI
-	FeeEjapctFSqK7zYKq7G9w3aw6MgIjPWgNCL0qbFm3UvXxq0l01lvV21hg3T7Ae3xHEuJ03qHstJq
-	Oq+EB7JSo/ZqSA31loO6G9BUbYpxZTtcSAdj7CD2soQz6HpoLuda8fMTIlCHYL+2RCPElAuPkG81w
-	UcxZeEaHIraPXOXhUBZGVAssxDWhG4CsLALEgWzgnZ25GRosq5by+uC+VE1fqOCCaiq5t/pUiSjo0
-	JCAGZJZg==;
+	bh=GlbwVthHYeKY8tBVeUkULV/njVfk66cYvdQ4ontQNdE=; b=pd53rFz9ZJkDS0ouaO8nXwdKE6
+	FgHRYmxghu8/C2Gp48uQWw6OKQebOjoXn7jZ9y8lBK8YVJjA3R4durg3pUII9J6hSf32+h3Xuaxbt
+	fktY7zl4Y/Q2rzuzMG/ecJ3Ed3nu5m4iCzwmJmvHrwiGdu2sWc6XkmVsAOQFm5Dxy/r1oZHF/yLhg
+	xTL6KMMrF6xpBfxwrjjTlf843o3Zt2nC8likCcUGyfsGi42eXcpVneaurhz76z0//74z1WFUwdeds
+	ygywXvgDVaBnNoxWdSeJRJSeKpxrElC9Nx38eF8u5VNpV60ORO7KdQvQ+HMwwUaa9FaiMnk78hM1R
+	KozSPnMg==;
 Received: from [122.165.245.213] (port=50828 helo=[127.0.1.1])
 	by md-in-79.webhostbox.net with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96.2)
 	(envelope-from <parthiban@linumiz.com>)
-	id 1tR8Cr-000bEK-1k;
-	Fri, 27 Dec 2024 16:38:37 +0530
+	id 1tR8Cv-000bEK-2Y;
+	Fri, 27 Dec 2024 16:38:41 +0530
 From: Parthiban Nallathambi <parthiban@linumiz.com>
-Date: Fri, 27 Dec 2024 16:37:51 +0530
-Subject: [PATCH 04/22] dt-bindings: clock: sun8i de2 clock: Add a100/a133
- compatible
+Date: Fri, 27 Dec 2024 16:37:52 +0530
+Subject: [PATCH 05/22] dt-bindings: display: sun4i: add phy property
 MIME-Version: 1.0
-Message-Id: <20241227-a133-display-support-v1-4-13b52f71fb14@linumiz.com>
+Message-Id: <20241227-a133-display-support-v1-5-13b52f71fb14@linumiz.com>
 References: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
 In-Reply-To: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, 
@@ -84,11 +83,11 @@ Cc: iommu@lists.linux.dev, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org, 
  Parthiban Nallathambi <parthiban@linumiz.com>
 X-Mailer: b4 0.14.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1735297689; l=1302;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1735297689; l=924;
  i=parthiban@linumiz.com; s=20241125; h=from:subject:message-id;
- bh=oZlIUbxg1cWJwuwv38BcMjpxkWeQ5cHkxaRh0Lf8Dn0=;
- b=ZECHKyka+k10QRxLFFYIfU23bBqki6E7ZKTWK6E2Dt4YBnE5AYqBaRCyqcxyElIuisWNGv1VQ
- vUBx7K/csDmBNYhtNbCPSUiZ6yGrQFs6lQFIDmZE62WnLT+wR9jqIWI
+ bh=m2A1ofv8GeCezN3hco6q0KsR/PZlS1bM75pboayywLg=;
+ b=aS5TfkN0UGdAKzZY1tjWhZEUGcD56oslubatdE1FDBJANXReuqtfiSMZ4B9utGqfWXKwtPxyQ
+ ZFLVdqscNOMAmDrol5bN4AAZxErDo7g2KTOdZCrfzstRqCYADh93TL3
 X-Developer-Key: i=parthiban@linumiz.com; a=ed25519;
  pk=PrcMZ/nwnHbeXNFUFUS833wF3DAX4hziDHEbBp1eNb8=
 X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
@@ -99,21 +98,21 @@ X-AntiAbuse: Sender Address Domain - linumiz.com
 X-BWhitelist: no
 X-Source-IP: 122.165.245.213
 X-Source-L: No
-X-Exim-ID: 1tR8Cr-000bEK-1k
+X-Exim-ID: 1tR8Cv-000bEK-2Y
 X-Source: 
 X-Source-Args: 
 X-Source-Dir: 
 X-Source-Sender: ([127.0.1.1]) [122.165.245.213]:50828
 X-Source-Auth: parthiban@linumiz.com
-X-Email-Count: 117
+X-Email-Count: 128
 X-Org: HG=dishared_whb_net_legacy;ORG=directi;
 X-Source-Cap: bGludW1jbWM7aG9zdGdhdG9yO21kLWluLTc5LndlYmhvc3Rib3gubmV0
 X-Local-Domain: yes
-X-CMAE-Envelope: MS4xfHflXJpJdSf9wODt2zeDD5o2o3P+yJl/U4PN1SlZsgwfZvPRMacIlxzqBo3TQKUuh08hwU/URhO8pyyz2IJX9JUuF2adAFiHjpKOKcRPFt1r4VSYOXNy
- 5SKZEgM9l/nxMaT5QyXxowTSM8FtEyYUamLJhTzCd2ts+7iAI+vU/di7h3W4+roxpQckhL81hOpDT0l0fbUY5nJ5uO+XrPGGrTZkebxM5UGTW1nXZy66Jqqj
+X-CMAE-Envelope: MS4xfK6KweQ5bsKqnV867bi3hV53r8JMnctLINskL5xBeiLRhMVi/19+iQF2iz+CdAAncAUaDTyFxdu4IWYa1DjlNOuMJrW01xN9qaZEFuV7wUSQWFgyl8+R
+ NrSSeCFYtg3+xyqA6RVI7Q1pwJlABiefr1TbXIrWaCdIUTZWuBIWqgwnsJA2VxGVT5H3MFz9EbGr+b6liYseERCIVtKPwuEo6yYbHUyjmn+bLLnEYf99MY5+
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_030857_040451_1A518B34 
-X-CRM114-Status: UNSURE (   4.80  )
+X-CRM114-CacheID: sfid-20241227_030859_821248_17F5C31C 
+X-CRM114-Status: UNSURE (   4.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -131,36 +130,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-A100/A133 uses one mixer without rotation support, which is same
-as sun8i v3s. Add it with fallback to v3s compatible.
+lvds in A100/A133 platform uses phy from DSI block, which needs
+to be handled in phy driver. Add phy property to tcon with
+generic name 'phy'.
 
 Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
 ---
- .../devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml       | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml       | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml
-index 3e00905b66ca..ed038967929b 100644
---- a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml
-+++ b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml
-@@ -23,6 +23,7 @@ properties:
-       - const: allwinner,sun8i-h3-de2-clk
-       - const: allwinner,sun8i-v3s-de2-clk
-       - const: allwinner,sun50i-a64-de2-clk
-+      - const: allwinner,sun50i-a100-de2-clk
-       - const: allwinner,sun50i-h5-de2-clk
-       - const: allwinner,sun50i-h6-de3-clk
-       - items:
-@@ -31,6 +32,9 @@ properties:
-       - items:
-           - const: allwinner,sun20i-d1-de2-clk
-           - const: allwinner,sun50i-h5-de2-clk
-+      - items:
-+          - const: allwinner,sun50i-a100-de2-clk
-+          - const: allwinner,sun8i-v3s-de2-clk
+diff --git a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+index 724d93b9193b..6d8ae781c230 100644
+--- a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
++++ b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+@@ -115,6 +115,12 @@ properties:
+           - const: edp
+           - const: lvds
  
-   reg:
-     maxItems: 1
++  phys:
++    maxItems: 1
++
++  phy-names:
++    const: phy
++
+   ports:
+     $ref: /schemas/graph.yaml#/properties/ports
+ 
 
 -- 
 2.39.5
