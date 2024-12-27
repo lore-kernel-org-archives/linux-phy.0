@@ -4,109 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF6D5E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 14:38:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5315E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 17:43:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	Cc:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oRIS/Di9Jm0jKyGLs2MHvFLYqFWpPUK/M1lfNWhAt2c=; b=nywhPIQjL8qWaQ
-	MkQU9oT9TM0eU0YEyYta/fj2eocAGTjFrdowODme0cBFMyZ/+EXPDTSAQKklM9vvI4IOUf3YPKkSA
-	HRlwc1QBnHZhtbJpJh+ntERbduUUe6xQNHVCnYkXH2hKdU5RlLRVOVYgF3Z0AzwRNnwuhKdapUoc1
-	MmeMOR5BKbrBP/hMTS9rZWIbTDc3LYGpZE/w29fIhP/LleaoUDuuBbD4oX9LcZl9VvTSOvbpPAYPe
-	jzZHhV8CNkB5EaYYcExv4RosI/xKb7USNpLQf2xwITw8y2kKDi1W2QMggWvXcN6URG3GMLrQ2YKMI
-	nViIg635ONEZFRF7sFZA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+0aTDlWhECVHW/3+lXBwusNGgf/Dw6MyPvDc9EWd6es=; b=CuU3S2M5n9bGW+365Cf0BTu2KE
+	ouO6YHKRPLVTjmoYsLZHQV46Yn7NlK+Fo1+Xkkm2+ZWO3E5/CSdQzafsHZrsIQQvJRl0XsEHJmSyT
+	2f8D7I7rr6vBgZrAi3QuHXW/J6cEQ2Qpjlj3RRRSmB4n+UfshVFLjTSrwSVXPIkevhjhdhyh4I9Gn
+	6nquF/AIPrvlLlrFfwzM8VjNZU5DwzkGvpOUlc0AbZA6qvmR1RAh8hgPCs4aw6XBgsnG06DMXiXAJ
+	tfuZ/HdhaHt4WaWqUIm8J90/MU90pgW53uqZSeO9QMbnGcH6PQH52ob1Vld/mmyxwkInr+VxBcJZ0
+	Yn48Lq8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRBTd-00000000Oo7-3CGl;
-	Fri, 27 Dec 2024 14:38:09 +0000
-Received: from omta40.uswest2.a.cloudfilter.net ([35.89.44.39])
+	id 1tREN6-00000000kAt-20Vc;
+	Fri, 27 Dec 2024 17:43:36 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRBSS-00000000Oea-0qtK
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Dec 2024 14:36:58 +0000
-Received: from eig-obgw-5001a.ext.cloudfilter.net ([10.0.29.139])
-	by cmsmtp with ESMTPS
-	id Qze0tEQkMvH7lRBSQtKGNK; Fri, 27 Dec 2024 14:36:55 +0000
-Received: from md-in-79.webhostbox.net ([43.225.55.182])
-	by cmsmtp with ESMTPS
-	id RBSOtc3zxmNYjRBSPtBZom; Fri, 27 Dec 2024 14:36:54 +0000
-X-Authority-Analysis: v=2.4 cv=fb9myFQF c=1 sm=1 tr=0 ts=676ebb86
- a=LfuyaZh/8e9VOkaVZk0aRw==:117 a=kofhyyBXuK/oEhdxNjf66Q==:17
- a=IkcTkHD0fZMA:10 a=RZcAm9yDv7YA:10 a=-pn6D5nKLtMA:10 a=VwQbUJbxAAAA:8
- a=vU9dKmh3AAAA:8 a=CPlf_J6x6-pEMq4byrgA:9 a=QEXdDO2ut3YA:10
- a=rsP06fVo5MYu2ilr0aT5:22 a=ZCPYImcxYIQFgLOT52_G:22
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
-	; s=default; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
-	References:To:Subject:Cc:MIME-Version:Date:Message-ID:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=wKy2kDXPQg5LSJ+WcxFbAZTOLG7mg+guZsqD/SyCt7Y=; b=YG1iVMf9n8nyhxGhXJ9JXjShIz
-	CyyVHB+uRKIVJ9+f3o66/63AWQ+e2tf91kaQlq03ZafdNpCFtSO20QO3/hkxSe3kZz2cMuN+OzSV/
-	gCH7NCp2ujKMEdg+x2fu58mSTaHD3ySNgyVpsQoPtbpHHFpHKT0CqpPYN+MJQ2Y2GY4JyMpuRZHsf
-	QfzCR7j02pPHzgiDiLeZeI3ubt//2OyB5LFWqTbPTRkhmqJoJi+H28/pzQGqEdZlyWTWH6CgYlj7m
-	YYTVSgzuV+COIIuZLeZcXAFZ+Qdrq9iKj3Z4UoIxMCpDDNX1ckqDTEzZVBcEcp5tYbwQ5s/Ibe/N6
-	9vkQx57Q==;
-Received: from [122.165.245.213] (port=40816 helo=[192.168.1.5])
-	by md-in-79.webhostbox.net with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <parthiban@linumiz.com>)
-	id 1tRBS8-003aTF-2w;
-	Fri, 27 Dec 2024 20:06:36 +0530
-Message-ID: <314b6bbe-613e-41a6-955e-50db6e11ef8e@linumiz.com>
-Date: Fri, 27 Dec 2024 20:06:30 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Cc: parthiban@linumiz.com, iommu@lists.linux.dev, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-phy@lists.infradead.org
-Subject: Re: [PATCH RESEND 00/22] Add support for A100/A133 display
-To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>,
- Simona Vetter <simona@ffwll.ch>, Michael Turquette
- <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Linus Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>
+	id 1tRELv-00000000k34-1JD9;
+	Fri, 27 Dec 2024 17:42:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0D9995C4CA7;
+	Fri, 27 Dec 2024 17:41:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 52404C4CED0;
+	Fri, 27 Dec 2024 17:42:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1735321342;
+	bh=0bFdHqCzn5f2CvXlfqGybIGbQK8L/GTLyJ6yIAZPZGs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=uerjnRn9qAtLEzUGvZUSOs4DGdLkb3mptAl+BnZV7M2SiEq/UIHP/l0jB2/M0W039
+	 cJliRm9pTDW4UIfHiEjFo6x8zVtR9urPmcZNvivkXRGKgTaBmSVnVtlQZyurpnuZH7
+	 ENOWgO44kAx4z4xp0qAJtcVsJNdBm7N90JE935SHx/bA/ZVe2hKaF3LcOMU7Hh1MYg
+	 Ro8u/DqH21EFFVPzpb1bZmIkCLZ0fYL8S/r9GY7DpWgmluLOItuC9q2xLHgwIS4kkJ
+	 jJhuQMuzsppKHclV2BRo23cKrw+fR8CbGdTG3n90j3sMPl80w7iYFi70InS2zL3imK
+	 WJKmnYJPtwe3g==
+Date: Fri, 27 Dec 2024 17:42:14 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Parthiban Nallathambi <parthiban@linumiz.com>
+Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
+	Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH RESEND 01/22] dt-bindings: iommu: sun50i: remove resets
+ from required property
+Message-ID: <20241227-backward-sandfish-3734dadba8a4@spud>
 References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-Content-Language: en-US
-From: Parthiban <parthiban@linumiz.com>
-Organization: Linumiz
-In-Reply-To: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
-X-AntiAbuse: Primary Hostname - md-in-79.webhostbox.net
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - linumiz.com
-X-BWhitelist: no
-X-Source-IP: 122.165.245.213
-X-Source-L: No
-X-Exim-ID: 1tRBS8-003aTF-2w
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: ([192.168.1.5]) [122.165.245.213]:40816
-X-Source-Auth: parthiban@linumiz.com
-X-Email-Count: 2
-X-Org: HG=dishared_whb_net_legacy;ORG=directi;
-X-Source-Cap: bGludW1jbWM7aG9zdGdhdG9yO21kLWluLTc5LndlYmhvc3Rib3gubmV0
-X-Local-Domain: yes
-X-CMAE-Envelope: MS4xfLGniYOBk4eOpyOJi2wSX6NM03lzD9eXBcKlIcj3vxDbC60hKnef7vLrQ+8/ZaDgwmqdBseLuV/6EcCLO/mJonl93sAF18/qJemcCyrLWH/aIjVnKY4Q
- bJv99s9pdo2VSqqUdErI05+WZhCSAISAZM2pE4z+9I5cJg0UJqRj5aCEM+RA5jINK+9xadMjx7jwSyArLAEenQyodCaDdp4nIgRtQ8u4qpRpnOpZ2HagZ2b4
+ <20241227-a133-display-support-v1-1-abad35b3579c@linumiz.com>
+MIME-Version: 1.0
+In-Reply-To: <20241227-a133-display-support-v1-1-abad35b3579c@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_063656_263470_2C0669EE 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20241227_094223_442531_CC1131C3 
+X-CRM114-Status: GOOD (  14.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,44 +85,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4436835412589590169=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/27/24 6:30 PM, Parthiban Nallathambi wrote:
-> This series depends on [1] for the eMMC/MMC controller to work and
-> [2] (lined up for 6.14) which adds support for the sram nodes and
-> display engine extends it's usage. Idea of this series to get initial
-> feedback and adjust, which will be rebased for 6.14 once [2] is merged.
-> 
-> This patch series adds support for A133 display pipeline based on
-> LVDS. dt-bindigs are organized in the start and later with code
-> changes.
-> 
-> PHY is shared between DSI and LVDS, so to control the PHY specific
-> to DSI/LVDS, phy_ops set_mode is introduced. To enable the DSI
-> using set_mode, analog control register MIPI Enable is used, which
-> may not be available for A31 (shares the same driver).
-> 
-> Otherwise, A133 also got hidden independent display engine i.e
-> mixer + tcon top to handle parallel display. But this patch series
-> adds only support for the 1 mixer which is documented.
-> 
-> [1]: https://lore.kernel.org/linux-sunxi/20241109003739.3440904-1-masterr3c0rd@epochal.quest/
-> [2]: https://lore.kernel.org/linux-sunxi/20241218-a100-syscon-v2-0-dae60b9ce192@epochal.quest/
-> 
+
+--===============4436835412589590169==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="jmNM+Wy3mOmacT9A"
+Content-Disposition: inline
+
+
+--jmNM+Wy3mOmacT9A
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Dec 27, 2024 at 06:30:50PM +0530, Parthiban Nallathambi wrote:
+> iommu in a133/a100 does not have reset control. remove it
+> from required property to make it optional.
+
+Merge this with patch 2, making the reset required for the existing
+devices and not permitted (false) for your new devices please.
+
+>=20
 > Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
-Apologize for polluting with resend again. My internal mail server got blocked due to
-volume count, which resulted in incomplete series again.
+> ---
+>  Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml |=
+ 1 -
+>  1 file changed, 1 deletion(-)
+>=20
+> diff --git a/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-=
+iommu.yaml b/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-io=
+mmu.yaml
+> index a8409db4a3e3..03176f68485b 100644
+> --- a/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.y=
+aml
+> +++ b/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.y=
+aml
+> @@ -42,7 +42,6 @@ required:
+>    - reg
+>    - interrupts
+>    - clocks
+> -  - resets
+> =20
+>  additionalProperties: false
+> =20
+>=20
+> --=20
+> 2.39.5
+>=20
 
-I will fix the mail server issue before resending the series. Sorry.
+--jmNM+Wy3mOmacT9A
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Thanks,
-Parthiban
+-----BEGIN PGP SIGNATURE-----
 
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ27m9gAKCRB4tDGHoIJi
+0gDTAQCkD8Xhuyviy0vhXeZ4H+KJGL4kLQQgH/BbJQrWmtEiKgEA0tU2Y5TQpef1
+SQ6NyzqbRTQrGqT89fyibG21/6vErQs=
+=VGkJ
+-----END PGP SIGNATURE-----
+
+--jmNM+Wy3mOmacT9A--
+
+
+--===============4436835412589590169==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4436835412589590169==--
+
