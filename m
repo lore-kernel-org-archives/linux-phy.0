@@ -4,62 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66CE9E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 09:03:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82575E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 10:47:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
+	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/R34nuzqcm1y2xI/hzrn2DxiSTxJ8cacABNWh1rJKng=; b=WGCD4LiBatPs2N
-	vkJ6PWYL9qy4d2lE7fMevryXopEBaUZAiBRqpStuZVsT0Zdaov4KmGcQmF7iVpScMjSQbqXWZEle0
-	9x0sK46wbBU5NERx1CfUz+Cnok+NWD/sNURvedIRtQt1ASa8RFxOUTLu1RBwU78G9boNv9y9SPXzq
-	sLwPHQm0rJeuKdQsmXKPOthmyXlHuHTr4Rd8Qt0HwX1/LzRfjdafwIRFtXnOZN10wbg/+QhRr+2NP
-	nBhlw78vHFR13hIsCiAUPHIWkTGgOGKJlNYf1roexpKBBlk1SwgowMKa8E+OWpZprqXIBmB+71E/M
-	RwgAYLS2YFQ1GT9sWqVQ==;
+	List-Owner; bh=mc6ixlkdGe4tUgx/AxWISP1QyWYJqZdPl36zs9Zd/74=; b=HsDF3rbwOngjvK
+	hAYHBbgOWP1SX5FviMi0KKaPyUOKQHUQtEQbEhmg2yic/B2uo+z4qC0FO3xCBsYNwPEWYjcvHmXQN
+	MgGcfEjnJWDKQbBOVKVo3GH8n/cgxTXtiWHhFKlU77ti346A1ISlnUktGyNQGx59Q5pQAQIkcAyIt
+	iZYgY2XKaNNSkee/odz8g9j/n69bFskEVqCX8ylBWuD9AUzDcqMqLq7aYBWlvzh8ZmJn9NhxECKTT
+	E0ouNi2HwA4puI4WfkQ3p8/2ui5tk6xHr4w09B7zEoI5ZOUmiK9JXWlllbIrBJx8g1NZZFmuOHw5u
+	JZwh3fT0udtBxn5llu1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR6FM-0000000HRpx-0Zwe;
-	Fri, 27 Dec 2024 09:03:04 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR6C8-0000000HRKL-0y2s;
-	Fri, 27 Dec 2024 08:59:45 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 1DD5D5C621C;
-	Fri, 27 Dec 2024 08:59:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1F0EC4CED0;
-	Fri, 27 Dec 2024 08:59:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735289983;
-	bh=Ha9eaZKe2pPLaVPj/BlrvwxCVnKMNdxIOtRX6jvdDl4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=b0OgJ3LWV3lMZcfL0iy221Bm/Ia5/6HMN8xhv1smt/qqzKgO37JkxWiXmyBruURwU
-	 ZzxARQxgi68rbBqmP33CfcmCzIhixmWwdAheU/6St2LKkvpL0g92hNYLDgopwbBxFh
-	 YP8WVjpFltuTYCTwGYrlHsClX992XwjP5Ipsl9wAuxTs8W527T8hqXkQmdOWWiKPZr
-	 O/9Z5gX8uKbBkcJOjhYT4WUinUjUVt2XZ96B0x0+lQfbXmxCCP4WvYsw2TYr2XdwpK
-	 yS5lREtCxJvHxD0+XNTB8xKgvZG6YhFJJ8RzX2T+GTgw1euxmLV7Dy8HG/qIO2elgc
-	 1Z2QNDajBKpSg==
-Date: Fri, 27 Dec 2024 09:59:40 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Kever Yang <kever.yang@rock-chips.com>
-Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org, 
-	devicetree@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: rockchip: Add rk3562
- naneng-combophy compatible
-Message-ID: <m3iznr4xjh5hgnca4jyj64uejesf3ulgfpycvrw5phrirca5wv@hx5rx2tumw36>
-References: <20241224094217.3817100-1-kever.yang@rock-chips.com>
+	id 1tR7ry-000000000H1-0U0n;
+	Fri, 27 Dec 2024 10:47:02 +0000
+Received: from m16.mail.163.com ([220.197.31.2])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tR7ru-000000000C2-3yuP;
+	Fri, 27 Dec 2024 10:47:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Subject:Content-Type:MIME-Version:
+	Message-ID; bh=YnthY4zZdSbrOKLUnSFJOycJreOsuayfzdspDnc2WqI=; b=S
+	BF4//NBwO4oYyIcRbXZSVRPixCAyvfmBwfUOaZswjJwD7NxyhzpY7bndDmchh06i
+	4ca0RAcu3+wApiMbqeKsORhhndBO1CAc3mFMysbPUE9uFMjP9BVsPL0bgBoMSsm0
+	duLZBLKEfYgF+7XfMljlk3Ne78S7O+n5UYyfJnsi1s=
+Received: from andyshrk$163.com ( [103.29.142.67] ) by
+ ajax-webmail-wmsvr-40-130 (Coremail) ; Fri, 27 Dec 2024 18:46:32 +0800
+ (CST)
+X-Originating-IP: [103.29.142.67]
+Date: Fri, 27 Dec 2024 18:46:32 +0800 (CST)
+From: "Andy Yan" <andyshrk@163.com>
+To: "Krzysztof Kozlowski" <krzk@kernel.org>
+Cc: heiko@sntech.de, cristian.ciocaltea@collabora.com, 
+	detlev.casanova@collabora.com, krzk+dt@kernel.org, vkoul@kernel.org, 
+	kishon@kernel.org, robh@kernel.org, sebastian.reichel@collabora.com, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-rockchip@lists.infradead.org, 
+	"Andy Yan" <andy.yan@rock-chips.com>
+Subject: Re:Re: [PATCH] dt-bindings: phy: add rk3576 hdptx phy
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
+ Copyright (c) 2002-2024 www.mailtech.cn 163com
+In-Reply-To: <gkx4rmkwhngqsn5wotp3mdk6nn4oydrzgkfwhansd6j5ap5pek@rowfnww34rsd>
+References: <20241224091919.267698-1-andyshrk@163.com>
+ <gkx4rmkwhngqsn5wotp3mdk6nn4oydrzgkfwhansd6j5ap5pek@rowfnww34rsd>
+X-NTES-SC: AL_Qu2YB/6SuUsi5CeQbOkfmkcVgOw9UcO5v/Qk3oZXOJF8jADoxjoPQEJSJELo/860NC+UmgmGTTRuyOZHZoV9TZwxc2Q0W5vhsxfDZXdaIOeosA==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241224094217.3817100-1-kever.yang@rock-chips.com>
+Message-ID: <5de24299.9cde.19407b99e5c.Coremail.andyshrk@163.com>
+X-Coremail-Locale: zh_CN
+X-CM-TRANSID: gigvCgD3HyGJhW5n27FKAA--.24661W
+X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqQ7CXmdufw6o2gACsz
+X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_005944_313972_3D4903B2 
-X-CRM114-Status: UNSURE (   5.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241227_024659_384107_6F6115A0 
+X-CRM114-Status: GOOD (  11.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,21 +74,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Dec 24, 2024 at 05:42:15PM +0800, Kever Yang wrote:
-> rk3562 use the same Naneng Combo Phy driver as rk3568.
-
-Usual comments...
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CkhpIEtyenlzenRvZiwKCkF0IDIwMjQtMTItMjcgMTY6NTU6MjcsICJLcnp5c3p0b2YgS296bG93
+c2tpIiA8a3J6a0BrZXJuZWwub3JnPiB3cm90ZToKPk9uIFR1ZSwgRGVjIDI0LCAyMDI0IGF0IDA1
+OjE5OjEzUE0gKzA4MDAsIEFuZHkgWWFuIHdyb3RlOgo+PiBGcm9tOiBBbmR5IFlhbiA8YW5keS55
+YW5Acm9jay1jaGlwcy5jb20+Cj4+IAo+PiBUaGUgSERQVFggUEhZIG9uIHJrMzU3NiBpcyBjb21w
+YXRpYmxlIHdpdGggaXQgb24KPj4gcmszNTg4Lgo+Cj5QbGVhc2Ugd3JhcCBjb21taXQgbWVzc2Fn
+ZSBhY2NvcmRpbmcgdG8gTGludXggY29kaW5nIHN0eWxlIC8gc3VibWlzc2lvbgo+cHJvY2VzcyAo
+bmVpdGhlciB0b28gZWFybHkgbm9yIG92ZXIgdGhlIGxpbWl0KToKPmh0dHBzOi8vZWxpeGlyLmJv
+b3RsaW4uY29tL2xpbnV4L3Y2LjQtcmMxL3NvdXJjZS9Eb2N1bWVudGF0aW9uL3Byb2Nlc3Mvc3Vi
+bWl0dGluZy1wYXRjaGVzLnJzdCNMNTk3Cj4KPj4gCj4+IEFkZCBjb21wYXRpYmxlIGZvciBpdC4K
+Pgo+IkFkZCBjb21wYXRpYmxlIGZvciB0aGUgSERQVFggUEhZIG9uIHJrMzU3Niwgd2hpY2ggaXMg
+ZnVsbHkgY29tcGF0aWJsZQo+d2l0aCBmb28gYmFyLiIKPgo+T25lIHNlbnRlbmNlLgoKV2lsbCBk
+byBpbiBWMiwgdGhhbmtzLgoKPgo+PiAKPj4gU2lnbmVkLW9mZi1ieTogQW5keSBZYW4gPGFuZHku
+eWFuQHJvY2stY2hpcHMuY29tPgo+PiAtLS0KPj4gCj4+ICAuLi4vZGV2aWNldHJlZS9iaW5kaW5n
+cy9waHkvcm9ja2NoaXAscmszNTg4LWhkcHR4LXBoeS55YW1sIHwgNyArKysrKy0tCj4+ICAxIGZp
+bGUgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+PiAKPj4gZGlmZiAt
+LWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcm9ja2NoaXAscmsz
+NTg4LWhkcHR4LXBoeS55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3Bo
+eS9yb2NrY2hpcCxyazM1ODgtaGRwdHgtcGh5LnlhbWwKPj4gaW5kZXggODRmZTU5ZGJjZjQ4Li4z
+NjRkYjIwNDljZTIgMTAwNjQ0Cj4+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9waHkvcm9ja2NoaXAscmszNTg4LWhkcHR4LXBoeS55YW1sCj4+ICsrKyBiL0RvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcm9ja2NoaXAscmszNTg4LWhkcHR4LXBoeS55
+YW1sCj4+IEBAIC0xMSw4ICsxMSwxMSBAQCBtYWludGFpbmVyczoKPj4gIAo+PiAgcHJvcGVydGll
+czoKPj4gICAgY29tcGF0aWJsZToKPj4gLSAgICBlbnVtOgo+PiAtICAgICAgLSByb2NrY2hpcCxy
+azM1ODgtaGRwdHgtcGh5Cj4+ICsgICAgb25lT2Y6Cj4+ICsgICAgICAtIGNvbnN0OiByb2NrY2hp
+cCxyazM1ODgtaGRwdHgtcGh5Cj4+ICsgICAgICAtIGl0ZW1zOgo+Cj5XaHkgaXRlbXM/Cj4KPj4g
+KyAgICAgICAgICAtIGVudW06Cj4KPldoeSBlbnVtPwo+Cj4+ICsgICAgICAgICAgICAgIC0gcm9j
+a2NoaXAscmszNTc2LWhkcHR4LXBoeQo+Cj5TbyB0aGF0J3MganVzdCBlbnVtIHdpdGggcHJldmlv
+dXMgZW50cnkuLi4gYnV0IHlvdSBzYWlkIGNvbXBhdGlibGUsIHlldAo+bm90aGluZyBpcyBoZXJl
+LiBUZXN0IHlvdXIgcGF0Y2hlcyAtIERUUyB3aWxsIGZhaWwgb24gdGhpcy4gRHJpdmVyIGFzCj53
+ZWxsIChhc3N1bWluZyB5b3UgZXhwcmVzc2VkIHByb3Blcmx5IGNvbXBhdGliaWxpdHkpLgoKSXMg
+dGhpcyB0aGUgcmlnaHQgd2F5IHRvIHdyaXRlIGl0IO+8n++8mgoKcHJvcGVydGllczoKICAgY29t
+cGF0aWJsZToKLSAgICBlbnVtOgotICAgICAgLSByb2NrY2hpcCxyazM1ODgtaGRwdHgtcGh5Cisg
+ICAgb25lT2Y6CisgICAgICAtIGVudW06CisgICAgICAgICAgLSByb2NrY2hpcCxyazM1ODgtaGRw
+dHgtcGh5CisgICAgICAtIGl0ZW1zOgorICAgICAgICAgIC0gZW51bToKKyAgICAgICAgICAgICAg
+LSByb2NrY2hpcCxyazM1NzYtaGRwdHgtcGh5CisgICAgICAgICAgLSBjb25zdDogcm9ja2NoaXAs
+cmszNTg4LWhkcHR4LXBoeQo+Cj5CZXN0IHJlZ2FyZHMsCj5Lcnp5c3p0b2YKLS0gCmxpbnV4LXBo
+eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
