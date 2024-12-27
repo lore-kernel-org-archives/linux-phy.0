@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEE74E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 08:58:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66CE9E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 09:03:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+W4NF7GyLWH7pmH58977TiNugv9FMFS9Ay6dyzXlDp4=; b=oRAix57mAyh1bT
-	NezVi0/JtnuOYWPc6B2UYYk/k+lOroOoR9LZ8H1PcL4jkz8Jn7C9U82Ib3jC9ZN5sUw2Pf3I0xQOs
-	Ti+kyuz4DUQvtMXdzGDsd4TUxnkzs7tydP2ynEGYBR2EMAI8Zi16H7dzNeGuNZXee9F9HZkRGyFhd
-	SU1veMea2lpiuRosvZUYS5ReIyckU0wTO4ojDtxBdT1Kf6WXoAncakSqeO784EA+yoQ6fzL/nDOqI
-	MkaR8EvQEyMklTPYw5zDjmhWlC0XPc9zKJFZsjDHyUPT1NVt1puKmVKaFZY9Ply7UFVfoKcBwymEt
-	bF/fqUClITrJHw2GHxCw==;
+	List-Owner; bh=/R34nuzqcm1y2xI/hzrn2DxiSTxJ8cacABNWh1rJKng=; b=WGCD4LiBatPs2N
+	vkJ6PWYL9qy4d2lE7fMevryXopEBaUZAiBRqpStuZVsT0Zdaov4KmGcQmF7iVpScMjSQbqXWZEle0
+	9x0sK46wbBU5NERx1CfUz+Cnok+NWD/sNURvedIRtQt1ASa8RFxOUTLu1RBwU78G9boNv9y9SPXzq
+	sLwPHQm0rJeuKdQsmXKPOthmyXlHuHTr4Rd8Qt0HwX1/LzRfjdafwIRFtXnOZN10wbg/+QhRr+2NP
+	nBhlw78vHFR13hIsCiAUPHIWkTGgOGKJlNYf1roexpKBBlk1SwgowMKa8E+OWpZprqXIBmB+71E/M
+	RwgAYLS2YFQ1GT9sWqVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR6Aa-0000000HQt7-1uju;
-	Fri, 27 Dec 2024 08:58:08 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tR6FM-0000000HRpx-0Zwe;
+	Fri, 27 Dec 2024 09:03:04 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR68a-0000000HQXo-086n;
-	Fri, 27 Dec 2024 08:56:05 +0000
+	id 1tR6C8-0000000HRKL-0y2s;
+	Fri, 27 Dec 2024 08:59:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 7CFDAA41395;
-	Fri, 27 Dec 2024 08:54:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4441FC4CED0;
-	Fri, 27 Dec 2024 08:56:02 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1DD5D5C621C;
+	Fri, 27 Dec 2024 08:59:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1F0EC4CED0;
+	Fri, 27 Dec 2024 08:59:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735289763;
-	bh=bUCK5MKJ+rZPzsvb6rQdvPZgK8diuXQSd1E+oQQ1EPo=;
+	s=k20201202; t=1735289983;
+	bh=Ha9eaZKe2pPLaVPj/BlrvwxCVnKMNdxIOtRX6jvdDl4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=IdGotcxFGxaQwRtqRJMgy/G5NuvFm+yByE4wjsYbW+d/s6sAxe2GdR5ZnLkuL7utR
-	 MmyAAZBZulCevbJibz5AlksDeM3Cp7VuOV06ZPOHvDT4uEdg46uB3xRWzeTzh5p7/r
-	 tUjnMNZJ3pfL9sJuRnBn60DV1RdycB90asTSkIdOWeui1CbMDvKM9wpTjtmmDj456c
-	 N0z73862Ax4psGr291h7xQofNqbNLUiudy4BDcmKM4sNSzrL5M7NzfDFMr4AXsgwki
-	 cmhh2efOQkCUbWRZ/tee/8Y/ggUa6jIOtyI4WfRu3qADO2YZnnEc0tJT0SGtgvLt33
-	 jAamby2KGMGvw==
-Date: Fri, 27 Dec 2024 09:55:59 +0100
+	b=b0OgJ3LWV3lMZcfL0iy221Bm/Ia5/6HMN8xhv1smt/qqzKgO37JkxWiXmyBruURwU
+	 ZzxARQxgi68rbBqmP33CfcmCzIhixmWwdAheU/6St2LKkvpL0g92hNYLDgopwbBxFh
+	 YP8WVjpFltuTYCTwGYrlHsClX992XwjP5Ipsl9wAuxTs8W527T8hqXkQmdOWWiKPZr
+	 O/9Z5gX8uKbBkcJOjhYT4WUinUjUVt2XZ96B0x0+lQfbXmxCCP4WvYsw2TYr2XdwpK
+	 yS5lREtCxJvHxD0+XNTB8xKgvZG6YhFJJ8RzX2T+GTgw1euxmLV7Dy8HG/qIO2elgc
+	 1Z2QNDajBKpSg==
+Date: Fri, 27 Dec 2024 09:59:40 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Andy Yan <andyshrk@163.com>
-Cc: heiko@sntech.de, cristian.ciocaltea@collabora.com, 
-	detlev.casanova@collabora.com, krzk+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
-	robh@kernel.org, sebastian.reichel@collabora.com, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, 
-	Andy Yan <andy.yan@rock-chips.com>
-Subject: Re: [PATCH] dt-bindings: phy: add rk3576 hdptx phy
-Message-ID: <hh3zowf257dwwp3uo7al5l5ql7hewy7j5rzjqdt3eqvd653mdj@4tgjm6zdsuyi>
-References: <20241224091919.267698-1-andyshrk@163.com>
+To: Kever Yang <kever.yang@rock-chips.com>
+Cc: heiko@sntech.de, linux-rockchip@lists.infradead.org, 
+	devicetree@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-phy@lists.infradead.org, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: rockchip: Add rk3562
+ naneng-combophy compatible
+Message-ID: <m3iznr4xjh5hgnca4jyj64uejesf3ulgfpycvrw5phrirca5wv@hx5rx2tumw36>
+References: <20241224094217.3817100-1-kever.yang@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241224091919.267698-1-andyshrk@163.com>
+In-Reply-To: <20241224094217.3817100-1-kever.yang@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_005604_143048_95442BDF 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20241227_005944_313972_3D4903B2 
+X-CRM114-Status: UNSURE (   5.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,23 +76,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Dec 24, 2024 at 05:19:13PM +0800, Andy Yan wrote:
-> From: Andy Yan <andy.yan@rock-chips.com>
-> 
-> The HDPTX PHY on rk3576 is compatible with it on
-> rk3588.
-> 
-> Add compatible for it.
-> 
-> Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
-> ---
-> 
->  .../devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml | 7 +++++--
->  1 file changed, 5 insertions(+), 2 deletions(-)
+On Tue, Dec 24, 2024 at 05:42:15PM +0800, Kever Yang wrote:
+> rk3562 use the same Naneng Combo Phy driver as rk3568.
 
-Also: where are any users of this binding?
-
-We don't take bindings without *UPSTREAM* users.
+Usual comments...
 
 Best regards,
 Krzysztof
