@@ -4,117 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97551E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 13:20:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 419A8E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 13:22:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4UtJ8+uNLLUDltaQG5XYHjfFx2subX+gnOJguLHRDtE=; b=LoUxDigBcwuEXb
-	oRkuQbrLIgk8dQKO7OU8tVdipjFdDnrAtlbE1/xjB5H1pE7C+/9tJS2ZbsiR7AY/3WpmkEFG3VUwT
-	McO9GuoYh91TXOxrvq2hAPtDTe9b6KZXTV0rw7dbwDoDLADGIB+W4i7z3zbgIUDwNxpZ4FA/+P/J4
-	CRyNYJ39iknbWyrS42k1GZIBeVyoXQTShcMlj69JRw3AvmyVxRdAeh8LnM+PV0osLymAkgHlfZChQ
-	RAad7rClvE+0lZPOHPwHdq0EChPgwBqW374LdG+HNZNoaZrVvXmTUFhSr3fjagij5v8jXKI1u/0LF
-	5SG39OLm7ZIHpL/CbMSw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=w0iqfqkTjyFgX4IskAKE82FkWNzJc/71+kjma0mAGpI=; b=JoRkAOzI2sx6l0Ud/numKMBNFW
+	WOeiR5vgg0BTgfV2g4+2sN1kF2+tT8762pIc0R9hs66zZUklAQq3x2oXrdsWNIoLIb7asA+yNv79o
+	A33VGIAt7aoWokqFISbuoHBUuIwCiUuu9bYcoY5YGeNBN4aViBIMvbGJWTvPBchUpmc5JYlpcbnJv
+	KYwRSo42tdBbyJP9E96l4sqaQ7sh+FF1reqhGK5GmVVD/1kBkQvVhMbMerwCwBQWwbPvPaTtxb2qW
+	EtvOni7XunUAzXjdmzCm3eal2JUNEW5MgKqUzaphXaD/NAXquwcb0eabwNXKGcYJGP5KerZsZDvat
+	nDT9zmAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRAGG-00000000Gv6-1UaY;
-	Fri, 27 Dec 2024 13:20:16 +0000
-Received: from omta36.uswest2.a.cloudfilter.net ([35.89.44.35])
+	id 1tRAIX-00000000HD1-05lI;
+	Fri, 27 Dec 2024 13:22:37 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR9zP-00000000DPT-0CqU
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Dec 2024 13:02:52 +0000
-Received: from eig-obgw-6001a.ext.cloudfilter.net ([10.0.30.140])
-	by cmsmtp with ESMTPS
-	id R3jYtd4pYqvuoR9zOtyIEW; Fri, 27 Dec 2024 13:02:50 +0000
-Received: from md-in-79.webhostbox.net ([43.225.55.182])
-	by cmsmtp with ESMTPS
-	id R9zLtpEX22Zy0R9zNtuF3F; Fri, 27 Dec 2024 13:02:50 +0000
-X-Authority-Analysis: v=2.4 cv=Q4EZ4J2a c=1 sm=1 tr=0 ts=676ea57a
- a=LfuyaZh/8e9VOkaVZk0aRw==:117 a=kofhyyBXuK/oEhdxNjf66Q==:17
- a=IkcTkHD0fZMA:10 a=RZcAm9yDv7YA:10 a=-pn6D5nKLtMA:10 a=vU9dKmh3AAAA:8
- a=iM3t8g1HjrKnZeAfta4A:9 a=QEXdDO2ut3YA:10 a=rsP06fVo5MYu2ilr0aT5:22
- a=ZCPYImcxYIQFgLOT52_G:22
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
-	; s=default; h=Cc:To:In-Reply-To:References:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=pGwPFK3xv/ptVPYpkqFPS9qGRy0Y0xu/iUwb0C9nXWg=; b=pmGPcSZuC3UtraOQMwrzbKHax3
-	E8Nx/yeWSADCPcGNPYpaw+P6NGfeuhFIAf6v7J7zK+42jOhbMRYStW8lyU3XTnwyiWVzsIuIIbsTy
-	JyBAPJXvwrYPB3r+uRiFuIXw2fpy1SiT9C/VXwh7vbjFJEuucSnINdwK7twWDD3iJLLae+VF98uOk
-	UBs/3PFkJxcc6y1CFoSvR8N76wccSl3ybTRt6xPuNSSv5eY/0WASUvcTZJTNzyPLFQLpt1W5jh3Fu
-	P6UgOWk7yHx6MscgHfJGuTTNBl0hBqREJbOt7W5Reve5AOFvX+96ME99u7KwN30sDBENeZLjH3ZAg
-	/oTFc5KQ==;
-Received: from [122.165.245.213] (port=58270 helo=[127.0.1.1])
-	by md-in-79.webhostbox.net with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <parthiban@linumiz.com>)
-	id 1tR9zI-002EaQ-0q;
-	Fri, 27 Dec 2024 18:32:44 +0530
-From: Parthiban Nallathambi <parthiban@linumiz.com>
-Date: Fri, 27 Dec 2024 18:31:05 +0530
-Subject: [PATCH RESEND 16/22] clk: sunxi-ng: sun8i-de2: Add support for
- a100/a133
+	id 1tRACv-00000000GQT-16Tz;
+	Fri, 27 Dec 2024 13:16:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 14583A4189F;
+	Fri, 27 Dec 2024 13:14:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28A3BC4CEDD;
+	Fri, 27 Dec 2024 13:16:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1735305407;
+	bh=Z7yi+afmx/uhCK7HF/9WlkjMbcxfvg7Jvqse7KgInuc=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=Y8P2gXOnGvjWSR7pppbIn9+uiy3Y9Z0vluLjkcnTQQIn84OguGqJjddlR0L88yLuL
+	 6V421rGIxpejqKE1L75webWki/DzFlCQVYLG2EEYZUu5aMg7m/bqDDZBCa+9e0gYRc
+	 GQvakfM4lr1cf5OTDgZLfuizLhngqWC04+vFgSChXzU7C2wkSRI+1Y6TOZu5bddOva
+	 HpnmhmiemPafHX9z1Btzexlk1nP9OWD4z8Am666h9i+Xn7O6XfbI8llWno+XkcbsLg
+	 ufOCrrp0ZZ6Vo/+/3GmhHKoAhS02PuJ3f8CVCDc+tmhHOxbt6Qx7e2+DPzz9eMQkOs
+	 OKmBdYqFoXs3w==
+Date: Fri, 27 Dec 2024 07:16:45 -0600
 MIME-Version: 1.0
-Message-Id: <20241227-a133-display-support-v1-16-abad35b3579c@linumiz.com>
-References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-In-Reply-To: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, 
- Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
- Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Samuel Holland <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>, 
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-phy@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>, 
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Jernej Skrabec <jernej.skrabec@gmail.com>, devicetree@vger.kernel.org, 
+ Chen-Yu Tsai <wens@csie.org>, Joerg Roedel <joro@8bytes.org>, 
+ linux-gpio@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
+ iommu@lists.linux.dev, Linus Walleij <linus.walleij@linaro.org>, 
+ Simona Vetter <simona@ffwll.ch>, Stephen Boyd <sboyd@kernel.org>, 
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
- Simona Vetter <simona@ffwll.ch>, 
+ David Airlie <airlied@gmail.com>, Conor Dooley <conor+dt@kernel.org>, 
+ linux-sunxi@lists.linux.dev, Maxime Ripard <mripard@kernel.org>, 
+ linux-clk@vger.kernel.org, Samuel Holland <samuel@sholland.org>, 
  Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Linus Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: iommu@lists.linux.dev, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org, 
- linux-phy@lists.infradead.org, 
- Parthiban Nallathambi <parthiban@linumiz.com>
-X-Mailer: b4 0.14.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1735304469; l=1043;
- i=parthiban@linumiz.com; s=20241125; h=from:subject:message-id;
- bh=qvS7+D/RTyyMg86CwtqbsAA+5EMqHdzQTTB53paC81Y=;
- b=N9ntmarJ67ley2VGgxeWuYQv0E9we4Y5wGr7kNlCaHes/RdK6lBLAb/IJ/xnUt4Jwp/7Aojjc
- 68eY+zXN/6aCOjj9GymE4BDMsmJOX/2SaiU5O19gF+/5oHT5+b5fDmn
-X-Developer-Key: i=parthiban@linumiz.com; a=ed25519;
- pk=PrcMZ/nwnHbeXNFUFUS833wF3DAX4hziDHEbBp1eNb8=
-X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
-X-AntiAbuse: Primary Hostname - md-in-79.webhostbox.net
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - linumiz.com
-X-BWhitelist: no
-X-Source-IP: 122.165.245.213
-X-Source-L: No
-X-Exim-ID: 1tR9zI-002EaQ-0q
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: ([127.0.1.1]) [122.165.245.213]:58270
-X-Source-Auth: parthiban@linumiz.com
-X-Email-Count: 491
-X-Org: HG=dishared_whb_net_legacy;ORG=directi;
-X-Source-Cap: bGludW1jbWM7aG9zdGdhdG9yO21kLWluLTc5LndlYmhvc3Rib3gubmV0
-X-Local-Domain: yes
-X-CMAE-Envelope: MS4xfLcceQKupFoHnEc5xRagYyg9YG91KMQ1VNeKXHC3nHyhk/4vZPQ/tKYT7GO8KaLlLkajcVaDGLGy9J3Ga++Y1wAhiEpbj4h/4d28ebfDeHWgpDzGmRli
- 3oLp0hPa9n3bLo8xCBUYjvA4ubSN0HFKBtE08hDxu0ih9u95HNnbsd+QlTYG4YO60h9pVN4eq21NHLR1LwghK4Gp8Ox46YY4uI3GKbeKUVRoZe7rWANf1wfp
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Thomas Zimmermann <tzimmermann@suse.de>, 
+ linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>
+To: Parthiban Nallathambi <parthiban@linumiz.com>
+In-Reply-To: <20241227-a133-display-support-v1-3-13b52f71fb14@linumiz.com>
+References: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
+ <20241227-a133-display-support-v1-3-13b52f71fb14@linumiz.com>
+Message-Id: <173530540581.3097883.7476966654699325435.robh@kernel.org>
+Subject: Re: [PATCH 03/22] dt-bindings: clock: sun8i de2 clock: Add PLL com
+ clock
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_050251_106144_787CF052 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241227_051649_439721_05D491B7 
+X-CRM114-Status: GOOD (  11.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,37 +88,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Display clock uses 1 mixer without rotation support is same
-as v3s. There is also a hidden independent display engine
-with independent tcon_top available in A100/A133 bin (based
-on vendor BSP).
 
-Add new compatible for A100/A133 to accommodate the future changes
-for the independent DE.
+On Fri, 27 Dec 2024 16:37:50 +0530, Parthiban Nallathambi wrote:
+> Some platforms like A100/A133 also uses pll-com clock as additional
+> clock source for the display clock. This is not documents both in
+> user manual and DE 2.0 specification. These changes are mainly from
+> vendor BSP.
+> 
+> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+> ---
+>  .../devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml         | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
 
-Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
----
- drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 4 ++++
- 1 file changed, 4 insertions(+)
+My bot found errors running 'make dt_binding_check' on your patch:
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-index 3e28c32050e0..067820ab704d 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-@@ -342,6 +342,10 @@ static const struct of_device_id sunxi_de2_clk_ids[] = {
- 		.compatible = "allwinner,sun50i-a64-de2-clk",
- 		.data = &sun50i_a64_de2_clk_desc,
- 	},
-+	{
-+		.compatible = "allwinner,sun50i-a100-de2-clk",
-+		.data = &sun8i_v3s_de2_clk_desc,
-+	},
- 	{
- 		.compatible = "allwinner,sun50i-h5-de2-clk",
- 		.data = &sun50i_h5_de2_clk_desc,
+yamllint warnings/errors:
 
--- 
-2.39.5
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.example.dtb: clock@1000000: clocks: [[4294967295, 48], [4294967295, 101]] is too short
+	from schema $id: http://devicetree.org/schemas/clock/allwinner,sun8i-a83t-de2-clk.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.example.dtb: clock@1000000: clock-names: ['bus', 'mod'] is too short
+	from schema $id: http://devicetree.org/schemas/clock/allwinner,sun8i-a83t-de2-clk.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/bus/allwinner,sun50i-a64-de2.example.dtb: clock@0: clocks: [[4294967295, 52], [4294967295, 99]] is too short
+	from schema $id: http://devicetree.org/schemas/clock/allwinner,sun8i-a83t-de2-clk.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/bus/allwinner,sun50i-a64-de2.example.dtb: clock@0: clock-names: ['bus', 'mod'] is too short
+	from schema $id: http://devicetree.org/schemas/clock/allwinner,sun8i-a83t-de2-clk.yaml#
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20241227-a133-display-support-v1-3-13b52f71fb14@linumiz.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
