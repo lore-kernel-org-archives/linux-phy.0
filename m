@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5315E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 17:43:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADB9EE7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 17:45:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+0aTDlWhECVHW/3+lXBwusNGgf/Dw6MyPvDc9EWd6es=; b=CuU3S2M5n9bGW+365Cf0BTu2KE
-	ouO6YHKRPLVTjmoYsLZHQV46Yn7NlK+Fo1+Xkkm2+ZWO3E5/CSdQzafsHZrsIQQvJRl0XsEHJmSyT
-	2f8D7I7rr6vBgZrAi3QuHXW/J6cEQ2Qpjlj3RRRSmB4n+UfshVFLjTSrwSVXPIkevhjhdhyh4I9Gn
-	6nquF/AIPrvlLlrFfwzM8VjNZU5DwzkGvpOUlc0AbZA6qvmR1RAh8hgPCs4aw6XBgsnG06DMXiXAJ
-	tfuZ/HdhaHt4WaWqUIm8J90/MU90pgW53uqZSeO9QMbnGcH6PQH52ob1Vld/mmyxwkInr+VxBcJZ0
-	Yn48Lq8w==;
+	bh=C1m0MOY1E08eSpllToSrbCCfMq/ppLa+FcgnYNwdC3o=; b=Fn59AYlKnvKXm59+X+b2BQlg/H
+	u/zF5CyqZ0Fc1sGIOLPM8LMWo85imYe5K5ZV0V6/ucbUf70YuXQsY1B98WANt+c9APBfDYU/WAcVV
+	6wKWHZ5iTzbXvWsqLahITXpO5e2YsOO8ULFX7EQ/l937KZMuxxfhm8OQf+Ea9ZcLmN+aGWf692FEi
+	noaDRG6mDOuWW2GJkzDYFfUqrVgMjCUAosTJCNqHYCeEHZWr8or8EkrKlvzqmhKsTWA6tsSqn9jHw
+	90sEWFPddMDmOS/Mn89HD1Gi+djSlwwAjtd5PwWRb9SL1H5UwXZWZnRmbGxZfa1UxPHeph/fsbcNd
+	93nOpQrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tREN6-00000000kAt-20Vc;
-	Fri, 27 Dec 2024 17:43:36 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tREOh-00000000kKs-1vLa;
+	Fri, 27 Dec 2024 17:45:15 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRELv-00000000k34-1JD9;
-	Fri, 27 Dec 2024 17:42:24 +0000
+	id 1tRENW-00000000kE8-1kR3;
+	Fri, 27 Dec 2024 17:44:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0D9995C4CA7;
-	Fri, 27 Dec 2024 17:41:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 52404C4CED0;
-	Fri, 27 Dec 2024 17:42:17 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 48F655C337C;
+	Fri, 27 Dec 2024 17:43:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D0A1C4CED0;
+	Fri, 27 Dec 2024 17:43:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735321342;
-	bh=0bFdHqCzn5f2CvXlfqGybIGbQK8L/GTLyJ6yIAZPZGs=;
+	s=k20201202; t=1735321441;
+	bh=rVom9/ZZasClWq+RMKE/v1dwwP+Hq6n5W8W09rP7IWk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uerjnRn9qAtLEzUGvZUSOs4DGdLkb3mptAl+BnZV7M2SiEq/UIHP/l0jB2/M0W039
-	 cJliRm9pTDW4UIfHiEjFo6x8zVtR9urPmcZNvivkXRGKgTaBmSVnVtlQZyurpnuZH7
-	 ENOWgO44kAx4z4xp0qAJtcVsJNdBm7N90JE935SHx/bA/ZVe2hKaF3LcOMU7Hh1MYg
-	 Ro8u/DqH21EFFVPzpb1bZmIkCLZ0fYL8S/r9GY7DpWgmluLOItuC9q2xLHgwIS4kkJ
-	 jJhuQMuzsppKHclV2BRo23cKrw+fR8CbGdTG3n90j3sMPl80w7iYFi70InS2zL3imK
-	 WJKmnYJPtwe3g==
-Date: Fri, 27 Dec 2024 17:42:14 +0000
+	b=d/lIsLKIkBgXKQ34U15BY9lLur9y54xTZbPqCUrcmmK2ht5tdH6XqQTBo2iLHC8IT
+	 bUk77LLzfY/XK+BTYPxUmSv5IV+d7yhtyEWHZzthhrcE3Lzx08Sn/D+rQOaQFgfPkW
+	 IjCrvyFqLKyEDWzHv6y8jY4XcXEroGzvmNf7RSsK01wrFBESprsDn/GIcLt4RlEQEY
+	 UcT9GOtN6QD3rN/PaaiouEAqbPdDRkZaJbyPnaL/4/y6mDB2BpUrsrEnWz9946MTv/
+	 87rxQqBFe+U+WLGNikhg91j7MahXyIEO0XrFvFDYH7xGIEM5DZNLq0SRRg0dci09NS
+	 4z+1VI1TDGtNg==
+Date: Fri, 27 Dec 2024 17:43:54 +0000
 From: Conor Dooley <conor@kernel.org>
 To: Parthiban Nallathambi <parthiban@linumiz.com>
 Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
@@ -64,16 +64,16 @@ Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
 	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
 	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
 	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RESEND 01/22] dt-bindings: iommu: sun50i: remove resets
- from required property
-Message-ID: <20241227-backward-sandfish-3734dadba8a4@spud>
+Subject: Re: [PATCH RESEND 03/22] dt-bindings: clock: sun8i de2 clock: Add
+ PLL com clock
+Message-ID: <20241227-swept-seduce-d21e6537ddfc@spud>
 References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
- <20241227-a133-display-support-v1-1-abad35b3579c@linumiz.com>
+ <20241227-a133-display-support-v1-3-abad35b3579c@linumiz.com>
 MIME-Version: 1.0
-In-Reply-To: <20241227-a133-display-support-v1-1-abad35b3579c@linumiz.com>
+In-Reply-To: <20241227-a133-display-support-v1-3-abad35b3579c@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_094223_442531_CC1131C3 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20241227_094402_556971_C150C9AA 
+X-CRM114-Status: GOOD (  15.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,72 +85,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4436835412589590169=="
+Content-Type: multipart/mixed; boundary="===============1559569719176070800=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4436835412589590169==
+--===============1559569719176070800==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="jmNM+Wy3mOmacT9A"
+	protocol="application/pgp-signature"; boundary="0jjBOv89hldoMdhb"
 Content-Disposition: inline
 
 
---jmNM+Wy3mOmacT9A
+--0jjBOv89hldoMdhb
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, Dec 27, 2024 at 06:30:50PM +0530, Parthiban Nallathambi wrote:
-> iommu in a133/a100 does not have reset control. remove it
-> from required property to make it optional.
-
-Merge this with patch 2, making the reset required for the existing
-devices and not permitted (false) for your new devices please.
-
+On Fri, Dec 27, 2024 at 06:30:52PM +0530, Parthiban Nallathambi wrote:
+> Some platforms like A100/A133 also uses pll-com clock as additional
+> clock source for the display clock. This is not documents both in
+> user manual and DE 2.0 specification. These changes are mainly from
+> vendor BSP.
 >=20
 > Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+
+Ditto here, the new clocks are only in the new IP you're adding so this
+patch needs to get merged. When you merge them, make 2 clocks all that's
+allowed for the existing devices and 3 clocks for your new one only
+please.
+
 > ---
->  Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml |=
- 1 -
->  1 file changed, 1 deletion(-)
+>  .../devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml         =
+| 2 ++
+>  1 file changed, 2 insertions(+)
 >=20
-> diff --git a/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-=
-iommu.yaml b/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-io=
-mmu.yaml
-> index a8409db4a3e3..03176f68485b 100644
-> --- a/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.y=
-aml
-> +++ b/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.y=
-aml
-> @@ -42,7 +42,6 @@ required:
->    - reg
->    - interrupts
->    - clocks
-> -  - resets
+> diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t=
+-de2-clk.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83=
+t-de2-clk.yaml
+> index 70369bd633e4..3e00905b66ca 100644
+> --- a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-cl=
+k.yaml
+> +++ b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-cl=
+k.yaml
+> @@ -39,11 +39,13 @@ properties:
+>      items:
+>        - description: Bus Clock
+>        - description: Module Clock
+> +      - description: PLL common clock
 > =20
->  additionalProperties: false
+>    clock-names:
+>      items:
+>        - const: bus
+>        - const: mod
+> +      - const: pll-com
 > =20
+>    resets:
+>      maxItems: 1
 >=20
 > --=20
 > 2.39.5
 >=20
 
---jmNM+Wy3mOmacT9A
+--0jjBOv89hldoMdhb
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ27m9gAKCRB4tDGHoIJi
-0gDTAQCkD8Xhuyviy0vhXeZ4H+KJGL4kLQQgH/BbJQrWmtEiKgEA0tU2Y5TQpef1
-SQ6NyzqbRTQrGqT89fyibG21/6vErQs=
-=VGkJ
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ27nWgAKCRB4tDGHoIJi
+0laCAQC3f8JN+f/M1J2eeAFVurWF99YyrOoc11b9kgfjtf1thQEAtw4OLJJ4yje4
+qC320wF5zcGFYDEFFJjXa4TfgosTGww=
+=cfWT
 -----END PGP SIGNATURE-----
 
---jmNM+Wy3mOmacT9A--
+--0jjBOv89hldoMdhb--
 
 
---===============4436835412589590169==
+--===============1559569719176070800==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -161,5 +171,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4436835412589590169==--
+--===============1559569719176070800==--
 
