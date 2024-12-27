@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CA19E7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 08:04:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BA51E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 08:05:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2AJJ9SKsTPjd/8Soru+TdQmU2axy1Cq0SSGOidiGXKM=; b=i7w4z6uxsRMMI9
-	/3QmsnXrPcVXG4oGiUAF/f0iY1L21vse701H1KNzY32duVSrfYuaR8/H0JY9J2FPqdTpJ2GafpVbx
-	QRtWawpUG9x+HBoJluSI+EyUWrBS2+1kqIwSKcSj8oTWtPruMXnD8H15ngcQ0RUnZTD3v6UTBEqyV
-	tIB7DYJRwkDzktKzFeDgwE3OJxuEDXajkYaHf80zkQ2GlVmnW2GbS+a5FmbjMXbuPyIL+6/X2FXJX
-	DNMHv657wnqYMNN49wB6ejOXP4XIlaz2tStSaRwa0E8u0A9DLE72XxhllebMWh+FabIj8RDYgoiIW
-	9rEtN6aUEyGupiF/3IAw==;
+	List-Owner; bh=mkTyAsVnToX0gfg7xkdGGJA7ki/6nfBSUPL9RiIeLiU=; b=mVJUg5Yw7h+UYR
+	/kYSQ3su6lljMgpZX/uGDcx8dlGVqyVTCkIE44A1xBiJDg4/HaZVV5tkUf/WrAXXknhLYr6t3YfrY
+	Z02nTdj4iLsMQUyd2Gd3M5CuX6vVB45TKRc5rs9ICEoPVcHp+uzyg/fYlHrlrQipKdZMSq71q2v1W
+	JZ4Q6E6BB498Hy8bJlY6E0soWSlBk44CqBaVvZGwUW5CU6hrY0w9l1MG+2KKVyZY40+9OTY+Tj+kS
+	BRDNORlzpRduwOcQsGB6vNxPaBJHetOCwie/9OAildwUcu5XKJvK98cQ+g7kEVKXAUsAeRUvc7kWZ
+	1sXBPWZHYW9hwSX9eJ0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR5KT-0000000HKSz-2Lfa;
-	Fri, 27 Dec 2024 08:04:17 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tR5Ln-0000000HKeF-3rda;
+	Fri, 27 Dec 2024 08:05:39 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR5KR-0000000HKSZ-1ZQR
+	id 1tR5Ll-0000000HKdn-1j1T
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Dec 2024 08:04:16 +0000
+	Fri, 27 Dec 2024 08:05:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C998EA411FB;
-	Fri, 27 Dec 2024 08:02:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63DD4C4CED0;
-	Fri, 27 Dec 2024 08:04:13 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id CC376A41298;
+	Fri, 27 Dec 2024 08:03:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E4B7C4CED2;
+	Fri, 27 Dec 2024 08:05:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735286654;
-	bh=biCHUJ5+/8TVAXXt/3zdeR+eVLD02s5dFj+qLRU/u4I=;
+	s=k20201202; t=1735286736;
+	bh=zpeDIwumBH9adCAX9/ugP0JbjTLYj3GZUQ9OpTyGp5Y=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=P+SShp0c8wwOpMs9hwz4VL+Rx6bWq5SN7auamJKsEb/6M3CmLkyVq9DWglwgTeApb
-	 DG5e1B26DiUXIebY61Zn0KaZiMz10JbSSHRoM9vrhTkaR7pR2USQT8FRV29zNzDI6q
-	 3WQRqNbOCpw35FH7y4mgQyVr+xKOsD3wcenaHKDR8veBX8RQUMhGlYlyMN6A6he+uD
-	 5Mt2zy9fzWiVm4UUqVkcMn6bgNKLyks6+b4rVgvERcmvbEmyfVFAgYeHt66eMebDm1
-	 lKiAdAmYbUm0y/9VznQu3a1I4OqDLGr8ojZCoSYswxa2o+DodbwvJKrSn0kuB67v/V
-	 rAXt/Lz9Lmq7Q==
-Date: Fri, 27 Dec 2024 09:04:10 +0100
+	b=LL0qSBjL4xJNZ0ECZqV7DyXdbvQ2pRrhuTvltL1RudTqzEOOssvsXzkEDgZyUt0CZ
+	 DW9DUSaE4RmYqpgz3CrSneCUjTxXy49fLTxL389Sa0eSpKg2QHj9yVtAcU7bfOzJyS
+	 lScFGfITnndDJgWpkhHiLw66GZ+hHIyRleVnloNFwUEXW4wPqTiAK3+Y2MNueA5SZt
+	 CqlZxaoCnVAbPR5+JwAkx8B1L8yvc9AE7vig2jQFbGcKcBk6YN8CwKtHKCUgnsTZcQ
+	 MAxbGsg5vVJEvDSvnkT3QFcrXMy99LOQeV7XSg6Xwx2jL5jgXG/IMC36nPmXxaTkii
+	 tBCydMJbX7yAQ==
+Date: Fri, 27 Dec 2024 09:05:32 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org, 
@@ -53,15 +53,15 @@ Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 Subject: Re: [PATCH v4 1/5] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
  uniphy
-Message-ID: <u6jrvxkp3hmodbly7kud4uykkxjza7qehkqifrfjjztzkw37et@qnp7uueafvwu>
+Message-ID: <s2tdxcpmgvxhcne6go23p5qdwra37adl3igz6w37n6espbe77s@bc25jxnwxgt6>
 References: <20241226102432.3193366-1-quic_varada@quicinc.com>
  <20241226102432.3193366-2-quic_varada@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20241226102432.3193366-2-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_000415_488435_C137D0E8 
-X-CRM114-Status: UNSURE (   6.10  )
+X-CRM114-CacheID: sfid-20241227_000537_513979_6B7CC549 
+X-CRM114-Status: UNSURE (   5.89  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -80,6 +80,8 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Thu, Dec 26, 2024 at 03:54:28PM +0530, Varadarajan Narayanan wrote:
+> +title: Qualcomm UNIPHY PCIe 28LP PHY
+> +
 > +maintainers:
 > +  - Nitheesh Sekar <quic_nsekar@quicinc.com>
 > +  - Varadarajan Narayanan <quic_varada@quicinc.com>
@@ -92,20 +94,10 @@ On Thu, Dec 26, 2024 at 03:54:28PM +0530, Varadarajan Narayanan wrote:
 > +    enum:
 > +      - qcom,ipq5332-uniphy-gen3x1-pcie-phy
 > +      - qcom,ipq5332-uniphy-gen3x2-pcie-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 2
 
-You need to list and describe the items instead.
 
-> +
-> +  resets:
-> +    maxItems: 3
-
-You need to list and describe the items instead.
+These do not look like separate devices. Why num-lanes property cannot
+be used?
 
 Best regards,
 Krzysztof
