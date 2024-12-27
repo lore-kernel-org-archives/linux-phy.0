@@ -4,76 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADB9EE7718B
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 17:45:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0459E7718B
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 20:09:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=C1m0MOY1E08eSpllToSrbCCfMq/ppLa+FcgnYNwdC3o=; b=Fn59AYlKnvKXm59+X+b2BQlg/H
-	u/zF5CyqZ0Fc1sGIOLPM8LMWo85imYe5K5ZV0V6/ucbUf70YuXQsY1B98WANt+c9APBfDYU/WAcVV
-	6wKWHZ5iTzbXvWsqLahITXpO5e2YsOO8ULFX7EQ/l937KZMuxxfhm8OQf+Ea9ZcLmN+aGWf692FEi
-	noaDRG6mDOuWW2GJkzDYFfUqrVgMjCUAosTJCNqHYCeEHZWr8or8EkrKlvzqmhKsTWA6tsSqn9jHw
-	90sEWFPddMDmOS/Mn89HD1Gi+djSlwwAjtd5PwWRb9SL1H5UwXZWZnRmbGxZfa1UxPHeph/fsbcNd
-	93nOpQrA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aWdYm44tkjaCk5f5FM21iJ5snwrCnsZ9wiU0ux/VRC0=; b=Gnif5fQXlraJ6R
+	Jpu1Ugn3g2NdBvxaWP07qilvsDQ0UtHY169rhxr0ny3US9Qpt60k+pLw8bykHbdENOIdlbTNY4lfr
+	XC13xJIzYJPgXGHkrCPMnlPJLgydxiJpSeky5+RtlrQ/GBVKVHVO764IHLI5G/hLzXOEnczdGkaAy
+	e/kgA9QqeOq9k1A0MCHSevzaeJPFn/AeNMAEFQbAy61TdzSbnxYFMhlAusLL1jAC5El4ki2KhIdtD
+	bkUZ2/M3iw6xnlc1WpA+S1o33sSbQ2iE7nPzZV5z8Zba2XuR4qnWLjUWkJFRvNbyM0/KSX8Pitohg
+	mVBU6CEy7EkZnbKxq8mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tREOh-00000000kKs-1vLa;
-	Fri, 27 Dec 2024 17:45:15 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tRGdq-00000000t0U-3FVy;
+	Fri, 27 Dec 2024 20:09:02 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRENW-00000000kE8-1kR3;
-	Fri, 27 Dec 2024 17:44:03 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 48F655C337C;
-	Fri, 27 Dec 2024 17:43:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D0A1C4CED0;
-	Fri, 27 Dec 2024 17:43:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735321441;
-	bh=rVom9/ZZasClWq+RMKE/v1dwwP+Hq6n5W8W09rP7IWk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=d/lIsLKIkBgXKQ34U15BY9lLur9y54xTZbPqCUrcmmK2ht5tdH6XqQTBo2iLHC8IT
-	 bUk77LLzfY/XK+BTYPxUmSv5IV+d7yhtyEWHZzthhrcE3Lzx08Sn/D+rQOaQFgfPkW
-	 IjCrvyFqLKyEDWzHv6y8jY4XcXEroGzvmNf7RSsK01wrFBESprsDn/GIcLt4RlEQEY
-	 UcT9GOtN6QD3rN/PaaiouEAqbPdDRkZaJbyPnaL/4/y6mDB2BpUrsrEnWz9946MTv/
-	 87rxQqBFe+U+WLGNikhg91j7MahXyIEO0XrFvFDYH7xGIEM5DZNLq0SRRg0dci09NS
-	 4z+1VI1TDGtNg==
-Date: Fri, 27 Dec 2024 17:43:54 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Parthiban Nallathambi <parthiban@linumiz.com>
-Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
-	Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Maxime Ripard <mripard@kernel.org>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
-	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RESEND 03/22] dt-bindings: clock: sun8i de2 clock: Add
- PLL com clock
-Message-ID: <20241227-swept-seduce-d21e6537ddfc@spud>
-References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
- <20241227-a133-display-support-v1-3-abad35b3579c@linumiz.com>
+	id 1tRGdo-00000000szg-0R0i;
+	Fri, 27 Dec 2024 20:09:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=rTpmM+N9yTb8Q9bJONsWhH4t0UI7Y+ya/IYjpiMz6Cg=; b=j6E/9czHO7e5hBXHB6GqUWeYO2
+	z7aTYMKv1Qgq4Dm3MKG/qG7+b4el3bPiBfDrVTm81uYq1sdKdwM5Wv3XXMFsgVpNC4Hcb/smYIBii
+	syYK5lxbtVxSq+V81T0QLB8QH06P3gm2+FIqIjkD/bHBgS4mSziaJ5hU9tZa19D7LCBQAgFXK098Y
+	BO96XvGk5zw9olS9eMGKRy0V6hodSgXwuaaJLDiX9R+MdsQPkpV1rxkAJBiF6Lh8sOh0Tl66a7E7p
+	PmJpcwCoUaBOabFVDltoSJkH5sx6c1mtZZbbXOtSnmapGGyPSOGEUpcMUpCDjEkTsP6knM9PjK04Z
+	0f75DO4w==;
+Received: from i5e860d12.versanet.de ([94.134.13.18] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tRGdX-00037B-1A; Fri, 27 Dec 2024 21:08:43 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Andy Yan <andyshrk@163.com>, Krzysztof Kozlowski <krzk@kernel.org>
+Cc: cristian.ciocaltea@collabora.com, detlev.casanova@collabora.com,
+ krzk+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
+ sebastian.reichel@collabora.com, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Andy Yan <andy.yan@rock-chips.com>
+Subject: Re: [PATCH] dt-bindings: phy: add rk3576 hdptx phy
+Date: Fri, 27 Dec 2024 21:08:41 +0100
+Message-ID: <3255768.PYKUYFuaPT@diego>
+In-Reply-To: <hh3zowf257dwwp3uo7al5l5ql7hewy7j5rzjqdt3eqvd653mdj@4tgjm6zdsuyi>
+References: <20241224091919.267698-1-andyshrk@163.com>
+ <hh3zowf257dwwp3uo7al5l5ql7hewy7j5rzjqdt3eqvd653mdj@4tgjm6zdsuyi>
 MIME-Version: 1.0
-In-Reply-To: <20241227-a133-display-support-v1-3-abad35b3579c@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_094402_556971_C150C9AA 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20241227_120900_168602_AD6DFEF7 
+X-CRM114-Status: GOOD (  19.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,91 +72,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1559569719176070800=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Krzysztof, Andy,
 
---===============1559569719176070800==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="0jjBOv89hldoMdhb"
-Content-Disposition: inline
+Am Freitag, 27. Dezember 2024, 09:55:59 CET schrieb Krzysztof Kozlowski:
+> On Tue, Dec 24, 2024 at 05:19:13PM +0800, Andy Yan wrote:
+> > From: Andy Yan <andy.yan@rock-chips.com>
+> > 
+> > The HDPTX PHY on rk3576 is compatible with it on
+> > rk3588.
+> > 
+> > Add compatible for it.
+> > 
+> > Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+> > ---
+> > 
+> >  .../devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml | 7 +++++--
+> >  1 file changed, 5 insertions(+), 2 deletions(-)
+> 
+> Also: where are any users of this binding?
+> 
+> We don't take bindings without *UPSTREAM* users.
 
+Andy, can you do a (separate) DTS series that binds all the display stuff
+together on one rk3576 board? (iommu, hdptxphy, vop, hdmi)
 
---0jjBOv89hldoMdhb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Depending on how the driver sides go, this may be need to be revised at
+the end, but should hopefully satisfy that "show a user" thing.
 
-On Fri, Dec 27, 2024 at 06:30:52PM +0530, Parthiban Nallathambi wrote:
-> Some platforms like A100/A133 also uses pll-com clock as additional
-> clock source for the display clock. This is not documents both in
-> user manual and DE 2.0 specification. These changes are mainly from
-> vendor BSP.
->=20
-> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
-
-Ditto here, the new clocks are only in the new IP you're adding so this
-patch needs to get merged. When you merge them, make 2 clocks all that's
-allowed for the existing devices and 3 clocks for your new one only
-please.
-
-> ---
->  .../devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml         =
-| 2 ++
->  1 file changed, 2 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t=
--de2-clk.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83=
-t-de2-clk.yaml
-> index 70369bd633e4..3e00905b66ca 100644
-> --- a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-cl=
-k.yaml
-> +++ b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-cl=
-k.yaml
-> @@ -39,11 +39,13 @@ properties:
->      items:
->        - description: Bus Clock
->        - description: Module Clock
-> +      - description: PLL common clock
-> =20
->    clock-names:
->      items:
->        - const: bus
->        - const: mod
-> +      - const: pll-com
-> =20
->    resets:
->      maxItems: 1
->=20
-> --=20
-> 2.39.5
->=20
-
---0jjBOv89hldoMdhb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ27nWgAKCRB4tDGHoIJi
-0laCAQC3f8JN+f/M1J2eeAFVurWF99YyrOoc11b9kgfjtf1thQEAtw4OLJJ4yje4
-qC320wF5zcGFYDEFFJjXa4TfgosTGww=
-=cfWT
------END PGP SIGNATURE-----
-
---0jjBOv89hldoMdhb--
+I guess Kever's EVB-series [0] might be a good base to build upon, with it
+being a Rockchip EVB?
 
 
---===============1559569719176070800==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+For people reading along, that whole display chain consists of:
+- iommu [1]
+- core display-controller additions for the rk3576 [2]
+- this hdptxphy binding
+- additions for the dw-hdmi-qp glue [3]
+
+Heiko
+
+
+[0] https://lore.kernel.org/lkml/20241220101551.3505917-1-kever.yang@rock-chips.com/
+[1] https://lore.kernel.org/lkml/20240920094947.7566-1-andyshrk@163.com/
+[2] https://lore.kernel.org/lkml/20241214081831.3330714-1-andyshrk@163.com/
+[3} https://lore.kernel.org/lkml/20241225103741.364597-1-andyshrk@163.com/
+
+
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============1559569719176070800==--
-
