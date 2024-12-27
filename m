@@ -4,66 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D02EE77191
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB710E7718B
 	for <linux-phy@archiver.kernel.org>; Fri, 27 Dec 2024 13:02:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6rN+NQbevLFUx3DiTSUCMZn68ihWCCijImSQvlKLejI=; b=ACHDAp00hUZP4y
-	eKjif8Q4UzfKYyFm+MTT6tq9CU4b9MGc7LfyeuUzxyooKKFR8/rRSrIpbT11RAj4lvqCd9tNQrT2D
-	Q4AN2pNYz6Vky2PD+8VTZmaLOSwnfeOdVbKOQRj4qOZ3rhtPIlD7krBHJiJSpdEEQ3czXDvAMkYVN
-	HNEJn+L57OxoPJqCWl+iz4BfNCFlrh4azmQ/OI4byczFEgupI5oHsfzvyKUa6bASFv026ja2osShl
-	HmE+tE8fxYj2lq7up2SjZYElKxjGHC8ni0szrTXrr0TcIdo+wbjqu/V9KtMa5JtbO4is+jyMehPSI
-	S+qnkW2gxwTAh3/VPapg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JJM2OguvBSaMDQIAt7Jxicq3AMHNTkdsZ3dBcuEZdxE=; b=kLwOQ2tcKH7JF8
+	XhPkE4gmyYVxL1pPv24TxzuGSareoEIu9S29QclortYfY+3x3wXp5r142emV9ffb14TIM2AIWs2JX
+	CfbAC8fTU3WjXzNDlTc5q9er8jMDYoXqF1WGRd4XfkxRFbl+NjCnZ4fXLOONI/ThZ+BpkL0F3KVce
+	DolHjmn9yHkdIyIV8hT8SmjiTkinEGqu+570NnMBPHHEX6G2psONYeT/Te0SXyFd9M+obkRPcKcY4
+	1DKIiy5iat0FRDTdPgaG3fjxM1QllwrG2QXn97ChYXsCoNzAF8FIrFMhiBVfZZ0yTEyTerEdd8/L8
+	rrrRII32b4Y0ACMtZxEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR9zC-00000000Dsg-35Nh;
+	id 1tR9zC-00000000DsY-1rch;
 	Fri, 27 Dec 2024 13:02:38 +0000
-Received: from omta036.useast.a.cloudfilter.net ([44.202.169.35])
+Received: from omta040.useast.a.cloudfilter.net ([44.202.169.39])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tR9y4-00000000DPQ-2YV8
+	id 1tR9y0-00000000DNx-1sBS
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Dec 2024 13:01:29 +0000
-Received: from eig-obgw-5008a.ext.cloudfilter.net ([10.0.29.246])
+	Fri, 27 Dec 2024 13:01:25 +0000
+Received: from eig-obgw-6001a.ext.cloudfilter.net ([10.0.30.140])
 	by cmsmtp with ESMTPS
-	id R46etX9ACxoE1R9y3tlH0d; Fri, 27 Dec 2024 13:01:27 +0000
+	id QgZztXmPunNFGR9xytXlbR; Fri, 27 Dec 2024 13:01:22 +0000
 Received: from md-in-79.webhostbox.net ([43.225.55.182])
 	by cmsmtp with ESMTPS
-	id R9y0txwAaN0LRR9y1tqcnt; Fri, 27 Dec 2024 13:01:26 +0000
-X-Authority-Analysis: v=2.4 cv=erfZzJpX c=1 sm=1 tr=0 ts=676ea526
+	id R9xutpCiI2Zy0R9xwtuDIj; Fri, 27 Dec 2024 13:01:20 +0000
+X-Authority-Analysis: v=2.4 cv=Q4EZ4J2a c=1 sm=1 tr=0 ts=676ea521
  a=LfuyaZh/8e9VOkaVZk0aRw==:117 a=kofhyyBXuK/oEhdxNjf66Q==:17
- a=IkcTkHD0fZMA:10 a=RZcAm9yDv7YA:10 a=-pn6D5nKLtMA:10 a=vU9dKmh3AAAA:8
- a=mFyXD75C-Rjc5bRUbP4A:9 a=QEXdDO2ut3YA:10 a=rsP06fVo5MYu2ilr0aT5:22
- a=ZCPYImcxYIQFgLOT52_G:22
+ a=IkcTkHD0fZMA:10 a=RZcAm9yDv7YA:10 a=-pn6D5nKLtMA:10 a=VwQbUJbxAAAA:8
+ a=vU9dKmh3AAAA:8 a=RKcyukLPUNyM5a_w4rQA:9 a=QEXdDO2ut3YA:10
+ a=rsP06fVo5MYu2ilr0aT5:22 a=ZCPYImcxYIQFgLOT52_G:22
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
-	; s=default; h=Cc:To:In-Reply-To:References:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=VbcHXTdEmafcZ26pOm95idNdvsDgKQdu1LnTvG4534s=; b=aSbFR/JiTZx4U+c9H2c1A/0/pi
-	D2/yBDDH3m3UxtCAPnT7fnDFsf3vU7U+0M2Uihxz/QFCzyQrvRVSzUHFTHTclSIFiWsOSR9nOU/od
-	I2ySP8OQi/JtJA9cOC8chkNi0g0vdqiBiFUX8RQ8oCTBDOC1oB+KPKgwjTJHSVR4o7gfbU28yA/3I
-	AB0IKTEZM1+2/jUIg/bnQCOhP2A4xnWbi2Wy/FGIgfjK9Dw/GuqhaSX9KLJEKsdRMHrnquAgVvLKt
-	D0mAuULRz5hGvk9ErXyQuZ60RN1ZAfI0VgUAaKcMxAkVK/VWJCpm/dN4jTr/OMVuKraOmNjFyTvXt
-	UTABAwcg==;
+	; s=default; h=Cc:To:Content-Transfer-Encoding:Content-Type:MIME-Version:
+	Message-Id:Date:Subject:From:Sender:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=Qi3UoCUDEqcy6/oiO96EhEgtnu7BnyUeV/rid1HTKPw=; b=oiMun6aAJKc2QS/GfxGw3ZpAbo
+	eqt4pnCoOOcSOcaeI0P6kujVagUlispeJfo87tz4QroK92xHf66VXCikwKNVeRRM362Wq7OxeQoeh
+	E1yTCzQbqlNCXfqwKn42U7JkHmZ6L8OX8yGF9tvVz7DJi0D1oePsEPivLWatej12oSvjcE2D9TY3L
+	p260RycW0eU3fbz5AvZgfhR3/FedkFVYbVQXVm8DnYC11xpiJ293WKam4I6AtGakz9LXeMuFU3Rk8
+	5INQdz4uTivaF1TZ3eEW8hz/0OVnZszBiih27bwu+VVWDJ45H4d0OMHK5VDE143g5utDRMNzf7Ztq
+	rk5F7Umg==;
 Received: from [122.165.245.213] (port=58270 helo=[127.0.1.1])
 	by md-in-79.webhostbox.net with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96.2)
 	(envelope-from <parthiban@linumiz.com>)
-	id 1tR9xv-002EaQ-1L;
-	Fri, 27 Dec 2024 18:31:19 +0530
+	id 1tR9xq-002EaQ-22;
+	Fri, 27 Dec 2024 18:31:14 +0530
 From: Parthiban Nallathambi <parthiban@linumiz.com>
-Date: Fri, 27 Dec 2024 18:30:50 +0530
-Subject: [PATCH RESEND 01/22] dt-bindings: iommu: sun50i: remove resets
- from required property
+Subject: [PATCH RESEND 00/22] Add support for A100/A133 display
+Date: Fri, 27 Dec 2024 18:30:49 +0530
+Message-Id: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
 MIME-Version: 1.0
-Message-Id: <20241227-a133-display-support-v1-1-abad35b3579c@linumiz.com>
-References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-In-Reply-To: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
 To: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, 
  Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -84,11 +81,11 @@ Cc: iommu@lists.linux.dev, devicetree@vger.kernel.org,
  linux-phy@lists.infradead.org, 
  Parthiban Nallathambi <parthiban@linumiz.com>
 X-Mailer: b4 0.14.0
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1735304468; l=774;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1735304468; l=4037;
  i=parthiban@linumiz.com; s=20241125; h=from:subject:message-id;
- bh=qHYIlw5q2Ro5I852QrjEef3P3GktuZk2GSnSTYiauwE=;
- b=/2ePddOT/OpNwvShyS69Rsku811DGFkZL/le6QeJ8Ke+qincL08cWsrrfZynXU4sdnlo+0I23
- k9hLapYXlntBNe9JFjiKeJfqR7k6lT7gKV2AVbWsnnSOD5yX2NP+aK+
+ bh=s6pgeYhBovYKLxAfzogU3RAM9N8F/zvXTKruRhJeLms=;
+ b=rUdWVAf2EzUVnilFnmP394/5gRG3wuQ4qZKiArbTwORd7JREQHwjrpu+VM2LSswVY088RCvTX
+ WqUG9bY0lJXCf7KJwRg9jmbIdsLD9nBHg6tLQw1PtNvmCAY0Mhmq7SE
 X-Developer-Key: i=parthiban@linumiz.com; a=ed25519;
  pk=PrcMZ/nwnHbeXNFUFUS833wF3DAX4hziDHEbBp1eNb8=
 X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
@@ -99,22 +96,21 @@ X-AntiAbuse: Sender Address Domain - linumiz.com
 X-BWhitelist: no
 X-Source-IP: 122.165.245.213
 X-Source-L: No
-X-Exim-ID: 1tR9xv-002EaQ-1L
+X-Exim-ID: 1tR9xq-002EaQ-22
 X-Source: 
 X-Source-Args: 
 X-Source-Dir: 
 X-Source-Sender: ([127.0.1.1]) [122.165.245.213]:58270
 X-Source-Auth: parthiban@linumiz.com
-X-Email-Count: 56
+X-Email-Count: 27
 X-Org: HG=dishared_whb_net_legacy;ORG=directi;
 X-Source-Cap: bGludW1jbWM7aG9zdGdhdG9yO21kLWluLTc5LndlYmhvc3Rib3gubmV0
 X-Local-Domain: yes
-X-CMAE-Envelope: MS4xfMNWT0q/xO/TKz9T2tgN25qw4voLhy5E4Pdk+Pr4s/ZTaO5xnGJNXeZ+xnXA9WWyAXtC4Tuf/J6rg3W/Ie92Fbj0WYCFTvLczimGjOb0dsvdpftcTlHA
- PEA64rDEH4QFQ9xQBefpZM2S4rPxsXeW0u/OiPhIAcisB8jfath45GF3T12LaYmGSnRAcoPS1/WiLHZFZD6Tqzsmp6XeN4bmJOXZEdkFm4UpZWpiPON8o5ay
+X-CMAE-Envelope: MS4xfF16lTv0ckcNrs4KIO1pbXPO3p5QqFKonx7X6g2cqe/eS0JFxy2qo+0RDCzASoofBGA3VIMb+11OCpuxbsrqUFq4Sz7HA8k2DIZhUyuAAJDiPWGFF6aC
+ uIy/3j5l7VWt4gztS7sekTOIYoyt4+8FG1YnC3pk+KtDA8fX75m81S0RMiwIh7fFSBsIFsGGeQaRgrEc0fbDKcrdpvXUrklAc3TOu6xcpRKVzh6V2ZvIwGdy
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241227_050128_720705_2CAF8423 
-X-CRM114-Status: UNSURE (   5.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241227_050124_560682_F18538DC 
+X-CRM114-Status: GOOD (  12.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,29 +127,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-iommu in a133/a100 does not have reset control. remove it
-from required property to make it optional.
+This series depends on [1] for the eMMC/MMC controller to work and
+[2] (lined up for 6.14) which adds support for the sram nodes and
+display engine extends it's usage. Idea of this series to get initial
+feedback and adjust, which will be rebased for 6.14 once [2] is merged.
+
+This patch series adds support for A133 display pipeline based on
+LVDS. dt-bindigs are organized in the start and later with code
+changes.
+
+PHY is shared between DSI and LVDS, so to control the PHY specific
+to DSI/LVDS, phy_ops set_mode is introduced. To enable the DSI
+using set_mode, analog control register MIPI Enable is used, which
+may not be available for A31 (shares the same driver).
+
+Otherwise, A133 also got hidden independent display engine i.e
+mixer + tcon top to handle parallel display. But this patch series
+adds only support for the 1 mixer which is documented.
+
+[1]: https://lore.kernel.org/linux-sunxi/20241109003739.3440904-1-masterr3c0rd@epochal.quest/
+[2]: https://lore.kernel.org/linux-sunxi/20241218-a100-syscon-v2-0-dae60b9ce192@epochal.quest/
 
 Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
 ---
- Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml | 1 -
- 1 file changed, 1 deletion(-)
+Parthiban Nallathambi (22):
+      dt-bindings: iommu: sun50i: remove resets from required property
+      dt-bindings: display: sunxi: Add a100/a133 display engine compatibles
+      dt-bindings: clock: sun8i de2 clock: Add PLL com clock
+      dt-bindings: clock: sun8i de2 clock: Add a100/a133 compatible
+      dt-bindings: display: sun4i: add phy property
+      dt-bindings: display: sun4i: add a100/a133 tcon lcd
+      dt-bindings: vendor-prefixes: Shenzhen Baijie Technology
+      dt-bindings: arm: sunxi: document Szbaijie A133 helper board
+      iommu: sun50i: make reset control optional
+      pinctrl: sunxi: add missed lvds pins for a100/a133
+      drm/sun4i: Add support for a100/a133 display engine
+      drm/sun4i: Add support for a100/a133 mixer
+      drm/sun4i: make tcon top tv0 optional
+      drm/sun4i: add a100/a133 tcon top quirks
+      clk: sunxi-ng: sun8i-de2: add pll-com clock support
+      clk: sunxi-ng: sun8i-de2: Add support for a100/a133
+      phy: allwinner: phy-sun6i-mipi-dphy: add LVDS support
+      drm/sun4i: tcon: add a100/a133 lcd controller support
+      arm64: dts: allwinner: a100: add iommu
+      clk: sunxi-ng: add missing pll-com binding
+      arm64: dts: allwinner: a100: add display pipeline
+      arm64: dts: allwinner: a133: add szbaijie helper board
 
-diff --git a/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml b/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
-index a8409db4a3e3..03176f68485b 100644
---- a/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
-+++ b/Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
-@@ -42,7 +42,6 @@ required:
-   - reg
-   - interrupts
-   - clocks
--  - resets
- 
- additionalProperties: false
- 
+ Documentation/devicetree/bindings/arm/sunxi.yaml   |   6 +
+ .../clock/allwinner,sun8i-a83t-de2-clk.yaml        |   6 +
+ .../allwinner,sun4i-a10-display-engine.yaml        |   2 +
+ .../bindings/display/allwinner,sun4i-a10-tcon.yaml |   7 +
+ .../display/allwinner,sun8i-a83t-de2-mixer.yaml    |   1 +
+ .../display/allwinner,sun8i-r40-tcon-top.yaml      |  17 ++
+ .../bindings/iommu/allwinner,sun50i-h6-iommu.yaml  |   1 -
+ .../devicetree/bindings/vendor-prefixes.yaml       |   2 +
+ arch/arm64/boot/dts/allwinner/Makefile             |   1 +
+ arch/arm64/boot/dts/allwinner/sun50i-a100.dtsi     | 165 ++++++++++++++++++
+ .../dts/allwinner/sun50i-a133-helper-board.dts     | 129 ++++++++++++++
+ .../dts/allwinner/sun50i-a133-helper-core.dtsi     | 190 +++++++++++++++++++++
+ drivers/clk/sunxi-ng/ccu-sun8i-de2.c               |  23 ++-
+ drivers/gpu/drm/sun4i/sun4i_drv.c                  |   1 +
+ drivers/gpu/drm/sun4i/sun4i_tcon.c                 |  23 +++
+ drivers/gpu/drm/sun4i/sun8i_mixer.c                |  13 ++
+ drivers/gpu/drm/sun4i/sun8i_tcon_top.c             |  42 +++--
+ drivers/iommu/sun50i-iommu.c                       |   2 +-
+ drivers/phy/allwinner/phy-sun6i-mipi-dphy.c        |  23 ++-
+ drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c        |  12 ++
+ include/dt-bindings/clock/sun50i-a100-ccu.h        |   1 +
+ 21 files changed, 645 insertions(+), 22 deletions(-)
+---
+base-commit: 6c086b91df8c6619239c6d6d6cbf6ae50da6c110
+change-id: 20241126-a133-display-support-ab43af32180a
 
+Best regards,
 -- 
-2.39.5
+Parthiban Nallathambi <parthiban@linumiz.com>
 
 
 -- 
