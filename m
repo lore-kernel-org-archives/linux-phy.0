@@ -4,37 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B320E77188
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Dec 2024 12:24:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88D89E77191
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Dec 2024 12:28:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+oIKEQ/N74qcCBfhamLlrfQTKVItGXO2JuohTnMGFuc=; b=VNhpQn0gvyY5zG
-	bJRUcsxtZi10jH9uUESdGW5XjOyuHRa3fEwh2ETXxGaW6AOQ0KYhq2tSfGjkL1gW//aDlULg09LMA
-	V/UiWXjPUoldX+JkX3svawNOWHrZi//M3C48RX0zHVi7WMe4ZtSk9Xxe+w1HtHvaBvqz+l+MR8+Tx
-	fbzbB4Gpsg1XKaR4ChCfAXIpYDgWyP7ZqommFiiKVfEjtAB8cG6kKTTtsntHkEhAcwjHtSxY7HXY3
-	SlB2KSrQvnvrFGWu9+uGtesXhfQR17szacfoqTUm/D4ri1N3nMK53t3lYE5Vwjhe0jwz4GzeCZcf1
-	4GXH9vew7jgMF5xWswlw==;
+	List-Owner; bh=nN3DFmPPxIF5xp9/5gE7nGv22ktY3MUdfP7QJ7zGIkM=; b=03RAEKtEygIzwp
+	UwQARkp+QQjw1roLPUPL7dBG0jMNTv1ZJx5JeWvR7+Qi607tGe+GBqAnWFrJS+qeGFmpgEreInrr1
+	C7HXUp/vEhlCFSlVW2OWZff8CXeps/eu0mo/TdOAP+TNmqOyxbuy9eeuw6WZg7OSPFLVURlDJSKH6
+	XBfJjt/PGhOZS6oYpi4i6QY6dR2DH7Qc5U+tTxtgXp7WCv6J1utG6SwejyHxruBBw9hOnvmZdDt3t
+	HW81Lrozrgb5+EZLMyNz90pFGQbacP3Tv+Z9tYoS1Y6QAopj5BYlne3X0Dc4cSF804EmAZe3lslnr
+	Z3rkP0qDTkMTq+1tHIQw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRVsI-00000001rCP-14HR;
-	Sat, 28 Dec 2024 12:24:58 +0000
+	id 1tRVvm-00000001reo-1BdU;
+	Sat, 28 Dec 2024 12:28:34 +0000
 Received: from m16.mail.163.com ([220.197.31.4])
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRVpu-00000001qW7-0AIx;
+	id 1tRVpu-00000001qWA-0nHr;
 	Sat, 28 Dec 2024 12:22:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=pg0Uf
-	V4prOtW7FOVVRBO2lYE1N8dbmghRAassomDga4=; b=qexrkZEusg4KCK0enN78K
-	lKGA/JWbFrg2ilT+tJURad/pplmnwho3fjtHix1oL37TuqTn8j2vaJ0OYdG78hnU
-	Xd0RTFUwJ/YSLowBq5j8T2jwhqhK241PfwdVOCb4mXR0gQ/bxdnIXP0glidgIIkg
-	rsgUvNnGkCsPffIp6I62Gs=
+	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=FmSpJ
+	+e209IgLZ68tXXKsnh3RVerdeFHGl/h+V8EMEE=; b=kbv58woRhslEWE41zJD4/
+	DaaK000dFmsxacFSBISixE1I7kMoZgD9wO/T3qgPYtiyWORbhDqO1whKNILB/TtR
+	nVN6tiaJeRlEftaA92cvcSJrMVl+qnXoSInAvkC/iS9Vtp926VxAJwOLbg3/sR4o
+	MrItHXwFEgFKBAEN4+2PsE=
 Received: from ProDesk.. (unknown [])
-	by gzga-smtp-mtada-g1-0 (Coremail) with SMTP id _____wD3t0tl7W9nUxdCCQ--.1009S5;
-	Sat, 28 Dec 2024 20:22:05 +0800 (CST)
+	by gzga-smtp-mtada-g1-0 (Coremail) with SMTP id _____wD3t0tl7W9nUxdCCQ--.1009S3;
+	Sat, 28 Dec 2024 20:22:03 +0800 (CST)
 From: Andy Yan <andyshrk@163.com>
 To: heiko@sntech.de,
 	krzk+dt@kernel.org,
@@ -53,23 +53,23 @@ Cc: cl@rock-chips.com,
 	linux-phy@lists.infradead.org,
 	linux-rockchip@lists.infradead.org,
 	Andy Yan <andy.yan@rock-chips.com>
-Subject: [PATCH v2 3/8] dt-bindings: display: rockchip: Add rk3576 hdmi controller
-Date: Sat, 28 Dec 2024 20:21:46 +0800
-Message-ID: <20241228122155.646957-4-andyshrk@163.com>
+Subject: [PATCH v2 1/8] dt-bindings: soc: rockchip: add rk3576 hdptxphy grf syscon
+Date: Sat, 28 Dec 2024 20:21:44 +0800
+Message-ID: <20241228122155.646957-2-andyshrk@163.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20241228122155.646957-1-andyshrk@163.com>
 References: <20241228122155.646957-1-andyshrk@163.com>
 MIME-Version: 1.0
-X-CM-TRANSID: _____wD3t0tl7W9nUxdCCQ--.1009S5
-X-Coremail-Antispam: 1Uf129KBjvdXoW7XFW3Kr4UZr1UWF4UKF1ftFb_yoWDXrbEqa
-	4xZ3Z8ZFs5Zr1Y9w1DJ397Wws8Ja17KF4kGa1UAF4DJa4kKrZYqr95G343KFykAF17uFyx
-	CFn5XrWUG3ZxJjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IUndb1UUUUUU==
+X-CM-TRANSID: _____wD3t0tl7W9nUxdCCQ--.1009S3
+X-Coremail-Antispam: 1Uf129KBjvdXoW7Gr15tF4DZFy3CF48tF4kXrb_yoWfXFbEka
+	4xZ3WUZFs5tr1Fqw1DAa4IkFn8Aas7KrykCF4UAF48CayqkFWkKF95Jw1akr18W3WI9Fyf
+	ua1vqrWUGanxJjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU00JPtUUUUU==
 X-Originating-IP: [58.22.7.114]
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqRPDXmdv5wS0uAACsC
+X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqRPDXmdv5wS0uAAAsA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241228_042230_477377_EFD6A4CD 
-X-CRM114-Status: UNSURE (   6.27  )
+X-CRM114-CacheID: sfid-20241228_042230_626751_B2E2E7B8 
+X-CRM114-Status: UNSURE (   5.59  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,30 +89,29 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Andy Yan <andy.yan@rock-chips.com>
 
-RK3576 HDMI TX Controller is very similar to that of RK3588, but
-with some control bits for IO and interrupts status scattered across
-different GRF.
+Add hdptxphy grf syscon compatibles for rk3576.
 
 Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+
 ---
 
 (no changes since v1)
 
- .../bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml    | 1 +
+ Documentation/devicetree/bindings/soc/rockchip/grf.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml
-index d8e761865f27..b838b5ec2dca 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,rk3588-dw-hdmi-qp.yaml
-@@ -29,6 +29,7 @@ allOf:
- properties:
-   compatible:
-     enum:
-+      - rockchip,rk3576-dw-hdmi-qp
-       - rockchip,rk3588-dw-hdmi-qp
- 
-   reg:
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+index 7eca9e1ad6a3..61f38b68a4a3 100644
+--- a/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
++++ b/Documentation/devicetree/bindings/soc/rockchip/grf.yaml
+@@ -23,6 +23,7 @@ properties:
+               - rockchip,rk3576-bigcore-grf
+               - rockchip,rk3576-cci-grf
+               - rockchip,rk3576-gpu-grf
++              - rockchip,rk3576-hdptxphy-grf
+               - rockchip,rk3576-litcore-grf
+               - rockchip,rk3576-npu-grf
+               - rockchip,rk3576-php-grf
 -- 
 2.34.1
 
