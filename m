@@ -4,65 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29985E7718B
-	for <linux-phy@archiver.kernel.org>; Sun, 29 Dec 2024 06:50:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80275E7718B
+	for <linux-phy@archiver.kernel.org>; Sun, 29 Dec 2024 10:17:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
-	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4s8PMVCQnaL4yBWOhPOurYZKFRo8NPe6DJMun8TOMmQ=; b=OcNaFDfseQ9Y5a
-	t5ADz/A9EddEjVUkNqWYX+nDDlCACZfxaPA3i+7GgPaGEm9vN71jqiVoZgqeGpkz1zROqYUmlH9gB
-	Q90q4fPwm6WYh26rxpoX2+nNMZ2jDuXYl7n0dMy+GhMCyoNLuQGUAWMgm85jl5iGe6HU1wUsIZ1h9
-	B1uM0FR1LJmY7s+hOgQN+ACSUza51fTk5pfZ8C2Xn5FpP5/Bwv0Cc/fFC/ryjOp+U96DzFE6EWBDR
-	eH5gygdku/lgU++xa7oD583Ewq7IjH+NvUx7SHHXAHDsHq3ET6r5ihI7FNO/Zvvb1DMO6r4ckXm0o
-	BDdlhypkRKfCoEvJdXzg==;
+	List-Owner; bh=CIfhtfUEZPQ85ZxO0LpmGtluBsq3UeqlU3G8exPcu5Y=; b=Uzc0pwpJpuV/Pw
+	62IneVh7vG7kdcgm8cjXWNaYmyP8wWBpfKbzjd5rtA+os6GPCrWDBphHWbopQhtqjfQrKQJlRKwfx
+	EYDLMhpTfYKBiGkxVNORtkJ19vFm3grjUb+VRP/zEYBZRBTeIbOmvweiYaxX/ZwXPYe4c2JEFuLgm
+	93lU5ilcenH+DyiZRM2L2YI1jw0TJ8pqZEuMDPp/xtYVVDUw1p0ab+GwgQvf8kjzgyeerNEAplpK6
+	GfaaL+r1x99fAaL8DFKr1IqXZhrUlpXGcnpYbAUXRB+JJVjJJtWbC0OQ4npijyzukpWwJGaSRvaoQ
+	zqdM0qlkISx5pLIAINwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRn88-0000000306e-16w1;
-	Sun, 29 Dec 2024 06:50:28 +0000
-Received: from m16.mail.163.com ([220.197.31.3])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRn6v-00000002zxW-16ss;
-	Sun, 29 Dec 2024 06:49:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=Date:From:Subject:Content-Type:MIME-Version:
-	Message-ID; bh=MdgozdjrCxolx9SB5vbH0N/QD7pGNbLmzkrFN04lyWM=; b=K
-	GM8x0T+FK+DPvKGKldZIZ21Dv+Gj4BQtgmLUVjAFji+N8MKyt4WtV7GbA1ngFLRr
-	vsRAjfPj8EUFXIftarmPgD/440Y7lHmGtIWW01fTHxaE0GK6hl0lGtNzayP9ptK6
-	nl90VM7FWrcf5svriPwLQPAmzgQQNkuqARrBENfE8w=
-Received: from andyshrk$163.com ( [58.22.7.114] ) by
- ajax-webmail-wmsvr-40-135 (Coremail) ; Sun, 29 Dec 2024 14:48:36 +0800
- (CST)
-X-Originating-IP: [58.22.7.114]
-Date: Sun, 29 Dec 2024 14:48:36 +0800 (CST)
-From: "Andy Yan" <andyshrk@163.com>
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
-Cc: krzk+dt@kernel.org, joro@8bytes.org, cl@rock-chips.com, robh@kernel.org, 
-	hjc@rock-chips.com, vkoul@kernel.org, devicetree@vger.kernel.org, 
-	detlev.casanova@collabora.com, cristian.ciocaltea@collabora.com, 
-	dri-devel@lists.freedesktop.org, iommu@lists.linux.dev, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	"Andy Yan" <andy.yan@rock-chips.com>
-Subject: Re:Re: [PATCH v2 0/8] Add display subsystem dt node on rk3576
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
- Copyright (c) 2002-2024 www.mailtech.cn 163com
-In-Reply-To: <4950097.GXAFRqVoOG@diego>
+	id 1tRqM4-00000003Fbn-16sD;
+	Sun, 29 Dec 2024 10:17:04 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tRqIq-00000003F5h-0l8V;
+	Sun, 29 Dec 2024 10:13:45 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4B5745C55FE;
+	Sun, 29 Dec 2024 10:13:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9A45C4CED7;
+	Sun, 29 Dec 2024 10:13:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1735467222;
+	bh=NlqLtU37r1XG0IgHPwMy4frz80Jlp1bKAGpkHbUnyXk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=EYUUz7KbakQWAduLPLZpPfKAw0zp7Chn4RWyHuhb5R2UOX6eOEVMrAmh61gg9EUGf
+	 xZS+fu1oK4e9KBzP3jRUBOSbx/5OSjZKYmSCYH6xSpS1aXZZUR1+EnelbVI81IZDfm
+	 WyowfbLqx16SJ5k6LkShsjZXVaI/u7DY4RNtT4lSkY2RMdJ6qC09pJUxWD0HnbuUQn
+	 FEEjF8MrmcpT7ULqKXA7f5hZNtn/Ev0qv0cipNpxiolTfU7VQnPxCbl2OwdSnJ/pXD
+	 JhWHuT1EqTGLEkbdSkU3LZE3D3i3919LV7WDc3gx1IPxKVykdrI44JUu6Dv9WlLnKI
+	 irQ271wgWebVA==
+Date: Sun, 29 Dec 2024 11:13:39 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Andy Yan <andyshrk@163.com>
+Cc: heiko@sntech.de, krzk+dt@kernel.org, joro@8bytes.org, 
+	cl@rock-chips.com, robh@kernel.org, hjc@rock-chips.com, vkoul@kernel.org, 
+	devicetree@vger.kernel.org, detlev.casanova@collabora.com, cristian.ciocaltea@collabora.com, 
+	dri-devel@lists.freedesktop.org, iommu@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>
+Subject: Re: [PATCH v2 5/8] dt-bindings: display: vop2: Add rk3576 support
+Message-ID: <ihvrdnntfuvvycnlhysnm43wylotovvnivu4wxcne3bwc6etpj@n2rq6n77lmma>
 References: <20241228122155.646957-1-andyshrk@163.com>
- <4950097.GXAFRqVoOG@diego>
-X-NTES-SC: AL_Qu2YB/ieu0Eq4CafY+lS3TJ694VEL57u+a5GusA2ecAsnATi4iQeZGRsL2rN79iDOb9IyTpUTG/GyHU6hCyg
+ <20241228122155.646957-6-andyshrk@163.com>
 MIME-Version: 1.0
-Message-ID: <6ff7470.1060.194112c804a.Coremail.andyshrk@163.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: hygvCgDnb6zE8HBnsv1KAA--.47223W
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqB-EXmdw4CsLugADsD
-X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
+Content-Disposition: inline
+In-Reply-To: <20241228122155.646957-6-andyshrk@163.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241228_224913_653514_923B6D32 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20241229_021344_270641_9322D6E9 
+X-CRM114-Status: GOOD (  16.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,58 +71,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpIaSBIZWlrbywKCkF0IDIwMjQtMTItMjkgMDI6MzY6MzYsICJIZWlrbyBTdMO8Ym5lciIgPGhl
-aWtvQHNudGVjaC5kZT4gd3JvdGU6Cj5IaSBBbmR5LAo+Cj5BbSBTYW1zdGFnLCAyOC4gRGV6ZW1i
-ZXIgMjAyNCwgMTM6MjE6NDMgQ0VUIHNjaHJpZWIgQW5keSBZYW46Cj4+IEZyb206IEFuZHkgWWFu
-IDxhbmR5LnlhbkByb2NrLWNoaXBzLmNvbT4KPj4gCj4+IAo+PiBBcyB0aGUgVk9QWzBdIGFuZCBI
-RE1JWzFdIGRyaXZlciBoYXZlIGFscmVhZHkgYmVlbiBzdWJtaXR0ZWQgZm9yIHJldmlldy4KPj4g
-VGhpcyBzZXJpZXMgc2VuZCBhbGwgZGlzcGxheSByZWxhdGVkIGRldmljZSB0cmVlIHBhcnQgdG9n
-ZXRoZXIuCj4+IFswXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1yb2NrY2hpcC8yMDI0
-MTIxOTA3MzkzMS4zOTk3Nzg4LTEtYW5keXNocmtAMTYzLmNvbS9ULyN0Cj4+IFsxXSBodHRwczov
-L2xvcmUua2VybmVsLm9yZy9saW51eC1yb2NrY2hpcC8yMDI0MTIyNTEwMzc0MS4zNjQ1OTctMS1h
-bmR5c2hya0AxNjMuY29tL1QvI3QKPgo+bm90IHRvIGNvbmZ1c2UgeW91IHRvbyBtdWNoLCBJIG1h
-aW5seSBtZWFudCB0aGF0IHdlIHdlcmUgbWlzc2luZyB0aGUKPiJhcm02NDogZHRzOiByb2NrY2hp
-cDoiIHBhdGNoZXMgZnJvbSB0aGlzIHNlcmllcy4KClNvcnJ5LCBJIG1pc3VuZGVyc3Rvb2QgaXQg
-aW4gVjIgLiBCZWZvcmUgZ28gdG8gdGhlIG5leHQgc3RlcCwgSSB3b3VsZCBsaWtlIHRvIGNvbmZp
-cm0gaXQgYWdhaW46CkRvZXMgdGhhdCBtZWFuIEkgc2hvdWxkOgoxLiAgdGhlIGR0cyBwYXRjaGVz
-KDYvOCwgNy84IDgvOCkgc2hvdWxkIGJlIHNlbnQgYXMgYSBzZXBhcmF0ZSBzZXJpZXMuCjIuIFBB
-VENIIDUvOCBzaG91bGQgc3RpbGwgZ28gd2l0aCB0aGUgcmszNTc2IHZvcCBkcml2ZXJbMF0KMy4g
-UEFUQ0ggMy84IHNob3VsZCBzdGlsbCBnbyB3aXRoIHRoZSByazM1NzYgaGRtaSBkaXJ2ZXJbMV0K
-NC4gUEFUQ0ggMS84LCAyLzggNC84ICBzaG91bGQgc3RpbGwgYmUgc2VudCBzZXBhcmF0ZSAgPwoK
-IAo+Cj5UaGUgZHQtYmluZGluZyBwYXRjaGVzIGFyZSAoYWxyZWFkeSkgcGFydCBvZiB0aGUgZHJp
-dmVyIGNoYW5nZXMgYW5kCj5zaG91bGQgc3RheSBwYXJ0IG9mIHRob3NlIHNlcmllcywgdG8gcHJl
-dmVudCBjb25mdXNpb24gb2Ygd2hhdCBwYXJ0IGdvZXMKPndoZXJlIDotKSAuCj4KPgo+SGVpa28K
-Pgo+Cj4+IENoYW5nZXMgaW4gdjI6Cj4+IC0gV3JhcCBjb21taXQgbWVzc2FnZSBhY2NvcmRpbmcg
-dG8gTGludXggY29kaW5nIHN0eWxlCj4+IC0gTWFrZSAicm9ja2NoaXAscmszNTg4LWhkcHR4LXBo
-eSIgY29uc3QgZm9yICJyb2NrY2hpcCxyazM1NzYtaGRwdHgtcGh5Igo+PiAtIE1ha2UgZGVjbGFy
-ZSBwaHkvcm9wbGwvbGNwbGwgcmVzZXQgbGluZSBhcmUgbm90IGV4aXQgb24gcmszNTc2Cj4+IC0g
-ZGVzY3JpYmUgY29uc3RyYWludCBTT0MgYnkgU09DIGZvciB2b3AyIGJpbmRpbmcsIGFzIGludGVy
-cnVwdHMgb2YgcmszNTc2Cj4+ICAgaXMgdmVyeSBkaWZmZXJlbnQgZnJvbSBvdGhlcnMKPj4gLSBE
-cm9wIEtyenlzenRvZidzIFJldmlld2VkLWJ5IGZvciB2b3BwMiBiaW5kaW5ncywgYXMgdGhpcyB2
-ZXJzaW9uIGNoYW5nZWQgYSBsb3QuCj4+IAo+PiBDaGFuZ2VzIGluIHYxOgo+PiAtIG9yZGVyZWQg
-Ynkgc29jIG5hbWUKPj4gLSBBZGQgZGVzY3JpcHRpb24gZm9yIG5ld2x5IGFkZGVkIGludGVycnVw
-dAo+PiAKPj4gQW5keSBZYW4gKDgpOgo+PiAgIGR0LWJpbmRpbmdzOiBzb2M6IHJvY2tjaGlwOiBh
-ZGQgcmszNTc2IGhkcHR4cGh5IGdyZiBzeXNjb24KPj4gICBkdC1iaW5kaW5nczogcGh5OiBBZGQg
-cmszNTc2IGhkcHR4IHBoeQo+PiAgIGR0LWJpbmRpbmdzOiBkaXNwbGF5OiByb2NrY2hpcDogQWRk
-IHJrMzU3NiBoZG1pIGNvbnRyb2xsZXIKPj4gICBkdC1iaW5kaW5nczogaW9tbXU6IHJvY2tjaGlw
-OiBBZGQgUm9ja2NoaXAgUkszNTc2Cj4+ICAgZHQtYmluZGluZ3M6IGRpc3BsYXk6IHZvcDI6IEFk
-ZCByazM1NzYgc3VwcG9ydAo+PiAgIGFybTY0OiBkdHM6IHJvY2tjaGlwOiBBZGQgdm9wIGZvciBy
-azM1NzYKPj4gICBhcm02NDogZHRzOiByb2NrY2hpcDogQWRkIGhkbWkgZm9yIHJrMzU3Ngo+PiAg
-IGFybTY0OiBkdHM6IHJvY2tjaGlwOiBFbmFibGUgaGRtaSBkaXNwbGF5IG9uIHNpZ2U1Cj4+IAo+
-PiAgLi4uL3JvY2tjaGlwL3JvY2tjaGlwLHJrMzU4OC1kdy1oZG1pLXFwLnlhbWwgIHwgICAxICsK
-Pj4gIC4uLi9kaXNwbGF5L3JvY2tjaGlwL3JvY2tjaGlwLXZvcDIueWFtbCAgICAgICB8ICA3MCAr
-KysrKysrKy0tCj4+ICAuLi4vYmluZGluZ3MvaW9tbXUvcm9ja2NoaXAsaW9tbXUueWFtbCAgICAg
-ICAgfCAgIDEgKwo+PiAgLi4uL3BoeS9yb2NrY2hpcCxyazM1ODgtaGRwdHgtcGh5LnlhbWwgICAg
-ICAgIHwgIDYyICsrKysrKy0tLQo+PiAgLi4uL2RldmljZXRyZWUvYmluZGluZ3Mvc29jL3JvY2tj
-aGlwL2dyZi55YW1sIHwgICAxICsKPj4gIC4uLi9ib290L2R0cy9yb2NrY2hpcC9yazM1NzYtYXJt
-c29tLXNpZ2U1LmR0cyB8ICA0NyArKysrKysrCj4+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tj
-aGlwL3JrMzU3Ni5kdHNpICAgICAgfCAxMjYgKysrKysrKysrKysrKysrKysrCj4+ICA3IGZpbGVz
-IGNoYW5nZWQsIDI3NiBpbnNlcnRpb25zKCspLCAzMiBkZWxldGlvbnMoLSkKPj4gCj4+IAo+Cj4K
-Pgo+Ci0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
-eQo=
+On Sat, Dec 28, 2024 at 08:21:48PM +0800, Andy Yan wrote:
+> From: Andy Yan <andy.yan@rock-chips.com>
+> 
+> Add vop found on rk3576, the main difference between rk3576 and the
+> previous vop is that each VP has its own interrupt line.
+> 
+> Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+> 
+> ---
+> 
+> Changes in v2:
+> - describe constraint SOC by SOC, as interrupts of rk3576 is very
+>   different from others
+> - Drop Krzysztof's Reviewed-by, as this version changed a lot.
+> 
+> Changes in v1:
+> - ordered by soc name
+> - Add description for newly added interrupt
+> 
+>  .../display/rockchip/rockchip-vop2.yaml       | 70 +++++++++++++++----
+>  1 file changed, 56 insertions(+), 14 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop2.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop2.yaml
+> index 2531726af306..f28cea4a6d82 100644
+> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop2.yaml
+> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop2.yaml
+> @@ -20,6 +20,7 @@ properties:
+>      enum:
+>        - rockchip,rk3566-vop
+>        - rockchip,rk3568-vop
+> +      - rockchip,rk3576-vop
+>        - rockchip,rk3588-vop
+>  
+>    reg:
+> @@ -37,10 +38,22 @@ properties:
+>        - const: gamma-lut
+>  
+>    interrupts:
+> -    maxItems: 1
+> -    description:
+> -      The VOP interrupt is shared by several interrupt sources, such as
+> -      frame start (VSYNC), line flag and other status interrupts.
+> +    minItems: 1
+> +    maxItems: 4
+> +    items:
+> +      - description:
+
+That's contradictory. min/max say 1-4, but here you list two interrupts.
+
+> +          vop system interrupt, such as bus error, and vsync for vop version under
+> +          rk3576.
+> +      - description:
+> +          independent interrupts for each video port, such as vsync and other video
+> +          port related error interrupts.
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: vop-sys
+> +      - const: vop-vp0
+> +      - const: vop-vp1
+> +      - const: vop-vp2
+
+And this says exactly 4.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
