@@ -4,63 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06871E77188
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Dec 2024 14:13:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3943FE7718F
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Dec 2024 15:06:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Rne/ZzIHz46sz71Gl1IiROMRsz/EqmCOaj1c9r3nzw=; b=rlwNHqtQMYMyXr
-	2Tmij9yYfQi8qx1u4tBY3Z1zv2wKqcW5RnO6IHn2qqCzVdXpmF0d/ULCbwL+JFqPjaQFpoLa4yAay
-	ZwL4rkLj5muAvWWOjgE4ECxEbbe6zQxPzGp48wnLKERyyzF/zUXM6dOVssqCE1lSfSHgi/m3+i9+P
-	r4vEbE3WdSw+iomrWjcp4sDswy8DIyzkPdgqVXS8L3GjeY0GB3J3Fx/R+nhxKKndlZubOb5T6IQ8w
-	ym74RZvrTQK4q70Lp5QPot9hyRwFohcwwfFVuHaHeA5rm8tK6kg060VC0OxeYKvqsRJtiOMWOgqev
-	oQkQtChAdf1ggCd+w0+w==;
+	List-Owner; bh=PJ/JsU9JozDD8xtDlmSkgztRDzfaE8k+tXrndsb1a5k=; b=hzlIZ7RCcdYylP
+	Xqar6hccgEx5GtuMLUcV3jP4FBjytyPbAP6/azZYcz9r7hWbnpz8Aa7frLRprbl3zoWDzShIaJMkV
+	uVg1z8BQbuTIOd9BeN2CAptDoYeh+VtUFA3ZM/LcIURnulw0wKwAoeMANX0KztTBdNIDGaXnszs0b
+	TUhLQ4paLhHrFCqol1KlTqiqmXVaP37UDozzQqLqS11p5K3zEx1CylyFzQEajRKeUBE7ocp+Fg46g
+	5eUfpLOIkLIBoFw4zH4jVYH1AXl6nYnHoiB4FQrzwWg2+LuzhWAtUx3jzv9PyylP30M2F8Bv6uixg
+	Gt/4uK9NHUfGJRXq0BJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSGWC-00000005KSN-3EXc;
-	Mon, 30 Dec 2024 14:13:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSGUw-00000005KKq-1wVu;
-	Mon, 30 Dec 2024 14:11:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E04FF143D;
-	Mon, 30 Dec 2024 06:12:25 -0800 (PST)
-Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C93193F59E;
-	Mon, 30 Dec 2024 06:11:52 -0800 (PST)
-Date: Mon, 30 Dec 2024 14:11:50 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Parthiban <parthiban@linumiz.com>
-Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, Robin
- Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu
- Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel
- Holland <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>, Maarten
- Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann
- <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter
- <simona@ffwll.ch>, Michael Turquette <mturquette@baylibre.com>, Stephen
- Boyd <sboyd@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, Linus
- Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RESEND 00/22] Add support for A100/A133 display
-Message-ID: <20241230141150.3d0c3ae6@donnerap.manchester.arm.com>
-In-Reply-To: <314b6bbe-613e-41a6-955e-50db6e11ef8e@linumiz.com>
-References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-	<314b6bbe-613e-41a6-955e-50db6e11ef8e@linumiz.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1tSHLN-00000005PTW-48hf;
+	Mon, 30 Dec 2024 15:06:09 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tSHLI-00000005PT9-451G
+	for linux-phy@lists.infradead.org;
+	Mon, 30 Dec 2024 15:06:08 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BU67grV022954
+	for <linux-phy@lists.infradead.org>; Mon, 30 Dec 2024 15:06:03 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ehWfGPcCLSEfEC42hvN/XOS5H/EYqBO9m0oPbiJ8mWA=; b=gRzagZ3ZWUXQ3lau
+	45MumRAmNuaKtUOTeAp2MgI40pWbvK/mBiMW3DCQtZI3QFzVHjQCCpKJvzCeX1b6
+	jQpN/FrmlXtAeNW0gAqD3M12G2jpvJ3m5VTwJLbicS0tyrStXdjDJ37mncoU61QT
+	JmAqKMeLF67rqCh99ZQiXxrMfj1Sj3mjaiOFAJTX+tezfotiSxV7jOl6ahO2/R4l
+	sjd152e8i4viRmD5+A2Pg/MUbEJx4csLiel9DsaUTsIbdwSAek8roFlWQokUmx98
+	DHfj01C81kaPWLFT4Nl5pu4YKL4TgeYjgd2z29OtysGnm42k6clIRV/MSmlxehWl
+	apOPxQ==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43unys12wy-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 30 Dec 2024 15:06:03 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-6d88fe63f21so21716756d6.3
+        for <linux-phy@lists.infradead.org>; Mon, 30 Dec 2024 07:06:03 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1735571162; x=1736175962;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ehWfGPcCLSEfEC42hvN/XOS5H/EYqBO9m0oPbiJ8mWA=;
+        b=n5zHY3mabNVJPxliMD5t3ui6XJw1ehjO7onJOPAv/cpqj/BGIRmdR+26A3AFUAtgIb
+         6Ns0Q9yfTLSOmnLG0smJVz/QOMhZCLYSF6fNbj9no9x1CkVbmPg9hOBIrPdqT6tWiZMG
+         2efDFJbmKL8CVLBcC/U42i6McahoOznHOzm+g5VBXHiZhCW5RX+QVyGYACMqe47pL9Ir
+         dxRda2oK7IVSTLhFnKCEavbmBOzMF78YGBsoKr35JqvioE8e6cl9g/7Hkd5PFaskWdlJ
+         kq42Zu0doB4de02JOoAmN/PyED5CEjB2jaPEuq1pY8p0OU0ysc3swfCvE4nD0vNHkvF5
+         G55Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVhQayFDkYLq6wJTVHOD+59ZNLjOrZzIJ5rKhSsPay7E21TIvnCLUSsW6J0ec5FB9ycXnki8D7yXOM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyRoQOehMQ7dJgadDQDxwO7FBDdsjcuM0b/WinME7Oo+PrS3sxA
+	HiybCHMcM87r7rzCaXz+ufOtsLUWh9kQCWfVvwDyM77mduEit/WSNf6DYYrknYQFhMFt20IPtvg
+	7JEWVhXsgy84jttivEVH1evk7jafhCtQQNfosRVvDBOfe6HKtXF4UVS1BKFLDe4Ks
+X-Gm-Gg: ASbGnct6u1Q1WP/mVNub9ohRSfCeTXJnLd8nw1VTcKY0nhu8LUSK3FcG6lnDgtpvxtp
+	c/bvHGeYAoXeK+KV2arlfZwfSYjRqW7dNcCHtksqRvg3QhAx6+P2Pq38KlM2a6d7mhc1q7NI5LT
+	uFn6dSthyOr0x8654ag9ggG3FX3ZbGHJtWymuZwlC2YrzqN/HlBrZZ6MrShUdniY5QygEUYhSWg
+	B6ZJxv5748y0hxmmPoT6bNQ+lZ6LSS3TCnmjbs8BVJiaPU98WRB4aXe1PfSBLoSIeVjGgXUGX+M
+	56WR0QCfyyN+reEi2p0SP2Hjfp87DOO34dk=
+X-Received: by 2002:a05:620a:454c:b0:7b1:4add:f234 with SMTP id af79cd13be357-7b9ba7232c6mr2332799185a.1.1735571162490;
+        Mon, 30 Dec 2024 07:06:02 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHXsa5g7Aqph9cbjlEpfN+a2POv8ZHcFZcVA5zwUYAJMZi9yRoNMP5FC+yqW0MHB9wXyzdGUQ==
+X-Received: by 2002:a05:620a:454c:b0:7b1:4add:f234 with SMTP id af79cd13be357-7b9ba7232c6mr2332796785a.1.1735571162139;
+        Mon, 30 Dec 2024 07:06:02 -0800 (PST)
+Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-aac0efe46casm1502781266b.129.2024.12.30.07.06.00
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 30 Dec 2024 07:06:01 -0800 (PST)
+Message-ID: <8e60ac5c-dabc-4790-a663-717b7fd6e232@oss.qualcomm.com>
+Date: Mon, 30 Dec 2024 16:05:59 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 4/5] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, lpieralisi@kernel.org,
+        kw@linux.com, manivannan.sadhasivam@linaro.org, robh@kernel.org,
+        bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org,
+        vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org,
+        konradybcio@kernel.org, p.zabel@pengutronix.de,
+        dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com,
+        linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org
+Cc: Praveenkumar I <quic_ipkumar@quicinc.com>
+References: <20241226102432.3193366-1-quic_varada@quicinc.com>
+ <20241226102432.3193366-5-quic_varada@quicinc.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20241226102432.3193366-5-quic_varada@quicinc.com>
+X-Proofpoint-GUID: _Hr7ykEDNaZkVJiw5z7G_syVdqy3PsE9
+X-Proofpoint-ORIG-GUID: _Hr7ykEDNaZkVJiw5z7G_syVdqy3PsE9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxlogscore=755
+ malwarescore=0 suspectscore=0 adultscore=0 clxscore=1015 impostorscore=0
+ bulkscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2412300130
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241230_061158_617179_BC40B472 
-X-CRM114-Status: GOOD (  24.14  )
+X-CRM114-CacheID: sfid-20241230_070605_151529_9BC5DEE7 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,59 +126,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Dec 2024 20:06:30 +0530
-Parthiban <parthiban@linumiz.com> wrote:
-
-> On 12/27/24 6:30 PM, Parthiban Nallathambi wrote:
-> > This series depends on [1] for the eMMC/MMC controller to work and
-> > [2] (lined up for 6.14) which adds support for the sram nodes and
-> > display engine extends it's usage. Idea of this series to get initial
-> > feedback and adjust, which will be rebased for 6.14 once [2] is merged.
-> > 
-> > This patch series adds support for A133 display pipeline based on
-> > LVDS. dt-bindigs are organized in the start and later with code
-> > changes.
-> > 
-> > PHY is shared between DSI and LVDS, so to control the PHY specific
-> > to DSI/LVDS, phy_ops set_mode is introduced. To enable the DSI
-> > using set_mode, analog control register MIPI Enable is used, which
-> > may not be available for A31 (shares the same driver).
-> > 
-> > Otherwise, A133 also got hidden independent display engine i.e
-> > mixer + tcon top to handle parallel display. But this patch series
-> > adds only support for the 1 mixer which is documented.
-> > 
-> > [1]: https://lore.kernel.org/linux-sunxi/20241109003739.3440904-1-masterr3c0rd@epochal.quest/
-> > [2]: https://lore.kernel.org/linux-sunxi/20241218-a100-syscon-v2-0-dae60b9ce192@epochal.quest/
-> > 
-> > Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>  
-> Apologize for polluting with resend again. My internal mail server got blocked due to
-> volume count, which resulted in incomplete series again.
-
-I guess an incomplete send was the reason for the original resend? Please
-note this at the top of the cover letter then, otherwise it's not easy
-to see why you send something again. Something like:
-
-*** Re-sent due to mail server not sending out the complete series. ***
-
-It also helps to split up the recipients, so that everyone gets the cover
-letter, but only the respective subsystem maintainers get the patches
-touching their subsystem. I would CC: the DT maintainers on every patch,
-though.
-It's a bit more complicated to set up, but keeps the noise down for those
-large-ish series, for instance for the IOMMU people, who presumably have
-little interest in DT or graphics code.
-
-Cheers,
-Andre
-
-> I will fix the mail server issue before resending the series. Sorry.
+On 26.12.2024 11:24 AM, Varadarajan Narayanan wrote:
+> From: Praveenkumar I <quic_ipkumar@quicinc.com>
 > 
-> Thanks,
-> Parthiban
+> Add phy and controller nodes for pcie0_x1 and pcie1_x2.
 > 
-> 
+> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
 
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+
+Konrad
 
 -- 
 linux-phy mailing list
