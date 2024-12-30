@@ -4,35 +4,35 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31D6EE77188
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Dec 2024 14:09:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5200E77188
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Dec 2024 14:11:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YL8J9Xu+G5URlUghB/P+Q8FJUnxHud8TU5M5hm3CpnM=; b=McBdVCEwcaFQSU
-	umT7sHulpc89JapwNyJ3pJywlqPF5mxdZn6++QpwA5tnbIHOpl8iHt24R/TOujxz1f0PudZ9P+phn
-	7+wJyIjw7mepK8nNujgDpGyItX5tsCnuuDT2vcVNgr9HZglC0QYQDjc88kXQfYxD0KP8xNCn/QDfq
-	dgJsx1bBB9TQEUdtdzgRV7u0/gfSS98ot+QF1znOj0W3gVPLu366qy70qMuOKCTwvmEXhNZmBik7J
-	IF/yiof7NoLJTBLMLsJi0ysfzzKZA0AHrCtvYomR8ffeXkdlwK7sFtEvXOkolbMKwQ5T2Dib6xJh6
-	Z9Ca8W10mWw0Eq1RUwhg==;
+	List-Owner; bh=JtdCuy+I9OU/F1p26f3ngpfpfKXgoGXcwsY4WIPCIHA=; b=fdDF6qzpihaNvJ
+	CZkPsJkES4HGwCfMidgFnn1O3X4oDosUwBVdthNhDFQaS2Me+B53dy5VA8Q5rpX1iHrlMIATkxjCh
+	cFOQfdDs/keL+yMfhGfuHsZD8Nen3FPioQXj52YnTvhDTJzCJ6dYWPejm+VqX4YWU/2TqfSkZtHeR
+	7fm2X/BisbkOyQ4ZPFRHWI9axx7i/WVDtC4dy9hcDg1ndjtbRdURqfb/ixYlA2vMKwqqqkQ1BVI/a
+	zEbZryKtc81BgojUi21b32poEgwBIRX5j1k7aCznaTNleePM6ZR3uE/1XabAJVHnjKE2JFeANrsfK
+	4jZKBeGtKR24XnzLEBgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSGS3-00000005JzS-1l01;
-	Mon, 30 Dec 2024 14:08:59 +0000
+	id 1tSGU6-00000005KDW-2a0C;
+	Mon, 30 Dec 2024 14:11:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSGQt-00000005Jt2-3ubz;
-	Mon, 30 Dec 2024 14:07:49 +0000
+	id 1tSGSs-00000005K5s-3gxf;
+	Mon, 30 Dec 2024 14:09:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDE42143D;
-	Mon, 30 Dec 2024 06:08:11 -0800 (PST)
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0317E143D;
+	Mon, 30 Dec 2024 06:10:18 -0800 (PST)
 Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D758B3F59E;
-	Mon, 30 Dec 2024 06:07:38 -0800 (PST)
-Date: Mon, 30 Dec 2024 14:07:28 +0000
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DAE383F59E;
+	Mon, 30 Dec 2024 06:09:44 -0800 (PST)
+Date: Mon, 30 Dec 2024 14:09:41 +0000
 From: Andre Przywara <andre.przywara@arm.com>
 To: Parthiban Nallathambi <parthiban@linumiz.com>
 Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, Robin
@@ -50,18 +50,18 @@ Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, Robin
  linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
  dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
  linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RESEND 04/22] dt-bindings: clock: sun8i de2 clock: Add
- a100/a133 compatible
-Message-ID: <20241230140728.78629cd3@donnerap.manchester.arm.com>
-In-Reply-To: <20241227-a133-display-support-v1-4-abad35b3579c@linumiz.com>
+Subject: Re: [PATCH RESEND 16/22] clk: sunxi-ng: sun8i-de2: Add support for
+ a100/a133
+Message-ID: <20241230140941.00aaed1f@donnerap.manchester.arm.com>
+In-Reply-To: <20241227-a133-display-support-v1-16-abad35b3579c@linumiz.com>
 References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-	<20241227-a133-display-support-v1-4-abad35b3579c@linumiz.com>
+	<20241227-a133-display-support-v1-16-abad35b3579c@linumiz.com>
 Organization: ARM
 X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241230_060748_053589_52FC3D2F 
-X-CRM114-Status: GOOD (  19.78  )
+X-CRM114-CacheID: sfid-20241230_060950_976019_0C2A81A7 
+X-CRM114-Status: GOOD (  17.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,63 +78,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Dec 2024 18:30:53 +0530
+On Fri, 27 Dec 2024 18:31:05 +0530
 Parthiban Nallathambi <parthiban@linumiz.com> wrote:
 
 Hi,
 
-> A100/A133 uses one mixer without rotation support, which is same
-> as sun8i v3s. Add it with fallback to v3s compatible.
+> Display clock uses 1 mixer without rotation support is same
+> as v3s. There is also a hidden independent display engine
+> with independent tcon_top available in A100/A133 bin (based
+> on vendor BSP).
+> 
+> Add new compatible for A100/A133 to accommodate the future changes
+> for the independent DE.
 > 
 > Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
 > ---
->  .../devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml       | 4 ++++
+>  drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 4 ++++
 >  1 file changed, 4 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml
-> index 3e00905b66ca..ed038967929b 100644
-> --- a/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml
-> +++ b/Documentation/devicetree/bindings/clock/allwinner,sun8i-a83t-de2-clk.yaml
-> @@ -23,6 +23,7 @@ properties:
->        - const: allwinner,sun8i-h3-de2-clk
->        - const: allwinner,sun8i-v3s-de2-clk
->        - const: allwinner,sun50i-a64-de2-clk
-> +      - const: allwinner,sun50i-a100-de2-clk
->        - const: allwinner,sun50i-h5-de2-clk
->        - const: allwinner,sun50i-h6-de3-clk
->        - items:
-> @@ -31,6 +32,9 @@ properties:
->        - items:
->            - const: allwinner,sun20i-d1-de2-clk
->            - const: allwinner,sun50i-h5-de2-clk
-> +      - items:
-> +          - const: allwinner,sun50i-a100-de2-clk
-> +          - const: allwinner,sun8i-v3s-de2-clk
+> diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
+> index 3e28c32050e0..067820ab704d 100644
+> --- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
+> +++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
+> @@ -342,6 +342,10 @@ static const struct of_device_id sunxi_de2_clk_ids[] = {
+>  		.compatible = "allwinner,sun50i-a64-de2-clk",
+>  		.data = &sun50i_a64_de2_clk_desc,
+>  	},
+> +	{
+> +		.compatible = "allwinner,sun50i-a100-de2-clk",
+> +		.data = &sun8i_v3s_de2_clk_desc,
 
-Wait, does this add the same compatible string twice, once as a
-standalone, once with a fallback? This doesn't look right.
-
-If you positively know already about an incompatibility, just provide the
-single string. If you suspect there *might* be something, use the fallback
-version for now, and we can revisit that later.
-
-Also please note that the semantics of the fallback is:
-"Any driver supporting only the V3s can also support the A100 version of
-the clock, as the new device is either fully compatible or a subset of the
-old one."
-
-So what would it be then here? The driver patch [16/22] suggests it's
-compatible, but that might just cover the part that the Linux driver
-implements? If it is compatible, you wouldn't need any change to the
-driver code at all, the DT core code takes care of matching the driver
-using the fallback.
+That wouldn't be needed then. *If* we find some incompatibility, we can
+add this line later, pointing to a different _desc block, but for now you
+can rely on the fallback compatible to match.
 
 Cheers,
 Andre
 
->  
->    reg:
->      maxItems: 1
+> +	},
+>  	{
+>  		.compatible = "allwinner,sun50i-h5-de2-clk",
+>  		.data = &sun50i_h5_de2_clk_desc,
 > 
 
 
