@@ -4,171 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8E00E7718B
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Dec 2024 01:50:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2182E7718B
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Dec 2024 02:11:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oIpknLOQDAE6KizyN466feE9XdjiyvEmH0d6cHk/mq4=; b=ggGgX6i65zagwXLHFSQypH0v24
-	ckzjE/aamEbw+rfusExEFqc0Rf1vqSd4uRXO1UBwLfXvbwa89SOql3k1qHuZbfyTy8WTPQPmFhnHF
-	USuay503zZLOrIAhdKQQdEGLSSYFvHZwhwZsEJEar/gWXT1yANx3JSnliUQhmx37KMuUq3Jx46wCE
-	/zuxY9r7cBWLeLLq7ifMwYVQubiv7rk8P6+V5enVR1DzHyyNVX/WkdDHtwsQulFZGHeuscw1iWVfo
-	sozbb9BTZI7rys4VBQ+CnsIDmhvPrS7v9iXAmw7ydF8CCGQDJrX31dLj6ooN/oJufzNp98D9VmKeB
-	BXDbz+KQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Np99u6t7uGrQA07traqsl+5WM6sa8OWjE7x6uo+4ZZc=; b=rDyxuf+9mFpe5k
+	qmMT1GY4iMyDLQifSun7iDlsOAvzEtTraOsugjOEiGU3uu8gseTvRHQV34HkDHPeuO2BAGxJiQYGz
+	H5t3NfT669GqBLEvGdLm11eRt5o7FnPukTal6Sj4wrA2mrvxsKVMlmeambLqbedSbIOkPbhdJjI0d
+	UfycmFNJX8kz3nlJOObyMDKci7XpQHzA+nAjtzM/j1QfYCOYOU0rVM07gOl9q8YqrvvG6xISkkvW+
+	p9quMxAa408xhEOLPqsJrMT2SZTr/CSb9ocsd1LU4h8tVoB+KugOyPi7cXiveF5QmBRTBoojRf8sw
+	6eC6N3ZQEYvfT4uAK1iA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tS4uy-00000004Gdg-3zNc;
-	Mon, 30 Dec 2024 01:50:05 +0000
-Received: from mail-am6eur05on2062f.outbound.protection.outlook.com ([2a01:111:f403:2612::62f] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1tS5G1-00000004IRD-2pDw;
+	Mon, 30 Dec 2024 02:11:49 +0000
+Received: from mailgw.kylinos.cn ([124.126.103.232])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tS4uv-00000004GcN-2MzO;
-	Mon, 30 Dec 2024 01:50:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=E1yZ+ces9UOHNYokqPXBp43Foz17iMLFM+75nyzhSD8LPRRgGuRZXdKcTDp9q0wbfaMcZRFJqRsir5/piMSLxMlMj1xzwXRxzeXcJq9wTLZRPRFZYJLUddECGaPDyezQyQgl6DRi/c/xv3fc1FqAucE9yhVkQ8ZRUloOmLim6vds2V5yjMZK5bNu5etIpFJuRN0a8w9CuNTh5vl7c2qaCV5XjbhyeDtfHHcLQjauYqHvBV3Qq/eedEqZY2pvgCzVIpFPuDQh8D8myXzZ+JaP+cXpkzNTqNqH7B3RiG8fnaY2GsHz3BZ+bEPyBmVs1Qr+ZVEpg04NP9SwjDOV1abtCw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=soJMyhqlII/XyDdg+S42sOYEr1kQK5Plo78nqtgu2j0=;
- b=olqCvkM/tYTsdd3geppzkB68Ey7AMJnDC10waTh+YaqnlbafkEgF1y4TGqepphqPGA82rPr0iK2F5Nr31W/AGaQgN30h7rnnlamoeXg74j0KIv7I4Or6tCEND9SHx9ZgHnKuxCgYQAHKq2Jw3nYzptkJOlVEXfoEG1tG4vs4f+21g7Bes3DmYGvZtqBwXaSq+9j5Vp2n7IO9Lg0UBUd8Bn/yA8tO7ZXq4O/W7aXB//3S/YUl7z+riXPbakqQaINfsMmEzXYrMwr6GNGnpOMaiaum4mJUnW0KZbCRVZ7bGlS1m6Dc9WfVXkgdUZBfcfBWVdYWzWEBTPYbZvFycgePjg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=soJMyhqlII/XyDdg+S42sOYEr1kQK5Plo78nqtgu2j0=;
- b=hTjcerCRnrfmGaHqwzqmkkmkcjTkA8klprLq9DN+JdqPV/ycrFNk1oiMtOKI59U82Vtm/TS2VzrnuFHU81+vA+rVUyq9+vz/vzC46WFn8rmz8Vhte3oaWOZdwwCABECeyOKqsWv2+wPsECXBVdsVWVavkX2mcwZLckp/pE6xQs40wI2cCgtkLrX+AByq4IHzd7xsUNBs3LBRzFY01y8tErkomtXCpLW22c23jyvDaDHv8MAqvcC2z4CEKgaYgHaXt5HvRlTdam1ie8D5vIh5DYmTBQmX8VS++HWa8rAvqWuCpemT+gKTbJZnJjmSq6okN6WM+8r+J/yoUM1P297K4A==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com (2603:10a6:20b:113::22)
- by DBBPR04MB7753.eurprd04.prod.outlook.com (2603:10a6:10:1e1::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8293.19; Mon, 30 Dec
- 2024 01:49:48 +0000
-Received: from AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::d1ce:ea15:6648:6f90]) by AM7PR04MB7046.eurprd04.prod.outlook.com
- ([fe80::d1ce:ea15:6648:6f90%4]) with mapi id 15.20.8293.000; Mon, 30 Dec 2024
- 01:49:47 +0000
-Message-ID: <e78b6142-b0fd-40ab-b342-2ec2c4f89d4f@nxp.com>
-Date: Mon, 30 Dec 2024 09:50:30 +0800
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 12/19] drm/imx: Add i.MX8qxp Display Controller KMS
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- p.zabel@pengutronix.de, airlied@gmail.com, simona@ffwll.ch,
- maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, tglx@linutronix.de, vkoul@kernel.org, kishon@kernel.org,
- aisheng.dong@nxp.com, agx@sigxcpu.org, u.kleine-koenig@baylibre.com,
- francesco@dolcini.it, frank.li@nxp.com
-References: <20241223064147.3961652-1-victor.liu@nxp.com>
- <20241223064147.3961652-13-victor.liu@nxp.com>
- <wpxxedxabgo2kxf5wuosu76i5ud3ce2tywm2imhvad4nyy5u2d@qgfhev2hndba>
- <77540387-b1ac-46c1-a3c0-afbd34337d61@nxp.com>
- <CAA8EJpqwRfkjGCYfeRPj7u5hb_8fkMFDtcK1+YDG4nsez1WNXw@mail.gmail.com>
-From: Liu Ying <victor.liu@nxp.com>
-Content-Language: en-US
-In-Reply-To: <CAA8EJpqwRfkjGCYfeRPj7u5hb_8fkMFDtcK1+YDG4nsez1WNXw@mail.gmail.com>
-X-ClientProxiedBy: SI2PR01CA0010.apcprd01.prod.exchangelabs.com
- (2603:1096:4:191::12) To AM7PR04MB7046.eurprd04.prod.outlook.com
- (2603:10a6:20b:113::22)
+	id 1tS5Fy-00000004IQB-1zgW
+	for linux-phy@lists.infradead.org;
+	Mon, 30 Dec 2024 02:11:48 +0000
+X-UUID: 658512acc65311efa216b1d71e6e1362-20241230
+X-CTIC-Tags: HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CC_NO_NAME, HR_CTE_8B
+	HR_CTT_TXT, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_DIGIT_LEN
+	HR_FROM_NAME, HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER, HR_SJ_NOR_SYM
+	HR_SJ_PHRASE, HR_SJ_PHRASE_LEN, HR_SJ_WS, HR_TO_COUNT, HR_TO_DOMAIN_COUNT
+	HR_TO_NO_NAME, IP_TRUSTED, SRC_TRUSTED, DN_TRUSTED, SA_TRUSTED
+	SA_EXISTED, SN_TRUSTED, SN_EXISTED, SPF_NOPASS, DKIM_NOPASS
+	DMARC_NOPASS, CIE_BAD, CIE_GOOD_SPF, GTI_FG_BS, GTI_RG_INFO
+	GTI_C_BU, AMN_T1, AMN_GOOD, AMN_C_TI, AMN_C_BU
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.41,REQID:e5ce2b67-be89-497b-a42e-e5dd01172f2e,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTION
+	:release,TS:-5
+X-CID-INFO: VERSION:1.1.41,REQID:e5ce2b67-be89-497b-a42e-e5dd01172f2e,IP:0,URL
+	:0,TC:0,Content:0,EDM:0,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
+	elease,TS:-5
+X-CID-META: VersionHash:6dc6a47,CLOUDID:98b16b5c94555fe3511cfeefa68a9730,BulkI
+	D:241230101136WWCDXQWK,BulkQuantity:0,Recheck:0,SF:17|19|66|78|81|82|102,T
+	C:nil,Content:0|50,EDM:-3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC
+	:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0
+X-CID-BAS: 0,_,0,_
+X-CID-FACTOR: TF_CID_SPAM_FAS,TF_CID_SPAM_FSD,TF_CID_SPAM_SNR
+X-UUID: 658512acc65311efa216b1d71e6e1362-20241230
+X-User: xiaopei01@kylinos.cn
+Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
+	(envelope-from <xiaopei01@kylinos.cn>)
+	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
+	with ESMTP id 1042504553; Mon, 30 Dec 2024 10:11:35 +0800
+From: Pei Xiao <xiaopei01@kylinos.cn>
+To: geert@linux-m68k.org
+Cc: aford173@gmail.com,
+	aford@beaconembedded.com,
+	arnd@arndb.de,
+	dominique.martinet@atmark-techno.com,
+	frieder.schrempf@kontron.de,
+	kishon@kernel.org,
+	l.stach@pengutronix.de,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	m.felsch@pengutronix.de,
+	sandor.yu@nxp.com,
+	u.kleine-koenig@baylibre.com,
+	vkoul@kernel.org,
+	Pei Xiao <xiaopei01@kylinos.cn>
+Subject: [PATCH] phy: freescale: fsl-samsung-hdmi: fix build error in fsl_samsung_hdmi_phy_configure_pll_lock_det
+Date: Mon, 30 Dec 2024 10:11:28 +0800
+Message-Id: <d4b59d5e94c4c4a488cd24c6c169e418ad53980d.1735524526.git.xiaopei01@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <CAMuHMdUG7A10E2SZR6kHiQBrzp_OVvMSd7jxggaoU3B_6fZ+nQ@mail.gmail.com>
+References: <CAMuHMdUG7A10E2SZR6kHiQBrzp_OVvMSd7jxggaoU3B_6fZ+nQ@mail.gmail.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM7PR04MB7046:EE_|DBBPR04MB7753:EE_
-X-MS-Office365-Filtering-Correlation-Id: 15ff1f3c-3536-4256-8722-08dd28743d76
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|366016;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?cng5dlI5OHNnbVA1MXN3aDMrZ3Fqayt2K20xdXhmL3NXYUVIeGtKQXovM2d1?=
- =?utf-8?B?dDduZGlRUjQ4UVNEei8xZndIUGJQbG54R1RNVjZJc3R2anhaOTk0cGFMYkF6?=
- =?utf-8?B?Q29iSC9qQ3BJd2NUbytORmZsU0tucjltMWxWLzNaVGViMTRLZ0VuQks1a1V0?=
- =?utf-8?B?Skc4dnhtbk5EUUl5UjVJUC9ZRHQwai9Dd214WFUybzc2NzR6K1BFZ2pBdnA4?=
- =?utf-8?B?NHlYNFllaHk5bnY2WklOODRxTWRZa0NaQlp6bmlKTUxXN25tOC9QMFhYRFNr?=
- =?utf-8?B?ZmZOU1ZZOVdDYnpZNnB5TWlRaC9zTEdtUlJzZkNqZ3IvNlpHc0E4YzRML2FR?=
- =?utf-8?B?cFo4c2ltMDUwV09hK1NXZHVEMldOMHpUanJQeXR4OU9qZWVubTlqdklCc2dE?=
- =?utf-8?B?dERWWTdHRE5QR0dZNkF4UkxaaFNCblR0a2lVUjNQV01OZVZqWTc5WU54dG05?=
- =?utf-8?B?YUdEQTBiSDBUTmkzVlQ5N3hOeXp2OXA0M0hrRjBMZ3h1V21EcXBUdmVFaFRr?=
- =?utf-8?B?YlprTWhjbjl0MGtjZVhnbjBrK3V4aGdCUXpYYzExU0ZXUE1mWjZFV1c3OUl3?=
- =?utf-8?B?S1ZnclNNcDhrYVZHZk5EZ0VsUy80eUJjUzhLNE9aY3VQbm9sZXdhUERLNEw5?=
- =?utf-8?B?TUw4a2F1SUpSUkw3bDNEWHY3aEZROThqdXl2SzNKU3RlbHFHcUt0bnNyN2hv?=
- =?utf-8?B?Q0VpMlJDZTFHWEFwcDA1dzJ6cWJCbFJWMGFQaG1PaGhXa3VMRFNDR1JFNWtM?=
- =?utf-8?B?N3FmcWtBQTdndkJwM0pzeTFNbzF0Y2RpR1FKUGpMbDVOMm84bUxqZEptK044?=
- =?utf-8?B?eFI3Y251ZkVucUhvbDluc1hIWm1FNW1VOEtHbFBxRVJubU8xa0pWNHM5aUVl?=
- =?utf-8?B?d015U0h1a3hpMVUyZkljd3J3WEYxZUdnZGtxdTNBQ091MHdjYUxnKysvckxY?=
- =?utf-8?B?d0RPN09HT3c5dnlmTzgyWWdiRDJ4QjVZRG8vRkM4aW9NTFpNU2FYb0l5VjNK?=
- =?utf-8?B?RGFWbWpjWTFJOHlZWTVvaHFsZU1Ha01jOWJidVYvTTVWTXlCU1lMdnVLVEM5?=
- =?utf-8?B?TVJDSGJrZ2dkUFppcHA1QTN1eHFrUHI1TGpoUmNwSEV1VFFTekdTT3pUZ1Jv?=
- =?utf-8?B?STB4R0laUnVsMVpUbFRpRkNmQkRsQnBHQk9UdlZ5UDY2SE1QRXhFY0tRd0Fr?=
- =?utf-8?B?aHFoOU1DaVBManc2OTlhNzJKVDFtc0hqWDFWRTVHajNKVUlxMlRMenA2WXNi?=
- =?utf-8?B?eGUrT2x6am1GUnk4NXhRajF3N3RNY3NyVlZRU2gvdWFpaVd1SW45cExYT0R0?=
- =?utf-8?B?bVYrRlZoZU9INitGSVNCR0JxYVBDdzRhY0ZFZFF0T05yQTRMNHpvUFYrTE1w?=
- =?utf-8?B?MlZmZkM3MTl5SS93S0FMellEVzkrN1pnQ2JhYzhVQi9jTVZvOHFIQ0ZUeXhI?=
- =?utf-8?B?MGhWdlFxR1EzT1NNYi9VZG1uNzk4RmZnM0tZSGNQVVgzNmszUUZ1SVBxVUpU?=
- =?utf-8?B?Rk1PenhpYk03aVFFNk1pS0ZaelNmUkZUNy9tSFQzMDYzN1NJeGczYmViTGVz?=
- =?utf-8?B?WVZ6aGI2dmVjdU0yaCtqZllEYjZnR3VWZWtGdE0rMUtHN2tkUTQzSXc2VWND?=
- =?utf-8?B?cHVSMWYwQm13UElweSswcnROd1NMMGU3YWVMOUxRZ281b1lTU1hwMWZLSnVG?=
- =?utf-8?B?RTNYYVRMUGRONVVuRUdqTmc3WHhkQjU3eUU3TkV2K05raVFZWUVlWFg3Zllm?=
- =?utf-8?B?WFdkMUpqRGd0M2NLVFkrdVMrTXd2RnliZ0NyN3FTZ2tCdWlObGlYL2hMMktS?=
- =?utf-8?B?YjJNOEIyVjRQcWoyRFZMMGlRZ2twaEFVdWpnTUJycERJcUxVUFR0T2VaRUgr?=
- =?utf-8?Q?wkz58ayYt4XkW?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM7PR04MB7046.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Z1NpNGxFNkJJZnZ2L2Q3TDZEZEpUaWpPSnBFcVFYSHkyUGJEL21KVzN4ZUJR?=
- =?utf-8?B?K1pmRnpTM2JKQWNLMEIzMmxjemUvRzNnTXFqbjlzcm13RkxPbi9kaDhraHg3?=
- =?utf-8?B?K1NkczUzVmRyRHV5VWZTSGNiN2g0YnhBN3ovMmpHblJBOWFsSTBkWlRMVGl0?=
- =?utf-8?B?ay9NNFpzOE1IekNQNjlSZFI2MUk5QS96Q3FIVDVMR1lPdTBEVHp6cm1IZ1JG?=
- =?utf-8?B?dEY5MEwraU1ueGRURW5ZRTVkaWFiQWhlZU1QUmxnV1ZWdnlROXlXRUhNcnB2?=
- =?utf-8?B?aG9uQTV4dmxVVjBEU1YxZmRjVmhBSUlFY2FwY2ljczVGUmh0Tyt6bkEwT2Ey?=
- =?utf-8?B?S1VLMUtQdUxxeFhJUFMvUHh2Z0I4M1VOOFJXWUpnbDZxbkRDcjg4ZTh0ZE0v?=
- =?utf-8?B?ZVVySHl2ek56L24zZ29QbUhuRVUvT2VZNmhuM2tCdXRrVDhja3pYTkJyRmV6?=
- =?utf-8?B?ZGMzRWlKSkk3NXNpb3ZJRW4wdEVUenQzMkRxVkh6VkcraU9VV1RFWXJGMWRy?=
- =?utf-8?B?UzdLbGxpck5jRzVvNktwVmdvWDQzMEhENFg4L1BSdVl5YTI5L0VGVThubVBE?=
- =?utf-8?B?ankwMit3NjRKTGVoV0Q4RHpncGlodHh1dExKRHd4MUE3WE9XRTllc0FkdGxW?=
- =?utf-8?B?RmF5cElaSVo3cVlpbVVsMC84M0pRT3lNOTBsV3l4Yk9NYVgxUGlRbFFodGk5?=
- =?utf-8?B?MDlxSjFBZW5RMUlKSmNlSGlVQjBqTUdjWU9sSUhlemZrcjlJZC9ITWtEMmdv?=
- =?utf-8?B?d0RmYkFLakNaRm1pa2l6eVVydWc5SExJRUxYQjVBZWh5NUhCWHlZSG8xcnFE?=
- =?utf-8?B?d0c2UVcwU3V4UjQ2Z1V4b0U4S21seWVsc0RjdGdXUlMzTnkxL1ZZYTAwbkUz?=
- =?utf-8?B?cVA4TWdaa2YwNFBzUWtXTFFmeVlQWGtFbXphL2ZGM2hEakFhR2tXY0ZUR1Ez?=
- =?utf-8?B?YXNnRzlrTzlHSTJKQktrVGFHUWxlYkZHWjRNOXFwdVpSczJRMHhUdWFEWXp1?=
- =?utf-8?B?Z3RPV0JjdStKRkFZQytaaWlHNGN3dDRxQnkwU0tSak5uZDF0VTJFTjRNSzVZ?=
- =?utf-8?B?RlFZbUlENDFtMVJOQklvSmQvYnpLazdJNDc1ZUZDcDFLcGFNazdhTC9DRklm?=
- =?utf-8?B?bXlWakx1SVFJWXlMY3Z6ajdqNlNyWHMrVEo5RHVVV294cWh0MFlDWXlYTVRw?=
- =?utf-8?B?QUxWQUZVN3Q4QVAzWDN4N1FvaVlVU3psaFlIMWVmdnBNaHZxcEhjcVhuSzUy?=
- =?utf-8?B?ZXNQS3pLS3dHSndmbjZuaHlkVnBzaSt2Q0tsV1E2cXJneUJPbE1aTHErVE9r?=
- =?utf-8?B?dndoUkRvNTQzTVk4czJHWHJmU3dUNnpaaFFUOExUWUtKUmw1cEVqbGpndVpT?=
- =?utf-8?B?emZjMzNTVkg3OGw3V3JPcUp2ZEJBVEhDeE8yazJhcmF6b3N6cjBIaFA2cFhM?=
- =?utf-8?B?YjhlZUVnOUhyWG0va1Z1YzJXdDkrNnJ6My8zYVdZcXdDa3ErdkN4cFVPdkIv?=
- =?utf-8?B?Yk9MU0lWbDhpZlhHZkI3RUMzN1RJTzVyZFlaaTFoZExEVTJ2THU3R083dFdn?=
- =?utf-8?B?NCt5bTk4dEc0RWpDQjRXQk9qUW5MaHBsaHB1Y01sNk8xN01FOEhMaGlBenBU?=
- =?utf-8?B?aysrYVJxb09FRStubHlmTWg2VjQwcmprVzRlT1l5R1VoNytaK3hVMVZvSkF0?=
- =?utf-8?B?QVdVK1Btei9TWXN6V3U5aysxMHA2SGE1MVpBYTRCRW5oMElHUFpmM0t4dkVG?=
- =?utf-8?B?VkYrZ2R4TzRQemloY3N6MTA4L3VaZ1kveUhBZnoyRThQMWpvVW54YVgzaWlk?=
- =?utf-8?B?dVUweldUVGFWb013MWZFOVA0Mnk1NHJlODlXeW9YVVlmNFA0Yi81Z2hhNEVF?=
- =?utf-8?B?dk9JL2RzVi8zMWRrMkdXbitqKzNNQU5FMnROY3pPMTFhUTBNbzErUWUzT0s0?=
- =?utf-8?B?UDIwTTFuc3pVNlllVGc5eWRFNWVGRnFrWTQxRllkdGFpNWtFUVVjejZnL05G?=
- =?utf-8?B?K3BBRUJ3bmxES2h1OEFBUXFwM1NOeFQzUktxSHFtdmlNN0l5ZFVQRXJkaXpT?=
- =?utf-8?B?RTRuQklnN1BGVFBrUVZqMUpOKzNwMVVobmEwWGEydkF0YUN1NjZPdGNtUTcv?=
- =?utf-8?Q?fhzkgJdgenttJjfBWsxI29pDv?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 15ff1f3c-3536-4256-8722-08dd28743d76
-X-MS-Exchange-CrossTenant-AuthSource: AM7PR04MB7046.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Dec 2024 01:49:47.1241
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2fX57f+PPpE1gUq8OKULvJCTQE14ps3ZT0C4aJiKZYthw5s/5ewEKnHUM3R1V56nKnvZcp4520Rer+dT2GYMQw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7753
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241229_175001_747955_C8006C45 
-X-CRM114-Status: GOOD (  20.06  )
+X-CRM114-CacheID: sfid-20241229_181146_917011_36C08695 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -180,130 +94,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/27/2024, Dmitry Baryshkov wrote:
-> On Wed, 25 Dec 2024 at 09:18, Liu Ying <victor.liu@nxp.com> wrote:
->>
->> On 12/23/2024, Dmitry Baryshkov wrote:
->>> On Mon, Dec 23, 2024 at 02:41:40PM +0800, Liu Ying wrote:
->>>> i.MX8qxp Display Controller(DC) is comprised of three main components that
->>>> include a blit engine for 2D graphics accelerations, display controller for
->>>> display output processing, as well as a command sequencer.  Add kernel
->>>> mode setting support for the display controller part with two CRTCs and
->>>> two primary planes(backed by FetchLayer and FetchWarp respectively).  The
->>>> registers of the display controller are accessed without command sequencer
->>>> involved, instead just by using CPU.  The command sequencer is supposed to
->>>> be used by the blit engine.
->>>>
->>>> Reviewed-by: Maxime Ripard <mripard@kernel.org>
->>>> Signed-off-by: Liu Ying <victor.liu@nxp.com>
->>>> ---
->>>> v7:
->>>> * Drop using typeof in macros and explicitly define variable types. (Dmitry)
->>>> * Add a comment for disable_irq_nosync() to explain why _nosync. (Dmitry)
->>>> * Inline dc_crtc_check_clock(). (Dmitry)
->>>> * Use global drm_dc->pe. (Dmitry)
->>>> * Drop dc_crtc_disable_at_unbind(). (Dmitry)
->>>> * Add kernel doc for struct dc_{crtc,drm_device,plane}. (Dmitry)
->>>> * Define common IRQ handlers separately for each IRQs. (Dmitry)
->>>> * Rebase this patch upon next-20241220, so drop date entry from drm_driver
->>>>   and correctly include drm/clients/drm_client_setup.h.
->>>> * Collect Maxime's R-b tag.
->>>>
->>>> v6:
->>>> * No change.
->>>>
->>>> v5:
->>>> * Replace .remove_new with .remove in dc-drv.c. (Uwe)
->>>>
->>>> v4:
->>>> * Move dc_fg_displaymode(), dc_fg_panic_displaymode() and dc_lb_blendcontrol()
->>>>   function calls from KMS routine to initialization stage. (Dmitry)
->>>> * Drop dc-crtc.h and dc-plane.h header files and move relevant defines to
->>>>   appropriate .h header files or .c source files. (Dmitry)
->>>> * Drop futile "else" clause from dc_crtc_common_irq_handler(). (Dmitry)
->>>> * Drop dc_drm->pe_rpm_count. (Dmitry)
->>>> * Drop DC_{CRTCS,ENCODERS,PRIMARYS} macros and only use DC_DISPLAYS. (Dmitry)
->>>> * Drop drmm_kcalloc() function call to allocate an array for storing IRQs.
->>>>   Instead, put it in struct dc_crtc.  (Dmitry)
->>>> * Call devm_request_irq() to request IRQs, instead of using drmm action.
->>>>   (Dmitry)
->>>> * Call devm_drm_of_get_bridge() to find the next bridge. (Dmitry)
->>>> * Select DRM_CLIENT_SELECTION due to rebase.
->>>> * Select the missing DRM_DISPLAY_HELPER and DRM_BRIDGE_CONNECTOR.
->>>> * Use DRM_FBDEV_DMA_DRIVER_OPS due to rebase.
->>>> * Replace drm_fbdev_dma_setup() with drm_client_setup_with_fourcc() due to
->>>>   rebase.
->>>> * Replace drmm_add_action_or_reset() with devm_add_action_or_reset() to
->>>>   register dc_drm_component_unbind_all() action.
->>>> * Request interrupts in dc_crtc_post_init() after encoder initialization to
->>>>   make sure next bridge is found first.
->>>>
->>>> v3:
->>>> * No change.
->>>>
->>>> v2:
->>>> * Find next bridge from TCon's port.
->>>> * Drop drm/drm_module.h include from dc-drv.c.
->>>>
->>>>  drivers/gpu/drm/imx/dc/Kconfig    |   5 +
->>>>  drivers/gpu/drm/imx/dc/Makefile   |   5 +-
->>>>  drivers/gpu/drm/imx/dc/dc-crtc.c  | 556 ++++++++++++++++++++++++++++++
->>>>  drivers/gpu/drm/imx/dc/dc-de.h    |   3 +
->>>>  drivers/gpu/drm/imx/dc/dc-drv.c   | 238 +++++++++++++
->>>>  drivers/gpu/drm/imx/dc/dc-drv.h   |  22 ++
->>>>  drivers/gpu/drm/imx/dc/dc-kms.c   | 143 ++++++++
->>>>  drivers/gpu/drm/imx/dc/dc-kms.h   | 131 +++++++
->>>>  drivers/gpu/drm/imx/dc/dc-plane.c | 241 +++++++++++++
->>>>  9 files changed, 1342 insertions(+), 2 deletions(-)
->>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-crtc.c
->>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.c
->>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-kms.h
->>>>  create mode 100644 drivers/gpu/drm/imx/dc/dc-plane.c
->>>>
->>>
->>>
->>>> +
->>>> +static int dc_plane_check_no_off_screen(struct drm_plane_state *state,
->>>> +                                    struct drm_crtc_state *crtc_state)
->>>> +{
->>>> +    if (state->dst.x1 < 0 || state->dst.y1 < 0 ||
->>>> +        state->dst.x2 > crtc_state->adjusted_mode.hdisplay ||
->>>> +        state->dst.y2 > crtc_state->adjusted_mode.vdisplay) {
->>>> +            dc_plane_dbg(state->plane, "no off screen\n");
->>>> +            return -EINVAL;
->>>> +    }
->>>
->>> Nit: doesn't drm_atomic_helper_check_plane_state() ensure in this already?
->>
->> The can_position argument is set to true, though it is a bit unusual
->> for primary plane.  If can_position is false, I think this should be
->> ensured already by drm_atomic_helper_check_plane_state().
-> 
-> The function still calls drm_rect_clip_scaled() to clip the
-> plane_state->dst, does it not?
-
-You are right. I'll drop dc_plane_check_no_off_screen() in next version.
-
-> 
->>> With that in mind
->>>
->>> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->>
->> Thanks.
-> 
-> 
-> 
-
--- 
-Regards,
-Liu Ying
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RklFTERfUFJFUCgpIGNoZWNrcyB0aGF0IGEgY29uc3RhbnQgZml0cyBpbnRvIHRoZSBhdmFpbGFi
+bGUgYml0ZmllbGQsCmJ1dCB0aGUgaW5kZXggZGl2IGVxdWFscyB0byA0LGlzIG91dCBvZiByYW5n
+ZSwgd2hpY2ggZ2NjCmNvcnJlY3RseSBjb21wbGFpbnMgYWJvdXQ6CgpJbiBmdW5jdGlvbiDigJhm
+c2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV04oCZLAppbmxpbmVkIGZy
+b20g4oCYZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJl4oCZIGF0CmRyaXZlcnMvcGh5L2Zy
+ZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jIDo0NzA6MjoKLi8uL2luY2x1ZGUvbGludXgv
+Y29tcGlsZXJfdHlwZXMuaDo1NDI6Mzg6IGVycm9yOiBjYWxsIHRvIOKAmF9fY29tcGlsZXRpbWVf
+YXNzZXJ0XzUzOOKAmQpkZWNsYXJlZCB3aXRoIGF0dHJpYnV0ZSBlcnJvcjogRklFTERfUFJFUDog
+dmFsdWUgdG9vIGxhcmdlIGZvciB0aGUgZmllbGQKICA1NDIgfCAgX2NvbXBpbGV0aW1lX2Fzc2Vy
+dChjb25kaXRpb24sIG1zZywgX19jb21waWxldGltZV9hc3NlcnRfLApfX0NPVU5URVJfXykKICAg
+ICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgouLy4vaW5jbHVkZS9s
+aW51eC9jb21waWxlcl90eXBlcy5oOjUyMzo0OiBub3RlOiBpbiBkZWZpbml0aW9uIG9mCm1hY3Jv
+IOKAmF9fY29tcGlsZXRpbWVfYXNzZXJ04oCZIDUyMyB8ICAgIHByZWZpeCAjIyBzdWZmaXgoKTsK
+ICAgICAgfCAgICBefn5+fn4KLi8uL2luY2x1ZGUvbGludXgvY29tcGlsZXJfdHlwZXMuaDo1NDI6
+Mjogbm90ZTogaW4gZXhwYW5zaW9uIG9mIG1hY3JvCuKAmF9jb21waWxldGltZV9hc3NlcnTigJkK
+ICA1NDIgfCAgX2NvbXBpbGV0aW1lX2Fzc2VydChjb25kaXRpb24sIG1zZywgX19jb21waWxldGlt
+ZV9hc3NlcnRfLAogX19DT1VOVEVSX18pCgpSZXdvcmsgdGhpcyBzbyB0aGUgZmllbGQgdmFsdWUg
+d2hpY2ggaXMgcmVzdHJpY3RlZCB0byB0aGUgcmFuZ2Ugb2YgMCB0byAzLApzbyBidWlsZCBlcnJv
+ciB3aWxsIGZpeC4KCkZpeGVzOiBkNTY3Njc5ZjJiNmEgKCJwaHk6IGZyZWVzY2FsZTogZnNsLXNh
+bXN1bmctaGRtaTogQ2xlYW4gdXAgZmxkX3RnX2NvZGUgY2FsY3VsYXRpb24iKQpTaWduZWQtb2Zm
+LWJ5OiBQZWkgWGlhbyA8eGlhb3BlaTAxQGt5bGlub3MuY24+Ci0tLQogZHJpdmVycy9waHkvZnJl
+ZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMgfCAyICstCiAxIGZpbGUgY2hhbmdlZCwgMSBp
+bnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9mcmVl
+c2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHkt
+ZnNsLXNhbXN1bmctaGRtaS5jCmluZGV4IDVlYWM3MGExZTg1OC4uM2U0ZDFhNTE2MGVhIDEwMDY0
+NAotLS0gYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYworKysg
+Yi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYwpAQCAtMzQxLDcg
+KzM0MSw3IEBAIGZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3VyZV9wbGxfbG9ja19kZXQoc3Ry
+dWN0IGZzbF9zYW1zdW5nX2hkbWlfcGh5ICpwaHksCiAJCQlicmVhazsKIAl9CiAKLQl3cml0ZWIo
+RklFTERfUFJFUChSRUcxMl9DS19ESVZfTUFTSywgZGl2KSwgcGh5LT5yZWdzICsgUEhZX1JFRygx
+MikpOworCXdyaXRlYihGSUVMRF9QUkVQKFJFRzEyX0NLX0RJVl9NQVNLLCBkaXYgPT0gNCA/IGRp
+diAtIDEgOiBkaXYpLCBwaHktPnJlZ3MgKyBQSFlfUkVHKDEyKSk7CiAKIAkvKgogCSAqIENhbGN1
+bGF0aW9uIGZvciB0aGUgZnJlcXVlbmN5IGxvY2sgZGV0ZWN0b3IgdGFyZ2V0IGNvZGUgKGZsZF90
+Z19jb2RlKQotLSAKMi4yNS4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtcGh5Cg==
