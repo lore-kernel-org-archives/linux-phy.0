@@ -4,66 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF526E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Dec 2024 09:28:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EB37E77194
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Dec 2024 16:33:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+v6V3vMMTQ3lPtnoXT8jZF8GWRJjOMQNLVC2+FwPp8g=; b=m/HN3xRCGwR589
-	dxhEP++IOJnfPYoeFLjXTtfhvnawX5/fW27pWUkG3QUs5fK4zhUoSgw7CoBTpwYawDdAezgrd3AXj
-	NbWjGp9za394nW4uGEyqoKhSpQRuqnW6MyYguaPWC6Xh9THhfKL8eCU2Yb1zh9OV+u4TTSTafwGRb
-	9lHr8zU3e0p9UaJaotry0S2ZPNJTOo86w8m5UDakPJkx9Kx9D1b1P36OG0w80ifVJJ9f+mnESTfIJ
-	ZVU488jaKx0cSzw2tmUQnE43GGjnxvt2uQ5MzxxIbVmLYyzUOAYwRtc++fnWjewRhHrQE2IpUaeU7
-	yqQdw/XX4jsDZamQyOZg==;
+	List-Owner; bh=GqvmJjjLy4wo5/B2xXoZEqiZPhXgKNVdG9pc4W7phBk=; b=uo8k/rQeL19CrI
+	JG8Dgv7Rho+UVcZJlfakGwjPqz2ffrXBkW/yGl6RTeyIekyzKECE2duG/H21BLzDXjPxTqeqXXBef
+	M16bl1U/WpB8mSpIIyuo5j4CMTuMKMbR93VDj0AViFzRMNwh8iVC2avskWUILJ2sT7nOOxVH4hw7o
+	7BI1siyFzhdC5r4mPNR14KpO9VsvWOq+/wmnHDAft2pOTA6jpo6/gnSh+1tlodWtBPtNiaVLy/sMx
+	MthvXEYJrkhTiH6nZTBs/fnZdDTHCf3Jh/it7FZBj8TCRIYAuQGKbGLJH1gs6K6KBaCYfdgBPKBe+
+	3wiGNrehk/RTljePFnaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSYYd-00000006w2c-18Lo;
-	Tue, 31 Dec 2024 09:28:59 +0000
-Received: from m16.mail.163.com ([220.197.31.3])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSYXO-00000006vuU-3Dn9;
-	Tue, 31 Dec 2024 09:27:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=JpEWk
-	VoO4RXba/rgKMxL/Z8ArtALwq7ono1kXj0OSeQ=; b=i8omjwaxlWT2Oz9zaiLmD
-	VnbO8teQ00uYmsd6GdQu4l+hlL8fVQBpK6S0Kfw56yiQ5aN2ZShHm5VWKT0vZ7z7
-	KveXChDJcXRGSU4yxFNKO4PXFrqlkjjzlx6+Q+Xl4tUMoA4k0GpulN6GCRXxPiLr
-	ebZ6r3bjhMgxS0xBunthEc=
-Received: from ProDesk.. (unknown [])
-	by gzga-smtp-mtada-g0-1 (Coremail) with SMTP id _____wD3q9H6uHNn4DFGCw--.46410S2;
-	Tue, 31 Dec 2024 17:27:26 +0800 (CST)
-From: Andy Yan <andyshrk@163.com>
-To: vkoul@kernel.org
-Cc: cristian.ciocaltea@collabora.com,
-	heiko@sntech.de,
-	kishon@kernel.org,
-	krzk+dt@kernel.org,
-	robh@kernel.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
+	id 1tSfBu-00000007Tq9-1QGP;
+	Tue, 31 Dec 2024 16:33:58 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tSfAk-00000007Tgo-3CkQ;
+	Tue, 31 Dec 2024 16:32:47 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 823A7A40A91;
+	Tue, 31 Dec 2024 16:30:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C16F8C4CED2;
+	Tue, 31 Dec 2024 16:32:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1735662765;
+	bh=OjfLAGmHkWtgKweoyUxQQFG2s2A/m0vcSE7kkcaRedo=;
+	h=From:To:Cc:Subject:Date:From;
+	b=FAoc79KjudMbrLRJmA/ELEDNWqQoOumJ90lc00KwGoOhj0tV4HX+5saWXCoOLjiBf
+	 ROapW+3/q1Rbj59ZbcWDx4IO1Sjg+YVcFHcOuA/t06lMnMYndlDRnuxl0LPWN74x2p
+	 wRKxQ/0dEJHXu0IFYR4JeSHHBf9WMsEjM6691PMpDPKD99LCDU35Ob1QWOWpqyVlsj
+	 TZ1ZNDkfMJvC3KERmj7bmY27zeNcfiwsvK852febDqH45D3DbYuk5IUQ7gXzRSxhvN
+	 fU99cMGEGGFSIt1IJ/FXQpjFe6q7HD1FMCxG8s2SCk7nQSZrDpG+MJOjz/JoRoZmDE
+	 Aq7OCwYUPFV+Q==
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
 	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	Andy Yan <andy.yan@rock-chips.com>
-Subject: [PATCH v3] dt-bindings: phy: Add rk3576 hdptx phy
-Date: Tue, 31 Dec 2024 17:27:11 +0800
-Message-ID: <20241231092721.252405-1-andyshrk@163.com>
-X-Mailer: git-send-email 2.43.0
+	linux-kernel@vger.kernel.org,
+	linux-rockchip@lists.infradead.org
+Subject: [PATCH] phy: Use (of|device)_property_present() for non-boolean properties
+Date: Tue, 31 Dec 2024 10:31:20 -0600
+Message-ID: <20241231163121.241543-1-robh@kernel.org>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-X-CM-TRANSID: _____wD3q9H6uHNn4DFGCw--.46410S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxCF4fJFy5ur1rCF1UXr48Xrb_yoW5GrWxpa
-	9xCFykJF1xGw13ZayDtwn5CF93tFsayr4ayrnagr13Wws3KrWavr4a9F15ZryYvr48tay5
-	Krsrury3ZF4avrDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UmjgsUUUUU=
-X-Originating-IP: [58.22.7.114]
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqQ-GXmdztQxoqAAAsT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241231_012743_192980_F6D21609 
-X-CRM114-Status: UNSURE (   8.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241231_083246_926920_C3793F02 
+X-CRM114-Status: GOOD (  10.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,122 +77,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Andy Yan <andy.yan@rock-chips.com>
+The use of (of|device)_property_read_bool() for non-boolean properties
+is deprecated in favor of (of|device)_property_present() when testing
+for property presence.
 
-Add compatible for the HDPTX PHY on rk3576, which is compatible with
-rk3588, but without rst_phy/rst_ropll/rst_lcpll.
-
-In fact, these three reset lines are also optional on the rk3588,
-they just used for debug, then they were removed on the rk3576 IC
-design.
-
-Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
-
+Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
 ---
+ drivers/phy/mediatek/phy-mtk-tphy.c           | 4 ++--
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
-Changes in v3:
-- Split from:
-  https://lore.kernel.org/linux-rockchip/3330586.aeNJFYEL58@diego/T/#m02151cd8591d7fe92cf30ab69701ed57c1944c06
-
-Changes in v2:
-- Wrap commit message according to Linux coding style
-- Make "rockchip,rk3588-hdptx-phy" const for "rockchip,rk3576-hdptx-phy"
-- Make declare phy/ropll/lcpll reset line are not exit on rk3576
-
- .../phy/rockchip,rk3588-hdptx-phy.yaml        | 62 +++++++++++++------
- 1 file changed, 44 insertions(+), 18 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml
-index 84fe59dbcf48..7a307f45cdec 100644
---- a/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml
-@@ -11,8 +11,13 @@ maintainers:
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index 3f7095ec5978..d36f68dd622e 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -1215,7 +1215,7 @@ static int phy_type_syscon_get(struct mtk_phy_instance *instance,
+ 	int ret;
  
- properties:
-   compatible:
--    enum:
--      - rockchip,rk3588-hdptx-phy
-+    oneOf:
-+      - enum:
-+          - rockchip,rk3588-hdptx-phy
-+      - items:
-+          - enum:
-+              - rockchip,rk3576-hdptx-phy
-+          - const: rockchip,rk3588-hdptx-phy
+ 	/* type switch function is optional */
+-	if (!of_property_read_bool(dn, "mediatek,syscon-type"))
++	if (!of_property_present(dn, "mediatek,syscon-type"))
+ 		return 0;
  
-   reg:
-     maxItems: 1
-@@ -34,24 +39,12 @@ properties:
-     const: 0
+ 	ret = of_parse_phandle_with_fixed_args(dn, "mediatek,syscon-type",
+@@ -1278,7 +1278,7 @@ static int phy_efuse_get(struct mtk_tphy *tphy, struct mtk_phy_instance *instanc
+ 	}
  
-   resets:
--    items:
--      - description: PHY reset line
--      - description: APB reset line
--      - description: INIT reset line
--      - description: CMN reset line
--      - description: LANE reset line
--      - description: ROPLL reset line
--      - description: LCPLL reset line
-+    minItems: 4
-+    maxItems: 7
+ 	/* software efuse is optional */
+-	instance->efuse_sw_en = device_property_read_bool(dev, "nvmem-cells");
++	instance->efuse_sw_en = device_property_present(dev, "nvmem-cells");
+ 	if (!instance->efuse_sw_en)
+ 		return 0;
  
-   reset-names:
--    items:
--      - const: phy
--      - const: apb
--      - const: init
--      - const: cmn
--      - const: lane
--      - const: ropll
--      - const: lcpll
-+    minItems: 4
-+    maxItems: 7
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+index 96f3d868a526..b5e6a864deeb 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+@@ -440,7 +440,7 @@ static int rockchip_usb2phy_extcon_register(struct rockchip_usb2phy *rphy)
+ 	struct extcon_dev *edev;
+ 	int ret;
  
-   rockchip,grf:
-     $ref: /schemas/types.yaml#/definitions/phandle
-@@ -67,6 +60,39 @@ required:
-   - reset-names
-   - rockchip,grf
+-	if (of_property_read_bool(node, "extcon")) {
++	if (of_property_present(node, "extcon")) {
+ 		edev = extcon_get_edev_by_phandle(rphy->dev, 0);
+ 		if (IS_ERR(edev))
+ 			return dev_err_probe(rphy->dev, PTR_ERR(edev),
+@@ -1323,7 +1323,7 @@ static int rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
+ 			goto out;
+ 		}
  
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - rockchip,rk3576-hdptx-phy
-+    then:
-+      properties:
-+        resets:
-+          minItems: 4
-+          maxItems: 4
-+        reset-names:
-+          items:
-+            - const: apb
-+            - const: init
-+            - const: cmn
-+            - const: lane
-+    else:
-+      properties:
-+        resets:
-+          minItems: 7
-+          maxItems: 7
-+        reset-names:
-+          items:
-+            - const: phy
-+            - const: apb
-+            - const: init
-+            - const: cmn
-+            - const: lane
-+            - const: ropll
-+            - const: lcpll
-+
- additionalProperties: false
- 
- examples:
+-		if (!of_property_read_bool(rphy->dev->of_node, "extcon")) {
++		if (!of_property_present(rphy->dev->of_node, "extcon")) {
+ 			/* do initial sync of usb state */
+ 			id = property_enabled(rphy->grf, &rport->port_cfg->utmi_id);
+ 			extcon_set_state_sync(rphy->edev, EXTCON_USB_HOST, !id);
 -- 
-2.34.1
+2.45.2
 
 
 -- 
