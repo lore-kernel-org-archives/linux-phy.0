@@ -4,73 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A3A6E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Dec 2024 02:20:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0C26E77188
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Dec 2024 06:53:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	Cc:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XyHJNRP7koWYiGGlFowZ0P3X+JBNOnXCzniu2Pd80Ps=; b=B392ULBbFXC6FN
-	Fz/yUFeOmA3HlFq8+xQy2IYh8WaITiiut9a3FXCLoq1nJUeg2ZHJWThnImyUeuTB0yEQzoYUBoW/U
-	bWOrmCuFLqi3/R6wCnn0tTUkbJGkVLzkXKXXoef1nuFStwSYuJY3LWAsxSz93qmjx1ClocslQj7C/
-	yR9K3pT3SrxcMZt7slbf0h5cRGhMAyJWk67EWECsAwnyW19d/y5GW5tyTxd0J0IKN+WGj6x76aNc8
-	6g6pnnybwXNp0prPWJtIcItrhsR1Lx8Q6rV5pYf88f1YK3KupaGUS55/Iuxc+ex0QfJyt1+19vtvi
-	C9cfQ+61NX8wYdT23TTg==;
+	List-Owner; bh=8BSkMQjyRosUiXSl5Rx3TOcXpKjh3Ydc4nFKdq8TUJM=; b=Is9ETZpO07p5rT
+	2lzaM4dszmf4HZa7egLKjmUfXQNL6vZRQMHrzffDO9CdWL69H5xYhVZh02szYMflLJjPQjCTEjpRo
+	a0SaYiGRVELdyJCOAHMcgSY4kWEzGoUyRt7oHpJ5VO36yDD1AC480Tt0qAvtUMFKr499/AbWQ/kaY
+	Am314P4HJJWpZ1zmXKcKbY7WbeNbioovrO1PkVs+DembTsWIMNwmdb7/+/7lZAfA+JbHiwhrnyvkL
+	3yiqSUgoIRj0HqJKsHl1o21URjXEyl2xXiCBsymZDZZ3jB2LT9bWER+CsEnA6A7AvkDsBgaHnlgmB
+	Mz1Ws6UK7DP5A4a+Fqmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSRrY-00000006Jrh-1FXQ;
-	Tue, 31 Dec 2024 02:20:04 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1tSW8Q-00000006fRa-1WMk;
+	Tue, 31 Dec 2024 06:53:46 +0000
+Received: from omta34.uswest2.a.cloudfilter.net ([35.89.44.33])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSRrR-00000006Jpw-3gf1
+	id 1tSW7H-00000006fIH-2rNb
 	for linux-phy@lists.infradead.org;
-	Tue, 31 Dec 2024 02:20:03 +0000
-X-UUID: b2e2572ec71d11efa216b1d71e6e1362-20241231
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.41,REQID:69619919-2896-410f-bc0c-10886e30855c,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:6dc6a47,CLOUDID:102f1764faf4b93a8a6d0ed7e2fd76b6,BulkI
-	D:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102,TC:nil,Content:0|52,EDM:
-	-3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,
-	AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 1,FCT|NGT
-X-CID-BAS: 1,FCT|NGT,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-UUID: b2e2572ec71d11efa216b1d71e6e1362-20241231
-Received: from node4.com.cn [(10.44.16.170)] by mailgw.kylinos.cn
-	(envelope-from <xiaopei01@kylinos.cn>)
-	(Generic MTA)
-	with ESMTP id 213365141; Tue, 31 Dec 2024 10:19:44 +0800
-Received: from node4.com.cn (localhost [127.0.0.1])
-	by node4.com.cn (NSMail) with SMTP id D9B9516002081;
-	Tue, 31 Dec 2024 10:19:43 +0800 (CST)
-X-ns-mid: postfix-677354BF-781682439
-Received: from [10.42.13.56] (unknown [10.42.13.56])
-	by node4.com.cn (NSMail) with ESMTPA id CB56B16003301;
-	Tue, 31 Dec 2024 02:19:38 +0000 (UTC)
-Message-ID: <9a0ee7f2-7b35-495f-891c-0ed9271a2f81@kylinos.cn>
-Date: Tue, 31 Dec 2024 10:19:38 +0800
+	Tue, 31 Dec 2024 06:52:36 +0000
+Received: from eig-obgw-5002a.ext.cloudfilter.net ([10.0.29.215])
+	by cmsmtp with ESMTPS
+	id SIBYtgNdK09RnSW70tAWsN; Tue, 31 Dec 2024 06:52:18 +0000
+Received: from md-in-79.webhostbox.net ([43.225.55.182])
+	by cmsmtp with ESMTPS
+	id SW6wtNSqFcEKuSW6xt27Zg; Tue, 31 Dec 2024 06:52:16 +0000
+X-Authority-Analysis: v=2.4 cv=Z7YnH2RA c=1 sm=1 tr=0 ts=677394a0
+ a=LfuyaZh/8e9VOkaVZk0aRw==:117 a=kofhyyBXuK/oEhdxNjf66Q==:17
+ a=IkcTkHD0fZMA:10 a=RZcAm9yDv7YA:10 a=-pn6D5nKLtMA:10 a=VwQbUJbxAAAA:8
+ a=vU9dKmh3AAAA:8 a=pbaDQQ2OCVbHVibE1FAA:9 a=QEXdDO2ut3YA:10
+ a=rsP06fVo5MYu2ilr0aT5:22 a=ZCPYImcxYIQFgLOT52_G:22
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
+	; s=default; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+	References:To:Subject:Cc:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=/u73Um15xmTGtKDdrsLX74+vHUKU4mr/x9iAVeor0mo=; b=K3lPR81xDLiKvK3ySdyCvcwLbY
+	hPfzer/gndUsOPPobdlGPFwW425FqTxM1LbXmmEdd39ZH7tVpB1cDqKsS/BeFmvFPIy8bPJYO7cod
+	Ggj276JFjTL68ubplbMrlYhAkk9QSTy967BtN9XxMYA/8UNgqPT4/lHNlxwELxN1loiXcV9tzomCm
+	I2m544HjvFsPY7NqbcCHWyrdDscHmZSUFZ0BqZW274jujFlDaqhVb48sFlz3dV6hwmO3zhCMTX+uT
+	TEOAJ33uXMMAjYm3pd8wxCsjGfXsOgw6siJdRFdT2f2C7tB3xXRTk1++0jOX/M4181lxnJGD/CqCc
+	fkZFU3ww==;
+Received: from [122.165.245.213] (port=60114 helo=[192.168.1.5])
+	by md-in-79.webhostbox.net with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <parthiban@linumiz.com>)
+	id 1tSW6h-003DJk-0W;
+	Tue, 31 Dec 2024 12:21:59 +0530
+Message-ID: <ed2ed7da-8c01-41c5-8215-d07892da3596@linumiz.com>
+Date: Tue, 31 Dec 2024 12:21:50 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: fix build error in
- fsl_samsung_hdmi_phy_configure_pll_lock_det
-To: Adam Ford <aford173@gmail.com>
-Cc: geert@linux-m68k.org, aford@beaconembedded.com, arnd@arndb.de,
- dominique.martinet@atmark-techno.com, frieder.schrempf@kontron.de,
- kishon@kernel.org, l.stach@pengutronix.de, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, m.felsch@pengutronix.de, sandor.yu@nxp.com,
- u.kleine-koenig@baylibre.com, vkoul@kernel.org
-References: <CAMuHMdUG7A10E2SZR6kHiQBrzp_OVvMSd7jxggaoU3B_6fZ+nQ@mail.gmail.com>
- <d4b59d5e94c4c4a488cd24c6c169e418ad53980d.1735524526.git.xiaopei01@kylinos.cn>
- <CAHCN7x+UzXQz+2zs+qvvWfWCmhsxsZoxP+2WHpfdZGnzwDPNQg@mail.gmail.com>
-From: Pei Xiao <xiaopei01@kylinos.cn>
-In-Reply-To: <CAHCN7x+UzXQz+2zs+qvvWfWCmhsxsZoxP+2WHpfdZGnzwDPNQg@mail.gmail.com>
+Cc: parthiban@linumiz.com, Joerg Roedel <joro@8bytes.org>,
+ Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Samuel Holland <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>,
+ Simona Vetter <simona@ffwll.ch>, Michael Turquette
+ <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH RESEND 00/22] Add support for A100/A133 display
+To: Andre Przywara <andre.przywara@arm.com>
+References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
+ <314b6bbe-613e-41a6-955e-50db6e11ef8e@linumiz.com>
+ <20241230141150.3d0c3ae6@donnerap.manchester.arm.com>
+Content-Language: en-US
+From: Parthiban <parthiban@linumiz.com>
+Organization: Linumiz
+In-Reply-To: <20241230141150.3d0c3ae6@donnerap.manchester.arm.com>
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - md-in-79.webhostbox.net
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - linumiz.com
+X-BWhitelist: no
+X-Source-IP: 122.165.245.213
+X-Source-L: No
+X-Exim-ID: 1tSW6h-003DJk-0W
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: ([192.168.1.5]) [122.165.245.213]:60114
+X-Source-Auth: parthiban@linumiz.com
+X-Email-Count: 1
+X-Org: HG=dishared_whb_net_legacy;ORG=directi;
+X-Source-Cap: bGludW1jbWM7aG9zdGdhdG9yO21kLWluLTc5LndlYmhvc3Rib3gubmV0
+X-Local-Domain: yes
+X-CMAE-Envelope: MS4xfCF6GxfGQ8RKLbFa8HvnyN+344Qpu5mOZMbQeJoTk+gHjgOsPQHWRpIvoNl2G1r8wfCMSzoHtZA120cvoYLVFTMELG4KmJZ0iishN4X2Q5W0CQiFzjLR
+ XX+uus8DRgqSIK5QydtTUoj9y0Yml+hH534LNPiKW2SbeD7ly2XmGMQIsvLUVc9Rc2qU0EdeSIangE2wdUMf4ImNmyW10PsTk8dKUrGJ1fRMDMrpPSVqL77V
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241230_181958_278452_88B75C4E 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20241230_225235_735457_14F0CE56 
+X-CRM114-Status: GOOD (  20.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,56 +120,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CuWcqCAyMDI0LzEyLzMxIDEwOjExLCBBZGFtIEZvcmQg5YaZ6YGTOgo+IE9uIFN1biwgRGVjIDI5
-LCAyMDI0IGF0IDg6MTHigK9QTSBQZWkgWGlhbyA8eGlhb3BlaTAxQGt5bGlub3MuY24+IHdyb3Rl
-Ogo+PiBGSUVMRF9QUkVQKCkgY2hlY2tzIHRoYXQgYSBjb25zdGFudCBmaXRzIGludG8gdGhlIGF2
-YWlsYWJsZSBiaXRmaWVsZCwKPj4gYnV0IHRoZSBpbmRleCBkaXYgZXF1YWxzIHRvIDQsaXMgb3V0
-IG9mIHJhbmdlLCB3aGljaCBnY2MKPj4gY29ycmVjdGx5IGNvbXBsYWlucyBhYm91dDoKPj4KPj4g
-SW4gZnVuY3Rpb24g4oCYZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlX3BsbF9sb2NrX2Rl
-dOKAmSwKPj4gaW5saW5lZCBmcm9tIOKAmGZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3VyZeKA
-mSBhdAo+PiBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYyA6NDcw
-OjI6Cj4+IC4vLi9pbmNsdWRlL2xpbnV4L2NvbXBpbGVyX3R5cGVzLmg6NTQyOjM4OiBlcnJvcjog
-Y2FsbCB0byDigJhfX2NvbXBpbGV0aW1lX2Fzc2VydF81MzjigJkKPj4gZGVjbGFyZWQgd2l0aCBh
-dHRyaWJ1dGUgZXJyb3I6IEZJRUxEX1BSRVA6IHZhbHVlIHRvbyBsYXJnZSBmb3IgdGhlIGZpZWxk
-Cj4+ICAgIDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBp
-bGV0aW1lX2Fzc2VydF8sCj4+IF9fQ09VTlRFUl9fKQo+PiAgICAgICAgfCAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgXgo+PiAuLy4vaW5jbHVkZS9saW51eC9jb21waWxlcl90
-eXBlcy5oOjUyMzo0OiBub3RlOiBpbiBkZWZpbml0aW9uIG9mCj4+IG1hY3JvIOKAmF9fY29tcGls
-ZXRpbWVfYXNzZXJ04oCZIDUyMyB8ICAgIHByZWZpeCAjIyBzdWZmaXgoKTsKPj4gICAgICAgIHwg
-ICAgXn5+fn5+Cj4+IC4vLi9pbmNsdWRlL2xpbnV4L2NvbXBpbGVyX3R5cGVzLmg6NTQyOjI6IG5v
-dGU6IGluIGV4cGFuc2lvbiBvZiBtYWNybwo+PiDigJhfY29tcGlsZXRpbWVfYXNzZXJ04oCZCj4+
-ICAgIDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0
-aW1lX2Fzc2VydF8sCj4+ICAgX19DT1VOVEVSX18pCj4+Cj4+IFJld29yayB0aGlzIHNvIHRoZSBm
-aWVsZCB2YWx1ZSB3aGljaCBpcyByZXN0cmljdGVkIHRvIHRoZSByYW5nZSBvZiAwIHRvIDMsCj4+
-IHNvIGJ1aWxkIGVycm9yIHdpbGwgZml4Lgo+Pgo+PiBGaXhlczogZDU2NzY3OWYyYjZhICgicGh5
-OiBmcmVlc2NhbGU6IGZzbC1zYW1zdW5nLWhkbWk6IENsZWFuIHVwIGZsZF90Z19jb2RlIGNhbGN1
-bGF0aW9uIikKPj4gU2lnbmVkLW9mZi1ieTogUGVpIFhpYW8gPHhpYW9wZWkwMUBreWxpbm9zLmNu
-Pgo+PiAtLS0KPj4gICBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWku
-YyB8IDIgKy0KPj4gICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24o
-LSkKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1
-bmctaGRtaS5jIGIvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMK
-Pj4gaW5kZXggNWVhYzcwYTFlODU4Li4zZTRkMWE1MTYwZWEgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZl
-cnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCj4+ICsrKyBiL2RyaXZlcnMv
-cGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCj4+IEBAIC0zNDEsNyArMzQxLDcg
-QEAgZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlX3BsbF9sb2NrX2RldChzdHJ1Y3QgZnNs
-X3NhbXN1bmdfaGRtaV9waHkgKnBoeSwKPj4gICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFr
-Owo+PiAgICAgICAgICB9Cj4+Cj4+IC0gICAgICAgd3JpdGViKEZJRUxEX1BSRVAoUkVHMTJfQ0tf
-RElWX01BU0ssIGRpdiksIHBoeS0+cmVncyArIFBIWV9SRUcoMTIpKTsKPj4gKyAgICAgICB3cml0
-ZWIoRklFTERfUFJFUChSRUcxMl9DS19ESVZfTUFTSywgZGl2ID09IDQgPyBkaXYgLSAxIDogZGl2
-KSwgcGh5LT5yZWdzICsgUEhZX1JFRygxMikpOwo+IFRoZSBmb3ItbG9vcCBhYm92ZSB0aGlzIGxp
-bmUgc3RhdGVzOiAgIGZvciAoZGl2ID0gMDsgZGl2IDwgNDsgZGl2KyspCj4gSG93IGNvdWxkIHRo
-aXMgZXZlciByZWFjaCA0PyAgSWYgaXQgZGlkIHJlYWNoIDQsIHRoZSBjYWxjdWxhdGlvbiBmb3IK
-PiBpbnRfcGxsY2xrIHdvdWxkIG5lZWQgdG8gYmUgcmVjYWxjdWxhdGVkIHNpbmNlIGludF9wbGxj
-bGsgPSBwY2xrIC8gKDEKPiA8PCBkaXYpOwoKeWVzLCB5b3UgYXJlIHJpZ2h0LG1heSBiZSBuZXZl
-ciByZWFjaCA0LHNvIGRpdiAtIDEgd2lsbGUgZml4IEZJRUxEX1BSRVAKCmJ1aWxkIGVycm9yLgoK
-I2RlZmluZSBSRUcxMl9DS19ESVZfTUFTS8KgwqDCoMKgwqDCoCBHRU5NQVNLKDUsIDQpCgpvbmx5
-IHR3byBiaXQgLG1heCB2YWx1ZSBpcyAzLgoKdGhhbmtzIQoKUGVpLgoKPgo+IGFkYW0KPj4gICAg
-ICAgICAgLyoKPj4gICAgICAgICAgICogQ2FsY3VsYXRpb24gZm9yIHRoZSBmcmVxdWVuY3kgbG9j
-ayBkZXRlY3RvciB0YXJnZXQgY29kZSAoZmxkX3RnX2NvZGUpCj4+IC0tCj4+IDIuMjUuMQo+PgoK
-LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 12/30/24 7:41 PM, Andre Przywara wrote:
+> On Fri, 27 Dec 2024 20:06:30 +0530
+> Parthiban <parthiban@linumiz.com> wrote:
+> 
+>> On 12/27/24 6:30 PM, Parthiban Nallathambi wrote:
+>>> This series depends on [1] for the eMMC/MMC controller to work and
+>>> [2] (lined up for 6.14) which adds support for the sram nodes and
+>>> display engine extends it's usage. Idea of this series to get initial
+>>> feedback and adjust, which will be rebased for 6.14 once [2] is merged.
+>>>
+>>> This patch series adds support for A133 display pipeline based on
+>>> LVDS. dt-bindigs are organized in the start and later with code
+>>> changes.
+>>>
+>>> PHY is shared between DSI and LVDS, so to control the PHY specific
+>>> to DSI/LVDS, phy_ops set_mode is introduced. To enable the DSI
+>>> using set_mode, analog control register MIPI Enable is used, which
+>>> may not be available for A31 (shares the same driver).
+>>>
+>>> Otherwise, A133 also got hidden independent display engine i.e
+>>> mixer + tcon top to handle parallel display. But this patch series
+>>> adds only support for the 1 mixer which is documented.
+>>>
+>>> [1]: https://lore.kernel.org/linux-sunxi/20241109003739.3440904-1-masterr3c0rd@epochal.quest/
+>>> [2]: https://lore.kernel.org/linux-sunxi/20241218-a100-syscon-v2-0-dae60b9ce192@epochal.quest/
+>>>
+>>> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>  
+>> Apologize for polluting with resend again. My internal mail server got blocked due to
+>> volume count, which resulted in incomplete series again.
+> 
+> I guess an incomplete send was the reason for the original resend? Please
+> note this at the top of the cover letter then, otherwise it's not easy
+> to see why you send something again. Something like:
+> 
+> *** Re-sent due to mail server not sending out the complete series. ***
+Yes I did add that using b4 as below, but "b4 send --resend" didn't pick the
+updated cover letter though. I will check with "--reflect" next time.
+
+EDIT:
+Due to internal mail server issue, [3] missed few patches in series.
+So am resending to hope that it will get through this time. Sorry
+to pollute.
+
+[3]: https://lore.kernel.org/linux-sunxi/20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com
+> 
+> It also helps to split up the recipients, so that everyone gets the cover
+> letter, but only the respective subsystem maintainers get the patches
+> touching their subsystem. I would CC: the DT maintainers on every patch,
+> though.
+> It's a bit more complicated to set up, but keeps the noise down for those
+> large-ish series, for instance for the IOMMU people, who presumably have
+> little interest in DT or graphics code.
+The whole series based on b4 and the list is auto prepared using
+"b4 prep --auto-to-cc".
+
+Sure, I will add the dt list in all the patches. Also many thanks for your
+review and feedback.
+
+Thanks,
+Parthiban
+
+> 
+> Cheers,
+> Andre
+> 
+>> I will fix the mail server issue before resending the series. Sorry.
+>>
+>> Thanks,
+>> Parthiban
+>>
+>>
+> 
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
