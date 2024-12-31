@@ -4,70 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06385E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Dec 2024 08:44:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF526E77188
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Dec 2024 09:28:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
-	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rSu1zkApcusvqehbbAIxZlWNrpGJKbVOWewgV3yxgW4=; b=0uC2qa7VFVTAoC
-	FwbKPVibChJrv55MIvJz0UJnjCHMG6f2KGfEd0d/i85J5Br5rIowQx1nOafusV1AvWUhxeAF8VbbF
-	eTTU3tF/cu+zU5XbkmALzIGySKL/fnoYN5D7diWa75S5O3O0PcR8wvzzoUtfLag67wKWDCJJV3UH4
-	nD60ppuk+2e7xRQmFlFAzFmMekTQhCqMl9vzTTJlPx8roHULjUu9AnJQGUnxMofUFEV9hVRdbUE8j
-	0xGZ4rFdl3rlhNhVwBq2J8Hc9AvvR7GPYMYp3AmX9DmS24XO6FIfupABDCYISC/+NoVKvoOUKr4r3
-	2srLdPLezIb9kcnRKOkw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+v6V3vMMTQ3lPtnoXT8jZF8GWRJjOMQNLVC2+FwPp8g=; b=m/HN3xRCGwR589
+	dxhEP++IOJnfPYoeFLjXTtfhvnawX5/fW27pWUkG3QUs5fK4zhUoSgw7CoBTpwYawDdAezgrd3AXj
+	NbWjGp9za394nW4uGEyqoKhSpQRuqnW6MyYguaPWC6Xh9THhfKL8eCU2Yb1zh9OV+u4TTSTafwGRb
+	9lHr8zU3e0p9UaJaotry0S2ZPNJTOo86w8m5UDakPJkx9Kx9D1b1P36OG0w80ifVJJ9f+mnESTfIJ
+	ZVU488jaKx0cSzw2tmUQnE43GGjnxvt2uQ5MzxxIbVmLYyzUOAYwRtc++fnWjewRhHrQE2IpUaeU7
+	yqQdw/XX4jsDZamQyOZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSXrJ-00000006qXn-2pE7;
-	Tue, 31 Dec 2024 08:44:13 +0000
-Received: from m16.mail.163.com ([117.135.210.5])
+	id 1tSYYd-00000006w2c-18Lo;
+	Tue, 31 Dec 2024 09:28:59 +0000
+Received: from m16.mail.163.com ([220.197.31.3])
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSXrH-00000006qVe-07s7;
-	Tue, 31 Dec 2024 08:44:13 +0000
+	id 1tSYXO-00000006vuU-3Dn9;
+	Tue, 31 Dec 2024 09:27:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=Date:From:Subject:Content-Type:MIME-Version:
-	Message-ID; bh=s1zalySEQypPPPD/odHe9VC97tmW/PgMwzf+o6zwguE=; b=h
-	3n/poN7X7kDmGhxGp6eo4h2IA1/oGsY2QxtltXGF5MfVvGW3OL5KsQH6X/8ir/+D
-	N5QtHv+2pWosI2zftH4SNRh07du/5OcFCs0NmkgqLOLExGJ0ic0/ZDuvPYDwVYPU
-	4e1taDvvv8tdSuiSQNeFDzDhdRq/QWRjPAflFPEijk=
-Received: from andyshrk$163.com ( [58.22.7.114] ) by
- ajax-webmail-wmsvr-40-135 (Coremail) ; Tue, 31 Dec 2024 16:43:27 +0800
- (CST)
-X-Originating-IP: [58.22.7.114]
-Date: Tue, 31 Dec 2024 16:43:27 +0800 (CST)
-From: "Andy Yan" <andyshrk@163.com>
-To: "Krzysztof Kozlowski" <krzk@kernel.org>
-Cc: robh@kernel.org, iommu@lists.linux.dev, heiko@sntech.de, 
-	devicetree@vger.kernel.org, joro@8bytes.org, hjc@rock-chips.com, 
-	dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, vkoul@kernel.org, 
-	detlev.casanova@collabora.com, linux-arm-kernel@lists.infradead.org, 
-	"Andy Yan" <andy.yan@rock-chips.com>, 
-	linux-rockchip@lists.infradead.org, krzk+dt@kernel.org, 
-	cl@rock-chips.com
-Subject: Re:Re: [PATCH v2 5/8] dt-bindings: display: vop2: Add rk3576
- support
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
- Copyright (c) 2002-2024 www.mailtech.cn 163com
-In-Reply-To: <6pn3qjxotdtpzucpul24yro7ppddezwuizneovqvmgdwyv2j7p@ztg4mqyiqmjf>
-References: <20241228122155.646957-1-andyshrk@163.com>
- <20241228122155.646957-6-andyshrk@163.com>
- <ihvrdnntfuvvycnlhysnm43wylotovvnivu4wxcne3bwc6etpj@n2rq6n77lmma>
- <4847f6b1.1c60.19412092a7a.Coremail.andyshrk@163.com>
- <6pn3qjxotdtpzucpul24yro7ppddezwuizneovqvmgdwyv2j7p@ztg4mqyiqmjf>
-X-NTES-SC: AL_Qu2YB/qYu04r4SWdZ+lS3TJ694VEL57u+a5GusA2ecAsnATi4iQeZGRsL2rN79jcbZ1KWCmHGnHtpvfuggY/
+	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=JpEWk
+	VoO4RXba/rgKMxL/Z8ArtALwq7ono1kXj0OSeQ=; b=i8omjwaxlWT2Oz9zaiLmD
+	VnbO8teQ00uYmsd6GdQu4l+hlL8fVQBpK6S0Kfw56yiQ5aN2ZShHm5VWKT0vZ7z7
+	KveXChDJcXRGSU4yxFNKO4PXFrqlkjjzlx6+Q+Xl4tUMoA4k0GpulN6GCRXxPiLr
+	ebZ6r3bjhMgxS0xBunthEc=
+Received: from ProDesk.. (unknown [])
+	by gzga-smtp-mtada-g0-1 (Coremail) with SMTP id _____wD3q9H6uHNn4DFGCw--.46410S2;
+	Tue, 31 Dec 2024 17:27:26 +0800 (CST)
+From: Andy Yan <andyshrk@163.com>
+To: vkoul@kernel.org
+Cc: cristian.ciocaltea@collabora.com,
+	heiko@sntech.de,
+	kishon@kernel.org,
+	krzk+dt@kernel.org,
+	robh@kernel.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	Andy Yan <andy.yan@rock-chips.com>
+Subject: [PATCH v3] dt-bindings: phy: Add rk3576 hdptx phy
+Date: Tue, 31 Dec 2024 17:27:11 +0800
+Message-ID: <20241231092721.252405-1-andyshrk@163.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Message-ID: <61d9f4f4.8013.1941be25dc6.Coremail.andyshrk@163.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: hygvCgCnbxuvrnNnZ+BMAA--.5340W
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqQzGXmdzq1wkagACsS
-X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
+X-CM-TRANSID: _____wD3q9H6uHNn4DFGCw--.46410S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxCF4fJFy5ur1rCF1UXr48Xrb_yoW5GrWxpa
+	9xCFykJF1xGw13ZayDtwn5CF93tFsayr4ayrnagr13Wws3KrWavr4a9F15ZryYvr48tay5
+	Krsrury3ZF4avrDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07UmjgsUUUUU=
+X-Originating-IP: [58.22.7.114]
+X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqQ-GXmdztQxoqAAAsT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241231_004411_448229_CFC906CC 
-X-CRM114-Status: GOOD (  15.48  )
+X-CRM114-CacheID: sfid-20241231_012743_192980_F6D21609 
+X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,64 +75,130 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CkhpIEtyenlzenRvZiwKCkF0IDIwMjQtMTItMzEgMTY6MjM6MzksICJLcnp5c3p0b2YgS296bG93
-c2tpIiA8a3J6a0BrZXJuZWwub3JnPiB3cm90ZToKPk9uIFN1biwgRGVjIDI5LCAyMDI0IGF0IDA2
-OjQ5OjM4UE0gKzA4MDAsIEFuZHkgWWFuIHdyb3RlOgo+PiAKPj4gCj4+IEhpIEtyenlzenRvZiwK
-Pj4gCj4+IEF0IDIwMjQtMTItMjkgMTg6MTM6MzksICJLcnp5c3p0b2YgS296bG93c2tpIiA8a3J6
-a0BrZXJuZWwub3JnPiB3cm90ZToKPj4gPk9uIFNhdCwgRGVjIDI4LCAyMDI0IGF0IDA4OjIxOjQ4
-UE0gKzA4MDAsIEFuZHkgWWFuIHdyb3RlOgo+PiA+PiBGcm9tOiBBbmR5IFlhbiA8YW5keS55YW5A
-cm9jay1jaGlwcy5jb20+Cj4+ID4+IAo+PiA+PiBBZGQgdm9wIGZvdW5kIG9uIHJrMzU3NiwgdGhl
-IG1haW4gZGlmZmVyZW5jZSBiZXR3ZWVuIHJrMzU3NiBhbmQgdGhlCj4+ID4+IHByZXZpb3VzIHZv
-cCBpcyB0aGF0IGVhY2ggVlAgaGFzIGl0cyBvd24gaW50ZXJydXB0IGxpbmUuCj4+ID4+IAo+PiA+
-PiBTaWduZWQtb2ZmLWJ5OiBBbmR5IFlhbiA8YW5keS55YW5Acm9jay1jaGlwcy5jb20+Cj4+ID4+
-IAo+PiA+PiAtLS0KPj4gPj4gCj4+ID4+IENoYW5nZXMgaW4gdjI6Cj4+ID4+IC0gZGVzY3JpYmUg
-Y29uc3RyYWludCBTT0MgYnkgU09DLCBhcyBpbnRlcnJ1cHRzIG9mIHJrMzU3NiBpcyB2ZXJ5Cj4+
-ID4+ICAgZGlmZmVyZW50IGZyb20gb3RoZXJzCj4+ID4+IC0gRHJvcCBLcnp5c3p0b2YncyBSZXZp
-ZXdlZC1ieSwgYXMgdGhpcyB2ZXJzaW9uIGNoYW5nZWQgYSBsb3QuCj4+ID4+IAo+PiA+PiBDaGFu
-Z2VzIGluIHYxOgo+PiA+PiAtIG9yZGVyZWQgYnkgc29jIG5hbWUKPj4gPj4gLSBBZGQgZGVzY3Jp
-cHRpb24gZm9yIG5ld2x5IGFkZGVkIGludGVycnVwdAo+PiA+PiAKPj4gPj4gIC4uLi9kaXNwbGF5
-L3JvY2tjaGlwL3JvY2tjaGlwLXZvcDIueWFtbCAgICAgICB8IDcwICsrKysrKysrKysrKysrKy0t
-LS0KPj4gPj4gIDEgZmlsZSBjaGFuZ2VkLCA1NiBpbnNlcnRpb25zKCspLCAxNCBkZWxldGlvbnMo
-LSkKPj4gPj4gCj4+ID4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvZGlzcGxheS9yb2NrY2hpcC9yb2NrY2hpcC12b3AyLnlhbWwgYi9Eb2N1bWVudGF0aW9u
-L2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9yb2NrY2hpcC9yb2NrY2hpcC12b3AyLnlhbWwK
-Pj4gPj4gaW5kZXggMjUzMTcyNmFmMzA2Li5mMjhjZWE0YTZkODIgMTAwNjQ0Cj4+ID4+IC0tLSBh
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L3JvY2tjaGlwL3JvY2tj
-aGlwLXZvcDIueWFtbAo+PiA+PiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvZGlzcGxheS9yb2NrY2hpcC9yb2NrY2hpcC12b3AyLnlhbWwKPj4gPj4gQEAgLTIwLDYgKzIw
-LDcgQEAgcHJvcGVydGllczoKPj4gPj4gICAgICBlbnVtOgo+PiA+PiAgICAgICAgLSByb2NrY2hp
-cCxyazM1NjYtdm9wCj4+ID4+ICAgICAgICAtIHJvY2tjaGlwLHJrMzU2OC12b3AKPj4gPj4gKyAg
-ICAgIC0gcm9ja2NoaXAscmszNTc2LXZvcAo+PiA+PiAgICAgICAgLSByb2NrY2hpcCxyazM1ODgt
-dm9wCj4+ID4+ICAKPj4gPj4gICAgcmVnOgo+PiA+PiBAQCAtMzcsMTAgKzM4LDIyIEBAIHByb3Bl
-cnRpZXM6Cj4+ID4+ICAgICAgICAtIGNvbnN0OiBnYW1tYS1sdXQKPj4gPj4gIAo+PiA+PiAgICBp
-bnRlcnJ1cHRzOgo+PiA+PiAtICAgIG1heEl0ZW1zOiAxCj4+ID4+IC0gICAgZGVzY3JpcHRpb246
-Cj4+ID4+IC0gICAgICBUaGUgVk9QIGludGVycnVwdCBpcyBzaGFyZWQgYnkgc2V2ZXJhbCBpbnRl
-cnJ1cHQgc291cmNlcywgc3VjaCBhcwo+PiA+PiAtICAgICAgZnJhbWUgc3RhcnQgKFZTWU5DKSwg
-bGluZSBmbGFnIGFuZCBvdGhlciBzdGF0dXMgaW50ZXJydXB0cy4KPj4gPj4gKyAgICBtaW5JdGVt
-czogMQo+PiA+PiArICAgIG1heEl0ZW1zOiA0Cj4+ID4+ICsgICAgaXRlbXM6Cj4+ID4+ICsgICAg
-ICAtIGRlc2NyaXB0aW9uOgo+PiA+Cj4+ID5UaGF0J3MgY29udHJhZGljdG9yeS4gbWluL21heCBz
-YXkgMS00LCBidXQgaGVyZSB5b3UgbGlzdCB0d28gaW50ZXJydXB0cy4KPj4gCj4+IFRoZXJlIGFy
-ZSA0IGludGVycnVwdHMgb24gcmszNTc2LCBhbmQgdGhlIG90aGVyIFNPQyBvbmx5IGhhdmUgb25l
-Lgo+Cj5CdXQgeW91IGxpc3RlZCB0d28gaW50ZXJydXB0cywgc28gd2hlcmUgZG9lcyB0aGUgInR3
-byIgY29tZSBmcm9tPwo+Cj4+IEkgYW0gc29ycnkgdGhhdCBJIGFtIG5vdCBmYW1pbGlhciB3aXRo
-IHRoaXMgc2NoZW1hIGxhbmd1YWdlOyBJIGhhdmUgcmVhZCBtYW55Cj4+IG90aGVyIFlBTUwgYmlu
-ZGluZ3MgdGhlc2UgZGF5cyBhbmQgdHJ5IHRvIHdyaXRlIGl0IGNvcnJlY3RseS4KPj4gCj4+IE1h
-eWJlIEkgc2hvdWxkIG5vdCBsaXN0IHRoZSBpbnRlcnJ1cHRzLW5hbWVzIGhlcmUodGhlbiBsaXN0
-IHRoZSBpbnRlcnJ1cHQtbmFtZSBieSBzb2MgYXQgYWxsT2Y6ICBwYXJ0KSwKPj4gIGxpa2UgdGhl
-IGNsb2NrcyBoYW5kbGVzIGluIHNhbXN1bmcsdXNiMy1kcmQtcGh5LnlhbWwgID8KPgo+eHh4LW5h
-bWVzIGFyZSBzdXBwb3NlZCB0byBiZSBmdWxseSBzeW5jZWQgd2l0aCB4eHgsIHNvIHNvbWV0aGlu
-ZyBuZWVkcwo+dG8gYmUgZml4ZWQgaGVyZS4gWW91IGNhbiBvZiBjb3Vyc2UgcmVtb3ZlIGludGVy
-cnVwdC1uYW1lcyAqY29tcGxldGVseSoKPihidXQgbm90IHBhcnRpYWxseSwgYmVjYXVzZSBhbGwg
-cHJvcGVydGllcyBtdXN0IGJlIGRlZmluZWQgaW4gdG9wLWxldmVsKS4KClRoYW5rcyBmb3IgeW91
-ciBleHBsYW5hdGlvbu+8jCBJIHdpbGwgc2VuZCBhIG5ldyB2ZXJzaW9uIGxhdGVyLgoKPgo+QmVz
-dCByZWdhcmRzLAo+S3J6eXN6dG9mCj4KPgo+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KPkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdAo+TGludXgtcm9j
-a2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwo+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Andy Yan <andy.yan@rock-chips.com>
+
+Add compatible for the HDPTX PHY on rk3576, which is compatible with
+rk3588, but without rst_phy/rst_ropll/rst_lcpll.
+
+In fact, these three reset lines are also optional on the rk3588,
+they just used for debug, then they were removed on the rk3576 IC
+design.
+
+Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+
+---
+
+Changes in v3:
+- Split from:
+  https://lore.kernel.org/linux-rockchip/3330586.aeNJFYEL58@diego/T/#m02151cd8591d7fe92cf30ab69701ed57c1944c06
+
+Changes in v2:
+- Wrap commit message according to Linux coding style
+- Make "rockchip,rk3588-hdptx-phy" const for "rockchip,rk3576-hdptx-phy"
+- Make declare phy/ropll/lcpll reset line are not exit on rk3576
+
+ .../phy/rockchip,rk3588-hdptx-phy.yaml        | 62 +++++++++++++------
+ 1 file changed, 44 insertions(+), 18 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml
+index 84fe59dbcf48..7a307f45cdec 100644
+--- a/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/rockchip,rk3588-hdptx-phy.yaml
+@@ -11,8 +11,13 @@ maintainers:
+ 
+ properties:
+   compatible:
+-    enum:
+-      - rockchip,rk3588-hdptx-phy
++    oneOf:
++      - enum:
++          - rockchip,rk3588-hdptx-phy
++      - items:
++          - enum:
++              - rockchip,rk3576-hdptx-phy
++          - const: rockchip,rk3588-hdptx-phy
+ 
+   reg:
+     maxItems: 1
+@@ -34,24 +39,12 @@ properties:
+     const: 0
+ 
+   resets:
+-    items:
+-      - description: PHY reset line
+-      - description: APB reset line
+-      - description: INIT reset line
+-      - description: CMN reset line
+-      - description: LANE reset line
+-      - description: ROPLL reset line
+-      - description: LCPLL reset line
++    minItems: 4
++    maxItems: 7
+ 
+   reset-names:
+-    items:
+-      - const: phy
+-      - const: apb
+-      - const: init
+-      - const: cmn
+-      - const: lane
+-      - const: ropll
+-      - const: lcpll
++    minItems: 4
++    maxItems: 7
+ 
+   rockchip,grf:
+     $ref: /schemas/types.yaml#/definitions/phandle
+@@ -67,6 +60,39 @@ required:
+   - reset-names
+   - rockchip,grf
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - rockchip,rk3576-hdptx-phy
++    then:
++      properties:
++        resets:
++          minItems: 4
++          maxItems: 4
++        reset-names:
++          items:
++            - const: apb
++            - const: init
++            - const: cmn
++            - const: lane
++    else:
++      properties:
++        resets:
++          minItems: 7
++          maxItems: 7
++        reset-names:
++          items:
++            - const: phy
++            - const: apb
++            - const: init
++            - const: cmn
++            - const: lane
++            - const: ropll
++            - const: lcpll
++
+ additionalProperties: false
+ 
+ examples:
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
