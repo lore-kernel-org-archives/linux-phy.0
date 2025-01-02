@@ -4,85 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3BB6E77188
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jan 2025 09:41:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DFF1E77188
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jan 2025 09:45:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=OIMF/ivOvV0jXDueLTVAchIpgDn40EVU8Gstvln2hLI=; b=KB4vTTmuxDZDR4UlSD2rSw3ySu
-	LiRbEqBiAm81hxJIjlvyZ4rrgtHHb9rJLkO8MSW+xvvKfQFJq+vsxtMFKleR7gNJGMGPGl0RbiT3q
-	NsXYV0d8V4mXdXkHIzeFuGLLrxy6xpYvQepIJmc3yIi4y4KjzfdcI7FcGw9H2WQjHFEXqkT5x2dXp
-	OZDBfAQKSXZpPEL5iObCwEmhHwj39VGRDUDJjMw8vc/x5ymsTy7Ky7nRXy0ZSIQNANwvSfA+DTefx
-	0sx8SZxFYlsdqCyWipKdR5GCmdD+Qw58eZgdY9pZHGmkzr2E7DtDlvuyhpCmzslcBCdA6T8NUe2kz
-	w8HygIIg==;
+	bh=RoQOMqQ+wlPWm6KQ8HksCpKYPIM0s9MaYB6hgHfAZKQ=; b=iQRX7o742J3wCmkJBPsE0wc/dN
+	J2QcJtzYCqpEFWGqmyMBcXbLhAKeyIGybjiOxBVLAeRCPSSoH9bQLMvrW8xre5vhTkN7qbfbYkoQy
+	bVFAr1Q/X2N1RK44ZY/stRE6A1WDAlkTeasKCrAdIXAh43OFokbvyAzQmAvZSKMYklU3kqsNpLHA+
+	3jOPpY5e9+3yvPK3yHTkt/nIZDq1p5NJkXsdK6kxsuCSaQEicpV6QvuYyP14qb2zhrG93+2VUsV36
+	9sIlHjSCemJQ1JYhu/Pj1naCE5HrsQQ6QD8SwP2K9XLgtwNPUZ1PtIza++Bb9E2RGIGLEp4Dz8Rtd
+	idrC6yAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTHiH-0000000A4T4-1aaA;
-	Thu, 02 Jan 2025 09:41:57 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1tTHlp-0000000A51c-13gy;
+	Thu, 02 Jan 2025 09:45:37 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTHhN-0000000A4H9-2Y8S
+	id 1tTHhY-0000000A4Je-2tVf
 	for linux-phy@lists.infradead.org;
-	Thu, 02 Jan 2025 09:41:03 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4361815b96cso73260475e9.1
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jan 2025 01:41:01 -0800 (PST)
+	Thu, 02 Jan 2025 09:41:14 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-4363dc916ceso71198555e9.0
+        for <linux-phy@lists.infradead.org>; Thu, 02 Jan 2025 01:41:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1735810860; x=1736415660; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1735810871; x=1736415671; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=odDHdEKVo1ECoBHd6qSHP5bCx3nKUQG5008PYymM31w=;
-        b=hrL7ymEkhDNjo/hVmSNM4YJe6EE5eulG6921+pzuqMFjs/EIPMdHgP8lfeNqD7Rzsq
-         PsLok0NOKzIq8/bI4X9j2d3hivAUL47+d1/vUakbn7pN+tX65BiKaZqO2i+tLlejC5OH
-         csSoMFyiwBZ4cTTjGY0ujNWnd8+pe4NfVxoJn8E5gVWc45KL6eTjTEqHQHDeffbgURp/
-         bZck5kUzz44bNBBDUK7pm4EFwSHTJJQoLtLh0pU8VcjjBPnKolUBBlTByVdIQjlR5bZl
-         iH7SlnA0FfyV0eykqaUuozulm7BgaXaWAP4jyrE72E0PGjMwp5arcX+VXXO7L57RHq4J
-         YlCg==
+        bh=/oXcMOvfrC7iN4ecLv5oPIeFCArh+m8oouCA5LcTcBU=;
+        b=Df/DeCFRxsWPw52pUmF/YVHxM4PeB/IUxHh3/XWoAzPd1eQ2BzMB9sqE/txUF2vn0D
+         rW8kR4he8Z0a+L+HUE6qvYHF3kGcr6q8ijenwrRZGo4UP+4/xlXFw3i5fX9npV/e6TWo
+         dqKwwPysR8jm0XfY5rM2TZ0xR8KZy0ui91+P6LiId1083UeapUQK2pxu6TV2EaMoD6OZ
+         l0lSU0iV1k+mbH1FVytezoK83nwtcbt0QcSLChaPWZekl84ZuCKCd78tpQhaYdIG0b+C
+         GRzPZrD6rp68YK65vK0nh+sIBlzYg6nFSYURGj0FWH67oNSy0+QMoHzUfuCXRp9VD7tn
+         Jdiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735810860; x=1736415660;
+        d=1e100.net; s=20230601; t=1735810871; x=1736415671;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=odDHdEKVo1ECoBHd6qSHP5bCx3nKUQG5008PYymM31w=;
-        b=rcd+IinN/FwiUJD8CnS/kjfbKxGNufRIYTc1t0WINjic874l+DYE6JGD6lVkclNS5B
-         ITCIYacGFw3WHik8pKThLvNUUkenTg618Lte6qUG5K1rcCzB22Vv5OydwpKZuBsCR2ye
-         2LtiTscH4oFKmksqOz+nVW1TPaw4edUeYA0GQeMj/Zvwh2MNNFtZVvKuQAayTy86Kebq
-         vdoan8EMNL9xZayYjihKjcGfq1UdoUmrWluAtD5WxbwGGwG3b5LgNb6NcDwzXdcsAbA+
-         Y3+MLen/9vkUAexQkn8I21JWOuPlhmB/afN20pjSv5bNIjQLALWoe5QFMVlA4DlaQIU9
-         GtlQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVHOreG1EGmL4IcJFEv/6Prv3IK1e2w8TGR8+VGVViXLiS3mdi8ZPUc8idVtdfQ1EgtnXt2H7e1T7I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxAs/Uf5KQkT6TP8iFWUOi1wkOI0hqXE66mFH/vPs89lGuSrBz1
-	pkZrnNsT3EKpvmYqd0VXfLEe+lg557vjOm1PhFr6V4SG5wm9aTIikYWfiKktFIk=
-X-Gm-Gg: ASbGnctuyAQEJuKI0CkIMl+PMfT4Opgm2/kQhMrY69V6nMtcite0ShmmbPTcUWXNb56
-	S3BHZjvaB0T7PBtrpp+ONYDgp0xHhWymW8HBWhL168paTjhTAPQeVaQbfUInKGQIgnL7FoQFybE
-	KM1jKW7c6JfvlY5y+zVBGGPOzczqLE3cqBYfmiZws5XgkwR9GOWRytqS7qUT+1Qh2McfZu3HJm5
-	NX198fkYapLn1O5ho/WcEJvEYHXDNUvIQ9716lD5R9DP4BMAXuZd8ThRbqcF6HwfklNFKmMwIH5
-	ZQHcQW6Y//9Ijnv6+ug3Q2QDhAnciTYE5A==
-X-Google-Smtp-Source: AGHT+IFYDkDox7plguF5rgyeIEMg1cp8DLocgikphY1yErZzrrY6xhBUr9jUMcggCFeUOsushSH/Dg==
-X-Received: by 2002:a05:600c:4f92:b0:436:488f:50a with SMTP id 5b1f17b1804b1-43668646896mr407348285e9.17.1735810859938;
-        Thu, 02 Jan 2025 01:40:59 -0800 (PST)
+        bh=/oXcMOvfrC7iN4ecLv5oPIeFCArh+m8oouCA5LcTcBU=;
+        b=JQD2J3VqzUG9tEFZuMGTRk311VOpH1phIWkKTGMW6NtA0EP4TWO/sLAw0nWflDrmhC
+         f9d136g3dIIwLEUmj/BpnXu+BHZFel1Uu28k8aElsttabGGbmTFpXsu6f1UhqHIP7AVL
+         4LwvYd87z4r7XIqNHwZPEotfClxKu2XQxadUEVI4XMq3o0sDaKXWf/ckkpCQIUnv25rc
+         YR/w3P9AXF5mF0e40vEst7sLLfZoRxAM+g4ZJ1ldUGe9tNO4zr/A04z0aSQ9xxBQ4F5K
+         qPOKhGXqwmSpKwYfrdSR7SJi9U3RXTXsGsXiNEDWn7y9m/jtEtqULvkjyjO07d2iolsn
+         5KqA==
+X-Forwarded-Encrypted: i=1; AJvYcCXuasdIVzkkmiLVMEO7hwzRJMC1LeG+lVhsgUXfKzOIMulUKuxSADqGzQdC/iGG/4W/ava7PehmB3c=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy3737TTLjeCI7Xo6Hl8oYt8Mj2AjuK8OZ9zmRx/Kb/dI4PJ3W0
+	iPBRCyrXBh2rfb6LUF20RRXzGZiA6bcpWuigYlvtV1OBZH94u6LH+sNS3iu7Pwc=
+X-Gm-Gg: ASbGncs9qqy9YW/Ah+UUV6eRyB1tuBkudBONxwWjZu4gI1DzAeMCbANpZmrc8QrdQ/J
+	O7MGac1Ks4zgoAAnBOje0KViSNq7tComo86Riv4bhbKoZjSxo4yTrI5/ocWATesodpBp32UCnAf
+	hluVBSVj2gMGY7qM+5iw8CtSkCIIge9DnQdrnveKrEcvk9eGiYW4p5AiWAMIIxvScXDih5iJyA5
+	4FLfgvOoAJISTJiQyQRvhy9wvTblI14OjXhsPdyLSDBxsJQcLtbPmPMV5LaWbfg5mKc+8DGkuzz
+	oP7BbfJRIKlzcVQ9NypRxCjECyWwqANyQw==
+X-Google-Smtp-Source: AGHT+IH2Mv5uQN7VnPzUaQDX5RIFOYe4WHF2+BXPsAV64FeA80rClpdW3DKWh12Szu1NO8Zkqlabxg==
+X-Received: by 2002:a05:600c:548a:b0:434:e69c:d338 with SMTP id 5b1f17b1804b1-436697f8bf8mr352226985e9.5.1735810871401;
+        Thu, 02 Jan 2025 01:41:11 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:982:cbb0:1cfa:329a:aa2e:f0be? ([2a01:e0a:982:cbb0:1cfa:329a:aa2e:f0be])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a1c8332absm37183733f8f.38.2025.01.02.01.40.59
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436611ea42esm453596695e9.9.2025.01.02.01.41.10
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 02 Jan 2025 01:40:59 -0800 (PST)
-Message-ID: <e211b522-83ed-46f9-a114-9cae30f44977@linaro.org>
-Date: Thu, 2 Jan 2025 10:40:59 +0100
+        Thu, 02 Jan 2025 01:41:10 -0800 (PST)
+Message-ID: <bcb95701-d230-4ce1-9813-cbb75cdafa8b@linaro.org>
+Date: Thu, 2 Jan 2025 10:41:10 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 1/2] phy: amlogic: meson8b-usb2: Use FIELD_PREP instead of
- _SHIFT macros
+Subject: Re: [PATCH 2/2] phy: amlogic: meson8b-usb2: Use the
+ regmap_{clear,set}_bits helpers
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  linux-amlogic@lists.infradead.org, linux-phy@lists.infradead.org
 Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  vkoul@kernel.org, kishon@kernel.org
 References: <20241231191718.2764065-1-martin.blumenstingl@googlemail.com>
- <20241231191718.2764065-2-martin.blumenstingl@googlemail.com>
+ <20241231191718.2764065-3-martin.blumenstingl@googlemail.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -109,10 +109,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20241231191718.2764065-2-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20241231191718.2764065-3-martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250102_014101_711263_A0746AC0 
-X-CRM114-Status: GOOD (  12.17  )
+X-CRM114-CacheID: sfid-20250102_014112_740880_083A8CCE 
+X-CRM114-Status: GOOD (  14.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,49 +131,80 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 31/12/2024 20:17, Martin Blumenstingl wrote:
-> This simplifies the code by re-using the FIELD_PREP helper. No
-> functional changes inteded.
+> These require less code, reduce the chance of typos and overall make the
+> intent clearer. No functional changes.
 > 
 > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
->   drivers/phy/amlogic/phy-meson8b-usb2.c | 7 +++----
->   1 file changed, 3 insertions(+), 4 deletions(-)
+>   drivers/phy/amlogic/phy-meson8b-usb2.c | 28 ++++++++++----------------
+>   1 file changed, 11 insertions(+), 17 deletions(-)
 > 
 > diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-> index d63147c41b8c..d9c761b7c15c 100644
+> index d9c761b7c15c..a553231a9f7c 100644
 > --- a/drivers/phy/amlogic/phy-meson8b-usb2.c
 > +++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-> @@ -5,6 +5,7 @@
->    * Copyright (C) 2016 Martin Blumenstingl <martin.blumenstingl@googlemail.com>
->    */
+> @@ -165,8 +165,7 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
+>   		return ret;
+>   	}
 >   
-> +#include <linux/bitfield.h>
->   #include <linux/clk.h>
->   #include <linux/delay.h>
->   #include <linux/io.h>
-> @@ -39,9 +40,7 @@
->   	#define REG_CTRL_TX_BITSTUFF_ENN		BIT(18)
->   	#define REG_CTRL_COMMON_ON			BIT(19)
->   	#define REG_CTRL_REF_CLK_SEL_MASK		GENMASK(21, 20)
-> -	#define REG_CTRL_REF_CLK_SEL_SHIFT		20
->   	#define REG_CTRL_FSEL_MASK			GENMASK(24, 22)
-> -	#define REG_CTRL_FSEL_SHIFT			22
->   	#define REG_CTRL_PORT_RESET			BIT(25)
->   	#define REG_CTRL_THREAD_ID_MASK			GENMASK(31, 26)
->   
-> @@ -170,10 +169,10 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
->   			   REG_CONFIG_CLK_32k_ALTSEL);
+> -	regmap_update_bits(priv->regmap, REG_CONFIG, REG_CONFIG_CLK_32k_ALTSEL,
+> -			   REG_CONFIG_CLK_32k_ALTSEL);
+> +	regmap_set_bits(priv->regmap, REG_CONFIG, REG_CONFIG_CLK_32k_ALTSEL);
 >   
 >   	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_REF_CLK_SEL_MASK,
-> -			   0x2 << REG_CTRL_REF_CLK_SEL_SHIFT);
-> +			   FIELD_PREP(REG_CTRL_REF_CLK_SEL_MASK, 0x2));
->   
->   	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_FSEL_MASK,
-> -			   0x5 << REG_CTRL_FSEL_SHIFT);
-> +			   FIELD_PREP(REG_CTRL_FSEL_MASK, 0x5));
+>   			   FIELD_PREP(REG_CTRL_REF_CLK_SEL_MASK, 0x2));
+> @@ -175,23 +174,20 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
+>   			   FIELD_PREP(REG_CTRL_FSEL_MASK, 0x5));
 >   
 >   	/* reset the PHY */
->   	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
+> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
+> -			   REG_CTRL_POWER_ON_RESET);
+> +	regmap_set_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET);
+>   	udelay(RESET_COMPLETE_TIME);
+> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET, 0);
+> +	regmap_clear_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET);
+>   	udelay(RESET_COMPLETE_TIME);
+>   
+> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT,
+> -			   REG_CTRL_SOF_TOGGLE_OUT);
+> +	regmap_set_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT);
+>   
+>   	if (priv->dr_mode == USB_DR_MODE_HOST) {
+> -		regmap_update_bits(priv->regmap, REG_DBG_UART,
+> -				   REG_DBG_UART_SET_IDDQ, 0);
+> +		regmap_clear_bits(priv->regmap, REG_DBG_UART,
+> +				  REG_DBG_UART_SET_IDDQ);
+>   
+>   		if (priv->match->host_enable_aca) {
+> -			regmap_update_bits(priv->regmap, REG_ADP_BC,
+> -					   REG_ADP_BC_ACA_ENABLE,
+> -					   REG_ADP_BC_ACA_ENABLE);
+> +			regmap_set_bits(priv->regmap, REG_ADP_BC,
+> +					REG_ADP_BC_ACA_ENABLE);
+>   
+>   			udelay(ACA_ENABLE_COMPLETE_TIME);
+>   
+> @@ -214,17 +210,15 @@ static int phy_meson8b_usb2_power_off(struct phy *phy)
+>   	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
+>   
+>   	if (priv->dr_mode == USB_DR_MODE_HOST)
+> -		regmap_update_bits(priv->regmap, REG_DBG_UART,
+> -				   REG_DBG_UART_SET_IDDQ,
+> -				   REG_DBG_UART_SET_IDDQ);
+> +		regmap_set_bits(priv->regmap, REG_DBG_UART,
+> +				REG_DBG_UART_SET_IDDQ);
+>   
+>   	clk_disable_unprepare(priv->clk_usb);
+>   	clk_disable_unprepare(priv->clk_usb_general);
+>   	reset_control_rearm(priv->reset);
+>   
+>   	/* power off the PHY by putting it into reset mode */
+> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
+> -			   REG_CTRL_POWER_ON_RESET);
+> +	regmap_set_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET);
+>   
+>   	return 0;
+>   }
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
