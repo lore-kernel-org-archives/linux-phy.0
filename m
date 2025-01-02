@@ -4,115 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DFF1E77188
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Jan 2025 09:45:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DFF1E77188
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Jan 2025 11:31:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RoQOMqQ+wlPWm6KQ8HksCpKYPIM0s9MaYB6hgHfAZKQ=; b=iQRX7o742J3wCmkJBPsE0wc/dN
-	J2QcJtzYCqpEFWGqmyMBcXbLhAKeyIGybjiOxBVLAeRCPSSoH9bQLMvrW8xre5vhTkN7qbfbYkoQy
-	bVFAr1Q/X2N1RK44ZY/stRE6A1WDAlkTeasKCrAdIXAh43OFokbvyAzQmAvZSKMYklU3kqsNpLHA+
-	3jOPpY5e9+3yvPK3yHTkt/nIZDq1p5NJkXsdK6kxsuCSaQEicpV6QvuYyP14qb2zhrG93+2VUsV36
-	9sIlHjSCemJQ1JYhu/Pj1naCE5HrsQQ6QD8SwP2K9XLgtwNPUZ1PtIza++Bb9E2RGIGLEp4Dz8Rtd
-	idrC6yAg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X9HWKwcgDYGwkSMyP+phBhycl1sCnMnqjWoPWWeDuzI=; b=ghe/hraPsv//Xo
+	dcvQNcOZgH9fnp3u+m0d2Rkw9PGIwpVSMvAw1rkgfrXysP1OXlqy4pkL+AMonNDx53lFKtNmd3u26
+	1Bixv5LhtM9FoLkzAyGzFZbU4i/tn52qZ/i3SCgxQrk84w3Duzy98OkGalutwqqyQtDWTD7VMiPVq
+	LD2fuDLIam9t4FJngQDFNc0gY9Ubi2OCLvqPcoppfc7u7C233b31n0VZ44XrBa3tLthK0aR3dQAgh
+	YYQjSBrJtXkzFcSBJCppylhGRIQFUSlKoBTORTLi/zqxoStDmS4fbMTnzPQ2/6NG1JYoiE2KdmbMF
+	OQVrpDHgAy9OKVJqswRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTHlp-0000000A51c-13gy;
-	Thu, 02 Jan 2025 09:45:37 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1tTJPn-0000000AG36-3nkT;
+	Thu, 02 Jan 2025 11:30:59 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTHhY-0000000A4Je-2tVf
+	id 1tTJPl-0000000AG29-3Nsa
 	for linux-phy@lists.infradead.org;
-	Thu, 02 Jan 2025 09:41:14 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-4363dc916ceso71198555e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 02 Jan 2025 01:41:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1735810871; x=1736415671; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=/oXcMOvfrC7iN4ecLv5oPIeFCArh+m8oouCA5LcTcBU=;
-        b=Df/DeCFRxsWPw52pUmF/YVHxM4PeB/IUxHh3/XWoAzPd1eQ2BzMB9sqE/txUF2vn0D
-         rW8kR4he8Z0a+L+HUE6qvYHF3kGcr6q8ijenwrRZGo4UP+4/xlXFw3i5fX9npV/e6TWo
-         dqKwwPysR8jm0XfY5rM2TZ0xR8KZy0ui91+P6LiId1083UeapUQK2pxu6TV2EaMoD6OZ
-         l0lSU0iV1k+mbH1FVytezoK83nwtcbt0QcSLChaPWZekl84ZuCKCd78tpQhaYdIG0b+C
-         GRzPZrD6rp68YK65vK0nh+sIBlzYg6nFSYURGj0FWH67oNSy0+QMoHzUfuCXRp9VD7tn
-         Jdiw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735810871; x=1736415671;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=/oXcMOvfrC7iN4ecLv5oPIeFCArh+m8oouCA5LcTcBU=;
-        b=JQD2J3VqzUG9tEFZuMGTRk311VOpH1phIWkKTGMW6NtA0EP4TWO/sLAw0nWflDrmhC
-         f9d136g3dIIwLEUmj/BpnXu+BHZFel1Uu28k8aElsttabGGbmTFpXsu6f1UhqHIP7AVL
-         4LwvYd87z4r7XIqNHwZPEotfClxKu2XQxadUEVI4XMq3o0sDaKXWf/ckkpCQIUnv25rc
-         YR/w3P9AXF5mF0e40vEst7sLLfZoRxAM+g4ZJ1ldUGe9tNO4zr/A04z0aSQ9xxBQ4F5K
-         qPOKhGXqwmSpKwYfrdSR7SJi9U3RXTXsGsXiNEDWn7y9m/jtEtqULvkjyjO07d2iolsn
-         5KqA==
-X-Forwarded-Encrypted: i=1; AJvYcCXuasdIVzkkmiLVMEO7hwzRJMC1LeG+lVhsgUXfKzOIMulUKuxSADqGzQdC/iGG/4W/ava7PehmB3c=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy3737TTLjeCI7Xo6Hl8oYt8Mj2AjuK8OZ9zmRx/Kb/dI4PJ3W0
-	iPBRCyrXBh2rfb6LUF20RRXzGZiA6bcpWuigYlvtV1OBZH94u6LH+sNS3iu7Pwc=
-X-Gm-Gg: ASbGncs9qqy9YW/Ah+UUV6eRyB1tuBkudBONxwWjZu4gI1DzAeMCbANpZmrc8QrdQ/J
-	O7MGac1Ks4zgoAAnBOje0KViSNq7tComo86Riv4bhbKoZjSxo4yTrI5/ocWATesodpBp32UCnAf
-	hluVBSVj2gMGY7qM+5iw8CtSkCIIge9DnQdrnveKrEcvk9eGiYW4p5AiWAMIIxvScXDih5iJyA5
-	4FLfgvOoAJISTJiQyQRvhy9wvTblI14OjXhsPdyLSDBxsJQcLtbPmPMV5LaWbfg5mKc+8DGkuzz
-	oP7BbfJRIKlzcVQ9NypRxCjECyWwqANyQw==
-X-Google-Smtp-Source: AGHT+IH2Mv5uQN7VnPzUaQDX5RIFOYe4WHF2+BXPsAV64FeA80rClpdW3DKWh12Szu1NO8Zkqlabxg==
-X-Received: by 2002:a05:600c:548a:b0:434:e69c:d338 with SMTP id 5b1f17b1804b1-436697f8bf8mr352226985e9.5.1735810871401;
-        Thu, 02 Jan 2025 01:41:11 -0800 (PST)
-Received: from ?IPV6:2a01:e0a:982:cbb0:1cfa:329a:aa2e:f0be? ([2a01:e0a:982:cbb0:1cfa:329a:aa2e:f0be])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436611ea42esm453596695e9.9.2025.01.02.01.41.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 02 Jan 2025 01:41:10 -0800 (PST)
-Message-ID: <bcb95701-d230-4ce1-9813-cbb75cdafa8b@linaro.org>
-Date: Thu, 2 Jan 2025 10:41:10 +0100
+	Thu, 02 Jan 2025 11:30:59 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5020rVJP020443;
+	Thu, 2 Jan 2025 11:30:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=zJCJH9RvhZoRLeRJbOciMG
+	B2dbez7BtmrjqwU8gvjtM=; b=dwDsTI+fHxkTy5dXtPEdyAu5B5rstcYpwrHnWv
+	ICH2iQqpvV0Jk6d7K/RJqXTUyeDgO3+LPwDyFvjR6Svb98hdRUF3YbYUZ+/VMkcx
+	6s1titz04HiGYAZKcYnGJ7D4IM4y08BFj+mPg8VeuTmho2Q/yuUvTbzi3vlcLqqQ
+	cTscprCy+LaQHlrHHzNch5C6hP6kMRsyM1s3ayghpNJVuUPGhpZVaI0P5i4EkJeo
+	aHABTZrhIB8w+Lopio6voeUwToSZqLl8RHbRaE5HntktKI1DcvFrdchVLbU5kDYx
+	fDIvNU5erJ4NgHMY4dR+IAyHR8GO7QiyiseJLJLmPKcBeBiA==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43wgnj140b-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 02 Jan 2025 11:30:44 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 502BUibp007919
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 2 Jan 2025 11:30:44 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 2 Jan 2025 03:30:38 -0800
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
+        <quic_varada@quicinc.com>, <dmitry.baryshkov@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+Subject: [PATCH v5 0/5] Add PCIe support for Qualcomm IPQ5332
+Date: Thu, 2 Jan 2025 17:00:14 +0530
+Message-ID: <20250102113019.1347068-1-quic_varada@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 2/2] phy: amlogic: meson8b-usb2: Use the
- regmap_{clear,set}_bits helpers
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, linux-phy@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- vkoul@kernel.org, kishon@kernel.org
-References: <20241231191718.2764065-1-martin.blumenstingl@googlemail.com>
- <20241231191718.2764065-3-martin.blumenstingl@googlemail.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20241231191718.2764065-3-martin.blumenstingl@googlemail.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 1vqwo_Fbd_B62m8PNIO5f1K99BqzSVYo
+X-Proofpoint-GUID: 1vqwo_Fbd_B62m8PNIO5f1K99BqzSVYo
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 bulkscore=0
+ clxscore=1015 spamscore=0 adultscore=0 priorityscore=1501 malwarescore=0
+ lowpriorityscore=0 mlxlogscore=999 suspectscore=0 mlxscore=0 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2501020099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250102_014112_740880_083A8CCE 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20250102_033057_860699_5DE3AC25 
+X-CRM114-Status: GOOD (  18.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,89 +95,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 31/12/2024 20:17, Martin Blumenstingl wrote:
-> These require less code, reduce the chance of typos and overall make the
-> intent clearer. No functional changes.
-> 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->   drivers/phy/amlogic/phy-meson8b-usb2.c | 28 ++++++++++----------------
->   1 file changed, 11 insertions(+), 17 deletions(-)
-> 
-> diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-> index d9c761b7c15c..a553231a9f7c 100644
-> --- a/drivers/phy/amlogic/phy-meson8b-usb2.c
-> +++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-> @@ -165,8 +165,7 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
->   		return ret;
->   	}
->   
-> -	regmap_update_bits(priv->regmap, REG_CONFIG, REG_CONFIG_CLK_32k_ALTSEL,
-> -			   REG_CONFIG_CLK_32k_ALTSEL);
-> +	regmap_set_bits(priv->regmap, REG_CONFIG, REG_CONFIG_CLK_32k_ALTSEL);
->   
->   	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_REF_CLK_SEL_MASK,
->   			   FIELD_PREP(REG_CTRL_REF_CLK_SEL_MASK, 0x2));
-> @@ -175,23 +174,20 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
->   			   FIELD_PREP(REG_CTRL_FSEL_MASK, 0x5));
->   
->   	/* reset the PHY */
-> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
-> -			   REG_CTRL_POWER_ON_RESET);
-> +	regmap_set_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET);
->   	udelay(RESET_COMPLETE_TIME);
-> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET, 0);
-> +	regmap_clear_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET);
->   	udelay(RESET_COMPLETE_TIME);
->   
-> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT,
-> -			   REG_CTRL_SOF_TOGGLE_OUT);
-> +	regmap_set_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT);
->   
->   	if (priv->dr_mode == USB_DR_MODE_HOST) {
-> -		regmap_update_bits(priv->regmap, REG_DBG_UART,
-> -				   REG_DBG_UART_SET_IDDQ, 0);
-> +		regmap_clear_bits(priv->regmap, REG_DBG_UART,
-> +				  REG_DBG_UART_SET_IDDQ);
->   
->   		if (priv->match->host_enable_aca) {
-> -			regmap_update_bits(priv->regmap, REG_ADP_BC,
-> -					   REG_ADP_BC_ACA_ENABLE,
-> -					   REG_ADP_BC_ACA_ENABLE);
-> +			regmap_set_bits(priv->regmap, REG_ADP_BC,
-> +					REG_ADP_BC_ACA_ENABLE);
->   
->   			udelay(ACA_ENABLE_COMPLETE_TIME);
->   
-> @@ -214,17 +210,15 @@ static int phy_meson8b_usb2_power_off(struct phy *phy)
->   	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
->   
->   	if (priv->dr_mode == USB_DR_MODE_HOST)
-> -		regmap_update_bits(priv->regmap, REG_DBG_UART,
-> -				   REG_DBG_UART_SET_IDDQ,
-> -				   REG_DBG_UART_SET_IDDQ);
-> +		regmap_set_bits(priv->regmap, REG_DBG_UART,
-> +				REG_DBG_UART_SET_IDDQ);
->   
->   	clk_disable_unprepare(priv->clk_usb);
->   	clk_disable_unprepare(priv->clk_usb_general);
->   	reset_control_rearm(priv->reset);
->   
->   	/* power off the PHY by putting it into reset mode */
-> -	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET,
-> -			   REG_CTRL_POWER_ON_RESET);
-> +	regmap_set_bits(priv->regmap, REG_CTRL, REG_CTRL_POWER_ON_RESET);
->   
->   	return 0;
->   }
+Patch series adds support for enabling the PCIe controller and
+UNIPHY found on Qualcomm IPQ5332 platform. PCIe0 is Gen3 X1 and
+PCIe1 is Gen3 X2 are added.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+This series combines [1] and [2]. [1] introduces IPQ5018 PCIe
+support and [2] depends on [1] to introduce IPQ5332 PCIe support.
+Since the community was interested in [2] (please see [3]), tried
+to revive IPQ5332's PCIe support with v2 of this patch series.
+
+v2 of this series pulled in the phy driver from [1] tried to
+address comments/feedback given in both [1] and [2].
+
+1. Enable IPQ5018 PCI support (Nitheesh Sekar) - https://lore.kernel.org/all/20231003120846.28626-1-quic_nsekar@quicinc.com/
+2. Add PCIe support for Qualcomm IPQ5332 (Praveenkumar I) - https://lore.kernel.org/linux-arm-msm/20231214062847.2215542-1-quic_ipkumar@quicinc.com/
+3. Community interest - https://lore.kernel.org/linux-arm-msm/20240310132915.GE3390@thinkpad/
+
+v5: phy bindings:
+    * Drop '3x1' & '3x2' from compatible string
+    * Use 'num-lanes' to differentiate instead of '3x1' or '3x2'
+      in compatible string
+    * Describe clocks and resets instead of just maxItems
+
+    phy driver:
+    * Get num-lanes from DTS
+    * Drop compatible specific init data as there is only one
+      compatible string
+
+    controller bindings:
+    * Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
+
+    dtsi:
+    * Add 'num-lanes' to "pcie1_phy: phy@4b1000"
+    * Make ipq5332 as main and ipq9574 as fallback compatible
+    * Sort controller nodes per address
+
+    misc:
+    Add R-B tag from Konrad to dts and dtsi patches
+
+v4: * phy bindings - Create ipq5332 compatible instead of reusing ipq9574 for bindings
+    * phy bindings - Remove reset-names as the resets are handled with bulk APIs
+    * phy bindings - Fix order in the 'required' section
+    * phy bindings - Remove clock-output-names
+    * dtsi - Add missing reset for pcie1_phy
+    * dtsi - Convert 'reg-names' to a vertical list
+    * dts - Fix nodes sort order
+    * dts - Use property-n followed by property-names
+
+v3: * Update the cover letter with the sources of the patches
+    * Rename the dt-bindings yaml file similar to other phys
+    * Drop ipq5332 specific pcie controllor bindings and reuse
+      ipq9574 pcie controller bindings for ipq5332
+    * Please see patches for specific changes
+    * Set GPL license for phy-qcom-uniphy-pcie-28lp.c
+
+v2: Address review comments from V1
+    Drop the 'required clocks' change that would break ABI (in dt-binding, dts, gcc-ipq5332.c)
+    Include phy driver from the dependent series
+
+v1: https://lore.kernel.org/linux-arm-msm/20231214062847.2215542-1-quic_ipkumar@quicinc.com/
+
+Nitheesh Sekar (2):
+  dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
+  phy: qcom: Introduce PCIe UNIPHY 28LP driver
+
+Praveenkumar I (2):
+  arm64: dts: qcom: ipq5332: Add PCIe related nodes
+  arm64: dts: qcom: ipq5332-rdp441: Enable PCIe phys and controllers
+
+Varadarajan Narayanan (1):
+  dt-bindings: PCI: qcom: Document the IPQ5332 PCIe controller
+
+ .../devicetree/bindings/pci/qcom,pcie.yaml    |  10 +-
+ .../phy/qcom,ipq5332-uniphy-pcie-phy.yaml     |  71 +++++
+ arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts   |  76 +++++
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi         | 221 +++++++++++++-
+ drivers/phy/qualcomm/Kconfig                  |  12 +
+ drivers/phy/qualcomm/Makefile                 |   1 +
+ .../phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c  | 287 ++++++++++++++++++
+ 7 files changed, 674 insertions(+), 4 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+ create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+
+
+base-commit: 8155b4ef3466f0e289e8fcc9e6e62f3f4dceeac2
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
