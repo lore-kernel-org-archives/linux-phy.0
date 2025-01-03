@@ -4,89 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A855E77188
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 06:53:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10BC5E77188
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 07:42:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9gESarvJTKeVrSw0/VE/eXUQdJ8DAP/V4dKbaUyUUBE=; b=VhUWktIwl8QZUP
-	CYWP/1uMJA7iRVF+iqupLHh1rFe0d4/q0yBfGb1zmZ8UDzglJV1g7oUV7CV6iMcccuxtBWktAhZoH
-	nxHqzQyhwoUGYRzYJCnWywDSnJEpH4OHghgejvkkDkAWQR03uANOf8Ebhnmk+/Hb4HU4MBBqgw1sh
-	YNVEtXuwNvrmh+YjXHPEI5hnT5vzSL0xGO/lKHWcYqyfleuLtq1IgqAf6pMa2HRB6sR2cV6/LgEeu
-	5LbO6YhdOOgj4SPDem3tlHJlPSruaF/KjWo/DNqgiCO+HP3/nDVvWpaRBUQq+DHT54T1NXYs7X46V
-	VSwss8vJRy/PvzCqxJjg==;
+	List-Owner; bh=8slZkRhxYxgqUf2LiA5xzwK0qznY6awKSPXqKDrZ4ho=; b=RKPqcmbUG/PiRP
+	pQdzrbrnHGsbWGqZXH3QcWeYU/guZosLjxFVk5hmCeAU/P9/2xEs0t+vKKnjrYh0bpTiVaP7c4g4J
+	rv9wwqko05z9BEPEpm8C2t//yRJbwPgrz8rFMDF7MB5zRlOdr7NZq1gR1tTcuaw7+N9O5IVVxSqcQ
+	I3oKABb7IBxJTnq3DhTyCGnT5OvOElQ+Kf2Qyn6tHbrZztbtSlGR7F7rs/imNatQ+zUfHk2Z1nlii
+	+fIB6jlNEEHydshEKjaWyCnqsaty6PLvq3S5tn0isxdSQK65AlIgLoNeQOk7hqgKOmrPwrGbFSkwH
+	IJJdsGnupno4womypzwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTbYT-0000000CGLs-0nQK;
-	Fri, 03 Jan 2025 06:53:09 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tTcKC-0000000CNmy-1IKw;
+	Fri, 03 Jan 2025 07:42:28 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTbYR-0000000CGLO-3Hue
+	id 1tTcK5-0000000CNlk-2QqR
 	for linux-phy@lists.infradead.org;
-	Fri, 03 Jan 2025 06:53:08 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5030sbNQ008188;
-	Fri, 3 Jan 2025 06:53:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=hyaFWJ3uV6VryfgSKh0Yayoi
-	83S+mBT6y9wX8ulhkHM=; b=JOPrO8DelrWKfJDagsT83DQfs244ORMO4Dtwx2b1
-	yRjFbLOOUI+/o5hXlsPI/zxb6QVEUiV6aqUcP0x5aGUJDfwwt7aV0T21NAiFDHOZ
-	JD20nG3yrhfRt6bjncIQmZ3OwIA9LZL0m8nFwzxETGAttZPKbCEIgMt/ff9d43is
-	v+s97CU9+7oWOngFostJQ5ZR0iuyk4e5WL6hehO+fPQDteM7b7UED63cixPnxwNR
-	y95IG5hqLUJFvzY19u2cj1oL3KZArH00ep5M3Wh2EnqvK8sbIYqObEKGmLSBskH4
-	qTTPMK66r5RYFnxYg7v2uj0rCvZ8U3n87Njyjet8kWs3pg==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43x5s0rn1n-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 03 Jan 2025 06:53:01 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5036r0t2012610
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 3 Jan 2025 06:53:00 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 2 Jan 2025 22:52:55 -0800
-Date: Fri, 3 Jan 2025 12:22:51 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Manikanta Mylavarapu <quic_mmanikan@quicinc.com>
-CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <quic_srichara@quicinc.com>
-Subject: Re: [PATCH 4/4] arm64: dts: qcom: ipq5424: Enable PCIe PHYs and
- controllers
-Message-ID: <Z3eJQyJXSBG+oFF4@hu-varada-blr.qualcomm.com>
-References: <20241213134950.234946-1-quic_mmanikan@quicinc.com>
- <20241213134950.234946-5-quic_mmanikan@quicinc.com>
+	Fri, 03 Jan 2025 07:42:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id C22615C6276;
+	Fri,  3 Jan 2025 07:41:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 00950C4CECE;
+	Fri,  3 Jan 2025 07:42:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1735890140;
+	bh=Zo2LGaP6JfpLkthOZwDrMvwqIAlhxp2dBRQ4A8GvYO4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=o1OLao/ugA7pp5i1/BY+iqZ7FeX6FjrJv5aDpAkZcNwPbnK7AkKanAtZ2aNI05Ha6
+	 RFloi/jZrc6n8dugCCP5bgnGK0TElnhYW81DeUU7GAELRD0A9/iYMKpywGZRs7RXN8
+	 iiLMmjDupMJtMcxLgQbfV7KB/7otCzSElkkdXDIojDD0WnWSATllJaevF0aIG7JvRU
+	 wx5fA58BQvK491fQDhEP6GM9mOslKkIVFYaF7yWOc7pa2O5aI47FL8nppyCRFDoa8P
+	 5Uy9bHhKVP/w3B9xtLsrtHHVifSsUzi2EIP14wpraFJQvBdfarWHDPKE6IR9TqHbNP
+	 4sdbLT+fAUQng==
+Date: Fri, 3 Jan 2025 08:42:17 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
+	manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
+	p.zabel@pengutronix.de, quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 1/5] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
+ uniphy
+Message-ID: <ihjgmi6hd5dzv4kxskerc7px4u4tynwxa6edwa2mozzczdar3b@xdplqfwme3lm>
+References: <20250102113019.1347068-1-quic_varada@quicinc.com>
+ <20250102113019.1347068-2-quic_varada@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241213134950.234946-5-quic_mmanikan@quicinc.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: lT6gXrGBlZrGDdzVkjHQ1dyfzH1S9LgO
-X-Proofpoint-GUID: lT6gXrGBlZrGDdzVkjHQ1dyfzH1S9LgO
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 impostorscore=0 mlxscore=0
- priorityscore=1501 bulkscore=0 adultscore=0 spamscore=0 malwarescore=0
- clxscore=1015 suspectscore=0 phishscore=0 mlxlogscore=614
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501030058
+In-Reply-To: <20250102113019.1347068-2-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250102_225307_834378_34821EFA 
-X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-CacheID: sfid-20250102_234221_655100_452C966C 
+X-CRM114-Status: UNSURE (   6.92  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,40 +79,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 13, 2024 at 07:19:50PM +0530, Manikanta Mylavarapu wrote:
-
-[ .  .  . ]
-
-> +&pcie2_phy {
-> +	status = "okay";
-> +};
+On Thu, Jan 02, 2025 at 05:00:15PM +0530, Varadarajan Narayanan wrote:
+> +  "#phy-cells":
+> +    const: 0
 > +
-> +&pcie2 {
-> +	pinctrl-0 = <&pcie2_default_state>;
-> +	pinctrl-names = "default";
+> +  "#clock-cells":
+> +    const: 0
 > +
-> +	perst-gpios = <&tlmm 31 GPIO_ACTIVE_LOW>;
-> +	status = "okay";
-> +};
+> +  num-lanes: true
 
-pcie2 should come before pcie2_phy
+$ref: /schemas/types.yaml#/definitions/uint32
+enum:
+
+or this should be moved to some shared schema.
 
 > +
-> +&pcie3_phy {
-> +	status = "okay";
-> +};
-> +
-> +&pcie3 {
-> +	pinctrl-0 = <&pcie3_default_state>;
-> +	pinctrl-names = "default";
-> +
-> +	perst-gpios = <&tlmm 34 GPIO_ACTIVE_LOW>;
-> +	status = "okay";
-> +};
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - resets
+> +  - "#phy-cells"
+> +  - "#clock-cells"
 
-same here.
+num-lanes should be required. How does it work without it? There is no
+default.
 
--Varada
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
