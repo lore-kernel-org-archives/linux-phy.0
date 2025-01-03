@@ -4,64 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57749E77188
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 07:45:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94600E77188
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 10:27:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/bYWHhTc2loLAH3apeaMWhdvvTbHkh33yYWROGVukV4=; b=BPnH7mfwN8IxQZ
-	1ayG2NEk0NoL4Imm0DL7+rHEi+TOs4YMPraj7uZJaAF1lmfGmT93QK+oEI8UegbeSiPQlvgCIooga
-	2ldISbz4b/MXXSgvMpkmvYVEnLaAZnz5RYToKmtbBv9AwKPixA+om8Nb2cuONYqCjGqQRPbBzoEeo
-	RyvQhp/rjDsk8ucNAUxOb9LQ89GEiSye7/ykz/VE66xSRotUZxPZ4GJ7rk3VP399DcZXbGbwhZbEY
-	w45jVVkG3rFt0c0Wq+SFyyv1YDXgm+9sB8jk3zuyHTdKkFhEw7HEjCf63yJNq3XC4m2U+8a4zOtK8
-	TGACPQMHve2jDQzrlJKw==;
+	List-Owner; bh=g9WUfQeHR1nd3ZoJ6SXDpNm6KRAUzh9ew6tvIHjMyAw=; b=ddNwmMn+8LNUt0
+	H9ieZafx1VwB9lok0LNUMVvmjQH5FOvE09Nc3smr1oh/KGryARg2Lpx8tdwVVWLIRXdszM8Piuasv
+	pC1jD7EeHM+V+nmWPoFsStl7sI/YdPm40+TUx3ArvFJ+Q85MS4mymWNMi3tba4iKzHP6MK29HMcZh
+	NapdYYme+UClqWhSXgo1slEq0ogQY/aDlpCNC7Kgj05khnuKzEr3CRaYcz6IPZS2qH5lOIUD9RC+V
+	yeqf0HYtSzz/tH2XgmmgYk4zSypYDszj4QSiHj54PJ8bynj+jysa44yndSFaVrIHlLRSKe90nCxf6
+	bu7uXmNSQns0jSGvxrhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTcMz-0000000COKd-0Wdo;
-	Fri, 03 Jan 2025 07:45:21 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tTety-0000000Cj4d-3Tqi;
+	Fri, 03 Jan 2025 10:27:34 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTcMx-0000000COKC-0CEk
-	for linux-phy@lists.infradead.org;
-	Fri, 03 Jan 2025 07:45:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 021FD5C6123;
-	Fri,  3 Jan 2025 07:44:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D881C4CECE;
-	Fri,  3 Jan 2025 07:45:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735890318;
-	bh=aMmPzVen99cj6Sv2ngxr71M0gY35RED8D5Y2iY5FFaE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=el1WDEGFF6V8HbGVbRFtOWv6xz7bue4TdfvCuEmgxJwO9ZlyVOMHQ0nNyMC+ETmHo
-	 vgl+LhYbltmGtC/4AoRyPcIMVte0dEmsAmBB4hvKFDFRoQnFdeSzzRdnYaPBLOJgNJ
-	 PBmog2d+bwiYR8HL3TqvJtTDpTcCr1PVgKXUeg4r1qdnkTkIzohIVuLNaxX61C3mSf
-	 jYCYJOPTKuQepq+B576JLvzjXjzacNbOXRLj9y7ZF7QDBG10jkR0U9yPv6wQglMzyp
-	 bByJNmA4eQMPQEmsmUGvs8viMREURruV1SMFNrqlQdUPiTQKWGRWwz1TBF8Z4h8tTh
-	 b0cZnnbGftWnQ==
-Date: Fri, 3 Jan 2025 08:45:14 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
-	manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
-	p.zabel@pengutronix.de, quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org, 
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 3/5] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
- controller
-Message-ID: <4hwclzotaowog6rzfejiixqvvg7iumg4udbvq3h72mmh42dbki@piphsf37vhpv>
-References: <20250102113019.1347068-1-quic_varada@quicinc.com>
- <20250102113019.1347068-4-quic_varada@quicinc.com>
+	id 1tTesl-0000000CixJ-0uCx;
+	Fri, 03 Jan 2025 10:26:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=qydpwgXPz9Wixx3t9KzK1lAYRqTDBTbteo+7OTMSSa8=; b=hzi0Mp/5MraSm51723Uoi4XXGt
+	LFeYt4p8WgnT+UX7sMDnDgvrW3xnzmJ/Vn3StkGRanW58a20sPd14dGjYKjULnbuOxNM56ByphzeB
+	9CoxaVNc4ttuisdqKm8t0wUkUtm7z26OrreHvCkQUI8CKCVAoWb7eeHcVwRjCu3Xl7fg4GET9rKdh
+	snxAF4nHDBW0bgKcrQDI3oYvcgTjTCW9zN/bcB3C0Oq3+OBQHnIsaV3rEj80PusglNU41R4RF2bFV
+	vTnW7eJuHh/BD3uo5PvuBlm4dJ55n/oC3k2RuBnX0fqbX+iN58KqZki2ZY5GgBpi1dXNTkpHgoNuw
+	KOUw1m/Q==;
+Received: from i53875aad.versanet.de ([83.135.90.173] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tTesc-0005uk-LE; Fri, 03 Jan 2025 11:26:10 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: jonas@kwiboo.se, Chukun Pan <amadeus@jmu.edu.cn>
+Cc: amadeus@jmu.edu.cn, conor+dt@kernel.org, devicetree@vger.kernel.org,
+ kishon@kernel.org, krzk+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ liujianfeng1994@gmail.com, p.zabel@pengutronix.de, robh@kernel.org,
+ vkoul@kernel.org
+Subject: Re: [PATCH 1/2] arm64: dts: rockchip: rk3568: add reset-names for combphy
+Date: Fri, 03 Jan 2025 11:26:09 +0100
+Message-ID: <4647350.cEBGB3zze1@diego>
+In-Reply-To: <20250103033016.79544-1-amadeus@jmu.edu.cn>
+References: <688c8fb6-68f7-45f1-98fc-8b3252b3ecbf@kwiboo.se>
+ <20250103033016.79544-1-amadeus@jmu.edu.cn>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250102113019.1347068-4-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250102_234519_133632_F7DEFE63 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20250103_022619_279952_4C95E658 
+X-CRM114-Status: GOOD (  18.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,39 +76,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 02, 2025 at 05:00:17PM +0530, Varadarajan Narayanan wrote:
-> Document the PCIe controller on IPQ5332 platform.
+Hi,
+
+Am Freitag, 3. Januar 2025, 04:30:16 CET schrieb Chukun Pan:
+> > The other patch in this series:
+> > arm64: dts: rockchip: rk3568: add reset-names for combphy
+> > is missing in v6.13-rc5, which will break pcie2 of rk3568
+> > because the phy driver has changed.
 > 
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
-> v5: Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
+> I don't know why the dts patch hasn't been merged into the mainline yet.
 
-What? How this is related to commit msg?
+because it was christmas ;-) .
 
-> 
-> v4: * v3 reused ipq9574 bindings for ipq5332. Instead add one for ipq5332
->     * DTS uses ipq9574 compatible as fallback. Hence move ipq9574 to be able
->       to use the 'reg' section for both ipq5332 and ipq9574. Else, dtbs_check
->       and dt_binding_check flag errors.
-> ---
->  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 10 ++++++++--
->  1 file changed, 8 insertions(+), 2 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> index bd87f6b49d68..9f37eca1ce0d 100644
-> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> @@ -26,7 +26,6 @@ properties:
->            - qcom,pcie-ipq8064-v2
->            - qcom,pcie-ipq8074
->            - qcom,pcie-ipq8074-gen3
-> -          - qcom,pcie-ipq9574
+> Maybe the merge window is different. Can you test the following patch?
 
-I don't understand this change at all and your commit msg explains
-here nothing.
+But in any case, the driver _must_ stay compatible with old devicetrees.
+I.e. requiring a DT update is a general no-go.
 
-Best regards,
-Krzysztof
+
+> ```
+> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> @@ -325,6 +325,10 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
+>  	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+>  
+>  	priv->phy_rst = devm_reset_control_get(dev, "phy");
+> +	/* fallback to old behaviour */
+> +	if (IS_ERR_OR_NULL(priv->phy_rst))
+> +		priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
+> +
+
+This looks like a reasonable fallback
+
+>  	if (IS_ERR(priv->phy_rst))
+>  		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
+
+
+Heiko
+
 
 
 -- 
