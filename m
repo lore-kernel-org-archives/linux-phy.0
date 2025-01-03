@@ -4,94 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01D8AE77188
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 17:12:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88D97E77188
+	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 19:08:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dcc3nv2gGGWbWoASbZyQiVoIk7jBpdxQAyaRjWNqWWs=; b=laXObEY/NNFRPD
-	mSIBqgZ/VlrxKCesWyUKWvRaMnZmPzlD3SiiImP3pD/0ctJRi43ZW/EZWIuC0B7FBxDCbryGySZ4e
-	/5hJp4qW5UYh4s3n77i3Pn6Q00lSSKFj78PBLcwP2mQjcKl3TTUEoCFJC49gaCJHI9BJxbEAspxef
-	jnzDytz/8u9Z9LhFS4tRjo1XiXt4ivwbzcMcJybC0GTvo3+sYnViMAURg843VMJcxQVcNDUAUUgV9
-	c/oZ838qcIYoXQZo+L6R5aOoEZO5diLHWti6TT5At8ZcPdyHuIHPtV6hkVn0s/sUphKgfzcMamYt4
-	DjGOO6sKu0HWuWE3qypw==;
+	List-Owner; bh=bZHI/OxD0iMoXd5t97RJnlbKXfj/AwSOO91NTJink0s=; b=XK0hg9XJG381AX
+	eCdXHT0u5SCFPT6mLKhWnVYuXfGApSmc4ahYZEbMUS6qb18pv9QdUe46TtdrZy8FAOuyoQlScVDPD
+	oJBhz1jwQLOfSxzVxoZXqLiNBAEBwbic1V/9rNUznebWBdz+q73pv4Gkj82IAIW9eF7zjMayJgi5F
+	vS7FuRUW6bWRrHi0B0Qve3stIKxA0akesWQCErPYuQ2YeLccsn8ShJR4r+AmzvN1cbkxruEUU4aHx
+	tQ5I9KN6VT1aWfAUWcHhxv1S/iCYqLmh8l/uk9gIg6VzUpcbqVVQO6BFsYvYGnimT7b1VR299u68V
+	bddYiqVhr7soFQj7dlxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTlDt-0000000DWqf-0akp;
-	Fri, 03 Jan 2025 17:12:33 +0000
-Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
+	id 1tTn2J-0000000Dnjw-1Hlh;
+	Fri, 03 Jan 2025 19:08:43 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTlCf-0000000DWjr-0TsA;
-	Fri, 03 Jan 2025 17:11:18 +0000
-Received: by mail-pl1-x634.google.com with SMTP id d9443c01a7336-21634417587so18993745ad.3;
-        Fri, 03 Jan 2025 09:11:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1735924275; x=1736529075; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=O3sGG96edDYBm065eZeyOamcNy6jLfsRwq/zrFHXSQ0=;
-        b=S2kXURJKe9RUeqW83yFQ9AClaFAluExWACBdZ9w9NPa0SOU/0uuV33NNH3+Goy2BXj
-         ESmIq/ogSCPv4WfxBDqL+twD+Mas0EkBw9NAx9k8mwn8RO5tbobWWaSq207BjkVUifLR
-         udp2tEY8NYU0afUxbHeBdLyk9BGCFQcFS/f/cm+mREouJmSt3Bv/XU43hfJoB9zaBX9f
-         3uDy4ckx00nPAFwxJaNZ8XxLaMmCMb//xgrE4oQUkR5gHDRQ2YF5HLR1zxYlRbk9ZZMP
-         KqkSMcHbQcOvO3302rTH2JTsMSVnamJbQJm013sLMxaIvuGv4SzWNBdEdD19EwvvQpxM
-         AjPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735924275; x=1736529075;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=O3sGG96edDYBm065eZeyOamcNy6jLfsRwq/zrFHXSQ0=;
-        b=PFi5YzZ9p6UQ1Xk+IjjwNsStF5HwUxr9yYs+EoTbVguvzjQrmKm5xDGlbvcRI/ATi9
-         N1Bg91PvCHUnYecTH/ConEo9FN/dAx+Pw68hHqDWbBB6peJpLElDvG3S455xhkekVa3w
-         ev6Nb1d3OyefOoE+7w2kJP61B8HxNDQ2zkpXw1IJB1HK8ill8JAlGSO+1zEotjvMw3tZ
-         JKMuvOaqupcvRJ0z9o7DSleatiCLY3V+WhBOPsuabui52CdSl8RYuTHiy4fh7peO+ANo
-         2sxls4U2A1XLvxCnxkicEDVsWw6K7lCExX7WIZI2Y8/wym2xZCgwpqe6WHtzbD67XPvG
-         ZKOA==
-X-Forwarded-Encrypted: i=1; AJvYcCU3Ny+ECn2rYI//m73MxWPp3TmuIBv7PmaqLW5OfMp9H2ewihevRTwxcWlIT8JLFcSHOfUZeipORqLsIpUKZjg=@lists.infradead.org, AJvYcCWQsvJgV6PTfFlSmvnoIxiCWfxSUw1xqfq0SjOS8TzIzOFJzPm21r4mg3bH/iukQeQGLlrPiJSlcsdhIv7dnVkC@lists.infradead.org, AJvYcCWVZG2oAYki1FFmj1bDozifG3gIfXgNPomrELNQQ0Fe7blyo+KTBwoKB0qZr3/HaYH2j4IcZQx4lbL2@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy5R0qpQOJyXE2DsjeKzTk+5piJ5Uer6jML6Sr/0asurqAkH4Wf
-	2HJoaL6LHRPs8sivwfxXLOdG6noJtuSzSeoE/TMGMq2BkoHBlOBoOfj9rhTY
-X-Gm-Gg: ASbGncvXQGw3ohalzqpVW17Vwke0GUhUyikUUSNzhyUH+mHEjAK1mWap/W0dwXiyEfd
-	p2ixSblnhsbgA7yBOXGznZ/+iOboMgv+KUhU0O0pWiYdRQtnD2rEJS3ViwFPy+fLXxLoYKJoJbn
-	Cs+SkhVztbhkYC5XU4/5MNnIAUi8MNHA8LtOoD4EMtLyCPmPw+wPA7pQs6vlLMAThwRV7uJfsmb
-	ruqJycBFdCih5SBGj1j8VpaUZ0NmWAKmZlmoSUKnKWUiAKCehbhHNt7yUrIAw==
-X-Google-Smtp-Source: AGHT+IHaGe/LjiNSdE/jVrq+uumD7Y1EPcnlnPCnn5kWuhTZJ0mjsAtVuPrcS+bRilEu9IblZCkZog==
-X-Received: by 2002:a17:902:d4c9:b0:215:8d29:af0b with SMTP id d9443c01a7336-219e6f2706fmr263642905ad.14.1735924275469;
-        Fri, 03 Jan 2025 09:11:15 -0800 (PST)
-Received: from rock-5b.. ([221.220.131.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-219dc9cde50sm245783305ad.154.2025.01.03.09.11.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 03 Jan 2025 09:11:14 -0800 (PST)
-From: Jianfeng Liu <liujianfeng1994@gmail.com>
-To: amadeus@jmu.edu.cn
-Cc: conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	heiko@sntech.de,
-	jonas@kwiboo.se,
-	kishon@kernel.org,
-	krzk+dt@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	liujianfeng1994@gmail.com,
-	p.zabel@pengutronix.de,
-	robh@kernel.org,
-	vkoul@kernel.org
-Subject: Re: [PATCH 1/2] arm64: dts: rockchip: rk3568: add reset-names for combphy
-Date: Sat,  4 Jan 2025 01:11:09 +0800
-Message-ID: <20250103171109.2726312-1-liujianfeng1994@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250103033016.79544-1-amadeus@jmu.edu.cn>
-References: <20250103033016.79544-1-amadeus@jmu.edu.cn>
+	id 1tTmzf-0000000DnOq-3O9r;
+	Fri, 03 Jan 2025 19:06:01 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id E5954A4109D;
+	Fri,  3 Jan 2025 19:04:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50F0DC4CECE;
+	Fri,  3 Jan 2025 19:05:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1735931158;
+	bh=wEfIxLmMivcYpaOCV9CS4L1pAWpwkcsxKCp/ORxJUpo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=dSnaBOVLKv1sXfkbNkU702SW2cppnacEk1kLbvxHoRbk+m7v2N29TqmwyugVXEjTa
+	 aRhMbOl4tah0iLu1HKXuXNVXtIoVQ6ZlTRa8ZTpKrsj9poA+h3sqU0/zI/3IYtoygJ
+	 Hf5PM3JUY3azLrosAoBWyjnwOWUOk5iB3/hRyFu7r9o3PtodZV6vZkj2p//X0P7wmU
+	 KkNHDI4nIkmlPAIb61mEubM3zViMFMjsqU6F6FTg7L1CNo2vsmb3b38SQlwLT0wQdG
+	 Cvloga74Bm2AAG/0eHyF4xTHfccwBNHveLK8VFRqg+VHpsT8Oj8mLgRIi93F7PPjv0
+	 8MXlzB9wYQpmQ==
+Date: Fri, 3 Jan 2025 13:05:56 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Andy Yan <andyshrk@163.com>
+Cc: kishon@kernel.org, vkoul@kernel.org, heiko@sntech.de,
+	linux-rockchip@lists.infradead.org, krzk+dt@kernel.org,
+	Andy Yan <andy.yan@rock-chips.com>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, cristian.ciocaltea@collabora.com,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v3] dt-bindings: phy: Add rk3576 hdptx phy
+Message-ID: <173593115586.2590023.9486538940303908638.robh@kernel.org>
+References: <20241231092721.252405-1-andyshrk@163.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241231092721.252405-1-andyshrk@163.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250103_091117_154853_E38A5737 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250103_110559_911639_6DFF8BE0 
+X-CRM114-Status: GOOD (  12.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,31 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-On Fri,  3 Jan 2025 11:30:16 +0800, Chukun Pan wrote:
->Maybe the merge window is different. Can you test the following patch?
->
->```
->--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->@@ -325,6 +325,10 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
-> 	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+On Tue, 31 Dec 2024 17:27:11 +0800, Andy Yan wrote:
+> From: Andy Yan <andy.yan@rock-chips.com>
 > 
-> 	priv->phy_rst = devm_reset_control_get(dev, "phy");
->+	/* fallback to old behaviour */
->+	if (IS_ERR_OR_NULL(priv->phy_rst))
->+		priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
->+
-> 	if (IS_ERR(priv->phy_rst))
-> 		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
+> Add compatible for the HDPTX PHY on rk3576, which is compatible with
+> rk3588, but without rst_phy/rst_ropll/rst_lcpll.
 > 
->```
+> In fact, these three reset lines are also optional on the rk3588,
+> they just used for debug, then they were removed on the rk3576 IC
+> design.
+> 
+> Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+> 
+> ---
+> 
+> Changes in v3:
+> - Split from:
+>   https://lore.kernel.org/linux-rockchip/3330586.aeNJFYEL58@diego/T/#m02151cd8591d7fe92cf30ab69701ed57c1944c06
+> 
+> Changes in v2:
+> - Wrap commit message according to Linux coding style
+> - Make "rockchip,rk3588-hdptx-phy" const for "rockchip,rk3576-hdptx-phy"
+> - Make declare phy/ropll/lcpll reset line are not exit on rk3576
+> 
+>  .../phy/rockchip,rk3588-hdptx-phy.yaml        | 62 +++++++++++++------
+>  1 file changed, 44 insertions(+), 18 deletions(-)
+> 
 
-Tested with rock-3a. This patch will fix dtb without reset-names property.
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-Best regards,
-Jianfeng
 
 -- 
 linux-phy mailing list
