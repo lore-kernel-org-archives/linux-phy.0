@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88D97E77188
-	for <linux-phy@archiver.kernel.org>; Fri,  3 Jan 2025 19:08:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CC6CE77188
+	for <linux-phy@archiver.kernel.org>; Sat,  4 Jan 2025 22:27:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bZHI/OxD0iMoXd5t97RJnlbKXfj/AwSOO91NTJink0s=; b=XK0hg9XJG381AX
-	eCdXHT0u5SCFPT6mLKhWnVYuXfGApSmc4ahYZEbMUS6qb18pv9QdUe46TtdrZy8FAOuyoQlScVDPD
-	oJBhz1jwQLOfSxzVxoZXqLiNBAEBwbic1V/9rNUznebWBdz+q73pv4Gkj82IAIW9eF7zjMayJgi5F
-	vS7FuRUW6bWRrHi0B0Qve3stIKxA0akesWQCErPYuQ2YeLccsn8ShJR4r+AmzvN1cbkxruEUU4aHx
-	tQ5I9KN6VT1aWfAUWcHhxv1S/iCYqLmh8l/uk9gIg6VzUpcbqVVQO6BFsYvYGnimT7b1VR299u68V
-	bddYiqVhr7soFQj7dlxg==;
+	List-Owner; bh=43o4WYGIJbU22tt1LJS7OBY9dzrgZ/Ya5pFcdWhrZiA=; b=Xu8TH7wt3lSIK/
+	cTWLKiPrOE9daL00kTDWvDqnFqvBsRwRtALhUCcDbnglVf++5NwwNhxk4A4Xhg6mw3nIM8F65OcwO
+	aOajUd2uCwipi284aYRSUV8G5TtMqVlGDkq0M98EEPACn6D3i5iXq+zIbm/q+VjeKmr5Vu3BO8RMj
+	A9CIlEs39t2XCxYqFEndRRkgbQerWtwyEhCsIGqexvViD9q1e6pOg0eD/BhZGBq8CFLvdLrpfjhjf
+	b4oT1ZqnkF/1uKYHCXk+AvGsP78ErgxIDY3Rj9tZrSg6ijwYY4rpl0CltEj/L5gG8iULmBW8rEPu5
+	zBakFzE45JdzGpSh16ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTn2J-0000000Dnjw-1Hlh;
-	Fri, 03 Jan 2025 19:08:43 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tUCcZ-0000000Fj66-3poJ;
+	Sat, 04 Jan 2025 22:27:51 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTmzf-0000000DnOq-3O9r;
-	Fri, 03 Jan 2025 19:06:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id E5954A4109D;
-	Fri,  3 Jan 2025 19:04:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50F0DC4CECE;
-	Fri,  3 Jan 2025 19:05:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1735931158;
-	bh=wEfIxLmMivcYpaOCV9CS4L1pAWpwkcsxKCp/ORxJUpo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dSnaBOVLKv1sXfkbNkU702SW2cppnacEk1kLbvxHoRbk+m7v2N29TqmwyugVXEjTa
-	 aRhMbOl4tah0iLu1HKXuXNVXtIoVQ6ZlTRa8ZTpKrsj9poA+h3sqU0/zI/3IYtoygJ
-	 Hf5PM3JUY3azLrosAoBWyjnwOWUOk5iB3/hRyFu7r9o3PtodZV6vZkj2p//X0P7wmU
-	 KkNHDI4nIkmlPAIb61mEubM3zViMFMjsqU6F6FTg7L1CNo2vsmb3b38SQlwLT0wQdG
-	 Cvloga74Bm2AAG/0eHyF4xTHfccwBNHveLK8VFRqg+VHpsT8Oj8mLgRIi93F7PPjv0
-	 8MXlzB9wYQpmQ==
-Date: Fri, 3 Jan 2025 13:05:56 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Andy Yan <andyshrk@163.com>
-Cc: kishon@kernel.org, vkoul@kernel.org, heiko@sntech.de,
-	linux-rockchip@lists.infradead.org, krzk+dt@kernel.org,
-	Andy Yan <andy.yan@rock-chips.com>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, cristian.ciocaltea@collabora.com,
-	devicetree@vger.kernel.org
+	id 1tUCbO-0000000Fj28-3MZZ;
+	Sat, 04 Jan 2025 22:26:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=ujcfpRKEAeXT1T9589mAQuACGTaXWAGgYaTuHKcYIq4=; b=i6iGQ2tPd85SXBX/OGgpILVT2A
+	QRQgN3I8cI1mVINs2U2DImtrA731rjtefzyd/7ms73qP7Gg0OBWoqcBDDEMAj7y8gdP1QTRzJE7aC
+	v5PEGI40HT4/OzEFE6gLvWZD+qYxCf84rlI9YkElDiDLjXct0N90FIuTcsBamYo/9XOLpZ0HmXdsK
+	Z6GfgjPRatEFbRpJCKirCDYr7fKMCvL945tD41Q5Nm0acrxn7oNqmOFJ/oxn4nDbpvQ0S8uyU9toS
+	0sOAI3cAUJO1/Rv4oxMOKcN65weCid1/+WngZ++o8mOkEi4ek6iytC5KcYrgIwwG68lcM9lu3/TPC
+	vM5CN2WQ==;
+Received: from i53875aad.versanet.de ([83.135.90.173] helo=phil.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tUCb6-0005tm-J3; Sat, 04 Jan 2025 23:26:20 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: vkoul@kernel.org, Andy Yan <andyshrk@163.com>
+Cc: cristian.ciocaltea@collabora.com, kishon@kernel.org, krzk+dt@kernel.org,
+ robh@kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ Andy Yan <andy.yan@rock-chips.com>
 Subject: Re: [PATCH v3] dt-bindings: phy: Add rk3576 hdptx phy
-Message-ID: <173593115586.2590023.9486538940303908638.robh@kernel.org>
+Date: Sat, 04 Jan 2025 23:26:19 +0100
+Message-ID: <2195662.yKVeVyVuyW@phil>
+In-Reply-To: <20241231092721.252405-1-andyshrk@163.com>
 References: <20241231092721.252405-1-andyshrk@163.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241231092721.252405-1-andyshrk@163.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250103_110559_911639_6DFF8BE0 
-X-CRM114-Status: GOOD (  12.61  )
+X-CRM114-CacheID: sfid-20250104_142639_038970_443ACFEC 
+X-CRM114-Status: GOOD (  10.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,8 +75,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 31 Dec 2024 17:27:11 +0800, Andy Yan wrote:
+Am Dienstag, 31. Dezember 2024, 10:27:11 CET schrieb Andy Yan:
 > From: Andy Yan <andy.yan@rock-chips.com>
 > 
 > Add compatible for the HDPTX PHY on rk3576, which is compatible with
@@ -87,23 +86,9 @@ On Tue, 31 Dec 2024 17:27:11 +0800, Andy Yan wrote:
 > design.
 > 
 > Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
-> 
-> ---
-> 
-> Changes in v3:
-> - Split from:
->   https://lore.kernel.org/linux-rockchip/3330586.aeNJFYEL58@diego/T/#m02151cd8591d7fe92cf30ab69701ed57c1944c06
-> 
-> Changes in v2:
-> - Wrap commit message according to Linux coding style
-> - Make "rockchip,rk3588-hdptx-phy" const for "rockchip,rk3576-hdptx-phy"
-> - Make declare phy/ropll/lcpll reset line are not exit on rk3576
-> 
->  .../phy/rockchip,rk3588-hdptx-phy.yaml        | 62 +++++++++++++------
->  1 file changed, 44 insertions(+), 18 deletions(-)
-> 
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+
 
 
 -- 
