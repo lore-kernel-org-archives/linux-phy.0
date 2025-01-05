@@ -4,61 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CC6CE77188
-	for <linux-phy@archiver.kernel.org>; Sat,  4 Jan 2025 22:27:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CCC2E77197
+	for <linux-phy@archiver.kernel.org>; Sun,  5 Jan 2025 11:30:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:References:In-Reply-To:Subject:Cc:
+	To:From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=43o4WYGIJbU22tt1LJS7OBY9dzrgZ/Ya5pFcdWhrZiA=; b=Xu8TH7wt3lSIK/
-	cTWLKiPrOE9daL00kTDWvDqnFqvBsRwRtALhUCcDbnglVf++5NwwNhxk4A4Xhg6mw3nIM8F65OcwO
-	aOajUd2uCwipi284aYRSUV8G5TtMqVlGDkq0M98EEPACn6D3i5iXq+zIbm/q+VjeKmr5Vu3BO8RMj
-	A9CIlEs39t2XCxYqFEndRRkgbQerWtwyEhCsIGqexvViD9q1e6pOg0eD/BhZGBq8CFLvdLrpfjhjf
-	b4oT1ZqnkF/1uKYHCXk+AvGsP78ErgxIDY3Rj9tZrSg6ijwYY4rpl0CltEj/L5gG8iULmBW8rEPu5
-	zBakFzE45JdzGpSh16ew==;
+	List-Owner; bh=0lD7KS/SJIxU/UWY/2BAaqPADrrRfozf9/P19Ylyu8Y=; b=ygPVg7FilGLPfI
+	Cd4ozlkVhW0bnXUUSU62ZikTyJBpXFYo7iQgcMlKm6lZx9GR3mLr6Rs1xCrda9sC9rLSvlSphlPS2
+	FcsPyf8q0utpgCcwmqabC8KpHgxH8IaOpCbMz8Vcpgu0UxKqtxNABCwTjmSwpsT3NbUexWkLTgzOn
+	R8quGiZgzIoSx/11LTVE6e25cOdqlDmlbiYhDKBcjmIlqZkatOyEky8/nW8f5ZpXt0SR5V4mZBoWE
+	JZYQUbqti8VehwcxJdEniSt3O3PAWwO9EGA84+DKzq28u7l0SvOC/HQQwkkFwNIDymn/E1hOeJs1t
+	oMyUfpMKBox9JKYBOeyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUCcZ-0000000Fj66-3poJ;
-	Sat, 04 Jan 2025 22:27:51 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tUOpd-0000000GkUq-2Cck;
+	Sun, 05 Jan 2025 11:30:09 +0000
+Received: from mout.gmx.net ([212.227.17.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUCbO-0000000Fj28-3MZZ;
-	Sat, 04 Jan 2025 22:26:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=ujcfpRKEAeXT1T9589mAQuACGTaXWAGgYaTuHKcYIq4=; b=i6iGQ2tPd85SXBX/OGgpILVT2A
-	QRQgN3I8cI1mVINs2U2DImtrA731rjtefzyd/7ms73qP7Gg0OBWoqcBDDEMAj7y8gdP1QTRzJE7aC
-	v5PEGI40HT4/OzEFE6gLvWZD+qYxCf84rlI9YkElDiDLjXct0N90FIuTcsBamYo/9XOLpZ0HmXdsK
-	Z6GfgjPRatEFbRpJCKirCDYr7fKMCvL945tD41Q5Nm0acrxn7oNqmOFJ/oxn4nDbpvQ0S8uyU9toS
-	0sOAI3cAUJO1/Rv4oxMOKcN65weCid1/+WngZ++o8mOkEi4ek6iytC5KcYrgIwwG68lcM9lu3/TPC
-	vM5CN2WQ==;
-Received: from i53875aad.versanet.de ([83.135.90.173] helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tUCb6-0005tm-J3; Sat, 04 Jan 2025 23:26:20 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: vkoul@kernel.org, Andy Yan <andyshrk@163.com>
-Cc: cristian.ciocaltea@collabora.com, kishon@kernel.org, krzk+dt@kernel.org,
- robh@kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
- Andy Yan <andy.yan@rock-chips.com>
-Subject: Re: [PATCH v3] dt-bindings: phy: Add rk3576 hdptx phy
-Date: Sat, 04 Jan 2025 23:26:19 +0100
-Message-ID: <2195662.yKVeVyVuyW@phil>
-In-Reply-To: <20241231092721.252405-1-andyshrk@163.com>
-References: <20241231092721.252405-1-andyshrk@163.com>
+	id 1tUOpY-0000000GkTT-3fBy;
+	Sun, 05 Jan 2025 11:30:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=public-files.de;
+	s=s31663417; t=1736076580; x=1736681380; i=frank-w@public-files.de;
+	bh=yLbbSxJ8rOCZV34Ppdmdr/BcVBls3TYQ0BnZjPUlHaQ=;
+	h=X-UI-Sender-Class:MIME-Version:Message-ID:From:To:Cc:Subject:
+	 Content-Type:In-Reply-To:References:Date:
+	 Content-Transfer-Encoding:cc:content-transfer-encoding:
+	 content-type:date:from:message-id:mime-version:reply-to:subject:
+	 to;
+	b=giHzQki8mwpHL1X1Upv9XAD2p7y7qccymTqilRNIKRYCF2r7HH/RgxDfKQH0GtvP
+	 Z5Cl1CIPWQoRf5+ahJGDl+GgsBg4BlcTQvnaeiQPkbnF10CTF5clv13vCJpsW46WF
+	 +gRxRKAn+eNRuJTDt6R7axU1NQVqBXJL8j3J6ql7BcBDJJ96cAALj4RCoef2HdCGj
+	 BwL3kcwfhItF2Fa8y5NU8bdI6NDLH+guPDGuqvomGCC0s1CjKamtWQY7KhYKbVgNr
+	 IRWwtzhHKUEHTk80WLjsMCpOJw7wZEjeuLib9zOqQZi5/cOG1C9Cvt776I4r0+Ke/
+	 mrE1r81U/K9b+GJKNg==
+X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
+Received: from [80.245.79.38] ([80.245.79.38]) by
+ trinity-msg-rest-gmx-gmx-live-548599f845-nqxpf (via HTTP); Sun, 5 Jan 2025
+ 11:29:40 +0000
 MIME-Version: 1.0
+Message-ID: <trinity-80459cab-e571-4699-b3f0-d73a00fe0858-1736076576826@trinity-msg-rest-gmx-gmx-live-548599f845-nqxpf>
+From: Frank Wunderlich <frank-w@public-files.de>
+To: linux@armlinux.org.uk
+Cc: angelogioacchino.delregno@collabora.com, matthias.bgg@gmail.com,
+ davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
+ pabeni@redhat.com, robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org, chunfeng.yun@mediatek.com, vkoul@kernel.org,
+ kishon@kernel.org, nbd@nbd.name, john@phrozen.org, sean.wang@mediatek.com,
+ Mark-MC.Lee@mediatek.com, lorenzo@kernel.org, andrew@lunn.ch,
+ hkallweit1@gmail.com, lynxis@fe80.eu, dqfext@gmail.com,
+ SkyLake.Huang@mediatek.com, p.zabel@pengutronix.de, netdev@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, daniel@makrotopia.org
+Subject: Aw: Re: Aw: Re: [RFC PATCH net-next v3 3/8] net: pcs:
+ pcs-mtk-lynxi: add platform driver for MT7988
+In-Reply-To: <Zv_9HuaHqtgIA4Et@shell.armlinux.org.uk>
+Importance: normal
+References: <cover.1702352117.git.daniel@makrotopia.org>
+ <8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org>
+ <ZXnV/Pk1PYxAm/jS@shell.armlinux.org.uk> <ZcLc7vJ4fPmRyuxn@makrotopia.org>
+ <ZiaPHWXU-82QMrMt@makrotopia.org>
+ <89bd21ac-78f3-4ee4-9899-83f03169e647@public-files.de>
+ <trinity-af6fdd0b-b72c-42a9-bbae-af45c02f539f-1728051457848@3c-app-gmx-bs32>
+ <Zv_9HuaHqtgIA4Et@shell.armlinux.org.uk>
+Date: Sun, 5 Jan 2025 11:29:40 +0000
+Sensitivity: Normal
+X-Priority: 3
+X-UI-CLIENT-META-MAIL-DROP: W10=
+X-Provags-ID: V03:K1:cPQBleyjsF3yVX6DIROFzgJoSZ9+njddCvA1Zg7Q0R7NQ3dqksbmDt8KviNuosx6RZ3R7
+ ZmKOd3Nxj7ouB2aML4I7GDumerwX9UpoEH2jmlzOqRGe6hH7yHOlD6OHk8Q/+wvf7PqpwaBjkm0/
+ OTvI4KebYTP3IfIxkFVmiFzwAJ724X8J5wmwp7wVttDfaSCIw+Vuhe0R2CxsJQlmmBI+LfzU4VUF
+ GTp2GZLQnn3BRGh+pJbUurUUP92izBY7teDFQ5DvC/Ux8hYb2dqx18+y2FAhkWy90nIJb/pjRfgN
+ ntMvlyZUag83U3fB2L+QStyIoMPNMzrNgKN3Kd3FB4zuHwHAx2gBK1Zn0WwVtXb7mE=
+UI-OutboundReport: notjunk:1;M01:P0:i8+cRb5wjRU=;tWzo9G7VqNUGJNBYvFdykWxunF4
+ qcUYRTAgNtkuNzjEZbxWZYdTk2FXK+/bm8WeM+rQ4PvNgb2xROin0VDwLRqA3IcdsdQ6WHqk5
+ quD0Bzg1/xxsmCzgQ4V5usPTXEudYQhbZbjofMbHikFi2u5Dn2eunjeeP7OPGX5drWKFHRhQ/
+ V0I5egqb/CFj1a3N2iPBcycKJ2S2y8+CRY32m+IAQODjhyJAaEO8eu+3OWoXBllehnQUmYN2A
+ WBb+LHQ4OJrAwOxbbXvBy1o8KKo1V9auiPHii+38kOQnZRaNIdOoVaG9ts3aZmR9CRhVQ2FTr
+ sHCGuXBtlgter6DQIMYC3mJTCSGuYQQLbbwaobvivJPnV6bk27Sxm7Kwt1IwJjIFIxXTI/CkI
+ Z1SGjkIzfN3uYXT9mOgyw6sqJZCECObxtBmnYSxzw6eCqqildFPm0i/PVVjRZQH6nw/ckKBOr
+ 7w/f4GujwrLbAmLmTP8TFjk+bjLbeH1bCeIdqfwxDfRLsiZBQsyqeC/NlqtdEa7RqRhYBqU9y
+ DwEPyFI0y62+Ljqc1nJJtgG8sjBGbKWaRRmu9Gfku0ZRKKGFGbb9SDbM6SqqbvGjjsrbI6xaD
+ DoJePLR5fiLfEvncocIrtEnCqi2U08eikELOBwpAbHrtRn+mmPlL5vK9e63hhX/TVhfjU/kXa
+ ZgQrAQta2XzbdY62Uj5EowS8zRVwTLnj2cetG5VbHrCjfhSC8J5Jj1Slq/BFqa/vhjPhhgpZP
+ ll/EPQm6/XNinwPcLaer24ocz5rC/A8X82hQGmqniM0q63BF0+m2Thws2vLOIb8SvR3R2ID3K
+ RMUQevL0/fJOjuKBno0bmq8d4vqygfL7EzRErAZZDI3dDLydUO5ihSX0urwfxH3zYQcrsybTG
+ AJheBTIfNPDoMCBhPkB+GWMa4/G05mQgCws8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250104_142639_038970_443ACFEC 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20250105_033005_234672_6B393160 
+X-CRM114-Status: GOOD (  24.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,21 +112,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Dienstag, 31. Dezember 2024, 10:27:11 CET schrieb Andy Yan:
-> From: Andy Yan <andy.yan@rock-chips.com>
-> 
-> Add compatible for the HDPTX PHY on rk3576, which is compatible with
-> rk3588, but without rst_phy/rst_ropll/rst_lcpll.
-> 
-> In fact, these three reset lines are also optional on the rk3588,
-> they just used for debug, then they were removed on the rk3576 IC
-> design.
-> 
-> Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+Hi Russel,
 
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
+> Gesendet: Freitag, 4. Oktober 2024 um 16:35
+> Von: "Russell King (Oracle)" <linux@armlinux.org.uk>
+> Betreff: Re: Aw: Re: [RFC PATCH net-next v3 3/8] net: pcs: pcs-mtk-lynxi: add platform driver for MT7988
+>
+> Hi Frank,
+>
+> Sorry, but I've not been able to look at this, and I've completely lost
+> all context now. I was diverted onto a high priority work issue for a
+> while (was it from April to end of June) so didn't have much time
+> available for mainline work. I then had a much needed holiday (three
+> weeks) in July. I then had a clear week where I did look at mainline.
+> Since then, I've had two cataract operations that have made being on the
+> computer somewhat difficult, and it is only recently that I'm
+> effectively "back" after what is approximately six months of not having
+> a lot of bandwidth. I've seen the cataract consultant this morning, and
+> just found out that my optometrist appointment for Tuesday is too soon
+> after the cataract operation, and needs to be moved two weeks. The
+> optometrist doesn't have availability then, so it's going to be another
+> four weeks. FFS... I wish I'd known, then I could've made an
+> arrangement with the optometrist months ago for the correct date.
 
+How are you? I hope you're feeling better now....
+I see you were more active on the Mailinglist in last time :)
 
+> Now, XPCS has introduced a hack in a similar way to what you're trying
+> to do, but I wasn't able to review it, so it went in. We're heading
+> towards the situation where every PCS driver is going to have its own
+> way to look up a PCS registered as a device. This is not going to scale.
+>
+> We need something better than this - and at the moment that's all I can
+> say because I haven't given it any more thought beyond that so far.
+
+Have you found some time (and were you able) to look a bit into this ([1])?
+
+How would be the right way here? Daniel posted generic infrastructure for standalone
+pcs drivers [2] similar to phy to have a generic base which all drivers can use and
+which can be extended if needed.
+
+There was some discussion about how pcs should handle if the underlaying device is removed...
+unlikely on SoC, but possible on external bus devices like mdio or pcie. Imho this could be
+a callback in common code handled by vendor driver (query information from mac driver or for
+SoC simply return fixed value).
+
+How should the subsystems talk with each other (callbacks, shared memory, ...)?
+
+DT maintainers want to avoid syscon compatibles which are widely used for nodes representing only
+a register range that is used from different subsystems. As we are currently upstreaming mt7988
+(e.g. ethernet), there are some of these "devices" which currently have no own driver and only
+handled by syscon driver to get the regmap. Should we really write different drivers with additional
+compatibles (duplicate code!) only to handle exchange of the regmap between subsystems? For mt7988
+which can have up to 7 syscon devices it is maybe better to have substructures like phy, pcs and so on
+packed into an own driver to have a better overview in devicetree. But for some functional blocks
+imho it makes not much sense (when really only a regmap has to be exchanged between different devices).
+
+Daniel needs an answer to his questions in [1] (and [2]) on how to proceed. So please help to get the
+pcs-part into the right shape.
+
+regards Frank
+
+[1] https://patchwork.kernel.org/project/netdevbpf/patch/8aa905080bdb6760875d62cb3b2b41258837f80e.1702352117.git.daniel@makrotopia.org/
+[2] https://patchwork.kernel.org/project/netdevbpf/patch/ba4e359584a6b3bc4b3470822c42186d5b0856f9.1721910728.git.daniel@makrotopia.org/
 
 -- 
 linux-phy mailing list
