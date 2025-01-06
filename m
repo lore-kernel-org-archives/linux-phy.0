@@ -4,60 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1D3DE77188
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 07:00:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2E44E77198
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 07:28:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Zdr70wTW5SSSDwbndFXqwSPI8mfu0kYad1riszcPLYM=; b=B+2B1+nJgg+05p
-	OeDRLAcWiKBVsUZ8/uq2PJLKgJj3GtEuYuwiZPOK9lFYsh68Sm74WrAe11Nl8wnJUHoF948aiidG9
-	foDmLLxRO5CGckNoDeIzOscHIirpobuJzCPzt62haXZ0BbEZSqGwzIlokWoIYSqIEmUKIG5Mizzjd
-	DuZHJcOGFVbluMVyODAnIXadb6m/Yc0+Tz53gswltz5YL/wdo+8PXFa+l0Jx16GtJuW4/DqOqD5cO
-	oeRXyIeftLod1+pRK/jMzlemelBzfPw/a4G7QTBmXhtuD5rcQyIOH+XLK8NN7Dt4TtLEUqfGasPC4
-	Ayy0CDzhmVygVqXGnLww==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TwcDp33VrIq9FBfrcyXC/StHHjUVyzQtOgSrgNWbb6M=; b=lT8Xsg4VwnX5sB
+	zLbT7KgzNbNpnJ9tZCu/CFrUx5iHorw1IUjnDGAkCH+Z+axPUvri6nZIWbbpcxRDqYKys4Lz/3VL+
+	L9+FP6gTILOxdabpmJTx1URB0rX/IzU2s/YozxyobB0bdwTk8un59MUzAJbkdOr7Ks9VU1ojiZJFV
+	VemZmqj7VbUHlWzxrw0nDjPgSfbYGAKg1npgDKoArq6Oj5vjV/RuJqLS6XglrmPOeSaCZM5x8lTZx
+	tvE/p+y9SjHn2lECsV6b6QLM+ERX7YA4XViN7y53OpQzKRAnI9Po+oOWsy106y4L24xDNVdku1/PJ
+	cMxxMmH4d781doJqW0hA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUh6T-00000000Lla-2EiV;
-	Mon, 06 Jan 2025 07:00:45 +0000
-Received: from mail-m49197.qiye.163.com ([45.254.49.197])
+	id 1tUhXG-00000000PFA-0KZX;
+	Mon, 06 Jan 2025 07:28:26 +0000
+Received: from mail-m1973187.qiye.163.com ([220.197.31.87])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUh5x-00000000LfX-45f3;
-	Mon, 06 Jan 2025 07:00:15 +0000
-Received: from amadeus-Vostro-3710.lan (unknown [IPV6:240e:3b3:2c05:ad20::1])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 7cec4144;
-	Mon, 6 Jan 2025 15:00:05 +0800 (GMT+08:00)
-From: Chukun Pan <amadeus@jmu.edu.cn>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jianfeng Liu <liujianfeng1994@gmail.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Chukun Pan <amadeus@jmu.edu.cn>
-Subject: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old DT for RK3568
-Date: Mon,  6 Jan 2025 15:00:00 +0800
-Message-Id: <20250106070000.605284-1-amadeus@jmu.edu.cn>
-X-Mailer: git-send-email 2.25.1
+	id 1tUhXC-00000000PDx-27WC;
+	Mon, 06 Jan 2025 07:28:24 +0000
+Received: from [172.16.12.26] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 7d0a3508;
+	Mon, 6 Jan 2025 15:28:16 +0800 (GMT+08:00)
+Message-ID: <2d9c71cf-6612-44cb-a223-a2184e027d1c@rock-chips.com>
+Date: Mon, 6 Jan 2025 15:28:15 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 02/17] dt-bindings: display: rockchip: analogix-dp: Add
+ support for RK3588
+To: Krzysztof Kozlowski <krzk@kernel.org>, heiko@sntech.de
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
+ cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
+ andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
+ kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20241226063313.3267515-1-damon.ding@rock-chips.com>
+ <20241226063313.3267515-3-damon.ding@rock-chips.com>
+ <63c14ff2-d3c2-4bbb-8d54-376b75c62fd4@kernel.org>
+Content-Language: en-US
+From: Damon Ding <damon.ding@rock-chips.com>
+In-Reply-To: <63c14ff2-d3c2-4bbb-8d54-376b75c62fd4@kernel.org>
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCTkwfVk1CSElIHRodQxgfTFYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJT0seQUgZSEFJGEtOQRofSUtBQUpZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	tVSktLVUtZBg++
-X-HM-Tid: 0a943a69e2cd03a2kunm7cec4144
-X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NxA6SBw6SDILKRgoQ0kxCFE0
-	CjcKCyhVSlVKTEhNSk9NQ0tNTkNJVTMWGhIXVRoWGh8eDgg7ERYOVR4fDlUYFUVZV1kSC1lBWUlP
-	Sx5BSBlIQUkYS05BGh9JS0FBSllXWQgBWUFKSkNKNwY+
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQk5DSlZISk1PGEIZQk5DTENWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
+	NVSktLVUpCS0tZBg++
+X-HM-Tid: 0a943a83aeb503a3kunm7d0a3508
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OVE6Thw5DjIIFx8iATNILD4U
+	PBEwCxRVSlVKTEhNSk9DT0JMTU1NVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJSElJNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=ai/xbz6eBCaRmZIOhnTAI58fU8w5eQMTuuFWwyKYYDz/RALnEKKosakJy2RwfTWOzfoGPf+ChfE47Xyjl8zNYpnraWRC+3qO2Y9klUpIT/V3rTgD3djlhMWpcuCCDw0H6ScoQ57DO4Hg/ybZ9xipULhPIG0uJiX0vMXVyWZbuRA=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=OGrkyu2TC7xLdj/Df8CnWXafSpzpS9J9hFV3qgsUsbY=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250105_230014_225839_7BA4901A 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250105_232823_071766_A2C706C9 
+X-CRM114-Status: GOOD (  15.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,39 +77,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The device tree of RK3568 did not specify reset-names before.
-So add fallback to old behaviour to be compatible with old DT.
+Hi Krzysztof,
 
-Fixes: fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
-Cc: Jianfeng Liu <liujianfeng1994@gmail.com>
-Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
----
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 4 ++++
- 1 file changed, 4 insertions(+)
+On 2024/12/27 15:13, Krzysztof Kozlowski wrote:
+> On 26/12/2024 07:32, Damon Ding wrote:
+>> Compared with RK3288/RK3399, the HBR2 link rate support is the main
+>> improvement of RK3588 eDP TX controller, and there are also two
+>> independent eDP display interfaces on RK3588 Soc.
+>>
+>> The newly added 'apb' reset is to ensure the APB bus of eDP controller
+>> works well on the RK3588 SoC.
+>>
+>> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>>
+>> ---
+>>
+>> Changes in v2:
+>> - Add the main defferences of the RK3588 eDP and the previous versions
+>>    in commit message
+>>
+>> Changes in v3:
+>> - Expand the property clock-names, resets and reset-names
+>>
+>> Changes in v4:
+>> - Remove 'spdif' clock which added in v3
+>> - Add the comment of newly added 'apb' reset in commit message
+>> ---
+>>   .../bindings/display/rockchip/rockchip,analogix-dp.yaml  | 9 +++++++--
+>>   1 file changed, 7 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> index 60dedf9b2be7..200703905b29 100644
+>> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> @@ -15,6 +15,7 @@ properties:
+>>       enum:
+>>         - rockchip,rk3288-dp
+>>         - rockchip,rk3399-edp
+>> +      - rockchip,rk3588-edp
+>>   
+>>     clocks:
+>>       minItems: 2
+>> @@ -31,10 +32,14 @@ properties:
+>>       maxItems: 1
+>>   
+>>     resets:
+>> -    maxItems: 1
+>> +    minItems: 1
+>> +    maxItems: 2
+>>   
+>>     reset-names:
+>> -    const: dp
+>> +    minItems: 1
+>> +    items:
+>> +      - const: dp
+>> +      - const: apb
+> 
+> I asked why existing variants get this new reset. This is not supposed
+> to be flexible (which I wrote as well), but constrained per variant. Or
+> explain why not.
+> 
+> 
+> 
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index a1532ef8bbe9..372f5c07b5bd 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -325,6 +325,10 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
- 	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
- 
- 	priv->phy_rst = devm_reset_control_get(dev, "phy");
-+	/* fallback to old behaviour */
-+	if (IS_ERR(ERR_PTR(priv->phy_rst)))
-+		priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
-+
- 	if (IS_ERR(priv->phy_rst))
- 		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
- 
--- 
-2.25.1
+I misunderstood you before. Indeed, the new reset is only for RK3588, so 
+the patch should be similar to the modifications made for RK3576 HDPTX 
+PHY dt-bindings [0].
 
+Best regards
+Damon
+
+[0]https://patchwork.kernel.org/project/linux-rockchip/patch/20241231092721.252405-1-andyshrk@163.com/
 
 -- 
 linux-phy mailing list
