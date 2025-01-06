@@ -4,80 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A99A3E77198
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 12:22:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4284CE77188
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 13:21:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f88T0hzkaPZn569qgnrHnbDL6XTjTPSuQpTd9ef2Sq0=; b=uezu1Y2226mYvK
-	PjVoRTbgVhCwX7UzRF3bcPkqSuQQGlb1vGCOnY5zc+p1BKnb+cyqGJmlYirUj/OYOP77aWMzo9Kx6
-	vaQkgLurVBr0bV9uyFxL0zGYQE1x7E1N/q3sm4kNtgdMHk6IB3ij41xsWyWWAPJpFMdO5Quv6UWdF
-	mYef898Fk6z6ft3hIJkwblLoGq1M440syh9NE1vYuF0is1vXwBDykQL+eT9z1SP4Iyz9fWcteUO0E
-	DinhywuM+DalPTWdMSYGimvwE6iCxyQr5B+Pr9bNzWDn9VK2xySG87jA1ij4Ju9ZPBAogBHUd+kRG
-	PskE9v8bHM8mwoadqM0w==;
+	List-Owner; bh=M/bTK0b560GBJIXwVS7/zqE+vhS/DdHUQoQaF/fKGfE=; b=rDGRMU1wZEZSLD
+	qODKOze5HOt6dDkyUcu1n+0hQqMdQzkrOZsmTtuurmkDa2WMyDCNqPwuJZEbe4Uhsyj1Q79+QH9YA
+	cjxjShMVN/6ApZXfiHf/k8NTcAehHgsnmpQN4KXl8MVb+MgRi/CSky2hrXmSn0uQ6IomXauZcjyFE
+	VcwMgXAdwwxai9UaCerqVaUQK7WiuRl5Z/h6WpvBALz2y969NbBiT9S6Mk82WH04o2CaGRzVSA49V
+	o1T1JAYeZMnY0foWAnvm5vQ1n20bKsyE57BLkn1aOmKVEFmKxAhu8WyE47Lx9sTeN5+hWtkWD2jLO
+	SWY8FibZ7db/6RJR21RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUm7R-00000001CKF-1qRz;
-	Mon, 06 Jan 2025 12:22:05 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	id 1tUn2k-00000001Ndb-3mXQ;
+	Mon, 06 Jan 2025 13:21:18 +0000
+Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUlqj-000000018PS-0HhF;
-	Mon, 06 Jan 2025 12:04:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1736165089; x=1767701089;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=NfJHdrBGwxLD4KXgBvfFDw2dyyxkbKlKk/G9mt3LZRg=;
-  b=hxGGh/3CQUbaH+zmwj6hkRqnSQjvHsMMM48Jc2AWcjkq0QSqyjKtvvJ6
-   vKRuk4nON+IuNqSCGkE/FQruOOg9zPHNOK1DrSxbFcEoyKvdH414kAFhB
-   qHSyTNWrQSf+9Ig4SzBgk0Z0kv7Mn5b//b58iuczegxcnZRsumDnWy5g1
-   Qq/mr2Uq+rV/VuRGjg6LwTQ5EQ6mMUuY4dxw010LJ2ev69J+Os5uqzeYM
-   DIqlIYYY5LP31C4DK49cIfv67SAepckoDceO2MMCMTmzK2UQadteOhX7U
-   TdbX0kfqc2wACMpo4ljAfCTfTBAXyU5jSXeRcA9XrU4i/WS8sjFqvDGK1
-   A==;
-X-CSE-ConnectionGUID: 3no2b0e+QuSiUt3iWCAoGA==
-X-CSE-MsgGUID: qbae+hztRTeG3YMc8uut/A==
-X-IronPort-AV: E=McAfee;i="6700,10204,11307"; a="40081293"
-X-IronPort-AV: E=Sophos;i="6.12,292,1728975600"; 
-   d="scan'208";a="40081293"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Jan 2025 04:04:48 -0800
-X-CSE-ConnectionGUID: kR/KRLXITESOX5ZmQ2HLXw==
-X-CSE-MsgGUID: lzy1oEUZT2uwsB8DV3SmAA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,292,1728975600"; 
-   d="scan'208";a="102320508"
-Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by fmviesa007.fm.intel.com with ESMTP; 06 Jan 2025 04:04:45 -0800
-Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tUlqd-000CZ5-1K;
-	Mon, 06 Jan 2025 12:04:43 +0000
-Date: Mon, 6 Jan 2025 20:03:52 +0800
-From: kernel test robot <lkp@intel.com>
-To: Chukun Pan <amadeus@jmu.edu.cn>, Vinod Koul <vkoul@kernel.org>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Heiko Stuebner <heiko@sntech.de>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jianfeng Liu <liujianfeng1994@gmail.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, Chukun Pan <amadeus@jmu.edu.cn>
-Subject: Re: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old
- DT for RK3568
-Message-ID: <202501061921.ToV59CNC-lkp@intel.com>
-References: <20250106070000.605284-1-amadeus@jmu.edu.cn>
+	id 1tUn1D-00000001NF1-1QGw;
+	Mon, 06 Jan 2025 13:19:44 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTPS id 506DJY0F2705255
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Mon, 6 Jan 2025 07:19:34 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1736169574;
+	bh=WnH0IOxQUdSCajdWgv1V8x79VMD6TTP7f5vaYYPJy9k=;
+	h=From:To:CC:Subject:Date:In-Reply-To:References;
+	b=Yl1JVbG8sfsE5qx/O4VjfMpToz2XVICWg0mpVj5BcDxRU+k6fU9+XXwQb3Gh3lj+o
+	 4LHoMbtwMFaM0QagXBlkzKDHQNsiXLAhGhlUgpFfBQ3qYs4LmVkgfSEpp+yhXhankL
+	 AxzeeGMHqE2SZIhLUKymZrhVBqb0GJnTLOOyZJRU=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+	by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTP id 506DJY4p130087;
+	Mon, 6 Jan 2025 07:19:34 -0600
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 6
+ Jan 2025 07:19:34 -0600
+Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Mon, 6 Jan 2025 07:19:33 -0600
+Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.72.104])
+	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 506DJPwO022390;
+	Mon, 6 Jan 2025 07:19:30 -0600
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <sjakhade@cadence.com>,
+        <rogerq@kernel.org>, <thomas.richard@bootlin.com>,
+        <christophe.jaillet@wanadoo.fr>, <u.kleine-koenig@baylibre.com>,
+        <eballetb@redhat.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
+        <s-vadapalli@ti.com>
+Subject: [PATCH v2 1/2] phy: cadence-torrent: Add PCIe multilink configuration for 100 MHz refclk
+Date: Mon, 6 Jan 2025 18:49:17 +0530
+Message-ID: <20250106131925.263240-2-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20250106131925.263240-1-s-vadapalli@ti.com>
+References: <20250106131925.263240-1-s-vadapalli@ti.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250106070000.605284-1-amadeus@jmu.edu.cn>
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250106_040449_254711_BEE5C32F 
-X-CRM114-Status: GOOD (  14.77  )
+X-CRM114-CacheID: sfid-20250106_051943_481179_F501CF5F 
+X-CRM114-Status: GOOD (  11.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,117 +86,261 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Chukun,
+From: Swapnil Jakhade <sjakhade@cadence.com>
 
-kernel test robot noticed the following build errors:
+Add register sequences to support PCIe multilink configuration for 100MHz
+reference clock. Maximum two PCIe links are supported.
 
-[auto build test ERROR on linus/master]
-[also build test ERROR on v6.13-rc6 next-20250106]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
+Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
+---
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Chukun-Pan/phy-rockchip-naneng-combphy-compatible-with-old-DT-for-RK3568/20250106-150311
-base:   linus/master
-patch link:    https://lore.kernel.org/r/20250106070000.605284-1-amadeus%40jmu.edu.cn
-patch subject: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old DT for RK3568
-config: arm64-randconfig-004-20250106 (https://download.01.org/0day-ci/archive/20250106/202501061921.ToV59CNC-lkp@intel.com/config)
-compiler: clang version 20.0.0git (https://github.com/llvm/llvm-project 096551537b2a747a3387726ca618ceeb3950e9bc)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250106/202501061921.ToV59CNC-lkp@intel.com/reproduce)
+***NOTE***
+Since I don't have the hardware required to validate PCIe Multilink +
+USB functionality, kindly *do not merge* this series until it gets a
+"Tested-by" tag with proper validation of the functionality.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202501061921.ToV59CNC-lkp@intel.com/
+Regards,
+Siddharth.
 
-All errors (new ones prefixed by >>):
+ drivers/phy/cadence/phy-cadence-torrent.c | 130 +++++++++++++++++++++-
+ 1 file changed, 129 insertions(+), 1 deletion(-)
 
-   In file included from drivers/phy/rockchip/phy-rockchip-naneng-combphy.c:12:
-   In file included from include/linux/phy/phy.h:17:
-   In file included from include/linux/regulator/consumer.h:35:
-   In file included from include/linux/suspend.h:5:
-   In file included from include/linux/swap.h:9:
-   In file included from include/linux/memcontrol.h:21:
-   In file included from include/linux/mm.h:2224:
-   include/linux/vmstat.h:504:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     504 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     505 |                            item];
-         |                            ~~~~
-   include/linux/vmstat.h:511:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     511 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     512 |                            NR_VM_NUMA_EVENT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~~
-   include/linux/vmstat.h:524:43: warning: arithmetic between different enumeration types ('enum zone_stat_item' and 'enum numa_stat_item') [-Wenum-enum-conversion]
-     524 |         return vmstat_text[NR_VM_ZONE_STAT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~ ^
-     525 |                            NR_VM_NUMA_EVENT_ITEMS +
-         |                            ~~~~~~~~~~~~~~~~~~~~~~
->> drivers/phy/rockchip/phy-rockchip-naneng-combphy.c:314:21: error: incompatible pointer to integer conversion passing 'struct reset_control *' to parameter of type 'long' [-Wint-conversion]
-     314 |         if (IS_ERR(ERR_PTR(priv->phy_rst)))
-         |                            ^~~~~~~~~~~~~
-   include/linux/err.h:39:48: note: passing argument to parameter 'error' here
-      39 | static inline void * __must_check ERR_PTR(long error)
-         |                                                ^
-   3 warnings and 1 error generated.
-
-
-vim +314 drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-
-   274	
-   275	static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy_priv *priv)
-   276	{
-   277		int i;
-   278	
-   279		priv->num_clks = devm_clk_bulk_get_all(dev, &priv->clks);
-   280		if (priv->num_clks < 1)
-   281			return -EINVAL;
-   282	
-   283		priv->refclk = NULL;
-   284		for (i = 0; i < priv->num_clks; i++) {
-   285			if (!strncmp(priv->clks[i].id, "ref", 3)) {
-   286				priv->refclk = priv->clks[i].clk;
-   287				break;
-   288			}
-   289		}
-   290	
-   291		if (!priv->refclk) {
-   292			dev_err(dev, "no refclk found\n");
-   293			return -EINVAL;
-   294		}
-   295	
-   296		priv->pipe_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-grf");
-   297		if (IS_ERR(priv->pipe_grf)) {
-   298			dev_err(dev, "failed to find peri_ctrl pipe-grf regmap\n");
-   299			return PTR_ERR(priv->pipe_grf);
-   300		}
-   301	
-   302		priv->phy_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-phy-grf");
-   303		if (IS_ERR(priv->phy_grf)) {
-   304			dev_err(dev, "failed to find peri_ctrl pipe-phy-grf regmap\n");
-   305			return PTR_ERR(priv->phy_grf);
-   306		}
-   307	
-   308		priv->enable_ssc = device_property_present(dev, "rockchip,enable-ssc");
-   309	
-   310		priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
-   311	
-   312		priv->phy_rst = devm_reset_control_get(dev, "phy");
-   313		/* fallback to old behaviour */
- > 314		if (IS_ERR(ERR_PTR(priv->phy_rst)))
-   315			priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
-   316	
-   317		if (IS_ERR(priv->phy_rst))
-   318			return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
-   319	
-   320		return 0;
-   321	}
-   322	
-
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index a281c0dfae97..b0b5f4bdd7e2 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -197,6 +197,7 @@
+ #define RX_SDCAL1_INIT_TMR		0x004CU
+ #define RX_SDCAL1_ITER_TMR		0x004DU
+ #define RX_CDRLF_CNFG			0x0080U
++#define RX_CDRLF_CNFG2			0x0081U
+ #define RX_CDRLF_CNFG3			0x0082U
+ #define RX_SIGDET_HL_FILT_TMR		0x0090U
+ #define RX_REE_GCSM1_CTRL		0x0108U
+@@ -204,6 +205,7 @@
+ #define RX_REE_GCSM1_EQENM_PH2		0x010AU
+ #define RX_REE_GCSM2_CTRL		0x0110U
+ #define RX_REE_PERGCSM_CTRL		0x0118U
++#define RX_REE_PEAK_UTHR		0x0142U
+ #define RX_REE_ATTEN_THR		0x0149U
+ #define RX_REE_TAP1_CLIP		0x0171U
+ #define RX_REE_TAP2TON_CLIP		0x0172U
+@@ -212,6 +214,7 @@
+ #define RX_DIAG_DFE_CTRL		0x01E0U
+ #define RX_DIAG_DFE_AMP_TUNE_2		0x01E2U
+ #define RX_DIAG_DFE_AMP_TUNE_3		0x01E3U
++#define RX_DIAG_REE_DAC_CTRL		0x01E4U
+ #define RX_DIAG_NQST_CTRL		0x01E5U
+ #define RX_DIAG_SIGDET_TUNE		0x01E8U
+ #define RX_DIAG_PI_RATE			0x01F4U
+@@ -3131,6 +3134,101 @@ static void cdns_torrent_phy_remove(struct platform_device *pdev)
+ 	cdns_torrent_clk_cleanup(cdns_phy);
+ }
+ 
++/* Multi link PCIe configuration */
++static struct cdns_reg_pairs ml_pcie_link_cmn_regs[] = {
++	{0x0002, PHY_PLL_CFG},
++	{0x0601, CMN_PDIAG_PLL0_CLK_SEL_M0}
++};
++
++static struct cdns_reg_pairs ml_pcie_xcvr_diag_ln_regs[] = {
++	{0x0100, XCVR_DIAG_HSCLK_SEL},
++	{0x0001, XCVR_DIAG_HSCLK_DIV},
++	{0x0812, XCVR_DIAG_PLLDRC_CTRL}
++};
++
++static struct cdns_torrent_vals ml_pcie_link_cmn_vals = {
++	.reg_pairs = ml_pcie_link_cmn_regs,
++	.num_regs = ARRAY_SIZE(ml_pcie_link_cmn_regs),
++};
++
++static struct cdns_torrent_vals ml_pcie_xcvr_diag_ln_vals = {
++	.reg_pairs = ml_pcie_xcvr_diag_ln_regs,
++	.num_regs = ARRAY_SIZE(ml_pcie_xcvr_diag_ln_regs),
++};
++
++/* Multi link PCIe, 100 MHz Ref clk, no SSC */
++static struct cdns_reg_pairs ml_pcie_100_no_ssc_cmn_regs[] = {
++	{0x0003, CMN_PLL0_VCOCAL_TCTRL},
++	{0x0003, CMN_PLL1_VCOCAL_TCTRL}
++};
++
++static struct cdns_reg_pairs ml_pcie_100_no_ssc_rx_ln_regs[] = {
++	{0x0019, RX_REE_TAP1_CLIP},
++	{0x0019, RX_REE_TAP2TON_CLIP},
++	{0x0008, RX_REE_PEAK_UTHR},
++	{0x018E, RX_CDRLF_CNFG},
++	{0x2E33, RX_CDRLF_CNFG2},
++	{0x0001, RX_DIAG_ACYA},
++	{0x0C21, RX_DIAG_DFE_AMP_TUNE_2},
++	{0x0002, RX_DIAG_DFE_AMP_TUNE_3},
++	{0x0005, RX_DIAG_REE_DAC_CTRL}
++};
++
++static struct cdns_torrent_vals ml_pcie_100_no_ssc_cmn_vals = {
++	.reg_pairs = ml_pcie_100_no_ssc_cmn_regs,
++	.num_regs = ARRAY_SIZE(ml_pcie_100_no_ssc_cmn_regs),
++};
++
++static struct cdns_torrent_vals ml_pcie_100_no_ssc_rx_ln_vals = {
++	.reg_pairs = ml_pcie_100_no_ssc_rx_ln_regs,
++	.num_regs = ARRAY_SIZE(ml_pcie_100_no_ssc_rx_ln_regs),
++};
++
++/* Multi link PCIe, 100 MHz Ref clk, internal SSC */
++static struct cdns_reg_pairs ml_pcie_100_int_ssc_cmn_regs[] = {
++	{0x0004, CMN_PLL0_DSM_DIAG_M0},
++	{0x0004, CMN_PLL1_DSM_DIAG_M0},
++	{0x0509, CMN_PDIAG_PLL0_CP_PADJ_M0},
++	{0x0509, CMN_PDIAG_PLL1_CP_PADJ_M0},
++	{0x0F00, CMN_PDIAG_PLL0_CP_IADJ_M0},
++	{0x0F00, CMN_PDIAG_PLL1_CP_IADJ_M0},
++	{0x0F08, CMN_PDIAG_PLL0_FILT_PADJ_M0},
++	{0x0F08, CMN_PDIAG_PLL1_FILT_PADJ_M0},
++	{0x0064, CMN_PLL0_INTDIV_M0},
++	{0x0050, CMN_PLL1_INTDIV_M0},
++	{0x0002, CMN_PLL0_FRACDIVH_M0},
++	{0x0002, CMN_PLL1_FRACDIVH_M0},
++	{0x0044, CMN_PLL0_HIGH_THR_M0},
++	{0x0036, CMN_PLL1_HIGH_THR_M0},
++	{0x0002, CMN_PDIAG_PLL0_CTRL_M0},
++	{0x0002, CMN_PDIAG_PLL1_CTRL_M0},
++	{0x0001, CMN_PLL0_SS_CTRL1_M0},
++	{0x0001, CMN_PLL1_SS_CTRL1_M0},
++	{0x011B, CMN_PLL0_SS_CTRL2_M0},
++	{0x011B, CMN_PLL1_SS_CTRL2_M0},
++	{0x006E, CMN_PLL0_SS_CTRL3_M0},
++	{0x0058, CMN_PLL1_SS_CTRL3_M0},
++	{0x000E, CMN_PLL0_SS_CTRL4_M0},
++	{0x0012, CMN_PLL1_SS_CTRL4_M0},
++	{0x0C5E, CMN_PLL0_VCOCAL_REFTIM_START},
++	{0x0C5E, CMN_PLL1_VCOCAL_REFTIM_START},
++	{0x0C56, CMN_PLL0_VCOCAL_PLLCNT_START},
++	{0x0C56, CMN_PLL1_VCOCAL_PLLCNT_START},
++	{0x0003, CMN_PLL0_VCOCAL_TCTRL},
++	{0x0003, CMN_PLL1_VCOCAL_TCTRL},
++	{0x00C7, CMN_PLL0_LOCK_REFCNT_START},
++	{0x00C7, CMN_PLL1_LOCK_REFCNT_START},
++	{0x00C7, CMN_PLL0_LOCK_PLLCNT_START},
++	{0x00C7, CMN_PLL1_LOCK_PLLCNT_START},
++	{0x0005, CMN_PLL0_LOCK_PLLCNT_THR},
++	{0x0005, CMN_PLL1_LOCK_PLLCNT_THR}
++};
++
++static struct cdns_torrent_vals ml_pcie_100_int_ssc_cmn_vals = {
++	.reg_pairs = ml_pcie_100_int_ssc_cmn_regs,
++	.num_regs = ARRAY_SIZE(ml_pcie_100_int_ssc_cmn_regs),
++};
++
+ /* SGMII and QSGMII link configuration */
+ static const struct cdns_reg_pairs sgmii_qsgmii_link_cmn_regs[] = {
+ 	{0x0002, PHY_PLL_CFG}
+@@ -4531,7 +4629,7 @@ static const struct cdns_torrent_vals sl_sgmii_xcvr_diag_ln_vals = {
+ 	.num_regs = ARRAY_SIZE(sl_sgmii_xcvr_diag_ln_regs),
+ };
+ 
+-/* Multi link PCIe, 100 MHz Ref clk, internal SSC */
++/* For PCIe (with some other protocol), 100 MHz Ref clk, internal SSC */
+ static const struct cdns_reg_pairs pcie_100_int_ssc_cmn_regs[] = {
+ 	{0x0004, CMN_PLL0_DSM_DIAG_M0},
+ 	{0x0004, CMN_PLL0_DSM_DIAG_M1},
+@@ -4670,6 +4768,7 @@ static const struct cdns_torrent_vals_entry link_cmn_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_DP, TYPE_USB), &usb_dp_link_cmn_vals},
+ 
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_NONE), NULL},
++	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_PCIE), &ml_pcie_link_cmn_vals},
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_SGMII), &pcie_sgmii_link_cmn_vals},
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_QSGMII), &pcie_sgmii_link_cmn_vals},
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USB), &pcie_usb_link_cmn_vals},
+@@ -4706,6 +4805,7 @@ static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_DP, TYPE_USB), &dp_usb_xcvr_diag_ln_vals},
+ 
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_NONE), NULL},
++	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_PCIE), &ml_pcie_xcvr_diag_ln_vals},
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_SGMII), &pcie_sgmii_xcvr_diag_ln_vals},
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_QSGMII), &pcie_sgmii_xcvr_diag_ln_vals},
+ 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USB), &pcie_usb_xcvr_diag_ln_vals},
+@@ -4756,6 +4856,10 @@ static const struct cdns_torrent_vals_entry cmn_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), &sl_pcie_100_int_ssc_cmn_vals},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), &ml_pcie_100_no_ssc_cmn_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), &ml_pcie_100_no_ssc_cmn_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), &ml_pcie_100_int_ssc_cmn_vals},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), &pcie_100_no_ssc_cmn_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), &pcie_100_no_ssc_cmn_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), &pcie_100_int_ssc_cmn_vals},
+@@ -4838,6 +4942,10 @@ static const struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), NULL},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), NULL},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), NULL},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), NULL},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), NULL},
+@@ -4920,6 +5028,10 @@ static const struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+@@ -5038,6 +5150,10 @@ static const struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), NULL},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), NULL},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), NULL},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), NULL},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), NULL},
+@@ -5154,6 +5270,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), &sl_pcie_100_int_ssc_cmn_vals},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), &ml_pcie_100_no_ssc_cmn_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), &ml_pcie_100_no_ssc_cmn_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), &ml_pcie_100_int_ssc_cmn_vals},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), &pcie_100_no_ssc_cmn_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), &pcie_100_no_ssc_cmn_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), &pcie_100_int_ssc_cmn_vals},
+@@ -5236,6 +5356,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), NULL},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), NULL},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), NULL},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), NULL},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), NULL},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), NULL},
+@@ -5318,6 +5442,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_NONE, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
++	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_PCIE, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
++
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
+ 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_SGMII, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.43.0
+
 
 -- 
 linux-phy mailing list
