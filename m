@@ -4,79 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75E4FE77188
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 21:39:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EB2FE77188
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 22:01:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+wJDPXC3svsRCZ/6bzuKbK3K5kd9SkMn22ftOwa+VSw=; b=4kpMESl64NscKf
-	gvJuyrtceIv1GXntB89iF1u1+T+h4sKzbmQTulNF5wbJX93GBYvu5gkzYGbolx+YlaU2aznRTqnVW
-	w18TWVmEvpgtOCIbwVpk1z0O3o0HJLvXZr/7Dw3GiZc0AuhB01QSm9UB6Kiz+FwB3BqqvGZHI/6Ft
-	3nI74WZRIdhOrs/zSMVM/zz2xBsEQhiBONsKMrJEN3pAb+RWg7EGBjt1eOag1mGW1FIhDV0mStPgX
-	Zcggpdl26xiL5PDZPIMmuhn22egdXn1hjfa06cY3h8M+CpMOCtuQidjSPN3Ve+l+zpr2lAVrJ55Ju
-	Nw3LPfwF/5UbWbm0FqGQ==;
+	List-Owner; bh=XV8UM0HJ36g+CZbYmF2G2IaBjRdEq9nPsxWS+xH/dAI=; b=R8T9ozYRsDzd5o
+	/J+m6B0gm9gQAbgxXAQlbdJKMVnYKWcslq1vVmZ+Po0BLMeefNXg/t2j0nJoTW/fYLY/iGcCBK9AN
+	PhHfiv/l6qMzwUyQDMfw3jVEFMZ35Qv58I5vr4Vb5D3dVeXFa0uvcU6xqVHRDN07mAaynrmKOGyTM
+	g08D2YVz7QFXdY7kAIWtGh2ylndeu5ASw44tVXeCptx/PkcCSoOjJdFHW79T8yHNI4MI1TXNdRUvs
+	n5ECMG6EmnEXtQORrpzPRAI1TSaLURzvGZMn3CIk2KcVYA6RL7CEpL1DpTOnVSvlLvdMjqMaECxhK
+	vDQtrG/NHk0oEbcKm17w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUuos-00000002l68-2hD5;
-	Mon, 06 Jan 2025 21:39:30 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	id 1tUvAU-00000002oMa-3zKg;
+	Mon, 06 Jan 2025 22:01:50 +0000
+Received: from smtp-66.smtpout.orange.fr ([80.12.242.66] helo=smtp.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUund-00000002kxy-2AvE;
-	Mon, 06 Jan 2025 21:38:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1736199493; x=1767735493;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=HvONposlKuJw4Y+dSo+jkkd/aq1cJfkDp0GXQPM1m7g=;
-  b=c8W/l5OvXlUBRgeKoaJUs7IErUePU5giZiuzSySJqMtKS/loh7xuurKH
-   2Ao9xFK7EB9iLfm+xZdrIUpsGhKtHFw4GFAbON3MuodV/L3FDnCOQpzMg
-   IFdlyC4hpRVEGvAnQpVSnpuPkZkPI6KO0eMdGUfUIOuZ3WjFGwXz03msS
-   oGxdzYVwD1gW2/MfRtG6wWKMuF2SY21kT3IyAh3sEC1PP7tQF7OCLqhl6
-   jTliJkzX82w9LrwuhEqAtFx1Rv1TYSMGywnpD05jUg8xTkJ7Dpq0R3OLI
-   1zyvH2lDGdfL0r64sDtRDnpCcXy/9/3xumFN4v1XMlbNmx7vvsL/bVNPq
-   w==;
-X-CSE-ConnectionGUID: 0bQPJu+lRIeZz/qTxU40GQ==
-X-CSE-MsgGUID: HX/cV7DCS62OSTARvlF6lA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11307"; a="53780328"
-X-IronPort-AV: E=Sophos;i="6.12,293,1728975600"; 
-   d="scan'208";a="53780328"
-Received: from fmviesa009.fm.intel.com ([10.60.135.149])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Jan 2025 13:38:11 -0800
-X-CSE-ConnectionGUID: QPWSosUcR8GXShDSJc/YYQ==
-X-CSE-MsgGUID: fPwO4tSLSAarkRVBMlbf0Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,293,1728975600"; 
-   d="scan'208";a="103079957"
-Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by fmviesa009.fm.intel.com with ESMTP; 06 Jan 2025 13:38:08 -0800
-Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tUunW-000Dwh-1W;
-	Mon, 06 Jan 2025 21:38:06 +0000
-Date: Tue, 7 Jan 2025 05:37:46 +0800
-From: kernel test robot <lkp@intel.com>
-To: Chukun Pan <amadeus@jmu.edu.cn>, Vinod Koul <vkoul@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, Heiko Stuebner <heiko@sntech.de>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jianfeng Liu <liujianfeng1994@gmail.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, Chukun Pan <amadeus@jmu.edu.cn>
-Subject: Re: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old
- DT for RK3568
-Message-ID: <202501070458.qKEuL2HH-lkp@intel.com>
-References: <20250106070000.605284-1-amadeus@jmu.edu.cn>
+	id 1tUv9E-00000002o1j-0Qrw;
+	Mon, 06 Jan 2025 22:00:34 +0000
+Received: from [192.168.1.37] ([90.11.132.44])
+	by smtp.orange.fr with ESMTPA
+	id Uv8xtgasrGcOqUv91t2CGv; Mon, 06 Jan 2025 23:00:21 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
+	s=t20230301; t=1736200821;
+	bh=QnVrWEUtFgMvDpm5kd+ZvPWkuuGKmlEREXeXjJ/9WLQ=;
+	h=Message-ID:Date:MIME-Version:Subject:To:From;
+	b=Knj/XA/gpVUzVe4EkuDhwlNFpl7y04M6/5moZxeMxboXoZUWYOr6qlzRTqtNuWBG3
+	 /MnW8YwGCMviEcnoV2JqsUluyeTkycD2nxfjYZNiruOjvLaYogZZzY8oAl9m4Td24Y
+	 pYg4Z/jrut/XM9F6y3h1nqdZjtdy8lAW3t1w2sAQOXYO8ydYIYuV9CEMwd1PVh76v4
+	 dqN9MflSQIWoZLVHXI3jOeiNuM5l8w4ZDt4Z1lfzhl3nfXKopCzzM8JLePvtwthV7G
+	 LgXUMF95kAPUbB/M3yziRIliIN0woQ5by3smNzPMLz37eOdsxGpb4RgmhK0oBuSvy/
+	 QfRYsK8viiV7g==
+X-ME-Helo: [192.168.1.37]
+X-ME-Auth: bWFyaW9uLmphaWxsZXRAd2FuYWRvby5mcg==
+X-ME-Date: Mon, 06 Jan 2025 23:00:21 +0100
+X-ME-IP: 90.11.132.44
+Message-ID: <1483780d-115f-4555-82b3-3e9cffe82dce@wanadoo.fr>
+Date: Mon, 6 Jan 2025 23:00:14 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250106070000.605284-1-amadeus@jmu.edu.cn>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/2] phy: cadence-torrent: Add PCIe multilink
+ configuration for 100 MHz refclk
+To: Siddharth Vadapalli <s-vadapalli@ti.com>, vkoul@kernel.org,
+ kishon@kernel.org, sjakhade@cadence.com, rogerq@kernel.org,
+ thomas.richard@bootlin.com, u.kleine-koenig@baylibre.com, eballetb@redhat.com
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, srk@ti.com
+References: <20250106131925.263240-1-s-vadapalli@ti.com>
+ <20250106131925.263240-2-s-vadapalli@ti.com>
+Content-Language: en-US, fr-FR
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20250106131925.263240-2-s-vadapalli@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250106_133813_608837_571D32F4 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20250106_140032_414856_C53F1DA0 
+X-CRM114-Status: GOOD (  15.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,106 +73,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Chukun,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on linus/master]
-[also build test ERROR on v6.13-rc6 next-20250106]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Chukun-Pan/phy-rockchip-naneng-combphy-compatible-with-old-DT-for-RK3568/20250106-150311
-base:   linus/master
-patch link:    https://lore.kernel.org/r/20250106070000.605284-1-amadeus%40jmu.edu.cn
-patch subject: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old DT for RK3568
-config: arm64-defconfig (https://download.01.org/0day-ci/archive/20250107/202501070458.qKEuL2HH-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250107/202501070458.qKEuL2HH-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202501070458.qKEuL2HH-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   drivers/phy/rockchip/phy-rockchip-naneng-combphy.c: In function 'rockchip_combphy_parse_dt':
->> drivers/phy/rockchip/phy-rockchip-naneng-combphy.c:314:32: error: passing argument 1 of 'ERR_PTR' makes integer from pointer without a cast [-Wint-conversion]
-     314 |         if (IS_ERR(ERR_PTR(priv->phy_rst)))
-         |                            ~~~~^~~~~~~~~
-         |                                |
-         |                                struct reset_control *
-   In file included from include/linux/clk.h:12,
-                    from drivers/phy/rockchip/phy-rockchip-naneng-combphy.c:9:
-   include/linux/err.h:39:48: note: expected 'long int' but argument is of type 'struct reset_control *'
-      39 | static inline void * __must_check ERR_PTR(long error)
-         |                                           ~~~~~^~~~~
-
-
-vim +/ERR_PTR +314 drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-
-   274	
-   275	static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy_priv *priv)
-   276	{
-   277		int i;
-   278	
-   279		priv->num_clks = devm_clk_bulk_get_all(dev, &priv->clks);
-   280		if (priv->num_clks < 1)
-   281			return -EINVAL;
-   282	
-   283		priv->refclk = NULL;
-   284		for (i = 0; i < priv->num_clks; i++) {
-   285			if (!strncmp(priv->clks[i].id, "ref", 3)) {
-   286				priv->refclk = priv->clks[i].clk;
-   287				break;
-   288			}
-   289		}
-   290	
-   291		if (!priv->refclk) {
-   292			dev_err(dev, "no refclk found\n");
-   293			return -EINVAL;
-   294		}
-   295	
-   296		priv->pipe_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-grf");
-   297		if (IS_ERR(priv->pipe_grf)) {
-   298			dev_err(dev, "failed to find peri_ctrl pipe-grf regmap\n");
-   299			return PTR_ERR(priv->pipe_grf);
-   300		}
-   301	
-   302		priv->phy_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-phy-grf");
-   303		if (IS_ERR(priv->phy_grf)) {
-   304			dev_err(dev, "failed to find peri_ctrl pipe-phy-grf regmap\n");
-   305			return PTR_ERR(priv->phy_grf);
-   306		}
-   307	
-   308		priv->enable_ssc = device_property_present(dev, "rockchip,enable-ssc");
-   309	
-   310		priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
-   311	
-   312		priv->phy_rst = devm_reset_control_get(dev, "phy");
-   313		/* fallback to old behaviour */
- > 314		if (IS_ERR(ERR_PTR(priv->phy_rst)))
-   315			priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
-   316	
-   317		if (IS_ERR(priv->phy_rst))
-   318			return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
-   319	
-   320		return 0;
-   321	}
-   322	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+TGUgMDYvMDEvMjAyNSDDoCAxNDoxOSwgU2lkZGhhcnRoIFZhZGFwYWxsaSBhIMOpY3JpdMKgOgo+
+IEZyb206IFN3YXBuaWwgSmFraGFkZSA8c2pha2hhZGVAY2FkZW5jZS5jb20+Cj4gCj4gQWRkIHJl
+Z2lzdGVyIHNlcXVlbmNlcyB0byBzdXBwb3J0IFBDSWUgbXVsdGlsaW5rIGNvbmZpZ3VyYXRpb24g
+Zm9yIDEwME1Iego+IHJlZmVyZW5jZSBjbG9jay4gTWF4aW11bSB0d28gUENJZSBsaW5rcyBhcmUg
+c3VwcG9ydGVkLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFN3YXBuaWwgSmFraGFkZSA8c2pha2hhZGVA
+Y2FkZW5jZS5jb20+Cj4gU2lnbmVkLW9mZi1ieTogU2lkZGhhcnRoIFZhZGFwYWxsaSA8cy12YWRh
+cGFsbGlAdGkuY29tPgo+IC0tLQo+IAo+ICoqKk5PVEUqKioKPiBTaW5jZSBJIGRvbid0IGhhdmUg
+dGhlIGhhcmR3YXJlIHJlcXVpcmVkIHRvIHZhbGlkYXRlIFBDSWUgTXVsdGlsaW5rICsKPiBVU0Ig
+ZnVuY3Rpb25hbGl0eSwga2luZGx5ICpkbyBub3QgbWVyZ2UqIHRoaXMgc2VyaWVzIHVudGlsIGl0
+IGdldHMgYQo+ICJUZXN0ZWQtYnkiIHRhZyB3aXRoIHByb3BlciB2YWxpZGF0aW9uIG9mIHRoZSBm
+dW5jdGlvbmFsaXR5Lgo+IAo+IFJlZ2FyZHMsCj4gU2lkZGhhcnRoLgo+IAo+ICAgZHJpdmVycy9w
+aHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMgfCAxMzAgKysrKysrKysrKysrKysrKysr
+KysrLQo+ICAgMSBmaWxlIGNoYW5nZWQsIDEyOSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0p
+Cj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2NhZGVuY2UvcGh5LWNhZGVuY2UtdG9ycmVu
+dC5jIGIvZHJpdmVycy9waHkvY2FkZW5jZS9waHktY2FkZW5jZS10b3JyZW50LmMKPiBpbmRleCBh
+MjgxYzBkZmFlOTcuLmIwYjVmNGJkZDdlMiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9jYWRl
+bmNlL3BoeS1jYWRlbmNlLXRvcnJlbnQuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L2NhZGVuY2UvcGh5
+LWNhZGVuY2UtdG9ycmVudC5jCj4gQEAgLTE5Nyw2ICsxOTcsNyBAQAo+ICAgI2RlZmluZSBSWF9T
+RENBTDFfSU5JVF9UTVIJCTB4MDA0Q1UKPiAgICNkZWZpbmUgUlhfU0RDQUwxX0lURVJfVE1SCQkw
+eDAwNERVCj4gICAjZGVmaW5lIFJYX0NEUkxGX0NORkcJCQkweDAwODBVCj4gKyNkZWZpbmUgUlhf
+Q0RSTEZfQ05GRzIJCQkweDAwODFVCj4gICAjZGVmaW5lIFJYX0NEUkxGX0NORkczCQkJMHgwMDgy
+VQo+ICAgI2RlZmluZSBSWF9TSUdERVRfSExfRklMVF9UTVIJCTB4MDA5MFUKPiAgICNkZWZpbmUg
+UlhfUkVFX0dDU00xX0NUUkwJCTB4MDEwOFUKPiBAQCAtMjA0LDYgKzIwNSw3IEBACj4gICAjZGVm
+aW5lIFJYX1JFRV9HQ1NNMV9FUUVOTV9QSDIJCTB4MDEwQVUKPiAgICNkZWZpbmUgUlhfUkVFX0dD
+U00yX0NUUkwJCTB4MDExMFUKPiAgICNkZWZpbmUgUlhfUkVFX1BFUkdDU01fQ1RSTAkJMHgwMTE4
+VQo+ICsjZGVmaW5lIFJYX1JFRV9QRUFLX1VUSFIJCTB4MDE0MlUKPiAgICNkZWZpbmUgUlhfUkVF
+X0FUVEVOX1RIUgkJMHgwMTQ5VQo+ICAgI2RlZmluZSBSWF9SRUVfVEFQMV9DTElQCQkweDAxNzFV
+Cj4gICAjZGVmaW5lIFJYX1JFRV9UQVAyVE9OX0NMSVAJCTB4MDE3MlUKPiBAQCAtMjEyLDYgKzIx
+NCw3IEBACj4gICAjZGVmaW5lIFJYX0RJQUdfREZFX0NUUkwJCTB4MDFFMFUKPiAgICNkZWZpbmUg
+UlhfRElBR19ERkVfQU1QX1RVTkVfMgkJMHgwMUUyVQo+ICAgI2RlZmluZSBSWF9ESUFHX0RGRV9B
+TVBfVFVORV8zCQkweDAxRTNVCj4gKyNkZWZpbmUgUlhfRElBR19SRUVfREFDX0NUUkwJCTB4MDFF
+NFUKPiAgICNkZWZpbmUgUlhfRElBR19OUVNUX0NUUkwJCTB4MDFFNVUKPiAgICNkZWZpbmUgUlhf
+RElBR19TSUdERVRfVFVORQkJMHgwMUU4VQo+ICAgI2RlZmluZSBSWF9ESUFHX1BJX1JBVEUJCQkw
+eDAxRjRVCj4gQEAgLTMxMzEsNiArMzEzNCwxMDEgQEAgc3RhdGljIHZvaWQgY2Ruc190b3JyZW50
+X3BoeV9yZW1vdmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgIAljZG5zX3RvcnJl
+bnRfY2xrX2NsZWFudXAoY2Ruc19waHkpOwo+ICAgfQo+ICAgCj4gKy8qIE11bHRpIGxpbmsgUENJ
+ZSBjb25maWd1cmF0aW9uICovCj4gK3N0YXRpYyBzdHJ1Y3QgY2Ruc19yZWdfcGFpcnMgbWxfcGNp
+ZV9saW5rX2Ntbl9yZWdzW10gPSB7Cj4gKwl7MHgwMDAyLCBQSFlfUExMX0NGR30sCj4gKwl7MHgw
+NjAxLCBDTU5fUERJQUdfUExMMF9DTEtfU0VMX00wfQo+ICt9OwoKSSB0aGluayB0aGF0IHNvbWUs
+IGlmIG5vdCBhbGwsIG9mIHRoZXNlIG5ldyBzdHJ1Y3QgY291bGQgYmUgY29uc3QsIGFzIAplbHNl
+d2hlcmUgaW4gdGhpcyBmaWxlLgoKPiArCj4gK3N0YXRpYyBzdHJ1Y3QgY2Ruc19yZWdfcGFpcnMg
+bWxfcGNpZV94Y3ZyX2RpYWdfbG5fcmVnc1tdID0gewo+ICsJezB4MDEwMCwgWENWUl9ESUFHX0hT
+Q0xLX1NFTH0sCj4gKwl7MHgwMDAxLCBYQ1ZSX0RJQUdfSFNDTEtfRElWfSwKPiArCXsweDA4MTIs
+IFhDVlJfRElBR19QTExEUkNfQ1RSTH0KPiArfTsKCi4uLgoKQ0oKCi0tIApsaW51eC1waHkgbWFp
+bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
