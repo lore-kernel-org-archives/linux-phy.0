@@ -4,68 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 698ABE77199
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 11:04:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77335E77198
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 11:26:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lJ4jUIjvS6M2n4RNSVUSScvX4waTt9ndNUhbNvBBRVs=; b=jSF8e78aKgEvfu
-	+SnRobeDOCOFNxOjQng1pudDwzRrfL5Lh6W/eNqULB6u5jVHv/wlRyfqXpwY+6EjHSQOb3Al2eJ55
-	doja0YYWKN6Keo51ElHpfSfqGFkbZanCh8+Y4ElY0+8gRHM1zgeDQHfBsw8rRKtyTYeiMWwt4O9Dy
-	M7AdkL4uzmu05aqdUfvKYXhIkEF9+DvQOXUEfkwGl2/OM5amNH0vz6I/Lwq+E1Ob+ldVSgJHKEG71
-	x1xLNdgepcdDdWtpqlSalVi4UtvN+IXb4FHrVBsvkPjxZUo02oJQr7VzTEkkbJdOfSKc6GTEufhYS
-	9vWlbNqi/wvYHJShSpKg==;
+	List-Owner; bh=YQICY2sLIW8Ei22C8uQmMlv9mL4GgKiun0xocTZI0Ao=; b=DDsg32s3avA4Uz
+	7Mbm5lZHBu5AwMJG1KyOnHCL7+RWQ6V4cVTM5afHVqiAFvcC1oe8R/ImeK5SR29Yh4rYQfuYRrwC6
+	8IdUWD4o3GVTQM9b9qVbht8Hwnupv0JUDFODSGj8w1N7aYsJcm1jGi7UOl/xjSvwKeFbDBdvJuQ1c
+	ORZVJydHXJ5imVYlCEhnJabD3XUSpTHl+1oXDVXAcILY4FOX7NQ6y1aggYLkokQA36DPbbwlsjc2h
+	Zh5WdMZ5+XeHaBJ6l96PEQbhNd/AYcXr2SQW/0zuOqmwmMAQEG3io5svlE0zy/xMhB0VLD9J7dad4
+	Zm3fljWtm/5V1nIhxBag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUkuB-00000000yMv-0ahT;
-	Mon, 06 Jan 2025 11:04:19 +0000
-Received: from mail-m49211.qiye.163.com ([45.254.49.211])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUku7-00000000yKf-2PlP;
-	Mon, 06 Jan 2025 11:04:17 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 7d7b0b78;
-	Mon, 6 Jan 2025 19:04:10 +0800 (GMT+08:00)
-Message-ID: <e2a18f8c-dc38-4b12-968e-dd369cb34cb4@rock-chips.com>
-Date: Mon, 6 Jan 2025 19:04:09 +0800
+	id 1tUlFI-000000012Rm-14OW;
+	Mon, 06 Jan 2025 11:26:08 +0000
+Received: from mail.8bytes.org ([2a01:238:42d9:3f00:e505:6202:4f0c:f051])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tUlE5-000000012Ji-1stX;
+	Mon, 06 Jan 2025 11:24:54 +0000
+Received: from 8bytes.org (p54921e31.dip0.t-ipconnect.de [84.146.30.49])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mail.8bytes.org (Postfix) with ESMTPSA id 46E6B2E0016;
+	Mon,  6 Jan 2025 12:24:47 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=8bytes.org;
+	s=default; t=1736162687;
+	bh=A2VbHCh2nvdE8f5DyLA9vLSAC91A3zhxUCopF+zUwsk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=s8EREmB2Oljv3DrxUsRvmMVdnIZeXQOKGmreXPF1w/R8bB/8ImGDiR6Ra4TYb+cLr
+	 ZEUmRouXeJ8L3ZVWIQhFm0wXAIR9WG1jGXNVFhaii1V3Rt0p+0TJHnCg2yw6Td/2sM
+	 1ilO4a1IQbNvExxFWnpVZo4xinTJsj/RXfMKH0qK5f2EzMZb7ZrQ9kKw9FNOansmuy
+	 6pAJsXGw9ssTZu2UaHL/9gyItieOHF4hebKU775HU97zaC7/Fo9PvlpFOrEvP6N6Ny
+	 eApdlDbnkayhisHkOXTbq7RQyOuwyzrxS3MjSog5MFJFxC+AQ+PVld/RqnRQydX7ci
+	 pndIhk04I4JbA==
+Date: Mon, 6 Jan 2025 12:24:46 +0100
+From: Joerg Roedel <joro@8bytes.org>
+To: Parthiban Nallathambi <parthiban@linumiz.com>
+Cc: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Maxime Ripard <mripard@kernel.org>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH 09/22] iommu: sun50i: make reset control optional
+Message-ID: <Z3u9fuZ2n1y3Or_-@8bytes.org>
+References: <20241227-a133-display-support-v1-0-13b52f71fb14@linumiz.com>
+ <20241227-a133-display-support-v1-9-13b52f71fb14@linumiz.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 13/17] drm/bridge: analogix_dp: Convert
- &analogix_dp_device.aux into a pointer
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
- sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com,
- l.stach@pengutronix.de, andy.yan@rock-chips.com, hjc@rock-chips.com,
- algea.cao@rock-chips.com, kever.yang@rock-chips.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20241226063313.3267515-1-damon.ding@rock-chips.com>
- <20241226063313.3267515-14-damon.ding@rock-chips.com>
- <e52pbjnusvuoqiyoorjr5msrfmgeqs2jt5sk6zcesvzy7cszzk@fzrtpsjoklgu>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <e52pbjnusvuoqiyoorjr5msrfmgeqs2jt5sk6zcesvzy7cszzk@fzrtpsjoklgu>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0tLSVZDS0NCSxhKGkofS0hWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
-	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a943b49590403a3kunm7d7b0b78
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pgg6EQw4DDINKR4eEDJKEShL
-	Kx0KFBZVSlVKTEhNSk1KT05KQklMVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJTEpLNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=O4iWLR2mvf8gW6QrD6uiWKKWfEubi4Xv418QKLOFVVODdPN0nrxq/xAJw1I1hx9LMfpEMn1jUXRd/nM5VynrtZOzMJG1Pi5KQbhHVXNPUb+KNLoKh8N7dsPcOFMqCuNy4i6GaiYBIcihV8fNO0k8P/1sZVVt8Rm8HLOhp0ywR64=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=1OhHA3tQesHAm8R0yHAK/Yz9C8LSErY0JbzzLjsKDBE=;
-	h=date:mime-version:subject:message-id:from;
+Content-Disposition: inline
+In-Reply-To: <20241227-a133-display-support-v1-9-13b52f71fb14@linumiz.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250106_030416_152767_EEAE2C1B 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20250106_032453_716853_075CB8F6 
+X-CRM114-Status: GOOD (  10.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,88 +86,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
-
-On 2024/12/30 21:35, Dmitry Baryshkov wrote:
-> On Thu, Dec 26, 2024 at 02:33:09PM +0800, Damon Ding wrote:
->> With the previous patch related to the support of getting panel from
->> the DP AUX bus, the &analogix_dp_device.aux can be obtained from the
->> &analogix_dp_plat_data.aux.
->>
->> Furthermore, the assignment of &analogix_dp_plat_data.connector is
->> intended to obtain the pointer of struct analogix_dp_device within the
->> analogix_dpaux_transfer() function.
->>
->> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
->> ---
->>   .../drm/bridge/analogix/analogix_dp_core.c    | 92 ++++++++++---------
->>   .../drm/bridge/analogix/analogix_dp_core.h    |  2 +-
->>   .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  2 +-
->>   3 files changed, 50 insertions(+), 46 deletions(-)
->>
+On Fri, Dec 27, 2024 at 04:37:56PM +0530, Parthiban Nallathambi wrote:
+> A133/A100 SoC doesn't have reset control from the CCU. Get reset
+> control line optionally.
 > 
-> [...]
-> 
->> @@ -1127,6 +1128,7 @@ static int analogix_dp_bridge_attach(struct drm_bridge *bridge,
->>   
->>   	if (!dp->plat_data->skip_connector) {
->>   		connector = &dp->connector;
->> +		dp->plat_data->connector = &dp->connector;
->>   		connector->polled = DRM_CONNECTOR_POLL_HPD;
->>   
->>   		ret = drm_connector_init(dp->drm_dev, connector,
->> @@ -1535,7 +1537,9 @@ static int analogix_dp_dt_parse_pdata(struct analogix_dp_device *dp)
->>   static ssize_t analogix_dpaux_transfer(struct drm_dp_aux *aux,
->>   				       struct drm_dp_aux_msg *msg)
->>   {
->> -	struct analogix_dp_device *dp = to_dp(aux);
->> +	struct analogix_dp_plat_data *plat_data = to_pdata(aux);
->> +	struct drm_connector *connector = plat_data->connector;
->> +	struct analogix_dp_device *dp = to_dp(connector);
-> 
-> I see that Analogix DP driver doesn't support
-> DRM_BRIDGE_ATTACH_NO_CONNECTOR, but at the same time I don't think this
-> is the step in the right direction. Instead please keep the AUX bus on
-> the Analogix side and add an API to go from struct drm_dp_aux to struct
-> analogix_dp_plat_data. Then your done_probing() callback can use that
-> function.
-> 
+> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+> ---
+>  drivers/iommu/sun50i-iommu.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 
-It is truly a more concise way.
-
-In the next version, I will add the following functions on the Analogix 
-side in order to get the pointers of struct analogix_dp_plat_data and 
-struct drm_dp_aux on the Rockchip side. And the way has already been 
-verified.
-
-struct analogix_dp_plat_data *analogix_dp_aux_to_plat_data(struct 
-drm_dp_aux *aux)
-{
-	struct analogix_dp_device *dp = to_dp(aux);
-
-	return dp->plat_data;
-}
-EXPORT_SYMBOL_GPL(analogix_dp_aux_to_plat_data);
-
-struct drm_dp_aux *analogix_dp_get_aux(struct analogix_dp_device *dp)
-{
-	return &dp->aux;
-}
-EXPORT_SYMBOL_GPL(analogix_dp_get_aux);
-
->>   	int ret;
->>   
->>   	pm_runtime_get_sync(dp->dev);
->>
-> 
-
-Best regards
-Damon
+Acked-by: Joerg Roedel <jroedel@suse.de>
 
 
 -- 
