@@ -4,201 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A352E77188
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 15:02:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75E4FE77188
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 21:39:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IA1Z9g5MoHAUIdyYYJKXDc5eci8pg+h+XLjcZSEeRTk=; b=0QqooeitbgmoCH
-	NbaaqUA88wFzzUkaEvp3FLFVFnGM5IfAWb4FcmJsuwLdE2C5M6/Kkdqmk0nujuMAYk0yEvXG1oBxZ
-	sbQ7tngZBlbb/VDifzc696Vk6z9NegrDuwPP6QEMAUqjXWLe8H7YyCc8W9MT/oMWh+JAiJ4X9uica
-	TzI+Nj4GGr7stGuSutr2fKYHQwwj6XTk3jwHYDAQqMxmLcQnYQOYvW3eaQh32hu5njJlE9QAMlyS/
-	aJAKHFvfBpogD4sqCwbiPQqEtfs/kSCmVG6uhxhJJnsCJBt6jOdpSLIWSrnVN+f6rXgyfeXbYdGh3
-	qj1bm8zbfCRc7CC2kJCw==;
+	List-Owner; bh=+wJDPXC3svsRCZ/6bzuKbK3K5kd9SkMn22ftOwa+VSw=; b=4kpMESl64NscKf
+	gvJuyrtceIv1GXntB89iF1u1+T+h4sKzbmQTulNF5wbJX93GBYvu5gkzYGbolx+YlaU2aznRTqnVW
+	w18TWVmEvpgtOCIbwVpk1z0O3o0HJLvXZr/7Dw3GiZc0AuhB01QSm9UB6Kiz+FwB3BqqvGZHI/6Ft
+	3nI74WZRIdhOrs/zSMVM/zz2xBsEQhiBONsKMrJEN3pAb+RWg7EGBjt1eOag1mGW1FIhDV0mStPgX
+	Zcggpdl26xiL5PDZPIMmuhn22egdXn1hjfa06cY3h8M+CpMOCtuQidjSPN3Ve+l+zpr2lAVrJ55Ju
+	Nw3LPfwF/5UbWbm0FqGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUocU-00000001hYm-0VNc;
-	Mon, 06 Jan 2025 15:02:18 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1tUuos-00000002l68-2hD5;
+	Mon, 06 Jan 2025 21:39:30 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUoZl-00000001h1Q-4C6b;
-	Mon, 06 Jan 2025 14:59:31 +0000
-X-UUID: d129a0cccc3e11ef82ff63e91e7eb18c-20250106
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=G4oql9wZ6P0Nh4JXR/7Tc+RaO1qNEXQ9LacMhbbTZ+o=;
-	b=P5JbwDDrkpFtLP0C4w3XjxgY9H42CqTWU85f1qfR4S0FC0PvqbC+hqleb00ikzvYrWYFWiHvTGNun78PIoxZrpNvqVzM9qtZUW5n7S8UDc+fpVRk2ETmlC2O9TOKqihFF3yyF4+YwFsfWjkegWLhZp4EztWMRufsJYh++ic1wYc=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.46,REQID:cec0175d-7761-4199-9953-bca9b4147aa7,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:60aa074,CLOUDID:06b96a19-ec44-4348-86ee-ebcff634972b,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102,TC:nil,Content:0|50,
-	EDM:-3,IP:nil,URL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0
-	,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0,NGT
-X-CID-BAS: 0,NGT,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: d129a0cccc3e11ef82ff63e91e7eb18c-20250106
-Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 515338026; Mon, 06 Jan 2025 07:59:24 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Mon, 6 Jan 2025 22:59:21 +0800
-Received: from SEYPR02CU001.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Mon, 6 Jan 2025 22:59:20 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pzUl5aBu3/zzlyH2K7inw9dop9Sp8fk4L8VkMRuMeGpLwHs8kTeqyyI0Cwfl1CkWQNwCHBzJY60FET/mp4sv72Dw7+PNHHG1Z0gfvsW4vYCQ7DKXjljijwTDmsuaO/wI3e8550fKDa1oMpVbiKtyng4Fh2a/rK6yuEJjbmBhkNKk8v6nDiOT7xAz6vlNVIE2KChOpipiJucz+QPhlINkDZvdfRsO9Lwhjb6cQD9UHgWhDQg6vDmp4XifhUrrUNdNzh7zV7NPhO7Qfy+wltnlh10jW1JytGugtrQXfTEH3ncOXg488GdsrJNgf83czSGD/85uAHf2HMALiE27QI/TkA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=G4oql9wZ6P0Nh4JXR/7Tc+RaO1qNEXQ9LacMhbbTZ+o=;
- b=Jk3HMknMoUylpFQsy6WY0q/UDRS9f6gsVQI1OMkAzIjWLR0qNONm5uewVTyLGgNTjw78sb8CjVS5CRKpt8IGrsXHAE2XsrfTQxui2z1QMJ5HIL2xqtOHbcURJR4AEeAYg6i4myMio39OgUwCjJ/ZNLapw8UGlSy/lrszMwFDK+BhRfoUyW+/KN63WpG8PlqSsKVQzCVD7pYDbt+07KTK6nXeUbDgIQYv0bkL/pXfVK0BAkejlh3GJzDQuTmPTBMBM4AWuB7cMERciRaV2TzH/fmp9MEQ8RRZXLdeNCTIS8iI4DuTvmHgn5aQGB7QXXy8elVGfXWiCww0PVfYL9Av3Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=G4oql9wZ6P0Nh4JXR/7Tc+RaO1qNEXQ9LacMhbbTZ+o=;
- b=NNRXocOFLPjXSD3zKgRrrXSuDH11zN4CMYGVDNCGmNadQo212J5UFMqWht1Wg9w2PUdGj19xGeX5GChXn7M+GRW5ZBGcgEZu6mTyGPUr0+WMWZjyaInhTXTBm8hH5yW2bfrfizQC8Pp4zZCWhDSQB6UYqmQpY23cpLYpEUgmOkQ=
-Received: from PSAPR03MB6236.apcprd03.prod.outlook.com (2603:1096:301:9d::13)
- by SEZPR03MB6959.apcprd03.prod.outlook.com (2603:1096:101:9e::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8314.16; Mon, 6 Jan
- 2025 14:59:18 +0000
-Received: from PSAPR03MB6236.apcprd03.prod.outlook.com
- ([fe80::2b28:30c4:61a8:20f6]) by PSAPR03MB6236.apcprd03.prod.outlook.com
- ([fe80::2b28:30c4:61a8:20f6%4]) with mapi id 15.20.8314.015; Mon, 6 Jan 2025
- 14:59:18 +0000
-From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
-To: "robh@kernel.org" <robh@kernel.org>, "matthias.bgg@gmail.com"
-	<matthias.bgg@gmail.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	"kishon@kernel.org" <kishon@kernel.org>, "heiko@sntech.de" <heiko@sntech.de>
-CC: "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-mediatek@lists.infradead.org"
-	<linux-mediatek@lists.infradead.org>, "linux-rockchip@lists.infradead.org"
-	<linux-rockchip@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] phy: Use (of|device)_property_present() for non-boolean
- properties
-Thread-Topic: [PATCH] phy: Use (of|device)_property_present() for non-boolean
- properties
-Thread-Index: AQHbW6G1xXN5zdiJLkCOb2stqzcJoLMJ3+OA
-Date: Mon, 6 Jan 2025 14:59:18 +0000
-Message-ID: <93e3073207cc2c01aa0f6b9a8c39cb091e4b9081.camel@mediatek.com>
-References: <20241231163121.241543-1-robh@kernel.org>
-In-Reply-To: <20241231163121.241543-1-robh@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PSAPR03MB6236:EE_|SEZPR03MB6959:EE_
-x-ms-office365-filtering-correlation-id: 3a09f0be-9f28-4e79-db5a-08dd2e62b22d
-x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|7416014|1800799024|38070700018;
-x-microsoft-antispam-message-info: =?utf-8?B?Q1FBbWpZQlJEeXlZeERxczVtM0VFZFRCbDJkV0RUdHFtUnZINm5Fa2VTU013?=
- =?utf-8?B?WWxOTnBXTDVQS3pDSDcyQjZMNHZXNFlDQWpVK0xHOFgzaklnRlprUmt2VkFK?=
- =?utf-8?B?dGRwWEhSVnlTaXV1SmFSUjVhTVFNbVI2TnpvNlZlQ2VrRjNKV0NnblNtbU5w?=
- =?utf-8?B?UmZkVlBNSVNvZHBqNXY4RFNWKzJrM21oeG1sQVc5VXY2WWVhUVdQTHdxNlRO?=
- =?utf-8?B?WFp2c2ZjWnlFUnB2Y2tIYU02YWN3YkkzRDl1bWF6UWFmZFl4LzR0eWVZR1Zo?=
- =?utf-8?B?NndmRkVlcUFCYXFjaWhHYVZzQ2pncElLN09Wcll0ZmdwTXZaU2dtZlp3SHNH?=
- =?utf-8?B?ZEVCbGdMbm1UZ3JTdmlMYlBmS09YbWpqMlRJY0k4NVZCWHdYc2ZmSms0RUxC?=
- =?utf-8?B?bEptU1hMTDBQYmFpYzVwNU5JTGdsMEJGdVpCNU1EM0wxdXhOSDBvQld1QWQ3?=
- =?utf-8?B?SnBQWUxPNWpEclpvcldvNnRpdUdNOXNNelNHcWJQUFUySnBHZmhSS1RrVHNl?=
- =?utf-8?B?VWhxc0ZabDNCRHllOXFDcVF0VUx6TkZlcGNybXVjazJ6R01Nb3NHM080bjI1?=
- =?utf-8?B?ZTdQZ3JEcXdUYmsycVdQTW91YWJMdFNMd04vNEZMb0tob1FlSmk5cVJmTGd2?=
- =?utf-8?B?Z3BIdENiN2lBNklRZC8yT2dKQmJubDUxRWFsbWR1TTRwNGxLcHlDSy9jYkVp?=
- =?utf-8?B?RXN2b1JIVVh2Tm9Wd0xUUksrYmFFVmNBSk1PWlhVaWVZWHgxYnZnQk13OHNH?=
- =?utf-8?B?THRGdlpVYUc0am5yeTZhZy9weHptTk8wMkQveitTWndXZUtYMkM2c1hlQTJo?=
- =?utf-8?B?TWF4MmZVNVlGUXNFZWxXWGQ5dll2Z0lMQlQ0WnIvcDJmTXFRMDVEUkg2MnZF?=
- =?utf-8?B?K2NMdHVXNUFIandIN1NodVlkb0d2SW1mTzZrNEhZRlBSNGg5TlBDYXdFTFJH?=
- =?utf-8?B?UThvZnh5VUhERmVZTjA3RUVGYW9nYlJIMVhlS054WUdhelJmelFDSUt3elo4?=
- =?utf-8?B?OU4xZGplaFFoMzhzL3JRQU1jNGtwSWxucnYrZmZMWi9SS0JjYWdzK2RlcHM3?=
- =?utf-8?B?c2pUM285VkhwU0lGWE10REMxeFJhN1lqaEVwR1EwRGIrNUhrdEVtTDBmbk1M?=
- =?utf-8?B?WmNxaFo4QndLSEF4MXpIRHdaalFDem5ieWl2K0s0V2VZekJWNzZQODlrM251?=
- =?utf-8?B?Vkl4RVpyOTZnWnBFNUphUjBrc0tRTi9zYk1HQndRajdQRVlUTTdxWEozNkRm?=
- =?utf-8?B?Und6N2FoTTlPRWR2NDNaTFhPKzc5bVNCOWZLbWR1eVAwQm03VXpWN1RLaVVS?=
- =?utf-8?B?bDI3MkxMVmE4bnNMclU1Y1NKWmVCTFRuU1ArbHE3VVo2Qm91SzlLZDRLYURx?=
- =?utf-8?B?OTMyakxjU3FnTW1oam1udm16blhQMVc5UTBTd3Q0emE5dUgzZEIrWVhJM0VB?=
- =?utf-8?B?VHNvZUtFUFpjVEViaDlGQmlnOUJ3VnFISWVSSmxrYlYrbExpaGRvMWdDMU1v?=
- =?utf-8?B?YVZHUDJKMXYyTGhSdjNydDRlU0NCN2xFOEZCVTlZS0xQVFpFSGdBbmttQVNq?=
- =?utf-8?B?dFpnTFZCMHlvVjJwSVJPdTlWMmxxK2xOOGJHY0hkRXlHU0U2VUF4aWVqLzE3?=
- =?utf-8?B?dnpldEFrTDFSRm1wOXdRZk1aSFJvTHUyMzYwYzEzeVR3RzdFNlB4eXZPUlVv?=
- =?utf-8?B?Y1RhbmNGOEEyU0VMYSs1OFVHd2xybWpSaEcvMnpVcnpjcDdGT3MxaVN3ZDll?=
- =?utf-8?B?NmdlaXNEQ3dzZ3liUFVhbjdyMmpnMUxXMVFPdzFIS29WaVBRODBrMUZuYTla?=
- =?utf-8?B?aXJOemVlVVBmYk1Qd0lXNmM5cWtxNzE5Y1NwV2F3b1o2Nnp0clVZNFJvRDdP?=
- =?utf-8?B?R3dWY05KeVdUclM0UEdRNXRHUlpOaC9wQVZ5cnNsaXoxajEzT20zVDdaSjA1?=
- =?utf-8?Q?7cbAaIRPhss3tgPqo2r5b4Nb6UvA2K6Z?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB6236.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(1800799024)(38070700018);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?UWRTdWhldFJoRHpnMTEwNnNLYnc0dkJ5RzhndlN0M0FiTW9HUlp4NzRJMm9M?=
- =?utf-8?B?VkZibFA3TmdBMTczTytiTzVqZUZpcnprUVFaMXZmWlF4RVpsa2tLd0QrTHo4?=
- =?utf-8?B?bEpVbUxzb0E4WGFNMjNHOFhFNWUzS3grQXRJb0VsbmZtcVFKcW9TaVo0YjN5?=
- =?utf-8?B?OW9Rdi83UklySWk0M0laMEpjdTNYTkNlMCtIU1NqMUV1aTA0UFkxU3lDUXJu?=
- =?utf-8?B?Z2lPNXpVVmRuZTNydzZtMW05dVFVcnFNZEZDOTVCZXZaeVFBNHB1NHlRaTV1?=
- =?utf-8?B?eFVmODlEUVhQSTd4eXorSHRUTDk0TFdVejNFVWNIOHRMdklBVjlzL25GTGF1?=
- =?utf-8?B?ZE1aM3FuNEpWS3dISjhRd1NOSHNFRkxUWmYwVWlidWRaY2V5WkJxNENXM3Ru?=
- =?utf-8?B?cmJBc290QjZleGcxdlFTZFk4V0VOZ0JpQ2pjc0NHQTc5RWpGajRSTXZVZHkv?=
- =?utf-8?B?cmoxYU9XcmRpTFp6QzA2SXdxMDdDd25tamVmTGt0VGFUTFhkQ1FkUTgwMStq?=
- =?utf-8?B?by9IaURxbUExOEVYdmIra3VUT3ZLWjV2TlM5SHFGK1I0R2ZCTmx6T1BhNGt6?=
- =?utf-8?B?eWs5QXFQNmFibDBmRC9XbjFNcU9xYkk4bE9uZTltSTd1VU1WaXc4TVhYTnR1?=
- =?utf-8?B?aEpFZmxlNUo5d3hSa1NBMFh2bVlTRUlxSjFYRGZkQVRlMkc0YzRPdU83YnFn?=
- =?utf-8?B?QmxQWXh1NzVUNWtPaW1CRFU0MklEcTAzaWhqeDVWMk1PeUVMeDdMTnBYekVa?=
- =?utf-8?B?cEVxMmwxRk5GekpVU0tyckFEc09HaERPaHNDc0VtNnVRTTVxRTlXbFlLdGxi?=
- =?utf-8?B?eG9WMWg5WHR0TW5PVXR3cEo0ckFUaVpVOXRscTdaVEozbE5UaHd3RUhCaVh0?=
- =?utf-8?B?bWFlQUJ3OFZ1cHJmWXBISFl5SDZvQWpoS2dKTWlocnlaOUR0Z2hUdWRTeTI3?=
- =?utf-8?B?WUZnaW1DMFYzNStSWGZWRW0rWTZFNHhDQmxsaEN4Uzk1bVR5L3BpVWpQeGM3?=
- =?utf-8?B?NUdLQ2xhczRjTms1UStJa1VpTVdzWjFvL01TbVdNT1N0K1VIQjhGMDJBQ0E1?=
- =?utf-8?B?eklxWStRTlFlN2pHeHo1VzZxY2FqbXZrK0h4N1FPWEVHbkc2aHMxZGRyQzg1?=
- =?utf-8?B?ZWozUjBVWWxSbThVWmNQdUNwT0lwVFdrSTBZZ3gzM3VZbXJzZWdySEljcEp6?=
- =?utf-8?B?cmhHbUExZU9Vd21mL1FTWWdJR0RaOUhkelB3VnAvalZNaWMvWlNaZHllOWdU?=
- =?utf-8?B?TzR2eEFxUDZuTy9xVWVLVW16OHp1RnNvU1RadXdDamVXakNDSWJwU2tXNVdU?=
- =?utf-8?B?WmkyazlQUVVEck1zL3I5VVNqeDFpUDhyUEthRnhTdWMyVlBNRG5CYmVITmc0?=
- =?utf-8?B?dTBjb3NjRzlWWnluRUREeDdsZGNISjZENU9HZFBuZUZsVVRBZjE3MFkxN0k2?=
- =?utf-8?B?TkRiZzZaUWZQWDdqR0xlbUpOM0tJSlpiUmNLekFnZnJjK3FVVFZPR2VjYmdi?=
- =?utf-8?B?QTFMYnFQQ0kvR2VqdExSVDRoRTM3b0c4WGppN1lXLzY4SXR3RDc1YVNCQWVB?=
- =?utf-8?B?UWdsY2lHZ3o1dWlZVStZdXN0azNtejJ3aGZlR1V6ekVWTkcrQjlCSDN3ZlZ5?=
- =?utf-8?B?cGZEY0tHc2xPdmlMV2dySjR1Y3JXRnFHdEVlZlQxV1doaFpFRjlRZ1JYY0JI?=
- =?utf-8?B?OSsvVkJIRHc0VjFxemovQnNXdHMwc2xHYzg0UGxhdDdycUJKMGVFdmVtTWVi?=
- =?utf-8?B?TGUzYnNaTzB5WmlQa2xYejNvUDdOaFhnd1crZUVEdmxHMTgwbjdhK1JndTNx?=
- =?utf-8?B?YUdoS3ZlUXdVSTJHNEhxMlZuUUM5OVB6blExSVVvTThGNlJQSklyTmxDc3dq?=
- =?utf-8?B?WkROL1lnQVBVQXlWOWpPQ3JZQndxRm1rbVF6NEJ0Wm9kU215cUFtMEYvQWE0?=
- =?utf-8?B?WWF6NmUxNzZWcFhPU0FmT29kUTJDb1pnN3l3dVJFdW93SXBEUGIrZHpLVjFE?=
- =?utf-8?B?M0VHa0dzTXF3NmxPWnRkSmdwQWZjSzdTSXhSNmlMalJMM0pEY3JDRi9jZGVL?=
- =?utf-8?B?bDRoRUtVZ28rTUNiUVZ4aUdUb0pFNThwV09RRnFld1VWVUwxWUZmdjk3NDhG?=
- =?utf-8?B?WTZyY0J2NUd3eUpvN2tUWjhKcEdBaFE5MTVaSFBMd1BpUTVkNFQ2SVhIWWhP?=
- =?utf-8?B?UlE9PQ==?=
-Content-ID: <6D34F514EA1B714E8215BCC732EBE4B5@apcprd03.prod.outlook.com>
+	id 1tUund-00000002kxy-2AvE;
+	Mon, 06 Jan 2025 21:38:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1736199493; x=1767735493;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=HvONposlKuJw4Y+dSo+jkkd/aq1cJfkDp0GXQPM1m7g=;
+  b=c8W/l5OvXlUBRgeKoaJUs7IErUePU5giZiuzSySJqMtKS/loh7xuurKH
+   2Ao9xFK7EB9iLfm+xZdrIUpsGhKtHFw4GFAbON3MuodV/L3FDnCOQpzMg
+   IFdlyC4hpRVEGvAnQpVSnpuPkZkPI6KO0eMdGUfUIOuZ3WjFGwXz03msS
+   oGxdzYVwD1gW2/MfRtG6wWKMuF2SY21kT3IyAh3sEC1PP7tQF7OCLqhl6
+   jTliJkzX82w9LrwuhEqAtFx1Rv1TYSMGywnpD05jUg8xTkJ7Dpq0R3OLI
+   1zyvH2lDGdfL0r64sDtRDnpCcXy/9/3xumFN4v1XMlbNmx7vvsL/bVNPq
+   w==;
+X-CSE-ConnectionGUID: 0bQPJu+lRIeZz/qTxU40GQ==
+X-CSE-MsgGUID: HX/cV7DCS62OSTARvlF6lA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11307"; a="53780328"
+X-IronPort-AV: E=Sophos;i="6.12,293,1728975600"; 
+   d="scan'208";a="53780328"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Jan 2025 13:38:11 -0800
+X-CSE-ConnectionGUID: QPWSosUcR8GXShDSJc/YYQ==
+X-CSE-MsgGUID: fPwO4tSLSAarkRVBMlbf0Q==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,293,1728975600"; 
+   d="scan'208";a="103079957"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by fmviesa009.fm.intel.com with ESMTP; 06 Jan 2025 13:38:08 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tUunW-000Dwh-1W;
+	Mon, 06 Jan 2025 21:38:06 +0000
+Date: Tue, 7 Jan 2025 05:37:46 +0800
+From: kernel test robot <lkp@intel.com>
+To: Chukun Pan <amadeus@jmu.edu.cn>, Vinod Koul <vkoul@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, Heiko Stuebner <heiko@sntech.de>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Jianfeng Liu <liujianfeng1994@gmail.com>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, Chukun Pan <amadeus@jmu.edu.cn>
+Subject: Re: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old
+ DT for RK3568
+Message-ID: <202501070458.qKEuL2HH-lkp@intel.com>
+References: <20250106070000.605284-1-amadeus@jmu.edu.cn>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB6236.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3a09f0be-9f28-4e79-db5a-08dd2e62b22d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jan 2025 14:59:18.7187
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: VF4tPeRTV1WMM3O0g7T8NctSU1sNmC1biWayH8iOGdIlMnVhUBxfBU6mr//8chYPETaVEE5ZrDhYKWsqepKRC5OjeHu75V8W7Y3KoitBIBU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR03MB6959
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20250106070000.605284-1-amadeus@jmu.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250106_065930_047025_6A544459 
-X-CRM114-Status: GOOD (  17.44  )
+X-CRM114-CacheID: sfid-20250106_133813_608837_571D32F4 
+X-CRM114-Status: GOOD (  14.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -215,87 +93,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2024-12-31 at 10:31 -0600, Rob Herring (Arm) wrote:
-> External email : Please do not click links or open attachments until
-> you have verified the sender or the content.
-> 
-> 
-> The use of (of|device)_property_read_bool() for non-boolean
-> properties
-> is deprecated in favor of (of|device)_property_present() when testing
-> for property presence.
-> 
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
-> ---
->  drivers/phy/mediatek/phy-mtk-tphy.c           | 4 ++--
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 4 ++--
->  2 files changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c
-> b/drivers/phy/mediatek/phy-mtk-tphy.c
-> index 3f7095ec5978..d36f68dd622e 100644
-> --- a/drivers/phy/mediatek/phy-mtk-tphy.c
-> +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-> @@ -1215,7 +1215,7 @@ static int phy_type_syscon_get(struct
-> mtk_phy_instance *instance,
->         int ret;
-> 
->         /* type switch function is optional */
-> -       if (!of_property_read_bool(dn, "mediatek,syscon-type"))
-> +       if (!of_property_present(dn, "mediatek,syscon-type"))
->                 return 0;
-> 
->         ret = of_parse_phandle_with_fixed_args(dn, "mediatek,syscon-
-> type",
-> @@ -1278,7 +1278,7 @@ static int phy_efuse_get(struct mtk_tphy *tphy,
-> struct mtk_phy_instance *instanc
->         }
-> 
->         /* software efuse is optional */
-> -       instance->efuse_sw_en = device_property_read_bool(dev,
-> "nvmem-cells");
-> +       instance->efuse_sw_en = device_property_present(dev, "nvmem-
-> cells");
->         if (!instance->efuse_sw_en)
->                 return 0;
-> 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> index 96f3d868a526..b5e6a864deeb 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-> @@ -440,7 +440,7 @@ static int
-> rockchip_usb2phy_extcon_register(struct rockchip_usb2phy *rphy)
->         struct extcon_dev *edev;
->         int ret;
-> 
-> -       if (of_property_read_bool(node, "extcon")) {
-> +       if (of_property_present(node, "extcon")) {
->                 edev = extcon_get_edev_by_phandle(rphy->dev, 0);
->                 if (IS_ERR(edev))
->                         return dev_err_probe(rphy->dev,
-> PTR_ERR(edev),
-> @@ -1323,7 +1323,7 @@ static int
-> rockchip_usb2phy_otg_port_init(struct rockchip_usb2phy *rphy,
->                         goto out;
->                 }
-> 
-> -               if (!of_property_read_bool(rphy->dev->of_node,
-> "extcon")) {
-> +               if (!of_property_present(rphy->dev->of_node,
-> "extcon")) {
->                         /* do initial sync of usb state */
->                         id = property_enabled(rphy->grf, &rport-
-> >port_cfg->utmi_id);
->                         extcon_set_state_sync(rphy->edev,
-> EXTCON_USB_HOST, !id);
-> --
-> 2.45.2
-> 
-For MediaTek:
+Hi Chukun,
 
-Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Thanks
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on linus/master]
+[also build test ERROR on v6.13-rc6 next-20250106]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Chukun-Pan/phy-rockchip-naneng-combphy-compatible-with-old-DT-for-RK3568/20250106-150311
+base:   linus/master
+patch link:    https://lore.kernel.org/r/20250106070000.605284-1-amadeus%40jmu.edu.cn
+patch subject: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old DT for RK3568
+config: arm64-defconfig (https://download.01.org/0day-ci/archive/20250107/202501070458.qKEuL2HH-lkp@intel.com/config)
+compiler: aarch64-linux-gcc (GCC) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250107/202501070458.qKEuL2HH-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202501070458.qKEuL2HH-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   drivers/phy/rockchip/phy-rockchip-naneng-combphy.c: In function 'rockchip_combphy_parse_dt':
+>> drivers/phy/rockchip/phy-rockchip-naneng-combphy.c:314:32: error: passing argument 1 of 'ERR_PTR' makes integer from pointer without a cast [-Wint-conversion]
+     314 |         if (IS_ERR(ERR_PTR(priv->phy_rst)))
+         |                            ~~~~^~~~~~~~~
+         |                                |
+         |                                struct reset_control *
+   In file included from include/linux/clk.h:12,
+                    from drivers/phy/rockchip/phy-rockchip-naneng-combphy.c:9:
+   include/linux/err.h:39:48: note: expected 'long int' but argument is of type 'struct reset_control *'
+      39 | static inline void * __must_check ERR_PTR(long error)
+         |                                           ~~~~~^~~~~
+
+
+vim +/ERR_PTR +314 drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+
+   274	
+   275	static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy_priv *priv)
+   276	{
+   277		int i;
+   278	
+   279		priv->num_clks = devm_clk_bulk_get_all(dev, &priv->clks);
+   280		if (priv->num_clks < 1)
+   281			return -EINVAL;
+   282	
+   283		priv->refclk = NULL;
+   284		for (i = 0; i < priv->num_clks; i++) {
+   285			if (!strncmp(priv->clks[i].id, "ref", 3)) {
+   286				priv->refclk = priv->clks[i].clk;
+   287				break;
+   288			}
+   289		}
+   290	
+   291		if (!priv->refclk) {
+   292			dev_err(dev, "no refclk found\n");
+   293			return -EINVAL;
+   294		}
+   295	
+   296		priv->pipe_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-grf");
+   297		if (IS_ERR(priv->pipe_grf)) {
+   298			dev_err(dev, "failed to find peri_ctrl pipe-grf regmap\n");
+   299			return PTR_ERR(priv->pipe_grf);
+   300		}
+   301	
+   302		priv->phy_grf = syscon_regmap_lookup_by_phandle(dev->of_node, "rockchip,pipe-phy-grf");
+   303		if (IS_ERR(priv->phy_grf)) {
+   304			dev_err(dev, "failed to find peri_ctrl pipe-phy-grf regmap\n");
+   305			return PTR_ERR(priv->phy_grf);
+   306		}
+   307	
+   308		priv->enable_ssc = device_property_present(dev, "rockchip,enable-ssc");
+   309	
+   310		priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+   311	
+   312		priv->phy_rst = devm_reset_control_get(dev, "phy");
+   313		/* fallback to old behaviour */
+ > 314		if (IS_ERR(ERR_PTR(priv->phy_rst)))
+   315			priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
+   316	
+   317		if (IS_ERR(priv->phy_rst))
+   318			return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
+   319	
+   320		return 0;
+   321	}
+   322	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
