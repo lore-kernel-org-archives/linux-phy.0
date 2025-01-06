@@ -4,62 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1D6AE77188
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 07:50:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70CEAE77188
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 08:33:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7zMV9tWPqHQMsJ7xPfeNWT75Ea/oeQ1EoBYqreAhxvU=; b=tnzG1Ca6ANRgxg
-	CXI0/1I3TZi4A6g7re8ipgRDck1431KWRi7vq1fOmi9qB4MIhPQ4XJm2/k0TAEUq2oEtmlZKnxbOi
-	s3E25UC85pkcR6hTz57IbHZTkJGh+/UkaxY5aPInusQIhOY7MfOodAieOg/h2QIWcnBWoDvHdVpIa
-	A9Pu4gI+HjUf94zFq7AeLmrFw1mnU4/Vyl9sBGXn+sV12YgORnOPjs03Ddva8UzcWOWnXTMvLkhI/
-	Wyb+M640d+wrUdCyq36KbQV0d8MZznmkXkYzX9MXuN3ieysbjsezi4gGYWhuWlvEWR8yahV0sg6DZ
-	BgZp1wmNskgaJqdvoTkw==;
+	List-Owner; bh=cNWIl9ddig1fR+kZDXeqHz2hAVc0cNgD1wJ64IGLwsk=; b=irN4asmRXYmuKF
+	1Q86nhXFELi+60KWKzTUQCemiQ4SPk9DPviLfy8ql3L24cji5vKhB/mD6eRSO+rV4OSMMRdzOu+xe
+	6dg5fYxqo2Xa0PDUQkYPfhRdpWicz5vCJWvy0hrm1PtbWMo5HU955OFWeuXTYEzxdno6UGsA914eC
+	hDDpovX8684FI1JPJ/HKEhmrEFDnxlw+DeRrqSUpDnjlq054eTXX+SRp5l6wmxKBb50apKeGT9Tvg
+	XKbEdfwzaQFFtYG/7vMLV9WPDX35g+iRtkXb6B7bByIAGoB7mdO22aaDxjVkayBsnNaaMkMe/KbCf
+	aQMgFV397rNTgkYW2itg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUhsa-00000000R4Q-0o2n;
-	Mon, 06 Jan 2025 07:50:28 +0000
-Received: from mail-m49198.qiye.163.com ([45.254.49.198])
+	id 1tUiXx-00000000Wak-0nsb;
+	Mon, 06 Jan 2025 08:33:13 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUhsX-00000000R3k-0yk6;
-	Mon, 06 Jan 2025 07:50:27 +0000
-Received: from amadeus-Vostro-3710.lan (unknown [IPV6:240e:3b3:2c05:ad20::1])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 7d116aa9;
-	Mon, 6 Jan 2025 15:50:19 +0800 (GMT+08:00)
-From: Chukun Pan <amadeus@jmu.edu.cn>
-To: p.zabel@pengutronix.de
-Cc: amadeus@jmu.edu.cn,
-	heiko@sntech.de,
-	kishon@kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	liujianfeng1994@gmail.com,
-	vkoul@kernel.org
-Subject: Re: [PATCH 1/2] Re: [PATCH 1/1] phy: rockchip: naneng-combphy: compatible with old DT for RK3568
-Date: Mon,  6 Jan 2025 15:50:15 +0800
-Message-Id: <20250106075015.1061630-1-amadeus@jmu.edu.cn>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <2b04ca7fa5135c1194c39a9fbf2d6ab5630d6ef3.camel@pengutronix.de>
-References: <2b04ca7fa5135c1194c39a9fbf2d6ab5630d6ef3.camel@pengutronix.de>
+	id 1tUiWm-00000000WIo-3dNc
+	for linux-phy@lists.infradead.org;
+	Mon, 06 Jan 2025 08:32:01 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1tUiVn-0003Dn-TL; Mon, 06 Jan 2025 09:30:59 +0100
+Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1tUiVj-0078KE-2q;
+	Mon, 06 Jan 2025 09:30:56 +0100
+Received: from pza by lupine with local (Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1tUiVk-0008wh-1m;
+	Mon, 06 Jan 2025 09:30:56 +0100
+Message-ID: <ee93bdca7fddb03a1d1e8997ce21a9cb7339ae63.camel@pengutronix.de>
+Subject: Re: [PATCH RESEND 09/22] iommu: sun50i: make reset control optional
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Parthiban Nallathambi <parthiban@linumiz.com>, Joerg Roedel
+ <joro@8bytes.org>, Will Deacon <will@kernel.org>, Robin Murphy
+ <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+ <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai
+ <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland
+ <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>, Maarten
+ Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann
+ <tzimmermann@suse.de>,  David Airlie <airlied@gmail.com>, Simona Vetter
+ <simona@ffwll.ch>, Michael Turquette <mturquette@baylibre.com>,  Stephen
+ Boyd <sboyd@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, Vinod
+ Koul <vkoul@kernel.org>,  Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: iommu@lists.linux.dev, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
+	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org, 
+	linux-phy@lists.infradead.org
+Date: Mon, 06 Jan 2025 09:30:56 +0100
+In-Reply-To: <20241227-a133-display-support-v1-9-abad35b3579c@linumiz.com>
+References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
+	 <20241227-a133-display-support-v1-9-abad35b3579c@linumiz.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVkZSR9OVk9OSktPH0tITkpMQlYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlJT0seQUgZSEFJGEtOQRofSUtBQUpZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	tVSktLVUtZBg++
-X-HM-Tid: 0a943a97e21c03a2kunm7d116aa9
-X-HM-MType: 10
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pzo6NBw6STILEx8CLgEXGTQz
-	PDkwFBVVSlVKTEhNSk9CQ0lKQ0pOVTMWGhIXVRoWGh8eDgg7ERYOVR4fDlUYFUVZV1kSC1lBWUlP
-	Sx5BSBlIQUkYS05BGh9JS0FBSllXWQgBWUFCSEk3Bg++
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250105_235025_444694_939FF95E 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250106_003200_898274_04C853A5 
+X-CRM114-Status: GOOD (  13.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,36 +90,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
->> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->> index a1532ef8bbe9..372f5c07b5bd 100644
->> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->> @@ -325,6 +325,10 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
->>  	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
->>  
->>  	priv->phy_rst = devm_reset_control_get(dev, "phy");
->
-> This should be devm_reset_control_get_exclusive().
+On Fr, 2024-12-27 at 18:30 +0530, Parthiban Nallathambi wrote:
+> A133/A100 SoC doesn't have reset control from the CCU. Get reset
+> control line optionally.
+> 
+> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+> ---
+>  drivers/iommu/sun50i-iommu.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/sun50i-iommu.c b/drivers/iommu/sun50i-iommu.c
+> index 8d8f11854676..2ba804d682dc 100644
+> --- a/drivers/iommu/sun50i-iommu.c
+> +++ b/drivers/iommu/sun50i-iommu.c
+> @@ -1030,7 +1030,7 @@ static int sun50i_iommu_probe(struct platform_device *pdev)
+>  		goto err_free_cache;
+>  	}
+>  
+> -	iommu->reset = devm_reset_control_get(&pdev->dev, NULL);
+> +	iommu->reset = devm_reset_control_get_optional(&pdev->dev, NULL);
+>  	if (IS_ERR(iommu->reset)) {
+>  		dev_err(&pdev->dev, "Couldn't get our reset line.\n");
+>  		ret = PTR_ERR(iommu->reset);
 
-I will change this.
+With dt-bindings changed to require resets on those platforms that do,
 
->> +	/* fallback to old behaviour */
->> +	if (IS_ERR(ERR_PTR(priv->phy_rst)))
->
-> Drop superfluous ERR_PTR().
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 
-I think it would be better if I changed it to this?
-
-if (PTR_ERR(priv->phy_rst) == -ENOENT)
-	priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
-
-Thanks,
-Chukun
-
--- 
-2.25.1
-
+regards
+Philipp
 
 -- 
 linux-phy mailing list
