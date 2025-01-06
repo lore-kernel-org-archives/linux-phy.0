@@ -4,202 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B25E1E77198
-	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 14:46:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C636E77188
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Jan 2025 14:48:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x4UxHKbfIilaUWo58UCISXtRJNZ6HmKYWhvTcmI07+A=; b=gye2NkKGaFBvSV
-	t1oxrm1rQ6/hG0BqxiGRwBcCUN5VHHBBSn+JCIKrnr+aAKfmIVSTz+E3WkuD81fpUTSeAu/z7IBTR
-	71Z5gDfZuHwFX/WcFh5hBy8IZezcPBZat77GRUVuwZFmm+BUHWBTWzeYoV0Lx+IKLcHzV/JESFi/j
-	CAxPUQzjswhVz82PcxCdIDMnTpLwSEQBD92942x7lGy97xpq4hZggBTM8v/roI1MTIKPGHN97XEDB
-	UD3/U1lb+z/3fXlytDDz3VLfrOSAAIyLCFfrSYpw5pqIg1HA37KgWFPeIbnRRcGgk7e0uk5HCK7If
-	L1Tu4j8c9yhR3DySg0iw==;
+	List-Owner; bh=tXJOQf8tCDcFYktiXjG+kXojFfWwVzz7Tz7aZ13uey4=; b=LE+eTNIwjI2zfk
+	ul0vk6Mf3uVKQOOQugU9C9lKEt0FJuoACZvWDnQ9fdgHoi2CaoDAgYDUbkIke3vlbZGabDcAlQ8TV
+	wjZflAosWvFMebHksMjRGajjf4XDMGcxC2BRHijWcXO7eWaSwLeqv6Cz2xJwgFJKjbC2JsxHPHz2V
+	Gl5S/HJWVyeZRgEVsDF8C1UNkn9aV8I+iuJlXTIs8hEfDPuD/jNRHSNVfYGaB96rP5Dnjd97tCXFs
+	U6iuey3q6dpXM+qtXqWzDaYLwPQQl+q9mpZLhRGpvnD4tFycsyaFuImMF0G8AbA1cB4z3NqIawHML
+	LIZvuQWv1JEg3BUPJr5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUoNE-00000001d8g-1nmy;
-	Mon, 06 Jan 2025 14:46:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1tUoPX-00000001dro-3uHk;
+	Mon, 06 Jan 2025 14:48:55 +0000
+Received: from mail-yb1-xb30.google.com ([2607:f8b0:4864:20::b30])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUo9a-00000001aHT-3p5B;
-	Mon, 06 Jan 2025 14:32:28 +0000
-X-UUID: 0699b322cc3b11ef82ff63e91e7eb18c-20250106
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=VU9moDwHnIAebbDAjZNbJfhok30nIFRPXiV7WH2tJ50=;
-	b=pDANncw5Yk4sV7AcnjH4qRJ6n9Kss+29FmQQsS27i/BG9v7vOhMeaeNMmBV2fYLsFvxFGwmSLPzKT5we9ugxgrjhShcyJwAsVsW3b/3QWD40Ig+icyTEBm0MObZCs0uB74z7LoMqVjkEkHzed/akn5UrvPPJpDC9g5OP0J3Como=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.46,REQID:b22ab902-69dd-4646-acf7-0d3abcdae97e,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:60aa074,CLOUDID:0804be25-8650-4337-bf57-045b64170f0c,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102,TC:nil,Content:0|50,
-	EDM:-3,IP:nil,URL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0
-	,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_ULN,TF_CID_SPAM_SNR
-X-UUID: 0699b322cc3b11ef82ff63e91e7eb18c-20250106
-Received: from mtkmbs09n2.mediatek.inc [(172.21.101.94)] by mailgw01.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1859875538; Mon, 06 Jan 2025 07:32:15 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- mtkmbs13n2.mediatek.inc (172.21.101.108) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Mon, 6 Jan 2025 22:32:12 +0800
-Received: from HK2PR02CU002.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Mon, 6 Jan 2025 22:32:12 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=VDbFlUSqK8ix6CMjgzvsWr04rPTyTygbVWcThYTpT3w5mNJQJL9jiYRCRK4gJZpqmziQ3VEhowteAfXHaOIdq73BJGAc/EU6UrvcIRBXZYz1DxSkaLUutoCiOnfCyi1JBjk2fYAjrHmkWQeZL4Rvh1m9yfD2aL4sj2DiDelCPpKNNHsOSws7Nd7c6UevbgE8g+xXVEskpo8YdTNQkpn747zNMwsOpmAtSEgbUk+Sdk+1R46TuQwczDQ/A1pXYpsYxS64XLaUSv1SSk0fxU9syjvEE1hgfcK+er0tYM8DF9vXVdFvHu9tvq6Judubt1fHxKrs95M8ylVWlD6miDvKLA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=VU9moDwHnIAebbDAjZNbJfhok30nIFRPXiV7WH2tJ50=;
- b=A0QoEJzOOq3V8Sb6tnhGxUiOJoDZEbh33g7vJr4Ra7WQgLY5W+2bKtthyF/u83nDVnh5TRrBfc+EZhPdj7m/oj9AuhkTzyV/celAIurhFHHpXxufolMYDvGNXLZRUkqYLrPpPzxd6NuLrqgbudfSySA9aBAB0ETq3CFOJVsY3oC/v2Piwe4YoSms8jbAgxVywpIhg2i5z9nAjAVQBePLCdEs4meuDjk5C16cI+b/MN5VmbhvWsB78jV2dIUSloopnHTtJkMZuY0KO/GRS3wcdeMfWf4ogLc1vGGTovqINE73bopDRD6N6EICRj1TJEqUp4fi6CJu77AmAJCKJSXOQw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
+	id 1tUo9o-00000001aMr-3gRn
+	for linux-phy@lists.infradead.org;
+	Mon, 06 Jan 2025 14:32:43 +0000
+Received: by mail-yb1-xb30.google.com with SMTP id 3f1490d57ef6-e4930eca0d4so18595453276.3
+        for <linux-phy@lists.infradead.org>; Mon, 06 Jan 2025 06:32:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VU9moDwHnIAebbDAjZNbJfhok30nIFRPXiV7WH2tJ50=;
- b=cq9TFMzC09w+VwAr8u/h59VI+kQUuRcYUiUiXjA5M3tWnOFI0e2wC7aKk3yDXVDoFHJyk7hvjuShbFs1AF59qeIgW6Lf4ahUFAuU/+Jkk5Tsih8+448Io1wcPjl7LYcV7vrP/jZu4PVrjBpi9eNlai6WcHh8/tsYqXShdSiJqQs=
-Received: from PSAPR03MB6236.apcprd03.prod.outlook.com (2603:1096:301:9d::13)
- by SEYPR03MB7725.apcprd03.prod.outlook.com (2603:1096:101:13d::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8314.17; Mon, 6 Jan
- 2025 14:32:09 +0000
-Received: from PSAPR03MB6236.apcprd03.prod.outlook.com
- ([fe80::2b28:30c4:61a8:20f6]) by PSAPR03MB6236.apcprd03.prod.outlook.com
- ([fe80::2b28:30c4:61a8:20f6%4]) with mapi id 15.20.8314.015; Mon, 6 Jan 2025
- 14:32:08 +0000
-From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
-To: "robh@kernel.org" <robh@kernel.org>
-CC: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add property to set
- disconnect threshold
-Thread-Topic: [PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add property to
- set disconnect threshold
-Thread-Index: AQHbP68py1rCfJL+MkWe9w25qfqE7bLLMV+AgD7e0oA=
-Date: Mon, 6 Jan 2025 14:32:08 +0000
-Message-ID: <8f32aaacbf3d83ebdb31da2eaa0099eeddad3ae8.camel@mediatek.com>
-References: <20241126025859.29923-1-chunfeng.yun@mediatek.com>
-	 <20241127142639.GA3451514-robh@kernel.org>
-In-Reply-To: <20241127142639.GA3451514-robh@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PSAPR03MB6236:EE_|SEYPR03MB7725:EE_
-x-ms-office365-filtering-correlation-id: 6da88ffc-6f20-42d7-b283-08dd2e5ee680
-x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|7416014|1800799024|38070700018;
-x-microsoft-antispam-message-info: =?utf-8?B?VFByTUkyOElZUTBkUEI2RW5JUldpL0NZdFRsdUhHUFBPZTlyaE9XTU53K3dR?=
- =?utf-8?B?WEUxeHc2dE1xdFhXSjlIcERndTlSSlMyWnZGZGxrQWkrbHY1SGJqeHpTd3V6?=
- =?utf-8?B?QVRjdEpwTy92c2JhMFRlSE9XVk03SXpuS3QvRWJNeGgxWUozcTk4WUJuMDFk?=
- =?utf-8?B?L09KcVZrNUp1d2dOemswaG5rS1EySVYyckVJaVRDSXFRbHJtRWJRdTR1ZG8x?=
- =?utf-8?B?UXgrR0NieG5jSVlVZFJuRXNXNmg5OEx2NEdLUE41dFVHRnBJOEZpb1hnV25s?=
- =?utf-8?B?QTA0dVphM0xXMEoySTdQRVFwZGhnSU9yR05Jc1FpK2E3L09MdzV6OVZGVVl2?=
- =?utf-8?B?TTZZTWx4TmRPWVVzWE1SeENtNDdsZjF0dnlkYVBZSEphbkxoT0NnU0dhWFJT?=
- =?utf-8?B?ckVub0RMK3lDdlZFNnV6eTR3aE51bW9aU3Y2N05RMmN3QUx5MVlOcjdKVUM1?=
- =?utf-8?B?eEFFMEFvUGNhcTNoYzY5MDFXaDNpbkd3MEt4WlJhUUVYVHpLMm9TdlBmZVNY?=
- =?utf-8?B?RjltdytHMUVqR1lhY1QwQVkzVnZtYm5uU3hPanYrWllNMm15N1UzNWN4S09s?=
- =?utf-8?B?d2FhNlNYcW9HR2x4N1FBNkhSRTlSLzl6cnFETUYzcXoveVpwRU9vSTlaTlJE?=
- =?utf-8?B?R2FmTmZVRGFJUFdiTjJHdjNxb2kzRFJNYjZUZ054ZU1YS0JZZWtFTzBVdDBv?=
- =?utf-8?B?MHZrdElkRThCVDFsU09KWk9rdDVrM2pncmtkK0VuQVdOSzFYeFp1MmFrcmVR?=
- =?utf-8?B?dXg5QnZHaExOUUJSTlZXREZpbXhnNGpITnYrbUhzWUdXMEg3c3BHTkRaejZT?=
- =?utf-8?B?SFpzNjZGcVlmNVIxWWxZVkRTWGFxQU45eExxSk9lZW5RdnVZVkc0dlZkVFRH?=
- =?utf-8?B?YmxUU3Y0RzhmY2paekZjbEw2U1R6aVdHUVhkUmZKckExdVFnQkZsOThWWktW?=
- =?utf-8?B?MXY1UjAvVWRYbDRJZ09MTG5ReGtLY3g5U2s4cUxJLzZDRjI3VVdMWEErdkg5?=
- =?utf-8?B?WDBNT2NMSGZkeTk2WEhMZXFhcFEwTVY5eG5lZXRiZkRiUDJuZDJIQ2FzR2JH?=
- =?utf-8?B?dGNXcGZCT1FMZndyOXpvL0Fualhibm9HcXUwUFg0MkZiVUllZUlWeGdFempC?=
- =?utf-8?B?R2E0VktOUFNxTWE5bC8xc0x0NFBnQldzY2JhR0dYa21EcS9Vdys2aTR6MUkr?=
- =?utf-8?B?VS9TMnBSVDFsMlVERUxhZit5NlpIMlg3NjM3WU9ERkc3YTVFaTBjR2U2aWFI?=
- =?utf-8?B?bTJsdVpUQlRvQzBVUDZCZDFJYVZEYXh3NnNXWjBqeUN3VkZQWWF5Z1V3VHdU?=
- =?utf-8?B?bERHV3RMZ2k4YUpUZTFSeG4rQ3R4MHJMNjRTZzI2cDk1NSt5S2ttOFdBMzll?=
- =?utf-8?B?OXFzUWdLcnh2ZENxN2pxRWZZcVV3VlFmNHk4bGhBOGZzTHZ1N3RNbTErUjNm?=
- =?utf-8?B?WC93Ri9VRG0rZTJzeUNwcDQrWTV2MHJucVRpb25GY2hJTDdDSlNEbkNuWTVC?=
- =?utf-8?B?ellhY1lvU1NucHRVL21MbWFHT2oydWFCKzZSTlNSeGpFZ1lSOVpkNkxRU2xR?=
- =?utf-8?B?RUF0Z2lVb2h2ZmFEVk1odU04bWpVQmFJQitQSnArbjY4bW1qaEIyWVUxMnI4?=
- =?utf-8?B?QzBDQi84aFduaGt0NWxHTG9Jcml6QUxsMEdJbHo0VnNVbU55ZGQ0ckV1cHln?=
- =?utf-8?B?VGlvdGJVc3IxRVBZdFJoRFkrNmNWRVlGUFJEUmx1NnVCb1BOZkhTbHZuVnhr?=
- =?utf-8?B?dTRic3p3QjllTVh0ZnM3S1RZOTV4UlVUVzFnVytISGcrTjJWSlhlSG5FdEtw?=
- =?utf-8?B?ZFZKTXd6OXlQSG1ONXZVWXNNTWMzZjhaV3B3RnBOY000S2tkVlNpbEg2QkY0?=
- =?utf-8?B?ZDNzNDEyNHhENCsxUDQ4TXNJT3JSaGUvRi9HbWFxcVhlR3c9PQ==?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB6236.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(1800799024)(38070700018);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?eUpqK0p2a0htbE4xSUtNM3FwVU5kQlRxRnVlRGhVQXVkakd0VEFJVGJaMStE?=
- =?utf-8?B?ZWp1U1Z1ZEF4a0FDUVkxUm5zeTZlUDEzZHpMSUlWRDlqYXdWaFNPamI0NHo3?=
- =?utf-8?B?bXVBbzI3ZEFSL2k3d01KSnFnTW1oUkloYnJGcXVoZHdYUTlveGdVWXBoTC9Q?=
- =?utf-8?B?cFFOemVlbFF1VWZOYzhZaEFaQmJ0WWh4elA4TnFaWWVtOUpJbGhTcWNMREh2?=
- =?utf-8?B?YWQ3anFvTHU4dGxDUG84SDRkME9UeWVia3hhNGpZNEVwZ1NHZWVVNzhxbkhk?=
- =?utf-8?B?MjZHbDlaT3F4ZGFNdnR4OGhrSngwL1MwbkF1Mjk5cnQ2ZklPeGlXT2xHUnBE?=
- =?utf-8?B?YXpqNU5yREtoNVF6WFpiNGdnRE52Q3Z3dy95emt0QnlvYlUxT0loa2RSMmIz?=
- =?utf-8?B?ajNRUElkc3VRSHViM2s5d2svWXl4aVlsekU5eFVoNUdCRi95YVI3WHF1djVx?=
- =?utf-8?B?bm1pU2ZncFlsV2xzeE1BWnpXbzhwSHNhSkw1Z3FRK2xWZndVQWQzV2FaUmpY?=
- =?utf-8?B?RHRqa0ZoNjVtR2hDK0lVamZnVUV0bzFmYmtjNUNGWEtGTzZ1MlMzR3pMREc0?=
- =?utf-8?B?cUNhTitmRjcvc2NOeHIyMkh0YkJWV0xqbURneTM2SE9tTCtNQm1kSFp1cUc1?=
- =?utf-8?B?QU5SMEcwZmliTWxDc1ZsbHA0VUR2SE43Tm1sUEFROTFhWEJ5YzF1NUFKNTVM?=
- =?utf-8?B?d2hlbkJOMS9wYnkvdGFQQWhra3k1bDBuRUdTYW9wSjJISEV6dEZJcXJENlkz?=
- =?utf-8?B?Y3lsTDZFSXF1UlA1dmNwTWUyN2ZNVm1TajZRazBKNGFtNVY2MEFzd3BoN3dm?=
- =?utf-8?B?WEhIVjdMaC9aYWx5VCtMOHVlZzlnNGR1c0lkRjF1UUxwK0ZEQkZ0Wm1VaGVW?=
- =?utf-8?B?K01veE5uWjhLNjhrZkJpRmJrMUo2aldvSWpMczN3YjBRcW4zSTBaTkp6VEpG?=
- =?utf-8?B?OURjNTVJSE12d1VPL2xKQ1IwK2lvbkxxVDZDUnBrQXZtNlBncTFRdjBQVHJu?=
- =?utf-8?B?ZDlVK0o5clppMWpMNVdKUjc4V1kyTFpTRzVpa1ZBd0ZpZm52MFozMVpIZ2Yx?=
- =?utf-8?B?NVJrbFAwdzVEZUx0aGhKRklVcXM0UTBTR3NtTjhPQWZtZzR2NFdCRmdHblBP?=
- =?utf-8?B?cE9kak5SeTk5b2tieENkT1Z2YnVjSWQ0bkdIaEVlK0VWYUtCUDNuOHJnaFRa?=
- =?utf-8?B?aTBKWlE0VGdsQWtKWkx1QkFuQUlhTGVtWWZEekR4VTgwWHduZjVlcDFrZDJE?=
- =?utf-8?B?WnZlWTc2S0RUellrMzhwdE9zSmYzNHpoS0xsZDBxcnBjMkJCNEw4Um9OQ3BL?=
- =?utf-8?B?UmZOZkdPUS9VZGlnc0dFWE0zU0Vhdk9iVWVXRnNMdy9GeExPWHBvbHJBdy9j?=
- =?utf-8?B?c3dmSDA0bkdlUmVQYmZ3ckV6enZDNTZuZ0xwRWF6bzBtTHZkZEVPR2dVVE1Y?=
- =?utf-8?B?LyswbDJ1K0J6RFprUzg4cW9TSDQ5TkZIakF5Q3dSTFJpbkMwV3NhR2FMSDln?=
- =?utf-8?B?WnlEcGxwUGxPSVY2VklTV1RtM1gvYzFyeHRRVTNJY1hiQ0Rna1ZDd1R2VStG?=
- =?utf-8?B?U1E3U1U4eFlGMUdRUi9CZ1FlZ2F0SkUrTmNpZjlzNHU3SEI1SG80VUFhK2hD?=
- =?utf-8?B?ZEFkQVJIMG9YdjFoQnAzSitWSTRPc25hQzBPZW0zN05xME9pTnpDU3R0Rmww?=
- =?utf-8?B?ZDlJbjZBL2l5bmkzb00rVHNyaEE0UW10TzloNklyeEc4Q3VpUGlaYXI0YkM1?=
- =?utf-8?B?SWFLVDhqM1ZSUmlCSkR6RUc5cXhZMnlUYzhudTlnZFRYNHRZVDl0aHBELzdy?=
- =?utf-8?B?NWZrUXFScnp4YTUycUlUc0RWc20zMW50RXVaaXMxZnhUcCtKUk5yZGQyMGY1?=
- =?utf-8?B?M3VjMCtpbmpreUFBYlV0QW1icVZFVlBSOFFLY0I1Tmcxa2Y2MWNDODZVZnZV?=
- =?utf-8?B?S3NkVUZpdDc3ejNUVmd3U0M0aDEzL0ZvU0JmYk0vWkFvb2lQZ1hiV1hSUFNG?=
- =?utf-8?B?ZkRQQS9mYnQ1RTdpRzBMRGkzWHZHU1VkMnA3K2QrTmdwNHdDSmhnS0RDNjk0?=
- =?utf-8?B?aWh4S3g1WGVOQnpCaUJJek1qSkNUY3hFdkhLNXBtODBrWWlLaDZ4ZE5uaElY?=
- =?utf-8?B?TzhBbnJndEdESmlUc0tNMXJDN250Z0U2eVRlNjJqZVFpeFIyek1ibjdOOTRL?=
- =?utf-8?B?aXc9PQ==?=
-Content-ID: <A10C7340A5896740A69312454AE9691B@apcprd03.prod.outlook.com>
+        d=linaro.org; s=google; t=1736173959; x=1736778759; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=fJSZIXJSkHeJBkdcb6ya9oMRq6rzriaUtPDL7vlAVQw=;
+        b=kJw8LumpMKyLYmrquxvbJ/YkBXfubB/aeYQLjiDVXzDJEr6aYWrhBHixq2aiI07mYc
+         m9UEi6QDv21Gn76Kb0NIvRyA/xzSYodOQwji5H5vHaWbtqosatImZrs2xMaklT9E9KVW
+         g4g2VSDgcFkEyyuRYyStWGpecf5LiqV4wYcj94M3hV/lrXfhMjdF3zfNq/SVUV9cA0Io
+         HF4imWzBGJw3vAx8GPMO71WCgJHU7N2K9SXwSaBYynO+q22JPZ5vbDPXeZfQf6a9hxR0
+         9flXmYVBnznCPX0Z5+05aXE0OJ+zmo/8dJVE3nRc8gVf7bHdEV+H1PqmZGyigyNqHA8O
+         wNFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736173959; x=1736778759;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=fJSZIXJSkHeJBkdcb6ya9oMRq6rzriaUtPDL7vlAVQw=;
+        b=pA4PTpGbDy40IpuU6M6c12HC+a7FPc8M45sOshuqCWT59GdGgXqkpk7FjWuIxLhRnX
+         GTZW8MkkBMbV0vyrVCPAl8/2dXPpDE7ERrL+82axs8gLXt3M+3G8F1o34PlqV24XX3r6
+         HsCWQmDPUvR/hqQrJKQ3D0izGSWleJa1w97xIqzMloO6giboZbnjnk/hf7q0CviljjK0
+         31iG/YReIUeciPP3ZErtMgDH1NsSWRDJpe0rxFVw8+PqlvvmyAoHbGuditGJ68eXgTtv
+         XwdFNaklL/6zNtfZo6C4BYmtRq4xOuoiMPeyaFwT1sBh2KLvyBl12X6Jy9D4ZzBoGSjS
+         gIXw==
+X-Forwarded-Encrypted: i=1; AJvYcCU1hqkGRA2B0FUvyQ9QoWxVKzXjezHZgQqlAkofsJuDjFF6ez/dc2muca9/Ie7JDmkV/3L/HpNl2dY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxWfD84FbFi1wV1eYpHBI5+FHpzRD/bZlOwy+XwAvLSfMrzcEOa
+	znzeE7B4udr4tripTa2VkDitf7aRSnxlLMMJ0C9DiQvFk8TsgjX6INCaBhu3uCSlrEA5EPeqU3s
+	YIBhLONStAhTL23rs4ZHxxfMDvVAwJC1Roe1ffg==
+X-Gm-Gg: ASbGncsBc7PoQQ1gwS+G/4t5wM5kaAzWyDPqcgVwPqjCPs1hrQcopOX18vyobjtOSzO
+	ldAilzTzA2ZLqm2/n1ccmuwJ7oSxtQpMFiunK1bzULOqcGG44kGrx9M9H4I7h32Dus3kZBQ==
+X-Google-Smtp-Source: AGHT+IHmvXuwvGSdBr59QFJmGXR85prnYmkeJd5ryoQXMvTWEemEChNFf5E52WxYsQ1l+y7kBas5ggRo21B4VIcMRB4=
+X-Received: by 2002:a05:690c:7106:b0:6ef:7640:e18a with SMTP id
+ 00721157ae682-6f3f820f277mr479003527b3.31.1736173959645; Mon, 06 Jan 2025
+ 06:32:39 -0800 (PST)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB6236.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6da88ffc-6f20-42d7-b283-08dd2e5ee680
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Jan 2025 14:32:08.5260
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: BRe6cE8D4WGVCWlV+gt36s7DiLOllzn/8UHsGBmB/XIYmFzrValMW+A9/gikPl+q3TraJq5yTD87niRto39J7yJHfayl2b0jrX9HhPfULRc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR03MB7725
-X-MTK: N
+References: <20241226063313.3267515-1-damon.ding@rock-chips.com>
+ <20241226063313.3267515-14-damon.ding@rock-chips.com> <e52pbjnusvuoqiyoorjr5msrfmgeqs2jt5sk6zcesvzy7cszzk@fzrtpsjoklgu>
+ <e2a18f8c-dc38-4b12-968e-dd369cb34cb4@rock-chips.com>
+In-Reply-To: <e2a18f8c-dc38-4b12-968e-dd369cb34cb4@rock-chips.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Mon, 6 Jan 2025 14:09:34 +0200
+Message-ID: <CAA8EJpo5aE4itm8MTeCpqns5eLuWj0TaZW5qwrw02_Zc73NNiw@mail.gmail.com>
+Subject: Re: [PATCH v4 13/17] drm/bridge: analogix_dp: Convert
+ &analogix_dp_device.aux into a pointer
+To: Damon Ding <damon.ding@rock-chips.com>
+Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com, 
+	cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
+	andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
+	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250106_063226_970400_11603773 
-X-CRM114-Status: GOOD (  17.48  )
+X-CRM114-CacheID: sfid-20250106_063240_961590_4E73D076 
+X-CRM114-Status: GOOD (  28.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -216,64 +100,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-hi,
-On Wed, 2024-11-27 at 08:26 -0600, Rob Herring wrote:
-> External email : Please do not click links or open attachments until
-> you have verified the sender or the content.
-> 
-> 
-> On Tue, Nov 26, 2024 at 10:58:58AM +0800, Chunfeng Yun wrote:
-> > Add a property to tune usb2 phy's disconnect threshold.
-> > And add a compatible for mt8196.
-> > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > ---
-> >  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8
-> > ++++++++
-> >  1 file changed, 8 insertions(+)
-> > 
-> > diff --git
-> > a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > index a9e3139fd421..2e012d5e1da1 100644
-> > --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > @@ -49,6 +49,7 @@ properties:
-> >        - enum:
-> >            - mediatek,mt3611-xsphy
-> >            - mediatek,mt3612-xsphy
-> > +          - mediatek,mt8196-xsphy
-> >        - const: mediatek,xsphy
-> > 
-> >    reg:
-> > @@ -129,6 +130,13 @@ patternProperties:
-> >          minimum: 1
-> >          maximum: 7
-> > 
-> > +      mediatek,discth:
-> 
-> That's not understandable. Spell it out: mediatek,disconnect-thres
-It comes from xsphy register map document, due to xsphy is similar with
-t-phy, I port it from t-phy, and use the same property.
+On Mon, 6 Jan 2025 at 13:04, Damon Ding <damon.ding@rock-chips.com> wrote:
+>
+> Hi Dmitry,
+>
+> On 2024/12/30 21:35, Dmitry Baryshkov wrote:
+> > On Thu, Dec 26, 2024 at 02:33:09PM +0800, Damon Ding wrote:
+> >> With the previous patch related to the support of getting panel from
+> >> the DP AUX bus, the &analogix_dp_device.aux can be obtained from the
+> >> &analogix_dp_plat_data.aux.
+> >>
+> >> Furthermore, the assignment of &analogix_dp_plat_data.connector is
+> >> intended to obtain the pointer of struct analogix_dp_device within the
+> >> analogix_dpaux_transfer() function.
+> >>
+> >> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+> >> ---
+> >>   .../drm/bridge/analogix/analogix_dp_core.c    | 92 ++++++++++---------
+> >>   .../drm/bridge/analogix/analogix_dp_core.h    |  2 +-
+> >>   .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  2 +-
+> >>   3 files changed, 50 insertions(+), 46 deletions(-)
+> >>
+> >
+> > [...]
+> >
+> >> @@ -1127,6 +1128,7 @@ static int analogix_dp_bridge_attach(struct drm_bridge *bridge,
+> >>
+> >>      if (!dp->plat_data->skip_connector) {
+> >>              connector = &dp->connector;
+> >> +            dp->plat_data->connector = &dp->connector;
+> >>              connector->polled = DRM_CONNECTOR_POLL_HPD;
+> >>
+> >>              ret = drm_connector_init(dp->drm_dev, connector,
+> >> @@ -1535,7 +1537,9 @@ static int analogix_dp_dt_parse_pdata(struct analogix_dp_device *dp)
+> >>   static ssize_t analogix_dpaux_transfer(struct drm_dp_aux *aux,
+> >>                                     struct drm_dp_aux_msg *msg)
+> >>   {
+> >> -    struct analogix_dp_device *dp = to_dp(aux);
+> >> +    struct analogix_dp_plat_data *plat_data = to_pdata(aux);
+> >> +    struct drm_connector *connector = plat_data->connector;
+> >> +    struct analogix_dp_device *dp = to_dp(connector);
+> >
+> > I see that Analogix DP driver doesn't support
+> > DRM_BRIDGE_ATTACH_NO_CONNECTOR, but at the same time I don't think this
+> > is the step in the right direction. Instead please keep the AUX bus on
+> > the Analogix side and add an API to go from struct drm_dp_aux to struct
+> > analogix_dp_plat_data. Then your done_probing() callback can use that
+> > function.
+> >
+>
+> It is truly a more concise way.
+>
+> In the next version, I will add the following functions on the Analogix
+> side in order to get the pointers of struct analogix_dp_plat_data and
+> struct drm_dp_aux on the Rockchip side. And the way has already been
+> verified.
+
+LGTM, thank you.
+
+>
+> struct analogix_dp_plat_data *analogix_dp_aux_to_plat_data(struct
+> drm_dp_aux *aux)
+> {
+>         struct analogix_dp_device *dp = to_dp(aux);
+>
+>         return dp->plat_data;
+> }
+> EXPORT_SYMBOL_GPL(analogix_dp_aux_to_plat_data);
+>
+> struct drm_dp_aux *analogix_dp_get_aux(struct analogix_dp_device *dp)
+> {
+>         return &dp->aux;
+> }
+> EXPORT_SYMBOL_GPL(analogix_dp_get_aux);
+>
+> >>      int ret;
+> >>
+> >>      pm_runtime_get_sync(dp->dev);
+> >>
+> >
+>
+> Best regards
+> Damon
+>
 
 
-https://elixir.bootlin.com/linux/v6.13-rc3/source/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml#L226
+-- 
+With best wishes
+Dmitry
 
-Thanks.
-
-> 
-> > +        description:
-> > +          The selection of disconnect threshold (U2 phy)
-> > +        $ref: /schemas/types.yaml#/definitions/uint32
-> > +        minimum: 1
-> > +        maximum: 15
-> > +
-> >        mediatek,efuse-intr:
-> >          description:
-> >            The selection of Internal Resistor (U2/U3 phy)
-> > --
-> > 2.46.0
-> > 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
