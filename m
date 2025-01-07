@@ -4,91 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A779E77198
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jan 2025 11:05:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEC39E77197
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jan 2025 11:41:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9WRvEM1Pr31sxIAerQtmsXpPPXmMsputuFllLPKMWwk=; b=GNuCaQ/Mm6kpSt
-	UY/dtG6zq4oGkjcsW75k91NfF0FlNgJMurteqOpsmt40SX87DQiWAMWbEU1mkY2fWjrdQMmUG0q7B
-	dMNSZCnnpFFsK6MvYeGPIZtzhTwhs/NCG7J0FigaViqt7jFPtLNyIcDC6ZGG4rBJsd1NkbIie2NBk
-	i4FpDaZj4LUcxgZdJUdf67VvGlkcWRaKmkhAqf8sMiRpZMQ7SJ34AnMZHy6JOZhu4Ob8EWPmPEx7l
-	Vz6sc4n5oQlW+O/6y1GPEgfr1222jaj8LHtAM/YwILx0Az3OPzcMjQ5D4uFVEt6CWHV1U2lyjfskR
-	AUcojGfkKlvPSplpbgiQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oUdOKgvWxNdU1MLJfxBwjEOSVzRFOlNcppp1qK0yMxI=; b=ILg3yV5+9pXbiy
+	Pm1ZqRoLkcqwZi1uFj+PZpG+J5GNIvWPoSWGD09M8JevBAiKQTHDCn3DsrHZ/Z3aww2U9z3yga2BC
+	fOqE7vDWqEwn0ngxwNe8K6x+x7DXbbMfAmMfLeNapXwVatfZ/wHRN5bFIYz/+0a/lWVVuJS0CzPt1
+	EpQ0fWE5w5z+Vua2bV+Cny3pE78V32VVimZ4Xaw5u0rHAH7C/4ahGmElRPCRKopZG739+q4VRbeXu
+	vURZlP8NKdIZElKZkl6AwyNQu1P+OhRboX1592u/50Fot2q+sa8vywh5do/Ym3OeyDYK1bFGi4nH4
+	47XI+soJZ7Av5V8Qyq3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV7Ow-00000004UDX-42ub;
-	Tue, 07 Jan 2025 11:05:34 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tV7xs-00000004bgK-3yEB;
+	Tue, 07 Jan 2025 11:41:40 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV7Or-00000004UCm-2Bqt
+	id 1tV7rB-00000004Zqq-45yX
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jan 2025 11:05:33 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 507A0T1J019736;
-	Tue, 7 Jan 2025 11:05:19 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=/yz6W5asShFN9pgFAwO5c5pG
-	EwHieZL0RQw4bc3kmgQ=; b=ICpfpPfGS51AnQ8VIHw3sGv8lco2EJi+Epk2dojM
-	Iwq1NYkeg7dfozpAMCc1f+k5kk99ukUAX9hXxDtGyvmi1s3ayqyDi+UNFeYeAUf5
-	/IEHB7y/6iUXgK0TrhXPlDKhnPzSSsbCWLGAEmXaNBgespMjcHVQjH33MnilylJf
-	PhBm+YmdtGwRqppiw53OBjR3cmz60bLPsrpJGw9JulI1qkwQ2sjBy1IpioZF2U09
-	K/xzF0cwqTw39aRj/4duKB7t1DwIaqKBAtz0X8v/Id8OEemKd4QnynpSd3/PxMWZ
-	dlUfa8C6RoXt4YMFRfB2z6JrNIPoP2EeX2DSlUhscgYLhQ==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44124xr5fk-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 07 Jan 2025 11:05:18 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 507B5HcW015952
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 7 Jan 2025 11:05:17 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 7 Jan 2025 03:05:11 -0800
-Date: Tue, 7 Jan 2025 16:35:08 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v5 3/5] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
- controller
-Message-ID: <Z30KZM1RGdFvB1dy@hu-varada-blr.qualcomm.com>
-References: <20250102113019.1347068-1-quic_varada@quicinc.com>
- <20250102113019.1347068-4-quic_varada@quicinc.com>
- <4hwclzotaowog6rzfejiixqvvg7iumg4udbvq3h72mmh42dbki@piphsf37vhpv>
+	Tue, 07 Jan 2025 11:34:49 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-30036310158so141839271fa.0
+        for <linux-phy@lists.infradead.org>; Tue, 07 Jan 2025 03:34:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1736249684; x=1736854484; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=IsaqEkTVz9aUu2ao0R4XXXsvE/jpqouXclpX4uJ7pLE=;
+        b=sOFY0mEpDMIBKJZqizQzmfZ7VuyfINsOVwKtjPXCFhavIW0goypuaB7M/c0bz9K10y
+         QE8J1GjL7SLty+XNOsfTD95TsEhYs3oXFEuviSVjb1YhRBQyp57LYpdT9TAHLbmK/hI7
+         lNNrdn0eC8adhjDJsqEUs2WeTOat5ZIH8jiZd4OLmCGO9GGBlQmK3GfYnfRWpglKpR0h
+         VWtVMfSpVr4aO9K52fAAEKj4n31Mwld9Rn0zElOobBTqquHRTUM4kqK/oiQKZCLumpVh
+         ees7h2RNuXtdpf0pu5i/WD2veCGsSL9vuslw3xamo15wM9SjrArLoJiB1FrI+9zelNe7
+         DvgQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736249684; x=1736854484;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=IsaqEkTVz9aUu2ao0R4XXXsvE/jpqouXclpX4uJ7pLE=;
+        b=Qj0AmgkzPIeKs/y8J8IAatr3SpsTlfBHVJOJ9xMXxviZ4yxzorwQbJ8mP8lAtGZJh6
+         sSiv0fK73wVUezkBB2abqEduISrQSS3QP9dnMyC42+vsAzwHEuq4wtUqmlp2EY1MQiDl
+         ynzYxnKxw/oG4SuEW5e+NkgZvt+JeHwcuX2ooqyF1mk4xwOFK+ZdAm+4vjbu3P24XBnL
+         2jnF/BuXJiwLzZO+6U+fGbM7G9JZa0cg/ki0fVl16Kn3hCLY2yrO0WzRsOTKCt9XhGpG
+         9hUGYVD8SCLp50V2amJD04yG3TecbTFY2HDZRn6Fv4/686bJ+C6yFMsxjh/ruRbyoa7G
+         anzg==
+X-Gm-Message-State: AOJu0Yx+oKuSrOeub0qePoddNa2FjRT6buKSU2EedQiMkaFbg8vX0MJn
+	JR1j46AFoUblJ5yPvgTRKDTAKS6JOouxapZedav7FWT3X40R7VEAulVT/RUHmbg=
+X-Gm-Gg: ASbGnct2WYIs6P+ZgIm2d192QxLIKFUj1JCSZXBqK6ZnZkXEBoHpZBxsgZhsym9+OYi
+	NI/RIdjrdPVcJYo8iKFJ6vn3klkq+BUWKVhyvOBmtaQzvcPkkcbN2Vsy5rIQ13RJlmFiuyk/0M1
+	PKIND4wSS9M3EKNpha2KcmsY6Ad0a7u+cWa1pqckJIMEChZQDoHht8CoDuNdkmWGrjBf2N5w8MD
+	nLIzKU1Eaef8zrpE+rAqQQH7zexIrJxugGs/Ev+1iJinAA+Dowgrs44rsAYQxFm
+X-Google-Smtp-Source: AGHT+IEyaw8n6J4gC8jnNf1Iu+pVRqUYxPTdsk4ajP+mg4qoS9xlnrhddOZ3LiXMFNPXBV5dIGkqpQ==
+X-Received: by 2002:a05:651c:2215:b0:302:2cdf:7fbb with SMTP id 38308e7fff4ca-3046851e45fmr220057481fa.6.1736249684096;
+        Tue, 07 Jan 2025 03:34:44 -0800 (PST)
+Received: from umbar.lan ([192.130.178.90])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3045b083f8bsm59479221fa.117.2025.01.07.03.34.42
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 07 Jan 2025 03:34:42 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Tue, 07 Jan 2025 13:34:42 +0200
+Subject: [PATCH] phy: core: don't require set_mode() callback for
+ phy_get_mode() to work
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4hwclzotaowog6rzfejiixqvvg7iumg4udbvq3h72mmh42dbki@piphsf37vhpv>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: Rqs0Y1pnTmicV7r4h61kix2iYIbzCCBR
-X-Proofpoint-GUID: Rqs0Y1pnTmicV7r4h61kix2iYIbzCCBR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
- malwarescore=0 priorityscore=1501 bulkscore=0 suspectscore=0 phishscore=0
- adultscore=0 lowpriorityscore=0 impostorscore=0 clxscore=1015
- mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501070092
+Message-Id: <20250107-phy-fix-set-moe-v1-1-b3dfe9391672@linaro.org>
+X-B4-Tracking: v=1; b=H4sIAFERfWcC/x2MSQqAMAwAvyI5G6iFUvAr4sEl1RxsSyOiFP9u8
+ DgMMxWECpNA31QodLFwigpd28CyT3Ej5FUZrLHOdMZj3h8MfKPQiUciXK13SwiOrJ9Bq1xI9X8
+ cxvf9AG4w5e5hAAAA
+X-Change-ID: 20250107-phy-fix-set-moe-d275cff5e27b
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Damon Ding <damon.ding@rock-chips.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1474;
+ i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
+ bh=yro6Fb292OesZxRRM8mQxqtzIX7FbinQYBOMbsq3Z18=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBnfRFS+nM4HlH/ZXO9N7il3bt/5nLgb5XjrnIHF
+ MyxYQKrdAKJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZ30RUgAKCRCLPIo+Aiko
+ 1TVhB/sHzcukOUmUEHYmuBr95Tszc8/Potdy1h/6xzd3YIslr3oHOKUecys0LP4TfBsxJz7Gj6O
+ wIzVCDvk5QjFvoqTn04pOD0v0pfIt0xz99MhGnGiqujNe5duaTkleVTCWmoJ2JF4FDt3g8fm+C2
+ uv/gjSUCSvI5oQOV2iX8gPJCPcz+zyOe2jSSjksTD2IlzMmwRQhpUhmoXa/jNP7KQmM8JyyVMTv
+ p3Fk/OXpL6oCpZItjkvtpHWquNbzi9emYyasYc9sCW3I4YJ5HZa5+2XHYER85UzBREmG6Odj697
+ El9AvAh8kgA8GUuUdd3TcCP9tVwp+d4HohL23lBOMqfL/DXZ
+X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
+ fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_030529_677225_A9E7BFD8 
-X-CRM114-Status: GOOD (  20.17  )
+X-CRM114-CacheID: sfid-20250107_033446_025006_6CD41595 
+X-CRM114-Status: GOOD (  10.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,69 +111,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 03, 2025 at 08:45:14AM +0100, Krzysztof Kozlowski wrote:
-> On Thu, Jan 02, 2025 at 05:00:17PM +0530, Varadarajan Narayanan wrote:
-> > Document the PCIe controller on IPQ5332 platform.
-> >
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> > v5: Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
->
-> What? How this is related to commit msg?
->
-> >
-> > v4: * v3 reused ipq9574 bindings for ipq5332. Instead add one for ipq5332
-> >     * DTS uses ipq9574 compatible as fallback. Hence move ipq9574 to be able
-> >       to use the 'reg' section for both ipq5332 and ipq9574. Else, dtbs_check
-> >       and dt_binding_check flag errors.
-> > ---
-> >  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 10 ++++++++--
-> >  1 file changed, 8 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> > index bd87f6b49d68..9f37eca1ce0d 100644
-> > --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> > +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> > @@ -26,7 +26,6 @@ properties:
-> >            - qcom,pcie-ipq8064-v2
-> >            - qcom,pcie-ipq8074
-> >            - qcom,pcie-ipq8074-gen3
-> > -          - qcom,pcie-ipq9574
->
-> I don't understand this change at all and your commit msg explains
-> here nothing.
+As reported by Diamond Ding, the phy_get_mode() call doesn't work as
+expected unless the PHY driver has a .set_mode() call. This prompts PHY
+drivers to have empty stubs for .set_mode() for the sake of being able
+to get the mode.
 
-All DT entries except "reg" is similar between ipq5332 and
-ipq9574. ipq9574 has 5 registers while ipq5332 has 6. MHI is the
-additional (i.e. sixth) entry for ipq5332.
+Make .set_mode() callback truly optional and update PHY's mode even if
+it there is none.
 
-If ipq9574 is not removed from here, dt_binding_check gives the
-following errors
+Cc: Damon Ding <damon.ding@rock-chips.com>
+Link: https://lore.kernel.org/r/96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+ drivers/phy/phy-core.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-1.	/local/mnt/workspace/varada/upstream/pci-v6/arch/arm64/boot/dts/qcom/ipq5332-rdp474.dtb: pcie@18000000: reg: [[557056, 12288], [402653184, 3869], [402657056, 168], [402657280, 4096], [403701760, 4096], [569344, 4096]] is too long
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 8dfdce605a905d7f38205727151258af41f807a9..067316dfcd83a6fc8428cddd27d3b7ebfc270831 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -405,13 +405,14 @@ EXPORT_SYMBOL_GPL(phy_power_off);
+ 
+ int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode)
+ {
+-	int ret;
++	int ret = 0;
+ 
+-	if (!phy || !phy->ops->set_mode)
++	if (!phy)
+ 		return 0;
+ 
+ 	mutex_lock(&phy->mutex);
+-	ret = phy->ops->set_mode(phy, mode, submode);
++	if (phy->ops->set_mode)
++		ret = phy->ops->set_mode(phy, mode, submode);
+ 	if (!ret)
+ 		phy->attrs.mode = mode;
+ 	mutex_unlock(&phy->mutex);
 
-	Failed validating 'maxItems' in schema['allOf'][2]['then']['properties']['reg']:
-	    {'maxItems': 5, 'minItems': 5}
+---
+base-commit: 7b4b9bf203da94fbeac75ed3116c84aa03e74578
+change-id: 20250107-phy-fix-set-moe-d275cff5e27b
 
-2.	/local/mnt/workspace/varada/upstream/pci-v6/arch/arm64/boot/dts/qcom/ipq5332-rdp474.dtb: pcie@18000000: reg-names: ['parf', 'dbi', 'elbi', 'atu', 'config', 'mhi'] is too long
+Best regards,
+-- 
+Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-	Failed validating 'maxItems' in schema['allOf'][2]['then']['properties']['reg-names']:
-	    {'items': [{'const': 'dbi'},
-		       {'const': 'elbi'},
-		       {'const': 'atu'},
-		       {'const': 'parf'},
-		       {'const': 'config'}],
-	     'maxItems': 5,
-	     'minItems': 5,
-	     'type': 'array'}
-
-Hence had to remove it from here and add it to the sdx55 reg
-definition.
-
-Will capture this in the commit message.
-
-Thanks
-Varada
 
 -- 
 linux-phy mailing list
