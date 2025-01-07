@@ -4,92 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5905BE77197
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jan 2025 10:56:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A779E77198
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jan 2025 11:05:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UZWOfCdlmy8xoIa+Bjx/i33yupgMTm47ib3bR9GwTHE=; b=zn7WUGgKzRsaH0
-	3qb4n0aszCXlYmU0YgM8TZxKySo+fHd6IwlVms4r+TNC0URyEP8gtv+qX6lV2b57bjX80Ac/KBjYP
-	xdRdP1bsgKvNS+DX6MTMvKoFSPKLSPMBGLxkSTlJb75tXWWyu4ES0tMV3gl/mKroRuPXN3oLPJ5vu
-	NV/ko60MqlxhhD3m4XumTR4FFHCj0CPasX5aac7CLVQ+DWG4cw1G/BF43TUNkmPKvI4l0oU/eBG65
-	PwVJZljYgh9J4ThAV6PzsDxKnnmWQHxyy4GbXtP5cqA508qCSG7YKn0H7ati5UuJN2BLzeQN3jOr8
-	OGQAr93Kcymg6INq5iQA==;
+	List-Owner; bh=9WRvEM1Pr31sxIAerQtmsXpPPXmMsputuFllLPKMWwk=; b=GNuCaQ/Mm6kpSt
+	UY/dtG6zq4oGkjcsW75k91NfF0FlNgJMurteqOpsmt40SX87DQiWAMWbEU1mkY2fWjrdQMmUG0q7B
+	dMNSZCnnpFFsK6MvYeGPIZtzhTwhs/NCG7J0FigaViqt7jFPtLNyIcDC6ZGG4rBJsd1NkbIie2NBk
+	i4FpDaZj4LUcxgZdJUdf67VvGlkcWRaKmkhAqf8sMiRpZMQ7SJ34AnMZHy6JOZhu4Ob8EWPmPEx7l
+	Vz6sc4n5oQlW+O/6y1GPEgfr1222jaj8LHtAM/YwILx0Az3OPzcMjQ5D4uFVEt6CWHV1U2lyjfskR
+	AUcojGfkKlvPSplpbgiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV7G7-00000004Sun-2Pkb;
-	Tue, 07 Jan 2025 10:56:27 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1tV7Ow-00000004UDX-42ub;
+	Tue, 07 Jan 2025 11:05:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV7Er-00000004ScT-25ak
+	id 1tV7Or-00000004UCm-2Bqt
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jan 2025 10:55:16 +0000
-Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-5401d3ea5a1so15386618e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 07 Jan 2025 02:55:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736247307; x=1736852107; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=8JZJoaJUaNREKAXmerLK4Rd1hRsVn/PObGVachLq/qE=;
-        b=flAM62qZBto9aHKIz9Ub0aRwipx2z3SNh55dKLkAuxjwflOqlGBaRkcuw1JKdemPMM
-         tsRAC5mf7iXXrr27IMGgJ1PcTHAxtzZd9813Ah0XykQiZ1IMiYEfUtaq/dyXbZ3Df/+D
-         Q4v+Xk5adGla2TyYoXJXGn1kG2Y+bC5b+tm71CZ6wX7AU3tTUwFCmcEFxRAIDMiZeB9l
-         VgHsYtgYyd3nVTvdYdqhiZSR6U4u4fUD5iGrcNVk0wSrKUYW+7QIgjgGjoff6xhj7ytc
-         rAgtDBVHfnJbZOLnu69EB1SvXFGMgSbQEYwfjf8s51mIthqPYoc4ctPaJ0TK+IaVMxbB
-         CAxA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736247307; x=1736852107;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=8JZJoaJUaNREKAXmerLK4Rd1hRsVn/PObGVachLq/qE=;
-        b=p8bWCwfPjiG34kLNi0fpApZF9D349UBfIxKKFxSbudMrgClfuxrDHygZqhKPiKxKrL
-         YaNZdfsO+23ubO7aNJ/UY46LAJpdZG5toEh46BBTkhrk+/H1NjmQjkGgUdz3k68D3rLi
-         TVXVBBAHd0quM12tYwgU0Cdopdtt8KyQ7KWOOl5qRxsc3sYQaBHbB28UBpU+2tOa+SNu
-         0jZIM1ssKeKwEjQBnr4YQBtuUmKhk08ldzk3fHQTYZ+194dMOGcDn47A1vPrLz6ms+Yf
-         kcYx6n9m0XkbjPjwzFY3EtxUumG5oplwgSe3Nl1TlwQlUFYMK5KFbJQre9C24kEUyv1x
-         icew==
-X-Forwarded-Encrypted: i=1; AJvYcCUNaNomknybPh7+7cO4brJ9csRXEm6E79PbfA1jFqnqMdG77BmWQc1QgZaifWzqTqS2ZYCXIWFMd/U=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz5JYZX2nVQPcMx4HbGMdBtN1K8Wn1UmExLmp0bcQE59ccO9t5h
-	FabRzjUlhFBSfGiHhwr9yI2mL7ve2UCvnitUuTrSu0Tzvp1foqqhE/4Um/ng07U=
-X-Gm-Gg: ASbGncuRtl4jecjHg4XI+IxSb71YXNNAtlxEVXbUb8dBvWmjuZAQ6J9f0Aj2ajQLIJ/
-	aVZZ3mO1bFNf+NoPw7H4IjSqtV0yA3HQojw8VH/s97eWJr7PPbJMBmBCrm08VIGR8ZLiN93+E+f
-	Y69QTQRDBC3RMleiUwkdwWFIrmhJdC45GzAyTlMm6HqXvVolAbYeJUiPnlL2KyzEbDnSqefqSG8
-	XAUrAWA//E1AhsWyYUjwLRsRCqcfv2ojiO/VFIZDY2nv8fPXq3MyggzKDic7z/ThT8C2lCOhsDu
-	SM7uogng+EB1DoQayVj3RUMxIQtKRkaT0tx5
-X-Google-Smtp-Source: AGHT+IGLgKzFbsWmFq6sHxnOSAOcAHZ8LpCXiCvq8SonzUfMjFA3G31B6U5QoMf8+KUqSpyXSGnKNw==
-X-Received: by 2002:a05:6512:1392:b0:542:213f:78fa with SMTP id 2adb3069b0e04-542295224demr17287062e87.7.1736247307140;
-        Tue, 07 Jan 2025 02:55:07 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54223832ba9sm5226861e87.277.2025.01.07.02.55.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Jan 2025 02:55:05 -0800 (PST)
-Date: Tue, 7 Jan 2025 12:55:03 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org, 
-	sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
-	andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
-	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 07/17] phy: phy-rockchip-samsung-hdptx: Add support
- for eDP mode
-Message-ID: <pffzxwsqwkklur3b7c7hp6g5wonzam5fs35fwblil3cjfofozk@clwgt5gcb32a>
-References: <20241226063313.3267515-1-damon.ding@rock-chips.com>
- <20241226063313.3267515-8-damon.ding@rock-chips.com>
- <shr7ak7keqza3gw6wra2zra35qht2cxlzkvtuhzl3swzf2fwxy@i2v4o53lhese>
- <96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com>
+	Tue, 07 Jan 2025 11:05:33 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 507A0T1J019736;
+	Tue, 7 Jan 2025 11:05:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=/yz6W5asShFN9pgFAwO5c5pG
+	EwHieZL0RQw4bc3kmgQ=; b=ICpfpPfGS51AnQ8VIHw3sGv8lco2EJi+Epk2dojM
+	Iwq1NYkeg7dfozpAMCc1f+k5kk99ukUAX9hXxDtGyvmi1s3ayqyDi+UNFeYeAUf5
+	/IEHB7y/6iUXgK0TrhXPlDKhnPzSSsbCWLGAEmXaNBgespMjcHVQjH33MnilylJf
+	PhBm+YmdtGwRqppiw53OBjR3cmz60bLPsrpJGw9JulI1qkwQ2sjBy1IpioZF2U09
+	K/xzF0cwqTw39aRj/4duKB7t1DwIaqKBAtz0X8v/Id8OEemKd4QnynpSd3/PxMWZ
+	dlUfa8C6RoXt4YMFRfB2z6JrNIPoP2EeX2DSlUhscgYLhQ==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44124xr5fk-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 07 Jan 2025 11:05:18 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 507B5HcW015952
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 7 Jan 2025 11:05:17 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 7 Jan 2025 03:05:11 -0800
+Date: Tue, 7 Jan 2025 16:35:08 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Subject: Re: [PATCH v5 3/5] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
+ controller
+Message-ID: <Z30KZM1RGdFvB1dy@hu-varada-blr.qualcomm.com>
+References: <20250102113019.1347068-1-quic_varada@quicinc.com>
+ <20250102113019.1347068-4-quic_varada@quicinc.com>
+ <4hwclzotaowog6rzfejiixqvvg7iumg4udbvq3h72mmh42dbki@piphsf37vhpv>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com>
+In-Reply-To: <4hwclzotaowog6rzfejiixqvvg7iumg4udbvq3h72mmh42dbki@piphsf37vhpv>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: Rqs0Y1pnTmicV7r4h61kix2iYIbzCCBR
+X-Proofpoint-GUID: Rqs0Y1pnTmicV7r4h61kix2iYIbzCCBR
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
+ malwarescore=0 priorityscore=1501 bulkscore=0 suspectscore=0 phishscore=0
+ adultscore=0 lowpriorityscore=0 impostorscore=0 clxscore=1015
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501070092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_025509_546888_A5D62E76 
-X-CRM114-Status: GOOD (  27.76  )
+X-CRM114-CacheID: sfid-20250107_030529_677225_A9E7BFD8 
+X-CRM114-Status: GOOD (  20.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,68 +105,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 07, 2025 at 11:02:15AM +0800, Damon Ding wrote:
-> Hi Dmitry,
-> 
-> On 2024/12/30 20:45, Dmitry Baryshkov wrote:
-> > On Thu, Dec 26, 2024 at 02:33:03PM +0800, Damon Ding wrote:
-> > > Add basic support for RBR/HBR/HBR2 link rates, and the voltage swing and
-> > > pre-emphasis configurations of each link rate have been verified according
-> > > to the eDP 1.3 requirements.
-> > 
-> > Well... Please describe what's happening here. That the HDMI PHY on your
-> > platform also provides support for DP / eDP. Please document any design
-> > decisions that you had to make.
-> > 
-> 
-> Yes, I will add more relevant descriptions in the next version.
-> 
-> > > 
-> > > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> > > 
-> > > ---
-> > > 
-> > > Changes in v2:
-> > > - Add the module author
-> > > 
-> > > Changes in v3:
-> > > - Split this patch into two, one for correction and the other for
-> > >    extension
-> > > 
-> > > Changes in v4:
-> > > - Add link_rate and lanes parameters in struct rk_hdptx_phy to store the
-> > >    phy_configure() result for &phy_configure_opts.dp.link_rate and
-> > >    &phy_configure_opts.dp.lanes
-> > > ---
-> > >   .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 896 +++++++++++++++++-
-> > >   1 file changed, 889 insertions(+), 7 deletions(-)
-> > > 
-> > > @@ -933,9 +1484,339 @@ static int rk_hdptx_phy_power_off(struct phy *phy)
-> > >   	return rk_hdptx_phy_consumer_put(hdptx, false);
-> > >   }
-> > > +static int rk_hdptx_phy_set_mode(struct phy *phy, enum phy_mode mode,
-> > > +				 int submode)
-> > > +{
-> > > +	return 0;
-> > > +}
-> > 
-> > No need for the stub, please drop it. The host controller driver can
-> > still call phy_set_mode() / _ext(), the call will return 0.
-> 
-> Without the &phy_ops.set_mode(), the phy driver can not get phy_mode to
-> distinguish between HDMI and DP mode via the phy_get_mode(), even if the
-> host driver calls phy_set_mode() / _ext(). Additionally, the previous
-> discussion [0] also mentioned future considerations for dynamic switching.
-> Indeed, I should add a related comment before the 'return 0;' to enhance
-> understandability.
+On Fri, Jan 03, 2025 at 08:45:14AM +0100, Krzysztof Kozlowski wrote:
+> On Thu, Jan 02, 2025 at 05:00:17PM +0530, Varadarajan Narayanan wrote:
+> > Document the PCIe controller on IPQ5332 platform.
+> >
+> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> > ---
+> > v5: Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
+>
+> What? How this is related to commit msg?
+>
+> >
+> > v4: * v3 reused ipq9574 bindings for ipq5332. Instead add one for ipq5332
+> >     * DTS uses ipq9574 compatible as fallback. Hence move ipq9574 to be able
+> >       to use the 'reg' section for both ipq5332 and ipq9574. Else, dtbs_check
+> >       and dt_binding_check flag errors.
+> > ---
+> >  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 10 ++++++++--
+> >  1 file changed, 8 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > index bd87f6b49d68..9f37eca1ce0d 100644
+> > --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> > @@ -26,7 +26,6 @@ properties:
+> >            - qcom,pcie-ipq8064-v2
+> >            - qcom,pcie-ipq8074
+> >            - qcom,pcie-ipq8074-gen3
+> > -          - qcom,pcie-ipq9574
+>
+> I don't understand this change at all and your commit msg explains
+> here nothing.
 
-Oh... I see. Without .set_mode() callback the attrs.mode won't change.
-We should probably fix that, there should be no need to add dummy stubs.
+All DT entries except "reg" is similar between ipq5332 and
+ipq9574. ipq9574 has 5 registers while ipq5332 has 6. MHI is the
+additional (i.e. sixth) entry for ipq5332.
 
+If ipq9574 is not removed from here, dt_binding_check gives the
+following errors
 
--- 
-With best wishes
-Dmitry
+1.	/local/mnt/workspace/varada/upstream/pci-v6/arch/arm64/boot/dts/qcom/ipq5332-rdp474.dtb: pcie@18000000: reg: [[557056, 12288], [402653184, 3869], [402657056, 168], [402657280, 4096], [403701760, 4096], [569344, 4096]] is too long
+
+	Failed validating 'maxItems' in schema['allOf'][2]['then']['properties']['reg']:
+	    {'maxItems': 5, 'minItems': 5}
+
+2.	/local/mnt/workspace/varada/upstream/pci-v6/arch/arm64/boot/dts/qcom/ipq5332-rdp474.dtb: pcie@18000000: reg-names: ['parf', 'dbi', 'elbi', 'atu', 'config', 'mhi'] is too long
+
+	Failed validating 'maxItems' in schema['allOf'][2]['then']['properties']['reg-names']:
+	    {'items': [{'const': 'dbi'},
+		       {'const': 'elbi'},
+		       {'const': 'atu'},
+		       {'const': 'parf'},
+		       {'const': 'config'}],
+	     'maxItems': 5,
+	     'minItems': 5,
+	     'type': 'array'}
+
+Hence had to remove it from here and add it to the sdx55 reg
+definition.
+
+Will capture this in the commit message.
+
+Thanks
+Varada
 
 -- 
 linux-phy mailing list
