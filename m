@@ -4,97 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEC39E77197
-	for <linux-phy@archiver.kernel.org>; Tue,  7 Jan 2025 11:41:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E68E9E77197
+	for <linux-phy@archiver.kernel.org>; Tue,  7 Jan 2025 13:03:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oUdOKgvWxNdU1MLJfxBwjEOSVzRFOlNcppp1qK0yMxI=; b=ILg3yV5+9pXbiy
-	Pm1ZqRoLkcqwZi1uFj+PZpG+J5GNIvWPoSWGD09M8JevBAiKQTHDCn3DsrHZ/Z3aww2U9z3yga2BC
-	fOqE7vDWqEwn0ngxwNe8K6x+x7DXbbMfAmMfLeNapXwVatfZ/wHRN5bFIYz/+0a/lWVVuJS0CzPt1
-	EpQ0fWE5w5z+Vua2bV+Cny3pE78V32VVimZ4Xaw5u0rHAH7C/4ahGmElRPCRKopZG739+q4VRbeXu
-	vURZlP8NKdIZElKZkl6AwyNQu1P+OhRboX1592u/50Fot2q+sa8vywh5do/Ym3OeyDYK1bFGi4nH4
-	47XI+soJZ7Av5V8Qyq3g==;
+	List-Owner; bh=3XKM6r33S8fX6xiVc/HKsKTefEoBsM2/r0uwgqU8qfw=; b=sIdY0LMtI0kpl4
+	LZzcPGsIJPoQEyz+eCmr2dHlOZ/rrJNk653Ly4Jz87X72QXrGYrZD99KJwBj9DTWSEjC5B5kZAgVz
+	SpuM8JC1FMCH5rYdZHMHk8tCKADMsvTQLr+kcta9xZUxKvnph8woB/Y+wKgyxmpDmthCASsQQu6E6
+	WWaQBbjPGmfvQRooVC6y2w3XdLbcPyBiC92AVyul0DaedFQbUGmOqgoMoFMDRdJW3ePyhznDW6K3Z
+	BV4Mnks9v1SnhZNN3YuE+XIkocuWUG8zBDDMBzznYELBzJ0ReAS6red2UnahyPu0Zols0xwZlUoAg
+	QAdttXExpbdrTVsSOOKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV7xs-00000004bgK-3yEB;
-	Tue, 07 Jan 2025 11:41:40 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1tV9F6-00000004td8-2wlV;
+	Tue, 07 Jan 2025 13:03:32 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV7rB-00000004Zqq-45yX
+	id 1tV9AS-00000004sFm-091L
 	for linux-phy@lists.infradead.org;
-	Tue, 07 Jan 2025 11:34:49 +0000
-Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-30036310158so141839271fa.0
-        for <linux-phy@lists.infradead.org>; Tue, 07 Jan 2025 03:34:45 -0800 (PST)
+	Tue, 07 Jan 2025 12:58:47 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-434f398a171so14956945e9.2
+        for <linux-phy@lists.infradead.org>; Tue, 07 Jan 2025 04:58:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736249684; x=1736854484; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=IsaqEkTVz9aUu2ao0R4XXXsvE/jpqouXclpX4uJ7pLE=;
-        b=sOFY0mEpDMIBKJZqizQzmfZ7VuyfINsOVwKtjPXCFhavIW0goypuaB7M/c0bz9K10y
-         QE8J1GjL7SLty+XNOsfTD95TsEhYs3oXFEuviSVjb1YhRBQyp57LYpdT9TAHLbmK/hI7
-         lNNrdn0eC8adhjDJsqEUs2WeTOat5ZIH8jiZd4OLmCGO9GGBlQmK3GfYnfRWpglKpR0h
-         VWtVMfSpVr4aO9K52fAAEKj4n31Mwld9Rn0zElOobBTqquHRTUM4kqK/oiQKZCLumpVh
-         ees7h2RNuXtdpf0pu5i/WD2veCGsSL9vuslw3xamo15wM9SjrArLoJiB1FrI+9zelNe7
-         DvgQ==
+        d=linaro.org; s=google; t=1736254722; x=1736859522; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=pYmy/ZFlRhEQrpy/3I/HaeTWSzbHsHs0t27m22eGelE=;
+        b=AAa6faD1nu9kxr1iXd2nta7zpON6vhSFHKPxMlFReyghOZsrtPC+OBmneLKOqE8NfP
+         trYxA5/kOI1KmSxdYP68PS6RW8a6mxJ7jq4K1cNusp1hrnq47zcl+c49fwX3Gwg8uGQm
+         preI4OTD08W08yOGDoAERtJcVfnykIEwaEfQfBQqT3J/AAxA8Fcwa1Cwm2uTqJuZG0oK
+         BpSlpYG+Ce9zSb+X9oaOTQN7Lgkzy0R7EpdJpWFz7e70vNch2JznrzTw8CRBO74yfK4v
+         ZjexkuzuP111qzFFn6waI5btdazG8PFIA4Z+TjQhKpe/8mwFWEi3oKiC6SlRzcevR5fK
+         ZtAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736249684; x=1736854484;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=1e100.net; s=20230601; t=1736254722; x=1736859522;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=IsaqEkTVz9aUu2ao0R4XXXsvE/jpqouXclpX4uJ7pLE=;
-        b=Qj0AmgkzPIeKs/y8J8IAatr3SpsTlfBHVJOJ9xMXxviZ4yxzorwQbJ8mP8lAtGZJh6
-         sSiv0fK73wVUezkBB2abqEduISrQSS3QP9dnMyC42+vsAzwHEuq4wtUqmlp2EY1MQiDl
-         ynzYxnKxw/oG4SuEW5e+NkgZvt+JeHwcuX2ooqyF1mk4xwOFK+ZdAm+4vjbu3P24XBnL
-         2jnF/BuXJiwLzZO+6U+fGbM7G9JZa0cg/ki0fVl16Kn3hCLY2yrO0WzRsOTKCt9XhGpG
-         9hUGYVD8SCLp50V2amJD04yG3TecbTFY2HDZRn6Fv4/686bJ+C6yFMsxjh/ruRbyoa7G
-         anzg==
-X-Gm-Message-State: AOJu0Yx+oKuSrOeub0qePoddNa2FjRT6buKSU2EedQiMkaFbg8vX0MJn
-	JR1j46AFoUblJ5yPvgTRKDTAKS6JOouxapZedav7FWT3X40R7VEAulVT/RUHmbg=
-X-Gm-Gg: ASbGnct2WYIs6P+ZgIm2d192QxLIKFUj1JCSZXBqK6ZnZkXEBoHpZBxsgZhsym9+OYi
-	NI/RIdjrdPVcJYo8iKFJ6vn3klkq+BUWKVhyvOBmtaQzvcPkkcbN2Vsy5rIQ13RJlmFiuyk/0M1
-	PKIND4wSS9M3EKNpha2KcmsY6Ad0a7u+cWa1pqckJIMEChZQDoHht8CoDuNdkmWGrjBf2N5w8MD
-	nLIzKU1Eaef8zrpE+rAqQQH7zexIrJxugGs/Ev+1iJinAA+Dowgrs44rsAYQxFm
-X-Google-Smtp-Source: AGHT+IEyaw8n6J4gC8jnNf1Iu+pVRqUYxPTdsk4ajP+mg4qoS9xlnrhddOZ3LiXMFNPXBV5dIGkqpQ==
-X-Received: by 2002:a05:651c:2215:b0:302:2cdf:7fbb with SMTP id 38308e7fff4ca-3046851e45fmr220057481fa.6.1736249684096;
-        Tue, 07 Jan 2025 03:34:44 -0800 (PST)
-Received: from umbar.lan ([192.130.178.90])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3045b083f8bsm59479221fa.117.2025.01.07.03.34.42
+        bh=pYmy/ZFlRhEQrpy/3I/HaeTWSzbHsHs0t27m22eGelE=;
+        b=cfkwbmztfM38aWS36Efg78ljHL5P/gxwQYQAcDV6M8Y/4ZSo2OcQOU4qYSrJ44UEaD
+         YX0PDrF9aFomsvBI7wQBzAjQtqAc9u+6Y42Ikiu6CsWyyIJ1kmF2h8Fw8guRewiQJsan
+         gUSsmdnQBxA5qZky/vQkFpSPKRF/r1X8iaVh7y6vrNH4TuIMEGIRgHNVk+in5mT1jjqW
+         d0sZhwgb0+4YIOmfus2V562GBo0ywNd6SBQnTZYYV/N4wC4iG81nzpNeq5oIx3eeY67J
+         SQa+eE9BMX2W2PNn/HUExeC3bBMk+QdB8/toZkP1Muxg0rDhvuF6mIZRTWRF6if/oPPf
+         unRw==
+X-Forwarded-Encrypted: i=1; AJvYcCWwLgxsCPGV6pne8dSW6JLPbevRkRyM/KsgG5PBlcUkSXa85mTbH6wmzpUtkTkLnh9dUOu5ycT102M=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwMOw4CjTHNEVGM8z6CcMyRvzPObVVcsm5FQXzKmlEJbYFoYzxd
+	W64OpIytHyFVUU1/LR0tSe8gucJVZCQ7CvUWXUtT8cksByi/L7jVPFd9jCkPbMI=
+X-Gm-Gg: ASbGncsJvWfhauV3S7o2tfAhsUndyl/QfdK6lmGB3Dx4k7D7hTo9buNnzJPXKZlSbIs
+	2Pm+v2/PhfTgQuSRhQHEXd8kMqq/0YhVMwwyPpzGS6nk7aR7rm5BwP8yNhoPxccb2XZlZFEbnoz
+	N93fOh1iq10cR5GdTWb0av3u5knnTd8O5orVEmLsix6Ai3xPiilQwam122f44R3ZZqRVUVoqTAq
+	3LcxDuIZxCd054FJ9KSyBp8Nl56VqlP/WaYQHCpx+BU8rbGu5czl12bQnUTDqTOa/JpyGM=
+X-Google-Smtp-Source: AGHT+IHBl7XHmC1RA81mGhJt6SzB/Fa0mvqref325DHpS6shLKNQYqH/e3NarQU23diWE2Xv+3T06g==
+X-Received: by 2002:a05:6000:1a89:b0:385:fc70:829 with SMTP id ffacd0b85a97d-38a221f7726mr21400744f8f.6.1736254722572;
+        Tue, 07 Jan 2025 04:58:42 -0800 (PST)
+Received: from krzk-bin.. ([178.197.223.165])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a1c828e3fsm50965003f8f.5.2025.01.07.04.58.41
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 07 Jan 2025 03:34:42 -0800 (PST)
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 07 Jan 2025 13:34:42 +0200
-Subject: [PATCH] phy: core: don't require set_mode() callback for
- phy_get_mode() to work
+        Tue, 07 Jan 2025 04:58:42 -0800 (PST)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Andre Przywara <andre.przywara@arm.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH] dt-bindings: phy: Correct indentation and style in DTS example
+Date: Tue,  7 Jan 2025 13:58:39 +0100
+Message-ID: <20250107125840.225982-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Message-Id: <20250107-phy-fix-set-moe-v1-1-b3dfe9391672@linaro.org>
-X-B4-Tracking: v=1; b=H4sIAFERfWcC/x2MSQqAMAwAvyI5G6iFUvAr4sEl1RxsSyOiFP9u8
- DgMMxWECpNA31QodLFwigpd28CyT3Ej5FUZrLHOdMZj3h8MfKPQiUciXK13SwiOrJ9Bq1xI9X8
- cxvf9AG4w5e5hAAAA
-X-Change-ID: 20250107-phy-fix-set-moe-d275cff5e27b
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Damon Ding <damon.ding@rock-chips.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1474;
- i=dmitry.baryshkov@linaro.org; h=from:subject:message-id;
- bh=yro6Fb292OesZxRRM8mQxqtzIX7FbinQYBOMbsq3Z18=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBnfRFS+nM4HlH/ZXO9N7il3bt/5nLgb5XjrnIHF
- MyxYQKrdAKJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCZ30RUgAKCRCLPIo+Aiko
- 1TVhB/sHzcukOUmUEHYmuBr95Tszc8/Potdy1h/6xzd3YIslr3oHOKUecys0LP4TfBsxJz7Gj6O
- wIzVCDvk5QjFvoqTn04pOD0v0pfIt0xz99MhGnGiqujNe5duaTkleVTCWmoJ2JF4FDt3g8fm+C2
- uv/gjSUCSvI5oQOV2iX8gPJCPcz+zyOe2jSSjksTD2IlzMmwRQhpUhmoXa/jNP7KQmM8JyyVMTv
- p3Fk/OXpL6oCpZItjkvtpHWquNbzi9emYyasYc9sCW3I4YJ5HZa5+2XHYER85UzBREmG6Odj697
- El9AvAh8kgA8GUuUdd3TcCP9tVwp+d4HohL23lBOMqfL/DXZ
-X-Developer-Key: i=dmitry.baryshkov@linaro.org; a=openpgp;
- fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_033446_025006_6CD41595 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20250107_045844_081740_A6F15A2F 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,51 +102,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-As reported by Diamond Ding, the phy_get_mode() call doesn't work as
-expected unless the PHY driver has a .set_mode() call. This prompts PHY
-drivers to have empty stubs for .set_mode() for the sake of being able
-to get the mode.
+DTS example in the bindings should be indented with 2- or 4-spaces and
+aligned with opening '- |', so correct any differences like 3-spaces or
+mixtures 2- and 4-spaces in one binding.
 
-Make .set_mode() callback truly optional and update PHY's mode even if
-it there is none.
+No functional changes here, but saves some comments during reviews of
+new patches built on existing code.
 
-Cc: Damon Ding <damon.ding@rock-chips.com>
-Link: https://lore.kernel.org/r/96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com
-Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
- drivers/phy/phy-core.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ .../bindings/phy/calxeda-combophy.yaml        | 10 +-
+ .../bindings/phy/ti,phy-j721e-wiz.yaml        | 98 +++++++++----------
+ 2 files changed, 54 insertions(+), 54 deletions(-)
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 8dfdce605a905d7f38205727151258af41f807a9..067316dfcd83a6fc8428cddd27d3b7ebfc270831 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -405,13 +405,14 @@ EXPORT_SYMBOL_GPL(phy_power_off);
+diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+index d05a7c793035..7d75678f2ec1 100644
+--- a/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
++++ b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+@@ -43,8 +43,8 @@ additionalProperties: false
+ examples:
+   - |
+     combophy5: combo-phy@fff5d000 {
+-                   compatible = "calxeda,hb-combophy";
+-                   #phy-cells = <1>;
+-                   reg = <0xfff5d000 0x1000>;
+-                   phydev = <31>;
+-               };
++        compatible = "calxeda,hb-combophy";
++        #phy-cells = <1>;
++        reg = <0xfff5d000 0x1000>;
++        phydev = <31>;
++    };
+diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+index 3f16ff14484d..ce3071fc3553 100644
+--- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
++++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+@@ -201,59 +201,59 @@ examples:
+     #include <dt-bindings/soc/ti,sci_pm_domain.h>
  
- int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode)
- {
--	int ret;
-+	int ret = 0;
+     wiz@5000000 {
+-           compatible = "ti,j721e-wiz-16g";
+-           #address-cells = <1>;
+-           #size-cells = <1>;
+-           power-domains = <&k3_pds 292 TI_SCI_PD_EXCLUSIVE>;
+-           clocks = <&k3_clks 292 5>, <&k3_clks 292 11>, <&dummy_cmn_refclk>;
+-           clock-names = "fck", "core_ref_clk", "ext_ref_clk";
+-           assigned-clocks = <&k3_clks 292 11>, <&k3_clks 292 0>;
+-           assigned-clock-parents = <&k3_clks 292 15>, <&k3_clks 292 4>;
+-           num-lanes = <2>;
+-           #reset-cells = <1>;
+-           ranges = <0x5000000 0x5000000 0x10000>;
++        compatible = "ti,j721e-wiz-16g";
++        #address-cells = <1>;
++        #size-cells = <1>;
++        power-domains = <&k3_pds 292 TI_SCI_PD_EXCLUSIVE>;
++        clocks = <&k3_clks 292 5>, <&k3_clks 292 11>, <&dummy_cmn_refclk>;
++        clock-names = "fck", "core_ref_clk", "ext_ref_clk";
++        assigned-clocks = <&k3_clks 292 11>, <&k3_clks 292 0>;
++        assigned-clock-parents = <&k3_clks 292 15>, <&k3_clks 292 4>;
++        num-lanes = <2>;
++        #reset-cells = <1>;
++        ranges = <0x5000000 0x5000000 0x10000>;
  
--	if (!phy || !phy->ops->set_mode)
-+	if (!phy)
- 		return 0;
+-           pll0-refclk {
+-                  clocks = <&k3_clks 293 13>, <&dummy_cmn_refclk>;
+-                  #clock-cells = <0>;
+-                  assigned-clocks = <&wiz1_pll0_refclk>;
+-                  assigned-clock-parents = <&k3_clks 293 13>;
+-           };
++        pll0-refclk {
++            clocks = <&k3_clks 293 13>, <&dummy_cmn_refclk>;
++            #clock-cells = <0>;
++            assigned-clocks = <&wiz1_pll0_refclk>;
++            assigned-clock-parents = <&k3_clks 293 13>;
++        };
  
- 	mutex_lock(&phy->mutex);
--	ret = phy->ops->set_mode(phy, mode, submode);
-+	if (phy->ops->set_mode)
-+		ret = phy->ops->set_mode(phy, mode, submode);
- 	if (!ret)
- 		phy->attrs.mode = mode;
- 	mutex_unlock(&phy->mutex);
-
----
-base-commit: 7b4b9bf203da94fbeac75ed3116c84aa03e74578
-change-id: 20250107-phy-fix-set-moe-d275cff5e27b
-
-Best regards,
+-           pll1-refclk {
+-                  clocks = <&k3_clks 293 0>, <&dummy_cmn_refclk1>;
+-                  #clock-cells = <0>;
+-                  assigned-clocks = <&wiz1_pll1_refclk>;
+-                  assigned-clock-parents = <&k3_clks 293 0>;
+-           };
++        pll1-refclk {
++            clocks = <&k3_clks 293 0>, <&dummy_cmn_refclk1>;
++            #clock-cells = <0>;
++            assigned-clocks = <&wiz1_pll1_refclk>;
++            assigned-clock-parents = <&k3_clks 293 0>;
++        };
+ 
+-           cmn-refclk-dig-div {
+-                  clocks = <&wiz1_refclk_dig>;
+-                  #clock-cells = <0>;
+-           };
++        cmn-refclk-dig-div {
++            clocks = <&wiz1_refclk_dig>;
++            #clock-cells = <0>;
++        };
+ 
+-           cmn-refclk1-dig-div {
+-                  clocks = <&wiz1_pll1_refclk>;
+-                  #clock-cells = <0>;
+-           };
++        cmn-refclk1-dig-div {
++            clocks = <&wiz1_pll1_refclk>;
++            #clock-cells = <0>;
++        };
+ 
+-           refclk-dig {
+-                  clocks = <&k3_clks 292 11>, <&k3_clks 292 0>,
+-                          <&dummy_cmn_refclk>, <&dummy_cmn_refclk1>;
+-                  #clock-cells = <0>;
+-                  assigned-clocks = <&wiz0_refclk_dig>;
+-                  assigned-clock-parents = <&k3_clks 292 11>;
+-           };
++        refclk-dig {
++            clocks = <&k3_clks 292 11>, <&k3_clks 292 0>,
++                     <&dummy_cmn_refclk>, <&dummy_cmn_refclk1>;
++            #clock-cells = <0>;
++            assigned-clocks = <&wiz0_refclk_dig>;
++            assigned-clock-parents = <&k3_clks 292 11>;
++        };
+ 
+-           serdes@5000000 {
+-                  compatible = "ti,sierra-phy-t0";
+-                  reg-names = "serdes";
+-                  reg = <0x5000000 0x10000>;
+-                  #address-cells = <1>;
+-                  #size-cells = <0>;
+-                  resets = <&serdes_wiz0 0>;
+-                  reset-names = "sierra_reset";
+-                  clocks = <&wiz0_cmn_refclk_dig_div>, <&wiz0_cmn_refclk1_dig_div>;
+-                  clock-names = "cmn_refclk_dig_div", "cmn_refclk1_dig_div";
+-           };
++        serdes@5000000 {
++            compatible = "ti,sierra-phy-t0";
++            reg-names = "serdes";
++            reg = <0x5000000 0x10000>;
++            #address-cells = <1>;
++            #size-cells = <0>;
++            resets = <&serdes_wiz0 0>;
++            reset-names = "sierra_reset";
++            clocks = <&wiz0_cmn_refclk_dig_div>, <&wiz0_cmn_refclk1_dig_div>;
++            clock-names = "cmn_refclk_dig_div", "cmn_refclk1_dig_div";
++        };
+     };
 -- 
-Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+2.43.0
 
 
 -- 
