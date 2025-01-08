@@ -4,110 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C2F6E7719B
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jan 2025 07:29:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A784EE77188
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Jan 2025 07:36:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S/6Jxm+UnpTKGm3QfLUJP+t/SoChqBnvk9CHokMJQtY=; b=l4+zszJjBVtonu
-	1dM9y9bq7fUkbt2MxFCqIZ7+qtzappj1pEccHB50I7K2lq7X7eLIsha2qPsVRK4UBBXG34aVjnjBR
-	gWK29otppPdv6LpCOZX1odkvVfBgLx3tOIFsxEihMFkAWT3KqhuFXafZdJljImElXgXw8lGSddIuB
-	yJJHvvJFV5yiAgjtIDtV5veGB4mNEEp/zNVCS0MeEV73otmoL2o4an8j41vXJx0P13JXotay8a0fi
-	ViTx9mVzUxOUP6iMpTnim4tBMMssmZZPD28xyvxFAjfLbWkO7D6vWTE17d/I5H0cVSrsBib6oXYnG
-	/yp/fU/+rUGefrDBVTAg==;
+	List-Owner; bh=2MVuXb/WtfMcU6HRwVRqR22YWsoSvTRxlX84XywbPEg=; b=R+YJqTiPf0Pmt2
+	2YhjZjkQ1Cp+LqHZrwaX3N6AWG4VP6C4+LuTpT0mZyRblu+iS7kxP1ki0XfDwPRg+zNPc2qmZWLN1
+	YnL1+EOdyfnfLQ8XkxW1MH4oE8b9w+H7vCQgcr6RwQ2KzMdPBORl31Bc4ves3v8F0vzd/F017fvdY
+	+zH2i/qaJj0izlUpYgjN6vA6rKRBefcpDTuiSWqOi/4c9lpAnKI+IfHtm7KOgDfYqh2wgwsQDiK3u
+	3b10629duKqCyaUCZ5OPEOZ945MJ8SeTEpb0T3uASZZUd8XdCJVNfxfuE29re4AOJQiD5u0ShP44y
+	xajL/GnmJToslj4RzQ1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVQUy-00000007Qrp-0Lw0;
-	Wed, 08 Jan 2025 07:29:04 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tVQcX-00000007SRK-20Hr;
+	Wed, 08 Jan 2025 07:36:54 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVQOy-00000007PqT-2YzJ
+	id 1tVQcU-00000007SQg-1Zwi
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Jan 2025 07:22:55 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 02932A40AC7;
-	Wed,  8 Jan 2025 07:21:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4DF1AC4CEE0;
-	Wed,  8 Jan 2025 07:22:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736320971;
-	bh=71v/PN/KUPaFt1lALHvvRmi2eeKUFQSOIdwA0lOKGT0=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=iL4+0nOXNzJ7aMD78txadgiyKEpMvUSuVqNBT9FvDO6Cn/eV2KLhaQejhvuYc0jrH
-	 H+PgKTfP3w0Nhp/vNIH7l5COhJ6lFZeD7CrN/4V50GgQBgkCLFDhWtQU44f5ttPamK
-	 OVcqy8eXynHjC3fC2LbzQQLeuzv0alpx2wF6BTpa1S794qMpCidSaJVcxSQLxwj+sj
-	 uMdlzhYf5MuN21dmFWwymI7rILjToZprV1mxhudUVo150yE2gi4KbqbxabW5999Ep8
-	 5O7/bBCiinzKnG6QeOsizG5QuyWBerWYkQkTXzFUO465xlWZADDL+uVxKHI5ZRpixa
-	 Yp6r+dZ2mmiEg==
-Message-ID: <3019d16c-4d60-4d86-82b3-2200f30911d7@kernel.org>
-Date: Wed, 8 Jan 2025 08:22:43 +0100
+	Wed, 08 Jan 2025 07:36:51 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5086kjXx024049;
+	Wed, 8 Jan 2025 07:36:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	EleiQ9KInhS+kP4uM/4+xoyRnNn9v0zlwQ2mLXSonv0=; b=dWahy5ObUCCRkYeH
+	Rfj9nrmzcyPlMr/6zxeeBoGZrB2pQOLskMZBqQjTP6UvOxq5ya41drjY43qAOV2b
+	E8hgyeP98mCmvT/QtG0l9MKUuwHD/uFKYjoCmu95oscQ2aexobXHTSUrAh08Bnwz
+	GpYLaS01J84zM6lcFuJNeDnWqsWWp8dsqulkJACC6Q8a9C7kUNGxzu8NAk9Wqa7O
+	0gh8JLoNtjJMXBYgJYu6oaxcMy+1ad4ryVUKx341BCNlDNmWVkZP6DK3331bQuJZ
+	omzwJCFhQ+ZJ6ruSynaFZrvfRh92qvXCHN+2VKMszlDzoj1f/vHXgRz5VnKFMiT5
+	8bY7zQ==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 441md303qq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 08 Jan 2025 07:36:43 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5087agt6025001
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 8 Jan 2025 07:36:42 GMT
+Received: from [10.64.68.119] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 7 Jan 2025
+ 23:36:35 -0800
+Message-ID: <9b915699-1969-4b84-8eda-3a4080202881@quicinc.com>
+Date: Wed, 8 Jan 2025 15:36:32 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 1/5] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
- uniphy
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
- lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
- p.zabel@pengutronix.de, dmitry.baryshkov@linaro.org,
- quic_nsekar@quicinc.com, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250108055842.2042876-1-quic_varada@quicinc.com>
- <20250108055842.2042876-2-quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 0/5] Display enablement changes for Qualcomm QCS8300
+ platform
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+	<quic_abhinavk@quicinc.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten
+	<marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, "Simona
+ Vetter" <simona@ffwll.ch>,
+        Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Kuogee Hsieh
+	<quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        "Kishon Vijay
+ Abraham I" <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+References: <20241226-mdssdt_qcs8300-v2-0-acba0db533ce@quicinc.com>
+ <mha5mg3yyco2dm6g4nw5xfufuhqataoyiw6arkjalsu5caswth@vblodqj3ldcp>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250108055842.2042876-2-quic_varada@quicinc.com>
+From: Yongxing Mou <quic_yongmou@quicinc.com>
+In-Reply-To: <mha5mg3yyco2dm6g4nw5xfufuhqataoyiw6arkjalsu5caswth@vblodqj3ldcp>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: BzHgK2IvYyfe3UOFHv-Z6xeB8WQjkTTY
+X-Proofpoint-ORIG-GUID: BzHgK2IvYyfe3UOFHv-Z6xeB8WQjkTTY
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 spamscore=0
+ priorityscore=1501 impostorscore=0 bulkscore=0 phishscore=0
+ mlxlogscore=999 lowpriorityscore=0 adultscore=0 malwarescore=0
+ suspectscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501080060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_232252_847516_1887E006 
-X-CRM114-Status: UNSURE (   4.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250107_233650_546413_88A05994 
+X-CRM114-Status: GOOD (  19.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,26 +116,94 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 08/01/2025 06:58, Varadarajan Narayanan wrote:
-> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+
+
+On 2024/12/29 12:44, Dmitry Baryshkov wrote:
+> On Thu, Dec 26, 2024 at 05:40:44PM +0800, Yongxing Mou wrote:
+>> This series introduces support to enable the Mobile Display Subsystem (MDSS)
+>> , Display Processing Unit (DPU), DisplayPort controller and eDP PHY for
+>> the Qualcomm QCS8300 target. It includes the addition of the hardware catalog,
+>> compatible string, and their YAML bindings.
+>>
+>> Signed-off-by: Yongxing Mou <quic_yongmou@quicinc.com>
+>> ---
+>> This series depends on following series:
+>> https://lore.kernel.org/all/20241203-qcs8300_initial_dtsi-v4-2-d7c953484024@quicinc.com/
+>> https://lore.kernel.org/all/20241106-qcs8300-mm-patches-v3-0-f611a8f87f15@quicinc.com/
+>> https://lore.kernel.org/all/20241114-qcs8300-mm-cc-dt-patch-v1-1-7a974508c736@quicinc.com/
+>> https://lore.kernel.org/all/20241024-defconfig_sa8775p_clock_controllers-v2-1-a9e1cdaed785@quicinc.com/
 > 
-> Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5332.
+> How does it depend on all those series? Does it have any intersection
+> point at all? You should have decoupled all bindings from those series.
+> If you did, please update your cover letter. If you didn't, please do
+> your home work.
 > 
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> ---
-> v6: * Fix num-lanes definition
+Thanks for point it.Yes, we have decouple all bindings from dts 
+changes.For binding checks or driver, we no longer need these 
+dependencies. I will update the cover letter later. Thanks.
+>> ---
+>> Changes in v2:Fixed review comments from Krzysztof, Dmitry, Rob.
+>> - Decouple the devicetree changes from this series.[Dmitry][Krzysztof]
+>> - Drop the dpu driver changes and reuse SA8775P DPU driver.[Dmitry]
+>> - Fix compilation issues in MDSS bindings.[Rob][Krzysztof]
+>> - Correct formatting errors and remove unnecessary status in MDSS
+>>    bindings.[Krzysztof]
+>> - Add the the necessary information in MDSS changes commit msg.[Dmitry]
+>> - Rebase MDSS driver changes to https://lore.kernel.org/dri-devel/
+>>    20241127-msm-mdss-ubwc-v3-0-9782a7c2b023@linaro.org/.[Dmitry]
+>> - Package the DisplayPort controller and eDP PHY bindings document to
+>>    this patch series.
+>> - Collecting MDSS changes reviewd-by Dmitry.
+>> - Reuse the sa8775p eDP PHY as a fallback compat.[Dmitry]
+>> - Reuse the sm8650 DP controller as a fallback compat.[Dmitry]
+>> - Link to v1: https://lore.kernel.org/r/20241127-mdss_qcs8300-v1-0-29b2c3ee95b8@quicinc.com
+>> ~
+>>
+>> ---
+>> Yongxing Mou (5):
+>>        dt-bindings: display/msm: Document the DPU for QCS8300
+>>        dt-bindings: display: msm: dp-controller: document QCS8300 compatible
+>>        dt-bindings: display/msm: Document MDSS on QCS8300
+>>        dt-bindings: phy: Add eDP PHY compatible for QCS8300
+>>        drm/msm: mdss: Add QCS8300 support
+>>
+>>   .../bindings/display/msm/dp-controller.yaml        |   4 +
+>>   .../bindings/display/msm/qcom,qcs8300-mdss.yaml    | 244 +++++++++++++++++++++
+>>   .../bindings/display/msm/qcom,sm8650-dpu.yaml      |  13 +-
+>>   .../devicetree/bindings/phy/qcom,edp-phy.yaml      |  19 +-
+>>   drivers/gpu/drm/msm/msm_mdss.c                     |  11 +
+>>   5 files changed, 280 insertions(+), 11 deletions(-)
+>> ---
+>> base-commit: 8155b4ef3466f0e289e8fcc9e6e62f3f4dceeac2
+>> change-id: 20241224-mdssdt_qcs8300-11b7883dc60b
+>> prerequisite-message-id: <20241203-qcs8300_initial_dtsi-v4-2-d7c953484024@quicinc.com>
+>> prerequisite-patch-id: 33f2488a8eb133431f200e17aac743598508dcf3
+>> prerequisite-patch-id: 7b653ebeaf1ca3f87620ccf7d876e3d1fe496c4a
+>> prerequisite-patch-id: e1b60af8a64332e5f0ecbd3a4ea2b6e090bd97cf
+>> prerequisite-patch-id: b823d744d2fb302e2496eaf0cf0c9c66312dcf2a
+>> prerequisite-message-id: <20241106-qcs8300-mm-patches-v3-0-f611a8f87f15@quicinc.com>
+>> prerequisite-patch-id: 367d9c742fe5087cfa6fb8e7b05ebe9bc78d68f3
+>> prerequisite-patch-id: ee0513c070ab96e63766d235b38ee53ca9b19181
+>> prerequisite-patch-id: 970974160bcdc837ccbe5ea3b5dcac582e90bc0d
+>> prerequisite-patch-id: 5b2bd9cc44a529b0b9e5d73128dca5d2ff9f2f44
+>> prerequisite-patch-id: 6a0a81242e1d0f051e3102533bf0191615c6e96b
+>> prerequisite-patch-id: 322540ce6d45c32f813ecef50e5135c6f08d9019
+>> prerequisite-message-id: <20241114-qcs8300-mm-cc-dt-patch-v1-1-7a974508c736@quicinc.com>
+>> prerequisite-patch-id: 8faad5c6d8ca255935d3e4d317dcbcc32b8261ff
+>> prerequisite-message-id: <20241024-defconfig_sa8775p_clock_controllers-v2-1-a9e1cdaed785@quicinc.com>
+>> prerequisite-patch-id: 81378ec66ab6e569bd828401c43c4f5af55db32c
+>>
+>> Best regards,
+>> -- 
+>> Yongxing Mou <quic_yongmou@quicinc.com>
+>>
+> 
 
-
-I saw only part of comment implemented.
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
