@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13B06E77188
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C2F6E7719B
 	for <linux-phy@archiver.kernel.org>; Wed,  8 Jan 2025 07:29:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,42 +12,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mAvKzwcvi7RGxdGc1AsCWUgjWSMQDUogJw0++czkXfs=; b=pXqGlH6J3jWI/C
-	sXSHkYlahfeM4t8T///xgS96YCl1kFMC6DaLf7iP5YL2qM3fupR7tcTVxRCamFjO3A3EBnlOFP0IM
-	4oEJIRCO9a37V8R3XgdlcsxQzoAsiDePImeU/6KPpThFoGmHKGZV55SB4QX2H0h5lh+yHYlN+vFMD
-	kTk47WXstbizrNes0MFGiITsH9kSGsLVkoT02pOO3A3phIS9W5mu+OtXAkyWYT0DCkqP4MObqbs6c
-	PxgVpokeea884rW0sH7uf6+mJw3uHhPWwtfXtNk8IkBV+HIv9LmoSXsNT0Ng4hc2dDSXyLmXtguOw
-	e1wo4sGWzpRvvABoeUvQ==;
+	List-Owner; bh=S/6Jxm+UnpTKGm3QfLUJP+t/SoChqBnvk9CHokMJQtY=; b=l4+zszJjBVtonu
+	1dM9y9bq7fUkbt2MxFCqIZ7+qtzappj1pEccHB50I7K2lq7X7eLIsha2qPsVRK4UBBXG34aVjnjBR
+	gWK29otppPdv6LpCOZX1odkvVfBgLx3tOIFsxEihMFkAWT3KqhuFXafZdJljImElXgXw8lGSddIuB
+	yJJHvvJFV5yiAgjtIDtV5veGB4mNEEp/zNVCS0MeEV73otmoL2o4an8j41vXJx0P13JXotay8a0fi
+	ViTx9mVzUxOUP6iMpTnim4tBMMssmZZPD28xyvxFAjfLbWkO7D6vWTE17d/I5H0cVSrsBib6oXYnG
+	/yp/fU/+rUGefrDBVTAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVQUx-00000007QrP-3O7c;
-	Wed, 08 Jan 2025 07:29:03 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tVQUy-00000007Qrp-0Lw0;
+	Wed, 08 Jan 2025 07:29:04 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVQNw-00000007Pdd-1EcF
+	id 1tVQOy-00000007PqT-2YzJ
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Jan 2025 07:21:49 +0000
+	Wed, 08 Jan 2025 07:22:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C0A0CA40AC3;
-	Wed,  8 Jan 2025 07:19:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5E5EC4CEE0;
-	Wed,  8 Jan 2025 07:21:40 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 02932A40AC7;
+	Wed,  8 Jan 2025 07:21:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4DF1AC4CEE0;
+	Wed,  8 Jan 2025 07:22:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736320907;
-	bh=6GatgfphCSW18nxaoIV/bjoS8pB7cEEZx2f4eDRHW30=;
+	s=k20201202; t=1736320971;
+	bh=71v/PN/KUPaFt1lALHvvRmi2eeKUFQSOIdwA0lOKGT0=;
 	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=CkS8y5nXbVTj4Ex+UNUPRIvRs8ZObRoP37fMcm8ZxHMF5j/xkx0xFSCMfvSgF4Yoe
-	 U1tC/Ihs6LrBx0t9pNOIfHOrHrN0IwBeaLgNRavpPCeSk2PW0k2GqQakYMIwxEdUFW
-	 LDYEEUcVCm8BUgNQWlVpfxQYxFM8/IWc/6AS8UgYLKV8LTt/C1bQBiDeUjrI6MG8bP
-	 rKindE0Nuaj/zwgZSrt+1qJgR2usHa7PEymU3ITVXOVd35FHyDZ+FePepmF88lvpmb
-	 7+tsE2OlLqWXbeiHx5swIrSgRpK00B4YvOcWY1L8yhyvyzUlCyVHDdILF+tIDYGM0v
-	 Jj6X6SKny9r6g==
-Message-ID: <e39ee309-a8cd-4e65-b37a-74afb215c3b6@kernel.org>
-Date: Wed, 8 Jan 2025 08:21:38 +0100
+	b=iL4+0nOXNzJ7aMD78txadgiyKEpMvUSuVqNBT9FvDO6Cn/eV2KLhaQejhvuYc0jrH
+	 H+PgKTfP3w0Nhp/vNIH7l5COhJ6lFZeD7CrN/4V50GgQBgkCLFDhWtQU44f5ttPamK
+	 OVcqy8eXynHjC3fC2LbzQQLeuzv0alpx2wF6BTpa1S794qMpCidSaJVcxSQLxwj+sj
+	 uMdlzhYf5MuN21dmFWwymI7rILjToZprV1mxhudUVo150yE2gi4KbqbxabW5999Ep8
+	 5O7/bBCiinzKnG6QeOsizG5QuyWBerWYkQkTXzFUO465xlWZADDL+uVxKHI5ZRpixa
+	 Yp6r+dZ2mmiEg==
+Message-ID: <3019d16c-4d60-4d86-82b3-2200f30911d7@kernel.org>
+Date: Wed, 8 Jan 2025 08:22:43 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 3/5] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
- controller
+Subject: Re: [PATCH v6 1/5] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
+ uniphy
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
  lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
  robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
@@ -57,7 +57,7 @@ To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20250108055842.2042876-1-quic_varada@quicinc.com>
- <20250108055842.2042876-4-quic_varada@quicinc.com>
+ <20250108055842.2042876-2-quic_varada@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,10 +103,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250108055842.2042876-4-quic_varada@quicinc.com>
+In-Reply-To: <20250108055842.2042876-2-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_232148_463021_84ACDDE2 
-X-CRM114-Status: UNSURE (   8.61  )
+X-CRM114-CacheID: sfid-20250107_232252_847516_1887E006 
+X-CRM114-Status: UNSURE (   4.77  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,27 +125,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 08/01/2025 06:58, Varadarajan Narayanan wrote:
-> Document the PCIe controller on IPQ5332 platform. IPQ5332 will
-> use IPQ9574 as the fall back compatible.
+> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 > 
-> All DT entries except "reg" is similar between ipq5332 and
-> ipq9574. ipq9574 has 5 registers while ipq5332 has 6. MHI is the
-> additional (i.e. sixth entry). Since this matches with the
-> sdx55's "reg" definition which allows for 5 or 6 registers,
-> combine ipq9574 and ipq5332 with sdx55. Without this
-> dt_binding_check fails.
+> Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5332.
 > 
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
-> v6: Commit message update only. Add info regarding the moving of
->     ipq9574 from 5 "reg" definition to 5 or 6 reg definition.
-> 
-You gave yourself 4 days to respond to my comment.
+> v6: * Fix num-lanes definition
 
-To me, you gave around 18h, through most of the time I was offline or
-sleeping, and then sent new version.
 
-NAK, implement the feedback and keep discussing in the previous version.
+I saw only part of comment implemented.
 
 Best regards,
 Krzysztof
