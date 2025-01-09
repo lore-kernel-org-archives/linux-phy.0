@@ -4,90 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D701CE77197
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 12:58:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BCC8E7719A
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 13:51:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f4atG9txUXZswJUQNctLDNqjejcFz8mb4Ecg9Uin24o=; b=E0HXsMu9dshoDb
-	8/IrU0Dt44fwCPWMil0A+o9plXYdGVbM0J2datUUPdlUXyKoX+Jmrc1wdT3uraFu+BOL/LYXT0hyT
-	C0xY8wUrjZiMQapPAiAIptgCJEJtHDaS9Yklc/34p4OURBFomcCCJJTEd7SshpBtEUz5C4Zihb3n3
-	lceMtJpkuxw/TszlcSrin9KIilnAWHz/exrSnw7wwP6XCOEwCfvreIwnnqzuH+DAeQhEU/QYL5p5c
-	q7Vi7mgq5jIYY3jCMXHrJzl2eYjUwJ9hbWs3u6XscM1FPnybbnCsQIMTWBovt7bDcjM5ZVuotUB8S
-	leSmO/IipApF6h9ttyMQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=AdCxxMxmLsiADIofvGWred2ccfdBMjoZxS9/nhOuwDk=; b=2gviHpde+KZJLdXphbqomAJFTg
+	SQQelWxBrCZhLRHWolcegiW7CG6J8EL7bh+Y5H2970lg+jYRLpE+3oilapCANHWfkbfEXEOso8eIA
+	hbRp936eqnXAtGEkA0RJxgP/OMBUhpkSjr0CLxAD6ldb2D1JinoYdTcP3v14qHeBNHmtvWg2vNiLu
+	23HL1/dLelOhwDGhuOAAPm1WCcl6rdvFYF+namF3oDusFzHcRoM6dOLbb1FLTja/A5kIWS6zS/Gz7
+	EFAIfNdRQ2oFODBJz4hwXFaxoIAgT+tbJ/rWs0ImLoTcbFKzCzFwNqj9TcUecInJLy1zo6TwYsC/3
+	JstnJo1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVs70-0000000BvHY-23yL;
-	Thu, 09 Jan 2025 12:58:10 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1tVswh-0000000C7Pw-1aB8;
+	Thu, 09 Jan 2025 13:51:35 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVs6x-0000000BvEr-04MM
+	id 1tVsir-0000000C3TD-1wzh
 	for linux-phy@lists.infradead.org;
-	Thu, 09 Jan 2025 12:58:08 +0000
-Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-53ff1f7caaeso892247e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 09 Jan 2025 04:58:06 -0800 (PST)
+	Thu, 09 Jan 2025 13:37:18 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4364a37a1d7so10471015e9.3
+        for <linux-phy@lists.infradead.org>; Thu, 09 Jan 2025 05:37:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736427485; x=1737032285; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1736429836; x=1737034636; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=PluEJNm6A4jMqOqyB0FTg4D45gj8yEkPQ1baSXUmCTM=;
-        b=lj9vCnM3KQp9k4o/nXMSeolcwbevtxzmJB4Vu8527jX03UuS0yA5sJEa+MKjajfo3D
-         BX9El+zOEafkArR7ULgWJWhKqMm4cPGwVlbBuq1959O20oi8HOrhDDzwK9iC+R9SpCW9
-         8dQ28K55JQGMH9GLex0QO+TE0RbVW3iODCPv2q27kWPIU6qUdgS8xkpGKKCUyUa9pofF
-         cVTpbbutp7yl9BOji1d7dJzxNbzBJDjq/qS4xXteT5TjVQ5I52Hd9TSptwEI/bivteNj
-         A765leJZE6hcPsPilBpTg9yJeI4NHuAq1PUXQTvCV+nwHW3oMSbqV0kUc1HIJRAmahxu
-         QK2g==
+        bh=SmH93BYvyCnSPbMq0jHZyuUQVQaG/vWQ+Adhu1NOeU8=;
+        b=fFrmdVlUbGvV1SuIrbHevz2KYKCySOneuASelMnRNS/M5n5IiSL2hmSKY0QfXISSXs
+         oEozR/vKNWN7Pdfcp+oFcPkOWhi+PX/2v8jtixLIc914P2PEOTo+/KqsC6hz3/j0rwHx
+         Y1rv70Dnaa+zvVbnXkynC4Zo8yfpCIGW26QUG6tb/QOzxWJaqi9Ptsw6DEhQlhpjYQO3
+         o0gGmAekTe+XhB+LETIPeYnKy7p58uqCxMuKTGi9N2upcdD9XqDWNosQI6t+zleG6Nj1
+         jjwXxAJ8/T0TfZVPbHvZQ4Tol5iszu/2qMDpUY8kyXjWSRr4JcDYDHYwu76YhU97prZT
+         Qqog==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736427485; x=1737032285;
+        d=1e100.net; s=20230601; t=1736429836; x=1737034636;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=PluEJNm6A4jMqOqyB0FTg4D45gj8yEkPQ1baSXUmCTM=;
-        b=gp7Cl1S7GGshR9FVk65E1e2c8py+NWhCi8sacHatfzrbPIcWUuIJNNTKm4WC72IaqY
-         S7hY8yWrn67LKLEGAlWci9Z9DMYLIq566UPrFTnW921sN8Nq0cDLfJn+a3cqCSC0ZTZH
-         501TcOe70TWJe2c+33w/+cb6kbljw7VCePPnlPg1OGFhOMyFI8Mc9eQXgmbKB4ttw1Xd
-         vB6DmOxTqU/ZPsNHhHmqal+zGlS2IsBB2oAk1p3otPm/U7O4POMWarrW9rZwDd50aJMe
-         6Rv6NfBBpqzyrZsnMxGmE3PgEDRLeslAvUnGfQ1w7qmbJJBjlPW2h6p0WQJROWkCsKEX
-         tCog==
-X-Forwarded-Encrypted: i=1; AJvYcCVFVLIoP+a/HMfBqGUyeFY3VBoI35ELMmOdIU1On3oMNIvubRDGGkHJQ5LYL5vIoaBHyDnpCvccreY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw+Ie0niPIG3TmZXjA8eMC4q11vnq9RRppyCwQo1gtB+3i06FCK
-	jmEOj5azctSMiC5so2YBdr5+UgJtfLdADXDp+UnQmaRyo3VMAiEZXGjgpTntbG0=
-X-Gm-Gg: ASbGncsNcu2KVJq5Z/r5zfrm5dtA8+pNSwD8C/N8mMdL5n/szdgBXxoNMrTirsqmBo1
-	rzJoK58Q2tR3AkhCjydk1ZZrzO/phczapugT58yVcN1wlhD3iQ7pd8jMVTp4SkvFBqOCVVjDQMy
-	6jJMyu+EFwJZx00tqYERtPJvqi1qbdJnJ+2j/DQhnFaWjb9yeFVCvLL18W/HXvqIg08pjWcYEYv
-	ccN7ArgjvdqkPkQxluCVwWjZ9uQOA96ZDEFah2OC7D22qJjCLprA3jEGGhMoj7liTpuqhOfZMy8
-	pJMSCytZvfhEnc9FT2e2gKixRsRqeLeuwskw
-X-Google-Smtp-Source: AGHT+IEvGTGt6x25ztvT/50kVctTk1CY/fLXQXxYXUd2ctSdHixShfg0M2M1+bWWr8+u7Ko3bFZHyg==
-X-Received: by 2002:a05:6512:3082:b0:540:1b2d:8ee1 with SMTP id 2adb3069b0e04-54284507047mr1803562e87.11.1736427485004;
-        Thu, 09 Jan 2025 04:58:05 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428bde9633sm197114e87.0.2025.01.09.04.58.04
+        bh=SmH93BYvyCnSPbMq0jHZyuUQVQaG/vWQ+Adhu1NOeU8=;
+        b=bvH4CrEhD9UIqWBm1Si+3JfFRdfpL3LV/UAWhI5E1i+gHblfgwp6vsC95BXAWLpgW3
+         2vNEtME155NHppD3LWAHrHmg+GnE3aqKPqYL7RFdY0j6yZZj1QMisfZYvNuIyHz2y75u
+         Egt2HeVsgbSPHx6GkiykZ06c6Sjmzbn+tsBG921rVFWcVHpDWoaNdEdtlLRNRI2VnvU4
+         XEWSF3q+n9jLrR+ThNPf6VJbKQ8YUvh11/nctgWim+9nD1zCWWr0011UIEVJn6cswyoZ
+         +6u5n8HEx1e5+0wHN7aSHY0HHtTznpGNUK08DKE+pXp8/CnMsX+mTB8grCuUKHG6RX0v
+         Z1pg==
+X-Forwarded-Encrypted: i=1; AJvYcCWf46no2tSnVR24JANtzHq6EKeGVcSvnvphPByEmin98Fv0huA3+LR1BMCqGy0JrGPA8vJvpNNqTZ8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx+sNwSsEZNuq/CCB8L51nvSv4jTjCPJPEipnRVR2FmgMrAkkji
+	Md1Uw0vJzKmkFRG43sjUCvjx58r4IsOeTTei+snp9osxJ5Fw25Wl11cQSw==
+X-Gm-Gg: ASbGncvTCxYQZpBIFuiNE74wQOsU/ZJqdxJ3gp4UuxtrOXI8wlspaK0XzemhinVeOiN
+	qZJgOeYts5oBqMp9KdMIFX10OoqN+wi1CkcDqdXXqYiP7ZUHDvgBGylYXDHg4G1Z0GKYLtS55DL
+	2AebWsbMwJ/pyTynSQpfxm2bsmEPi0ocVeKDfNM5LCklYC726cDfmXdGuG9LX4jKdhhG+YDP8qE
+	ZTR5CnZDK002kOTxC5vJCLMSladezlGAWPhMTSd1c5Vwb4Cf93wgYQ1iqZmyorWmxsAaq7ASITW
+	PLllSVn5jQmnrrLl6KFLeYXX5zmDSNJReWMVcYT4Erw=
+X-Google-Smtp-Source: AGHT+IGYP3yVvKkIjcpct+SNeD5GTm0cuYtD6iVaq7ZsZOZmk4hrtnLgZBoUgCLCbuu72ZfrfVYC3A==
+X-Received: by 2002:a05:600c:3149:b0:434:f297:8e78 with SMTP id 5b1f17b1804b1-436e267fbe1mr60471065e9.7.1736429835836;
+        Thu, 09 Jan 2025 05:37:15 -0800 (PST)
+Received: from orome (p200300e41f281900f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f28:1900:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-436e2da66d9sm56299485e9.1.2025.01.09.05.37.14
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 09 Jan 2025 04:58:04 -0800 (PST)
-Date: Thu, 9 Jan 2025 14:58:03 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org, 
-	sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
-	andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
-	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v5 10/20] drm/bridge: analogix_dp: support to get
- &analogix_dp_device.plat_data and &analogix_dp_device.aux
-Message-ID: <uqsmsoumny6ovf7n56tbcjmdzbzikk2iijk62bvefh5tjtgrvu@a7ogvep5e4yt>
-References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
- <20250109032725.1102465-11-damon.ding@rock-chips.com>
+        Thu, 09 Jan 2025 05:37:14 -0800 (PST)
+Date: Thu, 9 Jan 2025 14:37:12 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Ma Ke <make24@iscas.ac.cn>
+Cc: jckuo@nvidia.com, vkoul@kernel.org, kishon@kernel.org, 
+	jonathanh@nvidia.com, linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: Re: [PATCH] phy: Fix error handling in tegra_xusb_port_init
+Message-ID: <p4rkf6bfo76njky6ovyk2w5rgqugjrubnc7npfkj5vvpivufs5@6b4yzxoapbeq>
+References: <20250107085129.812835-1-make24@iscas.ac.cn>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250109032725.1102465-11-damon.ding@rock-chips.com>
+In-Reply-To: <20250107085129.812835-1-make24@iscas.ac.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250109_045807_053076_051B3B64 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20250109_053717_504562_170EB787 
+X-CRM114-Status: GOOD (  22.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,85 +92,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1196355053380113973=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 09, 2025 at 11:27:15AM +0800, Damon Ding wrote:
-> Add two new functions: one to find &analogix_dp_device.plat_data via
-> &drm_dp_aux, and the other to get &analogix_dp_device.aux. Both of them
-> serve for the function of getting panel from DP AUX bus, which is why
-> they are included in a single commit.
-> 
-> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+
+--===============1196355053380113973==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="asmlsgho3wx3j5tl"
+Content-Disposition: inline
+
+
+--asmlsgho3wx3j5tl
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH] phy: Fix error handling in tegra_xusb_port_init
+MIME-Version: 1.0
+
+On Tue, Jan 07, 2025 at 04:51:29PM +0800, Ma Ke wrote:
+> The reference count of the device incremented in device_initialize()=20
+> is not decremented properly when device_add() fails. Change=20
+> device_unregister() to a put_device() call before returning from the=20
+> function to decrement reference count for cleanup. Or it could cause=20
+> memory leak.
+>=20
+> As comment of device_add() says, 'if device_add() succeeds, you should
+> call device_del() when you want to get rid of it. If device_add() has
+> not succeeded, use only put_device() to drop the reference count'.
+>=20
+> Found by code review.
+
+While the patch looks correct, the commit message seems confusing to me.
+
+device_unregister() will also call put_device() after first calling
+device_del(). So the reference count /is/ properly balanced.
+
+Instead, the kerneldoc comment for device_add() says this:
+
+ * NOTE: _Never_ directly free @dev after calling this function, even
+ * if it returned an error! Always use put_device() to give up your
+ * reference instead.
+ *
+ * Rule of thumb is: if device_add() succeeds, you should call
+ * device_del() when you want to get rid of it. If device_add() has
+ * *not* succeeded, use *only* put_device() to drop the reference
+ * count.
+
+So the real reason that this patch is correct is because
+device_unregister() should only be called after device_add() succeeded
+because device_del() undoes what device_add() does if successful. In
+this case we only need to undo what device_initialize() does, and that
+is what put_device() will do.
+
+Thierry
+
+>=20
+> Cc: stable@vger.kernel.org
+> Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
+> Signed-off-by: Ma Ke <make24@iscas.ac.cn>
 > ---
->  drivers/gpu/drm/bridge/analogix/analogix_dp_core.c | 14 ++++++++++++++
->  include/drm/bridge/analogix_dp.h                   |  4 ++++
->  2 files changed, 18 insertions(+)
-> 
-> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> index b05f5b9f5258..8251adfce2f9 100644
-> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
-> @@ -1794,6 +1794,20 @@ int analogix_dp_stop_crc(struct drm_connector *connector)
+>  drivers/phy/tegra/xusb.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+>=20
+> diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+> index 79d4814d758d..c89df95aa6ca 100644
+> --- a/drivers/phy/tegra/xusb.c
+> +++ b/drivers/phy/tegra/xusb.c
+> @@ -548,16 +548,16 @@ static int tegra_xusb_port_init(struct tegra_xusb_p=
+ort *port,
+> =20
+>  	err =3D dev_set_name(&port->dev, "%s-%u", name, index);
+>  	if (err < 0)
+> -		goto unregister;
+> +		goto put_device;
+> =20
+>  	err =3D device_add(&port->dev);
+>  	if (err < 0)
+> -		goto unregister;
+> +		goto put_device;
+> =20
+>  	return 0;
+> =20
+> -unregister:
+> -	device_unregister(&port->dev);
+> +put_device:
+> +	put_device(&port->dev);
+>  	return err;
 >  }
->  EXPORT_SYMBOL_GPL(analogix_dp_stop_crc);
->  
-> +struct analogix_dp_plat_data *analogix_dp_aux_to_plat_data(struct drm_dp_aux *aux)
-> +{
-> +	struct analogix_dp_device *dp = to_dp(aux);
-> +
-> +	return dp->plat_data;
-> +}
-> +EXPORT_SYMBOL_GPL(analogix_dp_aux_to_plat_data);
-> +
-> +struct drm_dp_aux *analogix_dp_get_aux(struct analogix_dp_device *dp)
-> +{
-> +	return &dp->aux;
-> +}
-> +EXPORT_SYMBOL_GPL(analogix_dp_get_aux);
-> +
->  MODULE_AUTHOR("Jingoo Han <jg1.han@samsung.com>");
->  MODULE_DESCRIPTION("Analogix DP Core Driver");
->  MODULE_LICENSE("GPL v2");
-> diff --git a/include/drm/bridge/analogix_dp.h b/include/drm/bridge/analogix_dp.h
-> index 6002c5666031..1b119b547988 100644
-> --- a/include/drm/bridge/analogix_dp.h
-> +++ b/include/drm/bridge/analogix_dp.h
-> @@ -7,6 +7,7 @@
->  #ifndef _ANALOGIX_DP_H_
->  #define _ANALOGIX_DP_H_
->  
-> +#include <drm/display/drm_dp_aux_bus.h>
+> =20
+> --=20
+> 2.25.1
+>=20
 
-Nit: it should be enough to fordward-declare struct drm_dp_aux here.
+--asmlsgho3wx3j5tl
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Nevertheless:
+-----BEGIN PGP SIGNATURE-----
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+iQIyBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmd/0QYACgkQ3SOs138+
+s6EgOg/4rgyOGMZjMtdunsxWV1SjVj7jfWgylsyvw43B3u571vaaaBSceklwKPoo
+H0ZfAQb3iVuGMmFLtMGm7YBHwdtT0rafA8D/m5H48HyxaIIFTduTkOphl2nLtCta
+Co/oT49iVsJAEg+EQU7zUN7rcsGj5W1fJPCHs9yYk6jog87Lk4GKzVRFmVEc6hOw
+yK8x9B+MTrioN6LEO11wjeVkef6pBJ5z35/Q3E6Fs/9+dcER3ljSXPIO6Q7sPm5Z
+SCxzkPIcBtBO3N7UpND7i0gFt9VgNZySjIA/mdAKiWnu6Z7lUsnGmbnoX9BlyqTt
+L1NmWYJ1kZGsuEYEXAXfsNZFosFfatGo/pfjMk9OGjyWeOSqoo/2ZcpF9fuEg08s
+hIqX2v9lEP45RiLwWZxUOLW90nXs53D7QQ3ZOTDD6OfFzvJez0+BonuZMrA7JU3O
+QZU1RtlWPKknYivDFPhJS6JMdhy2X5+QCgwoLLtw5VJP3lrsTjJ507ZxQOEEB5UL
+z+qlLEWGZvmscX0v1654+nxs6fYtvjfm3ZvlGzYhrq6Tpx/dLQHvvMZSY/RTkDCR
+TEl+gwcegL6LRN42ty5K8768mh/+TcXUBHdvAdjA2ITyzmxR6BPIUhgW1ZmExXJB
+y5/6L0OSJOIQwgyDY7p0WmlO3Xau8+zP2TKjzkcMPhZG04PeFQ==
+=pD0j
+-----END PGP SIGNATURE-----
+
+--asmlsgho3wx3j5tl--
 
 
->  #include <drm/drm_crtc.h>
->  
->  struct analogix_dp_device;
-> @@ -48,4 +49,7 @@ void analogix_dp_unbind(struct analogix_dp_device *dp);
->  int analogix_dp_start_crc(struct drm_connector *connector);
->  int analogix_dp_stop_crc(struct drm_connector *connector);
->  
-> +struct analogix_dp_plat_data *analogix_dp_aux_to_plat_data(struct drm_dp_aux *aux);
-> +struct drm_dp_aux *analogix_dp_get_aux(struct analogix_dp_device *dp);
-> +
->  #endif /* _ANALOGIX_DP_H_ */
-> -- 
-> 2.34.1
-> 
-
--- 
-With best wishes
-Dmitry
+--===============1196355053380113973==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1196355053380113973==--
+
