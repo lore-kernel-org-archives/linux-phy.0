@@ -4,82 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90D7BE7719A
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 10:08:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04C48E77197
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 12:17:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C/ZBOSvD8j4+xketpeRegnc+zUTPuxBpj0T3V4sWDiM=; b=W9gY/wK+bfgxqM
-	gK0YD8RiAKolVTIcjLGSUpaNW6TxgzVoAmPAOn2IFkjuXCKYhYuS66FGzXOjOO4pHLNZSymp/C24l
-	u9X2DC90ffFXLjhjkPPNizxMmLIvTX+0CywtKvZL/BYLm9GmZrTjjcFGpbvJ9917MSoIAgG1PClI3
-	TNN4QbtKc5r0JuspgAQJRyNIESjBdsj1D9r6LcEwUEnEEHqOLTHMvYPqA+kk2ONZNi6clLvC0aPVy
-	QGTOkaQTyNCUrvvuqovFHNQQ5byUwwSLgEGkkfDbFCrCGcENurUpK1xX66h7Rd44/XvIry1xbEN3Q
-	LPCz6ORZ1mpGWMD0O81w==;
+	List-Owner; bh=RbMut4+UgWoNWV1PsmBslbEX6m635eSRfoKOQKIsmLQ=; b=X1H9QGKR3x7Lxf
+	Drz4xAnsPTi90ChUXjUbIxYGJCDPSbIYtqKLRssglt5Pvojj2ivbEL15VS+GZaiGDHfwfQFsH6t1t
+	/Saj0E/bkI5x3i3LQXUoxt6QzXkSKSvm1q3Y1S0WYohD5OvFV/1LsmlnYs60EN1DuC/tISvqOiv7l
+	jeHGOWTS6TmQIq5bwpZr3LrCZHbym2wWkwHBAejVJ69JU2rEAs5e5yB1Nb8pW2YwMJx23gXVJbyCB
+	I2IqfbAH7QK2YhaQ/QNNU1uSkwAHDVhosDA9kOt5HDZGZqynHOfAafRw8ZVqJtNC1GGP256mFaDVX
+	7r9q40Unrw97Z1UOnXpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVpT8-0000000BSmZ-3qDN;
-	Thu, 09 Jan 2025 10:08:50 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tVrTx-0000000BpFs-0sw2;
+	Thu, 09 Jan 2025 12:17:49 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVpSl-0000000BSim-31p3
-	for linux-phy@lists.infradead.org;
-	Thu, 09 Jan 2025 10:08:29 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5099vc97031506;
-	Thu, 9 Jan 2025 10:07:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=8K0iKp8/RG5PAqHXjaDSdr
-	Pnyr3iqLYp5vRuy+zH59s=; b=H481ERyksVHRt6kHUXKCd7tum0MjFhidE27W+t
-	9VousyagdjeqI28rwN1SsIQWl1ANYH7ubUASKiSMPbU0sMu59RARocGXGoAaCNhF
-	2TWQCrheSv4hIt4kXyb+3elAbRh3aDSYG9lNt3QfuN/bzsX5XQZhvdgjxtIq4slw
-	EpgOKzBufSzBxNRg6OhUMGsOCJV8hZ6GCiWov/Vk35plk6RaNWdg8aEq+ELpk0W3
-	QvRim9xGhXugZ3EyPYfc5MotjfiPIupOygQJKguXyhv0QhYIcDcbMv5uiRkZQrbG
-	Vm5+yQ4xj97nPsQQqQk21eO7aE4beda6xj1xTzf0j0/PMTwA==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 442c9k80wm-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 09 Jan 2025 10:07:57 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 509A7vqP027876
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 9 Jan 2025 10:07:57 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 9 Jan 2025 02:07:53 -0800
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <quic_varada@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <quic_viswanat@quicinc.com>,
-        <krishna.kurapati@oss.qualcomm.com>, <mgautam@codeaurora.org>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-Subject: [PATCH v1] phy: qcom-qusb2: Set drvdata before pm_runtime_set_active in probe
-Date: Thu, 9 Jan 2025 15:37:41 +0530
-Message-ID: <20250109100741.3117652-1-quic_varada@quicinc.com>
-X-Mailer: git-send-email 2.34.1
+	id 1tVrSj-0000000Bp4a-0VkK;
+	Thu, 09 Jan 2025 12:16:34 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 509CGJKP041635;
+	Thu, 9 Jan 2025 06:16:19 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1736424979;
+	bh=aUGe2AbRfw5KMjZoEFENX0hTvgZBr0eB6GdsLXur/n4=;
+	h=From:To:CC:Subject:Date;
+	b=LWiCXYUOFuP5H7+1Z0EGWnPZIEnql4n6GY7TOfE8il7zWB4hUnP8KX/gbC1zd30xy
+	 V5bXDuewZXi4nTcKnEkE2mJ7IpMcVBBTyV94EOMb7PZgctQtLcX4hij1Gd8DwkhflE
+	 VYMjbuzm13Yydp74GyT1yYV2dmqQgnJpezkrgsiA=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 509CGJEn011933
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 9 Jan 2025 06:16:19 -0600
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Thu, 9
+ Jan 2025 06:16:18 -0600
+Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Thu, 9 Jan 2025 06:16:18 -0600
+Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.72.104])
+	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 509CGE6L120193;
+	Thu, 9 Jan 2025 06:16:15 -0600
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <kishon@kernel.org>, <sjakhade@cadence.com>,
+        <rogerq@kernel.org>, <thomas.richard@bootlin.com>,
+        <christophe.jaillet@wanadoo.fr>, <u.kleine-koenig@baylibre.com>,
+        <eballetb@redhat.com>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
+        <s-vadapalli@ti.com>
+Subject: [PATCH v3 0/2] Enable PCIe Multilink and USB support in Cadence Torrent SERDES driver
+Date: Thu, 9 Jan 2025 17:46:01 +0530
+Message-ID: <20250109121614.754466-1-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ZrCX3hjlK9b2vXeRbXk3MPcXsbSm0edN
-X-Proofpoint-GUID: ZrCX3hjlK9b2vXeRbXk3MPcXsbSm0edN
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 mlxscore=0
- spamscore=0 phishscore=0 malwarescore=0 priorityscore=1501 suspectscore=0
- impostorscore=0 bulkscore=5 lowpriorityscore=5 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501090082
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250109_020827_764734_7C7FA5DD 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20250109_041633_269738_DF55D94C 
+X-CRM114-Status: GOOD (  13.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,77 +84,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Vignesh Viswanathan <quic_viswanat@quicinc.com>
+Hello,
 
-The commit 891a96f65ac3 ("phy: qcom-qusb2: Add support for
-runtime PM") added support for runtime PM to the qcom-qusb2
-driver. However, pm_runtime_set_active is invoked before driver
-data is saved into the 'device' structure. Randomly the runtime
-PM ops seem to get invoked between pm_runtime_set_active and
-dev_set_drvdata resulting in the following crash.
+This series adds support for standalone PCIe Multilink configuration
+along with the support for PCIe Multilink + USB configuration in the
+Torrent SERDES driver.
 
-Hence do dev_set_drvdata early in the probe.
+Series is based on linux-next tagged next-20250109.
 
-	Unable to handle kernel NULL pointer dereference at virtual address 00000065 when read
+v2:
+https://lore.kernel.org/r/20250106131925.263240-1-s-vadapalli@ti.com/
+Changes since v2:
+- Rebased series on next-20250109.
+- Based on feedback received from:
+  Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+  a) "const" has been used wherever applicable i.e.:
+  s/static struct cdns_reg_pairs/static const struct cdns_reg_pairs
+  s/static struct cdns_torrent_vals/static const struct cdns_torrent_vals
+  b) Commenting style in patch 2 has been fixed.
 
-	[ . . . ]
+v1:
+https://lore.kernel.org/r/20240615093433.3659829-1-s-vadapalli@ti.com/
+Changes since v1:
+- Rebased series on next-20250106.
+- Significant changes have been made in the second patch of the series
+  in the process of rebasing. Support for 3 or more links was introduced
+  and this series had to be modified to be compatible with those changes.
+- Added "Co-developed-by" tag in the second patch since some of the
+  changes in this series in the process of rebasing were made by me
+  which are quite different from the v1 version of the patch.
+- Due to these changes, I have *not* collected the "Tested-by" tag on the
+  v1 series from Enric Balletbo i Serra <eballetbo@redhat.com>
+  and I hope that this series can be tested.
 
-	PC is at qusb2_phy_runtime_suspend+0x8/0x164 [phy_qcom_qusb2]
-	LR is at __rpm_callback+0x3c/0x110
-	pc : [<82780018>]    lr : [<40523ff0>]    psr: a0000013
-	sp : 410dfe88  ip : 00000000  fp : 4015eb68
-	r10: 00000003  r9 : 00000000  r8 : 410c8894
-	r7 : 405222f0  r6 : 405222f0  r5 : 00000000  r4 : 00000000
-	r3 : 82780010  r2 : 411088c0  r1 : 410c8810  r0 : 410c8810
-	Flags: NzCv  IRQs on  FIQs on  Mode SVC_32  ISA ARM  Segment user
-	Control: 10c0383d  Table: 422a806a  DAC: 00000055
+***NOTE***
+Since I don't have the hardware required to validate PCIe Multilink +
+USB functionality, kindly *do not merge* this series until it gets a
+"Tested-by" tag with proper validation of the functionality.
 
-	[ . . . ]
+Regards,
+Siddharth.
 
-	Call Trace:
-		qusb2_phy_runtime_suspend+0x8/0x164 [phy_qcom_qusb2]
-		__rpm_callback+0x3c/0x110
-		rpm_callback+0x50/0x54
-		rpm_suspend+0x23c/0x428
-		pm_runtime_work+0x74/0x8c
-		process_scheduled_works+0x1bc/0x2b8
-		worker_thread+0x260/0x2e4
-		kthread+0x118/0x12c
-		ret_from_fork+0x14/0x38
-		Exception stack(0x410dffb0 to 0x410dfff8)
+Swapnil Jakhade (2):
+  phy: cadence-torrent: Add PCIe multilink configuration for 100 MHz
+    refclk
+  phy: cadence-torrent: Add PCIe multilink + USB with same SSC register
+    config for 100 MHz refclk
 
-Fixes: 891a96f65ac3b ("phy: qcom-qusb2: Add support for runtime PM")
-Signed-off-by: Vignesh Viswanathan <quic_viswanat@quicinc.com>
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
----
- drivers/phy/qualcomm/phy-qcom-qusb2.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/phy/cadence/phy-cadence-torrent.c | 288 +++++++++++++++++++++-
+ 1 file changed, 279 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-index 1f5f7df14d5a..e08d9c5b409b 100644
---- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-@@ -1025,6 +1025,8 @@ static int qusb2_phy_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 	or = &qphy->overrides;
- 
-+	dev_set_drvdata(dev, qphy);
-+
- 	qphy->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(qphy->base))
- 		return PTR_ERR(qphy->base);
-@@ -1135,7 +1137,6 @@ static int qusb2_phy_probe(struct platform_device *pdev)
- 	}
- 	qphy->phy = generic_phy;
- 
--	dev_set_drvdata(dev, qphy);
- 	phy_set_drvdata(generic_phy, qphy);
- 
- 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-
-base-commit: 6ecd20965bdc21b265a0671ccf36d9ad8043f5ab
 -- 
-2.34.1
+2.43.0
 
 
 -- 
