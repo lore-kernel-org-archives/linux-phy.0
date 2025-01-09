@@ -4,65 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B707FE77188
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Jan 2025 18:32:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77393E77188
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 01:49:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=AFOvRYqXmUelT2KwuPFXXcICwMrvxNm66GTz50OeJTA=; b=OpoloqPSq7ogJr
-	ur5gbBqKo5UVwdYcKfe5eFCXhHeaag/nh/wXlmqtsZkHAHvLnQ8kg8AZ1kPf3QcSQBL0eOcgRbBfW
-	42qa0XzUK9tBN2GQZlFTAYTNoOSZv5LUBZyNYDZFoQg1APWc1VU3+ICdcZk3DYkUIrdpo5gogK+6w
-	MUeymbRCK/+ShbSZ4HiRm6lHp2L371IhaEaxv0wF38glzjVi/2zwwZMgNAHvX1wipr6/JRPiRaVDA
-	iMnj4qgEAONxmSCPTZq+1X7FvyN21mkeJ5qGwO6l6T5QKZsqmduKj6SYUUliBfDHo/GHPfGAhmmR8
-	6twQoSgyeJPTuer3aYwg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e3XSAPVJ3+0BbzqP9Q7oJP4yaThNYvPjbUQz/PCU8kE=; b=wJBXm/2d40sd5f
+	S9tYbkaedquV2tyFZrc1USpEDxlBvXVNzmkKqdq6jgi2bf4VfyfV4wYNtPTx9xax57h+1PKmE/iG8
+	WJbGRw7m20d1XVOn/hZg8Gxv4TJ7aEjpyaD32djOj6UzqwUi7Ej208QElAq2IkvNNPwLYd6b3Sggm
+	bVDmRPZZF3JcMqegpehbkg3SM+NRacA+RNu6D3+ZZzsyop7xw3Y22glb9/gER2FZYr6Dw/TIIdzB3
+	DgEmPBiajVCLsd7SeVBeLNfLzgZbctjU9XUPBgrPpQ6yr2aYCjToBjFMuSigrXbQyfueGS9ewmrwo
+	7hDCYJRtu1whA0xgP56A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVarA-00000009XhX-23cc;
-	Wed, 08 Jan 2025 18:32:40 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tVhgB-0000000ALoS-1eD2;
+	Thu, 09 Jan 2025 01:49:47 +0000
+Received: from mail-m11876.qiye.163.com ([115.236.118.76])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVar8-00000009Xgo-298i
+	id 1tVhg8-0000000ALnK-15oO
 	for linux-phy@lists.infradead.org;
-	Wed, 08 Jan 2025 18:32:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 1A38CA4162F;
-	Wed,  8 Jan 2025 18:30:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 552D0C4CED3;
-	Wed,  8 Jan 2025 18:32:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736361157;
-	bh=Z/FqmlnQQ8Fa68j6bChFWC2DGBjzCnP8xsatoFHrFa0=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=iHD4sULtcyZpUayPhFv//GcGoNSqVRYgJYE9OKm5cbptvdlJ25utVjJ16eJHkr8q7
-	 YQaZkhGDSMeS+BDw39V0F8H4M55gcqks3fNM8e+ugbd6/fv+LHq/x2SGRwHfJ1rnpn
-	 iijBj0rfqdehYltGY6K2pGlFEyz1hfNGslo3V/tAdm8QMTswXGIteTclvIwz4zNKuH
-	 n4kItXVF/sjHioGsqhafWgZzQP7UtYfQ2tBXTxwmjwzyVPrZD36YQJGgFcGR4w/fPy
-	 MieYAlJNDLzlSAq70NftG/76gIto5sLe6w/j4KxIgHPIDMxBkO/kZhBU18/Tqppuvd
-	 z+BDbheJqLOdQ==
-Date: Wed, 8 Jan 2025 12:32:35 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
-	manivannan.sadhasivam@linaro.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
-	p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
-	dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Praveenkumar I <quic_ipkumar@quicinc.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v5 4/5] arm64: dts: qcom: ipq5332: Add PCIe related nodes
-Message-ID: <20250108183235.GA220566@bhelgaas>
+	Thu, 09 Jan 2025 01:49:46 +0000
+Received: from [172.16.12.26] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 828b5f6b;
+	Thu, 9 Jan 2025 09:49:33 +0800 (GMT+08:00)
+Message-ID: <a2c62be6-7668-4bb9-96f8-cec60c25e9a2@rock-chips.com>
+Date: Thu, 9 Jan 2025 09:49:32 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250102113019.1347068-5-quic_varada@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: core: don't require set_mode() callback for
+ phy_get_mode() to work
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250107-phy-fix-set-moe-v1-1-b3dfe9391672@linaro.org>
+Content-Language: en-US
+From: Damon Ding <damon.ding@rock-chips.com>
+In-Reply-To: <20250107-phy-fix-set-moe-v1-1-b3dfe9391672@linaro.org>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQxhLTVZKHR1PTksfH05NHh5WFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
+	hVSktLVUpCS0tZBg++
+X-HM-Tid: 0a9448c0a9ee03a3kunm828b5f6b
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Oj46ESo*DDIKNRUQDhBRSRkr
+	LQ0KFC1VSlVKTEhNSENMSExPT0hOVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFKTUlLNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=eWj9OrvfUkIYzkHYl4Vd5A3cWzdgoeIISARqy3R8RuCAwPwhqKCBFoqWDWgwyy98EpbCO5I2XonGNOhxwkxA6xs7OaHizg/vBfwGeLh8Ii0qltEtds821weIB5xKDs6gAPiXbO0YEQJoYcaB7X/TrvX+igekv9CZgiSK5oJgVK0=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=UgOq+7PNvG9ZKcvlhMZc4sO7NHiPlyLjwvrCDhqXlCI=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250108_103238_615949_0E61055A 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20250108_174944_824414_60079491 
+X-CRM114-Status: GOOD (  14.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,57 +70,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 02, 2025 at 05:00:18PM +0530, Varadarajan Narayanan wrote:
-> From: Praveenkumar I <quic_ipkumar@quicinc.com>
+On 2025/1/7 19:34, Dmitry Baryshkov wrote:
+> As reported by Diamond Ding, the phy_get_mode() call doesn't work as
+> expected unless the PHY driver has a .set_mode() call. This prompts PHY
+> drivers to have empty stubs for .set_mode() for the sake of being able
+> to get the mode.
 > 
-> Add phy and controller nodes for pcie0_x1 and pcie1_x2.
+> Make .set_mode() callback truly optional and update PHY's mode even if
+> it there is none.
+> 
+> Cc: Damon Ding <damon.ding@rock-chips.com>
+> Link: https://lore.kernel.org/r/96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com
+> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+> ---
+>   drivers/phy/phy-core.c | 7 ++++---
+>   1 file changed, 4 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 8dfdce605a905d7f38205727151258af41f807a9..067316dfcd83a6fc8428cddd27d3b7ebfc270831 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -405,13 +405,14 @@ EXPORT_SYMBOL_GPL(phy_power_off);
+>   
+>   int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode)
+>   {
+> -	int ret;
+> +	int ret = 0;
+>   
+> -	if (!phy || !phy->ops->set_mode)
+> +	if (!phy)
+>   		return 0;
+>   
+>   	mutex_lock(&phy->mutex);
+> -	ret = phy->ops->set_mode(phy, mode, submode);
+> +	if (phy->ops->set_mode)
+> +		ret = phy->ops->set_mode(phy, mode, submode);
+>   	if (!ret)
+>   		phy->attrs.mode = mode;
+>   	mutex_unlock(&phy->mutex);
+> 
+> ---
+> base-commit: 7b4b9bf203da94fbeac75ed3116c84aa03e74578
+> change-id: 20250107-phy-fix-set-moe-d275cff5e27b
 
-> +		pcie1: pcie@18000000 {
-> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
-> +			reg = <0x00088000 0x3000>,
-> +			      <0x18000000 0xf1d>,
-> +			      <0x18000f20 0xa8>,
-> +			      <0x18001000 0x1000>,
-> +			      <0x18100000 0x1000>,
-> +			      <0x0008b000 0x1000>;
-> +			reg-names = "parf",
-> +				    "dbi",
-> +				    "elbi",
-> +				    "atu",
-> +				    "config",
-> +				    "mhi";
-> +			device_type = "pci";
-> +			linux,pci-domain = <1>;
-> +			bus-range = <0x00 0xff>;
+Tested-by: Damon Ding <damon.ding@rock-chips.com>
 
-This bus-range isn't needed, is it?  pci_parse_request_of_pci_ranges()
-should default to 0x00-0xff if no bus-range property is present.
+Best regards
+Damon
 
-> +			num-lanes = <2>;
-> +			phys = <&pcie1_phy>;
-> +			phy-names = "pciephy";
-
-I think num-lanes and PHY info are per-Root Port properties, not a
-host controller properties, aren't they?  Some of the clock and reset
-properties might also be per-Root Port.
-
-Ideally, I think per-Root Port properties should be in a child device
-as they are here:
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mvebu-pci.txt?id=v6.12#n137
-but it looks like the num-lanes parsing is done in
-dw_pcie_get_resources(), which can only handle a single num-lanes per
-DWC controller, so maybe it's impractical to add a child device here.
-
-But I wonder if it would be useful to at least group the per-Root Port
-things together in the binding to help us start thinking about the
-difference between the controller and the Root Port(s).
-
-Bjorn
 
 -- 
 linux-phy mailing list
