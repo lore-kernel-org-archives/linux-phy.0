@@ -4,72 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AE1BE77197
-	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 12:20:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FF04E77199
+	for <linux-phy@archiver.kernel.org>; Thu,  9 Jan 2025 12:22:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6awVyGFMgKa92Gs8w+RuJHkRX2TypQUliDA96v1pgjg=; b=I7btyD1xncLrqF
-	MUjLK8NplD8qlRiP51C/jg/1CdGegRkd43PVPUKhHRzdax33ro20VDRdDyKDWA6J6rC4eN1YsbeEc
-	v7jP3lt94s2hWytAwn3DC55myiQJBD+rZyJnDYqHu2COiUIiv3Jgc6U83D6cHr6udHiEUkplko3ZQ
-	MkgKEsk1YJprkMfBdlpm0c4XFhLsKb8hxWgG+Hywm/iDjYwUc9HODcdqHefVvcxqsXFkw2SVt4KDl
-	RW/nmz7hBlUNAjF+Cl4cny6OEZIGGhXotY3/AZxcmnhHFQoGEzvgcTi0pPKM2AiQZsguj3esA0G5/
-	nwZI50V4rplVmbITdIKA==;
+	List-Owner; bh=YL+rdeIP4zHIYXuvUyILLZRZ3XGFqdO4uBbI5I4tT3c=; b=yIbCz1CFHmCmvN
+	jF6TFMvQk4qS74sR+mLNmRxDZUI8N/oL7KGXzRIIl912XCvXyLfHvc4F58BqV8fZaLmmVuzrfhU09
+	oLyJYhDtjk7e96mtPgVyqXyQSUmCkBPGQx2utk2m8ELlrGpyWUqI3KIo6F2qyTpH51Rki/aeUdUhw
+	7bL1SuXJgIWdqNDj0tKshElXkd1Vp+7dW8roqk4OUUs7zRS0id1xEmXAF7DuoQGe1zPra52jytqfh
+	Yos7B1m7ZcbQNymN1T5bD73NX/cF8FzcJFAHxEXh7Oq/P1PZq2KkM9vHCjySFxrRUMvCbdeEQYxZa
+	Vn2yTX+fqryZPFKSazfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVrWJ-0000000BpeJ-34HB;
-	Thu, 09 Jan 2025 12:20:15 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1tVrYh-0000000BqEY-3VIt;
+	Thu, 09 Jan 2025 12:22:43 +0000
+Received: from fllvem-ot04.ext.ti.com ([198.47.19.246])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVrSl-0000000Bp5W-3BzY;
-	Thu, 09 Jan 2025 12:16:37 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
-	by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 509CGQAB041649;
-	Thu, 9 Jan 2025 06:16:26 -0600
+	id 1tVrWO-0000000Bpfe-0X46;
+	Thu, 09 Jan 2025 12:20:21 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+	by fllvem-ot04.ext.ti.com (8.15.2/8.15.2) with ESMTPS id 509CKCjk3159059
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 9 Jan 2025 06:20:12 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1736424986;
-	bh=I26U7Ox2lNtFhwjRPjCJSLLsQcuC/B89jIp3DoJs92I=;
-	h=From:To:CC:Subject:Date:In-Reply-To:References;
-	b=k+T6TPHVErEew+JGTJbyIVP4M2rPobvboA9G5+NoiPgRRuIJK3trHp40rOzZs0TlO
-	 vu1PbKJ60JuSdtBs3Qx9j7OKrrfjpb7IMJk8QQvOYhg3075r1Rb4Q6tmTELO3K/I1o
-	 2hFzsLTXMd4+uD3+71mxtKeWRvNrEG/Ld7iv00+A=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
-	by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 509CGQja011999
+	s=ti-com-17Q1; t=1736425212;
+	bh=aldVJPdw0EUIAhOcl//mQC1NBVldpSMbv7V7noWQKqk=;
+	h=Date:From:To:CC:Subject:References:In-Reply-To;
+	b=UvSGZZoLZvA7vllP9vpaphtJXUr4U4mp1cM3lCZtAaAO/a69XRabBlIo/j1V6Oxig
+	 KCLpvKhkLwJR7Q6FaIqbhbL2Vsx7UiNi72r12aZUhoc48NJ7k3JSgRyuGA081E5CTv
+	 tnMqhltsMQYQJSX5nn2veqBkQ1obe3hhNG5//bsM=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 509CKBqo049829
 	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 9 Jan 2025 06:16:26 -0600
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+	Thu, 9 Jan 2025 06:20:12 -0600
+Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Thu, 9
- Jan 2025 06:16:26 -0600
-Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ Jan 2025 06:20:10 -0600
+Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Thu, 9 Jan 2025 06:16:26 -0600
-Received: from uda0492258.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.72.104])
-	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 509CGE6N120193;
-	Thu, 9 Jan 2025 06:16:22 -0600
+ Frontend Transport; Thu, 9 Jan 2025 06:20:10 -0600
+Received: from localhost (uda0492258.dhcp.ti.com [10.24.72.104])
+	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 509CK9i6014553;
+	Thu, 9 Jan 2025 06:20:10 -0600
+Date: Thu, 9 Jan 2025 17:50:09 +0530
 From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <sjakhade@cadence.com>,
-        <rogerq@kernel.org>, <thomas.richard@bootlin.com>,
-        <christophe.jaillet@wanadoo.fr>, <u.kleine-koenig@baylibre.com>,
-        <eballetb@redhat.com>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>, <srk@ti.com>,
-        <s-vadapalli@ti.com>
-Subject: [PATCH v3 2/2] phy: cadence-torrent: Add PCIe multilink + USB with same SSC register config for 100 MHz refclk
-Date: Thu, 9 Jan 2025 17:46:03 +0530
-Message-ID: <20250109121614.754466-3-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250109121614.754466-1-s-vadapalli@ti.com>
-References: <20250109121614.754466-1-s-vadapalli@ti.com>
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+CC: Siddharth Vadapalli <s-vadapalli@ti.com>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <sjakhade@cadence.com>, <rogerq@kernel.org>,
+        <thomas.richard@bootlin.com>, <u.kleine-koenig@baylibre.com>,
+        <eballetb@redhat.com>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+        <srk@ti.com>
+Subject: Re: [PATCH v2 2/2] phy: cadence-torrent: Add PCIe multilink + USB
+ with same SSC register config for 100 MHz refclk
+Message-ID: <wgc5npcq3ncwskeab53quxvxle6nivf34lcqjd3gcmtnr6756m@l5pgiqkcxnm6>
+References: <20250106131925.263240-1-s-vadapalli@ti.com>
+ <20250106131925.263240-3-s-vadapalli@ti.com>
+ <24498c4e-c517-46b9-8d0c-ff1e3a308228@wanadoo.fr>
+ <wsdjqishkw2mh3xns4okku4vomehp6x3fjqs7e32ye27gankjx@fbbo3td66fk3>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <wsdjqishkw2mh3xns4okku4vomehp6x3fjqs7e32ye27gankjx@fbbo3td66fk3>
 X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250109_041636_001769_4AFE4B5F 
-X-CRM114-Status: GOOD (  20.73  )
+X-CRM114-CacheID: sfid-20250109_042020_263720_4EC1F81A 
+X-CRM114-Status: GOOD (  24.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,406 +86,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Swapnil Jakhade <sjakhade@cadence.com>
-
-Add register sequences and support for PCIe multilink + USB configuration
-for 100MHz reference clock. The same SSC is used for both PCIe and USB.
-
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-Co-developed-by: Siddharth Vadapalli <s-vadapalli@ti.com>
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
----
-
-v2:
-https://lore.kernel.org/r/20250106131925.263240-3-s-vadapalli@ti.com/
-Changes since v2:
-- Based on feedback received from:
-  Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-  a) "const" has been used wherever applicable i.e.:
-  s/static struct cdns_reg_pairs/static const struct cdns_reg_pairs
-  s/static struct cdns_torrent_vals/static const struct cdns_torrent_vals
-  b) Commenting style has been fixed.
-
-***NOTE***
-Since I don't have the hardware required to validate PCIe Multilink +
-USB functionality, kindly *do not merge* this series until it gets a
-"Tested-by" tag with proper validation of the functionality.
-
-Regards,
-Siddharth.
-
- drivers/phy/cadence/phy-cadence-torrent.c | 158 ++++++++++++++++++++--
- 1 file changed, 150 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index 1c5e96e2a188..37fa4bad6bd7 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -206,6 +206,7 @@
- #define RX_REE_GCSM2_CTRL		0x0110U
- #define RX_REE_PERGCSM_CTRL		0x0118U
- #define RX_REE_PEAK_UTHR		0x0142U
-+#define RX_REE_PEAK_LTHR		0x0143U
- #define RX_REE_ATTEN_THR		0x0149U
- #define RX_REE_TAP1_CLIP		0x0171U
- #define RX_REE_TAP2TON_CLIP		0x0172U
-@@ -298,6 +299,7 @@ enum cdns_torrent_phy_type {
- 	TYPE_QSGMII,
- 	TYPE_USB,
- 	TYPE_USXGMII,
-+	TYPE_PCIE_ML,
- };
- 
- enum cdns_torrent_ref_clk {
-@@ -696,6 +698,7 @@ static const char *cdns_torrent_get_phy_type(enum cdns_torrent_phy_type phy_type
- 	case TYPE_DP:
- 		return "DisplayPort";
- 	case TYPE_PCIE:
-+	case TYPE_PCIE_ML:
- 		return "PCIe";
- 	case TYPE_SGMII:
- 		return "SGMII";
-@@ -2481,6 +2484,7 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
- 	enum cdns_torrent_ssc_mode ssc;
- 	struct regmap *regmap;
- 	u32 num_regs, num_protocols, protocol;
-+	u32 num_pcie_links = 0;
- 
- 	num_protocols = hweight32(cdns_phy->protocol_bitmask);
- 	/* Maximum 2 protocols are supported */
-@@ -2513,6 +2517,44 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
- 
- 		phy_t1 = fns(cdns_phy->protocol_bitmask, 0);
- 		phy_t2 = fns(cdns_phy->protocol_bitmask, 1);
-+
-+		/*
-+		 * PCIe Multilink configuration can be supported along with a
-+		 * non-PCIe protocol. The existing limitation associated with
-+		 * the standalone PCIe Multilink configuration still remains,
-+		 * implying that there can be only two links (subnodes) of the
-+		 * PHY type PCIe which constitute the PCIe Multilink.
-+		 *
-+		 * Such configurations are handled by introducing a new protocol
-+		 * namely TYPE_PCIE_ML. Both of the PCIe links which have the
-+		 * protocol as TYPE_PCIE shall be treated as though the protocol
-+		 * corresponding to them is TYPE_PCIE_ML only for the sake of
-+		 * configuring the SERDES.
-+		 *
-+		 * PCIe Multilink configuration can be identified by checking if
-+		 * there are exactly two links with phy_type set to TYPE_PCIE.
-+		 * phy_t1 and phy_t2 are modified in such cases to support the
-+		 * PCIe Multilink configuration with a non-PCIe protocol.
-+		 */
-+		for (node = 0; node < cdns_phy->nsubnodes; node++) {
-+			if (cdns_phy->phys[node].phy_type == TYPE_PCIE)
-+				num_pcie_links++;
-+		}
-+
-+		if (num_pcie_links > 2) {
-+			dev_err(dev, "cannot support PCIe Multilink with %u PCIe links\n",
-+				num_pcie_links);
-+			return -EINVAL;
-+		} else if (num_pcie_links == 2) {
-+			phy_t1 = TYPE_PCIE_ML;
-+			for (node = 0; node < cdns_phy->nsubnodes; node++) {
-+				if (cdns_phy->phys[node].phy_type == TYPE_PCIE) {
-+					cdns_phy->phys[node].phy_type = TYPE_PCIE_ML;
-+					continue;
-+				}
-+				phy_t2 = cdns_phy->phys[node].phy_type;
-+			}
-+		}
- 	}
- 
- 	/**
-@@ -2679,6 +2721,11 @@ int cdns_torrent_phy_configure_multilink(struct cdns_torrent_phy *cdns_phy)
- 		}
- 	}
- 
-+	/* Restore TYPE_PCIE_ML to TYPE_PCIE to be compatible with suspend-resume */
-+	for (node = 0; node < cdns_phy->nsubnodes; node++)
-+		if (cdns_phy->phys[node].phy_type == TYPE_PCIE_ML)
-+			cdns_phy->phys[node].phy_type = TYPE_PCIE;
-+
- 	/* Take the PHY out of reset */
- 	ret = reset_control_deassert(cdns_phy->phy_rst);
- 	if (ret)
-@@ -3091,15 +3138,14 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 	}
- 
- 	if (cdns_phy->nsubnodes > 1)
--		dev_dbg(dev, "Multi-link: %s (%d lanes) & %s (%d lanes)",
--			cdns_torrent_get_phy_type(cdns_phy->phys[0].phy_type),
--			cdns_phy->phys[0].num_lanes,
--			cdns_torrent_get_phy_type(cdns_phy->phys[1].phy_type),
--			cdns_phy->phys[1].num_lanes);
-+		dev_dbg(dev, "Multi link configuration:\n");
- 	else
--		dev_dbg(dev, "Single link: %s (%d lanes)",
--			cdns_torrent_get_phy_type(cdns_phy->phys[0].phy_type),
--			cdns_phy->phys[0].num_lanes);
-+		dev_dbg(dev, "Single link configuration:\n");
-+
-+	for (i = 0; i < cdns_phy->nsubnodes; i++)
-+		dev_dbg(dev, "%s (%d lanes)",
-+			cdns_torrent_get_phy_type(cdns_phy->phys[i].phy_type),
-+			cdns_phy->phys[i].num_lanes);
- 
- 	return 0;
- 
-@@ -3134,6 +3180,37 @@ static void cdns_torrent_phy_remove(struct platform_device *pdev)
- 	cdns_torrent_clk_cleanup(cdns_phy);
- }
- 
-+/* Multilink PCIe and USB Same SSC link configuration */
-+static const struct cdns_reg_pairs ml_pcie_usb_link_cmn_regs[] = {
-+	{0x0002, PHY_PLL_CFG},
-+	{0x8600, CMN_PDIAG_PLL0_CLK_SEL_M0}
-+};
-+
-+static const struct cdns_reg_pairs ml_pcie_usb_xcvr_diag_ln_regs[] = {
-+	{0x0100, XCVR_DIAG_HSCLK_SEL},
-+	{0x0013, XCVR_DIAG_HSCLK_DIV},
-+	{0x0812, XCVR_DIAG_PLLDRC_CTRL}
-+};
-+
-+static const struct cdns_reg_pairs usb_ml_pcie_xcvr_diag_ln_regs[] = {
-+	{0x0041, XCVR_DIAG_PLLDRC_CTRL},
-+};
-+
-+static const struct cdns_torrent_vals ml_pcie_usb_link_cmn_vals = {
-+	.reg_pairs = ml_pcie_usb_link_cmn_regs,
-+	.num_regs = ARRAY_SIZE(ml_pcie_usb_link_cmn_regs),
-+};
-+
-+static const struct cdns_torrent_vals ml_pcie_usb_xcvr_diag_ln_vals = {
-+	.reg_pairs = ml_pcie_usb_xcvr_diag_ln_regs,
-+	.num_regs = ARRAY_SIZE(ml_pcie_usb_xcvr_diag_ln_regs),
-+};
-+
-+static const struct cdns_torrent_vals usb_ml_pcie_xcvr_diag_ln_vals = {
-+	.reg_pairs = usb_ml_pcie_xcvr_diag_ln_regs,
-+	.num_regs = ARRAY_SIZE(usb_ml_pcie_xcvr_diag_ln_regs),
-+};
-+
- /* Multi link PCIe configuration */
- static const struct cdns_reg_pairs ml_pcie_link_cmn_regs[] = {
- 	{0x0002, PHY_PLL_CFG},
-@@ -4140,6 +4217,8 @@ static const struct cdns_reg_pairs usb_100_no_ssc_rx_ln_regs[] = {
- 	{0x0C02, RX_REE_ATTEN_THR},
- 	{0x0330, RX_REE_SMGM_CTRL1},
- 	{0x0300, RX_REE_SMGM_CTRL2},
-+	{0x0000, RX_REE_PEAK_UTHR},
-+	{0x01F5, RX_REE_PEAK_LTHR},
- 	{0x0019, RX_REE_TAP1_CLIP},
- 	{0x0019, RX_REE_TAP2TON_CLIP},
- 	{0x1004, RX_DIAG_SIGDET_TUNE},
-@@ -4775,6 +4854,8 @@ static const struct cdns_torrent_vals_entry link_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_DP), &pcie_dp_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USXGMII), &pcie_usxgmii_link_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE_ML, TYPE_USB), &ml_pcie_usb_link_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_NONE), &sl_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_PCIE), &pcie_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_QSGMII), &sgmii_qsgmii_link_cmn_vals},
-@@ -4789,6 +4870,7 @@ static const struct cdns_torrent_vals_entry link_cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_NONE), &sl_usb_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_PCIE), &pcie_usb_link_cmn_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_PCIE_ML), &ml_pcie_usb_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_SGMII), &usb_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_QSGMII), &usb_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_DP), &usb_dp_link_cmn_vals},
-@@ -4812,6 +4894,8 @@ static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_DP), &pcie_dp_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USXGMII), &pcie_usxgmii_xcvr_diag_ln_vals},
- 
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE_ML, TYPE_USB), &ml_pcie_usb_xcvr_diag_ln_vals},
-+
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_NONE), &sl_sgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_PCIE), &sgmii_pcie_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_SGMII, TYPE_QSGMII), &sgmii_qsgmii_xcvr_diag_ln_vals},
-@@ -4826,6 +4910,7 @@ static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_NONE), &sl_usb_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_PCIE), &usb_pcie_xcvr_diag_ln_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_PCIE_ML), &usb_ml_pcie_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_SGMII), &usb_sgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_QSGMII), &usb_sgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_DP), &usb_dp_xcvr_diag_ln_vals},
-@@ -4839,6 +4924,7 @@ static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
- static const struct cdns_torrent_vals_entry pcs_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_NONE), &usb_phy_pcs_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_PCIE), &usb_phy_pcs_cmn_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_PCIE_ML), &usb_phy_pcs_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_SGMII), &usb_phy_pcs_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_QSGMII), &usb_phy_pcs_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USB, TYPE_DP), &usb_phy_pcs_cmn_vals},
-@@ -4874,6 +4960,10 @@ static const struct cdns_torrent_vals_entry cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &ml_pcie_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &ml_pcie_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &ml_pcie_100_int_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &sl_sgmii_100_no_ssc_cmn_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &sgmii_100_no_ssc_cmn_vals},
-@@ -4906,6 +4996,10 @@ static const struct cdns_torrent_vals_entry cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_int_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &sl_usb_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &sl_usb_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &sl_usb_100_int_ssc_cmn_vals},
-@@ -4960,6 +5054,10 @@ static const struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), NULL},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), NULL},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &sgmii_100_no_ssc_tx_ln_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &sgmii_100_no_ssc_tx_ln_vals},
-@@ -4992,6 +5090,10 @@ static const struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-@@ -5046,6 +5148,10 @@ static const struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
-@@ -5078,6 +5184,10 @@ static const struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &usb_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
-@@ -5168,6 +5278,10 @@ static const struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), NULL},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), NULL},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
-@@ -5200,6 +5314,10 @@ static const struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-@@ -5288,6 +5406,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &ml_pcie_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &ml_pcie_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &ml_pcie_100_int_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &sl_sgmii_100_no_ssc_cmn_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &sgmii_100_no_ssc_cmn_vals},
-@@ -5320,6 +5442,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_int_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_cmn_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &sl_usb_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &sl_usb_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &sl_usb_100_int_ssc_cmn_vals},
-@@ -5374,6 +5500,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), NULL},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), NULL},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &ti_sgmii_100_no_ssc_tx_ln_vals},
-@@ -5406,6 +5536,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &usb_100_no_ssc_tx_ln_vals},
-@@ -5460,6 +5594,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_NONE, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_SGMII, TYPE_PCIE, NO_SSC), &sgmii_100_no_ssc_rx_ln_vals},
-@@ -5492,6 +5630,10 @@ static const struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, EXTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE, INTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, NO_SSC), &usb_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, EXTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_PCIE_ML, INTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, NO_SSC), &usb_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, EXTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_SGMII, INTERNAL_SSC), &usb_100_no_ssc_rx_ln_vals},
--- 
-2.43.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBKYW4gMDcsIDIwMjUgYXQgMTA6NDk6MzhBTSArMDUzMCwgU2lkZGhhcnRoIFZhZGFw
+YWxsaSB3cm90ZToKPiBPbiBNb24sIEphbiAwNiwgMjAyNSBhdCAxMTowNTozNVBNICswMTAwLCBD
+aHJpc3RvcGhlIEpBSUxMRVQgd3JvdGU6Cj4gPiBMZSAwNi8wMS8yMDI1IMOgIDE0OjE5LCBTaWRk
+aGFydGggVmFkYXBhbGxpIGEgw6ljcml0wqA6Cj4gPiA+IEZyb206IFN3YXBuaWwgSmFraGFkZSA8
+c2pha2hhZGVAY2FkZW5jZS5jb20+Cj4gPiA+IAo+ID4gPiBBZGQgcmVnaXN0ZXIgc2VxdWVuY2Vz
+IGFuZCBzdXBwb3J0IGZvciBQQ0llIG11bHRpbGluayArIFVTQiBjb25maWd1cmF0aW9uCj4gPiA+
+IGZvciAxMDBNSHogcmVmZXJlbmNlIGNsb2NrLiBUaGUgc2FtZSBTU0MgaXMgdXNlZCBmb3IgYm90
+aCBQQ0llIGFuZCBVU0IuCj4gPiA+IAo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBTd2FwbmlsIEpha2hh
+ZGUgPHNqYWtoYWRlQGNhZGVuY2UuY29tPgo+ID4gPiBDby1kZXZlbG9wZWQtYnk6IFNpZGRoYXJ0
+aCBWYWRhcGFsbGkgPHMtdmFkYXBhbGxpQHRpLmNvbT4KPiA+ID4gU2lnbmVkLW9mZi1ieTogU2lk
+ZGhhcnRoIFZhZGFwYWxsaSA8cy12YWRhcGFsbGlAdGkuY29tPgo+ID4gPiAtLS0KPiA+IC4uLgo+
+ID4gCj4gPiA+IEBAIC0yNTEzLDYgKzI1MTcsNDQgQEAgaW50IGNkbnNfdG9ycmVudF9waHlfY29u
+ZmlndXJlX211bHRpbGluayhzdHJ1Y3QgY2Ruc190b3JyZW50X3BoeSAqY2Ruc19waHkpCj4gPiA+
+ICAgCQlwaHlfdDEgPSBmbnMoY2Ruc19waHktPnByb3RvY29sX2JpdG1hc2ssIDApOwo+ID4gPiAg
+IAkJcGh5X3QyID0gZm5zKGNkbnNfcGh5LT5wcm90b2NvbF9iaXRtYXNrLCAxKTsKPiA+ID4gKwo+
+ID4gPiArCQkvKioKPiA+IAo+ID4gV2h5IGtlcm5lbC1kb2MgbGlrZSBzdGFydCBvZiBjb21tZW50
+Pwo+ID4gT25seSAvKiA/Cj4gPiAKPiA+ID4gKwkJICogUENJZSBNdWx0aWxpbmsgY29uZmlndXJh
+dGlvbiBjYW4gYmUgc3VwcG9ydGVkIGFsb25nIHdpdGggYQo+ID4gPiArCQkgKiBub24tUENJZSBw
+cm90b2NvbC4gVGhlIGV4aXN0aW5nIGxpbWl0YXRpb24gYXNzb2NpYXRlZCB3aXRoCj4gPiA+ICsJ
+CSAqIHRoZSBzdGFuZGFsb25lIFBDSWUgTXVsdGlsaW5rIGNvbmZpZ3VyYXRpb24gc3RpbGwgcmVt
+YWlucywKPiA+ID4gKwkJICogaW1wbHlpbmcgdGhhdCB0aGVyZSBjYW4gYmUgb25seSB0d28gbGlu
+a3MgKHN1Ym5vZGVzKSBvZiB0aGUKPiA+ID4gKwkJICogUEhZIHR5cGUgUENJZSB3aGljaCBjb25z
+dGl0dXRlIHRoZSBQQ0llIE11bHRpbGluay4KPiA+ID4gKwkJICoKPiA+ID4gKwkJICogU3VjaCBj
+b25maWd1cmF0aW9ucyBhcmUgaGFuZGxlZCBieSBpbnRyb2R1Y2luZyBhIG5ldyBwcm90b2NvbAo+
+ID4gPiArCQkgKiBuYW1lbHkgVFlQRV9QQ0lFX01MLiBCb3RoIG9mIHRoZSBQQ0llIGxpbmtzIHdo
+aWNoIGhhdmUgdGhlCj4gPiA+ICsJCSAqIHByb3RvY29sIGFzIFRZUEVfUENJRSBzaGFsbCBiZSB0
+cmVhdGVkIGFzIHRob3VnaCB0aGUgcHJvdG9jb2wKPiA+ID4gKwkJICogY29ycmVzcG9uZGluZyB0
+byB0aGVtIGlzIFRZUEVfUENJRV9NTCBvbmx5IGZvciB0aGUgc2FrZSBvZgo+ID4gPiArCQkgKiBj
+b25maWd1cmluZyB0aGUgU0VSREVTLgo+ID4gPiArCQkgKgo+ID4gPiArCQkgKiBQQ0llIE11bHRp
+bGluayBjb25maWd1cmF0aW9uIGNhbiBiZSBpZGVudGlmaWVkIGJ5IGNoZWNraW5nIGlmCj4gPiA+
+ICsJCSAqIHRoZXJlIGFyZSBleGFjdGx5IHR3byBsaW5rcyB3aXRoIHBoeV90eXBlIHNldCB0byBU
+WVBFX1BDSUUuCj4gPiA+ICsJCSAqIHBoeV90MSBhbmQgcGh5X3QyIGFyZSBtb2RpZmllZCBpbiBz
+dWNoIGNhc2VzIHRvIHN1cHBvcnQgdGhlCj4gPiA+ICsJCSAqIFBDSWUgTXVsdGlsaW5rIGNvbmZp
+Z3VyYXRpb24gd2l0aCBhIG5vbi1QQ0llIHByb3RvY29sLgo+ID4gPiArCQkgKi8KPiA+IC4uLgo+
+ID4gCj4gPiA+IEBAIC0zMTM0LDYgKzMxODAsMzcgQEAgc3RhdGljIHZvaWQgY2Ruc190b3JyZW50
+X3BoeV9yZW1vdmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+ID4gICAJY2Ruc190
+b3JyZW50X2Nsa19jbGVhbnVwKGNkbnNfcGh5KTsKPiA+ID4gICB9Cj4gPiA+ICsvKiBNdWx0aWxp
+bmsgUENJZSBhbmQgVVNCIFNhbWUgU1NDIGxpbmsgY29uZmlndXJhdGlvbiAqLwo+ID4gPiArc3Rh
+dGljIHN0cnVjdCBjZG5zX3JlZ19wYWlycyBtbF9wY2llX3VzYl9saW5rX2Ntbl9yZWdzW10gPSB7
+Cj4gPiA+ICsJezB4MDAwMiwgUEhZX1BMTF9DRkd9LAo+ID4gPiArCXsweDg2MDAsIENNTl9QRElB
+R19QTEwwX0NMS19TRUxfTTB9Cj4gPiA+ICt9Owo+ID4gCj4gPiBNYXliZSBjb25zdCBjb3VsZCBi
+ZSBhZGRlZCBoZXJlIGFuZCBiZWxvdz8KPiA+IAo+ID4gPiArCj4gPiA+ICtzdGF0aWMgc3RydWN0
+IGNkbnNfcmVnX3BhaXJzIG1sX3BjaWVfdXNiX3hjdnJfZGlhZ19sbl9yZWdzW10gPSB7Cj4gPiA+
+ICsJezB4MDEwMCwgWENWUl9ESUFHX0hTQ0xLX1NFTH0sCj4gPiA+ICsJezB4MDAxMywgWENWUl9E
+SUFHX0hTQ0xLX0RJVn0sCj4gPiA+ICsJezB4MDgxMiwgWENWUl9ESUFHX1BMTERSQ19DVFJMfQo+
+ID4gPiArfTsKPiAKPiBJIHdpbGwgdXBkYXRlIHRoaXMgcGF0Y2ggYmFzZWQgb24geW91ciBmZWVk
+YmFjayBpbiB0aGUgdjMgc2VyaWVzLiBUaGFuawo+IHlvdSBmb3IgdGhlIHJldmlldy4KCkkgaGF2
+ZSBwb3N0ZWQgdGhlIHYzIHNlcmllcyBhdDoKaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDI1
+MDEwOTEyMTYxNC43NTQ0NjYtMS1zLXZhZGFwYWxsaUB0aS5jb20vCgpSZWdhcmRzLApTaWRkaGFy
+dGguCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
+aHkK
