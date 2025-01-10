@@ -4,48 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0EE4E77188
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 13:54:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9DCFE77188
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 14:01:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gJvKqIX+m7M9dfNql3yrII79pn/CQFBDnIPomXD8WFo=; b=uxO/kUMp7+DE2/
-	xTU32jNVGfnbYH9gbwW+F6eWsgq4s/Zd38Cz8ykARvERqiDB27ql0c7AOHqqVVs1wDZJ/htdHP2MZ
-	eGK745rjD9kgPTGfeNCHN+lxIXMsiJYJDCW811CjML/+7+Pdx9JzdGIjO4jqi8Po1+vG8REn2lkm2
-	77d09LTDJyhqgKBmbclOd+392xDg2rZ5Fqz0INzqf4CxVH9ZPzh4N9QNyeKLbbyXhk967EGgcEbxK
-	TUTnNqMVR7Gw3xCpXFUUE/6Z6Ll/uCfFEsB1u6IxGn/UrfmWafSpOWDOBKZzMqM0HUdSAzO12ptfn
-	O90W+Tqo5NV9CVHHTFEA==;
+	List-Owner; bh=r/EtsThDmF9QYRYdJ6fT1hrgNXX3WANOhfLXpxSOhKM=; b=h91TTLUfOwRqe1
+	iLAcLlMTk76acanuilLYEiTEmOB1g8GQwL9rmn6gl7N1/JtqIVnIoCyHmH1RiCcj+a+mB6OdiIT7j
+	b4J6n57kwkxuQFHHLd48uqcpU00fVzU7vrKt/Btm7EN3SrQaIpEyzCoZU7UQ8UCS0A4i9bb84bUYd
+	vy86lkyltrgY5bCYeHYQH1HKgTayqege+dL0WSMc7WopKpPLWC5Ze8Osis0udpVFPyeTt4M17eyea
+	yYwoVFoSzXMTDLmXyVE2QBW4Kky4ZUV0e6fHxzqGMnNKbctJunwD5ZPsMSM3Y8xPjIozKxkEVs/ff
+	Tf0/TIooL79TA3LHDJ7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWFTP-0000000FXc8-1xlt;
-	Fri, 10 Jan 2025 13:54:51 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tWFZQ-0000000FYrz-2SNO;
+	Fri, 10 Jan 2025 14:01:04 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWFS9-0000000FXOk-1fdK;
-	Fri, 10 Jan 2025 13:53:34 +0000
+	id 1tWFTf-0000000FXio-2S8b;
+	Fri, 10 Jan 2025 13:55:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=Crriz9ADolTMeTb8Q5bfJqlQH2X3QmHbSOYoLMkGdAY=; b=m8gRhrcxEHziiNcACbhit+6ewp
+	eqewnqK3nO8tsjTvlmql/bsP2JHUad/eLzE+5ciyT0xoQIeVx/GAVAcX0EqcRjEIn3ZDaLHV+g2Y1
+	fnWYzOA/c+Z38XSnrwgjgu3RXjHLknWKB/qZYZ+eT/pzsNnxnFNFDJ6kqsDzN8nBG9pvuARq9Rj7R
+	G6M+CCCx6jLW0XtuOPeb7MvCl3rIDmUrvUvOys697DjzUrL3zkYcfwThTEW6Cki2tPGJzpZfWxIrO
+	FSzOOlPgLQXNy4EbaTPT8bADJSO9cPHP3Z9kLFmYepPnZTva/JEZPexX7+tYiAXl2Xye6QNek+boZ
+	OeB3ujoA==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tWFTc-00000009mrY-1ZBm;
+	Fri, 10 Jan 2025 13:55:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id BC0ACA41F1A;
-	Fri, 10 Jan 2025 13:51:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C1FE1C4CED6;
-	Fri, 10 Jan 2025 13:53:22 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id EE3605C2D8F;
+	Fri, 10 Jan 2025 13:54:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC042C4CED6;
+	Fri, 10 Jan 2025 13:54:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736517211;
-	bh=0riks6cOaH09jocWG7yCJOIFBOexy2n5FPMx4nlkjLE=;
+	s=k20201202; t=1736517300;
+	bh=GwQHk8tU2zwJEWdTaDa4kpSdyMXUvLt1FJwllRojAgM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=ZgHwmnCpsG+wlKwA7BiVSLSUQmmVPtr0WHYYHNolJhRpbZKLzOJdzA4IxudfAXvUX
-	 yZXWmjLrPMuzWkWzeecfvwvCqMa2921CIDdZvc1QUzn2iYa/qONmycv+SKJTjH+LyU
-	 oiTUVsOIKfr87cobD2FAOEE1CGRUNMyG47okfVc31hA4JAGYVkRiPeLWWdCoAIgjTf
-	 3VljjVP/WMfiohJzFLYoygBLLc6jVVlGIFCWohjYsGxNnz7QoGzYYYdNr6md2u0fTi
-	 KUOVnWnSEr7+CK8HSqijO5q7KkHq04ZMSqpqmoRic4+UUebotWq8Zp0BVqm2Ks8XwJ
-	 9vgs0nAQDijug==
-Message-ID: <39444068-0996-4699-b1f9-d34c911dbd6a@kernel.org>
-Date: Fri, 10 Jan 2025 14:53:20 +0100
+	b=HLmE9fAe9Av6txZNzmMcvTKs1v24fyzSDnMKGs6c0+nfkvNmg6/rl7nNqh9vpwdpp
+	 nMu2r3Q3FY2/0IMNNs36T/stybZg0YIRiZtaW9vnpzT8qqL7splqH5PlQUEFaWfXC5
+	 09WznGMPKnxn5Rt/MZlBklmL8hTxQUlWAXNCIWuMc4HGDDVYg3EDtatOv5MI7Xh2si
+	 6Z5XtlgezD/S5VdsSVoHOBsloygvxakBZJWB7kmM//MPsdZgFnYB3YErtOy4RG1g5q
+	 +csWu9kgJPW+NZOLDZ66lLdtfB2QLDwU+tzaXz4sxq+frZJU6qbtTLcQKEhNqETink
+	 dBNX0y1KorfHA==
+Message-ID: <27fe2d33-dc79-435f-ab1c-467bd121c049@kernel.org>
+Date: Fri, 10 Jan 2025 14:54:49 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 10/12] dt-bindings: phy: allwinner: add v853 usb phy
+Subject: Re: [PATCH 07/12] devicetree: bindings: power: add v853 ppu
 To: Andras Szemzo <szemzo.andras@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
  <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -66,7 +80,7 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
 References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-11-szemzo.andras@gmail.com>
+ <20250110123923.270626-8-szemzo.andras@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -112,10 +126,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250110123923.270626-11-szemzo.andras@gmail.com>
+In-Reply-To: <20250110123923.270626-8-szemzo.andras@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250110_055333_575983_B7F91B7A 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20250110_135504_793690_8B3E0D59 
+X-CRM114-Status: UNSURE (   6.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,102 +148,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 10/01/2025 13:39, Andras Szemzo wrote:
-> +
-> +properties:
-> +  "#phy-cells":
-> +    const: 1
-> +
-> +  compatible:
-> +    const:
-> +	- allwinner,sun8i-v853-usb-phy
+> Document V853 PPU compatible.
+> 
+> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+Why different subject prefix?
 
-Wrong indentation, never tested.
-
-Compatible is always the first property.
-
-> +
-> +  reg:
-> +    items:
-> +      - description: PHY Control registers
-> +      - description: PHY PMU0 registers
-> +
-> +  reg-names:
-> +    items:
-> +      - const: phy_ctrl
-> +      - const: pmu0
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: USB OHCI PHY bus clock
-
-Redundant description really...
-
-> +
-> +  clock-names:
-> +    const: usb0_phy
-
-Drop clock-names, not really helpful.
-
-
-> +
-> +  resets:
-> +    maxItems: 1
-> +    description: USB OHCI reset
-> +
-> +  reset-names:
-> +    const: usb0_reset
-
-Drop names, also not really helping.
-
-> +
-> +  usb0_id_det-gpios:
-
-There are no properties with underscores.
-
-I don't get why you are using "usb0" prefix. Document all pins, so
-"usb1" as well, assuming it exists.
-
-It anyway looks questionable - aren't these properties of connector?
-
-
-> +    maxItems: 1
-> +    description: GPIO to the USB OTG ID pin
-> +
-> +  usb0_vbus_det-gpios:
-> +    maxItems: 1
-> +    description: GPIO to the USB OTG VBUS detect pin
-> +
-> +  usb0_vbus_power-supply:
-> +    description: Power supply to detect the USB OTG VBUS
-> +
-> +  usb0_vbus-supply:
-> +    description: Regulator controlling USB OTG VBUS
-
-Regulator and power supply are here synonyms, so I don't understand
-these two properties.
-
-> +
-> +required:
-> +  - "#phy-cells"
-> +  - compatible
-> +  - clocks
-> +  - clock-names
-> +  - reg
-> +  - reg-names
-> +  - resets
-> +  - reset-names
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +    #include <dt-bindings/clock/sun8i-v853-ccu.h>
-> +    #include <dt-bindings/reset/sun8i-v853-ccu.h>
-> +
-> +    usbphy: phy@4100400 {
-> +        #phy-cells = <1>;
-Please follow DTS coding style.
+Please use subject prefixes matching the subsystem. You can get them for
+example with `git log --oneline -- DIRECTORY_OR_FILE` on the directory
+your patch is touching. For bindings, the preferred subjects are
+explained here:
+https://www.kernel.org/doc/html/latest/devicetree/bindings/submitting-patches.html#i-for-patch-submitters
 
 Best regards,
 Krzysztof
