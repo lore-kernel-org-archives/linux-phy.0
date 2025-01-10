@@ -4,118 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FC6EE77188
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 14:07:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DD30E7719D
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 14:22:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iB0DD/n8In0FvILChly6tk50Op419G57FcEwf0IKLg4=; b=p0CfYLu92NK+bu
-	9xxttl/XuRsG0pAkh/Qx47mhy85DG5Pc0vNcypwvoF/On7MPHJLYwubbn3TWo82KA+WXOSMfImDkd
-	pI5uIwBww2OCorMue3fg9a7xereEVV2H23KkwobSML7w83OscmI65c67zQhQO84XJAY7pYF1iJghX
-	2cF+/1tlRLih1KxoEVPNs+BcTy6BArWcegaKtBOKfpsrkkdi6F/x4scrPXTeFOA+M7jSTFwmQaZS7
-	O7O6wgc8jS/psI49qyyV8PQO/ChAg6IapBw7TpuUAZVYJQCE41w8qYmJrnSZOwYJDD7VLISTvF+Gp
-	dojZwoRh/Hmo7aoUqTDA==;
+	List-Owner; bh=zDcI2h5GDLf1smatp6gIu99c0uaf3FHkaXiz9rI12RI=; b=yh8zkZEbH02znd
+	gYieWQWMEP2i/MTDiu1+Jel3VxJs2ldTAUtMlvJr6PxA1vFFAntUtxRiO0/5JN6ilFrFcFTAyrlyE
+	g5Zu2UVzYKTUffA7nJQfKg8wRM5AnnUoxusL2A9Lf8SsGwn+nhEFh1OhX+SEDQbMn0baLZU6v1lS2
+	ZB2wCSporzHOJNrytDY11/bsgQ/1xbsRngNS2CPYTRvHJ6VOu9J1PnHd1Ix9fQqhGMpTj59Glx4SB
+	HoqJPiXhOWdULR4kReQG9DIbS9RjRhYtAHThvJ0wlp5v95vlXdlFh3Kzsc7x2yS3Yayv87e2xyaYa
+	O1eMEwR550cgpkDAP2tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWFfO-0000000FaHa-0Kq1;
-	Fri, 10 Jan 2025 14:07:14 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tWFuB-0000000FcoL-3Gf8;
+	Fri, 10 Jan 2025 14:22:31 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWFXU-0000000FYRC-3x9e;
-	Fri, 10 Jan 2025 13:59:06 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id B1325A41FA0;
-	Fri, 10 Jan 2025 13:57:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BEE7DC4CED6;
-	Fri, 10 Jan 2025 13:58:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736517543;
-	bh=g7wxpqcSQJrcO2+CyoWI6wsntd8vQcmKdFcJ3jJ7Gto=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=qtSc7DoKJaJxVmUrLBQwq48v+ML5dD9Ga2+pU723ktjwlMZcKLgkHhlcyOXDZUuEe
-	 qK8ewFruiXPXBpCoEmKdqMgA2DXJ94pw8IEY8nGAznJ3xE0lQMsw/R7ANS4L2atzdU
-	 QQse0NzArfLlWtSoMphmG3sWlXakNCM31W84vEItXJA6h3rtEeQurmXhtzbEUvQk7v
-	 GZHD9+zNNPISrFQhdCNOMDaieDZnj+IIUv24yxWd/oY4hgBgoEXuIdrXyFCGKGpK2U
-	 LxadZwWtcr2cXnOIcHNp3dX4MBQhK9a72dgHjr2+kGwXScL6DLfF7Rl7pM1kPWEEjA
-	 my9wCAUEhljwA==
-Message-ID: <ff57cf8d-626e-4d35-a18f-1a89b4d9fa3e@kernel.org>
-Date: Fri, 10 Jan 2025 14:58:52 +0100
+	id 1tWEdN-0000000FNt3-2zLp;
+	Fri, 10 Jan 2025 13:01:09 +0000
+Received: from pps.filterd (m0288072.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50ABKFQQ018513;
+	Fri, 10 Jan 2025 14:00:50 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=selector1; bh=
+	FQHuheijM5S9Ev2HmelYR2pqAQgPuPjmjnQQD9As+4g=; b=PrWj7vKwAgn4GprH
+	hAFpW29a/nqNL1YcXdNh3xRvaX516JfYUlTqtpWAZwdeLA2Fw+o/0FKArGuwKCQL
+	ZaRssb0GJC3lVTUEtFrAiXCheBmbgJ+JVfr/WsouR4MegR1JQWrzkfI4KskEunDu
+	2AqeLPGWvJ/6+461Y8Uq0VGvpU6YYNmAPitLTNPkZWXiYqvvd9djy2tZVYm/DKdg
+	tsP6dVn8MA077hhIMW0FHmT99HeofutidR1llDf6DjDLJhnEzJ46PSWB2rym96FV
+	rWOpIr0r6TKGeYxt116/WZQdTKEgHiC+FKDK25ljqsmNni81+BuILH36+lZjT8sr
+	ugsywQ==
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 442f5q53pv-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 10 Jan 2025 14:00:50 +0100 (CET)
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id C9D3140046;
+	Fri, 10 Jan 2025 13:59:39 +0100 (CET)
+Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 10BD42B0C96;
+	Fri, 10 Jan 2025 13:57:40 +0100 (CET)
+Received: from [10.129.178.212] (10.129.178.212) by SHFDAG1NODE3.st.com
+ (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.37; Fri, 10 Jan
+ 2025 13:57:39 +0100
+Message-ID: <ef1ea5da-4344-4c59-8d2b-1b52533ef0cd@foss.st.com>
+Date: Fri, 10 Jan 2025 13:57:31 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 12/12] ARM: dts: sun8i: add DTSI file for V853
-To: Andras Szemzo <szemzo.andras@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
- <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
- Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
-References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-13-szemzo.andras@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH] phy: stm32: work around constant-value overflow assertion
+To: Arnd Bergmann <arnd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Kishon
+ Vijay Abraham I <kishon@kernel.org>,
+        Maxime Coquelin
+	<mcoquelin.stm32@gmail.com>,
+        Alexandre Torgue <alexandre.torgue@foss.st.com>
+CC: Arnd Bergmann <arnd@arndb.de>, Yang Li <yang.lee@linux.alibaba.com>,
+        <linux-phy@lists.infradead.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+References: <20241111103712.3520611-1-arnd@kernel.org>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250110123923.270626-13-szemzo.andras@gmail.com>
+From: Christian Bruel <christian.bruel@foss.st.com>
+In-Reply-To: <20241111103712.3520611-1-arnd@kernel.org>
+X-Originating-IP: [10.129.178.212]
+X-ClientProxiedBy: EQNCAS1NODE4.st.com (10.75.129.82) To SHFDAG1NODE3.st.com
+ (10.75.129.71)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250110_055905_124733_C70D98F0 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20250110_050106_058048_7168D697 
+X-CRM114-Status: GOOD (  24.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,56 +92,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/01/2025 13:39, Andras Szemzo wrote:
-> V853/V851 is a new SoC by Allwinner. Add a basic dtsi file for it.
+Hello,
+
+Sorry, I missed this patch.
+
+The gcc warning bellow is a false positive as the range is necessarily 
+between the min_imp/max_imp values, thus imp_lookup will catch, or 
+returned -EINVAL earlier
+
+So maybe a more explicit way to shut-up the warning would be to use a 
+boolean flag with a WARN_ON, something like:
+
+     bool found;
+
+     for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
+      if (imp_lookup[imp_of].microohm <= val) {
+          found = true;
+          break;
+        }
+     }
+
+     dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
+                         imp_lookup[imp_of].microohm);
+
+     if (WARN_ON(! found))
+        return;
+
+     regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+                        STM32MP25_PCIEPRG_IMPCTRL_OHM,
+                        FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
+
+Regards
+
+Christian
+
+On 11/11/24 11:37, Arnd Bergmann wrote:
+> From: Arnd Bergmann <arnd@arndb.de>
 > 
-> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+> FIELD_PREP() checks that a constant fits into the available bitfield,
+> but if one of the two lookup tables in stm32_impedance_tune() does
+> not find a matching entry, the index is out of range, which gcc
+> correctly complains about:
+> 
+> In file included from <command-line>:
+> In function 'stm32_impedance_tune',
+>      inlined from 'stm32_combophy_pll_init' at drivers/phy/st/phy-stm32-combophy.c:247:9:
+> include/linux/compiler_types.h:517:38: error: call to '__compiletime_assert_447' declared with attribute error: FIELD_PREP: value too large for the field
+>    517 |  _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
+>        |                                      ^
+> include/linux/bitfield.h:68:3: note: in expansion of macro 'BUILD_BUG_ON_MSG'
+>     68 |   BUILD_BUG_ON_MSG(__builtin_constant_p(_val) ?  \
+>    115 |   __BF_FIELD_CHECK(_mask, 0ULL, _val, "FIELD_PREP: "); \
+>        |   ^~~~~~~~~~~~~~~~
+> drivers/phy/st/phy-stm32-combophy.c:162:8: note: in expansion of macro 'FIELD_PREP'
+>    162 |        FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
+>        |        ^~~~~~~~~~
+> 
+> Rework this so the field value gets set inside of the loop and otherwise
+> set to zero.
+> 
+> Fixes: 47e1bb6b4ba0 ("phy: stm32: Add support for STM32MP25 COMBOPHY.")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  arch/arm/boot/dts/allwinner/sun8i-v853.dtsi | 673 ++++++++++++++++++++
->  1 file changed, 673 insertions(+)
->  create mode 100644 arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
+>   drivers/phy/st/phy-stm32-combophy.c | 21 +++++++++++++++------
+>   1 file changed, 15 insertions(+), 6 deletions(-)
 > 
-> diff --git a/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi b/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
-> new file mode 100644
-> index 000000000000..4ecc97c7e7c0
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
-
-Impossible to build and test.
-
-Please submit complete work, so one which can be actually built (DTSI,
-DTS and bindings).
-
-> @@ -0,0 +1,673 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ or MIT)
-
-Odd license, why would we ever want GPLv3 or even GPLv4?
-
-> +// Copyright (C) 2024 Andras Szemzo <szemzo.andras@gmail.com>
-> +
-> +#include <dt-bindings/clock/sun6i-rtc.h>
-> +#include <dt-bindings/clock/sun8i-v853-r-ccu.h>
-> +#include <dt-bindings/reset/sun8i-v853-r-ccu.h>
-> +#include <dt-bindings/clock/sun8i-v853-ccu.h>
-> +#include <dt-bindings/reset/sun8i-v853-ccu.h>
-> +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/power/allwinner,sun8i-v853-ppu.h>
-> +
-> +/ {
-> +	#address-cells = <1>;
-> +	#size-cells = <1>;
-> +
-> +	osc24M: osc24M-clk {
-
-Only lowercase node names.
-
-Best regards,
-Krzysztof
+> diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
+> index 765bb34fe358..49e9fa90a681 100644
+> --- a/drivers/phy/st/phy-stm32-combophy.c
+> +++ b/drivers/phy/st/phy-stm32-combophy.c
+> @@ -122,6 +122,7 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
+>   	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
+>   	u32 min_vswing = imp_lookup[0].vswing[0];
+>   	u32 val;
+> +	u32 regval;
+>   
+>   	if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
+>   		if (val < min_imp || val > max_imp) {
+> @@ -129,16 +130,20 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
+>   			return -EINVAL;
+>   		}
+>   
+> -		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++)
+> -			if (imp_lookup[imp_of].microohm <= val)
+> +		regval = 0;
+> +		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
+> +			if (imp_lookup[imp_of].microohm <= val) {
+> +				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of);
+>   				break;
+> +			}
+> +		}
+>   
+>   		dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
+>   			imp_lookup[imp_of].microohm);
+>   
+>   		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+>   				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
+> -				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
+> +				   regval);
+>   	} else {
+>   		regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
+>   		imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
+> @@ -150,16 +155,20 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
+>   			return -EINVAL;
+>   		}
+>   
+> -		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++)
+> -			if (imp_lookup[imp_of].vswing[vswing_of] >= val)
+> +		regval = 0;
+> +		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++) {
+> +			if (imp_lookup[imp_of].vswing[vswing_of] >= val) {
+> +				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of);
+>   				break;
+> +			}
+> +		}
+>   
+>   		dev_dbg(combophy->dev, "Set %u microvolt swing\n",
+>   			 imp_lookup[imp_of].vswing[vswing_of]);
+>   
+>   		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+>   				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
+> -				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
+> +				   regval);
+>   	}
+>   
+>   	return 0;
 
 -- 
 linux-phy mailing list
