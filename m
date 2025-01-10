@@ -4,89 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EFECE77188
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 10:06:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1CF3E77188
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 10:28:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nFtDtBg67BiU1modhzFXznHA4tH5OPI4wSezXx3JTL4=; b=cK1M/JdA9Yz59D
-	S5rzDOzevENZTWkt/u/bdnQqMlI3vaRQ00uEWEE5MHM/KfcPzPwy3qcT3AN3qGbVUShQ/+6Nc94Ni
-	8ubXhMzHiE5VAtA5gTUoCJp7hk88V7wrRfK6A89RHxKBERy0AX3qbEaJNSeah7SKvHWOvq/SNUnDa
-	gVp+8fnD3mecNbYO/BhpDDdd2E7YKFI+GFgDdbtUMcMVAAZrE2lV4Lf3ujSXU6STyCcNhwAvpWKF2
-	xIzKjQYJscZPI3wvYs0YvPXXdmdcOrVtZZosrQezoht5/8Qg2LUw/8F8zZVvgyH2Xqfj6OFBAfNxC
-	P/QwJ392VtOupVavIbjQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fc3D1ZHKQ+wL82bmxjYsK5uqOpbocOi9BzpAQfEZZMM=; b=2M4tB9z0aSFe0MUOel9v3kPdLv
+	46yZmSmqYezEsLl4PkXTr9JTgkAgpopy7T351lKkY4icxoTWJQDTTs/l115z4movB4pafvl6n+18h
+	ku5M9piOa0EL2jkWdTNcqvV+rb2Jjj/pg3pumGdzb1uF62fJYkbd43snOIs1QdJFuOMnngA4u9JWz
+	Mq48lOhSclKNVjGu9jI2WBFgMNP3uqBs+q1tJu137EgBqMQxIQNzUXwSfVic9+CxxGT/IfRCMwnq6
+	/SsZZzeuY9iCn6hFzDJyPXZjCL8nwWMgpgj2Hw8q6EeGi0a58o2J2OnX0U9kvnOMbbICMFPar8Sx0
+	qhmQwnRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWBu3-0000000EsR3-38zF;
-	Fri, 10 Jan 2025 10:06:07 +0000
-Received: from mail-vs1-f50.google.com ([209.85.217.50])
+	id 1tWCG1-0000000ExAD-2qZH;
+	Fri, 10 Jan 2025 10:28:49 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWBsr-0000000EsCc-3V8y
+	id 1tWC1K-0000000EuBp-3b0U
 	for linux-phy@lists.infradead.org;
-	Fri, 10 Jan 2025 10:04:54 +0000
-Received: by mail-vs1-f50.google.com with SMTP id ada2fe7eead31-4afe1009960so599544137.0
-        for <linux-phy@lists.infradead.org>; Fri, 10 Jan 2025 02:04:53 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736503491; x=1737108291;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=5Nc/Nm3nzGS8KVHu4QliWy2g6HwQKPwrSbRFD5/ECKk=;
-        b=nn+IjZaPNZt/XzNiUDPgKeB10K/B3vEbkpL9gTD9jGA23u48mWcB1Efgw7aNkQXPye
-         iXO2ubMsEh1MHE/JPGJIfKcz9+ERKKAqTTAf1/mpwfs+Zh2Hnb4qrNYgEvEkkJCJtIHC
-         jdmr23x+f+9XUsX9ZxYVZ1Si6xctY54f4r3HfP7HPEWyKaKclmJuQp7CEMPgwH11y6Tx
-         zpUgGSkApCjNpbmUMVhCT2NGg05sd8b9NHuyal1IGk75VX2VTw64m+CGufNw0Pik3lKk
-         wcmi0ydKz3Ucg9A1lFnzb/LUNiXzJ/RGmjOzDOFgx3o4FCKm4iYuA/zorzlm1yApE0+H
-         V0lQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVC5NEZopUc/wTZ91z94Dbxs1qd2oMd1IyZGbUTmb9bymvT13Whj3YOlu+5Sp24Bcu+feja8CKlFG4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzCxCe+Ab5lCirSD1hdcvjV1vr+Y4NkmqDzxsu4M7uc+/3ppAlk
-	suY0QrVNYY6i/OX5XLcfVyjt8ImuxFR6v8SxKvPlUHCAtN3z13eFKna+h4tU
-X-Gm-Gg: ASbGnct9KO87NVHrepCJmzvBBqsgbglFifyzRVW6FYjiE/oCBmUNn9UhnE374P4dMHf
-	ztTQ+yoqIwz9ptwbbelRBVIz/wMKFTbSUyYFVFcT/wgPqIo8p7Tief9TGgzDFmm++3OG/xfy6Y9
-	IxcVwQXWWVq0SBRWOX4F8TJJZlpdy5oKZ3EnkZzem4skGukSSmwpb9Bxv9n55G/3pX1S6eD7ydN
-	jtLUXakwd4QN8EPvh7sXwsuC3OK2E2vtFCazyLh6znx8r5juDLBeNzXN06ny3RMjFzo80L3D9oX
-	HfoO1mzo6Q50R/zlgd0l+p8=
-X-Google-Smtp-Source: AGHT+IF97cWAJT59L71NNEMIfKpZ9dyjKvmuRbs4n83LaigmU0dK7xWgEVa+Xq5xP6AfQG886Y8FIg==
-X-Received: by 2002:a05:6102:4b11:b0:4af:f740:c1b8 with SMTP id ada2fe7eead31-4b3d0ff7493mr10375712137.24.1736503490702;
-        Fri, 10 Jan 2025 02:04:50 -0800 (PST)
-Received: from mail-vk1-f175.google.com (mail-vk1-f175.google.com. [209.85.221.175])
-        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-4b609170483sm2126872137.25.2025.01.10.02.04.49
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 10 Jan 2025 02:04:49 -0800 (PST)
-Received: by mail-vk1-f175.google.com with SMTP id 71dfb90a1353d-518a52c8b5aso565947e0c.2
-        for <linux-phy@lists.infradead.org>; Fri, 10 Jan 2025 02:04:49 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCVcJzwTSWEQUDFT7YNTYRlf7cbjrc+MxYgKEguE2T/2JiOJVDGtxyEv4TI/N7Fw/0qkfBgOeWoEJIw=@lists.infradead.org
-X-Received: by 2002:a05:6102:942:b0:4af:e077:8a73 with SMTP id
- ada2fe7eead31-4b3d0f40076mr9407292137.13.1736503489351; Fri, 10 Jan 2025
- 02:04:49 -0800 (PST)
+	Fri, 10 Jan 2025 10:13:40 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mkl@pengutronix.de>)
+	id 1tWC1D-0006Vz-Px; Fri, 10 Jan 2025 11:13:31 +0100
+Received: from moin.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::7b] helo=bjornoya.blackshift.org)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <mkl@pengutronix.de>)
+	id 1tWC1D-0008oI-1r;
+	Fri, 10 Jan 2025 11:13:31 +0100
+Received: from pengutronix.de (pd9e59fec.dip0.t-ipconnect.de [217.229.159.236])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(Client did not present a certificate)
+	(Authenticated sender: mkl-all@blackshift.org)
+	by smtp.blackshift.org (Postfix) with ESMTPSA id 482BC3A4491;
+	Fri, 10 Jan 2025 10:13:31 +0000 (UTC)
+Date: Fri, 10 Jan 2025 11:13:31 +0100
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: can-transceiver: Drop unnecessary "mux-states"
+ property presence check
+Message-ID: <20250110-amiable-impartial-chinchilla-0dc0ae-mkl@pengutronix.de>
+References: <20241231163251.244167-1-robh@kernel.org>
 MIME-Version: 1.0
-References: <CAMuHMdUG7A10E2SZR6kHiQBrzp_OVvMSd7jxggaoU3B_6fZ+nQ@mail.gmail.com>
- <d4b59d5e94c4c4a488cd24c6c169e418ad53980d.1735524526.git.xiaopei01@kylinos.cn>
- <CAHCN7x+UzXQz+2zs+qvvWfWCmhsxsZoxP+2WHpfdZGnzwDPNQg@mail.gmail.com>
- <Z3aDU_dhfgEHlL4u@atmark-techno.com> <CAHCN7x+XNes4DbW1OvTjwsCddw5FJesCbPkv88rfRHM6sGBKSg@mail.gmail.com>
- <be2c1add-249c-4d01-8233-5a6dcb297e94@kylinos.cn> <671f844e-58af-47f3-8c31-776bb41413f2@kylinos.cn>
- <CAHCN7xL8Yn4HQwgZAFgxbdVU6VSf6vGb2GEANeGRTaPKAA5uhw@mail.gmail.com>
-In-Reply-To: <CAHCN7xL8Yn4HQwgZAFgxbdVU6VSf6vGb2GEANeGRTaPKAA5uhw@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 10 Jan 2025 11:04:37 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdVyxrqSdoR5VMfazwQWbXPmgMLxm-5XfxcJagv-kTuEHg@mail.gmail.com>
-X-Gm-Features: AbW1kvZQR24kAXMS5jsWiLAztIzIut2Sm1ApzfAdBuXX3H93ZnchhJH52aWuN7Q
-Message-ID: <CAMuHMdVyxrqSdoR5VMfazwQWbXPmgMLxm-5XfxcJagv-kTuEHg@mail.gmail.com>
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: fix build error in fsl_samsung_hdmi_phy_configure_pll_lock_det
-To: Adam Ford <aford173@gmail.com>
-Cc: Pei Xiao <xiaopei01@kylinos.cn>, 
-	Dominique Martinet <dominique.martinet@atmark-techno.com>, aford@beaconembedded.com, 
-	arnd@arndb.de, frieder.schrempf@kontron.de, kishon@kernel.org, 
-	l.stach@pengutronix.de, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, m.felsch@pengutronix.de, sandor.yu@nxp.com, 
-	u.kleine-koenig@baylibre.com, vkoul@kernel.org
+In-Reply-To: <20241231163251.244167-1-robh@kernel.org>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250110_020453_879160_62B91401 
-X-CRM114-Status: GOOD (  31.30  )
+X-CRM114-CacheID: sfid-20250110_021338_896840_53EC039B 
+X-CRM114-Status: GOOD (  21.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,62 +75,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============7649759881956272210=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQWRhbSwKCk9uIFRodSwgSmFuIDksIDIwMjUgYXQgNDowM+KAr1BNIEFkYW0gRm9yZCA8YWZv
-cmQxNzNAZ21haWwuY29tPiB3cm90ZToKPiBPbiBUaHUsIEphbiA5LCAyMDI1IGF0IDI6NDXigK9B
-TSBQZWkgWGlhbyA8eGlhb3BlaTAxQGt5bGlub3MuY24+IHdyb3RlOgo+ID4g5ZyoIDIwMjUvMS8z
-IDA5OjM0LCBQZWkgWGlhbyDlhpnpgZM6Cj4gPiA+IOWcqCAyMDI1LzEvMiAyMzowNCwgQWRhbSBG
-b3JkIOWGmemBkzoKPiA+ID4+IE9uIFRodSwgSmFuIDIsIDIwMjUgYXQgNjoxNeKAr0FNIERvbWlu
-aXF1ZSBNYXJ0aW5ldAo+ID4gPj4gPGRvbWluaXF1ZS5tYXJ0aW5ldEBhdG1hcmstdGVjaG5vLmNv
-bT4gd3JvdGU6Cj4gPiA+Pj4gQWRhbSBGb3JkIHdyb3RlIG9uIE1vbiwgRGVjIDMwLCAyMDI0IGF0
-IDA4OjExOjE2UE0gLTA2MDA6Cj4gPiA+Pj4+PiBpbmRleCA1ZWFjNzBhMWU4NTguLjNlNGQxYTUx
-NjBlYSAxMDA2NDQKPiA+ID4+Pj4+IC0tLSBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNs
-LXNhbXN1bmctaGRtaS5jCj4gPiA+Pj4+PiArKysgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5
-LWZzbC1zYW1zdW5nLWhkbWkuYwo+ID4gPj4+Pj4gQEAgLTM0MSw3ICszNDEsNyBAQCBmc2xfc2Ft
-c3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KHN0cnVjdCBmc2xfc2Ftc3VuZ19o
-ZG1pX3BoeSAqcGh5LAo+ID4gPj4+Pj4gICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4g
-PiA+Pj4+PiAgICAgICAgIH0KPiA+ID4+Pj4+Cj4gPiA+Pj4+PiAtICAgICAgIHdyaXRlYihGSUVM
-RF9QUkVQKFJFRzEyX0NLX0RJVl9NQVNLLCBkaXYpLCBwaHktPnJlZ3MgKyBQSFlfUkVHKDEyKSk7
-Cj4gPiA+Pj4+PiArICAgICAgIHdyaXRlYihGSUVMRF9QUkVQKFJFRzEyX0NLX0RJVl9NQVNLLCBk
-aXYgPT0gNCA/IGRpdiAtIDEgOiBkaXYpLCBwaHktPnJlZ3MgKyBQSFlfUkVHKDEyKSk7Cj4gPiA+
-Pj4+IFRoZSBmb3ItbG9vcCBhYm92ZSB0aGlzIGxpbmUgc3RhdGVzOiAgIGZvciAoZGl2ID0gMDsg
-ZGl2IDwgNDsgZGl2KyspCj4gPiA+Pj4+IEhvdyBjb3VsZCB0aGlzIGV2ZXIgcmVhY2ggND8gIElm
-IGl0IGRpZCByZWFjaCA0LCB0aGUgY2FsY3VsYXRpb24gZm9yCj4gPiA+Pj4+IGludF9wbGxjbGsg
-d291bGQgbmVlZCB0byBiZSByZWNhbGN1bGF0ZWQgc2luY2UgaW50X3BsbGNsayA9IHBjbGsgLyAo
-MQo+ID4gPj4+PiA8PCBkaXYpOwo+ID4gPj4+IEJ1dC4uLiBmb3IgKGRpdiA9IDA7IGRpdiA8IDQ7
-IGRpdisrKSBkb2VzIHJlYWNoIDQsIGlmIHRoZSBicmVhawo+ID4gPj4+IGNvbmRpdGlvbiBkaWRu
-J3QgbWF0Y2gsIHdoaWNoIGlzIHNvbWV0aGluZyB0aGUgY29tcGlsZXIgY2Fubm90IGVuc3VyZQo+
-ID4gPj4+IGhlcmUuCj4gPiA+Pj4KPiA+ID4+PiBUaGUgb2xkIGNvZGUgd291bGQganVzdCBmYWxs
-IG91dCBvZiBhbnkgb2YgdGhlIHN3aXRjaCBjYXNlcyBhbmQgZmFsbGJhY2sKPiA+ID4+PiB0byBk
-aXYgPSAxIGlmIHBpeGNsayA+IDI5NzAwMDAwMCwgd2hpY2ggaXMgbGlrZWx5IGluY29ycmVjdCwg
-c28gaW4gdGhhdAo+ID4gPj4+IHNlbnNlIGp1c3QgcGFkZGluZyB0aGlzIHRocm91Z2ggYCYgM2Ag
-YW5kIHByZXRlbmRpbmcgaXQgd2lsbCBuZXZlcgo+ID4gPj4+IGhhcHBlbiBpcyBwcm9iYWJseSBh
-Y2NlcHRhYmxlLCBidXQgdGhpcyBvdWdodCB0byBoYXZlIGEgYmV0dGVyIGNvbW1lbnQKPiA+ID4+
-PiB0aGFuIHdoYXQgUGVpIGp1c3Qgc2VudC4KPiA+ID4+IE1heWJlIHdlIHVzZSB0aGUgTUFYIGZ1
-bmN0aW9uIHRvIHNldCBkaXYgPSBtYXgoZGl2LDMpOwo+ID4gPiBkbyB5b3UgbWVhbjoKPiA+ID4g
-d3JpdGViKEZJRUxEX1BSRVAoUkVHMTJfQ0tfRElWX01BU0ssIG1pbihkaXYsIDMpKSwgcGh5LT5y
-ZWdzICsgUEhZX1JFRygxMikpOwo+ID4KPiA+IERvZXMgYW55b25lIGhhdmUgYW55IHN1Z2dlc3Rp
-b25zPwo+Cj4gU29ycnkgZm9yIHRoZSBkZWxheWVkIHJlc3BvbnNlcywgSSB3YXMgdHJhdmVsaW5n
-IGZvciB0aGUgbGFzdCB3ZWVrLgo+Cj4gV2hhdCBhYm91dCByZXBsYWNpbmcgdGhlIGZvciBsb29w
-IHdpdGggYSBkby13aGlsZSBsb29wIHdoZXJlIHRoZQo+IGNyaXRlcmlhIGlzIGludF9wbGxjbGsg
-PCAoNTAgKiBNSFopICYmIGRpdiA8PSAzLiAgTWlnaHQgdGhhdCB3b3JrPwoKU3VjaCBhIGxvb3Ag
-bWlnaHQgbmV2ZXIgY29tcGxldGUsIGFsdGhvdWdoIGluIHByYWN0aWNlIHRoYXQgZG9lcyBub3QK
-c2VlbSB0byBiZSBwb3NzaWJsZSAodW50aWwgc29tZW9uZSBtb2RpZmllcyB0aGUgdGFibGVzIGlu
-IHRoZSBkcml2ZXIKYW5kIGFkZHMgYSB0b28tbGFyZ2UgY2ZnLT5waXhjbGs/KS4KClByb2JhYmx5
-IHRoZSBzYWZlc3Qgc29sdXRpb24gaXMgdG8gY2hhbmdlIHRoZSByZXR1cm4gdHlwZSBvZgpmc2xf
-c2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KCkgZnJvbSB2b2lkIHRvIGlu
-dCwgYW5kCmxldCBpdCByZXR1cm4gYW4gZXJyb3IgY29kZToKCiAgICBpZiAoZGl2ID09IDQpCiAg
-ICAgICAgICAgIHJldHVybiAtRUlOVkFMOwoKIGFuZCBwcm9wYWdhdGUgdGhhdC4gSXRzIHNvbGUg
-Y2FsbGVyIGFscmVhZHkgcmV0dXJucyBhbiBlcnJvciBjb2RlLgoKR3J7b2V0amUsZWV0aW5nfXMs
-CgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdlZXJ0IFV5dHRlcmhvZXZlbiAt
-LSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4ay5v
-cmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJIGNh
-bGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0cyBJ
-IGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+--===============7649759881956272210==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="3cw2zb4afavmoxfo"
+Content-Disposition: inline
+
+
+--3cw2zb4afavmoxfo
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH] phy: can-transceiver: Drop unnecessary "mux-states"
+ property presence check
+MIME-Version: 1.0
+
+On 31.12.2024 10:32:51, Rob Herring (Arm) wrote:
+> It doesn't matter whether "mux-states" is not present or there is some
+> other issue parsing it causing an error. Drop the presence check and
+> rework the error handling to ignore anything other than deferred probe.
+>=20
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+>  drivers/phy/phy-can-transceiver.c | 14 ++++++--------
+>  1 file changed, 6 insertions(+), 8 deletions(-)
+>=20
+> diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-tran=
+sceiver.c
+> index ee4ce4249698..ed8ba30eb038 100644
+> --- a/drivers/phy/phy-can-transceiver.c
+> +++ b/drivers/phy/phy-can-transceiver.c
+> @@ -103,6 +103,7 @@ static int can_transceiver_phy_probe(struct platform_=
+device *pdev)
+>  	struct phy *phy;
+>  	struct gpio_desc *standby_gpio;
+>  	struct gpio_desc *enable_gpio;
+> +	struct mux_state *mux_state;
+>  	u32 max_bitrate =3D 0;
+>  	int err;
+> =20
+> @@ -113,15 +114,12 @@ static int can_transceiver_phy_probe(struct platfor=
+m_device *pdev)
+>  	match =3D of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+>  	drvdata =3D match->data;
+> =20
+> -	if (of_property_read_bool(dev->of_node, "mux-states")) {
+> -		struct mux_state *mux_state;
+> -
+> -		mux_state =3D devm_mux_state_get(dev, NULL);
+> -		if (IS_ERR(mux_state))
+> -			return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
+> -					     "failed to get mux\n");
+> +	mux_state =3D devm_mux_state_get(dev, NULL);
+> +	if (IS_ERR(mux_state)) {
+> +		if (PTR_ERR(mux_state) =3D=3D -EPROBE_DEFER)
+> +			return PTR_ERR(mux_state);
+> +	} else
+>  		can_transceiver_phy->mux_state =3D mux_state;
+> -	}
+
+Nitpick:
+I think we want { } on both sides of the if/else.
+
+After fixing this:
+Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
+
+> =20
+>  	phy =3D devm_phy_create(dev, dev->of_node,
+>  			      &can_transceiver_phy_ops);
+> --=20
+
+regards,
+Marc
+
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde          |
+Embedded Linux                   | https://www.pengutronix.de |
+Vertretung N=C3=BCrnberg              | Phone: +49-5121-206917-129 |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-9   |
+
+--3cw2zb4afavmoxfo
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEUEC6huC2BN0pvD5fKDiiPnotvG8FAmeA8scACgkQKDiiPnot
+vG8nLAf/dLVWSXMBeNKUG0l6POKIND14Axc6EfZuG/QFbvxGVyFzM89BQUCZeYwi
+aSo7HwiPNwPeD3R/LBjaPx76h2Zo5SIRyBc+aYKvW4+HjmhNR6t0iZTx9jhoyssu
+8cuSBspk9Le8yLvoxAiERzZdvLIia3HqJH0Qy3zxmjG7oTO2mv7D8OONt6Sr5R7f
+r6/nCRXhN2wQoWo8AxAKS6Z9sZ4G/QB6UeTJ8olRbqsGj6fJHjUbKta9tiBQMeW/
+aIkwopHPnGIKwPrH3ZA8jGMKA9q/fVGWox+XrWmsNPK778y/nApGIIr2rLxVnzXv
+I2RyDfKCkBf4TKEYpN20dWddx5+vPw==
+=mBep
+-----END PGP SIGNATURE-----
+
+--3cw2zb4afavmoxfo--
+
+
+--===============7649759881956272210==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7649759881956272210==--
+
