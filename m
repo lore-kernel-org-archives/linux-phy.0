@@ -4,119 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22661E77188
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 17:07:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D6E1E7719C
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 17:07:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D6lSH97LWuWL9f3ZIuq7CNzS/ZX7UYm4U2+Aut7TOVY=; b=pfmCqDqfba9fAC
-	oR1K9cre6SQXZRdbSMXuVkuXcew5m0BHBYwLSbrTkXNtLVy/q0Z1Zd/CQdeRpTLD4HpnKpT5T99Qn
-	v37GTXefn7qDTz5p9W4MyCJ28mMR5NDNvdUD5bEp0MceUi5Xa5tPviFhBWqbTcJf/DCn7hoxuZpBd
-	vpBelRadwYg5p7j4Cr1ZxwlptIFWb6iKrh1ToM/MyyNZNaF+sre4dlCBsgUU6a0IIGIffo7wSrXUH
-	E4J7CsE4VzE1yW0JkqloKb97cF3cr3QjqWthEO/NY9QU5T2E/ToGLFVXe1UIjDWvslljdAyJIExLs
-	Tin9Trk1yfJVwpXuINjg==;
+	List-Owner; bh=CtzLZTyT1p8BqdTwnRAku66Ue3yaxEwQe+Sjg466Eww=; b=V+M34D0HmCHgaR
+	2JAAauXLvBtDQUuT93M7xgo620K2qSIVg+m7cZP8Y1h5JvYGrgxhDb1S/V6LV5rgwLkrajonNqGus
+	keVTHpvVO2BIdV9rIs95asTN8AC3iIy/D29bnDSc0sdvns++VVYrlf9kyqGPoOaXsESF/5OgI3/5r
+	/lWvaL+Y7woydjE7L19YvZ+riqqBpbnOW3YF1HDyfGCW7CwwCdz04EQGvygfZztmaqv7AvTVoe3oJ
+	9hdS8J4uAncz+pndfMCZYy0UXSQM+IXEnKD/GQ+UbPhNCHb2dFNZdATWTqbtDhXjVG8ml2cvu8hHU
+	bVNeKbQbJgsrjSkoHGrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWITt-0000000GN50-3jfX;
-	Fri, 10 Jan 2025 17:07:33 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tWITx-0000000GN8o-038y;
+	Fri, 10 Jan 2025 17:07:37 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWFU6-0000000FXr4-0gol;
-	Fri, 10 Jan 2025 13:55:35 +0000
+	id 1tWH96-0000000G24n-3I6D
+	for linux-phy@lists.infradead.org;
+	Fri, 10 Jan 2025 15:42:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 9BD395C3674;
-	Fri, 10 Jan 2025 13:54:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B5E3C4CED6;
-	Fri, 10 Jan 2025 13:55:24 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3C0625C2B52;
+	Fri, 10 Jan 2025 15:41:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BCD21C4CED6;
+	Fri, 10 Jan 2025 15:41:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736517333;
-	bh=7FhdF0E/wzZ/LjN0yMmNkDWkh1Ljtoxfv/kPShF+jeQ=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=n1qrLbpmYHNuXmpmmfgcZqeE9SKNpSLD+QRrpHqDL1r5p0y/s5K6pfI8xfrCqkmsf
-	 s73mWDEghOV7mk3dxbzcne12ZseS0n4PuWOGwG+ytrRKnVHq9vq6PzbrsH4J9q8PoJ
-	 iHxwjJ65zbKbLFje7JOnUkBJuHawvetMmK5OJg5UiF/LqYJb5za6xjpEAXUL1iV1tM
-	 rt+0AF6adCg3UcUh6zFcV656ck1kZP01SYIquNQA+zb9Se2guaP6DroZfSHqGKsiKK
-	 XmUxFGUDGxUWbxj5n+spiWELjrrBc6Qb1y+BWEKouX0FYGmLqqzAOXfPmyVzPyafoO
-	 2GIrGHad83vRA==
-Message-ID: <106ad964-3734-43ec-8563-50cb18c5189d@kernel.org>
-Date: Fri, 10 Jan 2025 14:55:22 +0100
+	s=k20201202; t=1736523719;
+	bh=1WJun6SDCnjO4F/qdOg150Sc0efJ7jC5PW/RAsW0f9M=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=lRl7Vfi5fUaa1cIcpAfBxoGpHFLkJaUjgY+QU5HZ6BNm/0eXyQ5g5qmkxI3OBksGJ
+	 tH1ZtsvkFdCCMwPMh/IPEFgQLhkvzKjGchSbPLVsoThEpIsUi+uWRbYrwg6hsgFclZ
+	 yE0BZgLRoAclYX/e2hH3O9VRanuWJOVJhHA7OJtC/IKZm64PEQG6SK9GTaqpOYPyAt
+	 lnx4bUI021uOyn+2Rq2DFyVGIvCeYvvku5YdhBiJvVKGW5RpJYEpaWXz6L3drC6+x8
+	 dQu5lieliug2sXkxdwfSZiXVp7W1/913LIAZwmnld4kJo1+TYdpKNPWztgNLUsqDxk
+	 aJTPwoWjdeTSA==
+Date: Fri, 10 Jan 2025 09:41:58 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Andre Przywara <andre.przywara@arm.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH] dt-bindings: phy: Correct indentation and style in DTS
+ example
+Message-ID: <173652371839.2920536.158309773961606738.robh@kernel.org>
+References: <20250107125840.225982-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 04/12] dt-bindings: clock: sunxi-ng: add compatibles for
- V853
-To: Andras Szemzo <szemzo.andras@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt
- <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
- Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
-References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-5-szemzo.andras@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250110123923.270626-5-szemzo.andras@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20250107125840.225982-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250110_055534_296680_B4DB521D 
-X-CRM114-Status: GOOD (  12.26  )
+X-CRM114-CacheID: sfid-20250110_074200_862885_BC12B0BF 
+X-CRM114-Status: GOOD (  10.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,29 +77,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/01/2025 13:39, Andras Szemzo wrote:
-> V853 has 2 CCUs, add compatible strings for it.
+
+On Tue, 07 Jan 2025 13:58:39 +0100, Krzysztof Kozlowski wrote:
+> DTS example in the bindings should be indented with 2- or 4-spaces and
+> aligned with opening '- |', so correct any differences like 3-spaces or
+> mixtures 2- and 4-spaces in one binding.
 > 
-> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+> No functional changes here, but saves some comments during reviews of
+> new patches built on existing code.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 > ---
->  .../devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml      | 2 ++
->  1 file changed, 2 insertions(+)
+>  .../bindings/phy/calxeda-combophy.yaml        | 10 +-
+>  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 98 +++++++++----------
+>  2 files changed, 54 insertions(+), 54 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml
-> index 1690b9d99c3d..bb1fa032e789 100644
-> --- a/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml
-> +++ b/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml
-> @@ -36,6 +36,8 @@ properties:
->        - allwinner,sun9i-a80-ccu
->        - allwinner,sun20i-d1-ccu
->        - allwinner,sun20i-d1-r-ccu
-> +      - allwinner,sun8i-v853-ccu
-> +      - allwinner,sun8i-v853-r-ccu
 
-Where are the clock headers?
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
