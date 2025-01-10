@@ -4,74 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1CE4E7719A
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 02:33:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A1A4E77188
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 04:36:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SZhwrQlrTVpGolmN9EbssfALcM+TxfIxh8rL59JnSEM=; b=V/GF1BgTZWT7dV
-	+XXt8MVPGXTJz+E2QQaxvrkyCI4GxEIjlXD2RzUefr3SJWzuVrEN0YgAy4QUdEHbiI+T+4q1c7mF6
-	BRigQtvOA0pQss3hk1F1xQpUs5brf14OtjRu2TZ2t2ZcmWE/Gy7OKxlC7x1sVNbMM2rGBRWVEyg7M
-	IwzKAoU1fnzFQwaVi8XaUVabi+VcqR5XeyQ8d5rIn2FSnXhIs+y1TF3xD3CFZ50ozSVcwfllh7cJc
-	bgLmCO2mYWDay+8eeLCeXWamG5jsHpn94+C6NXrhdFuPnGY3aha9Nm7UvSeaNnMzIdZPzzMSaWDad
-	f6VXd82+NwDSF7L538KQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QWEEZ5pAl4GEqNEQh+JEGvmXdbKEft5oN/oAZwQVEEc=; b=sxK+0gQp3FufOs
+	8moTiaiJAWzN3HiS0MYPly/aVS9pFLB3A907ZHlktIW94s+TzdpoZJusGlwPTTD50vxXv7HY8bV12
+	1/zxWcDe03SovxBop08X3DYqor4Ms9SgD8NlG9L0xpAevX3KhGU36e2GIi5b88LI27P2MFG87NMoo
+	m0H2noor6VC+Sk/vkdvQ6slY/omx/yi+YFLbtDc3CHbUW6yIkFh1MQNMl+Ny+NpZrnBjMoY8BR5jr
+	sAmLzJ9KhD5DtOF2r218/5uXVm6sCxcYyJ2HKLGUKh2yCfspzJYgjtueCfpbVe0brxaRbqhYxoo1N
+	48vm3JPKTx6fsAAP9hGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tW4pi-0000000DqAK-3xRA;
-	Fri, 10 Jan 2025 02:33:10 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1tW6lO-0000000DyuC-2UOV;
+	Fri, 10 Jan 2025 04:36:50 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tW4pg-0000000Dq9i-0Er0
+	id 1tW6lM-0000000Dytl-0Z0C
 	for linux-phy@lists.infradead.org;
-	Fri, 10 Jan 2025 02:33:09 +0000
-X-UUID: 30c17e60cefb11efa216b1d71e6e1362-20250110
-X-CTIC-Tags: HR_CC_AS_FROM, HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CTE_8B
-	HR_CTT_TXT, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_DIGIT_LEN
-	HR_FROM_NAME, HR_SJ_DIGIT_LEN, HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER
-	HR_SJ_NOR_SYM, HR_SJ_PHRASE, HR_SJ_PHRASE_LEN, HR_SJ_WS, HR_TO_COUNT
-	HR_TO_DOMAIN_COUNT, HR_TO_NO_NAME, IP_TRUSTED, SRC_TRUSTED, DN_TRUSTED
-	SA_TRUSTED, SA_EXISTED, SN_TRUSTED, SN_EXISTED, SPF_NOPASS
-	DKIM_NOPASS, DMARC_NOPASS, CIE_BAD, CIE_GOOD_SPF, GTI_FG_BS
-	GTI_RG_INFO, GTI_C_BU, AMN_T1, AMN_GOOD, AMN_C_TI
-	AMN_C_BU
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.45,REQID:64331003-8298-4d7a-b360-d3943c19acf7,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTION
-	:release,TS:-5
-X-CID-INFO: VERSION:1.1.45,REQID:64331003-8298-4d7a-b360-d3943c19acf7,IP:0,URL
-	:0,TC:0,Content:0,EDM:0,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
-	elease,TS:-5
-X-CID-META: VersionHash:6493067,CLOUDID:db3af771b26011a74e3b11b3e5216848,BulkI
-	D:250110103254EUNKUCQP,BulkQuantity:0,Recheck:0,SF:17|19|38|66|78|102,TC:n
-	il,Content:0|50,EDM:-3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:ni
-	l,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_FSD,TF_CID_SPAM_SNR,TF_CID_SPAM_FAS
-X-UUID: 30c17e60cefb11efa216b1d71e6e1362-20250110
-X-User: xiaopei01@kylinos.cn
-Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <xiaopei01@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 551830683; Fri, 10 Jan 2025 10:32:52 +0800
-From: Pei Xiao <xiaopei01@kylinos.cn>
-To: vkoul@kernel.org,
-	aford173@gmail.com,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Pei Xiao <xiaopei01@kylinos.cn>
-Subject: [PATCH V3] phy: freescale: fsl-samsung-hdmi: fix build error in fsl_samsung_hdmi_phy_configure_pll_lock_det
-Date: Fri, 10 Jan 2025 10:32:47 +0800
-Message-Id: <5b9a5f765f075263498f9a7b62b0b1030d87b6ba.1736476210.git.xiaopei01@kylinos.cn>
-X-Mailer: git-send-email 2.25.1
+	Fri, 10 Jan 2025 04:36:49 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50A1W32t023421;
+	Fri, 10 Jan 2025 04:36:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=M8AynVnJMRD2H0YVv/u0Whl6
+	0TNKLKUVltGlZet2XLU=; b=kYwAh1WDRJHpEllGQa7Eb560nz40k+zX2rgYk6tS
+	JqQnv/PVftHz2yaODeZ9tZN8h03bS8TtxUh5/IUi+1Q9PdIYWPbs6JFGc5jc3qLb
+	yS6OmHf4qPfOLOJ1cG9wjBm4qspTCo+NEVxWk9C2g+8KTm79tqP2JZesfP4wbXus
+	XVZBXhWrjuHWM06HKJi2cX3quZeSrlKWYLMBSg35b/Zxxno20WCSBoO8nStcHCQ9
+	qk2I8PhF46/qg3Uu4mY9W2EVHlnwBtvzNlVxIambseWeY4qNMOI/jn9TKAnz9e6S
+	5WxBpoQCP1vGEAsrmb+xvjXRDqPCxqmgkg9WRQ4aAFBDPA==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 442syc0bxf-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 10 Jan 2025 04:36:39 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50A4acmP017036
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 10 Jan 2025 04:36:38 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 9 Jan 2025 20:36:32 -0800
+Date: Fri, 10 Jan 2025 10:06:29 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <robh@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <p.zabel@pengutronix.de>,
+        <quic_nsekar@quicinc.com>, <dmitry.baryshkov@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>,
+        Praveenkumar I <quic_ipkumar@quicinc.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v5 4/5] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+Message-ID: <Z4Cjzc5nyOv0R9tS@hu-varada-blr.qualcomm.com>
+References: <20250102113019.1347068-1-quic_varada@quicinc.com>
+ <20250102113019.1347068-5-quic_varada@quicinc.com>
+ <20250108132235.gh6p5d6t7wklzpm7@thinkpad>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250108132235.gh6p5d6t7wklzpm7@thinkpad>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: PDsGTaYB_0n28TRswOJR4j5vfPdyrjOL
+X-Proofpoint-ORIG-GUID: PDsGTaYB_0n28TRswOJR4j5vfPdyrjOL
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxlogscore=999
+ malwarescore=0 phishscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0
+ clxscore=1015 mlxscore=0 suspectscore=0 priorityscore=1501 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2501100036
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250109_183308_394256_F10BA1A8 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250109_203648_188071_047DAFCB 
+X-CRM114-Status: GOOD (  28.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,47 +101,231 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RklFTERfUFJFUCgpIGNoZWNrcyB0aGF0IGEgdmFsdWUgZml0cyBpbnRvIHRoZSBhdmFpbGFibGUg
-Yml0ZmllbGQsCmJ1dCB0aGUgaW5kZXggZGl2IGVxdWFscyB0byA0LGlzIG91dCBvZiByYW5nZS4K
-CndoaWNoIGdjYyBjb21wbGFpbnMgYWJvdXQ6CkluIGZ1bmN0aW9uIOKAmGZzbF9zYW1zdW5nX2hk
-bWlfcGh5X2NvbmZpZ3VyZV9wbGxfbG9ja19kZXTigJksCmlubGluZWQgZnJvbSDigJhmc2xfc2Ft
-c3VuZ19oZG1pX3BoeV9jb25maWd1cmXigJkgYXQKZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1m
-c2wtc2Ftc3VuZy1oZG1pLmMgOjQ3MDoyOgouLy4vaW5jbHVkZS9saW51eC9jb21waWxlcl90eXBl
-cy5oOjU0MjozODogZXJyb3I6IGNhbGwgdG8g4oCYX19jb21waWxldGltZV9hc3NlcnRfNTM44oCZ
-CmRlY2xhcmVkIHdpdGggYXR0cmlidXRlIGVycm9yOiBGSUVMRF9QUkVQOiB2YWx1ZSB0b28gbGFy
-Z2UgZm9yIHRoZSBmaWVsZAogIDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwg
-bXNnLCBfX2NvbXBpbGV0aW1lX2Fzc2VydF8sCl9fQ09VTlRFUl9fKQogICAgICB8ICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeCi4vLi9pbmNsdWRlL2xpbnV4L2NvbXBpbGVy
-X3R5cGVzLmg6NTIzOjQ6IG5vdGU6IGluIGRlZmluaXRpb24gb2YKbWFjcm8g4oCYX19jb21waWxl
-dGltZV9hc3NlcnTigJkgNTIzIHwgICAgcHJlZml4ICMjIHN1ZmZpeCgpOwogICAgICB8ICAgIF5+
-fn5+fgouLy4vaW5jbHVkZS9saW51eC9jb21waWxlcl90eXBlcy5oOjU0MjoyOiBub3RlOiBpbiBl
-eHBhbnNpb24gb2YgbWFjcm8K4oCYX2NvbXBpbGV0aW1lX2Fzc2VydOKAmQogIDU0MiB8ICBfY29t
-cGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0aW1lX2Fzc2VydF8sCiBf
-X0NPVU5URVJfXykKClJFRzEyX0NLX0RJVl9NQVNLIG9ubHkgdHdvIGJpdCwgbGltaXQgZGl2IHRv
-IHJhbmdlIDB+MywKc28gYnVpbGQgZXJyb3Igd2lsbCBmaXguCgpGaXhlczogZDU2NzY3OWYyYjZh
-ICgicGh5OiBmcmVlc2NhbGU6IGZzbC1zYW1zdW5nLWhkbWk6IENsZWFuIHVwIGZsZF90Z19jb2Rl
-IGNhbGN1bGF0aW9uIikKU2lnbmVkLW9mZi1ieTogUGVpIFhpYW8gPHhpYW9wZWkwMUBreWxpbm9z
-LmNuPgotLS0KVjM6IGNoYW5nZSB0byB1c2UgZG8td2hpbGUKVjI6IGNoYW5nZSB0byB1c2UgbG9n
-aWNhbCBBTkQKLS0tCiBkcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWku
-YyB8IDkgKysrKystLS0tCiAxIGZpbGUgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCspLCA0IGRlbGV0
-aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1
-bmctaGRtaS5jIGIvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMK
-aW5kZXggNWVhYzcwYTFlODU4Li5hYTIzM2NhMjVhNGQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5
-L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCisrKyBiL2RyaXZlcnMvcGh5L2ZyZWVz
-Y2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCkBAIC0zMzIsMTQgKzMzMiwxNSBAQCBmc2xfc2Ft
-c3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KHN0cnVjdCBmc2xfc2Ftc3VuZ19o
-ZG1pX3BoeSAqcGh5LAogCXUzMiBwY2xrID0gY2ZnLT5waXhjbGs7CiAJdTMyIGZsZF90Z19jb2Rl
-OwogCXUzMiBpbnRfcGxsY2xrOwotCXU4IGRpdjsKKwl1OCBkaXYgPSAwOwogCiAJLyogRmluZCBp
-bnRfcGxsY2xrIHNwZWVkICovCi0JZm9yIChkaXYgPSAwOyBkaXYgPCA0OyBkaXYrKykgeworCWRv
-IHsKIAkJaW50X3BsbGNsayA9IHBjbGsgLyAoMSA8PCBkaXYpOwotCQlpZiAoaW50X3BsbGNsayA8
-ICg1MCAqIE1IWikpCisJCWlmIChpbnRfcGxsY2xrIDwgKDUwICogTUhaKSB8fCBkaXYgPj0gMykK
-IAkJCWJyZWFrOwotCX0KKwkJZGl2Kys7CisJfSB3aGlsZSAoMSk7CiAKIAl3cml0ZWIoRklFTERf
-UFJFUChSRUcxMl9DS19ESVZfTUFTSywgZGl2KSwgcGh5LT5yZWdzICsgUEhZX1JFRygxMikpOwog
-Ci0tIAoyLjI1LjEKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+On Wed, Jan 08, 2025 at 06:52:35PM +0530, Manivannan Sadhasivam wrote:
+> On Thu, Jan 02, 2025 at 05:00:18PM +0530, Varadarajan Narayanan wrote:
+> > From: Praveenkumar I <quic_ipkumar@quicinc.com>
+> >
+> > Add phy and controller nodes for pcie0_x1 and pcie1_x2.
+> >
+> > Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> > Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> > ---
+> > v5: Add 'num-lanes' to "pcie1_phy: phy@4b1000"
+> >     Make ipq5332 as main and ipq9574 as fallback compatible
+> >     Move controller nodes per address
+> >     Having Konrad's Reviewed-By
+> >
+> > v4: Remove 'reset-names' as driver uses bulk APIs
+> >     Remove 'clock-output-names' as driver uses bulk APIs
+> >     Add missing reset for pcie1_phy
+> >     Convert 'reg-names' to a vertical list
+> >     Move 'msi-map' before interrupts
+> >
+> > v3: Fix compatible string for phy nodes
+> >     Use ipq9574 as backup compatible instead of new compatible for ipq5332
+> >     Fix mixed case hex addresses
+> >     Add "mhi" space
+> >     Removed unnecessary comments and stray blank lines
+> >
+> > v2: Fix nodes' location per address
+> > ---
+> >  arch/arm64/boot/dts/qcom/ipq5332.dtsi | 221 +++++++++++++++++++++++++-
+> >  1 file changed, 219 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> > index d3c3e215a15c..89daf955e4bd 100644
+> > --- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+> > @@ -186,6 +186,43 @@ rng: rng@e3000 {
+> >  			clock-names = "core";
+> >  		};
+> >
+> > +		pcie0_phy: phy@4b0000 {
+> > +			compatible = "qcom,ipq5332-uniphy-pcie-phy";
+> > +			reg = <0x004b0000 0x800>;
+> > +
+> > +			clocks = <&gcc GCC_PCIE3X1_0_PIPE_CLK>,
+> > +				 <&gcc GCC_PCIE3X1_PHY_AHB_CLK>;
+> > +
+> > +			resets = <&gcc GCC_PCIE3X1_0_PHY_BCR>,
+> > +				 <&gcc GCC_PCIE3X1_PHY_AHB_CLK_ARES>,
+> > +				 <&gcc GCC_PCIE3X1_0_PHY_PHY_BCR>;
+> > +
+> > +			#clock-cells = <0>;
+> > +
+> > +			#phy-cells = <0>;
+> > +			status = "disabled";
+> > +		};
+> > +
+> > +		pcie1_phy: phy@4b1000 {
+> > +			compatible = "qcom,ipq5332-uniphy-pcie-phy";
+> > +			reg = <0x004b1000 0x1000>;
+> > +
+> > +			clocks = <&gcc GCC_PCIE3X2_PIPE_CLK>,
+> > +				 <&gcc GCC_PCIE3X2_PHY_AHB_CLK>;
+> > +
+> > +			resets = <&gcc GCC_PCIE3X2_PHY_BCR>,
+> > +				 <&gcc GCC_PCIE3X2_PHY_AHB_CLK_ARES>,
+> > +				 <&gcc GCC_PCIE3X2PHY_PHY_BCR>;
+> > +
+> > +			#clock-cells = <0>;
+> > +
+> > +			#phy-cells = <0>;
+> > +
+> > +			num-lanes = <2>;
+> > +
+> > +			status = "disabled";
+> > +		};
+> > +
+> >  		tlmm: pinctrl@1000000 {
+> >  			compatible = "qcom,ipq5332-tlmm";
+> >  			reg = <0x01000000 0x300000>;
+> > @@ -212,8 +249,8 @@ gcc: clock-controller@1800000 {
+> >  			#interconnect-cells = <1>;
+> >  			clocks = <&xo_board>,
+> >  				 <&sleep_clk>,
+> > -				 <0>,
+> > -				 <0>,
+> > +				 <&pcie1_phy>,
+> > +				 <&pcie0_phy>,
+> >  				 <0>;
+> >  		};
+> >
+> > @@ -479,6 +516,186 @@ frame@b128000 {
+> >  				status = "disabled";
+> >  			};
+> >  		};
+> > +
+> > +		pcie1: pcie@18000000 {
+>
+> pcie@
+
+Not able to understand. Can you please let me know if you want
+the label 'pcie1' to be dropped? This label is used in the board
+dts to enable this node, so cannot drop.
+
+> > +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
+> > +			reg = <0x00088000 0x3000>,
+> > +			      <0x18000000 0xf1d>,
+> > +			      <0x18000f20 0xa8>,
+> > +			      <0x18001000 0x1000>,
+> > +			      <0x18100000 0x1000>,
+> > +			      <0x0008b000 0x1000>;
+> > +			reg-names = "parf",
+> > +				    "dbi",
+> > +				    "elbi",
+> > +				    "atu",
+> > +				    "config",
+> > +				    "mhi";
+> > +			device_type = "pci";
+> > +			linux,pci-domain = <1>;
+> > +			bus-range = <0x00 0xff>;
+> > +			num-lanes = <2>;
+> > +			#address-cells = <3>;
+> > +			#size-cells = <2>;
+> > +
+> > +			ranges = <0x01000000 0 0x18200000 0x18200000 0 0x00100000>,
+>
+> I/O address space should start from 0. Please refer other SoCs.
+>
+> Also, use 0x0 for consistency.
+
+Ok.
+
+> > +				 <0x02000000 0 0x18300000 0x18300000 0 0x07d00000>;
+> > +
+> > +			msi-map = <0x0 &v2m0 0x0 0xffd>;
+> > +
+> > +			interrupts = <GIC_SPI 403 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 404 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 405 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 406 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 407 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 408 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 409 IRQ_TYPE_LEVEL_HIGH>,
+> > +				     <GIC_SPI 410 IRQ_TYPE_LEVEL_HIGH>;
+> > +			interrupt-names = "msi0",
+> > +					  "msi1",
+> > +					  "msi2",
+> > +					  "msi3",
+> > +					  "msi4",
+> > +					  "msi5",
+> > +					  "msi6",
+> > +					  "msi7";
+>
+> Is there a 'global' interrupt? If so, please add it.
+
+Ok.
+
+> > +
+> > +			#interrupt-cells = <1>;
+> > +			interrupt-map-mask = <0 0 0 0x7>;
+> > +			interrupt-map = <0 0 0 1 &intc 0 0 412 IRQ_TYPE_LEVEL_HIGH>,
+> > +					<0 0 0 2 &intc 0 0 413 IRQ_TYPE_LEVEL_HIGH>,
+> > +					<0 0 0 3 &intc 0 0 414 IRQ_TYPE_LEVEL_HIGH>,
+> > +					<0 0 0 4 &intc 0 0 415 IRQ_TYPE_LEVEL_HIGH>;
+> > +
+> > +			clocks = <&gcc GCC_PCIE3X2_AXI_M_CLK>,
+> > +				 <&gcc GCC_PCIE3X2_AXI_S_CLK>,
+> > +				 <&gcc GCC_PCIE3X2_AXI_S_BRIDGE_CLK>,
+> > +				 <&gcc GCC_PCIE3X2_RCHG_CLK>,
+> > +				 <&gcc GCC_PCIE3X2_AHB_CLK>,
+> > +				 <&gcc GCC_PCIE3X2_AUX_CLK>;
+> > +			clock-names = "axi_m",
+> > +				      "axi_s",
+> > +				      "axi_bridge",
+> > +				      "rchng",
+> > +				      "ahb",
+> > +				      "aux";
+> > +
+> > +			resets = <&gcc GCC_PCIE3X2_PIPE_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_CORE_STICKY_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_AXI_S_STICKY_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_AXI_S_CLK_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_AXI_M_STICKY_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_AXI_M_CLK_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_AUX_CLK_ARES>,
+> > +				 <&gcc GCC_PCIE3X2_AHB_CLK_ARES>;
+> > +			reset-names = "pipe",
+> > +				      "sticky",
+> > +				      "axi_s_sticky",
+> > +				      "axi_s",
+> > +				      "axi_m_sticky",
+> > +				      "axi_m",
+> > +				      "aux",
+> > +				      "ahb";
+> > +
+> > +			phys = <&pcie1_phy>;
+> > +			phy-names = "pciephy";
+> > +
+> > +			interconnects = <&gcc MASTER_SNOC_PCIE3_2_M &gcc SLAVE_SNOC_PCIE3_2_M>,
+> > +					<&gcc MASTER_ANOC_PCIE3_2_S &gcc SLAVE_ANOC_PCIE3_2_S>;
+> > +			interconnect-names = "pcie-mem", "cpu-pcie";
+>
+> Can you check if the controller supports cache coherency? If so, you need to add
+> 'dma-coherent'.
+
+Ok.
+
+> > +
+> > +			status = "disabled";
+>
+> Please define the root port node as well.
+>
+> All the above comments applies to 2nd controller node as well.
+
+Ok.
+
+Thanks
+Varada
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
