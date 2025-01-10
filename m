@@ -4,48 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35AEFE7719C
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 17:07:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22661E77188
+	for <linux-phy@archiver.kernel.org>; Fri, 10 Jan 2025 17:07:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ESbuH184peKG+pcpD53gMdAqZmrXQkUDQdIXa+29BBI=; b=vAtj4z/nasvCMD
-	Xy7MlqmmmqT1Mb1pGevQQ+PempBS4rfGzWi/8cU7Zmar48bJxI8jsZG+WoC9BXZqlv7D6MiqVNPhp
-	Ma1QDAcU83UCG/aRLIfqtyVxNA8VOfet3eSM16hXvgQUKhC7OoM30iOSvv/YpmymbBvDZYdA+OFev
-	K4fy8JP6olP6E9Q0rkhC2O6TkmaHsVHwuayyTmgZijY2F37bQJz5QSQ7ymFf0Xq163gB0PjfmbrYI
-	1qnC4c+GCEPRycMZ+wl3Wmgzbcj8LkWfOMos3JKz6fM8p8dZBegYLkZ3D46VnOZ8couO8ZsMGQabQ
-	QSl8x85lI59P3iO8G16Q==;
+	List-Owner; bh=D6lSH97LWuWL9f3ZIuq7CNzS/ZX7UYm4U2+Aut7TOVY=; b=pfmCqDqfba9fAC
+	oR1K9cre6SQXZRdbSMXuVkuXcew5m0BHBYwLSbrTkXNtLVy/q0Z1Zd/CQdeRpTLD4HpnKpT5T99Qn
+	v37GTXefn7qDTz5p9W4MyCJ28mMR5NDNvdUD5bEp0MceUi5Xa5tPviFhBWqbTcJf/DCn7hoxuZpBd
+	vpBelRadwYg5p7j4Cr1ZxwlptIFWb6iKrh1ToM/MyyNZNaF+sre4dlCBsgUU6a0IIGIffo7wSrXUH
+	E4J7CsE4VzE1yW0JkqloKb97cF3cr3QjqWthEO/NY9QU5T2E/ToGLFVXe1UIjDWvslljdAyJIExLs
+	Tin9Trk1yfJVwpXuINjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWITs-0000000GN4W-2T3c;
-	Fri, 10 Jan 2025 17:07:32 +0000
+	id 1tWITt-0000000GN50-3jfX;
+	Fri, 10 Jan 2025 17:07:33 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWFSm-0000000FXSZ-14M4;
-	Fri, 10 Jan 2025 13:54:13 +0000
+	id 1tWFU6-0000000FXr4-0gol;
+	Fri, 10 Jan 2025 13:55:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 957C65C4333;
-	Fri, 10 Jan 2025 13:53:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 921FDC4CED6;
-	Fri, 10 Jan 2025 13:54:01 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9BD395C3674;
+	Fri, 10 Jan 2025 13:54:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B5E3C4CED6;
+	Fri, 10 Jan 2025 13:55:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736517251;
-	bh=jEVCuEZV5Gr8pXT1qYg9b6tzkbYnHjzSBCglmFu48nc=;
+	s=k20201202; t=1736517333;
+	bh=7FhdF0E/wzZ/LjN0yMmNkDWkh1Ljtoxfv/kPShF+jeQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=TOvaP1heR4Ub7inpuLtgEwGwSQ9y1fkA0FVa+8VWiaH7mpstEm+NodxZX4p2rqV+8
-	 hVGLu+HrHOPv3Dw6I5QoH7fxzVP96CFx0ysGgCWCCz2VZ7iuQL6FNoIKeHDu+oWrN/
-	 vg4Fa8TFAEy0Yr1lWYQQLjxM7I8iiDwRUkABALDu6gUjmDLY89ORHTE1ouHE41wTrH
-	 RGABTcBwqjrxKihT1ugdZTHSO8iq9RlKCAxSnD/kxXTh4WogbecrMkdJ2H5070TN42
-	 GktNsn1wPo6V7DwW8Ek2n/CN5QraK8D7Z9da0orkvRJ9WKGuGp588JtQf+2Gy8Jive
-	 FOe3yARaYywmw==
-Message-ID: <f3712c29-47b0-42bc-9135-c35a24fafb35@kernel.org>
-Date: Fri, 10 Jan 2025 14:53:59 +0100
+	b=n1qrLbpmYHNuXmpmmfgcZqeE9SKNpSLD+QRrpHqDL1r5p0y/s5K6pfI8xfrCqkmsf
+	 s73mWDEghOV7mk3dxbzcne12ZseS0n4PuWOGwG+ytrRKnVHq9vq6PzbrsH4J9q8PoJ
+	 iHxwjJ65zbKbLFje7JOnUkBJuHawvetMmK5OJg5UiF/LqYJb5za6xjpEAXUL1iV1tM
+	 rt+0AF6adCg3UcUh6zFcV656ck1kZP01SYIquNQA+zb9Se2guaP6DroZfSHqGKsiKK
+	 XmUxFGUDGxUWbxj5n+spiWELjrrBc6Qb1y+BWEKouX0FYGmLqqzAOXfPmyVzPyafoO
+	 2GIrGHad83vRA==
+Message-ID: <106ad964-3734-43ec-8563-50cb18c5189d@kernel.org>
+Date: Fri, 10 Jan 2025 14:55:22 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 09/12] dt-bindings: power: add V853 ppu bindings
+Subject: Re: [PATCH 04/12] dt-bindings: clock: sunxi-ng: add compatibles for
+ V853
 To: Andras Szemzo <szemzo.andras@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
  <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -66,7 +67,7 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
 References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-10-szemzo.andras@gmail.com>
+ <20250110123923.270626-5-szemzo.andras@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -112,11 +113,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250110123923.270626-10-szemzo.andras@gmail.com>
+In-Reply-To: <20250110123923.270626-5-szemzo.andras@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250110_055412_389012_3394DB6C 
-X-CRM114-Status: UNSURE (   5.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250110_055534_296680_B4DB521D 
+X-CRM114-Status: GOOD (  12.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,11 +134,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 10/01/2025 13:39, Andras Szemzo wrote:
-> The device-tree needs ppu indexes, add it.
+> V853 has 2 CCUs, add compatible strings for it.
+> 
+> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+> ---
+>  .../devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml      | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml
+> index 1690b9d99c3d..bb1fa032e789 100644
+> --- a/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml
+> +++ b/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml
+> @@ -36,6 +36,8 @@ properties:
+>        - allwinner,sun9i-a80-ccu
+>        - allwinner,sun20i-d1-ccu
+>        - allwinner,sun20i-d1-r-ccu
+> +      - allwinner,sun8i-v853-ccu
+> +      - allwinner,sun8i-v853-r-ccu
 
-
-This belongs to the commit introducing binding. Squash it.
-
+Where are the clock headers?
 
 Best regards,
 Krzysztof
