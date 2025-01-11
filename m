@@ -4,79 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72968E7719A
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 09:27:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75D59E7719A
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 10:30:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
+	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dpoTB6LScqIwrZ4ObzdafvsOIxmBBCCLQYB5i1cfzqg=; b=2mFXo24zB0/sst
-	AKpn5VJ7bviwVozfDqsfGQRGU7PnH8si35WlUINdS6f4Wbb6NgOKMXgb5KhrabuHZ2/H5vAacrboS
-	ph+FOx6HbuatuA2O7AXc0oRzAK+9uMiBh8H8OJNM1sAx+YrOUQQxD5q9grE1w3nIS6bHMiSd9j5Ui
-	1KCGnQJfrrTWQ+odgtfMoHNt9fIvSHoG9fbnebjkHIv/FuCM46SSM5WtToc+TelwUzMkeXezh9Lfi
-	5ysI18hYItCDWwQTs3OvAyvv+j0BnbkC6pOPvI08p0HEhw1yI9OA0IcoztAjpTx5LyHU591prWji2
-	0wD+43yXpCs9877iZx/Q==;
+	List-Owner; bh=kxzejF5/Tc81SSwDNrE1R4d8UUeOzm132j3ty1kFLL4=; b=iGHGu/2jE4BfDD
+	xQzWbE/9x89Pr/38LzCfsISwZ7tGuprbTHiYDW20/J0tqRwV9ZhIULCOAZEfhwPNLP6aXlY5OgyHx
+	hPkm4R56VyITpbhj6be9IzxsnScVgDpZsU5h3EaaLuFfRcIQGp+6bKLPYFZWieqgUp3FPbBrhW7PU
+	45Z/LhLiKIoPfBZ45M7ygnzlXeMa83xMEfmXUPNwrUM4WNQDngxci/+qCLHgl+lfTajK+Oj45XWu8
+	rqlgDe0+xwuCA1xGi3Xpiy2zc9isbWg0HsyDw0ePKFPld9RqVORcUQ55SdGvjMfuCaMc2hnwhSz61
+	1NQ1QY6CJhuvyBrqV2nA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWXmG-00000000Vzp-2bZ2;
-	Sat, 11 Jan 2025 09:27:32 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWXmD-00000000Vyk-2p2n;
-	Sat, 11 Jan 2025 09:27:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1736587650; x=1768123650;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=GOfrlgeXQrDZvxQihWPXR4B1GvTFhWoKCUJYDKzc80o=;
-  b=J/3DmcfbJ0s9OXugqeLMUcngypqyjRqHxW+IxOiBYRR9b8Xj2v2WHqN6
-   FpiB49TcTsCDf7/aFtRTeGK8ZfjeyhwFVTIT5AD1Iv/CMrt8VGwwT1iNP
-   A1w2VAh9EJvkzKjJvfD7utqTI6zc5fX5TWc7b6EMAuEHQ+ZGikC1qjLxU
-   Gr4KU6qZqGVFgEUz9l85vVSh6ZoPMSdNBLMZKvvXiwnNkU9fq5ZV8tS7u
-   uOw9Tts9aHdcux36ofIbpbdZYd77DspTOh1ijm2N8OZpRypa/AatQG3IN
-   x2pu4OYUZhVkbTcbevyBa5TRXmkyIX2vyK8kdL0cauw2NTc28wvybyfyO
-   Q==;
-X-CSE-ConnectionGUID: JUh0XpTCTVODBoc6KkBZyg==
-X-CSE-MsgGUID: dCoernDJR5OeXkx5oYwQMg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11311"; a="36781795"
-X-IronPort-AV: E=Sophos;i="6.12,306,1728975600"; 
-   d="scan'208";a="36781795"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jan 2025 01:27:28 -0800
-X-CSE-ConnectionGUID: 8HrRzHbrQYGz0eyCpnh0wg==
-X-CSE-MsgGUID: +Y70tL11SF2QTds53BqZJw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="108988526"
-Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by orviesa003.jf.intel.com with ESMTP; 11 Jan 2025 01:27:24 -0800
-Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tWXm5-000KQx-2U;
-	Sat, 11 Jan 2025 09:27:21 +0000
-Date: Sat, 11 Jan 2025 17:26:53 +0800
-From: kernel test robot <lkp@intel.com>
-To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org,
-	kishon@kernel.org, mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com, p.zabel@pengutronix.de,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	fabrice.gasnier@foss.st.com
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Christian Bruel <christian.bruel@foss.st.com>
-Subject: Re: [PATCH 1/1] phy: stm32: Optimize tuning values from DT.
-Message-ID: <202501111758.hNwYV0yg-lkp@intel.com>
-References: <20250110123356.974839-2-christian.bruel@foss.st.com>
+	id 1tWYky-00000000c9h-3EPL;
+	Sat, 11 Jan 2025 10:30:16 +0000
+Received: from m16.mail.163.com ([220.197.31.4])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tWYjj-00000000byX-2ViG;
+	Sat, 11 Jan 2025 10:29:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Subject:Content-Type:MIME-Version:
+	Message-ID; bh=XqPooFU4lDQIMmbWwzTdUBSgmvqEZt0ZN26iMC58hk8=; b=B
+	uhGhh8cdUvNxwa/3wFTY/H9m8dUUgSBofmYJ6OjdDNKDT7b7ByXbZYnKv18Um3sc
+	wjGaVumw+l0jzvLYfXivhI1Mw/eURNIuoRuTffCTbcqGRtz74E5A62+XzAEmTl2Y
+	Neo/XDuQYm6YigxxE8VZVxB3K2Aec4rvGQIwiitQEU=
+Received: from andyshrk$163.com ( [58.22.7.114] ) by
+ ajax-webmail-wmsvr-40-104 (Coremail) ; Sat, 11 Jan 2025 18:28:26 +0800
+ (CST)
+X-Originating-IP: [58.22.7.114]
+Date: Sat, 11 Jan 2025 18:28:26 +0800 (CST)
+From: "Andy Yan" <andyshrk@163.com>
+To: "Damon Ding" <damon.ding@rock-chips.com>
+Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com, 
+	cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
+	dmitry.baryshkov@linaro.org, andy.yan@rock-chips.com, 
+	hjc@rock-chips.com, algea.cao@rock-chips.com, 
+	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org
+Subject: Re:[PATCH v5 20/20] arm64: dts: rockchip: Enable eDP0 display on
+ RK3588S EVB1 board
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
+ Copyright (c) 2002-2025 www.mailtech.cn 163com
+In-Reply-To: <20250109032725.1102465-21-damon.ding@rock-chips.com>
+References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
+ <20250109032725.1102465-21-damon.ding@rock-chips.com>
+X-NTES-SC: AL_Qu2YBPmSvksr4COfY+lS7TNL56tbLqrJwL5gnvMwRNstqDDI/jkhRUZdM2DZ7MGY4ITc56TKdO2qxwviwKtO
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250110123356.974839-2-christian.bruel@foss.st.com>
+Message-ID: <8927876.291e.19454e86e8f.Coremail.andyshrk@163.com>
+X-Coremail-Locale: zh_CN
+X-CM-TRANSID: aCgvCgDnD1XKR4Jn4k1VAA--.23943W
+X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqBjRXmeCQygHywAEs5
+X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250111_012729_764797_5A9D486A 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20250111_022900_047298_9AF89392 
+X-CRM114-Status: UNSURE (   6.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,189 +83,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Christian,
 
-kernel test robot noticed the following build warnings:
+Hi Damon,
 
-[auto build test WARNING on v6.13-rc6]
-[also build test WARNING on linus/master next-20250110]
-[cannot apply to atorgue-stm32/stm32-next]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+At 2025-01-09 11:27:25, "Damon Ding" <damon.ding@rock-chips.com> wrote:
+>Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
+>- Set pinctrl of pwm12 for backlight
+>- Enable edp0/hdptxphy0/vp2
+>- Add aux-bus/panel nodes
+>
+>Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>
+>---
+>
+>Changes in v2:
+>- Remove brightness-levels and default-brightness-level properties in
+>  backlight node.
+>- Add the detail DT changes to commit message.
+>
+>Changes in v3:
+>- Use aux-bus instead of platform bus for edp-panel.
+>
+>Changes in v4:
+>- Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
+>  in the commit message.
+>
+>Changes in v5:
+>- Use "edp-panel" instead of "lg,lp079qx1-sp0v"
+>- Remove unnecessary comments in commit message
+>- Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
+>---
+> .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 54 +++++++++++++++++++
+> 1 file changed, 54 insertions(+)
+>
+>diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+>index bc4077575beb..a8c151b41e21 100644
+>--- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+>+++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+>@@ -9,6 +9,7 @@
+> #include <dt-bindings/gpio/gpio.h>
+> #include <dt-bindings/input/input.h>
+> #include <dt-bindings/pinctrl/rockchip.h>
+>+#include <dt-bindings/soc/rockchip,vop2.h>
+> #include <dt-bindings/usb/pd.h>
+> #include "rk3588s.dtsi"
+> 
+>@@ -238,6 +239,41 @@ &combphy2_psu {
+> 	status = "okay";
+> };
+> 
+>+&edp0 {
+>+	force-hpd;
+>+	status = "okay";
+>+
+>+	aux-bus {
+>+		panel {
+>+			compatible = "edp-panel";
+>+			backlight = <&backlight>;
+>+			power-supply = <&vcc3v3_lcd_edp>;
+>+
+>+			port {
+>+				panel_in_edp: endpoint {
+>+					remote-endpoint = <&edp_out_panel>;
+>+				};
+>+			};
+>+		};
+>+	};
+>+};
+>+
+>+&edp0_in {
+>+	edp0_in_vp2: endpoint {
+>+		remote-endpoint = <&vp2_out_edp0>;
+>+	};
+>+};
+>+
+>+&edp0_out {
+>+	edp_out_panel: endpoint {
+>+		remote-endpoint = <&panel_in_edp>;
+>+	};
+>+};
+>+
+>+&hdptxphy0 {
+>+	status = "okay";
+>+};
+>+
+> &i2c3 {
+> 	status = "okay";
+> 
+>@@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
+> };
+> 
+> &pwm12 {
+>+	pinctrl-0 = <&pwm12m1_pins>;
+> 	status = "okay";
+> };
+> 
+>@@ -1168,3 +1205,20 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
+> 		};
+> 	};
+> };
+>+
+>+&vop_mmu {
+>+	status = "okay";
+>+};
+>+
+>+&vop {
+>+	assigned-clocks = <&cru DCLK_VOP2_SRC>;
+>+	assigned-clock-parents = <&cru PLL_V0PLL>;
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Bruel/phy-stm32-Optimize-tuning-values-from-DT/20250110-203802
-base:   v6.13-rc6
-patch link:    https://lore.kernel.org/r/20250110123356.974839-2-christian.bruel%40foss.st.com
-patch subject: [PATCH 1/1] phy: stm32: Optimize tuning values from DT.
-config: hexagon-randconfig-002-20250111 (https://download.01.org/0day-ci/archive/20250111/202501111758.hNwYV0yg-lkp@intel.com/config)
-compiler: clang version 15.0.7 (https://github.com/llvm/llvm-project 8dfdcc7b7bf66834a761bd8de445840ef68e4d1a)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250111/202501111758.hNwYV0yg-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202501111758.hNwYV0yg-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
->> drivers/phy/st/phy-stm32-combophy.c:250:35: warning: variable 'val' is uninitialized when used here [-Wuninitialized]
-                              SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
-                                                          ^~~
-   drivers/phy/st/phy-stm32-combophy.c:165:40: note: initialize the variable 'val' to silence this warning
-           u32 refclksel, pllmult, propcntrl, val;
-                                                 ^
-                                                  = 0
-   1 warning generated.
+It's necessary to explain why we need to  assign V0PLL for DCLK_VOP2_SRC in commit message.
 
 
-vim +/val +250 drivers/phy/st/phy-stm32-combophy.c
-
-47e1bb6b4ba098 Christian Bruel 2024-09-30  161  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  162  static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
-47e1bb6b4ba098 Christian Bruel 2024-09-30  163  {
-47e1bb6b4ba098 Christian Bruel 2024-09-30  164  	int ret;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  165  	u32 refclksel, pllmult, propcntrl, val;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  166  	u32 clk_rate;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  167  	struct clk *clk;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  168  	u32 cr1_val = 0, cr1_mask = 0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  169  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  170  	if (combophy->have_pad_clk)
-47e1bb6b4ba098 Christian Bruel 2024-09-30  171  		clk = combophy->clks[PAD_CLK].clk;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  172  	else
-47e1bb6b4ba098 Christian Bruel 2024-09-30  173  		clk = combophy->clks[KER_CLK].clk;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  174  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  175  	clk_rate = clk_get_rate(clk);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  176  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  177  	dev_dbg(combophy->dev, "%s pll init rate %d\n",
-47e1bb6b4ba098 Christian Bruel 2024-09-30  178  		combophy->have_pad_clk ? "External" : "Ker", clk_rate);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  179  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  180  	if (combophy->type != PHY_TYPE_PCIE) {
-47e1bb6b4ba098 Christian Bruel 2024-09-30  181  		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  182  		cr1_val |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  183  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  184  
-ce8b4a3e6b1975 Christian Bruel 2025-01-10  185  	if (combophy->have_ssc) {
-47e1bb6b4ba098 Christian Bruel 2024-09-30  186  		dev_dbg(combophy->dev, "Enabling clock with SSC\n");
-47e1bb6b4ba098 Christian Bruel 2024-09-30  187  		cr1_mask |= SYSCFG_COMBOPHY_CR1_SSCEN;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  188  		cr1_val |= SYSCFG_COMBOPHY_CR1_SSCEN;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  189  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  190  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  191  	switch (clk_rate) {
-47e1bb6b4ba098 Christian Bruel 2024-09-30  192  	case 100000000:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  193  		pllmult = MPLLMULT_100;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  194  		refclksel = REFCLKSEL_0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  195  		propcntrl = 0x8u << 4;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  196  		break;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  197  	case 19200000:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  198  		pllmult = MPLLMULT_19_2;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  199  		refclksel = REFCLKSEL_1;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  200  		propcntrl = 0x8u << 4;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  201  		break;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  202  	case 25000000:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  203  		pllmult = MPLLMULT_25;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  204  		refclksel = REFCLKSEL_0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  205  		propcntrl = 0xeu << 4;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  206  		break;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  207  	case 24000000:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  208  		pllmult = MPLLMULT_24;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  209  		refclksel = REFCLKSEL_1;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  210  		propcntrl = 0xeu << 4;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  211  		break;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  212  	case 20000000:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  213  		pllmult = MPLLMULT_20;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  214  		refclksel = REFCLKSEL_0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  215  		propcntrl = 0xeu << 4;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  216  		break;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  217  	default:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  218  		dev_err(combophy->dev, "Invalid rate 0x%x\n", clk_rate);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  219  		return -EINVAL;
-e592a65584fce0 Yang Li         2024-10-17  220  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  221  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  222  	cr1_mask |= SYSCFG_COMBOPHY_CR1_REFCLKDIV2;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  223  	cr1_val |= REFCLDIV_0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  224  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  225  	cr1_mask |= SYSCFG_COMBOPHY_CR1_REFCLKSEL;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  226  	cr1_val |= refclksel;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  227  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  228  	cr1_mask |= SYSCFG_COMBOPHY_CR1_MPLLMULT;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  229  	cr1_val |= pllmult;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  230  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  231  	/*
-47e1bb6b4ba098 Christian Bruel 2024-09-30  232  	 * vddcombophy is interconnected with vddcore. Isolation bit should be unset
-47e1bb6b4ba098 Christian Bruel 2024-09-30  233  	 * before using the ComboPHY.
-47e1bb6b4ba098 Christian Bruel 2024-09-30  234  	 */
-47e1bb6b4ba098 Christian Bruel 2024-09-30  235  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  236  			   SYSCFG_COMBOPHY_CR2_ISO_DIS, SYSCFG_COMBOPHY_CR2_ISO_DIS);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  237  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  238  	reset_control_assert(combophy->phy_reset);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  239  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  240  	if (combophy->type == PHY_TYPE_PCIE) {
-ce8b4a3e6b1975 Christian Bruel 2025-01-10  241  		stm32_impedance_tune(combophy);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  242  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  243  		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFUSEPAD;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  244  		cr1_val |= combophy->have_pad_clk ? SYSCFG_COMBOPHY_CR1_REFUSEPAD : 0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  245  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  246  
-ce8b4a3e6b1975 Christian Bruel 2025-01-10  247  	if (combophy->rx_eq != -1) {
-ce8b4a3e6b1975 Christian Bruel 2025-01-10  248  		dev_dbg(combophy->dev, "Set RX equalizer %u\n", combophy->rx_eq);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  249  		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR4,
-47e1bb6b4ba098 Christian Bruel 2024-09-30 @250  			   SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  251  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  252  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  253  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1, cr1_mask, cr1_val);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  254  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  255  	/*
-47e1bb6b4ba098 Christian Bruel 2024-09-30  256  	 * Force elasticity buffer to be tuned for the reference clock as
-47e1bb6b4ba098 Christian Bruel 2024-09-30  257  	 * the separated clock model is not supported
-47e1bb6b4ba098 Christian Bruel 2024-09-30  258  	 */
-47e1bb6b4ba098 Christian Bruel 2024-09-30  259  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR5,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  260  			   SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS, SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  261  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  262  	reset_control_deassert(combophy->phy_reset);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  263  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  264  	ret = regmap_read_poll_timeout(combophy->regmap, SYSCFG_COMBOPHY_SR, val,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  265  				       !(val & STM32MP25_PIPE0_PHYSTATUS),
-47e1bb6b4ba098 Christian Bruel 2024-09-30  266  				       10, 1000);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  267  	if (ret) {
-47e1bb6b4ba098 Christian Bruel 2024-09-30  268  		dev_err(combophy->dev, "timeout, cannot lock PLL\n");
-47e1bb6b4ba098 Christian Bruel 2024-09-30  269  		if (combophy->type == PHY_TYPE_PCIE && !combophy->have_pad_clk)
-47e1bb6b4ba098 Christian Bruel 2024-09-30  270  			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  271  					   STM32MP25_PCIEPRGCR_EN, 0);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  272  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  273  		if (combophy->type != PHY_TYPE_PCIE)
-47e1bb6b4ba098 Christian Bruel 2024-09-30  274  			regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  275  					   SYSCFG_COMBOPHY_CR1_REFSSPEN, 0);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  276  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  277  		goto out;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  278  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  279  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  280  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  281  	if (combophy->type == PHY_TYPE_PCIE) {
-47e1bb6b4ba098 Christian Bruel 2024-09-30  282  		if (!combophy->have_pad_clk)
-47e1bb6b4ba098 Christian Bruel 2024-09-30  283  			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  284  					   STM32MP25_PCIEPRGCR_EN, STM32MP25_PCIEPRGCR_EN);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  285  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  286  		val = readl_relaxed(combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  287  		val &= ~COMBOPHY_PROP_CNTRL;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  288  		val |= propcntrl;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  289  		writel_relaxed(val, combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  290  	}
-47e1bb6b4ba098 Christian Bruel 2024-09-30  291  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  292  	return 0;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  293  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  294  out:
-47e1bb6b4ba098 Christian Bruel 2024-09-30  295  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
-47e1bb6b4ba098 Christian Bruel 2024-09-30  296  			   SYSCFG_COMBOPHY_CR2_ISO_DIS, 0);
-47e1bb6b4ba098 Christian Bruel 2024-09-30  297  
-47e1bb6b4ba098 Christian Bruel 2024-09-30  298  	return ret;
-47e1bb6b4ba098 Christian Bruel 2024-09-30  299  }
-47e1bb6b4ba098 Christian Bruel 2024-09-30  300  
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
+>+	status = "okay";
+>+};
+>+
+>+&vp2 {
+>+	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
+>+		reg = <ROCKCHIP_VOP2_EP_EDP0>;
+>+		remote-endpoint = <&edp0_in_vp2>;
+>+	};
+>+};
+>-- 
+>2.34.1
+>
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
