@@ -4,88 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E81CE77188
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 00:07:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72968E7719A
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 09:27:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zjjGjFvWDb4/W9ZcOj/Uy9qvlO1zZqzV7/D2D0KxQ6c=; b=Xe2G0d6udiRLbV
-	orMrptHjaMz5nyjZ2uzLdIwvXtHrp53qEo4XBVWfHiTiHx6mNnLS2OJmJlxtC993i9Dy1y9HT/WAI
-	JdgH/+tBin2LOgGfGlrsC2WiDRY3egh04uMxOiEMkM6T/gTIPGyKWoN2kZJhuNm7ixOH9AdMd3uMi
-	PhSVLNYV5m/ldL6se2DP5ENDYNhMJI+Q6b+UzZGQxVpeMXMw7PiRcO1HyPeB4mZcvnfV0rEDk9+Eh
-	4Iu/wbQxSu9yhMEiSofJ/26q+YbMresl5OVy2X5CsAddMLI+Gluy1Ti3cKMiSAxDh0J1OWkz1sJdQ
-	SX+FHT8EdTZdNFu57fLA==;
+	List-Owner; bh=dpoTB6LScqIwrZ4ObzdafvsOIxmBBCCLQYB5i1cfzqg=; b=2mFXo24zB0/sst
+	AKpn5VJ7bviwVozfDqsfGQRGU7PnH8si35WlUINdS6f4Wbb6NgOKMXgb5KhrabuHZ2/H5vAacrboS
+	ph+FOx6HbuatuA2O7AXc0oRzAK+9uMiBh8H8OJNM1sAx+YrOUQQxD5q9grE1w3nIS6bHMiSd9j5Ui
+	1KCGnQJfrrTWQ+odgtfMoHNt9fIvSHoG9fbnebjkHIv/FuCM46SSM5WtToc+TelwUzMkeXezh9Lfi
+	5ysI18hYItCDWwQTs3OvAyvv+j0BnbkC6pOPvI08p0HEhw1yI9OA0IcoztAjpTx5LyHU591prWji2
+	0wD+43yXpCs9877iZx/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWP2A-0000000HKuM-0tup;
-	Sat, 11 Jan 2025 00:07:22 +0000
-Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
+	id 1tWXmG-00000000Vzp-2bZ2;
+	Sat, 11 Jan 2025 09:27:32 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWP27-0000000HKtv-2lec
-	for linux-phy@lists.infradead.org;
-	Sat, 11 Jan 2025 00:07:20 +0000
-Received: by mail-pj1-x1035.google.com with SMTP id 98e67ed59e1d1-2ee51f8c47dso3584822a91.1
-        for <linux-phy@lists.infradead.org>; Fri, 10 Jan 2025 16:07:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1736554038; x=1737158838; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=f/hRX0hxCXBAgzwmJ1vYejLKpUIdc6W0HIHhhy7DKFE=;
-        b=ehBzA7Ls+tsBTrA2P4TCNOaPL3DMhz+fs68XTmJA07I9uW8IA9TA4nWUeKpBUbZ1UA
-         vJirXHGj3QkXqxhKjKwAhxP0EFZ3avdP+dGhh8ZYXPpalYhqgd+ptjkMkvTxshD3vX+7
-         bQgcgShXyzdcvvIfS4ngW6nxFQ29q/DJhQWiczM+G6b/87EDjdteCIM2KKHwiH/buW30
-         XIR22qe7ZH2DYkfh9Lm/CXsXpld+eaIJKs2N+QfChehQnkPLXjcDh1Y8oLoPyZXnZGhL
-         cmw5noli5RRZamdBNLFzdlowqzEZyKdKduvrmpkWQxBa2Iqo9J8ipjThBGxbw+Z2xjja
-         SRRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736554038; x=1737158838;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=f/hRX0hxCXBAgzwmJ1vYejLKpUIdc6W0HIHhhy7DKFE=;
-        b=bvfR5z2kjUJ3qyAp9MNj1Q4iyi1W55r/AmtJ/2FWaTHl/37pi8GBY0Zu1GUv3AlpuS
-         i7Fzb27GBJt5TpaWqZLtrCcLQi0MgzR7i0zHZcmIvu9F8pPVFr1IQPmDFI2v3jFmrI9s
-         Sqx1WIsuw8SMy2pIgnF43xiGuJ0lO3J16vhAtR66ilMu+o5Gy7QqT+LWkJyXM4GW+fiY
-         ty/CVsE7UeRnd+UKXaz8Cp47yKxh8p0w0cPO8pC7VdRqrGxqByNH/bHOX4kUSl5ELnaX
-         ULM08VLW8tffLLNmm51jzSD6HHrbt6vwfospwCYB3f/nbIlPCQD0zzt28OOPeSQXBn5s
-         +bsw==
-X-Forwarded-Encrypted: i=1; AJvYcCXTH85dCo+iKhpl5LKnQKWNwNYjQaPL1SGfg6adJZV/G5eAjfWHtlhnIf2f2hsMpD+mlNw7MuygA2I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzD0i2GnhS2P09S57KahLf28gSBiJl8ZJOVfVl1Vob2CNxa18Yj
-	V652+vWfII8pmx/1bpig5VZ4BHk+agvBQpyggXGsYGlxAER9Ct/V2GeEciamEz1DqVUXMFnu8Ge
-	uzzx0cAwyKxvMc9+soQEjriKguvIJww==
-X-Gm-Gg: ASbGncvG09QPJNfEoXqzQNRolGKCmosx4fjGbKQCtZ6aSrQGBY5aR0vysH744kmkc4Q
-	gsSxUpgpYhvwb+G9wsXTnPDTywn/Yt2H1+SdiILtA7QeeoYKZLV2suoo7rtkAfyIBcFX3BdM=
-X-Google-Smtp-Source: AGHT+IEyBMU9ybn2qm7HfrMOOnX+YMpa2T6PQtcMVAmMntgfeOwSvzCTD+vuhdRF939r+AE6IM5h9pGcjtEp4ObJ6OQ=
-X-Received: by 2002:a17:90b:2f03:b0:2ee:ed1c:e451 with SMTP id
- 98e67ed59e1d1-2f548eb32ffmr19772468a91.15.1736554038253; Fri, 10 Jan 2025
- 16:07:18 -0800 (PST)
+	id 1tWXmD-00000000Vyk-2p2n;
+	Sat, 11 Jan 2025 09:27:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1736587650; x=1768123650;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=GOfrlgeXQrDZvxQihWPXR4B1GvTFhWoKCUJYDKzc80o=;
+  b=J/3DmcfbJ0s9OXugqeLMUcngypqyjRqHxW+IxOiBYRR9b8Xj2v2WHqN6
+   FpiB49TcTsCDf7/aFtRTeGK8ZfjeyhwFVTIT5AD1Iv/CMrt8VGwwT1iNP
+   A1w2VAh9EJvkzKjJvfD7utqTI6zc5fX5TWc7b6EMAuEHQ+ZGikC1qjLxU
+   Gr4KU6qZqGVFgEUz9l85vVSh6ZoPMSdNBLMZKvvXiwnNkU9fq5ZV8tS7u
+   uOw9Tts9aHdcux36ofIbpbdZYd77DspTOh1ijm2N8OZpRypa/AatQG3IN
+   x2pu4OYUZhVkbTcbevyBa5TRXmkyIX2vyK8kdL0cauw2NTc28wvybyfyO
+   Q==;
+X-CSE-ConnectionGUID: JUh0XpTCTVODBoc6KkBZyg==
+X-CSE-MsgGUID: dCoernDJR5OeXkx5oYwQMg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11311"; a="36781795"
+X-IronPort-AV: E=Sophos;i="6.12,306,1728975600"; 
+   d="scan'208";a="36781795"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jan 2025 01:27:28 -0800
+X-CSE-ConnectionGUID: 8HrRzHbrQYGz0eyCpnh0wg==
+X-CSE-MsgGUID: +Y70tL11SF2QTds53BqZJw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
+   d="scan'208";a="108988526"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by orviesa003.jf.intel.com with ESMTP; 11 Jan 2025 01:27:24 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tWXm5-000KQx-2U;
+	Sat, 11 Jan 2025 09:27:21 +0000
+Date: Sat, 11 Jan 2025 17:26:53 +0800
+From: kernel test robot <lkp@intel.com>
+To: Christian Bruel <christian.bruel@foss.st.com>, vkoul@kernel.org,
+	kishon@kernel.org, mcoquelin.stm32@gmail.com,
+	alexandre.torgue@foss.st.com, p.zabel@pengutronix.de,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	fabrice.gasnier@foss.st.com
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	Christian Bruel <christian.bruel@foss.st.com>
+Subject: Re: [PATCH 1/1] phy: stm32: Optimize tuning values from DT.
+Message-ID: <202501111758.hNwYV0yg-lkp@intel.com>
+References: <20250110123356.974839-2-christian.bruel@foss.st.com>
 MIME-Version: 1.0
-References: <CAMuHMdUG7A10E2SZR6kHiQBrzp_OVvMSd7jxggaoU3B_6fZ+nQ@mail.gmail.com>
- <d4b59d5e94c4c4a488cd24c6c169e418ad53980d.1735524526.git.xiaopei01@kylinos.cn>
- <CAHCN7x+UzXQz+2zs+qvvWfWCmhsxsZoxP+2WHpfdZGnzwDPNQg@mail.gmail.com>
- <Z3aDU_dhfgEHlL4u@atmark-techno.com> <CAHCN7x+XNes4DbW1OvTjwsCddw5FJesCbPkv88rfRHM6sGBKSg@mail.gmail.com>
- <be2c1add-249c-4d01-8233-5a6dcb297e94@kylinos.cn> <671f844e-58af-47f3-8c31-776bb41413f2@kylinos.cn>
- <CAHCN7xL8Yn4HQwgZAFgxbdVU6VSf6vGb2GEANeGRTaPKAA5uhw@mail.gmail.com> <CAMuHMdVyxrqSdoR5VMfazwQWbXPmgMLxm-5XfxcJagv-kTuEHg@mail.gmail.com>
-In-Reply-To: <CAMuHMdVyxrqSdoR5VMfazwQWbXPmgMLxm-5XfxcJagv-kTuEHg@mail.gmail.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Fri, 10 Jan 2025 18:07:06 -0600
-X-Gm-Features: AbW1kvaUiKs_Tmz6pYypCJYJV_7tkNa4AHbXGP_ekX37xi7BuhY9QI6d3IvTunY
-Message-ID: <CAHCN7x+_8YSORcvXLgo_i=7WCUUEAdeJWjC5xoUPT-OVCdSftQ@mail.gmail.com>
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: fix build error in fsl_samsung_hdmi_phy_configure_pll_lock_det
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Pei Xiao <xiaopei01@kylinos.cn>, 
-	Dominique Martinet <dominique.martinet@atmark-techno.com>, aford@beaconembedded.com, 
-	arnd@arndb.de, frieder.schrempf@kontron.de, kishon@kernel.org, 
-	l.stach@pengutronix.de, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, m.felsch@pengutronix.de, sandor.yu@nxp.com, 
-	u.kleine-koenig@baylibre.com, vkoul@kernel.org
+Content-Disposition: inline
+In-Reply-To: <20250110123356.974839-2-christian.bruel@foss.st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250110_160719_699413_3FBEC1C7 
-X-CRM114-Status: GOOD (  37.88  )
+X-CRM114-CacheID: sfid-20250111_012729_764797_5A9D486A 
+X-CRM114-Status: GOOD (  13.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,69 +88,195 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBKYW4gMTAsIDIwMjUgYXQgNDowNOKAr0FNIEdlZXJ0IFV5dHRlcmhvZXZlbiA8Z2Vl
-cnRAbGludXgtbTY4ay5vcmc+IHdyb3RlOgo+Cj4gSGkgQWRhbSwKPgo+IE9uIFRodSwgSmFuIDks
-IDIwMjUgYXQgNDowM+KAr1BNIEFkYW0gRm9yZCA8YWZvcmQxNzNAZ21haWwuY29tPiB3cm90ZToK
-PiA+IE9uIFRodSwgSmFuIDksIDIwMjUgYXQgMjo0NeKAr0FNIFBlaSBYaWFvIDx4aWFvcGVpMDFA
-a3lsaW5vcy5jbj4gd3JvdGU6Cj4gPiA+IOWcqCAyMDI1LzEvMyAwOTozNCwgUGVpIFhpYW8g5YaZ
-6YGTOgo+ID4gPiA+IOWcqCAyMDI1LzEvMiAyMzowNCwgQWRhbSBGb3JkIOWGmemBkzoKPiA+ID4g
-Pj4gT24gVGh1LCBKYW4gMiwgMjAyNSBhdCA2OjE14oCvQU0gRG9taW5pcXVlIE1hcnRpbmV0Cj4g
-PiA+ID4+IDxkb21pbmlxdWUubWFydGluZXRAYXRtYXJrLXRlY2huby5jb20+IHdyb3RlOgo+ID4g
-PiA+Pj4gQWRhbSBGb3JkIHdyb3RlIG9uIE1vbiwgRGVjIDMwLCAyMDI0IGF0IDA4OjExOjE2UE0g
-LTA2MDA6Cj4gPiA+ID4+Pj4+IGluZGV4IDVlYWM3MGExZTg1OC4uM2U0ZDFhNTE2MGVhIDEwMDY0
-NAo+ID4gPiA+Pj4+PiAtLS0gYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5n
-LWhkbWkuYwo+ID4gPiA+Pj4+PiArKysgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1z
-YW1zdW5nLWhkbWkuYwo+ID4gPiA+Pj4+PiBAQCAtMzQxLDcgKzM0MSw3IEBAIGZzbF9zYW1zdW5n
-X2hkbWlfcGh5X2NvbmZpZ3VyZV9wbGxfbG9ja19kZXQoc3RydWN0IGZzbF9zYW1zdW5nX2hkbWlf
-cGh5ICpwaHksCj4gPiA+ID4+Pj4+ICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ID4g
-PiA+Pj4+PiAgICAgICAgIH0KPiA+ID4gPj4+Pj4KPiA+ID4gPj4+Pj4gLSAgICAgICB3cml0ZWIo
-RklFTERfUFJFUChSRUcxMl9DS19ESVZfTUFTSywgZGl2KSwgcGh5LT5yZWdzICsgUEhZX1JFRygx
-MikpOwo+ID4gPiA+Pj4+PiArICAgICAgIHdyaXRlYihGSUVMRF9QUkVQKFJFRzEyX0NLX0RJVl9N
-QVNLLCBkaXYgPT0gNCA/IGRpdiAtIDEgOiBkaXYpLCBwaHktPnJlZ3MgKyBQSFlfUkVHKDEyKSk7
-Cj4gPiA+ID4+Pj4gVGhlIGZvci1sb29wIGFib3ZlIHRoaXMgbGluZSBzdGF0ZXM6ICAgZm9yIChk
-aXYgPSAwOyBkaXYgPCA0OyBkaXYrKykKPiA+ID4gPj4+PiBIb3cgY291bGQgdGhpcyBldmVyIHJl
-YWNoIDQ/ICBJZiBpdCBkaWQgcmVhY2ggNCwgdGhlIGNhbGN1bGF0aW9uIGZvcgo+ID4gPiA+Pj4+
-IGludF9wbGxjbGsgd291bGQgbmVlZCB0byBiZSByZWNhbGN1bGF0ZWQgc2luY2UgaW50X3BsbGNs
-ayA9IHBjbGsgLyAoMQo+ID4gPiA+Pj4+IDw8IGRpdik7Cj4gPiA+ID4+PiBCdXQuLi4gZm9yIChk
-aXYgPSAwOyBkaXYgPCA0OyBkaXYrKykgZG9lcyByZWFjaCA0LCBpZiB0aGUgYnJlYWsKPiA+ID4g
-Pj4+IGNvbmRpdGlvbiBkaWRuJ3QgbWF0Y2gsIHdoaWNoIGlzIHNvbWV0aGluZyB0aGUgY29tcGls
-ZXIgY2Fubm90IGVuc3VyZQo+ID4gPiA+Pj4gaGVyZS4KPiA+ID4gPj4+Cj4gPiA+ID4+PiBUaGUg
-b2xkIGNvZGUgd291bGQganVzdCBmYWxsIG91dCBvZiBhbnkgb2YgdGhlIHN3aXRjaCBjYXNlcyBh
-bmQgZmFsbGJhY2sKPiA+ID4gPj4+IHRvIGRpdiA9IDEgaWYgcGl4Y2xrID4gMjk3MDAwMDAwLCB3
-aGljaCBpcyBsaWtlbHkgaW5jb3JyZWN0LCBzbyBpbiB0aGF0Cj4gPiA+ID4+PiBzZW5zZSBqdXN0
-IHBhZGRpbmcgdGhpcyB0aHJvdWdoIGAmIDNgIGFuZCBwcmV0ZW5kaW5nIGl0IHdpbGwgbmV2ZXIK
-PiA+ID4gPj4+IGhhcHBlbiBpcyBwcm9iYWJseSBhY2NlcHRhYmxlLCBidXQgdGhpcyBvdWdodCB0
-byBoYXZlIGEgYmV0dGVyIGNvbW1lbnQKPiA+ID4gPj4+IHRoYW4gd2hhdCBQZWkganVzdCBzZW50
-Lgo+ID4gPiA+PiBNYXliZSB3ZSB1c2UgdGhlIE1BWCBmdW5jdGlvbiB0byBzZXQgZGl2ID0gbWF4
-KGRpdiwzKTsKPiA+ID4gPiBkbyB5b3UgbWVhbjoKPiA+ID4gPiB3cml0ZWIoRklFTERfUFJFUChS
-RUcxMl9DS19ESVZfTUFTSywgbWluKGRpdiwgMykpLCBwaHktPnJlZ3MgKyBQSFlfUkVHKDEyKSk7
-Cj4gPiA+Cj4gPiA+IERvZXMgYW55b25lIGhhdmUgYW55IHN1Z2dlc3Rpb25zPwo+ID4KPiA+IFNv
-cnJ5IGZvciB0aGUgZGVsYXllZCByZXNwb25zZXMsIEkgd2FzIHRyYXZlbGluZyBmb3IgdGhlIGxh
-c3Qgd2Vlay4KPiA+Cj4gPiBXaGF0IGFib3V0IHJlcGxhY2luZyB0aGUgZm9yIGxvb3Agd2l0aCBh
-IGRvLXdoaWxlIGxvb3Agd2hlcmUgdGhlCj4gPiBjcml0ZXJpYSBpcyBpbnRfcGxsY2xrIDwgKDUw
-ICogTUhaKSAmJiBkaXYgPD0gMy4gIE1pZ2h0IHRoYXQgd29yaz8KPgo+IFN1Y2ggYSBsb29wIG1p
-Z2h0IG5ldmVyIGNvbXBsZXRlLCBhbHRob3VnaCBpbiBwcmFjdGljZSB0aGF0IGRvZXMgbm90Cj4g
-c2VlbSB0byBiZSBwb3NzaWJsZSAodW50aWwgc29tZW9uZSBtb2RpZmllcyB0aGUgdGFibGVzIGlu
-IHRoZSBkcml2ZXIKPiBhbmQgYWRkcyBhIHRvby1sYXJnZSBjZmctPnBpeGNsaz8pLgo+Cj4gUHJv
-YmFibHkgdGhlIHNhZmVzdCBzb2x1dGlvbiBpcyB0byBjaGFuZ2UgdGhlIHJldHVybiB0eXBlIG9m
-Cj4gZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlX3BsbF9sb2NrX2RldCgpIGZyb20gdm9p
-ZCB0byBpbnQsIGFuZAo+IGxldCBpdCByZXR1cm4gYW4gZXJyb3IgY29kZToKPgo+ICAgICBpZiAo
-ZGl2ID09IDQpCj4gICAgICAgICAgICAgcmV0dXJuIC1FSU5WQUw7Cj4KPiAgYW5kIHByb3BhZ2F0
-ZSB0aGF0LiBJdHMgc29sZSBjYWxsZXIgYWxyZWFkeSByZXR1cm5zIGFuIGVycm9yIGNvZGUuCgpU
-aGF0IHdvcmtzIGZvciBtZS4KClBlaSwKCkRvIHlvdSB3YW50IG1lIHRvIHN1Ym1pdCBhIHBhdGNo
-LCBvciBkaWQgeW91IHdhbnQgdG8gZG8gaXQ/ICBJIGRvbid0Cmtub3cgaG93IHRvIHJlcGxpY2F0
-ZSB0aGUgY29tcGlsZXIgZXJyb3IsIHNvIEkgY2FuJ3QgdmVyaWZ5IGlmIHRoaXMKd291bGQgZml4
-IGl0IG9yIG5vdC4KCmFkYW0KPgo+IEdye29ldGplLGVldGluZ31zLAo+Cj4gICAgICAgICAgICAg
-ICAgICAgICAgICAgR2VlcnQKPgo+IC0tCj4gR2VlcnQgVXl0dGVyaG9ldmVuIC0tIFRoZXJlJ3Mg
-bG90cyBvZiBMaW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51eC1tNjhrLm9yZwo+Cj4gSW4g
-cGVyc29uYWwgY29udmVyc2F0aW9ucyB3aXRoIHRlY2huaWNhbCBwZW9wbGUsIEkgY2FsbCBteXNl
-bGYgYSBoYWNrZXIuIEJ1dAo+IHdoZW4gSSdtIHRhbGtpbmcgdG8gam91cm5hbGlzdHMgSSBqdXN0
-IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4KPiAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Christian,
+
+kernel test robot noticed the following build warnings:
+
+[auto build test WARNING on v6.13-rc6]
+[also build test WARNING on linus/master next-20250110]
+[cannot apply to atorgue-stm32/stm32-next]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Bruel/phy-stm32-Optimize-tuning-values-from-DT/20250110-203802
+base:   v6.13-rc6
+patch link:    https://lore.kernel.org/r/20250110123356.974839-2-christian.bruel%40foss.st.com
+patch subject: [PATCH 1/1] phy: stm32: Optimize tuning values from DT.
+config: hexagon-randconfig-002-20250111 (https://download.01.org/0day-ci/archive/20250111/202501111758.hNwYV0yg-lkp@intel.com/config)
+compiler: clang version 15.0.7 (https://github.com/llvm/llvm-project 8dfdcc7b7bf66834a761bd8de445840ef68e4d1a)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250111/202501111758.hNwYV0yg-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202501111758.hNwYV0yg-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+>> drivers/phy/st/phy-stm32-combophy.c:250:35: warning: variable 'val' is uninitialized when used here [-Wuninitialized]
+                              SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
+                                                          ^~~
+   drivers/phy/st/phy-stm32-combophy.c:165:40: note: initialize the variable 'val' to silence this warning
+           u32 refclksel, pllmult, propcntrl, val;
+                                                 ^
+                                                  = 0
+   1 warning generated.
+
+
+vim +/val +250 drivers/phy/st/phy-stm32-combophy.c
+
+47e1bb6b4ba098 Christian Bruel 2024-09-30  161  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  162  static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
+47e1bb6b4ba098 Christian Bruel 2024-09-30  163  {
+47e1bb6b4ba098 Christian Bruel 2024-09-30  164  	int ret;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  165  	u32 refclksel, pllmult, propcntrl, val;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  166  	u32 clk_rate;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  167  	struct clk *clk;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  168  	u32 cr1_val = 0, cr1_mask = 0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  169  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  170  	if (combophy->have_pad_clk)
+47e1bb6b4ba098 Christian Bruel 2024-09-30  171  		clk = combophy->clks[PAD_CLK].clk;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  172  	else
+47e1bb6b4ba098 Christian Bruel 2024-09-30  173  		clk = combophy->clks[KER_CLK].clk;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  174  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  175  	clk_rate = clk_get_rate(clk);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  176  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  177  	dev_dbg(combophy->dev, "%s pll init rate %d\n",
+47e1bb6b4ba098 Christian Bruel 2024-09-30  178  		combophy->have_pad_clk ? "External" : "Ker", clk_rate);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  179  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  180  	if (combophy->type != PHY_TYPE_PCIE) {
+47e1bb6b4ba098 Christian Bruel 2024-09-30  181  		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  182  		cr1_val |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  183  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  184  
+ce8b4a3e6b1975 Christian Bruel 2025-01-10  185  	if (combophy->have_ssc) {
+47e1bb6b4ba098 Christian Bruel 2024-09-30  186  		dev_dbg(combophy->dev, "Enabling clock with SSC\n");
+47e1bb6b4ba098 Christian Bruel 2024-09-30  187  		cr1_mask |= SYSCFG_COMBOPHY_CR1_SSCEN;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  188  		cr1_val |= SYSCFG_COMBOPHY_CR1_SSCEN;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  189  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  190  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  191  	switch (clk_rate) {
+47e1bb6b4ba098 Christian Bruel 2024-09-30  192  	case 100000000:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  193  		pllmult = MPLLMULT_100;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  194  		refclksel = REFCLKSEL_0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  195  		propcntrl = 0x8u << 4;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  196  		break;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  197  	case 19200000:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  198  		pllmult = MPLLMULT_19_2;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  199  		refclksel = REFCLKSEL_1;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  200  		propcntrl = 0x8u << 4;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  201  		break;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  202  	case 25000000:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  203  		pllmult = MPLLMULT_25;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  204  		refclksel = REFCLKSEL_0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  205  		propcntrl = 0xeu << 4;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  206  		break;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  207  	case 24000000:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  208  		pllmult = MPLLMULT_24;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  209  		refclksel = REFCLKSEL_1;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  210  		propcntrl = 0xeu << 4;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  211  		break;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  212  	case 20000000:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  213  		pllmult = MPLLMULT_20;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  214  		refclksel = REFCLKSEL_0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  215  		propcntrl = 0xeu << 4;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  216  		break;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  217  	default:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  218  		dev_err(combophy->dev, "Invalid rate 0x%x\n", clk_rate);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  219  		return -EINVAL;
+e592a65584fce0 Yang Li         2024-10-17  220  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  221  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  222  	cr1_mask |= SYSCFG_COMBOPHY_CR1_REFCLKDIV2;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  223  	cr1_val |= REFCLDIV_0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  224  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  225  	cr1_mask |= SYSCFG_COMBOPHY_CR1_REFCLKSEL;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  226  	cr1_val |= refclksel;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  227  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  228  	cr1_mask |= SYSCFG_COMBOPHY_CR1_MPLLMULT;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  229  	cr1_val |= pllmult;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  230  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  231  	/*
+47e1bb6b4ba098 Christian Bruel 2024-09-30  232  	 * vddcombophy is interconnected with vddcore. Isolation bit should be unset
+47e1bb6b4ba098 Christian Bruel 2024-09-30  233  	 * before using the ComboPHY.
+47e1bb6b4ba098 Christian Bruel 2024-09-30  234  	 */
+47e1bb6b4ba098 Christian Bruel 2024-09-30  235  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  236  			   SYSCFG_COMBOPHY_CR2_ISO_DIS, SYSCFG_COMBOPHY_CR2_ISO_DIS);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  237  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  238  	reset_control_assert(combophy->phy_reset);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  239  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  240  	if (combophy->type == PHY_TYPE_PCIE) {
+ce8b4a3e6b1975 Christian Bruel 2025-01-10  241  		stm32_impedance_tune(combophy);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  242  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  243  		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFUSEPAD;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  244  		cr1_val |= combophy->have_pad_clk ? SYSCFG_COMBOPHY_CR1_REFUSEPAD : 0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  245  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  246  
+ce8b4a3e6b1975 Christian Bruel 2025-01-10  247  	if (combophy->rx_eq != -1) {
+ce8b4a3e6b1975 Christian Bruel 2025-01-10  248  		dev_dbg(combophy->dev, "Set RX equalizer %u\n", combophy->rx_eq);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  249  		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR4,
+47e1bb6b4ba098 Christian Bruel 2024-09-30 @250  			   SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  251  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  252  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  253  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1, cr1_mask, cr1_val);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  254  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  255  	/*
+47e1bb6b4ba098 Christian Bruel 2024-09-30  256  	 * Force elasticity buffer to be tuned for the reference clock as
+47e1bb6b4ba098 Christian Bruel 2024-09-30  257  	 * the separated clock model is not supported
+47e1bb6b4ba098 Christian Bruel 2024-09-30  258  	 */
+47e1bb6b4ba098 Christian Bruel 2024-09-30  259  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR5,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  260  			   SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS, SYSCFG_COMBOPHY_CR5_COMMON_CLOCKS);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  261  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  262  	reset_control_deassert(combophy->phy_reset);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  263  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  264  	ret = regmap_read_poll_timeout(combophy->regmap, SYSCFG_COMBOPHY_SR, val,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  265  				       !(val & STM32MP25_PIPE0_PHYSTATUS),
+47e1bb6b4ba098 Christian Bruel 2024-09-30  266  				       10, 1000);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  267  	if (ret) {
+47e1bb6b4ba098 Christian Bruel 2024-09-30  268  		dev_err(combophy->dev, "timeout, cannot lock PLL\n");
+47e1bb6b4ba098 Christian Bruel 2024-09-30  269  		if (combophy->type == PHY_TYPE_PCIE && !combophy->have_pad_clk)
+47e1bb6b4ba098 Christian Bruel 2024-09-30  270  			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  271  					   STM32MP25_PCIEPRGCR_EN, 0);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  272  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  273  		if (combophy->type != PHY_TYPE_PCIE)
+47e1bb6b4ba098 Christian Bruel 2024-09-30  274  			regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  275  					   SYSCFG_COMBOPHY_CR1_REFSSPEN, 0);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  276  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  277  		goto out;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  278  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  279  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  280  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  281  	if (combophy->type == PHY_TYPE_PCIE) {
+47e1bb6b4ba098 Christian Bruel 2024-09-30  282  		if (!combophy->have_pad_clk)
+47e1bb6b4ba098 Christian Bruel 2024-09-30  283  			regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  284  					   STM32MP25_PCIEPRGCR_EN, STM32MP25_PCIEPRGCR_EN);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  285  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  286  		val = readl_relaxed(combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  287  		val &= ~COMBOPHY_PROP_CNTRL;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  288  		val |= propcntrl;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  289  		writel_relaxed(val, combophy->base + COMBOPHY_SUP_ANA_MPLL_LOOP_CTL);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  290  	}
+47e1bb6b4ba098 Christian Bruel 2024-09-30  291  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  292  	return 0;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  293  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  294  out:
+47e1bb6b4ba098 Christian Bruel 2024-09-30  295  	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
+47e1bb6b4ba098 Christian Bruel 2024-09-30  296  			   SYSCFG_COMBOPHY_CR2_ISO_DIS, 0);
+47e1bb6b4ba098 Christian Bruel 2024-09-30  297  
+47e1bb6b4ba098 Christian Bruel 2024-09-30  298  	return ret;
+47e1bb6b4ba098 Christian Bruel 2024-09-30  299  }
+47e1bb6b4ba098 Christian Bruel 2024-09-30  300  
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
