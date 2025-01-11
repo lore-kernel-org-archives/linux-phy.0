@@ -4,75 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3529DE7719A
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 14:17:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5D9EE7719A
+	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 18:56:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TgeGrwSHBLK+DB4s4fyhB8c7cxPq1UeSmxltBH7RgNA=; b=P9Qu9HjFA9di/K
-	mHIrRQL5BEpLcwzjVaZgkZxs0ZxLfqIf1XBdZxnJmvNgJti+uEQxaj4fKEwNNkFtTKi1drFe4xmpE
-	U+jrbu05HBj1kZdni2Phe+DUEgPNbBcnnVi3y1kwn3oKF2Mc9Up1MnutRTc2WANV50xGH4BBf6E6U
-	yPcNnm/4SoKoeD6NJbuQKPf5qdyEBkSpaSiC1CN+FXbJWGhr264zAJKsGsLhYhzUcNW85EVxvrbMK
-	TULRjeG/wpyWr2J/xS54UpMyfeR9L/vHQUfYy6p9IFbz9QmYzpeiPGgChkuf69+OWL7I9xH76zpeE
-	a3ODetY3VcsFvnVQyiiA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/Vl3cyGXrIqJEyYAQKb8JLXN74KbihoyX/QOtDqrDm4=; b=ycQZg+2LXaHWiy
+	yB7BjKJPR3rh2m29SjpreOwar4kjG9mk6MaXhxiKciL7mT31mB7pV7WXNGYBhH9jrglJpF6gAC25n
+	P4MqP39wmiLbJyQb0bP4ltPaWqz8X1dapmopphZ41KAyAgX0gPwB3bvH1SpwDc34pdsZP9RnIHq3C
+	6kT2TZiNWDWxwBRPnnI4YUQpEHoLH47sc76s2AI/ErR15wd1StFSTIuan6B5UlXq/LueVFRVuntDP
+	QuLlag6qIyQ1KIrA8mr/SQ+JNnDLO7YHHTM+NRodwr/Amt10EmoHmaBNaW0+URv+3H1aFme7wosEP
+	Pevp6fK75/B8Fm2l3ksQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWcIn-00000000tzA-43I2;
-	Sat, 11 Jan 2025 14:17:25 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1tWgf3-00000001HdE-0bpN;
+	Sat, 11 Jan 2025 18:56:41 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWcHb-00000000tqq-2Gts;
-	Sat, 11 Jan 2025 14:16:12 +0000
-X-UUID: 98389020d02611ef9048ed6ed365623b-20250111
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=bBcRZz23qe7sBpVEFNsRfliAszcO1sjImonnNjn1wvI=;
-	b=djS9aRd5dBePP/Apjt2iwmB0oRJiaCLMUVPjnVDzY2BRM1AN47ETesIybNCXWzskKGt3BB8uUJUnh10rLEds3Y5O9+hci7r3B331lfWeDNDRcI2+8HYA4Vy5Gfy8ubH38rwC381lgfPk/wf1WTtZhYaCgBaYHb0M2/bprGetwFs=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.46,REQID:5dddee26-5541-4fe9-b437-4a83d4bb85e4,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:60aa074,CLOUDID:b892bb0e-078a-483b-8929-714244d25c49,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:81|82|102,TC:nil,Content:0|50,EDM:-3
-	,IP:nil,URL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0
-	,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0,NGT
-X-CID-BAS: 0,NGT,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: 98389020d02611ef9048ed6ed365623b-20250111
-Received: from mtkmbs11n1.mediatek.inc [(172.21.101.185)] by mailgw02.mediatek.com
-	(envelope-from <chunfeng.yun@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1673808228; Sat, 11 Jan 2025 07:16:05 -0700
-Received: from mtkmbs11n1.mediatek.inc (172.21.101.185) by
- MTKMBS09N2.mediatek.inc (172.21.101.94) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1258.28; Sat, 11 Jan 2025 22:16:02 +0800
-Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
- mtkmbs11n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.1258.28 via Frontend Transport; Sat, 11 Jan 2025 22:16:01 +0800
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>
-CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Krzysztof Kozlowski
-	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
-	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>
-Subject: [RESEND PATCH 2/2] phy: mediatek: xsphy: add support to set disconnect threshold
-Date: Sat, 11 Jan 2025 22:15:42 +0800
-Message-ID: <20250111141542.5007-2-chunfeng.yun@mediatek.com>
-X-Mailer: git-send-email 2.46.0
-In-Reply-To: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
-References: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
+	id 1tWgcd-00000001H8a-0rue
+	for linux-phy@lists.infradead.org;
+	Sat, 11 Jan 2025 18:54:12 +0000
+Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-385dc85496dso132549f8f.3
+        for <linux-phy@lists.infradead.org>; Sat, 11 Jan 2025 10:54:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1736621649; x=1737226449; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Oa83hNX3CwwEMxEEP2piKXBeDYRk0kIMXtSMe9IMC8Y=;
+        b=AQx+RWUZJzqasKh1gxKETTxvl01KkVgrqhZhDCYqAobalKE+daPDZIwciB4Qp9ePCt
+         +dqUqabC7Q6KNrmkZeiviSPjp3MFdaPqXr495wFwrvFDl9faIiBuxz8swcHgxoEyHIff
+         rz1rBT7uTAZPs1lW6gTLlH4JMlH2W3TWeSd1Q6Lq/UeG7A1r/l+VK85xa+MugdptaVCT
+         gwwh4vY/4aWBdaAdhKIePyRaaVA16jZpmH3kKiWN1vo9aXTdan5K5w2TRcwSbDsC7UM9
+         VDbsXicbOnw0jf5ARxpzb0/XebYJt0krFQDbYYI4lQDfe3qF+VUxi8gtC3wF83qp7ue9
+         ++4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736621649; x=1737226449;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Oa83hNX3CwwEMxEEP2piKXBeDYRk0kIMXtSMe9IMC8Y=;
+        b=VImq9wBrk6g+YefjQiphGjsHTF6W+k8DlxsO8Tp35fKjjkpnDKhHcXTw3AWqVcCSxt
+         OIX9G/LzYx3Pt60ttuX23gSkvZIgfLDl93ZSLrS9IxqLB6RQjJdi2/RUjPSQ0pdomHMi
+         +S4CxAL3yhB6gB97dvyB5K90eJok4wOgR/LFTn1wH57nzlB2TKbFJO/YtNKznv6POA2w
+         lQgqTyRHBO3vasHA0UgRw9WBjAo3aU/gYTZT/da/daRpXSQP2/Xho6hnoPyW2x73y7Zd
+         LebwG4aLgKt1bE4DHiKbHipSw4HReD4g87LmGlfLDQPk0afB+fB4uvuuuxSs9zQOw33q
+         q8Dw==
+X-Forwarded-Encrypted: i=1; AJvYcCVympdQs0CnnjKHbKekSMZLh9K6mPbetMTPg90tG0u9pv+H6GWeXxJXVfeZMKP8QdMLKgcBBb+sodQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy0zg7slGDdVVX3jETxDobQwb4lhhB6NiP6G/eplGQoprQ3v9mK
+	py1r8jVb1x/dqtzgtdCojsclqIXVQGLmRTMjltLC4BLA2P7rUT8fpOMAA1kofvFZ+9VINQREUAE
+	C
+X-Gm-Gg: ASbGncsvfTXUZUtbu4t/dUxE5Q2biOTGhoCc17fGaOwvj8d23MOOD6DJqX3iiUIGVfB
+	95NouRYpUPvhJtwVOdPELAJYMk0RIE8lb3mUopgdwVwYv5tdnNZOabxUDpg2B0M+GjOIOObBPcu
+	3n2aBXL2vB/DCs+VtMJwSRENvEYx2EpoarL1e8VrthHgN9WZxPR//3VXg67eaVekS6qpvFhxDQ+
+	5f/cPbdGVXO1aMN50bwNh+Q1bDNXxm0TPFvhooP4mpgAbjQTmGcXaP1fiQDOg4h9LsVRBU=
+X-Google-Smtp-Source: AGHT+IGjNzKf5xkH+dgFw9vWBtiAwtZ1QisCgXXHwdviDMt1yJXmFajYa2tlVaOtKkX/ki+3PiYKRQ==
+X-Received: by 2002:a05:600c:3b11:b0:42c:bb35:b6d0 with SMTP id 5b1f17b1804b1-436e267f21bmr60374135e9.1.1736621649511;
+        Sat, 11 Jan 2025 10:54:09 -0800 (PST)
+Received: from krzk-bin.. ([178.197.223.165])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a8e4b81ccsm7981691f8f.65.2025.01.11.10.54.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 11 Jan 2025 10:54:08 -0800 (PST)
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+To: Patrice Chotard <patrice.chotard@foss.st.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH] phy: stih407-usb: Use syscon_regmap_lookup_by_phandle_args
+Date: Sat, 11 Jan 2025 19:54:07 +0100
+Message-ID: <20250111185407.183855-1-krzysztof.kozlowski@linaro.org>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250111_061611_588816_2E17F1D5 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20250111_105411_244620_7C2FA0D2 
+X-CRM114-Status: GOOD (  11.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,62 +99,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a property to tune usb2 phy's disconnect threshold.
+Use syscon_regmap_lookup_by_phandle_args() which is a wrapper over
+syscon_regmap_lookup_by_phandle() combined with getting the syscon
+argument.  Except simpler code this annotates within one line that given
+phandle has arguments, so grepping for code would be easier.
 
-Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
----
-based on kernel 6.13-rc1
----
- drivers/phy/mediatek/phy-mtk-xsphy.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+There is also no real benefit in printing errors on missing syscon
+argument, because this is done just too late: runtime check on
+static/build-time data.  Dtschema and Devicetree bindings offer the
+static/build-time check for this already.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
-index 7c248f5cfca5..718ed8f17c2d 100644
---- a/drivers/phy/mediatek/phy-mtk-xsphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
-@@ -59,6 +59,7 @@
- #define XSP_USBPHYACR6		((SSUSB_SIFSLV_U2PHY_COM) + 0x018)
- #define P2A6_RG_BC11_SW_EN	BIT(23)
- #define P2A6_RG_OTG_VBUSCMP_EN	BIT(20)
-+#define PA6_RG_U2_DISCTH	GENMASK(7, 4)
+Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+ drivers/phy/st/phy-stih407-usb.c | 24 +++++++-----------------
+ 1 file changed, 7 insertions(+), 17 deletions(-)
+
+diff --git a/drivers/phy/st/phy-stih407-usb.c b/drivers/phy/st/phy-stih407-usb.c
+index a4ae2cca7f63..ebb1d0858aa3 100644
+--- a/drivers/phy/st/phy-stih407-usb.c
++++ b/drivers/phy/st/phy-stih407-usb.c
+@@ -18,8 +18,8 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/phy/phy.h>
  
- #define XSP_U2PHYDTM1		((SSUSB_SIFSLV_U2PHY_COM) + 0x06C)
- #define P2D_FORCE_IDDIG		BIT(9)
-@@ -95,6 +96,7 @@ struct xsphy_instance {
- 	int eye_src;
- 	int eye_vrt;
- 	int eye_term;
-+	int discth;
- };
+-#define PHYPARAM_REG	1
+-#define PHYCTRL_REG	2
++#define PHYPARAM_REG	0
++#define PHYCTRL_REG	1
  
- struct mtk_xsphy {
-@@ -244,9 +246,12 @@ static void phy_parse_property(struct mtk_xsphy *xsphy,
- 					 &inst->eye_vrt);
- 		device_property_read_u32(dev, "mediatek,eye-term",
- 					 &inst->eye_term);
--		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d\n",
-+		device_property_read_u32(dev, "mediatek,discth",
-+					 &inst->discth);
-+		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d, discth:%d\n",
- 			inst->efuse_intr, inst->eye_src,
--			inst->eye_vrt, inst->eye_term);
-+			inst->eye_vrt, inst->eye_term,
-+			inst->discth);
- 		break;
- 	case PHY_TYPE_USB3:
- 		device_property_read_u32(dev, "mediatek,efuse-intr",
-@@ -285,6 +290,9 @@ static void u2_phy_props_set(struct mtk_xsphy *xsphy,
- 	if (inst->eye_term)
- 		mtk_phy_update_field(pbase + XSP_USBPHYACR1, P2A1_RG_TERM_SEL,
- 				     inst->eye_term);
-+	if (inst->discth)
-+		mtk_phy_update_field(pbase + XSP_USBPHYACR6, PA6_RG_U2_DISCTH,
-+				     inst->discth);
- }
+ /* Default PHY_SEL and REFCLKSEL configuration */
+ #define STIH407_USB_PICOPHY_CTRL_PORT_CONF	0x6
+@@ -91,8 +91,8 @@ static int stih407_usb2_picophy_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *np = dev->of_node;
+ 	struct phy_provider *phy_provider;
++	unsigned int syscon_args[2];
+ 	struct phy *phy;
+-	int ret;
  
- static void u3_phy_props_set(struct mtk_xsphy *xsphy,
+ 	phy_dev = devm_kzalloc(dev, sizeof(*phy_dev), GFP_KERNEL);
+ 	if (!phy_dev)
+@@ -116,25 +116,15 @@ static int stih407_usb2_picophy_probe(struct platform_device *pdev)
+ 	/* Reset port by default: only deassert it in phy init */
+ 	reset_control_assert(phy_dev->rstport);
+ 
+-	phy_dev->regmap = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
++	phy_dev->regmap = syscon_regmap_lookup_by_phandle_args(np, "st,syscfg",
++							       2, syscon_args);
+ 	if (IS_ERR(phy_dev->regmap)) {
+ 		dev_err(dev, "No syscfg phandle specified\n");
+ 		return PTR_ERR(phy_dev->regmap);
+ 	}
+ 
+-	ret = of_property_read_u32_index(np, "st,syscfg", PHYPARAM_REG,
+-					&phy_dev->param);
+-	if (ret) {
+-		dev_err(dev, "can't get phyparam offset (%d)\n", ret);
+-		return ret;
+-	}
+-
+-	ret = of_property_read_u32_index(np, "st,syscfg", PHYCTRL_REG,
+-					&phy_dev->ctrl);
+-	if (ret) {
+-		dev_err(dev, "can't get phyctrl offset (%d)\n", ret);
+-		return ret;
+-	}
++	phy_dev->param = syscon_args[PHYPARAM_REG];
++	phy_dev->ctrl = syscon_args[PHYCTRL_REG];
+ 
+ 	phy = devm_phy_create(dev, NULL, &stih407_usb2_picophy_data);
+ 	if (IS_ERR(phy)) {
 -- 
-2.46.0
+2.43.0
 
 
 -- 
