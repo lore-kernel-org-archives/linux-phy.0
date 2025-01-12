@@ -4,85 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5D9EE7719A
-	for <linux-phy@archiver.kernel.org>; Sat, 11 Jan 2025 18:56:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C034E77188
+	for <linux-phy@archiver.kernel.org>; Sun, 12 Jan 2025 09:07:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/Vl3cyGXrIqJEyYAQKb8JLXN74KbihoyX/QOtDqrDm4=; b=ycQZg+2LXaHWiy
-	yB7BjKJPR3rh2m29SjpreOwar4kjG9mk6MaXhxiKciL7mT31mB7pV7WXNGYBhH9jrglJpF6gAC25n
-	P4MqP39wmiLbJyQb0bP4ltPaWqz8X1dapmopphZ41KAyAgX0gPwB3bvH1SpwDc34pdsZP9RnIHq3C
-	6kT2TZiNWDWxwBRPnnI4YUQpEHoLH47sc76s2AI/ErR15wd1StFSTIuan6B5UlXq/LueVFRVuntDP
-	QuLlag6qIyQ1KIrA8mr/SQ+JNnDLO7YHHTM+NRodwr/Amt10EmoHmaBNaW0+URv+3H1aFme7wosEP
-	Pevp6fK75/B8Fm2l3ksQ==;
+	List-Owner; bh=/F7nKsjP0oHg69yLtwNRgk6EZLfhrEr6/iDS2CjUzDg=; b=r2IsezLQlA2gqK
+	omy3zO70jC7nqLGWeRkwelDHm59g+Y/reI6Oja2NOIVQw/ymNssIrFrR/rdewEvXgUrPNDnxn9MDS
+	diWfyzb6knqtZp//yx2foKtctB4MJ+hsoy36/7atIJG8BNGBkEqyl9qiB6z3YUd5Xkv3q6DSOfRIF
+	KZ+IarEJ9YJLFgfxWSiMUhs0vrEaPLtojDBaIdpF6sYj7Wv6DgboaWclosscokl49EkNf2EFB3Fp1
+	ORbgSkjGhCTVxFWWtXI9cqQ63uylmKsdBUDC9ylDrVmkdztWKB5GQd2/Q5yLzCN51KOq2MxBFOOZv
+	P3m0eaivbbWIB91XxWug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWgf3-00000001HdE-0bpN;
-	Sat, 11 Jan 2025 18:56:41 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1tWtwg-00000002OZx-1tvb;
+	Sun, 12 Jan 2025 09:07:46 +0000
+Received: from mail-m127212.xmail.ntesmail.com ([115.236.127.212])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWgcd-00000001H8a-0rue
-	for linux-phy@lists.infradead.org;
-	Sat, 11 Jan 2025 18:54:12 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-385dc85496dso132549f8f.3
-        for <linux-phy@lists.infradead.org>; Sat, 11 Jan 2025 10:54:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736621649; x=1737226449; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=Oa83hNX3CwwEMxEEP2piKXBeDYRk0kIMXtSMe9IMC8Y=;
-        b=AQx+RWUZJzqasKh1gxKETTxvl01KkVgrqhZhDCYqAobalKE+daPDZIwciB4Qp9ePCt
-         +dqUqabC7Q6KNrmkZeiviSPjp3MFdaPqXr495wFwrvFDl9faIiBuxz8swcHgxoEyHIff
-         rz1rBT7uTAZPs1lW6gTLlH4JMlH2W3TWeSd1Q6Lq/UeG7A1r/l+VK85xa+MugdptaVCT
-         gwwh4vY/4aWBdaAdhKIePyRaaVA16jZpmH3kKiWN1vo9aXTdan5K5w2TRcwSbDsC7UM9
-         VDbsXicbOnw0jf5ARxpzb0/XebYJt0krFQDbYYI4lQDfe3qF+VUxi8gtC3wF83qp7ue9
-         ++4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736621649; x=1737226449;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Oa83hNX3CwwEMxEEP2piKXBeDYRk0kIMXtSMe9IMC8Y=;
-        b=VImq9wBrk6g+YefjQiphGjsHTF6W+k8DlxsO8Tp35fKjjkpnDKhHcXTw3AWqVcCSxt
-         OIX9G/LzYx3Pt60ttuX23gSkvZIgfLDl93ZSLrS9IxqLB6RQjJdi2/RUjPSQ0pdomHMi
-         +S4CxAL3yhB6gB97dvyB5K90eJok4wOgR/LFTn1wH57nzlB2TKbFJO/YtNKznv6POA2w
-         lQgqTyRHBO3vasHA0UgRw9WBjAo3aU/gYTZT/da/daRpXSQP2/Xho6hnoPyW2x73y7Zd
-         LebwG4aLgKt1bE4DHiKbHipSw4HReD4g87LmGlfLDQPk0afB+fB4uvuuuxSs9zQOw33q
-         q8Dw==
-X-Forwarded-Encrypted: i=1; AJvYcCVympdQs0CnnjKHbKekSMZLh9K6mPbetMTPg90tG0u9pv+H6GWeXxJXVfeZMKP8QdMLKgcBBb+sodQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy0zg7slGDdVVX3jETxDobQwb4lhhB6NiP6G/eplGQoprQ3v9mK
-	py1r8jVb1x/dqtzgtdCojsclqIXVQGLmRTMjltLC4BLA2P7rUT8fpOMAA1kofvFZ+9VINQREUAE
-	C
-X-Gm-Gg: ASbGncsvfTXUZUtbu4t/dUxE5Q2biOTGhoCc17fGaOwvj8d23MOOD6DJqX3iiUIGVfB
-	95NouRYpUPvhJtwVOdPELAJYMk0RIE8lb3mUopgdwVwYv5tdnNZOabxUDpg2B0M+GjOIOObBPcu
-	3n2aBXL2vB/DCs+VtMJwSRENvEYx2EpoarL1e8VrthHgN9WZxPR//3VXg67eaVekS6qpvFhxDQ+
-	5f/cPbdGVXO1aMN50bwNh+Q1bDNXxm0TPFvhooP4mpgAbjQTmGcXaP1fiQDOg4h9LsVRBU=
-X-Google-Smtp-Source: AGHT+IGjNzKf5xkH+dgFw9vWBtiAwtZ1QisCgXXHwdviDMt1yJXmFajYa2tlVaOtKkX/ki+3PiYKRQ==
-X-Received: by 2002:a05:600c:3b11:b0:42c:bb35:b6d0 with SMTP id 5b1f17b1804b1-436e267f21bmr60374135e9.1.1736621649511;
-        Sat, 11 Jan 2025 10:54:09 -0800 (PST)
-Received: from krzk-bin.. ([178.197.223.165])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a8e4b81ccsm7981691f8f.65.2025.01.11.10.54.08
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 11 Jan 2025 10:54:08 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Patrice Chotard <patrice.chotard@foss.st.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
+	id 1tWtwd-00000002OWW-1Bdg;
+	Sun, 12 Jan 2025 09:07:44 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 8700928a;
+	Sun, 12 Jan 2025 17:07:30 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: heiko@sntech.de
+Cc: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	rfoss@kernel.org,
+	vkoul@kernel.org,
+	sebastian.reichel@collabora.com,
+	cristian.ciocaltea@collabora.com,
+	l.stach@pengutronix.de,
+	dmitry.baryshkov@linaro.org,
+	andy.yan@rock-chips.com,
+	hjc@rock-chips.com,
+	algea.cao@rock-chips.com,
+	kever.yang@rock-chips.com,
+	dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH] phy: stih407-usb: Use syscon_regmap_lookup_by_phandle_args
-Date: Sat, 11 Jan 2025 19:54:07 +0100
-Message-ID: <20250111185407.183855-1-krzysztof.kozlowski@linaro.org>
-X-Mailer: git-send-email 2.43.0
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v1 0/6] Add eDP mode support for Rockchip Samsung HDPTX PHY
+Date: Sun, 12 Jan 2025 17:07:08 +0800
+Message-Id: <20250112090714.1564158-1-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGk9MQlYeSRhISkJJTk4fQ0xWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCS0
+	NVSktLVUpCWQY+
+X-HM-Tid: 0a9459c4b35803a3kunm8700928a
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pgg6Qgw6SDIPIQMTPRg*IQlJ
+	PAgwClZVSlVKTEhNTUxJQ05JSE5OVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFKQkhJNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=bMaivOT0Wh9/4kvva65NbKLlK+dnEW8dzXphtaWe8kUcRcDwDGosE+4djEO4nNYlVdSqjoLsagUXRvlC4ZbgbWmQnEvMRZcVo0AFm7UAV6/Ez1MxxG/Devt10QN+1HnMUg/fqEFE6Ovd1L9aBEhzmrI4zDDIzNK8r+AB1hFiVjw=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=TejvzfV3E3bwIKDx62w3f3JYivHUtIsr/IuSQftkJIs=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250111_105411_244620_7C2FA0D2 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20250112_010743_518219_D934AFB5 
+X-CRM114-Status: UNSURE (   5.63  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,78 +89,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use syscon_regmap_lookup_by_phandle_args() which is a wrapper over
-syscon_regmap_lookup_by_phandle() combined with getting the syscon
-argument.  Except simpler code this annotates within one line that given
-phandle has arguments, so grepping for code would be easier.
+Picked from:
+https://patchwork.kernel.org/project/linux-rockchip/list/?series=923593
 
-There is also no real benefit in printing errors on missing syscon
-argument, because this is done just too late: runtime check on
-static/build-time data.  Dtschema and Devicetree bindings offer the
-static/build-time check for this already.
+These patchs have been tested with a 1536x2048p60 eDP panel on
+RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
+on RK3588 EVB1 board.
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
- drivers/phy/st/phy-stih407-usb.c | 24 +++++++-----------------
- 1 file changed, 7 insertions(+), 17 deletions(-)
+Damon Ding (6):
+  phy: phy-rockchip-samsung-hdptx: Swap the definitions of LCPLL_REF and
+    ROPLL_REF
+  phy: phy-rockchip-samsung-hdptx: Supplement some register names with
+    their full version
+  phy: phy-rockchip-samsung-hdptx: Add the '_MASK' suffix to all
+    registers
+  phy: phy-rockchip-samsung-hdptx: Add eDP mode support for RK3588
+  dt-bindings: display: rockchip: Fix label name of hdptxphy for RK3588
+    HDMI TX Controller
+  arm64: dts: rockchip: Fix label name of hdptxphy for RK3588
 
-diff --git a/drivers/phy/st/phy-stih407-usb.c b/drivers/phy/st/phy-stih407-usb.c
-index a4ae2cca7f63..ebb1d0858aa3 100644
---- a/drivers/phy/st/phy-stih407-usb.c
-+++ b/drivers/phy/st/phy-stih407-usb.c
-@@ -18,8 +18,8 @@
- #include <linux/mfd/syscon.h>
- #include <linux/phy/phy.h>
- 
--#define PHYPARAM_REG	1
--#define PHYCTRL_REG	2
-+#define PHYPARAM_REG	0
-+#define PHYCTRL_REG	1
- 
- /* Default PHY_SEL and REFCLKSEL configuration */
- #define STIH407_USB_PICOPHY_CTRL_PORT_CONF	0x6
-@@ -91,8 +91,8 @@ static int stih407_usb2_picophy_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct device_node *np = dev->of_node;
- 	struct phy_provider *phy_provider;
-+	unsigned int syscon_args[2];
- 	struct phy *phy;
--	int ret;
- 
- 	phy_dev = devm_kzalloc(dev, sizeof(*phy_dev), GFP_KERNEL);
- 	if (!phy_dev)
-@@ -116,25 +116,15 @@ static int stih407_usb2_picophy_probe(struct platform_device *pdev)
- 	/* Reset port by default: only deassert it in phy init */
- 	reset_control_assert(phy_dev->rstport);
- 
--	phy_dev->regmap = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
-+	phy_dev->regmap = syscon_regmap_lookup_by_phandle_args(np, "st,syscfg",
-+							       2, syscon_args);
- 	if (IS_ERR(phy_dev->regmap)) {
- 		dev_err(dev, "No syscfg phandle specified\n");
- 		return PTR_ERR(phy_dev->regmap);
- 	}
- 
--	ret = of_property_read_u32_index(np, "st,syscfg", PHYPARAM_REG,
--					&phy_dev->param);
--	if (ret) {
--		dev_err(dev, "can't get phyparam offset (%d)\n", ret);
--		return ret;
--	}
--
--	ret = of_property_read_u32_index(np, "st,syscfg", PHYCTRL_REG,
--					&phy_dev->ctrl);
--	if (ret) {
--		dev_err(dev, "can't get phyctrl offset (%d)\n", ret);
--		return ret;
--	}
-+	phy_dev->param = syscon_args[PHYPARAM_REG];
-+	phy_dev->ctrl = syscon_args[PHYCTRL_REG];
- 
- 	phy = devm_phy_create(dev, NULL, &stih407_usb2_picophy_data);
- 	if (IS_ERR(phy)) {
+ .../rockchip/rockchip,rk3588-dw-hdmi-qp.yaml  |   2 +-
+ arch/arm64/boot/dts/rockchip/rk3588-base.dtsi |   4 +-
+ .../dts/rockchip/rk3588-coolpi-cm5-evb.dts    |   2 +-
+ .../rockchip/rk3588-coolpi-cm5-genbook.dts    |   2 +-
+ .../boot/dts/rockchip/rk3588-evb1-v10.dts     |   2 +-
+ .../rk3588-friendlyelec-cm3588-nas.dts        |   2 +-
+ .../arm64/boot/dts/rockchip/rk3588-jaguar.dts |   2 +-
+ .../boot/dts/rockchip/rk3588-nanopc-t6.dtsi   |   2 +-
+ .../dts/rockchip/rk3588-orangepi-5-plus.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588-rock-5b.dts      |   2 +-
+ .../boot/dts/rockchip/rk3588-tiger-haikou.dts |   2 +-
+ .../boot/dts/rockchip/rk3588s-coolpi-4b.dts   |   2 +-
+ .../dts/rockchip/rk3588s-indiedroid-nova.dts  |   2 +-
+ .../boot/dts/rockchip/rk3588s-nanopi-r6.dtsi  |   2 +-
+ .../boot/dts/rockchip/rk3588s-odroid-m2.dts   |   2 +-
+ .../boot/dts/rockchip/rk3588s-orangepi-5.dtsi |   2 +-
+ .../boot/dts/rockchip/rk3588s-rock-5a.dts     |   2 +-
+ .../boot/dts/rockchip/rk3588s-rock-5c.dts     |   2 +-
+ .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 971 +++++++++++++++++-
+ 19 files changed, 934 insertions(+), 75 deletions(-)
+
 -- 
-2.43.0
+2.34.1
 
 
 -- 
