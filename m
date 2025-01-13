@@ -4,115 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE5BEE7719E
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 08:07:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2A6DE7719E
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 08:08:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date
+	:From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JQscW+WLmMmWXxqjsMKvyi27auZPy/T49tKm1Fdgk6Q=; b=sFEusWe3smDC1V
-	yG/wfErRIaty3/AaK9irzx/QTYuZPuM4LawA+UAPtuGdPHc0pILXAWxpQdTwZ8YxFU7rmmrzNe7oj
-	eo5adAPYtv5x49GJlnW3h/FioNRooFx0696tRhqVWtW0J6RHUOa6pgaENR0u4bgC7hCH2bl1USgOz
-	i6Pk2hrXlVv29vGhlJpRNULDpwgiwTqANLrFZ0+lwj2fPKJnmH9n8o0w/WK3KvuKG8q6CR7VpA7do
-	9MiWm2T3wOx5NwFHiVBqcuaQtf8VAkxktWbeRuog5G86GfOFREgHEnEUnDSCWTbHCJ47bhrP8sKey
-	c4GuBAUznaYRdE/5+qOQ==;
+	List-Owner; bh=nib+yEEtHSXXEaAz7dnAgcf66SKg9W5o1ggDya5YC64=; b=3pggZrNazDdb0Z
+	bl3wAKTNFiPIukUxAduqE/pH6xRxNsXgzpP+vOxp+3knfj61rgQ9ZIEO3tsjG0uGworQBYbrDLYPf
+	pf0fTapt6/OaQ9FqNd6jVTjFR5kEMdLhdYU5VVxa+Nogj8Tt3stpvdH4xTHBDkTAMa2pU7SysHG9u
+	YjZqiu/ZX6xRsPbmV3TXvmw4TQTgacw3DYEbH9qcSr7d7bqaXil9+YfCtXeZTrA7mVysZEkdc+qGS
+	rKryb8wMwwMOJ2eTGKX1yOAY/iG2PYW/kUzxlWRO75GlK7QA47wwwJBtorBfkvx2y+oWxlHlyg0jW
+	Z9mmS/94GxvOeYCt1Jyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXFTr-00000004Jy6-1wd3;
-	Mon, 13 Jan 2025 08:07:27 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tXFV3-00000004KSY-2XDi;
+	Mon, 13 Jan 2025 08:08:41 +0000
+Received: from mail-lf1-f54.google.com ([209.85.167.54])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXFSh-00000004Jhs-0Le4
-	for linux-phy@lists.infradead.org;
-	Mon, 13 Jan 2025 08:06:16 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50CNKDiD015594;
-	Mon, 13 Jan 2025 08:06:10 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	l9D0iGf5gfsI47OTyHusqADcAsJb13cd95a9Ia17SRI=; b=MUVcNz7juBVJDZH1
-	WIrOVjbn81Nod5I/x6GBMLuBScLIp5DzBqg2Lcjb8jPJC26uZlQpgPhpxcFVBuGY
-	QLas7U4ITxsP0hHKNeAz1DnWDnR7ZxbuPJ77fuH93lpxRpmaXF4JefkTjnALH/Pv
-	OqWZVA5DvD8OucqQAOapTrstq75wzU+hN93S7I9G3jACXtBmwqovc1oUX2XUxzdE
-	ITVwj/zRfK+Qka7bL6XZtT32ck/lNDcc9Qeh+e0fNDXkZKCN/kyt4GYjYJp4te2b
-	yVzICLYplQDTnV6je/DxhPpO2rKy0OQTcvN10woQjMtatNk0k9kVppHkiXQ40zmq
-	c+46Xg==
-Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 444f5bhhj8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 08:06:10 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50D86Aok008249
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 08:06:10 GMT
-Received: from cse-cd01-lnx.ap.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 13 Jan 2025 00:06:02 -0800
-From: Yongxing Mou <quic_yongmou@quicinc.com>
-Date: Mon, 13 Jan 2025 16:03:11 +0800
-Subject: [PATCH v3 4/4] drm/msm: mdss: Add QCS8300 support
+	id 1tXFTA-00000004Jnt-1JK8;
+	Mon, 13 Jan 2025 08:06:45 +0000
+Received: by mail-lf1-f54.google.com with SMTP id 2adb3069b0e04-5401bd6ccadso3824053e87.2;
+        Mon, 13 Jan 2025 00:06:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1736755601; x=1737360401;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :reply-to:in-reply-to:references:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=x9SvbOZC1nnq5Y5FqEi1BPs9LivsVwnmqcjEJAXSzCg=;
+        b=EcI3UDulAxvlDIdTadikXOXGe0tLUBO7fGCQ6bmA9x5Ja3iGudreroG2dgdc/laVl6
+         4CfFk008Te98uFaeiJ+u9XoFhH9tSABeZlprxi/0g+WZwbBcpAgyC894YGI12VU881Zj
+         093YrulGd9eOmS2X83S/IHi3W5hVU/TVLRfHqMPC0rNULBzxak1JAQmb9ry1JLXXzPKk
+         t5246PS26Ph9NfGC0krZkjR3mtQ2cnBnL/4Z1ZwPBmuV1EywLermbF6s+HwQCunM84jq
+         I+Oa2m+jtGfWRPlzA0u6tt1SnkfvTRnbOB1PuPl5WWHbT98LdsY7WO23mkNWJApHc523
+         tIOg==
+X-Forwarded-Encrypted: i=1; AJvYcCXWCOYqY/C0OXQh8bV21ElbiONIRprbazsqiYlEtjDljl+B8ad+Wiuv2y7iptyxTtJBeLmjVMD2Cms8AOhQhyOW@lists.infradead.org, AJvYcCXYMBJ8SS+IGkAkuJJhHRPc6uG1QKIRn+fIJbllH4Yf3L2dbTwVZB4i8uuYHwzytg8GnjUxi3CtBhgo0jQ=@lists.infradead.org, AJvYcCXdgAh8Tzu2RC8Skr8FGodCLWnnf9rnQK8N6zx4ObQ6dI3skA3j+KOHhLPp+Cel+6QpxC7DZI+U/s3O@lists.infradead.org
+X-Gm-Message-State: AOJu0YwIv3Ni5s19XMQnMJ5NFgLN4xOU638e66Pt+6WPIGDzWD/E8JPE
+	duEO+Crz9qdZEq9QzLX3NYMrg2BEEosH+scGQ7kOsxhTgXuSfuSNbQd8DHZ1
+X-Gm-Gg: ASbGncvD41oJWWQJAOHE3OhikXVm9j8uWAl0ud6/cStEbl6rPHZ9g3hiRD9uPDOIFg2
+	6A2r859GRtHf4tM5bsE6kcX6UTSdZVUF5cAKZuOxaOth01S39jxv8h73+/s8oewZjoNWfvgW0SD
+	t5Ej8u7opUCxEgjINjMYZrYSglGqig+ufd8Wep5NVRimA9wIHmcu2hp4k8DaKBLMRRS3X/6h/bk
+	kJ9AXMqUMa+n8ro3c12M/YF3LHfpJtHJy+FIt6h2p/VIxKAUVfqVe7wR82KKR2HD+GJ2AmP+xPv
+	xWuXx/mHfQ==
+X-Google-Smtp-Source: AGHT+IEmrwjN71YeSRLY7reSUinT7BUnvs4r1xNKNgOmbKyJi/tIgvq6ukNYt+9im8RkvN++OeeDrA==
+X-Received: by 2002:a05:6512:2351:b0:542:2192:3eb6 with SMTP id 2adb3069b0e04-542845c08a7mr6196416e87.52.1736755601027;
+        Mon, 13 Jan 2025 00:06:41 -0800 (PST)
+Received: from mail-lf1-f50.google.com (mail-lf1-f50.google.com. [209.85.167.50])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428becbc3bsm1256760e87.255.2025.01.13.00.06.40
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 13 Jan 2025 00:06:40 -0800 (PST)
+Received: by mail-lf1-f50.google.com with SMTP id 2adb3069b0e04-5401bd6ccadso3824018e87.2;
+        Mon, 13 Jan 2025 00:06:40 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCUbtody/5bWZaPGybQhtAvRaepiW/+kIPYeL7PbUB5Yc38H35wkz5aiUSAY7+HzpENf/RY7uqTVsUCj@lists.infradead.org, AJvYcCVIj685t/ibfUwF1Lq3RBRC+i+ppd2sTn4IXrWKQ1jf3zMBzBc4tf1xYisZb9K4jVha3Bbu6JCKjICiznS7iyqg@lists.infradead.org, AJvYcCX2dzNqJtiNXtRqZiYFMumqQKnYkWth1/LezdUlRlcKGtk5zBqsBlnx6fx5lYeJq6JjA7Wr1JbROMXjDSU=@lists.infradead.org
+X-Received: by 2002:a05:6512:1149:b0:540:2201:57d1 with SMTP id
+ 2adb3069b0e04-542845c01b8mr6646548e87.49.1736755599852; Mon, 13 Jan 2025
+ 00:06:39 -0800 (PST)
 MIME-Version: 1.0
-Message-ID: <20250113-mdssdt_qcs8300-v3-4-6c8e93459600@quicinc.com>
-References: <20250113-mdssdt_qcs8300-v3-0-6c8e93459600@quicinc.com>
-In-Reply-To: <20250113-mdssdt_qcs8300-v3-0-6c8e93459600@quicinc.com>
-To: Rob Clark <robdclark@gmail.com>,
-        Abhinav Kumar
-	<quic_abhinavk@quicinc.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        "Maarten
- Lankhorst" <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard
-	<mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        Rob Herring
-	<robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
-	<conor+dt@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        "Kuogee
- Hsieh" <quic_khsieh@quicinc.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon
- Vijay Abraham I" <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>
-CC: Yongxing Mou <quic_yongmou@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1736755533; l=1622;
- i=quic_yongmou@quicinc.com; s=20241121; h=from:subject:message-id;
- bh=T1quEqzzRYSTMr7FDeES364YwjAI1nS3gNRFG9z4HNk=;
- b=ljJ0cP7JFFhoUGuXR7JwcD0ZMUlNHDw50Vc2gyWbDNpmj+aAWJiF24Brh6CW1s9/13/6JeiA/
- R10BANn715VAhiXp+8k7NygBIkds/+7wSJlUp8QIuKxyJhijxe0ySmM
-X-Developer-Key: i=quic_yongmou@quicinc.com; a=ed25519;
- pk=zeCnFRUqtOQMeFvdwex2M5o0Yf67UHYfwCyBRQ3kFbU=
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: JTN-yISy4_L2_Y1OE7eGCgUqeflRbD78
-X-Proofpoint-ORIG-GUID: JTN-yISy4_L2_Y1OE7eGCgUqeflRbD78
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 mlxscore=0
- mlxlogscore=999 malwarescore=0 clxscore=1015 impostorscore=0
- priorityscore=1501 bulkscore=0 suspectscore=0 adultscore=0 spamscore=0
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501130068
+References: <20250110123923.270626-1-szemzo.andras@gmail.com>
+ <20250110123923.270626-7-szemzo.andras@gmail.com> <de280eed-bcc8-4802-9734-5e95ad1f6611@kernel.org>
+In-Reply-To: <de280eed-bcc8-4802-9734-5e95ad1f6611@kernel.org>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Mon, 13 Jan 2025 16:06:26 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65arvBMg+reReVqK-Y6dL+CSrSx4618msiRKcNf=Vk1=A@mail.gmail.com>
+X-Gm-Features: AbW1kva6YUV9q8y_q0KQe84KsHadIWhU7SR1t_0-KhCfFvLqL38ru64zHHHYBmg
+Message-ID: <CAGb2v65arvBMg+reReVqK-Y6dL+CSrSx4618msiRKcNf=Vk1=A@mail.gmail.com>
+Subject: Re: [PATCH 06/12] dt-bindings: clk: sunxi-ng: add V853 CCU clock/reset
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Andras Szemzo <szemzo.andras@gmail.com>, Michael Turquette <mturquette@baylibre.com>, 
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, 
+	Linus Walleij <linus.walleij@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Maxime Ripard <mripard@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, 
+	Albert Ou <aou@eecs.berkeley.edu>, =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
+	Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, 
+	linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_000615_130135_3561B274 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20250113_000644_348169_570F88EF 
+X-CRM114-Status: GOOD (  18.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,56 +100,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: wens@csie.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add Mobile Display Subsystem (MDSS) support for the QCS8300 platform.
-Due to different memory type, it use different mdss_data with SA8775P
-although using the same dpu.
-
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Yongxing Mou <quic_yongmou@quicinc.com>
----
- drivers/gpu/drm/msm/msm_mdss.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/drivers/gpu/drm/msm/msm_mdss.c b/drivers/gpu/drm/msm/msm_mdss.c
-index dcb49fd30402b80edd2cb5971f95a78eaad6081f..40c8b476763b8c39434b1448008cfa8ffac7a8ea 100644
---- a/drivers/gpu/drm/msm/msm_mdss.c
-+++ b/drivers/gpu/drm/msm/msm_mdss.c
-@@ -582,6 +582,16 @@ static const struct msm_mdss_data qcm2290_data = {
- 	.reg_bus_bw = 76800,
- };
- 
-+static const struct msm_mdss_data qcs8300_data = {
-+	.ubwc_enc_version = UBWC_4_0,
-+	.ubwc_dec_version = UBWC_4_0,
-+	.ubwc_swizzle = 6,
-+	.ubwc_bank_spread = true,
-+	.highest_bank_bit = 3,
-+	.macrotile_mode = true,
-+	.reg_bus_bw = 74000,
-+};
-+
- static const struct msm_mdss_data sa8775p_data = {
- 	.ubwc_enc_version = UBWC_4_0,
- 	.ubwc_dec_version = UBWC_4_0,
-@@ -737,6 +747,7 @@ static const struct of_device_id mdss_dt_match[] = {
- 	{ .compatible = "qcom,mdss" },
- 	{ .compatible = "qcom,msm8998-mdss", .data = &msm8998_data },
- 	{ .compatible = "qcom,qcm2290-mdss", .data = &qcm2290_data },
-+	{ .compatible = "qcom,qcs8300-mdss", .data = &qcs8300_data },
- 	{ .compatible = "qcom,sa8775p-mdss", .data = &sa8775p_data },
- 	{ .compatible = "qcom,sdm670-mdss", .data = &sdm670_data },
- 	{ .compatible = "qcom,sdm845-mdss", .data = &sdm845_data },
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBKYW4gMTAsIDIwMjUgYXQgOTo1NuKAr1BNIEtyenlzenRvZiBLb3psb3dza2kgPGty
+emtAa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiAxMC8wMS8yMDI1IDEzOjM5LCBBbmRyYXMgU3pl
+bXpvIHdyb3RlOgo+ID4gQXMgdGhlIGRldmljZSB0cmVlIG5lZWRzIHRoZSBjbG9jay9yZXNldCBp
+bmRpY2VzLCBhZGQgdGhlbSB0byBEVCBiaW5kaW5nCj4gPiBoZWFkZXJzLgo+ID4KPiA+IFNpZ25l
+ZC1vZmYtYnk6IEFuZHJhcyBTemVtem8gPHN6ZW16by5hbmRyYXNAZ21haWwuY29tPgo+Cj4gVGhh
+dCdzIG5ldmVyIGEgc2VwYXJhdGUgY29tbWl0IGZyb20gdGhlIGJpbmRpbmcuCj4KPgo+IC4uLgo+
+Cj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9pbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL3N1
+bjhpLXY4NTMtci1jY3UuaAo+ID4gQEAgLTAsMCArMSwxNiBAQAo+ID4gKy8qIFNQRFgtTGljZW5z
+ZS1JZGVudGlmaWVyOiAoR1BMLTIuMCsgT1IgTUlUKSAqLwo+ID4gKy8qIENvcHlyaWdodChjKSAy
+MDIwIC0gMjAyMyBBbGx3aW5uZXIgVGVjaG5vbG9neSBDby4sTHRkLiBBbGwgcmlnaHRzIHJlc2Vy
+dmVkLgo+ID4gKyAqCj4gPiArICogQ29weXJpZ2h0IChDKSAyMDIzIHJlbmdhb21pbkBhbGx3aW5u
+ZXJ0ZWNoLmNvbQo+ID4gKyAqLwo+ID4gKyNpZm5kZWYgX0RUX0JJTkRJTkdTX0NMS19TVU44SV9W
+ODVYX1JfQ0NVX0hfCj4gPiArI2RlZmluZSBfRFRfQklORElOR1NfQ0xLX1NVTjhJX1Y4NVhfUl9D
+Q1VfSF8KPiA+ICsKPiA+ICsjZGVmaW5lIENMS19SX1RXRCAgICAgICAgICAgIDAKPiA+ICsjZGVm
+aW5lIENMS19SX1BQVSAgICAgICAgICAgIDEKPiA+ICsjZGVmaW5lIENMS19SX1JUQyAgICAgICAg
+ICAgIDIKPiA+ICsjZGVmaW5lIENMS19SX0NQVUNGRyAgICAgICAgIDMKPiA+ICsKPiA+ICsjZGVm
+aW5lIENMS19SX01BWF9OTyAgICAgICAgIChDTEtfUl9DUFVDRkcgKyAxKQo+Cj4gTm9wZSwgZHJv
+cC4gTm90IGEgYmluZGluZy4KPgo+ID4gKwo+ID4gKyNlbmRpZgo+ID4gZGlmZiAtLWdpdCBhL2lu
+Y2x1ZGUvZHQtYmluZGluZ3MvcmVzZXQvc3VuOGktdjg1My1jY3UuaCBiL2luY2x1ZGUvZHQtYmlu
+ZGluZ3MvcmVzZXQvc3VuOGktdjg1My1jY3UuaAo+ID4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiA+
+IGluZGV4IDAwMDAwMDAwMDAwMC4uODlkOTRmY2JkYjU1Cj4gPiAtLS0gL2Rldi9udWxsCj4gPiAr
+KysgYi9pbmNsdWRlL2R0LWJpbmRpbmdzL3Jlc2V0L3N1bjhpLXY4NTMtY2N1LmgKPiA+IEBAIC0w
+LDAgKzEsNjIgQEAKPiA+ICsvKiBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9S
+IE1JVCkgKi8KPgo+IE9kZCBsaWNlbnNlLiBEaWQgeW91IGNvcHkgdGhlIGZpbGUgd2l0aCBzdWNo
+IGxpY2Vuc2UgZnJvbSB0aGUgZG93bnN0cmVhbT8KCkFGQUlLIGFsbCB0aGUgZXhpc3Rpbmcgc3Vu
+eGkgY2xvY2sgLyByZXNldCBiaW5kaW5nIGhlYWRlciBmaWxlcyBhcmUKZHVhbCBsaWNlbnNlZC4g
+T09USCBhbGwgdGhlIFlBTUwgZmlsZXMgYXJlIEdQTCAyLjAgb25seS4KCklJUkMgd2Ugc3RhcnRl
+ZCBvdXQgR1BMIDIuMCBvbmx5LCBidXQgdGhlbiBmaWd1cmVkIHRoYXQgdGhlIGhlYWRlciBmaWxl
+cwpjb3VsZG4ndCBiZSBzaGFyZWQgd2l0aCBub24tR1BMIHByb2plY3RzLCBzbyB3ZSBjaGFuZ2Vk
+IHRob3NlIHRvIGR1YWwKbGljZW5zZS4KCkhvcGUgdGhhdCBleHBsYWlucyB0aGUgY3VycmVudCBz
+aXR1YXRpb24uIFJlbGljZW5zaW5nIHRoZSB3aG9sZSBsb3QKdG8ganVzdCBNSVQgb3IgQlNEIGlz
+IHByb2JhYmx5IGRvYWJsZS4KCgpDaGVuWXUKCj4KPiBCZXN0IHJlZ2FyZHMsCj4gS3J6eXN6dG9m
+Cj4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
+eQo=
