@@ -4,63 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5040C02184
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 18:32:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8A48C02180
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 21:46:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jnteKhTaNQpZUpHIfSeRfESkNRDhPr8DqiAc3mZjt3o=; b=CuZLx/C/yNRYx7JHm+LksTJJUA
-	eG4aryvZzsKjQHdWXLBX6E2BNc7/asqxf054vu1dmmnVpVCF94b49VegYp++uSGu+HjB89uAvX/Sj
-	SwwEobn4eE6P2T3We86ymgk1RGYjsXoLa7pcqYlx7smeIaKb3HIYF39pAq6UxOLlCVstQhBDAIqVG
-	P7e3glaYcU2XC+a1mIGW8MNtb7Z+iYseqRIiLODsexm1n4mITMR5Mtl78Ky9eR0fOypDdyMP9fL+p
-	OWrfDCtoWwf3G6OY1jFWikAye8+y1Ajb/S75LUZwTyE4Z6+BSt2Gqg1ujxTx9DKl4xlIkZIsHG3vu
-	8yW92s3w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jYWosftxO8CpkaPMPCTn5ZEs6paBcQ6H68nHwmBgXGE=; b=k8WjlVBS8TaQ0t
+	Vm9HYEULxxlt+dsJIOMFm+NRIPD9r1JRbDP57qS/jUCXVnhbOYXWWSdbSbFxLGThfUPvIfPT7idTl
+	Yv9Tu+uF6iuHXbG3BTwaaoquzhXO+HIGB1tcLShCQZtJSOrb0wm5R0Frz6PKv0MHVvY5iENi4h+ep
+	QB1SxEIBoc691bUYfZovf6hKP4KheMGfLULT5JtKlDSsnhmkhfM4gKlZBaOddSjAUm28Cuxypcrf4
+	cTSzf3IZ4AvR6cKNQghK1FSK1S2eNV20nqiABSYGYe7F1mXmtWWF5nBWEErpuUBROsNSkaSiRnb5/
+	P8Bz7Yk+CzHWSw7S2i3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXPER-00000006DBk-3z6P;
-	Mon, 13 Jan 2025 18:32:11 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tXSGL-00000006iWa-48NS;
+	Mon, 13 Jan 2025 21:46:21 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXPD7-00000006Cv4-3AaR;
-	Mon, 13 Jan 2025 18:30:50 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C425AA4101D;
-	Mon, 13 Jan 2025 18:29:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5AA6EC4CED6;
-	Mon, 13 Jan 2025 18:30:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736793048;
-	bh=P6o9b9OJEbbN6mvPN7cHfla1Cu8ASLwXWJu0Q2N2xEU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rEeA/yUKsAqWherMVsQL3MgtjM9tx+cBFSLOXmyVc9crUJyTMUG9rxP0Vj6vdShWB
-	 moIFFK0hRAKiYEwRBHXj8WLwvYriZtvUG/AL98sZ42u8NGnWbO8lz9nNWZUTyGUm5h
-	 b5ouCotv5ASLnK215CQQrEMGiz+gXx7VymMZNHDcy2YHQZ7NxPEsYkqiGGiXBLLkxm
-	 a+5IOKKyx2Mf5dAGLtT1dX/5jK2AyXTZeiQcuUVk1cPw+TD3IacFa+J0oE2zlHGyWi
-	 2F2Mm2ARw0gVyBDn9w/xftidEroQ8euUzLcyBfWbYtO23e+fxQ9MJkfwQYQd4oKCr6
-	 bUr9vfV75pWhg==
-Date: Mon, 13 Jan 2025 18:30:43 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add
- property to set disconnect threshold
-Message-ID: <20250113-aerobics-tall-e570d8bbcf2c@spud>
-References: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
+	id 1tXSGJ-00000006iV8-0Nuf
+	for linux-phy@lists.infradead.org;
+	Mon, 13 Jan 2025 21:46:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=Content-Transfer-Encoding: Content-Type: In-Reply-To: From: References:
+ Cc: To: Subject: MIME-Version: Date: Message-ID; q=dns/txt;
+ s=fe-e1b5cab7be; t=1736804776;
+ bh=+p3HjcTPs6cUGhlZ08w+IM+7oSzoEOQFMQB2ubcEu1k=;
+ b=haS6i7qiFGlb4OflBSu0Eab3+0Rv/nUYP6T5++9RpNbPa4fyv2EqGz+jLlBab2TpgUUc4DN28
+ Wz3naM4LBwWb4Lsq9mK88uATL2JYwZ2bOAMdRbU6KAxvKSaU3c4WjZjVQp5oyDUM9i6n+5AkyYx
+ ETy3s9yHN4tdES6We1jdigY7+4zNkSGczWtMrON3HiOJzYcVd6dhuF/uxALmanHGiy/NOHf0JPW
+ Q5CqwR3teJiHgarqu0BgL3V1ovYJ2olc7J1MZvclCYdV6nAC+9yoa9uKOiBJWQ6HaGdTV4rCpGu
+ sFuD+8lyNS+67JoSfXrR6qGwcvOwbP11UYTvq+h4iWVw==
+X-Forward-Email-ID: 6785899ca2e821240c331f5b
+X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
+ 149.28.215.223
+X-Forward-Email-Version: 0.4.40
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+Message-ID: <df8e0ff8-355b-4c18-9349-0f04ae16e01b@kwiboo.se>
+Date: Mon, 13 Jan 2025 22:45:57 +0100
 MIME-Version: 1.0
-In-Reply-To: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/1] phy: rockchip: naneng-combphy: compatible reset
+ with old DT
+To: Vinod Koul <vkoul@kernel.org>, Chukun Pan <amadeus@jmu.edu.cn>
+Cc: Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Jianfeng Liu <liujianfeng1994@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250106100001.1344418-1-amadeus@jmu.edu.cn>
+ <20250106100001.1344418-2-amadeus@jmu.edu.cn>
+Content-Language: en-US
+From: Jonas Karlman <jonas@kwiboo.se>
+In-Reply-To: <20250106100001.1344418-2-amadeus@jmu.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_103049_856192_67552DBE 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20250113_134619_476861_90873F5D 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,93 +76,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4756678058498297478=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Vinod,
 
---===============4756678058498297478==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="RGQVYqBrFU+TitZQ"
-Content-Disposition: inline
+On 2025-01-06 11:00, Chukun Pan wrote:
+> The device tree of RK3568 did not specify reset-names before.
+> So add fallback to old behaviour to be compatible with old DT.
+> 
+> Fixes: fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
 
+The commit fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
+broke backwards compatibly with old DTs and has already been backported
+breaking i.e. PCIe and USB on Rockchip RK356x boards on stable and
+longterm kernels.
 
---RGQVYqBrFU+TitZQ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+E.g with v6.12.9 on a Radxa ROCK 3A (RK3568) board:
 
-On Sat, Jan 11, 2025 at 10:15:41PM +0800, Chunfeng Yun wrote:
-> Add a property to tune usb2 phy's disconnect threshold.
-> And add a compatible for mt8196.
->=20
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+  rockchip-naneng-combphy fe830000.phy: error -ENOENT: failed to get phy reset
+  rockchip-naneng-combphy fe830000.phy: probe with driver rockchip-naneng-combphy failed with error -2
+  rockchip-naneng-combphy fe840000.phy: error -ENOENT: failed to get phy reset
+  rockchip-naneng-combphy fe840000.phy: probe with driver rockchip-naneng-combphy failed with error -2
+  rockchip-naneng-combphy fe820000.phy: error -ENOENT: failed to get phy reset
+  rockchip-naneng-combphy fe820000.phy: probe with driver rockchip-naneng-combphy failed with error -2
+
+  # cat /sys/kernel/debug/devices_deferred
+  3c0000000.pcie  platform: supplier fe840000.phy not ready
+  fcc00000.usb    platform: supplier fe820000.phy not ready
+  fd000000.usb    platform: supplier fe830000.phy not ready
+
+Please revert the commit fbcbffbac994 ("phy: rockchip: naneng-combphy:
+fix phy reset") or merge this patch to restore PCIe and USB RK356x.
+
+> Cc: Jianfeng Liu <liujianfeng1994@gmail.com>
+> Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
+
+With this patch PCIe and USB start working again on same board.
+
+Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
+
+Regards,
+Jonas
+
 > ---
-> based on kernel 6.13-rc1
->=20
-> this property is porting from t-phy driver, due to the u2 phy are similar.
-> ---
->  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8 ++++++++
->  1 file changed, 8 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml b/=
-Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> index a9e3139fd421..2e012d5e1da1 100644
-> --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> @@ -49,6 +49,7 @@ properties:
->        - enum:
->            - mediatek,mt3611-xsphy
->            - mediatek,mt3612-xsphy
-> +          - mediatek,mt8196-xsphy
->        - const: mediatek,xsphy
-> =20
->    reg:
-> @@ -129,6 +130,13 @@ patternProperties:
->          minimum: 1
->          maximum: 7
-> =20
-> +      mediatek,discth:
-> +        description:
-> +          The selection of disconnect threshold (U2 phy)
-> +        $ref: /schemas/types.yaml#/definitions/uint32
-> +        minimum: 1
-> +        maximum: 15
+>  drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> index a1532ef8bbe9..8c3ce57f8915 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> @@ -324,7 +324,10 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
+>  
+>  	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
+>  
+> -	priv->phy_rst = devm_reset_control_get(dev, "phy");
+> +	priv->phy_rst = devm_reset_control_get_exclusive(dev, "phy");
+> +	/* fallback to old behaviour */
+> +	if (PTR_ERR(priv->phy_rst) == -ENOENT)
+> +		priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
+>  	if (IS_ERR(priv->phy_rst))
+>  		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
+>  
 
-What unit is this? Unitless? How are the values determined?
-
-> +
->        mediatek,efuse-intr:
->          description:
->            The selection of Internal Resistor (U2/U3 phy)
-> --=20
-> 2.46.0
->=20
-
---RGQVYqBrFU+TitZQ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ4Vb0wAKCRB4tDGHoIJi
-0vKoAP4zLF3EUp+hEhLKk1EO3mA43mZ+y4hvXWvOmzulSeWtcAD8DUyZ7/MQOMPF
-usYBcosdsvVr84zavQbRDKFCKsLWQAY=
-=5d+a
------END PGP SIGNATURE-----
-
---RGQVYqBrFU+TitZQ--
-
-
---===============4756678058498297478==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4756678058498297478==--
-
