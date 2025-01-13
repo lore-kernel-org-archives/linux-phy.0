@@ -4,112 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDDC3E7719E
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 07:03:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53D06E7719E
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 07:09:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BJYFONQCWbfO/twcNn7ch7qL74MFSOrSWOlEQAu9e7o=; b=dkp+uuUy+obtDM
-	N0MXRo81z6Iz1CIWStjPittOiWjNINrLd1hJ5hIRxM7hNQcA8nVHx/E8R3YZu1m3kaM+VzeBIFtNB
-	OIQg/OGFMczlI8lvPCZhLDTGoiXyPg5XVNEuwbDTy9xeWu4rIRY23h6nr4P4tRYA8AYgkqV/wUm1s
-	YJCMpFn2PWyuNJ9jde2s6KCbXEfr3wOZI1S5u4nPxPrAJ9Vsy0t0JW0QLYAjg0VegsO1+jDwDYYzs
-	NlgS5Nood8dJ/bd7/GlT57JiUJttds+xafeTvYZWYZW/UJWQavTVWOwK2u4QEqia/3CMHcKWEkx/T
-	NWGM77rjJusZl3lUyFqQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IRCOTt+qpNZuNJ7XIXnHnnf9rNN42jUVfDorbOcHZ3Q=; b=fSdqlLMXI0hRB7
+	sl9LpR9JUi0uqEuRa9AuDbnJy6dxFwgRuNcsTB1zQC+kF1tsEiwX+x0eiCiLXrGcd/A/fwn5l+QRN
+	HGYpbBs1FREs75/W3Uar2DiV8NRuz5QMDQP86zU0WEoxNFR+1+rpSCanHvhQ7eN8g6fkNlceXtfkb
+	XAg8CwgIkjOnMJ3laJEX/fUphMV2xBBHQCL+TUvmQRgZdE8l+gWFfkDxV2mTcaXvYMwEHRxQgN87v
+	nU8pHPLXZfdAwgHU2KqUSt66zb4taqnDMSsTHCqd6csrWQI3Mgc/jr+AKYU1sRjO3PjWYw9t78eKG
+	pgRvJWS6pZO31D5DULTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXEUB-00000004Bdo-1gjy;
-	Mon, 13 Jan 2025 07:03:43 +0000
-Received: from mail-ej1-x636.google.com ([2a00:1450:4864:20::636])
+	id 1tXEZS-00000004CRf-0QMy;
+	Mon, 13 Jan 2025 07:09:10 +0000
+Received: from out162-62-57-137.mail.qq.com ([162.62.57.137])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXESw-00000004BYb-0iB4;
-	Mon, 13 Jan 2025 07:02:27 +0000
-Received: by mail-ej1-x636.google.com with SMTP id a640c23a62f3a-aaf60d85238so740327266b.0;
-        Sun, 12 Jan 2025 23:02:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1736751744; x=1737356544; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=mp3/qUQXLESraR4kRpn8DKp75/AqUs49Ij3IlmcsjIg=;
-        b=JTz1zVea4HCY9zp9My03Wqc9rvrXYCyqsKhYDK+OHQrRCmKhpOTWXOxz3EqeHrvFnz
-         dh/jSV/VK8rL/kkJZwJW2REX8ahmvdZua1Kwh6LjV6IQT/+5A2Hcy6ZcbXGTDRQ4R5F5
-         FI0leqAo6ymag7mq/pK7uVm4EALtDHrY90UxIIRWai5JzNRlyzMgxwG4XJ3kdayUe3mf
-         MAVMYemQbYxIxIn6sqGNobV5yGbaWr3LOUanimAKSHnh21IaziCcNtl0Nikf5mrWwNA4
-         Y11BC7fvU+OVmZpNdx4hB3FueT1us8BYkTDIKMxI/C84LoMSWEP91C6My5B+bO5hzA1b
-         MczA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736751744; x=1737356544;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=mp3/qUQXLESraR4kRpn8DKp75/AqUs49Ij3IlmcsjIg=;
-        b=pdTwhBf/xKPaq3HKEUx+Yt4dcxLAmVvUnG5qcXNAaOh1K1qHc4PEwGIn2UDSiS53nl
-         oNGBn/DykYLH7mt1TWL3sahqgYATJcXwTOXxkrhR75Uj2jfQ/XgBFq/9dNnMGYvuRqgJ
-         KKIZgklVldxiIVpNljsvB7Fll/41vQ47cpShfbTutXsnTjjFDi+0h1hvYTv8FSbfCtJg
-         MFqKUTE2n2gi/1Q346tLPvVZuD6GlTGZ4htj4X+l+hgXZeshatqRUhm/vYnb5cWH1xdr
-         8A8RFc5PO92JthhsLG6CBilCZzkmYXnrxEj9du4Nb6aqOMvH+f/+iHhhZ/p5JFoXDSef
-         oAQA==
-X-Forwarded-Encrypted: i=1; AJvYcCU9YN8xINeTD5kdytCXSi1yY9iGYn6ftKZm150RFDoINb11pzjdd2NP1AqjrSpOZoH75NpthxHi0GzIMQU=@lists.infradead.org, AJvYcCWp9qGuCyVnNS0HaFKQOWXCkX3KgJqdVheE7/Riyt+BZYSk+GflgyMW4FA/zrwBhijRExCfUx/qN7R1@lists.infradead.org, AJvYcCXOn1fFh3UBUaqbWLJyEcj/mOVsSYrfCi7UyhiqNFBM+how/G4v1JA1+/8x+4biZD4OXeIg5UgzELP/d0nImJfl@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9iG/Wemkm3/pWrH2lxUpeQA5EWwMOXHZ9zyE02VY0sR09vQlm
-	a1GURQZMIs7zPcd88F5rMbp8oD8+8H7zGjInR4J1hkqSqB2sqixa
-X-Gm-Gg: ASbGnctYV0EgsDISL6/buiwp2ZeUbxkvniuw6RMe8YNxngxWZjPgZrAQfb23Bj28GpG
-	PawhjLo/3PfoR4ttu+22y3qq87/9WdzkHrvj7rxKqbLEIHsRj3pQlDHWZB2GkvyxM/6C9YK0nHR
-	EDfx7F5KW2WGJbMRFRzAmSCgeQuBzef21hyjZdUAv2y2h+yXjaa3OvtaIuzTr7VWyWpsDco2zNt
-	Kcwg9IviQ5DjxwdM780NMUEX9vaACt4XcrNs8bKUhF9QUrRDvxfoiV+YRTyFzbngjM4OX3rI7bS
-	nkq06XEQ9H7gQNVupH7JwlYP
-X-Google-Smtp-Source: AGHT+IEdbQkU8UjVmzUUdbYKBPe34Hd3H6alrK+lAeP3uFioAdztQzne4JSDv6lfgqNHpEvaeL0MQQ==
-X-Received: by 2002:a17:907:94c2:b0:aa6:824c:4ae5 with SMTP id a640c23a62f3a-ab2abc9f6e0mr1698225066b.56.1736751743583;
-        Sun, 12 Jan 2025 23:02:23 -0800 (PST)
-Received: from smtpclient.apple (185.174.17.62.zt.hu. [185.174.17.62])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ab2c9060bccsm455865966b.22.2025.01.12.23.02.22
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 12 Jan 2025 23:02:23 -0800 (PST)
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3776.700.51\))
-Subject: Re: [PATCH 06/12] dt-bindings: clk: sunxi-ng: add V853 CCU
- clock/reset
-From: =?utf-8?B?QW5kcsOhcyBTemVtesWR?= <szemzo.andras@gmail.com>
-In-Reply-To: <tttj7va4hzpqugah4rhm2u5kganuix5iy7373h62b3rgfwvdbt@53vexrsfmskk>
-Date: Mon, 13 Jan 2025 08:02:11 +0100
-Cc: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <mripard@kernel.org>,
- Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>,
- =?utf-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
- Florian Fainelli <florian.fainelli@broadcom.com>,
- linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org,
- linux-gpio@vger.kernel.org,
- linux-pm@vger.kernel.org,
- linux-riscv@lists.infradead.org
-Message-Id: <E7DD6AE5-833C-41AC-8B7F-2772BEB065EF@gmail.com>
-References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-7-szemzo.andras@gmail.com>
- <tttj7va4hzpqugah4rhm2u5kganuix5iy7373h62b3rgfwvdbt@53vexrsfmskk>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-X-Mailer: Apple Mail (2.3776.700.51)
+	id 1tXEZN-00000004CPU-302Q
+	for linux-phy@lists.infradead.org;
+	Mon, 13 Jan 2025 07:09:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foxmail.com;
+	s=s201512; t=1736752138;
+	bh=k3QRSjcnKk6Udfjid7rHbFoa3RL2T6VjHRZLWm2/r3w=;
+	h=From:To:Cc:Subject:Date;
+	b=K6wIvR8WZuxU8UEHKHMaJVlCLNblBlfl4ieGo1ZVPj0ndjuZep6GyRIg0dtZ7/w+v
+	 41e5zhoOO9DyGA575th+1NFgd9/Mw1GgLAYeTc66T4BG5k+k51OXalRU1ebx5RnW22
+	 w9p6+ISMfqbHQeoEERZgqnb3tm87yaxbS1HP68Ug=
+Received: from localhost.localdomain ([116.128.244.169])
+	by newxmesmtplogicsvrszc16-0.qq.com (NewEsmtp) with SMTP
+	id 22514A3B; Mon, 13 Jan 2025 15:08:37 +0800
+X-QQ-mid: xmsmtpt1736752117tzsp8lkgd
+Message-ID: <tencent_B5D4CEE5B9DE468871AF5159433E785D9D0A@qq.com>
+X-QQ-XMAILINFO: NMGzQWUSIfvT3QL66qYKb6PiCAeRC2eKNKnIJGJzEeF3FxGYBFLugxgWvltEBq
+	 BDiyECwy2SZ1voUrnOGT01sWU34MnmxyWRSmcs/oewOF43e0KWiX+lQM3rsqMhlKU0AUODjhauRB
+	 GGFVyB8JKSTAizeUoqtFgACZCk4+7vtfP+6ablVCO8xZL4kh9PcM5SJ7AXocu0tJmEgjcrJ5ODnh
+	 6Mb/sGnjp1wE+ZplpFaOwR9bGc1EPcnsUAGM7K7lEgo6fxmOhWMjIamIHw7yKq8lMV74n+liYo0U
+	 /tTUotUWsJKxq0rBG2wbHEfc1aGaiKHBI+bwAMb62LsmY+cZJ4PP6cemjsZ0EIdw75q3HncTxQSv
+	 xMoYTQQJ4bpC/biXbUXx/sM6qBbrXGwfxIoF2UvuZpERoW0P7+HEstENuAxUR1J29y/mg0GiV21b
+	 Tkl5zveddvHMYW8k3V0DNiL/aXn1W0ws2to8JVvIS1KI8ZMlGzj8PMZnmVLk9d9btx35MYQ3QNwe
+	 Oq0zZJFpCR2SZNQNVfJqUHWKf9EaVI6BdH/lMO4a+U3FNmAT7JwrXkD54FF8al7IVK1jhIW/OeF3
+	 gpfVutIxozsfQWCgnNOaRl3mbfp9DVGBGL/Sh240+Ily6KUNZkxUps1uiaQ04fJz5iFIbb6f+V4C
+	 UF6Azv8QVzm0D6fvriiXNbmUtvGIxuZjelhF2JJdqNzPUcgb9D6US1cq4v3P8YclXWrMm92zNmeP
+	 K1ShxVw2ANYKAybNdkXQDm42Byj8zn7Ngls+930cd2rDSEjGp4W4rJDG6WBmgHgUZzqwMZhUpiDi
+	 lD+LnvmSjJQtj0TqbKZMXxj/cT3Q3gAGAx8rkckjtwul+wbIdK8Xc/dFZwK06S3R3fM8JixGoDnv
+	 1/KXs5eIBOx+SvlSdUDhQvulFPFpGvI0GqRPtVI1BvUdegFSsVl24LdAvfhwLyVpmY4ymt40luJI
+	 zP6M5NrK4=
+X-QQ-XMRINFO: OD9hHCdaPRBwq3WW+NvGbIU=
+From: xiaopeitux@foxmail.com
+To: vkoul@kernel.org,
+	aford173@gmail.com,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Pei Xiao <xiaopei01@kylinos.cn>
+Subject: [RFC] phy: freescale: fsl-samsung-hdmi: Use helper function devm_clk_get_enabled()
+Date: Mon, 13 Jan 2025 15:08:33 +0800
+X-OQ-MSGID: <e0458be8001ad83fe194cc47a4a08f584ec1418d.1736751985.git.xiaopei01@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250112_230226_212576_9ADE6C4B 
-X-CRM114-Status: GOOD (  15.44  )
+X-CRM114-CacheID: sfid-20250112_230906_385898_F4C98CB4 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,36 +80,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmtzIGZvciB5b3VyIGNvbW1lbnRzIGZvciB0aGUgd2hvbGUgc2VyaWVzIQpOb3QgZXZlcnl0
-aGluZyBpcyBjbGVhciBmb3IgbWUgeWV0LCBidXQgSeKAmWxsIGNsYXJpZnkgd2l0aCBzdW54aSBj
-b21tdW5pdHksIGFuZApmaXggaXQgYmFzZWQgb24geW91ciBzdWdnZXN0aW9ucy4KCj4gT24gMTEg
-SmFuIDIwMjUsIGF0IDExOjM0LCBLcnp5c3p0b2YgS296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+
-IHdyb3RlOgo+IAo+IE9uIEZyaSwgSmFuIDEwLCAyMDI1IGF0IDAxOjM5OjE3UE0gKzAxMDAsIEFu
-ZHJhcyBTemVtem8gd3JvdGU6Cj4+IEFzIHRoZSBkZXZpY2UgdHJlZSBuZWVkcyB0aGUgY2xvY2sv
-cmVzZXQgaW5kaWNlcywgYWRkIHRoZW0gdG8gRFQgYmluZGluZwo+PiBoZWFkZXJzLgo+PiAKPj4g
-U2lnbmVkLW9mZi1ieTogQW5kcmFzIFN6ZW16byA8c3plbXpvLmFuZHJhc0BnbWFpbC5jb20+Cj4+
-IC0tLQo+PiBpbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL3N1bjhpLXY4NTMtY2N1LmggICB8IDEz
-MiArKysrKysrKysrKysrKysrKysrCj4gCj4gUGxlYXNlIHVzZSBmdWxsIGNvbXBhdGlibGUgYXMg
-ZmlsZW5hbWUuCj4gCj4+IGluY2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svc3VuOGktdjg1My1yLWNj
-dS5oIHwgIDE2ICsrKwo+PiBpbmNsdWRlL2R0LWJpbmRpbmdzL3Jlc2V0L3N1bjhpLXY4NTMtY2N1
-LmggICB8ICA2MiArKysrKysrKysKPj4gaW5jbHVkZS9kdC1iaW5kaW5ncy9yZXNldC9zdW44aS12
-ODUzLXItY2N1LmggfCAgMTQgKysKPj4gNCBmaWxlcyBjaGFuZ2VkLCAyMjQgaW5zZXJ0aW9ucygr
-KQo+PiBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9kdC1iaW5kaW5ncy9jbG9jay9zdW44aS12
-ODUzLWNjdS5oCj4+IGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2Nr
-L3N1bjhpLXY4NTMtci1jY3UuaAo+PiBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9kdC1iaW5k
-aW5ncy9yZXNldC9zdW44aS12ODUzLWNjdS5oCj4+IGNyZWF0ZSBtb2RlIDEwMDY0NCBpbmNsdWRl
-L2R0LWJpbmRpbmdzL3Jlc2V0L3N1bjhpLXY4NTMtci1jY3UuaAo+PiAKPj4gZGlmZiAtLWdpdCBh
-L2luY2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svc3VuOGktdjg1My1jY3UuaCBiL2luY2x1ZGUvZHQt
-YmluZGluZ3MvY2xvY2svc3VuOGktdjg1My1jY3UuaAo+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+
-PiBpbmRleCAwMDAwMDAwMDAwMDAuLmE0MDViOTgyZjkxNAo+PiAtLS0gL2Rldi9udWxsCj4+ICsr
-KyBiL2luY2x1ZGUvZHQtYmluZGluZ3MvY2xvY2svc3VuOGktdjg1My1jY3UuaAo+PiBAQCAtMCww
-ICsxLDEzMiBAQAo+PiArLyogU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wKyBPUiBN
-SVQpICovCj4gCj4gQlRXLCBhbHNvIGNoZWNrcGF0Y2ggd2FybnMgYWJvdXQgdGhpcy4uLgo+IAo+
-IEJlc3QgcmVnYXJkcywKPiBLcnp5c3p0b2YKPiAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Pei Xiao <xiaopei01@kylinos.cn>
+
+Since commit 7ef9651e9792 ("clk: Provide new devm_clk helpers for prepared
+and enabled clocks"), devm_clk_get() and clk_prepare_enable() can now be
+replaced by devm_clk_get_enabled() when driver enables the clocks for the
+whole lifetime of the device. Moreover, it is no longer necessary to
+unprepare and disable the clocks explicitly.
+
+Fixes: 6ad082bee902 ("phy: freescale: add Samsung HDMI PHY")
+Signed-off-by: Pei Xiao <xiaopei01@kylinos.cn>
+---
+ drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 17 ++---------------
+ 1 file changed, 2 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+index 1a079075de67..170eac317b16 100644
+--- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
++++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+@@ -667,7 +667,7 @@ static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(phy->regs))
+ 		return PTR_ERR(phy->regs);
+ 
+-	phy->apbclk = devm_clk_get(phy->dev, "apb");
++	phy->apbclk = devm_clk_get_enabled(phy->dev, "apb");
+ 	if (IS_ERR(phy->apbclk))
+ 		return dev_err_probe(phy->dev, PTR_ERR(phy->apbclk),
+ 				     "failed to get apb clk\n");
+@@ -677,29 +677,16 @@ static int fsl_samsung_hdmi_phy_probe(struct platform_device *pdev)
+ 		return dev_err_probe(phy->dev, PTR_ERR(phy->refclk),
+ 				     "failed to get ref clk\n");
+ 
+-	ret = clk_prepare_enable(phy->apbclk);
+-	if (ret) {
+-		dev_err(phy->dev, "failed to enable apbclk\n");
+-		return ret;
+-	}
+-
+ 	pm_runtime_get_noresume(phy->dev);
+ 	pm_runtime_set_active(phy->dev);
+ 	pm_runtime_enable(phy->dev);
+ 
+ 	ret = phy_clk_register(phy);
+-	if (ret) {
++	if (ret)
+ 		dev_err(&pdev->dev, "register clk failed\n");
+-		goto register_clk_failed;
+-	}
+ 
+ 	pm_runtime_put(phy->dev);
+ 
+-	return 0;
+-
+-register_clk_failed:
+-	clk_disable_unprepare(phy->apbclk);
+-
+ 	return ret;
+ }
+ 
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
