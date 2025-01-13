@@ -4,109 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F911C02180
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 23:02:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 531FAC02180
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 23:28:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YC5H/ur5we63z9b6RemfdGvkiRSKIsTfewUcOVWy2Sc=; b=hSW5fFATfn0G+v
-	sWIIJq7KswlhZiKvn+2N7m3f3cLmRv/rsBFoPfiN/9Tfl0zmcFOmDOg4oiAMDwARgmuMwgVXanSVd
-	OGf3q66LbDAkC52guHloM/VV1LuglsN9qar4Vvq7lJF2qS6zG2+80bb6pXke46Zj0C7oHP0/fyrvj
-	UrVSiiZUVo/UUDa/x5klXeDCnYuzeORXmHHYreiKc1OBi3lLXPhB/l5hSj+1Swl7tyB/cb4QnDgwr
-	Ncuj18Zu7JR5bPkbZv4XLdOcPNyz+wGvNh4OI11gVoVw4wmHyBFAInkOJxMOGEZewCKnkAh3nLw0x
-	J92XSkVpVIUulwgKu+Ow==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=9DIs5H8MofiCt9SUvoxGx5Z2/wcAxEZyxCSnvmRAx24=; b=z+/1XEOZ4zMelqA7QFP0WiH+Q/
+	WQ920kkGmq92A+4CPzCL+hhU+uOgps8idPRh92g/DYTWrBeSaduJiDOtNjXyBxrNqj9YqAnR9V7n1
+	pcb5dLhGA1R/dquQoNaTB0pi//0LZCPTxmGWISWU12P/xaEUQfSZMDiZfwjSYLGYOWwYgP2Im/GAK
+	zlCSXLLsjnZVZa93xhLs7geZu5IF+ju35hYfk8pp/DE8bsandtxSsIIm2JH2Tpx4cThI+GiKRax9N
+	m9mo/lsxpvPTlxIDApwfVsBqn11DmEcgPt4+C5+azXg5XQ5AWOsjBFeNL6XB+IFD0/lpeqZUCgAlv
+	sDL0lzlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXTRr-00000006tms-1WKl;
-	Mon, 13 Jan 2025 23:02:19 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tXTrR-00000006wvz-2vQP;
+	Mon, 13 Jan 2025 23:28:45 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXSMC-00000006jRz-1zuI;
-	Mon, 13 Jan 2025 21:52:25 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50DErdiY021698;
-	Mon, 13 Jan 2025 21:52:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=dv4IcBAjfmR+8HBRab6Bpc
-	xMQm42RAKQVauGMIi29SI=; b=Zy1Ekw2712um8rh9fLkX/hg6lIwwYjsnqrNWjV
-	nVZRT+Mw2lh1r4C20NX7/zFov1+WxbznyK7BYhz0tU8dJ0mxxlykkjwXB7A6gEE/
-	noUwOqygHAetmtXzyFGTVSo7ZGGr82CNA/RE0x8/Ay/7N6Q7Xqx29pBKII1fldaU
-	S0DB2JMdZqFw2nNo6zlmbRWFY+ud3Q2JuICodLsvXegUZf4HCopZWesh6NXvMWmW
-	NBZeO6ruKZrOjHFPjmarrWl3U22Q3oBwIP6KsSdOmxMg6mgnYxZZnAvsrUrKvqvX
-	OADDm/Gz6LEEDlnCjzK4UrpLbV+y+mXAEUurDrFN0jvGxgaQ==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44550agy5p-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 21:52:17 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50DLqGm2007327
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 21:52:16 GMT
-Received: from hu-molvera-lv.qualcomm.com (10.49.16.6) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 13 Jan 2025 13:52:15 -0800
-From: Melody Olvera <quic_molvera@quicinc.com>
-Subject: [PATCH 0/7] phy: qcom: Introduce USB support for SM8750
-Date: Mon, 13 Jan 2025 13:52:06 -0800
-Message-ID: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
+	id 1tXTq8-00000006wWI-410i;
+	Mon, 13 Jan 2025 23:27:26 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id C03C3A40162;
+	Mon, 13 Jan 2025 23:25:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68FB8C4CEE2;
+	Mon, 13 Jan 2025 23:27:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1736810843;
+	bh=Wyd0GkcBwPWXois4+LKVXlzTBRXNw0WbLYeURxTamHg=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=I3uAMJeS15prghq7+Kg6lXcRid8omW21cyV3RO8r5ELoTOhgWVC6aGwxWwXFnz8fx
+	 AMrbO7x1n7S+0gYWpSD/jHCY3EtrI+rld6e9mJ4A/1e5tywXx+DlVdOZl1HoqDGft+
+	 C5GXUiFhgjPNJSZ7Pj7y33kHbXQR9UqK+4SsP0rKe5lNVaD7HSjOSiR/XZxrPvdlJK
+	 QLc2LlxgDRNQAs5zFTYDFVvJ7wc7Uc5FCisrXMx0CfGgI7JGTyPxi+RlCizLrj29JB
+	 ZF7X482UUobRP3eFzYY3iJSL3kDjsRYSIoA9tTDGpwDYJ652Fkhl9NX5FH33khzdH/
+	 /RlxjLI8G0osA==
+Date: Mon, 13 Jan 2025 17:27:22 -0600
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAaLhWcC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIxNDIyNj3eJcC3NTg/jS4qT43MTiktQi3TQj88TUFPM0sxQTAyWgvoKi1LT
- MCrCZ0bEQflFqYSnQ6BKoYG0tANI1Wr14AAAA
-X-Change-ID: 20241223-sm8750_usb_master-f27aed7f6d40
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Philipp Zabel
-	<p.zabel@pengutronix.de>,
-        Catalin Marinas <catalin.marinas@arm.com>,
-        "Will
- Deacon" <will@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        "Konrad
- Dybcio" <konradybcio@kernel.org>,
-        Satya Durga Srinivasu Prabhala
-	<quic_satyap@quicinc.com>,
-        Trilok Soni <quic_tsoni@quicinc.com>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-        "Melody
- Olvera" <quic_molvera@quicinc.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1736805135; l=1558;
- i=quic_molvera@quicinc.com; s=20241204; h=from:subject:message-id;
- bh=9yBaQXiDZeh03gIlt6HNO/bkE/PQmksKg5pRplG5EhI=;
- b=xuMgWRgaCzMFnPtCOE1uIVMKz0zTJxnpSvsVo7wQdqAQ8QRca8m2ngKmEpetwypNUmW2nRpKN
- 7JDJe+6I9+YCroZDfta4/4pR5kfZ891+49bGC/WQhjrQvlJwVFhQzIF
-X-Developer-Key: i=quic_molvera@quicinc.com; a=ed25519;
- pk=1DGLp3zVYsHAWipMaNZZTHR321e8xK52C9vuAoeca5c=
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ctpwBzOBrwmZZzf8Apdt_vlSGSkLeujJ
-X-Proofpoint-GUID: ctpwBzOBrwmZZzf8Apdt_vlSGSkLeujJ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 priorityscore=1501
- suspectscore=0 mlxlogscore=652 adultscore=0 impostorscore=0 spamscore=0
- clxscore=1011 malwarescore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501130172
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Bjorn Andersson <andersson@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Conor Dooley <conor+dt@kernel.org>, 
+ Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, 
+ linux-arm-msm@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Will Deacon <will@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, linux-arm-kernel@lists.infradead.org, 
+ linux-usb@vger.kernel.org, Trilok Soni <quic_tsoni@quicinc.com>, 
+ Konrad Dybcio <konradybcio@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>, 
+ devicetree@vger.kernel.org, Wesley Cheng <quic_wcheng@quicinc.com>
+To: Melody Olvera <quic_molvera@quicinc.com>
+In-Reply-To: <20250113-sm8750_usb_master-v1-2-09afe1dc2524@quicinc.com>
+References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
+ <20250113-sm8750_usb_master-v1-2-09afe1dc2524@quicinc.com>
+Message-Id: <173681084057.3609181.3813483305054365666.robh@kernel.org>
+Subject: Re: [PATCH 2/7] dt-bindings: phy: Add the M31 based eUSB2 PHY
+ bindings
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_135224_644873_3F28A6CB 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20250113_152725_118443_5310BC19 
+X-CRM114-Status: GOOD (  12.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,40 +82,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the PHYs and controllers used for USB on SM8750 SoCs.
 
-Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
----
-Melody Olvera (1):
-      arm64: defconfig: Add M31 eUSB2 PHY config
+On Mon, 13 Jan 2025 13:52:08 -0800, Melody Olvera wrote:
+> From: Wesley Cheng <quic_wcheng@quicinc.com>
+> 
+> On SM8750, the M31 eUSB2 PHY is being used to support USB2. Add the
+> binding definition for the PHY driver.
+> 
+> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
+> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+> ---
+>  .../bindings/phy/qcom,m31-eusb2-phy.yaml           | 84 ++++++++++++++++++++++
+>  1 file changed, 84 insertions(+)
+> 
 
-Wesley Cheng (6):
-      dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add SM8750 to QMP PHY
-      dt-bindings: phy: Add the M31 based eUSB2 PHY bindings
-      dt-bindings: usb: qcom,dwc3: Add SM8750 compatible
-      phy: qcom: qmp-combo: Add new PHY sequences for SM8750
-      phy: qcom: Add M31 based eUSB2 PHY driver
-      arm64: dts: qcom: sm8750: Add USB support to SM8750 platforms
+My bot found errors running 'make dt_binding_check' on your patch:
 
- .../bindings/phy/qcom,m31-eusb2-phy.yaml           |  84 +++++++
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   2 +
- .../devicetree/bindings/usb/qcom,dwc3.yaml         |   3 +
- arch/arm64/boot/dts/qcom/sm8750-mtp.dts            |  24 ++
- arch/arm64/boot/dts/qcom/sm8750-qrd.dts            |  24 ++
- arch/arm64/boot/dts/qcom/sm8750.dtsi               | 134 ++++++++++
- arch/arm64/configs/defconfig                       |   1 +
- drivers/phy/qualcomm/Kconfig                       |  12 +-
- drivers/phy/qualcomm/Makefile                      |   1 +
- drivers/phy/qualcomm/phy-qcom-m31-eusb2.c          | 269 +++++++++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 198 +++++++++++++++
- 11 files changed, 751 insertions(+), 1 deletion(-)
----
-base-commit: 37136bf5c3a6f6b686d74f41837a6406bec6b7bc
-change-id: 20241223-sm8750_usb_master-f27aed7f6d40
+yamllint warnings/errors:
 
-Best regards,
--- 
-Melody Olvera <quic_molvera@quicinc.com>
+dtschema/dtc warnings/errors:
+Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.example.dts:18:18: fatal error: dt-bindings/clock/qcom,sm8750-gcc.h: No such file or directory
+   18 |         #include <dt-bindings/clock/qcom,sm8750-gcc.h>
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[2]: *** [scripts/Makefile.dtbs:131: Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.example.dtb] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [/builds/robherring/dt-review-ci/linux/Makefile:1506: dt_binding_check] Error 2
+make: *** [Makefile:251: __sub-make] Error 2
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250113-sm8750_usb_master-v1-2-09afe1dc2524@quicinc.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
