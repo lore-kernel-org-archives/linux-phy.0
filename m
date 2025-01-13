@@ -4,76 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76F5EE7719E
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 09:25:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9350BC02181
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 09:34:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pB9hm0yA5/j58zD7SQtartXwgz+H/Fcsh4xa/bLLZQA=; b=IXrYuj3IpNbAGq
-	lYCh+DGvXHubLYxnB+D7rtKelhUjg82ib1OXTDf56o/ubm+0nNLi+C9AQ96xAye4+uiiGrvRN0FTc
-	rmhCveQ8yP0QHWe7cMHF2NYKpPpO0CHwda9erQBhgbLFwM0IVTl0n9q+N+EFkFBxi9A5FkY8uWPtW
-	cRwsOlf/UTUSiYNfUYIUJwlFysyXym+fYZkfIw3LM4mg9Ord44cjv6SMtEhJ2AjIiCi242ka0Arob
-	eTkicF1XevBHHAbTMajeXUZVON0wFLCZiDam3FAEUEL4RjcJc1O3ylbgJz0HdhnuC+wT+v50mihl6
-	L4mrCJkMvgSEsO95WMlQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MjGEof4fBJ7oC38XxUXsZub96CM0tfrhm0T1otVFsFk=; b=zz2zTHSG/yas1j
+	Ia5o//0wYNN4igjvN34vCUW1Z80Ksa+MNR5aJ109a7WLzqnkCOcitPpBdq34+pfJy+pEEIpwvuLMz
+	V1gL+2MQa9pmXy8c8abEsg5aoF/knnRPq8gHvqRcjWMF0TheLACvsu0A0eYO16Yv/whTgfacO8qFX
+	KqiGYJIWWM/42LHmFgntZ8KNDgj94pDHFb8b3VjnUEiQg8R4g6B6MZbFGwb2732Ad2c7XejhcWW/8
+	qi4mJuayD056FR80HqKrYrU6Dq5mUrYqWSbCr6q/e0ARza3iPZYarx5H3k0qr6u5Gv7MXAawLcDYA
+	mpU/D4ksPY3yYPm9SNMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXGhK-00000004ayM-0zU2;
-	Mon, 13 Jan 2025 09:25:26 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1tXGpj-00000004dHr-3PDl;
+	Mon, 13 Jan 2025 09:34:07 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXGeI-00000004aMg-0mzT;
-	Mon, 13 Jan 2025 09:22:19 +0000
-Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50D5nK3n026544;
-	Mon, 13 Jan 2025 10:22:10 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=selector1; bh=m0FPfJ7gKA+absR2EDaCck
-	e919XXBg34hJsIHU+bQhA=; b=7XW3MQD+1MlnteAcvHTQpn3daRxAHyY2ULDOlK
-	eNl6AHFLTbfgk4dLMpAdMD3wB4lvYeNWMuScV0oUfZBtrO+z04t9JKaTCv3KrrX/
-	jr0XpFWp+o4ox5GZXSYHPeTcN6Eedwa3U81svnQYd9KYihAMafgQ1dVSHDrwv8Tp
-	80KNueNxafWvA1S7fhoRDOn2NzASeIEHx5FaZT1LD0K+0//CY/GmSMfSAVokJWfh
-	C/QgOrCizX1ldVx/IVY83m+UsVimFILTdXQl/inodsEXIvzLMCoPdNva8EsWydKq
-	rmaMKh6XYG4f0qz/vnFdmqtrCiKSoEwbQxqNgSRrwuzT/p2g==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 444w17gt9y-1
+	id 1tXGj3-00000004bLV-16hu
+	for linux-phy@lists.infradead.org;
+	Mon, 13 Jan 2025 09:27:14 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50D6glEL024409;
+	Mon, 13 Jan 2025 09:27:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	MOfjFAH+CybZ33SMwzfNlmQyC6CmVOKixDLWbRV01BM=; b=O1dn8fNAabIUgm/j
+	3BKm3WVSMnTh8LSexcu482RLtmKRfjcX2yK8sjt8q42vfX2+VXSRqG7xFdhKQVaa
+	artSSdfyh6Gj+qf21EcNSQAhLTnC40CAxedR5HFvby7u1Lyt0+TXaYbCoZOEW5e5
+	UT50Ggril+HHlopK9d5ivvzrz6h535htRps9WdtXoZHukccPtd5yow2efJ67H4j7
+	nyA1dkF3C0P6YC9XgjWIzgOsH4HjKPiC5uBZ5/P43vTTRZNc2EdmIZ/BWu8NuC/i
+	h08Dfgg5OScI6Lw4grVeS6tDMW9pcNODeNc5z4emleqhAYZI+MYX2bXu0b9FkaHv
+	ZZXj7w==
+Received: from nalasppmta02.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 444wt4rd06-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 13 Jan 2025 10:22:09 +0100 (CET)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id EEA0D40048;
-	Mon, 13 Jan 2025 10:21:04 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7B58C236E67;
-	Mon, 13 Jan 2025 10:20:31 +0100 (CET)
-Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Mon, 13 Jan
- 2025 10:20:31 +0100
-From: Christian Bruel <christian.bruel@foss.st.com>
-To: <vkoul@kernel.org>, <kishon@kernel.org>, <mcoquelin.stm32@gmail.com>,
-        <alexandre.torgue@foss.st.com>, <p.zabel@pengutronix.de>,
-        <linux-phy@lists.infradead.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <fabrice.gasnier@foss.st.com>
-CC: Christian Bruel <christian.bruel@foss.st.com>
-Subject: [PATCH v2] phy: stm32: Optimize tuning values from DT.
-Date: Mon, 13 Jan 2025 10:20:01 +0100
-Message-ID: <20250113092001.1344151-1-christian.bruel@foss.st.com>
-X-Mailer: git-send-email 2.34.1
+	Mon, 13 Jan 2025 09:27:06 +0000 (GMT)
+Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
+	by NALASPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50D9R57H029576
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 13 Jan 2025 09:27:05 GMT
+Received: from [10.64.68.119] (10.80.80.8) by nalasex01c.na.qualcomm.com
+ (10.47.97.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 13 Jan
+ 2025 01:26:59 -0800
+Message-ID: <9a87724c-1906-4a9b-bf01-e603b310e47a@quicinc.com>
+Date: Mon, 13 Jan 2025 17:26:56 +0800
 MIME-Version: 1.0
-X-Originating-IP: [10.129.178.212]
-X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE3.st.com
- (10.75.129.71)
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/4] Display enablement changes for Qualcomm QCS8300
+ platform
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+CC: Rob Clark <robdclark@gmail.com>,
+        Abhinav Kumar
+	<quic_abhinavk@quicinc.com>,
+        Sean Paul <sean@poorly.run>,
+        Marijn Suijten
+	<marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, "Simona
+ Vetter" <simona@ffwll.ch>,
+        Maarten Lankhorst
+	<maarten.lankhorst@linux.intel.com>,
+        Maxime Ripard <mripard@kernel.org>,
+        Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Kuogee Hsieh
+	<quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+        "Kishon Vijay
+ Abraham I" <kishon@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        <linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
+        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        "Krzysztof
+ Kozlowski" <krzysztof.kozlowski@linaro.org>
+References: <20250113-mdssdt_qcs8300-v3-0-6c8e93459600@quicinc.com>
+ <qsq5so5i7fy3r7xcjtcr7aq2vtbywh57j3b3e7ddbsmmeu5qwy@pgcntgxknuul>
+Content-Language: en-US
+From: Yongxing Mou <quic_yongmou@quicinc.com>
+In-Reply-To: <qsq5so5i7fy3r7xcjtcr7aq2vtbywh57j3b3e7ddbsmmeu5qwy@pgcntgxknuul>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01c.na.qualcomm.com (10.47.97.35)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: FZvTmcrhQQEHUT1SOKIGh2bA7JiNFdyI
+X-Proofpoint-GUID: FZvTmcrhQQEHUT1SOKIGh2bA7JiNFdyI
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
  definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ clxscore=1015 impostorscore=0 malwarescore=0 phishscore=0 mlxlogscore=999
+ suspectscore=0 bulkscore=0 priorityscore=1501 mlxscore=0 adultscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501130080
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_012218_529834_EDA506AA 
-X-CRM114-Status: GOOD (  16.15  )
+X-CRM114-CacheID: sfid-20250113_012713_310874_64429C50 
+X-CRM114-Status: GOOD (  20.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,194 +118,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-phy_init can be recalled during PM resume. Thus cache the tuning values
-read from the device tree.
-Don't read the known default ohm value from regmap.
-
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
----
-v2: Fix 'val' uninitialized variable from clang build bot
-
- drivers/phy/st/phy-stm32-combophy.c | 84 ++++++++++++++---------------
- 1 file changed, 42 insertions(+), 42 deletions(-)
-
-diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
-index 49e9fa90a681..5c09c4e48bd0 100644
---- a/drivers/phy/st/phy-stm32-combophy.c
-+++ b/drivers/phy/st/phy-stm32-combophy.c
-@@ -86,6 +86,10 @@ struct stm32_combophy {
- 	struct clk_bulk_data clks[ARRAY_SIZE(combophy_clks)];
- 	int num_clks;
- 	bool have_pad_clk;
-+	bool have_ssc;
-+	int rx_eq;
-+	u32 microohm;
-+	u32 microvolt;
- 	unsigned int type;
- 	bool is_init;
- 	int irq_wakeup;
-@@ -112,27 +116,15 @@ static const struct clk_impedance imp_lookup[] = {
- 	{ 3999000, { 571000, 648000, 726000, 803000 } }
- };
- 
--static int stm32_impedance_tune(struct stm32_combophy *combophy)
-+static void stm32_impedance_tune(struct stm32_combophy *combophy)
- {
--	u8 imp_size = ARRAY_SIZE(imp_lookup);
--	u8 vswing_size = ARRAY_SIZE(imp_lookup[0].vswing);
- 	u8 imp_of, vswing_of;
--	u32 max_imp = imp_lookup[0].microohm;
--	u32 min_imp = imp_lookup[imp_size - 1].microohm;
--	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
--	u32 min_vswing = imp_lookup[0].vswing[0];
--	u32 val;
- 	u32 regval;
- 
--	if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
--		if (val < min_imp || val > max_imp) {
--			dev_err(combophy->dev, "Invalid value %u for output ohm\n", val);
--			return -EINVAL;
--		}
--
-+	if (combophy->microohm) {
- 		regval = 0;
- 		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
--			if (imp_lookup[imp_of].microohm <= val) {
-+			if (imp_lookup[imp_of].microohm <= combophy->microohm) {
- 				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of);
- 				break;
- 			}
-@@ -145,19 +137,14 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
- 				   regval);
- 	} else {
--		regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
--		imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
-+		/* default is 50 ohm */
-+		imp_of = 3;
- 	}
- 
--	if (!of_property_read_u32(combophy->dev->of_node, "st,output-vswing-microvolt", &val)) {
--		if (val < min_vswing || val > max_vswing) {
--			dev_err(combophy->dev, "Invalid value %u for output vswing\n", val);
--			return -EINVAL;
--		}
--
-+	if (combophy->microvolt) {
- 		regval = 0;
- 		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++) {
--			if (imp_lookup[imp_of].vswing[vswing_of] >= val) {
-+			if (imp_lookup[imp_of].vswing[vswing_of] >= combophy->microvolt) {
- 				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of);
- 				break;
- 			}
-@@ -170,8 +157,6 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
- 				   regval);
- 	}
--
--	return 0;
- }
- 
- static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
-@@ -197,7 +182,7 @@ static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
- 		cr1_val |= SYSCFG_COMBOPHY_CR1_REFSSPEN;
- 	}
- 
--	if (of_property_present(combophy->dev->of_node, "st,ssc-on")) {
-+	if (combophy->have_ssc) {
- 		dev_dbg(combophy->dev, "Enabling clock with SSC\n");
- 		cr1_mask |= SYSCFG_COMBOPHY_CR1_SSCEN;
- 		cr1_val |= SYSCFG_COMBOPHY_CR1_SSCEN;
-@@ -253,24 +238,16 @@ static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
- 	reset_control_assert(combophy->phy_reset);
- 
- 	if (combophy->type == PHY_TYPE_PCIE) {
--		ret = stm32_impedance_tune(combophy);
--		if (ret)
--			goto out_iso;
-+		stm32_impedance_tune(combophy);
- 
- 		cr1_mask |= SYSCFG_COMBOPHY_CR1_REFUSEPAD;
- 		cr1_val |= combophy->have_pad_clk ? SYSCFG_COMBOPHY_CR1_REFUSEPAD : 0;
- 	}
- 
--	if (!of_property_read_u32(combophy->dev->of_node, "st,rx-equalizer", &val)) {
--		dev_dbg(combophy->dev, "Set RX equalizer %u\n", val);
--		if (val > SYSCFG_COMBOPHY_CR4_RX0_EQ) {
--			dev_err(combophy->dev, "Invalid value %u for rx0 equalizer\n", val);
--			ret = -EINVAL;
--			goto out_iso;
--		}
--
-+	if (combophy->rx_eq != -1) {
-+		dev_dbg(combophy->dev, "Set RX equalizer %u\n", combophy->rx_eq);
- 		regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR4,
--			   SYSCFG_COMBOPHY_CR4_RX0_EQ, val);
-+			   SYSCFG_COMBOPHY_CR4_RX0_EQ, combophy->rx_eq);
- 	}
- 
- 	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR1, cr1_mask, cr1_val);
-@@ -314,9 +291,6 @@ static int stm32_combophy_pll_init(struct stm32_combophy *combophy)
- 
- 	return 0;
- 
--out_iso:
--	reset_control_deassert(combophy->phy_reset);
--
- out:
- 	regmap_update_bits(combophy->regmap, SYSCFG_COMBOPHY_CR2,
- 			   SYSCFG_COMBOPHY_CR2_ISO_DIS, 0);
-@@ -522,6 +496,12 @@ static int stm32_combophy_probe(struct platform_device *pdev)
- 	struct stm32_combophy *combophy;
- 	struct device *dev = &pdev->dev;
- 	struct phy_provider *phy_provider;
-+	u8 imp_size = ARRAY_SIZE(imp_lookup);
-+	u8 vswing_size = ARRAY_SIZE(imp_lookup[0].vswing);
-+	u32 max_imp = imp_lookup[0].microohm;
-+	u32 min_imp = imp_lookup[imp_size - 1].microohm;
-+	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
-+	u32 min_vswing = imp_lookup[0].vswing[0];
- 	int ret, irq;
- 
- 	combophy = devm_kzalloc(dev, sizeof(*combophy), GFP_KERNEL);
-@@ -569,6 +549,26 @@ static int stm32_combophy_probe(struct platform_device *pdev)
- 						 combophy->irq_wakeup);
- 	}
- 
-+	if (of_property_present(dev->of_node, "st,ssc-on"))
-+		combophy->have_ssc = true;
-+
-+	if (!of_property_read_u32(dev->of_node, "st,rx-equalizer", &combophy->rx_eq)) {
-+		if (combophy->rx_eq > SYSCFG_COMBOPHY_CR4_RX0_EQ)
-+			return dev_err_probe(dev, combophy->rx_eq,
-+					     "Invalid value for rx0 equalizer\n");
-+	} else
-+		combophy->rx_eq = -1;
-+
-+	if (!of_property_read_u32(dev->of_node, "st,output-micro-ohms", &combophy->microohm))
-+		if (combophy->microohm < min_imp || combophy->microohm > max_imp)
-+			return dev_err_probe(dev, combophy->microohm,
-+					     "Invalid value for output ohm\n");
-+
-+	if (!of_property_read_u32(dev->of_node, "st,output-vswing-microvolt", &combophy->microvolt))
-+		if (combophy->microvolt < min_vswing || combophy->microvolt > max_vswing)
-+			return dev_err_probe(dev, combophy->microvolt,
-+					     "Invalid value for output vswing\n");
-+
- 	ret = devm_pm_runtime_enable(dev);
- 	if (ret)
- 		return dev_err_probe(dev, ret, "Failed to enable pm runtime\n");
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiAyMDI1LzEvMTMgMTc6MDIsIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gT24gTW9uLCBK
+YW4gMTMsIDIwMjUgYXQgMDQ6MDM6MDdQTSArMDgwMCwgWW9uZ3hpbmcgTW91IHdyb3RlOgo+PiBU
+aGlzIHNlcmllcyBpbnRyb2R1Y2VzIHN1cHBvcnQgdG8gZW5hYmxlIHRoZSBNb2JpbGUgRGlzcGxh
+eSBTdWJzeXN0ZW0gKE1EU1MpCj4+ICwgRGlzcGxheSBQcm9jZXNzaW5nIFVuaXQgKERQVSksIERp
+c3BsYXlQb3J0IGNvbnRyb2xsZXIgZm9yIHRoZSBRdWFsY29tbQo+PiBRQ1M4MzAwIHRhcmdldC4g
+SXQgaW5jbHVkZXMgdGhlIGFkZGl0aW9uIG9mIHRoZSBoYXJkd2FyZSBjYXRhbG9nLCBjb21wYXRp
+YmxlCj4+IHN0cmluZywgYW5kIHRoZWlyIFlBTUwgYmluZGluZ3MuCj4+Cj4+IFNpZ25lZC1vZmYt
+Ynk6IFlvbmd4aW5nIE1vdSA8cXVpY195b25nbW91QHF1aWNpbmMuY29tPgo+PiAtLS0KPj4gQ2hh
+bmdlcyBpbiB2MzpGaXhlZCByZXZpZXcgY29tbWVudHMgZnJvbSBLcnp5c3p0b2YsIERtaXRyeS4K
+Pj4gLSBGaXggdGhlIG1pc3Npbmcgc3BhY2UgaXNzdWUgaW4gY29tbWl0IG1lc3NhZ2UuW0tyenlz
+enRvZl0KPj4gLSBTZXBhcmF0ZSB0aGUgcGF0Y2ggZm9yIHRoZSBwaHkgZnJvbSB0aGlzIHNlcmll
+cy5bRG1pdHJ5XQo+PiAtIFJlbW92ZSB1bnVzZWQgZGVwZW5kZW5jaWVzIGFuZCB1cGRhdGUgaW4g
+dGhlIGNvdmVyIGxldHRlci5bRG1pdHJ5XVtLcnp5c3p0b2ZdCj4+IC0gTGluayB0byB2MjogaHR0
+cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDI0MTIyNi1tZHNzZHRfcWNzODMwMC12Mi0wLWFjYmEw
+ZGI1MzNjZUBxdWljaW5jLmNvbQo+Pgo+PiBDaGFuZ2VzIGluIHYyOkZpeGVkIHJldmlldyBjb21t
+ZW50cyBmcm9tIEtyenlzenRvZiwgRG1pdHJ5LCBSb2IuCj4+IC0gRGVjb3VwbGUgdGhlIGRldmlj
+ZXRyZWUgY2hhbmdlcyBmcm9tIHRoaXMgc2VyaWVzLltEbWl0cnldW0tyenlzenRvZl0KPj4gLSBE
+cm9wIHRoZSBkcHUgZHJpdmVyIGNoYW5nZXMgYW5kIHJldXNlIFNBODc3NVAgRFBVIGRyaXZlci5b
+RG1pdHJ5XQo+PiAtIEZpeCBjb21waWxhdGlvbiBpc3N1ZXMgaW4gTURTUyBiaW5kaW5ncy5bUm9i
+XVtLcnp5c3p0b2ZdCj4+IC0gQ29ycmVjdCBmb3JtYXR0aW5nIGVycm9ycyBhbmQgcmVtb3ZlIHVu
+bmVjZXNzYXJ5IHN0YXR1cyBpbiBNRFNTCj4+ICAgIGJpbmRpbmdzLltLcnp5c3p0b2ZdCj4+IC0g
+QWRkIHRoZSB0aGUgbmVjZXNzYXJ5IGluZm9ybWF0aW9uIGluIE1EU1MgY2hhbmdlcyBjb21taXQg
+bXNnLltEbWl0cnldCj4+IC0gUmViYXNlIE1EU1MgZHJpdmVyIGNoYW5nZXMgdG8gaHR0cHM6Ly9s
+b3JlLmtlcm5lbC5vcmcvZHJpLWRldmVsLwo+PiAgICAyMDI0MTEyNy1tc20tbWRzcy11YndjLXYz
+LTAtOTc4MmE3YzJiMDIzQGxpbmFyby5vcmcvLltEbWl0cnldCj4+IC0gUGFja2FnZSB0aGUgRGlz
+cGxheVBvcnQgY29udHJvbGxlciBhbmQgZURQIFBIWSBiaW5kaW5ncyBkb2N1bWVudCB0bwo+PiAg
+ICB0aGlzIHBhdGNoIHNlcmllcy4KPj4gLSBDb2xsZWN0aW5nIE1EU1MgY2hhbmdlcyByZXZpZXdk
+LWJ5IERtaXRyeS4KPj4gLSBSZXVzZSB0aGUgc2E4Nzc1cCBlRFAgUEhZIGFzIGEgZmFsbGJhY2sg
+Y29tcGF0LltEbWl0cnldCj4+IC0gUmV1c2UgdGhlIHNtODY1MCBEUCBjb250cm9sbGVyIGFzIGEg
+ZmFsbGJhY2sgY29tcGF0LltEbWl0cnldCj4+IC0gTGluayB0byB2MTogaHR0cHM6Ly9sb3JlLmtl
+cm5lbC5vcmcvci8yMDI0MTEyNy1tZHNzX3FjczgzMDAtdjEtMC0yOWIyYzNlZTk1YjhAcXVpY2lu
+Yy5jb20KPj4gfgo+Pgo+PiAtLS0KPj4gWW9uZ3hpbmcgTW91ICg0KToKPj4gICAgICAgIGR0LWJp
+bmRpbmdzOiBkaXNwbGF5L21zbTogRG9jdW1lbnQgdGhlIERQVSBmb3IgUUNTODMwMAo+PiAgICAg
+ICAgZHQtYmluZGluZ3M6IGRpc3BsYXk6IG1zbTogZHAtY29udHJvbGxlcjogZG9jdW1lbnQgUUNT
+ODMwMCBjb21wYXRpYmxlCj4+ICAgICAgICBkdC1iaW5kaW5nczogZGlzcGxheS9tc206IERvY3Vt
+ZW50IE1EU1Mgb24gUUNTODMwMAo+IAo+IElzIHRoZXJlIGFueSByZWFzb24gZm9yIG5vdCB1c2lu
+ZyBhIGNvbW1vbiBzdHlsZSBmb3IgdGhlc2UgdGhyZWUKPiBjb21taXRzPwo+IApIae+8jGFjdHVh
+bGx5LCBmb3IgdGhlIGRwLWNvbnRyb2xsZXIueWFtZWwgZmlsZSwgSSBqdXN0IG5vdGljZWQgdGhh
+dCB0aGUgCnByZXZpb3VzIHBsYXRmb3JtcyBhZGRlZCB0aGUgZHQtYmluZGluZyBmaWxlcyB1c2lu
+ZyB0aGlzIGZvcm1hdC4gU28sIEkgCmZvbGxvd2VkIHRoZWlyIGZvcm1hdCB0byB3cml0ZSB0aGUg
+Y29tbWl0IG1lc3NhZ2UuIFN1Y2ggYXMgZHQtYmluZGluZ3MgCmZvciBzbTg2NTAvc204MTUwL3Nt
+ODI1MC4uLgo+PiAgICAgICAgZHJtL21zbTogbWRzczogQWRkIFFDUzgzMDAgc3VwcG9ydAo+Pgo+
+PiAgIC4uLi9iaW5kaW5ncy9kaXNwbGF5L21zbS9kcC1jb250cm9sbGVyLnlhbWwgICAgICAgIHwg
+ICA0ICsKPj4gICAuLi4vYmluZGluZ3MvZGlzcGxheS9tc20vcWNvbSxxY3M4MzAwLW1kc3MueWFt
+bCAgICB8IDI0NCArKysrKysrKysrKysrKysrKysrKysKPj4gICAuLi4vYmluZGluZ3MvZGlzcGxh
+eS9tc20vcWNvbSxzbTg2NTAtZHB1LnlhbWwgICAgICB8ICAxMyArLQo+PiAgIGRyaXZlcnMvZ3B1
+L2RybS9tc20vbXNtX21kc3MuYyAgICAgICAgICAgICAgICAgICAgIHwgIDExICsKPj4gICA0IGZp
+bGVzIGNoYW5nZWQsIDI2OCBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+PiAtLS0KPj4g
+YmFzZS1jb21taXQ6IDJiODg4NTFmNTgzZDNjNGU0MGJjZDQwY2ZlMTk2NTI0MWVjMjI5ZGQKPj4g
+Y2hhbmdlLWlkOiAyMDI0MTIyNC1tZHNzZHRfcWNzODMwMC0xMWI3ODgzZGM2MGIKPj4KPj4gQmVz
+dCByZWdhcmRzLAo+PiAtLSAKPj4gWW9uZ3hpbmcgTW91IDxxdWljX3lvbmdtb3VAcXVpY2luYy5j
+b20+Cj4+Cj4gCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtcGh5Cg==
