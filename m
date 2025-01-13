@@ -4,77 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4134FE77188
-	for <linux-phy@archiver.kernel.org>; Sun, 12 Jan 2025 09:15:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0522CE77188
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Jan 2025 01:50:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w1CvgsRwXvS3MjxUx/c+ACpoCxCAjkETNwSY7ys5S2Y=; b=Ft4BX9M0LlFhDo
-	m38xfayCvh0V5TwxSV6oZTDkgm1hQUmnFmglXMF4RFznC2V1pb01GVF5dQTw1E8Z0PaB4snK0QARg
-	UXYDt+pYl2ANDTmGqo6WsSH9udMCHzH6+BcnPIhjtTHkVtbDv1MR1WN8Heg3MLgCPDHiH+zzSMANU
-	aIhzKnXajg7uVCYebNbKdHFimr5DkSKDbz1sagDANyA3/O+uWf2ddYuDLg8J42wv1AB00LMJLBiuh
-	rXONHye9wkAYgsZDfWyHmkg30aiVbZEhyROXkKPgxlcrSkWqaO4PA7TTImduzm2q0rbzzc1GDnd8M
-	BgTx/T2GZTXY4Jat6cgA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3GYZezWc3tiDQ1/9+NRvGBpzTSBkapIxH5leRc9dOhQ=; b=m+w7xITAQrPMIu
+	OWKAj0i2KpPs2O+7z7TeNajwpiLH+nrlhQR2VYpFALT3nVZMAHCrrrRvCBplCIYrGG6c3r8nNYNOn
+	sbJu2exiL8voPA1UHxUz3XEb/9oy2GceniNoPURuM9mDwJ8PZFJhpwSshW1OMiD5bV9CXAtGJQv6o
+	U5OoXtPpkz8GknJDGw1v8nn4x6CLaiaqyyojnD5sZ1Bwc8LVgcv1a8qHm65V0/kbi20wfijsfQ0OV
+	yXPoOI1od/7SK8fVn5NJkADPpchrfuCMPCwnFc4Wlx75aNWonFiKvXUlUwtrXssrAZKWhBFp/9+0Y
+	OCgJ4jEFdhOYRXn/wEoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWu4J-00000002Pdz-01tc;
-	Sun, 12 Jan 2025 09:15:39 +0000
-Received: from mail-m155110.qiye.163.com ([101.71.155.110])
+	id 1tX9bM-00000003mH6-0C2D;
+	Mon, 13 Jan 2025 01:50:48 +0000
+Received: from out162-62-57-49.mail.qq.com ([162.62.57.49])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWtwp-00000002Oec-06Ef;
-	Sun, 12 Jan 2025 09:07:56 +0000
-Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 870092c4;
-	Sun, 12 Jan 2025 17:07:50 +0800 (GMT+08:00)
-From: Damon Ding <damon.ding@rock-chips.com>
-To: heiko@sntech.de
-Cc: robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	rfoss@kernel.org,
-	vkoul@kernel.org,
-	sebastian.reichel@collabora.com,
-	cristian.ciocaltea@collabora.com,
-	l.stach@pengutronix.de,
-	dmitry.baryshkov@linaro.org,
-	andy.yan@rock-chips.com,
-	hjc@rock-chips.com,
-	algea.cao@rock-chips.com,
-	kever.yang@rock-chips.com,
-	dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
+	id 1tX9bI-00000003mGG-0VLR
+	for linux-phy@lists.infradead.org;
+	Mon, 13 Jan 2025 01:50:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foxmail.com;
+	s=s201512; t=1736733028;
+	bh=1goHgdIVtW8Eibm4BR5XgITgrRQoLj+Rl3ISwmyHRo0=;
+	h=From:To:Cc:Subject:Date;
+	b=naWyu7alSacVmHvU5V7bfKStUOhnj1YOJpkE1+P2doxQxP/t6+36YmerBC8nzF/30
+	 He8Wi0rB7P/Uk98PHEDzC9XnHNQUPKZo1yryZ7VpEfJutMzSGsrTctmYUFpk+ACgeK
+	 r+nUoC6h3SFLpcFyx8W400zliPAYc4w6Z6Pl4RN0=
+Received: from localhost.localdomain ([116.128.244.169])
+	by newxmesmtplogicsvrszc13-0.qq.com (NewEsmtp) with SMTP
+	id C6F1D802; Mon, 13 Jan 2025 09:49:47 +0800
+X-QQ-mid: xmsmtpt1736732987tlnicdyyr
+Message-ID: <tencent_0B8867EE08AA1E4818AFCD13C63913D7C507@qq.com>
+X-QQ-XMAILINFO: NhUkPfKlCtQw1LcvAHNy2LFYdmigRykKButUTi/h72vLRDRz83stPeYt9CbrIg
+	 IqXnKmHDwP1eJMoijiQvkpY2zWcDBVhTAGnZnJ/01V3ajbDVPTDHvVJMVRhAa37+wFaVrDUeFAwH
+	 Tha+o2TcjCqLZzmct3wua9uprQ389rotU1eeCtRnMBNZ5oUR9yWmjJ1fZnzgbhWqIUckPj4/e8GT
+	 wAdOUocRTxqTypi7g2wva5AIHF58STz9qgG0v9W7Wu4vxL9ubL9Otty5UUPuGmZRHjghmsu28Btw
+	 t3Akp87jPInF1DbqbepwARufR9vvqZKe+pYQooDwQO5vGcgQpapxHyVf5GTFJc18gemBEP6yKjAD
+	 N4oXSWo3f/ruoTpuoYuBg4fxu0AsTmTFETsRQgMjGrnGu7oSfZcuoc2y5Exo7PzBj7geHU5ZCypJ
+	 qwXWKg1cnJ0KbMA19mOwb/gVy8hLPMJt8nspFOIm+iw0zfEWAZmCZ91EcHJg11AyzIbjrFf9TOQt
+	 XPfqeePCgPMaOSQ74xZMkfDaBdnmmctPEXCy/2CFZXp6vOS7Buz4ktjsanmR/LyESUOx1OqKY+fR
+	 KPNPn90xPl0zg2b+FJdag4IOUH2Z63yRLMjnCU7tk0Nje2FvvsPQTzsIIhcps5EpMwV0Wt4ddVY7
+	 wd2oE5ERWrdx2znplqG2ih8aEo8OvKKHJkcN2l2UIoQKJp7Bl6PPtZJHqS2GeLOd5idZbY4e0/RX
+	 i7+wGZ9OTupTOmShSeL8soYOUtR1WTdEekjRBywl51z37UE75q4e4CLy1EZdPDhWeSbrhBpoMBAN
+	 ZoHeopD2xRHTX4TK/J0mpEbkzey4hvt+ACdsuC4WdHZYaIIGoD0izi4V0QecwVkSnag3yq9Vt0rI
+	 XpDdKSd7WhI5NhsKQSZtgA8LFzt1Sz5bE01eErE+zcQ6WxmIlx1xRMqbpeTk7vHMseq321avtyND
+	 lkNchnXss=
+X-QQ-XMRINFO: NI4Ajvh11aEj8Xl/2s1/T8w=
+From: xiaopeitux@foxmail.com
+To: vkoul@kernel.org,
+	aford173@gmail.com,
 	linux-phy@lists.infradead.org,
-	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v1 6/6] arm64: dts: rockchip: Fix label name of hdptxphy for RK3588
-Date: Sun, 12 Jan 2025 17:07:14 +0800
-Message-Id: <20250112090714.1564158-7-damon.ding@rock-chips.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250112090714.1564158-1-damon.ding@rock-chips.com>
-References: <20250112090714.1564158-1-damon.ding@rock-chips.com>
+	linux-kernel@vger.kernel.org,
+	geert@linux-m68k.org
+Cc: Pei Xiao <xiaopei01@kylinos.cn>
+Subject: [PATCH V4] phy: freescale: fsl-samsung-hdmi: fix build error in fsl_samsung_hdmi_phy_configure_pll_lock_det
+Date: Mon, 13 Jan 2025 09:49:45 +0800
+X-OQ-MSGID: <09d7d47f579b9e820b7fddcb80cf0457361fb482.1736732159.git.xiaopei01@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQkJKHlYdTk8dGkwYGBhPSkhWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
-	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a9459c5010303a3kunm870092c4
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PAg6KAw*NjIcEwNWPR4cIRVW
-	OBgaCz9VSlVKTEhNTUxJQ0xJSEhLVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFDQkJKNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=MNfS7f15kfvxqcJsh3xk5fBvH8/HNkihvMI7cAOqa8dmdTCCFvlJBojf/RL3z9Q9DmLgKbHno5ZWdKkssADtT1QL3BHyWbN6Gds8I+tC+e1k26L1M9+GyecjkjTAquPTDy4igZwsqhwkpnrHEswKvi8ZaECESr8qIBFJ1D5/WJk=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=IjGLkCUQ2XzrpIbV9eAflga8WE0m923sOKSopB0a3Xg=;
-	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250112_010755_313896_37C81A06 
-X-CRM114-Status: UNSURE (   9.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250112_175045_051686_2D4FE70C 
+X-CRM114-Status: GOOD (  10.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,271 +80,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The hdptxphy is a combo transmit-PHY for HDMI2.1 TMDS Link, FRL Link, DP
-and eDP Link. Therefore, it is better to name it hdptxphy0 other than
-hdptxphy_hdmi0, which will be referenced by both hdmi0 and edp0 nodes.
-
-Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
----
- arch/arm64/boot/dts/rockchip/rk3588-base.dtsi                 | 4 ++--
- arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-evb.dts        | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-genbook.dts    | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dts              | 2 +-
- .../boot/dts/rockchip/rk3588-friendlyelec-cm3588-nas.dts      | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-jaguar.dts                | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-nanopc-t6.dtsi            | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-orangepi-5-plus.dts       | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts               | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588-tiger-haikou.dts          | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-coolpi-4b.dts            | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-indiedroid-nova.dts      | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-nanopi-r6.dtsi           | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-odroid-m2.dts            | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-orangepi-5.dtsi          | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts              | 2 +-
- arch/arm64/boot/dts/rockchip/rk3588s-rock-5c.dts              | 2 +-
- 17 files changed, 18 insertions(+), 18 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
-index a337f3fb8377..7e125897b0cd 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-base.dtsi
-@@ -1386,7 +1386,7 @@ hdmi0: hdmi@fde80000 {
- 			     <GIC_SPI 172 IRQ_TYPE_LEVEL_HIGH 0>,
- 			     <GIC_SPI 360 IRQ_TYPE_LEVEL_HIGH 0>;
- 		interrupt-names = "avp", "cec", "earc", "main", "hpd";
--		phys = <&hdptxphy_hdmi0>;
-+		phys = <&hdptxphy0>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&hdmim0_tx0_cec &hdmim0_tx0_hpd
- 			     &hdmim0_tx0_scl &hdmim0_tx0_sda>;
-@@ -2806,7 +2806,7 @@ dmac2: dma-controller@fed10000 {
- 		#dma-cells = <1>;
- 	};
- 
--	hdptxphy_hdmi0: phy@fed60000 {
-+	hdptxphy0: phy@fed60000 {
- 		compatible = "rockchip,rk3588-hdptx-phy";
- 		reg = <0x0 0xfed60000 0x0 0x2000>;
- 		clocks = <&cru CLK_USB2PHY_HDPTXRXPHY_REF>, <&cru PCLK_HDPTX0>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-evb.dts b/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-evb.dts
-index 9d525c8ff725..9eda69722665 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-evb.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-evb.dts
-@@ -129,7 +129,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-genbook.dts b/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-genbook.dts
-index 92f0ed83c990..d1be72eb63a4 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-genbook.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-coolpi-cm5-genbook.dts
-@@ -166,7 +166,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dts
-index d6e464cdc536..094235d22cd1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dts
-@@ -328,7 +328,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-friendlyelec-cm3588-nas.dts b/arch/arm64/boot/dts/rockchip/rk3588-friendlyelec-cm3588-nas.dts
-index b3a04ca370bb..8171fbfd819a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-friendlyelec-cm3588-nas.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-friendlyelec-cm3588-nas.dts
-@@ -335,7 +335,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-jaguar.dts b/arch/arm64/boot/dts/rockchip/rk3588-jaguar.dts
-index 90f823b2c219..ef56380530f9 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-jaguar.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-jaguar.dts
-@@ -303,7 +303,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-nanopc-t6.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-nanopc-t6.dtsi
-index cb350727d116..0d9b5020acc0 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-nanopc-t6.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-nanopc-t6.dtsi
-@@ -360,7 +360,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-orangepi-5-plus.dts b/arch/arm64/boot/dts/rockchip/rk3588-orangepi-5-plus.dts
-index 9f5a38b290bf..f14e96d96207 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-orangepi-5-plus.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-orangepi-5-plus.dts
-@@ -296,7 +296,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
-index d597112f1d5b..86a9f2f35e66 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
-@@ -220,7 +220,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-tiger-haikou.dts b/arch/arm64/boot/dts/rockchip/rk3588-tiger-haikou.dts
-index 3187b4918a30..795d8175e654 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-tiger-haikou.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-tiger-haikou.dts
-@@ -189,7 +189,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-coolpi-4b.dts b/arch/arm64/boot/dts/rockchip/rk3588s-coolpi-4b.dts
-index 9c394f733bbf..f471baca6d31 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-coolpi-4b.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-coolpi-4b.dts
-@@ -236,7 +236,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-indiedroid-nova.dts b/arch/arm64/boot/dts/rockchip/rk3588s-indiedroid-nova.dts
-index 4a3aa80f2226..74a4f03e05e3 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-indiedroid-nova.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-indiedroid-nova.dts
-@@ -278,7 +278,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-nanopi-r6.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s-nanopi-r6.dtsi
-index c9749cb50076..92f5d3d7dde3 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-nanopi-r6.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-nanopi-r6.dtsi
-@@ -251,7 +251,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-odroid-m2.dts b/arch/arm64/boot/dts/rockchip/rk3588s-odroid-m2.dts
-index 8f034c6d494c..1463bd36b1b2 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-odroid-m2.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-odroid-m2.dts
-@@ -264,7 +264,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-orangepi-5.dtsi b/arch/arm64/boot/dts/rockchip/rk3588s-orangepi-5.dtsi
-index d86aeacca238..9e16960b8705 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-orangepi-5.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-orangepi-5.dtsi
-@@ -197,7 +197,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts b/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts
-index 70a43432bdc5..676cc4fec269 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-rock-5a.dts
-@@ -334,7 +334,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-rock-5c.dts b/arch/arm64/boot/dts/rockchip/rk3588s-rock-5c.dts
-index 9b14d5383cdc..bf74789e3f51 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588s-rock-5c.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3588s-rock-5c.dts
-@@ -278,7 +278,7 @@ hdmi0_out_con: endpoint {
- 	};
- };
- 
--&hdptxphy_hdmi0 {
-+&hdptxphy0 {
- 	status = "okay";
- };
- 
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogUGVpIFhpYW8gPHhpYW9wZWkwMUBreWxpbm9zLmNuPgoKRklFTERfUFJFUCgpIGNoZWNr
+cyB0aGF0IGEgdmFsdWUgZml0cyBpbnRvIHRoZSBhdmFpbGFibGUgYml0ZmllbGQsCmJ1dCB0aGUg
+aW5kZXggZGl2IGVxdWFscyB0byA0LGlzIG91dCBvZiByYW5nZS4KCndoaWNoIGdjYyBjb21wbGFp
+bnMgYWJvdXQ6CkluIGZ1bmN0aW9uIOKAmGZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3VyZV9w
+bGxfbG9ja19kZXTigJksCmlubGluZWQgZnJvbSDigJhmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25m
+aWd1cmXigJkgYXQKZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMg
+OjQ3MDoyOgouLy4vaW5jbHVkZS9saW51eC9jb21waWxlcl90eXBlcy5oOjU0MjozODogZXJyb3I6
+IGNhbGwgdG8g4oCYX19jb21waWxldGltZV9hc3NlcnRfNTM44oCZCmRlY2xhcmVkIHdpdGggYXR0
+cmlidXRlIGVycm9yOiBGSUVMRF9QUkVQOiB2YWx1ZSB0b28gbGFyZ2UgZm9yIHRoZSBmaWVsZAog
+IDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0aW1l
+X2Fzc2VydF8sCl9fQ09VTlRFUl9fKQogICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICBeCi4vLi9pbmNsdWRlL2xpbnV4L2NvbXBpbGVyX3R5cGVzLmg6NTIzOjQ6IG5v
+dGU6IGluIGRlZmluaXRpb24gb2YKbWFjcm8g4oCYX19jb21waWxldGltZV9hc3NlcnTigJkgNTIz
+IHwgICAgcHJlZml4ICMjIHN1ZmZpeCgpOwogICAgICB8ICAgIF5+fn5+fgouLy4vaW5jbHVkZS9s
+aW51eC9jb21waWxlcl90eXBlcy5oOjU0MjoyOiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8K
+4oCYX2NvbXBpbGV0aW1lX2Fzc2VydOKAmQogIDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNv
+bmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0aW1lX2Fzc2VydF8sCiBfX0NPVU5URVJfXykKClJFRzEy
+X0NLX0RJVl9NQVNLIG9ubHkgdHdvIGJpdCwgbGltaXQgZGl2IHRvIHJhbmdlIDB+MywKc28gYnVp
+bGQgZXJyb3Igd2lsbCBmaXguCgpGaXhlczogZDU2NzY3OWYyYjZhICgicGh5OiBmcmVlc2NhbGU6
+IGZzbC1zYW1zdW5nLWhkbWk6IENsZWFuIHVwIGZsZF90Z19jb2RlIGNhbGN1bGF0aW9uIikKU2ln
+bmVkLW9mZi1ieTogUGVpIFhpYW8gPHhpYW9wZWkwMUBreWxpbm9zLmNuPgoKQ2hhbmdsb2c6Ci0t
+LQpWNDogY2hhbmdlIHRvIHVzZSBpZiBzdGF0ZW1lbnQKVjM6IGNoYW5nZSB0byB1c2UgZG8td2hp
+bGUKVjI6IGNoYW5nZSB0byB1c2UgbG9naWNhbCBBTkQKLS0tCiBkcml2ZXJzL3BoeS9mcmVlc2Nh
+bGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYyB8IDExICsrKysrKysrKy0tCiAxIGZpbGUgY2hhbmdl
+ZCwgOSBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMv
+cGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jIGIvZHJpdmVycy9waHkvZnJlZXNj
+YWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMKaW5kZXggNWVhYzcwYTFlODU4Li4xYTA3OTA3NWRl
+NjcgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRt
+aS5jCisrKyBiL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCkBA
+IC0zMjUsNyArMzI1LDcgQEAgdG9fZnNsX3NhbXN1bmdfaGRtaV9waHkoc3RydWN0IGNsa19odyAq
+aHcpCiAJcmV0dXJuIGNvbnRhaW5lcl9vZihodywgc3RydWN0IGZzbF9zYW1zdW5nX2hkbWlfcGh5
+LCBodyk7CiB9CiAKLXN0YXRpYyB2b2lkCitzdGF0aWMgaW50CiBmc2xfc2Ftc3VuZ19oZG1pX3Bo
+eV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KHN0cnVjdCBmc2xfc2Ftc3VuZ19oZG1pX3BoeSAqcGh5
+LAogCQkJCQkgICAgY29uc3Qgc3RydWN0IHBoeV9jb25maWcgKmNmZykKIHsKQEAgLTM0MSw2ICsz
+NDEsOSBAQCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KHN0cnVj
+dCBmc2xfc2Ftc3VuZ19oZG1pX3BoeSAqcGh5LAogCQkJYnJlYWs7CiAJfQogCisJaWYgKHVubGlr
+ZWx5KGRpdiA9PSA0KSkKKwkJcmV0dXJuIC1FSU5WQUw7CisKIAl3cml0ZWIoRklFTERfUFJFUChS
+RUcxMl9DS19ESVZfTUFTSywgZGl2KSwgcGh5LT5yZWdzICsgUEhZX1JFRygxMikpOwogCiAJLyoK
+QEAgLTM2NCw2ICszNjcsOCBAQCBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xv
+Y2tfZGV0KHN0cnVjdCBmc2xfc2Ftc3VuZ19oZG1pX3BoeSAqcGh5LAogCSAgICAgICBGSUVMRF9Q
+UkVQKFJFRzE0X1JQX0NPREVfTUFTSywgMikgfAogCSAgICAgICBGSUVMRF9QUkVQKFJFRzE0X1RH
+X0NPREVfSElHSF9NQVNLLCBmbGRfdGdfY29kZSA+PiA4KSwKIAkgICAgICAgcGh5LT5yZWdzICsg
+UEhZX1JFRygxNCkpOworCisJcmV0dXJuIDA7CiB9CiAKIHN0YXRpYyB1bnNpZ25lZCBsb25nIGZz
+bF9zYW1zdW5nX2hkbWlfcGh5X2ZpbmRfcG1zKHVuc2lnbmVkIGxvbmcgZm91dCwgdTggKnAsIHUx
+NiAqbSwgdTggKnMpCkBAIC00NjcsNyArNDcyLDkgQEAgc3RhdGljIGludCBmc2xfc2Ftc3VuZ19o
+ZG1pX3BoeV9jb25maWd1cmUoc3RydWN0IGZzbF9zYW1zdW5nX2hkbWlfcGh5ICpwaHksCiAJd3Jp
+dGViKFJFRzIxX1NFTF9UWF9DS19JTlYgfCBGSUVMRF9QUkVQKFJFRzIxX1BNU19TX01BU0ssCiAJ
+ICAgICAgIGNmZy0+cGxsX2Rpdl9yZWdzWzJdID4+IDQpLCBwaHktPnJlZ3MgKyBQSFlfUkVHKDIx
+KSk7CiAKLQlmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KHBoeSwg
+Y2ZnKTsKKwlyZXQgPSBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0
+KHBoeSwgY2ZnKTsKKwlpZiAocmV0KQorCQlkZXZfZXJyKHBoeS0+ZGV2LCAicGl4Y2xvY2sgdG9v
+IGxhcmdlXG4iKTsKIAogCXdyaXRlYihSRUczM19GSVhfREEgfCBSRUczM19NT0RFX1NFVF9ET05F
+LCBwaHktPnJlZ3MgKyBQSFlfUkVHKDMzKSk7CiAKLS0gCjIuMjUuMQoKCi0tIApsaW51eC1waHkg
+bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
