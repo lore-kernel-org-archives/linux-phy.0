@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B4EDE77188
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 10:13:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6572E77188
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 10:24:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/PSZulSQWS2S2iVWMH5yqwe1ympL1OevmLqPGKcuJ7E=; b=1l9esjGmZOS8XZ
-	FdC+gTAXyuIdGmSmMB2e9zu4Dm0VIbVwaVI5JTHmFVffhsVf+VZ9ONLl7CoBy+gj8gaDjN26GoWn8
-	/9X/8K6M9/zeCOQKu7QqT4d64dNbkk2f4j3q6UceVHLXA/bfRqOiJh3ydtcqu18FFG+ClImowHcEP
-	MbUgerYzLi8uvMZUYPO39oixRtcNXEZ3emoDaGm6zEUr/1liH9cOTHXej63oewF05LraLGMonRbAE
-	b5H+K0ysnx3wyjZMRPTEnacusX9jsdcokQ73oD2ncrujdzaPxmCXW0bfoAxNJC0j4nCJpUvYtwUSh
-	YEf4vvyXZ9DsE98Ngtmw==;
+	List-Owner; bh=sTRE8+vfXRAe1rIe/egp7PkHAF9a6fqOxn392Q6dkWY=; b=4xBUq5TQgCsm/k
+	msGI8D0MpWXS9l4g+9A72YNN4u1c6qQy2Bao7RGaYZNHlY9Is8FOnW1esAD72sbZB4aiz8VqMlBO5
+	kh+zlwU2WFFSg7MZ+N3GJudsO26UE1GoFVGn1sQOxfz96FKyplYXYHJ7C4JsqOAbccg7+gABn5g6L
+	2b0YZpE1vcapHgFPifKY3CiTG+IGF7eKKXplPX5SbgZLs3ShsUoowqfoCHrsFjaqsGDqIj1/rMCqT
+	N2/ucmh/Cg/Zu1Xqu0bQw0uSOX0/3/En0tAHDWZnXnVtyZjAxdYzMr8cVxqoqaWOI4dBIkMNshKU6
+	reiDXxcy8lN2dCR8oe5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXdvc-000000083P7-3s9O;
-	Tue, 14 Jan 2025 10:13:45 +0000
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+	id 1tXe5d-000000085D9-2JNb;
+	Tue, 14 Jan 2025 10:24:05 +0000
+Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXduN-000000083Dz-1Ios
+	id 1tXe5b-000000085CH-0tIP
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Jan 2025 10:12:28 +0000
-Received: by mail-lj1-x234.google.com with SMTP id 38308e7fff4ca-303548a9361so37436171fa.0
-        for <linux-phy@lists.infradead.org>; Tue, 14 Jan 2025 02:12:26 -0800 (PST)
+	Tue, 14 Jan 2025 10:24:04 +0000
+Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-5401c52000dso5390797e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 14 Jan 2025 02:24:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736849545; x=1737454345; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1736850241; x=1737455041; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=c0Qrzgg2ua23heO+J/1apVMe+JOEnRWPI3Yz+eSCuMc=;
-        b=Qq0bAvujd/zsPBro7TIP9h7znAMENQspSS4gO+DLdTgna/FYtmYxMVwBDH63p3C788
-         XTwaupUZKTOgNBs3wNf8vv5Xa5+IPOpk0JjtWDzadtYlgyDojfX3suhNU9P1ymCb0ebI
-         NtF5DJZcAXWfX3VO2ILAV3K/ij/Rzd41IV9gx39l7pClzZNoY1gsRa0zCK7ck3MHfiSQ
-         5145gIx80BQ5eTMkyA6efxqWI7zFyyn00pgwGuFjtOCBw27lj6spiPG58byPD8d0RYF3
-         bDdGL/z73mzwqY8f2h8e+wOWzA3Fpk6Yrg7CRoL1C2+W4gNw0fBbsfOaliYryFPqyB0C
-         4pLA==
+        bh=3oI6vi2GoQLTi0BDTazm+sSUfItEUA/br8Yh1LQsmUM=;
+        b=tKsmxjOJ0izEd6Hbn7/C+yhNNGt/cFwI9/fZfzGvKuhRE1In2V7XGjoSWUePGCMRrS
+         5RGewYNkn4q2cNxabtEL2xxbLWOkK5dJ9yM4iyNB0wtIcJ9JPWSQlxWu0k38VvvEJf70
+         ArBlZOae8t7nAr+lgfe+t/3wgCD5gGjZ2yM0kWu2Ib3RzyZpYfUAI9gZ5KEfKGILIdg5
+         0Px0BOLr4l1WQKXv/27AIRcIEkxh/cNacCES13MYiChwcq5bETOkA9UWkv05iyg9gFFv
+         9pLtLOxXIrbW61g+h+uVveZZb+MZRUkP5yEqjp/QaFJBKS1ChvvX8w0EyZHgNvlo0N5x
+         VL4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736849545; x=1737454345;
+        d=1e100.net; s=20230601; t=1736850241; x=1737455041;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=c0Qrzgg2ua23heO+J/1apVMe+JOEnRWPI3Yz+eSCuMc=;
-        b=LTFwKufvJoE/jmlUI53a9smCeNP60+QfHzw6hWBWUKEUvy0pAAowp8AyeJALaC7RtR
-         ElJTzF3RY2gKWfpIgQHbOyUkgrBYvrXesXDOZT/PlrkuUkaZYrSmv4UDMvjZuHj4A0c1
-         Gk5H0uLCWXKSeVikXDDhNK02yLegfAwKc5XDlpR6dgyZUZQeZ41mQ3aM73XsVWseOjlC
-         mrfapySudd0wEFsarArQlsQlGONiOo91fB/7Ss5F8/eKZa1/A1bRajVPw9DWWOm/HULK
-         JURtgxS23waKT6bECTtT8MyITvALjOXvTcO0h72Rhr8mLk1+DSdziZe4QuXhg1HilHwB
-         EkXQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWfPBRcZGQ/L/BvRKojjoFvta5iLatkTkx+1JL05peQzc9YIL7j4Xaeke9Wnz62uP0BZ3TlxEtdt7c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyahUTBWmZEGix+5x7Suq/rYT5qKLb1/60GQTBhHrMSHG2SgEmG
-	facG8ozashI2aYdYjKTqXZXN3xou9ZL6bPdgG7Kebi0oPSktSTTdPZC1VA3hjI4=
-X-Gm-Gg: ASbGncuFkkJsZNjTmOyoPwE2eKJr6MzCe9MtxpyPLIn1Y3K1tFj7MpXVehbTBfcRUIC
-	yAAuJ72fiBoZaaH4FWlJmUM1tkXynkpbWdqceFkJjkCf5V+dHAVQpwUnZ3yy/Df9BNYcNTvbDpJ
-	faEGQSKLEFClRaTOoPdv5Tg+7Pcol8BIHNXSsaRxyIyFmy6Bc9SKvX7dc1eFKKjjR31Un5Agv3r
-	Po8k3I8LpTmldom3X61yCEoiO+85LdO97Pc3vlL980d462XmMfBuzSJbBn1/iTFbsLamG41N9Ql
-	LEDtk58xMlvzExU1w2yqUm7gp8LDytcSXkwf
-X-Google-Smtp-Source: AGHT+IGvwMKyxTPc6XYDYWpAagsTLJobLBRBIaI1VJFHrDhlbJEBvgyteqb/2DjPirIxW8WefT3Djg==
-X-Received: by 2002:a05:6512:31c9:b0:542:7217:361a with SMTP id 2adb3069b0e04-542845af299mr7698904e87.10.1736849545347;
-        Tue, 14 Jan 2025 02:12:25 -0800 (PST)
+        bh=3oI6vi2GoQLTi0BDTazm+sSUfItEUA/br8Yh1LQsmUM=;
+        b=bSDzxcSEQsNpdHd7hTVP8qL5F4FGVZFAHG3iaUIwHxYfh3Vd4S8d1nf+Nvw1w9jJ0S
+         YuPIFnaTmqjxzgCsDHacPy6HueqbyjLE5arCe1wzi8psE/gY13VO1hNpU/VXCgAegTh/
+         ouqulBJtXT7VB0cI4N4eiyjEAPT6hsIgwItOSRw2lvfcMJzrhf+eKqvcbViqsysctAgl
+         CsUKap7yS9xhGyPdhVliSc4rzfSBNnfxwMuZj0C5PphWK8Ifzqhdloxnlak7EF9vZOVN
+         Qsd7P1EW8hFtLojXqBRuXWV8StUcPy+zMLN20iyg+aPKg0TSlXh5F7VGcZuZnR+QCe8E
+         8CPQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWOYi2xEAVijRdqc0UYLQw4GqNmKlmoKoO0B50Oxzg/cOyVfN4AjVTQi8RZNnwp46UVUbmY/RyNW/Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw+EuqOc/3ZPfQqQAPbjUB8m6Y3Mf/b2GXMvXA4iLnMJJIxQntq
+	PHqc/25ElzHHnpO8zZ+oQc02G4xwrfGw6Krpaw2fKfDTq6gySZIjN+3CTOWw2uU=
+X-Gm-Gg: ASbGncsnNIR5bU1AB/tIruN9LiXz8PTyAUDFXiWu2HfyPWLc6u4m4XQlf2LVBfeIV3D
+	97aqLt1glTDLRJ1K1De6lQei9hxGSseEq+p6iHe5jU+a8160j3+uBE7HR6L+Us6vPmyjxkuJZbV
+	fDSpvA03Yh7YoHYW/qll8T35IZVfZsEn9/M037w6SO+9mWn9D/6TIwdMn96qk/0XrJ36Ff4iXN7
+	pMbGk1fBUmVUVxJuZ5Vfy6oejhWKewiNG8lKflpiVTx+2MEwAsEQ+05L85iBQHWZCwLYbQ47XNI
+	x4uszlb8wGVARzaWG/RCX8iUVn09HMYXap8Y
+X-Google-Smtp-Source: AGHT+IEKsRHi3ewHQ3flyKmAEggsmIc5cWlq0d+tu6iEmD2+GVjY0LyFN7q1yTTso4t8mLEgCs7lPQ==
+X-Received: by 2002:a05:6512:33ca:b0:542:1b63:2e52 with SMTP id 2adb3069b0e04-542845a7137mr6460348e87.6.1736850241188;
+        Tue, 14 Jan 2025 02:24:01 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428be49f0bsm1625315e87.36.2025.01.14.02.12.22
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428bea8504sm1620977e87.138.2025.01.14.02.23.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jan 2025 02:12:24 -0800 (PST)
-Date: Tue, 14 Jan 2025 12:12:21 +0200
+        Tue, 14 Jan 2025 02:23:59 -0800 (PST)
+Date: Tue, 14 Jan 2025 12:23:57 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Melody Olvera <quic_molvera@quicinc.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -80,17 +80,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 2/7] dt-bindings: phy: Add the M31 based eUSB2 PHY
- bindings
-Message-ID: <a42wtus7y72mt5adklbwg2hjbuayxkeucs7t4xuzmxyag2mx7b@6wlsomzj4gha>
+Subject: Re: [PATCH 4/7] phy: qcom: qmp-combo: Add new PHY sequences for
+ SM8750
+Message-ID: <tcm2hn7rpzaazntp5r7ag466ynacexnke43e6ypm4q5mrrlkdb@nem3gzib2l2v>
 References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
- <20250113-sm8750_usb_master-v1-2-09afe1dc2524@quicinc.com>
+ <20250113-sm8750_usb_master-v1-4-09afe1dc2524@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250113-sm8750_usb_master-v1-2-09afe1dc2524@quicinc.com>
+In-Reply-To: <20250113-sm8750_usb_master-v1-4-09afe1dc2524@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_021227_354554_0B55484C 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20250114_022403_298457_152F73A7 
+X-CRM114-Status: GOOD (  16.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,48 +107,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 13, 2025 at 01:52:08PM -0800, Melody Olvera wrote:
+On Mon, Jan 13, 2025 at 01:52:10PM -0800, Melody Olvera wrote:
 > From: Wesley Cheng <quic_wcheng@quicinc.com>
 > 
-> On SM8750, the M31 eUSB2 PHY is being used to support USB2. Add the
-> binding definition for the PHY driver.
+> Add new register offsets and PHY values for SM8750. Some of the previous
+> definitions can be leveraged from older PHY versions as offsets within
+> registers have not changed. This also updates the PHY sequence that is
+> recommended after running hardware characterization.
 > 
 > Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
 > Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
 > ---
->  .../bindings/phy/qcom,m31-eusb2-phy.yaml           | 84 ++++++++++++++++++++++
->  1 file changed, 84 insertions(+)
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 198 ++++++++++++++++++++++++++++++
+>  1 file changed, 198 insertions(+)
 > 
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/qcom,sm8750-gcc.h>
-> +    #include <dt-bindings/clock/qcom,rpmh.h>
-> +    #include <dt-bindings/clock/qcom,sm8750-tcsr.h>
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index b09fa00e9fe7db8d97b7179ee15d3f07fe578b0c..823a60029ea6acbd1f0f8c7d27aaa58de39ed758 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -1471,6 +1471,139 @@ static const struct qmp_phy_init_tbl x1e80100_usb43dp_pcs_tbl[] = {
+>  	QMP_PHY_INIT_CFG(QPHY_V6_N4_PCS_EQ_CONFIG5, 0x10),
+>  };
+>  
+> +static const struct qmp_phy_init_tbl sm8750_usb3_serdes_tbl[] = {
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0xc0),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x02),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x16),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x36),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x16),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x41),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x41),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MSB_MODE1, 0x00),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE1, 0x55),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE1, 0x75),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE1, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE1, 0x25),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE1, 0x02),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0x5c),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x0f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x5c),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0f),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0, 0xc0),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x02),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x08),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x1a),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x41),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MSB_MODE0, 0x00),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0x55),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x75),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE0, 0x25),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE0, 0x02),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0a),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x62),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER2, 0x02),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_BUF_ENABLE, 0x0c),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x1a),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_CFG, 0x14),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0x20),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_1, 0xb6),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_2, 0x4a),
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_3, 0x36),
 
-This a typical comment, please actually update your internal
-documentation: don't use GCC's and other clock controller's bindings in
-examples for other blocks.
+The only difference from sm8550_usb3_serdes_tbl, it has 0x37 here.
 
+> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADDITIONAL_MISC, 0x0c),
+> +};
 > +
-> +    usb_1_hsphy: phy@88e3000 {
-> +        compatible = "qcom,sm8750-m31-eusb2-phy";
-> +        reg = <0x88e3000 0x29c>;
+
+[...]
+
+> @@ -1781,6 +1914,22 @@ static const struct qmp_combo_offsets qmp_combo_offsets_v5 = {
+>  	.dp_dp_phy	= 0x2200,
+>  };
+>  
+> +static const struct qmp_combo_offsets qmp_combo_offsets_v8 = {
+
+Why is it v8? Is the actual PHY also v8 rather than v6?
+
+> +	.com		= 0x0000,
+> +	.txa		= 0x1400,
+> +	.rxa		= 0x1600,
+> +	.txb		= 0x1800,
+> +	.rxb		= 0x1a00,
+> +	.usb3_serdes	= 0x1000,
+> +	.usb3_pcs_misc	= 0x1c00,
+> +	.usb3_pcs	= 0x1e00,
+> +	.usb3_pcs_usb	= 0x2100,
+> +	.dp_serdes	= 0x3000,
+> +	.dp_txa		= 0x3400,
+> +	.dp_txb		= 0x3800,
+> +	.dp_dp_phy	= 0x3c00,
+> +};
 > +
-> +        clocks = <&tcsrcc TCSR_USB2_CLKREF_EN>;
-> +        clock-names = "ref";
-> +
-> +        resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
-> +
-> +        #phy-cells = <0>;
-> +
-> +        vdd-supply = <&vreg_l2d_0p88>;
-> +        vdda12-supply = <&vreg_l3g_1p2>;
-> +
-> +    };
-> 
-> -- 
-> 2.46.1
-> 
+>  static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
+>  	.offsets		= &qmp_combo_offsets_v3,
+>  
 
 -- 
 With best wishes
