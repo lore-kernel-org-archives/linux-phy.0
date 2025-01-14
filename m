@@ -4,97 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95E06C02184
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 11:09:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97F4BC02184
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 11:20:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ym01PylRWVdltUrRskq4+CKnPuK3Y9TwYbYLacfDNLY=; b=H1sxONQ4Yef9EO
-	oXoQA0EKEQlvFrCT+gxSbo3c09rc9EQNAH/h7jV/1QOc1/JMZ3wp5OPMLxIbLOIB1rG8h1FLsT3za
-	lm8EMWeW9kl3EFhsHt3oDARuF5n7ZzwXsoWiBKzU8+RvNBwGH8CnHY2P6PpBdtRGzAn0yekhS/Gwe
-	EkY/ltur2/P2WPgVceE9huTUZpC1FsrqSH0qkYK6OOs1BJZKXTCgHrOZRG3qhJFPeMGMwESlKwum3
-	ahNMEvgg3NPR8zTFELTsrsZrXwFkOOykJX5VLdI3SVg8iKwBTOqBqK4E+hEh2oqbmRYfsBH/M4qin
-	8Oidt0fvXy4Ud+G7mu8A==;
+	List-Owner; bh=UQzDJtT7sT99TyPUcbwC8HzUGSCRn3usfB7kLuBi4SY=; b=nv9B+pMZQnCc13
+	3planJw/VDJrUmbK5L6OHDWCxS9SE2X/L4TIwvcn0riQFk8H2NEVYJOYkZoomiUg3vZxJ3/xSGoks
+	2El3hG5sw32hEf7y9XhHfGEJm8yNINe04J6VAUUV/TVqoMZv6oNc7dYvtpKF5+JOi9N5RoHQ5qkSk
+	O3WHFglhThMyb5Yl0TrSv9L3UVaAmKQ+1xrfE/aMw13wkaxpfru0YfnQSVNf22/2REMpArS90dG8h
+	UB4qtnWxt+bFe+eEOTQ5RfOA1+xyPrwOpM+GNh4ehJx4EXkjPEciZUKQ7xkRa2ihGXVQWzruBU2Dc
+	4QUzYaB8uP1mfST/UzaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXene-00000008D3c-0HVh;
-	Tue, 14 Jan 2025 11:09:34 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1tXexs-00000008EFL-1Xyw;
+	Tue, 14 Jan 2025 11:20:08 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXenZ-00000008D2Z-3271
+	id 1tXexq-00000008EEt-0wdV
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Jan 2025 11:09:31 +0000
-Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-5401b7f7141so4668122e87.1
-        for <linux-phy@lists.infradead.org>; Tue, 14 Jan 2025 03:09:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736852968; x=1737457768; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=lSEEVDHkJF+59l08MDf/HdvOaR7SqGhIx6AtZQIytfk=;
-        b=kOrcS8AZsYGK+xs5dZo10MIdhXAVF0Kh7nLSrDj8+QGWiLuZTE1Lu8HyaGzVprOSU0
-         DtDlPRm7YsDxtfqRHzjwUjgnXM6vTE6RUeDys3BmvU4KoBvH/AbwMuuoGTig4IJpvxE1
-         0hBHyMNg7Uv7JjXMGr61+yuQeeYzB1lcKw7Yvre+z5nSH91RWaGqL6wiED5SS3HCXsxu
-         KO7HWgfC8n1O7AqSaMoGZ8G+RHh6UCCCYMCA/91VD3XjnGJdnvNjRTOozJjAL5YfWcYs
-         r2DFvqNmOW7pjJeIOdwF1WKVf960GFQL+61tJdcjGGNXm4NNW8hUtaq3CbimHY2ssUzH
-         COKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736852968; x=1737457768;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=lSEEVDHkJF+59l08MDf/HdvOaR7SqGhIx6AtZQIytfk=;
-        b=UloS1gmRIfjOPD2wICVG6fPRTCSYPgnJovCTuxid4R4vevdO9AGB8DpilSkY0+hft3
-         rQqzWV6Dyvg1iv2/BVVA0hRf9kAAY2GxooNxL4gMR4BCYymxc6Xhxc10LgELA+T3Avpi
-         yzv1eqkSfxiDy3rSZhWXR6UtwMF4/9qx+Q6HWyFZ9PDRAXxiLUEz4tVcldaJWW2St6SJ
-         AqJEMmsnNCjz0wduZqoeRo0akLb/FHgNGzoZDAYNprOtmuen4tOFW6d5PdJIl6toLL0O
-         nmgRApe3cqV7x7pyJe8v5vuA/LXGe8+1OcVV+UTXwoa97rqSt9ldxDhCjNDNCL+A7YDQ
-         YdBw==
-X-Forwarded-Encrypted: i=1; AJvYcCUkB+ffSa9tu6L8Uq9bR6M/U0pcVuPAcXWSiWE0aRq4ThSReP7ILNjni5COuiuCm37DJ7IOJPcUPQ0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyWAzbkKIgi1FyRZ7ndjVQ9kLe/7fVrllQrOR/puNVYhAowzZBe
-	IlEVJXL6AcT7X0kyLFwjgR0NXljQZbmSdXADYpbTXWMBZcdCxT7tiN4MYCzaJww=
-X-Gm-Gg: ASbGncsywcyHsu3KEaVkDFJNHtHVCL3Sfj60tixzYSi8ymYbE+2i1DlYMTkH7ZB4LAE
-	ahR59UMObe949hBr3fCfcx3/2B4sn3a00yoH5vm42nREnPUlAgNq/muGTsHjExUdFi3u8iX33pv
-	76WHaqi/Yo6J+9T6dTGJZIxcxe19gpfLUKPtju9iCXk4n2NJwc6ODPmAjSOwJnzGIJ5GJLar7sg
-	dMIMXkEAduUuaJHUd9uIyL6cadDS/nO0zypWyAGtfHfHX1r1C6vs5Nab8x/qg0dC3Xp8/+Omkpc
-	Z1VsmcmhYfm/73QZsv0OfnAH0L+PfKkC5bsk
-X-Google-Smtp-Source: AGHT+IGsHdnrR/PD2l0aAbVi6WVa0Zza137alj0eWph9uI3wb2zRUaR8X1MT+Wuu41m9TUTAYoQAtw==
-X-Received: by 2002:a05:6512:4024:b0:540:3566:5760 with SMTP id 2adb3069b0e04-542847f9ea2mr7548782e87.35.1736852967850;
-        Tue, 14 Jan 2025 03:09:27 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428be49943sm1652662e87.25.2025.01.14.03.09.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jan 2025 03:09:27 -0800 (PST)
-Date: Tue, 14 Jan 2025 13:09:24 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Yongxing Mou <quic_yongmou@quicinc.com>, 
-	Rob Clark <robdclark@gmail.com>, Abhinav Kumar <quic_abhinavk@quicinc.com>, 
-	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Kuogee Hsieh <quic_khsieh@quicinc.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
+	Tue, 14 Jan 2025 11:20:07 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4B4EA5C5705;
+	Tue, 14 Jan 2025 11:19:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A0AFC4CEDD;
+	Tue, 14 Jan 2025 11:19:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1736853604;
+	bh=iubXg7mTZJkM9mUTfTPL1C9MGDJtLRu1FOpNDl7dFqk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=reWFLyoAtdNKS89yatZmIynKIrnbwtf0NQp3ogzUHmBwAs+X5SiJpqirJnE+pvw3l
+	 kPnXxHZ4p1CiTxhUjJym+wpOETICtViZZNl0/ce79XvRTE66IgAjEQWd4khuP/62JB
+	 k9Z0A7UdEVlK5BtaSwjvZCS1els5C/Ms0By9STlmFVUYm8q7zFSnMPhBJh+Q5Y+J30
+	 8zVb6kpu9/63XY4XnK8hUE1uIW4F+oLsKy7WRzJPxC5JIU/WXbAbdS4whqXPHt3pcW
+	 eBCkh+u4t9/DTPv3/ikH0YIB3jqi1tEjta625CZmUAfT4j/ydBdgFBRODoxcpv6Twp
+	 slpHqjfXmrZ6g==
+Message-ID: <2bafc177-b996-43ae-bd37-f095c9f16b62@kernel.org>
+Date: Tue, 14 Jan 2025 12:19:54 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 3/4] dt-bindings: display/msm: Document MDSS on QCS8300
-Message-ID: <rx5jyaehsgdw5cluyjtrn5yvxnd2uemdde5jbvq2dq3dirr2ak@hkegxop7tiew>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Yongxing Mou <quic_yongmou@quicinc.com>, Rob Clark <robdclark@gmail.com>,
+ Abhinav Kumar <quic_abhinavk@quicinc.com>, Sean Paul <sean@poorly.run>,
+ Marijn Suijten <marijn.suijten@somainline.org>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>,
+ Kuogee Hsieh <quic_khsieh@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
 References: <20250113-mdssdt_qcs8300-v3-0-6c8e93459600@quicinc.com>
  <20250113-mdssdt_qcs8300-v3-3-6c8e93459600@quicinc.com>
  <lyv4bopv3zw62qll5cjjx46ejdjjmssvhabdxj2uq23mcmwqpb@lld6hynsiwfe>
  <CAA8EJppUEB-c5LbWN5dJoRh+6+nNFH3G9h_uwbuTo=B8kp_9oA@mail.gmail.com>
  <bda8dd18-3bed-427a-bd19-9cb011256c93@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <bda8dd18-3bed-427a-bd19-9cb011256c93@kernel.org>
+ <rx5jyaehsgdw5cluyjtrn5yvxnd2uemdde5jbvq2dq3dirr2ak@hkegxop7tiew>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <rx5jyaehsgdw5cluyjtrn5yvxnd2uemdde5jbvq2dq3dirr2ak@hkegxop7tiew>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_030929_779508_9A776821 
-X-CRM114-Status: GOOD (  21.21  )
+X-CRM114-CacheID: sfid-20250114_032006_358350_54D57346 
+X-CRM114-Status: GOOD (  15.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,60 +134,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 14, 2025 at 11:11:23AM +0100, Krzysztof Kozlowski wrote:
-> On 14/01/2025 11:00, Dmitry Baryshkov wrote:
-> > On Tue, 14 Jan 2025 at 09:57, Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> >>
-> >> On Mon, Jan 13, 2025 at 04:03:10PM +0800, Yongxing Mou wrote:
-> >>> +patternProperties:
-> >>> +  "^display-controller@[0-9a-f]+$":
-> >>> +    type: object
-> >>> +    additionalProperties: true
-> >>> +
-> >>> +    properties:
-> >>> +      compatible:
-> >>> +        items:
-> >>> +          - const: qcom,qcs8300-dpu
-> >>> +          - const: qcom,sa8775p-dpu
-> >>> +
-> >>> +  "^displayport-controller@[0-9a-f]+$":
-> >>> +    type: object
-> >>> +    additionalProperties: true
-> >>> +
-> >>> +    properties:
-> >>> +      compatible:
-> >>> +        items:
-> >>> +          - const: qcom,qcs8300-dp
-> >>> +          - const: qcom,sm8650-dp
-> >>
-> >> Parts of qcs8300 display are compatible with sa8775p, other parts with
-> >> sm8650. That's odd or even not correct. Assuming it is actually correct,
-> >> it deserves explanation in commit msg.
-> > 
-> > It seems to be correct. These are two different IP blocks with
-> > different modifications. QCS8300's DP configuration matches the SM8650
-> > ([1]), though the DPU is the same as the one on the SA8775P platform.
-> > 
-> > [1] https://lore.kernel.org/dri-devel/411626da-7563-48fb-ac7c-94f06e73e4b8@quicinc.com/
+On 14/01/2025 12:09, Dmitry Baryshkov wrote:
+> On Tue, Jan 14, 2025 at 11:11:23AM +0100, Krzysztof Kozlowski wrote:
+>> On 14/01/2025 11:00, Dmitry Baryshkov wrote:
+>>> On Tue, 14 Jan 2025 at 09:57, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>>>>
+>>>> On Mon, Jan 13, 2025 at 04:03:10PM +0800, Yongxing Mou wrote:
+>>>>> +patternProperties:
+>>>>> +  "^display-controller@[0-9a-f]+$":
+>>>>> +    type: object
+>>>>> +    additionalProperties: true
+>>>>> +
+>>>>> +    properties:
+>>>>> +      compatible:
+>>>>> +        items:
+>>>>> +          - const: qcom,qcs8300-dpu
+>>>>> +          - const: qcom,sa8775p-dpu
+>>>>> +
+>>>>> +  "^displayport-controller@[0-9a-f]+$":
+>>>>> +    type: object
+>>>>> +    additionalProperties: true
+>>>>> +
+>>>>> +    properties:
+>>>>> +      compatible:
+>>>>> +        items:
+>>>>> +          - const: qcom,qcs8300-dp
+>>>>> +          - const: qcom,sm8650-dp
+>>>>
+>>>> Parts of qcs8300 display are compatible with sa8775p, other parts with
+>>>> sm8650. That's odd or even not correct. Assuming it is actually correct,
+>>>> it deserves explanation in commit msg.
+>>>
+>>> It seems to be correct. These are two different IP blocks with
+>>> different modifications. QCS8300's DP configuration matches the SM8650
+>>> ([1]), though the DPU is the same as the one on the SA8775P platform.
+>>>
+>>> [1] https://lore.kernel.org/dri-devel/411626da-7563-48fb-ac7c-94f06e73e4b8@quicinc.com/
+>>
+>> That's the driver, so you claim that qcs8300, which is a sa8775p, is not
+>> compatible with sa8775p because of current driver code? You see the
+>> contradiction? sa8775p is not compatible with sa8775p because of current
+>> driver patch?
 > 
-> That's the driver, so you claim that qcs8300, which is a sa8775p, is not
-> compatible with sa8775p because of current driver code? You see the
-> contradiction? sa8775p is not compatible with sa8775p because of current
-> driver patch?
+> I think you are slightly confused with different similar QCS SKUs here.
+> QCS9100 is sa8775p. QCS8300 is a lighter version of it.
 
-I think you are slightly confused with different similar QCS SKUs here.
-QCS9100 is sa8775p. QCS8300 is a lighter version of it.
 
-> 
-> I don't think it is correct, but let's repeat: if you think otherwise,
-> this should be explain in commit msg.
-> 
-> Best regards,
-> Krzysztof
+True, yet still qcs8300 derives from SA8775p:
 
--- 
-With best wishes
-Dmitry
+https://lore.kernel.org/all/acdf1267-ce56-4ec1-8407-a5f3212a8bfe@quicinc.com/
+
+Therefore my comment, that commit msg must explain why derivative
+display is SA8775p-compatible in DPU part, but not in DP part, is still
+valid.
+
+Look how useful is commit msg here:
+
+"Document the MDSS hardware found on the Qualcomm QCS8300 platform."
+
+It says exactly what is in the diff. As well we could just skip it...
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
