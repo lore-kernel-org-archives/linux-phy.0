@@ -4,64 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73537E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 16:02:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35220C02183
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 19:54:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E+WTIqL7uPbBaqi+MIgmrCiFKj5ILwlhJLXi2iPOH24=; b=zWzTvyMugLykAZ
-	toWQfuJTWUQL2uznYIN+Do+nJJDsv1engjr132svVHkTuudjX+ghMxUST204zMvfxSbL3Ohz06UqA
-	PkH6T4xV40Fw0Z+ilhYoqmqvTaGiNQkk7JKSKQnM0nF1225gCryCEl1T7DZQc3RNBN7rFfi/zeJS6
-	Cwolbv9AdWYHOnW3RNHob7NKZo8xdRuAh8L1OpT0HmqLE+jlRmzBia2ihcYyEIjN5Jmb0jNep6Iqv
-	C0zaDAZEPcFh64fWRsmjxMYrt5uT+3WkmXBRSUtE+xmvPNej7j0Qpgip/AhS8M9vLaVweLkrhyn0U
-	psepE/F/e/7o9ILFcVYg==;
+	List-Owner; bh=B0Kl4biUEVxgz3Hfmur0wKa3tkFlCvJvKLAl2Iscddw=; b=mCbZPqHoilXgov
+	GRXJinAVYD6zcYmdK4ovDzYkITFfeGrN2U9jT27QsrDvtP9yfvZH9zo0+6Ww2wDuCdMv/tAJNwpjs
+	AlC22YTXdsvBXYeR6nbIx7xyAQPbRE71ZdzHtgZpzv8dv3JjGBUzOL0vFjJEqiEnFB7Xn8HI1xmSe
+	0ePow0FORsHzp0Mk+Z5NMQdUhKm80uYzc2ee5iffzMUxET/Ac4PnFO1kNfwoAv46LUvOJlO4Shnqq
+	7ppX+QmS/oQVqq1oRW/78pXv4Of7Gm4GknOGy6fHwW9c+OjSZaLrv0fXsxDxBLDPuqVMmXgLwygD/
+	xUvoAbkfN+4nZ4HPkQkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXjMt-00000008xD2-0rp5;
-	Tue, 14 Jan 2025 16:02:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXjLc-00000008wq2-1EOu;
-	Tue, 14 Jan 2025 16:00:57 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 68F4C11FB;
-	Tue, 14 Jan 2025 08:01:21 -0800 (PST)
-Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A3A23F673;
-	Tue, 14 Jan 2025 08:00:48 -0800 (PST)
-Date: Tue, 14 Jan 2025 16:00:45 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Parthiban Nallathambi <parthiban@linumiz.com>
-Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>, Robin
- Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>, Krzysztof
- Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu
- Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel
- Holland <samuel@sholland.org>, Maxime Ripard <mripard@kernel.org>, Maarten
- Lankhorst <maarten.lankhorst@linux.intel.com>, Thomas Zimmermann
- <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter
- <simona@ffwll.ch>, Michael Turquette <mturquette@baylibre.com>, Stephen
- Boyd <sboyd@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, Linus
- Walleij <linus.walleij@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, iommu@lists.linux.dev,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH RESEND 10/22] pinctrl: sunxi: add missed lvds pins for
- a100/a133
-Message-ID: <20250114160045.2baacdaa@donnerap.manchester.arm.com>
-In-Reply-To: <20241227-a133-display-support-v1-10-abad35b3579c@linumiz.com>
-References: <20241227-a133-display-support-v1-0-abad35b3579c@linumiz.com>
-	<20241227-a133-display-support-v1-10-abad35b3579c@linumiz.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1tXmzR-00000009aeE-16RF;
+	Tue, 14 Jan 2025 19:54:17 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tXmy8-00000009aVf-3YQw;
+	Tue, 14 Jan 2025 19:52:58 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id DAB92A41B20;
+	Tue, 14 Jan 2025 19:51:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 64D23C4CEDD;
+	Tue, 14 Jan 2025 19:52:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1736884375;
+	bh=tFzCEIztKEZ3kBKK0bFyC/nzjd+01xcbW/7eoFlG6DY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AkcU8CfpStzYxO1CHv2BL2eUQ9p0pg4vOUNoINSSBu9JtBLB8yu6XNT9Yndv2NYbX
+	 HkfswsOjGivQ3792WWlUN9ARVj21u91EVGmVaWk33zl6CJEUOqlblpKKfLotxmAFn0
+	 lD9TDtp8H39JrkR2RU/IJoXwzCshjPCxb0WFazxL3ogASL88nKodW4/n44mHgbOagk
+	 wlFcwm72u8Y02A9zJONQoBA3J8HJC6Nf47Rj/6uRRcUnGXqNU+CXB0I34gdbijS4fN
+	 Z5FtFaLfxG6yyPaZYueo4KWAzWC2WVMZV6dILP5avypfnpCK9M/bGlOyCNaGr/SMbN
+	 vOlo2ZPIp7z8Q==
+Date: Tue, 14 Jan 2025 13:52:54 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Andras Szemzo <szemzo.andras@gmail.com>
+Cc: Stephen Boyd <sboyd@kernel.org>,
+	Florian Fainelli <florian.fainelli@broadcom.com>,
+	linux-sunxi@lists.linux.dev,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Conor Dooley <conor+dt@kernel.org>, linux-gpio@vger.kernel.org,
+	Maxime Ripard <mripard@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	linux-phy@lists.infradead.org, Albert Ou <aou@eecs.berkeley.edu>,
+	linux-pm@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+	linux-clk@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
+	Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>,
+	linux-kernel@vger.kernel.org,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	linux-riscv@lists.infradead.org
+Subject: Re: [PATCH 02/12] dt-bindings: pinctrl: sunxi: add compatible for
+ V853
+Message-ID: <173688437416.1619259.7363940656037127304.robh@kernel.org>
+References: <20250110123923.270626-1-szemzo.andras@gmail.com>
+ <20250110123923.270626-3-szemzo.andras@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250110123923.270626-3-szemzo.andras@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_080056_414139_9FEE26ED 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20250114_115256_956828_E678E655 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,130 +93,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Dec 2024 18:30:59 +0530
-Parthiban Nallathambi <parthiban@linumiz.com> wrote:
 
-Hi,
-
-since LinusW wants to pull this already, I gave it a look, despite this
-series being not complete.
-
-> lvds, lcd, dsi all shares the same GPIO D bank and lvds0
-> data 3 lines and lvds1 pins are missed, add them.
+On Fri, 10 Jan 2025 13:39:13 +0100, Andras Szemzo wrote:
+> Add compatible strings for V853 family pinctrl.
 > 
-> Signed-off-by: Parthiban Nallathambi <parthiban@linumiz.com>
+> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
 > ---
->  drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c | 12 ++++++++++++
->  1 file changed, 12 insertions(+)
+>  .../pinctrl/allwinner,sun4i-a10-pinctrl.yaml        | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
 > 
-> diff --git a/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c b/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c
-> index df90c75fb3c5..b97de80ae2f3 100644
-> --- a/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c
-> +++ b/drivers/pinctrl/sunxi/pinctrl-sun50i-a100.c
-> @@ -256,72 +256,84 @@ static const struct sunxi_desc_pin a100_pins[] = {
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D12 */
-> +		  SUNXI_FUNCTION(0x3, "lvds0"),		/* D3P */
 
-I initially stumbled upon those first two pins being from lvds0, with the
-other 8 pins missing for this interface, but then realised that those are
-on portD, and we already describe them in this table (above). So those two
-were missing all the time.
-
-So having compared these lines to the A133 user manual, I can now say that
-they are all correct:
-
-Reviewed-by: Andre Przywara <andre.przywara@arm.com>
-
-Linus, in contrast to what I originally thought, this patch *is* fine, so
-feel free to keep it in your tree.
-Sorry for the noise!
-
-Cheers,
-Andre
-
->  		  SUNXI_FUNCTION(0x4, "dsi0"),		/* DP3 */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 8)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 9),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D13 */
-> +		  SUNXI_FUNCTION(0x3, "lvds0"),		/* D3N */
->  		  SUNXI_FUNCTION(0x4, "dsi0"),		/* DM3 */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 9)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 10),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D14 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D0P */
->  		  SUNXI_FUNCTION(0x4, "spi1"),		/* CS */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 10)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 11),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D15 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D0N */
->  		  SUNXI_FUNCTION(0x4, "spi1"),		/* CLK */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 11)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 12),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D18 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D1P */
->  		  SUNXI_FUNCTION(0x4, "spi1"),		/* MOSI */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 12)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 13),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D19 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D1N */
->  		  SUNXI_FUNCTION(0x4, "spi1"),		/* MISO */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 13)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 14),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D20 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D2P */
->  		  SUNXI_FUNCTION(0x4, "uart3"),		/* TX */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 14)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 15),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D21 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D2N */
->  		  SUNXI_FUNCTION(0x4, "uart3"),		/* RX */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 15)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 16),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D22 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* CKP */
->  		  SUNXI_FUNCTION(0x4, "uart3"),		/* RTS */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 16)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 17),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* D23 */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* CKN */
->  		  SUNXI_FUNCTION(0x4, "uart3"),		/* CTS */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 17)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 18),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* CLK */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D3P */
->  		  SUNXI_FUNCTION(0x4, "uart4"),		/* TX */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 18)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 19),
->  		  SUNXI_FUNCTION(0x0, "gpio_in"),
->  		  SUNXI_FUNCTION(0x1, "gpio_out"),
->  		  SUNXI_FUNCTION(0x2, "lcd0"),		/* DE */
-> +		  SUNXI_FUNCTION(0x3, "lvds1"),		/* D3N */
->  		  SUNXI_FUNCTION(0x4, "uart4"),		/* RX */
->  		  SUNXI_FUNCTION_IRQ_BANK(0x6, 2, 19)),
->  	SUNXI_PIN(SUNXI_PINCTRL_PIN(D, 20),
-> 
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
 
 -- 
