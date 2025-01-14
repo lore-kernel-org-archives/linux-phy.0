@@ -4,66 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D407E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 07:37:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D26BC02185
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 07:57:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ucn9D1LU2c+ytZm741UJdjBXIpn2GFkS2kiZNwL1UPU=; b=XSEu0GKMX+9JZ/
-	+NxrJne/VpKjZ4zOmp0+zNDeg3EclemlTnVTLF4Gnmv9yOpzm+9R5gZxCz1VnoGAQH+Lp4FxGqgbV
-	R92bCfkMhrUZODWngRUN11reYCvFijEo9yJRJd4RBRx6OwzepWDpuWF5NclElLg8jxDzurK3f8END
-	ij/Z8ihtB0+jrhXcrWvzYMJyTOQhlYGFL5IZK8a4T9kkJJ+PLZ1hFslqAVc09EEE4oNewUWk79x4A
-	MM5pKh1A3QUoHm5Ep8ZoZd4xjZtYLnze6MdUwBBewauGMhzXvh/UHRZlNrTd4gkXxNRh9PXL2l/D4
-	ZBd7D/s/MD+WEBIG98dQ==;
+	List-Owner; bh=NyNIY4VO8qZvGJr/uvOrvrl/VIUxZcJokxvbt8Q91Xg=; b=EhlXyUn+dTplPW
+	bX/QcT5lqag1hn7FgZ/SjmtzFVKih4UhWFPfUJn2ElV0DYjDHgpoqByJ+8RRYe8Q2Yc7aAYpBzgaG
+	1bsuQFc2qAYVkNbPEPrjbeLORaEuuNYgbgI163boKPOSiDPYqvBLY2u4EhSljGN36ml7YAWoTzHXU
+	GKNYTbL+S8NFTFqKMsgBgr9p2YsaRR8YMfFS7u0KENytWS3k4jHl9HCyxzdfeFWnibRHlqxLPwv5b
+	gf5eW7t24Mt6goLSxMphDrHqUlvke9KI4cJQpWUQCAEYLWnkQYvAV5Uc72xVYapDSSn5XPqJq2Pph
+	GDJrdug6NpLJCrdJfy1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXbU6-00000007hZ6-3L5T;
-	Tue, 14 Jan 2025 07:37:10 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tXbnT-00000007kyM-2Hdd;
+	Tue, 14 Jan 2025 07:57:11 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXbSS-00000007hHO-02sS;
-	Tue, 14 Jan 2025 07:35:29 +0000
+	id 1tXbnQ-00000007kx7-0tWs
+	for linux-phy@lists.infradead.org;
+	Tue, 14 Jan 2025 07:57:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id F0A33A40C1C;
-	Tue, 14 Jan 2025 07:33:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26087C4CEDD;
-	Tue, 14 Jan 2025 07:35:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id A4CFF5C56E1;
+	Tue, 14 Jan 2025 07:56:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F08EC4CEDD;
+	Tue, 14 Jan 2025 07:57:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1736840126;
-	bh=S/i0gCRzDaXGtYYVv2Zxs38lN7Aca/FNPAhgbOuZpcI=;
+	s=k20201202; t=1736841427;
+	bh=ZloWZNduwAPjDvbGadMXp2gP8vQf1XX1e+wOh0WKm7o=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ZzyJLMNrSRaugcJCsl3kfLwZt9sLPftx/4pvZU6DN7PXFeV3VK45p20hjIknYeaJR
-	 H44TpgKO5fP7X+qfTVs8keL5stccEHZvafwBTYxpFI1Ot4OwY+hKrXN+IoMApiALrc
-	 froj+V6cNMOQ1dd47G6Sqn2q0lPbfiC+1PZmxQfHTTGMfRiAxuaUsWZL3fnHVsyxI8
-	 GjQpe7oZGtPn0zIRO6kTI4GDYLBfp21fiS+71JNQM7KZ5e6yjZxL5dI3koUHEDOcZc
-	 vuZ2BKtc6ledBSrddgHbVMKITz6V6ONzGSgNzqbFkpv0l+k78EqHZbJUvMbTUuvhE6
-	 nFx11iFlG/uQg==
-Date: Tue, 14 Jan 2025 08:35:23 +0100
+	b=UoSLtcyoyKBgQ0ahEo0MIpQJ5CIHFw61HjTFG2rLHJKe/RQ8eqfVGEEbT9uBFIQ1Y
+	 f1UuX4Bzdl4DPrVun1gYmxjAwRxBWMiBeT+/6EU8QlZZx8r3iolZazKFa92DeE1guA
+	 XWw5iy9Ixx9Pv2Rhn1LmOjLDlZquKEnx6CZsVC/TPTQZuyZ+D0r/7PAj84UaWciOjH
+	 0TihPtxkTLaTjhSLbKkV3m4B7UUknwEo9o1a8rURDRXsSfA4z+pdWtCrzSp5kOXjMJ
+	 wK+C/MaUZpVPOUEQwo5ekuY2uVCMbkUyTVg0iUMCsf/POPIhoWog6Ug1v3RNUa7V1v
+	 Qt6jRxWMgcsOA==
+Date: Tue, 14 Jan 2025 08:57:04 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Melody Olvera <quic_molvera@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+To: Yongxing Mou <quic_yongmou@quicinc.com>
+Cc: Rob Clark <robdclark@gmail.com>, 
+	Abhinav Kumar <quic_abhinavk@quicinc.com>, Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
+	Sean Paul <sean@poorly.run>, Marijn Suijten <marijn.suijten@somainline.org>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Catalin Marinas <catalin.marinas@arm.com>, 
-	Will Deacon <will@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, 
-	Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 6/7] arm64: defconfig: Add M31 eUSB2 PHY config
-Message-ID: <7vsuyuig7p2xojx5hwnqq3wvkptd6yp4jqnckbrjohajtghyy2@koqdxx373ttc>
-References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
- <20250113-sm8750_usb_master-v1-6-09afe1dc2524@quicinc.com>
+	Neil Armstrong <neil.armstrong@linaro.org>, Kuogee Hsieh <quic_khsieh@quicinc.com>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v3 3/4] dt-bindings: display/msm: Document MDSS on QCS8300
+Message-ID: <lyv4bopv3zw62qll5cjjx46ejdjjmssvhabdxj2uq23mcmwqpb@lld6hynsiwfe>
+References: <20250113-mdssdt_qcs8300-v3-0-6c8e93459600@quicinc.com>
+ <20250113-mdssdt_qcs8300-v3-3-6c8e93459600@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250113-sm8750_usb_master-v1-6-09afe1dc2524@quicinc.com>
+In-Reply-To: <20250113-mdssdt_qcs8300-v3-3-6c8e93459600@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250113_233528_112322_50B635D1 
-X-CRM114-Status: UNSURE (   6.08  )
+X-CRM114-CacheID: sfid-20250113_235708_295597_B22A53E2 
+X-CRM114-Status: UNSURE (   6.95  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,11 +84,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 13, 2025 at 01:52:12PM -0800, Melody Olvera wrote:
-> Add configs for the M31 eUSB2 PHY for SM8750 USB.
+On Mon, Jan 13, 2025 at 04:03:10PM +0800, Yongxing Mou wrote:
+> +patternProperties:
+> +  "^display-controller@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        items:
+> +          - const: qcom,qcs8300-dpu
+> +          - const: qcom,sa8775p-dpu
+> +
+> +  "^displayport-controller@[0-9a-f]+$":
+> +    type: object
+> +    additionalProperties: true
+> +
+> +    properties:
+> +      compatible:
+> +        items:
+> +          - const: qcom,qcs8300-dp
+> +          - const: qcom,sm8650-dp
 
-What is SM8750? Which company? Which board needs it? That's a defconfig
-for all platforms, not only for your SoC.
+Parts of qcs8300 display are compatible with sa8775p, other parts with
+sm8650. That's odd or even not correct. Assuming it is actually correct,
+it deserves explanation in commit msg.
 
 Best regards,
 Krzysztof
