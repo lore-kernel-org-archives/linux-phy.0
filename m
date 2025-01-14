@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6572E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 10:24:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DBA0C02184
+	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 10:38:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sTRE8+vfXRAe1rIe/egp7PkHAF9a6fqOxn392Q6dkWY=; b=4xBUq5TQgCsm/k
-	msGI8D0MpWXS9l4g+9A72YNN4u1c6qQy2Bao7RGaYZNHlY9Is8FOnW1esAD72sbZB4aiz8VqMlBO5
-	kh+zlwU2WFFSg7MZ+N3GJudsO26UE1GoFVGn1sQOxfz96FKyplYXYHJ7C4JsqOAbccg7+gABn5g6L
-	2b0YZpE1vcapHgFPifKY3CiTG+IGF7eKKXplPX5SbgZLs3ShsUoowqfoCHrsFjaqsGDqIj1/rMCqT
-	N2/ucmh/Cg/Zu1Xqu0bQw0uSOX0/3/En0tAHDWZnXnVtyZjAxdYzMr8cVxqoqaWOI4dBIkMNshKU6
-	reiDXxcy8lN2dCR8oe5Q==;
+	List-Owner; bh=PRE1MMpQS4yemDFfpHq/2l0rWPsk3XksngAf9VsKJAE=; b=sBu7e6RztVzJMl
+	fDFND/NaoexFUy0Tem5lnz9a8k1GZ/mD3+4ffuAY2h5Az/eGdh2etaOYWXEDFc335J0drjr89DmUK
+	YGQbjSGWik95XGK2n9PppNRVcWfC2yfpci9V8awneg+0g2/HAFqosPjOcOizc+KCq/FGKJdizxOUL
+	2heVN9FhamgPHKSBWL1hSDEmtxG4sOW9EUXojjsO2ezuhNxDrituk7VUYZxCFW3eFTQoLpTfPrI1R
+	2gXWU1cPIOKsEegQyMDObQXxVUCT3YzOwtoKWl7TmbJqAcFjjPmkrBTR5z+joQ1JUOWGrw9ryt7CJ
+	TO6Xjf5nwxAhHzd8hH+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXe5d-000000085D9-2JNb;
-	Tue, 14 Jan 2025 10:24:05 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1tXeJn-000000087sn-3ZYJ;
+	Tue, 14 Jan 2025 10:38:43 +0000
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXe5b-000000085CH-0tIP
+	id 1tXeGB-000000087BA-0yD3
 	for linux-phy@lists.infradead.org;
-	Tue, 14 Jan 2025 10:24:04 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-5401c52000dso5390797e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 14 Jan 2025 02:24:02 -0800 (PST)
+	Tue, 14 Jan 2025 10:35:00 +0000
+Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-540254357c8so4843040e87.1
+        for <linux-phy@lists.infradead.org>; Tue, 14 Jan 2025 02:34:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1736850241; x=1737455041; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1736850897; x=1737455697; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=3oI6vi2GoQLTi0BDTazm+sSUfItEUA/br8Yh1LQsmUM=;
-        b=tKsmxjOJ0izEd6Hbn7/C+yhNNGt/cFwI9/fZfzGvKuhRE1In2V7XGjoSWUePGCMRrS
-         5RGewYNkn4q2cNxabtEL2xxbLWOkK5dJ9yM4iyNB0wtIcJ9JPWSQlxWu0k38VvvEJf70
-         ArBlZOae8t7nAr+lgfe+t/3wgCD5gGjZ2yM0kWu2Ib3RzyZpYfUAI9gZ5KEfKGILIdg5
-         0Px0BOLr4l1WQKXv/27AIRcIEkxh/cNacCES13MYiChwcq5bETOkA9UWkv05iyg9gFFv
-         9pLtLOxXIrbW61g+h+uVveZZb+MZRUkP5yEqjp/QaFJBKS1ChvvX8w0EyZHgNvlo0N5x
-         VL4g==
+        bh=T82zNstFBnDSTTkW/x3AxhknKVdFYWE7bW1yyO8UUJc=;
+        b=JUt9BHMkf3pGpohG/AjwEfRHDl9LAvRbLrt/0qpLaCQ3gKlaL7pas8f8KWqwYc+eKs
+         M6qQK0T4bEowM16uxsx0t2mLHSjFCTx54Kh/iDTeX28Rc4QBsKuzR4QZpDX8NTPEkt16
+         st+GQke1Inecetwd92in8Hr+wG+iN8D7GDnW7RWBiKFuBYQLJIc8k2RYJ2jKulqId1dg
+         D+qul/E56YMnyCqDdkg3Bk9/ZOQdNubyOLPguDzBmlNlrLMDhyXanRvxF7G1zyaCKHwh
+         VOPPQYuJHsxFfT6m8IuRcpCWwKC5NQYbH1XHlLScBOPqD9YDhHJgfEceZ+PbvxlXFI6T
+         SZpA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736850241; x=1737455041;
+        d=1e100.net; s=20230601; t=1736850897; x=1737455697;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=3oI6vi2GoQLTi0BDTazm+sSUfItEUA/br8Yh1LQsmUM=;
-        b=bSDzxcSEQsNpdHd7hTVP8qL5F4FGVZFAHG3iaUIwHxYfh3Vd4S8d1nf+Nvw1w9jJ0S
-         YuPIFnaTmqjxzgCsDHacPy6HueqbyjLE5arCe1wzi8psE/gY13VO1hNpU/VXCgAegTh/
-         ouqulBJtXT7VB0cI4N4eiyjEAPT6hsIgwItOSRw2lvfcMJzrhf+eKqvcbViqsysctAgl
-         CsUKap7yS9xhGyPdhVliSc4rzfSBNnfxwMuZj0C5PphWK8Ifzqhdloxnlak7EF9vZOVN
-         Qsd7P1EW8hFtLojXqBRuXWV8StUcPy+zMLN20iyg+aPKg0TSlXh5F7VGcZuZnR+QCe8E
-         8CPQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWOYi2xEAVijRdqc0UYLQw4GqNmKlmoKoO0B50Oxzg/cOyVfN4AjVTQi8RZNnwp46UVUbmY/RyNW/Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw+EuqOc/3ZPfQqQAPbjUB8m6Y3Mf/b2GXMvXA4iLnMJJIxQntq
-	PHqc/25ElzHHnpO8zZ+oQc02G4xwrfGw6Krpaw2fKfDTq6gySZIjN+3CTOWw2uU=
-X-Gm-Gg: ASbGncsnNIR5bU1AB/tIruN9LiXz8PTyAUDFXiWu2HfyPWLc6u4m4XQlf2LVBfeIV3D
-	97aqLt1glTDLRJ1K1De6lQei9hxGSseEq+p6iHe5jU+a8160j3+uBE7HR6L+Us6vPmyjxkuJZbV
-	fDSpvA03Yh7YoHYW/qll8T35IZVfZsEn9/M037w6SO+9mWn9D/6TIwdMn96qk/0XrJ36Ff4iXN7
-	pMbGk1fBUmVUVxJuZ5Vfy6oejhWKewiNG8lKflpiVTx+2MEwAsEQ+05L85iBQHWZCwLYbQ47XNI
-	x4uszlb8wGVARzaWG/RCX8iUVn09HMYXap8Y
-X-Google-Smtp-Source: AGHT+IEKsRHi3ewHQ3flyKmAEggsmIc5cWlq0d+tu6iEmD2+GVjY0LyFN7q1yTTso4t8mLEgCs7lPQ==
-X-Received: by 2002:a05:6512:33ca:b0:542:1b63:2e52 with SMTP id 2adb3069b0e04-542845a7137mr6460348e87.6.1736850241188;
-        Tue, 14 Jan 2025 02:24:01 -0800 (PST)
+        bh=T82zNstFBnDSTTkW/x3AxhknKVdFYWE7bW1yyO8UUJc=;
+        b=AWR2ygayFfHg206tlJ/88b0nyaedF59s0xJYkk6uEMkpN0DBBfyQxkwzGUhYCdc+nj
+         er2YlDPQ2LHzwG8UmS2LaieeVpu2lYzgssmGEYbln6Po9W6Kahr0EVTUWRSPvG/ccYfM
+         hKzEa65r9BaUKOepmOnXwgsSQOmCgiEtYKooOVCGmc6zpQNQ2qIsw4Xn0WbHMvrCHpxc
+         vEWl2d0iC283/m9vm4Al3bBU+qfndtIpXlXjEKvmRglZucBI2c8zz0Zu5fnAPRvxGU05
+         xicjIN3zkz5byCpA8XNE9y4fgWkjtMmE123j0V1jBVXJ34Sml9AgXgV7sE+yCulXsQu9
+         DROw==
+X-Forwarded-Encrypted: i=1; AJvYcCUj0VczMhNM/xUbunQiw+d1ZlAO2qxHNrAD87qjkN87MYPrAKtqC3tEKJcxjUr/AFIEDDHLvi8dbpk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzBmvY+0JakK9onLhZQaK2L+0jR5cH0fA+/gG14yYkrQithAZQx
+	2Ww33BRETch01CN3n3Au8LcNHLXdRLJg7VkNPiGI686b9zAb1ijYfyk5z17pZWw=
+X-Gm-Gg: ASbGnct2HZUGXsrFz2X77C958r6ur6HRdycP+Ib6d4xy+Xw/E7qYcSlGqJtEg4bfspk
+	mEuNMoGQwSHqpVoFNTMwIDJkLbovUKcJUifDUkaYY8z1Rk9TQnva1Xe9zaasVwHuQHXaNhaYVDQ
+	WMD2UdgId0RBXlZjqmrtzXot3gcLdK041wT67FMEIsrgZQBai8aMAb04I/8j84IhRPktXpsl375
+	K/XsYzv9eAbMX5i0m6IMjj+vG68BmqLr9g24b7U1KcLOQ+L61xwqmCUvRwM/ZMt0zKbFCqzsIur
+	jC29SLOus8d0SvmtR3u5Lf1UC0uemiUW3Vts
+X-Google-Smtp-Source: AGHT+IFwrbLGTrG2dyiu5uP2+GJnDGK0/StK5LmN5McezpTF9gNRaaageIc+tg7gnEcGTINdnMPa7w==
+X-Received: by 2002:a05:6512:ba9:b0:540:2223:9b20 with SMTP id 2adb3069b0e04-542845d1b75mr6413752e87.53.1736850897244;
+        Tue, 14 Jan 2025 02:34:57 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428bea8504sm1620977e87.138.2025.01.14.02.23.58
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5428be49ee9sm1623927e87.52.2025.01.14.02.34.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jan 2025 02:23:59 -0800 (PST)
-Date: Tue, 14 Jan 2025 12:23:57 +0200
+        Tue, 14 Jan 2025 02:34:56 -0800 (PST)
+Date: Tue, 14 Jan 2025 12:34:54 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Melody Olvera <quic_molvera@quicinc.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -80,17 +80,16 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 4/7] phy: qcom: qmp-combo: Add new PHY sequences for
- SM8750
-Message-ID: <tcm2hn7rpzaazntp5r7ag466ynacexnke43e6ypm4q5mrrlkdb@nem3gzib2l2v>
+Subject: Re: [PATCH 5/7] phy: qcom: Add M31 based eUSB2 PHY driver
+Message-ID: <rpwm6gimdb4zyvyusovfbfaw4uxrossm6elayebvt2gusb7zwk@67w7672qpcto>
 References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
- <20250113-sm8750_usb_master-v1-4-09afe1dc2524@quicinc.com>
+ <20250113-sm8750_usb_master-v1-5-09afe1dc2524@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250113-sm8750_usb_master-v1-4-09afe1dc2524@quicinc.com>
+In-Reply-To: <20250113-sm8750_usb_master-v1-5-09afe1dc2524@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_022403_298457_152F73A7 
-X-CRM114-Status: GOOD (  16.81  )
+X-CRM114-CacheID: sfid-20250114_023459_304545_4C4155E3 
+X-CRM114-Status: GOOD (  25.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,111 +106,219 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 13, 2025 at 01:52:10PM -0800, Melody Olvera wrote:
+On Mon, Jan 13, 2025 at 01:52:11PM -0800, Melody Olvera wrote:
 > From: Wesley Cheng <quic_wcheng@quicinc.com>
 > 
-> Add new register offsets and PHY values for SM8750. Some of the previous
-> definitions can be leveraged from older PHY versions as offsets within
-> registers have not changed. This also updates the PHY sequence that is
-> recommended after running hardware characterization.
+> On SM8750, the eUSB2 PHY used is M31 based. Add the initialization
+> sequences to bring it out of reset, and to initialize the associated eUSB2
+> repeater as well.
+
+What does M31 mean? What is the relationship between the eUSB and USB
+M31 PHYs?
+
 > 
 > Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
 > Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 198 ++++++++++++++++++++++++++++++
->  1 file changed, 198 insertions(+)
+>  drivers/phy/qualcomm/Kconfig              |  12 +-
+>  drivers/phy/qualcomm/Makefile             |   1 +
+>  drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 269 ++++++++++++++++++++++++++++++
+>  3 files changed, 281 insertions(+), 1 deletion(-)
+
+Please run the patch through checkpatch.pl --strict
+
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> index b09fa00e9fe7db8d97b7179ee15d3f07fe578b0c..823a60029ea6acbd1f0f8c7d27aaa58de39ed758 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> @@ -1471,6 +1471,139 @@ static const struct qmp_phy_init_tbl x1e80100_usb43dp_pcs_tbl[] = {
->  	QMP_PHY_INIT_CFG(QPHY_V6_N4_PCS_EQ_CONFIG5, 0x10),
->  };
->  
-> +static const struct qmp_phy_init_tbl sm8750_usb3_serdes_tbl[] = {
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0xc0),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x01),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x02),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x16),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x36),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x16),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x41),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x41),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MSB_MODE1, 0x00),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE1, 0x55),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE1, 0x75),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE1, 0x01),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE1, 0x25),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE1, 0x02),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0x5c),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x0f),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x5c),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0f),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0, 0xc0),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x01),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x02),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x08),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x1a),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x41),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MSB_MODE0, 0x00),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0x55),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x75),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x01),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE0, 0x25),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE0, 0x02),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0a),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x62),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER2, 0x02),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_BUF_ENABLE, 0x0c),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x1a),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_CFG, 0x14),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0x20),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_1, 0xb6),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_2, 0x4a),
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_3, 0x36),
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..e15529673e358db914936a60fa605c872cd2511a
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> @@ -0,0 +1,269 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/reset.h>
+> +#include <linux/slab.h>
+> +
+> +#define USB_PHY_UTMI_CTRL0		(0x3c)
+> +
+> +#define USB_PHY_UTMI_CTRL5		(0x50)
+> +
+> +#define USB_PHY_HS_PHY_CTRL_COMMON0	(0x54)
+> +#define FSEL				(0x7 << 4)
 
-The only difference from sm8550_usb3_serdes_tbl, it has 0x37 here.
+GENMASK()
 
-> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADDITIONAL_MISC, 0x0c),
+> +#define FSEL_38_4_MHZ_VAL		(0x6 << 4)
+
+FIELD_PREP
+
+> +
+> +#define USB_PHY_HS_PHY_CTRL2		(0x64)
+> +
+> +#define USB_PHY_CFG0			(0x94)
+> +#define USB_PHY_CFG1			(0x154)
+> +
+> +#define USB_PHY_FSEL_SEL		(0xb8)
+> +
+> +#define USB_PHY_XCFGI_39_32		(0x16c)
+> +#define USB_PHY_XCFGI_71_64		(0x17c)
+> +#define USB_PHY_XCFGI_31_24		(0x168)
+> +#define USB_PHY_XCFGI_7_0		(0x15c)
+> +
+> +#define M31_EUSB_PHY_INIT_CFG(o, b, v)	\
+> +{				\
+> +	.off = o,		\
+> +	.mask = b,		\
+> +	.val = v,		\
+> +}
+> +
+> +struct m31_phy_tbl_entry {
+> +	u32 off;
+> +	u32 mask;
+> +	u32 val;
 > +};
 > +
-
-[...]
-
-> @@ -1781,6 +1914,22 @@ static const struct qmp_combo_offsets qmp_combo_offsets_v5 = {
->  	.dp_dp_phy	= 0x2200,
->  };
->  
-> +static const struct qmp_combo_offsets qmp_combo_offsets_v8 = {
-
-Why is it v8? Is the actual PHY also v8 rather than v6?
-
-> +	.com		= 0x0000,
-> +	.txa		= 0x1400,
-> +	.rxa		= 0x1600,
-> +	.txb		= 0x1800,
-> +	.rxb		= 0x1a00,
-> +	.usb3_serdes	= 0x1000,
-> +	.usb3_pcs_misc	= 0x1c00,
-> +	.usb3_pcs	= 0x1e00,
-> +	.usb3_pcs_usb	= 0x2100,
-> +	.dp_serdes	= 0x3000,
-> +	.dp_txa		= 0x3400,
-> +	.dp_txb		= 0x3800,
-> +	.dp_dp_phy	= 0x3c00,
+> +struct m31_eusb2_priv_data {
+> +	const struct m31_phy_tbl_entry	*setup_seq;
+> +	unsigned int			setup_seq_nregs;
+> +	const struct m31_phy_tbl_entry	*override_seq;
+> +	unsigned int			override_seq_nregs;
+> +	const struct m31_phy_tbl_entry	*reset_seq;
+> +	unsigned int			reset_seq_nregs;
+> +	unsigned int			fsel;
 > +};
 > +
->  static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
->  	.offsets		= &qmp_combo_offsets_v3,
->  
+> +static const struct m31_phy_tbl_entry m31_eusb2_setup_tbl[] = {
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, BIT(1), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, BIT(1), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG1, BIT(0), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_FSEL_SEL, BIT(0), 1),
+> +};
+> +
+> +static const struct m31_phy_tbl_entry m31_eusb_phy_override_tbl[] = {
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_39_32, GENMASK(3, 2), 0),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_71_64, GENMASK(3, 0), 7),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_31_24, GENMASK(2, 0), 0),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_7_0, GENMASK(1, 0), 0),
+> +};
+> +
+> +static const struct m31_phy_tbl_entry m31_eusb_phy_reset_tbl[] = {
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL2, BIT(3), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL2, BIT(2), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL0, BIT(0), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL_COMMON0, BIT(1), 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL_COMMON0, BIT(2), 0),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, BIT(1), 0),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL2, BIT(3), 0),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, BIT(1), 0),
+> +};
+> +
+> +struct m31eusb2_phy {
+> +	struct phy			*phy;
+> +	void __iomem			*base;
+> +	const struct m31_eusb2_priv_data	*data;
+> +
+> +	struct regulator		*vreg;
+> +	struct clk			*clk;
+> +	struct reset_control		*reset;
+> +
+> +	struct phy *repeater;
+> +};
+> +
+> +static void msm_m31_eusb2_write_readback(void __iomem *base, u32 offset,
+> +					const u32 mask, u32 val)
+> +{
+> +	u32 write_val, tmp = readl_relaxed(base + offset);
+> +
+> +	tmp &= ~mask;
+> +	write_val = tmp | val;
+> +
+> +	writel_relaxed(write_val, base + offset);
+> +
+> +	tmp = readl_relaxed(base + offset);
+> +	tmp &= mask;
+> +
+> +	if (tmp != val)
+> +		pr_err("write: %x to offset: %x FAILED\n", val, offset);
+> +}
+> +
+> +static void m31eusb2_phy_write_sequence(struct m31eusb2_phy *phy,
+> +					const struct m31_phy_tbl_entry *tbl,
+> +					int num)
+> +{
+> +	int i;
+> +
+> +	for (i = 0 ; i < num; i++, tbl++) {
+> +		dev_dbg(&phy->phy->dev, "Offset:%x BitMask:%x Value:%x",
+> +					tbl->off, tbl->mask, tbl->val);
+> +
+> +		msm_m31_eusb2_write_readback(phy->base,
+> +					tbl->off, tbl->mask,
+> +					tbl->val << __ffs(tbl->mask));
+
+could you please check, what actually gets written? I suspect there
+should be a -1 here.
+
+> +	}
+> +}
+> +
+> +static int m31eusb2_phy_init(struct phy *uphy)
+> +{
+> +	struct m31eusb2_phy *phy = phy_get_drvdata(uphy);
+> +	const struct m31_eusb2_priv_data *data = phy->data;
+> +	int ret;
+> +
+> +	ret = regulator_enable(phy->vreg);
+> +	if (ret) {
+> +		dev_err(&uphy->dev, "failed to enable regulator, %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = phy_init(phy->repeater);
+> +	if (ret) {
+> +		dev_err(&uphy->dev, "repeater init failed. %d\n", ret);
+> +		goto disable_vreg;
+> +	}
+> +
+> +	if (ret) {
+> +		dev_err(&uphy->dev, "failed to enable cfg ahb clock, %d\n", ret);
+> +		goto disable_repeater;
+> +	}
+> +
+> +	/* Perform phy reset */
+> +	reset_control_assert(phy->reset);
+> +	udelay(5);
+> +	reset_control_deassert(phy->reset);
+> +
+> +	m31eusb2_phy_write_sequence(phy, data->setup_seq, data->setup_seq_nregs);
+> +	msm_m31_eusb2_write_readback(phy->base,
+> +					USB_PHY_HS_PHY_CTRL_COMMON0, FSEL,
+> +					data->fsel);
+> +	m31eusb2_phy_write_sequence(phy, data->override_seq, data->override_seq_nregs);
+> +	m31eusb2_phy_write_sequence(phy, data->reset_seq, data->reset_seq_nregs);
+> +
+> +	return 0;
+> +
+> +disable_repeater:
+> +	phy_exit(phy->repeater);
+> +disable_vreg:
+> +	regulator_disable(phy->vreg);
+> +
+> +	return 0;
+> +}
+> +
 
 -- 
 With best wishes
