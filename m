@@ -4,91 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CA0DC02180
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 07:58:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7EB5C02180
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 08:09:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Maa73Jc4+qOagJ4J5byM1487PtzYX/NoLRT276+zsZE=; b=MYK1sxDuAksdvE
-	72OHSv731+vUh/dGxFZF5ZcHC6mEzygdh93oL8AdWsz2lg5CaFoUPNQOrzkOeIqFrIY+zPPb5/yIu
-	SHPrgdQAbmdCmCoGsihugtGTiHGTqjZoHauNGH3lTnxj98NTNJiNESIlT/yk61hQoJuM5g0iNCE9l
-	FbixEHuMOvPhitOPUYZNU3H102oco7AlOj5QlEzGjN5YOUxNnDOu/l2taWLgtvGDyQTZHw/ggWOjQ
-	iRT7z9UvysfdM26Pl18dbg3xbFpLDHuME12dnDR1l1FMIanQm7Cr5F6iJA3pGQeUOZ18oUmZ5XbMd
-	1UQ+nCYiwKiQUpDmI/Qg==;
+	List-Owner; bh=uuoIu3hGddFz+Rr5e3SH/4wjceDbt3i4N7fTpZFlYt4=; b=y1zuXmtcA0RP3B
+	l4gwElZYc7DXu6tP8HafclLnTyHxPFZisLSFcWCP+f6wiGuaPaBzX1u/dXRZskZ2KVmTGosvU6l54
+	nL6SI48SrB/8i5ZyEtV6SB/pja9oETN5SoTL4YXRsAKgOPemEGaCPDgWqpQLA2xcQlCGExuRTOmER
+	bBBY4EaP/70cLOgBgIe5OvL1XsXhHGtqKvZ4HM9KQc6cjvz0eUa6CV3JZSBuq7YYZQXmxlYt3S2Ys
+	pU05Ic8a15ZHeKPOGWdOdTLzzhXgrBSxsGqKMRaW8V+3/rR7WN+Lcz6iCTLZEsuTnkqkdzoMcOwJF
+	8BV7kBIt7kp9Df7H/cVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXyIX-0000000B0u6-14mQ;
-	Wed, 15 Jan 2025 07:58:45 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tXyTN-0000000B2Wx-2Qha;
+	Wed, 15 Jan 2025 08:09:57 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXyIT-0000000B0ti-2JLD
+	id 1tXyRX-0000000B2BX-1RPu
 	for linux-phy@lists.infradead.org;
-	Wed, 15 Jan 2025 07:58:43 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50F5cPBr013921;
-	Wed, 15 Jan 2025 07:58:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=sLwXMdQzvWOJb4WsDCioa7Jt
-	yHeUekEJUQu8MLw0PwA=; b=dhtbnpdRaLQZUPFuV2cZaSiWLROQ0s1I2Y1ZzWvw
-	39TsTQsfepXYWwpH2whs6VPVPVoFQQFdXAEIZBAlPd/6h3zbjwmhq1RWeWRF5VsF
-	ZTo6PJiEshco8oaA9dDdw7oSZFRH92Lxdn238GsfUnjDExRWHAiW90Lw7CLhU0/R
-	jj5ZlydOr4w3LDukgWW+bokC/tjXF9G/XQIYAgDBz786uOm+EFc8lLVWv1zwZmL2
-	KTkd2MhBXlQdZH9OyeYoFXiZOFGN0Sxlra3I3zX+2Di3gcXPkDaC1EM1kiQDqpna
-	bRV2IvxeDMhX0aB69kd13gUK9hB9QhOaYt9RUBR6SWlwPw==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44671q0asn-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Jan 2025 07:58:33 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50F7wXvk031194
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 15 Jan 2025 07:58:33 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 14 Jan 2025 23:58:26 -0800
-Date: Wed, 15 Jan 2025 13:28:22 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
-        <dmitry.baryshkov@linaro.org>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        Praveenkumar I <quic_ipkumar@quicinc.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v5 4/5] arm64: dts: qcom: ipq5332: Add PCIe related nodes
-Message-ID: <Z4dqnr9+MTue3VbX@hu-varada-blr.qualcomm.com>
-References: <20250102113019.1347068-5-quic_varada@quicinc.com>
- <20250108183235.GA220566@bhelgaas>
+	Wed, 15 Jan 2025 08:08:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=Content-Transfer-Encoding: Content-Type: In-Reply-To: From: References:
+ Cc: To: Subject: MIME-Version: Date: Message-ID; q=dns/txt;
+ s=fe-e1b5cab7be; t=1736928483;
+ bh=qucqar6HUi7wGW1W5TC3J/YSVkxpWjIVUzY/b7JOA4M=;
+ b=W8oXVsSYfR6tKiRwNJ8+eoWfysYv1Q1VlyX6aTkNjp+e5CTtdN/3t6X3AaOSH8MU/DFHSsuwD
+ cwEYBsC2R8+k9vDVuSC+cQEs//SLwn+f0EffqbTkHXmAYlOJ9O+pWK2/lLBQiYfDXIjYtQYzS6Z
+ cSLoczhcfDWXb99ojYEydEAk1+YGks4fvn7We5qwgClBTmzerdQwXBQllSKsLu29nULWrAHNhl+
+ dBjNAAuKODCj7K9pZqglzUEIaJd1Qkgc3L3bRBaO07Sn78Ry6aN8MmAc5hqVIKxLf6fKIs6xZHM
+ /ewQNJ5VI1t3IJuwzeKHlC8j1QIPyl9RQaB73/psnlEw==
+X-Forward-Email-ID: 67876cd77efc61f2763fc053
+X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
+ 149.28.215.223
+X-Forward-Email-Version: 0.4.40
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+Message-ID: <2c221084-eef5-434c-9919-f6746eae8e0e@kwiboo.se>
+Date: Wed, 15 Jan 2025 09:07:45 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250108183235.GA220566@bhelgaas>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: yEiBqHoUvMPVEeVoNLX-JJ4sCL9GcypG
-X-Proofpoint-ORIG-GUID: yEiBqHoUvMPVEeVoNLX-JJ4sCL9GcypG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-15_03,2025-01-15_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 spamscore=0
- mlxlogscore=999 adultscore=0 clxscore=1011 priorityscore=1501
- suspectscore=0 phishscore=0 bulkscore=0 impostorscore=0 lowpriorityscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501150059
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/1] phy: rockchip: naneng-combphy: compatible reset
+ with old DT
+To: Chukun Pan <amadeus@jmu.edu.cn>
+Cc: "heiko@sntech.de" <heiko@sntech.de>, "kishon@kernel.org"
+ <kishon@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "liujianfeng1994@gmail.com" <liujianfeng1994@gmail.com>,
+ "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+ "vkoul@kernel.org" <vkoul@kernel.org>
+References: <df8e0ff8-355b-4c18-9349-0f04ae16e01b@kwiboo.se>
+ <20250115040003.29306-1-amadeus@jmu.edu.cn>
+Content-Language: en-US
+From: Jonas Karlman <jonas@kwiboo.se>
+In-Reply-To: <20250115040003.29306-1-amadeus@jmu.edu.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_235841_668407_0E1DE3B8 
-X-CRM114-Status: GOOD (  20.99  )
+X-CRM114-CacheID: sfid-20250115_000803_411580_176D265B 
+X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,62 +87,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 08, 2025 at 12:32:35PM -0600, Bjorn Helgaas wrote:
-> On Thu, Jan 02, 2025 at 05:00:18PM +0530, Varadarajan Narayanan wrote:
-> > From: Praveenkumar I <quic_ipkumar@quicinc.com>
-> >
-> > Add phy and controller nodes for pcie0_x1 and pcie1_x2.
->
-> > +		pcie1: pcie@18000000 {
-> > +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
-> > +			reg = <0x00088000 0x3000>,
-> > +			      <0x18000000 0xf1d>,
-> > +			      <0x18000f20 0xa8>,
-> > +			      <0x18001000 0x1000>,
-> > +			      <0x18100000 0x1000>,
-> > +			      <0x0008b000 0x1000>;
-> > +			reg-names = "parf",
-> > +				    "dbi",
-> > +				    "elbi",
-> > +				    "atu",
-> > +				    "config",
-> > +				    "mhi";
-> > +			device_type = "pci";
-> > +			linux,pci-domain = <1>;
-> > +			bus-range = <0x00 0xff>;
->
-> This bus-range isn't needed, is it?  pci_parse_request_of_pci_ranges()
-> should default to 0x00-0xff if no bus-range property is present.
+Hi Chukun,
 
-Ok.
+On 2025-01-15 05:00, Chukun Pan wrote:
+> Hi,
+>> The commit fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
+>> broke backwards compatibly with old DTs and has already been backported
+>> breaking i.e. PCIe and USB on Rockchip RK356x boards on stable and
+>> longterm kernels.
+> 
+> The dts changes have been merged into v6.13-rc7,
+> maybe it can be sent to linux-stable.
 
->
-> > +			num-lanes = <2>;
-> > +			phys = <&pcie1_phy>;
-> > +			phy-names = "pciephy";
->
-> I think num-lanes and PHY info are per-Root Port properties, not a
-> host controller properties, aren't they?  Some of the clock and reset
-> properties might also be per-Root Port.
->
-> Ideally, I think per-Root Port properties should be in a child device
-> as they are here:
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mvebu-pci.txt?id=v6.12#n137
-> but it looks like the num-lanes parsing is done in
-> dw_pcie_get_resources(), which can only handle a single num-lanes per
-> DWC controller, so maybe it's impractical to add a child device here.
->
-> But I wonder if it would be useful to at least group the per-Root Port
-> things together in the binding to help us start thinking about the
-> difference between the controller and the Root Port(s).
+The original commit broke ABI and does not allow upgrading Linux using
+an existing device tree, even if the DT patch adding reset-names props
+also is backported you still have uses in the wild e.g. U-Boot v2024.10
+and newer that comes bundled with an unpatched DT.
 
-This looks like a big change and might impact the existing
-SoCs/platforms. To minimize the impact, should we continue
-supporting the legacy method in addition to the new per-Root port
-approach. Should we take this up separately? Kindly advice.
+Trying to boot into Linux v6.1.123+, v6.6.69+ and v6.12.8+ using the 
+U-Boot bundled DT for RK356x boards now result in broken PCIe, SATA and
+USB thanks to the offending commit fbcbffbac994 ("phy: rockchip:
+naneng-combphy: fix phy reset").
 
-Thanks
-Varada
+Regards,
+Jonas
+
+> 
+> Thanks,
+> Chukun
+> 
+
 
 -- 
 linux-phy mailing list
