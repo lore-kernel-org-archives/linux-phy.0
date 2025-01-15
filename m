@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 798B7E77188
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 01:27:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1351E77188
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 01:30:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ohn1lOeT7BDocJUcfNtquPoF1dEiy5WjCeyeA35wlQo=; b=vyDdBR7vP9gPMG
-	BhR5L8SvpjSR0wXZXEMH86YwNyVGVuJuQeYgigrPQMn9GHRvoQqns4XPP2KYoEREDrlYlC99jrUyE
-	3et2euqtoFEIUJYa7JNGU+BoV/jJFNaNE3V+hs+1xi4N+3vFA3XI+1huuG71//DfR0GX495aaJf7r
-	2WIMqjH4dIwK0j4tb6TQFMwOM5BsqBtfJxXZz4nrP4jB+YqX0C8P+Ifzr6ci+7nIp7LgAnzbaqCfu
-	d6zKYMlIHXxwrQDRUxZHfkeLuHRZZjZ1+um7PjZUn84wXyEHOiht7vQRYKIwWcnFVEkklxWqF/F4H
-	Qp3zAaPt4ad8SI5II2qA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZODcxMSrXP6qJbYiHPj7/wqAQXn+W83bvMdET6oLbuI=; b=v9pSSk1BD/IQXK
+	Is0e4hfLWGJbu7EJxo+zgiy6C3wOXVk5KGk98z9P4mQSMzJ3bsIMSPE6fsyqMcwoWKOhuJYa/ceVw
+	IxYRGnnys3uHPupDMElaGXnGCAASppEfvMJMTH82nIHsY97cb5YqGgx9+IhZVo4+K+JmEoPn2LyMB
+	xUJgyuOPj8BzbFIx8BNpiTTXsEbQGQufocaKv2YKAqijLmDNjERI0tOT1zZLf/t7/hcLaBS8Hlx3A
+	d6dmICwc/BeIlaIxGrKTj5tYdzkBH8Zh7EZCU5pRZC5bJERFCd82Rb2mWUWAf0kMRqOddbZrmNuit
+	pMJ7DpOjtEZwYWLalPMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXsCN-0000000AICg-13NE;
-	Wed, 15 Jan 2025 01:27:59 +0000
-Received: from mail-qt1-x833.google.com ([2607:f8b0:4864:20::833])
+	id 1tXsEo-0000000AIlD-2IC9;
+	Wed, 15 Jan 2025 01:30:30 +0000
+Received: from mail-qt1-x835.google.com ([2607:f8b0:4864:20::835])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXsB6-0000000AHn6-174E;
-	Wed, 15 Jan 2025 01:26:41 +0000
-Received: by mail-qt1-x833.google.com with SMTP id d75a77b69052e-467838e75ffso78602301cf.3;
-        Tue, 14 Jan 2025 17:26:39 -0800 (PST)
+	id 1tXsBA-0000000AHoc-1xAb;
+	Wed, 15 Jan 2025 01:26:46 +0000
+Received: by mail-qt1-x835.google.com with SMTP id d75a77b69052e-467a1d43821so3505131cf.1;
+        Tue, 14 Jan 2025 17:26:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1736904399; x=1737509199; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=zxKAeTboBvObYWkDQ0AR6zNtcZLXj4I4J7ZDM4Fl16Q=;
-        b=BJ4sReGwOZ+7N7GpEG/mhQrhDj2PshFuNMvt5Uo2FYRqnBs1GNmwmf6RmQP9bARNGk
-         StybLMlRtWWpm5CXmOpK7L8hcrHWodYAWB6JbdOrl9bYDq7svOSuy73YFY6HCJxCeNN7
-         lLczbQM8sst2PE5x8YBPt9z+956z0GUjSxBsQa+BU9UqMwxZutqE0/18t7L6Dmrg+UAk
-         /Qz5XwxnsRziFGuUh102qmfPnN2tP99ego65+MR6J8VXEodo4f/f7pODeOtNrCTSLTv5
-         Rsbj0ILsW4DGiYPy6EXMLeyLw2I0Sx1kNVP4EhS9el3KBhousvPvkmS69jbg7bMLnPxB
-         Y8UQ==
+        d=gmail.com; s=20230601; t=1736904403; x=1737509203; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Snarum8RemNk17GrbLyNHBNd9vFMQQrcExzWnVGfdHE=;
+        b=RlBYqpQXSMclrLIkK5QJFbvI78cdqlLqLmzIAEK8cFPPMU4mvWWtX/hIuIqzzkLsDO
+         xEU+sESSometqu8KewDHVzsvUmFzLMyCyvWB/4qTQZ1IPO4RaPWTEebLpmpI9pGrGhWS
+         kQweic6NWvy9F4fdXGilhik/XRXFzv1F7eBfeiGfb3PBR32X/2iqe7asGlxf5rFeugLo
+         cn9XzVaik3yocq5h9il/eeB8tmIc8PDVxORK0Kzhnpl7IeoLnZwVUhdmL6JlEXQvL6oR
+         +IoOXYogUAgOcR2BrVFtLJZKEC+BlY00Yx3WOjMdofp/+wlD4lWz2g/NjKiSC0U8sAsd
+         qzxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736904399; x=1737509199;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=zxKAeTboBvObYWkDQ0AR6zNtcZLXj4I4J7ZDM4Fl16Q=;
-        b=jsJkxz6B1DwMbqYwZd6U1GSbUunkOZOeOEeG9UR22E3vzsT2rzCsb6cZD9R07el9Tk
-         lQ3q8enVoHd8qwVR2fVYihziLz3SWU5LBdipR+fd3GfuQ60aGyGsya+oTW0bOvdUVIPe
-         JH2+1dEMShstY5luxunVc9DQrjiQLhEfNF/z97tAhh8rckOR1Re+zjzY1jTXlyiemNFX
-         4KHdo48Lpiezb+3A+QnPmdYtTu3L2r9CkwGsFHBoHsnWXBND+57PAkxvqS+jGKV3JbKA
-         OEWBa6K+wT+ST9VCaGyqg6RDlDxnDnpglb7sLMcKXj+EEV7z3xTrHIiJA4VhfRRnHoS3
-         IYzw==
-X-Forwarded-Encrypted: i=1; AJvYcCWQ3R+nrEmlPNv4tbKrkgLfnmusEftqTGGuR3kjW/Ckbx5Rf1r88VLVkWE6wR0Yz0x3vh2VOJ6rtJ8sRyOcPzDa@lists.infradead.org, AJvYcCX+bwQGyPM6pLyoXYhl3evv+UvLnLgHwyZqASzGi7UWbMK6jtWCMDk5ve9EoJKDLUxF9nFEnsZR22lx@lists.infradead.org, AJvYcCXV04u2jnzzgH1ZdeLT1TIZEj952l0/N7ap1RRlHeihUoNIdCpyBaogbHpCHPY9PoNtkA61+E0DZ8DouuccJK4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwdG5fVjuMUaP2FzOFQJlfi5Pvr+TJ1Y7DlIQGI/ocqadT2S3Xg
-	gwZhH18a00uB1+QkL6WiqyVIfMmDI1nUSmkmTu6V3b/eaEbgQ+POChhyVWuY
-X-Gm-Gg: ASbGncvXlxq3rUZRIzcjNuRrhkIoZYXH6KBKuBf7yGsnI+b5ZUhBB/9uMlQKGP8c24F
-	OFhIebBA9XlEG5fqDzEFgE6yU8D1CnZ9HxsGJxbKpJ5FUmPSrZIs5QQPTYZQ9bpT7Yi/SBfT1QR
-	7HrbU4R+meD0dL8fePIj1E1K3WoCUOmgeyREYr9m57YNnq4RJl3ubRAcHZyMwXwcb6L6MbZa8JW
-	1UwIlFTRtb9Rg2r8ITjUKQTCGqohGhaQCvxTRwHXOl8tBPK/GSrF6SNMkRLjmP9PPPZ
-X-Google-Smtp-Source: AGHT+IHkjY+lSGkYzydQLdwGyg5cAMqfVAt8/A/Vokcc+X5oQZqhnf93yNQ9PAJuXC0Ab72Srz1tdA==
-X-Received: by 2002:a05:622a:34c:b0:466:8c53:7758 with SMTP id d75a77b69052e-46c70fd31b0mr421291791cf.5.1736904398819;
-        Tue, 14 Jan 2025 17:26:38 -0800 (PST)
+        d=1e100.net; s=20230601; t=1736904403; x=1737509203;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Snarum8RemNk17GrbLyNHBNd9vFMQQrcExzWnVGfdHE=;
+        b=sVvhPjA28tPYivE5MDrjaI5OQjsnjedvJekDrVjGWPFdTwYDvQGIHvtMpMdTYvhuIo
+         NZGA8MspeN3vfSfDTybS4vaLVs8hTCTUVzYjosckCPyXlIg7WQc24Ek0dRsSD3xHeKrC
+         vaMW4lAuNwsaZsPM2slPhMzx08EmQZeRZIuy1OrmnK5etmko+0zdcb7TGmnvHlo3jO/A
+         FTN+i6to4NqMOjv4GtCk8vl8pvQx261dzsMiFGhdeCdq5rYv2yBxc53cZlHagU0wtXo/
+         jX6H93kW0ajZipkFez2QQSYaWt3APpOhV++/fOCe/pGfO+hPU6JlqgwXivz9Jd1qJNsr
+         pfTA==
+X-Forwarded-Encrypted: i=1; AJvYcCUVpZf+lh5thWDhtyIBHsO0bUVslh16lz0dMUooTKyWy92CBdnSWoXc7cOTmUBUM+mT89udHobHjAAz@lists.infradead.org, AJvYcCV//CWQRPgwvJz0JQ3V+37ebRkbDeEFgZu0/i4dAOe6hk0A2jHczOkVgtrSAb8KWqkh4wZx2djO0ObAeoNzNEc=@lists.infradead.org, AJvYcCW41DwUIZxfTiYeT9Kv6jVCDNtp3ziAQcDu2wx3NosV4kdzyV/uU69Z8fgsavcerNk5iGDTspnmBPxhqxKGoj+w@lists.infradead.org
+X-Gm-Message-State: AOJu0YxZuS99uVOjAi0nKWbpCXUsQ6txW8cWr8ohfMBQfD4Ub0uirQvd
+	DdPKvWR+Lmw2BeOY9nNbdVGfRjq/myjMGa1jw3W2IXott8B0PQYO
+X-Gm-Gg: ASbGncsjCrYjHUDHGAk49PXv6bdZL6mWi8xZ6qzeWZ73dzrzAZ5q6ZDQxINIqWbjVqg
+	IDCI9QB4NZNqwWidfORbIxevkz9eTdUNAyNPUDxnk7QOmiUQ0ffxrp0+osghJdjE2vN+cYKdBj2
+	A48E+jShSYHaEbUnO73WvdqRbJEhTc4gsYfL0oV6hZP2ArcH9dVbU4zvsBp90Ef+fo5m+cajo5x
+	kdqY0DMpyj02m0bCCZ43ySDZ+JF47Sf5yd8aju6wjwxZE/nq7E2nS8Q8gwRsp+mlmnq
+X-Google-Smtp-Source: AGHT+IGOUmK+RMSPaiPxBiaoCjQrSZ5Ap13SAxkBgzinR11U70sZUt737IPnaRgevXgbi2ZEV1eQwQ==
+X-Received: by 2002:a05:622a:181b:b0:466:9197:b4fa with SMTP id d75a77b69052e-46df5760914mr22651911cf.21.1736904403233;
+        Tue, 14 Jan 2025 17:26:43 -0800 (PST)
 Received: from master-x64.sparksnet ([204.111.227.95])
-        by smtp.gmail.com with ESMTPSA id d75a77b69052e-46c8733130dsm59933881cf.25.2025.01.14.17.26.35
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-46c8733130dsm59933881cf.25.2025.01.14.17.26.40
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 14 Jan 2025 17:26:37 -0800 (PST)
+        Tue, 14 Jan 2025 17:26:42 -0800 (PST)
 From: Peter Geis <pgwipeout@gmail.com>
 To: Heiko Stuebner <heiko@sntech.de>
 Cc: zyw@rock-chips.com,
@@ -74,40 +75,25 @@ Cc: zyw@rock-chips.com,
 	wulf@rock-chips.com,
 	linux-rockchip@lists.infradead.org,
 	Peter Geis <pgwipeout@gmail.com>,
-	Alex Bee <knaerzche@gmail.com>,
-	Algea Cao <algea.cao@rock-chips.com>,
-	Arnd Bergmann <arnd@arndb.de>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Dragan Simic <dsimic@manjaro.org>,
-	Elaine Zhang <zhangqing@rock-chips.com>,
-	FUKAUMI Naoki <naoki@radxa.com>,
-	Johan Jonker <jbx6244@gmail.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
 	Rob Herring <robh@kernel.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Trevor Woerner <twoerner@gmail.com>,
 	Vinod Koul <vkoul@kernel.org>,
-	Zhang Yubing <yubing.zhang@rock-chips.com>,
 	devicetree@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
-	linux-clk@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org
-Subject: [RFC PATCH v1 0/6] rockchip: add a functional usb3 phy driver for rk3328
-Date: Wed, 15 Jan 2025 01:26:21 +0000
-Message-Id: <20250115012628.1035928-1-pgwipeout@gmail.com>
+Subject: [RFC PATCH v1 2/6] dt-bindings: phy: rockchip: add rk3328 usb3 phy
+Date: Wed, 15 Jan 2025 01:26:23 +0000
+Message-Id: <20250115012628.1035928-3-pgwipeout@gmail.com>
 X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20250115012628.1035928-1-pgwipeout@gmail.com>
+References: <20250115012628.1035928-1-pgwipeout@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_172640_306107_B02A170B 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20250114_172644_920456_D2226BC3 
+X-CRM114-Status: GOOD (  13.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,61 +110,187 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Add documentation for the usb3 phy as implemented on the rk3328 SoC.
 
-This is my newly reworked phy driver for the rk3328 usb3 phy. It is
-based loosely on my original version, but as of now almost nothing of
-the original driver remains. The main fix here is the discovery of
-BIT(6) in the interrupt enable grf register fixes the usb3 disconnection
-detection (mostly). On occasion an unpopulated usb3 hub will take
-several seconds to disconnect. However this means all of the hack around
-work to reset the usb core manually is no longer required.
+Signed-off-by: Peter Geis <pgwipeout@gmail.com>
+---
 
-I did my best to document all registers I could find. A lot was taken
-from emails between myself and Rockchip's engineers, much thanks to
-William Wu <wulf@rock-chips.com> for their assistance here. The rest of
-the config bits were taken from the rk3328 and rk3228h TRMs and the
-downstream driver. Everything that I couldn't find a definition for is
-prefixed UNK_ or UNKNOWN_. There's a lot of obviously used configuration
-registers with the pipe interface that are also undocumented.
-
-The only major bug I have so far is my AX88179 usb3 gigabit ethernet
-adapter (Pluggable brand) crashes out when large amounts of data are
-transmitted. I suspect this is related to the RX and TX tuning, as
-leaving it at defaults makes things worse. As I am not a USB3 engineer
-and I do not have the specialized knowledge and hardware to determine
-what is going wrong, I am hoping the mailing list will have an answer
-here.
-
-Please test and review.
-
-Very Respectfully,
-Peter Geis
-
-
-
-Peter Geis (6):
-  clk: rockchip: fix wrong clk_ref_usb3otg parent for rk3328
-  dt-bindings: phy: rockchip: add rk3328 usb3 phy
-  phy: rockchip: add driver for rk3328 usb3 phy
-  arm64: dts: rockchip: add rk3328 usb3 phy node
-  arm64: dts: rockchip: enable the usb3 phy on rk3328-roc boards
-  arm64: dts: rockchip: enable the usb3 phy on remaining rk3328 boards
-
- .../bindings/phy/rockchip,inno-usb3phy.yaml   | 166 ++++
- .../boot/dts/rockchip/rk3328-nanopi-r2.dtsi   |  12 +
- .../dts/rockchip/rk3328-orangepi-r1-plus.dtsi |  12 +
- arch/arm64/boot/dts/rockchip/rk3328-roc.dtsi  |  12 +
- .../boot/dts/rockchip/rk3328-rock-pi-e.dts    |  12 +
- .../arm64/boot/dts/rockchip/rk3328-rock64.dts |  12 +
- arch/arm64/boot/dts/rockchip/rk3328.dtsi      |  39 +
- drivers/clk/rockchip/clk-rk3328.c             |   2 +-
- drivers/phy/rockchip/Kconfig                  |  10 +
- drivers/phy/rockchip/Makefile                 |   1 +
- drivers/phy/rockchip/phy-rockchip-inno-usb3.c | 869 ++++++++++++++++++
- 11 files changed, 1146 insertions(+), 1 deletion(-)
+ .../bindings/phy/rockchip,inno-usb3phy.yaml   | 166 ++++++++++++++++++
+ 1 file changed, 166 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
- create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb3.c
 
+diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
+new file mode 100644
+index 000000000000..cde489ca87ab
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
+@@ -0,0 +1,166 @@
++# SPDX-License-Identifier: GPL-2.0-only
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/rockchip,inno-usb3phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip USB 3.0 phy with Innosilicon IP block
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    enum:
++      - rockchip,rk3328-usb3phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    minItems: 3
++    maxItems: 3
++
++  clock-names:
++    items:
++      - const: refclk-usb3otg
++      - const: usb3phy-otg
++      - const: usb3phy-pipe
++
++  interrupts:
++    minItems: 4
++
++  interrupt-names:
++    items:
++      - const: bvalid
++      - const: id
++      - const: linestate
++      - const: rxdet
++
++  resets:
++    minItems: 6
++
++  reset-names:
++    items:
++      - const: usb3phy-u2-por
++      - const: usb3phy-u3-por
++      - const: usb3phy-pipe-mac
++      - const: usb3phy-utmi-mac
++      - const: usb3phy-utmi-apb
++      - const: usb3phy-pipe-apb
++
++  "#address-cells":
++    const: 2
++
++  "#size-cells":
++    const: 2
++
++  ranges: true
++
++patternProperties:
++
++  utmi-port@[0-9a-f]+$:
++    type: object
++    additionalProperties: false
++
++    properties:
++      compatible:
++        enum:
++          - rockchip,rk3328-usb3phy-utmi
++
++      reg:
++        maxItems: 1
++
++      "#phy-cells":
++        const: 0
++
++      phy-supply:
++        description:
++          Phandle to a regulator that provides power to VBUS.
++          See ./phy-bindings.txt for details.
++
++    required:
++      - compatible
++      - reg
++      - "#phy-cells"
++
++  pipe-port@[0-9a-f]+$:
++    type: object
++    additionalProperties: false
++
++    properties:
++      compatible:
++        enum:
++          - rockchip,rk3328-usb3phy-pipe
++
++      reg:
++        maxItems: 1
++
++      "#phy-cells":
++        const: 0
++
++      phy-supply:
++        description:
++          Phandle to a regulator that provides power to VBUS.
++          See ./phy-bindings.txt for details.
++
++    required:
++      - compatible
++      - reg
++      - "#phy-cells"
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - interrupts
++  - interrupt-names
++  - resets
++  - reset-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3328-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    soc {
++      #address-cells = <2>;
++      #size-cells = <2>;
++
++      usb3phy: usb3-phy@ff460000 {
++        compatible = "rockchip,rk3328-usb3phy";
++        reg = <0x0 0xff460000 0x0 0x10000>;
++        clocks = <&cru SCLK_REF_USB3OTG>, <&cru PCLK_USB3PHY_OTG>, <&cru PCLK_USB3PHY_PIPE>;
++        clock-names = "refclk-usb3otg", "usb3phy-otg", "usb3phy-pipe";
++        interrupts = <GIC_SPI 75 IRQ_TYPE_LEVEL_HIGH>, <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>, <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
++        interrupt-names = "bvalid", "id", "linestate", "rxdet";
++        resets = <&cru SRST_USB3PHY_U2>,
++                 <&cru SRST_USB3PHY_U3>,
++                 <&cru SRST_USB3PHY_PIPE>,
++                 <&cru SRST_USB3OTG_UTMI>,
++                 <&cru SRST_USB3PHY_OTG_P>,
++                 <&cru SRST_USB3PHY_PIPE_P>;
++        reset-names = "usb3phy-u2-por", "usb3phy-u3-por",
++                      "usb3phy-pipe-mac", "usb3phy-utmi-mac",
++                      "usb3phy-utmi-apb", "usb3phy-pipe-apb";
++        #address-cells = <2>;
++        #size-cells = <2>;
++        ranges;
++
++        usb3phy_utmi: utmi-port@ff470000 {
++          compatible = "rockchip,rk3328-usb3phy-utmi";
++          reg = <0x0 0xff470000 0x0 0x8000>;
++          #phy-cells = <0>;
++        };
++
++        usb3phy_pipe: pipe-port@ff478000 {
++          compatible = "rockchip,rk3328-usb3phy-pipe";
++          reg = <0x0 0xff478000 0x0 0x8000>;
++          #phy-cells = <0>;
++        };
++      };
++    };
 -- 
 2.39.5
 
