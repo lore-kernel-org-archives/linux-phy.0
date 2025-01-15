@@ -4,136 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 794F8E77188
-	for <linux-phy@archiver.kernel.org>; Tue, 14 Jan 2025 23:34:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 798B7E77188
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 01:27:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sLey3lJNTS9+BpYGjHPRKiHQ/UiovGCwN5c8RR58wZk=; b=MPQ56yEsWxXVyuz5gc94lK1eEs
-	YmDtmnLtGwt4RvJrb6pJYDq98M/0RSHELmLjQgfe9TiSzr6Em/nrC+yXC9wcKWYUVJpMECo8csbua
-	rDeFg/+sQHaJByZQ58PwPKbo0gcnrAlbMuYP0SChA+wpDFSNmm5RfU0wQz+a8yrIA7d1YA4HrGuQK
-	LwQDdD5ThUQdVwicOrM9YubsA/FaC29qA06xqa0brxwCTqswv/ad9LJm4EEra95hTZSrVq+WLMcor
-	bzH2UL/wPRZQ4m+uwP4oIgHvKbcB7i6ihp89IK9ECDOSglJM0lkpMec5iX4yo48IFFnQuSjQTReH1
-	bp7O0ctg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ohn1lOeT7BDocJUcfNtquPoF1dEiy5WjCeyeA35wlQo=; b=vyDdBR7vP9gPMG
+	BhR5L8SvpjSR0wXZXEMH86YwNyVGVuJuQeYgigrPQMn9GHRvoQqns4XPP2KYoEREDrlYlC99jrUyE
+	3et2euqtoFEIUJYa7JNGU+BoV/jJFNaNE3V+hs+1xi4N+3vFA3XI+1huuG71//DfR0GX495aaJf7r
+	2WIMqjH4dIwK0j4tb6TQFMwOM5BsqBtfJxXZz4nrP4jB+YqX0C8P+Ifzr6ci+7nIp7LgAnzbaqCfu
+	d6zKYMlIHXxwrQDRUxZHfkeLuHRZZjZ1+um7PjZUn84wXyEHOiht7vQRYKIwWcnFVEkklxWqF/F4H
+	Qp3zAaPt4ad8SI5II2qA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXqQs-0000000A7Wt-3OzH;
-	Tue, 14 Jan 2025 23:34:50 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1tXsCN-0000000AICg-13NE;
+	Wed, 15 Jan 2025 01:27:59 +0000
+Received: from mail-qt1-x833.google.com ([2607:f8b0:4864:20::833])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXqFx-0000000A5lC-1lVX
-	for linux-phy@bombadil.infradead.org;
-	Tue, 14 Jan 2025 23:23:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:To:Subject:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Cc:Content-ID:Content-Description;
-	bh=JF2SO1JNjZFS/AW+/qwVSLc3H3ROwf+oLgiJ6Im/2BQ=; b=TCdevFv2eDUYbatgtpn4qEBG3m
-	5Gk8h0FtFwWQ1Y9W0UrXcEsEkTZCgeujOEJO0ehJnbIdrNsxtIvBXKqDuRbW5+wG8kPavQdAtj5Wk
-	oSa+mYUil+bYcHSuYYJANbOZvYnI86H4BiylUUnXws+fcBK0PVxVJcJwGRMOW0M1Pt+mnXEh5sQc4
-	W4NostOIbyG4DVD1xMB2BdYj0dEHIFe37fFky51grJEHxnWIsPOfc4Qb5qxaZOjvkC0UZsJDKscA/
-	VONyjWLbcl3xQOzIx4JwK4lfi+4yVFirwqtSej4qLWabdNo9E1WLQJA47lj/yhtEsFIu9psW3L0Hd
-	igpy5z9Q==;
-Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXqFt-0000000AgeF-0LiZ
-	for linux-phy@lists.infradead.org;
-	Tue, 14 Jan 2025 23:23:31 +0000
-Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-2161eb94cceso74903965ad.2
-        for <linux-phy@lists.infradead.org>; Tue, 14 Jan 2025 15:23:27 -0800 (PST)
+	id 1tXsB6-0000000AHn6-174E;
+	Wed, 15 Jan 2025 01:26:41 +0000
+Received: by mail-qt1-x833.google.com with SMTP id d75a77b69052e-467838e75ffso78602301cf.3;
+        Tue, 14 Jan 2025 17:26:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=broadcom.com; s=google; t=1736897006; x=1737501806; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=JF2SO1JNjZFS/AW+/qwVSLc3H3ROwf+oLgiJ6Im/2BQ=;
-        b=fZvc+ME2UdvSUOLMGTW1J5WuP3HDx3W5f1k8VHu3f/GTwIpRHFBD/jfYMHTQw45xIU
-         Y8OIXP41Bg5vp+QKRH9/GgY+dKW9CIkoIoFZyO0qJeaDwwPlYgrMMQ5UHBnCKdas6aD3
-         7h84E7wnSwN3cNCzx58Z9yMzt4THF3cdppynY=
+        d=gmail.com; s=20230601; t=1736904399; x=1737509199; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=zxKAeTboBvObYWkDQ0AR6zNtcZLXj4I4J7ZDM4Fl16Q=;
+        b=BJ4sReGwOZ+7N7GpEG/mhQrhDj2PshFuNMvt5Uo2FYRqnBs1GNmwmf6RmQP9bARNGk
+         StybLMlRtWWpm5CXmOpK7L8hcrHWodYAWB6JbdOrl9bYDq7svOSuy73YFY6HCJxCeNN7
+         lLczbQM8sst2PE5x8YBPt9z+956z0GUjSxBsQa+BU9UqMwxZutqE0/18t7L6Dmrg+UAk
+         /Qz5XwxnsRziFGuUh102qmfPnN2tP99ego65+MR6J8VXEodo4f/f7pODeOtNrCTSLTv5
+         Rsbj0ILsW4DGiYPy6EXMLeyLw2I0Sx1kNVP4EhS9el3KBhousvPvkmS69jbg7bMLnPxB
+         Y8UQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1736897006; x=1737501806;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+        d=1e100.net; s=20230601; t=1736904399; x=1737509199;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=JF2SO1JNjZFS/AW+/qwVSLc3H3ROwf+oLgiJ6Im/2BQ=;
-        b=VILn8JZq0DfNJn06BrTxdofCPmxN/xZ1xPcycDLqTh7+0nv8VoViCi77ROLDIS8iz/
-         K7iXCmqCRqBJ3cxzZl+DczY82+RQIAisxLVOvwWXDKyyhkLgzuIdRpMFW40lwi5jtufO
-         08IEQaWBTPYbkaPdeYowAF2ZHDBre4nIlA05liX2xyJz7/t0Jd7s8XN9x70gluZWISDK
-         hDFi9F0DWDDw4S82WHvIC5tbD5jO1+rkIToxFtBIbKArrGr+p6K+WJ9I52brYxEebinh
-         wggbs+YHC7+IKnjDLruEulEVNooiCBBBuoDnBe+qcgBtDCQeJ+27zPbVNz7Tu2ajKHjs
-         WoDA==
-X-Forwarded-Encrypted: i=1; AJvYcCWnFWE84Fq/upDgsMxYU//J32Z2zM+E4NYJctSO1n8nrfU/qQDgI5nc95lca4nYYIWl0ti+CBTkO38=@lists.infradead.org
-X-Gm-Message-State: AOJu0YybChVOqLb3ev1scgMBgxHkClHXbkv18py14ZNO+2onYFkWI7cX
-	aBCeRZbemjp2fYP/zd1o1KZz3Vk1Mh1J33XaEUaqcjg3oUDtPnywDN+jCPKoVg==
-X-Gm-Gg: ASbGnctbf71rypmebSw7RUc7iXkdvO4m3kCTyPilPuzd3jd/tlBsvPbhAoMuUvEM3LI
-	78BWStxfqSRG4dPMgwCxqaN7ZAKvFgS17jXedwexrwTtbOF/pDjwZ42fGPDQNgWf4R+Z1r9bIa/
-	WOTyh1BITJL/rJN9PYyCgcp8/Q7j1m2dOiuQqAZAhICAlkEi5ew0nLQfb7OoPqYGeg2A1oHaTZ4
-	WmKdOUFn7FxkW8nF2vaZmRrBdXh361FTa7YzBpVfVFotOz2VbHT1/qPVDhMm101jLRSPtoyg5bh
-	od0lrRQLUpQdn4UW0KrXTr513Z8Cc+U=
-X-Google-Smtp-Source: AGHT+IFP+iDz9d53FNYprYxDfsZHKpRDF3bHc76kCec6tsY8vy4yCwcxXTB9ww6UWz6UHEjmZYk7/w==
-X-Received: by 2002:a17:903:244c:b0:216:725c:a137 with SMTP id d9443c01a7336-21a83f72472mr455838475ad.28.1736897006461;
-        Tue, 14 Jan 2025 15:23:26 -0800 (PST)
-Received: from [192.168.1.3] (ip68-4-215-93.oc.oc.cox.net. [68.4.215.93])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-21a9f22dd30sm72193155ad.171.2025.01.14.15.23.24
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 14 Jan 2025 15:23:25 -0800 (PST)
-Message-ID: <511eb6d3-ff74-43e8-ad27-808ecb53e698@broadcom.com>
-Date: Tue, 14 Jan 2025 15:23:23 -0800
+        bh=zxKAeTboBvObYWkDQ0AR6zNtcZLXj4I4J7ZDM4Fl16Q=;
+        b=jsJkxz6B1DwMbqYwZd6U1GSbUunkOZOeOEeG9UR22E3vzsT2rzCsb6cZD9R07el9Tk
+         lQ3q8enVoHd8qwVR2fVYihziLz3SWU5LBdipR+fd3GfuQ60aGyGsya+oTW0bOvdUVIPe
+         JH2+1dEMShstY5luxunVc9DQrjiQLhEfNF/z97tAhh8rckOR1Re+zjzY1jTXlyiemNFX
+         4KHdo48Lpiezb+3A+QnPmdYtTu3L2r9CkwGsFHBoHsnWXBND+57PAkxvqS+jGKV3JbKA
+         OEWBa6K+wT+ST9VCaGyqg6RDlDxnDnpglb7sLMcKXj+EEV7z3xTrHIiJA4VhfRRnHoS3
+         IYzw==
+X-Forwarded-Encrypted: i=1; AJvYcCWQ3R+nrEmlPNv4tbKrkgLfnmusEftqTGGuR3kjW/Ckbx5Rf1r88VLVkWE6wR0Yz0x3vh2VOJ6rtJ8sRyOcPzDa@lists.infradead.org, AJvYcCX+bwQGyPM6pLyoXYhl3evv+UvLnLgHwyZqASzGi7UWbMK6jtWCMDk5ve9EoJKDLUxF9nFEnsZR22lx@lists.infradead.org, AJvYcCXV04u2jnzzgH1ZdeLT1TIZEj952l0/N7ap1RRlHeihUoNIdCpyBaogbHpCHPY9PoNtkA61+E0DZ8DouuccJK4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwdG5fVjuMUaP2FzOFQJlfi5Pvr+TJ1Y7DlIQGI/ocqadT2S3Xg
+	gwZhH18a00uB1+QkL6WiqyVIfMmDI1nUSmkmTu6V3b/eaEbgQ+POChhyVWuY
+X-Gm-Gg: ASbGncvXlxq3rUZRIzcjNuRrhkIoZYXH6KBKuBf7yGsnI+b5ZUhBB/9uMlQKGP8c24F
+	OFhIebBA9XlEG5fqDzEFgE6yU8D1CnZ9HxsGJxbKpJ5FUmPSrZIs5QQPTYZQ9bpT7Yi/SBfT1QR
+	7HrbU4R+meD0dL8fePIj1E1K3WoCUOmgeyREYr9m57YNnq4RJl3ubRAcHZyMwXwcb6L6MbZa8JW
+	1UwIlFTRtb9Rg2r8ITjUKQTCGqohGhaQCvxTRwHXOl8tBPK/GSrF6SNMkRLjmP9PPPZ
+X-Google-Smtp-Source: AGHT+IHkjY+lSGkYzydQLdwGyg5cAMqfVAt8/A/Vokcc+X5oQZqhnf93yNQ9PAJuXC0Ab72Srz1tdA==
+X-Received: by 2002:a05:622a:34c:b0:466:8c53:7758 with SMTP id d75a77b69052e-46c70fd31b0mr421291791cf.5.1736904398819;
+        Tue, 14 Jan 2025 17:26:38 -0800 (PST)
+Received: from master-x64.sparksnet ([204.111.227.95])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-46c8733130dsm59933881cf.25.2025.01.14.17.26.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 14 Jan 2025 17:26:37 -0800 (PST)
+From: Peter Geis <pgwipeout@gmail.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: zyw@rock-chips.com,
+	kever.yang@rock-chips.com,
+	frank.wang@rock-chips.com,
+	william.wu@rock-chips.com,
+	wulf@rock-chips.com,
+	linux-rockchip@lists.infradead.org,
+	Peter Geis <pgwipeout@gmail.com>,
+	Alex Bee <knaerzche@gmail.com>,
+	Algea Cao <algea.cao@rock-chips.com>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Dragan Simic <dsimic@manjaro.org>,
+	Elaine Zhang <zhangqing@rock-chips.com>,
+	FUKAUMI Naoki <naoki@radxa.com>,
+	Johan Jonker <jbx6244@gmail.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh@kernel.org>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Trevor Woerner <twoerner@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Zhang Yubing <yubing.zhang@rock-chips.com>,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-clk@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: [RFC PATCH v1 0/6] rockchip: add a functional usb3 phy driver for rk3328
+Date: Wed, 15 Jan 2025 01:26:21 +0000
+Message-Id: <20250115012628.1035928-1-pgwipeout@gmail.com>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: Use str_enable_disable-like helpers
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Broadcom internal kernel review list
- <bcm-kernel-feedback-list@broadcom.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Michal Simek <michal.simek@amd.com>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250114203537.1012955-1-krzysztof.kozlowski@linaro.org>
-Content-Language: en-US
-From: Florian Fainelli <florian.fainelli@broadcom.com>
-Autocrypt: addr=florian.fainelli@broadcom.com; keydata=
- xsBNBFPAG8ABCAC3EO02urEwipgbUNJ1r6oI2Vr/+uE389lSEShN2PmL3MVnzhViSAtrYxeT
- M0Txqn1tOWoIc4QUl6Ggqf5KP6FoRkCrgMMTnUAINsINYXK+3OLe7HjP10h2jDRX4Ajs4Ghs
- JrZOBru6rH0YrgAhr6O5gG7NE1jhly+EsOa2MpwOiXO4DE/YKZGuVe6Bh87WqmILs9KvnNrQ
- PcycQnYKTVpqE95d4M824M5cuRB6D1GrYovCsjA9uxo22kPdOoQRAu5gBBn3AdtALFyQj9DQ
- KQuc39/i/Kt6XLZ/RsBc6qLs+p+JnEuPJngTSfWvzGjpx0nkwCMi4yBb+xk7Hki4kEslABEB
- AAHNMEZsb3JpYW4gRmFpbmVsbGkgPGZsb3JpYW4uZmFpbmVsbGlAYnJvYWRjb20uY29tPsLB
- IQQQAQgAywUCZWl41AUJI+Jo+hcKAAG/SMv+fS3xUQWa0NryPuoRGjsA3SAUAAAAAAAWAAFr
- ZXktdXNhZ2UtbWFza0BwZ3AuY29tjDAUgAAAAAAgAAdwcmVmZXJyZWQtZW1haWwtZW5jb2Rp
- bmdAcGdwLmNvbXBncG1pbWUICwkIBwMCAQoFF4AAAAAZGGxkYXA6Ly9rZXlzLmJyb2FkY29t
- Lm5ldAUbAwAAAAMWAgEFHgEAAAAEFQgJChYhBNXZKpfnkVze1+R8aIExtcQpvGagAAoJEIEx
- tcQpvGagWPEH/2l0DNr9QkTwJUxOoP9wgHfmVhqc0ZlDsBFv91I3BbhGKI5UATbipKNqG13Z
- TsBrJHcrnCqnTRS+8n9/myOF0ng2A4YT0EJnayzHugXm+hrkO5O9UEPJ8a+0553VqyoFhHqA
- zjxj8fUu1px5cbb4R9G4UAySqyeLLeqnYLCKb4+GklGSBGsLMYvLmIDNYlkhMdnnzsSUAS61
- WJYW6jjnzMwuKJ0ZHv7xZvSHyhIsFRiYiEs44kiYjbUUMcXor/uLEuTIazGrE3MahuGdjpT2
- IOjoMiTsbMc0yfhHp6G/2E769oDXMVxCCbMVpA+LUtVIQEA+8Zr6mX0Yk4nDS7OiBlvOwE0E
- U8AbwQEIAKxr71oqe+0+MYCc7WafWEcpQHFUwvYLcdBoOnmJPxDwDRpvU5LhqSPvk/yJdh9k
- 4xUDQu3rm1qIW2I9Puk5n/Jz/lZsqGw8T13DKyu8eMcvaA/irm9lX9El27DPHy/0qsxmxVmU
- pu9y9S+BmaMb2CM9IuyxMWEl9ruWFS2jAWh/R8CrdnL6+zLk60R7XGzmSJqF09vYNlJ6Bdbs
- MWDXkYWWP5Ub1ZJGNJQ4qT7g8IN0qXxzLQsmz6tbgLMEHYBGx80bBF8AkdThd6SLhreCN7Uh
- IR/5NXGqotAZao2xlDpJLuOMQtoH9WVNuuxQQZHVd8if+yp6yRJ5DAmIUt5CCPcAEQEAAcLB
- gQQYAQIBKwUCU8AbwgUbDAAAAMBdIAQZAQgABgUCU8AbwQAKCRCTYAaomC8PVQ0VCACWk3n+
- obFABEp5Rg6Qvspi9kWXcwCcfZV41OIYWhXMoc57ssjCand5noZi8bKg0bxw4qsg+9cNgZ3P
- N/DFWcNKcAT3Z2/4fTnJqdJS//YcEhlr8uGs+ZWFcqAPbteFCM4dGDRruo69IrHfyyQGx16s
- CcFlrN8vD066RKevFepb/ml7eYEdN5SRALyEdQMKeCSf3mectdoECEqdF/MWpfWIYQ1hEfdm
- C2Kztm+h3Nkt9ZQLqc3wsPJZmbD9T0c9Rphfypgw/SfTf2/CHoYVkKqwUIzI59itl5Lze+R5
- wDByhWHx2Ud2R7SudmT9XK1e0x7W7a5z11Q6vrzuED5nQvkhAAoJEIExtcQpvGagugcIAJd5
- EYe6KM6Y6RvI6TvHp+QgbU5dxvjqSiSvam0Ms3QrLidCtantcGT2Wz/2PlbZqkoJxMQc40rb
- fXa4xQSvJYj0GWpadrDJUvUu3LEsunDCxdWrmbmwGRKqZraV2oG7YEddmDqOe0Xm/NxeSobc
- MIlnaE6V0U8f5zNHB7Y46yJjjYT/Ds1TJo3pvwevDWPvv6rdBeV07D9s43frUS6xYd1uFxHC
- 7dZYWJjZmyUf5evr1W1gCgwLXG0PEi9n3qmz1lelQ8lSocmvxBKtMbX/OKhAfuP/iIwnTsww
- 95A2SaPiQZA51NywV8OFgsN0ITl2PlZ4Tp9hHERDe6nQCsNI/Us=
-In-Reply-To: <20250114203537.1012955-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250114_232329_580585_06D84BE4 
-X-CRM114-Status: UNSURE (   7.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250114_172640_306107_B02A170B 
+X-CRM114-Status: GOOD (  16.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,29 +119,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
+This is my newly reworked phy driver for the rk3328 usb3 phy. It is
+based loosely on my original version, but as of now almost nothing of
+the original driver remains. The main fix here is the discovery of
+BIT(6) in the interrupt enable grf register fixes the usb3 disconnection
+detection (mostly). On occasion an unpopulated usb3 hub will take
+several seconds to disconnect. However this means all of the hack around
+work to reset the usb core manually is no longer required.
 
-On 1/14/2025 12:35 PM, Krzysztof Kozlowski wrote:
-> Replace ternary (condition ? "enable" : "disable") syntax with helpers
-> from string_choices.h because:
-> 1. Simple function call with one argument is easier to read.  Ternary
->     operator has three arguments and with wrapping might lead to quite
->     long code.
-> 2. Is slightly shorter thus also easier to read.
-> 3. It brings uniformity in the text - same string.
-> 4. Allows deduping by the linker, which results in a smaller binary
->     file.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+I did my best to document all registers I could find. A lot was taken
+from emails between myself and Rockchip's engineers, much thanks to
+William Wu <wulf@rock-chips.com> for their assistance here. The rest of
+the config bits were taken from the rk3328 and rk3228h TRMs and the
+downstream driver. Everything that I couldn't find a definition for is
+prefixed UNK_ or UNKNOWN_. There's a lot of obviously used configuration
+registers with the pipe interface that are also undocumented.
 
-Reviewed-by: Florian Fainelli <florian.fainelli@broadcom.com>
+The only major bug I have so far is my AX88179 usb3 gigabit ethernet
+adapter (Pluggable brand) crashes out when large amounts of data are
+transmitted. I suspect this is related to the RX and TX tuning, as
+leaving it at defaults makes things worse. As I am not a USB3 engineer
+and I do not have the specialized knowledge and hardware to determine
+what is going wrong, I am hoping the mailing list will have an answer
+here.
+
+Please test and review.
+
+Very Respectfully,
+Peter Geis
+
+
+
+Peter Geis (6):
+  clk: rockchip: fix wrong clk_ref_usb3otg parent for rk3328
+  dt-bindings: phy: rockchip: add rk3328 usb3 phy
+  phy: rockchip: add driver for rk3328 usb3 phy
+  arm64: dts: rockchip: add rk3328 usb3 phy node
+  arm64: dts: rockchip: enable the usb3 phy on rk3328-roc boards
+  arm64: dts: rockchip: enable the usb3 phy on remaining rk3328 boards
+
+ .../bindings/phy/rockchip,inno-usb3phy.yaml   | 166 ++++
+ .../boot/dts/rockchip/rk3328-nanopi-r2.dtsi   |  12 +
+ .../dts/rockchip/rk3328-orangepi-r1-plus.dtsi |  12 +
+ arch/arm64/boot/dts/rockchip/rk3328-roc.dtsi  |  12 +
+ .../boot/dts/rockchip/rk3328-rock-pi-e.dts    |  12 +
+ .../arm64/boot/dts/rockchip/rk3328-rock64.dts |  12 +
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi      |  39 +
+ drivers/clk/rockchip/clk-rk3328.c             |   2 +-
+ drivers/phy/rockchip/Kconfig                  |  10 +
+ drivers/phy/rockchip/Makefile                 |   1 +
+ drivers/phy/rockchip/phy-rockchip-inno-usb3.c | 869 ++++++++++++++++++
+ 11 files changed, 1146 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
+ create mode 100644 drivers/phy/rockchip/phy-rockchip-inno-usb3.c
+
 -- 
-Florian
+2.39.5
 
 
 -- 
