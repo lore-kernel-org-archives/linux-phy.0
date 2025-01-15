@@ -4,72 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7EB5C02180
-	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 08:09:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CD37C02180
+	for <linux-phy@archiver.kernel.org>; Wed, 15 Jan 2025 09:20:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uuoIu3hGddFz+Rr5e3SH/4wjceDbt3i4N7fTpZFlYt4=; b=y1zuXmtcA0RP3B
-	l4gwElZYc7DXu6tP8HafclLnTyHxPFZisLSFcWCP+f6wiGuaPaBzX1u/dXRZskZ2KVmTGosvU6l54
-	nL6SI48SrB/8i5ZyEtV6SB/pja9oETN5SoTL4YXRsAKgOPemEGaCPDgWqpQLA2xcQlCGExuRTOmER
-	bBBY4EaP/70cLOgBgIe5OvL1XsXhHGtqKvZ4HM9KQc6cjvz0eUa6CV3JZSBuq7YYZQXmxlYt3S2Ys
-	pU05Ic8a15ZHeKPOGWdOdTLzzhXgrBSxsGqKMRaW8V+3/rR7WN+Lcz6iCTLZEsuTnkqkdzoMcOwJF
-	8BV7kBIt7kp9Df7H/cVA==;
+	List-Owner; bh=VnykOFKjfXIvdf6pj/zpWSbLqwoz7UVWeqBevM12vmE=; b=DR6lTGojmYlAMf
+	BA1LGImpdZeb2oLwG9HBfVJ254jpLfiUUH4ZJauuYIdwq6nsE5tLNBwBCk0irNMGJuiHrW240e5yr
+	LfFTHcQJAiuy5qEivnqZXJGANv83fVhceSlsb6JHoW+VxBOsEdBTHgXk4vJE+J3ehZQvuWct2OkwP
+	6bNrdQltnhDQ56Gi5wGdvRofRM6kPJHxnrL5I0ejCfDL/FeagOIxHKKnQKhY0OWxm+oPqR5sxStGU
+	7r9fLsE0vSd8+KQoCloXbTFBMGfyDDUvSi6LyS+AwHzRUwrazR6tVtY8WC6aBkrK8nqFT5IJE3j2r
+	nmtAlmqrsTWUzSrdbb2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXyTN-0000000B2Wx-2Qha;
-	Wed, 15 Jan 2025 08:09:57 +0000
-Received: from smtp.forwardemail.net ([149.28.215.223])
+	id 1tXzZb-0000000BHfo-3eFt;
+	Wed, 15 Jan 2025 09:20:27 +0000
+Received: from fw2.prolan.hu ([193.68.50.107])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tXyRX-0000000B2BX-1RPu
-	for linux-phy@lists.infradead.org;
-	Wed, 15 Jan 2025 08:08:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
- h=Content-Transfer-Encoding: Content-Type: In-Reply-To: From: References:
- Cc: To: Subject: MIME-Version: Date: Message-ID; q=dns/txt;
- s=fe-e1b5cab7be; t=1736928483;
- bh=qucqar6HUi7wGW1W5TC3J/YSVkxpWjIVUzY/b7JOA4M=;
- b=W8oXVsSYfR6tKiRwNJ8+eoWfysYv1Q1VlyX6aTkNjp+e5CTtdN/3t6X3AaOSH8MU/DFHSsuwD
- cwEYBsC2R8+k9vDVuSC+cQEs//SLwn+f0EffqbTkHXmAYlOJ9O+pWK2/lLBQiYfDXIjYtQYzS6Z
- cSLoczhcfDWXb99ojYEydEAk1+YGks4fvn7We5qwgClBTmzerdQwXBQllSKsLu29nULWrAHNhl+
- dBjNAAuKODCj7K9pZqglzUEIaJd1Qkgc3L3bRBaO07Sn78Ry6aN8MmAc5hqVIKxLf6fKIs6xZHM
- /ewQNJ5VI1t3IJuwzeKHlC8j1QIPyl9RQaB73/psnlEw==
-X-Forward-Email-ID: 67876cd77efc61f2763fc053
-X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
- 149.28.215.223
-X-Forward-Email-Version: 0.4.40
-X-Forward-Email-Website: https://forwardemail.net
-X-Complaints-To: abuse@forwardemail.net
-X-Report-Abuse: abuse@forwardemail.net
-X-Report-Abuse-To: abuse@forwardemail.net
-Message-ID: <2c221084-eef5-434c-9919-f6746eae8e0e@kwiboo.se>
-Date: Wed, 15 Jan 2025 09:07:45 +0100
+	id 1tXzOm-0000000BEuu-0Mt3;
+	Wed, 15 Jan 2025 09:09:17 +0000
+Received: from proxmox-mailgw.intranet.prolan.hu (localhost.localdomain [127.0.0.1])
+	by proxmox-mailgw.intranet.prolan.hu (Proxmox) with ESMTP id 4F1A8A0A27;
+	Wed, 15 Jan 2025 10:09:12 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=prolan.hu; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:from:from:in-reply-to:message-id:mime-version:references
+	:reply-to:subject:subject:to:to; s=mail; bh=ssZI86T0A6XNN8hCXgMu
+	MZMsnzteKeFLGvw1TpMOAQU=; b=YwUsiqL+mnfGUW9j8eGYD/GWnYrYU4Lh23/R
+	Gk2lpKqoAoqRGyrHg00ogMYZOT6rBU2nNA0yllC476j3q3fUoYLJVNemN00UpP4s
+	RNSd3MN5utnVTVpVHhRiW7g18Rxvg6cg5Mbi0igsJ8aqMJi2LKMdPOWddsY+ja2X
+	HdVuwqmRkFUNTRYG+1vhShK2qKRzlVSPpPbLn1PZT3aeK6GviuuaHTod48xGpBct
+	xITp7DWK5gH6WgPA0466Hq4INt9RjJ3g9jWgF2DO4HcsvCXLUtYqm6VEJSF6skO4
+	QKwbsuC4d9czkpAnsIVGSJP89jgtxCsPE33/NZJaQbojtYFP5lBO/LYuskWxvMgF
+	L+IEVCzwQZ8fR5S7OdoyPZNYIudOpxHv82EgdF5wm/maN/qVoKiD6Jtr/4cSHgyp
+	A0d/IluO1KZddaESPZPCepvmVGSG8fa7b68lneLzG4o93UIraCbzM6rDLsfYHMtg
+	lpWj8ZVDnG6zZDLoLifMkms32GIpx/DhARP/Z8rZ3YYdqa0ClqgGgmZVhYHHRiLK
+	Xglikd9s9lg4opobT3B+ruWbtNC7nBY7dr1DfKu4PDOZqXWX80G3xcgPLCmXTtq1
+	pl4P9NrgOy1MtsywyJ4vVaQqbvy1t76OTxyKF32tbGpRU0vliKNBQ5DbgD/jZTwO
+	3/JuGtg=
+Message-ID: <81cbb273-a4b4-424c-9d25-f53ebc8ea82a@prolan.hu>
+Date: Wed, 15 Jan 2025 10:09:09 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/1] phy: rockchip: naneng-combphy: compatible reset
- with old DT
-To: Chukun Pan <amadeus@jmu.edu.cn>
-Cc: "heiko@sntech.de" <heiko@sntech.de>, "kishon@kernel.org"
- <kishon@kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "liujianfeng1994@gmail.com" <liujianfeng1994@gmail.com>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "vkoul@kernel.org" <vkoul@kernel.org>
-References: <df8e0ff8-355b-4c18-9349-0f04ae16e01b@kwiboo.se>
- <20250115040003.29306-1-amadeus@jmu.edu.cn>
+Subject: Re: [PATCH 12/12] ARM: dts: sun8i: add DTSI file for V853
+To: Krzysztof Kozlowski <krzk@kernel.org>, Andras Szemzo
+	<szemzo.andras@gmail.com>, Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, "Chen-Yu
+ Tsai" <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, "Samuel
+ Holland" <samuel@sholland.org>, Linus Walleij <linus.walleij@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>, Paul Walmsley
+	<paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+	<aou@eecs.berkeley.edu>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+	<u.kleine-koenig@baylibre.com>, Florian Fainelli
+	<florian.fainelli@broadcom.com>, <linux-clk@vger.kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-sunxi@lists.linux.dev>, <linux-kernel@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-gpio@vger.kernel.org>,
+	<linux-pm@vger.kernel.org>, <linux-riscv@lists.infradead.org>
+References: <20250110123923.270626-1-szemzo.andras@gmail.com>
+ <20250110123923.270626-13-szemzo.andras@gmail.com>
+ <ff57cf8d-626e-4d35-a18f-1a89b4d9fa3e@kernel.org>
 Content-Language: en-US
-From: Jonas Karlman <jonas@kwiboo.se>
-In-Reply-To: <20250115040003.29306-1-amadeus@jmu.edu.cn>
+From: =?UTF-8?B?Q3PDs2vDoXMgQmVuY2U=?= <csokas.bence@prolan.hu>
+In-Reply-To: <ff57cf8d-626e-4d35-a18f-1a89b4d9fa3e@kernel.org>
+X-Originating-IP: [10.254.7.14]
+X-ClientProxiedBy: ATLAS.intranet.prolan.hu (10.254.0.229) To
+ ATLAS.intranet.prolan.hu (10.254.0.229)
+X-EsetResult: clean, is OK
+X-EsetId: 37303A2980D94852647063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250115_000803_411580_176D265B 
-X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-CacheID: sfid-20250115_010916_590009_870FA38E 
+X-CRM114-Status: UNSURE (   6.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,40 +93,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Chukun,
+Hi,
 
-On 2025-01-15 05:00, Chukun Pan wrote:
-> Hi,
->> The commit fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
->> broke backwards compatibly with old DTs and has already been backported
->> breaking i.e. PCIe and USB on Rockchip RK356x boards on stable and
->> longterm kernels.
+On 2025. 01. 10. 14:58, Krzysztof Kozlowski wrote:
+> On 10/01/2025 13:39, Andras Szemzo wrote:
+>> +// Copyright (C) 2024 Andras Szemzo <szemzo.andras@gmail.com>
+>> +
+>> +#include <dt-bindings/clock/sun6i-rtc.h>
+>> +#include <dt-bindings/clock/sun8i-v853-r-ccu.h>
+>> +#include <dt-bindings/reset/sun8i-v853-r-ccu.h>
+>> +#include <dt-bindings/clock/sun8i-v853-ccu.h>
+>> +#include <dt-bindings/reset/sun8i-v853-ccu.h>
+>> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +#include <dt-bindings/power/allwinner,sun8i-v853-ppu.h>
+>> +
+>> +/ {
+>> +	#address-cells = <1>;
+>> +	#size-cells = <1>;
+>> +
+>> +	osc24M: osc24M-clk {
 > 
-> The dts changes have been merged into v6.13-rc7,
-> maybe it can be sent to linux-stable.
+> Only lowercase node names.
 
-The original commit broke ABI and does not allow upgrading Linux using
-an existing device tree, even if the DT patch adding reset-names props
-also is backported you still have uses in the wild e.g. U-Boot v2024.10
-and newer that comes bundled with an unpatched DT.
+I don't agree. It is customary to write oscillator names with casing in 
+line with the SI prefixes of their frequency, i.e. lowercase k, 
+uppercase M/G/etc. (even though a millihertz oscillator rarely makes 
+sense, it is best to stay consistent).
 
-Trying to boot into Linux v6.1.123+, v6.6.69+ and v6.12.8+ using the 
-U-Boot bundled DT for RK356x boards now result in broken PCIe, SATA and
-USB thanks to the offending commit fbcbffbac994 ("phy: rockchip:
-naneng-combphy: fix phy reset").
-
-Regards,
-Jonas
-
-> 
-> Thanks,
-> Chukun
-> 
+Bence
 
 
 -- 
