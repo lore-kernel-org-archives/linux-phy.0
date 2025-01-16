@@ -4,72 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C16A1C02183
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 08:46:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72FF1C02180
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 09:09:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TlsUi+nqIOpat1bfp0ajaFzJS0WYUQZ52HD4kbCghDA=; b=2ZA19gCBZP7Qzq
-	snolbzeOI2SBZIpqhq3lW1SShePPm5+yuDLYhDs85F76Xqp/hDzspHfz5Q9oMdn86z5NoIzZR5tlw
-	4f/xQVtwsSmV1Ss+ZWU0tlz4y+S7HTscu/sRblCdDABs/NxwYT6Um4xqK611Ld48EEUOWfdxOEmnf
-	QRZOdZNV38vkJ4y212X9AmBEcK15/IRDDnrCe+4+xwlldXU7a82qTLx9esaEu5OS7her1Yc23DVXk
-	6nYyP1jBG4c9Sv174fUKi6KPrK2OWwYAjojzFNDksIvgvQB279kI18YcbJK4huWao0AeEPiK1VbgL
-	veQuvceBZO9zblW3K4VQ==;
+	List-Owner; bh=WFRsLwUMVTRcBQfsTN0e4TfMRuh+S0MAJRjnFYYC3oo=; b=TAPW8kpWsqcPky
+	uhGbw+GF1ERBoGvjzRzFkWGaGw0/RVENiScF+laTQVxC81s2VLPHsHgJeKkarFPsbJ1jLuBz8xLFh
+	+0r/6d4vhQf6O7J8hMuB6G9jiJaOUBWpT/KMScD5rawD4TpK96o3aTlfVb3MdCjDE5AgI36Gxw+9r
+	3+VaQvDduSFxILJMeppTrXXib7/D6h+9rn7gryXhsGLenVps6Bta4KPCNJybIoLFw02GKp2mWNxzJ
+	iJZPw+EFIV9mysT3H3a4DqkAh3L6UnjoQgO78x7LuzdrzkjiRE4lzoSwo659sUwvaj9+FDtkBKF4E
+	6pHMD1BQagPYJyW66SFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYLWI-0000000EGOX-1x5t;
-	Thu, 16 Jan 2025 08:46:30 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1tYLsn-0000000EJoz-0JTs;
+	Thu, 16 Jan 2025 09:09:45 +0000
+Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYLWF-0000000EGNH-2i2U
+	id 1tYLs9-0000000EJkj-2Ehb
 	for linux-phy@lists.infradead.org;
-	Thu, 16 Jan 2025 08:46:29 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1tYLVo-0002fo-Ts; Thu, 16 Jan 2025 09:46:00 +0100
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1tYLVn-000DtB-0F;
-	Thu, 16 Jan 2025 09:45:59 +0100
-Received: from pza by lupine with local (Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1tYLVm-00029Z-3C;
-	Thu, 16 Jan 2025 09:45:58 +0100
-Message-ID: <9ea186e39afb4584f12758d2fa6a26a0b12389ec.camel@pengutronix.de>
-Subject: Re: [PATCH 5/7] phy: qcom: Add M31 based eUSB2 PHY driver
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Melody Olvera <quic_molvera@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
-  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Wesley Cheng <quic_wcheng@quicinc.com>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>,  Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, Bjorn Andersson
- <andersson@kernel.org>,  Konrad Dybcio <konradybcio@kernel.org>, Satya
- Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, Trilok Soni
- <quic_tsoni@quicinc.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Date: Thu, 16 Jan 2025 09:45:58 +0100
-In-Reply-To: <20250113-sm8750_usb_master-v1-5-09afe1dc2524@quicinc.com>
-References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
-	 <20250113-sm8750_usb_master-v1-5-09afe1dc2524@quicinc.com>
-User-Agent: Evolution 3.46.4-2 
+	Thu, 16 Jan 2025 09:09:06 +0000
+Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-30613037309so6863451fa.3
+        for <linux-phy@lists.infradead.org>; Thu, 16 Jan 2025 01:09:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1737018543; x=1737623343; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=6oElNuHGnh2SndiJKSmzP3b2+Y0n7fF/o6Bw/SCWA8s=;
+        b=uz+fjU0dabGsk+/N6g4WQz2CQyA5/nDp7+Wgf6KuUrmfrk6R66UMenHE5N3AFcZqIY
+         qbZHcuIkyvxUeMla11aNBeW803HI2U+QYW/u+4KI0yYg4hvULOIs8tc0RTY0wK104QEm
+         HkHoRVisho2S8oK/u5FL9LkglMn1OGoGtF/aEqj+eUPt2HUCfXc1sIMUlxaARCc2SLDA
+         t1vLS925ZcXHCjhdg37wrgXhSF3cr3rstREQcz4F7zxvo7enBrSMQmIprNSYIS1v7qRe
+         81rVOlzQRiRhzPkRlF7UlgaVq/dDcgJXmCfUGFOXzTI0kOjPePcNsukNwzqsTXbPM3UG
+         pMZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737018543; x=1737623343;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=6oElNuHGnh2SndiJKSmzP3b2+Y0n7fF/o6Bw/SCWA8s=;
+        b=Ri48Q1iE/QT3zBAad5492gxU87oiE98D6obDPV/jpATbIanj0SFYdwGccJLQ5V+m43
+         esi7AxHPQ3X4BP8f7zQoUk0GbxIHkOnz73xW2LUxkkqVxMm9vxjW2I9/0+LISEJJ9Tx0
+         SmKgEdTYRO5xKT5POR6t89algluy1RtOF8z1bZgKCOiO/bitZMLhbUw0GRFCtyRurOpu
+         x/BlAijcF2k4iPUis5AZi78r2boY4DG9ZFDgy76bL/HnTd4mmsI+bDde5Px110RCBUvH
+         zoF96qW+V+kX8rHn7b/vasrsy75bdsmKf05lFuQ2WXOTUla9KWVmPHBeU8cUQzQ98Io/
+         7XlQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUQw08BpHFhvt1BJaMiHD29ffh/jrMvQ5jmgIi35v2Yo7FbYXYSs5Zws7aAFhOHTXlXd497RVjkmDQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwuxJAe8joZV9KHb83WKl3JWCFbQ2NBDRKJ8bpVKSyD9aAJpeBu
+	WLM02o3Iei8CqR3bUGbCWtyQ3ZSbjCixCc/LgmhoU01HgNKk19FldYDqMGhq7UkRnLOxcfmeDbi
+	wqb+hmj9+SEa6/IA/VPBEVSHE4iyUTVdx0QXpjQ==
+X-Gm-Gg: ASbGncvmbOail2INMcq+HYBsrTdhhW1tnhXAMUCF5RHOwOEZIyORDJCkj2zoJD4RBBb
+	UnXn7t53HWzSY8n29DaZLbx7XKsLh7ZHLmYsh
+X-Google-Smtp-Source: AGHT+IGshDnah7yTVkge7frSzXP6u6YQ9EMlI5n0k71zbBXiVfkDniOTr0RXn5mT0CNZhOwwkIPYxH+G4Ml04S4rkI8=
+X-Received: by 2002:a05:651c:221a:b0:302:1e65:f2ab with SMTP id
+ 38308e7fff4ca-305f45dcb78mr119399301fa.20.1737018543217; Thu, 16 Jan 2025
+ 01:09:03 -0800 (PST)
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+References: <20250110123923.270626-1-szemzo.andras@gmail.com> <20250110123923.270626-3-szemzo.andras@gmail.com>
+In-Reply-To: <20250110123923.270626-3-szemzo.andras@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 16 Jan 2025 10:08:52 +0100
+X-Gm-Features: AbW1kvZEtDtDDV1b-JCy06VodlCu92OcKCF4KhRqyAArlBqTeeutEPgAkUkNoec
+Message-ID: <CACRpkdZ6yNvtqjYHaWC6ynP4CdkGSdt5AH9ZrZDqYq=wTehu-g@mail.gmail.com>
+Subject: Re: [PATCH 02/12] dt-bindings: pinctrl: sunxi: add compatible for V853
+To: Andras Szemzo <szemzo.andras@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Samuel Holland <samuel@sholland.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Maxime Ripard <mripard@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, 
+	Albert Ou <aou@eecs.berkeley.edu>, =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
+	Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, 
+	linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250116_004627_682360_7214C968 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20250116_010905_573576_F9473DD7 
+X-CRM114-Status: UNSURE (   6.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,64 +100,15 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mo, 2025-01-13 at 13:52 -0800, Melody Olvera wrote:
-> From: Wesley Cheng <quic_wcheng@quicinc.com>
-> 
-> On SM8750, the eUSB2 PHY used is M31 based. Add the initialization
-> sequences to bring it out of reset, and to initialize the associated eUSB2
-> repeater as well.
-> 
-> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
-> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
-> ---
->  drivers/phy/qualcomm/Kconfig              |  12 +-
->  drivers/phy/qualcomm/Makefile             |   1 +
->  drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 269 ++++++++++++++++++++++++++++++
->  3 files changed, 281 insertions(+), 1 deletion(-)
-> 
-[...]
-> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..e15529673e358db914936a60fa605c872cd2511a
-> --- /dev/null
-> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> @@ -0,0 +1,269 @@
-[...]
-> +static int m31eusb2_phy_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	const struct m31_eusb2_priv_data *data;
-> +	struct device *dev = &pdev->dev;
-> +	struct m31eusb2_phy *phy;
-> +
-> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
-> +	if (!phy)
-> +		return -ENOMEM;
-> +
-> +	data = of_device_get_match_data(dev);
-> +	if (IS_ERR(data))
-> +		return -EINVAL;
-> +	phy->data = data;
-> +
-> +	phy->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(phy->base))
-> +		return PTR_ERR(phy->base);
-> +
-> +	phy->reset = devm_reset_control_get_exclusive_by_index(dev, 0);
-
-The dt-bindings only specify a single reset, so there is no need to
-request by index. Just use
-	phy->reset = devm_reset_control_get_exclusive(dev, NULL);
-
-regards
-Philipp
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gRnJpLCBKYW4gMTAsIDIwMjUgYXQgMTozOeKAr1BNIEFuZHJhcyBTemVtem8gPHN6ZW16by5h
+bmRyYXNAZ21haWwuY29tPiB3cm90ZToKCj4gQWRkIGNvbXBhdGlibGUgc3RyaW5ncyBmb3IgVjg1
+MyBmYW1pbHkgcGluY3RybC4KPgo+IFNpZ25lZC1vZmYtYnk6IEFuZHJhcyBTemVtem8gPHN6ZW16
+by5hbmRyYXNAZ21haWwuY29tPgoKUGF0Y2ggYXBwbGllZCBiZWNhdXNlIHN0YW5kLWFsb25lLCBj
+bGVhciBjdXQgYW5kIHJldmlld2VkLgoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCi0tIApsaW51eC1w
+aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
