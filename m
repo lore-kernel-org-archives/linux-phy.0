@@ -4,148 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48032E77188
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 03:50:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BBCAE77188
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 06:46:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hkQqDIZCxt9HC1PSS6OPXfNgZlIXRrZWU0hDOup/tDY=; b=xWDn/ReeiBzh5K
-	D+LMlukw6SMH0Q5ohzJe0J7fxXxyVt35eUH/MKAGse89Fb6RiELtmrIencuzZNF4y7knIqnPJaUee
-	F2NsSwm2lFNDBQxBzvC/BGx2OAjdRzwJSFZyThIju/++OkJoGSB3HAq1Si9PW7NMeqjss/5lWNeal
-	mIO+JScQdx1TbIzFYVq7CgCDF+il5o0GdfhNgemn/UCbb4I/g1AkoW3oZe+ZCtCXuAzweKkSWRtvv
-	Bs3awlgYMYNDRk93xyS8XKWQg6IIRJARBN5DVjyp6oYxe1Cb+1gpWYJBqyk1/cYgFUX/SHZgKhbho
-	q2+pJQNb07ZTa//vqDXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OPlsae4kbZZ9ZfqxcIUK5VEvbh4ygzb9KtPJRei6Qj4=; b=wU/PxhXJUcAjCO
+	hbM+/izCkhbAUoXlpUMs7arXeO1iFyBC3PkqQaSvC4jVNzPbQFzwCNIUXDVLH/xTb1ZqDD4bLjGYb
+	ytGzNFgFAPVQzhLVtm2psIhSsQCE5V3s+Wk5roL1UhBHx7tOyYcHV5PizYMhXcvsBsuynP6Sool8J
+	jMryWZoshG9tTKFOdFvwuft6ZNvA8VnnAuKgHXow3qjjKzIxIyCkK0aPECuQARpcHk60O7kI2YubV
+	TT/JPueL/aQPsTp3CYQYZKQDAXH1SoxIGRqhIz26InTShsjSygqxBMZBexOWKO0rx4h1rGm9gX4Ts
+	zkaqmeOUxIx6Imr27/UA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYGtd-0000000DkoC-1cWy;
-	Thu, 16 Jan 2025 03:50:17 +0000
-Received: from mail-northeuropeazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1tYJdo-0000000Dybo-1knA;
+	Thu, 16 Jan 2025 06:46:08 +0000
+Received: from mail-mw2nam10on20619.outbound.protection.outlook.com ([2a01:111:f403:2412::619] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYGta-0000000Dknc-2R2x;
-	Thu, 16 Jan 2025 03:50:15 +0000
+	id 1tYJdi-0000000Dyb8-2k9n
+	for linux-phy@lists.infradead.org;
+	Thu, 16 Jan 2025 06:46:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=H/KssnDUlJut04+MBXEvwQEga5NFRbJTJIVHvxwkc4ReyzO1hylQlMd0sNN6KQFJcdJ30IlxLRPwL5bNqRaY08F32TUTkd18X7pyWWy9Q34sWSW7z/0xf4JhyHF1ryANsJVpWWFVzbM82jOh4+QskeQRCibdkrhvMW0A8hcbp68SNMJ0h0TU5DNLoleveXFAyQTGo64yp1EDmWZ3MIYNxFpPAqItKBujcAkfIHzYtS7mxnMM9MZOuMwviXAhBO4LxbzjDxqXeiqX7WgiYkIA7cffpJe+EcIZvuWsfxHuLRcUP4KqWZ8lPEITXj+djvxx9LyzPLFN3jwrF3XMMj14oQ==
+ b=oLbzSVfu4UGJ0rzkQ2GB1RbRSQFwdIiGPZW7GqoXYvjJ9C+y0i30/jWKGV1ey40Ker44OjmmagNfGWC6nbX6A+Cam/dpbj940BXObRkGSu62XpKP8PLGo534zypitc4OZsD0JB7eDM5HkRcqP0UX8YSm1/bPEAQ/imLe1HuuVaTklwSyqCQH8dBBVuLcnmJMZxYYuZuRw+JHcN5G2vn2ixMclQfg7C0WtJL6+cIZixUdi+mXn2iEm0IEG58i6GTyp76mgHSJWzTpbPoYJROjDoEZcwYNCRo0pc7rw8tTpRKW26q9X9vNXUr2U12ZITmzvqoMVbPzdC+X+rZPNn7MCw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=4vn5lguTBC1B/66JIydbCPUtENqIf/jI/RrzNIwe3lk=;
- b=HjeoGBfJlmZkCyi8RW5NOc71KhWdK2qh28dU+nLC8WLfLGZofCQcPR+5nU+pQFJXQJQ6tak/2YHBzCXcpuOz+tpoxnfW9ktFqQInxjRi8476D5SJ4zzUFHMIDVtyT6mncJatVI3Xftb3Yh5WgfyUHY87vKYQGmqReGZLREcirwY6ToUtT4jkHv5ryAXd3LrwSZbdoKpGmS7+0/LmjdLmkvIRp4mbFbsyp+AkanN7A5J6CPCcsnlhRxeSggZpFuZs2e7NF6EWGs/SkI4QF6TujmyoSFffNE2RL9hrTyY9sEtfg1RFHKLIvAT8ljyQd9/J4YU1gbB71t+gd+sVCICdDg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ bh=XyOk8uptiOWQrwzJCJepJFE9ycZHXMuoZzTcmbc2Y2g=;
+ b=JnvejceUnUiJemkJliy3raZpsZhOxkIcla7IN+SD5QVtmydqnZGI/0WC8k50xYh7VnTVXtM2sbudJEVLv9t29ui2SWU4NaAuIpA8RlxRoAcguWGxUBLKgTS46xXMnukpZXzd/bMMSrta09oeMCqUWczt8C+PZQ1JhyvjsiNJoGTIsUH/CEzwgGE3moWw3lgKCX0uzE7faFZMXLY313YZXftuoD5T9FrnUGbNUT0q8meWdFoqCJ+6h1XqPUCEdpvbiGvJSUrn2h4qFhXGkvkQcACJ1WdPMmmDSZdTJkPjw0dofDzphnYR0dZNUbaRkOLwjMudmTW+mycTfZedvidX0w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4vn5lguTBC1B/66JIydbCPUtENqIf/jI/RrzNIwe3lk=;
- b=dSw6u2+I7zG0lVBrWKRLfVklVgyC5VVf6PhzKWmJkFz5exKzarqxmDnyT2IybA7XHfag3vt2LeyPWwwZ168xNyaHA0+cUWx5khv31U39bLfozHX8InljnImVpHqCmTUJp5yL/VxFG4YfSV/cro6jrYOPH3Fg2fi5BTGroK/oozDo29aJpd4e9qsUHc+QRc6DEHXcwK7lhWKL9+SUOgzF9U1a+aZM9+c38bHzVwryR5Sn7YVOzM4IFPeOf3HAS4X2XhMIf/jFabWtRCYp1B+O9b7xtZXWCB+B8Ogg4MxGk3hlRxdhCavQrD3GwyPtteJQGpCp0KKbu0i48YdVq6lj4g==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB8829.eurprd04.prod.outlook.com (2603:10a6:102:20c::17)
- by GV1PR04MB10703.eurprd04.prod.outlook.com (2603:10a6:150:202::11) with
+ bh=XyOk8uptiOWQrwzJCJepJFE9ycZHXMuoZzTcmbc2Y2g=;
+ b=LTxPOW6zJS6zRL4U+q2ZudRg0u0oaw8fPIX33WA8JH624lGifs6Ni/3RYST87zjdFq+1XJ6zCNU4OkC5xC8HDPybzSaHi7gKyow+u1RcVEnCIC5RUeZJSUctIv8TVEomAIKesySCaLJIxbP62Cw6KpSo6kC9QK+oQecEuSbOdZwylux5UoD45C/gC+89D5AUsKzo+YoshkX52uuX0LMZZp3ay/GVd3VmpGobLTXOyRbWFuRHQkJsdnlyQVBIw2CD4NYvm3wfShLIcxsWtdRbI03LW/GHMLxt2jqSh4ILEl7zxuXnk14X3gpWg4+GN1iZwJJHHccClov54IIqP5z7fA==
+Received: from CH0PR04CA0059.namprd04.prod.outlook.com (2603:10b6:610:77::34)
+ by DS7PR12MB5863.namprd12.prod.outlook.com (2603:10b6:8:7a::18) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8356.13; Thu, 16 Jan
- 2025 03:50:05 +0000
-Received: from PAXPR04MB8829.eurprd04.prod.outlook.com
- ([fe80::cdc5:713a:9592:f7ad]) by PAXPR04MB8829.eurprd04.prod.outlook.com
- ([fe80::cdc5:713a:9592:f7ad%4]) with mapi id 15.20.8356.010; Thu, 16 Jan 2025
- 03:50:05 +0000
-Date: Thu, 16 Jan 2025 11:46:23 +0800
-From: Xu Yang <xu.yang_2@nxp.com>
-To: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	gregkh@linuxfoundation.org, jun.li@nxp.com,
-	alexander.stein@ew.tq-group.com
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v11 1/3] phy: fsl-imx8mq-usb: add tca function driver for
- imx95
-Message-ID: <20250116034623.ig44yqxzptujhwql@hippo>
-References: <20241204050907.1081781-1-xu.yang_2@nxp.com>
- <20250106020303.xrpo2pfv4knqszx7@hippo>
-Content-Disposition: inline
-In-Reply-To: <20250106020303.xrpo2pfv4knqszx7@hippo>
-X-ClientProxiedBy: AM0PR03CA0083.eurprd03.prod.outlook.com
- (2603:10a6:208:69::24) To PAXPR04MB8829.eurprd04.prod.outlook.com
- (2603:10a6:102:20c::17)
+ 2025 06:45:58 +0000
+Received: from CH2PEPF00000147.namprd02.prod.outlook.com
+ (2603:10b6:610:77:cafe::a8) by CH0PR04CA0059.outlook.office365.com
+ (2603:10b6:610:77::34) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8356.14 via Frontend Transport; Thu,
+ 16 Jan 2025 06:45:57 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ CH2PEPF00000147.mail.protection.outlook.com (10.167.244.104) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8356.11 via Frontend Transport; Thu, 16 Jan 2025 06:45:57 +0000
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 15 Jan
+ 2025 22:45:46 -0800
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail205.nvidia.com
+ (10.129.68.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.4; Wed, 15 Jan
+ 2025 22:45:46 -0800
+Received: from henryl-vm.nvidia.com (10.127.8.9) by mail.nvidia.com
+ (10.129.68.9) with Microsoft SMTP Server id 15.2.1544.4 via Frontend
+ Transport; Wed, 15 Jan 2025 22:45:44 -0800
+From: Henry Lin <henryl@nvidia.com>
+To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, "Kishon Vijay
+ Abraham I" <kishon@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>, Henry Lin <henryl@nvidia.com>
+CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, BH Hsieh <bhsieh@nvidia.com>,
+	<stable@vger.kernel.org>
+Subject: [PATCH] phy: tegra: xusb: reset VBUS & ID OVERRIDE
+Date: Thu, 16 Jan 2025 14:44:25 +0800
+Message-ID: <20250116064425.53551-1-henryl@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-NVConfidentiality: public
+X-NV-OnPremToCloud: AnonymousSubmission
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8829:EE_|GV1PR04MB10703:EE_
-X-MS-Office365-Filtering-Correlation-Id: f387432c-bbdd-4b8e-de87-08dd35e0dcdf
+X-MS-TrafficTypeDiagnostic: CH2PEPF00000147:EE_|DS7PR12MB5863:EE_
+X-MS-Office365-Filtering-Correlation-Id: d956eb09-fab4-4946-9338-08dd35f96edb
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|1800799024|366016|376014|38350700014|921020;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?7e3osrCNsK3fX9l69tRsmwD7KfYSohcNv3S1IrZMSqdI8m4rAycXCdId8fDN?=
- =?us-ascii?Q?/m7X0gzXu3rrkbmH071Epx0cRAhGKK5MNHEIshbWbnLrhp4l1mMnUTBb5paJ?=
- =?us-ascii?Q?AxXRdieWiDKUGduI9yDZDOTEItxR/5hSXLIDP1NUGMpelyVP6t16jE8nYKbc?=
- =?us-ascii?Q?DJnoH3iDqOtpNSgJ5RUxPoH46BjWeJRKcnWRZzTY71KB0iVhNXL3722my0/i?=
- =?us-ascii?Q?w3bK0f5vFMAq6VE8pU/i9byk6IfYdyOiNNPVFZPOF3D7XJlgzAVgp+2/V6MW?=
- =?us-ascii?Q?ebbNdvKFO14NR+VreuUShJ0cY0+Ui6d4dTXxvC8VPui9jLd6HSP7H7P2sRtN?=
- =?us-ascii?Q?FC65PO44P+Y/3sB239i7+MuKtw7VEi3NLbF9f1lEUch7M0t1TTZl+bLhAjVh?=
- =?us-ascii?Q?YNTa5qauvW2ZtnPakb+FwhO75f1s3oKEgHJmTHf8cS1lu0mrP8nlS8aFllCA?=
- =?us-ascii?Q?VVJjOkZSO+vo2KalZ1Pn3nWqbWxdauxVOhkRHoa0y/PBuZkKUGqITAKpsDj5?=
- =?us-ascii?Q?k+rlKCPnUgPRFVvpyKsb51XduBAaOf4B6c8cGrlEX7OTFnvwUNqYlSD11d85?=
- =?us-ascii?Q?Zep1g0TThj+1jpDFKD+1sXlLhcVihc4u2PuVXP5+HnHVo8bHKikZ5vC30w/4?=
- =?us-ascii?Q?C2mxTfnWF7p+th31Vtkq5/9dr7H/XeVALB45q/cX8e/7ZErVSsJ+RghtVsWU?=
- =?us-ascii?Q?42bztouKqXsx1j/wwF71KcEQu9GvatIvq6oM2J8J5RhBuvmO0i2nWiZkyW34?=
- =?us-ascii?Q?sY8k6VB7kIlTGTNynPzTSOpMSlWqVEDj9hFiWGI/elZhvvJFAK+oIXW/hjEM?=
- =?us-ascii?Q?SbTEfaSuHexNRo/PligctEBdcOLUj6Jn8P3cBFFxx8nHcU1/iq2ORtLaoeFQ?=
- =?us-ascii?Q?rY8XDIcHzb6dIr2pppFwAQbuiOu8GoKqJaqSx05rn9eBEVv2Jw35WONGWIGU?=
- =?us-ascii?Q?bCNR3qd5U4U9wxcTfaFo6FHRq1s43/cVoGK3BASlEhqhAzBna0oYB03RSc5B?=
- =?us-ascii?Q?fvyD7m7FQfC6yR3tUvAxk13a1aJ5af9oTahgVZFIR8urDPgORqL6qLNTyiZq?=
- =?us-ascii?Q?+YNB3coq6mOZ8Gctey/ScFEfEZ/nklNP0LaZV/yNe2pMmewB2wwailllXiOX?=
- =?us-ascii?Q?6Dk1iYpdQPH66/8KCvdHEKGMRhsXZ+NYFiJ676DnufiKU/F9Pcz8GG1kOXfr?=
- =?us-ascii?Q?YYi+bfUnOP/q+hXOIEkF2WTKIJ1tX48kOyutQoqnCmh8vSK9GVrH79MnHcyE?=
- =?us-ascii?Q?rc2XfdrX+XRSJaxcVxRSESovzSZ/TjpOQE7G24aT5VPvpjnECVBodMo/fAEd?=
- =?us-ascii?Q?UCqXMt6J70Oaraj7i+YU4IkTnH1XL3oGm43Fye92IAcIZvsbDeqcCH37AiwP?=
- =?us-ascii?Q?5bsWvL1YermaFe63Z9D+XGGHQ558Nkq3B8r5GWXSgkJFD9+nDiVf6PXXJ9y7?=
- =?us-ascii?Q?dIMfamTVnBv1bwj0/D1Cn75Jf8fNw1YVn/zM3FYdLZPGwk/XXMWAPw=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8829.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(1800799024)(366016)(376014)(38350700014)(921020);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?PzvEc1aEyj6roZyIIRXZgFhUzJsuAKnazBT8iDQUx5hTavb+nOoBcT+Ttmm/?=
- =?us-ascii?Q?naI6Z6vgSrqIbHoWfRn4OBARFJMfeJdjFyOpL48sxLRMgIzlKkEyXoLa3Ftt?=
- =?us-ascii?Q?3uJI0zUpZYGE9RxP0VwZlgM8OisTUulhfnwADFBa9h73FotWYxcYdh5YHARH?=
- =?us-ascii?Q?7RSsHb8VvuIMD1Fcj3gL+AxGMWmw5YwM7uVoZpuXEe2g6GPaGOxmKt0ke9h7?=
- =?us-ascii?Q?TZJ/eUGUAGOZxWvC5DurevmgzTG1ij+MLldIGGgL83ZB/RKzSl1pRmTzPNPx?=
- =?us-ascii?Q?VsxPfrgcWBKwVgoC3qhR9b2yXETf0Ghq7ttymVQFWxSucZAbGh1t9ex9rdyl?=
- =?us-ascii?Q?Ed1WL5aFEe2xVDG59RVztUluC4cPmMJCFJijKXquH5REuVshDeNHb/ILuhkE?=
- =?us-ascii?Q?SBeOgl1jTsseXrbMCqw3fVx7ZkSFxStUl93uAQYHTniY2u3CyWAeUGEOyiWk?=
- =?us-ascii?Q?Sd6pOQYcABt36MwuSPb9Gsj/8ZksUO9iEahscP5eZdMpPcnsAccNIjkymkrH?=
- =?us-ascii?Q?06SHgOPlCLLYtXVan7Fc7QQ0ZsxE7QOhl3wZhaNHUt3s8wBY3gWC9NqaON78?=
- =?us-ascii?Q?AOX1EbQhzza/lwqLXQxqamwT3RtbG7qiap8i4RESExi0QKNxTV2NgCWLbJCn?=
- =?us-ascii?Q?A1xKHnXMiNeddfUeTG4ETin9/oUPyD13KdIuMPdIWvM1AznM9yiGiUhhj6xx?=
- =?us-ascii?Q?/CVyXgPzKefOq0F284KHseiwIX6MSGbZreIJyNQAtUDC3t5UU6znxkvOM6x/?=
- =?us-ascii?Q?OKQzqkYybbVWbqDAHi0VBg5e4VhSHy6sXzFoVKQVvFKOk+5h/CTtmyoKjjvr?=
- =?us-ascii?Q?b/CzjRk/yrPnEYZxof8aGcrR3Kz45UYuv3PgbunFT1ao30QPNXvVl5SBWCug?=
- =?us-ascii?Q?7EH6EwIA7Svie1bCVrPIq5aJWRPqeFje/41sjQBx8fB8uuN9TCiSoLZIOSEn?=
- =?us-ascii?Q?YNhudKPUASHtqy+7Y/eOsralmXUX3+FBNC4mWca5r03ZYibtgVMUtzKbagdR?=
- =?us-ascii?Q?3u8Y51VpWuoNcCZ2q8K40iQGubHTFhl4oiU7UMcrxaAo7dEDoAxTtaR9QcLF?=
- =?us-ascii?Q?LMcNnfjY8WEcIerDugY2MT3NS39xELsoZJ3SHhbRuR3vP/W/IBzQPZ8PXfHp?=
- =?us-ascii?Q?wu53tQudRzL3LqbzfTXg8umCUaSCfTHudryi2XaWzawIlagGtiYlNNo5fjhY?=
- =?us-ascii?Q?mWgVeNdTnoPPtlTO+Tx95VyQXlx6x1dyZlDmlNkx415Z8KOuvBHxjwnPBzW4?=
- =?us-ascii?Q?oo9pvizb/A3Wat5l7IEPVj0Op5ulrOLJA4BjjUhows7C9rFD7OAhmWI+51v2?=
- =?us-ascii?Q?ZuPsQ9QA/+BpcGvvvhCjETuCGbk1efTJIvDLrhse3SFGylL/TyCiX6QrGrkd?=
- =?us-ascii?Q?VgToM8DDdfH04IN+yBo5Iegz2xvX2f3+NEbQWPs29lkiQPLHLfcr9tRVIn8f?=
- =?us-ascii?Q?Rcwhausywr6jqTyPk42RCDyMymKNsyy3XMEg4DyQJSxtauM9M2iy6GMvOFXT?=
- =?us-ascii?Q?EqkQQZQm4fKUkTDPz8K3D0wTjBLfJoGR9hT65obkgQNMqmMiHn53rjwV2kgJ?=
- =?us-ascii?Q?gVuM7rj7LvWgQ4CVWClz7zDRP7tvxHEK1R5UTOz7?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f387432c-bbdd-4b8e-de87-08dd35e0dcdf
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8829.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jan 2025 03:50:05.7489
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|82310400026|1800799024|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?pvr3uk/dZoHWWMANpbrXr+lHojch6h0Kaj119DsQW6qsEjnh/XKx4sDb9Uuc?=
+ =?us-ascii?Q?oeMBCbThZd6aJCZwGHwaiK6auW0n2+Pl07r+5PFE0vcyKZ8+PnO32igayYBN?=
+ =?us-ascii?Q?Mv9N4k5DNp6zdU9YKTKtDvKfe5mj+H5MFqCSLqrMONBPozhxnFWXmW8xdMw2?=
+ =?us-ascii?Q?LwKhbke9OHK9JGa6bVv5+gAUxc7plwt+Gnf/mQrAgVLXTmWM6K+TIgMrXjiS?=
+ =?us-ascii?Q?WFIuFlruZFwK0Happpdc9bU2XYe0xry0v/JLsFQNi+PNh2MKYiIS2RybALsc?=
+ =?us-ascii?Q?0JqQyGMwnz+rxHdBYgE+cqqkmp7hVQ2CJVfVzosGyTr43xyQWR1YlC/kyY6T?=
+ =?us-ascii?Q?uU7YfloUXtY6VRWF9ywyZH2aDVaHKrRstn/kmrI6at4tD/RS0UPOWBZfi2bp?=
+ =?us-ascii?Q?sASv2OTS/NthqkWI5RUhrwtCfHNqYWubTtLJCx6RQjAzWYoP/D5ChFncHLow?=
+ =?us-ascii?Q?NgajonMB61CrtK01gaE8/dc6oqikDWf1rYWpH+5wcO+4bDXcwIWfZ/a+MthX?=
+ =?us-ascii?Q?dYOsgGJxdKNf4LGidaB1g9GE3df6TCQCqfAWx75Vy9MZW9WP9SoNmLxT39VW?=
+ =?us-ascii?Q?YgOJHyQlI6Iu5IT7Lepm3frpO5saRVZTYLQn5SGj8fGaPTLGHNSx5Z3XuSFW?=
+ =?us-ascii?Q?6kh/hCKZQjwcNpMFbbD2ohoMyVNUTU47PmOEnNCiqQNM0VSiRguK6ycZr4cx?=
+ =?us-ascii?Q?r5NejD/OP7Lu037z2DHLPB3lhA0fZP8WO/tPIwareM+ARhd6vWMGG9Enwr2c?=
+ =?us-ascii?Q?FM2OUPyXYvOk3/fvSMhhFCHf0d9LqI3uUbG/D8EO9J6IMImZZc4Hdp2F4pCI?=
+ =?us-ascii?Q?SBjljcDP+jPRrZkKQeQvwSstw6XcwVXonKml7pjcCtlUV6iaQyjlYIRR92lA?=
+ =?us-ascii?Q?lGs7/O1g8jDdR6Gk6zczff6LRVlnx3tmrjgGb3z0lszEs0Utbw6xaBvfTzjo?=
+ =?us-ascii?Q?X1ZpT5HDpdXQNxKKenjZk0NoDaBVHxgeO7C/ilOfPqobt10a4Wluv+f1H3tX?=
+ =?us-ascii?Q?Qhi2vugWcTBV9dXR5tM1Vhx7/SKq9VhCJzZ2ZlfI+aa7Awtktii5QBpAsjxf?=
+ =?us-ascii?Q?AA1Ug3oiXzwrGbA6JzRLFB8dj6tdJpVG1fsaAAyF+cIPBPZYV8jDgGUALTeG?=
+ =?us-ascii?Q?i7oSJDld7bsdYbpImHOjrUrfgjKRMcAHD5Bm3YmXlfjd1dYqIJi1/DKql9LA?=
+ =?us-ascii?Q?ICYKmN0xTd1khJXUIPkPP48mUSz9Jlvr/q63RyGxNHEIX5OAblxDVFVScoJ2?=
+ =?us-ascii?Q?ETOzeQb3AVmbHhw9zXKj2gyDn1zuXFodTd6qnSM5ianm+oG5EbN3Fd35nX8d?=
+ =?us-ascii?Q?WanLkCe3kft0c6KW3sqpHsnREMEy4L+kWmVIZHkB3Zi1oJei4k80wbcnIENZ?=
+ =?us-ascii?Q?nHE911SKkE68Vgoa2N6pJrBS1NPPxn15MvLf/4C5RD+5DO4Qc5oFyvRXFXZV?=
+ =?us-ascii?Q?mGJvLI2oGPlREs9SsTf+5PjzDnu19pzW3trKQcOSRiMv3yZJYO/rxpiYG5UD?=
+ =?us-ascii?Q?lVsLP5mT9FLzjIQ=3D?=
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(36860700013)(82310400026)(1800799024)(376014);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jan 2025 06:45:57.7772
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: OKoPp91YX8amPwxfZFrBPIXrHvUcrgxi8Pbv7/1l9wsKJP+uLDtSovOyXyg4yvOfD4+kGW1DKHkr7KSvL2lylA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10703
+X-MS-Exchange-CrossTenant-Network-Message-Id: d956eb09-fab4-4946-9338-08dd35f96edb
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CH2PEPF00000147.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR12MB5863
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250115_195014_794677_A41FB73A 
-X-CRM114-Status: GOOD (  34.92  )
+X-CRM114-CacheID: sfid-20250115_224602_708313_8F4ED4EA 
+X-CRM114-Status: GOOD (  11.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,382 +151,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+From: BH Hsieh <bhsieh@nvidia.com>
 
-On Mon, Jan 06, 2025 at 10:03:03AM +0800, Xu Yang wrote:
-> Hi,
-> 
-> On Wed, Dec 04, 2024 at 01:09:05PM +0800, Xu Yang wrote:
-> > The i.MX95 USB3 phy has a Type-C Assist block (TCA). This block consists
-> > two functional blocks (XBar assist and VBus assist) and one system
-> > access interface using APB.
-> > 
-> > The primary functionality of XBar assist is:
-> >  - switching lane for flip
-> >  - moving unused lanes into lower power states.
-> > 
-> > This info can be get from:
-> > i.MX95 RM Chapter 163.3.8 Type-C assist (TCA) block.
-> > 
-> > This will add support for TCA block to achieve lane switching and tca
-> > lower power functionality.
-> > 
-> > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> > Reviewed-by: Jun Li <jun.li@nxp.com>
-> > 
-> > ---
-> > Changes in v2:
-> >  - return the value of imx95_usb_phy_get_tca()
-> > Changes in v3:
-> >  - no changes
-> > Changes in v4:
-> >  - remove compatible check for imx95
-> >  - check whether tca register region exist or not, yes means has tca,
-> >    otherwise skip tca setup
-> > Changes in v5:
-> >  - no changes
-> > Changes in v6:
-> >  - no changes
-> > Changes in v7:
-> >  - fix sparse warnings in imx95_usb_phy_get_tca()
-> > Changes in v8:
-> >  - #define TCA_INFO 0xFC -> 0xfc
-> > Changes in v9:
-> >  - no changes
-> > Changes in v10:
-> >  - no changes
-> > Changes in v11:
-> >  - remove some unnecessary readl() as suggested by Amit Singh Tomar
-> > ---
-> >  drivers/phy/freescale/Kconfig              |   1 +
-> >  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 240 +++++++++++++++++++++
-> >  2 files changed, 241 insertions(+)
-> > 
-> > diff --git a/drivers/phy/freescale/Kconfig b/drivers/phy/freescale/Kconfig
-> > index dcd9acff6d01..81f53564ee15 100644
-> > --- a/drivers/phy/freescale/Kconfig
-> > +++ b/drivers/phy/freescale/Kconfig
-> > @@ -5,6 +5,7 @@ if (ARCH_MXC && ARM64) || COMPILE_TEST
-> >  config PHY_FSL_IMX8MQ_USB
-> >  	tristate "Freescale i.MX8M USB3 PHY"
-> >  	depends on OF && HAS_IOMEM
-> > +	depends on TYPEC || TYPEC=n
-> >  	select GENERIC_PHY
-> >  	default ARCH_MXC && ARM64
-> >  
-> > diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > index adc6394626ce..a974ef94de9a 100644
-> > --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > @@ -10,6 +10,7 @@
-> >  #include <linux/phy/phy.h>
-> >  #include <linux/platform_device.h>
-> >  #include <linux/regulator/consumer.h>
-> > +#include <linux/usb/typec_mux.h>
-> >  
-> >  #define PHY_CTRL0			0x0
-> >  #define PHY_CTRL0_REF_SSP_EN		BIT(2)
-> > @@ -50,11 +51,66 @@
-> >  
-> >  #define PHY_TUNE_DEFAULT		0xffffffff
-> >  
-> > +#define TCA_CLK_RST			0x00
-> > +#define TCA_CLK_RST_SW			BIT(9)
-> > +#define TCA_CLK_RST_REF_CLK_EN		BIT(1)
-> > +#define TCA_CLK_RST_SUSPEND_CLK_EN	BIT(0)
-> > +
-> > +#define TCA_INTR_EN			0x04
-> > +#define TCA_INTR_STS			0x08
-> > +
-> > +#define TCA_GCFG			0x10
-> > +#define TCA_GCFG_ROLE_HSTDEV		BIT(4)
-> > +#define TCA_GCFG_OP_MODE		GENMASK(1, 0)
-> > +#define TCA_GCFG_OP_MODE_SYSMODE	0
-> > +#define TCA_GCFG_OP_MODE_SYNCMODE	1
-> > +
-> > +#define TCA_TCPC			0x14
-> > +#define TCA_TCPC_VALID			BIT(4)
-> > +#define TCA_TCPC_LOW_POWER_EN		BIT(3)
-> > +#define TCA_TCPC_ORIENTATION_NORMAL	BIT(2)
-> > +#define TCA_TCPC_MUX_CONTRL		GENMASK(1, 0)
-> > +#define TCA_TCPC_MUX_CONTRL_NO_CONN	0
-> > +#define TCA_TCPC_MUX_CONTRL_USB_CONN	1
-> > +
-> > +#define TCA_SYSMODE_CFG			0x18
-> > +#define TCA_SYSMODE_TCPC_DISABLE	BIT(3)
-> > +#define TCA_SYSMODE_TCPC_FLIP		BIT(2)
-> > +
-> > +#define TCA_CTRLSYNCMODE_CFG0		0x20
-> > +#define TCA_CTRLSYNCMODE_CFG1           0x20
-> > +
-> > +#define TCA_PSTATE			0x30
-> > +#define TCA_PSTATE_CM_STS		BIT(4)
-> > +#define TCA_PSTATE_TX_STS		BIT(3)
-> > +#define TCA_PSTATE_RX_PLL_STS		BIT(2)
-> > +#define TCA_PSTATE_PIPE0_POWER_DOWN	GENMASK(1, 0)
-> > +
-> > +#define TCA_GEN_STATUS			0x34
-> > +#define TCA_GEN_DEV_POR			BIT(12)
-> > +#define TCA_GEN_REF_CLK_SEL		BIT(8)
-> > +#define TCA_GEN_TYPEC_FLIP_INVERT	BIT(4)
-> > +#define TCA_GEN_PHY_TYPEC_DISABLE	BIT(3)
-> > +#define TCA_GEN_PHY_TYPEC_FLIP		BIT(2)
-> > +
-> > +#define TCA_VBUS_CTRL			0x40
-> > +#define TCA_VBUS_STATUS			0x44
-> > +
-> > +#define TCA_INFO			0xfc
-> > +
-> > +struct tca_blk {
-> > +	struct typec_switch_dev *sw;
-> > +	void __iomem *base;
-> > +	struct mutex mutex;
-> > +	enum typec_orientation orientation;
-> > +};
-> > +
-> >  struct imx8mq_usb_phy {
-> >  	struct phy *phy;
-> >  	struct clk *clk;
-> >  	void __iomem *base;
-> >  	struct regulator *vbus;
-> > +	struct tca_blk *tca;
-> >  	u32 pcs_tx_swing_full;
-> >  	u32 pcs_tx_deemph_3p5db;
-> >  	u32 tx_vref_tune;
-> > @@ -64,6 +120,172 @@ struct imx8mq_usb_phy {
-> >  	u32 comp_dis_tune;
-> >  };
-> >  
-> > +
-> > +static void tca_blk_orientation_set(struct tca_blk *tca,
-> > +				enum typec_orientation orientation);
-> > +
-> > +#ifdef CONFIG_TYPEC
-> > +
-> > +static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
-> > +				enum typec_orientation orientation)
-> > +{
-> > +	struct imx8mq_usb_phy *imx_phy = typec_switch_get_drvdata(sw);
-> > +	struct tca_blk *tca = imx_phy->tca;
-> > +	int ret;
-> > +
-> > +	if (tca->orientation == orientation)
-> > +		return 0;
-> > +
-> > +	ret = clk_prepare_enable(imx_phy->clk);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	tca_blk_orientation_set(tca, orientation);
-> > +	clk_disable_unprepare(imx_phy->clk);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
-> > +					struct imx8mq_usb_phy *imx_phy)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct typec_switch_dev *sw;
-> > +	struct typec_switch_desc sw_desc = { };
-> > +
-> > +	sw_desc.drvdata = imx_phy;
-> > +	sw_desc.fwnode = dev->fwnode;
-> > +	sw_desc.set = tca_blk_typec_switch_set;
-> > +	sw_desc.name = NULL;
-> > +
-> > +	sw = typec_switch_register(dev, &sw_desc);
-> > +	if (IS_ERR(sw)) {
-> > +		dev_err(dev, "Error register tca orientation switch: %ld",
-> > +				PTR_ERR(sw));
-> > +		return NULL;
-> > +	}
-> > +
-> > +	return sw;
-> > +}
-> > +
-> > +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
-> > +{
-> > +	typec_switch_unregister(sw);
-> > +}
-> > +
-> > +#else
-> > +
-> > +static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
-> > +			struct imx8mq_usb_phy *imx_phy)
-> > +{
-> > +	return NULL;
-> > +}
-> > +
-> > +static void tca_blk_put_typec_switch(struct typec_switch_dev *sw) {}
-> > +
-> > +#endif /* CONFIG_TYPEC */
-> > +
-> > +static void tca_blk_orientation_set(struct tca_blk *tca,
-> > +				enum typec_orientation orientation)
-> > +{
-> > +	u32 val;
-> > +
-> > +	mutex_lock(&tca->mutex);
-> > +
-> > +	if (orientation == TYPEC_ORIENTATION_NONE) {
-> > +		/*
-> > +		 * use Controller Synced Mode for TCA low power enable and
-> > +		 * put PHY to USB safe state.
-> > +		 */
-> > +		val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYNCMODE);
-> > +		writel(val, tca->base + TCA_GCFG);
-> > +
-> > +		val = TCA_TCPC_VALID | TCA_TCPC_LOW_POWER_EN;
-> > +		writel(val, tca->base + TCA_TCPC);
-> > +
-> > +		goto out;
-> > +	}
-> > +
-> > +	/* use System Configuration Mode for TCA mux control. */
-> > +	val = FIELD_PREP(TCA_GCFG_OP_MODE, TCA_GCFG_OP_MODE_SYSMODE);
-> > +	writel(val, tca->base + TCA_GCFG);
-> > +
-> > +	/* Disable TCA module */
-> > +	val = readl(tca->base + TCA_SYSMODE_CFG);
-> > +	val |= TCA_SYSMODE_TCPC_DISABLE;
-> > +	writel(val, tca->base + TCA_SYSMODE_CFG);
-> > +
-> > +	if (orientation == TYPEC_ORIENTATION_REVERSE)
-> > +		val |= TCA_SYSMODE_TCPC_FLIP;
-> > +	else if (orientation == TYPEC_ORIENTATION_NORMAL)
-> > +		val &= ~TCA_SYSMODE_TCPC_FLIP;
-> > +
-> > +	writel(val, tca->base + TCA_SYSMODE_CFG);
-> > +
-> > +	/* Enable TCA module */
-> > +	val &= ~TCA_SYSMODE_TCPC_DISABLE;
-> > +	writel(val, tca->base + TCA_SYSMODE_CFG);
-> > +
-> > +out:
-> > +	tca->orientation = orientation;
-> > +	mutex_unlock(&tca->mutex);
-> > +}
-> > +
-> > +static void tca_blk_init(struct tca_blk *tca)
-> > +{
-> > +	u32 val;
-> > +
-> > +	/* reset XBar block */
-> > +	val = readl(tca->base + TCA_CLK_RST);
-> > +	val &= ~TCA_CLK_RST_SW;
-> > +	writel(val, tca->base + TCA_CLK_RST);
-> > +
-> > +	udelay(100);
-> > +
-> > +	/* clear reset */
-> > +	val |= TCA_CLK_RST_SW;
-> > +	writel(val, tca->base + TCA_CLK_RST);
-> > +
-> > +	tca_blk_orientation_set(tca, tca->orientation);
-> > +}
-> > +
-> > +static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
-> > +				struct imx8mq_usb_phy *imx_phy)
-> > +{
-> > +	struct device *dev = &pdev->dev;
-> > +	struct resource *res;
-> > +	struct tca_blk *tca;
-> > +
-> > +	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
-> > +	if (!res)
-> > +		return NULL;
-> > +
-> > +	tca = devm_kzalloc(dev, sizeof(*tca), GFP_KERNEL);
-> > +	if (!tca)
-> > +		return ERR_PTR(-ENOMEM);
-> > +
-> > +	tca->base = devm_ioremap_resource(&pdev->dev, res);
-> > +	if (IS_ERR(tca->base))
-> > +		return ERR_CAST(tca->base);
-> > +
-> > +	mutex_init(&tca->mutex);
-> > +
-> > +	tca->orientation = TYPEC_ORIENTATION_NORMAL;
-> > +	tca->sw = tca_blk_get_typec_switch(pdev, imx_phy);
-> > +
-> > +	return tca;
-> > +}
-> > +
-> > +static void imx95_usb_phy_put_tca(struct imx8mq_usb_phy *imx_phy)
-> > +{
-> > +	struct tca_blk *tca = imx_phy->tca;
-> > +
-> > +	if (!tca)
-> > +		return;
-> > +
-> > +	tca_blk_put_typec_switch(tca->sw);
-> > +}
-> > +
-> >  static u32 phy_tx_vref_tune_from_property(u32 percent)
-> >  {
-> >  	percent = clamp(percent, 94U, 124U);
-> > @@ -315,6 +537,9 @@ static int imx8mp_usb_phy_init(struct phy *phy)
-> >  
-> >  	imx8m_phy_tune(imx_phy);
-> >  
-> > +	if (imx_phy->tca)
-> > +		tca_blk_init(imx_phy->tca);
-> > +
-> >  	return 0;
-> >  }
-> >  
-> > @@ -359,6 +584,8 @@ static const struct of_device_id imx8mq_usb_phy_of_match[] = {
-> >  	 .data = &imx8mq_usb_phy_ops,},
-> >  	{.compatible = "fsl,imx8mp-usb-phy",
-> >  	 .data = &imx8mp_usb_phy_ops,},
-> > +	{.compatible = "fsl,imx95-usb-phy",
-> > +	 .data = &imx8mp_usb_phy_ops,},
-> >  	{ }
-> >  };
-> >  MODULE_DEVICE_TABLE(of, imx8mq_usb_phy_of_match);
-> > @@ -398,6 +625,11 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
-> >  
-> >  	phy_set_drvdata(imx_phy->phy, imx_phy);
-> >  
-> > +	imx_phy->tca = imx95_usb_phy_get_tca(pdev, imx_phy);
-> > +	if (IS_ERR(imx_phy->tca))
-> > +		return dev_err_probe(dev, PTR_ERR(imx_phy->tca),
-> > +					"failed to get tca\n");
-> > +
-> >  	imx8m_get_phy_tuning_data(imx_phy);
-> >  
-> >  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> > @@ -405,8 +637,16 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
-> >  	return PTR_ERR_OR_ZERO(phy_provider);
-> >  }
-> >  
-> > +static void imx8mq_usb_phy_remove(struct platform_device *pdev)
-> > +{
-> > +	struct imx8mq_usb_phy *imx_phy = platform_get_drvdata(pdev);
-> > +
-> > +	imx95_usb_phy_put_tca(imx_phy);
-> > +}
-> > +
-> >  static struct platform_driver imx8mq_usb_phy_driver = {
-> >  	.probe	= imx8mq_usb_phy_probe,
-> > +	.remove = imx8mq_usb_phy_remove,
-> >  	.driver = {
-> >  		.name	= "imx8mq-usb-phy",
-> >  		.of_match_table	= imx8mq_usb_phy_of_match,
-> > -- 
-> > 2.34.1
-> > 
-> 
-> Happy New Year!
-> And a gentle ping.
+Observed VBUS_OVERRIDE & ID_OVERRIDE might be programmed
+with unexpected value prior to XUSB PADCTL driver, this
+could also occur in virtualization scenario.
 
-A gentle ping!
-If no other concerns, please help pick up them since many users are
-waiting for it. And v6.13 is almost coming.
+For example, UEFI firmware programs ID_OVERRIDE=GROUNDED to set
+a type-c port to host mode and keeps the value to kernel.
+If the type-c port is connected a usb host, below errors can be
+observed right after USB host mode driver gets probed. The errors
+would keep until usb role class driver detects the type-c port
+as device mode and notifies usb device mode driver to set both
+ID_OVERRIDE and VBUS_OVERRIDE to correct value by XUSB PADCTL
+driver.
 
-Thanks,
-Xu Yang
+[  173.765814] usb usb3-port2: Cannot enable. Maybe the USB cable is bad?
+[  173.765837] usb usb3-port2: config error
+
+Taking virtualization into account, asserting XUSB PADCTL
+reset would break XUSB functions used by other guest OS,
+hence only reset VBUS & ID OVERRIDE of the port in
+utmi_phy_init.
+
+Fixes: bbf711682cd5 ("phy: tegra: xusb: Add Tegra186 support")
+Cc: stable@vger.kernel.org
+Signed-off-by: BH Hsieh <bhsieh@nvidia.com>
+Signed-off-by: Henry Lin <henryl@nvidia.com>
+---
+ drivers/phy/tegra/xusb-tegra186.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index 0f60d5d1c167..34c6d424a3e8 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -928,6 +928,7 @@ static int tegra186_utmi_phy_init(struct phy *phy)
+ 	unsigned int index = lane->index;
+ 	struct device *dev = padctl->dev;
+ 	int err;
++	u32 reg;
+ 
+ 	port = tegra_xusb_find_usb2_port(padctl, index);
+ 	if (!port) {
+@@ -935,6 +936,13 @@ static int tegra186_utmi_phy_init(struct phy *phy)
+ 		return -ENODEV;
+ 	}
+ 
++	/* reset VBUS&ID OVERRIDE */
++	reg = padctl_readl(padctl, USB2_VBUS_ID);
++	reg &= ~VBUS_OVERRIDE;
++	reg &= ~ID_OVERRIDE(~0);
++	reg |= ID_OVERRIDE_FLOATING;
++	padctl_writel(padctl, reg, USB2_VBUS_ID);
++
+ 	if (port->supply && port->mode == USB_DR_MODE_HOST) {
+ 		err = regulator_enable(port->supply);
+ 		if (err) {
+-- 
+2.25.1
+
 
 -- 
 linux-phy mailing list
