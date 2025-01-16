@@ -4,74 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7FBFC02183
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 14:22:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56079C02187
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 14:35:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ay7XpOxbzvqmfQYzxueZBXcibGCzqvcgFWPU7BBnOZs=; b=oueq4vSZh7GWyX
-	lfDQiHfoOmkzkik0sfdIXOc3uLOWUPiu26PlfQcE3WLhaRkFXyyd7desCTdWHPbo1gbj174C7cxqU
-	gfAeZlnch3vzNzycxc8pFKUSshKrcrGrZuEqASJeY8C1dBueuTVFO0Wb0y08V8TSuryS9PwuiCt84
-	jwYnHAfYfk0zjXMtPelm5Xubmza2DluOz2KHLB0VIsTUSVykGe6qO/MOp1eTxdqFkXsqFdVi02O2Z
-	vaevaN04XDPIDBCTM5lixCWwVBen1sgcFQ+tV3UlWAKe87n9wwB4ZcGbvDmYadNZi0izYMGlZtlfE
-	yAgpBxJBhxgsPsvXoVbA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+o+kUvpAHHhWeL0SpH8IBGhzbgrlb5waDddbzUjG/mE=; b=CSwN9SmlMQHJS1
+	eJaCQ0hI1IpEVd0bhZZCzokyYJ2VPLsYh7mQacDT7BWVc2LZLxmHkqPFFkDC1OIseKT0cniKjvT2s
+	PA+dtK8XSf1ZOxru6ILpdPVlvYz06rIsdxtDZ/kTbPQBDv0aEYb1ZMf/YtLOtkfq+usTWtp+qTC2/
+	OcMuG9c4lWpYitdOaswJPrB5YWs+z9WNWzEcXFTiy1dcJ0+f1QSOdJ0vBt2xDbPat0r4VfLsT5UjD
+	T8baXFtbQz9k2hj7HbDfBBwUEOaAb67ddyY6n9MVo07y2ClBb1lfqON4z7fGcFZnMxppeVgTAuld3
+	AY0MT4vxw4ezaEZ9VuqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYQlK-0000000F92f-2xTG;
-	Thu, 16 Jan 2025 14:22:22 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tYQy1-0000000FBiU-0NTl;
+	Thu, 16 Jan 2025 14:35:29 +0000
+Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYQlI-0000000F91y-1zRi
-	for linux-phy@lists.infradead.org;
-	Thu, 16 Jan 2025 14:22:21 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 30C305C5D2D;
-	Thu, 16 Jan 2025 14:21:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67A0CC4CED6;
-	Thu, 16 Jan 2025 14:22:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737037339;
-	bh=pJsxjspJlyLcmmLB+dqam9qL9oikWlt2JRgFOhW2txs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=grMrFL8aJmaqLvYKCBlJB99+CeWOHD/Ig5q8fG/c+00f+Qp2ZUfzLiqRyOSSeJUDj
-	 Dfugujjxs5/XdrfFLP9NgPbEl6RTxMu7kiCISRyQDz6RREF0lHI27BB14l+crs4LM3
-	 s2ZnF0yVOS+l8r9gotY04OPjazx2e28vu/g/0EqBRrzli35kX3dDwSFCLOPFO3hGYp
-	 OPAag/EnKhYqWbuhxd0WxH/z93GG9aw1cYtq5tOjFW0Gsi6emhnTt3emr6+4xSy06K
-	 G0SRzeYRLdINoRYVw9hObUbbjvxcCGk0XRuGB+6E9bFda+ouj/YIh2qEA8DBZkKmdV
-	 8PP3pfZN+TCbQ==
-Date: Thu, 16 Jan 2025 08:22:18 -0600
-From: Rob Herring <robh@kernel.org>
-To: Xin Liu <quic_liuxin@quicinc.com>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Andy Gross <agross@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
-	quic_jiegan@quicinc.com, quic_aiquny@quicinc.com,
-	quic_tingweiz@quicinc.com, quic_sayalil@quicinc.com,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: [PATCH v4 1/3] dt-bindings: ufs: qcom: Add UFS Host Controller
- for QCS615
-Message-ID: <20250116142218.GA2176564-robh@kernel.org>
-References: <20241216095439.531357-1-quic_liuxin@quicinc.com>
- <20241216095439.531357-2-quic_liuxin@quicinc.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20241216095439.531357-2-quic_liuxin@quicinc.com>
+	id 1tYQxy-0000000FBho-1o8g;
+	Thu, 16 Jan 2025 14:35:27 +0000
+Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-5d9b6b034easo2091411a12.3;
+        Thu, 16 Jan 2025 06:35:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1737038124; x=1737642924; darn=lists.infradead.org;
+        h=to:references:message-id:content-transfer-encoding:cc:date
+         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=+McQPymEmOdhf0WLe0EFmpoE0UjFeiDotGFY4kS0D0g=;
+        b=IfU+EIDx6xWwgvngb/uhO2iNKbpXX5Fq5IfrY5fLUfUGeGu0YbSoDbFIUcnTo1gKa6
+         itk8b5z9SfNAs6dMh1N20+r6qNDYSp6Q7kA8er4sOMjZgyVOzf40qMo+7RJSFET0kWqs
+         wFUaedsiB7yot9e8nJT3O3ekcoIP1dvAlthulKppLsh6eRFc4T2D/Xr/3P+ukkSdILhO
+         sEy9FdG+IbBwqsutnxG/8fgdTDUcWotzVtEKCHxdS3bOskUKjZ6CE8qZZa/1OVr4fA35
+         ZNrWSq9gKoWQDwWZzGwH0LS70l5gjdSOvyoKSxVwgJzTnxQK6y6vkEmF6ZCYnp4JBYLK
+         KHuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737038124; x=1737642924;
+        h=to:references:message-id:content-transfer-encoding:cc:date
+         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=+McQPymEmOdhf0WLe0EFmpoE0UjFeiDotGFY4kS0D0g=;
+        b=kV+e2hCb1DGeHiHU0Bray68dcGIa+dRrPteAWMbnqX9RHJ9NYzyy3G6kgPSlNToFlX
+         6bzCgizw/kBoyRk+Egls7ZxhiAiviCYIRchpFlTIFooQE6nUwo0Q3ZS+OLHcroHTaXqC
+         Aq6IN8Hlr9xnXPmWP/1vDodbXvksCtpyHRcwrMJenJD3mekYkf67D7lyo0P/ew3M7kDX
+         t7PaEyUys0WYqlfp2K2VosUPA7DbiRzrnc+blaz0FU/+Vw2wl74l81IiojKrWLjDGIZS
+         rUsg1IBqHi+auZqKm2NhgfIFH29SleowCmCQkzO6mk5FlceCfvExLr11ZcWAZy7qfwRU
+         CYMw==
+X-Forwarded-Encrypted: i=1; AJvYcCUSiQUV7nhXhCC/c4MJ7MKdL6u/3a+BkIKi8nYXpxRiT+ltWYmTNxgTj9Nd3l4viE0opujFXpk9lsgzKjTiMlk=@lists.infradead.org, AJvYcCVDi2ZcB7N2DDTbaztWC+o61Iyfx/Q55Lkxd3CDgiTiiOFes2hq1CBDorDutpKeCQO/0yc5iolUGuwb@lists.infradead.org, AJvYcCXiIGIWZdPGjjBT3O56Ai7JaJ5ppR8PdOfhIgzxtYHZ7HIteV4fa2ey+358ThG5nu4UQuAlSSpTpTTIYxWzUN64@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy+kdiNmq9KWFl4OPxZtnPa8lUjjP9j28u6oTEcMxtLscUrPHEN
+	hWNIKLlQSNk2OLgaa5VhbbBrAcuwWp68qL4m10AJcSUm6tm3j1/Z
+X-Gm-Gg: ASbGncs4AwQ/+c/kZMHCrNVqVQsWcIqNKX8XaKYDUPREc3PAgHh5Zl6+udVVvdCRTqQ
+	0jKNi0TpBsuYmjWqHP3ZxGVY83KTIk7d34FhRgPkfHGm0sBRJRua2I7Dq/b/NIbRbcgNHiCYDVz
+	Ygc/kMEs4hhEKyfXX7C14yhU5KxCgeaQbc4I9c5zKLfy2z87Gik5RZf4Hf9ZWJH8Eam4Uof7qQm
+	6nJXJDaNEubQrlomQGNQFTqqcPk9/eqIoZzlkKbiefMaEhbnrxaGXfkgXT17UoVoLg6agCIqDUS
+	Zva4aJXHE4mgXYYaGOGWhSMTzxRDJkELkBcrqQ==
+X-Google-Smtp-Source: AGHT+IF22GYVRQI+1Y1KzRsqCWEDA0Rkne28OZTlDzi7yq1Grymd0Rj0WG4k8w+WrzsYR8ss+QgyYw==
+X-Received: by 2002:a05:6402:2695:b0:5d9:f70a:47ec with SMTP id 4fb4d7f45d1cf-5d9f70a4a74mr10793460a12.15.1737038124352;
+        Thu, 16 Jan 2025 06:35:24 -0800 (PST)
+Received: from smtpclient.apple (89-66-237-154.dynamic.chello.pl. [89.66.237.154])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5db7364272esm19585a12.12.2025.01.16.06.35.20
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 16 Jan 2025 06:35:23 -0800 (PST)
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.300.87.4.3\))
+Subject: Re: [RFC PATCH v1 0/6] rockchip: add a functional usb3 phy driver for
+ rk3328
+From: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>
+In-Reply-To: <CAMdYzYoCj9FsyHdTQAOV4DFpD7OdMDaJ0R=BBxXG-SLguy512Q@mail.gmail.com>
+Date: Thu, 16 Jan 2025 15:35:08 +0100
+Cc: Heiko Stuebner <heiko@sntech.de>,
+ Algea Cao <algea.cao@rock-chips.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ kever.yang@rock-chips.com,
+ linux-phy@lists.infradead.org,
+ wulf@rock-chips.com,
+ zyw@rock-chips.com,
+ Dragan Simic <dsimic@manjaro.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>,
+ linux-clk@vger.kernel.org,
+ linux-rockchip@lists.infradead.org,
+ devicetree@vger.kernel.org,
+ Conor Dooley <conor+dt@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Jonas Karlman <jonas@kwiboo.se>,
+ frank.wang@rock-chips.com,
+ Elaine Zhang <zhangqing@rock-chips.com>,
+ Alex Bee <knaerzche@gmail.com>,
+ william.wu@rock-chips.com,
+ Zhang Yubing <yubing.zhang@rock-chips.com>,
+ Johan Jonker <jbx6244@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Trevor Woerner <twoerner@gmail.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>,
+ FUKAUMI Naoki <naoki@radxa.com>,
+ Diederik de Haas <didi.debian@cknow.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>
+Message-Id: <F69CE715-C0E4-4FCD-943C-89CC1D3E848D@gmail.com>
+References: <20250115012628.1035928-1-pgwipeout@gmail.com>
+ <2EEA8028-8E4A-4588-A480-E5FF0F7BE82E@gmail.com>
+ <CAMdYzYo2W1hLgiH697AdRSUbhBU4rU2uB=N6EMWMD2-0R+VLBA@mail.gmail.com>
+ <B1C9DA16-F285-4AD0-AE4E-AF1A5CA20932@gmail.com>
+ <CAMdYzYrxX=RsSZja-3+zLZUSpyLoRz8Zm0w0hTfL3RQ9cjqgOw@mail.gmail.com>
+ <3536B507-8658-4377-A1AC-2C5D9093BDEB@gmail.com>
+ <CAMdYzYoCj9FsyHdTQAOV4DFpD7OdMDaJ0R=BBxXG-SLguy512Q@mail.gmail.com>
+To: Peter Geis <pgwipeout@gmail.com>
+X-Mailer: Apple Mail (2.3826.300.87.4.3)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250116_062220_554251_AB4265BA 
-X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-CacheID: sfid-20250116_063526_470454_708155BB 
+X-CRM114-Status: UNSURE (   7.90  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,31 +130,15 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 16, 2024 at 05:54:37PM +0800, Xin Liu wrote:
-> From: Sayali Lokhande <quic_sayalil@quicinc.com>
-> 
-> Document the Universal Flash Storage(UFS) Host Controller on the Qualcomm
-> QCS615 Platform.
-> 
-> Signed-off-by: Sayali Lokhande <quic_sayalil@quicinc.com>
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> Co-developed-by: Xin Liu <quic_liuxin@quicinc.com>
-> Signed-off-by: Xin Liu <quic_liuxin@quicinc.com>
-> ---
->  Documentation/devicetree/bindings/ufs/qcom,ufs.yaml | 2 ++
->  1 file changed, 2 insertions(+)
-
-Looks like this was missed. Applied.
-
-Rob
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Cgo+IFdpYWRvbW/Fm8SHIG5hcGlzYW5hIHByemV6IFBldGVyIEdlaXMgPHBnd2lwZW91dEBnbWFp
+bC5jb20+IHcgZG5pdSAxNiBzdHkgMjAyNSwgbyBnb2R6LiAxNTowMjoKPiAKPj4gCj4gCj4gSSdt
+IGF0IGEgbG9zcyBoZXJlLCBJIGFwcGxpZWQgdGhlIHBhdGNoZXMgdG8gYSBjbGVhbiA2LjkgdHJl
+ZSBhbmQgZXZlbgo+PiAKCm9oIG1heWJlIGlzc3VlIGlzIGluIGtlcm5lbCBhZ2U/CjYuOSBzZWVt
+cyBhIGJpdCBxdWl0ZSBvbGQuCmnigJltIG9uIDYuMTIuOeKApi4KLS0gCmxpbnV4LXBoeSBtYWls
+aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
