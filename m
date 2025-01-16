@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA8E0C02180
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 13:01:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7EBAC02180
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Jan 2025 13:11:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/C12+lC65VzgJH89WL6OjCx/JpSJWUSTCa/U3x7oSCM=; b=ag6lTja4GMxyrB
-	uRchBJFsq5vxlFS618iYYiHmvOt+fCR+GGtpsWMA+fjk3Evc4dmJhMDedj9ebYyE09bwyX6na+r4N
-	XJI4zDbNdUbuYT8XgwjII65iJxpzutA0vw+xMQn4ORL2BWtF4yUK/JTRanEGcyzrSPtQri9S+nqqf
-	6dBApHEx+CtqmH0oIvrUGdiSqGfnk4lzN1xUSEh5Px1q9uhrKQYeDRDridff+yG30vgVQv4tf6Zww
-	e0o3wpS0Sr8tgIDsmK5Z+HM7KBSVvTGVum4DW21JUig1zqFs7/wvYTXBkQsY/jnyAERuWXnkXyQdp
-	/xNA9g6c3j/4EUcxvjog==;
+	List-Owner; bh=W3wRmPrwyuYDd1mFDrOScRgCQrIE8d1dypAYLXbxW/0=; b=iPrTHsQH21d7fW
+	sP8GZOfai9rmT6RhQI/N2aCTYPYeaxODAxCjdBMXdjqEBgyHoKweBSW4/UwgaxYGyYRuT86NOzvSq
+	a/olpcW9ZNXrczmTX6i5cuilam/kyvkPPUc49O8NYkjQbgQok5t/q0WunreZxeJ2js5iUiHOUGD7q
+	VGaDg8gNK8QK8zVY/9l4C+yOMk5KFHIxUqioNfewCdMEpJEB/UXJdnNhhBxAAYXIHSfSdpYnyK5Cw
+	WWlz7ucxJJNAlBxnia3If6a0J9EP8Kggj/EHkq6wAT90+5h3D2fAOl+b6HKExSMvJOTMNZOLPoU1J
+	tgtRpWwKPBn7CtLRNnsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYPUg-0000000Ewsv-0jLM;
-	Thu, 16 Jan 2025 13:01:06 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tYPec-0000000EyUT-1yX6;
+	Thu, 16 Jan 2025 13:11:22 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYPTP-0000000EwhR-3Dl9;
-	Thu, 16 Jan 2025 12:59:48 +0000
+	id 1tYPbX-0000000Exz4-2g0E;
+	Thu, 16 Jan 2025 13:08:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4BF7C5C55DB;
-	Thu, 16 Jan 2025 12:59:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2428FC4CED6;
-	Thu, 16 Jan 2025 12:59:40 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 6A0425C56AB;
+	Thu, 16 Jan 2025 13:07:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86669C4CED6;
+	Thu, 16 Jan 2025 13:08:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737032386;
-	bh=MUcj+PDJNAsNizlP5f4HUNqu0DmAOApn8fq/KkfE20M=;
+	s=k20201202; t=1737032890;
+	bh=odvMQVbU9ufN8gBiaClCLD96/SWVckwJ41GyrRYtA5g=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=donLZCuAuLt7qZTSJuKlXrsZX1YcRyW5wodpHKP1Obb4+IlU3FRmTWWRgQM/HB7vw
-	 HEqwbkJ2Gns4i46ZW1gvHuqIXqc63qOKURGN+ezGfFrT+H2vOfg+9YH46EwBbBuTM2
-	 tsl1Ui/gQWfsyq1XGs1TNdbhPF/tSWnIJhC+1zCyTxOJWzFSMXHkAgPjUIOaWlO4ad
-	 9VNA2ivGJhzG24qLPx4L4RyCbdZcfP3jT8DnJzB4HKYS3t+QhbnHRHuAiZBFUFr/dz
-	 AlRb5iiR62ILeLO1z6A2/gEzPXCh+JCw/6Nh37Ad6rwBCM6U7y/AubnDlZ5EK2uXNP
-	 G9PF6mdc6vOcw==
-Message-ID: <87001334-5a37-4fba-b08c-3679fb556f83@kernel.org>
-Date: Thu, 16 Jan 2025 13:59:38 +0100
+	b=EgyCvMbKpZg4goWG4Ef+VKveLj1A/XkiLFKBUArqlRWgvFfnZVKgnoyk9t338jOxs
+	 /NOs55cOBLDFoYyejnFy94dTHcpI2ClZxZIar3UjEqyfqSmaAWSHXVPuUKuzBic6eJ
+	 2fwxw2VKkWs30yMVyj/akRdLe63ujYWzfDAiIu8mDuBtoJhYIT1eC8ahmvR9p1Rx7j
+	 Vg0wpGzB9ZbiZJCpdL1zPEhk4+Mn+o2KelVX5KVmDe55Ytiy7E9a0CPH6EGXeWULz3
+	 zTkyO4TRGdPOS+4LAMy23zEdFe7klbJKMXGhR3/CyAgwRfrhGy9KRycHmT9zpw5OyU
+	 Rqtd7moggpBCg==
+Message-ID: <fe006de3-16eb-4c20-8e8e-da5ff5531c6f@kernel.org>
+Date: Thu, 16 Jan 2025 14:08:03 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v1 3/6] phy: rockchip: add driver for rk3328 usb3 phy
+Subject: Re: [RFC PATCH v1 2/6] dt-bindings: phy: rockchip: add rk3328 usb3
+ phy
 To: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>
 Cc: zyw@rock-chips.com, kever.yang@rock-chips.com, frank.wang@rock-chips.com,
  william.wu@rock-chips.com, wulf@rock-chips.com,
- linux-rockchip@lists.infradead.org, Algea Cao <algea.cao@rock-chips.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ linux-rockchip@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Vinod Koul <vkoul@kernel.org>, Zhang Yubing <yubing.zhang@rock-chips.com>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
 References: <20250115012628.1035928-1-pgwipeout@gmail.com>
- <20250115012628.1035928-4-pgwipeout@gmail.com>
+ <20250115012628.1035928-3-pgwipeout@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +103,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250115012628.1035928-4-pgwipeout@gmail.com>
+In-Reply-To: <20250115012628.1035928-3-pgwipeout@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250116_045947_900476_212D2C30 
-X-CRM114-Status: GOOD (  24.71  )
+X-CRM114-CacheID: sfid-20250116_050811_772770_172CD093 
+X-CRM114-Status: GOOD (  20.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,297 +124,223 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 15/01/2025 02:26, Peter Geis wrote:
-> The rk3328 has a combined usb2 and usb3 phy block for the usb3 dwc
-> interface. The implementation up until now has been bugged, with
-> multiple issues ranging from disconnect detection failures to low
-> performance. This driver fixes the majority of the original issues and
-> allows better performance for the rk3328 usb3 port.
-> 
-> This driver sources data from multiple sources, including the rk3328
-> trm, the rk3228h trm, emails from Rockchip, and both the 4.4 and 5.10
-> downstream drivers. The current implementation allows for basic bring up
-> of the phy block and fixes the detection issues. Interrupts are enabled,
-> but currently only used for debugging. Features missing currently are
-> power management, OTG handling, board specific tuning, regulator control,
-> 
-> Currently the only known bugs are a AX88179 usb3 gigabit adapter crashes
-> when operating at usb3 speeds and transmitting large amounts of data and
-> full disconnection detections may be slower than expected (~5-10 seconds).
+> Add documentation for the usb3 phy as implemented on the rk3328 SoC.
 > 
 > Signed-off-by: Peter Geis <pgwipeout@gmail.com>
 > ---
+> 
+>  .../bindings/phy/rockchip,inno-usb3phy.yaml   | 166 ++++++++++++++++++
+>  1 file changed, 166 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
+> new file mode 100644
+> index 000000000000..cde489ca87ab
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/rockchip,inno-usb3phy.yaml
+> @@ -0,0 +1,166 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
 
+Wrong license.
 
-...
+Please run scripts/checkpatch.pl and fix reported warnings. After that,
+run also `scripts/checkpatch.pl --strict` and (probably) fix more
+warnings. Some warnings can be ignored, especially from --strict run,
+but the code here looks like it needs a fix. Feel free to get in touch
+if the warning is not clear.
 
-> +}
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/rockchip,inno-usb3phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +static int rockchip_usb3phy_parse_dt(struct rockchip_usb3phy *usb3phy, struct device *dev)
-> +{
-> +	int ret;
-> +
-> +	usb3phy->clk_pipe = devm_clk_get(dev, "usb3phy-pipe");
-> +	if (IS_ERR(usb3phy->clk_pipe)) {
-> +		dev_err(dev, "could not get usb3phy pipe clock\n");
+> +title: Rockchip USB 3.0 phy with Innosilicon IP block
 
-Syntax is always:
-return dev_err_probe
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - rockchip,rk3328-usb3phy
 
-> +		return PTR_ERR(usb3phy->clk_pipe);
-> +	}
-> +
-> +	usb3phy->clk_otg = devm_clk_get(dev, "usb3phy-otg");
-> +	if (IS_ERR(usb3phy->clk_otg)) {
-> +		dev_err(dev, "could not get usb3phy otg clock\n");
-> +		return PTR_ERR(usb3phy->clk_otg);
-> +	}
-> +
-> +	usb3phy->clk_ref = devm_clk_get(dev, "refclk-usb3otg");
-> +	if (IS_ERR(usb3phy->clk_ref)) {
-> +		dev_err(dev, "could not get usb3phy ref clock\n");
-> +		return PTR_ERR(usb3phy->clk_ref);
-> +	}
-> +
-> +	usb3phy->u2por_rst = devm_reset_control_get(dev, "usb3phy-u2-por");
-> +	if (IS_ERR(usb3phy->u2por_rst)) {
-> +		dev_err(dev, "no usb3phy-u2-por reset control found\n");
-> +		return PTR_ERR(usb3phy->u2por_rst);
-> +	}
-> +
-> +	usb3phy->u3por_rst = devm_reset_control_get(dev, "usb3phy-u3-por");
-> +	if (IS_ERR(usb3phy->u3por_rst)) {
-> +		dev_err(dev, "no usb3phy-u3-por reset control found\n");
-> +		return PTR_ERR(usb3phy->u3por_rst);
-> +	}
-> +
-> +	usb3phy->pipe_rst = devm_reset_control_get(dev, "usb3phy-pipe-mac");
-> +	if (IS_ERR(usb3phy->pipe_rst)) {
-> +		dev_err(dev, "no usb3phy_pipe_mac reset control found\n");
-> +		return PTR_ERR(usb3phy->pipe_rst);
-> +	}
-> +
-> +	usb3phy->utmi_rst = devm_reset_control_get(dev, "usb3phy-utmi-mac");
-> +	if (IS_ERR(usb3phy->utmi_rst)) {
-> +		dev_err(dev, "no usb3phy-utmi-mac reset control found\n");
-> +		return PTR_ERR(usb3phy->utmi_rst);
-> +	}
-> +
-> +	usb3phy->pipe_apb_rst = devm_reset_control_get(dev, "usb3phy-pipe-apb");
-> +	if (IS_ERR(usb3phy->pipe_apb_rst)) {
-> +		dev_err(dev, "no usb3phy-pipe-apb reset control found\n");
-> +		return PTR_ERR(usb3phy->pipe_apb_rst);
-> +	}
-> +
-> +	usb3phy->utmi_apb_rst = devm_reset_control_get(dev, "usb3phy-utmi-apb");
-> +	if (IS_ERR(usb3phy->utmi_apb_rst)) {
-> +		dev_err(dev, "no usb3phy-utmi-apb reset control found\n");
-> +		return PTR_ERR(usb3phy->utmi_apb_rst);
-> +	}
-> +
-> +	usb3phy->ls_irq = of_irq_get_byname(dev->of_node, "linestate");
-> +	if (usb3phy->ls_irq < 0) {
-> +		dev_err(dev, "no linestate irq provided\n");
-> +		return usb3phy->ls_irq;
-> +	}
-> +
-> +	ret = devm_request_threaded_irq(dev, usb3phy->ls_irq, NULL, rockchip_usb3phy_linestate_irq,
-> +					IRQF_ONESHOT, "rockchip_usb3phy_ls", usb3phy);
-> +	if (ret) {
-> +		dev_err(dev, "failed to request linestate irq handle\n");
-> +		return ret;
-> +	}
-> +
-> +	usb3phy->bvalid_irq = of_irq_get_byname(dev->of_node, "bvalid");
-> +	if (usb3phy->bvalid_irq < 0) {
-> +		dev_err(dev, "no bvalid irq provided\n");
-> +		return usb3phy->bvalid_irq;
-> +	}
-> +
-> +	ret = devm_request_threaded_irq(dev, usb3phy->bvalid_irq, NULL, rockchip_usb3phy_bvalid_irq,
-> +					IRQF_ONESHOT, "rockchip_usb3phy_bvalid", usb3phy);
-> +	if (ret) {
-> +		dev_err(dev, "failed to request bvalid irq handle\n");
-> +		return ret;
-> +	}
-> +
-> +	usb3phy->id_irq = of_irq_get_byname(dev->of_node, "id");
-> +	if (usb3phy->id_irq < 0) {
-> +		dev_err(dev, "no id irq provided\n");
-> +		return usb3phy->id_irq;
-> +	}
-> +
-> +	ret = devm_request_threaded_irq(dev, usb3phy->id_irq, NULL, rockchip_usb3phy_id_irq,
-> +					IRQF_ONESHOT, "rockchip_usb3phy-id", usb3phy);
-> +	if (ret) {
-> +		dev_err(dev, "failed to request id irq handle\n");
-> +		return ret;
-> +	}
-> +
-> +		usb3phy->rxdet_irq = of_irq_get_byname(dev->of_node, "rxdet");
-> +	if (usb3phy->rxdet_irq < 0) {
-> +		dev_err(dev, "no rxdet irq provided\n");
-> +		return usb3phy->rxdet_irq;
-> +	}
-> +
-> +	ret = devm_request_threaded_irq(dev, usb3phy->rxdet_irq, NULL, rockchip_usb3phy_rxdet_irq,
-> +					IRQF_ONESHOT, "rockchip_usb3phy-rxdet", usb3phy);
-> +	if (ret) {
-> +		dev_err(dev, "failed to request rxdet irq handle\n");
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int rockchip_usb3phy_exit(struct phy *phy)
-> +{
-> +	struct rockchip_usb3phy_port *port = phy_get_drvdata(phy);
-> +	struct rockchip_usb3phy *usb3phy = dev_get_drvdata(phy->dev.parent);
-> +
-> +	dev_dbg(usb3phy->dev, "usb3phy_shutdown\n");
-> +	rockchip_usb3phy_reset(usb3phy, true, port->type);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct phy_ops rockchip_usb3phy_ops = {
-> +	.init		= rockchip_usb3phy_init,
-> +	.exit		= rockchip_usb3phy_exit,
-> +	.owner		= THIS_MODULE,
-> +};
-> +
-> +static const struct regmap_config rockchip_usb3phy_utmi_port_regmap_config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.max_register = 0x400,
-> +	.cache_type = REGCACHE_NONE,
-> +	.fast_io = true,
-> +	.name = "utmi-port",
-> +};
-> +
-> +static const struct regmap_config rockchip_usb3phy_pipe_port_regmap_config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.max_register = 0x400,
-> +	.cache_type = REGCACHE_NONE,
-> +	.fast_io = true,
-> +	.name = "pipe-port",
-> +};
-> +
-> +static const struct regmap_config rockchip_usb3phy_regmap_config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.max_register = 0x400,
-> +	.write_flag_mask = REG_WRITE_MASK,
-> +	.cache_type = REGCACHE_NONE,
-> +	.fast_io = true,
-> +};
-> +
-> +static int rockchip_usb3phy_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct device_node *np = dev->of_node;
-> +	struct device_node *child_np;
-> +	struct phy_provider *provider;
-> +	struct rockchip_usb3phy *usb3phy;
-> +	const struct regmap_config regmap_config = rockchip_usb3phy_regmap_config;
-> +	void __iomem *base;
-> +	int i, ret;
-> +
-> +	dev_dbg(dev, "Probe usb3phy main block\n");
-> +	usb3phy = devm_kzalloc(dev, sizeof(*usb3phy), GFP_KERNEL);
-> +	if (!usb3phy)
-> +		return -ENOMEM;
-> +
-> +	ret = rockchip_usb3phy_parse_dt(usb3phy, dev);
-> +	if (ret) {
-> +		dev_err(dev, "parse dt failed %i\n", ret);
+Why is this binding entirely different than existing usb2 phy? Nothing
+in common? This looks like made for driver and both - driver and binding
+- duplicating a lot.
 
-return dev_err_probe()
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 3
 
-And do not print errors twice.
+Drop
 
-> +		return ret;
+> +    maxItems: 3
+> +
+> +  clock-names:
+> +    items:
+> +      - const: refclk-usb3otg
 
+ref
 
+> +      - const: usb3phy-otg
+
+otg
+
+> +      - const: usb3phy-pipe
+
+pipe
+
+> +
+> +  interrupts:
+> +    minItems: 4
+
+You code here randomly. reg has only maxItems, clocks have both and this
+have only minItems. Does not make sense. If you get it wrong, I would
+assume you repeat the same mistake but here it is like randomly chosen
+pieces. And this is making me wonder whether this was not sent too fast.
+
+Anyway: only maxItems.
 
 
 > +
-> +	/* take apb interface out of reset */
-> +	reset_control_deassert(usb3phy->utmi_apb_rst);
-> +	reset_control_deassert(usb3phy->pipe_apb_rst);
+> +  interrupt-names:
+> +    items:
+> +      - const: bvalid
+> +      - const: id
+> +      - const: linestate
+> +      - const: rxdet
 > +
-> +	/* enable usb3phy rx detection to fix disconnection issues */
-> +	regmap_write(usb3phy->regmap, USB3PHY_WAKEUP_CON_REG,
-> +		     (USB3_RXDET_EN | (USB3_RXDET_EN << REG_WRITE_SHIFT)));
-> +
-> +	dev_dbg(dev, "Completed usb3phy core probe\n");
+> +  resets:
+> +    minItems: 6
 
-Drop.
+maxItems instead
 
 > +
-> +	/* probe the actual ports */
-> +	i = 0;
-> +	for_each_available_child_of_node(np, child_np) {
-> +		const struct regmap_config *regmap_port_config;
-> +		struct rockchip_usb3phy_port *port = &usb3phy->ports[i];
-> +		struct phy *phy;
+> +  reset-names:
+> +    items:
+> +      - const: usb3phy-u2-por
+> +      - const: usb3phy-u3-por
+> +      - const: usb3phy-pipe-mac
+> +      - const: usb3phy-utmi-mac
+> +      - const: usb3phy-utmi-apb
+> +      - const: usb3phy-pipe-apb
 > +
-> +		if (of_node_name_eq(child_np, "utmi-port")) {
+> +  "#address-cells":
+> +    const: 2
+> +
+> +  "#size-cells":
+> +    const: 2
+> +
+> +  ranges: true
+> +
+> +patternProperties:
+> +
 
-Why are you comparing node names, if you decided to put there compatibles?
+Drop blank line
 
-Decide on one method, but wait for full DT review.
+> +  utmi-port@[0-9a-f]+$:
 
-> +			port->type = USB3PHY_TYPE_USB2;
-> +			regmap_port_config = &rockchip_usb3phy_utmi_port_regmap_config;
-> +		} else if (of_node_name_eq(child_np, "pipe-port")) {
-> +			port->type	= USB3PHY_TYPE_USB3;
-> +			regmap_port_config = &rockchip_usb3phy_pipe_port_regmap_config;
-> +		} else {
-> +			dev_err(dev, "unknown child node port type %s\n", child_np->name);
-> +			goto err_port;
-> +		}
-> +
-> +		base = devm_of_iomap(dev, child_np, 0, NULL);
-> +		if (IS_ERR(base)) {
-> +			dev_err(dev, "failed port ioremap\n");
-> +			ret = PTR_ERR(base);
-> +			goto err_port;
-> +		}
-> +
-> +		port->regmap = devm_regmap_init_mmio(dev, base, regmap_port_config);
-> +		if (IS_ERR(port->regmap)) {
-> +			dev_err(dev, "regmap init failed\n");
-> +			ret = PTR_ERR(port->regmap);
-> +			goto err_port;
-> +		}
-> +
-> +		phy = devm_phy_create(dev, child_np, &rockchip_usb3phy_ops);
-> +		if (IS_ERR(phy)) {
-> +			dev_err_probe(dev, PTR_ERR(phy), "failed to create phy\n");
-> +			ret = PTR_ERR(phy);
+This wasn't tested. Missing quotes, missing starting anchor.
 
-Just read how dev_err_probe() works. The syntax is:
-ret = dev_err_probe.
+> +    type: object
 
-> +			goto err_port;
-> +		}
+Explain what are the children here - description.
+
+
+> +    additionalProperties: false
 > +
-> +		port->phy = phy;
-> +		phy_set_drvdata(port->phy, port);
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - rockchip,rk3328-usb3phy-utmi
 > +
-> +		/* to prevent out of boundary */
-> +		if (++i >= USB3PHY_TYPE_MAX) {
-> +			of_node_put(child_np);
-> +			break;
-> +		}
+> +      reg:
+> +        maxItems: 1
 > +
-> +		dev_info(dev, "Completed usb3phy %s port init\n", child_np->name);
-Drop, not really helping.
+> +      "#phy-cells":
+> +        const: 0
+
+Does not look correct. Your parent device is the phy, not child. Why do
+you create children per each type of phy?
+
+> +
+> +      phy-supply:
+> +        description:
+> +          Phandle to a regulator that provides power to VBUS.
+> +          See ./phy-bindings.txt for details.
+> +
+> +    required:
+> +      - compatible
+> +      - reg
+> +      - "#phy-cells"
+> +
+> +  pipe-port@[0-9a-f]+$:
+> +    type: object
+> +    additionalProperties: false
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - rockchip,rk3328-usb3phy-pipe
+> +
+> +      reg:
+> +        maxItems: 1
+> +
+> +      "#phy-cells":
+> +        const: 0
+> +
+> +      phy-supply:
+> +        description:
+> +          Phandle to a regulator that provides power to VBUS.
+> +          See ./phy-bindings.txt for details.
+
+Drop "see ....".
+
+> +
+> +    required:
+> +      - compatible
+> +      - reg
+> +      - "#phy-cells"
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - interrupts
+> +  - interrupt-names
+> +  - resets
+> +  - reset-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3328-cru.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    soc {
+> +      #address-cells = <2>;
+> +      #size-cells = <2>;
+> +
+> +      usb3phy: usb3-phy@ff460000 {
+> +        compatible = "rockchip,rk3328-usb3phy";
+> +        reg = <0x0 0xff460000 0x0 0x10000>;
+> +        clocks = <&cru SCLK_REF_USB3OTG>, <&cru PCLK_USB3PHY_OTG>, <&cru PCLK_USB3PHY_PIPE>;
+
+That's way over the limit. Wrapping is at 80.
+
+> +        clock-names = "refclk-usb3otg", "usb3phy-otg", "usb3phy-pipe";
+> +        interrupts = <GIC_SPI 75 IRQ_TYPE_LEVEL_HIGH>, <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>, <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-names = "bvalid", "id", "linestate", "rxdet";
+
+
+
 
 Best regards,
 Krzysztof
