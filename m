@@ -4,81 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 639A8C02183
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Jan 2025 09:32:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36E1FC02185
+	for <linux-phy@archiver.kernel.org>; Fri, 17 Jan 2025 10:41:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HGP4yHsoB0/zcSjrv7ZK4OGAXfNaqu/JOqoHHwebVEM=; b=IQsjw95l8mYIq3
-	9oeDgRshDazi9RxVEX4nicT/JmTv2zzQMNiMX/geKuRiGTEYm8quhS3VMNT1Q8fU6LJELH3KFK2AS
-	gq2A9q5rWmD5vOSRIvtPaRb8/GYZpG6DuZG+d6tderUNYKWtUJHy9oSYDvAYVyj6kRNk8Gycr9Ah4
-	NNdRZi2BifhRM1ByofIibVs9vpR+zEoMVVzDuUtSkg1QZw1XqGd5rxv+ZPB/ax65mxGuuRGLu1mUq
-	djxJSYTYK0OmmcghYVVMR7PwIbEWESnskkBPPnkC/YFpsgDL8NyOEHDQn2f79HAUGJ/ZwkL+hp9eh
-	xH1xE6ktWqenFCOgBaOA==;
+	List-Owner; bh=6UzdrHE9rDd0M5c1kEX9eJlS+fDkB1aOPkrFxgjSD2k=; b=HKGlUiJuoYQPA7
+	ILZwNxyMPvKSfC1loSNluBh4u65uwYDqP1N2cdTG290E0iJ/prndhc0eWsbdwPA/0pR3BuAUD0aEw
+	YTcplVsMhhoptCgT2NbTM/DNe1fhBJOZZDoW2SZ3MlieJVvnPPJoWfs2wwiBAKHyO/xZeFKcpetIC
+	AIFwCyiNWiXAnMtmlXS+v9Tdbxz1IM8Q6SLbeuA7VlXV63wxwF1MX9cZT6X5tCQ25dXiuQycpCwwc
+	ujY0v0j1fZK8ieeMNSNxhC8qedPfCmtS2kSC/VwvAOh1cSLKWxqbuuOQ3c4lgGJ+CZ2fu0hVj6+cR
+	w19ddXeqDPf3Y3vEpf7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYiiI-0000000HSqt-1gfx;
-	Fri, 17 Jan 2025 09:32:26 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYiiF-0000000HSqM-3VuV;
-	Fri, 17 Jan 2025 09:32:25 +0000
-Received: from pps.filterd (m0241204.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50H7ofrQ003450;
-	Fri, 17 Jan 2025 10:32:11 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=selector1; bh=
-	nzk3vN0PU+1PX8MuEwqsadD2DtLatqF+L56fha42moE=; b=IO0PR02t/r2eS/sG
-	FsXVSlFjKwizVS+KjMt/WsUWlrqrWfE9JF6wS74M2EgDP7rke2Cd28VuEPOArKKd
-	aFgdzVqbrbD2eZDcZ9YjT+JyTKNvj3kDieVGz7/XLfPMujC1z6B7lHG4i0odNdb3
-	xvJQ2by55TTSCqfAYGppaq91OajfsJPQu4ULjcujMmwM4IcBjnl5rJccyLTVobjQ
-	ft55oLYdVqD0W5UAK8xVHDEeFlE9a6gzlq+vJpt2ELKTzWhRDyKqm/th+Mxes/7b
-	KyHdUqKR024AuZVTZt/z/nZLFOvS17rtF6pvZ6GL3YodI4GGuV2BirCtDW91OO6M
-	efeQeQ==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 447k62re8c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 17 Jan 2025 10:32:10 +0100 (CET)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 890E040045;
-	Fri, 17 Jan 2025 10:30:45 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 503FF26E373;
-	Fri, 17 Jan 2025 10:29:55 +0100 (CET)
-Received: from [10.129.178.212] (10.129.178.212) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Fri, 17 Jan
- 2025 10:29:54 +0100
-Message-ID: <4350969b-9e69-4943-9642-a45603b08beb@foss.st.com>
-Date: Fri, 17 Jan 2025 10:29:53 +0100
+	id 1tYjms-000000003R5-46Q0;
+	Fri, 17 Jan 2025 10:41:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tYjlb-000000003Cn-12w3;
+	Fri, 17 Jan 2025 10:39:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3403D1476;
+	Fri, 17 Jan 2025 02:40:21 -0800 (PST)
+Received: from donnerap.manchester.arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D2753F7B4;
+	Fri, 17 Jan 2025 02:39:49 -0800 (PST)
+Date: Fri, 17 Jan 2025 10:39:41 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Andras Szemzo <szemzo.andras@gmail.com>, Michael Turquette
+ <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, Rob Herring
+ <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec
+ <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, Linus
+ Walleij <linus.walleij@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Maxime Ripard <mripard@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, Paul Walmsley
+ <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+ <aou@eecs.berkeley.edu>, Uwe =?UTF-8?B?S2xlaW5lLUvDtm5pZw==?=
+ <u.kleine-koenig@baylibre.com>, Florian Fainelli
+ <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH 10/12] dt-bindings: phy: allwinner: add v853 usb phy
+Message-ID: <20250117103941.7f9bda7b@donnerap.manchester.arm.com>
+In-Reply-To: <Z4dpFqffMJ31ml2y@vaman>
+References: <20250110123923.270626-1-szemzo.andras@gmail.com>
+	<20250110123923.270626-11-szemzo.andras@gmail.com>
+	<Z4dpFqffMJ31ml2y@vaman>
+Organization: ARM
+X-Mailer: Claws Mail 3.18.0 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: stm32: Optimize tuning values from DT.
-To: Dan Carpenter <dan.carpenter@linaro.org>, <oe-kbuild@lists.linux.dev>,
-        <vkoul@kernel.org>, <kishon@kernel.org>, <mcoquelin.stm32@gmail.com>,
-        <alexandre.torgue@foss.st.com>, <p.zabel@pengutronix.de>,
-        <linux-phy@lists.infradead.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <fabrice.gasnier@foss.st.com>
-CC: <lkp@intel.com>, <oe-kbuild-all@lists.linux.dev>
-References: <d40db5ae-5db8-4541-8d20-e7bacef4ecf2@stanley.mountain>
-Content-Language: en-US
-From: Christian Bruel <christian.bruel@foss.st.com>
-In-Reply-To: <d40db5ae-5db8-4541-8d20-e7bacef4ecf2@stanley.mountain>
-X-Originating-IP: [10.129.178.212]
-X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE3.st.com
- (10.75.129.71)
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-17_03,2025-01-16_01,2024-11-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250117_013224_187416_1DD25872 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20250117_023955_338308_96E54E01 
+X-CRM114-Status: GOOD (  16.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,104 +74,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dan,
+On Wed, 15 Jan 2025 07:51:50 +0000
+Vinod Koul <vkoul@kernel.org> wrote:
 
-Thanks for reporting. I think this error is a false positive.
+> On 10-01-25, 13:39, Andras Szemzo wrote:
+> > Document Allwinner v853 USB phy.
+> > 
+> > Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+> > ---
+> >  .../phy/allwinner,sun8i-v853-usb-phy.yaml     | 89 +++++++++++++++++++
+> >  1 file changed, 89 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun8i-v853-usb-phy.yaml
+> > 
+> > diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun8i-v853-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun8i-v853-usb-phy.yaml
+> > new file mode 100644
+> > index 000000000000..773c3f476db8
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/phy/allwinner,sun8i-v853-usb-phy.yaml
+> > @@ -0,0 +1,89 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/phy/allwinner,sun8i-v853-usb-phy.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > +
+> > +title: Allwinner V853 USB PHY
+> > +
+> > +maintainers:
+> > +  - Chen-Yu Tsai <wens@csie.org>
+> > +  - Maxime Ripard <mripard@kernel.org>
+> > +
+> > +properties:
+> > +  "#phy-cells":
+> > +    const: 1
+> > +
+> > +  compatible:
+> > +    const:
+> > +	- allwinner,sun8i-v853-usb-phy  
+> 
+> Does this really need a new binding document, if so why... Cant this be
+> added to one of the existing docs which driver uses?
 
-In this situation, the impedance values that are looked-up are ordere 
-(the compiler probably doesn't analysis this) so the imp_looup test that 
-defines the imp_of must have matched.
-Note that the boundaries was checked during probe.
+The USB-PHY bindings don't differ too much on a first glance, but still
+enough in nasty details (number of PHYs supported, number of clocks
+required, etc.) to make a joint binding basically unreadable (we tried
+that). That's why we opted to have separate bindings.
+Now I believe it's worth to look for the closest existing binding, and
+just put the compatible in there, in the hope we don't need much else, and
+that it still stays readable.
 
-already discussed here:
-https://lore.kernel.org/all/ef1ea5da-4344-4c59-8d2b1b52533ef0cd@foss.st.com/
-
-I'll provide a new revision to make this code more friendly with this error
-
-Regards
-
-Christian
-
-On 1/17/25 09:38, Dan Carpenter wrote:
-> Hi Christian,
-> 
-> kernel test robot noticed the following build warnings:
-> 
-> https://git-scm.com/docs/git-format-patch#_base_tree_information]
-> 
-> url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Bruel/phy-stm32-Optimize-tuning-values-from-DT/20250113-172435
-> base:   v6.13-rc7
-> patch link:    https://lore.kernel.org/r/20250113092001.1344151-1-christian.bruel%40foss.st.com
-> patch subject: [PATCH v2] phy: stm32: Optimize tuning values from DT.
-> config: arm-randconfig-r071-20250117 (https://download.01.org/0day-ci/archive/20250117/202501171619.0XDYDyBZ-lkp@intel.com/config)
-> compiler: arm-linux-gnueabi-gcc (GCC) 14.2.0
-> 
-> If you fix the issue in a separate patch/commit (i.e. not just a new version of
-> the same patch/commit), kindly add following tags
-> | Reported-by: kernel test robot <lkp@intel.com>
-> | Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-> | Closes: https://lore.kernel.org/r/202501171619.0XDYDyBZ-lkp@intel.com/
-> 
-> New smatch warnings:
-> drivers/phy/st/phy-stm32-combophy.c:147 stm32_impedance_tune() error: buffer overflow 'imp_lookup' 8 <= 8 (assuming for loop doesn't break)
-> drivers/phy/st/phy-stm32-combophy.c:564 stm32_combophy_probe() warn: passing zero to 'dev_err_probe'
-> 
-> vim +147 drivers/phy/st/phy-stm32-combophy.c
-> 
-> 31219ca5436f01 Christian Bruel 2025-01-13  119  static void stm32_impedance_tune(struct stm32_combophy *combophy)
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  120  {
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  121  	u8 imp_of, vswing_of;
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  122  	u32 regval;
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  123
-> 31219ca5436f01 Christian Bruel 2025-01-13  124  	if (combophy->microohm) {
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  125  		regval = 0;
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  126  		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
-> 31219ca5436f01 Christian Bruel 2025-01-13  127  			if (imp_lookup[imp_of].microohm <= combophy->microohm) {
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  128  				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of);
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  129  				break;
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  130  			}
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  131  		}
-> 
-> If we don't hit the break sttaement above
-> 
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  132
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  133  		dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  134  			imp_lookup[imp_of].microohm);
->                                                                                     ^^^^^^
-> Then this is an out of bounds access.
-> 
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  135
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  136  		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  137  				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  138  				   regval);
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  139  	} else {
-> 31219ca5436f01 Christian Bruel 2025-01-13  140  		/* default is 50 ohm */
-> 31219ca5436f01 Christian Bruel 2025-01-13  141  		imp_of = 3;
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  142  	}
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  143
-> 31219ca5436f01 Christian Bruel 2025-01-13  144  	if (combophy->microvolt) {
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  145  		regval = 0;
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  146  		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++) {
-> 31219ca5436f01 Christian Bruel 2025-01-13 @147  			if (imp_lookup[imp_of].vswing[vswing_of] >= combophy->microvolt) {
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  148  				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of);
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  149  				break;
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  150  			}
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  151  		}
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  152
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  153  		dev_dbg(combophy->dev, "Set %u microvolt swing\n",
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  154  			 imp_lookup[imp_of].vswing[vswing_of]);
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  155
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  156  		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  157  				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
-> 2de679ecd724b8 Arnd Bergmann   2024-11-11  158  				   regval);
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  159  	}
-> 47e1bb6b4ba098 Christian Bruel 2024-09-30  160  }
-> 
+Cheers,
+Andre
 
 -- 
 linux-phy mailing list
