@@ -4,91 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97E89C02185
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Jan 2025 14:36:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29AD5C02185
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Jan 2025 14:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O7iKHqGtCucmSToOvLVK4IoExGixItE+vxgzUBNCG1Q=; b=m/IkZTQxYkLWTo
-	/4yf9o9DKPLRTSDD/MxxXIlGxch7uSrMi5nPotV3aMhhSxKRZo1Ffz1tLoZdgmwi+JCsEFBmVHME/
-	Se2RW2XH0NeSizafO22JYe+JdV8My9pD5fdPYQnwaRSweQ61nk1OHKw6rhGf9Y6mjIpdu60K/taGd
-	JmABxjUPknQnNojHfBw+QRAQcuGLGjUE31RXG4F5AZb2yMqEND/f2P6XS9Fec1eUr382aLg7Z8lCI
-	DQShMSw0NcboJFtKW3Pym88giZ3a3uBy1FZEnscWyzuX2XxCj9nNVLNy4GfXgbU5pvpbsAub2HzAP
-	ECB5XtxB/4okx1wX4uSw==;
+	List-Owner; bh=mEsQRlAnvJ6ozT263cKRh6qs1uJ0cwD+Vl2uG+wLVKo=; b=wZLDQfLsXEKIly
+	fZ8skAr2+9+sxvgyeE2B7IHEWrHCDpzoG2gyd1VtPVcXdJavePTPZloK2C+8b5MMXilkn4Lce9yJe
+	AhRDfOrKDCpeg78/JZkuaHOth1D29EkmgVoT7WFL5N+ZdECsL8SL3yPRW+gBpCuCpDd4Z0pw+l6vh
+	9ciZp0Ex/cRTLO/CY+4NuKdYSyEWCiAs/G6alIbgIurgVT54JCbnonVptIu1QMtsXJjYHNmSvnmhX
+	icBwW1kq8YeY/aNEjG6SDJ6vGIP7tUksd3MRQKEekBhioRA4yd18/uUKtpO9q3bMJDKHj3pfBZ/5Z
+	opc5TolPxMHIw3BjdW1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZ9wJ-00000002XdO-1UkZ;
-	Sat, 18 Jan 2025 14:36:43 +0000
-Received: from mail-ed1-x531.google.com ([2a00:1450:4864:20::531])
+	id 1tZA4F-00000002YPa-3nMx;
+	Sat, 18 Jan 2025 14:44:55 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZ9v1-00000002XTQ-2t7m;
-	Sat, 18 Jan 2025 14:35:24 +0000
-Received: by mail-ed1-x531.google.com with SMTP id 4fb4d7f45d1cf-5d96944401dso5418271a12.0;
-        Sat, 18 Jan 2025 06:35:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737210922; x=1737815722; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=X8S9ixEcY8abMh6hBNRFz4AKcSH2mJNqJhoZUq3Q+OU=;
-        b=GzEXY4XwKtV2cnR2WLhd5TAWbUi3LC0yzgvI9sKqDQ5pmC6zNSNZ9sQKzUkjI4FLnG
-         o9DzReCk4VtSXAy8TkftGAMRhtD8wHH2iNQji8ZI1ZXCfh9kGExXsXpT9vqhww9gfYPE
-         nn4aX70d/boZse+eHNIvMQXQPupyBduAOKWeXybHXedff+2y/e8bK6/SGlFhD1RjGpES
-         qKrzux8MeWxhYzGT5lxblvCE+tAq9Sdbdfan+IN1ta1Gvn4UotOT+DtGPtCDKXwXfGSk
-         MBNhJtBmF9smsYr+L1pspoo9jhcaO+UZcXBwdYifGoPGAJRuRGTkxqFZdN3RS7J5KogA
-         SsqA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737210922; x=1737815722;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=X8S9ixEcY8abMh6hBNRFz4AKcSH2mJNqJhoZUq3Q+OU=;
-        b=EuuRVmcnpbjUmfmtaNzDa7zcbVyURrrnfScMAmEiLfCtYQR/qe/p0Xy/PIDbLGF7Hq
-         r8WxN8R2XwuECFgphpF4C5nkS8FTTpOOXAENuaPx6hV4R8gv6IzTp5OBNXnJDdseqkg+
-         oqBRmVRo3lEQ5Lwav+a9Mqsa6nabcAURpOgyQa+U3LbKQwsYRZoFkzCsIbrTyTtNZplt
-         5lSYwa5pzlkj1gnCMwquKBr6JJr4fmmGQLwAZLVGHUKny4e/Ijf/cgVJ13lrbMMT5IyG
-         mKkTYciHQaKzRCgA3fp6zbLJ7hj2vNo3W6hN7mnmUEUGHCovGxOjBt9TR8JbarjP6I1d
-         EPqA==
-X-Forwarded-Encrypted: i=1; AJvYcCUpJDN/0VTGMw1Gb2iP1gSrZDmiUUJnkjcHB56yRXrmRpy2qgnRqaMMbmKz2RO4bXBbGLLY2bVZ647j@lists.infradead.org, AJvYcCVMXAwGjj35gT+ISQfePCg5XX6TWrWcXwDtzI7I6VNMpfT+hNR5z79Napxm0rwZg7S94uMLOzXZe00MJAiJkdqp@lists.infradead.org, AJvYcCXobEtq0iti50AI+lCu+LIYmWujhFPmSP8QMVHt/Tzc/6mN52/8jStYd0+Y4Ab30ky84EOj4NOYez6XencfaLI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyxiFVnXaYLwi4Br0NpvsAZoXujajC45K6ApJMFiwFyMqYW3yKe
-	XIUYkRgbqWW2OfQHwi75wOq1YHKedRH2lD5WP4wJf53g7x3P2Pnmhs1ewx4QDKvzNvkK6c6uCci
-	BSAAVeL4D1Ch39AEnGjKTP8ss5sI=
-X-Gm-Gg: ASbGncvjj9RJ5EHUIl5U5VVuul3aew3InkkJap86ftVNp2msqWZ+c7hcLol/FM4xP6P
-	gecSYvBC5D11Owj1ckx2Hmbmh2mrsnVDVwazwSAsUb1vrGq+BVyUy
-X-Google-Smtp-Source: AGHT+IFDZpftdKqBFqBjBkAeeMYE15CR2JHURmc/olRPtILwjDfNNssQSQSY8GDDreU8V095+cJIkrJgg1PZfxTj8hY=
-X-Received: by 2002:a50:8d17:0:b0:5d1:22d2:8965 with SMTP id
- 4fb4d7f45d1cf-5db7db2bff6mr5038044a12.30.1737210921703; Sat, 18 Jan 2025
- 06:35:21 -0800 (PST)
+	id 1tZA4D-00000002YPD-3zc2
+	for linux-phy@lists.infradead.org;
+	Sat, 18 Jan 2025 14:44:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2980DA41602;
+	Sat, 18 Jan 2025 14:43:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B04C0C4CED1;
+	Sat, 18 Jan 2025 14:44:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1737211492;
+	bh=yzyYeRsnULL3tlm7okdtyouKJWANz7x87jxQKcldjnY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=scEhG96PAbqb49mM4Y/7uYqd2h3X5wx9lpS03Mw2SpwwZJPeiG9cDTIyK9BE/wU9g
+	 WB7AznEvt4moVwwhcpqbXxCV7a8sGlpLc65OBKN1u2Wb0K01Z06AjLEInfn5TgywtB
+	 Jwjo65AeQIqXA9CEEjEqDydchgMQi0G3KfGq+8c55d6R+wgduDyk6NA4qZRk6axbLk
+	 TuPPgDe/s9G65CagDhOUbS37PVyZ7wmtji0B1H1eF+VLviAsYeG9j1R58RxGkN09LG
+	 FERM5tRctvmm7hIMtPE65Ez45SF7vvwFFYBwiiLi3iYF8TKs2SFkvjRQTu0Q0H4WSG
+	 X8wOBDFVyYdlQ==
+Date: Sat, 18 Jan 2025 15:44:49 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Melody Olvera <quic_molvera@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
+	Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
+	Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, 
+	Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, 
+	Nitin Rawat <quic_nitirawa@quicinc.com>
+Subject: Re: [PATCH 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy:
+ Document the SM8750 QMP UFS PHY
+Message-ID: <20250118-uptight-crocodile-of-music-2becee@krzk-bin>
+References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
+ <20250113-sm8750_ufs_master-v1-1-b3774120eb8c@quicinc.com>
 MIME-Version: 1.0
-References: <20250115012628.1035928-1-pgwipeout@gmail.com> <00cbc2a1-b4c1-46a2-8234-f66edc19fac9@kernel.org>
-In-Reply-To: <00cbc2a1-b4c1-46a2-8234-f66edc19fac9@kernel.org>
-From: Peter Geis <pgwipeout@gmail.com>
-Date: Sat, 18 Jan 2025 09:35:08 -0500
-X-Gm-Features: AbW1kva6DFr1RzjQp9KXMYYlhacM2koJu0uBfxOzcSRq7CyYw1cACxFrw_KEa_w
-Message-ID: <CAMdYzYoE54PSdTH9JPBFLggDy9CZsj47N6qFKJFZz4xe3VVbBw@mail.gmail.com>
-Subject: Re: [RFC PATCH v1 0/6] rockchip: add a functional usb3 phy driver for rk3328
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Heiko Stuebner <heiko@sntech.de>, zyw@rock-chips.com, kever.yang@rock-chips.com, 
-	frank.wang@rock-chips.com, william.wu@rock-chips.com, wulf@rock-chips.com, 
-	linux-rockchip@lists.infradead.org, Alex Bee <knaerzche@gmail.com>, 
-	Algea Cao <algea.cao@rock-chips.com>, Arnd Bergmann <arnd@arndb.de>, 
-	Conor Dooley <conor+dt@kernel.org>, Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, 
-	Diederik de Haas <didi.debian@cknow.org>, Dragan Simic <dsimic@manjaro.org>, 
-	Elaine Zhang <zhangqing@rock-chips.com>, FUKAUMI Naoki <naoki@radxa.com>, 
-	Johan Jonker <jbx6244@gmail.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Michael Turquette <mturquette@baylibre.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Rob Herring <robh@kernel.org>, Sebastian Reichel <sebastian.reichel@collabora.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Trevor Woerner <twoerner@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
-	Zhang Yubing <yubing.zhang@rock-chips.com>, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20250113-sm8750_ufs_master-v1-1-b3774120eb8c@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250118_063523_729479_2E395B83 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20250118_064454_056919_3ADF31F1 
+X-CRM114-Status: UNSURE (   6.72  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,38 +78,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU2F0LCBKYW4gMTgsIDIwMjUgYXQgNDowOOKAr0FNIEtyenlzenRvZiBLb3psb3dza2kgPGty
-emtAa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiAxNS8wMS8yMDI1IDAyOjI2LCBQZXRlciBHZWlz
-IHdyb3RlOgo+ID4KPiA+IFRoaXMgaXMgbXkgbmV3bHkgcmV3b3JrZWQgcGh5IGRyaXZlciBmb3Ig
-dGhlIHJrMzMyOCB1c2IzIHBoeS4gSXQgaXMKPiA+IGJhc2VkIGxvb3NlbHkgb24gbXkgb3JpZ2lu
-YWwgdmVyc2lvbiwgYnV0IGFzIG9mIG5vdyBhbG1vc3Qgbm90aGluZyBvZgo+ID4gdGhlIG9yaWdp
-bmFsIGRyaXZlciByZW1haW5zLiBUaGUgbWFpbiBmaXggaGVyZSBpcyB0aGUgZGlzY292ZXJ5IG9m
-Cj4gPiBCSVQoNikgaW4gdGhlIGludGVycnVwdCBlbmFibGUgZ3JmIHJlZ2lzdGVyIGZpeGVzIHRo
-ZSB1c2IzIGRpc2Nvbm5lY3Rpb24KPiA+IGRldGVjdGlvbiAobW9zdGx5KS4gT24gb2NjYXNpb24g
-YW4gdW5wb3B1bGF0ZWQgdXNiMyBodWIgd2lsbCB0YWtlCj4gPiBzZXZlcmFsIHNlY29uZHMgdG8g
-ZGlzY29ubmVjdC4gSG93ZXZlciB0aGlzIG1lYW5zIGFsbCBvZiB0aGUgaGFjayBhcm91bmQKPiA+
-IHdvcmsgdG8gcmVzZXQgdGhlIHVzYiBjb3JlIG1hbnVhbGx5IGlzIG5vIGxvbmdlciByZXF1aXJl
-ZC4KPiA+Cj4gQlRXLCBSRkMgZm9yIHNvbWUgbWFpbnRhaW5lcnMgbWVhbnMgImRvIG5vdCByZXZp
-ZXcsIHdvcmstaW4tcHJvZ3Jlc3MiLgo+IEZvciBzb21lIG1lYW5zICJyZXZpZXcsIGJ1dCBsb3cg
-cHJpb3JpdHkiIG9yICJyZXZpZXcsIGJ1dCBmb3Igc3VyZSBJCj4gaGF2ZSBidWdzIGhlcmUiLiBJ
-IHVzdWFsbHkgcmV2aWV3IGFuZCB0aGVuIHNvbWVvbmUgcmVzcG9uZHM6ICJpdCBpcyBub3QKPiBm
-b3IgcmV2aWV3LCBpdCBpcyBqdXN0IFJGQyIsIHNvIHRvIGF2b2lkIG15IHdhc3RlZCB0aW1lIHBs
-ZWFzZSBhbHdheXMKPiBtZW50aW9uIGluIGNvdmVyIGxldHRlciB3aHkgdGhpcyBpcyBSRkMuIFdo
-YXQgZG8geW91IGV4cGVjdCBoZXJlIG9yIHdoeQo+IHRoaXMgaXMgbm90IHJlYWR5IGZvciByZXZp
-ZXcgYXMgbm9ybWFsIHBhdGNoLgoKVGhhbmsgeW91LCB0aGF0IG1ha2VzIHNlbnNlLiBJIG1hcmtl
-ZCBpdCBhcyBSRkMgYXMgSSdtIGF3YXJlIGl0IGlzbid0CmEgcGVyZmVjdCBzb2x1dGlvbiBhbmQg
-dGhlcmUncyBhIGxvdCBvZiB1bmRlZmluZWQgdmFsdWVzLiBXaGF0IEkgd2FzCmxvb2tpbmcgZm9y
-IGhlcmUgd2FzOgotIFJldmlldyBmb3IgY29kZSBxdWFsaXR5LCBzbyBpZiBJJ20gY29tcGxldGVs
-eSBvZmYgdHJhY2sgSSBjYW4gZ2V0IHRvCndvcmsgZml4aW5nIGl0LiAoVGhhbmsgeW91IHNvIGZh
-cikKLSBTYW5pdHkgdGVzdGluZyBmcm9tIG90aGVycyBzdHJ1Z2dsaW5nIHdpdGggdGhlIGlzc3Vl
-cyBpdCBmaXhlcy4KLSBGZWVkYmFjayBmcm9tIFVTQiBlbmdpbmVlcnMgYWJvdXQgdGhlIGlzc3Vl
-cyByZW1haW5pbmcuCi0gSG9wZWZ1bGx5IHNvbWVvbmUgd2l0aCBhY2Nlc3MgdG8gdGhlIElQIGNh
-biBwcm92aWRlIGluc2lnaHQgaW50byB0aGUKbWFnaWMgcmVnaXN0ZXJzLgoKPgo+IEJlc3QgcmVn
-YXJkcywKPiBLcnp5c3p0b2YKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+On Mon, Jan 13, 2025 at 01:46:24PM -0800, Melody Olvera wrote:
+> From: Nitin Rawat <quic_nitirawa@quicinc.com>
+> 
+> Document the QMP UFS PHY on the SM8750 Platform.
+
+Pretty obvious commit msg, duplicating subject. Say something useful,
+e.g. why this is not compatible with sm8650.
+
+> 
+> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
