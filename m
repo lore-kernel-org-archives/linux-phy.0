@@ -4,65 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE387C02183
-	for <linux-phy@archiver.kernel.org>; Fri, 17 Jan 2025 20:27:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2A33C02185
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Jan 2025 09:07:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=8l6kz61RQBeGopWRN2zRUTkUx2qT0NoWo4HuTZVK1sg=; b=mxdKt17yS2Tjif
-	PgWm3hEf23Vy1Kx9ef140Mvw6vSdqF3atgYg2xueHbRgYAsh4pdEoeWzcBRvusHO6vnH8tG5XXqxf
-	pIXq8fxj48MtOU5toOYdcsc8Je3VA3BhVS6nXlT80ZdrzaNPrvQwhcVZcsc4cK97uGXXbsUGQXHoH
-	Aw5Ow0xadvyZu8YLc5aPc908rSmaBjEZdd8R66/dlVx5uBLD113ZsoxLVXoiM5jCjNFpMefc7wwFo
-	BbVywqaBMZ2a+JCW6owbcyuMnjVfrIS3jA7fTutEKWa1Z117nddVimHRn19LXwemWN8A9z0pN32l6
-	fs86Ux6TlxeN0BNxkUSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O8vtp25WorZJsJRD50ck72A7u6Ek1Ktuj4W2lWrcViU=; b=yX71elGuDFnBAN
+	rU+reDDpP6Kf3blxgbj0AqR1dFHH2a7xBXFCm6AjgIHdUymfzjs6FcvnomPFYgyY04ixxgpoQWXcQ
+	pSxXSekt7gw1bu8l36GPWbCOXxfFCtIbVyr4xxsY7vcu7tMdRfxpoFJTO2tpmrMWDHyW3WIRP1N5w
+	KXTLe0LY6/DFCWN12VjH20V/9+NCrhez5y53Z93Bjbb2bbAQLNBMFNrUWk5MyakpwbBOZk6JPriM3
+	5EBvAhCxnkxVZK6ik5I/ZtybOvwUiTthITcwVcZn1cVyNzw72NyW9eI0LogGgOsTFCIrz9CVeKeHD
+	778An0P5loK43PDkIEug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYsvy-00000001JZa-1PAd;
-	Fri, 17 Jan 2025 20:27:14 +0000
+	id 1tZ4o2-000000024nD-0QbG;
+	Sat, 18 Jan 2025 09:07:50 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tYsvv-00000001JYy-2FCB
-	for linux-phy@lists.infradead.org;
-	Fri, 17 Jan 2025 20:27:12 +0000
+	id 1tZ4mk-000000024hq-1c9S;
+	Sat, 18 Jan 2025 09:06:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 039405C4427;
-	Fri, 17 Jan 2025 20:26:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23304C4CEDD;
-	Fri, 17 Jan 2025 20:27:10 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0F1C95C48CD;
+	Sat, 18 Jan 2025 09:05:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F922C4CED1;
+	Sat, 18 Jan 2025 09:06:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737145630;
-	bh=Ct2YwrpPXaoKNAMpYvMgQTLQEkb+M++rRR9iD27FrGs=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=WePJh3Pd3VRkENxPcR2AjlfdrFrhh6XiJCNEs5yil1pXBj1r7qSUqyRAAIhUr0tTe
-	 yLw/0awyrdE0kFMpTrQUxFAHKNV6rb8Ld7SwKsxUt+uFTcW2pH5vvZhn3u7a9ZlQuL
-	 E1DiIf54u25Wha4Kcx5n0D2YsLVfey3VtB4rr7wVybECAUi1jWc5IQ8xMvciQsbDW+
-	 fLgcAocAs2EC0a2398UniivYGe/K1iqxkqCzPzhIV8tF7AW9JBL/vS7RIoSWTSvVPq
-	 0ExGWvIVc/F2vO4/QYxNCoCpmiSBVycmx0sYSfTQxlA6ULNVU9ihg+yd52bJtEcQAw
-	 u5f9J7U4tAyCg==
-Date: Fri, 17 Jan 2025 14:27:08 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
-	manivannan.sadhasivam@linaro.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
-	kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
-	p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
-	dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Praveenkumar I <quic_ipkumar@quicinc.com>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v5 4/5] arm64: dts: qcom: ipq5332: Add PCIe related nodes
-Message-ID: <20250117202708.GA655559@bhelgaas>
+	s=k20201202; t=1737191189;
+	bh=W72n6k6I10kEtr2+MT478ZeK4p5MAuwX/eow0Hqin2A=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=keDSW8LJ+M3LN4LMEB+CNT2Rq/TEvuY5FVoVfUb8l7sTx3gULvY3cJsaIWYOWwrSB
+	 QodHlBEs3JH4er87ELHu08tfM48aUEW/JGGvQ7fZK7c3yZur0h06Q0hN391h2Zof8Q
+	 7RNSN2fN0mbNx519CEfmkUGVbk234yBfXed5IrCXk334N0SBCwOZMdKTeqXFUARTGp
+	 FIPyppfVq8zpUHkX3A/k1UbjcaRgu7GrMEVWBvztnsbJHd0d6UJlmjWetXmSouEwfL
+	 4jr2r1PjXldA5pq6gyW4hFHxvmJbj2x0YS75ktna9tTcHEU6oAc5kIwiyivX1+jqfi
+	 5wiALGH4QTvHA==
+Message-ID: <6ed39130-4f77-490d-ab28-8b65cb685147@kernel.org>
+Date: Sat, 18 Jan 2025 10:06:21 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Z4dqnr9+MTue3VbX@hu-varada-blr.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [RFC PATCH v1 2/6] dt-bindings: phy: rockchip: add rk3328 usb3
+ phy
+To: Peter Geis <pgwipeout@gmail.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, zyw@rock-chips.com,
+ kever.yang@rock-chips.com, frank.wang@rock-chips.com,
+ william.wu@rock-chips.com, wulf@rock-chips.com,
+ linux-rockchip@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20250115012628.1035928-1-pgwipeout@gmail.com>
+ <20250115012628.1035928-3-pgwipeout@gmail.com>
+ <fe006de3-16eb-4c20-8e8e-da5ff5531c6f@kernel.org>
+ <CAMdYzYoB-wFGcmDNYrOMKTb0XSseBd7btLarKBB5+TUB-11KjA@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <CAMdYzYoB-wFGcmDNYrOMKTb0XSseBd7btLarKBB5+TUB-11KjA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250117_122711_665357_9D661256 
-X-CRM114-Status: GOOD (  27.54  )
+X-CRM114-CacheID: sfid-20250118_010630_516875_3CF903BF 
+X-CRM114-Status: GOOD (  10.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,99 +126,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 15, 2025 at 01:28:22PM +0530, Varadarajan Narayanan wrote:
-> On Wed, Jan 08, 2025 at 12:32:35PM -0600, Bjorn Helgaas wrote:
-> > On Thu, Jan 02, 2025 at 05:00:18PM +0530, Varadarajan Narayanan wrote:
-> > > From: Praveenkumar I <quic_ipkumar@quicinc.com>
-> > >
-> > > Add phy and controller nodes for pcie0_x1 and pcie1_x2.
-
-> > > +		pcie1: pcie@18000000 {
-> > > +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
-> > > +			reg = <0x00088000 0x3000>,
-> > > +			      <0x18000000 0xf1d>,
-> > > +			      <0x18000f20 0xa8>,
-> > > +			      <0x18001000 0x1000>,
-> > > +			      <0x18100000 0x1000>,
-> > > +			      <0x0008b000 0x1000>;
-> > > +			reg-names = "parf",
-> > > +				    "dbi",
-> > > +				    "elbi",
-> > > +				    "atu",
-> > > +				    "config",
-> > > +				    "mhi";
-> > > +			device_type = "pci";
-> > > +			linux,pci-domain = <1>;
-> > > +			bus-range = <0x00 0xff>;
-
-> > > +			num-lanes = <2>;
-> > > +			phys = <&pcie1_phy>;
-> > > +			phy-names = "pciephy";
-> >
-> > I think num-lanes and PHY info are per-Root Port properties, not a
-> > host controller properties, aren't they?  Some of the clock and reset
-> > properties might also be per-Root Port.
-> >
-> > Ideally, I think per-Root Port properties should be in a child device
-> > as they are here:
-> > https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/pci/mvebu-pci.txt?id=v6.12#n137
-> > but it looks like the num-lanes parsing is done in
-> > dw_pcie_get_resources(), which can only handle a single num-lanes per
-> > DWC controller, so maybe it's impractical to add a child device here.
-> >
-> > But I wonder if it would be useful to at least group the per-Root Port
-> > things together in the binding to help us start thinking about the
-> > difference between the controller and the Root Port(s).
+On 16/01/2025 14:32, Peter Geis wrote:
+>>
+>>
+>>> +    additionalProperties: false
+>>> +
+>>> +    properties:
+>>> +      compatible:
+>>> +        enum:
+>>> +          - rockchip,rk3328-usb3phy-utmi
+>>> +
+>>> +      reg:
+>>> +        maxItems: 1
+>>> +
+>>> +      "#phy-cells":
+>>> +        const: 0
+>>
+>> Does not look correct. Your parent device is the phy, not child. Why do
+>> you create children per each type of phy?
 > 
-> This looks like a big change and might impact the existing
-> SoCs/platforms. To minimize the impact, should we continue
-> supporting the legacy method in addition to the new per-Root port
-> approach. Should we take this up separately? Kindly advice.
+> Because that's how it's done elsewhere in Rockchip's phys [1]. How
+> should it be done?
 
-I just meant to change the order they're listed in the binding, not
-add any new device stanzas.
 
-E.g., maybe it could be arranged like this, where things that apply to
-the Root Complex as a whole (bus-range, #address-cells, #size-cells,
-ranges, etc) are listed first, and the Root Port-related things
-(num-lanes, phys, etc) are listed later:
+The phys have separate supplies and IO addresses? Then it is reasonable
+to keep them separate and as children. But then more questions appear:
+why resets - which are also per utmi or port - are in top-level node?
+This should be represented in coherent way: either you define the
+properties/nodes per PHY or just everything in one/entire PHY
+controller. Not mixed.
 
-+               pcie1: pcie@18000000 {
-+                       compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
-+                       device_type = "pci";
-+                       linux,pci-domain = <1>;
-+                       bus-range = <0x00 0xff>;
-+                       #address-cells = <3>;
-+                       #size-cells = <2>;
-+
-+                       ranges = <0x01000000 0 0x18200000 0x18200000 0 0x00100000>,
-+                                <0x02000000 0 0x18300000 0x18300000 0 0x07d00000>;
-+                       interrupts = <GIC_SPI 403 IRQ_TYPE_LEVEL_HIGH>, ...
-+                       clocks = <&gcc GCC_PCIE3X2_AXI_M_CLK>, ...
-+                       resets = <&gcc GCC_PCIE3X2_PIPE_ARES>, ...
-+                       interconnects = <&gcc MASTER_SNOC_PCIE3_2_M ...
+Same concerns about clocks in top-level.
 
-Everything above is potentially shared; everything below applies to a
-single (the only one in this case) Root Port.
+It also might be that everything is a bit mixed, so you have entire phy
+controller handling common resources and still separate phy for USB2 and
+USB3 as children, but that should be conscious choice coming from actual
+hardware. You have entire "description:" in binding to explain the
+hardware and any questions I asked now.
 
-+                       num-lanes = <2>;
-+                       phys = <&pcie1_phy>;
-+
-+                       status = "disabled";
-+               };
 
-I want people to think about which things belong to the Root Port and
-which are shared for the whole Root Complex.
-
-For new drivers, I think we should actually add "pcie@1,0" stanzas for
-each Root Port, even if there is only one.
-
-But for existing drivers that would have to be modified to comprehend
-new stanzas, collecting the Root Port things so they are together in
-the PCI controller stanza would be a good start (unless the order of
-properties in the DT makes a functional difference, of course).
-
-Bjorn
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
