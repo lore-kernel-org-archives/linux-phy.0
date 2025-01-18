@@ -4,120 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5BFBC02185
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Jan 2025 09:10:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BA93C02185
+	for <linux-phy@archiver.kernel.org>; Sat, 18 Jan 2025 10:22:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p3jZM1C6hFwz9ST5DDkgKDAcwaaquNxjwITN6nu21hU=; b=j42HtwwOpasBJL
-	0OvxPpQv+V5bVxoJPfTJbRU0Uq9UZrzSHl/zLFsxCY+PuZq8OWzhzuIBqaKWLwFx56ez0xbPr+1j2
-	8J0bVcQPntp7SUdWO50UBYB5HWnPscrcnFIT2X4D9aUk8Y6ThwSpUCQuiMvE/KiTuuvV5+BT7ft65
-	B+Uln1pGbRM6X9acniTWjoBKO6PHSZrwWa1itcX+pozwjk35f/HsPGy9aDoaM9apOJxhrdoeDBhsq
-	6RD8mqh63/5fEY1FXkAN7hgVLsh3ftCsJZRqNJquzU7z+gdhpTqSF4bolmA/g0VIGEotVpBmsRD6x
-	QmizbhHU7/gkJcEGjBhw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LDWMc0vAnQNzxpDbyoqU5SHa6R5eZgC/ILf0KUsy2F8=; b=2d28OvF1kpJwPg
+	dJMxMn1kFAxfZa29omCKOB6aIedBKaJGacp2wcz7yCQAqi7nag7wxslC0qQEJSmvwDUlU71I7Lad/
+	kriImb1ifJoEveYb34+kCucK60zKYjlLcRoF6+78F++bQF3XBCst3qppsNODT1RSNq2kmlFWhywY5
+	BJa3ncw/UdM9Aqpx02iIZBhxVz0Pvq6R2tyIHxyoUZ74sji9ofirW/UDKQj7fDA92l7D0YMTmGxRF
+	3k7Q7JKJsS6VRuHyzxXbLhXAq+R1xg5JqL9m5qXIBYjGdq9rWHWFI0MG2hRhL6DtLBaYr8nmaf3JY
+	RNJiooAnJXnC+IuXv6cA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZ4qB-000000025JR-1cAP;
-	Sat, 18 Jan 2025 09:10:03 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tZ5yH-00000002B2r-3xzt;
+	Sat, 18 Jan 2025 10:22:29 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZ4os-000000024sU-38wy;
-	Sat, 18 Jan 2025 09:08:43 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 571005C4A8D;
-	Sat, 18 Jan 2025 09:08:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C60ABC4CED1;
-	Sat, 18 Jan 2025 09:08:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737191321;
-	bh=fnQFZ7OW3e3AUF0ttwPf2f3WYHTq7BE+uUVTG5XL8WI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=MmtRGLPQEM5RgnSVRclg7ZXw7yokBT3Q3ibM34xXEti6/JZM2kxNXURa2lWH1wnFd
-	 tIQxxeh4A1BoizR28ibVKsLy4SUnfvvXey6tsSYXIT680H/bJKqH6WxL2U1A+5e24L
-	 oNKw9Rtu2JtmJZ4mNu6hRppfo1fC6dV0SrCWYgsq35lCkNxmS40R5tWkFoorojwQlX
-	 v4ZYX2CPPrroNexqQD6ywPyzRyoPPVK1aOnXGJTh0quZBciiYh2ecEXeYTzSRFIJ06
-	 C36UPd/BU/WTeJzYQXCkWbUc6+ZUp3iFz/sBVx8kjiioxUuDq9BDRLpZw3suRgjwij
-	 t633+6zjK12CA==
-Message-ID: <00cbc2a1-b4c1-46a2-8234-f66edc19fac9@kernel.org>
-Date: Sat, 18 Jan 2025 10:08:28 +0100
+	id 1tZ5yF-00000002B2G-21YZ;
+	Sat, 18 Jan 2025 10:22:28 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-436326dcb1cso19450865e9.0;
+        Sat, 18 Jan 2025 02:22:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1737195745; x=1737800545; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=g7KYYLVYAzSjQ+OOEOBYCeT9uSdwa/8OaOS+anJ2pbk=;
+        b=XrAR79iG2V6nkQYCiarSmznvkLE72SaPFg3lrNyoF0fpsJw4F2RsEKBOtrJUjU4Rzz
+         0zVVUZk9JWBZO28nIxREcJqQinK/yhxkDONrPEd6xihPR5atX2qNGJACSU8u+T5ALqrD
+         kmiGWIbHlp6Bfv3AGT2f8vLW6DoeAaL2Ky1wFiL8Zi1on+GwRIPJoyAJtOyPYZAZpd9d
+         h1UGIz4n+kq2iRg4XwDwXvcUel9K7fseBBCrfN1hhfZuPZacsqiTVSDKeeagCE4UNQRy
+         gmi0BscpHY47Dxhq4tTQmnH3xdq+0b5TGKqxClHr94/Otf6r2QCO3QDCP6XhMJHzdeKR
+         fQzg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737195745; x=1737800545;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=g7KYYLVYAzSjQ+OOEOBYCeT9uSdwa/8OaOS+anJ2pbk=;
+        b=dUGYkaoieYtibOVqDQYKec5DsITbIK8nh+BtNSVjGNWtVW9zlWGLaNAsElP1oRDL+D
+         lzYmRbhyYtm+pu0T5lNXkhB8Hll8pfMQS9vWi2FejYKDUywDXze/rK1i/ZHddlWknlIs
+         gIJjIDgX0tUOXDkQG4DYM6W0dRmdtG07ITAShBdHSHly+LeHbO9DYhkVKR2KpJNXd3fX
+         ajKX2KvIOBcci+5DVhpOxcTVmGaanCnPMgMuHuMnDiHJ8GfH6cQ7K1FQBtRnHVk49fXw
+         COsAKRiuVm/ark0d2oXWR+UjEfzFCJDFpjIZkF6oz18lzTZIyef+L3cwdL4g4u0Rtr9/
+         IliQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUAQcUyucieoXzBK316KBecz6xpcVJ8zw9CGPXmu5IulqcGF1y4gzPSEhoTA1KCC85B6CHNbuW+fV0q@lists.infradead.org, AJvYcCWztO1IXPaZsmNyhzO/PK+IDnBVyR3PjiK0HBiynNgcKRXj36SZOYydsy7/NKyLau7A29mCZSjwzkWgoxCWCKGQ@lists.infradead.org
+X-Gm-Message-State: AOJu0YzPJOkUDuGHny4i05e6/RdzpOXM/NcnkeV09kVJhIRW+5gnvZ5e
+	6BYD3+EeyzA2GMR019OU8CFVj7q1UsMWAuuRmlfP/8RxvtOoK0ke
+X-Gm-Gg: ASbGncudmuhOEQk1oZNGF4xDcwjqTmtK75PQIoAuguwfqQWu1pSRGFNJxp9rLf1I9Fh
+	bOz8eAA1jYv2uh+JQyRcVt2PkGAjdZKGRLf9y/BHRRGGMrqFZkGj/0VTZh5IYQEYg1jbGEslaUD
+	Ml19k2p9Zkk9KMncFRErziX/9LsZeUvFnI8a6SsCb3u5kvJ1lvVOodaC4FL0b37taGwDjhnGrVB
+	8Gfbn73W2tsP4uW5RmN+i1KwbWw9L6ROZIDx1cy2iaAmZuXj1hnOa4ObKIqGgrBU9Ny83UkgAgT
+	IPM56XscoR8EK3l4P5UxnY5uJguHS4YNpD4eSqBaKbm1Clf5Lj72gIdY
+X-Google-Smtp-Source: AGHT+IEC8wg+03HMOeCQYRjaEL4hVw0Oam/RePsv5fuRPjO3sBxgUEwi9m+wMgy/eMHl2a2vGkenKA==
+X-Received: by 2002:a7b:c8c9:0:b0:436:fb02:e68 with SMTP id 5b1f17b1804b1-438913bdd6cmr55694025e9.2.1737195744926;
+        Sat, 18 Jan 2025 02:22:24 -0800 (PST)
+Received: from localhost.localdomain (146.10-240-81.adsl-dyn.isp.belgacom.be. [81.240.10.146])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-438904625f5sm64954515e9.28.2025.01.18.02.22.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 18 Jan 2025 02:22:24 -0800 (PST)
+From: Philippe Simons <simons.philippe@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Philippe Simons <simons.philippe@gmail.com>,
+	linux-phy@lists.infradead.org (open list:GENERIC PHY FRAMEWORK),
+	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Allwinner sunXi SoC support),
+	linux-sunxi@lists.linux.dev (open list:ARM/Allwinner sunXi SoC support),
+	linux-kernel@vger.kernel.org (open list)
+Subject: [RFC PATCH 1/3] phy: don't let controllers change vbus reg
+Date: Sat, 18 Jan 2025 11:22:04 +0100
+Message-ID: <20250118102207.9339-1-simons.philippe@gmail.com>
+X-Mailer: git-send-email 2.47.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [RFC PATCH v1 0/6] rockchip: add a functional usb3 phy driver for
- rk3328
-To: Peter Geis <pgwipeout@gmail.com>, Heiko Stuebner <heiko@sntech.de>
-Cc: zyw@rock-chips.com, kever.yang@rock-chips.com, frank.wang@rock-chips.com,
- william.wu@rock-chips.com, wulf@rock-chips.com,
- linux-rockchip@lists.infradead.org, Alex Bee <knaerzche@gmail.com>,
- Algea Cao <algea.cao@rock-chips.com>, Arnd Bergmann <arnd@arndb.de>,
- Conor Dooley <conor+dt@kernel.org>,
- Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
- Diederik de Haas <didi.debian@cknow.org>, Dragan Simic <dsimic@manjaro.org>,
- Elaine Zhang <zhangqing@rock-chips.com>, FUKAUMI Naoki <naoki@radxa.com>,
- Johan Jonker <jbx6244@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>,
- Sebastian Reichel <sebastian.reichel@collabora.com>,
- Stephen Boyd <sboyd@kernel.org>, Trevor Woerner <twoerner@gmail.com>,
- Vinod Koul <vkoul@kernel.org>, Zhang Yubing <yubing.zhang@rock-chips.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20250115012628.1035928-1-pgwipeout@gmail.com>
-Content-Language: en-US
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250115012628.1035928-1-pgwipeout@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250118_010842_880187_23D0E727 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250118_022227_541357_20A9012A 
+X-CRM114-Status: GOOD (  13.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,25 +100,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/01/2025 02:26, Peter Geis wrote:
-> 
-> This is my newly reworked phy driver for the rk3328 usb3 phy. It is
-> based loosely on my original version, but as of now almost nothing of
-> the original driver remains. The main fix here is the discovery of
-> BIT(6) in the interrupt enable grf register fixes the usb3 disconnection
-> detection (mostly). On occasion an unpopulated usb3 hub will take
-> several seconds to disconnect. However this means all of the hack around
-> work to reset the usb core manually is no longer required.
-> 
-BTW, RFC for some maintainers means "do not review, work-in-progress".
-For some means "review, but low priority" or "review, but for sure I
-have bugs here". I usually review and then someone responds: "it is not
-for review, it is just RFC", so to avoid my wasted time please always
-mention in cover letter why this is RFC. What do you expect here or why
-this is not ready for review as normal patch.
+Allwinners SoCs share phy0 between the MUSB controller and HCI controller.
+If we let these controllers independently power on the vbus on that phy,
+peripheral mode is dangerous because HCI never power down the phy, resulting
+in 5v being applied against the host 5v.
 
-Best regards,
-Krzysztof
+Override power_on/off for phy0 in that case, and let regulator be enabled/disabled
+based on id_det only.
+
+Signed-off-by: Philippe Simons <simons.philippe@gmail.com>
+---
+ drivers/phy/allwinner/phy-sun4i-usb.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
+index b0f19e950..24fbabe7a 100644
+--- a/drivers/phy/allwinner/phy-sun4i-usb.c
++++ b/drivers/phy/allwinner/phy-sun4i-usb.c
+@@ -465,6 +465,10 @@ static int sun4i_usb_phy_power_on(struct phy *_phy)
+ 	struct sun4i_usb_phy_data *data = to_sun4i_usb_phy_data(phy);
+ 	int ret;
+ 
++	/* phy0 power is controlled by sun4i_usb_phy0_reroute and id_det state */
++	if (phy->index == 0 && data->cfg->phy0_dual_route)
++		return 0;
++
+ 	if (!phy->vbus || phy->regulator_on)
+ 		return 0;
+ 
+@@ -493,6 +497,10 @@ static int sun4i_usb_phy_power_off(struct phy *_phy)
+ 	struct sun4i_usb_phy *phy = phy_get_drvdata(_phy);
+ 	struct sun4i_usb_phy_data *data = to_sun4i_usb_phy_data(phy);
+ 
++	/* phy0 power is controlled by sun4i_usb_phy0_reroute and id_det state */
++	if (phy->index == 0 && data->cfg->phy0_dual_route)
++		return 0;
++
+ 	if (!phy->vbus || !phy->regulator_on)
+ 		return 0;
+ 
+@@ -573,9 +581,21 @@ static void sun4i_usb_phy0_reroute(struct sun4i_usb_phy_data *data, int id_det)
+ 	if (id_det == 0) {
+ 		/* Host mode. Route phy0 to EHCI/OHCI */
+ 		regval &= ~OTGCTL_ROUTE_MUSB;
++
++		/* Enable VBUS reg */
++		if (phy->vbus && !phy->regulator_on) {
++			regulator_enable(phy->vbus);
++			phy->regulator_on = true;
++		}
+ 	} else {
+ 		/* Peripheral mode. Route phy0 to MUSB */
+ 		regval |= OTGCTL_ROUTE_MUSB;
++		
++		/* Disable VBUS reg */
++		if (phy->vbus && phy->regulator_on) {
++			regulator_disable(phy->vbus);
++			phy->regulator_on = false;
++		}
+ 	}
+ 	writel(regval, data->base + REG_PHY_OTGCTL);
+ }
+@@ -603,6 +623,12 @@ static void sun4i_usb_phy0_id_vbus_det_scan(struct work_struct *work)
+ 		return;
+ 	}
+ 
++	/* Disable internal VBUS reg if there is an external VBUS */
++	if (vbus_det != 0 && phy->vbus && phy->regulator_on) {
++		regulator_disable(phy->vbus);
++		phy->regulator_on = false;
++	}
++
+ 	force_session_end = data->force_session_end;
+ 	data->force_session_end = false;
+ 
+-- 
+2.47.1
+
 
 -- 
 linux-phy mailing list
