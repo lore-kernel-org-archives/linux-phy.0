@@ -4,68 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A5CDC02185
-	for <linux-phy@archiver.kernel.org>; Sat, 18 Jan 2025 15:28:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DD16C02183
+	for <linux-phy@archiver.kernel.org>; Sun, 19 Jan 2025 06:57:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZFQ0XA0DHt/SnHJXy/CWbXSU/WumtPfl3nb/4lXWPa4=; b=qcgKsDPaiwfD2u
-	u2+RDdBKtoGXy+Pe84XDGhCjh+SGrJdZ2lK3kH9PhWa0cZP006bbRoJ6uA8EMi5Ga+A0aRVP42l11
-	JTDQv2zQIG/aNgMPGCglYN9WZDSNu5ypXRW5njQByMiHwvOMpFwmoMRE2lk9YUgz3gt+6eQs17p/e
-	XlWCDQ37RobpdXfG4LInHmqflD3dil54HXBV8A49e8D8GXjkm+BmK7p+3MgjwrNSLyspR/WC7kA2E
-	ul9kTAQL0ow7D79CCk0CyEeEqEs8BSsMpJ8/UY18ARb/ztxJ0J3A+IlVsPO9m+0pq2g7yoTYtlWvT
-	vz2e9R1S0sYRxdEL+hVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KyogJD/SjPE2LotVQ8b1rXCOncu3LxvMpvh1K8tWQBM=; b=3Mr9Ud9cqvQGqn
+	E9MBJqQ/e4LAqjvpBDYbIWJEVJYtRzEaDMz0vxG1iQ61sdSCDvhrg1eMt+QMwjN3vQrV6Ph1lhuHJ
+	oLsqBSYePvzo6gdlBj4Q8b0h/nYUly26R1iCO1rgYSRiunNq8J1sFQyIkL2IWCt1ypUdbamF0HPLg
+	FGKtcoFYfWJIMO6q/18gcydZzGkgUrMMp0rVaYwOOxE2B6rRCMHgYjQsJ0fIQT+4UTQBRvZk3byFF
+	x+yxbPb6DQczleaijZY0oDMqfC2L5bPKqVylWHU8kqnvJ7wcoZXZdZefTTCyGjBwIywCqZSDV4MkN
+	0KbNVfTNdAeYwsL/HpDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZAkC-00000002c8l-1LFt;
-	Sat, 18 Jan 2025 15:28:16 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tZPFV-00000003Vdr-0ykY;
+	Sun, 19 Jan 2025 06:57:33 +0000
+Received: from smtp84.cstnet.cn ([159.226.251.84] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZAk9-00000002c7T-3VRd
+	id 1tZPFQ-00000003Vcd-3PM0
 	for linux-phy@lists.infradead.org;
-	Sat, 18 Jan 2025 15:28:14 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id A0ED85C5B33;
-	Sat, 18 Jan 2025 15:27:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2E57CC4CED1;
-	Sat, 18 Jan 2025 15:28:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737214093;
-	bh=ryyLacW9mUm6gv/8X5dzDmrL7n4I/9bGy9c43D05QVI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=keLHsHQ9Q8xvzD4M9nS7m97wZhtEdjXv0XegesIUrovGtDrYGHTyNFeDmlfZAsX4j
-	 vyagkYlB21pRjl47Q7PwEVu+Fni9eZ0fx9VPmqw2tDoJNfsTHYKhsQ6Pwz2ModDMsM
-	 8AshIgWq7YyzKChl2KBQNrL7NAoflrespI0NPsdJBaP2pWXK1zMBLdXvTgZjGuS7Fq
-	 v6dpXBVAlD8IAXKD+x5bn8F4XC0nWflFmpazE64avaolwlsImmBns4KjCdyy/xR07R
-	 OYBA1WIlNUwaNJcEIh80H/n/2UPSk9iJUH+s0xz4OgzgpBfOj3celY4OSFCin2/Rcs
-	 xJIAILpAtTwAw==
-Date: Sat, 18 Jan 2025 16:28:09 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Melody Olvera <quic_molvera@quicinc.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, 
-	Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, 
-	Nitin Rawat <quic_nitirawa@quicinc.com>, Manish Pandey <quic_mapa@quicinc.com>
-Subject: Re: [PATCH 4/5] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
- SoC
-Message-ID: <20250118-voracious-ninja-gazelle-ed2c68@krzk-bin>
-References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
- <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
+	Sun, 19 Jan 2025 06:57:31 +0000
+Received: from icess-ProLiant-DL380-Gen10.. (unknown [183.174.60.14])
+	by APP-05 (Coremail) with SMTP id zQCowAD3YMoyooxnNmUHCA--.53155S2;
+	Sun, 19 Jan 2025 14:57:15 +0800 (CST)
+From: Ma Ke <make24@iscas.ac.cn>
+To: jckuo@nvidia.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	thierry.reding@gmail.com,
+	jonathanh@nvidia.com
+Cc: linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Ma Ke <make24@iscas.ac.cn>
+Subject: [PATCH v2 RESEND] phy: Fix error handling in tegra_xusb_port_init
+Date: Sun, 19 Jan 2025 14:56:50 +0800
+Message-Id: <20250119065650.2278261-1-make24@iscas.ac.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
+X-CM-TRANSID: zQCowAD3YMoyooxnNmUHCA--.53155S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7Aw4DKFWkAF15tFW3Aw4fKrg_yoW8GrWUpw
+	4DGas0kr9Ygr4kKr4UXF40vFy5GF42k34rZr1rJ34a9Fn3W34rta98trWxZa4UArZ7uF4U
+	ArsxJaykGFyUCw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUvE14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26r1j6r1xM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r1j
+	6r4UM28EF7xvwVC2z280aVAFwI0_Cr0_Gr1UM28EF7xvwVC2z280aVCY1x0267AKxVW8Jr
+	0_Cr1UM2vYz4IE04k24VAvwVAKI4IrM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVAC
+	Y4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJV
+	W8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI2
+	0VAGYxC7MxkF7I0En4kS14v26r1q6r43MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4
+	AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE
+	17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMI
+	IF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4l
+	IxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVWUJVW8JbIYCTnIWI
+	evJa73UjIFyTuYvjfUOmhFUUUUU
+X-Originating-IP: [183.174.60.14]
+X-CM-SenderInfo: ppdnvj2u6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250118_072813_920681_C203C122 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20250118_225729_378775_AEBD12E3 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,51 +84,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 13, 2025 at 01:46:27PM -0800, Melody Olvera wrote:
-> From: Nitin Rawat <quic_nitirawa@quicinc.com>
-> 
-> Add UFS host controller and PHY nodes for SM8750 SoC.
-> 
-> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
-> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
-> ---
->  arch/arm64/boot/dts/qcom/sm8750.dtsi | 81 ++++++++++++++++++++++++++++++++++++
->  1 file changed, 81 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> index 3bbd7d18598ee0a3a0d5130c03a3166e1fc14d82..20690c102244b337847a6482dd83c37e19746de9 100644
-> --- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> @@ -13,6 +13,7 @@
->  #include <dt-bindings/power/qcom,rpmhpd.h>
->  #include <dt-bindings/power/qcom-rpmpd.h>
->  #include <dt-bindings/soc/qcom,rpmh-rsc.h>
-> +#include <dt-bindings/gpio/gpio.h>
->  
->  / {
->  	interrupt-parent = <&intc>;
-> @@ -1939,6 +1940,86 @@ mmss_noc: interconnect@1780000 {
->  			#interconnect-cells = <2>;
->  		};
->  
-> +		ufs_mem_phy: phy@1d80000 {
-> +			compatible = "qcom,sm8750-qmp-ufs-phy";
-> +			reg = <0x0 0x01d80000 0x0 0x2000>;
-> +
-> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
-> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
-> +				 <&tcsrcc TCSR_UFS_CLKREF_EN>;
-> +			clock-names =	"ref",
+If device_add() fails, do not use device_unregister() for error
+handling. device_unregister() consists two functions: device_del() and
+put_device(). device_unregister() should only be called after
+device_add() succeeded because device_del() undoes what device_add()
+does if successful. Change device_unregister() to put_device() call
+before returning from the function.
 
-Since there is going to be resend, let's save me one commit afterwards:
+As comment of device_add() says, 'if device_add() succeeds, you should
+call device_del() when you want to get rid of it. If device_add() has
+not succeeded, use only put_device() to drop the reference count'.
 
-Incorrect space after '='. There is always only one before and one
-after.
+Found by code review.
 
-Best regards,
-Krzysztof
+Signed-off-by: Ma Ke <make24@iscas.ac.cn>
+---
+ drivers/phy/tegra/xusb.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 79d4814d758d..c89df95aa6ca 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -548,16 +548,16 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
+ 
+ 	err = dev_set_name(&port->dev, "%s-%u", name, index);
+ 	if (err < 0)
+-		goto unregister;
++		goto put_device;
+ 
+ 	err = device_add(&port->dev);
+ 	if (err < 0)
+-		goto unregister;
++		goto put_device;
+ 
+ 	return 0;
+ 
+-unregister:
+-	device_unregister(&port->dev);
++put_device:
++	put_device(&port->dev);
+ 	return err;
+ }
+ 
+-- 
+2.25.1
 
 
 -- 
