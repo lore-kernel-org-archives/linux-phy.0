@@ -4,82 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 001EFC02181
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jan 2025 10:52:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DB32C02185
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jan 2025 14:35:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NVCnT31qFPeq4ZCZFu723FGqqP2eWfSf9FeY4Ebzhds=; b=NHMTm2obcwBkyt
-	lCVxeCKdTc24z+jAsBTeDNnRvz6Dy8EbAAYpAeHc2n7btkDSKFKZfylcRNZqHiqFY3r582sN+AN49
-	a9xEayiUAcIzKxwBPD7ZNRCVBZi30PRNThBJ6gzn5Gu4sZemhe8HQjxV/thNi65tPOmLtmfx8EqOV
-	rVjJ/+wOsY3sDrrNM5Gs8lV55Pv3zX8Ec4kSsYH+JbJA+mPC8nZBsVI3YBAbo1MGdnJi58ouBsYtE
-	AQ6l46vL6UqvZlVonwP5GTf3CVmvEcdQqpZsebhYCrdg0qRXaaJD9pwMGz36oFNwGsDWslngGM2Sc
-	gEg1IfS+fTZZrqndtAcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=00VsoUadl2wJrtUex6t/LKJvRLPZFf9l0spnmZaN6e8=; b=a42e5TMTREY85t
+	AqE3Cj9i64dlGW4+V2zEzbRBZCvFG1OBkvKvuEOJxfZ8L41uypOCbktHz5O9PUrHOLmTPFbucBrnb
+	t1tj3YOP0IJdLJbFdfmyRvl3qL2Xpia7uayOghxZolZqetxNpOiFFc4eHARNnopZ4ShNmcVo/Xsko
+	kOSW+p/FwMPt3S1M/+GQtaZsIOc9i1ENJc61+YLt013L0iyO+nr2G1ogT1e0VO4tE/YkLiQhdnRup
+	unr8F9gj+FyoYTAQYUOjnv/HzHrnE+ng61lLI2aAGiJnH3a1mBr9KZuORffdWWRXMSS6ixkS/eMYk
+	MpOVDGdZ89uOJGsT+iYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZpOD-00000005NbF-0yod;
-	Mon, 20 Jan 2025 10:52:17 +0000
-Received: from mail-vs1-f44.google.com ([209.85.217.44])
+	id 1tZsrw-00000005nui-0FPV;
+	Mon, 20 Jan 2025 14:35:12 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZpOB-00000005Nas-2OSK
+	id 1tZsrt-00000005nsw-17Xp
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Jan 2025 10:52:16 +0000
-Received: by mail-vs1-f44.google.com with SMTP id ada2fe7eead31-4b68cb2abacso488779137.3
-        for <linux-phy@lists.infradead.org>; Mon, 20 Jan 2025 02:52:15 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737370334; x=1737975134;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=nUfDCIfdbaWdrkZkEs1WBIzMBZMPC5SuqVxZEuwtdC8=;
-        b=wGvG3eYJaxD7jRQGm9gizlHFhPoKBopPw5d5BSzZYE144YaYydd3B3HmDJDjU43vyy
-         VpH7UnpWnZ5BeVZ1cNaQsKcZo/EpG5SwzDn2JwLKXTBXWUfPyi5QZipi08zcVPWh0r8t
-         pJ8IbPSehgirijMU95m/DnxuDJZRn69VBluCxo+ijuAUEqxAeBF5Sruq0L6irEQoyxNC
-         bZTJ224lj8xVrBRmLQ1E+DfeZbkFesJC0WnQpodms+NrOHewSs3ZoYnCJyQy2C9f2Jrx
-         +qjTfA3TkD5ZEnxQ3kr8QrXdqx58X529WZabG4oVD45cHwengLwpBxd3iuRwNTn3MyBc
-         4twA==
-X-Forwarded-Encrypted: i=1; AJvYcCVzDw34hEw5e9YmUnoXj5LhboouZt95YltXlhyD8xA6s1HE5vkYF8+z64PTk4zERvGS4oqiLKWnMw4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxi9rnKTBotcT29XkFdydlchnvAkDclqXgs/INzmMtalKoY9j/u
-	7aQeaxPpcL1K/WwVlPsXTLPe4vrbSMoFdCCkUtCwI22uCQdGWIvIw4FCnIc2
-X-Gm-Gg: ASbGncsipxWWb2jmpLXU6LvO704FQZBLS0LNWrqRLyEjqhOBKDwRrYga7lFI1lISZl/
-	TCuoeEvf5M1V1W/iNlmr400n4z5ubND9HQdjtPjpKzYN65UHgRDZ7Iu5AkJ1DEyTvvi7aCL9KK3
-	1j46Gb+nIAT6ggpUGXNKcHqrFE9+t4NAS939EpyFzxi7JgRuXLHNLMB4qvKq9YcOpBQ4+BKkpyG
-	Np1fnj3tAeh4uSfzbCKvBkdgsBSKsPTxahOTiuDEIxIlF8jiOybC+OZYNejFXG2+x5IMmEoEDxJ
-	PKfPRfd1q+Fj13Ml2IiXLEtjaWK628pL
-X-Google-Smtp-Source: AGHT+IEpjx0g7fJJTe9Qi5iGlWiSHqNG+I8I1VpAS/F3KfghxbPeCq6tXT5mRiiODnpwlbciD7QOUw==
-X-Received: by 2002:a05:6102:5110:b0:4af:bf45:39a8 with SMTP id ada2fe7eead31-4b690c9e5a4mr7419540137.16.1737370333968;
-        Mon, 20 Jan 2025 02:52:13 -0800 (PST)
-Received: from mail-ua1-f48.google.com (mail-ua1-f48.google.com. [209.85.222.48])
-        by smtp.gmail.com with ESMTPSA id a1e0cc1a2514c-8642cb08c59sm1812538241.20.2025.01.20.02.52.13
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 20 Jan 2025 02:52:13 -0800 (PST)
-Received: by mail-ua1-f48.google.com with SMTP id a1e0cc1a2514c-85bb264993cso826681241.1
-        for <linux-phy@lists.infradead.org>; Mon, 20 Jan 2025 02:52:13 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCWakqMhkca9ITCGrYdFr2ffy/HWDESHpWD53uGsSA848OO8xFAMgMZWvedSpTV4pGZ7iYSbMYLC+R0=@lists.infradead.org
-X-Received: by 2002:a05:6102:41a6:b0:4b1:1a11:fe3 with SMTP id
- ada2fe7eead31-4b690bbf701mr9052702137.8.1737370333645; Mon, 20 Jan 2025
- 02:52:13 -0800 (PST)
+	Mon, 20 Jan 2025 14:35:10 +0000
+Received: from ramsan.of.borg ([IPv6:2a02:1810:ac12:ed80:30c9:4dcf:fe21:4b10])
+	by michel.telenet-ops.be with cmsmtp
+	id 3Sb42E0090raqVW06Sb4lJ; Mon, 20 Jan 2025 15:35:05 +0100
+Received: from rox.of.borg ([192.168.97.57])
+	by ramsan.of.borg with esmtp (Exim 4.97)
+	(envelope-from <geert@linux-m68k.org>)
+	id 1tZsrh-0000000DhTR-3Hu6;
+	Mon, 20 Jan 2025 15:35:04 +0100
+Received: from geert by rox.of.borg with local (Exim 4.97)
+	(envelope-from <geert@linux-m68k.org>)
+	id 1tZsro-0000000DTZO-12VC;
+	Mon, 20 Jan 2025 15:35:04 +0100
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: =?UTF-8?q?Herv=C3=A9=20Codina?= <herve.codina@bootlin.com>,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH v3 0/3] LAN966x PCIe endpoint cleanups
+Date: Mon, 20 Jan 2025 15:35:00 +0100
+Message-ID: <cover.1737383314.git.geert+renesas@glider.be>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-References: <cover.1737118595.git.geert+renesas@glider.be> <84393e59efa7a76b89d4164fd64ca85b8739f6ee.1737118595.git.geert+renesas@glider.be>
-In-Reply-To: <84393e59efa7a76b89d4164fd64ca85b8739f6ee.1737118595.git.geert+renesas@glider.be>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 20 Jan 2025 11:52:01 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdUrrDTvMeRPCMNc36fkJLRszcSoqPZMG8J9fuXO3P6ObA@mail.gmail.com>
-X-Gm-Features: AbW1kvaIn2URdiaybkdWDK2SpQfOiSAmt9-fIQqujHK7eDp6C49TllFDHpTnPOo
-Message-ID: <CAMuHMdUrrDTvMeRPCMNc36fkJLRszcSoqPZMG8J9fuXO3P6ObA@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] irqchip: LAN966X_OIC should depend on MFD_LAN966X_PCI
-To: Herve Codina <herve.codina@bootlin.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, devicetree@vger.kernel.org, 
-	linux-phy@lists.infradead.org, Geert Uytterhoeven <geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250120_025215_610299_53FBA082 
-X-CRM114-Status: GOOD (  20.69  )
+X-CRM114-CacheID: sfid-20250120_063509_451530_69CE4CE4 
+X-CRM114-Status: GOOD (  18.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,34 +75,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 17 Jan 2025 at 14:04, Geert Uytterhoeven
-<geert+renesas@glider.be> wrote:
-> The Microchip LAN966x outband interrupt controller is only present on
-> Microchip LAN966x SoCs, and only used in PCI endpoint mode.  Hence add a
-> dependency on MCHP_LAN966X_PCI, to prevent asking the user about this
-> driver when configuring a kernel without Microchip LAN966x PCIe support.
->
-> Fixes: 3e3a7b35332924c8 ("irqchip: Add support for LAN966x OIC")
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> v2:
->   - Drop dependency on SOC_LAN966, as the OIC is used only in LAN966x
->     PCI endpoint mode,
->   - Replace MFD_LAN966X_PCI by MCHP_LAN966X_PCI, as the latter is the
->     symbol that ended upstream.
+	Hi all,
 
-Bummer, I messed up the subject here as well...
+This patch series contains various cleanups related to the recent
+addition of LAN966x PCIe endpoint support.  They can be applied
+independently.
+
+Changes compared to v2[1]:
+  - Add Acked-by,
+  - Fix references to bogus MFD_LAN966X_PCI symbol.
+
+Changes compared to v1[2]:
+  - Drop dependency on SOC_LAN966, as the OIC is used only in LAN966x
+    PCI endpoint mode,
+  - Replace MFD_LAN966X_PCI by MCHP_LAN966X_PCI, as the latter is the
+    symbol that ended upstream,
+  - New patches [1/3] and [3/3].
+
+Thanks for your comments!
+
+[1] "[PATCH v2 0/3] LAN966x PCIe endpoint cleanups"
+    https://lore.kernel.org/cover.1737118595.git.geert+renesas@glider.be
+
+[2] "[PATCH] irqchip: LAN966X_OIC should depend on SOC_LAN966 || MFD_LAN966X_PCI"
+    https://lore.kernel.org/578dafcbdf8287e73dd30e96e23814b8c029ea96.1721719060.git.geert+renesas@glider.be
+
+Geert Uytterhoeven (3):
+  dt-bindings: interrupt-controller: microchip,lan966x-oic: Clarify
+    endpoint use
+  irqchip: LAN966X_OIC should depend on MCHP_LAN966X_PCI
+  phy: PHY_LAN966X_SERDES should depend on SOC_LAN966 ||
+    MCHP_LAN966X_PCI
+
+ .../bindings/interrupt-controller/microchip,lan966x-oic.yaml | 5 ++---
+ drivers/irqchip/Kconfig                                      | 1 +
+ drivers/phy/microchip/Kconfig                                | 1 +
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+-- 
+2.43.0
 
 Gr{oetje,eeting}s,
 
-                        Geert
+						Geert
 
--- 
+--
 Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
 In personal conversations with technical people, I call myself a hacker. But
 when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+							    -- Linus Torvalds
 
 -- 
 linux-phy mailing list
