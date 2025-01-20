@@ -4,115 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81BA7C0218A
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Jan 2025 03:51:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEE35C02188
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Jan 2025 07:08:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:From:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JQscW+WLmMmWXxqjsMKvyi27auZPy/T49tKm1Fdgk6Q=; b=e0T1foYhPVpgxB
-	6Tf8DG33L+081amlhFKSj52hC/t/z19UIX27wjGTA1fW22iQHINdEjGwTiR2v+ohD8bIjYMl5AbRa
-	J4QupjFDOE51/k4uSx8NjRyDmYmBzlcRU+qU9eLVxPuUaYQzzRsZUWWQjMGYRm7KWTs0suYZRhY+m
-	7XAB7E/4ctBscaVj2Qzo+1Iq1LN4wpOuwbHkeAWTcMqHUWzDmB/Eo/OC9op5+DDELncQ7jgVR22Gu
-	zZwmMYxoPwq/DVU3fHYh2NpA287TwvKhKn5bN4h4Gq9z2A6rCyta057cD9BUxWL2invYCe7JUPOHd
-	QMCx4g4OcKxyJz/IIrZg==;
+	List-Owner; bh=c/6zZM63Yif+RXbOEqbZF1/hFIDix9eob35ihZkeBD4=; b=Zaia96RqFbOTM8
+	mHOp3ZUA/sLTRcolQHatfI/+FX78XgzbJ4NQG7NbYYmz1t5uwf2Op00/OHNBw3+/QWWh+swo8EP+c
+	V7B/qA/clpanPXu1mdxrsZiGN6GpHz1cQVdY33E7x+2mZ1BranwZFzzxI7QmnYZU/N/oi1UIANR6/
+	/6dv8ijAw37ogyb+KtZkZ+UA01WxGIimbLzQQUrkO3UhrK998qU0HYG4AkzuApjYiEfUoIm3A+Huv
+	bpJKx5HIHlhJ9/cRoMppiBcs2NfwIg21VEScf/wJaGncwkrtT0OZC7OWer55L0gUY0SDcU8qFVX0j
+	6S1INYLOhdhMAeNYr54w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZipL-00000004fmn-19Zd;
-	Mon, 20 Jan 2025 03:51:51 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tZltW-00000004sZF-1Kq6;
+	Mon, 20 Jan 2025 07:08:22 +0000
+Received: from mail-m1973186.qiye.163.com ([220.197.31.86])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tZipI-00000004flj-3IUg
-	for linux-phy@lists.infradead.org;
-	Mon, 20 Jan 2025 03:51:50 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50K3ftnK002567;
-	Mon, 20 Jan 2025 03:51:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	l9D0iGf5gfsI47OTyHusqADcAsJb13cd95a9Ia17SRI=; b=db1U/bOLE5YS9mAK
-	1l0ov+EwYdbb25OiYZoSG+aoDK2ewQOLZHgJnqzmLkkp2KA3sTpDdi9v8ml65hMY
-	RazpirOKNW1i2AKjyUZZdAN01T8xNHFPZ6LVEvpMfU7TfRQcJ/t6yY86ERsCyvQX
-	NiiFXQA/jdF00tZcAPAFkB/zaZ55YIa580NUDCI67KJ0Tl+SqzTEr0mmuFJCSOLO
-	Hz75qNYiTkPkeN9TzSqW52EIHLFE7sTpCJhAZKOh5zVU59HLvB8/VGMDy3UxRhLS
-	STA6uYc8zVHEMJH7YFLJr1cZmlui8x3DqnnWMzR5P/K/WDapfzWVKUFhiEbqlzUL
-	RF6IPA==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 449eteg0hj-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Jan 2025 03:51:41 +0000 (GMT)
-Received: from nalasex01c.na.qualcomm.com (nalasex01c.na.qualcomm.com [10.47.97.35])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50K3pekl002066
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 20 Jan 2025 03:51:40 GMT
-Received: from cse-cd01-lnx.ap.qualcomm.com (10.80.80.8) by
- nalasex01c.na.qualcomm.com (10.47.97.35) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Sun, 19 Jan 2025 19:51:34 -0800
-From: Yongxing Mou <quic_yongmou@quicinc.com>
-Date: Mon, 20 Jan 2025 11:49:21 +0800
-Subject: [PATCH v4 4/4] drm/msm: mdss: Add QCS8300 support
+	id 1tZltT-00000004sXz-2bBP;
+	Mon, 20 Jan 2025 07:08:21 +0000
+Received: from [172.16.12.26] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 92ac8289;
+	Mon, 20 Jan 2025 15:08:08 +0800 (GMT+08:00)
+Message-ID: <d6211c5e-a38d-46aa-8d33-6dba2a71e018@rock-chips.com>
+Date: Mon, 20 Jan 2025 15:08:06 +0800
 MIME-Version: 1.0
-Message-ID: <20250120-mdssdt_qcs8300-v4-4-1687e7842125@quicinc.com>
-References: <20250120-mdssdt_qcs8300-v4-0-1687e7842125@quicinc.com>
-In-Reply-To: <20250120-mdssdt_qcs8300-v4-0-1687e7842125@quicinc.com>
-To: Rob Clark <robdclark@gmail.com>,
-        Abhinav Kumar
-	<quic_abhinavk@quicinc.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-        "Maarten
- Lankhorst" <maarten.lankhorst@linux.intel.com>,
-        Maxime Ripard
-	<mripard@kernel.org>,
-        Thomas Zimmermann <tzimmermann@suse.de>,
-        Rob Herring
-	<robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
-	<conor+dt@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        "Kuogee
- Hsieh" <quic_khsieh@quicinc.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon
- Vijay Abraham I" <kishon@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>
-CC: Yongxing Mou <quic_yongmou@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <dri-devel@lists.freedesktop.org>, <freedreno@lists.freedesktop.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1737345066; l=1622;
- i=quic_yongmou@quicinc.com; s=20241121; h=from:subject:message-id;
- bh=T1quEqzzRYSTMr7FDeES364YwjAI1nS3gNRFG9z4HNk=;
- b=BOXhQ4xG/Uh+vxlU762NfIBfEaG/FlDDCDmVnsczhIjvXCij9ru2Foo7ss1uetRSLXHKqFNF/
- jMXesluT9r2CtKB0d3rJOsS2Qg0c+fzntXDR0knUY+UnwqnisMLRsRa
-X-Developer-Key: i=quic_yongmou@quicinc.com; a=ed25519;
- pk=zeCnFRUqtOQMeFvdwex2M5o0Yf67UHYfwCyBRQ3kFbU=
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01c.na.qualcomm.com (10.47.97.35)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: IB8NowB8TNPXRNBQiy6Rototq8zTgaFR
-X-Proofpoint-GUID: IB8NowB8TNPXRNBQiy6Rototq8zTgaFR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-20_01,2025-01-16_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
- phishscore=0 mlxlogscore=999 lowpriorityscore=0 bulkscore=0
- impostorscore=0 mlxscore=0 suspectscore=0 spamscore=0 adultscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501200028
+User-Agent: Mozilla Thunderbird
+From: Damon Ding <damon.ding@rock-chips.com>
+Subject: Re: [PATCH v5 13/20] dt-bindings: display: rockchip: analogix-dp: Add
+ support for RK3588
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
+ sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com,
+ l.stach@pengutronix.de, dmitry.baryshkov@linaro.org,
+ andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
+ kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
+ <20250109032725.1102465-14-damon.ding@rock-chips.com>
+ <gmwmnjc4pzyzzstyozlfcdaw2ntfxg6ixofio2j746hmixhblc@sjbcvwcgitmy>
+Content-Language: en-US
+In-Reply-To: <gmwmnjc4pzyzzstyozlfcdaw2ntfxg6ixofio2j746hmixhblc@sjbcvwcgitmy>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGkhCHlYaHhkfTRlOQ0gaHU5WFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
+	NVSktLVUpCS0tZBg++
+X-HM-Tid: 0a94828a484603a3kunm92ac8289
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6PTI6Hgw*ITIVSzcfAx8VFAgj
+	OD5PChBVSlVKTEhMSE5NQ0NCQ0xNVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFIT0tPNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=hvLcnqb6GgruYOfRwgMuBJZ5apTXhXgbcphlrkpMcxbPR5AkNTHTqVs27FdGFp2qS4UbOwsMJtceiuvVU3BYIcVm87yzf0e7mntk7p3YiHcAdCM+LrQ54/L6zU9oFUg93nqycd1I8fukZYoTuqCY5ssqkZGmSlzKRMo0UPBECpc=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=d9x5PVUE1JktG04GVLVpq/qvvHEgshZnb4IAcFz1hy0=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250119_195148_961957_806986CC 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20250119_230819_841448_B804FF97 
+X-CRM114-Status: GOOD (  14.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,53 +78,115 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add Mobile Display Subsystem (MDSS) support for the QCS8300 platform.
-Due to different memory type, it use different mdss_data with SA8775P
-although using the same dpu.
+Hi Krzysztof,
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Yongxing Mou <quic_yongmou@quicinc.com>
----
- drivers/gpu/drm/msm/msm_mdss.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+On 2025/1/9 16:54, Krzysztof Kozlowski wrote:
+> On Thu, Jan 09, 2025 at 11:27:18AM +0800, Damon Ding wrote:
+>> Compared with RK3288/RK3399, the HBR2 link rate support is the main
+>> improvement of RK3588 eDP TX controller, and there are also two
+>> independent eDP display interfaces on RK3588 Soc.
+>>
+>> The newly added 'apb' reset is to ensure the APB bus of eDP controller
+>> works well on the RK3588 SoC.
+>>
+>> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>>
+>> ---
+>>
+>> Changes in v2:
+>> - Add the main defferences of the RK3588 eDP and the previous versions
+>>    in commit message
+>>
+>> Changes in v3:
+>> - Expand the property clock-names, resets and reset-names
+>>
+>> Changes in v4:
+>> - Remove 'spdif' clock which added in v3
+>> - Add the comment of newly added 'apb' reset in commit message
+>>
+>> Changes in v5:
+>> - Put the differences between RK3288/RK3399 and RK3588 into 'allOf'
+>> ---
+>>   .../rockchip/rockchip,analogix-dp.yaml        | 37 ++++++++++++++++---
+>>   1 file changed, 31 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> index eaf4e67e232e..3cdea9e63522 100644
+>> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+>> @@ -15,6 +15,7 @@ properties:
+>>       enum:
+>>         - rockchip,rk3288-dp
+>>         - rockchip,rk3399-edp
+>> +      - rockchip,rk3588-edp
+>>   
+>>     clocks:
+>>       minItems: 2
+>> @@ -30,12 +31,6 @@ properties:
+>>     power-domains:
+>>       maxItems: 1
+>>   
+>> -  resets:
+>> -    maxItems: 1
+>> -
+>> -  reset-names:
+>> -    const: dp
+> 
+> Widest constraints are always here. You only needed to add allOf.
+> 
+> https://elixir.bootlin.com/linux/v6.11-rc6/source/Documentation/devicetree/bindings/ufs/qcom,ufs.yaml
+> 
+> 
 
-diff --git a/drivers/gpu/drm/msm/msm_mdss.c b/drivers/gpu/drm/msm/msm_mdss.c
-index dcb49fd30402b80edd2cb5971f95a78eaad6081f..40c8b476763b8c39434b1448008cfa8ffac7a8ea 100644
---- a/drivers/gpu/drm/msm/msm_mdss.c
-+++ b/drivers/gpu/drm/msm/msm_mdss.c
-@@ -582,6 +582,16 @@ static const struct msm_mdss_data qcm2290_data = {
- 	.reg_bus_bw = 76800,
- };
- 
-+static const struct msm_mdss_data qcs8300_data = {
-+	.ubwc_enc_version = UBWC_4_0,
-+	.ubwc_dec_version = UBWC_4_0,
-+	.ubwc_swizzle = 6,
-+	.ubwc_bank_spread = true,
-+	.highest_bank_bit = 3,
-+	.macrotile_mode = true,
-+	.reg_bus_bw = 74000,
-+};
-+
- static const struct msm_mdss_data sa8775p_data = {
- 	.ubwc_enc_version = UBWC_4_0,
- 	.ubwc_dec_version = UBWC_4_0,
-@@ -737,6 +747,7 @@ static const struct of_device_id mdss_dt_match[] = {
- 	{ .compatible = "qcom,mdss" },
- 	{ .compatible = "qcom,msm8998-mdss", .data = &msm8998_data },
- 	{ .compatible = "qcom,qcm2290-mdss", .data = &qcm2290_data },
-+	{ .compatible = "qcom,qcs8300-mdss", .data = &qcs8300_data },
- 	{ .compatible = "qcom,sa8775p-mdss", .data = &sa8775p_data },
- 	{ .compatible = "qcom,sdm670-mdss", .data = &sdm670_data },
- 	{ .compatible = "qcom,sdm845-mdss", .data = &sdm845_data },
+I see. I will keep the widest constraints of 'resets' and 'reset-names', 
+and only add RK3588 related constraints in allOf.
 
--- 
-2.34.1
+And I may also need to add the 'minItems' and 'maxItems' for 'resets' 
+and 'reset-names' like the 'qcom,ufs.yaml':
+
+diff --git 
+a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml 
+b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+index a4c0c3a5de5a..baee021314e7 100644
+--- 
+a/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
++++ 
+b/Documentation/devicetree/bindings/display/rockchip/rockchip,analogix-dp.yaml
+@@ -32,9 +32,12 @@ properties:
+      maxItems: 1
+
+    resets:
+-    maxItems: 1
++    minItems: 1
++    maxItems: 2
+
+    reset-names:
++    minItems: 1
++    maxItems: 2
+      const: dp
+
+    rockchip,grf:
+
+If not, the CHECK_DTBS will failed with the logs:
+
+/linux/arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dtb: edp@fdec0000: 
+resets: [[31, 469], [31, 468]] is too long
+         from schema $id: 
+http://devicetree.org/schemas/display/rockchip/rockchip,analogix-dp.yaml#
+/linux/arch/arm64/boot/dts/rockchip/rk3588-evb1-v10.dtb: edp@fdec0000: 
+reset-names: ['dp', 'apb'] is too long
+         from schema $id: 
+http://devicetree.org/schemas/display/rockchip/rockchip,analogix-dp.yaml#
+
+
+Best regards
+Damon
+
 
 
 -- 
