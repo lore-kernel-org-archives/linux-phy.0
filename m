@@ -4,81 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 332F2C02182
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jan 2025 10:55:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A065C02182
+	for <linux-phy@archiver.kernel.org>; Tue, 21 Jan 2025 11:51:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UukkuQsIciH1Has9eE3Vatqk/qfzJa1dLc3VnOGX5Oc=; b=yoTyQrha7bpc5g
-	yuxVPY+fML47uVH044ooAdH3aJO/+9ep8J0QQEX5muwixwwHcFhGiBtoK19v4M3NWKDR06WiNsrPs
-	kQ5hipym1XZ6mHOBzXUkp+QUj9/zRrg47N4o6A/dVBJMgmvKV7PW6gTWu8KOJTDzlHxuToqRjb5At
-	jjgKAZjGiNmzfmrHtK0bTX+kZ68jby4xqYV+UiMsVn8bjd309fl3hMZEi0Prhca+Xaii+QzMWdveB
-	GHkvKOgiA3BxidrR3LFR+5UUf7Sfs6yg2vpWxQl7TQiQKd2F/fVqViJu1v4v0XOZmy/72zJmHjagx
-	UPvFtdiHGPEjc3xePIMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eOxaoVhyerY2hVLLgCoPhWA3hvZpmpaePqjVWiCk8pM=; b=XM4QIMX4UpnziU
+	xT7blMQeP3Y0DLMcNf+GuyTlaztqXSAFjTi9JwyyrN+tjDw8+LG+un/sDApQt4RTEKqvuahrEt/hw
+	NzhfXr0OYLXCOkdn7hQDdzXEiVxkr5vB1lyx3oxK+dvEP9Qitmfon3yjOZKvSGqOgFQK2mBCm6yvt
+	R5j56sQPqWVHC3q5tHhSzwQfdE6Be60qtHsd04vP2pekGWcGhnA8OMJrVefroFmr279K8bm43JIYt
+	zRGuCdZ4yjFn9ZAsgWCsRitxaBM0cQVTe/PKUyoZf8h4XWKqKl9ZPKeZy+WfRioW/uFJiRzkPtcaC
+	ty3urgaL3PuvGWgt1hqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taBua-00000007fOL-425z;
-	Tue, 21 Jan 2025 10:55:12 +0000
-Received: from mail-yb1-xb2f.google.com ([2607:f8b0:4864:20::b2f])
+	id 1taCmi-00000007mxX-1TVy;
+	Tue, 21 Jan 2025 11:51:08 +0000
+Received: from mx07-00178001.pphosted.com ([185.132.182.106])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taBcd-00000007c04-3iog
-	for linux-phy@lists.infradead.org;
-	Tue, 21 Jan 2025 10:36:41 +0000
-Received: by mail-yb1-xb2f.google.com with SMTP id 3f1490d57ef6-e3a26de697fso8495446276.3
-        for <linux-phy@lists.infradead.org>; Tue, 21 Jan 2025 02:36:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1737455798; x=1738060598; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=uYsSfRqNJj8o50shO4MnohJQTF0XWyzFd4qo9Nzg2zA=;
-        b=fgzEdDJol6ZwgQ87g6FDcMPLfg4cW37vVFPpAPJlS+Zgfr0J2zXf86KGg721c808g3
-         Olfx9kclYNm1Ce5TzXY3uymY56qMixOUNRUzIGrg30FWn/fu499sS20Zb2PPCnyy7EZI
-         /OWlDjt+aZDS017U9X9DJdG81jYgxISKfDQvvDpB7uW/owhAoeog9K0nbsWp0oLwBrgN
-         J8ZbcSbYlFZRaff7MyZCVyp0buQHulu+ZLJRSpvLMObWaJG2KwSmk1FrqvoY0kfe7IW8
-         d5Y6HjeaIRdajYK4yU2bjYjiYTXEidNypbyH5NVhZuOncaw/XxLQJUJVEhNmj3aJcFbC
-         l8bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737455798; x=1738060598;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=uYsSfRqNJj8o50shO4MnohJQTF0XWyzFd4qo9Nzg2zA=;
-        b=NeKBbbmrSm8i19fjCa2LAkyIUd4HFzXd+U1C/ZMi8Ajzs+a9ii1a7hszjr2wAR+4k8
-         MA05i+l93FzejnZgzGOiIn2GuBBwX6WTh7kth2defT/UaVwX2ZwqQ3y5+kOHmBL8iNg/
-         VcPv6Qat0t7inQfQWBW1a8HqGgD3p3NZAhPyHlJN1LBHaBwb9lO59P4FJ2BxXEUfCWaT
-         2AbnRwMimy3Q8gYngHBXAFlghJLtYeM7wXwJn8jBrDJVYnwhXJAFNiqaB0syZUG7Ik38
-         yMmS+fZcfncCocGskel8Ct18I1NnULMcPUlG1DZE3LxMgQXZP6zuQp/Yvv5yeLpm/Z2V
-         OrQw==
-X-Forwarded-Encrypted: i=1; AJvYcCWiSeKMOxwqQpMVdr/eLgNayKtiyx+J2nBTyFpg+/N9jSooJ7XK4hUTqqdnrqyiZKfbCb/lu26AxOM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YypvMJMmZPnhC/flAWVALLjapo98wj7KAhFq5j4KfLSWX/f9QsX
-	sM8FaV1k8RsEkgyW7Vthkv1kl35+ElC4HWOxA2wCRfk69ernP2WdpX23+4iVR9Zmi5DfdE5gX6l
-	uWJxJgyEE5rN8hFOki455xYKHSVDNvz8BDi9xdQ==
-X-Gm-Gg: ASbGncv6FkI3A6KW7mtJZXf2X7zBRLMBQnvn2H2wh7yUHKNqPR4oVefnV+DTExROjl0
-	TOrPFsiWwLYryvXw5EAsPZWHPGSOBTsYZXJ6bZG2hLYWExXhL5Byq+/0OhU+Cdce8fA==
-X-Google-Smtp-Source: AGHT+IGgc5DuaN4EVnKxaaNEieV/Lsus7ZftrBH6yEeXwAV7YxRfKF3ABKJD1IwgaQXrf81aL3myamAyLAsDHtu6Hno=
-X-Received: by 2002:a05:690c:6b0a:b0:6ea:7b00:4aa5 with SMTP id
- 00721157ae682-6f6eb93266dmr122701137b3.33.1737455798645; Tue, 21 Jan 2025
- 02:36:38 -0800 (PST)
+	id 1taCmb-00000007mwW-1CMW;
+	Tue, 21 Jan 2025 11:51:06 +0000
+Received: from pps.filterd (m0369458.ppops.net [127.0.0.1])
+	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50L9D6t0003828;
+	Tue, 21 Jan 2025 12:50:43 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=selector1; bh=/JxEK8gd2DKUYFHUImvOGy
+	5ibdZjUbYdrztpRvTmVbM=; b=bWzyn92s9NU2kARkgKSzj5i/ePkqu9HjHIv1n2
+	dipRXPMbsQRHFdTHIUH6KZBbfxklMOXh2BFbDYHUPtlNvUmuCfQFCRv9EECyyfmo
+	ZV2PORDPW0OTL/+UkXVJxephYh0q5VpeDqOJJVMTxllSHWwepDP4JPboLo2jUWYX
+	0k2s4d7wFS2tF8lmzwdGhOpBXsEQw9WFAosXs++uxD4hIKY1Kw/hrn/Nmtj0vV+C
+	bGjPbRG3eiYJWpwpMk7N2GksbynHkqHCpcweeiqiUTPa0ZFgszuboqvp9kVDISaj
+	GNZ6geqhFk4wnb2jNdOQVuJNVqldkT6dVYtHXKXHDoC62fGw==
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 44a213j8gj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 21 Jan 2025 12:50:42 +0100 (CET)
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 35B3040049;
+	Tue, 21 Jan 2025 12:49:44 +0100 (CET)
+Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
+	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 60D732A3D06;
+	Tue, 21 Jan 2025 12:49:15 +0100 (CET)
+Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
+ (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Tue, 21 Jan
+ 2025 12:49:15 +0100
+From: Christian Bruel <christian.bruel@foss.st.com>
+To: <christian.bruel@foss.st.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
+        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>
+CC: <arnd@arndb.de>, <fabrice.gasnier@foss.st.com>,
+        <linux-phy@lists.infradead.org>,
+        <linux-stm32@st-md-mailman.stormreply.com>,
+        <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] [PATCH v2] phy: stm32: Fix constant-value overflow assertion
+Date: Tue, 21 Jan 2025 12:49:00 +0100
+Message-ID: <20250121114900.3838224-1-christian.bruel@foss.st.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <20250121094140.4006801-1-quic_wenbyao@quicinc.com> <20250121094140.4006801-3-quic_wenbyao@quicinc.com>
-In-Reply-To: <20250121094140.4006801-3-quic_wenbyao@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Tue, 21 Jan 2025 12:36:27 +0200
-X-Gm-Features: AbW1kvaQ-0WRKtcJxgbDZ6H35o106sf53x8vunv0kmHF65XxhI3rh4OAJPGvtrk
-Message-ID: <CAA8EJppXQpDrdXzJsTE7HWs=POt7yFAw0JVZFabN6Ks3fhZiWQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Add PHY register retention support
-To: Wenbin Yao <quic_wenbyao@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, p.zabel@pengutronix.de, 
-	abel.vesa@linaro.org, quic_qianyu@quicinc.com, neil.armstrong@linaro.org, 
-	manivannan.sadhasivam@linaro.org, quic_devipriy@quicinc.com, 
-	konrad.dybcio@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+X-Originating-IP: [10.129.178.212]
+X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE3.st.com
+ (10.75.129.71)
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-21_05,2025-01-21_02,2024-11-22_01
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_023639_928875_BECED5F0 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20250121_035101_907211_2FCD27F1 
+X-CRM114-Status: GOOD (  13.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,44 +89,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 21 Jan 2025 at 11:43, Wenbin Yao <quic_wenbyao@quicinc.com> wrote:
->
-> From: Qiang Yu <quic_qianyu@quicinc.com>
->
-> Currently, BCR reset and PHY register setting are mandatory for every port
-> before link training. However, some QCOM PCIe PHYs support no_csr reset.
-> Different than BCR reset that is used to reset entire PHY including
-> hardware and register, once no_csr reset is toggled, only PHY hardware will
-> be reset but PHY registers will be retained,
+Guard against false positives with a WARN_ON check to make the compiler
+happy: This should not happen because the offset range is checked against
+the sorted imp_lookup_table values.
 
-I'm sorry, I can't parse this.
+Guard against a true warning found for the max_vswing, as a given
+vswing value can be 802000 or 803000 depending on the current impedance
 
-> which means PHY setting can
-> be skipped during PHY init if PCIe link was enabled in booltloader and only
-> no_csr is toggled after that.
->
-> Hence, determine whether the PHY has been enabled in bootloader by
-> verifying QPHY_START_CTRL register. If it is programmed and no_csr reset is
-> present, skip BCR reset and PHY register setting, so that PCIe link can be
-> established with no_csr reset only.
+Fixes: 2de679ecd724 ("phy: stm32: work around constant-value overflow assertion")
+Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
+---
+v2: Change title and Fixes tag
+---
+ drivers/phy/st/phy-stm32-combophy.c | 38 ++++++++++++++---------------
+ 1 file changed, 18 insertions(+), 20 deletions(-)
 
-This doesn't tell us why we want to do so. The general rule is not to
-depend on the bootloaders at all. The reason is pretty simple: it is
-hard to update bootloaders, while it is relatively easy to update the
-kernel. If the hardware team issues any kind of changes to the
-programming tables, the kernel will get them earlier than the
-bootloader.
-
->
-> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
-> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 91 +++++++++++++++---------
->  1 file changed, 58 insertions(+), 33 deletions(-)
->
+diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
+index 49e9fa90a681..607b4d607eb5 100644
+--- a/drivers/phy/st/phy-stm32-combophy.c
++++ b/drivers/phy/st/phy-stm32-combophy.c
+@@ -111,6 +111,7 @@ static const struct clk_impedance imp_lookup[] = {
+ 	{ 4204000, { 511000, 609000, 706000, 802000 } },
+ 	{ 3999000, { 571000, 648000, 726000, 803000 } }
+ };
++#define DEFAULT_IMP_INDEX 3 /* Default impedance is 50 Ohm */
+ 
+ static int stm32_impedance_tune(struct stm32_combophy *combophy)
+ {
+@@ -119,10 +120,9 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
+ 	u8 imp_of, vswing_of;
+ 	u32 max_imp = imp_lookup[0].microohm;
+ 	u32 min_imp = imp_lookup[imp_size - 1].microohm;
+-	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
++	u32 max_vswing;
+ 	u32 min_vswing = imp_lookup[0].vswing[0];
+ 	u32 val;
+-	u32 regval;
+ 
+ 	if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
+ 		if (val < min_imp || val > max_imp) {
+@@ -130,45 +130,43 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
+ 			return -EINVAL;
+ 		}
+ 
+-		regval = 0;
+-		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
+-			if (imp_lookup[imp_of].microohm <= val) {
+-				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of);
++		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++)
++			if (imp_lookup[imp_of].microohm <= val)
+ 				break;
+-			}
+-		}
++
++		if (WARN_ON(imp_of == ARRAY_SIZE(imp_lookup)))
++			return -EINVAL;
+ 
+ 		dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
+ 			imp_lookup[imp_of].microohm);
+ 
+ 		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+ 				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
+-				   regval);
+-	} else {
+-		regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
+-		imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
+-	}
++				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
++	} else
++		imp_of = DEFAULT_IMP_INDEX;
+ 
+ 	if (!of_property_read_u32(combophy->dev->of_node, "st,output-vswing-microvolt", &val)) {
++		max_vswing = imp_lookup[imp_of].vswing[vswing_size - 1];
++
+ 		if (val < min_vswing || val > max_vswing) {
+ 			dev_err(combophy->dev, "Invalid value %u for output vswing\n", val);
+ 			return -EINVAL;
+ 		}
+ 
+-		regval = 0;
+-		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++) {
+-			if (imp_lookup[imp_of].vswing[vswing_of] >= val) {
+-				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of);
++		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++)
++			if (imp_lookup[imp_of].vswing[vswing_of] >= val)
+ 				break;
+-			}
+-		}
++
++		if (WARN_ON(vswing_of == ARRAY_SIZE(imp_lookup[imp_of].vswing)))
++			return -EINVAL;
+ 
+ 		dev_dbg(combophy->dev, "Set %u microvolt swing\n",
+ 			 imp_lookup[imp_of].vswing[vswing_of]);
+ 
+ 		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
+ 				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
+-				   regval);
++				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
+ 	}
+ 
+ 	return 0;
 -- 
-With best wishes
-Dmitry
+2.34.1
+
 
 -- 
 linux-phy mailing list
