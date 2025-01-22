@@ -4,37 +4,37 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BC78C02181
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 08:46:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34201C02182
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 09:05:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFnY2noWDhMXdiT3BsFKzaTwqibmArr0HChs5SXuvpA=; b=xhpjA7PnOe+u6W
-	PkdGl2ZqvsDr6YirPYw7SalRw3+7XnfJ6j+0t+3Dlw3E+FctsZ6/TA4ByX6SAZkyeELyfBWrEGGiv
-	CSrsUVXQige7XDc8i5Ol+AhWoODVgFgqHZ7D5zQ98BB77k71x9/mhkf+MSo1wOhlZW+Nl+B27TrbT
-	otksVIoTPz2ho5Q3Fqp/KHYbZekwA3JEqIoJhB2JzwuNGukXYhecL/g134r+vrcUMfJrlvcLvnBNE
-	hD3W5WFw1YbyvblAxFPjmTW0m5TGHC4b6CaJmZnxcfOKgLvCaLvVhImoWVgzg0FUrInl5bGdhMomG
-	/fJu/UITU11/v7xbvYdA==;
+	List-Owner; bh=Cj1i9We0iH67Go94fMdPdRvadU1du8OF+uqQTGNvtRU=; b=xNgH7hyUfkcVVv
+	oMqDdcJ2roaGMD3r2VCqA7HVBkpNUmeUHAMk04gTlNf9fAw/pLOy6IwqYNPqXg44fC0zDY092ttQu
+	Qm3F5Otrr5DxNTCtbXEE7kl/zKX3JB4TjkD7KAdnyqF3AvILIgbf4M6RzAqXIcw9fP7oOF9U/dT5B
+	s1gULov6PIwsbNktcKWWD9Xr5Cn2WlZRKg9ZKhb32ZuRoGpa8f3HZQX/Nl47wnm/MzUOaYRFmwy/G
+	D9BQ2xZJ0MhBVw4nY+RRFwMjagxQihFv/SftaJ4hKsOPKZEH0F3rB/N/MBka2Dl0+OXnE9m3FKiQz
+	SXmISgDEyVK1t0w9d0qA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taWNT-00000009jDd-2tsG;
-	Wed, 22 Jan 2025 08:46:23 +0000
-Received: from mail-m1973183.qiye.163.com ([220.197.31.83])
+	id 1taWgB-00000009lEl-39kx;
+	Wed, 22 Jan 2025 09:05:43 +0000
+Received: from mail-m49215.qiye.163.com ([45.254.49.215])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taWNR-00000009jBP-0BP6;
-	Wed, 22 Jan 2025 08:46:22 +0000
+	id 1taWg9-00000009lDw-2Yre;
+	Wed, 22 Jan 2025 09:05:42 +0000
 Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 965a3ba9;
-	Wed, 22 Jan 2025 16:46:13 +0800 (GMT+08:00)
-Message-ID: <a8bee693-cbde-469d-abcf-363311cfd904@rock-chips.com>
-Date: Wed, 22 Jan 2025 16:46:12 +0800
+	by smtp.qiye.163.com (Hmail) with ESMTP id 96647672;
+	Wed, 22 Jan 2025 17:05:37 +0800 (GMT+08:00)
+Message-ID: <26c55255-2671-4bb1-aaee-c3145f8698f7@rock-chips.com>
+Date: Wed, 22 Jan 2025 17:05:36 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 05/20] drm/rockchip: analogix_dp: Replace DRM_...()
- functions with drm_...() or dev_...()
+Subject: Re: [PATCH v5 20/20] arm64: dts: rockchip: Enable eDP0 display on
+ RK3588S EVB1 board
 To: Andy Yan <andyshrk@163.com>
 Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
  conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
@@ -46,27 +46,27 @@ Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-phy@lists.infradead.org
 References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
- <20250109032725.1102465-6-damon.ding@rock-chips.com>
- <40b09942.533e.19449c023a1.Coremail.andyshrk@163.com>
+ <20250109032725.1102465-21-damon.ding@rock-chips.com>
+ <8927876.291e.19454e86e8f.Coremail.andyshrk@163.com>
 Content-Language: en-US
 From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <40b09942.533e.19449c023a1.Coremail.andyshrk@163.com>
+In-Reply-To: <8927876.291e.19454e86e8f.Coremail.andyshrk@163.com>
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQxlKTFYfSElJQh9CTU4eQ01WFRQJFh
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGkIdHlZMTx4eGRlIGh9LTUxWFRQJFh
 	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
 	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a948d30cfa903a3kunm965a3ba9
+X-HM-Tid: 0a948d42906703a3kunm96647672
 X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6K006Lhw6SjIVEi8SKE4XShUf
-	HEMaFBJVSlVKTEhMTkhOTkxOTEhIVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFOQkpPNwY+
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NxQ6Iio4STIXEi9IPh5LDBYV
+	KTAaCQ5VSlVKTEhMTkhNTEhCSkpLVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFISkxMNwY+
 DKIM-Signature: a=rsa-sha256;
-	b=CdOlo6lmDRB4B2FOT82IxbLbIyXMAxBKKopGXCJ2EzehgX1Cl05tmxy0Ma0cDy0A9sn1y4xgW1WMUgIw1T8zrJovXdz668XXGBCK9+ee9XMAsGo5n2i2fN+zmnJs4sLvXMi528J8v5akDjJ8Ho8EjAVfK7sqEdneI6gW6SYe7/Q=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=SGeWmn+7dN7qVlWb70UZTMoFGv6yi5gXMUKkERJ9lEc=;
+	b=CG+gEnx+XPdVro1zdFzCtUaeVySUsXtaffUl3mFF+lfs47HUrqfKK/fVH37Afw5wPC0Kqr4qZ/Iy2hmAuSnfp6ix+7g6MKIZ7LKrZ7eR1gKfBCu5oy7Kgp7rXs1q97nz1ATOSJb8cQyspPDbsna3Iaagk6FtyLDygDm6807jCQw=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=hsQBhgtpgyLUVlhj2uOdXGpB5uzrnxpQS3g2lRTQAn8=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250122_004621_583301_C2571E66 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20250122_010541_855469_526F106F 
+X-CRM114-Status: GOOD (  13.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,159 +85,137 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi Andy,
 
-On 2025/1/9 14:28, Andy Yan wrote:
+On 2025/1/11 18:28, Andy Yan wrote:
 > 
 > Hi Damon,
 > 
-> At 2025-01-09 11:27:10, "Damon Ding" <damon.ding@rock-chips.com> wrote:
->> According to the comments in include/drm/drm_print.h, the DRM_...()
->> functions are deprecated in favor of drm_...() or dev_...() functions.
->>
->> Use drm_err()/drm_dbg_core()/drm_dbg_kms() instead of
->> DRM_DEV_ERROR()/DRM_ERROR()/DRM_DEV_DEBUG()/DRM_DEBUG_KMS() after
->> rockchip_dp_bind() is called, and replace DRM_DEV_ERROR() with dev_err()
->> before calling it.
+> At 2025-01-09 11:27:25, "Damon Ding" <damon.ding@rock-chips.com> wrote:
+>> Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
+>> - Set pinctrl of pwm12 for backlight
+>> - Enable edp0/hdptxphy0/vp2
+>> - Add aux-bus/panel nodes
 >>
 >> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>>
 >> ---
->> .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 29 ++++++++++---------
->> 1 file changed, 15 insertions(+), 14 deletions(-)
 >>
->> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> index 546d13f19f9b..8114c3238609 100644
->> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> @@ -100,13 +100,13 @@ static int rockchip_dp_poweron(struct analogix_dp_plat_data *plat_data)
+>> Changes in v2:
+>> - Remove brightness-levels and default-brightness-level properties in
+>>   backlight node.
+>> - Add the detail DT changes to commit message.
 >>
->> 	ret = clk_prepare_enable(dp->pclk);
->> 	if (ret < 0) {
->> -		DRM_DEV_ERROR(dp->dev, "failed to enable pclk %d\n", ret);
->> +		drm_err(dp->drm_dev, "failed to enable pclk %d\n", ret);
+>> Changes in v3:
+>> - Use aux-bus instead of platform bus for edp-panel.
+>>
+>> Changes in v4:
+>> - Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
+>>   in the commit message.
+>>
+>> Changes in v5:
+>> - Use "edp-panel" instead of "lg,lp079qx1-sp0v"
+>> - Remove unnecessary comments in commit message
+>> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
+>> ---
+>> .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 54 +++++++++++++++++++
+>> 1 file changed, 54 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+>> index bc4077575beb..a8c151b41e21 100644
+>> --- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+>> @@ -9,6 +9,7 @@
+>> #include <dt-bindings/gpio/gpio.h>
+>> #include <dt-bindings/input/input.h>
+>> #include <dt-bindings/pinctrl/rockchip.h>
+>> +#include <dt-bindings/soc/rockchip,vop2.h>
+>> #include <dt-bindings/usb/pd.h>
+>> #include "rk3588s.dtsi"
+>>
+>> @@ -238,6 +239,41 @@ &combphy2_psu {
+>> 	status = "okay";
+>> };
+>>
+>> +&edp0 {
+>> +	force-hpd;
+>> +	status = "okay";
+>> +
+>> +	aux-bus {
+>> +		panel {
+>> +			compatible = "edp-panel";
+>> +			backlight = <&backlight>;
+>> +			power-supply = <&vcc3v3_lcd_edp>;
+>> +
+>> +			port {
+>> +				panel_in_edp: endpoint {
+>> +					remote-endpoint = <&edp_out_panel>;
+>> +				};
+>> +			};
+>> +		};
+>> +	};
+>> +};
+>> +
+>> +&edp0_in {
+>> +	edp0_in_vp2: endpoint {
+>> +		remote-endpoint = <&vp2_out_edp0>;
+>> +	};
+>> +};
+>> +
+>> +&edp0_out {
+>> +	edp_out_panel: endpoint {
+>> +		remote-endpoint = <&panel_in_edp>;
+>> +	};
+>> +};
+>> +
+>> +&hdptxphy0 {
+>> +	status = "okay";
+>> +};
+>> +
+>> &i2c3 {
+>> 	status = "okay";
+>>
+>> @@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
+>> };
+>>
+>> &pwm12 {
+>> +	pinctrl-0 = <&pwm12m1_pins>;
+>> 	status = "okay";
+>> };
+>>
+>> @@ -1168,3 +1205,20 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
+>> 		};
+>> 	};
+>> };
+>> +
+>> +&vop_mmu {
+>> +	status = "okay";
+>> +};
+>> +
+>> +&vop {
+>> +	assigned-clocks = <&cru DCLK_VOP2_SRC>;
+>> +	assigned-clock-parents = <&cru PLL_V0PLL>;
 > 
->                 You just need to pass dp here:
->                  drm_err(dp, "failed to enable pclk %d\n", ret);
+> It's necessary to explain why we need to  assign V0PLL for DCLK_VOP2_SRC in commit message.
+> 
 > 
 
-I see. It is really better to pass dp instead of dp->drm_dev. I will 
-update all relevant logs in the next version.
+I will add relevant explainations in next version.
 
->> 		return ret;
->> 	}
->>
->> 	ret = rockchip_dp_pre_init(dp);
->> 	if (ret < 0) {
->> -		DRM_DEV_ERROR(dp->dev, "failed to dp pre init %d\n", ret);
->> +		drm_err(dp->drm_dev, "failed to dp pre init %d\n", ret);
->> 		clk_disable_unprepare(dp->pclk);
->> 		return ret;
->> 	}
->> @@ -126,12 +126,13 @@ static int rockchip_dp_powerdown(struct analogix_dp_plat_data *plat_data)
->> static int rockchip_dp_get_modes(struct analogix_dp_plat_data *plat_data,
->> 				 struct drm_connector *connector)
->> {
->> +	struct rockchip_dp_device *dp = pdata_encoder_to_dp(plat_data);
->> 	struct drm_display_info *di = &connector->display_info;
->> 	/* VOP couldn't output YUV video format for eDP rightly */
->> 	u32 mask = DRM_COLOR_FORMAT_YCBCR444 | DRM_COLOR_FORMAT_YCBCR422;
->>
->> 	if ((di->color_formats & mask)) {
->> -		DRM_DEBUG_KMS("Swapping display color format from YUV to RGB\n");
->> +		drm_dbg_kms(dp->drm_dev, "Swapping display color format from YUV to RGB\n");
->> 		di->color_formats &= ~mask;
->> 		di->color_formats |= DRM_COLOR_FORMAT_RGB444;
->> 		di->bpc = 8;
->> @@ -201,17 +202,17 @@ static void rockchip_dp_drm_encoder_enable(struct drm_encoder *encoder,
->> 	else
->> 		val = dp->data->lcdsel_big;
->>
->> -	DRM_DEV_DEBUG(dp->dev, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
->> +	drm_dbg_core(dp->drm_dev, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
->>
->> 	ret = clk_prepare_enable(dp->grfclk);
->> 	if (ret < 0) {
->> -		DRM_DEV_ERROR(dp->dev, "failed to enable grfclk %d\n", ret);
->> +		drm_err(dp->drm_dev, "failed to enable grfclk %d\n", ret);
->> 		return;
->> 	}
->>
->> 	ret = regmap_write(dp->grf, dp->data->lcdsel_grf_reg, val);
->> 	if (ret != 0)
->> -		DRM_DEV_ERROR(dp->dev, "Could not write to GRF: %d\n", ret);
->> +		drm_err(dp->drm_dev, "Could not write to GRF: %d\n", ret);
->>
->> 	clk_disable_unprepare(dp->grfclk);
->> }
->> @@ -236,7 +237,7 @@ static void rockchip_dp_drm_encoder_disable(struct drm_encoder *encoder,
->>
->> 	ret = rockchip_drm_wait_vact_end(crtc, PSR_WAIT_LINE_FLAG_TIMEOUT_MS);
->> 	if (ret)
->> -		DRM_DEV_ERROR(dp->dev, "line flag irq timed out\n");
->> +		drm_err(dp->drm_dev, "line flag irq timed out\n");
->> }
->>
->> static int
->> @@ -277,7 +278,7 @@ static int rockchip_dp_of_probe(struct rockchip_dp_device *dp)
->>
->> 	dp->grf = syscon_regmap_lookup_by_phandle(np, "rockchip,grf");
->> 	if (IS_ERR(dp->grf)) {
->> -		DRM_DEV_ERROR(dev, "failed to get rockchip,grf property\n");
->> +		dev_err(dev, "failed to get rockchip,grf property\n");
->> 		return PTR_ERR(dp->grf);
->> 	}
->>
->> @@ -287,19 +288,19 @@ static int rockchip_dp_of_probe(struct rockchip_dp_device *dp)
->> 	} else if (PTR_ERR(dp->grfclk) == -EPROBE_DEFER) {
->> 		return -EPROBE_DEFER;
->> 	} else if (IS_ERR(dp->grfclk)) {
->> -		DRM_DEV_ERROR(dev, "failed to get grf clock\n");
->> +		dev_err(dev, "failed to get grf clock\n");
->> 		return PTR_ERR(dp->grfclk);
->> 	}
->>
->> 	dp->pclk = devm_clk_get(dev, "pclk");
->> 	if (IS_ERR(dp->pclk)) {
->> -		DRM_DEV_ERROR(dev, "failed to get pclk property\n");
->> +		dev_err(dev, "failed to get pclk property\n");
->> 		return PTR_ERR(dp->pclk);
->> 	}
->>
->> 	dp->rst = devm_reset_control_get(dev, "dp");
->> 	if (IS_ERR(dp->rst)) {
->> -		DRM_DEV_ERROR(dev, "failed to get dp reset control\n");
->> +		dev_err(dev, "failed to get dp reset control\n");
->> 		return PTR_ERR(dp->rst);
->> 	}
->>
->> @@ -315,12 +316,12 @@ static int rockchip_dp_drm_create_encoder(struct rockchip_dp_device *dp)
->>
->> 	encoder->possible_crtcs = drm_of_find_possible_crtcs(drm_dev,
->> 							     dev->of_node);
->> -	DRM_DEBUG_KMS("possible_crtcs = 0x%x\n", encoder->possible_crtcs);
->> +	drm_dbg_kms(drm_dev, "possible_crtcs = 0x%x\n", encoder->possible_crtcs);
->>
->> 	ret = drm_simple_encoder_init(drm_dev, encoder,
->> 				      DRM_MODE_ENCODER_TMDS);
->> 	if (ret) {
->> -		DRM_ERROR("failed to initialize encoder with drm\n");
->> +		drm_err(drm_dev, "failed to initialize encoder with drm\n");
->> 		return ret;
->> 	}
->>
->> @@ -340,7 +341,7 @@ static int rockchip_dp_bind(struct device *dev, struct device *master,
->>
->> 	ret = rockchip_dp_drm_create_encoder(dp);
->> 	if (ret) {
->> -		DRM_ERROR("failed to create drm encoder\n");
->> +		drm_err(drm_dev, "failed to create drm encoder\n");
->> 		return ret;
->> 	}
->>
+>> +	status = "okay";
+>> +};
+>> +
+>> +&vp2 {
+>> +	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
+>> +		reg = <ROCKCHIP_VOP2_EP_EDP0>;
+>> +		remote-endpoint = <&edp0_in_vp2>;
+>> +	};
+>> +};
 >> -- 
 >> 2.34.1
 >>
 
 Best regards,
 Damon
+
 
 -- 
 linux-phy mailing list
