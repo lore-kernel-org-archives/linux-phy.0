@@ -4,95 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A91B1C02181
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 13:34:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26FA8C02181
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 18:58:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OdH1M64Vu3+yTXxtxlLgqVcCcXtTUcO2IFhQnTReBB0=; b=J/udd1V6qBqBBJ
-	2uCvyclcFsfnnnJsWbrEGehlMPuFPuJnst4yA2ApdExkFHmAsf6m17c5sxP4bYQ132f7MCC/z4HA1
-	r9izpNjSPpuYONX101NgZGI0WZELBPjLFzgKn1wwdjCPNrSNFnMfYx9qiT9fxCiUHygn1crzBGXFe
-	XpNm9Wfg3VQY0hrAai1qXyC/gQT/VwAaqD/4Aej9BafFdkCC5TPAL5IQOKf9aEGDDMpMSAGA9yswp
-	hEuV2+hggz3McUHc0Xs63qbPvpw/BHgTc+wUwr0pXPkbj6hwr5fHSHWSNwGs8VJiuCEF5H+FXG9Uq
-	wlfGvLrl1LhX34uXXSzQ==;
+	List-Owner; bh=GeJ9wqr5JYihcYmZo50nYICEAcFxmBpyBe95vpIhZH0=; b=yhFXNsVjbnBFSR
+	B560HMff9RqGXTdl7aqvckJ861NH29YRxcIA1Ugl5E4Cb8EAmki3GudJmbIMSUoNPeCwlrJEL/kXJ
+	rzobdN1DtzU2VP3k2xgCR9d85jO65vkrAIlrnD7MnSuZtnlQJZV21I6Xk06jLuz6XQFtLeXe8DAP+
+	58OxhCqSKXMZlDvSlvMltgbIhVrL2YAkvhTTKVW4RznXVV9q1/kCGkknjTxdym7rhEXCX7Xkhn+Bj
+	A+I/LIfoDNdijRc6E7lxLnuEEdm1DcGO4I7gjmou5ecYe4BRnbps/uYg6hRRmhZoZFoFQFN/OS8dp
+	q0mxK3Fz5ZN9WcTpT7VQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taasE-0000000AIOm-0hZY;
-	Wed, 22 Jan 2025 13:34:26 +0000
-Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
+	id 1tafvh-0000000B2Ot-1UHZ;
+	Wed, 22 Jan 2025 18:58:21 +0000
+Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taaoj-0000000AHbc-3lvj
+	id 1taftl-0000000B2BU-0v35
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Jan 2025 13:30:51 +0000
-Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-5401d3ea5a1so6579869e87.3
-        for <linux-phy@lists.infradead.org>; Wed, 22 Jan 2025 05:30:49 -0800 (PST)
+	Wed, 22 Jan 2025 18:56:22 +0000
+Received: by mail-lj1-x229.google.com with SMTP id 38308e7fff4ca-30615661f98so265011fa.2
+        for <linux-phy@lists.infradead.org>; Wed, 22 Jan 2025 10:56:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1737552648; x=1738157448; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MT1Qd4GfkNXwqWLqiWPdrTymaf6z71RpZBpS8qzx2Bk=;
-        b=iv45AssgwtebvEKEwBPLFTB6xqqD/LAVRHzsWclaENlfAd3bk5GleuUb7RtnH+I55D
-         k5IfpDxHJaeVSHs8nHDdnjDshrv8x8uQh1tc/ZWdAoRHl71e5WexTVld8NJaHIesFEUl
-         RbZfyjBwV2XOsjDdopyVxpMAVE4c6IqcS9AP9VfCeQTXLyoYYc5CiqQP1vjbibPVTWQI
-         +c8NyNNsGS8T071E4gcD+5ywZrXp7XspFYMC8oQDke6vZk8RLsEolKQucq94NHIPrR7k
-         1aO/CWbeCJRSexVcdtZU30g5Sy243zhXdRfgIA+bX5tIaKLycV7KZ8RWOoWI96o+eD1y
-         38bw==
+        d=linaro.org; s=google; t=1737572179; x=1738176979; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=ucEtL2vpaDXIcOOJNCX2jaEjGKELSNePIN/Dbu21H78=;
+        b=dXGuyawGNyGuDREcyyNV3FLk+QD/tHC+SzEk22ErptUBPFZwV7RPhT7w0aSukNrYe4
+         doFjkdAseXucQ0FomEo72H/neMF/plmf6fGosADN6p8fqSgMzZahgeolIkbF0S+yDIL7
+         D+APA8HYPLbKyEQXJGYM5PaSYI8QDItbsg+H0FD6AkyOcFy+l/AWXA92kEUF0/OP9bZS
+         I6LR9JA9b4nxYN7NhYqaFBVE61hVk+qrLFlFcJi+fAS401/5BQIuLzfcZa2vs/eLjc8o
+         nTQT9tFRQ9AKcBAGt6Fz8zhfr9i7eEpr25h8X+bKs5IyL1xvyqlk5O0KjVovyoa3SJ7P
+         yqtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737552648; x=1738157448;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MT1Qd4GfkNXwqWLqiWPdrTymaf6z71RpZBpS8qzx2Bk=;
-        b=NOJvu+NUjl7ed7xltGdVzZbf7xVk+C5EMcr/Wp8CdRMBgyUsHTaCMCMa/7IwW3aUir
-         0bHwz0/N9iC7oTBgndvUpzmCv+Jp3LB2ERfdm2OBn0ILNKgi4WR27M7pZot3E2kscyoh
-         MNCcXND35dara/nh35d0XnBXbK3AX37dsLM9xYy8UqjkbdTbzFoIIAOHlaqQsrrzpYeV
-         U3Uqh5q2bRbOZ3LAQx6kMfGCmHF2+R33Axw6vpctIwDnOxmtNBD5eaPuQ/ogi28pgOqd
-         J7CtGzLH+hKCnuOnzyUgSkREZwu57ej7MUkAzPML47wf5nVwbBIGj7h0UyfoI89j16ar
-         6iQw==
-X-Forwarded-Encrypted: i=1; AJvYcCVR80zrNXngoiWr+A7rCvXc5F0T01zI6rHfOqPOo+E1vSDekJTwqNC2BekocHGE+15zfMASI1wW/uw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwB5+u+8wDi7mTYe94IeRHDkmpHTWuzoQ0wKU6IMOxZFPsgVMqw
-	jOekUJk0DD++TgtbF9qMBl97rfQFGOvAz3r9Tm11ai2VV/mQHFT923GCYM4/tPx3fAf/f1ivT+s
-	zeVJ81D+BUcXpExYSZpZ+U0UgQo1S9Se67ke8/w==
-X-Gm-Gg: ASbGnct16BJZHmHndGKY1tsKCGqFoSu1eIoK7Uzch44XaVRJnjsg6dY78eLMq4pE8OK
-	UaQBc/2mnhTbldKRpDE++yBzUO8qGkEgeDp1oxP8UmYUTJBbeJA==
-X-Google-Smtp-Source: AGHT+IGs/n7Ljor2d3ADarC6NG+9NmWSbVqt5BnALy/+iVRtZ9CeuWAGeuayEWCsA+u7d2kSrA4qXict3/8+PKzO1MM=
-X-Received: by 2002:a05:6512:ad5:b0:542:8d45:cb3e with SMTP id
- 2adb3069b0e04-5439c241016mr8306080e87.18.1737552647836; Wed, 22 Jan 2025
- 05:30:47 -0800 (PST)
+        d=1e100.net; s=20230601; t=1737572179; x=1738176979;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ucEtL2vpaDXIcOOJNCX2jaEjGKELSNePIN/Dbu21H78=;
+        b=FoXNDDe+iTykyD4uhkJZBGgImO0640Eq3RTgYt+mgzeTCeQAr3ijsNSsw55io8lnC1
+         rLAe9NJulkc3TlgaMoPJ/cJmjO1dnunTNVXVT3G04OHIDpswX+Xkm9MpyUkUX+JAelg5
+         yuIvEElVySicloljelctgZTzHINrYJ6w6QbygVNrcoG8hvqxTOypujKQRTQDVyND/Dxy
+         3YE0nJJWx3YWFvCVjMZByOTv6BFMLeIPfohzlEyVT1yh7KhO0crVwSdH1tsHb1g4uxQf
+         PwL7djAxn+bDLgkQtS05+X+p6F/sjlKSYNNeBsUUH9ec9gy8v9XT1zCmi73U4GlYMDXs
+         vtIw==
+X-Forwarded-Encrypted: i=1; AJvYcCUtmQJgz/lyq4U3IBUvXMINId5V6tHX1RzWe7InSJYFXAJ2EBhshWKwip4AvlEDs3j35ziXjsWfCxk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwoIN4IhfuxZLBIryUO4xUDgPzCCgzYkgOWEi3uVLk7H46wiB3t
+	zV0cvLBThxbWgquj38CgEdmjJqwPk0Z60QvrnNv+nWQnCDu9pZzRAUD8T9S7e9E=
+X-Gm-Gg: ASbGncvZXL0+MpPY6H3W2XPtn6lANJeA6TIyOT9k0yafbt9aVPjoQQkTuQqYzN6nHWD
+	N9A66Dm6gJxfwzaH7LLpB5gFlJjSOu6FFciBxJeR6nBruEC2hWQ3HzejGBfLXrVfbA20x9lwucA
+	14ERl9XaDP99kjEUzhc4jkMj8bMa0A76fc3q1PniF03dNwT4SZVf3nmHTLnB9MDtYy/BiGjqUhM
+	wfVFRrAQE64NtE0pSKLGNkx6KJcg8qRIDKfl5Q/6ej2fRTc4OyaXnFWrzqAjl7GYdGhdiN6aGVH
+	wrVKRf44f1O+w9KPvASoWLiekdLV3s1Az3tzJj1VUcZAa3J+tQ==
+X-Google-Smtp-Source: AGHT+IH1Num8sybuVWGX6lQCu41xk40pAQuzRF+kjqRrF1p7We/fl/ksVQE0dG+SV6CSYwqD02NYlQ==
+X-Received: by 2002:a05:651c:1713:b0:300:7f87:a6a with SMTP id 38308e7fff4ca-3072cab0c95mr63866951fa.7.1737572178788;
+        Wed, 22 Jan 2025 10:56:18 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3072a35acb6sm26558281fa.62.2025.01.22.10.56.17
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 22 Jan 2025 10:56:17 -0800 (PST)
+Date: Wed, 22 Jan 2025 20:56:15 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Damon Ding <damon.ding@rock-chips.com>
+Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org, 
+	sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
+	andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
+	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v5 12/20] drm/rockchip: analogix_dp: Add support to get
+ panel from the DP AUX bus
+Message-ID: <qrtcanwfokvc5x6xtgxhi2fs6fcibhnnhenegrdialx7cgy7u3@ea4v3woh5gki>
+References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
+ <20250109032725.1102465-13-damon.ding@rock-chips.com>
+ <d7zpv6qt52mhny54dejw4yqlp2k2c437op7qmepqe27pufplqk@64xvohrz7h2q>
+ <330041c4-aaee-4b41-8ccd-e2807415c709@rock-chips.com>
+ <ba369b98-9a2a-421a-9251-4db3c1dcedd9@rock-chips.com>
 MIME-Version: 1.0
-References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-4-szemzo.andras@gmail.com> <20250114141954.2785879a@donnerap.manchester.arm.com>
- <CACRpkda0nx3SQtdjmXdCEbVJSWM10TM=p-6JbDjbiYcOSF5PxQ@mail.gmail.com>
- <20250115152635.1b89e7f4@donnerap.manchester.arm.com> <CACRpkdYVTedEon0X-izvaDTGF6yRhD2s=Z6NEM=zBf4vD-T0Pg@mail.gmail.com>
- <20250117145228.2fc8a64e@donnerap.manchester.arm.com>
-In-Reply-To: <20250117145228.2fc8a64e@donnerap.manchester.arm.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 22 Jan 2025 14:30:36 +0100
-X-Gm-Features: AbW1kvbmavQU6KJ-WzCpG2eI69ENGFRQZ6H5c_O0ajyC4q6k3ZeKpvUjD-d9bk8
-Message-ID: <CACRpkdZ29=mCqLku4Obq+E5j6kS4NZchwCtrTeCt0qUctn6Czg@mail.gmail.com>
-Subject: Re: [PATCH 03/12] pinctrl: sunxi: add driver for Allwinner V853.
-To: Andre Przywara <andre.przywara@arm.com>
-Cc: Andras Szemzo <szemzo.andras@gmail.com>, Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Paul Walmsley <paul.walmsley@sifive.com>, 
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, 
-	=?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
-	Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, 
-	linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <ba369b98-9a2a-421a-9251-4db3c1dcedd9@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250122_053049_939878_19DA41C2 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20250122_105621_252449_874DFE44 
+X-CRM114-Status: GOOD (  29.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,28 +103,131 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBKYW4gMTcsIDIwMjUgYXQgMzo1MuKAr1BNIEFuZHJlIFByenl3YXJhIDxhbmRyZS5w
-cnp5d2FyYUBhcm0uY29tPiB3cm90ZToKCj4gVGhhdCBpcyBhY3R1YWxseSBhIGdvb2QgYXJndW1l
-bnQ6IEF0IHRoZSBtb21lbnQgSSBhbSBoYXBweSB3aXRoIG15Cj4gcHJvcG9zYWwgKHRoZSBhbGx3
-aW5uZXIscGlubXV4ID0gPG51bWJlcj47IHByb3BlcnR5KSwgYnV0IHRoYXQgc2VlbXMgbGlrZQo+
-IHN0YW5kYXJkICMxNSB0aGVuLgo+IFNvIHdvdWxkIGJpdGluZyB0aGUgYnVsbGV0IGFuZCBhZG9w
-dGluZyB0aGUgQXBwbGUvU1RNMzIgd2F5IHRoZW4gYmUgbW9yZQo+IHN1c3RhaW5hYmxlPwoKSSBz
-dXBwb3NlLi4uCgo+IE9uIHRoZSBvdGhlciBoYW5kOiB0aGUgYWxsd2lubmVyLHBpbm11eCBzb2x1
-dGlvbiBoYXMgdGhlIGFkdmFudGFnZSBvZiBiZWluZwo+IGFscmVhZHkgd3JpdHRlbiBhbmQgcHJv
-dmVuIHdvcmtpbmcsIGFsc28gaXQgc3RheXMgdmVyeSBjbG9zZSB0byB0aGUKPiBleGlzdGluZyBk
-ZXNjcmlwdGlvbi9iaW5kaW5nIC0gc28gaW1wbGVtZW50YXRpb25zIGxpa2UgVS1Cb290IGNvdWxk
-IGp1c3QKPiBrZWVwIG9uIHVzaW5nIHRoZSAiZnVuY3Rpb24iIHN0cmluZy4KPgo+IEkgYW0gYSBi
-aXQgdG9ybiBoZXJlLi4uIEkgZG9uJ3QgdGhpbmsgSSB3aWxsIGZpbmQgdGhlIHNvbGl0dWRlIHRv
-Cj4gaW1wbGVtZW50IHRoaXMgIkFwcGxlIiBhcHByb2FjaCBpbiB0aGUgbmV4dCBmZXcgd2Vla3Mu
-CgpJIHRoaW5rIHdoYXRldmVyIHRoZSBBbGx3aW5uZXIgbWFpbnRhaW5lcnMgYWdyZWUgaXMgdGhl
-IGJlc3Qgc2hvdWxkCmJlIHdoYXQgeW91IGdvIGZvci4gSXQgaXMgYSBsb3Qgb2YgaG9iYnlpc3Qg
-bWFpbnRhaW5lcnMgaW4gdGhpcyBzcGFjZQphbmQgZm9yIHRoZW0gdGhlIGJhciBzaG91bGQgYmUg
-bG93ZXIuCgpJZiB5b3UgaGF2ZSBidXktaW4gZnJvbSB0aGUgb3RoZXIgbWFpbnRhaW5lcnMsIHRo
-ZW4gZ28gZm9yIHRoYXQKc29sdXRpb24uCgpZb3VycywKTGludXMgV2FsbGVpagoKLS0gCmxpbnV4
-LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Wed, Jan 22, 2025 at 05:37:53PM +0800, Damon Ding wrote:
+> Hi Dmitry,
+> =
+
+> On 2025/1/22 16:17, Damon Ding wrote:
+> > Hi Dmitry,
+> > =
+
+> > On 2025/1/9 20:48, Dmitry Baryshkov wrote:
+> > > On Thu, Jan 09, 2025 at 11:27:17AM +0800, Damon Ding wrote:
+> > > > Move drm_of_find_panel_or_bridge() a little later and combine it wi=
+th
+> > > > component_add() into a new function rockchip_dp_link_panel().
+> > > > The function
+> > > > will serve as done_probing() callback of devm_of_dp_aux_populate_bu=
+s(),
+> > > > aiding to support for obtaining the eDP panel via the DP AUX bus.
+> > > > =
+
+> > > > If failed to get the panel from the DP AUX bus, it will then try
+> > > > the other
+> > > > way to get panel information through the platform bus.
+> > > > =
+
+> > > > In addition, use dev_err() instead of drm_err() in rockchip_dp_powe=
+ron()
+> > > > , which will be called before rockchip_dp_bind().
+> > > > =
+
+> > > > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+> > > > =
+
+> > > > ---
+> > > > =
+
+> > > > Changes in v4:
+> > > > - Use done_probing() to call drm_of_find_panel_or_bridge() and
+> > > > =A0=A0 component_add() when getting panel from the DP AUX bus
+> > > > =
+
+> > > > Changes in v5:
+> > > > - Use the functions exported by the Analogix side to get the pointe=
+rs of
+> > > > =A0=A0 struct analogix_dp_plat_data and struct drm_dp_aux.
+> > > > - Use dev_err() instead of drm_err() in rockchip_dp_poweron().
+> > > > =
+
+> > > > ---
+> > > > =A0 .../gpu/drm/rockchip/analogix_dp-rockchip.c=A0=A0 | 41 ++++++++=
+++++++-----
+> > > > =A0 1 file changed, 30 insertions(+), 11 deletions(-)
+> > > > =
+
+> > > > diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/
+> > > > drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> > > > index 0957d3c5d31d..3ae01b870f49 100644
+> > > > --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> > > > +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> > > > @@ -124,13 +124,13 @@ static int rockchip_dp_poweron(struct
+> > > > analogix_dp_plat_data *plat_data)
+> > > > =A0=A0=A0=A0=A0 ret =3D clk_prepare_enable(dp->pclk);
+> > > > =A0=A0=A0=A0=A0 if (ret < 0) {
+> > > > -=A0=A0=A0=A0=A0=A0=A0 drm_err(dp->drm_dev, "failed to enable pclk =
+%d\n", ret);
+> > > > +=A0=A0=A0=A0=A0=A0=A0 dev_err(dp->dev, "failed to enable pclk %d\n=
+", ret);
+> > > =
+
+> > > =
+
+> > > why?
+> > > =
+
+> > =
+
+> > The &rockchip_dp_device.drm_dev will be assigned in rockchip_dp_bind(),
+> > which is called after probing process. The PM operations have been
+> > advanced to the probing for the AUX transmission, so the dev_err() may
+> > be better than drm_err().
+> > =
+
+> =
+
+> Using drm_...() uniformly may be better [0].
+
+Yes
+
+> =
+
+> > > > =A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
+> > > > =A0=A0=A0=A0=A0 }
+> > > > =A0=A0=A0=A0=A0 ret =3D rockchip_dp_pre_init(dp);
+> > > > =A0=A0=A0=A0=A0 if (ret < 0) {
+> > > > -=A0=A0=A0=A0=A0=A0=A0 drm_err(dp->drm_dev, "failed to dp pre init =
+%d\n", ret);
+> > > > +=A0=A0=A0=A0=A0=A0=A0 dev_err(dp->dev, "failed to dp pre init %d\n=
+", ret);
+> > > > =A0=A0=A0=A0=A0=A0=A0=A0=A0 clk_disable_unprepare(dp->pclk);
+> > > > =A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
+> > > > =A0=A0=A0=A0=A0 }
+> > > =
+
+> =
+
+> Best regards,
+> Damon
+> =
+
+> [0]https://patchwork.kernel.org/project/linux-rockchip/patch/202501090327=
+25.1102465-6-damon.ding@rock-chips.com/#26209891
+> =
+
+
+-- =
+
+With best wishes
+Dmitry
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
