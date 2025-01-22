@@ -4,92 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D0E6C02182
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 06:35:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4439C02181
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 06:54:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z6k8jIHr5MAkuXaiQXBizBZwyRfXNrKwtsiQVJwVS+8=; b=JIoKtqKaHAr2jB
-	xKST1L1fET2Ho7DR3wLqT5T/zld9mknELPFLhbM1ZtSG4Ddl97v/eX8sdF2VR+bYSq5DLmkjPch5n
-	kSJr2B2yE6s9BNaVi11XAge6taBAfpgpxafOPwN4HVTOw8aslPUH0qzt7+huToE4z084yPH+NG+l2
-	dF1+L5W/L4PHrafLzULSA8uBsDSjwud93kN5isbKTeDT6WJAz/hPc3TGwsoNWDW7U/8zNEDNbNFQm
-	xeXTY2iyMuUv6/V5JAE/XDosTQ6aASUvhRa1Gso2xnsGFpNlrspS0WUyRZ9fSqMzbA0VCAe3GO2uP
-	WB+IJhAE1tV51MJuf39g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g8wyGNx4t+at2wYA5vgPxmdvFOkKKT8UpzSOc82ZLdQ=; b=URKutNr0oeQpLA
+	VOHvnOuLk72iDnhT1y+WrisWd1OJRUj4BQ8F8o1cgXK/mrjpFy81pJnDrpxonNeKH0wILB0Ot8Tqu
+	I1XLqEFqg98+CAadSjRWrBvo0LTqgG3+D+sbhtI7SVbCquhDNjdUwLjpin1NL3zypl6UDabSIgXfG
+	dp5j5981gXU6EgUMuzY55ejvR8PPi2T0ZTB2NK2jtqhsQA9XweNz9Z3Og1EpoUosFC/lUifjHt0vs
+	YNfpO9rcUNsJffXWi1gIcmp/OFcPLqQ0Or2Yaf8awGMtBTvxTfoVBJSSPyT2dENStm7VeYYYk3/5k
+	iHTOJZmDEaH/LTHrOoPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taUKi-00000009Vjb-3pwm;
-	Wed, 22 Jan 2025 06:35:24 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1taUdf-00000009Y7M-1IxJ;
+	Wed, 22 Jan 2025 06:54:59 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taUKg-00000009VjB-1z2y
-	for linux-phy@lists.infradead.org;
-	Wed, 22 Jan 2025 06:35:23 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50M6Ve0N018269;
-	Wed, 22 Jan 2025 06:35:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hhl8LhVLSIOFxcEP2RPodjO6sTk2njoaqUrh5OIEc1k=; b=BBi+B0r3rS7lT6FK
-	e254YI9crhcVbLeLEgObwcHsw496XFNfpPi/DIZjjlMPgjeSVYJoQvbOTa0ArQk1
-	uc4CKe8+/bTmjdD+mJtNyGOTgmoYLmldYvphWQcgj3ySWPlHLG5V/ExLCBKSLXj6
-	Yq+jdy9gWwcNvGKq7gh0Iv1OQgc3mgIiJqEGRZWcx6y6w1sI7oNBkHtuo4ni3Eue
-	YGrcKKtNTPtH6cZje2Mro38l6p497S/5dkVUWxnCs+jQxrn9nhnrol0PpXS0Z3dU
-	gg6447xlqMpC8SRT3a3gLz1h4BYC/vORbv0BtZaXpACVrYiOGkxk9GJJgKuTRJ6c
-	QJpaLg==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44aug28097-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Jan 2025 06:35:13 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50M6ZCKV008514
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 22 Jan 2025 06:35:12 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 21 Jan 2025 22:35:06 -0800
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
-        <quic_nsekar@quicinc.com>, <quic_varada@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-CC: Praveenkumar I <quic_ipkumar@quicinc.com>,
-        Konrad Dybcio
-	<konrad.dybcio@oss.qualcomm.com>
-Subject: [PATCH v7 7/7] arm64: dts: qcom: ipq5332-rdp441: Enable PCIe phys and controllers
-Date: Wed, 22 Jan 2025 12:04:11 +0530
-Message-ID: <20250122063411.3503097-8-quic_varada@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250122063411.3503097-1-quic_varada@quicinc.com>
-References: <20250122063411.3503097-1-quic_varada@quicinc.com>
+	id 1taUbe-00000009Xvo-3ECz;
+	Wed, 22 Jan 2025 06:52:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id C67995C4AD0;
+	Wed, 22 Jan 2025 06:52:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA25EC4CED6;
+	Wed, 22 Jan 2025 06:52:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1737528773;
+	bh=I763Oa/eMnsSlbkfcMXLpMoWKkAVbmdkHlpluk14S2U=;
+	h=From:To:Cc:Subject:Date:From;
+	b=sd47wlCr0vdUjmjxCSegDkO6VOc07MkgL79bE+w0NKECtY4aPCZU1g6CFGTqdfuAe
+	 SZvfwqXvGbdY7cIUSA9/Zo0ckUg+QJb0kxFnh2dCqPfejKLCvCn5HeHbXqdhZDMq87
+	 hD/fdQEGdoy1R5SadPhaNhHtTdTpvj162AaYvXh0uxRnKYUWldWKfRx8sysLUF60Fh
+	 PQNPV0F334lhpPeC041/0hnii0Y4G2AkwdwOFjsQuSYYBdbyx3ZNdvHeW9W9eF2D0M
+	 P7Z5EBHKMyq5jqZpZQofY8ELXCc4tdPCGw6SibbxjD41Tovte4uJhocGIhYFjDuurH
+	 empItcXx2e4gA==
+From: Arnd Bergmann <arnd@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Arnd Bergmann <arnd@arndb.de>
+Cc: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+	Zhang Yubing <yubing.zhang@rock-chips.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: rockchip: fix Kconfig dependency more
+Date: Wed, 22 Jan 2025 07:52:44 +0100
+Message-Id: <20250122065249.1390081-1-arnd@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: l9k2AjxiY17NyLLrscXySDeHfgD89f3f
-X-Proofpoint-ORIG-GUID: l9k2AjxiY17NyLLrscXySDeHfgD89f3f
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-22_02,2025-01-22_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 spamscore=0
- priorityscore=1501 impostorscore=0 malwarescore=0 mlxlogscore=999
- adultscore=0 bulkscore=0 suspectscore=0 phishscore=0 lowpriorityscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501220046
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_223522_643404_76B63215 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20250121_225254_853456_01E01C90 
+X-CRM114-Status: GOOD (  11.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,121 +77,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Praveenkumar I <quic_ipkumar@quicinc.com>
+From: Arnd Bergmann <arnd@arndb.de>
 
-Enable the PCIe controller and PHY nodes for RDP 441.
+A previous patch ensured that USB Type C connector support is enabled,
+but it is still possible to build the phy driver without enabling
+CONFIG_USB (host support) or CONFIG_USB_GADGET (device support), and
+in that case the common helper functions are unavailable:
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+aarch64-linux-ld: drivers/phy/rockchip/phy-rockchip-usbdp.o: in function `rk_udphy_probe':
+phy-rockchip-usbdp.c:(.text+0xe74): undefined reference to `usb_get_maximum_speed'
+
+Select CONFIG_USB_COMMON directly here, like we do in some other phy
+drivers, to make sure this is available even when actual USB support
+is disabled or in a loadable module that cannot be reached from a
+built-in phy driver.
+
+Fixes: 9c79b779643e ("phy: rockchip: fix CONFIG_TYPEC dependency")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
-v5: Add 'Reviewed-by: Konrad Dybcio'
+ drivers/phy/rockchip/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-v4: Fix nodes sort order
-    Use property-n followed by property-names
-
-v3: Reorder nodes alphabetically
-    Fix commit subject
----
- arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts | 76 +++++++++++++++++++++
- 1 file changed, 76 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts b/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-index 846413817e9a..79ec77cfe552 100644
---- a/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-@@ -32,6 +32,34 @@ &sdhc {
- 	status = "okay";
- };
- 
-+&pcie0 {
-+	pinctrl-0 = <&pcie0_default>;
-+	pinctrl-names = "default";
-+
-+	perst-gpios = <&tlmm 38 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 39 GPIO_ACTIVE_LOW>;
-+
-+	status = "okay";
-+};
-+
-+&pcie0_phy {
-+	status = "okay";
-+};
-+
-+&pcie1 {
-+	pinctrl-0 = <&pcie1_default>;
-+	pinctrl-names = "default";
-+
-+	perst-gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 48 GPIO_ACTIVE_LOW>;
-+
-+	status = "okay";
-+};
-+
-+&pcie1_phy {
-+	status = "okay";
-+};
-+
- &tlmm {
- 	i2c_1_pins: i2c-1-state {
- 		pins = "gpio29", "gpio30";
-@@ -40,6 +68,54 @@ i2c_1_pins: i2c-1-state {
- 		bias-pull-up;
- 	};
- 
-+	pcie0_default: pcie0-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio37";
-+			function = "pcie0_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio38";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio39";
-+			function = "pcie0_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
-+	pcie1_default: pcie1-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio46";
-+			function = "pcie1_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio47";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio48";
-+			function = "pcie1_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	sdc_default_state: sdc-default-state {
- 		clk-pins {
- 			pins = "gpio13";
+diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+index 2f7a05f21dc5..dcb8e1628632 100644
+--- a/drivers/phy/rockchip/Kconfig
++++ b/drivers/phy/rockchip/Kconfig
+@@ -125,6 +125,7 @@ config PHY_ROCKCHIP_USBDP
+ 	depends on ARCH_ROCKCHIP && OF
+ 	depends on TYPEC
+ 	select GENERIC_PHY
++	select USB_COMMON
+ 	help
+ 	  Enable this to support the Rockchip USB3.0/DP combo PHY with
+ 	  Samsung IP block. This is required for USB3 support on RK3588.
 -- 
-2.34.1
+2.39.5
 
 
 -- 
