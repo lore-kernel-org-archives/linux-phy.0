@@ -4,68 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26205C02181
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 22:34:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E46FAC02181
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 23:23:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=78ebz3ev38SC9kBLnmKe+Db2P/dHm2x/6cU5ouYbKec=; b=aK/eycK20403NI
-	EWI70q/oLtKVDZ2iKfsYsHYB1/DWl4GVQ1L/7lRGayuASUDB6GAAGlgHylVRnf7B9maHQ0wCqE68i
-	B/1V7EKFW2PsqRvYQem9txPUwYT/C/kCEk6OZ9IkY0Y8i14CfhTXRdtxXySrB9j/w6y6U72I6tzaa
-	y817OY3d8cnr4EuClCuGtWTJuuGPSjZr0eHD5WdjD1JtJZ4+CfIkEpQ2VWwKoYomDM6W5Q1g6CHQ/
-	m1Kp4RTIeFny4Epk6JsQ+9H4P0KIPMiWMtFtmtfPZRWZKpWfCcQkdGCv9azf6xDxAOrbzK4ra8AOs
-	QCPe7/k0TdGgYx4Nxhag==;
+	List-Owner; bh=xtZUBrWjRSzR3Ch8Jc1sPGJ3lsE8/hoKaxe73S2JiZE=; b=zz92m6HQGqbdw8
+	k7YWKETuAaMFYLFqGzy07aSv03nU4q5kBKSEOgT61BxWgaYd12fKvA/vRSiCO2QprvpcgazJbCuHt
+	N6hLYa3URNS0QYC4Kqt+FHt4bvEC4swurPHb2r5d54TIQZvp6imJ00flG3sBNxk0oo/P8dlRdE1Qt
+	nv9zngZ9CmOSRmk8I15TalWEJjdCbB4gz+x50XEd+yiavEXne0LCYwvY3A0eVHH9wVZ2fxe2cpy5L
+	/BNo4ePC+AvpDA7ev+Ylu41jjh9Fx22yueqsNVfj78EePMGGVD50jb3NeqzHPQA0pOVzFXTf3sGJk
+	7S2OU5ILSzodDnH+p7Zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tajIt-0000000BLFg-2Wm5;
-	Wed, 22 Jan 2025 22:34:31 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1tak4a-0000000BOlR-0fU5;
+	Wed, 22 Jan 2025 23:23:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tajHZ-0000000BL7b-3RlX;
-	Wed, 22 Jan 2025 22:33:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1737585183; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=Mf5SCFjvqN7ECeeglhX4pUqVwkTxLeBy165andaGnIp/Fgu2n/1sN6TDoqBtOU2B6o8tkAl9Cftz/EYiJHMVFns+Hy8/Q3sA+Hxd9s/vd1R7wUJd4/kFQYfA7K91vgdM8SN4oVMgW10n5mSUeFZnVDyzAW36UIdR68t+n/VxrsM=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1737585183; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=VK83oYZiUr/4FmQT3AHsLHS5JaACjWwYH+JkriqTEp0=; 
-	b=EOajkPhdQFwFGSaeZn8sjYVOeX3nf2OUIcG4inISrTCUcaZ1Kir8njkIMAdbBQ6jtrSn5VY6HHPS6/DSjFQplXRVgJznOqhDl7Is85m+Tg2lljv7myHfivzd6Vyo2Rs6pvi2qBXDM2qbRw71PA+910zpdXMu3EGgKW6ILsqgtKo=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1737585183;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:Content-Transfer-Encoding:In-Reply-To:Message-Id:Reply-To;
-	bh=VK83oYZiUr/4FmQT3AHsLHS5JaACjWwYH+JkriqTEp0=;
-	b=FrK5YHLSKXM+x3in0IfbPVxSH6sl9S5nkt1rAE5IOjgSaXDZNf/nlH4aMR1+1TmZ
-	jCpyUNWSWtcZy/yCR4A0rRakBY5nIWx++R0S8QaZ9gvlCILFHxAYE7hnik6W2YNX+CJ
-	IoRmX3lqWISJbRL+iiMvXz3XrXDpD9Lrtmfrpoeg=
-Received: by mx.zohomail.com with SMTPS id 1737585179773821.5799938261969;
-	Wed, 22 Jan 2025 14:32:59 -0800 (PST)
-Received: by venus (Postfix, from userid 1000)
-	id 833431808C6; Wed, 22 Jan 2025 23:32:56 +0100 (CET)
-Date: Wed, 22 Jan 2025 23:32:56 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Arnd Bergmann <arnd@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Arnd Bergmann <arnd@arndb.de>, 
-	Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, Zhang Yubing <yubing.zhang@rock-chips.com>, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: rockchip: fix Kconfig dependency more
-Message-ID: <zf6uopaitghxemdrjzbyb3kilkd4xncg6ckdhrauprcqc4m4gy@lvwzhptywvzy>
-References: <20250122065249.1390081-1-arnd@kernel.org>
+	id 1tak4X-0000000BOl3-1Dvp;
+	Wed, 22 Jan 2025 23:23:46 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50MGpaE4004030;
+	Wed, 22 Jan 2025 23:23:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	PQ9ID+y+HYqvdGcyA/HuZ8MXuYAda/StiIy444/tIYw=; b=Um2U5XD6HENLY6Va
+	PQ/7Zee4uMIm2K5uJ68ivcvwIAnr6h5XRGJgLLX0Eaq1Gf8IukTMAwtOBZm6toFO
+	v1a2UA/4CC7w5k5tylnhPm9o7HhtkmI9wIXDz/9mGZUCYFXqlaKNlN3nz/pWNaIm
+	uBBy8YvJmR0FycamItBe9an9EGQdYSfVrywjY+260lxhYhS6JAqE8ohBtQ6SkiQU
+	ZbnK91SybUy2Lns4g9E6JexZtlTUoVY4ucMlWg48hvnzo0HrLDafyWh+BBBbR5x3
+	8TRJDH7js2jdCzQd1oZlCG6/iaAeKSkrcIECGY98iVQ0AOZn41z/KqDpdd/d45aA
+	Bgts9g==
+Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44b4jm0s1t-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 22 Jan 2025 23:23:33 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50MNNWJQ007045
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 22 Jan 2025 23:23:32 GMT
+Received: from [10.81.24.74] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 22 Jan
+ 2025 15:23:32 -0800
+Message-ID: <36af1162-cd43-4045-bb43-b8bbf44f9788@quicinc.com>
+Date: Wed, 22 Jan 2025 15:23:29 -0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250122065249.1390081-1-arnd@kernel.org>
-X-ZohoMailClient: External
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 05/12] clk: sunxi-ng: add CCU drivers for V853
+To: Andras Szemzo <szemzo.andras@gmail.com>,
+        Michael Turquette
+	<mturquette@baylibre.com>,
+        Stephen Boyd <sboyd@kernel.org>, Rob Herring
+	<robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+	<conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+        Jernej Skrabec
+	<jernej.skrabec@gmail.com>,
+        Samuel Holland <samuel@sholland.org>,
+        Linus
+ Walleij <linus.walleij@linaro.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Maxime Ripard <mripard@kernel.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Ulf Hansson <ulf.hansson@linaro.org>,
+        Paul Walmsley
+	<paul.walmsley@sifive.com>,
+        Palmer Dabbelt <palmer@dabbelt.com>,
+        Albert Ou
+	<aou@eecs.berkeley.edu>,
+        =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+	<u.kleine-koenig@baylibre.com>,
+        Florian Fainelli
+	<florian.fainelli@broadcom.com>,
+        <linux-clk@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>, <linux-sunxi@lists.linux.dev>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-gpio@vger.kernel.org>, <linux-pm@vger.kernel.org>,
+        <linux-riscv@lists.infradead.org>
+References: <20250110123923.270626-1-szemzo.andras@gmail.com>
+ <20250110123923.270626-6-szemzo.andras@gmail.com>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+Content-Language: en-US
+In-Reply-To: <20250110123923.270626-6-szemzo.andras@gmail.com>
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 0rtJg0pCT2kcaINT24J2xEvyArlsT86f
+X-Proofpoint-GUID: 0rtJg0pCT2kcaINT24J2xEvyArlsT86f
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-22_10,2025-01-22_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 impostorscore=0
+ spamscore=0 mlxlogscore=922 priorityscore=1501 phishscore=0 mlxscore=0
+ suspectscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
+ definitions=main-2501220170
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250122_143309_965046_9A22156B 
-X-CRM114-Status: GOOD (  20.51  )
+X-CRM114-CacheID: sfid-20250122_152345_478033_D753009D 
+X-CRM114-Status: UNSURE (   6.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,53 +127,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On 1/10/25 04:39, Andras Szemzo wrote:> +module_platform_driver(sun8i_v853_r_ccu_driver);
+> +
+> +MODULE_IMPORT_NS("SUNXI_CCU");
+> +MODULE_LICENSE("GPL");
 
-On Wed, Jan 22, 2025 at 07:52:44AM +0100, Arnd Bergmann wrote:
-> From: Arnd Bergmann <arnd@arndb.de>
-> 
-> A previous patch ensured that USB Type C connector support is enabled,
-> but it is still possible to build the phy driver without enabling
-> CONFIG_USB (host support) or CONFIG_USB_GADGET (device support), and
-> in that case the common helper functions are unavailable:
-> 
-> aarch64-linux-ld: drivers/phy/rockchip/phy-rockchip-usbdp.o: in function `rk_udphy_probe':
-> phy-rockchip-usbdp.c:(.text+0xe74): undefined reference to `usb_get_maximum_speed'
-> 
-> Select CONFIG_USB_COMMON directly here, like we do in some other phy
-> drivers, to make sure this is available even when actual USB support
-> is disabled or in a loadable module that cannot be reached from a
-> built-in phy driver.
-> 
-> Fixes: 9c79b779643e ("phy: rockchip: fix CONFIG_TYPEC dependency")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
+Since commit 1fffe7a34c89 ("script: modpost: emit a warning when the
+description is missing"), a module without a MODULE_DESCRIPTION() will
+result in a warning with make W=1. Please add a MODULE_DESCRIPTION()
+to avoid this warning in all of your new modules.
 
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
-Thanks,
-
--- Sebastian
-
->  drivers/phy/rockchip/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-> index 2f7a05f21dc5..dcb8e1628632 100644
-> --- a/drivers/phy/rockchip/Kconfig
-> +++ b/drivers/phy/rockchip/Kconfig
-> @@ -125,6 +125,7 @@ config PHY_ROCKCHIP_USBDP
->  	depends on ARCH_ROCKCHIP && OF
->  	depends on TYPEC
->  	select GENERIC_PHY
-> +	select USB_COMMON
->  	help
->  	  Enable this to support the Rockchip USB3.0/DP combo PHY with
->  	  Samsung IP block. This is required for USB3 support on RK3588.
-> -- 
-> 2.39.5
-> 
-> 
 
 -- 
 linux-phy mailing list
