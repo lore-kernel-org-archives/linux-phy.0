@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34201C02182
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 09:05:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19D73C0218C
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 09:38:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cj1i9We0iH67Go94fMdPdRvadU1du8OF+uqQTGNvtRU=; b=xNgH7hyUfkcVVv
-	oMqDdcJ2roaGMD3r2VCqA7HVBkpNUmeUHAMk04gTlNf9fAw/pLOy6IwqYNPqXg44fC0zDY092ttQu
-	Qm3F5Otrr5DxNTCtbXEE7kl/zKX3JB4TjkD7KAdnyqF3AvILIgbf4M6RzAqXIcw9fP7oOF9U/dT5B
-	s1gULov6PIwsbNktcKWWD9Xr5Cn2WlZRKg9ZKhb32ZuRoGpa8f3HZQX/Nl47wnm/MzUOaYRFmwy/G
-	D9BQ2xZJ0MhBVw4nY+RRFwMjagxQihFv/SftaJ4hKsOPKZEH0F3rB/N/MBka2Dl0+OXnE9m3FKiQz
-	SXmISgDEyVK1t0w9d0qA==;
+	List-Owner; bh=FNunOHFNznG1R0QB1L7hI0I4tVhV5hwpk0lCG3SJfrI=; b=rZGKriX1FkcED5
+	vv3Ougx7RPiqfLbG2wo07/nVRf6ly44/DStHh/yRK1UrFHQDy/aq0zfcVkQezeQ27dLJe2ZuDGdDE
+	06+SyaFs+i4K42YLVCzJ86P5ZBjHrxkFUTDe0IUxmvZR5Nl5CBkAk769vGGfotVmQ38pWne0DIqDi
+	tQ9SEc/WHoUz18ywTw9iLrIGZdstj9gzNCFMGrbvR2tTnAQETrNT8UGdLG1NQZKvJp0NRRQRisSpi
+	okEYozJySu3GJtDYN4R9rKLJj0n9LDiB1tpC7cPjeK6/AzQPQLhxfNGuRQWwq9mzrrb+NIgVLXZYf
+	DDNn+MT2gAlWaxAVzZpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taWgB-00000009lEl-39kx;
-	Wed, 22 Jan 2025 09:05:43 +0000
-Received: from mail-m49215.qiye.163.com ([45.254.49.215])
+	id 1taXBS-00000009oQO-3POX;
+	Wed, 22 Jan 2025 09:38:02 +0000
+Received: from mail-m15574.qiye.163.com ([101.71.155.74])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taWg9-00000009lDw-2Yre;
-	Wed, 22 Jan 2025 09:05:42 +0000
+	id 1taXBP-00000009oPe-2crp;
+	Wed, 22 Jan 2025 09:38:01 +0000
 Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 96647672;
-	Wed, 22 Jan 2025 17:05:37 +0800 (GMT+08:00)
-Message-ID: <26c55255-2671-4bb1-aaee-c3145f8698f7@rock-chips.com>
-Date: Wed, 22 Jan 2025 17:05:36 +0800
+	by smtp.qiye.163.com (Hmail) with ESMTP id 9675abc2;
+	Wed, 22 Jan 2025 17:37:54 +0800 (GMT+08:00)
+Message-ID: <ba369b98-9a2a-421a-9251-4db3c1dcedd9@rock-chips.com>
+Date: Wed, 22 Jan 2025 17:37:53 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 20/20] arm64: dts: rockchip: Enable eDP0 display on
- RK3588S EVB1 board
-To: Andy Yan <andyshrk@163.com>
+Subject: Re: [PATCH v5 12/20] drm/rockchip: analogix_dp: Add support to get
+ panel from the DP AUX bus
+From: Damon Ding <damon.ding@rock-chips.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
  conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
  sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com,
- l.stach@pengutronix.de, dmitry.baryshkov@linaro.org,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
+ l.stach@pengutronix.de, andy.yan@rock-chips.com, hjc@rock-chips.com,
+ algea.cao@rock-chips.com, kever.yang@rock-chips.com,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
- <20250109032725.1102465-21-damon.ding@rock-chips.com>
- <8927876.291e.19454e86e8f.Coremail.andyshrk@163.com>
+ <20250109032725.1102465-13-damon.ding@rock-chips.com>
+ <d7zpv6qt52mhny54dejw4yqlp2k2c437op7qmepqe27pufplqk@64xvohrz7h2q>
+ <330041c4-aaee-4b41-8ccd-e2807415c709@rock-chips.com>
 Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <8927876.291e.19454e86e8f.Coremail.andyshrk@163.com>
+In-Reply-To: <330041c4-aaee-4b41-8ccd-e2807415c709@rock-chips.com>
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGkIdHlZMTx4eGRlIGh9LTUxWFRQJFh
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUhIGlYZTUxCGBgaSUtMTE5WFRQJFh
 	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUhCSE
 	NVSktLVUpCS0tZBg++
-X-HM-Tid: 0a948d42906703a3kunm96647672
+X-HM-Tid: 0a948d601d8703a3kunm9675abc2
 X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6NxQ6Iio4STIXEi9IPh5LDBYV
-	KTAaCQ5VSlVKTEhMTkhNTEhCSkpLVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFISkxMNwY+
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OBQ6CQw5FjISDi8qFTpKNx88
+	OAwaFDdVSlVKTEhMTkhDTUxOQkxOVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJQkpINwY+
 DKIM-Signature: a=rsa-sha256;
-	b=CG+gEnx+XPdVro1zdFzCtUaeVySUsXtaffUl3mFF+lfs47HUrqfKK/fVH37Afw5wPC0Kqr4qZ/Iy2hmAuSnfp6ix+7g6MKIZ7LKrZ7eR1gKfBCu5oy7Kgp7rXs1q97nz1ATOSJb8cQyspPDbsna3Iaagk6FtyLDygDm6807jCQw=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=hsQBhgtpgyLUVlhj2uOdXGpB5uzrnxpQS3g2lRTQAn8=;
+	b=cz1XtlH0WFZV+qfxxgiKI+00+Zhi4vQtANGA9k2JuGnZ9MA5lXD1IKZQY2QU84VWYgvk7IK3u/T3JDDNjjtVXFFs07czupDXqcJOFSRfEhZ6JNmukR2pw1uYdVCsXnRhH7J8jzkP0dQH2H82JAriqKTgAktE/gx4t2jvBYHeh/Y=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=CWIxW9kTl68Z5+0J5bhE6cyWfkVb0EOPaTfIzuCrrMI=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250122_010541_855469_526F106F 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20250122_013800_209500_BA9BB54E 
+X-CRM114-Status: GOOD (  15.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,146 +78,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Andy,
-
-On 2025/1/11 18:28, Andy Yan wrote:
-> 
-> Hi Damon,
-> 
-> At 2025-01-09 11:27:25, "Damon Ding" <damon.ding@rock-chips.com> wrote:
->> Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
->> - Set pinctrl of pwm12 for backlight
->> - Enable edp0/hdptxphy0/vp2
->> - Add aux-bus/panel nodes
->>
->> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
->>
->> ---
->>
->> Changes in v2:
->> - Remove brightness-levels and default-brightness-level properties in
->>   backlight node.
->> - Add the detail DT changes to commit message.
->>
->> Changes in v3:
->> - Use aux-bus instead of platform bus for edp-panel.
->>
->> Changes in v4:
->> - Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
->>   in the commit message.
->>
->> Changes in v5:
->> - Use "edp-panel" instead of "lg,lp079qx1-sp0v"
->> - Remove unnecessary comments in commit message
->> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
->> ---
->> .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 54 +++++++++++++++++++
->> 1 file changed, 54 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
->> index bc4077575beb..a8c151b41e21 100644
->> --- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
->> +++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
->> @@ -9,6 +9,7 @@
->> #include <dt-bindings/gpio/gpio.h>
->> #include <dt-bindings/input/input.h>
->> #include <dt-bindings/pinctrl/rockchip.h>
->> +#include <dt-bindings/soc/rockchip,vop2.h>
->> #include <dt-bindings/usb/pd.h>
->> #include "rk3588s.dtsi"
->>
->> @@ -238,6 +239,41 @@ &combphy2_psu {
->> 	status = "okay";
->> };
->>
->> +&edp0 {
->> +	force-hpd;
->> +	status = "okay";
->> +
->> +	aux-bus {
->> +		panel {
->> +			compatible = "edp-panel";
->> +			backlight = <&backlight>;
->> +			power-supply = <&vcc3v3_lcd_edp>;
->> +
->> +			port {
->> +				panel_in_edp: endpoint {
->> +					remote-endpoint = <&edp_out_panel>;
->> +				};
->> +			};
->> +		};
->> +	};
->> +};
->> +
->> +&edp0_in {
->> +	edp0_in_vp2: endpoint {
->> +		remote-endpoint = <&vp2_out_edp0>;
->> +	};
->> +};
->> +
->> +&edp0_out {
->> +	edp_out_panel: endpoint {
->> +		remote-endpoint = <&panel_in_edp>;
->> +	};
->> +};
->> +
->> +&hdptxphy0 {
->> +	status = "okay";
->> +};
->> +
->> &i2c3 {
->> 	status = "okay";
->>
->> @@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
->> };
->>
->> &pwm12 {
->> +	pinctrl-0 = <&pwm12m1_pins>;
->> 	status = "okay";
->> };
->>
->> @@ -1168,3 +1205,20 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
->> 		};
->> 	};
->> };
->> +
->> +&vop_mmu {
->> +	status = "okay";
->> +};
->> +
->> +&vop {
->> +	assigned-clocks = <&cru DCLK_VOP2_SRC>;
->> +	assigned-clock-parents = <&cru PLL_V0PLL>;
-> 
-> It's necessary to explain why we need to  assign V0PLL for DCLK_VOP2_SRC in commit message.
-> 
-> 
-
-I will add relevant explainations in next version.
-
->> +	status = "okay";
->> +};
->> +
->> +&vp2 {
->> +	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
->> +		reg = <ROCKCHIP_VOP2_EP_EDP0>;
->> +		remote-endpoint = <&edp0_in_vp2>;
->> +	};
->> +};
->> -- 
->> 2.34.1
->>
-
-Best regards,
-Damon
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgRG1pdHJ5LAoKT24gMjAyNS8xLzIyIDE2OjE3LCBEYW1vbiBEaW5nIHdyb3RlOgo+IEhpIERt
+aXRyeSwKPiAKPiBPbiAyMDI1LzEvOSAyMDo0OCwgRG1pdHJ5IEJhcnlzaGtvdiB3cm90ZToKPj4g
+T24gVGh1LCBKYW4gMDksIDIwMjUgYXQgMTE6Mjc6MTdBTSArMDgwMCwgRGFtb24gRGluZyB3cm90
+ZToKPj4+IE1vdmUgZHJtX29mX2ZpbmRfcGFuZWxfb3JfYnJpZGdlKCkgYSBsaXR0bGUgbGF0ZXIg
+YW5kIGNvbWJpbmUgaXQgd2l0aAo+Pj4gY29tcG9uZW50X2FkZCgpIGludG8gYSBuZXcgZnVuY3Rp
+b24gcm9ja2NoaXBfZHBfbGlua19wYW5lbCgpLiBUaGUgCj4+PiBmdW5jdGlvbgo+Pj4gd2lsbCBz
+ZXJ2ZSBhcyBkb25lX3Byb2JpbmcoKSBjYWxsYmFjayBvZiBkZXZtX29mX2RwX2F1eF9wb3B1bGF0
+ZV9idXMoKSwKPj4+IGFpZGluZyB0byBzdXBwb3J0IGZvciBvYnRhaW5pbmcgdGhlIGVEUCBwYW5l
+bCB2aWEgdGhlIERQIEFVWCBidXMuCj4+Pgo+Pj4gSWYgZmFpbGVkIHRvIGdldCB0aGUgcGFuZWwg
+ZnJvbSB0aGUgRFAgQVVYIGJ1cywgaXQgd2lsbCB0aGVuIHRyeSB0aGUgCj4+PiBvdGhlcgo+Pj4g
+d2F5IHRvIGdldCBwYW5lbCBpbmZvcm1hdGlvbiB0aHJvdWdoIHRoZSBwbGF0Zm9ybSBidXMuCj4+
+Pgo+Pj4gSW4gYWRkaXRpb24sIHVzZSBkZXZfZXJyKCkgaW5zdGVhZCBvZiBkcm1fZXJyKCkgaW4g
+cm9ja2NoaXBfZHBfcG93ZXJvbigpCj4+PiAsIHdoaWNoIHdpbGwgYmUgY2FsbGVkIGJlZm9yZSBy
+b2NrY2hpcF9kcF9iaW5kKCkuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogRGFtb24gRGluZyA8ZGFt
+b24uZGluZ0Byb2NrLWNoaXBzLmNvbT4KPj4+Cj4+PiAtLS0KPj4+Cj4+PiBDaGFuZ2VzIGluIHY0
+Ogo+Pj4gLSBVc2UgZG9uZV9wcm9iaW5nKCkgdG8gY2FsbCBkcm1fb2ZfZmluZF9wYW5lbF9vcl9i
+cmlkZ2UoKSBhbmQKPj4+IMKgwqAgY29tcG9uZW50X2FkZCgpIHdoZW4gZ2V0dGluZyBwYW5lbCBm
+cm9tIHRoZSBEUCBBVVggYnVzCj4+Pgo+Pj4gQ2hhbmdlcyBpbiB2NToKPj4+IC0gVXNlIHRoZSBm
+dW5jdGlvbnMgZXhwb3J0ZWQgYnkgdGhlIEFuYWxvZ2l4IHNpZGUgdG8gZ2V0IHRoZSBwb2ludGVy
+cyBvZgo+Pj4gwqDCoCBzdHJ1Y3QgYW5hbG9naXhfZHBfcGxhdF9kYXRhIGFuZCBzdHJ1Y3QgZHJt
+X2RwX2F1eC4KPj4+IC0gVXNlIGRldl9lcnIoKSBpbnN0ZWFkIG9mIGRybV9lcnIoKSBpbiByb2Nr
+Y2hpcF9kcF9wb3dlcm9uKCkuCj4+Pgo+Pj4gLS0tCj4+PiDCoCAuLi4vZ3B1L2RybS9yb2NrY2hp
+cC9hbmFsb2dpeF9kcC1yb2NrY2hpcC5jwqDCoCB8IDQxICsrKysrKysrKysrKysrLS0tLS0KPj4+
+IMKgIDEgZmlsZSBjaGFuZ2VkLCAzMCBpbnNlcnRpb25zKCspLCAxMSBkZWxldGlvbnMoLSkKPj4+
+Cj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL2FuYWxvZ2l4X2RwLXJv
+Y2tjaGlwLmMgYi8gCj4+PiBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvYW5hbG9naXhfZHAtcm9j
+a2NoaXAuYwo+Pj4gaW5kZXggMDk1N2QzYzVkMzFkLi4zYWUwMWI4NzBmNDkgMTAwNjQ0Cj4+PiAt
+LS0gYS9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvYW5hbG9naXhfZHAtcm9ja2NoaXAuYwo+Pj4g
+KysrIGIvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL2FuYWxvZ2l4X2RwLXJvY2tjaGlwLmMKPj4+
+IEBAIC0xMjQsMTMgKzEyNCwxMyBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX2RwX3Bvd2Vyb24oc3Ry
+dWN0IAo+Pj4gYW5hbG9naXhfZHBfcGxhdF9kYXRhICpwbGF0X2RhdGEpCj4+PiDCoMKgwqDCoMKg
+IHJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShkcC0+cGNsayk7Cj4+PiDCoMKgwqDCoMKgIGlmIChy
+ZXQgPCAwKSB7Cj4+PiAtwqDCoMKgwqDCoMKgwqAgZHJtX2VycihkcC0+ZHJtX2RldiwgImZhaWxl
+ZCB0byBlbmFibGUgcGNsayAlZFxuIiwgcmV0KTsKPj4+ICvCoMKgwqDCoMKgwqDCoCBkZXZfZXJy
+KGRwLT5kZXYsICJmYWlsZWQgdG8gZW5hYmxlIHBjbGsgJWRcbiIsIHJldCk7Cj4+Cj4+Cj4+IHdo
+eT8KPj4KPiAKPiBUaGUgJnJvY2tjaGlwX2RwX2RldmljZS5kcm1fZGV2IHdpbGwgYmUgYXNzaWdu
+ZWQgaW4gcm9ja2NoaXBfZHBfYmluZCgpLCAKPiB3aGljaCBpcyBjYWxsZWQgYWZ0ZXIgcHJvYmlu
+ZyBwcm9jZXNzLiBUaGUgUE0gb3BlcmF0aW9ucyBoYXZlIGJlZW4gCj4gYWR2YW5jZWQgdG8gdGhl
+IHByb2JpbmcgZm9yIHRoZSBBVVggdHJhbnNtaXNzaW9uLCBzbyB0aGUgZGV2X2VycigpIG1heSAK
+PiBiZSBiZXR0ZXIgdGhhbiBkcm1fZXJyKCkuCj4gCgpVc2luZyBkcm1fLi4uKCkgdW5pZm9ybWx5
+IG1heSBiZSBiZXR0ZXIgWzBdLgoKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gcmV0Owo+
+Pj4gwqDCoMKgwqDCoCB9Cj4+PiDCoMKgwqDCoMKgIHJldCA9IHJvY2tjaGlwX2RwX3ByZV9pbml0
+KGRwKTsKPj4+IMKgwqDCoMKgwqAgaWYgKHJldCA8IDApIHsKPj4+IC3CoMKgwqDCoMKgwqDCoCBk
+cm1fZXJyKGRwLT5kcm1fZGV2LCAiZmFpbGVkIHRvIGRwIHByZSBpbml0ICVkXG4iLCByZXQpOwo+
+Pj4gK8KgwqDCoMKgwqDCoMKgIGRldl9lcnIoZHAtPmRldiwgImZhaWxlZCB0byBkcCBwcmUgaW5p
+dCAlZFxuIiwgcmV0KTsKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBjbGtfZGlzYWJsZV91bnByZXBh
+cmUoZHAtPnBjbGspOwo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiByZXQ7Cj4+PiDCoMKg
+wqDCoMKgIH0KPj4KCkJlc3QgcmVnYXJkcywKRGFtb24KClswXWh0dHBzOi8vcGF0Y2h3b3JrLmtl
+cm5lbC5vcmcvcHJvamVjdC9saW51eC1yb2NrY2hpcC9wYXRjaC8yMDI1MDEwOTAzMjcyNS4xMTAy
+NDY1LTYtZGFtb24uZGluZ0Byb2NrLWNoaXBzLmNvbS8jMjYyMDk4OTEKCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
