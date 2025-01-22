@@ -4,75 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A065C02182
-	for <linux-phy@archiver.kernel.org>; Tue, 21 Jan 2025 11:51:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2BE6C02181
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Jan 2025 05:06:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eOxaoVhyerY2hVLLgCoPhWA3hvZpmpaePqjVWiCk8pM=; b=XM4QIMX4UpnziU
-	xT7blMQeP3Y0DLMcNf+GuyTlaztqXSAFjTi9JwyyrN+tjDw8+LG+un/sDApQt4RTEKqvuahrEt/hw
-	NzhfXr0OYLXCOkdn7hQDdzXEiVxkr5vB1lyx3oxK+dvEP9Qitmfon3yjOZKvSGqOgFQK2mBCm6yvt
-	R5j56sQPqWVHC3q5tHhSzwQfdE6Be60qtHsd04vP2pekGWcGhnA8OMJrVefroFmr279K8bm43JIYt
-	zRGuCdZ4yjFn9ZAsgWCsRitxaBM0cQVTe/PKUyoZf8h4XWKqKl9ZPKeZy+WfRioW/uFJiRzkPtcaC
-	ty3urgaL3PuvGWgt1hqQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=usp3w2HnUfQzgtoHwzaGUxx5MmhhLXny07QcU7y7qEQ=; b=pI1JeW6cGTaoW8
+	Z2FXgnxsucH2z5+1yKJ+1FDn38gtKnTQ1sRyZxZVmXYNUJOdLGjfb3vP/G/dFKj9poKTEDlcwpFgf
+	iGYGTMghCr480qBEeR3FaTpjfFNS6NvjGSQiEGIpPsGJ1tKTu31HT/sSdYwW3DM9qj1JW7S/ISH/B
+	/Dnmlbp5rkkGY94a2WhUu2gR8Jlre3AwgyX5NH5kKZnjTuY365oENSRDgbvELjeXWD08p4LAwpyQ6
+	WosHcfW3rCwqVij2dZkenR/JkLxxjuA5UslOLSW1vJCtnLVX3hUKKEoKIvOr9t3hkCCL3GYLf8rSw
+	ugwfLDF86f8pltm/5H1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1taCmi-00000007mxX-1TVy;
-	Tue, 21 Jan 2025 11:51:08 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1taSwE-00000009OUd-34hl;
+	Wed, 22 Jan 2025 05:06:02 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taCmb-00000007mwW-1CMW;
-	Tue, 21 Jan 2025 11:51:06 +0000
-Received: from pps.filterd (m0369458.ppops.net [127.0.0.1])
-	by mx07-00178001.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50L9D6t0003828;
-	Tue, 21 Jan 2025 12:50:43 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=selector1; bh=/JxEK8gd2DKUYFHUImvOGy
-	5ibdZjUbYdrztpRvTmVbM=; b=bWzyn92s9NU2kARkgKSzj5i/ePkqu9HjHIv1n2
-	dipRXPMbsQRHFdTHIUH6KZBbfxklMOXh2BFbDYHUPtlNvUmuCfQFCRv9EECyyfmo
-	ZV2PORDPW0OTL/+UkXVJxephYh0q5VpeDqOJJVMTxllSHWwepDP4JPboLo2jUWYX
-	0k2s4d7wFS2tF8lmzwdGhOpBXsEQw9WFAosXs++uxD4hIKY1Kw/hrn/Nmtj0vV+C
-	bGjPbRG3eiYJWpwpMk7N2GksbynHkqHCpcweeiqiUTPa0ZFgszuboqvp9kVDISaj
-	GNZ6geqhFk4wnb2jNdOQVuJNVqldkT6dVYtHXKXHDoC62fGw==
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
-	by mx07-00178001.pphosted.com (PPS) with ESMTPS id 44a213j8gj-1
+	id 1taSwC-00000009OUD-3xLM
+	for linux-phy@lists.infradead.org;
+	Wed, 22 Jan 2025 05:06:02 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50M0Qc5I020788;
+	Wed, 22 Jan 2025 05:05:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=zYIHAH5R1aSelCOAD4hlVuK9
+	eFznxUklk2/oBlWIOFY=; b=iARnmKZL3UeDHZLZe36jcw+NOYpfExuePqfpYgMF
+	AHS+mCOgRiFac+pQMo5aGxjgn3R+X/x3eYtGe33TG5q/FGKgx4VTXxyQXUrO0Nhf
+	R3CRU5IjsbvobHYdadAGSrr10B3RwZJumEj+0CBHurREWiMe+l+oGnhl6gvR5Zwz
+	3ldEZhkDsHPhhM/TL0kNS1GaPB+QlsSFNMrqiDnU8l8Hh184/uyyAQqdJsZrATdC
+	9aIJsUKq0NbFgH8xV+PV5jv020JcDuZ9naJ87UqM8nlP2NeuJwSewstpmxUvOGQk
+	xO9ySVvIZCfyBEqORsz25qdOpihQGwbmkVxvc4VAkQK7Ig==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ap4x0h58-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 21 Jan 2025 12:50:42 +0100 (CET)
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
-	by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 35B3040049;
-	Tue, 21 Jan 2025 12:49:44 +0100 (CET)
-Received: from Webmail-eu.st.com (shfdag1node3.st.com [10.75.129.71])
-	by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 60D732A3D06;
-	Tue, 21 Jan 2025 12:49:15 +0100 (CET)
-Received: from localhost (10.129.178.212) by SHFDAG1NODE3.st.com
- (10.75.129.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Tue, 21 Jan
- 2025 12:49:15 +0100
-From: Christian Bruel <christian.bruel@foss.st.com>
-To: <christian.bruel@foss.st.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
-        <mcoquelin.stm32@gmail.com>, <alexandre.torgue@foss.st.com>
-CC: <arnd@arndb.de>, <fabrice.gasnier@foss.st.com>,
+	Wed, 22 Jan 2025 05:05:52 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50M55oUB014124
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 22 Jan 2025 05:05:50 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Tue, 21 Jan 2025 21:05:44 -0800
+Date: Wed, 22 Jan 2025 10:35:40 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <robh@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <vkoul@kernel.org>, <kishon@kernel.org>, <andersson@kernel.org>,
+        <konradybcio@kernel.org>, <p.zabel@pengutronix.de>,
+        <quic_nsekar@quicinc.com>, <dmitry.baryshkov@linaro.org>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>,
-        <linux-stm32@st-md-mailman.stormreply.com>,
-        <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH] [PATCH v2] phy: stm32: Fix constant-value overflow assertion
-Date: Tue, 21 Jan 2025 12:49:00 +0100
-Message-ID: <20250121114900.3838224-1-christian.bruel@foss.st.com>
-X-Mailer: git-send-email 2.34.1
+        Praveenkumar I <quic_ipkumar@quicinc.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v5 4/5] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+Message-ID: <Z5B8pGD/h0h79ykb@hu-varada-blr.qualcomm.com>
+References: <20250102113019.1347068-1-quic_varada@quicinc.com>
+ <20250102113019.1347068-5-quic_varada@quicinc.com>
+ <20250108132235.gh6p5d6t7wklzpm7@thinkpad>
+ <Z4Cjzc5nyOv0R9tS@hu-varada-blr.qualcomm.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.129.178.212]
-X-ClientProxiedBy: SHFCAS1NODE2.st.com (10.75.129.73) To SHFDAG1NODE3.st.com
- (10.75.129.71)
+Content-Disposition: inline
+In-Reply-To: <Z4Cjzc5nyOv0R9tS@hu-varada-blr.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 0AXiHTq6cbtqOThPNwBcaD_A5SDBYw5C
+X-Proofpoint-GUID: 0AXiHTq6cbtqOThPNwBcaD_A5SDBYw5C
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-21_05,2025-01-21_02,2024-11-22_01
+ definitions=2025-01-22_01,2025-01-21_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ impostorscore=0 spamscore=0 mlxscore=0 malwarescore=0 mlxlogscore=733
+ priorityscore=1501 phishscore=0 adultscore=0 suspectscore=0 bulkscore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501220035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_035101_907211_2FCD27F1 
-X-CRM114-Status: GOOD (  13.91  )
+X-CRM114-CacheID: sfid-20250121_210601_115659_9EE596CC 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,110 +108,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Guard against false positives with a WARN_ON check to make the compiler
-happy: This should not happen because the offset range is checked against
-the sorted imp_lookup_table values.
+Manivannan,
 
-Guard against a true warning found for the max_vswing, as a given
-vswing value can be 802000 or 803000 depending on the current impedance
+	[ . . . ]
+> > > +			phys = <&pcie1_phy>;
+> > > +			phy-names = "pciephy";
+> > > +
+> > > +			interconnects = <&gcc MASTER_SNOC_PCIE3_2_M &gcc SLAVE_SNOC_PCIE3_2_M>,
+> > > +					<&gcc MASTER_ANOC_PCIE3_2_S &gcc SLAVE_ANOC_PCIE3_2_S>;
+> > > +			interconnect-names = "pcie-mem", "cpu-pcie";
+> >
+> > Can you check if the controller supports cache coherency? If so, you need to add
+> > 'dma-coherent'.
+>
+> Ok.
 
-Fixes: 2de679ecd724 ("phy: stm32: work around constant-value overflow assertion")
-Signed-off-by: Christian Bruel <christian.bruel@foss.st.com>
----
-v2: Change title and Fixes tag
----
- drivers/phy/st/phy-stm32-combophy.c | 38 ++++++++++++++---------------
- 1 file changed, 18 insertions(+), 20 deletions(-)
+Confirmed with h/w person. The controller doesn't support cache coherance.
 
-diff --git a/drivers/phy/st/phy-stm32-combophy.c b/drivers/phy/st/phy-stm32-combophy.c
-index 49e9fa90a681..607b4d607eb5 100644
---- a/drivers/phy/st/phy-stm32-combophy.c
-+++ b/drivers/phy/st/phy-stm32-combophy.c
-@@ -111,6 +111,7 @@ static const struct clk_impedance imp_lookup[] = {
- 	{ 4204000, { 511000, 609000, 706000, 802000 } },
- 	{ 3999000, { 571000, 648000, 726000, 803000 } }
- };
-+#define DEFAULT_IMP_INDEX 3 /* Default impedance is 50 Ohm */
- 
- static int stm32_impedance_tune(struct stm32_combophy *combophy)
- {
-@@ -119,10 +120,9 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 	u8 imp_of, vswing_of;
- 	u32 max_imp = imp_lookup[0].microohm;
- 	u32 min_imp = imp_lookup[imp_size - 1].microohm;
--	u32 max_vswing = imp_lookup[imp_size - 1].vswing[vswing_size - 1];
-+	u32 max_vswing;
- 	u32 min_vswing = imp_lookup[0].vswing[0];
- 	u32 val;
--	u32 regval;
- 
- 	if (!of_property_read_u32(combophy->dev->of_node, "st,output-micro-ohms", &val)) {
- 		if (val < min_imp || val > max_imp) {
-@@ -130,45 +130,43 @@ static int stm32_impedance_tune(struct stm32_combophy *combophy)
- 			return -EINVAL;
- 		}
- 
--		regval = 0;
--		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++) {
--			if (imp_lookup[imp_of].microohm <= val) {
--				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of);
-+		for (imp_of = 0; imp_of < ARRAY_SIZE(imp_lookup); imp_of++)
-+			if (imp_lookup[imp_of].microohm <= val)
- 				break;
--			}
--		}
-+
-+		if (WARN_ON(imp_of == ARRAY_SIZE(imp_lookup)))
-+			return -EINVAL;
- 
- 		dev_dbg(combophy->dev, "Set %u micro-ohms output impedance\n",
- 			imp_lookup[imp_of].microohm);
- 
- 		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
- 				   STM32MP25_PCIEPRG_IMPCTRL_OHM,
--				   regval);
--	} else {
--		regmap_read(combophy->regmap, SYSCFG_PCIEPRGCR, &val);
--		imp_of = FIELD_GET(STM32MP25_PCIEPRG_IMPCTRL_OHM, val);
--	}
-+				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_OHM, imp_of));
-+	} else
-+		imp_of = DEFAULT_IMP_INDEX;
- 
- 	if (!of_property_read_u32(combophy->dev->of_node, "st,output-vswing-microvolt", &val)) {
-+		max_vswing = imp_lookup[imp_of].vswing[vswing_size - 1];
-+
- 		if (val < min_vswing || val > max_vswing) {
- 			dev_err(combophy->dev, "Invalid value %u for output vswing\n", val);
- 			return -EINVAL;
- 		}
- 
--		regval = 0;
--		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++) {
--			if (imp_lookup[imp_of].vswing[vswing_of] >= val) {
--				regval = FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of);
-+		for (vswing_of = 0; vswing_of < ARRAY_SIZE(imp_lookup[imp_of].vswing); vswing_of++)
-+			if (imp_lookup[imp_of].vswing[vswing_of] >= val)
- 				break;
--			}
--		}
-+
-+		if (WARN_ON(vswing_of == ARRAY_SIZE(imp_lookup[imp_of].vswing)))
-+			return -EINVAL;
- 
- 		dev_dbg(combophy->dev, "Set %u microvolt swing\n",
- 			 imp_lookup[imp_of].vswing[vswing_of]);
- 
- 		regmap_update_bits(combophy->regmap, SYSCFG_PCIEPRGCR,
- 				   STM32MP25_PCIEPRG_IMPCTRL_VSWING,
--				   regval);
-+				   FIELD_PREP(STM32MP25_PCIEPRG_IMPCTRL_VSWING, vswing_of));
- 	}
- 
- 	return 0;
--- 
-2.34.1
-
+Thanks
+Varada
 
 -- 
 linux-phy mailing list
