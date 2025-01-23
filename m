@@ -4,90 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FADCC02182
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 11:34:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA0BBC02182
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 12:27:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6XlQe2GI0VjyFYTsMgRaiwwHGkeH9bI89fG3E3HeE6c=; b=1Ou/v2lwg8V8Dx
-	hjVWR+rR+KBdx9opKHYNsz4NPr1iWCyrNhGYKZUaopGbsLyEKGFzCBoTb9S1bz9+idzpM3x8jZi6Q
-	5S2NQ/EkDeXkK9EKiPu0qHOOqrQ+xmigxYnXekfyFhwP++drkT55RBtgVZP/C6hYBQMmtjWFA1nba
-	hsqVVEaQF8x27hwB0AyWgJD4rQStLo9El+BACevhnBWpRY88YIZCnkp/L7YnKaq9TYOw87me9ZTgn
-	yrAWafHDc8IuG9TaokUBGXWCVcMYeUnUV2LXiGVhY2rPc9dsB4d/12tQWP1kYh3xo3P/kNz9pRaDL
-	TkP2PuSg37XPMPAmxJyg==;
+	List-Owner; bh=fiUkeHozAg3MpG8Gb2KudS/RwEB9qrV0POY+kfSFssE=; b=wCuiGmu3ZQ+qby
+	oe68RYv3CvruwDnT6Aveq5p9CaLy4IWONkzakQqVtmwWb7MOir+BI+mVOkTyJ8uuWN3waxHOst8yv
+	0UhsQ01UPQN7o/Sk4pL+b3a/ScKcozorX/DvCW/rmLa0K4eDNytP7pSWhOD5NbkeACTDacYdbKqTj
+	jqW2M8PoPnL2Bng5MtVZJOq9Rq9FD9stH+FdeMy6OaisWgEBwyRUswEGNMWKwHhjwhlmiibtedpDT
+	BfSSs/uNL1VVcnlWDAS66i1MW3V3Bagsrz78VmHuXxpLs4qv6B/CXGV4TL5yJLEejO1Ro3rtKnjLu
+	kxaY/uQXmzKoisUrGN0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tavTX-0000000CLT2-3LQa;
-	Thu, 23 Jan 2025 11:34:19 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1tawIk-0000000CRMc-18CK;
+	Thu, 23 Jan 2025 12:27:14 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tavS3-0000000CL8W-3uA6
-	for linux-phy@lists.infradead.org;
-	Thu, 23 Jan 2025 11:32:50 +0000
-Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-30613037309so7672021fa.3
-        for <linux-phy@lists.infradead.org>; Thu, 23 Jan 2025 03:32:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1737631966; x=1738236766; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=+zMurHlZ7uGtqY8vr+C9le803uP9XgfHXwzvJheucbI=;
-        b=vkHMKnig0ibUj3L79+7mpjx9UyVOLx4HvCtT43+3agczXq90VSPcivD8bbx/LRT0i3
-         mPra7G5COno6CehNYh0s0vkE8ulJGp9uOwBogqNKDg9ONuURxAtRleBBwhi1IAnd5QGi
-         YK2FRKZoLjBdR7DCrHSqqDb6QGs3+2TV+7RddvqX0UdCRT5ndMgpZ7/Cs5wHP5bdSYYI
-         iw4IubwF/v4B26yzcxkEi+KZ5y9lPatoOn/olaP3wT5EobtO6aT2yQIN0SMf2BmpghLp
-         EUEcPabKTu9RYocu0d3a8M18gSbx+eClJtmHZe2mKH7UzVJRVZFdmqeSfstwipGyGV/o
-         mw/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737631966; x=1738236766;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=+zMurHlZ7uGtqY8vr+C9le803uP9XgfHXwzvJheucbI=;
-        b=qE5uxYG4XBxpS1xSBVu8mww6wepJsbHfayvLm5Rg9mY/m+PQHSwGHa/R3x2TtryECt
-         39L3tK9Qn4nyRZ+b+r1J60Q8/8pzHNH36EPdqZLg/CQseugDyGHHSChyBCtm6OeeydO2
-         ELsYvFz+lH7buTvceSjIZOPeilkZ55TJHadHCSHy8fFGqKR5saCQnEJ5KM1k8hc6zJ6n
-         6vRxO5vl5OPcdfMLcySB5bzjYPWvnPCAjhupzCsHoWJaO6n3bgPBQmesN8cJ+GeheW9w
-         ts+4HgRibVtie7ByW4zuNP/voyNM8ulE9Vpu77QOGv3uB6WM4yp5oi+f/xCjgZuXVqJj
-         4NzA==
-X-Forwarded-Encrypted: i=1; AJvYcCVRnJKSJs76ejW+Wm2NZN0Fp1swX0tdhtKiQS2j79PYmykO4Dr94D8gl+77eyKe7HfiFntrohoSwdo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxRaN0X/VuOLRig1kvnXj085KzVnZaDL1UE4HqPFiS2gnCVKPK/
-	6b9a1zR+b2i0YRwzLDPsb8UPk8rIOvPZDGzZtF4UyIpJGdVnMxaBJfe5k80GPEo=
-X-Gm-Gg: ASbGncsZhZulzr+m3qbYmjmTuwPvuYnMu+2W/i9Lr9zw53d7QLh5Wzq/ZJwLaDjxga1
-	3MyjJ8Nng1mcMJcwIBwuflS2QqwuIQO08QE8z/HPaUbu1W+5RRXRDJEIXZWhWnPb9a9RVy30xwD
-	8LGL1qmb27J4J+z/jrRp7DB7ibHpYaBvrCLvIrqJRjyG86ugMtKiw1KMcqtueumS9AXe3lj0NJC
-	0ab4IK0KrbBhnTLA82jOE6Wb+3DK7Qi3uvMYQSw5+nJ/xDRqAjkboiloVcrxFwJloKSZQm1QqSk
-	x9JbH/MPmFBs5dP7lWWolETqT69K+WAaxKXaK5GhMK8XEMh4uhgatW7Kr6+4
-X-Google-Smtp-Source: AGHT+IGv3eRW1iX8AGSWOKHG3VFmFTMTVFcrPCnNhNO4BTbpmlhnROuDMhCvalg4dPHCeDzpS5d6Ng==
-X-Received: by 2002:a2e:b90d:0:b0:304:4cec:29f9 with SMTP id 38308e7fff4ca-3072ca60ef9mr67919831fa.3.1737631966038;
-        Thu, 23 Jan 2025 03:32:46 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3072a330764sm30489481fa.3.2025.01.23.03.32.43
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 Jan 2025 03:32:44 -0800 (PST)
-Date: Thu, 23 Jan 2025 13:32:42 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Damon Ding <damon.ding@rock-chips.com>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org, 
-	sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
-	andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
-	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v6 14/14] arm64: dts: rockchip: Enable eDP0 display on
- RK3588S EVB1 board
-Message-ID: <u3qiasthay5xrtu4bfu5ihag7x2wajrpbktrcs7bxutvc2iwrk@on5ymtwq5vwx>
+	id 1tawHR-0000000CREg-3pPL;
+	Thu, 23 Jan 2025 12:25:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1737635154; x=1769171154;
+  h=from:to:cc:subject:in-reply-to:references:date:
+   message-id:mime-version;
+  bh=Y9y2JiSrLOPvXTWHcZparjJwT3r8iLZ2GoulTbz9w5s=;
+  b=L/otT6a7WAQo0YuqTFYN18ybLYDaYjCPzcTmxwyCGapbAY9CO/t1DlLq
+   UZ+ns6O1QBv1/nI/CIxBb9JKo1C2gVuCYvPqoUyLfSLoXheJH/Pt0I/Zi
+   2JZuCcubMmABu32TFEjV2xGDnovqunjnAFGsi0u5qaKcGE6ZQWpCTk6Rr
+   XWXFBd9gSyK1wr1MJkiZrnawybqCEA87/zOztLnP0un6tBKUQJ2vgR7ma
+   88Ck7mSHvnyVeP7c5Vk2EVphLUrQG1WEvD7FAzTVML8iGAOfp9irp2/7V
+   27x1vNJluunVTHyVueWTRUVl2vtk/1r9OrIYdpC3EXMd/E1f320zXGhbe
+   Q==;
+X-CSE-ConnectionGUID: EX8wGYfcRcGW78WJZ4gm+A==
+X-CSE-MsgGUID: +QBq4MN9QnqJmQXisRgG8g==
+X-IronPort-AV: E=McAfee;i="6700,10204,11324"; a="37336135"
+X-IronPort-AV: E=Sophos;i="6.13,228,1732608000"; 
+   d="scan'208";a="37336135"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jan 2025 04:25:41 -0800
+X-CSE-ConnectionGUID: LAR+3lOGQqq3l5CRJiaT5Q==
+X-CSE-MsgGUID: tzHN9lx5QzuLvdBtxS/HRA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="111462249"
+Received: from unknown (HELO localhost) ([10.237.66.160])
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jan 2025 04:25:33 -0800
+From: Jani Nikula <jani.nikula@linux.intel.com>
+To: Damon Ding <damon.ding@rock-chips.com>, heiko@sntech.de
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
+ cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
+ dmitry.baryshkov@linaro.org, andy.yan@rock-chips.com, hjc@rock-chips.com,
+ algea.cao@rock-chips.com, kever.yang@rock-chips.com,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Damon Ding
+ <damon.ding@rock-chips.com>
+Subject: Re: [PATCH v6 01/14] drm/rockchip: analogix_dp: Replace DRM_...()
+ functions with drm_...()
+In-Reply-To: <20250123100747.1841357-2-damon.ding@rock-chips.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-15-damon.ding@rock-chips.com>
+ <20250123100747.1841357-2-damon.ding@rock-chips.com>
+Date: Thu, 23 Jan 2025 14:25:29 +0200
+Message-ID: <87ikq5n2di.fsf@intel.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250123100747.1841357-15-damon.ding@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_033247_970835_A723E6B7 
-X-CRM114-Status: GOOD (  22.39  )
+X-CRM114-CacheID: sfid-20250123_042553_971506_BBED4FE8 
+X-CRM114-Status: GOOD (  18.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,140 +92,160 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 23, 2025 at 06:07:47PM +0800, Damon Ding wrote:
-> Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
-> - Set pinctrl of pwm12 for backlight
-> - Enable edp0/hdptxphy0/vp2
-> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
-> - Add aux-bus/panel nodes
-> 
-> For RK3588, the PLL_V0PLL is specifically designed for the VOP2. This
-> means the clock rate of PLL_V0PLL can be adjusted according to the dclk
-> rate of relevant VP. It is typically assigned as the dclk source of a
-> specific VP when the clock of relevant display mode is unusual, such as
-> the eDP panel 'lg,lp079qx1-sp0v' paired with RK3588S EVB1, which has a
-> clock rate of 202.02MHz.
-> 
+On Thu, 23 Jan 2025, Damon Ding <damon.ding@rock-chips.com> wrote:
+> According to the comments in include/drm/drm_print.h, the DRM_...()
+> functions are deprecated in favor of drm_...() or dev_...() functions.
+>
+> Use drm_err()/drm_dbg_core()/drm_dbg_kms() instead of
+> DRM_DEV_ERROR()/DRM_ERROR()/DRM_DEV_DEBUG()/DRM_DEBUG_KMS().
+>
 > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> 
+>
 > ---
-> 
-> Changes in v2:
-> - Remove brightness-levels and default-brightness-level properties in
->   backlight node.
-> - Add the detail DT changes to commit message.
-> 
-> Changes in v3:
-> - Use aux-bus instead of platform bus for edp-panel.
-> 
-> Changes in v4:
-> - Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
->   in the commit message.
-> 
-> Changes in v5:
-> - Use "edp-panel" instead of "lg,lp079qx1-sp0v"
-> - Remove unnecessary comments in commit message
-> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
-> 
+>
 > Changes in v6:
-> - Add PLL_V0PLL related descriptions in commit message
+> - Use drm_...() uniformly rather than mixing drm_...() and dev_..()
+> - Pass 'dp' in drm_...() rather than 'dp->drm_dev'
 > ---
->  .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 54 +++++++++++++++++++
->  1 file changed, 54 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-> index bc4077575beb..a8c151b41e21 100644
-> --- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-> +++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
-> @@ -9,6 +9,7 @@
->  #include <dt-bindings/gpio/gpio.h>
->  #include <dt-bindings/input/input.h>
->  #include <dt-bindings/pinctrl/rockchip.h>
-> +#include <dt-bindings/soc/rockchip,vop2.h>
->  #include <dt-bindings/usb/pd.h>
->  #include "rk3588s.dtsi"
+>  .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 29 ++++++++++---------
+>  1 file changed, 15 insertions(+), 14 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> index 0844175c37c5..dd33d7540e4b 100644
+> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> @@ -100,13 +100,13 @@ static int rockchip_dp_poweron(struct analogix_dp_plat_data *plat_data)
 >  
-> @@ -238,6 +239,41 @@ &combphy2_psu {
->  	status = "okay";
->  };
->  
-> +&edp0 {
-> +	force-hpd;
+>  	ret = clk_prepare_enable(dp->pclk);
+>  	if (ret < 0) {
+> -		DRM_DEV_ERROR(dp->dev, "failed to enable pclk %d\n", ret);
+> +		drm_err(dp, "failed to enable pclk %d\n", ret);
 
-Why? Please mention the reason in the commit message.
+Please don't do this.
 
-> +	status = "okay";
-> +
-> +	aux-bus {
-> +		panel {
-> +			compatible = "edp-panel";
-> +			backlight = <&backlight>;
-> +			power-supply = <&vcc3v3_lcd_edp>;
-> +
-> +			port {
-> +				panel_in_edp: endpoint {
-> +					remote-endpoint = <&edp_out_panel>;
-> +				};
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&edp0_in {
-> +	edp0_in_vp2: endpoint {
-> +		remote-endpoint = <&vp2_out_edp0>;
-> +	};
-> +};
-> +
-> +&edp0_out {
-> +	edp_out_panel: endpoint {
-> +		remote-endpoint = <&panel_in_edp>;
-> +	};
-> +};
-> +
-> +&hdptxphy0 {
-> +	status = "okay";
-> +};
-> +
->  &i2c3 {
->  	status = "okay";
+You're supposed to pass struct drm_device to drm_err() and friends. Not
+some random struct pointer that just happens to have a ->dev member.
+
+The drm_* macros may change at any time to actually expect the correct
+type.
+
+BR,
+Jani.
+
+
+>  		return ret;
+>  	}
 >  
-> @@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
->  };
+>  	ret = rockchip_dp_pre_init(dp);
+>  	if (ret < 0) {
+> -		DRM_DEV_ERROR(dp->dev, "failed to dp pre init %d\n", ret);
+> +		drm_err(dp, "failed to dp pre init %d\n", ret);
+>  		clk_disable_unprepare(dp->pclk);
+>  		return ret;
+>  	}
+> @@ -126,12 +126,13 @@ static int rockchip_dp_powerdown(struct analogix_dp_plat_data *plat_data)
+>  static int rockchip_dp_get_modes(struct analogix_dp_plat_data *plat_data,
+>  				 struct drm_connector *connector)
+>  {
+> +	struct rockchip_dp_device *dp = pdata_encoder_to_dp(plat_data);
+>  	struct drm_display_info *di = &connector->display_info;
+>  	/* VOP couldn't output YUV video format for eDP rightly */
+>  	u32 mask = DRM_COLOR_FORMAT_YCBCR444 | DRM_COLOR_FORMAT_YCBCR422;
 >  
->  &pwm12 {
-> +	pinctrl-0 = <&pwm12m1_pins>;
->  	status = "okay";
->  };
+>  	if ((di->color_formats & mask)) {
+> -		DRM_DEBUG_KMS("Swapping display color format from YUV to RGB\n");
+> +		drm_dbg_kms(dp, "Swapping display color format from YUV to RGB\n");
+>  		di->color_formats &= ~mask;
+>  		di->color_formats |= DRM_COLOR_FORMAT_RGB444;
+>  		di->bpc = 8;
+> @@ -201,17 +202,17 @@ static void rockchip_dp_drm_encoder_enable(struct drm_encoder *encoder,
+>  	else
+>  		val = dp->data->lcdsel_big;
 >  
-> @@ -1168,3 +1205,20 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
->  		};
->  	};
->  };
-> +
-> +&vop_mmu {
-> +	status = "okay";
-> +};
-> +
-> +&vop {
-> +	assigned-clocks = <&cru DCLK_VOP2_SRC>;
-> +	assigned-clock-parents = <&cru PLL_V0PLL>;
-> +	status = "okay";
-> +};
-> +
-> +&vp2 {
-> +	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
-> +		reg = <ROCKCHIP_VOP2_EP_EDP0>;
-> +		remote-endpoint = <&edp0_in_vp2>;
-> +	};
-> +};
-> -- 
-> 2.34.1
-> 
+> -	DRM_DEV_DEBUG(dp->dev, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
+> +	drm_dbg_core(dp, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
+>  
+>  	ret = clk_prepare_enable(dp->grfclk);
+>  	if (ret < 0) {
+> -		DRM_DEV_ERROR(dp->dev, "failed to enable grfclk %d\n", ret);
+> +		drm_err(dp, "failed to enable grfclk %d\n", ret);
+>  		return;
+>  	}
+>  
+>  	ret = regmap_write(dp->grf, dp->data->lcdsel_grf_reg, val);
+>  	if (ret != 0)
+> -		DRM_DEV_ERROR(dp->dev, "Could not write to GRF: %d\n", ret);
+> +		drm_err(dp, "Could not write to GRF: %d\n", ret);
+>  
+>  	clk_disable_unprepare(dp->grfclk);
+>  }
+> @@ -236,7 +237,7 @@ static void rockchip_dp_drm_encoder_disable(struct drm_encoder *encoder,
+>  
+>  	ret = rockchip_drm_wait_vact_end(crtc, PSR_WAIT_LINE_FLAG_TIMEOUT_MS);
+>  	if (ret)
+> -		DRM_DEV_ERROR(dp->dev, "line flag irq timed out\n");
+> +		drm_err(dp, "line flag irq timed out\n");
+>  }
+>  
+>  static int
+> @@ -277,7 +278,7 @@ static int rockchip_dp_of_probe(struct rockchip_dp_device *dp)
+>  
+>  	dp->grf = syscon_regmap_lookup_by_phandle(np, "rockchip,grf");
+>  	if (IS_ERR(dp->grf)) {
+> -		DRM_DEV_ERROR(dev, "failed to get rockchip,grf property\n");
+> +		drm_err(dp, "failed to get rockchip,grf property\n");
+>  		return PTR_ERR(dp->grf);
+>  	}
+>  
+> @@ -287,19 +288,19 @@ static int rockchip_dp_of_probe(struct rockchip_dp_device *dp)
+>  	} else if (PTR_ERR(dp->grfclk) == -EPROBE_DEFER) {
+>  		return -EPROBE_DEFER;
+>  	} else if (IS_ERR(dp->grfclk)) {
+> -		DRM_DEV_ERROR(dev, "failed to get grf clock\n");
+> +		drm_err(dp, "failed to get grf clock\n");
+>  		return PTR_ERR(dp->grfclk);
+>  	}
+>  
+>  	dp->pclk = devm_clk_get(dev, "pclk");
+>  	if (IS_ERR(dp->pclk)) {
+> -		DRM_DEV_ERROR(dev, "failed to get pclk property\n");
+> +		drm_err(dp, "failed to get pclk property\n");
+>  		return PTR_ERR(dp->pclk);
+>  	}
+>  
+>  	dp->rst = devm_reset_control_get(dev, "dp");
+>  	if (IS_ERR(dp->rst)) {
+> -		DRM_DEV_ERROR(dev, "failed to get dp reset control\n");
+> +		drm_err(dp, "failed to get dp reset control\n");
+>  		return PTR_ERR(dp->rst);
+>  	}
+>  
+> @@ -315,12 +316,12 @@ static int rockchip_dp_drm_create_encoder(struct rockchip_dp_device *dp)
+>  
+>  	encoder->possible_crtcs = drm_of_find_possible_crtcs(drm_dev,
+>  							     dev->of_node);
+> -	DRM_DEBUG_KMS("possible_crtcs = 0x%x\n", encoder->possible_crtcs);
+> +	drm_dbg_kms(dp, "possible_crtcs = 0x%x\n", encoder->possible_crtcs);
+>  
+>  	ret = drm_simple_encoder_init(drm_dev, encoder,
+>  				      DRM_MODE_ENCODER_TMDS);
+>  	if (ret) {
+> -		DRM_ERROR("failed to initialize encoder with drm\n");
+> +		drm_err(dp, "failed to initialize encoder with drm\n");
+>  		return ret;
+>  	}
+>  
+> @@ -340,7 +341,7 @@ static int rockchip_dp_bind(struct device *dev, struct device *master,
+>  
+>  	ret = rockchip_dp_drm_create_encoder(dp);
+>  	if (ret) {
+> -		DRM_ERROR("failed to create drm encoder\n");
+> +		drm_err(dp, "failed to create drm encoder\n");
+>  		return ret;
+>  	}
 
 -- 
-With best wishes
-Dmitry
+Jani Nikula, Intel
 
 -- 
 linux-phy mailing list
