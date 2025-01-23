@@ -4,88 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C54FC02182
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 07:23:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21A31C02182
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 07:54:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YY8IIlFU9Sl2MvBkglA+NM43ahJkbvOycB4Om+Cuz/Q=; b=cQQxtX8pFScC3d
-	q+fUAjMvmvLK86klCBzl62CIKROyeIp65HVSOZ+x5993BhKqSf4fkTZ4aVOPZcVpFkhP7p3c3mjzS
-	lGyRdlUK4tbLmH8qOmTkMxnkZyNPZcZrfNOo40HVX24U7J9uS7pdbtcKj9C8rLyVAdX5VaM7aCsHz
-	fYRWigFcc2gW3njZAw9VADSoG9OfxJ9sHlcHqqDgB55wT7sCCbkNTTas3fj9vkzGNy2F9SE1E2CO5
-	G9cKPpvaIZNPHyErxaFPlkk6sb4vLm9SzHuCVqALKk16GJWDDa4T+9oJB1eAkO1WyEY4y091Gdugs
-	h10Z/ish++2y2HBavDQA==;
+	List-Owner; bh=Je6YsVGeKNo8l/LvBArPmquvJT7ST+UcoWkhUZB7WFk=; b=FbDacBhIBScpFc
+	65QFaX1vNSxC+dnl0R9ia2RgXdDAKAhDfcKRQXtwv2Sm+K5zDvutk7CDcpae3Gi8v0ggNkG43APMa
+	Ckx5eZomz3wgVJYw6jTN1D0p/RTP4KHH+vGmTZe0o9+MaOHX1XHvBcLXJo0XqKlPPyw73i/8SQoZW
+	8T6ck4NsgB0/V7DazB4Zy6/qToouk/p8CaoHYQEHXrJd6UM+Gd5+dyZ5pvWcjW1Al5eygInXpfUMN
+	fHZijQ3m38VJFFmi4JmZAPO6d3vjG7H2ra/Ot3y1ofXpzVNYMNvi+dZQC0X73h9b6wJskGQ2+HOu3
+	RBR4cyfTqKkGC2oPmw7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tarYq-0000000Bqt3-13Us;
-	Thu, 23 Jan 2025 07:23:32 +0000
-Received: from mail-yb1-xb31.google.com ([2607:f8b0:4864:20::b31])
+	id 1tas31-0000000BuyY-14ot;
+	Thu, 23 Jan 2025 07:54:43 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tarYn-0000000Bqs0-2lJM
+	id 1tas2y-0000000BuyC-2uvB
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Jan 2025 07:23:30 +0000
-Received: by mail-yb1-xb31.google.com with SMTP id 3f1490d57ef6-e479e529ebcso778030276.3
-        for <linux-phy@lists.infradead.org>; Wed, 22 Jan 2025 23:23:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1737617008; x=1738221808; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=hOXcA9vaOQYRNKut7rDICRe3STKLWf1DDnQmgXfB78A=;
-        b=sPOvXaDWdnTeE7pQIeYkpCsfIdvcdi9NA2AqOvJtsVMA+ksH72/Px/8YhDgVDZHIQL
-         4bZvpKlWUCDb/TS0Y1MU0S5cVeCbFdQjemAy+nDsZdiGG9akdS9ncGoxXrLG6mUdVOfn
-         3y4jjSG3YmOUz8zkYxxv+O6W/jCdSun2WJCBFHkMRpVOOiCcnoF1Km2Rp1082QEaNJIN
-         hqST5WHPwzhTR2ksPmoDHmpPeD+bAN8ZD1sQULTP/GPPhL4aGGXP1pnzbRhujSkECXTa
-         MqeVCgy6pUsxW0IVKZcEJrlHeXz3JKB4a1f2fxY0r5eeWJUKWNr1gmOLOuq3fW0CU+T3
-         Zrrg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737617008; x=1738221808;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=hOXcA9vaOQYRNKut7rDICRe3STKLWf1DDnQmgXfB78A=;
-        b=L0LWdIP3kRyWPte6URSEBFEpbOgD8SmGKUu9X8R+g+I4lqtU2RJNIdBdWErExgs/KS
-         V3MyTpCazPnuNX0FEul4F9Rl9DxyZZvXvk0p8Rz0W7Cg+mHUfCUfWMHpQcQaPNRll1ev
-         JRlvnCPwUuRbcSMaaJHLAKfK5Y3asaoHNX5Fn0ADX+kmW2uN8itlyuz8zQ8BBv7gN3fw
-         n8HR+2hs1INgTVIU2kToeTLe3LGL9pL+wlq0D68mDNSPwkcozV0oQjBNkt5NHj+berjd
-         c+0rcG6h1z+8KExSV9mySlqml92J88q2IPqeenu3IJ3ekTa8oRUi3mWTg3qp51u5555f
-         9cOw==
-X-Forwarded-Encrypted: i=1; AJvYcCVnSAwlIosoogByGxLvQI30zPBtn7UuqP2Y6oE7GXNOubhEh9hxS1jvV3fJt4HZoEd01sgklAKhr1s=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxtFgqzoTlKzjjGZy9hxISf79J812KHLZ2fhuMuZv3EQSO5JOC7
-	KtEuJ+ogzGMaZcwqfrMyCxiacjuh602NHV2LYKTflIz3hnJ0XzZFfAsPLVfyeKQMhfCrz9bcJ7X
-	HGOmIfDcjkIN/QsBbPpN1m+pLlMf0GDmQICjCMw==
-X-Gm-Gg: ASbGncugt40gkBW8Vl1a+lO6wj6pgz4gtaAcu/5/yDJDyGvn0v3waQoZiHrkgeiDP9O
-	YK0VDpOtYVLq9zBr3Si9eLdhKULfobHdRCzDDNoigshnJ69B7GoOcGaN4T6TghCIoyd5IUoznFO
-	t3
-X-Google-Smtp-Source: AGHT+IGIaMIn2pQwsBFaA4hpvX0jt/kyYUmEG6SfZJJHYi929Kh469Ft/+4k9WcxFqZ0bD0d+2tokXdY4wY7ycbYj2c=
-X-Received: by 2002:a05:690c:46c2:b0:6ef:8c41:defc with SMTP id
- 00721157ae682-6f6eb677355mr210279217b3.11.1737617008587; Wed, 22 Jan 2025
- 23:23:28 -0800 (PST)
+	Thu, 23 Jan 2025 07:54:41 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 678D95C5717;
+	Thu, 23 Jan 2025 07:53:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96BB1C4CED3;
+	Thu, 23 Jan 2025 07:54:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1737618879;
+	bh=OrYcjJ5hzXu+46N9Vw6qrqFKTskY2lWjkvcWkrgGb0E=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=W+Exsl4h6DMWnWCX1BbBSg9OMibYJglDCEoGX8rFhmA1WZtT3jVtpKv5WVPCnSkiU
+	 tFsgTfTWoHsKrZf0LrcTf1jGSoXAAtTEd+8zJ5NrXgGYLbeP8EdziU/5DA2XFHuEfr
+	 XoUYhOFG3k0E0RRrBRT6zGEXWZGbPdEIGz6GylgKg2x/QW4zlXHAGuTp6DOl4xngxX
+	 r9BamiDr88QmR76e0xVQXWvnUljatOeuS5RMbDGE5XHGHXXV6J1ljQV0y0qfNj2OGt
+	 xtuHlp1CrTsOFIWFnBrWAmqhHYx4GaoQydiCmqIWrzhho8vg6vJ8CKFZRs0UVxaCA4
+	 OakAcC9NnEgtA==
+Date: Thu, 23 Jan 2025 08:54:36 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
+	manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
+	p.zabel@pengutronix.de, dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v7 1/7] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe
+ uniphy
+Message-ID: <20250123-analytic-pragmatic-bonobo-a0f5e1@krzk-bin>
+References: <20250122063411.3503097-1-quic_varada@quicinc.com>
+ <20250122063411.3503097-2-quic_varada@quicinc.com>
 MIME-Version: 1.0
-References: <20241224084621.4139021-1-krishna.kurapati@oss.qualcomm.com>
- <173505391861.950293.11120368190852109172.b4-ty@kernel.org>
- <anfqf3jvh7timbvbfqfidylb4iro47cdinbb2y64fdalbiszum@2s3n7axnxixb>
- <Z2sJK9g7hiHnPwYA@vaman> <i7gptvn2fitpqypycjhsyjnp63s2w5omx4jtpubylfc3hx3m5l@jbuin5uvxuoc>
- <Z2sOl9ltv0ug4d82@vaman> <318620fc-e174-4ef3-808a-69fe1d4e1df5@oss.qualcomm.com>
- <f607aa9b-018c-4df6-9921-725693353f65@oss.qualcomm.com>
-In-Reply-To: <f607aa9b-018c-4df6-9921-725693353f65@oss.qualcomm.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Thu, 23 Jan 2025 09:23:17 +0200
-X-Gm-Features: AWEUYZlpAmBcFSsEoI37wecQuSj3RtKjsFyMGuS8EW1UWMEQXy5olgefUpEc6Ms
-Message-ID: <CAA8EJpr48k_tHKk-uVpAH7TMcp0-V97x6ztdFrbv0Go0a6kD2g@mail.gmail.com>
-Subject: Re: (subset) [PATCH v3 0/3] Add support for USB controllers on QCS615
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Johan Hovold <johan+linaro@kernel.org>, 
-	Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, linux-kernel@vger.kernel.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20250122063411.3503097-2-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250122_232329_702624_301F4C50 
-X-CRM114-Status: GOOD (  21.79  )
+X-CRM114-CacheID: sfid-20250122_235440_773684_B8D01B8D 
+X-CRM114-Status: UNSURE (   5.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,83 +79,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 23 Jan 2025 at 09:00, Krishna Kurapati
-<krishna.kurapati@oss.qualcomm.com> wrote:
->
->
->
-> On 12/25/2024 2:01 PM, Krishna Kurapati wrote:
-> >
-> >
-> > On 12/25/2024 1:12 AM, Vinod Koul wrote:
-> >> On 24-12-24, 21:33, Dmitry Baryshkov wrote:
-> >>> On Wed, Dec 25, 2024 at 12:49:07AM +0530, Vinod Koul wrote:
-> >>>> On 24-12-24, 17:38, Dmitry Baryshkov wrote:
-> >>>>> On Tue, Dec 24, 2024 at 08:55:18PM +0530, Vinod Koul wrote:
-> >>>>>>
-> >>>>>> On Tue, 24 Dec 2024 14:16:18 +0530, Krishna Kurapati wrote:
-> >>>>>>> This series aims at enabling USB on QCS615 which has 2 USB
-> >>>>>>> controllers.
-> >>>>>>> The primary controller is SuperSpeed capable and secondary one is
-> >>>>>>> High Speed only capable. The High Speed Phy is a QUSB2 phy and the
-> >>>>>>> SuperSpeed Phy is a QMP Uni Phy which supports non-concurrent DP.
-> >>>>>>>
-> >>>>>>> Link to v1:
-> >>>>>>> https://lore.kernel.org/all/20241014084432.3310114-1-quic_kriskura@quicinc.com/
-> >>>>>>>
-> >>>>>>> [...]
-> >>>>>>
-> >>>>>> Applied, thanks!
-> >>>>>>
-> >>>>>> [2/3] phy: qcom-qusb2: Add support for QCS615
-> >>>>>>        commit: 8adbf20e05025f588d68fb5b0fbbdab4e9a6f97ecommit
-> >>>>>> e1b2772ea957c91694aa91b90e4c0a1d7b0fb144
-> > Author: Krishna Kurapati <quic_kriskura@quicinc.com>
-> > Date:   Mon Oct 14 14:14:30 2024 +0530
-> >
-> >      dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add support for QCS615
-> >
-> >
-> >>>>>
-> >>>>> Is there any issue with the two remaining patches?
-> >>>>
-> >>>> Something wrong with b4... I have applied 2 & 3
-> >>>> Patch 1 should go thru USB tree
-> >>>
-> >>> Hmm, strange. But then, please excuse my ignorance, do we have bindings
-> >>> for these two patches?
-> >>
-> >> I see to have missed one!
-> >>
-> >> This one is documented see:
-> >> d146d384222e dt-bindings: phy: qcom,qusb2: Add bindings for QCS615
-> >>
-> >> but, the third patch is sadly not... I am dropping the third patch
-> >>
-> >
-> > Hi Dmitry, Vinod,
-> >
-> >   I see the bindings for QMP PHY in linux next as follows:
-> >
-> > commit e1b2772ea957c91694aa91b90e4c0a1d7b0fb144
-> > Author: Krishna Kurapati <quic_kriskura@quicinc.com>
-> > Date:   Mon Oct 14 14:14:30 2024 +0530
-> >
-> >      dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add support for QCS615
-> >
-> > As mentioned in the cover letter, the bindings of phy have been merged
-> > from v1.
->
-> Hi Vinod,
->
->   Can you help in taking in the patch-3. As mentioned in previous mail,
-> the bindings are merged and present in linux-next.
+On Wed, Jan 22, 2025 at 12:04:05PM +0530, Varadarajan Narayanan wrote:
+> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> 
+> Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5332.
+> 
+> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+> v7: * Add data type definition to 'num-lanes'
 
-We are currently in the merge window, no new patches can be accepted.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
--- 
-With best wishes
-Dmitry
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
