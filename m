@@ -4,79 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84303C02182
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 15:14:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96C78C02182
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 18:22:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KGxVxi7XpEdMXApIP4Jyvkkvt7u7GnyR3it6MbBouZo=; b=GFanTbbSpOA4CS
-	cuwX1Ra28YZbGyMn8zR+YU1YXlhf8ZfxW2uCvs7CFg3pn92zllwC+i91FAu6wyYVh10o+Jg4fapmc
-	724hqe9fXDjvNp+NPVz7+uvL8iNbraRt/vQn+Y5DXSVEOLJAY2BC8zEonxJY6pb4cv2LRHPDNLBw6
-	7FdgH0nnbcSyHmwLufTJc5LrDrf11zf7oXxihbyTIHhEkhgneZ1iDjfl9uC+67nWh4nd7xlQdBJZe
-	/HbfKWQJx7kIvBK9aNohXxMM+50GOyShAsQZwQ3D/XmZusN8JHhc6NuL9nXgh+H4UaFxAoOhpOxdU
-	4F1+7ftZjttcjhWdprfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2j2JLUg9zctoP5pRT3mzcwhgGYrw8PapwXLyeWWf0y0=; b=NZgCXnWUnDSCEU
+	1TiFQgdrDdk8eypsKl2ciqwKsbv+ulU5JUI0sLpTf3Zfg/CShGcdYKQP+nou0yI4dZKHPiFI7amO5
+	QaRc7MMHQbXMK6nS/Dm1JGHd2vK1FKWXA8/hiFwinv5wYZw4jSWwMHe3jqVT0WLbrJhJChha/Fgbf
+	TImYdJuaMTY9FHvUsf5KbbPVLJVzdSPuiJrC4HrAvbISrmbmZUQD84/YjJmL3WqAAGzTvPnOeuikI
+	mTJPAvxCxUcvc7qdFyk7aU5VhPe1q3mwa7yO7/GWr7O+zA9Xku/Ub4pCqM2sdQDS/VwuQ5Hol0s42
+	W9qOPWKBx57r6yIaUPxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tayui-0000000CgcI-1BY6;
-	Thu, 23 Jan 2025 15:14:36 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	id 1tb1qk-0000000D1jT-2yxZ;
+	Thu, 23 Jan 2025 18:22:42 +0000
+Received: from fllvem-ot03.ext.ti.com ([198.47.19.245])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taytO-0000000CgTt-3vpL;
-	Thu, 23 Jan 2025 15:13:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1737645195; x=1769181195;
-  h=from:to:cc:subject:in-reply-to:references:date:
-   message-id:mime-version;
-  bh=PJ7aYCbtXYZu+NJO1JN2by/s67/mM6chwppH2LXXzu4=;
-  b=Oj8HRSQ3JKt9aq/VC+jaeYsJ9uAGfuuEuSvcpZHsx3WaWwGBTB3uFD7w
-   ds4Qqbe0FXyE9FKPDS0tUH0KwXpFct3GoeLsdPVPxmd9QYY6ExZf8CpXK
-   IQIw2zXILMfx679oDt9yQ/AT/xn3sYHmy1AjebVIfyqgM0wwSg63M5O2y
-   7qcyMUJIEhStGOV5scTOnHTyHQ89KEnO/f1zBNPcJFfCVuQfTb1jm57zB
-   W2QodRwTlg7VDlPBgw94bJhSFMMKGeLHR7EkqDKZd7zL5wt9IjPe8nyxS
-   5R7VW784BKHidfRdVRJ9OYZY6fRtjSDqPd68p0Ul1hgJ+kDOSfejcscSO
-   g==;
-X-CSE-ConnectionGUID: lP/wuiDdStqff8wh6Kislg==
-X-CSE-MsgGUID: o8++i65CSrOhkeX83zJyZw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11324"; a="48645065"
-X-IronPort-AV: E=Sophos;i="6.13,228,1732608000"; 
-   d="scan'208";a="48645065"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jan 2025 07:12:41 -0800
-X-CSE-ConnectionGUID: iA8pr0lGR2G7SnmEsAU9RQ==
-X-CSE-MsgGUID: pnYUQ/TcQBKbHiLGBBM+LQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.13,228,1732608000"; 
-   d="scan'208";a="107299297"
-Received: from unknown (HELO localhost) ([10.237.66.160])
-  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jan 2025 07:12:34 -0800
-From: Jani Nikula <jani.nikula@linux.intel.com>
-To: Damon Ding <damon.ding@rock-chips.com>, heiko@sntech.de
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
- dmitry.baryshkov@linaro.org, andy.yan@rock-chips.com, hjc@rock-chips.com,
- algea.cao@rock-chips.com, kever.yang@rock-chips.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, Damon Ding
- <damon.ding@rock-chips.com>
-Subject: Re: [PATCH v6 01/14] drm/rockchip: analogix_dp: Replace DRM_...()
- functions with drm_...()
-In-Reply-To: <87ikq5n2di.fsf@intel.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-2-damon.ding@rock-chips.com>
- <87ikq5n2di.fsf@intel.com>
-Date: Thu, 23 Jan 2025 17:12:31 +0200
-Message-ID: <875xm5mun4.fsf@intel.com>
+	id 1tb1qh-0000000D1j7-3yrN
+	for linux-phy@lists.infradead.org;
+	Thu, 23 Jan 2025 18:22:41 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+	by fllvem-ot03.ext.ti.com (8.15.2/8.15.2) with ESMTPS id 50NIMa4M1219589
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Thu, 23 Jan 2025 12:22:36 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+	s=ti-com-17Q1; t=1737656556;
+	bh=IO0IbbZo0ZpWbiwy1Fz6YZWQCvWdvzpuCibfnUrnkGw=;
+	h=From:To:CC:Subject:Date;
+	b=RqzZBEMDh+GR8TdZoia0KYLFoBg3FIP/J/aFJAWUUFckabrP04/rtYuSYZzxocdMz
+	 oSU9byghBZGgQCdBn0Q0HR4ip1c3IAfwTHv9DLDW47OD/xEfZhdjtpvscJe1yBV0N1
+	 q3oInsI+pklX3VP+ymVLKpQxj2KIi5jDkNJXTAo0=
+Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
+	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 50NIMaLk028709
+	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 23 Jan 2025 12:22:36 -0600
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Thu, 23
+ Jan 2025 12:22:36 -0600
+Received: from lelvsmtp5.itg.ti.com (10.180.75.250) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
+ Frontend Transport; Thu, 23 Jan 2025 12:22:36 -0600
+Received: from fllvsmtp7.itg.ti.com ([10.249.42.149])
+	by lelvsmtp5.itg.ti.com (8.15.2/8.15.2) with ESMTP id 50NIMZpB028080;
+	Thu, 23 Jan 2025 12:22:35 -0600
+From: Andrew Davis <afd@ti.com>
+To: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+        Vinod
+ Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        Andrew
+ Davis <afd@ti.com>
+Subject: [PATCH] phy: ti: gmii-sel: Do not use syscon helper to build regmap
+Date: Thu, 23 Jan 2025 12:22:34 -0600
+Message-ID: <20250123182234.597665-1-afd@ti.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_071315_021133_45430946 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20250123_102240_082841_E60C8416 
+X-CRM114-Status: GOOD (  14.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,55 +86,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 23 Jan 2025, Jani Nikula <jani.nikula@linux.intel.com> wrote:
-> On Thu, 23 Jan 2025, Damon Ding <damon.ding@rock-chips.com> wrote:
->> According to the comments in include/drm/drm_print.h, the DRM_...()
->> functions are deprecated in favor of drm_...() or dev_...() functions.
->>
->> Use drm_err()/drm_dbg_core()/drm_dbg_kms() instead of
->> DRM_DEV_ERROR()/DRM_ERROR()/DRM_DEV_DEBUG()/DRM_DEBUG_KMS().
->>
->> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
->>
->> ---
->>
->> Changes in v6:
->> - Use drm_...() uniformly rather than mixing drm_...() and dev_..()
->> - Pass 'dp' in drm_...() rather than 'dp->drm_dev'
->> ---
->>  .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 29 ++++++++++---------
->>  1 file changed, 15 insertions(+), 14 deletions(-)
->>
->> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> index 0844175c37c5..dd33d7540e4b 100644
->> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> @@ -100,13 +100,13 @@ static int rockchip_dp_poweron(struct analogix_dp_plat_data *plat_data)
->>  
->>  	ret = clk_prepare_enable(dp->pclk);
->>  	if (ret < 0) {
->> -		DRM_DEV_ERROR(dp->dev, "failed to enable pclk %d\n", ret);
->> +		drm_err(dp, "failed to enable pclk %d\n", ret);
->
-> Please don't do this.
->
-> You're supposed to pass struct drm_device to drm_err() and friends. Not
-> some random struct pointer that just happens to have a ->dev member.
->
-> The drm_* macros may change at any time to actually expect the correct
-> type.
+The syscon helper device_node_to_regmap() is used to fetch a regmap
+registered to a device node. It also currently creates this regmap
+if the node did not already have a regmap associated with it. This
+should only be used on "syscon" nodes. This driver is not such a
+device and instead uses device_node_to_regmap() on its own node as
+a hacky way to create a regmap for itself.
 
-And with [1] I'm hoping "at any time" becomes "real soon now".
+This will not work going forward and so we should create our regmap
+the normal way by defining our regmap_config, fetching our memory
+resource, then using the normal regmap_init_mmio() function.
 
-BR,
-Jani.
+Signed-off-by: Andrew Davis <afd@ti.com>
+---
+ drivers/phy/ti/phy-gmii-sel.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
 
-
-[1] https://lore.kernel.org/all/cover.1737644530.git.jani.nikula@intel.com
-
-
+diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+index e0ca59ae31531..ff5d5e29629fa 100644
+--- a/drivers/phy/ti/phy-gmii-sel.c
++++ b/drivers/phy/ti/phy-gmii-sel.c
+@@ -424,6 +424,12 @@ static int phy_gmii_sel_init_ports(struct phy_gmii_sel_priv *priv)
+ 	return 0;
+ }
+ 
++static const struct regmap_config phy_gmii_sel_regmap_cfg = {
++	.reg_bits = 32,
++	.val_bits = 32,
++	.reg_stride = 4,
++};
++
+ static int phy_gmii_sel_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -468,7 +474,14 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
+ 
+ 	priv->regmap = syscon_node_to_regmap(node->parent);
+ 	if (IS_ERR(priv->regmap)) {
+-		priv->regmap = device_node_to_regmap(node);
++		void __iomem *base;
++
++		base = devm_platform_ioremap_resource(pdev, 0);
++		if (IS_ERR(base))
++			return dev_err_probe(dev, PTR_ERR(base),
++					     "failed to get base memory resource\n");
++
++		priv->regmap = regmap_init_mmio(dev, base, &phy_gmii_sel_regmap_cfg);
+ 		if (IS_ERR(priv->regmap))
+ 			return dev_err_probe(dev, PTR_ERR(priv->regmap),
+ 					     "Failed to get syscon\n");
 -- 
-Jani Nikula, Intel
+2.39.2
+
 
 -- 
 linux-phy mailing list
