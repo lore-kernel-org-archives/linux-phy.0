@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 604C7C02182
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 11:33:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FADCC02182
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 11:34:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ohTQ/UcMBvEnDQqWtt0IqIfT6yEO5POR0DkTZbGT7DQ=; b=A8Pn8dMfzfNDGg
-	H200fw2XajGsfHf46aPBdPIqHb/V1r39JUKWmBL/uw+gqfSGVRPX2jTvs/wq7oyfUjCoLIyIQVFlS
-	okzpf1GprmzSamesQWljAqgGuDv7APVSt9J73wrGNJk9qAh9gzQgiDcb0+XjuP/g0bVRX3J6oLzkT
-	lvPZHv4prvw1GVeCuSmBH6sOUKth8vt4JxCzwK2lT8usEAHFZrKPBnWNOQE6j0WwLHSVkC7zpPBla
-	3zzNQ01CBP6F68uCD/Gh1/UM6fBz+cyn6MwEljFMLF6HDDU7PvOJe2IetUxZD2wAxanxpA00Jfq0h
-	lso0e7qrWTDkTZEdH0cg==;
+	List-Owner; bh=6XlQe2GI0VjyFYTsMgRaiwwHGkeH9bI89fG3E3HeE6c=; b=1Ou/v2lwg8V8Dx
+	hjVWR+rR+KBdx9opKHYNsz4NPr1iWCyrNhGYKZUaopGbsLyEKGFzCBoTb9S1bz9+idzpM3x8jZi6Q
+	5S2NQ/EkDeXkK9EKiPu0qHOOqrQ+xmigxYnXekfyFhwP++drkT55RBtgVZP/C6hYBQMmtjWFA1nba
+	hsqVVEaQF8x27hwB0AyWgJD4rQStLo9El+BACevhnBWpRY88YIZCnkp/L7YnKaq9TYOw87me9ZTgn
+	yrAWafHDc8IuG9TaokUBGXWCVcMYeUnUV2LXiGVhY2rPc9dsB4d/12tQWP1kYh3xo3P/kNz9pRaDL
+	TkP2PuSg37XPMPAmxJyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tavSH-0000000CLCZ-0W4T;
-	Thu, 23 Jan 2025 11:33:01 +0000
-Received: from mail-lf1-x12a.google.com ([2a00:1450:4864:20::12a])
+	id 1tavTX-0000000CLT2-3LQa;
+	Thu, 23 Jan 2025 11:34:19 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tavQz-0000000CKrO-1mdt
+	id 1tavS3-0000000CL8W-3uA6
 	for linux-phy@lists.infradead.org;
-	Thu, 23 Jan 2025 11:31:42 +0000
-Received: by mail-lf1-x12a.google.com with SMTP id 2adb3069b0e04-53ff1f7caaeso884467e87.0
-        for <linux-phy@lists.infradead.org>; Thu, 23 Jan 2025 03:31:41 -0800 (PST)
+	Thu, 23 Jan 2025 11:32:50 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-30613037309so7672021fa.3
+        for <linux-phy@lists.infradead.org>; Thu, 23 Jan 2025 03:32:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1737631900; x=1738236700; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1737631966; x=1738236766; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=6GV/GI1CAs1idJHC9goHRl9dRjKhZ5TZhhQYyHtO4m8=;
-        b=pyLdNqsyAMGUfYHBcaQNevOhU733kvPMGcO7RvAmNJC2aEu3TVNiYd+DzRBMa2CTEx
-         QfDgN9sT6KWpsrjU7AWX2CDFp1YrzBw5IU3O23GutAMYpPrzDK1eNjwpi+DSsEtIV2SQ
-         tff15H0xDOmTf/1p3BXDTyNdFZgQS1MsU8g4W9cSYqRbartNv4lRIHsilh67e6H1r+rM
-         g8pNh/C8fjltkVzd3Un2npfaVH+zwZ8jQxwMlufhRhMgX6pg3i3m0YnJuMFRl9ozE3Aj
-         2tzZrdVK61jKkks6vjxEN51YOkAijwU2Y2SvcPR7CPgabUoYpwNoCzNt9DCtWxb3hkJd
-         7zAA==
+        bh=+zMurHlZ7uGtqY8vr+C9le803uP9XgfHXwzvJheucbI=;
+        b=vkHMKnig0ibUj3L79+7mpjx9UyVOLx4HvCtT43+3agczXq90VSPcivD8bbx/LRT0i3
+         mPra7G5COno6CehNYh0s0vkE8ulJGp9uOwBogqNKDg9ONuURxAtRleBBwhi1IAnd5QGi
+         YK2FRKZoLjBdR7DCrHSqqDb6QGs3+2TV+7RddvqX0UdCRT5ndMgpZ7/Cs5wHP5bdSYYI
+         iw4IubwF/v4B26yzcxkEi+KZ5y9lPatoOn/olaP3wT5EobtO6aT2yQIN0SMf2BmpghLp
+         EUEcPabKTu9RYocu0d3a8M18gSbx+eClJtmHZe2mKH7UzVJRVZFdmqeSfstwipGyGV/o
+         mw/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737631900; x=1738236700;
+        d=1e100.net; s=20230601; t=1737631966; x=1738236766;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=6GV/GI1CAs1idJHC9goHRl9dRjKhZ5TZhhQYyHtO4m8=;
-        b=WxyE9D3nc2Y5/p+SwLZ74KsC/MJQwPYqF/XasY0d4awIldKz8OPnYjhS1l740wGsmK
-         t53RoXYbwvmq0zGkWCwBBLnvSnOujzIiyI/Qj/7RJdr+S9BPU/LoAd8eppiI5fS9RTcd
-         KFhD44+Nhmc8SdFc9Ikjb+2BpwByjN1ithDdXi3ufSh3/Cu04tPwqgTEP3s3EcpywdyT
-         z8VWjNMOpc47Rc4j0/2EJ+kYX0FIDSGaUHr8r76Q9N1kg4Uw9XcRGfZhiwjjCIhHCqd8
-         +I06QwH2dcf0CcAApeoyWY+CcPrzBwz1cex6fqzvM1Xv+G9BcKu/WTHkaYlmqYMw1aCj
-         S7sg==
-X-Forwarded-Encrypted: i=1; AJvYcCWZiDdypQRiJgFzBoCnd5YTLX3eix27XqjWuX0s8l3ccfUKIyyOeFvWsgp2wY8ausYhI6KNTHGPINk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzOpQAc4jRa5rWZSdFQ9RQdcj/PYd9e+8+YhX3wVZOSCZBPeglJ
-	NUSUc6nFqVy2k62wA/XF/CFYgZ+qN9BqhbMJBtrm7gg134B0vinbeVCWe6eJJcQ=
-X-Gm-Gg: ASbGncssqqcoxxoIlVm+xqIAqbacmeZIs21J7dFrKUjZH7QLAMpJXEgseoGW9ZfPMR2
-	ljDKKTEwOdkogEUsUqn1fxCs+Shzcez/Zd016Xu8CDDSJe6vTqpqTJVbMImyBs2f829u38Nw8Ap
-	0XaNWV2yxIG/zOq9Y5UOSO32AEAiFBrCJDu53hYxKE/ia9CW8dPOFnOcMt48h0YGovzdzuycaLb
-	91xXPhAE5D/MEQjyRSjm7G2ewCJXOspKjwmmebGFVOjphpc7925S+tAHtqRqn6mUxyKlIaDN+ce
-	iPBvbW/WqGLfK4pKboNCAjiJTQPTQXTipStRWpTu70rGU9oPGm0pkiM+F+wn
-X-Google-Smtp-Source: AGHT+IHtXPZP5fXc+jx9qkDw8OG65Yz52T0nmfyDaHj9u5aH3nN5zjNMvgxVC7Tag6Djcezn71sacw==
-X-Received: by 2002:a05:6512:483:b0:540:1b2d:8ee1 with SMTP id 2adb3069b0e04-5439c21f2bfmr7480684e87.11.1737631899528;
-        Thu, 23 Jan 2025 03:31:39 -0800 (PST)
+        bh=+zMurHlZ7uGtqY8vr+C9le803uP9XgfHXwzvJheucbI=;
+        b=qE5uxYG4XBxpS1xSBVu8mww6wepJsbHfayvLm5Rg9mY/m+PQHSwGHa/R3x2TtryECt
+         39L3tK9Qn4nyRZ+b+r1J60Q8/8pzHNH36EPdqZLg/CQseugDyGHHSChyBCtm6OeeydO2
+         ELsYvFz+lH7buTvceSjIZOPeilkZ55TJHadHCSHy8fFGqKR5saCQnEJ5KM1k8hc6zJ6n
+         6vRxO5vl5OPcdfMLcySB5bzjYPWvnPCAjhupzCsHoWJaO6n3bgPBQmesN8cJ+GeheW9w
+         ts+4HgRibVtie7ByW4zuNP/voyNM8ulE9Vpu77QOGv3uB6WM4yp5oi+f/xCjgZuXVqJj
+         4NzA==
+X-Forwarded-Encrypted: i=1; AJvYcCVRnJKSJs76ejW+Wm2NZN0Fp1swX0tdhtKiQS2j79PYmykO4Dr94D8gl+77eyKe7HfiFntrohoSwdo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxRaN0X/VuOLRig1kvnXj085KzVnZaDL1UE4HqPFiS2gnCVKPK/
+	6b9a1zR+b2i0YRwzLDPsb8UPk8rIOvPZDGzZtF4UyIpJGdVnMxaBJfe5k80GPEo=
+X-Gm-Gg: ASbGncsZhZulzr+m3qbYmjmTuwPvuYnMu+2W/i9Lr9zw53d7QLh5Wzq/ZJwLaDjxga1
+	3MyjJ8Nng1mcMJcwIBwuflS2QqwuIQO08QE8z/HPaUbu1W+5RRXRDJEIXZWhWnPb9a9RVy30xwD
+	8LGL1qmb27J4J+z/jrRp7DB7ibHpYaBvrCLvIrqJRjyG86ugMtKiw1KMcqtueumS9AXe3lj0NJC
+	0ab4IK0KrbBhnTLA82jOE6Wb+3DK7Qi3uvMYQSw5+nJ/xDRqAjkboiloVcrxFwJloKSZQm1QqSk
+	x9JbH/MPmFBs5dP7lWWolETqT69K+WAaxKXaK5GhMK8XEMh4uhgatW7Kr6+4
+X-Google-Smtp-Source: AGHT+IGv3eRW1iX8AGSWOKHG3VFmFTMTVFcrPCnNhNO4BTbpmlhnROuDMhCvalg4dPHCeDzpS5d6Ng==
+X-Received: by 2002:a2e:b90d:0:b0:304:4cec:29f9 with SMTP id 38308e7fff4ca-3072ca60ef9mr67919831fa.3.1737631966038;
+        Thu, 23 Jan 2025 03:32:46 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5439af7a281sm2612994e87.259.2025.01.23.03.31.37
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3072a330764sm30489481fa.3.2025.01.23.03.32.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 23 Jan 2025 03:31:38 -0800 (PST)
-Date: Thu, 23 Jan 2025 13:31:35 +0200
+        Thu, 23 Jan 2025 03:32:44 -0800 (PST)
+Date: Thu, 23 Jan 2025 13:32:42 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Damon Ding <damon.ding@rock-chips.com>, 
-	Douglas Anderson <dianders@chromium.org>
+To: Damon Ding <damon.ding@rock-chips.com>
 Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org, 
 	conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org, 
 	sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com, l.stach@pengutronix.de, 
@@ -78,17 +77,17 @@ Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
 	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
 	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v6 12/14] drm/edp-panel: Add LG Display panel model
- LP079QX1-SP0V
-Message-ID: <rwn3g7tqgjnc525cjqtivgfgedhooiayn5nujng7bdzazgqhle@wfpuvoyr2tii>
+Subject: Re: [PATCH v6 14/14] arm64: dts: rockchip: Enable eDP0 display on
+ RK3588S EVB1 board
+Message-ID: <u3qiasthay5xrtu4bfu5ihag7x2wajrpbktrcs7bxutvc2iwrk@on5ymtwq5vwx>
 References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-13-damon.ding@rock-chips.com>
+ <20250123100747.1841357-15-damon.ding@rock-chips.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250123100747.1841357-13-damon.ding@rock-chips.com>
+In-Reply-To: <20250123100747.1841357-15-damon.ding@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_033141_457518_F7F5C1B0 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20250123_033247_970835_A723E6B7 
+X-CRM114-Status: GOOD (  22.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,55 +104,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 23, 2025 at 06:07:45PM +0800, Damon Ding wrote:
-> The raw edid for LP079QX1-SP0V panel model is:
+On Thu, Jan 23, 2025 at 06:07:47PM +0800, Damon Ding wrote:
+> Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
+> - Set pinctrl of pwm12 for backlight
+> - Enable edp0/hdptxphy0/vp2
+> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
+> - Add aux-bus/panel nodes
 > 
-> 00 ff ff ff ff ff ff 00 16 83 00 00 00 00 00 00
-> 04 17 01 00 a5 10 0c 78 06 ef 05 a3 54 4c 99 26
-> 0f 50 54 00 00 00 01 01 01 01 01 01 01 01 01 01
-> 01 01 01 01 01 01 ea 4e 00 4c 60 00 14 80 0c 10
-> 84 00 78 a0 00 00 00 18 00 00 00 10 00 00 00 00
-> 00 00 00 00 00 00 00 00 00 00 00 00 00 fe 00 4c
-> 50 30 37 39 51 58 31 2d 53 50 30 56 00 00 00 fc
-> 00 43 6f 6c 6f 72 20 4c 43 44 0a 20 20 20 00 3f
+> For RK3588, the PLL_V0PLL is specifically designed for the VOP2. This
+> means the clock rate of PLL_V0PLL can be adjusted according to the dclk
+> rate of relevant VP. It is typically assigned as the dclk source of a
+> specific VP when the clock of relevant display mode is unusual, such as
+> the eDP panel 'lg,lp079qx1-sp0v' paired with RK3588S EVB1, which has a
+> clock rate of 202.02MHz.
 > 
 > Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-> ---
->  drivers/gpu/drm/panel/panel-edp.c | 8 ++++++++
->  1 file changed, 8 insertions(+)
-
-Please use get_maintainers.pl when compiling To/Cc lists. Added Douglas
-to CC manually.
-
-Or, better, split irrelevant patches to separate series.
-
 > 
-> diff --git a/drivers/gpu/drm/panel/panel-edp.c b/drivers/gpu/drm/panel/panel-edp.c
-> index f8511fe5fb0d..77e3fd3ed160 100644
-> --- a/drivers/gpu/drm/panel/panel-edp.c
-> +++ b/drivers/gpu/drm/panel/panel-edp.c
-> @@ -1808,6 +1808,12 @@ static const struct panel_delay delay_200_150_e50 = {
->  	.enable = 50,
+> ---
+> 
+> Changes in v2:
+> - Remove brightness-levels and default-brightness-level properties in
+>   backlight node.
+> - Add the detail DT changes to commit message.
+> 
+> Changes in v3:
+> - Use aux-bus instead of platform bus for edp-panel.
+> 
+> Changes in v4:
+> - Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
+>   in the commit message.
+> 
+> Changes in v5:
+> - Use "edp-panel" instead of "lg,lp079qx1-sp0v"
+> - Remove unnecessary comments in commit message
+> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
+> 
+> Changes in v6:
+> - Add PLL_V0PLL related descriptions in commit message
+> ---
+>  .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 54 +++++++++++++++++++
+>  1 file changed, 54 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+> index bc4077575beb..a8c151b41e21 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
+> @@ -9,6 +9,7 @@
+>  #include <dt-bindings/gpio/gpio.h>
+>  #include <dt-bindings/input/input.h>
+>  #include <dt-bindings/pinctrl/rockchip.h>
+> +#include <dt-bindings/soc/rockchip,vop2.h>
+>  #include <dt-bindings/usb/pd.h>
+>  #include "rk3588s.dtsi"
+>  
+> @@ -238,6 +239,41 @@ &combphy2_psu {
+>  	status = "okay";
 >  };
 >  
-> +static const struct panel_delay delay_50_500_e200 = {
-> +	.hpd_absent = 50,
-> +	.unprepare = 500,
-> +	.enable = 200,
+> +&edp0 {
+> +	force-hpd;
+
+Why? Please mention the reason in the commit message.
+
+> +	status = "okay";
+> +
+> +	aux-bus {
+> +		panel {
+> +			compatible = "edp-panel";
+> +			backlight = <&backlight>;
+> +			power-supply = <&vcc3v3_lcd_edp>;
+> +
+> +			port {
+> +				panel_in_edp: endpoint {
+> +					remote-endpoint = <&edp_out_panel>;
+> +				};
+> +			};
+> +		};
+> +	};
 > +};
 > +
->  #define EDP_PANEL_ENTRY(vend_chr_0, vend_chr_1, vend_chr_2, product_id, _delay, _name) \
->  { \
->  	.ident = { \
-> @@ -1955,6 +1961,8 @@ static const struct edp_panel_entry edp_panels[] = {
->  	EDP_PANEL_ENTRY('C', 'S', 'W', 0x1100, &delay_200_500_e80_d50, "MNB601LS1-1"),
->  	EDP_PANEL_ENTRY('C', 'S', 'W', 0x1104, &delay_200_500_e50, "MNB601LS1-4"),
->  
-> +	EDP_PANEL_ENTRY('E', 'T', 'C', 0x0000, &delay_50_500_e200, "LP079QX1-SP0V"),
+> +&edp0_in {
+> +	edp0_in_vp2: endpoint {
+> +		remote-endpoint = <&vp2_out_edp0>;
+> +	};
+> +};
 > +
->  	EDP_PANEL_ENTRY('H', 'K', 'C', 0x2d51, &delay_200_500_e200, "Unknown"),
->  	EDP_PANEL_ENTRY('H', 'K', 'C', 0x2d5b, &delay_200_500_e200, "MB116AN01"),
->  	EDP_PANEL_ENTRY('H', 'K', 'C', 0x2d5c, &delay_200_500_e200, "MB116AN01-2"),
+> +&edp0_out {
+> +	edp_out_panel: endpoint {
+> +		remote-endpoint = <&panel_in_edp>;
+> +	};
+> +};
+> +
+> +&hdptxphy0 {
+> +	status = "okay";
+> +};
+> +
+>  &i2c3 {
+>  	status = "okay";
+>  
+> @@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
+>  };
+>  
+>  &pwm12 {
+> +	pinctrl-0 = <&pwm12m1_pins>;
+>  	status = "okay";
+>  };
+>  
+> @@ -1168,3 +1205,20 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
+>  		};
+>  	};
+>  };
+> +
+> +&vop_mmu {
+> +	status = "okay";
+> +};
+> +
+> +&vop {
+> +	assigned-clocks = <&cru DCLK_VOP2_SRC>;
+> +	assigned-clock-parents = <&cru PLL_V0PLL>;
+> +	status = "okay";
+> +};
+> +
+> +&vp2 {
+> +	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
+> +		reg = <ROCKCHIP_VOP2_EP_EDP0>;
+> +		remote-endpoint = <&edp0_in_vp2>;
+> +	};
+> +};
 > -- 
 > 2.34.1
 > 
