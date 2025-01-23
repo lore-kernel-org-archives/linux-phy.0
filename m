@@ -4,112 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3651BC02182
-	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 08:59:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47E87C02182
+	for <linux-phy@archiver.kernel.org>; Thu, 23 Jan 2025 10:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nvxHMwgve3UcFYq9NJHQssQK+JlkVdnmlxsmyfxR6W8=; b=aXDchY69U50Dbb
-	8fgRhvPaarg2dWPkkFcLTACJhPDlWbxhmmxW8P1R5AWoo/39bYPtdQ6h2X5JPjajuJvpQ9ts0N6hM
-	hrUr9eEl1xL0D327x/DRAIYuGnfQY5SdtRUluzgkLMWK3oEJsYTegK5jzHvjHUAWFxk7jY0mp2ti6
-	SAz/bMecU/I9QYYTJQlEtafuZCywDrWwDjr/OIu2dLyCrCPBjdtAmoCka/qf2WRWTQCNTuo3x85rO
-	dPjKbv8QI1dC8XICkCmAYUBSv0qytyFHsDs/YXNwYWaX8rrswxI5q8Bkgs9rIVDyk9st+aXN4Nkl3
-	WKSdYF7gHIh/5LaGYVEg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F9o5hiwgYvwtHQt2cW1Bgye8IYL3smKwmb130M7Urd0=; b=Xcf5jYaMk9x0i+
+	kmPYLdoX2BOR+xYBnf+QkCMDL+UlDl/su38/G3xhcp4Elg0qQZzKXJKmpicS72p5SzfQLcp1UbL+W
+	IxPbtDqJxSkcicVOPlLtqXCLPk+YGujVVzYZ9pN3BuawutjmgCbi7YMr1k236hqwzqlhy3mEVA+Wp
+	V9yAsoLxNoZGWt8+o5Lm3xHvYybu8QqLY12EmNjCApjhNoXE4mWiv1YqQEWT3gR8AEFFJerksXXa9
+	6lpoPz2q7WExR+yRQujgrjDVBeHiNSgmmd0rkngIRDGJXlPuesAsOj4PVpTbkUOG2ZvldCt+HTVEZ
+	+frRu9eYj4TzsuUr5rew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tat44-0000000C31x-1keL;
-	Thu, 23 Jan 2025 08:59:52 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1tau9M-0000000CA25-2FKw;
+	Thu, 23 Jan 2025 10:09:24 +0000
+Received: from mail-m19731108.qiye.163.com ([220.197.31.108])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tat2l-0000000C2u9-2QQ7;
-	Thu, 23 Jan 2025 08:58:32 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-3863703258fso1135649f8f.1;
-        Thu, 23 Jan 2025 00:58:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1737622709; x=1738227509; darn=lists.infradead.org;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=HkyeRQ66zp1oc6NXegGG+5zPV8GgPQJyFzgH5zMyigE=;
-        b=O2qK3kLjaOiDWLPIvF6/shCaYPCF8B4WNxUZgc7+ydSqKrxdluNmMBjgjhMXXP7VAJ
-         QorIBY5opV2Iq/25snV0ChYPmrYbYCOHT3evNkm41eiQ436+spnzcUiE5VdkIThnJH8p
-         kDegKSLzA+yxTUQakILPC5WYdz3+HeHk99VY2ytGOtsj/DMJHkqhnDp5DrQuhgtviIiH
-         LFPcAnT0NpRVEY+k48AroRFa5SS3khB862WJDd/jTYDnjxZtU5au2aXiBXnoIhuLgpDq
-         Q5rRkqEMW818lEJ0spyQC626/3zRj2HDIlf9m84kuj1zcan7b/CLGoJRZbSl5tpZ6sgL
-         Nbig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737622709; x=1738227509;
-        h=to:references:message-id:content-transfer-encoding:cc:date
-         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=HkyeRQ66zp1oc6NXegGG+5zPV8GgPQJyFzgH5zMyigE=;
-        b=RAcMRyYtBBLQHZEL9F61gYO59QRM3LKFAMPE2vKvuqWZo8ryWfxvdZgzbk00KD52yB
-         eTv4K9gzTdPAZiqztr/K+S/Wz8w52fndi8XcuVByra/RrbZGkB5RrWTWoz+0in65Y1MT
-         jWAt38ljipsgdiej9PgnkcksrZw3sY66XuUbBzqJ1DKEBPygmf+tDZoslCO/nbKglcHu
-         0jkJ91QdRxuGPErzhUj191DqwHgn1n5anwXrdUWqMfMuylYfY87JHjOtb1EPYIMWK3C+
-         4QM2AbgQD1eB6uzeKYor4sYq/XPuhGXiZ8IASD18XGCR/cfO5lELzKbwJNCAk+WlUR5p
-         L8fA==
-X-Forwarded-Encrypted: i=1; AJvYcCVziGTfe+jI+Z/Q7X1GbLCYK1DcQK64QSNWEvb/vFXES89mnM/KDcVRX4ShO3PRn74By3PzdgXlJRM1@lists.infradead.org, AJvYcCX3Tyg1qSd6f96EX71eiSwF81KE6E8gTD90iineV3EpATX/3zsbIdqpq5Qodcv/Vs/UYp+9bvj3w3ndizeMrCtR@lists.infradead.org, AJvYcCXIVza168xDU9lCwmE6fIX1BnapD0Q+FZLvQJYMb/9wWrp4ODfWeG3TjU7TJieoE4FuAkkYqRbR68CO4z0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YynZaAJXWolm1I51aOhWgix4Ez7IeEhuCGCkaP8+rwHymj+4pmO
-	OjyxQ1jqis6RmzP/AEdpASLpYBUIL91T7Xvul4GZJF1uFSGftuwMlSCN5KtS
-X-Gm-Gg: ASbGnctd4kDaOCnYhIVB6aXiW1c3b7kfRuj1SzKLsI9McGeS6XbJDN8oDM8nrvrPEMh
-	uA/r4duZj3LMKFz/iaZmWEFpvFTN88bRKeyJd5Mq6dkCu6tC6wBCzA/16bjQLGtMuZkTTXECSzm
-	uuGw2WjTUZ1BaVRpsvLCEtv6EhBknPDN1kw7edWEjsHcOjFaw35bE8nB+KUPxtNhs6vkFnFC7pg
-	lBpeaTx5uLz7tMIB26LXoAqB+IR2b4h1KbAHencr1Y4Sx2BbH5jTBG1VIo/DRKXsJflNr7QxA5f
-	49c94vf3dU+COnqYI01SXpXnCNd13u+BLz+MP6GH4Q8=
-X-Google-Smtp-Source: AGHT+IHc1t5fGPvcthsivd2P9fI8/r4mtQiSRE3tXH+2jfQUvFcq70i0y1FajJPpW7lEuohcXqidQg==
-X-Received: by 2002:adf:f8c5:0:b0:388:c61d:4415 with SMTP id ffacd0b85a97d-38c22275647mr1806903f8f.18.1737622709399;
-        Thu, 23 Jan 2025 00:58:29 -0800 (PST)
-Received: from smtpclient.apple (185.174.17.62.zt.hu. [185.174.17.62])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38bf322236csm18793946f8f.39.2025.01.23.00.58.27
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 23 Jan 2025 00:58:29 -0800 (PST)
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3776.700.51\))
-Subject: Re: [PATCH 05/12] clk: sunxi-ng: add CCU drivers for V853
-From: =?utf-8?B?QW5kcsOhcyBTemVtesWR?= <szemzo.andras@gmail.com>
-In-Reply-To: <36af1162-cd43-4045-bb43-b8bbf44f9788@quicinc.com>
-Date: Thu, 23 Jan 2025 09:58:17 +0100
-Cc: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Samuel Holland <samuel@sholland.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Maxime Ripard <mripard@kernel.org>,
- Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>,
- Albert Ou <aou@eecs.berkeley.edu>,
- =?utf-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
- Florian Fainelli <florian.fainelli@broadcom.com>,
- linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev,
- linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org,
- linux-gpio@vger.kernel.org,
- linux-pm@vger.kernel.org,
- linux-riscv@lists.infradead.org
-Message-Id: <266DB665-67E8-40FA-8BE6-E7F82955BAEB@gmail.com>
-References: <20250110123923.270626-1-szemzo.andras@gmail.com>
- <20250110123923.270626-6-szemzo.andras@gmail.com>
- <36af1162-cd43-4045-bb43-b8bbf44f9788@quicinc.com>
-To: Jeff Johnson <quic_jjohnson@quicinc.com>
-X-Mailer: Apple Mail (2.3776.700.51)
+	id 1tau89-0000000C9XJ-3kmf;
+	Thu, 23 Jan 2025 10:08:11 +0000
+Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 9818ae52;
+	Thu, 23 Jan 2025 18:08:02 +0800 (GMT+08:00)
+From: Damon Ding <damon.ding@rock-chips.com>
+To: heiko@sntech.de
+Cc: robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	rfoss@kernel.org,
+	vkoul@kernel.org,
+	sebastian.reichel@collabora.com,
+	cristian.ciocaltea@collabora.com,
+	l.stach@pengutronix.de,
+	dmitry.baryshkov@linaro.org,
+	andy.yan@rock-chips.com,
+	hjc@rock-chips.com,
+	algea.cao@rock-chips.com,
+	kever.yang@rock-chips.com,
+	dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Damon Ding <damon.ding@rock-chips.com>
+Subject: [PATCH v6 02/14] drm/rockchip: analogix_dp: Use formalized struct definition for grf field
+Date: Thu, 23 Jan 2025 18:07:35 +0800
+Message-Id: <20250123100747.1841357-3-damon.ding@rock-chips.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+MIME-Version: 1.0
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQhkYGVZPHUMYQ01IH0saQhpWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
+	hVSktLVUpCS0tZBg++
+X-HM-Tid: 0a9492a2139d03a3kunm9818ae52
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Mkk6Pio6LjIQDiwaNCowFDoS
+	LjdPFCpVSlVKTEhMTUlNQ0NPTEtDVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFPTk9PNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=LUqhcaxbUMKInpM+eePxcbG39CHXsADDtXbWV5Um6GWwWsyh6rBZg2FHQxx94qOznDpJZ9l18F6iinKr8k18z/YR13bbdCE6QKzHghX+uVi1cA+xwmE/282eXxazD8J0Cx650oE9o68kpF/BAIMaKnxzQ76ZE0u/2xifXJYPpDI=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=Ze1MXnVg38016se3HUI1omMmPdGIWHiMBvKPC69oRFw=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250123_005831_637780_CE445B55 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250123_020810_459135_3B6E2E2C 
+X-CRM114-Status: GOOD (  13.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,20 +85,166 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Cj4gT24gMjMgSmFuIDIwMjUsIGF0IDAwOjIzLCBKZWZmIEpvaG5zb24gPHF1aWNfampvaG5zb25A
-cXVpY2luYy5jb20+IHdyb3RlOgo+IAo+IE9uIDEvMTAvMjUgMDQ6MzksIEFuZHJhcyBTemVtem8g
-d3JvdGU6PiArbW9kdWxlX3BsYXRmb3JtX2RyaXZlcihzdW44aV92ODUzX3JfY2N1X2RyaXZlcik7
-Cj4+ICsKPj4gK01PRFVMRV9JTVBPUlRfTlMoIlNVTlhJX0NDVSIpOwo+PiArTU9EVUxFX0xJQ0VO
-U0UoIkdQTCIpOwo+IAo+IFNpbmNlIGNvbW1pdCAxZmZmZTdhMzRjODkgKCJzY3JpcHQ6IG1vZHBv
-c3Q6IGVtaXQgYSB3YXJuaW5nIHdoZW4gdGhlCj4gZGVzY3JpcHRpb24gaXMgbWlzc2luZyIpLCBh
-IG1vZHVsZSB3aXRob3V0IGEgTU9EVUxFX0RFU0NSSVBUSU9OKCkgd2lsbAo+IHJlc3VsdCBpbiBh
-IHdhcm5pbmcgd2l0aCBtYWtlIFc9MS4gUGxlYXNlIGFkZCBhIE1PRFVMRV9ERVNDUklQVElPTigp
-Cj4gdG8gYXZvaWQgdGhpcyB3YXJuaW5nIGluIGFsbCBvZiB5b3VyIG5ldyBtb2R1bGVzLgo+IAoK
-VGhhbmtzIGZvciBwb2ludGluZyBpdCBvdXQsIEnigJlsbCBhZGQgaXQuCi0tIApsaW51eC1waHkg
-bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+The formalized struct definition will makes grf field operations more
+concise and easier to extend.
+
+Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+
+---
+
+Changes in v2:
+- Initialize struct rockchip_dp_chip_data rk3399_edp/rk3288_dp in order
+  of its members
+
+Changes in v6:
+- Pass 'dp' in drm_...() rather than 'dp->drm_dev'
+---
+ .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 77 +++++++++++--------
+ 1 file changed, 45 insertions(+), 32 deletions(-)
+
+diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+index dd33d7540e4b..648ea608cdf3 100644
+--- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
++++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+@@ -32,26 +32,29 @@
+ 
+ #include "rockchip_drm_drv.h"
+ 
+-#define RK3288_GRF_SOC_CON6		0x25c
+-#define RK3288_EDP_LCDC_SEL		BIT(5)
+-#define RK3399_GRF_SOC_CON20		0x6250
+-#define RK3399_EDP_LCDC_SEL		BIT(5)
+-
+-#define HIWORD_UPDATE(val, mask)	(val | (mask) << 16)
+-
+ #define PSR_WAIT_LINE_FLAG_TIMEOUT_MS	100
+ 
++#define GRF_REG_FIELD(_reg, _lsb, _msb) {	\
++				.reg = _reg,	\
++				.lsb = _lsb,	\
++				.msb = _msb,	\
++				.valid = true,	\
++				}
++
++struct rockchip_grf_reg_field {
++	u32 reg;
++	u32 lsb;
++	u32 msb;
++	bool valid;
++};
++
+ /**
+  * struct rockchip_dp_chip_data - splite the grf setting of kind of chips
+- * @lcdsel_grf_reg: grf register offset of lcdc select
+- * @lcdsel_big: reg value of selecting vop big for eDP
+- * @lcdsel_lit: reg value of selecting vop little for eDP
++ * @lcdc_sel: grf register field of lcdc_sel
+  * @chip_type: specific chip type
+  */
+ struct rockchip_dp_chip_data {
+-	u32	lcdsel_grf_reg;
+-	u32	lcdsel_big;
+-	u32	lcdsel_lit;
++	const struct rockchip_grf_reg_field lcdc_sel;
+ 	u32	chip_type;
+ };
+ 
+@@ -84,6 +87,26 @@ static struct rockchip_dp_device *pdata_encoder_to_dp(struct analogix_dp_plat_da
+ 	return container_of(plat_data, struct rockchip_dp_device, plat_data);
+ }
+ 
++static int rockchip_grf_write(struct regmap *grf, u32 reg, u32 mask, u32 val)
++{
++	return regmap_write(grf, reg, (mask << 16) | (val & mask));
++}
++
++static int rockchip_grf_field_write(struct regmap *grf,
++				    const struct rockchip_grf_reg_field *field,
++				    u32 val)
++{
++	u32 mask;
++
++	if (!field->valid)
++		return 0;
++
++	mask = GENMASK(field->msb, field->lsb);
++	val <<= field->lsb;
++
++	return rockchip_grf_write(grf, field->reg, mask, val);
++}
++
+ static int rockchip_dp_pre_init(struct rockchip_dp_device *dp)
+ {
+ 	reset_control_assert(dp->rst);
+@@ -182,7 +205,6 @@ static void rockchip_dp_drm_encoder_enable(struct drm_encoder *encoder,
+ 	struct drm_crtc *crtc;
+ 	struct drm_crtc_state *old_crtc_state;
+ 	int ret;
+-	u32 val;
+ 
+ 	crtc = rockchip_dp_drm_get_new_crtc(encoder, state);
+ 	if (!crtc)
+@@ -193,24 +215,19 @@ static void rockchip_dp_drm_encoder_enable(struct drm_encoder *encoder,
+ 	if (old_crtc_state && old_crtc_state->self_refresh_active)
+ 		return;
+ 
+-	ret = drm_of_encoder_active_endpoint_id(dp->dev->of_node, encoder);
+-	if (ret < 0)
+-		return;
+-
+-	if (ret)
+-		val = dp->data->lcdsel_lit;
+-	else
+-		val = dp->data->lcdsel_big;
+-
+-	drm_dbg_core(dp, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
+-
+ 	ret = clk_prepare_enable(dp->grfclk);
+ 	if (ret < 0) {
+ 		drm_err(dp, "failed to enable grfclk %d\n", ret);
+ 		return;
+ 	}
+ 
+-	ret = regmap_write(dp->grf, dp->data->lcdsel_grf_reg, val);
++	ret = drm_of_encoder_active_endpoint_id(dp->dev->of_node, encoder);
++	if (ret < 0)
++		return;
++
++	drm_dbg_core(dp, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
++
++	ret = rockchip_grf_field_write(dp->grf, &dp->data->lcdc_sel, ret);
+ 	if (ret != 0)
+ 		drm_err(dp, "Could not write to GRF: %d\n", ret);
+ 
+@@ -449,16 +466,12 @@ static DEFINE_RUNTIME_DEV_PM_OPS(rockchip_dp_pm_ops, rockchip_dp_suspend,
+ 		rockchip_dp_resume, NULL);
+ 
+ static const struct rockchip_dp_chip_data rk3399_edp = {
+-	.lcdsel_grf_reg = RK3399_GRF_SOC_CON20,
+-	.lcdsel_big = HIWORD_UPDATE(0, RK3399_EDP_LCDC_SEL),
+-	.lcdsel_lit = HIWORD_UPDATE(RK3399_EDP_LCDC_SEL, RK3399_EDP_LCDC_SEL),
++	.lcdc_sel = GRF_REG_FIELD(0x6250, 5, 5),
+ 	.chip_type = RK3399_EDP,
+ };
+ 
+ static const struct rockchip_dp_chip_data rk3288_dp = {
+-	.lcdsel_grf_reg = RK3288_GRF_SOC_CON6,
+-	.lcdsel_big = HIWORD_UPDATE(0, RK3288_EDP_LCDC_SEL),
+-	.lcdsel_lit = HIWORD_UPDATE(RK3288_EDP_LCDC_SEL, RK3288_EDP_LCDC_SEL),
++	.lcdc_sel = GRF_REG_FIELD(0x025c, 5, 5),
+ 	.chip_type = RK3288_DP,
+ };
+ 
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
