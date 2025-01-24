@@ -4,68 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69951C02181
-	for <linux-phy@archiver.kernel.org>; Fri, 24 Jan 2025 08:28:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48552C02181
+	for <linux-phy@archiver.kernel.org>; Fri, 24 Jan 2025 09:44:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
+	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OS0CbWGb/xluu4idAhPznYtlfy8SdbHqHWj1RcErapk=; b=LmhIUG1s3Cc49g
-	z/I1TFtdXi1KqSYIQOo3Ut/4ibHc9iM77lc4niFPJgXNBQbn3MKxbZjOA5wUk/Zu/Q7tzIefP4PnQ
-	L0txV4yNIoFcXrZdMryN++bF7l/JuRqIvPesAbWruiLlwQCLHHegRw69xnzR/p8aghLFrPqq3E8KC
-	qoU82oAoIxzV3WeI5bWb5wYrs4ly0q7tXlMITwh0sPPCXsOQJ222Td+uWQLVVw2CrL025tTNkuVvU
-	MbbBcV7YEc9NJKMU/czM8h6uvRJGtIdl6BdKdwF5j3Igxc2RtbnJshekr3r6OjVpGm1yqvSdZ4el3
-	2/+bpmzHLbcSpDPwAhYg==;
+	List-Owner; bh=FanNHj/cWEHaohUxAv4qmjINkom2WByXmSqj+gGc4yI=; b=iRbTrGst/9zCS+
+	z0bAD1Ne0IkDliM509dnTjZ90hv5ELC8JMfL6x+pIRmHHwAbdUILqKg0iNuXkE9HA+xXpIY/aPSeY
+	PX20zYzKrG6+xeLMqVgS2ghF+GmI+9FtiW2On0T5shwVei9HwHKY8WV+MRJ3xOqMlRRRYfwkMob7A
+	cEwm6CYoW1/cGK5Mud5C1TsIWkRbvb3f+RZh7K1IXSh4xk79Pkz1BKuMg7JSiV4jTcRto63tHVbP0
+	s5mqs4CH+Ajh+L3npyTEnvs9q375clmM75h3QE1La+Izd+Y91LGzNpPZdr0Y6HTsC/4C8BSopw5x0
+	cYN7G+Wek0JpXgA6B+6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbF2v-0000000EFN2-23oR;
-	Fri, 24 Jan 2025 08:28:09 +0000
-Received: from mail-m3282.qiye.163.com ([220.197.32.82])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbF1k-0000000EEyB-1e7r;
-	Fri, 24 Jan 2025 08:26:58 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 996fdf6b;
-	Fri, 24 Jan 2025 16:26:49 +0800 (GMT+08:00)
-Message-ID: <c1718efc-85de-4356-aa15-2296a0780b2f@rock-chips.com>
-Date: Fri, 24 Jan 2025 16:26:48 +0800
+	id 1tbGFE-0000000EOGw-3lgW;
+	Fri, 24 Jan 2025 09:44:56 +0000
+Received: from m16.mail.163.com ([117.135.210.5])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tbGDd-0000000ENsV-23mm;
+	Fri, 24 Jan 2025 09:43:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=Date:From:Subject:Content-Type:MIME-Version:
+	Message-ID; bh=LYzbzwYDYoKwztDPD6C/feKlYvHgUyz6eZNhruyqgMA=; b=o
+	2KQvA139ZZaXDHG8Qh0zBlrYw4wTb1LDBD8MQzlYqsqtQHxQqdUAQvl7jjPVpXWF
+	TI/YlfD3C3B0+RdfbVuPnroUQ5nD7ObPxNQNN7dSBSP3OSwgG8IJwCfe6CrYXviN
+	y17KJ+dX7vUio7RXAfzVdHIo2EfrQ4IWFcAZgT3wU4=
+Received: from andyshrk$163.com ( [58.22.7.114] ) by
+ ajax-webmail-wmsvr-40-141 (Coremail) ; Fri, 24 Jan 2025 17:41:58 +0800
+ (CST)
+X-Originating-IP: [58.22.7.114]
+Date: Fri, 24 Jan 2025 17:41:58 +0800 (CST)
+From: "Andy Yan" <andyshrk@163.com>
+To: "Jani Nikula" <jani.nikula@linux.intel.com>
+Cc: "Damon Ding" <damon.ding@rock-chips.com>, heiko@sntech.de,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
+	cristian.ciocaltea@collabora.com, l.stach@pengutronix.de,
+	dmitry.baryshkov@linaro.org, andy.yan@rock-chips.com,
+	hjc@rock-chips.com, algea.cao@rock-chips.com,
+	kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re:Re: [PATCH v5 05/20] drm/rockchip: analogix_dp: Replace
+ DRM_...() functions with drm_...() or dev_...()
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
+ Copyright (c) 2002-2025 www.mailtech.cn 163com
+In-Reply-To: <87ed0tn29l.fsf@intel.com>
+References: <20250109032725.1102465-1-damon.ding@rock-chips.com>
+ <20250109032725.1102465-6-damon.ding@rock-chips.com>
+ <40b09942.533e.19449c023a1.Coremail.andyshrk@163.com>
+ <a8bee693-cbde-469d-abcf-363311cfd904@rock-chips.com>
+ <87ed0tn29l.fsf@intel.com>
+X-NTES-SC: AL_Qu2YBfuavk8q7iaYY+kfmkcVgOw9UcO5v/Qk3oZXOJF8jCrr+CUnVkFMJFbsweeONhCLrheYTj1O48h1bZN6b5Mb80po9H52mNq8qQu8uCzI4A==
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 06/14] drm/bridge: analogix_dp: support to get
- &analogix_dp_device.plat_data and &analogix_dp_device.aux
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
- sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com,
- l.stach@pengutronix.de, andy.yan@rock-chips.com, hjc@rock-chips.com,
- algea.cao@rock-chips.com, kever.yang@rock-chips.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-7-damon.ding@rock-chips.com>
- <y4yzgkvcmvmphviuoroijaaotd2zdworbs5tfhdxh74kchirk6@dgoqwoksckiz>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <y4yzgkvcmvmphviuoroijaaotd2zdworbs5tfhdxh74kchirk6@dgoqwoksckiz>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQklMHlZOSE9DSUxNGh9DQkhWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a94976bc3a103a3kunm996fdf6b
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6MU06Mzo4OTIXHiFLMDBKCA82
-	F1YwCxZVSlVKTEhMTEtMSUpKT09CVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFJQ0pLNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=OYTYvei2Jt0VQn6+xbTs8MyEcoB25VtrUR7lof7WSmjRXwxJEUCpdeds8/R8FPtylnCqhMnxEYfnwWe8lhF4tAhafN/OQ4GNnzOSdhxEy1abwkDbtmF4hEXF63QkK1mmAn5qGwbNW9EOHOAF24wqZRsOfWhLaNR2Zq2sBlFtpoM=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=/8oAL6qTbQWJkj8r9VXN/YNw8cpkGC6GOUpg2XwzQs8=;
-	h=date:mime-version:subject:message-id:from;
+Message-ID: <6007b76a.6021.19497b090d4.Coremail.andyshrk@163.com>
+X-Coremail-Locale: zh_CN
+X-CM-TRANSID: jSgvCgCXn_RmYJNnEy9eAA--.22874W
+X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqAjeXmeTWj0-8QAEs5
+X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_002656_990026_6EF83DBA 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20250124_014317_924090_BDA4ED47 
+X-CRM114-Status: GOOD (  14.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,89 +81,193 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+Hi,
 
-On 2025/1/23 19:19, Dmitry Baryshkov wrote:
-> On Thu, Jan 23, 2025 at 06:07:39PM +0800, Damon Ding wrote:
->> Add two new functions: one to find &analogix_dp_device.plat_data via
->> &drm_dp_aux, and the other to get &analogix_dp_device.aux. Both of them
->> serve for the function of getting panel from DP AUX bus, which is why
->> they are included in a single commit.
+At 2025-01-23 20:27:50, "Jani Nikula" <jani.nikula@linux.intel.com> wrote:
+>On Wed, 22 Jan 2025, Damon Ding <damon.ding@rock-chips.com> wrote:
+>> Hi Andy,
 >>
->> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
->> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
->> ---
->>   drivers/gpu/drm/bridge/analogix/analogix_dp_core.c | 14 ++++++++++++++
->>   include/drm/bridge/analogix_dp.h                   |  4 ++++
->>   2 files changed, 18 insertions(+)
+>> On 2025/1/9 14:28, Andy Yan wrote:
+>>> 
+>>> Hi Damon,
+>>> 
+>>> At 2025-01-09 11:27:10, "Damon Ding" <damon.ding@rock-chips.com> wrote:
+>>>> According to the comments in include/drm/drm_print.h, the DRM_...()
+>>>> functions are deprecated in favor of drm_...() or dev_...() functions.
+>>>>
+>>>> Use drm_err()/drm_dbg_core()/drm_dbg_kms() instead of
+>>>> DRM_DEV_ERROR()/DRM_ERROR()/DRM_DEV_DEBUG()/DRM_DEBUG_KMS() after
+>>>> rockchip_dp_bind() is called, and replace DRM_DEV_ERROR() with dev_err()
+>>>> before calling it.
+>>>>
+>>>> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>>>> ---
+>>>> .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 29 ++++++++++---------
+>>>> 1 file changed, 15 insertions(+), 14 deletions(-)
+>>>>
+>>>> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+>>>> index 546d13f19f9b..8114c3238609 100644
+>>>> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+>>>> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+>>>> @@ -100,13 +100,13 @@ static int rockchip_dp_poweron(struct analogix_dp_plat_data *plat_data)
+>>>>
+>>>> 	ret = clk_prepare_enable(dp->pclk);
+>>>> 	if (ret < 0) {
+>>>> -		DRM_DEV_ERROR(dp->dev, "failed to enable pclk %d\n", ret);
+>>>> +		drm_err(dp->drm_dev, "failed to enable pclk %d\n", ret);
+>>> 
+>>>                 You just need to pass dp here:
+>>>                  drm_err(dp, "failed to enable pclk %d\n", ret);
+>>> 
 >>
->> diff --git a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
->> index b05f5b9f5258..8251adfce2f9 100644
->> --- a/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
->> +++ b/drivers/gpu/drm/bridge/analogix/analogix_dp_core.c
->> @@ -1794,6 +1794,20 @@ int analogix_dp_stop_crc(struct drm_connector *connector)
->>   }
->>   EXPORT_SYMBOL_GPL(analogix_dp_stop_crc);
->>   
->> +struct analogix_dp_plat_data *analogix_dp_aux_to_plat_data(struct drm_dp_aux *aux)
->> +{
->> +	struct analogix_dp_device *dp = to_dp(aux);
->> +
->> +	return dp->plat_data;
->> +}
->> +EXPORT_SYMBOL_GPL(analogix_dp_aux_to_plat_data);
->> +
->> +struct drm_dp_aux *analogix_dp_get_aux(struct analogix_dp_device *dp)
->> +{
->> +	return &dp->aux;
->> +}
->> +EXPORT_SYMBOL_GPL(analogix_dp_get_aux);
->> +
->>   MODULE_AUTHOR("Jingoo Han <jg1.han@samsung.com>");
->>   MODULE_DESCRIPTION("Analogix DP Core Driver");
->>   MODULE_LICENSE("GPL v2");
->> diff --git a/include/drm/bridge/analogix_dp.h b/include/drm/bridge/analogix_dp.h
->> index 6002c5666031..1b119b547988 100644
->> --- a/include/drm/bridge/analogix_dp.h
->> +++ b/include/drm/bridge/analogix_dp.h
->> @@ -7,6 +7,7 @@
->>   #ifndef _ANALOGIX_DP_H_
->>   #define _ANALOGIX_DP_H_
->>   
->> +#include <drm/display/drm_dp_aux_bus.h>
-> 
-> Nit: it should be enough to just forward-declare struct drm_dp_aux
-> instead.
-> 
+>> I see. It is really better to pass dp instead of dp->drm_dev. I will 
+>> update all relevant logs in the next version.
+>
+>No, this was bad review feedback. You're absolutely expected to pass
+>struct drm_device to drm_err() and friends.
 
-I will move the header file to the driver of Rockchip Analogix DP and 
-just use the forward-declare here in the next version.
+No, I didn't see how the drm_err macro and friends restrict/expect the passing of only the drm_device pointer.
+As for the platform device driver itself,  we hope that when an error occurs, the log clearly indicates
+the specific device that the log corresponds to, rather than a generic drm_device.
+The original code of this driver used the macro related to DRM_DEV_ERROR to do just that.
+And similar patches have been merged before
 
->>   #include <drm/drm_crtc.h>
->>   
->>   struct analogix_dp_device;
->> @@ -48,4 +49,7 @@ void analogix_dp_unbind(struct analogix_dp_device *dp);
->>   int analogix_dp_start_crc(struct drm_connector *connector);
->>   int analogix_dp_stop_crc(struct drm_connector *connector);
->>   
->> +struct analogix_dp_plat_data *analogix_dp_aux_to_plat_data(struct drm_dp_aux *aux);
->> +struct drm_dp_aux *analogix_dp_get_aux(struct analogix_dp_device *dp);
->> +
->>   #endif /* _ANALOGIX_DP_H_ */
->> -- 
->> 2.34.1
+Please also refer to the discussion here.[0]
+[0]https://lore.kernel.org/linux-rockchip/20250109032725.1102465-1-damon.ding@rock-chips.com/T/#m54bd842be660031773834cedea6c73a5033ca973
+
+
+
+>
+>BR,
+>Jani.
+>
+>
 >>
-> 
-
-Best regards,
-Damon
-
-
+>>>> 		return ret;
+>>>> 	}
+>>>>
+>>>> 	ret = rockchip_dp_pre_init(dp);
+>>>> 	if (ret < 0) {
+>>>> -		DRM_DEV_ERROR(dp->dev, "failed to dp pre init %d\n", ret);
+>>>> +		drm_err(dp->drm_dev, "failed to dp pre init %d\n", ret);
+>>>> 		clk_disable_unprepare(dp->pclk);
+>>>> 		return ret;
+>>>> 	}
+>>>> @@ -126,12 +126,13 @@ static int rockchip_dp_powerdown(struct analogix_dp_plat_data *plat_data)
+>>>> static int rockchip_dp_get_modes(struct analogix_dp_plat_data *plat_data,
+>>>> 				 struct drm_connector *connector)
+>>>> {
+>>>> +	struct rockchip_dp_device *dp = pdata_encoder_to_dp(plat_data);
+>>>> 	struct drm_display_info *di = &connector->display_info;
+>>>> 	/* VOP couldn't output YUV video format for eDP rightly */
+>>>> 	u32 mask = DRM_COLOR_FORMAT_YCBCR444 | DRM_COLOR_FORMAT_YCBCR422;
+>>>>
+>>>> 	if ((di->color_formats & mask)) {
+>>>> -		DRM_DEBUG_KMS("Swapping display color format from YUV to RGB\n");
+>>>> +		drm_dbg_kms(dp->drm_dev, "Swapping display color format from YUV to RGB\n");
+>>>> 		di->color_formats &= ~mask;
+>>>> 		di->color_formats |= DRM_COLOR_FORMAT_RGB444;
+>>>> 		di->bpc = 8;
+>>>> @@ -201,17 +202,17 @@ static void rockchip_dp_drm_encoder_enable(struct drm_encoder *encoder,
+>>>> 	else
+>>>> 		val = dp->data->lcdsel_big;
+>>>>
+>>>> -	DRM_DEV_DEBUG(dp->dev, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
+>>>> +	drm_dbg_core(dp->drm_dev, "vop %s output to dp\n", (ret) ? "LIT" : "BIG");
+>>>>
+>>>> 	ret = clk_prepare_enable(dp->grfclk);
+>>>> 	if (ret < 0) {
+>>>> -		DRM_DEV_ERROR(dp->dev, "failed to enable grfclk %d\n", ret);
+>>>> +		drm_err(dp->drm_dev, "failed to enable grfclk %d\n", ret);
+>>>> 		return;
+>>>> 	}
+>>>>
+>>>> 	ret = regmap_write(dp->grf, dp->data->lcdsel_grf_reg, val);
+>>>> 	if (ret != 0)
+>>>> -		DRM_DEV_ERROR(dp->dev, "Could not write to GRF: %d\n", ret);
+>>>> +		drm_err(dp->drm_dev, "Could not write to GRF: %d\n", ret);
+>>>>
+>>>> 	clk_disable_unprepare(dp->grfclk);
+>>>> }
+>>>> @@ -236,7 +237,7 @@ static void rockchip_dp_drm_encoder_disable(struct drm_encoder *encoder,
+>>>>
+>>>> 	ret = rockchip_drm_wait_vact_end(crtc, PSR_WAIT_LINE_FLAG_TIMEOUT_MS);
+>>>> 	if (ret)
+>>>> -		DRM_DEV_ERROR(dp->dev, "line flag irq timed out\n");
+>>>> +		drm_err(dp->drm_dev, "line flag irq timed out\n");
+>>>> }
+>>>>
+>>>> static int
+>>>> @@ -277,7 +278,7 @@ static int rockchip_dp_of_probe(struct rockchip_dp_device *dp)
+>>>>
+>>>> 	dp->grf = syscon_regmap_lookup_by_phandle(np, "rockchip,grf");
+>>>> 	if (IS_ERR(dp->grf)) {
+>>>> -		DRM_DEV_ERROR(dev, "failed to get rockchip,grf property\n");
+>>>> +		dev_err(dev, "failed to get rockchip,grf property\n");
+>>>> 		return PTR_ERR(dp->grf);
+>>>> 	}
+>>>>
+>>>> @@ -287,19 +288,19 @@ static int rockchip_dp_of_probe(struct rockchip_dp_device *dp)
+>>>> 	} else if (PTR_ERR(dp->grfclk) == -EPROBE_DEFER) {
+>>>> 		return -EPROBE_DEFER;
+>>>> 	} else if (IS_ERR(dp->grfclk)) {
+>>>> -		DRM_DEV_ERROR(dev, "failed to get grf clock\n");
+>>>> +		dev_err(dev, "failed to get grf clock\n");
+>>>> 		return PTR_ERR(dp->grfclk);
+>>>> 	}
+>>>>
+>>>> 	dp->pclk = devm_clk_get(dev, "pclk");
+>>>> 	if (IS_ERR(dp->pclk)) {
+>>>> -		DRM_DEV_ERROR(dev, "failed to get pclk property\n");
+>>>> +		dev_err(dev, "failed to get pclk property\n");
+>>>> 		return PTR_ERR(dp->pclk);
+>>>> 	}
+>>>>
+>>>> 	dp->rst = devm_reset_control_get(dev, "dp");
+>>>> 	if (IS_ERR(dp->rst)) {
+>>>> -		DRM_DEV_ERROR(dev, "failed to get dp reset control\n");
+>>>> +		dev_err(dev, "failed to get dp reset control\n");
+>>>> 		return PTR_ERR(dp->rst);
+>>>> 	}
+>>>>
+>>>> @@ -315,12 +316,12 @@ static int rockchip_dp_drm_create_encoder(struct rockchip_dp_device *dp)
+>>>>
+>>>> 	encoder->possible_crtcs = drm_of_find_possible_crtcs(drm_dev,
+>>>> 							     dev->of_node);
+>>>> -	DRM_DEBUG_KMS("possible_crtcs = 0x%x\n", encoder->possible_crtcs);
+>>>> +	drm_dbg_kms(drm_dev, "possible_crtcs = 0x%x\n", encoder->possible_crtcs);
+>>>>
+>>>> 	ret = drm_simple_encoder_init(drm_dev, encoder,
+>>>> 				      DRM_MODE_ENCODER_TMDS);
+>>>> 	if (ret) {
+>>>> -		DRM_ERROR("failed to initialize encoder with drm\n");
+>>>> +		drm_err(drm_dev, "failed to initialize encoder with drm\n");
+>>>> 		return ret;
+>>>> 	}
+>>>>
+>>>> @@ -340,7 +341,7 @@ static int rockchip_dp_bind(struct device *dev, struct device *master,
+>>>>
+>>>> 	ret = rockchip_dp_drm_create_encoder(dp);
+>>>> 	if (ret) {
+>>>> -		DRM_ERROR("failed to create drm encoder\n");
+>>>> +		drm_err(drm_dev, "failed to create drm encoder\n");
+>>>> 		return ret;
+>>>> 	}
+>>>>
+>>>> -- 
+>>>> 2.34.1
+>>>>
+>>
+>> Best regards,
+>> Damon
+>
+>-- 
+>Jani Nikula, Intel
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
