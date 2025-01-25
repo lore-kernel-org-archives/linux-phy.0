@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FD15C0218C
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 03:31:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9C57C02181
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 03:31:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bV9e6dSxZw9e2LCIacK6/7L+Hh32KGFd17OtIkTPaAY=; b=y60tGcYruZPPFU
-	CIECLGQBYBgjDM9jNwJjiVnPVZe1jgtxL1Hi+1v3ZWvCIPQ6j/gb2cJr4JTRTlvNcE0UczVVLwbNs
-	dBARLhf/3jnViB23P436O72o4s1/HXiSPSXoYpUq+Zyqpjb5/appLdMjsZ38JQmxW9VjtfsAPDgPl
-	z+SqrXUVe2k2tA+hASqCvWfmz9Xea0I30AGFy15ikQMjge4eSWt56Fx8Sw8CIErzUcuMIaveDhxmb
-	P6WFcD6YsgW/3fHc5UvAWhNIJ2Bo6jKip9Fpz15ZCIg+d0BnH7THRQkvqgPzgqeSw5pgn+y7I3koJ
-	V9EY2Ly6aIxB/5kLk3nQ==;
+	List-Owner; bh=HaBru/a6ftJTePatOjXd4zwdL9bk2MScXVa+pCYKbt8=; b=u4mMUucm58vyJq
+	9VbY0djytEb9PfrgcNIHh8ZZMj9Dp0pzD+XQhFbVOQtPnQhsOCIdMLOCwI7ZWK1nKnkoIohEEwxcC
+	Rnf+6mzQZI4CuhgXnYNyk7ufi83wtW6Jjs5vmBc6BiUI9KeoF2r/f2vEl0zPRzKItvTxmPXFZsG3x
+	y0uL7WteGNnFGOAMZlZ+2hxNGZ2qgw8pLLSvDCDl0dyao2gZNuyFQtUdD+Ka2Oku6AeueZs5n0AUl
+	Ku76YlKeuhkpV4s4LdN2QRs+C/Gj7aQAkM7XuSO7WQQeYDf/v/O2cRLdV/JIRwNtaOrxMUrnoeq4C
+	bBZ/3u0ZzvRmkz9hTrAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbWtS-0000000Fxl3-0mSy;
-	Sat, 25 Jan 2025 03:31:34 +0000
+	id 1tbWtW-0000000Fxmi-2zZ7;
+	Sat, 25 Jan 2025 03:31:38 +0000
 Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbWtQ-0000000FxkN-0ZwJ
+	id 1tbWtT-0000000Fxln-3aYz
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Jan 2025 03:31:33 +0000
+	Sat, 25 Jan 2025 03:31:37 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 3DA36A41ADA;
-	Sat, 25 Jan 2025 03:29:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A8A2C4CEE1;
-	Sat, 25 Jan 2025 03:31:28 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id DC736A41882;
+	Sat, 25 Jan 2025 03:29:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0A73C4CED6;
+	Sat, 25 Jan 2025 03:31:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737775891;
-	bh=14JNtwzaggko4px4AFo91MrUKHtzGL+tdB0lfg7xYR0=;
+	s=k20201202; t=1737775894;
+	bh=yQ4WZAL+HjPTJalu92xDn4gcmnU/eJvKNpSHwXuCHcE=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=RDzc58GLcn57z7WBTgDycEYErYO0dy7MkZyZW5V2Ef5pYdxhRPhEVqgo/UPjohoj7
-	 JGG9LvlNyQveFOjq0/gHzTLT5QYrMb17rmMS7Osf2ookvQNrruNciQyRoLDDkglZkB
-	 fgplGfCFEXxEAQjiy9gDoIzsFXUTGFFVlz6WuhMIBYnm8J96S65bQ7SfCjONBDsE10
-	 F5ugwpumpJszp+XICHIW9uLJdobqUju2IHS+lRNIfzrfv31GD8iKp5HCYBvqJDhaFo
-	 SXultECkYkWN1RT6z0wyrkCzqaGW644SxMHXrFMJw7HRks6vJtpm0TAECbZTDxV0P0
-	 AgBBGDgfHeFDQ==
+	b=V7AkTryKVx8hTgqLFyX6Igbv9FxtIV4wWZbgRDVoo1EwOhLg+USluawNNEYo8nW+d
+	 kTU3Qk4j2jR7YcyPXoIaR3U4mf53uTADsqTOl1TFr2jQuQh8QHmBDuz9TcCJ+HW56R
+	 uWXknQNtcGMaEF5zmH1K0f+KL1iooZom5Aj6mGINztyGOU0neSshWhJ4EVVFsEgdRm
+	 zQtBXlgqHP0yJTLqbBs7NZtNiF/Tpxvb9Y1UdzgnO2Iqlchch83IMOJ8bCp7Bd+YaL
+	 OimKpkyP7Ogb8S/YxNMQRvE/F8UgtFzk1CtqtMkCxPd14JQuHwPO+qdXFUjmwWjUg4
+	 1ulTDGld4ckvQ==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Sat, 25 Jan 2025 04:31:17 +0100
-Subject: [PATCH 1/6] dt-bindings: phy: qcom,qmp-pcie: Add X1P42100 PCIe
- Gen4x4 PHY
+Date: Sat, 25 Jan 2025 04:31:18 +0100
+Subject: [PATCH 2/6] dt-bindings: phy: qcom,qmp-pcie: Drop reset number
+ constraints
 MIME-Version: 1.0
-Message-Id: <20250125-topic-x1p4_dts-v1-1-02659a08b044@oss.qualcomm.com>
+Message-Id: <20250125-topic-x1p4_dts-v1-2-02659a08b044@oss.qualcomm.com>
 References: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
 In-Reply-To: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -60,16 +60,16 @@ Cc: Marijn Suijten <marijn.suijten@somainline.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1737775883; l=1914;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1737775883; l=1746;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=FYdx44lQWbzJYhduHK5Q+z5D4BL0BELlO06f6qXTvOg=;
- b=VCpNB5nnYTaxeOVLRWolLA/p3Ry3SlxgqlIUULYP+91T72hwooVFVDu6p4/UvYrMCzo5xg7Ms
- dFkff5bLYRNBkQO//tfeJ92l9Ix8PwIMF3Pdj6DeyXgBY8EdCJX3PhD
+ bh=nIktw7MgGIgFnnkILzM1v07X3q5bcgjMMy7JANg0KiM=;
+ b=en9NgYiXNZOek7cdDDhnfeAx+QO/5xZ7gwvv6mZtCP0QPIO+jM34GdWMAS53xSezFDrH/3IJs
+ KogOTKPXYwSA3ls2HXzlDquuNbgUGHrL7vlAcfzF1ULiCyBzEruYMMh
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_193132_319941_21BEC0C0 
-X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-CacheID: sfid-20250124_193136_032909_00293C90 
+X-CRM114-Status: UNSURE (   5.47  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,54 +89,54 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-X1P42100 has two Gen4x4 PHYs instead of one Gen4x4 and one Gen4x8.
+(Almost?) all QMP PHYs come with both a "full reset" ("phy") and a
+"retain certain registers" one ("phy_nocsr").
 
-They are mostly identical to X1E80100's Gen4x4 PHY, but there are some
-minor details in the programming sequences.
-
-Introduce a new compatible for this flavor of the PHY.
+Drop the maxItems=1 constraint for resets and reset_names as we go
+ahead and straighten out the DT usage. After that's done (which
+will involve modifying some clock drivers etc.), we may set
+*min*Items to 2, bar some possible exceptions.
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 24 ----------------------
+ 1 file changed, 24 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 89391649e0b5cb7e778b51fe61fb445d1f17eaf5..f1ffc3d5cae44b8a9c96cdcd749a6e54533c94f6 100644
+index f1ffc3d5cae44b8a9c96cdcd749a6e54533c94f6..c42143bd139e30d1beabc9099d0dde17128413bf 100644
 --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
 +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -45,6 +45,7 @@ properties:
-       - qcom,x1e80100-qmp-gen4x2-pcie-phy
-       - qcom,x1e80100-qmp-gen4x4-pcie-phy
-       - qcom,x1e80100-qmp-gen4x8-pcie-phy
-+      - qcom,x1p42100-qmp-gen4x4-pcie-phy
+@@ -204,30 +204,6 @@ allOf:
+         clock-names:
+           minItems: 7
  
-   reg:
-     minItems: 1
-@@ -124,6 +125,7 @@ allOf:
-             enum:
-               - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-               - qcom,x1e80100-qmp-gen4x4-pcie-phy
-+              - qcom,x1p42100-qmp-gen4x4-pcie-phy
-     then:
+-  - if:
+-      properties:
+-        compatible:
+-          contains:
+-            enum:
+-              - qcom,sm8550-qmp-gen4x2-pcie-phy
+-              - qcom,sm8650-qmp-gen4x2-pcie-phy
+-              - qcom,x1e80100-qmp-gen4x2-pcie-phy
+-              - qcom,x1e80100-qmp-gen4x4-pcie-phy
+-              - qcom,x1e80100-qmp-gen4x8-pcie-phy
+-              - qcom,x1p42100-qmp-gen4x4-pcie-phy
+-    then:
+-      properties:
+-        resets:
+-          minItems: 2
+-        reset-names:
+-          minItems: 2
+-    else:
+-      properties:
+-        resets:
+-          maxItems: 1
+-        reset-names:
+-          maxItems: 1
+-
+   - if:
        properties:
-         reg:
-@@ -180,6 +182,7 @@ allOf:
-               - qcom,x1e80100-qmp-gen4x2-pcie-phy
-               - qcom,x1e80100-qmp-gen4x4-pcie-phy
-               - qcom,x1e80100-qmp-gen4x8-pcie-phy
-+              - qcom,x1p42100-qmp-gen4x4-pcie-phy
-     then:
-       properties:
-         clocks:
-@@ -211,6 +214,7 @@ allOf:
-               - qcom,x1e80100-qmp-gen4x2-pcie-phy
-               - qcom,x1e80100-qmp-gen4x4-pcie-phy
-               - qcom,x1e80100-qmp-gen4x8-pcie-phy
-+              - qcom,x1p42100-qmp-gen4x4-pcie-phy
-     then:
-       properties:
-         resets:
+         compatible:
 
 -- 
 2.48.1
