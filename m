@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9C57C02181
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 03:31:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38D1EC0218B
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 03:31:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HaBru/a6ftJTePatOjXd4zwdL9bk2MScXVa+pCYKbt8=; b=u4mMUucm58vyJq
-	9VbY0djytEb9PfrgcNIHh8ZZMj9Dp0pzD+XQhFbVOQtPnQhsOCIdMLOCwI7ZWK1nKnkoIohEEwxcC
-	Rnf+6mzQZI4CuhgXnYNyk7ufi83wtW6Jjs5vmBc6BiUI9KeoF2r/f2vEl0zPRzKItvTxmPXFZsG3x
-	y0uL7WteGNnFGOAMZlZ+2hxNGZ2qgw8pLLSvDCDl0dyao2gZNuyFQtUdD+Ka2Oku6AeueZs5n0AUl
-	Ku76YlKeuhkpV4s4LdN2QRs+C/Gj7aQAkM7XuSO7WQQeYDf/v/O2cRLdV/JIRwNtaOrxMUrnoeq4C
-	bBZ/3u0ZzvRmkz9hTrAA==;
+	List-Owner; bh=SKglD+9jSxcuBmlGgoUXgxjj8rdurgXZY74wV7Wu3ik=; b=Mg7HK6kxfBpafI
+	mS5VnQSvshFend6QIehP7OmQicm0JZ0xW3DkTkRdGTBIDFWuuuY/6YPn7vLezGwzCNEIBBCjd1u52
+	qJ6o3Sw9gqHqN9PZgaQ8A6Hu9oT/fj2hDfFRpCpkco1hv5It9O2Dzvq26JnKFG8fJ6+pv/z8pGyM2
+	Ap4SfRKTaZYXIfLrPYedpLL4udCliiBvPaBXG7Qn7YCpdOTuXx6ByLzRCk+iiV/0WMZ2RarGpHP3l
+	ht0yW6IlxjrAVGZyvQY2/Tq+TWV0YHXhcmR/i9wN2zjPywfj+UlsKstvYAyNW0B34kqiL3RPEhwXK
+	0IJ5hcz8eGs5PFVWGmcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbWtW-0000000Fxmi-2zZ7;
-	Sat, 25 Jan 2025 03:31:38 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tbWtZ-0000000Fxo5-476g;
+	Sat, 25 Jan 2025 03:31:41 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbWtT-0000000Fxln-3aYz
+	id 1tbWtX-0000000Fxmz-1cIC
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Jan 2025 03:31:37 +0000
+	Sat, 25 Jan 2025 03:31:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id DC736A41882;
-	Sat, 25 Jan 2025 03:29:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D0A73C4CED6;
-	Sat, 25 Jan 2025 03:31:31 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 63630A41FD6;
+	Sat, 25 Jan 2025 03:29:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 696EBC4CEDD;
+	Sat, 25 Jan 2025 03:31:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1737775894;
-	bh=yQ4WZAL+HjPTJalu92xDn4gcmnU/eJvKNpSHwXuCHcE=;
+	s=k20201202; t=1737775898;
+	bh=9bWNkRroU63nU3KiE7zz4lmrFAcVbebubnHxCwCouEQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=V7AkTryKVx8hTgqLFyX6Igbv9FxtIV4wWZbgRDVoo1EwOhLg+USluawNNEYo8nW+d
-	 kTU3Qk4j2jR7YcyPXoIaR3U4mf53uTADsqTOl1TFr2jQuQh8QHmBDuz9TcCJ+HW56R
-	 uWXknQNtcGMaEF5zmH1K0f+KL1iooZom5Aj6mGINztyGOU0neSshWhJ4EVVFsEgdRm
-	 zQtBXlgqHP0yJTLqbBs7NZtNiF/Tpxvb9Y1UdzgnO2Iqlchch83IMOJ8bCp7Bd+YaL
-	 OimKpkyP7Ogb8S/YxNMQRvE/F8UgtFzk1CtqtMkCxPd14JQuHwPO+qdXFUjmwWjUg4
-	 1ulTDGld4ckvQ==
+	b=mxu4swP5IH0rQT5ONJw4tf/4nhl3OoJj2/uRRVxu/VeF94/2McCUEjxIgjoM26jvZ
+	 xkUraZryJvMa/LTY+dn+gFQbFJJxt3BwcZdHq+4joYc4Xa01D0rVXV2UXvsJ27HPoQ
+	 9twhpWOaxImuEp/wOwRyVLSSoj66ZTh4JoYqPH8m6ay8e3MkQunoYs9lWLSmATDw2m
+	 K3SQH0vOP/+NKBJkREaCPw/6Cin4R60DeCjdoV7kSNXSCoA7UnunZj0ar+126PufkJ
+	 K+QH/vIkmiAq8Scb+RSRPoEjsetBcB8GigjZdjsRlX1YEC+48AKnSm48FAKvkFiSpd
+	 1emA3AaV8puTA==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Sat, 25 Jan 2025 04:31:18 +0100
-Subject: [PATCH 2/6] dt-bindings: phy: qcom,qmp-pcie: Drop reset number
- constraints
+Date: Sat, 25 Jan 2025 04:31:19 +0100
+Subject: [PATCH 3/6] phy: qcom: qmp-pcie: Add X1P42100 Gen4x4 PHY
 MIME-Version: 1.0
-Message-Id: <20250125-topic-x1p4_dts-v1-2-02659a08b044@oss.qualcomm.com>
+Message-Id: <20250125-topic-x1p4_dts-v1-3-02659a08b044@oss.qualcomm.com>
 References: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
 In-Reply-To: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -60,16 +59,16 @@ Cc: Marijn Suijten <marijn.suijten@somainline.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1737775883; l=1746;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1737775883; l=1932;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=nIktw7MgGIgFnnkILzM1v07X3q5bcgjMMy7JANg0KiM=;
- b=en9NgYiXNZOek7cdDDhnfeAx+QO/5xZ7gwvv6mZtCP0QPIO+jM34GdWMAS53xSezFDrH/3IJs
- KogOTKPXYwSA3ls2HXzlDquuNbgUGHrL7vlAcfzF1ULiCyBzEruYMMh
+ bh=gcbUb/R2HEswdsbX0ctwFYMYlcTBRiL80fLYyi/m0fo=;
+ b=ufWUmvHanITNco0RZydJHi5NtQHtZThaL5HkTkHN2PSzFhf+hiRkm5vpufl6sXgA8/U0oc1DI
+ AkY24bC1ZW1BGbGItHtE5f6o7a/mNMJSIKcD7evvpjTt9INTB89v0L+
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_193136_032909_00293C90 
-X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-CacheID: sfid-20250124_193139_553459_E3BB17C8 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,54 +88,56 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-(Almost?) all QMP PHYs come with both a "full reset" ("phy") and a
-"retain certain registers" one ("phy_nocsr").
+Add a new, common configuration for Gen4x4 V6 PHYs without an init
+sequence.
 
-Drop the maxItems=1 constraint for resets and reset_names as we go
-ahead and straighten out the DT usage. After that's done (which
-will involve modifying some clock drivers etc.), we may set
-*min*Items to 2, bar some possible exceptions.
+The bootloader configures the hardware once and the OS retains that
+configuration by using the NOCSR reset line (which doesn't drop
+register state on assert) in place of the "full reset" one.
+
+Use this new configuration for X1P42100's Gen4x4 PHY.
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 24 ----------------------
- 1 file changed, 24 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index f1ffc3d5cae44b8a9c96cdcd749a6e54533c94f6..c42143bd139e30d1beabc9099d0dde17128413bf 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -204,30 +204,6 @@ allOf:
-         clock-names:
-           minItems: 7
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+index 58103e87540ad84faca708debf61d79fe9f9ac54..68befe2901944b7f39e5adc12208c4b5578d94b1 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+@@ -4150,6 +4150,21 @@ static const struct qmp_phy_cfg x1e80100_qmp_gen4x8_pciephy_cfg = {
+ 	.phy_status		= PHYSTATUS_4_20,
+ };
  
--  - if:
--      properties:
--        compatible:
--          contains:
--            enum:
--              - qcom,sm8550-qmp-gen4x2-pcie-phy
--              - qcom,sm8650-qmp-gen4x2-pcie-phy
--              - qcom,x1e80100-qmp-gen4x2-pcie-phy
--              - qcom,x1e80100-qmp-gen4x4-pcie-phy
--              - qcom,x1e80100-qmp-gen4x8-pcie-phy
--              - qcom,x1p42100-qmp-gen4x4-pcie-phy
--    then:
--      properties:
--        resets:
--          minItems: 2
--        reset-names:
--          minItems: 2
--    else:
--      properties:
--        resets:
--          maxItems: 1
--        reset-names:
--          maxItems: 1
--
-   - if:
-       properties:
-         compatible:
++static const struct qmp_phy_cfg qmp_v6_gen4x4_pciephy_cfg = {
++	.lanes = 4,
++
++	.offsets                = &qmp_pcie_offsets_v6_20,
++
++	.reset_list             = sdm845_pciephy_reset_l,
++	.num_resets             = ARRAY_SIZE(sdm845_pciephy_reset_l),
++	.vreg_list              = qmp_phy_vreg_l,
++	.num_vregs              = ARRAY_SIZE(qmp_phy_vreg_l),
++	.regs                   = pciephy_v6_regs_layout,
++
++	.pwrdn_ctrl             = SW_PWRDN | REFCLK_DRV_DSBL,
++	.phy_status             = PHYSTATUS_4_20,
++};
++
+ static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -4981,6 +4996,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,x1e80100-qmp-gen4x8-pcie-phy",
+ 		.data = &x1e80100_qmp_gen4x8_pciephy_cfg,
++	}, {
++		.compatible = "qcom,x1p42100-qmp-gen4x4-pcie-phy",
++		.data = &qmp_v6_gen4x4_pciephy_cfg,
+ 	},
+ 	{ },
+ };
 
 -- 
 2.48.1
