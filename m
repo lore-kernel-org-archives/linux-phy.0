@@ -4,70 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37EF4C02182
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 04:18:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FE1AC0218C
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 13:11:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1oBaJB0vGHSGUw18EahVmeCSaGaJOZYGvW1qzwfstRA=; b=0yAOAx+7tWcxyb
-	KYDeNv06kRFtiAAa+FBGT0uOlobZ1GST0BR+zj8DzX4lwexBFJ8NNkykqEgPWgLyjDwcgJe9SPUXg
-	1k066wlFaUfNLLXPTPQmNOSAilZSNPdHlmH7HJiaedHSqPK7NXj7XS3gUESlc8cAVM2C5Z5dABidr
-	K7tiOEJE380O78ZM5V17aASBD+dwIxLW5f5A0fkY1LouF4/OqXNkHfj0CCE+aUWOSUPdH2iNfmDcg
-	SxeoRaGqWVcGwTzp0QEyNwrwCupQDckVkjwdzL5FZWPPHgAblhXKqBUXVoTQ8Kzdbc3LL2k3kJb/0
-	oVpptOCGZDy6WoahUCSw==;
+	List-Owner; bh=RHFOEcIg52PP9xh2vqobO/cXgiyGffNxLgXD5Ssj5R4=; b=JlZ3C0POqCT7RD
+	Ay7cXK6L0k6eO3cKtRujyZRean/0zde45WyzE9RV0T50dWp0BnAGzCMPr7Rgff61YqP1LoYKoBbaa
+	Ww4lkGLSoTzo2SPajADcc/g2BrbWBsZP9r8nihFUDcdYeLCwSo1MR5RsNu/d1+uuaGSI8D+4586Gf
+	/DL/AbHuACRn3Buwtiy6EZkUGHXK3cKx7w6jO+OIXT9X/TIORiT8xmx0dr8MJgvU8xAw8K6+X6Eb7
+	RAXkmTT2kM8D/qdcKD21WVY0QQWE8TbN9YhBW97++olTCEM3uHph7KHiv2KZ6hB4a8GdBS3Rq38mx
+	P7Jr/j74+gG6pVNyoXaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbXch-0000000FzZW-2VVL;
-	Sat, 25 Jan 2025 04:18:19 +0000
-Received: from mail-m3282.qiye.163.com ([220.197.32.82])
+	id 1tbfwG-0000000GQJ7-2JrV;
+	Sat, 25 Jan 2025 13:11:04 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbXce-0000000FzYy-2VgS;
-	Sat, 25 Jan 2025 04:18:18 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 9a494985;
-	Sat, 25 Jan 2025 12:18:10 +0800 (GMT+08:00)
-Message-ID: <7ef0454b-fddd-44c0-be4a-c81c443f08f6@rock-chips.com>
-Date: Sat, 25 Jan 2025 12:18:09 +0800
+	id 1tbfwE-0000000GQIj-0qXU
+	for linux-phy@lists.infradead.org;
+	Sat, 25 Jan 2025 13:11:03 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50PC1361032229
+	for <linux-phy@lists.infradead.org>; Sat, 25 Jan 2025 13:11:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	IbYpYco5oc1eP1haET1D41v9RRtkLAc4rtmVyB5yIPE=; b=lZAOzWGVCRW957K5
+	z3yr9k8LHjh3Uuz3g9wWDeuGAEaStwm46zi0vqxaphXB76jih1Biog6Sd275Q5bH
+	kZGcK3U3IR0Je2Cd6hnnhR54Q545JAo+lcO8mhcx5YL/fpwzYroH0o2nPGHeo5gX
+	uckx+FMU3d2W2NHuqi92UKQJvU6BVYH71OR3rx29h5TMz4IADfGwHB4qZ8E14Ufz
+	0cZPyNxD7NAAxPvEC9mTTI+Z87ylc3+LP7XQcd1jrpMVxgmRZ0tXX6iymPzANxT+
+	2rbSCGe5eUgTVxwwJEo5obFRzHHQCmumj5SC46Ke/Htk3B9tG7TsO8A3FhD8TlVr
+	580v2A==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44cs1prhh9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sat, 25 Jan 2025 13:10:59 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-467975f1b53so7506371cf.3
+        for <linux-phy@lists.infradead.org>; Sat, 25 Jan 2025 05:10:59 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1737810659; x=1738415459;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=IbYpYco5oc1eP1haET1D41v9RRtkLAc4rtmVyB5yIPE=;
+        b=I4PpfeihjiEJNFuz10fnpuTWQLddvmM+FIJ4oo1YhPO+3E5Z2VmEnC1bdL4ilhYqoa
+         AhpYgm7UbQecrjvQ+Fuq+6v6uMOShaY6F7IeygNZztyawwarSORP+Qku2ZoTTdFA3zLn
+         BLJuN0IkeHzttbVW6yvKvnoejh8v0xK/qeVdMiB0QdUiLzEm8bA51f20H26zOx0yRik3
+         r/ibdyTCpux/7SK4aekGgRKxVYPiJFbbgVix0YlSB8lxr4xWZnKWNc3dRVW/eHAQoXMP
+         rXk27gBzr90aQKPpkvyizXAUyySFABUbGE5woKPIJDwsbzwv0qwKvCqTUt1lGHraSWXw
+         dSBg==
+X-Forwarded-Encrypted: i=1; AJvYcCVk+Sp/hcnhvgnxvypafbIEpt4DT0Ssv3OUgvI3DOmieT7M4KJjv002nVpL9/Lkq1h5Q7xhjHNlYEE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyXonyKbcq/HRGtVArDogbU9br/nGEQDocfXtEFSAK6o2ciJLc9
+	rlNYVPSSiSJsWf0uEeBLPnRfnGaAi+bdoMmkw34z0jLtnIw8deJy4o8MKEApeoSyfZhuwPb5rVw
+	31XNPjFooYHcXM4hlUKjabyPdPxuD5n9ypE0dPSllvu80mBewkaxtCoTX8apG0Bax
+X-Gm-Gg: ASbGncuraUmP4mRC7WNfoiEqJyBimwLeauG2naUlm6dTK+vUERki+TecziKfiOThQqU
+	yloz+BtgCcS8A6031vK5dldXTwfPC4l3aq9JT2vWDm3dDKF8Hh/eDF+8fAeYiSBxwoiuM/991m1
+	HCwxNMX9eoy1VSou36HqXdunl7/MmGta5GyDnlWCViNnm/iOipInepobdmsIvZzY7mR4gkYoE/q
+	in8QGVmvmBGYdqkrp41CTZkHXqshUqbcNzY+Bs+h2tlb5SkPBNC569bkedbLPaoWgmgfgEsJQUi
+	sCczH73oX5eMemzMqXHnhTYXQBXjG9p7aE+M0wMCa/fvQQ5GL5h2BWXA+M8=
+X-Received: by 2002:a05:622a:1344:b0:467:5fd2:9963 with SMTP id d75a77b69052e-46e12a4ff41mr165924441cf.6.1737810658878;
+        Sat, 25 Jan 2025 05:10:58 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH4DzQuJrrCIonbiD5W8KeMIpBaQuLve9eqF9M9kMGq8GJIRagIa0plXcCkwiQA3uVCezQzyw==
+X-Received: by 2002:a05:622a:1344:b0:467:5fd2:9963 with SMTP id d75a77b69052e-46e12a4ff41mr165924181cf.6.1737810658361;
+        Sat, 25 Jan 2025 05:10:58 -0800 (PST)
+Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dc1863ae37sm2658621a12.41.2025.01.25.05.10.55
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 25 Jan 2025 05:10:57 -0800 (PST)
+Message-ID: <88c29161-17a8-40c6-a94b-c894de15ca37@oss.qualcomm.com>
+Date: Sat, 25 Jan 2025 14:10:54 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 12/14] drm/edp-panel: Add LG Display panel model
- LP079QX1-SP0V
-To: Doug Anderson <dianders@chromium.org>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
- sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com,
- l.stach@pengutronix.de, andy.yan@rock-chips.com, hjc@rock-chips.com,
- algea.cao@rock-chips.com, kever.yang@rock-chips.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-13-damon.ding@rock-chips.com>
- <rwn3g7tqgjnc525cjqtivgfgedhooiayn5nujng7bdzazgqhle@wfpuvoyr2tii>
- <CAD=FV=WKsA9fcq-LzGcYmgbMuMLUp5SMggpzBzZnvd3sxGf9BQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Add PHY register retention
+ support
+To: Manivannan Sadhasivam <mani@kernel.org>,
+        Qiang Yu <quic_qianyu@quicinc.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        "Wenbin Yao (Consultant)" <quic_wenbyao@quicinc.com>, vkoul@kernel.org,
+        kishon@kernel.org, p.zabel@pengutronix.de, abel.vesa@linaro.org,
+        neil.armstrong@linaro.org, manivannan.sadhasivam@linaro.org,
+        quic_devipriy@quicinc.com, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org
+References: <20250121094140.4006801-1-quic_wenbyao@quicinc.com>
+ <20250121094140.4006801-3-quic_wenbyao@quicinc.com>
+ <CAA8EJppXQpDrdXzJsTE7HWs=POt7yFAw0JVZFabN6Ks3fhZiWQ@mail.gmail.com>
+ <a2cc5a5a-6cbd-7564-a8df-8af2a652de2f@quicinc.com>
+ <ya27ma6iah7ts6sj35payj6ek4z7m6y5v4pnxd6wtqrp3cbyta@ypvrzwa4bnfv>
+ <188a9efd-718e-4ac5-b89a-29f2713e1dba@quicinc.com>
+ <20250124070829.oar3hlkshkpam57d@thinkpad>
 Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <CAD=FV=WKsA9fcq-LzGcYmgbMuMLUp5SMggpzBzZnvd3sxGf9BQ@mail.gmail.com>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGk9DH1YfHUxJT09CSU9CHU5WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a949bae7a1d03a3kunm9a494985
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Kyo6DTo*HjIWNBktLzE3F0sp
-	CzEwCzpVSlVKTEhMTExDTUJJSE5JVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFPSU9KNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=KEMjxQrOrfEtKZzt6CYphQDs7eNUjjH8m8AWiodw6j70gQcFojna9y5+Fy0sONQ3/SEZtPD1VMuZKpejaV6BtqPVrmfQHyB2/HvVOpkGv/QGCiiQSO44oAVs8y3NeqvAXjLYhldpjhTostWKSR+CS4rVq2br+QqVb20XwbhKWRs=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=LT1lOhEhh2VSdBgeTO1/jteMwTIRumP4Sm+3/Zt7qdA=;
-	h=date:mime-version:subject:message-id:from;
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250124070829.oar3hlkshkpam57d@thinkpad>
+X-Proofpoint-GUID: miWvAQtJN-H6yu4QfXkLyu8CLb-m8kWj
+X-Proofpoint-ORIG-GUID: miWvAQtJN-H6yu4QfXkLyu8CLb-m8kWj
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-01-25_05,2025-01-23_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ suspectscore=0 phishscore=0 priorityscore=1501 lowpriorityscore=0
+ mlxscore=0 adultscore=0 bulkscore=0 clxscore=1015 spamscore=0
+ malwarescore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.19.0-2411120000 definitions=main-2501250095
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_201817_136043_C686CD41 
-X-CRM114-Status: GOOD (  25.98  )
+X-CRM114-CacheID: sfid-20250125_051102_381414_D98AE89C 
+X-CRM114-Status: GOOD (  39.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,83 +124,145 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgRG91ZywKCk9uIDIwMjUvMS8yNCA4OjMwLCBEb3VnIEFuZGVyc29uIHdyb3RlOgo+IEhpLAo+
-IAo+IE9uIFRodSwgSmFuIDIzLCAyMDI1IGF0IDM6MzHigK9BTSBEbWl0cnkgQmFyeXNoa292Cj4g
-PGRtaXRyeS5iYXJ5c2hrb3ZAbGluYXJvLm9yZz4gd3JvdGU6Cj4+Cj4+IE9uIFRodSwgSmFuIDIz
-LCAyMDI1IGF0IDA2OjA3OjQ1UE0gKzA4MDAsIERhbW9uIERpbmcgd3JvdGU6Cj4+PiBUaGUgcmF3
-IGVkaWQgZm9yIExQMDc5UVgxLVNQMFYgcGFuZWwgbW9kZWwgaXM6Cj4+Pgo+Pj4gMDAgZmYgZmYg
-ZmYgZmYgZmYgZmYgMDAgMTYgODMgMDAgMDAgMDAgMDAgMDAgMDAKPj4+IDA0IDE3IDAxIDAwIGE1
-IDEwIDBjIDc4IDA2IGVmIDA1IGEzIDU0IDRjIDk5IDI2Cj4+PiAwZiA1MCA1NCAwMCAwMCAwMCAw
-MSAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMSAwMQo+Pj4gMDEgMDEgMDEgMDEgMDEgMDEgZWEgNGUg
-MDAgNGMgNjAgMDAgMTQgODAgMGMgMTAKPj4+IDg0IDAwIDc4IGEwIDAwIDAwIDAwIDE4IDAwIDAw
-IDAwIDEwIDAwIDAwIDAwIDAwCj4+PiAwMCAwMCAwMCAwMCAwMCAwMCAwMCAwMCAwMCAwMCAwMCAw
-MCAwMCBmZSAwMCA0Ywo+Pj4gNTAgMzAgMzcgMzkgNTEgNTggMzEgMmQgNTMgNTAgMzAgNTYgMDAg
-MDAgMDAgZmMKPj4+IDAwIDQzIDZmIDZjIDZmIDcyIDIwIDRjIDQzIDQ0IDBhIDIwIDIwIDIwIDAw
-IDNmCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogRGFtb24gRGluZyA8ZGFtb24uZGluZ0Byb2NrLWNo
-aXBzLmNvbT4KPj4+IC0tLQo+Pj4gICBkcml2ZXJzL2dwdS9kcm0vcGFuZWwvcGFuZWwtZWRwLmMg
-fCA4ICsrKysrKysrCj4+PiAgIDEgZmlsZSBjaGFuZ2VkLCA4IGluc2VydGlvbnMoKykKPj4KPj4g
-UGxlYXNlIHVzZSBnZXRfbWFpbnRhaW5lcnMucGwgd2hlbiBjb21waWxpbmcgVG8vQ2MgbGlzdHMu
-IEFkZGVkIERvdWdsYXMKPj4gdG8gQ0MgbWFudWFsbHkuCj4+Cj4+IE9yLCBiZXR0ZXIsIHNwbGl0
-IGlycmVsZXZhbnQgcGF0Y2hlcyB0byBzZXBhcmF0ZSBzZXJpZXMuCj4+Cj4+Pgo+Pj4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9wYW5lbC9wYW5lbC1lZHAuYyBiL2RyaXZlcnMvZ3B1L2Ry
-bS9wYW5lbC9wYW5lbC1lZHAuYwo+Pj4gaW5kZXggZjg1MTFmZTVmYjBkLi43N2UzZmQzZWQxNjAg
-MTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vcGFuZWwvcGFuZWwtZWRwLmMKPj4+ICsr
-KyBiL2RyaXZlcnMvZ3B1L2RybS9wYW5lbC9wYW5lbC1lZHAuYwo+Pj4gQEAgLTE4MDgsNiArMTgw
-OCwxMiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHBhbmVsX2RlbGF5IGRlbGF5XzIwMF8xNTBfZTUw
-ID0gewo+Pj4gICAgICAgIC5lbmFibGUgPSA1MCwKPj4+ICAgfTsKPj4+Cj4+PiArc3RhdGljIGNv
-bnN0IHN0cnVjdCBwYW5lbF9kZWxheSBkZWxheV81MF81MDBfZTIwMCA9IHsKPj4+ICsgICAgIC5o
-cGRfYWJzZW50ID0gNTAsCj4+PiArICAgICAudW5wcmVwYXJlID0gNTAwLAo+Pj4gKyAgICAgLmVu
-YWJsZSA9IDIwMCwKPj4+ICt9Owo+IAo+IFdvdywgaHBkX2Fic2VudCBpcyA1MG1zLiBUaGF0J3Mg
-ZXhjZWxsZW50IQo+IAo+IEkgd2FzIGN1cmlvdXMgaWYgdGhpcyB3YXMgcmVhbGx5IGNvcnJlY3Qg
-c2luY2UgaXQncyB0aGUgbG93ZXN0IEkndmUKPiBzZWVuLCBidXQgSSBzZWFyY2hlZCB0aGUgaW50
-ZXJuZXQgYW5kIGZvdW5kIGEgZGF0YXNoZWV0IHRoYXQgY29uZmlybXMKPiBpdC4gQ3JhenkuIEFs
-dGhvdWdoIG15IGRhdGFzaGVldCBoYXMgdGhhdCB3aG9sZSBzZWN0aW9uIGdyYXllZCBvdXQgYW5k
-Cj4gc2F5cyAiTWVhc3VyZW1lbnQgbm90IGF2YWlsYWJsZSIuIEhvdyB3b3JyaWVkIHNob3VsZCBi
-ZSBhYm91dCB0aGF0PyBJCj4gZ3Vlc3MgaWYgImhwZF9hYnNlbnQiIG9mIDUwIGV2ZW50dWFsbHkg
-ZG9lc24ndCB3b3JrIGl0IGNhbiBhbHdheXMgYmUKPiBpbmNyZWFzZWQuCj4gCgpUaGUgZGF0YXNo
-ZWV0IEkgaGF2ZSBzaG91bGQgYmUgdGhlIHNhbWUgYXMgeW91cnMsIGFuZCB0aGUgVDMgaXMgIk1p
-bi4gCjJtcyB8IFR5cC4gMzBtcyB8IE1heC4gNTBtcyIgd2l0aCB0aGUgZ3JheSAiTWVhc3VyZW1l
-bnQgbm90IGF2YWlsYWJsZSIuCgo+IExvb2tpbmcgYXQgdGhhdCBkYXRhc2hlZXQgKGFzc3VtaW5n
-IHlvdSBjYW4gZmluZCB0aGUgc2FtZSBvbmUpLCBJCj4gd29uZGVyIGhvdyB5b3UgaGFuZGxlIHRo
-ZSBUNCAxMjBtcyByZXF1aXJlbWVudC4gSXQgbG9va3MgbGlrZSB0aGF0J3MKPiB0aGUgdGltZSBm
-cm9tIHRjb24gcmVzZXQgKHdoaWNoIGlzIG5lYXJseSBwb3dlciBvbikgdW50aWwgeW91J3JlCj4g
-YWxsb3dlZCB0byBwdXQgdmFsaWQgZGF0YSBvbiB0aGUgcGFuZWwuIEkgX3RoaW5rXyB5b3UgY291
-bGQgbWVldCB0aGUKPiByZXF1aXJlbWVudCB2aWEgc2V0dGluZyBgcG93ZXJlZF9vbl90b19lbmFi
-bGVgIHRvIDMyMCB0aG91Z2gsIHJpZ2h0Pwo+IC4uLm9yIG1heWJlIDMzNSB0byBoYW5kbGUgdGhl
-IG1heGltdW0gdmFsdWUgb2YgInRjb25fcmVzZXQiIChubyBpZGVhCj4gaG93IHlvdSBjb250cm9s
-IHRoaXMgc2lnbmFsKS4gSWYgSSByZW1lbWJlciBjb3JyZWN0bHkgKGl0J3MgYmVlbiBhCj4gd2hp
-bGUpLCB0aGluZ3Mgd2lsbCBhbHJlYWR5IGJlIGNsb2NraW5nIGJ1dCBvdXRwdXR0aW5nIGJsYWNr
-IHdoZW4gdGhlCj4gcGFuZWwncyAiZW5hYmxlIiBmdW5jdGlvbiBpcyBjYWxsZWQuIEFmdGVyIHRo
-ZSBmdW5jdGlvbiBpcyBjYWxsZWQgdGhlbgo+IHdlJ2xsIHR1cm4gb24gdGhlIGJhY2tsaWdodCAo
-YW5kIHN0aWxsIG91dHB1dHRpbmcgYmxhY2spIGFuZAo+IGV2ZW50dWFsbHkgd2UnbGwgcHV0IHZh
-bGlkIGRhdGEuIFNvIGFzIGxvbmcgYXMgeW91IGNvbnNpZGVyIHRoZQo+IGNvbnRpbnVlZCBvdXRw
-dXQgb2YgYmxhY2sgYXMgInZhbGlkIGRhdGEiIHRoZW4gdGhlIHRpbWluZyBkaWFncmFtIGlzCj4g
-c2F0aXNmaWVkLgo+IAoKWWVzLCBpdCBpcyBpbmRlZWQgYmV0dGVyIHRvIHNldCB0aGUgInBvd2Vy
-ZWRfb25fdG9fZW5hYmxlIiB0byAzMzVtcywgYXMgCnRoaXMgd2lsbCBoZWxwIHByZXZlbnQgdGhl
-IGRpc3BsYXkgZnJvbSBzaG93aW5nIGludmFsaWQgYmxhY2sgc2NyZWVucy4gSSAKd2lsbCBhZGQg
-aXQgaW4gdGhlIG5leHQgdmVyc2lvbi4KCj4gQlRXOiBkb24ndCB5b3UgYWxzbyBuZWVkIGEgMjAw
-IG1zICJkaXNhYmxlIj8KPiAKCkFjY29yZGluZyB0byB0aGUgZGF0YXNoZWV0LCBpdCBpcyBhIGdv
-b2QgaWRlYSB0byBzZXQgImRpc2FibGUiIHRvIDIwMG1zLgoKPiAKPj4+ICAgI2RlZmluZSBFRFBf
-UEFORUxfRU5UUlkodmVuZF9jaHJfMCwgdmVuZF9jaHJfMSwgdmVuZF9jaHJfMiwgcHJvZHVjdF9p
-ZCwgX2RlbGF5LCBfbmFtZSkgXAo+Pj4gICB7IFwKPj4+ICAgICAgICAuaWRlbnQgPSB7IFwKPj4+
-IEBAIC0xOTU1LDYgKzE5NjEsOCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGVkcF9wYW5lbF9lbnRy
-eSBlZHBfcGFuZWxzW10gPSB7Cj4+PiAgICAgICAgRURQX1BBTkVMX0VOVFJZKCdDJywgJ1MnLCAn
-VycsIDB4MTEwMCwgJmRlbGF5XzIwMF81MDBfZTgwX2Q1MCwgIk1OQjYwMUxTMS0xIiksCj4+PiAg
-ICAgICAgRURQX1BBTkVMX0VOVFJZKCdDJywgJ1MnLCAnVycsIDB4MTEwNCwgJmRlbGF5XzIwMF81
-MDBfZTUwLCAiTU5CNjAxTFMxLTQiKSwKPj4+Cj4+PiArICAgICBFRFBfUEFORUxfRU5UUlkoJ0Un
-LCAnVCcsICdDJywgMHgwMDAwLCAmZGVsYXlfNTBfNTAwX2UyMDAsICJMUDA3OVFYMS1TUDBWIiks
-Cj4gCj4gSSBkb24ndCBsb3ZlIHRoYXQgdGhlIElEIGlzIDB4MDAwMC4gVGhhdCBtYWtlcyBtZSBu
-ZXJ2b3VzIHRoYXQgdGhlCj4gcGFuZWwgdmVuZG9yIGlzbid0IHNldHRpbmcgdGhlIElEIHByb3Bl
-cmx5LiAuLi5idXQgYXQgbGVhc3QgdGhlIHN0cmluZwo+IG1hdGNoZXMgaW4gdGhlIEVESUQgc28g
-aG9wZWZ1bGx5IHRoYXQgd2lsbCBiZSBlbm91Z2ggdG8gdW5pcXVlbHkKPiBpZGVudGlmeSB0aGlu
-Z3MuCj4gCj4gCgpUaGUgSUQgIjB4MDAwMCIgbWFrZXMgbWUgbmVydm91cyB0b28sIGJ1dCB0aGUg
-RURJRCBvYnRhaW5lZCBmcm9tIHRoaXMgCnBhbmVsIGluZGVlZCBzaG93IGl0LCB3aGljaCBpcyBx
-dWl0ZSBzdXJwcmlzaW5nLiBNYXkgSSBzdGlsbCBzZXQgaXQgdG8gCiIweDAwMDAiIGFzIGl0IHJl
-YWxseSBpcz8KCkJlc3QgcmVnYXJkcywKRGFtb24KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On 24.01.2025 8:08 AM, Manivannan Sadhasivam wrote:
+> + Mayank (with whom I discussed this topic internally)
+> 
+> On Fri, Jan 24, 2025 at 02:22:01PM +0800, Qiang Yu wrote:
+>>
+>> On 1/22/2025 5:43 PM, Dmitry Baryshkov wrote:
+>>> On Wed, Jan 22, 2025 at 03:17:39PM +0800, Wenbin Yao (Consultant) wrote:
+>>>> On 1/21/2025 6:36 PM, Dmitry Baryshkov wrote:
+>>>>> On Tue, 21 Jan 2025 at 11:43, Wenbin Yao <quic_wenbyao@quicinc.com> wrote:
+>>>>>> From: Qiang Yu <quic_qianyu@quicinc.com>
+>>>>>>
+>>>>>> Currently, BCR reset and PHY register setting are mandatory for every port
+>>>>>> before link training. However, some QCOM PCIe PHYs support no_csr reset.
+>>>>>> Different than BCR reset that is used to reset entire PHY including
+>>>>>> hardware and register, once no_csr reset is toggled, only PHY hardware will
+>>>>>> be reset but PHY registers will be retained,
+>>>>> I'm sorry, I can't parse this.
+>>>> The difference between no_csr reset and bcr reset is that no_csr reset
+>>>> doesn't reset the phy registers. If a phy is enabled in UEFI, its registers
+>>>> are programed. After Linux boot up, the registers will not be reset but
+>>>> keep the value programmed by UEFI if we only do no_csr reset, so we can
+>>>> skip phy setting.
+>>> Please fix capitalization of the abbreviations (PHY, BCR) and add
+>>> similar text to the commit message.
+>>>
+>>>>>> which means PHY setting can
+>>>>>> be skipped during PHY init if PCIe link was enabled in booltloader and only
+>>>>>> no_csr is toggled after that.
+>>>>>>
+>>>>>> Hence, determine whether the PHY has been enabled in bootloader by
+>>>>>> verifying QPHY_START_CTRL register. If it is programmed and no_csr reset is
+>>>>>> present, skip BCR reset and PHY register setting, so that PCIe link can be
+>>>>>> established with no_csr reset only.
+>>>>> This doesn't tell us why we want to do so. The general rule is not to
+>>>>> depend on the bootloaders at all. The reason is pretty simple: it is
+>>>>> hard to update bootloaders, while it is relatively easy to update the
+>>>>> kernel. If the hardware team issues any kind of changes to the
+>>>>> programming tables, the kernel will get them earlier than the
+>>>>> bootloader.
+
+We're assuming that if a product has shipped, the sequences used to power up
+the PHY in the bootloader (e.g. for NVMe) are already good.
+
+If some tragedy happens and an erratum is needed, we can always introduce a
+small override with the existing driver infrastructure (i.e. adding a new
+entry with a couple registers worth of programming sequence, leaving the other
+values in tact)
+
+
+While updates to the PHY init sequences have happened in the past, I believe
+they are mostly a result of oneOf:
+
+* someone upstreaming a pre-release revision / premature release
+* someone making a mistake when typing in the numbers
+
+Although sometimes there may be an update that isn't a result of any dev fault.
+It's worth to keep in mind certain values in there can be board specific, as
+they affect the analog interface. But we haven't seen that being used much if
+at all.
+
+>>>> With this change, we don't need to upstream phy setting for all phys
+>>>> support no_csr reset, this will save a great deal of efforts and simplify
+>>>> the phy driver. Our goal is to remove proprietary PCIe firmware operations
+>>>> from kernel. PHY is just the start and will be followed by controller,
+>>>> clocks, regulators, etc. If program table need to be changed, the place to
+>>>> do that will be UEFI.
+>>> Well, that sounds like a very bad idea. Please don't do that. Linux
+>>> kernel drivers should not depend on the UEFI or a bootloader. Unless
+>>> there is a good reason for that, Linux should continue to be able to
+>>> reset and program the PCIe PHY (as well as all other hw blocks).
+
+While I personally like being able to look into what's being programmed
+onto my hardware myself, this unfortunately does not scale, both from
+maintainability and reviewability perspectives with tables that host
+hundreds of essentially magic values.
+
+Plus this approach makes it easier to extend to other OSes, without
+polluting them with the same data.
+
+>> I'm wondering if it's really necessary for Linux to be able to program the
+>> PHY. Perhaps Linux should only care about common aspects defined by the
+>> PCIe spec like bus scanning, BAR space allocation, and functions provided
+>> by other PCIe capabilities. As for the specific operations that are
+>> different on various platforms, it might be more appropriate for the
+>> firmware to take care of them. This way, the responsibilities can be more
+>> clearly divided, and the driver could potentially be
+>> more streamlined.
+>>
+> 
+> It is not necessary in an ideal world, but what we have seen is Qcom releasing
+> updated PHY init sequence after upstreaming the initial PHY driver support. In
+> that case, the devices with old firmware will become outdated unless the fw is
+> updated (which is not straightforward compared to updating the kernel).
+> 
+> But, I do like this idea of reusing the PHY init sequence in the kernel. Though
+> we cannot just do it for all platforms. Maybe we can enable it on platforms like
+> compute starting from X1E and see how it goes? Just to minimize the impact if it
+> didn't go well.
+
+X1 is just the first of many here.
+
+We can possibly move some existing ones over after confirming that:
+
+a) the bootloader programs the PHYs at all
+b) the values programmed are reasonable
+
+on a case-by-case basis to ensure we're not regressing anything. Perhaps a
+piece of code and a modparam could be added that would read out the values
+present at boot and compare them to what the kernel has in store.
+
+
+>> On the other hand, since the no_csr reset can retain register values,
+>> maybe we should still make full use of it, even if we don't want to
+>> rely on UEFI. For example, during runtime suspend/resume
+>> (the D3cold -> D0 cycle)
+> 
+> D3Cold during runtime suspend in bizarre.
+
+Very much so. But this extends to system suspend as well - we can still shave
+a couple ms off the wakeup times if we can skip all the programming.
+
+> 
+>> , when re-initializing the PHY, same PHY
+>> settings will be programmed again. This is a bit redundant.
+>>
+> 
+> Hmm, what would happen if the CX collapse happens during system suspend? Will
+> the PHY registers be retained?
+
+PHYs are always(asterisk) backed by some flavor of MX instead
+
+Konrad
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
