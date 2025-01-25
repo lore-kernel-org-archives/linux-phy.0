@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8EF1C0218C
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 17:30:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2633C0218C
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 17:32:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=km512N2ZGNsCK+Jwr9LH+9H3ykVzXGqa2tbNfNnxUp4=; b=mKPuUUEYQnEaei
-	73e4ZgurXs4U+6lzuyjUdouyYQXjk35djUMHFDv6X/7Fb/SAMALc1z09g26dPIFoXLxyv16L9mgaf
-	zqNpz7WZD3e3pOR7rhnmCnEgH2gPK1apHyQeAT4L0D9Dm0J2XQOx9U8+dQgYyQ88zKyZu1Hun9lVA
-	WICG3bbQvbqOpf4wReX5tDQeMR1VTOby6dMOMC4PIiyB9Xjp5nsyjixO+k93u8NyMrml9M03Rz9RM
-	sYyDJVFXmRpBYgr5+LqJF/Bney2eLJUF/8TgcB64p9C/cE73ZxqZcDQvYcj3Ahwm0biglqTEnlCx2
-	WW6xuDy2tJoFu6OP6LHQ==;
+	List-Owner; bh=IxCWBL5qvqex1xq/Np404MpNWxM5udOPMA2QpJf7GSU=; b=FTZtkZfFY8xNEB
+	3x4hEp7VgoKhxVMQxIfSGJSrOuWQDEC/ExakC3RuzEreZSlFs51O9GlhAG2DiizjgJJoxr6e0WSEE
+	S5JGbFjEmL6Rf8Wfb8XaMM3aIXeD/JOpcOM2idFxhUc8aiA6pJziqeBdlswON4qS7lBmOvR0sqKFQ
+	uobnDchESS3bemUxmuyLv1xjEXwW8wfMQ4Zs1XJMvUsrFNRd8oOSrVuva5My/1Xi9zJ7lbR9XsnAn
+	hLA0XzmLSa/VfrtWkJ2JF1zD33lYc7pmrqJ2/FN++J35m63aWG7nVZMm9BQZcT9m1TJDwHj1OeFpQ
+	TUwIKN1guoze5PXqh3Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbjzL-0000000GeBD-41Wb;
-	Sat, 25 Jan 2025 17:30:31 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1tbk19-0000000GeIR-1VjS;
+	Sat, 25 Jan 2025 17:32:23 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbjzI-0000000GeAp-394h
+	id 1tbk17-0000000GeI3-2ZHs
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Jan 2025 17:30:30 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id 38308e7fff4ca-30613802a59so34173741fa.0
-        for <linux-phy@lists.infradead.org>; Sat, 25 Jan 2025 09:30:27 -0800 (PST)
+	Sat, 25 Jan 2025 17:32:22 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-5439a6179a7so3293926e87.1
+        for <linux-phy@lists.infradead.org>; Sat, 25 Jan 2025 09:32:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1737826226; x=1738431026; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1737826340; x=1738431140; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=US0EnBiHsIYKJlqPkzCqVbNBc2Ls+ZuNd0+qd6Uqb/Y=;
-        b=D/mG63Uboz1RK+TgW1N3rMK6dYRulaeMTLZZkiXmsqR4ZZket7ILw8UwR7vx1Dq8Rx
-         Osv4LzYAGXoxajtaQzdU332H3i/a2aJAddbvwD+iXOzG9s1OIDmzeYDMpGGe+fG1uM24
-         mAVydrh65+6IX/hH6kaAfWR/JxAqRo67Zp40X0UtUDFW3OJjD3CJkSQ0Cb23h+FgN4Go
-         LVCwd9m1lXlUJf3KhK8eB1rFO9ZvhCHKIN8cUC6oaMdl8RZtRFcpTFsY3r/B7+lNaoQk
-         ZkKl0Td6aKJe9280Sc4mExxiadS42i4HvJ0c0fxaZP2Qy0r2DeCIYiA3Ksw+TDun97Fi
-         VtKQ==
+        bh=9VTKxkEAePwEPt+V7eEDuXn6aqMYuyS335t11P98dTo=;
+        b=G9mdKIY6roUekJto1XoIuJonTK2SLDFjKK+7Ye14yniJB2wuLm4a0oCagf2aE3CMZn
+         iR6FAHKXFDpkmykyx968IzHQkOL2yoqIAXnyBk6dw+5MsD2puXGC/6/AbYfYsGVkeut1
+         Y5zqkuc7Koxr6TIQbyxF4SmZlUcg3oRVYBjGuJh24RRHYQcOO5c4/4d5TgtFey/qmzpw
+         kmnOkG7v4kPXrgyD3uklXi3eJAKCIx1IjcaCkDFNW4pb2SGIvFOUSHO3oFcssrjbtVmu
+         MKtCg2W2YXJXw2w10CBV9x2vVrbmu2IIADwgbxjIKXt+vgW7UI9oRMKWEjugZCrffQAh
+         aIVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737826226; x=1738431026;
+        d=1e100.net; s=20230601; t=1737826340; x=1738431140;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=US0EnBiHsIYKJlqPkzCqVbNBc2Ls+ZuNd0+qd6Uqb/Y=;
-        b=hpzCo4K9u7QkNUmc0zvjv9Oy4N0ke8IAhoP7Jxrn9wpq8+odTOqzezt3SLn2MDIDD+
-         AJkeVln4ozmcF/jB7DTGIw/RsZgJU6WBokPdUlAOwDJJvsH1ybKaU1vL0m2+eMU2jt8I
-         iEzcXFD9HDjFK3QMfmyHvcBXd6ljteuiMEWeMbO8ehzle0j/wsc4HXqrZaqjniqBP9w9
-         NvP2U12HVJJAkhvlw+bP2tRhR9otCeKZCY9omDsRl1e1uZGp4a68nNsRHXY6oF4kbhz5
-         m1HMghOEAOn+5ZxR3T63NeIs+HbrUnjUKukcsSpVrHUV6ZGx2icjs07t44PRDQXsvw/Z
-         te0w==
-X-Forwarded-Encrypted: i=1; AJvYcCWKC5Sy7DUxoPlStGd2uGY/AXww90NKaHjDIjxSvU//3wu1Us2OV0W0rHj9+LrrmstpH4jrDEyAUaA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw5wSb8Kaq9AtZPhtmVxvI2rhXRviCXj0TkLzzgJFY5TTodNtPM
-	dwwTvwuavi5MY9D1QCaE/QA93AwM7uWMInh/JngilTwlu4tNf9yw9tMwlmpvSCA=
-X-Gm-Gg: ASbGncunEZ9EKWifR36nMRFzPGcUjQRtYnjYI819a0wHU8Ww2pGIliQU2oEl3sorDtQ
-	4CY97Lr+pC/fftOAtg9qn/ccNc1pU83VXZQyGs8ZHdOI7lJo/5740CstDXaYyVXW5IQHe8JSMDc
-	jJq/9PYGEcuIdcw2qtCQ8Mfdqur5h8KstJxKk8+rUab0WDEte7ZDabO/SaHSmK6OccOwTpP/MwX
-	2Dphs5P4EoYdqCGG7X4LIheIJKsdejLMXTXC3ojjUNiYNoDc+jmPIVm84ggbzUoc32BVsi40rS5
-	3OOdZsVq71nifNP1DNp7XJ2/VwuHWyNLEE8luhhgtqYZUer7NSMK0Fyhh0PX
-X-Google-Smtp-Source: AGHT+IEJdOGBDBJSDCvFhU2PUzzZMFjItFiSFpgzHyoEnKNXwK9asBOtQ13f6ME37s/+fooYaxI9aA==
-X-Received: by 2002:a2e:be04:0:b0:302:3ff6:c8c6 with SMTP id 38308e7fff4ca-3072cb3cd60mr129216181fa.33.1737826226314;
-        Sat, 25 Jan 2025 09:30:26 -0800 (PST)
+        bh=9VTKxkEAePwEPt+V7eEDuXn6aqMYuyS335t11P98dTo=;
+        b=RRetIrt8PvgyKtQM7etPvdGmqFCOvwcHG7OyqyIlALdLMtq45PocS/n9dfCsOvuWjp
+         OKjF/vTTv/6j+5QtbUtEDNzPzuHMxHKHYTQcNw5GtY3XdNYumd1rnIBYo1JsNvITUZtE
+         6DH6VeQXr1gVlw6TSasB+Fr1zU9lX07NNGSmnVv/fFfCYXuB4opLsx4chjJuOAoq7ndR
+         1A99PmGXVsM61MDgOmDoAPIAw/plWmiMEaOg2w3qU3ZrQZtpfYr2oh8LeVZtSTrNC0eK
+         dI/A6+bMlf1zUhnWZYLdEScx6a2DS2QZUGgYzSFls0eCkIVHglCrvvMRkydYEFY29XmV
+         MNaQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWzgzW/oNeu41GahOVQbz3h+l2lQpAvM8S3fhLv5eJ43BLX58faLA7KmTNuqgwn7ymzitRa0aIuRqo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzS69/NikcHLVrTcgR1yMrLhJ1bQH1vwT1RSYupc4eKObF8Ho2g
+	kyrFe+qAjOCzqHxGXN1TDvLuCYxQnBM4UCoXVwPtJauux/yAyiYFnU3IIXRmhmQ=
+X-Gm-Gg: ASbGncs8X37JsvT1kNkUy1xaTeg7qtupso+SkIy9Aeg6VeLVIHVs5zjKADdGF2ojApx
+	0fH08x6Vgvm2nXclMXRR+PdrlnS308sQKalL/XAKunTe/fwOTTJ2EQ8fS7Ejb31uWwObom0NwLl
+	D1MnqAzeWyDK0F0fODIkVF/5G3bQAmE+1+YgVsI25mpOTtr0+HdaTs0g+ShgfGDw8FipDl8sig4
+	8SoUiMu9YLKEn6OHxzAIQql43oZNvJoLeFPIyrTLuufo61tOjA0u4aCJzuS2lyJYmIuYMDg1RHS
+	hGVF52Iar6iQbLNXQGLPqHU1RZCdegov6gEjJUbxUbimr6UJbU5fEZBtAM8y
+X-Google-Smtp-Source: AGHT+IHM/qxpChUH+UJCNurb4Af2EPjax/Hj650FqV7s35DU657fh9sG+7Ox+WQZxY3Bclz1CNSomQ==
+X-Received: by 2002:a05:6512:3f0e:b0:542:1bdb:9a61 with SMTP id 2adb3069b0e04-543c222feb5mr4471511e87.19.1737826339672;
+        Sat, 25 Jan 2025 09:32:19 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--b8c.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::b8c])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3076bacb2bfsm7581241fa.29.2025.01.25.09.30.24
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-543c83682ffsm666153e87.115.2025.01.25.09.32.17
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 25 Jan 2025 09:30:25 -0800 (PST)
-Date: Sat, 25 Jan 2025 19:30:23 +0200
+        Sat, 25 Jan 2025 09:32:18 -0800 (PST)
+Date: Sat, 25 Jan 2025 19:32:15 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Konrad Dybcio <konradybcio@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -76,16 +76,17 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Bjorn Andersson <andersson@kernel.org>, Marijn Suijten <marijn.suijten@somainline.org>, 
 	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH 3/6] phy: qcom: qmp-pcie: Add X1P42100 Gen4x4 PHY
-Message-ID: <h6zfhxkc4dj2ueaxipha6prbvmv7pnqglghtjs7vkhlc2s7ndi@vhbj4uojlzwd>
+Subject: Re: [PATCH 4/6] arm64: dts: qcom: x1e80100: Wire up PCIe PHY NOCSR
+ resets
+Message-ID: <s3d4tc3rstno6rtzlmpab6jho4dixjljo3u4b64r7luaszqlmp@3djmby5d3gij>
 References: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
- <20250125-topic-x1p4_dts-v1-3-02659a08b044@oss.qualcomm.com>
+ <20250125-topic-x1p4_dts-v1-4-02659a08b044@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250125-topic-x1p4_dts-v1-3-02659a08b044@oss.qualcomm.com>
+In-Reply-To: <20250125-topic-x1p4_dts-v1-4-02659a08b044@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250125_093028_791994_52AA1B9C 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20250125_093221_655577_80B69CF0 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,27 +103,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Jan 25, 2025 at 04:31:19AM +0100, Konrad Dybcio wrote:
+On Sat, Jan 25, 2025 at 04:31:20AM +0100, Konrad Dybcio wrote:
 > From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > 
-> Add a new, common configuration for Gen4x4 V6 PHYs without an init
-> sequence.
+> Asserting the NOCSR reset line keeps the PHY registers in tact.
+> This allows us to avoid programming long tables of magic values in the
+> operating system.
 > 
-> The bootloader configures the hardware once and the OS retains that
-> configuration by using the NOCSR reset line (which doesn't drop
-> register state on assert) in place of the "full reset" one.
-
-I know your opinion, but my 2c would still be for not depending on the
-bootloader. I think that was the rule for ages for many possible
-reasons.
-
-> 
-> Use this new configuration for X1P42100's Gen4x4 PHY.
+> Wire up these resets to PCIe PHY4 and 5 (it's there on the others).
 > 
 > Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 18 ++++++++++++++++++
->  1 file changed, 18 insertions(+)
+>  arch/arm64/boot/dts/qcom/x1e80100.dtsi | 12 ++++++++----
+>  1 file changed, 8 insertions(+), 4 deletions(-)
+> 
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
 -- 
 With best wishes
