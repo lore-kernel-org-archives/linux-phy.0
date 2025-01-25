@@ -4,68 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAD61C0218C
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 03:25:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DBCEC02181
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Jan 2025 03:31:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N9xh4pm2rL2DwqnFSjjcxiYh0FA690ULr/W4APFvYQ0=; b=35RK2NSTPu5vbp
-	XzLpxm3Wd/kWjL9aPqrhIhIyownd8PNUFjpmDc0Gaey1FhuI2tJvqLFZsOVt7EdAKlbHPMMIR7/gh
-	G5Y8QcAgbj4K3qieKrMJ/JqB79upIMreYZZl+wT+Lc+KGEWSvsZY5arjXo7xs7NoZrKFra3r+OCSp
-	HSgCMl8WvsGS+BXPx45t4Az0bexpxXCqKKKXLc4J9Bx09gjj1Q5WNXLVxQ/FfLVynLcOP1ErSmMSa
-	iwmQkzDuiJMd14CgzDszRI9Jrcc5YaxA7n6NzzGMilCIu8o5iU0x7olC1j5EaYnTwuV7XQIBKgr3i
-	9DeF52bX3MLFmF5mBMlA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eK4/tnq03oVzAXEX7xksgKU9I/oQFzi7i3wE1ykxemU=; b=r69Su0GBVgXfEF
+	Xom3hY3oH1cFNd8NFiQJdW1hSbeBL1yLRfNV1QG3QBApEjwE0uDPJdEnXVBk96KaGAqcPMCanxrB/
+	OJ3nVx+dGmKLbPnrSprT81qzufa13R8CoIvAXvm+q3orPihbZXvyjNjsxT09guPjq9cVNJDlPe2I3
+	CL62FIddmL6BxzBZIJ1LMRQC+gvtdEbkq9CoKFsTH2SarSvzj25WpbKYLMsJzG2Bs60vEcwWdgTSJ
+	9HpINS8sJv0gR9kbYPOGuf3halBpx/S1WABNEZbCjxKmDnc9BCYEqQwRlfL9b8Nj8rX2hmhcv5Xbb
+	SM/SCELTfshDq3U0qYMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbWnc-0000000FxBV-1Fll;
-	Sat, 25 Jan 2025 03:25:32 +0000
-Received: from mail-m15579.qiye.163.com ([101.71.155.79])
+	id 1tbWtP-0000000FxkO-3t7f;
+	Sat, 25 Jan 2025 03:31:31 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tbWnZ-0000000FxAy-05iT;
-	Sat, 25 Jan 2025 03:25:30 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 9a41508b;
-	Sat, 25 Jan 2025 11:25:23 +0800 (GMT+08:00)
-Message-ID: <be3883ca-913a-4ca3-b203-ce6e4d53aa49@rock-chips.com>
-Date: Sat, 25 Jan 2025 11:25:23 +0800
+	id 1tbWtN-0000000Fxk1-14rK
+	for linux-phy@lists.infradead.org;
+	Sat, 25 Jan 2025 03:31:30 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id CAE8FA401C2;
+	Sat, 25 Jan 2025 03:29:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F291BC4CED6;
+	Sat, 25 Jan 2025 03:31:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1737775887;
+	bh=nHAa6+rhzIVq14iE10KQE5p5M0mnRnXUn1tLmXTmSdk=;
+	h=From:Subject:Date:To:Cc:From;
+	b=VPogy25uS77IvsADujpnifvP++TAZMuYb3hPV6QtmVMNcdH6agDKBjx5bpbCS18y1
+	 odpA8LcHLuN9hsmKsrpU3x5N1cc0jlplEik7T/XbCuPc68yfqHjzOXyYaSrGzzI0NI
+	 8nPrpPlTSqG2LVLpWo+bsc52SqsLf/ryPiTD/a5JriXOSdGPWDcJh4mS24lxSUEfTH
+	 N+piMsMTtQr3k3kWl84fAhblNzb1hLHqgzqBfra91PoOf3vUDgocJNxDLGItnKZCgS
+	 hJ7xoCRx5l4/GPMifqqjEpZ+Rvjh2NR5jfSJVagnuhxD2ilUH7gfy0gcHndnUK4OaC
+	 sYTT5wY5YJPtQ==
+From: Konrad Dybcio <konradybcio@kernel.org>
+Subject: [PATCH 0/6] X1P42100 DT and PCIe PHY bits
+Date: Sat, 25 Jan 2025 04:31:16 +0100
+Message-Id: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 14/14] arm64: dts: rockchip: Enable eDP0 display on
- RK3588S EVB1 board
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, rfoss@kernel.org, vkoul@kernel.org,
- sebastian.reichel@collabora.com, cristian.ciocaltea@collabora.com,
- l.stach@pengutronix.de, andy.yan@rock-chips.com, hjc@rock-chips.com,
- algea.cao@rock-chips.com, kever.yang@rock-chips.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-15-damon.ding@rock-chips.com>
- <u3qiasthay5xrtu4bfu5ihag7x2wajrpbktrcs7bxutvc2iwrk@on5ymtwq5vwx>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <u3qiasthay5xrtu4bfu5ihag7x2wajrpbktrcs7bxutvc2iwrk@on5ymtwq5vwx>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0pPGVYYQxpOHUtJHkpOHU9WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a949b7e27fe03a3kunm9a41508b
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pkk6ISo4MjIWKBkrEjEvST4N
-	LSJPFA9VSlVKTEhMTExOTklOT05PVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFIQkpINwY+
-DKIM-Signature: a=rsa-sha256;
-	b=i90GOSOVKov9ch4IdolcO1Z29iwfGzmWMLjaVWh3YmbO8GUwW36x+gQAI5kP9tEdHEvR3Q8mJGc35GOfiMNX0r7+RDd9pp7Ld3YLRyK9lQOQSrQFtqSiIQtjnPX6sA39CHdTklmYML+XFUUO1NkmMp5F1C4rSJG1SdOv1vRLp1U=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=c7MldcMAKTGJgYwoCbGLzVzEW02VyfkoG5ILQhtNfYE=;
-	h=date:mime-version:subject:message-id:from;
+X-B4-Tracking: v=1; b=H4sIAARblGcC/y3MQQ6CMBCF4auQWVsyA8UIK+9hCGnLqF3QYouKI
+ dzdCi6/l7x/gcjBcoQmWyDwy0brXQIdMjB35W4sbJ8MBRYVUlGJyY/WiJlG2fVTFKWuK6y14VK
+ VkE5j4Kudt+Cl3R348UzdaR9h4BjV1m2yf5WwliQxl4jHE5IgkR6me7PTH+XPP1hncuMHaNf1C
+ zjVeMC0AAAA
+X-Change-ID: 20250125-topic-x1p4_dts-3b9509bce3a3
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: Marijn Suijten <marijn.suijten@somainline.org>, 
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1737775883; l=1920;
+ i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
+ bh=nHAa6+rhzIVq14iE10KQE5p5M0mnRnXUn1tLmXTmSdk=;
+ b=tBeB11e5HhKgSjY7rEwh++eL5F089B+hv6/Ba3RS89nWuoek2723N/UidWaFKmE7/cSC679HZ
+ NDNCV9SXrnuDdjJyB2JOq1UQF2r+wNrajVvDUCVHaKQhjqSlYyl7XH9
+X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
+ pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250124_192529_597928_A7AABE92 
-X-CRM114-Status: GOOD (  17.68  )
+X-CRM114-CacheID: sfid-20250124_193129_461109_0441A942 
+X-CRM114-Status: UNSURE (   7.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,155 +84,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+X1P42100 is a(n indirect) derivative of X1E80100 - the silicon is
+actually different and it's not a fused down part.
 
-On 2025/1/23 19:32, Dmitry Baryshkov wrote:
-> On Thu, Jan 23, 2025 at 06:07:47PM +0800, Damon Ding wrote:
->> Add the necessary DT changes to enable eDP0 on RK3588S EVB1 board:
->> - Set pinctrl of pwm12 for backlight
->> - Enable edp0/hdptxphy0/vp2
->> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
->> - Add aux-bus/panel nodes
->>
->> For RK3588, the PLL_V0PLL is specifically designed for the VOP2. This
->> means the clock rate of PLL_V0PLL can be adjusted according to the dclk
->> rate of relevant VP. It is typically assigned as the dclk source of a
->> specific VP when the clock of relevant display mode is unusual, such as
->> the eDP panel 'lg,lp079qx1-sp0v' paired with RK3588S EVB1, which has a
->> clock rate of 202.02MHz.
->>
->> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
->>
->> ---
->>
->> Changes in v2:
->> - Remove brightness-levels and default-brightness-level properties in
->>    backlight node.
->> - Add the detail DT changes to commit message.
->>
->> Changes in v3:
->> - Use aux-bus instead of platform bus for edp-panel.
->>
->> Changes in v4:
->> - Add comments related to the use of panel compatible "lg,lp079qx1-sp0v"
->>    in the commit message.
->>
->> Changes in v5:
->> - Use "edp-panel" instead of "lg,lp079qx1-sp0v"
->> - Remove unnecessary comments in commit message
->> - Assign the parent of DCLK_VOP2_SRC to PLL_V0PLL
->>
->> Changes in v6:
->> - Add PLL_V0PLL related descriptions in commit message
->> ---
->>   .../boot/dts/rockchip/rk3588s-evb1-v10.dts    | 54 +++++++++++++++++++
->>   1 file changed, 54 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
->> index bc4077575beb..a8c151b41e21 100644
->> --- a/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
->> +++ b/arch/arm64/boot/dts/rockchip/rk3588s-evb1-v10.dts
->> @@ -9,6 +9,7 @@
->>   #include <dt-bindings/gpio/gpio.h>
->>   #include <dt-bindings/input/input.h>
->>   #include <dt-bindings/pinctrl/rockchip.h>
->> +#include <dt-bindings/soc/rockchip,vop2.h>
->>   #include <dt-bindings/usb/pd.h>
->>   #include "rk3588s.dtsi"
->>   
->> @@ -238,6 +239,41 @@ &combphy2_psu {
->>   	status = "okay";
->>   };
->>   
->> +&edp0 {
->> +	force-hpd;
-> 
-> Why? Please mention the reason in the commit message.
-> 
+Introduce the DTS bits required to support it by mostly reusing the
+X1E SoC and CRD DTSIs. The most notable differences from our software
+PoV are a different GPU (support for which will be added later), 4
+less CPUs and some nuances in the PCIe hardware.
 
-The 'force-hpd' is set for edp0 because the HPD pin on the panel side is 
-not connected to the eDP HPD pin on the SoC side according to the 
-RK3588S EVB1 hardware design.
+This series very strictly depends on the NOCSR PCIe PHY reset patches.
 
-And I will add this description to the commit message in the next version.
+Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+---
+Konrad Dybcio (6):
+      dt-bindings: phy: qcom,qmp-pcie: Add X1P42100 PCIe Gen4x4 PHY
+      dt-bindings: phy: qcom,qmp-pcie: Drop reset number constraints
+      phy: qcom: qmp-pcie: Add X1P42100 Gen4x4 PHY
+      arm64: dts: qcom: x1e80100: Wire up PCIe PHY NOCSR resets
+      arm64: dts: qcom: Commonize X1 CRD DTSI
+      arm64: dts: qcom: Add X1P42100 SoC and CRD
 
->> +	status = "okay";
->> +
->> +	aux-bus {
->> +		panel {
->> +			compatible = "edp-panel";
->> +			backlight = <&backlight>;
->> +			power-supply = <&vcc3v3_lcd_edp>;
->> +
->> +			port {
->> +				panel_in_edp: endpoint {
->> +					remote-endpoint = <&edp_out_panel>;
->> +				};
->> +			};
->> +		};
->> +	};
->> +};
->> +
->> +&edp0_in {
->> +	edp0_in_vp2: endpoint {
->> +		remote-endpoint = <&vp2_out_edp0>;
->> +	};
->> +};
->> +
->> +&edp0_out {
->> +	edp_out_panel: endpoint {
->> +		remote-endpoint = <&panel_in_edp>;
->> +	};
->> +};
->> +
->> +&hdptxphy0 {
->> +	status = "okay";
->> +};
->> +
->>   &i2c3 {
->>   	status = "okay";
->>   
->> @@ -399,6 +435,7 @@ usbc0_int: usbc0-int {
->>   };
->>   
->>   &pwm12 {
->> +	pinctrl-0 = <&pwm12m1_pins>;
->>   	status = "okay";
->>   };
->>   
->> @@ -1168,3 +1205,20 @@ usbdp_phy0_dp_altmode_mux: endpoint@1 {
->>   		};
->>   	};
->>   };
->> +
->> +&vop_mmu {
->> +	status = "okay";
->> +};
->> +
->> +&vop {
->> +	assigned-clocks = <&cru DCLK_VOP2_SRC>;
->> +	assigned-clock-parents = <&cru PLL_V0PLL>;
->> +	status = "okay";
->> +};
->> +
->> +&vp2 {
->> +	vp2_out_edp0: endpoint@ROCKCHIP_VOP2_EP_EDP0 {
->> +		reg = <ROCKCHIP_VOP2_EP_EDP0>;
->> +		remote-endpoint = <&edp0_in_vp2>;
->> +	};
->> +};
->> -- 
->> 2.34.1
->>
-> 
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   26 +-
+ arch/arm64/boot/dts/qcom/Makefile                  |    1 +
+ .../dts/qcom/{x1e80100-crd.dts => x1-crd.dtsi}     |    7 -
+ arch/arm64/boot/dts/qcom/x1e80100-crd.dts          | 1270 +-------------------
+ arch/arm64/boot/dts/qcom/x1e80100-pmics.dtsi       |    2 +-
+ arch/arm64/boot/dts/qcom/x1e80100.dtsi             |   44 +-
+ arch/arm64/boot/dts/qcom/x1p42100-crd.dts          |   17 +
+ arch/arm64/boot/dts/qcom/x1p42100.dtsi             |   81 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           |   18 +
+ 9 files changed, 148 insertions(+), 1318 deletions(-)
+---
+base-commit: d7dfdec72fb32629d1affc32ff37a66a7fd1fb53
+change-id: 20250125-topic-x1p4_dts-3b9509bce3a3
+prerequisite-message-id: 20250121094140.4006801-1-quic_wenbyao@quicinc.com
+prerequisite-patch-id: 719a1c1319a8f25be57f1e9bc68887684ff0d7cd
+prerequisite-patch-id: 44ff71b8033fc91867a83a2f8f063fd0d9951d5e
 
 Best regards,
-Damon
+-- 
+Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
 
 -- 
