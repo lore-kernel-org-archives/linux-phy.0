@@ -4,110 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C80B1C02188
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Jan 2025 15:17:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6562BC02188
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Jan 2025 19:19:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Se/8Wa1zp0RdU5dGnO7qigJtzyvTaeVu42wRalTghg0=; b=hH0xvGhct79mL1
-	fJt41TUpB5Ha5uXUThfbbjhSO1/xxcy3wzqKQilqNhCRwgHi7obkaRLqlxR5Ka2Xz4ZDiGvLU1wDw
-	2KHKYrmZyX3lJW6bZBx9GwNlIu89O68/s63Ob2CA/AMWKyYvGhKNvuVZYylHsuTxTUwQUG5hwnrrY
-	Mf5BuTeQcsoiT0hVWbx9A60dB2Q7Ayi1jjXcJwrvtoti2iH4xVpveds/jKwKqlyp/h5YuL2xyuSJi
-	qDtLS3Rg0+AgEFFFQ6n4NM+e2Yhj3gbt75felIMeiTdYBgIDLsOP52RbkhT6G8rCLSIBo+dqG8+NM
-	q/QdxIkvma+vn0VcVv2Q==;
+	List-Owner; bh=mCX4UgMwxGBZ/e4YsiVPCRoAVfe1txATB/W7/5QTvSc=; b=jsTW839Liqmtl2
+	l5XcPKf8JfNZzJyzu5oW5fis9gnRvnh8udjewRnamlcpX4tcHYWe902z+4eqi6o99FYKUBuQrtyMZ
+	QQTDvE3/WScKyu6ZIRFVnBki1TLBP9jvkBPzFMcQEeLkBlJDUjOB9m8yCmjHX3GnKUBSX0aajmAr1
+	6MIGCLlpH5sj4oNNYdn/XFBkzF8DR2S6VeN07QyUVCX4RYtXCLzG0c2GG/kLMFESmS8+/rNBTtwGY
+	89MflfjjTEC6+I9bsUhpRdK+Re6ej82sZiuB5MqBh52AqxeIfH36RZXY9hSYaQf+upZGtMKHeo94K
+	Ivo5UJPwAX5edadYzTeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcQrp-00000002Zwp-3L5V;
-	Mon, 27 Jan 2025 15:17:37 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tcUdb-000000036hE-2e5I;
+	Mon, 27 Jan 2025 19:19:11 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcQqs-00000002Zk9-0yXD
+	id 1tcUdY-000000036gu-3lQD
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Jan 2025 15:16:39 +0000
-Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50RCTt1u021236
-	for <linux-phy@lists.infradead.org>; Mon, 27 Jan 2025 15:16:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	eiOVlvy8O2sljdqhnTACcFcT/c+BYziyN9TVv9igCSg=; b=lRybVIDH/erv8Rke
-	Huf178CITEZwh89jtxljjRNIzq6MtfNnY4DVt2h63q73kCiKDAD/gTfsXj+FB+Uj
-	pRbtnxm1o92a6I+EFD3TM09Vl7nAXJuH6mKMZ5PGytMUDTvq+2CAZuF1SYuMOHAJ
-	3CXyD920lvofbQB5GAEUzG5ZirwLhTgj/puBfkJ78x47kTAiGvsiitML7n/CuW3c
-	MFnJ9bhqy8rx+Z5eo4VWGUIKTRuBQZE3Di5UNlz41238pNf3f9R1k3OZGYZUw3ZT
-	sjp7NRj0cfSNM5IKTMushd+UqASJL0axMZz1mxgfknjiaetChpWnxHoIKfIDhw6L
-	b/jS6g==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44ea6s0acd-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 27 Jan 2025 15:16:37 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-7b6e43ed084so90808185a.0
-        for <linux-phy@lists.infradead.org>; Mon, 27 Jan 2025 07:16:37 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1737990996; x=1738595796;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=eiOVlvy8O2sljdqhnTACcFcT/c+BYziyN9TVv9igCSg=;
-        b=LAZ4RjZmLSr2l50KP95kK7aFj1wDmEdQJyJI3hQfGvo1OGh2qPJYRRtPvAYwPVsJcV
-         Y/CSrvB9rPc5BhlPJAd75B74tQVuOx+Rc+v0C5s9WFL6sfJT4orlDFhB2mlQFT5BrIbr
-         oB6+ZFCki8l86rYD0hiwwlpQtykgoeChTxQ7tgmFYRnJRYj7F4DNUo4+Ibx1eidTAkzC
-         KUZJU82xy80SqrNLmTS/UnAQOTleC4WN8NsvaSDMoaNCuXygTPXc3h6keDDLUTQpALs5
-         hYEuDmrGNk1Tni2tZ+9gNq6ExyzgfXSu3ZgN/Ke4qQmWJowT0HJCrrK1CXNLYnrS1hXU
-         zhLg==
-X-Forwarded-Encrypted: i=1; AJvYcCWBhmyzkGkkhodKSxUKFdVW5pSUrFuLMUzdad1rqgz45k/k1b/w1h9Au7hnDvo2O8p4hmdboFVAdbk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yydp6mrGe0hJw+qb80f+Ufi8VQnT4aCP9JGIg5RDPLe7b+0e2DY
-	+vvYuFAcGfVP0bieflaFxMFpCZk/Jtgt2sPyq5Ih6eicQiXU6yjl4LJkW338OVJV6itw0Ko5b6h
-	THsmfkEHUiRzbZpdGALmqhmOtht3tFTME3vX8s+H8IQ+42uh3pYEVlh6xaj+Bl6al
-X-Gm-Gg: ASbGncsxAH1JhfR9ObPOaVTySKyRUIKtH2nX98oJEj9wgiXdWfXr/QdZy7qUlJ6vZgB
-	xKsCbjSV8JSe+zejS6lbyHzvkyKA4p4LjZ7Qx8EYQkUhxjF5drGTxHb23FxF0ckPPnf1ieuWV2g
-	m6WKxsHJv9mHgr0v1i2Be+WtnSehDRHMKn/7FA69hDbxsn8UBDm2Z1Zj8uCR1pVO8s1bPpawwky
-	KvivTSsPZUgpi/lva1kTwQNiosybi81pp2GCkbARV4oy3ux0CkrwwMWybMGclPe9Ln5C5DZOyT8
-	tJ9kSt3kGIaw9jExrvm94y01PuWDWhH6GuUpjXme/aJwoR6fbch1/9f46RI=
-X-Received: by 2002:a05:622a:1a23:b0:467:85f9:2a67 with SMTP id d75a77b69052e-46e12a940b8mr232903641cf.8.1737990995893;
-        Mon, 27 Jan 2025 07:16:35 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHHbQBaClGLDjf47vJiIgHk5bysqAnHMsfctaPHSAVkHPdBSwDmwLdwjqjUQMvLgQ8TfbrmWw==
-X-Received: by 2002:a05:622a:1a23:b0:467:85f9:2a67 with SMTP id d75a77b69052e-46e12a940b8mr232903471cf.8.1737990995484;
-        Mon, 27 Jan 2025 07:16:35 -0800 (PST)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dc186b37b6sm5388019a12.56.2025.01.27.07.16.32
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 27 Jan 2025 07:16:35 -0800 (PST)
-Message-ID: <60d02c55-0d18-4704-9126-8b8ffef5bd68@oss.qualcomm.com>
-Date: Mon, 27 Jan 2025 16:16:32 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 2/7] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, lpieralisi@kernel.org,
-        kw@linux.com, manivannan.sadhasivam@linaro.org, robh@kernel.org,
-        bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org,
-        vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org,
-        konradybcio@kernel.org, p.zabel@pengutronix.de,
-        dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com,
-        linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-phy@lists.infradead.org
+	Mon, 27 Jan 2025 19:19:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 3F79FA41A07;
+	Mon, 27 Jan 2025 19:17:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A9ACEC4CED2;
+	Mon, 27 Jan 2025 19:19:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1738005547;
+	bh=SqI1KbVFdalLEwk0SH3vc66dMLl3ElqNrXqEzL5h/HM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=BJtK6kBZpRiUGZfqgbJTc/udEd1XWuf9oMolAVnW/3MUyzr/VpFnPVC5/7Z+C2ZW5
+	 H4xZFEKHvEL65IT298wqlKAk3od1QxNgzouDgBSEeezkJbzO8kmxz9+NxJTx6B4tW7
+	 sMPLHejjRK8U2J4OwZ61VrWD9wWrOA2NfkU2kByBK8PffuDP1uFcznH4clbYjJEZx/
+	 F6I1dI+eNv6P4r5ejps4HQ4IN2q8nzIcnt32TPj5Rhf8JOwkT2YqxGvad8PCYYksIz
+	 xXMPOS3cEykoIugGXphW0ZcZhtLKSzPkYBsstJiJq7GcxhKdNyYUseaBsC3ASg/OlG
+	 zRQSVTyOCzqiQ==
+Date: Mon, 27 Jan 2025 13:19:06 -0600
+From: Rob Herring <robh@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
+	bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org,
+	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org,
+	konradybcio@kernel.org, p.zabel@pengutronix.de,
+	dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com,
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v8 5/7] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
+ controller
+Message-ID: <20250127191906.GA704182-robh@kernel.org>
 References: <20250127072850.3777975-1-quic_varada@quicinc.com>
- <20250127072850.3777975-3-quic_varada@quicinc.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250127072850.3777975-3-quic_varada@quicinc.com>
-X-Proofpoint-GUID: uEL5fOY5_Dn1GowQjPigfzB6xUqENy_U
-X-Proofpoint-ORIG-GUID: uEL5fOY5_Dn1GowQjPigfzB6xUqENy_U
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-27_07,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 bulkscore=0
- phishscore=0 suspectscore=0 mlxscore=0 impostorscore=0 priorityscore=1501
- adultscore=0 malwarescore=0 clxscore=1015 spamscore=0 lowpriorityscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501270122
+ <20250127072850.3777975-6-quic_varada@quicinc.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250127072850.3777975-6-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_071638_284785_84BD563B 
-X-CRM114-Status: GOOD (  14.38  )
+X-CRM114-CacheID: sfid-20250127_111909_063497_EAC0B8E3 
+X-CRM114-Status: GOOD (  15.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,59 +80,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27.01.2025 8:28 AM, Varadarajan Narayanan wrote:
-> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+On Mon, Jan 27, 2025 at 12:58:48PM +0530, Varadarajan Narayanan wrote:
+> Document the PCIe controller on IPQ5332 platform. IPQ5332 will
+> use IPQ9574 as the fall back compatible.
 > 
-> Add Qualcomm PCIe UNIPHY 28LP driver support present
-> in Qualcomm IPQ5332 SoC and the phy init sequence.
-> 
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
 > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 > ---
+> v8: Use ipq9574 as fallback compatible for ipq5332 along with ipq5424
+> 
+> v7: Moved ipq9574 related changes to a separate patch
+>     Add 'global' interrupt
+> 
+> v6: Commit message update only. Add info regarding the moving of
+>     ipq9574 from 5 "reg" definition to 5 or 6 reg definition.
+> 
+> v5: Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
+> 
+> v4: * v3 reused ipq9574 bindings for ipq5332. Instead add one for ipq5332
+>     * DTS uses ipq9574 compatible as fallback. Hence move ipq9574 to be able
+>       to use the 'reg' section for both ipq5332 and ipq9574. Else, dtbs_check
+>       and dt_binding_check flag errors.
+> ---
+>  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 10 ++++++++--
+>  1 file changed, 8 insertions(+), 2 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> index 4b4927178abc..2ffa8480a665 100644
+> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> @@ -33,6 +33,7 @@ properties:
+>            - qcom,pcie-sdx55
+>        - items:
+>            - enum:
+> +              - qcom,pcie-ipq5332
+>                - qcom,pcie-ipq5424
+>            - const: qcom,pcie-ipq9574
+>        - items:
+> @@ -49,11 +50,11 @@ properties:
+>  
+>    interrupts:
+>      minItems: 1
+> -    maxItems: 8
+> +    maxItems: 9
+>  
+>    interrupt-names:
+>      minItems: 1
+> -    maxItems: 8
+> +    maxItems: 9
+>  
+>    iommu-map:
+>      minItems: 1
+> @@ -209,6 +210,7 @@ allOf:
+>          compatible:
+>            contains:
+>              enum:
+> +              - qcom,pcie-ipq5332
+>                - qcom,pcie-ipq9574
 
-[...]
+As both of these compatibles will be present, you don't need to add 
+ipq5332 here.
 
-> +	usleep_range(CLK_EN_DELAY_MIN_US, CLK_EN_DELAY_MAX_US);
-> +
-> +	qcom_uniphy_pcie_init(phy);
-> +	return 0;
+>                - qcom,pcie-sdx55
+>      then:
+> @@ -411,6 +413,7 @@ allOf:
+>          compatible:
+>            contains:
+>              enum:
+> +              - qcom,pcie-ipq5332
+>                - qcom,pcie-ipq9574
 
-Please add a newline before the return statement
+Same here.
 
-[...]
-
-> +static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	struct device *dev = &pdev->dev;
-> +	struct qcom_uniphy_pcie *phy;
-> +	struct phy *generic_phy;
-> +	int ret;
-> +
-> +	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
-> +	if (!phy)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, phy);
-> +	phy->dev = &pdev->dev;
-> +
-> +	phy->data = of_device_get_match_data(dev);
-> +	if (!phy->data)
-> +		return -EINVAL;
-> +
-> +	phy->lanes = 1;
-> +	if (of_property_read_u32(dev_of_node(dev), "num-lanes", &phy->lanes))
-> +		dev_info(dev, "Not able to get num-lanes. Assuming 1\n");
-
-return dev_err_probe(dev, ret, "Couldn't read num-lanes\n");
-
-And please make num-lanes required in bindings there
-
-We don't want silent fallbacks in such cases, as it's easy to miss those and
-e.g. ship a product which would then run the PCIe link at half the speed
-
-Konrad
+>      then:
+>        properties:
+> @@ -443,6 +446,7 @@ allOf:
+>          interrupts:
+>            minItems: 8
+>          interrupt-names:
+> +          minItems: 8
+>            items:
+>              - const: msi0
+>              - const: msi1
+> @@ -452,6 +456,7 @@ allOf:
+>              - const: msi5
+>              - const: msi6
+>              - const: msi7
+> +            - const: global
+>  
+>    - if:
+>        properties:
+> @@ -559,6 +564,7 @@ allOf:
+>                enum:
+>                  - qcom,pcie-apq8064
+>                  - qcom,pcie-ipq4019
+> +                - qcom,pcie-ipq5332
+>                  - qcom,pcie-ipq8064
+>                  - qcom,pcie-ipq8064v2
+>                  - qcom,pcie-ipq8074
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
