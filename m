@@ -4,106 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D38BC0218D
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jan 2025 05:39:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C43E4C0218D
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jan 2025 06:27:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ITQPfdPx/xdMNizgatdjnHp9YUiN7AALt7IGq8MqD0M=; b=QfpD1oSTiNGYaO
-	eg0VMqDmrgk+UK6u+ZaaBKlqvvq61SOeNXXKIoa0UbWgBibSV074qVLVyb/tVE0ZCSqsBnxZ6z+vd
-	CJk7hpRSpHNOvHWcHwWpJw/2wq7fnqdcjs7oeWaqV4MZ7Nkgoy1A39hV61/4p2i88/4yeVOleVWSV
-	+LEtmOzoVRPFaaJ3WTK1sVvLW/ex9KWvnkSO/JAuJ7oTfDrtw8Ap4y8w02w3V3RSypzNZxkZkHSq5
-	Sb/LrVhN8qsqDJd9ri2VLni+IVZ3SUmW8ZfVWiOSTX5SX371T5IFhoZeYMRh9IlcCc3WIG+jGGW6A
-	+hvCmBJuIB+rrloIEnSg==;
+	List-Owner; bh=aUVifM7rPhMmkyIVbkp5uLJOersPqtOaj26NSIEuOhc=; b=YUaabizMnWUdBE
+	v4hcpZSGtImMntelAthw77Lej9J97/vlcUbTxOmm/AnAOkV9BN1Cr9WfXH1OOicdmDGs+2UETaS3r
+	mnqz70stXq4kBr1kihj/ZtVDhUUhEYRCxYsRfsuXX0A2/Owhj2WINO0neXucP3dOVT4se43svLBAq
+	4EJmC9TMJVwPcUbwUEx6u2dMVJoGguSeSY3IUI/VvgUn1GFAGw5fOsuxPDzesvkDjnS35oRbhjEC5
+	pUVve2153Ke/xTzKHIDaLRAPw8ep+ckJh+VR6/WyfC8usNd6CrhNcBnOeEPh4Va96ZWiQrKuWySO9
+	zbQrQGEtXpDwQlbtq8pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tceJq-00000004Aso-35BD;
-	Tue, 28 Jan 2025 05:39:26 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tceJp-00000004Ase-1PIj
-	for linux-phy@bombadil.infradead.org;
-	Tue, 28 Jan 2025 05:39:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:CC:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=QtmlH3he5Hz0YMa0hWZk9aSTOVC+O4uUxZXVfQjHohQ=; b=CI3CKc9pGp8jDgpQ/XiUgBthy+
-	UfbT4Uy4kr1c0Q7DIeZEAGikJQe0t4SyrlPpx8XgtUwphbNrryL9/o7WhTPqeFMN3/dI0MTlGWKLe
-	IhV4RURweAWp0mQzF+rV46woVrTYrUGq5NIl0AmmGo+5DAtjNP6nvW3KV9AxMevklAnIVS6Aq11Nt
-	A3z2FfmFdlVcX5yx7YmPLW1uSlc2zaN3Z/2/4IQtZgvsoQCWHqGPU1DbgTpQaVApfP//l5fTVDMMg
-	oQW2tBIEfI1R0N99yulZjXrLOfLGNC7pH0uMzR9ixR7J/hXlrFLBeK0zCud6w+5W+pBnsxoTegxbO
-	MhScU/fg==;
+	id 1tcf4a-00000004Cg9-3X9q;
+	Tue, 28 Jan 2025 06:27:44 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tceJl-0000000Eptl-28yC
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tcf4X-00000004Cf9-3Sm5
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Jan 2025 05:39:24 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50S0VoIn002950;
-	Tue, 28 Jan 2025 05:39:08 GMT
+	Tue, 28 Jan 2025 06:27:43 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50S2rbpI002263;
+	Tue, 28 Jan 2025 06:27:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=QtmlH3he5Hz0YMa0hWZk9aST
-	OVC+O4uUxZXVfQjHohQ=; b=BFsLrZJ4s+488gGSvOoE1quIyGJ0lWYnZzh6DGf9
-	neJEiTkE3g0gaVlZ7RD/3oMPEHzzCymhcymKORHL+j4lh112YXSIJcH8CQluWzf1
-	3h++F9Sfr+MI1mX3Au80KS494kFW2ruxdsy5qORaEuzM+F3diyLXSBcg7gBd8K/J
-	NVtOCP53oGjcJowzePLEoWESadrbs1ZYF2OTKnDFJnOmRUCSQBDoS363DNkKM5JJ
-	9+TxZkfdfs1RW1Jm4jQDDyN9/f9uSXz5gnVeSNgSy30Vb8gDDdJ/WQgUvgDCsGEe
-	EOn15YN8OG/N7wSqZkETCADKQr7t7v1RMmSTePTls/a+hg==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44emry0des-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	PwtYak/t8SAuznkwdylC4P9QNNgY0KZtvTLFAk0VUwk=; b=gX0Kc+5M3rFhbjwX
+	HVtgUBAAQWYObafQURjTFk65gJa+xRzr0jutGbfcjrTJV0IdfhJxUAvT7ROmlwtj
+	HUzCTwRBfo7qB8EHA5L5enGQzHKPkjE+AQojic7asJbnDsgAA1fMZ9ARe6n75fhH
+	dBj3ualu/BntrpDkyEH29uO7FPtO2tBbqL55jvkcRGmBsqhesjOLv47H+HqVeHom
+	dyTLw+j9kiMoGvJXKKlFNVl0wuVG0e/AKi6Ybg0/zTxVDQmiUIJNpehHTdgrM6G0
+	silQNc1OZSZdrbBISul7zakrDN8E9G5VyZd042f7isORupZmGVNNc0Y+F4KEuP8S
+	6JdfvQ==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44epuurbht-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Jan 2025 05:39:07 +0000 (GMT)
+	Tue, 28 Jan 2025 06:27:33 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50S5d6hj000381
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50S6RWVR020898
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Jan 2025 05:39:06 GMT
+	Tue, 28 Jan 2025 06:27:32 GMT
 Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
  nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 27 Jan 2025 21:39:01 -0800
-Date: Tue, 28 Jan 2025 11:08:57 +0530
+ 15.2.1544.9; Mon, 27 Jan 2025 22:27:25 -0800
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Rob Herring <robh@kernel.org>
-CC: <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <bhelgaas@google.com>,
+To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
         <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
         <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
         <p.zabel@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
-        <quic_nsekar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v8 5/7] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
- controller
-Message-ID: <Z5htccTM8BKoAbJH@hu-varada-blr.qualcomm.com>
-References: <20250127072850.3777975-1-quic_varada@quicinc.com>
- <20250127072850.3777975-6-quic_varada@quicinc.com>
- <20250127191906.GA704182-robh@kernel.org>
+        <quic_nsekar@quicinc.com>, <quic_varada@quicinc.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>
+CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH v9 1/7] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
+Date: Tue, 28 Jan 2025 11:57:02 +0530
+Message-ID: <20250128062708.573662-2-quic_varada@quicinc.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250128062708.573662-1-quic_varada@quicinc.com>
+References: <20250128062708.573662-1-quic_varada@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250127191906.GA704182-robh@kernel.org>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 3W-wP9GiqaJIaZ8zNvtJpAn5IZ6Qzx8I
-X-Proofpoint-GUID: 3W-wP9GiqaJIaZ8zNvtJpAn5IZ6Qzx8I
+X-Proofpoint-ORIG-GUID: SCO70SIB9sNlLzq9OEWJFNOdwn0tn7z7
+X-Proofpoint-GUID: SCO70SIB9sNlLzq9OEWJFNOdwn0tn7z7
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-01-28_01,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- mlxlogscore=987 clxscore=1015 impostorscore=0 malwarescore=0 spamscore=0
- adultscore=0 bulkscore=0 lowpriorityscore=0 suspectscore=0 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501280040
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
+ bulkscore=0 suspectscore=0 adultscore=0 malwarescore=0 priorityscore=1501
+ phishscore=0 impostorscore=0 clxscore=1015 mlxlogscore=999
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501280047
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250128_053922_072358_C60BFB07 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20250127_222741_997230_96F5B0B0 
+X-CRM114-Status: GOOD (  15.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,114 +104,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 27, 2025 at 01:19:06PM -0600, Rob Herring wrote:
-> On Mon, Jan 27, 2025 at 12:58:48PM +0530, Varadarajan Narayanan wrote:
-> > Document the PCIe controller on IPQ5332 platform. IPQ5332 will
-> > use IPQ9574 as the fall back compatible.
-> >
-> > Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
-> > ---
-> > v8: Use ipq9574 as fallback compatible for ipq5332 along with ipq5424
-> >
-> > v7: Moved ipq9574 related changes to a separate patch
-> >     Add 'global' interrupt
-> >
-> > v6: Commit message update only. Add info regarding the moving of
-> >     ipq9574 from 5 "reg" definition to 5 or 6 reg definition.
-> >
-> > v5: Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
-> >
-> > v4: * v3 reused ipq9574 bindings for ipq5332. Instead add one for ipq5332
-> >     * DTS uses ipq9574 compatible as fallback. Hence move ipq9574 to be able
-> >       to use the 'reg' section for both ipq5332 and ipq9574. Else, dtbs_check
-> >       and dt_binding_check flag errors.
-> > ---
-> >  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 10 ++++++++--
-> >  1 file changed, 8 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> > index 4b4927178abc..2ffa8480a665 100644
-> > --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> > +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-> > @@ -33,6 +33,7 @@ properties:
-> >            - qcom,pcie-sdx55
-> >        - items:
-> >            - enum:
-> > +              - qcom,pcie-ipq5332
-> >                - qcom,pcie-ipq5424
-> >            - const: qcom,pcie-ipq9574
-> >        - items:
-> > @@ -49,11 +50,11 @@ properties:
-> >
-> >    interrupts:
-> >      minItems: 1
-> > -    maxItems: 8
-> > +    maxItems: 9
-> >
-> >    interrupt-names:
-> >      minItems: 1
-> > -    maxItems: 8
-> > +    maxItems: 9
-> >
-> >    iommu-map:
-> >      minItems: 1
-> > @@ -209,6 +210,7 @@ allOf:
-> >          compatible:
-> >            contains:
-> >              enum:
-> > +              - qcom,pcie-ipq5332
-> >                - qcom,pcie-ipq9574
->
-> As both of these compatibles will be present, you don't need to add
-> ipq5332 here.
+From: Nitheesh Sekar <quic_nsekar@quicinc.com>
 
-Ok.
+Document the Qualcomm UNIPHY PCIe 28LP present in IPQ5332.
 
-> >                - qcom,pcie-sdx55
-> >      then:
-> > @@ -411,6 +413,7 @@ allOf:
-> >          compatible:
-> >            contains:
-> >              enum:
-> > +              - qcom,pcie-ipq5332
-> >                - qcom,pcie-ipq9574
->
-> Same here.
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+---
+v8: Add 'Reviewed-by: Krzysztof Kozlowski'
 
-Ok.
+v7: * Add data type definition to 'num-lanes'
 
-Thanks
-Varada
+v6: * Fix num-lanes definition
+    * Make it mandatory
 
-> >      then:
-> >        properties:
-> > @@ -443,6 +446,7 @@ allOf:
-> >          interrupts:
-> >            minItems: 8
-> >          interrupt-names:
-> > +          minItems: 8
-> >            items:
-> >              - const: msi0
-> >              - const: msi1
-> > @@ -452,6 +456,7 @@ allOf:
-> >              - const: msi5
-> >              - const: msi6
-> >              - const: msi7
-> > +            - const: global
-> >
-> >    - if:
-> >        properties:
-> > @@ -559,6 +564,7 @@ allOf:
-> >                enum:
-> >                  - qcom,pcie-apq8064
-> >                  - qcom,pcie-ipq4019
-> > +                - qcom,pcie-ipq5332
-> >                  - qcom,pcie-ipq8064
-> >                  - qcom,pcie-ipq8064v2
-> >                  - qcom,pcie-ipq8074
-> > --
-> > 2.34.1
-> >
+v5: * Drop '3x1' & '3x2' from compatible string
+    * Use 'num-lanes' to differentiate instead of '3x1' or '3x2'
+      in compatible string
+    * Describe clocks and resets instead of just maxItems
+
+v4: Remove reset-names as the resets are not used individually
+    Remove clock-output-names as its usage is removed from driver
+    Fix order in the 'required' section
+
+v3: Fix compatible string to be similar to other phys and rename file accordingly
+    Fix clocks minItems -> maxItems
+    Change one of the maintainer from Sricharan to Varadarajan
+
+v2: Rename the file to match the compatible
+    Drop 'driver' from title
+    Dropped 'clock-names'
+    Fixed 'reset-names'
+---
+ .../phy/qcom,ipq5332-uniphy-pcie-phy.yaml     | 76 +++++++++++++++++++
+ 1 file changed, 76 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+new file mode 100644
+index 000000000000..e39168d55d23
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/qcom,ipq5332-uniphy-pcie-phy.yaml
+@@ -0,0 +1,76 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/qcom,ipq5332-uniphy-pcie-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Qualcomm UNIPHY PCIe 28LP PHY
++
++maintainers:
++  - Nitheesh Sekar <quic_nsekar@quicinc.com>
++  - Varadarajan Narayanan <quic_varada@quicinc.com>
++
++description:
++  PCIe and USB combo PHY found in Qualcomm IPQ5332 SoC
++
++properties:
++  compatible:
++    enum:
++      - qcom,ipq5332-uniphy-pcie-phy
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: pcie pipe clock
++      - description: pcie ahb clock
++
++  resets:
++    items:
++      - description: phy reset
++      - description: ahb reset
++      - description: cfg reset
++
++  "#phy-cells":
++    const: 0
++
++  "#clock-cells":
++    const: 0
++
++  num-lanes:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [1, 2]
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - resets
++  - "#phy-cells"
++  - "#clock-cells"
++  - num-lanes
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/qcom,ipq5332-gcc.h>
++
++    pcie0_phy: phy@4b0000 {
++        compatible = "qcom,ipq5332-uniphy-pcie-phy";
++        reg = <0x004b0000 0x800>;
++
++        clocks = <&gcc GCC_PCIE3X1_0_PIPE_CLK>,
++                 <&gcc GCC_PCIE3X1_PHY_AHB_CLK>;
++
++        resets = <&gcc GCC_PCIE3X1_0_PHY_BCR>,
++                 <&gcc GCC_PCIE3X1_PHY_AHB_CLK_ARES>,
++                 <&gcc GCC_PCIE3X1_0_PHY_PHY_BCR>;
++
++        #clock-cells = <0>;
++
++        #phy-cells = <0>;
++
++        num-lanes = <1>;
++    };
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
