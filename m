@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C492C0218D
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jan 2025 06:27:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BA07C0218D
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jan 2025 06:27:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MKntVAM2lvG30oOie6423EdvT8fLlyTKilYt3zvyJfw=; b=mPW3JzmPaxbqTN
-	IN273dhjCcPV5mqqPZXSKx6Tn6CVxOAhPrTerpDtQ0hG+eE4zYZmzQD6xs9vis2u3Ho7rDtD/A6LB
-	vCYytSLYn519QK0XPjDIY7OQw8ULAavTyJPyPrqMjLUhS+FfvnQaqqXDi3IVm1bdfi7VE0Ox/Lnjh
-	hNAl4M9plQVLp6UX34r1ewo76OQj9qtgsie2thaY6srZH0gmRkRegnpmnHstYtMYJgu40YiGSQB53
-	ZZW3BdtWFCPUXVBdbBvb5AYvJPqmIvDO1BwXXbDzdVflP+R02Pm14PBszq1sIXYaUnsClu20eYcCn
-	MJAjXBwWL4XeHTSRp91Q==;
+	List-Owner; bh=/RZj+3cDQp+lR1v1GQaOhK7KIU/87f9HaUTWnK4a5Es=; b=bXlrSTcOx9v1VD
+	OTwi1wO/eOJBrA94rbrvrFPvIREj7hg7uUJ6NWzm+dA0EsTJGqr3EL/lI9GPVWAVtHQ6wmOGvGZPJ
+	5dam5icq2li2OU9sY4Btc2TI5Ac2r+0Ezho1i1DHpucVFwvSKap0vxOQ4rReL6UOTm6SJNnqL/nR3
+	nHuJIkQplgMQ18PP/PRbSU2Es2pGvcVg5GdkuHkTGtYzjrhTAsKiQ02t/fK2V7D654gpsHT/XZQMo
+	dwhIodx8acMH/C5igh+f/6FGz7FRPOv+4xS4305xkHuQPSSdIT/DdjbibPyU8JOUZIHsTHCGsq7La
+	XYJTNKl0t1SbpDMSeckQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcf4j-00000004Ciu-3dCD;
-	Tue, 28 Jan 2025 06:27:53 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tcf4o-00000004Cjm-0VQJ;
+	Tue, 28 Jan 2025 06:27:58 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcf4h-00000004CiE-1dwp
+	id 1tcf4l-00000004CjJ-3FD0
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Jan 2025 06:27:52 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50S0Vf3D002698;
-	Tue, 28 Jan 2025 06:27:45 GMT
+	Tue, 28 Jan 2025 06:27:56 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50S2Cend009658;
+	Tue, 28 Jan 2025 06:27:50 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	JoWXz0+hbIKwSbaA5Rj4Bz7KEmuoMxiykAKBvtRi3z0=; b=FPAAUGnmXY2drPuF
-	9+rJ/smoMYusTeO8AWU4trgaRlXfwSoIhkHHeqp3Gm9+UPA1/eUDPIS1NgLpX37O
-	NyQRmUgVd8Qqyn7kLdrfuoYjdRnkXhXHZRIjfV6bVYGOPm4p+62UptQqTPn8kSTT
-	wCzIOsExEUppHyxsKMiSO4KIZ9H3OJUlO3CeYCNwXBQcZtKWyNgkrcrp9k9RClA9
-	7WIHpyRJqBRT36cg5dK7cdlXP3nxFF1QMdgGOP6MEP71QSxJUXJiHe/2Ub2RurJp
-	JjtYz7BN0N0dytYblQO/6lIEvS2DUdd7A+jsdXv1EH5ZgNazZjTdWlCm1QvRB4kg
-	5w6Kgw==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44emry0htb-1
+	QXpJ7kICsLJNBbrzS/vhBa+nKtc/mprBYbiUOfy5GP8=; b=kCJVQxsOfDr7okzN
+	VMG5ODtgweXWbVcpxqcoGBLioYBdLserO+Z/tz8tutnNMclbeWM4KFAQiyzYxoMH
+	3kBru2uo1YSNgwJzy/GV7reUC+L5dcO7mYGe8x/Xpzi/Otpj/NYtPbtPfUkg9Qzz
+	b/CMmBu1ELngpP6y686Wpe3rp0CSGZuXPUd9A7U/wNzj1Sl8yNPfwvR9+jVvRhTz
+	k8Fwk6geeOR6pes3xWWOo72eEV9SCXHEADE4xmIugbCEM9KeQD2l7cBZd/RxPAHr
+	NEGepOhUrtenIEFggyFcJgG/d4uM4f+OAY1voDi9ADUHGV3rOSBZsovOMitNz4E/
+	EnDApw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44envv8dyg-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Jan 2025 06:27:45 +0000 (GMT)
+	Tue, 28 Jan 2025 06:27:50 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50S6RivU021053
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50S6RovR003105
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Jan 2025 06:27:44 GMT
+	Tue, 28 Jan 2025 06:27:50 GMT
 Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
  nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 27 Jan 2025 22:27:38 -0800
+ 15.2.1544.9; Mon, 27 Jan 2025 22:27:44 -0800
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
         <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
@@ -62,10 +62,9 @@ To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
         <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-phy@lists.infradead.org>
-CC: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: [PATCH v9 3/7] dt-bindings: PCI: qcom: Use sdx55 reg description for ipq9574
-Date: Tue, 28 Jan 2025 11:57:04 +0530
-Message-ID: <20250128062708.573662-4-quic_varada@quicinc.com>
+Subject: [PATCH v9 4/7] arm64: dts: qcom: ipq9574: Reorder reg and reg-names
+Date: Tue, 28 Jan 2025 11:57:05 +0530
+Message-ID: <20250128062708.573662-5-quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250128062708.573662-1-quic_varada@quicinc.com>
 References: <20250128062708.573662-1-quic_varada@quicinc.com>
@@ -75,19 +74,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: E1ARl680u33wCXtiP1i6Jl1jUVBMAgN7
-X-Proofpoint-GUID: E1ARl680u33wCXtiP1i6Jl1jUVBMAgN7
+X-Proofpoint-GUID: -vHd8l_9CrHaBbPSxY5uWUsVeb12QSFh
+X-Proofpoint-ORIG-GUID: -vHd8l_9CrHaBbPSxY5uWUsVeb12QSFh
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-28_01,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501 mlxscore=0
- mlxlogscore=806 clxscore=1015 impostorscore=0 malwarescore=0 spamscore=0
- adultscore=0 bulkscore=0 lowpriorityscore=0 suspectscore=0 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2411120000
- definitions=main-2501280046
+ definitions=2025-01-28_02,2025-01-27_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ adultscore=0 bulkscore=0 mlxscore=0 phishscore=0 clxscore=1015
+ mlxlogscore=700 impostorscore=0 lowpriorityscore=0 suspectscore=0
+ malwarescore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2501280048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_222751_546093_088CFC8B 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20250127_222755_811665_DF880FB4 
+X-CRM114-Status: GOOD (  10.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,43 +103,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-All DT entries except "reg" is similar between ipq5332 and
-ipq9574. ipq9574 has 5 registers while ipq5332 has 6. MHI is the
-additional (i.e. sixth entry). Since this matches with the
-sdx55's "reg" definition which allows for 5 or 6 registers,
-combine ipq9574 with sdx55.
+The 'reg' & 'reg-names' constraints used in the bindings and dtsi
+are different resulting in dt_bindings_check errors. Re-order
+them to address following errors.
 
-This change is to prepare ipq9574 to be used as ipq5332's
-fallback compatible.
+	arch/arm64/boot/dts/qcom/ipq9574-rdp449.dtb: pcie@20000000: reg-names:0: 'parf' was expected
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 ---
-v8: Add 'Reviewed-by: Krzysztof Kozlowski'
----
- Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/qcom/ipq9574.dtsi | 52 +++++++++++++++++----------
+ 1 file changed, 34 insertions(+), 18 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-index 7235d6554cfb..4b4927178abc 100644
---- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
-@@ -169,7 +169,6 @@ allOf:
-             enum:
-               - qcom,pcie-ipq6018
-               - qcom,pcie-ipq8074-gen3
--              - qcom,pcie-ipq9574
-     then:
-       properties:
-         reg:
-@@ -210,6 +209,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,pcie-ipq9574
-               - qcom,pcie-sdx55
-     then:
-       properties:
+diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+index 942290028972..d27c55c7f6e4 100644
+--- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
+@@ -876,12 +876,16 @@ frame@b128000 {
+ 
+ 		pcie1: pcie@10000000 {
+ 			compatible = "qcom,pcie-ipq9574";
+-			reg =  <0x10000000 0xf1d>,
+-			       <0x10000f20 0xa8>,
+-			       <0x10001000 0x1000>,
+-			       <0x000f8000 0x4000>,
+-			       <0x10100000 0x1000>;
+-			reg-names = "dbi", "elbi", "atu", "parf", "config";
++			reg = <0x000f8000 0x4000>,
++			      <0x10000000 0xf1d>,
++			      <0x10000f20 0xa8>,
++			      <0x10001000 0x1000>,
++			      <0x10100000 0x1000>;
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config";
+ 			device_type = "pci";
+ 			linux,pci-domain = <1>;
+ 			bus-range = <0x00 0xff>;
+@@ -956,12 +960,16 @@ pcie1: pcie@10000000 {
+ 
+ 		pcie3: pcie@18000000 {
+ 			compatible = "qcom,pcie-ipq9574";
+-			reg =  <0x18000000 0xf1d>,
+-			       <0x18000f20 0xa8>,
+-			       <0x18001000 0x1000>,
+-			       <0x000f0000 0x4000>,
+-			       <0x18100000 0x1000>;
+-			reg-names = "dbi", "elbi", "atu", "parf", "config";
++			reg = <0x000f0000 0x4000>,
++			      <0x18000000 0xf1d>,
++			      <0x18000f20 0xa8>,
++			      <0x18001000 0x1000>,
++			      <0x18100000 0x1000>;
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config";
+ 			device_type = "pci";
+ 			linux,pci-domain = <3>;
+ 			bus-range = <0x00 0xff>;
+@@ -1036,12 +1044,16 @@ pcie3: pcie@18000000 {
+ 
+ 		pcie2: pcie@20000000 {
+ 			compatible = "qcom,pcie-ipq9574";
+-			reg =  <0x20000000 0xf1d>,
++			reg =  <0x00088000 0x4000>,
++			       <0x20000000 0xf1d>,
+ 			       <0x20000f20 0xa8>,
+ 			       <0x20001000 0x1000>,
+-			       <0x00088000 0x4000>,
+ 			       <0x20100000 0x1000>;
+-			reg-names = "dbi", "elbi", "atu", "parf", "config";
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config";
+ 			device_type = "pci";
+ 			linux,pci-domain = <2>;
+ 			bus-range = <0x00 0xff>;
+@@ -1116,12 +1128,16 @@ pcie2: pcie@20000000 {
+ 
+ 		pcie0: pci@28000000 {
+ 			compatible = "qcom,pcie-ipq9574";
+-			reg =  <0x28000000 0xf1d>,
++			reg =  <0x00080000 0x4000>,
++			       <0x28000000 0xf1d>,
+ 			       <0x28000f20 0xa8>,
+ 			       <0x28001000 0x1000>,
+-			       <0x00080000 0x4000>,
+ 			       <0x28100000 0x1000>;
+-			reg-names = "dbi", "elbi", "atu", "parf", "config";
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config";
+ 			device_type = "pci";
+ 			linux,pci-domain = <0>;
+ 			bus-range = <0x00 0xff>;
 -- 
 2.34.1
 
