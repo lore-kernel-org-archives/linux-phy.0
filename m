@@ -4,92 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6626CC0218D
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Jan 2025 06:28:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1545FC0218D
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Jan 2025 07:27:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z6k8jIHr5MAkuXaiQXBizBZwyRfXNrKwtsiQVJwVS+8=; b=IcSeowhC7seTFk
-	eBOclckiqcPrTTduREMbQnz5cH0wrBpJIBstrRX0fyCnap3gkATCABu65hbkal2YdzWb9j4Md+TNW
-	xxsS6Xt+dLHHJH/vD4QCZZtr06491VoRnKmKfqfEmok3dSeCpZxu6M8/XPxjC2SS/V+9Wger2zkuO
-	nExLsKLhac/JCNu3ZcfT84VpbjU0LdRNFrKRtKtmE9vAOXICD9vXq+hEcI8uhw5TEsna8eAnaiyLi
-	Y4myByQ1zJNpcjz04/bJt/3Q/jUvccEnwG05X28xgjY9E+pyd+TEfU9+52aunyM6GWuXw990LS1i5
-	G3cQpd4YN/j0efsfGT8w==;
+	List-Owner; bh=SjQGTNKm1QZAUVAo91/HSyFcT3UZbSTi/CeCVL/CeZg=; b=dWpue6bOgmtcA9
+	+PGV/AFdWpt8whmhVfvJEes+CU77HPHywzBKgLUSJRwOreE6y9CU62bO//MWr5xOVWXuIH7LSlHoc
+	mP2mlZYmN2qa/P55YNbaKyNcnQ5+LrtLVcYv7RMpEz94sqPHe/NpF/4o3QwT+jh3DqMF2YC9OD+x/
+	sYyVNYbBY0EbbHJgoXkHP5RONNfTr3xuDaVTcriJlmJkc/CWkOa50+cJRzgQrD/btjbZT40KYzq0W
+	6w5KW+7I/QT77se7pnS7zQowUNm+s+5w9AnXgmOCEfgoty8BH3xGd9GZyobc27cE0hBOC3aWdHiey
+	ADc2PEEe+wHxsuASYY0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcf5c-00000004CwS-0fpS;
-	Tue, 28 Jan 2025 06:28:48 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tcg0b-00000004H1W-0aew;
+	Tue, 28 Jan 2025 07:27:41 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tcf5Z-00000004Cva-3g69
+	id 1tcg0Z-00000004H19-0Hxv
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Jan 2025 06:28:47 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 50S2rsdn002774;
-	Tue, 28 Jan 2025 06:28:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	hhl8LhVLSIOFxcEP2RPodjO6sTk2njoaqUrh5OIEc1k=; b=gMwvZjkrKJ/n4C8N
-	zJdLIgA8e4oDFTeCyNbumMAwgs+SO2+lUurBTH7G/nKjXjcgw/Y+QDxUrrbilOos
-	uoKPaSTX80EkPVb+mJZ1UJo9+ntqnZyUTjxBujaeXAzqevYdpatrJkMdH2IoB9Yl
-	dYYQvsHjrrQPwA9nRDC+FV+Pji8MUcXRx+PiCAXyko6f52w+zp5mGaKc995dPND0
-	RgOI2z9S0Fa0APcDKD79rGroMASMN4MuH9CrsxhGwYwso/9RiYjFKv3unfm+7wW1
-	ObMdjLIVW86u6co/8dp1cMoz4jDtLc3zVbN+aR1BJ7C7kwA3pbpQrEi6nuIx1tAa
-	jwuJnQ==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44epuurbk3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Jan 2025 06:28:36 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 50S6S8Tk019503
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Jan 2025 06:28:08 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Mon, 27 Jan 2025 22:28:02 -0800
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
-        <quic_nsekar@quicinc.com>, <quic_varada@quicinc.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-pci@vger.kernel.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>
-CC: Praveenkumar I <quic_ipkumar@quicinc.com>,
-        Konrad Dybcio
-	<konrad.dybcio@oss.qualcomm.com>
-Subject: [PATCH v9 7/7] arm64: dts: qcom: ipq5332-rdp441: Enable PCIe phys and controllers
-Date: Tue, 28 Jan 2025 11:57:08 +0530
-Message-ID: <20250128062708.573662-8-quic_varada@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250128062708.573662-1-quic_varada@quicinc.com>
+	Tue, 28 Jan 2025 07:27:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1EE7A5C5BBF;
+	Tue, 28 Jan 2025 07:26:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 11601C4CED3;
+	Tue, 28 Jan 2025 07:27:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1738049257;
+	bh=+sa8ABbz7eaRoFnDc8THWn9YGk3681ZYFZ8XGntL9lU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=iXeAVvjmyuQzKycAAB4vYhkz618HYojLKROyvVNIz6gW5RbcWYRCqTJCjUB3ZdHU8
+	 5jX+bGVaTjIns86RhL+l5RtMdsQIhjmvkpQJqDarfFPIkMDWw8lHoXiITg6fxytWh6
+	 hY3gV6aXcbTSmmWyWOp5FRAcQInjLf+UymGZAp9JjyusvT0bgUUvBoPOLV6kdt9YVT
+	 T+KIAgbNyhxOjTgwSur+7Wi2oqWFtq7BqAKAwG8AchHOfDUeQem6FY1/BSYeG29/Of
+	 XrKXKnTgj5OzdcqZOpTJZqvi4U1h3OsTcCnUh5uflGgWCy49RDQlnwjK0sbg2YjftJ
+	 IrzEXJAu32ROw==
+Date: Tue, 28 Jan 2025 08:27:34 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
+	manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
+	p.zabel@pengutronix.de, dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com, 
+	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v9 5/7] dt-bindings: PCI: qcom: Document the IPQ5332 PCIe
+ controller
+Message-ID: <20250128-astonishing-kingfisher-of-skill-babe3e@krzk-bin>
 References: <20250128062708.573662-1-quic_varada@quicinc.com>
+ <20250128062708.573662-6-quic_varada@quicinc.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 68-uesTYoyisYN7UYnb8jk9T88mVKSAn
-X-Proofpoint-GUID: 68-uesTYoyisYN7UYnb8jk9T88mVKSAn
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-01-28_02,2025-01-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 mlxscore=0
- bulkscore=0 suspectscore=0 adultscore=0 malwarescore=0 priorityscore=1501
- phishscore=0 impostorscore=0 clxscore=1015 mlxlogscore=999
- lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2411120000 definitions=main-2501280048
+Content-Disposition: inline
+In-Reply-To: <20250128062708.573662-6-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250127_222846_044044_4FF110EC 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20250127_232739_156644_65DE1BDF 
+X-CRM114-Status: GOOD (  11.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,121 +78,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Praveenkumar I <quic_ipkumar@quicinc.com>
+On Tue, Jan 28, 2025 at 11:57:06AM +0530, Varadarajan Narayanan wrote:
+> Document the PCIe controller on IPQ5332 platform. IPQ5332 will
+> use IPQ9574 as the fall back compatible.
+> 
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+> v9: Remove superfluous ipq5332 constraint since the fallback is present
+> 
+> v8: Use ipq9574 as fallback compatible for ipq5332 along with ipq5424
+> 
+> v7: Moved ipq9574 related changes to a separate patch
+>     Add 'global' interrupt
+> 
+> v6: Commit message update only. Add info regarding the moving of
+>     ipq9574 from 5 "reg" definition to 5 or 6 reg definition.
+> 
+> v5: Re-arrange 5332 and 9574 compatibles to handle fallback usage in dts
+> 
+> v4: * v3 reused ipq9574 bindings for ipq5332. Instead add one for ipq5332
+>     * DTS uses ipq9574 compatible as fallback. Hence move ipq9574 to be able
+>       to use the 'reg' section for both ipq5332 and ipq9574. Else, dtbs_check
+>       and dt_binding_check flag errors.
+> ---
 
-Enable the PCIe controller and PHY nodes for RDP 441.
+Same problems as ipq5424.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
-Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
----
-v5: Add 'Reviewed-by: Konrad Dybcio'
+What's more, you are doing the same, so this is a conflicting change
+coming from the same company or even the same team.
 
-v4: Fix nodes sort order
-    Use property-n followed by property-names
+It is not the open source community's job, not the maintainer's job to
+coordinate tasks and teams in Qualcomm. Qualcomm people should
+coordinate their teams.
 
-v3: Reorder nodes alphabetically
-    Fix commit subject
----
- arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts | 76 +++++++++++++++++++++
- 1 file changed, 76 insertions(+)
+It's merge window, you and your colleagues keep sending new versions of
+big patchsets with conflicting changes, without any coordination. Amount
+of patches is just overwhelming. Lack of coordination and any reflection
+is just discouraging.
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts b/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-index 846413817e9a..79ec77cfe552 100644
---- a/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-+++ b/arch/arm64/boot/dts/qcom/ipq5332-rdp441.dts
-@@ -32,6 +32,34 @@ &sdhc {
- 	status = "okay";
- };
- 
-+&pcie0 {
-+	pinctrl-0 = <&pcie0_default>;
-+	pinctrl-names = "default";
-+
-+	perst-gpios = <&tlmm 38 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 39 GPIO_ACTIVE_LOW>;
-+
-+	status = "okay";
-+};
-+
-+&pcie0_phy {
-+	status = "okay";
-+};
-+
-+&pcie1 {
-+	pinctrl-0 = <&pcie1_default>;
-+	pinctrl-names = "default";
-+
-+	perst-gpios = <&tlmm 47 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 48 GPIO_ACTIVE_LOW>;
-+
-+	status = "okay";
-+};
-+
-+&pcie1_phy {
-+	status = "okay";
-+};
-+
- &tlmm {
- 	i2c_1_pins: i2c-1-state {
- 		pins = "gpio29", "gpio30";
-@@ -40,6 +68,54 @@ i2c_1_pins: i2c-1-state {
- 		bias-pull-up;
- 	};
- 
-+	pcie0_default: pcie0-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio37";
-+			function = "pcie0_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio38";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio39";
-+			function = "pcie0_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
-+	pcie1_default: pcie1-default-state {
-+		clkreq-n-pins {
-+			pins = "gpio46";
-+			function = "pcie1_clk";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+
-+		perst-n-pins {
-+			pins = "gpio47";
-+			function = "gpio";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+			output-low;
-+		};
-+
-+		wake-n-pins {
-+			pins = "gpio48";
-+			function = "pcie1_wake";
-+			drive-strength = <8>;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	sdc_default_state: sdc-default-state {
- 		clk-pins {
- 			pins = "gpio13";
--- 
-2.34.1
+Can you slow down and actually sync to send something reasonable?
+
+And not during the merge window?
+
+Best regards,
+Krzysztof
 
 
 -- 
