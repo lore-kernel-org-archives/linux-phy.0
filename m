@@ -4,67 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B1F1C0218A
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Jan 2025 10:13:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 632ADC0218A
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Jan 2025 20:01:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zuxBAXSjOdIsENLa3F5vhfwh2U846Zpmvgy5eqNszYw=; b=H+SpDS/9Q7astR
-	gPMumyvzkYj2+Jf9dMAfpwtzCH3p+Bp91OTopIB/0GSHkV6jg3nhAG//haQpQxbtSgfx9xfBHVTg5
-	pvRpgtDA2w+gul//U3z3rB6p2YCfeSopR69Lp89XVsZI+lKnd4vOXypamYnwRCaX7WRT3S318981w
-	Xq3BNqNtmPIowX/NzzOrbHnDHjihi1b6Oocpt/2JaI9odBeCyEkFYyXleAOHrAaZCVaaqduGM+3h8
-	fUD+X4FGkbwto+SiK6HAL958yfMYTqn5OzOFJN7Iz0Yf3j/7P+a9Mysa2VPll7YveaPavc3/ui5io
-	O2n77VRGkhzS+0HkXYAA==;
+	List-Owner; bh=7DVq79I13PVn1nZ7WwwLoCKJgMaKtBRrhV4D1PmM8og=; b=mWqs8GboOZo6Ga
+	c7U7zp9cONTgIpbq4e8qrT4x8xIv3fJ22AzqT4L98cGt6ICnudcsEFsV2oIzebAe4ac6g1E8JFXjs
+	o54x2ADHdzKTvS7uVMgeJLNbe9qT+b724jumUoQPy07mR5atviwtp3xXmXybUBbrjzfDYVjjqI03r
+	2/4iZgWM4qFBkL1Sg4Cc6t/BV3vRajEiNgSmna68KYGEDZQQgaykHb7NOT6SY3nCOJP97LMX2J8KH
+	RScQ5Cr9hFZ268ZAEEyYGZ7HdMEM9EHcCVd3EwD4Aiap7mNFVaAUr6vNO1BXauS+BbHJlBkAx0fkf
+	3ZcBYpS8C+InGGLEu/eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdRYI-00000008b5w-46B4;
-	Thu, 30 Jan 2025 10:13:38 +0000
-Received: from smtp.forwardemail.net ([149.28.215.223])
+	id 1tdaiz-00000009X9w-485n;
+	Thu, 30 Jan 2025 20:01:17 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdRWz-00000008avC-0viN
+	id 1tdaix-00000009X9M-3GgR
 	for linux-phy@lists.infradead.org;
-	Thu, 30 Jan 2025 10:12:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
- h=Content-Transfer-Encoding: Content-Type: In-Reply-To: From: References:
- Cc: To: Subject: MIME-Version: Date: Message-ID; q=dns/txt;
- s=fe-e1b5cab7be; t=1738231935;
- bh=Eu1Z9k4wJekCuZOVs1VhxTjEeWIJaUEXFXoJpGq7hdc=;
- b=EJqz/jFeVpdd8DR5fZe5h3YvEMAXMJAc8RRfjjBtz5wzPBhT3TFkVQqbVNqMxcbP0flmU1Uvx
- AeBRa0LwiB6Ma5NcmHlKdiYhXC+FYQBHrfPTGUzAUZQ8AcZnqlJ4EQXqBP0XEX5E9Lr/CdTOizn
- Quz60XUqj0/8Ac54qucOWE67sug1/lBVDCmRUU8kfeBJ37rSCcbYm6Gwm/NDItN6eQQqWG+ly9w
- cmCDPNcCq4X/cYeit96xH/QptSu3ARREb7IqjRprdmqN/Rdl9kA8OFSvQ/9K4y5z5ou22ty7i7c
- J0XSqhxroVkJxu34z4LxRNQRkph2hMHRXHaFhSwqhkNQ==
-X-Forward-Email-ID: 679b5070280758b5b084a089
-X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
- 149.28.215.223
-X-Forward-Email-Version: 0.4.40
-X-Forward-Email-Website: https://forwardemail.net
-X-Complaints-To: abuse@forwardemail.net
-X-Report-Abuse: abuse@forwardemail.net
-X-Report-Abuse-To: abuse@forwardemail.net
-Message-ID: <2dc894c4-8114-4f6a-9ac2-e32655564a64@kwiboo.se>
-Date: Thu, 30 Jan 2025 11:11:54 +0100
+	Thu, 30 Jan 2025 20:01:16 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-385e0e224cbso758021f8f.2
+        for <linux-phy@lists.infradead.org>; Thu, 30 Jan 2025 12:01:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1738267274; x=1738872074; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GfOmM15t6GCi/gXpOTSAQVn8+bb5YsUyZ8MqKExsTSg=;
+        b=Z0y3BWmSIYsFm6uV7knnJBtRvKeX2ERk5M3QkRWG+FQqbMDewqa0ECFw7l7Osoc97w
+         5gNtBAgORTSV7EDgy347HVu5I/vH3hFimNKTkJrb31qSAbbFeMgmEPS9OPhJN5LEzNtB
+         pdBw4E3KenHTnrDkWu9fzRPaFtb5k6lxDDOo04yJY4i25BJuIRU9vez6VW7CwZ0+102f
+         7MaN614aPL+9HhAy+9rhWRVhM5cx+Z46kWoWumDMwdTmxfg35bQuBObCiqZjsMQ1LJp2
+         3D8xq9tk2zwZhnUCtS30at8SS1mNHytpJ3HMzo83c2cmEb/yd4P43r72y39Azy3q0qgS
+         aadw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738267274; x=1738872074;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=GfOmM15t6GCi/gXpOTSAQVn8+bb5YsUyZ8MqKExsTSg=;
+        b=sag6n1L6g6Os66joQPJzkItWldz7mrYZ3wi0pdo5KfgXGKWIkwBYoj9uoJGBzzeU8X
+         H8LKNRY/wsZ9Uo185XkChgqD6ypawLcQNPOMpM5eu6vKfVw+Il+oFuGrjaXZSYjz3E9o
+         dkvhq1Zdz+gmi93vhxFHaG+s8ikVkNGwUSjc//jbESopISDUzD8glJUaNLVVELli4Jnb
+         zQU7VnIgF6s3rGdzO7qYResYRpeaLJqg+JI7hoHbhtaub+mjmbQt5mAmMvLlqv5M7QlH
+         AyZjPnxgV0402hIC4aOJbz8+H+iSA0wd4BrutmU53tYQTaVmqlRSMhLyLQXZI/ricMWm
+         Si8Q==
+X-Gm-Message-State: AOJu0YyG6Jk2tTWitkZYZFyRd3Tf5M486eEU91QHWtUv431dAdMWiFiJ
+	bUG5AV4MMUfiX/mEi/lINqVEwtJi9GFsUMj+bn0Okn2LYI9354uu9gj/Bg==
+X-Gm-Gg: ASbGncsJPHu3qDOcYznaJm1JzqfAMjvy9b2UpymqBisiMwVdG0Cwdpg5d/wMIAn4KtW
+	o1aTX0uLVaLpssSPBWS+d9jWhbaKTRUutToYwlyMJst+eKAhTYlcnHMVXVAhl0gxjOlH6QQ0ePi
+	jkdw0Cw7scNFHVVhBLzXoCiRbvLzlkzAh/DlODDRvkXYvmActnicEmkMrEdzaRI4fCmNOCKv7kk
+	NhI5cJr6IA30Qb24lvdgotIt8seMjAijH2kblgbTJsiJRXln+oSFvO6xwAWs2IQcmJRVZO97uZG
+	hFeKLqlcqpmJH6ZBRSclKxdxuyY1o6Ljr6ucI7XmuwFH230ROU6q9w==
+X-Google-Smtp-Source: AGHT+IFPStvFpjNXZEIsjMW2EGJ5wmOm9EJKmDiXDJ+zK27gliKKYmMKFPf184s1pxPaWTmh8aGqGA==
+X-Received: by 2002:a05:6000:11c9:b0:38c:1270:f961 with SMTP id ffacd0b85a97d-38c520b7c7fmr6273398f8f.46.1738267273958;
+        Thu, 30 Jan 2025 12:01:13 -0800 (PST)
+Received: from pumpkin (82-69-66-36.dsl.in-addr.zen.co.uk. [82.69.66.36])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38c5c1b547csm2880284f8f.62.2025.01.30.12.01.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 30 Jan 2025 12:01:13 -0800 (PST)
+Date: Thu, 30 Jan 2025 20:01:12 +0000
+From: David Laight <david.laight.linux@gmail.com>
+To: Naresh Kamboju <naresh.kamboju@linaro.org>
+Cc: linux-phy@lists.infradead.org, open list <linux-kernel@vger.kernel.org>,
+ lkft-triage@lists.linaro.org, Linux Regressions
+ <regressions@lists.linux.dev>, David Laight <david.laight@aculab.com>,
+ Vinod Koul <vkoul@kernel.org>, Adam Ford <aford173@gmail.com>, Arnd
+ Bergmann <arnd@arndb.de>, Dan Carpenter <dan.carpenter@linaro.org>, Anders
+ Roxell <anders.roxell@linaro.org>, Adam Ford <aford173@gmail.com>, Frieder
+ Schrempf <frieder.schrempf@kontron.de>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: linus: arm64: error: call to '__compiletime_assert_536'
+ declared with attribute error: FIELD_PREP: value too large for the field
+Message-ID: <20250130200112.6ba7316e@pumpkin>
+In-Reply-To: <CA+G9fYsHGrgZsEEVvP0XMcAhLyCYnrCPgZJ1puT6cfQBCGUB9g@mail.gmail.com>
+References: <CA+G9fYsHGrgZsEEVvP0XMcAhLyCYnrCPgZJ1puT6cfQBCGUB9g@mail.gmail.com>
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.38; arm-unknown-linux-gnueabihf)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/1] phy: rockchip: naneng-combphy: compatible reset
- with old DT
-To: Vinod Koul <vkoul@kernel.org>, Chukun Pan <amadeus@jmu.edu.cn>
-Cc: Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Jianfeng Liu <liujianfeng1994@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250106100001.1344418-1-amadeus@jmu.edu.cn>
- <20250106100001.1344418-2-amadeus@jmu.edu.cn> <Z5sUusWDCfFFeh0f@vaman>
-Content-Language: en-US
-From: Jonas Karlman <jonas@kwiboo.se>
-In-Reply-To: <Z5sUusWDCfFFeh0f@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250130_021217_287867_045F5582 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20250130_120115_840485_5EAE0647 
+X-CRM114-Status: GOOD (  12.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,62 +103,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+On Thu, 30 Jan 2025 15:22:06 +0530
+Naresh Kamboju <naresh.kamboju@linaro.org> wrote:
 
-On 2025-01-30 06:57, Vinod Koul wrote:
-> On 06-01-25, 18:00, Chukun Pan wrote:
->> The device tree of RK3568 did not specify reset-names before.
->> So add fallback to old behaviour to be compatible with old DT.
->>
->> Fixes: fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
->> Cc: Jianfeng Liu <liujianfeng1994@gmail.com>
->> Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
->> ---
->>  drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 5 ++++-
->>  1 file changed, 4 insertions(+), 1 deletion(-)
->>
->> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->> index a1532ef8bbe9..8c3ce57f8915 100644
->> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
->> @@ -324,7 +324,10 @@ static int rockchip_combphy_parse_dt(struct device *dev, struct rockchip_combphy
->>  
->>  	priv->ext_refclk = device_property_present(dev, "rockchip,ext-refclk");
->>  
->> -	priv->phy_rst = devm_reset_control_get(dev, "phy");
->> +	priv->phy_rst = devm_reset_control_get_exclusive(dev, "phy");
->> +	/* fallback to old behaviour */
->> +	if (PTR_ERR(priv->phy_rst) == -ENOENT)
->> +		priv->phy_rst = devm_reset_control_array_get_exclusive(dev);
+> The arm64 build failed with defconfig with gcc-8 toolchain failed due to
+> following build warnings / errors on the mainline linux master branch.
+> But the gcc-13 builds pass.
 > 
-> That is not *same* behaviour on fallback, why _exclusive() for the
-> fallback?
-
-Prior to the commit fd3ac6e80497 ("dt-bindings: phy: rockchip: rk3588
-has two reset lines") the dt-binding did not require reset-names and it
-still does not for the rockchip,rk3568-naneng-combphy compatible. The
-binding documentation also mentioned "exclusive PHY reset line" for the
-resets prop.
-
-The commit fbcbffbac994 ("phy: rockchip: naneng-combphy: fix phy reset")
-broke backward compatibility with the rockchip,rk3568-naneng-combphy
-compatible by requiring existence of a "phy" in reset-names.
-
-This patch restores the old behavior prior to fbcbffbac994 ("phy:
-rockchip: naneng-combphy: fix phy reset") when
-devm_reset_control_array_get_exclusive() was used to restore
-compatibility with the rockchip,rk3568-naneng-combphy dt-binding.
-
-Regards,
-Jonas
-
+> First seen on v6.13-9485-g72deda0abee6 on Jan. 30, 2025
+> Good:  v6.13-9338-g05dbaf8dd8bf on Jan. 29, 2025
+> Bad:  v6.13-9485-g72deda0abee6 on Jan. 30, 2025
 > 
->>  	if (IS_ERR(priv->phy_rst))
->>  		return dev_err_probe(dev, PTR_ERR(priv->phy_rst), "failed to get phy reset\n");
->>  
->> -- 
->> 2.25.1
+> arm64:
+>   build:
+>     * gcc-8-i386_defconfig
 > 
+> Reported-by: Linux Kernel Functional Testing
+> 
+> Build log:
+> ---
+> ake --silent --keep-going --jobs=8
+> O=/home/tuxbuild/.cache/tuxmake/builds/1/build ARCH=arm64
+> CROSS_COMPILE=aarch64-linux-gnu-
+> CROSS_COMPILE_COMPAT=arm-linux-gnueabihf- 'CC=sccache
+> aarch64-linux-gnu-gcc' 'HOSTCC=sccache gcc'
+> In file included from <command-line>:
+> In function 'fsl_samsung_hdmi_phy_configure_pll_lock_det.isra.10',
+>     inlined from 'fsl_samsung_hdmi_phy_configure' at
+> drivers/phy/freescale/phy-fsl-samsung-hdmi.c:469:2:
+> include/linux/compiler_types.h:542:38: error: call to
+> '__compiletime_assert_536' declared with attribute error: FIELD_PREP:
+> value too large for the field
+...
+> drivers/phy/freescale/phy-fsl-samsung-hdmi.c:344:9: note: in expansion
+> of macro 'FIELD_PREP'
+>   writeb(FIELD_PREP(REG12_CK_DIV_MASK, div), phy->regs + PHY_REG(12));
+>          ^~~~~~~~~~
+
+Yep...
+Broken by d567679f2b6a8
+
+Preceded by:
+        /* Find int_pllclk speed */
+        for (div = 0; div < 4; div++) {
+                int_pllclk = pclk / (1 << div);
+                if (int_pllclk < (50 * MHZ))
+                        break;
+        }
+with:
+#define REG12_CK_DIV_MASK       GENMASK(5, 4)
+
+The compiler has optimised (pessimised?) the code somewhat.
+If pclk is very large the loop doesn't 'break' so div == 4.
+It then does FIELD_PREP(GENMASK(5, 4), 4) - which is an error.
+
+	David
+
+
 
 
 -- 
