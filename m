@@ -4,76 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ECB5C02193
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Jan 2025 20:25:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E060EC02193
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Jan 2025 20:25:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Bsbg5/qtVEfKOgo9hLA6yLsLgaJk/fmz5jWveRf48Y=; b=W3QhL+ygMXbFxk
-	tmaSv3r+LZnKYiq5suqJvxkqE8AlDVaQMd71rT65m+yLSmKNCKACDA9RGxeJOo81NA0TANMXFh2rN
-	70WKBvbo1ouB/mEC6G/NGELH798k43EvoqdVkhCVgi68Sk+B4wW2oYFBVYZyULQI8xCN7ic4Jzig1
-	wsww7f26penI+WobGShBjyxb46UP6s2lJjuRrMR9g/+vW1O6V+cqQ8kpVFlASz4QaoLpcXGiKxg7c
-	KBdalCOD/lU44JWzHhYQiPV5vZO6pd+jDfF/yJCGSqcRxDxJ0/gg4N1IcbrBQAi5AyWv1WFGdJbUy
-	FlGOxCRvsSAhFEtjAMoQ==;
+	List-Owner; bh=fwKOcFTkMzsYKWQWrVS16pSUskt7OMR+LJmUHJShsOE=; b=oe4xer0YTCJz24
+	Wry0GnIr1xHbNfrOsH8sioZp/v9D+xBofaO2wQIjEt/LvH1OGuMYIU/qnw5eYnRNF0SXslm20e5S7
+	IiYlgU5SpyXVtvA0go9fWZJzWNS2mgew5m8J/Lmjj3cW0E6bWICbqaruZJSwghGkEJFEa2N0Jamsh
+	743m/OtDKN66zJ6/UAuT3sjQB5vBCHBo48I6QEK0fL0TEw5Z7vUAvMlf0+SkO5q785Umliq1NOTJx
+	oPxGLxXVCfMYrJl9Wc2mPNN0uo/HY/G8foIZNeirSTWzftfiJyXxODpxKsQo4eT3TpyXtPcOySJax
+	M7R6v+/KHtratNf2On3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdxZg-0000000BMut-1fjb;
-	Fri, 31 Jan 2025 20:25:12 +0000
-Received: from mail-ot1-x334.google.com ([2607:f8b0:4864:20::334])
+	id 1tdxZj-0000000BMw7-2m1T;
+	Fri, 31 Jan 2025 20:25:15 +0000
+Received: from mail-ot1-x32e.google.com ([2607:f8b0:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdxZe-0000000BMtU-18bD
+	id 1tdxZh-0000000BMvD-1lHF
 	for linux-phy@lists.infradead.org;
-	Fri, 31 Jan 2025 20:25:11 +0000
-Received: by mail-ot1-x334.google.com with SMTP id 46e09a7af769-7231e2ac9e4so637189a34.0
-        for <linux-phy@lists.infradead.org>; Fri, 31 Jan 2025 12:25:09 -0800 (PST)
+	Fri, 31 Jan 2025 20:25:14 +0000
+Received: by mail-ot1-x32e.google.com with SMTP id 46e09a7af769-71e10e6a1ceso618990a34.0
+        for <linux-phy@lists.infradead.org>; Fri, 31 Jan 2025 12:25:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738355109; x=1738959909; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738355112; x=1738959912; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=lwWNVnhNlJbHZ/NQhMSjzQrpqbMeo/6h41DdX1Qvb2w=;
-        b=uc3lTs+eetLggqXjgztk6ymzJYdeIASEcDLOcM4KlcNxEwV1DCD5mxgdQXkp2mcGnB
-         TASXEFwsJiuXwUF+cPovkc5WJbEFs+/e5FIiQrptmIyTNLrP8SGwfB7zXVWe1j8791oq
-         ZIFK1pMQLbY9x+UGNSfNrxfsvk7u4M63hF9Tf9N4+QZtDx5t3AVh2xiTwWY5o3/k26Yw
-         /tHHI/vMAs1Oa/rOQ0QblpOBkLnirMBUzPRbkfJj13/nV/ijhr6FV0k37MvskcDc7Pu7
-         03nFmsPdhgl+LA2IDwfHAwKbpggD5D/gGJ5dcwvpPfRn7HnrtZT62LvBcmWhsbqnxFr5
-         Darg==
+        bh=q8dlq+1FyobpCXd9TkKRwFwRft57r9IiORFW/g/tAaA=;
+        b=ekMju6EXyeCvEWCr9HkYYHemTDU6OOJlfbBXtK8qnzFbvsfIOyd0uyMUFLb/v4ceCn
+         XHmDS2dScIWnYna+OWKI6ORCXdzK9BxlH4QVCNL9tGnJ1lr0bWz9Spvtb3Mo0lXtJ77m
+         RLqwut8lj3C8M3YLLQ6cLg/yqv0xssDRu4gpBEvUl4OSLfCLO0ZXqjNW7IEbox+DhgYt
+         kKi84LNv/0IF0HkFlu6KeUBtL+3LIB/gnxszVGAJhG1VgABZoWaQSnO7EPEQpPAFH3WZ
+         vQS1ujknV1tH9nA5N3cvM3o2qaOlmoUuzbrAws2X3iIraUhXYgBwM2M2J1awPvKQIT2c
+         uInw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738355109; x=1738959909;
+        d=1e100.net; s=20230601; t=1738355112; x=1738959912;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=lwWNVnhNlJbHZ/NQhMSjzQrpqbMeo/6h41DdX1Qvb2w=;
-        b=XLMfx8HvRFkiwFFzYFt583nkmY9xs2XNDuGwvSbnhg0TiOiVxbaVyJnjY1TFHZEkIQ
-         j1ySbqbumOAsooqhFkP2M/WWpWY1H4cfcmmHPaj8QzCZLeumMDtHlSPVuXOjYZBJEvqX
-         ba7ogReOwtHdjN+cpixMzKh4wiJwVy9FAeXRStHpYa+XBcsmzBhFAoACurAfsuzArLQp
-         zl4K6jcfbGBbhOHS/GoV83kQponEAHmX7PKZFT/qSfLvLRJiaPTQRvB2AxO6cERjg9hF
-         DFBIfY76l/EiSlNlLWXJioyyxcKtq8Mj9cTHZVRljRUIJ0+ysBb83SK8CpV1Z/rtRbZW
-         v3+w==
-X-Forwarded-Encrypted: i=1; AJvYcCWOYE8ecrPE6JjoVTvc3YeHkdvlWbotbxTLCxLFJ8dxRWj4YaUfVtIsieHl8LjF0YQGot8pCLEvMyM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx9uaOqeE1lCdBMWHUy0dXqrWNYWaBu8JHMpSVOzDLn6eO3oLih
-	ro8aF4TpecFN8qKpZ3w/I4ryFT0YkzZRA+E9TbAVmC0sdFzFAvAleKhygw2RVrQ=
-X-Gm-Gg: ASbGncsrHPN5+QmW5f+urPWuC9ldPpQlb0HjiBNNg3lnbilAYHBGL8y8ZSfACnjiONA
-	wCrrmbg4BBxCQX05PyEU3LSJNHyX09u6eqsU4LOMl/03f5qOD1trax37WAviAZTFUpBRxx0eNH0
-	U+pT9jLIi23L4T/LSFArxKBQIe1PZu/95QEayfOlGQAqdb7jnD0ggl+xj8qUDqLT8IIoE9fwIrF
-	MLMCDMZpSgLrUSS2uUT1ankszzu2I1SIRrgqN7zKr0pwJNRg01/VsP2Ajvjbf2B9QPur2IEDQ8K
-	AjExrkptyg4/GgBeSxETMTYcx4yoFDB2nX4fFTFSgW4+Mdg=
-X-Google-Smtp-Source: AGHT+IHQyjQ8y3Rtu7NlfkeMw/zOxhLdOk/J2rb/TrRaSbO1InYUF9KwbynHBq+Y9XgpJsj8OqBDUw==
-X-Received: by 2002:a05:6870:7186:b0:296:aef8:fe9a with SMTP id 586e51a60fabf-2b32efdc7b9mr8033858fac.7.1738355109312;
-        Fri, 31 Jan 2025 12:25:09 -0800 (PST)
+        bh=q8dlq+1FyobpCXd9TkKRwFwRft57r9IiORFW/g/tAaA=;
+        b=FlH/Uj0euqvULA5ygJ87bvohgfQltKdrnIMvmMuKjQFZZHDjGmg30nzNz2pudH5QdD
+         ANJSW/CzJxDcd5lvRFMM5vF06j7Bnp1KxhrR9QJDYb5f3gFnW5Db12CWqtGG+LwQJjmT
+         BzzBhl5a1nXWgwj6j7DWvH/E9Ij1CXO+/13T98RW2sn8cYDokXnmR3md2vFT7s7Vz+t7
+         riX6kxMWa7IcHARlULYJOtQaUtEKpLiRXMObwOYeNLn1xnlWNZgCAeNf4f+fY6NNFMK4
+         979OgA1XHgb2lRduA6h1UgyB+UUtv3c3/K6VtBZ0L3pcO448xNhfTgee01FJtoW3Tq7Z
+         Xk1Q==
+X-Forwarded-Encrypted: i=1; AJvYcCW8FwpDIackA4UXNghflE+qWaTqv7zA+cPKnOppJggkh7ao8NdlEM7fOMbWzLvYaf9Nqlhbi0dvvv0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwsEsoBQer2/7bZOjEAdS8ZE64yqB9D2lNJWUZoH4WczJcZ+bGO
+	jgDEIhiEtXUdabOEreOW+M8WyihF5uwHQ5r0z3FsRfp7GxxtCG1TXMhncKDXjOE=
+X-Gm-Gg: ASbGncu6+Ksv5bRjyn9iX4716pvhkhXBaTe016yg++hiJGEFt+a6cs44N+sKU78abvE
+	64XjyWNiYZhI2FP6S4wZ79USSdJBXdIqC4rlhxDbrAsLw5jXL6044AMxDN3+rwQ8EPfh0iWOCWz
+	EOmPpOscZyU/fJfky1uG/YtUG6kbOR25m1rVBfVmN0GBDcORR9GsJfu2HBUI+iGphqHk48WZG1i
+	OfYABN+RYuYnRADMoykvMnivuUYOeImxPKF4U3pVNjoQNrjVXxAqjOxr7iPG/CRoutCNT6zdxEz
+	IECino/g4/TcDcr/1Q7JabKbmnC1mqDsIJg/pIJX70ofXaA=
+X-Google-Smtp-Source: AGHT+IEOPFpYcNvsoJvtChI72uu39YNNI5XV7tV2UH+PWhk+hEwEt/BHCYYItie+9RSXj9400mKLXw==
+X-Received: by 2002:a05:6871:2106:b0:29e:2caf:8cc with SMTP id 586e51a60fabf-2b32f30c9fcmr7202349fac.37.1738355112453;
+        Fri, 31 Jan 2025 12:25:12 -0800 (PST)
 Received: from [127.0.1.1] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-2b35623d2ffsm1403157fac.22.2025.01.31.12.25.06
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-2b35623d2ffsm1403157fac.22.2025.01.31.12.25.09
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 31 Jan 2025 12:25:08 -0800 (PST)
+        Fri, 31 Jan 2025 12:25:11 -0800 (PST)
 From: David Lechner <dlechner@baylibre.com>
-Date: Fri, 31 Jan 2025 14:24:49 -0600
-Subject: [PATCH 09/13] mmc: pwrseq_simple: use
- gpiods_set_array_value_cansleep
+Date: Fri, 31 Jan 2025 14:24:50 -0600
+Subject: [PATCH 10/13] mux: gpio: use gpiods_set_array_value_cansleep
 MIME-Version: 1.0
-Message-Id: <20250131-gpio-set-array-helper-v1-9-991c8ccb4d6e@baylibre.com>
+Message-Id: <20250131-gpio-set-array-helper-v1-10-991c8ccb4d6e@baylibre.com>
 References: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
 In-Reply-To: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -97,8 +96,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-sound@vger.kernel.org, David Lechner <dlechner@baylibre.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250131_122510_315591_E5B6EE7B 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20250131_122513_461329_5F82C3E9 
+X-CRM114-Status: GOOD (  10.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,23 +119,24 @@ gpiods_set_array_value_cansleep().
 
 Signed-off-by: David Lechner <dlechner@baylibre.com>
 ---
- drivers/mmc/core/pwrseq_simple.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/mux/gpio.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/mmc/core/pwrseq_simple.c b/drivers/mmc/core/pwrseq_simple.c
-index 37cd858df0f4d7123683e1fe23a4c3fcd7817d13..b3a6d053c826741005f1484ad81df30b6bf75bbc 100644
---- a/drivers/mmc/core/pwrseq_simple.c
-+++ b/drivers/mmc/core/pwrseq_simple.c
-@@ -54,8 +54,7 @@ static void mmc_pwrseq_simple_set_gpios_value(struct mmc_pwrseq_simple *pwrseq,
- 		else
- 			bitmap_zero(values, nvalues);
+diff --git a/drivers/mux/gpio.c b/drivers/mux/gpio.c
+index cc5f2c1861d4a22d984bcd37efb98dd3561ee765..fdfb3407543dc3c2563750b013754ceb3390e39a 100644
+--- a/drivers/mux/gpio.c
++++ b/drivers/mux/gpio.c
+@@ -28,9 +28,7 @@ static int mux_gpio_set(struct mux_control *mux, int state)
  
--		gpiod_set_array_value_cansleep(nvalues, reset_gpios->desc,
--					       reset_gpios->info, values);
-+		gpiods_set_array_value_cansleep(reset_gpios, values);
+ 	bitmap_from_arr32(values, &value, BITS_PER_TYPE(value));
  
- 		bitmap_free(values);
- 	}
+-	gpiod_set_array_value_cansleep(mux_gpio->gpios->ndescs,
+-				       mux_gpio->gpios->desc,
+-				       mux_gpio->gpios->info, values);
++	gpiods_set_array_value_cansleep(mux_gpio->gpios, values);
+ 
+ 	return 0;
+ }
 
 -- 
 2.43.0
