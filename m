@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E7DAC02194
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Jan 2025 20:24:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25800C02193
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Jan 2025 20:25:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PmIvRCvcDF3Dj2KR2kPGhjP3It2QNcHK0RksTxjF7Jg=; b=0Lcw4BS4JocL8n
-	U6HEU8wFzOVch5Jgh1NVr9qWO33VmmhpcpuBla5xkgoFLqm5W8GVsplB+IUqax9yHxzjHABRBIUkb
-	FWFea8uOTgoryhjwhJD5F0/o1S1JKrjDgo68/CvKsSfX+eG3cf53afc8xsh+xNv69wW1kdNydiWPc
-	PGWwdKqgzAdr8fWNt5Ev+F4y2XI3KoqKkGuVzuLSCx+5sAiHT6kdyOwqcj8Xh2ELKftQvF1eYLulH
-	wxfVRPnnUSvRtpMY8PFIWTeFXjmRWyn6oZg2t8441Jk7dFE5djkxjV/dxxvOMRW5ibRw3VZJMJ9AA
-	7/1SbbJEbwim0N6ogT3A==;
+	List-Owner; bh=8Bcvelkj+I1J4grc7run702IUiG2TVqoZPJAoNrqgWI=; b=dplOaaFE9dE6Hu
+	k7PgEXSKZS5l/kr8u8t6lpFZOf2k/Ov7UvYoQBwSM/KpETONO0VGftfRZzojsFbU8XLUXKGljeGv+
+	wU9lXh9H2Bv/+7aynANai1qR8iIpnC5JYkTJE9116FVLw+xWsdLfxxR8Rf3VMR3BjqDPyaBL+v7eF
+	cJO22EPigB0IPapWzE/PQn1iuN04cbFkruPXYgFf8OOebQARz3U5SOOsZyRskskUUotsrweuQjlh/
+	wBy34/1H3j82onibgvsBCD/sMGAK/oUlexId4Kpn+46HXqTldA5GexBqfvV4f2Es3DVC0T8MmM7kf
+	ylPF7z/povjiWN+lyqnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdxZR-0000000BMnV-1dQT;
-	Fri, 31 Jan 2025 20:24:57 +0000
-Received: from mail-oa1-x2d.google.com ([2001:4860:4864:20::2d])
+	id 1tdxZT-0000000BMos-3g79;
+	Fri, 31 Jan 2025 20:24:59 +0000
+Received: from mail-oa1-x2c.google.com ([2001:4860:4864:20::2c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdxZO-0000000BMmL-2of8
+	id 1tdxZR-0000000BMnP-38ma
 	for linux-phy@lists.infradead.org;
-	Fri, 31 Jan 2025 20:24:55 +0000
-Received: by mail-oa1-x2d.google.com with SMTP id 586e51a60fabf-2b3680e548aso934577fac.0
-        for <linux-phy@lists.infradead.org>; Fri, 31 Jan 2025 12:24:54 -0800 (PST)
+	Fri, 31 Jan 2025 20:24:58 +0000
+Received: by mail-oa1-x2c.google.com with SMTP id 586e51a60fabf-2b33aabfe46so985964fac.2
+        for <linux-phy@lists.infradead.org>; Fri, 31 Jan 2025 12:24:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738355093; x=1738959893; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738355097; x=1738959897; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=g/d91jflGtqcHyVEIBk6nu4SgcmlMkVjeTIYU/X9iWg=;
-        b=ddm2W9tv5xODMVMC0qOScLFeckihXN0rhxzK0GrQprH/j5qpeDyVgjJ4dk5x+s9OHf
-         oSLcgpRw3phxMHzx6PCFdE5X2jmqMtAFfa+XvEWllCjZtnmUuGeqjgNiS7jro4c9j/Mt
-         XVeRqmNEi164x8zT8KP/UyKnm7gh4U2fkCPrwmIaRtgoJV1UOjE3+A0vTjqz4j4PRe5b
-         ovgBr7x+xCitOIdA67heDXfTAgRunOptj9YrmBzaOZe3x1PNepwC3FkDcdLIPO2UHOK9
-         XKxzl0Cn84EG4kWrnb2cIur2+w23CDepvuyL7ZH2iUHvaOgFRPcRFzeZ8PdovLjmIqd/
-         bLPg==
+        bh=9hlyYXLAXkselsSNF7g0Bc64z/LNWZ956QqcL4gqDjo=;
+        b=b3GeYaL8DHgesZdm7Mol5ConxyOUy8cMEq9o95CJj1V3i2Mgv+Dg34cnvDOZv/wnE3
+         VvyJi5fV/irCmPo28A64ltJs/MWCOkUQHR4P9UB2Xlka2/Sf5YPMp6jgu1LK8sYhEmty
+         cqY37lktU285WzJjoAR48B3XtmkArGKD6jCRqvZJZU+qwLTC4hDgJxCJG2sXTJKYXn+A
+         O0QaySQ4sLBv7rclWR+jSXy1XAbDOiJnoSWPyMT7omZ3bwI8xTy1HrMFwJSf2DhJvxGk
+         H79y4F1Rbo9LKRP+tYl9WcJbMvwcOsC72bAcYzv5xmbChwoLcgi+CBXwoFfmsYHEc4zf
+         6dbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738355093; x=1738959893;
+        d=1e100.net; s=20230601; t=1738355097; x=1738959897;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=g/d91jflGtqcHyVEIBk6nu4SgcmlMkVjeTIYU/X9iWg=;
-        b=T6b9S5hIhvXkjAp+oZ88+lriZpHjBizlvtoMxdw5QbtrPU8qGiLgyFdXIZqvWs6Q5/
-         X1BA6j52ksjoOJzryXvuFlYOaQgDrxMwgmvUFJGrDshjC61xHovH7KSFUQMWbVTQa3jC
-         WV8Z2e9OjBixtXYqLacajRhxuJXXm4kP53Ut5vVDp10HFVcj7/AxlRNg7ZGqzDFVOPHt
-         BbpHL7S7L+A6x9zKR6nRLQY2/IVL4uuehbvcoEAJeXWoJeX9PF4eOwiKCpk8DKRxU0mH
-         CckkREKnsuSHOUofBMAgcnLGzdHxMZtjAke+KVFkHtR1cjG92cQ9lFu+djSwlNtXGmS3
-         OiKQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVW4E09/QnsCA50qEd9YAfLQPfUlphY55Z2ENyZeE0Ypmz8h8hyqFsQ9JGzejhtoAE7+DL084lhLhA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YypWCCGEWPpKfukPhElBG/KFLZWjOSOUMRF+J4PZ1V8qoTIyhZ6
-	cDnA3MMpl7u9g9G/O1OXO4oH1pzIrUY99bzg/NA0FS8MsFSa1ahE1x6A1XJdQV8=
-X-Gm-Gg: ASbGnctFJmrx+bu0g+7tyf4gVhnGsr55nelJVDrQLQP4LetbyRk3gBlRlK/Snan3YeB
-	GMSG2cb566sxx8/wWKSrajehA09DDgnK7Os1ATMk/xb0kRiOlmMpsDTxVcuVEoHe2fNU/WVSxc8
-	KAAgv3BlJ2vShyoNgK5+Js1cUHVdAnAxduGpEoQhN6d4eC2vde7WuA3aofu9msW/TGzs7jO4Lzh
-	IJuT/UpW08RDKBcn1ehIY/UABe627sN6l5P9YRLjCZkYKhcEoHC4IUZZ1unUmMp3r9a9Tql1EQM
-	PO1kinitoKF2QdfVfQneCDnfyoPG2vh1Rh2ZnlY3ZoV90ws=
-X-Google-Smtp-Source: AGHT+IG7MwrRorXxkcWjIdgGK+4mzXkuq9AO0FFEdnZrk7oRmiSNnPUZ/DfqxHivj4lEixFczChGQg==
-X-Received: by 2002:a05:6870:d1d0:b0:2ae:d23:3c2d with SMTP id 586e51a60fabf-2b34fe99372mr8034579fac.8.1738355093684;
-        Fri, 31 Jan 2025 12:24:53 -0800 (PST)
+        bh=9hlyYXLAXkselsSNF7g0Bc64z/LNWZ956QqcL4gqDjo=;
+        b=GYSB1dic5+syPqaF4BhGhn43h0z/6kJjrAN/Bv7nzsbRpw9RCQmXSzXpwnRtS+DxVn
+         zCxhLFSwT44/aSoldIzSEt659yOiNUu4iSaHzwqmASguOnBdmIskZYKVYDFbCMuHbdyV
+         jM6wptdY4wPne6mU9xn5UYpr2RSxiMR4WpT1JruTUe5bldd5XoBPqiAM61buaBHfexBX
+         rpLz96Of9Aly641Dnm7/M/JvXBJanTZeLXKmsLTv/bq8o54s3Au8vdjSKZ4d5tSYtti/
+         XRjOIQejLCSvervs1PBzFanOiNaL2FAZZRaZ/xdMskYYosezg36gWIPRj4TEEm6zQZ1i
+         fLGg==
+X-Forwarded-Encrypted: i=1; AJvYcCVNWyXyLW1C6qJslXxFI8eCan8DNR2K8/WRp4YqQyNQ9fgpbMrYYn89XcLV8bQHZsle+p+NyYX8cM0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwEJ/9mCFn+vThf33DjM+MaaKt/kDFhoeLL3GH/m6zknOiCllaX
+	RpsGYzUJwsjbKtfqoCTV/XMy5gWbg5Q7GzG0CU9ajR2G4Y57OwzSyM4PIJLaRZA=
+X-Gm-Gg: ASbGncvVm0VEoGKbAz+0FilDbCNt8bLBGLI2EXc1KqKM0m4vvnlX+YYF1Cc0K9jgG0i
+	NeXf91zCr3IQXEXpLyb03PgzckGwrGm7uPsJaYePocQKCNSnssb0C0Acqv9qoHpLlxvbnf606D3
+	vF9G0kJH/4D2ikVPRAyggQjH2Z+jdrz4XjSR+sSpNMWpwREt/7PkuQFpcjeW4zdEXVNL8wVPvSH
+	EbvHq3yjRB87X1jOupBMJWzYx5BI5liFi+4d3Y7IbJeIcqLKaxwiupkRVyyUrrKy5xUr7HWMehW
+	Fp//fqgxiGnSe69AFYUaLZtodHIkW52pA1gR+R7aCLBecm8=
+X-Google-Smtp-Source: AGHT+IG22JJZ1zoEE08gl8CxgOf30mezmJIUs5PEqf+3dMT59zSIuFvgdvLgZxy1Rl/Rs71gFur6Bg==
+X-Received: by 2002:a05:6870:2dcb:b0:29e:6647:1080 with SMTP id 586e51a60fabf-2b32f07b26bmr7733897fac.21.1738355096771;
+        Fri, 31 Jan 2025 12:24:56 -0800 (PST)
 Received: from [127.0.1.1] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-2b35623d2ffsm1403157fac.22.2025.01.31.12.24.51
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-2b35623d2ffsm1403157fac.22.2025.01.31.12.24.53
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 31 Jan 2025 12:24:52 -0800 (PST)
+        Fri, 31 Jan 2025 12:24:55 -0800 (PST)
 From: David Lechner <dlechner@baylibre.com>
-Date: Fri, 31 Jan 2025 14:24:43 -0600
-Subject: [PATCH 03/13] bus: ts-nbus: validate ts,data-gpios array size
+Date: Fri, 31 Jan 2025 14:24:44 -0600
+Subject: [PATCH 04/13] bus: ts-nbus: use gpiods_set_array_value_cansleep
 MIME-Version: 1.0
-Message-Id: <20250131-gpio-set-array-helper-v1-3-991c8ccb4d6e@baylibre.com>
+Message-Id: <20250131-gpio-set-array-helper-v1-4-991c8ccb4d6e@baylibre.com>
 References: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
 In-Reply-To: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -96,8 +96,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-sound@vger.kernel.org, David Lechner <dlechner@baylibre.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250131_122454_714233_4195771D 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20250131_122457_791303_9FB9C5C4 
+X-CRM114-Status: GOOD (  11.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,31 +114,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add validation of ts,data-gpios array size during probe. The driver
-later hard-codes 8 as the size of the array when using it, so we should
-be validating that the array is actually that big to prevent possible
-out of bounds accesses.
+Reduce verbosity by using gpiods_set_array_value_cansleep() instead of
+gpiods_set_array_value_cansleep().
+
+ts_nbus->data->ndescs is validated to be 8 during probe, so will have
+the same value as the hard-coded 8 that is removed by this change.
 
 Signed-off-by: David Lechner <dlechner@baylibre.com>
 ---
- drivers/bus/ts-nbus.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/bus/ts-nbus.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/bus/ts-nbus.c b/drivers/bus/ts-nbus.c
-index 2328c48b9b1260e805c631f2aa7379d620084537..d3ee102a13893c83c50e41f7298821f4d7ae3487 100644
+index d3ee102a13893c83c50e41f7298821f4d7ae3487..31ae9a26257c3e0af2ba99666e0c04e882da935b 100644
 --- a/drivers/bus/ts-nbus.c
 +++ b/drivers/bus/ts-nbus.c
-@@ -48,6 +48,10 @@ static int ts_nbus_init_pdata(struct platform_device *pdev,
- 		return dev_err_probe(&pdev->dev, PTR_ERR(ts_nbus->data),
- 				     "failed to retrieve ts,data-gpio from dts\n");
+@@ -109,8 +109,7 @@ static void ts_nbus_reset_bus(struct ts_nbus *ts_nbus)
  
-+	if (ts_nbus->data->ndescs != 8)
-+		return dev_err_probe(&pdev->dev, -EINVAL,
-+				     "invalid number of ts,data-gpios\n");
-+
- 	ts_nbus->csn = devm_gpiod_get(&pdev->dev, "ts,csn", GPIOD_OUT_HIGH);
- 	if (IS_ERR(ts_nbus->csn))
- 		return dev_err_probe(&pdev->dev, PTR_ERR(ts_nbus->csn),
+ 	values[0] = 0;
+ 
+-	gpiod_set_array_value_cansleep(8, ts_nbus->data->desc,
+-				       ts_nbus->data->info, values);
++	gpiods_set_array_value_cansleep(ts_nbus->data, values);
+ 	gpiod_set_value_cansleep(ts_nbus->csn, 0);
+ 	gpiod_set_value_cansleep(ts_nbus->strobe, 0);
+ 	gpiod_set_value_cansleep(ts_nbus->ale, 0);
+@@ -150,12 +149,11 @@ static int ts_nbus_read_byte(struct ts_nbus *ts_nbus, u8 *val)
+  */
+ static void ts_nbus_write_byte(struct ts_nbus *ts_nbus, u8 byte)
+ {
+-	struct gpio_descs *gpios = ts_nbus->data;
+ 	DECLARE_BITMAP(values, 8);
+ 
+ 	values[0] = byte;
+ 
+-	gpiod_set_array_value_cansleep(8, gpios->desc, gpios->info, values);
++	gpiods_set_array_value_cansleep(ts_nbus->data, values);
+ }
+ 
+ /*
 
 -- 
 2.43.0
