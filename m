@@ -4,75 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60173C0218F
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Jan 2025 20:25:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F765C0218F
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Jan 2025 20:25:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hwkilRbVevIlUbaRORBwC03/GUh10dSJZqfM7wmjLuI=; b=cw0UWDlTZz7FZz
-	6m7/shSuiP8u3pRYleWmUKE4xpnfAwpoEylR6VL5opQ9kSiQ2EbqiMEfe7mNy2lM15xF2uy8TL5ca
-	ijDd71jGDKYG6J2jhtJU79MLjZQWglid5S2jb+yccNTSwVpN8PdZ1uX6NPU+NwG7ykEMEib7vbX+6
-	xxbVhWiBwyQLyV0NWOAMhbqHSwvocGXT8EVZYE2DitgzyKGcTIvhfjGfiM0z9zRZ3SRn1d//V4/wj
-	IMY2R5As0N8P90TRz6NnIP7xMS3XuUT1jHVDi6pX+MPTpXp933RJ/6xPfjTDsCL134TvEhGBvTqBy
-	tEh47bgafxyyq2F2r8ww==;
+	List-Owner; bh=KEt6O+9h3Pa/CGMKjMV2YbU7Y2Wd6VmxrcLGMxE96/4=; b=VNREik9R1qqgXL
+	BazVxdkNxFV0Szk+6PQoohrF12uqAaaF8O+fnto35YWbjf3TkMpKpm5o2Yw6niCCUhBZxharEmLkF
+	AzjzAsSwG1gMwfSJTQrxdcHxfy0PBA29ebGUv2c5VZ4t5hW2uB097KiqChlbFJmfFPheIa3/yBfzA
+	GkNlAqFHcJeEyvkIhlLbiVztkkaupX0ledBGGJx7ho0VSBMpNk0a7ouHvN+AUZcNWckzmwUSUXNZ+
+	yXNGLWrGyBjNSh66JAlTS2dY9zI1r28PWcqhAXym9QPz/DlArk2aAbLVBLK4viezKCiwT0Xi62O3s
+	uZaqvS4ER4tSQHIhBrLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdxZW-0000000BMpn-0bJX;
-	Fri, 31 Jan 2025 20:25:02 +0000
-Received: from mail-ot1-x330.google.com ([2607:f8b0:4864:20::330])
+	id 1tdxZZ-0000000BMrc-1hJv;
+	Fri, 31 Jan 2025 20:25:05 +0000
+Received: from mail-oo1-xc33.google.com ([2607:f8b0:4864:20::c33])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdxZT-0000000BMoU-2sav
+	id 1tdxZW-0000000BMpe-0NxI
 	for linux-phy@lists.infradead.org;
-	Fri, 31 Jan 2025 20:25:00 +0000
-Received: by mail-ot1-x330.google.com with SMTP id 46e09a7af769-7231e2ac9e4so637129a34.0
-        for <linux-phy@lists.infradead.org>; Fri, 31 Jan 2025 12:24:59 -0800 (PST)
+	Fri, 31 Jan 2025 20:25:03 +0000
+Received: by mail-oo1-xc33.google.com with SMTP id 006d021491bc7-5f4ce54feb8so1270254eaf.3
+        for <linux-phy@lists.infradead.org>; Fri, 31 Jan 2025 12:25:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738355099; x=1738959899; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738355101; x=1738959901; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=o0JxocTLtlGRqW6c379kuZnM3hX6Je635Dhf0CbFSJY=;
-        b=nwJGS1TbDUc04Tw5kpTNhNWGuVbCFYrCFfi0JrcUr6zgOcS4LPu3Gty96ekl1bv3BP
-         LnSKv7zqCVEyHaidXWyn81ZMJyCmuVPCHDZgAKr1ffachZqoyN/zj2Z8QU4EJ4NR/i5J
-         WR+Hflxf08R29n9CIGYcy4ayPIugWooD3mcxUXN/Lhylzwg0Po3YEmC9vdpbdgQ+XlEo
-         Vs/NIlkkRh7SZzanoxRJafEBWrgqVSB8DqIt5Fro7fp0/+mvJ+ZnUHmHjke8JCe0V5VN
-         4rxc0Sb3c1Hd/N7eBlDaoUzZJf703GRUTiSlx0wjUDYd0lPIjWsLwFcjprZ+2ChXOzAW
-         WKTw==
+        bh=HLsz4+tHpjKqe9Yh2fzFcV0a8GzDcsWx5V/eyXI7CsY=;
+        b=zcyMRgeC9XyNXkiLEuCg7daneuRNiYX7/iURcLLVGyJIYzzhBJN+QxHVbFyBo6MN3J
+         dF/Vno1/hYLKDdQokgWZuje9gWA48iMm5m2FmXYGVF+6e6N/VHOm/5JNP5P8Xqk6TRGt
+         eqdVtUJ2Qf7Lw+FJeJ3IukTPWtFWl+8tsrVVvXQUBv01Efo7SCarz2Uho9TiZe7zjPOH
+         2/oCrCQtRi3ibpxYQoH2RafguAHFEBfylxWXTwW+sbl7Xy1ARcr2XctfxaRk3wzxJEcj
+         rtGZtq0KB2vpCNk7JIkQJrsR/0h6xT1t6F9rJZkZpHyd+NN4cNid9aPiJEhZDJ8yibl8
+         /PNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738355099; x=1738959899;
+        d=1e100.net; s=20230601; t=1738355101; x=1738959901;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=o0JxocTLtlGRqW6c379kuZnM3hX6Je635Dhf0CbFSJY=;
-        b=HdUGbeuRGkbNc2ek4LTmA5RO/GgPisANZeXdhRCBsjMz97ikXGa+OXsUCyTMYpD0K8
-         SdbdtJJryvwZbopi0TzsmlHvEIt8ni5Y0tApwf4Y5WGc4umPUMdX8t+qqG7jNLkj88CD
-         3bfN4pLC3GcalsMKGxk7CFiS4I9d6B3mCc1wDQ5IMPHa2ofaTgB9XjZWKGgBQ6PrydTr
-         gU9X9N3+yqjX3hH9Zc/FD3c2DXa4jRMn5MUiSUw45lgbem1+w5kiAbiv8koZJ5vuLEr7
-         huwa0fhsVPpv1bPs7ymV2Xd0mRgubeQghoLHIpluTTf/EmefI7WhMuhLvh0G/j/hTcMW
-         mO1Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVJ1TM4PwgKv4Lom8d+cv29cenQ/WXRUGG6EuIFdSsCYRDLfgYRtOma0Ad5pjHZwEgIlSaHZquTFLs=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw1GjZPm568WxFC5J0CEKrvJYcd/NARAc+LB/NSjyFH5CnMVXsT
-	6468OPb9cx/9xEibUAqZm5cfSngJHQrggmW/DCJf54VLW95V1suSZW9LxoCd2i8=
-X-Gm-Gg: ASbGnctqDxERgJMu5nCjtUjbWA6bovlsRIlgpYhVq10uTRxWJ2iOFYuUut3q6Wblnqc
-	93VdSlzdlV5LaHTpLOhhLgjjPMUajbOgiDfu9hjBPLjyoa+Pby1k3UyBT0iXv0t3UJD6W6nmjlu
-	14xgJmOUvcYAM4qllysb8wr3EoNJ0De5QGKCuTgPwztbNFo/vhampT/jXni/xyTO1hOEseNLbov
-	sDBu+o4Nl2OR3ESYHM9F9ldwcB/Sz9Ndn4ZVXfwasp5YBODIaEjo9hUMJ4Zd9UULCHkH7Zscnq3
-	3NXW+VmsNqc5kKRS+JfMUstekXK2j9C72VpOk4m2cjbBBEQ=
-X-Google-Smtp-Source: AGHT+IHLLvw8v92D1IAdlvToO2DW44SjM8+FGXyX2n6gPI7BbY77buvq2CWQaGC5P0PVhdqadGjO1Q==
-X-Received: by 2002:a05:6870:948e:b0:296:beb3:aa40 with SMTP id 586e51a60fabf-2b32f350834mr9144614fac.36.1738355098867;
-        Fri, 31 Jan 2025 12:24:58 -0800 (PST)
+        bh=HLsz4+tHpjKqe9Yh2fzFcV0a8GzDcsWx5V/eyXI7CsY=;
+        b=po7Q8szhHbXvhbBGb4Ylic+8ODQl3bRCpKxWW9WOnXE46KnMxZxzWb91+kZmlR9OLC
+         m7UjRnwTV9EPJGZsCn6DyRcBlQ5IYu/ybWn7l4sIadQwMV7EoSQsXIGBjQ4QpynWPe2J
+         CYSOHqB65Z6dffGiqU3VZjtPeN2Yj2RPNHw/dCy9BMRLYPhExz7Pb/orxR7w785nFzV2
+         /UbO+hGlcFtbHXgFxX9XqnUeR6Kzz2E+w+q6Ng35VcgJu77LYvLNC5o7lYyHVOq+0gUa
+         BXdZisNb845C/PBlF5ptwYHiTwH+PappABoLG/HZ+GrX7gu19DfJMOh9FcNbc1ozqAQ/
+         zpkw==
+X-Forwarded-Encrypted: i=1; AJvYcCUF4B0EuIFQmibzW6pKteBBY3+pDmoYREB7ptxLqzI1VdzKd84HdzO9dF6LeL4Mbvs7FjzmyJ3zFKs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwWLo+iltpxEphmM2pToIHxy0qx+2VIblHx8eSLazxV/5X0rr5a
+	h0jyMptlAZmBL/AkxBUfS3rBnhxct8wu99dhVNtMVRECDkhaalfMiPH26LucwHI=
+X-Gm-Gg: ASbGnct6ky7+YTzL9NxZsVX6UHEg50/xlRPji9AcCbJ1/E9rk0/4v2KX0f6BtjEFXNT
+	6QIEMEpBUwFGvinChF3lPiPsc//6BzzPg0hyd+ICxPiAg4seK5AOICoQHo93CspFmjeSgKBoWJz
+	7l0ZHWBQpHjYnrMBaYM/RPnejqFr5zwwVicP3MIZCoMgJTNF1qerg6pepCaRV2lEyrTOE+stMNC
+	7nwPV7CrDwXJaUl52QuU7sEI3bd71yzM0g45uK5bImO65krD1e4adgcyItwA3HxwkU10k+EwxUo
+	D+KP0VKK7iTRp5qqZtOWxqm5HZTMvZeWAOve58R0n1CC+Nk=
+X-Google-Smtp-Source: AGHT+IE0gOiKruiwKZS2fVv0rrPSXfEcYE6NWhi9xtJKoPa0qd12KXWlAvVzsWhUG+e0SGLuDExKGg==
+X-Received: by 2002:a05:6870:702a:b0:29e:6096:c25f with SMTP id 586e51a60fabf-2b32f0bbdf3mr8023505fac.23.1738355101014;
+        Fri, 31 Jan 2025 12:25:01 -0800 (PST)
 Received: from [127.0.1.1] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-2b35623d2ffsm1403157fac.22.2025.01.31.12.24.56
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-2b35623d2ffsm1403157fac.22.2025.01.31.12.24.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 31 Jan 2025 12:24:57 -0800 (PST)
+        Fri, 31 Jan 2025 12:24:59 -0800 (PST)
 From: David Lechner <dlechner@baylibre.com>
-Date: Fri, 31 Jan 2025 14:24:45 -0600
-Subject: [PATCH 05/13] gpio: max3191x: use gpiods_set_array_value_cansleep
+Date: Fri, 31 Jan 2025 14:24:46 -0600
+Subject: [PATCH 06/13] iio: adc: ad7606: use
+ gpiods_set_array_value_cansleep
 MIME-Version: 1.0
-Message-Id: <20250131-gpio-set-array-helper-v1-5-991c8ccb4d6e@baylibre.com>
+Message-Id: <20250131-gpio-set-array-helper-v1-6-991c8ccb4d6e@baylibre.com>
 References: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
 In-Reply-To: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -96,8 +97,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-sound@vger.kernel.org, David Lechner <dlechner@baylibre.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250131_122459_740149_DF768B2D 
-X-CRM114-Status: GOOD (  11.20  )
+X-CRM114-CacheID: sfid-20250131_122502_147986_C75E96BA 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,59 +116,45 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Reduce verbosity by using gpiods_set_array_value_cansleep() instead of
-gpiods_set_array_value_cansleep().
+gpiods_set_array_value().
+
+These are not called in an atomic context, so changing to the cansleep
+variant is fine.
 
 Signed-off-by: David Lechner <dlechner@baylibre.com>
 ---
- drivers/gpio/gpio-max3191x.c | 18 +++++++-----------
- 1 file changed, 7 insertions(+), 11 deletions(-)
+ drivers/iio/adc/ad7606.c     | 3 +--
+ drivers/iio/adc/ad7606_spi.c | 3 +--
+ 2 files changed, 2 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/gpio/gpio-max3191x.c b/drivers/gpio/gpio-max3191x.c
-index bbacc714632b70e672a3d8494636fbc40dfea8ec..fee8dd2bd3c9eb7c06817430634eaf905cc9cbd8 100644
---- a/drivers/gpio/gpio-max3191x.c
-+++ b/drivers/gpio/gpio-max3191x.c
-@@ -309,23 +309,21 @@ static int max3191x_set_config(struct gpio_chip *gpio, unsigned int offset,
- 	return 0;
- }
+diff --git a/drivers/iio/adc/ad7606.c b/drivers/iio/adc/ad7606.c
+index d8e3c7a43678c57470a5118715637a68b39125c1..fe2216fd072e375f3dd8096980e53074f8ee3758 100644
+--- a/drivers/iio/adc/ad7606.c
++++ b/drivers/iio/adc/ad7606.c
+@@ -818,8 +818,7 @@ static int ad7606_write_os_hw(struct iio_dev *indio_dev, int val)
  
--static void gpiod_set_array_single_value_cansleep(unsigned int ndescs,
--						  struct gpio_desc **desc,
--						  struct gpio_array *info,
-+static void gpiod_set_array_single_value_cansleep(struct gpio_descs *descs,
- 						  int value)
- {
- 	unsigned long *values;
+ 	values[0] = val & GENMASK(2, 0);
  
--	values = bitmap_alloc(ndescs, GFP_KERNEL);
-+	values = bitmap_alloc(descs->ndescs, GFP_KERNEL);
- 	if (!values)
- 		return;
+-	gpiod_set_array_value(st->gpio_os->ndescs, st->gpio_os->desc,
+-			      st->gpio_os->info, values);
++	gpiods_set_array_value_cansleep(st->gpio_os, values);
  
- 	if (value)
--		bitmap_fill(values, ndescs);
-+		bitmap_fill(values, descs->ndescs);
- 	else
--		bitmap_zero(values, ndescs);
-+		bitmap_zero(values, descs->ndescs);
- 
--	gpiod_set_array_value_cansleep(ndescs, desc, info, values);
-+	gpiods_set_array_value_cansleep(descs, values);
- 	bitmap_free(values);
- }
- 
-@@ -396,10 +394,8 @@ static int max3191x_probe(struct spi_device *spi)
- 	max3191x->mode = device_property_read_bool(dev, "maxim,modesel-8bit")
- 				 ? STATUS_BYTE_DISABLED : STATUS_BYTE_ENABLED;
- 	if (max3191x->modesel_pins)
--		gpiod_set_array_single_value_cansleep(
--				 max3191x->modesel_pins->ndescs,
--				 max3191x->modesel_pins->desc,
--				 max3191x->modesel_pins->info, max3191x->mode);
-+		gpiod_set_array_single_value_cansleep(max3191x->modesel_pins,
-+						      max3191x->mode);
- 
- 	max3191x->ignore_uv = device_property_read_bool(dev,
- 						  "maxim,ignore-undervoltage");
+ 	/* AD7616 requires a reset to update value */
+ 	if (st->chip_info->os_req_reset)
+diff --git a/drivers/iio/adc/ad7606_spi.c b/drivers/iio/adc/ad7606_spi.c
+index e2c1475257065c98bf8e2512bda921d6d88a3002..d3064e452adfbc40b44f4437e76a73aeeb036ef0 100644
+--- a/drivers/iio/adc/ad7606_spi.c
++++ b/drivers/iio/adc/ad7606_spi.c
+@@ -297,8 +297,7 @@ static int ad7606B_sw_mode_config(struct iio_dev *indio_dev)
+ 	 * otherwise, they must be hardwired to VDD
+ 	 */
+ 	if (st->gpio_os) {
+-		gpiod_set_array_value(st->gpio_os->ndescs,
+-				      st->gpio_os->desc, st->gpio_os->info, os);
++		gpiods_set_array_value_cansleep(st->gpio_os, os);
+ 	}
+ 	/* OS of 128 and 256 are available only in software mode */
+ 	st->oversampling_avail = ad7606B_oversampling_avail;
 
 -- 
 2.43.0
