@@ -4,116 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D79CAC0218A
-	for <linux-phy@archiver.kernel.org>; Sat,  1 Feb 2025 15:56:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0179CC0218A
+	for <linux-phy@archiver.kernel.org>; Sat,  1 Feb 2025 16:09:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hFRyEyVp11LdbJaWePwgvKlkFiFYkd5NlAm1XIUWnv8=; b=zhKvEraU2eAA+H
-	Q1qVL2ROUfSCUR59u5BgL+9WDcMljfCWN2J00rXBUsNVLdoAdWzuYtA5aH+0uuDos0AtL7CfrOuFl
-	dNYvAP9TK334v4DX2Dm6m4QdsajxS1kfBLOp7Tt5gbwY4of1ygwp4byT5Qf9ETwLNNGD7b3/jO2i7
-	SrZ6iN1Ott1r67yvSqnU2OnQYeSAOWQf7wyKb1Bm+6l5qkQiR0rcDtLqeAmJS6pHQtbTXIVeCXj76
-	7d3OVp3xa6iWvbwoj5Z8+Wp4PWLAutk7ITGPFL/rY76cCfVGMeRN+zHFpzAzw2VDIBT90i/Aq3+ET
-	b39uU2cYQ3yTMUlbx/KA==;
+	List-Owner; bh=BvaR4907WEmioxJv23XTW5ZHPb7N8eXWPEKz1ir6e1o=; b=stmxmo15C2nfS5
+	+wSU9NKn9/pxSFTMgMXsQP3Ldwm2LbLstZpLtMPoGW0iah0tW0IBBWb3qd8lmLMeb5oACexYtm2X0
+	ykq5qqdIRuFy/e0zZaaKbOD75d8la2D+Zk3bmYVwUwqqtPCBtNbMWHPzY5Vpah+mnCcU6/fx3647G
+	O6zGxPIBq8dIM3O1EYadQi/zyfEtgK7JrhSjBRgC9xBFGHgudzPekh82KQK3gcEztExn9BnGDiueJ
+	kl3USQV7OMO8V9RUzQa3ca/sFAxMDWylLQ1M0Ee80QmGWUXeSt8bs6HqdXOGKtS0QNCTF4OPPaEoy
+	VUdPl9M7h3Lf3H/XlgTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1teFrE-0000000CpST-0I4u;
-	Sat, 01 Feb 2025 15:56:32 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1teG3d-0000000CqDo-2HLk;
+	Sat, 01 Feb 2025 16:09:21 +0000
+Received: from mail-oi1-x22c.google.com ([2607:f8b0:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1teFrB-0000000CpS5-27Vv
+	id 1teG3Z-0000000CqDR-2Odh
 	for linux-phy@lists.infradead.org;
-	Sat, 01 Feb 2025 15:56:30 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 511EwFCx025489
-	for <linux-phy@lists.infradead.org>; Sat, 1 Feb 2025 15:56:28 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	RxAI9QfYzUboOCqPfk86tl0uJEcqlI27N0d6rOMmn2g=; b=Wuczx6zz54Cwy1gA
-	XovtkIrG5aZ+hXsHE7QufKxE9d+kBV+zVhLaV94NPy19REaCUYF/MXe0O4Av6FHb
-	fTiYGKmTOwQcDENGyh/St69Ga/Qv0cjwIN81+Zr5rS7FRsOVhMchRwrb8n8sV1ne
-	/T8xS0VM4fqx+zxncVffSYtqVyw8XwRvo6j1LiVNQDNTRMIAEZkFCBOEfdm4yFer
-	N9KsUr+/dvVrXScbvFDztgmCXjK+eOBtDQiX+7RZFt4n18bWYM7fGciDjskmJlgV
-	qTy8Ui6wEFn82oWuvecWS2AUEGPAQVe28tQu1Afn20FAhA6L+SCSyj++xFMS542E
-	T/clpQ==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44hd6a92yq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 01 Feb 2025 15:56:28 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-7b6e43ed084so72197585a.0
-        for <linux-phy@lists.infradead.org>; Sat, 01 Feb 2025 07:56:28 -0800 (PST)
+	Sat, 01 Feb 2025 16:09:19 +0000
+Received: by mail-oi1-x22c.google.com with SMTP id 5614622812f47-3eb8accbde3so2164814b6e.0
+        for <linux-phy@lists.infradead.org>; Sat, 01 Feb 2025 08:09:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1738426156; x=1739030956; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=6/HWj5hSehOUGeRp7am4uO7k2toUSpAz0X3lYENSi1c=;
+        b=aTjBZanCRYw71vo/FN8vnp/Ec1b7c/eNaCZf9F+Vn/H4j4V227Nh3Do5EulT6BcY8F
+         YaFKZ8pAsMnNjBQQIWHnhZuqvoR7MzNN03gB9xtGTN/nall8fI0BOaD6TXPwvPA7ZfUE
+         cCJr4tK7xPgP7kZ7tie6bOiGxZ+m83dJS54gNe8affqZ2R/9T8CWtpi/LSWIHqm2jTlS
+         DE2B1UyU7S8u9r2Jgd0awscW61gnVsnk+UNH20yCnx+r/761glKXDF3qzfBrmyfuhPcz
+         tyLGCzdHsQ1Jw1aH87E5UEim79rsg7klLHRVzoxvzz3E2d8/eyLbs2xN0Lo7NFXRJtb/
+         NeVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738425387; x=1739030187;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=1e100.net; s=20230601; t=1738426156; x=1739030956;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=RxAI9QfYzUboOCqPfk86tl0uJEcqlI27N0d6rOMmn2g=;
-        b=ryjG26VNXFvF6oyUGt5zng18mL+yb/Ksz98YTiic3hxLXpnSXhq4toNMAmToyPax4F
-         ngyJ2ETUvmbdS7kLuBlBN67LRk3fPJJNjpiXbmMvdEhsHv8DfYj3HIA96KT/q/coHcq7
-         cA4IR+xoaDKl4WiUXH+Kk/K142iuVQdBhFIUpYmtTFod02VYV8JtN5Eud9ZLluDCL4xt
-         fDH3GwI1X+glFT1ar83V3rJgx0VYFGY7E9cAQr+IlM4DF7HqC+r3cS49YcY8g0i9nuXv
-         17IaAurPVQXJmexEbKzXGtWeLjQHs6LTEW+8wF0PwUKVRwgKhzS/IjHqXGQGcfzyAhei
-         1Bcw==
-X-Forwarded-Encrypted: i=1; AJvYcCVIYkq/X43AUcanSBcGXgU3i1Qde5hNjPK6Cvh9lqtmzNLgWxZ13Y0tA5kC+DBPMs1agKKTc+8sxa4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyfwQok+2NxgautwE4R+lypSpO2z0T81/haQGEYD44kDbmZ/6M+
-	yBedru2/QMwRQkoHjodeYdQtA5/a+sWGLEF2GLEossrRU3b+8FbrFZIGneBNw2pkYO/YqWb5dNQ
-	SL+Cnclbo7f7U0WoHRyqnoLmKTiLnFQvlcKgpMvxzoxo+0H6ErAUEpciCBlxrqzWd
-X-Gm-Gg: ASbGncs1Lsi590hDLpnVMavca4vJ0/VLt+wKaisENOt8T9X/2onDm21Fg+c8NZ9H4Tt
-	zBVk8O4jwxV5dn0yQn8jeyD+i/7p6Ww8jDK1JdYJjUR7Y56TMr5S4ltXWwhDPr56oEkz7Bnak5b
-	EWD42JZBvdwjzL9jKwGUP1M5/ZasMbzyYHRE83tElmkEL5Sp4VGBRj2kQvUtNM6WLeC40VMNnTJ
-	G9LTNn3dbUusHXb0IRxocF+sB3YELMeblAAzEGNbDf/RRljZMc7KwyYX4Q/QSOscua/bTtI3HRy
-	1JXa3BUnEIEMNX6JZwLvjX014Ya0V+EdRya6pE3rQylnmNtI74T4kp17QnE=
-X-Received: by 2002:a05:620a:4246:b0:7b6:da92:fcd5 with SMTP id af79cd13be357-7bffcd0a7bbmr802318885a.9.1738425387293;
-        Sat, 01 Feb 2025 07:56:27 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHCspEPtqtytsQHm2+LoVv9U32cEp2WRHWSz2SmhEQGoYUVNNLQcIl4uNOb1zVwXxus0FRB5Q==
-X-Received: by 2002:a05:620a:4246:b0:7b6:da92:fcd5 with SMTP id af79cd13be357-7bffcd0a7bbmr802316185a.9.1738425386886;
-        Sat, 01 Feb 2025 07:56:26 -0800 (PST)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dc723e4b6dsm4577092a12.24.2025.02.01.07.56.23
+        bh=6/HWj5hSehOUGeRp7am4uO7k2toUSpAz0X3lYENSi1c=;
+        b=SLphdzFB8zTsPecHwHjnyJInIpa6RH8migqnSMvvCFD2cGoTG/ahSlIZt4fXztV+Oc
+         HLk8BQR8AFdAgwC8/zoKllgP2fegQdVwW1cBUC/E/IoDm1NcsQ89z3z7hp9yCdvplVaH
+         va8fD0VyOua9cobO1LUVkH3kUbtiM1jbc2/IWqbJ+3t6BT4m3MqMTQHYUYeg2ncNYwPi
+         a7/DXsZ+hdKPbmEpZ2eNXNFZA2b8ARs3MljVAXbQFClMrr6Dx/YdIcPFqAT79RxVu4EO
+         U6852lmjJ5ts1R0S5x4syT0k4kp3lT8Vy324eZGL0Ochh06JOYZo0FJEao6IeA7O+ZRK
+         /Zvg==
+X-Forwarded-Encrypted: i=1; AJvYcCW5UTPurF+vWoKj9fEHijgyuMk31gAIMKUOe6uU7GMxW/3+q3frbbRkXew+0UXYjdveoiFNF/jwzPY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxijBdSdIF+KKP5pKRnBIO5Q/L8ILfu+9KqOmyDI7MOa5ONle6L
+	MS1Y3ZksGBL9PaPmLpCHMxqqf8IvbotmpM/K22YzTb+uSuA1ZK5I4TvIXhC76xk=
+X-Gm-Gg: ASbGnctPxddFMAnn/o5rFyAjswfa2MZGCBojeAB5gJjxSTnLpDgsDihmo9iozdZ/Kbt
+	u0Xjsv99UyTQO/+4K4mqCBN3UE4/FXoQqSsHSFx9BIFX5SxDfVfGCpGGG215EXl599rtY2nvEIe
+	jdZJkWWnfFy8p7Ae7XQcbWIT3hB0gGUfFj0qLr7pD6NltUI6JgwfGnDMM497v53EgDNb70iZL1D
+	0k9JkpGhitYW/1NqCo6MT8f/5046OZfOI+dv1reXpstuGRpXskucduYYFulNP/0ogfPNqjK2oPO
+	7bNzwoUtfXPkWi4tBDQLoNXNFR1TSRy4ru6iO4Bi8W7pwOAGBA0d
+X-Google-Smtp-Source: AGHT+IHlRVUNM84414C8bMX22/8bNBRk4Wz6BZnDGgM7+x56FCD0VuxaQe5kTozn9TxT7X99cEoMmA==
+X-Received: by 2002:a05:6808:3c85:b0:3f1:b124:59ae with SMTP id 5614622812f47-3f33c41c93bmr5106514b6e.13.1738426156387;
+        Sat, 01 Feb 2025 08:09:16 -0800 (PST)
+Received: from [192.168.0.142] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-3f333523fd6sm1405864b6e.3.2025.02.01.08.09.13
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 01 Feb 2025 07:56:25 -0800 (PST)
-Message-ID: <96c4af07-6adb-470a-8cbf-784bb544ff76@oss.qualcomm.com>
-Date: Sat, 1 Feb 2025 16:56:22 +0100
+        Sat, 01 Feb 2025 08:09:15 -0800 (PST)
+Message-ID: <9931433b-5cde-4819-ac96-eea4f1f0f1f2@baylibre.com>
+Date: Sat, 1 Feb 2025 10:09:12 -0600
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/6] dt-bindings: phy: qcom,qmp-pcie: Drop reset number
- constraints
-To: Krzysztof Kozlowski <krzk@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-References: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
- <20250125-topic-x1p4_dts-v1-2-02659a08b044@oss.qualcomm.com>
- <20250127-hungry-bald-groundhog-4f7d4b@krzk-bin>
+Subject: Re: [PATCH 00/13] gpiolib: add gpiods_set_array_value_cansleep
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
+ netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-sound@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Andy Shevchenko <andy@kernel.org>, Geert Uytterhoeven
+ <geert@linux-m68k.org>, Lars-Peter Clausen <lars@metafoo.de>,
+ Michael Hennerich <Michael.Hennerich@analog.com>,
+ Jonathan Cameron <jic23@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>,
+ Heiner Kallweit <hkallweit1@gmail.com>, Russell King
+ <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+ Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?Q?Nuno_S=C3=A1?=
+ <nuno.sa@analog.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>
+References: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com>
+ <CAMRc=MdwQL8dWU5zF5fp+KUbC2RA2Q264by8HGXMg2k1rxhsTA@mail.gmail.com>
+From: David Lechner <dlechner@baylibre.com>
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250127-hungry-bald-groundhog-4f7d4b@krzk-bin>
-X-Proofpoint-ORIG-GUID: W011JSfHqdDqaYmpd-zElez-Jm5LvMRp
-X-Proofpoint-GUID: W011JSfHqdDqaYmpd-zElez-Jm5LvMRp
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-01_07,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 malwarescore=0
- priorityscore=1501 spamscore=0 clxscore=1015 phishscore=0 bulkscore=0
- mlxlogscore=999 adultscore=0 lowpriorityscore=0 mlxscore=0 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
- definitions=main-2502010138
+In-Reply-To: <CAMRc=MdwQL8dWU5zF5fp+KUbC2RA2Q264by8HGXMg2k1rxhsTA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250201_075629_670277_BC9B3F4C 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20250201_080917_886052_4142438F 
+X-CRM114-Status: GOOD (  20.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,28 +115,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27.01.2025 9:26 AM, Krzysztof Kozlowski wrote:
-> On Sat, Jan 25, 2025 at 04:31:18AM +0100, Konrad Dybcio wrote:
->> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+On 2/1/25 4:36 AM, Bartosz Golaszewski wrote:
+> On Fri, 31 Jan 2025 21:24:40 +0100, David Lechner <dlechner@baylibre.com> said:
+>> This series was inspired by some minor annoyance I have experienced a
+>> few times in recent reviews.
 >>
->> (Almost?) all QMP PHYs come with both a "full reset" ("phy") and a
->> "retain certain registers" one ("phy_nocsr").
+>> Calling gpiod_set_array_value_cansleep() can be quite verbose due to
+>> having so many parameters. In most cases, we already have a struct
+>> gpio_descs that contains the first 3 parameters so we end up with 3 (or
+>> often even 6) pointer indirections at each call site. Also, people have
+>> a tendency to want to hard-code the first argument instead of using
+>> struct gpio_descs.ndescs, often without checking that ndescs >= the
+>> hard-coded value.
 >>
->> Drop the maxItems=1 constraint for resets and reset_names as we go
->> ahead and straighten out the DT usage. After that's done (which
->> will involve modifying some clock drivers etc.), we may set
->> *min*Items to 2, bar some possible exceptions.
+>> So I'm proposing that we add a gpiods_set_array_value_cansleep()
+>> function that is a wrapper around gpiod_set_array_value_cansleep()
+>> that has struct gpio_descs as the first parameter to make it a bit
+>> easier to read the code and avoid the hard-coding temptation.
+>>
+>> I've just done gpiods_set_array_value_cansleep() for now since there
+>> were over 10 callers of this one. There aren't as many callers of
+>> the get and atomic variants, but we can add those too if this seems
+>> like a useful thing to do.
+>>
+>> ---
+>> David Lechner (13):
+>>       gpiolib: add gpiods_set_array_value_cansleep()
+>>       auxdisplay: seg-led-gpio: use gpiods_set_array_value_cansleep
+>>       bus: ts-nbus: validate ts,data-gpios array size
+>>       bus: ts-nbus: use gpiods_set_array_value_cansleep
+>>       gpio: max3191x: use gpiods_set_array_value_cansleep
+>>       iio: adc: ad7606: use gpiods_set_array_value_cansleep
+>>       iio: amplifiers: hmc425a: use gpiods_set_array_value_cansleep
+>>       iio: resolver: ad2s1210: use gpiods_set_array_value_cansleep
+>>       mmc: pwrseq_simple: use gpiods_set_array_value_cansleep
+>>       mux: gpio: use gpiods_set_array_value_cansleep
+>>       net: mdio: mux-gpio: use gpiods_set_array_value_cansleep
+>>       phy: mapphone-mdm6600: use gpiods_set_array_value_cansleep
+>>       ASoC: adau1701: use gpiods_set_array_value_cansleep
+>>
+>>  drivers/auxdisplay/seg-led-gpio.c           |  3 +--
+>>  drivers/bus/ts-nbus.c                       | 10 ++++++----
+>>  drivers/gpio/gpio-max3191x.c                | 18 +++++++-----------
+>>  drivers/iio/adc/ad7606.c                    |  3 +--
+>>  drivers/iio/adc/ad7606_spi.c                |  3 +--
+>>  drivers/iio/amplifiers/hmc425a.c            |  3 +--
+>>  drivers/iio/resolver/ad2s1210.c             |  8 ++------
+>>  drivers/mmc/core/pwrseq_simple.c            |  3 +--
+>>  drivers/mux/gpio.c                          |  4 +---
+>>  drivers/net/mdio/mdio-mux-gpio.c            |  3 +--
+>>  drivers/phy/motorola/phy-mapphone-mdm6600.c |  4 +---
+>>  include/linux/gpio/consumer.h               |  7 +++++++
+>>  sound/soc/codecs/adau1701.c                 |  4 +---
+>>  13 files changed, 31 insertions(+), 42 deletions(-)
+>> ---
+>> base-commit: df4b2bbff898227db0c14264ac7edd634e79f755
+>> change-id: 20250131-gpio-set-array-helper-bd4a328370d3
+>>
+>> Best regards,
+>> --
+>> David Lechner <dlechner@baylibre.com>
+>>
+>>
 > 
-> You drop minItems now, so that's a bit confusing. If all devices have
-> two resets, just change in top-level resets the minItems -> 2 now and
-> mention that it does not affect the ABI, because Linux will support
-> missing reset and it describes the hardware more accurately.
+> This looks good to me except for one thing: the function prefix. I would
+> really appreciate it if we could stay within the existing gpiod_ namespace and
+> not add a new one in the form of gpiods_.
+> 
+> Maybe: gpiod_multiple_set_ or gpiod_collected_set...?
+> 
+> Bartosz
 
-This will generate a ton of warnings and resolving them may take an
-additional cycle, as I'd need to get things merged through clk too,
-so I thought this is a good transitional solution
+I was waiting for someone to complain about the naming. ;-)
 
-Konrad
+I was going for as short as possible, but OK, the most obvious prefix to me
+would be `gpio_descs_...` (to match the first parameter). Any objections to
+that?
+
 
 -- 
 linux-phy mailing list
