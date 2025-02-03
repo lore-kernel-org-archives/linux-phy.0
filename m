@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BA21C02193
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 07:54:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 923E0C02193
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 07:55:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K6QzYJegoQsoRTTQfxIIisGxNTg4jx8xGX/CoEPeFd4=; b=uc6ZoaMh1OAEmi
-	voSdJCeu9cWSdqvePM2FBTRtS3r1dJ7XmGHG8e1GHd9AkYeVDFgfAGLlPfcJ+HEKkTEPblph0Fqvi
-	BiJULjyyjz/r/X19M5iMZ4oM6QxiI7lZofUw0LI+dFXXbe3woqLA2O1Hfy1GP3z0X6H0EHo5Jg4xu
-	lBxAkZWAA8DkfcgpHf06zSQwfAsq0yGzttzxgkpWUTi8HGXu0d7csvoyeoBsRZFHajzKfrwbRetBc
-	ByEOuVAgFFIXUFMCkdpoX0tkWXiR4T1nVM6Vv3O4B3uT1FhGEdQ0OPVNEOhNXABPjatVLKGEKgVd0
-	3rWXGy4AckDdoryAHzuA==;
+	List-Owner; bh=9l9tsw7UCrXay44hlIkoUJYBMfSltoj3D8rMeCqhgno=; b=rSA+Z0r0j4XhB0
+	D208/5nJm58I+y0lkwI00lhQ8qE7hOEtVMcAMj6O6/baXFhAmFYIGx1UVNPt8ucUsJXokS7YXO/rV
+	cwQEslxkj8Ot8LMuYSG75s2eDtMANNr+TU0PcSgTLxVqN6oaQLVGzuT12yqA7G+JR0VcM4CVTflhe
+	RenamTgpOHPTaJPB6ofx3NJ//ktVBCT7YEduOAX3DdcBiKUyA3xwRw37dyX2tFvpikNAcoBzJGbjZ
+	28zjEYHKbBJ/M/chlPBPzPo+ojB7YW6pQKYrpkBEFPRi6PZTVeXZUUWPBQVds3T/5hcKKI2M6VdwQ
+	/a0FDp6Xi4yviuIBQC2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1terHs-0000000EkKq-22HO;
-	Mon, 03 Feb 2025 07:54:32 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1terJA-0000000Eka1-1TJS;
+	Mon, 03 Feb 2025 07:55:52 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1terGX-0000000EkCR-2ckZ;
-	Mon, 03 Feb 2025 07:53:10 +0000
+	id 1terHm-0000000EkJl-1Ldn;
+	Mon, 03 Feb 2025 07:54:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 3A1DAA40EAA;
-	Mon,  3 Feb 2025 07:51:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D18AC4CEE2;
-	Mon,  3 Feb 2025 07:53:07 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 5405FA40EB8;
+	Mon,  3 Feb 2025 07:52:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CF66C4CEE2;
+	Mon,  3 Feb 2025 07:54:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738569188;
-	bh=98P8X6HMfcm3Oxb2BZKVpxuLvrRbMpgR2GrkKyq4mkM=;
+	s=k20201202; t=1738569265;
+	bh=h2Tgk866PVTB33WTwVVqd9bu13KATTuNBIINA6qpSEo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=GdzDDw+TQ2RB5QCOljApbh1Dlc8hoYjvO4lSQ/49lsQ6ZVV2A4k2pJaVsWI+FbVNo
-	 VJ0yLHPv9e01G669yA0cuIG1WK5T0WTiUegMwrtsOhcnUeitdHku8VcHPoepnDJlw8
-	 nKJqcmFLJrGplgm03KhG48/AI5d0XlKpajVGrFIv7SBLqq6QE05rpho4o4HNhHNnXr
-	 d8pLn1baGWmyQ7nL3QgzE6t+29sl0NIKOwo3GOwMGDtBM0fK9eXa7LqHDX5ggldgBy
-	 NAhtDZ4dmKbGXZwVM37OEtQwAQvLvyAJXI61czxKGZ0rwcFHOkR0idtiPKZFfgURMR
-	 VVlgiT8sUR8Pg==
-Date: Mon, 3 Feb 2025 08:53:05 +0100
+	b=BxlFIwf1m1t7UrcDrBKcGXvWYHcpnk81A5FScAehD+Bz6Tp+Ejot0cpnnuwnOVmyo
+	 TO00GpHeFpiNDIh0D9EsLiEl3s6wLJVLXG0hawuTCQjt7+wNPC7kXv3T1FLCdIzG5h
+	 C7wzXDXz26V9RSI2UDe5bYJ7t/Vn2xVjntg7+PwTOPTlu+bqgPSMs6rc0Qh+26UnKE
+	 plWs82UTbwcd1ejVM+vS6Rv44R8xbRgYCjY4msr2nzzVYHvUe1PPlfQg7FF+3jCSN5
+	 uTc/4H11eQGEkwnxYuijm8S6CWEP5hYDArY6FOlDqK/E/XBMt8Tis9+N2oFjppYhFo
+	 P4BP+IWAUgpYA==
+Date: Mon, 3 Feb 2025 08:54:22 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kaustabh Chakraborty <kauschluss@disroot.org>
 Cc: Rob Herring <robh@kernel.org>, Conor Dooley <conor@kernel.org>, 
@@ -58,23 +58,22 @@ Cc: Rob Herring <robh@kernel.org>, Conor Dooley <conor@kernel.org>,
 	Ulf Hansson <ulf.hansson@linaro.org>, Jaehoon Chung <jh80.chung@samsung.com>, 
 	Vivek Gautam <gautam.vivek@samsung.com>, Thinh Nguyen <Thinh.Nguyen@synopsys.com>, 
 	Kees Cook <kees@kernel.org>, Tony Luck <tony.luck@intel.com>, 
-	"Guilherme G . Piccoli" <gpiccoli@igalia.com>, Sergey Lisov <sleirsgoevy@gmail.com>, devicetree@vger.kernel.org, 
+	"Guilherme G. Piccoli" <gpiccoli@igalia.com>, Sergey Lisov <sleirsgoevy@gmail.com>, devicetree@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org, linux-serial@vger.kernel.org, 
 	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org, dri-devel@lists.freedesktop.org, 
 	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org, linux-hardening@vger.kernel.org
-Subject: Re: [PATCH 02/34] dt-bindings: hwinfo: samsung,exynos-chipid: add
+Subject: Re: [PATCH 01/33] dt-bindings: hwinfo: samsung,exynos-chipid: add
  exynos7870-chipid compatible
-Message-ID: <20250203-roadrunner-of-unnatural-wind-54bddf@krzk-bin>
+Message-ID: <20250203-slim-jovial-dinosaur-3d7afe@krzk-bin>
 References: <20250203-exynos7870-v1-0-2b6df476a3f0@disroot.org>
- <20250202190353.14572-1-kauschluss@disroot.org>
+ <20250203-exynos7870-v1-1-2b6df476a3f0@disroot.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250202190353.14572-1-kauschluss@disroot.org>
+In-Reply-To: <20250203-exynos7870-v1-1-2b6df476a3f0@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250202_235309_733598_FA5A9733 
-X-CRM114-Status: UNSURE (   9.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250202_235426_420464_5706CA11 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,15 +90,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 03, 2025 at 12:33:53AM +0530, Kaustabh Chakraborty wrote:
+On Mon, Feb 03, 2025 at 12:06:34AM +0530, Kaustabh Chakraborty wrote:
 > Add the compatible string "samsung,exynos7870-chipid" to the documentation,
 > with a fallback to "samsung,exynos4210-chipid".
+> 
+> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+> ---
+>  Documentation/devicetree/bindings/hwinfo/samsung,exynos-chipid.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
 
-This we see from the diff. Say something not obvious about hardware
-instead of repeating redudundantly subject and diff. Otherwise what you
-said is equivalent in just few words: "Document Exynos7870 ChipID."
-instead of two lines of text. Instead say whether device is or is not
-compatible.
+That's mess, how could you have two same commits in Git log? The only
+answer I see is that you did not create it on top of git repo. That's
+not how you should work. Use either b4 or git format-patch
+--cover-letter, not some other methods.
 
 Best regards,
 Krzysztof
