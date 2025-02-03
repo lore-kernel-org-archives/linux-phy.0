@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2841C02192
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 21:11:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59EA3C02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 21:12:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DUBdsEJol8Fu3UeSc44mrfpS5to7o46hW4iJZI5Zmok=; b=wQI+Nvl33Oh2bl
-	kFIYtmcbhJgryLiZYNXDyZJ2E+G7FZhyt1NkYnLKIsxSyirfYDSk/I/AWb2JTPH14bmDLgcM0A2UE
-	nhIDK46vLFSBp9cbKKdTrYV5LMcBkWrkDr2jT7Wt40tqVD/57V17An15FZ6MbCNV6gKTC2lxrNHAy
-	6dTNm/i2nSoKOqfWu49hhwHjIoSwpJiv0N6FyYFhU4oCfLVvCFf1yz8LwrYlWv5QznuMXywcJ+RzB
-	VISb//1BW55DsfPRrEouiNyfRKMvUdGDs6nu4XhAiA/TFK42REnWcvakQU330sLUbPK6n0oIogClR
-	FE3Oo5mqHU1gKoXrXzoQ==;
+	List-Owner; bh=9e0/5bjiFWY4WPcaNPkb5OJv0HbZO+1ZD2pxRhHFsws=; b=Q/rFdcs+9J9Iiz
+	saf77zAPZzxOls+lNKvhZ4LlHfsGHhTBNwqDqmaHcfN3zBQgjR1+ithEr6ZhooyjlckIqugw6d0up
+	WY00cFAug75Szfq9eL2rGSQT221gkF1Y8aIrByWxkPtXYGzzQ/gGQ5WvotqDRDWLexz2beLX/wcCk
+	TXrGXsTlECMA8mDl70+iBi7IvCF/cF3b3i7SQH7ywB165H9KM5d8DhZTCX9dumeJpTWy+LEG0P27p
+	NkkQuINIVZEYuXg5yNF6zWZqLxkLdfdkCS+2s42w0dM6PAsEBItkwZHcR1WzLmZRtTiH/FcuP9gTl
+	Ec/pXb9mNNPrOkAkcXOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf3j2-0000000GcmQ-37he;
-	Mon, 03 Feb 2025 21:11:24 +0000
+	id 1tf3kL-0000000Gcyq-41Ys;
+	Mon, 03 Feb 2025 21:12:45 +0000
 Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf3FX-0000000GYvr-0oCD;
-	Mon, 03 Feb 2025 20:40:56 +0000
+	id 1tf3Fg-0000000GYzG-2QSu;
+	Mon, 03 Feb 2025 20:41:05 +0000
 Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 03CC725C59;
-	Mon,  3 Feb 2025 21:40:54 +0100 (CET)
+	by disroot.org (Postfix) with ESMTP id 65EA925888;
+	Mon,  3 Feb 2025 21:41:03 +0100 (CET)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id 3blw3TwI0hZa; Mon,  3 Feb 2025 21:40:52 +0100 (CET)
+ id UT50sK67Dgox; Mon,  3 Feb 2025 21:41:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1738615252; bh=wt2GHvwQc8oyS/a94zlZqsI73cR1u9EzFQZlaA/5+ZU=;
+	t=1738615262; bh=21d+Jc9d+gADlgNHYfQOcBVdXDZGzdPTgv991qDeWLc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc;
-	b=Zg/jxgRznMkz2a2RdPlY5Lo0N6vCZuL3AC4b3Kl/oWwzGfnGcUSlPUrJ7B2vFYm8Z
-	 C6S5GNRWMqY9KiBw9yK8C+pylfgIotqkSN4rjKDZCPlBUJpcQOrYdoC45YiauFAibb
-	 jrfUpoDLdQxLVsvWiAa6Gpw2705qnCC7OVXLuYSlg79unG16X8o9Q9Xsu8eTz265Wf
-	 n+ZTqCuUscAq/4D61IdwYGQ+zcav//hr6dzTQSxvnQufT4pgqGNdeJ2IpIjgMjZis6
-	 cWzD9wd8LmKeQtCmnFNstioo2BPy1E11GkOdJ7PRRzb6L3XFeAXeADlKGYYLfjHg5r
-	 SiVl9RH5SQ7Ag==
+	b=Iy8uyQW2ecHHSezrfBWohAKMPT86crMNu0Wy2hsDziRO4MYK1C4vhlcm2kAEIrhce
+	 dvvWMf6lL1mySTW1vlp0mfZDvKnA1pEfT7Dk9aHyGonSC2fdX5Ut9UcKhc0f8GLLWC
+	 i8zl6GhkP/GTJxt8ELePkZ5Yxpet8RQ3zAU5+2YC/eIwxGYjqs4WDmbU/kxBd9R/hZ
+	 XaQM1ND8tbrTyz7Sq9qcJg2jGnb9Pz9mrtM/9EgqYlDaIyWhaQJDIj4qehy631JBLF
+	 4Fr83K3v1PBBLec58jGCpFXOMeJDXoSo8l59BpSm9vPKDUegkX48ksNFBpm8VS9JlY
+	 qaQyl4CM+9C6A==
 From: Kaustabh Chakraborty <kauschluss@disroot.org>
-Date: Tue, 04 Feb 2025 02:10:13 +0530
-Subject: [PATCH 2/4] phy: exynos5-usbdrd: use GENMASK and FIELD_PREP for
- Exynos5 PHY registers
+Date: Tue, 04 Feb 2025 02:10:14 +0530
+Subject: [PATCH 3/4] dt-bindings: phy: samsung,usb3-drd-phy: add
+ exynos7870-usbdrd-phy compatible
 MIME-Version: 1.0
-Message-Id: <20250204-exynos7870-usbphy-v1-2-f30a9857efeb@disroot.org>
+Message-Id: <20250204-exynos7870-usbphy-v1-3-f30a9857efeb@disroot.org>
 References: <20250204-exynos7870-usbphy-v1-0-f30a9857efeb@disroot.org>
 In-Reply-To: <20250204-exynos7870-usbphy-v1-0-f30a9857efeb@disroot.org>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -62,16 +62,17 @@ Cc: Sergey Lisov <sleirsgoevy@gmail.com>, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
  Kaustabh Chakraborty <kauschluss@disroot.org>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1738615219; l=12277;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1738615219; l=1273;
  i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
- bh=wt2GHvwQc8oyS/a94zlZqsI73cR1u9EzFQZlaA/5+ZU=;
- b=iia+uq4EAucOrUu4rUoWAsax86cUgcZKLtoZCcDA0W4GLOeOa4EHPXvxHCh634NZ/QhiQJNQD
- 9mSrHGApBhKCUnj+yFtms7Twka906ct+HyVIB5uOWE5mysd/8bXn9ut
+ bh=21d+Jc9d+gADlgNHYfQOcBVdXDZGzdPTgv991qDeWLc=;
+ b=Ty//xTV9hK1qCqbudwOVKRV+hkVzgreRn07PhMeBrKHhifOKk26G39SAXIQPadp3oylN34uVK
+ 6I+R+Cbr2wrAdrZ7n8ozLoMOFKmgwwegCkUVMWtBALQF24h8lhyb/9D
 X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
  pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_124055_506251_825803F6 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20250203_124104_751430_055F2C15 
+X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,312 +89,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Most Exynos850 and Exynos9 (GS101) DRD PHY registers use GENMASK for masks
-and FIELD_PREP for writing values to registers.
-
-Rewrite the register definitions which don't follow this approach to follow
-it as much as possible. This patch doesn't introduce any fixes or
-functional changes, it's merely an attempt to introduce some uniformity and
-consistency in the driver code.
-
-The CRPORT SuperSpeed control registers have been exempted from this
-change. Since the writing of register values do not require any masking
-operations, implementing it would unnecessarily complicate things.
+Add the compatible string "samsung,exynos7870-usbdrd-phy" to the
+documentation. The devicetree node requires two clocks, named "phy" and
+"ref" (same as clocks required by Exynos5).
 
 Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
 ---
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 147 ++++++++++++++++---------------
- 1 file changed, 75 insertions(+), 72 deletions(-)
+ Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index 4a108fdab118c0edd76bd88dc9dbf6a498e064b3..b2194134193984392c8b48bac249591a92eaa924 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -37,8 +37,7 @@
- /* Exynos5: USB 3.0 DRD PHY registers */
- #define EXYNOS5_DRD_LINKSYSTEM			0x04
- #define LINKSYSTEM_XHCI_VERSION_CONTROL		BIT(27)
--#define LINKSYSTEM_FLADJ_MASK			(0x3f << 1)
--#define LINKSYSTEM_FLADJ(_x)			((_x) << 1)
-+#define LINKSYSTEM_FLADJ			GENMASK(6, 1)
+diff --git a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+index 16321cdd4919cd00228c35e3c1676e7954077591..3b5881e7e5bc403ef2b379668584a8379effc256 100644
+--- a/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/samsung,usb3-drd-phy.yaml
+@@ -30,6 +30,7 @@ properties:
+       - samsung,exynos5420-usbdrd-phy
+       - samsung,exynos5433-usbdrd-phy
+       - samsung,exynos7-usbdrd-phy
++      - samsung,exynos7870-usbdrd-phy
+       - samsung,exynos850-usbdrd-phy
  
- #define EXYNOS5_DRD_PHYUTMI			0x08
- #define PHYUTMI_OTGDISABLE			BIT(6)
-@@ -49,30 +48,27 @@
- 
- #define EXYNOS5_DRD_PHYCLKRST			0x10
- #define PHYCLKRST_EN_UTMISUSPEND		BIT(31)
--#define PHYCLKRST_SSC_REFCLKSEL_MASK		(0xff << 23)
--#define PHYCLKRST_SSC_REFCLKSEL(_x)		((_x) << 23)
--#define PHYCLKRST_SSC_RANGE_MASK		(0x03 << 21)
--#define PHYCLKRST_SSC_RANGE(_x)			((_x) << 21)
-+#define PHYCLKRST_SSC_REFCLKSEL			GENMASK(30, 23)
-+#define PHYCLKRST_SSC_RANGE			GENMASK(22, 21)
- #define PHYCLKRST_SSC_EN			BIT(20)
- #define PHYCLKRST_REF_SSP_EN			BIT(19)
- #define PHYCLKRST_REF_CLKDIV2			BIT(18)
--#define PHYCLKRST_MPLL_MULTIPLIER_MASK		(0x7f << 11)
--#define PHYCLKRST_MPLL_MULTIPLIER_100MHZ_REF	(0x19 << 11)
--#define PHYCLKRST_MPLL_MULTIPLIER_50M_REF	(0x32 << 11)
--#define PHYCLKRST_MPLL_MULTIPLIER_24MHZ_REF	(0x68 << 11)
--#define PHYCLKRST_MPLL_MULTIPLIER_20MHZ_REF	(0x7d << 11)
--#define PHYCLKRST_MPLL_MULTIPLIER_19200KHZ_REF	(0x02 << 11)
--#define PHYCLKRST_FSEL_PIPE_MASK		(0x7 << 8)
--#define PHYCLKRST_FSEL_UTMI_MASK		(0x7 << 5)
--#define PHYCLKRST_FSEL(_x)			((_x) << 5)
--#define PHYCLKRST_FSEL_PAD_100MHZ		(0x27 << 5)
--#define PHYCLKRST_FSEL_PAD_24MHZ		(0x2a << 5)
--#define PHYCLKRST_FSEL_PAD_20MHZ		(0x31 << 5)
--#define PHYCLKRST_FSEL_PAD_19_2MHZ		(0x38 << 5)
-+#define PHYCLKRST_MPLL_MULTIPLIER		GENMASK(17, 11)
-+#define PHYCLKRST_MPLL_MULTIPLIER_100MHZ_REF	0x19
-+#define PHYCLKRST_MPLL_MULTIPLIER_50M_REF	0x32
-+#define PHYCLKRST_MPLL_MULTIPLIER_24MHZ_REF	0x68
-+#define PHYCLKRST_MPLL_MULTIPLIER_20MHZ_REF	0x7d
-+#define PHYCLKRST_MPLL_MULTIPLIER_19200KHZ_REF	0x02
-+#define PHYCLKRST_FSEL_PIPE			GENMASK(10, 8)
-+#define PHYCLKRST_FSEL_UTMI			GENMASK(7, 5)
-+#define PHYCLKRST_FSEL_PAD_100MHZ		0x27
-+#define PHYCLKRST_FSEL_PAD_24MHZ		0x2a
-+#define PHYCLKRST_FSEL_PAD_20MHZ		0x31
-+#define PHYCLKRST_FSEL_PAD_19_2MHZ		0x38
- #define PHYCLKRST_RETENABLEN			BIT(4)
--#define PHYCLKRST_REFCLKSEL_MASK		(0x03 << 2)
--#define PHYCLKRST_REFCLKSEL_PAD_REFCLK		(0x2 << 2)
--#define PHYCLKRST_REFCLKSEL_EXT_REFCLK		(0x3 << 2)
-+#define PHYCLKRST_REFCLKSEL			GENMASK(3, 2)
-+#define PHYCLKRST_REFCLKSEL_PAD_REFCLK		0x2
-+#define PHYCLKRST_REFCLKSEL_EXT_REFCLK		0x3
- #define PHYCLKRST_PORTRESET			BIT(1)
- #define PHYCLKRST_COMMONONN			BIT(0)
- 
-@@ -81,22 +77,22 @@
- #define PHYREG0_SSC_RANGE			BIT(20)
- #define PHYREG0_CR_WRITE			BIT(19)
- #define PHYREG0_CR_READ				BIT(18)
--#define PHYREG0_CR_DATA_IN(_x)			((_x) << 2)
-+#define PHYREG0_CR_DATA_IN			GENMASK(17, 2)
- #define PHYREG0_CR_CAP_DATA			BIT(1)
- #define PHYREG0_CR_CAP_ADDR			BIT(0)
- 
- #define EXYNOS5_DRD_PHYREG1			0x18
--#define PHYREG1_CR_DATA_OUT(_x)			((_x) << 1)
-+#define PHYREG0_CR_DATA_OUT			GENMASK(16, 1)
- #define PHYREG1_CR_ACK				BIT(0)
- 
- #define EXYNOS5_DRD_PHYPARAM0			0x1c
- #define PHYPARAM0_REF_USE_PAD			BIT(31)
--#define PHYPARAM0_REF_LOSLEVEL_MASK		(0x1f << 26)
--#define PHYPARAM0_REF_LOSLEVEL			(0x9 << 26)
-+#define PHYPARAM0_REF_LOSLEVEL			GENMASK(30, 26)
-+#define PHYPARAM0_REF_LOSLEVEL_VAL		0x9
- 
- #define EXYNOS5_DRD_PHYPARAM1			0x20
--#define PHYPARAM1_PCS_TXDEEMPH_MASK		(0x1f << 0)
--#define PHYPARAM1_PCS_TXDEEMPH			(0x1c)
-+#define PHYPARAM1_PCS_TXDEEMPH			GENMASK(4, 0)
-+#define PHYPARAM1_PCS_TXDEEMPH_VAL		0x1c
- 
- #define EXYNOS5_DRD_PHYTERM			0x24
- 
-@@ -138,7 +134,7 @@
- #define LINKCTRL_FORCE_PHYSTATUS		BIT(17)
- #define LINKCTRL_FORCE_PIPE_EN			BIT(16)
- #define LINKCTRL_FORCE_QACT			BIT(8)
--#define LINKCTRL_BUS_FILTER_BYPASS(_x)		((_x) << 4)
-+#define LINKCTRL_BUS_FILTER_BYPASS		GENMASK(7, 4)
- 
- #define EXYNOS850_DRD_LINKPORT			0x08
- #define LINKPORT_HOST_NUM_U3			GENMASK(19, 16)
-@@ -484,29 +480,34 @@ exynos5_usbdrd_pipe3_set_refclk(struct phy_usb_instance *inst)
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
- 
- 	/* Use EXTREFCLK as ref clock */
--	reg &= ~PHYCLKRST_REFCLKSEL_MASK;
--	reg |=	PHYCLKRST_REFCLKSEL_EXT_REFCLK;
-+	reg &= ~PHYCLKRST_REFCLKSEL;
-+	reg |=	FIELD_PREP_CONST(PHYCLKRST_REFCLKSEL,
-+				 PHYCLKRST_REFCLKSEL_EXT_REFCLK);
- 
- 	/* FSEL settings corresponding to reference clock */
--	reg &= ~(PHYCLKRST_FSEL_PIPE_MASK |
--		 PHYCLKRST_MPLL_MULTIPLIER_MASK |
--		 PHYCLKRST_SSC_REFCLKSEL_MASK);
-+	reg &= ~(PHYCLKRST_FSEL_PIPE |
-+		 PHYCLKRST_MPLL_MULTIPLIER |
-+		 PHYCLKRST_SSC_REFCLKSEL);
- 	switch (phy_drd->extrefclk) {
- 	case EXYNOS5_FSEL_50MHZ:
--		reg |= (PHYCLKRST_MPLL_MULTIPLIER_50M_REF |
--			PHYCLKRST_SSC_REFCLKSEL(0x00));
-+		reg |= (FIELD_PREP_CONST(PHYCLKRST_SSC_REFCLKSEL, 0x00) |
-+			FIELD_PREP_CONST(PHYCLKRST_MPLL_MULTIPLIER,
-+					 PHYCLKRST_MPLL_MULTIPLIER_50M_REF));
- 		break;
- 	case EXYNOS5_FSEL_24MHZ:
--		reg |= (PHYCLKRST_MPLL_MULTIPLIER_24MHZ_REF |
--			PHYCLKRST_SSC_REFCLKSEL(0x88));
-+		reg |= (FIELD_PREP_CONST(PHYCLKRST_SSC_REFCLKSEL, 0x88) |
-+			FIELD_PREP_CONST(PHYCLKRST_MPLL_MULTIPLIER,
-+					 PHYCLKRST_MPLL_MULTIPLIER_24MHZ_REF));
- 		break;
- 	case EXYNOS5_FSEL_20MHZ:
--		reg |= (PHYCLKRST_MPLL_MULTIPLIER_20MHZ_REF |
--			PHYCLKRST_SSC_REFCLKSEL(0x00));
-+		reg |= (FIELD_PREP_CONST(PHYCLKRST_SSC_REFCLKSEL, 0x00) |
-+			FIELD_PREP_CONST(PHYCLKRST_MPLL_MULTIPLIER,
-+					 PHYCLKRST_MPLL_MULTIPLIER_20MHZ_REF));
- 		break;
- 	case EXYNOS5_FSEL_19MHZ2:
--		reg |= (PHYCLKRST_MPLL_MULTIPLIER_19200KHZ_REF |
--			PHYCLKRST_SSC_REFCLKSEL(0x88));
-+		reg |= (FIELD_PREP_CONST(PHYCLKRST_SSC_REFCLKSEL, 0x88) |
-+			FIELD_PREP_CONST(PHYCLKRST_MPLL_MULTIPLIER,
-+					 PHYCLKRST_MPLL_MULTIPLIER_19200KHZ_REF));
- 		break;
- 	default:
- 		dev_dbg(phy_drd->dev, "unsupported ref clk\n");
-@@ -529,13 +530,14 @@ exynos5_usbdrd_utmi_set_refclk(struct phy_usb_instance *inst)
- 	/* restore any previous reference clock settings */
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYCLKRST);
- 
--	reg &= ~PHYCLKRST_REFCLKSEL_MASK;
--	reg |=	PHYCLKRST_REFCLKSEL_EXT_REFCLK;
-+	reg &= ~PHYCLKRST_REFCLKSEL;
-+	reg |=	FIELD_PREP_CONST(PHYCLKRST_REFCLKSEL,
-+				 PHYCLKRST_REFCLKSEL_EXT_REFCLK);
- 
--	reg &= ~(PHYCLKRST_FSEL_UTMI_MASK |
--		 PHYCLKRST_MPLL_MULTIPLIER_MASK |
--		 PHYCLKRST_SSC_REFCLKSEL_MASK);
--	reg |= PHYCLKRST_FSEL(phy_drd->extrefclk);
-+	reg &= ~(PHYCLKRST_FSEL_UTMI |
-+		 PHYCLKRST_MPLL_MULTIPLIER |
-+		 PHYCLKRST_SSC_REFCLKSEL);
-+	reg |= FIELD_PREP(PHYCLKRST_FSEL_UTMI, phy_drd->extrefclk);
- 
- 	return reg;
- }
-@@ -585,8 +587,9 @@ static void exynos5_usbdrd_pipe3_init(struct exynos5_usbdrd_phy *phy_drd)
- 
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
- 	/* Set Tx De-Emphasis level */
--	reg &= ~PHYPARAM1_PCS_TXDEEMPH_MASK;
--	reg |=	PHYPARAM1_PCS_TXDEEMPH;
-+	reg &= ~PHYPARAM1_PCS_TXDEEMPH;
-+	reg |=	FIELD_PREP_CONST(PHYPARAM1_PCS_TXDEEMPH,
-+				 PHYPARAM1_PCS_TXDEEMPH_VAL);
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
- 
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYTEST);
-@@ -607,7 +610,7 @@ exynos5_usbdrd_usbdp_g2_v4_ctrl_pma_ready(struct exynos5_usbdrd_phy *phy_drd)
- 
- 	reg = readl(regs_base + EXYNOS850_DRD_SECPMACTL);
- 	reg &= ~SECPMACTL_PMA_REF_FREQ_SEL;
--	reg |= FIELD_PREP(SECPMACTL_PMA_REF_FREQ_SEL, 1);
-+	reg |= FIELD_PREP_CONST(SECPMACTL_PMA_REF_FREQ_SEL, 1);
- 	/* SFR reset */
- 	reg |= (SECPMACTL_PMA_LOW_PWR | SECPMACTL_PMA_APB_SW_RST);
- 	reg &= ~(SECPMACTL_PMA_ROPLL_REF_CLK_SEL |
-@@ -723,14 +726,16 @@ static void exynos5_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
- 	/* Set Loss-of-Signal Detector sensitivity */
--	reg &= ~PHYPARAM0_REF_LOSLEVEL_MASK;
--	reg |=	PHYPARAM0_REF_LOSLEVEL;
-+	reg &= ~PHYPARAM0_REF_LOSLEVEL;
-+	reg |=	FIELD_PREP_CONST(PHYPARAM0_REF_LOSLEVEL,
-+				 PHYPARAM0_REF_LOSLEVEL_VAL);
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
- 
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
- 	/* Set Tx De-Emphasis level */
--	reg &= ~PHYPARAM1_PCS_TXDEEMPH_MASK;
--	reg |=	PHYPARAM1_PCS_TXDEEMPH;
-+	reg &= ~PHYPARAM1_PCS_TXDEEMPH;
-+	reg |=	FIELD_PREP_CONST(PHYPARAM1_PCS_TXDEEMPH,
-+				 PHYPARAM1_PCS_TXDEEMPH_VAL);
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM1);
- 
- 	/* UTMI Power Control */
-@@ -761,7 +766,7 @@ static int exynos5_usbdrd_phy_init(struct phy *phy)
- 	 * See xHCI 1.0 spec, 5.2.4
- 	 */
- 	reg =	LINKSYSTEM_XHCI_VERSION_CONTROL |
--		LINKSYSTEM_FLADJ(0x20);
-+		FIELD_PREP_CONST(LINKSYSTEM_FLADJ, 0x20);
- 	writel(reg, phy_drd->reg_phy + EXYNOS5_DRD_LINKSYSTEM);
- 
- 	reg = readl(phy_drd->reg_phy + EXYNOS5_DRD_PHYPARAM0);
-@@ -920,26 +925,24 @@ static int crport_handshake(struct exynos5_usbdrd_phy *phy_drd,
- static int crport_ctrl_write(struct exynos5_usbdrd_phy *phy_drd,
- 			     u32 addr, u32 data)
- {
-+	u32 val;
- 	int ret;
- 
- 	/* Write Address */
--	writel(PHYREG0_CR_DATA_IN(addr),
--	       phy_drd->reg_phy + EXYNOS5_DRD_PHYREG0);
--	ret = crport_handshake(phy_drd, PHYREG0_CR_DATA_IN(addr),
--			       PHYREG0_CR_CAP_ADDR);
-+	val = FIELD_PREP(PHYREG0_CR_DATA_IN, addr);
-+	writel(val, phy_drd->reg_phy + EXYNOS5_DRD_PHYREG0);
-+	ret = crport_handshake(phy_drd, val, PHYREG0_CR_CAP_ADDR);
- 	if (ret)
- 		return ret;
- 
- 	/* Write Data */
--	writel(PHYREG0_CR_DATA_IN(data),
--	       phy_drd->reg_phy + EXYNOS5_DRD_PHYREG0);
--	ret = crport_handshake(phy_drd, PHYREG0_CR_DATA_IN(data),
--			       PHYREG0_CR_CAP_DATA);
-+	val = FIELD_PREP(PHYREG0_CR_DATA_IN, data);
-+	writel(val, phy_drd->reg_phy + EXYNOS5_DRD_PHYREG0);
-+	ret = crport_handshake(phy_drd, val, PHYREG0_CR_CAP_DATA);
- 	if (ret)
- 		return ret;
- 
--	ret = crport_handshake(phy_drd, PHYREG0_CR_DATA_IN(data),
--			       PHYREG0_CR_WRITE);
-+	ret = crport_handshake(phy_drd, val, PHYREG0_CR_WRITE);
- 
- 	return ret;
- }
-@@ -1108,7 +1111,7 @@ static void exynos850_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 
- 	/* Set VBUS Valid and D+ pull-up control by VBUS pad usage */
- 	reg = readl(regs_base + EXYNOS850_DRD_LINKCTRL);
--	reg |= LINKCTRL_BUS_FILTER_BYPASS(0xf);
-+	reg |= FIELD_PREP_CONST(LINKCTRL_BUS_FILTER_BYPASS, 0xf);
- 	writel(reg, regs_base + EXYNOS850_DRD_LINKCTRL);
- 
- 	reg = readl(regs_base + EXYNOS850_DRD_UTMI);
-@@ -1123,19 +1126,19 @@ static void exynos850_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
- 	reg &= ~SSPPLLCTL_FSEL;
- 	switch (phy_drd->extrefclk) {
- 	case EXYNOS5_FSEL_50MHZ:
--		reg |= FIELD_PREP(SSPPLLCTL_FSEL, 7);
-+		reg |= FIELD_PREP_CONST(SSPPLLCTL_FSEL, 7);
- 		break;
- 	case EXYNOS5_FSEL_26MHZ:
--		reg |= FIELD_PREP(SSPPLLCTL_FSEL, 6);
-+		reg |= FIELD_PREP_CONST(SSPPLLCTL_FSEL, 6);
- 		break;
- 	case EXYNOS5_FSEL_24MHZ:
--		reg |= FIELD_PREP(SSPPLLCTL_FSEL, 2);
-+		reg |= FIELD_PREP_CONST(SSPPLLCTL_FSEL, 2);
- 		break;
- 	case EXYNOS5_FSEL_20MHZ:
--		reg |= FIELD_PREP(SSPPLLCTL_FSEL, 1);
-+		reg |= FIELD_PREP_CONST(SSPPLLCTL_FSEL, 1);
- 		break;
- 	case EXYNOS5_FSEL_19MHZ2:
--		reg |= FIELD_PREP(SSPPLLCTL_FSEL, 0);
-+		reg |= FIELD_PREP_CONST(SSPPLLCTL_FSEL, 0);
- 		break;
- 	default:
- 		dev_warn(phy_drd->dev, "unsupported ref clk: %#.2x\n",
+   clocks:
+@@ -168,6 +169,7 @@ allOf:
+             enum:
+               - samsung,exynos5250-usbdrd-phy
+               - samsung,exynos5420-usbdrd-phy
++              - samsung,exynos7870-usbdrd-phy
+               - samsung,exynos850-usbdrd-phy
+     then:
+       properties:
 
 -- 
 2.48.1
