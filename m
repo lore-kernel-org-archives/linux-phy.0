@@ -4,82 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53D73C02192
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 14:03:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07408C02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 14:19:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nTZk34KFl73jZPrCRAp260ZBHvq4h+IG+jb4QlrmYFo=; b=DRi3WKF4dFGp+X
-	20lSObJcohMJbcmYe/2brshm53JTvwljdVPO8No2/KJaRka1/JY9yMMiIMsRDEjchbPTl8KgNPyBj
-	3uxH7pVcBvhsNjsjd/jVfImqwUnfoSgnmvifVd5ZNPh2cMSMwjaTHtc53ozk3QdDnSwUTYAtN/cIt
-	6AfrFJBo5WJrnsTR9hbSt5sc5Hghx+Xc1Rdt8EWm2lboZkQU3Yf1VTreQ2IE+Y9ZZQwiv4OfaTkvw
-	CKT7PoBV9byJZOAdz1Jbuw6dIZPoLg1Vhmyerj7qaWvneis2mN0Rd6iyk1P63foe/9V/eOAPjHPh3
-	z2Cft1KtMzwuGpJWvEpg==;
+	List-Owner; bh=a7nTceGJJ2Akf2y72F084bAGf9MlOcpRYGVpw4Ig4LA=; b=x4jAvrFCLyYEPP
+	4cbyGVwWgKPTFXICwxhsfWw8m/67Bg/Cbmi8nPpGpb7p+opyE7QDxlHSvkelm23t5zWWrt/WrV2+/
+	3d3rmkd382P+6JBC+dqnfv2RuaPF+qZaa8LbflBYgVvZQvQYJn/J/3ip8mfZeZiDnkrmXsSTJq6RT
+	NQZGsdHx4pZ6icZ503HizuKu7SDFn7hQvzXukANA2/tv/stPSfAfWD0nOWcKNpwzpU4+4A2pRchFO
+	34LyZ7Q28WhMUCrnNqtXEqkwiYDOA+PuGYwwnapiaqmcxGILfi0pXYmjIoAXkGuCsXWs/wxrn0CBS
+	qVyUNymSyGZ733yRcZww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tex2T-0000000FbRK-3jL5;
-	Mon, 03 Feb 2025 14:03:01 +0000
+	id 1texIQ-0000000Fdvm-2E0N;
+	Mon, 03 Feb 2025 14:19:30 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tex18-0000000FbBy-2Ry4;
-	Mon, 03 Feb 2025 14:01:39 +0000
+	id 1texGk-0000000Fdbj-2BtR
+	for linux-phy@lists.infradead.org;
+	Mon, 03 Feb 2025 14:17:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 72F9F5C65F8;
-	Mon,  3 Feb 2025 14:00:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 664D6C4CED2;
-	Mon,  3 Feb 2025 14:01:25 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 226E65C4CED;
+	Mon,  3 Feb 2025 14:17:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B523C4CED2;
+	Mon,  3 Feb 2025 14:17:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738591297;
-	bh=FUGVfpQsBsQZDnW8/29ndy6ufToxH4fLIZhk0OSH+vk=;
+	s=k20201202; t=1738592265;
+	bh=WEMJmTtnA4mpvCmOd4uLa3P4g//2FnQ5h6vgLeQzscc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dxJQFzlt4BVNOgSQuojXmA9wuzm4juDMiaj0xfMOAE5qPk5Vzb1dY6VgLM/hLrYRI
-	 Zd9+pCEzYYVOR46Td4Mo1YEY21wDNc78e4E/NQu4MLG+yWelOi7uSJDHAR94Gq2Io2
-	 S/5g5li5Jhvv/wwVRI4ApfEeYqSP9+TuKxkXCOjaMGuMZGFoJXBSs7yJ/o4dYajCqM
-	 7sMqSFURdJ7oxQpQ7ZoOdRq4XLWiWKj1QXmNEhRzyyuYLgf26P1NSFzawTAN1FRBJ4
-	 ckEJtWX4+/sU6ftXPOVdiNouwo41UZKZrbT/T99jACiBEflDshR6f2c2lZ7XLI/b7z
-	 DPRk7DkWm7p3g==
-Message-ID: <9c8a9dee-92ba-47e4-b16b-ab47727d8057@kernel.org>
-Date: Mon, 3 Feb 2025 15:01:22 +0100
+	b=fUMN8pLjQexgBOamrlL300s+V4jdD/p/f/0d6XyGN3qf4NwvxsOP14zt7/Qg41JXd
+	 zcXpwMjN/TxE5tkMfz6F8N2gvXKSvxQMGgMQ7z1H65HDBBUK4UGKN2XYTyrXGVXJ3o
+	 sIB0Hi1JacMWEJKyUVZrcLiaMR2btWvQ5G8DgFJ3GQ1xoID9yLGVBL7lzaA6cHOIX9
+	 9l2OeA4yzAQz2oDRnbFSd13D4IDn76a5IJmVnE7lnnJj1NKyQ1GRcHQUxpoTgKZZEu
+	 yxQO69OTV8LC7cmG9lKJSJgdHYMg7OV3jaMDsSUC58kid6qYqOoGMJqbGz+dg6NS5S
+	 CmGFWR/9J4asQ==
+Message-ID: <17b3c33c-d277-4a28-b6c8-4852d373b450@kernel.org>
+Date: Mon, 3 Feb 2025 15:17:38 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 02/33] dt-bindings: clock: add clock definitions for
- exynos7870 CMU
-To: Kaustabh Chakraborty <kauschluss@disroot.org>
-Cc: Rob Herring <robh@kernel.org>, Conor Dooley <conor@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Tomasz Figa <tomasz.figa@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jiri Slaby <jirislaby@kernel.org>, Lee Jones <lee@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>, David Airlie
- <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Jaehoon Chung <jh80.chung@samsung.com>,
- Vivek Gautam <gautam.vivek@samsung.com>,
- Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Kees Cook <kees@kernel.org>,
- Tony Luck <tony.luck@intel.com>, "Guilherme G . Piccoli"
- <gpiccoli@igalia.com>, Sergey Lisov <sleirsgoevy@gmail.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-serial@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-usb@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
- linux-hardening@vger.kernel.org
-References: <20250203-exynos7870-v1-0-2b6df476a3f0@disroot.org>
- <20250202190758.14986-1-kauschluss@disroot.org>
- <20250203-enigmatic-remarkable-beagle-709955@krzk-bin>
- <c1249f2f6ac8a2f5a1dcb3bbbba647f9@disroot.org>
+Subject: Re: [PATCH 2/6] dt-bindings: phy: qcom,qmp-pcie: Drop reset number
+ constraints
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Konrad Dybcio <konradybcio@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Marijn Suijten <marijn.suijten@somainline.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
+ <20250125-topic-x1p4_dts-v1-2-02659a08b044@oss.qualcomm.com>
+ <20250127-hungry-bald-groundhog-4f7d4b@krzk-bin>
+ <96c4af07-6adb-470a-8cbf-784bb544ff76@oss.qualcomm.com>
+ <0ec25b21-9a1d-4c4a-ae52-6bd1c3018f4c@kernel.org>
+ <3ee057ab-927c-4eac-a933-a14a5849d66c@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -125,10 +108,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <c1249f2f6ac8a2f5a1dcb3bbbba647f9@disroot.org>
+In-Reply-To: <3ee057ab-927c-4eac-a933-a14a5849d66c@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_060138_719428_3D4D02F5 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20250203_061746_651192_CE692660 
+X-CRM114-Status: GOOD (  10.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,35 +128,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03/02/2025 13:40, Kaustabh Chakraborty wrote:
-> On 2025-02-03 07:54, Krzysztof Kozlowski wrote:
->> On Mon, Feb 03, 2025 at 12:37:58AM +0530, Kaustabh Chakraborty wrote:
->>> From: Sergey Lisov <sleirsgoevy@gmail.com>
+On 03/02/2025 14:03, Konrad Dybcio wrote:
+> On 2.02.2025 3:35 PM, Krzysztof Kozlowski wrote:
+>> On 01/02/2025 16:56, Konrad Dybcio wrote:
+>>> On 27.01.2025 9:26 AM, Krzysztof Kozlowski wrote:
+>>>> On Sat, Jan 25, 2025 at 04:31:18AM +0100, Konrad Dybcio wrote:
+>>>>> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+>>>>>
+>>>>> (Almost?) all QMP PHYs come with both a "full reset" ("phy") and a
+>>>>> "retain certain registers" one ("phy_nocsr").
+>>>>>
+>>>>> Drop the maxItems=1 constraint for resets and reset_names as we go
+>>>>> ahead and straighten out the DT usage. After that's done (which
+>>>>> will involve modifying some clock drivers etc.), we may set
+>>>>> *min*Items to 2, bar some possible exceptions.
+>>>>
+>>>> You drop minItems now, so that's a bit confusing. If all devices have
+>>>> two resets, just change in top-level resets the minItems -> 2 now and
+>>>> mention that it does not affect the ABI, because Linux will support
+>>>> missing reset and it describes the hardware more accurately.
 >>>
->>> Add unique identifiers for exynos7870 clocks for every bank. It adds all
->>> clocks of CMU_MIF, CMU_DISPAUD, CMU_G3D, CMU_ISP, CMU_MFCMSCL, and
->>> CMU_PERI.
->>>
->>> Signed-off-by: Sergey Lisov <sleirsgoevy@gmail.com>
->>> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
->>> ---
->>>  include/dt-bindings/clock/exynos7870.h | 324 +++++++++++++++++++++++++
->>>  1 file changed, 324 insertions(+)
+>>> This will generate a ton of warnings and resolving them may take an
+>>> additional cycle, as I'd need to get things merged through clk too,
+>>> so I thought this is a good transitional solution
 >>
->> Look at git log - that's never a separate commit.
+>> I still don't understand why existing devices now get 1 reset, while
+>> previously they had minItems:2.
 > 
-> Hmm, I see past examples which are mixed.
+> Hm, right..
 > 
-> 2ae5c2c3f8d586b709cf67efe94488be397d7544
-> Exynos850 CMU (c. 2021). CMU definitions are in a separate commit.
-> 
-> 591020a516720e9eba1c4b1748cb73b6748e445f
-> Exynos7885 CMU (c. 2021). CMU definitions are in a separate commit.
-> 
-Huh, indeed, my mistake.
+> Would it make sense to just remove the else: branch?
 
-Let's avoid that pattern, so binding headers are always part of bindings
-commit.
+Yes, I guess that's what you want to achieve here.
 
 Best regards,
 Krzysztof
