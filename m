@@ -4,118 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67946C02192
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 13:07:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53D73C02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 14:03:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1cCO0uhETlvOtSY1WJqRgpNM1JBmfxIwKHxeTGKm6uM=; b=qUeT11Q8snZPB+
-	wAiY29sXB9gMaKBGEEcJ6FCKmcykOaIlVXipxRt2r2s3cPI+WddHHTKM6WKLl2bPubLHV/sKSoRUM
-	WKrZN+dwZRZjKHwzdAbv92CDgZ1SeF6ckdfAqm1EJcyWtbfYAxJubobZqqhJf964Bb3EzuPCHn8mn
-	lGSpd2JJDNdZcYvHL6ehF2pektAaQZnKlzBzhupk4rXafCVVMXFXZj3x0I8ZiRK0BzxW401tJ1Fsb
-	0VeOuEntjs54ZkmnghG3OhBlIbl5fZ1VenMwvwb+/Y1BL44rK8ZZ8W8eSnganR4bWIHra61WbczhK
-	qw6QYd/NzqTE8xkBFcsw==;
+	List-Owner; bh=nTZk34KFl73jZPrCRAp260ZBHvq4h+IG+jb4QlrmYFo=; b=DRi3WKF4dFGp+X
+	20lSObJcohMJbcmYe/2brshm53JTvwljdVPO8No2/KJaRka1/JY9yMMiIMsRDEjchbPTl8KgNPyBj
+	3uxH7pVcBvhsNjsjd/jVfImqwUnfoSgnmvifVd5ZNPh2cMSMwjaTHtc53ozk3QdDnSwUTYAtN/cIt
+	6AfrFJBo5WJrnsTR9hbSt5sc5Hghx+Xc1Rdt8EWm2lboZkQU3Yf1VTreQ2IE+Y9ZZQwiv4OfaTkvw
+	CKT7PoBV9byJZOAdz1Jbuw6dIZPoLg1Vhmyerj7qaWvneis2mN0Rd6iyk1P63foe/9V/eOAPjHPh3
+	z2Cft1KtMzwuGpJWvEpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tewAe-0000000FTD6-3kwh;
-	Mon, 03 Feb 2025 13:07:24 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tex2T-0000000FbRK-3jL5;
+	Mon, 03 Feb 2025 14:03:01 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tew6n-0000000FSmG-1FPE
-	for linux-phy@lists.infradead.org;
-	Mon, 03 Feb 2025 13:03:26 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 513BHHuw012514
-	for <linux-phy@lists.infradead.org>; Mon, 3 Feb 2025 13:03:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	mX7IfXj8e+kxJnyMsONTU5RjQUK7rzCN/ci7rHKOAdE=; b=nOg27x6wRaSJtHgl
-	M+XWT4621uQHI+uz6vwasngw5vPFhnlnF91tAKmC8RF5WfipkXvsdLceAZizC7Cq
-	wwe9egb13+KJpEV5dr8bvSBGls01qgdbSBza4MbGin+KPjsjJDJBcEwjV1wwvlNh
-	5zjLbEu03rsxMhDOgCvQAnnKWa2VJm3DtxwMDXMHRnVIIwyi/sDhVKWpj+Kt2a/n
-	dSBeBBHkthRu1aCn0CiYJw6lTk1rqNlHMhsN6BcsnJF+/xq1N8MisNNbirTH2BxK
-	lbo/dugFlnd1Sv4zyQsFv504ftNc5CVFbVwUKIcMbMch25Z2ucECfvaCJI5r1EcS
-	0rJ+Zg==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44jvsu8bk2-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 03 Feb 2025 13:03:23 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-468f80bc8fdso2576921cf.3
-        for <linux-phy@lists.infradead.org>; Mon, 03 Feb 2025 05:03:23 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738587802; x=1739192602;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=mX7IfXj8e+kxJnyMsONTU5RjQUK7rzCN/ci7rHKOAdE=;
-        b=fA+UiYAK3L5M6SplgfUHCgu9mUSBSNER5osEqug7B8yPX8mH3fZj68YqvyhFwtWvTE
-         G3J9pA17ZrdRDP0BpHbjGloJwtND8P1L/Jbdi5BTmI5AZxmxnWZrszBo6nnyZWmdPiyu
-         CNDrhwelJIXuuIRghdzGxvS0OecT0yeplcpQArf/7qsswYgaqXnYmGVfykFayk18Cs6K
-         WyF4SebPl3Z1PPk54uLCDvrOe+Q0crw0qaN4V7s29m82xWBYosz8uW4YRgrD1+wFaw/C
-         j1VEIOmGf9rIefUKsaJ8g1y4BlL7AltNiyPTEoOPzjfoHIRyfymv1LhKtutdt9BL9Tq6
-         roAw==
-X-Forwarded-Encrypted: i=1; AJvYcCWbI6caw4X48eGc20OfBqIcMIh4mFvAhP+cGFsFOIl5E8x46QmUMFx3BSiaWedj/Tkium+q5xWJ4pE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzOGmcCTcc8uyqeaGhM2wCZFEg2Z2kIBzcy6FOqX0I4s44YsLYU
-	Pu5zJ6DVH6a8p2oa0JYDHIyF3ibAsJ7J8Ni13d+Gy2Q69DA8o5yxk9XnpwTMCcANvh2VrXQHHmT
-	sGDNa0tpBI5tuZM7vR0sskte3HDeYOZGGVM8n6oozD3u0K+W2Xw7LZbl+25FnQtAOOghjXcE4
-X-Gm-Gg: ASbGnctpw9591CsjNekuuSeXNn1TFfbNhsaN86f22h/XsecULQGVsDULozJN3/cTNfS
-	g3q7ESpD49/EIY+JQ0Fo+C1riCzjYD8QKEgYirwuiIIho0C5s8lWE3kD7fy2hBg7tSYI8LnB0wh
-	bxEjOdJLYvifS2kZ9ZEZf6Uhvyi5YVzz0Nae0uxbVFuvL4JjNFMuNIRzo+C2NQmrmzpU8RHBmru
-	0cmngwwre3PUXDyI16/eNVMYrMlJlu1YcnK4Nup1C0hS2tJakJkvJ0Psrla73fOodJF81Vk+v3L
-	/98/YMvk/HPaFCWKTnV/0plNlSXg+rjHoa1y/5r0JfbsE6r15o94XEokOgo=
-X-Received: by 2002:a05:620a:198d:b0:7b6:d273:9b4b with SMTP id af79cd13be357-7bffcd8bd6emr1098437185a.10.1738587802305;
-        Mon, 03 Feb 2025 05:03:22 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGrZB6OqHiWRJ8HOtNHhQ5KqKCDHZxHykXb1U1YPH9wGXVvU50wTt//rEdVCP8JTUwiZqblcQ==
-X-Received: by 2002:a05:620a:198d:b0:7b6:d273:9b4b with SMTP id af79cd13be357-7bffcd8bd6emr1098434285a.10.1738587801762;
-        Mon, 03 Feb 2025 05:03:21 -0800 (PST)
-Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dc8eaafa38sm4639434a12.76.2025.02.03.05.03.20
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 03 Feb 2025 05:03:21 -0800 (PST)
-Message-ID: <3ee057ab-927c-4eac-a933-a14a5849d66c@oss.qualcomm.com>
-Date: Mon, 3 Feb 2025 14:03:19 +0100
+	id 1tex18-0000000FbBy-2Ry4;
+	Mon, 03 Feb 2025 14:01:39 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 72F9F5C65F8;
+	Mon,  3 Feb 2025 14:00:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 664D6C4CED2;
+	Mon,  3 Feb 2025 14:01:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1738591297;
+	bh=FUGVfpQsBsQZDnW8/29ndy6ufToxH4fLIZhk0OSH+vk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=dxJQFzlt4BVNOgSQuojXmA9wuzm4juDMiaj0xfMOAE5qPk5Vzb1dY6VgLM/hLrYRI
+	 Zd9+pCEzYYVOR46Td4Mo1YEY21wDNc78e4E/NQu4MLG+yWelOi7uSJDHAR94Gq2Io2
+	 S/5g5li5Jhvv/wwVRI4ApfEeYqSP9+TuKxkXCOjaMGuMZGFoJXBSs7yJ/o4dYajCqM
+	 7sMqSFURdJ7oxQpQ7ZoOdRq4XLWiWKj1QXmNEhRzyyuYLgf26P1NSFzawTAN1FRBJ4
+	 ckEJtWX4+/sU6ftXPOVdiNouwo41UZKZrbT/T99jACiBEflDshR6f2c2lZ7XLI/b7z
+	 DPRk7DkWm7p3g==
+Message-ID: <9c8a9dee-92ba-47e4-b16b-ab47727d8057@kernel.org>
+Date: Mon, 3 Feb 2025 15:01:22 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/6] dt-bindings: phy: qcom,qmp-pcie: Drop reset number
- constraints
-To: Krzysztof Kozlowski <krzk@kernel.org>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Konrad Dybcio <konradybcio@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20250125-topic-x1p4_dts-v1-0-02659a08b044@oss.qualcomm.com>
- <20250125-topic-x1p4_dts-v1-2-02659a08b044@oss.qualcomm.com>
- <20250127-hungry-bald-groundhog-4f7d4b@krzk-bin>
- <96c4af07-6adb-470a-8cbf-784bb544ff76@oss.qualcomm.com>
- <0ec25b21-9a1d-4c4a-ae52-6bd1c3018f4c@kernel.org>
+Subject: Re: [PATCH 02/33] dt-bindings: clock: add clock definitions for
+ exynos7870 CMU
+To: Kaustabh Chakraborty <kauschluss@disroot.org>
+Cc: Rob Herring <robh@kernel.org>, Conor Dooley <conor@kernel.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Tomasz Figa <tomasz.figa@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jirislaby@kernel.org>, Lee Jones <lee@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, David Airlie
+ <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Jaehoon Chung <jh80.chung@samsung.com>,
+ Vivek Gautam <gautam.vivek@samsung.com>,
+ Thinh Nguyen <Thinh.Nguyen@synopsys.com>, Kees Cook <kees@kernel.org>,
+ Tony Luck <tony.luck@intel.com>, "Guilherme G . Piccoli"
+ <gpiccoli@igalia.com>, Sergey Lisov <sleirsgoevy@gmail.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-serial@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-usb@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-hardening@vger.kernel.org
+References: <20250203-exynos7870-v1-0-2b6df476a3f0@disroot.org>
+ <20250202190758.14986-1-kauschluss@disroot.org>
+ <20250203-enigmatic-remarkable-beagle-709955@krzk-bin>
+ <c1249f2f6ac8a2f5a1dcb3bbbba647f9@disroot.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <0ec25b21-9a1d-4c4a-ae52-6bd1c3018f4c@kernel.org>
-X-Proofpoint-ORIG-GUID: mTJV8WQngpA9Gtp-iSsi00e51d2grf1D
-X-Proofpoint-GUID: mTJV8WQngpA9Gtp-iSsi00e51d2grf1D
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-03_05,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 spamscore=0 adultscore=0
- priorityscore=1501 bulkscore=0 lowpriorityscore=0 mlxlogscore=999
- clxscore=1015 impostorscore=0 mlxscore=0 malwarescore=0 suspectscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502030096
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <c1249f2f6ac8a2f5a1dcb3bbbba647f9@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_050325_364321_F5711037 
-X-CRM114-Status: GOOD (  14.59  )
+X-CRM114-CacheID: sfid-20250203_060138_719428_3D4D02F5 
+X-CRM114-Status: GOOD (  10.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,37 +145,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2.02.2025 3:35 PM, Krzysztof Kozlowski wrote:
-> On 01/02/2025 16:56, Konrad Dybcio wrote:
->> On 27.01.2025 9:26 AM, Krzysztof Kozlowski wrote:
->>> On Sat, Jan 25, 2025 at 04:31:18AM +0100, Konrad Dybcio wrote:
->>>> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
->>>>
->>>> (Almost?) all QMP PHYs come with both a "full reset" ("phy") and a
->>>> "retain certain registers" one ("phy_nocsr").
->>>>
->>>> Drop the maxItems=1 constraint for resets and reset_names as we go
->>>> ahead and straighten out the DT usage. After that's done (which
->>>> will involve modifying some clock drivers etc.), we may set
->>>> *min*Items to 2, bar some possible exceptions.
+On 03/02/2025 13:40, Kaustabh Chakraborty wrote:
+> On 2025-02-03 07:54, Krzysztof Kozlowski wrote:
+>> On Mon, Feb 03, 2025 at 12:37:58AM +0530, Kaustabh Chakraborty wrote:
+>>> From: Sergey Lisov <sleirsgoevy@gmail.com>
 >>>
->>> You drop minItems now, so that's a bit confusing. If all devices have
->>> two resets, just change in top-level resets the minItems -> 2 now and
->>> mention that it does not affect the ABI, because Linux will support
->>> missing reset and it describes the hardware more accurately.
+>>> Add unique identifiers for exynos7870 clocks for every bank. It adds all
+>>> clocks of CMU_MIF, CMU_DISPAUD, CMU_G3D, CMU_ISP, CMU_MFCMSCL, and
+>>> CMU_PERI.
+>>>
+>>> Signed-off-by: Sergey Lisov <sleirsgoevy@gmail.com>
+>>> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+>>> ---
+>>>  include/dt-bindings/clock/exynos7870.h | 324 +++++++++++++++++++++++++
+>>>  1 file changed, 324 insertions(+)
 >>
->> This will generate a ton of warnings and resolving them may take an
->> additional cycle, as I'd need to get things merged through clk too,
->> so I thought this is a good transitional solution
+>> Look at git log - that's never a separate commit.
 > 
-> I still don't understand why existing devices now get 1 reset, while
-> previously they had minItems:2.
+> Hmm, I see past examples which are mixed.
+> 
+> 2ae5c2c3f8d586b709cf67efe94488be397d7544
+> Exynos850 CMU (c. 2021). CMU definitions are in a separate commit.
+> 
+> 591020a516720e9eba1c4b1748cb73b6748e445f
+> Exynos7885 CMU (c. 2021). CMU definitions are in a separate commit.
+> 
+Huh, indeed, my mistake.
 
-Hm, right..
+Let's avoid that pattern, so binding headers are always part of bindings
+commit.
 
-Would it make sense to just remove the else: branch?
-
-Konrad
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
