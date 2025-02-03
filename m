@@ -4,93 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 230E7C02195
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 08:54:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63D51C02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 10:57:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yXend/8jOiUV/TXb4ygJ6Ie+YohPp/OtTgwvid8IxTU=; b=HALijdCXqLpg6+
-	XwoNZQGpT+djf0DiHGY0DLPmmL0OQv37X8/Yl26+CnkjmJA8a8dCncQ5/QxiqvBhO3r8h61tQJXvZ
-	f7A/8YJnYXqyoCotIglI4HRImQTlzptQFW8FARrkp4ARrox3XyhqgGj+I3fgYIjQjpypu+XYKFPJH
-	A9+qs8kOOTHJAcctmXckY6vZYIR2DKjKJ08jj2KHzX6CAUuFkOJjqkA9x+xKGw+Gp2D+hTBLYenMv
-	YKWn9vtdZHCKOHPkWRQBB4DXTh1oDjOs8hFG6KajCTvO6cvNewKVoq2+M4Ub1de5csKSFyb7566xZ
-	7lAFbfVK/EcdSoUocjEQ==;
+	List-Owner; bh=KtD+kXekbMNY/WxoeBJrAtLziHiJMGFFBcI5vsv99lU=; b=W6l+udPxo+BId6
+	YMwoHnmaJiqLm+Yix/fXTUen3B70PDL5mS+gMhDAlGBGwBVDi0Spd9W7Y6UG5xIT0X/zgbLbV+CAU
+	6baSQCYEe1rNQoTRLBKZ/jzSNu/LlYMXbuoe+A2OQs/8GaSp7OzsRP5Vah+YEXnq1YLHdw8Kq4xwe
+	Ugu1GhqAs/N9caUguZDUpOW7esL+VSu1J7Iu6SZqFNjCRG4UuXZiH1rvZlPX1203nIwvcUO0IyFbr
+	uHR1q8wYYYOeK4gHqxnIOf3H/glux3SV6kDOIb7EKRBTrCbqW1hTtClVAJ2IYmQFS4r4cC/qnI5xi
+	PRMaijLrRCKdubpEAXWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tesDn-0000000Ev8O-1Uu3;
-	Mon, 03 Feb 2025 08:54:23 +0000
+	id 1teu8n-0000000FAlq-1jcs;
+	Mon, 03 Feb 2025 10:57:21 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tesDl-0000000Ev8G-1oms
+	id 1tetnP-0000000F8Ni-1sSK
 	for linux-phy@bombadil.infradead.org;
-	Mon, 03 Feb 2025 08:54:21 +0000
+	Mon, 03 Feb 2025 10:35:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:CC:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=h/uGUGzt7+mJ3CwBhXgxnoxyshAQovDxkoGYmZUziAU=; b=MZHAH/y+9ahQ6wuM9GrENbOsxv
-	hLbqi9yyQGFJRizYKK1fKIYT/mVcuNu+1f/wzgJm64SwQ1q9cNjrIr2zkTr5xRyr1C+nMLWiovu6e
-	1hqBQVf0GzVjGfU7kEMND9gK1LaX9d+OF8y1GBsZrV7Z2Nbna/PGCLkVgIJVT3Gpp26ooYR1VCNEX
-	YD8Ibp51coNBc5KMC/JWFl8GuQrKTJ6xIbclaID23qxg4oumgqwonFge1Z7Cw+MXjp4U7whKlmHQ+
-	E2P4DMCNC81WyUjLzcx0mirgqByUXXqrCEtF/1VhZXW3blni6IicJkzf5NXjWPJOYMepwltBSBzIA
-	lQcrkvTQ==;
-Received: from [198.47.23.234] (helo=lelvem-ot01.ext.ti.com)
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Cc:To:Subject:Message-ID:
+	Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=ex5bLUHao4DryQAa7tTpAvsACQHE+cn8GK6177LmD9Y=; b=hvv6Wsz+ggZDcn71uAwMGdjBPc
+	46HkJXcC+rHvBDPw2hxffty7/IIII1u0iHRKUo/Bj2AO6ITkcHBtsCUDprZM/Y2u/tpJM/lZSJljU
+	VGJCuYfdzN+xKiumkwjMM0Q06NL7TgsireHsoVhRhhdgv0941xNa29x8VaMt+nWFn7LF3gJhDgl0Q
+	3CTcxqNDIXn5F4dLZRb0W0ZgQn1gsoqh7wDzXDnpQrmclYQtOGGFu77yCxXyJ5ndhoHxUjhIy41Jy
+	x2rwIgUqZrcbHwx4d1L6dn99q3HR67lNYh3u0p4wvK+BubMSYpwEI+xQsmr0m5IUQS17YWxl+31ie
+	7djVVVVg==;
+Received: from mail-vk1-f171.google.com ([209.85.221.171])
 	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tesDh-0000000G1Bj-3akU
+	id 1tetnM-0000000G426-1ZVr
 	for linux-phy@lists.infradead.org;
-	Mon, 03 Feb 2025 08:54:20 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
-	by lelvem-ot01.ext.ti.com (8.15.2/8.15.2) with ESMTPS id 5138rtem2987207
-	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Mon, 3 Feb 2025 02:53:55 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
-	s=ti-com-17Q1; t=1738572835;
-	bh=h/uGUGzt7+mJ3CwBhXgxnoxyshAQovDxkoGYmZUziAU=;
-	h=Date:Subject:To:CC:References:From:In-Reply-To;
-	b=JVUM071FNqkzh0wXZklCFaMxYYwr15bZpDwthXGdcpTEvp9sh7lNFouh1sii6iOwY
-	 15P3BKVgKUn/7oPa89xdtrf4l/v9AQElIaLIMtkaahZ4/IJ84Pj+aEWhhBYb+lrqtu
-	 /aFovwqal0PiVfVuX191fZJn9fOio5XNNIdi1484=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
-	by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 5138rtPt014226
-	(version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 3 Feb 2025 02:53:55 -0600
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23; Mon, 3
- Feb 2025 02:53:54 -0600
-Received: from lelvsmtp6.itg.ti.com (10.180.75.249) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2507.23 via
- Frontend Transport; Mon, 3 Feb 2025 02:53:54 -0600
-Received: from [172.24.227.193] (devarsht.dhcp.ti.com [172.24.227.193] (may be forged))
-	by lelvsmtp6.itg.ti.com (8.15.2/8.15.2) with ESMTP id 5138roF7064092;
-	Mon, 3 Feb 2025 02:53:50 -0600
-Message-ID: <63585990-b670-2a8f-a450-6ade850d53a4@ti.com>
-Date: Mon, 3 Feb 2025 14:23:49 +0530
+	Mon, 03 Feb 2025 10:35:14 +0000
+Received: by mail-vk1-f171.google.com with SMTP id 71dfb90a1353d-5188c6f260cso1328835e0c.1
+        for <linux-phy@lists.infradead.org>; Mon, 03 Feb 2025 02:35:10 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1738578908; x=1739183708;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=ex5bLUHao4DryQAa7tTpAvsACQHE+cn8GK6177LmD9Y=;
+        b=ZrDWBUnb236Pd7Cy6makwHuZIiegQGDjUDljSCCFZ9fd7zwrgwyzcCaCIoU67K7d7B
+         NNAG/9UfYen+BkMhJx8QVQxNkl4MOBT23rc2wfV+2ohfrdLXIDPW8zAXkSw98bmlNJvE
+         8+GNVYyMD6loMbSouo7HHgM+L5tig6rRQhodqWy8fKJDzTmVGaKkwPsCuFom4dpMyoRm
+         mwNWJxY5kfTYWxVOB0nmlZQ6eDc88VZge8ZoDP3OdvP3zJ0RKL5xqR9J5lpsfCJCR2vb
+         AIPSswGj8gNaUdvlVFDa/M1oKlT3ZW9x8u6NlYO9yjiX5D1L7cr9+RGpKfnjqv+pxZ3x
+         6BRA==
+X-Forwarded-Encrypted: i=1; AJvYcCXfXGqTmf1Yegd/UIfYogiR6k+PpHMzMMOY3RI6i1VKFxFjadov3tOnplZ7dbrC1A0YWGOvj84qKSc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy2V5Y/9aFh3SJ4JMo+o2Vhk+GyxoG2ctYMivboGjlpCSiufd98
+	0CxrE6xOgvmfAr11rGptjQmhJHdWivaVnek9Qb2crDoj3sqV5vvFQP4WIk1b
+X-Gm-Gg: ASbGnct5RCsh0pJ9/UPxqJmf6HGn7wTTnrETQrBHKS5mj20986RMaVEg/h4edW0utWz
+	5J+fWj3JIAE9I8Emc/oV7tQMcMzLiWd73s03soUOP8cdckp8kQ44KaZ3EXEKVT03zhmssShpWuk
+	XuC2jUUwk0rmP9H+c3+QaE95Ig0M+GNtd7S0VPpYtqDwBCLnzg6CMYLpQQJ36eyQATVzKRnKoJg
+	SF3qBlDZCQUh1bahc2PorEuPG0leySYpirD3BfL4P04J9cUzTXuBDq7vBx70HFasSNCspKIK55H
+	4yDpP54OhM1bQJLHYVby+Eu+qX/zfJytxBCaLFqZSXJI7TWb1mNJzQ==
+X-Google-Smtp-Source: AGHT+IEUz+la/wl/Nzfix2XVWi457zSvMU7yqjMamNCn3k5iL1GFR4k32A8kIM7Vo/+4VzecaJq/0A==
+X-Received: by 2002:a05:6122:488f:b0:50a:c70b:9453 with SMTP id 71dfb90a1353d-51e9e556b10mr15342923e0c.10.1738578908358;
+        Mon, 03 Feb 2025 02:35:08 -0800 (PST)
+Received: from mail-vs1-f42.google.com (mail-vs1-f42.google.com. [209.85.217.42])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-51eb1d91b6bsm1270669e0c.45.2025.02.03.02.35.07
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 03 Feb 2025 02:35:07 -0800 (PST)
+Received: by mail-vs1-f42.google.com with SMTP id ada2fe7eead31-4afe70b41a8so1216458137.3
+        for <linux-phy@lists.infradead.org>; Mon, 03 Feb 2025 02:35:07 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCW7dgIlnMuF5E1Cm/B/Es8OCtpRJJg88VFeI7Q4pnTHyaZy2ihDT5gSKWcZICWCPMV/kzaIZ5qAms0=@lists.infradead.org
+X-Received: by 2002:a05:6102:3f8d:b0:4b2:45a3:59f1 with SMTP id
+ ada2fe7eead31-4b9a4f1043bmr8045813137.9.1738578907367; Mon, 03 Feb 2025
+ 02:35:07 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: [PATCH] phy: cadence: cdns-dphy: Fix PLL lock and common ready
- poll timeout
-Content-Language: en-US
-To: Tomi Valkeinen <tomi.valkeinen@ideasonboard.com>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <mripard@kernel.org>,
-        <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-CC: <sakari.ailus@linux.intel.com>, <vigneshr@ti.com>,
-        <aradhya.bhatia@linux.dev>, <s-jain1@ti.com>, <r-donadkar@ti.com>,
-        <j-choudhary@ti.com>, <h-shenoy@ti.com>, <praneeth@ti.com>,
-        <u-kumar1@ti.com>
-References: <20241230125319.941372-1-devarsht@ti.com>
- <2cb9ff06-ca8d-4c15-a0bc-e30e065e720b@ideasonboard.com>
-From: Devarsh Thakkar <devarsht@ti.com>
-In-Reply-To: <2cb9ff06-ca8d-4c15-a0bc-e30e065e720b@ideasonboard.com>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+References: <20250131-gpio-set-array-helper-v1-0-991c8ccb4d6e@baylibre.com> <20250131-gpio-set-array-helper-v1-2-991c8ccb4d6e@baylibre.com>
+In-Reply-To: <20250131-gpio-set-array-helper-v1-2-991c8ccb4d6e@baylibre.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 3 Feb 2025 11:34:55 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVqNiquGdEs16GMTA6DPCko=TX84XWJygAorTnQk=+PUA@mail.gmail.com>
+X-Gm-Features: AWEUYZkAG6WZPJcFCeHPNpLZ6MfE7XgXc80j9HTRJ_H6G27t4lJaJg262FoSJlY
+Message-ID: <CAMuHMdVqNiquGdEs16GMTA6DPCko=TX84XWJygAorTnQk=+PUA@mail.gmail.com>
+Subject: Re: [PATCH 02/13] auxdisplay: seg-led-gpio: use gpiods_set_array_value_cansleep
+To: David Lechner <dlechner@baylibre.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
+	Andy Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, 
+	Michael Hennerich <Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, 
+	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, 
+	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
+	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, linux-gpio@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, netdev@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_085418_584102_C422C7D1 
-X-CRM114-Status: GOOD (  17.44  )
+X-CRM114-CacheID: sfid-20250203_103512_562441_135566C7 
+X-CRM114-Status: GOOD (  16.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,61 +115,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVG9taSwKClRoYW5rcyBmb3IgdGhlIHJldmlldy4KT24gMDYvMDEvMjUgMTQ6MjUsIFRvbWkg
-VmFsa2VpbmVuIHdyb3RlOgoKPHNuaXA+Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgY29uc3Qgc3RydWN0IGNkbnNfZHBoeV9jZmcgKmNmZyk7Cj4+ICvCoMKgwqAgdm9pZCAo
-KndhaXRfZm9yX3BsbF9sb2NrKShzdHJ1Y3QgY2Ruc19kcGh5ICpkcGh5KTsKPj4gK8KgwqDCoCB2
-b2lkICgqd2FpdF9mb3JfY21uX3JlYWR5KShzdHJ1Y3QgY2Ruc19kcGh5ICpkcGh5KTsKPiAKPiBJ
-IHRoaW5rIGJvdGggb2YgdGhlc2Ugc2hvdWxkIHJldHVybiBhbiBlcnJvciBjb2RlLgo+CgpZZXMg
-SSB0aG91Z2h0IGFib3V0IHRoaXMgYnV0IGRpZCBub3Qgc2VlIG11Y2ggYmVuZWZpdC4gU2ltaWxh
-ciB0byBvdGhlcgpjZG5zX2RwaHlfb3BzLCB0aGVyZSBpcyBubyBlcnJvciByZWNvdmVyeS9oYW5k
-bGluZyBpbiBjYXNlIG9mIHRpbWVvdXQgZm9yCmFib3ZlIHR3byB3YWl0KiBmdW5jdGlvbnMuIFRo
-ZSBpbXBsZW1lbnRlciBmdW5jdGlvbiBjYW4ganVzdCBwcmludCBhIGRldl9lcnIKd2l0aCB0aW1l
-b3V0IG1lc3NhZ2UgYXMgYmVpbmcgZG9uZSBhbHJlYWR5LiBBbHNvIHRoaXMgbWFpbnRhaW5zIGhv
-bW9nZW5laXR5CndpdGggZXhpc3RpbmcgY2Ruc19kcGh5X29wcyBzdWNoIGFzIHNldF9wbGxfY2Zn
-IHdoaWNoIHVzZWQgdm9pZCBmdW5jdGlvbiBhcwpyZXR1cm4gdmFsdWUuCgo+PiDCoMKgwqDCoMKg
-IHVuc2lnbmVkIGxvbmcgKCpnZXRfd2FrZXVwX3RpbWVfbnMpKHN0cnVjdCBjZG5zX2RwaHkgKmRw
-aHkpOwo+PiDCoCB9Owo+PiDCoCBAQCAtMTkxLDYgKzE5MywxOCBAQCBzdGF0aWMgdW5zaWduZWQg
-bG9uZwo+PiBjZG5zX2RwaHlfZ2V0X3dha2V1cF90aW1lX25zKHN0cnVjdCBjZG5zX2RwaHkgKmRw
-aHkpCj4+IMKgwqDCoMKgwqAgcmV0dXJuIGRwaHktPm9wcy0+Z2V0X3dha2V1cF90aW1lX25zKGRw
-aHkpOwo+PiDCoCB9Cj4+IMKgICtzdGF0aWMgdm9pZCBjZG5zX2RwaHlfd2FpdF9mb3JfcGxsX2xv
-Y2soc3RydWN0IGNkbnNfZHBoeSAqZHBoeSkKPj4gK3sKPj4gK8KgwqDCoCBpZiAoZHBoeS0+b3Bz
-LT53YWl0X2Zvcl9wbGxfbG9jaykKPj4gK8KgwqDCoMKgwqDCoMKgIGRwaHktPm9wcy0+d2FpdF9m
-b3JfcGxsX2xvY2soZHBoeSk7Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyB2b2lkIGNkbnNfZHBoeV93
-YWl0X2Zvcl9jbW5fcmVhZHkoc3RydWN0IGNkbnNfZHBoeSAqZHBoeSkKPj4gK3sKPj4gK8KgwqDC
-oCBpZiAoZHBoeS0+b3BzLT53YWl0X2Zvcl9jbW5fcmVhZHkpCj4+ICvCoMKgwqDCoMKgwqDCoCBk
-cGh5LT5vcHMtPndhaXRfZm9yX2Ntbl9yZWFkeShkcGh5KTsKPj4gK30KPj4gKwo+PiDCoCBzdGF0
-aWMgdW5zaWduZWQgbG9uZyBjZG5zX2RwaHlfcmVmX2dldF93YWtldXBfdGltZV9ucyhzdHJ1Y3Qg
-Y2Ruc19kcGh5ICpkcGh5KQo+PiDCoCB7Cj4+IMKgwqDCoMKgwqAgLyogRGVmYXVsdCB3YWtldXAg
-dGltZSBpcyA4MDAgbnMgKGluIGEgc2ltdWxhdGVkIGVudmlyb25tZW50KS4gKi8KPj4gQEAgLTIx
-Miw3ICsyMjYsNyBAQCBzdGF0aWMgdm9pZCBjZG5zX2RwaHlfcmVmX3NldF9wbGxfY2ZnKHN0cnVj
-dCBjZG5zX2RwaHkKPj4gKmRwaHksCj4+IMKgwqDCoMKgwqAgd3JpdGVsKERQSFlfQ01OX0ZCRElW
-X0ZST01fUkVHIHwKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIERQSFlfQ01OX0ZCRElWX1ZB
-TChmYmRpdl9sb3csIGZiZGl2X2hpZ2gpLAo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZHBo
-eS0+cmVncyArIERQSFlfQ01OX0ZCRElWKTsKPj4gLcKgwqDCoCB3cml0ZWwoRFBIWV9DTU5fUFdN
-X0hJR0goNikgfCBEUEhZX0NNTl9QV01fTE9XKDB4MTAxKSB8Cj4+ICvCoMKgwqAgd3JpdGVsKHJl
-YWRsKGRwaHktPnJlZ3MgKyBEUEhZX0NNTl9QV00pIHwgRFBIWV9DTU5fUFdNX0hJR0goNikgfAo+
-PiBEUEhZX0NNTl9QV01fTE9XKDB4MTAxKSB8Cj4gCj4gVGhpcywgYW5kIHRoZSByZXN0IGluIHRo
-ZSBwYXRjaCwgaXMgcHJvYmFibHkgbm90IGEgZ29vZCBpZGVhLiBZb3UganVzdCAib3IiCj4gdGhl
-IGJpdCBmaWVsZHMsIHdpdGhvdXQgY2xlYXJpbmcgdGhlIGZpZWxkcyBpbiB0aGUgcmVnaXN0ZXIu
-IElmIHRoZSByZWdpc3Rlcgo+IGRlZmF1bHQgdmFsdWVzIGNvbnRhaW4gb25lcyAob3IgbWF5YmUg
-ZS5nLiBib290bG9hZGVyIGhhcyBzZXQgdGhlIHJlZ2lzdGVyCj4gYWxyZWFkeSksIHRoaXMgbWln
-aHQgcmVzdWx0IGluIHdyb25nIHZhbHVlIHdyaXR0ZW4uCj4gCj4gTWF5YmUgYWRkIGEgaGVscGVy
-IHRvIHVwZGF0ZSBiaXQgZmllbGRzLCBzaW1pbGFyIHRvIHJlZ21hcF91cGRhdGVfYml0cygpLiBP
-cgo+IHJlYWQgdGhlIGN1cnJlbnQgcmVnIHZhbHVlIHRvIGEgbG9jYWwsIG1vZGlmeSB0aGVyZSwg
-YW5kIHdyaXRlIGJhY2suCj4gCgpZZXMsIGJ1dCBpZiB3ZSB3YW50IHRvIGJlIHRvdGFsbHkgYWdu
-b3N0aWMgdG8gY3VycmVudCBzdGF0ZSBvZiByZWdpc3Rlcgphc3N1bWluZyBib290bG9hZGVyIG9y
-IHNvbWUgb3RoZXIgZW50aXR5IGhhcyBhbHJlYWR5IHVwZGF0ZWQgc29tZSBiaXRzLCB0aGVuCml0
-IG1lYW5zIHRoYXQgdGhlIHJlc2V0IHZhbHVlcyBmb3Igc29tZSBvciBhbGwgb2YgdGhlIHJlZ2lz
-dGVyIGJpdHMgbWF5IGhhdmUKYWxzbyBiZWVuIG92ZXItd3JpdHRlbi4gSW4gdGhhdCBjYXNlIHJl
-YWQtbW9kaWZ5LXdyaXRlIGJlIGl0IHdpdGgKcmVnbWFwX3VwZGF0ZV9iaXRzIG9yIGFueSBvdGhl
-ciBtZWNoYW5pc20gbWF5IG5vdCBoZWxwIGVpdGhlci4KClRvIGhhbmRsZSB0aGlzLCBJIGFtIHRo
-aW5raW5nIHRvIHVzZSBtYWNyb3MgZm9yIGRlZmF1bHQgcmVzZXQgYml0cyBhbmQgdXNlIGl0CmFs
-d2F5cyB0byBwcm9ncmFtIGNvbmNlcm5lZCByZWdpc3RlcnMuCgpSZWdhcmRzCkRldmFyc2gKCi0t
-IApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi David,
+
+Thanks for your patch!
+
+On Fri, 31 Jan 2025 at 21:24, David Lechner <dlechner@baylibre.com> wrote:
+> Reduce verbosity by using gpiods_set_array_value_cansleep() instead of
+> gpiods_set_array_value_cansleep().
+  ^^^^^^
+  gpiod
+
+Am I really the first to notice you got this wrong in each and every patch? ;-)
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
