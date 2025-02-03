@@ -4,52 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A38E4C02195
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 16:27:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6F1DC02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 16:35:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W/kD9DJbdr4i9aw9iHp7V+8noN1WeH7vmo2oAfREQks=; b=i7wvTXXRGkoFWh
-	MofZo5FHCoHXA3EbLQuBe/mW9u29bLbvN/OvPmgOnmInqN4VoqG4/Q7KREIVw8uTTNhlHX+xTmbRR
-	0rDlpoTrk2r+wHXEfn+BZ42a+jmR7dtdPH7nWoPJdIeJo4pm8rtPTarmKEshjK9wrDch9y2gs2sAB
-	qoCPmm+b3ByYgCaF3DDya+pU4FJu4IW/VSpJ+uTWiGYr5/Yt+MBD2T+QH0ME8K9e6oq4Vwh1Hn8zo
-	JzP9vJDDGLOWmeXt2wPPswikgTkzpmh5eLXoXrSqz8vntgHsXXytE1YMNbafvS0OcS0mt58vbAmx2
-	ZQf0aO8LbFd1EociLdhg==;
+	List-Owner; bh=/lqpVMErnu5+4KW4djx0s7czvGehA+XP5lJdgb2XGmc=; b=S3FYs+8I3zGvAZ
+	JAMuLH1jvzo2twqk7WnOVgJDo1upC53epv2BnAqWCDXteMHleFerA6zr9DGYtMTfo9wUpBY3DS9FL
+	K8Rs8KKk606ljljAzPOOmxomUS+MsLK5YIe0OvJvQNwS6sOsorIjYykJ7uui/IJ3e/yq48s9blQVV
+	garqOncfHgD03bM4VPbypJ6vfMd1OR1MksC9+OeMHZhMGUbPCcOjJPUUXEoiG55svJi4A+sNUz5Kv
+	wFgVBiONiRtx8ioYeslj8oJeTzlS7reRMXxYkz3qEL/CNVLhgfwK8aY73x6yTy+Wm/FwnU2cOmzoz
+	0Uhvwv+DJxJCUkoRUSog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tezIW-0000000FzIy-1iEZ;
-	Mon, 03 Feb 2025 16:27:44 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tezQE-0000000G0ug-264Z;
+	Mon, 03 Feb 2025 16:35:42 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tezIU-0000000FzIN-1rEi
+	id 1tezLN-0000000FzmK-1bpy
 	for linux-phy@lists.infradead.org;
-	Mon, 03 Feb 2025 16:27:43 +0000
+	Mon, 03 Feb 2025 16:30:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id DAB155C6622;
-	Mon,  3 Feb 2025 16:27:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD3A9C4CED2;
-	Mon,  3 Feb 2025 16:27:34 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id E80E75C668B;
+	Mon,  3 Feb 2025 16:30:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A0EE4C4CEE3;
+	Mon,  3 Feb 2025 16:30:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738600061;
-	bh=o6AbJFplz+yW3+X1hMiZzcVvdGfavQSPrFmogFQoF5M=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=nqH2YGW53EEYChZcHqiIE1OHMuGeK2TaXEeYm7mRzLaCy7z+tuZPDFRI/kHoCCeZ8
-	 q3kYQ5SuxGHcnphpqyo7VjbM9EYrjpd4xqZ+5LmAQQPvUtWW2f69ZByixRhrJlBruE
-	 x2IibJ/Mo+W3l8R8ffeyp4JHThb48LzIF8uCiQWKKFEx24bluN8IGy1nHKDlm7Sf8e
-	 OJsVgkcAIEwAas3/VVc6fS92nUbvJxulW6wv1/O9k3yLOzCEpFL5EkR3r7GHqzSvhs
-	 gSyzp3MEGq7nSq2DR353ctSy9CxN5LTZTGT9JidF9bmNR2p4PfCGtTSoMmgOR8UeNY
-	 ccUEkDcPVmKkQ==
-Message-ID: <f7551daa-cce5-47b3-873f-21b9c5026ed2@kernel.org>
-Date: Mon, 3 Feb 2025 17:27:32 +0100
+	s=k20201202; t=1738600240;
+	bh=120P35t0XBzvjLG3h/43PRKPKE7064XAzI5+6M4pGiw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=I4RYxHBV1C2i8NyJw3yvvEnBvI6OimsTgYyNfOOJLiOyLYaCZdfKb0syzuCsAe8r/
+	 g+0BUlYNYiLhqXFzmoMWMKyPNDgsw8ym7jXrTyJxhBZsPODwNaH4sQAkRd7siNEZkM
+	 z3fAZfdZhowW862/u1tZ70Bdoag0gGvT0gzLrqY45dBdSm3McT8xJwyjyJpMBrQvRg
+	 eVQwMLhBneFs2bn/L14LvTeRXK7R/A73NaEQSBvb5kJan7eefvTiXAZMtsPQfGwgrC
+	 YeDU5gETsKK+t0dyoRW+wj2lA84yoNA7tyVXpxIN6mruEiC9nl1XV32cQH6A5h+o98
+	 MSGrhHmDPhb6w==
+Message-ID: <cc1c34f0-0737-469d-a826-2df7f29f6cf3@kernel.org>
+Date: Mon, 3 Feb 2025 17:30:32 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 4/7] arm64: dts: qcom: ipq9574: Reorder reg and
- reg-names
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
+Subject: Re: [PATCH v9 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
  lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
  robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
  kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
@@ -57,9 +55,10 @@ To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
  quic_nsekar@quicinc.com, linux-arm-msm@vger.kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250122063411.3503097-1-quic_varada@quicinc.com>
- <20250122063411.3503097-5-quic_varada@quicinc.com>
- <e697cc99-e96b-4e84-8b70-23c5ef015a0d@oss.qualcomm.com>
+Cc: Praveenkumar I <quic_ipkumar@quicinc.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+References: <20250128062708.573662-1-quic_varada@quicinc.com>
+ <20250128062708.573662-7-quic_varada@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -105,10 +104,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <e697cc99-e96b-4e84-8b70-23c5ef015a0d@oss.qualcomm.com>
+In-Reply-To: <20250128062708.573662-7-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_082742_575323_38DC27C5 
-X-CRM114-Status: GOOD (  12.86  )
+X-CRM114-CacheID: sfid-20250203_083041_512697_78A26FD0 
+X-CRM114-Status: UNSURE (   6.06  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,54 +125,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/01/2025 11:33, Konrad Dybcio wrote:
-> On 22.01.2025 7:34 AM, Varadarajan Narayanan wrote:
->> The 'reg' & 'reg-names' constraints used in the bindings and dtsi
->> are different resulting in dt_bindings_check errors. Re-order
->> them to address following errors.
->>
->> 	arch/arm64/boot/dts/qcom/ipq9574-rdp449.dtb: pcie@20000000: reg-names:0: 'parf' was expected
->>
->> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
->> ---
->>  arch/arm64/boot/dts/qcom/ipq9574.dtsi | 52 +++++++++++++++++----------
->>  1 file changed, 34 insertions(+), 18 deletions(-)
->>
->> diff --git a/arch/arm64/boot/dts/qcom/ipq9574.dtsi b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
->> index 942290028972..d27c55c7f6e4 100644
->> --- a/arch/arm64/boot/dts/qcom/ipq9574.dtsi
->> +++ b/arch/arm64/boot/dts/qcom/ipq9574.dtsi
->> @@ -876,12 +876,16 @@ frame@b128000 {
->>  
->>  		pcie1: pcie@10000000 {
->>  			compatible = "qcom,pcie-ipq9574";
->> -			reg =  <0x10000000 0xf1d>,
->> -			       <0x10000f20 0xa8>,
->> -			       <0x10001000 0x1000>,
->> -			       <0x000f8000 0x4000>,
->> -			       <0x10100000 0x1000>;
->> -			reg-names = "dbi", "elbi", "atu", "parf", "config";
->> +			reg = <0x000f8000 0x4000>,
->> +			      <0x10000000 0xf1d>,
->> +			      <0x10000f20 0xa8>,
->> +			      <0x10001000 0x1000>,
->> +			      <0x10100000 0x1000>;
-> 
-> The unit address (the one after '@' in the node definition) is supposed to
-> match the first 'reg' entry. So you need to update that and reorder the
-> nodes accordingly.
-> 
-> Krzysztof, is this acceptable to pick up given the reg entries are being
-> shuffled around?
+On 28/01/2025 07:27, Varadarajan Narayanan wrote:
+>  
+> @@ -479,6 +519,230 @@ frame@b128000 {
+>  				status = "disabled";
+>  			};
+>  		};
+> +
+> +		pcie1: pcie@18000000 {
+> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
+> +			reg = <0x00088000 0x3000>,
 
-Uh, no, this leads to warnings.
+So as Konrad pointed out now, this was never tested. It's not we who
+should run tests for you. It's you.
 
-BTW, I really hope tools were being used to spot that, not maintainers
-like you or me.
-
-But this is anyway old patchset whose newer version was rejected. There
-is just to many wrong things happening in the process - now one more:
-not running standard tests on this.
+It does not look like you tested the DTS against bindings. Please run
+`make dtbs_check W=1` (see
+Documentation/devicetree/bindings/writing-schema.rst or
+https://www.linaro.org/blog/tips-and-tricks-for-validating-devicetree-sources-with-the-devicetree-schema/
+for instructions).
+Maybe you need to update your dtschema and yamllint. Don't rely on
+distro packages for dtschema and be sure you are using the latest
+released dtschema.
 
 Best regards,
 Krzysztof
