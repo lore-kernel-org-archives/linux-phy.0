@@ -4,60 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B108AC02192
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 19:03:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BEA3C02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 21:08:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bckINyS8s0agBi+am1NM0eZpNcYETvPi23jVsV3x9ws=; b=yTEgWTTRo6OSKx
-	ohB3bcTHifTuR9OQMfwmB7rbYmGYtLNVUQJS/UjqTOXOllOchXuDwOSGjdR3q6yfQx9QL0M+wk8f0
-	T/njOI/UtQUbWAUYV3IRbQxnTtLU8WFScCc55yy8mKi4gl+npaBw3J+BVDW9d+1l9ypCKyetOZIPa
-	Rz8qo+mRT6lTHDW9td6Xu/+2k8/jZ0PWKZ1nEaNE88xB7EM7TU8cd+uDNPvdt/XWNm8fecwZri4ph
-	NwraOeFisBLV4ofOA3CfPgmuJg0thxpA8vGNBXT62wM5UaaoJR8X/BFpvVYD9kakJ+PBiFerYDons
-	uI5oh+17uCHMJFNhwLlw==;
+	List-Owner; bh=XLYehYSyA58W+x8lMroGFDpFRwGLlReLRuyb0atsbbM=; b=HMtblbVAw/Mfce
+	OtpJlAD56BPRukdn++xiF4a9NkK6z4EtkX/OEK0008YYZ/rXbdHXm22l3BLvgR91CaAP9nHESz8ZP
+	l833sV3IrZLtBIdip0WIHICoD3nr8qV+/LGwoQQL405BFXUhAbeGxLumdjm1+CDGg2Zi9asb0LKMY
+	9PfsfVenFlBN7wfpBW1fj0TABh91AnxXFPeyZsft5MKu9atoabrYxrBL7eJySjj6B7D3A2luyA734
+	O2/qHSB1q3cFwvd1S9wJ7K99Uy0luddiYnCimOuV7cI3TtUvI80tklseaOIadHfSW0BbFAdQMj886
+	Fn3DhzSzUXJxZKm7mqrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf1ix-0000000GOOk-1q6o;
-	Mon, 03 Feb 2025 19:03:11 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tf3gR-0000000GcFo-1VNM;
+	Mon, 03 Feb 2025 21:08:43 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf1bd-0000000GLdE-1iA0
-	for linux-phy@lists.infradead.org;
-	Mon, 03 Feb 2025 18:55:38 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id E1EB95C686A;
-	Mon,  3 Feb 2025 18:54:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E93AC4CED2;
-	Mon,  3 Feb 2025 18:55:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738608936;
-	bh=cQdwqEISItC6zM0J7AR1idcKaygDDDljuSsFKU7b5IE=;
-	h=From:To:Cc:Subject:Date:From;
-	b=AZnXAcjPL0qQtwpJhc9Ml5VpiNfyzHKIxktRVr1iD1OYS+KnpQ5zRn8nzNlLoNFWf
-	 lVlYO4CYmWqOynyyR/V7WL3hioXW7UePo6HTzeoK539XsM0+snBEl9EGkzUlNsbFKP
-	 zdwFs5v0bFxj4VQhEFfgv4xKfwWv8lOu/XiRMXfEMA2WS/9aB9UhGZJ4och0iTfcHi
-	 a9pheLf014oopykBTBMsKHNng/La7toyBzRgVgyikOblzH6UG9hXLu6aw1IF9I9A85
-	 YTKnNw3ZiHXVvE36hEJIi1pWGsrJPGRXijtoSSb2dPakndYKnHRnOdsAfO7V2wUrqo
-	 Y1ZAYVN57WVFA==
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] phy: can-transceiver: Drop unnecessary "mux-states" property presence check
-Date: Mon,  3 Feb 2025 12:54:21 -0600
-Message-ID: <20250203185421.3383805-2-robh@kernel.org>
-X-Mailer: git-send-email 2.47.2
+	id 1tf3FD-0000000GYq1-0Xyl;
+	Mon, 03 Feb 2025 20:40:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-Id:Date:Subject:From:Sender:Reply-To:
+	Content-ID:Content-Description:In-Reply-To:References;
+	bh=cPRYEXyFNvtECJ4mCplQhVsIp6sZ4vdXdPjF+3ii7wM=; b=MoD17aXWHKtAChI0UAloraQC2k
+	IGbw95InwLf0PuzwyJ2MQXrZJL+JVUMMuqmjyrPmE8zukz82slFaTvqDekQ5rG9jNiOaT0Yf9vsev
+	KP9VxVKjYKW6EQtxXKizztQLwysDG7zc5sKMBkEPBiD5tzExS09tyT3AA3u20bKMdp/pJ7eKMopaU
+	76UO5hu7UzxKWjyh4MfZPJ1fstr8Vt7ae3DTkvYeJKaxWcwWSzhDcUKEBh8C0KGIzQQFfui/ezWi1
+	vW1FvnUD/WnpOeMuCA2h2JbRyKjWYBv4qUGJuGZTZXu+GXgNqkXb9q7R8Ubkughd6InzwsGYdLGde
+	dxcQwb4g==;
+Received: from layka.disroot.org ([178.21.23.139])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tf3FA-0000000GB6i-1YOs;
+	Mon, 03 Feb 2025 20:40:34 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id CF7B725BBD;
+	Mon,  3 Feb 2025 21:40:30 +0100 (CET)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id LfZRGKwjVLFZ; Mon,  3 Feb 2025 21:40:30 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1738615230; bh=AkPRmblrUOOVXZ91gnc52sI3tgoBiuHlcUurwYVKLY0=;
+	h=From:Subject:Date:To:Cc;
+	b=fHtnpKiDOv28oFR7JVPqLvyt59QVIzHKJmPv7rvnS4zqiQZic7IKkhAHOmyaiGxBB
+	 zIqp9YHq4hlr9JrmwnOfNDPqV1MpXR2YdWgVhjRP1ww35UxCtcuqz0y03VqHy2NhTA
+	 8jRmv1P8XbAxL4uBGpzFRALM1KvNjIizSI3VvGE6VnfBg3mEOHEci25G0s/H7F4jwo
+	 v1WiM+ylflQioY62JwDjCj2sMioiAZ1Mu/cvP+zIYmNLpvIHkc8oOU8CfWH1XHRQQf
+	 isiz+2xYQXsnFaexHnsoZI+7yGSj+WWJeM53Rx+RPfJCBn/oT/OZ+/fYcAEL14ONlQ
+	 OwUuq0AxC120g==
+From: Kaustabh Chakraborty <kauschluss@disroot.org>
+Subject: [PATCH 0/4] Introduce USBDRD-PHY support for Exynos7870 SoC
+Date: Tue, 04 Feb 2025 02:10:11 +0530
+Message-Id: <20250204-exynos7870-usbphy-v1-0-f30a9857efeb@disroot.org>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAKspoWcC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1MDIwNj3dSKyrz8YnMLcwPd0uKkgoxKXbMkSwtLY7M0ExPDFCWgvoKi1LT
+ MCrCZ0bG1tQDfBpWXYwAAAA==
+X-Change-ID: 20250203-exynos7870-usbphy-6b98936f441d
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, 
+ Vivek Gautam <gautam.vivek@samsung.com>, Rob Herring <robh@kernel.org>, 
+ Conor Dooley <conor@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>
+Cc: Sergey Lisov <sleirsgoevy@gmail.com>, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ Kaustabh Chakraborty <kauschluss@disroot.org>
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1738615219; l=1055;
+ i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
+ bh=AkPRmblrUOOVXZ91gnc52sI3tgoBiuHlcUurwYVKLY0=;
+ b=nZ4OheKh0t1I4Djk2ZABEi1usrJZA4r9kSOSyOS3OeA388Wk9tRtYq4a96VjUCnYGi9UjEd+o
+ ar6RvYqtM0IDhMQy3xWW1DmIufvI+ZwlTTxZYZnq2blK5Q0tenvdMNo
+X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
+ pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_105537_484289_2F121C9F 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20250203_204032_607796_B2B3373D 
+X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,54 +104,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-It doesn't matter whether "mux-states" is not present or there is some
-other issue parsing it causing an error. Drop the presence check and
-rework the error handling to ignore anything other than deferred probe.
+Apart from introducing driver support and documentation, this patch series
+also introduces a masking fix and non-functional changes.
 
-Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
-Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+This patch series is a part of Exynos7870 upstreaming.
+
+Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
 ---
-Now a warning in v6.14-rc1, so please apply for 6.14.
+Kaustabh Chakraborty (3):
+      phy: exynos5-usbdrd: fix MPLL_MULTIPLIER and SSC_REFCLKSEL masks in refclk
+      phy: exynos5-usbdrd: use GENMASK and FIELD_PREP for Exynos5 PHY registers
+      dt-bindings: phy: samsung,usb3-drd-phy: add exynos7870-usbdrd-phy compatible
 
-v2:
- - Use brackets on else clause
+Sergey Lisov (1):
+      phy: exynos5-usbdrd: add exynos7870 USBDRD support
+
+ .../bindings/phy/samsung,usb3-drd-phy.yaml         |   2 +
+ drivers/phy/samsung/phy-exynos5-usbdrd.c           | 407 +++++++++++++++++----
+ include/linux/soc/samsung/exynos-regs-pmu.h        |   2 +
+ 3 files changed, 339 insertions(+), 72 deletions(-)
 ---
- drivers/phy/phy-can-transceiver.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+base-commit: df4b2bbff898227db0c14264ac7edd634e79f755
+change-id: 20250203-exynos7870-usbphy-6b98936f441d
 
-diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-index ee4ce4249698..2bec70615449 100644
---- a/drivers/phy/phy-can-transceiver.c
-+++ b/drivers/phy/phy-can-transceiver.c
-@@ -103,6 +103,7 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
- 	struct phy *phy;
- 	struct gpio_desc *standby_gpio;
- 	struct gpio_desc *enable_gpio;
-+	struct mux_state *mux_state;
- 	u32 max_bitrate = 0;
- 	int err;
- 
-@@ -113,13 +114,11 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
- 	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
- 	drvdata = match->data;
- 
--	if (of_property_read_bool(dev->of_node, "mux-states")) {
--		struct mux_state *mux_state;
--
--		mux_state = devm_mux_state_get(dev, NULL);
--		if (IS_ERR(mux_state))
--			return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
--					     "failed to get mux\n");
-+	mux_state = devm_mux_state_get(dev, NULL);
-+	if (IS_ERR(mux_state)) {
-+		if (PTR_ERR(mux_state) == -EPROBE_DEFER)
-+			return PTR_ERR(mux_state);
-+	} else {
- 		can_transceiver_phy->mux_state = mux_state;
- 	}
- 
+Best regards,
 -- 
-2.47.2
+Kaustabh Chakraborty <kauschluss@disroot.org>
 
 
 -- 
