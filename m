@@ -4,44 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9961C02193
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 22:08:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8E6EC02192
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Feb 2025 22:22:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rlESBvTXbwjAWFiTlAvxhtyYJI+croiTtM2qx9DY+5U=; b=G6XNqT4TRX1qm1
-	mIZznmu0S48BOI/seETxi/4L+mOAUkJr4OrsqojdqF8yOTxZkr0Q3V2yia8SZ+rLapjrKc3sGX1ep
-	nZ9oOYwY7HY9IAAsPcrvH8Vdpiyn1EHN275iqjgE36dnO+FhK8XAjhfO+eWi0uNxwWbZDTCzLYaux
-	+0iWit/PCvfI3OBSBFn28eSfltiImgQB2KJhdovWO4cBfiQtXbVbkTnfZpE/iLEGqzjWaqwxW1pXs
-	hS2zOboPp1h1vY1cKx39J6WBghvXtLvVi2q6Tz+BF+3hXDjudsA6pc4qpRMIYp+uzPS/V6QUsvWAN
-	ExjV6FWtP4yHQd3lrO3w==;
+	List-Owner; bh=XqMRQORo7vKUJqbQi/eMgrDeoVFPbNTtTiIbK2vegCY=; b=iBm2DN3oEmJRq6
+	dyaPJ0bhQmyVlewO2lStlwXG5+Cx5M8efcG6h2QpgOzlRUXxBS6aQNI9kbdRn/4EN6NbaRpEss1Ep
+	FAMeT6e99AJXKcLzRWOXC43uBdxuGNqM9B+rjfL+vGqqmbQvZTwaPZX//uJFjyALIs/mB6YGOrypj
+	70PGHogTFVp5IFwC8eMycDyXgET2VL7GNlvQXAZDU22LxN2mEYeijdqtG+lPusYUkgYeS5YtNJYJ/
+	ak7VAqlVod7SqOLFk4aVOnGWz/apD8FAHfPjblOtJfLrKkS8S4knXuURI+Dtc4uRLxRlglXtI/hgH
+	oxtjZFQRXQHLuqzsnjUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf4cj-0000000GlLh-1K4P;
-	Mon, 03 Feb 2025 22:08:57 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tf4pm-0000000GmEM-1D6e;
+	Mon, 03 Feb 2025 22:22:26 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tf4an-0000000GlBl-3sRK;
-	Mon, 03 Feb 2025 22:06:59 +0000
+	id 1tf4np-0000000Gm0o-01yc;
+	Mon, 03 Feb 2025 22:20:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=4owTwwRTiUJNe/UwXGTFceMfkYxJWBm3DVKrkEKXJHw=; b=Gz47kXrfxXNzMiT/jCkm/CZdGa
+	kXzKEYJ1GE9OASJwHNyCjmtSl2a2QaCYfU5Px8nEBHQlJBUwjdZfKpvWGLla3LaFFCyOZ+Sx+/Vl9
+	+K0HeCZqq7nSMYQ4iypUSA7wolx899o9HiWwHCxsF6tMfC3nbxkKYZd7FFd1JJYFNktXyNdio5SLI
+	9hS9hAKOGt7ExshOEbhN+zIjgGAY3lIIhaW0bwNsnUTNEbX3waxNrTrN2FIQB9BUHzXyk4oTRV7hi
+	XTteVKx87Yn9BOxvCeCFBEPc8btcj1oqJ6PE/VK47UNsDZU5rBvoUsJJIBn9fPuj6n4MZKOF12kos
+	b9SrBtZw==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tf4nl-0000000GCXg-3MCa;
+	Mon, 03 Feb 2025 22:20:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id D7C8EA41E93;
-	Mon,  3 Feb 2025 22:05:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C982C4CED2;
-	Mon,  3 Feb 2025 22:06:56 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 53CE65C111B;
+	Mon,  3 Feb 2025 22:19:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 976C1C4CED2;
+	Mon,  3 Feb 2025 22:20:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738620416;
-	bh=OPQj1Abt3xsx43s9Y7uZoXay8fLRxRNIDzNqC0JHfuU=;
+	s=k20201202; t=1738621219;
+	bh=YHnhH8TGTVwn5M7n1rEBKbWfWUvHH1qfDMRyCsjzgVE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=V+hxIZm69ec87/kixoCd7sjM5/QXCqZOvZubHEi9QPXScZMTZ73pCrWL6DBEKZEA0
-	 M0vThFr4EA0C1QmAK6oshEBEuNR4VKhqb5cn6tr+z8ViUlGaUVZa/7EZmP3ljnQ5Al
-	 PxP8pkQnMguBWsQpLERdnpHB3yLFOPRmSQ+ntL8j3JxE+VRzyKGfAfV4/Jz91c9X60
-	 nnvtOvjWLXnZH+k26K5p3FwqFYKfG/v87rpSW7Wtiy14YMl09x380kiBhr93acWWGH
-	 ceQnfBYSe8by5T/CoXXRxE+yLxDxgysHiuKwHCb3z8FyPQyro3HoHa52w9pMaFCCQ1
-	 3YyJ2+kAmEhYw==
-Date: Mon, 3 Feb 2025 16:06:55 -0600
+	b=QnWSwFKLxV/bQd8Pu43Oh88t0R1YK305mRti99NklxLCDM0Lm6X4CobKomvMce48o
+	 CJATxa7dNjXBRUU1KZFnCV8ixqVdgVzC87ccgl7Sq1Bi0+Q/H1rHXLx2RjeP4Wj4qu
+	 OWalL9BWbFK1TyGzAK1hwJI6yXhG7v/m/Hworcp/EhC+IH+Hvt9a3ELy9rzH7cn9D1
+	 vSJbfqK9y80/BMpPk/HjMOsbrg2dc5Ep+DtlZ33gqlvI06JOy3id8tMXJgKbzZhVsz
+	 t8i3JCc/m7Me1D4zc4VSNpUOLsMiYzgwesxFK482/eyNHr4d5FORsSPtW+OJ2ety47
+	 nTXAg33bTK6FA==
+Date: Mon, 3 Feb 2025 16:20:18 -0600
 From: Rob Herring <robh@kernel.org>
 To: Frank Li <Frank.Li@nxp.com>
 Cc: Vinod Koul <vkoul@kernel.org>,
@@ -61,18 +75,20 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
 	linux-media@vger.kernel.org, "Guoniu.zhou" <guoniu.zhou@nxp.com>,
 	Robby Cai <robby.cai@nxp.com>,
-	Robert Chiras <robert.chiras@nxp.com>
-Subject: Re: [PATCH 03/14] dt-bindings: reset: Add reset controller for
- i.MX8QM and i.MX8QXP
-Message-ID: <20250203220655.GA123074-robh@kernel.org>
+	Robert Chiras <robert.chiras@nxp.com>,
+	Mirela Rabulea <mirela.rabulea@nxp.com>,
+	Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>
+Subject: Re: [PATCH 08/14] media: dt-bindings: nxp,imx8mq-mipi-csi2: Add
+ i.MX8QM compatible strings
+Message-ID: <20250203222018.GA226659-robh@kernel.org>
 References: <20250131-8qxp_camera-v1-0-319402ab606a@nxp.com>
- <20250131-8qxp_camera-v1-3-319402ab606a@nxp.com>
+ <20250131-8qxp_camera-v1-8-319402ab606a@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250131-8qxp_camera-v1-3-319402ab606a@nxp.com>
+In-Reply-To: <20250131-8qxp_camera-v1-8-319402ab606a@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250203_140658_025992_AF3BF0F5 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20250203_222022_225767_C9E73B59 
+X-CRM114-Status: GOOD (  14.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,62 +105,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 31, 2025 at 04:33:48PM -0500, Frank Li wrote:
-> Add binding doc for reset controller of i.MX8QM and i.MX8QXP, which use
-> System Controller Firmware(SCU) reset some peripherals, such as CSI.
+On Fri, Jan 31, 2025 at 04:33:53PM -0500, Frank Li wrote:
+> From: Robert Chiras <robert.chiras@nxp.com>
 > 
+> Add compatible strings for i.MX8QM platform. Remove fsl,mipi-phy-gpr from
+> required properties and add 'phys', since i.MX8QM use standard phy
+> interface.
+> 
+> Keep the same restriction for other compatible strings.
+> 
+> Signed-off-by: Robert Chiras <robert.chiras@nxp.com>
+> Reviewed-by: Robby Cai <robby.cai@nxp.com>
+> Reviewed-by: Mirela Rabulea <mirela.rabulea@nxp.com>
+> Reviewed-by: Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>
 > Signed-off-by: Frank Li <Frank.Li@nxp.com>
 > ---
->  .../devicetree/bindings/reset/fsl,imx-scu.yaml     | 35 ++++++++++++++++++++++
->  1 file changed, 35 insertions(+)
+>  .../bindings/media/nxp,imx8mq-mipi-csi2.yaml       | 30 ++++++++++++++++++++--
+>  1 file changed, 28 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-scu.yaml b/Documentation/devicetree/bindings/reset/fsl,imx-scu.yaml
-> new file mode 100644
-> index 0000000000000..6046df8723262
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/reset/fsl,imx-scu.yaml
-> @@ -0,0 +1,35 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/reset/fsl,imx-scu.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> diff --git a/Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml b/Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml
+> index 2a14e3b0e0040..91c4d8fbb1f8c 100644
+> --- a/Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml
+> +++ b/Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml
+> @@ -18,6 +18,8 @@ properties:
+>    compatible:
+>      enum:
+>        - fsl,imx8mq-mipi-csi2
+> +      - fsl,imx8qm-mipi-csi2
+> +      - fsl,imx8ulp-mipi-csi2
+>  
+>    reg:
+>      maxItems: 1
+> @@ -39,13 +41,18 @@ properties:
+>        - const: ui
+>  
+>    power-domains:
+> -    maxItems: 1
+> +    minItems: 1
+> +    maxItems: 2
+>  
+>    resets:
+>      items:
+>        - description: CORE_RESET reset register bit definition
+>        - description: PHY_REF_RESET reset register bit definition
+>        - description: ESC_RESET reset register bit definition
+> +    minItems: 1
 > +
-> +title: Freescale i.MX8 SCU Reset
-> +
-> +maintainers:
-> +  - Frank Li <Frank.Li@nxp.com>
-> +
-> +description:
-> +  i.MX8QM and i.MX8QXP System Controller Firmware(SCU) provide reset for
-> +  some peripheral.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx-scu-reset
-> +
-> +  '#reset-cells':
-> +    const: 1
-> +
-> +required:
-> +  - compatible
-> +  - '#reset-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    reset-controller {
-> +        compatible = "fsl,imx-scu-reset";
-> +        #reset-cells = <1>;
+> +  phys:
+> +    maxItems: 1
+>  
+>    fsl,mipi-phy-gpr:
+>      description: |
+> @@ -113,9 +120,28 @@ required:
+>    - clock-names
+>    - power-domains
+>    - resets
+> -  - fsl,mipi-phy-gpr
+>    - ports
+>  
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,imx8qm-mipi-csi2
+> +              - fsl,imx8ulp-mipi-csi2
+> +    then:
+> +      required:
+> +        - phys
+> +    else:
+> +      properties:
+> +        reg:
+> +          maxItems: 1
 
-This should just be a property in the parent SCU node. You don't need a 
-node for every provider.
+The max is already 1.
 
-We need a binding for the SCU as a whole.
+> +        resets:
+> +          minItems: 3
 
-Rob
+1, 2, or 3 resets is valid for imx8qm and imx8ulp?
+
+2 power-domains are also now valid?
+
+> +      required:
+> +        - fsl,mipi-phy-gpr
+> +
+>  additionalProperties: false
+>  
+>  examples:
+> 
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
