@@ -4,64 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D389C02192
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 10:59:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A39BC02192
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 11:34:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XdxQCS3gCNdJGa590JTMG0g13NXxviKE3rYyoxb+OgM=; b=Wp/22GRctfU1x8
-	Zu8xoWlNQtk8JOl9J7PFjQMm/uGAWIrjieH+WFk87bhNlb5TlVppnBU0SkeoKN4HAEjGBKWJvVRnL
-	yW/DKuxySOXcT0DMEgY8D33QpdY1uIl3IZMUZafn8KSDwi7K3F75CzkBbLv7oX9xyeT8rK+X8PWjN
-	8Yl77OkKPWn4Jw8YoY3VwH8hX5E1Q5WqFMFfYtxypykTdcT19w6TpILl91QTmkW8bh4GUjm++uoL3
-	NVoCxnlb3QUQvHFmK9E+TuS56Giu/X2nyQgoDjRKLRDf/WidL4WhCKj82pxhFtlDKMABAxRL2MHYb
-	o3TJOuGY4HLYLBIf9+bQ==;
+	List-Owner; bh=RonDEbz2XsgWWTu3qLh79tGLwRbUYQRFM+JN8EkhElc=; b=XzCHXQXtWYdLVY
+	2KjIn3IZb8UOK84F+FH1UKKNThnFnIgnYLEyiiet1C9ilksMxTT6RuaCErcZhUNbUs9Rq94U3/zLd
+	7xH/eoDOsDPYTJ5o3A0KzTS78ikLr+KuefI/rUwXE5zuFbADPqlN2HRwF316wJS77u4765SxJ12Y8
+	cP0p6Zw8P8aXA3OZ6S3/kO/S1+s/YwPGiYM089gPFIimMF1YpOeqOeMuGHfPzrH3g0i+8+fcY4yah
+	2xZQJlZb0yw7+07kT/v1+Im5OVslLbpYwIXdtdrbr96WO84fTi+tObkfLUSKk0B7vhDcF2eqSBhDs
+	ff4pm54/Tk2iufgzbqpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfd8K-00000002yxx-43EN;
-	Wed, 05 Feb 2025 10:59:52 +0000
-Received: from mail-m19731117.qiye.163.com ([220.197.31.117])
+	id 1tfdfq-000000034BV-3qRt;
+	Wed, 05 Feb 2025 11:34:30 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfd1i-00000002xHs-3yWD;
-	Wed, 05 Feb 2025 10:53:05 +0000
-Received: from zyb-HP-ProDesk-680-G2-MT.. (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id a3bebbd2;
-	Wed, 5 Feb 2025 18:52:59 +0800 (GMT+08:00)
-From: Damon Ding <damon.ding@rock-chips.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	heiko@sntech.de
-Cc: dmitry.baryshkov@linaro.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Damon Ding <damon.ding@rock-chips.com>
-Subject: [PATCH v7 4/4] phy: phy-rockchip-samsung-hdptx: Add eDP mode support for RK3588
-Date: Wed,  5 Feb 2025 18:51:57 +0800
-Message-Id: <20250205105157.580060-5-damon.ding@rock-chips.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250205105157.580060-1-damon.ding@rock-chips.com>
-References: <20250205105157.580060-1-damon.ding@rock-chips.com>
+	id 1tfdfg-000000034AW-0GcC
+	for linux-phy@lists.infradead.org;
+	Wed, 05 Feb 2025 11:34:21 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51581bHi028967;
+	Wed, 5 Feb 2025 11:34:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/r7T4fDq3LZubC8RDLJdYxwH+NFLmG0PBawXPTn27Ro=; b=eOKzV2PehrWHS98J
+	ZRcpcXK8mm2YXcCudCgpqATU9GEOBu1ygjmI7a+T3gvuh92/YJs5F0VqlZf6eMAF
+	/gSEEI1dSyY0zkFfBUJ7vKs0XDH2biN28jcNJMZbpfAi0Bj2kw6/tH7xQxtIwrxI
+	DaQnznL2UtqVaLTL/DNWBntRKsxotMUVEUkEXlflyI+eJ0ZvHDwbz/NsM3jvIUls
+	aqp1uwoqPAWD+t7lmYCJ5Vrc3eNpVi6CH9RItnBTI9Dc89yoxU4JnpX1gazyJE/6
+	XgoETbtkJfqKOILheAgq9DD5mQqjQJqi+vPP8N+wv5h+lDZ1chLRRoRW8zSYZHrL
+	y+7+/A==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44m445rh0m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 05 Feb 2025 11:34:11 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 515BYADF009039
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 5 Feb 2025 11:34:10 GMT
+Received: from [10.218.7.247] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 5 Feb 2025
+ 03:34:02 -0800
+Message-ID: <a4162070-f5cd-464a-b814-42c923e63784@quicinc.com>
+Date: Wed, 5 Feb 2025 17:03:53 +0530
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGRpJSFZCTU8eSR0aHx9MThhWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a94d5bde4ca03a3kunma3bebbd2
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Mio6Egw*MjIRKAoNOUwdGDwi
-	Ny8aCR5VSlVKTEhDTE5JTENLTEpNVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFPS0NMTjcG
-DKIM-Signature: a=rsa-sha256;
-	b=NmSqdVmXHL6MoKmO4wMUh7lA1QkOc+xpgSndiJnyMr/KJ63Wj6/G5v/igTT7ZJiOK+w2m85FYofQi0SK2+5uNeedPjO2NEgdtEL5xZUJgmVupXYLb2uJMr96RyutxpRrn8qoUhBDPBCfGikuB2HLPDI09TU424PzZJU0KB8I27U=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=1Dy+GqkP+1dDbNnMaiWNvtOxMHp6HgbNJPZpAQHK7iA=;
-	h=date:mime-version:subject:message-id:from;
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 2/5] phy: qcom-qmp-ufs: Add PHY Configuration support for
+ SM8750
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Melody Olvera
+	<quic_molvera@quicinc.com>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Manivannan Sadhasivam
+	<manivannan.sadhasivam@linaro.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>,
+        Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Satya Durga Srinivasu Prabhala
+	<quic_satyap@quicinc.com>,
+        Trilok Soni <quic_tsoni@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
+        Manish Pandey <quic_mapa@quicinc.com>
+References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
+ <20250113-sm8750_ufs_master-v1-2-b3774120eb8c@quicinc.com>
+ <vry7yib4jtvyc5baruetqb2msy4j4ityv2s6z5smrz6rqjfb5l@xoharscfhz5n>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <vry7yib4jtvyc5baruetqb2msy4j4ityv2s6z5smrz6rqjfb5l@xoharscfhz5n>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: F_IFJN1_R4m5TXxqdwM-k7Zrs1qujPH2
+X-Proofpoint-GUID: F_IFJN1_R4m5TXxqdwM-k7Zrs1qujPH2
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-05_05,2025-02-05_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ lowpriorityscore=0 clxscore=1015 adultscore=0 phishscore=0 mlxscore=0
+ bulkscore=0 priorityscore=1501 spamscore=0 impostorscore=0 malwarescore=0
+ suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502050093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_025303_366120_470AC870 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20250205_033420_235096_7B5FF552 
+X-CRM114-Status: GOOD (  16.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,1143 +113,389 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHY is based on a Samsung IP block that supports HDMI 2.1, and eDP
-1.4b. RK3588 integrates the Analogix eDP 1.3 TX controller IP and the
-HDMI/eDP TX Combo PHY to support eDP display.
 
-Add basic support for RBR/HBR/HBR2 link rates, and the voltage swing and
-pre-emphasis configurations of each link rate are set according to the
-eDP 1.3 requirements.
 
-Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+On 1/14/2025 4:19 PM, Dmitry Baryshkov wrote:
+> On Mon, Jan 13, 2025 at 01:46:25PM -0800, Melody Olvera wrote:
+>> From: Nitin Rawat <quic_nitirawa@quicinc.com>
+>>
+>> Add SM8750 specific register layout and table configs. The serdes
+>> TX RX register offset has changed for SM8750 and hence keep UFS
+>> specific serdes offsets in a dedicated header file.
+>>
+>> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
+>> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
+>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h |  12 ++
+>>   .../qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v7.h    |  68 ++++++++
+>>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c            | 174 ++++++++++++++++++++-
+>>   3 files changed, 253 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
+>> index 328c6c0b0b09ae4ff5bf14e846772e6d0f31ce5a..aa2278f9377408b3c602f6fa0de5021804f21f52 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v6.h
+>> @@ -86,4 +86,16 @@
+>>   #define QSERDES_V6_COM_CMN_STATUS				0x1d0
+>>   #define QSERDES_V6_COM_C_READY_STATUS				0x1f8
+>>   
+>> +#define QSERDES_V6_COM_ADAPTIVE_ANALOG_CONFIG			0x268
+>> +#define QSERDES_V6_COM_CP_CTRL_ADAPTIVE_MODE0			0x26c
+>> +#define QSERDES_V6_COM_PLL_RCCTRL_ADAPTIVE_MODE0		0x270
+>> +#define QSERDES_V6_COM_PLL_CCTRL_ADAPTIVE_MODE0			0x274
+>> +#define QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0		0x58
+>> +
+>> +#define QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0		0x5c
+>> +#define QSERDES_V6_COM_CP_CTRL_ADAPTIVE_MODE1			0x278
+>> +#define QSERDES_V6_COM_PLL_RCCTRL_ADAPTIVE_MODE1		0x27c
+>> +#define QSERDES_V6_COM_PLL_CCTRL_ADAPTIVE_MODE1			0x280
+>> +#define QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE1		0x50
+>> +#define QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE1		0x54
+>>   #endif
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v7.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v7.h
+>> new file mode 100644
+>> index 0000000000000000000000000000000000000000..73b3857e0277ce6cdbe658066772172a94f25d6e
+>> --- /dev/null
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-ufs-v7.h
+>> @@ -0,0 +1,68 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/*
+>> + * Copyright (c) 2024, Linaro Limited
+>> + */
+>> +
+>> +#ifndef QCOM_PHY_QMP_QSERDES_TXRX_UFS_V7_H_
+>> +#define QCOM_PHY_QMP_QSERDES_TXRX_UFS_V7_H_
+>> +
+>> +#define QSERDES_UFS_V7_TX_RES_CODE_LANE_TX				0x28
+>> +#define QSERDES_UFS_V7_TX_RES_CODE_LANE_RX				0x2c
+>> +#define QSERDES_UFS_V7_TX_RES_CODE_LANE_OFFSET_TX			0x30
+>> +#define QSERDES_UFS_V7_TX_RES_CODE_LANE_OFFSET_RX			0x34
+>> +#define QSERDES_UFS_V7_TX_LANE_MODE_1					0x7c
+>> +#define QSERDES_UFS_V7_TX_FR_DCC_CTRL					0x108
+>> +
+>> +#define QSERDES_UFS_V7_RX_UCDR_SO_SATURATION				0x28
+>> +#define QSERDES_UFS_V7_RX_UCDR_PI_CTRL1					0x58
+>> +#define QSERDES_UFS_V7_RX_TERM_BW_CTRL0					0xC4
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B0				0x218
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B1				0x21C
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B2				0x220
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B3				0x224
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B4				0x228
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B6				0x230
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE_0_1_B7				0x234
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE2_B3					0x248
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE2_B6					0x254
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE2_B7					0x258
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B0					0x260
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B1					0x264
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B2					0x268
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B3					0x26C
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B4					0x270
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B5					0x274
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B7					0x27C
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE3_B8					0x280
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B0				0x284
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B1				0x288
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B2				0x28C
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B3				0x290
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B4				0x294
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B5				0x298
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B6				0x29C
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SA_B7				0x2A0
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B0				0x2A8
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B1				0x2AC
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B2				0x2B0
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B3				0x2B4
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B4				0x2B8
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B5				0x2BC
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B6				0x2C0
+>> +#define QSERDES_UFS_V7_RX_MODE_RATE4_SB_B7				0x2C4
+>> +#define QSERDES_UFS_V7_RX_DLL0_FTUNE_CTRL				0x348
+>> +#define QSERDES_UFS_V7_RX_SIGDET_CAL_TRIM				0x380
+>> +#define QSERDES_UFS_V7_RX_INTERFACE_MODE				0x1F0
+>> +#define QSERDES_UFS_V7_RX_UCDR_FO_GAIN_RATE2				0xD4
+>> +#define QSERDES_UFS_V7_RX_UCDR_FO_GAIN_RATE4				0xDC
+>> +#define QSERDES_UFS_V7_RX_UCDR_SO_GAIN_RATE4				0xF0
+>> +#define QSERDES_UFS_V7_RX_UCDR_PI_CONTROLS				0xF4
+>> +#define QSERDES_UFS_V7_RX_UCDR_FASTLOCK_COUNT_HIGH_RATE4		0x54
+>> +#define QSERDES_UFS_V7_RX_UCDR_FASTLOCK_FO_GAIN_RATE4			0x10
+>> +#define QSERDES_UFS_V7_RX_UCDR_FASTLOCK_SO_GAIN_RATE4			0x24
+>> +#define QSERDES_UFS_V7_RX_EQ_OFFSET_ADAPTOR_CNTRL1			0x1CC
+>> +#define QSERDES_UFS_V7_RX_OFFSET_ADAPTOR_CNTRL3				0x1D4
+>> +#define QSERDES_UFS_V7_RX_EQU_ADAPTOR_CNTRL4				0x1B4
+>> +#define QSERDES_UFS_V7_RX_VGA_CAL_MAN_VAL				0x178
+> 
+> - Lowercase hex
+> - Sort RX by the register offset
 
----
+Sure Will take care in next patchset.
 
-Changes in v2:
-- Add the module author
+> 
+> 
+>> +
+>> +#endif
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>> index d964bdfe870029226482f264c78a27d0ec43bf2b..a1695b368fe7622bf8663343d0241b4d0d40ab59 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+>> @@ -31,6 +31,7 @@
+>>   #include "phy-qcom-qmp-pcs-ufs-v6.h"
+>>   
+>>   #include "phy-qcom-qmp-qserdes-txrx-ufs-v6.h"
+>> +#include "phy-qcom-qmp-qserdes-txrx-ufs-v7.h"
+>>   
+>>   /* QPHY_PCS_READY_STATUS bit */
+>>   #define PCS_READY				BIT(0)
+>> @@ -949,6 +950,132 @@ static const struct qmp_phy_init_tbl sm8650_ufsphy_g5_pcs[] = {
+>>   	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSG5_SYNC_WAIT_TIME, 0x9e),
+>>   };
+>>   
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_serdes[] = {
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0xD9),
+> 
+> Lowercase hex
 
-Changes in v3:
-- Split this patch into two, one for correction and the other for
-  extension
+Sure Will take care in next patchset.
+> 
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x11),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_EN, 0x01),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_CFG, 0x60),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO, 0x1F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_IVCO_MODE1, 0x1F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_IETRIM, 0x07),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_IPTRIM, 0x20),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_CTRL, 0x40),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADAPTIVE_ANALOG_CONFIG, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x41),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x18),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x14),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_ADAPTIVE_MODE0, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCCTRL_ADAPTIVE_MODE0, 0x18),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_ADAPTIVE_MODE0, 0x14),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x7F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x92),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x1E),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x4C),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x18),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x14),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_ADAPTIVE_MODE1, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCCTRL_ADAPTIVE_MODE1, 0x18),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_ADAPTIVE_MODE1, 0x14),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x99),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x07),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0xBE),
+>> +	QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x23),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_tx[] = {
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_TX_LANE_MODE_1, 0x00),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_TX_RES_CODE_LANE_OFFSET_TX, 0x07),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_TX_RES_CODE_LANE_OFFSET_RX, 0x17),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_rx[] = {
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_FO_GAIN_RATE2, 0x0C),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_FO_GAIN_RATE4, 0x0C),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_SO_GAIN_RATE4, 0x04),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_EQ_OFFSET_ADAPTOR_CNTRL1, 0x14),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_PI_CONTROLS, 0x07),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_OFFSET_ADAPTOR_CNTRL3, 0x0E),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_FASTLOCK_COUNT_HIGH_RATE4, 0x02),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_FASTLOCK_FO_GAIN_RATE4, 0x1C),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_FASTLOCK_SO_GAIN_RATE4, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_VGA_CAL_MAN_VAL, 0x8E),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_EQU_ADAPTOR_CNTRL4, 0x0F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B0, 0xCE),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B1, 0xCE),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B2, 0x18),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B3, 0x1A),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B4, 0x0F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B6, 0x60),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE_0_1_B7, 0x62),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE2_B3, 0x9A),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE2_B6, 0xE2),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE2_B7, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B0, 0x1B),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B1, 0x1B),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B2, 0x98),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B3, 0x9B),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B4, 0x2A),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B5, 0x12),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B7, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE3_B8, 0x01),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B0, 0x93),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B1, 0x93),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B2, 0x60),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B3, 0x99),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B4, 0x5F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B5, 0x92),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B6, 0xE3),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SA_B7, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B0, 0x9B),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B1, 0x9B),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B2, 0x60),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B3, 0x99),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B4, 0x5F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B5, 0x92),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B6, 0xFB),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_MODE_RATE4_SB_B7, 0x06),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_SO_SATURATION, 0x1F),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_UCDR_PI_CTRL1, 0x94),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_TERM_BW_CTRL0, 0xFA),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_DLL0_FTUNE_CTRL, 0x30),
+>> +	QMP_PHY_INIT_CFG(QSERDES_UFS_V7_RX_SIGDET_CAL_TRIM, 0x77),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_pcs[] = {
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_MULTI_LANE_CTRL1, 0x02),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_MID_TERM_CTRL1, 0x43),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PCS_CTRL1, 0x40),
+> 
+> Why does SM8650 have 0xc1 here?
 
-Changes in v4:
-- Add link_rate and lanes parameters in struct rk_hdptx_phy to store the
-  phy_configure() result for &phy_configure_opts.dp.link_rate and
-  &phy_configure_opts.dp.lanes
+SM8750 phy is different from SM8650 and hence it is using different phy 
+calibration setting. This value is as per Hardware programming guide.
 
-Changes in v5:
-- Reuse the existing functions rk_hdptx_phy_consumer_get() and
-  rk_hdptx_phy_consumer_put()
-- Return 0 instead of -EINVAL in rk_hdptx_phy_configure()
-- Remove rk_hdptx_phy_lane_disable() and related check of 0 lanes
-- Mention the design details in the commit message
-- Remove unnecessary rk_hdptx_phy_set_mode()
----
- .../phy/rockchip/phy-rockchip-samsung-hdptx.c | 879 +++++++++++++++++-
- 1 file changed, 869 insertions(+), 10 deletions(-)
+> 
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_LARGE_AMP_DRV_LVL, 0x0F),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_SIGDET_CTRL2, 0x68),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_POST_EMP_LVL_S4, 0x0E),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_POST_EMP_LVL_S5, 0x12),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_POST_EMP_LVL_S6, 0x15),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_POST_EMP_LVL_S7, 0x19),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_g4_pcs[] = {
+> 
+> Missing QPHY_V6_PCS_UFS_PLL_CNTL, then it becomes sm8650_ufsphy_g4_pcs
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 5aec854c74b5..e318a46b8be2 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -25,6 +25,7 @@
- #define HDPTX_I_PLL_EN			BIT(7)
- #define HDPTX_I_BIAS_EN			BIT(6)
- #define HDPTX_I_BGR_EN			BIT(5)
-+#define HDPTX_MODE_SEL			BIT(0)
- #define GRF_HDPTX_STATUS		0x80
- #define HDPTX_O_PLL_LOCK_DONE		BIT(3)
- #define HDPTX_O_PHY_CLK_RDY		BIT(2)
-@@ -44,6 +45,7 @@
- #define LANE_REG(n)			HDTPX_REG(n, 0300, 062d)
- 
- /* CMN_REG(0008) */
-+#define OVRD_LCPLL_EN_MASK		BIT(7)
- #define LCPLL_EN_MASK			BIT(6)
- #define LCPLL_LCVCO_MODE_EN_MASK	BIT(4)
- /* CMN_REG(001e) */
-@@ -61,28 +63,88 @@
- /* CMN_REG(002f) */
- #define LCPLL_SDC_DENOMINATOR_MASK	GENMASK(7, 2)
- #define LCPLL_SDC_NDIV_RSTN_MASK	BIT(0)
-+/* CMN_REG(003c) */
-+#define ANA_LCPLL_RESERVED7_MASK	BIT(7)
- /* CMN_REG(003d) */
-+#define OVRD_ROPLL_EN_MASK		BIT(7)
-+#define ROPLL_EN_MASK			BIT(6)
- #define ROPLL_LCVCO_EN_MASK		BIT(4)
-+/* CMN_REG(0046) */
-+#define ROPLL_ANA_CPP_CTRL_COARSE_MASK	GENMASK(7, 4)
-+#define ROPLL_ANA_CPP_CTRL_FINE_MASK	GENMASK(3, 0)
-+/* CMN_REG(0047) */
-+#define ROPLL_ANA_LPF_C_SEL_COARSE_MASK	GENMASK(5, 3)
-+#define ROPLL_ANA_LPF_C_SEL_FINE_MASK	GENMASK(2, 0)
- /* CMN_REG(004e) */
- #define ROPLL_PI_EN_MASK		BIT(5)
-+/* CMN_REG(0051) */
-+#define ROPLL_PMS_MDIV_MASK		GENMASK(7, 0)
-+/* CMN_REG(0055) */
-+#define ROPLL_PMS_MDIV_AFC_MASK		GENMASK(7, 0)
-+/* CMN_REG(0059) */
-+#define ANA_ROPLL_PMS_PDIV_MASK		GENMASK(7, 4)
-+#define ANA_ROPLL_PMS_REFDIV_MASK	GENMASK(3, 0)
-+/* CMN_REG(005a) */
-+#define ROPLL_PMS_SDIV_RBR_MASK		GENMASK(7, 4)
-+#define ROPLL_PMS_SDIV_HBR_MASK		GENMASK(3, 0)
-+/* CMN_REG(005b) */
-+#define ROPLL_PMS_SDIV_HBR2_MASK	GENMASK(7, 4)
- /* CMN_REG(005c) */
- #define ROPLL_PMS_IQDIV_RSTN_MASK	BIT(5)
- /* CMN_REG(005e) */
- #define ROPLL_SDM_EN_MASK		BIT(6)
-+#define OVRD_ROPLL_SDM_RSTN_MASK	BIT(5)
-+#define ROPLL_SDM_RSTN_MASK		BIT(4)
- #define ROPLL_SDC_FRAC_EN_RBR_MASK	BIT(3)
- #define ROPLL_SDC_FRAC_EN_HBR_MASK	BIT(2)
- #define ROPLL_SDC_FRAC_EN_HBR2_MASK	BIT(1)
- #define ROPLL_SDM_FRAC_EN_HBR3_MASK	BIT(0)
-+/* CMN_REG(005f) */
-+#define OVRD_ROPLL_SDC_RSTN_MASK	BIT(5)
-+#define ROPLL_SDC_RSTN_MASK		BIT(4)
-+/* CMN_REG(0060)  */
-+#define ROPLL_SDM_DENOMINATOR_MASK	GENMASK(7, 0)
- /* CMN_REG(0064) */
- #define ROPLL_SDM_NUM_SIGN_RBR_MASK	BIT(3)
-+#define ROPLL_SDM_NUM_SIGN_HBR_MASK	BIT(2)
-+#define ROPLL_SDM_NUM_SIGN_HBR2_MASK	BIT(1)
-+/* CMN_REG(0065) */
-+#define ROPLL_SDM_NUM_MASK		GENMASK(7, 0)
- /* CMN_REG(0069) */
- #define ROPLL_SDC_N_RBR_MASK		GENMASK(2, 0)
-+/* CMN_REG(006a) */
-+#define ROPLL_SDC_N_HBR_MASK		GENMASK(5, 3)
-+#define ROPLL_SDC_N_HBR2_MASK		GENMASK(2, 0)
-+/* CMN_REG(006b) */
-+#define ROPLL_SDC_N_HBR3_MASK		GENMASK(3, 1)
-+/* CMN_REG(006c) */
-+#define ROPLL_SDC_NUM_MASK		GENMASK(5, 0)
-+/* cmn_reg0070 */
-+#define ROPLL_SDC_DENO_MASK		GENMASK(5, 0)
- /* CMN_REG(0074) */
-+#define OVRD_ROPLL_SDC_NDIV_RSTN_MASK	BIT(3)
- #define ROPLL_SDC_NDIV_RSTN_MASK	BIT(2)
-+#define OVRD_ROPLL_SSC_EN_MASK		BIT(1)
- #define ROPLL_SSC_EN_MASK		BIT(0)
-+/* CMN_REG(0075) */
-+#define ANA_ROPLL_SSC_FM_DEVIATION_MASK	GENMASK(5, 0)
-+/* CMN_REG(0076) */
-+#define ANA_ROPLL_SSC_FM_FREQ_MASK	GENMASK(6, 2)
-+/* CMN_REG(0077) */
-+#define ANA_ROPLL_SSC_CLK_DIV_SEL_MASK	GENMASK(6, 3)
- /* CMN_REG(0081) */
- #define OVRD_PLL_CD_CLK_EN_MASK		BIT(8)
-+#define ANA_PLL_CD_TX_SER_RATE_SEL_MASK	BIT(3)
-+#define ANA_PLL_CD_HSCLK_WEST_EN_MASK	BIT(1)
- #define ANA_PLL_CD_HSCLK_EAST_EN_MASK	BIT(0)
-+/* CMN_REG(0082) */
-+#define ANA_PLL_CD_VREG_GAIN_CTRL_MASK	GENMASK(3, 0)
-+/* CMN_REG(0083) */
-+#define ANA_PLL_CD_VREG_ICTRL_MASK	GENMASK(6, 5)
-+/* CMN_REG(0084) */
-+#define PLL_LCRO_CLK_SEL_MASK		BIT(5)
-+/* CMN_REG(0085) */
-+#define ANA_PLL_SYNC_LOSS_DET_MODE_MASK	GENMASK(1, 0)
- /* CMN_REG(0086) */
- #define PLL_PCG_POSTDIV_SEL_MASK	GENMASK(7, 4)
- #define PLL_PCG_CLK_SEL_MASK		GENMASK(3, 1)
-@@ -92,11 +154,14 @@
- #define ANA_PLL_TX_HS_CLK_EN_MASK	BIT(2)
- /* CMN_REG(0089) */
- #define LCPLL_ALONE_MODE_MASK		BIT(1)
-+/* CMN_REG(0095) */
-+#define DP_TX_LINK_BW_MASK		GENMASK(1, 0)
- /* CMN_REG(0097) */
- #define DIG_CLK_SEL_MASK		BIT(1)
- #define LCPLL_REF			BIT(1)
- #define ROPLL_REF			0
- /* CMN_REG(0099) */
-+#define SSC_EN_MASK			GENMASK(7, 6)
- #define CMN_ROPLL_ALONE_MODE_MASK	BIT(2)
- #define ROPLL_ALONE_MODE		BIT(2)
- /* CMN_REG(009a) */
-@@ -118,6 +183,8 @@
- /* SB_REG(0104) */
- #define OVRD_SB_EN_MASK			BIT(5)
- #define SB_EN_MASK			BIT(4)
-+#define OVRD_SB_AUX_EN_MASK		BIT(1)
-+#define SB_AUX_EN_MASK			BIT(0)
- /* SB_REG(0105) */
- #define OVRD_SB_EARC_CMDC_EN_MASK	BIT(6)
- #define SB_EARC_CMDC_EN_MASK		BIT(5)
-@@ -126,6 +193,8 @@
- #define ANA_SB_TX_LLVL_PROG_MASK	GENMASK(6, 4)
- /* SB_REG(0109) */
- #define ANA_SB_DMRX_AFC_DIV_RATIO_MASK	GENMASK(2, 0)
-+/* SB_REG(010d) */
-+#define ANA_SB_DMRX_LPBK_DATA_MASK	BIT(4)
- /* SB_REG(010f) */
- #define OVRD_SB_VREG_EN_MASK		BIT(7)
- #define SB_VREG_EN_MASK			BIT(6)
-@@ -133,6 +202,7 @@
- #define SB_VREG_LPF_BYPASS_MASK		BIT(4)
- #define ANA_SB_VREG_GAIN_CTRL_MASK	GENMASK(3, 0)
- /* SB_REG(0110) */
-+#define ANA_SB_VREG_OUT_SEL_MASK	BIT(1)
- #define ANA_SB_VREG_REF_SEL_MASK	BIT(0)
- /* SB_REG(0113) */
- #define SB_RX_RCAL_OPT_CODE_MASK	GENMASK(5, 4)
-@@ -147,13 +217,24 @@
- #define AFC_RSTN_DELAY_TIME_MASK	GENMASK(6, 4)
- /* SB_REG(0117) */
- #define FAST_PULSE_TIME_MASK		GENMASK(3, 0)
-+/* SB_REG(0118) */
-+#define SB_TG_EARC_DMRX_RECVRD_CLK_CNT_MASK	GENMASK(7, 0)
-+/* SB_REG(011a) */
-+#define SB_TG_CNT_RUN_NO_7_0_MASK	GENMASK(7, 0)
- /* SB_REG(011b) */
- #define SB_EARC_SIG_DET_BYPASS_MASK	BIT(4)
- #define SB_AFC_TOL_MASK			GENMASK(3, 0)
-+/* SB_REG(011c) */
-+#define SB_AFC_STB_NUM_MASK		GENMASK(3, 0)
-+/* SB_REG(011d) */
-+#define SB_TG_OSC_CNT_MIN_MASK		GENMASK(7, 0)
-+/* SB_REG(011e) */
-+#define SB_TG_OSC_CNT_MAX_MASK		GENMASK(7, 0)
- /* SB_REG(011f) */
- #define SB_PWM_AFC_CTRL_MASK		GENMASK(7, 2)
- #define SB_RCAL_RSTN_MASK		BIT(1)
- /* SB_REG(0120) */
-+#define SB_AUX_EN_IN_MASK		BIT(7)
- #define SB_EARC_EN_MASK			BIT(1)
- #define SB_EARC_AFC_EN_MASK		BIT(2)
- /* SB_REG(0123) */
-@@ -165,27 +246,74 @@
- #define HDMI_MODE			BIT(2)
- #define HDMI_TMDS_FRL_SEL		BIT(1)
- /* LNTOP_REG(0206) */
-+#define DATA_BUS_WIDTH_MASK		GENMASK(2, 1)
- #define DATA_BUS_WIDTH_SEL_MASK		BIT(0)
- #define DATA_BUS_36_40			BIT(0)
- /* LNTOP_REG(0207) */
- #define LANE_EN_MASK			0xf
- #define ALL_LANE_EN			0xf
- 
-+/* LANE_REG(0301) */
-+#define OVRD_LN_TX_DRV_EI_EN_MASK	BIT(7)
-+#define LN_TX_DRV_EI_EN_MASK		BIT(6)
-+/* LANE_REG(0303) */
-+#define OVRD_LN_TX_DRV_LVL_CTRL_MASK	BIT(5)
-+#define LN_TX_DRV_LVL_CTRL_MASK		GENMASK(4, 0)
-+/* LANE_REG(0304)  */
-+#define OVRD_LN_TX_DRV_POST_LVL_CTRL_MASK	BIT(4)
-+#define LN_TX_DRV_POST_LVL_CTRL_MASK	GENMASK(3, 0)
-+/* LANE_REG(0305) */
-+#define OVRD_LN_TX_DRV_PRE_LVL_CTRL_MASK	BIT(6)
-+#define LN_TX_DRV_PRE_LVL_CTRL_MASK	GENMASK(5, 2)
-+/* LANE_REG(0306) */
-+#define LN_ANA_TX_DRV_IDRV_IDN_CTRL_MASK	GENMASK(7, 5)
-+#define LN_ANA_TX_DRV_IDRV_IUP_CTRL_MASK	GENMASK(4, 2)
-+#define LN_ANA_TX_DRV_ACCDRV_EN_MASK	BIT(0)
-+/* LANE_REG(0307) */
-+#define LN_ANA_TX_DRV_ACCDRV_POL_SEL_MASK	BIT(6)
-+#define LN_ANA_TX_DRV_ACCDRV_CTRL_MASK	GENMASK(5, 3)
-+/* LANE_REG(030a) */
-+#define LN_ANA_TX_JEQ_EN_MASK		BIT(4)
-+#define LN_TX_JEQ_EVEN_CTRL_RBR_MASK	GENMASK(3, 0)
-+/* LANE_REG(030b) */
-+#define LN_TX_JEQ_EVEN_CTRL_HBR_MASK	GENMASK(7, 4)
-+#define LN_TX_JEQ_EVEN_CTRL_HBR2_MASK	GENMASK(3, 0)
-+/* LANE_REG(030c) */
-+#define LN_TX_JEQ_ODD_CTRL_RBR_MASK	GENMASK(3, 0)
-+/* LANE_REG(030d) */
-+#define LN_TX_JEQ_ODD_CTRL_HBR_MASK	GENMASK(7, 4)
-+#define LN_TX_JEQ_ODD_CTRL_HBR2_MASK	GENMASK(3, 0)
-+/* LANE_REG(0310) */
-+#define LN_ANA_TX_SYNC_LOSS_DET_MODE_MASK	GENMASK(1, 0)
-+/* LANE_REG(0311) */
-+#define LN_TX_SER_40BIT_EN_RBR_MASK	BIT(3)
-+#define LN_TX_SER_40BIT_EN_HBR_MASK	BIT(2)
-+#define LN_TX_SER_40BIT_EN_HBR2_MASK	BIT(1)
- /* LANE_REG(0312) */
- #define LN0_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
- #define LN0_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
- #define LN0_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
- #define LN0_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
-+/* LANE_REG(0316) */
-+#define LN_ANA_TX_SER_VREG_GAIN_CTRL_MASK	GENMASK(3, 0)
-+/* LANE_REG(031B) */
-+#define LN_ANA_TX_RESERVED_MASK		GENMASK(7, 0)
-+/* LANE_REG(031e) */
-+#define LN_POLARITY_INV_MASK		BIT(2)
-+#define LN_LANE_MODE_MASK		BIT(1)
-+
- /* LANE_REG(0412) */
- #define LN1_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
- #define LN1_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
- #define LN1_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
- #define LN1_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
-+
- /* LANE_REG(0512) */
- #define LN2_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
- #define LN2_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
- #define LN2_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
- #define LN2_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
-+
- /* LANE_REG(0612) */
- #define LN3_TX_SER_RATE_SEL_RBR_MASK	BIT(5)
- #define LN3_TX_SER_RATE_SEL_HBR_MASK	BIT(4)
-@@ -194,6 +322,12 @@
- 
- #define HDMI20_MAX_RATE			600000000
- 
-+enum dp_link_rate {
-+	DP_BW_RBR,
-+	DP_BW_HBR,
-+	DP_BW_HBR2,
-+};
-+
- struct lcpll_config {
- 	u32 bit_rate;
- 	u8 lcvco_mode_en;
-@@ -255,6 +389,19 @@ struct ropll_config {
- 	u8 cd_tx_ser_rate_sel;
- };
- 
-+struct tx_drv_ctrl {
-+	u8 tx_drv_lvl_ctrl;
-+	u8 tx_drv_post_lvl_ctrl;
-+	u8 ana_tx_drv_idrv_idn_ctrl;
-+	u8 ana_tx_drv_idrv_iup_ctrl;
-+	u8 ana_tx_drv_accdrv_en;
-+	u8 ana_tx_drv_accdrv_ctrl;
-+	u8 tx_drv_pre_lvl_ctrl;
-+	u8 ana_tx_jeq_en;
-+	u8 tx_jeq_even_ctrl;
-+	u8 tx_jeq_odd_ctrl;
-+};
-+
- enum rk_hdptx_reset {
- 	RST_APB = 0,
- 	RST_INIT,
-@@ -279,6 +426,10 @@ struct rk_hdptx_phy {
- 	unsigned long rate;
- 
- 	atomic_t usage_count;
-+
-+	/* used for dp mode */
-+	unsigned int link_rate;
-+	unsigned int lanes;
- };
- 
- static const struct ropll_config ropll_tmds_cfg[] = {
-@@ -557,6 +708,90 @@ static const struct reg_sequence rk_hdtpx_tmds_lane_init_seq[] = {
- 	REG_SEQ0(LANE_REG(0606), 0x1c),
- };
- 
-+static struct tx_drv_ctrl tx_drv_ctrl_rbr[4][4] = {
-+	/* voltage swing 0, pre-emphasis 0->3 */
-+	{
-+		{ 0x2, 0x0, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0x4, 0x3, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0x7, 0x6, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0xd, 0xc, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 1, pre-emphasis 0->2 */
-+	{
-+		{ 0x4, 0x0, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0x9, 0x5, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0xc, 0x8, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 2, pre-emphasis 0->1 */
-+	{
-+		{ 0x8, 0x0, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0xc, 0x5, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 3, pre-emphasis 0 */
-+	{
-+		{ 0xb, 0x0, 0x7, 0x7, 0x1, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+	}
-+};
-+
-+static struct tx_drv_ctrl tx_drv_ctrl_hbr[4][4] = {
-+	/* voltage swing 0, pre-emphasis 0->3 */
-+	{
-+		{ 0x2, 0x0, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0x5, 0x4, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0x9, 0x8, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0xd, 0xc, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 1, pre-emphasis 0->2 */
-+	{
-+		{ 0x6, 0x1, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0xa, 0x6, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0xc, 0x8, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 2, pre-emphasis 0->1 */
-+	{
-+		{ 0x9, 0x1, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0xd, 0x6, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 3, pre-emphasis 0 */
-+	{
-+		{ 0xc, 0x1, 0x7, 0x7, 0x1, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+	}
-+};
-+
-+static struct tx_drv_ctrl tx_drv_ctrl_hbr2[4][4] = {
-+	/* voltage swing 0, pre-emphasis 0->3 */
-+	{
-+		{ 0x2, 0x1, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0x5, 0x4, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0x9, 0x8, 0x4, 0x6, 0x1, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0xd, 0xc, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 1, pre-emphasis 0->2 */
-+	{
-+		{ 0x6, 0x1, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0xb, 0x7, 0x4, 0x6, 0x0, 0x4, 0x0, 0x1, 0x7, 0x7 },
-+		{ 0xd, 0x9, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 2, pre-emphasis 0->1 */
-+	{
-+		{ 0x8, 0x1, 0x4, 0x6, 0x0, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+		{ 0xc, 0x6, 0x7, 0x7, 0x1, 0x7, 0x0, 0x1, 0x7, 0x7 },
-+	},
-+
-+	/* voltage swing 3, pre-emphasis 0 */
-+	{
-+		{ 0xb, 0x0, 0x7, 0x7, 0x1, 0x4, 0x1, 0x1, 0x7, 0x7 },
-+	}
-+};
-+
- static bool rk_hdptx_phy_is_rw_reg(struct device *dev, unsigned int reg)
- {
- 	switch (reg) {
-@@ -843,9 +1078,45 @@ static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx,
- 	return rk_hdptx_post_enable_lane(hdptx);
- }
- 
-+static void rk_hdptx_dp_reset(struct rk_hdptx_phy *hdptx)
-+{
-+	reset_control_assert(hdptx->rsts[RST_LANE].rstc);
-+	reset_control_assert(hdptx->rsts[RST_CMN].rstc);
-+	reset_control_assert(hdptx->rsts[RST_INIT].rstc);
-+
-+	reset_control_assert(hdptx->rsts[RST_APB].rstc);
-+	udelay(10);
-+	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
-+
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0301),
-+			   OVRD_LN_TX_DRV_EI_EN_MASK | LN_TX_DRV_EI_EN_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_EI_EN_MASK, 1) |
-+			   FIELD_PREP(LN_TX_DRV_EI_EN_MASK, 0));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0401),
-+			   OVRD_LN_TX_DRV_EI_EN_MASK | LN_TX_DRV_EI_EN_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_EI_EN_MASK, 1) |
-+			   FIELD_PREP(LN_TX_DRV_EI_EN_MASK, 0));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0501),
-+			   OVRD_LN_TX_DRV_EI_EN_MASK | LN_TX_DRV_EI_EN_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_EI_EN_MASK, 1) |
-+			   FIELD_PREP(LN_TX_DRV_EI_EN_MASK, 0));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0601),
-+			   OVRD_LN_TX_DRV_EI_EN_MASK | LN_TX_DRV_EI_EN_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_EI_EN_MASK, 1) |
-+			   FIELD_PREP(LN_TX_DRV_EI_EN_MASK, 0));
-+
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_PLL_EN << 16 | FIELD_PREP(HDPTX_I_PLL_EN, 0x0));
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_BIAS_EN << 16 | FIELD_PREP(HDPTX_I_BIAS_EN, 0x0));
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_BGR_EN << 16 | FIELD_PREP(HDPTX_I_BGR_EN, 0x0));
-+}
-+
- static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx,
- 				     unsigned int rate)
- {
-+	enum phy_mode mode = phy_get_mode(hdptx->phy);
- 	u32 status;
- 	int ret;
- 
-@@ -859,10 +1130,14 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx,
- 	if (status & HDPTX_O_PLL_LOCK_DONE)
- 		dev_warn(hdptx->dev, "PLL locked by unknown consumer!\n");
- 
--	if (rate) {
--		ret = rk_hdptx_ropll_tmds_cmn_config(hdptx, rate);
--		if (ret)
--			goto dec_usage;
-+	if (mode == PHY_MODE_DP) {
-+		rk_hdptx_dp_reset(hdptx);
-+	} else {
-+		if (rate) {
-+			ret = rk_hdptx_ropll_tmds_cmn_config(hdptx, rate);
-+			if (ret)
-+				goto dec_usage;
-+		}
- 	}
- 
- 	return 0;
-@@ -874,6 +1149,7 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx,
- 
- static int rk_hdptx_phy_consumer_put(struct rk_hdptx_phy *hdptx, bool force)
- {
-+	enum phy_mode mode = phy_get_mode(hdptx->phy);
- 	u32 status;
- 	int ret;
- 
-@@ -887,8 +1163,12 @@ static int rk_hdptx_phy_consumer_put(struct rk_hdptx_phy *hdptx, bool force)
- 	} else {
- 		ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &status);
- 		if (!ret) {
--			if (status & HDPTX_O_PLL_LOCK_DONE)
--				rk_hdptx_phy_disable(hdptx);
-+			if (status & HDPTX_O_PLL_LOCK_DONE) {
-+				if (mode == PHY_MODE_DP)
-+					rk_hdptx_dp_reset(hdptx);
-+				else
-+					rk_hdptx_phy_disable(hdptx);
-+			}
- 			return 0;
- 		} else if (force) {
- 			return 0;
-@@ -899,11 +1179,262 @@ static int rk_hdptx_phy_consumer_put(struct rk_hdptx_phy *hdptx, bool force)
- 	return ret;
- }
- 
-+static void rk_hdptx_dp_pll_init(struct rk_hdptx_phy *hdptx)
-+{
-+	regmap_update_bits(hdptx->regmap, CMN_REG(003c), ANA_LCPLL_RESERVED7_MASK,
-+			   FIELD_PREP(ANA_LCPLL_RESERVED7_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0046),
-+			   ROPLL_ANA_CPP_CTRL_COARSE_MASK | ROPLL_ANA_CPP_CTRL_FINE_MASK,
-+			   FIELD_PREP(ROPLL_ANA_CPP_CTRL_COARSE_MASK, 0xe) |
-+			   FIELD_PREP(ROPLL_ANA_CPP_CTRL_FINE_MASK, 0xe));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0047),
-+			   ROPLL_ANA_LPF_C_SEL_COARSE_MASK |
-+			   ROPLL_ANA_LPF_C_SEL_FINE_MASK,
-+			   FIELD_PREP(ROPLL_ANA_LPF_C_SEL_COARSE_MASK, 0x4) |
-+			   FIELD_PREP(ROPLL_ANA_LPF_C_SEL_FINE_MASK, 0x4));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(0051), FIELD_PREP(ROPLL_PMS_MDIV_MASK, 0x87));
-+	regmap_write(hdptx->regmap, CMN_REG(0052), FIELD_PREP(ROPLL_PMS_MDIV_MASK, 0x71));
-+	regmap_write(hdptx->regmap, CMN_REG(0053), FIELD_PREP(ROPLL_PMS_MDIV_MASK, 0x71));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(0055),
-+		     FIELD_PREP(ROPLL_PMS_MDIV_AFC_MASK, 0x87));
-+	regmap_write(hdptx->regmap, CMN_REG(0056),
-+		     FIELD_PREP(ROPLL_PMS_MDIV_AFC_MASK, 0x71));
-+	regmap_write(hdptx->regmap, CMN_REG(0057),
-+		     FIELD_PREP(ROPLL_PMS_MDIV_AFC_MASK, 0x71));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(0059),
-+		     FIELD_PREP(ANA_ROPLL_PMS_PDIV_MASK, 0x1) |
-+		     FIELD_PREP(ANA_ROPLL_PMS_REFDIV_MASK, 0x1));
-+	regmap_write(hdptx->regmap, CMN_REG(005a),
-+		     FIELD_PREP(ROPLL_PMS_SDIV_RBR_MASK, 0x3) |
-+		     FIELD_PREP(ROPLL_PMS_SDIV_HBR_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005b), ROPLL_PMS_SDIV_HBR2_MASK,
-+			   FIELD_PREP(ROPLL_PMS_SDIV_HBR2_MASK, 0x0));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005e), ROPLL_SDM_EN_MASK,
-+			   FIELD_PREP(ROPLL_SDM_EN_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005e),
-+			   OVRD_ROPLL_SDM_RSTN_MASK | ROPLL_SDM_RSTN_MASK,
-+			   FIELD_PREP(OVRD_ROPLL_SDM_RSTN_MASK, 0x1) |
-+			   FIELD_PREP(ROPLL_SDM_RSTN_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005e), ROPLL_SDC_FRAC_EN_RBR_MASK,
-+			   FIELD_PREP(ROPLL_SDC_FRAC_EN_RBR_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005e), ROPLL_SDC_FRAC_EN_HBR_MASK,
-+			   FIELD_PREP(ROPLL_SDC_FRAC_EN_HBR_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005e), ROPLL_SDC_FRAC_EN_HBR2_MASK,
-+			   FIELD_PREP(ROPLL_SDC_FRAC_EN_HBR2_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(005f),
-+			   OVRD_ROPLL_SDC_RSTN_MASK | ROPLL_SDC_RSTN_MASK,
-+			   FIELD_PREP(OVRD_ROPLL_SDC_RSTN_MASK, 0x1) |
-+			   FIELD_PREP(ROPLL_SDC_RSTN_MASK, 0x1));
-+	regmap_write(hdptx->regmap, CMN_REG(0060),
-+		     FIELD_PREP(ROPLL_SDM_DENOMINATOR_MASK, 0x21));
-+	regmap_write(hdptx->regmap, CMN_REG(0061),
-+		     FIELD_PREP(ROPLL_SDM_DENOMINATOR_MASK, 0x27));
-+	regmap_write(hdptx->regmap, CMN_REG(0062),
-+		     FIELD_PREP(ROPLL_SDM_DENOMINATOR_MASK, 0x27));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0064),
-+			   ROPLL_SDM_NUM_SIGN_RBR_MASK |
-+			   ROPLL_SDM_NUM_SIGN_HBR_MASK |
-+			   ROPLL_SDM_NUM_SIGN_HBR2_MASK,
-+			   FIELD_PREP(ROPLL_SDM_NUM_SIGN_RBR_MASK, 0x0) |
-+			   FIELD_PREP(ROPLL_SDM_NUM_SIGN_HBR_MASK, 0x1) |
-+			   FIELD_PREP(ROPLL_SDM_NUM_SIGN_HBR2_MASK, 0x1));
-+	regmap_write(hdptx->regmap, CMN_REG(0065),
-+		     FIELD_PREP(ROPLL_SDM_NUM_MASK, 0x0));
-+	regmap_write(hdptx->regmap, CMN_REG(0066),
-+		     FIELD_PREP(ROPLL_SDM_NUM_MASK, 0xd));
-+	regmap_write(hdptx->regmap, CMN_REG(0067),
-+		     FIELD_PREP(ROPLL_SDM_NUM_MASK, 0xd));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0069), ROPLL_SDC_N_RBR_MASK,
-+			   FIELD_PREP(ROPLL_SDC_N_RBR_MASK, 0x2));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(006a),
-+			   ROPLL_SDC_N_HBR_MASK | ROPLL_SDC_N_HBR2_MASK,
-+			   FIELD_PREP(ROPLL_SDC_N_HBR_MASK, 0x1) |
-+			   FIELD_PREP(ROPLL_SDC_N_HBR2_MASK, 0x1));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(006c),
-+		     FIELD_PREP(ROPLL_SDC_NUM_MASK, 0x3));
-+	regmap_write(hdptx->regmap, CMN_REG(006d),
-+		     FIELD_PREP(ROPLL_SDC_NUM_MASK, 0x7));
-+	regmap_write(hdptx->regmap, CMN_REG(006e),
-+		     FIELD_PREP(ROPLL_SDC_NUM_MASK, 0x7));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(0070),
-+		     FIELD_PREP(ROPLL_SDC_DENO_MASK, 0x8));
-+	regmap_write(hdptx->regmap, CMN_REG(0071),
-+		     FIELD_PREP(ROPLL_SDC_DENO_MASK, 0x18));
-+	regmap_write(hdptx->regmap, CMN_REG(0072),
-+		     FIELD_PREP(ROPLL_SDC_DENO_MASK, 0x18));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0074),
-+			   OVRD_ROPLL_SDC_NDIV_RSTN_MASK | ROPLL_SDC_NDIV_RSTN_MASK,
-+			   FIELD_PREP(OVRD_ROPLL_SDC_NDIV_RSTN_MASK, 0x1) |
-+			   FIELD_PREP(ROPLL_SDC_NDIV_RSTN_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0077), ANA_ROPLL_SSC_CLK_DIV_SEL_MASK,
-+			   FIELD_PREP(ANA_ROPLL_SSC_CLK_DIV_SEL_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0081), ANA_PLL_CD_TX_SER_RATE_SEL_MASK,
-+			   FIELD_PREP(ANA_PLL_CD_TX_SER_RATE_SEL_MASK, 0x0));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0081),
-+			   ANA_PLL_CD_HSCLK_EAST_EN_MASK | ANA_PLL_CD_HSCLK_WEST_EN_MASK,
-+			   FIELD_PREP(ANA_PLL_CD_HSCLK_EAST_EN_MASK, 0x1) |
-+			   FIELD_PREP(ANA_PLL_CD_HSCLK_WEST_EN_MASK, 0x0));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0082), ANA_PLL_CD_VREG_GAIN_CTRL_MASK,
-+			   FIELD_PREP(ANA_PLL_CD_VREG_GAIN_CTRL_MASK, 0x4));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0083), ANA_PLL_CD_VREG_ICTRL_MASK,
-+			   FIELD_PREP(ANA_PLL_CD_VREG_ICTRL_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0084), PLL_LCRO_CLK_SEL_MASK,
-+			   FIELD_PREP(PLL_LCRO_CLK_SEL_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0085), ANA_PLL_SYNC_LOSS_DET_MODE_MASK,
-+			   FIELD_PREP(ANA_PLL_SYNC_LOSS_DET_MODE_MASK, 0x3));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0087), ANA_PLL_TX_HS_CLK_EN_MASK,
-+			   FIELD_PREP(ANA_PLL_TX_HS_CLK_EN_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0097), DIG_CLK_SEL_MASK,
-+			   FIELD_PREP(DIG_CLK_SEL_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0099), CMN_ROPLL_ALONE_MODE_MASK,
-+			   FIELD_PREP(CMN_ROPLL_ALONE_MODE_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(009a), HS_SPEED_SEL_MASK,
-+			   FIELD_PREP(HS_SPEED_SEL_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(009b), LS_SPEED_SEL_MASK,
-+			   FIELD_PREP(LS_SPEED_SEL_MASK, 0x1));
-+}
-+
-+static int rk_hdptx_dp_aux_init(struct rk_hdptx_phy *hdptx)
-+{
-+	u32 status;
-+	int ret;
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(0102), ANA_SB_RXTERM_OFFSP_MASK,
-+			   FIELD_PREP(ANA_SB_RXTERM_OFFSP_MASK, 0x3));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0103), ANA_SB_RXTERM_OFFSN_MASK,
-+			   FIELD_PREP(ANA_SB_RXTERM_OFFSN_MASK, 0x3));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0104), SB_AUX_EN_MASK,
-+			   FIELD_PREP(SB_AUX_EN_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0105), ANA_SB_TX_HLVL_PROG_MASK,
-+			   FIELD_PREP(ANA_SB_TX_HLVL_PROG_MASK, 0x7));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0106), ANA_SB_TX_LLVL_PROG_MASK,
-+			   FIELD_PREP(ANA_SB_TX_LLVL_PROG_MASK, 0x7));
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(010d), ANA_SB_DMRX_LPBK_DATA_MASK,
-+			   FIELD_PREP(ANA_SB_DMRX_LPBK_DATA_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(010f), ANA_SB_VREG_GAIN_CTRL_MASK,
-+			   FIELD_PREP(ANA_SB_VREG_GAIN_CTRL_MASK, 0x0));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0110),
-+			   ANA_SB_VREG_OUT_SEL_MASK | ANA_SB_VREG_REF_SEL_MASK,
-+			   FIELD_PREP(ANA_SB_VREG_OUT_SEL_MASK, 0x1) |
-+			   FIELD_PREP(ANA_SB_VREG_REF_SEL_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(0113),
-+			   SB_RX_RCAL_OPT_CODE_MASK | SB_RX_RTERM_CTRL_MASK,
-+			   FIELD_PREP(SB_RX_RCAL_OPT_CODE_MASK, 0x1) |
-+			   FIELD_PREP(SB_RX_RTERM_CTRL_MASK, 0x3));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0114),
-+			   SB_TG_SB_EN_DELAY_TIME_MASK | SB_TG_RXTERM_EN_DELAY_TIME_MASK,
-+			   FIELD_PREP(SB_TG_SB_EN_DELAY_TIME_MASK, 0x2) |
-+			   FIELD_PREP(SB_TG_RXTERM_EN_DELAY_TIME_MASK, 0x2));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0115),
-+			   SB_READY_DELAY_TIME_MASK | SB_TG_OSC_EN_DELAY_TIME_MASK,
-+			   FIELD_PREP(SB_READY_DELAY_TIME_MASK, 0x2) |
-+			   FIELD_PREP(SB_TG_OSC_EN_DELAY_TIME_MASK, 0x2));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0116),
-+			   AFC_RSTN_DELAY_TIME_MASK,
-+			   FIELD_PREP(AFC_RSTN_DELAY_TIME_MASK, 0x2));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0117),
-+			   FAST_PULSE_TIME_MASK,
-+			   FIELD_PREP(FAST_PULSE_TIME_MASK, 0x4));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0118),
-+			   SB_TG_EARC_DMRX_RECVRD_CLK_CNT_MASK,
-+			   FIELD_PREP(SB_TG_EARC_DMRX_RECVRD_CLK_CNT_MASK, 0xa));
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(011a), SB_TG_CNT_RUN_NO_7_0_MASK,
-+			   FIELD_PREP(SB_TG_CNT_RUN_NO_7_0_MASK, 0x3));
-+	regmap_update_bits(hdptx->regmap, SB_REG(011b),
-+			   SB_EARC_SIG_DET_BYPASS_MASK | SB_AFC_TOL_MASK,
-+			   FIELD_PREP(SB_EARC_SIG_DET_BYPASS_MASK, 0x1) |
-+			   FIELD_PREP(SB_AFC_TOL_MASK, 0x3));
-+	regmap_update_bits(hdptx->regmap, SB_REG(011c), SB_AFC_STB_NUM_MASK,
-+			   FIELD_PREP(SB_AFC_STB_NUM_MASK, 0x4));
-+	regmap_update_bits(hdptx->regmap, SB_REG(011d), SB_TG_OSC_CNT_MIN_MASK,
-+			   FIELD_PREP(SB_TG_OSC_CNT_MIN_MASK, 0x67));
-+	regmap_update_bits(hdptx->regmap, SB_REG(011e), SB_TG_OSC_CNT_MAX_MASK,
-+			   FIELD_PREP(SB_TG_OSC_CNT_MAX_MASK, 0x6a));
-+	regmap_update_bits(hdptx->regmap, SB_REG(011f), SB_PWM_AFC_CTRL_MASK,
-+			   FIELD_PREP(SB_PWM_AFC_CTRL_MASK, 0x5));
-+	regmap_update_bits(hdptx->regmap, SB_REG(011f), SB_RCAL_RSTN_MASK,
-+			   FIELD_PREP(SB_RCAL_RSTN_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0120), SB_AUX_EN_IN_MASK,
-+			   FIELD_PREP(SB_AUX_EN_IN_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(0102), OVRD_SB_RXTERM_EN_MASK,
-+			   FIELD_PREP(OVRD_SB_RXTERM_EN_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0103), OVRD_SB_RX_RESCAL_DONE_MASK,
-+			   FIELD_PREP(OVRD_SB_RX_RESCAL_DONE_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0104), OVRD_SB_EN_MASK,
-+			   FIELD_PREP(OVRD_SB_EN_MASK, 0x1));
-+	regmap_update_bits(hdptx->regmap, SB_REG(0104), OVRD_SB_AUX_EN_MASK,
-+			   FIELD_PREP(OVRD_SB_AUX_EN_MASK, 0x1));
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(010f), OVRD_SB_VREG_EN_MASK,
-+			   FIELD_PREP(OVRD_SB_VREG_EN_MASK, 0x1));
-+
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_BGR_EN << 16 | FIELD_PREP(HDPTX_I_BGR_EN, 0x1));
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_BIAS_EN << 16 | FIELD_PREP(HDPTX_I_BIAS_EN, 0x1));
-+	usleep_range(20, 25);
-+
-+	reset_control_deassert(hdptx->rsts[RST_INIT].rstc);
-+	usleep_range(20, 25);
-+	reset_control_deassert(hdptx->rsts[RST_CMN].rstc);
-+	usleep_range(20, 25);
-+
-+	regmap_update_bits(hdptx->regmap, SB_REG(0103), OVRD_SB_RX_RESCAL_DONE_MASK,
-+			   FIELD_PREP(OVRD_SB_RX_RESCAL_DONE_MASK, 0x1));
-+	usleep_range(100, 110);
-+	regmap_update_bits(hdptx->regmap, SB_REG(0104), SB_EN_MASK,
-+			   FIELD_PREP(SB_EN_MASK, 0x1));
-+	usleep_range(100, 110);
-+	regmap_update_bits(hdptx->regmap, SB_REG(0102), SB_RXTERM_EN_MASK,
-+			   FIELD_PREP(SB_RXTERM_EN_MASK, 0x1));
-+	usleep_range(20, 25);
-+	regmap_update_bits(hdptx->regmap, SB_REG(010f), SB_VREG_EN_MASK,
-+			   FIELD_PREP(SB_VREG_EN_MASK, 0x1));
-+	usleep_range(20, 25);
-+	regmap_update_bits(hdptx->regmap, SB_REG(0104), SB_AUX_EN_MASK,
-+			   FIELD_PREP(SB_AUX_EN_MASK, 0x1));
-+	usleep_range(100, 110);
-+
-+	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS,
-+				       status, FIELD_GET(HDPTX_O_SB_RDY, status),
-+				       50, 1000);
-+	if (ret) {
-+		dev_err(hdptx->dev, "Failed to get phy sb ready: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
- static int rk_hdptx_phy_power_on(struct phy *phy)
- {
- 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
- 	int bus_width = phy_get_bus_width(hdptx->phy);
--	int ret;
-+	enum phy_mode mode = phy_get_mode(phy);
-+	int ret, lane;
- 
- 	/*
- 	 * FIXME: Temporary workaround to pass pixel_clk_rate
-@@ -919,9 +1450,37 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 	if (ret)
- 		return ret;
- 
--	ret = rk_hdptx_ropll_tmds_mode_config(hdptx, rate);
--	if (ret)
--		rk_hdptx_phy_consumer_put(hdptx, true);
-+	if (mode == PHY_MODE_DP) {
-+		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x1));
-+
-+		for (lane = 0; lane < 4; lane++) {
-+			regmap_update_bits(hdptx->regmap, LANE_REG(031e) + 0x400 * lane,
-+					   LN_POLARITY_INV_MASK | LN_LANE_MODE_MASK,
-+					   FIELD_PREP(LN_POLARITY_INV_MASK, 0) |
-+					   FIELD_PREP(LN_LANE_MODE_MASK, 1));
-+		}
-+
-+		regmap_update_bits(hdptx->regmap, LNTOP_REG(0200), PROTOCOL_SEL_MASK,
-+				   FIELD_PREP(PROTOCOL_SEL_MASK, 0x0));
-+		regmap_update_bits(hdptx->regmap, LNTOP_REG(0206), DATA_BUS_WIDTH_MASK,
-+				   FIELD_PREP(DATA_BUS_WIDTH_MASK, 0x1));
-+		regmap_update_bits(hdptx->regmap, LNTOP_REG(0206), DATA_BUS_WIDTH_SEL_MASK,
-+				   FIELD_PREP(DATA_BUS_WIDTH_SEL_MASK, 0x0));
-+
-+		rk_hdptx_dp_pll_init(hdptx);
-+
-+		ret = rk_hdptx_dp_aux_init(hdptx);
-+		if (ret)
-+			rk_hdptx_phy_consumer_put(hdptx, true);
-+	} else {
-+		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
-+
-+		ret = rk_hdptx_ropll_tmds_mode_config(hdptx, rate);
-+		if (ret)
-+			rk_hdptx_phy_consumer_put(hdptx, true);
-+	}
- 
- 	return ret;
- }
-@@ -933,9 +1492,308 @@ static int rk_hdptx_phy_power_off(struct phy *phy)
- 	return rk_hdptx_phy_consumer_put(hdptx, false);
- }
- 
-+static int rk_hdptx_phy_verify_config(struct rk_hdptx_phy *hdptx,
-+				      struct phy_configure_opts_dp *dp)
-+{
-+	int i;
-+
-+	if (dp->set_rate) {
-+		switch (dp->link_rate) {
-+		case 1620:
-+		case 2700:
-+		case 5400:
-+			break;
-+		default:
-+			return -EINVAL;
-+		}
-+	}
-+
-+	if (dp->set_lanes) {
-+		switch (dp->lanes) {
-+		case 1:
-+		case 2:
-+		case 4:
-+			break;
-+		default:
-+			return -EINVAL;
-+		}
-+	}
-+
-+	if (dp->set_voltages) {
-+		for (i = 0; i < hdptx->lanes; i++) {
-+			if (dp->voltage[i] > 3 || dp->pre[i] > 3)
-+				return -EINVAL;
-+
-+			if (dp->voltage[i] + dp->pre[i] > 3)
-+				return -EINVAL;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int rk_hdptx_phy_set_rate(struct rk_hdptx_phy *hdptx,
-+				 struct phy_configure_opts_dp *dp)
-+{
-+	u32 bw, status;
-+	int ret;
-+
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_PLL_EN << 16 | FIELD_PREP(HDPTX_I_PLL_EN, 0x0));
-+
-+	switch (dp->link_rate) {
-+	case 1620:
-+		bw = DP_BW_RBR;
-+		break;
-+	case 2700:
-+		bw = DP_BW_HBR;
-+		break;
-+	case 5400:
-+		bw = DP_BW_HBR2;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+	hdptx->link_rate = dp->link_rate;
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0008), OVRD_LCPLL_EN_MASK | LCPLL_EN_MASK,
-+			   FIELD_PREP(OVRD_LCPLL_EN_MASK, 0x1) |
-+			   FIELD_PREP(LCPLL_EN_MASK, 0x0));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(003d), OVRD_ROPLL_EN_MASK | ROPLL_EN_MASK,
-+			   FIELD_PREP(OVRD_ROPLL_EN_MASK, 0x1) |
-+			   FIELD_PREP(ROPLL_EN_MASK, 0x1));
-+
-+	if (dp->ssc) {
-+		regmap_update_bits(hdptx->regmap, CMN_REG(0074),
-+				   OVRD_ROPLL_SSC_EN_MASK | ROPLL_SSC_EN_MASK,
-+				   FIELD_PREP(OVRD_ROPLL_SSC_EN_MASK, 0x1) |
-+				   FIELD_PREP(ROPLL_SSC_EN_MASK, 0x1));
-+		regmap_write(hdptx->regmap, CMN_REG(0075),
-+			     FIELD_PREP(ANA_ROPLL_SSC_FM_DEVIATION_MASK, 0xc));
-+		regmap_update_bits(hdptx->regmap, CMN_REG(0076),
-+				   ANA_ROPLL_SSC_FM_FREQ_MASK,
-+				   FIELD_PREP(ANA_ROPLL_SSC_FM_FREQ_MASK, 0x1f));
-+
-+		regmap_update_bits(hdptx->regmap, CMN_REG(0099), SSC_EN_MASK,
-+				   FIELD_PREP(SSC_EN_MASK, 0x2));
-+	} else {
-+		regmap_update_bits(hdptx->regmap, CMN_REG(0074),
-+				   OVRD_ROPLL_SSC_EN_MASK | ROPLL_SSC_EN_MASK,
-+				   FIELD_PREP(OVRD_ROPLL_SSC_EN_MASK, 0x1) |
-+				   FIELD_PREP(ROPLL_SSC_EN_MASK, 0x0));
-+		regmap_write(hdptx->regmap, CMN_REG(0075),
-+			     FIELD_PREP(ANA_ROPLL_SSC_FM_DEVIATION_MASK, 0x20));
-+		regmap_update_bits(hdptx->regmap, CMN_REG(0076),
-+				   ANA_ROPLL_SSC_FM_FREQ_MASK,
-+				   FIELD_PREP(ANA_ROPLL_SSC_FM_FREQ_MASK, 0xc));
-+
-+		regmap_update_bits(hdptx->regmap, CMN_REG(0099), SSC_EN_MASK,
-+				   FIELD_PREP(SSC_EN_MASK, 0x0));
-+	}
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0095), DP_TX_LINK_BW_MASK,
-+			   FIELD_PREP(DP_TX_LINK_BW_MASK, bw));
-+
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     HDPTX_I_PLL_EN << 16 | FIELD_PREP(HDPTX_I_PLL_EN, 0x1));
-+
-+	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS,
-+				       status, FIELD_GET(HDPTX_O_PLL_LOCK_DONE, status),
-+				       50, 1000);
-+	if (ret) {
-+		dev_err(hdptx->dev, "Failed to get phy pll lock: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int rk_hdptx_phy_set_lanes(struct rk_hdptx_phy *hdptx,
-+				  struct phy_configure_opts_dp *dp)
-+{
-+	hdptx->lanes = dp->lanes;
-+
-+	regmap_update_bits(hdptx->regmap, LNTOP_REG(0207), LANE_EN_MASK,
-+			   FIELD_PREP(LANE_EN_MASK, GENMASK(hdptx->lanes - 1, 0)));
-+
-+	return 0;
-+}
-+
-+static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
-+				     struct phy_configure_opts_dp *dp,
-+				     u8 lane)
-+{
-+	const struct tx_drv_ctrl *ctrl;
-+	u32 offset = lane * 0x400;
-+
-+	switch (hdptx->link_rate) {
-+	case 1620:
-+		ctrl = &tx_drv_ctrl_rbr[dp->voltage[lane]][dp->pre[lane]];
-+		regmap_update_bits(hdptx->regmap, LANE_REG(030a) + offset,
-+				   LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
-+				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
-+				   ctrl->tx_jeq_even_ctrl));
-+		regmap_update_bits(hdptx->regmap, LANE_REG(030c) + offset,
-+				   LN_TX_JEQ_ODD_CTRL_RBR_MASK,
-+				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_RBR_MASK,
-+				   ctrl->tx_jeq_odd_ctrl));
-+		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
-+				   LN_TX_SER_40BIT_EN_RBR_MASK,
-+				   FIELD_PREP(LN_TX_SER_40BIT_EN_RBR_MASK, 0x1));
-+		break;
-+	case 2700:
-+		ctrl = &tx_drv_ctrl_hbr[dp->voltage[lane]][dp->pre[lane]];
-+		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
-+				   LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
-+				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
-+				   ctrl->tx_jeq_even_ctrl));
-+		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
-+				   LN_TX_JEQ_ODD_CTRL_HBR_MASK,
-+				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR_MASK,
-+				   ctrl->tx_jeq_odd_ctrl));
-+		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
-+				   LN_TX_SER_40BIT_EN_HBR_MASK,
-+				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR_MASK, 0x1));
-+		break;
-+	case 5400:
-+	default:
-+		ctrl = &tx_drv_ctrl_hbr2[dp->voltage[lane]][dp->pre[lane]];
-+		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
-+				   LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
-+				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
-+				   ctrl->tx_jeq_even_ctrl));
-+		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
-+				   LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
-+				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
-+				   ctrl->tx_jeq_odd_ctrl));
-+		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
-+				   LN_TX_SER_40BIT_EN_HBR2_MASK,
-+				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR2_MASK, 0x1));
-+		break;
-+	}
-+
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0303) + offset,
-+			   OVRD_LN_TX_DRV_LVL_CTRL_MASK | LN_TX_DRV_LVL_CTRL_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_LVL_CTRL_MASK, 0x1) |
-+			   FIELD_PREP(LN_TX_DRV_LVL_CTRL_MASK,
-+				      ctrl->tx_drv_lvl_ctrl));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0304) + offset,
-+			   OVRD_LN_TX_DRV_POST_LVL_CTRL_MASK |
-+			   LN_TX_DRV_POST_LVL_CTRL_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_POST_LVL_CTRL_MASK, 0x1) |
-+			   FIELD_PREP(LN_TX_DRV_POST_LVL_CTRL_MASK,
-+				      ctrl->tx_drv_post_lvl_ctrl));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0305) + offset,
-+			   OVRD_LN_TX_DRV_PRE_LVL_CTRL_MASK |
-+			   LN_TX_DRV_PRE_LVL_CTRL_MASK,
-+			   FIELD_PREP(OVRD_LN_TX_DRV_PRE_LVL_CTRL_MASK, 0x1) |
-+			   FIELD_PREP(LN_TX_DRV_PRE_LVL_CTRL_MASK,
-+				      ctrl->tx_drv_pre_lvl_ctrl));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0306) + offset,
-+			   LN_ANA_TX_DRV_IDRV_IDN_CTRL_MASK |
-+			   LN_ANA_TX_DRV_IDRV_IUP_CTRL_MASK |
-+			   LN_ANA_TX_DRV_ACCDRV_EN_MASK,
-+			   FIELD_PREP(LN_ANA_TX_DRV_IDRV_IDN_CTRL_MASK,
-+				      ctrl->ana_tx_drv_idrv_idn_ctrl) |
-+			   FIELD_PREP(LN_ANA_TX_DRV_IDRV_IUP_CTRL_MASK,
-+				      ctrl->ana_tx_drv_idrv_iup_ctrl) |
-+			   FIELD_PREP(LN_ANA_TX_DRV_ACCDRV_EN_MASK,
-+				      ctrl->ana_tx_drv_accdrv_en));
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0307) + offset,
-+			   LN_ANA_TX_DRV_ACCDRV_POL_SEL_MASK |
-+			   LN_ANA_TX_DRV_ACCDRV_CTRL_MASK,
-+			   FIELD_PREP(LN_ANA_TX_DRV_ACCDRV_POL_SEL_MASK, 0x1) |
-+			   FIELD_PREP(LN_ANA_TX_DRV_ACCDRV_CTRL_MASK,
-+				      ctrl->ana_tx_drv_accdrv_ctrl));
-+
-+	regmap_update_bits(hdptx->regmap, LANE_REG(030a) + offset,
-+			   LN_ANA_TX_JEQ_EN_MASK,
-+			   FIELD_PREP(LN_ANA_TX_JEQ_EN_MASK, ctrl->ana_tx_jeq_en));
-+
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0310) + offset,
-+			   LN_ANA_TX_SYNC_LOSS_DET_MODE_MASK,
-+			   FIELD_PREP(LN_ANA_TX_SYNC_LOSS_DET_MODE_MASK, 0x3));
-+
-+	regmap_update_bits(hdptx->regmap, LANE_REG(0316) + offset,
-+			   LN_ANA_TX_SER_VREG_GAIN_CTRL_MASK,
-+			   FIELD_PREP(LN_ANA_TX_SER_VREG_GAIN_CTRL_MASK, 0x2));
-+
-+	regmap_update_bits(hdptx->regmap, LANE_REG(031b) + offset,
-+			   LN_ANA_TX_RESERVED_MASK,
-+			   FIELD_PREP(LN_ANA_TX_RESERVED_MASK, 0x1));
-+}
-+
-+static int rk_hdptx_phy_set_voltages(struct rk_hdptx_phy *hdptx,
-+				     struct phy_configure_opts_dp *dp)
-+{
-+	u8 lane;
-+	u32 status;
-+	int ret;
-+
-+	for (lane = 0; lane < hdptx->lanes; lane++)
-+		rk_hdptx_phy_set_voltage(hdptx, dp, lane);
-+
-+	reset_control_deassert(hdptx->rsts[RST_LANE].rstc);
-+
-+	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS,
-+				       status, FIELD_GET(HDPTX_O_PHY_RDY, status),
-+				       50, 5000);
-+	if (ret) {
-+		dev_err(hdptx->dev, "Failed to get phy ready: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int rk_hdptx_phy_configure(struct phy *phy, union phy_configure_opts *opts)
-+{
-+	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
-+	enum phy_mode mode = phy_get_mode(phy);
-+	int ret;
-+
-+	if (mode != PHY_MODE_DP)
-+		return 0;
-+
-+	ret = rk_hdptx_phy_verify_config(hdptx, &opts->dp);
-+	if (ret) {
-+		dev_err(hdptx->dev, "invalid params for phy configure\n");
-+		return ret;
-+	}
-+
-+	if (opts->dp.set_rate) {
-+		ret = rk_hdptx_phy_set_rate(hdptx, &opts->dp);
-+		if (ret) {
-+			dev_err(hdptx->dev, "failed to set rate: %d\n", ret);
-+			return ret;
-+		}
-+	}
-+
-+	if (opts->dp.set_lanes) {
-+		ret = rk_hdptx_phy_set_lanes(hdptx, &opts->dp);
-+		if (ret) {
-+			dev_err(hdptx->dev, "failed to set lanes: %d\n", ret);
-+			return ret;
-+		}
-+	}
-+
-+	if (opts->dp.set_voltages) {
-+		ret = rk_hdptx_phy_set_voltages(hdptx, &opts->dp);
-+		if (ret) {
-+			dev_err(hdptx->dev, "failed to set voltages: %d\n",
-+				ret);
-+			return ret;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
- static const struct phy_ops rk_hdptx_phy_ops = {
- 	.power_on  = rk_hdptx_phy_power_on,
- 	.power_off = rk_hdptx_phy_power_off,
-+	.configure = rk_hdptx_phy_configure,
- 	.owner	   = THIS_MODULE,
- };
- 
-@@ -1150,5 +2008,6 @@ module_platform_driver(rk_hdptx_phy_driver);
- 
- MODULE_AUTHOR("Algea Cao <algea.cao@rock-chips.com>");
- MODULE_AUTHOR("Cristian Ciocaltea <cristian.ciocaltea@collabora.com>");
-+MODULE_AUTHOR("Damon Ding <damon.ding@rock-chips.com>");
- MODULE_DESCRIPTION("Samsung HDMI/eDP Transmitter Combo PHY Driver");
- MODULE_LICENSE("GPL");
--- 
-2.34.1
+The value of QPHY_V6_PCS_UFS_PLL_CNTL is 0x33 for SM8750 as it is 
+operating on 80bit mode. Similiar change needs to be done for SM8650.
+> 
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x04),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x04),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_g5_pcs[] = {
+> 
+> sm8650_ufsphy_g5_pcs?
+Agree with you. Good Finding. I will replace sm8750_ufsphy_g5_pcs with 
+sm8650_ufsphy_g5_pcs.
+
+
+> 
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PLL_CNTL, 0x33),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_TX_HSGEAR_CAPABILITY, 0x05),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSGEAR_CAPABILITY, 0x05),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HS_G5_SYNC_LENGTH_CAPABILITY, 0x4d),
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_RX_HSG5_SYNC_WAIT_TIME, 0x9e),
+>> +};
+>> +
+>> +static const struct qmp_phy_init_tbl sm8750_ufsphy_hs_b_pcs[] = {
+>> +	QMP_PHY_INIT_CFG(QPHY_V6_PCS_UFS_PCS_CTRL1, 0x41),
+>> +};
+>> +
+>>   struct qmp_ufs_offsets {
+>>   	u16 serdes;
+>>   	u16 pcs;
+>> @@ -1523,6 +1650,45 @@ static const struct qmp_phy_cfg sm8650_ufsphy_cfg = {
+>>   	.regs			= ufsphy_v6_regs_layout,
+>>   };
+>>   
+>> +static const struct qmp_phy_cfg sm8750_ufsphy_cfg = {
+>> +	.lanes			= 2,
+>> +
+>> +	.offsets		= &qmp_ufs_offsets_v6,
+>> +	.max_supported_gear	= UFS_HS_G5,
+>> +
+>> +	.tbls = {
+>> +		.serdes		= sm8750_ufsphy_serdes,
+>> +		.serdes_num	= ARRAY_SIZE(sm8750_ufsphy_serdes),
+>> +		.tx		= sm8750_ufsphy_tx,
+>> +		.tx_num		= ARRAY_SIZE(sm8750_ufsphy_tx),
+>> +		.rx		= sm8750_ufsphy_rx,
+>> +		.rx_num		= ARRAY_SIZE(sm8750_ufsphy_rx),
+>> +		.pcs		= sm8750_ufsphy_pcs,
+>> +		.pcs_num	= ARRAY_SIZE(sm8750_ufsphy_pcs),
+>> +	},
+>> +
+>> +	.tbls_hs_b = {
+>> +		.pcs		= sm8750_ufsphy_hs_b_pcs,
+>> +		.pcs_num	= ARRAY_SIZE(sm8750_ufsphy_hs_b_pcs),
+>> +	},
+>> +
+>> +	.tbls_hs_overlay[0] = {
+>> +		.pcs		= sm8750_ufsphy_g4_pcs,
+>> +		.pcs_num	= ARRAY_SIZE(sm8750_ufsphy_g4_pcs),
+>> +		.max_gear	= UFS_HS_G4,
+>> +	},
+>> +	.tbls_hs_overlay[1] = {
+>> +		.pcs		= sm8750_ufsphy_g5_pcs,
+>> +		.pcs_num	= ARRAY_SIZE(sm8750_ufsphy_g5_pcs),
+>> +		.max_gear	= UFS_HS_G5,
+>> +	},
+>> +
+>> +	.vreg_list		= qmp_phy_vreg_l,
+>> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+>> +	.regs			= ufsphy_v6_regs_layout,
+>> +
+>> +};
+>> +
+>>   static void qmp_ufs_serdes_init(struct qmp_ufs *qmp, const struct qmp_phy_cfg_tbls *tbls)
+>>   {
+>>   	void __iomem *serdes = qmp->serdes;
+>> @@ -1593,8 +1759,10 @@ static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg
+>>   		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_overlay[i]);
+>>   	}
+>>   
+>> -	if (qmp->mode == PHY_MODE_UFS_HS_B)
+>> +	if (qmp->mode == PHY_MODE_UFS_HS_B) {
+>>   		qmp_ufs_serdes_init(qmp, &cfg->tbls_hs_b);
+>> +		qmp_ufs_pcs_init(qmp, &cfg->tbls_hs_b);
+> 
+> Extract the serdes+lanes+pcs helper, use it in this function.
+
+Lane init is already a different helper and is already being called from 
+function (qmp_ufs_init_register). Here we just adding few extra PCS 
+registers needed to support Rate B.
+
+> 
+>> +	}
+>>   }
+>>   
+>>   static int qmp_ufs_com_init(struct qmp_ufs *qmp)
+>> @@ -2061,7 +2229,11 @@ static const struct of_device_id qmp_ufs_of_match_table[] = {
+>>   	}, {
+>>   		.compatible = "qcom,sm8650-qmp-ufs-phy",
+>>   		.data = &sm8650_ufsphy_cfg,
+>> +	}, {
+>> +		.compatible = "qcom,sm8750-qmp-ufs-phy",
+>> +		.data = &sm8750_ufsphy_cfg,
+>>   	},
+>> +
+>>   	{ },
+>>   };
+>>   MODULE_DEVICE_TABLE(of, qmp_ufs_of_match_table);
+>>
+>> -- 
+>> 2.46.1
+>>
+> 
+Thanks,
+Nitin
 
 
 -- 
