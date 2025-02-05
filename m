@@ -4,49 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35CBCC02192
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 15:53:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D4B9C02192
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 15:54:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6pDXel6fVysXDPHYPHqqubQvZm8UmGiyWxgrB6w1Tlo=; b=rGldQFSJFcVQ1Y
-	PnUd6++p1vn+fk0m6BMGP1Ej1I3rDlMf8IWyZ/Y+3QTjUa+rffhPSdqpJODwhp0KJGEFLesIOy+D8
-	Vku+Cm1HYOV1WvyLrelfyIaBq3vPLnZlGx77/D4IMVlUX/+ihyajUC8PIIfHZIP4Ctd7dL2Ekah5b
-	EXiktV0sN4f2k6gjKfcBovF5U9R+uVcWTZpcO+RMsogWfLLk4k5ck0iwDzJsVksGbASxCGTvLnuGJ
-	qYoDzCW413roFpPdQ/mkE1NqjCxEmU5o22WfjEzXIbAGwjEP0xaIjXLtxi9xK8K4Vwh2B73T7T2Rv
-	tcBx/oybP/OSkwey4OmA==;
+	List-Owner; bh=bLcKfgly6NucZNeeQbj4KMUveWCLHbHelm6BmTJ/DMM=; b=KvAfsiLUTqVni3
+	MWXrft7v1jJmZhyTmI9iDtxMEgABXXGRmeQbhNLV5YraGKO3cp+yBSOA702L/xZ69GBLMp/HvVTa9
+	eS8PJySdA44yaub45WaCqx6rpcCv7M3TEpAXKSUPRHBTjJ39h8nsAzIAPKpXGgf3Bq50G0IoYKHxG
+	dxTas+bbkKJQyO/t9xHeaRKdJhlZASged2E6j9JoE12AY5+uoPDcnyQUB/xh5C3E0cIZ65zjI/fRc
+	ftziK2CWzuTVjHdgK9AiiS3QBpxcECw3u4kqvK1VBW+beEr1LBcuG0Nv+4j/YqX6vqRwJWoqDL362
+	HU7qekbEeqgsYK8nLZLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfhie-00000003rdW-413d;
-	Wed, 05 Feb 2025 15:53:40 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tfhjn-00000003rsN-4C3o;
+	Wed, 05 Feb 2025 15:54:52 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfhiT-00000003rZU-2iGF
+	id 1tfhjl-00000003rrZ-0C4r
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Feb 2025 15:53:30 +0000
+	Wed, 05 Feb 2025 15:54:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3EA335C62F1;
-	Wed,  5 Feb 2025 15:52:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 04B2DC4CED1;
-	Wed,  5 Feb 2025 15:53:21 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id AB2C25C138B;
+	Wed,  5 Feb 2025 15:54:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09A17C4CED1;
+	Wed,  5 Feb 2025 15:54:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738770808;
-	bh=a6We4kvNhBywVnW1P8zFRJDQrFJm00H2aj7WRzzKEX8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dHjrkrYsspsFneU9YOcq5JsF2pvq7SBEd3PDp2dfCqBt47YLPfK6pkMvGYiTkPCGt
-	 St404CDWICPjuMC5xkbppkOna4o/kK7s7y/RF2woN802O+txt2hKyhnRK8MEhJzQ/8
-	 y87rGbqZWwlLVCZ6Sz60aNwQf9QX7KmmvBEHZqA2iKNpSnQQA+D9K9KyVV3pZit4tH
-	 QfTUEDTCfSt6BfP5MkGiNs9sFgVJueo7Z/wUOY19aHjV5C9yy5VNytSrfKsTR2ZjLe
-	 ZZ2+BSoZo7uAP9Zr7sAE6tCUqu2I16ykynGgajS0RZ+9EDt9ZX7AcJBp0rzT6l6cn4
-	 hUyJRc/i73XaA==
-Message-ID: <d867f285-b639-4080-beeb-20b75ee3f4a2@kernel.org>
-Date: Wed, 5 Feb 2025 16:53:20 +0100
+	s=k20201202; t=1738770888;
+	bh=8W4ak49xUb/GQviHBhiJAJMPp0Cs8omvmCa7Vs3nF4U=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=ptA/fc12UzPl4+TwbJ4N3b3lqvsSbvjkdJKnbc0dBlRO24jqPixiTAx9OEdazUfKx
+	 BA0MxUqQ4TTQUSSSZv0RgRNVsMsUGOoEzPJ9urpLtIQL81q6bMSxsenMyffvV+8Ba/
+	 cOV6AQtA9r3wPUa9sqiNNdYd0xkp9WUUfQkazmYr+M0Nj7f4cWBRYgw+3jKXcFTSwE
+	 Irn3f4C1jwSJyIOB280gYVTJpZE13o5iTORA4HoB4SCnLI3J/1CjugAf8bDt+g+w3d
+	 E4fztbj9+7Vk6zKn3KENkQaawJB1F24JfThFNbrZfi2Ibr0eopxRdNr1J8iZ8pd2Vm
+	 6WcVJ3eQ9XQPw==
+Message-ID: <1d78b30c-f71a-4769-b665-7425f00eb5ec@kernel.org>
+Date: Wed, 5 Feb 2025 16:54:38 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v9 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Varadarajan Narayanan <quic_varada@quicinc.com>
 Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
  manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
@@ -63,7 +64,7 @@ References: <20250128062708.573662-1-quic_varada@quicinc.com>
  <Z6NCSo98YRgG666Q@hu-varada-blr.qualcomm.com>
  <85f54baa-7d3d-43c3-9944-8f5f3c3006da@kernel.org>
  <Z6OFSr2vrmPJTp4u@hu-varada-blr.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <d867f285-b639-4080-beeb-20b75ee3f4a2@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -108,10 +109,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <Z6OFSr2vrmPJTp4u@hu-varada-blr.qualcomm.com>
+In-Reply-To: <d867f285-b639-4080-beeb-20b75ee3f4a2@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_075329_779926_4F89ACF1 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20250205_075449_175837_10DA7BE4 
+X-CRM114-Status: GOOD (  12.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,43 +129,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/02/2025 16:35, Varadarajan Narayanan wrote:
-> On Wed, Feb 05, 2025 at 02:47:13PM +0100, Krzysztof Kozlowski wrote:
->> On 05/02/2025 11:49, Varadarajan Narayanan wrote:
->>> On Mon, Feb 03, 2025 at 05:30:32PM +0100, Krzysztof Kozlowski wrote:
->>>> On 28/01/2025 07:27, Varadarajan Narayanan wrote:
+On 05/02/2025 16:53, Krzysztof Kozlowski wrote:
+> On 05/02/2025 16:35, Varadarajan Narayanan wrote:
+>> On Wed, Feb 05, 2025 at 02:47:13PM +0100, Krzysztof Kozlowski wrote:
+>>> On 05/02/2025 11:49, Varadarajan Narayanan wrote:
+>>>> On Mon, Feb 03, 2025 at 05:30:32PM +0100, Krzysztof Kozlowski wrote:
+>>>>> On 28/01/2025 07:27, Varadarajan Narayanan wrote:
+>>>>>>
+>>>>>> @@ -479,6 +519,230 @@ frame@b128000 {
+>>>>>>  				status = "disabled";
+>>>>>>  			};
+>>>>>>  		};
+>>>>>> +
+>>>>>> +		pcie1: pcie@18000000 {
+>>>>>> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
+>>>>>> +			reg = <0x00088000 0x3000>,
 >>>>>
->>>>> @@ -479,6 +519,230 @@ frame@b128000 {
->>>>>  				status = "disabled";
->>>>>  			};
->>>>>  		};
->>>>> +
->>>>> +		pcie1: pcie@18000000 {
->>>>> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
->>>>> +			reg = <0x00088000 0x3000>,
+>>>>> So as Konrad pointed out now, this was never tested. It's not we who
+>>>>> should run tests for you. It's you.
 >>>>
->>>> So as Konrad pointed out now, this was never tested. It's not we who
->>>> should run tests for you. It's you.
+>>>> This was tested and it did not flag an error since it is having the order
+>>>> specified in the bindings. qcom,pcie.yaml has 4 reg specifications. Two of
 >>>
->>> This was tested and it did not flag an error since it is having the order
->>> specified in the bindings. qcom,pcie.yaml has 4 reg specifications. Two of
+>>>
+>>> Hm, then please paste results of dtbs_check W=1 testing. Here.
+>>>
+>>> I am 100% sure you have there warning and I don't understand your
+>>> reluctance to run the tests even after pointing it out by two people.
 >>
+>> I ran the tests. Not sure which portions to paste. Have attached the full
+>> output just in case you are interested in some other detail. Please take a
+>> look.
 >>
->> Hm, then please paste results of dtbs_check W=1 testing. Here.
+>> Thanks
+>> Varada
 >>
->> I am 100% sure you have there warning and I don't understand your
->> reluctance to run the tests even after pointing it out by two people.
+>> 	$ grep ipq.*dtb dtbs-check.log
 > 
-> I ran the tests. Not sure which portions to paste. Have attached the full
-> output just in case you are interested in some other detail. Please take a
-> look.
-> 
-> Thanks
-> Varada
-> 
-> 	$ grep ipq.*dtb dtbs-check.log
+> Where is the command you have used?
 
-Where is the command you have used?
+
+Although that might not matter - you skipped several warnings with your
+grep. So maybe you need to fix your process, not sure.
 
 Best regards,
 Krzysztof
