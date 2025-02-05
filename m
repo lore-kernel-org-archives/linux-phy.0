@@ -4,108 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF9D6C02192
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 13:10:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A281FC02192
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 14:01:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XLkRnPRvgcimKACcOsCoKfY0bglKyfg5DVv32ypiMYk=; b=rwUF+jZuVOnV6D
-	PaVW2d34gpMmgy8s6hAEHf73pfl4/+myXAbViSZP62VmHaruM4ly7JPuafSIkW9PBLerxoe4welFB
-	11XTJ/QdQ4FmGLB81beS1ZE7obf3/C/uJ+3inmNh66p8Oq/g3EwBePqkoJ/baHyQ0LJinUBLfOhvv
-	JxjBf+brtZTybqxv/aVSgf3W1TzbFBBnBsJy5tmFy8kjovcPqOaj3L4wbPS0JpQnIkuj0Z8xruCmK
-	dkuwDjwHTozeh6Em5S32kILOvQZr2ei1ct3HaTujj3AamR6LZb8vqEOqDZWre7P7H6qu+Ck4gwA5c
-	kj6NbCdJHbNJqQtzc+Ug==;
+	List-Owner; bh=RfwO2zizsDC1+15tDGB39GaW0bElHYAbPVELVmmMEZ4=; b=SRBbSyQicKNTr/
+	HW1KZjKahx7/r6TsIOh71rJeRxgimYARB7UpuJQxrnuRu4pzFh6Hrtc+V6XTaZjwjIrXlXpccH3q8
+	ZD+rqpZF5/9qjiIQ+4Av1GKeW0tVn6Zlg8muZL3aI7NshAZyvQq9D1lnmTSEzuUhgP63eT/GsmRS4
+	CrzlebFB6MVSuwLGuX+BPWSuuSom43xSRU5UrZUc7fhWbDOX1qxhI7qKKMxwf0W+iUEkzEoZeAw3u
+	LQGBt4ZFR1K6T5lCWY1JrUjr9M71nUkRYfDiK9ZouvesNp16VubfXoiUdtyyuN7R1yfBlGm4wYB5n
+	oSPI1ElszICbUlf0HSaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tffB8-00000003LjO-2Yj0;
-	Wed, 05 Feb 2025 13:10:54 +0000
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	id 1tffxh-00000003Tcg-3n2n;
+	Wed, 05 Feb 2025 14:01:05 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfetd-00000003HxF-0S07;
-	Wed, 05 Feb 2025 12:52:50 +0000
-Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-5d982de9547so13147714a12.2;
-        Wed, 05 Feb 2025 04:52:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1738759968; x=1739364768; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=lyEbgL/DE3XaQNmV45jqJ+6PRNx/4WLm+5/Q7HMMYbM=;
-        b=gXMIcYqmz5QqLUiq3Ky1Czrye2a1bdZmcxf13S1I2i1dHPFHBhLRr2//wMrcsxH5xW
-         /CrFQVM7/DahEsPCuky7Y8EbXTuK8HVG40Qz0SYHYrqtNuO12lROWVB2130m8XpIpw4G
-         abxuRLkWc0+07J/rXi5ddQhLotAulJ/lNbmlERvlRYR5nIKigNsNrsUdVbtL5bTlz6vm
-         B/iNmwzxSV/nCzutQ1YPrg4t5QycXPnk5mls4deBbGvizrAYrXygoq4S3lx0JNGXX3SC
-         yjW5jxhRzs4OO6RdGyuQWNDstA91QNJTmnxNr6xqrOAZk9QWzCSoWX1UZGtonCAAtWl3
-         q70w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738759968; x=1739364768;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=lyEbgL/DE3XaQNmV45jqJ+6PRNx/4WLm+5/Q7HMMYbM=;
-        b=kVVjbkW6XkF3xE/jWbRq6fZRmBha8+eW4aZ7UaCBj4wI/M7GcgDvtKippF3oqSVSlC
-         xeJy4t022Xs1TZactmhiy0ERJEFkvYNepqki3hwkL85IT4HdhjRoHmA+kkKO68oxOYCN
-         MW52EGY71AEllQ54MMcJM+C4lVHBHn7YGuDCgoKigce5kWCFMADloW3OZ0jr9HZay57o
-         j66HBxky1No5s2lJBPQKFrG5KOY6unI39aEINQq9009myYj1Q3J+L5CxusEVZdhdFPwl
-         uc9ukKgJO9B6UWUffMlfaVl4Xtsl6CreCXM2QFnNuQTYDG9Hu0AyQEEhAMkPdk/+4R/3
-         U/uQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUV5sQV2N70BYpOwfsN29jXa5LsgR5QDLOi/s19B4P999Srqh+Z8vzNnEhFqbpTWNLlMkMAff0+jpmwcd6KUTNg@lists.infradead.org, AJvYcCVGtQSXqKysX4GizqdXt3FpHsR63IqvC59VHBTY0AKNrd7F07jCxFYQe7ilT8U5jHJm+u6ZXfN2xDos@lists.infradead.org, AJvYcCWYvc7ge7L9F94NTSlaM3ZLOWxGyMXq4jOh6PgXRhKIBTQ3RtCozQIzN1Cl/dQ/7XGaQJTIWfw3f/Z83mA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyhAgadbA/qsSL4SmbYVrmiamcIlFVs13XqON9oAaCMjOC2Fq5X
-	8WLrvfn/h1cf/2dlE6SxbAPKEjFA1XKr/u38TfDNk5bzNBFK4Cq/
-X-Gm-Gg: ASbGncvGbjKFpT+5bzdxqblQ5mYsP773v5+ortGDt211TEHqc/Xck7G9RXru+hmf8Ly
-	Cs5JFBccMdwcKo0u7ZV4IPCLWG011ItY/Fuu9lZR+Ndriiwe5qDWusCRPrwlavZLnz8hc9kxQMB
-	NsimqMq0YVfR8nlVWYHGknInWXWhevzhKUSITkAjT1zGsj5opUgQ91yEsvxepGXn300gjf+Kgnl
-	GWyciMy2OYRqTuWYrPiO0umNCsDhJ2fQDAtlOK+lzGeCOfwzymo8qVpSiCM0+fvTqDAz+sIbSmx
-	1tjNcKFkSGsuNo5UW+IX4QXz7F/OncUi7IIOWJLutA5hdw==
-X-Google-Smtp-Source: AGHT+IETUIvDkqTKdY7k2714QPYM3xUPceBcb2unO/nI5NYhZ4IV4FRiMa6FjOclLKPwMVNHsxzJ0A==
-X-Received: by 2002:a05:6402:358d:b0:5d0:cfad:f6c with SMTP id 4fb4d7f45d1cf-5dcdb764604mr2738652a12.21.1738759967460;
-        Wed, 05 Feb 2025 04:52:47 -0800 (PST)
-Received: from localhost.localdomain (185.174.17.62.zt.hu. [185.174.17.62])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dc724055e5sm11559997a12.45.2025.02.05.04.52.45
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 05 Feb 2025 04:52:46 -0800 (PST)
-From: Andras Szemzo <szemzo.andras@gmail.com>
-To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Maxime Ripard <mripard@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	=?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
-	Florian Fainelli <florian.fainelli@broadcom.com>,
-	linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-gpio@vger.kernel.org,
-	linux-pm@vger.kernel.org,
-	linux-riscv@lists.infradead.org
-Subject: [PATCH v2 10/10] ARM: dts: sun8i: add DTS file for yuzuki-lizard V851s
-Date: Wed,  5 Feb 2025 13:52:25 +0100
-Message-Id: <20250205125225.1152849-11-szemzo.andras@gmail.com>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250205125225.1152849-1-szemzo.andras@gmail.com>
-References: <20250205125225.1152849-1-szemzo.andras@gmail.com>
+	id 1tffkQ-00000003RCl-3fSV
+	for linux-phy@lists.infradead.org;
+	Wed, 05 Feb 2025 13:47:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 90A1B5C6C96;
+	Wed,  5 Feb 2025 13:46:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9029C4CED6;
+	Wed,  5 Feb 2025 13:47:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1738763242;
+	bh=2xSUd10v52FvyU30pKajPas2pbf816GVdUkT84RFQGw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=rTwoYsQjyeiUDbtxhjuUgUO0ZR79NoiQFQMRpFPDQD8fcL9FK+Tmxci9DNdcSzJFY
+	 YthNANcaCHSu2AcIqNgV6ClNu4dpRDdRrZ1UU7m3cF0jZzsJD9erPbCrFpVhNFUmZe
+	 ZRtElLAzDvdbpy3KFuaNqSZ4fE5cnYVTApJ/gaa25kPmwMzZPMj/d1A1wljKJA+9jB
+	 GEIwBCFDka9O6zfObU+RI5JBnp4Q9xMwSxQ5aw3RX7xV+EfMxbZOE8FR7Dkfivum8g
+	 rft/BdDxtYwM+cl2iExfC2v4pGOVbfs9K5ZI9GuKOgpUqJhLuEAuK319rrz2nZ9zw1
+	 9AtEy5Dfe54dA==
+Message-ID: <85f54baa-7d3d-43c3-9944-8f5f3c3006da@kernel.org>
+Date: Wed, 5 Feb 2025 14:47:13 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v9 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
+ manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ andersson@kernel.org, konradybcio@kernel.org, p.zabel@pengutronix.de,
+ dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Praveenkumar I <quic_ipkumar@quicinc.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+References: <20250128062708.573662-1-quic_varada@quicinc.com>
+ <20250128062708.573662-7-quic_varada@quicinc.com>
+ <cc1c34f0-0737-469d-a826-2df7f29f6cf3@kernel.org>
+ <Z6NCSo98YRgG666Q@hu-varada-blr.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
+ QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
+ gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
+ /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
+ iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
+ VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
+ 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
+ xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
+ eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
+ AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
+ MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
+ Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
+ ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
+ vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
+ oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
+ lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
+ t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
+ uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
+ 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
+ 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
+In-Reply-To: <Z6NCSo98YRgG666Q@hu-varada-blr.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_045249_154306_08F13FF4 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20250205_054723_005911_B3B6B18F 
+X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,232 +126,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Yuzuki-lizard is an Open Hardware board based on Allwinner V851s SoC. Add a basic dts for it.
+On 05/02/2025 11:49, Varadarajan Narayanan wrote:
+> On Mon, Feb 03, 2025 at 05:30:32PM +0100, Krzysztof Kozlowski wrote:
+>> On 28/01/2025 07:27, Varadarajan Narayanan wrote:
+>>>
+>>> @@ -479,6 +519,230 @@ frame@b128000 {
+>>>  				status = "disabled";
+>>>  			};
+>>>  		};
+>>> +
+>>> +		pcie1: pcie@18000000 {
+>>> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
+>>> +			reg = <0x00088000 0x3000>,
+>>
+>> So as Konrad pointed out now, this was never tested. It's not we who
+>> should run tests for you. It's you.
+> 
+> This was tested and it did not flag an error since it is having the order
+> specified in the bindings. qcom,pcie.yaml has 4 reg specifications. Two of
 
-Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
----
- arch/arm/boot/dts/allwinner/Makefile          |   1 +
- .../boot/dts/allwinner/sun8i-v851s-lizard.dts | 196 ++++++++++++++++++
- 2 files changed, 197 insertions(+)
- create mode 100644 arch/arm/boot/dts/allwinner/sun8i-v851s-lizard.dts
 
-diff --git a/arch/arm/boot/dts/allwinner/Makefile b/arch/arm/boot/dts/allwinner/Makefile
-index 48666f73e638..af84073f6a51 100644
---- a/arch/arm/boot/dts/allwinner/Makefile
-+++ b/arch/arm/boot/dts/allwinner/Makefile
-@@ -260,6 +260,7 @@ dtb-$(CONFIG_MACH_SUN8I) += \
- 	sun8i-v3-sl631-imx179.dtb \
- 	sun8i-v3s-anbernic-rg-nano.dtb \
- 	sun8i-v3s-licheepi-zero.dtb \
-+	sun8i-v851s-lizard.dtb \
- 	sun8i-v3s-licheepi-zero-dock.dtb \
- 	sun8i-v40-bananapi-m2-berry.dtb
- dtb-$(CONFIG_MACH_SUN9I) += \
-diff --git a/arch/arm/boot/dts/allwinner/sun8i-v851s-lizard.dts b/arch/arm/boot/dts/allwinner/sun8i-v851s-lizard.dts
-new file mode 100644
-index 000000000000..180d10b1a06a
---- /dev/null
-+++ b/arch/arm/boot/dts/allwinner/sun8i-v851s-lizard.dts
-@@ -0,0 +1,196 @@
-+// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
-+// Copyright (C) 2024 Andras Szemzo.andras@gmail.com>
-+
-+/dts-v1/;
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/leds/common.h>
-+#include "sun8i-v853.dtsi"
-+
-+/ {
-+	model = "Yuzuki-lizard";
-+	compatible = "yuzukihd,lizard", "allwinner,sun8i-v853", "allwinner,sun8i";
-+
-+	aliases {
-+		serial0 = &uart0;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	memory {
-+	    reg = <0x40000000 0x4000000>;
-+	};
-+
-+	reg_vcc: vcc {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+	};
-+
-+	reg_vcc_1v8: vcc-1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc-1v8";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+	};
-+
-+	reg_usbvbus: usbvbus {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usbvbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&reg_vcc>;
-+	};
-+
-+	reg_vcc_3v3: vcc-3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc-3v3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		vin-supply = <&reg_vcc>;
-+	};
-+
-+	reg_vdd_cpu: vdd-cpu {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vdd-cpu";
-+		regulator-min-microvolt = <900000>;
-+		regulator-max-microvolt = <900000>;
-+		vin-supply = <&reg_vcc>;
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		status_led {
-+			linux,default-trigger = "heartbeat";
-+			label = "led:red";
-+			gpios = <&pio 5 6 GPIO_ACTIVE_HIGH>;
-+		};
-+	};
-+
-+	wifi_pwrseq: wifi-pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		reset-gpios = <&pio 4 6 GPIO_ACTIVE_LOW>; /* PE6 */
-+	};
-+};
-+
-+&dcxo {
-+	clock-frequency = <24000000>;
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&reg_vdd_cpu>;
-+};
-+
-+&pio {
-+	vcc-pa-supply = <&reg_vcc_3v3>;
-+	vcc-pc-supply = <&reg_vcc_3v3>;
-+	vcc-pd-supply = <&reg_vcc_3v3>;
-+	vcc-pe-supply = <&reg_vcc_3v3>;
-+	vcc-pf-supply = <&reg_vcc_3v3>;
-+	vcc-ph-supply = <&reg_vcc_3v3>;
-+};
-+
-+&uart0 {
-+	pinctrl-0 = <&uart0_ph9_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+};
-+
-+&wdt {
-+	status = "okay";
-+};
-+
-+&spi0 {
-+	pinctrl-0 = <&spi0_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "spi-nand";
-+		spi-max-frequency = <75000000>;
-+		reg = <0>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				label = "awboot";
-+				reg = <0x00000000 0x00020000>;	/* 128K */
-+			};
-+
-+			partition@20000 {
-+				label = "dtb";
-+				reg = <0x00020000 0x00020000>;  /* 128k */
-+			};
-+
-+			partition@40000 {
-+				label = "kernel";
-+				reg = <0x00040000 0x00800000>;  /* 8MB */
-+			};
-+
-+			partition@840000 {
-+				label = "rootfs";
-+				reg = <0x00840000 0x077c0000>;
-+			};
-+		};
-+	};
-+};
-+
-+&i2c2 {
-+	pinctrl-0 = <&i2c2_ph11_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+};
-+
-+&mmc0 {
-+	bus-width = <4>;
-+	broken-cd;
-+	disable-wp;
-+	vmmc-supply = <&reg_vcc_3v3>;
-+	vqmmc-supply = <&reg_vcc_3v3>;
-+	pinctrl-0 = <&mmc0_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+};
-+
-+&mmc1 {
-+	bus-width = <4>;
-+	mmc-pwrseq = <&wifi_pwrseq>;
-+	non-removable;
-+	vmmc-supply = <&reg_vcc_3v3>;
-+	vqmmc-supply = <&reg_vcc_3v3>;
-+	pinctrl-0 = <&mmc1_pins>;
-+	pinctrl-names = "default";
-+	status = "okay";
-+
-+	xr829: wifi@1 {
-+		reg = <1>;
-+		interrupt-parent = <&pio>;
-+		interrupts = <4 7 IRQ_TYPE_LEVEL_HIGH>; /* PE7 */
-+		interrupt-names = "host-wake";
-+	};
-+};
-+
-+&usb_otg {
-+	dr_mode = "otg";
-+	status = "okay";
-+};
-+
-+&ehci0 {
-+	status = "okay";
-+};
-+
-+&ohci0 {
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	usb0_vbus-supply = <&reg_usbvbus>;
-+	usb0_id_det-gpio = <&pio 4 9 GPIO_ACTIVE_LOW>;
-+	status = "okay";
-+};
--- 
-2.39.5
+Hm, then please paste results of dtbs_check W=1 testing. Here.
 
+I am 100% sure you have there warning and I don't understand your
+reluctance to run the tests even after pointing it out by two people.
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
