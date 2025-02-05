@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A670C02192
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 08:56:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57549C02192
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Feb 2025 08:58:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wPWMO/XrSbNRXTYtr9hzmCOjDpdfNHBqoylB/sTnQ6A=; b=e3qh+dqOKfpciW
-	l3HjLDaMyCm0E3dLF3/lvxWkURef28YAqTBoWVc9IKCUulTR9oJO565srGmrW3V5WZcSRhC/M0KRH
-	HUTkWZzlQwHpuSGW6a1RTwj41VfENyl8vNyECsGbbgIozIV6scuchsE9YX2DvI+5katcAlWznUCP4
-	bX4t5VtpFeywcq+jqel28LsLcfs3THglm4ld+4whfmEyphIVg4gnip93ZGfO6tM757q+o9N1BmNon
-	ZAH1zfBci8GXQox2v1k+v88EwSzfWduZ5u+xNgraBpfaE7QkXayBVBc84QEMPDqXTzXVlg9NBmIfb
-	V1pfp+4wgosa7roG1ORw==;
+	List-Owner; bh=wPWMO/XrSbNRXTYtr9hzmCOjDpdfNHBqoylB/sTnQ6A=; b=a86Vdr7h4T8oGZ
+	pTaUMbP8vebTjXRVpMrSDxdoshzUX1CTGvF8i58fjdPb4lHVyaPF08gta/mTP6qA2+i8Np9za6bK0
+	rqv2iG3gXIuNIurSUsL4UYQ0cGS7gD2m8RPVHjr546eOkwDG1EFrHvRBFhtX8wqLK8JhQ+neXoLQP
+	++QrQGAcrD9BaGR0zC8T9Vn9Ag73fIQaTJdfahz7szahcQgni70MD6TdTYGpuSAePxw0X/TT4zb5O
+	0WXprbIppksBCMShpMsNNtshd6ZrblsKUCi3SLDGH6QAXrCRvx376eG55VYGqe620HeKajuJA+3tn
+	oQ2851vVcPD9zLqhyTgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfbCj-00000002dbp-3cr6;
-	Wed, 05 Feb 2025 08:56:17 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tfbEf-00000002dqA-3mPk;
+	Wed, 05 Feb 2025 08:58:17 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfbB7-00000002dO1-3thO;
-	Wed, 05 Feb 2025 08:54:39 +0000
+	id 1tfbDI-00000002dhk-2Nq8;
+	Wed, 05 Feb 2025 08:56:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id DA401A40C6E;
-	Wed,  5 Feb 2025 08:52:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B9CAAC4CED1;
-	Wed,  5 Feb 2025 08:54:35 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 495505C5C71;
+	Wed,  5 Feb 2025 08:56:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0540CC4CED1;
+	Wed,  5 Feb 2025 08:56:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738745676;
+	s=k20201202; t=1738745811;
 	bh=jDRflpWn/eNSVYWYsmChMhlBoAx8KSfDOFOxrHxoKr8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tc/UMR2FRlTFRyVgYY9afrZYTS+LM9UgZhIPbWvhBkEdq50RpckoDoMsFG2Maj+Xp
-	 xQpnREgSJgAJk6owZFc7RIUFxYZ6XMGaK9ikVr3V+GX3rZRNnwawmNQrqGuwf72pp2
-	 FOLNnxXK33Mvs4CknqYG6GDUWaczasrSd10uY4pX2DcgewkSsezuzgfbwjwSZ6JxKr
-	 CHMWtN/jjvrIQHZtZe+pSujeJtrETJ2gvLolt/b7+RxL524dZ1Xd395O97XC6+Xvg/
-	 KuHpmUxhJX3odtIxR7SFQCK6xzWD/0CHny2bDFC0FQ42H/8Kpbl6QE0kQolyHb+DGP
-	 3KJ4U6pgJpb0w==
-Date: Wed, 5 Feb 2025 09:54:32 +0100
+	b=BMSlP1ztsEQ6urNcvZNA5LG4TmjqcVVFSqEmeOSjDrESzJZNO1oxJvblv8TodUMiU
+	 R6413G/mmomrMVFAsyr/c/jxrDbubulBDssRG796vFMpUqYBRklhxfoOIXNxWK5256
+	 /g+5HdjX08Opk7C/rVYaFxP4SrgpyAVp3aod4SgvN6wUvU2+Lr42bIK5Val/qGRG69
+	 989H0jpSNzdQBOyJ09htb446gC5YHaQb62BSj6j3W/RWS//qpBPxLqrBP52meOGVR6
+	 5dOHUnMbbujMt4eHY+7X0JzupJ+WI7ycN7P1ltK49yAExZJCYCb+y4hczpJ9duUxVU
+	 1H9i6UOY80maw==
+Date: Wed, 5 Feb 2025 09:56:48 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Kaustabh Chakraborty <kauschluss@disroot.org>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -53,14 +53,14 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	devicetree@vger.kernel.org
 Subject: Re: [PATCH 3/4] dt-bindings: phy: samsung,usb3-drd-phy: add
  exynos7870-usbdrd-phy compatible
-Message-ID: <20250205-sturdy-emerald-gaur-953deb@krzk-bin>
+Message-ID: <20250205-honest-versatile-bettong-9c4c0e@krzk-bin>
 References: <20250204-exynos7870-usbphy-v1-0-f30a9857efeb@disroot.org>
  <20250204-exynos7870-usbphy-v1-3-f30a9857efeb@disroot.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20250204-exynos7870-usbphy-v1-3-f30a9857efeb@disroot.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_005438_048462_937B0A5E 
+X-CRM114-CacheID: sfid-20250205_005652_641631_EBC2DC94 
 X-CRM114-Status: UNSURE (   8.17  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
