@@ -4,57 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E3A9C02194
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 16:36:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D8CFC02194
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 21:19:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:References:In-Reply-To:
-	Subject:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1KW+vq8QTy62ecooKEBs/J71/bCJ9g8zxZ29soYHY0Q=; b=vcM2JKHYS7Husn
-	mCWP+pm1M6dBhH0xe85rFiboe8FrWHNp8sEEV2S+lKhWX89Aa50vuHir+WEsIKjIfzGfCM69LHQpg
-	DaeKhV0t35riju46pY993rtrzESfm1+2tYGrXsVNJGNMJuVUt3muGme7b2nTZ3/TiufcL1c8pypPE
-	H/08x6BaL5n0mH7mOVAeWPyj2CfSPpuhY7qAf1bzmNZjPpzldkK+NaRzjooal1Kv3FfKgNka+HVFw
-	m9SUlVoHoFjCE26IpMh9mYehFrQswwJxltpBvIztGJ8bD+J9xwpW4PLl7Td3Jw1YzLDP8Np9LjFed
-	iHbx2db/H/xfA6H2tcug==;
+	List-Owner; bh=ZdJHBR+Z78l8wmHqyGUWw7LKxlYkWA4g/CqTs7xcnIU=; b=aNxOldkozVvdOM
+	FxfqOwupiS69T5hDeXuTqz76+3Vt5iK3pFeWcyRhrvkV6SSPRuQcoDheNaQgUyO638J0PMNkVzkc3
+	f8qFWk7f4OhoW4D6PZdKsY/DpqZwVmwRUvyYYhrh03ARjt2v7AlU2PqAN4SWnDVu/6Y2opDgBFMpE
+	/TPkSZ3qKp+G6Z9RonkDuCQ0E8itfM6d09pKJAOkMFzhxxwrPXz7NvzVHppnxLIM0dlqPYNOb/jD1
+	qpmSAa7gXjpEAxi7xbGcc9pNtyBYiWFLAd0mlas/YZY3yXcEeHyHTBpBH6Ky9VWQnTvxUMwAg4IHE
+	8YyByBx/P9kKVd8DRE9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tg4rW-00000006sbT-0Swf;
-	Thu, 06 Feb 2025 16:36:22 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tg9Hj-00000007Z8x-2Rtg;
+	Thu, 06 Feb 2025 21:19:43 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tg4q8-00000006sPj-02p4;
-	Thu, 06 Feb 2025 16:34:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id BD5485C6568;
-	Thu,  6 Feb 2025 16:34:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AD1F8C4CEDD;
-	Thu,  6 Feb 2025 16:34:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1738859695;
-	bh=+ivOAUv3shutbdSTgc0/oz/8/mZOlkgY1F9fFkCvfs0=;
-	h=Date:From:To:Subject:In-Reply-To:References:Cc:From;
-	b=gu7zYGA5Ha68MTmNlxhrXGN574w4P+3IrB6nJY6x6RCRin7jR2+BUffeyQCVyQg67
-	 oW8ak31pVFpVSGXhsDClOI6YtrD9/qezzRzEzmcd8/D3NYzad4cZ4fi0eOvJ/494Cw
-	 wPBO3uhkBDiaiU86eCnw57sqaxpHrVavnOJSTKLEadIx3e+n66hfBaexQQsJhQVzUV
-	 JhnaBJF471QlXMkwrEvInOngEHEi+lb6wG+HhT+sPwpw2njYwbp2aNjLOVvl+MoRzE
-	 4gdu9o8kDKwg4EJknCp+ftTdP9XhRKP+3WkWfJ7HAudTs0YHUXTb1wirn7KFRcHVKM
-	 eBG+69YkGgOZw==
-Message-ID: <895aa2097cb7e57560c70ca53aba4abb@kernel.org>
-Date: Thu, 06 Feb 2025 16:34:52 +0000
-From: "Maxime Ripard" <mripard@kernel.org>
-To: "Liu Ying" <victor.liu@nxp.com>
-Subject: Re: Re: [PATCH v8 13/19] MAINTAINERS: Add maintainer for i.MX8qxp
- Display Controller
-In-Reply-To: <7a03ebbf-5ee3-45d3-a58c-8832bd0f8960@nxp.com>
-References: <7a03ebbf-5ee3-45d3-a58c-8832bd0f8960@nxp.com>
-Cc: agx@sigxcpu.org, airlied@gmail.com, aisheng.dong@nxp.com, conor+dt@kernel.org, devicetree@vger.kernel.org, dmitry.baryshkov@linaro.org, dri-devel@lists.freedesktop.org, festevam@gmail.com, francesco@dolcini.it, frank.li@nxp.com, imx@lists.linux.dev, kernel@pengutronix.de, kishon@kernel.org, krzk+dt@kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, maarten.lankhorst@linux.intel.com, mripard@kernel.org, p.zabel@pengutronix.de, robh@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org, simona@ffwll.ch, tglx@linutronix.de, tzimmermann@suse.de, u.kleine-koenig@baylibre.com, vkoul@kernel.org, "Maxime
- Ripard" <mripard@kernel.org>
+	id 1tg9GK-00000007Yz2-4AqT;
+	Thu, 06 Feb 2025 21:18:18 +0000
+Received: from pendragon.ideasonboard.com (81-175-209-231.bb.dnainternet.fi [81.175.209.231])
+	by perceval.ideasonboard.com (Postfix) with ESMTPSA id B7341227;
+	Thu,  6 Feb 2025 22:16:59 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1738876619;
+	bh=a9o//Z3kQXp75IfK8oqW2d3xPTbgXldqgAgvPGnV6UM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=HIcorzY5kCIiui65WhPzYGRM2yHa4K+sORaYzMijC/QCL+w1+g4OPg1MU82u7stwj
+	 qq0M/mQLFxlNuwuD3PcZhQhIV8QhnSH527Yi+wT7+73hyynYN4wn/nfv/gdzOtSPRp
+	 rrkaAIDsNF3huY0t5AHXA+KyYP587Ae/UWijCJoo=
+Date: Thu, 6 Feb 2025 23:18:08 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rui Miguel Silva <rmfrfs@gmail.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-media@vger.kernel.org, "Guoniu.zhou" <guoniu.zhou@nxp.com>,
+	Robby Cai <robby.cai@nxp.com>,
+	Robert Chiras <robert.chiras@nxp.com>
+Subject: Re: [PATCH v2 01/14] dt-bindings: phy: Add MIPI CSI PHY for i.MX8Q
+Message-ID: <20250206211808.GA24886@pendragon.ideasonboard.com>
+References: <20250205-8qxp_camera-v2-0-731a3edf2744@nxp.com>
+ <20250205-8qxp_camera-v2-1-731a3edf2744@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250205-8qxp_camera-v2-1-731a3edf2744@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250206_083456_098382_E33E7891 
-X-CRM114-Status: UNSURE (   5.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250206_131817_173094_ABF384A2 
+X-CRM114-Status: GOOD (  21.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,25 +78,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 5 Feb 2025 10:39:10 +0800, Liu Ying wrote:
-> Hi Dmitry, Maxime,
-> 
-> On 12/30/2024, Liu Ying wrote:
-> > Add myself as the maintainer of i.MX8qxp Display Controller.
-> > 
-> 
-> [ ... ]
+Hi Frank,
 
-Reviewed-by: Maxime Ripard <mripard@kernel.org>
+Thank you for the patch.
 
-Thanks!
-Maxime
+On Wed, Feb 05, 2025 at 12:18:10PM -0500, Frank Li wrote:
+> Add MIPI CSI phy binding doc for i.MX8QXP, i.MX8QM and i.MX8ULP.
+
+s/CSI/CSI-2/ in the subject line, here and below.
+s/phy/PHY/
+
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> change from v1 to v2
+> - Add missed fsl,imx8qm-mipi-cphy, which failback to fsl,imx8qxp-mipi-cphy
+> - Move reg to required. Previous 8ulp use fsl,offset in downstream version.
+> which should be reg. So move it to required
+> ---
+>  .../bindings/phy/fsl,imx8qxp-mipi-cphy.yaml        | 57 ++++++++++++++++++++++
+>  1 file changed, 57 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8qxp-mipi-cphy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8qxp-mipi-cphy.yaml
+> new file mode 100644
+> index 0000000000000..7335b9262d0e7
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/fsl,imx8qxp-mipi-cphy.yaml
+> @@ -0,0 +1,57 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/fsl,imx8qxp-mipi-cphy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Freescale i.MX8 SoC MIPI CSI PHY
+> +
+> +maintainers:
+> +  - Frank Li <Frank.Li@nxp.com>
+> +
+> +properties:
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  compatible:
+> +    oneOf:
+> +      - enum:
+> +          - fsl,imx8qxp-mipi-cphy
+> +          - fsl,imx8ulp-mipi-cphy
+> +      - items:
+> +          - const: fsl,imx8qm-mipi-cphy
+> +          - const: fsl,imx8qxp-mipi-cphy
+
+Why are those called cphy when, as far as I can tell from the
+documentation, they are D-PHYs ? Does that stand for *C*SI PHY ? I find
+it slightly confusing, but not so much that I'd ask for a change. It's
+just a name at the end of the day.
+
+Apart from that the binding looks fairly OK. Except maybe from the fact
+that this device is not a PHY :-( It has two PHY control registers, but
+the rest seems related to the glue logic at the output of the CSI-2
+receiver. I wonder if we should go the syscon route.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +required:
+> +  - "#phy-cells"
+> +  - compatible
+> +  - reg
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - fsl,imx8qxp-mipi-cphy
+> +    then:
+> +      required:
+> +        - power-domains
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    phy@58221000 {
+> +            compatible = "fsl,imx8qxp-mipi-cphy";
+> +            reg = <0x58221000 0x10000>;
+> +            #phy-cells = <0>;
+> +            power-domains = <&pd 0>;
+> +    };
+> +
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
