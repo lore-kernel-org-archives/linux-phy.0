@@ -4,61 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFE41C02192
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 01:48:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8866BC02196
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 06:19:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cmG2sBkImLZ14/2yFiPtADxvuk4ZC9xU1leVkb2WziE=; b=FUPnPUqgyBl1so
-	vuZFE40kqlWtDdfk4gh2dIyeei/TUCyCjAtcJKHVSj8j0/NW9U8PBAxujlpoe1SHClDK+PndoJ+rU
-	FZ9d0HXpBomw5rHgHGlZdx2FRZA69sufqA+vljj0QJbS8FoXKMN91He0x9j3yOK6NdizvTrK6YoqK
-	RRSr92DnLORYzQqG9cAS0OI4VBiQZT2CRJwvSS9argr+ebueB2K/M3jmyfOQA0YY4J+NVIVZgooEl
-	1dOWP04qWMTf0+CBQiseco0awMKZQgwGrpwjXPSW/29LtiPIVWK3rz4Sae4IyukkNfNfuPUNgWVnj
-	jkvT/MjCcfZMe6RvXVPw==;
+	List-Owner; bh=oPoxUWBMv+H6m4yhV4/dZvLYtmPjfkXbGjj62UemJRA=; b=eB7LIDwBcV29J8
+	jVef2O/NqNGLVOSzakbVirfstJhA4ODOMcwzSX+KF64i9p1561cbsIYH1EyV63DTkZS56TYjGVi4K
+	BuTZriZav1mpQOOM/CpagG1E9AksJkjNFQdpc7hzXljvNipT+IVCXIOw1pvgSmoOU9JOQnfbGY06f
+	GCGjGH1oKaOrVH84okeQeMv6z++DVqBz2bNt1StUoRgiUv2u3MboM0N0KHR6f1s9EFR25p9jrLZMm
+	8mHbyHyXv9WS/e0+eApbP+zFGcq4m7rwc2vfcgpOpZFXiMTFbUWRRv+ZiOP7+0wwzIl+MvP3e82xX
+	t7HekhrY9I3Ke3Wi4TZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfr0L-000000051JY-1eJc;
-	Thu, 06 Feb 2025 01:48:33 +0000
-Received: from mail-m9367.xmail.ntesmail.com ([103.126.93.67])
+	id 1tfvEb-00000005NPH-3jTp;
+	Thu, 06 Feb 2025 06:19:33 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfr0H-000000051IG-2MKp
+	id 1tfvEa-00000005NOp-0TOW
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Feb 2025 01:48:31 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id a459f8a5;
-	Thu, 6 Feb 2025 09:48:24 +0800 (GMT+08:00)
-Message-ID: <465d8ecd-25bf-411e-8b12-95f88eb8620b@rock-chips.com>
-Date: Thu, 6 Feb 2025 09:48:24 +0800
+	Thu, 06 Feb 2025 06:19:33 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5161iwPS029805;
+	Thu, 6 Feb 2025 06:19:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=1GjdVUeIgEMWel2f4TkBw/gT
+	uyQzB8WZcxBa+28LGjA=; b=p0T9wdEU9Wm26EaiPU8pHANnL7yRIDT+PF0mhdQ4
+	aLCYFdRbC+UFUjQXrs9wnR9jfZIccDqBbZwHlGYiSlIBJe1ZlcN1bJf1L0TRtVk1
+	bWeb8ipW9qBNLVm4mAWAtLcKAM7zaavsllE2rLFyZrR6eUsGYNK8I9mUqXwoeJSa
+	2cA9A07INwAWrqOQp9n3+i1PxMvzsR07i9WHyYmSies5MZVpr/yU3pXDI1BAKnht
+	9iy8w7C8pylxFyUcpVpsTP2LUVXqosakoFSfObXyoaL/fDdw3CIW3eMo7u+1L+kW
+	6GWysLKu2DzbJRNkwsY/xMwv9yZq0gAMg3XjayrBMCPxHg==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44mkpjrgty-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 06 Feb 2025 06:19:22 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5166JKgU025475
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 6 Feb 2025 06:19:20 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Wed, 5 Feb 2025 22:19:14 -0800
+Date: Thu, 6 Feb 2025 11:49:11 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
+        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
+        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <p.zabel@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
+        <quic_nsekar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        Praveenkumar I <quic_ipkumar@quicinc.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Subject: Re: [PATCH v9 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+Message-ID: <Z6RUX3ZbDbd3qvjs@hu-varada-blr.qualcomm.com>
+References: <20250128062708.573662-1-quic_varada@quicinc.com>
+ <20250128062708.573662-7-quic_varada@quicinc.com>
+ <cc1c34f0-0737-469d-a826-2df7f29f6cf3@kernel.org>
+ <Z6NCSo98YRgG666Q@hu-varada-blr.qualcomm.com>
+ <85f54baa-7d3d-43c3-9944-8f5f3c3006da@kernel.org>
+ <Z6OFSr2vrmPJTp4u@hu-varada-blr.qualcomm.com>
+ <d867f285-b639-4080-beeb-20b75ee3f4a2@kernel.org>
+ <1d78b30c-f71a-4769-b665-7425f00eb5ec@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: core: don't require set_mode() callback for
- phy_get_mode() to work
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250107-phy-fix-set-moe-v1-1-b3dfe9391672@linaro.org>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <20250107-phy-fix-set-moe-v1-1-b3dfe9391672@linaro.org>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQklOGFZLTR1PGk4ZTx9PSExWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a94d8f1abd603a3kunma459f8a5
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6OBw6OAw5HjIKQwlLAjMjLyka
-	NTBPFAxVSlVKTEhDQ0tNTktOSU9LVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFKTUNJNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=UN6n1G5SBJMCG5+EL85ZCWAcyzd4m+NGNoLAmD5XCnU7Oql0EYGWDljLJ37UfS6HtQS1VtdVnnebATES9utF2A8B+1NAphtXPRJp4oOpABuHgJmI/+w3f27NV7mM6hlTuiOdE3tQCf5CwN88c3bZ3SUIDi8xXsZx5yE8XK+IaVQ=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=aSm+b636JXlhsI6UQo+/pRLW7JvXY0L+B+9AfrOID3M=;
-	h=date:mime-version:subject:message-id:from;
+Content-Disposition: inline
+In-Reply-To: <1d78b30c-f71a-4769-b665-7425f00eb5ec@kernel.org>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: cLEOi0dATr7nRvo4rsO8ih8xrrbRzmM9
+X-Proofpoint-GUID: cLEOi0dATr7nRvo4rsO8ih8xrrbRzmM9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-06_01,2025-02-05_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ adultscore=0 suspectscore=0 bulkscore=0 impostorscore=0 spamscore=0
+ clxscore=1015 malwarescore=0 mlxlogscore=986 lowpriorityscore=0
+ phishscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502060050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_174830_138943_A1767E82 
-X-CRM114-Status: GOOD (  15.68  )
+X-CRM114-CacheID: sfid-20250205_221932_272109_81DC345C 
+X-CRM114-Status: GOOD (  21.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,64 +106,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+On Wed, Feb 05, 2025 at 04:54:38PM +0100, Krzysztof Kozlowski wrote:
+> On 05/02/2025 16:53, Krzysztof Kozlowski wrote:
+> > On 05/02/2025 16:35, Varadarajan Narayanan wrote:
+> >> On Wed, Feb 05, 2025 at 02:47:13PM +0100, Krzysztof Kozlowski wrote:
+> >>> On 05/02/2025 11:49, Varadarajan Narayanan wrote:
+> >>>> On Mon, Feb 03, 2025 at 05:30:32PM +0100, Krzysztof Kozlowski wrote:
+> >>>>> On 28/01/2025 07:27, Varadarajan Narayanan wrote:
+> >>>>>>
+> >>>>>> @@ -479,6 +519,230 @@ frame@b128000 {
+> >>>>>>  				status = "disabled";
+> >>>>>>  			};
+> >>>>>>  		};
+> >>>>>> +
+> >>>>>> +		pcie1: pcie@18000000 {
+> >>>>>> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
+> >>>>>> +			reg = <0x00088000 0x3000>,
+> >>>>>
+> >>>>> So as Konrad pointed out now, this was never tested. It's not we who
+> >>>>> should run tests for you. It's you.
+> >>>>
+> >>>> This was tested and it did not flag an error since it is having the order
+> >>>> specified in the bindings. qcom,pcie.yaml has 4 reg specifications. Two of
+> >>>
+> >>>
+> >>> Hm, then please paste results of dtbs_check W=1 testing. Here.
+> >>>
+> >>> I am 100% sure you have there warning and I don't understand your
+> >>> reluctance to run the tests even after pointing it out by two people.
+> >>
+> >> I ran the tests. Not sure which portions to paste. Have attached the full
+> >> output just in case you are interested in some other detail. Please take a
+> >> look.
+> >>
+> >> Thanks
+> >> Varada
+> >>
+> >> 	$ grep ipq.*dtb dtbs-check.log
+> >
+> > Where is the command you have used?
 
-On 2025/1/7 19:34, Dmitry Baryshkov wrote:
-> As reported by Diamond Ding, the phy_get_mode() call doesn't work as
-> expected unless the PHY driver has a .set_mode() call. This prompts PHY
-> drivers to have empty stubs for .set_mode() for the sake of being able
-> to get the mode.
-> 
+	export ARCH=arm64
+	export W=1
+	export DT_CHECKER_FLAGS='-v -m'
+	export DT_SCHEMA_FILES=qcom
+	export CHECK_DTBS=y
 
-I believe the correct spelling should be 'Damon' instead of 'Diamond'. ;-)
+	make -j 16 dtbs_check &> dtbs-check.log
 
-> Make .set_mode() callback truly optional and update PHY's mode even if
-> it there is none.
-> 
-> Cc: Damon Ding <damon.ding@rock-chips.com>
-> Link: https://lore.kernel.org/r/96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com
-> Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> ---
->   drivers/phy/phy-core.c | 7 ++++---
->   1 file changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 8dfdce605a905d7f38205727151258af41f807a9..067316dfcd83a6fc8428cddd27d3b7ebfc270831 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -405,13 +405,14 @@ EXPORT_SYMBOL_GPL(phy_power_off);
->   
->   int phy_set_mode_ext(struct phy *phy, enum phy_mode mode, int submode)
->   {
-> -	int ret;
-> +	int ret = 0;
->   
-> -	if (!phy || !phy->ops->set_mode)
-> +	if (!phy)
->   		return 0;
->   
->   	mutex_lock(&phy->mutex);
-> -	ret = phy->ops->set_mode(phy, mode, submode);
-> +	if (phy->ops->set_mode)
-> +		ret = phy->ops->set_mode(phy, mode, submode);
->   	if (!ret)
->   		phy->attrs.mode = mode;
->   	mutex_unlock(&phy->mutex);
-> 
-> ---
-> base-commit: 7b4b9bf203da94fbeac75ed3116c84aa03e74578
-> change-id: 20250107-phy-fix-set-moe-d275cff5e27b
-> 
-> Best regards,
+> Although that might not matter - you skipped several warnings with your
+> grep. So maybe you need to fix your process, not sure.
 
-Best regards
-Damon
+export W=1 is the problem. Kernel Makefile differentiates between 'W' being
+set from environment and from command line with this check
 
+	ifeq ("$(origin W)", "command line")
+	  KBUILD_EXTRA_WARN := $(W)
+	endif
+
+I assumed similar to DT_SCHEMA_FILES and DT_CHECKER_FLAGS, W will also be
+taken. I was not aware of this differentiation, and the 'export W=1' never
+came into effect. I re-ran the command as below and see the warnings
+
+	$ make W=1 -j 16 dtbs_check &> dtbs-check2.log
+
+	$ grep Warning dtbs-check2.log | grep ipq.*dt
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq5424.dtsi:304.22-355.5: Warning (simple_bus_reg): /soc@0/usb2@1e00000: simple-bus unit address format error, expected "1ef8800"
+	arch/arm64/boot/dts/qcom/ipq5424.dtsi:395.22-448.5: Warning (simple_bus_reg): /soc@0/usb3@8a00000: simple-bus unit address format error, expected "8af8800"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
+	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
+
+Will change pcie@xxx to match with the first reg entry and post the next
+version.
+
+Thanks
+Varada
 
 -- 
 linux-phy mailing list
