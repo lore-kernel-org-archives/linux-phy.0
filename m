@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D948C0219E
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 12:21:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93FBFC021A1
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 12:21:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=07JTcXuqtw3TqST8VkOdY7ERvoFLW/D3VorRbz67PyE=; b=w5uE3/8xOiCfWQ
-	u73uFc6Ky3SNjvci5MH+FXC22RmD2rMbGdN3DvvO3hk5q/L7U+pzZ/gvFjRYfYQLDr+bsXsLe+gxm
-	ml3/iNPlqNhaENyRs9jrq9nHXdaIaD01owl7N2UjY+sWhwZqgMLDe49xQUr6W0O65fEh6JAmGsA1w
-	GrMLVFxM6rooRI5ux3uIRoW0GNCJX6vcBEYRFfEI2zmyI9e2S0hXtBMgd/iXq5Rj/3gqTmJrl3d7P
-	yp/c+MJKQFGIAhK7lu4MTZGvRmNwVbg7nFGWPkBzidecMwUJd6REQvTXUbErre6arDAGQhEsthhyv
-	4hkVTuTPSDfA/Acud5TQ==;
+	List-Owner; bh=hz1auk6xDMzKkG+kFiNCv4gwR/2UtMfFJKbDwFM0XrU=; b=cGCaH7+yBg+zHO
+	KbUDVXxslxtk9Xr//AafAf40bzyVrXpluo+gdbygeIb4aq96ZS7NqGTEBeanJ5rvaoafs+18JnC3q
+	psUCYvZE1NfsbvYr78+lmRMqbpiQVl28zGMrDfas12enp9pmec88UUfh+54sSkmiMpHHNXHtZSP2c
+	q8NwQBbWPWoyQF7UXijofwNcCbtC/FmFyk5mdVnyZa46XdySkSoyU+HFpCLch3nWd+OgudSDAI731
+	ZOZv8NwimOisLpfuxS2FlA2IXdZpVcvKol9Asa0FXCIzj3pE1PrQL/T4OH5Qe4H6MHC6tV7QYv6hf
+	596afdC4J+lGwDbxh7kQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tg0t4-00000006GFI-0cgr;
-	Thu, 06 Feb 2025 12:21:42 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tg0t5-00000006GHg-1TQV;
+	Thu, 06 Feb 2025 12:21:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tg0qB-00000006FkY-3JLf
+	id 1tg0qS-00000006Fop-2hBu
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Feb 2025 12:18:45 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 516AEX3o022112;
-	Thu, 6 Feb 2025 12:18:33 GMT
+	Thu, 06 Feb 2025 12:19:01 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5169CRMf014659;
+	Thu, 6 Feb 2025 12:18:55 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	content-transfer-encoding:content-type:date:from:in-reply-to
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	6BOwfi8zvCZgo3Ufovk97+k16eqLvO7ZlrSyykZCe9Y=; b=nPISBIse6Wlsxc+4
-	u3eBRNZMsKNxpVxAx2Gn+cUkn1IH+7AXw6uFK/jHdUNq79xcpHeVx+HidjAWUs3L
-	gclKxWbel9UBVRGIReiDwAd7gl6VMF+3Tu4OGWPFDbQEAaZJTmOsu2M/bojjfaON
-	e3XY2+NdvuiYkBwgDgdverNRXFHxfqWAvfFi/M3JVbQ6oBfn5p8TL8L4T5SAeqxp
-	LyFBFPrC+gIePxRR/1uqhLZhX7ERS2IeRNF4mUYgMB7Macyc+MYuqxBG/M0jQKPX
-	9Won59nUFt4yNXPIAWUb22Si4sCrK0ZOty5Mi+XO74EujsjneXGxBh885X9HzUcG
-	aNHZ1g==
-Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44mu5gg9ch-1
+	liM90EaSFkWz5fvN8fV9sCOz9l6VJFMwSOb3OnAq/jY=; b=asiNq98F1/CM40xf
+	F9RAdBk9Sly4kvajfseypYyqnXnAI6vW8QPUvkDh7v/jmL/J3d9LIyjXeASv/4CB
+	rsEENdyYK6mh9cRH09XbHTMV2D/4fdr9zdzryPWsC0cXgFrgI/WJrSBeOiLPcdBx
+	jJYXdArT589/gFCN/UUaickRO3KwunqIIXQb9NJlmXpcDPCd/HpXoMaVKOLeBd1U
+	3ZBWzGl9bzDp1DOLZ9aOfGuRB5sK/QCVCZIo6fvQ8qRiWy2fazR6LS5fXx9uxzHk
+	KjKDTCr05bDtcfA18mDTxXs1FLsxSX5eFEskpc1bZVsU9lPV5oZ9I79LmI6YbWFx
+	zZposw==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44mt8e0fjm-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 06 Feb 2025 12:18:32 +0000 (GMT)
+	Thu, 06 Feb 2025 12:18:54 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 516CIV48005840
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 516CIsMN019091
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 6 Feb 2025 12:18:31 GMT
+	Thu, 6 Feb 2025 12:18:54 GMT
 Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
  nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Thu, 6 Feb 2025 04:18:26 -0800
+ 15.2.1544.9; Thu, 6 Feb 2025 04:18:48 -0800
 From: Varadarajan Narayanan <quic_varada@quicinc.com>
 To: <lpieralisi@kernel.org>, <kw@linux.com>,
         <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
@@ -62,9 +62,12 @@ To: <lpieralisi@kernel.org>, <kw@linux.com>,
         <quic_varada@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
         <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
         <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
-Subject: [PATCH v10 2/7] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-Date: Thu, 6 Feb 2025 17:47:58 +0530
-Message-ID: <20250206121803.1128216-3-quic_varada@quicinc.com>
+CC: Praveenkumar I <quic_ipkumar@quicinc.com>,
+        Konrad Dybcio
+	<konrad.dybcio@oss.qualcomm.com>
+Subject: [PATCH v10 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
+Date: Thu, 6 Feb 2025 17:48:02 +0530
+Message-ID: <20250206121803.1128216-7-quic_varada@quicinc.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250206121803.1128216-1-quic_varada@quicinc.com>
 References: <20250206121803.1128216-1-quic_varada@quicinc.com>
@@ -74,19 +77,19 @@ X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: ah70u_NhSVQjx60ubwviAwbhAtJpZbXl
-X-Proofpoint-GUID: ah70u_NhSVQjx60ubwviAwbhAtJpZbXl
+X-Proofpoint-ORIG-GUID: 0AjJS8bSeIbmYzGT2yf3kcwCUUVHw7Dd
+X-Proofpoint-GUID: 0AjJS8bSeIbmYzGT2yf3kcwCUUVHw7Dd
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-02-06_03,2025-02-05_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- malwarescore=0 phishscore=0 impostorscore=0 mlxlogscore=999 suspectscore=0
- mlxscore=0 bulkscore=0 adultscore=0 clxscore=1015 priorityscore=1501
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 phishscore=0
+ adultscore=0 priorityscore=1501 impostorscore=0 mlxscore=0 spamscore=0
+ lowpriorityscore=0 suspectscore=0 mlxlogscore=999 malwarescore=0
+ clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.19.0-2501170000 definitions=main-2502060102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250206_041843_954279_D56BE727 
-X-CRM114-Status: GOOD (  30.29  )
+X-CRM114-CacheID: sfid-20250206_041900_691672_D53017D6 
+X-CRM114-Status: GOOD (  14.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,384 +106,333 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+From: Praveenkumar I <quic_ipkumar@quicinc.com>
 
-Add Qualcomm PCIe UNIPHY 28LP driver support present in Qualcomm IPQ5332
-SoC and the phy init sequence.
+Add phy and controller nodes for pcie0_x1 and pcie1_x2.
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Signed-off-by: Nitheesh Sekar <quic_nsekar@quicinc.com>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
 Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
 ---
-v9: Align with dt-bindings and make num-lanes mandatory. Return error if not
-    present
-    Add new line before return in one of the functions
+v10: Trim down the list of assigned clocks
+     Fix arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
+     Rearrange nodes w.r.t. address sort order
 
-v6: Use generally followed pattern for getting num-lanes from DT
+v7: * Fix IO 'ranges' entry
+    * Add root port definitions
+    * Not adding 'dma-coherent' as the controller doesn't have that support
+    * Remove 'bus-range' as it has default values
+    * Group root complex related entries and root port related entries
+      separately
 
-v5: * Use 'num-lanes' to differentiate instead of '3x1' or '3x2'
-      in compatible string
-    * Drop compatible specific init data as there is only one
-      compatible string
-    * Fix header file order
+v6: * Add 'num-lanes' to "pcie0_phy: phy@4b0000"
+    * Earlier, some related clock rates were set in U-Boot. In
+      recent versions of U-Boot this has been removed resulting
+      in the phy link not coming up. To remove boot loader
+      dependency add assigned-clocks and assigned-clock-rates to
+      the controller nodes.
+    * Not sure if 'Reviewed-by' should be dropped.
 
-v4: Fix uppercase hex digit
-    Use phy->id for pipe clock source
+v5: Add 'num-lanes' to "pcie1_phy: phy@4b1000"
+    Make ipq5332 as main and ipq9574 as fallback compatible
+    Move controller nodes per address
+    Having Konrad's Reviewed-By
 
-v3: Added 'Reviewed-by: Dmitry Baryshkov' and made following updates
-    s/unsigned int/u32/g
-    Fix 'lane_offset' comments
-    Fix #define tab -> space
-    Fix mixed case hex numbers
-    Fix licensing & owner
-    Change for-loop pointer to use [] instead of ->
-    Use 'less than max' instead of 'not equal to max' in termination condition
-    Smatch and Coccinelle passed
+v4: Remove 'reset-names' as driver uses bulk APIs
+    Remove 'clock-output-names' as driver uses bulk APIs
+    Add missing reset for pcie1_phy
+    Convert 'reg-names' to a vertical list
+    Move 'msi-map' before interrupts
 
-v2: Drop IPQ5018 related code and data
-    Use uniform prefix for struct names
-    Place "}, {", on the same line
-    In qcom_uniphy_pcie_init(), use for-loop instead of while
-    Swap reset and clock disable order in qcom_uniphy_pcie_power_off
-    Add reset assert to qcom_uniphy_pcie_power_on's error path
-    Use macros for usleep duration
-    Inlined qcom_uniphy_pcie_get_resources & use devm_platform_get_and_ioremap_resource
-    Drop 'clock-output-names' from phy_pipe_clk_register
+v3: Fix compatible string for phy nodes
+    Use ipq9574 as backup compatible instead of new compatible for ipq5332
+    Fix mixed case hex addresses
+    Add "mhi" space
+    Removed unnecessary comments and stray blank lines
+
+v2: Fix nodes' location per address
 ---
- drivers/phy/qualcomm/Kconfig                  |  12 +
- drivers/phy/qualcomm/Makefile                 |   1 +
- .../phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c  | 287 ++++++++++++++++++
- 3 files changed, 300 insertions(+)
- create mode 100644 drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+ arch/arm64/boot/dts/qcom/ipq5332.dtsi | 252 +++++++++++++++++++++++++-
+ 1 file changed, 250 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 846f8c99547f..a6b71fda1b9c 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -154,6 +154,18 @@ config PHY_QCOM_M31_USB
- 	  management. This driver is required even for peripheral only or
- 	  host only mode configurations.
+diff --git a/arch/arm64/boot/dts/qcom/ipq5332.dtsi b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+index ca3da95730bd..1115d8388ef9 100644
+--- a/arch/arm64/boot/dts/qcom/ipq5332.dtsi
++++ b/arch/arm64/boot/dts/qcom/ipq5332.dtsi
+@@ -167,6 +167,214 @@ usbphy0: phy@7b000 {
+ 			status = "disabled";
+ 		};
  
-+config PHY_QCOM_UNIPHY_PCIE_28LP
-+	bool "PCIE UNIPHY 28LP PHY driver"
-+	depends on ARCH_QCOM
-+	depends on HAS_IOMEM
-+	depends on OF
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support the PCIe UNIPHY 28LP phy transceiver that
-+	  is used with PCIe controllers on Qualcomm IPQ5332 chips. It
-+	  handles PHY initialization, clock management required after
-+	  resetting the hardware and power management.
++		pcie0: pcie@80000 {
++			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
++			reg = <0x00080000 0x3000>,
++			      <0x20000000 0xf1d>,
++			      <0x20000f20 0xa8>,
++			      <0x20001000 0x1000>,
++			      <0x20100000 0x1000>,
++			      <0x00083000 0x1000>;
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config",
++				    "mhi";
++			device_type = "pci";
++			linux,pci-domain = <0>;
++			num-lanes = <1>;
++			#address-cells = <3>;
++			#size-cells = <2>;
 +
- config PHY_QCOM_USB_HS
- 	tristate "Qualcomm USB HS PHY module"
- 	depends on USB_ULPI_BUS
-diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
-index eb60e950ad53..42038bc30974 100644
---- a/drivers/phy/qualcomm/Makefile
-+++ b/drivers/phy/qualcomm/Makefile
-@@ -17,6 +17,7 @@ obj-$(CONFIG_PHY_QCOM_QMP_USB_LEGACY)	+= phy-qcom-qmp-usb-legacy.o
- obj-$(CONFIG_PHY_QCOM_QUSB2)		+= phy-qcom-qusb2.o
- obj-$(CONFIG_PHY_QCOM_SNPS_EUSB2)	+= phy-qcom-snps-eusb2.o
- obj-$(CONFIG_PHY_QCOM_EUSB2_REPEATER)	+= phy-qcom-eusb2-repeater.o
-+obj-$(CONFIG_PHY_QCOM_UNIPHY_PCIE_28LP)	+= phy-qcom-uniphy-pcie-28lp.o
- obj-$(CONFIG_PHY_QCOM_USB_HS) 		+= phy-qcom-usb-hs.o
- obj-$(CONFIG_PHY_QCOM_USB_HSIC) 	+= phy-qcom-usb-hsic.o
- obj-$(CONFIG_PHY_QCOM_USB_HS_28NM)	+= phy-qcom-usb-hs-28nm.o
-diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-new file mode 100644
-index 000000000000..311f98181177
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-@@ -0,0 +1,287 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (c) 2025, The Linux Foundation. All rights reserved.
-+ */
++			ranges = <0x01000000 0x0 0x00000000 0x20200000 0x0 0x00100000>,
++				 <0x02000000 0x0 0x20300000 0x20300000 0x0 0x0fd00000>;
 +
-+#include <linux/clk.h>
-+#include <linux/clk-provider.h>
-+#include <linux/delay.h>
-+#include <linux/err.h>
-+#include <linux/io.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/of_device.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <linux/reset.h>
++			msi-map = <0x0 &v2m0 0x0 0xffd>;
 +
-+#define RST_ASSERT_DELAY_MIN_US		100
-+#define RST_ASSERT_DELAY_MAX_US		150
-+#define PIPE_CLK_DELAY_MIN_US		5000
-+#define PIPE_CLK_DELAY_MAX_US		5100
-+#define CLK_EN_DELAY_MIN_US		30
-+#define CLK_EN_DELAY_MAX_US		50
-+#define CDR_CTRL_REG_1		0x80
-+#define CDR_CTRL_REG_2		0x84
-+#define CDR_CTRL_REG_3		0x88
-+#define CDR_CTRL_REG_4		0x8c
-+#define CDR_CTRL_REG_5		0x90
-+#define CDR_CTRL_REG_6		0x94
-+#define CDR_CTRL_REG_7		0x98
-+#define SSCG_CTRL_REG_1		0x9c
-+#define SSCG_CTRL_REG_2		0xa0
-+#define SSCG_CTRL_REG_3		0xa4
-+#define SSCG_CTRL_REG_4		0xa8
-+#define SSCG_CTRL_REG_5		0xac
-+#define SSCG_CTRL_REG_6		0xb0
-+#define PCS_INTERNAL_CONTROL_2	0x2d8
++			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi0",
++					  "msi1",
++					  "msi2",
++					  "msi3",
++					  "msi4",
++					  "msi5",
++					  "msi6",
++					  "msi7",
++					  "global";
 +
-+#define PHY_CFG_PLLCFG				0x220
-+#define PHY_CFG_EIOS_DTCT_REG			0x3e4
-+#define PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME		0x3e8
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &intc 0 0 35 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &intc 0 0 36 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &intc 0 0 37 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &intc 0 0 38 IRQ_TYPE_LEVEL_HIGH>;
 +
-+#define PHY_MODE_FIXED		0x1
++			clocks = <&gcc GCC_PCIE3X1_0_AXI_M_CLK>,
++				 <&gcc GCC_PCIE3X1_0_AXI_S_CLK>,
++				 <&gcc GCC_PCIE3X1_0_AXI_S_BRIDGE_CLK>,
++				 <&gcc GCC_PCIE3X1_0_RCHG_CLK>,
++				 <&gcc GCC_PCIE3X1_0_AHB_CLK>,
++				 <&gcc GCC_PCIE3X1_0_AUX_CLK>;
++			clock-names = "axi_m",
++				      "axi_s",
++				      "axi_bridge",
++				      "rchng",
++				      "ahb",
++				      "aux";
 +
-+enum qcom_uniphy_pcie_type {
-+	PHY_TYPE_PCIE = 1,
-+	PHY_TYPE_PCIE_GEN2,
-+	PHY_TYPE_PCIE_GEN3,
-+};
++			assigned-clocks = <&gcc GCC_PCIE3X1_0_AUX_CLK>;
 +
-+struct qcom_uniphy_pcie_regs {
-+	u32 offset;
-+	u32 val;
-+};
++			assigned-clock-rates = <2000000>;
 +
-+struct qcom_uniphy_pcie_data {
-+	int lane_offset; /* offset between the lane register bases */
-+	u32 phy_type;
-+	const struct qcom_uniphy_pcie_regs *init_seq;
-+	u32 init_seq_num;
-+	u32 pipe_clk_rate;
-+};
++			resets = <&gcc GCC_PCIE3X1_0_PIPE_ARES>,
++				 <&gcc GCC_PCIE3X1_0_CORE_STICKY_ARES>,
++				 <&gcc GCC_PCIE3X1_0_AXI_S_STICKY_ARES>,
++				 <&gcc GCC_PCIE3X1_0_AXI_S_CLK_ARES>,
++				 <&gcc GCC_PCIE3X1_0_AXI_M_STICKY_ARES>,
++				 <&gcc GCC_PCIE3X1_0_AXI_M_CLK_ARES>,
++				 <&gcc GCC_PCIE3X1_0_AUX_CLK_ARES>,
++				 <&gcc GCC_PCIE3X1_0_AHB_CLK_ARES>;
++			reset-names = "pipe",
++				      "sticky",
++				      "axi_s_sticky",
++				      "axi_s",
++				      "axi_m_sticky",
++				      "axi_m",
++				      "aux",
++				      "ahb";
 +
-+struct qcom_uniphy_pcie {
-+	struct phy phy;
-+	struct device *dev;
-+	const struct qcom_uniphy_pcie_data *data;
-+	struct clk_bulk_data *clks;
-+	int num_clks;
-+	struct reset_control *resets;
-+	void __iomem *base;
-+	int lanes;
-+};
++			phys = <&pcie0_phy>;
++			phy-names = "pciephy";
 +
-+#define phy_to_dw_phy(x)	container_of((x), struct qca_uni_pcie_phy, phy)
++			interconnects = <&gcc MASTER_SNOC_PCIE3_1_M &gcc SLAVE_SNOC_PCIE3_1_M>,
++					<&gcc MASTER_ANOC_PCIE3_1_S &gcc SLAVE_ANOC_PCIE3_1_S>;
++			interconnect-names = "pcie-mem", "cpu-pcie";
 +
-+static const struct qcom_uniphy_pcie_regs ipq5332_regs[] = {
-+	{
-+		.offset = PHY_CFG_PLLCFG,
-+		.val = 0x30,
-+	}, {
-+		.offset = PHY_CFG_EIOS_DTCT_REG,
-+		.val = 0x53ef,
-+	}, {
-+		.offset = PHY_CFG_GEN3_ALIGN_HOLDOFF_TIME,
-+		.val = 0xcf,
-+	},
-+};
++			status = "disabled";
 +
-+static const struct qcom_uniphy_pcie_data ipq5332_data = {
-+	.lane_offset	= 0x800,
-+	.phy_type	= PHY_TYPE_PCIE_GEN3,
-+	.init_seq	= ipq5332_regs,
-+	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
-+	.pipe_clk_rate	= 250000000,
-+};
++			pcie@0 {
++				device_type = "pci";
++				reg = <0x0 0x0 0x0 0x0 0x0>;
 +
-+static void qcom_uniphy_pcie_init(struct qcom_uniphy_pcie *phy)
-+{
-+	const struct qcom_uniphy_pcie_data *data = phy->data;
-+	const struct qcom_uniphy_pcie_regs *init_seq;
-+	void __iomem *base = phy->base;
-+	int lane, i;
++				#address-cells = <3>;
++				#size-cells = <2>;
++				ranges;
++			};
++		};
 +
-+	for (lane = 0; lane < phy->lanes; lane++) {
-+		init_seq = data->init_seq;
++		pcie1: pcie@88000 {
++			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
++			reg = <0x00088000 0x3000>,
++			      <0x18000000 0xf1d>,
++			      <0x18000f20 0xa8>,
++			      <0x18001000 0x1000>,
++			      <0x18100000 0x1000>,
++			      <0x0008b000 0x1000>;
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config",
++				    "mhi";
++			device_type = "pci";
++			linux,pci-domain = <1>;
++			num-lanes = <2>;
++			#address-cells = <3>;
++			#size-cells = <2>;
 +
-+		for (i = 0; i < data->init_seq_num; i++)
-+			writel(init_seq[i].val, base + init_seq[i].offset);
++			ranges = <0x01000000 0x0 0x00000000 0x18200000 0x0 0x00100000>,
++				 <0x02000000 0x0 0x18300000 0x18300000 0x0 0x07d00000>;
 +
-+		base += data->lane_offset;
-+	}
-+}
++			msi-map = <0x0 &v2m0 0x0 0xffd>;
 +
-+static int qcom_uniphy_pcie_power_off(struct phy *x)
-+{
-+	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
++			interrupts = <GIC_SPI 403 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 404 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 405 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 406 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 407 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 408 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 409 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 410 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 411 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi0",
++					  "msi1",
++					  "msi2",
++					  "msi3",
++					  "msi4",
++					  "msi5",
++					  "msi6",
++					  "msi7",
++					  "global";
 +
-+	clk_bulk_disable_unprepare(phy->num_clks, phy->clks);
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &intc 0 0 412 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &intc 0 0 413 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &intc 0 0 414 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &intc 0 0 415 IRQ_TYPE_LEVEL_HIGH>;
 +
-+	return reset_control_assert(phy->resets);
-+}
++			clocks = <&gcc GCC_PCIE3X2_AXI_M_CLK>,
++				 <&gcc GCC_PCIE3X2_AXI_S_CLK>,
++				 <&gcc GCC_PCIE3X2_AXI_S_BRIDGE_CLK>,
++				 <&gcc GCC_PCIE3X2_RCHG_CLK>,
++				 <&gcc GCC_PCIE3X2_AHB_CLK>,
++				 <&gcc GCC_PCIE3X2_AUX_CLK>;
++			clock-names = "axi_m",
++				      "axi_s",
++				      "axi_bridge",
++				      "rchng",
++				      "ahb",
++				      "aux";
 +
-+static int qcom_uniphy_pcie_power_on(struct phy *x)
-+{
-+	struct qcom_uniphy_pcie *phy = phy_get_drvdata(x);
-+	int ret;
++			assigned-clocks = <&gcc GCC_PCIE3X2_AUX_CLK>;
 +
-+	ret = reset_control_assert(phy->resets);
-+	if (ret) {
-+		dev_err(phy->dev, "reset assert failed (%d)\n", ret);
-+		return ret;
-+	}
++			assigned-clock-rates = <2000000>;
 +
-+	usleep_range(RST_ASSERT_DELAY_MIN_US, RST_ASSERT_DELAY_MAX_US);
++			resets = <&gcc GCC_PCIE3X2_PIPE_ARES>,
++				 <&gcc GCC_PCIE3X2_CORE_STICKY_ARES>,
++				 <&gcc GCC_PCIE3X2_AXI_S_STICKY_ARES>,
++				 <&gcc GCC_PCIE3X2_AXI_S_CLK_ARES>,
++				 <&gcc GCC_PCIE3X2_AXI_M_STICKY_ARES>,
++				 <&gcc GCC_PCIE3X2_AXI_M_CLK_ARES>,
++				 <&gcc GCC_PCIE3X2_AUX_CLK_ARES>,
++				 <&gcc GCC_PCIE3X2_AHB_CLK_ARES>;
++			reset-names = "pipe",
++				      "sticky",
++				      "axi_s_sticky",
++				      "axi_s",
++				      "axi_m_sticky",
++				      "axi_m",
++				      "aux",
++				      "ahb";
 +
-+	ret = reset_control_deassert(phy->resets);
-+	if (ret) {
-+		dev_err(phy->dev, "reset deassert failed (%d)\n", ret);
-+		return ret;
-+	}
++			phys = <&pcie1_phy>;
++			phy-names = "pciephy";
 +
-+	usleep_range(PIPE_CLK_DELAY_MIN_US, PIPE_CLK_DELAY_MAX_US);
++			interconnects = <&gcc MASTER_SNOC_PCIE3_2_M &gcc SLAVE_SNOC_PCIE3_2_M>,
++					<&gcc MASTER_ANOC_PCIE3_2_S &gcc SLAVE_ANOC_PCIE3_2_S>;
++			interconnect-names = "pcie-mem", "cpu-pcie";
 +
-+	ret = clk_bulk_prepare_enable(phy->num_clks, phy->clks);
-+	if (ret) {
-+		dev_err(phy->dev, "clk prepare and enable failed %d\n", ret);
-+		return ret;
-+	}
++			status = "disabled";
 +
-+	usleep_range(CLK_EN_DELAY_MIN_US, CLK_EN_DELAY_MAX_US);
++			pcie@0 {
++				device_type = "pci";
++				reg = <0x0 0x0 0x0 0x0 0x0>;
 +
-+	qcom_uniphy_pcie_init(phy);
++				#address-cells = <3>;
++				#size-cells = <2>;
++				ranges;
++			};
++		};
 +
-+	return 0;
-+}
+ 		qfprom: efuse@a4000 {
+ 			compatible = "qcom,ipq5332-qfprom", "qcom,qfprom";
+ 			reg = <0x000a4000 0x721>;
+@@ -186,6 +394,46 @@ rng: rng@e3000 {
+ 			clock-names = "core";
+ 		};
+ 
++		pcie0_phy: phy@4b0000 {
++			compatible = "qcom,ipq5332-uniphy-pcie-phy";
++			reg = <0x004b0000 0x800>;
 +
-+static inline int qcom_uniphy_pcie_get_resources(struct platform_device *pdev,
-+						 struct qcom_uniphy_pcie *phy)
-+{
-+	struct resource *res;
++			clocks = <&gcc GCC_PCIE3X1_0_PIPE_CLK>,
++				 <&gcc GCC_PCIE3X1_PHY_AHB_CLK>;
 +
-+	phy->base = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
-+	if (IS_ERR(phy->base))
-+		return PTR_ERR(phy->base);
++			resets = <&gcc GCC_PCIE3X1_0_PHY_BCR>,
++				 <&gcc GCC_PCIE3X1_PHY_AHB_CLK_ARES>,
++				 <&gcc GCC_PCIE3X1_0_PHY_PHY_BCR>;
 +
-+	phy->num_clks = devm_clk_bulk_get_all(phy->dev, &phy->clks);
-+	if (phy->num_clks < 0)
-+		return phy->num_clks;
++			#clock-cells = <0>;
 +
-+	phy->resets = devm_reset_control_array_get_exclusive(phy->dev);
-+	if (IS_ERR(phy->resets))
-+		return PTR_ERR(phy->resets);
++			#phy-cells = <0>;
 +
-+	return 0;
-+}
++			num-lanes = <1>;
 +
-+/*
-+ * Register a fixed rate pipe clock.
-+ *
-+ * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-+ * controls it. The <s>_pipe_clk coming out of the GCC is requested
-+ * by the PHY driver for its operations.
-+ * We register the <s>_pipe_clksrc here. The gcc driver takes care
-+ * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-+ * Below picture shows this relationship.
-+ *
-+ *         +---------------+
-+ *         |   PHY block   |<<---------------------------------------+
-+ *         |               |                                         |
-+ *         |   +-------+   |                   +-----+               |
-+ *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-+ *    clk  |   +-------+   |                   +-----+
-+ *         +---------------+
-+ */
-+static inline int phy_pipe_clk_register(struct qcom_uniphy_pcie *phy, int id)
-+{
-+	const struct qcom_uniphy_pcie_data *data = phy->data;
-+	struct clk_hw *hw;
-+	char name[64];
++			status = "disabled";
++		};
 +
-+	snprintf(name, sizeof(name), "phy%d_pipe_clk_src", id);
-+	hw = devm_clk_hw_register_fixed_rate(phy->dev, name, NULL, 0,
-+					     data->pipe_clk_rate);
-+	if (IS_ERR(hw))
-+		return dev_err_probe(phy->dev, PTR_ERR(hw),
-+				     "Unable to register %s\n", name);
++		pcie1_phy: phy@4b1000 {
++			compatible = "qcom,ipq5332-uniphy-pcie-phy";
++			reg = <0x004b1000 0x1000>;
 +
-+	return devm_of_clk_add_hw_provider(phy->dev, of_clk_hw_simple_get, hw);
-+}
++			clocks = <&gcc GCC_PCIE3X2_PIPE_CLK>,
++				 <&gcc GCC_PCIE3X2_PHY_AHB_CLK>;
 +
-+static const struct of_device_id qcom_uniphy_pcie_id_table[] = {
-+	{
-+		.compatible = "qcom,ipq5332-uniphy-pcie-phy",
-+		.data = &ipq5332_data,
-+	}, {
-+		/* Sentinel */
-+	},
-+};
-+MODULE_DEVICE_TABLE(of, qcom_uniphy_pcie_id_table);
++			resets = <&gcc GCC_PCIE3X2_PHY_BCR>,
++				 <&gcc GCC_PCIE3X2_PHY_AHB_CLK_ARES>,
++				 <&gcc GCC_PCIE3X2PHY_PHY_BCR>;
 +
-+static const struct phy_ops pcie_ops = {
-+	.power_on	= qcom_uniphy_pcie_power_on,
-+	.power_off	= qcom_uniphy_pcie_power_off,
-+	.owner          = THIS_MODULE,
-+};
++			#clock-cells = <0>;
 +
-+static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct qcom_uniphy_pcie *phy;
-+	struct phy *generic_phy;
-+	int ret;
++			#phy-cells = <0>;
 +
-+	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
-+	if (!phy)
-+		return -ENOMEM;
++			num-lanes = <2>;
 +
-+	platform_set_drvdata(pdev, phy);
-+	phy->dev = &pdev->dev;
++			status = "disabled";
++		};
 +
-+	phy->data = of_device_get_match_data(dev);
-+	if (!phy->data)
-+		return -EINVAL;
-+
-+	ret = of_property_read_u32(dev_of_node(dev), "num-lanes", &phy->lanes);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Couldn't read num-lanes\n");
-+
-+	ret = qcom_uniphy_pcie_get_resources(pdev, phy);
-+	if (ret < 0)
-+		return dev_err_probe(&pdev->dev, ret,
-+				     "failed to get resources: %d\n", ret);
-+
-+	generic_phy = devm_phy_create(phy->dev, NULL, &pcie_ops);
-+	if (IS_ERR(generic_phy))
-+		return PTR_ERR(generic_phy);
-+
-+	phy_set_drvdata(generic_phy, phy);
-+
-+	ret = phy_pipe_clk_register(phy, generic_phy->id);
-+	if (ret)
-+		dev_err(&pdev->dev, "failed to register phy pipe clk\n");
-+
-+	phy_provider = devm_of_phy_provider_register(phy->dev,
-+						     of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider))
-+		return PTR_ERR(phy_provider);
-+
-+	return 0;
-+}
-+
-+static struct platform_driver qcom_uniphy_pcie_driver = {
-+	.probe		= qcom_uniphy_pcie_probe,
-+	.driver		= {
-+		.name	= "qcom-uniphy-pcie",
-+		.of_match_table = qcom_uniphy_pcie_id_table,
-+	},
-+};
-+
-+module_platform_driver(qcom_uniphy_pcie_driver);
-+
-+MODULE_DESCRIPTION("PCIE QCOM UNIPHY driver");
-+MODULE_LICENSE("GPL");
+ 		tlmm: pinctrl@1000000 {
+ 			compatible = "qcom,ipq5332-tlmm";
+ 			reg = <0x01000000 0x300000>;
+@@ -212,8 +460,8 @@ gcc: clock-controller@1800000 {
+ 			#interconnect-cells = <1>;
+ 			clocks = <&xo_board>,
+ 				 <&sleep_clk>,
+-				 <0>,
+-				 <0>,
++				 <&pcie1_phy>,
++				 <&pcie0_phy>,
+ 				 <0>;
+ 		};
+ 
 -- 
 2.34.1
 
