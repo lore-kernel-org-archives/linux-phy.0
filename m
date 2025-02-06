@@ -4,68 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8866BC02196
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 06:19:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A17DC0219B
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Feb 2025 09:01:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oPoxUWBMv+H6m4yhV4/dZvLYtmPjfkXbGjj62UemJRA=; b=eB7LIDwBcV29J8
-	jVef2O/NqNGLVOSzakbVirfstJhA4ODOMcwzSX+KF64i9p1561cbsIYH1EyV63DTkZS56TYjGVi4K
-	BuTZriZav1mpQOOM/CpagG1E9AksJkjNFQdpc7hzXljvNipT+IVCXIOw1pvgSmoOU9JOQnfbGY06f
-	GCGjGH1oKaOrVH84okeQeMv6z++DVqBz2bNt1StUoRgiUv2u3MboM0N0KHR6f1s9EFR25p9jrLZMm
-	8mHbyHyXv9WS/e0+eApbP+zFGcq4m7rwc2vfcgpOpZFXiMTFbUWRRv+ZiOP7+0wwzIl+MvP3e82xX
-	t7HekhrY9I3Ke3Wi4TZg==;
+	List-Owner; bh=K8iS/WHDlqLJH2kcCn6NJJO7Hquuj4++m42rPJQDlQo=; b=eThGeQ/STQO1uF
+	GH3m3KcMuFZNZgvaF1+uAlyUMtnF+pPB+1jmM2phWC7UhrCrcoaxfMUScNHVxnUSa7jkxJ8qAdvHL
+	lbRjjzuiXwA/5TVUm0ZgixgS/gOpW2kUoyRNJmxqU23nH0aQfXuAEuf3OaONv7onq+DVvls6qgq5n
+	N/cMh3Zh9SEG+OZUGvaNHxeaOLJw4iCCSqjteVSamIZ5S9pFR+BewNXTCvT0RIthoiz7/yNWElp28
+	1tNU6vUlWD0CbCZQvZGu6GhewDpW/NJgcLG0W4rVj/N2uU9sM1arjEGG911OfiH9y5j2gmJea6H6F
+	AT5Iw6RwcXzycJvl1Hfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfvEb-00000005NPH-3jTp;
-	Thu, 06 Feb 2025 06:19:33 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tfxl9-00000005m7V-2XqD;
+	Thu, 06 Feb 2025 09:01:19 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tfvEa-00000005NOp-0TOW
+	id 1tfwSH-00000005c6C-2JU6
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Feb 2025 06:19:33 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5161iwPS029805;
-	Thu, 6 Feb 2025 06:19:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=1GjdVUeIgEMWel2f4TkBw/gT
-	uyQzB8WZcxBa+28LGjA=; b=p0T9wdEU9Wm26EaiPU8pHANnL7yRIDT+PF0mhdQ4
-	aLCYFdRbC+UFUjQXrs9wnR9jfZIccDqBbZwHlGYiSlIBJe1ZlcN1bJf1L0TRtVk1
-	bWeb8ipW9qBNLVm4mAWAtLcKAM7zaavsllE2rLFyZrR6eUsGYNK8I9mUqXwoeJSa
-	2cA9A07INwAWrqOQp9n3+i1PxMvzsR07i9WHyYmSies5MZVpr/yU3pXDI1BAKnht
-	9iy8w7C8pylxFyUcpVpsTP2LUVXqosakoFSfObXyoaL/fDdw3CIW3eMo7u+1L+kW
-	6GWysLKu2DzbJRNkwsY/xMwv9yZq0gAMg3XjayrBMCPxHg==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44mkpjrgty-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 06 Feb 2025 06:19:22 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5166JKgU025475
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 6 Feb 2025 06:19:20 GMT
-Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Wed, 5 Feb 2025 22:19:14 -0800
-Date: Thu, 6 Feb 2025 11:49:11 +0530
-From: Varadarajan Narayanan <quic_varada@quicinc.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: <bhelgaas@google.com>, <lpieralisi@kernel.org>, <kw@linux.com>,
-        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>, <vkoul@kernel.org>,
-        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
-        <p.zabel@pengutronix.de>, <dmitry.baryshkov@linaro.org>,
-        <quic_nsekar@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        Praveenkumar I <quic_ipkumar@quicinc.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+	Thu, 06 Feb 2025 07:37:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id B73115C6FD0;
+	Thu,  6 Feb 2025 07:37:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 931F4C4CEE0;
+	Thu,  6 Feb 2025 07:37:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1738827464;
+	bh=vizkre/zlajIFCa+RvDbtt8gdcuEqWwVHRzJdLIek9c=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=L5V6IIUtxstXizci7m6Me4CY2b49KvUN4IWDYA2gQUgur/rZ5vPUQV5epwLpLKo4A
+	 yuln0OxHwudYH5zfxmndw4+1If1J8JCuColU/P5ZppapLrxjr9yOZFoCt4I4mGVeLg
+	 ejVEW0bZn9zEik9MVLvN3T6dyDfNbUgXFuWhB328KCQEdDSrZ+BJUEgWsfNWKceNfr
+	 aouLh0u3ZUcORjO/mXU2f9j6mv3Yrb7qtUYQC9a3vGZrohIQu9jIjZVJpOvP1KJTPx
+	 RKHhiNP2vy7omCmUlSS1RLWHbKRds1cdv3vLEb5H9+K8FKMKUCQ4s9QbU/HQOUFuH7
+	 KGrdaVw2Cc1pw==
+Message-ID: <81dfd162-84c1-4f34-b1f0-459ad88a62df@kernel.org>
+Date: Thu, 6 Feb 2025 08:37:35 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v9 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
-Message-ID: <Z6RUX3ZbDbd3qvjs@hu-varada-blr.qualcomm.com>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
+ manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+ andersson@kernel.org, konradybcio@kernel.org, p.zabel@pengutronix.de,
+ dmitry.baryshkov@linaro.org, quic_nsekar@quicinc.com,
+ linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, Praveenkumar I <quic_ipkumar@quicinc.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 References: <20250128062708.573662-1-quic_varada@quicinc.com>
  <20250128062708.573662-7-quic_varada@quicinc.com>
  <cc1c34f0-0737-469d-a826-2df7f29f6cf3@kernel.org>
@@ -74,27 +65,56 @@ References: <20250128062708.573662-1-quic_varada@quicinc.com>
  <Z6OFSr2vrmPJTp4u@hu-varada-blr.qualcomm.com>
  <d867f285-b639-4080-beeb-20b75ee3f4a2@kernel.org>
  <1d78b30c-f71a-4769-b665-7425f00eb5ec@kernel.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1d78b30c-f71a-4769-b665-7425f00eb5ec@kernel.org>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: cLEOi0dATr7nRvo4rsO8ih8xrrbRzmM9
-X-Proofpoint-GUID: cLEOi0dATr7nRvo4rsO8ih8xrrbRzmM9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-06_01,2025-02-05_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- adultscore=0 suspectscore=0 bulkscore=0 impostorscore=0 spamscore=0
- clxscore=1015 malwarescore=0 mlxlogscore=986 lowpriorityscore=0
- phishscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502060050
+ <Z6RUX3ZbDbd3qvjs@hu-varada-blr.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <Z6RUX3ZbDbd3qvjs@hu-varada-blr.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250205_221932_272109_81DC345C 
-X-CRM114-Status: GOOD (  21.56  )
+X-CRM114-CacheID: sfid-20250205_233745_681986_2637B522 
+X-CRM114-Status: GOOD (  15.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,107 +131,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 05, 2025 at 04:54:38PM +0100, Krzysztof Kozlowski wrote:
-> On 05/02/2025 16:53, Krzysztof Kozlowski wrote:
-> > On 05/02/2025 16:35, Varadarajan Narayanan wrote:
-> >> On Wed, Feb 05, 2025 at 02:47:13PM +0100, Krzysztof Kozlowski wrote:
-> >>> On 05/02/2025 11:49, Varadarajan Narayanan wrote:
-> >>>> On Mon, Feb 03, 2025 at 05:30:32PM +0100, Krzysztof Kozlowski wrote:
-> >>>>> On 28/01/2025 07:27, Varadarajan Narayanan wrote:
-> >>>>>>
-> >>>>>> @@ -479,6 +519,230 @@ frame@b128000 {
-> >>>>>>  				status = "disabled";
-> >>>>>>  			};
-> >>>>>>  		};
-> >>>>>> +
-> >>>>>> +		pcie1: pcie@18000000 {
-> >>>>>> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
-> >>>>>> +			reg = <0x00088000 0x3000>,
-> >>>>>
-> >>>>> So as Konrad pointed out now, this was never tested. It's not we who
-> >>>>> should run tests for you. It's you.
-> >>>>
-> >>>> This was tested and it did not flag an error since it is having the order
-> >>>> specified in the bindings. qcom,pcie.yaml has 4 reg specifications. Two of
-> >>>
-> >>>
-> >>> Hm, then please paste results of dtbs_check W=1 testing. Here.
-> >>>
-> >>> I am 100% sure you have there warning and I don't understand your
-> >>> reluctance to run the tests even after pointing it out by two people.
-> >>
-> >> I ran the tests. Not sure which portions to paste. Have attached the full
-> >> output just in case you are interested in some other detail. Please take a
-> >> look.
-> >>
-> >> Thanks
-> >> Varada
-> >>
-> >> 	$ grep ipq.*dtb dtbs-check.log
-> >
-> > Where is the command you have used?
+On 06/02/2025 07:19, Varadarajan Narayanan wrote:
+> On Wed, Feb 05, 2025 at 04:54:38PM +0100, Krzysztof Kozlowski wrote:
+>> On 05/02/2025 16:53, Krzysztof Kozlowski wrote:
+>>> On 05/02/2025 16:35, Varadarajan Narayanan wrote:
+>>>> On Wed, Feb 05, 2025 at 02:47:13PM +0100, Krzysztof Kozlowski wrote:
+>>>>> On 05/02/2025 11:49, Varadarajan Narayanan wrote:
+>>>>>> On Mon, Feb 03, 2025 at 05:30:32PM +0100, Krzysztof Kozlowski wrote:
+>>>>>>> On 28/01/2025 07:27, Varadarajan Narayanan wrote:
+>>>>>>>>
+>>>>>>>> @@ -479,6 +519,230 @@ frame@b128000 {
+>>>>>>>>  				status = "disabled";
+>>>>>>>>  			};
+>>>>>>>>  		};
+>>>>>>>> +
+>>>>>>>> +		pcie1: pcie@18000000 {
+>>>>>>>> +			compatible = "qcom,pcie-ipq5332", "qcom,pcie-ipq9574";
+>>>>>>>> +			reg = <0x00088000 0x3000>,
+>>>>>>>
+>>>>>>> So as Konrad pointed out now, this was never tested. It's not we who
+>>>>>>> should run tests for you. It's you.
+>>>>>>
+>>>>>> This was tested and it did not flag an error since it is having the order
+>>>>>> specified in the bindings. qcom,pcie.yaml has 4 reg specifications. Two of
+>>>>>
+>>>>>
+>>>>> Hm, then please paste results of dtbs_check W=1 testing. Here.
+>>>>>
+>>>>> I am 100% sure you have there warning and I don't understand your
+>>>>> reluctance to run the tests even after pointing it out by two people.
+>>>>
+>>>> I ran the tests. Not sure which portions to paste. Have attached the full
+>>>> output just in case you are interested in some other detail. Please take a
+>>>> look.
+>>>>
+>>>> Thanks
+>>>> Varada
+>>>>
+>>>> 	$ grep ipq.*dtb dtbs-check.log
+>>>
+>>> Where is the command you have used?
+> 
+> 	export ARCH=arm64
+> 	export W=1
+> 	export DT_CHECKER_FLAGS='-v -m'
+> 	export DT_SCHEMA_FILES=qcom
+> 	export CHECK_DTBS=y
+> 
+> 	make -j 16 dtbs_check &> dtbs-check.log
+> 
 
-	export ARCH=arm64
-	export W=1
-	export DT_CHECKER_FLAGS='-v -m'
-	export DT_SCHEMA_FILES=qcom
-	export CHECK_DTBS=y
+No flags for DTC as I asked.
 
-	make -j 16 dtbs_check &> dtbs-check.log
+>> Although that might not matter - you skipped several warnings with your
+>> grep. So maybe you need to fix your process, not sure.
+> 
+> export W=1 is the problem. Kernel Makefile differentiates between 'W' being
+> set from environment and from command line with this check
 
-> Although that might not matter - you skipped several warnings with your
-> grep. So maybe you need to fix your process, not sure.
+So just don't export. Command is:
+make W=1 -j8 dtbs_check
 
-export W=1 is the problem. Kernel Makefile differentiates between 'W' being
-set from environment and from command line with this check
+> 
+> 	ifeq ("$(origin W)", "command line")
+> 	  KBUILD_EXTRA_WARN := $(W)
+> 	endif
+> 
+> I assumed similar to DT_SCHEMA_FILES and DT_CHECKER_FLAGS, W will also be
+> taken. I was not aware of this differentiation, and the 'export W=1' never
+> came into effect. I re-ran the command as below and see the warnings
+> 
+> 	$ make W=1 -j 16 dtbs_check &> dtbs-check2.log
+> 
+> 	$ grep Warning dtbs-check2.log | grep ipq.*dt
+> 	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
+> 	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
 
-	ifeq ("$(origin W)", "command line")
-	  KBUILD_EXTRA_WARN := $(W)
-	endif
+Oh look! What surprise, who could expect that...
 
-I assumed similar to DT_SCHEMA_FILES and DT_CHECKER_FLAGS, W will also be
-taken. I was not aware of this differentiation, and the 'export W=1' never
-came into effect. I re-ran the command as below and see the warnings
-
-	$ make W=1 -j 16 dtbs_check &> dtbs-check2.log
-
-	$ grep Warning dtbs-check2.log | grep ipq.*dt
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:523.24-625.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq5424.dtsi:304.22-355.5: Warning (simple_bus_reg): /soc@0/usb2@1e00000: simple-bus unit address format error, expected "1ef8800"
-	arch/arm64/boot/dts/qcom/ipq5424.dtsi:395.22-448.5: Warning (simple_bus_reg): /soc@0/usb3@8a00000: simple-bus unit address format error, expected "8af8800"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:877.24-959.5: Warning (simple_bus_reg): /soc@0/pcie@10000000: simple-bus unit address format error, expected "f8000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:961.24-1043.5: Warning (simple_bus_reg): /soc@0/pcie@18000000: simple-bus unit address format error, expected "f0000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
-	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1129.23-1210.5: Warning (simple_bus_reg): /soc@0/pci@28000000: simple-bus unit address format error, expected "80000"
-
-Will change pcie@xxx to match with the first reg entry and post the next
-version.
-
-Thanks
-Varada
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
