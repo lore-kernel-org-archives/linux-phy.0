@@ -4,93 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 906E7C02194
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Feb 2025 17:08:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3458C02194
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Feb 2025 20:29:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LDxNO1Ee97u9xmWnJ8wJP+GMZHASvcDfzRi8IZ7nwHM=; b=k4A3XvdjqC02Ad
-	uo375YtJjVBNtmDJSYo422vTimtfyZL1pLIC/tsYPOcIq4lX0tSzODHkkx2VSMQIz9eZcetErT2N+
-	lEmbaLilNrClCewu1WW0ntsWCJaL0vqoDQ/ZS3QUxNjKSjZQOJZBBePpm5ULHngSmXS4IDuXdcJGw
-	Q1VjN727I1dAlQ7+wXBkzPPtsV4OLMzl18YSid3Qqkin5wOf9Ff0bTLMxHY1iK2kyHnS3iHSodbB9
-	N093mgr/hYJx/TdX6JaES/r9x7a3g5BkHMULV70prWsm+Wy9szdm6GBUB7IfI+LMz2pPJH+EUx5Dm
-	QC2OCiQqrfCulKAUusjA==;
+	List-Owner; bh=6kzvc4sNjf+voDW7kZqiw69QbgczwRAaYuJBh7YFhWI=; b=2VJn1QSvAxk7ls
+	KTQ8wYHi3fC+eZq8sk/rJzCuyPoFs5D38dtzRnFGgWg0OgqWe8VvMKO21pUyFfTu+W0GB953lgwQN
+	lkM/QReRbbHEduaj9QADfOC3C2jYL8eDPqlFWxi4wVHw3yMuSKKb1jhYf4+Pob8IzMAMt7Fa1c0AO
+	hUQU+SkXEht3eTt+domNAjJoZO4Amhorsmggu30hsTWFPdiyA1pjt+ARRuMucZLQ7M4Mkog2xg9rT
+	B4gh0ftR0EO47nrMQJqMYKKlg1FKhzBBXkGNoNFCLZoDMcE8oI24UEyzCw+HoQN5CU/P+RYP7BFUS
+	dbXrYvLjlTXAS5K3U0Aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgRpg-0000000AQYq-1LsQ;
-	Fri, 07 Feb 2025 17:08:00 +0000
-Received: from mail-vk1-f177.google.com ([209.85.221.177])
+	id 1tgUyz-0000000B4HM-1ZdK;
+	Fri, 07 Feb 2025 20:29:49 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgRTO-0000000ALGG-1Nzy
+	id 1tgUFK-0000000AwlM-1hXG
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Feb 2025 16:44:59 +0000
-Received: by mail-vk1-f177.google.com with SMTP id 71dfb90a1353d-51eb1823a8eso556656e0c.3
-        for <linux-phy@lists.infradead.org>; Fri, 07 Feb 2025 08:44:57 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738946695; x=1739551495;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=yCWtJ2W7sBii9exDfBQy+ICa40xLBzxTz8+SCx213a0=;
-        b=NQGhyeYOgjJtFz/IkGsJmjKlxXA2SLJ+v3FojDnLa5Vqc95eOgYNw0gJNPuSGjbV4P
-         +b6i1f9QZSRXlSjhWYtJ/IFFocQldFb1mdVBAJ/3QpTly+sh62f66a8ui7CY8zjnBQyo
-         jf0Mds7VHX7Gg7TkpAX5hfbgu/5vZXZES47uijllWRiDQ7FOnsFtJnXIclG8PUYz+Y24
-         1WIS/QECXFTVP5RHomU4kT/GDQtNh9vaGZsqKCjuEsSgd+1rGqadxGAq8ml6hm17hSnW
-         5jNmczS5Aem4rAaciJNIHZ9nJSbd/SUR6T/mFNEFha3HuKiveuzUGi9OiqSqrHIKnacm
-         Y+OA==
-X-Forwarded-Encrypted: i=1; AJvYcCWPdXlmk7kPaleUzRG2dBCzdaE4V1VviLeP0DbmHx+pyrKOx43fdnQih3YPBz4XrJpXZC3vrwJtej4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyHuXx8eQsknLqAbS1cRwMNhMrozgjK3zxeFCTFIDtFgDrvWu9i
-	8s0bZp5ZbKJZ7y/SziqYhzlyAZ/3tbaAX8lF8qMh3pGJJ+SYkkVbbnfdS9RR
-X-Gm-Gg: ASbGncsyoLlLlB0GuuFsmyDmL1PiXYKCROgriwhvbFnyC4mno53pyRgRpMzPHc3CB6g
-	ajteiHbLv6KwLH+R8LkPmIei4TZ1CwVd3MqYi4Rb2K4NmZBNYht7dv0Da08XKe335+j0pwyTWU/
-	kmj6WdNv/EFCJrdnCmcccveXHISuZqmZyUmj0g0BPuLMUKHp1LgFP4BMrme5e/H9tFGRZ5NQCTt
-	0qnOQrBWKklIF0tjsHlbdIpuNNooMI2Sifh/4GE1l9OsOX+iPvjyqI1Yy6chLrmJle0LoZljx9r
-	DMKoOm63BT0xG9WkA4GuVGPZwmWfld5lyoOCE5taahgN2v0hqvLiJg==
-X-Google-Smtp-Source: AGHT+IGaeOB9r+nV910S7QE6neJO9BA+a9mZ//39UavZM8AWStVwKvGfNYFeaGoNRh1AqoUVOB9sBw==
-X-Received: by 2002:a05:6122:3c85:b0:518:7777:a61e with SMTP id 71dfb90a1353d-51f2e1279f2mr3716458e0c.5.1738946695408;
-        Fri, 07 Feb 2025 08:44:55 -0800 (PST)
-Received: from mail-ua1-f47.google.com (mail-ua1-f47.google.com. [209.85.222.47])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-51f22796c51sm556698e0c.22.2025.02.07.08.44.54
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 07 Feb 2025 08:44:54 -0800 (PST)
-Received: by mail-ua1-f47.google.com with SMTP id a1e0cc1a2514c-8641c7574a5so593905241.1
-        for <linux-phy@lists.infradead.org>; Fri, 07 Feb 2025 08:44:54 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCX48cTNWN6d2k79B+Hv+02JXnOdE9PiGG5Si3b6hL5Ar6YNm50OT6P5vi+vO5b+tiGQkjxo+sagxwU=@lists.infradead.org
-X-Received: by 2002:a05:6122:794:b0:518:859e:87ae with SMTP id
- 71dfb90a1353d-51f2e1ed315mr3362597e0c.7.1738946694014; Fri, 07 Feb 2025
- 08:44:54 -0800 (PST)
+	Fri, 07 Feb 2025 19:42:39 +0000
+Received: from ptz.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::77] helo=[IPv6:::1])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <l.stach@pengutronix.de>)
+	id 1tgUEq-0001XR-Nk; Fri, 07 Feb 2025 20:42:08 +0100
+Message-ID: <cfc5b39e21fb214c53fda3276847b8e235af818f.camel@pengutronix.de>
+Subject: Re: [PATCH v6 08/14] drm/rockchip: analogix_dp: Add support to get
+ panel from the DP AUX bus
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Damon Ding <damon.ding@rock-chips.com>, heiko@sntech.de
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ rfoss@kernel.org,  vkoul@kernel.org, sebastian.reichel@collabora.com, 
+ cristian.ciocaltea@collabora.com, dmitry.baryshkov@linaro.org, 
+ andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com, 
+ kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org, 
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-phy@lists.infradead.org
+Date: Fri, 07 Feb 2025 20:42:06 +0100
+In-Reply-To: <20250123100747.1841357-9-damon.ding@rock-chips.com>
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+	 <20250123100747.1841357-9-damon.ding@rock-chips.com>
+User-Agent: Evolution 3.52.4 (3.52.4-2.fc40) 
 MIME-Version: 1.0
-References: <20250206-gpio-set-array-helper-v2-0-1c5f048f79c3@baylibre.com>
- <20250206-gpio-set-array-helper-v2-1-1c5f048f79c3@baylibre.com>
- <CAMuHMdU5tt5_t2SfYO3OUsHenu_0PhpKeLHktNdCx-W6zCEymw@mail.gmail.com> <74ec33db-6721-4b86-86a6-e18b0a01fc47@baylibre.com>
-In-Reply-To: <74ec33db-6721-4b86-86a6-e18b0a01fc47@baylibre.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 7 Feb 2025 17:44:41 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdX0Kp_Rj5iQODW3omEYimE+taf+cgbEiHqWo3=fG3Am0Q@mail.gmail.com>
-X-Gm-Features: AWEUYZn5qJOQHPLw2LRF15YUSzvjDVeuWxyBTUf7OD7UgB93Hq8YufkWPyHtZXA
-Message-ID: <CAMuHMdX0Kp_Rj5iQODW3omEYimE+taf+cgbEiHqWo3=fG3Am0Q@mail.gmail.com>
-Subject: Re: [PATCH v2 01/13] gpiolib: add gpiod_multi_set_value_cansleep()
-To: David Lechner <dlechner@baylibre.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, 
-	Andy Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, 
-	Michael Hennerich <Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, linux-gpio@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:900:1d::77
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250207_084458_368614_276EABC2 
-X-CRM114-Status: GOOD (  32.73  )
+X-CRM114-CacheID: sfid-20250207_114238_439670_A64C3D1C 
+X-CRM114-Status: GOOD (  23.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,78 +74,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi David,
+Hi Damon,
 
-On Fri, 7 Feb 2025 at 17:29, David Lechner <dlechner@baylibre.com> wrote:
-> On 2/7/25 3:10 AM, Geert Uytterhoeven wrote:
-> > On Thu, 6 Feb 2025 at 23:48, David Lechner <dlechner@baylibre.com> wrote:
-> >> Add a new gpiod_multi_set_value_cansleep() helper function with fewer
-> >> parameters than gpiod_set_array_value_cansleep().
-> >>
-> >> Calling gpiod_set_array_value_cansleep() can get quite verbose. In many
-> >> cases, the first arguments all come from the same struct gpio_descs, so
-> >> having a separate function where we can just pass that cuts down on the
-> >> boilerplate.
-> >>
-> >> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> >> Signed-off-by: David Lechner <dlechner@baylibre.com>
-> >
-> > Thanks for your patch!
-> >
-> >> --- a/include/linux/gpio/consumer.h
-> >> +++ b/include/linux/gpio/consumer.h
-> >> @@ -655,4 +655,11 @@ static inline void gpiod_unexport(struct gpio_desc *desc)
-> >>
-> >>  #endif /* CONFIG_GPIOLIB && CONFIG_GPIO_SYSFS */
-> >>
-> >> +static inline int gpiod_multi_set_value_cansleep(struct gpio_descs *descs,
-> >> +                                                unsigned long *value_bitmap)
-> >> +{
-> >> +       return gpiod_set_array_value_cansleep(descs->ndescs, descs->desc,
-> >> +                                             descs->info, value_bitmap);
-> >
-> > I am wondering whether this needs a check for !IS_ERR_OR_NULL(descs),
-> > to handle the !CONFIG_GPIOLIB and gpiod_get_array_optional() cases?
->
-> I don't think it is strictly needed, but could be convenient for future use
-> cases. If we add it, should it be:
->
->         if (IS_ERR_OR_NULL(descs))
->                 return PTR_ERR(descs);
+Am Donnerstag, dem 23.01.2025 um 18:07 +0800 schrieb Damon Ding:
+> Move drm_of_find_panel_or_bridge() a little later and combine it with
+> component_add() into a new function rockchip_dp_link_panel(). The function
+> will serve as done_probing() callback of devm_of_dp_aux_populate_bus(),
+> aiding to support for obtaining the eDP panel via the DP AUX bus.
+> 
+> If failed to get the panel from the DP AUX bus, it will then try the other
+> way to get panel information through the platform bus.
+> 
+The changes in this patch effectively revert 86caee745e45
+("drm/rockchip: analogix_dp: allow to work without panel"). Please
+correct this in the next revision of this patchset.
 
-return PTR_ERR_OR_ZERO(descs);
+Regards,
+Lucas
 
-(the compiler should optimize away checks common to IS_ERR_OR_NULL()
- and PTR_ERR_OR_ZERO()).
+> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+> 
+> ---
+> 
+> Changes in v4:
+> - Use done_probing() to call drm_of_find_panel_or_bridge() and
+>   component_add() when getting panel from the DP AUX bus
+> 
+> Changes in v5:
+> - Use the functions exported by the Analogix side to get the pointers of
+>   struct analogix_dp_plat_data and struct drm_dp_aux.
+> - Use dev_err() instead of drm_err() in rockchip_dp_poweron().
+> 
+> Changes in v6:
+> - Keep drm_err() in rockchip_dp_poweron()
+> - Pass 'dp' in drm_...() rather than 'dp->drm_dev'
+> ---
+>  .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 37 ++++++++++++++-----
+>  1 file changed, 28 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> index 13f32aeea7ca..004b1b68d1cf 100644
+> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+> @@ -393,11 +393,27 @@ static const struct component_ops rockchip_dp_component_ops = {
+>  	.unbind = rockchip_dp_unbind,
+>  };
+>  
+> +static int rockchip_dp_link_panel(struct drm_dp_aux *aux)
+> +{
+> +	struct analogix_dp_plat_data *plat_data = analogix_dp_aux_to_plat_data(aux);
+> +	struct rockchip_dp_device *dp = pdata_encoder_to_dp(plat_data);
+> +	int ret;
+> +
+> +	ret = drm_of_find_panel_or_bridge(dp->dev->of_node, 1, 0, &plat_data->panel, NULL);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = component_add(dp->dev, &rockchip_dp_component_ops);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return ret;
+> +}
+> +
+>  static int rockchip_dp_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+>  	const struct rockchip_dp_chip_data *dp_data;
+> -	struct drm_panel *panel = NULL;
+>  	struct rockchip_dp_device *dp;
+>  	struct resource *res;
+>  	int i;
+> @@ -407,10 +423,6 @@ static int rockchip_dp_probe(struct platform_device *pdev)
+>  	if (!dp_data)
+>  		return -ENODEV;
+>  
+> -	ret = drm_of_find_panel_or_bridge(dev->of_node, 1, 0, &panel, NULL);
+> -	if (ret < 0 && ret != -ENODEV)
+> -		return ret;
+> -
+>  	dp = devm_kzalloc(dev, sizeof(*dp), GFP_KERNEL);
+>  	if (!dp)
+>  		return -ENOMEM;
+> @@ -434,7 +446,6 @@ static int rockchip_dp_probe(struct platform_device *pdev)
+>  
+>  	dp->dev = dev;
+>  	dp->adp = ERR_PTR(-ENODEV);
+> -	dp->plat_data.panel = panel;
+>  	dp->plat_data.dev_type = dp->data->chip_type;
+>  	dp->plat_data.power_on = rockchip_dp_poweron;
+>  	dp->plat_data.power_off = rockchip_dp_powerdown;
+> @@ -450,9 +461,17 @@ static int rockchip_dp_probe(struct platform_device *pdev)
+>  	if (IS_ERR(dp->adp))
+>  		return PTR_ERR(dp->adp);
+>  
+> -	ret = component_add(dev, &rockchip_dp_component_ops);
+> -	if (ret)
+> -		return ret;
+> +	ret = devm_of_dp_aux_populate_bus(analogix_dp_get_aux(dp->adp), rockchip_dp_link_panel);
+> +	if (ret) {
+> +		if (ret != -ENODEV) {
+> +			drm_err(dp, "failed to populate aux bus : %d\n", ret);
+> +			return ret;
+> +		}
+> +
+> +		ret = rockchip_dp_link_panel(analogix_dp_get_aux(dp->adp));
+> +		if (ret)
+> +			return ret;
+> +	}
+>  
+>  	return 0;
+>  }
 
-> or:
->
->         if (!descs)
->                 return -EINVAL;
->
->         if (IS_ERR(descs))
->                 return PTR_ERR(descs);
->
-> ?
-
-The former.
-
-> For comparison, gpiod_set_array_value_cansleep() will return -EINVAL if the
-> first argument is NULL.
-
-That function cannot take an argument returned by a *_optional() call,
-if I'm not mistaken.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
