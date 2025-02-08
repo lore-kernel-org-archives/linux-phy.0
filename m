@@ -4,83 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B06CEC0219D
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Feb 2025 22:56:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F26EC02199
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 01:43:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tU+4elVy0kuuqGvCjQw1XDdgWbGF8wnPDc8U9j3sb6Y=; b=SzeC8g3oFDBrhB
-	M+/x+EsgtUDwfHxRwYDOilOZZFJmWDWWXyt8ZtFdEYYEzJvt/cO5/DxrV6JvOidng/FVxx91qbQu3
-	61eBhCA759U6Mp9y//fymrTh3yJSbEl2ZYFhv5PpKLRnf6Y9kDP4Z2S1J0Gg7HuAFx3oyIq2ZnXzL
-	X9GmUZwmmEurMahO5SCumewyiCbS9M9wUkkrGxT6YsvQcSvETM726ilCq93kqkMMafqO6nv91gxrO
-	LyAM7A2OMsu0/qjGiyOm/AcuP3OahiKKc7g15ZBE9iE1JYUETNRXFW2fhp3apd2eIAZ7FODHEanlI
-	fP5k+LH3DI71jKC6ImXA==;
+	List-Owner; bh=Mo4t0nPrj5k3TLnWjRxMlbErYGc7zoZ8Q5q4RZhU64s=; b=IvtELa2E9zJtAb
+	dLvepGB3tdTPk2z82gPruV+3iIwVhfgtvF/sfLjrrEu4b7C9sw2NCW0BfKHW8AMbW5LKMVMflOFl5
+	rtX2AMSPw7vtLwcidv00TBzDSF+nGpJLhzc0hZjdv7YFd3f27+2JhVTDk34npRmkbq7kHaUmNEK9O
+	62xrIswuaRsWyuIUn+W0Pv674Kw/erXMxxVmL7DWJukN2ApByVpxCfmUydAYnJAhb1vi2GOftKMly
+	gJBfNwXSTqNFR/z6YqfRRYPMUzKgA1aPrB5fXZDVh7Cs1bdKDWrdPI/Q7lYoKYyPf5fb3R5kTmaZP
+	wbd9I/DRDINM89ZXbX9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgXGu-0000000BSJx-0ZXS;
-	Fri, 07 Feb 2025 22:56:28 +0000
+	id 1tgZsX-0000000Bpq2-2eVn;
+	Sat, 08 Feb 2025 01:43:29 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgX85-0000000BRN1-2QvM
+	id 1tgZsU-0000000Bppd-49hW
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Feb 2025 22:47:22 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 517Hgcvo014951
-	for <linux-phy@lists.infradead.org>; Fri, 7 Feb 2025 22:47:20 GMT
+	Sat, 08 Feb 2025 01:43:28 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 517CYals007554
+	for <linux-phy@lists.infradead.org>; Sat, 8 Feb 2025 01:43:26 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	GSfrT82LSQv1cmL5Q6NuLOzNcusRp2aoe4uqa6zAbDk=; b=hZ+oJS/wbJgwqJBl
-	nyf2cAtw3hj0J0dYY+QaMuFSG6sVkBGmKo5JSCgv+HNmXu+OCOm6LVDnAOIDrNBk
-	Zwnm3lvIhAka2ikEuLSrVlsB9YPq8CSW/gvN77nvjIzZp8p7P0WLDFoCqkze23Mu
-	HkazSrVSCvVr3/dyrggSKeQo4UVWWLK66NrMTE2W158jd018dNEpHwZNMMLVEAyQ
-	XSJXAdUns4rHpOR40ZBDOV30M+Bn9OOZTs1vcByoQS3kFMdkOxNHV/X7GEjPz52y
-	zbx1XO/hME/l/sN8b98DlnrpHvLBJOxHyd4BDWo9iBX4p417t/j5R8s8Yg5xsUWh
-	ffZF+w==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44npt18m8j-1
+	uvl2a0j7vqsq5LA3kTdIeYd/weJt9uMnmK28HOLRjek=; b=ZMVwTL2LkACuACMy
+	ygKp3yW7CTUwiETtROhJy1HJUozpmgXNUUmgzvu402fofhhXAr3pG6ToO3GZbMB+
+	alcJaTXvhr0VKr+MC3iI6nxwUrSBUHMa/ToyIlzVWtjyy9iFfDbO9prOa7sDEJ5q
+	JKAyFsaX3Lnho06J2tlJh86hzqfHIaYyTHi94uHS9FlxBfIJd84Pceie5+itI16o
+	zqJ9mrIxd8rdKBoac1w9TJl2cvFunfELroOQrtVZNrspGu/aQDlmGchmdBxdJAct
+	ZmHYSAsKtmH0AV4AfNm4EnQcyfhlxVo1jlMKUoAuLzTGOM8dGb1/6VZYxPcPcbB+
+	isOj/g==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44nja3sn65-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 07 Feb 2025 22:47:20 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4679af4d6b7so3795841cf.0
-        for <linux-phy@lists.infradead.org>; Fri, 07 Feb 2025 14:47:20 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Sat, 08 Feb 2025 01:43:26 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-7b700506e64so33158885a.0
+        for <linux-phy@lists.infradead.org>; Fri, 07 Feb 2025 17:43:25 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1738968439; x=1739573239;
+        d=1e100.net; s=20230601; t=1738979005; x=1739583805;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=GSfrT82LSQv1cmL5Q6NuLOzNcusRp2aoe4uqa6zAbDk=;
-        b=eZ6WRgankv8W5Gh3oGdAzUJGpKR2X5OHpj3YxFb/1GHemq/ptBj4ASR4W0mI4ttdsv
-         AU2+/RZ6E7MEs7hrxiCMNSedsXzBxXhHdJpacgORgqDnkfzFsV5p5GrAT32ZHxorHhjf
-         KSKCtHflXjlCnwqlG9/1F1rtJmnXAuNa8xDv1l8TlswJwDqNFchGqhh1e+m2rtHs0LXT
-         ANc8Zipn+RjCWoGV2bXdslH8F8Ec9Szf+YtGqoH+YlF75vUZ6SjZwq1h+dOThtWYUysg
-         iFyKWVzRDcN6fa/yKktsZcODwzfktfNZp6PiDHRPgWp6r9W0yrPpye+syRTdfuFny9hI
-         XtZw==
-X-Forwarded-Encrypted: i=1; AJvYcCUCWUZNpZS4hOWKkAqxjvNEQryPJEDk7H/as59luW4aEKkjmmmgosdFiYnowV0H7o4Xrtw19MAsT+E=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxqZF4UgC/OdfuqYzzC6bdw5EraplUaQDOkItcfn67KWXFhPR15
-	6is6u2g7WvOY3BlTQavEXtBZKFtD+nqLr1F/GkhNAgP2t5q8uKJ0isGEInVwA374QFzWDI75BG+
-	51W9mETiniAVpqr2X3UlTQEO5bmYFarR9QqDIWmc+mg1oQEAfQKjYzDYtQLisMnis
-X-Gm-Gg: ASbGncvq/AoK9TZ8QnJ5JTVgdytQHaAR3uP1eE/SJvXadmRKCCzG4rMDKQMVocieV90
-	lKXj86QiynRCwgZYQSqBVriQ7xb6eBDwO7z2PyM6Xqxaos/smCus7DCHzyM9adDVe0Iqd5P9w/D
-	uv0PnJCTWkgOxYVZ+ptoTomTBKoWfpEuqx4j7VrX9qaWo94tdXtSJ0BJfPaCE+EYMQF2BzG2EZ4
-	dU4G9rXP+kQwDA03efyJZUMINq06wM1OJTF1Zv+kgMXQ+8YD7gSyXzuL8YARBJz+ZuZiySW3BQT
-	ZfqLY1cxu1zYcFptPTy7O2ZPGH7LH3IsXDJUEfpvG4UCQsy5ohMe2MkNZoo=
-X-Received: by 2002:a05:622a:1b87:b0:467:6bbf:c1ab with SMTP id d75a77b69052e-471679c7d79mr29186591cf.3.1738968438842;
-        Fri, 07 Feb 2025 14:47:18 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGSsJAkiNdMntxbj6WaJ97FcSyVaatuMmgkKKnf1mFsTb8a3C0KJ8abaktCJbg7NroLAnIrZA==
-X-Received: by 2002:a05:622a:1b87:b0:467:6bbf:c1ab with SMTP id d75a77b69052e-471679c7d79mr29186181cf.3.1738968438388;
-        Fri, 07 Feb 2025 14:47:18 -0800 (PST)
+        bh=uvl2a0j7vqsq5LA3kTdIeYd/weJt9uMnmK28HOLRjek=;
+        b=chmN1dDk2pf46T3nFtbeuKn2wXb6dS3pF+w609XL4lClmcnUUDw4VM2tH7HSFi8n0t
+         VF0e5LHoZwa2pnfTTCBrItrbjao5vEMA5WfRM29rN1PZNRsDjnOyu1hvWx3Qc0KvusWr
+         h+23V0MWTYIVL3X0lIz5kZWgLTfGe7WsEB1PxVUJ1WCCAJaKjXa5CCym7eDEiIuXnPMs
+         IDDjembX/S+csbgj4bamGF9wOMbrLYwWTvzPNE38EjvDHMTThWLiyJ4muwn/57Hb09SN
+         qyfssDUV5BYAwWVwZvTg2pAQGmnjjv2e+wP/w/p9wnS1cEjMo/7ca6eA77UELvV/HtW+
+         X1yg==
+X-Forwarded-Encrypted: i=1; AJvYcCUb6weTEvgZP6VrcpAphSS8tzoxDY5BbEPoQOiZRfIWhPoTpDhdZLEEy21YmrbE+VnF/UuolRmU80w=@lists.infradead.org
+X-Gm-Message-State: AOJu0YydJqXCtTp9Qrr7dIf/vlsH0GZ6vV88yqFicOijHbr0FavXS9Wx
+	d5X9qPWH8Wl+cbCu+7GgpG53b53xfI9A08Bst43w8EETCWUNRa5t8XxZh38j6tnr2JY+Vd0EDBV
+	/1pZmGUL0YQcpLcwPPNVHNvR87eGOnhywzBeyLiAq4DkoBy1j1K1ic51Cj0P0X+lv
+X-Gm-Gg: ASbGncvXdTFt72qUs83AopFsihBFe4U+b/niXhvc3CFzNfDYV5i+k1T1Hw4rlzOAhoc
+	mZpSyDjLCWPS0qvyk9eYtpu3Iib418tDVLmzIFuWwjg65xeyIhC8xW5kIQf2TZkOLgwBcQ88bJE
+	8QP4Cx1Q8NEzZ7jED/NRgBINpmZhcvV4jCRSY5kZr8WHsWcXIDIUhgwwIPZsm0QgUe7hSJRO+VA
+	ycPUp1psehTp8yC7cyApsOHWYOzTZVMsHqYGrX3nI/sA9924XrsjdiGj72yAfzCRBNZt34l8WH6
+	8O2F0YbJ2abE9tutP/0NlxwD2ABiiQ4HglbNm/Yb5Rpi0gaaf2FoH52fUJg=
+X-Received: by 2002:a05:620a:318e:b0:7b1:3bf8:b3c4 with SMTP id af79cd13be357-7c047afc65fmr327772085a.0.1738979004746;
+        Fri, 07 Feb 2025 17:43:24 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH8UTS+vVH26H8xLRB9dyiuCt4iajAYis4LHIkOKK04eLWDXnRv19j6gDsEybLesd/OnD2ezg==
+X-Received: by 2002:a05:620a:318e:b0:7b1:3bf8:b3c4 with SMTP id af79cd13be357-7c047afc65fmr327770685a.0.1738979004410;
+        Fri, 07 Feb 2025 17:43:24 -0800 (PST)
 Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dcf1b7ad6fsm3197436a12.18.2025.02.07.14.47.13
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dcf1b7b0a2sm3418731a12.22.2025.02.07.17.43.19
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 07 Feb 2025 14:47:17 -0800 (PST)
-Message-ID: <c6352263-8329-4409-b769-a22f98978ac8@oss.qualcomm.com>
-Date: Fri, 7 Feb 2025 23:47:12 +0100
+        Fri, 07 Feb 2025 17:43:23 -0800 (PST)
+Message-ID: <9368eaa3-f1f0-4581-9f18-24c2a6f8f5b3@oss.qualcomm.com>
+Date: Sat, 8 Feb 2025 02:43:18 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/5] Add UFS support for SM8750
+Subject: Re: [PATCH 4/5] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
+ SoC
 To: Melody Olvera <quic_molvera@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
         Kishon Vijay Abraham I <kishon@kernel.org>,
         Rob Herring <robh@kernel.org>,
@@ -101,22 +102,23 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-scsi@vger.kernel.org, Nitin Rawat <quic_nitirawa@quicinc.com>,
         Manish Pandey <quic_mapa@quicinc.com>
 References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
+ <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
-X-Proofpoint-GUID: 6BxXlt1iIEOy-1HcrYKmD8lz08GuY6wA
-X-Proofpoint-ORIG-GUID: 6BxXlt1iIEOy-1HcrYKmD8lz08GuY6wA
+In-Reply-To: <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
+X-Proofpoint-GUID: wSaps2vTOKNSoD7LBOF2THGAJuwl61b3
+X-Proofpoint-ORIG-GUID: wSaps2vTOKNSoD7LBOF2THGAJuwl61b3
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-07_10,2025-02-07_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0
- lowpriorityscore=0 priorityscore=1501 clxscore=1015 mlxlogscore=999
- spamscore=0 mlxscore=0 adultscore=0 impostorscore=0 phishscore=0
- suspectscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502070172
+ definitions=2025-02-07_11,2025-02-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 phishscore=0
+ clxscore=1015 priorityscore=1501 bulkscore=0 spamscore=0 mlxscore=0
+ impostorscore=0 mlxlogscore=925 malwarescore=0 suspectscore=0
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502080010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250207_144721_645882_34A73521 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20250207_174327_057074_AD62726F 
+X-CRM114-Status: GOOD (  10.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,24 +136,36 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 13.01.2025 10:46 PM, Melody Olvera wrote:
-> Add UFS support for SM8750 SoCs.
+> From: Nitin Rawat <quic_nitirawa@quicinc.com>
 > 
+> Add UFS host controller and PHY nodes for SM8750 SoC.
+> 
+> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
+> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
+> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
 > Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
 > ---
-> Nitin Rawat (5):
->       dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Document the SM8750 QMP UFS PHY
->       phy: qcom-qmp-ufs: Add PHY Configuration support for SM8750
->       dt-bindings: ufs: qcom: Document the SM8750 UFS Controller
->       arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 SoC
->       arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 QRD and MTP boards
 
-You still need the same workaround 8550/8650 have in the UFS driver
-(UFSHCD_QUIRK_BROKEN_LSDBS_CAP) for it to work reliably, or at least
-that was the case for me on a 8750 QRD.
+Please also add this bit:
 
-Please check whether we can make that quirk apply based on ctrl
-version or so, so that we don't have to keep growing the compatible
-list in the driver.
+diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
+index 3bbd7d18598e..1f79f2adb0a5 100644
+--- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
+@@ -532,9 +532,9 @@ gcc: clock-controller@100000 {
+                                 <0>,
+                                 <&sleep_clk>,
+                                 <0>,
+-                                <0>,
+-                                <0>,
+-                                <0>,
++                                <&ufs_mem_phy 0>,
++                                <&ufs_mem_phy 1>,
++                                <&ufs_mem_phy 2>,
+                                 <0>;
+ 
+                        #clock-cells = <1>;
+
 
 Konrad
 
