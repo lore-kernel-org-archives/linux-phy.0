@@ -4,75 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FCAEC021A1
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 13:23:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19A36C02198
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 17:57:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bRRYH+7Ob9n2XVJqwevlIdgLFv1MksW5X2ycYGv4ULY=; b=V3NliEYbZa3WF3
-	93C5qjtTr4wJIL3SfEFC3B+9NlWwZJ0rouzRRWVwFPtLduPlWFIjSa44cJ7LIOvthg9PlKllbGvuH
-	coSlCrfan1zAL65VDhFoUyp3Hy0gQU35jeTbn6v4VNmKMGo3Eq9kfwFe0qMkR8kE7AWF3Cp6OM+EC
-	ADHLkw6nsZ18STk7xtnyTkVeNjI9cn1E1LCl5ItyW6KCA3x6irMUjqFdgZeDOnTHZYB7fO9NghzrN
-	Uy9bqTy+ziCxBUypqPur2GdldpMTM7svVjxXvsAPiXjQbdk+aHBTcbTDFHmU+VsHje9NCqsDx4Th5
-	xJZJHA3uhbCQpJ8yAr+w==;
+	List-Owner; bh=yZiBTXFhUUlbUA6mjJkXNeFoOGlf2XiUn6u8hR9JvSs=; b=ky9+Mg/ys9Vmg0
+	v1p1j3yZUQgbRMJhQuBN4mtTvlqYive9UawBPq0fO4CICz+4G+dvpRSxvqlZlQWvyImcwuQ5yqj5e
+	k9s7HrPaYy3Se+uWARmk4WNGx4869NB+JjF8xA2//s6QY/NbrkaoANJnEABQlyq5cHrdNSGfkJPlp
+	U+ZDo7VSD2RBGFUh2C51oLo/ysGpuRBt2d0XKfBdklKKgerDyi24skNlgwJynVrYonqXJi248JLrg
+	4YuZhNpoGkvlu5sRQuAqQ8op7Ugj5pvHwTZ/lcjXNZR7PCrRK1buramc6J/j23tMPvnWWgclyex/I
+	8avB+UAZHx57dAxmgpoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgkoJ-0000000CzWD-0XHW;
-	Sat, 08 Feb 2025 13:23:51 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tgp5I-0000000DKsx-0nrY;
+	Sat, 08 Feb 2025 17:57:40 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgknx-0000000CzQy-1rgg
+	id 1tgp5G-0000000DKsZ-053G
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Feb 2025 13:23:30 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 3F6A95C552A;
-	Sat,  8 Feb 2025 13:22:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51BC1C4CED6;
-	Sat,  8 Feb 2025 13:23:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739021008;
-	bh=UNQXvy+RWVdaIktgs9KmgGDMboPWfIfWS1mqCJ2dRMg=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=n7mZXu+FCZa2zBnn8hwWDCQCrgdVRU/FiEZdEcQhRFE2+nrnbu4E/0rVIg30241ib
-	 j0uIVrbv8sxiG5Wl8Yy7b/XA4xW3Sd4uxw3aSH7yTq04q3R7OFyMX+WHkGLZuizJ9k
-	 z6GuuALfG/T8Bah6qucmpo2JYD+ThC0uCCsoYMYUlvSsIkD6sneYZan+4gme1v3dxB
-	 B6zYusbkISPsakXAcWU4bCRtbGN6JI/Don++Czch/tP72/U2kR50qAmUDp6wVrUfyQ
-	 xTrNY7rF50Zq6Fg8HGxNLhtOrMUMH9Hd45oFh73gupOaHy3TLmExhSv0xB6tntaZ2r
-	 whcVehzM3yyeA==
-Date: Sat, 8 Feb 2025 13:23:13 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Cc: David Lechner <dlechner@baylibre.com>, Linus Walleij
- <linus.walleij@linaro.org>, Bartosz Golaszewski <brgl@bgdev.pl>, Andy
- Shevchenko <andy@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Lars-Peter Clausen <lars@metafoo.de>, Michael Hennerich
- <Michael.Hennerich@analog.com>, Ulf Hansson <ulf.hansson@linaro.org>, Peter
- Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit
- <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, "David S.
- Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Jakub
- Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Nuno
- =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>, Takashi
- Iwai <tiwai@suse.com>, linux-gpio@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-mmc@vger.kernel.org, netdev@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
-Subject: Re: [PATCH v2 06/13] iio: adc: ad7606: use
- gpiod_multi_set_value_cansleep
-Message-ID: <20250208132313.5b151ca0@jic23-huawei>
-In-Reply-To: <CAHp75Vfb7EgHkHtqm4b0QnG=uWwszpWwFe8MLDPRSifKtQFAcA@mail.gmail.com>
-References: <20250206-gpio-set-array-helper-v2-0-1c5f048f79c3@baylibre.com>
-	<20250206-gpio-set-array-helper-v2-6-1c5f048f79c3@baylibre.com>
-	<CAHp75Vfb7EgHkHtqm4b0QnG=uWwszpWwFe8MLDPRSifKtQFAcA@mail.gmail.com>
-X-Mailer: Claws Mail 4.3.0 (GTK 3.24.48; x86_64-pc-linux-gnu)
+	Sat, 08 Feb 2025 17:57:39 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5186CvrO013680;
+	Sat, 8 Feb 2025 17:57:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	NpWrkCiwW3pvwybb8EHr3au7Ie54oZ1lUb2xxHuPEb0=; b=hK/SfdIK3eQ+Jmea
+	L7suKLvJSg/5SZcnllLqc4v4GtbcKem2SVmMUf64yPNL5k2lIh8xzBQCe1Dl2HvT
+	e4SZQ5W+kuNYMj3XQHLpZfbnRzmv4oPnpv86ZvoSpmsl9uRQ55vn9yydSWQfKaUM
+	Q3PugeFpDU/tC16jopnwDDrt8dmRgvBhfJ4CtStqtKPi13gMqM2G5zpLXR+O5P0K
+	Yy8uEu2yXSwov6dBFYjXFKqxx0K8ZEwPOtupN8jlgOROdAbNLcSHXLY/ZCvq/ZPM
+	EyfLHM8sffSuzN/02fWO6toADPgklBLgdnC4XxMAoSY/qyNIrmxRJKBNrqyqnpsd
+	ykIc0A==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0g8ryv7-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 08 Feb 2025 17:57:31 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 518HvU4D011878
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 8 Feb 2025 17:57:30 GMT
+Received: from [10.216.46.73] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 8 Feb 2025
+ 09:57:22 -0800
+Message-ID: <e21cd976-11dd-4a52-9134-fd06c11c0de7@quicinc.com>
+Date: Sat, 8 Feb 2025 23:27:19 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/5] Add UFS support for SM8750
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Melody Olvera
+	<quic_molvera@quicinc.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        "Kishon Vijay
+ Abraham I" <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        "Krzysztof
+ Kozlowski" <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        Alim Akhtar
+	<alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche
+	<bvanassche@acm.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Andy Gross
+	<agross@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        "Satya Durga
+ Srinivasu Prabhala" <quic_satyap@quicinc.com>,
+        Trilok Soni
+	<quic_tsoni@quicinc.com>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-scsi@vger.kernel.org>, Manish Pandey <quic_mapa@quicinc.com>
+References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
+ <c6352263-8329-4409-b769-a22f98978ac8@oss.qualcomm.com>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <c6352263-8329-4409-b769-a22f98978ac8@oss.qualcomm.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: emLGHLQnAEIdVywC6tNbc8LHtI-kOvLI
+X-Proofpoint-ORIG-GUID: emLGHLQnAEIdVywC6tNbc8LHtI-kOvLI
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-08_08,2025-02-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
+ adultscore=0 lowpriorityscore=0 phishscore=0 mlxscore=0 suspectscore=0
+ bulkscore=0 priorityscore=1501 spamscore=0 impostorscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
+ definitions=main-2502080152
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250208_052329_528070_C863A709 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20250208_095738_077858_B4E31612 
+X-CRM114-Status: GOOD (  14.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,25 +118,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCA3IEZlYiAyMDI1IDE0OjEzOjIzICswMjAwCkFuZHkgU2hldmNoZW5rbyA8YW5keS5z
-aGV2Y2hlbmtvQGdtYWlsLmNvbT4gd3JvdGU6Cgo+IE9uIEZyaSwgRmViIDcsIDIwMjUgYXQgMTI6
-NDjigK9BTSBEYXZpZCBMZWNobmVyIDxkbGVjaG5lckBiYXlsaWJyZS5jb20+IHdyb3RlOgo+ID4K
-PiA+IFJlZHVjZSB2ZXJib3NpdHkgYnkgdXNpbmcgZ3Bpb2RfbXVsdGlfc2V0X3ZhbHVlX2NhbnNs
-ZWVwKCkgaW5zdGVhZCBvZgo+ID4gZ3Bpb2Rfc2V0X2FycmF5X3ZhbHVlKCkuCj4gPgo+ID4gVGhl
-c2UgYXJlIG5vdCBjYWxsZWQgaW4gYW4gYXRvbWljIGNvbnRleHQsIHNvIGNoYW5naW5nIHRvIHRo
-ZSBjYW5zbGVlcAo+ID4gdmFyaWFudCBpcyBmaW5lLiAgCj4gCj4gLi4uCj4gCj4gPiAgICAgICAg
-IGlmIChzdC0+Z3Bpb19vcykgewo+ID4gLSAgICAgICAgICAgICAgIGdwaW9kX3NldF9hcnJheV92
-YWx1ZShzdC0+Z3Bpb19vcy0+bmRlc2NzLAo+ID4gLSAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICBzdC0+Z3Bpb19vcy0+ZGVzYywgc3QtPmdwaW9fb3MtPmluZm8sIG9zKTsKPiA+
-ICsgICAgICAgICAgICAgICBncGlvZF9tdWx0aV9zZXRfdmFsdWVfY2Fuc2xlZXAoc3QtPmdwaW9f
-b3MsIG9zKTsKPiA+ICAgICAgICAgfSAgCj4gCj4gTm93IEkgZG8gbm90IHNlZSBhbnkganVzdGlm
-aWNhdGlvbiB0byBsZWF2ZSB7fS4KPiAKV2l0aCB0aGF0IHRpZGllZCB1cCAoZ29vZCBzcG90ISkg
-aWYgdGhpcyBnb2VzIHRocm91Z2ggdGhlIEdQSU8gdHJlZQpBY2tlZC1ieTogSm9uYXRoYW4gQ2Ft
-ZXJvbiA8Sm9uYXRoYW4uQ2FtZXJvbkBodWF3ZWkuY29tPgoKCgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+
+On 2/8/2025 4:17 AM, Konrad Dybcio wrote:
+> On 13.01.2025 10:46 PM, Melody Olvera wrote:
+>> Add UFS support for SM8750 SoCs.
+>>
+>> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+>> ---
+>> Nitin Rawat (5):
+>>        dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Document the SM8750 QMP UFS PHY
+>>        phy: qcom-qmp-ufs: Add PHY Configuration support for SM8750
+>>        dt-bindings: ufs: qcom: Document the SM8750 UFS Controller
+>>        arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 SoC
+>>        arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 QRD and MTP boards
+> 
+> You still need the same workaround 8550/8650 have in the UFS driver
+> (UFSHCD_QUIRK_BROKEN_LSDBS_CAP) for it to work reliably, or at least
+> that was the case for me on a 8750 QRD.
+
+Hi Konrad,
+
+The LSDBS workaround is only applicable for SM8650 and SM8550.
+SM8750 and onwards doesn't need this WA anymore as it is fixed in HW.
+
+Thanks,
+Nitin
+> 
+> Please check whether we can make that quirk apply based on ctrl
+> version or so, so that we don't have to keep growing the compatible
+> list in the driver.
+> 
+> Konrad
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
