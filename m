@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EACF1C02198
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 13:23:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FE83C021A0
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 13:23:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pTD6Gw8AovXLfMPdquWzICd7mEA56p1I7437Ew4BbfQ=; b=gcpsl/aOA7YQ9h
-	0rWgYVbm3SHZ6tDH0f0lY1ItapkUDPU6lzT16CfhqJvuXxugzDOx3aj1Mqor53lo8GSRqVA1xO9M9
-	kyKq0mT7To4OZPDUY6tOeQIwW1VLGtPLNx8Q35c+x31qcrs8iZI+HidKbf43JnPXwLq6wAcvLPxHu
-	H7sE0hSYFjwQKMkilQM2fKDngzeB1XGIuD7psx6vBc/57d7jLpsxdtXqEDgQMAnRqeYo3WrMd+jsX
-	AKVl1DAEhnUOO1XlmzDXsiMgeY9e7Pn6EzM8EhimJ8HtjL+0Wplfg4gQ6H7rO/zfcQLZuFBJ6YQDR
-	xbh580vXOVcSpSLe65iw==;
+	List-Owner; bh=FOBOXUkppy3hThnVDY6p9j/lEtmtXA5puJHimZtYhJI=; b=S0+wXfLA3yOKBa
+	Ehf1PmMM/oliZHklts1MZ7wsgvLOwRYp67kfMKkTf3E+X578pWQvkzhObQgOK3FBs5Wir3Y6uh6xA
+	ZPOaNpAejuFL6uCpFh4ZOygqzM9pzJVVSJVVBXzC3NJ1Myw0xmiKBZF3HWxBldMExBFV6PbFmRctF
+	ieNIOsjrGzN/UPr66jj8P/qWpruL6TgXWFAj3BYO0P3d/AZgub9v/hw+yEv0lVh1SeeKvOB2cMINQ
+	qeOtCe9m5ZOJb4zA0gf5gzxmggZ/hxBxg9TS6IyGNLKZy7kOazk7U2q4d5O7hwgMHEEBL1Gj+trjy
+	I/fuV0o2bkPp0/7O+EXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgkoI-0000000CzVe-2S0p;
+	id 1tgkoI-0000000CzVm-3Xpx;
 	Sat, 08 Feb 2025 13:23:50 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgkmz-0000000CzGJ-1fuy
+	id 1tgknN-0000000CzKs-1irl
 	for linux-phy@lists.infradead.org;
-	Sat, 08 Feb 2025 13:22:30 +0000
+	Sat, 08 Feb 2025 13:22:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 71EEAA41BE0;
-	Sat,  8 Feb 2025 13:20:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1978FC4CED6;
-	Sat,  8 Feb 2025 13:22:16 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 306B85C10F3;
+	Sat,  8 Feb 2025 13:22:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6D02C4CED6;
+	Sat,  8 Feb 2025 13:22:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739020947;
-	bh=1cUfUnnzPkSdrT1BvYm7O95VixubILLavQwSf9m20To=;
+	s=k20201202; t=1739020972;
+	bh=ojenjl2TOOXMH1n1g02fuLQBKwZVi3ZrnouzCMKji6k=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=QdRDYhwwbY9vABNWN9TC+jkJ1dj+PKkgmoeyjRzSGaTaO4ypPrIP6ADmDo05RMi3j
-	 hKejsHUowRJ78SXsYHrAHMXltXUHm0LHZuHOz7gpB5X/DIO0n3gE4KnO/EZhnNl7NL
-	 wQ4ojKCuj3Cmq42okjlKXbq4LRTxAIZvXZA+/SyBbZzGPmL26MIEzH8H8UBBrb6yo9
-	 b9E/rldcVCBOtIQma+UIw1J+Vihnd29SwWeVS6rMBwWzRru+jsI9igvo85jt1kA4uu
-	 bgCenS7ZlUwUEH7j5PGmcZNQ/SY/WuWQpx92ddbvuqljUu41lZbZfl1ZgWgv03TWSR
-	 o0BL4CO6gxUCQ==
-Date: Sat, 8 Feb 2025 13:22:11 +0000
+	b=YooG0lsDGwowoGFiTayI1bEM7oj2dmbC7j957GRinvghGX+R2Wwb6D5opUyRhER7f
+	 Sp1TVi2PgmEA6n7eU8CEhSY+DW9Q7a3HdWvIFU81wto1N0YXKmTgV7Z4uYVXFfbTYK
+	 7lC70ybLWbHTSVy/joIdF9yDccHtjG19z5Qzg3vJUJVeexBppd6F3FXtdl2WqGhXcU
+	 5WIcdPrrGSgzWZ8C5WUYl5/fp34wmWW1WWePhPpHRo+3YbHI7Jvr9V8t7FCwQ1rwH0
+	 yO0EPPME5K6MST3m3/3Bz4SRiVutNdeFZr/iv67e2R+fbzkGsevTSGtykYR96a/s37
+	 GrN4Dz90GtdRg==
+Date: Sat, 8 Feb 2025 13:22:32 +0000
 From: Jonathan Cameron <jic23@kernel.org>
 To: David Lechner <dlechner@baylibre.com>
 Cc: Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
@@ -61,17 +61,17 @@ Cc: Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
  linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
  netdev@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-sound@vger.kernel.org
-Subject: Re: [PATCH v2 07/13] iio: amplifiers: hmc425a: use
+Subject: Re: [PATCH v2 08/13] iio: resolver: ad2s1210: use
  gpiod_multi_set_value_cansleep
-Message-ID: <20250208132211.794c6f87@jic23-huawei>
-In-Reply-To: <20250206-gpio-set-array-helper-v2-7-1c5f048f79c3@baylibre.com>
+Message-ID: <20250208132232.47b848e9@jic23-huawei>
+In-Reply-To: <20250206-gpio-set-array-helper-v2-8-1c5f048f79c3@baylibre.com>
 References: <20250206-gpio-set-array-helper-v2-0-1c5f048f79c3@baylibre.com>
-	<20250206-gpio-set-array-helper-v2-7-1c5f048f79c3@baylibre.com>
+	<20250206-gpio-set-array-helper-v2-8-1c5f048f79c3@baylibre.com>
 X-Mailer: Claws Mail 4.3.0 (GTK 3.24.48; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250208_052229_528100_F81FA430 
-X-CRM114-Status: GOOD (  18.77  )
+X-CRM114-CacheID: sfid-20250208_052253_537914_B5D860AE 
+X-CRM114-Status: GOOD (  17.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,41 +88,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 06 Feb 2025 16:48:21 -0600
+On Thu, 06 Feb 2025 16:48:22 -0600
 David Lechner <dlechner@baylibre.com> wrote:
 
 > Reduce verbosity by using gpiod_multi_set_value_cansleep() instead of
-> gpiod_set_array_value_cansleep().
+> gpiod_set_array_value().
 > 
-> Passing NULL as the 3rd argument to gpiod_set_array_value_cansleep()
-> only needs to be done if the array was constructed manually, which is
-> not the case here. This change effectively replaces that argument with
-> st->gpios->array_info. The possible side effect of this change is that
-> it could make setting the GPIOs more efficient.
+> These are not called in an atomic context, so changing to the cansleep
+> variant is fine.
 > 
 > Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 > Signed-off-by: David Lechner <dlechner@baylibre.com>
-If it goes through the gpio tree
+If this goes through GPIO
 Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
 > ---
->  drivers/iio/amplifiers/hmc425a.c | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
+>  drivers/iio/resolver/ad2s1210.c | 8 ++------
+>  1 file changed, 2 insertions(+), 6 deletions(-)
 > 
-> diff --git a/drivers/iio/amplifiers/hmc425a.c b/drivers/iio/amplifiers/hmc425a.c
-> index 2ee4c0d70281e24c1c818249b86d89ebe06d4876..d9a359e1388a0f3eb5909bf668ff82102286542b 100644
-> --- a/drivers/iio/amplifiers/hmc425a.c
-> +++ b/drivers/iio/amplifiers/hmc425a.c
-> @@ -161,8 +161,7 @@ static int hmc425a_write(struct iio_dev *indio_dev, u32 value)
+> diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
+> index b681129a99b6cf399668bf01a1f5a15fbc4f95b8..7f18df790157f1e411fb70de193a49f0677c999f 100644
+> --- a/drivers/iio/resolver/ad2s1210.c
+> +++ b/drivers/iio/resolver/ad2s1210.c
+> @@ -182,8 +182,7 @@ static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
 >  
->  	values[0] = value;
+>  	bitmap[0] = mode;
 >  
-> -	gpiod_set_array_value_cansleep(st->gpios->ndescs, st->gpios->desc,
-> -				       NULL, values);
-> +	gpiod_multi_set_value_cansleep(st->gpios, values);
->  	return 0;
+> -	return gpiod_set_array_value(gpios->ndescs, gpios->desc, gpios->info,
+> -				     bitmap);
+> +	return gpiod_multi_set_value_cansleep(gpios, bitmap);
 >  }
 >  
+>  /*
+> @@ -1473,10 +1472,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
+>  
+>  		bitmap[0] = st->resolution;
+>  
+> -		ret = gpiod_set_array_value(resolution_gpios->ndescs,
+> -					    resolution_gpios->desc,
+> -					    resolution_gpios->info,
+> -					    bitmap);
+> +		ret = gpiod_multi_set_value_cansleep(resolution_gpios, bitmap);
+>  		if (ret < 0)
+>  			return dev_err_probe(dev, ret,
+>  					     "failed to set resolution gpios\n");
 > 
 
 
