@@ -4,74 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AABBC02198
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 19:01:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 026E1C02198
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 19:18:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ma2VyYDb9864YIRKGYjTwHNVZMK72QPe7G1L0mAuWdM=; b=fHAeGjqu4blC8l
-	mkXfpBO3uqcQPLB/vsiRiNadrzTdPapnwaEufODCFjtrsp23u/hHbI7eY6HHow1V+1yHb8CFtOFgP
-	2OpZs3b9zPVj0Ds3WqG/uMcILQ7aP6OVPxxbdtnUX9/MQtICjJmExTO9cXjJRDHc3rlWoebTOT2qG
-	f57b0STbp43LJRRhAdKqckWfTe33e2sHrs1TUbAvh6d7+FhArZDrqiaLt01ZZK9T088HnSEBAhde0
-	gHUiEDuJHopBaipy+Ab4mIhTPdqiygzjESvY1hciwDF15aqyHISIxP58bzQ+TJKpjrgWvmxuCdben
-	m346L9mk8pzlq58Y/M6Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OO9FDVOwLaciZJqceGFfzzzpvBUfAwNiz5Ej0llou7A=; b=vkX7btBpb3woyN
+	rG7loGlzuvvnSGVFzRUO8qGP/UXqQQ4+Fz1TrAoLQJtM0l+lf2nZKt1/Y16/SSIuseQWz/TiqCgpa
+	7/OVJi8M3Bru/t93ef9X7vlpVg+D2vYxR3zxQcDq1JRIyv03cuEuMOg8u4xtpUp+FfYoBFp8SLYaE
+	Auzxfjc7TWNrbuqDXSvA4umy7s/i/OJMsIML/0NBBirve3ZrlO6t6mtKTITWJj4oF4fkS9ZzUZ5gK
+	sSfWAmdxISrlKcbODppnKWmmxFoVzxOp66EWGtV88MVZgjvEuHKAPHSGPcMDewypjr+odguzLntpg
+	KJc9p6lNnS7P3MNN6OAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgq5O-0000000DPP3-0no0;
-	Sat, 08 Feb 2025 19:01:50 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1tgqLW-0000000DQJ7-2Zne;
+	Sat, 08 Feb 2025 19:18:30 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgq3z-0000000DPHi-1fLJ;
-	Sat, 08 Feb 2025 19:00:25 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id D2ADB25D01;
-	Sat,  8 Feb 2025 20:00:16 +0100 (CET)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id 55FrgB_ujl9K; Sat,  8 Feb 2025 20:00:15 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1739041215; bh=alWLYF/9OcbBa/I1+7yBqk1Z5iaf+prVR/oyQI0H9G4=;
-	h=From:Date:Subject:To:Cc;
-	b=DOC4jBhf/haJGplx2K8eiCjySQ5qbgEtpmkQ3ImmkbEXeHtImVv7v4Q3fGLF0mGE7
-	 7L/OdfBlNBQCIssAqszLDs+H4f+GEskwUBTuThpvWz4DJLpyk7I13rv35duIoF0HIj
-	 /ouUMNy8JwCqopdtjG2jKBi+M1Fz2V4bgJc+EjHZjbLHKZwwqgVa8OK2pNlc6PYcRI
-	 bdf8ePyZCdfuXsUrTZK+3FShLaP30618vZcaABPPC4Wj/AXXguL7RKve5Pv6ZLbikK
-	 xhalBciwDPH2s3/BZF79OXtG5DhHBeu/ojLzG2MQiAuJxWsx6zjhIDh4f/1dvtDzSL
-	 biy7RX9N2lDew==
-From: Kaustabh Chakraborty <kauschluss@disroot.org>
-Date: Sun, 09 Feb 2025 00:29:30 +0530
-Subject: [PATCH] phy: exynos5-usbdrd: fix MPLL_MULTIPLIER and SSC_REFCLKSEL
- masks in refclk
+	id 1tgqLT-0000000DQHB-1n2F
+	for linux-phy@lists.infradead.org;
+	Sat, 08 Feb 2025 19:18:29 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 518JHspA014951;
+	Sat, 8 Feb 2025 19:18:10 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	N9IY6xAkgcl+dzkucgeRtwv5Q9qiGeswZuCATj1aeE4=; b=e2dWfyZi5vSyMQbD
+	r5ya7xsAnuOUAJE2RKs6tp09Xg9FrPDyB9cDcPTbBL4F2P81CE1AJUy01+BNm9Rk
+	Fe2Ea3PVRKA2TBlzlok9Ff8A4QkKJb2Kp8qZBgJCfCu2FYV+AnwbR4mp/9CISKpN
+	wov50/JVzqlAsc9XVsyiXla8H33NoS7rsiJD/sivWYNbvlUjuMLhnoBHZ6SMCsX4
+	X7o/wbsNAFxPArcRAT45VSAfrgTRBqqcuk9x+Ro1HP+GEO45JgGS+CK7rbcn4OWa
+	nQu98ffvTx0XzJabDUwd8lGDmXUeVtzT2Wn8GjG2/ru42dM/R6nOeUaNcja+xkv5
+	d2CA4g==
+Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0dx93d9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 08 Feb 2025 19:18:10 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 518JI8gX002434
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sat, 8 Feb 2025 19:18:09 GMT
+Received: from [10.216.46.73] (10.80.80.8) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 8 Feb 2025
+ 11:18:00 -0800
+Message-ID: <be8a4f65-3b36-4740-a4f7-312126cfd547@quicinc.com>
+Date: Sun, 9 Feb 2025 00:47:56 +0530
 MIME-Version: 1.0
-Message-Id: <20250209-exynos5-usbdrd-masks-v1-1-4f7f83f323d7@disroot.org>
-X-B4-Tracking: v=1; b=H4sIAJGpp2cC/x3MQQ5AMBBA0avIrE1SjVKuIhboYCJKOiFE3F1j+
- Rb/PyAUmATq5IFAJwtvPiJLExjmzk+E7KJBK22UVhbpuv0mBg/pXXC4drIIllRRUVkz5L2FmO6
- BRr7+bdO+7wekWIFpZgAAAA==
-X-Change-ID: 20250208-exynos5-usbdrd-masks-7e9e6985c4b8
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Vivek Gautam <gautam.vivek@samsung.com>
-Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
- stable@vger.kernel.org, Kaustabh Chakraborty <kauschluss@disroot.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1739041209; l=2085;
- i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
- bh=alWLYF/9OcbBa/I1+7yBqk1Z5iaf+prVR/oyQI0H9G4=;
- b=u7SS0kBpPe4GLUkdpGBcrXSlzjYQ5lTUc9poNrKPxjumtkDDCLanuInoWrIfZdaYIYKdJwsQ8
- spQArA691vLAEsK3NzHrFjhY0s2A0LvAotGppdNelchuuQ1ZOtDXhue
-X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
- pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 4/5] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
+ SoC
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Melody Olvera
+	<quic_molvera@quicinc.com>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Manivannan Sadhasivam
+	<manivannan.sadhasivam@linaro.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>,
+        Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Satya Durga Srinivasu Prabhala
+	<quic_satyap@quicinc.com>,
+        Trilok Soni <quic_tsoni@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
+        Manish Pandey <quic_mapa@quicinc.com>
+References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
+ <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
+ <vifyx2lcaq3lhani5ovmxxqsknhkx24ggbu7sxnulrxv4gxzsk@bvmk3znm2ivl>
+Content-Language: en-US
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+In-Reply-To: <vifyx2lcaq3lhani5ovmxxqsknhkx24ggbu7sxnulrxv4gxzsk@bvmk3znm2ivl>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: H7MMEz91xnntvLV_dF1Nb-28qP3oy1uj
+X-Proofpoint-ORIG-GUID: H7MMEz91xnntvLV_dF1Nb-28qP3oy1uj
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-08_08,2025-02-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ impostorscore=0 malwarescore=0 priorityscore=1501 suspectscore=0
+ clxscore=1015 mlxscore=0 bulkscore=0 lowpriorityscore=0 adultscore=0
+ phishscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502080163
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250208_110023_847769_566112A1 
-X-CRM114-Status: UNSURE (   7.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250208_111827_598448_5C9B2235 
+X-CRM114-Status: GOOD (  16.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,64 +113,157 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In exynos5_usbdrd_{pipe3,utmi}_set_refclk(), the masks
-PHYCLKRST_MPLL_MULTIPLIER_MASK and PHYCLKRST_SSC_REFCLKSEL_MASK are not
-inverted when applied to the register values. Fix it.
 
-Cc: stable@vger.kernel.org
-Fixes: 59025887fb08 ("phy: Add new Exynos5 USB 3.0 PHY driver")
-Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
----
-Patch picked up from:
-https://lore.kernel.org/all/20250204-exynos7870-usbphy-v1-1-f30a9857efeb@disroot.org/
----
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index c421b495eb0fe4396d76f8c9d7c198ad7cd08869..4a108fdab118c0edd76bd88dc9dbf6a498e064b3 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -488,9 +488,9 @@ exynos5_usbdrd_pipe3_set_refclk(struct phy_usb_instance *inst)
- 	reg |=	PHYCLKRST_REFCLKSEL_EXT_REFCLK;
- 
- 	/* FSEL settings corresponding to reference clock */
--	reg &= ~PHYCLKRST_FSEL_PIPE_MASK |
--		PHYCLKRST_MPLL_MULTIPLIER_MASK |
--		PHYCLKRST_SSC_REFCLKSEL_MASK;
-+	reg &= ~(PHYCLKRST_FSEL_PIPE_MASK |
-+		 PHYCLKRST_MPLL_MULTIPLIER_MASK |
-+		 PHYCLKRST_SSC_REFCLKSEL_MASK);
- 	switch (phy_drd->extrefclk) {
- 	case EXYNOS5_FSEL_50MHZ:
- 		reg |= (PHYCLKRST_MPLL_MULTIPLIER_50M_REF |
-@@ -532,9 +532,9 @@ exynos5_usbdrd_utmi_set_refclk(struct phy_usb_instance *inst)
- 	reg &= ~PHYCLKRST_REFCLKSEL_MASK;
- 	reg |=	PHYCLKRST_REFCLKSEL_EXT_REFCLK;
- 
--	reg &= ~PHYCLKRST_FSEL_UTMI_MASK |
--		PHYCLKRST_MPLL_MULTIPLIER_MASK |
--		PHYCLKRST_SSC_REFCLKSEL_MASK;
-+	reg &= ~(PHYCLKRST_FSEL_UTMI_MASK |
-+		 PHYCLKRST_MPLL_MULTIPLIER_MASK |
-+		 PHYCLKRST_SSC_REFCLKSEL_MASK);
- 	reg |= PHYCLKRST_FSEL(phy_drd->extrefclk);
- 
- 	return reg;
+On 1/14/2025 4:22 PM, Dmitry Baryshkov wrote:
+> On Mon, Jan 13, 2025 at 01:46:27PM -0800, Melody Olvera wrote:
+>> From: Nitin Rawat <quic_nitirawa@quicinc.com>
+>>
+>> Add UFS host controller and PHY nodes for SM8750 SoC.
+>>
+>> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
+>> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
+>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+>> ---
+>>   arch/arm64/boot/dts/qcom/sm8750.dtsi | 81 ++++++++++++++++++++++++++++++++++++
+>>   1 file changed, 81 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
+>> index 3bbd7d18598ee0a3a0d5130c03a3166e1fc14d82..20690c102244b337847a6482dd83c37e19746de9 100644
+>> --- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
+>> @@ -13,6 +13,7 @@
+>>   #include <dt-bindings/power/qcom,rpmhpd.h>
+>>   #include <dt-bindings/power/qcom-rpmpd.h>
+>>   #include <dt-bindings/soc/qcom,rpmh-rsc.h>
+>> +#include <dt-bindings/gpio/gpio.h>
+>>   
+>>   / {
+>>   	interrupt-parent = <&intc>;
+>> @@ -1939,6 +1940,86 @@ mmss_noc: interconnect@1780000 {
+>>   			#interconnect-cells = <2>;
+>>   		};
+>>   
+>> +		ufs_mem_phy: phy@1d80000 {
+>> +			compatible = "qcom,sm8750-qmp-ufs-phy";
+>> +			reg = <0x0 0x01d80000 0x0 0x2000>;
+>> +
+>> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
+>> +				 <&tcsrcc TCSR_UFS_CLKREF_EN>;
+>> +			clock-names =	"ref",
+>> +					"ref_aux",
+>> +					"qref";
+>> +
+>> +			resets = <&ufs_mem_hc 0>;
+>> +			reset-names = "ufsphy";
+>> +
+>> +			power-domains = <&gcc GCC_UFS_MEM_PHY_GDSC>;
+>> +
+>> +			#clock-cells = <1>;
+>> +			#phy-cells = <0>;
+>> +
+>> +			status = "disabled";
+>> +		};
+>> +
+>> +		ufs_mem_hc: ufs@1d84000 {
+>> +			compatible = "qcom,sm8750-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
+>> +			reg = <0x0 0x01d84000 0x0 0x3000>;
+>> +
+>> +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+>> +
+>> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
+>> +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
+>> +				 <&rpmhcc RPMH_LN_BB_CLK3>,
+>> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_1_CLK>;
+>> +			clock-names = "core_clk",
+>> +				      "bus_aggr_clk",
+>> +				      "iface_clk",
+>> +				      "core_clk_unipro",
+>> +				      "ref_clk",
+>> +				      "tx_lane0_sync_clk",
+>> +				      "rx_lane0_sync_clk",
+>> +				      "rx_lane1_sync_clk";
+>> +			freq-table-hz = <100000000 403000000>,
+>> +					<0 0>,
+>> +					<0 0>,
+>> +					<100000000 403000000>,
+>> +					<100000000 403000000>,
+>> +					<0 0>,
+>> +					<0 0>,
+>> +					<0 0>;
+> 
+> Use OPP table instead
 
----
-base-commit: df4b2bbff898227db0c14264ac7edd634e79f755
-change-id: 20250208-exynos5-usbdrd-masks-7e9e6985c4b8
+Currently, OPP is not enabled in the device tree for any previous 
+targets. I plan to enable OPP in a separate patch at a later stage. This 
+is because there is an ongoing patch in the upstream that aims to enable 
+multiple-level clock scaling using OPP, which may introduce changes to 
+the device tree entries. To avoid extra efforts, I intend to enable OPP 
+once that patch is merged.
+Please let me know if you have any concerns.
 
-Best regards,
--- 
-Kaustabh Chakraborty <kauschluss@disroot.org>
+
+> 
+>> +
+>> +			resets = <&gcc GCC_UFS_PHY_BCR>;
+>> +			reset-names = "rst";
+>> +
+>> +
+>> +			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
+>> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
+>> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
+>> +					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ALWAYS>;
+> 
+> Shouldn't cpu-ufs be ACTIVE_ONLY?
+
+As per ufs driver implementation, Icc voting from ufs driver is removed 
+as part of low power mode (suspend or clock gating) and voted again in 
+resume/ungating path. Hence TAG_ALWAYS will have no power concern.
+All previous targets have the same configuration.
+
+Thanks,
+Nitin
+
+
+> 
+>> +			interconnect-names = "ufs-ddr",
+>> +					     "cpu-ufs";
+>> +
+>> +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
+>> +			required-opps = <&rpmhpd_opp_nom>;
+>> +
+>> +			iommus = <&apps_smmu 0x60 0>;
+>> +			dma-coherent;
+>> +
+>> +			lanes-per-direction = <2>;
+>> +
+>> +			phys = <&ufs_mem_phy>;
+>> +			phy-names = "ufsphy";
+>> +
+>> +			#reset-cells = <1>;
+>> +
+>> +			status = "disabled";
+>> +		};
+>> +
+>>   		tcsr_mutex: hwlock@1f40000 {
+>>   			compatible = "qcom,tcsr-mutex";
+>>   			reg = <0x0 0x01f40000 0x0 0x20000>;
+>>
+>> -- 
+>> 2.46.1
+>>
+> 
 
 
 -- 
