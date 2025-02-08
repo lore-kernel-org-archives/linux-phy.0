@@ -4,109 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19A36C02198
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 17:57:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AABBC02198
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 19:01:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yZiBTXFhUUlbUA6mjJkXNeFoOGlf2XiUn6u8hR9JvSs=; b=ky9+Mg/ys9Vmg0
-	v1p1j3yZUQgbRMJhQuBN4mtTvlqYive9UawBPq0fO4CICz+4G+dvpRSxvqlZlQWvyImcwuQ5yqj5e
-	k9s7HrPaYy3Se+uWARmk4WNGx4869NB+JjF8xA2//s6QY/NbrkaoANJnEABQlyq5cHrdNSGfkJPlp
-	U+ZDo7VSD2RBGFUh2C51oLo/ysGpuRBt2d0XKfBdklKKgerDyi24skNlgwJynVrYonqXJi248JLrg
-	4YuZhNpoGkvlu5sRQuAqQ8op7Ugj5pvHwTZ/lcjXNZR7PCrRK1buramc6J/j23tMPvnWWgclyex/I
-	8avB+UAZHx57dAxmgpoA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ma2VyYDb9864YIRKGYjTwHNVZMK72QPe7G1L0mAuWdM=; b=fHAeGjqu4blC8l
+	mkXfpBO3uqcQPLB/vsiRiNadrzTdPapnwaEufODCFjtrsp23u/hHbI7eY6HHow1V+1yHb8CFtOFgP
+	2OpZs3b9zPVj0Ds3WqG/uMcILQ7aP6OVPxxbdtnUX9/MQtICjJmExTO9cXjJRDHc3rlWoebTOT2qG
+	f57b0STbp43LJRRhAdKqckWfTe33e2sHrs1TUbAvh6d7+FhArZDrqiaLt01ZZK9T088HnSEBAhde0
+	gHUiEDuJHopBaipy+Ab4mIhTPdqiygzjESvY1hciwDF15aqyHISIxP58bzQ+TJKpjrgWvmxuCdben
+	m346L9mk8pzlq58Y/M6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgp5I-0000000DKsx-0nrY;
-	Sat, 08 Feb 2025 17:57:40 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1tgq5O-0000000DPP3-0no0;
+	Sat, 08 Feb 2025 19:01:50 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgp5G-0000000DKsZ-053G
-	for linux-phy@lists.infradead.org;
-	Sat, 08 Feb 2025 17:57:39 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5186CvrO013680;
-	Sat, 8 Feb 2025 17:57:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	NpWrkCiwW3pvwybb8EHr3au7Ie54oZ1lUb2xxHuPEb0=; b=hK/SfdIK3eQ+Jmea
-	L7suKLvJSg/5SZcnllLqc4v4GtbcKem2SVmMUf64yPNL5k2lIh8xzBQCe1Dl2HvT
-	e4SZQ5W+kuNYMj3XQHLpZfbnRzmv4oPnpv86ZvoSpmsl9uRQ55vn9yydSWQfKaUM
-	Q3PugeFpDU/tC16jopnwDDrt8dmRgvBhfJ4CtStqtKPi13gMqM2G5zpLXR+O5P0K
-	Yy8uEu2yXSwov6dBFYjXFKqxx0K8ZEwPOtupN8jlgOROdAbNLcSHXLY/ZCvq/ZPM
-	EyfLHM8sffSuzN/02fWO6toADPgklBLgdnC4XxMAoSY/qyNIrmxRJKBNrqyqnpsd
-	ykIc0A==
-Received: from nalasppmta04.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0g8ryv7-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 08 Feb 2025 17:57:31 +0000 (GMT)
-Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
-	by NALASPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 518HvU4D011878
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sat, 8 Feb 2025 17:57:30 GMT
-Received: from [10.216.46.73] (10.80.80.8) by nalasex01a.na.qualcomm.com
- (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sat, 8 Feb 2025
- 09:57:22 -0800
-Message-ID: <e21cd976-11dd-4a52-9134-fd06c11c0de7@quicinc.com>
-Date: Sat, 8 Feb 2025 23:27:19 +0530
+	id 1tgq3z-0000000DPHi-1fLJ;
+	Sat, 08 Feb 2025 19:00:25 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id D2ADB25D01;
+	Sat,  8 Feb 2025 20:00:16 +0100 (CET)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id 55FrgB_ujl9K; Sat,  8 Feb 2025 20:00:15 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1739041215; bh=alWLYF/9OcbBa/I1+7yBqk1Z5iaf+prVR/oyQI0H9G4=;
+	h=From:Date:Subject:To:Cc;
+	b=DOC4jBhf/haJGplx2K8eiCjySQ5qbgEtpmkQ3ImmkbEXeHtImVv7v4Q3fGLF0mGE7
+	 7L/OdfBlNBQCIssAqszLDs+H4f+GEskwUBTuThpvWz4DJLpyk7I13rv35duIoF0HIj
+	 /ouUMNy8JwCqopdtjG2jKBi+M1Fz2V4bgJc+EjHZjbLHKZwwqgVa8OK2pNlc6PYcRI
+	 bdf8ePyZCdfuXsUrTZK+3FShLaP30618vZcaABPPC4Wj/AXXguL7RKve5Pv6ZLbikK
+	 xhalBciwDPH2s3/BZF79OXtG5DhHBeu/ojLzG2MQiAuJxWsx6zjhIDh4f/1dvtDzSL
+	 biy7RX9N2lDew==
+From: Kaustabh Chakraborty <kauschluss@disroot.org>
+Date: Sun, 09 Feb 2025 00:29:30 +0530
+Subject: [PATCH] phy: exynos5-usbdrd: fix MPLL_MULTIPLIER and SSC_REFCLKSEL
+ masks in refclk
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/5] Add UFS support for SM8750
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Melody Olvera
-	<quic_molvera@quicinc.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        "Kishon Vijay
- Abraham I" <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        "Krzysztof
- Kozlowski" <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-        Alim Akhtar
-	<alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@wdc.com>,
-        Bart Van Assche
-	<bvanassche@acm.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Andy Gross
-	<agross@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        "Satya Durga
- Srinivasu Prabhala" <quic_satyap@quicinc.com>,
-        Trilok Soni
-	<quic_tsoni@quicinc.com>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-scsi@vger.kernel.org>, Manish Pandey <quic_mapa@quicinc.com>
-References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
- <c6352263-8329-4409-b769-a22f98978ac8@oss.qualcomm.com>
-Content-Language: en-US
-From: Nitin Rawat <quic_nitirawa@quicinc.com>
-In-Reply-To: <c6352263-8329-4409-b769-a22f98978ac8@oss.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nalasex01a.na.qualcomm.com (10.47.209.196)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: emLGHLQnAEIdVywC6tNbc8LHtI-kOvLI
-X-Proofpoint-ORIG-GUID: emLGHLQnAEIdVywC6tNbc8LHtI-kOvLI
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-08_08,2025-02-07_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 malwarescore=0
- adultscore=0 lowpriorityscore=0 phishscore=0 mlxscore=0 suspectscore=0
- bulkscore=0 priorityscore=1501 spamscore=0 impostorscore=0 mlxlogscore=999
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2501170000
- definitions=main-2502080152
+Message-Id: <20250209-exynos5-usbdrd-masks-v1-1-4f7f83f323d7@disroot.org>
+X-B4-Tracking: v=1; b=H4sIAJGpp2cC/x3MQQ5AMBBA0avIrE1SjVKuIhboYCJKOiFE3F1j+
+ Rb/PyAUmATq5IFAJwtvPiJLExjmzk+E7KJBK22UVhbpuv0mBg/pXXC4drIIllRRUVkz5L2FmO6
+ BRr7+bdO+7wekWIFpZgAAAA==
+X-Change-ID: 20250208-exynos5-usbdrd-masks-7e9e6985c4b8
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, 
+ Vivek Gautam <gautam.vivek@samsung.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ stable@vger.kernel.org, Kaustabh Chakraborty <kauschluss@disroot.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1739041209; l=2085;
+ i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
+ bh=alWLYF/9OcbBa/I1+7yBqk1Z5iaf+prVR/oyQI0H9G4=;
+ b=u7SS0kBpPe4GLUkdpGBcrXSlzjYQ5lTUc9poNrKPxjumtkDDCLanuInoWrIfZdaYIYKdJwsQ8
+ spQArA691vLAEsK3NzHrFjhY0s2A0LvAotGppdNelchuuQ1ZOtDXhue
+X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
+ pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250208_095738_077858_B4E31612 
-X-CRM114-Status: GOOD (  14.59  )
+X-CRM114-CacheID: sfid-20250208_110023_847769_566112A1 
+X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,43 +83,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+In exynos5_usbdrd_{pipe3,utmi}_set_refclk(), the masks
+PHYCLKRST_MPLL_MULTIPLIER_MASK and PHYCLKRST_SSC_REFCLKSEL_MASK are not
+inverted when applied to the register values. Fix it.
 
+Cc: stable@vger.kernel.org
+Fixes: 59025887fb08 ("phy: Add new Exynos5 USB 3.0 PHY driver")
+Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+---
+Patch picked up from:
+https://lore.kernel.org/all/20250204-exynos7870-usbphy-v1-1-f30a9857efeb@disroot.org/
+---
+ drivers/phy/samsung/phy-exynos5-usbdrd.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-On 2/8/2025 4:17 AM, Konrad Dybcio wrote:
-> On 13.01.2025 10:46 PM, Melody Olvera wrote:
->> Add UFS support for SM8750 SoCs.
->>
->> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
->> ---
->> Nitin Rawat (5):
->>        dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Document the SM8750 QMP UFS PHY
->>        phy: qcom-qmp-ufs: Add PHY Configuration support for SM8750
->>        dt-bindings: ufs: qcom: Document the SM8750 UFS Controller
->>        arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 SoC
->>        arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 QRD and MTP boards
-> 
-> You still need the same workaround 8550/8650 have in the UFS driver
-> (UFSHCD_QUIRK_BROKEN_LSDBS_CAP) for it to work reliably, or at least
-> that was the case for me on a 8750 QRD.
+diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+index c421b495eb0fe4396d76f8c9d7c198ad7cd08869..4a108fdab118c0edd76bd88dc9dbf6a498e064b3 100644
+--- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
++++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+@@ -488,9 +488,9 @@ exynos5_usbdrd_pipe3_set_refclk(struct phy_usb_instance *inst)
+ 	reg |=	PHYCLKRST_REFCLKSEL_EXT_REFCLK;
+ 
+ 	/* FSEL settings corresponding to reference clock */
+-	reg &= ~PHYCLKRST_FSEL_PIPE_MASK |
+-		PHYCLKRST_MPLL_MULTIPLIER_MASK |
+-		PHYCLKRST_SSC_REFCLKSEL_MASK;
++	reg &= ~(PHYCLKRST_FSEL_PIPE_MASK |
++		 PHYCLKRST_MPLL_MULTIPLIER_MASK |
++		 PHYCLKRST_SSC_REFCLKSEL_MASK);
+ 	switch (phy_drd->extrefclk) {
+ 	case EXYNOS5_FSEL_50MHZ:
+ 		reg |= (PHYCLKRST_MPLL_MULTIPLIER_50M_REF |
+@@ -532,9 +532,9 @@ exynos5_usbdrd_utmi_set_refclk(struct phy_usb_instance *inst)
+ 	reg &= ~PHYCLKRST_REFCLKSEL_MASK;
+ 	reg |=	PHYCLKRST_REFCLKSEL_EXT_REFCLK;
+ 
+-	reg &= ~PHYCLKRST_FSEL_UTMI_MASK |
+-		PHYCLKRST_MPLL_MULTIPLIER_MASK |
+-		PHYCLKRST_SSC_REFCLKSEL_MASK;
++	reg &= ~(PHYCLKRST_FSEL_UTMI_MASK |
++		 PHYCLKRST_MPLL_MULTIPLIER_MASK |
++		 PHYCLKRST_SSC_REFCLKSEL_MASK);
+ 	reg |= PHYCLKRST_FSEL(phy_drd->extrefclk);
+ 
+ 	return reg;
 
-Hi Konrad,
+---
+base-commit: df4b2bbff898227db0c14264ac7edd634e79f755
+change-id: 20250208-exynos5-usbdrd-masks-7e9e6985c4b8
 
-The LSDBS workaround is only applicable for SM8650 and SM8550.
-SM8750 and onwards doesn't need this WA anymore as it is fixed in HW.
-
-Thanks,
-Nitin
-> 
-> Please check whether we can make that quirk apply based on ctrl
-> version or so, so that we don't have to keep growing the compatible
-> list in the driver.
-> 
-> Konrad
+Best regards,
+-- 
+Kaustabh Chakraborty <kauschluss@disroot.org>
 
 
 -- 
