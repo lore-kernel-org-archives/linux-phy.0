@@ -4,96 +4,203 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2BBEC02198
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Feb 2025 22:06:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C07EEC02198
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Feb 2025 03:34:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=haAU+8BhWsWfTqlCL32kvFrZ+/QuRZ6u5WUiqezfjh0=; b=XPG0+4QT3xMiyc
-	umr/s0U4tQeGnspvtjS7RxOBN22PQoa9cE1J4G0qSeRRkNfDz2/OdgX9JsSVV0QN0O4fnz4p3+7co
-	bMRSTGTBruav6A8bTs1AkyFpiQH68ByNoaWwdCXlkgMBVpssqrstr7i5wCx/G5MK5gHndLjLr1NGV
-	vzrYJhlwKodAT9oRaB3duncuIaC18CmuXSXYa6SLds07xp6b9y2A9fBcca/9JbkgpScfZwfNVuojA
-	bFrcRbqfx+C5m/2xKgUL5XNVI+KsVI0SQXycvqvl1d/ociRcxkOFfB4hwk11sJwAFTHCk9zzdiMB+
-	oJp/5rXELQld5oIjyNfw==;
+	List-Owner; bh=mD+TQm5Ei4IzADYao7NJxStVQSVam18mm4c/5LXvnN0=; b=Z7Fv9wsLEzViMw
+	Btx/J2+1Fgl43B9aHNOumLul9eSvaUQtFUyWJrq+wnQIm6wO95zjPuyzFsvp/uTgMU7dcfyHTzCLp
+	NqnZEouMDxA+Bx02P9A5c2ZJ6k+Q0CHu8D8AszuUTGWXyNnxuNdr/X96C2anROQmtLB9LV/AIAEh9
+	HUtI242dqgZfR7kJZfeTgikPOxyOQlnsLwtYEsH/AdByP8zjtCN8Q3Wttm84E5LNz86RciO0wF6uO
+	ohOHYNUGooN+yG0GepHUkzbT+mGDRGtxiTJNlvy7OfmEgaM8EUZGktp2kdqxOI3ixO34MVoNfkiT6
+	1Ra9+NmVgeHoI9zKpW8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgsyJ-0000000Dci4-2d5U;
-	Sat, 08 Feb 2025 22:06:43 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1tgy5Q-0000000Dyvp-47sf;
+	Sun, 09 Feb 2025 03:34:25 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgsyG-0000000Dch6-37Sn
-	for linux-phy@lists.infradead.org;
-	Sat, 08 Feb 2025 22:06:42 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-53e3a37ae07so3550935e87.3
-        for <linux-phy@lists.infradead.org>; Sat, 08 Feb 2025 14:06:38 -0800 (PST)
+	id 1tgy5N-0000000Dyv5-3ejz;
+	Sun, 09 Feb 2025 03:34:23 +0000
+X-UUID: bd79424ae69611ef9048ed6ed365623b-20250208
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=MiR9mZdH8wLZfDTmbxLFNLaOl0tIk37tnv4Ux2n/hE4=;
+	b=e33scqd7rOzr5/CvejGSFwn1LxWzIcQsJiWc8fLkLRuDtIMJGQbEgzutaRm1qsocxOiiRADgAKRs4oIpL6Pw7rUNthHR82Zc+Nu8B4wVTODIk7AJ91YWt9S1IVG8wo0X2CoLREeUNmlmjeZikeyADsvgtK7v1+WYXhtJFPZchMo=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.46,REQID:61d87177-f40c-4bba-a7f4-46a43b7abc0b,IP:0,U
+	RL:0,TC:0,Content:3,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:3
+X-CID-META: VersionHash:60aa074,CLOUDID:88df497f-427a-4311-9df4-bfaeeacd8532,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102,TC:nil,Content:4|50,
+	EDM:-3,IP:nil,URL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0
+	,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0,NGT
+X-CID-BAS: 0,NGT,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
+X-UUID: bd79424ae69611ef9048ed6ed365623b-20250208
+Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 688477756; Sat, 08 Feb 2025 20:34:17 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1258.28; Sun, 9 Feb 2025 11:34:14 +0800
+Received: from HK2PR02CU002.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
+ 15.2.1258.28 via Frontend Transport; Sun, 9 Feb 2025 11:34:14 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ey8kKCUJMfY5BkW1SYK5YRvzNf5s6ptqIVcnQhaQz4DPp4CYNRgJS7UkMP4W0jjmrfORJ7rs9LDwihcgmTwl0TgbtlbVU/Wgd9EYNCrhMrjogrPx7+47ZfUpry9vdwsC1UOgXzRgeaD5T8PnGexzqRE6CG2QLFoCNU8U9hf4QtkXTuZ0JOWJsUa6GbQRQHDYN/6DP6xkL8MSB9QnPYSeYT7Wr3Pf9AhAx+hVQVDE3f/s1XGg8v/Us7HBlEcqXNzJJcVBBTWxVY2GKMx2WxDCBB7J1lFy8YvNXEXHIhizPoWAyNDZELv0Gb8bjBjHUubHyBlZMcNMJWXXZ/GBV9jqfQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=MiR9mZdH8wLZfDTmbxLFNLaOl0tIk37tnv4Ux2n/hE4=;
+ b=U2MWI97O2GUVvVgMuCFPnab5a2y9wH24R5j8C9ufIvaTtFpxlLqJPP39EyK+Fh0GsN53LGdqgvNqZ3yy96qxysBIXt2yx1G1AVL7Ri1Snx+bFxhMEkDB3r6FaNVMG2t2pWg8cGyebdlLsBItxQbVfG0v4J7bCxGrDCBoyCNVsYZsEN9OPKKQ0fHDXjALVpvqzjPxxw0j+0FKKQ0k4rH0lI8U/zuvgmthTRvmsVWX01fFiEi7ueY5Znv/qdCETGlK+woaU5ajDIpcBK0C4buVvvc7UVM/8dtgYaXiJgI9oO4Npss+oKmNb/YX969+JyniY5chcQX+7C76NQH7mlT9Ww==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1739052397; x=1739657197; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=LrS7fwaYNFpy0Tlho86QxjG6trr99uIwcC04J7bzN3U=;
-        b=jboSBuVwca5bjY7roRRR6aAmMQ22mWavNaodN0wLjRTTJFcFTFvGSTnMBWezEg6f1/
-         hWi6ZZ3tGSWiUsR2Srw28R225gCG1psG8uW8QUxXyD2xhBR3tiasW4rYAZlsvZdPBY3U
-         cBeJ/4g0AJu8d9vmHKMv2CM4kugeAE4GNviA5DRdcE3hs58az9k28WHPNiwaxuQ8QoHt
-         N3UVcNJiebBnvc2N12EOyjnOYhBEPa9ggmZjxVlFzUqCbHcVMq3bVo0aFtnQ9MKmpTee
-         zX3/ihfVjPYR6nsXipIpNCeWBtB/0p8ZdLc6oss82I06VsZJWzfC7aLq+s5sCFEdQq00
-         GkJw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739052397; x=1739657197;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=LrS7fwaYNFpy0Tlho86QxjG6trr99uIwcC04J7bzN3U=;
-        b=I0hS7MPZTrCyH/ADgIH0cwnf10BQbIf4lqZUWUwchwuZSJUdYglyR0+aprjbKWEDFU
-         C5EvTgOdLUI3jqDz2EqwcGLhSegIrlkuVoBu98clPD26atT77HKzyz3fTODAWQ95KAoU
-         49LlI8hOTBihtW3VXA5VHllFNYQmRPJYX0QuNVA879yVyFASUmYBp4a1+ojpHjftBUPP
-         9AC7OwLt0TgNWJTRBJndOMcHO2C+PJHFJEm0eFo4M8XQSD/Y6NYd2f1INvbxIAq1cu0W
-         KJhBzEJ3T89SyskHY/5qIZIsKHeh10LejNOjfizQbzZ6CiBZzG7fLgVwa1kmu47zv7PJ
-         H6ig==
-X-Forwarded-Encrypted: i=1; AJvYcCWgWs2Nm6r/1pyo8XQPqKN2ljHxGnxxHBfavagGhNvvb4hPZIJDyDwyzkUmKuJocggiLSZ90bE1QrI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzmphVLzzdbxWRPOeDOPt1wUad6lAFVpx/0qsnwruxS5JznO8hf
-	JIE++FacLHs/tWeAmm2fsiTRm1hCXILAd76VsuVnV9kRqXVCgFhOlQy+RX6zZXw=
-X-Gm-Gg: ASbGnctqSamXmwbxt/7rBNSFKKdb7Zr/fo4Z1VmLueKquT0pbXiTGFDDTz9nVKxU8gn
-	iaEDD36fzZZzOHudpSrYDSJCyBZIGg9gFj//hcpoqXafaNmV4EhehhCt2eKKLWFBIiWf9MLJwD9
-	kmu6GCTbkAmMD465P0DR32D6IOLyv/z4sWBYDVwUhNNEGq8AlliaYTzezswQtGy/nk9eBY9MsdF
-	DVv16Wa7pkTInG+nwykMHHty31FPme13xPPLzZ2/jQloa+HYjYN4aJBeHHnePC5q01Wz6V0qyDJ
-	yI6TAydcmLRy4N42KAsZmUkKXrs9tvI6HLkuUeEp3dqEkgonFoswKexrR2h7hobQGGjCUn0=
-X-Google-Smtp-Source: AGHT+IHD3w+RD2uIY/nbdfmmcQb7IkradBev5VfMYzeQzDJnvkdElXfAgc+erv7xrm5uRwc1zCnFQA==
-X-Received: by 2002:ac2:4ed0:0:b0:542:9883:26f with SMTP id 2adb3069b0e04-54414aee2c3mr2164430e87.50.1739052397255;
-        Sat, 08 Feb 2025 14:06:37 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54508f5617asm43871e87.170.2025.02.08.14.06.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 08 Feb 2025 14:06:36 -0800 (PST)
-Date: Sun, 9 Feb 2025 00:06:34 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Nitin Rawat <quic_nitirawa@quicinc.com>
-Cc: Melody Olvera <quic_molvera@quicinc.com>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, 
-	Bart Van Assche <bvanassche@acm.org>, Bjorn Andersson <andersson@kernel.org>, 
-	Andy Gross <agross@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, Trilok Soni <quic_tsoni@quicinc.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, 
-	Manish Pandey <quic_mapa@quicinc.com>
-Subject: Re: [PATCH 4/5] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
- SoC
-Message-ID: <ferdaevlfrpf2ewzcct7mqyxltvmt6aaar4fujxfehrmizm3qw@aaroprnpwlxq>
-References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
- <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
- <vifyx2lcaq3lhani5ovmxxqsknhkx24ggbu7sxnulrxv4gxzsk@bvmk3znm2ivl>
- <be8a4f65-3b36-4740-a4f7-312126cfd547@quicinc.com>
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=MiR9mZdH8wLZfDTmbxLFNLaOl0tIk37tnv4Ux2n/hE4=;
+ b=nOZZ3Zd/L/wOE/ANyb2XvwUjM8hRSvqSk/BXE2tscQCQBWz1Xzw7T9NuQv2enb8DLZh9AFxuGPyH02Ch1lhpfct5azzYeDX4qNFHfqbPyAcv1L/4mx7hC1IxB0rKpocurqkdeojIVyCd1ikfB/+WdRIs3aZM7W7ikit9VRYIEiY=
+Received: from PSAPR03MB6236.apcprd03.prod.outlook.com (2603:1096:301:9d::13)
+ by TYZPR03MB6647.apcprd03.prod.outlook.com (2603:1096:400:1f4::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8422.11; Sun, 9 Feb
+ 2025 03:34:12 +0000
+Received: from PSAPR03MB6236.apcprd03.prod.outlook.com
+ ([fe80::2b28:30c4:61a8:20f6]) by PSAPR03MB6236.apcprd03.prod.outlook.com
+ ([fe80::2b28:30c4:61a8:20f6%7]) with mapi id 15.20.8422.015; Sun, 9 Feb 2025
+ 03:34:12 +0000
+From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
+To: "conor@kernel.org" <conor@kernel.org>
+CC: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>, "robh@kernel.org"
+	<robh@kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>
+Subject: Re: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add property
+ to set disconnect threshold
+Thread-Topic: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add
+ property to set disconnect threshold
+Thread-Index: AQHbZDNc/4kk1BQehk+0OCcaCvG0gbMVChuAgCl0dYA=
+Date: Sun, 9 Feb 2025 03:34:12 +0000
+Message-ID: <e61b61574bd58c1bbc0648257fb4ab23ed582de0.camel@mediatek.com>
+References: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
+	 <20250113-aerobics-tall-e570d8bbcf2c@spud>
+In-Reply-To: <20250113-aerobics-tall-e570d8bbcf2c@spud>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PSAPR03MB6236:EE_|TYZPR03MB6647:EE_
+x-ms-office365-filtering-correlation-id: 1673a83d-ae36-47c0-a31f-08dd48ba9eea
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|7416014|366016|376014|38070700018;
+x-microsoft-antispam-message-info: =?utf-8?B?TGxGaWNlb21JYVBWSk4vRnFVWkgyM0ttL2hmR2dsQzQzdWs3Uk9RL0ZIVm5n?=
+ =?utf-8?B?TUhxNWQ3bkFYME9COXNaRkdLQVpRM3ZoU3FHa3VBUkw2MjduU2tuWEhETjl5?=
+ =?utf-8?B?blI3MUxocFJzeng3NTYzcDZ5VTNYU2Y2VTZKS1Rsdmw3V2FLbm43RFVoY2Mz?=
+ =?utf-8?B?OCtnNjMyTy85blROazRERzFhd25zVUZxWUZ2OFAyNkFuS0N0MC8yU1FvV2Fr?=
+ =?utf-8?B?ZGo4bzNzcVdFTkdCNHNyVGtEcFhiWmFZL2R6UTlVVVNOWXRHeVZyUzRCUlRN?=
+ =?utf-8?B?SXpoOUFTeG1UaDJDbzJwakFxT0pwckxPamsvVmUxZU9mZGRSeVhsRC93ZHRF?=
+ =?utf-8?B?OVlLMU9TaXpYWUlmWE1tS0VHc0k0bklrSDUyb0dlZXpTb3JZYW1sSjZLeFlu?=
+ =?utf-8?B?NS9NQzV5SlNCMmRqdDIxS3BUQVh4Q0pTekprVmpBQVgvcktNRHpBTmhXaEFt?=
+ =?utf-8?B?aHF0TkFSOElsOEJic2RzRVlETkhpMXRXYWg3U3hHQjBYcjd0bUt2Z2cvUGQx?=
+ =?utf-8?B?NTNBQWNjT1h1Z0tkOVR5TXRONzRxTnJ4UktucVpqMS9GbXc0TkowQXpIbStw?=
+ =?utf-8?B?MVo4bStiNExjUzRaNVdkKzNidjROais2M1dGY3huY3g4Tkgra3JzbDIvYlZa?=
+ =?utf-8?B?MUlKeUdxNXpDa3RLZEliVXJETG42cHJlVHJETEJUYyttRkdkYTZzMzRlQkth?=
+ =?utf-8?B?eDJhU244U2VVdTJScVB3alQ2YjV6UUFsdWdkdzJLYWtFS1hoTkFqVXlpWnA4?=
+ =?utf-8?B?YVR4M2lib1JRamVITTBMZHFRR21YNlhSZzdKR2xRMDQzeDNNM1NIU0hWQ3RS?=
+ =?utf-8?B?QlB4NGNBVkphdWJwM3laMjh0andGaWxEa016emFpZTJXMkVlWG5aOGY3V3ZS?=
+ =?utf-8?B?aHpPY1F1eXZKMS9zNDB0bkI4THdZb0lLREtOMlRnbGx6bW9DVExzTDgyUU1m?=
+ =?utf-8?B?VnRORlVvYnBxclpCcHU2ZjU2TGVQRUlCR3JwenE4QnQxckthbm5WK0FkbWVv?=
+ =?utf-8?B?S0VaaG9ZdmhWWlZCck90RnRqTkRlQ3VhMFRrVmIvcTdwR25zODBwNysxcEVi?=
+ =?utf-8?B?aWllb1E0MUZhSkRkYVlxbyt0NDJjMXpqZkNqYklib2tVMjNBYzhqOWxQeWd0?=
+ =?utf-8?B?ZitnT0hBQWhUUUxUTXZHbHNCYS9IL0cwc01WSGpKQ0oxUCtZV2xMYTFYWXcr?=
+ =?utf-8?B?NkVFSHE0UmkrWUFhdWJJTHFFSXQxa2xPUC90K2RhL0JJTEVWRFJSY2dDeEEz?=
+ =?utf-8?B?KytWSmd6TkJDL2JIZDUyMGI0VjArZVM4UW9yd0FBeVNITnMzaWhjZGNBdm1o?=
+ =?utf-8?B?TDV6OVNFU3MyazliaVFDdE4xZlRhVFUwbmp1L2N6eTJTWm1wTHFhUEEyelEv?=
+ =?utf-8?B?RWkvcHdKdFdPVzVobFl0RkV4SEtMMGhXRlhjclFIVllaU1gxYlhRQmkrajcy?=
+ =?utf-8?B?bEIrSXhMbnJqMi9oendSelQyLzNpRWpTRGVlUWdYRDZFekhwOHYwN1ZRZmdp?=
+ =?utf-8?B?bWhxdFJQRGR1eUhDZ29haG1HS1p2VTNyNml4c2QxeHE2ZkNkMG1VZVFkQnNV?=
+ =?utf-8?B?UFVlS2VOVUFSc2lZWGoxNTAvY3J1dW5iYXY3MXRIWC9LaVU3THorRVpnL2pQ?=
+ =?utf-8?B?aVVkcmdqV3pSVnB3Nzc0YVpGUDd2VWJXWWRBTHJnODBBMHBoWFIwVy96UjBV?=
+ =?utf-8?B?cHIxNlcxWldJOGpWRGJPWm40TmExZVp4R3JXVXpZViszSkVCNU5DdjZsSzhL?=
+ =?utf-8?B?RDhaWm1QM25GT3VFNGZlbEJZbmY0UjdMRmVoV24rY0lLNmFGZGYybXVRK01z?=
+ =?utf-8?B?LzVOMTdVeU9PYnU5bXBYOGdOdjROWCtVQmRaLzRkQlRDcVRoK3p2cUdPc2dQ?=
+ =?utf-8?B?KzRRWHpFVlBKcHlrS1Ixcm9yaTRFYk0xRmhDRy9YZ0REL1ZnV0JqQnZYbmhO?=
+ =?utf-8?Q?RulNV7pePYHwNcdhZArHYQwYSH/Kiyzr?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB6236.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(7416014)(366016)(376014)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?NDhVdk1KR3BRZEh3dGRzVWRtR01YNkErb1pVcXY0dGN4cXZJRWJFbHZ6bDNa?=
+ =?utf-8?B?RUpSdUtZR21tMnNyUEJnWGoyUm9VaVJqVExVWGNuTjF6MTJPbFdOZWRYQzZw?=
+ =?utf-8?B?bDVxOW9GSUNBbnRaTkRZbDgxcDNCS2kzL2F2OUkyb2VaaTZnUG9qZ2VLRnd5?=
+ =?utf-8?B?aU04VW1YVE96dlVTTDJrNjN5SGU2REgrWEtoZ2xRZWpLOWtGZ1FGR2JGS2pX?=
+ =?utf-8?B?TXJPM1F6eWpSKzJDRG1jWEdtWEIrWkhLZjVQUFNnUTBKdWg0UWhNWGE0c0Jz?=
+ =?utf-8?B?bC9Ka1VLeGZ5M3IvM2dxeW01YnA0SFc1TUlGR000TmlmZ1pvaUNNcEVPWVlt?=
+ =?utf-8?B?cnNoakhjMVltc1psNTdVUU8vMnhDU2NCdVhCVXFFUVlKdXBsWFpxenNWRnpk?=
+ =?utf-8?B?b2kvdlRIUitPSGFMZkh2bWw5UUlmbjk5NDV2T3JjN3J5cFkvQ0RpVVI3TE0w?=
+ =?utf-8?B?dzc5N1gzbDZJV3ZEVW1oTnl3MG1WakFSMk9QMlNHNjNHcXNQcTZ4SmNPNWlJ?=
+ =?utf-8?B?VCtWaEgwSVhRM0ZoS1haV3Z0dkhKNDBkUUMvaWdtU2pUaG1GTXlWczF1WGhB?=
+ =?utf-8?B?LzJ3VzFGbmZBWCtsNlNOUTRBWjFlWXhUdGhma1A0TVErU2VkQjl6RTlYTlIw?=
+ =?utf-8?B?dXVTeHVkRytvSWErUHkwYkFZdjNnZFREMndQdVJWY2VZV3BaK08rODNmODF1?=
+ =?utf-8?B?NUYwREpPM3lVS0R5b0xESmllVGtEWjZUTVZqSVhSVFJ2M2Q3eFpsS29pMjlJ?=
+ =?utf-8?B?WXJ6RTFWcVowNThLTWV3Yng2cHFNWVgzazhZa2VmeU5nVmJCWEdXUjltbU9S?=
+ =?utf-8?B?MGFNOGlsNU0yWU8zcDl6QTdla1l0SHMyWjJ0c2IzcWsydVh3dThZZmVkUys1?=
+ =?utf-8?B?cHFJZGpZYUlocFZOSnphM0JxZ2c3dUhhTGZsZHZrTlVZUGY3aEpJTFpOQU9i?=
+ =?utf-8?B?QmxjeWlINUo3blBvcDlFdXV3anhaZ1o3TGRydVF3SDNNV1hwbUFPM1A2UVQ1?=
+ =?utf-8?B?ODNkVlhsUXJwWE5WZkpmWmpTOVFyUEs3WFd6SEdEWWM2ZWdibE1TZ0l2NHds?=
+ =?utf-8?B?cGdlNkJHaVhZd29lenRkaVR5RjdVdGwzcG45blNhbm9BUHFJMDBHem9hcGZC?=
+ =?utf-8?B?Q0tFMmNYUFE5ZVZxL0ZvVEcxNDNac3Jxb1lWYVV4aHBMSkxXbDQwVFk4TDdq?=
+ =?utf-8?B?R3lpN2IzbU9HTFF6K21yOHpud3ZHTTZENjl1VDZxODVXNjhWWVdKdUtqT1ht?=
+ =?utf-8?B?RTFqMkdEbHdoOGg1MmdyTXhCRWR1SG9kVlZlbjZ6Zk4xUGJaaFZNYm5wT3BU?=
+ =?utf-8?B?UW53SXVzb0dmUFluRysyUHdJUTNRUFNrSTdiRWlIWlVGMVMxamgvNk04TGFR?=
+ =?utf-8?B?VWJrV3NjUFRlV3NISzNGMHFaa0RiaCtLMDBEbno3ckVISkp4Q3lrU0ViTlIz?=
+ =?utf-8?B?dG5TU2RJVHFOQlpOZ0VKdFZGMzFoMENkaVZzN2s5TnF4SDRvMnQyaTZXbm5X?=
+ =?utf-8?B?dGFxeXNwSzJod0F5VGxobkVMZjJwdFZhaHA3aUlEeVdFK3FINUN1Zm83V0lw?=
+ =?utf-8?B?RldMTlk5c3E1TUtURnRCS2hHNlVScWI2dHY3blhnai9hZUF2S3M0ZHZucFll?=
+ =?utf-8?B?SXN3NlBmVTg1YTBSOVl4OWtteHRwVlByYnpZTUlKcnRjQUYrVmU3b0RCcmpX?=
+ =?utf-8?B?aEI5T1RSUi9meDFQMGtZZ1JTN0RPSDQzTHpMejVCczR3U0ZReno1VFZtRVM2?=
+ =?utf-8?B?b3FTLzl2SlhvTDNPbGJYMi9FSElwdU85ZmIza2VrS0hGaUNpUFlvVU1hUGpB?=
+ =?utf-8?B?eVh2cnMvQ2sraUF6djIrM1Z2d1FBdFQ4UG9idW1acUNRaEtlYTJ0Z0hScGgy?=
+ =?utf-8?B?cTEyWml6SE8vM0N0clcvalcvWXhNUEVmTzM1TEFjZ09OTy9sN0pLTjlvWnRM?=
+ =?utf-8?B?NkFCYzA4OGJIdXIvbGptQ09rZ2VpMmRHMnZLNHpiai9TdVRxS0g3eEx4NTlU?=
+ =?utf-8?B?ZW9hNnY3cnAxZ1FCOXFtUFhVRWhWaGlVa0ZZZmFEdDdveGVOeGJmdVIvdlNJ?=
+ =?utf-8?B?N3RXaGZQaTNEVDFnbDZ3QWloWnZDb3FqZmh0TnlmcjZQY3JtZ0dkTzRiTnM0?=
+ =?utf-8?B?VmVhNWE4TDhaUFJLM0I4T2NSYjlSbkF1c3lZeTgxaU1pSEpDYlNmVHc3NStR?=
+ =?utf-8?B?TkE9PQ==?=
+Content-ID: <AF88A0D89C499841B179ED9BE84D96DC@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <be8a4f65-3b36-4740-a4f7-312126cfd547@quicinc.com>
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB6236.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1673a83d-ae36-47c0-a31f-08dd48ba9eea
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Feb 2025 03:34:12.3273
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: uYeohLYUo3NIHZ8Rs/iVsbBdYsCETFCwFuyrIFTOm5IuBnRlDMm1Vo4y4VBhVudhz2QiB+5CVFEiEl2bK8+Q+VEt5Arx/4DLMEcJDBFf7CU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR03MB6647
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250208_140640_791357_67E4DA89 
-X-CRM114-Status: GOOD (  27.04  )
+X-CRM114-CacheID: sfid-20250208_193421_915715_5D32B2A1 
+X-CRM114-Status: GOOD (  17.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,176 +217,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Feb 09, 2025 at 12:47:56AM +0530, Nitin Rawat wrote:
-> 
-> 
-> On 1/14/2025 4:22 PM, Dmitry Baryshkov wrote:
-> > On Mon, Jan 13, 2025 at 01:46:27PM -0800, Melody Olvera wrote:
-> > > From: Nitin Rawat <quic_nitirawa@quicinc.com>
-> > > 
-> > > Add UFS host controller and PHY nodes for SM8750 SoC.
-> > > 
-> > > Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
-> > > Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
-> > > Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> > > Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
-> > > ---
-> > >   arch/arm64/boot/dts/qcom/sm8750.dtsi | 81 ++++++++++++++++++++++++++++++++++++
-> > >   1 file changed, 81 insertions(+)
-> > > 
-> > > diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> > > index 3bbd7d18598ee0a3a0d5130c03a3166e1fc14d82..20690c102244b337847a6482dd83c37e19746de9 100644
-> > > --- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> > > +++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
-> > > @@ -13,6 +13,7 @@
-> > >   #include <dt-bindings/power/qcom,rpmhpd.h>
-> > >   #include <dt-bindings/power/qcom-rpmpd.h>
-> > >   #include <dt-bindings/soc/qcom,rpmh-rsc.h>
-> > > +#include <dt-bindings/gpio/gpio.h>
-> > >   / {
-> > >   	interrupt-parent = <&intc>;
-> > > @@ -1939,6 +1940,86 @@ mmss_noc: interconnect@1780000 {
-> > >   			#interconnect-cells = <2>;
-> > >   		};
-> > > +		ufs_mem_phy: phy@1d80000 {
-> > > +			compatible = "qcom,sm8750-qmp-ufs-phy";
-> > > +			reg = <0x0 0x01d80000 0x0 0x2000>;
-> > > +
-> > > +			clocks = <&rpmhcc RPMH_CXO_CLK>,
-> > > +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
-> > > +				 <&tcsrcc TCSR_UFS_CLKREF_EN>;
-> > > +			clock-names =	"ref",
-> > > +					"ref_aux",
-> > > +					"qref";
-> > > +
-> > > +			resets = <&ufs_mem_hc 0>;
-> > > +			reset-names = "ufsphy";
-> > > +
-> > > +			power-domains = <&gcc GCC_UFS_MEM_PHY_GDSC>;
-> > > +
-> > > +			#clock-cells = <1>;
-> > > +			#phy-cells = <0>;
-> > > +
-> > > +			status = "disabled";
-> > > +		};
-> > > +
-> > > +		ufs_mem_hc: ufs@1d84000 {
-> > > +			compatible = "qcom,sm8750-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
-> > > +			reg = <0x0 0x01d84000 0x0 0x3000>;
-> > > +
-> > > +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
-> > > +
-> > > +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
-> > > +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
-> > > +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
-> > > +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
-> > > +				 <&rpmhcc RPMH_LN_BB_CLK3>,
-> > > +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
-> > > +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
-> > > +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_1_CLK>;
-> > > +			clock-names = "core_clk",
-> > > +				      "bus_aggr_clk",
-> > > +				      "iface_clk",
-> > > +				      "core_clk_unipro",
-> > > +				      "ref_clk",
-> > > +				      "tx_lane0_sync_clk",
-> > > +				      "rx_lane0_sync_clk",
-> > > +				      "rx_lane1_sync_clk";
-> > > +			freq-table-hz = <100000000 403000000>,
-> > > +					<0 0>,
-> > > +					<0 0>,
-> > > +					<100000000 403000000>,
-> > > +					<100000000 403000000>,
-> > > +					<0 0>,
-> > > +					<0 0>,
-> > > +					<0 0>;
+On Mon, 2025-01-13 at 18:30 +0000, Conor Dooley wrote:
+> On Sat, Jan 11, 2025 at 10:15:41PM +0800, Chunfeng Yun wrote:
+> > Add a property to tune usb2 phy's disconnect threshold.
+> > And add a compatible for mt8196.
 > > 
-> > Use OPP table instead
-> 
-> Currently, OPP is not enabled in the device tree for any previous targets. I
-
-Excuse me? ufs_opp_table is present on SM8250, SM8550 and SDM845 (and
-QCS615). So this is not correct
-
-> plan to enable OPP in a separate patch at a later stage. This is because
-> there is an ongoing patch in the upstream that aims to enable multiple-level
-> clock scaling using OPP, which may introduce changes to the device tree
-> entries. To avoid extra efforts, I intend to enable OPP once that patch is
-> merged.
-
-Whatever changes are introduced, old DT must still continue to work.
-There is no reason to use legacy freq-table-hz if you can use OPP table.
-
-> Please let me know if you have any concerns.
-> 
-> 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > based on kernel 6.13-rc1
 > > 
-> > > +
-> > > +			resets = <&gcc GCC_UFS_PHY_BCR>;
-> > > +			reset-names = "rst";
-> > > +
-> > > +
-> > > +			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
-> > > +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
-> > > +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
-> > > +					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ALWAYS>;
+> > this property is porting from t-phy driver, due to the u2 phy are
+> > similar.
+> > ---
+> >  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8
+> > ++++++++
+> >  1 file changed, 8 insertions(+)
 > > 
-> > Shouldn't cpu-ufs be ACTIVE_ONLY?
+> > diff --git
+> > a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > index a9e3139fd421..2e012d5e1da1 100644
+> > --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > @@ -49,6 +49,7 @@ properties:
+> >        - enum:
+> >            - mediatek,mt3611-xsphy
+> >            - mediatek,mt3612-xsphy
+> > +          - mediatek,mt8196-xsphy
+> >        - const: mediatek,xsphy
+> >  
+> >    reg:
+> > @@ -129,6 +130,13 @@ patternProperties:
+> >          minimum: 1
+> >          maximum: 7
+> >  
+> > +      mediatek,discth:
+> > +        description:
+> > +          The selection of disconnect threshold (U2 phy)
+> > +        $ref: /schemas/types.yaml#/definitions/uint32
+> > +        minimum: 1
+> > +        maximum: 15
 > 
-> As per ufs driver implementation, Icc voting from ufs driver is removed as
-> part of low power mode (suspend or clock gating) and voted again in
-> resume/ungating path. Hence TAG_ALWAYS will have no power concern.
-> All previous targets have the same configuration.
+> What unit is this? Unitless? How are the values determined?
+No unit, it's a level, may be treat it as an index to select different
+threshold.
 
-arch/arm64/boot/dts/qcom/qcs615.dtsi:                                    &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ACTIVE_ONLY>;
-
-It might be a mistake for that target though. Your explanation sounds
-fine to me.
-
+Thanks
 > 
-> Thanks,
-> Nitin
-> 
-> 
+> > +
+> >        mediatek,efuse-intr:
+> >          description:
+> >            The selection of Internal Resistor (U2/U3 phy)
+> > -- 
+> > 2.46.0
 > > 
-> > > +			interconnect-names = "ufs-ddr",
-> > > +					     "cpu-ufs";
-> > > +
-> > > +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
-> > > +			required-opps = <&rpmhpd_opp_nom>;
-> > > +
-> > > +			iommus = <&apps_smmu 0x60 0>;
-> > > +			dma-coherent;
-> > > +
-> > > +			lanes-per-direction = <2>;
-> > > +
-> > > +			phys = <&ufs_mem_phy>;
-> > > +			phy-names = "ufsphy";
-> > > +
-> > > +			#reset-cells = <1>;
-> > > +
-> > > +			status = "disabled";
-> > > +		};
-> > > +
-> > >   		tcsr_mutex: hwlock@1f40000 {
-> > >   			compatible = "qcom,tcsr-mutex";
-> > >   			reg = <0x0 0x01f40000 0x0 0x20000>;
-> > > 
-> > > -- 
-> > > 2.46.1
-> > > 
-> > 
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
-
--- 
-With best wishes
-Dmitry
-
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
