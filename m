@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F842C021AC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0F6EC021A7
 	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 22:55:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,82 +12,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oWBgm6XWELtmmC3GJnBGNBu+cYcbF128atT1HQ/4A3E=; b=YmAw7BkKorxSGP
-	ozzzyGqOECQhCzjCITmVj2gXYyrCNYAaeC5sva5mUynPjOb2R7RZ+zOmEotHchbscCpI6CBFz3YWi
-	XY2PflmIzgDZNZc6SMOhx7MbLnAirucpjS0ekxx0SYVtYX3ObxGvvZEJd19Tnbj1Vdz9HQlF6aqR8
-	qMH0wNnO7zFJgePJBGno86a3sDBK7mkFX/DpgrgO+5KLr/eZxsmWkrGn3/fsVGoSmq6PQtKjmfJ52
-	VTzkPm8RgAZOYnYbbFWEZDDbWwmVdU/DccryMX9KrVwJzKzu/0FIfn3we8xNb0QBa1aohEVy6fIoM
-	NE+uujBst9w9lYhXyrGg==;
+	List-Owner; bh=iMkHR476oMdYSvp6v8ZsQOT5MNrVHOBoslWMHDv69AQ=; b=1L84OOw0hpor4i
+	Ru2qZavKxiH2Ebcgo1P9H89mgZIFcbp25wfNl8adsUbIvkkoj3j2iJ/sHsPTuKEuaV8DqjOVndYd1
+	CfilRsVM8Ft31K1nxi0KACAiAlBRRHmWtXAcODbxMHQ17n2iyOLieKPngk/vXKmBfpFGevMwu1sIy
+	X1UtmginMv3i4jFkoe2bq1VYjtMNbX9MwO8e3WRrK9K1WvPYQ/A8zvV6G1ZuRHK0HJN/uDglxJ+U8
+	DKcxObIMC99ul4gmZI07Trmygo5U7w2ZKkByeOC/aDJcbQcpjeV2xcOAVN19SZVJYRHZb7eTLUxV7
+	nshrZgSBdp6uNo82BXgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thcgo-00000001kWX-0d4V;
+	id 1thcgo-00000001kX3-1p6l;
 	Mon, 10 Feb 2025 22:55:42 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+Received: from mail-oi1-x236.google.com ([2607:f8b0:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thcPm-00000001gP2-34Pw
-	for linux-phy@bombadil.infradead.org;
-	Mon, 10 Feb 2025 22:38:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=7aQTsUJHgsqLkUdzEeUSjaVO0EDwfbxDIRSr93MsbW4=; b=akekMo+rxAWaXDg5XiyLl/53Dv
-	XGERwnc5SSy32wp0UM2fclLZW7LssXjNg+z7oRKjSDTCPhqyTAWDVtWps5p0M0C0IxEprTLnTenAB
-	Pe7qP756J5c7wyX/tKD9m+FOoOrM3ocLA/LT63SSB3puzTUka/K/70GJPTtDPy7rLBqSHvA7cG65R
-	3GNpFOukps7uRSdIQI6TKPOlRDNIHKIPYOCCVpCIC5C6lTnGA6vI9Gvxsa/ErCyEJQu8c8khvyBzB
-	9NiY1DDAyCJtD+L9tls7tgrshsQ14nJsBaCj7NdhUJVexLgqc53zW9PDUzZdNF3Cp23fcnbMVoabA
-	qhOTdwzw==;
-Received: from mail-oi1-x22a.google.com ([2607:f8b0:4864:20::22a])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thcPj-00000000KSk-3K0J
+	id 1thcPl-00000001gOf-2UXH
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Feb 2025 22:38:05 +0000
-Received: by mail-oi1-x22a.google.com with SMTP id 5614622812f47-3f3ba3d0433so594290b6e.2
-        for <linux-phy@lists.infradead.org>; Mon, 10 Feb 2025 14:38:02 -0800 (PST)
+	Mon, 10 Feb 2025 22:38:07 +0000
+Received: by mail-oi1-x236.google.com with SMTP id 5614622812f47-3f34101f68eso984234b6e.0
+        for <linux-phy@lists.infradead.org>; Mon, 10 Feb 2025 14:38:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1739227081; x=1739831881; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1739227084; x=1739831884; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=7aQTsUJHgsqLkUdzEeUSjaVO0EDwfbxDIRSr93MsbW4=;
-        b=W01KMqw5+S6CfUwWUYNdl+7GO4CqZEZuNvE6zBg95OIFTdFEdG70G5YWz2cU/qR+0S
-         oYvxLWUxZnx3j/S7CGj4LDIqG394fDq2YywF0G1bdBWpLgZqVYAGodbWSI1O+XWtQ/bv
-         kB5k3IgI8LJ7uuL91B01lGBepMzEtsJMlx4cz/xZOki1GdLqQP7gRmbORNz8hyfOzL1i
-         nnydDqykk/E8vXjxIdEKPDRHnDR/aC8eyttz3MAcco8iaDtl2zdND+BBwJJ3RVN8qlnI
-         gLnSaDrboRUHQVllxlFP/65UqU3bLvu6tZU75ot6apKyJwQXbzBJT1JpYZqon8DhvBS6
-         ZSGg==
+        bh=Hnz0az7lntDGiOpb5KMBiHYUt+/ZN1SFQQir1JT9FNk=;
+        b=mk0hXkOyX5jtC7lDs39VgcJvN7kSnQhGk4/pnRySTNdG4j+F5KgieMhYweDzoBtvkd
+         RKoUbykNPcW0M9y1XNeBT78XGXUiMdvnCSeBtJnIIcwRhOdJoQakzTXIEaa2wMl6E5p4
+         tmMCaimBQdNPMQd2dw1xJOpAsU0GS5vXGxgwv8N/eCyhLjDjUeiDX/Z+js40//GdMbvt
+         jHnVesI04LVDzQz0NnazX9/v7GLeGNPO6vxd7VSA2aLytTWZbw1wx8dvd5IDQnbUUH3d
+         8+FV8UAQNGqQTUvgzKdWMKIm1c2fcsPeJtOQOEqDDHdKx3Lrxcvoys4C5ifjwvm9HtsM
+         E8CA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739227081; x=1739831881;
+        d=1e100.net; s=20230601; t=1739227084; x=1739831884;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=7aQTsUJHgsqLkUdzEeUSjaVO0EDwfbxDIRSr93MsbW4=;
-        b=Pf3EySmRdId2t/SjvWhZmNY/2QRMp3/ZpmNZJb4TyjJaUnD96CKaqWdY+eMpBNOYLn
-         QZnPvw4N1IlEwwo57GTY9Aherun2AkPahCV3uAeocm0TyVpkD9N/6jxJaHzI4c/VXyoH
-         /COBbbp16FHn1Tth4UlhCR4BH1h2+8WeuwHpS5m+HekFQydOl/SN7WPB4+Qp2v+w8tsE
-         ea7gUrgLop7TYbqFJcZgKQozCp7JMucIB+fCso8Sa2rmq1kjgFZSFjzP6DFZ/tzSoFOX
-         9viBJE4NlOWu8U971Hb5+Vwe0NsDo69LNQlSMj5BbnSYFnjXPCOsR4L4Pq7xffzjqtwM
-         z4PA==
-X-Forwarded-Encrypted: i=1; AJvYcCUEe90gcLiGjtzMT3ERLU0wb73YQJF9h8q4yE4JjMN+9hKQQuLIRokDkgLQI7ezmow+DF9aSb6Ip00=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxPtzjRsVRvxgNNK1KrF3NashHYxJgo82V8xHH6yiiECNig4v1t
-	H71YZN+U4Kr7rmo2cpj/oCpwN2FkMT6poBgGTrk/g6/7TMhmN4mYPOJ10wbneyY=
-X-Gm-Gg: ASbGncsuh4QvNHEj1Jdf338lNbaV3IMbCsxjZp3pM0fHn/CYjgxeqkT3ym4PJKVuZrn
-	KOkOP7hdi+Xk9t6psC+v68v5QHYdN9OElEJiJ1vaXzJmnzq4IUeAJ3J2gZOTNDv65ChEOTfesr6
-	rvGd24Ko60ZRuH0ZwWkbcb0/LdeUQC2UfRpj/5PEY9WIxzUqtMJ7HyMZvDXTqdkSv5iIf4/GmN2
-	E1BTmbU35abnHNDJw04LmbICD5ObVJicruao/jdasRiCPV+iPF+GiJdt5615oLIodc5s8KyC9VC
-	JS/+4Gibq7mXVuXB64tl0OlPBUCDGWtvthEYgre6ToJ7pxU=
-X-Google-Smtp-Source: AGHT+IGzPPZHWL9nm38yMUud0RRSbV/Ra+QmKEWIgQuJSF5KnPaRf3ayet85Wv9392Tvxy5qCKs2yQ==
-X-Received: by 2002:a05:6808:3c8a:b0:3eb:4681:a895 with SMTP id 5614622812f47-3f3921f0b9cmr10552910b6e.7.1739227080875;
-        Mon, 10 Feb 2025 14:38:00 -0800 (PST)
+        bh=Hnz0az7lntDGiOpb5KMBiHYUt+/ZN1SFQQir1JT9FNk=;
+        b=b2E2R99nQ05fUntEdA7Y66IzlOoMi2XBpPC1TmnjHUEcM1gIJm8gcUNjafzoiSACIt
+         RUZC9/h8Jhw/06J5vqmv1zKGyRT781BeX8Za3maXs9PxZlxHN/qf5ztw5uolMueB3jBw
+         zNhodNzv5f21rpbHBUSIYdif5UBBPHpwRmG8B8ccDaVbf8t9EsBm7U+TpBJJfv8MvFOU
+         QqOzKhGwAS5N95ZPWu8/YVVeSKxj41Wsypov93jLGAZIWU4pclmU09ymH7j1RU8lv1tb
+         2vmkgGqqjrvgOstlHVnWZ1lrQ8vodiQ3pb9ExiGAJf5L+dkNvRRD0EqLLOjK3lj4/Y01
+         c6lg==
+X-Forwarded-Encrypted: i=1; AJvYcCVZq8337By1v6c6iyv7jigYYl9aQmLiHdVxsT3XysOBba9HEIzTgRG2AO/F/D/P3cqxM278EllLKzI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwMUOfmOnTf1++BQjl+V9v8P4vzeKzMoIA+yWm1UPuwU+Y2ZcMi
+	mjlgNl5BmH44nDiBmAiKsY6V9sTeV++my0+Yt5Dw/XyoeEJToF8QU/N8EjW7ADE=
+X-Gm-Gg: ASbGncus1mOLkWmqtnve0UaNw2v57cnqpm1bjas7DV+9URk+HO92OFq0KYiHQnsAr5x
+	+gL/L9Rx/zKWPD/luyijnW+I627aWUZxecwmL0zgS1c4Ri7bOmM6jI/bjYyPvdHhDwpryxshaEX
+	vh3gQ/zD1L2T06Y37YxKsttn5YNX+5pSCvrE5+ndLWTtY8s9wRTsaNiYok3rf0PTEHjDL0ohvZ+
+	ZR5xNFHu4evl3hYQepEeBAdhrc79Vy612r2vcYBhFTf4xIYhTH21cJCQmSzXzbr2hbFSF7YpBPl
+	iYuO/bu3qtWipE6S+KaJw3UGZZhlL9ChcCBnvT4d+gW0S28=
+X-Google-Smtp-Source: AGHT+IHyCAwDYiRcWVzrn7K/Vx60yNjdpFZhmlXwDMeVTAgENeKIRtjDdhXHEsiUOrCJ2abC/Ga6Zw==
+X-Received: by 2002:a05:6808:2209:b0:3f3:ba53:1e11 with SMTP id 5614622812f47-3f3ba53229amr2521701b6e.6.1739227084078;
+        Mon, 10 Feb 2025 14:38:04 -0800 (PST)
 Received: from [127.0.1.1] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-3f389ed1ca2sm2521820b6e.11.2025.02.10.14.37.57
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-3f389ed1ca2sm2521820b6e.11.2025.02.10.14.38.00
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Feb 2025 14:37:59 -0800 (PST)
+        Mon, 10 Feb 2025 14:38:02 -0800 (PST)
 From: David Lechner <dlechner@baylibre.com>
-Date: Mon, 10 Feb 2025 16:33:36 -0600
-Subject: [PATCH v3 10/15] iio: resolver: ad2s1210: use bitmap_write
+Date: Mon, 10 Feb 2025 16:33:37 -0600
+Subject: [PATCH v3 11/15] mmc: pwrseq_simple: use
+ gpiod_multi_set_value_cansleep
 MIME-Version: 1.0
-Message-Id: <20250210-gpio-set-array-helper-v3-10-d6a673674da8@baylibre.com>
+Message-Id: <20250210-gpio-set-array-helper-v3-11-d6a673674da8@baylibre.com>
 References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 In-Reply-To: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -111,8 +97,8 @@ Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-sound@vger.kernel.org, David Lechner <dlechner@baylibre.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_223804_035234_489AFE8B 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20250210_143805_634956_2E5481F7 
+X-CRM114-Status: GOOD (  10.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,47 +115,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Replace bitmap array access with bitmap_write.
+Reduce verbosity by using gpiod_multi_set_value_cansleep() instead of
+gpiod_set_array_value_cansleep().
 
-Accessing the bitmap array directly is not recommended and now there is
-a helper function that can be used.
-
+Acked-by: Ulf Hansson <ulf.hansson@linaro.org>
 Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: David Lechner <dlechner@baylibre.com>
 ---
- drivers/iio/resolver/ad2s1210.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/mmc/core/pwrseq_simple.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
-index 7f18df790157f1e411fb70de193a49f0677c999f..04879e6d538bce664469c5f6759d8b1cedea16e9 100644
---- a/drivers/iio/resolver/ad2s1210.c
-+++ b/drivers/iio/resolver/ad2s1210.c
-@@ -46,6 +46,7 @@
-  */
+diff --git a/drivers/mmc/core/pwrseq_simple.c b/drivers/mmc/core/pwrseq_simple.c
+index 37cd858df0f4d7123683e1fe23a4c3fcd7817d13..4b47e6c3b04b99dc328a8b063665a76340a8e0d0 100644
+--- a/drivers/mmc/core/pwrseq_simple.c
++++ b/drivers/mmc/core/pwrseq_simple.c
+@@ -54,8 +54,7 @@ static void mmc_pwrseq_simple_set_gpios_value(struct mmc_pwrseq_simple *pwrseq,
+ 		else
+ 			bitmap_zero(values, nvalues);
  
- #include <linux/bitfield.h>
-+#include <linux/bitmap.h>
- #include <linux/bits.h>
- #include <linux/cleanup.h>
- #include <linux/clk.h>
-@@ -180,7 +181,7 @@ static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
- 	if (!gpios)
- 		return mode == st->fixed_mode ? 0 : -EOPNOTSUPP;
+-		gpiod_set_array_value_cansleep(nvalues, reset_gpios->desc,
+-					       reset_gpios->info, values);
++		gpiod_multi_set_value_cansleep(reset_gpios, values);
  
--	bitmap[0] = mode;
-+	bitmap_write(bitmap, mode, 0, 2);
- 
- 	return gpiod_multi_set_value_cansleep(gpios, bitmap);
- }
-@@ -1470,7 +1471,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
- 			return dev_err_probe(dev, -EINVAL,
- 				      "requires exactly 2 resolution-gpios\n");
- 
--		bitmap[0] = st->resolution;
-+		bitmap_write(bitmap, st->resolution, 0, 2);
- 
- 		ret = gpiod_multi_set_value_cansleep(resolution_gpios, bitmap);
- 		if (ret < 0)
+ 		bitmap_free(values);
+ 	}
 
 -- 
 2.43.0
