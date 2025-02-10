@@ -4,126 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7EB8FC02198
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 09:40:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 900E7C02198
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 10:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3kwjricfhjZBXR0VxO9cEBsZP8y0NicopqBYBw+c7ig=; b=cPJ5znU2NqOQJoCco+R6UQNsdE
-	vo0KdwgWAsmZc889N43sYmi3dL9mmUAbGzMVMofQGiLvk+89CIeM1EwPtrLg9QpbZawqf1FZCWaaL
-	cqDIPk8zrDBRwMjXsId9ptoNm7BWLqR6NAnH0YGpNFGcbxT+Cx9S36MfPAuOxE/kpNfhXmoReDUlG
-	I9lTH2qitAz5jP3qitVZ9Xzov/L65OHeI6ePIBmMJwjqxsNFZVSucBBcz14X5Uuph6aZfbKMUTg+A
-	TGd9wNsO67k68EahHMIJX7/PTUT0KnegODEJqJCjVH6yYeReBH70W0lQcNJ1XGEV1KEgy6I4WuZbi
-	dk5M0+7Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+pqLAJtiLDXPDq5ovnq7AEcikKLYDpIIhCNV7HsElnM=; b=b3/4VkTEu6QZcN
+	UF30xZjW02MkyooYZFJ4cJNqVlSiqWXQ83mYEOpzu5M7lNjD9QAwtvWEKcsYSGnDvdOMGk6tyMUCk
+	RlIz5iXfIIH/SG3MmpA9FSXcEl9k3b18dE3qEaiB1nbruWeir9Z0v3UQwmdOgBgBDAexPkv97CMiR
+	eOYlCsXXILIAAATzkEhjY+xiw2jdRg0Jt3EbCAfmpG1v46Qn317sXLnEaKO/qC/Opw8BZ6o4swZl9
+	/mcuTdHFVyeUpx2nN7hZBgKxL6H+7ptD5OI8JMltQqqvBhHEhtsOKJi5y3/AkCZ8fxROH/8haHb82
+	sAH3o63xA5ieC/qxRGXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thQGw-0000000Gr9c-3SKa;
-	Mon, 10 Feb 2025 09:40:10 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1thQqH-0000000GxZK-1J81;
+	Mon, 10 Feb 2025 10:16:41 +0000
+Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thQFv-0000000Gr1o-3sVg
-	for linux-phy@lists.infradead.org;
-	Mon, 10 Feb 2025 09:39:09 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-38dd006a4e1so1858026f8f.1
-        for <linux-phy@lists.infradead.org>; Mon, 10 Feb 2025 01:39:07 -0800 (PST)
+	id 1thQj4-0000000GwLb-1mub;
+	Mon, 10 Feb 2025 10:09:15 +0000
+Received: by mail-ed1-x532.google.com with SMTP id 4fb4d7f45d1cf-5de7519e5a7so1144254a12.2;
+        Mon, 10 Feb 2025 02:09:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1739180346; x=1739785146; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=srrij2tofXvckDkWsV9cjxYMgt/c8bcDWt6f2Pgk2Ho=;
-        b=nQKjN5vEOn8kwywRk06V0t5mMFsFuapaxgzVhWgZbnPvLn4qslU+orPcPRjHESF9V2
-         F9uLPQAm9elb1yNHGIKEGRt7jYdj02oO5yehAL01vbBfvpGWvmuTI/XTJ7/Du8zwUqnO
-         bwbpC1JGO6G/k4DFNUnVFayLA48s9GQXuW8p9utOkMpBNWDeh46BZ3PiyBwLjb+jMYjg
-         4/gfZHgN7imKC3W6OdI/6xItJZWjPu8Rl39wxEz1SC04wEtxk8YQ5xEYh8FcHPrFW89D
-         z5nvB0XbssOIT5hJ9jifUqgnPFvZXftbi/yO6eMB7fQLNcmehk0aWnC4Vy3WlPZRZ125
-         lLUA==
+        d=gmail.com; s=20230601; t=1739182152; x=1739786952; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=5dzyKtWqZnepXYQlMsqs3T0zFLasKzwLYo+Yn/dRQyU=;
+        b=LElqI0OCCrI6U3Hvz/Xx3T1YR2PJDjyxAmpxq0E0hdOnkpmXz+4DR6FmJ9EsmGaNSA
+         3zXP5npZYICRYBrYDrXakhCse+LmlijGPcf01fICe+YqWPtwAhQkyfjDhlWHb6vG+Bj1
+         pc224A50FhGA8UbVajAu5E3XR80QUUyQkXhTpGUHxJYbB9a3H3Jm70nvC+p+V7Try8YY
+         /Xko8ni+UqPTOozjmqSe65Ep/XQOwA+f6qJdQC2aP4/3MWkECcVvD5IzqAchzy3oM5m3
+         HbE2QxGhiXzB+Coe8BWokseOfE/3n7FeVfhsyA5cnj5xi2d5IlGlgF73kqx2YA3l62On
+         n5xQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739180346; x=1739785146;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=srrij2tofXvckDkWsV9cjxYMgt/c8bcDWt6f2Pgk2Ho=;
-        b=pkVhgtr6FJRnFWx59qKyiOnlylwoHAaTRooW8uVhpUtjGyllYdU/GaxRxskEJK3VzL
-         8bFn/aLNByhu2TSiy0LCmY5Ult58nX9koLFv9PuWx6l28jqnPT6JS0Mmm44dd83Ou3SZ
-         P1Xez3ufNjrjUh9mq0vijyHe9sm817QlodGl9+e7+XR8xq19WLgFdzpHvXmO0g8kyG9Q
-         3E+OVmqL3gzuETh5RMqpfuLQG4Uu31n/dFxnEw5vJfVtkMrbHarUlAT2jp13PN2mgK8H
-         HMP2aHlYFW/BqDjuF0lGZc//ahTcwRsGCJqFw3RL3udpenHhJw7yjNdx+GaJbSA2M1On
-         pgbQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUhKKXanBpurHzkxdajeuJFe02joczHr69dF8oQmHdV2iFXYNViZrDoYNO4z+wOd2OxzQlSI1NBJAk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzAorc1ExMHt5wGJvPvn0sg4ChHlVitFfAzT84mPhjAApxGg2Dv
-	mmzzrQHSEVXLkMKpUrGIKZA5gSJfQQMFoQBXEoHe617EhoN+Z1j1XzUiQyHjXXE=
-X-Gm-Gg: ASbGnctNt2g9PMF9KXPi2aY8fNgPoGXW8qQKdL2U8hBUKpIoNeeHJkLLk6Uw4VeFked
-	PYL6oGWQ8hk8BPtypKqnJv80zZiA4Z5MEH7ejSXn1IjJXbYTuwWYx0oV+deXfBy2UUOhqJFuwaa
-	ixlAOSfff70suHtuIc0wTga4Cx5ofgZg9g66qXS+loHzkEpEfL7C3rIFQWC8JMXq0zBd7a4sd1A
-	q9KqyHBQuUKfpbnuE86KRqCl7nEt1ZWbRMwtqFKsWcdklL6C8gWnHoUe8sQG5s6fGLuTG8YVb8u
-	6TPNk5rADclf3u7b7L19a9QDt7DLT6J4PRllSHDFAc2T9PgmV/cjO4vO2Js60S/o/+ga
-X-Google-Smtp-Source: AGHT+IEHtY/xpnewLZHMrP5i7kiQ+idRtu5NbOM9k48vStwcKa1bF7nM6dGfWD5FqFw16XgafuQ3QA==
-X-Received: by 2002:a05:6000:1448:b0:38d:b2e4:6d97 with SMTP id ffacd0b85a97d-38dc9343d93mr10722664f8f.41.1739180345812;
-        Mon, 10 Feb 2025 01:39:05 -0800 (PST)
-Received: from ?IPV6:2a01:e0a:982:cbb0:8235:1ea0:1a75:c4d5? ([2a01:e0a:982:cbb0:8235:1ea0:1a75:c4d5])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4390d896d70sm174462705e9.0.2025.02.10.01.39.04
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 10 Feb 2025 01:39:05 -0800 (PST)
-Message-ID: <ae9ba351-53c8-4389-b13b-7b23926a8390@linaro.org>
-Date: Mon, 10 Feb 2025 10:39:04 +0100
+        d=1e100.net; s=20230601; t=1739182152; x=1739786952;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=5dzyKtWqZnepXYQlMsqs3T0zFLasKzwLYo+Yn/dRQyU=;
+        b=FYuzUr/SINF5lLuS/X9HsLtU1bd+3fnjk3YmjjG95ct2RsxU3UEmBHPFKoATgmq3Ql
+         iaPqsS59/im5YHUH/gKAIxPaeFUsVAp0zc5YX0wuQBfYky6FLsZTT9+stB5Wm79cSwC1
+         xbJjZCZAnCSw34GFQWMR7L1JeEG80XIaItbUvRCualUq0IPB11EtSJQHBq2kgGpfgp8G
+         asLYgr1hrtEP8mbeFi9jSv7JQzo6r+Lc+RYH56idHPhSA6/zsNy4HaNcQr9kC6XbcLGV
+         pshDOqDPbpk99blo+BxjPaO6YYJdq7Oqo49qCwb5vIbi3cDVdGVwevuA327gEHL01lhy
+         03mw==
+X-Forwarded-Encrypted: i=1; AJvYcCVNhi44FB0UthzsDEuZzTubgS/CDD6NITvKeJhjLkwGrgFJkzwRgb+Z8LACGwYLW1sqDqMX8TlzPk5u@lists.infradead.org, AJvYcCXY6UdVHo9oRwRtxC2IHY0Ql9jlADYVsjdPKYcdqGsKP573T5/n9Q6KKmlnGqY2VrU02mgTRT24qjygtT0B2lBq@lists.infradead.org
+X-Gm-Message-State: AOJu0YwHrVdiXTe5iM343jpdN48dLPisfgH8WYe84aPqc6mBzh+ON9sg
+	vmYAIxXCMyWnuVx/SxHMK6GLUu7lXMnTwS4QfysKsSlYEZ/l6Juqd2q+S6l9VHvUMbv7yBdoVm/
+	4fWJdsI7Sjd/Lpd2hPTdXfJdkdHc=
+X-Gm-Gg: ASbGncut4RzJVkUxgZLnbjPRavvLTT2lCrSKb9PMJK1G1Vv06zh/pcZNglrJfBGVZpk
+	Yhy6CLiJQvHy/G2/y0RguMc0ql4c12XmZ2nCdirRrFHP8aZvXoal7xg93APzK7HZBz467RINk
+X-Google-Smtp-Source: AGHT+IH05m3EGDv37NgCHa7r72kurcQ8bsVSV4tB6ZTwaZHVAXVKJd9j8KrWy0sZ6Kd7oDJwTcHKTTZ7neMq4xpHZUE=
+X-Received: by 2002:a05:6402:42ce:b0:5dc:73fc:2693 with SMTP id
+ 4fb4d7f45d1cf-5de45023654mr16526726a12.18.1739182152139; Mon, 10 Feb 2025
+ 02:09:12 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: neil.armstrong@linaro.org
-Subject: Re: [PATCH 0/5] Add UFS support for SM8750
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Melody Olvera <quic_molvera@quicinc.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
- Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>,
- Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>,
- Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>,
- Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
- Nitin Rawat <quic_nitirawa@quicinc.com>,
- Manish Pandey <quic_mapa@quicinc.com>
-References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
- <c6352263-8329-4409-b769-a22f98978ac8@oss.qualcomm.com>
- <20250209152140.cyry6g7ltccxcmyj@thinkpad>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20250209152140.cyry6g7ltccxcmyj@thinkpad>
+References: <20250209-exynos5-usbdrd-masks-v1-1-4f7f83f323d7@disroot.org>
+In-Reply-To: <20250209-exynos5-usbdrd-masks-v1-1-4f7f83f323d7@disroot.org>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Mon, 10 Feb 2025 15:38:57 +0530
+X-Gm-Features: AWEUYZl-ymjB7hMb8tRQlI4jusE7F1xxvFV_L9geMxys9qNgTR3hdyKQc5pas2k
+Message-ID: <CANAwSgQAfwq2tmqB=+896YGhFFa1hJ18W-cAes2o2bseJiLUsQ@mail.gmail.com>
+Subject: Re: [PATCH] phy: exynos5-usbdrd: fix MPLL_MULTIPLIER and
+ SSC_REFCLKSEL masks in refclk
+To: Kaustabh Chakraborty <kauschluss@disroot.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
+	Vivek Gautam <gautam.vivek@samsung.com>, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_013907_969791_B4786FA3 
-X-CRM114-Status: GOOD (  18.73  )
+X-CRM114-CacheID: sfid-20250210_020914_461241_E45467B6 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,55 +92,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: neil.armstrong@linaro.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/02/2025 16:21, Manivannan Sadhasivam wrote:
-> On Fri, Feb 07, 2025 at 11:47:12PM +0100, Konrad Dybcio wrote:
->> On 13.01.2025 10:46 PM, Melody Olvera wrote:
->>> Add UFS support for SM8750 SoCs.
->>>
->>> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
->>> ---
->>> Nitin Rawat (5):
->>>        dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Document the SM8750 QMP UFS PHY
->>>        phy: qcom-qmp-ufs: Add PHY Configuration support for SM8750
->>>        dt-bindings: ufs: qcom: Document the SM8750 UFS Controller
->>>        arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 SoC
->>>        arm64: dts: qcom: sm8750: Add UFS nodes for SM8750 QRD and MTP boards
->>
->> You still need the same workaround 8550/8650 have in the UFS driver
->> (UFSHCD_QUIRK_BROKEN_LSDBS_CAP) for it to work reliably, or at least
->> that was the case for me on a 8750 QRD.
->>
->> Please check whether we can make that quirk apply based on ctrl
->> version or so, so that we don't have to keep growing the compatible
->> list in the driver.
->>
-> 
-> That would be a bizarre. When I added the quirk, I was told that it would affect
-> only SM8550 and SM8650 (this one I learned later). I'm not against applying the
-> quirk based on UFSHC version if the bug is carried forward, but that would be an
-> indication of bad design.
+Hi Kaustabh,
 
-Isn't 8750 capable of using MCQ now ? because this is the whole issue behind
-this UFSHCD_QUIRK_BROKEN_LSDBS_CAP, it's supposed to use MCQ by default... but
-we don't.
+On Sun, 9 Feb 2025 at 00:30, Kaustabh Chakraborty
+<kauschluss@disroot.org> wrote:
+>
+> In exynos5_usbdrd_{pipe3,utmi}_set_refclk(), the masks
+> PHYCLKRST_MPLL_MULTIPLIER_MASK and PHYCLKRST_SSC_REFCLKSEL_MASK are not
+> inverted when applied to the register values. Fix it.
+>
+> Cc: stable@vger.kernel.org
+> Fixes: 59025887fb08 ("phy: Add new Exynos5 USB 3.0 PHY driver")
+> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-Is there any news about that ? It's a clear regression against downstream, not
-having MCQ makes the UFS driver struggle to reach high bandwidth when the system
-is busy because we can't spread the load over all CPUs and we have only single
-queue to submit requests.
+Reviewed-by: Anand Moon <linux.amoon@gmail.com>
 
-Neil
+Thanks
 
-> 
-> - Mani
-> 
-
+-Anand
 
 -- 
 linux-phy mailing list
