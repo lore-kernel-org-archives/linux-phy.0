@@ -4,90 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AC98C0219D
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 22:55:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77630C021A8
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 22:55:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AkMa7JhGWHPwakvgRFAtnnbbmqbf9yGcCHBduJ4EjNk=; b=rBDpdhXV89j46+
-	wjRoavB5MWXJV+IIU4KJBu+lVSNO14ieD6jo6N4O9STb9G8q8iubM2t9qWa6UVJMWQ4nMj3Ik4mH8
-	SbxBxftHzT7gq3d5UOqhEfewklesyAjo6dFRtWnX5VJrZfccFFweTxPP6rKPebFJwK+nlIMpEv/eQ
-	UZfWZwWD4ZxhSO6CC2WU4q6uzx4h6T2O+zB+Ggs7k7fSGYeXMkDS8HYqIZuc1K/1zrtIIPnVllD4O
-	ncWTYWEzVp7ybgOb0mCh/fsJyj77W2aZNLkvLs8rAt/ir+WNy13ddvFavIcUJ9rBPST3N+nIoYgqL
-	0wwHlgq4h0az7wqeFOfg==;
+	List-Owner; bh=TOL0d1teaJ9V2Z4nFrmfO4cYI6/Dl51lQDfYBZF08Eg=; b=ctbFtD6a/gG+wc
+	RCWyyjI0YN/pSBENHH8cSWvyZkWMjcc/bCkN3antoh2eYf3SxhFp5VJiDU8vLOWZsXujsTecGYOxZ
+	1xufGP3m+Ox9azMgfKOOJ7pPyNAWGVA/MObli9ciBkXk68EgM4Ws0FszATONB3wBjm60aSIiT4R+/
+	163oNqzQbPGb7riyPrH6IKFRfMKBpaUhZ9oUQZG2UDWs3kjfPXPm54Cs0WurPVRryKrOgP2zg4DZX
+	vXgYNdJBf0Vfqn5ea78Ti1zn8hjJo4so014p/jCy+UaMSjTs/VbGvUcM0Y+ItSgS0jewNqm3wSGJr
+	N4I703WTD/Z+Qmy0dsCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thcgl-00000001kRc-1G7m;
-	Mon, 10 Feb 2025 22:55:39 +0000
+	id 1thcgn-00000001kUo-0kk1;
+	Mon, 10 Feb 2025 22:55:41 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thcPL-00000001gJ4-0FLU
+	id 1thcPb-00000001gMS-1nRy
 	for linux-phy@bombadil.infradead.org;
-	Mon, 10 Feb 2025 22:37:39 +0000
+	Mon, 10 Feb 2025 22:37:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=+BdRdts91zZ1lBz7cZl7Oig3MKNc6jPxib3EI6sYvCw=; b=pYkqXDmBjhBzEtIKSbulfbTimn
-	CGDjssY9lHkBYuhiOjRoJ1FditakDKMdoalmgqKyG5xbRsI674sFd2leuXWV+PvujOfRGfS1YugiD
-	4Iv8e0aGfB/LbcuyI+SetUnofW91gc6tolfA5xWPSEtX5CWONbeHcTrUx0HqNhy5utV3GYak1Jemh
-	kA7owFWEuyFYtrWlitdOmdI535K3zWLn/HTl7cgRvOnhDSCCK2X8La7VyFhm1mo4ObfS0ZBA5Rg8z
-	OwmXvZ4uFfcWgwVmeQeB3gHcS4PZbgkouxnDGuryhKeef51m+DOxoyJUXRlDc+cYuTjiATK0sfLVt
-	ioU9ZkHA==;
+	bh=9KFibiHSceSI9J0YTbtHgVyCC6KTbDSSVoM74byAuKE=; b=E8M7k6A0n2rYBcWFSkOWzHeIQm
+	AehN+F5rRh/WRmXTUj4bk1vbPHNBOVJ2MHlvA2BWz56zTfuysv5M7M3MkH1Xz8odyZaoKP+SIEa8b
+	3I7uhpvkEM3ZBahB9PxWvmMW6L6Dvc+q3MliDw5tn4qyJFAvEtUva5Cza7E6aFtdcSLgfij4Vh/C/
+	1Yj1QEc5SsEn+c4dmTSvYu11GcDmcBJiRGmeJLrfDdb0Mr3+EeoTMUQQfYURh/eV7OjWg2sLcDrYQ
+	/7jYjceAW/qyK23t9sf3tYZ8T69beDHD6Yz+UgJZnTwwDB2iIY/TL0hguTdOMboAz4dRgQqJeTg15
+	ebxvhSHA==;
 Received: from mail-oi1-x229.google.com ([2607:f8b0:4864:20::229])
 	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thcPH-00000000KMk-3zQL
+	id 1thcPY-00000000KQ1-2Rzj
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Feb 2025 22:37:37 +0000
-Received: by mail-oi1-x229.google.com with SMTP id 5614622812f47-3f3ac0c8053so877238b6e.1
-        for <linux-phy@lists.infradead.org>; Mon, 10 Feb 2025 14:37:34 -0800 (PST)
+	Mon, 10 Feb 2025 22:37:54 +0000
+Received: by mail-oi1-x229.google.com with SMTP id 5614622812f47-3f3bc69c8c6so548312b6e.3
+        for <linux-phy@lists.infradead.org>; Mon, 10 Feb 2025 14:37:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1739227053; x=1739831853; darn=lists.infradead.org;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1739227071; x=1739831871; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=+BdRdts91zZ1lBz7cZl7Oig3MKNc6jPxib3EI6sYvCw=;
-        b=SyoV48dWK4TCcWjW1GQyz9ve9Qa/GSTQhmY9A3LnoNFn2pfUHWbjGTqTcJHcyWsPh/
-         1BGlPrSMyePrWojeiG9Zh+MwpneEv5ITWoOxXz9VzbODdDRfGiHDrbMOSCc68ovLPsQr
-         Ug7MBpFHCG/IivtsbGcoCHtAgFlgb35Hm+k+BKCX8jpZhfJHy4W9AuoxW0HvYKOg2k88
-         iVogHS5yASlSgRCYevCM7K+ztRQev47axsi8ym/CEDfNlC04nPf5tMNVzZ17Y7v1WCRx
-         Mh5SCQVu5yZQ/cmAjJpWl5gOYDXMEbQnemXoAwNJzcmC2cRRWvQAOKjMxxE3JBC39I8j
-         nWRQ==
+        bh=9KFibiHSceSI9J0YTbtHgVyCC6KTbDSSVoM74byAuKE=;
+        b=QsSeuO2P9kScXI6IQqONW/1zdIFhTtmt5jtIVAbJYomvzZWfhr6Bq0PRhk/VeGqaNz
+         mxUfgmovyr2yVNr5vocUO+ZXXqBis0DS3zI5BaWNd64xI75DfT5pcyW487TC3PYN1Mxa
+         CXIJKZM//Pf5C/i9VAIPa4a6lbJpWGMP7YBfYRB6yfW1UcFmd7zFjIOdLm2RA1Y4WZPR
+         CDhJI882lRxcs3Loq2Q6ZJDbqc/bu4NLbvfFJF6Jf4tsPnqEkZlDuT2IQakmmvgYTija
+         BasJltxjtwKczDRCMJOowiHWuQUBess91RitwTow+wfkZVCr2LjBDXHyLHwjUuXLgR40
+         +mYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739227053; x=1739831853;
+        d=1e100.net; s=20230601; t=1739227071; x=1739831871;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=+BdRdts91zZ1lBz7cZl7Oig3MKNc6jPxib3EI6sYvCw=;
-        b=XXnURrlAEvkajbCOlS4i2IG3Gtk2C/RV/7uJ7jMNueyqoMKC7wM7M+/yrjh1nkh14P
-         ENriIFGXqWFhWKt4Y7J/UMa3GTWeG5JCpRXxBz135b6mM5IChHrwoS37TbT84Sbhm5ap
-         4PR/BocTvMyKo+XG1PzB1DQ08ogbiow2no1Wga7CLBdnM09pkyyWb4xt+Md5eC99n8L1
-         a9UA+mUaS5cT/mfSxUu9YwtMcPWf15KpHj10itirHOy41sTP7iZL3xJTWcs5g5QphE+x
-         bJinKCldiAM4Rd7/Iv+O4hy/96ItuRol+JFEiqxl5Zwvem0jQ7dQ+fn1ut693OxMaGz9
-         kBTQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU3t2xnp1Af2x0r0Fyq944Etu/Pt96j+WZhTyI5x5qbQ/KoJb6iac/uAEMgEfs4Nwj1ZFWe116Z9hw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwSvMAmv+i0SwoVpjm8cKN/hGC3Xk5na8N0tXGa1Rrup/+GSWb7
-	PbGEJD9C02vQidoZgki0P/VUDzRVAS+MlazsIOpH3tldFKVuuXYfb4bAcfBFcbE=
-X-Gm-Gg: ASbGncvvHkhxzxGr9T6ZQ1Tz4JeUktmGHBGMxNf0BhnkbsqYWIAtLFgNAdSdDmFQnxz
-	myapMdrIouzi5NGTkCyE+K/ULuuAKR6ZWhSk5SQ0qHtNgOoOCcn8jaV4DAgbv4TCfocA7gxiUY4
-	i7yLsmDt5NTmMwR/LpGu+gKbmMG4sAadgfmccQGnvNuqLSeqiOaymutoGvbu5VioBdmzW0kKiWz
-	Un21fTEjixtaQEhs6GwUHveYrCGpbfZia4qrWXVSRGGyPErLxhoz7LLVOATlBjxoCtDPOsf+pUs
-	QruwIx/jkuXQqRrNbxDE3UqvC2rCnpM9dg+LaGx8qI6vFAU=
-X-Google-Smtp-Source: AGHT+IHsM3QlE/6UGVvIOu1IlhPnETs+gBtT/fIeOJD2BqtDOh052hlxzN8ugWj1HusAxyIKgoI2uA==
-X-Received: by 2002:a05:6808:1590:b0:3f3:b8c5:4ff9 with SMTP id 5614622812f47-3f3b8c55799mr3309849b6e.28.1739227052973;
-        Mon, 10 Feb 2025 14:37:32 -0800 (PST)
+        bh=9KFibiHSceSI9J0YTbtHgVyCC6KTbDSSVoM74byAuKE=;
+        b=QAOlY6xEuoeRgiBSDxUNoWQZ1sHK3POJJoU695ZHCuYW9AdW5i0h++S1ciSGSjqHQb
+         cR5viVMfJsj86KkvVxt9X6AT45o4O0g8Clv2IftqOTlifbguXzjr2kuuI6qfC37mTP3b
+         J4+rmF9Mws2sSOY5YSOxVTQdc22I4bgbM44T2Ny22PNowOqQMSwsHiMUSMjS/cA5iSSd
+         bARiHCJlyaN+gCjdwKYEZPIbyR1ULc3GeStIdFaxjOcSd6EIzzKF8eqZ5BA3RDbqgZeG
+         jDvQ5X+9p3D52EChkIbaKPCQoYpi8xGiW5VxCx2KQa+xQQKjETsr7U5jUEFtMjL7DDkr
+         W5jw==
+X-Forwarded-Encrypted: i=1; AJvYcCVQtLr8XIPDdCZsAqZfxGdv4PXVJCIFnPcirPza4jrGQstgW04uTOXXyd/hBti6zDpCNTLwl/Lv7D0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw1KXU1k9Z9eOwZ7gPaKjkntpXDOLZXrLY1ztegrNA7re1FPmUB
+	acwbl2cNNL4R6yuOtcZ1xPvqegH7VcfLqVJJVrZ5rXypNRloIV5aSJWuw7toaVBpHbJGuQyAjOr
+	F
+X-Gm-Gg: ASbGncsNR58Dab6dO9HMK45OZfaCKqY30lxFoTr1SXRWL+RTl1PTJQ1180h62QoxsFt
+	KeOv51tHLY1z5ShMKxvSGmNcfivL65Rb+au4LVeyWIvS9iI53OEkV/ZaiFNgq8ocB3+gnGTu260
+	5Qhh3IFkqQECt9P2BexJdMkKhAsDQ7JNpMggYg4qo33xgnJDZpNltlO3rCDi3RqecWuwlcpSz4i
+	EUlY9KrbyuxM1U98fE1tsDWOGspW8FfgrncFWeO4cioouNF5w3DnVSwlQhHGcMADdnaz4ETsEjk
+	jyq/5aB1xCeTD7eK1PS2gZLZCncPB3PjLZRCjbvr6LyMUcU=
+X-Google-Smtp-Source: AGHT+IEqlKxdcHtWmpci4BLtxbDP+p3ZildeCHTAvguDG8QvB4Ez48M4koY5bUOldTogYj+eiwGfHw==
+X-Received: by 2002:a05:6808:250a:b0:3f3:ba60:f889 with SMTP id 5614622812f47-3f3c2696ddbmr691568b6e.28.1739227071302;
+        Mon, 10 Feb 2025 14:37:51 -0800 (PST)
 Received: from [127.0.1.1] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 5614622812f47-3f389ed1ca2sm2521820b6e.11.2025.02.10.14.37.29
+        by smtp.gmail.com with ESMTPSA id 5614622812f47-3f389ed1ca2sm2521820b6e.11.2025.02.10.14.37.48
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Feb 2025 14:37:31 -0800 (PST)
+        Mon, 10 Feb 2025 14:37:49 -0800 (PST)
 From: David Lechner <dlechner@baylibre.com>
-Date: Mon, 10 Feb 2025 16:33:27 -0600
-Subject: [PATCH v3 01/15] gpiolib: add gpiod_multi_set_value_cansleep()
+Date: Mon, 10 Feb 2025 16:33:33 -0600
+Subject: [PATCH v3 07/15] iio: adc: ad7606: use
+ gpiod_multi_set_value_cansleep
 MIME-Version: 1.0
-Message-Id: <20250210-gpio-set-array-helper-v3-1-d6a673674da8@baylibre.com>
+Message-Id: <20250210-gpio-set-array-helper-v3-7-d6a673674da8@baylibre.com>
 References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 In-Reply-To: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 To: Linus Walleij <linus.walleij@linaro.org>, 
@@ -108,11 +110,12 @@ To: Linus Walleij <linus.walleij@linaro.org>,
 Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org, 
  linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org, 
  netdev@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-sound@vger.kernel.org, David Lechner <dlechner@baylibre.com>
+ linux-sound@vger.kernel.org, Jonathan Cameron <Jonathan.Cameron@huawei.com>, 
+ David Lechner <dlechner@baylibre.com>
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_223736_218627_5F17B2A4 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20250210_223752_712671_9EA0315F 
+X-CRM114-Status: GOOD (  14.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,50 +132,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a new gpiod_multi_set_value_cansleep() helper function with fewer
-parameters than gpiod_set_array_value_cansleep().
+Reduce verbosity by using gpiod_multi_set_value_cansleep() instead of
+gpiod_set_array_value().
 
-Calling gpiod_set_array_value_cansleep() can get quite verbose. In many
-cases, the first arguments all come from the same struct gpio_descs, so
-having a separate function where we can just pass that cuts down on the
-boilerplate.
+These are not called in an atomic context, so changing to the cansleep
+variant is fine.
 
+Also drop unnecessary braces while we are at it.
+
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 Signed-off-by: David Lechner <dlechner@baylibre.com>
 ---
+ drivers/iio/adc/ad7606.c     | 3 +--
+ drivers/iio/adc/ad7606_spi.c | 7 +++----
+ 2 files changed, 4 insertions(+), 6 deletions(-)
 
-FYI, I dropped Linus' Reviewed-by: tag since adding the IS_ERR_OR_NULL()
-check isn't exactly trivial.
----
- include/linux/gpio/consumer.h | 11 +++++++++++
- 1 file changed, 11 insertions(+)
-
-diff --git a/include/linux/gpio/consumer.h b/include/linux/gpio/consumer.h
-index db2dfbae8edbd12059826183b1c0f73c7a58ff40..5cbd4afd78625367a761e224acc3f7336d310dd0 100644
---- a/include/linux/gpio/consumer.h
-+++ b/include/linux/gpio/consumer.h
-@@ -3,6 +3,7 @@
- #define __LINUX_GPIO_CONSUMER_H
+diff --git a/drivers/iio/adc/ad7606.c b/drivers/iio/adc/ad7606.c
+index d8e3c7a43678c57470a5118715637a68b39125c1..9a124139924e4a4fbbbd234a8514eb77024442b3 100644
+--- a/drivers/iio/adc/ad7606.c
++++ b/drivers/iio/adc/ad7606.c
+@@ -818,8 +818,7 @@ static int ad7606_write_os_hw(struct iio_dev *indio_dev, int val)
  
- #include <linux/bits.h>
-+#include <linux/err.h>
- #include <linux/types.h>
+ 	values[0] = val & GENMASK(2, 0);
  
- struct acpi_device;
-@@ -655,4 +656,14 @@ static inline void gpiod_unexport(struct gpio_desc *desc)
+-	gpiod_set_array_value(st->gpio_os->ndescs, st->gpio_os->desc,
+-			      st->gpio_os->info, values);
++	gpiod_multi_set_value_cansleep(st->gpio_os, values);
  
- #endif /* CONFIG_GPIOLIB && CONFIG_GPIO_SYSFS */
- 
-+static inline int gpiod_multi_set_value_cansleep(struct gpio_descs *descs,
-+						 unsigned long *value_bitmap)
-+{
-+	if (IS_ERR_OR_NULL(descs))
-+		return PTR_ERR_OR_ZERO(descs);
+ 	/* AD7616 requires a reset to update value */
+ 	if (st->chip_info->os_req_reset)
+diff --git a/drivers/iio/adc/ad7606_spi.c b/drivers/iio/adc/ad7606_spi.c
+index e2c1475257065c98bf8e2512bda921d6d88a3002..091f31edb6604da3a8ec4d2d5328ac6550faa22c 100644
+--- a/drivers/iio/adc/ad7606_spi.c
++++ b/drivers/iio/adc/ad7606_spi.c
+@@ -296,10 +296,9 @@ static int ad7606B_sw_mode_config(struct iio_dev *indio_dev)
+ 	 * in the device tree, then they need to be set to high,
+ 	 * otherwise, they must be hardwired to VDD
+ 	 */
+-	if (st->gpio_os) {
+-		gpiod_set_array_value(st->gpio_os->ndescs,
+-				      st->gpio_os->desc, st->gpio_os->info, os);
+-	}
++	if (st->gpio_os)
++		gpiod_multi_set_value_cansleep(st->gpio_os, os);
 +
-+	return gpiod_set_array_value_cansleep(descs->ndescs, descs->desc,
-+					      descs->info, value_bitmap);
-+}
-+
- #endif
+ 	/* OS of 128 and 256 are available only in software mode */
+ 	st->oversampling_avail = ad7606B_oversampling_avail;
+ 	st->num_os_ratios = ARRAY_SIZE(ad7606B_oversampling_avail);
 
 -- 
 2.43.0
