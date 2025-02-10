@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AE3BC0219B
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF8C0C021A1
 	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 17:40:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,58 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TGFwtslfcN5u1s3po2oDtTHyxmqrkaySvvPdCAbuGmI=; b=I8SRKWaudd7hWj
-	70j8d3c0+G+QwVu7ZnlGWRf2AvXdyR5JmRbUdicASjZEzFqAzNV7dFV4xaYkXTLhMZ5DXnxsyBWKQ
-	17WFFbll8ph47oaxqyr+x9EJ7n39hiFaQPn8WERWfYi6qy7v1sCHPBbFZOa5JPUrtloJzT9utZhZP
-	VBVroQDcQkgneR1w7aDDSPgYbdJtJPWkmMUBPX8qO61NZBH8vEKSPvaii8CXOaCFuFTtQpdxHDuqi
-	gLcy6HT5qWI4LHX8GWvdiJHhJy+GZ5fNjIvx8/V7bqwB2zeEQHuoqvRZfUW54Hx7FxuBiEIlbUVYZ
-	HQuUaYFXNAd/ObGStkoQ==;
+	List-Owner; bh=19SZBzYzvmkJTTsDNcD/W1qT1TGh+NL63P2ijDlIcoo=; b=ze5Vj1D3qMXoc2
+	nDNwtuhGbGUiUn6ax6CbzjV6oMh3odAbBMl+NYA3m16SFgdGcLIFEwl0CIZ9EidqUiqjZQ/ssOdQF
+	Q66cjG0/wmZWTT7EQZtOkFEbbxf6DqKKFj57m4rny4SFeFQKEg0wnTR/KqbNXzJbBJtVtcE6mabaz
+	/N/zeA+wIHGQPXAzyPNBFf4DCWGXuen7h8ubf34nDFBksNLGOOCjhqklHlHB1Dv9WZH7Y2mjtjJbr
+	uafgwV5JaJz6qkvUzdhpOO0w0+1TxfMGL9CTzh1HedZItc61/LuDCmZ4S2bvqwuhEB7c6TxJLTEji
+	rnBeNQTK+ebt1aRwyjbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thXlJ-00000000lFu-0qoZ;
+	id 1thXlJ-00000000lGJ-21ZC;
 	Mon, 10 Feb 2025 17:40:01 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thXTA-00000000hSZ-29am
+	id 1thXTD-00000000hTz-1IPt
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Feb 2025 17:21:18 +0000
+	Mon, 10 Feb 2025 17:21:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 33D6CA41C25;
-	Mon, 10 Feb 2025 17:19:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E1E7C4CED1;
-	Mon, 10 Feb 2025 17:21:10 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 0426EA41C25;
+	Mon, 10 Feb 2025 17:19:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BEC6C4CEE5;
+	Mon, 10 Feb 2025 17:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739208075;
-	bh=nZQV1M8VioPGk0QM/byl7cQeGIZPLm10q9X0KPkc0mM=;
+	s=k20201202; t=1739208078;
+	bh=4dfjPhPpwR3tUG3LV/LuaU/Rp/qJ4AK81d8QI0QBwJo=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=hatvvd7ZA2jhfAgyNWC5wYRlzenwFWVjyxBvHTFy1KqH8IKfKYI7eP+nEQM/l4aSW
-	 0hAnr7YRdK739JQLX3pDLQ606IwOP20vzJu3+zg6rxMC08IubpXlFIpGIzDPg/OKoo
-	 5WLrDSLBECYEPMrxn7hHGQJA9tC7bOBvLJid/NuMWC6j/wogokqTXXyukxBjgwbhNq
-	 sxAhnDKvO5WArkXO3qF6ENLOquTMBG/5UGVATs4ne/Pcg/Mzugp0Ei6cl1g6pdDOUl
-	 A726z1LofPT5jZuxR1J57FNm3MDTkI+yfwSJ3lrZoieLToD/thk4POXpKbUhZ9Knf9
-	 QK98S8z0NA59g==
+	b=DH6Zbwwo9rIA6asG82bQ7YALq4p8NbT/a4sRQZnAM5sGqJFAs9cpiJ9i1BDG1ah7k
+	 ufr1tXUPnGsN4o7OTiiVo07KkyhDZveBR5ASw9yENdACh9RTx7z0PFtGldTgCUmr1d
+	 vmRUAWg6cA3w3NaeyAnmDow48R8J3shmM1iIDV8YfhzkAx72kNMZGH0E8sUk9Jvsn+
+	 StF2YO8/s5pgKmJwQJuT7eujtnaERrzknEMeCbolJlE8Uu/Us8Z89xXQZMTu9h7a7V
+	 L5g6arvl26eL37/gyiQKfi8hSLy8cc1WxFBlRY0ldIMmCwt3R7ZrofVtvfDq6FRx0A
+	 0ixmpZRSbGDTA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: Marijn Suijten <marijn.suijten@somainline.org>, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
- Jens Glathe <jens.glathe@oldschoolsolutions.biz>
-In-Reply-To: <20250203-topic-x1p4_dts-v2-0-72cd4cdc767b@oss.qualcomm.com>
-References: <20250203-topic-x1p4_dts-v2-0-72cd4cdc767b@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v2 0/6] X1P42100 DT and PCIe PHY bits
-Message-Id: <173920807069.103786.582122226183842202.b4-ty@kernel.org>
-Date: Mon, 10 Feb 2025 22:51:10 +0530
+To: Marc Kleine-Budde <mkl@pengutronix.de>, 
+ Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20250203185421.3383805-2-robh@kernel.org>
+References: <20250203185421.3383805-2-robh@kernel.org>
+Subject: Re: [PATCH] phy: can-transceiver: Drop unnecessary "mux-states"
+ property presence check
+Message-Id: <173920807568.103786.8838731795889395787.b4-ty@kernel.org>
+Date: Mon, 10 Feb 2025 22:51:15 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_092116_618169_989D07DD 
-X-CRM114-Status: UNSURE (   6.58  )
+X-CRM114-CacheID: sfid-20250210_092119_428956_688F6FDE 
+X-CRM114-Status: UNSURE (   5.52  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,25 +78,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 03 Feb 2025 15:43:19 +0100, Konrad Dybcio wrote:
-> X1P42100 is a(n indirect) derivative of X1E80100 - the silicon is
-> actually different and it's not a fused down part.
+On Mon, 03 Feb 2025 12:54:21 -0600, Rob Herring (Arm) wrote:
+> It doesn't matter whether "mux-states" is not present or there is some
+> other issue parsing it causing an error. Drop the presence check and
+> rework the error handling to ignore anything other than deferred probe.
 > 
-> Introduce the DTS bits required to support it by mostly reusing the
-> X1E SoC and CRD DTSIs. The most notable differences from our software
-> PoV are a different GPU (support for which will be added later), 4
-> less CPUs and some nuances in the PCIe hardware.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/6] dt-bindings: phy: qcom,qmp-pcie: Add X1P42100 PCIe Gen4x4 PHY
-      commit: 2e1ffd4c180591e6a46c7f94a6bb187a0661141e
-[2/6] dt-bindings: phy: qcom,qmp-pcie: Drop reset number constraints
-      commit: f67f8c61b7fd3f72cf716b3845211e69265d13bd
-[3/6] phy: qcom: qmp-pcie: Add X1P42100 Gen4x4 PHY
-      commit: 0d8db251dd15d2e284f5a6a53bc2b869f3eca711
+[1/1] phy: can-transceiver: Drop unnecessary "mux-states" property presence check
+      commit: d02dfd4ceb2e9f34caaaaf87105267e2f722f443
 
 Best regards,
 -- 
