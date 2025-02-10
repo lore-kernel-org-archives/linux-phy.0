@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF8C0C021A1
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 17:40:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A80AC02198
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 17:41:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19SZBzYzvmkJTTsDNcD/W1qT1TGh+NL63P2ijDlIcoo=; b=ze5Vj1D3qMXoc2
-	nDNwtuhGbGUiUn6ax6CbzjV6oMh3odAbBMl+NYA3m16SFgdGcLIFEwl0CIZ9EidqUiqjZQ/ssOdQF
-	Q66cjG0/wmZWTT7EQZtOkFEbbxf6DqKKFj57m4rny4SFeFQKEg0wnTR/KqbNXzJbBJtVtcE6mabaz
-	/N/zeA+wIHGQPXAzyPNBFf4DCWGXuen7h8ubf34nDFBksNLGOOCjhqklHlHB1Dv9WZH7Y2mjtjJbr
-	uafgwV5JaJz6qkvUzdhpOO0w0+1TxfMGL9CTzh1HedZItc61/LuDCmZ4S2bvqwuhEB7c6TxJLTEji
-	rnBeNQTK+ebt1aRwyjbw==;
+	List-Owner; bh=XPi4sDqZFGRz+2z8qq5k9MhHHgkZefOKD+RM1GSiu5k=; b=aJxpyBHqQpty1I
+	chirRBN8EYRH+n+uuqSbNZ59jEtl1YkK+L8bICtu8VgT6upnKUzcVyCdRphR8XW23kPpkIF1UXO/c
+	nEP6T351IbGzp9QlSrKSUOnXZJumVF8BtCrUMLqaixADaLBsmOu9MnDBa9co+hRrHj2U1gnVMtX2E
+	MlOXn4llO+K2jYrpT9d60NaiYclCoIqiUD08GGbaMCF9rWegNCglna6bqMve0i4bUrOIaYqiYnEQn
+	WKkbzQKQHqmYcMSyR8A3Uo+tQQVJaDypXXj5m8bsWiiSOaf5BuHQ4Su8B6INCdwFM4a4l+xBJXVWl
+	WeZoNeCRAQ0ysF9bGZ5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thXlJ-00000000lGJ-21ZC;
-	Mon, 10 Feb 2025 17:40:01 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1thXmf-00000000lUY-3kvJ;
+	Mon, 10 Feb 2025 17:41:25 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thXTD-00000000hTz-1IPt
-	for linux-phy@lists.infradead.org;
-	Mon, 10 Feb 2025 17:21:20 +0000
+	id 1thXTH-00000000hUK-0bsL;
+	Mon, 10 Feb 2025 17:21:24 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 0426EA41C25;
-	Mon, 10 Feb 2025 17:19:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1BEC6C4CEE5;
-	Mon, 10 Feb 2025 17:21:15 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id DC72FA41C4D;
+	Mon, 10 Feb 2025 17:19:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E094FC4CEE7;
+	Mon, 10 Feb 2025 17:21:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739208078;
-	bh=4dfjPhPpwR3tUG3LV/LuaU/Rp/qJ4AK81d8QI0QBwJo=;
+	s=k20201202; t=1739208082;
+	bh=IKvRI5uf+aD+nZqPr2KfiHGfOxumlIrmYZ9wIyQhmLM=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=DH6Zbwwo9rIA6asG82bQ7YALq4p8NbT/a4sRQZnAM5sGqJFAs9cpiJ9i1BDG1ah7k
-	 ufr1tXUPnGsN4o7OTiiVo07KkyhDZveBR5ASw9yENdACh9RTx7z0PFtGldTgCUmr1d
-	 vmRUAWg6cA3w3NaeyAnmDow48R8J3shmM1iIDV8YfhzkAx72kNMZGH0E8sUk9Jvsn+
-	 StF2YO8/s5pgKmJwQJuT7eujtnaERrzknEMeCbolJlE8Uu/Us8Z89xXQZMTu9h7a7V
-	 L5g6arvl26eL37/gyiQKfi8hSLy8cc1WxFBlRY0ldIMmCwt3R7ZrofVtvfDq6FRx0A
-	 0ixmpZRSbGDTA==
+	b=VxI04hkZoo5zoOfSQd+FXAaLIoEznbe3LKQjRcsfKe4KCOzoYJEf3lUrtp97K/XZN
+	 4ZGraAAU+k7IXpFTBG0JO4TZVbj5vqoiIor/GUoUVyLQKt22hp3B3r7OS4gYDkESXf
+	 YT1hYfCDqR1thN4NzfjaQu+ZtaEH1jmgfcwtIbOe9tGIfVTlZvRVrdXHtTtoTt86Pq
+	 LOaauNhaoRLbHmUk/TBDzoz98Uo5LigAllJJrZfJRksLkXjfKD3lPIAQZDJWQqMwmS
+	 XbUv+SVnJYcVtL/zUXVFtjsM8en4iPWKuMmRF57Os0wA+JtD4FKqu7vUffvBztJOU2
+	 +xrQh43GHdVWA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Marc Kleine-Budde <mkl@pengutronix.de>, 
- Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, 
- "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20250203185421.3383805-2-robh@kernel.org>
-References: <20250203185421.3383805-2-robh@kernel.org>
-Subject: Re: [PATCH] phy: can-transceiver: Drop unnecessary "mux-states"
- property presence check
-Message-Id: <173920807568.103786.8838731795889395787.b4-ty@kernel.org>
-Date: Mon, 10 Feb 2025 22:51:15 +0530
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Heiko Stuebner <heiko@sntech.de>, "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org
+In-Reply-To: <20241231163121.241543-1-robh@kernel.org>
+References: <20241231163121.241543-1-robh@kernel.org>
+Subject: Re: [PATCH] phy: Use (of|device)_property_present() for
+ non-boolean properties
+Message-Id: <173920807849.103786.14338216546875530681.b4-ty@kernel.org>
+Date: Mon, 10 Feb 2025 22:51:18 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_092119_428956_688F6FDE 
-X-CRM114-Status: UNSURE (   5.52  )
+X-CRM114-CacheID: sfid-20250210_092123_249002_41435BD4 
+X-CRM114-Status: UNSURE (   5.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,17 +79,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 03 Feb 2025 12:54:21 -0600, Rob Herring (Arm) wrote:
-> It doesn't matter whether "mux-states" is not present or there is some
-> other issue parsing it causing an error. Drop the presence check and
-> rework the error handling to ignore anything other than deferred probe.
+On Tue, 31 Dec 2024 10:31:20 -0600, Rob Herring (Arm) wrote:
+> The use of (of|device)_property_read_bool() for non-boolean properties
+> is deprecated in favor of (of|device)_property_present() when testing
+> for property presence.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: can-transceiver: Drop unnecessary "mux-states" property presence check
-      commit: d02dfd4ceb2e9f34caaaaf87105267e2f722f443
+[1/1] phy: Use (of|device)_property_present() for non-boolean properties
+      commit: 88c0053baed659acd85b87dd52cbd75f3d8806be
 
 Best regards,
 -- 
