@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31DFFC0219B
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 09:39:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BF74C0219B
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 09:41:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D5/TXfialNJIIbVC/uRATuR1m/maC3y6RH2vrUFU1v4=; b=iNV+PPPj01aFl8
-	SAM7bdpGOj6/NmjFYorSCAQWaPK9D7Aw6sR4RT7pYf5TMQfa5Y9/lNKPjtQHXoDoTBxwVOrKJ94n4
-	TkNUpDKtONpPazsNT1ND2p02m6hE7a5fQOecNRssMkHg/YjbcITL2N6i7bZt7myeLENvheLvtj/al
-	35ebgCi45E1mGEdX6x8ZHwaHPO1lmOYuRnk0735nvJkDI/HNti3myb4nuJPsrzeCGFGEushM9pqnM
-	BhX+zd+/t25XvIJELCRTKRsbgMQdDsoApvr6INyTySD9GYHyHM292BmWwvtFsJ8fWAQzTRLJCTZhL
-	spDuRxXbndQR7tfX96cw==;
+	List-Owner; bh=WdZKajfvMOnPPE8nD9qKOvsUaEKrwWB/WLXyD0xZL2M=; b=jU6XaM75oHHaa8
+	EqhfTGSAYoUzfd4oH+HdlUlBjfbvJXjL/ifxO9JTmlnA0KO3mgLgB6x5kUiiWoRPPH/jp5cm0vmsy
+	ozyjCy/3crX8t31C9xKdUxSKr1oJJ5mhpiXJGwofVMld90NQfMPqXzB2rok82yxs9pkyP2+3t2wIg
+	nZ54slHdcKRpyHt4oL+ZdlmkHPaQgPjQyy83vX0rXKk1QBrk3hW6LeFGRfxlzUH8NCwhXTsj34Apq
+	pBjt7h2yZB7CoTvRSiy3QCpPi5V+Y1RFqmu8vQOHItsA5QgIADZAP+L4g9CeF+Yp6QTEdfS2t7PUJ
+	1i20DqEjp+PUOiRuQ0Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thmjs-00000003DZp-2mXG;
-	Tue, 11 Feb 2025 09:39:32 +0000
-Received: from mgamail.intel.com ([192.198.163.9])
+	id 1thmlb-00000003E0U-0KAx;
+	Tue, 11 Feb 2025 09:41:19 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thmjh-00000003DWg-1fsq
+	id 1thmlY-00000003Dzc-2cTZ
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Feb 2025 09:39:22 +0000
-X-CSE-ConnectionGUID: MphG/H2lTh+7HqXTXfNkUw==
-X-CSE-MsgGUID: 8oDDryZaQFmC8e9fWehtAw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11341"; a="50512309"
+	Tue, 11 Feb 2025 09:41:17 +0000
+X-CSE-ConnectionGUID: 1HlgeI1ERtCMeFAo9A3iyA==
+X-CSE-MsgGUID: 9moNGQ1XQUScj/3Mrrz5zw==
+X-IronPort-AV: E=McAfee;i="6700,10204,11341"; a="50510267"
 X-IronPort-AV: E=Sophos;i="6.13,277,1732608000"; 
-   d="scan'208";a="50512309"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2025 01:39:20 -0800
-X-CSE-ConnectionGUID: cJvLFL1FQAm1X4Xl9szJ9g==
-X-CSE-MsgGUID: WtVy6JKQSCiOBQl3Jo+Lvg==
+   d="scan'208";a="50510267"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2025 01:41:10 -0800
+X-CSE-ConnectionGUID: M4q0L3FITbuvBztdQMvbJg==
+X-CSE-MsgGUID: Cg7Uozc6SoWKjkvUHvaTwQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
-   d="scan'208";a="112318016"
+   d="scan'208";a="143364716"
 Received: from smile.fi.intel.com ([10.237.72.58])
-  by orviesa010.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2025 01:39:13 -0800
+  by fmviesa001.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2025 01:41:03 -0800
 Received: from andy by smile.fi.intel.com with local (Exim 4.98)
 	(envelope-from <andy@kernel.org>)
-	id 1thmjV-0000000ASXJ-1H97;
-	Tue, 11 Feb 2025 11:39:09 +0200
-Date: Tue, 11 Feb 2025 11:39:09 +0200
+	id 1thmlH-0000000ASZ3-2ikX;
+	Tue, 11 Feb 2025 11:40:59 +0200
+Date: Tue, 11 Feb 2025 11:40:59 +0200
 From: Andy Shevchenko <andy@kernel.org>
 To: David Lechner <dlechner@baylibre.com>
 Cc: Linus Walleij <linus.walleij@linaro.org>,
@@ -70,18 +70,17 @@ Cc: Linus Walleij <linus.walleij@linaro.org>,
 	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
 	linux-mmc@vger.kernel.org, netdev@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
-Subject: Re: [PATCH v3 01/15] gpiolib: add gpiod_multi_set_value_cansleep()
-Message-ID: <Z6savSGQhDGA_Z9k@smile.fi.intel.com>
+Subject: Re: [PATCH v3 05/15] bus: ts-nbus: use bitmap_get_value8()
+Message-ID: <Z6sbK96JEBpWoFWy@smile.fi.intel.com>
 References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <20250210-gpio-set-array-helper-v3-1-d6a673674da8@baylibre.com>
+ <20250210-gpio-set-array-helper-v3-5-d6a673674da8@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250210-gpio-set-array-helper-v3-1-d6a673674da8@baylibre.com>
+In-Reply-To: <20250210-gpio-set-array-helper-v3-5-d6a673674da8@baylibre.com>
 Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_013921_476052_646211A8 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250211_014116_678692_7615FCFD 
+X-CRM114-Status: GOOD (  10.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,17 +97,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 10, 2025 at 04:33:27PM -0600, David Lechner wrote:
-> Add a new gpiod_multi_set_value_cansleep() helper function with fewer
-> parameters than gpiod_set_array_value_cansleep().
+On Mon, Feb 10, 2025 at 04:33:31PM -0600, David Lechner wrote:
+> Use bitmap_get_value8() instead of accessing the bitmap directly.
 > 
-> Calling gpiod_set_array_value_cansleep() can get quite verbose. In many
-> cases, the first arguments all come from the same struct gpio_descs, so
-> having a separate function where we can just pass that cuts down on the
-> boilerplate.
+> Accessing the bitmap directly is not considered good practice. We now
+> have a helper function that can be used instead, so let's use it.
 
-LGTM now,
+Thank you, LGTM (one minor thing you may address,
+or keep it as in the current variant of the patch),
+
 Reviewed-by: Andy Shevchenko <andy@kernel.org>
+
+...
+
+> +#include <linux/bitmap.h>
+>  #include <linux/bitops.h>
+
+bitmap.h implies bitops.h
 
 -- 
 With Best Regards,
