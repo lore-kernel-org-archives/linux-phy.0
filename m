@@ -4,47 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8C08C0219B
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 21:06:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F321BC0219B
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 21:09:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yqzdSBGwS1j57ZjSvREXHEolkcMcpqtQn37PmpFoaNw=; b=HCuRkL4yWVjXaW
-	onj6eSp1jazFq1/LvjgSnHCtDoNN9/tDVbBATCn18XChH6Cm+bjI10V/jGTJgZbRIr7JEiwygaja+
-	Jz4UOHJ15wcxBMw6BGDv+KpCmvjI4qJX/K+RlFVgkJOI4FUAwha3Fac6WMBaFafypKqKryfFpOXUF
-	tl1g+OfjziP0p8KwCzPM6ZbwAfJO+v1qHGfQow7qbxyocJERJRNkuwE1Ae7DwPpoMVDApsMpPGSFF
-	bTEWnvJCBrui3gdxqCeZeOP/NzEEHS1UyacSG/l7139y4zvxtNPdg60eJaiLz60jWzIuqesAeIID8
-	Nbwt3cNc1SfQzcrGaosw==;
+	List-Owner; bh=MPYvjZMTHEGFUkZZltWPtD2WEA4ADGRlSH4DWIGTEaE=; b=s3KNNfK2AP7TI3
+	owe42k69pjLVVny8jiGhAl4nHixhVJMo7Ff7H2qemTbzFVhwSbDTmoXgZX+jdRRg2zc6O35e2N0sx
+	SsxfVSahLfoDQQYON4LftBDl4dYtScTNesYD4L9cpcJ6iGOSgibkad5NP/RfVWVLC/MsZkzI2SRc6
+	ApiYyJtQKTLVL9c7s6kXW9xRL1V0L5ttU4eizW99nrtckvuho/G3vjmS5lz1PVXHxb7H0sgNoeYkc
+	n3RQV4VTQrR8PgowgDbq5LDym5PaPKx835e8LtO6syFmFayvhE9ftM9MgxXH7sIx45L3g4E1gklpl
+	MO8PwgbWqsh0hIBZXHvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thxSo-00000005HqN-25rw;
-	Tue, 11 Feb 2025 21:06:38 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1thxVq-00000005InY-38yK;
+	Tue, 11 Feb 2025 21:09:46 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thxQa-00000005HRd-2JSn;
-	Tue, 11 Feb 2025 21:04:21 +0000
+	id 1thxUO-00000005IJH-2N0v;
+	Tue, 11 Feb 2025 21:08:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4FCBC5C5658;
-	Tue, 11 Feb 2025 21:03:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45BC5C4CEDD;
-	Tue, 11 Feb 2025 21:04:19 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2582FA40D7F;
+	Tue, 11 Feb 2025 21:06:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26979C4CEE2;
+	Tue, 11 Feb 2025 21:08:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739307859;
-	bh=QBM1KecRIyqwFJKJr5Qa6EXftCFXKvIfRc/X2og4zNY=;
+	s=k20201202; t=1739308095;
+	bh=bGAOKA1MkNL81iEciQ/YaP9238hsjmHj0yVs2PHuZjM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=UJ1e4HBR4HykvJcDifuZAV8jxb26dyJveTq4z6xAuQl98eFIDF/Fzj/Ai65OpksOx
-	 QUCBtM/uoWTrskBIGCgtSKyIFp6yLq2z1IhOzZRQ3aMPDXnX/AbPWXp6IpHagE0j/p
-	 2ZpWzK7McjscizTIHAHMBJq0TQd3uXuGgISTx5WUgH3RmB4GAsmw9IOpXq56vgzeTN
-	 5xNFdHSdjwxipTAVpG9gZcXkjwnm82a7ZekzpkFn/OxjJsu1KgdZ5md6U+4gNsyneK
-	 ugdWWtiuYFFHt8WJy5FdipuWXeUXN7jxtCF9qQMAAdk61NSbuhmR7XyJ9W6VdtoOVG
-	 ZLAeOXFopDtlg==
-Date: Tue, 11 Feb 2025 15:04:18 -0600
+	b=WQ+4Fr4obzotuKZeY0/kEEylnLtsOD6qn4FsTE6130dX+MJjMj/w+e8PP+Rimq72C
+	 TrSDrPoODZpQ0mWRSCDfuz5DIEnbG4cxoY5xlGdm+mXlMGfSE1wUUT/m3Jspj+9rrA
+	 G81fXqid9RUh9II6oOuWG9CkvC3Lbz3ogvPg7KAEakKMpacaZBCIQWesFL8M9BTx6U
+	 Zbzo+M49Pq+rEzRVuGgmkNbc7Ew8iY78IZleQNZb3B+N5X07Yyb4F1putZOT+qAPRP
+	 5y1Ze4HTH/9MfNe8uOxWCKn4VxNHAhJ+YFRaj67QNEb3ULeJzPFkuvAsj7C99etlv+
+	 6Sy+bxDDNG+AA==
+Date: Tue, 11 Feb 2025 15:08:14 -0600
 From: Rob Herring <robh@kernel.org>
-To: Andras Szemzo <szemzo.andras@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
+To: Andre Przywara <andre.przywara@arm.com>
+Cc: Andras Szemzo <szemzo.andras@gmail.com>,
+	Michael Turquette <mturquette@baylibre.com>,
 	Stephen Boyd <sboyd@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
@@ -65,16 +66,17 @@ Cc: Michael Turquette <mturquette@baylibre.com>,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-gpio@vger.kernel.org, linux-pm@vger.kernel.org,
 	linux-riscv@lists.infradead.org
-Subject: Re: [PATCH v2 07/10] dt-bindings: phy: allwinner: add v853 usb phy
-Message-ID: <20250211210418.GA1172102-robh@kernel.org>
+Subject: Re: [PATCH v2 09/10] ARM: dts: sun8i: add DTSI file for V853
+Message-ID: <20250211210814.GB1172102-robh@kernel.org>
 References: <20250205125225.1152849-1-szemzo.andras@gmail.com>
- <20250205125225.1152849-8-szemzo.andras@gmail.com>
+ <20250205125225.1152849-10-szemzo.andras@gmail.com>
+ <20250206161958.1ae885db@donnerap.manchester.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250205125225.1152849-8-szemzo.andras@gmail.com>
+In-Reply-To: <20250206161958.1ae885db@donnerap.manchester.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_130420_634826_ED24511B 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20250211_130816_730011_34E21304 
+X-CRM114-Status: GOOD (  19.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,36 +93,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 05, 2025 at 01:52:22PM +0100, Andras Szemzo wrote:
-> Document Allwinner v853 USB phy.
+On Thu, Feb 06, 2025 at 04:19:58PM +0000, Andre Przywara wrote:
+> On Wed,  5 Feb 2025 13:52:24 +0100
+> Andras Szemzo <szemzo.andras@gmail.com> wrote:
 > 
-> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
-> ---
->  .../devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml   | 2 ++
->  1 file changed, 2 insertions(+)
+> Hi,
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
-> index 21209126ed00..815742c4f5fb 100644
-> --- a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
-> @@ -19,9 +19,11 @@ properties:
->        - enum:
->            - allwinner,sun20i-d1-usb-phy
->            - allwinner,sun50i-a64-usb-phy
-> +          - allwinner,sun8i-v853-usb-phy
->        - items:
->            - const: allwinner,sun50i-a100-usb-phy
->            - const: allwinner,sun20i-d1-usb-phy
-> +          - const: allwinner,sun8i-v853-usb-phy
+> > V853/V851 is a new SoC by Allwinner. Add a basic dtsi file for it.
+> > 
+> > Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+> > ---
+> >  arch/arm/boot/dts/allwinner/sun8i-v853.dtsi | 656 ++++++++++++++++++++
+> >  1 file changed, 656 insertions(+)
+> >  create mode 100644 arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
+> > 
+> > diff --git a/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi b/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
+> > new file mode 100644
+> > index 000000000000..8b82b8783127
+> > --- /dev/null
+> > +++ b/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
+> > @@ -0,0 +1,656 @@
+> > +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
+> > +// Copyright (C) 2024 Andras Szemzo <szemzo.andras@gmail.com>
+> > +
+> > +#include <dt-bindings/clock/sun6i-rtc.h>
+> > +#include <dt-bindings/clock/allwinner,sun8i-v853-r-ccu.h>
+> > +#include <dt-bindings/reset/allwinner,sun8i-v853-r-ccu.h>
+> > +#include <dt-bindings/clock/allwinner,sun8i-v853-ccu.h>
+> > +#include <dt-bindings/reset/allwinner,sun8i-v853-ccu.h>
+> > +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +#include <dt-bindings/power/allwinner,sun8i-v853-ppu.h>
+> > +
+> > +/ {
+> > +	#address-cells = <1>;
+> > +	#size-cells = <1>;
+> > +
+> > +	dcxo: dcxo-clk {
+> 
+> What's people's opinion about the node name? Traditionally we call this
+> "osc24M", in all the other SoCs except D1 and A100. So is this the new
+> black?
 
-You just changed existing users. 
+That's documented (but not enforced) in fixed-clock.yaml now. It's 
+"clock-<freq-in-hz>".
 
->  
->    reg:
->      items:
-> -- 
-> 2.39.5
-> 
+Rob
 
 -- 
 linux-phy mailing list
