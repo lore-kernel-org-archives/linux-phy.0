@@ -4,65 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A5B9C0219B
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 17:50:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12747C021A1
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 18:42:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zuTnT8f8LFk4SMf2lSvCbWv32esrHAe54LqCSEvVqHw=; b=Q2fgYlBWSrFZW5
-	vvOLQOAREHfap0CzZOeW/n3BB+lEjDrQjCMx4ywYhFFcCUINBI/wziNXofwCRAWA2EEOsAwpgyi24
-	0xtQX/5k7x5oO3CUNpyUDtyjM3ywQLcnhAg4j4u+ZAbH5fvUTkbH6q34QLJohorpgB3xXp59UJLbD
-	Va15HCn8Bw7H4ayA9H0IGTfpLkTYVuhaA6uLWfFtv1ldH0aujauuauvTZpCNl0P+N2T8ybcngMPaP
-	KmtVqm/5b/xSQvBu8JubAe9zXSl25O4fHWFa6PqHGwhfciuBStxaCz6KhJvfQh7+tcDRX4H1QWelj
-	0jTdIXf0B57JR3SWQq6g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=MmaNeC9luh8c6xEhiu6Fol/kSmcr6WiqR/iKukpQViw=; b=gA22+MYBZ2yQByDZNles+I+G4Z
+	h40IswGQy6GLySj8wLTjUemyr9A47LhqocNeGTTsw1VAJfn+GFnrkBJCi+GjlvIlrhzs0RzTQNaGB
+	DyOnxJRF4ER9VUgNKSDQRNvN+KdhYufMh1i91PpuTglXONkZl1GTEGBNJlQi/NNE5cuLB+aZy5yMg
+	ovVBxjBG8s7aGlrF9I01QSdGXXHBpvn8CDm/+WmiF2Dn7GLSrsH3eLud9jAxHD6DTp2hXVOWdoH16
+	y6unm1sLnB+Vhoa+AKn9TBSHDnLHSw2HPUlJS4lsMM9hcX7SuYpIyfoUCyHvUIBBneNJKOPJDYN5g
+	zAjoDAuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thuOp-00000004khR-1bU2;
-	Tue, 11 Feb 2025 17:50:19 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1thvD7-00000004t2N-0VPd;
+	Tue, 11 Feb 2025 18:42:17 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thuNA-00000004kOg-41oX;
-	Tue, 11 Feb 2025 17:48:38 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 9557725C4B;
-	Tue, 11 Feb 2025 18:48:35 +0100 (CET)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id g3ydeW4wkoKu; Tue, 11 Feb 2025 18:48:31 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1739296111; bh=Z8lWfXxYGhsMs8dAs2Wwm4xHfFeTOKBFHHc/bDiuT6k=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=jVFyeOtMDokw97k1t1QawSgEVgDg94c6AYdfNp+jiEPTBsNMz3S1wTHjXUHI19PDX
-	 TEo4SERflwLXqeKpRjqLiLoLa3Q7/i/EkKiSBaqjTwG2mAHqctBKRefvWCjfq34Lp3
-	 4KLgd6SJ01GbvFtqZrTHOU4PNqzAL7usAKoRH2lBapvnxEqT0ir7zrueYtjJUm5pvg
-	 eFwcq9UGe1Dk7K9VRRTwVaDlgTI3zLrvz2YogYczVhi11QPiGZnvoOUBKDNYgEYiqi
-	 J+3smDToYRaPYIPnrPAnm0CBvgoCzSKzsimhJyn9hLFDE4g690g4176IZgaxxxOUOk
-	 /1ynOknIAOGhg==
+	id 1thv1p-00000004qlg-2Gyn;
+	Tue, 11 Feb 2025 18:30:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=+81GJ2Ed5kEguiInJKiepzHO9GSn8dLtYS8lNL93dKc=; b=nBkvSj70UI3gVuMe4oRYyKQvpg
+	aAwk66xqmQflX6iB7Oetn2SMefuFJVqdIqenPvotXvohLZv0SRdo+8WBz3M1ouJdgK30EGIiesoFu
+	DCYKwR1008twCxfXCxmyRdcMsZnfLsi5DIVDv9OO3zwU7owymfwh8TDV/0T0WNt1t+Y0vh2LzbuwB
+	0fF2oC8dTaoyetAieNA2SDcD3HQYGJlPkBhrjVz1Hb5s0r3YwBKRrd5F9eV91rdpCuKPVZZvivmhb
+	OoANAKT54DpybGglU45R0UiyLO9U/5vhyOgeiRF60IR0rps7eBwNm7VemIWta8v1UWEj5c2YRqdPD
+	AyO878Aw==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1thv1m-00000000g8n-2gbg;
+	Tue, 11 Feb 2025 18:30:36 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 666A95C4D7F;
+	Tue, 11 Feb 2025 18:29:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44F90C4CEDD;
+	Tue, 11 Feb 2025 18:30:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1739298632;
+	bh=MXkpdxUrKwlNGyhfGqjpT3gM++JqSC+ekFB+wz6S6C4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=LCyHpRREJtOY2Tvjhmv03vG4+reEXqTnt+Z16GX1SfqS0MjxOwCo1EkI7LsyZe667
+	 yI9on/ejRJGqty+zjK9W38REK0RkwwpIRuQCIMMu6VGuc7I6Sxdor9CL8VJA9sQSfP
+	 hfqIGAk+U6UY8++83IseOi+KOi6orwI9zC5TEWJ4IV/KxoyZtizGTzuofkrl2/UHl+
+	 9EzKiewIdemBesCWREr8SU6FJWyoQgcHnhUIsC3VfdrS9uL/ckmRjak7S4HIkz0wIN
+	 kToARy9Bzz1GXAlbUO7Ubvq1yuhDW3JxiOMRQ5HoRrVzJomx/qY8WCJS2yFDlKE22U
+	 L8GFUoMbB1QzA==
+Date: Tue, 11 Feb 2025 18:30:28 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Chunfeng Yun =?utf-8?B?KOS6keaYpeWzsCk=?= <Chunfeng.Yun@mediatek.com>
+Cc: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"robh@kernel.org" <robh@kernel.org>,
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+	"vkoul@kernel.org" <vkoul@kernel.org>,
+	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Subject: Re: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add
+ property to set disconnect threshold
+Message-ID: <20250211-destiny-crablike-ab17a2814b7a@spud>
+References: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
+ <20250113-aerobics-tall-e570d8bbcf2c@spud>
+ <e61b61574bd58c1bbc0648257fb4ab23ed582de0.camel@mediatek.com>
 MIME-Version: 1.0
-Date: Tue, 11 Feb 2025 17:48:31 +0000
-From: Kaustabh Chakraborty <kauschluss@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar
- <alim.akhtar@samsung.com>, Vivek Gautam <gautam.vivek@samsung.com>, Rob
- Herring <robh@kernel.org>, Conor Dooley <conor@kernel.org>, Marek Szyprowski
- <m.szyprowski@samsung.com>, Sylwester Nawrocki <s.nawrocki@samsung.com>
-Cc: Sergey Lisov <sleirsgoevy@gmail.com>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, Kaustabh
- Chakraborty <kauschluss@disroot.org>
-Subject: Re: [PATCH 4/4] phy: exynos5-usbdrd: add exynos7870 USBDRD support
-In-Reply-To: <20250204-exynos7870-usbphy-v1-4-f30a9857efeb@disroot.org>
-References: <20250204-exynos7870-usbphy-v1-0-f30a9857efeb@disroot.org>
- <20250204-exynos7870-usbphy-v1-4-f30a9857efeb@disroot.org>
-Message-ID: <ba9aee5d125cd9bd2eea02d283877b5a@disroot.org>
-X-Sender: kauschluss@disroot.org
+In-Reply-To: <e61b61574bd58c1bbc0648257fb4ab23ed582de0.camel@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_094837_134269_03F30F2E 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20250211_183035_014843_90BC83E8 
+X-CRM114-Status: GOOD (  20.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,38 +91,99 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8398381876080183977=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2025-02-03 20:40, Kaustabh Chakraborty wrote:
-> From: Sergey Lisov <sleirsgoevy@gmail.com>
-> 
-> Implement support for Exynos7870 USB DRD on top of the existing
-> exynos5-usbdrd driver.
-> 
-> Exynos7870 has a single USB 2.0 DRD PHY controller and no 3.0 PHYs. Thus,
-> it only supports the UTMI interface.
-> 
-> Moreover, the PMU register offset for enabling the PHY controller is
-> different for SoCs such as Exynos7870, where BIT(0) is for the 3.0 PHY and
-> BIT(1) is for the 2.0 PHY. The phy_isol function for Exynos7870 uses the
-> appropriate register offsets.
-> 
-> Signed-off-by: Sergey Lisov <sleirsgoevy@gmail.com>
-> Co-developed-by: Kaustabh Chakraborty <kauschluss@disroot.org>
-> Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
-> ---
->  drivers/phy/samsung/phy-exynos5-usbdrd.c    | 260 ++++++++++++++++++++++++++++
->  include/linux/soc/samsung/exynos-regs-pmu.h |   2 +
->  2 files changed, 262 insertions(+)
-> 
 
-Please refrain from merging, wait for the next revision.
-Thank you.
+--===============8398381876080183977==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="EJv8ebh2m2tBBLDa"
+Content-Disposition: inline
+
+
+--EJv8ebh2m2tBBLDa
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sun, Feb 09, 2025 at 03:34:12AM +0000, Chunfeng Yun (=E4=BA=91=E6=98=A5=
+=E5=B3=B0) wrote:
+> On Mon, 2025-01-13 at 18:30 +0000, Conor Dooley wrote:
+> > On Sat, Jan 11, 2025 at 10:15:41PM +0800, Chunfeng Yun wrote:
+> > > Add a property to tune usb2 phy's disconnect threshold.
+> > > And add a compatible for mt8196.
+> > >=20
+> > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > > ---
+> > > based on kernel 6.13-rc1
+> > >=20
+> > > this property is porting from t-phy driver, due to the u2 phy are
+> > > similar.
+> > > ---
+> > >  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8
+> > > ++++++++
+> > >  1 file changed, 8 insertions(+)
+> > >=20
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > > b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > > index a9e3139fd421..2e012d5e1da1 100644
+> > > --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > > +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
+> > > @@ -49,6 +49,7 @@ properties:
+> > >        - enum:
+> > >            - mediatek,mt3611-xsphy
+> > >            - mediatek,mt3612-xsphy
+> > > +          - mediatek,mt8196-xsphy
+> > >        - const: mediatek,xsphy
+> > > =20
+> > >    reg:
+> > > @@ -129,6 +130,13 @@ patternProperties:
+> > >          minimum: 1
+> > >          maximum: 7
+> > > =20
+> > > +      mediatek,discth:
+
+Just make it "disconnect-threshold" please.
+
+> > > +        description:
+> > > +          The selection of disconnect threshold (U2 phy)
+> > > +        $ref: /schemas/types.yaml#/definitions/uint32
+> > > +        minimum: 1
+> > > +        maximum: 15
+> >=20
+> > What unit is this? Unitless? How are the values determined?
+> No unit, it's a level, may be treat it as an index to select different
+> threshold.
+
+So this is a register value of some sort? What is the actual threshold
+measured in?
+
+--EJv8ebh2m2tBBLDa
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ6uXRAAKCRB4tDGHoIJi
+0tleAQCvurEiAzM1BdOVDJ9+251emEMUXx+UXepVHn6w3KdPIgD+I1IyvZElSdMC
+2wI8UZTiXnHTsxxuyayinbiJi5M2LwM=
+=2LgZ
+-----END PGP SIGNATURE-----
+
+--EJv8ebh2m2tBBLDa--
+
+
+--===============8398381876080183977==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8398381876080183977==--
+
