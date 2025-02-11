@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20FB7C02198
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Feb 2025 23:25:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2126C02198
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 02:30:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5DYSf+ICluDpRN6EyNMsk+NAGJHF00oCznoporJfOh8=; b=ORsUAJMQOn1Owz
-	edYlZa79KHwZBoeUWVEAPKhGojKpLwAg8q9pTuAxJbjNCQX7JDRYK2YsN3wGholfuxiO2JbcgjYmm
-	tjZaXlIjS/I76qSClSDlJZSGTexd1xOkUvLeSC78xnB1DcD5SFy7xZDnDu/6HSStT8q+RNaDNWpk6
-	7C5ZfLXdOS4JCHOD/6NsNdb6203cLZdUO/F7xnnJKwerHzl1hjxTKBushRxFgovycwzh5Lx2QgrAQ
-	sOt7loNc7QfmE83DLgpelSDKn67dtbcXVdMJaEZebOZei9wd1QuSSmPFtWeFvO9B+KhTndM7kUp8f
-	kY4LSmpRkqquDPH9TgRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Subject:Cc:To:From:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QPiKBJROegfDRvN0I8ZwxyYJ8H5AsHjTQpw3nkLdjU4=; b=o6at3rvIChmnam
+	ZFNmy1vXG9XUC04UdpVGlZLpqPdD3AjA6XvCbg50NS55CmUvHYZrzFHHlnUHWZWCqhnzN7qhZ0lrM
+	MSTmqgi/yL/foRfxp/GMpSdMJYbtFoEEsKTOP47ytF5DWzbfRq1Ae/VrINaHZk96V1YVzS4YB035p
+	fKqXhnxSeBUEOMfNp8ngfqcSNbGECS7crROHFRfUa5+T7WDoVmoGl0/SdJ+hsEfFICkt+vHEcJ3Bs
+	Fsmy9zzac4sSFFaPPD3Z0YhVOGBLwRan1t1njSAAHv6sL2tpFafpyhY6ihGlpWYWZN5JFluhRGr8j
+	Nk9HguITKHjrUNUhOtkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thdA0-00000001pzC-2cLV;
-	Mon, 10 Feb 2025 23:25:52 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1thg2g-00000002HKg-01CK;
+	Tue, 11 Feb 2025 02:30:30 +0000
+Received: from out162-62-57-49.mail.qq.com ([162.62.57.49])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thb31-00000001S0d-07yo;
-	Mon, 10 Feb 2025 21:10:32 +0000
-Received: from pendragon.ideasonboard.com (81-175-209-231.bb.dnainternet.fi [81.175.209.231])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 708D38D4;
-	Mon, 10 Feb 2025 22:09:07 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1739221747;
-	bh=Xw/n/fhvGJtKoKxwkCvpi9wRhgHCNTm2ytQqwLDJyPk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uLZwKAqLznzE4O+j5HJaOCx4n7eS6kxE1QMhPgmpU044zFRG372VM+A9TrfMW41DL
-	 Nt+83SQrHjdFKUWhNOV40ps3d9zB0H3UuSEHdwFPI6/SxYNRR5M1lzLewd4YLrRYoK
-	 b0dbvz9QlVA5qN0wz0QPw+ocKLcdzHMgxMkomjs8=
-Date: Mon, 10 Feb 2025 23:10:13 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Rui Miguel Silva <rmfrfs@gmail.com>,
-	Martin Kepplinger <martink@posteo.de>,
-	Purism Kernel Team <kernel@puri.sm>, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-media@vger.kernel.org, "Guoniu.zhou" <guoniu.zhou@nxp.com>,
-	Robby Cai <robby.cai@nxp.com>,
-	Robert Chiras <robert.chiras@nxp.com>
-Subject: Re: [PATCH v2 01/14] dt-bindings: phy: Add MIPI CSI PHY for i.MX8Q
-Message-ID: <20250210211013.GC8531@pendragon.ideasonboard.com>
-References: <20250205-8qxp_camera-v2-0-731a3edf2744@nxp.com>
- <20250205-8qxp_camera-v2-1-731a3edf2744@nxp.com>
- <20250206211808.GA24886@pendragon.ideasonboard.com>
- <Z6UuR9mHhQUdnBEc@lizhi-Precision-Tower-5810>
+	id 1thg2b-00000002HJC-3THn
+	for linux-phy@lists.infradead.org;
+	Tue, 11 Feb 2025 02:30:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foxmail.com;
+	s=s201512; t=1739241016;
+	bh=CvMsgMzcbgfE0aHLjgBhhYzwX6SHe10kuTwQ4xy1QH0=;
+	h=From:To:Cc:Subject:Date;
+	b=ygD6AtW94lE+MbNUQSoajzkrW7yhX10QndEPXgrSqHf8oeC+RqvMVlc1MF/1losj3
+	 I+IR7josPCVWQjGxL4XfH2uRYEHwT9yhD7ZtfutfXmmN7jhpKFWw4HxNrXvV/oHSAY
+	 Zo4ub1w0rPMyLuzsH69cwL2fMxeg+6h0MGqXfiRU=
+Received: from localhost.localdomain ([116.128.244.169])
+	by newxmesmtplogicsvrsza36-0.qq.com (NewEsmtp) with SMTP
+	id 77635AD9; Tue, 11 Feb 2025 10:29:54 +0800
+X-QQ-mid: xmsmtpt1739240994ts1ern8k5
+Message-ID: <tencent_6F503D43467AA99DD8CC59B8F645F0725B0A@qq.com>
+X-QQ-XMAILINFO: N7h1OCCDntujn8zIAKkUixZyrzF1c0t5ZmDIrdNwCTJtUPKHFEmt9e0gc2FgR0
+	 mMWeeFnKy/a4aUIo/rpJDpJ6SY0wtec1J5MS8eQwtEa3YVcY8jLNMa9250s5hJh8q2GeyH9Ly3mq
+	 OTjH4/qFlZhPPAFWvBJEpQ65MRW/Cd3EXCj/HnesqzbMyLjwYfR1re3CA1q5oF00yClAiTDCAq93
+	 uzZRTGp9k97DyCuidfDsHfkE4KCi5QAqD/jK2bgjXz5qzZIdE+gvfca8NS/a9PT6iNL+WQQW+GuE
+	 a/bQhd/OIclYthoeWmAtdxMaAzRqg03jCUs0WHFTc3lS+USxYSUtdsk/O5KnHioFskTH4y3/vyoy
+	 /rTMC7j/PJiMqKJNzDE2IJEcrC5urLsd0zry0qw4ZmcNDIivx8KgGn8dTfmTHWQctsIpLZ3SwdJN
+	 d0smXgOzmIm3FwMU93YLACBfni2fBi2GA7YTQcoswQAf/JOlAALE5KEBO7MPVxoZS6PhBwnf7ZtR
+	 XqFfkYyBkiEHgnjW33cBIF75mVwnnY/qojK+SDNXRuzRsB5xpLJgajwy7a8E8k4TNuqPOEWxAQ8K
+	 n+f1MWODzFsDYhGk27nUDdfj3jxlXpFlReK+kB+FcmdoGgWDDcGPvh2u73p8M8DBTWGhPfe1eQ+w
+	 PSsPaO5hfgdg/9K6Hg6XnNnEBqJVoPt1QIBUdEkCsK7parRXaNPrcR7e1VmVlSn8g/km0GYb+Aaw
+	 Vri/jRHfIeF23ArFugzbEX2shqmyhWWSJK2MbjMZr4MfI3/6ucHf+wZttgkUFy9cNOK6Z1f9kmVg
+	 oBpCCCahFSAeS7kQhJHVz0lkz4MCm9lf3T+4K4O2tbrOVtTYfopwVVd4wUKzr04eUc+iWfnnqTBP
+	 QnsMNVFL7UNcFRM9FNpJKzlY1cMPfpxt6vRq/nC7al/jOxGzMw1rsiRzOWSnuTnrRFniI6qKJk
+X-QQ-XMRINFO: M/715EihBoGSf6IYSX1iLFg=
+From: xiaopeitux@foxmail.com
+To: vkoul@kernel.org,
+	aford173@gmail.com,
+	kishon@kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Pei Xiao <xiaopei01@kylinos.cn>
+Subject: [PATCH V6] phy: freescale: fsl-samsung-hdmi: Limit PLL lock detection clock divider to valid range
+Date: Tue, 11 Feb 2025 10:29:48 +0800
+X-OQ-MSGID: <48bc37daf1d703f28a5216926cb4de5c5e89e904.1739240824.git.xiaopei01@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Z6UuR9mHhQUdnBEc@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250210_131031_389405_27476037 
-X-CRM114-Status: GOOD (  33.13  )
+X-CRM114-CacheID: sfid-20250210_183026_718248_F3C177F4 
+X-CRM114-Status: GOOD (  11.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,131 +79,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 06, 2025 at 04:48:55PM -0500, Frank Li wrote:
-> On Thu, Feb 06, 2025 at 11:18:08PM +0200, Laurent Pinchart wrote:
-> > On Wed, Feb 05, 2025 at 12:18:10PM -0500, Frank Li wrote:
-> > > Add MIPI CSI phy binding doc for i.MX8QXP, i.MX8QM and i.MX8ULP.
-> >
-> > s/CSI/CSI-2/ in the subject line, here and below.
-> > s/phy/PHY/
-> >
-> > > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > > ---
-> > > change from v1 to v2
-> > > - Add missed fsl,imx8qm-mipi-cphy, which failback to fsl,imx8qxp-mipi-cphy
-> > > - Move reg to required. Previous 8ulp use fsl,offset in downstream version.
-> > > which should be reg. So move it to required
-> > > ---
-> > >  .../bindings/phy/fsl,imx8qxp-mipi-cphy.yaml        | 57 ++++++++++++++++++++++
-> > >  1 file changed, 57 insertions(+)
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8qxp-mipi-cphy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8qxp-mipi-cphy.yaml
-> > > new file mode 100644
-> > > index 0000000000000..7335b9262d0e7
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/fsl,imx8qxp-mipi-cphy.yaml
-> > > @@ -0,0 +1,57 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/phy/fsl,imx8qxp-mipi-cphy.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Freescale i.MX8 SoC MIPI CSI PHY
-> > > +
-> > > +maintainers:
-> > > +  - Frank Li <Frank.Li@nxp.com>
-> > > +
-> > > +properties:
-> > > +  "#phy-cells":
-> > > +    const: 0
-> > > +
-> > > +  compatible:
-> > > +    oneOf:
-> > > +      - enum:
-> > > +          - fsl,imx8qxp-mipi-cphy
-> > > +          - fsl,imx8ulp-mipi-cphy
-> > > +      - items:
-> > > +          - const: fsl,imx8qm-mipi-cphy
-> > > +          - const: fsl,imx8qxp-mipi-cphy
-> >
-> > Why are those called cphy when, as far as I can tell from the
-> > documentation, they are D-PHYs ? Does that stand for *C*SI PHY ?
-> 
-> There are already have D-PHYS for MIPI display phy binding. cphy just means
-> for camera PHY.
-
-Ah OK. I would probably have gone for *-mipi-dphy-rx then, but I'm OK
-with the proposed "cphy". Explaining this in the description would be
-useful.
-
-> > I find
-> > it slightly confusing, but not so much that I'd ask for a change. It's
-> > just a name at the end of the day.
-> >
-> > Apart from that the binding looks fairly OK. Except maybe from the fact
-> > that this device is not a PHY :-( It has two PHY control registers, but
-> > the rest seems related to the glue logic at the output of the CSI-2
-> > receiver. I wonder if we should go the syscon route.
-> 
-> Do you means use phandle to syscon node in csi-2 driver? Actually this
-> ways is not perferred by device tree team because it should be exported
-> as what actual function, such as PHY or RESET by use standard interface.
-> 
-> We met similar case at other substream.
-
-I don't like syscon much either, but in this specific case I'm not sure
-what else we could do. This device really aggregates some control over
-the PHY and over the glue logic at the output of the CSI-2 controller.
-Modelling it as "just a PHY" will cause problem as soon as you'll want
-to configure the other parameters.
-
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  power-domains:
-> > > +    maxItems: 1
-> > > +
-> > > +required:
-> > > +  - "#phy-cells"
-> > > +  - compatible
-> > > +  - reg
-> > > +
-> > > +allOf:
-> > > +  - if:
-> > > +      properties:
-> > > +        compatible:
-> > > +          contains:
-> > > +            enum:
-> > > +              - fsl,imx8qxp-mipi-cphy
-> > > +    then:
-> > > +      required:
-> > > +        - power-domains
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +examples:
-> > > +  - |
-> > > +    phy@58221000 {
-> > > +            compatible = "fsl,imx8qxp-mipi-cphy";
-> > > +            reg = <0x58221000 0x10000>;
-> > > +            #phy-cells = <0>;
-> > > +            power-domains = <&pd 0>;
-> > > +    };
-> > > +
-
--- 
-Regards,
-
-Laurent Pinchart
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogUGVpIFhpYW8gPHhpYW9wZWkwMUBreWxpbm9zLmNuPgoKRklFTERfUFJFUCgpIGNoZWNr
+cyB0aGF0IGEgdmFsdWUgZml0cyBpbnRvIHRoZSBhdmFpbGFibGUgYml0ZmllbGQsCmJ1dCB0aGUg
+aW5kZXggZGl2IGVxdWFscyB0byA0LGlzIG91dCBvZiByYW5nZS4KCndoaWNoIGdjYyBjb21wbGFp
+bnMgYWJvdXQ6CkluIGZ1bmN0aW9uIOKAmGZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3VyZV9w
+bGxfbG9ja19kZXTigJksCmlubGluZWQgZnJvbSDigJhmc2xfc2Ftc3VuZ19oZG1pX3BoeV9jb25m
+aWd1cmXigJkgYXQKZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMg
+OjQ3MDoyOgouLy4vaW5jbHVkZS9saW51eC9jb21waWxlcl90eXBlcy5oOjU0MjozODogZXJyb3I6
+IGNhbGwgdG8g4oCYX19jb21waWxldGltZV9hc3NlcnRfNTM44oCZCmRlY2xhcmVkIHdpdGggYXR0
+cmlidXRlIGVycm9yOiBGSUVMRF9QUkVQOiB2YWx1ZSB0b28gbGFyZ2UgZm9yIHRoZSBmaWVsZAog
+IDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0aW1l
+X2Fzc2VydF8sCl9fQ09VTlRFUl9fKQogICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICBeCi4vLi9pbmNsdWRlL2xpbnV4L2NvbXBpbGVyX3R5cGVzLmg6NTIzOjQ6IG5v
+dGU6IGluIGRlZmluaXRpb24gb2YKbWFjcm8g4oCYX19jb21waWxldGltZV9hc3NlcnTigJkgNTIz
+IHwgICAgcHJlZml4ICMjIHN1ZmZpeCgpOwogICAgICB8ICAgIF5+fn5+fgouLy4vaW5jbHVkZS9s
+aW51eC9jb21waWxlcl90eXBlcy5oOjU0MjoyOiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8K
+4oCYX2NvbXBpbGV0aW1lX2Fzc2VydOKAmQogIDU0MiB8ICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNv
+bmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0aW1lX2Fzc2VydF8sCiBfX0NPVU5URVJfXykKClJFRzEy
+X0NLX0RJVl9NQVNLIG9ubHkgdHdvIGJpdCwgbGltaXQgZGl2IHRvIHJhbmdlIDB+MywKc28gYnVp
+bGQgZXJyb3Igd2lsbCBmaXguCgpGaXhlczogZDU2NzY3OWYyYjZhICgicGh5OiBmcmVlc2NhbGU6
+IGZzbC1zYW1zdW5nLWhkbWk6IENsZWFuIHVwIGZsZF90Z19jb2RlIGNhbGN1bGF0aW9uIikKU2ln
+bmVkLW9mZi1ieTogUGVpIFhpYW8gPHhpYW9wZWkwMUBreWxpbm9zLmNuPgoKQ2hhbmdsb2c6Ci0t
+LQpWNjogbW9kaWZ5IHRoZSB0aXRsZSBmcm9tIFZpbm9kClY1OiBhZGQgcmV0dXJuIHJldCBmcm9t
+IEdlZXJ0IHN1Z2dlc3Rpb24KVjQ6IGNoYW5nZSB0byB1c2UgaWYgc3RhdGVtZW50ClYzOiBjaGFu
+Z2UgdG8gdXNlIGRvLXdoaWxlClYyOiBjaGFuZ2UgdG8gdXNlIGxvZ2ljYWwgQU5ECi0tLQogZHJp
+dmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMgfCAxMyArKysrKysrKysr
+Ky0tCiAxIGZpbGUgY2hhbmdlZCwgMTEgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKCmRp
+ZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYyBi
+L2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCmluZGV4IDVlYWM3
+MGExZTg1OC4uNjgxN2NlYWJhYWI0IDEwMDY0NAotLS0gYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUv
+cGh5LWZzbC1zYW1zdW5nLWhkbWkuYworKysgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZz
+bC1zYW1zdW5nLWhkbWkuYwpAQCAtMzI1LDcgKzMyNSw3IEBAIHRvX2ZzbF9zYW1zdW5nX2hkbWlf
+cGh5KHN0cnVjdCBjbGtfaHcgKmh3KQogCXJldHVybiBjb250YWluZXJfb2YoaHcsIHN0cnVjdCBm
+c2xfc2Ftc3VuZ19oZG1pX3BoeSwgaHcpOwogfQogCi1zdGF0aWMgdm9pZAorc3RhdGljIGludAog
+ZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlX3BsbF9sb2NrX2RldChzdHJ1Y3QgZnNsX3Nh
+bXN1bmdfaGRtaV9waHkgKnBoeSwKIAkJCQkJICAgIGNvbnN0IHN0cnVjdCBwaHlfY29uZmlnICpj
+ZmcpCiB7CkBAIC0zNDEsNiArMzQxLDkgQEAgZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJl
+X3BsbF9sb2NrX2RldChzdHJ1Y3QgZnNsX3NhbXN1bmdfaGRtaV9waHkgKnBoeSwKIAkJCWJyZWFr
+OwogCX0KIAorCWlmICh1bmxpa2VseShkaXYgPT0gNCkpCisJCXJldHVybiAtRUlOVkFMOworCiAJ
+d3JpdGViKEZJRUxEX1BSRVAoUkVHMTJfQ0tfRElWX01BU0ssIGRpdiksIHBoeS0+cmVncyArIFBI
+WV9SRUcoMTIpKTsKIAogCS8qCkBAIC0zNjQsNiArMzY3LDggQEAgZnNsX3NhbXN1bmdfaGRtaV9w
+aHlfY29uZmlndXJlX3BsbF9sb2NrX2RldChzdHJ1Y3QgZnNsX3NhbXN1bmdfaGRtaV9waHkgKnBo
+eSwKIAkgICAgICAgRklFTERfUFJFUChSRUcxNF9SUF9DT0RFX01BU0ssIDIpIHwKIAkgICAgICAg
+RklFTERfUFJFUChSRUcxNF9UR19DT0RFX0hJR0hfTUFTSywgZmxkX3RnX2NvZGUgPj4gOCksCiAJ
+ICAgICAgIHBoeS0+cmVncyArIFBIWV9SRUcoMTQpKTsKKworCXJldHVybiAwOwogfQogCiBzdGF0
+aWMgdW5zaWduZWQgbG9uZyBmc2xfc2Ftc3VuZ19oZG1pX3BoeV9maW5kX3Btcyh1bnNpZ25lZCBs
+b25nIGZvdXQsIHU4ICpwLCB1MTYgKm0sIHU4ICpzKQpAQCAtNDY3LDcgKzQ3MiwxMSBAQCBzdGF0
+aWMgaW50IGZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3VyZShzdHJ1Y3QgZnNsX3NhbXN1bmdf
+aGRtaV9waHkgKnBoeSwKIAl3cml0ZWIoUkVHMjFfU0VMX1RYX0NLX0lOViB8IEZJRUxEX1BSRVAo
+UkVHMjFfUE1TX1NfTUFTSywKIAkgICAgICAgY2ZnLT5wbGxfZGl2X3JlZ3NbMl0gPj4gNCksIHBo
+eS0+cmVncyArIFBIWV9SRUcoMjEpKTsKIAotCWZzbF9zYW1zdW5nX2hkbWlfcGh5X2NvbmZpZ3Vy
+ZV9wbGxfbG9ja19kZXQocGh5LCBjZmcpOworCXJldCA9IGZzbF9zYW1zdW5nX2hkbWlfcGh5X2Nv
+bmZpZ3VyZV9wbGxfbG9ja19kZXQocGh5LCBjZmcpOworCWlmIChyZXQpIHsKKwkJZGV2X2Vycihw
+aHktPmRldiwgInBpeGNsb2NrIHRvbyBsYXJnZVxuIik7CisJCXJldHVybiByZXQ7CisJfQogCiAJ
+d3JpdGViKFJFRzMzX0ZJWF9EQSB8IFJFRzMzX01PREVfU0VUX0RPTkUsIHBoeS0+cmVncyArIFBI
+WV9SRUcoMzMpKTsKIAotLSAKMi4yNS4xCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
