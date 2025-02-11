@@ -4,82 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12747C021A1
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 18:42:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E51B8C0219B
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 19:52:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MmaNeC9luh8c6xEhiu6Fol/kSmcr6WiqR/iKukpQViw=; b=gA22+MYBZ2yQByDZNles+I+G4Z
-	h40IswGQy6GLySj8wLTjUemyr9A47LhqocNeGTTsw1VAJfn+GFnrkBJCi+GjlvIlrhzs0RzTQNaGB
-	DyOnxJRF4ER9VUgNKSDQRNvN+KdhYufMh1i91PpuTglXONkZl1GTEGBNJlQi/NNE5cuLB+aZy5yMg
-	ovVBxjBG8s7aGlrF9I01QSdGXXHBpvn8CDm/+WmiF2Dn7GLSrsH3eLud9jAxHD6DTp2hXVOWdoH16
-	y6unm1sLnB+Vhoa+AKn9TBSHDnLHSw2HPUlJS4lsMM9hcX7SuYpIyfoUCyHvUIBBneNJKOPJDYN5g
-	zAjoDAuQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KRGu/w77R08gH/4YabTq9se+z50iSfESFbJVRlhd9M8=; b=tEPpMWtWOKD8k1
+	eaMjeUCH1twSfQpOGv+4aWTtg3dJ7OJeXbneJBJ8nvLCvtv5BRjd5Ta6UBd2BWwyHwP/F1m1Cnfta
+	tw2fIajnmMJdt+rQ1+geFcSxLpFW69CUdjrgfbM09jxb6sJmYrtYHPDD9vgJ2pqhOxIbTY+pkRHg2
+	IYOWoul4g6s4R3j94i92M94pZBfkuYlv0KsMqAc0oH8MdqG//tt3k4n1nGo15fdwkWI79Ze/gQCn+
+	T7BNscx/5rhKy69WkuG7GpsdNQ+9iSSZxaOHAzX/pAzxpz4pG1EDixRWxY/d4ZDhZaybTVI/nWsYb
+	SqUd18XwcCSDKOSncZbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thvD7-00000004t2N-0VPd;
-	Tue, 11 Feb 2025 18:42:17 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1thwJ4-000000056X1-2YXE;
+	Tue, 11 Feb 2025 19:52:30 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thv1p-00000004qlg-2Gyn;
-	Tue, 11 Feb 2025 18:30:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=+81GJ2Ed5kEguiInJKiepzHO9GSn8dLtYS8lNL93dKc=; b=nBkvSj70UI3gVuMe4oRYyKQvpg
-	aAwk66xqmQflX6iB7Oetn2SMefuFJVqdIqenPvotXvohLZv0SRdo+8WBz3M1ouJdgK30EGIiesoFu
-	DCYKwR1008twCxfXCxmyRdcMsZnfLsi5DIVDv9OO3zwU7owymfwh8TDV/0T0WNt1t+Y0vh2LzbuwB
-	0fF2oC8dTaoyetAieNA2SDcD3HQYGJlPkBhrjVz1Hb5s0r3YwBKRrd5F9eV91rdpCuKPVZZvivmhb
-	OoANAKT54DpybGglU45R0UiyLO9U/5vhyOgeiRF60IR0rps7eBwNm7VemIWta8v1UWEj5c2YRqdPD
-	AyO878Aw==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thv1m-00000000g8n-2gbg;
-	Tue, 11 Feb 2025 18:30:36 +0000
+	id 1thwDy-000000055Pn-3RkE
+	for linux-phy@lists.infradead.org;
+	Tue, 11 Feb 2025 19:47:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 666A95C4D7F;
-	Tue, 11 Feb 2025 18:29:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44F90C4CEDD;
-	Tue, 11 Feb 2025 18:30:30 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 6320EA40C4C;
+	Tue, 11 Feb 2025 19:45:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 99459C4CEDD;
+	Tue, 11 Feb 2025 19:47:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739298632;
-	bh=MXkpdxUrKwlNGyhfGqjpT3gM++JqSC+ekFB+wz6S6C4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=LCyHpRREJtOY2Tvjhmv03vG4+reEXqTnt+Z16GX1SfqS0MjxOwCo1EkI7LsyZe667
-	 yI9on/ejRJGqty+zjK9W38REK0RkwwpIRuQCIMMu6VGuc7I6Sxdor9CL8VJA9sQSfP
-	 hfqIGAk+U6UY8++83IseOi+KOi6orwI9zC5TEWJ4IV/KxoyZtizGTzuofkrl2/UHl+
-	 9EzKiewIdemBesCWREr8SU6FJWyoQgcHnhUIsC3VfdrS9uL/ckmRjak7S4HIkz0wIN
-	 kToARy9Bzz1GXAlbUO7Ubvq1yuhDW3JxiOMRQ5HoRrVzJomx/qY8WCJS2yFDlKE22U
-	 L8GFUoMbB1QzA==
-Date: Tue, 11 Feb 2025 18:30:28 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Chunfeng Yun =?utf-8?B?KOS6keaYpeWzsCk=?= <Chunfeng.Yun@mediatek.com>
-Cc: "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"robh@kernel.org" <robh@kernel.org>,
-	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
-	"vkoul@kernel.org" <vkoul@kernel.org>,
-	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
-	"krzk+dt@kernel.org" <krzk+dt@kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Subject: Re: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add
- property to set disconnect threshold
-Message-ID: <20250211-destiny-crablike-ab17a2814b7a@spud>
-References: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
- <20250113-aerobics-tall-e570d8bbcf2c@spud>
- <e61b61574bd58c1bbc0648257fb4ab23ed582de0.camel@mediatek.com>
+	s=k20201202; t=1739303233;
+	bh=l+iielRDD1bT9pM6nGbHot5GG7rZbmttCOx/HN/goU4=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=bqXsQQAKXNpcPIx/WGsrVudBGjDBJGYDzYGupkC/m/yjeYFTzw//u+4Rcck6JDRoN
+	 XRlVHoP6LL6Vpc++j6YQOc1DsslK488cxUTfjBxpEC9c9UZzchUrygtiU6dT9hnxAY
+	 YeMSdBEC7VF2X/KfFSzw41R+5Sh2XKND46lfId60Qm+76moulNskmn+88svpHL6ufB
+	 Tc730P46NE7W8EqNRAMkR6ro+ggaQ9xhIXaDusCaeBzYw2MaMshFiCra/pAFgWAYb2
+	 9qMHCJbUev6uUvd2s5BPOd+3p/QMKeWkkoYArIchnm9txu416uQI81b6hl/ueMlP81
+	 ik8UmeTWMLfHg==
+Date: Tue, 11 Feb 2025 19:46:58 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: David Lechner <dlechner@baylibre.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
+ <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, Geert Uytterhoeven
+ <geert@linux-m68k.org>, Lars-Peter Clausen <lars@metafoo.de>, Michael
+ Hennerich <Michael.Hennerich@analog.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn
+ <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>, Russell King
+ <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>, Eric
+ Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo
+ Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
+ Abraham I <kishon@kernel.org>, Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
+ netdev@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-sound@vger.kernel.org
+Subject: Re: [PATCH v3 10/15] iio: resolver: ad2s1210: use bitmap_write
+Message-ID: <20250211194658.0cfb437b@jic23-huawei>
+In-Reply-To: <20250210-gpio-set-array-helper-v3-10-d6a673674da8@baylibre.com>
+References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
+	<20250210-gpio-set-array-helper-v3-10-d6a673674da8@baylibre.com>
+X-Mailer: Claws Mail 4.3.0 (GTK 3.24.48; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <e61b61574bd58c1bbc0648257fb4ab23ed582de0.camel@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_183035_014843_90BC83E8 
-X-CRM114-Status: GOOD (  20.15  )
+X-CRM114-CacheID: sfid-20250211_114715_009564_37270084 
+X-CRM114-Status: GOOD (  17.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,99 +82,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8398381876080183977=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Mon, 10 Feb 2025 16:33:36 -0600
+David Lechner <dlechner@baylibre.com> wrote:
 
---===============8398381876080183977==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="EJv8ebh2m2tBBLDa"
-Content-Disposition: inline
-
-
---EJv8ebh2m2tBBLDa
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Sun, Feb 09, 2025 at 03:34:12AM +0000, Chunfeng Yun (=E4=BA=91=E6=98=A5=
-=E5=B3=B0) wrote:
-> On Mon, 2025-01-13 at 18:30 +0000, Conor Dooley wrote:
-> > On Sat, Jan 11, 2025 at 10:15:41PM +0800, Chunfeng Yun wrote:
-> > > Add a property to tune usb2 phy's disconnect threshold.
-> > > And add a compatible for mt8196.
-> > >=20
-> > > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > > ---
-> > > based on kernel 6.13-rc1
-> > >=20
-> > > this property is porting from t-phy driver, due to the u2 phy are
-> > > similar.
-> > > ---
-> > >  Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml | 8
-> > > ++++++++
-> > >  1 file changed, 8 insertions(+)
-> > >=20
-> > > diff --git
-> > > a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > > b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > > index a9e3139fd421..2e012d5e1da1 100644
-> > > --- a/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/mediatek,xsphy.yaml
-> > > @@ -49,6 +49,7 @@ properties:
-> > >        - enum:
-> > >            - mediatek,mt3611-xsphy
-> > >            - mediatek,mt3612-xsphy
-> > > +          - mediatek,mt8196-xsphy
-> > >        - const: mediatek,xsphy
-> > > =20
-> > >    reg:
-> > > @@ -129,6 +130,13 @@ patternProperties:
-> > >          minimum: 1
-> > >          maximum: 7
-> > > =20
-> > > +      mediatek,discth:
-
-Just make it "disconnect-threshold" please.
-
-> > > +        description:
-> > > +          The selection of disconnect threshold (U2 phy)
-> > > +        $ref: /schemas/types.yaml#/definitions/uint32
-> > > +        minimum: 1
-> > > +        maximum: 15
-> >=20
-> > What unit is this? Unitless? How are the values determined?
-> No unit, it's a level, may be treat it as an index to select different
-> threshold.
-
-So this is a register value of some sort? What is the actual threshold
-measured in?
-
---EJv8ebh2m2tBBLDa
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZ6uXRAAKCRB4tDGHoIJi
-0tleAQCvurEiAzM1BdOVDJ9+251emEMUXx+UXepVHn6w3KdPIgD+I1IyvZElSdMC
-2wI8UZTiXnHTsxxuyayinbiJi5M2LwM=
-=2LgZ
------END PGP SIGNATURE-----
-
---EJv8ebh2m2tBBLDa--
+> Replace bitmap array access with bitmap_write.
+> 
+> Accessing the bitmap array directly is not recommended and now there is
+> a helper function that can be used.
+> 
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+> Signed-off-by: David Lechner <dlechner@baylibre.com>
+Acked-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
 
---===============8398381876080183977==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> ---
+>  drivers/iio/resolver/ad2s1210.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
+> index 7f18df790157f1e411fb70de193a49f0677c999f..04879e6d538bce664469c5f6759d8b1cedea16e9 100644
+> --- a/drivers/iio/resolver/ad2s1210.c
+> +++ b/drivers/iio/resolver/ad2s1210.c
+> @@ -46,6 +46,7 @@
+>   */
+>  
+>  #include <linux/bitfield.h>
+> +#include <linux/bitmap.h>
+>  #include <linux/bits.h>
+>  #include <linux/cleanup.h>
+>  #include <linux/clk.h>
+> @@ -180,7 +181,7 @@ static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
+>  	if (!gpios)
+>  		return mode == st->fixed_mode ? 0 : -EOPNOTSUPP;
+>  
+> -	bitmap[0] = mode;
+> +	bitmap_write(bitmap, mode, 0, 2);
+>  
+>  	return gpiod_multi_set_value_cansleep(gpios, bitmap);
+>  }
+> @@ -1470,7 +1471,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
+>  			return dev_err_probe(dev, -EINVAL,
+>  				      "requires exactly 2 resolution-gpios\n");
+>  
+> -		bitmap[0] = st->resolution;
+> +		bitmap_write(bitmap, st->resolution, 0, 2);
+>  
+>  		ret = gpiod_multi_set_value_cansleep(resolution_gpios, bitmap);
+>  		if (ret < 0)
+> 
+
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8398381876080183977==--
-
