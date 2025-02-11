@@ -4,67 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCBC5C0219B
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 09:53:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D24BFC0219B
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 10:55:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2YbihXC48FwxsHMuNxk0fe6tqIJnS5NCI8LP0D0b2oo=; b=pa2RFZEODBG8C+
-	CA7X2t69fBdIS9n8ygD9TBFsWADP3bwgyiJWQ5TIuDtaaZ439yYdSse9yAZG3hW1d+rbnqfiwm2SK
-	AZ3Zy+eATE68fD+P9uXwZqQeAlYVBLiI5DPMd3iMBzoduSsHFScxtPpK+Rr/HdV97KAaH6bEBHiIt
-	ohues3Y6MAiGHq85ywSAdA6zq9HXQU+RLR2WHYLv+MxwN8bY/X3p87G1kXmRC/k2bNWkxYJfqX1AG
-	7eIcuhedBx3q6m6xxkJYRv3FaC7KsoRihO4zGs1ymnucj1JFaMan27FB45iSDF7JnIbfhzbbcZCsS
-	BHRwqVyuaYcKMQ2pgL3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kaPePME+fzxYF4AX2cyXK5WGro5NN56rEp7HXaFd4Jg=; b=D/PnIfSX/+pHhL
+	4kRht6zGEOBSxfV9KuGHpdeX1CObCiSjdsF2QEKRib/KN9EeJSGE9lg0ZdFWPlda82bRjJK4p1ndt
+	UQNcCnSjgvrEWAv1kS1tLdK/+KEupoPjMvVXCNmZGx1nG6allTIr5LW1umklm+npOzjnHctsmNMrz
+	HWWDbt8J+nHJXMm8TAjJcFSMzwc90rXw9oELtmow5dqm8m41mH1plFgdXez2QCBYu7Myco9IEb8ao
+	DERo3urTSg2qL4Y30baA/dJOlRfHMl1vNnqHoom4x3j8XoRDjfUzq8xVflXnPu+xXgtF8hOX05KND
+	aF4kyBr27qgDq6Xa0i3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thmxb-00000003FiY-2hJH;
-	Tue, 11 Feb 2025 09:53:43 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1thnvo-00000003RAa-0n1V;
+	Tue, 11 Feb 2025 10:55:56 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thmxZ-00000003FhV-0M5f
+	id 1thmn1-00000003EBZ-0mCW
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Feb 2025 09:53:42 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1thmxL-0007an-OH; Tue, 11 Feb 2025 10:53:27 +0100
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1thmxK-000OXM-2X;
-	Tue, 11 Feb 2025 10:53:26 +0100
-Received: from pza by lupine with local (Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1thmxK-0002lT-2F;
-	Tue, 11 Feb 2025 10:53:26 +0100
-Message-ID: <6c38b6e028858662aa5d45f4a14b993860b73cc0.camel@pengutronix.de>
-Subject: Re: [PATCH v2 1/2] phy: qcom: pcie: Determine has_nocsr_reset
- dynamically
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Wenbin Yao <quic_wenbyao@quicinc.com>, vkoul@kernel.org,
- kishon@kernel.org,  dmitry.baryshkov@linaro.org, abel.vesa@linaro.org,
- quic_qianyu@quicinc.com,  neil.armstrong@linaro.org,
- manivannan.sadhasivam@linaro.org,  quic_devipriy@quicinc.com,
- konrad.dybcio@oss.qualcomm.com,  linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org,  linux-kernel@vger.kernel.org
-Date: Tue, 11 Feb 2025 10:53:26 +0100
-In-Reply-To: <20250211094231.1813558-2-quic_wenbyao@quicinc.com>
-References: <20250211094231.1813558-1-quic_wenbyao@quicinc.com>
-	 <20250211094231.1813558-2-quic_wenbyao@quicinc.com>
-User-Agent: Evolution 3.46.4-2 
+	Tue, 11 Feb 2025 09:42:48 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51ALgIqG002847;
+	Tue, 11 Feb 2025 09:42:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=mcLZ3vxa+HitZP+JA+9ivvwGUfnePl5qwmk
+	d5XTsQ10=; b=hU6xOSN7CLqQD6DpXlGIT/pjIRA7mDdEzpYacr4V5vAWSIXlLxF
+	8PFYxbaZHqix1Rp0nsOs1Fwg2ysYuhfFPtWXM9O+6gOwN7XHRD9FymgX1hqi1r3E
+	v59/M5kE3IQTXeyh3DPRBMU8LH/EYrnH+5AytRjW/Za5KW9vm9zUssnjn8ruCct8
+	jCkaCMztb2wdmukamnw0y1VQr/0f7MK3wHMHD/ImseePhrPH6vcqvOw+QNJRi0Vw
+	I3QLqltlN+Nq71BIEL3MwkANaxDzyZFi8dcLGUnLqi3gpxdSIJ3uDTdykGC6n+l8
+	Cc20JYbFKO6ZRVUNhRaJAEvgO2+1Y+RZugA==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44p0dyq7n6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 11 Feb 2025 09:42:43 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 51B9geJJ012257;
+	Tue, 11 Feb 2025 09:42:40 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 44p0bkpcgt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 11 Feb 2025 09:42:40 +0000
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 51B9gejk012250;
+	Tue, 11 Feb 2025 09:42:40 GMT
+Received: from cbsp-sh-gv.ap.qualcomm.com (CBSP-SH-gv.ap.qualcomm.com [10.231.249.68])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 51B9geIH012249
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 11 Feb 2025 09:42:40 +0000
+Received: by cbsp-sh-gv.ap.qualcomm.com (Postfix, from userid 4635958)
+	id 6822440BEB; Tue, 11 Feb 2025 17:42:38 +0800 (CST)
+From: Wenbin Yao <quic_wenbyao@quicinc.com>
+To: vkoul@kernel.org, kishon@kernel.org, p.zabel@pengutronix.de,
+        dmitry.baryshkov@linaro.org, abel.vesa@linaro.org,
+        quic_qianyu@quicinc.com, neil.armstrong@linaro.org,
+        manivannan.sadhasivam@linaro.org, quic_devipriy@quicinc.com,
+        konrad.dybcio@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: quic_wenbyao@quicinc.com
+Subject: [PATCH v2 0/2] phy: qcom: qmp-pcie: Add PCIe PHY no_csr reset support
+Date: Tue, 11 Feb 2025 17:42:29 +0800
+Message-Id: <20250211094231.1813558-1-quic_wenbyao@quicinc.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: NEdSWMnw5IRkeg_8OBubpXB_euWZXa-g
+X-Proofpoint-GUID: NEdSWMnw5IRkeg_8OBubpXB_euWZXa-g
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-11_04,2025-02-10_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 bulkscore=0
+ clxscore=1015 lowpriorityscore=0 impostorscore=0 mlxlogscore=854
+ mlxscore=0 priorityscore=1501 spamscore=0 adultscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2501170000 definitions=main-2502110060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_015341_121917_A80A2CED 
-X-CRM114-Status: GOOD (  16.69  )
+X-CRM114-CacheID: sfid-20250211_014247_227288_3C9D5272 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,107 +106,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Di, 2025-02-11 at 17:42 +0800, Wenbin Yao wrote:
-> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> 
-> Decide the in-driver logic based on whether the nocsr reset is present
-> and defer checking the appropriateness of that to dt-bindings to save
-> on boilerplate.
-> 
-> Reset controller APIs are fine consuming a nullptr, so no additional
-> checks are necessary there.
-> 
-> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
-> Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
-> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 18 +++++++-----------
->  1 file changed, 7 insertions(+), 11 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index 873f2f9844c6..ac42e4b01065 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> @@ -2793,8 +2793,6 @@ struct qmp_phy_cfg {
->  
->  	bool skip_start_delay;
->  
-> -	bool has_nocsr_reset;
-> -
->  	/* QMP PHY pipe clock interface rate */
->  	unsigned long pipe_clock_rate;
->  
-> @@ -3685,7 +3683,6 @@ static const struct qmp_phy_cfg sm8550_qmp_gen4x2_pciephy_cfg = {
->  
->  	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->  	.phy_status		= PHYSTATUS_4_20,
-> -	.has_nocsr_reset	= true,
->  
->  	/* 20MHz PHY AUX Clock */
->  	.aux_clock_rate		= 20000000,
-> @@ -3718,7 +3715,6 @@ static const struct qmp_phy_cfg sm8650_qmp_gen4x2_pciephy_cfg = {
->  
->  	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->  	.phy_status		= PHYSTATUS_4_20,
-> -	.has_nocsr_reset	= true,
->  
->  	/* 20MHz PHY AUX Clock */
->  	.aux_clock_rate		= 20000000,
-> @@ -3836,7 +3832,6 @@ static const struct qmp_phy_cfg x1e80100_qmp_gen4x2_pciephy_cfg = {
->  
->  	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->  	.phy_status		= PHYSTATUS_4_20,
-> -	.has_nocsr_reset	= true,
->  };
->  
->  static const struct qmp_phy_cfg x1e80100_qmp_gen4x4_pciephy_cfg = {
-> @@ -3870,7 +3865,6 @@ static const struct qmp_phy_cfg x1e80100_qmp_gen4x4_pciephy_cfg = {
->  
->  	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->  	.phy_status		= PHYSTATUS_4_20,
-> -	.has_nocsr_reset	= true,
->  };
->  
->  static const struct qmp_phy_cfg x1e80100_qmp_gen4x8_pciephy_cfg = {
-> @@ -3902,7 +3896,6 @@ static const struct qmp_phy_cfg x1e80100_qmp_gen4x8_pciephy_cfg = {
->  
->  	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
->  	.phy_status		= PHYSTATUS_4_20,
-> -	.has_nocsr_reset	= true,
->  };
->  
->  static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
-> @@ -4203,11 +4196,14 @@ static int qmp_pcie_reset_init(struct qmp_pcie *qmp)
->  	if (ret)
->  		return dev_err_probe(dev, ret, "failed to get resets\n");
->  
-> -	if (cfg->has_nocsr_reset) {
-> -		qmp->nocsr_reset = devm_reset_control_get_exclusive(dev, "phy_nocsr");
-> -		if (IS_ERR(qmp->nocsr_reset))
-> +	qmp->nocsr_reset = devm_reset_control_get_exclusive(dev, "phy_nocsr");
-> +	if (IS_ERR(qmp->nocsr_reset)) {
-> +		if (PTR_ERR(qmp->nocsr_reset) == -ENOENT ||
-> +		    PTR_ERR(qmp->nocsr_reset) == -EINVAL)
+The series aims to skip phy register programming and drive PCIe PHY with
+register setting programmed in bootloader by simply toggling no_csr reset,
+which once togglled, PHY hardware will be reset while PHY registers are
+retained.
 
-Why is -EINVAL ignored here?
+First, determine whether PHY setting can be skipped by checking
+QPHY_START_CTRL register and the existence of nocsr reset. If it is
+programmed and no_csr reset is supported, do no_csr reset and skip BCR
+reset which will reset entire PHY.
 
-Without this you could just use
-devm_reset_control_get_optional_exclusive(), which already turns -
-ENOENT into NULL. That seems to me the correct thing to do, as from
-driver point-of-view, this reset control is optional.
+This series also remove has_nocsr_reset flag in qmp_phy_cfg structure and
+decide whether the PHY supports nocsr reset by checking the existence of
+nocsr reset in device tree.
 
-> +			qmp->nocsr_reset = NULL;
-> +		else
->  			return dev_err_probe(dev, PTR_ERR(qmp->nocsr_reset),
-> -						"failed to get no-csr reset\n");
-> +					     "failed to get no-csr reset\n");
->  	}
->  
->  	return 0;
+The series are tested on X1E80100-QCP and HDK8550.
 
-regards
-Philipp
+The commit messages of this patchset have been modified based on comments
+and suggestions.
+
+Changes in v2:
+- Add Abel's and Manivannan's Reviewed-by tag to Patch 1/2.
+- Refine commit msg of Patch 2/2.
+- Link to v1: https://lore.kernel.org/all/20250121094140.4006801-1-quic_wenbyao@quicinc.com/
+
+Konrad Dybcio (1):
+  phy: qcom: pcie: Determine has_nocsr_reset dynamically
+
+Qiang Yu (1):
+  phy: qcom: qmp-pcie: Add PHY register retention support
+
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 109 ++++++++++++++---------
+ 1 file changed, 65 insertions(+), 44 deletions(-)
+
+
+base-commit: bcf2acd8f64b0a5783deeeb5fd70c6163ec5acd7
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
