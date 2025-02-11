@@ -4,84 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A658C0219D
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 10:55:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74F01C0219B
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 13:25:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:To:Cc:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WPVAN79a0nljQ8ZVDO2obOm3OKRZj4MaQy2nN7C42Qo=; b=rd2BeMY/u/mSSd
-	4RiDpxwxhLgVrSegWyL1oaI6EfQjPNRH3x+lW3I6Lf0mCW/qUXb4gW1arX2/kaj8+S8z+6lFYOR3i
-	64341raAt9W/nMgXoC0YkiIqLBUePtkKFVJmPKudu8UON5xdokw6WDh6mzkn3DtGqevsmc95qWWn+
-	GvhhqA566DkpHlkhDepWvt8WfkViFcNUy/bnVURyFbXtjpaFaGc96nL03+wvmqRBH1sVZJZwqSaVz
-	QT+hBujDRjXm+OwKGxLVw8H6Aimt+8uDiKSMluSOxYv/g+G8+89k2V6Zia/Qx+d9qplkWhcuqXCg7
-	Kljelbva/xgps/Qd5ffA==;
+	List-Owner; bh=RGRzes1IGLr3TuZGviFtwuipQ0lhB/n43qoPWkVIORk=; b=u7lZx/zacdRM5d
+	Y6XoOSax0C+2h3z0PJbVTQGJ+8iP2EqxSnB4+KZbjt7RiAgWWRaiRgf97SvcQ9X3GnW6u0qW98ZlR
+	1ULBjdAJ25MyayacEomNInEgCUf1aO+srwxt985o9mssOatbY+NnlP4KCD4LbVwfG2ZUfPUD0vewx
+	j4ES+gOai6Rl78K449tfePrZrYOHUrZO3Y+8GZSazYYhS6j0X9oE55RJ0We6l/urUlKi5QU5A7T6j
+	EWJAmTJ8WuF3wb8LQywzZ0OXl2ThuC3UW+5KEAH1LLEnqR6AIvsXLsLT4NJ8TcxAX6YN4g1+AAIeB
+	ax6P/V5iyL2h19+H7IwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thnvo-00000003RBZ-407C;
-	Tue, 11 Feb 2025 10:55:56 +0000
-Received: from mgamail.intel.com ([192.198.163.9])
+	id 1thqGf-00000003wMl-44wU;
+	Tue, 11 Feb 2025 13:25:37 +0000
+Received: from iris.vrvis.at ([92.60.8.8])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thmnA-00000003EDU-1nKt
-	for linux-phy@lists.infradead.org;
-	Tue, 11 Feb 2025 09:42:57 +0000
-X-CSE-ConnectionGUID: syYgJqXrRuC1IQ71PS3MKg==
-X-CSE-MsgGUID: BQvnij/2T1eqQMgIGXEKWA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11341"; a="50512951"
-X-IronPort-AV: E=Sophos;i="6.13,277,1732608000"; 
-   d="scan'208";a="50512951"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2025 01:42:56 -0800
-X-CSE-ConnectionGUID: aYZy757oTGGgjCvr/1BDnw==
-X-CSE-MsgGUID: 05tIZ9H+StaAmIWpBPA8UQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.13,277,1732608000"; 
-   d="scan'208";a="112427591"
-Received: from smile.fi.intel.com ([10.237.72.58])
-  by fmviesa007.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2025 01:42:50 -0800
-Received: from andy by smile.fi.intel.com with local (Exim 4.98)
-	(envelope-from <andy@kernel.org>)
-	id 1thmmz-0000000ASai-3bzO;
-	Tue, 11 Feb 2025 11:42:45 +0200
-Date: Tue, 11 Feb 2025 11:42:45 +0200
-From: Andy Shevchenko <andy@kernel.org>
-To: David Lechner <dlechner@baylibre.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	Geert Uytterhoeven <geert@linux-m68k.org>,
-	Lars-Peter Clausen <lars@metafoo.de>,
-	Michael Hennerich <Michael.Hennerich@analog.com>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
-	Takashi Iwai <tiwai@suse.com>, linux-gpio@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
-	linux-mmc@vger.kernel.org, netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
-Subject: Re: [PATCH v3 06/15] gpio: max3191x: use
- gpiod_multi_set_value_cansleep
-Message-ID: <Z6sblZMR-D_B_ncX@smile.fi.intel.com>
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <20250210-gpio-set-array-helper-v3-6-d6a673674da8@baylibre.com>
+	id 1thpwD-00000003sX2-0bZD;
+	Tue, 11 Feb 2025 13:04:30 +0000
+Received: from whiskey.org.vrvis.lan ([10.42.2.171])
+	by iris.vrvis.at with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(ESMPT Server)
+	(envelope-from <valentin@vrvis.at>)
+	id 1thpvc-0004QS-0h;
+	Tue, 11 Feb 2025 14:03:57 +0100
+Message-ID: <f64ee4ee-7e56-4423-813e-b87e023e893d@vrvis.at>
+Date: Tue, 11 Feb 2025 14:03:51 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250210-gpio-set-array-helper-v3-6-d6a673674da8@baylibre.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mozilla Thunderbird
+Cc: Heiko Stuebner <heiko@sntech.de>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Jianfeng Liu <liujianfeng1994@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Jonas Karlman <jonas@kwiboo.se>
+To: Vinod Koul <vkoul@kernel.org>, Chukun Pan <amadeus@jmu.edu.cn>
+References: <20250106100001.1344418-1-amadeus@jmu.edu.cn>
+ <173831716590.670164.5196739962949646746.b4-ty@kernel.org>
+Content-Language: en-US, de-AT-frami
+From: Valentin Kleibel <valentin@vrvis.at>
+In-Reply-To: <173831716590.670164.5196739962949646746.b4-ty@kernel.org>
+Subject: Re: [PATCH v2 0/1] phy: rockchip: naneng-combphy: compatible reset
+ with old DT
+X-SA-Exim-Version: 4.2.1 (built Wed, 06 Jul 2022 17:57:39 +0000)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_014256_505667_FDDF1950 
-X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-CacheID: sfid-20250211_050429_189751_A0768B85 
+X-CRM114-Status: UNSURE (   9.29  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,26 +66,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 10, 2025 at 04:33:32PM -0600, David Lechner wrote:
-> Reduce verbosity by using gpiod_multi_set_value_cansleep() instead of
-> gpiod_set_array_value_cansleep().
+Hi,
+
+>> Chukun Pan (1):
+>>    phy: rockchip: naneng-combphy: compatible reset with old DT
+>>
+>> [...]
 > 
-> Also add max3191x_ namespace prefix to the driver's helper function
-> since we are changing the function signature anyway.
+> Applied, thanks!
+> 
+> [1/1] phy: rockchip: naneng-combphy: compatible reset with old DT
+>        commit: bff68d44135ce6714107e2f72069a79476c8073d
 
-With renamed function looks much better, thanks,
-Reviewed-by: Andy Shevchenko <andy@kernel.org>
+Thanks for your work!
+We found your patch after NVMes stopped working on a rock 3A with newer 
+kernels and successfully applied it to kernel 6.1.128 (currently in debian).
 
--- 
-With Best Regards,
-Andy Shevchenko
+As the commit breaking NVMe functionality on rk3568 platforms 
+(fd3ac6e80497 "phy: rockchip: naneng-combphy: fix phy reset") was 
+already backported to 6.1.y, 6.6.y, 6.12.y it would be great to have 
+this fix in these releases as well.
 
-
+Best regards,
+Valentin
 
 -- 
 linux-phy mailing list
