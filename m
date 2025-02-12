@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03A64C0219E
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Feb 2025 09:50:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 774FCC02198
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Feb 2025 09:58:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=whM1zW83tud8ZHz6kj9pNGqDs2OexNODRFd7ls1ZBss=; b=PbwDMD9D+I7OCg
-	JJuSzLlU32yhMcB/qJ0T3fOQ9y9DyclfFSbfv2FMQ6MCPXO5B0Shv0F2SCUEYdCqN63v3Xsn/q2hl
-	mOMGlR3Mfs21N8nfd3PsY3U6CWgliu2oOnakM2pNItEyj9H1VB6HYsbMWpMh9oz5fZ2kblrOKFJkI
-	HyPoMqLmkIQuz/hqIB0XsFYVbluSl9HmVBGGko8LpJ5uiotcK1rhT6tAzCqr3T3+9AzAoQII79oc8
-	u/C59vNQU0i6ojPLko11TcKau1h7k3Wkhsna5D53woUZJ5LscZqa36UvCMZ2R6a1YKo/1+PaV1BaE
-	Ta2wjiLcjM+beSGP6ZjQ==;
+	List-Owner; bh=XN2qJ+v3CDWkVPW4YSb5aAS4WsE0sEh8jzFqIPp+8BM=; b=lMYDBNtpLuAdvQ
+	19AYjizr3dsFNg13A4au2/61Q4wpnbKUqjtikHTG4pk/nfn96AowRwU/w5rSRObIUZOA94wlAYlfA
+	zQvrJ7N8s0ue3kQeGOsP3dScTtx727fY2NUDGtkr90joEJcCcGkzr3jg4gs+ORm+rIGrqbkbhTHiY
+	Zcbf0zGKgUiHIfQJisRxt0Rd6OFK+UNOCd+81olRXjgQriz4QbzbMSGCyPph+kolb/1N7pA1juf3H
+	tZvhd1Ry7REI/qEriM3Mv5Kof9VelV4F9RiDGtTIkQhk1fBX1qqBiKDjKF+6fTttGLKSc+FY+Obrm
+	Bc592zIbLbhML/rxUMfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti9OP-00000006rcQ-31mo;
-	Wed, 12 Feb 2025 09:50:53 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1ti9VL-00000006tIJ-0m9n;
+	Wed, 12 Feb 2025 09:58:03 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti9AR-00000006o2Y-0zvT
+	id 1ti9Aw-00000006oGr-0HnS
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Feb 2025 09:36:28 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-439350f1a0bso3858255e9.0
-        for <linux-phy@lists.infradead.org>; Wed, 12 Feb 2025 01:36:26 -0800 (PST)
+	Wed, 12 Feb 2025 09:36:59 +0000
+Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-38dcb33cba1so2648919f8f.2
+        for <linux-phy@lists.infradead.org>; Wed, 12 Feb 2025 01:36:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1739352986; x=1739957786; darn=lists.infradead.org;
+        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1739353016; x=1739957816; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=SrbuHpRRCn2ojY6FY2MTuNNVYvVFb7ykFJzn4YLtY68=;
-        b=E77+zSpawq7biQOtEePbNb4ZiUsJb/XqN3IdRJkplN61BRrLZ296lf5GJko2Dzld+h
-         WyZ4uNpRPHE+2d4uDCy/nLaJiH3UjqfMhkCXK+pDwH/pdKX73IXRXExDk/YLy69PbVHC
-         8CgrnE8gCAeaSxWcfQbjtGLYMyBlOKeKlbk+qDQDLmVqEpnqX+HUYRMFRbO7ziMar65J
-         AMUeG4pDyffanRXcI6QX65tsNRboineYpJ6DfrXjk9aRRe0s4VlW1EVJxWEWLQ+oPUb7
-         29Rboh3PAlDcZENMWvkl6Ynj31Aj3Zrh8wzSyQ5PXMGE0wUNyBa5YMip5WiQrEJ00h2o
-         7Oxg==
+        bh=NRhZaB3W6faFlCbku+LscU579s6QSzZfyLaHX9G8q1c=;
+        b=PVISe8dA968Tzc8ejZOoBGrGO/kv/nf7kPTo/RWi9s4OBvKO55/P/+fUScSOuQTVxC
+         OPrzltDhOtyZ0Ygc5J/jjjhOD1EyFwWWXUTSA43QTKktTqmk9Tm6QeEPcg38CztK45VX
+         FJDAh4iLGAKEXr2g+jLEv33h+xbOp2d0tKByAAEBmk3dwOrW8wcxDwIKP6hxlRfFU9Xb
+         XayQbkcAlyU2MPpSKlSmCOmIA0wzdEq8Iwm+IIvKvxtfWOcMtJrKO0ucLpgmusnEic9Z
+         8AEUufhXNwVY5R5e5T7gzUv0O10lfI7c6BY0bY8DZhjxCZyDuE3oHYo9Z2bgHq5OZgZo
+         6DQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739352986; x=1739957786;
+        d=1e100.net; s=20230601; t=1739353016; x=1739957816;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=SrbuHpRRCn2ojY6FY2MTuNNVYvVFb7ykFJzn4YLtY68=;
-        b=EERVbFED4OT1YQOO9+/hkwa9arZ8dJow0EcaFws066PsFVFUiHsL5nxW5Ug8RNWsKC
-         nIq0R91W/4RONEnmK2lbObTwHUSzaEEUG+lQhAmQ+mxnRPIxjyFrBkK3JiCcqHRsyOv2
-         MnKleATcuW6o8jmYDnyS4dn5ma3z77APuSy/6e7c5+Xt/V7vNAHVD/uTDrAUomLFYI63
-         IM8+c2zR6h4VGuTTftMnI8OoYUQMgsDBVr6kQSnECkezHXyPI1gIOsejJqGUgVkgwE45
-         RAwmt8EKdfoKKc32RQ8EAmbDoB7bSXNnH5xHSQ3o+Y0lpvsdY31r/+AkEdG8p5S6ZKCb
-         GcoQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVWKHB3WqexneHWjWVMHo3cZ8Kq7/bsX4unYf83zCww0CFW6KNvouTVU09o/a8Bmd3RUx7WMORoxGE=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzfyxe7S7Arv0Sk6LL/EIA+miGNf/ArqhoJbeoEEf8uNV3DE7/u
-	cHQsuPGWzc9Fn2o20mmw04/L9KTF5PX6cjLx6VbNJan2XaIYT+OkOMjsvTklTPk=
-X-Gm-Gg: ASbGncul9ChOCfnEwnUPJlM+/Jsksb85+N/cHJbJDhr13djX+BZ6bZ1rwD2e+1SrDyH
-	YdbaV2+TGDPVbQ6Qs+t70FnngsgQntd22JQece0ulrnppFTlw5TyA25ee/SvCUgMgLbGq+IuMRL
-	mP5cCuvYyRkDqmA6eDD8JnBaNmK3mhNkfEmuhU7k5MmLVNxADfGznfxn1Evrj1nxXCvxVvvKprB
-	9IzFQxH4Sb7POpp6Fs4l9N8HAW6qDlBWv4vSawYLlhRFOgH/lei56Rm9kiSgSL+UQb6S9qvWWIy
-	c9aKkWizLP9lhAw=
-X-Google-Smtp-Source: AGHT+IFudfgBGV0+IDygsdoLTA/5igyJSZtMJXjbCQPeBSc7oN4L55kdXKAZLq0JA2599sk+IrdqDA==
-X-Received: by 2002:a05:600c:3ac4:b0:434:f9ad:7222 with SMTP id 5b1f17b1804b1-439583b4e03mr18452935e9.7.1739352985575;
-        Wed, 12 Feb 2025 01:36:25 -0800 (PST)
+        bh=NRhZaB3W6faFlCbku+LscU579s6QSzZfyLaHX9G8q1c=;
+        b=fuAv9h6zqQ+/bjGa2PSb3rHZZqrJ5o5tX39TgYFKxRk8Wes9X2igyqWQILDYAhyxlX
+         j7soCUSj07a+0XecAfL35Xc/iqO3tsejGItiXIffLFfQzo4iy9bOoYwixSCXHA+V8RWp
+         jJM0MSG0xdos/4wiQBBHsIhsmoUpxSFfyi157NDR0gCS1npI1Y9WiRBALo9jp6akl9v9
+         qLiHFLJc/PHmBkKQLxLs5DtqUZgNbg5v3tV24mVHk2XUj7vdmiwjJt9oWYEboOo36uuA
+         gLGxDmIDZNFgnBr1aut2QKLr2mSgfqana6bYtrcrSKrhrKv/Mg6OtZHgv/WR5FUZWu93
+         ox4g==
+X-Forwarded-Encrypted: i=1; AJvYcCXHiIVhfjNCQL6WewsguaUOELHnF86z0DbJr2v2aJVlBGFVfU4drwZv2BzRi83cOp3dALvoWOTy378=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyxBB5QQkr6Oq6ds8G7EZdicJ8nwR4QKgjQe0necc8gFD0MvZUG
+	vlhrMdDLuKqsfUmY+rPgv9bcvWIQMG4mIObrxub56/Z9bJ+NEAbOzp8rUA9j4yI=
+X-Gm-Gg: ASbGnctOGs+XrrGxohueStBxlZdeyvhjr96eQ8KwIQKNt1LHb5AAs8VyFFIy+7U3Loh
+	BYUG/e601KxfqH6tE8DeBwue+d+sJ1f5GC3oM1KTjGYF0N/JyVd/2Mq69y7ST3C6BIv8pf5bwDk
+	88QkKDJLdz7ZcrShyf9HNDqcF+lgXeVrqOK6d0mvL0pJ94LWTiHVCuLOzdiWOteiStxc7xzl1R4
+	Xf86ODT5fHb2iDrOD675B5GuQhNN80sb2CmEzzrICi66F5iE/h2inUt9x3mUcm/maYMwQHyLxGc
+	/lStK4yFgBO0INE=
+X-Google-Smtp-Source: AGHT+IFQnul0kNzls6ThIvi1z7bQ429pLFDaGlT/FcOXJm3pTEnq6re0+Qc4O8V8syw5sWV5sK78UQ==
+X-Received: by 2002:a05:6000:188b:b0:38d:b34a:679 with SMTP id ffacd0b85a97d-38dea2cefc8mr1824460f8f.37.1739353016217;
+        Wed, 12 Feb 2025 01:36:56 -0800 (PST)
 Received: from brgl-uxlite.home ([2a01:cb1d:dc:7e00:521c:13af:4882:344c])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38dd8dee385sm9918965f8f.61.2025.02.12.01.36.24
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4395a078448sm14132935e9.34.2025.02.12.01.36.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 12 Feb 2025 01:36:25 -0800 (PST)
+        Wed, 12 Feb 2025 01:36:55 -0800 (PST)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Linus Walleij <linus.walleij@linaro.org>,
 	Bartosz Golaszewski <brgl@bgdev.pl>,
@@ -104,14 +104,14 @@ Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
 	Andy Shevchenko <andy.shevchenko@gmail.com>,
 	Jonathan Cameron <Jonathan.Cameron@huawei.com>
 Subject: Re: (subset) [PATCH v3 00/15] gpiolib: add gpiod_multi_set_value_cansleep
-Date: Wed, 12 Feb 2025 10:36:23 +0100
-Message-ID: <173935297467.10817.9536577313319553775.b4-ty@linaro.org>
+Date: Wed, 12 Feb 2025 10:36:53 +0100
+Message-ID: <173935301204.11039.10193374588878813157.b4-ty@linaro.org>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250212_013627_299066_803E9F35 
+X-CRM114-CacheID: sfid-20250212_013658_110818_D14E8BB6 
 X-CRM114-Status: GOOD (  12.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -148,8 +148,8 @@ On Mon, 10 Feb 2025 16:33:26 -0600, David Lechner wrote:
 
 Applied, thanks!
 
-[01/15] gpiolib: add gpiod_multi_set_value_cansleep()
-        commit: 91931af18bd22437e08e2471f5484d6fbdd8ab93
+[06/15] gpio: max3191x: use gpiod_multi_set_value_cansleep
+        commit: eb2e9c308d2882d9d364af048eb3d8336d41c4bb
 
 Best regards,
 -- 
