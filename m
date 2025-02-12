@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2987CC02198
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Feb 2025 08:37:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F8EFC0219E
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Feb 2025 08:38:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FlwMHNMl2mErVvnK2k/IM+YXLXOW9/oqAyubEihWzmo=; b=a45JocMcA3u3vV
-	cnaFlgBI3zEyTPkSsS9+7WGC3ts5qmjug88O+n8Hm+yEGnmJLwnZHtq4gt07jTYGNCOEdWE7NZsdS
-	W57wl+ImkoYX2HCGP9s1EJ8Qnkh2J8hqhUX0/Y9hMOwGWmh/8aC69rK0GqkNf134X/v0jLma0PkkK
-	tlqlObmtyZQLMDk+qroaBCYYxS1TXuhsHUxaQC0hvhjmaZDOhvJd1dpXmqKItSFYrjWvmeXqYecTx
-	oAu28O4eTYBdsyNqjHYdAQpnegt6Lz3maf64ObVKhdMlu+LbaDmesBRIxUBgjBvUbCJOVlu/iyAeX
-	IyRV5LK0fAct3pJlpC3g==;
+	List-Owner; bh=BLhjvInnOtXzwWTrqIQhNF8dNvDHLb0Vrfi100VYQcI=; b=2iVQxL1mvmggXU
+	xe/GWGbsqf3QHOlQ3lmM+SeagETiBODRa7qyigbALwxBI8BJh2QVqEUdDIBsEkMdFAkXS88ms5qxJ
+	7aTbogQl0y7k0cLsAYd4hRpV4oU7FsuEsp2zn7Nr7BnUdhtm4kl9qpKd7+KUCIL2PEuDUyLoH5cqX
+	EIc9eijQuX1DQEYl3UFhQq3Kg4ZoIqrRQZx6ENE469Mzm+dC+WnZmowVt4BxI9V6yGpRgImgCl4XI
+	U2jijMn3IUPseSgoYRD+JlVHk3UauJol7kZ2K7X8jG3ra9nDt6cvxUiwy2IHLdBr3Xq/DOHKgGTbq
+	uqyjJaOVLnSwZfM0D/gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti8Fn-00000006ew9-3pz7;
-	Wed, 12 Feb 2025 08:37:55 +0000
+	id 1ti8GC-00000006f2B-0pdU;
+	Wed, 12 Feb 2025 08:38:20 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti8Fl-00000006evo-33PC
+	id 1ti8GA-00000006f13-088I
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Feb 2025 08:37:54 +0000
+	Wed, 12 Feb 2025 08:38:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 938695C5B09;
-	Wed, 12 Feb 2025 08:37:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82CCBC4CEE2;
-	Wed, 12 Feb 2025 08:37:44 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id F3E355C274F;
+	Wed, 12 Feb 2025 08:37:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D546C4CEDF;
+	Wed, 12 Feb 2025 08:38:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739349472;
-	bh=vSk1vLdngX9mcfOhOr0BrHcNNmv+3X4JGjHSGrHYxdo=;
+	s=k20201202; t=1739349497;
+	bh=Fc2sNvHMZglmp/mhVCAXjnNImKTEggsLVKReblTkS4c=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=S86myunxRhD6mumM3HXOHNgu6qAgxsLQx+qbNNh+Kr6akvtC37rJF1qySSfKPsPvg
-	 1eq8kkhfuovd36EXsbWTsIpH4K5L840rUENgwA4PKFBiRcmT0R/nPS7Pv3NpiwfNqz
-	 2BO3zplzJrkcJCqJFcv8Ki97CdyKiOV4XhpOVA1k5HqyViGD/oLm40Gfm3pHkbUDjI
-	 3JtbLjjTFBcHCzetRzDpkKDnnxfHHJRmb/2Rji4prLuFbgn9NYPI2XxbOwYwJkSeOM
-	 HoIgJyFNs1jWKV4zl0ZPcyGsZdN9nxNv0HEFwK7vVvGzbottZ4eGuiiRD3joIZsa1j
-	 zTFEvifzynh3Q==
-Message-ID: <0b684d95-9461-4da3-8016-9c74c9dd03ce@kernel.org>
-Date: Wed, 12 Feb 2025 09:37:42 +0100
+	b=RjOFk1/nGfTvDhLgRxvoT7W70PRC9OWbO5krgL8sVBWJOEbebA3UGSZhH63J0MnTj
+	 0gXSH+3MNwQFVuxUlcdULbYpvBgQ4d/bwgufqcZECVlK2IKa6pw6H5WuTBnWGaV1nC
+	 kLHMtAbdMIj+e+g7/+1aaJSeC5yDncouDDtBxME+WSZFhiN58BlkRW9hGqntdrB57U
+	 UShnOjulqc/FBlay6gd+e4yiQqeu7AXGNyBA/V/X0aK4FyljtlVYF97Ai1+qMPrq4A
+	 mwiXcdRI0cnzy0Ec+CjiD0d7iJrjXFs/2nNxRmeR0Ve95d4/Xw7FJ+IeNfuTRmWMj+
+	 xQ8UWu3i4QmVw==
+Message-ID: <e620e80d-afeb-4ce1-9798-2f5cdd92b3b1@kernel.org>
+Date: Wed, 12 Feb 2025 09:38:07 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/4] dt-bindings: display/msm: Document the
- dp-controller for QCS8300
+Subject: Re: [PATCH v4 3/4] dt-bindings: display/msm: Document MDSS on QCS8300
 To: Yongxing Mou <quic_yongmou@quicinc.com>, Rob Clark <robdclark@gmail.com>,
  Abhinav Kumar <quic_abhinavk@quicinc.com>,
  Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Sean Paul <sean@poorly.run>,
@@ -63,10 +62,9 @@ To: Yongxing Mou <quic_yongmou@quicinc.com>, Rob Clark <robdclark@gmail.com>,
  Bjorn Andersson <andersson@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
  freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20250120-mdssdt_qcs8300-v4-0-1687e7842125@quicinc.com>
- <20250120-mdssdt_qcs8300-v4-2-1687e7842125@quicinc.com>
+ <20250120-mdssdt_qcs8300-v4-3-1687e7842125@quicinc.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -112,10 +110,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250120-mdssdt_qcs8300-v4-2-1687e7842125@quicinc.com>
+In-Reply-To: <20250120-mdssdt_qcs8300-v4-3-1687e7842125@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250212_003753_899491_94ACDE65 
-X-CRM114-Status: UNSURE (   6.21  )
+X-CRM114-CacheID: sfid-20250212_003818_155906_6223F3E1 
+X-CRM114-Status: UNSURE (   8.02  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -134,14 +132,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 20/01/2025 04:49, Yongxing Mou wrote:
-> Add compatible string for the DisplayPort controller found on the
-> Qualcomm QCS8300 platform.QCS8300 only support one DisplayPort
-> controller and have the same base offset with sm8650, so we reuse
-> the sm8650 DisplayPort driver.
+> Document the MDSS hardware found on the Qualcomm QCS8300 platform.
+> QCS8300 use the same DPU hardware version as SA8775P, so we reuse it's
+> driver. But QCS8300 only have one DP controller, and offset is same with
+> sm8650, so dp controller reuse the sm8650's driver.
 > 
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-NAK, unreviewed. See all other emails about this mess.
+> Signed-off-by: Yongxing Mou <quic_yongmou@quicinc.com>
+> ---
+>  .../bindings/display/msm/qcom,qcs8300-mdss.yaml    | 244 +++++++++++++++++++++
+>  1 file changed, 244 insertions(+)
 
+Also wrong compatibles used.
 
 Best regards,
 Krzysztof
