@@ -4,79 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F321BC0219B
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Feb 2025 21:09:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88F22C0219B
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Feb 2025 00:13:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MPYvjZMTHEGFUkZZltWPtD2WEA4ADGRlSH4DWIGTEaE=; b=s3KNNfK2AP7TI3
-	owe42k69pjLVVny8jiGhAl4nHixhVJMo7Ff7H2qemTbzFVhwSbDTmoXgZX+jdRRg2zc6O35e2N0sx
-	SsxfVSahLfoDQQYON4LftBDl4dYtScTNesYD4L9cpcJ6iGOSgibkad5NP/RfVWVLC/MsZkzI2SRc6
-	ApiYyJtQKTLVL9c7s6kXW9xRL1V0L5ttU4eizW99nrtckvuho/G3vjmS5lz1PVXHxb7H0sgNoeYkc
-	n3RQV4VTQrR8PgowgDbq5LDym5PaPKx835e8LtO6syFmFayvhE9ftM9MgxXH7sIx45L3g4E1gklpl
-	MO8PwgbWqsh0hIBZXHvg==;
+	List-Owner; bh=uS9aq+qGXjaefoke5w+eixrvjWBH3OO/RNX/b56ItHs=; b=Tq/+21uVqYutbS
+	m+RrKRqqDiyVCuQaz0WZEyU76DailwRxWGoc0w1PIkn1+NOn/NxvaY4wL6bjjlyGgcaiZF9/NeGcX
+	MzdOy6hpRqlTxcK7Zyvs3JuhA7FOolQBqez4Thh66u04zv/PVEHjOj/TA2wUiXSWiJib9VBIzJiwf
+	HSziFZnKVEVhIxUpM8cqyXYgpKSMqLzS/AFgQzwAFlQNI4JHMztNEbdKIUk/ed4snsrME4ENeaktw
+	4jut/neR5Ctmy/y7D1jNio8NfupjDs7O4FjWJvzsmypB9ugpluw1im5BguJXWFvhM9nXiMYIkU7GH
+	gE632Bg4ENuDf4uaK8ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1thxVq-00000005InY-38yK;
-	Tue, 11 Feb 2025 21:09:46 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1ti0Nb-00000005fSS-2e7b;
+	Wed, 12 Feb 2025 00:13:27 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1thxUO-00000005IJH-2N0v;
-	Tue, 11 Feb 2025 21:08:17 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 2582FA40D7F;
-	Tue, 11 Feb 2025 21:06:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26979C4CEE2;
-	Tue, 11 Feb 2025 21:08:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739308095;
-	bh=bGAOKA1MkNL81iEciQ/YaP9238hsjmHj0yVs2PHuZjM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=WQ+4Fr4obzotuKZeY0/kEEylnLtsOD6qn4FsTE6130dX+MJjMj/w+e8PP+Rimq72C
-	 TrSDrPoODZpQ0mWRSCDfuz5DIEnbG4cxoY5xlGdm+mXlMGfSE1wUUT/m3Jspj+9rrA
-	 G81fXqid9RUh9II6oOuWG9CkvC3Lbz3ogvPg7KAEakKMpacaZBCIQWesFL8M9BTx6U
-	 Zbzo+M49Pq+rEzRVuGgmkNbc7Ew8iY78IZleQNZb3B+N5X07Yyb4F1putZOT+qAPRP
-	 5y1Ze4HTH/9MfNe8uOxWCKn4VxNHAhJ+YFRaj67QNEb3ULeJzPFkuvAsj7C99etlv+
-	 6Sy+bxDDNG+AA==
-Date: Tue, 11 Feb 2025 15:08:14 -0600
-From: Rob Herring <robh@kernel.org>
-To: Andre Przywara <andre.przywara@arm.com>
-Cc: Andras Szemzo <szemzo.andras@gmail.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Maxime Ripard <mripard@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@baylibre.com>,
-	Florian Fainelli <florian.fainelli@broadcom.com>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-gpio@vger.kernel.org, linux-pm@vger.kernel.org,
-	linux-riscv@lists.infradead.org
-Subject: Re: [PATCH v2 09/10] ARM: dts: sun8i: add DTSI file for V853
-Message-ID: <20250211210814.GB1172102-robh@kernel.org>
-References: <20250205125225.1152849-1-szemzo.andras@gmail.com>
- <20250205125225.1152849-10-szemzo.andras@gmail.com>
- <20250206161958.1ae885db@donnerap.manchester.arm.com>
+	id 1ti0NZ-00000005fS2-3gQx
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Feb 2025 00:13:27 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-54509f46614so3304155e87.0
+        for <linux-phy@lists.infradead.org>; Tue, 11 Feb 2025 16:13:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1739319204; x=1739924004; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=09rdko5VnFpqLqbQWkI5gnzT1kNBqMtoAA5n9hDbxAo=;
+        b=mDjurjb5Kv7hcVPs6ifhyDZ/ztURFtNI8Vl0lE2GLu10lhILe3MASWndaTm71wnpVH
+         MxJRHSMBGfgX+y3juZJLmoC/ECCFakvt7sFKz7OXau3X+CnIs6IMwcnIG1DGCcMTOAxB
+         SuvC5yxiTZsvvsQJR8I5Lazn1Rf27Qb78rmSG1B5oUPO2np8hCm+Ye3d3PWT1nFSmNLc
+         2DYPYiCUlZj3yg7XUfvcM5FLL4Gx/+OrfYf1mbeYDkdwn0+3G/4RcFCBJ9K7Nf83e924
+         zRey+6w5LzELxS73ysLJUe+MwVk8QtKG62Xytth4uY1FyB/l7Epta2mh/g4cS26uGKxu
+         IfvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739319204; x=1739924004;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=09rdko5VnFpqLqbQWkI5gnzT1kNBqMtoAA5n9hDbxAo=;
+        b=a3aVubRsGk/c2abLi2iL5R6hhKcIez5OZVn2NQYxG4i+KpoFXu4JJcxlXraAEzmt+d
+         jAV47iAzV8aNLCOPutkWZB05RzbJXlURV9elq1Ox44Hylc0wkdnmNKz7JSAXlkIxm4+J
+         10nvmkqRahwN4CQU5HMJ6hZPvGhYHji1DEXp2CBuTAs8WNUQ8axLCh88bkrmyTTIFknH
+         CulpxoHmRY38UGigHr5qNvCIBftDeqy/8ONbFnbnbLSODaoC3MzPsJcuNDbenED7s/is
+         KdsdSYOCxHogKq9ENkerMLg8USYzrHAZgt1f43k6gBTdBR1FSz6jPfQuy3Z/vvxpICpO
+         9WHA==
+X-Forwarded-Encrypted: i=1; AJvYcCV8R5Pz1dKIztpe2HjKDj31eQZwW6nHaweaS9GOqiS+npaAKuCv67QpFk0Mly0LgympKAtmpw1QAnA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzyYKyEyvjCS14GD/Zo6x76grv+awTjx0lW9s3ublPwRQzWyD7S
+	DHP0RJ132rYBydgEcUXnUmdoOwgaY6FOlmIszVwOkVUdw7hWcEkF5XPBAyAVTOk=
+X-Gm-Gg: ASbGncsUyJM4lf6ICk6kwVNd0e9lwfcXA+/mRfbcnOsg9j1dqpXi4eo4z3kiNuYJ2Sb
+	KuuLJVX6A5Q17iL623grSnrbXnNEI2vi/g6nd2lCly0BjPPOSWCMmHOJiKkp6zDtgKZKmgL9FV4
+	xP72JzwZTHVzINuZW+vzTqqPwUHegNvc2cGcWtYVVVGm3UMFbgb6NRhJd9CqGf7W5E+1YnskDh/
+	sEePbEvhPGc56iggBu6yAwsSuFNDq4ZGJYfAlhgIXLjJY6zy8VtZtJ4q6RS78mk3xjVIWWwgVvM
+	JnCqr0bnLfzGnNsXdszmBF/GhGeJ0aqfT5nWIyRHaOgh38OtLK8wBX5rB42ZqfCV4XcJQZA=
+X-Google-Smtp-Source: AGHT+IHgVatrLZ/ZeYnRWB0ZM6rywyAVkWjefzKWqV7sKscFBHR+wM/ltf3GM+1GfPZl8mnRuMYC9Q==
+X-Received: by 2002:a05:6512:2031:b0:545:54b:6a0e with SMTP id 2adb3069b0e04-54518182960mr253317e87.48.1739319203556;
+        Tue, 11 Feb 2025 16:13:23 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5441053eb53sm1684741e87.36.2025.02.11.16.13.21
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 11 Feb 2025 16:13:22 -0800 (PST)
+Date: Wed, 12 Feb 2025 02:13:19 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Wenbin Yao <quic_wenbyao@quicinc.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, p.zabel@pengutronix.de, 
+	abel.vesa@linaro.org, quic_qianyu@quicinc.com, neil.armstrong@linaro.org, 
+	manivannan.sadhasivam@linaro.org, quic_devipriy@quicinc.com, konrad.dybcio@oss.qualcomm.com, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] phy: qcom: qmp-pcie: Add PHY register retention
+ support
+Message-ID: <7deghiadmomrz7w7vq3v7nkzq2kabq4xbhkouswjrexif7pip3@tvjlpvuulxvp>
+References: <20250211094231.1813558-1-quic_wenbyao@quicinc.com>
+ <20250211094231.1813558-3-quic_wenbyao@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250206161958.1ae885db@donnerap.manchester.arm.com>
+In-Reply-To: <20250211094231.1813558-3-quic_wenbyao@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250211_130816_730011_34E21304 
-X-CRM114-Status: GOOD (  19.39  )
+X-CRM114-CacheID: sfid-20250211_161325_938694_3914CCAC 
+X-CRM114-Status: GOOD (  28.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,51 +101,208 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 06, 2025 at 04:19:58PM +0000, Andre Przywara wrote:
-> On Wed,  5 Feb 2025 13:52:24 +0100
-> Andras Szemzo <szemzo.andras@gmail.com> wrote:
+On Tue, Feb 11, 2025 at 05:42:31PM +0800, Wenbin Yao wrote:
+> From: Qiang Yu <quic_qianyu@quicinc.com>
 > 
-> Hi,
+> Some QCOM PCIe PHYs support no_csr reset. Unlike BCR reset which resets the
+> whole PHY (hardware and register), no_csr reset only resets PHY hardware
+> but retains register values, which means PHY setting can be skipped during
+> PHY init if PCIe link is enabled in booltloader and only no_csr is toggled
+> after that.
 > 
-> > V853/V851 is a new SoC by Allwinner. Add a basic dtsi file for it.
-> > 
-> > Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
-> > ---
-> >  arch/arm/boot/dts/allwinner/sun8i-v853.dtsi | 656 ++++++++++++++++++++
-> >  1 file changed, 656 insertions(+)
-> >  create mode 100644 arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
-> > 
-> > diff --git a/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi b/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
-> > new file mode 100644
-> > index 000000000000..8b82b8783127
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
-> > @@ -0,0 +1,656 @@
-> > +// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
-> > +// Copyright (C) 2024 Andras Szemzo <szemzo.andras@gmail.com>
-> > +
-> > +#include <dt-bindings/clock/sun6i-rtc.h>
-> > +#include <dt-bindings/clock/allwinner,sun8i-v853-r-ccu.h>
-> > +#include <dt-bindings/reset/allwinner,sun8i-v853-r-ccu.h>
-> > +#include <dt-bindings/clock/allwinner,sun8i-v853-ccu.h>
-> > +#include <dt-bindings/reset/allwinner,sun8i-v853-ccu.h>
-> > +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> > +#include <dt-bindings/power/allwinner,sun8i-v853-ppu.h>
-> > +
-> > +/ {
-> > +	#address-cells = <1>;
-> > +	#size-cells = <1>;
-> > +
-> > +	dcxo: dcxo-clk {
+> Hence, determine whether the PHY has been enabled in bootloader by
+> verifying QPHY_START_CTRL register. If it's programmed and no_csr reset is
+> available, skip BCR reset and PHY register setting to establish the PCIe
+> link with bootloader - programmed PHY settings.
 > 
-> What's people's opinion about the node name? Traditionally we call this
-> "osc24M", in all the other SoCs except D1 and A100. So is this the new
-> black?
+> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 91 +++++++++++++++---------
+>  1 file changed, 58 insertions(+), 33 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index ac42e4b01065..7f0802d09812 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -2805,6 +2805,7 @@ struct qmp_pcie {
+>  
+>  	const struct qmp_phy_cfg *cfg;
+>  	bool tcsr_4ln_config;
+> +	bool phy_initialized;
+>  
+>  	void __iomem *serdes;
+>  	void __iomem *pcs;
+> @@ -3976,6 +3977,7 @@ static int qmp_pcie_init(struct phy *phy)
+>  {
+>  	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+>  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+> +	void __iomem *pcs = qmp->pcs;
+>  	int ret;
+>  
+>  	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
+> @@ -3984,10 +3986,17 @@ static int qmp_pcie_init(struct phy *phy)
+>  		return ret;
+>  	}
+>  
+> -	ret = reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+> -	if (ret) {
+> -		dev_err(qmp->dev, "reset assert failed\n");
+> -		goto err_disable_regulators;
+> +	qmp->phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+> +	/*
+> +	 * Toggle BCR reset for phy that doesn't support no_csr
+> +	 * reset or has not been initialized
+> +	 */
+> +	if (!qmp->nocsr_reset || !qmp->phy_initialized) {
 
-That's documented (but not enforced) in fixed-clock.yaml now. It's 
-"clock-<freq-in-hz>".
+Instead of having phy_initialized please add another boolean field,
+qmp->skip_init = !!qmp->nocsr_reset && !!phy_initialized;
+Use qmp->skip_init through the code.
 
-Rob
+> +		ret = reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+> +		if (ret) {
+> +			dev_err(qmp->dev, "reset assert failed\n");
+> +			goto err_disable_regulators;
+> +		}
+>  	}
+>  
+>  	ret = reset_control_assert(qmp->nocsr_reset);
+> @@ -3998,10 +4007,12 @@ static int qmp_pcie_init(struct phy *phy)
+>  
+>  	usleep_range(200, 300);
+>  
+> -	ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+> -	if (ret) {
+> -		dev_err(qmp->dev, "reset deassert failed\n");
+> -		goto err_assert_reset;
+> +	if (!qmp->nocsr_reset || !qmp->phy_initialized) {
+> +		ret = reset_control_bulk_deassert(cfg->num_resets, qmp->resets);
+> +		if (ret) {
+> +			dev_err(qmp->dev, "reset deassert failed\n");
+> +			goto err_assert_reset;
+> +		}
+>  	}
+>  
+>  	ret = clk_bulk_prepare_enable(ARRAY_SIZE(qmp_pciephy_clk_l), qmp->clks);
+> @@ -4011,7 +4022,8 @@ static int qmp_pcie_init(struct phy *phy)
+>  	return 0;
+>  
+>  err_assert_reset:
+> -	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+> +	if (!qmp->nocsr_reset || !qmp->phy_initialized)
+> +		reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+>  err_disable_regulators:
+>  	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
+>  
+> @@ -4023,7 +4035,10 @@ static int qmp_pcie_exit(struct phy *phy)
+>  	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+>  	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>  
+> -	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+> +	if (!qmp->nocsr_reset)
+> +		reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+> +	else
+> +		reset_control_assert(qmp->nocsr_reset);
+>  
+>  	clk_bulk_disable_unprepare(ARRAY_SIZE(qmp_pciephy_clk_l), qmp->clks);
+>  
+> @@ -4042,16 +4057,22 @@ static int qmp_pcie_power_on(struct phy *phy)
+>  	unsigned int mask, val;
+>  	int ret;
+>  
+> -	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+> -			cfg->pwrdn_ctrl);
+> +	/*
+> +	 * Write CSR register for phy that doesn't support no_csr
+
+what is CSR register?
+
+> +	 * reset or has not been initialized
+> +	 */
+> +	if (!qmp->nocsr_reset || !qmp->phy_initialized) {
+> +		qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+> +				cfg->pwrdn_ctrl);
+>  
+> -	if (qmp->mode == PHY_MODE_PCIE_RC)
+> -		mode_tbls = cfg->tbls_rc;
+> -	else
+> -		mode_tbls = cfg->tbls_ep;
+> +		if (qmp->mode == PHY_MODE_PCIE_RC)
+> +			mode_tbls = cfg->tbls_rc;
+> +		else
+> +			mode_tbls = cfg->tbls_ep;
+>  
+> -	qmp_pcie_init_registers(qmp, &cfg->tbls);
+> -	qmp_pcie_init_registers(qmp, mode_tbls);
+> +		qmp_pcie_init_registers(qmp, &cfg->tbls);
+> +		qmp_pcie_init_registers(qmp, mode_tbls);
+> +	}
+>  
+>  	ret = clk_bulk_prepare_enable(qmp->num_pipe_clks, qmp->pipe_clks);
+>  	if (ret)
+> @@ -4063,15 +4084,16 @@ static int qmp_pcie_power_on(struct phy *phy)
+>  		goto err_disable_pipe_clk;
+>  	}
+>  
+> -	/* Pull PHY out of reset state */
+> -	qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+> +	if (!qmp->nocsr_reset || !qmp->phy_initialized) {
+> +		/* Pull PHY out of reset state */
+> +		qphy_clrbits(pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+>  
+> -	/* start SerDes and Phy-Coding-Sublayer */
+> -	qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START);
+> -
+> -	if (!cfg->skip_start_delay)
+> -		usleep_range(1000, 1200);
+> +		/* start SerDes and Phy-Coding-Sublayer */
+> +		qphy_setbits(pcs, cfg->regs[QPHY_START_CTRL], SERDES_START | PCS_START);
+>  
+> +		if (!cfg->skip_start_delay)
+> +			usleep_range(1000, 1200);
+> +	}
+>  	status = pcs + cfg->regs[QPHY_PCS_STATUS];
+>  	mask = cfg->phy_status;
+>  	ret = readl_poll_timeout(status, val, !(val & mask), 200,
+> @@ -4096,16 +4118,19 @@ static int qmp_pcie_power_off(struct phy *phy)
+>  
+>  	clk_bulk_disable_unprepare(qmp->num_pipe_clks, qmp->pipe_clks);
+>  
+> -	/* PHY reset */
+> -	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+>  
+> -	/* stop SerDes and Phy-Coding-Sublayer */
+> -	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_START_CTRL],
+> -			SERDES_START | PCS_START);
+> +	if (!qmp->nocsr_reset) {
+
+Why this one doesn't check for the qmp->phy_initialized?
+
+> +		/* PHY reset */
+> +		qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+>  
+> -	/* Put PHY into POWER DOWN state: active low */
+> -	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+> -			cfg->pwrdn_ctrl);
+> +		/* stop SerDes and Phy-Coding-Sublayer */
+> +		qphy_clrbits(qmp->pcs, cfg->regs[QPHY_START_CTRL],
+> +				SERDES_START | PCS_START);
+> +
+> +		/* Put PHY into POWER DOWN state: active low */
+> +		qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+> +				cfg->pwrdn_ctrl);
+> +	}
+>  
+>  	return 0;
+>  }
+> -- 
+> 2.34.1
+> 
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
