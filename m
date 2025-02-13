@@ -4,105 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C212C021A0
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Feb 2025 18:20:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C910C021A0
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Feb 2025 18:21:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jbcT4nCTn3+c7YraQC84r079h2EkFrSO7E8HBvlpMlU=; b=K/zf17bnSnBEop
-	gIxou4BP3RXqsgalKKPDhD0FCUpRW9QDqKxwFQ/2vbvrGjFtOulPrK2xNJ2jnMRvs8ud07c419Xru
-	Kmr4+tyGTO330oIDZy7Pj7Iz97wMZ5CYEerFkExjegm4nMaWjptNHhPwCdJrZYml6WiRxj5z6umGJ
-	3XP+MIAK6MS99I0EaO0GHyLPCkMdcL0bjlZHd8D/ylwklo2FiMm24iQ2nt4pKqgAD4sM+wllnAVbx
-	qD/KX87pu5ssY4FbrSY8pkOQKveHW0zbIi0lmS/+zOgOlcOT8wUQ2ZZvtFfBdKdRZ6BVulpc80DQv
-	iH3K6bd1fPW0A1GzBeQA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Zb0ohNJcXVYPhBm2Rzr6PUT5l5GyOdr0Cy2ehQfSUGY=; b=Y2D7Jyi3JzYhZWYTKqIq6XUXHI
+	Edfm/XbToSi7K7bo4ZE4rroTJ05lSqJAVuQA7FhJhojricuiiS2URwSkFDnsEI2wnoS6l+ToHWwSL
+	xuLxw31bfrVzjeNPg8WMtewCBoBDRquc/y3J+SgLY1GkN3Ry3p4iJ3P71gee217KAwgSpKKr3PFCu
+	eStMc+VWrDVmW/PYH0CJBEFnB+YEih1HXnorxL7dNICrexYJjcqjBJji2b0PcSAxry9QMTwANSRxu
+	9z7p+GvO5IrAsndfXj8dCrDLaosV9hxvsM3QvLPpLijLls+8+PX9tR7qGS5aZH87sjfmrTfRO1gKh
+	GHU2Gocg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tidoz-0000000CCcO-191N;
-	Thu, 13 Feb 2025 18:20:21 +0000
-Received: from mail-ot1-x32f.google.com ([2607:f8b0:4864:20::32f])
+	id 1tidqO-0000000CD32-0mRy;
+	Thu, 13 Feb 2025 18:21:48 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ticxp-0000000C0HM-2rvW
-	for linux-phy@lists.infradead.org;
-	Thu, 13 Feb 2025 17:25:27 +0000
-Received: by mail-ot1-x32f.google.com with SMTP id 46e09a7af769-72703b0fe2fso374187a34.1
-        for <linux-phy@lists.infradead.org>; Thu, 13 Feb 2025 09:25:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1739467524; x=1740072324; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=mp8WnurnIDwQ4N7+32kRAbs4w5dFYFrQQIq32Y3ZWhU=;
-        b=jcbkCM1Pqm8XHYx9Nm9lvzGnDoROdhup3YY8QCwvjfeDCjzsqC84BJfRTIXeWd9O1Z
-         lYki98U7rqbzPLJ/lwzjwg4nbGMQil1uBXqHRwu+ZpaHXM0hosmgLscldl0AwbiaxpHP
-         jyvvb0V8ekGSujpt+o3YL0mUw/sLv5ncTHEoxiF/BeIXFCRPIlAy5MOIRr8SbGWA85LY
-         0z7V2blOrNQUoiGsufWKVs+tYUPJwVlqik3CpRTF+48FUeJQP6Yjkuy55GCEqjQAxhPM
-         XRW2pCD3WDcrB1D+lVtYWPYuQPB0+vRd01TzVmXG0zFONA6E5RqdO0TAB/XEZBeSrXnV
-         ggow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739467524; x=1740072324;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=mp8WnurnIDwQ4N7+32kRAbs4w5dFYFrQQIq32Y3ZWhU=;
-        b=OUdDuBshFtC1+645OkT8DSCyzm+xk8xPuiMBd/+Wy1HHoU7G9B4wG+nOc5udfoA589
-         /aoGNnvIbMHHW8Cb9QnrkXwYVGgsEAjJbS/TeJhu+YfGgPZSSg5F9Yl8peqKI8mud3kO
-         5yw5naTa2gT0qLe96f8z5ssRMIcZ3eX1LQywbMGW1UXnSWaNFXPVQ43/Mb2lEo8p/FNK
-         VshLGRgBhcp8oth2ZZcItoDjAJVz42R0zggszB9Nk0ecVWBrM+Rlp0HC19dBEXnguw3C
-         ashmjWZDfT8pE5Ihwu1R9KJ9fc1nQw8cnxJZRE22ot8lOW6rLaqiDe9tXZbn4J6HmuRO
-         Cgrw==
-X-Forwarded-Encrypted: i=1; AJvYcCV0SGaWSVXExADD4e6+2L4Rh6TWyLffZ3w3w11VFewpYW8HPnpQq/cT0LIdyv4BG7tej/SBJ6wL6bE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzxEyNZ5Nu22CmFvaNRtaYbHd3s7uLklF4QXYXU8WBi6vfcFAK5
-	kKj3Nlfnt5dyfcQDmV2uiczISyT3Gx6Tt2d5jEpzh/fYLmOrO8NL/nVPmSvdsfE=
-X-Gm-Gg: ASbGncsRMZQo9KfcYaPeQqwMyoSwxdBBNuRACs2IrY6s3cZI57VPFYpkgb45D/kgPkf
-	2AqmKmHepyWrYGcZuhLR9WYxz2QQ+O9HETx8nxeuan6cBvRnKey/zbzb17zIg7qgMVAGVWcOv6L
-	+kEMluJmj5/ngpTMo2c/bG4Bf+WOSkHbpzD6DKfL03dXIwalsubBvIOblLesyIRalpsb+h0xcjg
-	RPGMR6pQeDhvrNNcan4I8n3lV0AJe0I90Tjst10Imdj9YQJbj/VaVdIuubhNcMZxK3Tg9370NRC
-	WPGf2ycDbbUWhBh179SI5lVbJxrWaqYcQe2LL8mYamT82crW7OZc
-X-Google-Smtp-Source: AGHT+IFRLkc52JKi83ncUWwAgxo2TvaFCE/dbkTZNE6D15ISJ0Y8Jn4hp2Y0d5PwcxAk7Qj4zAr0dQ==
-X-Received: by 2002:a05:6830:6b03:b0:718:41b8:5d6d with SMTP id 46e09a7af769-726f1d8aaa8mr6076689a34.24.1739467523802;
-        Thu, 13 Feb 2025 09:25:23 -0800 (PST)
-Received: from [192.168.0.142] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 46e09a7af769-7270025806bsm743771a34.53.2025.02.13.09.25.21
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 13 Feb 2025 09:25:22 -0800 (PST)
-Message-ID: <801b5364-129f-42e9-bf9a-a90d9eeb4629@baylibre.com>
-Date: Thu, 13 Feb 2025 11:25:21 -0600
+	id 1ticzJ-0000000C0Ym-3XQl;
+	Thu, 13 Feb 2025 17:26:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1739467611; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=DBi2zEpYnKy4XuIgWkaFTscHZ7nB/Yg9TWfeiuiqUtEh568pSlCHcprWV131jLiyNkPrV0PgXxkXOJF+7/joCDKC38TqYAzrCGxvzkMLV61uE0Cy2Cwlt0NXSVaWUu1C8LJGg9BVDEm9IeAAEWyTtJSM2Co8i4iQRkugciWGig0=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1739467611; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=M5hWV7zpzfxrkj20JGXs36bIgvWN+f1eZBOfQY7SIjM=; 
+	b=H0UaH685Fnf6T5gMeeM3s5UsaIRb+Y9jD6hk4aLgNe8A/HDjoAfNj3RgTEr/Ns0Ic1/pqf25ULiccEHjw+hz1YVZWFRt3ym5UmhNWh9KuCsdH1zQlXoXByMo2ZcWskNHcK8jc1AROJSMHLG/aY76r7gaZ/wj/4twi58HWGWV70s=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1739467611;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=M5hWV7zpzfxrkj20JGXs36bIgvWN+f1eZBOfQY7SIjM=;
+	b=Ws91bnDMeBkWP5IXglfIKxIRozeYMM8MzNL39X6Jq2/pVSfbuX7EarFMbKklR5mw
+	dd0tn8C8fZF4DPbhVIEG9+xawrfjR7jTOJWby3nlBp6hy7bDlg7VSU5flovBjG3uei0
+	tgMsDOs+DMRcUp6k8/mTn4NIl9WKVT5S3z6qjrNw=
+Received: by mx.zohomail.com with SMTPS id 1739467608754665.7670786696585;
+	Thu, 13 Feb 2025 09:26:48 -0800 (PST)
+Received: by venus (Postfix, from userid 1000)
+	id 785651806DE; Thu, 13 Feb 2025 18:26:43 +0100 (CET)
+Date: Thu, 13 Feb 2025 18:26:43 +0100
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>
+Cc: Damon Ding <damon.ding@rock-chips.com>, heiko@sntech.de, 
+	robh@kernel.org, conor+dt@kernel.org, algea.cao@rock-chips.com, rfoss@kernel.org, 
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	hjc@rock-chips.com, kever.yang@rock-chips.com, dmitry.baryshkov@linaro.org, 
+	vkoul@kernel.org, andy.yan@rock-chips.com, krzk+dt@kernel.org, 
+	linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
+Message-ID: <tg6eyew4qahuxqakmmejne7xx2rkouj6htp55acun4ajz2irz2@vlmvqv3zc5vc>
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+ <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: (subset) [PATCH v3 00/15] gpiolib: add
- gpiod_multi_set_value_cansleep
-To: Bartosz Golaszewski <brgl@bgdev.pl>,
- Linus Walleij <linus.walleij@linaro.org>, Andy Shevchenko <andy@kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Michael Hennerich <Michael.Hennerich@analog.com>,
- Jonathan Cameron <jic23@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?Q?Nuno_S=C3=A1?=
- <nuno.sa@analog.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>
-Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
- linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-sound@vger.kernel.org, Andy Shevchenko <andy.shevchenko@gmail.com>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <173935301204.11039.10193374588878813157.b4-ty@linaro.org>
-Content-Language: en-US
-From: David Lechner <dlechner@baylibre.com>
-In-Reply-To: <173935301204.11039.10193374588878813157.b4-ty@linaro.org>
+In-Reply-To: <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-1.4.2/239.417.30
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_092525_726990_2699A254 
-X-CRM114-Status: GOOD (  13.19  )
+X-CRM114-CacheID: sfid-20250213_092657_961176_83742A7D 
+X-CRM114-Status: GOOD (  27.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,44 +81,151 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2813825636813685523=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/12/25 3:36 AM, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
-> 
-> 
-> On Mon, 10 Feb 2025 16:33:26 -0600, David Lechner wrote:
->> This series was inspired by some minor annoyance I have experienced a
->> few times in recent reviews.
->>
->> Calling gpiod_set_array_value_cansleep() can be quite verbose due to
->> having so many parameters. In most cases, we already have a struct
->> gpio_descs that contains the first 3 parameters so we end up with 3 (or
->> often even 6) pointer indirections at each call site. Also, people have
->> a tendency to want to hard-code the first argument instead of using
->> struct gpio_descs.ndescs, often without checking that ndescs >= the
->> hard-coded value.
->>
->> [...]
-> 
-> Applied, thanks!
-> 
-> [06/15] gpio: max3191x: use gpiod_multi_set_value_cansleep
->         commit: eb2e9c308d2882d9d364af048eb3d8336d41c4bb
-> 
-> Best regards,
 
-Hi Bartosz,
+--===============2813825636813685523==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="jnxis7mvi3ww4bac"
+Content-Disposition: inline
 
-Do you plan to pick up the other patches that have been acked
-as well? It seems like most folks were OK with everything going
-though the gpio tree since the changes are small.
 
+--jnxis7mvi3ww4bac
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
+MIME-Version: 1.0
+
+Hello Piotr,
+
+On Thu, Feb 13, 2025 at 03:54:00PM +0100, Piotr Oniszczuk wrote:
+> > Wiadomo=C5=9B=C4=87 napisana przez Damon Ding <damon.ding@rock-chips.co=
+m> w dniu 23 sty 2025, o godz. 11:07:
+> >=20
+> > Picked from:
+> > https://patchwork.kernel.org/project/linux-rockchip/list/?series=3D9235=
+93
+> >=20
+> > These patchs have been tested with a 1536x2048p60 eDP panel on
+> > RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
+> > on RK3588 EVB1 board. Furthermore, the eDP display has been rechecked
+> > on RK3399 sapphire excavator board.
+> >=20
+> > Patch 1~4   are preparations for the RK3588 eDP support on both Analogix
+> >            side and Rockchip side.
+> > Patch 5~8  are to support to get panel from the DP AUX bus.
+> > Patch 9~11 are the RK3588 Analogix DP driver support.
+> > Patch 12    is to add the power sequencing delays for panel model
+> >            LP079QX1-SP0V.
+> > Patch 13    is the addition of RK3588 eDP0 node.
+> > Patch 14    is to enable the eDP0 display on RK3588S EVB1 board.
+> >=20
+> > Damon Ding (14):
+> >  drm/rockchip: analogix_dp: Replace DRM_...() functions with drm_...()
+> >  drm/rockchip: analogix_dp: Use formalized struct definition for grf
+> >    field
+> >  drm/rockchip: analogix_dp: Expand device data to support multiple edp
+> >    display
+> >  drm/bridge: analogix_dp: Add support for phy configuration.
+> >  dt-bindings: display: rockchip: analogix-dp: Add support to get panel
+> >    from the DP AUX bus
+> >  drm/bridge: analogix_dp: support to get &analogix_dp_device.plat_data
+> >    and &analogix_dp_device.aux
+> >  drm/bridge: analogix_dp: Add support to get panel from the DP AUX bus
+> >  drm/rockchip: analogix_dp: Add support to get panel from the DP AUX
+> >    bus
+> >  dt-bindings: display: rockchip: analogix-dp: Add support for RK3588
+> >  drm/bridge: analogix_dp: Add support for RK3588
+> >  drm/rockchip: analogix_dp: Add support for RK3588
+> >  drm/edp-panel: Add LG Display panel model LP079QX1-SP0V
+> >  arm64: dts: rockchip: Add eDP0 node for RK3588
+> >  arm64: dts: rockchip: Enable eDP0 display on RK3588S EVB1 board
+> >=20
+> > .../rockchip/rockchip,analogix-dp.yaml        |  25 +-
+> > arch/arm64/boot/dts/rockchip/rk3588-base.dtsi |  28 +++
+> > .../boot/dts/rockchip/rk3588s-evb1-v10.dts    |  54 ++++
+> > .../drm/bridge/analogix/analogix_dp_core.c    |  76 +++---
+> > .../drm/bridge/analogix/analogix_dp_core.h    |   1 +
+> > .../gpu/drm/bridge/analogix/analogix_dp_reg.c |  52 ++++
+> > drivers/gpu/drm/panel/panel-edp.c             |   8 +
+> > .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 238 +++++++++++++-----
+> > include/drm/bridge/analogix_dp.h              |   8 +-
+> > 9 files changed, 401 insertions(+), 89 deletions(-)
+> >=20
+> > --=20
+> > 2.34.1
+> >=20
+>=20
+> Damon,
+>=20
+> I=E2=80=99m playing with hdmi0 port enablement on radxa rock5 itx board w=
+ith 6.14 mainline.
+>=20
+> rock5 itx has 2 hdmi ports: hdmi0 is wired to rk3588 typeC1/eDP1
+> eDP with ra620 eDP->HDMI converter and hdmi1 from hdmi/edp tx1
+> (see page3 & page29 at
+> https://dl.radxa.com/rock5/5itx/v1110/radxa_rock_5itx_v1110_schematic.pdf)
+
+The RK3588 has two different DP controllers. The one handled in this
+series should get the eDP port running, which is routed to the
+"eDP Panel" in the block diagram on page 3 of the Rock 5 ITX schematics.
+So this series adds support for using "HDMI/eDP TX0" and "HDMI/eDP TX1"
+in DP mode.
+
+The port routed to HDMI0 via RA620 is the other DP controller, which
+also exists twice: "TYPEC0/DP0" and "TYPEC1/DP1". This DP controller
+is not yet supported upstream and there is no pending patchset. As far
+as I know Rockchip plans to work on preparing upstream support for that
+soon.
+
+Note, that the two DisplayPort controllers are completely different.
+The HDMI/eDP controller is a design from Analogix and the TypeC/DP
+controller is a design from Synopsys.
+
+P.S.: Heiko merged support for HDMI1 (RK3588 SoC level) recently. So you
+should be able to get that running by some DT additions to the Rock 5
+ITX board DT with the latest linux-next code :)
+
+Greetings,
+
+-- Sebastian
+
+--jnxis7mvi3ww4bac
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmeuK0wACgkQ2O7X88g7
++prlexAApJeFewv/JsqSV3wCoT23yhvxdlzYKIVVL/yo98r9WQPC4i1qmYmKRBI4
+vzvIr65JV41ReaTQs/q/BoIL0rHdfgn0ZkatJ0H7wbNbH2IztSS2VukNrAz9DwT4
+TvyUoo10hpaHiFTfKKSzDkL5/NI3d9pvi6AmUs+SmWMD7f2eXmyav5L2WHTZ0Nzl
+kLA4FPpSVS/3NQ5qTlhHsyM0kDVsL7R6G7ObMrQ9gAp9qkp6BJ353pHWEWtXgagu
+Dj4iMS5wfJ1VXYyQDJSFgeiibznIzIMlOR83c7AG7IMvowXL7IniG2Q8vUz1nPgC
+syKJOH3btyQzxkc9AYqXYXr7NUldDWhK84iqzsA0E+imxauPhXgfeQxQOR63uTXG
+fvZKtmVjM2gyqGp0ro5rEXSczzcnKj8tSC42AZm0d/ACS/TsCi8CcOKEsgtkCM+L
+7HhI7qlJUNihK6x90i+R9i2k7Ar9STYe+lUqxybSkZnNymp3nZwpkDVYLkuf53Ot
+pwrWkcRYXOhEggDrQNTe6xq3W1C+w/sNPflgnA33KAL2+xFCyt3RQq++BrLN4Aa/
+ECjWYGebnHLh+hFA8FToTF3KG6CjTNiyIvAsFBsjRoF9x/uLrZt+davDhGf1D3fP
+l/jfGWpAOhK6VBdKArybnrr6GEUTvZtb25x6f9eTbsVVTEGORmk=
+=iYP4
+-----END PGP SIGNATURE-----
+
+--jnxis7mvi3ww4bac--
+
+
+--===============2813825636813685523==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2813825636813685523==--
+
