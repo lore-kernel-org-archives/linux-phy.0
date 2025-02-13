@@ -4,73 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0358AC021A0
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Feb 2025 18:24:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 677EFC021A4
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Feb 2025 18:26:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QLxPMRQJa9UvhHJpNS9a6bE5+Svs4NnEkNnAUJTRRMo=; b=mPKeTI7LazId623oxk16Bz3YZZ
-	iFZwYkTcetwQVU3rEo7CQDMmtqatw/Lk5WLCNaq46rf4MPHBN5PgS27isLPi2kfLpKReyAunnhFtH
-	16PFK0Dub3ZYlW3drvwtsU0/hNTEDp70qdXgXAdhtxMcq4y/3Uvzz7/p0ic7JHEpPpxwIViInDr/g
-	9uF2LLAZULenn+r2TijwhHi4zDElq3xONn/T8Af73lnjo2gl3X1vyyIH0NUVfuGFhiDlReI/xy86V
-	fpbwQE9REEql8/TfNN6rCYgT0upq2PawTIqghn/EeWhpSJPBbJI64I2ukU+aaK+UEoiINVCa9oJuo
-	/+HKYkHA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tLRH/L5uJ2czjGC9A+nG3enEKLKnnjH1E+jor3i4fhw=; b=tUhZQ0tQ/vup64
+	InpTfxf+AGEGCPuhwTLdaTlqZ1pLtiaFI6LRyTXEbVHBp25At/+s2wIaTuZwaZFl3NabOxDrGgYR4
+	LhmRgHmUTURohv5alytMML2eLQko0WDXw5gfrJv4W42hwF+dGDo61JktEcDYP/e0TAeZw6rrObv0O
+	WTFWTGdXy4vIxhXbFFgjhGot2VJogDN+Bkw34xQTRYpm+wjSThs/jL7ezbQoJwSezbQSVqxCMhrQ8
+	CUGRP2ilBxYrmVgF3IHJ8OC4+W3KLGDZ3GxZa8sACY9Xd5zyC22EMW9n1fGFSxy0w/xkkO9L0mL73
+	5FqrW9CVCO0TvBI4Ra7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tidtD-0000000CDoE-0upd;
-	Thu, 13 Feb 2025 18:24:43 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1tiduc-0000000CE7d-0gDK;
+	Thu, 13 Feb 2025 18:26:10 +0000
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tid5R-0000000C1cl-2d6b;
-	Thu, 13 Feb 2025 17:33:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1739467992; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=fsZ9tyPjguNsUc2+X1eFr5QgUPWPBVzABYeF+VSOoUx8sOk2o9TIpuy6IFgXZUjG9vZWe2oUATvThyog4cB1QGSF+7jMYZN0kw9K4ETfX3PdZ8MffVDq/wZ0EpgjNyprDhV/ILksMWZTFad0oAv+bAEhZnMftm6shmu4Q2uh+DQ=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1739467992; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=6ByzMOuDBh5R+FUdNwn2gk3LwiXzk/aPZNyTOpzuZOU=; 
-	b=bta+8ZPQPOcCe9SZHB2yjLV1NS6qrkM+JiDqDJdXEM7/kUS9MuT5tKC+9VCVfIfzD8aCiVovVkZOSqExBy9M8mRQ2Z1mRt6G56DXfOz4tq350B3ZIYmhlv8R4Xu045K9k3bY3npdzZbBAxK2WJU2vsEIWL+tbEYKPRv8yV6terI=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1739467992;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=6ByzMOuDBh5R+FUdNwn2gk3LwiXzk/aPZNyTOpzuZOU=;
-	b=gHt2sI3u9x/IyIOL7Gz7LHOOPs0dHmzj8DCoJ1j0HswtKdfzbJT6zBFQ67GzwLvu
-	MPP/pAtZ4COd1DYdY5C/SpKgmnR6xnfTJ29gG6h2mt4W0K63gqqZ94CkCqga8aVXh6i
-	twwysP6rbc9WuqaBcE7MNq1IW8GqH8cgBGP/ll5k=
-Received: by mx.zohomail.com with SMTPS id 1739467989609795.4274306368665;
-	Thu, 13 Feb 2025 09:33:09 -0800 (PST)
-Received: by venus (Postfix, from userid 1000)
-	id 858F21806DE; Thu, 13 Feb 2025 18:33:04 +0100 (CET)
-Date: Thu, 13 Feb 2025 18:33:04 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Diederik de Haas <didi.debian@cknow.org>
-Cc: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>, 
-	Damon Ding <damon.ding@rock-chips.com>, heiko@sntech.de, robh@kernel.org, conor+dt@kernel.org, 
-	algea.cao@rock-chips.com, rfoss@kernel.org, devicetree@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, hjc@rock-chips.com, kever.yang@rock-chips.com, 
-	dmitry.baryshkov@linaro.org, vkoul@kernel.org, andy.yan@rock-chips.com, krzk+dt@kernel.org, 
-	linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
-Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
-Message-ID: <m3ovwhg3h2njsjpuj2wdahxex6zq2udmxonublgmnlrdfred4z@zxtyd6xvhram>
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
- <D7RH63Z1VBBD.1AIOQJIWPZIXS@cknow.org>
+	id 1tidEP-0000000C3KZ-1BRt
+	for linux-phy@lists.infradead.org;
+	Thu, 13 Feb 2025 17:42:34 +0000
+Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-54298ec925bso1587077e87.3
+        for <linux-phy@lists.infradead.org>; Thu, 13 Feb 2025 09:42:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1739468551; x=1740073351; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=o7poaTbadceb30IF+pZHsHhZOoR9b8z1fPvVtB4cPUk=;
+        b=FHO9Hq3t539mZlCcVEJVgz7tmkx0QLCNKS88fLnV65tiR3jec0BTowZXEt87+WSnLe
+         2ipK3JqqNYlHt1wJ0N5dPwSVzEmR0yqj5qqjk+IloeOy3m70aUL6wu7Rgp9B9c0ZbVUw
+         VukVSajCu9NABScY6msUcx9MrENp2HtO92ZbNN5mXdr/Rk97iSWLUubFOm/M0ecBYae3
+         iizA5EzhfxCGHOHMGaBELZdZjbTfKVIMImY5/q9V4EW7FbL1M5ywxQkJ7B3HJjjVLLRK
+         UR6beL/EipujI5/S0s69yu3Us0NGWvYhxebsWLTWBTGyYRu3VALmFMKpTcZiN2w16dnL
+         cb4w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739468551; x=1740073351;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=o7poaTbadceb30IF+pZHsHhZOoR9b8z1fPvVtB4cPUk=;
+        b=jKR8EtC8zmVioDZ8lxvsVP6EnZQT0YqU54Zns/Kc5yajj6FC266xMQ720joylecsAO
+         gtneFrpaOkcum6cS8lPdI8h5n6xCjBOy58EraK7CVK7Prz8w/c80ugulfqMNNiYIMB4m
+         Saw+b/0reMIml3TCW+OSzInKoWQTkjOWN6/n+yi/OTSkn4/qwUKHtNkjleNDpZyf4cz5
+         rpu70H1+GhUVaVQn9SrkWqdqQlgGAsxAxvLBLouC8W1HYeGbomufaHNSk8N1eDGPrah7
+         sXV3BGdltVm40U+EWqB4hRCOjC+MzK6kjVEt6W/ptxtuyK82toOd4MKRIjG8ut0vkgvS
+         EkHg==
+X-Forwarded-Encrypted: i=1; AJvYcCXOIs9ZNV+EoE7n7UhS6sCz2dQdY0Uj0gpKQDuxiN02rJ5ztiTDLdsS591cCjZwt8UuTllt8mARYAY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyYUNoj4HM9Ag5RNJhhwwySM8+qlgPV1/CAbczYX7y/AznO6LMZ
+	o37lPNQA2UA4Bok8ceUSbHWnDYNqWquzsKXKmFsqPaZjusaImNm747ozj4iZ0qvgoauPhn1iA/D
+	nBFYV3jHJhfe6Utg1ei1OHRidrn7AHA6Tthn49g==
+X-Gm-Gg: ASbGnctYYVGI1KrzBJRd6HPST8I78zVvEm/yqFbGSK97yTT/cNnuMgSPPOAigHomkvS
+	RqnLfMK1ISl1ZydfsJMjjr3N47a5XF+Yy5/oCPrI2fJKrVJAtniLrbQirPfh6Xj7NgeQCxhbUGJ
+	MBG/MpX2zLRwfW/eApYyx1x2EiEAjJ
+X-Google-Smtp-Source: AGHT+IF+fWjLMy4RC4fJfJhppdyGnDeRMMDIkKzyGd/CQOlFqBivCx8W/IGAYdJvOJJTC/43hOWG0nQaRr0ngZJNi/U=
+X-Received: by 2002:a05:6512:3d88:b0:545:8cb:2183 with SMTP id
+ 2adb3069b0e04-54518122c71mr2468700e87.29.1739468550462; Thu, 13 Feb 2025
+ 09:42:30 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <D7RH63Z1VBBD.1AIOQJIWPZIXS@cknow.org>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.3.1/239.467.69
-X-ZohoMailClient: External
+References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
+ <173935301204.11039.10193374588878813157.b4-ty@linaro.org> <801b5364-129f-42e9-bf9a-a90d9eeb4629@baylibre.com>
+In-Reply-To: <801b5364-129f-42e9-bf9a-a90d9eeb4629@baylibre.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Thu, 13 Feb 2025 18:42:19 +0100
+X-Gm-Features: AWEUYZkzHoDq5i_PpQBC_MEOqx6J4QYBMs6-RGY-gc-y6YI9Zv84ton-OV3XB6s
+Message-ID: <CAMRc=MeXTvPnEPjOmPd5Vw0FYKHzndsB0SVjQErA4CY_0MGsMQ@mail.gmail.com>
+Subject: Re: (subset) [PATCH v3 00/15] gpiolib: add gpiod_multi_set_value_cansleep
+To: David Lechner <dlechner@baylibre.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>, Andy Shevchenko <andy@kernel.org>, 
+	Geert Uytterhoeven <geert@linux-m68k.org>, Lars-Peter Clausen <lars@metafoo.de>, 
+	Michael Hennerich <Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, 
+	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, 
+	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
+	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, linux-gpio@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, netdev@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org, 
+	Andy Shevchenko <andy.shevchenko@gmail.com>, Jonathan Cameron <Jonathan.Cameron@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_093317_732193_D23BB158 
-X-CRM114-Status: GOOD (  23.61  )
+X-CRM114-CacheID: sfid-20250213_094233_573376_AC5D793D 
+X-CRM114-Status: GOOD (  20.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,120 +103,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0844764011072236050=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============0844764011072236050==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="6djyuz6okfpd5ae6"
-Content-Disposition: inline
-
-
---6djyuz6okfpd5ae6
-Content-Type: text/plain; protected-headers=v1; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
-MIME-Version: 1.0
-
-Hi,
-
-On Thu, Feb 13, 2025 at 05:56:55PM +0100, Diederik de Haas wrote:
-> On Thu Feb 13, 2025 at 3:54 PM CET, Piotr Oniszczuk wrote:
-> >
-> >
-> >> Wiadomo=C5=9B=C4=87 napisana przez Damon Ding <damon.ding@rock-chips.c=
-om> w dniu 23 sty 2025, o godz. 11:07:
-> >>=20
-> >> Picked from:
-> >> https://patchwork.kernel.org/project/linux-rockchip/list/?series=3D923=
-593
-> >>=20
-> >> These patchs have been tested with a 1536x2048p60 eDP panel on
-> >> RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
-> >> on RK3588 EVB1 board. Furthermore, the eDP display has been rechecked
-> >> on RK3399 sapphire excavator board.
-> >> ...
-> >> 9 files changed, 401 insertions(+), 89 deletions(-)
-> >>=20
-> >> --=20
-> >> 2.34.1
-> >>=20
-> >
-> > Damon,
-> >
-> > I=E2=80=99m playing with hdmi0 port enablement on radxa rock5 itx board=
- with 6.14 mainline.
-> >
-> > rock5 itx has 2 hdmi ports: hdmi0 is wired to rk3588 typeC1/eDP1 eDP wi=
-th ra620 eDP->HDMI converter and hdmi1 from hdmi/edp tx1
-> > (see page3 & page29 at https://dl.radxa.com/rock5/5itx/v1110/radxa_rock=
-_5itx_v1110_schematic.pdf)
-> >
-> > I=E2=80=99m on 6.14-rc2 with applied:=20
-> > [1] Cristicc hdmi code (https://gitlab.collabora.com/cristicc/linux-nex=
-t/-/commits/rk3588-hdmi-bridge)
-> > [2] eDP support for RK3588 (https://patchwork.kernel.org/project/linux-=
-rockchip/list/?series=3D927765)
-> > [3] Add eDP mode support for Rockchip Samsung HDPTX PHY (https://patchw=
-ork.kernel.org/project/linux-rockchip/cover/20250205105157.580060-1-damon.d=
-ing@rock-chips.com/)
-> >
-> > Is edp1 supported by yours [2] series?
-> >
-> > If yes - may you pls hint me about required dts additions in https://gi=
-t.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm64/boot=
-/dts/rockchip/rk3588-rock-5-itx.dts?h=3Dv6.14-rc2 ?
->=20
-> I don't know if it's relevant, but while HDMI0 got enabled for quite a
-> few devices in 6.13, it did NOT get enabled for Rock 5 ITX.
-> I made a local patch (which does the same thing as was done for Rock 5B)
-> but I have no idea if it actually works (I don't have the board).
-
-I don't have the board either, but the schematics suggests that your
-patch is not correct. On the Rock 5 ITX the RK3588's first HDMI/eDP
-port should be enabled in eDP mode to be used with an eDP panel via
-connector J11. This series is needed for that.
-
-Greetings,
-
--- Sebastian
-
---6djyuz6okfpd5ae6
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmeuLNAACgkQ2O7X88g7
-+pqj/g/+Ko9YwegFYiHHFc2NJHqSn9Er7V2IhdDxANKuYmDWkl238DIkPbx5N++z
-dP6qxCV8/YD123iERKtHSvIikWgw7rRaV8GKkT95xc3AAfYfyt4Zjf3wWwwOrNXH
-w1UK+68lroyq4n+JPwQuZlkRhKclMpv78w5lZJ2fXX/ni8PWf3m8DyBGzES03yDK
-l5e0sp6dEFaxL6plKIDdB7Xw/CYW75UiJStCuBYKka1pr3I5X8IgWMuQ+oK5Lde3
-hzO/3TLG9WKTiRoehs4ocJngsz0sS8o70GWVMXSiSybaMbK0NEf6NonBv1f6hA0J
-RrCYZGZEsKaPnveI+HlwnvXJlTnISIjs2jw7HF35HSVl4ZaYLf9k4HFE6vrl+y7N
-GPplG9bzgVKsZgK5rv1ddxBQbMZ30LlyP1/BxDPqY/78+ZyFg/9vjovfF7rG6DUa
-KIgcrgB/rD/4P1wdOGhz+bwbi2mwsc0yfzAWS6qXxCw70RQ0YNKhE/ha5cM0bfwh
-IyKOUaxLceZBVLXuXXXKo1aeOxLHiVSB+kblT/Dq85b4Vl71n5v81x/jfo47O80Z
-LjNdgoLngofz67wKl+BHJsJAvtRvXP/NI9nNpsSgY1tLzUeKsnllS1mWYh3WE24u
-vPH7IuyON+11TRur6JqaEd5LbafrMcQ2+Fqz0UdscgafmzsTyTw=
-=1OmE
------END PGP SIGNATURE-----
-
---6djyuz6okfpd5ae6--
-
-
---===============0844764011072236050==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0844764011072236050==--
-
+T24gVGh1LCBGZWIgMTMsIDIwMjUgYXQgNjoyNeKAr1BNIERhdmlkIExlY2huZXIgPGRsZWNobmVy
+QGJheWxpYnJlLmNvbT4gd3JvdGU6Cj4KPiBPbiAyLzEyLzI1IDM6MzYgQU0sIEJhcnRvc3ogR29s
+YXN6ZXdza2kgd3JvdGU6Cj4gPiBGcm9tOiBCYXJ0b3N6IEdvbGFzemV3c2tpIDxiYXJ0b3N6Lmdv
+bGFzemV3c2tpQGxpbmFyby5vcmc+Cj4gPgo+ID4KPiA+IE9uIE1vbiwgMTAgRmViIDIwMjUgMTY6
+MzM6MjYgLTA2MDAsIERhdmlkIExlY2huZXIgd3JvdGU6Cj4gPj4gVGhpcyBzZXJpZXMgd2FzIGlu
+c3BpcmVkIGJ5IHNvbWUgbWlub3IgYW5ub3lhbmNlIEkgaGF2ZSBleHBlcmllbmNlZCBhCj4gPj4g
+ZmV3IHRpbWVzIGluIHJlY2VudCByZXZpZXdzLgo+ID4+Cj4gPj4gQ2FsbGluZyBncGlvZF9zZXRf
+YXJyYXlfdmFsdWVfY2Fuc2xlZXAoKSBjYW4gYmUgcXVpdGUgdmVyYm9zZSBkdWUgdG8KPiA+PiBo
+YXZpbmcgc28gbWFueSBwYXJhbWV0ZXJzLiBJbiBtb3N0IGNhc2VzLCB3ZSBhbHJlYWR5IGhhdmUg
+YSBzdHJ1Y3QKPiA+PiBncGlvX2Rlc2NzIHRoYXQgY29udGFpbnMgdGhlIGZpcnN0IDMgcGFyYW1l
+dGVycyBzbyB3ZSBlbmQgdXAgd2l0aCAzIChvcgo+ID4+IG9mdGVuIGV2ZW4gNikgcG9pbnRlciBp
+bmRpcmVjdGlvbnMgYXQgZWFjaCBjYWxsIHNpdGUuIEFsc28sIHBlb3BsZSBoYXZlCj4gPj4gYSB0
+ZW5kZW5jeSB0byB3YW50IHRvIGhhcmQtY29kZSB0aGUgZmlyc3QgYXJndW1lbnQgaW5zdGVhZCBv
+ZiB1c2luZwo+ID4+IHN0cnVjdCBncGlvX2Rlc2NzLm5kZXNjcywgb2Z0ZW4gd2l0aG91dCBjaGVj
+a2luZyB0aGF0IG5kZXNjcyA+PSB0aGUKPiA+PiBoYXJkLWNvZGVkIHZhbHVlLgo+ID4+Cj4gPj4g
+Wy4uLl0KPiA+Cj4gPiBBcHBsaWVkLCB0aGFua3MhCj4gPgo+ID4gWzA2LzE1XSBncGlvOiBtYXgz
+MTkxeDogdXNlIGdwaW9kX211bHRpX3NldF92YWx1ZV9jYW5zbGVlcAo+ID4gICAgICAgICBjb21t
+aXQ6IGViMmU5YzMwOGQyODgyZDlkMzY0YWYwNDhlYjNkODMzNmQ0MWM0YmIKPiA+Cj4gPiBCZXN0
+IHJlZ2FyZHMsCj4KPiBIaSBCYXJ0b3N6LAo+Cj4gRG8geW91IHBsYW4gdG8gcGljayB1cCB0aGUg
+b3RoZXIgcGF0Y2hlcyB0aGF0IGhhdmUgYmVlbiBhY2tlZAo+IGFzIHdlbGw/IEl0IHNlZW1zIGxp
+a2UgbW9zdCBmb2xrcyB3ZXJlIE9LIHdpdGggZXZlcnl0aGluZyBnb2luZwo+IHRob3VnaCB0aGUg
+Z3BpbyB0cmVlIHNpbmNlIHRoZSBjaGFuZ2VzIGFyZSBzbWFsbC4KPgoKSm9uYXRoYW4gcmVxdWVz
+dGVkIGEgYnJhbmNoIHNvIEkgbWFkZSBvbmUgYW5kIHNlbnQgb3V0IGEgUFIuIEkgZmlndXJlZApw
+ZW9wbGUgd291bGQganVzdCBwaWNrIHRoZSByZWxldmFudCBwYXRjaGVzIGludG8gdGhlaXIgcmVz
+cGVjdGl2ZQp0cmVlcz8gRm9yIHBhdGNoZXMgdGhhdCB3b24ndCBiZSBpbiBuZXh0IGJ5IHJjNSAt
+IEkgd2lsbCB0YWtlIHRoZW0gaWYKQWNrZWQgLSBqdXN0IHJlbWluZCBtZS4KCkJhcnQKCi0tIAps
+aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
