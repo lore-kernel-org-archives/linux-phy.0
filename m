@@ -4,88 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 145B6C021A4
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0358AC021A0
 	for <linux-phy@archiver.kernel.org>; Thu, 13 Feb 2025 18:24:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YG0eaBYlYvs3M/wieTbL57qbIrHuzfCj/Y3tS3D0qFU=; b=lGE1F7qOtVFnS0
-	Apd87FhVGMBdQj7/3OuVbVnTpnI5XwuAsmOH4d2weHcBphJMpmqLhi4AMqgVThAaYswrfWppNVqiX
-	6sRGvP4gCDp5HoFBbW7UhS22HGPifbcHIcoMfzagMlopArsjccBZAtKLNtm8VnvMJRweUPX7X0nNJ
-	NpMYUNHZ1fn1O7dLnL69ZodgquotwgManazAVZe9ZJntxQsr23gEW6Re6U7eVgE5lmSiK8pxXRDWF
-	nlNubxQRiCuRCL63aksrNPn+yyCFllgXGv7ArIx5APNpR0dvURf4cilJkbQecOirksAZMIJwl8YfV
-	H6dt8bOGL6wLY+ZB/Leg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QLxPMRQJa9UvhHJpNS9a6bE5+Svs4NnEkNnAUJTRRMo=; b=mPKeTI7LazId623oxk16Bz3YZZ
+	iFZwYkTcetwQVU3rEo7CQDMmtqatw/Lk5WLCNaq46rf4MPHBN5PgS27isLPi2kfLpKReyAunnhFtH
+	16PFK0Dub3ZYlW3drvwtsU0/hNTEDp70qdXgXAdhtxMcq4y/3Uvzz7/p0ic7JHEpPpxwIViInDr/g
+	9uF2LLAZULenn+r2TijwhHi4zDElq3xONn/T8Af73lnjo2gl3X1vyyIH0NUVfuGFhiDlReI/xy86V
+	fpbwQE9REEql8/TfNN6rCYgT0upq2PawTIqghn/EeWhpSJPBbJI64I2ukU+aaK+UEoiINVCa9oJuo
+	/+HKYkHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tidtD-0000000CDoc-3YGc;
+	id 1tidtD-0000000CDoE-0upd;
 	Thu, 13 Feb 2025 18:24:43 +0000
-Received: from mgamail.intel.com ([192.198.163.13])
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tid9H-0000000C2K7-2qoH
-	for linux-phy@lists.infradead.org;
-	Thu, 13 Feb 2025 17:37:16 +0000
-X-CSE-ConnectionGUID: coiTpg9eTJmVGOCrCiFVbg==
-X-CSE-MsgGUID: A0cH9Fp2TQKh+Gc1LNdNtQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11344"; a="43022533"
-X-IronPort-AV: E=Sophos;i="6.13,282,1732608000"; 
-   d="scan'208";a="43022533"
-Received: from orviesa009.jf.intel.com ([10.64.159.149])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2025 09:37:13 -0800
-X-CSE-ConnectionGUID: rIPp2GcVQOaJ8l+k6WheOQ==
-X-CSE-MsgGUID: vglTymb0SMS7zPTNi4/S0g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.13,282,1732608000"; 
-   d="scan'208";a="112955713"
-Received: from smile.fi.intel.com ([10.237.72.58])
-  by orviesa009.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2025 09:37:06 -0800
-Received: from andy by smile.fi.intel.com with local (Exim 4.98)
-	(envelope-from <andy@kernel.org>)
-	id 1tid93-0000000BEkc-2k0W;
-	Thu, 13 Feb 2025 19:37:01 +0200
-Date: Thu, 13 Feb 2025 19:37:01 +0200
-From: Andy Shevchenko <andy@kernel.org>
-To: David Lechner <dlechner@baylibre.com>
-Cc: Bartosz Golaszewski <brgl@bgdev.pl>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Geert Uytterhoeven <geert@linux-m68k.org>,
-	Lars-Peter Clausen <lars@metafoo.de>,
-	Michael Hennerich <Michael.Hennerich@analog.com>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
-	Takashi Iwai <tiwai@suse.com>,
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
-	linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
-	netdev@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-sound@vger.kernel.org,
-	Jonathan Cameron <Jonathan.Cameron@huawei.com>
-Subject: Re: (subset) [PATCH v3 00/15] gpiolib: add
- gpiod_multi_set_value_cansleep
-Message-ID: <Z64tvc3npT6cQgMV@smile.fi.intel.com>
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <173935301204.11039.10193374588878813157.b4-ty@linaro.org>
- <801b5364-129f-42e9-bf9a-a90d9eeb4629@baylibre.com>
+	id 1tid5R-0000000C1cl-2d6b;
+	Thu, 13 Feb 2025 17:33:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1739467992; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=fsZ9tyPjguNsUc2+X1eFr5QgUPWPBVzABYeF+VSOoUx8sOk2o9TIpuy6IFgXZUjG9vZWe2oUATvThyog4cB1QGSF+7jMYZN0kw9K4ETfX3PdZ8MffVDq/wZ0EpgjNyprDhV/ILksMWZTFad0oAv+bAEhZnMftm6shmu4Q2uh+DQ=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1739467992; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=6ByzMOuDBh5R+FUdNwn2gk3LwiXzk/aPZNyTOpzuZOU=; 
+	b=bta+8ZPQPOcCe9SZHB2yjLV1NS6qrkM+JiDqDJdXEM7/kUS9MuT5tKC+9VCVfIfzD8aCiVovVkZOSqExBy9M8mRQ2Z1mRt6G56DXfOz4tq350B3ZIYmhlv8R4Xu045K9k3bY3npdzZbBAxK2WJU2vsEIWL+tbEYKPRv8yV6terI=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1739467992;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=6ByzMOuDBh5R+FUdNwn2gk3LwiXzk/aPZNyTOpzuZOU=;
+	b=gHt2sI3u9x/IyIOL7Gz7LHOOPs0dHmzj8DCoJ1j0HswtKdfzbJT6zBFQ67GzwLvu
+	MPP/pAtZ4COd1DYdY5C/SpKgmnR6xnfTJ29gG6h2mt4W0K63gqqZ94CkCqga8aVXh6i
+	twwysP6rbc9WuqaBcE7MNq1IW8GqH8cgBGP/ll5k=
+Received: by mx.zohomail.com with SMTPS id 1739467989609795.4274306368665;
+	Thu, 13 Feb 2025 09:33:09 -0800 (PST)
+Received: by venus (Postfix, from userid 1000)
+	id 858F21806DE; Thu, 13 Feb 2025 18:33:04 +0100 (CET)
+Date: Thu, 13 Feb 2025 18:33:04 +0100
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Diederik de Haas <didi.debian@cknow.org>
+Cc: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>, 
+	Damon Ding <damon.ding@rock-chips.com>, heiko@sntech.de, robh@kernel.org, conor+dt@kernel.org, 
+	algea.cao@rock-chips.com, rfoss@kernel.org, devicetree@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, hjc@rock-chips.com, kever.yang@rock-chips.com, 
+	dmitry.baryshkov@linaro.org, vkoul@kernel.org, andy.yan@rock-chips.com, krzk+dt@kernel.org, 
+	linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
+Message-ID: <m3ovwhg3h2njsjpuj2wdahxex6zq2udmxonublgmnlrdfred4z@zxtyd6xvhram>
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+ <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
+ <D7RH63Z1VBBD.1AIOQJIWPZIXS@cknow.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <801b5364-129f-42e9-bf9a-a90d9eeb4629@baylibre.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <D7RH63Z1VBBD.1AIOQJIWPZIXS@cknow.org>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-1.3.1/239.467.69
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_093715_729585_A9098130 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20250213_093317_732193_D23BB158 
+X-CRM114-Status: GOOD (  23.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,37 +82,120 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0844764011072236050=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 13, 2025 at 11:25:21AM -0600, David Lechner wrote:
-> On 2/12/25 3:36 AM, Bartosz Golaszewski wrote:
-> > From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
 
-[...]
-
-> > Applied, thanks!
-> > 
-> > [06/15] gpio: max3191x: use gpiod_multi_set_value_cansleep
-> >         commit: eb2e9c308d2882d9d364af048eb3d8336d41c4bb
-> 
-> Do you plan to pick up the other patches that have been acked
-> as well? It seems like most folks were OK with everything going
-> though the gpio tree since the changes are small.
-
-FWIW, I took auxdisplay one via the respective tree.
-But please tell me, if you are going to take them all,
-I will drop that in my tree.
-
--- 
-With Best Regards,
-Andy Shevchenko
+--===============0844764011072236050==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="6djyuz6okfpd5ae6"
+Content-Disposition: inline
 
 
+--6djyuz6okfpd5ae6
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
+MIME-Version: 1.0
+
+Hi,
+
+On Thu, Feb 13, 2025 at 05:56:55PM +0100, Diederik de Haas wrote:
+> On Thu Feb 13, 2025 at 3:54 PM CET, Piotr Oniszczuk wrote:
+> >
+> >
+> >> Wiadomo=C5=9B=C4=87 napisana przez Damon Ding <damon.ding@rock-chips.c=
+om> w dniu 23 sty 2025, o godz. 11:07:
+> >>=20
+> >> Picked from:
+> >> https://patchwork.kernel.org/project/linux-rockchip/list/?series=3D923=
+593
+> >>=20
+> >> These patchs have been tested with a 1536x2048p60 eDP panel on
+> >> RK3588S EVB1 board, and HDMI 1080P/4K display also has been verified
+> >> on RK3588 EVB1 board. Furthermore, the eDP display has been rechecked
+> >> on RK3399 sapphire excavator board.
+> >> ...
+> >> 9 files changed, 401 insertions(+), 89 deletions(-)
+> >>=20
+> >> --=20
+> >> 2.34.1
+> >>=20
+> >
+> > Damon,
+> >
+> > I=E2=80=99m playing with hdmi0 port enablement on radxa rock5 itx board=
+ with 6.14 mainline.
+> >
+> > rock5 itx has 2 hdmi ports: hdmi0 is wired to rk3588 typeC1/eDP1 eDP wi=
+th ra620 eDP->HDMI converter and hdmi1 from hdmi/edp tx1
+> > (see page3 & page29 at https://dl.radxa.com/rock5/5itx/v1110/radxa_rock=
+_5itx_v1110_schematic.pdf)
+> >
+> > I=E2=80=99m on 6.14-rc2 with applied:=20
+> > [1] Cristicc hdmi code (https://gitlab.collabora.com/cristicc/linux-nex=
+t/-/commits/rk3588-hdmi-bridge)
+> > [2] eDP support for RK3588 (https://patchwork.kernel.org/project/linux-=
+rockchip/list/?series=3D927765)
+> > [3] Add eDP mode support for Rockchip Samsung HDPTX PHY (https://patchw=
+ork.kernel.org/project/linux-rockchip/cover/20250205105157.580060-1-damon.d=
+ing@rock-chips.com/)
+> >
+> > Is edp1 supported by yours [2] series?
+> >
+> > If yes - may you pls hint me about required dts additions in https://gi=
+t.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/arch/arm64/boot=
+/dts/rockchip/rk3588-rock-5-itx.dts?h=3Dv6.14-rc2 ?
+>=20
+> I don't know if it's relevant, but while HDMI0 got enabled for quite a
+> few devices in 6.13, it did NOT get enabled for Rock 5 ITX.
+> I made a local patch (which does the same thing as was done for Rock 5B)
+> but I have no idea if it actually works (I don't have the board).
+
+I don't have the board either, but the schematics suggests that your
+patch is not correct. On the Rock 5 ITX the RK3588's first HDMI/eDP
+port should be enabled in eDP mode to be used with an eDP panel via
+connector J11. This series is needed for that.
+
+Greetings,
+
+-- Sebastian
+
+--6djyuz6okfpd5ae6
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmeuLNAACgkQ2O7X88g7
++pqj/g/+Ko9YwegFYiHHFc2NJHqSn9Er7V2IhdDxANKuYmDWkl238DIkPbx5N++z
+dP6qxCV8/YD123iERKtHSvIikWgw7rRaV8GKkT95xc3AAfYfyt4Zjf3wWwwOrNXH
+w1UK+68lroyq4n+JPwQuZlkRhKclMpv78w5lZJ2fXX/ni8PWf3m8DyBGzES03yDK
+l5e0sp6dEFaxL6plKIDdB7Xw/CYW75UiJStCuBYKka1pr3I5X8IgWMuQ+oK5Lde3
+hzO/3TLG9WKTiRoehs4ocJngsz0sS8o70GWVMXSiSybaMbK0NEf6NonBv1f6hA0J
+RrCYZGZEsKaPnveI+HlwnvXJlTnISIjs2jw7HF35HSVl4ZaYLf9k4HFE6vrl+y7N
+GPplG9bzgVKsZgK5rv1ddxBQbMZ30LlyP1/BxDPqY/78+ZyFg/9vjovfF7rG6DUa
+KIgcrgB/rD/4P1wdOGhz+bwbi2mwsc0yfzAWS6qXxCw70RQ0YNKhE/ha5cM0bfwh
+IyKOUaxLceZBVLXuXXXKo1aeOxLHiVSB+kblT/Dq85b4Vl71n5v81x/jfo47O80Z
+LjNdgoLngofz67wKl+BHJsJAvtRvXP/NI9nNpsSgY1tLzUeKsnllS1mWYh3WE24u
+vPH7IuyON+11TRur6JqaEd5LbafrMcQ2+Fqz0UdscgafmzsTyTw=
+=1OmE
+-----END PGP SIGNATURE-----
+
+--6djyuz6okfpd5ae6--
+
+
+--===============0844764011072236050==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0844764011072236050==--
+
