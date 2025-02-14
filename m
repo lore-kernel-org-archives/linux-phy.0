@@ -4,90 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A42E4C021A4
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 09:22:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6225BC021A4
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 10:21:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=13KoDSbR/l3kpAGEU6T84ySn0XiyvMMhQtt0oU9lkwc=; b=2Y6k+CgPGJKlFQ
-	to2UxdS8bi6nKdCj8gH8j4DGwHhmEKVp/6m92SwnCn7rTXiuUuaxr/CJZa55hif8aCWO9qM0YODv4
-	qcHaAj6hy2Dpdo68K8gWetyEkGjncbMC00Z4K4AcIPSz8iy319jbuSsgtapdFbmBrmoEwghbBFGKW
-	K3bpllP7m4Y4/JuD5mL8B1tyHBvHWVey1xlHeUWlIhTTHAZyM+yb60UvufAexsarwhskx3nIG10ij
-	jeGdRFkCeG7au31i90K2MWx3qtTRNaKqOt9X535opjRG9V4J66MElUXNDOFgxRbMTDtF2CaOVZJp1
-	jKwhOHR/anN1y3KVEB2Q==;
+	List-Owner; bh=nKJEPywEg1LGn1XE8Kqx61N/TiHXtiBCRtT0oVmI09I=; b=jUYdHeBNT1vRrp
+	EO02zHuZXnzAhsQ+Pfm9qNph+6i+AF7oS9zkLwP479bpbm8YMDcgyu8GphJFCy9Wzq1Z3Dvbg8h5+
+	16XyqF0AiLJkU2mMjcqGQ4larlqF0BG0H2UEl+2Y/IXC1Wy2ehL2fH29g+SOYQs7fzmhHbTs2oKSI
+	7Z++OABEZP/hT2fROqqAyHdPCcVonZxH7x3GMHc5I2/foGL0yNSOyDLNLrghUqHTPCx/oPKoc2j5f
+	PHiif5HyWgHxNPRJlCPQviSgdFzNyYopV/z8aT21g3TCi9mZoJN2l7z6ZdirwccOov2NYw3BFWWRC
+	JsLNBYz5X5NswqeoDQEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiruK-0000000EIWE-0Rbc;
-	Fri, 14 Feb 2025 09:22:48 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1tisok-0000000EU60-0eV0;
+	Fri, 14 Feb 2025 10:21:06 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiruH-0000000EIVl-3ggf
+	id 1tisoh-0000000EU59-2QhY
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Feb 2025 09:22:47 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-543d8badc30so2068163e87.0
-        for <linux-phy@lists.infradead.org>; Fri, 14 Feb 2025 01:22:45 -0800 (PST)
+	Fri, 14 Feb 2025 10:21:04 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-438a39e659cso13303535e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 14 Feb 2025 02:21:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1739524964; x=1740129764; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
+        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1739528462; x=1740133262; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=oxMUts7eWUQNpSiCjwqXyusGkP80n8S1cBGWOAZkDbI=;
-        b=pPxbTHaccdMvXYu2yWo+M25dcZs6B2e2Ndaw1xd655YfY2zGlLRVaUnjjyQFnOo/ZK
-         YH4o8exFFPVgGpizsATZ8Rc4uUamT/AuYB8s4y9IrXI4lPDzAS/oCe0GqY3Ue1Rhms2j
-         ld2cRBzTgOP/CXsCyAxol0Wxe5lzpXFXvYoS3L9PMhdmRfzPcdJv6x2EZw7sgyaKkKEU
-         Ms0qnfEtRnWMEggULcSp3r43C1hJ8npWN2r60P4oQGJEWmT6Cs9KXP5gNKL8VWvglF+H
-         nvxqTFHtyQ4ecZe8q8lOJP120PrOqa5IAtvQjE1JPAbEazHlQmMf4HODc8ilMUoaUSRW
-         Ct2A==
+        bh=NLnRVw8CXaL8aivm+oTTQCZPxIVCt8DWL00ds7O1e6U=;
+        b=02TrD17JQ/TUvj94W2vhkPaC+rRq7oLSF7EAyi0a15fyg2Am39Wo7L4XG4DFQgeM55
+         NJZTcBAdi9by49yOu9OdybG13iDq3gbDzhrv7zMiVcp40dPhH2gqsQ3Ig5Dn7e1KIElI
+         f1POgbgdtJDCwsMKAUxgIhtyRNtxuUGmAi0hGwFY8Y9tSLXBItqunSYYubGg5QrbyfQd
+         zKLcz0qGSuNnS4ebHtKOWHQrpsxo9uEF1kjSYhTJq3U2kSBjs9Cf2Mv66jjziJ5LmlcI
+         VzNfZA5WvclrCqZTsaV+u0/4freLH66famSblSkD+XN1VV1JUSjoIVNrf+O+tnl+D6Uh
+         uRtw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739524964; x=1740129764;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+        d=1e100.net; s=20230601; t=1739528462; x=1740133262;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=oxMUts7eWUQNpSiCjwqXyusGkP80n8S1cBGWOAZkDbI=;
-        b=l9GDj4tax5dL5FU+LmjjCEdv/4XnkL+//VhTi5Z9939KvNq9utA1jiNtzh/XT+tOul
-         QK/vlSyvQTA8F94aJAA6VXrkHQIgoT1LdDjeaa5pzXoHs1/uFSq9Sn4t6cMimv0YTWsD
-         7Blrvio35DjXEVrXftEJnLbv4W+naL1L8TH1oNWPpvxXYPmySbX2YdOOxmBNQ+2I3c9g
-         e8zmUKAOhQHuXr16E+vMntnfeK0BJceWRIqThFlss+JE31PBYe32iDsHG9J68c5FwlAd
-         Q3aN0fr6DCvs/NMD1+YJTH9t0L0u4ekJFunGx17ctzZnmw/GHRC2gxAWtOM/fBsrHJKN
-         Eo3Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXKG7UXhMqVG3ysv4hbZPwwN0N3F8iEERVkTURr5hFjhmQ8jih4Kr8KPiU2rqCLWMFzXL2tRbYMV7I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxTC6x8mfcd7Sln85icvW/U1htkO/q5KIFCTSKTpSMyJrA0ybpt
-	ufr9shqJjAF0FKEWWUnEgnaRHUx1B0PiCzlNfCFZur/C5Rhn/Rn7Qw/Um0maeYgnGYKmqfQaVSx
-	5KhJVHuxZMOsBdKbBVo4OhrrcmWIYoEYN0Gvrqw==
-X-Gm-Gg: ASbGnctukRmnw7Ybp6vRNAasTNPXWYImHbXb1lTRcm5uS2Zz6W4upBYQFymBWRIKTah
-	Ej5Ep6FWpt/wl1DxxgIRCd5nQlfACCCzAmNR/Epy0zGg1UunnOKsU69qgzwubTeBJRjr38L/d
-X-Google-Smtp-Source: AGHT+IGhgPoczR2D2T/lX4ZwT5MXW34OlqN0/zugo7LmPWwgdRCMXTLpmWVB2HL50zhjB2U06JaZCumERKR34vwpUjQ=
-X-Received: by 2002:a05:6512:a90:b0:545:d72:95e5 with SMTP id
- 2adb3069b0e04-5451dd8c4aemr2339063e87.7.1739524963708; Fri, 14 Feb 2025
- 01:22:43 -0800 (PST)
+        bh=NLnRVw8CXaL8aivm+oTTQCZPxIVCt8DWL00ds7O1e6U=;
+        b=MtjH7DwrfnFgmvFZSkoifjWuMPu1DzzjBklRqUOStYyq7YGe91mnU3YPHuvleGIITo
+         IGiBvLLVZ4D08PiRj830yPZ9Mo4Dde0tb32Q81sD6hJSkrxKhGPLmsZu8ZYvEsnqhoe0
+         1I2IQvLHeutHB86Uea32YajFxUqO7javQAA/HHPpucoXWoAneXlAU8mn7RVI/hE+1LKj
+         0gvBgfLTi6Nyc3Ry3UKqjm+IoVh3STLpjWuaVULamv58AXWwlXa6l8ZSZM3WYAbbOFzq
+         XA+QlvZE3bHOV22zjarTUXWcR3oXy2mMfNfXITUnnZEXdA1Gp5WomdeuG9PMjFGNCGsv
+         q7Ow==
+X-Forwarded-Encrypted: i=1; AJvYcCUx2i7CLC+4JLGNXkzNwfQqjlaEl46A9gxkRz/k4bBkRmidche8GU5TXyhj7XIqBwCSLnnjEwd0bS8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx6ZzNnyE/nNSvhPSwpRIlR/aSKDhSxtppPgQjcAz7qySygO08y
+	ZVQ/k3MkCGF0rl8i0xXoEWEDeFDuc8M4IVnyxhM5t25mHBiUt7CFylQfKX7Cdb8=
+X-Gm-Gg: ASbGnctbGwuFt0WArv/84qklJ7IVKAgngd8hS7bTU8YzQEJdfYIsJBosD7ItYCvYeji
+	XinBVF4kKuKd/JwtnJyrpdshAS/vzr0moS3svhilTcfqT0e1I2MZpkVVUIjLN7RQXHVt7BgooTX
+	oSMCN46tltcgHVWcUwqvFMJ+hf0/VsutpzVIa+r/dsw98nqm+arZB2z0d6d+9DRVc/kOireGYgn
+	jkDE3cwjGxSWi16o2Rw5PwJYWNAsxG1mswzasV1mXMD2t6f4JXotUxeCzgGQNCRuWUaXM1gOsVv
+	xdu7wlvvgMOu+Q==
+X-Google-Smtp-Source: AGHT+IH0JLaEmWyKXH91k0R2F707+ITR4fD263SwynHCn2SZFyP0K4/kI1oydg9oxe4La6Y3ETiVQQ==
+X-Received: by 2002:a05:600c:35c1:b0:439:69fd:34b7 with SMTP id 5b1f17b1804b1-43969fd35f7mr14374675e9.3.1739528461685;
+        Fri, 14 Feb 2025 02:21:01 -0800 (PST)
+Received: from brgl-uxlite.home ([2a01:cb1d:dc:7e00:62cc:da7:7c42:97ac])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4395a06d237sm71463255e9.21.2025.02.14.02.20.59
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Feb 2025 02:21:00 -0800 (PST)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Linus Walleij <linus.walleij@linaro.org>,
+	Bartosz Golaszewski <brgl@bgdev.pl>,
+	Andy Shevchenko <andy@kernel.org>,
+	Geert Uytterhoeven <geert@linux-m68k.org>,
+	Lars-Peter Clausen <lars@metafoo.de>,
+	Michael Hennerich <Michael.Hennerich@analog.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	Peter Rosin <peda@axentia.se>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	=?UTF-8?q?Nuno=20S=C3=A1?= <nuno.sa@analog.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Jaroslav Kysela <perex@perex.cz>,
+	Takashi Iwai <tiwai@suse.com>,
+	David Lechner <dlechner@baylibre.com>
+Cc: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	linux-gpio@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-iio@vger.kernel.org,
+	linux-mmc@vger.kernel.org,
+	netdev@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-sound@vger.kernel.org,
+	Andy Shevchenko <andy.shevchenko@gmail.com>,
+	Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Subject: Re: (subset) [PATCH v3 00/15] gpiolib: add gpiod_multi_set_value_cansleep
+Date: Fri, 14 Feb 2025 11:20:58 +0100
+Message-ID: <173952845012.57797.11986673064009251713.b4-ty@linaro.org>
+X-Mailer: git-send-email 2.45.2
+In-Reply-To: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
+References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
 MIME-Version: 1.0
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com> <20250210-gpio-set-array-helper-v3-1-d6a673674da8@baylibre.com>
-In-Reply-To: <20250210-gpio-set-array-helper-v3-1-d6a673674da8@baylibre.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 14 Feb 2025 10:22:32 +0100
-X-Gm-Features: AWEUYZlSujurAxnS1uFvnjJLAGMoYJmFWbRh7MCeJl2DAGBRy4U6U-3ZBycEwbU
-Message-ID: <CACRpkdY2PtRhmTKJUFmkTViQOLfMBbqR1bD94SzasoGAoHUQcQ@mail.gmail.com>
-Subject: Re: [PATCH v3 01/15] gpiolib: add gpiod_multi_set_value_cansleep()
-To: David Lechner <dlechner@baylibre.com>
-Cc: Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, 
-	Geert Uytterhoeven <geert@linux-m68k.org>, Lars-Peter Clausen <lars@metafoo.de>, 
-	Michael Hennerich <Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, linux-gpio@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250214_012245_918603_2551C874 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20250214_022103_618485_3EDDA347 
+X-CRM114-Status: GOOD (  11.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,21 +124,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBGZWIgMTAsIDIwMjUgYXQgMTE6MzfigK9QTSBEYXZpZCBMZWNobmVyIDxkbGVjaG5l
-ckBiYXlsaWJyZS5jb20+IHdyb3RlOgoKPiBBZGQgYSBuZXcgZ3Bpb2RfbXVsdGlfc2V0X3ZhbHVl
-X2NhbnNsZWVwKCkgaGVscGVyIGZ1bmN0aW9uIHdpdGggZmV3ZXIKPiBwYXJhbWV0ZXJzIHRoYW4g
-Z3Bpb2Rfc2V0X2FycmF5X3ZhbHVlX2NhbnNsZWVwKCkuCj4KPiBDYWxsaW5nIGdwaW9kX3NldF9h
-cnJheV92YWx1ZV9jYW5zbGVlcCgpIGNhbiBnZXQgcXVpdGUgdmVyYm9zZS4gSW4gbWFueQo+IGNh
-c2VzLCB0aGUgZmlyc3QgYXJndW1lbnRzIGFsbCBjb21lIGZyb20gdGhlIHNhbWUgc3RydWN0IGdw
-aW9fZGVzY3MsIHNvCj4gaGF2aW5nIGEgc2VwYXJhdGUgZnVuY3Rpb24gd2hlcmUgd2UgY2FuIGp1
-c3QgcGFzcyB0aGF0IGN1dHMgZG93biBvbiB0aGUKPiBib2lsZXJwbGF0ZS4KPgo+IFNpZ25lZC1v
-ZmYtYnk6IERhdmlkIExlY2huZXIgPGRsZWNobmVyQGJheWxpYnJlLmNvbT4KClJldmlld2VkLWJ5
-OiBMaW51cyBXYWxsZWlqIDxsaW51cy53YWxsZWlqQGxpbmFyby5vcmc+CgpZb3VycywKTGludXMg
-V2FsbGVpagoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcGh5Cg==
+From: Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+
+
+On Mon, 10 Feb 2025 16:33:26 -0600, David Lechner wrote:
+> This series was inspired by some minor annoyance I have experienced a
+> few times in recent reviews.
+> 
+> Calling gpiod_set_array_value_cansleep() can be quite verbose due to
+> having so many parameters. In most cases, we already have a struct
+> gpio_descs that contains the first 3 parameters so we end up with 3 (or
+> often even 6) pointer indirections at each call site. Also, people have
+> a tendency to want to hard-code the first argument instead of using
+> struct gpio_descs.ndescs, often without checking that ndescs >= the
+> hard-coded value.
+> 
+> [...]
+
+Applied, thanks!
+
+[07/15] iio: adc: ad7606: use gpiod_multi_set_value_cansleep
+        commit: 8203bc81f025a3fb084357a3d8a6eb3053bc613a
+[08/15] iio: amplifiers: hmc425a: use gpiod_multi_set_value_cansleep
+        commit: e18d359b0a132eb6619836d1bf701f5b3b53299b
+[09/15] iio: resolver: ad2s1210: use gpiod_multi_set_value_cansleep
+        commit: 7920df29f0dd3aae3acd8a7115d5a25414eed68f
+[10/15] iio: resolver: ad2s1210: use bitmap_write
+        commit: a67e45055ea90048372066811da7c7fe2d91f9aa
+[11/15] mmc: pwrseq_simple: use gpiod_multi_set_value_cansleep
+        commit: 2a5920429897201f75ba026c8aa3488c792b3bd7
+[12/15] mux: gpio: use gpiod_multi_set_value_cansleep
+        commit: 47a7c4f58e1f9967eb0ea6c1cb2c29e0ad2edb1a
+[14/15] phy: mapphone-mdm6600: use gpiod_multi_set_value_cansleep
+        commit: c88aa68297390695b16fd9b7a33612257d8ef548
+
+Best regards,
+-- 
+Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
