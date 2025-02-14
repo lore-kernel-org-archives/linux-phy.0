@@ -4,90 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31417C021A4
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 11:44:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 786D1C021A6
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 12:00:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e7rRQYmWPWgqBln4xOiKfuzKeCodlDgfOektydKuIHA=; b=ele0KUD/NPluO8
-	nRkkZgz8Lir6vglVDlEIPvexQHGM1IdQ8GqzBfqY84Bnun5fTeGuEF+eq3SPPFvDseH0orbAfjssM
-	aTlWDOebi0QAB0uShb1uSvACQbh522lYtlOe9I/38E84ot0FlQU9idLqwqhF2RhrlmRTtDiMs9ciP
-	4Ipp9FPqo9K8O07ZZ0ogqe5J6jw2woIogFs9P6psGh7EEj0V07xHAc2HP2SX6Zjy9psU1Xk8ZdGnT
-	1upfxjRR3//acMrf6wLkGEyNLCCOA2ZbUDJyOeyWwtVv2AaOPuD4aBjdsVqOo9EtLTXRDAUC8HEtY
-	cchcN5jAhuhBlWv7JmHA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=70nr+QRSFoS2jhiecEXORQBi946ytGABuAjymzgS6mI=; b=ZoflWumc8L2ZY3
+	xzAPaqbJlVdSM668ymngyzDT4dgwjo+EdL7K87xgCRskppruEHbbhR4mWntnUGLH2wbNqNNkuBebt
+	ekn4ijOMwPVISHpE4I04Gb2LqOjpiNPRL288rkNPJW3K4r4iQf6YO18Xax9QCETMmDzYTxH0FGffs
+	zs5i3MIXaDb7+AH/+iKOFqDEU0uQw9Pa0Y+4+qGntm6xuHK5siuqcswm2cXeZcTFvjwYlRTE2TjZh
+	ioMX1/ScXd0LXd7TYpiADmA+dxLOUCLe8JdxR77mjAj1IWp+G27hoDUl3/VEhWzbSCfUKv1M68srZ
+	/n4BEw9NvLtYG5jhK+hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiu7a-0000000Eit2-3w0N;
-	Fri, 14 Feb 2025 11:44:38 +0000
-Received: from mail-yw1-x1131.google.com ([2607:f8b0:4864:20::1131])
+	id 1tiuMp-0000000Emex-0wwE;
+	Fri, 14 Feb 2025 12:00:23 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1titq5-0000000EfZD-0kZ1
-	for linux-phy@lists.infradead.org;
-	Fri, 14 Feb 2025 11:26:34 +0000
-Received: by mail-yw1-x1131.google.com with SMTP id 00721157ae682-6ef9b8b4f13so17595677b3.2
-        for <linux-phy@lists.infradead.org>; Fri, 14 Feb 2025 03:26:32 -0800 (PST)
+	id 1tiuMm-0000000Emdq-2RMf;
+	Fri, 14 Feb 2025 12:00:22 +0000
+Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-ab771575040so615434266b.1;
+        Fri, 14 Feb 2025 04:00:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1739532392; x=1740137192; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=V0lFTwfZZcUWkq9fJmOvcld23qYjy5biwQLrQr9JB8A=;
-        b=eI55O4Z9/+C8EXUyL0zhDNa0gjOKvtdVxVw80aMHRG/elcw3fyHUkrLQgwp8L9kaz/
-         HTmA9xyoo62PHsSvrNCjTVWd0BMxyp+hcLqRxenGKaLp90T02xVFpdrXJr5z2/Dp2hc1
-         poYA1dPF2UPyxWIbtVMv+Q8a/BuhcCLLi6W3Q9bvdFmPD1VMJcSak/Fmx908WWjLO9Nt
-         iAbwNtrFul/AU1LIifxUeiuAn63xF+IZMu8UARTmIhxtOVksVJFD2zgeEGxUFN7W3U36
-         +M455oYXd+fFhYQ3YrK0pI0YhUyjRO+0XFnj/7oLCxAQhyhwhb0y1YK6/w7R/JOIEdXQ
-         KGGA==
+        d=gmail.com; s=20230601; t=1739534419; x=1740139219; darn=lists.infradead.org;
+        h=to:references:message-id:content-transfer-encoding:cc:date
+         :in-reply-to:from:subject:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GI3W9qR1fQieAycCsuIaEjCDuBJjNXKEwknKksP2WWw=;
+        b=eB7O27yxvbtmhH7fcDYyZyak8srmZ4n4SJBefbK6uWBCVkuxjAaDQtCjHzOBkb0CJY
+         u3FFE0bA9NHS1s0T8bOwHmb9D/UXwA2bWYbHkpM8+vwuHaGwtscfA4H9h8DCB5oo0oNx
+         XDJOF0rsxefveIqHroiEWOJbzcB+5ZE1LwyP26467tr0/r2RTGx8W+6GTm3Xk6WAGEMD
+         BZoWR7P1+ag1QaZeemm4CZHTtvU9MDKlnA8O/LvwXFFAzZCRrup97vmssm/sJGIvt68o
+         wXe4sr+bTRP7iA/bghRCUZS5tmwillPxz7zLQx8IjCKTrYoJEbxQtKrHDVkGIWRCpLNt
+         VraA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739532392; x=1740137192;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=V0lFTwfZZcUWkq9fJmOvcld23qYjy5biwQLrQr9JB8A=;
-        b=hMwIYFijtD63pQYVH7tWD12MGllU2ouP4H7Y/kw5OJ+7H/EqAzUmZWd8PJssrLswUm
-         QiM2HLQytEidh2pJdnVX5SudCob8G2CY045E4CcEGuAsxHbiX6EVuZ+MM7Oxb3A2Bzn+
-         A1a2WIY8YGDYRm4x/+gx6th8pN72CTwxEbFVTzd53PIwHxxuEsZLHtSWu/PussY7ZK3r
-         EwHljcTwPrEtxYsKndrCuOjMjoevFRiQVAjx9InMu3Ew/NG1/h3d+ibBhml/DI2kZb42
-         W2QIvLTQQl4lr2fF1ZWqnfwmFa0lx5vPdjj/FPdIdE97XqheA5II36cN1Kg6zbhCna60
-         CMcQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUW34DRrhUWv+nsiDacgLllsCHZEGjyc3qWNgXprdxWEMLd6qsLFsvAi15LZyMHYFc4eHlKZOb+FCk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz0DMtlL4kl9OYiNO4flalr11Q2o01r/59hshVnR+HA0B+d2tdZ
-	RCt9lqn0PMaOzAdAfRhQ8u7gReqMCjEr2diKb0XWPIsry2HojCNSq5RLfjujE+UQVl/UbJj82c7
-	DpN69uiCMG0pBb/lrDWh3txDlM0gASQsJTOA5MQ==
-X-Gm-Gg: ASbGncup0rkWtzp8UhvkIGO/tiGv9Fc6AeZNgaBtHmPzkNNOCmurwx/ccmZBQAlxgMw
-	fUVJ/aN5EwD6VxY1zXs0tfgT+uUEVcBYd8qpr14ArlBLcvfWG/p/m6P+Lr2GCfHOlIyTn9JDZcQ
-	==
-X-Google-Smtp-Source: AGHT+IHgAlZM0IOqZW2VzEw1FYIV10AUY+XwYeC5PGfb6gr8KMhdCaMYxrQJlkGON4FNOU8B5yXkDtD2hxcjbR8IEvM=
-X-Received: by 2002:a05:6902:2b11:b0:e5b:18ff:8cf4 with SMTP id
- 3f1490d57ef6-e5d9f0c85afmr10803625276.5.1739532391918; Fri, 14 Feb 2025
- 03:26:31 -0800 (PST)
-MIME-Version: 1.0
-References: <20250205125225.1152849-1-szemzo.andras@gmail.com>
-In-Reply-To: <20250205125225.1152849-1-szemzo.andras@gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 14 Feb 2025 12:25:55 +0100
-X-Gm-Features: AWEUYZkzFAbsbuTJhoDDXcEDwXJNLijMk4rdL9iJXNhVee2PTovAo1vxRBOIWOQ
-Message-ID: <CAPDyKFq72fqa9xOOw3m2z2ceTj18JFn42PaqxA4Ks+o9dd3FXg@mail.gmail.com>
-Subject: Re: [PATCH v2 00/10] Support for Allwinner V853 SoC
-To: Andras Szemzo <szemzo.andras@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Chen-Yu Tsai <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Samuel Holland <samuel@sholland.org>, Linus Walleij <linus.walleij@linaro.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Paul Walmsley <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, 
-	Albert Ou <aou@eecs.berkeley.edu>, =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@baylibre.com>, 
-	Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org, 
-	linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
+        d=1e100.net; s=20230601; t=1739534419; x=1740139219;
+        h=to:references:message-id:content-transfer-encoding:cc:date
+         :in-reply-to:from:subject:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=GI3W9qR1fQieAycCsuIaEjCDuBJjNXKEwknKksP2WWw=;
+        b=Hp1Zc4QR2EyORT2RGVS57q0a0xq2NsamdonEuw4Bq/aBb49d5c4lz3faNTH9QcoUBp
+         uq+AK2ORDVVHGJjXjDLyZJfrZBTYsFQmJRpQZu3M2HUYepmzqkZDlEQcOMu29b6Xm/Yo
+         i0Iupsm2+2tT7QAdGDAu+T7NOLagEB/AGbhnmWPS8W8swASG1H//jnoqvCH10DUW1H3h
+         Wf0yoanBUtIPNqCUkkgr/RMZOP9EXUHy3JpKADfOf1YP35H8GzitP/Iwum6rAU9yGcKi
+         sT1Lckk+ayDkReZukHXl8CV4cB1U8dhpeVznZoS+kIs9SuME9eQz+ibxh/2WWI98PISC
+         oQ/g==
+X-Forwarded-Encrypted: i=1; AJvYcCU2tYXL+1TRjN0kkfhdENJqaSQjDRX1Kzg3NOT8cc5h2EYN/LrTG4mY05CLscrKaYwFBsc9iQSD8vDML8lfLkeY@lists.infradead.org, AJvYcCUA5ajmskgQhh2sLZKhyOlsXHn/8SM9xCHLGcf2Z4Lp6GyKGsvybPnV+CiOkOrp7j4kCC8q57OqYZoigeZ/yCQ=@lists.infradead.org, AJvYcCUjlSABHeaOd26/xPghnmzXfy8N25zBSkPpzzK0akiyU87A/fgMeybdtHpqs1c+TxomVe2ELONHj1Xc@lists.infradead.org
+X-Gm-Message-State: AOJu0YxBDr+qksloisfwVBcPfQxmWcmJ4HCkV7JoNueopmz8MGFUr6z4
+	p0UhZrS/tKP46zd3yQMskw2jy47Otdw/wuVE0/zExLlLpPHux93C
+X-Gm-Gg: ASbGncsCLJgSIY19pvWNhY1w1iLyfLyjMCN0wNjVY6W1ZxTL8OgsLy8xl7zRxe1dLoa
+	ZY0fwaZeXxfrtgP3jm9ehP6opEJHnUWW6wkzSy8AltR46M4yqQQZoPtbHrLgPgatqXMOlHgDwT9
+	7gjTY02p5gXMhO63YuU86Qupm36tVJ57qISaPohREMbdMWi4tGB7/kY1mISVLOak6rGShhqyUXw
+	I8qAHbTxi3rU3Fd62zlANUennedwOWrDyUi5umk3y59YgiRbRzojhvb67fKurF7ee/wnBNcPDMF
+	Y6DE90p5Bxpdr+hmJf77WVtoVh3ns1WpeTF2sbWCYvPxRwoNCvt6ZqQCwiNIKMGRhFIcFKNY
+X-Google-Smtp-Source: AGHT+IEuZ76Lk8B5kT7BpvuBO88bUmgM7KzRYxZvjjTT1LTHSgCtEgbI85Tx+usx0aBQ6F7U8VS0vA==
+X-Received: by 2002:a17:906:fe02:b0:ab7:c11:a980 with SMTP id a640c23a62f3a-aba510aecf0mr643697766b.17.1739534416957;
+        Fri, 14 Feb 2025 04:00:16 -0800 (PST)
+Received: from smtpclient.apple (89-66-237-154.dynamic.chello.pl. [89.66.237.154])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-5dece1c416asm2819667a12.18.2025.02.14.04.00.14
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 14 Feb 2025 04:00:15 -0800 (PST)
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.400.131.1.6\))
+Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
+From: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>
+In-Reply-To: <tg6eyew4qahuxqakmmejne7xx2rkouj6htp55acun4ajz2irz2@vlmvqv3zc5vc>
+Date: Fri, 14 Feb 2025 13:00:03 +0100
+Cc: Damon Ding <damon.ding@rock-chips.com>,
+ heiko@sntech.de,
+ robh@kernel.org,
+ conor+dt@kernel.org,
+ algea.cao@rock-chips.com,
+ rfoss@kernel.org,
+ devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org,
+ linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org,
+ hjc@rock-chips.com,
+ kever.yang@rock-chips.com,
+ dmitry.baryshkov@linaro.org,
+ vkoul@kernel.org,
+ andy.yan@rock-chips.com,
+ krzk+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ l.stach@pengutronix.de
+Message-Id: <C81810F2-6E9B-4DCC-85D1-CCB63CBFBFEA@gmail.com>
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+ <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
+ <tg6eyew4qahuxqakmmejne7xx2rkouj6htp55acun4ajz2irz2@vlmvqv3zc5vc>
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+X-Mailer: Apple Mail (2.3826.400.131.1.6)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250214_032633_225242_F03CB8F2 
-X-CRM114-Status: GOOD (  21.96  )
+X-CRM114-CacheID: sfid-20250214_040020_623585_CF165886 
+X-CRM114-Status: GOOD (  20.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,115 +111,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 5 Feb 2025 at 13:52, Andras Szemzo <szemzo.andras@gmail.com> wrote:
->
-> V85x is a SoC from Allwinner with video encoding targeted for the field of
-> IP Camera. It integrates the single CA7 core, and a T-Head E907 RISC-V mcu.
-> The SoC has the usual Allwinner peripherals and a Vivante NPU.
-> V853 is a BGA package without DRAM, V851s/V851s3 has the same die with
-> co-packaged 64MB/128MB DRAM (in a QFN88 package).
->
-> This patchset tries to add basical support for the V853 device family.
-
-Patch5 and patch6 applied for next via my pmdomain tree, thanks!
-
-Note, patch5 (the DT patch) is also available on the immutable dt
-branch, if soc maintainers need to pull it.
-
-Kind regards
-Uffe
-
-
-
->
-> Changelog - v2:
->  - rebased on 6.14-rc1
->  - add a needed gate with key support to sunxi clk
->  - rewrite the ccu-r driver
->  - fix license issues
->  - remove the pinctrl binding, as it has beed applied
->  - rework the pinctrl driver, use the new sunxi dt based mux support. This new pinctrl
->    driver depends on the new sunxi device-tree based mux support patch series [1].
->  - remove the new usb phy binding, as the v853's usb phy is very close to d1/a64
->  - add a board dts
->  - ccu: add module description
->  - ccu: fix PLL enable bits, and min multipliers
->  - ccu: change PLL flags to CLK_SET_RATE_GATE
->  - ccu: use SUNXI_CCU_M_HWS at peripheral PLLs
->  - ccu: convert the VIDEO and CSI PLLs from nm type to nkmp according to BSP
->  - ccu: cpu axi clk use pointer
->  - ccu: fix comments
->  - ccu: swap i2s1 and i2s0 bus clocks
->  - ccu: fix indentation
->  - ccu: fix RST_BUS_SPIF order
->  - ccu: convert RST_RISCV_CLK_GATING from reset to gate
->
-> [1]: https://lore.kernel.org/linux-sunxi/20241111005750.13071-1-andre.przywara@arm.com/T/
->
-> Andras Szemzo (10):
->   clk: sunxi-ng: allow key feature in ccu reset and gate
->   pinctrl: sunxi: add driver for Allwinner V853
->   dt-bindings: clock: sunxi-ng: add compatibles for V853
->   clk: sunxi-ng: add CCU drivers for V853
->   dt-bindings: power: add V853 ppu bindings
->   pmdomain: sunxi: add V853 ppu support
->   dt-bindings: phy: allwinner: add v853 usb phy
->   phy: allwinner: add v853 usb phy compatible
->   ARM: dts: sun8i: add DTSI file for V853
->   ARM: dts: sun8i: add DTS file for yuzuki-lizard V851s
->
->  .../clock/allwinner,sun4i-a10-ccu.yaml        |    3 +
->  .../phy/allwinner,sun50i-a64-usb-phy.yaml     |    2 +
->  .../power/allwinner,sun20i-d1-ppu.yaml        |    1 +
->  arch/arm/boot/dts/allwinner/Makefile          |    1 +
->  .../boot/dts/allwinner/sun8i-v851s-lizard.dts |  196 +++
->  arch/arm/boot/dts/allwinner/sun8i-v853.dtsi   |  656 ++++++++++
->  drivers/clk/sunxi-ng/Kconfig                  |   10 +
->  drivers/clk/sunxi-ng/Makefile                 |    4 +
->  drivers/clk/sunxi-ng/ccu-sun8i-v853-r.c       |  120 ++
->  drivers/clk/sunxi-ng/ccu-sun8i-v853-r.h       |   14 +
->  drivers/clk/sunxi-ng/ccu-sun8i-v853.c         | 1145 +++++++++++++++++
->  drivers/clk/sunxi-ng/ccu-sun8i-v853.h         |   14 +
->  drivers/clk/sunxi-ng/ccu_common.h             |    2 +
->  drivers/clk/sunxi-ng/ccu_gate.c               |    6 +
->  drivers/clk/sunxi-ng/ccu_gate.h               |   14 +
->  drivers/clk/sunxi-ng/ccu_mux.c                |    4 +-
->  drivers/clk/sunxi-ng/ccu_reset.c              |    7 +
->  drivers/clk/sunxi-ng/ccu_reset.h              |    2 +-
->  drivers/phy/allwinner/phy-sun4i-usb.c         |   10 +
->  drivers/pinctrl/sunxi/Kconfig                 |    5 +
->  drivers/pinctrl/sunxi/Makefile                |    1 +
->  drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c    |   53 +
->  drivers/pmdomain/sunxi/sun20i-ppu.c           |   15 +
->  .../clock/allwinner,sun8i-v853-ccu.h          |  132 ++
->  .../clock/allwinner,sun8i-v853-r-ccu.h        |   16 +
->  .../power/allwinner,sun8i-v853-ppu.h          |   10 +
->  .../reset/allwinner,sun8i-v853-ccu.h          |   60 +
->  .../reset/allwinner,sun8i-v853-r-ccu.h        |   14 +
->  28 files changed, 2513 insertions(+), 4 deletions(-)
->  create mode 100644 arch/arm/boot/dts/allwinner/sun8i-v851s-lizard.dts
->  create mode 100644 arch/arm/boot/dts/allwinner/sun8i-v853.dtsi
->  create mode 100644 drivers/clk/sunxi-ng/ccu-sun8i-v853-r.c
->  create mode 100644 drivers/clk/sunxi-ng/ccu-sun8i-v853-r.h
->  create mode 100644 drivers/clk/sunxi-ng/ccu-sun8i-v853.c
->  create mode 100644 drivers/clk/sunxi-ng/ccu-sun8i-v853.h
->  create mode 100644 drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c
->  create mode 100644 include/dt-bindings/clock/allwinner,sun8i-v853-ccu.h
->  create mode 100644 include/dt-bindings/clock/allwinner,sun8i-v853-r-ccu.h
->  create mode 100644 include/dt-bindings/power/allwinner,sun8i-v853-ppu.h
->  create mode 100644 include/dt-bindings/reset/allwinner,sun8i-v853-ccu.h
->  create mode 100644 include/dt-bindings/reset/allwinner,sun8i-v853-r-ccu.h
->
-> --
-> 2.39.5
->
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Cgo+IFdpYWRvbW/Fm8SHIG5hcGlzYW5hIHByemV6IFNlYmFzdGlhbiBSZWljaGVsIDxzZWJhc3Rp
+YW4ucmVpY2hlbEBjb2xsYWJvcmEuY29tPiB3IGRuaXUgMTMgbHV0IDIwMjUsIG8gZ29kei4gMTg6
+MjY6Cj4gCj4gSGVsbG8gUGlvdHIsCj4gCj4gCj4gVGhlIFJLMzU4OCBoYXMgdHdvIGRpZmZlcmVu
+dCBEUCBjb250cm9sbGVycy4gVGhlIG9uZSBoYW5kbGVkIGluIHRoaXMKPiBzZXJpZXMgc2hvdWxk
+IGdldCB0aGUgZURQIHBvcnQgcnVubmluZywgd2hpY2ggaXMgcm91dGVkIHRvIHRoZQo+ICJlRFAg
+UGFuZWwiIGluIHRoZSBibG9jayBkaWFncmFtIG9uIHBhZ2UgMyBvZiB0aGUgUm9jayA1IElUWCBz
+Y2hlbWF0aWNzLgo+IFNvIHRoaXMgc2VyaWVzIGFkZHMgc3VwcG9ydCBmb3IgdXNpbmcgIkhETUkv
+ZURQIFRYMCIgYW5kICJIRE1JL2VEUCBUWDEiCj4gaW4gRFAgbW9kZS4KPiAKPiBUaGUgcG9ydCBy
+b3V0ZWQgdG8gSERNSTAgdmlhIFJBNjIwIGlzIHRoZSBvdGhlciBEUCBjb250cm9sbGVyLCB3aGlj
+aAo+IGFsc28gZXhpc3RzIHR3aWNlOiAiVFlQRUMwL0RQMCIgYW5kICJUWVBFQzEvRFAxIi4gVGhp
+cyBEUCBjb250cm9sbGVyCj4gaXMgbm90IHlldCBzdXBwb3J0ZWQgdXBzdHJlYW0gYW5kIHRoZXJl
+IGlzIG5vIHBlbmRpbmcgcGF0Y2hzZXQuIEFzIGZhcgo+IGFzIEkga25vdyBSb2NrY2hpcCBwbGFu
+cyB0byB3b3JrIG9uIHByZXBhcmluZyB1cHN0cmVhbSBzdXBwb3J0IGZvciB0aGF0Cj4gc29vbi4K
+PiAKCk9oIC0gdGhpcyBpcyB2ZXJ5IHZhbHVhYmxlIGluZm8gYW5kIGV4cGxhaW5zIGEgbG90LgpU
+aHguIAoKPiBOb3RlLCB0aGF0IHRoZSB0d28gRGlzcGxheVBvcnQgY29udHJvbGxlcnMgYXJlIGNv
+bXBsZXRlbHkgZGlmZmVyZW50Lgo+IFRoZSBIRE1JL2VEUCBjb250cm9sbGVyIGlzIGEgZGVzaWdu
+IGZyb20gQW5hbG9naXggYW5kIHRoZSBUeXBlQy9EUAo+IGNvbnRyb2xsZXIgaXMgYSBkZXNpZ24g
+ZnJvbSBTeW5vcHN5cy4KPiAKPiBQLlMuOiBIZWlrbyBtZXJnZWQgc3VwcG9ydCBmb3IgSERNSTEg
+KFJLMzU4OCBTb0MgbGV2ZWwpIHJlY2VudGx5LiBTbyB5b3UKPiBzaG91bGQgYmUgYWJsZSB0byBn
+ZXQgdGhhdCBydW5uaW5nIGJ5IHNvbWUgRFQgYWRkaXRpb25zIHRvIHRoZSBSb2NrIDUKPiBJVFgg
+Ym9hcmQgRFQgd2l0aCB0aGUgbGF0ZXN0IGxpbnV4LW5leHQgY29kZSA6KQo+IAoKQW5kIGl0IHdv
+cmtzIHBlcmZlY3RseSBvbiBhbGwgbXkgMzU4OCBiYXJkcyAoaW5jbHVkaW5nIGF1ZGlvIGFuZCBt
+eSBjZWMgYWRkaXRpb24pCkJ1dCBvbmx5IG9uIGJvYXJkcyB1c2luZyBib3RoIGhkbWkgdHgwIGFu
+ZCB0eDEgdG8gaGRtaTAvaGRtaTEgcG9ydHMuCgpvbiByb2NrNSBpdHg6ICAKCldpdGggYm90aCBo
+ZG1pIHR4MCBhbmQgdHgxIGVuYWJsZWQgaW4gZHRzIGl0IGxvb2tzIGxpa2Uga2VybmVsIGRldGVj
+dHMgaGRtaSB0eDAgYXMgY29ubmVjdGVkIGFuZCB0cmllcyByZWFkIGVkaWQuIApBcyBub3RoaW5n
+IGlzIGNvbm5lY3RlZCB0byBKMTEgKGVEUCBjb24pIC0gaeKAmW0gZ2V0dGluZyBpMmMgZGRjIHRp
+bWVvdXRzIApbICAgNTQuMTg4ODgwXSBkd2hkbWlxcC1yb2NrY2hpcCBmZGU4MDAwMC5oZG1pOiBp
+MmMgcmVhZCB0aW1lZCBvdXQKWyAgIDU0LjI5MjIwN10gZHdoZG1pcXAtcm9ja2NoaXAgZmRlODAw
+MDAuaGRtaTogaTJjIHJlYWQgdGltZWQgb3V0ClsgICA1NC4zOTU1NTRdIGR3aGRtaXFwLXJvY2tj
+aGlwIGZkZTgwMDAwLmhkbWk6IGkyYyByZWFkIHRpbWVkIG91dAoKCmRpc2FibGluZyBoZG1pMCBt
+YWtlcyBrZXJuZWwgdGFsa2luZyB0byBoZG1pMSBidXQgd2l0aCBpc3N1ZXM6IApbICAgIDAuNTQw
+NDQ2XSBkd2hkbWlxcC1yb2NrY2hpcCBmZGVhMDAwMC5oZG1pOiByZWdpc3RlcmVkIERlc2lnbldh
+cmUgSERNSSBRUCBJMkMgYnVzIGRyaXZlcgpbICAgIDAuNTQxMjMwXSByb2NrY2hpcC1kcm0gZGlz
+cGxheS1zdWJzeXN0ZW06IGJvdW5kIGZkZWEwMDAwLmhkbWkgKG9wcyBkd19oZG1pX3FwX3JvY2tj
+aGlwX29wcykKWyAgICAwLjU0MjI4NV0gW2RybV0gSW5pdGlhbGl6ZWQgcm9ja2NoaXAgMS4wLjAg
+Zm9yIGRpc3BsYXktc3Vic3lzdGVtIG9uIG1pbm9yIDAKWyAgICAwLjU0MjkzM10gcm9ja2NoaXAt
+ZHJtIGRpc3BsYXktc3Vic3lzdGVtOiBbZHJtXSBDYW5ub3QgZmluZCBhbnkgY3J0YyBvciBzaXpl
+cwpbICAgIDAuNTQzNjA1XSByb2NrY2hpcC1kcm0gZGlzcGxheS1zdWJzeXN0ZW06IFtkcm1dIENh
+bm5vdCBmaW5kIGFueSBjcnRjIG9yIHNpemVzCgphbmQgaGVyZSBp4oCZbSBhIGJpdCBwdXp6bGVk
+IGFzIG9uIG90aGVyIDM1ODggYm9hcmRzIChpLmUuIHJvY2s1YikgLSB3aGVuIGkgY29ubmVjdGVk
+IG1vbml0b3IgdG8gaGRtaTEgLSBhbGwgd29ya3MgcGVyZmVjdGx5CihrZXJuZWwsIE9TIGFuZCBh
+cHAgbmljZWx5IHNraXBwaW5nIGhkbWkwIGFuZCB0YWxraW5nIHRvIGFjdHVhbGx5IGNvbm5lY3Rl
+ZCBoZG1pMSBwb3J0LiBhbGwgd29ya3MpIAoKb24gcm9jazUgaXR4IHRoaXMgbm90IHdvcmtzLgoK
+bXkgb2JzZXJ2YXRpb25zIHNvIGZhciBhcmU6Ci1vbiByb2NrNSBpdHggaGRtaTAgaXMgZmFsc2Vs
+eSBkZXRlY3RlZCBhcyBjb25uZWN0ZWQgLSBldmVuIHdoZW4gZURQIGNvbm5lY3RvciAoSjExKSBo
+YXMgbm90aGluZyBjb25uZWN0ZWQKLW9uIHJvY2s1IGl0eCBkaXNhYmxpbmcgaGRtaTAgaW4gZHRz
+IGJyZWFrcyBoZG1pMSAKLW9uIG90aGVyIDM1ODggKGUuZy4gcm9jayA1YikgZGlzYWJsaW5nIGhk
+bWkwIGluIGR0cyBOT1QgYnJlYWtzIGhkbWkxICAKCnN0cmFuZ2XigKYuCgogICAKCj4gR3JlZXRp
+bmdzLAo+IAo+IC0tIFNlYmFzdGlhbgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCj4gTGludXgtcm9ja2NoaXAgbWFpbGluZyBsaXN0Cj4gTGludXgtcm9j
+a2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
+dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
