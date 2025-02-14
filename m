@@ -4,61 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3978C021A0
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Feb 2025 21:12:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12D67C02198
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 06:51:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2fsA93SrZj7obhmqc4pIPY8c54F0lsxjjQy5W2VSdeQ=; b=uGdfeeSZscbDAt
-	KZ62iBG5bWAEuPyGDAs290pHGO48MDHL8hOo+WW/FzwizJNdWYQwrGFKsRPRo+X/H9cALX4TzDAp/
-	uuc7VXr6PKmHu26WvFgpuQ+VV/yiCpk7q3lJLKz1UaYVa96AjPiL57GVj9/iwPi3dl/uwjVzJzlwB
-	oz5BFn7ckhc/1m0/Dd/MM1Ufffn0G+eQ5XcY7KINbxKgUJqd/gYceBG9Zh46m8EPcPSsSpVUTfnZ3
-	z5k6uvJ/4vd14Cd7bTuDjPH1l+drDYvVnWkkMxM8D5LJDdjvj3zCK57VmTRly9K+4MXHno0Qulhux
-	73hcXgABfB9rE8eupPwA==;
+	List-Owner; bh=3DrvUV/B6+CBLCIOoO9czFD/CC4PkJdkwUZkL4+isOw=; b=wS152Xjvqj2ByK
+	wG9wFZPrk7QiEaq4BVTvSVRfCE9uZeyJVkRNVNp4R+DNOwq9GywR3O6WgjRZoTi0wczLcSUeryoko
+	3+mI1JpTegqXTkYanTPDanIjZGqaMGw4rTNxulVx5EIW48N8SYZ5w4Qb4BGTlSM/Uy0TEDf6L77eM
+	VczwULw7TYEZoxQwv10Bs/KXmrX4PqDRHPRRsWhtN7xm4CLJK9bm9rL68MOTzKiC++cDEPUFFYa3t
+	ekEOBg2GPE7BqeuUwqv43GdNpJyMCkBARSwoQx5sjoaIjnsoXL+XttL0Wtd0ojJhkyW2KCKdd32cO
+	5+IcUFbuwwuxhkQSMPCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tigVK-0000000CfNF-2Uuf;
-	Thu, 13 Feb 2025 21:12:14 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1tipXg-0000000DrwP-17rq;
+	Fri, 14 Feb 2025 06:51:16 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tigSK-0000000Cecl-39RS;
-	Thu, 13 Feb 2025 21:09:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=DJwimBcRqLSyXYEID3ttBpVRmf268sK2AExRPEHgOEI=; b=JLMjc8xXqVS83EWPH15sVxIbDP
-	yKlFs7JwlHERsFF56d6h2cSeXBzC7u//NenkcNAvdYiQ09DmQCviukCuQM/igm0UvDRTKpmheit5t
-	ZZ+4f4+YcJRNI8Of8AwaytmsdhARr6vLIAGwNYEqPODpOr8SDOK3lkYJzZC9bEzjw4wheLGZjKMRL
-	g9dzDWyWxS2pBHaEXZ4EmIzOBz3NmWsueePys4hMtwR4ARF1wBDn/eOYFK0PjlzG3GheAc2LHoodc
-	ZOhad2aju/3KBddc2lo3HnKSIBFzMau2WgSWDjSQAeIA8nldPw1xHWU9+zmP/uk3Se9MfxZFg4a/c
-	+Dgof7Sg==;
-Received: from i53875bc0.versanet.de ([83.135.91.192] helo=diego.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tigSG-0006a0-Mn; Thu, 13 Feb 2025 22:09:04 +0100
-From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
-To: vkoul@kernel.org, kishon@kernel.org
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- quentin.schulz@cherry.de, sebastian.reichel@collabora.com,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, dse@thaumatec.com
-Subject: Re: [PATCH v6 0/2] MIPI DSI phy for rk3588
-Date: Thu, 13 Feb 2025 22:09:03 +0100
-Message-ID: <6831884.31tnzDBltd@diego>
-In-Reply-To: <20250213210554.1645755-1-heiko@sntech.de>
-References: <20250213210554.1645755-1-heiko@sntech.de>
+	id 1tipWn-0000000Drpn-2u8Q
+	for linux-phy@lists.infradead.org;
+	Fri, 14 Feb 2025 06:50:22 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id 98e67ed59e1d1-2fc0d44a876so2518757a91.3
+        for <linux-phy@lists.infradead.org>; Thu, 13 Feb 2025 22:50:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1739515820; x=1740120620; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=u/bwpmhibqCSWXsfxMuekBQiCAQCaSoqpsC6Q1WLM/g=;
+        b=JuQmpvrwIUyuRfEnUbT3EndEog0DZYEi46ZKMAVZllN70RilruOX2yUGMb5IW5S9Hh
+         CUX+DYX3sXJgb9mu7v8iZOWLEoApgnNt0I/eQ7zGY/pTAqskvzO10HghjO9Ev4hLbtpO
+         jfGG7o8eFnI0uWMSWenicZPXaK9JNcgh9MCM3DvwMewepcGpUVDmfvHzw/5fFThu7Ye6
+         79Tlma0jf9DNsdcAmOW3LXASxv2/FxDaptg/hSWZDinnD6bAvFiS1EnLmlJ+IALFmKyi
+         1x9hEk5CM9IJo9X0Zz079bMJW3VDkIdu673t1W1mKdbYj0KxR9YI2Rg8hIFSFXPHS+NV
+         zQXg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739515820; x=1740120620;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=u/bwpmhibqCSWXsfxMuekBQiCAQCaSoqpsC6Q1WLM/g=;
+        b=L3x75327yDpRWG8leHgsWa/yOpjbQbRgW4VKipN+9kVse+zuPNbeUnsWtFlTFfR8y4
+         0KC+EKzHrd7e8LPiBNiiX4NFdsoGFod+Nf69U6Oj/xFKlau1/TJ8Ingr7RTzLNBzE2rk
+         qJofDiT1EEpKLr96v/NaImy/GyDbktQjyvnI1yfrg6s66R13/hQM4sZaLIH+AWHoPIdY
+         Ndsos9FQIfNZFtLf2QhBc6xxc/KKCDm18YZNhPfDrJ7xYHY2kngfvGbg4/OeY1K+yime
+         FGlq34bkAHYom5yPofXqVZ6q9yy3r0yvUS2mMIM3VExrAy3+FmJOMtYj7ew1n2jnylV4
+         0Kmw==
+X-Forwarded-Encrypted: i=1; AJvYcCWmbmVLJj/L24MhrowecwirNMjYgLf56q2YMu280kccxP4FIRFPZ2xpz5t13+I808iChUc7GAH8Lcc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwFEdFwG5+I0P9hovuzcGok68qRvC3J5GRjOh3NrRbNGCJJXRlM
+	Mu5i9cUkuVwXHGO9o6Cpc1H2WPCtibpw1kOGDz9n4N5ZOl9pJk4MsFNxrKfSFQ==
+X-Gm-Gg: ASbGncub+R8/v0YZWVlTMiONQU3k0ULLxPaeN2B4y/VSvgtBqkU48WAMQU6WCUWN1Xq
+	lzwJWHroPa7/PmGxpXkn89wq0o2JYsoFDeSh0fkvcXUGD6R76uIBouNSMYu79EWmV1eAp3poh1X
+	OtE7aawbwopV+eIF4tN9GGBeYv0DpkKJZFcvRr0PonT7MjzoJT57sWTEvDH9o/MnDFEKx8Cyqsw
+	XRxg1yd1AnlS36Y+hHbg9sSF6DIhBCrW0m9jkpOn5qn04GpOMnEE5KRVoFoIOXSATri0ue9y9x9
+	u7Z3nAarTu4jw+TxLs6wnl4rlzIIMYk=
+X-Google-Smtp-Source: AGHT+IFX6zS1A/v/lAX87GhqlIvEXShQyFVA3goXMvKLoqOPdD6mgLwijiX503q7RrCZ5DU1xqruYQ==
+X-Received: by 2002:a17:90b:4d08:b0:2fa:ba3:5455 with SMTP id 98e67ed59e1d1-2fc0ddd3602mr8941895a91.7.1739515820426;
+        Thu, 13 Feb 2025 22:50:20 -0800 (PST)
+Received: from thinkpad ([2409:40f4:304f:ad8a:8cb7:72db:3a5e:1287])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2fc13ac2984sm2376439a91.20.2025.02.13.22.50.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 13 Feb 2025 22:50:19 -0800 (PST)
+Date: Fri, 14 Feb 2025 12:20:09 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+	Nitin Rawat <quic_nitirawa@quicinc.com>,
+	Melody Olvera <quic_molvera@quicinc.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Andy Gross <agross@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>,
+	Trilok Soni <quic_tsoni@quicinc.com>, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
+	Manish Pandey <quic_mapa@quicinc.com>
+Subject: Re: [PATCH 4/5] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
+ SoC
+Message-ID: <20250214065009.w4rmrbbejnywh6nt@thinkpad>
+References: <20250113-sm8750_ufs_master-v1-0-b3774120eb8c@quicinc.com>
+ <20250113-sm8750_ufs_master-v1-4-b3774120eb8c@quicinc.com>
+ <vifyx2lcaq3lhani5ovmxxqsknhkx24ggbu7sxnulrxv4gxzsk@bvmk3znm2ivl>
+ <be8a4f65-3b36-4740-a4f7-312126cfd547@quicinc.com>
+ <ferdaevlfrpf2ewzcct7mqyxltvmt6aaar4fujxfehrmizm3qw@aaroprnpwlxq>
+ <354f8710-a5ec-47b5-bcfa-bff75ac3ca71@oss.qualcomm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <354f8710-a5ec-47b5-bcfa-bff75ac3ca71@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_130908_793784_5288D005 
-X-CRM114-Status: GOOD (  24.66  )
+X-CRM114-CacheID: sfid-20250213_225021_733296_DF1EBF03 
+X-CRM114-Status: GOOD (  29.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,87 +116,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Am Donnerstag, 13. Februar 2025, 22:05:46 MEZ schrieb Heiko Stuebner:
-> This adds the phy driver need for DSI output on rk3588.
-> 
-> The phy itself is used for both DSI output and CSI input, though the
-> CSI part for the whole chain needs a lot more work, so is left out for
-> now and only the DSI part implemented.
-> 
-> This allows the rk3588 with its current VOP support to drive a DSI display
-> using the DSI2 controller driver I'll submit in a next step.
-> 
-> Only generic phy interfaces are used, so the DSI part is pretty straight
-> forward.
-> 
-> changes in v6:
-> - rebase onto 6.14-rc1
-> - add Krzysztof binding review
-> - v5 was sent at the beginning of december '24, so probably has been lost
-> 
-> changes in v5:
-> - add bitfield.h for the FIELD_PROP definition
->   (reported by kernel-test-robot)
-> - add Sebastian's Reviewed-by
-> - add Conor's Ack to the dt-binding
-> 
-> changes in v4:
-> - moved to #phy-cells = 1 as suggested by Sebastian, with the argument
->   denoting the requested phy-type (C-PHY, D-PHY). This works similarly
->   how the Mediatek C/D-PHY already implements this, see mails around:
->   https://lore.kernel.org/all/20230608200552.GA3303349-robh@kernel.org/
-> - dropped Krzysztof's review tag from the binding because of this
-> - dropped custom UPDATE macro and use FIELD_PREP instead
-> - build a FIELD_PREP_HIWORD macro for the GRF settings
-> - add received Tested-by tags
-> 
-> changes in v3:
-> - add Krzysztof review tag to the binding
-> - address Sebastian's review comments
->   - better error handling
->   - dropping empty function
->   - headers
->   - not using of_match_ptr - this should also make the
->     test-robot happier
-> 
-> changes in v2:
-> - fix error in dt-binding example
-> - drop unused frequency table
-> - pull in some more recent improvements from the vendor-kernel
->   which includes a lot less magic values
-> - already include the support for rk3576
-> - use dev_err_probe
-> 
-> Heiko Stuebner (2):
->   dt-bindings: phy: Add Rockchip MIPI C-/D-PHY schema
->   phy: rockchip: Add Samsung MIPI D-/C-PHY driver
-> 
->  .../phy/rockchip,rk3588-mipi-dcphy.yaml       |   87 +
->  drivers/phy/rockchip/Kconfig                  |   12 +
->  drivers/phy/rockchip/Makefile                 |    1 +
->  .../phy/rockchip/phy-rockchip-samsung-dcphy.c | 1604 +++++++++++++++++
->  4 files changed, 1704 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/rockchip,rk3588-mipi-dcphy.yaml
->  create mode 100644 drivers/phy/rockchip/phy-rockchip-samsung-dcphy.c
-
-Forgot to transplant from the v5 cover-letter - the series got a 
-
-Tested-by: Quentin Schulz <quentin.schulz@cherry.de>
-
-on RK3588 Tiger with Haikou Video Demo in [0]
-
-
-[0] https://lore.kernel.org/r/63cda072-3671-42c9-9650-7a3ece39dec6@cherry.de
-
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gTW9uLCBGZWIgMTAsIDIwMjUgYXQgMDg6MjA6MjdQTSArMDEwMCwgS29ucmFkIER5YmNpbyB3
+cm90ZToKPiBPbiA4LjAyLjIwMjUgMTE6MDYgUE0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4g
+PiBPbiBTdW4sIEZlYiAwOSwgMjAyNSBhdCAxMjo0Nzo1NkFNICswNTMwLCBOaXRpbiBSYXdhdCB3
+cm90ZToKPiA+Pgo+ID4+Cj4gPj4gT24gMS8xNC8yMDI1IDQ6MjIgUE0sIERtaXRyeSBCYXJ5c2hr
+b3Ygd3JvdGU6Cj4gPj4+IE9uIE1vbiwgSmFuIDEzLCAyMDI1IGF0IDAxOjQ2OjI3UE0gLTA4MDAs
+IE1lbG9keSBPbHZlcmEgd3JvdGU6Cj4gPj4+PiBGcm9tOiBOaXRpbiBSYXdhdCA8cXVpY19uaXRp
+cmF3YUBxdWljaW5jLmNvbT4KPiA+Pj4+Cj4gPj4+PiBBZGQgVUZTIGhvc3QgY29udHJvbGxlciBh
+bmQgUEhZIG5vZGVzIGZvciBTTTg3NTAgU29DLgo+ID4+Pj4KPiA+Pj4+IENvLWRldmVsb3BlZC1i
+eTogTWFuaXNoIFBhbmRleSA8cXVpY19tYXBhQHF1aWNpbmMuY29tPgo+ID4+Pj4gU2lnbmVkLW9m
+Zi1ieTogTWFuaXNoIFBhbmRleSA8cXVpY19tYXBhQHF1aWNpbmMuY29tPgo+ID4+Pj4gU2lnbmVk
+LW9mZi1ieTogTml0aW4gUmF3YXQgPHF1aWNfbml0aXJhd2FAcXVpY2luYy5jb20+Cj4gPj4+PiBT
+aWduZWQtb2ZmLWJ5OiBNZWxvZHkgT2x2ZXJhIDxxdWljX21vbHZlcmFAcXVpY2luYy5jb20+Cj4g
+Pj4+PiAtLS0KPiAKPiBbLi4uXQo+IAo+ID4+PiBVc2UgT1BQIHRhYmxlIGluc3RlYWQKPiA+Pgo+
+ID4+IEN1cnJlbnRseSwgT1BQIGlzIG5vdCBlbmFibGVkIGluIHRoZSBkZXZpY2UgdHJlZSBmb3Ig
+YW55IHByZXZpb3VzIHRhcmdldHMuIEkKPiA+IAo+ID4gRXhjdXNlIG1lPyB1ZnNfb3BwX3RhYmxl
+IGlzIHByZXNlbnQgb24gU004MjUwLCBTTTg1NTAgYW5kIFNETTg0NSAoYW5kCj4gPiBRQ1M2MTUp
+LiBTbyB0aGlzIGlzIG5vdCBjb3JyZWN0Cj4gPiAKPiA+PiBwbGFuIHRvIGVuYWJsZSBPUFAgaW4g
+YSBzZXBhcmF0ZSBwYXRjaCBhdCBhIGxhdGVyIHN0YWdlLiBUaGlzIGlzIGJlY2F1c2UKPiA+PiB0
+aGVyZSBpcyBhbiBvbmdvaW5nIHBhdGNoIGluIHRoZSB1cHN0cmVhbSB0aGF0IGFpbXMgdG8gZW5h
+YmxlIG11bHRpcGxlLWxldmVsCj4gPj4gY2xvY2sgc2NhbGluZyB1c2luZyBPUFAsIHdoaWNoIG1h
+eSBpbnRyb2R1Y2UgY2hhbmdlcyB0byB0aGUgZGV2aWNlIHRyZWUKPiA+PiBlbnRyaWVzLiBUbyBh
+dm9pZCBleHRyYSBlZmZvcnRzLCBJIGludGVuZCB0byBlbmFibGUgT1BQIG9uY2UgdGhhdCBwYXRj
+aCBpcwo+ID4+IG1lcmdlZC4KPiA+IAo+ID4gV2hhdGV2ZXIgY2hhbmdlcyBhcmUgaW50cm9kdWNl
+ZCwgb2xkIERUIG11c3Qgc3RpbGwgY29udGludWUgdG8gd29yay4KPiA+IFRoZXJlIGlzIG5vIHJl
+YXNvbiB0byB1c2UgbGVnYWN5IGZyZXEtdGFibGUtaHogaWYgeW91IGNhbiB1c2UgT1BQIHRhYmxl
+Lgo+ID4gCj4gPj4gUGxlYXNlIGxldCBtZSBrbm93IGlmIHlvdSBoYXZlIGFueSBjb25jZXJucy4K
+PiAKPiBHbyBhaGVhZCB3aXRoIHRoZSBPUFAgdGFibGUuIGZyZXEtdGFibGUtaHogaXMgYW5jaWVu
+dCBhbmQgZG9lc24ndCBkZXNjcmliZQo+IGUuZy4gdGhlIHJlcXVpcmVkIFJQTWggbGV2ZWxzIGZv
+ciBjb3JlIGNsb2NrIGZyZXF1ZW5jaWVzLgo+IAo+IFlvdSBzaG91bGQgdGhlbiBkcm9wIHJlcXVp
+cmVkLW9wcHMgZnJvbSB0aGUgVUZTIG5vZGUuCj4gCj4gPj4+PiArCj4gPj4+PiArCQkJcmVzZXRz
+ID0gPCZnY2MgR0NDX1VGU19QSFlfQkNSPjsKPiA+Pj4+ICsJCQlyZXNldC1uYW1lcyA9ICJyc3Qi
+Owo+ID4+Pj4gKwo+ID4+Pj4gKwo+ID4+Pj4gKwkJCWludGVyY29ubmVjdHMgPSA8JmFnZ3JlMV9u
+b2MgTUFTVEVSX1VGU19NRU0gUUNPTV9JQ0NfVEFHX0FMV0FZUwo+ID4+Pj4gKwkJCQkJICZtY192
+aXJ0IFNMQVZFX0VCSTEgUUNPTV9JQ0NfVEFHX0FMV0FZUz4sCj4gPj4+PiArCQkJCQk8JmdlbV9u
+b2MgTUFTVEVSX0FQUFNTX1BST0MgUUNPTV9JQ0NfVEFHX0FMV0FZUwo+ID4+Pj4gKwkJCQkJICZj
+b25maWdfbm9jIFNMQVZFX1VGU19NRU1fQ0ZHIFFDT01fSUNDX1RBR19BTFdBWVM+Owo+ID4+Pgo+
+ID4+PiBTaG91bGRuJ3QgY3B1LXVmcyBiZSBBQ1RJVkVfT05MWT8KPiA+Pgo+ID4+IEFzIHBlciB1
+ZnMgZHJpdmVyIGltcGxlbWVudGF0aW9uLCBJY2Mgdm90aW5nIGZyb20gdWZzIGRyaXZlciBpcyBy
+ZW1vdmVkIGFzCj4gPj4gcGFydCBvZiBsb3cgcG93ZXIgbW9kZSAoc3VzcGVuZCBvciBjbG9jayBn
+YXRpbmcpIGFuZCB2b3RlZCBhZ2FpbiBpbgo+ID4+IHJlc3VtZS91bmdhdGluZyBwYXRoLiBIZW5j
+ZSBUQUdfQUxXQVlTIHdpbGwgaGF2ZSBubyBwb3dlciBjb25jZXJuLgo+ID4+IEFsbCBwcmV2aW91
+cyB0YXJnZXRzIGhhdmUgdGhlIHNhbWUgY29uZmlndXJhdGlvbi4KPiA+IAo+ID4gYXJjaC9hcm02
+NC9ib290L2R0cy9xY29tL3FjczYxNS5kdHNpOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICZjb25maWdfbm9jIFNMQVZFX1VGU19NRU1fQ0ZHIFFDT01fSUNDX1RBR19BQ1RJVkVf
+T05MWT47Cj4gPiAKPiA+IEl0IG1pZ2h0IGJlIGEgbWlzdGFrZSBmb3IgdGhhdCB0YXJnZXQgdGhv
+dWdoLiBZb3VyIGV4cGxhbmF0aW9uIHNvdW5kcwo+ID4gZmluZSB0byBtZS4KPiAKPiBMZXQncyB1
+c2UgUUNPTV9JQ0NfVEFHX0FDVElWRV9PTkxZIGZvciB0aGUgQ1BVIHBhdGggdG8gY2xlYXIgdXAg
+Y29uZnVzaW9uLgo+IAo+IFRvZ2dsaW5nIGl0IGZyb20gdGhlIGRyaXZlciBtYWtlcyBzZW5zZSBm
+b3IgVUZTLWlkbGluZy13aGlsZS1DUFVzLWFyZS1vbmxpbmUKPiBjYXNlcyBhbmQgYWNjaWRlbnRh
+bGx5IGFsc28gZG9lcyB3aGF0IFJQTWggZG9lcyBpbnRlcm5hbGx5IGluIHRoZSBvdGhlciBjYXNl
+Lgo+IAoKU2hvdWxkbid0IGl0IGJlIGFwcGxpZWQgdG8gY29uZmlnIHBhdGggb2YgYWxsIHBlcmlw
+aGVyYWxzIHRoZW4/IElmClFDT01fSUNDX1RBR19BQ1RJVkVfT05MWSB0cmFuc2xhdGVzIHRvICdy
+ZXNvdXJjZSBnZXR0aW5nIHZvdGVkIG9ubHkgaWYgdGhlIENQVVNTCmlzIGFjdGl2ZScsIHRoZW4g
+dGhlIHNhbWUgY29uc3RyYWludCBzaG91bGQgYXBwbHkgdG8gYWxsIHBlcmlwaGVyYWxzLCBpc24n
+dCBpdD8KCkknbSBub3Qgc3VyZSB3aG8gaXMgYWNjZXNzaW5nIHRoZSBjb25maWcgcGF0aCBvdGhl
+ciB0aGFuIHRoZSBDUFVzLgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+N
+IOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGlu
+dXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
