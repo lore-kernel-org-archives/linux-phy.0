@@ -4,61 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0623EC02198
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 12:54:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F110C02198
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Feb 2025 13:22:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kuerJBUfRap3VFOhUKKllh+Hp/hJfB5aI3BQ6ElqxAc=; b=05euvhyj1PgPVw
-	Olux4oLE89w6bqZ+QaHVJXCU16CcpyQU9QRxaFxNLAZsoZvF6uGOqfrRNIAF027KaxrhbW2xSo/he
-	VyisazVsfm3Op7LNZrpSO7hAK7vqpc33TX2zXCZvt8NuA6ZNySk1NZ0IKbuSmA3moCbxcJojfuM3O
-	VNs+y5JJLeAkz9zEDAY1Bgmt2JjfVB/JOVsasb2iBpJMxtyxIpZ3A1tzmYsPGdeyZk4aRo8YwAi88
-	SrKjsKpKUFF2RISZ0IZNyP8oezf3+Cqw0hfvs65wHxMlNTi2ahJi+o89K5N8TsmO62xeqdsl+QCCz
-	lXy9dyBboQmgSJv4Et4Q==;
+	List-Owner; bh=M9s6V3USkaZ77S4QfHOIHyeRYiaGv0Qc8S6YvzN4ljs=; b=nOPWPNZamxp5VX
+	zLnyCmN7y6gtmXaDfNIa9F8hu+k+Eo4kFd4YmkRfDa7M46gbn6ciIWOeX6lQ2U2T/+uiKLepJ55Yg
+	uJ3F4+EJhUuZxLhFtcHwkkBupV+g/5B+RWCK13YHDqCbEWRX5yOArNLa6SYBiY0nSNs+mlTfMH9XN
+	MAYCtVIe7nlet7ZGTtoroERiT0mCUGftsZpxXi0gvG72F7bvGJTbNOi3CeIrO9iN7DmYFMZxvGK60
+	s6MILNbhIb3PVBvmn8eLKarNHvQWdjFSjXBGYiO+Du/AZdjEbKAJM+TzywdAPv28B3zAaL0IwDorv
+	e9vEYIH0OhvFKCmn7KPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tivDW-0000000EtD3-1XCP;
-	Fri, 14 Feb 2025 12:54:50 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tiveG-0000000EzBR-3foh;
+	Fri, 14 Feb 2025 13:22:28 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tivC3-0000000EszU-2VcN;
-	Fri, 14 Feb 2025 12:53:20 +0000
+	id 1tivHZ-0000000EuH1-1L0p;
+	Fri, 14 Feb 2025 12:59:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 72A285C56B1;
-	Fri, 14 Feb 2025 12:52:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DBA9BC4CED1;
-	Fri, 14 Feb 2025 12:53:17 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 42A765C4445;
+	Fri, 14 Feb 2025 12:58:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4ADC0C4CED1;
+	Fri, 14 Feb 2025 12:58:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739537598;
-	bh=W20/hho5/JKp2k83eRciL4B0jPMKgL9X5owBtOEnhK0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=n47noHxF18PlaEr5zaUzUu3eIqSCbdx3pLu2oHLYc8zf8YunCqQS8cNkd08YYatCz
-	 +YqzxN+xwQ1GMTDAyjnJ2cMlzT5lv9IMGycjrF9RuqR7VabMGLnAR56Xg47NxrWcAj
-	 dFeEzJFx+PTgD5nN1ZNbtFGJYQC8iB3ug+RQRBazAH2nuDPUJtwLURu/ueiQgqwVff
-	 ysXfzv3fhymVtK2H8CGKS9eu+9l0aUwqOkc3/YwgdWKVGVcLIWYH8CUW8vT0cb3KHq
-	 wWDP77ggDxI6iP0rYfG/dIn93iYkqOJwlk1gAkykLl23YwGr5vVhvkCnQRd2drRSTr
-	 y/njZSXq2q1Fg==
-Date: Fri, 14 Feb 2025 18:23:14 +0530
+	s=k20201202; t=1739537940;
+	bh=h6D49r1ItgNgeLQ5sQSietMLZJjMNj0FrXN962iqeCs=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=ATtEvCIaXYrfO3mZ0U1GWbogbs10zRN1Tz7ux38J7RX5bYAdD4G7UAH5Y+71LSRLO
+	 QZAso7lAUoiVKCETlCh9ri2uHqrMGbEegOxUgrRrXF4r/1/st5qLWAdi/KmU1Q3ogj
+	 H7ihrDOncuCVBQRjq/oslW02XAFdtoCATjo7EToDrBKyNCW/+eWbmJ3XeKPcqlRP8j
+	 VKL6bWlCziTfFZ+8lHtV8rt4Njk9azohBJjJ2gSgXFmvIIq9g+CqYo8KXW0Ky0kPJe
+	 FUm/Pv/ndT5TQwYOeIN2IHhmKHxJyrscOk9tjEaIZBdrw0D09wkQlQGU6v4lR0XF0o
+	 n5Nycc0aEd8GQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Christian Bruel <christian.bruel@foss.st.com>
-Cc: kishon@kernel.org, mcoquelin.stm32@gmail.com,
-	alexandre.torgue@foss.st.com, arnd@arndb.de,
-	fabrice.gasnier@foss.st.com, linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] Fixes: 2de679ecd724 ("phy: stm32: work around
- constant-value overflow assertion")
-Message-ID: <Z688unKfcSeFE5X/@vaman>
-References: <20250117140514.3614314-1-christian.bruel@foss.st.com>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, 
+ Peter Griffin <peter.griffin@linaro.org>, 
+ =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
+Cc: Will McVicker <willmcvicker@google.com>, 
+ Tudor Ambarus <tudor.ambarus@linaro.org>, kernel-team@android.com, 
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ stable@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20241205-gs101-usb-phy-fix-v4-1-0278809fb810@linaro.org>
+References: <20241205-gs101-usb-phy-fix-v4-1-0278809fb810@linaro.org>
+Subject: Re: [PATCH v4] phy: exynos5-usbdrd: gs101: ensure power is gated
+ to SS phy in phy_exit()
+Message-Id: <173953793587.323038.14073970116035091802.b4-ty@kernel.org>
+Date: Fri, 14 Feb 2025 18:28:55 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250117140514.3614314-1-christian.bruel@foss.st.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250214_045319_691639_D980BBD0 
-X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-CacheID: sfid-20250214_045901_401998_FAEC8117 
+X-CRM114-Status: UNSURE (   5.31  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,29 +76,17 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-01-25, 15:05, Christian Bruel wrote:
-> This patch replaces the workaround with fixes for two issues leading to
-> constant-value overflow assertion:
-> 
-> - Guard against false positives with a WARN_ON check to make the compiler
-> happy: This should not happen because the offset range is checked against
-> the sorted imp_lookup_table values.
-> 
-> - Guard against a true warning found for the max_vswing, as a given
-> vswing value can be 802000 or 803000 depending on the current impedance
-
-Patch looks fine, the fixes line should go here and subject needs
-revision
-
--- 
-~Vinod
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIFRodSwgMDUgRGVjIDIwMjQgMTA6MjI6MDAgKzAwMDAsIEFuZHLDqSBEcmFzemlrIHdyb3Rl
+Ogo+IFdlIGN1cnJlbnRseSBkb24ndCBnYXRlIHRoZSBwb3dlciB0byB0aGUgU1MgcGh5IGluIHBo
+eV9leGl0KCkuCj4gCj4gU2h1ZmZsZSB0aGUgY29kZSBzbGlnaHRseSB0byBlbnN1cmUgdGhlIHBv
+d2VyIGlzIGdhdGVkIHRvIHRoZSBTUyBwaHkgYXMKPiB3ZWxsLgo+IAo+IAoKQXBwbGllZCwgdGhh
+bmtzIQoKWzEvMV0gcGh5OiBleHlub3M1LXVzYmRyZDogZ3MxMDE6IGVuc3VyZSBwb3dlciBpcyBn
+YXRlZCB0byBTUyBwaHkgaW4gcGh5X2V4aXQoKQogICAgICBjb21taXQ6IDg3ODliNDI5NmFhNzk2
+ZjY1OGExOWNhYzdkMjczNjUwMTI4OTNkZTEKCkJlc3QgcmVnYXJkcywKLS0gCn5WaW5vZAoKCgot
+LSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
