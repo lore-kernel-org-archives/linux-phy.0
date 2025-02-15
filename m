@@ -4,90 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77FDDC021A0
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Feb 2025 09:55:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C20AC021A0
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Feb 2025 09:57:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nYHvmM4DUOs+idZ91FBZKcN05eGNGtODu+DT5n1Wm0M=; b=gUn53Yyzb6wHCn
-	BfqBGQORwJlwqz93+xd5n8F+YjElUnZdiTZYTr1JHIl1NHwD//gvV4b52ehmj5Qh5dJRC7SCiwqVA
-	+3xa1z9Jzr48YVHnlvjl6Myldwi4NU0s2uwrtMaM06VHoKa0dQ9VVTd2UCxqKiQQ2EwEGFsXybjOj
-	iaNu68JZFOdaY+eNFrPenKZD5zNZb2Wg2x/10hl8oZN4ixDlGiG4MLAQMG7sBtUdI1UKAxIA1Fuky
-	Lg+AwsJ9KB2P6Y/DDT8ffBzx7sMEwBUIRD+Nw4qNVs39mAByEAKnvwJSjQxux2DxaPMIEgVunw3zO
-	8eKjmssGz+scNrtGca7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4aBG4z5xoHqwPePNOtIydwaRZlO0m6rsdGussa3Vdo4=; b=v7PIVGZf8gl2lc
+	i7+5o7mArZW/+ZH2ooKDWvL35OByqPi9Q7M0enAm/B7jmZPOBvgMAeEW3f3CL3ziBy0b/m1QsTFHO
+	Fmvzc4BbQvu8JHV23psA9EgHhYKQoDrvHXhdrJ3zsquH9EAdtj2lsR5lhdS4jhr6CvN+O24jyb+FR
+	lZuuq/qLmc/vjXdWF+nsHa+Z/dif7PzXBfMkSl9LZVVNZuU8d4FE402Iv2v5XBXfcNJiAF+kIXPI6
+	++5ePXzRJeDY1LcHzilwfSqdPE1vsvlT8O7KScoRY/GiOtAV/p6XteadTQEutpbIzJgFglkvwJ6C2
+	jlhjzQo148LxQPdQjGVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjEtz-0000000HNrF-0wi1;
-	Sat, 15 Feb 2025 09:55:59 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1tjEvP-0000000HOAz-3sml;
+	Sat, 15 Feb 2025 09:57:27 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjEfv-0000000HLzi-2Z6V
-	for linux-phy@lists.infradead.org;
-	Sat, 15 Feb 2025 09:41:30 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4395d8edc69so1527045e9.0
-        for <linux-phy@lists.infradead.org>; Sat, 15 Feb 2025 01:41:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1739612486; x=1740217286; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=5SxoWr2vFLkloiiVYCn5S11j3T2lrQAUOXkKWdINmvg=;
-        b=xjZvEhDjKpqfILJ1f4B+y2eumSMr9EhyMffn05UOSzUDOk1TbeCXNctTof+drZ0LAp
-         vklvAzbv/jACsXOntNYf0MrLhA+BeMR+X3PdkDv87RVRHZVKrvDKOAJ4qZToAFpbIU3g
-         HRSoLI64EHtM1H9AFvA7aYI+vGBrCYpYymNhi+oVmVZft27hOR98O0wiwij+yo8rkhxq
-         BUkGB3avJ2hCKYHUVWyBlxa/onUS+C2iczIrlwA5TNaLh7WiFWJYWFzeDWTFVqFXe5VH
-         3OUuVe5TUCtGTle5FO4InmtkfksqlssOKJrFTp46JgUg7oJanrmTTUywlbXu2CVo7F5X
-         kGig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739612486; x=1740217286;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=5SxoWr2vFLkloiiVYCn5S11j3T2lrQAUOXkKWdINmvg=;
-        b=OS6G87pelswEOOfaGKSr/pgx4l5jGn6B/SRJ8iTYjgyKg99a2/DJPkvDczcgqntpJS
-         dEsYOt2dBvM0X3uRt5uVnK2Qlnj6eQvqXmpBQU3BjwTNHrIgDE0z52Mg+MM2SSYB1mKc
-         yuDlX2whL+1cFY86rPABc3sP8PMZlLRA1RevTLvAJE8r6IZ988lIDyYBKSjkgmkxs/+y
-         1uMvx6nmpaQsIgVP+fS5aV9MjDoud6yzzMIU23n69VtTkkpx96xXQWdemw2WgTqFoc5g
-         +HtpS3riRSY4tn1xnADxJsaLJYl5tOemuDr5FFHKGSgBIRT3sI7e4duxGN6dc6HswNDS
-         SkfQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVZO1ju/7IH9tcnRzLNYaQ7rfdChhcp9vOcdgI4b8k4mpmdNNP3Qi5Pm8pJXH24e2iKDj8h9T8ryUo=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyd1C2mvz1hwj/rrjAsb7LQCOiq0CGv+ImMWUXGtthV2D79Ry2T
-	die00oeN2IlObzznGi9WC0R2mHCfXTxBRpMTh3ywA5EaEk4a+isCnXTM//RgY0w=
-X-Gm-Gg: ASbGnctTvREdI6AuckjwW/6PuEoebMco+P9vaMbpNjOaGHtcywST0z+fPbkGA3d9ptK
-	yubGM781pdezDuWMMjvI+pIG1AjV5ENL5dFx+5da+naezpvlevUNr70WS35SESBkBwH550Z+x77
-	dLVcGxTlrwNpCbgfdJtrUWyd1UstFhxFzmg0j6ulp9Hh5lT9oUYgpa0EoA6njBrkhNJIH/yQnGF
-	WH2tSXsJZUg1ZkvWRxRDdVRs1DkkiKZkqjpiszI0aoFl/6PfL+uK6aRvREVLG7cZ1gDGVxASRvJ
-	vqW4dxCO/QUYwa1mSR1cyrN4pombVg==
-X-Google-Smtp-Source: AGHT+IF2PoXxZGft4S7bEaK90H7os4Iev7h+v97AgdpzM5GZ1g5ZH5opiwmuf7Drdh8bXm5uHZBgtA==
-X-Received: by 2002:a05:600c:3ba5:b0:439:6538:c979 with SMTP id 5b1f17b1804b1-4396e781fa7mr9169255e9.3.1739612485654;
-        Sat, 15 Feb 2025 01:41:25 -0800 (PST)
-Received: from krzk-bin.. ([178.197.218.144])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4395a1b8471sm97985345e9.37.2025.02.15.01.41.23
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 15 Feb 2025 01:41:24 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Alim Akhtar <alim.akhtar@samsung.com>,
-	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: [PATCH] phy: exynos5-usbdrd: Fix broken USB on Exynos5422 (TYPEC dependency)
-Date: Sat, 15 Feb 2025 10:41:22 +0100
-Message-ID: <20250215094122.60535-1-krzysztof.kozlowski@linaro.org>
-X-Mailer: git-send-email 2.43.0
+	id 1tjEil-0000000HMQO-2ei7;
+	Sat, 15 Feb 2025 09:44:24 +0000
+X-UUID: 6bc59bf2eb8111ef9048ed6ed365623b-20250215
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=1XRwV3v0Pr5UX8e3+ENacWcRYH9cJyzTBU7O5dVKwSQ=;
+	b=lvUyxxqzUNF5OQ2JPAvIfyScN8AnxyZfaImVuHKTe8xQ7xxXV62akasdkmVhkpm2PEVD4SoQDseQsL5FglUfHHde9sKrHSgi3F2121Du8j6x7zG/LFb5nsT9iivcQkPcqWgGkbAQvvW3PomCSe6TfILt520p0M/nA9VWnLWrMYA=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.46,REQID:7e65528c-826c-431f-bd0d-66b9496698b2,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:60aa074,CLOUDID:c2f9cb24-96bd-4ac5-8f2e-15aa1ef9defa,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:81|82|102,TC:nil,Content:0|50,EDM:-3
+	,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV
+	:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0
+X-CID-BAS: 0,_,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-UUID: 6bc59bf2eb8111ef9048ed6ed365623b-20250215
+Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw02.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1030995723; Sat, 15 Feb 2025 02:44:16 -0700
+Received: from mtkmbs13n1.mediatek.inc (172.21.101.193) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1258.28; Sat, 15 Feb 2025 17:44:13 +0800
+Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
+ mtkmbs13n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.1258.28 via Frontend Transport; Sat, 15 Feb 2025 17:44:13 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>
+Subject: [PATCH v2 2/2] phy: mediatek: xsphy: add support to set disconnect threshold
+Date: Sat, 15 Feb 2025 17:44:10 +0800
+Message-ID: <20250215094410.547-2-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.46.0
+In-Reply-To: <20250215094410.547-1-chunfeng.yun@mediatek.com>
+References: <20250215094410.547-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250215_014127_668094_617EA049 
-X-CRM114-Status: GOOD (  12.96  )
+X-CRM114-CacheID: sfid-20250215_014423_672019_E6E543FB 
+X-CRM114-Status: GOOD (  10.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,57 +89,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Older Exynos designs, like Exynos5422, do not have USB Type-C and the
-USB DRD PHY does not really depend on Type-C for these devices at all.
-Incorrectly added dependency on CONFIG_TYPEC caused this driver to be
-missing for exynos_defconfig and as result Exynos5422-based boards like
-Hardkernel Odroid HC1 failed to probe USB.
+Add a property to tune usb2 phy's disconnect threshold.
 
-Drop incorrect dependency and rely on module to be reachable by the
-compiler.
-
-Reported-by: Krzysztof Kozlowski <krzk@kernel.org>
-Closes: https://krzk.eu/#/builders/21/builds/6139
-Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
-Closes: https://lore.kernel.org/all/3c0b77e6-357d-453e-8b63-4757c3231bde@samsung.com/
-Fixes: 09dc674295a3 ("phy: exynos5-usbdrd: subscribe to orientation notifier if required")
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
-
-Patch for issue in linux-next
+v2: Add Reviewed by Angelo
 ---
- drivers/phy/samsung/Kconfig              | 1 -
- drivers/phy/samsung/phy-exynos5-usbdrd.c | 2 +-
- 2 files changed, 1 insertion(+), 2 deletions(-)
+ drivers/phy/mediatek/phy-mtk-xsphy.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
-index 7fba571c0e2b..e2330b0894d6 100644
---- a/drivers/phy/samsung/Kconfig
-+++ b/drivers/phy/samsung/Kconfig
-@@ -81,7 +81,6 @@ config PHY_EXYNOS5_USBDRD
- 	tristate "Exynos5 SoC series USB DRD PHY driver"
- 	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
- 	depends on HAS_IOMEM
--	depends on TYPEC || (TYPEC=n && COMPILE_TEST)
- 	depends on USB_DWC3_EXYNOS
- 	select GENERIC_PHY
- 	select MFD_SYSCON
-diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-index ff2436f11d68..e8a9fef22107 100644
---- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
-+++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
-@@ -1456,7 +1456,7 @@ static int exynos5_usbdrd_setup_notifiers(struct exynos5_usbdrd_phy *phy_drd)
- {
- 	int ret;
+diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
+index 7c248f5cfca5..718ed8f17c2d 100644
+--- a/drivers/phy/mediatek/phy-mtk-xsphy.c
++++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
+@@ -59,6 +59,7 @@
+ #define XSP_USBPHYACR6		((SSUSB_SIFSLV_U2PHY_COM) + 0x018)
+ #define P2A6_RG_BC11_SW_EN	BIT(23)
+ #define P2A6_RG_OTG_VBUSCMP_EN	BIT(20)
++#define PA6_RG_U2_DISCTH	GENMASK(7, 4)
  
--	if (!IS_ENABLED(CONFIG_TYPEC))
-+	if (!IS_REACHABLE(CONFIG_TYPEC))
- 		return 0;
+ #define XSP_U2PHYDTM1		((SSUSB_SIFSLV_U2PHY_COM) + 0x06C)
+ #define P2D_FORCE_IDDIG		BIT(9)
+@@ -95,6 +96,7 @@ struct xsphy_instance {
+ 	int eye_src;
+ 	int eye_vrt;
+ 	int eye_term;
++	int discth;
+ };
  
- 	if (device_property_present(phy_drd->dev, "orientation-switch")) {
+ struct mtk_xsphy {
+@@ -244,9 +246,12 @@ static void phy_parse_property(struct mtk_xsphy *xsphy,
+ 					 &inst->eye_vrt);
+ 		device_property_read_u32(dev, "mediatek,eye-term",
+ 					 &inst->eye_term);
+-		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d\n",
++		device_property_read_u32(dev, "mediatek,discth",
++					 &inst->discth);
++		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d, discth:%d\n",
+ 			inst->efuse_intr, inst->eye_src,
+-			inst->eye_vrt, inst->eye_term);
++			inst->eye_vrt, inst->eye_term,
++			inst->discth);
+ 		break;
+ 	case PHY_TYPE_USB3:
+ 		device_property_read_u32(dev, "mediatek,efuse-intr",
+@@ -285,6 +290,9 @@ static void u2_phy_props_set(struct mtk_xsphy *xsphy,
+ 	if (inst->eye_term)
+ 		mtk_phy_update_field(pbase + XSP_USBPHYACR1, P2A1_RG_TERM_SEL,
+ 				     inst->eye_term);
++	if (inst->discth)
++		mtk_phy_update_field(pbase + XSP_USBPHYACR6, PA6_RG_U2_DISCTH,
++				     inst->discth);
+ }
+ 
+ static void u3_phy_props_set(struct mtk_xsphy *xsphy,
 -- 
-2.43.0
+2.46.0
 
 
 -- 
