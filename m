@@ -4,59 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 615B3C02198
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Feb 2025 09:58:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADD01C021A4
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Feb 2025 09:58:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wcCBzjog8VeNRI4v2R59Dhid6qd4SM7Ehz2lhpA49GA=; b=2pgVv5AZItmF4C
-	+QFWknVFgk/2eeMQkLDWO3rdOtcaggOqXafUE9kpjp20hdg+ye6kObNt/XyffshRvoX/QqnWeu9mc
-	oOuUDi78wNjBi+2usxsez1qoPvT5ChRv/q38Jn2aIa2IYafyExEIHRzx2SXwppYIfXHltd5Hh3kue
-	C+GdxD1xNHGD95C78WpGSUoXQom6gr/OP88nPVnS76rXvqUJ62NNHr4Qj2+ZjLo0RTHoRR7gEkZup
-	2FUxdMsHvfHO7xPD5ZUpwxxmAmKEaxEc3Yp6L0GU0fMDTx9zN/F0n5pg7NW9em9uQ1TlwRRB79Vva
-	kYZVtuONP69KTP6CuoZQ==;
+	List-Owner; bh=3yWup5BoqTbf8ORDWjz1b6fduA4KVKJd6qtAd47PORQ=; b=EQQBrcfrDMNkG1
+	tDebzYMBDYBfc0rSILDzWX+wcKxRiSU4lOaIfYl3rn6ljWDFzKwBha+jeeTKw6VH67W9xEWvTBUwn
+	MfAtbpehjjfiOSY+eGq/OfLOcYHswyBy30Pul2VKnlLOhwajq//PZvvqf7AfxTMZFlqmgt7dX4KA3
+	IFt+obqys22v+xOKs7NSuRQ+HXten/lFr34InXbJAGJPfwZ44Vk6Ao2XLXs3iH+gn8nHBuNXw/Pnw
+	TNplGNkOWkBvnrbfXG+3dn3bUiTnP/nkL+bTVx5q66mKQ1MnuaajdI6mWhFrHa9p/d39tSkzd0Yqf
+	y/faxT+flOTjRVCm8+zw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjbPk-00000001bWN-0fe4;
-	Sun, 16 Feb 2025 09:58:16 +0000
+	id 1tjbPu-00000001bX1-1pc3;
+	Sun, 16 Feb 2025 09:58:26 +0000
 Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjbAH-00000001Zge-1bv9;
-	Sun, 16 Feb 2025 09:42:19 +0000
+	id 1tjbCC-00000001ZuX-3PqM;
+	Sun, 16 Feb 2025 09:44:17 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 6ED70A40532;
-	Sun, 16 Feb 2025 09:40:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DE51C4CEDD;
-	Sun, 16 Feb 2025 09:42:12 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id EFA5EA40532;
+	Sun, 16 Feb 2025 09:42:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F8BFC4CEDD;
+	Sun, 16 Feb 2025 09:44:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739698936;
-	bh=yPuBCMN9XIdBvxrumsPxF5C26IdTv+mfG7ZX3zZkuFY=;
+	s=k20201202; t=1739699055;
+	bh=zD0KT9CZGcw7t13T9u3q2BqVesbZ0W0Wa6rgYZKhLmA=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=hjst3Uod31p29bdXJF46wjboMwy7VAccbIbkN2SEXbtG5KYbQeZ9IDhG/pCqdl3aM
-	 qqRbvN3mc+KkDkODLopTCA/CkBLZrLQIA8e3DFamaFrbCzbgrGzPfV/VBu0pVwlDuI
-	 Xw/AEATN8OG3cfg8XstDFiDHVOqDEirYdNfseozYvHGtElsy+IiaeMTM4Qxsj0lgp7
-	 baFWpaMDgWugc2+1jR/QipKxJRI3k/0MG3QIWiOA6XvjwW6e0NpDATjkKeaVu+9oqA
-	 M/Qm/r8cvvkn7GJiGHApUxKdQVkgWXOZajLQhsPCUYaWRrBM56cBZi04WDbuWK9HCy
-	 N98RWxIV9niAg==
-Message-ID: <23e8f626-e512-4e80-b6b8-8ff073bd37e6@kernel.org>
-Date: Sun, 16 Feb 2025 10:42:09 +0100
+	b=UFbKd6S/vwLqDQywKStuwPzw8ZvHttgL+NliLzZHxFxnFyX9gqse06lNgH1ZCixPN
+	 jeEOJmEQnjSy6ShWpLf+4s3l/6RtyySfPuY5to3R747CykItS6lV0SY1eT3eEg10oQ
+	 uABtZFs3CKsBBCOGRKgQ1Gf9hGBy4DN+4gBEEliQ8eCJV52PXAdCAemOERqacZao0m
+	 WVKMpK32v04pFq6wI5ZxrZE3Dhxl9CpzXKncjIFG6OG6gIKy3CR0nW7NiX94JurHqH
+	 aC7SHlW+W1TdUTePxORhnxRWOO7rjwQCl2zchxPOBPZuwrYlu4cX0NscGZW6oYY5KG
+	 3z3OAgL22RWGg==
+Message-ID: <9b58a985-3d63-42bb-9a76-e5b04a4b6012@kernel.org>
+Date: Sun, 16 Feb 2025 10:44:08 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: exynos5-usbdrd: Fix broken USB on Exynos5422 (TYPEC
- dependency)
-To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+Subject: Re: [PATCH v1 3/4] phy: samsung: add Exynos2200 SNPS eUSB2 driver
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Peter Griffin <peter.griffin@linaro.org>, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org
-Cc: Marek Szyprowski <m.szyprowski@samsung.com>
-References: <20250215094122.60535-1-krzysztof.kozlowski@linaro.org>
- <bc292f121afaacb29fdc7d600c72cb3008b6b56a.camel@linaro.org>
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20250215122409.162810-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250215122409.162810-4-ivo.ivanov.ivanov1@gmail.com>
+ <a10f8a77-9440-477d-b6f6-9d651e3ab49a@kernel.org>
+ <537698af-841f-48e7-bd7c-4077d0a240a1@gmail.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,10 +103,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <bc292f121afaacb29fdc7d600c72cb3008b6b56a.camel@linaro.org>
+In-Reply-To: <537698af-841f-48e7-bd7c-4077d0a240a1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250216_014217_556691_430AAF10 
-X-CRM114-Status: GOOD (  22.52  )
+X-CRM114-CacheID: sfid-20250216_014416_987302_67E1CE04 
+X-CRM114-Status: GOOD (  20.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,64 +118,100 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTUvMDIvMjAyNSAxNzoyMCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gSGkgS3J6eXN6dG9m
-LAo+IAo+IE9uIFNhdCwgMjAyNS0wMi0xNSBhdCAxMDo0MSArMDEwMCwgS3J6eXN6dG9mIEtvemxv
-d3NraSB3cm90ZToKPj4gT2xkZXIgRXh5bm9zIGRlc2lnbnMsIGxpa2UgRXh5bm9zNTQyMiwgZG8g
-bm90IGhhdmUgVVNCIFR5cGUtQyBhbmQgdGhlCj4+IFVTQiBEUkQgUEhZIGRvZXMgbm90IHJlYWxs
-eSBkZXBlbmQgb24gVHlwZS1DIGZvciB0aGVzZSBkZXZpY2VzIGF0IGFsbC4KPj4gSW5jb3JyZWN0
-bHkgYWRkZWQgZGVwZW5kZW5jeSBvbiBDT05GSUdfVFlQRUMgY2F1c2VkIHRoaXMgZHJpdmVyIHRv
-IGJlCj4+IG1pc3NpbmcgZm9yIGV4eW5vc19kZWZjb25maWcgYW5kIGFzIHJlc3VsdCBFeHlub3M1
-NDIyLWJhc2VkIGJvYXJkcyBsaWtlCj4+IEhhcmRrZXJuZWwgT2Ryb2lkIEhDMSBmYWlsZWQgdG8g
-cHJvYmUgVVNCLgo+Pgo+PiBEcm9wIGluY29ycmVjdCBkZXBlbmRlbmN5IGFuZCByZWx5IG9uIG1v
-ZHVsZSB0byBiZSByZWFjaGFibGUgYnkgdGhlCj4+IGNvbXBpbGVyLgo+Pgo+PiBSZXBvcnRlZC1i
-eTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgo+PiBDbG9zZXM6IGh0dHBz
-Oi8va3J6ay5ldS8jL2J1aWxkZXJzLzIxL2J1aWxkcy82MTM5Cj4+IFJlcG9ydGVkLWJ5OiBNYXJl
-ayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lAc2Ftc3VuZy5jb20+Cj4+IENsb3NlczogaHR0cHM6
-Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzNjMGI3N2U2LTM1N2QtNDUzZS04YjYzLTQ3NTdjMzIzMWJk
-ZUBzYW1zdW5nLmNvbS8KPj4gRml4ZXM6IDA5ZGM2NzQyOTVhMyAoInBoeTogZXh5bm9zNS11c2Jk
-cmQ6IHN1YnNjcmliZSB0byBvcmllbnRhdGlvbiBub3RpZmllciBpZiByZXF1aXJlZCIpCj4+IFNp
-Z25lZC1vZmYtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAbGlu
-YXJvLm9yZz4KPj4KPj4gLS0tCj4+Cj4+IFBhdGNoIGZvciBpc3N1ZSBpbiBsaW51eC1uZXh0Cj4+
-IC0tLQo+PiDCoGRyaXZlcnMvcGh5L3NhbXN1bmcvS2NvbmZpZ8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIHwgMSAtCj4+IMKgZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9zNS11c2JkcmQu
-YyB8IDIgKy0KPj4gwqAyIGZpbGVzIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAyIGRlbGV0aW9u
-cygtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnIGIvZHJp
-dmVycy9waHkvc2Ftc3VuZy9LY29uZmlnCj4+IGluZGV4IDdmYmE1NzFjMGUyYi4uZTIzMzBiMDg5
-NGQ2IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL3BoeS9zYW1zdW5nL0tjb25maWcKPj4gKysrIGIv
-ZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnCj4+IEBAIC04MSw3ICs4MSw2IEBAIGNvbmZpZyBQ
-SFlfRVhZTk9TNV9VU0JEUkQKPj4gwqAJdHJpc3RhdGUgIkV4eW5vczUgU29DIHNlcmllcyBVU0Ig
-RFJEIFBIWSBkcml2ZXIiCj4+IMKgCWRlcGVuZHMgb24gKEFSQ0hfRVhZTk9TICYmIE9GKSB8fCBD
-T01QSUxFX1RFU1QKPj4gwqAJZGVwZW5kcyBvbiBIQVNfSU9NRU0KPj4gLQlkZXBlbmRzIG9uIFRZ
-UEVDIHx8IChUWVBFQz1uICYmIENPTVBJTEVfVEVTVCkKPiAKPiBUaGlzIGxpbmUgZW5zdXJlcyB0
-aGF0IFBIWV9FWFlOT1M1X1VTQkRSRCBjaGFuZ2VzIHRvIE0gaWYKPiBUWVBFQyBpcyBNLgoKCkkg
-a25vdyB3aGF0IGl0IGRvZXMuIEJ1dCBpdCBpcyBub3QgdGhlIGNvcnJlY3Qgd2F5IHRvIGV4cHJl
-c3Mgb3B0aW9uYWwKZGVwZW5kZW5jeS4gQ09NUElMRV9URVNUIG1ha2VzIG5vIHNlbnNlIGhlcmUu
-IFVubGVzcyB0aGlzIHdhcyBub3QgbWVhbnQKdG8gYmUgb3B0aW9uYWwgZGVwZW5kZW5jeSwgYnV0
-IHRoZW4gaXQgaXMgd3JvbmcgYmVjYXVzZSBub25lIG9mIG9sZGVyCihvciBtYW55IG90aGVyKSBk
-ZXZpY2VzIGRlcGVuZCBvbiB0eXBlYy4KCj4gCj4+IMKgCWRlcGVuZHMgb24gVVNCX0RXQzNfRVhZ
-Tk9TCj4+IMKgCXNlbGVjdCBHRU5FUklDX1BIWQo+PiDCoAlzZWxlY3QgTUZEX1NZU0NPTgo+PiBk
-aWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9zNS11c2JkcmQuYyBiL2Ry
-aXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMKPj4gaW5kZXggZmYyNDM2ZjEx
-ZDY4Li5lOGE5ZmVmMjIxMDcgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5
-LWV4eW5vczUtdXNiZHJkLmMKPj4gKysrIGIvZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9z
-NS11c2JkcmQuYwo+PiBAQCAtMTQ1Niw3ICsxNDU2LDcgQEAgc3RhdGljIGludCBleHlub3M1X3Vz
-YmRyZF9zZXR1cF9ub3RpZmllcnMoc3RydWN0IGV4eW5vczVfdXNiZHJkX3BoeSAqcGh5X2RyZCkK
-Pj4gwqB7Cj4+IMKgCWludCByZXQ7Cj4+IMKgCj4+IC0JaWYgKCFJU19FTkFCTEVEKENPTkZJR19U
-WVBFQykpCj4+ICsJaWYgKCFJU19SRUFDSEFCTEUoQ09ORklHX1RZUEVDKSkKPiAKPiBPbiBhcm02
-NCwgdGhlIGRlZmNvbmZpZyBoYXMgVFlQRUMgYXMgbW9kdWxlICh3aGlsZSBQSFlfRVhZTk9TNV9V
-U0JEUkQKPiBkZWZhdWx0cyB0byB5IGFib3ZlKSwgYW5kIHRoZXJlZm9yZSBhbGwgZm9sbG93aW5n
-IGNvZGUgaXMgYmVjb21lcwo+IGRpc2FibGVkIHdpdGggeW91ciBjaGFuZ2Ugb24gYXJtNjQuCgpJ
-biB0ZXJtcyBvZiBkZWZjb25maWcsIHRoaXMgY291bGQgYmUgZml4ZWQgYXMgc2ltcGxlIGFzIGNo
-YW5naW5nIGl0IHRvCm1vZHVsZS4gVGhpcyBzaG91bGQgYmUgbW9kdWxlIGZvciBhcm02NCwgYW55
-d2F5LgoKSW4gdGVybXMgb2YgdXNlcnMsIHRoYXQncyBpbmRlZWQgdHJpY2t5IHJ1bnRpbWUgZGVi
-dWdnaW5nIGlzc3VlLCBzbwpwcm9iYWJseSB3ZSBuZWVkIHNlcGFyYXRlIFVTQkRSRF9XSVRIX1RZ
-UEVDIHN5bWJvbC4KCj4gCj4gQ2FuIHdlIGZpbmQgYSBkaWZmZXJlbnQgc29sdXRpb24gdG8gdW5i
-cmVhayBhcm0zMiBhbmQga2VlcCBhcm02NAo+IGRlZmNvbmZpZyB3b3JraW5nIGFzIGludGVuZGVk
-Pwo+IAo+IENoZWVycywKPiBBbmRyZScKPiAKCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 16/02/2025 10:41, Ivaylo Ivanov wrote:
+> On 2/16/25 11:26, Krzysztof Kozlowski wrote:
+>> On 15/02/2025 13:24, Ivaylo Ivanov wrote:
+>>> The Exynos2200 SoC uses Synopsis eUSB2 PHY for USB 2.0. Add a new
+>>> driver for it.
+>>>
+>>> eUSB2 on Exynos SoCs is usually paired alongside a USB PHY controller.
+>>> Currently the driver is modelled to take and enable/disable the usb phy
+>>> controller when needed.
+>>>
+>>> The driver is based on information from downstream drivers.
+>>>
+>>> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+>>> ---
+>>>  drivers/phy/samsung/Kconfig                   |  13 +
+>>>  drivers/phy/samsung/Makefile                  |   1 +
+>>>  .../phy/samsung/phy-exynos2200-snps-eusb2.c   | 351 ++++++++++++++++++
+>>>  3 files changed, 365 insertions(+)
+>>>  create mode 100644 drivers/phy/samsung/phy-exynos2200-snps-eusb2.c
+>>>
+>>> diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
+>>> index e2330b089..f62285254 100644
+>>> --- a/drivers/phy/samsung/Kconfig
+>>> +++ b/drivers/phy/samsung/Kconfig
+>>> @@ -77,6 +77,19 @@ config PHY_S5PV210_USB2
+>>>  	  particular SoC is compiled in the driver. In case of S5PV210 two phys
+>>>  	  are available - device and host.
+>>>  
+>>> +config PHY_EXYNOS2200_SNPS_EUSB2
+>>> +	tristate "Exynos2200 eUSB 2.0 PHY driver"
+>>> +	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
+>>> +	depends on HAS_IOMEM
+>>> +	depends on USB_DWC3_EXYNOS
+>>
+>> How does it depend? What are you using from DWC3?
+> 
+> Can drop, I guess.
+> 
+>>
+>>> +	select GENERIC_PHY
+>>> +	select MFD_SYSCON
+>> Where do you use it?
+> 
+> Remained from USBCON driver.
+> 
+>>
+>>> +	default y
+>>> +	help
+>>> +	  Enable USBCON PHY support for Exynos2200 SoC.
+>>> +	  This driver provides PHY interface for eUSB 2.0 controller
+>>> +	  present on Exynos5 SoC series.
+>>> +
+>>>  config PHY_EXYNOS5_USBDRD
+>>>  	tristate "Exynos5 SoC series USB DRD PHY driver"
+>>>  	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
+>>> diff --git a/drivers/phy/samsung/Makefile b/drivers/phy/samsung/Makefile
+>>> index fea1f96d0..90b84c7fc 100644
+>>> --- a/drivers/phy/samsung/Makefile
+>>> +++ b/drivers/phy/samsung/Makefile
+>>> @@ -14,5 +14,6 @@ phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4210_USB2)	+= phy-exynos4210-usb2.o
+>>>  phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4X12_USB2)	+= phy-exynos4x12-usb2.o
+>>>  phy-exynos-usb2-$(CONFIG_PHY_EXYNOS5250_USB2)	+= phy-exynos5250-usb2.o
+>>>  phy-exynos-usb2-$(CONFIG_PHY_S5PV210_USB2)	+= phy-s5pv210-usb2.o
+>>> +obj-$(CONFIG_PHY_EXYNOS2200_SNPS_EUSB2)	+= phy-exynos2200-snps-eusb2.o
+>> Entire driver looks like repeating existing qcom-snps-eusb2.
+> 
+> It's the same IP, but implemented differently on a different platform. At
+> the very least, the register layout is different.
+
+
+I checked few registers, looked very the same. Same blocks from synopsys
+have the common register layouts.
+
+> 
+>>  You need to
+>> integrate the changes, not create duplicated driver.
+> 
+> I can do that, but it would be come a bit cluttered, won't it? Depends on
+> if we want to follow the current oem-provided initialization sequence, or
+> try and fully reuse what we have in there.
+
+
+I think it duplicates a lot, so it won't be clutter. We have many
+drivers having common code and per-variant ops.
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
