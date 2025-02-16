@@ -4,91 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13D8AC02198
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Feb 2025 09:58:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 615B3C02198
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Feb 2025 09:58:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FwoHAMZ87YYEY02kUUrNvl+k45Tsvh0tPDEp+QvMSj0=; b=ZnAcgkpIMh2ewi
-	Nii5o/QzHxLFnVxCx1QwZZ9f3SUoBjnPE8byY5CzpMEfspmUovZAkI54cDXpi+BRDI3maAcVaCiEI
-	04gsYVmEQu9XVZAem4B0wolpxCJwJ5lIj9lokOHBtiUTnR9OtEKw9n9bl7i3sjB3NCNprmEtOoFFP
-	E1+TNzcMdViVjhycBaPdA5f9C5QEKce0q1VZMhQfV+IDwNUv2yHaeNB00YEaR9p18UJ+m/5w+NXxL
-	G1lIHh0k63y2ds0pLDuHIRsvzqC+hAchPFZztACaUCeO5+zpuHZhG0PAv9PP1cjCoLrhQVs9AOfso
-	ZviOyvaAjjl9X2tsZ4kw==;
+	List-Owner; bh=wcCBzjog8VeNRI4v2R59Dhid6qd4SM7Ehz2lhpA49GA=; b=2pgVv5AZItmF4C
+	+QFWknVFgk/2eeMQkLDWO3rdOtcaggOqXafUE9kpjp20hdg+ye6kObNt/XyffshRvoX/QqnWeu9mc
+	oOuUDi78wNjBi+2usxsez1qoPvT5ChRv/q38Jn2aIa2IYafyExEIHRzx2SXwppYIfXHltd5Hh3kue
+	C+GdxD1xNHGD95C78WpGSUoXQom6gr/OP88nPVnS76rXvqUJ62NNHr4Qj2+ZjLo0RTHoRR7gEkZup
+	2FUxdMsHvfHO7xPD5ZUpwxxmAmKEaxEc3Yp6L0GU0fMDTx9zN/F0n5pg7NW9em9uQ1TlwRRB79Vva
+	kYZVtuONP69KTP6CuoZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjbPZ-00000001bVI-3Uzw;
-	Sun, 16 Feb 2025 09:58:05 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1tjbPk-00000001bWN-0fe4;
+	Sun, 16 Feb 2025 09:58:16 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjb9R-00000001ZZl-3RZT;
-	Sun, 16 Feb 2025 09:41:27 +0000
-Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-38f2f748128so827251f8f.1;
-        Sun, 16 Feb 2025 01:41:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1739698884; x=1740303684; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=V5A6h6iCJneZy4mP9pZb+hu2qmd2HY0brexOCwmkBrQ=;
-        b=AkxdAkrGA3L6jiwUKGfzaoP7/JAacUeidMNHs/g3nv2PAthKTM1c+gXnYtRMhjD8OZ
-         fIpyj8dejxIKhi58cead3SYBaCR6Zvp37vqe9Z6ZEz6AXVWQvSJdW+UZep9rReZpVH96
-         itQDRMB5HpHQhwjEjEtob6iBAYiaiGZFsFEoFcQ7JXa2qwU5R3AyI1sOmItcHic1v1Db
-         qHgjmrwnE/1jthiZZNghR/8khDFJ8/ReUPFBkzHmB1uGApjMDNZOWbxVEg3UhUtwKP4B
-         2Qb4Gs/qnbY+YkRR/otMx/GmaoWS8IXSOVfaMvla/1KzJRgLUsUK+8z5Kh2KMEobfqN/
-         4TVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739698884; x=1740303684;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=V5A6h6iCJneZy4mP9pZb+hu2qmd2HY0brexOCwmkBrQ=;
-        b=Q7ywJl9kO1hxkqIKPLUhwk0bzfbvI3Qs4aigEHMzw4qQyf0CAC48qu77I6HbWb8r36
-         TcXQQEIRZa3Jvdcc3dVYg7ZMlaD/uDI6rI3QywI+q8w9W6cIwZyJ5GloA+KLxRU0Ikzf
-         lBYRL/t63tB24QRwZzWidGP37qEeaPBL09zej+sVsXigHCpgPcB2kNT4XtHnaL6wQXt6
-         qJOvE0F02qyunmPLh4ABPn0Nq6l0XtYZqNaRVQ1YxYFU2GUPO+pb80e1M9j4rpiEIGWO
-         MACTXUt3VZRxM4UHeVR7eNL8Kb1iXaoEXspY+jdW2ksGVA5+vLPWX+eYxxRv8Lrvii83
-         KVjQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXWI4fiwQWNhESDG4xMKpOyvUJUD5jO/SC2CVkHmzeY7v351cYjIT8LX1HQRZ1CcGzRtw9QgNPgGmc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxHHUpSQmEjM09SocUigjaYx9l35HvaSGSYtioaUgplV4aalmMP
-	a7Ye/e60sM7FbZMQD6Qv8gSve0OIPUGd4KpxtFtmdiOy4TIjn4N5
-X-Gm-Gg: ASbGncsk+kCzRdwms+CVanNSuh8vxqdBPKAIXIkVsXgjMmRTBM3T97F6ObRLATPoYgg
-	c4RMAZ6WOoSzl3x+0pTj1T3+9OVbrb7Lyx1PWJXZXXngDgt+m4Xy3cdtcr7XCmktk6w+6/6dEFc
-	zRXQxOR9LeEkFpdKVxWY8ScV4ULnwIB5Pz3N0WR0UDRNVkNOmBNcndAZFMnXllHqWOL9m2j7Q0b
-	wvOpZ7BI4m6FqEuaS5wnI7fvtL8voH6QTktpfbbllqXejSLDy/F7+wItCWz9kOtxM/S3f00/cBe
-	LCGBduRtjb/h2Cui+K7V3tfnmVXr7Z9KxQMYrk7Mqul1pRTO62M70l68x+Xo1F/1XYme9g==
-X-Google-Smtp-Source: AGHT+IEb2OQelhkZ2wVYFcVcHXQRhSgxb1xWaG3Vk4kg47/uyDzz72WWWsuUpEK0jcrP+/DgGN6R1Q==
-X-Received: by 2002:a05:6000:18a9:b0:38b:ed1c:a70d with SMTP id ffacd0b85a97d-38f33e87e68mr7582693f8f.0.1739698883317;
-        Sun, 16 Feb 2025 01:41:23 -0800 (PST)
-Received: from [192.168.1.105] (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38f259d5ef9sm9212015f8f.76.2025.02.16.01.41.22
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 16 Feb 2025 01:41:22 -0800 (PST)
-Message-ID: <537698af-841f-48e7-bd7c-4077d0a240a1@gmail.com>
-Date: Sun, 16 Feb 2025 11:41:21 +0200
+	id 1tjbAH-00000001Zge-1bv9;
+	Sun, 16 Feb 2025 09:42:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 6ED70A40532;
+	Sun, 16 Feb 2025 09:40:31 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DE51C4CEDD;
+	Sun, 16 Feb 2025 09:42:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1739698936;
+	bh=yPuBCMN9XIdBvxrumsPxF5C26IdTv+mfG7ZX3zZkuFY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=hjst3Uod31p29bdXJF46wjboMwy7VAccbIbkN2SEXbtG5KYbQeZ9IDhG/pCqdl3aM
+	 qqRbvN3mc+KkDkODLopTCA/CkBLZrLQIA8e3DFamaFrbCzbgrGzPfV/VBu0pVwlDuI
+	 Xw/AEATN8OG3cfg8XstDFiDHVOqDEirYdNfseozYvHGtElsy+IiaeMTM4Qxsj0lgp7
+	 baFWpaMDgWugc2+1jR/QipKxJRI3k/0MG3QIWiOA6XvjwW6e0NpDATjkKeaVu+9oqA
+	 M/Qm/r8cvvkn7GJiGHApUxKdQVkgWXOZajLQhsPCUYaWRrBM56cBZi04WDbuWK9HCy
+	 N98RWxIV9niAg==
+Message-ID: <23e8f626-e512-4e80-b6b8-8ff073bd37e6@kernel.org>
+Date: Sun, 16 Feb 2025 10:42:09 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 3/4] phy: samsung: add Exynos2200 SNPS eUSB2 driver
+Subject: Re: [PATCH] phy: exynos5-usbdrd: Fix broken USB on Exynos5422 (TYPEC
+ dependency)
+To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Peter Griffin <peter.griffin@linaro.org>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org
+Cc: Marek Szyprowski <m.szyprowski@samsung.com>
+References: <20250215094122.60535-1-krzysztof.kozlowski@linaro.org>
+ <bc292f121afaacb29fdc7d600c72cb3008b6b56a.camel@linaro.org>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250215122409.162810-1-ivo.ivanov.ivanov1@gmail.com>
- <20250215122409.162810-4-ivo.ivanov.ivanov1@gmail.com>
- <a10f8a77-9440-477d-b6f6-9d651e3ab49a@kernel.org>
-From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-In-Reply-To: <a10f8a77-9440-477d-b6f6-9d651e3ab49a@kernel.org>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJgPO8PBQkUX63hAAoJEBuTQ307
+ QWKbBn8P+QFxwl7pDsAKR1InemMAmuykCHl+XgC0LDqrsWhAH5TYeTVXGSyDsuZjHvj+FRP+
+ gZaEIYSw2Yf0e91U9HXo3RYhEwSmxUQ4Fjhc9qAwGKVPQf6YuQ5yy6pzI8brcKmHHOGrB3tP
+ /MODPt81M1zpograAC2WTDzkICfHKj8LpXp45PylD99J9q0Y+gb04CG5/wXs+1hJy/dz0tYy
+ iua4nCuSRbxnSHKBS5vvjosWWjWQXsRKd+zzXp6kfRHHpzJkhRwF6ArXi4XnQ+REnoTfM5Fk
+ VmVmSQ3yFKKePEzoIriT1b2sXO0g5QXOAvFqB65LZjXG9jGJoVG6ZJrUV1MVK8vamKoVbUEe
+ 0NlLl/tX96HLowHHoKhxEsbFzGzKiFLh7hyboTpy2whdonkDxpnv/H8wE9M3VW/fPgnL2nPe
+ xaBLqyHxy9hA9JrZvxg3IQ61x7rtBWBUQPmEaK0azW+l3ysiNpBhISkZrsW3ZUdknWu87nh6
+ eTB7mR7xBcVxnomxWwJI4B0wuMwCPdgbV6YDUKCuSgRMUEiVry10xd9KLypR9Vfyn1AhROrq
+ AubRPVeJBf9zR5UW1trJNfwVt3XmbHX50HCcHdEdCKiT9O+FiEcahIaWh9lihvO0ci0TtVGZ
+ MCEtaCE80Q3Ma9RdHYB3uVF930jwquplFLNF+IBCn5JRzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmA872oFCRRflLYACgkQG5NDfTtBYpvScw/9GrqBrVLuJoJ52qBBKUBDo4E+5fU1bjt0
+ Gv0nh/hNJuecuRY6aemU6HOPNc2t8QHMSvwbSF+Vp9ZkOvrM36yUOufctoqON+wXrliEY0J4
+ ksR89ZILRRAold9Mh0YDqEJc1HmuxYLJ7lnbLYH1oui8bLbMBM8S2Uo9RKqV2GROLi44enVt
+ vdrDvo+CxKj2K+d4cleCNiz5qbTxPUW/cgkwG0lJc4I4sso7l4XMDKn95c7JtNsuzqKvhEVS
+ oic5by3fbUnuI0cemeizF4QdtX2uQxrP7RwHFBd+YUia7zCcz0//rv6FZmAxWZGy5arNl6Vm
+ lQqNo7/Poh8WWfRS+xegBxc6hBXahpyUKphAKYkah+m+I0QToCfnGKnPqyYIMDEHCS/RfqA5
+ t8F+O56+oyLBAeWX7XcmyM6TGeVfb+OZVMJnZzK0s2VYAuI0Rl87FBFYgULdgqKV7R7WHzwD
+ uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
+ 7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
+ 5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
+In-Reply-To: <bc292f121afaacb29fdc7d600c72cb3008b6b56a.camel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250216_014125_876794_970D93F9 
-X-CRM114-Status: GOOD (  25.04  )
+X-CRM114-CacheID: sfid-20250216_014217_556691_430AAF10 
+X-CRM114-Status: GOOD (  22.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,152 +117,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/16/25 11:26, Krzysztof Kozlowski wrote:
-> On 15/02/2025 13:24, Ivaylo Ivanov wrote:
->> The Exynos2200 SoC uses Synopsis eUSB2 PHY for USB 2.0. Add a new
->> driver for it.
->>
->> eUSB2 on Exynos SoCs is usually paired alongside a USB PHY controller.
->> Currently the driver is modelled to take and enable/disable the usb phy
->> controller when needed.
->>
->> The driver is based on information from downstream drivers.
->>
->> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
->> ---
->>  drivers/phy/samsung/Kconfig                   |  13 +
->>  drivers/phy/samsung/Makefile                  |   1 +
->>  .../phy/samsung/phy-exynos2200-snps-eusb2.c   | 351 ++++++++++++++++++
->>  3 files changed, 365 insertions(+)
->>  create mode 100644 drivers/phy/samsung/phy-exynos2200-snps-eusb2.c
->>
->> diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
->> index e2330b089..f62285254 100644
->> --- a/drivers/phy/samsung/Kconfig
->> +++ b/drivers/phy/samsung/Kconfig
->> @@ -77,6 +77,19 @@ config PHY_S5PV210_USB2
->>  	  particular SoC is compiled in the driver. In case of S5PV210 two phys
->>  	  are available - device and host.
->>  
->> +config PHY_EXYNOS2200_SNPS_EUSB2
->> +	tristate "Exynos2200 eUSB 2.0 PHY driver"
->> +	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
->> +	depends on HAS_IOMEM
->> +	depends on USB_DWC3_EXYNOS
->
-> How does it depend? What are you using from DWC3?
-
-Can drop, I guess.
-
->
->> +	select GENERIC_PHY
->> +	select MFD_SYSCON
-> Where do you use it?
-
-Remained from USBCON driver.
-
->
->> +	default y
->> +	help
->> +	  Enable USBCON PHY support for Exynos2200 SoC.
->> +	  This driver provides PHY interface for eUSB 2.0 controller
->> +	  present on Exynos5 SoC series.
->> +
->>  config PHY_EXYNOS5_USBDRD
->>  	tristate "Exynos5 SoC series USB DRD PHY driver"
->>  	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
->> diff --git a/drivers/phy/samsung/Makefile b/drivers/phy/samsung/Makefile
->> index fea1f96d0..90b84c7fc 100644
->> --- a/drivers/phy/samsung/Makefile
->> +++ b/drivers/phy/samsung/Makefile
->> @@ -14,5 +14,6 @@ phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4210_USB2)	+= phy-exynos4210-usb2.o
->>  phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4X12_USB2)	+= phy-exynos4x12-usb2.o
->>  phy-exynos-usb2-$(CONFIG_PHY_EXYNOS5250_USB2)	+= phy-exynos5250-usb2.o
->>  phy-exynos-usb2-$(CONFIG_PHY_S5PV210_USB2)	+= phy-s5pv210-usb2.o
->> +obj-$(CONFIG_PHY_EXYNOS2200_SNPS_EUSB2)	+= phy-exynos2200-snps-eusb2.o
-> Entire driver looks like repeating existing qcom-snps-eusb2.
-
-It's the same IP, but implemented differently on a different platform. At
-the very least, the register layout is different.
-
->  You need to
-> integrate the changes, not create duplicated driver.
-
-I can do that, but it would be come a bit cluttered, won't it? Depends on
-if we want to follow the current oem-provided initialization sequence, or
-try and fully reuse what we have in there.
-
-Best regards,
-Ivaylo
-
->
-> ...
->
->> +
->> +	ret = devm_clk_bulk_get(dev, drv_data->n_clks,
->> +				phy->clks);
->> +	if (ret)
->> +		return dev_err_probe(dev, ret,
->> +				     "failed to get phy clock(s)\n");
->> +
->> +	for (int i = 0; i < phy->drv_data->n_clks; ++i) {
->> +		if (!strcmp(phy->clks[i].id, "ref")) {
->> +			phy->ref_clk = phy->clks[i].clk;
->> +			break;
->> +		}
->> +	}
->> +
->> +	phy->vregs = devm_kcalloc(dev, drv_data->n_regulators,
->> +				  sizeof(*phy->vregs), GFP_KERNEL);
->> +	if (!phy->vregs)
->> +		return -ENOMEM;
->> +	regulator_bulk_set_supply_names(phy->vregs,
->> +					drv_data->regulator_names,
->> +					drv_data->n_regulators);
->> +	ret = devm_regulator_bulk_get(dev, drv_data->n_regulators,
->> +				      phy->vregs);
->> +	if (ret)
->> +		return dev_err_probe(dev, ret, "failed to get regulators\n");
->> +
->> +	/* we treat the usblink controller phy as a separate phy */
->> +	phy->usbcon = devm_of_phy_get_by_index(dev, np, 0);
->> +	if (IS_ERR(phy->usbcon))
->> +		return dev_err_probe(dev, PTR_ERR(phy->usbcon),
->> +				     "failed to get usbcon\n");
->> +
->> +	generic_phy = devm_phy_create(dev, NULL, &exynos2200_snps_eusb2_phy_ops);
->> +	if (IS_ERR(generic_phy)) {
->> +		dev_err(dev, "failed to create phy %d\n", ret);
->
-> Syntax is return dev_err_probe
->
->> +		return PTR_ERR(generic_phy);
->> +	}
->> +
->> +	dev_set_drvdata(dev, phy);
->> +	phy_set_drvdata(generic_phy, phy);
->> +
->> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
->> +	if (IS_ERR(phy_provider)) {
->> +		dev_err(dev, "failed to register phy provider\n");
->
-> Syntax is return dev_err_probe
->
->> +		return PTR_ERR(phy_provider);
->> +	};
->> +
->> +	return 0;
->> +}
-> Best regards,
-> Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTUvMDIvMjAyNSAxNzoyMCwgQW5kcsOpIERyYXN6aWsgd3JvdGU6Cj4gSGkgS3J6eXN6dG9m
+LAo+IAo+IE9uIFNhdCwgMjAyNS0wMi0xNSBhdCAxMDo0MSArMDEwMCwgS3J6eXN6dG9mIEtvemxv
+d3NraSB3cm90ZToKPj4gT2xkZXIgRXh5bm9zIGRlc2lnbnMsIGxpa2UgRXh5bm9zNTQyMiwgZG8g
+bm90IGhhdmUgVVNCIFR5cGUtQyBhbmQgdGhlCj4+IFVTQiBEUkQgUEhZIGRvZXMgbm90IHJlYWxs
+eSBkZXBlbmQgb24gVHlwZS1DIGZvciB0aGVzZSBkZXZpY2VzIGF0IGFsbC4KPj4gSW5jb3JyZWN0
+bHkgYWRkZWQgZGVwZW5kZW5jeSBvbiBDT05GSUdfVFlQRUMgY2F1c2VkIHRoaXMgZHJpdmVyIHRv
+IGJlCj4+IG1pc3NpbmcgZm9yIGV4eW5vc19kZWZjb25maWcgYW5kIGFzIHJlc3VsdCBFeHlub3M1
+NDIyLWJhc2VkIGJvYXJkcyBsaWtlCj4+IEhhcmRrZXJuZWwgT2Ryb2lkIEhDMSBmYWlsZWQgdG8g
+cHJvYmUgVVNCLgo+Pgo+PiBEcm9wIGluY29ycmVjdCBkZXBlbmRlbmN5IGFuZCByZWx5IG9uIG1v
+ZHVsZSB0byBiZSByZWFjaGFibGUgYnkgdGhlCj4+IGNvbXBpbGVyLgo+Pgo+PiBSZXBvcnRlZC1i
+eTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgo+PiBDbG9zZXM6IGh0dHBz
+Oi8va3J6ay5ldS8jL2J1aWxkZXJzLzIxL2J1aWxkcy82MTM5Cj4+IFJlcG9ydGVkLWJ5OiBNYXJl
+ayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lAc2Ftc3VuZy5jb20+Cj4+IENsb3NlczogaHR0cHM6
+Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzNjMGI3N2U2LTM1N2QtNDUzZS04YjYzLTQ3NTdjMzIzMWJk
+ZUBzYW1zdW5nLmNvbS8KPj4gRml4ZXM6IDA5ZGM2NzQyOTVhMyAoInBoeTogZXh5bm9zNS11c2Jk
+cmQ6IHN1YnNjcmliZSB0byBvcmllbnRhdGlvbiBub3RpZmllciBpZiByZXF1aXJlZCIpCj4+IFNp
+Z25lZC1vZmYtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyenlzenRvZi5rb3psb3dza2lAbGlu
+YXJvLm9yZz4KPj4KPj4gLS0tCj4+Cj4+IFBhdGNoIGZvciBpc3N1ZSBpbiBsaW51eC1uZXh0Cj4+
+IC0tLQo+PiDCoGRyaXZlcnMvcGh5L3NhbXN1bmcvS2NvbmZpZ8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIHwgMSAtCj4+IMKgZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9zNS11c2JkcmQu
+YyB8IDIgKy0KPj4gwqAyIGZpbGVzIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAyIGRlbGV0aW9u
+cygtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnIGIvZHJp
+dmVycy9waHkvc2Ftc3VuZy9LY29uZmlnCj4+IGluZGV4IDdmYmE1NzFjMGUyYi4uZTIzMzBiMDg5
+NGQ2IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL3BoeS9zYW1zdW5nL0tjb25maWcKPj4gKysrIGIv
+ZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnCj4+IEBAIC04MSw3ICs4MSw2IEBAIGNvbmZpZyBQ
+SFlfRVhZTk9TNV9VU0JEUkQKPj4gwqAJdHJpc3RhdGUgIkV4eW5vczUgU29DIHNlcmllcyBVU0Ig
+RFJEIFBIWSBkcml2ZXIiCj4+IMKgCWRlcGVuZHMgb24gKEFSQ0hfRVhZTk9TICYmIE9GKSB8fCBD
+T01QSUxFX1RFU1QKPj4gwqAJZGVwZW5kcyBvbiBIQVNfSU9NRU0KPj4gLQlkZXBlbmRzIG9uIFRZ
+UEVDIHx8IChUWVBFQz1uICYmIENPTVBJTEVfVEVTVCkKPiAKPiBUaGlzIGxpbmUgZW5zdXJlcyB0
+aGF0IFBIWV9FWFlOT1M1X1VTQkRSRCBjaGFuZ2VzIHRvIE0gaWYKPiBUWVBFQyBpcyBNLgoKCkkg
+a25vdyB3aGF0IGl0IGRvZXMuIEJ1dCBpdCBpcyBub3QgdGhlIGNvcnJlY3Qgd2F5IHRvIGV4cHJl
+c3Mgb3B0aW9uYWwKZGVwZW5kZW5jeS4gQ09NUElMRV9URVNUIG1ha2VzIG5vIHNlbnNlIGhlcmUu
+IFVubGVzcyB0aGlzIHdhcyBub3QgbWVhbnQKdG8gYmUgb3B0aW9uYWwgZGVwZW5kZW5jeSwgYnV0
+IHRoZW4gaXQgaXMgd3JvbmcgYmVjYXVzZSBub25lIG9mIG9sZGVyCihvciBtYW55IG90aGVyKSBk
+ZXZpY2VzIGRlcGVuZCBvbiB0eXBlYy4KCj4gCj4+IMKgCWRlcGVuZHMgb24gVVNCX0RXQzNfRVhZ
+Tk9TCj4+IMKgCXNlbGVjdCBHRU5FUklDX1BIWQo+PiDCoAlzZWxlY3QgTUZEX1NZU0NPTgo+PiBk
+aWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9zNS11c2JkcmQuYyBiL2Ry
+aXZlcnMvcGh5L3NhbXN1bmcvcGh5LWV4eW5vczUtdXNiZHJkLmMKPj4gaW5kZXggZmYyNDM2ZjEx
+ZDY4Li5lOGE5ZmVmMjIxMDcgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvcGh5L3NhbXN1bmcvcGh5
+LWV4eW5vczUtdXNiZHJkLmMKPj4gKysrIGIvZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9z
+NS11c2JkcmQuYwo+PiBAQCAtMTQ1Niw3ICsxNDU2LDcgQEAgc3RhdGljIGludCBleHlub3M1X3Vz
+YmRyZF9zZXR1cF9ub3RpZmllcnMoc3RydWN0IGV4eW5vczVfdXNiZHJkX3BoeSAqcGh5X2RyZCkK
+Pj4gwqB7Cj4+IMKgCWludCByZXQ7Cj4+IMKgCj4+IC0JaWYgKCFJU19FTkFCTEVEKENPTkZJR19U
+WVBFQykpCj4+ICsJaWYgKCFJU19SRUFDSEFCTEUoQ09ORklHX1RZUEVDKSkKPiAKPiBPbiBhcm02
+NCwgdGhlIGRlZmNvbmZpZyBoYXMgVFlQRUMgYXMgbW9kdWxlICh3aGlsZSBQSFlfRVhZTk9TNV9V
+U0JEUkQKPiBkZWZhdWx0cyB0byB5IGFib3ZlKSwgYW5kIHRoZXJlZm9yZSBhbGwgZm9sbG93aW5n
+IGNvZGUgaXMgYmVjb21lcwo+IGRpc2FibGVkIHdpdGggeW91ciBjaGFuZ2Ugb24gYXJtNjQuCgpJ
+biB0ZXJtcyBvZiBkZWZjb25maWcsIHRoaXMgY291bGQgYmUgZml4ZWQgYXMgc2ltcGxlIGFzIGNo
+YW5naW5nIGl0IHRvCm1vZHVsZS4gVGhpcyBzaG91bGQgYmUgbW9kdWxlIGZvciBhcm02NCwgYW55
+d2F5LgoKSW4gdGVybXMgb2YgdXNlcnMsIHRoYXQncyBpbmRlZWQgdHJpY2t5IHJ1bnRpbWUgZGVi
+dWdnaW5nIGlzc3VlLCBzbwpwcm9iYWJseSB3ZSBuZWVkIHNlcGFyYXRlIFVTQkRSRF9XSVRIX1RZ
+UEVDIHN5bWJvbC4KCj4gCj4gQ2FuIHdlIGZpbmQgYSBkaWZmZXJlbnQgc29sdXRpb24gdG8gdW5i
+cmVhayBhcm0zMiBhbmQga2VlcCBhcm02NAo+IGRlZmNvbmZpZyB3b3JraW5nIGFzIGludGVuZGVk
+Pwo+IAo+IENoZWVycywKPiBBbmRyZScKPiAKCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0g
+CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
