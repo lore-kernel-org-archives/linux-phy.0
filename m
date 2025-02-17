@@ -4,96 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6695EC02198
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Feb 2025 18:27:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1E91C02198
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Feb 2025 01:07:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6KqbUKV44u2aM/qjtagqhXlDGRwxt3kZnNwNm2S7JYg=; b=xBY68CqN0sXzlU
-	DCxL/vSaq3zGaBcp+xScA2pqTNGdBAQorSytA2NzzjNSH5dBHLsiX9/b17W951j+fBOnbau5s+pvj
-	uA4lPFhC7uhMAmGpBZ1kpLNPN72Q9wapoG2fIReAWp5I4fPBfYupB+D0BcCj6xFVl48zpYNBl7URX
-	oWKnxfC+rBY9ceD6cn13mF6G8NO1AeQ3rO9tm460skwwLSY1n/Mbcm4ceuG3SYD4vIlqLQWpZmAxV
-	HyBimU4FOQ2QoN13Q228r3dA8HK053okKmqp2lmNv3ldT4PoRl4t3Ya79nSnMC34hBPN+lEzNQZcD
-	pt45GxRDvgeDB0CvHiwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gIMqKSxMziQGVDg9IG2WtK4fCIo1/Xm6yGY0CoLmA9k=; b=bMbDTYdnV2mq0Q
+	XQRgVHt8hWMcNF5mD9P7162gs5hPVQ1oWKYCgzdQvaF8wlc4F7D/zOTiOqTZkCtQaPHQYpiMG04LP
+	tIG7/NDn9sxN2e+lQDsmHJaDFKQgrsdhz4s+7qL89uNwXkWVAw2JpiL9G5DNfO46sWi+N1lYZhTlR
+	o+4x/w/bX+7VkKlCZCRhsiqugr/omFtTm+g5q/FKR1bPKfzn1WX0TkKwyF2gDDdDfIzzaalmk9skH
+	MTB4/UTBZjsSIl65GE16umEIeZ4YQZ/LiFdvk+zGK6ztOuxwsr4bYpPq9ecJXTvaOxecJBKygz6Tm
+	/nJVc25VF+Cv6dgoMhtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjjMg-00000002KjH-0aiZ;
-	Sun, 16 Feb 2025 18:27:38 +0000
-Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
+	id 1tjpbJ-00000002wao-1Eqs;
+	Mon, 17 Feb 2025 01:07:09 +0000
+Received: from smtp84.cstnet.cn ([159.226.251.84] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjjL9-00000002KT1-3Ilw;
-	Sun, 16 Feb 2025 18:26:08 +0000
-Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4396a24118dso21271455e9.0;
-        Sun, 16 Feb 2025 10:26:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1739730362; x=1740335162; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=G6THbQSx/8fAHe9PzsDdfiskI2J1Cdkq06AblUO8EgA=;
-        b=cr86Pb8mgS+HphLaS6dKTIMebOy2sgLWsw+g7YyiUNm+Tg6725w+zCixHzfL1WV9np
-         fM+OK1V8OAoqvoHovV92pw3BZmrdxSmEyTusFnFW9WpsHXFz41TbHacgRxSCxLOmXH7C
-         ch/elxas4Hzg7FmPAi6Be5qBDrZQGj/rMDYbNwywQQAHBqI0RGLX1BtlVOJy1BC8jXOD
-         a1Cb4uMNDdO8JKjqv181/HyZ0snt3tFRgdIzntZxYyE2j3KzAWZov8hNKK+qcT9Yggw4
-         AB5xpcE8PrYMZHLn14+wqjSlLlfbyerGo3RM/bGx+c2I8g0v4nX3Y7IZDAmEXI6s0ps0
-         S+MA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739730362; x=1740335162;
-        h=content-transfer-encoding:in-reply-to:references:cc:to:from
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=G6THbQSx/8fAHe9PzsDdfiskI2J1Cdkq06AblUO8EgA=;
-        b=aVkCcbAZVe7EMA3YJSePw0etWG5arnbUs4XpBhw2q0xWXKYUn600UMEtuGF+OztUdE
-         Vr/QCyud8KuAz3DDpVFFBPzWcN/oLZe4s0+KKNwQRi96TqX72o2HstxYgVWRHRTUQPVw
-         hYL3WWwV9rGbK7vzgpWIz0OCktIc155sUMoCLkYUDONcz1GfXA2NhANbZJ6wsqRu7qyj
-         5cccRJiDjzp/GR5dSYs80UjvF7XLZWA2o2vdsZSuT+KeXlU5oCjzWhoKTlFW9AxIioZP
-         WjjKg9UfKIh/wBmg1H9ELV8JlvnPwQPdctnLGF2rPJEv+XpX0Uu8Ks7jEmHfpaouUUhu
-         eO3A==
-X-Forwarded-Encrypted: i=1; AJvYcCVAqg2feUx3hY/NDPJFaEIJZwCGajHwa4rPOYuNM5W3WjfE+Zw6nQ0xlcvr08i6wFQFvpj4iJqikFA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzhHeUAPhFSEkBYQUx4bz/+nxWmJ8qYf1i6gpOu39vhQTb7+IJ3
-	W+VeyVOcLNmC9bGK9MUNg7tTm1XS1gTTs5fmkU5J4y8/dY2xMT2q
-X-Gm-Gg: ASbGncuxMa7AOFwbOnbtuJL5JnKO1kmyRe+dzLro4uru9nRsyBKlupEPsg+rnFZyVIr
-	WjzSKMK1EsKEqn+lVIRqUvWpvmmdn7tzjmUGtoaLFYZzS1lhcUCHp3rjK478ChsJiY93rvv6RJm
-	UzdkEDLPIuuIu+Jp/ApTFlsut92yRUnn5QwufYQtgD1msdvEePuJ6TZM4qYbaFWjTXpgmKy8kfB
-	0iabTHsVO8r56jhV0zm+dnJJdIW0J8zFWaOSyBw3dMD/dP077n6byV1v0+F4XFgJ1UXbWL29FzF
-	8ifCF600DrgUKv4nnxhWAg/nteL7Pae+VBNK/CIwrzSmYAmXWCwBCE2/KTmL0DDJaw1WFw==
-X-Google-Smtp-Source: AGHT+IGr42oNfHQVVm7EhzTuFuuHWgflwzxpqf7PlmDhyAn8X5YOs8yIU+uV1nWQeu6T0SPpjYT2CA==
-X-Received: by 2002:adf:f9cc:0:b0:38f:231a:635e with SMTP id ffacd0b85a97d-38f33f2c2cbmr6494370f8f.25.1739730361813;
-        Sun, 16 Feb 2025 10:26:01 -0800 (PST)
-Received: from [192.168.1.105] (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38f259f7df2sm10192625f8f.84.2025.02.16.10.26.00
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sun, 16 Feb 2025 10:26:01 -0800 (PST)
-Message-ID: <aede22df-8930-4854-8269-6cb12b8fb2b8@gmail.com>
-Date: Sun, 16 Feb 2025 20:25:59 +0200
+	id 1tjpbF-00000002wZu-25q0
+	for linux-phy@lists.infradead.org;
+	Mon, 17 Feb 2025 01:07:07 +0000
+Received: from icess-ProLiant-DL380-Gen10.. (unknown [183.174.60.14])
+	by APP-05 (Coremail) with SMTP id zQCowAAHDqKmi7Jn3P6zDQ--.18663S2;
+	Mon, 17 Feb 2025 09:06:55 +0800 (CST)
+From: Ma Ke <make24@iscas.ac.cn>
+To: jckuo@nvidia.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	thierry.reding@gmail.com,
+	jonathanh@nvidia.com
+Cc: linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Ma Ke <make24@iscas.ac.cn>,
+	stable@vger.kernel.org
+Subject: [PATCH v2 RESEND] phy: Fix error handling in tegra_xusb_port_init
+Date: Mon, 17 Feb 2025 09:06:45 +0800
+Message-Id: <20250217010645.2238757-1-make24@iscas.ac.cn>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1 3/4] phy: samsung: add Exynos2200 SNPS eUSB2 driver
-Content-Language: en-US
-From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20250215122409.162810-1-ivo.ivanov.ivanov1@gmail.com>
- <20250215122409.162810-4-ivo.ivanov.ivanov1@gmail.com>
- <a10f8a77-9440-477d-b6f6-9d651e3ab49a@kernel.org>
- <537698af-841f-48e7-bd7c-4077d0a240a1@gmail.com>
- <9b58a985-3d63-42bb-9a76-e5b04a4b6012@kernel.org>
- <f3d38b63-dc97-482e-aeac-b59e65f91424@gmail.com>
- <065ea296-480c-4ac4-bb4a-0fc2915b59f1@kernel.org>
- <cc6fc19e-cdcb-42bb-ba68-555cb8a9cbf5@gmail.com>
-In-Reply-To: <cc6fc19e-cdcb-42bb-ba68-555cb8a9cbf5@gmail.com>
+X-CM-TRANSID: zQCowAAHDqKmi7Jn3P6zDQ--.18663S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7Aw4DKFWkAF15tFW3Aw4fKrg_yoW8XFyDpa
+	1DGas8Kr9YgrWkKF4jvF409Fy5GF42k3yrur1rJ34akrn3W348tas8trWxXa4UArZ7uF4U
+	ArnxJa4kJFyUC3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUB214x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26ryj6F1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
+	6F4UM28EF7xvwVC2z280aVAFwI0_Cr0_Gr1UM28EF7xvwVC2z280aVCY1x0267AKxVW8Jr
+	0_Cr1UM2vYz4IE04k24VAvwVAKI4IrM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVAC
+	Y4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJV
+	W8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI2
+	0VAGYxC7M4IIrI8v6xkF7I0E8cxan2IY04v7MxkF7I0En4kS14v26r1q6r43MxAIw28Icx
+	kI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2Iq
+	xVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42
+	IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVWUJVW8JwCI42IY
+	6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aV
+	CY1x0267AKxVWUJVW8JbIYCTnIWIevJa73UjIFyTuYvjfUOmhFUUUUU
+X-Originating-IP: [183.174.60.14]
+X-CM-SenderInfo: ppdnvj2u6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250216_102603_831676_2009F25E 
-X-CRM114-Status: GOOD (  27.49  )
+X-CRM114-CacheID: sfid-20250216_170705_906520_DB34858E 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,68 +85,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/16/25 15:57, Ivaylo Ivanov wrote:
-> On 2/16/25 15:19, Krzysztof Kozlowski wrote:
->> On 16/02/2025 10:51, Ivaylo Ivanov wrote:
->>>>>>  You need to
->>>>>> integrate the changes, not create duplicated driver.
->>>>> I can do that, but it would be come a bit cluttered, won't it? Depends on
->>>>> if we want to follow the current oem-provided initialization sequence, or
->>>>> try and fully reuse what we have in there.
->>>> I think it duplicates a lot, so it won't be clutter. We have many
->>>> drivers having common code and per-variant ops.
->>> So the approach to take here is to make a common driver?
->> For example: one common module and two modules per each soc, because I
->> assume some per-soc stuff might be needed. But maybe even these two
->> modules are not necessary and everything could be in one driver.
-...
->
-> So, Exynos2200 has a much simpler eusb initialization sequence than what
-> is present in mainline for QCOMs. I still don't really think the drivers
-> should be merged, as we aren't really duplicating code per-say.
->
-> I've already started working on merging them, and my current idea is to
-> not redefine the registers once again for 2200, but rather make an enum
-> that defines if the SoC is a QCOM or EXYNOS, and select the register
-> offsets dynamically
+If device_add() fails, do not use device_unregister() for error
+handling. device_unregister() consists two functions: device_del() and
+put_device(). device_unregister() should only be called after
+device_add() succeeded because device_del() undoes what device_add()
+does if successful. Change device_unregister() to put_device() call
+before returning from the function.
 
-Never mind. That's a bad idea - after more digging way too much bits differ
-not just the register layout. I'll implement the init/exit sequence in the
-qcom driver separately. Sadly I can't reuse much code.
+As comment of device_add() says, 'if device_add() succeeds, you should
+call device_del() when you want to get rid of it. If device_add() has
+not succeeded, use only put_device() to drop the reference count'.
 
-Best regards,
-Ivaylo
+Found by code review.
 
->  - similarly as how I did with USIv1. If a register
-> offset is not present, it'd just not do the write. My guess is that this
-> will make it work with the qualcomm init sequence as well, so it'd result
-> in even less redundant code (apart from the eUSB tuning, which can be
-> omitted for now).
->
->>> What about the current modelling scheme, as-in taking the phandle to
->>> the usbcon phy and handling it?
->> What about it? 
-> As I said in the commit description, I'm passing the USBCON phy as a
-> phandle to the eusb2 node and enabling/disabling it when needed. I'm
-> not 100% sure it would be adequate to include that in a common snps EUSB
-> driver, as it seems to more of a quirk with the exynoses. But then how
-> can I model it so that it's correctly described according to how the
-> hardware works (as-in usbcon "muxing" between child phys, in this case
-> eUSB and snps USBDP combophy)
->
-> Regarding repeaters, I still don't have the TI repeater implemented.
->
-> Best regards,
-> Ivaylo
->
->> Did you look at the bindings of qcom snps eusb2? Are you
->> saying you do not have here repeater? If so, then this phy phandle might
->> not be correct.
->>
->>
->>
->> Best regards,
->> Krzysztof
+Cc: stable@vger.kernel.org
+Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
+Signed-off-by: Ma Ke <make24@iscas.ac.cn>
+---
+Changes in v2:
+- modified the bug description as suggestions.
+---
+ drivers/phy/tegra/xusb.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 79d4814d758d..c89df95aa6ca 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -548,16 +548,16 @@ static int tegra_xusb_port_init(struct tegra_xusb_port *port,
+ 
+ 	err = dev_set_name(&port->dev, "%s-%u", name, index);
+ 	if (err < 0)
+-		goto unregister;
++		goto put_device;
+ 
+ 	err = device_add(&port->dev);
+ 	if (err < 0)
+-		goto unregister;
++		goto put_device;
+ 
+ 	return 0;
+ 
+-unregister:
+-	device_unregister(&port->dev);
++put_device:
++	put_device(&port->dev);
+ 	return err;
+ }
+ 
+-- 
+2.25.1
 
 
 -- 
