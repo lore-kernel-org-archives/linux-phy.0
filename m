@@ -4,63 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E220C02198
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Feb 2025 12:04:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A637C021AD
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Feb 2025 19:36:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:From:Subject:Cc:To:Message-Id:Date:Mime-Version:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JQKusnr7W3uq161zAd0t3Ob3l3IGHU/t961yUjmIOEM=; b=3HM3MLBrmtZewf7EIuw9g8yHXV
-	CeVrqhVmvq0AnNX/txpGyApEa8Ieg36cCt0YIzeFiisvAnidcJldTdalccIOX54/gwnojjrTkDVY6
-	gX6F3L0MHtNrI1uNRC64fzRlrHW1K7hlZa2fXPs4DVPkN9QF8wdrB6vKef/VsoUTWaEd8yx6X6HOQ
-	H+/1S7fVBcx8iXVMge4iSLqDIfHr3SNONZ2kn8IY4erkai6jqEgocPgsjPZl++qHD9Qm6xfETkwWU
-	a5IRS6oQza6M7eZqx+h9BDMYmLIbs1ClYb/B4dXqaRcgPA9FK9gSzXAQ8AYqOyfSRqBEJE0iFSTwk
-	VD1ZVz0g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dXomHGUlGvxYUi3Fe/PtShv/brwGJIbhGBo7uhEL4ws=; b=OOtz+Jm6kX7Bqm
+	qnOn7zfiiq9oTB3JY7s7y8XtoUtW/rpSRb/kKBBjFRkhcH7/ybe5HoUCCZdDbsTj9SHxPqsD1jSeO
+	x+3CAVOvuUrWpUudhlottGFpkYurtbn0hwVZXyYtBkbSXxZ3QuIjc3f+ast/HS6Jfbm8HaBCCPtg1
+	YhtYX9p1tKrgaZ8lFYUXvTJhOKOZ9xLXIUvUTne/RsrPOjXX205sIMl6D4co6zkqKz37DNFgSYZ+w
+	sVjRip9Fhkp0j3a9bZjQsy8bAg8ZLzc8e2E9kG3sVgkCgVykzBZ+OQwGcXJuZT4w94+S3WQkyIqKM
+	oyiRVQFxMM1jZK5qIdnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkMKk-000000084Xq-27OX;
-	Tue, 18 Feb 2025 12:04:14 +0000
-Received: from out-182.mta0.migadu.com ([91.218.175.182])
+	id 1tkTOm-00000009bfK-3Ysh;
+	Tue, 18 Feb 2025 19:36:52 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkM31-000000080w7-3nTt
-	for linux-phy@lists.infradead.org;
-	Tue, 18 Feb 2025 11:45:57 +0000
-Mime-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
-	t=1739879143;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=iRTNT+VF0BGjlKwvapjWppDo17j+1iwhkQPE23/uMVo=;
-	b=ZX3Yoy1hXUuD/+bt2TDsEfH9YNFyiuE1hX3gIbcpAC9o8USRJ5Li6rm7ZNk+R4Dw4VMfNU
-	DlJIFuiVnBIa4sM2wBQ3W8Sh8uesjMI6rq244GrrMuk/nJNQqPNgie1HPW0D0iUHs12vQU
-	lq2FCMy6RLxs0eyyGg90bKfbW7E0c6RPyyiEcjRbTvuhHs3GNK1GOX+z3p31ueTyqvMcAd
-	ERpiUk7Cmbii1XDuH/YkYQfPOaZ0vILGoTEEtoAxLZ2+gg+x4zjhV28MnyIJWihL1HbvRe
-	R5194W54/SZCartzQcvVv6CRKHnhrrBo//MnCxCqcUXt9Td1E/LRcwRaH2XRGw==
-Date: Tue, 18 Feb 2025 12:45:34 +0100
-Message-Id: <D7VJOFXU540M.2PAC1RFXAH19B@cknow.org>
-To: "Valentin Kleibel" <valentin@vrvis.at>, "Vinod Koul" <vkoul@kernel.org>,
- "Chukun Pan" <amadeus@jmu.edu.cn>
-Cc: "Heiko Stuebner" <heiko@sntech.de>, "Philipp Zabel"
- <p.zabel@pengutronix.de>, "Kishon Vijay Abraham I" <kishon@kernel.org>,
- "Jianfeng Liu" <liujianfeng1994@gmail.com>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>, "Jonas Karlman" <jonas@kwiboo.se>
-Subject: Re: [PATCH v2 0/1] phy: rockchip: naneng-combphy: compatible reset
- with old DT
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: "Diederik de Haas" <didi.debian@cknow.org>
-References: <20250106100001.1344418-1-amadeus@jmu.edu.cn>
- <173831716590.670164.5196739962949646746.b4-ty@kernel.org>
- <f64ee4ee-7e56-4423-813e-b87e023e893d@vrvis.at>
-In-Reply-To: <f64ee4ee-7e56-4423-813e-b87e023e893d@vrvis.at>
-X-Migadu-Flow: FLOW_OUT
+	id 1tkSlU-00000009SYr-47P3;
+	Tue, 18 Feb 2025 18:56:18 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id BB76A234ED;
+	Tue, 18 Feb 2025 19:56:15 +0100 (CET)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id nUP-Q1szeK_g; Tue, 18 Feb 2025 19:56:14 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1739904974; bh=lGmY4p1VRzYFACIa5FUQnatEVrtfwJ9hMuMP3qnvkpg=;
+	h=From:Subject:Date:To:Cc;
+	b=KcIEgY2o6kVj0oRQMDdMVgVROrZfc5cJSJem5YEK0AxUL2LKe89E5eOr9WCcrbTnK
+	 vxcqvLNIBe0f9ZbuOBCD40JzebjSRbm+78IQOZYerficCbC/L6X74OZhbnbCdT9LWm
+	 7al+YW1SGDX/PWSibNguJ07qST8oIez1Q9sE3fFrj3bdjVpEjYvSePiVXT4N0TqI2/
+	 Gebwv3u5HpaDumDw6QwIZ4nggPGfaoO6fkmsnpxXqU6gasFVcGXnJYpItqa/zkl26F
+	 fnrsna4I/BKobedyfcGsCe/6DpW8lPrkbt2VOaMSWAstqw6eczk1byrVKI7vYhYrgO
+	 b7wdEyqHJdKAA==
+From: Kaustabh Chakraborty <kauschluss@disroot.org>
+Subject: [PATCH v2 0/3] Introduce USBDRD-PHY support for Exynos7870 SoC
+Date: Wed, 19 Feb 2025 00:25:37 +0530
+Message-Id: <20250219-exynos7870-usbphy-v2-0-b8ba4e7a72e9@disroot.org>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAKnXtGcC/22NOw6DMBAFr4K2jiNjPgaq3COigLDG29jISxAI+
+ e5xkNKlnJHevBMYAyFDl50QcCMm7xKoWwYvO7gZBU2JQUlVSSULgfvhPOtGS/HmcbGHqMe2aYv
+ alGU+QdotAQ3tV/PZJ7bEqw/HdbHlX/urlX9qWy6kMIUc2qbSaHB8TMTB+/Xuwwx9jPEDYDxWh
+ 7QAAAA=
+X-Change-ID: 20250203-exynos7870-usbphy-6b98936f441d
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ devicetree@vger.kernel.org, Kaustabh Chakraborty <kauschluss@disroot.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1739904968; l=1208;
+ i=kauschluss@disroot.org; s=20250202; h=from:subject:message-id;
+ bh=lGmY4p1VRzYFACIa5FUQnatEVrtfwJ9hMuMP3qnvkpg=;
+ b=Vg1OPg3CQFyh2tZdL14b9baf4IKxguTJiHMkoT4ZXtxC7l3bb51GqXJ5CfNfyMa9dv+wUDzpl
+ YN17CKw6wW1Cp+Olk4fxqseV/zB9Lqag56L3ssU9oLWREBCZHnLmwNI
+X-Developer-Key: i=kauschluss@disroot.org; a=ed25519;
+ pk=h2xeR+V2I1+GrfDPAhZa3M+NWA0Cnbdkkq1bH3ct1hE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250218_034556_081451_8BBBC8A9 
-X-CRM114-Status: UNSURE (   6.58  )
+X-CRM114-CacheID: sfid-20250218_105617_170068_917C79C2 
+X-CRM114-Status: UNSURE (   8.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,65 +86,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8753480182104351757=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============8753480182104351757==
-Content-Type: multipart/signed;
- boundary=f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d;
- micalg=pgp-sha256; protocol="application/pgp-signature"
+Apart from introducing driver support and documentation, this patch series
+also introduces a masking fix and non-functional changes.
 
---f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+This patch series is a part of Exynos7870 upstreaming.
 
-On Tue Feb 11, 2025 at 2:03 PM CET, Valentin Kleibel wrote:
->>> Chukun Pan (1):
->>>    phy: rockchip: naneng-combphy: compatible reset with old DT
->>=20
->> Applied, thanks!
->>=20
->> [1/1] phy: rockchip: naneng-combphy: compatible reset with old DT
->>        commit: bff68d44135ce6714107e2f72069a79476c8073d
->
-> Thanks for your work!
-> We found your patch after NVMes stopped working on a rock 3A with newer=
-=20
-> kernels and successfully applied it to kernel 6.1.128 (currently in debia=
-n).
+Signed-off-by: Kaustabh Chakraborty <kauschluss@disroot.org>
+---
+Changes in v2:
+- Do away with [PATCH 1/4] from v1 as it was sent separately.
+- Take over ownership of patches by the co-author, upon their request.
+- Link to v1: https://lore.kernel.org/r/20250204-exynos7870-usbphy-v1-0-f30a9857efeb@disroot.org
 
-FTR: I've reported it in Debian here: https://bugs.debian.org/1098250
+---
+Kaustabh Chakraborty (3):
+      phy: exynos5-usbdrd: use GENMASK and FIELD_PREP for Exynos5 PHY registers
+      dt-bindings: phy: samsung,usb3-drd-phy: add exynos7870-usbdrd-phy compatible
+      phy: exynos5-usbdrd: add exynos7870 USBDRD support
 
-I confirmed it (also) broke on kernel 6.12.8-1.
+ .../bindings/phy/samsung,usb3-drd-phy.yaml         |   2 +
+ drivers/phy/samsung/phy-exynos5-usbdrd.c           | 407 +++++++++++++++++----
+ include/linux/soc/samsung/exynos-regs-pmu.h        |   2 +
+ 3 files changed, 339 insertions(+), 72 deletions(-)
+---
+base-commit: e5d3fd687aac5eceb1721fa92b9f49afcf4c3717
+change-id: 20250203-exynos7870-usbphy-6b98936f441d
 
-Cheers,
-  Diederik
+Best regards,
+-- 
+Kaustabh Chakraborty <kauschluss@disroot.org>
 
---f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCZ7Ry4AAKCRDXblvOeH7b
-bhFLAQC1JglGt4aR9lUVkEV0fmRuMzSi31E8LahoJr3zdw31DAD+P5bkgVowQQlh
-kiTJtgRPL9URTebUfZf6ug/4nSIEOgo=
-=FLpA
------END PGP SIGNATURE-----
-
---f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d--
-
-
---===============8753480182104351757==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============8753480182104351757==--
-
