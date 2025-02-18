@@ -4,98 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C523C021AA
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Feb 2025 13:33:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E220C02198
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Feb 2025 12:04:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yNP/oG3P5xUnEcbUGJ7aU8MIu5EPCQXnEeA+7qp4QyQ=; b=u7S/8bh3c9rdhP
-	IUDS7tyA+VBf/0rPAZWLfVhLoMnizivyZ5Rbd7u6Q/TijOeTVnFAX7xy6aqLD1a+QJwjjyED48loY
-	pSJd3A9jH7Oq/9A/BZQuAVx3EnuifS5QyDAPNoQ+5oBdfsepSaGJUhcBYD2R9B6lSp4qO4OnfaQi8
-	g4cHI/eJDMXvKJpUw/PWr5FgJF0fosKmaD8pxmdBgkVhyaJafmgkNaLZAmx/k5++QNIXU+BWNjtpX
-	v43tpm3gEgoaodVGsS4JNoy4sUDnCI6x0xuoTubYAXAXBj/mJ7p3Oed9nR+FCRdg1rqQYrVP9DUzB
-	80nv1rOeobaSWm9Ew0og==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:References:From:Subject:Cc:To:Message-Id:Date:Mime-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=JQKusnr7W3uq161zAd0t3Ob3l3IGHU/t961yUjmIOEM=; b=3HM3MLBrmtZewf7EIuw9g8yHXV
+	CeVrqhVmvq0AnNX/txpGyApEa8Ieg36cCt0YIzeFiisvAnidcJldTdalccIOX54/gwnojjrTkDVY6
+	gX6F3L0MHtNrI1uNRC64fzRlrHW1K7hlZa2fXPs4DVPkN9QF8wdrB6vKef/VsoUTWaEd8yx6X6HOQ
+	H+/1S7fVBcx8iXVMge4iSLqDIfHr3SNONZ2kn8IY4erkai6jqEgocPgsjPZl++qHD9Qm6xfETkwWU
+	a5IRS6oQza6M7eZqx+h9BDMYmLIbs1ClYb/B4dXqaRcgPA9FK9gSzXAQ8AYqOyfSRqBEJE0iFSTwk
+	VD1ZVz0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tk1FF-00000004gHD-1cHa;
-	Mon, 17 Feb 2025 13:33:09 +0000
-Received: from mail-lf1-x134.google.com ([2a00:1450:4864:20::134])
+	id 1tkMKk-000000084Xq-27OX;
+	Tue, 18 Feb 2025 12:04:14 +0000
+Received: from out-182.mta0.migadu.com ([91.218.175.182])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tk17Q-00000004eKq-1Mys
+	id 1tkM31-000000080w7-3nTt
 	for linux-phy@lists.infradead.org;
-	Mon, 17 Feb 2025 13:25:05 +0000
-Received: by mail-lf1-x134.google.com with SMTP id 2adb3069b0e04-5454f00fc8dso1532356e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 17 Feb 2025 05:25:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1739798702; x=1740403502; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=QiVy1LLX/U1j468xBgrLR30ZUfJCR/waZMXhb8yr69M=;
-        b=HuUpftKUSIbUIDcSiKeNqBQJFu/8gRxjyKqe6if4Jj3ACwjJAccf7qVLLQG7xebRDH
-         /fN0Ar2syRRwOfYrEvYFT6kvtqCYZ1AsB5GNf4jiTSOBgHdLsQhLkv7BIAOtf71o/Up2
-         6xSlUHNCKPO/i2RBerQNRqtTvCcB/AmrJ9qWSr9iv2euN00Ly0ovPTEMZaknto+VogSl
-         bKSj7qo7Jr7jnm9o4sLI0PBRnlmNXFczuNL7jLyWhVyhjtXv0RYtPxOWfeSbi7nV2Jcw
-         yNdikB9m5qr+/5FxAoQlyf/eF5FBjuPwgfR68byePq/aXj3cbUeB2Wltga+CEQWpIsH9
-         Pd/A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739798702; x=1740403502;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=QiVy1LLX/U1j468xBgrLR30ZUfJCR/waZMXhb8yr69M=;
-        b=Pp2fnsxV14bPWkQKpOmo0CIMn2FRJD+WL/ebj4OIPuPIWFd3qd+47ACorYQ/Q+SvkN
-         ESv6p5YmJWrV4GH3Up4J3p7qgAXJ36dRHn9alxAJIXbbyw9BMyXP2a0isUhqfHgMZzJy
-         t3FmehOpEQwIX4ozU8l1r9xQJcXDBx921KlgBiPvCGY2lqplMRyfwtcPR0gQy7pIQdBX
-         ImTYndNRlLPbujbrxS4iufLcIOkhXhbN/y7pibY479aSSc2puGZjPPKIo1k2kwqbynk/
-         ekLxOYpU9COUGU3xsXAibXk8FDuWH/Hc0PxJb7uxgz8yoTyM7EW9V65XIoKy9hmj1K/S
-         2kxg==
-X-Forwarded-Encrypted: i=1; AJvYcCVTwmM4BVfAlXh8q4Kpo7WeBiS1sDP1UTBT7+Npu8h2AOpKUAozX8nCbrCa0sYjM1wbpfNjtWKpfkk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxWb3LkEwovIAsYLMzmh/utxU4aN86+zmelY1kzwm/Ru0zmpEud
-	LNUA7nE8WhfKxYb4f/oeiWGyYevtXslWug10Jtf7gzGKZwT/XgKLnKsyEniOfOyK0BpBo3ohTqf
-	V2RTNE0RKKijhIT4d2v+9qe4qLFTcUhb0kzYM5Q==
-X-Gm-Gg: ASbGncvN8DClmZMgjEZ9sc3McSRm9CsM2zXdH4wUXG9+o+PkUJHIlul19OIwIM9Apwu
-	7h5DkZ7XH1H7kXJXc231kunEUEWrezxHN4xeQSFoI3ua87k1LA7jTIGdb7GqB7LiLphRLJNjWe3
-	Lee5xj03GkLdrQwT+Fp6tRxAJvGA==
-X-Google-Smtp-Source: AGHT+IEb6JHw/5PakMZCVTYAlw84c60jmNtNM9WQpCnIP/Vmd74RSHMRaGMUWCimKY7la7twkBPZRBodM2VgArHLkgI=
-X-Received: by 2002:a05:6512:2396:b0:545:bb6:8e32 with SMTP id
- 2adb3069b0e04-5452fe2eb21mr2817688e87.12.1739798702259; Mon, 17 Feb 2025
- 05:25:02 -0800 (PST)
-MIME-Version: 1.0
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <173952845012.57797.11986673064009251713.b4-ty@linaro.org>
- <CAHp75VcjAFEdaDQAMXVMO96uxwz5byWZvybhq2fdL9ur4WP3rg@mail.gmail.com>
- <CAMRc=MefPRs-REL=OpuUFJe=MVbmeqqodp+wCxLCE8CQqdL4gQ@mail.gmail.com>
- <20250216142313.743af564@jic23-huawei> <CAMRc=Meq639NMz6TuOw=xQ_A8VDwA5OXoXU47JNt7x0C7jDtGQ@mail.gmail.com>
- <20250217131110.5803b68b@jic23-huawei>
-In-Reply-To: <20250217131110.5803b68b@jic23-huawei>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Mon, 17 Feb 2025 14:24:51 +0100
-X-Gm-Features: AWEUYZmts5pHMv-WTAD5H0ycHChA4PeALdc-KhHeVO2LZrBUG0P1He-nzm1gLUk
-Message-ID: <CAMRc=McM-f3NKGGPs9UCzDyOO2Fw_N+2HzyTPajcZiPTAUXDUw@mail.gmail.com>
-Subject: Re: (subset) [PATCH v3 00/15] gpiolib: add gpiod_multi_set_value_cansleep
-To: Jonathan Cameron <jic23@kernel.org>
-Cc: Andy Shevchenko <andy.shevchenko@gmail.com>, Linus Walleij <linus.walleij@linaro.org>, 
-	Andy Shevchenko <andy@kernel.org>, Geert Uytterhoeven <geert@linux-m68k.org>, 
-	Lars-Peter Clausen <lars@metafoo.de>, Michael Hennerich <Michael.Hennerich@analog.com>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, David Lechner <dlechner@baylibre.com>, 
-	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, linux-gpio@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org, 
-	Jonathan Cameron <Jonathan.Cameron@huawei.com>
+	Tue, 18 Feb 2025 11:45:57 +0000
+Mime-Version: 1.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
+	t=1739879143;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=iRTNT+VF0BGjlKwvapjWppDo17j+1iwhkQPE23/uMVo=;
+	b=ZX3Yoy1hXUuD/+bt2TDsEfH9YNFyiuE1hX3gIbcpAC9o8USRJ5Li6rm7ZNk+R4Dw4VMfNU
+	DlJIFuiVnBIa4sM2wBQ3W8Sh8uesjMI6rq244GrrMuk/nJNQqPNgie1HPW0D0iUHs12vQU
+	lq2FCMy6RLxs0eyyGg90bKfbW7E0c6RPyyiEcjRbTvuhHs3GNK1GOX+z3p31ueTyqvMcAd
+	ERpiUk7Cmbii1XDuH/YkYQfPOaZ0vILGoTEEtoAxLZ2+gg+x4zjhV28MnyIJWihL1HbvRe
+	R5194W54/SZCartzQcvVv6CRKHnhrrBo//MnCxCqcUXt9Td1E/LRcwRaH2XRGw==
+Date: Tue, 18 Feb 2025 12:45:34 +0100
+Message-Id: <D7VJOFXU540M.2PAC1RFXAH19B@cknow.org>
+To: "Valentin Kleibel" <valentin@vrvis.at>, "Vinod Koul" <vkoul@kernel.org>,
+ "Chukun Pan" <amadeus@jmu.edu.cn>
+Cc: "Heiko Stuebner" <heiko@sntech.de>, "Philipp Zabel"
+ <p.zabel@pengutronix.de>, "Kishon Vijay Abraham I" <kishon@kernel.org>,
+ "Jianfeng Liu" <liujianfeng1994@gmail.com>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, "Jonas Karlman" <jonas@kwiboo.se>
+Subject: Re: [PATCH v2 0/1] phy: rockchip: naneng-combphy: compatible reset
+ with old DT
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: "Diederik de Haas" <didi.debian@cknow.org>
+References: <20250106100001.1344418-1-amadeus@jmu.edu.cn>
+ <173831716590.670164.5196739962949646746.b4-ty@kernel.org>
+ <f64ee4ee-7e56-4423-813e-b87e023e893d@vrvis.at>
+In-Reply-To: <f64ee4ee-7e56-4423-813e-b87e023e893d@vrvis.at>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250217_052504_623034_AB16EEA0 
-X-CRM114-Status: GOOD (  21.35  )
+X-CRM114-CacheID: sfid-20250218_034556_081451_8BBBC8A9 
+X-CRM114-Status: UNSURE (   6.58  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,49 +73,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============8753480182104351757=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBGZWIgMTcsIDIwMjUgYXQgMjoxMeKAr1BNIEpvbmF0aGFuIENhbWVyb24gPGppYzIz
-QGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gT24gU3VuLCAxNiBGZWIgMjAyNSAxNjo1NTowNCArMDEw
-MAo+IEJhcnRvc3ogR29sYXN6ZXdza2kgPGJyZ2xAYmdkZXYucGw+IHdyb3RlOgo+Cj4gPiBPbiBT
-dW4sIEZlYiAxNiwgMjAyNSBhdCAzOjIz4oCvUE0gSm9uYXRoYW4gQ2FtZXJvbiA8amljMjNAa2Vy
-bmVsLm9yZz4gd3JvdGU6Cj4gPiA+Cj4gPiA+IE9uIEZyaSwgMTQgRmViIDIwMjUgMTU6Mzc6NDgg
-KzAxMDAKPiA+ID4gQmFydG9zeiBHb2xhc3pld3NraSA8YnJnbEBiZ2Rldi5wbD4gd3JvdGU6Cj4g
-PiA+Cj4gPiA+ID4gT24gRnJpLCBGZWIgMTQsIDIwMjUgYXQgMzozNeKAr1BNIEFuZHkgU2hldmNo
-ZW5rbwo+ID4gPiA+IDxhbmR5LnNoZXZjaGVua29AZ21haWwuY29tPiB3cm90ZToKPiA+ID4gPiA+
-Cj4gPiA+ID4gPiBPbiBGcmksIEZlYiAxNCwgMjAyNSBhdCAxMjoyMeKAr1BNIEJhcnRvc3ogR29s
-YXN6ZXdza2kgPGJyZ2xAYmdkZXYucGw+IHdyb3RlOgo+ID4gPiA+ID4gPiBPbiBNb24sIDEwIEZl
-YiAyMDI1IDE2OjMzOjI2IC0wNjAwLCBEYXZpZCBMZWNobmVyIHdyb3RlOgo+ID4gPiA+ID4gPiA+
-IFRoaXMgc2VyaWVzIHdhcyBpbnNwaXJlZCBieSBzb21lIG1pbm9yIGFubm95YW5jZSBJIGhhdmUg
-ZXhwZXJpZW5jZWQgYQo+ID4gPiA+ID4gPiA+IGZldyB0aW1lcyBpbiByZWNlbnQgcmV2aWV3cy4K
-PiA+ID4gPiA+Cj4gPiA+ID4gPiAuLi4KPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IFswNy8xNV0gaWlv
-OiBhZGM6IGFkNzYwNjogdXNlIGdwaW9kX211bHRpX3NldF92YWx1ZV9jYW5zbGVlcAo+ID4gPiA+
-ID4gPiAgICAgICAgIGNvbW1pdDogODIwM2JjODFmMDI1YTNmYjA4NDM1N2EzZDhhNmViMzA1M2Jj
-NjEzYQo+ID4gPiA+ID4gPiBbMDgvMTVdIGlpbzogYW1wbGlmaWVyczogaG1jNDI1YTogdXNlIGdw
-aW9kX211bHRpX3NldF92YWx1ZV9jYW5zbGVlcAo+ID4gPiA+ID4gPiAgICAgICAgIGNvbW1pdDog
-ZTE4ZDM1OWIwYTEzMmViNjYxOTgzNmQxYmY3MDFmNWIzYjUzMjk5Ygo+ID4gPiA+ID4gPiBbMDkv
-MTVdIGlpbzogcmVzb2x2ZXI6IGFkMnMxMjEwOiB1c2UgZ3Bpb2RfbXVsdGlfc2V0X3ZhbHVlX2Nh
-bnNsZWVwCj4gPiA+ID4gPiA+ICAgICAgICAgY29tbWl0OiA3OTIwZGYyOWYwZGQzYWFlM2FjZDhh
-NzExNWQ1YTI1NDE0ZWVkNjhmCj4gPiA+ID4gPiA+IFsxMC8xNV0gaWlvOiByZXNvbHZlcjogYWQy
-czEyMTA6IHVzZSBiaXRtYXBfd3JpdGUKPiA+ID4gPiA+ID4gICAgICAgICBjb21taXQ6IGE2N2U0
-NTA1NWVhOTAwNDgzNzIwNjY4MTFkYTdjN2ZlMmQ5MWY5YWEKPiA+ID4gPiA+Cj4gPiA+ID4gPiBG
-V0lXLCBKb25hdGhhbiB1c3VhbGx5IHRha2VzIGNhcmUgb2YgcGF0Y2ggcXVldWUgb24gd2Vla2Vu
-ZHMuCj4gPiA+ID4gPiBCdXQgd2hhdGV2ZXIsIGl0J3Mgbm90IG15IGJ1c2luZXNzIGFmdGVyIGFs
-bCA6LSkKPiA+ID4gPiA+Cj4gPiA+ID4KPiA+ID4gPiBUb28gbWFueSBjb25mbGljdGluZyBzdWdn
-ZXN0aW9ucy4gSSBqdXN0IHBpY2tlZCB1cCBhbGwgQWNrZWQgcGF0Y2hlcy4gwq9cXyjjg4QpXy/C
-rwo+ID4gPgo+ID4gPiBSZXNvbHV0aW9uIG9mIGFueSBpc3N1ZXMgJ3Nob3VsZCcgYmUgZWFzeSBl
-bm91Z2guIExldCdzIGtlZXAgYW4gZXllIG9uIGhvdwo+ID4gPiBpdCBnb2VzIGFzIG90aGVyIHNl
-cmllcyBoaXQgTGludXggbmV4dC4gIE1pZ2h0IGJlIGEgbGl0dGxlIHdvcmsgdG8gYmUgZG9uZSB0
-aGVyZQo+ID4gPiBhbmQgYnkgTGludXMgaW4gbmV4dCBtZXJnZSB3aW5kb3cuCj4gPiA+Cj4gPiA+
-IEpvbmF0aGFuCj4gPiA+Cj4gPgo+ID4gSSdtIHRvdGFsbHkgZmluZSB3aXRoIHJlbW92aW5nIHRo
-ZSBpaW8gY29tbWl0cyBmcm9tIG15IHF1ZXVlIGlmIHlvdQo+ID4gcHJlZmVyIHRvIHRha2UgdGhl
-bS4KPiA+Cj4gSGkgQmFydG9zeiwKPgo+IFRoYXQncyBwcm9iYWJseSBnb2luZyB0byBwcm92ZSBz
-bGlnaHRseSBsZXNzIHBhaW5mdWwsIHNvIHBsZWFzZSBkby4KPiBJJ2xsIG1lcmdlIGluIHRoYXQg
-aW1tdXRhYmxlIHRhZyBhbmQgcGljayB0aGVtIHVwIG9uY2UgeW91J3ZlIGRyb3BwZWQgdGhlbS4K
-PgoKRG9uZSwgeW91IGNhbiBwdXNoIHlvdXIgYnJhbmNoIG91dCBhbmQgdGhlIG5leHQgIm5leHQi
-IHNob3VsZCBiZSBvayBub3cuCgpCYXJ0CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+--===============8753480182104351757==
+Content-Type: multipart/signed;
+ boundary=f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d;
+ micalg=pgp-sha256; protocol="application/pgp-signature"
+
+--f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+On Tue Feb 11, 2025 at 2:03 PM CET, Valentin Kleibel wrote:
+>>> Chukun Pan (1):
+>>>    phy: rockchip: naneng-combphy: compatible reset with old DT
+>>=20
+>> Applied, thanks!
+>>=20
+>> [1/1] phy: rockchip: naneng-combphy: compatible reset with old DT
+>>        commit: bff68d44135ce6714107e2f72069a79476c8073d
+>
+> Thanks for your work!
+> We found your patch after NVMes stopped working on a rock 3A with newer=
+=20
+> kernels and successfully applied it to kernel 6.1.128 (currently in debia=
+n).
+
+FTR: I've reported it in Debian here: https://bugs.debian.org/1098250
+
+I confirmed it (also) broke on kernel 6.12.8-1.
+
+Cheers,
+  Diederik
+
+--f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCZ7Ry4AAKCRDXblvOeH7b
+bhFLAQC1JglGt4aR9lUVkEV0fmRuMzSi31E8LahoJr3zdw31DAD+P5bkgVowQQlh
+kiTJtgRPL9URTebUfZf6ug/4nSIEOgo=
+=FLpA
+-----END PGP SIGNATURE-----
+
+--f698ee32381bf21d68a66030e7e7436323d6482d1504fe3e32b177e1a04d--
+
+
+--===============8753480182104351757==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8753480182104351757==--
+
