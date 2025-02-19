@@ -4,79 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89480C021AA
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Feb 2025 11:36:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F380C021AA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Feb 2025 16:11:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uZBbrUF+79RZRLr08kHtSnYMR6wtlwED1DCebwj5sCk=; b=IijOjgBvWAcJ0G
-	i/dD7ZYPPkCyl+8hnmj3Uy7ueLvLxYHiADVSzCZj5YMhzq7Knr5+TAuwGLHY8Tj1/beyASq3OxVdp
-	I3OTXYkuCMm4f2SP8Wh3umh2D97+o/fJdHxQTZGLptieToC+m7weKSE1S0zaFsq2iFs2ZQfSN34Zn
-	T631VAbgb63bQQGo6T7LCbsUTEcAzMFBy0ik1E0jRnRP+6BuYHOV22EUwAhdKY0TGZ8p9ZDjSyY9d
-	lfDpa3v2rkJxs/4i73V8pUF5CAbbFHgbiifc9U0py0p6r3TyPBHUiUiJNNxwbbvOZGaRfzk7KAkdw
-	tsAOKp79W0Flc81v8RhQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3Gp6Ax+BQghfC6jIbYblGeyRwzHxI1EBXZEoGb2RxNY=; b=PbKAAMJH7qxz2q
+	EmBMtN+d5T4gcdR9w8xso2nZKMRdXJwDVc/hFsKkVmOEc+Z6deddW8qZ2QPv0/mlj7W5JxrwMYCwZ
+	101rDhXtKTkkDpgkGfeTnY7Gc96M2SIPl7jxsyp7N3OMPFWVeTro2MAWmNTd4peIaBNg5gj/uhk7E
+	1Xi2xDEz6c5Jd5QVkk8aFN5fGJTj9XNmQKXEkfp5xUzoyRUe51ZaBRzZiYFW5ctmotjxEakQH9K9y
+	8+orjtPNLtpL5x6//yCorUzgg/ZtkOHtDsgLGFhOpgTmS+aZOau5PnjL63b1IZEIGNt8oJg+VTVUI
+	53NNmDMUJENz8amDzzSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkiNg-0000000CRZV-1GLv;
-	Wed, 19 Feb 2025 11:36:44 +0000
-Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
+	id 1tkmfJ-0000000Djj0-3QRI;
+	Wed, 19 Feb 2025 16:11:13 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkiGk-0000000CP5x-3iG0
+	id 1tkmcC-0000000Digy-05bk
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Feb 2025 11:29:36 +0000
-Received: by mail-pj1-x1036.google.com with SMTP id 98e67ed59e1d1-2fa48404207so13168899a91.1
-        for <linux-phy@lists.infradead.org>; Wed, 19 Feb 2025 03:29:34 -0800 (PST)
+	Wed, 19 Feb 2025 16:08:01 +0000
+Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-aaf3c3c104fso1163537066b.1
+        for <linux-phy@lists.infradead.org>; Wed, 19 Feb 2025 08:07:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1739964574; x=1740569374; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5vU+z7o1n0G7VQ2M0U6SHnojITFeeAuqpaQx8uuT8Do=;
-        b=Ajx2aOaWE5txn3rFcfkBviqxBV27QfEJ72PFQ7R7u/1QcqZeApnEuYviWj1BwHSpiT
-         qQIHH7BA73kur8xirZWB/cUacbLKMGfTrahKJ6o1hj8ftMQGBtyQ5g50SVPI8zt27zVV
-         eDi74pEhX+HZIiFruM+RHbB8It4DlKlyAFa2jHu9eU0qmWRo2LgNbuCPxK07nIlVlMke
-         B4JGBsVEB79IHfAeApXsDNb3pDE0TdhXpjV7ZS78n8DAY5Hb7Zc7ul553wEar3HPjurD
-         XEC7o0fK5JPufkDMbjKZp70oe8zzyuOBJQeo6UfaOL65lJ4JiY0V5rJnwr1mbRcyOVHI
-         jc6Q==
+        d=tuxon.dev; s=google; t=1739981278; x=1740586078; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=DwMMGNmWOuotqPv4IxkXyX8g8+4F3yGXxMrg8cS3U8o=;
+        b=BOiMBk5OMJ8sg5zgONP3TmLPWmaBh03Kf/4e1G4ohJXxCfyVqmM1n3cTVRt/nEAl+C
+         XOKbn5vUDjeFKcxAfH1hk4FI/iY7egD2BYv0+y3Mv3WfSFdbV9AonrdS+KzCmlW8zelv
+         ZjnvKf7A8sbrOIWs1PIlkiHaI/5QEKYNnPhXYdO5TUKcvFwvj3LkjeAPEcbif73Nvzzc
+         awU6ro1W/FPc/PVMOEQujFHzgS0ZXH0rSzM5n0qMbTfZs8LojBYB3jLNHRpUsp9HHeMS
+         g04Kvx3jK2+fz8hvEQIgQOP9+jINXdDwFuySO1DdvdDQPtiWLmwg6TB1aQQ0eo9h2yZn
+         N6bw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739964574; x=1740569374;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=5vU+z7o1n0G7VQ2M0U6SHnojITFeeAuqpaQx8uuT8Do=;
-        b=HHorMtlvjwAIDHv+K7uZQBqSV9tivdVmv/U+OXAyBv1N0dU0oncVhKCRsmoLmRqd3g
-         GobhG4wlWeNodA/HylOKeyHS7CkOctdQNMkPB8zsruJ1vQYe7myfsZDXgs1hPMW5mGRO
-         QCEFI8MmncwfyP/96aTRdF/XB+2W/kkruumCejAbhv9SFegICbYmHvjX5VMF9Zff49Hl
-         eNfOBhLMquY6Y2a/IVzUtVVzihGDQeYJ+jIFwPg+vnUyQhZDtjNN/rIM3BmZyAnju6x4
-         ntQEBcIavoR46RsYI6JHdT9Yx1jVHEMqj/vrfleRby0CVOEEEKs8d6FdU1EGjBP14ySV
-         ZEBQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVumfKwDmLMRqErYI7vT0ewLVZiVux1Hw2KY0e8KuxyaqpZtEF5tjjpLaBuXcDdE0MT4y8olQ0igPA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy8TuN46Wgr3J4aUaBK4cwaYbzUGWtDI8sc3kvvhjLiszV9eiy/
-	a2SQ470EGteaMjtSihaTEYhw6zbpqgKRwPyWcNZJiFulFtxFu5Qh/aEktTnmRy+JQsdjsNnvVuF
-	re50I6WcxcOEWSbngWgts4eakFx4=
-X-Gm-Gg: ASbGncsiRfjfzMedM7LYRaea1U9ZLXz6PoSIDG2mIaPOdo0Iqh927dB1FYEHWjRxHdh
-	Pa/IueDdQojcdxfmv5RzcUljbSJFN+MzUpo0EXZCgC32UTmAXhPQkvZH09XVHEhsFAYJ3Xs/w
-X-Google-Smtp-Source: AGHT+IEy3gIKsA2IQeCpKMMMuYndacoBsWC4Zu0rpUgMg6vNtThISaOrAnvzXl+MwdwzMRvuz0JKxEz5n2ulPBpyU6U=
-X-Received: by 2002:a17:90b:3b4b:b0:2ee:fdf3:390d with SMTP id
- 98e67ed59e1d1-2fc4115087fmr24105113a91.31.1739964573544; Wed, 19 Feb 2025
- 03:29:33 -0800 (PST)
+        d=1e100.net; s=20230601; t=1739981278; x=1740586078;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=DwMMGNmWOuotqPv4IxkXyX8g8+4F3yGXxMrg8cS3U8o=;
+        b=UGXYOLtrsRscIonCfRMGh3c/K/4yo5Q5I8sSMyUK4Yq6okr3K+uXPj4JYxaJmNybKE
+         3AbcmnH2jAk8PRHt3jK7V4qCGnni027zBx8jDHBQtn8sqrnKokrLXWr1lv50lkLRp507
+         ROPF+832b5Vm/FJDFNOMSwHSrz/iwi8DoL82snbLVcSs0vQmrjrJQzSX+y+/8k7HtaKx
+         rLJywVgFZy2TxPEwJigSxZWepD9E5c/1mJDvS6nmKdyT94x17FVHr1/Ve82QM0l47N7P
+         glqS1uTpLS2MMF9V/ktH1QJvFRjHz+VqeSSyXqMefY7V2ixVX/AOL0C+uo4TSPiZqFvq
+         +pOw==
+X-Forwarded-Encrypted: i=1; AJvYcCWN47ziLS/gnyE2N1FG3IEH9wE+J6QOyEQkp/Uuo1nBmZzr0l/eXlgo3sRUwdyWwpk66Ia2Q3mFOZY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwDNZ75Yam1Wbw6dBSmcuFRQik66BCmJXnLMBq6kJr+ioXC/6lm
+	qsLwPCPRDCjv7b+Gbw2171xrk/F+8NJ6quhNPpBt+pbwNRjPhYtwylDBMGx/a4U=
+X-Gm-Gg: ASbGncs+HBj3+aaws+jAYz63QMSZUIRi2so4IHjCgaZxcEdWAwFSHBcAGkChr9JBTgm
+	tvrIknLykbUWFl0Tqr6W+TBjRG8ISJLq+e7p68iP9CfDzLBQok4xtjDKG+LALuyBNlIXHCgq6a2
+	JrP5VZtCzGC1ttKXabBuaQCUroxM8AB6rMpbTlPwuHPQaoPj1p8seUZbAqpwLQIt/8/PoiiNL1O
+	8O42DmzSHYjgc+wMqxVRoUYpwJW1piEXyJinAiFOXGNBq3MTD1dvBI+LRMKJ4v9+KojpQ8UXmj/
+	q8bfZ0dCBh2cbXAWrNbqcRfT66yKSc/hw3OeMV797m8i
+X-Google-Smtp-Source: AGHT+IFb8j7IIkxOR/n0tzGJ+yjodWKnwFUug+Qx75yEhRVyIDQOoSAzY1twMqg5YS3jbZDvVYlQxw==
+X-Received: by 2002:a17:906:9d2:b0:ab7:5fcd:d4e4 with SMTP id a640c23a62f3a-abb70d6b001mr1606723766b.41.1739981278058;
+        Wed, 19 Feb 2025 08:07:58 -0800 (PST)
+Received: from claudiu-X670E-Pro-RS.. ([82.78.167.25])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-abbc0d0b882sm327791066b.109.2025.02.19.08.07.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 19 Feb 2025 08:07:57 -0800 (PST)
+From: Claudiu <claudiu.beznea@tuxon.dev>
+X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
+To: yoshihiro.shimoda.uh@renesas.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	horms+renesas@verge.net.au,
+	fabrizio.castro@bp.renesas.com,
+	robh@kernel.org
+Cc: claudiu.beznea@tuxon.dev,
+	linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH RFT 0/5] phy: renesas: rcar-gen3-usb2: Fixes for Renesas RZ/G3S
+Date: Wed, 19 Feb 2025 18:07:43 +0200
+Message-ID: <20250219160749.1750797-1-claudiu.beznea.uj@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-References: <cover.1739961770.git.guchongchong@xiaomi.com> <19ac11d6b9e5988d190025255c5ffe08c57c8023.1739961770.git.guchongchong@xiaomi.com>
-In-Reply-To: <19ac11d6b9e5988d190025255c5ffe08c57c8023.1739961770.git.guchongchong@xiaomi.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Wed, 19 Feb 2025 05:29:22 -0600
-X-Gm-Features: AWEUYZn24v6r2D4b5o-SiBzC1qYQfPa9B6_jswODdfypF4PixQVAxs6BawZcytI
-Message-ID: <CAHCN7xKtu2y=757_mAmR64vCKCo-g78U-qWYT+j5_Rv5Gc+USQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/1] phy: freescale: limit div value in FIELD_PREP()
-To: Chongchong Gu <chongchonggu21@gmail.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, guchongchong <guchongchong@xiaomi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250219_032934_933255_2E9801C9 
-X-CRM114-Status: GOOD (  17.16  )
+X-CRM114-CacheID: sfid-20250219_080800_061966_93DF34EC 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,40 +100,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBGZWIgMTksIDIwMjUgYXQgNDo1NOKAr0FNIENob25nY2hvbmcgR3UgPGNob25nY2hv
-bmdndTIxQGdtYWlsLmNvbT4gd3JvdGU6Cj4KPiBGcm9tOiBndWNob25nY2hvbmcgPGd1Y2hvbmdj
-aG9uZ0B4aWFvbWkuY29tPgo+Cj4gSW4gZnNsX3NhbXN1bmdfaGRtaV9waHlfY29uZmlndXJlX3Bs
-bF9sb2NrX2RldCwgdGhlIHZhcmlhYmxlIG5hbWVkCj4gZGl2IGJlY29tZXMgNCBhZnRlciBsb29w
-LiBJdCBtdXN0IGxlc3MgdGhhbiA0IGluIGZ1bmN0aW9uIG5hbWVkCj4gRklFTERfUFJFUChSRUcx
-Ml9DS19ESVZfTUFTSywgZGl2KS4KPgoKClRoZXJlIGhhcyBhbHJlYWR5IGJlZW4gYSBmaXggYXBw
-bGllZCB0byBsaW51eC1uZXh0IHRvIGFkZHJlc3MgdGhpcwpbMV0uICBIYXZlIHlvdSB0cmllZCB0
-aGlzIHRvIHNlZSBpZiBpdCB3b3JrcyB3aXRoIHlvdXIgY29tcGlsZXI/CgphZGFtClsxXSAtIGh0
-dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L25leHQvbGludXgt
-bmV4dC5naXQvY29tbWl0L2RyaXZlcnMvcGh5L2ZyZWVzY2FsZT9oPW5leHQtMjAyNTAyMTkmaWQ9
-Y2Q1N2U0MzI3NzA3MTI2ZGNhM2Y5NTE3Yjg0Mjc0YzAwMWQ0YzE4NAoKCgoKPiBBIHdheSB0byBy
-ZXByb2R1Y2Ugd2hlbiBydW4gdGhlIGZvbGxvd2luZyBzaGVsbCBjb21tYW5kCj4gbWFrZSBBUkNI
-PWFybTY0IENST1NTX0NPTVBJTEU9YWFyY2g2NC1saW51eC1nbnUtIGRlZmNvbmZpZwo+IG1ha2Ug
-QVJDSD1hcm02NCBDUk9TU19DT01QSUxFPWFhcmNoNjQtbGludXgtZ251LSAtajQKPgo+IEZpeGVz
-OiA8ZDU2NzY3OWYyYjZhPiAoInBoeTogZnJlZXNjYWxlOiBmc2wtc2Ftc3VuZy1oZG1pOiBDbGVh
-biB1cCIpCj4gU2lnbmVkLW9mZi1ieTogZ3VjaG9uZ2Nob25nIDxndWNob25nY2hvbmdAeGlhb21p
-LmNvbT4KPiAtLS0KPiAgZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1p
-LmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigt
-KQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLXNhbXN1bmct
-aGRtaS5jIGIvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtc2Ftc3VuZy1oZG1pLmMKPiBp
-bmRleCA0NTAwNGY1OThlNGQuLjBhZDc2NjM1OWNiZSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3Bo
-eS9mcmVlc2NhbGUvcGh5LWZzbC1zYW1zdW5nLWhkbWkuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L2Zy
-ZWVzY2FsZS9waHktZnNsLXNhbXN1bmctaGRtaS5jCj4gQEAgLTMzNyw3ICszMzcsNyBAQCBmc2xf
-c2Ftc3VuZ19oZG1pX3BoeV9jb25maWd1cmVfcGxsX2xvY2tfZGV0KHN0cnVjdCBmc2xfc2Ftc3Vu
-Z19oZG1pX3BoeSAqcGh5LAo+ICAgICAgICAgLyogRmluZCBpbnRfcGxsY2xrIHNwZWVkICovCj4g
-ICAgICAgICBmb3IgKGRpdiA9IDA7IGRpdiA8IDQ7IGRpdisrKSB7Cj4gICAgICAgICAgICAgICAg
-IGludF9wbGxjbGsgPSBwY2xrIC8gKDEgPDwgZGl2KTsKPiAtICAgICAgICAgICAgICAgaWYgKGlu
-dF9wbGxjbGsgPCAoNTAgKiBNSFopKQo+ICsgICAgICAgICAgICAgICBpZiAoaW50X3BsbGNsayA8
-ICg1MCAqIE1IWikgfHwgZGl2ID09IDMpCj4gICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7
-Cj4gICAgICAgICB9Cj4KPiAtLQo+IDIuNDguMQo+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+
+Hi,
+
+Series add fixes for the Renesas USB2 PHY driver identified while
+working on the Renesas RZ/G3S USB support. These changes are
+needed for the upcomming RZ/G3S USB support (especially for the
+power management support).
+
+Series (with [1] on top) was tested on Renesas RZ/G3S with consecutive
+unbind/bind and data transfer tests before/after the unbind/bind.
+
+The unbind/bind was also tested on the devices with the following
+device trees but w/o checking the data transfer (as I only had
+remote access w/o USB devices connected):
+- r8a7742-iwg21d-q7.dts
+- r8a7743-iwg20d-q7.dts
+- r8a7744-iwg20d-q7.dts
+- r8a7745-iwg22d-sodimm.dts
+- r8a77470-iwg23s-sbc.dts
+- r8a774a1-hihope-rzg2m-ex.dts
+- r8a774b1-hihope-rzg2n-ex.dts
+- r8a774e1-hihope-rzg2h-ex.dts
+- r9a07g043u11-smarc.dts
+- r9a07g044c2-smarc.dts
+- r9a07g044l2-smarc.dts
+- r9a07g054l2-smarc.dts
+- r9a07g043f01-smarc.dts
+
+Please give it a try also on your devices with [1] on top as well.
+
+Thank you,
+Claudiu Beznea
+
+Claudiu Beznea (5):
+  phy: renesas: rcar-gen3-usb2: Fix role detection on unbind/bind
+  phy: renesas: rcar-gen3-usb2: Move IRQ request in probe
+  phy: renesas: rcar-gen3-usb2: Lock around hardware registers and
+    driver data
+  phy: renesas: rcar-gen3-usb2: Assert PLL reset on PHY power off
+  phy: renesas: rcar-gen3-usb2: Set timing registers only once
+
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 134 +++++++++++++----------
+ 1 file changed, 74 insertions(+), 60 deletions(-)
+
+-- 
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
