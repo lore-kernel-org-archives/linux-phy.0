@@ -4,98 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 869D2C021AA
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Feb 2025 20:27:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97D9AC021AA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Feb 2025 22:51:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VIYfBJeGgNKIPFsil2im+Djxe54T238lR5UIFpg1mko=; b=PKwyIs6dux6bZu
-	Cg24yAwSRM4WadwB2s6IUfvwkUT/AsNcBrDJMqAf3OdEpi4P6GTP5pBuF+n/h8az1Vc1V4lNAvqT6
-	MhHufuzqWVzKgEsbNMlPLX7Q/lXjsKWKiZIEMKrRA2uAVFSvApUGRAwNKu8YbP6R4AKcH3FjbBZ8p
-	cRs17wDEUDtcuKpOz3gfBgZt6PZbUXFLhmfSklgyq4L+E6dqieWPGo0o17+LC4Yhqhg12wyJuBWLq
-	xlFN8SPhXCSuxxdGFOt3OlKVrR3P0MB6AtiGKdwhQdIs4Y0vQoQshb+Rw3nSZBSTU8fbQFQUMcff/
-	PVzMkseQOoFlX9X6PBrA==;
+	List-Owner; bh=0bRZ3KWK9Ayo+fmEO2i6w8l2FAK31CGXnN6pKO2PP/Y=; b=sHBLRU3ftPQKSF
+	8IL+PNjwx4BOsZYV9rfrDsr1nLL/sZN5yh8yMV/9xQLeN+Nf865JBI/bT5XWlEAfA5POjdSAMNSjA
+	FL2WbkjMDEj2g1L2MQ+1k5cRSxFqtJ1wz5tn7Gd2OOTDJu6dGfBcrzNSASmsJmebZw83cpEw6MpMU
+	AQsnTEqAq28lqRC72ozzxq4akLMKQwnHBJLsTKmS3egQOPS6Lb3JzJjeD2zm5w4YUmdl5g5mPlCGN
+	5f80FrRZuTKjRGm+OZsZCY7B60Fs5uFI1JaBVNl5NM9EJ4XwRulZ3S3Q0m23CmnAuug5otIQEqU39
+	CHP280Q4f645upI8cO0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkqer-0000000Esrv-1Hrx;
-	Wed, 19 Feb 2025 20:27:01 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1tksuZ-0000000FXFK-1TyL;
+	Wed, 19 Feb 2025 22:51:23 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkqdE-0000000EsFu-3nI9;
-	Wed, 19 Feb 2025 20:25:22 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-439846bc7eeso950055e9.3;
-        Wed, 19 Feb 2025 12:25:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1739996718; x=1740601518; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=z2Itno5XHizBUyP+XMgPT9B/6BDBul2rQNllFEnJbYc=;
-        b=QunLxzbUACT21HsSEMYtkU+geukMvt6DcOrbeZQbcoYZ+EHrjZ7uqhm/rcPkbvoxD7
-         IGKR6Z8K0ZjTl5EgwH3HOOBLZUeHsPIZLwmlPz4dVgavqjSR1/6KSrnN0OE1TIACOvZH
-         EB9440GbNiq24t7JoEEFhBHV8vh1gZ3kASy+QDHN+tUKYtEDwT0w7MlJC6IR7Dz2hF5y
-         0RFr2mxKlnsLttUP9M4KeTtKC11ZjkKw/oGyVqm/EtLiYYiBkefhuo7ZGQ4s9uYljPEr
-         BBaRqUaBnemH4J1AfFvGNN7IXemjUBiIC99/hvTYpfynWOPsxIkztWgI3/GV/fry0BSB
-         o9Bg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739996718; x=1740601518;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=z2Itno5XHizBUyP+XMgPT9B/6BDBul2rQNllFEnJbYc=;
-        b=uDTNsIWMCzr9x4mKKDPhPoU3fQhbiz4a6LRaLmhgJj5a7dZbBCxJsVGwHeBQdX+K35
-         icn6FfzTXx9XatsyfDnEHOEsA1ofo/y5mPoiIhF0iYL2UOawMVnaViqfdrh6ZRRdr4kr
-         +EozJwqZLB3Qk6/ezT3ydwQhhmb6adiQzdJwDOEO7oYRswl+cerLlGy2NAUXbeZNDIFh
-         LEpjIoePjKXSQp9yS8auV197a26Rb/rsm5xYcBgnNq1RFvHJ6pfR0K+RmuPcIDNZPHJl
-         bbX/dovrQ+Nd2LNePWgHwFywYARGCk0HSMJM9dIlkgHPsSo4469AXp1dbFc1wCi7pEuc
-         ue1g==
-X-Forwarded-Encrypted: i=1; AJvYcCVQ691p+8v2f4yAqqCrXUO7K9C4HHO7aEmttzA6s9U3Wfrgww06txqqmE1EU+/Ef7l+PtarvTFz7j67@lists.infradead.org, AJvYcCWIWTly8tqSHZtuuigbIm0JiIaKTDCA7FI9OeogmZkcX6XiSzytDDp1VhpsnWPhIlr25eeX2lN1E1R3yCurfMy8@lists.infradead.org, AJvYcCXyUk2vYYzXpbwnMrK27JEuTouPnWQywoFA4kU28RXQ6YfHLF2LiGvkat83IiZt96f6v1aVG8EyHj8LFgA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzzCk7AJFiwLb8ZKL7cz1vjb2Tye6N9EuN8WJmn6Fv0DW0FGk0O
-	+Vv+Q/rJZQkVI8hzdqwg65bwr/xWYGVjdQ01wGrcgQlL0BiDB3b0
-X-Gm-Gg: ASbGnculGIhbVkKhFC71SPQ82ToQlv485nvRaGOlwS4qoOzvPtSM9uK1EjawBjo04Hg
-	2DBuVsRRvvL82+D9sMI0izPl+s5EKPxq4GEQSw68a6Mc7G9RzGQwIekQjkWhtHi//NpQao2JftL
-	RGvk/AgAmQ2vlcn8lnGlWC063jtrg1Nq6skHynG09Ll6e7Rao/4Xs+Amy9AYoJzMjFP+eRnF1dZ
-	F04M2yRDOgw9CKzsjDb5eaKZ8M5+5E8O3tDvImOkFl/ezmdkZ3IRNeQJxlRXpJJDCrq9Zu6RtMu
-	4+9XHdqgAkOAMNJXAMdpp9iiF/jrIqNBGosbYuryQNPx9Zq3lrcxFgWf94DfHRNy1rE=
-X-Google-Smtp-Source: AGHT+IHf4EAn7H3CMgTwZHs2HxQi2OgH2VAHDrFSev5fKHMaDGPeUF2VlnzgRIOgA7Yc1ikIuakyZg==
-X-Received: by 2002:a5d:5f8c:0:b0:38f:3e8d:dd42 with SMTP id ffacd0b85a97d-38f587f3f3emr5580525f8f.53.1739996718008;
-        Wed, 19 Feb 2025 12:25:18 -0800 (PST)
-Received: from jernej-laptop.localnet (86-58-6-171.dynamic.telemach.net. [86.58.6.171])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38f258f0597sm18467209f8f.42.2025.02.19.12.25.16
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 19 Feb 2025 12:25:17 -0800 (PST)
-From: Jernej =?UTF-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- Andras Szemzo <szemzo.andras@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Uwe =?UTF-8?B?S2xlaW5lLUvDtm5pZw==?= <u.kleine-koenig@baylibre.com>,
- Florian Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org,
+	id 1tksuW-0000000FXE3-3UgN;
+	Wed, 19 Feb 2025 22:51:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=CBLCEogiLTx2PTS7BtILZh9Og4OzIj+0Y+joFEKIYq4=; b=m+dF/oRwCmIwDs9a3/gn0ZWjaG
+	by0scE3rRECPq7eEcr+YBVFEDrA6UEl/oC/bfhGt3CleKhMf1SN/UlUKD2Fuc2ghd2CnLGJfe1Z5E
+	ydDkHobvR4LfVUO/hIewM6/8tDwVk1XR6Rk2WmJ55DqxF7Q6faylgVknyfq8JgNnW8CqO6G4Ffo4Q
+	K1MeesZWZHWGPV7eCQalek8p3TZ63+pWYhU+sN6t0TP9Q70VI44BXsMWyDGGVdni6IoJt4AIJ/hDe
+	6Qj5pp+AQ0mY0aqckgZdFIUlP+7p89Bbpc2QuUz4l+l/SJYwjxzL5OOFFLAYyTo3psioRsukZNbBh
+	o1dI0G5g==;
+Received: from i53875bc0.versanet.de ([83.135.91.192] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tksuR-00067C-PW; Wed, 19 Feb 2025 23:51:15 +0100
+From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, quentin.schulz@cherry.de,
+ sebastian.reichel@collabora.com, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
-Subject: Re: [PATCH v2 08/10] phy: allwinner: add v853 usb phy compatible
-Date: Wed, 19 Feb 2025 21:25:15 +0100
-Message-ID: <4604743.8F6SAcFxjW@jernej-laptop>
-In-Reply-To: <20250205125225.1152849-9-szemzo.andras@gmail.com>
-References: <20250205125225.1152849-1-szemzo.andras@gmail.com>
- <20250205125225.1152849-9-szemzo.andras@gmail.com>
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ dse@thaumatec.com, Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: Re: [PATCH v6 2/2] phy: rockchip: Add Samsung MIPI D-/C-PHY driver
+Date: Wed, 19 Feb 2025 23:51:14 +0100
+Message-ID: <2030933.8hb0ThOEGa@diego>
+In-Reply-To: <Z68zdiIl75k2Vv9i@vaman>
+References: <20250213210554.1645755-1-heiko@sntech.de>
+ <20250213210554.1645755-3-heiko@sntech.de> <Z68zdiIl75k2Vv9i@vaman>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250219_122520_941519_007D6BAA 
-X-CRM114-Status: UNSURE (   7.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250219_145120_893584_9E33E9F8 
+X-CRM114-Status: GOOD (  21.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,17 +72,118 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RG5lIHNyZWRhLCA1LiBmZWJydWFyIDIwMjUgb2IgMTM6NTI6MjMgU3JlZG5qZWV2cm9wc2tpIHN0
-YW5kYXJkbmkgxI1hcyBqZSBBbmRyYXMgU3plbXpvIG5hcGlzYWwoYSk6Cj4gVjg1MyBoYXMgYSBk
-dWFsIHJvbGUgVVNCIHBoeSwgc2ltaWxhciB0byBvdGhlciBBbGx3aW5uZXIgZGV2aWNlcywgYnV0
-IHdpdGgKPiBvbmx5IG9uZSBwaHkuIEFkZCBhIGNvbXBhdGlibGUgZm9yIGl0Lgo+IAo+IFNpZ25l
-ZC1vZmYtYnk6IEFuZHJhcyBTemVtem8gPHN6ZW16by5hbmRyYXNAZ21haWwuY29tPgoKQWNrZWQt
-Ynk6IEplcm5laiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BnbWFpbC5jb20+CgpCZXN0IHJlZ2Fy
-ZHMsCkplcm5lagoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+Hi Vinod,
+
+thanks for the review.
+I've dropped all the parts that would've just gotten a "ok, changed" ;-)
+
+Am Freitag, 14. Februar 2025, 13:13:42 MEZ schrieb Vinod Koul:
+> On 13-02-25, 22:05, Heiko Stuebner wrote:
+
+> > +	{ 200,  7,   1,  0, 33,  9,  0, 26,  5,  0, 11},
+> > +	{ 190,  7,   1,  0, 32,  9,  0, 25,  5,  0, 11},
+> > +	{ 180,  6,   1,  0, 32,  8,  0, 25,  5,  0, 10},
+> > +	{ 170,  6,   0,  0, 32,  8,  0, 25,  5,  0, 10},
+> > +	{ 160,  5,   0,  0, 31,  8,  0, 24,  4,  0,  9},
+> > +	{ 150,  5,   0,  0, 31,  8,  0, 24,  5,  0,  9},
+> > +	{ 140,  5,   0,  0, 31,  8,  0, 24,  5,  0,  8},
+> > +	{ 130,  4,   0,  0, 30,  6,  0, 23,  3,  0,  8},
+> > +	{ 120,  4,   0,  0, 30,  6,  0, 23,  3,  0,  7},
+> > +	{ 110,  3,   0,  0, 30,  6,  0, 23,  3,  0,  7},
+> > +	{ 100,  3,   0,  0, 29,  5,  0, 22,  2,  0,  6},
+> > +	{  90,  3,   0,  0, 29,  5,  0, 22,  2,  0,  6},
+> > +	{  80,  2,   0,  0, 28,  5,  0, 22,  2,  0,  5},
+> > +};
+> 
+> any word on where this table came from, maybe worth documenting that
+> part
+
+sadly not.
+
+The table itself came from the vendor-kernel, and I would assume there
+it came from some super-secret additional documentation Rockchip
+got with the IP documentation.
+
+It is sadly not part of the RK3588 manual.
+
+
+> > +
+> > +static void samsung_mipi_dcphy_bias_block_enable(struct samsung_mipi_dcphy *samsung)
+> > +{
+> > +	u32 bias_con2 = 0x3223;
+> 
+> magic value?
+
+Converted over to some more meaningful constants.
+Did the same to bias_con0+1 below that one too.
+
+
+> > +static void samsung_mipi_dphy_lane_disable(struct samsung_mipi_dcphy *samsung)
+> > +{
+> > +	regmap_update_bits(samsung->regmap, DPHY_MC_GNR_CON0, PHY_ENABLE, 0);
+> > +	regmap_update_bits(samsung->regmap, COMBO_MD0_GNR_CON0, PHY_ENABLE, 0);
+> > +	regmap_update_bits(samsung->regmap, COMBO_MD1_GNR_CON0, PHY_ENABLE, 0);
+> > +	regmap_update_bits(samsung->regmap, COMBO_MD2_GNR_CON0, PHY_ENABLE, 0);
+> > +	regmap_update_bits(samsung->regmap, DPHY_MD3_GNR_CON0, PHY_ENABLE, 0);
+> 
+> Is writing to a register (mmio) faster than a switch case for checking
+> lane count and disabling specific lanes?
+
+It might make sense to mimic the lane_enable way of doing things, even if
+just for things looking the same in both functions.
+
+I guess disabling lanes does not really care about minimal speed differences
+a switch/case would cause :-)
+
+> 
+> > +static void samsung_mipi_dcphy_pll_configure(struct samsung_mipi_dcphy *samsung)
+> > +{
+> > +	regmap_update_bits(samsung->regmap, PLL_CON0, S_MASK | P_MASK,
+> > +			   S(samsung->pll.scaler) | P(samsung->pll.prediv));
+> > +
+> > +	if (samsung->pll.dsm < 0) {
+> > +		u16 dsm_tmp;
+> > +
+> > +		/* Using opposite number subtraction to find complement */
+> > +		dsm_tmp = abs(samsung->pll.dsm);
+> > +		dsm_tmp = dsm_tmp - 1;
+> > +		dsm_tmp ^= 0xffff;
+> > +		regmap_write(samsung->regmap, PLL_CON1, dsm_tmp);
+> > +	} else {
+> > +		regmap_write(samsung->regmap, PLL_CON1, samsung->pll.dsm);
+> > +	}
+> > +
+> > +	regmap_update_bits(samsung->regmap, PLL_CON2,
+> > +			   M_MASK, M(samsung->pll.fbdiv));
+> > +
+> > +	if (samsung->pll.ssc_en) {
+> > +		regmap_write(samsung->regmap, PLL_CON3,
+> > +			     MRR(samsung->pll.mrr) | MFR(samsung->pll.mfr));
+> > +		regmap_update_bits(samsung->regmap, PLL_CON4, SSCG_EN, SSCG_EN);
+> > +	}
+> > +
+> > +	regmap_write(samsung->regmap, PLL_CON5, RESET_N_SEL | PLL_ENABLE_SEL);
+> > +	regmap_write(samsung->regmap, PLL_CON7, PLL_LOCK_CNT(0xf000));
+> > +	regmap_write(samsung->regmap, PLL_CON8, PLL_STB_CNT(0xf000));
+> 
+> I guess you are writing to upper nibble, maybe define that, if we can
+
+Nope ... the value is defined as bits [15:0] and both being pll lock and
+stabilization timing control registers. Sadly yet again, their usage detail
+is not documented, the manual even does not supply a unit for the 
+register value :-(
+
+
+Heiko
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
