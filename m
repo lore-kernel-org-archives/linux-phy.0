@@ -4,89 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 269E0C021B0
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Feb 2025 16:15:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F13FC021AA
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Feb 2025 16:34:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PJGFN7QhtixXS6RaJCO/SRr0XfAx1RzsvsqJFYmTbO0=; b=AwRfygzxTbA9hf
-	Nckyw8Y+myrJRwscj60aess/YrMe7Tj31PF+ngt6Yq5eHrb1HBP5NNcyryKNP2Jv1RGt1F5Q0E/gz
-	V6a2wFyTBsycSbHx6BrweDDz5g3R61Ko15NEIftiNjou1bamwKnefrbC/cKBOV3ipChSlmAG9kPgy
-	wtI+OHO9o89dJzyTazeG02xunJfv7VtYSB7NNZ023ekwGf4cF84S0R/0+11bZuwsIgjPuImIXZGPy
-	c9e/rsDjdLlOCWv0neZAbEgbnD65vXMj8G2d59okp9wqz0J1RyPaDwjPTj+0ovZ1I9t3KGut91xNR
-	eOGqxCeycgp/cAOWheaA==;
+	List-Owner; bh=9tfR8IB8mMaX57/p8/BFann08yOE+MNwKGFfv/374vU=; b=i1pHU9FZ5GS+G0
+	XbPavAanL7qYJfEN7lXyC0oV3xckBUE34ANE3NGSttQf3QGmOtHxrEm5dQMwUQGzGp1wMPOpQB+Kb
+	77k812E/klWMRaFJ2CqpATCqpYwA4p6n0OsHaFmJq8wr5QB2TcQoGX3nUgnEHcVzP7H3w9EjkJXzi
+	gz2aOpd9kAJwhwq9Ya1pcAuC4bHr372hA2p7YYulzxD77XE0ucCPAg8v6kIk8UXa3Ykwjyy5yCfin
+	MpZjbZHh/hm9pFCLunecwCBEDI2td3suwBXqMFEGTNFlYWlsqpC+QB03s7lDbhiDdGTnZjwiMtZjU
+	UJz67d2JJzo3T5M4LWTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkmjr-0000000DlDN-3nPP;
-	Wed, 19 Feb 2025 16:15:55 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1tkn1l-0000000DqPm-0EYU;
+	Wed, 19 Feb 2025 16:34:25 +0000
+Received: from mail-vk1-f174.google.com ([209.85.221.174])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkmjp-0000000DlCE-1X7f
+	id 1tkn1i-0000000DqOT-0FLt
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Feb 2025 16:15:54 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-abb9709b5b5so689931566b.2
-        for <linux-phy@lists.infradead.org>; Wed, 19 Feb 2025 08:15:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1739981751; x=1740586551; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=h89HTe/tN0B10+LNl92cdXHG46JoxeywocoM5Bh9DWc=;
-        b=bV/zU6nUyIUnzuVwk3W7CYckOUDVnNzaXazT+qFSMffUv6cA104DTkvvagt1UxTU5q
-         pHAeujFUjV3eSW8/wuIgEdCtylmAWHlXnTIWdojV1+00/sAYN24jzJ1OtAxFdYv5supG
-         lFiC3p0R3aDSaeOuTHlXSzX31HNSbr1i0cV9hwEP/2mjEwUULyj/HRbzj9Sa7Q7i9RS/
-         7L1NVhnob2DZGP2lX8pVlZlbX+rP7UC2mer+2I1ailbHjX2YOUD0QkzY+//BYhjidMxw
-         xpJN+WOFt1slAVKLOBRkeo8EcnOvmOueM7qB80X6X6+8crUq8EU4jrbCQ55V6pZgog/K
-         nS/Q==
+	Wed, 19 Feb 2025 16:34:23 +0000
+Received: by mail-vk1-f174.google.com with SMTP id 71dfb90a1353d-52098b01902so15444e0c.0
+        for <linux-phy@lists.infradead.org>; Wed, 19 Feb 2025 08:34:21 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739981751; x=1740586551;
-        h=content-transfer-encoding:in-reply-to:content-language:from
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=h89HTe/tN0B10+LNl92cdXHG46JoxeywocoM5Bh9DWc=;
-        b=M5ISQSB/sWv0Z6ShTJ8+2PHgaHUJ3R4F3K41Cltyfjo9L+KAdxRdi7yJV+jhe8Wrz3
-         K9woU6PfZOsEdHECgyTQmlf3l+zFlD6KOSvjG44Df9qQ8Sd0KF732GOSIon6wLRKGO6X
-         CDp3qjSYQPNg42ZFnT97RwSaVIU8TD1mhR5Jy+PWSUdfAaSryFXCf9ex2loyJ5InkUM8
-         zD/eBMm2o0OcTotj/ZJt4QG8JiKrzR00xe69BdHnS7MuvtsCWYzYE9yIt4DkhOBtlg2t
-         jT6bg8CYzEKXgxUupz+Pi+ztRz8AQzOWJxgbkOF9SAOgDCgREgpPX7RhUogXoSmYLyC/
-         FEyw==
-X-Forwarded-Encrypted: i=1; AJvYcCVJLxTsmaQJ6x06ZJi74sb5SpcfMSSCYyV4giBi/ByUGhOo6hT7u7wJcY2m8jYmTPjDo2UewMmFvE0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxMZn/79fEVGTS9jo4trcyTYGoojAV+TiLJjUaZWd+7y3mwHIDh
-	+la28COHoeP/yj8tmlgXmqyzrdlXUahKnQinH8j+bRg0nk+xc5rTYX1ytGh4LDTAQkvV12UxsY3
-	K
-X-Gm-Gg: ASbGnctPAuL3U9eRWec6wH4Wrn0KP2kTaBqhRKuZcyDigQ3367VpkCu6ql+SsrPhP3V
-	lDxuKmgWdb4cBTueXGGfGmD+dRWL/ctmIrbZjswWZuv2qoi9l9mindgNhBGabP2Md+jtOwPsCxa
-	uRqr7XWyprDfmrR1astiIhlNLWhRiBNkGPrg5Mb15JbZ5PkbT+PYTDYZSx3eH3iFT+RrWXDkqNL
-	/083EaiHj3kleDMNqVg+Ox66txHywDLly51r4R19yJ31kZCkIeLEcNFKT7RitCw2AbbgwWQvjqN
-	cjvdoCEgHFIe238jHXrYdvs=
-X-Google-Smtp-Source: AGHT+IFiFYqo71zXgrKVNjvpkw6kSC58U3/FltEHaZdAEiHjs1T3I77KF/UZNliKfKxYH2d2UsL+vA==
-X-Received: by 2002:a17:906:3118:b0:ab7:da56:af9f with SMTP id a640c23a62f3a-abb711c3de7mr1770699866b.49.1739981751230;
-        Wed, 19 Feb 2025 08:15:51 -0800 (PST)
-Received: from [192.168.50.4] ([82.78.167.25])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-abb94e4d0adsm687953066b.56.2025.02.19.08.15.50
+        d=1e100.net; s=20230601; t=1739982860; x=1740587660;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=hacM/z7DmOrcgAPzrrWmLbrCAspM7o/nQgW8vja8iQs=;
+        b=T4BPU3jEIMP4mcx97b6HW6V8yvgiXSwvONJTNZNXz0Xso7TCL82Q17wKhu/Ek5X8Wx
+         GLPJXIPHyQctBayiW4L4s4DFxzaSH4+EPVSsvQQxq+XqTSPikjbb3yRrhTCNWHaO8yZ5
+         Yq8Yb6yO7Tr+hOiDlORcsvYQEJfHqqqYoapHWEiBtu+WL62Zl6UsOIjeX0sMVNWIt+J0
+         YliRRuUVwIeovFfV2eiIkyYVQkrfvM0sGJRGSusmZg5r8nQc77978F/0ssPGgKufE3VI
+         Cqs1ZGQzNXRu9vlf3q9w4UM3UE1VqoSlCpjnjjb154qGluxvGMngM3wAys/VhsEDULuP
+         sWmQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU3gxCYL0rh7wkTd02OCRwvQoIytlIVaGt15pndlwkApe0GjmsCWOfoXOE3vLTpr2ZG2ISBFEm4QAo=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywb+igghAEXj9JZdFjjihPfZeIe9Q6N2RLk3RK5Jr3gDKkCVCqr
+	vxhkK+P+YMFAaagxstghaEF+LeejiVOtvtKpa+a4DXQ7Karh8zgCFxxHIlWT
+X-Gm-Gg: ASbGnct/DE7B+EMEMb4/7wOqHz+4JvE5LgEwLJXaQoMgApjBEb22zAq30mU9Bkag08S
+	ir1XPJj6LMh889e6bQuPQ0XlaxBbuVAaKGt99p76fOIyytBjXJumsXRMLwqtf576oObSoi/qVFF
+	+44/ZQApyLWYGIa42LhJQ+vBFSrR3Gv9LIuaI6LFZv+1R814cbVmFXGsRRu5GcYKa1hexEIBBeA
+	8lUQu86veg/rGkrIcsPmE2Uu4dS9iifB21WW57nJeGrQlMwzAVKg7GJ2CDF2ztxqvXYk8OiKDs0
+	mkajctOglwVmHqNUr0dzeHq48ueTCMyWGi96xC/qxi5n0+VSRI192w==
+X-Google-Smtp-Source: AGHT+IFD6HVgJFW3hkfD9oT/3fMPF6zGXRnleMtLlVDxXIszXn3lXRKD7ie8b2D9lk6Wlo+Su70LDQ==
+X-Received: by 2002:a05:6122:2529:b0:518:8753:34b0 with SMTP id 71dfb90a1353d-521c333bd49mr2376461e0c.4.1739982859266;
+        Wed, 19 Feb 2025 08:34:19 -0800 (PST)
+Received: from mail-ua1-f48.google.com (mail-ua1-f48.google.com. [209.85.222.48])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-520a6bded22sm2194245e0c.16.2025.02.19.08.34.18
+        for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Feb 2025 08:15:50 -0800 (PST)
-Message-ID: <b9b14a25-675e-4e3f-afcc-e82d5ed740a7@tuxon.dev>
-Date: Wed, 19 Feb 2025 18:15:49 +0200
+        Wed, 19 Feb 2025 08:34:19 -0800 (PST)
+Received: by mail-ua1-f48.google.com with SMTP id a1e0cc1a2514c-868f322b8dfso14789241.0
+        for <linux-phy@lists.infradead.org>; Wed, 19 Feb 2025 08:34:18 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCUOEVhNuXPDvNUyqgO7/vigNH59lZDiJy7IoJXEiOtn20RhU6rm2xYozwIOoEBCuXIWjGo/KVug6Tc=@lists.infradead.org
+X-Received: by 2002:a05:6102:dc9:b0:4be:6151:dfd8 with SMTP id
+ ada2fe7eead31-4be8454777dmr3305014137.10.1739982858747; Wed, 19 Feb 2025
+ 08:34:18 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFT 0/5] phy: renesas: rcar-gen3-usb2: Fixes for Renesas
- RZ/G3S
-To: yoshihiro.shimoda.uh@renesas.com, vkoul@kernel.org, kishon@kernel.org,
- horms+renesas@verge.net.au, fabrizio.castro@bp.renesas.com, robh@kernel.org
-Cc: linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-References: <20250219160749.1750797-1-claudiu.beznea.uj@bp.renesas.com>
-From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-Content-Language: en-US
-In-Reply-To: <20250219160749.1750797-1-claudiu.beznea.uj@bp.renesas.com>
+References: <20250203185421.3383805-2-robh@kernel.org>
+In-Reply-To: <20250203185421.3383805-2-robh@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 19 Feb 2025 17:34:06 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdW26JDM+BDq8+vyJG2c316ZoF9ODmCfF4KfwJFJe6B7sA@mail.gmail.com>
+X-Gm-Features: AWEUYZkP0St8Copel6sogy2IZLCNjeA2BBkvxODARj1xkKGB-fmyHYIPZ2_fXLo
+Message-ID: <CAMuHMdW26JDM+BDq8+vyJG2c316ZoF9ODmCfF4KfwJFJe6B7sA@mail.gmail.com>
+Subject: Re: [PATCH] phy: can-transceiver: Drop unnecessary "mux-states"
+ property presence check
+To: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol.vincent@wanadoo.fr>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Linux-Renesas <linux-renesas-soc@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250219_081553_407733_77430414 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20250219_083422_096295_04E0CB31 
+X-CRM114-Status: GOOD (  26.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,59 +97,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Adding reference to the missing series (see below).
+Hi Rob,
 
-On 19.02.2025 18:07, Claudiu wrote:
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> 
-> Hi,
-> 
-> Series add fixes for the Renesas USB2 PHY driver identified while
-> working on the Renesas RZ/G3S USB support. These changes are
-> needed for the upcomming RZ/G3S USB support (especially for the
-> power management support).
-> 
-> Series (with [1] on top) was tested on Renesas RZ/G3S with consecutive
-> unbind/bind and data transfer tests before/after the unbind/bind.
-> 
-> The unbind/bind was also tested on the devices with the following
-> device trees but w/o checking the data transfer (as I only had
-> remote access w/o USB devices connected):
-> - r8a7742-iwg21d-q7.dts
-> - r8a7743-iwg20d-q7.dts
-> - r8a7744-iwg20d-q7.dts
-> - r8a7745-iwg22d-sodimm.dts
-> - r8a77470-iwg23s-sbc.dts
-> - r8a774a1-hihope-rzg2m-ex.dts
-> - r8a774b1-hihope-rzg2n-ex.dts
-> - r8a774e1-hihope-rzg2h-ex.dts
-> - r9a07g043u11-smarc.dts
-> - r9a07g044c2-smarc.dts
-> - r9a07g044l2-smarc.dts
-> - r9a07g054l2-smarc.dts
-> - r9a07g043f01-smarc.dts
-> 
-> Please give it a try also on your devices with [1] on top as well.
-> 
-> Thank you,
-> Claudiu Beznea
+On Mon, 3 Feb 2025 at 19:55, Rob Herring (Arm) <robh@kernel.org> wrote:
+> It doesn't matter whether "mux-states" is not present or there is some
+> other issue parsing it causing an error. Drop the presence check and
+> rework the error handling to ignore anything other than deferred probe.
+>
+> Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+> Now a warning in v6.14-rc1, so please apply for 6.14.
+>
+> v2:
+>  - Use brackets on else clause
 
-[1]
-https://lore.kernel.org/all/20250219161239.1751756-1-claudiu.beznea.uj@bp.renesas.com
+Thanks for your patch, which is now commit d02dfd4ceb2e9f34 ("phy:
+can-transceiver: Drop unnecessary "mux-states" property presence check")
+in phy/next (next-20250212 and later).
 
-> 
-> Claudiu Beznea (5):
->   phy: renesas: rcar-gen3-usb2: Fix role detection on unbind/bind
->   phy: renesas: rcar-gen3-usb2: Move IRQ request in probe
->   phy: renesas: rcar-gen3-usb2: Lock around hardware registers and
->     driver data
->   phy: renesas: rcar-gen3-usb2: Assert PLL reset on PHY power off
->   phy: renesas: rcar-gen3-usb2: Set timing registers only once
-> 
->  drivers/phy/renesas/phy-rcar-gen3-usb2.c | 134 +++++++++++++----------
->  1 file changed, 74 insertions(+), 60 deletions(-)
-> 
+I have bisected the following error during boot on the Gray Hawk Single
+and White Hawk development boards:
 
+    can-transceiver-phy can-phy0: /can-phy0: failed to get mux-state (0)
+
+> --- a/drivers/phy/phy-can-transceiver.c
+> +++ b/drivers/phy/phy-can-transceiver.c
+> @@ -113,13 +114,11 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+>         match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+>         drvdata = match->data;
+>
+> -       if (of_property_read_bool(dev->of_node, "mux-states")) {
+> -               struct mux_state *mux_state;
+> -
+> -               mux_state = devm_mux_state_get(dev, NULL);
+> -               if (IS_ERR(mux_state))
+> -                       return dev_err_probe(&pdev->dev, PTR_ERR(mux_state),
+> -                                            "failed to get mux\n");
+> +       mux_state = devm_mux_state_get(dev, NULL);
+
+If the (optional) "mux-states" property is not present, mux_get()
+prints an error message, and returns -ENOENT....
+
+> +       if (IS_ERR(mux_state)) {
+> +               if (PTR_ERR(mux_state) == -EPROBE_DEFER)
+> +                       return PTR_ERR(mux_state);
+
+... which is ignored here, so in the end all is good.
+Still, it is confusing to erroneously print an error message.
+
+> +       } else {
+>                 can_transceiver_phy->mux_state = mux_state;
+>         }
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
