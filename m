@@ -4,93 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7D90C021B1
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Feb 2025 12:07:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CDE1C021B1
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Feb 2025 14:50:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p9d5mCXSg/PwDCXMbnUki7L0QxKXfApu7+qahW0R0sU=; b=YCJOTs5NphSiM4
-	QsQg6u3ezyy1mk6cwN2dZ6csZIPNusv5sF1e8dU1KP6WklA+/6ATq6+OdZRNxfq2H1XEHL5z0FwTv
-	aj2Z6h4tfhqTOyPauu8RbM1OD9wZn+ACpVw21TMkmfBlNIgVnOf9tV7TEiF6mBn+wb+BjIUfjW0al
-	DMBRMM256iWikD7Qcs0AfT0QAXgbmqon+7AkdUFKkAnHNp9NGplIgwbiLGhJx5s3kgYtnBNQOgkxT
-	UYL14BxFIDydIBvBAvpXLxDsrvTnoD+S6LXqjoZ01ogMYVyINLmOHScBy/ris9pB2DgN5jnfTKJAV
-	/1Z+jKvnc0Z/Yk4QfXPA==;
+	List-Owner; bh=WikK3UYWnrKxLQ7c/M4rfYWEe0ZAwQxifP2lsuq4ZA8=; b=b5GZ+t/hqAEOhd
+	SgLAiAdSVFrdoe7qe+nevHRn87FvCfvX+eY8cUtw2pH/8qq7sE/Zd2K/W9DbmnZ70k7/ny3tK6Ym3
+	ubeRZ9FR7UMK5+0631+ZFlYi6MM2b4Quw/6JU0EQC1g8NljtMun3G+rkptXS+rNGXT7/Gvxx5PPW0
+	yUIC//xS4ecepl/omekv171IgGqFN8WR5CV4+CVfuB3uy44LmlR8Uiz632Xg2PrY1ZkfSdttq+WCL
+	0sw2DETBDV8E4Br8A8QVfwj7vqqHTCfAB5UwGy9kYKmUKK4nsdKftC6jiOUsfGa5QfvoFUGlA9OcD
+	eH9/Mla/ZMhHO58GEweg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tl5L4-00000000i0I-1rI6;
-	Thu, 20 Feb 2025 12:07:34 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	id 1tl7sY-00000001PK8-1u0c;
+	Thu, 20 Feb 2025 14:50:18 +0000
+Received: from mail-pl1-f171.google.com ([209.85.214.171])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tl5L1-00000000hzI-40VC
+	id 1tl7oI-00000001OIa-2HTk
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Feb 2025 12:07:33 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-5e050b1491eso3490687a12.0
-        for <linux-phy@lists.infradead.org>; Thu, 20 Feb 2025 04:07:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1740053250; x=1740658050; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=P4HA3a476hov3ntftaoBig8lyt8y4gBvXJgT/JzvNpg=;
-        b=jrbpyHGPdQDwCuMoVjvd0wGJC5UuEie/Mkk3eTMcgU0ljk+euixWHu+HulcPG3LOcU
-         3AHyu3cSOVyKyNAZLMQapcPRCNAI+SUjVPeRhyEruRffR61T4GyCQDqpgigZo/Fje/6h
-         0FKQisa/rrsUmxjBLCK1+u66BrP9b2EGz0pH+nWxJD2FURF3svml4Ll5z5dmslM8AXq1
-         wo75gYJMyqp/8BwzIPiL7nupk2x3XkGGDXEm7BUFbXPV0e5nokubOUe9+VHpeWq2ZxB5
-         RiaXlyBIhuvkIYH0ZEJ+nx+JPKNOzZwKwGvBAluC5NUC6KtUBxuk9FfowbNZpiLnvKRg
-         siOQ==
+	Thu, 20 Feb 2025 14:45:55 +0000
+Received: by mail-pl1-f171.google.com with SMTP id d9443c01a7336-220bfdfb3f4so22235985ad.2
+        for <linux-phy@lists.infradead.org>; Thu, 20 Feb 2025 06:45:53 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740053250; x=1740658050;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=P4HA3a476hov3ntftaoBig8lyt8y4gBvXJgT/JzvNpg=;
-        b=PpTDF2hM6YgInYwGIZu6q9s3TMu0/QIqSQxuHZGeVb7rPKNzMK2K7ozC9z3hGrYqIS
-         gdDxK7+nG9pU6JEpc9ovpSjiD1cs4oFGQdvUIq/zNQGqDofiefaAWqU/xJgXXxCAsl3z
-         T2Uffgzyjp6Fpd8Yof+b0mT3XZwlzx78IYCMTfXK/o2KrmkbJXNAisGXazpEgeDWPUUf
-         nZO4pgsf/K7u7mgebagoUoU/Ubuiz5H++Si0e62xo7ZZkWEqWJMnQG8Y2q/XoYTqBF5v
-         zDfjsuo1WrxjQ07PKtX8NoQuMutzMUueyPZcCYIJCdxrCdxgozNsPAs88EEmmCRR/xEC
-         qWNA==
-X-Forwarded-Encrypted: i=1; AJvYcCVgd3Y+l2tTuNUPE31OJpjB6XYq8E9o2g3vrtrzzVqsGl1ac5pSE3qpFM9e+K2R004kT+y6y9hMHdc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwcteET1szhoXF9qqgZNfwinURlZf3LyszkITAreh66Jv5CiXOT
-	NjZ78ucPaVLsCHCqLB3kRFhompEpcRPNsWxMqhQxM+7qOqcfKoT6Y3vAatv+RByqUUpqqQTHdVC
-	8v81ZzHMmJGH8FermYemX6LJtsgQ=
-X-Gm-Gg: ASbGncvvW2P1LmF6ile++uKAyPklapy0451FNpkdJIflxT6AZ/9xNBFxH7tb5NHJfGf
-	V9UlhvLp2zuItOZ2teSWUny/hjiwQhbhT2BwIOFmvij3SrR9pUIsMfmH1hYrb78c/3PhYaIOIhC
-	s=
-X-Google-Smtp-Source: AGHT+IF38ffD8uTfeWoyKkzdki0w4CBfO4Q6FCUj5jsP8brgHruKzyD5d/xowX78B7DkvMV9AG/yfe03E47wCYQDXFQ=
-X-Received: by 2002:a17:906:3151:b0:abb:b24d:c63e with SMTP id
- a640c23a62f3a-abbede0d6ecmr282002266b.16.1740053249591; Thu, 20 Feb 2025
- 04:07:29 -0800 (PST)
+        d=1e100.net; s=20230601; t=1740062753; x=1740667553;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=AyO23lYkNvoQQUlbolJXF4K3o41Wq4pRTt+X6bZAIV0=;
+        b=OlUymPsxLMp0tyvRWTsVSzFQjBHg5VC4VbyEUtP1vpdtNKO2rUDdNvPfxijBrMZSHS
+         DHNRCHUrkn65uuvl5k7YUROFIjscjHOTOoDeZZ0uhFsr+Xfr/nelBHC90FQPi6cdPP2L
+         n63CJpDQqMFUgbFLG5/8dJUH5p7rBc2XWUmxKM53Tk3LRLanjuvNjyOV7m72rKXy0n3t
+         CVnYR5hP9ez8a7WAOL0BIUhJoKYBMD8BTjIdPc5sRFvxAXsR9oc5eVn0vC7vtscx8EMM
+         whSBFWWNeHOw6p9FKFa8tUP6Do3MX8Q6EF0ugbRPgCDCBcgb96BAyHd35Cy4jPl3aNjP
+         BqIQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXpXS6BVAPwgwQndWJopeiKMR8oZhuM3ld5KRwq8rzENyZ64Suf8kVq4GkaEcdZ2ENk9ldF/gn1n6I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxnIlwjOrsitppexF5LkKncFhUSd9kiUHeD4eC8MjeUpn18L332
+	9hM1qJ3/n73taVJyjymYdifMXcI7SvuJ3thsPjfe/I+1ekBjavGi
+X-Gm-Gg: ASbGncu192wYbbWS0p+y0PM6KdEHBTP5KZmm9cejNP81HODkji6or+sl5EcNKyFgHEs
+	ZvbSsyPvpl9Xh1I93Sz4Ct6dvTbLIV6hc2jZilIs+V+h+Iw8DZ68a5AW+P4pFBrJCRO1kMLWZNr
+	J7IDyAWggyDXfHe88My7QJzLl18yjUfZIQ9RLtsxd2ZvtxTi4TjP0BQCKnbmEIZTlDxua90JQ2H
+	d3Ch9/S9jA9rM7sCDRlaLwQaKuPSiGr9KCKTMOcU/0ZTsjjbsXqtjTpzBHGUDjD9MYQKuFcZZX5
+	ICIg+idwjWdF52y8ORbhn3kBPSnd1bjOSLjQWl8xiZq22h5o8A==
+X-Google-Smtp-Source: AGHT+IEBKbHBfq3DOu9Wgjnn57HwJpQn3LwWmH/iOR4vVbY0PS1ZRcs7M2GQp8hnxm1C2wpw09bftw==
+X-Received: by 2002:a17:902:d48a:b0:220:d1c3:24d1 with SMTP id d9443c01a7336-221711b7524mr131278365ad.46.1740062753298;
+        Thu, 20 Feb 2025 06:45:53 -0800 (PST)
+Received: from localhost (fpd11144dd.ap.nuro.jp. [209.17.68.221])
+        by smtp.gmail.com with UTF8SMTPSA id d9443c01a7336-220d545d448sm122367545ad.150.2025.02.20.06.45.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 20 Feb 2025 06:45:52 -0800 (PST)
+Date: Thu, 20 Feb 2025 23:45:51 +0900
+From: Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>
+To: Varadarajan Narayanan <quic_varada@quicinc.com>
+Cc: bhelgaas@google.com, lpieralisi@kernel.org,
+	manivannan.sadhasivam@linaro.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+	p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
+	dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
+	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Subject: Re: [PATCH v11 0/7] Add PCIe support for Qualcomm IPQ5332
+Message-ID: <20250220144551.GB1777078@rocinante>
+References: <20250220094251.230936-1-quic_varada@quicinc.com>
 MIME-Version: 1.0
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <20250210-gpio-set-array-helper-v3-5-d6a673674da8@baylibre.com> <20250220101742.GR1615191@kernel.org>
-In-Reply-To: <20250220101742.GR1615191@kernel.org>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Thu, 20 Feb 2025 14:06:53 +0200
-X-Gm-Features: AWEUYZkVC_t70oKiz24rwP9NDoPkcZvzDwGyAQ3-jjaWOtmoZFsuzE5rifn5L5A
-Message-ID: <CAHp75Vch7QKyT8Fbya3u=YrPR8z-2-mbWXjHyOwZ-fqcBjjm0A@mail.gmail.com>
-Subject: Re: [PATCH v3 05/15] bus: ts-nbus: use bitmap_get_value8()
-To: Simon Horman <horms@kernel.org>
-Cc: David Lechner <dlechner@baylibre.com>, Linus Walleij <linus.walleij@linaro.org>, 
-	Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, 
-	Geert Uytterhoeven <geert@linux-m68k.org>, Lars-Peter Clausen <lars@metafoo.de>, 
-	Michael Hennerich <Michael.Hennerich@analog.com>, Jonathan Cameron <jic23@kernel.org>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?B?TnVubyBTw6E=?= <nuno.sa@analog.com>, 
-	Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
-	Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, linux-gpio@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, netdev@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-sound@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <20250220094251.230936-1-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250220_040731_991578_FC96BE60 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20250220_064554_579923_F12738F2 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,25 +88,22 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBGZWIgMjAsIDIwMjUgYXQgMTI6MTfigK9QTSBTaW1vbiBIb3JtYW4gPGhvcm1zQGtl
-cm5lbC5vcmc+IHdyb3RlOgo+IE9uIE1vbiwgRmViIDEwLCAyMDI1IGF0IDA0OjMzOjMxUE0gLTA2
-MDAsIERhdmlkIExlY2huZXIgd3JvdGU6CgouLi4KCj4gQnV0IHdoZW4gY29tcGlsaW5nIHdpdGgg
-R0NDIDE0LjIuMCBJIHNlZSB3YXJuaW5ncyB0aGF0IHZhbHVlcwo+IGlzIHVzZWQgdW5pbml0aWFs
-aXNlZCAtIGJpdG1hcF9zZXRfdmFsdWU4KCkgYXBwZWFycyB0byByZWx5IG9uCj4gaXQgYmVpbmcg
-c28uCgo+IEluIGZpbGUgaW5jbHVkZWQgZnJvbSBkcml2ZXJzL2J1cy90cy1uYnVzLmM6MTM6Cj4g
-SW4gZnVuY3Rpb24g4oCYYml0bWFwX3dyaXRl4oCZLAo+ICAgICBpbmxpbmVkIGZyb20g4oCYdHNf
-bmJ1c19yZXNldF9idXPigJkgYXQgZHJpdmVycy9idXMvdHMtbmJ1cy5jOjExMToyOgo+IC4vaW5j
-bHVkZS9saW51eC9iaXRtYXAuaDo4MTg6MTI6IGVycm9yOiDigJh2YWx1ZXPigJkgaXMgdXNlZCB1
-bmluaXRpYWxpemVkIFstV2Vycm9yPXVuaW5pdGlhbGl6ZWRdCj4gICA4MTggfCAgICAgICAgIG1h
-cFtpbmRleF0gJj0gKGZpdCA/ICh+KG1hc2sgPDwgb2Zmc2V0KSkgOiB+QklUTUFQX0ZJUlNUX1dP
-UkRfTUFTSyhzdGFydCkpOwo+ICAgICAgIHwgICAgICAgICB+fn5efn5+fn5+CgpIZWgsIHRoZSBj
-b21waWxlciBpcyBkdW1iLiBFdmVuIGlmIGl0J3Mgbm90IGluaXRpYWxpc2VkIHdlIGRvIG5vdCBj
-YXJlLgoKLi4uCgpXb25kZXJpbmcgaWYgdGhlIGJpdG1hcF93cml0ZSgpIHdpbGwgd29yayBiZXR0
-ZXIuLi4KCi0tIApXaXRoIEJlc3QgUmVnYXJkcywKQW5keSBTaGV2Y2hlbmtvCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hello,
+
+> Patch series adds support for enabling the PCIe controller and
+> UNIPHY found on Qualcomm IPQ5332 platform. PCIe0 is Gen3 X1 and
+> PCIe1 is Gen3 X2 are added.
+
+Applied to dt-bindings, thank you!
+
+	Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
