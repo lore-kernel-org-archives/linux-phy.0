@@ -4,102 +4,157 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C1B0C021B2
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Feb 2025 20:55:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC6DCC021B2
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Feb 2025 02:08:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QnxSmlXwVYvP/AZmgMTrLcUCeVXWdXgj13WUag5rbIc=; b=PcG08lGtdl29Ws
-	8hCBQ5NGTaIUL4CeWeV/N7V/T68AmJZaYsbuYzgcrDKE56N7XsRJECtN3R3mj+Z3rgAzQvpkruJ7T
-	ui1eSdizI44L9i3lPUGmPK0SdJBQdy/Lgm0XBRzIdOYMYySnKGJ7AcBzrovnUPQ/9O5+6KckjebMs
-	6HhEe+EtdX1rwUb/aUBOy55d0gfXN6Uh4oI2wyfKb+YzZSGMRBeXoFzc/ua0OfLEO+Hnh76JgperF
-	//jnTcmAaGiSo4khwdw7f5t1qZeqaMlfnfkhxqIcCOa+FkVhH5/+A17FGsSciJIPcWfeFUzLe9KCe
-	MnNY1iLEEf5LsQ9z3J5w==;
+	List-Owner; bh=Y0FXmxPooy1TeJ4eePrXjq4IrzIZtqPiGTllX7VLRy4=; b=ecS9UC6siFyqJ9
+	dH6nqR8hWRV/k161OZMf6f9WzHHWtc2T8Zin39jFj+G9gmwt/pthvMDGJbEbAm9O3kQMYyi/DJ10r
+	kCPIN808HyBeKub70lZVRMECMYiUwFfy/VJ8CVWSidtjUttD9jbOJAyA6jgfUdB/OwoMhbIXYyAzW
+	+vsM+mMid2HS/W5/7ShK9v9qmX/IaqgMJPypf2TKFD4UOYhgkHwCMWzeJKUbiIWsvY19p7DE24oj5
+	YzyE9xKr514IaFrltGoxkyN+0GWSfzu6vFeUVqMCEi9QKiJ8nigW8Hm1ut0qqAsMVt5/cg7Mrl0v4
+	4Ak8omQ7TY6TS7wtHRTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlDZU-00000002rkm-0Uvv;
-	Thu, 20 Feb 2025 20:55:00 +0000
-Received: from mail-ot1-x32b.google.com ([2607:f8b0:4864:20::32b])
+	id 1tlISQ-00000003nqq-47wA;
+	Fri, 21 Feb 2025 02:08:02 +0000
+Received: from mail-japaneastazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c405::1] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlDZQ-00000002rjs-2Qtz
+	id 1tlISN-00000003npo-1WpW
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Feb 2025 20:54:58 +0000
-Received: by mail-ot1-x32b.google.com with SMTP id 46e09a7af769-7272dae0604so720982a34.1
-        for <linux-phy@lists.infradead.org>; Thu, 20 Feb 2025 12:54:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1740084895; x=1740689695; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=lmfqNhipvTzpaPHouDLPUPBFfenRqD8FhVYBJFNu3b0=;
-        b=sZMDATr6nLNXH7W+5TG/hw8PE0G+MHehXXMA7yidZnBbe65tS1WBlrXs3QxBBep7K6
-         aNKcsizsPhICCT5khrG3x2F4lyQVpP1bUBFfCWa0PHTBw3b2VROKYGnmb1VzwAb68yfe
-         df1QqzFBVLS2U+NvD93pBJX47rAOGf5m90YZb/0SpRAToXtPZ5mJEj7f4Z5E+VidjzKq
-         aUOY3tU0DFpaqjQldSE7MydP+s2CFrmhTKrzPMdFJGCNXcBuZQPGqHv91ivDgNY5vBIb
-         UEyqergHFd/c7ka3A89pLIRbLBkNwT27P5PGBPIMV+KJOEESO7TPuwyYjktwv9nxZhJ3
-         ZqRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740084895; x=1740689695;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=lmfqNhipvTzpaPHouDLPUPBFfenRqD8FhVYBJFNu3b0=;
-        b=TTO9BhhwaiyuScIa4FCk2DyV4hjwhF5Lzwm08aqDZXLk8A9vxeVZ2NJxQtnnjQnSWA
-         DFNgd3BMMBfMnEtFogOVuSlZ+B8tbvr0sush6phU++wwLDD7LGILnxo87exJqlyVqj1E
-         nJeSJS408IEpiESpBZ+fsCooxfkK13Mg6FGugz7nYeP0wmJjTNhyJX8gR4b5Fco5jrXj
-         Cg5Aed9gAPlQ+u16L+6/EDvp1Sf8SRl5om0mcV6gAAZMRN61K8KeWb1mowSwoe5BIyQv
-         Hf4eS2hvOdGVY89DjF6ugJ1rSFNZuSgBW/V76bPI6346QdENsFOHR7XRb6ccbIFPyCPU
-         FwoA==
-X-Forwarded-Encrypted: i=1; AJvYcCWzoupHePWqXwnMQMLPTTkm5CjDs7tPxuDUf0jbI/Vfblh9+JJO7dv4F9lvO0jqoALrfvqJ7Fmc8Mo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwCzhdCGKJ1P9FABqp4QoqJU9OzHSaC4SrMuyB0Lez1c7txySU/
-	7z89sb95mmUQS85PBJ9uJIsdw+0JfseJmMT1fYj0hRtvKmGH5C2TUkPUoOa+KQ4=
-X-Gm-Gg: ASbGnctDuTED5y7F42kKvFdutbhv47HKuViIKBu5Zk7V/sCngWFRJcEZqpzpYr1f0Yr
-	/e5o/qH6WYomZiJexufs0R98SDexGtAWuQ0AOEGPs9z+8bXfHWMdl1LFSay7uESK/v5JK4nOpHt
-	KPqlyZBCqn0oQrtD2XpOjIoKozI+Gswa2j2P2y7PJ9Ouuf4FCSMsmUE3z24RlfYiwFfi2oJCGsD
-	akVZXFpLfwp/hQ45mDfvecIVElBuWiUURIoGsZff1XyZ3j5qj3zDKN92nZe8RkSqXu4sXyGE2Ex
-	fEnAryhYAVCy7UiqjWJpzccv8Z9RnONYJaSrOi6N9AODORSDH1fx
-X-Google-Smtp-Source: AGHT+IF3mi4w+ioATe/neRX31NhU+G5fVnUO+U3AY+NTTkR/32/joj3J25iUisGaUZnzV5dytcgeCw==
-X-Received: by 2002:a05:6830:3817:b0:727:4439:2079 with SMTP id 46e09a7af769-7274c563e6dmr324973a34.17.1740084895336;
-        Thu, 20 Feb 2025 12:54:55 -0800 (PST)
-Received: from [192.168.0.142] (ip98-183-112-25.ok.ok.cox.net. [98.183.112.25])
-        by smtp.gmail.com with ESMTPSA id 46e09a7af769-7272a3751e0sm2223640a34.58.2025.02.20.12.54.54
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 20 Feb 2025 12:54:54 -0800 (PST)
-Message-ID: <4052fd7b-dd8c-4a5a-8f82-dd515de14d20@baylibre.com>
-Date: Thu, 20 Feb 2025 14:54:53 -0600
+	Fri, 21 Feb 2025 02:08:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=VgDWLMVJj4BC5vQNL6a/bn7dRbQE3oy6ixZvOYqB5u2jIqQTWt7XUqobFg6G3VSd0ab4NLkdikP9VMzxjL97hfKKJ/Ma8RHIy6if/1ZVNO7s8IlNjCj8oNoradXuwULXxCV6Du4KHDNKhX+CovcKm+QHM4EEXU6+VRJjPzkglsuIzMvIjGRyrMzb2eosnki1McYcnB+JdtzkgSQ99e3kA94Nc+FF4c8nQilSVYBk3cWnv2Aq6lpdrqTs4lomgA0sTtAzPhsOe62Zb4LSrhcoUdXgG2hnbAg/39UmdYKLgVz7GJY54yBt4DgcoFKQWZz/suafUtlP6oeeX4BIlBpZfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=hNFq/8w8bvsIeBuO4IFB8YkVLXpJmjcJk+gofObT5so=;
+ b=BOf6haN3Xfn1cmRhrP8rEmqM+khGnYuW/uRYPqNlaSfKJ/XpGZJD7FvNVwOfN5T4vegnEoNJOKT4ESZwohCPER6VWZ/qtwV4umOjX9mBSWhBuaQ9D5YJn7rM/vHWxv9fHUChiIecoVV/3cgliQtA2kgzfriMyc83BPuS2ekmVHedo9ft0s2EE2H0gTMyJZRDeiC+MTebOTTud4RZ3aYCPzIP6fQi9OH96Z/yR2+xx+u8Yo6lmh9TVV6uQXHNi3GKvMk0wYY30/cSU1T2bL+qBTIX1s6tPUQjlT3USD/F21inIDjA6xd0wHNHaxgyFPcVDKF/l5SlrKIL5AYgGslT1w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hNFq/8w8bvsIeBuO4IFB8YkVLXpJmjcJk+gofObT5so=;
+ b=MehBo5ciyTUUtuEM+9fsCl8FHhNq55lV92ksH1k5YlPpzQDUzkWr79Izzgi8/ptBLLkCjojVpz0bC6yQqbiJvi20hHykYKkGev6dStnq8SdyDadjJZuYWgQH/8m53iPGJEB5tnlRDOYM9s7E104SObpLcVmgSGAg4CZC1DF+kYc=
+Received: from TYCPR01MB11040.jpnprd01.prod.outlook.com (2603:1096:400:3a7::6)
+ by OSZPR01MB8482.jpnprd01.prod.outlook.com (2603:1096:604:183::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8466.16; Fri, 21 Feb
+ 2025 02:07:12 +0000
+Received: from TYCPR01MB11040.jpnprd01.prod.outlook.com
+ ([fe80::b183:a30f:c95f:a155]) by TYCPR01MB11040.jpnprd01.prod.outlook.com
+ ([fe80::b183:a30f:c95f:a155%5]) with mapi id 15.20.8466.015; Fri, 21 Feb 2025
+ 02:07:12 +0000
+From: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+To: Claudiu.Beznea <claudiu.beznea@tuxon.dev>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "kishon@kernel.org" <kishon@kernel.org>,
+	"horms+renesas@verge.net.au" <horms+renesas@verge.net.au>,
+	"fabrizio.castro@bp.renesas.com" <fabrizio.castro@bp.renesas.com>,
+	"robh@kernel.org" <robh@kernel.org>
+CC: Claudiu.Beznea <claudiu.beznea@tuxon.dev>,
+	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Claudiu Beznea
+	<claudiu.beznea.uj@bp.renesas.com>
+Subject: RE: [PATCH RFT 0/5] phy: renesas: rcar-gen3-usb2: Fixes for Renesas
+ RZ/G3S
+Thread-Topic: [PATCH RFT 0/5] phy: renesas: rcar-gen3-usb2: Fixes for Renesas
+ RZ/G3S
+Thread-Index: AQHbguh0j0PowZhXfkuEt0vrIqIZj7NRBBUA
+Date: Fri, 21 Feb 2025 02:07:12 +0000
+Message-ID: <TYCPR01MB1104004DC2C272562CF03ED28D8C72@TYCPR01MB11040.jpnprd01.prod.outlook.com>
+References: <20250219160749.1750797-1-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20250219160749.1750797-1-claudiu.beznea.uj@bp.renesas.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TYCPR01MB11040:EE_|OSZPR01MB8482:EE_
+x-ms-office365-filtering-correlation-id: 30cf55ab-68b0-4f37-b7c9-08dd521c746d
+x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|1800799024|366016|10070799003|38070700018;
+x-microsoft-antispam-message-info: =?us-ascii?Q?8vEPvoqnTycyVNxUiqzaR4LpEkE+aVaz3+T3eQnrJMhsturWlMOwlC9NNKDo?=
+ =?us-ascii?Q?U5150pu4piSXmKhayd7inKS7t6JZ58LTNcHd70SmT51eL1rxn5yOKYibHFEX?=
+ =?us-ascii?Q?cVbzmSAf3BqMQwclJnbHe6QVG8J8dRPKfQzkjXJtynj63fYi5/LKhopzjGT+?=
+ =?us-ascii?Q?e+28GAPd1S1S2A/tEzpeMswxdRyDFMfrZ4DGiqYXcntRP6Qqm7P68txBEkSJ?=
+ =?us-ascii?Q?ZOtp4IjScFGvKI9o9BnBDlotVLWDrXXIjzwqE1oDoU1esp5caA1kc9YRMmQS?=
+ =?us-ascii?Q?CCgNRZVW6Rudnp8OKqQSFIpq2Zgy3ZpeKAc3mBriVc6k/vpzFqzAe9rXJxlZ?=
+ =?us-ascii?Q?tIROWzUk0vHPpoTVOA/7Dd+ucKYjPeIm2O6ULVoDn6Nsro8xY7PRejn7hNYT?=
+ =?us-ascii?Q?669d6itGIa/ZA6pHWdAyxke+q5qlJ6+XIltD1k60n6Y6fmxs6zGBnMNZ7a7l?=
+ =?us-ascii?Q?9+gmGjbrD7JFdp6uxrCTMsVZt4IEFzKcqN//nxKnMERYLFA3eCp3dzaeoye/?=
+ =?us-ascii?Q?EhHWoCnuxVsu0X/OAkO+IJfwgnxuwxuz548x0R+dRVn7RLzWWFSmPkqXKbUv?=
+ =?us-ascii?Q?KtRJB+3S0Ozu5oVbgLiujEoFF2J7RQnYxl1NwLA9y+GbdhtUsT2Lt6oC78xR?=
+ =?us-ascii?Q?yHXJaxMV0GRH+SwDMKw9RGerCsrQzoNi+Ay4dJI8coBntJ3bbyWwMRWX1FZ3?=
+ =?us-ascii?Q?T/J5PmfZGqJg2ja+PQAxSjN5Rp6AH1d2MCmfDz8U+558a/OkQcCkpqEub0sf?=
+ =?us-ascii?Q?NJr7Dk/ZnqG6/GyUrZFm+ckcsDdbHnZ8aRZp5zysOnGAXrBmrafGLqUbnoBE?=
+ =?us-ascii?Q?qYtXEGRevctDzJnb6/RcT7Zlpmd1+aETIlfy8WDOXX/AAkvh6xD5SGSX8ois?=
+ =?us-ascii?Q?GEbZ+hzj9fspKDdP2V3gqtkyUAwM32B6NCdTwkqrqFqTHoJ2uSr7UFjrpVHA?=
+ =?us-ascii?Q?JArDOtLtx9Ou/ys1dUaUte7FOxNwIf166KP0u03Wh7dOrRmLGpLQuI1x88Dj?=
+ =?us-ascii?Q?rwzV3+JNQXaQNZRSJkUBYyVT3glDh5Oe9Gv+fbEkRacUuKtLMmdLdxN17MDj?=
+ =?us-ascii?Q?4sJBHDZIu+uvwGPh+ganD5HJiuIElpF0nkveKM0ieP/DrH1zr/UtW77cmA9G?=
+ =?us-ascii?Q?PoxUB/Wz18uQA5wSBm+5SgJq5El0DMhkZsh179eGGrOlkkntPaWoOLsfkbRk?=
+ =?us-ascii?Q?oei1u/k4z2lNdATUgfG548g6//T/BxTQV67TalyLiBRY5jLQZC0pHOlk38P+?=
+ =?us-ascii?Q?RWecmKOTomRlbB92fLjNrL0dfAeN3urgvUFCEZQFuGiQFNnqEgJbiyNQeMMr?=
+ =?us-ascii?Q?i3eICAjg+lMSPDjcBDii7iYhV37ZjaJwfFwOZcq9jMgEqyHH7OpSK9+tQbNe?=
+ =?us-ascii?Q?DCo8PmlLHwL0bSHipwp0f2uGrQBq/WrZhZDMbuq4vqBkVkiNWai/EIhvNCTB?=
+ =?us-ascii?Q?/e9s4WEl1WBzfRxMQVQPttgxN6FGdI6y?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYCPR01MB11040.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(10070799003)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?WbAT4JE3sbE1t6COFNNFli4g9Bh3ct7blzpj+WACy1ZkpqY5BpWRso89MpN+?=
+ =?us-ascii?Q?/qyAwJ7ls+MtuGDammqTO5d5id1q+12uVIaiZQU+N0m9+e7lojeEomf/y5rx?=
+ =?us-ascii?Q?/5N15/EaTQMMjpgGd84ZQ7uvhgoorUVO4n/1JP5lLUDVBuRMN003NHJuKdwO?=
+ =?us-ascii?Q?GABVHEf421CAUM9qFw38L5S8aHgSFPwZhNAfr2Co0u8zdP6215IjFCnl8yVP?=
+ =?us-ascii?Q?t2NuYkQMbJtu+hRgdZYA3qGsNnYYQigdf04O+qD0hUbZebhmrPTkxKBS0S73?=
+ =?us-ascii?Q?R2BpQBsHbg0sQ40gaaKOG4Mq9x0YqGJKj//uJjZCztPNUaiamotHHrZOlA9R?=
+ =?us-ascii?Q?lMGMLP/poH8UpfkuDPhofVgM0/w0F9FXW7e0iET/uFdcoSB78uLHnGZYrh1N?=
+ =?us-ascii?Q?WShsUElF0qGSmsUINb4zYSWTMIzThkkAwfZvDiRyWkUhPLNjMdsPGPKBSkhc?=
+ =?us-ascii?Q?CuKwbJ7X4rkhS4LhQk9WJ1GT6z+2+5eRSQgavVhDiu3tJdVGxRLA91Y4W/xW?=
+ =?us-ascii?Q?/SuHAZeaxRZwzehyehk2uPKwd9WsywMcw100GvDowth5YNCDV/DaTUKOzISz?=
+ =?us-ascii?Q?vXPWAto5UBPAhWQvE4aJmKviPbEVQJtg2RxKEtmDII3BTKQnV1l0eIuwIdwZ?=
+ =?us-ascii?Q?emGDcp414Ov27mMFT8FoigYDNFOpw3Nzl9jeI7kuyUJ2qln0MdMVRIH1HlH1?=
+ =?us-ascii?Q?0a5pcDlixstZWk/FlslLTbjqG+KutS3L6wgDaBZJkg7buZTJrmDmQK9jp1lA?=
+ =?us-ascii?Q?EeU49tpH6Z3iHE0WIJ0pM9sjfEBWaXbKXbiRHRlKI1DdS/tBUh6WCcTzUwX0?=
+ =?us-ascii?Q?IguS57Q3/yJ7MXhVubIO6GBwGoo8lQ8DXFJ8eEQhzH/YzAIvqY4H046K2MFR?=
+ =?us-ascii?Q?Aon/Wm2ODIz+GkU6RsSLeBVFGy3wwM/IYfsx9Pl1+hnBwrsEN6L7+UuKEDjA?=
+ =?us-ascii?Q?3ed49dLwnOSOL2oannoBqxe4NzKe2dYIlYMm9g7pkUwvxOQYcGeI0nsP9c3j?=
+ =?us-ascii?Q?Eay/ZnlwOww4nLN8YhD9J6MpCbOxAn6t7uOwYFqQ08/Vc48l3RCJfME9EehB?=
+ =?us-ascii?Q?sfPZZPFWyS4OY4wYmuTMS1jiWW+rY5s2ua59zm6iMK5KeGiYEfBHQt5jL4Cx?=
+ =?us-ascii?Q?f59iLc+7/M3qi2KxqBlb5hE7LV2C7au/dCrPsUyde55oLTxcBo5z9+gvgBtb?=
+ =?us-ascii?Q?8RguxSPsJKu9kG96GPolgmG0Bg6tzqoKTrBZCC4Y2h61WywvJLOpuGeT+eH+?=
+ =?us-ascii?Q?/c1Y8YfpRPAt7GiL5jshJr+nwiUDnyKa+UOim46Mr501re5IiHpYqHSkE7MB?=
+ =?us-ascii?Q?7KmCvEux1oFtAnNiKZwDx58Z8eQSmMSYSRnGmIQCi535uzE1kUdGyPEUVbIV?=
+ =?us-ascii?Q?ZyNbgIhZ+qMe/eGJKdJ5YLHHf+h4wAUueMzZY2yhTORdu36fBdwLd93bqNFm?=
+ =?us-ascii?Q?blXBfFp02/09joscuW2x5Tg49UYZ5Czh5Ptsyh8qM42GO+HCRglEAzagMCop?=
+ =?us-ascii?Q?FDx7DqQV99ISyWlu9xFR8OhMiLlsmAvEhP9i7//nk2OKKO1FXawzpdk9xagO?=
+ =?us-ascii?Q?Gkh6JpPt5qdovsNs83wgjd5vyRYPeEk3YKjGh+4Xy4YZMPyQhW+6XuXQRcvt?=
+ =?us-ascii?Q?qVJtpwF16HzpT7tfC6nrFlzw2f6c+alsnajMfbMyfWclMRgdMJbe4HRD9D8a?=
+ =?us-ascii?Q?mYIacA=3D=3D?=
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 10/15] iio: resolver: ad2s1210: use bitmap_write
-To: Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Michael Hennerich <Michael.Hennerich@analog.com>,
- Jonathan Cameron <jic23@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Peter Rosin <peda@axentia.se>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, =?UTF-8?Q?Nuno_S=C3=A1?=
- <nuno.sa@analog.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-sound@vger.kernel.org
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
- <20250210-gpio-set-array-helper-v3-10-d6a673674da8@baylibre.com>
-Content-Language: en-US
-From: David Lechner <dlechner@baylibre.com>
-In-Reply-To: <20250210-gpio-set-array-helper-v3-10-d6a673674da8@baylibre.com>
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TYCPR01MB11040.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 30cf55ab-68b0-4f37-b7c9-08dd521c746d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Feb 2025 02:07:12.1563
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: BsQkKXD3oSQvbRwzQhw7I+DZnNnNt1jndC/KzT1uvKV+4iXvdQBZKfQ+ygvf2+fAYkzL1KkTosivdI7PY0+U81no5WMozkzCPP8RO9yu5KNDS4dBE3qbEzLJdY6+/ZDj
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSZPR01MB8482
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250220_125456_793135_8E3B4742 
-X-CRM114-Status: GOOD (  22.95  )
+X-CRM114-CacheID: sfid-20250220_180759_398700_86EC37C3 
+X-CRM114-Status: GOOD (  15.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,84 +171,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/10/25 4:33 PM, David Lechner wrote:
-> Replace bitmap array access with bitmap_write.
+Hello Claudiu-san,
+
+> From: Claudiu, Sent: Thursday, February 20, 2025 1:08 AM
 > 
-> Accessing the bitmap array directly is not recommended and now there is
-> a helper function that can be used.
+> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 > 
-> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> Signed-off-by: David Lechner <dlechner@baylibre.com>
-> ---
->  drivers/iio/resolver/ad2s1210.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
+> Hi,
 > 
-> diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
-> index 7f18df790157f1e411fb70de193a49f0677c999f..04879e6d538bce664469c5f6759d8b1cedea16e9 100644
-> --- a/drivers/iio/resolver/ad2s1210.c
-> +++ b/drivers/iio/resolver/ad2s1210.c
-> @@ -46,6 +46,7 @@
->   */
->  
->  #include <linux/bitfield.h>
-> +#include <linux/bitmap.h>
->  #include <linux/bits.h>
->  #include <linux/cleanup.h>
->  #include <linux/clk.h>
-> @@ -180,7 +181,7 @@ static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
->  	if (!gpios)
->  		return mode == st->fixed_mode ? 0 : -EOPNOTSUPP;
->  
-> -	bitmap[0] = mode;
-> +	bitmap_write(bitmap, mode, 0, 2);
->  
->  	return gpiod_multi_set_value_cansleep(gpios, bitmap);
->  }
-> @@ -1470,7 +1471,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
->  			return dev_err_probe(dev, -EINVAL,
->  				      "requires exactly 2 resolution-gpios\n");
->  
-> -		bitmap[0] = st->resolution;
-> +		bitmap_write(bitmap, st->resolution, 0, 2);
->  
->  		ret = gpiod_multi_set_value_cansleep(resolution_gpios, bitmap);
->  		if (ret < 0)
+> Series add fixes for the Renesas USB2 PHY driver identified while
+> working on the Renesas RZ/G3S USB support. These changes are
+> needed for the upcomming RZ/G3S USB support (especially for the
+> power management support).
 > 
+> Series (with [1] on top) was tested on Renesas RZ/G3S with consecutive
+> unbind/bind and data transfer tests before/after the unbind/bind.
+> 
+> The unbind/bind was also tested on the devices with the following
+> device trees but w/o checking the data transfer (as I only had
+> remote access w/o USB devices connected):
+> - r8a7742-iwg21d-q7.dts
+> - r8a7743-iwg20d-q7.dts
+> - r8a7744-iwg20d-q7.dts
+> - r8a7745-iwg22d-sodimm.dts
+> - r8a77470-iwg23s-sbc.dts
+> - r8a774a1-hihope-rzg2m-ex.dts
+> - r8a774b1-hihope-rzg2n-ex.dts
+> - r8a774e1-hihope-rzg2h-ex.dts
+> - r9a07g043u11-smarc.dts
+> - r9a07g044c2-smarc.dts
+> - r9a07g044l2-smarc.dts
+> - r9a07g054l2-smarc.dts
+> - r9a07g043f01-smarc.dts
+> 
+> Please give it a try also on your devices with [1] on top as well.
 
-There is actually a bug here pointed out in a similar patch. bitmap_write()
-only modifies the bitmap, so this introduces an unintialized use bug. [1]
-Here, we only use the bits that we set, so runtime behavior would not actually
-be buggy but still best to fully initialize the memory.
+Thank you for the patches!
 
-I'm a bit surprised that my local compiler and iio/testing both didn't catch that
-since GCC 14 caught it in the other driver.
+Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 
-[1]: https://lore.kernel.org/linux-gpio/20250217132152.29d86d6c@jic23-huawei/T/#m3163d2c5db5b7376504d8ad6f23716f1119de761
+I tested on my environment (r8a77951-salvator-xs.dts) and it worked correctly.
+So,
 
-The fix is simple, we can zero-initialize the bitmap.
+Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 
-diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
-index 04879e6d538b..ab860cedecd1 100644
---- a/drivers/iio/resolver/ad2s1210.c
-+++ b/drivers/iio/resolver/ad2s1210.c
-@@ -176,7 +176,7 @@ struct ad2s1210_state {
- static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
- {
- 	struct gpio_descs *gpios = st->mode_gpios;
--	DECLARE_BITMAP(bitmap, 2);
-+	DECLARE_BITMAP(bitmap, 2) = { };
- 
- 	if (!gpios)
- 		return mode == st->fixed_mode ? 0 : -EOPNOTSUPP;
-@@ -1427,7 +1427,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
- 	struct device *dev = &st->sdev->dev;
- 	struct gpio_descs *resolution_gpios;
- 	struct gpio_desc *reset_gpio;
--	DECLARE_BITMAP(bitmap, 2);
-+	DECLARE_BITMAP(bitmap, 2) = { };
- 	int ret;
- 
- 	/* should not be sampling on startup */
+Best regards,
+Yoshihiro Shimoda
+
+> Thank you,
+> Claudiu Beznea
+> 
+> Claudiu Beznea (5):
+>   phy: renesas: rcar-gen3-usb2: Fix role detection on unbind/bind
+>   phy: renesas: rcar-gen3-usb2: Move IRQ request in probe
+>   phy: renesas: rcar-gen3-usb2: Lock around hardware registers and
+>     driver data
+>   phy: renesas: rcar-gen3-usb2: Assert PLL reset on PHY power off
+>   phy: renesas: rcar-gen3-usb2: Set timing registers only once
+> 
+>  drivers/phy/renesas/phy-rcar-gen3-usb2.c | 134 +++++++++++++----------
+>  1 file changed, 74 insertions(+), 60 deletions(-)
+> 
+> --
+> 2.43.0
 
 
 -- 
