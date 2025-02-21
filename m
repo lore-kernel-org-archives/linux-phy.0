@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0823C021AA
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Feb 2025 08:57:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1E65C021AA
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Feb 2025 09:21:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:References:To:From:Subject:Cc:Message-Id:Date:Mime-Version:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ygy47JZnCJHDyX5ywsU29pES9wND62ColNw2WqmgXyg=; b=Bn5nKQ0ZsSxjYvgPkvlu3BiNYx
-	lvLSzks3ExPMEQvdZuP99d0G243SOVY6SjqUatmXg3m0+kPTYVLwZgWpIHD9MfCUzwRhE2qAh4JCu
-	+gV5WlxFPCh52BQ0cp9G3tCWB3+TqDxq7bxOFdiwZMZ30zFnrdBv7lGJMXfEkdUH5+IMaB+Wx3D5f
-	1YyswNCOrUFp4E3TGfccHtffOSNe6oKJDqZzlffqjPeZ7g5y45KgZsqukDd74p1VactTvatefc8Q0
-	rAg+ulpwbHkjMTtazFohYpPwv4jCHn4faKDP/y/NPe8XccVvsldtGj1//YhJ57MZISMm58LPGZhaE
-	w5XXMUNw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nyvmUkjqoizdEXcTL5HpLgrbFsd9Gjn4VFBTYNNgN7k=; b=kj3KX2LECho5pw
+	Ek/qQf9TRHXdEpy3FRGW6OfvJqelLNoWCwA7quBEr74RjLIOOTzeArsqKBbyB4fXM1NMZCp8hyty6
+	M2fYqQRA76/uIJcXzLjfmwjApoqLYXvi7j2jicE+WB27eYxd6goXPjxqwvxsX9CSfMc2Pcm1tnI21
+	D9BMwDR7Hbh5rpuvwYUzpH5AE1koFV5jTReR8JyGi48ZkYbxX+BAGOtbt+bpfI+NT66mQHLCIjx6Q
+	iFHjz+HDW/m0XO4l4kWp+JNw8GIfVTKk9CobYavAZmOhEGGZmeOja3as5k71haGHu+GgvBTrcPS41
+	gJHkTRCJcrBeWmt3JkXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlOqx-00000004oFG-2P4N;
-	Fri, 21 Feb 2025 08:57:47 +0000
-Received: from out-182.mta1.migadu.com ([2001:41d0:203:375::b6])
+	id 1tlPDl-00000004u8g-1fxw;
+	Fri, 21 Feb 2025 09:21:21 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlOqu-00000004oCW-33XY
-	for linux-phy@lists.infradead.org;
-	Fri, 21 Feb 2025 08:57:46 +0000
-Mime-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cknow.org; s=key1;
-	t=1740128252;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=ptMvqBkUwZrolxZJc9519N5cAklfWd2ezc61uzEJHZA=;
-	b=gE0Pt1blbpbAPFxRS/bKRMrivKdpBXa2QMDSrpiH61pu6ds8O/vnsT6hKsOdeIcS8RyNLj
-	QTA/i53abyk7Q66m2v+eJS/6YadfPEZ9KVeYRbpnvy80QBcwax47rxs8Eden3o2bMCQxqo
-	kdc3gwczMSOw6a/hKD5nB2niOHmO3ZS1/LYmcpDXgPKxP11T7uLfs5JMFX2w+atB2tAfrG
-	KJOPeCga0DdWQFJGTEb+faRZLRsb+S6Qdad6o+Tv6CYnDLItKo3769rF05sLSA2rXFXrL+
-	7ZEumCt/skoivVn/G8zKILbinpzXm1oU/KvrC2xDwm2T/g1h5MSczJziKc/KMg==
-Date: Fri, 21 Feb 2025 09:57:14 +0100
-Message-Id: <D7XZZ70KM9NT.14VSJDFUTH0H5@cknow.org>
-Cc: "Valentin Kleibel" <valentin@vrvis.at>, "Vinod Koul" <vkoul@kernel.org>,
- "Chukun Pan" <amadeus@jmu.edu.cn>, "Heiko Stuebner" <heiko@sntech.de>,
- "Philipp Zabel" <p.zabel@pengutronix.de>, "Kishon Vijay Abraham I"
- <kishon@kernel.org>, "Jianfeng Liu" <liujianfeng1994@gmail.com>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-phy@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>, "Jonas Karlman" <jonas@kwiboo.se>
-Subject: Re: [PATCH v2 0/1] phy: rockchip: naneng-combphy: compatible reset
- with old DT
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: "Diederik de Haas" <didi.debian@cknow.org>
-To: "Salvatore Bonaccorso" <carnil@debian.org>
-References: <20250106100001.1344418-1-amadeus@jmu.edu.cn>
- <173831716590.670164.5196739962949646746.b4-ty@kernel.org>
- <f64ee4ee-7e56-4423-813e-b87e023e893d@vrvis.at>
- <D7VJOFXU540M.2PAC1RFXAH19B@cknow.org> <Z7gosm7PJMR0zCg4@eldamar.lan>
-In-Reply-To: <Z7gosm7PJMR0zCg4@eldamar.lan>
-X-Migadu-Flow: FLOW_OUT
+	id 1tlPCD-00000004tg3-2MC0;
+	Fri, 21 Feb 2025 09:19:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=DGtNm/6Rj3M3I05SqA47GaE+4eGeDnYscf5oZXlZBIE=; b=ONaMuAsVw2TZehARgoay6h+aKV
+	n66zx596ZMTDByLqRXHEVGjS0zoW6ol1tXDDpbn3r+hqXRuKgygDp7CRNx7utn8uSZEcKPMCFHtfG
+	1jv/dczkx4thJdat+4VkLsNE9XCP0uROKeJTu8dTb01eCGmVPLVunSbPkUD6kyN4ewu3Fkntyq/3q
+	yBDAa8/Y5N6rh5FVEa/D8kzGbMtvCslrH9r66Z8E5JONl8e1Z7282RhJiqzObifsS51fjUyD+VlM2
+	QxvBKj/X1Bk30U9d9pirnGBvZDzUo5S8q/gOatjRJak9VhcCg3eP+Jcr/D8WBreVVspP96PXn+QDc
+	kTWS5PtQ==;
+Received: from i53875a87.versanet.de ([83.135.90.135] helo=diego.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tlPBe-000227-Sd; Fri, 21 Feb 2025 10:19:10 +0100
+From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
+To: Salvatore Bonaccorso <carnil@debian.org>,
+ Diederik de Haas <didi.debian@cknow.org>
+Cc: Valentin Kleibel <valentin@vrvis.at>, Vinod Koul <vkoul@kernel.org>,
+ Chukun Pan <amadeus@jmu.edu.cn>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Jianfeng Liu <liujianfeng1994@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Jonas Karlman <jonas@kwiboo.se>
+Subject: Re: [PATCH v2 0/1] phy: rockchip: naneng-combphy: compatible reset with old
+ DT
+Date: Fri, 21 Feb 2025 10:19:09 +0100
+Message-ID: <6647031.K2JlShyGXD@diego>
+In-Reply-To: <D7XZZ70KM9NT.14VSJDFUTH0H5@cknow.org>
+References: <20250106100001.1344418-1-amadeus@jmu.edu.cn> <Z7gosm7PJMR0zCg4@eldamar.lan>
+ <D7XZZ70KM9NT.14VSJDFUTH0H5@cknow.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250221_005744_907761_81BDF6BC 
-X-CRM114-Status: GOOD (  18.44  )
+X-CRM114-CacheID: sfid-20250221_011945_627893_FB163418 
+X-CRM114-Status: GOOD (  28.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,86 +75,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4208280601874406672=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============4208280601874406672==
-Content-Type: multipart/signed;
- boundary=bb0d416b7a86ddc7225644bd7fccfe77947520006e455b4b349d45e7250f;
- micalg=pgp-sha256; protocol="application/pgp-signature"
+Am Freitag, 21. Februar 2025, 09:57:14 MEZ schrieb Diederik de Haas:
+> On Fri Feb 21, 2025 at 8:18 AM CET, Salvatore Bonaccorso wrote:
+> > On Tue, Feb 18, 2025 at 12:45:34PM +0100, Diederik de Haas wrote:
+> >> On Tue Feb 11, 2025 at 2:03 PM CET, Valentin Kleibel wrote:
+> >> >>> Chukun Pan (1):
+> >> >>>    phy: rockchip: naneng-combphy: compatible reset with old DT
+> >> >> 
+> >> >> Applied, thanks!
+> >> >> 
+> >> >> [1/1] phy: rockchip: naneng-combphy: compatible reset with old DT
+> >> >>        commit: bff68d44135ce6714107e2f72069a79476c8073d
+> >> >
+> >> > Thanks for your work!
+> >> > We found your patch after NVMes stopped working on a rock 3A with newer 
+> >> > kernels and successfully applied it to kernel 6.1.128 (currently in debian).
+> >> 
+> >> FTR: I've reported it in Debian here: https://bugs.debian.org/1098250
+> >> 
+> >> I confirmed it (also) broke on kernel 6.12.8-1.
+> >
+> > FWIW, we have several users in Debian reporting the problem, so if it
+> > can be applied to mainline and then flow down to one of the next round
+> > of stable series down to 6.1.y that would be highly appreicated.
+> >
+> > Diederik, if you were able to test the fix, you might contribute a
+> > Tested-by (although as I undestsand its not strictly needed at this
+> > point as commit should be on way to mainline and stable series)?
+> 
+> AFAIK a Tested-by could increase the chances of the maintainer accepting
+> the patch, but that has already happened (commit date: 2025-02-04).
+> The patch was already verified to fix the problem before submission:
+> https://lore.kernel.org/all/20250103171109.2726312-1-liujianfeng1994@gmail.com/
+> 
+> So AFAICT another Tested-by would either have no effect or a delaying
+> effect (adding it would change a bunch of commit IDs probably triggering
+> various CIs to run again).
+> I'm not aware of anything (else) I could do wrt this patch.
 
---bb0d416b7a86ddc7225644bd7fccfe77947520006e455b4b349d45e7250f
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+the patch already is in the fixes-branch of the phy-tree [0], sho should
+make its way into 6.14-rc shortly.
 
-On Fri Feb 21, 2025 at 8:18 AM CET, Salvatore Bonaccorso wrote:
-> On Tue, Feb 18, 2025 at 12:45:34PM +0100, Diederik de Haas wrote:
->> On Tue Feb 11, 2025 at 2:03 PM CET, Valentin Kleibel wrote:
->> >>> Chukun Pan (1):
->> >>>    phy: rockchip: naneng-combphy: compatible reset with old DT
->> >>=20
->> >> Applied, thanks!
->> >>=20
->> >> [1/1] phy: rockchip: naneng-combphy: compatible reset with old DT
->> >>        commit: bff68d44135ce6714107e2f72069a79476c8073d
->> >
->> > Thanks for your work!
->> > We found your patch after NVMes stopped working on a rock 3A with newe=
-r=20
->> > kernels and successfully applied it to kernel 6.1.128 (currently in de=
-bian).
->>=20
->> FTR: I've reported it in Debian here: https://bugs.debian.org/1098250
->>=20
->> I confirmed it (also) broke on kernel 6.12.8-1.
->
-> FWIW, we have several users in Debian reporting the problem, so if it
-> can be applied to mainline and then flow down to one of the next round
-> of stable series down to 6.1.y that would be highly appreicated.
->
-> Diederik, if you were able to test the fix, you might contribute a
-> Tested-by (although as I undestsand its not strictly needed at this
-> point as commit should be on way to mainline and stable series)?
+Heiko
 
-AFAIK a Tested-by could increase the chances of the maintainer accepting
-the patch, but that has already happened (commit date: 2025-02-04).
-The patch was already verified to fix the problem before submission:
-https://lore.kernel.org/all/20250103171109.2726312-1-liujianfeng1994@gmail.=
-com/
-
-So AFAICT another Tested-by would either have no effect or a delaying
-effect (adding it would change a bunch of commit IDs probably triggering
-various CIs to run again).
-I'm not aware of anything (else) I could do wrt this patch.
-
-Cheers,
-  Diederik
-
---bb0d416b7a86ddc7225644bd7fccfe77947520006e455b4b349d45e7250f
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQT1sUPBYsyGmi4usy/XblvOeH7bbgUCZ7g/9QAKCRDXblvOeH7b
-bnRDAP9IYwH1LfihZ3pGIVB+pL5ZDzXlBKKNwHBNmJle70hhwwEA1xo5LOIrFy9u
-tmsN/WVn+DJq0WWtQrSDQ4JpbQ3F4g4=
-=1hY3
------END PGP SIGNATURE-----
-
---bb0d416b7a86ddc7225644bd7fccfe77947520006e455b4b349d45e7250f--
+[0] https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/log/?h=fixes
 
 
---===============4208280601874406672==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4208280601874406672==--
-
