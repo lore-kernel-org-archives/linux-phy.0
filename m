@@ -4,71 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93EC7C021B2
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Feb 2025 11:51:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE8CBC021B2
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Feb 2025 11:58:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R1yX+R15ab6AgF/zjyXzyHuhNmAtG8PHfbsXFD0JbfU=; b=sMyscc+guz7rtQ
-	bDugLnsfKQlW0GtmLqAHj+H+zYWR2LBLui79xGHAGbA6EhTgdkqWawTqhCeAjZuse1kONqfbFuVWL
-	VmSKab+IBfhFKsc7L7Pl/fv1BoHPgL6qsNgB5rmzONop+zmqroqnGDiVk2cBm6/9FeOE1k6Cpzl8Y
-	DqSUyfweGbPWWmicWE4dHFqsAEuN9X4Y65Y0isysikugK7Zc+5jly1jwD69SoXtZ51miTIhdtXEgS
-	UJEScGV7sx6xJZqWqMAGIiwUz4tOAjDqeODyBJvjvNAFtRJF9Ad/CjkHmWPv+tKhl5wT5ncqde2ck
-	6kYVHI2chVLQyaYwtnkw==;
+	List-Owner; bh=inulx68Fwkx6Uyt7luy/jh9SLpE3jqERlGVo5jXAFr8=; b=IyChgSrRTflKbe
+	re4wp6PlT1l3UsJLdnIx7u1dT8GSR9bjoPdSAZkISbINXpkBEHcy9M7RSXltJkm2PiPpJUsGOeJCe
+	sRAaQn2/0vCeY8p9gkFGH3jWcLIlaZ5cWcz+Gq525gF6CxiyFM/YlvHKpaXTD0mR0sM4Wwc7fcJIc
+	2TdRbqbPlXcfNbeB3P6TwT5iI7Dqd8GcQfZPD1dzhmuLNu/OcbvCi5l60Al/sYJqgfUAZ4ZQ8N1o2
+	hXSdGEsatpLoWjScJjMgH0noyhKN7ANFDFXdTbVl0q7VktFfwfQ4ei9nGBwl9+y/BN3Did1avxaBw
+	lvRYf4X4rSpvVaRgVq3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlo2y-00000007xDN-1CRp;
-	Sat, 22 Feb 2025 11:51:52 +0000
-Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
+	id 1tlo9G-00000007yA7-33SW;
+	Sat, 22 Feb 2025 11:58:22 +0000
+Received: from mail-m3292.qiye.163.com ([220.197.32.92])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlo2x-00000007xD9-0j6C
-	for linux-phy@lists.infradead.org;
-	Sat, 22 Feb 2025 11:51:51 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 28BA461148;
-	Sat, 22 Feb 2025 11:51:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD18CC4CED1;
-	Sat, 22 Feb 2025 11:51:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740225110;
-	bh=sifDgvYlQN5FrcMLya3et5Zf5/0nSv8Le44LEJPVOBY=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=o1MnTsDy7B2ADdlQeonDeLn/bPpPFyOtYvttzKdblxFD2XxoY7ShPnHXf3XPJ2Cxd
-	 tPSR6pQspqTlbXMcbM3c5gCwkD2tdh3CkJhCc1Kk++fCG0bVcIYy1qIKjN7s/IpaZk
-	 9WZyTjucoFNU8hg+r8vAs9hSg6cXKhyQiY/REj9Qkb9Q0zfp2in7aegcZpi/HtRKUl
-	 OAeM5BZnhLowo6McrOfKl45uhs4OlzKy4EiIbQsXV0rEu+57oXYB5WdDWtaXP+K672
-	 x5kmB5UkDMg7YZEDbIpRlZVdnMG5xUYcEWVbedH7CkU08KVsQ9fuNt7cehavP1i9Tl
-	 MiXi1OF+BQ3/Q==
-Date: Sat, 22 Feb 2025 11:51:34 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: David Lechner <dlechner@baylibre.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>, Bartosz Golaszewski
- <brgl@bgdev.pl>, Andy Shevchenko <andy@kernel.org>, Geert Uytterhoeven
- <geert@linux-m68k.org>, Lars-Peter Clausen <lars@metafoo.de>, Michael
- Hennerich <Michael.Hennerich@analog.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Peter Rosin <peda@axentia.se>, Andrew Lunn
- <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>, Eric
- Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, Paolo
- Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-iio@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-sound@vger.kernel.org
-Subject: Re: [PATCH v3 10/15] iio: resolver: ad2s1210: use bitmap_write
-Message-ID: <20250222115134.7379f785@jic23-huawei>
-In-Reply-To: <4052fd7b-dd8c-4a5a-8f82-dd515de14d20@baylibre.com>
-References: <20250210-gpio-set-array-helper-v3-0-d6a673674da8@baylibre.com>
-	<20250210-gpio-set-array-helper-v3-10-d6a673674da8@baylibre.com>
-	<4052fd7b-dd8c-4a5a-8f82-dd515de14d20@baylibre.com>
-X-Mailer: Claws Mail 4.3.0 (GTK 3.24.48; x86_64-pc-linux-gnu)
+	id 1tlo8I-00000007xyw-2Lui;
+	Sat, 22 Feb 2025 11:57:24 +0000
+Received: from [172.16.12.26] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id bdb96d2d;
+	Sat, 22 Feb 2025 19:57:15 +0800 (GMT+08:00)
+Message-ID: <eb46b2d8-a170-4813-963d-8509089f72fa@rock-chips.com>
+Date: Sat, 22 Feb 2025 19:57:15 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 08/14] drm/rockchip: analogix_dp: Add support to get
+ panel from the DP AUX bus
+To: Lucas Stach <l.stach@pengutronix.de>, heiko@sntech.de
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
+ cristian.ciocaltea@collabora.com, dmitry.baryshkov@linaro.org,
+ andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
+ kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+ <20250123100747.1841357-9-damon.ding@rock-chips.com>
+ <cfc5b39e21fb214c53fda3276847b8e235af818f.camel@pengutronix.de>
+Content-Language: en-US
+From: Damon Ding <damon.ding@rock-chips.com>
+In-Reply-To: <cfc5b39e21fb214c53fda3276847b8e235af818f.camel@pengutronix.de>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0odQ1ZCQ09CGEhCQ0tMTklWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
+	hVSktLVUpCS0tZBg++
+X-HM-Tid: 0a952d84d7db03a3kunmbdb96d2d
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Njo6HDo6IzISGR8CThJLNRoh
+	GU8aCwhVSlVKTE9LSUlOT0hMSUlKVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFPSk5JNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=gTKOoqjoAKeFhXf1a8vmXg379vWYpEnKYnWD8KI0jK15KYdeKWwgwvp3kY0GK0x79LyCoTpcw+VSZq059SK53WSlCuP5TJKbYlTRYmQRY19EDQdLxuTeMVNBb+bqPTib5svQpS9eeXAMEptvdCAFFK74gn2utyUTVoD/0KO+uqw=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=wGmhqrAjYzagqI94aWqLld2LAsNs8E1/VGtS52n0S4U=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250222_035723_148700_B3CED8FC 
+X-CRM114-Status: GOOD (  21.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,96 +77,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 20 Feb 2025 14:54:53 -0600
-David Lechner <dlechner@baylibre.com> wrote:
+Hi Lucas,
 
-> On 2/10/25 4:33 PM, David Lechner wrote:
-> > Replace bitmap array access with bitmap_write.
-> > 
-> > Accessing the bitmap array directly is not recommended and now there is
-> > a helper function that can be used.
-> > 
-> > Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> > Signed-off-by: David Lechner <dlechner@baylibre.com>
-> > ---
-> >  drivers/iio/resolver/ad2s1210.c | 5 +++--
-> >  1 file changed, 3 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
-> > index 7f18df790157f1e411fb70de193a49f0677c999f..04879e6d538bce664469c5f6759d8b1cedea16e9 100644
-> > --- a/drivers/iio/resolver/ad2s1210.c
-> > +++ b/drivers/iio/resolver/ad2s1210.c
-> > @@ -46,6 +46,7 @@
-> >   */
-> >  
-> >  #include <linux/bitfield.h>
-> > +#include <linux/bitmap.h>
-> >  #include <linux/bits.h>
-> >  #include <linux/cleanup.h>
-> >  #include <linux/clk.h>
-> > @@ -180,7 +181,7 @@ static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
-> >  	if (!gpios)
-> >  		return mode == st->fixed_mode ? 0 : -EOPNOTSUPP;
-> >  
-> > -	bitmap[0] = mode;
-> > +	bitmap_write(bitmap, mode, 0, 2);
-> >  
-> >  	return gpiod_multi_set_value_cansleep(gpios, bitmap);
-> >  }
-> > @@ -1470,7 +1471,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
-> >  			return dev_err_probe(dev, -EINVAL,
-> >  				      "requires exactly 2 resolution-gpios\n");
-> >  
-> > -		bitmap[0] = st->resolution;
-> > +		bitmap_write(bitmap, st->resolution, 0, 2);
-> >  
-> >  		ret = gpiod_multi_set_value_cansleep(resolution_gpios, bitmap);
-> >  		if (ret < 0)
-> >   
+On 2025/2/8 3:42, Lucas Stach wrote:
+> Hi Damon,
 > 
-> There is actually a bug here pointed out in a similar patch. bitmap_write()
-> only modifies the bitmap, so this introduces an unintialized use bug. [1]
-> Here, we only use the bits that we set, so runtime behavior would not actually
-> be buggy but still best to fully initialize the memory.
+> Am Donnerstag, dem 23.01.2025 um 18:07 +0800 schrieb Damon Ding:
+>> Move drm_of_find_panel_or_bridge() a little later and combine it with
+>> component_add() into a new function rockchip_dp_link_panel(). The function
+>> will serve as done_probing() callback of devm_of_dp_aux_populate_bus(),
+>> aiding to support for obtaining the eDP panel via the DP AUX bus.
+>>
+>> If failed to get the panel from the DP AUX bus, it will then try the other
+>> way to get panel information through the platform bus.
+>>
+> The changes in this patch effectively revert 86caee745e45
+> ("drm/rockchip: analogix_dp: allow to work without panel"). Please
+> correct this in the next revision of this patchset.
 > 
-> I'm a bit surprised that my local compiler and iio/testing both didn't catch that
-> since GCC 14 caught it in the other driver.
+> Regards,
+> Lucas
 > 
-> [1]: https://lore.kernel.org/linux-gpio/20250217132152.29d86d6c@jic23-huawei/T/#m3163d2c5db5b7376504d8ad6f23716f1119de761
-> 
-> The fix is simple, we can zero-initialize the bitmap.
-Ignore previous. I'm looking at wrong branch. I can tweak this just fine.
-Done so and tree pushed out.
 
+Oh, I see. I will fix it in the next version.
+
+>> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
+>>
+>> ---
+>>
+>> Changes in v4:
+>> - Use done_probing() to call drm_of_find_panel_or_bridge() and
+>>    component_add() when getting panel from the DP AUX bus
+>>
+>> Changes in v5:
+>> - Use the functions exported by the Analogix side to get the pointers of
+>>    struct analogix_dp_plat_data and struct drm_dp_aux.
+>> - Use dev_err() instead of drm_err() in rockchip_dp_poweron().
+>>
+>> Changes in v6:
+>> - Keep drm_err() in rockchip_dp_poweron()
+>> - Pass 'dp' in drm_...() rather than 'dp->drm_dev'
+>> ---
+>>   .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 37 ++++++++++++++-----
+>>   1 file changed, 28 insertions(+), 9 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+>> index 13f32aeea7ca..004b1b68d1cf 100644
+>> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+>> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
+>> @@ -393,11 +393,27 @@ static const struct component_ops rockchip_dp_component_ops = {
+>>   	.unbind = rockchip_dp_unbind,
+>>   };
+>>   
+>> +static int rockchip_dp_link_panel(struct drm_dp_aux *aux)
+>> +{
+>> +	struct analogix_dp_plat_data *plat_data = analogix_dp_aux_to_plat_data(aux);
+>> +	struct rockchip_dp_device *dp = pdata_encoder_to_dp(plat_data);
+>> +	int ret;
+>> +
+>> +	ret = drm_of_find_panel_or_bridge(dp->dev->of_node, 1, 0, &plat_data->panel, NULL);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ret = component_add(dp->dev, &rockchip_dp_component_ops);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	return ret;
+>> +}
+>> +
+>>   static int rockchip_dp_probe(struct platform_device *pdev)
+>>   {
+>>   	struct device *dev = &pdev->dev;
+>>   	const struct rockchip_dp_chip_data *dp_data;
+>> -	struct drm_panel *panel = NULL;
+>>   	struct rockchip_dp_device *dp;
+>>   	struct resource *res;
+>>   	int i;
+>> @@ -407,10 +423,6 @@ static int rockchip_dp_probe(struct platform_device *pdev)
+>>   	if (!dp_data)
+>>   		return -ENODEV;
+>>   
+>> -	ret = drm_of_find_panel_or_bridge(dev->of_node, 1, 0, &panel, NULL);
+>> -	if (ret < 0 && ret != -ENODEV)
+>> -		return ret;
+>> -
+>>   	dp = devm_kzalloc(dev, sizeof(*dp), GFP_KERNEL);
+>>   	if (!dp)
+>>   		return -ENOMEM;
+>> @@ -434,7 +446,6 @@ static int rockchip_dp_probe(struct platform_device *pdev)
+>>   
+>>   	dp->dev = dev;
+>>   	dp->adp = ERR_PTR(-ENODEV);
+>> -	dp->plat_data.panel = panel;
+>>   	dp->plat_data.dev_type = dp->data->chip_type;
+>>   	dp->plat_data.power_on = rockchip_dp_poweron;
+>>   	dp->plat_data.power_off = rockchip_dp_powerdown;
+>> @@ -450,9 +461,17 @@ static int rockchip_dp_probe(struct platform_device *pdev)
+>>   	if (IS_ERR(dp->adp))
+>>   		return PTR_ERR(dp->adp);
+>>   
+>> -	ret = component_add(dev, &rockchip_dp_component_ops);
+>> -	if (ret)
+>> -		return ret;
+>> +	ret = devm_of_dp_aux_populate_bus(analogix_dp_get_aux(dp->adp), rockchip_dp_link_panel);
+>> +	if (ret) {
+>> +		if (ret != -ENODEV) {
+>> +			drm_err(dp, "failed to populate aux bus : %d\n", ret);
+>> +			return ret;
+>> +		}
+>> +
+>> +		ret = rockchip_dp_link_panel(analogix_dp_get_aux(dp->adp));
+>> +		if (ret)
+>> +			return ret;
+>> +	}
+>>   
+>>   	return 0;
+>>   }
 > 
-> diff --git a/drivers/iio/resolver/ad2s1210.c b/drivers/iio/resolver/ad2s1210.c
-> index 04879e6d538b..ab860cedecd1 100644
-> --- a/drivers/iio/resolver/ad2s1210.c
-> +++ b/drivers/iio/resolver/ad2s1210.c
-> @@ -176,7 +176,7 @@ struct ad2s1210_state {
->  static int ad2s1210_set_mode(struct ad2s1210_state *st, enum ad2s1210_mode mode)
->  {
->  	struct gpio_descs *gpios = st->mode_gpios;
-> -	DECLARE_BITMAP(bitmap, 2);
-> +	DECLARE_BITMAP(bitmap, 2) = { };
->  
->  	if (!gpios)
->  		return mode == st->fixed_mode ? 0 : -EOPNOTSUPP;
-> @@ -1427,7 +1427,7 @@ static int ad2s1210_setup_gpios(struct ad2s1210_state *st)
->  	struct device *dev = &st->sdev->dev;
->  	struct gpio_descs *resolution_gpios;
->  	struct gpio_desc *reset_gpio;
-> -	DECLARE_BITMAP(bitmap, 2);
-> +	DECLARE_BITMAP(bitmap, 2) = { };
->  	int ret;
->  
->  	/* should not be sampling on startup */
 > 
+> 
+
+Best regards
+Damon
 
 
 -- 
