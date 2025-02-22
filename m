@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE8CBC021B2
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Feb 2025 11:58:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E283C021B2
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Feb 2025 13:27:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=inulx68Fwkx6Uyt7luy/jh9SLpE3jqERlGVo5jXAFr8=; b=IyChgSrRTflKbe
-	re4wp6PlT1l3UsJLdnIx7u1dT8GSR9bjoPdSAZkISbINXpkBEHcy9M7RSXltJkm2PiPpJUsGOeJCe
-	sRAaQn2/0vCeY8p9gkFGH3jWcLIlaZ5cWcz+Gq525gF6CxiyFM/YlvHKpaXTD0mR0sM4Wwc7fcJIc
-	2TdRbqbPlXcfNbeB3P6TwT5iI7Dqd8GcQfZPD1dzhmuLNu/OcbvCi5l60Al/sYJqgfUAZ4ZQ8N1o2
-	hXSdGEsatpLoWjScJjMgH0noyhKN7ANFDFXdTbVl0q7VktFfwfQ4ei9nGBwl9+y/BN3Did1avxaBw
-	lvRYf4X4rSpvVaRgVq3Q==;
+	List-Owner; bh=yRSb61vq8OM1mdFVPWPVNHZmJlPlzLWcuP0AEbwA8Tc=; b=dCmgY8CGOhj2CB
+	4YcdLdBwkykKPjWxlVnc50n9lU7AJcO6m8sE/qwV0lGanXEFg9j8TiL2nkjM59FLWtdG7Hxxv0j6b
+	+SrS297CIlGJfoLt88VXInlIf7sc/54pXfJ9EXiawr8xXqAZvzUeYvKDzxKRFbgNUmVDDwXbgxs1X
+	Fve6Bwz8ZTBtMqJNj4XSpF1F16Nuf9CJ3hCFLA7e5rc4wGt2txR9kP6LDwRDFYQ/qLJwnJdkv61A8
+	sHnp6YzQY+up60vCMN8BqsT2k5sz79REmj3p/NR5h/z5NXiVPexhV2JbAOX1ZYwTCgKIPrQDzk43f
+	T7qrzK8koPcNA9aG1ePw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlo9G-00000007yA7-33SW;
-	Sat, 22 Feb 2025 11:58:22 +0000
-Received: from mail-m3292.qiye.163.com ([220.197.32.92])
+	id 1tlpXI-0000000856Y-1Z3J;
+	Sat, 22 Feb 2025 13:27:16 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlo8I-00000007xyw-2Lui;
-	Sat, 22 Feb 2025 11:57:24 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id bdb96d2d;
-	Sat, 22 Feb 2025 19:57:15 +0800 (GMT+08:00)
-Message-ID: <eb46b2d8-a170-4813-963d-8509089f72fa@rock-chips.com>
-Date: Sat, 22 Feb 2025 19:57:15 +0800
+	id 1tlpVn-000000084zf-39Rg;
+	Sat, 22 Feb 2025 13:25:45 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 4F9475C575C;
+	Sat, 22 Feb 2025 13:25:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8D7DC4CED1;
+	Sat, 22 Feb 2025 13:25:41 +0000 (UTC)
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 3C3625FE35;
+	Sat, 22 Feb 2025 21:25:39 +0800 (CST)
+From: Chen-Yu Tsai <wens@csie.org>
+To: linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pm@vger.kernel.org, linux-sunxi@lists.linux.dev, 
+ linux-usb@vger.kernel.org, devicetree@vger.kernel.org, 
+ Cody Eksal <masterr3c0rd@epochal.quest>
+Cc: Conor Dooley <conor+dt@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Maxime Ripard <mripard@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, Nishanth Menon <nm@ti.com>, 
+ "Rafael J. Wysocki" <rafael@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Samuel Holland <samuel@sholland.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Vinod Koul <vkoul@kernel.org>, Viresh Kumar <vireshk@kernel.org>, 
+ Viresh Kumar <viresh.kumar@linaro.org>, Yangtao Li <tiny.windzz@gmail.com>, 
+ Parthiban <parthiban@linumiz.com>, Andre Przywara <andre.przywara@arm.com>
+In-Reply-To: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
+References: <20241031070232.1793078-1-masterr3c0rd@epochal.quest>
+Subject: Re: (subset) [PATCH v2 00/13] sunxi: A100/A133 second stage
+ support
+Message-Id: <174023073923.2739576.11575460474007255231.b4-ty@csie.org>
+Date: Sat, 22 Feb 2025 21:25:39 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 08/14] drm/rockchip: analogix_dp: Add support to get
- panel from the DP AUX bus
-To: Lucas Stach <l.stach@pengutronix.de>, heiko@sntech.de
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- rfoss@kernel.org, vkoul@kernel.org, sebastian.reichel@collabora.com,
- cristian.ciocaltea@collabora.com, dmitry.baryshkov@linaro.org,
- andy.yan@rock-chips.com, hjc@rock-chips.com, algea.cao@rock-chips.com,
- kever.yang@rock-chips.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <20250123100747.1841357-9-damon.ding@rock-chips.com>
- <cfc5b39e21fb214c53fda3276847b8e235af818f.camel@pengutronix.de>
-Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <cfc5b39e21fb214c53fda3276847b8e235af818f.camel@pengutronix.de>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0odQ1ZCQ09CGEhCQ0tMTklWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a952d84d7db03a3kunmbdb96d2d
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Njo6HDo6IzISGR8CThJLNRoh
-	GU8aCwhVSlVKTE9LSUlOT0hMSUlKVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFPSk5JNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=gTKOoqjoAKeFhXf1a8vmXg379vWYpEnKYnWD8KI0jK15KYdeKWwgwvp3kY0GK0x79LyCoTpcw+VSZq059SK53WSlCuP5TJKbYlTRYmQRY19EDQdLxuTeMVNBb+bqPTib5svQpS9eeXAMEptvdCAFFK74gn2utyUTVoD/0KO+uqw=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=wGmhqrAjYzagqI94aWqLld2LAsNs8E1/VGtS52n0S4U=;
-	h=date:mime-version:subject:message-id:from;
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250222_035723_148700_B3CED8FC 
-X-CRM114-Status: GOOD (  21.68  )
+X-CRM114-CacheID: sfid-20250222_052543_859439_FD1E6461 
+X-CRM114-Status: GOOD (  10.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,134 +74,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Lucas,
+On Thu, 31 Oct 2024 04:02:13 -0300, Cody Eksal wrote:
+> This is V2 of this series [5], with some changes that were requested and
+> others that were made after testing on more devices. Thank you for all of
+> your feedback! A changelog is available below.
+> 
+> ==================
+> Back in 2020, two Allwinner employees, Yangtao Li and Shuosheng Huang, each
+> submitted a patch series for the A100 series of SoCs; [1] intended to add
+> support for the watchdog, ARM PMU, DMA, USB, and (e)MMC controller, and [2]
+> implemented DVFS support. Some patches from the first series landed, but
+> the rest were seemingly abandoned.
+> 
+> [...]
 
-On 2025/2/8 3:42, Lucas Stach wrote:
-> Hi Damon,
-> 
-> Am Donnerstag, dem 23.01.2025 um 18:07 +0800 schrieb Damon Ding:
->> Move drm_of_find_panel_or_bridge() a little later and combine it with
->> component_add() into a new function rockchip_dp_link_panel(). The function
->> will serve as done_probing() callback of devm_of_dp_aux_populate_bus(),
->> aiding to support for obtaining the eDP panel via the DP AUX bus.
->>
->> If failed to get the panel from the DP AUX bus, it will then try the other
->> way to get panel information through the platform bus.
->>
-> The changes in this patch effectively revert 86caee745e45
-> ("drm/rockchip: analogix_dp: allow to work without panel"). Please
-> correct this in the next revision of this patchset.
-> 
-> Regards,
-> Lucas
-> 
+Applied to dt-for-6.15 in git@github.com:linux-sunxi/linux-sunxi.git, thanks!
 
-Oh, I see. I will fix it in the next version.
+[13/13] arm64: dts: allwinner: a100: Add CPU Operating Performance Points table
+        commit: a8181e6861fec3068f393d77ff81b2aaf4ea4203
 
->> Signed-off-by: Damon Ding <damon.ding@rock-chips.com>
->>
->> ---
->>
->> Changes in v4:
->> - Use done_probing() to call drm_of_find_panel_or_bridge() and
->>    component_add() when getting panel from the DP AUX bus
->>
->> Changes in v5:
->> - Use the functions exported by the Analogix side to get the pointers of
->>    struct analogix_dp_plat_data and struct drm_dp_aux.
->> - Use dev_err() instead of drm_err() in rockchip_dp_poweron().
->>
->> Changes in v6:
->> - Keep drm_err() in rockchip_dp_poweron()
->> - Pass 'dp' in drm_...() rather than 'dp->drm_dev'
->> ---
->>   .../gpu/drm/rockchip/analogix_dp-rockchip.c   | 37 ++++++++++++++-----
->>   1 file changed, 28 insertions(+), 9 deletions(-)
->>
->> diff --git a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> index 13f32aeea7ca..004b1b68d1cf 100644
->> --- a/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> +++ b/drivers/gpu/drm/rockchip/analogix_dp-rockchip.c
->> @@ -393,11 +393,27 @@ static const struct component_ops rockchip_dp_component_ops = {
->>   	.unbind = rockchip_dp_unbind,
->>   };
->>   
->> +static int rockchip_dp_link_panel(struct drm_dp_aux *aux)
->> +{
->> +	struct analogix_dp_plat_data *plat_data = analogix_dp_aux_to_plat_data(aux);
->> +	struct rockchip_dp_device *dp = pdata_encoder_to_dp(plat_data);
->> +	int ret;
->> +
->> +	ret = drm_of_find_panel_or_bridge(dp->dev->of_node, 1, 0, &plat_data->panel, NULL);
->> +	if (ret)
->> +		return ret;
->> +
->> +	ret = component_add(dp->dev, &rockchip_dp_component_ops);
->> +	if (ret)
->> +		return ret;
->> +
->> +	return ret;
->> +}
->> +
->>   static int rockchip_dp_probe(struct platform_device *pdev)
->>   {
->>   	struct device *dev = &pdev->dev;
->>   	const struct rockchip_dp_chip_data *dp_data;
->> -	struct drm_panel *panel = NULL;
->>   	struct rockchip_dp_device *dp;
->>   	struct resource *res;
->>   	int i;
->> @@ -407,10 +423,6 @@ static int rockchip_dp_probe(struct platform_device *pdev)
->>   	if (!dp_data)
->>   		return -ENODEV;
->>   
->> -	ret = drm_of_find_panel_or_bridge(dev->of_node, 1, 0, &panel, NULL);
->> -	if (ret < 0 && ret != -ENODEV)
->> -		return ret;
->> -
->>   	dp = devm_kzalloc(dev, sizeof(*dp), GFP_KERNEL);
->>   	if (!dp)
->>   		return -ENOMEM;
->> @@ -434,7 +446,6 @@ static int rockchip_dp_probe(struct platform_device *pdev)
->>   
->>   	dp->dev = dev;
->>   	dp->adp = ERR_PTR(-ENODEV);
->> -	dp->plat_data.panel = panel;
->>   	dp->plat_data.dev_type = dp->data->chip_type;
->>   	dp->plat_data.power_on = rockchip_dp_poweron;
->>   	dp->plat_data.power_off = rockchip_dp_powerdown;
->> @@ -450,9 +461,17 @@ static int rockchip_dp_probe(struct platform_device *pdev)
->>   	if (IS_ERR(dp->adp))
->>   		return PTR_ERR(dp->adp);
->>   
->> -	ret = component_add(dev, &rockchip_dp_component_ops);
->> -	if (ret)
->> -		return ret;
->> +	ret = devm_of_dp_aux_populate_bus(analogix_dp_get_aux(dp->adp), rockchip_dp_link_panel);
->> +	if (ret) {
->> +		if (ret != -ENODEV) {
->> +			drm_err(dp, "failed to populate aux bus : %d\n", ret);
->> +			return ret;
->> +		}
->> +
->> +		ret = rockchip_dp_link_panel(analogix_dp_get_aux(dp->adp));
->> +		if (ret)
->> +			return ret;
->> +	}
->>   
->>   	return 0;
->>   }
-> 
-> 
-> 
-
-Best regards
-Damon
+Best regards,
+-- 
+Chen-Yu Tsai <wens@csie.org>
 
 
 -- 
