@@ -4,92 +4,205 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B0E1C021B5
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Feb 2025 05:16:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EA87C021B2
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Feb 2025 08:30:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CaOJLuTOKQF+oJ0GoiJbmdvYdtCussNUGWrRpP1misE=; b=RFU6boHxLmemYD
-	pUAoZ+bEoJygnrbyqwe5aiuniSJuBK9LDm7YwakvKOCuAV86BCv217NwnERQpY2bYkeMA9TKfLvva
-	teHHEV8/fp17kcx3/1EyP45WTPclDycvnlSury8fxLyGU/SHWD10o77P+TkKWIRWuO3d8906KGdrn
-	HynorOu890IF5RvpCk5D1h+0/kzkja306aZh5IvwLV3X9Xw367ucXdfILSHO4iC2oZYyUvtvVrNc4
-	0JFa5lggWDtPJP3RolKDxK4EnFWdQjDWZ4FovSiVPBkTav9NzrhqJ+uXUXPwCZbVRbVkHh15Vb/42
-	HTmqierR50UncIk7F6Aw==;
+	List-Owner; bh=AvfKAy6Tphu4PHw+OXfPJpTBw5h634DtRzSKJ/LAwRA=; b=I7LoUSWHOZlb0D
+	qiSL/R50IHDDWYfXj5y1RjxEUzKueG/6Xct/YHWEv2zZzN/eYcmSbSS2e6QZ4VB45bOmDbFw+jQFM
+	+CJfJ8KNmtIPDB0DACyG1hCd1eK/lk1M/hFqscOeId9CtMva6tclprRmcJVyguigOWlWwGmJtOIRP
+	6ME86fIgVKg/ejQKy3toi8X0w+9xjzT44iXQTEBLfRIdZn8sfcOod8gv6KyZPGX/7Phw6Y3AzIq7T
+	8z6erBTjQldAWTepSK6YQz5UKTz8UfGCqYP+UnYN0iJSZjXgLHQDZQv1S0QTmsPB+vrrVfMjLodPs
+	IG3BleGtamFS6AF94mLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlhrz-00000007TVa-3MsW;
-	Sat, 22 Feb 2025 05:16:07 +0000
-Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
+	id 1tlktq-00000007eVT-2A1N;
+	Sat, 22 Feb 2025 08:30:14 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tlhqU-00000007TKG-483e
-	for linux-phy@lists.infradead.org;
-	Sat, 22 Feb 2025 05:14:36 +0000
-Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-6fb9388f9f8so28770577b3.0
-        for <linux-phy@lists.infradead.org>; Fri, 21 Feb 2025 21:14:34 -0800 (PST)
+	id 1tlkto-00000007eUl-0jvx;
+	Sat, 22 Feb 2025 08:30:13 +0000
+X-UUID: 379968e2f0f711ef83f2a1c9db70dae0-20250222
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=wG8veNcZAJLjJ1iEQZZOGl1w7NZbA8y4NsmNAFaQmTI=;
+	b=B2lpF46mRW7SCyBh37YRC6zgBFW0uwoUYazKMTqgqMs6qm4n0oBIyp0HYUvnRWadgKy36d+9p0XoWnAv6QwiXY96iRh5Z3+7n4lYdyTB1w7uFW/2fFCiHx4PbiRLRx53aPtoJdbpS0QzLa7hoqvjvqQdFXa0U1fRBPCpiiZWfZY=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.46,REQID:9f523450-87eb-4318-9ece-281d22b182fe,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:60aa074,CLOUDID:64c670b5-a2a1-4ef3-9ef9-e116773da0a7,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102,TC:nil,Content:0|50,
+	EDM:-3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OS
+	A:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0,NGT
+X-CID-BAS: 0,NGT,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-UUID: 379968e2f0f711ef83f2a1c9db70dae0-20250222
+Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1527522221; Sat, 22 Feb 2025 01:30:05 -0700
+Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
+ mtkmbs13n1.mediatek.inc (172.21.101.193) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1258.28; Sat, 22 Feb 2025 16:30:02 +0800
+Received: from APC01-PSA-obe.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
+ 15.2.1258.28 via Frontend Transport; Sat, 22 Feb 2025 16:30:02 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=cOfYstBudsCSsWhp0keLJrDEp48VmomKnM63j5DZGavguUTwW4YyCRqKvBcLPLxna/PDodfYcQAsh8mkqpeiNOoZk/2Rohp8NneO60QiLxh1aADnrGe6qHvrjKTfIVdEZ4EKkw7YNWSBXysV897jdT2+Efm2L45ux3oL7eVCx5sDtw3NXuNPZsdiR3PPcH6fHMnJ8QeFB8bQAyB5uneBbYlQFgfVWwkKXVFrALAhlxENtmxkF4Jz/9X/pKctdFTsUkWwRhyJYfVNuu5/X0jFCGSS4NV4sbs8rkSCquLkvvNe31N0yQcG/SaEPOJQ7l6QrsSX02vtOkOR2XCAjhRGrg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=wG8veNcZAJLjJ1iEQZZOGl1w7NZbA8y4NsmNAFaQmTI=;
+ b=PCeLsy4YmFehS03mCT/n2zQKvE4jSuWptdM08m6UMuzIgLYwyeJZ0RiiZVmBXJWW3hNp2Tj5u+H/0+y7fSOyY484DVa7Vz7F17nsRRYAygFwb/5VfKpud8tx8xvzY0WPX2SQjYJ+U5lxrt5wifmvPwr+EhVvdeNStULNxqp+r+ICQmNgSLr1S3rdQPWcPypmFieShGg4aLUxPK4yJSeNMZECvvurjwLco92vGH/42gmgkH6GRHLqzMdzBxv5BZwJ0zsi3ddaebUpKaDX4l2dyV0V1xQgLHyr1pWRV3BQF+zjb5aGz34CkCnPTfUhQUft5KvnM2wLbBEnWrEQCEjzhg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1740201273; x=1740806073; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=8RwvbWHHETKK51FixReBj+oJDEXTCnpFZVoOS2S1OW8=;
-        b=o3g5zmnC8tJ+u77HKzH+lw7rHyWq0beK9lbrLKFWWyZAFBRcrbMGZxO3R/fdg7Ute1
-         fgrJTJOmSUoS0XmIX2OMfK/oURuLUkTS6PGDzIcSSXJQktdZnkIu/PqaHIfPTiKuPBpZ
-         mnABMGDTyVAb56qYFszgokI679TFiCfmx7/sioQN9QmO30wVOVJ21hgD1Hgrny3GJ1xu
-         /7vd079PZiUV4vJE/dRQCUBKg7uXD6SYBGtczHgZhEWkcvwjlgzuoArLi1Pr8PHxyGyU
-         ud1N48EErtiUhMtCzcgI1sxiyHNKks9grWF0hEaepB0BEN1qF/eZYaP6TTzGjO52e4HZ
-         CXqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740201273; x=1740806073;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=8RwvbWHHETKK51FixReBj+oJDEXTCnpFZVoOS2S1OW8=;
-        b=GRcaDY1BA/hgPMhJ6V+ZhX1IQJKCwMK5qAura4kw/Os+qHvh723Mfqf8UolIIajIj2
-         sRDRPXCj7YMkLb7uut/H1Kr4saRu7TIF8uk8MkgNPtosfKWtUUK2mRFM3F5Ak7yYa0Rb
-         hwD5YODIsoDHIUzuQC30qGpA8AmeF1w6ngLZU0R5hjyetO49GGCeVf0YskFs1sBZOt1z
-         gVNpxwz5dHNgLu1mOv2WviW1mJaeD+WQeS/2Lb2q4YfUveE7KLZ0H78zXjz+If4esKP7
-         d6GMQSEgIVuDWaDTvKc7e3Ag4KD/2OHhWxbtaNgfWJr25bMMSvi/1eLv53as8QR7QHIw
-         E1ng==
-X-Forwarded-Encrypted: i=1; AJvYcCUK4+FtZlY4ImF93m5p1H2iXZpHX/WiMVYLUgAUSffsz2fqTNhn8yvawnm++ZbZHsWMINrNc/0JayA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0/yVwXWtmFXR4Qnbd+Gj+yWv9KXs7ERp2M7Uh4VLbMkWzn20z
-	z5zq8uOLlrTkTcbYnFo0k1EWlnuAFAK+Wp+yDgeKlCYkphC30Fl6QEgkcQYMOeFMXDRMmHcsCti
-	rLj2FuQkJj04pdKYFetLUxDt5XkMeG0U8wcFVzw==
-X-Gm-Gg: ASbGnctvQjY8SLpOUqosoTsq38AVCOmzd2UXcJ1U6Vz7JOL6oUf2PB4YawFrLUfnxOh
-	0Yd+GA5NWfFPNmmwWt+WYsleVLL6oJ51dVQ7SzVpxrXYLTjOdQUiTcsi7LyBWmn4Ig6C0LDllAy
-	8EhqdVqpa6WPWwxRq8Eovf6Q==
-X-Google-Smtp-Source: AGHT+IGQ/KDfElGvmhXzkExKjHk2cNCssJrpvCzkIdV66lfJ6iHkLOurmTN6M3RYaA42R4m5UEil7RWRi+/OxN7VaZA=
-X-Received: by 2002:a05:690c:4587:b0:6ef:60f4:3d41 with SMTP id
- 00721157ae682-6fbcc7805f5mr53359567b3.16.1740201273393; Fri, 21 Feb 2025
- 21:14:33 -0800 (PST)
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wG8veNcZAJLjJ1iEQZZOGl1w7NZbA8y4NsmNAFaQmTI=;
+ b=V1QjprO2fnXNRUnWfy/1C1EVeQ3PsHf6SzCVloiF4e2Hckq9bDoPq2mI9VRSABooTRkmy5oo1Qt/hB/eLf++NW73NKzD7tA9yL5UmcHrdIm9t2YghpAlTXdyYzZtbg7Qtqt+Ku5PVtKIiPovZGm4J9URj9M8FDXj7Z4rjMR9wuk=
+Received: from PSAPR03MB6236.apcprd03.prod.outlook.com (2603:1096:301:9d::13)
+ by TYZPR03MB7345.apcprd03.prod.outlook.com (2603:1096:400:421::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8466.15; Sat, 22 Feb
+ 2025 08:30:00 +0000
+Received: from PSAPR03MB6236.apcprd03.prod.outlook.com
+ ([fe80::2b28:30c4:61a8:20f6]) by PSAPR03MB6236.apcprd03.prod.outlook.com
+ ([fe80::2b28:30c4:61a8:20f6%7]) with mapi id 15.20.8466.016; Sat, 22 Feb 2025
+ 08:30:00 +0000
+From: =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>
+To: "conor@kernel.org" <conor@kernel.org>
+CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>, "robh@kernel.org"
+	<robh@kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+	"krzk+dt@kernel.org" <krzk+dt@kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>
+Subject: Re: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add property
+ to set disconnect threshold
+Thread-Topic: [RESEND PATCH 1/2] dt-bindings: phy: mediatek,xsphy: add
+ property to set disconnect threshold
+Thread-Index: AQHbZDNc/4kk1BQehk+0OCcaCvG0gbMVChuAgCl0dYCABB8VAIAQod+A
+Date: Sat, 22 Feb 2025 08:30:00 +0000
+Message-ID: <8eefe9902c884fe7a4a0d1f34c7b13c351b191e5.camel@mediatek.com>
+References: <20250111141542.5007-1-chunfeng.yun@mediatek.com>
+	 <20250113-aerobics-tall-e570d8bbcf2c@spud>
+	 <e61b61574bd58c1bbc0648257fb4ab23ed582de0.camel@mediatek.com>
+	 <20250211-destiny-crablike-ab17a2814b7a@spud>
+In-Reply-To: <20250211-destiny-crablike-ab17a2814b7a@spud>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PSAPR03MB6236:EE_|TYZPR03MB7345:EE_
+x-ms-office365-filtering-correlation-id: b34c0792-3672-4bd6-dfe0-08dd531b1909
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|366016|38070700018;
+x-microsoft-antispam-message-info: =?utf-8?B?RWhQNDJZSUFqMlVzMUNHakdkQVB0MFRaeHYvR0RqN29xS2t2anMrNDhDRGRy?=
+ =?utf-8?B?M05jRWFUN1RHSTlqd25xOStNT2hDdEFHeDBTQU9jcG14NUtCbFVYTnJQM0N5?=
+ =?utf-8?B?RmRaQlpoYUNXMUV3ZmhZODFUKzNMcHpTNEYzRk9TYWswa1oxM0FwbFBtY1ZC?=
+ =?utf-8?B?YnZIdkdMS2krVHljZnRRbkhDc0dNeERMSzF1MVhtZis5K1Nzc0tka0tuTnEz?=
+ =?utf-8?B?cUZxODR6eGNnOVk0MFhTUVlyVitPQ3RueTRMbG5pQjBKZmY4cTBBbEpUR3ZG?=
+ =?utf-8?B?ODkyajk3NmpENlQ0U29hK09SUW5TRGt3b3Q0SUdvVXNlNm15UmlwLzNXY1lL?=
+ =?utf-8?B?UFpuMFFOYUFiQkY0SzdsTmkxbXlkTzFyUmxhZUVjcHhSYjI1Qzl1eDNDeE5w?=
+ =?utf-8?B?aHAxWXRPMUc2MUM5KzBncEozNkZLbkRTamk3ZWZ1M1Q2YXg2WitiZkZ1aElV?=
+ =?utf-8?B?S1VJYUlyS3JvS0dYNnBYRWdIang3K0xycVlPemZLajRqRCtYeFF5WEtTTjM3?=
+ =?utf-8?B?dUZSVTNETWhITHdQeE1NTnRVcGQvMWlrYUlGNkNMWEowNG05ZlMyYkp4b1ZJ?=
+ =?utf-8?B?NTlOaURCcWZFTmtSWUVwK3Y3Q3BGdVhKS0pFSHFHR3g4ZUY2TTRFS2c0RlVK?=
+ =?utf-8?B?eWQ1RjF3dWJkSnNxRXo0Rm9tazFwU3lpdVdEck1XUWZlRk1WaFN0YnowNUZI?=
+ =?utf-8?B?dWR6cExqcTJPeGdMQThIV28rZ1p4VlBRTW1qdE80cEpKTnhJMXovSFgreG52?=
+ =?utf-8?B?SVlGWmt6YmVaOFR5YWQ4MExNRWgvdzU0b1c3RUVqTGQzZW56MjJTSkkvOWVO?=
+ =?utf-8?B?d1d4QzBZT1dSOEZPQm5Va09xOHJUc281VjdhK2ZsU2N2bUUxaTc3Wm1UbkZW?=
+ =?utf-8?B?cmNWNUNlczM3M1c0N3RZc29UbDdaQ0ZESDkreW94bFcxcnBUcUtIOU9UK0N0?=
+ =?utf-8?B?czN0QnVudkhwS1JSaXdxVk1KU1cwRXlZaWkyZHRHaWZIU1IrQlFBUVNGaUNr?=
+ =?utf-8?B?cEZOVUNZMUNmWVZJZjU1K1l5cXU3Zld5aTZKSExtbmJUWjgxSTFJMitleFps?=
+ =?utf-8?B?VGtLd1RVUkFWTWI0a2tqSzJlNHViZUtXNFpzNGt3S1E1bnFFUGQvd2Z1WUFU?=
+ =?utf-8?B?b2dqT0I1eXR2WUpVempicVZkc2VIUWRaZTg2N05kU2F1Z1VtcDN4ZmprcGlO?=
+ =?utf-8?B?bDdYU1g3NjhONTJQZStFSXl2eTJja0Zxc0t5Njdud0lzZTZBS21LUXFuaVEz?=
+ =?utf-8?B?N1VoR25WMHJBTWNhL3JIRFJFMmp4UWQ4VXcvVUx1ZnZ1SnJFak5FTVp4ME5H?=
+ =?utf-8?B?d2swLzR0Zys5NjVMK0JyYlJlczlmY1RVOGhBWkZTb0tSOGxUUnBHQUN2dnZw?=
+ =?utf-8?B?bjEwcHRyK01zWE50Sng5WUJRYmd5c0FtRXNpcXE1dTUvZytmbEY3R1dQL0Fj?=
+ =?utf-8?B?SmxkTzlMOXBuVlVlUVl3S094bVRYZVlkSVYydFlEWFVpMEw1bStvL0t3OXVv?=
+ =?utf-8?B?eFJhcEtwTWJUMUZ2aEIxMzM2S2lUR2lQa043WURXeVFvb0tLWTU5TmdUbURw?=
+ =?utf-8?B?eWRWS2FDUXJZUG1lRyt4WDkwblBEM3c3UEphbVJYOVFIVWc5Rk5rYWFsa2I4?=
+ =?utf-8?B?Vmk5ZVdZZEMwaFJsL2JtaGR6VjRUeUZ1QnlSWmdaUkRpMXN3cjdIRjloYjFF?=
+ =?utf-8?B?Ukp1eS9qWnBKcks5Z01aY1VqekpIamJXNU9PSG5wVmlrOGZyM0tHTDlEMXJH?=
+ =?utf-8?B?YjYwZVpjQlQ2UGFHUzBoUVhHZndKbkxOK2ZoQzRPQjJsY09oU0ZUcGxMVk5G?=
+ =?utf-8?B?b1VHTVFqL3NLSHZtVXc4c3kwWlFFdXR2VzNQU1hURG4rOEh5TU85WWJOY054?=
+ =?utf-8?B?endWM01NTVJ5RjY5Qm1VM3M5dWRDREMvM2ZNaG1OUGNnU2xYdDltVmVuL2xE?=
+ =?utf-8?Q?kH0gIdQgV3BNbWA8Jt8bDsIUOI8dAQrs?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB6236.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(366016)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?TSsvYlNiOVVqL1M1QWIyeDRRVnRGK3NvbVhOTWVTbFpEK1JwQjdJQk9xSkFJ?=
+ =?utf-8?B?U1d4bnlDU3ZUbmlZSWJ5TWVRbjVXalk4TnJGQ2JxNHpGdmxpbEdkT3VHdWVr?=
+ =?utf-8?B?QlNHci9QQlFvdFRWSlRBcVYrKzFkSWJ0NFNTWTI5TFVkZUZFSmtKRHhkY2Fk?=
+ =?utf-8?B?bTRKS2t1NWxaR25ybmdva29jVDIzWENoL0Q1Qy9MQ2RvZk02OVpkeUN5TEZr?=
+ =?utf-8?B?a1dkZHNMQU44eUJuNUttQXN5YmZYNFRXaXpwZFRnd051QTFLZWp0OGlxMEJx?=
+ =?utf-8?B?ZGN6QlJtUWhCVGRqRzdzWDlGM2ZRdnRLYnR6Y2pEWHF2YTdYUE5vVEtDUDdn?=
+ =?utf-8?B?WjY5TXRPVHVmNDRxYkVFaG5Jdm1MZUxQUGcvMmxwOGxuTXJDWXltaVRMang0?=
+ =?utf-8?B?T2RibVVpcE5XMDM2SzNVWDkvUTBOTXdzRDVUckFYaStTT3lJd3krMFVuV2dw?=
+ =?utf-8?B?Mk5ESVlNcUNlUGg4Y3dQdThreXdzRWw4TUtpdDArWEI3bE5kLzRTYnNXSFFk?=
+ =?utf-8?B?b3ovZ3A4b3B6WTlhQ1l0bU40Tmx6cFhaT1NmU2dFa3BjT1hPWTFNVDl2ai9I?=
+ =?utf-8?B?SnJYNU5aSWFkOHUwUDM3QjFxU2xQaGxRRXMzalZndlIrVnNBenBGSzRHMlJY?=
+ =?utf-8?B?M1M5SE81c2VFQUJ1Rk1SbjFrcHUzZE9qUmFpdDZyR202SFAwK1p5cGNTUGR5?=
+ =?utf-8?B?MHZUNDlOSzd3VzZQbzBhUEZzNG5MUGpxWkl4MWhGa1RkbTQxYlJuRkJEQ3FZ?=
+ =?utf-8?B?MFZwSGtHODZGZWZ4N2E0M3llamRBZVN3TWJuNGE5dS9oRldMSFhCRXhaZXM1?=
+ =?utf-8?B?NDZYdm5HeE15bXgvVFRSQm9RYTA5d2Q1U1N3elNBZzNNUDlmY3R4Rno4RjdE?=
+ =?utf-8?B?ektkN2NLMzBCUGg3UnhYcGg0a1lXMVdGODBhQ29Lemp4TVhKQ0ordEpUR2ZZ?=
+ =?utf-8?B?WGNJQTVTV1djYXc2R3BrenVzRFlYbysyRSs1Rk5GNGMzeUd1d0VBdE9YNENj?=
+ =?utf-8?B?MElkMnZaUkZGL3NPTHR0aFAwS1lRcksxWHZueHFvaXh1WjY2TlFrTkkyelNy?=
+ =?utf-8?B?Yk85S29xNDEvQUxqQVh6NUhXTmxDaGNjU3JEWHRwY09qcHlVR0J6ODdvYlZB?=
+ =?utf-8?B?SXNDOWxwT1phcGNVU0FvUUpMekVQZHllc21HY3UvTUU4aXdKUWNUS29ubWo5?=
+ =?utf-8?B?Ym1FTEJHakw1T3pCTk5xL1VvRjZLTm4zNzR0N3RjcURpb2FlakE2aE5ieHBP?=
+ =?utf-8?B?a1JsOUpPRTVqWnVWK1g5eGRJcDZBQWVIbG1URFpWdmVsS2dtZkJObmttNjJD?=
+ =?utf-8?B?Rjg0TzlNbTVqbFRudmp3OGtubGFIOWwzUjBJUEVFOVFCZ1VEb1JuZ0dNTUZR?=
+ =?utf-8?B?bDZhS3NtQy93Mnc1MEVqQlh6MUJ0RjJFY3JuYXpUNlA1Yk4zK0I3QlovSW1E?=
+ =?utf-8?B?YmJNU0Rsdk11K1VkSEdIbTNiVDRVQng5ay9rdWxoaHRXdC81Z2d4eHFKdWxF?=
+ =?utf-8?B?TzhEWDU4andRMlJjR25MZlgxQ0xTdlM5ODE4MHpCUmlPTG5weVRvUTk2emF6?=
+ =?utf-8?B?K2x5UDJMN1NpdnJkQk9hSXpxb3FqQ3BjdGhPdFpMblM3bm9qb2ovSnI2emR6?=
+ =?utf-8?B?ZG1SZ1lqWHhycVB4cWVqM0poUnNxSjNzZGtLd0xjZjZLekQ5RVhYMExxUUVl?=
+ =?utf-8?B?TUhZUFBpaDBUOEtEV0NsVWdoZURuMnZ2NEpQNDc1L3lJT2hrZnhKUGlaTDFM?=
+ =?utf-8?B?bzQ3Qk5VU0RtWm9nQ25qem9FbTBrUXh6cFRTQ0Z6cXlrYVgyS3pXRkFrcGtJ?=
+ =?utf-8?B?MkFqYU81bUpXU3hJRGZ3dEF1cVpaMkdxaTNic0wzYStGN1lSdG1VdFhJSVhI?=
+ =?utf-8?B?VU43eHdUb2oyUDZVeVUzSlJGZGcrUHhtNnZ4ekl6K3JoWVJhdHZtT0I0Qk52?=
+ =?utf-8?B?SVRPa0prVFRXdlM2L2JXV2VUeWZTMmhUSnBNUkJ5MDJtUERzSlpveVJBSVBx?=
+ =?utf-8?B?VnlOb3dER3d4M3RmbTQzTWhRY2ZmWjFBZE9xMDBqSzlLOEwvK2VoUWh5T1RX?=
+ =?utf-8?B?ZzRMMkU3SnhWRUQyVjM0MDBxSUNrQWNnOWtZWG1yUVZpNWFxRHgyMXRUQ0s1?=
+ =?utf-8?B?WGZpVERhQ1RDNllFbmhFSXUxUjIrakowUGNCcTVWUThRaWpZNkxaVTJ1UWxw?=
+ =?utf-8?B?SlE9PQ==?=
+Content-ID: <C2CF9EAC7D17F14884DE70666B1468BA@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
-References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
- <20250113-sm8750_usb_master-v1-4-09afe1dc2524@quicinc.com>
- <tcm2hn7rpzaazntp5r7ag466ynacexnke43e6ypm4q5mrrlkdb@nem3gzib2l2v>
- <0ec95cca-45ed-4805-8ebd-03563d55627e@quicinc.com> <ofaioilki5qxdq2x5fpbpuk6mid6i6slpyqzwol4e2s4cwdwsf@lgpqy2zil4j6>
- <8c48de90-3dda-40c8-8f7a-01102f7360a3@quicinc.com>
-In-Reply-To: <8c48de90-3dda-40c8-8f7a-01102f7360a3@quicinc.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sat, 22 Feb 2025 07:14:22 +0200
-X-Gm-Features: AWEUYZm-KOty3ecyZHdCAcNlwh-Kws5SWY_GBymMAYd9Ar5b7QNW2Z98djrEc3Q
-Message-ID: <CAA8EJprT5cz=tpSpMVAk7HQwTf8V4BdRuaoZPfdObfxwTjnKzw@mail.gmail.com>
-Subject: Re: [PATCH 4/7] phy: qcom: qmp-combo: Add new PHY sequences for SM8750
-To: Wesley Cheng <quic_wcheng@quicinc.com>
-Cc: Melody Olvera <quic_molvera@quicinc.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
-	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>, 
-	Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, Trilok Soni <quic_tsoni@quicinc.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB6236.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b34c0792-3672-4bd6-dfe0-08dd531b1909
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Feb 2025 08:30:00.5476
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 5ORqKfJ09fgd74h2VJx77wz6MEhMJF1k/If/+PPipwcpYMROqNc3Q7GIVH+ODS+bYzrLATpP/f7Clgts/kroR6iF/+F/XkER/cQ71Y6scyE=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR03MB7345
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250221_211435_046840_5C3E4125 
-X-CRM114-Status: GOOD (  30.16  )
+X-CRM114-CacheID: sfid-20250222_003012_286641_ACD225AE 
+X-CRM114-Status: GOOD (  22.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,135 +214,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, 22 Feb 2025 at 04:43, Wesley Cheng <quic_wcheng@quicinc.com> wrote:
->
->
->
-> On 2/4/2025 6:59 AM, Dmitry Baryshkov wrote:
-> > On Mon, Feb 03, 2025 at 07:31:29PM -0800, Wesley Cheng wrote:
-> >>
-> >> On 1/14/2025 2:23 AM, Dmitry Baryshkov wrote:
-> >>> On Mon, Jan 13, 2025 at 01:52:10PM -0800, Melody Olvera wrote:
-> >>>> From: Wesley Cheng <quic_wcheng@quicinc.com>
-> >>>>
-> >>>> Add new register offsets and PHY values for SM8750. Some of the previous
-> >>>> definitions can be leveraged from older PHY versions as offsets within
-> >>>> registers have not changed. This also updates the PHY sequence that is
-> >>>> recommended after running hardware characterization.
-> >>>>
-> >>>> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
-> >>>> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
-> >>>> ---
-> >>>>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 198 ++++++++++++++++++++++++++++++
-> >>>>  1 file changed, 198 insertions(+)
-> >>>>
-> >>>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> >>>> index b09fa00e9fe7db8d97b7179ee15d3f07fe578b0c..823a60029ea6acbd1f0f8c7d27aaa58de39ed758 100644
-> >>>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> >>>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> >>>> @@ -1471,6 +1471,139 @@ static const struct qmp_phy_init_tbl x1e80100_usb43dp_pcs_tbl[] = {
-> >>>>    QMP_PHY_INIT_CFG(QPHY_V6_N4_PCS_EQ_CONFIG5, 0x10),
-> >>>>  };
-> >>>>
-> >>>> +static const struct qmp_phy_init_tbl sm8750_usb3_serdes_tbl[] = {
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE1, 0xc0),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE1, 0x01),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE1, 0x02),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE1, 0x16),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE1, 0x36),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORECLK_DIV_MODE1, 0x04),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE1, 0x16),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE1, 0x41),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE1, 0x41),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MSB_MODE1, 0x00),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE1, 0x55),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE1, 0x75),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE1, 0x01),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x01),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE1, 0x25),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE1, 0x02),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0x5c),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x0f),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x5c),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0f),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE1_MODE0, 0xc0),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x01),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_CP_CTRL_MODE0, 0x02),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_RCTRL_MODE0, 0x16),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_PLL_CCTRL_MODE0, 0x36),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP1_MODE0, 0x08),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP2_MODE0, 0x1a),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x41),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MSB_MODE0, 0x00),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START1_MODE0, 0x55),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START2_MODE0, 0x75),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_DIV_FRAC_START3_MODE0, 0x01),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE1_MODE0, 0x25),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE2_MODE0, 0x02),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_BG_TIMER, 0x0a),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_EN_CENTER, 0x01),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER1, 0x62),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_PER2, 0x02),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_BUF_ENABLE, 0x0c),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_SYSCLK_EN_SEL, 0x1a),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_LOCK_CMP_CFG, 0x14),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_VCO_TUNE_MAP, 0x04),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0x20),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_CMN_CONFIG_1, 0x16),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_1, 0xb6),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_2, 0x4a),
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_AUTO_GAIN_ADJ_CTRL_3, 0x36),
-> >>> The only difference from sm8550_usb3_serdes_tbl, it has 0x37 here.
-> >> Not sure what the suggestion is here.  I think in general I would want to have a separate table for each chipset, considering that settings may change/evolve.  Currently, if you're asking to re-use the sm8550 table to avoid re-defining this sequence, I think it'll be confusing to folks when they refer to this SOC's PHY settings.
-> >
-> >
-> > No suggestion, merely a question if both tables are correct or not.
-> >
-> >>>> +  QMP_PHY_INIT_CFG(QSERDES_V6_COM_ADDITIONAL_MISC, 0x0c),
-> >>>> +};
-> >>>> +
-> >>> [...]
-> >>>
-> >>>> @@ -1781,6 +1914,22 @@ static const struct qmp_combo_offsets qmp_combo_offsets_v5 = {
-> >>>>    .dp_dp_phy      = 0x2200,
-> >>>>  };
-> >>>>
-> >>>> +static const struct qmp_combo_offsets qmp_combo_offsets_v8 = {
-> >>> Why is it v8? Is the actual PHY also v8 rather than v6?
-> >> Yes, actual QMP PHY major rev is v8.  If we want to, I can generate a separate v8 based header files if that is better.  However, most of the offsets for the registers we're taking advantage of in the actual driver has the same offsets as previous revisions.
-> >
-> > If all registers of a particular set (QSERDE, TX/RX, PCS) are the same,
-> > then it should be fine to reuse those (although it creates some
-> > questions). If the majority is the same, but there are some differences,
-> > please create new header file. It is definitely easier to verify that
-> > the patch is correct if every piece has the same version.
-> >
->
-> Hi Dmitry,
->
-> I reviewed the differences in the register sets, and there are new addtions
-> in the v8 QMP PHY, however, we do not use or program those registers as of
-> now.  I noticed as well in previous versions, we only capture register
-> defines if they are used in any of the init sequences.  Assuming this
-> applies in this scenario, its probably ok to keep the v6 version until we
-> actually need to add any settings for the new registers.
-
-And when we actually need one of those registers, there will be a
-confusion because some of the tables for sm8750 will have V6 and some
-will have V8. In the worst case the table will have V6 and V8
-registers interleaved.
-Please provide a new set of defines for V8 registers.
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCAyMDI1LTAyLTExIGF0IDE4OjMwICswMDAwLCBDb25vciBEb29sZXkgd3JvdGU6DQo+
+IE9uIFN1biwgRmViIDA5LCAyMDI1IGF0IDAzOjM0OjEyQU0gKzAwMDAsIENodW5mZW5nIFl1biAo
+5LqR5pil5bOwKSB3cm90ZToNCj4gPiBPbiBNb24sIDIwMjUtMDEtMTMgYXQgMTg6MzAgKzAwMDAs
+IENvbm9yIERvb2xleSB3cm90ZToNCj4gPiA+IE9uIFNhdCwgSmFuIDExLCAyMDI1IGF0IDEwOjE1
+OjQxUE0gKzA4MDAsIENodW5mZW5nIFl1biB3cm90ZToNCj4gPiA+ID4gQWRkIGEgcHJvcGVydHkg
+dG8gdHVuZSB1c2IyIHBoeSdzIGRpc2Nvbm5lY3QgdGhyZXNob2xkLg0KPiA+ID4gPiBBbmQgYWRk
+IGEgY29tcGF0aWJsZSBmb3IgbXQ4MTk2Lg0KPiA+ID4gPiANCj4gPiA+ID4gU2lnbmVkLW9mZi1i
+eTogQ2h1bmZlbmcgWXVuIDxjaHVuZmVuZy55dW5AbWVkaWF0ZWsuY29tPg0KPiA+ID4gPiAtLS0N
+Cj4gPiA+ID4gYmFzZWQgb24ga2VybmVsIDYuMTMtcmMxDQo+ID4gPiA+IA0KPiA+ID4gPiB0aGlz
+IHByb3BlcnR5IGlzIHBvcnRpbmcgZnJvbSB0LXBoeSBkcml2ZXIsIGR1ZSB0byB0aGUgdTIgcGh5
+DQo+ID4gPiA+IGFyZQ0KPiA+ID4gPiBzaW1pbGFyLg0KPiA+ID4gPiAtLS0NCj4gPiA+ID4gIERv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvbWVkaWF0ZWsseHNwaHkueWFtbCB8
+IDgNCj4gPiA+ID4gKysrKysrKysNCj4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCA4IGluc2VydGlv
+bnMoKykNCj4gPiA+ID4gDQo+ID4gPiA+IGRpZmYgLS1naXQNCj4gPiA+ID4gYS9Eb2N1bWVudGF0
+aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L21lZGlhdGVrLHhzcGh5LnlhbWwNCj4gPiA+ID4g
+Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L21lZGlhdGVrLHhzcGh5Lnlh
+bWwNCj4gPiA+ID4gaW5kZXggYTllMzEzOWZkNDIxLi4yZTAxMmQ1ZTFkYTEgMTAwNjQ0DQo+ID4g
+PiA+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvbWVkaWF0ZWss
+eHNwaHkueWFtbA0KPiA+ID4gPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvcGh5L21lZGlhdGVrLHhzcGh5LnlhbWwNCj4gPiA+ID4gQEAgLTQ5LDYgKzQ5LDcgQEAgcHJv
+cGVydGllczoNCj4gPiA+ID4gICAgICAgIC0gZW51bToNCj4gPiA+ID4gICAgICAgICAgICAtIG1l
+ZGlhdGVrLG10MzYxMS14c3BoeQ0KPiA+ID4gPiAgICAgICAgICAgIC0gbWVkaWF0ZWssbXQzNjEy
+LXhzcGh5DQo+ID4gPiA+ICsgICAgICAgICAgLSBtZWRpYXRlayxtdDgxOTYteHNwaHkNCj4gPiA+
+ID4gICAgICAgIC0gY29uc3Q6IG1lZGlhdGVrLHhzcGh5DQo+ID4gPiA+ICANCj4gPiA+ID4gICAg
+cmVnOg0KPiA+ID4gPiBAQCAtMTI5LDYgKzEzMCwxMyBAQCBwYXR0ZXJuUHJvcGVydGllczoNCj4g
+PiA+ID4gICAgICAgICAgbWluaW11bTogMQ0KPiA+ID4gPiAgICAgICAgICBtYXhpbXVtOiA3DQo+
+ID4gPiA+ICANCj4gPiA+ID4gKyAgICAgIG1lZGlhdGVrLGRpc2N0aDoNCj4gDQo+IEp1c3QgbWFr
+ZSBpdCAiZGlzY29ubmVjdC10aHJlc2hvbGQiIHBsZWFzZS4NCk9oaGgsIE9rLCBJJ2xsIG1vZGlm
+eSBpdA0KPiANCj4gPiA+ID4gKyAgICAgICAgZGVzY3JpcHRpb246DQo+ID4gPiA+ICsgICAgICAg
+ICAgVGhlIHNlbGVjdGlvbiBvZiBkaXNjb25uZWN0IHRocmVzaG9sZCAoVTIgcGh5KQ0KPiA+ID4g
+PiArICAgICAgICAkcmVmOiAvc2NoZW1hcy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzIN
+Cj4gPiA+ID4gKyAgICAgICAgbWluaW11bTogMQ0KPiA+ID4gPiArICAgICAgICBtYXhpbXVtOiAx
+NQ0KPiA+ID4gDQo+ID4gPiBXaGF0IHVuaXQgaXMgdGhpcz8gVW5pdGxlc3M/IEhvdyBhcmUgdGhl
+IHZhbHVlcyBkZXRlcm1pbmVkPw0KPiA+IA0KPiA+IE5vIHVuaXQsIGl0J3MgYSBsZXZlbCwgbWF5
+IGJlIHRyZWF0IGl0IGFzIGFuIGluZGV4IHRvIHNlbGVjdA0KPiA+IGRpZmZlcmVudA0KPiA+IHRo
+cmVzaG9sZC4NCj4gDQo+IFNvIHRoaXMgaXMgYSByZWdpc3RlciB2YWx1ZSBvZiBzb21lIHNvcnQ/
+IA0KWWVzLCB0aGUgYmlnIHZhbHVlIG1lYW5zIGhpZ2hlciB0aHJlc2hvbGQuDQo+IFdoYXQgaXMg
+dGhlIGFjdHVhbCB0aHJlc2hvbGQNCj4gbWVhc3VyZWQgaW4/DQpJIHRoaW5rIHRoYXQgaXMgbVYg
+aW4gZmFjdC4NCg0KVGhhbmtzDQoNCg0KLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
