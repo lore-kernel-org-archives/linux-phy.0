@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 119A9C021B2
-	for <linux-phy@archiver.kernel.org>; Sun, 23 Feb 2025 12:31:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06990C021B2
+	for <linux-phy@archiver.kernel.org>; Sun, 23 Feb 2025 12:33:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iaoOtLlkH3rPTH1wbglRt7qGSn3PZFgRVaOmleAZkdA=; b=FcRe6II3LR1YpQ
-	/lFcfH9Z86kLHCv1Lz526s2OIXyztHC9i6qEDxvHjw+EGeVYcWEB+OrvfALYQhRTLt2GmDXfzMTWg
-	6URfY5pJny7KjvqXGBec5/GaxaUeSljXHkb8QvxcnBW3soYTzeJsT8gu33ilOSDXvB8SuUqnw6rjY
-	s1JvvP+9/eGgJAISyd+Bb+G1h31r658bqhHwEMsXHxRfts82d5gYgLlol525LeI57Vj+7EfRk1vhm
-	TEgENZIzANvREf0u5i1Aq+U5Q6dm7aPwQjK3CVt3G7kdQ/jxwWdHCdEMnehIFwrngyirH4ZUuLazQ
-	2G26UMhe6q3ynXclQc3w==;
+	List-Owner; bh=+CWJ9v6mA+g8qLvn26sjOxQzGEXjKHCy3enNhz9LIdg=; b=tEvTFuedEVIrph
+	CRP5jaXHGHuJiWw9vqcRrxajM5zAjKGMhgqL2prLCDMAgWcAyspVUdQP0CdeHMiQx0TPWOzfzrn/m
+	lWZQCI24elQ0bjw+X21xLcOap3VOsoJt79pD5U0KOSTArvWRuQrzD+jUtK24iq9I77qaRRT49uboq
+	tkpMfdiD/aqxa8nc1rOVmleAymeULLMR0mZgy3Y9dGKsDuKtJ/xuYS2rZgbGf95bCLyKSvYf8QhTn
+	KxVPpDTDNP7vEo7yo55JK0Sl32mhljJHtq3UFf6Rfz6Wq6sdtTuUV4A0cjZSnYqgiF3FTBKJ669dU
+	svBcCvtfqrfeF6hzp8eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmB8w-0000000B6JJ-3JUm;
-	Sun, 23 Feb 2025 12:31:34 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1tmBAN-0000000B6XK-3EvY;
+	Sun, 23 Feb 2025 12:33:03 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmB0J-0000000B4s7-0jxB;
-	Sun, 23 Feb 2025 12:22:40 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-439350f1a0bso20681855e9.0;
-        Sun, 23 Feb 2025 04:22:38 -0800 (PST)
+	id 1tmB0K-0000000B4sH-23IX;
+	Sun, 23 Feb 2025 12:22:41 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-38f325ddbc2so2634615f8f.1;
+        Sun, 23 Feb 2025 04:22:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1740313357; x=1740918157; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1740313359; x=1740918159; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=z0wQhVsHeKChXXBl+h2UsEWEersbr5rCyfY+lWbHqbE=;
-        b=hno8D7DrTc2KXniycq/eXrMFpHAfFfbozCKS4JUADogtjJ3wUazx9uSu/+vUA8w9kF
-         PvQFrmwt7LA2O/HRQ9llLQ9EB9xTOunn3hXYxWC7vONOT7gaPkMDk3VJS9rgaKS86kaf
-         1mioZJ+ZkZ2hn2fTLJNQshbBMLbollhicLPC5ElGOa0XgNQu/67s/VHD/cRMI/IHgNmH
-         mMjzyLTzk0q4KRFVpANXeAUOvy7KlFQiwA9sGvaod1oa8l7LjgL9B7E24V9C/QM7dW31
-         SumaGtjjSKy2yu5ef/YQluC+9YiTfKx5VRV9bqqMVaWz0b/GcZaUAfN0kKlsGXzf//Fs
-         kxog==
+        bh=C92cg9pDirScfRELIv/SYftxNY7no1Ol/6QVuJ3MiRc=;
+        b=UcQpk3RhuPZmaoErkj28frBL9UQH3VeWMp0aTLGuXldO/X7WL0dbhwXTfskIMRJXwg
+         SOsQH4sepRjmmCnI369GIkcYtYD1WefGdtVacvts7bO3GlkqoAfBKWdSQsM+YRiPx9TG
+         Wqq4Renm5VRcMU4lpkGf/g4iSbc1RyD1+y0uMZ7Tg2r0TdtE8tQf8e+2afiAUsxG7VLo
+         4H3FSnjryKXBWatiDmLcz81tyc8Fa/5SHcRI0TycoEr8Z3SziPSxrPIGaNngkuWWaMSP
+         6sYBXLQujEGGoexhA2gDcH28bSRrvbW23iCJNNgJYcYDVU0yMUy4Cqlu+XWk5W4CxmXi
+         3zNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740313357; x=1740918157;
+        d=1e100.net; s=20230601; t=1740313359; x=1740918159;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=z0wQhVsHeKChXXBl+h2UsEWEersbr5rCyfY+lWbHqbE=;
-        b=hjpmEag5y2/eFHmpKV4CuOXLxF4hbAAYKx6rEzlEI2ngQOsGkNMO1U9BBUKqzpl9sD
-         +GJBk9F+GNxHFQmGyO3M6dQ5poHY5RvLQyQXWSK3VU+0GvQsDmb9eLuuU+vEtdHpURNa
-         8jFiUDAtmR+74i5tg8LWfPHFCy7C2qc4trIbCo36E5KBigbdDQLcuE+LXD7P0kwkvg7/
-         iulnYQElVfqDRrzJCPccPKJRKjeWBLn13teM83OReX91NImHVDn0ejuHs/RBRZam8+Lx
-         LBD2Izhtl5wR1QEJ3CFazu3CR2Erq/XlrOm5khU7T5qR2dJKcDsevdoZYSkJLVjmwYZA
-         9Dmw==
-X-Forwarded-Encrypted: i=1; AJvYcCUqWs8lJWZGiaK3zz5u+NudyULrV3Z91/EwWFPsAB2VgdJX2U0KAV8iLh/hvWwItHxL0DiP5st84seo@lists.infradead.org, AJvYcCVPCfXFajIekDA8Xgp/RjhTv00qk9TeU37TwuQy76Zv1F9+36pVTCsRzKUJbnQ3smcODSAhdeuGwV0jxKE0Ct7K@lists.infradead.org
-X-Gm-Message-State: AOJu0YwdJrtpGsk14lN0MhoIBX01WJd0UgGcFyFHJ0l1+iLe/qE/KEj8
-	LnQg91liGizNCbbD3RQ/rYXemTzrVZamgZZFB5NqSpi1WjDWnYIH
-X-Gm-Gg: ASbGncvHfO636kUML1TIJaW+ze2f0gbVtf1WqVj3zw0NE+UjwOSygRgxMIv0zFDMs9e
-	dyKPyy7chFZOz0vKQ/BYN4p8WQ+SiZCLSQaolZ/HpKnEEu75265PlRW8P2aSABIS+9fpswpSrDn
-	+hZGiHXsNYWyGL4+BDgHkQ2YBI/cKgDcbnOA/fagyxbStqGdN05VG74DTSEitD0EhdQEEY3OCCJ
-	HyU68N7R7g8zsoBL1Na85NvfAZ2YCPTXxfFiQ7NLa35w10ehQPtxXiErLTT6j2Pf4Wt4G2zVCMF
-	U//OvCe8RR736r1ezRlbMsf5ma906ZJYBeCVUNA1s/XPgKMzFLjw0/rAbpGFaz3OKU8Kx9QAQwG
-	HGA==
-X-Google-Smtp-Source: AGHT+IELhxBegLSVK0u+lmVP1P13Q3bXTlowJFOfv8B2pMlO46HBtKWfy8VmtqQKECimk9UdAMZdXw==
-X-Received: by 2002:a05:600c:4511:b0:439:5f04:4f8d with SMTP id 5b1f17b1804b1-439ae320687mr67074255e9.12.1740313357412;
-        Sun, 23 Feb 2025 04:22:37 -0800 (PST)
+        bh=C92cg9pDirScfRELIv/SYftxNY7no1Ol/6QVuJ3MiRc=;
+        b=MAbQ6Y3w32oaCqtiIyrz0tvl21gQfCopRqf5dT7TG/2FWmN9sVQTLNEwPASdFYI06k
+         s44GcpGsrBfdmIt8JPHBxDWtWS/nQSVImpT0kSS+wIkljc5LIpgG+dLei3EdCy1rZegt
+         OA2b+vwA8NBDvwK2sNZg9FRAqV9pp4hcqN6W6S72TIMRF08I+WhVq5+8x90BTkrII0vA
+         2RtlPcbG5bg3AtNjvZ/DWm1cD5yfnT4TTffG7oDcrHyRdj5NcUKAXCkgn7TyTW6Bi9td
+         QV7OU+4mgWRWu5+EAzAbZF0Usm7mz0c7cJL8QbXqSxGo+vTun7Rf2mwOJAOBnIjXis84
+         dwnQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUMkQiJffTCCX3+iihg32cs0Piu2WFMVJ5Qh9+LDIy2KqU17D500HeL0woparD39vEfRMngN6I6UzhxrjOTT3GE@lists.infradead.org, AJvYcCV9DpJiW887XQKmtwcyOFQfgFhbFUbr8n/VQzFHu1reeIe9quelYfKhF80yWYMeTbE3EDNzDPpHM5XA@lists.infradead.org
+X-Gm-Message-State: AOJu0YzgG9i04x760vWiuuFv87IiXQDQUCXAMYVXCfmflCFbq8Q7l5Sn
+	TB/YoADr9fDbsF4GxL6POjUaDiq0rWjlL0dgHn4IUSWCsJy3W63pE7K8hg==
+X-Gm-Gg: ASbGnct7AT2NVrl2nFT1V228/KfQEMUl3KSHmClDQnZjwfJ9NFQy5XcCyLCEwcPwKlI
+	3lDW2+1B2Pgx23YlI2yR/4slWUKBhomWxuAsxqxswH1tfGNh0Ls8Mm0kjz4hTtzpQmtKmb0jrJA
+	fmm7FHUUh05iRPAg7BD6YaNOH7k7g2MqF899MxuRn9+hTCDEFQsrXmANe28tubA6dhmsHURRhSe
+	DokBQPJ+Y8QEjqBCrQCt3bvSc6Uy0/1xBB5jqXdMzoe5t2jGXoHz6538F865Drc4SbqydIdx1yS
+	SJ5VcQ5eJymCe8SQnZev2nrQyoQiak5VMmSovvdpna1tNLH9e9qKB8eVHWMwadkW++EglR+Xkg5
+	f9w==
+X-Google-Smtp-Source: AGHT+IHD/1fKxNbRJHEqjlek+14p9mn6PKTF//azfEyhIr2/+Ub8gP0MUCWd/hcqjMmdh1I7H/WIww==
+X-Received: by 2002:a5d:5850:0:b0:38f:2030:7da9 with SMTP id ffacd0b85a97d-38f707b0b87mr8586440f8f.28.1740313358741;
+        Sun, 23 Feb 2025 04:22:38 -0800 (PST)
 Received: from ivaylo-T580.. (91-139-201-119.stz.ddns.bulsat.com. [91.139.201.119])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38f259f8602sm29611608f8f.94.2025.02.23.04.22.36
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38f259f8602sm29611608f8f.94.2025.02.23.04.22.37
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 23 Feb 2025 04:22:36 -0800 (PST)
+        Sun, 23 Feb 2025 04:22:38 -0800 (PST)
 From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -83,16 +83,16 @@ Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 5/8] phy: phy-snps-eusb2: make repeater optional
-Date: Sun, 23 Feb 2025 14:22:24 +0200
-Message-ID: <20250223122227.725233-6-ivo.ivanov.ivanov1@gmail.com>
+Subject: [PATCH v2 6/8] phy: phy-snps-eusb2: make reset control optional
+Date: Sun, 23 Feb 2025 14:22:25 +0200
+Message-ID: <20250223122227.725233-7-ivo.ivanov.ivanov1@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20250223122227.725233-1-ivo.ivanov.ivanov1@gmail.com>
 References: <20250223122227.725233-1-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250223_042239_532293_AE9A8515 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20250223_042240_524735_A3DA02FE 
+X-CRM114-Status: GOOD (  10.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,10 +109,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some platforms initialize their eUSB2 to USB repeater in the previous
-stage bootloader and leave it in a working state for linux. Make the
-repeater optional in order to allow for reusing that state until
-proper repeater drivers are introduced.
+Some SoCs don't provide explicit reset lines, so make them optional.
 
 Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 ---
@@ -120,18 +117,18 @@ Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
-index 4e5914a76..dcc69c00a 100644
+index dcc69c00a..7a242fe32 100644
 --- a/drivers/phy/phy-snps-eusb2.c
 +++ b/drivers/phy/phy-snps-eusb2.c
-@@ -461,7 +461,7 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
- 		return dev_err_probe(dev, ret,
- 				     "failed to get regulator supplies\n");
+@@ -420,7 +420,7 @@ static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(phy->base))
+ 		return PTR_ERR(phy->base);
  
--	phy->repeater = devm_of_phy_get_by_index(dev, np, 0);
-+	phy->repeater = devm_of_phy_optional_get(dev, np, 0);
- 	if (IS_ERR(phy->repeater))
- 		return dev_err_probe(dev, PTR_ERR(phy->repeater),
- 				     "failed to get repeater\n");
+-	phy->phy_reset = devm_reset_control_get_exclusive(dev, NULL);
++	phy->phy_reset = devm_reset_control_get_optional_exclusive(dev, NULL);
+ 	if (IS_ERR(phy->phy_reset))
+ 		return PTR_ERR(phy->phy_reset);
+ 
 -- 
 2.43.0
 
