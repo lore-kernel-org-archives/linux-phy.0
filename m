@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D19A3C021B3
-	for <linux-phy@archiver.kernel.org>; Sun, 23 Feb 2025 23:48:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7802C021B2
+	for <linux-phy@archiver.kernel.org>; Sun, 23 Feb 2025 23:53:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lbDqiMyeigdu1QnaAw6m8Atp7dxl7ivqE7AgFHGWgTw=; b=IFvo++203KmvQa
-	EjGkgTzXNEEyzcdaZbUhHMQMm/Wg8mnoF+P+5iIKTZXpfO96xl2zOyQqJxjFLCsVzcbQSJK1F6CGY
-	MIn9sxvx7MCZtsKVilaM/o9wMxLiip0t91bvRlsBIJQsY+M/HBEPppfEQ20Gwm7EeDff2nrQcqv9b
-	xs4yPGYIHIs3vsg//8o6NGn6Ezi1cIlIeERgFMGmweumH4W7FFmWmLo0KPORDK5g+MZEVx/nJiiDX
-	kuTFUbqG+3cOYGmXUaSGKFlNQ+/70+XwnVM+Y+QcsIHG+6VSgw4cWExP54I/YCfaACxeSQ4t3UGBU
-	Oe6MhddXIA+r5Ing+rpw==;
+	List-Owner; bh=P8FwwewW9oR4gFvLhEJNtvvaX5u19OG1T+D2Bb9KbuQ=; b=J5BAAxuEKQVSmu
+	RXPp274hesVyrcRMzLFipfVYyoYLcWqx2tMK9N+Nvi3F0hcG+HKBE4g4UrDQJ54Hc+yMky6Dp48sD
+	FqfSCl68b50uRV4TGKUYyKKeKoZUDSoGMrrXrh8zfHwyh79Af7daScCAldXwqHDKtz4yZ6dX6V0mn
+	sa9UgunahwpoNahhzbJhRZBFcCJRZloNU0rRAONdE94XmQff41dqb5hMD+PndK8UAeRATBfaA8eqx
+	8+wSoVykybzjpXsMdyGfIAW0V4FSPgEngtazP90U5n1AotxE72dYNWov4ktxdazgKl9wC+RJcGK7l
+	nmB8IENEyOa6jjCWdEkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmLhn-0000000BzMz-2REK;
-	Sun, 23 Feb 2025 23:48:15 +0000
-Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
+	id 1tmLmu-0000000Bzjv-1kiS;
+	Sun, 23 Feb 2025 23:53:32 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmLhl-0000000BzM7-0Ooe
+	id 1tmLlQ-0000000Bzc3-0vFz
 	for linux-phy@lists.infradead.org;
-	Sun, 23 Feb 2025 23:48:14 +0000
-Received: by mail-lf1-x131.google.com with SMTP id 2adb3069b0e04-54622e97753so3557524e87.0
-        for <linux-phy@lists.infradead.org>; Sun, 23 Feb 2025 15:48:12 -0800 (PST)
+	Sun, 23 Feb 2025 23:52:01 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-546210287c1so3958766e87.2
+        for <linux-phy@lists.infradead.org>; Sun, 23 Feb 2025 15:51:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1740354491; x=1740959291; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1740354718; x=1740959518; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=9wcnMV7bCjw+onbQP13XkDfLLYTKBRINzQvJtc5RrEM=;
-        b=oCvCtweQlRFMIqOFgr3Ml4mK7U/vp8B14Hv9+iHNOiJGUsMuInu2USSMMEKsV/bQZR
-         lmhjUgHTPFZCu2pF1my3QKbuR75M7G17xg9ATMJW1GIcbIWUUQhRpsiaR1Hzq72kuyvK
-         mnWfGZUubmTlHW5M1nceVfclteyGDaIH2ddlyzwJ8ovMjbrpy9jqc3IWoD5seXkrbN7U
-         vbdPrXNnCgaODimj9mMY6HZTkqY5GI4VbyEohoAdGO+WZl/cZvO8vPbFOesL5ABH4AeQ
-         ken/U7GZpkNg+TtGw9jVuej63f+ndLwY0+KjlzxmG/XDF59Z4tols6tD9sgu+NjvjjDG
-         N8/w==
+        bh=ZqpsSfd4hK9sMOyyiNPBFdSaUXrM9eOMXEQlPVLZ1L4=;
+        b=S5fRIq+W3+rNKXGlQFPADZpcppbckkUCTvg6JNvmMnQQwdFBTWKW2RoanQkGwM4bJ2
+         PZW0pHxQE9SsNozaN+4XmvwxKbmjK1NP/GOYCloJtwmzvZ98NCIG0nJXu0VT2crFs42F
+         4LcMaqKaCEvLQYKHm4W1dClA4VZ+Tv2ygfReZOTeQsOodJTRLF+fqiX4kOwFUT+v9rND
+         EQ2WhsUgS5AaooaK5fJQJ8P0gVTMFVvwhMvT/iSLq02JEvJAdNt1bMVNSo8RjNKzWfcB
+         5JMtrgWoKF+kr/YWjjoB3R+VWsPepSYsTkGOUUmEw/fe0zNbKjDxqo8fUVUxAWEtdNXH
+         AOmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740354491; x=1740959291;
+        d=1e100.net; s=20230601; t=1740354718; x=1740959518;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=9wcnMV7bCjw+onbQP13XkDfLLYTKBRINzQvJtc5RrEM=;
-        b=jnXAFZPL/hoe0KJnrhZomaunTK0C4OlI7QnS4G8NAO5fiqyoEVcbtn1Ah0SoiCA3fN
-         PfPVFU0GmHRLct5JrnOi14T8MJWpThNTqF8KeTgMXdL9esX4DryKkUZkd4JRVSgI5Yhi
-         grNQQ0vEe/RRW535I3rJpxNFs+76sNdgYjWXcuL9Jj6QSa5cnBtmqKlVxP/0Tw2yaRWE
-         mYyJeQ0KjDxFiO3LXgruJ17VQMeKi8YcFCNkfW+JvY78yDHzspRGga4q4As3d6W0e0ZY
-         0rDn7A1pyaZ77Tl3lGLUUow5PWlu/hqjzvpTuc8ymLuZXUq1YlD3cI5mDlHZreGY5pZL
-         awug==
-X-Forwarded-Encrypted: i=1; AJvYcCXumzOoZCTRcb0Gwot+o1BOLWUOMxOtdROz71G383cNMvxtUSt2To0jFqG+3sFF6MQnp5b2AZGtsQE=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxm4S4F2GQ8Dy8D1lYAXt68L9I0Vpy0vCEx7S0IInv36MWK/KFb
-	tttIYS6a5rKGDUglD33qPPooktpYGLi86schHnCzBYM23g/Vk1hBwEVBqft/qIc=
-X-Gm-Gg: ASbGnctjKQKZlwWlzApcRB+U06MlA8dlixGJh2gBRhVUxmX4DFnMI4wAumi6/PXQN/B
-	WOf/YvC885wtQDAft4OJ0Utcwnh77acnme3wVpyoydsEDH2/+lPmA078XnaF4cAcWWgf0v/8ILX
-	XcleCKt2Vgt3NZSm4kbf/rlnx+t6Zm+eKT8QPJRId+MTobVE50zUzT6TXPBRHkZQqobmuMyjjOK
-	2K/p1ww/wOzpRtjk/RjWAQ3/a5tqFUbfqDaL0uEMIUgA+G+wd6XVn1N7M40Af5+0m91XFw1ZWP9
-	FATgasPdUHYMcVdTvR59SfjkcObGLJhQ6MOSBdXDmBI3v2mo3sT6KP/tvs+4Z2bCV8Syb5Ma6O9
-	PV1NFzg==
-X-Google-Smtp-Source: AGHT+IGXmEWcaphU72erBHimrC5JqF3fr1E4pBz3cUxisqWzEmoQZicuyftwCeCY3akeN/V+TAZxhg==
-X-Received: by 2002:a05:6512:3f29:b0:545:1049:eb4f with SMTP id 2adb3069b0e04-54838a00232mr4288474e87.0.1740354491225;
-        Sun, 23 Feb 2025 15:48:11 -0800 (PST)
+        bh=ZqpsSfd4hK9sMOyyiNPBFdSaUXrM9eOMXEQlPVLZ1L4=;
+        b=jHUC80TzY5GD3GAgivrBqQKNu3NOMpnYfOC3PIC8H7DlrCvwrLiV3k5DVCfxxQxaLX
+         Efi+PTqDU3WhzZUb+GjIghfUmTD7AdLB49qAdx55pVbZS+pkPWb5fuU9hewK5IiAEXMS
+         WilsgsdaMNqQw6R4Qx8dOSjMOMK17qcRYtCt68OLHCQf85sPH4UoHhjQgNkRv8+tsKye
+         u09Zz/bEtupu68DbtKoBlVi+PVJL4QgEsJMCumRU3ah4HAI/L9YjeGSoU02ABBhlOpx6
+         X/50IA9vCA0UQvxnIlXTH0QWnAItIAAKHPlFhTf7+QNBvQGqZ3ubgXEkApEzNiNbT4Q3
+         VMTg==
+X-Forwarded-Encrypted: i=1; AJvYcCW0zO6laHVjsvKoKkWL8wxvt4eEi4YeoXaIrIn9usIwRc3wXuaM98wEGJBhyp/N+Y5eUtboTd2caPI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxcX+QiwN9twpbEX5l7LBjV2IfBADy7T+4Ojb0Ylb0Vt7a7sJzQ
+	NsoYnR1OqiB+Z+jwFom5EOmiwe/oicmVtY9yC08O7vOFunsZVugPDv0ChoXTTFQ=
+X-Gm-Gg: ASbGncvencejXx87kc+WMgQzBty7+GSkDXBimt/o04zQtsBeW4s/tQV2UJLtvjxzbRx
+	t3fe2FDX9HMGRKhnrgdGhrO3LMh4BoY6S3nIEUTq9TpNVEZRT+UkBQo3//UXcNvuHLbJzcaxx5o
+	eN4adhn54ar7abw8faQNx8KEeu1tEwaGuLKYkuDT5pdq96sK5rwe3/S5ouAzv7CLtfRgO7ezY9E
+	M8lB+lcp2FoaEV1YLojC9T1kD2UckSzPt3jCxEU//Cu5IgdI5hN003h2Uh2TCxVGkfDU0IkTEub
+	Fc4k8FeJi6Pf8ZnCQDRXIlSZXk4DeDp8n8uHILaVMwE9hmP5wVpt93gk7mTxxp9vwYUmSue3wtb
+	QHNgULQ==
+X-Google-Smtp-Source: AGHT+IEpJwtjfAQELBV6QLX+Dx/RJbukpSeVjI5C/XlxolpeCymBYYRyu1xtRVKJ/uK17lMxs8fvVw==
+X-Received: by 2002:a05:6512:12c4:b0:546:3136:f03d with SMTP id 2adb3069b0e04-5483925996emr3876237e87.35.1740354718344;
+        Sun, 23 Feb 2025 15:51:58 -0800 (PST)
 Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5452a67e6c3sm2955721e87.1.2025.02.23.15.48.08
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-54530df9016sm2706600e87.36.2025.02.23.15.51.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 23 Feb 2025 15:48:09 -0800 (PST)
-Date: Mon, 24 Feb 2025 01:48:07 +0200
+        Sun, 23 Feb 2025 15:51:56 -0800 (PST)
+Date: Mon, 24 Feb 2025 01:51:54 +0200
 From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -78,17 +78,16 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 6/8] phy: phy-snps-eusb2: make reset control optional
-Message-ID: <rcny5iaxs6gr6vcxmjep6hwtkt2fvtgzhbxlpu3ax6vj7maure@n5bg5y74vwc7>
+Subject: Re: [PATCH v2 7/8] phy: phy-snps-eusb2: add support for exynos2200
+Message-ID: <ac7bq3toicuoppmspqvohiss5wkhgw4v6aozzstd5pr66bfcse@k7tqijab4csq>
 References: <20250223122227.725233-1-ivo.ivanov.ivanov1@gmail.com>
- <20250223122227.725233-7-ivo.ivanov.ivanov1@gmail.com>
+ <20250223122227.725233-8-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250223122227.725233-7-ivo.ivanov.ivanov1@gmail.com>
+In-Reply-To: <20250223122227.725233-8-ivo.ivanov.ivanov1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250223_154813_143077_88353DE2 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250223_155200_269456_2D9C9B2B 
+X-CRM114-Status: GOOD (  20.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,19 +104,123 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Feb 23, 2025 at 02:22:25PM +0200, Ivaylo Ivanov wrote:
-> Some SoCs don't provide explicit reset lines, so make them optional.
-
-Is there an external reset or some other signal?
-
+On Sun, Feb 23, 2025 at 02:22:26PM +0200, Ivaylo Ivanov wrote:
+> The Exynos2200 SoC reuses the Synopsis eUSB2 PHY IP, alongside an
+> external repeater, for USB 2.0. Add support for it to the existing
+> driver.
 > 
 > Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
 > ---
->  drivers/phy/phy-snps-eusb2.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/phy/Kconfig          |   2 +-
+>  drivers/phy/phy-snps-eusb2.c | 172 +++++++++++++++++++++++++++++++++++
+>  2 files changed, 173 insertions(+), 1 deletion(-)
 > 
+> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> index 11c166204..58c911e1b 100644
+> --- a/drivers/phy/Kconfig
+> +++ b/drivers/phy/Kconfig
+> @@ -45,7 +45,7 @@ config PHY_PISTACHIO_USB
+>  
+>  config PHY_SNPS_EUSB2
+>  	tristate "SNPS eUSB2 PHY Driver"
+> -	depends on OF && (ARCH_QCOM || COMPILE_TEST)
+> +	depends on OF && (ARCH_EXYNOS || ARCH_QCOM || COMPILE_TEST)
+>  	select GENERIC_PHY
+>  	help
+>  	  Enable support for the USB high-speed SNPS eUSB2 phy on select
+> diff --git a/drivers/phy/phy-snps-eusb2.c b/drivers/phy/phy-snps-eusb2.c
+> index 7a242fe32..67a19d671 100644
+> --- a/drivers/phy/phy-snps-eusb2.c
+> +++ b/drivers/phy/phy-snps-eusb2.c
+> @@ -13,6 +13,39 @@
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/reset.h>
+>  
+> +#define EXYNOS_USB_PHY_HS_PHY_CTRL_RST	(0x0)
+> +#define USB_PHY_RST_MASK		GENMASK(1, 0)
+> +#define UTMI_PORT_RST_MASK		GENMASK(5, 4)
+> +
+> +#define EXYNOS_USB_PHY_HS_PHY_CTRL_COMMON	(0x4)
+> +#define RPTR_MODE			BIT(10)
+> +#define FSEL_20_MHZ_VAL			(0x1)
+> +#define FSEL_24_MHZ_VAL			(0x2)
+> +#define FSEL_26_MHZ_VAL			(0x3)
+> +#define FSEL_48_MHZ_VAL			(0x2)
+> +
+> +#define EXYNOS_USB_PHY_CFG_PLLCFG0	(0x8)
+> +#define PHY_CFG_PLL_FB_DIV_19_8_MASK	GENMASK(19, 8)
+> +#define DIV_19_8_19_2_MHZ_VAL		(0x170)
+> +#define DIV_19_8_20_MHZ_VAL		(0x160)
+> +#define DIV_19_8_24_MHZ_VAL		(0x120)
+> +#define DIV_19_8_26_MHZ_VAL		(0x107)
+> +#define DIV_19_8_48_MHZ_VAL		(0x120)
+> +
+> +#define EXYNOS_USB_PHY_CFG_PLLCFG1	(0xc)
+> +#define EXYNOS_PHY_CFG_PLL_FB_DIV_11_8_MASK	GENMASK(11, 8)
+> +#define EXYNOS_DIV_11_8_19_2_MHZ_VAL	(0x0)
+> +#define EXYNOS_DIV_11_8_20_MHZ_VAL	(0x0)
+> +#define EXYNOS_DIV_11_8_24_MHZ_VAL	(0x0)
+> +#define EXYNOS_DIV_11_8_26_MHZ_VAL	(0x0)
+> +#define EXYNOS_DIV_11_8_48_MHZ_VAL	(0x1)
+> +
+> +#define EXYNOS_PHY_CFG_TX		(0x14)
+> +#define EXYNOS_PHY_CFG_TX_FSLS_VREF_TUNE_MASK	GENMASK(2, 1)
+> +
+> +#define EXYNOS_USB_PHY_UTMI_TESTSE	(0x20)
+> +#define TEST_IDDQ			BIT(6)
+> +
+>  #define QCOM_USB_PHY_UTMI_CTRL0		(0x3c)
+>  #define SLEEPM				BIT(0)
+>  #define OPMODE_MASK			GENMASK(4, 3)
+> @@ -196,6 +229,93 @@ static void qcom_eusb2_default_parameters(struct snps_eusb2_hsphy *phy)
+>  				    FIELD_PREP(PHY_CFG_TX_HS_XV_TUNE_MASK, 0x0));
+>  }
+>  
+> +static int exynos_eusb2_ref_clk_init(struct snps_eusb2_hsphy *phy)
+> +{
+> +	unsigned long ref_clk_freq = clk_get_rate(phy->ref_clk);
+> +
+> +	switch (ref_clk_freq) {
+> +	case 19200000:
+> +		snps_eusb2_hsphy_write_mask(phy->base, EXYNOS_USB_PHY_HS_PHY_CTRL_COMMON,
+> +					    FSEL_MASK,
+> +					    FIELD_PREP(FSEL_MASK, FSEL_19_2_MHZ_VAL));
+> +
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Could you please unify the switchcase? assign the values to temp
+variables, then program them from a single code stream. Or maybe even
+replace switch-case with a table-based lookup.
+
+(we probably should implement the similar change for qcom part. Maybe
+you can refactor it too?)
+
+Other than that LGTM.
+
+> +		snps_eusb2_hsphy_write_mask(phy->base, EXYNOS_USB_PHY_CFG_PLLCFG0,
+> +					    PHY_CFG_PLL_FB_DIV_19_8_MASK,
+> +					    FIELD_PREP(PHY_CFG_PLL_FB_DIV_19_8_MASK,
+> +						       DIV_19_8_19_2_MHZ_VAL));
+> +
+> +		snps_eusb2_hsphy_write_mask(phy->base, EXYNOS_USB_PHY_CFG_PLLCFG1,
+> +					    EXYNOS_PHY_CFG_PLL_FB_DIV_11_8_MASK,
+> +					    EXYNOS_DIV_11_8_19_2_MHZ_VAL);
+> +		break;
+> +
+> +	case 20000000:
+> +		snps_eusb2_hsphy_write_mask(phy->base, EXYNOS_USB_PHY_HS_PHY_CTRL_COMMON,
+> +					    FSEL_MASK,
+> +					    FIELD_PREP(FSEL_MASK, FSEL_20_MHZ_VAL));
+> +
+> +		snps_eusb2_hsphy_write_mask(phy->base, EXYNOS_USB_PHY_CFG_PLLCFG0,
+> +					    PHY_CFG_PLL_FB_DIV_19_8_MASK,
+> +					    FIELD_PREP(PHY_CFG_PLL_FB_DIV_19_8_MASK,
+> +						       DIV_19_8_20_MHZ_VAL));
+> +
+> +		snps_eusb2_hsphy_write_mask(phy->base, EXYNOS_USB_PHY_CFG_PLLCFG1,
+> +					    EXYNOS_PHY_CFG_PLL_FB_DIV_11_8_MASK,
+> +					    EXYNOS_DIV_11_8_20_MHZ_VAL);
+> +		break;
+> +
 
 -- 
 With best wishes
