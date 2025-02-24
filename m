@@ -4,68 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D738C021B6
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Feb 2025 03:21:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 552C6C021B5
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Feb 2025 07:17:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=coruKhk1so72KdOFb1iJ105AOfPcbeShWvJNyJeweGs=; b=ZDyAWIOyaOqAaR
-	H9P0T4+0YqDnhw7mz+P8av/orBU8m9dafccdfdO8Dm4hMWUbbPdoYcFG+HJUOQFRCJ+xxWtqfKEBn
-	Q4jnFSGCfBxXtpDpCCAdYYW0p4XEcB603fWWhj3jUS1syrGXJCZPKZqoHEbLjy0wAgrrpztJrSP2B
-	sjdgFNrWx6/HC75S1sK5HdnwlA/E0CWcGhRGjtk7gJsA8RXe/8yv6DQfbuwtQP28CAtHJeMomk71l
-	aPQY8tqYb4kTnGLJUwoI3OTJGeJ7EZhAy2LYRDjLKuLmk1fLIx0aWApn68+LgoitM3mnNld1N7tCS
-	6YrEmYtRdRZj2tWayOow==;
+	List-Owner; bh=sWEMGTZZPTk5UkoGqYAhqePaHEmzdl6LFBOjPN5lmiQ=; b=AL/pSOWmvJ96o+
+	g28ljK2/F9nrX0AuL5NrR6gcExn174XsL7UAwnAZZPLvsJlQcC68EmmKbHGrkSA8W06Pd4hdunQxL
+	FA5r1UBtVRzXYmayZtc44M1c/5Zthj4o1lOmWhSUGrjkjBxouYxHS+6+0rF1VagrRrh2K12nRREV6
+	kjoB/W42AQ8cZFTNpvLLlrqlQkBBpXYhcOc/Y1TWgduw8nJsLrF1U7N5rPgcsuix6OXoCH2OV7Qk7
+	orSeBdBWkR7GFGqTHrmsQ3sRmqWK8lP7HpukuNFaR8U6ZI2c/fwmNCwNo55t5ON1Oozq1UkTCXWek
+	WAhZrrFi7aIWqdwQ990A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmP1z-0000000CE47-3MBW;
-	Mon, 24 Feb 2025 03:21:19 +0000
-Received: from mail-m3291.qiye.163.com ([220.197.32.91])
+	id 1tmSiC-0000000CXvm-0HHp;
+	Mon, 24 Feb 2025 07:17:08 +0000
+Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmP1w-0000000CE1t-1oXZ;
-	Mon, 24 Feb 2025 03:21:19 +0000
-Received: from [172.16.12.26] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id bf356a8d;
-	Mon, 24 Feb 2025 11:21:02 +0800 (GMT+08:00)
-Message-ID: <731abf8f-b157-47d4-a9e1-9aed6f5b4e37@rock-chips.com>
-Date: Mon, 24 Feb 2025 11:21:02 +0800
+	id 1tmSfQ-0000000CXPS-3DiV;
+	Mon, 24 Feb 2025 07:14:17 +0000
+Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-38f378498b0so3407876f8f.0;
+        Sun, 23 Feb 2025 23:14:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1740381255; x=1740986055; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=YGDYyJHeIvbN67HiPEdMBYxe4lOwRgtICljAixydSZg=;
+        b=AAA8S3R35C4b6nX20fp3aiD3qNUct8KABJvFAr8oviBpmLb4MP8rpjnMhLbTXuUfxq
+         IJvsAgic9vnbpvVh2+Hm2Vkt34nhkjWWTcWoe2jdW6D0yuoA0tnls9myDfLG1GJ08nTM
+         45EvSP0Fcn26Dok2G1A2RcNOo3aoly6dK7zYAf3Ymk+D60pmKV6gXJtJVYoSq55flD77
+         SX8kVjUh9tNOWzDzJxwqImMte4JmyvfLIkYqLkHX3D+w2QPsVqEs68JlNWcz0I3q3aKP
+         Lc8CA/10agYc605KRlAY1ni14eHkULHNoVruJh5c2nD6SYaXfW+VXJ9Hek9er2hjBZiQ
+         phoA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1740381255; x=1740986055;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=YGDYyJHeIvbN67HiPEdMBYxe4lOwRgtICljAixydSZg=;
+        b=c6W+OVeuU4x0lvoZmVlbZZbn6Y5555pgav9MLTGHP+j3ZoPgVJtT0ZvSjNElNkJtDi
+         8nrIESIcw0SQP4K/goBNSSX/4ZgNrqtcPh/HNb6bp1q5YksnfTCwaPrSTfZDfQCjWgAs
+         V6IO2ZmCbyHb2LmPa3aVpMDkE5GhAcZkzUIK6aHwlJTL/jRdXIA46DVSJPlo0paPIHha
+         dOB8V+UDBoCyoRme3b5X7W/4XLMMUSd0MJ0MEw4MLPwdyvUDe+qy/7Lsj7Kn14Qp+GAw
+         N/mSzHdFpnhZtk5jJGi0zPmG4kD8EmgrWcPXiBmRdyAxW8pVFCRc4VdBTx6TevFyyz/p
+         ZLXw==
+X-Forwarded-Encrypted: i=1; AJvYcCW1uJhfUOuYvV6Kg1eeA2g+tlFrWQJhWRH06wIsyY3OWNk8PxvJedztEOv68lU26rvnC6fLmao15necpTD3/yEd@lists.infradead.org, AJvYcCXVSMhJjQYosIkb5sGXpWGxWMXdpmIWmP7IrhCICmnIPIiS5K6SuZaxYKHPRBTdCai/M5B/mwwae0HI@lists.infradead.org
+X-Gm-Message-State: AOJu0YwihHZQaFeoWEpZ7Ej05BC/Ddil47wTf0mznzXcyzyxOdgl4P9N
+	pnl3BJDdej5LCjUrfgBoFLTI/nQT+MmBCC5wPzqvxe11XsjLI6JyUSY/GA==
+X-Gm-Gg: ASbGncueboIO+q+VENR5zKmn0SLPsxUlcyZ4v8OuCu63z+OFysTuOsH/+OE3M8cY4Gv
+	lS4vwqe4/W5W+jM1+zQQX/MOe6jLs+63S8VtK3tWzsgTiPcbRXs7BKKxeZF1XSKbH9vWkMIiV8D
+	bWGn4/g+/nowI40zOTjhtEsMm5COA+SUWEfEeOkFJPKFACJz/6EUHfw9kRhC66L+Zf9+uTcGM+Z
+	WF2tKW/iknLlegX6n1OuyuMHdNH3ct5hubk7qB3Z1id2EBxr3oIm769fC9WIqPxdPc+ZnwztRmu
+	hgzW+30vQA+t2Rdrau8S3avu5rK85s0UPmznSsiV
+X-Google-Smtp-Source: AGHT+IGwNUNxA01WRc9bPdVz1GSmsf5EHfuq7knr43OKBQrWqaclxDJN2pEyp9jAXY6JIC3+Wo1lJg==
+X-Received: by 2002:a5d:5885:0:b0:38f:2a32:abbb with SMTP id ffacd0b85a97d-38f7d1ffc25mr4536838f8f.4.1740381254826;
+        Sun, 23 Feb 2025 23:14:14 -0800 (PST)
+Received: from [192.168.43.21] ([77.85.230.22])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4399be79d92sm111533745e9.0.2025.02.23.23.14.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 23 Feb 2025 23:14:13 -0800 (PST)
+Message-ID: <3d23ec54-6e55-4ee4-bc1a-179ca97878ef@gmail.com>
+Date: Mon, 24 Feb 2025 09:14:12 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
-To: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
- Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: heiko@sntech.de, robh@kernel.org, conor+dt@kernel.org,
- algea.cao@rock-chips.com, rfoss@kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- hjc@rock-chips.com, kever.yang@rock-chips.com, dmitry.baryshkov@linaro.org,
- vkoul@kernel.org, andy.yan@rock-chips.com, krzk+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
-References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
- <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
- <tg6eyew4qahuxqakmmejne7xx2rkouj6htp55acun4ajz2irz2@vlmvqv3zc5vc>
- <C81810F2-6E9B-4DCC-85D1-CCB63CBFBFEA@gmail.com>
+Subject: Re: [PATCH v2 2/8] dt-bindings: phy: snps-eusb2: add exynos2200
+ support
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Abel Vesa <abel.vesa@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20250223122227.725233-1-ivo.ivanov.ivanov1@gmail.com>
+ <20250223122227.725233-3-ivo.ivanov.ivanov1@gmail.com>
+ <4tvpl3pujnuw2qjwu7f7ryrr5dndxow7srkkp2223wmexr23bi@7nmgrpq6znpg>
 Content-Language: en-US
-From: Damon Ding <damon.ding@rock-chips.com>
-In-Reply-To: <C81810F2-6E9B-4DCC-85D1-CCB63CBFBFEA@gmail.com>
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUtLHlYYHkhNH0oeTh5DHkNWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-X-HM-Tid: 0a9535f8f24203a3kunmbf356a8d
-X-HM-MType: 1
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pi46Djo5AjIXNxwdLSo9TD1L
-	FQMwClZVSlVKTE9LSE1MSU1PS09IVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
-	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFITExLNwY+
-DKIM-Signature: a=rsa-sha256;
-	b=TtkboSslEuG3O6Q33PmEvHv28Jvg5WyhYR2LFUqcKFp4BOeB/mohA8ndDgbxGn5eNvpe7Fkf8HB8qjnmn2aLu9BlykbGs6RCVL395hZUmPJW9eyvlAmbaEAF23buy2DkdSvordvN2UaJJ3yxiUObEM3aHwA/1rf/oZ7kgAjYhgE=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=SUWTCb0GbfrLEePUqui3jDgm691jrzdjRDy4hq8S9z0=;
-	h=date:mime-version:subject:message-id:from;
+From: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+In-Reply-To: <4tvpl3pujnuw2qjwu7f7ryrr5dndxow7srkkp2223wmexr23bi@7nmgrpq6znpg>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250223_192117_037907_2C7B2C4C 
-X-CRM114-Status: GOOD (  22.51  )
+X-CRM114-CacheID: sfid-20250223_231416_813242_21CAD901 
+X-CRM114-Status: GOOD (  10.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,75 +102,129 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgUGlvdHIsCgpPbiAyMDI1LzIvMTQgMjA6MDAsIFBpb3RyIE9uaXN6Y3p1ayB3cm90ZToKPiAK
-PiAKPj4gV2lhZG9tb8WbxIcgbmFwaXNhbmEgcHJ6ZXogU2ViYXN0aWFuIFJlaWNoZWwgPHNlYmFz
-dGlhbi5yZWljaGVsQGNvbGxhYm9yYS5jb20+IHcgZG5pdSAxMyBsdXQgMjAyNSwgbyBnb2R6LiAx
-ODoyNjoKPj4KPj4gSGVsbG8gUGlvdHIsCj4+Cj4+Cj4+IFRoZSBSSzM1ODggaGFzIHR3byBkaWZm
-ZXJlbnQgRFAgY29udHJvbGxlcnMuIFRoZSBvbmUgaGFuZGxlZCBpbiB0aGlzCj4+IHNlcmllcyBz
-aG91bGQgZ2V0IHRoZSBlRFAgcG9ydCBydW5uaW5nLCB3aGljaCBpcyByb3V0ZWQgdG8gdGhlCj4+
-ICJlRFAgUGFuZWwiIGluIHRoZSBibG9jayBkaWFncmFtIG9uIHBhZ2UgMyBvZiB0aGUgUm9jayA1
-IElUWCBzY2hlbWF0aWNzLgo+PiBTbyB0aGlzIHNlcmllcyBhZGRzIHN1cHBvcnQgZm9yIHVzaW5n
-ICJIRE1JL2VEUCBUWDAiIGFuZCAiSERNSS9lRFAgVFgxIgo+PiBpbiBEUCBtb2RlLgo+Pgo+PiBU
-aGUgcG9ydCByb3V0ZWQgdG8gSERNSTAgdmlhIFJBNjIwIGlzIHRoZSBvdGhlciBEUCBjb250cm9s
-bGVyLCB3aGljaAo+PiBhbHNvIGV4aXN0cyB0d2ljZTogIlRZUEVDMC9EUDAiIGFuZCAiVFlQRUMx
-L0RQMSIuIFRoaXMgRFAgY29udHJvbGxlcgo+PiBpcyBub3QgeWV0IHN1cHBvcnRlZCB1cHN0cmVh
-bSBhbmQgdGhlcmUgaXMgbm8gcGVuZGluZyBwYXRjaHNldC4gQXMgZmFyCj4+IGFzIEkga25vdyBS
-b2NrY2hpcCBwbGFucyB0byB3b3JrIG9uIHByZXBhcmluZyB1cHN0cmVhbSBzdXBwb3J0IGZvciB0
-aGF0Cj4+IHNvb24uCgpZZXMsIEFuZHkgaGFzIHJlY2VudGx5IHVwZGF0ZWQgdGhlIERQIGNvbnRy
-b2xsZXIgcmVsYXRlZCBwYXRjaHNldDoKaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wcm9q
-ZWN0L2xpbnV4LXJvY2tjaGlwL2xpc3QvP3Nlcmllcz05MzY3ODQKCj4+Cj4gCj4gT2ggLSB0aGlz
-IGlzIHZlcnkgdmFsdWFibGUgaW5mbyBhbmQgZXhwbGFpbnMgYSBsb3QuCj4gVGh4Lgo+IAo+PiBO
-b3RlLCB0aGF0IHRoZSB0d28gRGlzcGxheVBvcnQgY29udHJvbGxlcnMgYXJlIGNvbXBsZXRlbHkg
-ZGlmZmVyZW50Lgo+PiBUaGUgSERNSS9lRFAgY29udHJvbGxlciBpcyBhIGRlc2lnbiBmcm9tIEFu
-YWxvZ2l4IGFuZCB0aGUgVHlwZUMvRFAKPj4gY29udHJvbGxlciBpcyBhIGRlc2lnbiBmcm9tIFN5
-bm9wc3lzLgo+Pgo+PiBQLlMuOiBIZWlrbyBtZXJnZWQgc3VwcG9ydCBmb3IgSERNSTEgKFJLMzU4
-OCBTb0MgbGV2ZWwpIHJlY2VudGx5LiBTbyB5b3UKPj4gc2hvdWxkIGJlIGFibGUgdG8gZ2V0IHRo
-YXQgcnVubmluZyBieSBzb21lIERUIGFkZGl0aW9ucyB0byB0aGUgUm9jayA1Cj4+IElUWCBib2Fy
-ZCBEVCB3aXRoIHRoZSBsYXRlc3QgbGludXgtbmV4dCBjb2RlIDopCj4+Cj4gCj4gQW5kIGl0IHdv
-cmtzIHBlcmZlY3RseSBvbiBhbGwgbXkgMzU4OCBiYXJkcyAoaW5jbHVkaW5nIGF1ZGlvIGFuZCBt
-eSBjZWMgYWRkaXRpb24pCj4gQnV0IG9ubHkgb24gYm9hcmRzIHVzaW5nIGJvdGggaGRtaSB0eDAg
-YW5kIHR4MSB0byBoZG1pMC9oZG1pMSBwb3J0cy4KPiAKPiBvbiByb2NrNSBpdHg6CgpBY2NvcmRp
-bmcgdG8gdGhlIHNjaGVtYXRpYyBvZiBST0NLIDUgSVRYLCBJIGZpbmQgdGhlIGRpc3BsYXkgcm91
-dGVzIGFyZToKLSBEUDAgLT4gVFlQRUMwIENvbm5lY3RvcgotIERQMSAtPiBSQTYyMCAtPiBIRE1J
-IENvbm5lY3RvciAoQW5keSdzIHBhdGNoIHNlcmllcyB3aWxsIGhlbHAgaXQgd29yaykKLSBIRE1J
-L2VEUCBUWDAgLT4gZURQIFBhbmVsIChUaGlzIHBhdGNoIHNlcmllcyB3aWxsIGhlbHAgaXQgd29y
-aykKLSBIRE1JL2VEUCBUWDEgLT4gSERNSSBDb25uZWN0b3IKClNvIHRoZSBIRE1JL2VEUCBUWDAg
-c2hvdWxkIGJlIGVuYWJsZWQgYXMgZURQIGluIERUUy4gTWF5YmUgaXQncyBqdXN0IGEgCnRlc3Qg
-dG8gZW5hYmxlIGJvdGggSERNSTAgYW5kIEhETUkxIGluIHRoZSBST0NLIDUgSVRYIGJvYXJkPwoK
-PiBXaXRoIGJvdGggaGRtaSB0eDAgYW5kIHR4MSBlbmFibGVkIGluIGR0cyBpdCBsb29rcyBsaWtl
-IGtlcm5lbCBkZXRlY3RzIGhkbWkgdHgwIGFzIGNvbm5lY3RlZCBhbmQgdHJpZXMgcmVhZCBlZGlk
-Lgo+IEFzIG5vdGhpbmcgaXMgY29ubmVjdGVkIHRvIEoxMSAoZURQIGNvbikgLSBp4oCZbSBnZXR0
-aW5nIGkyYyBkZGMgdGltZW91dHMKPiBbICAgNTQuMTg4ODgwXSBkd2hkbWlxcC1yb2NrY2hpcCBm
-ZGU4MDAwMC5oZG1pOiBpMmMgcmVhZCB0aW1lZCBvdXQKPiBbICAgNTQuMjkyMjA3XSBkd2hkbWlx
-cC1yb2NrY2hpcCBmZGU4MDAwMC5oZG1pOiBpMmMgcmVhZCB0aW1lZCBvdXQKPiBbICAgNTQuMzk1
-NTU0XSBkd2hkbWlxcC1yb2NrY2hpcCBmZGU4MDAwMC5oZG1pOiBpMmMgcmVhZCB0aW1lZCBvdXQK
-PiAKCkkgdGhpbmsgdGhlIHJlYXNvbiBtYXkgYmUgdGhhdCBIRE1JMCBpcyBlbmFibGVkLCBhbmQg
-SFBEIHBpbiBvZiBIRE1JMCBpcyAKYWxzbyBjb25maWd1cmVkLCBidXQgdGhlIEhQRCBwaW4gaXMg
-aW4gYW4gdW5zdGFibGUgc3RhdGUgaW4gdGhlIApoYXJkd2FyZSwgd2hpY2ggaXMgbWlzdGFrZW5s
-eSBkZXRlY3RlZCBhcyBjb25uZWN0ZWQuCgo+IAo+IGRpc2FibGluZyBoZG1pMCBtYWtlcyBrZXJu
-ZWwgdGFsa2luZyB0byBoZG1pMSBidXQgd2l0aCBpc3N1ZXM6Cj4gWyAgICAwLjU0MDQ0Nl0gZHdo
-ZG1pcXAtcm9ja2NoaXAgZmRlYTAwMDAuaGRtaTogcmVnaXN0ZXJlZCBEZXNpZ25XYXJlIEhETUkg
-UVAgSTJDIGJ1cyBkcml2ZXIKPiBbICAgIDAuNTQxMjMwXSByb2NrY2hpcC1kcm0gZGlzcGxheS1z
-dWJzeXN0ZW06IGJvdW5kIGZkZWEwMDAwLmhkbWkgKG9wcyBkd19oZG1pX3FwX3JvY2tjaGlwX29w
-cykKPiBbICAgIDAuNTQyMjg1XSBbZHJtXSBJbml0aWFsaXplZCByb2NrY2hpcCAxLjAuMCBmb3Ig
-ZGlzcGxheS1zdWJzeXN0ZW0gb24gbWlub3IgMAo+IFsgICAgMC41NDI5MzNdIHJvY2tjaGlwLWRy
-bSBkaXNwbGF5LXN1YnN5c3RlbTogW2RybV0gQ2Fubm90IGZpbmQgYW55IGNydGMgb3Igc2l6ZXMK
-PiBbICAgIDAuNTQzNjA1XSByb2NrY2hpcC1kcm0gZGlzcGxheS1zdWJzeXN0ZW06IFtkcm1dIENh
-bm5vdCBmaW5kIGFueSBjcnRjIG9yIHNpemVzCj4gCj4gYW5kIGhlcmUgaeKAmW0gYSBiaXQgcHV6
-emxlZCBhcyBvbiBvdGhlciAzNTg4IGJvYXJkcyAoaS5lLiByb2NrNWIpIC0gd2hlbiBpIGNvbm5l
-Y3RlZCBtb25pdG9yIHRvIGhkbWkxIC0gYWxsIHdvcmtzIHBlcmZlY3RseQo+IChrZXJuZWwsIE9T
-IGFuZCBhcHAgbmljZWx5IHNraXBwaW5nIGhkbWkwIGFuZCB0YWxraW5nIHRvIGFjdHVhbGx5IGNv
-bm5lY3RlZCBoZG1pMSBwb3J0LiBhbGwgd29ya3MpCj4gCj4gb24gcm9jazUgaXR4IHRoaXMgbm90
-IHdvcmtzLgo+IAo+IG15IG9ic2VydmF0aW9ucyBzbyBmYXIgYXJlOgo+IC1vbiByb2NrNSBpdHgg
-aGRtaTAgaXMgZmFsc2VseSBkZXRlY3RlZCBhcyBjb25uZWN0ZWQgLSBldmVuIHdoZW4gZURQIGNv
-bm5lY3RvciAoSjExKSBoYXMgbm90aGluZyBjb25uZWN0ZWQKPiAtb24gcm9jazUgaXR4IGRpc2Fi
-bGluZyBoZG1pMCBpbiBkdHMgYnJlYWtzIGhkbWkxCj4gLW9uIG90aGVyIDM1ODggKGUuZy4gcm9j
-ayA1YikgZGlzYWJsaW5nIGhkbWkwIGluIGR0cyBOT1QgYnJlYWtzIGhkbWkxCj4gCj4gc3RyYW5n
-ZeKApi4KPiAKPiAKCkJlc3QgcmVnYXJkcwpEYW1vbgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
-aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 2/24/25 01:43, Dmitry Baryshkov wrote:
+> On Sun, Feb 23, 2025 at 02:22:21PM +0200, Ivaylo Ivanov wrote:
+>> Exynos 2200 makes use of the Synposys eUSB2 IP, so document it in the
+>> binding. Unlike the currently documented Qualcomm SoCs, it doesn't provide
+>> reset lines for reset control and uses more clocks.
+>>
+>> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov@gmail.com>
+>> ---
+>>  .../bindings/phy/snps,eusb2-phy.yaml          | 64 +++++++++++++++++--
+>>  1 file changed, 57 insertions(+), 7 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/snps,eusb2-phy.yaml b/Documentation/devicetree/bindings/phy/snps,eusb2-phy.yaml
+>> index 22c77968f..f4164db71 100644
+>> --- a/Documentation/devicetree/bindings/phy/snps,eusb2-phy.yaml
+>> +++ b/Documentation/devicetree/bindings/phy/snps,eusb2-phy.yaml
+>> @@ -23,6 +23,7 @@ properties:
+>>                - qcom,x1e80100-snps-eusb2-phy
+>>            - const: qcom,sm8550-snps-eusb2-phy
+>>        - const: qcom,sm8550-snps-eusb2-phy
+>> +      - const: samsung,exynos2200-snps-eusb2-phy
+>>  
+>>    reg:
+>>      maxItems: 1
+>> @@ -31,12 +32,12 @@ properties:
+>>      const: 0
+>>  
+>>    clocks:
+>> -    items:
+>> -      - description: ref
+>> +    minItems: 1
+>> +    maxItems: 3
+>>  
+>>    clock-names:
+>> -    items:
+>> -      - const: ref
+>> +    minItems: 1
+>> +    maxItems: 3
+>>  
+>>    resets:
+>>      maxItems: 1
+>> @@ -58,11 +59,60 @@ required:
+>>    - compatible
+>>    - reg
+>>    - "#phy-cells"
+>> -  - clocks
+>> -  - clock-names
+> Why? Clocks are required in both if clauses.
+
+Right. And "ref" is a requirement. I'll fix that in the next revision.
+
+Best regards,
+Ivaylo
+
+>
+>>    - vdd-supply
+>>    - vdda12-supply
+>> -  - resets
+>> +
+>> +allOf:
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - qcom,sm8550-snps-eusb2-phy
+>> +
+>> +    then:
+>> +      properties:
+>> +        reg:
+>> +          maxItems: 1
+>> +
+>> +        clocks:
+>> +          items:
+>> +            - description: ref
+>> +
+>> +        clock-names:
+>> +          items:
+>> +            - const: ref
+>> +
+>> +      required:
+>> +        - clocks
+>> +        - clock-names
+>> +        - resets
+>> +
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            enum:
+>> +              - samsung,exynos2200-snps-eusb2-phy
+>> +
+>> +    then:
+>> +      properties:
+>> +
+>> +        clocks:
+>> +          items:
+>> +            - description: Reference clock
+>> +            - description: Bus (APB) clock
+>> +            - description: Control clock
+>> +
+>> +        clock-names:
+>> +          items:
+>> +            - const: ref
+>> +            - const: bus
+>> +            - const: ctrl
+>> +
+>> +      required:
+>> +        - clocks
+>> +        - clock-names
+>>  
+>>  additionalProperties: false
+>>  
+>> -- 
+>> 2.43.0
+>>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
