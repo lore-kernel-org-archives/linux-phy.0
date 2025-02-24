@@ -4,90 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCBDFC021B3
-	for <linux-phy@archiver.kernel.org>; Sun, 23 Feb 2025 23:55:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D738C021B6
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Feb 2025 03:21:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2y4c0uwG0F2jN+MKp+NksCWxfrnH8vUSe5UfCm6nxiI=; b=RWMwsHRcZL+W3r
-	1wIBhC3FSnv6n9Flmfv3r1frWdH8CF57zse4Um8QRey/W9LMH6oPhjogwmJKcJO8wTqEF0SDVgpTl
-	t5AskZ44cdI7e813NLzwMDUGn5NxhiDH192+uDncm0Ru32qOidM1wTKlaL6iNEIOWcST7Vo0k1Y6z
-	ivNtdNzWC9m8AHn/71ltE6d1TmC1RgALGCwMOhWOUyfHyqJcAKfHSz1G6EfqsKVAeE8VOjwHVZKpw
-	Lmh3GvorD6ZaSFgBuujht4z+eTJRN2f0TyclHRMSYkN5t3D9ev8938GzTqogJxt24YV0SUlxupjUU
-	bDF/cBOudgRN7LDJ2MGg==;
+	List-Owner; bh=coruKhk1so72KdOFb1iJ105AOfPcbeShWvJNyJeweGs=; b=ZDyAWIOyaOqAaR
+	H9P0T4+0YqDnhw7mz+P8av/orBU8m9dafccdfdO8Dm4hMWUbbPdoYcFG+HJUOQFRCJ+xxWtqfKEBn
+	Q4jnFSGCfBxXtpDpCCAdYYW0p4XEcB603fWWhj3jUS1syrGXJCZPKZqoHEbLjy0wAgrrpztJrSP2B
+	sjdgFNrWx6/HC75S1sK5HdnwlA/E0CWcGhRGjtk7gJsA8RXe/8yv6DQfbuwtQP28CAtHJeMomk71l
+	aPQY8tqYb4kTnGLJUwoI3OTJGeJ7EZhAy2LYRDjLKuLmk1fLIx0aWApn68+LgoitM3mnNld1N7tCS
+	6YrEmYtRdRZj2tWayOow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmLoM-0000000BzxA-2CvX;
-	Sun, 23 Feb 2025 23:55:02 +0000
-Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
+	id 1tmP1z-0000000CE47-3MBW;
+	Mon, 24 Feb 2025 03:21:19 +0000
+Received: from mail-m3291.qiye.163.com ([220.197.32.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmLoL-0000000BzwG-06Sm
-	for linux-phy@lists.infradead.org;
-	Sun, 23 Feb 2025 23:55:02 +0000
-Received: by mail-lj1-x235.google.com with SMTP id 38308e7fff4ca-30737db1aa9so36876841fa.1
-        for <linux-phy@lists.infradead.org>; Sun, 23 Feb 2025 15:55:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1740354899; x=1740959699; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=MO69vvfxawoe2HNuQ/9QFZVUJBZNSU898FyLnskC1yc=;
-        b=tGXG4JkiC7hxRDBxO7YDtXoCX+rysFj/gqHN1bhrdHs89p8IueZabgYh+Nk6L8DtWK
-         6o8cBCd1ifyPd6Gn7q7Z0n05xmwxAhwmzi4Gbe2XRJm9jAydaUotyqvMA6cWhET63o0Q
-         PhbZ2mqfhcrphl96737phAfnXp3GpmgTsLjYpNzdQlVGoYOIlM7lXm++itmxMdMG3Gfm
-         3N+yhWQXQwfAPPhPGhagm+DQDbv5bp/zvv+z9zNYt5r5Qqh/hVpWsR+1FEJMTVQeWszj
-         tNxD2+Ypjc4cRQ4iPihVLWrVXiihEFryupMbUH0m+KjSbGR+aXzclA7zTmClQgS1MMqX
-         OizQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740354899; x=1740959699;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=MO69vvfxawoe2HNuQ/9QFZVUJBZNSU898FyLnskC1yc=;
-        b=OMvAmE0bRYwlvovEHq/YG5WJseokUXSkylyFL7rqVTuzdmD8fGIqOCdrchuavF9/wb
-         32ODQyxh36JOxH2La1A643pi4oZ+xUJzMNwFaSdG32YtnzpQYGrbu0xDzM0mWCwjXhJO
-         1Q9EXQa7yVWNZUhC/vB9bhBPIe4rRH5FVMfdb+iOJcKFDbsbNo+0sr5xMU2ZRovS/5iQ
-         EUEY9xwo6VComPwseJqfhYSbRTC8anqgDRPhIDYEVpQOK/tPf11wTzF+D64nuhTDfi66
-         TykeHFwZ2y+pn4eeD7AZ2dFYz5ua9FkbEuIWA9z9DtMyhQqt+PlNdwulpdxk+ccd8QvR
-         J24A==
-X-Forwarded-Encrypted: i=1; AJvYcCXUpCm6BJuHu0uW1q2/Pe3P3VBF8+4r7P+PbqgyD1U96KakY5ZJ21UKXHMbKUznYmDqExoeLqslg4U=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzShjZIlSWcPlwVRNc2BLcJ92C75HLAiJqj2WrkfjDZiWtuJpor
-	PVaExid/p4uNvlxuwmkDdqGGgAukUtP24WjOH64X96GIl40V8LmTJkxZSD0lAEM=
-X-Gm-Gg: ASbGncsN7lPRXSNu7780cIQj8KIlxUKTOFCh6pmcF8F7dB4BWo8CaNg4pGvY5irxspQ
-	63b2lbe8jDf9TEWtSD1hvi5iz6PXkLF1lHPxVvCFNfWHWcnuXF8G2BafgDfc4I+ZOjhIwcmN/W6
-	YrHmNStkpYrJY0wXi655/EN+TaPYhHGNmqN6WodlYl+kAT4xiP+Z48QxKJFqz2n7WZQYIomiYCY
-	fqA5WkIUNvcZD8OnuU5HtBb+5S7+kbfR8DcG+UMTA0bR+ffaMl1EJCKFXNesNhTkDt2v89KBXi4
-	K7ktJYpxRyFstTd6dH3de92KNaeNqANniqapHWD6KCmDOwYj8U1LqiM5PeUBk0S4sUs7bbRi8F6
-	jXssjTg==
-X-Google-Smtp-Source: AGHT+IHWZiY9l4ceFSLMfzXCkrvrA7BoZtPrqLKoUOz7ReQ2TLLajGXi72SpKOyuPoZptA2mBy16jg==
-X-Received: by 2002:a05:6512:3b10:b0:545:2efc:745d with SMTP id 2adb3069b0e04-54838f79c81mr4594575e87.46.1740354898995;
-        Sun, 23 Feb 2025 15:54:58 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5462f125a0esm1423144e87.24.2025.02.23.15.54.56
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 23 Feb 2025 15:54:57 -0800 (PST)
-Date: Mon, 24 Feb 2025 01:54:55 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 8/8] phy: samsung: add Exynos2200 usb phy controller
-Message-ID: <tkzfgfbu6j22c75zieponozeld5vvlqv65fnzjy3n2am2ajim5@yhc3tcr5ulfy>
-References: <20250223122227.725233-1-ivo.ivanov.ivanov1@gmail.com>
- <20250223122227.725233-9-ivo.ivanov.ivanov1@gmail.com>
+	id 1tmP1w-0000000CE1t-1oXZ;
+	Mon, 24 Feb 2025 03:21:19 +0000
+Received: from [172.16.12.26] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id bf356a8d;
+	Mon, 24 Feb 2025 11:21:02 +0800 (GMT+08:00)
+Message-ID: <731abf8f-b157-47d4-a9e1-9aed6f5b4e37@rock-chips.com>
+Date: Mon, 24 Feb 2025 11:21:02 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250223122227.725233-9-ivo.ivanov.ivanov1@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 00/14] Add eDP support for RK3588
+To: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>,
+ Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: heiko@sntech.de, robh@kernel.org, conor+dt@kernel.org,
+ algea.cao@rock-chips.com, rfoss@kernel.org, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ hjc@rock-chips.com, kever.yang@rock-chips.com, dmitry.baryshkov@linaro.org,
+ vkoul@kernel.org, andy.yan@rock-chips.com, krzk+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+References: <20250123100747.1841357-1-damon.ding@rock-chips.com>
+ <5044FFCB-B325-40D0-BA82-03AF64EAF029@gmail.com>
+ <tg6eyew4qahuxqakmmejne7xx2rkouj6htp55acun4ajz2irz2@vlmvqv3zc5vc>
+ <C81810F2-6E9B-4DCC-85D1-CCB63CBFBFEA@gmail.com>
+Content-Language: en-US
+From: Damon Ding <damon.ding@rock-chips.com>
+In-Reply-To: <C81810F2-6E9B-4DCC-85D1-CCB63CBFBFEA@gmail.com>
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUtLHlYYHkhNH0oeTh5DHkNWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
+	hVSktLVUpCS0tZBg++
+X-HM-Tid: 0a9535f8f24203a3kunmbf356a8d
+X-HM-MType: 1
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Pi46Djo5AjIXNxwdLSo9TD1L
+	FQMwClZVSlVKTE9LSE1MSU1PS09IVTMWGhIXVR8aFhQVVR8SFRw7CRQYEFYYExILCFUYFBZFWVdZ
+	EgtZQVlOQ1VJSVVMVUpKT1lXWQgBWUFITExLNwY+
+DKIM-Signature: a=rsa-sha256;
+	b=TtkboSslEuG3O6Q33PmEvHv28Jvg5WyhYR2LFUqcKFp4BOeB/mohA8ndDgbxGn5eNvpe7Fkf8HB8qjnmn2aLu9BlykbGs6RCVL395hZUmPJW9eyvlAmbaEAF23buy2DkdSvordvN2UaJJ3yxiUObEM3aHwA/1rf/oZ7kgAjYhgE=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=SUWTCb0GbfrLEePUqui3jDgm691jrzdjRDy4hq8S9z0=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250223_155501_102717_80983598 
-X-CRM114-Status: GOOD (  30.82  )
+X-CRM114-CacheID: sfid-20250223_192117_037907_2C7B2C4C 
+X-CRM114-Status: GOOD (  22.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,202 +77,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Feb 23, 2025 at 02:22:27PM +0200, Ivaylo Ivanov wrote:
-> The Exynos2200 SoC comes with a TI external repeater and 3 USB PHYs:
-> - snps eUSB2 for UTMI
-> - snps USBDP combophy for PIPE3 and DP
-> - samsung USBCON phy
-> 
-> The USBCON phy is an intermediary between the USB controller (DWC3)
-> and the underlying PHYs. Add a new driver for it, modelled to take
-> a phandle to the high-speed PHY for now.
-> 
-> Signed-off-by: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-> ---
->  drivers/phy/samsung/Kconfig                 |  12 +
->  drivers/phy/samsung/Makefile                |   1 +
->  drivers/phy/samsung/phy-exynos2200-usbcon.c | 250 ++++++++++++++++++++
->  3 files changed, 263 insertions(+)
->  create mode 100644 drivers/phy/samsung/phy-exynos2200-usbcon.c
-> 
-> diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
-> index e2330b089..0f809a382 100644
-> --- a/drivers/phy/samsung/Kconfig
-> +++ b/drivers/phy/samsung/Kconfig
-> @@ -77,6 +77,18 @@ config PHY_S5PV210_USB2
->  	  particular SoC is compiled in the driver. In case of S5PV210 two phys
->  	  are available - device and host.
->  
-> +config PHY_EXYNOS2200_USBCON
-> +	tristate "Exynos2200 USBCON PHY driver"
-> +	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
-> +	depends on HAS_IOMEM
-> +	select GENERIC_PHY
-> +	select MFD_SYSCON
-> +	default y
-> +	help
-> +	  Enable USBCON PHY support for Exynos2200 SoC.
-> +	  This driver provides PHY interface for the USBCON phy, which acts as
-> +	  an intermediary between the USB controller and underlying PHYs.
-> +
->  config PHY_EXYNOS5_USBDRD
->  	tristate "Exynos5 SoC series USB DRD PHY driver"
->  	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
-> diff --git a/drivers/phy/samsung/Makefile b/drivers/phy/samsung/Makefile
-> index fea1f96d0..e2686a3f5 100644
-> --- a/drivers/phy/samsung/Makefile
-> +++ b/drivers/phy/samsung/Makefile
-> @@ -14,5 +14,6 @@ phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4210_USB2)	+= phy-exynos4210-usb2.o
->  phy-exynos-usb2-$(CONFIG_PHY_EXYNOS4X12_USB2)	+= phy-exynos4x12-usb2.o
->  phy-exynos-usb2-$(CONFIG_PHY_EXYNOS5250_USB2)	+= phy-exynos5250-usb2.o
->  phy-exynos-usb2-$(CONFIG_PHY_S5PV210_USB2)	+= phy-s5pv210-usb2.o
-> +obj-$(CONFIG_PHY_EXYNOS2200_USBCON)	+= phy-exynos2200-usbcon.o
->  obj-$(CONFIG_PHY_EXYNOS5_USBDRD)	+= phy-exynos5-usbdrd.o
->  obj-$(CONFIG_PHY_EXYNOS5250_SATA)	+= phy-exynos5250-sata.o
-> diff --git a/drivers/phy/samsung/phy-exynos2200-usbcon.c b/drivers/phy/samsung/phy-exynos2200-usbcon.c
-> new file mode 100644
-> index 000000000..aad59349e
-> --- /dev/null
-> +++ b/drivers/phy/samsung/phy-exynos2200-usbcon.c
-> @@ -0,0 +1,250 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2025, Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/delay.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/mod_devicetable.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/regulator/consumer.h>
-> +#include <linux/soc/samsung/exynos-regs-pmu.h>
-> +
-> +#define EXYNOS2200_USBCON_LINKCTRL		0x4
-> +#define LINKCTRL_FORCE_QACT			BIT(8)
-> +
-> +#define EXYNOS2200_USBCON_UTMI_CTRL		0x10
-> +#define UTMI_CTRL_FORCESLEEP			BIT(13)
-> +#define UTMI_CTRL_FORCESUSPEND			BIT(12)
-> +#define UTMI_CTRL_FORCE_VBUSVALID		BIT(1)
-> +#define UTMI_CTRL_FORCE_BVALID			BIT(0)
-> +
-> +#define EXYNOS2200_USBCON_LINK_CLKRST		0xc
-> +#define LINK_CLKRST_SW_RST			BIT(0)
-> +
-> +struct exynos2200_usbcon_phy_drvdata {
-> +	const char * const *clk_names;
-> +	int num_clks;
-> +};
-> +
-> +struct exynos2200_usbcon_phy {
-> +	struct phy *phy;
-> +	void __iomem *base;
-> +	struct regmap *reg_pmu;
-> +	struct clk_bulk_data *clks;
-> +	const struct exynos2200_usbcon_phy_drvdata *drv_data;
-> +	u32 pmu_offset;
-> +	struct phy *hs_phy;
-> +};
-> +
-> +static void exynos2200_usbcon_phy_isol(struct exynos2200_usbcon_phy *inst,
-> +				       bool isolate)
-> +{
-> +	unsigned int val;
-> +
-> +	if (!inst->reg_pmu)
-> +		return;
-> +
-> +	val = isolate ? 0 : EXYNOS4_PHY_ENABLE;
-> +
-> +	regmap_update_bits(inst->reg_pmu, inst->pmu_offset,
-> +			   EXYNOS4_PHY_ENABLE, val);
-> +}
-> +
-> +static void exynos2200_usbcon_phy_write_mask(void __iomem *base, u32 offset,
-> +					     u32 mask, u32 val)
-> +{
-> +	u32 reg;
-> +
-> +	reg = readl(base + offset);
-> +	reg &= ~mask;
-> +	reg |= val & mask;
-> +	writel(reg, base + offset);
-
-Does this need any kind of locking? Maybe you can use regmap for this
-access too?
-
-> +
-> +	/* Ensure above write is completed */
-> +	readl(base + offset);
-> +}
-
-[...]
-
-> +
-> +	generic_phy = devm_phy_create(dev, NULL, &exynos2200_usbcon_phy_ops);
-> +	if (IS_ERR(generic_phy))
-> +		return dev_err_probe(dev, PTR_ERR(generic_phy),
-> +				     "failed to create phy %d\n", ret);
-> +
-> +	dev_set_drvdata(dev, phy);
-
-Nit: unused. LGTM otherwise.
-
-> +	phy_set_drvdata(generic_phy, phy);
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +	if (IS_ERR(phy_provider))
-> +		return dev_err_probe(dev, PTR_ERR(phy_provider),
-> +				     "failed to register phy provider\n");
-> +
-> +	return 0;
-> +}
-> +
-> +static const char * const exynos2200_clk_names[] = {
-> +	"bus",
-> +};
-> +
-> +static const struct exynos2200_usbcon_phy_drvdata exynos2200_usbcon_phy = {
-> +	.clk_names		= exynos2200_clk_names,
-> +	.num_clks		= ARRAY_SIZE(exynos2200_clk_names),
-> +};
-> +
-> +static const struct of_device_id exynos2200_usbcon_phy_of_match_table[] = {
-> +	{
-> +		.compatible = "samsung,exynos2200-usbcon-phy",
-> +		.data = &exynos2200_usbcon_phy,
-> +	}, { },
-> +};
-> +MODULE_DEVICE_TABLE(of, exynos2200_usbcon_phy_of_match_table);
-> +
-> +static struct platform_driver exynos2200_usbcon_phy_driver = {
-> +	.probe		= exynos2200_usbcon_phy_probe,
-> +	.driver = {
-> +		.name	= "exynos2200-usbcon-phy",
-> +		.of_match_table = exynos2200_usbcon_phy_of_match_table,
-> +	},
-> +};
-> +
-> +module_platform_driver(exynos2200_usbcon_phy_driver);
-> +MODULE_DESCRIPTION("Exynos2200 USBCON PHY driver");
-> +MODULE_LICENSE("GPL");
-> -- 
-> 2.43.0
-> 
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgUGlvdHIsCgpPbiAyMDI1LzIvMTQgMjA6MDAsIFBpb3RyIE9uaXN6Y3p1ayB3cm90ZToKPiAK
+PiAKPj4gV2lhZG9tb8WbxIcgbmFwaXNhbmEgcHJ6ZXogU2ViYXN0aWFuIFJlaWNoZWwgPHNlYmFz
+dGlhbi5yZWljaGVsQGNvbGxhYm9yYS5jb20+IHcgZG5pdSAxMyBsdXQgMjAyNSwgbyBnb2R6LiAx
+ODoyNjoKPj4KPj4gSGVsbG8gUGlvdHIsCj4+Cj4+Cj4+IFRoZSBSSzM1ODggaGFzIHR3byBkaWZm
+ZXJlbnQgRFAgY29udHJvbGxlcnMuIFRoZSBvbmUgaGFuZGxlZCBpbiB0aGlzCj4+IHNlcmllcyBz
+aG91bGQgZ2V0IHRoZSBlRFAgcG9ydCBydW5uaW5nLCB3aGljaCBpcyByb3V0ZWQgdG8gdGhlCj4+
+ICJlRFAgUGFuZWwiIGluIHRoZSBibG9jayBkaWFncmFtIG9uIHBhZ2UgMyBvZiB0aGUgUm9jayA1
+IElUWCBzY2hlbWF0aWNzLgo+PiBTbyB0aGlzIHNlcmllcyBhZGRzIHN1cHBvcnQgZm9yIHVzaW5n
+ICJIRE1JL2VEUCBUWDAiIGFuZCAiSERNSS9lRFAgVFgxIgo+PiBpbiBEUCBtb2RlLgo+Pgo+PiBU
+aGUgcG9ydCByb3V0ZWQgdG8gSERNSTAgdmlhIFJBNjIwIGlzIHRoZSBvdGhlciBEUCBjb250cm9s
+bGVyLCB3aGljaAo+PiBhbHNvIGV4aXN0cyB0d2ljZTogIlRZUEVDMC9EUDAiIGFuZCAiVFlQRUMx
+L0RQMSIuIFRoaXMgRFAgY29udHJvbGxlcgo+PiBpcyBub3QgeWV0IHN1cHBvcnRlZCB1cHN0cmVh
+bSBhbmQgdGhlcmUgaXMgbm8gcGVuZGluZyBwYXRjaHNldC4gQXMgZmFyCj4+IGFzIEkga25vdyBS
+b2NrY2hpcCBwbGFucyB0byB3b3JrIG9uIHByZXBhcmluZyB1cHN0cmVhbSBzdXBwb3J0IGZvciB0
+aGF0Cj4+IHNvb24uCgpZZXMsIEFuZHkgaGFzIHJlY2VudGx5IHVwZGF0ZWQgdGhlIERQIGNvbnRy
+b2xsZXIgcmVsYXRlZCBwYXRjaHNldDoKaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wcm9q
+ZWN0L2xpbnV4LXJvY2tjaGlwL2xpc3QvP3Nlcmllcz05MzY3ODQKCj4+Cj4gCj4gT2ggLSB0aGlz
+IGlzIHZlcnkgdmFsdWFibGUgaW5mbyBhbmQgZXhwbGFpbnMgYSBsb3QuCj4gVGh4Lgo+IAo+PiBO
+b3RlLCB0aGF0IHRoZSB0d28gRGlzcGxheVBvcnQgY29udHJvbGxlcnMgYXJlIGNvbXBsZXRlbHkg
+ZGlmZmVyZW50Lgo+PiBUaGUgSERNSS9lRFAgY29udHJvbGxlciBpcyBhIGRlc2lnbiBmcm9tIEFu
+YWxvZ2l4IGFuZCB0aGUgVHlwZUMvRFAKPj4gY29udHJvbGxlciBpcyBhIGRlc2lnbiBmcm9tIFN5
+bm9wc3lzLgo+Pgo+PiBQLlMuOiBIZWlrbyBtZXJnZWQgc3VwcG9ydCBmb3IgSERNSTEgKFJLMzU4
+OCBTb0MgbGV2ZWwpIHJlY2VudGx5LiBTbyB5b3UKPj4gc2hvdWxkIGJlIGFibGUgdG8gZ2V0IHRo
+YXQgcnVubmluZyBieSBzb21lIERUIGFkZGl0aW9ucyB0byB0aGUgUm9jayA1Cj4+IElUWCBib2Fy
+ZCBEVCB3aXRoIHRoZSBsYXRlc3QgbGludXgtbmV4dCBjb2RlIDopCj4+Cj4gCj4gQW5kIGl0IHdv
+cmtzIHBlcmZlY3RseSBvbiBhbGwgbXkgMzU4OCBiYXJkcyAoaW5jbHVkaW5nIGF1ZGlvIGFuZCBt
+eSBjZWMgYWRkaXRpb24pCj4gQnV0IG9ubHkgb24gYm9hcmRzIHVzaW5nIGJvdGggaGRtaSB0eDAg
+YW5kIHR4MSB0byBoZG1pMC9oZG1pMSBwb3J0cy4KPiAKPiBvbiByb2NrNSBpdHg6CgpBY2NvcmRp
+bmcgdG8gdGhlIHNjaGVtYXRpYyBvZiBST0NLIDUgSVRYLCBJIGZpbmQgdGhlIGRpc3BsYXkgcm91
+dGVzIGFyZToKLSBEUDAgLT4gVFlQRUMwIENvbm5lY3RvcgotIERQMSAtPiBSQTYyMCAtPiBIRE1J
+IENvbm5lY3RvciAoQW5keSdzIHBhdGNoIHNlcmllcyB3aWxsIGhlbHAgaXQgd29yaykKLSBIRE1J
+L2VEUCBUWDAgLT4gZURQIFBhbmVsIChUaGlzIHBhdGNoIHNlcmllcyB3aWxsIGhlbHAgaXQgd29y
+aykKLSBIRE1JL2VEUCBUWDEgLT4gSERNSSBDb25uZWN0b3IKClNvIHRoZSBIRE1JL2VEUCBUWDAg
+c2hvdWxkIGJlIGVuYWJsZWQgYXMgZURQIGluIERUUy4gTWF5YmUgaXQncyBqdXN0IGEgCnRlc3Qg
+dG8gZW5hYmxlIGJvdGggSERNSTAgYW5kIEhETUkxIGluIHRoZSBST0NLIDUgSVRYIGJvYXJkPwoK
+PiBXaXRoIGJvdGggaGRtaSB0eDAgYW5kIHR4MSBlbmFibGVkIGluIGR0cyBpdCBsb29rcyBsaWtl
+IGtlcm5lbCBkZXRlY3RzIGhkbWkgdHgwIGFzIGNvbm5lY3RlZCBhbmQgdHJpZXMgcmVhZCBlZGlk
+Lgo+IEFzIG5vdGhpbmcgaXMgY29ubmVjdGVkIHRvIEoxMSAoZURQIGNvbikgLSBp4oCZbSBnZXR0
+aW5nIGkyYyBkZGMgdGltZW91dHMKPiBbICAgNTQuMTg4ODgwXSBkd2hkbWlxcC1yb2NrY2hpcCBm
+ZGU4MDAwMC5oZG1pOiBpMmMgcmVhZCB0aW1lZCBvdXQKPiBbICAgNTQuMjkyMjA3XSBkd2hkbWlx
+cC1yb2NrY2hpcCBmZGU4MDAwMC5oZG1pOiBpMmMgcmVhZCB0aW1lZCBvdXQKPiBbICAgNTQuMzk1
+NTU0XSBkd2hkbWlxcC1yb2NrY2hpcCBmZGU4MDAwMC5oZG1pOiBpMmMgcmVhZCB0aW1lZCBvdXQK
+PiAKCkkgdGhpbmsgdGhlIHJlYXNvbiBtYXkgYmUgdGhhdCBIRE1JMCBpcyBlbmFibGVkLCBhbmQg
+SFBEIHBpbiBvZiBIRE1JMCBpcyAKYWxzbyBjb25maWd1cmVkLCBidXQgdGhlIEhQRCBwaW4gaXMg
+aW4gYW4gdW5zdGFibGUgc3RhdGUgaW4gdGhlIApoYXJkd2FyZSwgd2hpY2ggaXMgbWlzdGFrZW5s
+eSBkZXRlY3RlZCBhcyBjb25uZWN0ZWQuCgo+IAo+IGRpc2FibGluZyBoZG1pMCBtYWtlcyBrZXJu
+ZWwgdGFsa2luZyB0byBoZG1pMSBidXQgd2l0aCBpc3N1ZXM6Cj4gWyAgICAwLjU0MDQ0Nl0gZHdo
+ZG1pcXAtcm9ja2NoaXAgZmRlYTAwMDAuaGRtaTogcmVnaXN0ZXJlZCBEZXNpZ25XYXJlIEhETUkg
+UVAgSTJDIGJ1cyBkcml2ZXIKPiBbICAgIDAuNTQxMjMwXSByb2NrY2hpcC1kcm0gZGlzcGxheS1z
+dWJzeXN0ZW06IGJvdW5kIGZkZWEwMDAwLmhkbWkgKG9wcyBkd19oZG1pX3FwX3JvY2tjaGlwX29w
+cykKPiBbICAgIDAuNTQyMjg1XSBbZHJtXSBJbml0aWFsaXplZCByb2NrY2hpcCAxLjAuMCBmb3Ig
+ZGlzcGxheS1zdWJzeXN0ZW0gb24gbWlub3IgMAo+IFsgICAgMC41NDI5MzNdIHJvY2tjaGlwLWRy
+bSBkaXNwbGF5LXN1YnN5c3RlbTogW2RybV0gQ2Fubm90IGZpbmQgYW55IGNydGMgb3Igc2l6ZXMK
+PiBbICAgIDAuNTQzNjA1XSByb2NrY2hpcC1kcm0gZGlzcGxheS1zdWJzeXN0ZW06IFtkcm1dIENh
+bm5vdCBmaW5kIGFueSBjcnRjIG9yIHNpemVzCj4gCj4gYW5kIGhlcmUgaeKAmW0gYSBiaXQgcHV6
+emxlZCBhcyBvbiBvdGhlciAzNTg4IGJvYXJkcyAoaS5lLiByb2NrNWIpIC0gd2hlbiBpIGNvbm5l
+Y3RlZCBtb25pdG9yIHRvIGhkbWkxIC0gYWxsIHdvcmtzIHBlcmZlY3RseQo+IChrZXJuZWwsIE9T
+IGFuZCBhcHAgbmljZWx5IHNraXBwaW5nIGhkbWkwIGFuZCB0YWxraW5nIHRvIGFjdHVhbGx5IGNv
+bm5lY3RlZCBoZG1pMSBwb3J0LiBhbGwgd29ya3MpCj4gCj4gb24gcm9jazUgaXR4IHRoaXMgbm90
+IHdvcmtzLgo+IAo+IG15IG9ic2VydmF0aW9ucyBzbyBmYXIgYXJlOgo+IC1vbiByb2NrNSBpdHgg
+aGRtaTAgaXMgZmFsc2VseSBkZXRlY3RlZCBhcyBjb25uZWN0ZWQgLSBldmVuIHdoZW4gZURQIGNv
+bm5lY3RvciAoSjExKSBoYXMgbm90aGluZyBjb25uZWN0ZWQKPiAtb24gcm9jazUgaXR4IGRpc2Fi
+bGluZyBoZG1pMCBpbiBkdHMgYnJlYWtzIGhkbWkxCj4gLW9uIG90aGVyIDM1ODggKGUuZy4gcm9j
+ayA1YikgZGlzYWJsaW5nIGhkbWkwIGluIGR0cyBOT1QgYnJlYWtzIGhkbWkxCj4gCj4gc3RyYW5n
+ZeKApi4KPiAKPiAKCkJlc3QgcmVnYXJkcwpEYW1vbgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
