@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 521FFC021B2
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED138C021BB
 	for <linux-phy@archiver.kernel.org>; Tue, 25 Feb 2025 19:31:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nU0CIWLYIv0jMM2lACDC4D4/EQtT75v6PX0PUU8wC48=; b=SsqjrAxygzVEik
-	W2WDveqgKZUDu0u6qyFsGlCHt4ees2J6rRkNjSK2NraGR9JJK4tkbxcFuqIXdf+2zUtsUgW00djAT
-	ZLVyr4Mauy4KnQm/zwVXecTZN6N4UHEM6BR3uA/5mjbtB0YmNV7ajbSBI+M80K7qz4KovvAFuDbs+
-	Ywxu9e+UU6/lGE24n6I+0zNOqkeyxLlONraiDtpCdxatC5AqE3BjeyAJ7d4qsevoglAkHirtBD0+d
-	oVxlwzG/Qkn4UOV3KIpkhDOwAis/ZL+Kr4YlfssfGVKYlUYCKsDZCJqicg+5Ud3Xl+FUCOh36TDN9
-	eJ2KIfBytPlUC3pe5XOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iA3RUidRPdq9K9aS3n09csw/IFNZ8q1BdN7Yf88xXQ8=; b=opbPdROMeidMu6
+	T+dS4ZaJn0Xm55sBZgBqZFDN18TCaJ5F2jxw7NFQ5YnZstekVw/XO9BX92NMUSjEyOZx2RBlwOYAL
+	rskLnfjlXWR/FvtVuLtaFDf2Sr2Q93n4aXug8L5u3tJtLV3c+TCeW3RZ4mGopkqA7Tpi6KcL35+9D
+	97LV4JgvmuMCKh+WbJ5+fLXzctvEEBEdT3TgIWbKU5otBdWrhTxhvZURygi8Wl4PHPR7d7P8ecFWr
+	/HZfMlVGArfShfQ0rxsmwW5q0YodMmzaLa34uUOC08c0fugPIvfccl01b0ACJ+sbgSJSYvWOIONEj
+	cXJGYz6+jnn2McORQudA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tn0eb-000000019EX-1jVm;
-	Tue, 25 Feb 2025 19:31:41 +0000
+	id 1tn0ec-000000019Gp-2fF0;
+	Tue, 25 Feb 2025 19:31:42 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmzwA-000000010tR-2H5V;
+	id 1tmzwA-000000010tT-2HHC;
 	Tue, 25 Feb 2025 18:45:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
-	Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:References:
+	In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
 	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=R66Myrb815a2WZP3G5g/ewvPF3fMxnEmoDEZgjpJrTg=; b=G9OtWPrLluyK+WuGj3VYHd03s3
-	li6/pRdI8d8UAw4ZSnrwZP21VlE5jNT27KKQ0TIA4gekQmSCB/2Bo+oY8AbOodS93wDstP054jpqA
-	0lVscOWVWCpVRCFEhu+GmteTSxkdhHi6s6eZFzwQEb6vn/QgBRhE2gj6ueXBSEMjpxUjqglpfa/Pf
-	O1f0dSQ8qV/A5jncHQlSbLteg7bDVtdWYOb6oN8t5T5SYNRfzxaMl2OpJJt29ssRhq0Vr5TNcz5VN
-	D5xdCu9CJEFqU2zFYjB0Zo9yJxZLtncpwejbN9rGjRu4xBBDC1l4wlMbdKt45LbN9T4FpSaX5kumd
-	dRZIIahg==;
+	bh=XeSCoetpG/SJX3eWF6c3URGWyxwIKqpjVdjc1wvJfqo=; b=G4w/ryyC1YyWT1pGEHP6owKkVE
+	depvliKv+XPgjl87c5JJ4ue/1Z4D2aPKOMq09HYD1brPFC4dHBjx1h/8d/RMq1BW/t6u1xqoFqZPn
+	vkrUc9wHNZ1FHjGG1CTjtLVu1Bf3Mdr1UWd+N3EnyoAoBQBHyvW/oFTc1VxnVblbTuQINrunJAEe4
+	s86KeXChNghQEjzUNnlitV/7pPRDQliYA2Yu0FaTZdjGhs2VL99JV3/nHCDt8gvaS7zEQ01uThRn5
+	ATS70U7MIUnTHmJP52jVa9TQxw6z1Y1ohqwEPY5QVlxgczlQppPZ5/AEc2y3sMU5S6/8eKnrcCj21
+	O0s5wTVA==;
 Received: from i53875b47.versanet.de ([83.135.91.71] helo=localhost.localdomain)
 	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.94.2)
 	(envelope-from <heiko@sntech.de>)
-	id 1tmzw7-0006r3-Ar; Tue, 25 Feb 2025 19:45:43 +0100
+	id 1tmzw7-0006r3-PJ; Tue, 25 Feb 2025 19:45:43 +0100
 From: Heiko Stuebner <heiko@sntech.de>
 To: vkoul@kernel.org,
 	kishon@kernel.org
@@ -52,16 +52,18 @@ Cc: heiko@sntech.de,
 	linux-rockchip@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	quentin.schulz@cherry.de,
-	sebastian.reichel@collabora.com
-Subject: [PATCH 0/2] phy: rockchip: usbdp: improve typec orientation handling
-Date: Tue, 25 Feb 2025 19:45:17 +0100
-Message-ID: <20250225184519.3586926-1-heiko@sntech.de>
+	sebastian.reichel@collabora.com,
+	Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: [PATCH 1/2] phy: rockchip: usbdp: move type-orientation-switch further down
+Date: Tue, 25 Feb 2025 19:45:18 +0100
+Message-ID: <20250225184519.3586926-2-heiko@sntech.de>
 X-Mailer: git-send-email 2.47.2
+In-Reply-To: <20250225184519.3586926-1-heiko@sntech.de>
+References: <20250225184519.3586926-1-heiko@sntech.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250225_104546_614963_09E4D111 
-X-CRM114-Status: UNSURE (   7.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250225_104546_745398_0EE2D4AA 
+X-CRM114-Status: GOOD (  16.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,16 +80,204 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reinit the phy if it's already running when a type-orientation
-event happens.
+From: Heiko Stuebner <heiko.stuebner@cherry.de>
 
-Heiko Stuebner (2):
-  phy: rockchip: usbdp: move type-orientation-switch further down
-  phy: rockchip: usbdp: re-init the phy on orientation-change
+Move the typec-orientation-switch functionality further down, next to
+the typec-mux code. Not only brings this the typec-related functionality
+closer together, but also the following change needs access to other
+driver functions, that are below the current position.
 
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 173 +++++++++++-----------
- 1 file changed, 90 insertions(+), 83 deletions(-)
+No functional change.
 
+Signed-off-by: Heiko Stuebner <heiko.stuebner@cherry.de>
+---
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 166 +++++++++++-----------
+ 1 file changed, 83 insertions(+), 83 deletions(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+index 5b1e8a3806ed..7b17c82ebcfc 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
++++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+@@ -616,89 +616,6 @@ static void rk_udphy_dp_hpd_event_trigger(struct rk_udphy *udphy, bool hpd)
+ 	rk_udphy_grfreg_write(udphy->vogrf, &cfg->vogrfcfg[udphy->id].hpd_trigger, hpd);
+ }
+ 
+-static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+-{
+-	if (udphy->flip) {
+-		udphy->dp_lane_sel[0] = 0;
+-		udphy->dp_lane_sel[1] = 1;
+-		udphy->dp_lane_sel[2] = 3;
+-		udphy->dp_lane_sel[3] = 2;
+-		udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[2] = PHY_LANE_MUX_USB;
+-		udphy->lane_mux_sel[3] = PHY_LANE_MUX_USB;
+-		udphy->dp_aux_dout_sel = PHY_AUX_DP_DATA_POL_INVERT;
+-		udphy->dp_aux_din_sel = PHY_AUX_DP_DATA_POL_INVERT;
+-		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 1);
+-		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
+-	} else {
+-		udphy->dp_lane_sel[0] = 2;
+-		udphy->dp_lane_sel[1] = 3;
+-		udphy->dp_lane_sel[2] = 1;
+-		udphy->dp_lane_sel[3] = 0;
+-		udphy->lane_mux_sel[0] = PHY_LANE_MUX_USB;
+-		udphy->lane_mux_sel[1] = PHY_LANE_MUX_USB;
+-		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
+-		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
+-		udphy->dp_aux_dout_sel = PHY_AUX_DP_DATA_POL_NORMAL;
+-		udphy->dp_aux_din_sel = PHY_AUX_DP_DATA_POL_NORMAL;
+-		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
+-		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 1);
+-	}
+-
+-	udphy->mode = UDPHY_MODE_DP_USB;
+-}
+-
+-static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+-				 enum typec_orientation orien)
+-{
+-	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
+-
+-	mutex_lock(&udphy->mutex);
+-
+-	if (orien == TYPEC_ORIENTATION_NONE) {
+-		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
+-		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
+-		/* unattached */
+-		rk_udphy_usb_bvalid_enable(udphy, false);
+-		goto unlock_ret;
+-	}
+-
+-	udphy->flip = (orien == TYPEC_ORIENTATION_REVERSE) ? true : false;
+-	rk_udphy_set_typec_default_mapping(udphy);
+-	rk_udphy_usb_bvalid_enable(udphy, true);
+-
+-unlock_ret:
+-	mutex_unlock(&udphy->mutex);
+-	return 0;
+-}
+-
+-static void rk_udphy_orien_switch_unregister(void *data)
+-{
+-	struct rk_udphy *udphy = data;
+-
+-	typec_switch_unregister(udphy->sw);
+-}
+-
+-static int rk_udphy_setup_orien_switch(struct rk_udphy *udphy)
+-{
+-	struct typec_switch_desc sw_desc = { };
+-
+-	sw_desc.drvdata = udphy;
+-	sw_desc.fwnode = dev_fwnode(udphy->dev);
+-	sw_desc.set = rk_udphy_orien_sw_set;
+-
+-	udphy->sw = typec_switch_register(udphy->dev, &sw_desc);
+-	if (IS_ERR(udphy->sw)) {
+-		dev_err(udphy->dev, "Error register typec orientation switch: %ld\n",
+-			PTR_ERR(udphy->sw));
+-		return PTR_ERR(udphy->sw);
+-	}
+-
+-	return devm_add_action_or_reset(udphy->dev,
+-					rk_udphy_orien_switch_unregister, udphy);
+-}
+-
+ static int rk_udphy_refclk_set(struct rk_udphy *udphy)
+ {
+ 	unsigned long rate;
+@@ -1323,6 +1240,89 @@ static const struct phy_ops rk_udphy_usb3_phy_ops = {
+ 	.owner		= THIS_MODULE,
+ };
+ 
++static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
++{
++	if (udphy->flip) {
++		udphy->dp_lane_sel[0] = 0;
++		udphy->dp_lane_sel[1] = 1;
++		udphy->dp_lane_sel[2] = 3;
++		udphy->dp_lane_sel[3] = 2;
++		udphy->lane_mux_sel[0] = PHY_LANE_MUX_DP;
++		udphy->lane_mux_sel[1] = PHY_LANE_MUX_DP;
++		udphy->lane_mux_sel[2] = PHY_LANE_MUX_USB;
++		udphy->lane_mux_sel[3] = PHY_LANE_MUX_USB;
++		udphy->dp_aux_dout_sel = PHY_AUX_DP_DATA_POL_INVERT;
++		udphy->dp_aux_din_sel = PHY_AUX_DP_DATA_POL_INVERT;
++		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 1);
++		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
++	} else {
++		udphy->dp_lane_sel[0] = 2;
++		udphy->dp_lane_sel[1] = 3;
++		udphy->dp_lane_sel[2] = 1;
++		udphy->dp_lane_sel[3] = 0;
++		udphy->lane_mux_sel[0] = PHY_LANE_MUX_USB;
++		udphy->lane_mux_sel[1] = PHY_LANE_MUX_USB;
++		udphy->lane_mux_sel[2] = PHY_LANE_MUX_DP;
++		udphy->lane_mux_sel[3] = PHY_LANE_MUX_DP;
++		udphy->dp_aux_dout_sel = PHY_AUX_DP_DATA_POL_NORMAL;
++		udphy->dp_aux_din_sel = PHY_AUX_DP_DATA_POL_NORMAL;
++		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
++		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 1);
++	}
++
++	udphy->mode = UDPHY_MODE_DP_USB;
++}
++
++static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
++				 enum typec_orientation orien)
++{
++	struct rk_udphy *udphy = typec_switch_get_drvdata(sw);
++
++	mutex_lock(&udphy->mutex);
++
++	if (orien == TYPEC_ORIENTATION_NONE) {
++		gpiod_set_value_cansleep(udphy->sbu1_dc_gpio, 0);
++		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 0);
++		/* unattached */
++		rk_udphy_usb_bvalid_enable(udphy, false);
++		goto unlock_ret;
++	}
++
++	udphy->flip = (orien == TYPEC_ORIENTATION_REVERSE) ? true : false;
++	rk_udphy_set_typec_default_mapping(udphy);
++	rk_udphy_usb_bvalid_enable(udphy, true);
++
++unlock_ret:
++	mutex_unlock(&udphy->mutex);
++	return ret;
++}
++
++static void rk_udphy_orien_switch_unregister(void *data)
++{
++	struct rk_udphy *udphy = data;
++
++	typec_switch_unregister(udphy->sw);
++}
++
++static int rk_udphy_setup_orien_switch(struct rk_udphy *udphy)
++{
++	struct typec_switch_desc sw_desc = { };
++
++	sw_desc.drvdata = udphy;
++	sw_desc.fwnode = dev_fwnode(udphy->dev);
++	sw_desc.set = rk_udphy_orien_sw_set;
++
++	udphy->sw = typec_switch_register(udphy->dev, &sw_desc);
++	if (IS_ERR(udphy->sw)) {
++		dev_err(udphy->dev, "Error register typec orientation switch: %ld\n",
++			PTR_ERR(udphy->sw));
++		return PTR_ERR(udphy->sw);
++	}
++
++	return devm_add_action_or_reset(udphy->dev,
++					rk_udphy_orien_switch_unregister, udphy);
++}
++
+ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+ 				  struct typec_mux_state *state)
+ {
 -- 
 2.47.2
 
