@@ -4,67 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C335EC021BE
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Feb 2025 06:04:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55B7CC021BE
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Feb 2025 07:04:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jN4wqVkb3dYG+ttW83bblIOXMK1Pec5ltvbfJlwq5sI=; b=Rc1x7UUSSDF+j6
-	J71eBufKKWMUZlpfdZMlnMAVUMN+qVt6S/OQhY3gK8qdmeclmZ/yFm1RzxST8cmfrTUZ7NlKOXjky
-	6x+DCJa0TLwmy/e0jseZLyxIv/69XGQCr2pj1o9JTL2Rgk5AY3PlMXdoD30X76NGaBRJAcHQpHGXM
-	nRzR4Rk2PzqsKhMOZj0q2Il9B9bmeRMhhmoaeFO1i1fAZ7vhUCZeisccNbnNiz+VNCOm0mugNX56l
-	Ml5RkSqr1QiL8TELE/jB6LUHQy1NDRWKRuMvjt8i7L7Xq7Y8JcUPEyyAOlx9SLQOc4tt/2bCi7vTK
-	V47CJAZXAEAWgbr1mTVg==;
+	List-Owner; bh=QO3ZFTtN5XZQxCIXTLm/hKPS7m6H5ruNnEqIVrjw5oc=; b=fFBPghqU2eyPmv
+	vTc1m0sj4NaJ+snUlgfdajRCqNJgTe4QdBotiA8T0kB7AsGAW2cJiLC1qFKqd0/+sWFz/hzO0DH4U
+	jHSiGDydNcP43Aq9FkuCeRPJ5lKA3cliQaWn7z7NbUcUs4DKyjM279Oqtlql19jI8U3FoUgO7sECs
+	cD5yfdfvnC5XbaltRJTC7l2THCDurAwabMyqZeUZyVte2eDGNFQwMWpsptMkti3cQjyrLLRZlsPLN
+	h4pcFyGCAV7j4GqrRq32xHQQMwBZRDR8hqd8iv/raq4oIBjH+jdSXul1SdtU0PNfPPQokAivhoCc6
+	Za3CE+/zuICftS771BCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnX0J-00000006RcM-19Wq;
-	Thu, 27 Feb 2025 06:04:15 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tnXwx-00000006WIg-3Omm;
+	Thu, 27 Feb 2025 07:04:51 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnWwg-00000006QtH-2cHj
+	id 1tnXut-00000006W18-0kjY
 	for linux-phy@lists.infradead.org;
-	Thu, 27 Feb 2025 06:00:31 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 48A035C4673;
-	Thu, 27 Feb 2025 05:59:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D976AC4CEDD;
-	Thu, 27 Feb 2025 06:00:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740636029;
-	bh=tRUaBjfQeJhK+q/8PKXwiUJCfypbozRNjwBfu7BchpY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=WMJrpTBBQURZ3HaqKnlBxryXqMVZR/xjlhDc1PBJR9hEKzncjvOQA7FY9HHaQzP/d
-	 phWfOj+N+1sK9JpXRQIkslQuZNXBzN0LSMORIWpyPRdynEIv+aUM7jtFFm4m76+l1x
-	 +UAe0EtqgNsBm30m9XzXP1SsfG+71/dcvKSgqsrQdPoXMGMOtVGpjZCx85hl58mJtH
-	 vAW2MbRkUvwzW9O1qM0vt12s2vPBVkJnEHpa3OKFjI2BCv+SFzpXppoVUn3vjZ81+3
-	 rxjMS9svehUMC6bJlgJiFU4dwuFr7wgObypr86lbU78CUl5f+clfGUr8LVC2r8fd9u
-	 +Ge8iPjFZAZSg==
-Date: Thu, 27 Feb 2025 11:30:24 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Varadarajan Narayanan <quic_varada@quicinc.com>
-Cc: lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
-	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, kishon@kernel.org, andersson@kernel.org,
-	konradybcio@kernel.org, p.zabel@pengutronix.de,
-	quic_nsekar@quicinc.com, dmitry.baryshkov@linaro.org,
-	linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v10 2/7] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-Message-ID: <Z7//eDJZw2SNNc5Z@vaman>
-References: <20250206121803.1128216-1-quic_varada@quicinc.com>
- <20250206121803.1128216-3-quic_varada@quicinc.com>
- <Z64xQcgHIgAEzKFb@vaman>
- <Z7MChDND+iClDNES@hu-varada-blr.qualcomm.com>
+	Thu, 27 Feb 2025 07:02:46 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id a640c23a62f3a-abb4944fa73so7045166b.3
+        for <linux-phy@lists.infradead.org>; Wed, 26 Feb 2025 23:02:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1740639761; x=1741244561; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=nt30vxCZ8dDJGA9f6yl5mbEhlcuKQimFoXdE6IW4R8k=;
+        b=U3+QOGRRovfLqpHyznbNI7khYzEwkgJKLsFiRHLi12Odo0BJutHz8vP50Ba2wYiwYR
+         c9EV23n7/961hcNCSA0cCDjm88KOIwuI7LhHSbssuJmNc17DxEr7Y7iPN4SIhKzLytKf
+         u2/LqrTnfyl9SWurZeluHASZUqK/ZU19p7E2rLShSNVrGRJZnJANSzjVvaq3JQN1Uye/
+         AgbVEbdgVD2abLsCAdfoCCQmXIuW4VxCHOknzC/80TMJYDbseXhfEXlzyWhEUXO4uI3G
+         b8uKJRIxTku7ee3jB+2wdEWMzrIXkBX5xRkjxU1F7/PIQI8VfiAg6+wDr81wK6v7Cu5p
+         m5fw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1740639761; x=1741244561;
+        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
+         :from:references:cc:to:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=nt30vxCZ8dDJGA9f6yl5mbEhlcuKQimFoXdE6IW4R8k=;
+        b=MadugYnP0wXveS5aZCd/frbwouip2xqhA3pMMj9cMLnFt2oRJZzRt7PXKG9S2eegf/
+         qYPyrq1YjRFCE8v9+ACrAcVNc8LHdWMDdEQhCBcEGUeKqvxg7ZsiEda00zH033uBWzJW
+         q9VEgWdJ//l0kgW6Su4cSZb7mQKB2Mmy+yi+1ucdsgVmZM1+E8j77/obtHfCSwyKZQ+J
+         i++gJScBj2Xvv1o8z3xr90MkE/MKPVgVDrBQBQrQ5JKy07cOZwRyloEkEPTHh9yGU1Oc
+         wcy/AtznvYsGrFB7HcZoP4KZlMo5tq8mf+gUWAXIaGX4YbUT8SlX29o0VFYDBCs/9+UZ
+         gTwA==
+X-Forwarded-Encrypted: i=1; AJvYcCUktDUqB1eNowqOKriM8ayubTZyjVEiMy3uTqKq2n5b8wzXLXy1dM1ck2ia3nI/yhmP/mXw+UyRESQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyWi2uP8TkR90ni4/kIdPMvko0KjlvRBKBIEqGF3HeFxyBk1D7S
+	yZcYqjko8HHnvrGmaQtJClmYOa19qeAl8RwGaaLYCHHHM+M9BzKVhtZlDJfBtE0=
+X-Gm-Gg: ASbGncv7MpdF07oBYRpyGGEEGcfYF+Sc862LyxQeZNMl4ceIPXzQaeqhPRXklkHIGhj
+	JYvbRtB9ESW2onVayTk6Qq7FE4UkEBPbQ5YcDAj9N8mdELYe+QmoaG1oiApnz91yGyIzngBB1yE
+	5PALKRCGo8OZNGKC0QTidmK5soY9aYo+hAJ8NH4kdGXGpK5APSz8h6SwLsITbfi3jki+uDSltc6
+	4ph+4thCXXQr1rcjzfBDOwW/Mc3aNybnlh6WMduPK8jyP1Dg0IqJbBPqafKYnsM1nThXUwByh9D
+	TSxqrb4wdSGfkxbVyxE1L9QBNGIJ2pmA7/slO3KfypizDw==
+X-Google-Smtp-Source: AGHT+IFaX5Xx465ynY+QBW+bAA7zOiG4EkIiD1sgmpBcYUZdAaaw8LwpWoTVpJIUbrMT2ZdTel9FfA==
+X-Received: by 2002:a17:907:96ac:b0:ab7:5fcd:d4db with SMTP id a640c23a62f3a-abc09e321a0mr931418366b.9.1740639761342;
+        Wed, 26 Feb 2025 23:02:41 -0800 (PST)
+Received: from [192.168.1.20] ([178.197.206.225])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-abf0c0dc5d5sm75582566b.63.2025.02.26.23.02.39
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 26 Feb 2025 23:02:40 -0800 (PST)
+Message-ID: <58a96f60-b748-493e-b935-649044c4a750@linaro.org>
+Date: Thu, 27 Feb 2025 08:02:38 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Z7MChDND+iClDNES@hu-varada-blr.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: exynos5-usbdrd: Fix broken USB on Exynos5422 (TYPEC
+ dependency)
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar
+ <alim.akhtar@samsung.com>, =?UTF-8?Q?Andr=C3=A9_Draszik?=
+ <andre.draszik@linaro.org>, Peter Griffin <peter.griffin@linaro.org>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+References: <20250215094122.60535-1-krzysztof.kozlowski@linaro.org>
+ <Z7/+gXVFVzGadc4z@vaman>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Content-Language: en-US
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <Z7/+gXVFVzGadc4z@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250226_220030_750594_07F32AFF 
-X-CRM114-Status: GOOD (  26.40  )
+X-CRM114-CacheID: sfid-20250226_230243_232907_4DA2D094 
+X-CRM114-Status: GOOD (  17.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,158 +151,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 17-02-25, 15:03, Varadarajan Narayanan wrote:
-> On Thu, Feb 13, 2025 at 11:22:01PM +0530, Vinod Koul wrote:
-> [ . . .]
+On 27/02/2025 06:56, Vinod Koul wrote:
+> Hi Krzysztof,
 > 
-> > > +static const struct qcom_uniphy_pcie_data ipq5332_data = {
-> > > +	.lane_offset	= 0x800,
-> > > +	.phy_type	= PHY_TYPE_PCIE_GEN3,
-> > > +	.init_seq	= ipq5332_regs,
-> > > +	.init_seq_num	= ARRAY_SIZE(ipq5332_regs),
-> > > +	.pipe_clk_rate	= 250000000,
-> >
-> > can be written as 250 * MEGA
+> On 15-02-25, 10:41, Krzysztof Kozlowski wrote:
 > 
-> Ok.
-> 
-> [ . . .]
-> 
-> > > +/*
-> > > + * Register a fixed rate pipe clock.
-> > > + *
-> > > + * The <s>_pipe_clksrc generated by PHY goes to the GCC that gate
-> > > + * controls it. The <s>_pipe_clk coming out of the GCC is requested
-> > > + * by the PHY driver for its operations.
-> > > + * We register the <s>_pipe_clksrc here. The gcc driver takes care
-> > > + * of assigning this <s>_pipe_clksrc as parent to <s>_pipe_clk.
-> > > + * Below picture shows this relationship.
-> > > + *
-> > > + *         +---------------+
-> > > + *         |   PHY block   |<<---------------------------------------+
-> > > + *         |               |                                         |
-> > > + *         |   +-------+   |                   +-----+               |
-> > > + *   I/P---^-->|  PLL  |---^--->pipe_clksrc--->| GCC |--->pipe_clk---+
-> > > + *    clk  |   +-------+   |                   +-----+
-> > > + *         +---------------+
-> > > + */
-> > > +static inline int phy_pipe_clk_register(struct qcom_uniphy_pcie *phy, int id)
-> > > +{
-> > > +	const struct qcom_uniphy_pcie_data *data = phy->data;
-> > > +	struct clk_hw *hw;
-> > > +	char name[64];
-> > > +
-> > > +	snprintf(name, sizeof(name), "phy%d_pipe_clk_src", id);
-> > > +	hw = devm_clk_hw_register_fixed_rate(phy->dev, name, NULL, 0,
-> > > +					     data->pipe_clk_rate);
-> > > +	if (IS_ERR(hw))
-> > > +		return dev_err_probe(phy->dev, PTR_ERR(hw),
-> > > +				     "Unable to register %s\n", name);
-> > > +
-> > > +	return devm_of_clk_add_hw_provider(phy->dev, of_clk_hw_simple_get, hw);
-> > > +}
-> > > +
-> > > +static const struct of_device_id qcom_uniphy_pcie_id_table[] = {
-> > > +	{
-> > > +		.compatible = "qcom,ipq5332-uniphy-pcie-phy",
-> > > +		.data = &ipq5332_data,
-> > > +	}, {
-> > > +		/* Sentinel */
-> > > +	},
-> > > +};
-> > > +MODULE_DEVICE_TABLE(of, qcom_uniphy_pcie_id_table);
-> > > +
-> > > +static const struct phy_ops pcie_ops = {
-> > > +	.power_on	= qcom_uniphy_pcie_power_on,
-> > > +	.power_off	= qcom_uniphy_pcie_power_off,
-> > > +	.owner          = THIS_MODULE,
-> > > +};
-> > > +
-> > > +static int qcom_uniphy_pcie_probe(struct platform_device *pdev)
-> > > +{
-> > > +	struct phy_provider *phy_provider;
-> > > +	struct device *dev = &pdev->dev;
-> > > +	struct qcom_uniphy_pcie *phy;
-> > > +	struct phy *generic_phy;
-> > > +	int ret;
-> > > +
-> > > +	phy = devm_kzalloc(&pdev->dev, sizeof(*phy), GFP_KERNEL);
-> > > +	if (!phy)
-> > > +		return -ENOMEM;
-> > > +
-> > > +	platform_set_drvdata(pdev, phy);
-> > > +	phy->dev = &pdev->dev;
-> > > +
-> > > +	phy->data = of_device_get_match_data(dev);
-> > > +	if (!phy->data)
-> > > +		return -EINVAL;
-> > > +
-> > > +	ret = of_property_read_u32(dev_of_node(dev), "num-lanes", &phy->lanes);
-> > > +	if (ret)
-> > > +		return dev_err_probe(dev, ret, "Couldn't read num-lanes\n");
-> > > +
-> > > +	ret = qcom_uniphy_pcie_get_resources(pdev, phy);
-> > > +	if (ret < 0)
-> > > +		return dev_err_probe(&pdev->dev, ret,
-> > > +				     "failed to get resources: %d\n", ret);
-> > > +
-> > > +	generic_phy = devm_phy_create(phy->dev, NULL, &pcie_ops);
-> > > +	if (IS_ERR(generic_phy))
-> > > +		return PTR_ERR(generic_phy);
-> > > +
-> > > +	phy_set_drvdata(generic_phy, phy);
-> > > +
-> > > +	ret = phy_pipe_clk_register(phy, generic_phy->id);
-> > > +	if (ret)
-> > > +		dev_err(&pdev->dev, "failed to register phy pipe clk\n");
-> > > +
-> > > +	phy_provider = devm_of_phy_provider_register(phy->dev,
-> > > +						     of_phy_simple_xlate);
-> > > +	if (IS_ERR(phy_provider))
-> > > +		return PTR_ERR(phy_provider);
-> >
-> > should we not unroll the pipe clk registration here?
-> 
-> Since it is a 'devm_' clk_hw_register_fixed_rate, wouldn't the devm
-> framework do the unregister?
-> 
-> 	$ git diff
-> 	diff --git a/drivers/clk/clk-fixed-rate.c b/drivers/clk/clk-fixed-rate.c
-> 	index 6b4f76b9c4da..3fd1a12cc163 100644
-> 	--- a/drivers/clk/clk-fixed-rate.c
-> 	+++ b/drivers/clk/clk-fixed-rate.c
-> 	@@ -58,6 +58,7 @@ static void
-> 	devm_clk_hw_register_fixed_rate_release(struct device *dev, void *re
-> 		 * the hw, resulting in double free. Just unregister the hw and
-> 		 * let
-> 		 * devres code kfree() it.
-> 		 */
-> 	+	printk("--> %s: %s\n", __func__, __clk_get_name(fix->hw.clk));
-> 		clk_hw_unregister(&fix->hw);
-> 	 }
-> 
-> 	diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-> 	b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-> 	index 311f98181177..9a8d8d9a7c2b 100644
-> 	--- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-> 	+++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
-> 	@@ -267,6 +268,7 @@ static int qcom_uniphy_pcie_probe(struct
-> 	platform_device *pdev)
-> 
-> 		phy_provider = devm_of_phy_provider_register(phy->dev,
-> 							     of_phy_simple_xlate);
-> 	+	phy_provider = ERR_PTR(-EINVAL);
-> 		if (IS_ERR(phy_provider))
-> 			return PTR_ERR(phy_provider);
-> 
-> I forced an error here and saw that devm_clk_hw_register_fixed_rate_release
-> is getting called, which in turn calls clk_hw_unregister. Is that sufficient?
-> Or am i missing something.
+> Can you revise the title to "phy: exynos5-usbdrd: dont depend on type-c"
+> or something relevenant which describes the change rather than the
+> Fix something!
 
-I missed that internally this is devm_, this is fine
+Sure, it won't change the fact that we are fixing broken USB dependency.
 
--- 
-~Vinod
+> 
+>> Older Exynos designs, like Exynos5422, do not have USB Type-C and the
+>> USB DRD PHY does not really depend on Type-C for these devices at all.
+>> Incorrectly added dependency on CONFIG_TYPEC caused this driver to be
+>> missing for exynos_defconfig and as result Exynos5422-based boards like
+>> Hardkernel Odroid HC1 failed to probe USB.
+>>
+>> Drop incorrect dependency and rely on module to be reachable by the
+>> compiler.
+> 
+> Changelog lgtm
+> 
+>>
+>> Reported-by: Krzysztof Kozlowski <krzk@kernel.org>
+>> Closes: https://krzk.eu/#/builders/21/builds/6139
+>> Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
+>> Closes: https://lore.kernel.org/all/3c0b77e6-357d-453e-8b63-4757c3231bde@samsung.com/
+>> Fixes: 09dc674295a3 ("phy: exynos5-usbdrd: subscribe to orientation notifier if required")
+>> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+>>
+>> ---
+>>
+>> Patch for issue in linux-next
+>> ---
+>>  drivers/phy/samsung/Kconfig              | 1 -
+>>  drivers/phy/samsung/phy-exynos5-usbdrd.c | 2 +-
+>>  2 files changed, 1 insertion(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/phy/samsung/Kconfig b/drivers/phy/samsung/Kconfig
+>> index 7fba571c0e2b..e2330b0894d6 100644
+>> --- a/drivers/phy/samsung/Kconfig
+>> +++ b/drivers/phy/samsung/Kconfig
+>> @@ -81,7 +81,6 @@ config PHY_EXYNOS5_USBDRD
+>>  	tristate "Exynos5 SoC series USB DRD PHY driver"
+>>  	depends on (ARCH_EXYNOS && OF) || COMPILE_TEST
+>>  	depends on HAS_IOMEM
+>> -	depends on TYPEC || (TYPEC=n && COMPILE_TEST)
+> 
+> So how would this dependency be sorted..?
+
+That was a v1 and new versions are on the lists with simpler approach.
+
+> 
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
