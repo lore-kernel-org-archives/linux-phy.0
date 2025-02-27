@@ -4,87 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26D7DC19F2E
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Feb 2025 07:06:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6CF6C19F2E
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Feb 2025 08:53:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NSdUhSUqgbDhuyQK98x8WXEl9BO0ZfDagvTAEc3V1Cc=; b=FFghVadSdv1KE3
-	uard5qBE4dA4j5Gw9x+EkNJHkPVnxQxDbKirechMrdX88rbkUnOMke+oiETRKUCFaTt97+FKFukgG
-	cF1Cw0jDK2dOxjSYvGa3d7lS4jDBjeRhEYB/cjDJxvs+3fRG+6uPFMffbcyA7aHgGu0rnwY4DcbuH
-	akN3pgu/owWZ1F5P2X7Re78Cpmv35pSfCgBjrSQbPlwFg3AVGsih9n5mHUntG3Rt8vHzRNNijBNFV
-	KjH0iDA8QInU9k4kTwxSQkTGB8+BmURt346CnCkBPPm7vn1n9JXEL6rcP8Ll1mrbCIn97+B9Q0Q50
-	exfEknlYJCAmy96gzGGg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oPbHXRjF/jSL26a5cMA5fUaSszt+Wr8TYvOnPNPStVU=; b=eiZthR1GW/KSmw
+	i579KNHKp63OCKxpYQm7yITRbJ/5BIugXe1jx+RSdJcL3X09Uxg/w+lOzQMr3EuORpUhH7vEElLll
+	m6I3HX+ykb+6sQF4SEuIfvxI3TCeuzTfw3I/GQmutij9AK/kQgLNJtx0jxaMWvLRLGjkWmgBDkym5
+	YgZ51pSomWl6x6sJ6lcjouugmFXL1iJxEd0z67KcfddSRkr/v+vxpqhpuPtmBnHn3xBb11Crpwge7
+	PVDn/Pz1/bHZa1TdhEuPDEAFSaEnnhU7UvVHT5FezY2A4rHkJVWib4lzIAAzQzZ7OC6Cdy1N+60lw
+	Oz69Ri04WyNc59ltV4yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnXyo-00000006WcB-3JvK;
-	Thu, 27 Feb 2025 07:06:46 +0000
-Received: from mail-ej1-x634.google.com ([2a00:1450:4864:20::634])
+	id 1tnZeQ-00000006mB2-1noZ;
+	Thu, 27 Feb 2025 08:53:50 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnXxT-00000006WOy-0qz1
+	id 1tnZeN-00000006mAP-37eU
 	for linux-phy@lists.infradead.org;
-	Thu, 27 Feb 2025 07:05:24 +0000
-Received: by mail-ej1-x634.google.com with SMTP id a640c23a62f3a-ab7098af6fdso7797366b.2
-        for <linux-phy@lists.infradead.org>; Wed, 26 Feb 2025 23:05:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1740639922; x=1741244722; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=0apQcE6PfzPMLUzCFy/8QBbVfjes8kdxgXVKnN/YLIM=;
-        b=KtJfcZEgLuj7F9wT/3sviJiHJzJIaD1TUUGtaKa8bGTq45HtIM0xixxZl5LO93/JX9
-         di4RlzwJItgDT1jyW0ojDEo3OdVAm7/KNii8/MFs6fgvdJSNAo+vWUb3jmkeUTZTKI+s
-         EvxiFRek+h7V1yxFfj75AGsfSNuj9kRP3X8E1MJ0fY4bu01fWHwlx+4VvdvzWRkM856/
-         f7Zyl/R0Mj9wXCD3AEjJphMv2AQpD8Y4hutqhou2uOu6nO3pTdZUwG6YrDYMkFqOgsh6
-         WNmG4ud3c9OzPw2whocDsjdCKfpLGkBNZxrdkoU3TVB6ctmmuNircPjQwbAhVH0FYPDD
-         KJYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740639922; x=1741244722;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=0apQcE6PfzPMLUzCFy/8QBbVfjes8kdxgXVKnN/YLIM=;
-        b=U1XtZB7KnyjXEr/hlURh5id5z0LwMtksoph7JtILIb1ytgHGwCLBvDfWCRNLOfaCug
-         oOSkPZBIDfSJX82ieTTW7p/CkoOwg0h59oqjYUBpIqoMxfzOnOLDMyT4jKBaosS3zlad
-         DMdOwL7qVCpHexvNugfBfa68dqRoO2quXDqOYgsddrC/88OfwWzX8rV7y1Mfvh6m85Lp
-         urGLQ/d9eOsCMF38RprmsjP5nrfldIOGa69h+RxaZgvBIgNvYz6jQSKxTYe5XYYt45EQ
-         5dj5TR6srOQUPO/bXPXW0Aka/0xW+J+h3nATUD+w45FOpLJKY2Qa01LrQbJ4vlrwJnJV
-         N4aA==
-X-Forwarded-Encrypted: i=1; AJvYcCWNBDoiYEYCC9qOLQnWZeD4yH3U1dSvMcc+sAqkYfA46joikochUkwYOmf+fq62GOhjqbv5qXNWCXo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxQIalYWt9tawVt8hxsnb1CqUPQ45RZq2FDIwcVgh351fZtE6Is
-	JFaFaUyEcPYezHfRNmYYH2IbJTq3rDfVqwBy+S29OmoAs0DahCOQK5Fq+tGx86Y=
-X-Gm-Gg: ASbGncsowtc+jEOCXTWUhDrYWOCXZzqlZ+FuBSHfbnCgxbiR1+KldUK2Ve8dzXL2HGO
-	1sacV5AcnBcCSG17f8NI3maHtVVAUeoL5sGeSlmqor95/2JMmrAE2k6LjwpwnkehrVcwpjMHcQ6
-	t/koZN7DZ4QeXO+uAWZeiSeq148L2ExjZIKZT0oFykFJqC759O18pmnCZaCMfhxk4/WS4ErN0zK
-	EzwWknbwqcguczuTEHMk6tVninu0dtz60gP/fpvrSmupdPHik2gH/k3hX9TgozgYDUhCOCAGwLW
-	vrP8SAHW9/lx8qv+AGEcVRQqkiLhDg+gqa+zx21p
-X-Google-Smtp-Source: AGHT+IHXy5tCZaZz6X3dSvzvQm4bdYcI3qekmMWxV+GvUxiLx80Fzbswu9wY9k8MAxpjFX7Ux9LlHA==
-X-Received: by 2002:a17:907:74a:b0:abb:e5ac:28b2 with SMTP id a640c23a62f3a-abc09c24732mr949678066b.13.1740639921638;
-        Wed, 26 Feb 2025 23:05:21 -0800 (PST)
-Received: from krzk-bin.. ([178.197.206.225])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-abf0c6e9c25sm74556466b.108.2025.02.26.23.05.20
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 26 Feb 2025 23:05:21 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: [PATCH v4] phy: exynos5-usbdrd: Do not depend on Type-C
-Date: Thu, 27 Feb 2025 08:05:18 +0100
-Message-ID: <20250227070518.5468-1-krzysztof.kozlowski@linaro.org>
-X-Mailer: git-send-email 2.43.0
+	Thu, 27 Feb 2025 08:53:49 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51R8DrQP018544;
+	Thu, 27 Feb 2025 08:53:38 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=bw1PYuSEp4O5hdX7H6E/TvKB
+	rfllT/ojMop2tlSvOag=; b=gWkRrh+39rQpt3y8l/nF4063PVNAtosrny9DO5qx
+	N3Hw8DHc4j2mDS0Az7q8RafcRVAwLhI6xfDejc5ujyUUw/V54+tYpclweX5iMzh/
+	cmMX4djzMyDh/ubB7RF/wKgbnIX5NQoyRP1X6ML4/q4/yMY39ea/I+hAtKxUy+B1
+	0kZCXBLjMUcZiDF6yeVFhoaKhr6XDReLUcyFZyCM5bnWiJ9zE/bFmaW43w8glDiz
+	RUWrU44tjGJFHPXCBLNX+IhWZhroLHe6K/ac1lwQG/QBjXtsHbPtOp6cusraYEH8
+	88K5ZLxrvavp4W42tlk9vWeYNHunbUirpyc+vBkQIKApeA==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prn4ys4-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 27 Feb 2025 08:53:38 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51R8rbrO023753
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 27 Feb 2025 08:53:37 GMT
+Received: from hu-varada-blr.qualcomm.com (10.80.80.8) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Thu, 27 Feb 2025 00:53:32 -0800
+Date: Thu, 27 Feb 2025 14:23:28 +0530
+From: Varadarajan Narayanan <quic_varada@quicinc.com>
+To: Vinod Koul <vkoul@kernel.org>
+CC: <lpieralisi@kernel.org>, <kw@linux.com>,
+        <manivannan.sadhasivam@linaro.org>, <robh@kernel.org>,
+        <bhelgaas@google.com>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
+        <kishon@kernel.org>, <andersson@kernel.org>, <konradybcio@kernel.org>,
+        <p.zabel@pengutronix.de>, <quic_nsekar@quicinc.com>,
+        <dmitry.baryshkov@linaro.org>, <linux-arm-msm@vger.kernel.org>,
+        <linux-pci@vger.kernel.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>
+Subject: Re: [PATCH v10 2/7] phy: qcom: Introduce PCIe UNIPHY 28LP driver
+Message-ID: <Z8AoCHxD4IlFeXv9@hu-varada-blr.qualcomm.com>
+References: <20250206121803.1128216-1-quic_varada@quicinc.com>
+ <20250206121803.1128216-3-quic_varada@quicinc.com>
+ <Z64xQcgHIgAEzKFb@vaman>
+ <Z7MChDND+iClDNES@hu-varada-blr.qualcomm.com>
+ <Z7//eDJZw2SNNc5Z@vaman>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <Z7//eDJZw2SNNc5Z@vaman>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: fqSDG55IYoeVkzP-dc-sUFjEk3UC6RD7
+X-Proofpoint-GUID: fqSDG55IYoeVkzP-dc-sUFjEk3UC6RD7
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-02-27_04,2025-02-26_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ spamscore=0 clxscore=1015 mlxscore=0 adultscore=0 mlxlogscore=999
+ suspectscore=0 phishscore=0 bulkscore=0 malwarescore=0 lowpriorityscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2502270067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250226_230523_325771_3419F74E 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20250227_005347_919223_F42ECBB9 
+X-CRM114-Status: GOOD (  18.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,41 +101,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T2xkZXIgRXh5bm9zIGRlc2lnbnMsIGxpa2UgRXh5bm9zNTQyMiwgZG8gbm90IGhhdmUgVVNCIFR5
-cGUtQyBhbmQgdGhlClVTQiBEUkQgUEhZIGRvZXMgbm90IHJlYWxseSBuZWVkIENPTkZJR19UWVBF
-QyBmb3IgdGhlc2UgZGV2aWNlcyBhdCBhbGwuCkluY29ycmVjdGx5IGFkZGVkIG9wdGlvbmFsIGRl
-cGVuZGVuY3kgb24gQ09ORklHX1RZUEVDIGNhdXNlZCB0aGlzIGRyaXZlcgp0byBiZSBtaXNzaW5n
-IGZvciBleHlub3NfZGVmY29uZmlnIGFuZCBhcyByZXN1bHQgRXh5bm9zNTQyMi1iYXNlZCBib2Fy
-ZHMKbGlrZSBIYXJka2VybmVsIE9kcm9pZCBIQzEgZmFpbGVkIHRvIHByb2JlIFVTQi4KClJlcG9y
-dGVkLWJ5OiBLcnp5c3p0b2YgS296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+CkNsb3NlczogaHR0
-cHM6Ly9rcnprLmV1LyMvYnVpbGRlcnMvMjEvYnVpbGRzLzYxMzkKUmVwb3J0ZWQtYnk6IE1hcmVr
-IFN6eXByb3dza2kgPG0uc3p5cHJvd3NraUBzYW1zdW5nLmNvbT4KQ2xvc2VzOiBodHRwczovL2xv
-cmUua2VybmVsLm9yZy9hbGwvM2MwYjc3ZTYtMzU3ZC00NTNlLThiNjMtNDc1N2MzMjMxYmRlQHNh
-bXN1bmcuY29tLwpGaXhlczogMDlkYzY3NDI5NWEzICgicGh5OiBleHlub3M1LXVzYmRyZDogc3Vi
-c2NyaWJlIHRvIG9yaWVudGF0aW9uIG5vdGlmaWVyIGlmIHJlcXVpcmVkIikKUmV2aWV3ZWQtYnk6
-IEFuZHLDqSBEcmFzemlrIDxhbmRyZS5kcmFzemlrQGxpbmFyby5vcmc+ClRlc3RlZC1ieTogTWFy
-ZWsgU3p5cHJvd3NraSA8bS5zenlwcm93c2tpQHNhbXN1bmcuY29tPgpTaWduZWQtb2ZmLWJ5OiBL
-cnp5c3p0b2YgS296bG93c2tpIDxrcnp5c3p0b2Yua296bG93c2tpQGxpbmFyby5vcmc+CgotLS0K
-ClBhdGNoIGZvciBpc3N1ZSBpbiBsaW51eC1uZXh0CgpDaGFuZ2VzIGluIHY0OgoxLiBDaGFuZ2Ug
-c3ViamVjdCAoVmlub2QpCjIuIEFkZCBNYXJlaydzIGFuZCBBbmRyZSdzIHRhZ3MuCgpDaGFuZ2Vz
-IGluIHYzOgoxLiBTaW1wbGlmeSBhbmQgZ28gYmFjayB0byBzdGFuZGFyZCBvcHRpb25hbCBkZXBl
-bmRlbmN5IHdpdGhvdXQKICAgaW50ZXJtZWRpYXRlIHN5bWJvbAoKQ2hhbmdlcyBpbiB2MjoKMS4g
-QWRkIFBIWV9FWFlOT1M1X1VTQkRSRF9UWVBFQywgc28gYXJtNjQgZGVmY29uZmlnIHdpbGwgaGF2
-ZSBib3RoCiAgIHN5bWJvbHMgaW4tc3luYwotLS0KIGRyaXZlcnMvcGh5L3NhbXN1bmcvS2NvbmZp
-ZyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoK
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3NhbXN1bmcvS2NvbmZpZyBiL2RyaXZlcnMvcGh5L3Nh
-bXN1bmcvS2NvbmZpZwppbmRleCA3ZmJhNTcxYzBlMmIuLjY1NjYxMDA0NDFkNiAxMDA2NDQKLS0t
-IGEvZHJpdmVycy9waHkvc2Ftc3VuZy9LY29uZmlnCisrKyBiL2RyaXZlcnMvcGh5L3NhbXN1bmcv
-S2NvbmZpZwpAQCAtODEsNyArODEsNyBAQCBjb25maWcgUEhZX0VYWU5PUzVfVVNCRFJECiAJdHJp
-c3RhdGUgIkV4eW5vczUgU29DIHNlcmllcyBVU0IgRFJEIFBIWSBkcml2ZXIiCiAJZGVwZW5kcyBv
-biAoQVJDSF9FWFlOT1MgJiYgT0YpIHx8IENPTVBJTEVfVEVTVAogCWRlcGVuZHMgb24gSEFTX0lP
-TUVNCi0JZGVwZW5kcyBvbiBUWVBFQyB8fCAoVFlQRUM9biAmJiBDT01QSUxFX1RFU1QpCisJZGVw
-ZW5kcyBvbiBUWVBFQyB8fCAhVFlQRUMKIAlkZXBlbmRzIG9uIFVTQl9EV0MzX0VYWU5PUwogCXNl
-bGVjdCBHRU5FUklDX1BIWQogCXNlbGVjdCBNRkRfU1lTQ09OCi0tIAoyLjQzLjAKCgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Thu, Feb 27, 2025 at 11:30:24AM +0530, Vinod Koul wrote:
+
+[ . . .]
+
+> > > should we not unroll the pipe clk registration here?
+> >
+> > Since it is a 'devm_' clk_hw_register_fixed_rate, wouldn't the devm
+> > framework do the unregister?
+> >
+> > 	$ git diff
+> > 	diff --git a/drivers/clk/clk-fixed-rate.c b/drivers/clk/clk-fixed-rate.c
+> > 	index 6b4f76b9c4da..3fd1a12cc163 100644
+> > 	--- a/drivers/clk/clk-fixed-rate.c
+> > 	+++ b/drivers/clk/clk-fixed-rate.c
+> > 	@@ -58,6 +58,7 @@ static void
+> > 	devm_clk_hw_register_fixed_rate_release(struct device *dev, void *re
+> > 		 * the hw, resulting in double free. Just unregister the hw and
+> > 		 * let
+> > 		 * devres code kfree() it.
+> > 		 */
+> > 	+	printk("--> %s: %s\n", __func__, __clk_get_name(fix->hw.clk));
+> > 		clk_hw_unregister(&fix->hw);
+> > 	 }
+> >
+> > 	diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+> > 	b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+> > 	index 311f98181177..9a8d8d9a7c2b 100644
+> > 	--- a/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+> > 	+++ b/drivers/phy/qualcomm/phy-qcom-uniphy-pcie-28lp.c
+> > 	@@ -267,6 +268,7 @@ static int qcom_uniphy_pcie_probe(struct
+> > 	platform_device *pdev)
+> >
+> > 		phy_provider = devm_of_phy_provider_register(phy->dev,
+> > 							     of_phy_simple_xlate);
+> > 	+	phy_provider = ERR_PTR(-EINVAL);
+> > 		if (IS_ERR(phy_provider))
+> > 			return PTR_ERR(phy_provider);
+> >
+> > I forced an error here and saw that devm_clk_hw_register_fixed_rate_release
+> > is getting called, which in turn calls clk_hw_unregister. Is that sufficient?
+> > Or am i missing something.
+>
+> I missed that internally this is devm_, this is fine
+
+Thanks for the clarification. Have posted V11, please review.
+
+-Varada
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
