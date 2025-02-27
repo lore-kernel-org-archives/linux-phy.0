@@ -4,104 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FDB9C197BF
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Feb 2025 19:43:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3334DC197BF
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Feb 2025 22:02:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d+33VGF2VBOhYGDJGgpG8odhdrjfmneA2k/oEaMf9Qc=; b=PB5vtBl+JqVkvD
-	mgkZKK9DN+jJgKeMJ4xxnzTTrjW9qPW60tWkL8xD2qv2gazxqt04uZMBDGtHwfT8wBYEbzAgNYC+o
-	5rLn2yPcyHaBbjv5E2mEIeEA7YLpGue7OPlRK1tg5JRcAUgS65deQpLoXcVroSphFDX0NDFyTRwnM
-	NfKavgwQG7wuTytC8ULOKNzwlJj42xHTvBvzzo6balrTrrMMjDxSfoWDbNTP/j+A4WX/fs1bUyYJx
-	/YJ6al7tdCbbPPsX3wSREAh2BzQxUU5vE+OdtDEjP+aq2AZqBpHDWSAuyqSoUfK+ttYpTpZdyBi/j
-	oNCdjbJoVrmjStRDP80g==;
+	List-Owner; bh=TphMEwbpooHo9WXhnm3EiNn8KIPnlyKmu7hhCiicI8U=; b=hz+n2ofZQbuV+j
+	ZHQ4wPzuTlAaZwcCkLUuDjGw5wh0EtHyICy75Dm4iC3vl50CfHdeuEg6b5uY+KReSqafMQKcM3HBc
+	SZGSgOkGU/YMG+uVdAhwaQaIKQ9pRTGpaLBgRdLnYF4iDny19GuafKzLMFT+OfarWg6IwEtYHihoU
+	g2M47V2WYB6rbaRWDwCfxu03rHu/wy6jGUd+QBpqy7qyyRB1MNe6NGNITcf4xitpaDY5wKwvrzLyx
+	YBqnUSIzx6phdZs5Wlxp+D9CAZLc0nsiTcN3lRUFHZcNq4JZNF166CLAjcDxCz818wNjR6pwPUX2E
+	XYT+zumpcVXksECUuCgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnjnY-00000008fS4-1AIW;
-	Thu, 27 Feb 2025 19:43:56 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnjYL-00000008SNs-31zd;
-	Thu, 27 Feb 2025 19:28:14 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 51RJ0vQk012055;
-	Thu, 27 Feb 2025 19:28:06 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	RdjIqGF+ISOqLN7KsR39TGSa+NABYH6lIW0NjEcfAZM=; b=YoZzQPsL3wSi3TlV
-	qrUtJwdv02vxq692FjQ4amIOteyIhE0na11FI78TnAj0TCn5r/DIiT+g5Jeb+mM7
-	Sqn1a7wd7IsICn0jzOUZk8+dvoIsof6iQLuOQk3xd2iFkxlG1muzkcNVjsdrOKty
-	nko9oSJ610LROyQg46LwsDqPbaveWPF7uqF3HE+TaGDQCSj/TMNpNZtHNFTdBKFM
-	aYGeUeGzvElth+cYEuyPCK0QA+/noYZwQqiN1D7RTFQEuWOkALiHkhYVXaXRnUfn
-	7euaVlD5ue0XMCEBjTRgiULoKqJGvqnCpjEqsgiaxTTcHeyLbeesCLWETsVRp9FH
-	yk4CRw==
-Received: from nalasppmta03.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 451prketqf-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Feb 2025 19:28:06 +0000 (GMT)
-Received: from nalasex01b.na.qualcomm.com (nalasex01b.na.qualcomm.com [10.47.209.197])
-	by NALASPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 51RJS5Yk016619
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 27 Feb 2025 19:28:05 GMT
-Received: from [10.71.114.206] (10.80.80.8) by nalasex01b.na.qualcomm.com
- (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 27 Feb
- 2025 11:28:04 -0800
-Message-ID: <bdf2034d-4c96-4b99-b472-520227ff930d@quicinc.com>
-Date: Thu, 27 Feb 2025 11:28:05 -0800
+	id 1tnlxc-00000008xT3-3yuc;
+	Thu, 27 Feb 2025 22:02:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tnlvF-00000008x7x-2WWp;
+	Thu, 27 Feb 2025 22:00:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7BD021516;
+	Thu, 27 Feb 2025 14:00:14 -0800 (PST)
+Received: from minigeek.lan (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A6013F5A1;
+	Thu, 27 Feb 2025 13:59:55 -0800 (PST)
+Date: Thu, 27 Feb 2025 21:57:32 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Andras Szemzo <szemzo.andras@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+ <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Chen-Yu Tsai
+ <wens@csie.org>, Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland
+ <samuel@sholland.org>, Linus Walleij <linus.walleij@linaro.org>, Philipp
+ Zabel <p.zabel@pengutronix.de>, Maxime Ripard <mripard@kernel.org>, Vinod
+ Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Ulf
+ Hansson <ulf.hansson@linaro.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>, Uwe
+ =?UTF-8?B?S2xlaW5lLUvDtm5pZw==?= <u.kleine-koenig@baylibre.com>, Florian
+ Fainelli <florian.fainelli@broadcom.com>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-gpio@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH v2 02/10] pinctrl: sunxi: add driver for Allwinner V853
+Message-ID: <20250227215732.5f5753d9@minigeek.lan>
+In-Reply-To: <20250205125225.1152849-3-szemzo.andras@gmail.com>
+References: <20250205125225.1152849-1-szemzo.andras@gmail.com>
+	<20250205125225.1152849-3-szemzo.andras@gmail.com>
+Organization: Arm Ltd.
+X-Mailer: Claws Mail 4.2.0 (GTK 3.24.31; x86_64-slackware-linux-gnu)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 7/7] arm64: dts: qcom: sm8750: Add USB support to SM8750
- platforms
-To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Melody Olvera
-	<quic_molvera@quicinc.com>
-CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Greg Kroah-Hartman
-	<gregkh@linuxfoundation.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        "Catalin Marinas" <catalin.marinas@arm.com>,
-        Will Deacon <will@kernel.org>,
-        "Bjorn Andersson" <andersson@kernel.org>,
-        Konrad Dybcio
-	<konradybcio@kernel.org>,
-        Satya Durga Srinivasu Prabhala
-	<quic_satyap@quicinc.com>,
-        Trilok Soni <quic_tsoni@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
-        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-usb@vger.kernel.org>,
-        <linux-arm-kernel@lists.infradead.org>
-References: <20250113-sm8750_usb_master-v1-0-09afe1dc2524@quicinc.com>
- <20250113-sm8750_usb_master-v1-7-09afe1dc2524@quicinc.com>
- <g47ac6bzxqyqbkuqsvuwm5vdc7x5wjfppv6fj4mftwyjlyuz7t@jzmw2kfa2jnp>
-Content-Language: en-US
-From: Wesley Cheng <quic_wcheng@quicinc.com>
-In-Reply-To: <g47ac6bzxqyqbkuqsvuwm5vdc7x5wjfppv6fj4mftwyjlyuz7t@jzmw2kfa2jnp>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nalasex01b.na.qualcomm.com (10.47.209.197)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 6SmfXuZus25YPP3QZn62hCs8W0rJgGSe
-X-Proofpoint-ORIG-GUID: 6SmfXuZus25YPP3QZn62hCs8W0rJgGSe
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-27_07,2025-02-27_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 mlxscore=0
- bulkscore=0 lowpriorityscore=0 phishscore=0 clxscore=1015 malwarescore=0
- impostorscore=0 adultscore=0 priorityscore=1501 spamscore=0
- mlxlogscore=797 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502100000 definitions=main-2502270144
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250227_112813_897869_108BCE84 
-X-CRM114-Status: GOOD (  14.02  )
+X-CRM114-CacheID: sfid-20250227_140001_733261_D1AD3644 
+X-CRM114-Status: GOOD (  24.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,36 +77,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Dmitry,
+On Wed,  5 Feb 2025 13:52:17 +0100
+Andras Szemzo <szemzo.andras@gmail.com> wrote:
 
-On 2/27/2025 10:29 AM, Dmitry Baryshkov wrote:
-> On Mon, Jan 13, 2025 at 01:52:13PM -0800, Melody Olvera wrote:
->> From: Wesley Cheng <quic_wcheng@quicinc.com>
->>
->> Enable USB support on SM8750 MTP and QRD variants. SM8750 has a QMP combo
->> PHY for the SSUSB path, and a M31 eUSB2 PHY for the HSUSB path.
->>
->> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
->> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
->> ---
->>  arch/arm64/boot/dts/qcom/sm8750-mtp.dts |  24 ++++++
->>  arch/arm64/boot/dts/qcom/sm8750-qrd.dts |  24 ++++++
->>  arch/arm64/boot/dts/qcom/sm8750.dtsi    | 134 ++++++++++++++++++++++++++++++++
->>  3 files changed, 182 insertions(+)
->>
+Hi,
+
+> The V853 family has multiple package variants, from BGA to QFN88.
+> The latter has co-packaged DRAM and fewer pins, and less features (pin muxes).
+> All family members can be supported by a single driver, as the available pins
+> with allowed muxes is the same across the devices.
 > 
->> +
->> +		usb_dp_qmpphy: phy@88e8000 {
->> +			compatible = "qcom,sm8750-qmp-usb3-dp-phy";
->> +			reg = <0x0 0x088e8000 0x0 0x3000>;
+> This new pinctrl driver depends on the new sunxi device-tree based mux support
+> patch series [1].
 > 
-> If I understand anything correctly, this should be 0x4000, not 0x3000.
-> You have missed the DP part of it.
+> [1]: https://lore.kernel.org/linux-sunxi/20241111005750.13071-1-andre.przywara@arm.com/T/
+> 
+> Signed-off-by: Andras Szemzo <szemzo.andras@gmail.com>
+> ---
+>  drivers/pinctrl/sunxi/Kconfig              |  5 ++
+>  drivers/pinctrl/sunxi/Makefile             |  1 +
+>  drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c | 53 ++++++++++++++++++++++
+>  3 files changed, 59 insertions(+)
+>  create mode 100644 drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c
+> 
+> diff --git a/drivers/pinctrl/sunxi/Kconfig b/drivers/pinctrl/sunxi/Kconfig
+> index a78fdbbdfc0c..fac9c61039e2 100644
+> --- a/drivers/pinctrl/sunxi/Kconfig
+> +++ b/drivers/pinctrl/sunxi/Kconfig
+> @@ -81,6 +81,11 @@ config PINCTRL_SUN9I_A80_R
+>  	default MACH_SUN9I
+>  	select PINCTRL_SUNXI
+>  
+> +config PINCTRL_SUN8I_V853
+> +	bool "Support for the Allwinner V853/V851S/V851SE PIO"
+> +	default MACH_SUN8I
+> +	select PINCTRL_SUNXI
+> +
+>  config PINCTRL_SUN20I_D1
+>  	bool "Support for the Allwinner D1 PIO"
+>  	default MACH_SUN8I || (RISCV && ARCH_SUNXI)
+> diff --git a/drivers/pinctrl/sunxi/Makefile b/drivers/pinctrl/sunxi/Makefile
+> index 2ff5a55927ad..8937b56b2ef4 100644
+> --- a/drivers/pinctrl/sunxi/Makefile
+> +++ b/drivers/pinctrl/sunxi/Makefile
+> @@ -20,6 +20,7 @@ obj-$(CONFIG_PINCTRL_SUN8I_A83T_R)	+= pinctrl-sun8i-a83t-r.o
+>  obj-$(CONFIG_PINCTRL_SUN8I_H3)		+= pinctrl-sun8i-h3.o
+>  obj-$(CONFIG_PINCTRL_SUN8I_H3_R)	+= pinctrl-sun8i-h3-r.o
+>  obj-$(CONFIG_PINCTRL_SUN8I_V3S)		+= pinctrl-sun8i-v3s.o
+> +obj-$(CONFIG_PINCTRL_SUN8I_V853)	+= pinctrl-sun8i-v853.o
+>  obj-$(CONFIG_PINCTRL_SUN20I_D1)		+= pinctrl-sun20i-d1.o
+>  obj-$(CONFIG_PINCTRL_SUN50I_H5)		+= pinctrl-sun50i-h5.o
+>  obj-$(CONFIG_PINCTRL_SUN50I_H6)		+= pinctrl-sun50i-h6.o
+> diff --git a/drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c b/drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c
+> new file mode 100644
+> index 000000000000..fb2112ee12d0
+> --- /dev/null
+> +++ b/drivers/pinctrl/sunxi/pinctrl-sun8i-v853.c
+> @@ -0,0 +1,53 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Allwinner V853 SoC pinctrl driver.
+> + *
+> + * Copyright (c) 2025 Andras Szemzo <szemzo.andras@gmail.com>
+> + */
+> +
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +#include <linux/pinctrl/pinctrl.h>
+> +
+> +#include "pinctrl-sunxi.h"
+> +
+> +static const u8 v853_nr_bank_pins[SUNXI_PINCTRL_MAX_BANKS] =
+> +/*	  PA  PB  PC  PD  PE  PF  PG  PH  PI  */
+> +	{ 22,  0, 12, 23, 18,  7,  8, 16,  5 };
+> +
+> +static const unsigned int v853_irq_bank_map[] = { 0, 2, 3, 4, 5, 6, 7, 8 };
+> +
+> +static const u8 v853_irq_bank_muxes[SUNXI_PINCTRL_MAX_BANKS] =
+> +/*	  PA  PB  PC  PD  PE  PF  PG  PH  PI */
+> +	{ 14,  0, 14, 14, 14, 14, 14, 14, 14 };
+> +
+> +static struct sunxi_pinctrl_desc v853_pinctrl_data = {
+> +	.irq_banks = ARRAY_SIZE(v853_irq_bank_map),
+> +	.irq_bank_map = v853_irq_bank_map,
+> +	.io_bias_cfg_variant = BIAS_VOLTAGE_PIO_POW_MODE_SEL,
+> +};
+> +
+> +static int v853_pinctrl_probe(struct platform_device *pdev)
+> +{
+> +	return sunxi_pinctrl_dt_table_init(pdev, v853_nr_bank_pins,
+> +					   v853_irq_bank_muxes,
+> +					   &v853_pinctrl_data,
+> +					   SUNXI_PINCTRL_NEW_REG_LAYOUT |
+> +					   SUNXI_PINCTRL_ELEVEN_BANKS);
 
-ACK, will fix that. Thanks.
+This last flag doesn't apply: it would put the offset for the
+POW_MOD_SEL registers at 0x380, but the manual says it's 0x340, as with
+the previous SoCs.
+I compared the rest against the A523 driver, and the V853 specific bits
+against the manual: they match, so with that line removed:
 
-Thanks
-Wesley Cheng
+Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+
+Cheers,
+Andre
+
+> +}
+> +
+> +static const struct of_device_id v853_pinctrl_match[] = {
+> +	{ .compatible = "allwinner,sun8i-v853-pinctrl", },
+> +	{}
+> +};
+> +
+> +static struct platform_driver v853_pinctrl_driver = {
+> +	.probe	= v853_pinctrl_probe,
+> +	.driver	= {
+> +		.name		= "sun8i-v853-pinctrl",
+> +		.of_match_table	= v853_pinctrl_match,
+> +	},
+> +};
+> +builtin_platform_driver(v853_pinctrl_driver);
+
 
 -- 
 linux-phy mailing list
