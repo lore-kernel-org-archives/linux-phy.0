@@ -4,115 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D756C19776
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Feb 2025 07:33:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11926C282C5
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Feb 2025 11:10:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aezHlu0W85keqS22WcV7VH9SlWKehJVShIYNmS7v/6A=; b=UBSI3XbB69pxq4
-	ONmnacdOF34DdfKZVlGjNZEJn/8ihc9oFNodr9ARqhJq9LsXelhxdCOnV6gn+crPwqglVvCvnG3Xp
-	bBwJc/ZmBwXSZD/T+hS84Vh8WwnVcP/PMRXQ1RU8qgR/txenJnXemXnLQKL6iIr87XhLsCjWof/6L
-	yj+nEmN+d7oYrH+zppmUQjIVo9cZPxS+dPYbe717SDN9ZoeTlXpa+STOncRjEiCJVKwxD/d9M/bqj
-	Hf/JEgkvt2p1538//2cYpUvHeLAHCvrqWpJPLjMHa+4EMqnRnh+OYM9hBR+IfKGM6WL5OgrQP5yY8
-	6YGbS57D87Dc2WwZOV2g==;
+	List-Owner; bh=BuTWORkbzc2SQB21vA157jmhvetUEwvu9lhgRqgiz8g=; b=V1rh53zaZEFYQw
+	S8kwRIhv5nzzv4HpNK6rnpjj6iZgAke7vYKG0FfMxWk/I4NrF/yF4zjuAGQyyvDGexfU0Wei6y2EJ
+	YUFSkcH3vDleTDMeM7gjXL2DbwGj0aIz8pLqXiyDc/7nfyjh7Z0DRusQI12mde1K+7OY9kBl0+vSr
+	KD7+D1p1dZDzNk33hz3Hx267DINRtf2tPx6a1J2FefFVEq17GoE134yIhbFVErXc+ROnDJRP+Kvw/
+	e73WFj/tgUoRNnsAjNFodjQMfqpCiq06+tfPEj8B89X1HoQTT+S86BfnVB2FP0GX6EkHT4QEWQPIr
+	YJ3lAoJIsFOHir8o9yYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnusD-0000000A0V3-0Egt;
-	Fri, 28 Feb 2025 07:33:29 +0000
-Received: from mail-sh0chn02on20706.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::706] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
+	id 1tnyGR-0000000Ahlf-3PRM;
+	Fri, 28 Feb 2025 11:10:43 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnuqW-0000000A08e-2DQ8
-	for linux-phy@lists.infradead.org;
-	Fri, 28 Feb 2025 07:31:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HeE+sql9hf8JaOX3emt5447SQH44sxgCtzQ7Dt8z6oh7MzObEoPD8MdsbOEkLwSAsyGD0d8euXoIL/eb2APvfAp2kd03cKZ2Ss7ljSEpLr5Xu903S49HAJR6kYQByDLYhuc0YpU1UKhi3puyf1Y/Lg+QjhDEVzPQxlHnsFIayCbAMPoSQ1Jl1oaviHzDpTq3UVZwjrkyh4Z6XiT1682g/QlI3ZeqsfVJz/TnstN1bAwB5eV96Jy0XFSUJm0lyktfyQ9e+Ma7mWhsB1Btyo2e/WewsjWpCaX3xCgcv+Rvfvq28+T6qBkNjB+Dquhw2/RTyHagDx5h4/zLIHlJcurCIA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=XmRh9a3ROE7dTTrM7ekZQzWTGr8YULqnkpysUq1v204=;
- b=A6hboMiZ8DASa+fWzOuvZ4ZmiN4r3Vfz6IGqod5KPacKoPM4T6W1G3sqp5n76O4xfXrELoL9CPNXtuPD2yV4z0Jof6uBlb4DgyYV1lCzabFcy8wzDlD8vkM16qLSnRAxsBxwK4IEh5sDlJ71mYw7UCEh0rSjpooyHiqKp9iHIofKdeaPtuDdkctPLWHeMJxf8m+tjAAMhSyK/rJaCAG0bgk7P/Pf6oBUFOiDZVB2TKuzntuQOO2Uf9aKKXD3ipRGnQJ8XouzhR7JIrXGotpvMgk92ug/SoudcF/s4uCRuqLUJ4/yY8DjNtrqj8FD02e1/zLvWQYZ0ox58W/KFGkGXw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=starfivetech.com; dmarc=pass action=none
- header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=starfivetech.com;
-Received: from ZQ0PR01MB1302.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c550:1b::9) by ZQ0PR01MB0984.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c550:c::8) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.15; Fri, 28 Feb
- 2025 07:31:38 +0000
-Received: from ZQ0PR01MB1302.CHNPR01.prod.partner.outlook.cn
- ([fe80::64c5:50d8:4f2c:59aa]) by
- ZQ0PR01MB1302.CHNPR01.prod.partner.outlook.cn ([fe80::64c5:50d8:4f2c:59aa%6])
- with mapi id 15.20.8489.014; Fri, 28 Feb 2025 07:31:38 +0000
-From: Changhuang Liang <changhuang.liang@starfivetech.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Dan Carpenter <dan.carpenter@linaro.org>,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Keith Zhao <keith.zhao@starfivetech.com>,
-	Changhuang Liang <changhuang.liang@starfivetech.com>
-Subject: [v2] phy: starfive: jh7110-dphy-tx: Add missing clk_disable_unprepare()
-Date: Thu, 27 Feb 2025 23:31:27 -0800
-Message-Id: <20250228073127.635755-1-changhuang.liang@starfivetech.com>
-X-Mailer: git-send-email 2.25.1
-X-ClientProxiedBy: SHXPR01CA0014.CHNPR01.prod.partner.outlook.cn
- (10.43.110.215) To ZQ0PR01MB1302.CHNPR01.prod.partner.outlook.cn (10.2.3.233)
+	id 1tnxmk-0000000AdEs-3yYy;
+	Fri, 28 Feb 2025 10:40:04 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4398c8c8b2cso20060225e9.2;
+        Fri, 28 Feb 2025 02:40:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1740739201; x=1741344001; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Fi80ttWsp61rFaPMRzcRoSBsD+icdSl9C9Rjx5VP+3M=;
+        b=e/94MfUobLMist0dmvwGu9hSgqeIHdNrePuXqAwNjH29grbI9qVEqMAM8vWIumurGF
+         wfjA1RrGvw+aCGELuP6iWf2PD6wR65fd4Y4LEY3i6J7NwntMZveQ9qu9ffAC1vmO3NIu
+         k7pPNeS8OiaOv8QnMNHHrc5zQrLb6Vp87AOlTERmHHcqid8D2eWwwEIgbhygUFRMoMKa
+         gmh1JCrHfNDuQi5fZJuTyFSGoXQEgzTmdngk9LiKzHOXpoHMR8azDtFWMUzbFUS/WjEQ
+         r5fkqlxvIGAi5PQulijWZT2Lxy3U/vciX3EImH9aFC2GaXoNMIRTydxr/lL3kCD7m0R4
+         RWOQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1740739201; x=1741344001;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Fi80ttWsp61rFaPMRzcRoSBsD+icdSl9C9Rjx5VP+3M=;
+        b=KGCmfDAAqszlJI5e/e2mE3cb8jbIrOfP7jDL8QK1aV2aQ7U+yYaQ4Yc79sFM+KBsUV
+         t8Tw2zMQ6Em6QUbDH7aojAX5fY00JZl0Q/HbnoFy7o5P8WfW5qLoApdu2OJ+99SR7+K7
+         io4prAoMOlY8hxb7IcZA0L96dEXHJ2EUC9XDnZ746y2EPYFcn6Z6YUrpBS3JsCdliOUM
+         B0xyXP0da5Vnz4D3kUj2JmGTyWuu/lOGWNGLCOTe/BWI3EsLThwDasjPAPFw4Q580VH6
+         ppGfwqeMgyfqYF3rS69hRipol2/GRSnvi04kfi9+CWpe4NcJ8WWW5udmzxnSWGHIhcFS
+         y6Xw==
+X-Forwarded-Encrypted: i=1; AJvYcCURXisciKTwGHpMDYNErEEnk1UeNcZgHaDJqzDHpNl2WNG9rKU3mwR7ryO8bCrlbhn5Z3TxvmmLiRJd9/RaMB2X@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyf12P1dIG2JqqrpdemXNEZMYLpztNn2Ai2XpPVuvz7o4nQXRNT
+	OaXKR1LSchKo9Tuh59c/nhRzTGI9Lxe2L4s2uBkdcAP80+SRHElF
+X-Gm-Gg: ASbGnctyNj/Vyx6MbZxOkh2gz/16cof34XUMpEQKKZmmPQvC1iI3k8kYtQ9Z1H7ppFq
+	ApTEYTaT6bHEpIW3K7y+66Y4nsyGIpYxaXCa+7VrP0lJcu0a2K4GlOZCN0FvR2q+vCqqEcPaWJ+
+	rnh7Q2IjyPKYIN4ZYBa6Bvm0eAnvXrBMtagOGY90fwjGWtq/Pr2lv0J5LJX16fzv7xQEW/gJWD4
+	NlOcz1BxY6ur4yHYQ7TkUNlhNxOB6NKJnRMQ5k+y2NhuU7Y2Ut5PF0/KQmvgqyxa+UGsxhAtp/m
+	jRbjJp/BzAO55H13iERNsc+eDHFblK+TamRJKSliPA==
+X-Google-Smtp-Source: AGHT+IFZ+9Q0/YRqcF3z6Eyi5tLIR/2s8CMepw/0ILneK1BAb1xfCwMbUhjYYRJlgvj6BOKAvv7DEg==
+X-Received: by 2002:a05:600c:154f:b0:439:86c4:a8ec with SMTP id 5b1f17b1804b1-43ba6704456mr27891215e9.15.1740739200632;
+        Fri, 28 Feb 2025 02:40:00 -0800 (PST)
+Received: from eichest-laptop.toradex.int ([2a02:168:af72:0:31d5:4145:8035:cb68])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43b73703caesm52078855e9.12.2025.02.28.02.39.59
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 28 Feb 2025 02:40:00 -0800 (PST)
+From: Stefan Eichenberger <eichest@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	p.zabel@pengutronix.de,
+	tharvey@gateworks.com,
+	hongxing.zhu@nxp.com,
+	francesco.dolcini@toradex.com
+Cc: linux-phy@lists.infradead.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v1 0/2] phy: freescale: imx8m-pcie: fix and cleanup phy
+Date: Fri, 28 Feb 2025 11:38:32 +0100
+Message-ID: <20250228103959.47419-1-eichest@gmail.com>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: ZQ0PR01MB1302:EE_|ZQ0PR01MB0984:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9209957d-bd5e-43ab-ba4c-08dd57c9efae
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|366016|41320700013|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: MqRyXDvQ0xCwin/tztuLJrXytlw0dn9P8oasG0GeXR22I0wUuN4lujVwbQE5SLzmlPRvSpL9RK3ppVci3sOy7dU7yjz+JTxSrZbeUg/YlpxAxnRB1k+gvwdYZPLhEsiotBr866P2JhZHCcomnf8n6JWsk8w9d57f+WuSWCQ4KsnuLLN4jcbOhUOvewz7cHvtYxRMAmKK4/622K0dQQizjvgqvliNkHRUeewCccHbPwcGEjMVjwuY1IZDqCTSZaTvO0HLZ1tBWN+6U2MRgDLfowmQGqxh06LiJ7KNdThvqgzXjOBpZa4C0MiAdlKNMiBNJ08xaLeFlKJelrGWgsbxv0xIQq7xE8VcHbPieeHJsucWRIDCiBUARmCApOC15csYDgtPkOfIZ2hJsg+tpOMhI3WjNlu80UPK/EFnyKy7bewDBp7ZbMjVWNVkF2naL0KMwZeGbyOSU+Lw6e+zySUpZvvISEz/h04ZWM0+7y2nC+z3wXsDv1Ici+Zc1JH8+ao317RvZJTJiOJZnRRpJMLa/C4K7ZdIfltlF7nhzNxcvZfaVBxGfnnC9hBYxGzD/9V60f2S00EEPOMxjdt1xnyQyw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ZQ0PR01MB1302.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(52116014)(366016)(41320700013)(1800799024)(38350700014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zabb8CnuFVo0YQRO7vB48KA511OX6G7CCcd9OAgKwdGIR0pBjq8BPl0ixMRf?=
- =?us-ascii?Q?V5fkEYrG0esYYEfdgxHwraenSFK2kmNdfIl1BB8e4DuLXw/at7WqGHtZwZjg?=
- =?us-ascii?Q?lkfR3UwnwD5ixJPEGNWjL/gRQngwuqxAk5hGbs0pMDE8Y8aCjafPVkpcGNSD?=
- =?us-ascii?Q?sVWfnnp1T2CkgwLyfVLpJbzTOwZWjYRhVa6WfUVhZlT8upL4NJyx6bnJizX6?=
- =?us-ascii?Q?L56klZv9Tc6dlhoyHKJJnsZckBmgf0zPWWhoGo4OoKPAuttza0mPlbRqVZuV?=
- =?us-ascii?Q?Li9hgoOzWAz/ETFrJBNWkRJss0+uGHsD/jAesqk/dG4POSKvR83POwL9NBDA?=
- =?us-ascii?Q?uzrBF4kFtiFFqASe26WLxVeWJCiPLUGMSgDk6DRPnsd0zJQn4m/8tqdG9LAF?=
- =?us-ascii?Q?nn7prgH05FVscsQ/aIRrCNGyiM7L6v3ux7R3Q1mQO64Uo9QbqQTKokn7023P?=
- =?us-ascii?Q?ckrPVGgjOrkIpLGGNip+T2Bq0v2RhZV1mCW32HqOXS0hqEKhTs/xg5QJHn0/?=
- =?us-ascii?Q?SMw/HhCtahUOQl052QlpaS/RP92Jv+lRSinv8+wYWPL1Vr8H8S7/yetWfPLt?=
- =?us-ascii?Q?boHGRG6PcvO/jLYENTauGNCeJx/jP9DbqC/cPDWL8d7fE3BbB9DniNeoLdTS?=
- =?us-ascii?Q?5mHZpxh45iwEe609eU/2V2iFJl3/9YwN0FLo1NFG3GgW6m6hZ2Z4LwcJNK/k?=
- =?us-ascii?Q?wU/s6Qbtj2YduHRtqQGmZ5kUy5Coe517744PFjVf4z67K/LF9B4ban7bSIsu?=
- =?us-ascii?Q?brtu4eDVOwfhBKK5fUYgOw/65Gz1npc9IIXFAM1OkqYhmZFxv4NmN8pNGiEJ?=
- =?us-ascii?Q?q9/Hu2pBqNl5bTahoA+hFlPFl6/KIIc/jcl1hoWT5vrmb3y5xN/HwxG38dmc?=
- =?us-ascii?Q?loVtfmd5hst764CwxVT68N+ST0TI2H7Ufsb3gM7r568D3ZRUQHRknEwIkE3F?=
- =?us-ascii?Q?L76AJbUIauUC7sHYHUKL2xzzdJkdcFrI5bsXv2pl0291E82APXVD2OZF5GUo?=
- =?us-ascii?Q?lCXSDrPoCwTWe6KPGXp4zcpb2BkoPcy8QhidZ5QIfsfmWKXlbNssVXNIvrx6?=
- =?us-ascii?Q?BIs/np8tsTy6djKDQn96xUBY0yJ2L8gDVLnsKCXCGUgzmMhb8NRBohjsEb+I?=
- =?us-ascii?Q?rxYCZ8omowKVnPoIs62scYtnf7NsDju2Qn5piInOzBvJrbUwRrp6aTi9XNcz?=
- =?us-ascii?Q?JbUnNjEQi8iBtq0P0JUKwZ9jjduVF1v/W4zntcHdZHq078oFcdU4Mf8ph9lx?=
- =?us-ascii?Q?1SEtFWbZaKtZRBQCK1HyO3NNAdemRY0y5eX6FWZk+MZ50OG2ZN1wc2X9mXM/?=
- =?us-ascii?Q?uAJ4gz3/Gd2L20ZoWkuzD68KgV10QMlWsZ+e149/9CKIMhmV56zaiyKFuF8w?=
- =?us-ascii?Q?Yw0HqD0rVIoZ+3ASWuRaDhxoVeu+Ct+pSZx6dFZYtuc2GN42QfK6UfbRsdvI?=
- =?us-ascii?Q?jMzOI15WI0FjI0mIqLRKzH3aQiomtaLMOq5QwvRDJNCiLz/MtpIkMLf4vIho?=
- =?us-ascii?Q?TEaOwjnfknNDDAbCUfTvJp0gjVKm+gSxFGMRJW63HzVYYft5nogz/+/ayRpe?=
- =?us-ascii?Q?a5k0uzStRmhj/n51rCnzmawxUH2hYzmoD3gzRdl6kn9ahwv5xiGzpeCKJsu5?=
- =?us-ascii?Q?GTYBRpBr4RmA1hTi0yivXtM=3D?=
-X-OriginatorOrg: starfivetech.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9209957d-bd5e-43ab-ba4c-08dd57c9efae
-X-MS-Exchange-CrossTenant-AuthSource: ZQ0PR01MB1302.CHNPR01.prod.partner.outlook.cn
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Feb 2025 07:31:37.9550
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vbTTYD6HFfWxQk3Ny8QB1hl9s8JvQbVWsMBo2aGvDvfSP0f9x/Jh9VVRJ8CM8UAHLWrfwSetkSho9asD349jFMHrrLKB5bFbLe5kM2bEKLg1RjI+DpL6Ht5hhxk3aEe6
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: ZQ0PR01MB0984
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250227_233144_566486_0ED07608 
-X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-CacheID: sfid-20250228_024002_986581_C0975C91 
+X-CRM114-Status: UNSURE (   6.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -130,36 +106,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Once the reset_control_deassert() fails, we need to run the missing
-clk_disable_unprepare() before return in stf_dphy_init().
+The imx8m-pcie PHY PLL fails to lock under certain conditions when
+returning from suspend. This is resolved by asserting the PHY reset when
+powering off the PHY during suspend. This ensures that the PHY is
+properly reset when powering on again in resume.
 
-Fixes: d3ab79553308 ("phy: starfive: Add mipi dphy tx support")
-Reported-by: kernel test robot <lkp@intel.com>
-Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-Closes: https://lore.kernel.org/r/202410310715.duo3ShR4-lkp@intel.com/
-Signed-off-by: Changhuang Liang <changhuang.liang@starfivetech.com>
-Reviewed-by: Keith Zhao <keith.zhao@starfivetech.com>
----
+Stefan Eichenberger (2):
+  phy: freescale: imx8m-pcie: cleanup reset logic
+  phy: freescale: imx8m-pcie: assert phy reset and perst in power off
 
-v2: Add Keith reviewed tag.
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 24 ++++++++++++++--------
+ 1 file changed, 16 insertions(+), 8 deletions(-)
 
- drivers/phy/starfive/phy-jh7110-dphy-tx.c | 1 +
- 1 file changed, 1 insertion(+)
+-- 
+2.45.2
 
-diff --git a/drivers/phy/starfive/phy-jh7110-dphy-tx.c b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
-index c64d1c91b130..7b59496983d2 100644
---- a/drivers/phy/starfive/phy-jh7110-dphy-tx.c
-+++ b/drivers/phy/starfive/phy-jh7110-dphy-tx.c
-@@ -330,6 +330,7 @@ static int stf_dphy_init(struct phy *phy)
-
- 	ret = reset_control_deassert(dphy->sys_rst);
- 	if (ret) {
-+		clk_disable_unprepare(dphy->txesc_clk);
- 		dev_err(dphy->dev, "Failed to deassert sys_rst\n");
- 		return ret;
- 	}
---
-2.25.1
 
 -- 
 linux-phy mailing list
