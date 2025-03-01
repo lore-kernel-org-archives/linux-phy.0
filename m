@@ -4,59 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 647A5C282C6
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Feb 2025 20:26:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D91B0C021B8
+	for <linux-phy@archiver.kernel.org>; Sat,  1 Mar 2025 21:21:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i3twdTmbvcvVOuocjghQS5NGJogTx1a6g5i0CptyPJQ=; b=joS5dJgsltSjsl
-	37gsmdWyQ11sti7XT8SHMRqntJytc5t3PwTVOsC5iLb91lEjEfWoOCERwOsRHyuX6fsR2tR4vR+f6
-	gtJtsMs/8JrTL3lYi9bf+ZvrLPR4oIOOJ9W8DasEH+0XFSLtVyyXTxNNpzbx+QSmOSY0ffkfe+hf4
-	YpEySmfx9Z0MyBsTViH6d/x8Ra49SoxY9yBRsZFit0q4yw5BzSCThtMksxew9dB3RjVcjLIgVM24I
-	YeaDpAvO90ka40jAaILM4WnPz7Z42RV/1RCk2REo8m4+2un0aMBB5XkJcbTtQT0c1pxbB3lDG0hcS
-	3eKB/j405dVKfn+qCaJQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ldi2wx45p4qqTmmAQY9pisLb8XTpgcUIzHRu5g1pFmg=; b=ab0DGWglHdSQZk7BDT/7/3sxIt
+	7Ml2OTIkvYbm3wxE+1nomoBxYbuJ9Y6UGLm8LV1AUacCGJA32WWCIjyHlOhrs1wcMPBxMriJDpao7
+	0nzO47KqYG1pT8rFlmdiPifAfsBcxsYiQxs+QXSCtElCCIpnb/WBvxWMb9JUX3QPdRZUTWwlAuPHb
+	0Vd6WL7XtgyeQStAZ8FJGATzy/ZawcFYKMQaIv5bh9hKiCVmGJxdtIctAJDYCQwx6nF7/nmuLAOFh
+	8iK4s5Jd01KEpmmJMZcBDLjmwRUpLwjMeI9o5D/E/HCSnaSKl/57lvN+glu2jKCwO2CqvVqe3aGM1
+	DFeJ9Jyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1to6vp-0000000Cazu-0aWA;
-	Fri, 28 Feb 2025 20:26:01 +0000
-Received: from tor.source.kernel.org ([2600:3c04::f03c:95ff:fe5e:7468])
+	id 1toUGs-0000000Ey6O-0fCu;
+	Sat, 01 Mar 2025 21:21:18 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1to6g9-0000000CVyS-0CON;
-	Fri, 28 Feb 2025 20:09:49 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id B2AC861FC4;
-	Fri, 28 Feb 2025 20:09:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BF4F6C4CED6;
-	Fri, 28 Feb 2025 20:09:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1740773387;
-	bh=CcsjvI4s8nt3qjVDCr68+9sFHV7ptEqC8BGwTZNTugw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=N9B5TJvOntFWEtmuNvKnpa1nHATisyBvmI4Qs41ewlfntfxp2JCcwjx3tu4iWHkoh
-	 0VoIasoeEEnHN3k8GYAgUCM0ZfEdAVVo0ol3CdGCPqCTPyniRqyZA1dW+UOoPQOfdm
-	 tl1zvyHYzWMICYhVH/h2VXtLKOC44N8nboTEvqh4qtwEUl8HJCf/viUVoW3xdTtCRe
-	 8VUtkuf6rZOsGruc5zy+T6PbQEaFP4BCszqT9E4C4TsW/mYm/OTPw+8+U/xetm06gS
-	 blEf/0y1CX83XNgT0exFy00jtCFhD9rFO3eJXzlGRtymZySLdm0TwuaU2Dusosirh9
-	 TBboOv3trjEOg==
-Date: Fri, 28 Feb 2025 14:09:44 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Kever Yang <kever.yang@rock-chips.com>
-Cc: linux-phy@lists.infradead.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-rockchip@lists.infradead.org, devicetree@vger.kernel.org,
-	heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, linux-kernel@vger.kernel.org,
-	Conor Dooley <conor+dt@kernel.org>
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: rockchip: Add rk3562
- naneng-combophy compatible
-Message-ID: <174077338453.3518826.4750088621864636437.robh@kernel.org>
-References: <20250227110836.2343158-1-kever.yang@rock-chips.com>
+	id 1toUFK-0000000ExyG-2lt9;
+	Sat, 01 Mar 2025 21:19:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1740863974; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=JvNY9li9MKQNIVqh5YEVHVYfZj9Is0hV5BsrCAUBI7lHP9z+U8mF2RIUcLUStlqdCtTMAVCl6U1j89Sk5G1MaoPCf5qosBp05WdLbbq3Gs0xV4hkFeMlZ14Tk4s13nMkguhleoUtSO0Dpj9doIes/a4L7zmj+QEpH53zkJBd0nE=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1740863974; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=DiBsetxv/W6ON55bF1Fy2sUWrQIdKNTGci0bZBHTxGQ=; 
+	b=aF/WsvSwyRIxFvd8jUS4ijrunje55nfeKoWlFlfPr4lNZOpFmpnBs1xJz22RW3bsgBFd0U80vCIn1QoRrbF+JVZwU4cDUGT3HNK0KC4UDlWR5iQpzgh8VeyFX4KBV5NJEyVj+pbNMG0VSNBWqxHOAtPktx1nwxir/iagRCBXCeQ=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1740863974;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=DiBsetxv/W6ON55bF1Fy2sUWrQIdKNTGci0bZBHTxGQ=;
+	b=bpnWkhbrTRYhxpm40pXBs6bMBb5UqeqHWZKNswZ7cscZ6QsnIPyW+9gPMNL13nBU
+	PKe7mz93oHi84P/d3tNLFrZLwCpNROTDNcABCrCEEfZCiGPZuzDHQJqvIQxFvFwD567
+	ojxK800IEhXFl4GW/0Oj4RmioxhKgTmdz9lHmHEI=
+Received: by mx.zohomail.com with SMTPS id 1740863972988230.42996635404586;
+	Sat, 1 Mar 2025 13:19:32 -0800 (PST)
+Received: by venus (Postfix, from userid 1000)
+	id 4037118361F; Sat, 01 Mar 2025 22:19:28 +0100 (CET)
+Date: Sat, 1 Mar 2025 22:19:28 +0100
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Quentin Schulz <quentin.schulz@cherry.de>
+Cc: Heiko Stuebner <heiko@sntech.de>, vkoul@kernel.org, kishon@kernel.org, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, christophe.jaillet@wanadoo.fr, 
+	Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: Re: [PATCH v2 2/2] phy: rockchip: usbdp: re-init the phy on
+ orientation-change
+Message-ID: <dkjpudmzuuxvaotz4mx46yx7iacof7q6ck746j3rrqvlgbq3hk@6vtvy3gy3kff>
+References: <20250226103810.3746018-1-heiko@sntech.de>
+ <20250226103810.3746018-3-heiko@sntech.de>
+ <02757b21-7599-4ee7-9f97-247b04ba646a@cherry.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250227110836.2343158-1-kever.yang@rock-chips.com>
+In-Reply-To: <02757b21-7599-4ee7-9f97-247b04ba646a@cherry.de>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-1.4.2/240.839.39
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250301_131942_786077_E864F9EA 
+X-CRM114-Status: GOOD (  15.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,30 +80,84 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7149127852127050956=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 27 Feb 2025 19:08:35 +0800, Kever Yang wrote:
-> rk3562 use the same Naneng Combo Phy driver as rk3568.
-> 
-> Signed-off-by: Kever Yang <kever.yang@rock-chips.com>
-> Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-> ---
-> 
-> Changes in v2:
-> - Collect review tag
-> 
->  .../devicetree/bindings/phy/phy-rockchip-naneng-combphy.yaml     | 1 +
->  1 file changed, 1 insertion(+)
-> 
+--===============7149127852127050956==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="xtfa7lnnqa7aoiia"
+Content-Disposition: inline
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
+--xtfa7lnnqa7aoiia
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v2 2/2] phy: rockchip: usbdp: re-init the phy on
+ orientation-change
+MIME-Version: 1.0
+
+Hello Quentin,
+
+On Wed, Feb 26, 2025 at 01:38:10PM +0100, Quentin Schulz wrote:
+> Unrelated to this patch (but may be triggered by this patch?), I'm wonder=
+ing
+> how flip is really handled.
+>=20
+> It seems like we have flip store the orientation of the cable, but also if
+> rockchip,dp-lane-mux is set to <0 1>. But wouldn't that break if we ignore
+> that initial flipped lane-mux whenever a USB-C cable is inserted in rever=
+se?
+> Basically, shouldn't a reserve orientation of the cable when
+> rockchip,dp-lane-mux is set to <0 1> mean "normal mux"?
+
+If a USB-C connector is involved, the TypeC controller is supposed to
+setup the lane muxing based on the connector orientation. This
+happens via the typec API and in this hardware setup the PHY should
+not have the rockchip,dp-lane-mux DT property set.
+
+The rockchip,dp-lane-mux property is required if no USB-C connector
+is involved. For example if the lanes are routed to a Displayport
+connector. In that case the lane setup is fixed in hardware and
+there is no TypeC controller involved, which could do any setup ;)
+
+-- Sebastian
+
+--xtfa7lnnqa7aoiia
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmfDedUACgkQ2O7X88g7
++poznA//SMzDIpD1hxgbwfDNoKyme+1D1x5wcO9dBkilNby+zQ5rkx37r6ZuO1o2
+ZiQYGRi2EFS7S41Ow5UF5Xc1venVA20Y9Rb/dPMn8HET80HDQPvWrAq5NawLq2s1
+wNc/O8vh0ztjBIL4oTiy+YnV1UnY3YApoyu2ZCh9KkkilOkiquB4I82VVQ8GOFI8
+y/dbgrOk+4b/2e+6o2libH4vQROza/VLGThae6yi54GfYF1+d70wpyyevEDcQ7Qj
+KKybjoooO+O9IjF+Kfpr0wMzP4mQIeEsYMiAko46iOPPAApsQVxZ8yPnhUw21PEe
+F8ZQ+lvewwsUijUZz8hM+hW9rLCoxQ42s/9EVb5vgeKERphkA22SFj2H0PDPMokj
+vvMvSTTr/84P/F2r+29UfQdB1eebo8sSiFDc+EGG099VFWVlzdLPkKVxsmyRjbXW
+YA8sVFh3PkewDgoJ6nxuJo5UkuJVepX7Xq4bGW2j1DE28oB7IgKBXdXUHOMQajvW
+EuLQl60ndqcDI0TinZYVcI3z/Z+KiuaZtWNAsnQP7fP6o7vHhmDjDi+mfZ+yN+7v
+0oCBpqHk15G/yGHeKj87Yk/hBX19xc11TFSEu6/vG3gAKrVZrlzMHZXqfrEOsnWv
+xxxAsMnKW34k0fD9gFk84UWIxAHC3HoEyYAYWDPfFElS4uCN0Zg=
+=JFVB
+-----END PGP SIGNATURE-----
+
+--xtfa7lnnqa7aoiia--
+
+
+--===============7149127852127050956==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============7149127852127050956==--
+
