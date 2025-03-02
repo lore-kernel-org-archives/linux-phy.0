@@ -4,71 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D91B0C021B8
-	for <linux-phy@archiver.kernel.org>; Sat,  1 Mar 2025 21:21:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9849C021B8
+	for <linux-phy@archiver.kernel.org>; Sun,  2 Mar 2025 02:11:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ldi2wx45p4qqTmmAQY9pisLb8XTpgcUIzHRu5g1pFmg=; b=ab0DGWglHdSQZk7BDT/7/3sxIt
-	7Ml2OTIkvYbm3wxE+1nomoBxYbuJ9Y6UGLm8LV1AUacCGJA32WWCIjyHlOhrs1wcMPBxMriJDpao7
-	0nzO47KqYG1pT8rFlmdiPifAfsBcxsYiQxs+QXSCtElCCIpnb/WBvxWMb9JUX3QPdRZUTWwlAuPHb
-	0Vd6WL7XtgyeQStAZ8FJGATzy/ZawcFYKMQaIv5bh9hKiCVmGJxdtIctAJDYCQwx6nF7/nmuLAOFh
-	8iK4s5Jd01KEpmmJMZcBDLjmwRUpLwjMeI9o5D/E/HCSnaSKl/57lvN+glu2jKCwO2CqvVqe3aGM1
-	DFeJ9Jyg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fGdtqJzX3m4gbJ/lzTNJO+j6LCAFsnr8qSpSSxx/LOQ=; b=gWkaooOkXcvNQ+
+	CyfkowST4Z/G3blKgTo3kHwEAIYcIRcTQn81/T33mCYj95TmGI+n4O8ZArrztB9/z5j9xnbE8LjR+
+	Dqa+PP+rxHvElpgET30Ujx9V9LLiPH4UzG8B7ALg3zBSZpiHRrGvuEaMVroWTWZbPqgtK/sVZzlv6
+	B71NrmaAwxGt5e4hHFgJaoAY9p12tn74Wbf9ld8MGueDe1JgLL6HVY1XIpfTHI8FF0iOLGl5FOB8O
+	6JFhbDdyD5XONLjvJPK8yVDqlLIp5dXfy4QBI8Cl2cCBuzZ9i6DRipaxEOV/Tlo9bCdWLBeqgpso4
+	jaDRNXPGyapKYVH9Hrqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1toUGs-0000000Ey6O-0fCu;
-	Sat, 01 Mar 2025 21:21:18 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1toYnH-0000000FFBl-2cKJ;
+	Sun, 02 Mar 2025 02:11:03 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1toUFK-0000000ExyG-2lt9;
-	Sat, 01 Mar 2025 21:19:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1740863974; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=JvNY9li9MKQNIVqh5YEVHVYfZj9Is0hV5BsrCAUBI7lHP9z+U8mF2RIUcLUStlqdCtTMAVCl6U1j89Sk5G1MaoPCf5qosBp05WdLbbq3Gs0xV4hkFeMlZ14Tk4s13nMkguhleoUtSO0Dpj9doIes/a4L7zmj+QEpH53zkJBd0nE=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1740863974; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=DiBsetxv/W6ON55bF1Fy2sUWrQIdKNTGci0bZBHTxGQ=; 
-	b=aF/WsvSwyRIxFvd8jUS4ijrunje55nfeKoWlFlfPr4lNZOpFmpnBs1xJz22RW3bsgBFd0U80vCIn1QoRrbF+JVZwU4cDUGT3HNK0KC4UDlWR5iQpzgh8VeyFX4KBV5NJEyVj+pbNMG0VSNBWqxHOAtPktx1nwxir/iagRCBXCeQ=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1740863974;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=DiBsetxv/W6ON55bF1Fy2sUWrQIdKNTGci0bZBHTxGQ=;
-	b=bpnWkhbrTRYhxpm40pXBs6bMBb5UqeqHWZKNswZ7cscZ6QsnIPyW+9gPMNL13nBU
-	PKe7mz93oHi84P/d3tNLFrZLwCpNROTDNcABCrCEEfZCiGPZuzDHQJqvIQxFvFwD567
-	ojxK800IEhXFl4GW/0Oj4RmioxhKgTmdz9lHmHEI=
-Received: by mx.zohomail.com with SMTPS id 1740863972988230.42996635404586;
-	Sat, 1 Mar 2025 13:19:32 -0800 (PST)
-Received: by venus (Postfix, from userid 1000)
-	id 4037118361F; Sat, 01 Mar 2025 22:19:28 +0100 (CET)
-Date: Sat, 1 Mar 2025 22:19:28 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Quentin Schulz <quentin.schulz@cherry.de>
-Cc: Heiko Stuebner <heiko@sntech.de>, vkoul@kernel.org, kishon@kernel.org, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, christophe.jaillet@wanadoo.fr, 
-	Heiko Stuebner <heiko.stuebner@cherry.de>
-Subject: Re: [PATCH v2 2/2] phy: rockchip: usbdp: re-init the phy on
- orientation-change
-Message-ID: <dkjpudmzuuxvaotz4mx46yx7iacof7q6ck746j3rrqvlgbq3hk@6vtvy3gy3kff>
-References: <20250226103810.3746018-1-heiko@sntech.de>
- <20250226103810.3746018-3-heiko@sntech.de>
- <02757b21-7599-4ee7-9f97-247b04ba646a@cherry.de>
+	id 1toYlT-0000000FF5m-1Sld;
+	Sun, 02 Mar 2025 02:09:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1740881351; x=1772417351;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=N6bdO5ufvOU4UlMfcbW1V2iVFg9S7pViFB0B1Dp885U=;
+  b=VMHsCjFy7kmnV01cLE/wFF2CHMKSZSeMjq67SAismO4CeI1Wn2M1xBv5
+   M9QTR/rZELIutdv5PkwmqSBx6DltgjTlzfnoDr1+AodcOzjyP5tu+y2ZR
+   Zq2/MT1E7zzbGOhMRV0jhsrFreBzdtxPhyOVffeONq/gZU3XiMuz9FYIq
+   YqWPKMmaR7TFirag5pT/Jau8eCHY5nuDCTVTY+Rvyfbdaid12lggFXk0x
+   0oY4ER1xA7vBKtm3TseVFpi9pc4zRr6vVNO6pxiXiTRcIekHJg9Bjoxww
+   uMnPH54rQ4nfNF71MCEvCv6yCgkzyaNO8a0LHQqRK2Q3tmNsPTbvSGGmv
+   w==;
+X-CSE-ConnectionGUID: VTDzIbpkTyyda1EVMXjBUg==
+X-CSE-MsgGUID: OiAGqq3eRsWlfuQV+VJZsw==
+X-IronPort-AV: E=McAfee;i="6700,10204,11360"; a="44596028"
+X-IronPort-AV: E=Sophos;i="6.13,326,1732608000"; 
+   d="scan'208";a="44596028"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Mar 2025 18:09:04 -0800
+X-CSE-ConnectionGUID: kJyzAyBiQCmiU86YmGf5mA==
+X-CSE-MsgGUID: EX0HUutsR06iMNtitEBQkg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.13,326,1732608000"; 
+   d="scan'208";a="117696253"
+Received: from lkp-server02.sh.intel.com (HELO 76cde6cc1f07) ([10.239.97.151])
+  by orviesa006.jf.intel.com with ESMTP; 01 Mar 2025 18:09:00 -0800
+Received: from kbuild by 76cde6cc1f07 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1toYlF-000GxG-1r;
+	Sun, 02 Mar 2025 02:08:57 +0000
+Date: Sun, 2 Mar 2025 10:08:48 +0800
+From: kernel test robot <lkp@intel.com>
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Abel Vesa <abel.vesa@linaro.org>
+Cc: oe-kbuild-all@lists.linux.dev, linux-arm-msm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 5/8] phy: phy-snps-eusb2: make repeater optional
+Message-ID: <202503020920.Kw0H8Acs-lkp@intel.com>
+References: <20250223122227.725233-6-ivo.ivanov.ivanov1@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <02757b21-7599-4ee7-9f97-247b04ba646a@cherry.de>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-1.4.2/240.839.39
-X-ZohoMailClient: External
+Content-Disposition: inline
+In-Reply-To: <20250223122227.725233-6-ivo.ivanov.ivanov1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250301_131942_786077_E864F9EA 
-X-CRM114-Status: GOOD (  15.31  )
+X-CRM114-CacheID: sfid-20250301_180911_434264_ABB31B75 
+X-CRM114-Status: GOOD (  13.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,84 +92,134 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7149127852127050956=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Ivaylo,
 
---===============7149127852127050956==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="xtfa7lnnqa7aoiia"
-Content-Disposition: inline
+kernel test robot noticed the following build warnings:
 
+[auto build test WARNING on robh/for-next]
+[also build test WARNING on linus/master v6.14-rc4 next-20250228]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
---xtfa7lnnqa7aoiia
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH v2 2/2] phy: rockchip: usbdp: re-init the phy on
- orientation-change
-MIME-Version: 1.0
+url:    https://github.com/intel-lab-lkp/linux/commits/Ivaylo-Ivanov/dt-bindings-phy-rename-qcom-snps-eusb2-phy-binding-to-snps-eusb2-phy/20250223-202709
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250223122227.725233-6-ivo.ivanov.ivanov1%40gmail.com
+patch subject: [PATCH v2 5/8] phy: phy-snps-eusb2: make repeater optional
+config: microblaze-randconfig-r123-20250302 (https://download.01.org/0day-ci/archive/20250302/202503020920.Kw0H8Acs-lkp@intel.com/config)
+compiler: microblaze-linux-gcc (GCC) 14.2.0
+reproduce: (https://download.01.org/0day-ci/archive/20250302/202503020920.Kw0H8Acs-lkp@intel.com/reproduce)
 
-Hello Quentin,
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202503020920.Kw0H8Acs-lkp@intel.com/
 
-On Wed, Feb 26, 2025 at 01:38:10PM +0100, Quentin Schulz wrote:
-> Unrelated to this patch (but may be triggered by this patch?), I'm wonder=
-ing
-> how flip is really handled.
->=20
-> It seems like we have flip store the orientation of the cable, but also if
-> rockchip,dp-lane-mux is set to <0 1>. But wouldn't that break if we ignore
-> that initial flipped lane-mux whenever a USB-C cable is inserted in rever=
-se?
-> Basically, shouldn't a reserve orientation of the cable when
-> rockchip,dp-lane-mux is set to <0 1> mean "normal mux"?
+sparse warnings: (new ones prefixed by >>)
+>> drivers/phy/phy-snps-eusb2.c:464:59: sparse: sparse: Using plain integer as NULL pointer
 
-If a USB-C connector is involved, the TypeC controller is supposed to
-setup the lane muxing based on the connector orientation. This
-happens via the typec API and in this hardware setup the PHY should
-not have the rockchip,dp-lane-mux DT property set.
+vim +464 drivers/phy/phy-snps-eusb2.c
 
-The rockchip,dp-lane-mux property is required if no USB-C connector
-is involved. For example if the lanes are routed to a Displayport
-connector. In that case the lane setup is fixed in hardware and
-there is no TypeC controller involved, which could do any setup ;)
+   398	
+   399	static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
+   400	{
+   401		struct device *dev = &pdev->dev;
+   402		struct device_node *np = dev->of_node;
+   403		struct snps_eusb2_hsphy *phy;
+   404		struct phy_provider *phy_provider;
+   405		struct phy *generic_phy;
+   406		const struct snps_eusb2_phy_drvdata *drv_data;
+   407		int ret, i;
+   408		int num;
+   409	
+   410		phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+   411		if (!phy)
+   412			return -ENOMEM;
+   413	
+   414		drv_data = of_device_get_match_data(dev);
+   415		if (!drv_data)
+   416			return -EINVAL;
+   417		phy->data = drv_data;
+   418	
+   419		phy->base = devm_platform_ioremap_resource(pdev, 0);
+   420		if (IS_ERR(phy->base))
+   421			return PTR_ERR(phy->base);
+   422	
+   423		phy->phy_reset = devm_reset_control_get_exclusive(dev, NULL);
+   424		if (IS_ERR(phy->phy_reset))
+   425			return PTR_ERR(phy->phy_reset);
+   426	
+   427		phy->clks = devm_kcalloc(dev,
+   428					 phy->data->num_clks,
+   429					 sizeof(*phy->clks),
+   430					 GFP_KERNEL);
+   431		if (!phy->clks)
+   432			return -ENOMEM;
+   433	
+   434		for (int i = 0; i < phy->data->num_clks; ++i)
+   435			phy->clks[i].id = phy->data->clk_names[i];
+   436	
+   437		ret = devm_clk_bulk_get(dev, phy->data->num_clks,
+   438					phy->clks);
+   439		if (ret)
+   440			return dev_err_probe(dev, ret,
+   441					     "failed to get phy clock(s)\n");
+   442	
+   443		phy->ref_clk = NULL;
+   444		for (int i = 0; i < phy->data->num_clks; ++i) {
+   445			if (!strcmp(phy->clks[i].id, "ref")) {
+   446				phy->ref_clk = phy->clks[i].clk;
+   447				break;
+   448			}
+   449		}
+   450	
+   451		if (IS_ERR_OR_NULL(phy->ref_clk))
+   452			return dev_err_probe(dev, PTR_ERR(phy->ref_clk),
+   453					     "failed to get ref clk\n");
+   454	
+   455		num = ARRAY_SIZE(phy->vregs);
+   456		for (i = 0; i < num; i++)
+   457			phy->vregs[i].supply = eusb2_hsphy_vreg_names[i];
+   458	
+   459		ret = devm_regulator_bulk_get(dev, num, phy->vregs);
+   460		if (ret)
+   461			return dev_err_probe(dev, ret,
+   462					     "failed to get regulator supplies\n");
+   463	
+ > 464		phy->repeater = devm_of_phy_optional_get(dev, np, 0);
+   465		if (IS_ERR(phy->repeater))
+   466			return dev_err_probe(dev, PTR_ERR(phy->repeater),
+   467					     "failed to get repeater\n");
+   468	
+   469		generic_phy = devm_phy_create(dev, NULL, &snps_eusb2_hsphy_ops);
+   470		if (IS_ERR(generic_phy)) {
+   471			dev_err(dev, "failed to create phy %d\n", ret);
+   472			return PTR_ERR(generic_phy);
+   473		}
+   474	
+   475		dev_set_drvdata(dev, phy);
+   476		phy_set_drvdata(generic_phy, phy);
+   477	
+   478		phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+   479		if (IS_ERR(phy_provider))
+   480			return PTR_ERR(phy_provider);
+   481	
+   482		dev_info(dev, "Registered Snps-eUSB2 phy\n");
+   483	
+   484		return 0;
+   485	}
+   486	
 
--- Sebastian
-
---xtfa7lnnqa7aoiia
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmfDedUACgkQ2O7X88g7
-+poznA//SMzDIpD1hxgbwfDNoKyme+1D1x5wcO9dBkilNby+zQ5rkx37r6ZuO1o2
-ZiQYGRi2EFS7S41Ow5UF5Xc1venVA20Y9Rb/dPMn8HET80HDQPvWrAq5NawLq2s1
-wNc/O8vh0ztjBIL4oTiy+YnV1UnY3YApoyu2ZCh9KkkilOkiquB4I82VVQ8GOFI8
-y/dbgrOk+4b/2e+6o2libH4vQROza/VLGThae6yi54GfYF1+d70wpyyevEDcQ7Qj
-KKybjoooO+O9IjF+Kfpr0wMzP4mQIeEsYMiAko46iOPPAApsQVxZ8yPnhUw21PEe
-F8ZQ+lvewwsUijUZz8hM+hW9rLCoxQ42s/9EVb5vgeKERphkA22SFj2H0PDPMokj
-vvMvSTTr/84P/F2r+29UfQdB1eebo8sSiFDc+EGG099VFWVlzdLPkKVxsmyRjbXW
-YA8sVFh3PkewDgoJ6nxuJo5UkuJVepX7Xq4bGW2j1DE28oB7IgKBXdXUHOMQajvW
-EuLQl60ndqcDI0TinZYVcI3z/Z+KiuaZtWNAsnQP7fP6o7vHhmDjDi+mfZ+yN+7v
-0oCBpqHk15G/yGHeKj87Yk/hBX19xc11TFSEu6/vG3gAKrVZrlzMHZXqfrEOsnWv
-xxxAsMnKW34k0fD9gFk84UWIxAHC3HoEyYAYWDPfFElS4uCN0Zg=
-=JFVB
------END PGP SIGNATURE-----
-
---xtfa7lnnqa7aoiia--
-
-
---===============7149127852127050956==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7149127852127050956==--
-
