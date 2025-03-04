@@ -4,72 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84799C021B8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 22:05:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB377C021B8
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 22:09:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5jvz6JSIj4xE0UwbSEzU1hvTkY23zNfFYx3cA3QslSk=; b=0sjxbR4vqxPdK9
-	K02ywEnCsN50xaWmD1Xw5Pqr4AOj52YFq9BGeCWbVmeB7jd45Xvf0jSSloXqsIug1uy5YwNpJwgLl
-	IoEAi4zW6PvP7PaBiZNSPWBJptXedT13cPuBymw+9+PRVTYVyR7duZE8PjkzFcPuITRd7PJAVpeq7
-	IdrCsGpCDXrMEni/Lw3Tb1kA87Q4UXCejGuDgGbCipBxeuMsOl3H31JpGLsHNimvOcv8pKCwG21/n
-	8Q4LblyaxmTMeCscGa5toQQoLo9zIFqeYMZjtFGH0LVarC6a2WA/nyZ3kP9L+ezvdHOWQDIYX9GxA
-	vva4ueSc78J2Mn1SoI1A==;
+	List-Owner; bh=PL3duSZPrqhtCZCWxQXD6KV5i6RT9+Qn3vtyM/L2b28=; b=W8IZax2eKhhhgP
+	2oNNls37e38C1jjGvL+AAwy/0M8JBme/tTVGn30ro/rz/dxCvrldGkxx2AWEYqE4vtiz4uEdo++b3
+	oVLDKGAx77L5N8b/XvdzU+YanOA1i2i6kT5j6LtcS+EbK+RtPe4IKEBquopWiCdcF4TiTd7BLlPxa
+	xVtHBy6Qr70GvhuOnR0+i6jGPpJHT8anexcx8vtyGyc+aK8TtDYW4g/TR8q/Hm4vhujqaQJ3/FeSf
+	C0DnydzssPTbI2xEzeqYHIkVHyHcQH4yQe6kK/zKvvwWSxYfpTRKOH2rKHzw4B4v/Hx8vw8GkFYb7
+	Mfm069CCsuSlNKiZqL1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaOl-00000006N0U-0r61;
-	Tue, 04 Mar 2025 22:05:59 +0000
+	id 1tpaRr-00000006NJH-2OwI;
+	Tue, 04 Mar 2025 22:09:11 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaGz-00000006LjQ-0QDb;
-	Tue, 04 Mar 2025 21:57:57 +0000
+	id 1tpaGz-00000006LjX-3puT;
+	Tue, 04 Mar 2025 21:57:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=CC:To:In-Reply-To:References:Message-ID
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=l/Art59MAXr66IcTrnKnynv9YBdpqyuERMRL+TU0dgA=; b=p3WjX2YxlIFPjsCsLpySLF8Xdf
-	f+udUQLYUd+AsnC/hFWoK6YiQ5fAh4+Cwh6a6WH16zZEMwqujcEH22iL3RCuXNf5nR57Le/qPSSN1
-	eIpNKJI1iqsPbrCw4y9O0XJOOgczMWfpZFQgbp3H4S4JDbNEDl+pp88R3JjOeElxo0xwh3kbVN9fB
-	ItGaMGNdkiSL+Wh36vVP/gEqVnc0cnL5A7g8egMRq+pr9fX1+7dTxSWLHy0SPCPM5Pfz+Ex2eyPbp
-	tJoVCWz+51Y4LRvRinAfpDN8LkHXlapNsNOFKmMUx+CxH4LdonPDJr/laq2PLwLtC734XhjgCfJkm
-	uLXbS/0Q==;
+	bh=Ik518DclW6iO20QtikewXYxnTBySwIONMSRmrWnlztw=; b=I3J0+qY/pcM+uYoRhiP8idIkpr
+	IfWYkCaZbgWxQMEFJ9xY5zfCJJbXy00Of99iNkVCszjSFrUwcHFgXjoV4UMl1VvDaCF8A9eN+6Dl/
+	cMVZlfZWRW8odVSElVZlQKfXa1zpzH1zQReJfJS+5f1gXCKp28UIAUXNECgbRM6KJlgtPGL50giGU
+	AyFcKyic6RpVshocw6eNRu+ayVG+UmTFpwZoupL2dTzHVxtyu5E2JKVHBiYCiQuXWOrJagjao7iw4
+	XT8SIdiQCgjmItpJ2xXkaQ2E4vUE/pbLgvVH9lToTXTTscHlCCQSbGg+z3ACxJtUcK+OsyxeG+4v9
+	pMqsPv4g==;
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by casper.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaGt-00000004AmD-3Tmy;
+	id 1tpaGt-00000004AmB-3Zy5;
 	Tue, 04 Mar 2025 21:57:56 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 524ANMLj006090;
-	Tue, 4 Mar 2025 21:57:41 GMT
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 524Ahwxw025632;
+	Tue, 4 Mar 2025 21:57:38 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	l/Art59MAXr66IcTrnKnynv9YBdpqyuERMRL+TU0dgA=; b=ZHFFVialpulRutBs
-	GvuIP60vlbsuCCcOFa/DxMmCM8qyoEwTy6QmoG+qH7UJf7oDi7W/m0q45xu2Dy10
-	jsYCDatYY2Yq/ASs6fvcjTI8sv35b1d/+70lI4rBO/DTvQFC15UFfqOQyi32RriC
-	P81Ac0S7E24A0+MNYdsvLaqaQG6UnwWp/y3Y80M+Fel7CZEgtbiQjWQn80Iss7Gh
-	kSdLqcA1Xoc0U/ZYi/VjYV62nREimm0+rCzSqXaNdKSyb/vRyBAPlsGoyunU2o8I
-	WfdHcA6mz4to8nOuR9lH3iE8w8igHoGJdJ7iHxZDBW5W541o4KXrNHlwYttPhpO8
-	KvmpvA==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 455p6tk9gn-1
+	Ik518DclW6iO20QtikewXYxnTBySwIONMSRmrWnlztw=; b=efDE6CU9DgxHQTnS
+	eNIyJ7Vw7lz6fUSw8ZrC4L7niS0U9p8yiZ8kHOVRhrUvP7XHB8+6Rw5IkZSibQWE
+	UTJ0p+nVtwauK7sUdx8XOYgK1NBn5tbHjYFd7oe2zURA6p0d6mk4snLdM7MtAyoy
+	4wUJ2LjwT0GClltRkB4t0lJHBBd/Kg4syifA6quWzLXe4+9kTc7tdJqmBbOu4AOu
+	2OEjmUWCD1khnEBrPIsfA/img0YAkGHmVeL0Ih1UQ0ft83i9XLfE43Ot0YsDSpKv
+	HYFBZwsFMlGWrM+17UgT1zJcxK9+dtKfHQtT04FTPTlyUJSy5cUo4NB12NuZJkDy
+	mEeYPw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 455p6vb8q7-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 04 Mar 2025 21:57:40 +0000 (GMT)
+	Tue, 04 Mar 2025 21:57:38 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 524LvdP0022642
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 524LvbMH002919
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 4 Mar 2025 21:57:39 GMT
+	Tue, 4 Mar 2025 21:57:37 GMT
 Received: from hu-molvera-lv.qualcomm.com (10.49.16.6) by
  nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 4 Mar 2025 13:57:39 -0800
+ 15.2.1544.9; Tue, 4 Mar 2025 13:57:36 -0800
 From: Melody Olvera <quic_molvera@quicinc.com>
-Date: Tue, 4 Mar 2025 13:56:39 -0800
-Subject: [PATCH v2 6/9] phy: qcom: Add M31 based eUSB2 PHY driver
+Date: Tue, 4 Mar 2025 13:56:34 -0800
+Subject: [PATCH v2 1/9] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
+ Add SM8750 to QMP PHY
 MIME-Version: 1.0
-Message-ID: <20250304-sm8750_usb_master-v2-6-a698a2e68e06@quicinc.com>
+Message-ID: <20250304-sm8750_usb_master-v2-1-a698a2e68e06@quicinc.com>
 References: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
 In-Reply-To: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -88,14 +89,15 @@ To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
 CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-        "Melody
- Olvera" <quic_molvera@quicinc.com>
+        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+        Melody Olvera
+	<quic_molvera@quicinc.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1741125455; l=10892;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1741125455; l=1364;
  i=quic_molvera@quicinc.com; s=20241204; h=from:subject:message-id;
- bh=sDI7CRIA68pme73XAMZe8W3pD7h8geVpaKWD4Z1dTEI=;
- b=9mKbxbdrd5/WmH7+eGcqxbpLuhM54XfWkNPUS5OmoqMu74gHMYtzDwRh6k22HdnUjphi0Mjql
- LF6jxRf0m/6AgqyEFgFkyj2ePdqAjaL72apGRBwUj8PR+KvyiLCh4aT
+ bh=BbSz+506LZsDXUmqbEuRJBoi6sT3Ye7RJcaL3QC7xCU=;
+ b=PFrzblaJrdyPmihB7gzVa+wCxDG8oWY2MbOKTxmg520tlgupBSF+y4XJMLwy5AP+XSiaD9qSG
+ QIk4Imci62ACTi/ZCFyKmhaRSdhrlmddiutZZINWrKRWxFa8xRrbtpC
 X-Developer-Key: i=quic_molvera@quicinc.com; a=ed25519;
  pk=1DGLp3zVYsHAWipMaNZZTHR321e8xK52C9vuAoeca5c=
 X-Originating-IP: [10.49.16.6]
@@ -103,21 +105,21 @@ X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=HZbuTjE8 c=1 sm=1 tr=0 ts=67c77755 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=3H110R4YSZwA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=qRfy2wCDKxMDip9UI50A:9 a=QEXdDO2ut3YA:10
- a=RVmHIydaz68A:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-GUID: uZxFJ12t6j1mlhZchlOi2nznyNEQlW8L
-X-Proofpoint-ORIG-GUID: uZxFJ12t6j1mlhZchlOi2nznyNEQlW8L
+X-Proofpoint-ORIG-GUID: YgR4bz9fxZiuki1l99ROOyRekDbs5GXp
+X-Authority-Analysis: v=2.4 cv=bPnsIO+Z c=1 sm=1 tr=0 ts=67c77752 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=3H110R4YSZwA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=bbY3M6C_flAL0yJJl3cA:9
+ a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: YgR4bz9fxZiuki1l99ROOyRekDbs5GXp
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-04_09,2025-03-04_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
- adultscore=0 mlxscore=0 spamscore=0 clxscore=1015 phishscore=0 bulkscore=0
- priorityscore=1501 impostorscore=0 suspectscore=0 malwarescore=0
- mlxlogscore=999 classifier=spam authscore=0 adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2502100000 definitions=main-2503040175
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 malwarescore=0 suspectscore=0
+ impostorscore=0 lowpriorityscore=0 priorityscore=1501 adultscore=0
+ spamscore=0 mlxscore=0 clxscore=1011 bulkscore=0 mlxlogscore=874
+ phishscore=0 classifier=spam authscore=0 adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2502100000 definitions=main-2503040175
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250304_215752_067722_03DDD9A5 
-X-CRM114-Status: GOOD (  25.12  )
+X-CRM114-CacheID: sfid-20250304_215752_097977_FE34CBA6 
+X-CRM114-Status: GOOD (  11.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,355 +138,36 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Wesley Cheng <quic_wcheng@quicinc.com>
 
-SM8750 utilizes an eUSB2 PHY from M31.  Add the initialization
-sequences to bring it out of reset and into an operational state.  This
-differs to the M31 USB driver, in that the M31 eUSB2 driver will
-require a connection to an eUSB2 repeater.  This PHY driver will handle
-the initialization of the associated eUSB2 repeater when required.
+Add an entry to the compatible field for SM8750 for the QMP combo PHY.
+This handles the USB3 path for SM8750.
 
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
 Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
 ---
- drivers/phy/qualcomm/Kconfig              |  10 +
- drivers/phy/qualcomm/Makefile             |   1 +
- drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 296 ++++++++++++++++++++++++++++++
- 3 files changed, 307 insertions(+)
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml          | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index f281e3b7f3f20b4a4bb1602be94b8a1b041a876f..0dcdbef67d7e023a88c6f513825925e306e7579b 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -154,6 +154,16 @@ config PHY_QCOM_M31_USB
- 	  management. This driver is required even for peripheral only or
- 	  host only mode configurations.
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+index 358a6736a951ca5db7cff7385b3657976a667358..38ce04c35d945d0d8d319191c241920810ee9005 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+@@ -29,6 +29,7 @@ properties:
+       - qcom,sm8450-qmp-usb3-dp-phy
+       - qcom,sm8550-qmp-usb3-dp-phy
+       - qcom,sm8650-qmp-usb3-dp-phy
++      - qcom,sm8750-qmp-usb3-dp-phy
+       - qcom,x1e80100-qmp-usb3-dp-phy
  
-+config PHY_QCOM_M31_EUSB
-+	tristate "Qualcomm M31 eUSB2 PHY driver support"
-+	depends on USB && (ARCH_QCOM || COMPILE_TEST)
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support M31 EUSB2 PHY transceivers on Qualcomm
-+	  chips with DWC3 USB core. It supports initializing and cleaning
-+	  up of the associated USB repeater that is paired with the eUSB2
-+	  PHY.
-+
- config PHY_QCOM_USB_HS
- 	tristate "Qualcomm USB HS PHY module"
- 	depends on USB_ULPI_BUS
-diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
-index eb60e950ad53334a3ada3db618aa584afb33fb93..f88ba0f71a73cd6935184c8831d6cd6488d6551f 100644
---- a/drivers/phy/qualcomm/Makefile
-+++ b/drivers/phy/qualcomm/Makefile
-@@ -5,6 +5,7 @@ obj-$(CONFIG_PHY_QCOM_EDP)		+= phy-qcom-edp.o
- obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
- obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
- obj-$(CONFIG_PHY_QCOM_M31_USB)		+= phy-qcom-m31.o
-+obj-$(CONFIG_PHY_QCOM_M31_EUSB)		+= phy-qcom-m31-eusb2.o
- obj-$(CONFIG_PHY_QCOM_PCIE2)		+= phy-qcom-pcie2.o
- 
- obj-$(CONFIG_PHY_QCOM_QMP_COMBO)	+= phy-qcom-qmp-combo.o phy-qcom-qmp-usbc.o
-diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..d14be08ce7c98eb183181d17f3ab9c92713e3785
---- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-@@ -0,0 +1,296 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/err.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+#include <linux/slab.h>
-+
-+#define USB_PHY_UTMI_CTRL0		(0x3c)
-+
-+#define USB_PHY_UTMI_CTRL5		(0x50)
-+
-+#define USB_PHY_HS_PHY_CTRL_COMMON0	(0x54)
-+#define FSEL				GENMASK(6, 4)
-+#define FSEL_38_4_MHZ_VAL		(0x6)
-+
-+#define USB_PHY_HS_PHY_CTRL2		(0x64)
-+
-+#define USB_PHY_CFG0			(0x94)
-+#define USB_PHY_CFG1			(0x154)
-+
-+#define USB_PHY_FSEL_SEL		(0xb8)
-+
-+#define USB_PHY_XCFGI_39_32		(0x16c)
-+#define USB_PHY_XCFGI_71_64		(0x17c)
-+#define USB_PHY_XCFGI_31_24		(0x168)
-+#define USB_PHY_XCFGI_7_0		(0x15c)
-+
-+#define M31_EUSB_PHY_INIT_CFG(o, b, v)	\
-+{				\
-+	.off = o,		\
-+	.mask = b,		\
-+	.val = v,		\
-+}
-+
-+struct m31_phy_tbl_entry {
-+	u32 off;
-+	u32 mask;
-+	u32 val;
-+};
-+
-+struct m31_eusb2_priv_data {
-+	const struct m31_phy_tbl_entry	*setup_seq;
-+	unsigned int			setup_seq_nregs;
-+	const struct m31_phy_tbl_entry	*override_seq;
-+	unsigned int			override_seq_nregs;
-+	const struct m31_phy_tbl_entry	*reset_seq;
-+	unsigned int			reset_seq_nregs;
-+	unsigned int			fsel;
-+};
-+
-+static const struct m31_phy_tbl_entry m31_eusb2_setup_tbl[] = {
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, BIT(1), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, BIT(1), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG1, BIT(0), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_FSEL_SEL, BIT(0), 1),
-+};
-+
-+static const struct m31_phy_tbl_entry m31_eusb_phy_override_tbl[] = {
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_39_32, GENMASK(3, 2), 0),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_71_64, GENMASK(3, 0), 7),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_31_24, GENMASK(2, 0), 0),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_XCFGI_7_0, GENMASK(1, 0), 0),
-+};
-+
-+static const struct m31_phy_tbl_entry m31_eusb_phy_reset_tbl[] = {
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL2, BIT(3), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL2, BIT(2), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL0, BIT(0), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL_COMMON0, BIT(1), 1),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL_COMMON0, BIT(2), 0),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, BIT(1), 0),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL2, BIT(3), 0),
-+	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, BIT(1), 0),
-+};
-+
-+static const char * const m31_eusb_phy_vreg_names[] = {
-+	"vdd", "vdda12",
-+};
-+
-+#define M31_EUSB_NUM_VREGS		ARRAY_SIZE(m31_eusb_phy_vreg_names)
-+
-+struct m31eusb2_phy {
-+	struct phy			 *phy;
-+	void __iomem			 *base;
-+	const struct m31_eusb2_priv_data *data;
-+
-+	struct regulator_bulk_data	 vregs[M31_EUSB_NUM_VREGS];
-+	struct clk			 *clk;
-+	struct reset_control		 *reset;
-+
-+	struct phy			 *repeater;
-+};
-+
-+static int msm_m31_eusb2_write_readback(void __iomem *base, u32 offset,
-+					const u32 mask, u32 val)
-+{
-+	u32 write_val;
-+	u32 tmp;
-+
-+	tmp = readl_relaxed(base + offset);
-+	tmp &= ~mask;
-+	write_val = tmp | val;
-+
-+	writel_relaxed(write_val, base + offset);
-+
-+	tmp = readl_relaxed(base + offset);
-+	tmp &= mask;
-+
-+	if (tmp != val) {
-+		pr_err("write: %x to offset: %x FAILED\n", val, offset);
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int m31eusb2_phy_write_sequence(struct m31eusb2_phy *phy,
-+				       const struct m31_phy_tbl_entry *tbl,
-+				       int num)
-+{
-+	int i;
-+	int ret;
-+
-+	for (i = 0 ; i < num; i++, tbl++) {
-+		dev_dbg(&phy->phy->dev, "Offset:%x BitMask:%x Value:%x",
-+			tbl->off, tbl->mask, tbl->val);
-+
-+		ret = msm_m31_eusb2_write_readback(phy->base,
-+						   tbl->off, tbl->mask,
-+						   tbl->val << __ffs(tbl->mask));
-+		if (ret < 0)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int m31eusb2_phy_init(struct phy *uphy)
-+{
-+	struct m31eusb2_phy *phy = phy_get_drvdata(uphy);
-+	const struct m31_eusb2_priv_data *data = phy->data;
-+	int ret;
-+
-+	ret = regulator_bulk_enable(ARRAY_SIZE(phy->vregs), phy->vregs);
-+	if (ret) {
-+		dev_err(&uphy->dev, "failed to enable regulator, %d\n", ret);
-+		return ret;
-+	}
-+
-+	ret = phy_init(phy->repeater);
-+	if (ret) {
-+		dev_err(&uphy->dev, "repeater init failed. %d\n", ret);
-+		goto disable_vreg;
-+	}
-+
-+	ret = clk_prepare_enable(phy->clk);
-+	if (ret) {
-+		dev_err(&uphy->dev, "failed to enable cfg ahb clock, %d\n", ret);
-+		goto disable_repeater;
-+	}
-+
-+	/* Perform phy reset */
-+	reset_control_assert(phy->reset);
-+	udelay(5);
-+	reset_control_deassert(phy->reset);
-+
-+	m31eusb2_phy_write_sequence(phy, data->setup_seq, data->setup_seq_nregs);
-+	msm_m31_eusb2_write_readback(phy->base,
-+				     USB_PHY_HS_PHY_CTRL_COMMON0, FSEL,
-+				     FIELD_PREP(FSEL, data->fsel));
-+	m31eusb2_phy_write_sequence(phy, data->override_seq, data->override_seq_nregs);
-+	m31eusb2_phy_write_sequence(phy, data->reset_seq, data->reset_seq_nregs);
-+
-+	return 0;
-+
-+disable_repeater:
-+	phy_exit(phy->repeater);
-+disable_vreg:
-+	regulator_bulk_disable(ARRAY_SIZE(phy->vregs), phy->vregs);
-+
-+	return 0;
-+}
-+
-+static int m31eusb2_phy_exit(struct phy *uphy)
-+{
-+	struct m31eusb2_phy *phy = phy_get_drvdata(uphy);
-+
-+	clk_disable_unprepare(phy->clk);
-+	regulator_bulk_disable(ARRAY_SIZE(phy->vregs), phy->vregs);
-+	phy_exit(phy->repeater);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops m31eusb2_phy_gen_ops = {
-+	.init	= m31eusb2_phy_init,
-+	.exit	= m31eusb2_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static int m31eusb2_phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	const struct m31_eusb2_priv_data *data;
-+	struct device *dev = &pdev->dev;
-+	struct m31eusb2_phy *phy;
-+	int ret;
-+	int i;
-+
-+	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
-+	if (!phy)
-+		return -ENOMEM;
-+
-+	data = of_device_get_match_data(dev);
-+	if (IS_ERR(data))
-+		return -EINVAL;
-+	phy->data = data;
-+
-+	phy->base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(phy->base))
-+		return PTR_ERR(phy->base);
-+
-+	phy->reset = devm_reset_control_get_exclusive(dev, NULL);
-+	if (IS_ERR(phy->reset))
-+		return PTR_ERR(phy->reset);
-+
-+	phy->clk = devm_clk_get(dev, NULL);
-+	if (IS_ERR(phy->clk))
-+		return dev_err_probe(dev, PTR_ERR(phy->clk),
-+				     "failed to get clk\n");
-+
-+	phy->phy = devm_phy_create(dev, NULL, &m31eusb2_phy_gen_ops);
-+	if (IS_ERR(phy->phy))
-+		return dev_err_probe(dev, PTR_ERR(phy->phy),
-+				     "failed to create phy\n");
-+
-+	for (i = 0; i < M31_EUSB_NUM_VREGS; i++)
-+		phy->vregs[i].supply = m31_eusb_phy_vreg_names[i];
-+
-+	ret = devm_regulator_bulk_get(dev, M31_EUSB_NUM_VREGS, phy->vregs);
-+	if (ret)
-+		return dev_err_probe(dev, ret,
-+				"failed to get regulator supplies\n");
-+
-+	phy_set_drvdata(phy->phy, phy);
-+
-+	phy->repeater = devm_of_phy_get_by_index(dev, dev->of_node, 0);
-+	if (IS_ERR(phy->repeater))
-+		return dev_err_probe(dev, PTR_ERR(phy->repeater),
-+				     "failed to get repeater\n");
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (!IS_ERR(phy_provider))
-+		dev_info(dev, "Registered M31 USB phy\n");
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct m31_eusb2_priv_data m31_eusb_v1_data = {
-+	.setup_seq = m31_eusb2_setup_tbl,
-+	.setup_seq_nregs = ARRAY_SIZE(m31_eusb2_setup_tbl),
-+	.override_seq = m31_eusb_phy_override_tbl,
-+	.override_seq_nregs = ARRAY_SIZE(m31_eusb_phy_override_tbl),
-+	.reset_seq = m31_eusb_phy_reset_tbl,
-+	.reset_seq_nregs = ARRAY_SIZE(m31_eusb_phy_reset_tbl),
-+	.fsel = FSEL_38_4_MHZ_VAL,
-+};
-+
-+static const struct of_device_id m31eusb2_phy_id_table[] = {
-+	{ .compatible = "qcom,sm8750-m31-eusb2-phy", .data = &m31_eusb_v1_data },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, m31eusb2_phy_id_table);
-+
-+static struct platform_driver m31eusb2_phy_driver = {
-+	.probe = m31eusb2_phy_probe,
-+	.driver = {
-+		.name = "qcom-m31eusb2-phy",
-+		.of_match_table = m31eusb2_phy_id_table,
-+	},
-+};
-+
-+module_platform_driver(m31eusb2_phy_driver);
-+
-+MODULE_DESCRIPTION("eUSB2 Qualcomm M31 HSPHY driver");
-+MODULE_LICENSE("GPL");
+   reg:
+@@ -133,6 +134,7 @@ allOf:
+             - qcom,sm6350-qmp-usb3-dp-phy
+             - qcom,sm8550-qmp-usb3-dp-phy
+             - qcom,sm8650-qmp-usb3-dp-phy
++            - qcom,sm8750-qmp-usb3-dp-phy
+             - qcom,x1e80100-qmp-usb3-dp-phy
+     then:
+       required:
 
 -- 
 2.46.1
