@@ -4,121 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA8CAC021B8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 22:12:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B62EAC282D0
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 22:46:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bOBlYVlRhvAEQMTSc8BcpqPgLOubFLsdP41sbqUZnA0=; b=2CONLcdDrf3w5m
-	4DajIIz+Ml+PdTktlqOiC5WzgK2kJKNiq7MSY1bHyl2q66mjSJQRrrjHwtMslZsLUwQZ4uTCgIh64
-	Hjda5naLVWkLNrQLAmxIBZfsHGQB2l0jNXIhRalaVbHNp6uTwUGDZHDa5eWeyIwZfmzuwgAhZBP4P
-	cSNrFtYvvFEsrYcuQQxSgt2sNfcWsZ6Fn3QD3h7U379M1GQWY3w/hMD92vc8s8VOaYH7y4J0YdfoP
-	meeDGdhvWaA7D5fdeLBgEwJgnbGFIaLRBAs4+vtskFRUOUCljK2vVX+HRgHoRgQlM3f+v2qbecNeN
-	P7muR/VaYuu/OwwlflLQ==;
+	List-Owner; bh=IANnxfKkJPfox4EuhhbiNFICkOS17P9nQhs0/xuXcKY=; b=D1wRfeENgCCwbK
+	lsCCV9UUrLwIJl1f8wWHfUcIl2qOIdaw8qAmVNoTcqw1IiOkcJe5i8O5okPBDEaPrr2kihKeb42Sd
+	qIUsmSblWGFhwslplnl2IWrp6IjpSlkdZ45YrEg3WzDEh9Z2KotoW3ThN/8SHaisb6N5Ssp6woGna
+	qdRNhJUhM31XZBVIAwhBBKfRVM0+qgUhgFgz1A/AVGTO/Z8axAkZcdQ4EOED3ahV/+sTnHSUZ9nP/
+	+M6Uz6nSPmAsuS6U/LFXHYdKqFwaeSuLj/UFyEcXATVGiVtqkE8yY41AkYGcip6rCm7y08bsY3dAr
+	eglwXyxDQYr+DnxzqrkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaUx-00000006NYk-1uNL;
-	Tue, 04 Mar 2025 22:12:23 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaH0-00000006LkD-35j8;
-	Tue, 04 Mar 2025 21:57:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=CC:To:In-Reply-To:References:Message-ID
-	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=1Z3XcJjb5+vCVlKHuCLcWjoudOFW37p8+HdZ8IfVIOY=; b=lGWggmC5k1JOVVHgiaNHIByrqq
-	zsOW8Wp+34wKHtHgPgKYUmow0tK/qKcAA0vmtR4GXy3ylWAyWRRn4B8C1lGHMqD/7jPZwHhkO3jtd
-	ktDljoFRj281pptynwkuF4bN6Pa3+y3NoqBBZsW23y/BYFZh8DWuhOCMHu6WKFPF78jlhKnRqXbum
-	DDwgNuxlEkCIxt23gZOIXGXWG4YExrLmYuVX3YrjHWSnwsW0esrFWWL3I/aZkNNUp4Hw/R6V0gVrv
-	Jj5HK3yZ0A1aIFa9jxPEFHxQIVJmUtbFuhgbcfSnaAwGFZlawL6iGj9U1PA5DHkGt1Y2lAVXEv3er
-	262mgYNA==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by casper.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaGv-00000004ApS-1hpY;
-	Tue, 04 Mar 2025 21:57:57 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 524AUmSo015598;
-	Tue, 4 Mar 2025 21:57:47 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1Z3XcJjb5+vCVlKHuCLcWjoudOFW37p8+HdZ8IfVIOY=; b=NEBXkY4nB0jj1h5C
-	Artd2DAlZQGn542J7qPJZnlw4Mxh9gdJe9vS0bRVx8m+vl6vKcIZ2ON8pSKWGdNI
-	7MN/pbxZvbljBabjIed5Rwby3TEDxvpriVx8Rq15ZtSw9LTHcw7BjJfDy1hAr32w
-	8bZl8SAbEaV1u79XdpDSt4fuqSxvaQKSkloWRscwVq1lv4vYZkCbUcpWHLEFGHlU
-	zXVCLliQhnc7Lyu5kffTO+RQ5+gVhr6pykPyp3freXrdrvvtuJhcmu8qDSmYIaEx
-	KW7FJhdtyKVkTHrpBGv/3Dq7Ir6lFdb9gK1u78dZ9JBMNiF94Hj3TawmD7V35uGl
-	kxQhRA==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 455p6v392v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 04 Mar 2025 21:57:40 +0000 (GMT)
-Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 524LvdtS002947
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 4 Mar 2025 21:57:39 GMT
-Received: from hu-molvera-lv.qualcomm.com (10.49.16.6) by
- nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 4 Mar 2025 13:57:38 -0800
-From: Melody Olvera <quic_molvera@quicinc.com>
-Date: Tue, 4 Mar 2025 13:56:38 -0800
-Subject: [PATCH v2 5/9] phy: qcom: Update description for QCOM based eUSB2
- repeater
+	id 1tpb1n-00000006RoG-0oZ9;
+	Tue, 04 Mar 2025 22:46:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tpai1-00000006PCJ-0DgA;
+	Tue, 04 Mar 2025 22:25:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26A072F;
+	Tue,  4 Mar 2025 14:26:06 -0800 (PST)
+Received: from localhost.localdomain (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B36BD3F5A1;
+	Tue,  4 Mar 2025 14:25:50 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: [PATCH v2 07/15] dt-bindings: phy: document Allwinner A523 USB-2.0 PHY
+Date: Tue,  4 Mar 2025 22:23:01 +0000
+Message-ID: <20250304222309.29385-8-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.46.3
+In-Reply-To: <20250304222309.29385-1-andre.przywara@arm.com>
+References: <20250304222309.29385-1-andre.przywara@arm.com>
 MIME-Version: 1.0
-Message-ID: <20250304-sm8750_usb_master-v2-5-a698a2e68e06@quicinc.com>
-References: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
-In-Reply-To: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Philipp Zabel
-	<p.zabel@pengutronix.de>,
-        Bjorn Andersson <andersson@kernel.org>,
-        "Konrad
- Dybcio" <konradybcio@kernel.org>,
-        Catalin Marinas <catalin.marinas@arm.com>,
-        Will Deacon <will@kernel.org>
-CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-        <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-        "Melody
- Olvera" <quic_molvera@quicinc.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1741125455; l=1304;
- i=quic_molvera@quicinc.com; s=20241204; h=from:subject:message-id;
- bh=rG2hIvkvCmr9w0Z3u/Gq/i+ml+btiB0aeOWncDnPVwM=;
- b=C9KpiexEKeRmPWdl2+pqRSNM+eGF/jpIPx+jpuSQj+CSPFV6kEcR4lfkUC4pm6X9BR9Xkruyk
- KvU50oxzaALBP9faPEgmIzvRm2VprbPoQY0O+Ts5KQPQATudZ5CJ/YB
-X-Developer-Key: i=quic_molvera@quicinc.com; a=ed25519;
- pk=1DGLp3zVYsHAWipMaNZZTHR321e8xK52C9vuAoeca5c=
-X-Originating-IP: [10.49.16.6]
-X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
- nasanex01b.na.qualcomm.com (10.46.141.250)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: 2RC0TcdXfmvMmNpFnTA25P8bV3HyAuBb
-X-Proofpoint-ORIG-GUID: 2RC0TcdXfmvMmNpFnTA25P8bV3HyAuBb
-X-Authority-Analysis: v=2.4 cv=fatXy1QF c=1 sm=1 tr=0 ts=67c77759 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=3H110R4YSZwA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=peiAtfwJOusvP27HVpEA:9 a=QEXdDO2ut3YA:10
- a=T1PIRxOFuHhLvSGs3xkl:22 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-04_09,2025-03-04_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 bulkscore=0
- spamscore=0 priorityscore=1501 malwarescore=0 impostorscore=0
- lowpriorityscore=0 mlxlogscore=824 mlxscore=0 adultscore=0 suspectscore=0
- phishscore=0 classifier=spam authscore=0 adjust=0 reason=mlx scancount=1
- engine=8.19.0-2502100000 definitions=main-2503040175
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250304_215753_663734_62808FE4 
-X-CRM114-Status: GOOD (  12.42  )
+X-CRM114-CacheID: sfid-20250304_142553_129434_0426371C 
+X-CRM114-Status: GOOD (  10.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,41 +73,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Wesley Cheng <quic_wcheng@quicinc.com>
+The Allwinner A523 SoC contains a USB-2.0 PHY fully compatible to the
+one used in the D1/T113s SoCs. This PHY controls the two USB-2.0 ports,
+there is a separate and quite different PHY for the USB-3.0 port.
 
-The eUSB2 repeater that exists in the QCOM PMICs are utilized for several
-different eUSB2 PHY vendors, such as M31 or Synopsys.  Hence, the wording
-needs to be updated to remove associations to a specific vendor.
+Add the new compatible string, with a fallback to the D1 version.
 
-Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
-Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
 ---
- drivers/phy/qualcomm/Kconfig | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ .../devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 846f8c99547fd5132feaa1e41093b8eab51714f9..f281e3b7f3f20b4a4bb1602be94b8a1b041a876f 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -135,12 +135,12 @@ config PHY_QCOM_SNPS_EUSB2
- 	  on Qualcomm SOCs.
+diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
+index 21209126ed008..580c3296a18d7 100644
+--- a/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/allwinner,sun50i-a64-usb-phy.yaml
+@@ -20,7 +20,9 @@ properties:
+           - allwinner,sun20i-d1-usb-phy
+           - allwinner,sun50i-a64-usb-phy
+       - items:
+-          - const: allwinner,sun50i-a100-usb-phy
++          - enum:
++              - allwinner,sun50i-a100-usb-phy
++              - allwinner,sun55i-a523-usb-phy
+           - const: allwinner,sun20i-d1-usb-phy
  
- config PHY_QCOM_EUSB2_REPEATER
--	tristate "Qualcomm SNPS eUSB2 Repeater Driver"
-+	tristate "Qualcomm PMIC eUSB2 Repeater Driver"
- 	depends on OF && (ARCH_QCOM || COMPILE_TEST)
- 	select GENERIC_PHY
- 	help
--	  Enable support for the USB high-speed SNPS eUSB2 repeater on Qualcomm
--	  PMICs. The repeater is paired with a Synopsys eUSB2 Phy
-+	  Enable support for the USB high-speed eUSB2 repeater on Qualcomm
-+	  PMICs. The repeater can be paired with a Synopsys or M31 eUSB2 Phy
- 	  on Qualcomm SOCs.
- 
- config PHY_QCOM_M31_USB
-
+   reg:
 -- 
-2.46.1
+2.46.3
 
 
 -- 
