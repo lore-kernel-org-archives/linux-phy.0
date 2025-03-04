@@ -4,51 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C693EC021B8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 12:15:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1090BC021B8
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 12:18:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2a659loId+iNnSVnlpay73KehgKMEpzj2Q/fqyHoOhk=; b=TkI/jmOZJbI5ws
-	kHLWP/OWHgbcp5n4rmQc+LG5kE9HrFnYqoCv3Pc1Z5HdzgCaiZYzJ0EONEFrImtug40jW6kdaDQJH
-	OsXTd5zoTZzqM6Q/HAeC3T6ex+Wr8q5TWGUesMewKfx21BaxZZ648D5hKhBceo4LBS3mN7/gdi5Ne
-	Uq5gPAoniQRIaJycFTZtlB57mAXpfLFakcTwSCcE7cmcR+QWCT1CxXsv/NraSyPGHsJKUhECWD0he
-	tUOthcCVuIB5WmAxLTT2/a4lWrTKBDyXdreL5Ne74y0BcgFB9l3bIciI8s5OtHb77kjTBnG1DQlJK
-	U+6oBpYYgRUzgZIfBPJQ==;
+	List-Owner; bh=oyGuE0783pKHRJH+ByXZayMcAd8wvSN7+fazL6JOGDk=; b=CYY4jRNOCs4NKt
+	f/Lygk2JaJrMdcGsdmPv7+yP6W2gvbY5YC3+sJxLZB0TriFXhFaXcTWcFA6HHYFMuBCo6h1eIrhxz
+	PhWZg47lOvPnk9NX+lPBfIc1x/gONSriIp3OcADoOL53z4bX68mIfs+nu41l3ImBg1Udw/CUxJ4DQ
+	w7NAzKj1H8eT16MvatxbWFxhenvyVbWeIwxypXETKdtNbUZkY5trKsU943TFeIQPyR32xF6QMoI+K
+	Y0+Zyj7GOg2xO4i+d56jAXtiaNqjKdlLy0J/AWkIfZF4kW1bOaUkx2Lge1zHjJNF0T/oxj1qjV562
+	auB7ckMv6AV6//gBTPVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpRBC-00000004b9f-27AB;
-	Tue, 04 Mar 2025 12:15:22 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1tpREI-00000004boX-3Nin;
+	Tue, 04 Mar 2025 12:18:34 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpR0X-00000004Vyz-1sd6;
-	Tue, 04 Mar 2025 12:04:22 +0000
+	id 1tpR8O-00000004aqa-3dWt;
+	Tue, 04 Mar 2025 12:12:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=dpotfYrrK+eIqs1ERXh1FDjfE6eFJzG+fJdpJe1ojso=; b=qi4qiK0w54heH7I/z191arBGxT
+	DyjAwn5xfkNZoH2Tpimz0ThMI77F1hMh20pcOwFbkhkCQAOaHz6qBwiAnlQwAsevjy4Zm0K1sanAZ
+	5WuifNef5J1+5SZizwYqYYx7XVZDSthT+BwUT9l9EOxk5ZQi0VacdF9CROMcvTLBYDJLupEhTpszy
+	6uKsiM3JbJ1t4Q1DuBHMfHLzi23HTDrpdoDkW3igaXI4VLyeXazZkbD+C8w865WnNoTMbSrF0zvts
+	gVo5Go35sOW4Hx+eN7aiQVljg1OCeOAJYOEtzACc/bCaH7+t2nEXPTF/J14PFo9CptvOMlfzWzCj3
+	BHK0B8Jw==;
+Received: from bali.collaboradmins.com ([148.251.105.195])
+	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tpR8L-000000001bC-1YPw;
+	Tue, 04 Mar 2025 12:12:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1741089859;
-	bh=7VUHnquwE/QdFs1qoBO1l/34onrJ8q7S6w5kpFpcMcw=;
+	s=mail; t=1741090339;
+	bh=2EWvYx/k/x8mpI0CYKajuJPigLOs0dmymMDl3QAd2hI=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=AjVbo8kdonHW6j6x9ddScTYnIJPHdmtbEdjH1VWVWapBKzQgU2yynW2nq7HtcWffb
-	 Td5IvOxQBuDOgt0xFmEIXEl2EknaG5wnlkB/2cFHQ7Q6ghm+qMSxBPE270+dX+DpKt
-	 UizZbUXAs9QmKoMY8S4ju5GHl4GnNhSg3IsxI6Ll/QmeFHwZ2euB128jYledwU3gTR
-	 xTNm+ghilHPByK7Jyh1bOp4NtD7TOfuLOSRrcrj5x4oz6RjTiVkUBWlK1A4V58mUGT
-	 v+1vjUTxrlU3ySKguUjwUPT4Z1BkO1Acf5xesQ2V2mtkeywwfCiN7SWvAcEP+OASpV
-	 NVFz6VQR3IWJw==
+	b=W+6OkqBwc1A2NIjP3nnNr7SLiC2ThlRzqbIbKrsXKeVfwlMZkAVMHWVarX/ftESaD
+	 azit1IA/HORWSZH+Go4Otd0cdd2BMMaD8OqDHUjep7Hm4HwqaNUTscOPG81+0wqwAr
+	 ZK5LqjpUDxo7mfQQhJXbVQURC5TtNjv9kLQDkLSAcdYS51LXhmmniVV0r9z0yjN8RL
+	 ICGBkOJuBBvjtijxGyre0v16L0um9ChpIIOOhJXFPIElpeRC58f5NUXZhEJXg7sjm4
+	 /aDMPAC5SQl8N7TC6NuW9f3WTH0ZyBwYpNd/sMQbeOpLO648CItB42rFi1QGHSwQip
+	 YrWkTlxCGJTOQ==
 Received: from [192.168.1.90] (unknown [188.27.58.83])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 325F217E0A4E;
-	Tue,  4 Mar 2025 13:04:19 +0100 (CET)
-Message-ID: <155f609f-994f-4140-8453-7e38a5e6deef@collabora.com>
-Date: Tue, 4 Mar 2025 14:04:18 +0200
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7B9DC17E088C;
+	Tue,  4 Mar 2025 13:12:19 +0100 (CET)
+Message-ID: <ddf4c3c9-849c-4d96-a073-966bb19a6047@collabora.com>
+Date: Tue, 4 Mar 2025 14:12:19 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 03/12] phy: rockchip: samsung-hdptx: Fix clock ratio
- setup
+Subject: Re: [PATCH v4 07/12] phy: rockchip: samsung-hdptx: Setup TMDS char
+ rate via phy_configure_opts_hdmi
 To: Maxime Ripard <mripard@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
@@ -57,14 +71,14 @@ Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 References: <20250304-phy-sam-hdptx-bpc-v4-0-8657847c13f7@collabora.com>
- <20250304-phy-sam-hdptx-bpc-v4-3-8657847c13f7@collabora.com>
- <20250304-small-mindful-mongrel-bd6f8b@houat>
+ <20250304-phy-sam-hdptx-bpc-v4-7-8657847c13f7@collabora.com>
+ <20250304-turtle-of-serious-aurora-2b0bae@houat>
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 Content-Language: en-US
-In-Reply-To: <20250304-small-mindful-mongrel-bd6f8b@houat>
+In-Reply-To: <20250304-turtle-of-serious-aurora-2b0bae@houat>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250304_040421_643568_5E3B9544 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20250304_121225_726277_CDA9F8C1 
+X-CRM114-Status: GOOD (  21.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,64 +95,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Maxime,
-
-On 3/4/25 10:13 AM, Maxime Ripard wrote:
-> Hi,
-> 
-> On Tue, Mar 04, 2025 at 03:44:02AM +0200, Cristian Ciocaltea wrote:
->> The switch from 1/10 to 1/40 clock ratio must happen when exceeding the
->> 340 MHz rate limit of HDMI 1.4, i.e. when entering the HDMI 2.0 domain,
->> and not before.
+On 3/4/25 10:15 AM, Maxime Ripard wrote:
+> On Tue, Mar 04, 2025 at 03:44:06AM +0200, Cristian Ciocaltea wrote:
+>> The current workaround to setup the TMDS character rate relies on the
+>> unconventional usage of phy_set_bus_width().
 >>
->> While at it, introduce a define for this rate limit constant.
+>> Make use of the recently introduced HDMI PHY configuration API to
+>> properly handle the setup.  The workaround will be dropped as soon as
+>> the switch has been completed on both ends.
 >>
->> Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY driver")
 >> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 >> ---
->>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 3 ++-
->>  1 file changed, 2 insertions(+), 1 deletion(-)
+>>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 54 ++++++++++++++++-------
+>>  1 file changed, 38 insertions(+), 16 deletions(-)
 >>
 >> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->> index f88369864c50e4563834ccbb26f1f9f440e99271..cf2c3a46604cb9d8c26fe5ec8346904e0b62848f 100644
+>> index 2bf525514c1991a1299265d12e1e85f66333c604..7e1d1c10758249aa5bbddbdaae0108bba04f30df 100644
 >> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
 >> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->> @@ -320,6 +320,7 @@
->>  #define LN3_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
->>  #define LN3_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
+>> @@ -394,6 +394,7 @@ struct rk_hdptx_phy {
 >>  
->> +#define HDMI14_MAX_RATE			340000000
->>  #define HDMI20_MAX_RATE			600000000
+>>  	int phy_id;
+>>  	struct phy *phy;
+>> +	struct phy_configure_opts_hdmi hdmi_cfg;
+>>  	struct clk_bulk_data *clks;
+>>  	int nr_clks;
+>>  	struct reset_control_bulk_data rsts[RST_MAX];
+>> @@ -1409,19 +1410,25 @@ static int rk_hdptx_dp_aux_init(struct rk_hdptx_phy *hdptx)
+>>  static int rk_hdptx_phy_power_on(struct phy *phy)
+>>  {
+>>  	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
+>> -	int bus_width = phy_get_bus_width(hdptx->phy);
+>>  	enum phy_mode mode = phy_get_mode(phy);
+>> +	unsigned int rate = 0;
+>>  	int ret, lane;
 >>  
->>  enum dp_link_rate {
->> @@ -1072,7 +1073,7 @@ static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx,
->>  
->>  	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
->>  
->> -	if (rate >= 3400000) {
->> +	if (rate > HDMI14_MAX_RATE / 100) {
+>> -	/*
+>> -	 * FIXME: Temporary workaround to pass pixel_clk_rate
+>> -	 * from the HDMI bridge driver until phy_configure_opts_hdmi
+>> -	 * becomes available in the PHY API.
+>> -	 */
+>> -	unsigned int rate = bus_width & 0xfffffff;
+>> -
+>> -	dev_dbg(hdptx->dev, "%s bus_width=%x rate=%u\n",
+>> -		__func__, bus_width, rate);
+>> +	if (mode != PHY_MODE_DP) {
+>> +		if (!hdptx->hdmi_cfg.tmds_char_rate) {
+>> +			/*
+>> +			 * FIXME: Temporary workaround to setup TMDS char rate
+>> +			 * from the RK DW HDMI QP bridge driver.
+>> +			 * Will be removed as soon the switch to the HDMI PHY
+>> +			 * configuration API has been completed on both ends.
+>> +			 */
+>> +			rate = phy_get_bus_width(hdptx->phy) & 0xfffffff;
+>> +			hdptx->hdmi_cfg.tmds_char_rate = rate * 100;
+>> +		} else {
+>> +			rate = hdptx->hdmi_cfg.tmds_char_rate / 100;
+>> +		}
+>> +		dev_dbg(hdptx->dev, "%s rate=%u\n", __func__, rate);
+>> +	}
 > 
-> The rate seems to come from rk_hdptx_phy_power_on and eventually from
-> tmds_char_rate in the PHY config options, so its rate is in Hertz.
+> Some story here, I can't make sense of a variable in hHz. If it's
+> actually needed and not a bug, this should be very explictly documented.
 
-The rate coming from rk_hdptx_phy_power_on() is in hHz, since it passed
-via dw_hdmi_qp_rockchip_encoder_enable() as
+Not a bug - as explained earlier, phy_set_bus_width() on the other end
+passes this in hHz.  I agree it should have been properly documented,
+but eventually we got this cleaned up in the last patch of the series.
 
-  phy_set_bus_width(hdmi->phy, div_u64(rate, 100));
-
-> HDMI14_MAX_RATE and HDMI20_MAX_RATE are both defined in Hertz as well.
-> It seems super odd to mee that you then convert HDMI14_MAX_RATE to hHz?
-
-This stems from the ropll_tmds_cfg table containing the configuration
-params for the supported rates which requires the search keys to be
-provided in hHz rather than Hz.
-
-I agree this is nothing but confusing, that's why I fixed this up in
-"phy: rockchip: samsung-hdptx: Avoid Hz-hHz unit conversion overhead"
-
-Thanks for reviewing!
-
-Regards,
+Thanks,
 Cristian
 
 -- 
