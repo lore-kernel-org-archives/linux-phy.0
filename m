@@ -4,72 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0C87C021B8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 22:10:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA8CAC021B8
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 22:12:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d9XEFqxfUZsmvFFlTOKriMfJ5n5+xZHkLw/SVbC57O4=; b=jKlfHn3kQfyR3P
-	kbnyKZfTVoWC322VeQ7IgStjnpSuUh7LOlTlNIb//y8j3LKBDXU7+2S75uu+jvlETIc5Z526N1l46
-	gGVhrSDwnXW0o+bnpJurIDIc0KtgG3Y8SGnm3u4vgmVZ3T+qNVOiXVSv3bw1LKsOxCIz3cta/vUfV
-	iDM01GaIlPLy3TzQR73UerFsdchd1hPuuag75bpuCTNJiGbnTFKdpgEqQHLiDO2ox+s74BTGrysLb
-	iejzEsaEFE5sNCdGg7eBC+bDcvpHk0DhZdK9BnnYAcXZZRAfiSMBszpJNgA4mcKWT20zKqYCl2VWI
-	APucA84EFVAQAEBMeZTA==;
+	List-Owner; bh=bOBlYVlRhvAEQMTSc8BcpqPgLOubFLsdP41sbqUZnA0=; b=2CONLcdDrf3w5m
+	4DajIIz+Ml+PdTktlqOiC5WzgK2kJKNiq7MSY1bHyl2q66mjSJQRrrjHwtMslZsLUwQZ4uTCgIh64
+	Hjda5naLVWkLNrQLAmxIBZfsHGQB2l0jNXIhRalaVbHNp6uTwUGDZHDa5eWeyIwZfmzuwgAhZBP4P
+	cSNrFtYvvFEsrYcuQQxSgt2sNfcWsZ6Fn3QD3h7U379M1GQWY3w/hMD92vc8s8VOaYH7y4J0YdfoP
+	meeDGdhvWaA7D5fdeLBgEwJgnbGFIaLRBAs4+vtskFRUOUCljK2vVX+HRgHoRgQlM3f+v2qbecNeN
+	P7muR/VaYuu/OwwlflLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaTP-00000006NQj-1wNa;
-	Tue, 04 Mar 2025 22:10:47 +0000
+	id 1tpaUx-00000006NYk-1uNL;
+	Tue, 04 Mar 2025 22:12:23 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaH0-00000006Ljz-1I9k;
+	id 1tpaH0-00000006LkD-35j8;
 	Tue, 04 Mar 2025 21:57:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=CC:To:In-Reply-To:References:Message-ID
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=9eyWpJjcKKZsjzfL98Ea/THIAJG7x3RiAA7tMYh00x4=; b=Ft6z45bXjMcDC9W9RI5C4iALdA
-	mcHTO1r93aqgERjboNAi4tc4Jsq18yItwaniwg7EoaU9pg7Zq4H4jwVkSICOeX755JVQz04xr7Fh5
-	LMJU+A7iaP24MV2T6taVFvFRPC8N5mIUj6+j9lHRoD2DbdJZkfMho8ZxPqpbG0Hna8HihDDc3RDi1
-	P3VBNbBfWJXuZPZRDHi812AKutrxsu094kUOUam3kee3CIWBooCfDTNzNVIEMNCk3JxSIc+gWf0rF
-	2PXo5RhdgsybxILaeqa9/NnUGh1mv9nhzvZMZTBQuLicIjWr2oKuLOzuC9EnK5BtUE7BDuEynlNEb
-	NVktvo/Q==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	bh=1Z3XcJjb5+vCVlKHuCLcWjoudOFW37p8+HdZ8IfVIOY=; b=lGWggmC5k1JOVVHgiaNHIByrqq
+	zsOW8Wp+34wKHtHgPgKYUmow0tK/qKcAA0vmtR4GXy3ylWAyWRRn4B8C1lGHMqD/7jPZwHhkO3jtd
+	ktDljoFRj281pptynwkuF4bN6Pa3+y3NoqBBZsW23y/BYFZh8DWuhOCMHu6WKFPF78jlhKnRqXbum
+	DDwgNuxlEkCIxt23gZOIXGXWG4YExrLmYuVX3YrjHWSnwsW0esrFWWL3I/aZkNNUp4Hw/R6V0gVrv
+	Jj5HK3yZ0A1aIFa9jxPEFHxQIVJmUtbFuhgbcfSnaAwGFZlawL6iGj9U1PA5DHkGt1Y2lAVXEv3er
+	262mgYNA==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by casper.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpaGu-00000004AmX-2X1q;
+	id 1tpaGv-00000004ApS-1hpY;
 	Tue, 04 Mar 2025 21:57:57 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 524LOwde027370;
-	Tue, 4 Mar 2025 21:57:39 GMT
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 524AUmSo015598;
+	Tue, 4 Mar 2025 21:57:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	9eyWpJjcKKZsjzfL98Ea/THIAJG7x3RiAA7tMYh00x4=; b=FK9QapECEQztG7Qy
-	G/biM+Gse/lHmKOC1BCD7cgybnL5kYRcObUgSHBCDNEjcCcAbtiuQIGM+9Kf2WHu
-	mw3gfM2xabppaHYLC+uhRwrC8uvV2vvs6OCxDk5ii1bZDIA7HCEfZ6GpczaLfq+R
-	uyNwgA3F/2EHd7bxBHS1MLGWwGnHFE80g9lvADHg59U8XMrdRscXezgM5kPvDDUU
-	cfQeXZUg2F29RW1RVg2gGrvUR4iEMPD4uEmgiwKJ6KGSfP6QQ0TlV3gDYoCOfAvZ
-	Rg+htuH5eAgAvU0crVm3RIBNGTUv6838DPR4xk24x9KHd3YyMj0t8tzQlvZ4+NA5
-	GUK9YA==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 455p6uk9e2-1
+	1Z3XcJjb5+vCVlKHuCLcWjoudOFW37p8+HdZ8IfVIOY=; b=NEBXkY4nB0jj1h5C
+	Artd2DAlZQGn542J7qPJZnlw4Mxh9gdJe9vS0bRVx8m+vl6vKcIZ2ON8pSKWGdNI
+	7MN/pbxZvbljBabjIed5Rwby3TEDxvpriVx8Rq15ZtSw9LTHcw7BjJfDy1hAr32w
+	8bZl8SAbEaV1u79XdpDSt4fuqSxvaQKSkloWRscwVq1lv4vYZkCbUcpWHLEFGHlU
+	zXVCLliQhnc7Lyu5kffTO+RQ5+gVhr6pykPyp3freXrdrvvtuJhcmu8qDSmYIaEx
+	KW7FJhdtyKVkTHrpBGv/3Dq7Ir6lFdb9gK1u78dZ9JBMNiF94Hj3TawmD7V35uGl
+	kxQhRA==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 455p6v392v-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 04 Mar 2025 21:57:38 +0000 (GMT)
+	Tue, 04 Mar 2025 21:57:40 +0000 (GMT)
 Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 524LvcoQ022607
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 524LvdtS002947
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 4 Mar 2025 21:57:38 GMT
+	Tue, 4 Mar 2025 21:57:39 GMT
 Received: from hu-molvera-lv.qualcomm.com (10.49.16.6) by
  nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.9; Tue, 4 Mar 2025 13:57:37 -0800
+ 15.2.1544.9; Tue, 4 Mar 2025 13:57:38 -0800
 From: Melody Olvera <quic_molvera@quicinc.com>
-Date: Tue, 4 Mar 2025 13:56:36 -0800
-Subject: [PATCH v2 3/9] dt-bindings: usb: qcom,dwc3: Add SM8750 compatible
+Date: Tue, 4 Mar 2025 13:56:38 -0800
+Subject: [PATCH v2 5/9] phy: qcom: Update description for QCOM based eUSB2
+ repeater
 MIME-Version: 1.0
-Message-ID: <20250304-sm8750_usb_master-v2-3-a698a2e68e06@quicinc.com>
+Message-ID: <20250304-sm8750_usb_master-v2-5-a698a2e68e06@quicinc.com>
 References: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
 In-Reply-To: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -88,15 +89,14 @@ To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
 CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
         <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
         <linux-usb@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        Melody Olvera
-	<quic_molvera@quicinc.com>
+        "Melody
+ Olvera" <quic_molvera@quicinc.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1741125455; l=1625;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1741125455; l=1304;
  i=quic_molvera@quicinc.com; s=20241204; h=from:subject:message-id;
- bh=3VRlrMRUr6/y8yX0UjIm6ZNcmiF+peDcRBvTXvT0I8A=;
- b=6n2bczcY7IXLBBmFUgFy9jfxXn1iACtrjCAgf4h3fT3BUdjGfJPU/alOeBT3pyL0T3oyPiiJB
- Mpr0iV31/znBBcgmaUEW8HzfAW6HODl3vbK6ERP7h2cs2re8sCDiPlJ
+ bh=rG2hIvkvCmr9w0Z3u/Gq/i+ml+btiB0aeOWncDnPVwM=;
+ b=C9KpiexEKeRmPWdl2+pqRSNM+eGF/jpIPx+jpuSQj+CSPFV6kEcR4lfkUC4pm6X9BR9Xkruyk
+ KvU50oxzaALBP9faPEgmIzvRm2VprbPoQY0O+Ts5KQPQATudZ5CJ/YB
 X-Developer-Key: i=quic_molvera@quicinc.com; a=ed25519;
  pk=1DGLp3zVYsHAWipMaNZZTHR321e8xK52C9vuAoeca5c=
 X-Originating-IP: [10.49.16.6]
@@ -104,21 +104,21 @@ X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
  nasanex01b.na.qualcomm.com (10.46.141.250)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: eYCuPl2cZhKuser9K55Kdh8uDjuWaMDp
-X-Authority-Analysis: v=2.4 cv=H40hw/Yi c=1 sm=1 tr=0 ts=67c77752 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=3H110R4YSZwA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=NSUex2eohPAMEdQH8iAA:9
- a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: eYCuPl2cZhKuser9K55Kdh8uDjuWaMDp
+X-Proofpoint-GUID: 2RC0TcdXfmvMmNpFnTA25P8bV3HyAuBb
+X-Proofpoint-ORIG-GUID: 2RC0TcdXfmvMmNpFnTA25P8bV3HyAuBb
+X-Authority-Analysis: v=2.4 cv=fatXy1QF c=1 sm=1 tr=0 ts=67c77759 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=3H110R4YSZwA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=peiAtfwJOusvP27HVpEA:9 a=QEXdDO2ut3YA:10
+ a=T1PIRxOFuHhLvSGs3xkl:22 a=TjNXssC_j7lpFel5tvFf:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-04_09,2025-03-04_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 adultscore=0
- impostorscore=0 clxscore=1015 malwarescore=0 priorityscore=1501 mlxscore=0
- lowpriorityscore=0 phishscore=0 suspectscore=0 spamscore=0 mlxlogscore=877
- classifier=spam authscore=0 adjust=0 reason=mlx scancount=1
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 bulkscore=0
+ spamscore=0 priorityscore=1501 malwarescore=0 impostorscore=0
+ lowpriorityscore=0 mlxlogscore=824 mlxscore=0 adultscore=0 suspectscore=0
+ phishscore=0 classifier=spam authscore=0 adjust=0 reason=mlx scancount=1
  engine=8.19.0-2502100000 definitions=main-2503040175
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250304_215753_002808_7749C5D6 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20250304_215753_663734_62808FE4 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,46 +137,36 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Wesley Cheng <quic_wcheng@quicinc.com>
 
-SM8750 uses the Synopsys DWC3 controller. Add this to the compatibles list
-to utilize the DWC3 QCOM and DWC3 core framework.  Other than a revision
-bump to DWC3 controller rev2.00a, the controller on SM8750 does not add any
-additional vendor specific features compared to previous chipsets.
+The eUSB2 repeater that exists in the QCOM PMICs are utilized for several
+different eUSB2 PHY vendors, such as M31 or Synopsys.  Hence, the wording
+needs to be updated to remove associations to a specific vendor.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
 Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
 ---
- Documentation/devicetree/bindings/usb/qcom,dwc3.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/phy/qualcomm/Kconfig | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-index a2b3cf625e5b3962f3acfe93de02f3cae2b6123d..916024b7bd95a11d5cc5495de0fffd3fbdca8318 100644
---- a/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-+++ b/Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-@@ -55,6 +55,7 @@ properties:
-           - qcom,sm8450-dwc3
-           - qcom,sm8550-dwc3
-           - qcom,sm8650-dwc3
-+          - qcom,sm8750-dwc3
-           - qcom,x1e80100-dwc3
-           - qcom,x1e80100-dwc3-mp
-       - const: qcom,dwc3
-@@ -354,6 +355,7 @@ allOf:
-               - qcom,sm8450-dwc3
-               - qcom,sm8550-dwc3
-               - qcom,sm8650-dwc3
-+              - qcom,sm8750-dwc3
-     then:
-       properties:
-         clocks:
-@@ -495,6 +497,7 @@ allOf:
-               - qcom,sm8450-dwc3
-               - qcom,sm8550-dwc3
-               - qcom,sm8650-dwc3
-+              - qcom,sm8750-dwc3
-     then:
-       properties:
-         interrupts:
+diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+index 846f8c99547fd5132feaa1e41093b8eab51714f9..f281e3b7f3f20b4a4bb1602be94b8a1b041a876f 100644
+--- a/drivers/phy/qualcomm/Kconfig
++++ b/drivers/phy/qualcomm/Kconfig
+@@ -135,12 +135,12 @@ config PHY_QCOM_SNPS_EUSB2
+ 	  on Qualcomm SOCs.
+ 
+ config PHY_QCOM_EUSB2_REPEATER
+-	tristate "Qualcomm SNPS eUSB2 Repeater Driver"
++	tristate "Qualcomm PMIC eUSB2 Repeater Driver"
+ 	depends on OF && (ARCH_QCOM || COMPILE_TEST)
+ 	select GENERIC_PHY
+ 	help
+-	  Enable support for the USB high-speed SNPS eUSB2 repeater on Qualcomm
+-	  PMICs. The repeater is paired with a Synopsys eUSB2 Phy
++	  Enable support for the USB high-speed eUSB2 repeater on Qualcomm
++	  PMICs. The repeater can be paired with a Synopsys or M31 eUSB2 Phy
+ 	  on Qualcomm SOCs.
+ 
+ config PHY_QCOM_M31_USB
 
 -- 
 2.46.1
