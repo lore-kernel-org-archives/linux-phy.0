@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11B3CC021B8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 12:08:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27DD0C3DA4A
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 12:08:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tERyjAzHxurvS3J48U6DMnTaA/HPKRuGiTbC6shyiUI=; b=cPG17iVm+NZ573
-	w/UQo65iJCtFXGvCy8XiDpimABseWIuZMISZhd77KGek9j8i5YOUeh3hdbhbc6yQX57a0TGm+Wft8
-	WJn2gzboi1vgzXo8xWSQ3zXP0Ew8kTDLj9VSjzjVTD8Ll7m57XENb09WJQAp+0aVCOowEQ5Xngq/D
-	I+qWRif36QR39mqDGp9NjvbfZvU28vMFOhM036m9pxMm4QQn+ADdJRBWr7NodX3sZRtAOPEs9oqN8
-	37e/4LmZ79cHL7+1ePArkeF9yaQtPYbApPGwvqZBm6jPVW0JVSR+AToiD8LBDlNjn3CmFt5z/FQwG
-	ngS0mXk6af0e17x+nO9Q==;
+	List-Owner; bh=Ta9ilxP1b98wVN+PRTZ77MDwvA3oS09vvaha07f/+20=; b=v4qxAQ6+aZUJTN
+	j3YGaKzmYAwslk6Bfen6oBrHcbWMnaIk6NabHuSVVnsAsC2I8wbXzoJHck1qco1pX7YLr7bR1ESqF
+	c/U3rRBZTpnLuKyErbbbBJkf0VBKj9oWZGMNd5WYBSyWe8414idXYhP3UG3hHFoHQ8IXuGUfljUMh
+	06xbKms7x0MZP0/aRAGfQ8wuw/sF7RcTwotts+c2v+DT8pzVgZJWl3wFwpJ7F499Ed6vmYRJtOG44
+	2duZcyz5THBat9fsYnAXiQ+cAhIm8gQ8kjDjZmrOnruK6u6TbH3vBS71lYG+n4LcxcH3JMc0w46/i
+	3h5CX9xv+cHhGkfTaPEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpR4o-00000004Wcl-13Ce;
+	id 1tpR4o-00000004WdR-3KER;
 	Tue, 04 Mar 2025 12:08:46 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpPpC-00000004GLE-0npd
+	id 1tpPpF-00000004GN3-0AbK
 	for linux-phy@lists.infradead.org;
-	Tue, 04 Mar 2025 10:48:35 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-39104c1cbbdso1108946f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 04 Mar 2025 02:48:33 -0800 (PST)
+	Tue, 04 Mar 2025 10:48:38 +0000
+Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-390ec7c2cd8so2687815f8f.1
+        for <linux-phy@lists.infradead.org>; Tue, 04 Mar 2025 02:48:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1741085312; x=1741690112; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1741085315; x=1741690115; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=gjhb9oVUG8lj7hYYtmkJhzYs0Q2lzrIfIpH+FDRUtb4=;
-        b=S2y4Sq8GNabUsqQOoT6/VGKIf/LDwJvkayK8uLTIi+Lnuew5Ntdo0KMb8cqkT/RtFX
-         GFjUSQxExI20+6DNLLQn4lPbpaS/IQ0YK5KKNlk7fTzsfSClOg7ORuQhGkJBVyxCT1Di
-         h1aA4vKnLDd4tt32Oqg1seZ8tsfaIf4t6uGlXI96W7y5vxjMBwNHrbYs3P58EHpNUeSh
-         g+B6aszUvrw/7lRw8E2MggrGxb0sBLNufWbM7nOF/Vp/obDHL80JgeVZ33dMuufjTFK6
-         MfIGCk5xPoyMczWn5qM95YCblLO8FMGiXIuFNHWybsf2K61fiGovHfJfkEvySH1DFPBT
-         INvg==
+        bh=X+HBRuptPWMkY7eoCKW8pYKKAMIwOR9RHunbpfasXUQ=;
+        b=bpO+HR0ZOFKDv8TEyd5ypOPbW3j7AlrAxnvM7Vwoff5k5F5ww8ebt5S1UXUrL8k40z
+         UHlYzp84xUC8vJ6lIyGxInRMiyrAFvkjxQK+zpAAqC6gW9wiJmoejIEyefOd530dZz5Y
+         sfNeoy9IyToZBsXWzicvOGMgnqEitM+nPjG4wJuLFG7KoemN4ut3J5p3Uly8pFW3swp0
+         h5BzfgZT54TKcgPu7c2YqvrbsWYnd2/SMvAUOUa58llT4REcXn8QEaUJxAkbklO2foQG
+         WLyveydN19A9qUmsY/il+lU+sz+1FUCysUUVU+sHRjF6VU0SgUJPRb2X2e0bW8n4WDIe
+         TOkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741085312; x=1741690112;
+        d=1e100.net; s=20230601; t=1741085315; x=1741690115;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=gjhb9oVUG8lj7hYYtmkJhzYs0Q2lzrIfIpH+FDRUtb4=;
-        b=SLPtKn5om0HZTPjv+KK0CFNuzkik0fTJ+YjY7hzVk/b2NdO2HWpqRw+7W6vHT4+xc4
-         LZbheGSavMWGXpBHARSyGfMQn5+cRe3YDNMB/+T3csgrpsY7ln2C4mQFQTobKs64/lrX
-         i/WPp8ibKdA+TIOk3syZegURf6DbVSf1peZ6UIG4FiuzBlHH/EACt5YGUQo8ifpTLb/9
-         wC+Z6/2ie+VmYrZxsaB+k0e4hB9OAVjjFcIoPODKMkMerQQlrEOQ2Ox5I+A5wPo97rm0
-         p9a5N9L3W7LR+QanASRP5n5xhOXXlSA1E+ATUjodDlIT76GcmZxaOsoVrdxYAV2SQtU1
-         xfmQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUJWwFWcTcjbN6CBeklfGiYcSivDSxQW2o3KdMBCLOdDbLcZJxQL62lMvstFfBXqt0b3YaEwDqZf3E=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxuGcfssqcHMP5jxUTSFswY+A+09svEpnc14zkyIC91P8P58tp4
-	rW1K+3qwcjTSlyVN6xVK/NkRJZI1eoaS+QvVOL9qdDZJQhIOtvcS96YUVJEcrKU=
-X-Gm-Gg: ASbGncvQsyeLtkBnKhSFfXxOTAdS3szhqJaxpYAdJ7JoYvhjLO9DknYvV1ieaVybcto
-	FivBft9dK1X3rhly13W/cOKg6yYVIwQHwrLEMw85iQodIbefMzd+JrMPA9Y80XVVf+04Bm4oJ5e
-	8JBVFpFsnlXZJkJByVPdKHehSa+6RxfittJtGNRBcHqgYF65xf9tsJgeeIOjJSUB692pdrpSneI
-	VnQaX8JJKRpvDnRRbS7QjH0GJWNVo2iuyycfuP2+B1oK47Mx3QU+pjDG5Rfc/CEcnUhHM8aC2gf
-	MfsdHjR6+KVi719NgcrY2JmcVn2OBS/LuoEINUApWkMnR0/v2SLTMBYcoxgeil1hb+5YsAmvpPM
+        bh=X+HBRuptPWMkY7eoCKW8pYKKAMIwOR9RHunbpfasXUQ=;
+        b=XofZzV+hQTwTTIFTRUuc8IXlB96x+pdfhzT56ZI/yB71VoPpDyKBtFBnZKyNZBlGLS
+         YBpYIfpXosI/DL7B86LQxD1vJAbCK3Bkykxkzui0to33aJpnK6ZWjHUAiO9ttC6PGP9Y
+         9PCXPITj1bFsTj32NhEyoycA7xz/XTtKb3cNlZJbR0uOyJA2YoL6Qs0HK+W4Jkj4oRif
+         9KD9hgvxi7VkDWg1itp2OCzHCQ7nPP//Wua7qh90ZLHM9w9s4ehQt83NIV5rncUjXL/m
+         4jr+FKBOJF9dk/fgfNKOmGWb+rS3lGBbc6Bjw5GH4xZJ3bKoeJQwm3v0Lo+nK8/1GAFX
+         nzLQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUke8nZ0yds0xGh//RYyadQR4x7LFO3yHOUAeVczYlq1aDavxjF9wUNf1vj73XCITcPwwcuOFvbMJU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyHyaNEU0ydN/vmy7qgG7T0wtSXU/eLocVyqvF5rAL+atFMjlNr
+	KlS7t759kNR5fide3uC5jOmunt1HQPBoRxuOfMrH8CteK0NHsNkvv4z7RXmDnKk=
+X-Gm-Gg: ASbGncv7rmbTJnylpKukWhAz1UtlbEnBHihUkPzf4ZRVn7XmayaCmwtOCQsfkeiTka2
+	fkSmYTB4LRYJ4LrnAkO5gEsqterrZtwwK6gfsiEGgRPig2a59d43LgwQ5srl0VgcWBRWNdX8HAv
+	xmfvdk8UZOkUmZNvGRFtTF1HcreI2apQdrxJm8XwzdrxHaV6fx3KllMcDmz4IGGiw7f59L5/8fE
+	8d1QoU9uFj+rxzTMTJG6m0eh1MBipzRudTJIq9laV2ML6YdFm3fUnOzr07Il0/qYSc09ORrHJ2/
+	8oLyLR+U3KZxmp/Y0hVXX2nfmTRdg/Br1gwZL/FczdHREbEiq2ty6tNzhbkixWqzFZyJfhNxGhk
 	=
-X-Google-Smtp-Source: AGHT+IHcts+Ef7abJwxoLgkZw98QU7H40GbI3oB8YyXxlG8MEQq/0M2R29xPjCZcGAJReffYT0xshg==
-X-Received: by 2002:a5d:64a6:0:b0:390:e889:d1d7 with SMTP id ffacd0b85a97d-390ec7cc71amr13636577f8f.13.1741085312528;
-        Tue, 04 Mar 2025 02:48:32 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IF9/8llLwlKLJv4R6tkEHSQztdJzVM+800HKQOjt9Km4g2NNYfuA8atR483A4u0BuM7XJAbYQ==
+X-Received: by 2002:a5d:6489:0:b0:390:f641:d8bb with SMTP id ffacd0b85a97d-390f641d990mr11217312f8f.36.1741085315383;
+        Tue, 04 Mar 2025 02:48:35 -0800 (PST)
 Received: from claudiu-X670E-Pro-RS.. ([82.78.167.138])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-390e4844a38sm17445161f8f.75.2025.03.04.02.48.30
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-390e4844a38sm17445161f8f.75.2025.03.04.02.48.34
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 04 Mar 2025 02:48:32 -0800 (PST)
+        Tue, 04 Mar 2025 02:48:35 -0800 (PST)
 From: Claudiu <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
 To: yoshihiro.shimoda.uh@renesas.com,
@@ -83,16 +83,16 @@ Cc: claudiu.beznea@tuxon.dev,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
 	stable@vger.kernel.org,
 	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: [PATCH v3 1/5] phy: renesas: rcar-gen3-usb2: Fix role detection on unbind/bind
-Date: Tue,  4 Mar 2025 12:48:22 +0200
-Message-ID: <20250304104826.4173394-2-claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v3 3/5] phy: renesas: rcar-gen3-usb2: Lock around hardware registers and driver data
+Date: Tue,  4 Mar 2025 12:48:24 +0200
+Message-ID: <20250304104826.4173394-4-claudiu.beznea.uj@bp.renesas.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20250304104826.4173394-1-claudiu.beznea.uj@bp.renesas.com>
 References: <20250304104826.4173394-1-claudiu.beznea.uj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250304_024834_231451_892B9023 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20250304_024837_080654_B1576D07 
+X-CRM114-Status: GOOD (  22.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,20 +111,40 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-It has been observed on the Renesas RZ/G3S SoC that unbinding and binding
-the PHY driver leads to role autodetection failures. This issue occurs when
-PHY 3 is the first initialized PHY. PHY 3 does not have an interrupt
-associated with the USB2_INT_ENABLE register (as
-rcar_gen3_int_enable[3] = 0). As a result, rcar_gen3_init_otg() is called
-to initialize OTG without enabling PHY interrupts.
+The phy-rcar-gen3-usb2 driver exposes four individual PHYs that are
+requested and configured by PHY users. The struct phy_ops APIs access the
+same set of registers to configure all PHYs. Additionally, PHY settings can
+be modified through sysfs or an IRQ handler. While some struct phy_ops APIs
+are protected by a driver-wide mutex, others rely on individual
+PHY-specific mutexes.
 
-To resolve this, add rcar_gen3_is_any_otg_rphy_initialized() and call it in
-role_store(), role_show(), and rcar_gen3_init_otg(). At the same time,
-rcar_gen3_init_otg() is only called when initialization for a PHY with
-interrupt bits is in progress. As a result, the
-struct rcar_gen3_phy::otg_initialized is no longer needed.
+This approach can lead to various issues, including:
+1/ the IRQ handler may interrupt PHY settings in progress, racing with
+   hardware configuration protected by a mutex lock
+2/ due to msleep(20) in rcar_gen3_init_otg(), while a configuration thread
+   suspends to wait for the delay, another thread may try to configure
+   another PHY (with phy_init() + phy_power_on()); re-running the
+   phy_init() goes to the exact same configuration code, re-running the
+   same hardware configuration on the same set of registers (and bits)
+   which might impact the result of the msleep for the 1st configuring
+   thread
+3/ sysfs can configure the hardware (though role_store()) and it can
+   still race with the phy_init()/phy_power_on() APIs calling into the
+   drivers struct phy_ops
 
-Fixes: 549b6b55b005 ("phy: renesas: rcar-gen3-usb2: enable/disable independent irqs")
+To address these issues, add a spinlock to protect hardware register access
+and driver private data structures (e.g., calls to
+rcar_gen3_is_any_rphy_initialized()). Checking driver-specific data remains
+necessary as all PHY instances share common settings. With this change,
+the existing mutex protection is removed and the cleanup.h helpers are
+used.
+
+While at it, to keep the code simpler, do not skip
+regulator_enable()/regulator_disable() APIs in
+rcar_gen3_phy_usb2_power_on()/rcar_gen3_phy_usb2_power_off() as the
+regulators enable/disable operations are reference counted anyway.
+
+Fixes: f3b5a8d9b50d ("phy: rcar-gen3-usb2: Add R-Car Gen3 USB2 PHY driver")
 Cc: stable@vger.kernel.org
 Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 Tested-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
@@ -138,98 +158,148 @@ Changes in v3:
 Changes in v2:
 - collected tags
 
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 33 ++++++++++--------------
- 1 file changed, 14 insertions(+), 19 deletions(-)
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 49 +++++++++++++-----------
+ 1 file changed, 26 insertions(+), 23 deletions(-)
 
 diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index 775f4f973a6c..46afba2fe0dc 100644
+index aa9f301b5acb..39c73399b039 100644
 --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
 +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -107,7 +107,6 @@ struct rcar_gen3_phy {
- 	struct rcar_gen3_chan *ch;
- 	u32 int_enable_bits;
- 	bool initialized;
--	bool otg_initialized;
- 	bool powered;
- };
+@@ -9,6 +9,7 @@
+  * Copyright (C) 2014 Cogent Embedded, Inc.
+  */
  
-@@ -320,16 +319,15 @@ static bool rcar_gen3_is_any_rphy_initialized(struct rcar_gen3_chan *ch)
- 	return false;
- }
- 
--static bool rcar_gen3_needs_init_otg(struct rcar_gen3_chan *ch)
-+static bool rcar_gen3_is_any_otg_rphy_initialized(struct rcar_gen3_chan *ch)
- {
--	int i;
--
--	for (i = 0; i < NUM_OF_PHYS; i++) {
--		if (ch->rphys[i].otg_initialized)
--			return false;
-+	for (enum rcar_gen3_phy_index i = PHY_INDEX_BOTH_HC; i <= PHY_INDEX_EHCI;
-+	     i++) {
-+		if (ch->rphys[i].initialized)
-+			return true;
- 	}
- 
--	return true;
-+	return false;
- }
- 
- static bool rcar_gen3_are_all_rphys_power_off(struct rcar_gen3_chan *ch)
-@@ -351,7 +349,7 @@ static ssize_t role_store(struct device *dev, struct device_attribute *attr,
++#include <linux/cleanup.h>
+ #include <linux/extcon-provider.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
+@@ -118,7 +119,7 @@ struct rcar_gen3_chan {
+ 	struct regulator *vbus;
+ 	struct reset_control *rstc;
+ 	struct work_struct work;
+-	struct mutex lock;	/* protects rphys[...].powered */
++	spinlock_t lock;	/* protects access to hardware and driver data structure. */
+ 	enum usb_dr_mode dr_mode;
+ 	u32 obint_enable_bits;
+ 	bool extcon_host;
+@@ -348,6 +349,8 @@ static ssize_t role_store(struct device *dev, struct device_attribute *attr,
  	bool is_b_device;
  	enum phy_mode cur_mode, new_mode;
  
--	if (!ch->is_otg_channel || !rcar_gen3_is_any_rphy_initialized(ch))
-+	if (!ch->is_otg_channel || !rcar_gen3_is_any_otg_rphy_initialized(ch))
++	guard(spinlock_irqsave)(&ch->lock);
++
+ 	if (!ch->is_otg_channel || !rcar_gen3_is_any_otg_rphy_initialized(ch))
  		return -EIO;
  
- 	if (sysfs_streq(buf, "host"))
-@@ -389,7 +387,7 @@ static ssize_t role_show(struct device *dev, struct device_attribute *attr,
- {
- 	struct rcar_gen3_chan *ch = dev_get_drvdata(dev);
+@@ -415,7 +418,7 @@ static void rcar_gen3_init_otg(struct rcar_gen3_chan *ch)
+ 		val = readl(usb2_base + USB2_ADPCTRL);
+ 		writel(val | USB2_ADPCTRL_IDPULLUP, usb2_base + USB2_ADPCTRL);
+ 	}
+-	msleep(20);
++	mdelay(20);
  
--	if (!ch->is_otg_channel || !rcar_gen3_is_any_rphy_initialized(ch))
-+	if (!ch->is_otg_channel || !rcar_gen3_is_any_otg_rphy_initialized(ch))
- 		return -EIO;
+ 	writel(0xffffffff, usb2_base + USB2_OBINTSTA);
+ 	writel(ch->obint_enable_bits, usb2_base + USB2_OBINTEN);
+@@ -436,12 +439,14 @@ static irqreturn_t rcar_gen3_phy_usb2_irq(int irq, void *_ch)
+ 	if (pm_runtime_suspended(dev))
+ 		goto rpm_put;
  
- 	return sprintf(buf, "%s\n", rcar_gen3_is_host(ch) ? "host" :
-@@ -402,6 +400,9 @@ static void rcar_gen3_init_otg(struct rcar_gen3_chan *ch)
- 	void __iomem *usb2_base = ch->base;
+-	status = readl(usb2_base + USB2_OBINTSTA);
+-	if (status & ch->obint_enable_bits) {
+-		dev_vdbg(dev, "%s: %08x\n", __func__, status);
+-		writel(ch->obint_enable_bits, usb2_base + USB2_OBINTSTA);
+-		rcar_gen3_device_recognition(ch);
+-		ret = IRQ_HANDLED;
++	scoped_guard(spinlock, &ch->lock) {
++		status = readl(usb2_base + USB2_OBINTSTA);
++		if (status & ch->obint_enable_bits) {
++			dev_vdbg(dev, "%s: %08x\n", __func__, status);
++			writel(ch->obint_enable_bits, usb2_base + USB2_OBINTSTA);
++			rcar_gen3_device_recognition(ch);
++			ret = IRQ_HANDLED;
++		}
+ 	}
+ 
+ rpm_put:
+@@ -456,6 +461,8 @@ static int rcar_gen3_phy_usb2_init(struct phy *p)
+ 	void __iomem *usb2_base = channel->base;
  	u32 val;
  
-+	if (!ch->is_otg_channel || rcar_gen3_is_any_otg_rphy_initialized(ch))
-+		return;
++	guard(spinlock_irqsave)(&channel->lock);
 +
- 	/* Should not use functions of read-modify-write a register */
- 	val = readl(usb2_base + USB2_LINECTRL1);
- 	val = (val & ~USB2_LINECTRL1_DP_RPD) | USB2_LINECTRL1_DPRPD_EN |
-@@ -465,12 +466,9 @@ static int rcar_gen3_phy_usb2_init(struct phy *p)
- 	writel(USB2_SPD_RSM_TIMSET_INIT, usb2_base + USB2_SPD_RSM_TIMSET);
- 	writel(USB2_OC_TIMSET_INIT, usb2_base + USB2_OC_TIMSET);
+ 	/* Initialize USB2 part */
+ 	val = readl(usb2_base + USB2_INT_ENABLE);
+ 	val |= USB2_INT_ENABLE_UCOM_INTEN | rphy->int_enable_bits;
+@@ -479,6 +486,8 @@ static int rcar_gen3_phy_usb2_exit(struct phy *p)
+ 	void __iomem *usb2_base = channel->base;
+ 	u32 val;
  
--	/* Initialize otg part */
--	if (channel->is_otg_channel) {
--		if (rcar_gen3_needs_init_otg(channel))
--			rcar_gen3_init_otg(channel);
--		rphy->otg_initialized = true;
--	}
-+	/* Initialize otg part (only if we initialize a PHY with IRQs). */
-+	if (rphy->int_enable_bits)
-+		rcar_gen3_init_otg(channel);
- 
- 	rphy->initialized = true;
- 
-@@ -486,9 +484,6 @@ static int rcar_gen3_phy_usb2_exit(struct phy *p)
- 
++	guard(spinlock_irqsave)(&channel->lock);
++
  	rphy->initialized = false;
  
--	if (channel->is_otg_channel)
--		rphy->otg_initialized = false;
--
  	val = readl(usb2_base + USB2_INT_ENABLE);
- 	val &= ~rphy->int_enable_bits;
- 	if (!rcar_gen3_is_any_rphy_initialized(channel))
+@@ -498,16 +507,17 @@ static int rcar_gen3_phy_usb2_power_on(struct phy *p)
+ 	u32 val;
+ 	int ret = 0;
+ 
+-	mutex_lock(&channel->lock);
+-	if (!rcar_gen3_are_all_rphys_power_off(channel))
+-		goto out;
+-
+ 	if (channel->vbus) {
+ 		ret = regulator_enable(channel->vbus);
+ 		if (ret)
+-			goto out;
++			return ret;
+ 	}
+ 
++	guard(spinlock_irqsave)(&channel->lock);
++
++	if (!rcar_gen3_are_all_rphys_power_off(channel))
++		goto out;
++
+ 	val = readl(usb2_base + USB2_USBCTR);
+ 	val |= USB2_USBCTR_PLL_RST;
+ 	writel(val, usb2_base + USB2_USBCTR);
+@@ -517,7 +527,6 @@ static int rcar_gen3_phy_usb2_power_on(struct phy *p)
+ out:
+ 	/* The powered flag should be set for any other phys anyway */
+ 	rphy->powered = true;
+-	mutex_unlock(&channel->lock);
+ 
+ 	return 0;
+ }
+@@ -528,18 +537,12 @@ static int rcar_gen3_phy_usb2_power_off(struct phy *p)
+ 	struct rcar_gen3_chan *channel = rphy->ch;
+ 	int ret = 0;
+ 
+-	mutex_lock(&channel->lock);
+-	rphy->powered = false;
+-
+-	if (!rcar_gen3_are_all_rphys_power_off(channel))
+-		goto out;
++	scoped_guard(spinlock_irqsave, &channel->lock)
++		rphy->powered = false;
+ 
+ 	if (channel->vbus)
+ 		ret = regulator_disable(channel->vbus);
+ 
+-out:
+-	mutex_unlock(&channel->lock);
+-
+ 	return ret;
+ }
+ 
+@@ -750,7 +753,7 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+ 	if (phy_data->no_adp_ctrl)
+ 		channel->obint_enable_bits = USB2_OBINT_IDCHG_EN;
+ 
+-	mutex_init(&channel->lock);
++	spin_lock_init(&channel->lock);
+ 	for (i = 0; i < NUM_OF_PHYS; i++) {
+ 		channel->rphys[i].phy = devm_phy_create(dev, NULL,
+ 							phy_data->phy_usb2_ops);
 -- 
 2.43.0
 
