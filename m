@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AADEDC282E5
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Mar 2025 16:48:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 322CBC19F32
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Mar 2025 16:50:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0oBzbDevdXkMHDZ6qb+d82FurX2BoPYCoJS9WnImdVs=; b=mCKFqXaqdfKr0N
-	v3/9tkTLAfacBSpjxIC0TqQV+UW6UjDl5RUEUgHq1p1qVl3v2/Au6rgc63B5pvYzDQeinmSxHmayX
-	QQAQdjkUXYGjeVBYD8eyQmRp50Yw+9/cMO0bhdcR8nDDD6GKwF5XbrATtOcZPw/QK2iTcHFZ35l8u
-	Xice7+ZTpGOstwOxGiI4l+zP6lv2CO2xHA0v5MByhdBU1EhRHl3qR6m61qyv/ZRY5H5ZdfpN8Nn7Z
-	OqrMVr2Tkz4ayXSfM17GQ6Fd6zNem4zjICqKpAHV62w9MVVnfFzuIFVTvXuHN1hor9fFB/XPdSBar
-	ECS8Fk2MbbDj3uDvVHEA==;
+	List-Owner; bh=Y815CZJWPxydjIE/hUnAKvwoHhTk90DsdAUiOl7/Sqg=; b=N11EnDIoVCfZ1y
+	U3oPxev2VxoKh515+gpWoEG4VdF1Ms0caEgKwMVzqRh74HYGIJ3PRv6683/bXt5Gbj/7QDWL09vQ4
+	Bd4phLzrwL3A7Tv7VKntJ+nl4px/IxcQPszuk16Q2dQ3ENZooQGT3B+fqVhHeYf3RtiBY9pm0IxCq
+	iyDOV3fbW+XEvXOQV3OhPnkLeTUJAUHloLqLrVrHd/6AgLhCDRnLepw7a21KxOgdKrdBY8McViF4C
+	1Ytk2RqC7eG7z4BzVQgSs3sdwM6x9Dh8zKfQGE91GpN2Y3PSuFp/+DBESP4YYpL98OPgFv0GUQcoV
+	nGbH/qi7B2uapUyy/W4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tprvM-00000008ijh-0AR1;
-	Wed, 05 Mar 2025 16:48:48 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tprwu-00000008j4a-3zht;
+	Wed, 05 Mar 2025 16:50:24 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpru7-00000008iY7-45XI
+	id 1tprwL-00000008iwm-3w6e
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Mar 2025 16:47:33 +0000
+	Wed, 05 Mar 2025 16:49:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 876245C6AC9;
-	Wed,  5 Mar 2025 16:45:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 503E6C4CED1;
-	Wed,  5 Mar 2025 16:47:24 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 74D37A45BCD;
+	Wed,  5 Mar 2025 16:44:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EF86C4CED1;
+	Wed,  5 Mar 2025 16:49:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741193251;
-	bh=FVJPWoDeq4yoPcniFg6Kb7tfVkR3gpEbRqN0N/KxiTQ=;
+	s=k20201202; t=1741193388;
+	bh=ezVD29ebK/gLrkeskIDVGIAKaNZstsuD2KgXpnp8K/8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lwKyc4iGceXUQFa+aEJKbz7AwCTxCGiyJhie1W7FTYe09DktSjv0DxTDhX0xK2rLj
-	 IunfijjltiFwFmFBBFK4YqsIoNPOaAk1xWH8oGgNFJR8Zh/1cboCoXf69BUuMvqYHO
-	 32r3xG0ypJoGNcyZ2te46UqBN9EEyWNtprDZPsZceqM+xlXb9nPBtyUlXf5OWsH7y3
-	 ZO/3/SP/TVK/E/vZ3XbK3cj8l9Y16CZ15rBKn2zqGr/U2fGfDUqqnfk2A8B5d6wOaG
-	 0boRlrYj2uQorEm2dx7PKuTtFLR+sQ0yziqIfDRAyN/XaJRdmWlOsj63i4flFbU3Qr
-	 PsHLb5M2saP7w==
-Message-ID: <db186c37-e8f3-4a7d-8024-48832b1208f6@kernel.org>
-Date: Wed, 5 Mar 2025 17:47:21 +0100
+	b=Q2blZTR6y6QKXp4re6ZMBFENgFDVrLsk6PgeqeUHdahCG+YDtLjNiz55C14UyuXPK
+	 MNMGfa55ex5gJlobJq0UwjYjlMLEm9BCOiADXp/P8PsmA6KY4hKv/Dfk5yO/mZ4MtG
+	 cJbn0ger5/+uhPU6AZs9A/GRoqdVMiuC5uBvNY/Wq3NtqFCZ9zgGKnusUcJWpBGiCv
+	 c5omF6nxCp/Zcx0FGtrBrkqXqHBBAT5NfEuG2yysMWV3J6p+XQmqkXzDW1wd+6WPyk
+	 B8XMuBb2upx0AjDm70vIDfuz7JTS0LFziNL8EnGy9KUQmjSuvIO7Ya4s7KG2NLOM7T
+	 qBjt06pP1p7uQ==
+Message-ID: <b28b1778-8996-48a5-901e-807a1b820999@kernel.org>
+Date: Wed, 5 Mar 2025 17:49:39 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 0/6] Enable IPQ5018 PCI support
@@ -57,9 +57,10 @@ To: George Moussalem <george.moussalem@outlook.com>,
  p.zabel@pengutronix.de, quic_nsekar@quicinc.com, robh@kernel.org,
  robimarko@gmail.com, vkoul@kernel.org
 Cc: quic_srichara@quicinc.com
-References: <DS7PR19MB8883BC190797BECAA78EC50F9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
-Content-Language: en-US
+References: <20250305134239.2236590-1-george.moussalem@outlook.com>
+ <DS7PR19MB8883B5F3CC99C0F943BEE9DE9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -103,11 +104,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <DS7PR19MB8883BC190797BECAA78EC50F9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+In-Reply-To: <DS7PR19MB8883B5F3CC99C0F943BEE9DE9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250305_084732_099516_A369B140 
-X-CRM114-Status: UNSURE (   9.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250305_084950_106263_760086C7 
+X-CRM114-Status: GOOD (  10.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,6 +126,9 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 05/03/2025 14:41, George Moussalem wrote:
 > From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+
+Not correct From. Cover letter should be written by you.
+
 > 
 > This patch series adds the relevant phy and controller
 > DT configurations for enabling PCI gen2 support
@@ -135,9 +138,19 @@ On 05/03/2025 14:41, George Moussalem wrote:
 > Last patch series (v2) submitted dates back to August 27, 2024.
 > As I've worked to add IPQ5018 platform support in OpenWrt, I'm
 > continuing the efforts to add Linux kernel support.
+> 
+> v3:
+>   *) Depends on: https://patchwork.kernel.org/project/linux-arm-msm/cover/20250220094251.230936-1-quic_varada@quicinc.com/
 
-Why is this changelog separate? We talked about this 5 revisions ago and
-you keep doing the same mistakes.
+
+Wasn't this applied, so why is it still a dependency?
+
+
+
+>   *) Added 8 MSI SPI and 1 global interrupts (Thanks Mani for confirming)
+
+Who did it? This v3 or other v3? Which v3 is this one here?
+
 
 Best regards,
 Krzysztof
