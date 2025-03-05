@@ -4,62 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BBC5C021B8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Mar 2025 23:44:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C46CC282D3
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Mar 2025 02:39:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0t6UfEYf4Mlczo7E5a3QkAwwbzP5LAikkVIukPxk60A=; b=Llkx/fHhaHpDVk
-	4WQssFIU5fQysuukrWDWBl6N3xgoJUIv/j5Htmzb+uYkI0kDtX5fwFoUAT6Lqth6ty2bclk7v1ogM
-	jpg3DDbFTIWLEw2pQvwVzrdoZGUzuMEyyO3YXTqWNXfZ2sfu0Gg4Z8/6U5BpDGLZC0+JoKNiOLVAa
-	Jcyt3D47azJYJfypiiEN3pn72w0Sdolhw64IlgdEls92HUhBDh+wpSjjZ5V20FNPoDT4mj5i1MtTB
-	Ru47V3ZefNx8NbjppdoyObwsF1KuTdsHH1/YbjjfQ2NyPs7MJIj3GC6cFTpQU6Rnb+K4BRQFjeQOd
-	xHumx4a8RO150g3cD7Gg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0UcRaXSJkscW60If3wei8H0nE0/sd3CkWr0Y8Jw7+Co=; b=QWqnbFcLlBs8B7
+	4iwGrL6aBfImonJW+FgTiQdfHPrDUTeNrMshhmlBIz4K1RQuSGCKx8gQRck6DJ5L91QCt8tEg0aPn
+	3eSK/gMAsZknhP7hWqJvUhVfOBQEr/FixozV22ILp5n7hjRHTx99GHMSs4vy8C3TSFTF2sLVeAMiy
+	/jmeZs+wy7D7msn5w9N8OR3aK5tv3ILcKI9oyfH9sZgo8V8R0FUG7QcORhA+YJNSc6buEb6CNt2un
+	mRD9CqgdZ/XgSOCzAF69WKhWaxCHDhcI7qTvLw/UhayzdGge42dzvBQK9rlXfSKTuS7j4lmgoo+zS
+	Z2M/2wggPR9YbMbYs9zQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpbwP-00000006YMK-1LE1;
-	Tue, 04 Mar 2025 23:44:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tpahq-00000006P7R-0J28;
-	Tue, 04 Mar 2025 22:25:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
-	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4AEB2F;
-	Tue,  4 Mar 2025 14:25:52 -0800 (PST)
-Received: from localhost.localdomain (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
-	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6FEDF3F5A1;
-	Tue,  4 Mar 2025 14:25:36 -0800 (PST)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>
-Cc: devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	linux-kernel@vger.kernel.org,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	linux-mmc@vger.kernel.org,
-	Wim Van Sebroeck <wim@linux-watchdog.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	linux-watchdog@vger.kernel.org,
-	Thomas Gleixner <tglx@linutronix.de>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org
-Subject: [PATCH v2 00/15] arm64: dts: allwinner: Add basic Allwinner A523 support
-Date: Tue,  4 Mar 2025 22:22:54 +0000
-Message-ID: <20250304222309.29385-1-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.46.3
+	id 1tpefM-00000006og7-1MjI;
+	Wed, 05 Mar 2025 02:39:24 +0000
+Received: from mail-lf1-x12f.google.com ([2a00:1450:4864:20::12f])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tpedl-00000006oSg-0vvl
+	for linux-phy@lists.infradead.org;
+	Wed, 05 Mar 2025 02:37:46 +0000
+Received: by mail-lf1-x12f.google.com with SMTP id 2adb3069b0e04-549490e290dso4932751e87.2
+        for <linux-phy@lists.infradead.org>; Tue, 04 Mar 2025 18:37:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1741142263; x=1741747063; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=7+97ZVr2GLGNMwRJ+JHGTl73f9HD8d4XIQHgo+B51+A=;
+        b=VovBAMj5CQTtjIr6FNeeVfGvi6oyErb8PeXKqA0qxzSf4HpHumPGLX3JGSPi0amo2L
+         bLAiX1HVifZ/x7gp8Cybkxms35Z/eTM/90NVvqp/TX8oP9UCwGC6ihV7HJm5qwCl8G8T
+         u2pBh9jfiuFewyUc40UReN1/5vu/ZasT2N9643H8sSMs0/rFRTpUOwxy8wGVS7wSIIm6
+         xMWEPxa3tkPEckcv6lqmP5FeaerK1yIc9RdVrh/FFDfIj8vRS6sdcXjy1vSnInlfiZey
+         X9PLKIYhVL+cA61XoURtYSIGszdM+gMNPLoZph5i2C93jxPbKo7TAr+3plp5XeQfeRTM
+         Johw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741142263; x=1741747063;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=7+97ZVr2GLGNMwRJ+JHGTl73f9HD8d4XIQHgo+B51+A=;
+        b=iu2kNcMSF/ikthKulw87p0wSuwZkExjy/yy+DQ5OWGYEW0GjnL4WsC10aQD5Erhq9Y
+         kTAtfcTfBfLNlLgjB2PeyhueSjinraLp359QSi4Hq9ubr8yxvv7vEIENvjg8Pfsi+SJW
+         I3jSexoikQIGV7bl9iUXyQeAKk/2bPAQKkDRLFwToDDZ5sp47kHs1rQrcemRTuVxWejl
+         L8hLpL0ZhUOS5eH7nMO7Gp3Hwak38seNCo9lviD6m6gD5pr52U+Fi+RyL//sfNvqAw6E
+         P6bVUzUZMPbIBiosa/cI0VDeDNF9a5WxOl4lVs+A19NMwZUhtwFkm3DeiKTP3yjozBDZ
+         cUBw==
+X-Forwarded-Encrypted: i=1; AJvYcCXn78w0/VkKi9VjUWf/VevQoNBm5Gn5oV3jIT3jTNM60FbDRVslvD70yueRWu+ftou2pPgaQAPm2GM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyL2Ye4b/EK3IE8lwS+9DejeiApSnMs+DTBfHOu1sF6UVYmgMj5
+	rFb/OrQUm+tW4e8BKWNtTXooXXdKfR/Bl79wEPA5RtKoSbF5Eej7IEWZeCmsgqY=
+X-Gm-Gg: ASbGnct3ckcp0RBPLCnVv1Kocj8jgNMFZfVuw9hGpNpSJAtuEJjL3za8vrvP1tK3Znw
+	BfnGOafrMnorsJGwkk72Lun3pZpjYQfu5i4A6BkWZZeMGsTh490Yx+QIsNYz1Pn/B2omVdtkrV7
+	FTijUV+zRn+4Sw1Xxxdsju1yG9WqFyx9aEM92TR5PO52Pm0N5tbX74hZR35DPLKiZCrz5fS68qz
+	5v5uZZ1ckk9MOO3Q5d8TCrMvuZgLDsGoLFyandGyB/XqN75tKZ9Xx0evQXpR5Oyx6pBTExTOQwW
+	hBHA30f49kS7qjYklCfpCmlzJlM4lIa/fSlolW1lAPV04ETIIh7mZ46aKqFNzFiJqsVUrx0a/bR
+	6+daH7t9qopKJJ8DLBTfeK7Y7
+X-Google-Smtp-Source: AGHT+IExjENqSk5hjjIhys2YXSgdpIqL5VVjIyb8jsl9tsSbsyXgT3nWgdPRJ4khQWdE/LA6vVB24w==
+X-Received: by 2002:a05:6512:693:b0:545:c7d:1790 with SMTP id 2adb3069b0e04-5497d336432mr449658e87.22.1741142262813;
+        Tue, 04 Mar 2025 18:37:42 -0800 (PST)
+Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5495ba98c6bsm1058122e87.232.2025.03.04.18.37.40
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 04 Mar 2025 18:37:41 -0800 (PST)
+Date: Wed, 5 Mar 2025 04:37:38 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+To: Melody Olvera <quic_molvera@quicinc.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Wesley Cheng <quic_wcheng@quicinc.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
+	Will Deacon <will@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v2 4/9] phy: qcom: qmp-combo: Add new PHY sequences for
+ SM8750
+Message-ID: <jr4lvgumvnjhybvwuo7crpjhaogjvet2d7llt65qzstjnoekuj@zx6z3npa37xg>
+References: <20250304-sm8750_usb_master-v2-0-a698a2e68e06@quicinc.com>
+ <20250304-sm8750_usb_master-v2-4-a698a2e68e06@quicinc.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250304-sm8750_usb_master-v2-4-a698a2e68e06@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250304_142542_200374_F4AFAA6A 
-X-CRM114-Status: GOOD (  23.68  )
+X-CRM114-CacheID: sfid-20250304_183745_263419_63EEEB17 
+X-CRM114-Status: GOOD (  11.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,134 +107,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Tue, Mar 04, 2025 at 01:56:37PM -0800, Melody Olvera wrote:
+> From: Wesley Cheng <quic_wcheng@quicinc.com>
+> 
+> Add new register offsets and PHY values for SM8750. Some of the previous
+> definitions can be leveraged from older PHY versions as offsets within
+> registers have not changed. This also updates the PHY sequence that is
+> recommended after running hardware characterization.
+> 
+> Signed-off-by: Wesley Cheng <quic_wcheng@quicinc.com>
+> Signed-off-by: Melody Olvera <quic_molvera@quicinc.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 221 +++++++++++++++++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v8.h     |  38 ++++
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcs-v8.h         |  32 +++
+>  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h |  64 ++++++
+>  .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v8.h    |  68 +++++++
+>  drivers/phy/qualcomm/phy-qcom-qmp.h                |   5 +
+>  6 files changed, 428 insertions(+)
+> 
 
-this in an update to the series introducing the basic DT support for the
-Allwinner A523 SoC. It now comes with DTs for three boards, using
-slightly different packages of that SoC.[1]
-Functionality-wise it relies on the pinctrl[2] and clock[3] support
-series, though there are no direct code dependency series between the
-series. Three binding patches from there are required to pass dtbs_check,
-git put their patch IDs in the footer below.
-Compared to v1 this drops the patches that have already been merged
-(I2C, USB, RTC), changes the proposed NMI controller binding, extends 
-the SoC .dtsi to include more device instances, also the secondary cores,
-and adds DTs for two new boards. On top of this I added v2 of the DT patch
-for an H616 board, since it shares the newly introduced YuzukiHD vendor
-name patch. Also it adds the tags from the diligent reviewers, many thanks
-for that! More detailed changelog below.
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-The first patches add DT binding documentation for the most basic
-peripherals, most of them actually being already supported, courtesy of
-identical IP being used. This includes MMC and USB 2.0, so with the above
-mentioned clock and pinctrl support this gives an already somewhat usable
-mainline support for this new SoC family.
-The watchdog is not completely compatible, but is an easy addition, so
-this bit is included in here as well, the same is true for the NMI
-controller, required for delivering PMIC interrupts.
-
-The A523 features 8 Arm Cortex-A55 cores, organised in two clusters,
-clocked separately, with different OPP limits, in some kind of
-little/LITTLE configuration. The GPU is a Arm Mali G57 MC01, and the chip
-also features a single PCIe 2.1 lane, sharing a PHY with some USB 3.1
-controller - which means only one of the two can be used.
-The rest of the SoC is the usual soup of multimedia SoC IP, with eDP
-support and two Gigabit Ethernet MACs among the highlights.
-
-The main feature is patch 08/15, which adds the SoC .dtsi. This for now
-is limited to the parts that are supported and could be tested. Compared
-to v1 we now have some basic TF-A support, so the PSCI nodes are in now.
-
-The final patches add basic support for the Avaota-A1 router board, the
-X96QPro+ TV box, and the Radxa A5E development board.
-
-The mainline firmware side in general is coming together now: we have
-basic U-Boot support working (including MMC and USB), most importantly
-with proper DRAM support, so no more binary blobs, and some basic TF-A
-support.
-
-Please have a look at those DT bits here, ideally compare them to the
-available user manual, and test them if you have access to hardware.
-
-Based on v6.14-rc1.
-I pushed a branch with all the three series combined here:
-https://github.com/apritzel/linux/commits/a523-v2/
-
-Cheers,
-Andre
-
-Changelog v1 .. v2:
-- drop USB, I2C, RTC binding patches: already merged
-- add tags from reviewers (with thanks!)
-- drop unrelated deprecation comment from MMC binding patch
-- drop fallback compatible for NMI controller, stands on its own now
-- adjust PHY binding to merged A100 binding (dropping tag)
-- .dtsi: add secondary cores
-- .dtsi: enable PSCI
-- .dtsi: move 32K oscillator to board .dts files
-- .dtsi: adjust CCU source clocks
-- .dtsi: add MMC1 node (typcially for SDIO WiFi)
-- .dtsi: add remaining UARTs
-- .dtsi: add remaing I2C devices
-- add two new board .dts files
-- add DT bindings for those two new board names
-- avaota.dts: drop reserved memory from (TF-A now in SRAM)
-- avaota.dts: drop SD card dummy supply node
-- avaota.dts: add eMMC node (shipped on most boards)
-- avaota.dts: fix OTG mode, explain situation
-- add Chameleon .dts file (depends on YuzukiHD vendor name patch)
-
-[1] https://linux-sunxi.org/A523#Family_of_sun55iw3
-[2] https://lore.kernel.org/linux-sunxi/20250227231447.20161-1-andre.przywara@arm.com/T/#u
-[3] https://lore.kernel.org/linux-sunxi/20250304012805.28594-1-andre.przywara@arm.com/T/#u
-
-Andre Przywara (15):
-  dt-bindings: mmc: sunxi: Simplify compatible string listing
-  dt-bindings: mmc: sunxi: add compatible strings for Allwinner A523
-  dt-bindings: watchdog: sunxi: add Allwinner A523 compatible string
-  watchdog: sunxi_wdt: Add support for Allwinner A523
-  dt-bindings: irq: sun7i-nmi: document the Allwinner A523 NMI
-    controller
-  irqchip/sunxi-nmi: Support Allwinner A523 NMI controller
-  dt-bindings: phy: document Allwinner A523 USB-2.0 PHY
-  arm64: dts: allwinner: Add Allwinner A523 .dtsi file
-  dt-bindings: vendor-prefixes: Add YuzukiHD name
-  dt-bindings: arm: sunxi: Add new board names for A523 generation
-  arm64: dts: allwinner: a523: add Avaota-A1 router support
-  arm64: dts: allwinner: a523: add X96Q-Pro+ support
-  arm64: dts: allwinner: a523: add Radxa A5E support
-  dt-bindings: arm: sunxi: Add YuzukiHD Chameleon board name
-  arm64: dts: allwinner: h616: add YuzukiHD Chameleon support
-
- .../devicetree/bindings/arm/sunxi.yaml        |  20 +
- .../allwinner,sun7i-a20-sc-nmi.yaml           |   1 +
- .../bindings/mmc/allwinner,sun4i-a10-mmc.yaml |  38 +-
- .../phy/allwinner,sun50i-a64-usb-phy.yaml     |   4 +-
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- .../watchdog/allwinner,sun4i-a10-wdt.yaml     |   2 +
- arch/arm64/boot/dts/allwinner/Makefile        |   4 +
- .../sun50i-h618-yuzukihd-chameleon.dts        | 222 +++++++
- .../arm64/boot/dts/allwinner/sun55i-a523.dtsi | 598 ++++++++++++++++++
- .../dts/allwinner/sun55i-a527-radxa-a5e.dts   | 299 +++++++++
- .../dts/allwinner/sun55i-h728-x96qpro+.dts    | 287 +++++++++
- .../dts/allwinner/sun55i-t527-avaota-a1.dts   | 308 +++++++++
- drivers/irqchip/irq-sunxi-nmi.c               |  50 +-
- drivers/watchdog/sunxi_wdt.c                  |  11 +
- 14 files changed, 1807 insertions(+), 39 deletions(-)
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h618-yuzukihd-chameleon.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
- create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-a527-radxa-a5e.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
-
-
-base-commit: 2014c95afecee3e76ca4a56956a936e23283f05b
-prerequisite-patch-id: 5b8a883819d2f3dfc975735a855291cb8b02dd39
-prerequisite-patch-id: ff4d42c2dcb0c3b4be45a4b0b8e22027207979ee
-prerequisite-patch-id: 4596fa402b501a9406821a9535f8329d30bf1ca4
 -- 
-2.46.3
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
