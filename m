@@ -4,68 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98341C19F32
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Mar 2025 14:44:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32447C19F32
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Mar 2025 14:45:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nb8Az5t3fBwcoo5RMHgoQpGJcIjAwlIy5319TdZU3XA=; b=sWO1Fzc8aq/dlH
-	0/gBgL9zjuOLTl6Eo2tP9OsHUMFhiqtTfUp3Bm4d1ZNrpB5GKAs3ap2T3YdOgPJ9nEepHBz0Oxbub
-	fFwPpSrQg4/7urOMZUBr7oYgjGlpK6YsKYmokUJs8jLnzTBnGy6ys6ZGFFgydm+NH1mX53SjzTjD8
-	KYMHen6RqkI6f+vK14SUPIj3Vl8taoYuW1rg0Lk7LhPucL0+APQV5h7OqRccqi59Jh3B4ExneRNek
-	N64HScuutQxfoEsQK1QZANs7kulh7a9UYLn81TQ3YhEhZnd7wscNWEXe9oLWEMTrzp5YT4Gh/h0pk
-	tdeOKGF9QOSCxl1nLXeA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=StvsU9hT9DVBgs00BO/sQBMQ0TdSh1wIt3c7856RPL4=; b=GIA8byjRS8bZcZ
+	0taM+ZmAq0sMul3VbfG1RzqR2IbYBfX2pDh6zjEt6X3l07rdbEradcFG6iluR+DRkabi+yGS7f3XW
+	uN7OTc92q9ZTrOT1n023jjb8I86spR4YIyhEgJSxt222WIQuhKYnJ/aJM28zYG7wizFM6AMSoUxhx
+	ff9GTzicjUh/rSC0/Uf34Ec1uASvqIdXDwOFpMynUPBTIglyxGtYgLO9Fn8Rz6Q9N/BZ7eySMk3SH
+	2luUMHLL3TNHnOdI0bxLrg3MKCDBVCsnN8SnpjPe9p3cceBEaA8wd8wzNwHs3rVxQ2NpG3jS5Tri4
+	rI2Dop1m6o79J9+teZgA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tppyh-00000008OTt-3Qsj;
-	Wed, 05 Mar 2025 14:44:07 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1tpq0G-00000008OeP-40vN;
+	Wed, 05 Mar 2025 14:45:44 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tppye-00000008OT6-3VQA;
-	Wed, 05 Mar 2025 14:44:05 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-43bc31227ecso21356625e9.1;
-        Wed, 05 Mar 2025 06:44:03 -0800 (PST)
+	id 1tppyl-00000008OUZ-0rGX;
+	Wed, 05 Mar 2025 14:44:12 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-390f5556579so3070201f8f.1;
+        Wed, 05 Mar 2025 06:44:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1741185842; x=1741790642; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=cTXHQ//nEUi07Uq1rIglvGA2poPkXrtAOXEjlPFl8vo=;
-        b=WPuE+DMlkt4bJ8913Z5NVFJ0KoQb5GtKlQ+th5g8t7Grcyv15fD6WqXRevl3u8xp97
-         /nB/iqIn2qToutI82QDSnav31uMNmBvfJIX20Ssi//SInCu8+2xpzukaWO8s5vqbC6MG
-         uTuABnxzEMh4A6Phbli+TIRUhR+gUo2izTOi65K0a9RwQ+XuZztl2W9Kr6b22KKQ4u1D
-         xmAZfhJMWIoghkBjc90DkKGJfpB1GeJrmfM0atyPi2Y+LbVIjG+buBmTcYWDtblH5qJj
-         BoyFc2BqHEl67Nf1sfIJJvJ+EKKQH4oLmikPKCZGv8PUosCgqP3cEOnlbXw4mBXBIZGW
-         C+tg==
+        d=gmail.com; s=20230601; t=1741185849; x=1741790649; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=adw/wXG4xAXtVNNpVBpZ7rOz/ozzGq1WFDZ6AcGQFEg=;
+        b=i3OWqoirVmifUsgzEbZLb9bVjMEZMY3woSydlOm4FqRGyTEQIh6bQ8DXmgJZUg+vwL
+         hCS7IeQ873rFwmWnrKALPG4QSGUvdnC/lFgaUZIE7rivs21f9ImspGAu4bp2gpQgUF9c
+         vIGtQxXKgZI0ev4M+J8vYuX25J/eIEmAKivUBJqka9ys/UnGqwPDJESj6wE8vj72OLvS
+         pJzrEqZHeqndWO8kLzAmyoe2Wkqj5e9IGXAvvfb1O8+9KCcuglbTBfXqYVVXe3royhzp
+         4tb84GTz+2ybibbiXMFvboyxN6WFHPV1AYrcCpkspcu3w0j+WBHzRJZrDNt7jXDNEWlg
+         R9ew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741185842; x=1741790642;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=cTXHQ//nEUi07Uq1rIglvGA2poPkXrtAOXEjlPFl8vo=;
-        b=raBBj5tn6MP4Udi8a4TZE7+RlnMQl3GrfLETO0TLlIQVlgahnMFe+4JI3VVMkQrJ52
-         3LBxXrKQxSrYOHT4YxHo97PoNl07Pl3/MOGKMpOEUaOXXNiy/HKyHhsavNgM9fwrlLy+
-         hly3cqwdHTrx4l8Vv9jQ1Z39Yu6XBk18cog3Bk5TaEI647Wpaaq5G4TNtDwSVcKjCzkT
-         Iv2uG+uKAHtwdZzBVjbygXS9NpI8qvNgWQtimvmIuJtjkYEQvwT11om9fc+fqlLXOHKW
-         dXdbIhOXHGbjcPTvwpr5zSDlGO5CxEepGuZh9ar44Kzf+dMCAEvPUTR7jNpj8V/84+Dt
-         DJyg==
-X-Forwarded-Encrypted: i=1; AJvYcCWD4D8ElIza5/67R1DMRPnHNyA/ChN7rS5R7PkpXyL1Ifsxf2iswrGxsfoENBh25C+LCjcoUMyGnpyj4T4Nt6BT@lists.infradead.org
-X-Gm-Message-State: AOJu0YwbsM8pFk95V981I8YYEwauJqtN9hcJ6rTkAPq8ENTAhSqk2Trn
-	jNnc/I3BUP3xiC2inGpMA52WP6NfTZ6GG8kSrOZNbNyhKlVLlQoI
-X-Gm-Gg: ASbGncucC+neJ4qaNXw7Crz9IE7rmpVK8qoPgyQ8o8EMZeXzykOgarQnasDU0g+mhLR
-	y7R5/eHMOkf6qKSN1iEevgMjlXu9P2gpox19zqegRPk9ejHEE/refQH6CpDa1KFomgX3V2ifT3L
-	6ii/4+srvRqWTIK1djjBgudH5VXMDOI7TF2a89T5kxtNZGDWCo+pQZma5u0Y4dtRr1uDgoEoPDv
-	ScPZNTcIkH1/HaLnOQv00gac798GKiyrz38Q1YxSTMsDFquAv57fi0LVFO1M//v40Lzmr+aVsPT
-	y21bka8tsqfVEITQpCfgijUIVyZ1IZqtulcdkbeD8SQTvXQ6
-X-Google-Smtp-Source: AGHT+IFGQUVETDs+aLlL7dxjD2415mCZr3U/Vg5NUkmwRGmaxQKvyXyLdfnVx5+BM6nipcBQc1kDzw==
-X-Received: by 2002:a05:600c:190c:b0:43b:cf29:b577 with SMTP id 5b1f17b1804b1-43bd2891d64mr30345195e9.0.1741185842329;
-        Wed, 05 Mar 2025 06:44:02 -0800 (PST)
+        d=1e100.net; s=20230601; t=1741185849; x=1741790649;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=adw/wXG4xAXtVNNpVBpZ7rOz/ozzGq1WFDZ6AcGQFEg=;
+        b=jpc6W8UKmONStLbqQ/+VJyFkKPTx6A1BfI9wcfZ6hjg9x5Zmbkeh604LiI5sPqM01b
+         IAy86gSumbUe+qSmS92qrxLCBV9iksc//S/vJKnGsLzIWdHRBeRYNBDhX6qpwr43zfC2
+         oXpn/b/aRhsTc1bPhcIdsJ6XDoon5XKfy/fZkSX8FgPM06iN0f0ldCfbI+oNt3XXBC3c
+         cxS/SVuYbJoGOJtpNOHxrio5+QmfcDVH9wXN2BUM2B8qbcAF4HEt7+Uzn10m/FuO22IX
+         jVOIxl1UJJnwLDruxpEheIWs1almjWJJ1XNyUD6XNZZaZc/mYxKn9G75Ft9CKbw4AMF/
+         SdWA==
+X-Forwarded-Encrypted: i=1; AJvYcCWNnAU23+xdVAEFNOfWE6QC0gmb/hJ3aGM5tgFwcoiwWrnYdIlxlZ9r6SNPDoFcRCSLa2rv7XU7DqJV1Sc6a7Pa@lists.infradead.org
+X-Gm-Message-State: AOJu0YytB8OnBTMWXtvymIyV/TUH+pH1BENBMsUrq4VIBrAJPeFH/2yV
+	bPeEWQkIxL1cfG81fpWuyEymy8rY79uZTJQ6KoXYobl3AoQQa/d/TLQCmh+N
+X-Gm-Gg: ASbGncsmysD3ucNNm82xFn7L9qWf/NntR2LKbcdo4Leh1fAK/eLAFwcFza8ZYLOb565
+	2M5Cd0BdZleB963czzfn0akXUSvzB/CH8wGz4QLYjwQy8VkHlw5RB5ef0glLoejcJPmnoB1P/BB
+	DyaIqVWi9mure8NEzEzYJPjAZiCn5Va+jKNUtybs39suczPszVQA4Vjg7SOQj8x7yIxgDUZ8xuw
+	Y0wbD1xp2jCaFJ2s3tU6EdqucFiBAobHEMLQebklOnDj3KPGqNS7Lkd6AIfxsWaNTQgiaDuzbPD
+	ned4Bj4vmsC/qPrJOdKhHlvez6dItrLbRMhIO0+cyodnpS9C
+X-Google-Smtp-Source: AGHT+IFbsaX9wmtUFug2h6kZAAYC0Hb0y6lxNl62FVu79knUqZWExgLI4s21uIXSphigDaJmEpgWiw==
+X-Received: by 2002:a05:6000:2cd:b0:390:ea34:7d83 with SMTP id ffacd0b85a97d-3911f76f519mr3393536f8f.31.1741185849295;
+        Wed, 05 Mar 2025 06:44:09 -0800 (PST)
 Received: from eichest-laptop.. ([178.197.169.96])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43bd435cd8csm19314375e9.40.2025.03.05.06.43.58
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43bd435cd8csm19314375e9.40.2025.03.05.06.44.06
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 05 Mar 2025 06:44:02 -0800 (PST)
+        Wed, 05 Mar 2025 06:44:09 -0800 (PST)
 From: Stefan Eichenberger <eichest@gmail.com>
 To: vkoul@kernel.org,
 	kishon@kernel.org,
@@ -80,16 +81,18 @@ To: vkoul@kernel.org,
 Cc: linux-phy@lists.infradead.org,
 	imx@lists.linux.dev,
 	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/2] phy: freescale: imx8m-pcie: fix and cleanup phy
-Date: Wed,  5 Mar 2025 15:43:14 +0100
-Message-ID: <20250305144355.20364-1-eichest@gmail.com>
+	linux-kernel@vger.kernel.org,
+	Stefan Eichenberger <stefan.eichenberger@toradex.com>
+Subject: [PATCH v2 1/2] phy: freescale: imx8m-pcie: cleanup reset logic
+Date: Wed,  5 Mar 2025 15:43:15 +0100
+Message-ID: <20250305144355.20364-2-eichest@gmail.com>
 X-Mailer: git-send-email 2.45.2
+In-Reply-To: <20250305144355.20364-1-eichest@gmail.com>
+References: <20250305144355.20364-1-eichest@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250305_064404_869786_5CF5CD56 
-X-CRM114-Status: UNSURE (   7.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250305_064411_246059_7B25DCA6 
+X-CRM114-Status: GOOD (  12.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,21 +109,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The imx8m-pcie PHY PLL fails to lock under certain conditions when
-returning from suspend. This is resolved by asserting the PHY reset when
-powering off the PHY during suspend. This ensures that the PHY is
-properly reset when powering on again in resume.
+From: Stefan Eichenberger <stefan.eichenberger@toradex.com>
 
-Changes in v2:
-- Remove unnecessary check if perst is not null (Philipp)
+Remove the switch statement and base perst release on whether it is
+found in the device tree. The probe function fails without the reset
+property, making it mandatory. Therefore, always release reset
+independent of the variant.
 
-Stefan Eichenberger (2):
-  phy: freescale: imx8m-pcie: cleanup reset logic
-  phy: freescale: imx8m-pcie: assert phy reset and perst in power off
+This does not change the behavior of the driver but reduces driver
+complexity and allows for easier future modifications.
 
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 23 +++++++++++++---------
- 1 file changed, 14 insertions(+), 9 deletions(-)
+Signed-off-by: Stefan Eichenberger <stefan.eichenberger@toradex.com>
+---
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 12 +++---------
+ 1 file changed, 3 insertions(+), 9 deletions(-)
 
+diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+index e98361dcdeadf..5b505e34ca364 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
++++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+@@ -141,15 +141,9 @@ static int imx8_pcie_phy_power_on(struct phy *phy)
+ 			   IMX8MM_GPR_PCIE_REF_CLK_PLL);
+ 	usleep_range(100, 200);
+ 
+-	switch (imx8_phy->drvdata->variant) {
+-	case IMX8MP:
+-		reset_control_deassert(imx8_phy->perst);
+-		fallthrough;
+-	case IMX8MM:
+-		reset_control_deassert(imx8_phy->reset);
+-		usleep_range(200, 500);
+-		break;
+-	}
++	reset_control_deassert(imx8_phy->perst);
++	reset_control_deassert(imx8_phy->reset);
++	usleep_range(200, 500);
+ 
+ 	/* Do the PHY common block reset */
+ 	regmap_update_bits(imx8_phy->iomuxc_gpr, IOMUXC_GPR14,
 -- 
 2.45.2
 
