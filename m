@@ -4,59 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8973C19F32
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 01:54:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F7C8C282D1
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 07:20:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0QSjR+DCJzXBBazuTWmaLyBKFHX42v8sLKMlvD3nHMI=; b=MdBWZCONURDQaI
-	IZ1y+p8DsT4K2Omf4TDDlX9EV1k0h3tS8QxUYEqVncNK02WiUPRujkLeNg8sD5QQo2l0RsZqx0sUk
-	tIypC5dWV52ITuUnAKPwZP9emfSoLyghW9gY2Amk2j5c8DLEEbKt5ZxDY7NABXCbdb/ZT5v8qeoKE
-	b/IIzvdGoppu0s9Wuku4umVQHL33FMCbTdn0uwHJUhqFKt4+bpMn6XDXE7GWTXgDJb11rdNgaICwH
-	ncemQcYWwg8zjeXZHBbtqM2dqnyckmNvjhG6EUy2XqQisU6Lak3IRQaI2Rvf8b2y0Z3EUPfv84A+a
-	0RrWGnGDUnyiX9c7W1ag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cvPHSwzptmdmyicyVwc7LM2jSBHu0Wo3HvONGsdz7UY=; b=q9botKsgBULPKX
+	G2Gkm8wZ8Csq86l/GIkxwSJRvOy2dIOJMVa9q8A0WssY3kMtslHAyoJF7Vcuvb5uB/+SG4ZywJeel
+	fZbyCCudGp81gyUPO1YIi+9bz01/m8c+rfyG9IBoZ7/zObNYOseEF+uEzZHsYVvWiwDw9nF9izntv
+	Omn1PorRVTXTVUxx2BJ8L78ierSxzyvhjj1KclPXxYc0P/yrzQ3XefM99pWmSEuNkemzQZJIKJbYd
+	ydOr6NQdeFALO5dbmAMktiBB5RMSqvHL68ZAEjQu/m4TMH3cFJw6ZsorGe/JuIvW7eiOgo3NWKczj
+	GUE/aNcvcAhdcsbHT9IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq0RF-00000009ofj-0MGb;
-	Thu, 06 Mar 2025 01:54:17 +0000
-Received: from mx.treblig.org ([2a00:1098:5b::1])
+	id 1tq5WX-0000000ACHS-1cQa;
+	Thu, 06 Mar 2025 07:20:05 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq0RC-00000009of8-182A
+	id 1tq5Uz-0000000AC6k-3n3j
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Mar 2025 01:54:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=treblig.org
-	; s=bytemarkmx; h=MIME-Version:Message-ID:Date:Subject:From:Content-Type:From
-	:Subject; bh=zUxmmMbgf1RNRHXcyd++iuassFmugcTEcG95pQk+WSA=; b=cGjuCDsYXzKjmAhq
-	B96877Nl4wqf/6a8vCfJFvBq/syZjJA4UZvny5ycWw1d1xe5erw5uo0cP2mDr9VxwtvzjMRoWmWry
-	ci8qpagKCs1aRr8D5w+bl3kv1QxfFiKwl8P+1rdqGbN7bNFu74gDyDK4GxVIV5YITsjOthvjdIh3G
-	+rwTMGeZIMPiQepRfjLA5vrFfrc9SX9Xk7v70UdS9wHTdvuGkSfcbTZyVzjEcxiM8GKmzEm6TFpTP
-	kJVCmi/1dOsZQUWoyxdt9USsIJTlWmy5k/Lzcee4eBYGpm6UC3gGOPHDRkizlfNwPqG1CRi0uMnHL
-	G9ubgnnHABbx8AiV7g==;
-Received: from localhost ([127.0.0.1] helo=dalek.home.treblig.org)
-	by mx.treblig.org with esmtp (Exim 4.96)
-	(envelope-from <linux@treblig.org>)
-	id 1tq0R6-0030Fm-2b;
-	Thu, 06 Mar 2025 01:54:08 +0000
-From: linux@treblig.org
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	corbet@lwn.net
-Cc: linux-phy@lists.infradead.org,
-	linux-doc@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	"Dr. David Alan Gilbert" <linux@treblig.org>
-Subject: [PATCH] phy: core: Remove unused phy_pm_runtime_(allow|forbid)
-Date: Thu,  6 Mar 2025 01:54:08 +0000
-Message-ID: <20250306015408.277729-1-linux@treblig.org>
-X-Mailer: git-send-email 2.48.1
+	Thu, 06 Mar 2025 07:18:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 679915C4A48;
+	Thu,  6 Mar 2025 07:16:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA32AC4CEE0;
+	Thu,  6 Mar 2025 07:18:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1741245508;
+	bh=YLKYVDWQOrV8eI3ckWCLh6O/vZOuW1RwOWw1EBpS7wU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=CvKh7afQvL3Tbft8vQKxA4MuB3CYddx+1IGp/luNUgqCD33ZcEIF9vl46NlJWS7bj
+	 rQ6sTV+jGRMWtITqeVzPXoFHALwgzDNfGSpI1va7/0nZWjZ7P3rWLdLg+Ig78OwJM7
+	 3/Y6v554RWb6oxzS9A9kpdJIOWS5mYJpafLq5K3K63uC55WqZL/IMLFMR9y7yc3GOH
+	 djGhKKSTHs4AnI5CXSesb5abOaMdci5KNnNt9mGK9NQD3w5PFMhsythrpbgTmxYoNM
+	 H83g2kJv/eTl6Y+H5RbB9ND+Mu0BbnPQ4HNNzT2KZqVJmRiOkt+JAofgRrRmyE4Mmv
+	 VV7x+T2EIgLBQ==
+Message-ID: <b118bc5a-9f5c-476d-8af6-31e793ec5479@kernel.org>
+Date: Thu, 6 Mar 2025 08:18:19 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/6] Enable IPQ5018 PCI support
+To: George Moussalem <george.moussalem@outlook.com>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+ andersson@kernel.org, bhelgaas@google.com, conor+dt@kernel.org,
+ devicetree@vger.kernel.org, dmitry.baryshkov@linaro.org, kishon@kernel.org,
+ konradybcio@kernel.org, krzk+dt@kernel.org, kw@linux.com,
+ lpieralisi@kernel.org, manivannan.sadhasivam@linaro.org,
+ p.zabel@pengutronix.de, quic_nsekar@quicinc.com, robh@kernel.org,
+ robimarko@gmail.com, vkoul@kernel.org
+Cc: quic_srichara@quicinc.com
+References: <20250305134239.2236590-1-george.moussalem@outlook.com>
+ <DS7PR19MB8883B5F3CC99C0F943BEE9DE9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+ <b28b1778-8996-48a5-901e-807a1b820999@kernel.org>
+ <DS7PR19MB8883484545BE6AE9E12B5AF69DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <DS7PR19MB8883484545BE6AE9E12B5AF69DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250305_175414_352527_D2F06B89 
-X-CRM114-Status: UNSURE (   8.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250305_231830_135927_2E23EDAF 
+X-CRM114-Status: GOOD (  10.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,105 +126,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: "Dr. David Alan Gilbert" <linux@treblig.org>
+On 05/03/2025 17:59, George Moussalem wrote:
+>> On 05/03/2025 14:41, George Moussalem wrote:
+>>> From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+>> Not correct From. Cover letter should be written by you.
+> Noted. I thought I'd keep the original author included and added my v3 changes which you rightfully pointed out should have been v4 instead.
+> Will remove in next version.
+>>
+>>> This patch series adds the relevant phy and controller
+>>> DT configurations for enabling PCI gen2 support
+>>> on IPQ5018. IPQ5018 has two phys and two controllers, 
+>>> one dual-lane and one single-lane.
+>>>
+>>> Last patch series (v2) submitted dates back to August 27, 2024.
+>>> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
+>>> continuing the efforts to add Linux kernel support.
+>>>
+>>> v3:
+>>>   *) Depends on: https://patchwork.kernel.org/project/linux-arm-msm/cover/20250220094251.230936-1-quic_varada@quicinc.com/
+>>
+>> Wasn't this applied, so why is it still a dependency?
+> I explicitly added it as ipq5332 has not made it to the master branch yet. Should I remove?
 
-phy_pm_runtime_allow() and phy_pm_runtime_forbid() were added in 2013
-as part of
-commit ff764963479a ("drivers: phy: add generic PHY framework")
-but have remained unused.
+If you treat something not yet released as dependency, then please stop
+sending so many versions because nothing here can be applied for this cycle.
 
-Remove them.
-Fix up the (English) docs - I've left the Chinese translation.
+Why is this a dependency?
 
-Signed-off-by: Dr. David Alan Gilbert <linux@treblig.org>
----
- Documentation/driver-api/phy/phy.rst |  3 +--
- drivers/phy/phy-core.c               | 24 ------------------------
- include/linux/phy/phy.h              | 12 ------------
- 3 files changed, 1 insertion(+), 38 deletions(-)
-
-diff --git a/Documentation/driver-api/phy/phy.rst b/Documentation/driver-api/phy/phy.rst
-index 81785c084f3e..719a2b3fd2ab 100644
---- a/Documentation/driver-api/phy/phy.rst
-+++ b/Documentation/driver-api/phy/phy.rst
-@@ -198,8 +198,7 @@ pm_runtime_get_sync of PHY provider device because of parent-child relationship.
- It should also be noted that phy_power_on and phy_power_off performs
- phy_pm_runtime_get_sync and phy_pm_runtime_put respectively.
- There are exported APIs like phy_pm_runtime_get, phy_pm_runtime_get_sync,
--phy_pm_runtime_put, phy_pm_runtime_put_sync, phy_pm_runtime_allow and
--phy_pm_runtime_forbid for performing PM operations.
-+phy_pm_runtime_put and phy_pm_runtime_put_sync for performing PM operations.
- 
- PHY Mappings
- ============
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 8dfdce605a90..8c2c13978299 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -214,30 +214,6 @@ int phy_pm_runtime_put_sync(struct phy *phy)
- }
- EXPORT_SYMBOL_GPL(phy_pm_runtime_put_sync);
- 
--void phy_pm_runtime_allow(struct phy *phy)
--{
--	if (!phy)
--		return;
--
--	if (!pm_runtime_enabled(&phy->dev))
--		return;
--
--	pm_runtime_allow(&phy->dev);
--}
--EXPORT_SYMBOL_GPL(phy_pm_runtime_allow);
--
--void phy_pm_runtime_forbid(struct phy *phy)
--{
--	if (!phy)
--		return;
--
--	if (!pm_runtime_enabled(&phy->dev))
--		return;
--
--	pm_runtime_forbid(&phy->dev);
--}
--EXPORT_SYMBOL_GPL(phy_pm_runtime_forbid);
--
- /**
-  * phy_init - phy internal initialization before phy operation
-  * @phy: the phy returned by phy_get()
-diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
-index 03cd5bae92d3..e63e6e70e860 100644
---- a/include/linux/phy/phy.h
-+++ b/include/linux/phy/phy.h
-@@ -227,8 +227,6 @@ int phy_pm_runtime_get(struct phy *phy);
- int phy_pm_runtime_get_sync(struct phy *phy);
- int phy_pm_runtime_put(struct phy *phy);
- int phy_pm_runtime_put_sync(struct phy *phy);
--void phy_pm_runtime_allow(struct phy *phy);
--void phy_pm_runtime_forbid(struct phy *phy);
- int phy_init(struct phy *phy);
- int phy_exit(struct phy *phy);
- int phy_power_on(struct phy *phy);
-@@ -321,16 +319,6 @@ static inline int phy_pm_runtime_put_sync(struct phy *phy)
- 	return -ENOSYS;
- }
- 
--static inline void phy_pm_runtime_allow(struct phy *phy)
--{
--	return;
--}
--
--static inline void phy_pm_runtime_forbid(struct phy *phy)
--{
--	return;
--}
--
- static inline int phy_init(struct phy *phy)
- {
- 	if (!phy)
--- 
-2.48.1
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
