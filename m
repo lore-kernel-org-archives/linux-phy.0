@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DBD4C282DE
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 16:40:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AF5FC282D1
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 19:30:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KNRXsKh01rhF30GssN/t2CdMz9Ve9tXNYIHSL6EIwmE=; b=DACOn30ZEP41t1
-	iTrJ4cTKm9EgFV9IT+tx/ru73vkGYZ4SLsebplpiNjUS9eD7FpP0WAPSyREduECk4zOJKbtbuyFa6
-	O0W85QT6XTvRLVeKcaKaC1wTzzeJfQIfraIDyw0CygdEwUSxY9/X8M5fOPkukADxOqSoVwpBw/4Os
-	c5Mc6VxPXud60tior2zl7FHCZ9dB9CoLzyojCBPwDsCKreQTK5cyb1x2RZBtbVAJJRUia2jCzNDOb
-	bpkiPknzUEb0DYhytg5N0sDNBzQtBt0PlDKdIZeKQ0/ETKEl+Ry+v6jCo4ibiwUMuWU3RgAbE3kkO
-	q4NHb5Hpj/OWrkroeF8w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KvwP77GcrG8YdSvEtbU3iR5B4F0kqeRnxnbosQK21qM=; b=acrCa8qAN+oizv
+	SCIJc8hZmnKMvETKzk59jjg7EdR65hBvGVT9TK8hCYVE/v23a4eI3OYDyB0lb6aaisw/DE/73tb2l
+	fR+qQo3IsQEa/ER1GIE+aSra49bxUISBcz8cRTlnvnujF6OkeVoVRE79oXkhM0QRcfOeyl9wdrLjp
+	M79+YTIh2xqmPRZEe0RSHhb6+pQ8fHPsIjjwRk1z12ieCNA1jH5d1ffWUzxKITEfXh1gE5GepidAL
+	y0v7Wo4m9mvLtx726VTyIOQWveW02qkcNBH2D/NkV1sjqAcyUrcV/pb2t1uWHM8giovGjlTyi9FP+
+	PS3hUCXJaBbWpmVAegdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqEH1-0000000BXfx-2A2b;
-	Thu, 06 Mar 2025 16:40:39 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1tqGuv-0000000C0zi-0WEO;
+	Thu, 06 Mar 2025 19:30:01 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqEFN-0000000BXMu-3j9w;
-	Thu, 06 Mar 2025 16:38:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1741279135;
-	bh=pf36QmNJXVaZuz3s0mehd9lTyDeLXhfnvdrEPGA0Fj8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=LVdJ9bO6yHENnaiGBkjkHB6ID9jroBGW+832lD2QHbp1MoPDOdOrLAFh5PK67eH3B
-	 J8hW+/HhpWumL0HgRcfXj2n1b964Dgd8IrMCFuVesFqGfwbOHN7DRsMd9U3Y9bJGLq
-	 /1SKMpO2qRhSrh5oztFLL3if988MSDBQxXrnXsaogjwuLH0UpNhEFzfHgjpU4SGLaO
-	 vFlF264y7A44/zYXFotkTS6KgYN/PsL23H8Hw7ZwxYICU3/sySmMCbfoNNICpYPIUu
-	 J087mlZc7AmqD2XPxjTg1d3O7lmHAf3H074JopdaaJYcuvc8+QEn/vrnRaaAV1bdiS
-	 WylyrhmOK71AQ==
-Received: from [192.168.1.90] (unknown [84.232.140.93])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 3232D17E086B;
-	Thu,  6 Mar 2025 17:38:55 +0100 (CET)
-Message-ID: <0600430d-12c1-4af7-9082-76448943b02a@collabora.com>
-Date: Thu, 6 Mar 2025 18:38:53 +0200
+	id 1tqGus-0000000C0xv-0lKz;
+	Thu, 06 Mar 2025 19:29:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1741289383; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=LhMQiTrpinuACBWF/TfiUv/6m6Uc4ebC3J70WJ19u2mQa8pvSEgzxdtBKfmEfSsepufdZxQvWHnIJWiqAaJa2Y/MTRw7vLqLAwrSObGVxWvM3h642MRu8/iLmpqERyLMD8xPiL/tH38PvBosUGgU6ol4yacFd8+6AgoMMg09zKk=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1741289383; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:MIME-Version:Message-ID:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=J3FMXf/kAUtNvuSZsQyWBK8cEK4f3VIEHblgAMIBzL4=; 
+	b=HWWgtKzuBpEKEh1FNUZrVY183c66clDbM0xCkHWA6lDQk8+19U56cJeKuBhTzRhIEJcEiCl3s+lbDFoHLSDVLBx2ssR+oCc6FC48Y0QhC4sHUoPTRpvtcFiGgb+YmAukG4wL6gGNFaH4Pp7YNpcb2nmRlXMIfL3pfjmDZiX4lC8=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1741289383;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:To:To:Cc:Cc:Reply-To;
+	bh=J3FMXf/kAUtNvuSZsQyWBK8cEK4f3VIEHblgAMIBzL4=;
+	b=dS4u8h0NFBtvoCdx0cRje9ZUFtqr9u6I+Waj98wTjoDcIF02fcnN2+87Kgu/gXMx
+	hF1i3mUJIiEmyg2OPIf9/hr8/yWauX/Jfmmh34u6wwCvvmJjsQa0sP/NOJYHWSW6nP2
+	Gg93d9qk9xHLhjs0gCHSEdjTlTPo8OJc21GIUgoo=
+Received: by mx.zohomail.com with SMTPS id 1741289381820148.17280241335516;
+	Thu, 6 Mar 2025 11:29:41 -0800 (PST)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Thu, 06 Mar 2025 20:29:23 +0100
+Subject: [PATCH] phy: phy-rockchip-samsung-hdptx: Add support for RK3576
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 03/12] phy: rockchip: samsung-hdptx: Fix clock ratio
- setup
-To: Maxime Ripard <mripard@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
- Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>,
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, kernel@collabora.com,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-References: <20250304-phy-sam-hdptx-bpc-v4-0-8657847c13f7@collabora.com>
- <20250304-phy-sam-hdptx-bpc-v4-3-8657847c13f7@collabora.com>
- <20250304-small-mindful-mongrel-bd6f8b@houat>
- <155f609f-994f-4140-8453-7e38a5e6deef@collabora.com>
- <20250306-masked-voracious-octopus-be05b8@houat>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20250306-masked-voracious-octopus-be05b8@houat>
+Message-Id: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAJL3yWcC/y3MQQrDIBCF4avIrDtgYp1CrlKySHVSpcRYtcUSc
+ vdK0+X/4H0bZE6eMwxig8Rvn/0aWnQnAcZN4c7obWvoZa+lkoTpofSF0NlYKkb3wTPPREp2RMZ
+ Cu8XEs68/8joenfj5anI5RrhNmdGsy+LLIALXgn9dw7jvX+t/1NeTAAAA
+X-Change-ID: 20250306-rk3576-hdptx-phy-4ef6630166cd
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, 
+ Heiko Stuebner <heiko@sntech.de>, Andy Yan <andyshrk@163.com>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_083858_080374_9DD7DBDC 
-X-CRM114-Status: GOOD (  19.24  )
+X-CRM114-CacheID: sfid-20250306_112958_295210_FE41500D 
+X-CRM114-Status: GOOD (  11.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,71 +83,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/6/25 3:35 PM, Maxime Ripard wrote:
-> On Tue, Mar 04, 2025 at 02:04:18PM +0200, Cristian Ciocaltea wrote:
->> Hi Maxime,
->>
->> On 3/4/25 10:13 AM, Maxime Ripard wrote:
->>> Hi,
->>>
->>> On Tue, Mar 04, 2025 at 03:44:02AM +0200, Cristian Ciocaltea wrote:
->>>> The switch from 1/10 to 1/40 clock ratio must happen when exceeding the
->>>> 340 MHz rate limit of HDMI 1.4, i.e. when entering the HDMI 2.0 domain,
->>>> and not before.
->>>>
->>>> While at it, introduce a define for this rate limit constant.
->>>>
->>>> Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY driver")
->>>> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
->>>> ---
->>>>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 3 ++-
->>>>  1 file changed, 2 insertions(+), 1 deletion(-)
->>>>
->>>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->>>> index f88369864c50e4563834ccbb26f1f9f440e99271..cf2c3a46604cb9d8c26fe5ec8346904e0b62848f 100644
->>>> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->>>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->>>> @@ -320,6 +320,7 @@
->>>>  #define LN3_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
->>>>  #define LN3_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
->>>>  
->>>> +#define HDMI14_MAX_RATE			340000000
->>>>  #define HDMI20_MAX_RATE			600000000
->>>>  
->>>>  enum dp_link_rate {
->>>> @@ -1072,7 +1073,7 @@ static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx,
->>>>  
->>>>  	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
->>>>  
->>>> -	if (rate >= 3400000) {
->>>> +	if (rate > HDMI14_MAX_RATE / 100) {
->>>
->>> The rate seems to come from rk_hdptx_phy_power_on and eventually from
->>> tmds_char_rate in the PHY config options, so its rate is in Hertz.
->>
->> The rate coming from rk_hdptx_phy_power_on() is in hHz, since it passed
->> via dw_hdmi_qp_rockchip_encoder_enable() as
->>
->>   phy_set_bus_width(hdmi->phy, div_u64(rate, 100));
->>
->>> HDMI14_MAX_RATE and HDMI20_MAX_RATE are both defined in Hertz as well.
->>> It seems super odd to mee that you then convert HDMI14_MAX_RATE to hHz?
->>
->> This stems from the ropll_tmds_cfg table containing the configuration
->> params for the supported rates which requires the search keys to be
->> provided in hHz rather than Hz.
->>
->> I agree this is nothing but confusing, that's why I fixed this up in
->> "phy: rockchip: samsung-hdptx: Avoid Hz-hHz unit conversion overhead"
-> 
-> Yeah, sorry, I noticed it after sending the review. Still, I'd advise to
-> put that patch first, it's a bit weird to add more patch we're going to
-> rework later on.
+Despite the compatible already being listed in the bindings, the PHY
+driver never gained explicit support for it. This is especially a
+problem because the explicitly listed PHY addresses need to be specified
+for each SoC.
 
-No worries and yes, I've already planned to move the patch before all
-the others adding more stuff.  I'd still keep this patch as is, to make
-it easier for backporting, as well as the next three patches dropping
-stuff, before continuing with the unit conversion.
+To solve this, add the compatible, and a PHY config, with the address
+gleaned from rk3576.dtsi.
+
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+I thought this must've been already submitted somewhere, but it wasn't
+in linux-next and searching for the modified file on lore also didn't
+yield any results. I guess this slipped through the cracks, and
+torpedoes HDMI support for RK3576 entirely until merged, so it'd be
+great if this could be merged in time for 6.15.
+
+Let me know if I'm just very confused and this is already handled in
+some other series that's about to be applied.
+---
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+index f88369864c50e4563834ccbb26f1f9f440e99271..fe7c057483563686b8076cf2ce562440cfa6fe55 100644
+--- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
++++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+@@ -2017,6 +2017,13 @@ static const struct dev_pm_ops rk_hdptx_phy_pm_ops = {
+ 		       rk_hdptx_phy_runtime_resume, NULL)
+ };
+ 
++static const struct rk_hdptx_phy_cfg rk3576_hdptx_phy_cfgs = {
++	.num_phys = 1,
++	.phy_ids = {
++		0x2b000000,
++	},
++};
++
+ static const struct rk_hdptx_phy_cfg rk3588_hdptx_phy_cfgs = {
+ 	.num_phys = 2,
+ 	.phy_ids = {
+@@ -2026,6 +2033,10 @@ static const struct rk_hdptx_phy_cfg rk3588_hdptx_phy_cfgs = {
+ };
+ 
+ static const struct of_device_id rk_hdptx_phy_of_match[] = {
++	{
++		.compatible = "rockchip,rk3576-hdptx-phy",
++		.data = &rk3576_hdptx_phy_cfgs
++	},
+ 	{
+ 		.compatible = "rockchip,rk3588-hdptx-phy",
+ 		.data = &rk3588_hdptx_phy_cfgs
+
+---
+base-commit: a03be51d680391ba113e2e22b38743c276b6e2fa
+change-id: 20250306-rk3576-hdptx-phy-4ef6630166cd
+
+Best regards,
+-- 
+Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+
 
 -- 
 linux-phy mailing list
