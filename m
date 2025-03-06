@@ -4,65 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D975C282D1
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 08:03:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5B54C282D1
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 12:35:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3Ap+LsYAgIar04AtvN9kQUgM+eRuqhvrsVGKqHVerFs=; b=xcWwEzGyszT4E/
-	OrpC36QxLQLw6ik4TDzcR9wZXboltD8dCr9K4fo5Ho9RM6IRn4fhVXaq3JHRBA4lNWQSrzBnCJZkS
-	a+IlMjPP1h/KDGtvUhHPk4hS2/PnDsvCrH/EnmNgyRrRFIkdL0RQFYyvQigsqJoEKH5ekx/XAItkq
-	SWs20bwxopjgqMsQLUXLr+iEo/j8m2PeVFq9oSzgs5T9/u1YyCi4zqYkyzQf4kAIiteVT+NCmScBT
-	2g+aHVfADB/5YFnL9rzlVM6qioTnQXwUD4FFuiGsceEdE7tLB35gVqY0OPoZpzEo8oIWH7gz7S4fL
-	YScFxfwQJsZXNkct2ZPA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s1VDxyyQpeRI416fVKr7Rj3bDSkya66hqCJwLo48rEc=; b=X3GtxVDc1g+cGg
+	z6WffQx4NpPpRBWnhR7ktn0RPfSdkPNyzefKspFjLVHazkeYhHsd2T7SvrBxRrsi73jsdnjq81p4E
+	WPRYHmpN5y0MCkv3NsRZ6vvdLoBQS8XjFdx02Ird70clML4Ldi6DXQMVcM/nJpCrTzGcSOnmBUNzX
+	IyHYRMRRYA3lPxH4dQc+Yl26hQikiDf2xc7AczrZbUKwax8sdv8eH/tGCzgqLkyshw1MDmq6hcbNB
+	pwYLjVvcKJ+CZLUnMsF9/uCMNA63naSy7+k0PGr4UEvl0EwfXvINRALQzMBESzQhygYYH5cs3RXRF
+	LX4Hb4cWnYNxgEwKMVqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq6Cu-0000000AHFC-2De1;
-	Thu, 06 Mar 2025 08:03:52 +0000
-Received: from m16.mail.163.com ([220.197.31.5])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq5DS-0000000AA6V-054L;
-	Thu, 06 Mar 2025 07:00:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=r1mvt
-	tKmdlTjRafAKsHmhCEZ5T95Om0QyJBHPC6if+o=; b=FalPWDW582aligSeJEfAG
-	Oz7pbNRCnY6FUKb5mA9MLzgBXqEGm5oRtgNAMLE76osO/UiFQsVFfknfoE7jof4n
-	TQU3m/UScnP2Xo91U81YzeHosLi7Wc8CDt9B+1gVarjhYPJKbbo/QUgBom/poZOw
-	pV4twSAAkiT5FP7MiqAz5M=
-Received: from ProDesk.. (unknown [])
-	by gzga-smtp-mtada-g1-4 (Coremail) with SMTP id _____wA33j_pR8lnNEKOPw--.129S2;
-	Thu, 06 Mar 2025 14:59:57 +0800 (CST)
-From: Andy Yan <andyshrk@163.com>
-To: vkoul@kernel.org
-Cc: heiko@sntech.de,
-	kishon@kernel.org,
-	sebastian.reichel@collabora.com,
-	yubing.zhang@rock-chips.com,
-	dmitry.baryshkov@linaro.org,
-	frank.wang@rock-chips.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	Andy Yan <andy.yan@rock-chips.com>
-Subject: [PATCH] phy: rockchip: usbdp: Check these parameters only when the corresponding set flags are set
-Date: Thu,  6 Mar 2025 14:59:51 +0800
-Message-ID: <20250306065952.485809-1-andyshrk@163.com>
-X-Mailer: git-send-email 2.43.0
+	id 1tqARU-0000000AwBG-2Eh6;
+	Thu, 06 Mar 2025 12:35:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tq9mg-0000000Aqiu-0wE1
+	for linux-phy@lists.infradead.org;
+	Thu, 06 Mar 2025 11:53:03 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id D85945C496D;
+	Thu,  6 Mar 2025 11:50:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0B25C4CEE0;
+	Thu,  6 Mar 2025 11:52:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1741261981;
+	bh=LQPrmf7uG+8Fr9VtxG+XGKKBjfeYRFi99VmmRd1dpn4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=ZeLkR0hDTEkJox75RxKfCiemup8/yVuaOL8oJAy+8gtBrILnM8cp9jMY56H/QoWZ5
+	 6XPaSwlIm8dwhfReLWy4U/YHDcdW6VSN6oqNeTHFMpEr8Rc/v6dT/GweAJfcK+XLC1
+	 fDLH1dzcxVXDsLw4fL92Qzfrt1davPCvbMBV9iuScRefKD10KYHjbb7e02cH3KM6YU
+	 bk7UjK2wEQ6eSd4RygulbSKYhdGXLVUDvJgcQU2CgDKqV4+tFSFOkxbjR8rMe7QD+l
+	 pG2PlXRbyJBeHcOGe3qV/L7/GaWFJRN1x0DdhLe6rnvC/SHL69bCY/o83z8W9q7ZHg
+	 hqEsax7DZ4epg==
+Message-ID: <41b400fe-5e08-42c0-9bc6-a238d25d155a@kernel.org>
+Date: Thu, 6 Mar 2025 12:52:48 +0100
 MIME-Version: 1.0
-X-CM-TRANSID: _____wA33j_pR8lnNEKOPw--.129S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxZF1DJFyUtryfWF45ZF1fZwb_yoW5XrW3p3
-	y5JF4Dtr1UGw13Wa9xtr1kCFn8J3Z7ta17JrWakaySqw13A3yrZF929ryfAr4fGr97ZF1f
-	uFW3Ga45CF4DZ3JanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jFzuAUUUUU=
-X-Originating-IP: [58.22.7.114]
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqBoIXmfJRa42mQAAsO
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v11 3/7] dt-bindings: PCI: qcom: Use sdx55 reg description
+ for ipq9574
+To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
+ lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
+ p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
+ dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
+ linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+References: <20250220094251.230936-1-quic_varada@quicinc.com>
+ <20250220094251.230936-4-quic_varada@quicinc.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20250220094251.230936-4-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250305_230022_498387_F7A63D73 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20250306_035302_370136_FD448CCF 
+X-CRM114-Status: GOOD (  12.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,127 +124,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Andy Yan <andy.yan@rock-chips.com>
+On 20/02/2025 10:42, Varadarajan Narayanan wrote:
+> All DT entries except "reg" is similar between ipq5332 and ipq9574. ipq9574
+> has 5 registers while ipq5332 has 6. MHI is the additional (i.e. sixth
+> entry). Since this matches with the sdx55's "reg" definition which allows
+> for 5 or 6 registers, combine ipq9574 with sdx55.
+> 
+> This change is to prepare ipq9574 to be used as ipq5332's fallback
+> compatible.
+> 
+> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
-According documentation of phy_configure_opts_dp, at the configure
-stage, we should only verify/configure the link_rate when set_rate
-flag is set, the same applies to lanes and voltage.
+Unreviewed.
 
-So we do it as the documentation says, also record the link rate
-and lanes in phy internal for set_voltate stage.
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+> v8: Add 'Reviewed-by: Krzysztof Kozlowski'
+> ---
+>  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> index 7235d6554cfb..4b4927178abc 100644
+> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
+> @@ -169,7 +169,6 @@ allOf:
+>              enum:
+>                - qcom,pcie-ipq6018
+>                - qcom,pcie-ipq8074-gen3
+> -              - qcom,pcie-ipq9574
 
-Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
----
+Why you did not explain that you are going to affect users of DTS?
 
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 63 +++++++++++------------
- 1 file changed, 31 insertions(+), 32 deletions(-)
+NAK
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index c04cf64f8a35..d1bbdf382aa2 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -187,6 +187,8 @@ struct rk_udphy {
- 	u32 dp_aux_din_sel;
- 	bool dp_sink_hpd_sel;
- 	bool dp_sink_hpd_cfg;
-+	unsigned int link_rate;
-+	unsigned int lanes;
- 	u8 bw;
- 	int id;
- 
-@@ -1102,42 +1104,39 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
- 	return 0;
- }
- 
--static int rk_udphy_dp_phy_verify_link_rate(unsigned int link_rate)
--{
--	switch (link_rate) {
--	case 1620:
--	case 2700:
--	case 5400:
--	case 8100:
--		break;
--
--	default:
--		return -EINVAL;
--	}
--
--	return 0;
--}
--
- static int rk_udphy_dp_phy_verify_config(struct rk_udphy *udphy,
- 					 struct phy_configure_opts_dp *dp)
- {
--	int i, ret;
-+	int i;
- 
--	/* If changing link rate was required, verify it's supported. */
--	ret = rk_udphy_dp_phy_verify_link_rate(dp->link_rate);
--	if (ret)
--		return ret;
-+	/* Verify link rate. */
-+	if (dp->set_rate) {
-+		switch (dp->link_rate) {
-+		case 1620:
-+		case 2700:
-+		case 5400:
-+		case 8100:
-+			udphy->link_rate = dp->link_rate;
-+			break;
-+
-+		default:
-+			return -EINVAL;
-+		}
-+	}
- 
- 	/* Verify lane count. */
--	switch (dp->lanes) {
--	case 1:
--	case 2:
--	case 4:
--		/* valid lane count. */
--		break;
-+	if (dp->set_lanes) {
-+		switch (dp->lanes) {
-+		case 1:
-+		case 2:
-+		case 4:
-+			/* valid lane count. */
-+			udphy->lanes = dp->lanes;
-+			break;
- 
--	default:
--		return -EINVAL;
-+		default:
-+			return -EINVAL;
-+		}
- 	}
- 
- 	/*
-@@ -1146,7 +1145,7 @@ static int rk_udphy_dp_phy_verify_config(struct rk_udphy *udphy,
- 	 */
- 	if (dp->set_voltages) {
- 		/* Lane count verified previously. */
--		for (i = 0; i < dp->lanes; i++) {
-+		for (i = 0; i < udphy->lanes; i++) {
- 			if (dp->voltage[i] > 3 || dp->pre[i] > 3)
- 				return -EINVAL;
- 
-@@ -1243,9 +1242,9 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
- 	}
- 
- 	if (dp->set_voltages) {
--		for (i = 0; i < dp->lanes; i++) {
-+		for (i = 0; i < udphy->lanes; i++) {
- 			lane = udphy->dp_lane_sel[i];
--			switch (dp->link_rate) {
-+			switch (udphy->link_rate) {
- 			case 1620:
- 			case 2700:
- 				regmap_update_bits(udphy->pma_regmap,
--- 
-2.34.1
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
