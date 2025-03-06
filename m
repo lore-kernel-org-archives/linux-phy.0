@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17129C282EC
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 12:38:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D079C28B25
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 12:38:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jp3Lud7J7eNZT/KiW1lDf1VnNa+nRtIRf7N5Da1FFVs=; b=HmvF2uMey4hBU1
-	uZuiqdUkINTfsFDF6IoZYzVSeurZGbTB8YvLIE0xjKWg2OOI2AlA8CrmjIkLbw3UiPiiC6/ppfPS8
-	jjmXFYG9hptSLt+28UAO8PokWGEGGzDQvz3iZcHZEHvHPgNe1rRpPvSHCPqwgeBiAgZ72hjemkF7q
-	Km27beJdOkroShBr+PDi3+ehaywLzKlJH9N31FWyyAintn9562TtTOcYypMwAil83QwBybpU1N+/a
-	+CLHls9mREqFNTcfk6NIu4Y1xwpsCiX06vRrxdpbeGKBKLtzKJKguxrDyOPadIjgDXHRsTAtUpmQZ
-	64LqD/BjVC+OcRdFLRjA==;
+	List-Owner; bh=bwy+d8/4pvZhI21CFpY/I8jtMivbY5+bGe9xG3tWaPA=; b=HehZ6GM4hpppFb
+	GuLvNN3VyjsGv9e61/ug0NmHeq/BhmJaLSCGzLmdwQEQpFRdHTOMuXG8hRUh2AXTVZ5L6asqTou3Y
+	4TynLDTnvrxEB2nZ3e7czB82HSDRESYK0YASRi0wENSRBriAVR0WgKoqG4NNqvOW72JhZNPH5oCTS
+	SFdAl5HaC3yGvB1kxgzyYbRjua6vscX83QJa/5BFjLYE+ZEb0htOwz45tALn9rp7oIaKKMaHIRPlT
+	tD3BI3z3cSgp9uomUucWeo4k140EDXQt88wo6QP5Od/WY3uerKrkCGKtJUsbnJP1DVIwYnv4JdzV8
+	xeDCtQ2qY6KmZVaflQgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqAUv-0000000Awd1-2seV;
+	id 1tqAUv-0000000AwdJ-48Qt;
 	Thu, 06 Mar 2025 12:38:45 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq9zc-0000000As7p-29Q0
+	id 1tqA13-0000000AsHZ-30Nr
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Mar 2025 12:06:25 +0000
+	Thu, 06 Mar 2025 12:07:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id EE07CA44AC6;
-	Thu,  6 Mar 2025 12:00:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5A2E4C4CEE0;
-	Thu,  6 Mar 2025 12:06:16 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 34693A44B97;
+	Thu,  6 Mar 2025 12:02:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE637C4CEE0;
+	Thu,  6 Mar 2025 12:07:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741262783;
-	bh=6EeTt0mHg23uX/2+kk+snOHOVgGOdG3sudRhjrNIZGA=;
+	s=k20201202; t=1741262871;
+	bh=NlU0gg8AeWW2f9ArRApbcpaNdIQd4XJcU+8xGWz+9ew=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=XvQZaJNzmbwnNSphxC1PVQVeGwKsNU4VQUsJLN3EoB+6lMr8a/GiQcA2xAgmyzDP0
-	 ZFbH8hx93K5TrYJL80aI3mSbpoHss8NT5E2kWHUywVlX5OxBppgxX94956at0XeinR
-	 CGLm2v6QaPkv+TFjaOBOZlyeKYryliNChSfhl3tm4ykg3v4FABIOA5gM2kKTR6dGXx
-	 jf/HBG5eXxui39FdhUbHXBIuWZ3sYAjUSWh0MzWNQCM3aDj8w5kTEn3pJzXuX8ZOCr
-	 6HofLEmsV7uxLHSUFY8BpC76N8fgj7pUsRlvF00PKrGRxoEheB7Y+WbhpyTSyizE0/
-	 Yz+Nf4NrJ5GHQ==
-Message-ID: <33bb1cb2-0c5e-402b-a5c6-9604b1dd8d99@kernel.org>
-Date: Thu, 6 Mar 2025 13:06:13 +0100
+	b=de4uz2jSgZU9N4pFhpfEDbVij61/8v541lgsF5MC/ytPXjdu2tpx15MqjlSpbAVNO
+	 ZUySnIXJH8ag6ZBBQNr480tAvwTZG+tsk4szx7MCUtGq2XylzNfjUMhrqVNhsRRwRg
+	 vNKTZctsDrRx5LjKtwaEDsuH41AVM7bNnRwq77tmtX6I/LXoTYQm1MapM0797fatoS
+	 G8rFnhEFcTww0btPUGMo8jbfKLY6ZQZwPW9DKDCJsmqm4AtYPf/B+/0xm2283TyyU6
+	 PpExu7BnBGVF92yX/miYfqhmKBhWxdTdTQM3i27Vl7Likywjo9SYKrY92sN96qFA7Y
+	 E3jLeox0aCeew==
+Message-ID: <962ab699-70c8-4f9b-88a4-91a8908ab5e2@kernel.org>
+Date: Thu, 6 Mar 2025 13:07:42 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v11 3/7] dt-bindings: PCI: qcom: Use sdx55 reg description
- for ipq9574
+Subject: Re: [PATCH v11 6/7] arm64: dts: qcom: ipq5332: Add PCIe related nodes
 To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
  lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
  robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
@@ -56,12 +55,12 @@ To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
  dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Praveenkumar I <quic_ipkumar@quicinc.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 References: <20250220094251.230936-1-quic_varada@quicinc.com>
- <20250220094251.230936-4-quic_varada@quicinc.com>
- <41b400fe-5e08-42c0-9bc6-a238d25d155a@kernel.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <20250220094251.230936-7-quic_varada@quicinc.com>
 Content-Language: en-US
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -105,10 +104,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <41b400fe-5e08-42c0-9bc6-a238d25d155a@kernel.org>
+In-Reply-To: <20250220094251.230936-7-quic_varada@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_040624_683784_91B75B5D 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20250306_040753_897590_E158EB34 
+X-CRM114-Status: UNSURE (   5.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,50 +125,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 06/03/2025 12:52, Krzysztof Kozlowski wrote:
-> On 20/02/2025 10:42, Varadarajan Narayanan wrote:
->> All DT entries except "reg" is similar between ipq5332 and ipq9574. ipq9574
->> has 5 registers while ipq5332 has 6. MHI is the additional (i.e. sixth
->> entry). Since this matches with the sdx55's "reg" definition which allows
->> for 5 or 6 registers, combine ipq9574 with sdx55.
->>
->> This change is to prepare ipq9574 to be used as ipq5332's fallback
->> compatible.
->>
->> Acked-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
->> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+On 20/02/2025 10:42, Varadarajan Narayanan wrote:
+> From: Praveenkumar I <quic_ipkumar@quicinc.com>
 > 
-> Unreviewed.
+> Add phy and controller nodes for pcie0_x1 and pcie1_x2.
 > 
->> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
->> ---
->> v8: Add 'Reviewed-by: Krzysztof Kozlowski'
->> ---
->>  Documentation/devicetree/bindings/pci/qcom,pcie.yaml | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
->> index 7235d6554cfb..4b4927178abc 100644
->> --- a/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
->> +++ b/Documentation/devicetree/bindings/pci/qcom,pcie.yaml
->> @@ -169,7 +169,6 @@ allOf:
->>              enum:
->>                - qcom,pcie-ipq6018
->>                - qcom,pcie-ipq8074-gen3
->> -              - qcom,pcie-ipq9574
-> 
-> Why you did not explain that you are going to affect users of DTS?
-> 
-> NAK
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> Signed-off-by: Praveenkumar I <quic_ipkumar@quicinc.com>
+> Signed-off-by: Varadarajan Narayanan <quic_varada@quicinc.com>
+> ---
+> v10: Trim down the list of assigned clocks
+>      Fix arch/arm64/boot/dts/qcom/ipq5332.dtsi:627.24-729.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "80000"
+>      Rearrange nodes w.r.t. address sort order
 
-I did not connect the dots, but I pointed out that you break users and
-your DTS is wrong:
-https://lore.kernel.org/all/f7551daa-cce5-47b3-873f-21b9c5026ed2@kernel.org/
-
-so you should come back with questions to clarify what to do, not keep
-pushing this incorrect patchset.
-
-My bad, I should really have zero trust.
+NAK, depends on broken PCI bindings being reverted.
 
 Best regards,
 Krzysztof
