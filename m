@@ -4,110 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 639F3C282D1
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 13:49:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C74B2C282EC
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 14:49:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DabmO8B4T7fxLFwGA8wpk21vqSdJmlT+Cl47Bs0j1sY=; b=Z+3/Da5Ly72nAb
-	Bray39z0eWqeXcuJnFE9kSUy8B8azgQFRK6VyOcTDfUJqdsT0KUHTxJpz33Gxd6viaUSGe73TrUwQ
-	809Fc1u4ockH0EktPMEzoI09gaE66yvDdqilh3UML4R5FKdX/XoHN4L5kACMun/OtNDSUFPMuxhnB
-	Tbgl+egL/Kx28OZhEjbewJbt5pKW2K9baldb73mVYPpn0yX/Rd7X4e4MJXrrbXwuCqma7y+ZBhR1g
-	IOn6Us52smuCzWTazoaq8lwY1vL3gkU+t3mvIMSjzxAOKymGC4TmGNwp+uPcfTGauUOOWB0KWz3gL
-	NPQTirN2wx8tLajn+ORw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=v1rrKj+znpGt7QD3VeK1DuHmVBOFYSzjdDke4FjPQ80=; b=lwjnIF0GWxxzDUoYvU8rFb4E+A
+	1uXEm/DA4LdTBx4y45VDH/B2pjdniSUiYOt81kyjpjd760kM+3ZZAGzonQwElJZgUK9LR7okByQMN
+	QS5xmm2zJfl5Bk6IywP/r0A7n4zFXwMw8VdsfB0NtBrehb7kt+t1vvEB3P1MUcXWeZaCom3V3mFq8
+	rTdnS5r/jdvjIVJvAzlIXpteMerIuswshf38JMFwKcVKDC63X2+yR/m2OkXSTx57Myg8ZoReVrMLe
+	so0hewbPETD3sxRg4NUIvbxpBBqC80DOhaqQMue4dAjPm3WbHg9etFXY0OHpG/SVwqnJ8yxZVnKEE
+	jRuefI8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqBau-0000000B6Lr-0cNS;
-	Thu, 06 Mar 2025 13:49:00 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1tqCWy-0000000BEtU-2G94;
+	Thu, 06 Mar 2025 14:49:00 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq9jI-0000000AqDg-1mtz
-	for linux-phy@lists.infradead.org;
-	Thu, 06 Mar 2025 11:49:33 +0000
+	id 1tqBNj-0000000B4Tk-3j5Q;
+	Thu, 06 Mar 2025 13:35:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id D22AF5C55B9;
-	Thu,  6 Mar 2025 11:47:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FEFBC4CEE0;
-	Thu,  6 Mar 2025 11:49:23 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id 147E5A44C5D;
+	Thu,  6 Mar 2025 13:29:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE9BAC4CEE5;
+	Thu,  6 Mar 2025 13:35:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741261771;
-	bh=mV0euh285v75kNmGgabf/yMOj5wCPrSi9H0U89iCxAc=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=FP8MOTltSChGzSWIIP/TRET8MsI3JgKJcfGqXFtVG+9sX/lg5J+A5MBLnUca0wyOF
-	 yBklM6TJ7SSMB1RS46d1FhV71Oezo3T0f5vPVXyzyRNnRfw12AfPXnEZThNHWrqpAp
-	 gbFsepCzt2aQYj6RUFXdioySZTZFRq6AicEr0bLYoFyjUPVvxRrCH7zPJDfv92hteF
-	 7UsZC/D7tbGU31NbF4YcMtXKTTXAvgDoEich/m1PjY717TeSCeKtqUjhMr7YXNR58s
-	 ielWYvCIvWjNGewbSwd+ciWevhff9SIPUdP7IcNR8gklB03BIHOON4t6Dz4Rf6MEN9
-	 QU5QJij+D6u1Q==
-Message-ID: <b3d7374e-b144-4b0a-96f8-0538f9cd1a39@kernel.org>
-Date: Thu, 6 Mar 2025 12:49:20 +0100
+	s=k20201202; t=1741268122;
+	bh=TEsU6Ht+78gm09L1SBIsP4bdIB/vCUld4RHRuN+JlCg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Q+TL6TFUsUtdn/wseDX/hYan08UFevaGvb3dKbl/pMQO1gxynYz1WPVc+GwbDdGSg
+	 G6VVxvTMlQ151wtr2rH2dXaRev4a14umu7sY4Zpa2E8jjqn2gzTw/l+8SCDIEpXjkQ
+	 SSvUXWrM+81mTvqh60ZrJFDki3uEYB6At22GMnkZYwODW1iKnJgtlGNQ18rpCVuwuZ
+	 rA923hDM/3tLy0TqI8K+ZM49CkkiPZGP4b/ICuIOQNEH0aHIwSOuINFcFghhD2ubZW
+	 qGqH8P7KYxHxv4Pt5qntnkp7sYPguNuZ0Rl6JwC+DQwcBKr6i/dsnUfA0pel585GA0
+	 i0LNrLA0fM4/A==
+Date: Thu, 6 Mar 2025 14:35:19 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>, 
+	Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>, 
+	Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, kernel@collabora.com, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org
+Subject: Re: [PATCH v4 03/12] phy: rockchip: samsung-hdptx: Fix clock ratio
+ setup
+Message-ID: <20250306-masked-voracious-octopus-be05b8@houat>
+References: <20250304-phy-sam-hdptx-bpc-v4-0-8657847c13f7@collabora.com>
+ <20250304-phy-sam-hdptx-bpc-v4-3-8657847c13f7@collabora.com>
+ <20250304-small-mindful-mongrel-bd6f8b@houat>
+ <155f609f-994f-4140-8453-7e38a5e6deef@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v11 4/7] arm64: dts: qcom: ipq9574: Reorder reg and
- reg-names
-To: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
- lpieralisi@kernel.org, kw@linux.com, manivannan.sadhasivam@linaro.org,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
- p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
- dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250220094251.230936-1-quic_varada@quicinc.com>
- <20250220094251.230936-5-quic_varada@quicinc.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250220094251.230936-5-quic_varada@quicinc.com>
+In-Reply-To: <155f609f-994f-4140-8453-7e38a5e6deef@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_034932_556297_80D04465 
-X-CRM114-Status: UNSURE (   7.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250306_053524_058292_19DC25CB 
+X-CRM114-Status: GOOD (  25.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,43 +73,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1082844799068247110=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 20/02/2025 10:42, Varadarajan Narayanan wrote:
-> The 'reg' & 'reg-names' constraints used in the bindings and dtsi are
-> different resulting in dt_bindings_check errors. Re-order the reg entries,
 
-Why?
-
-> fix the node names and move the nodes to maintain sort order to address the
-
-Fixing (how?) node name looks like separate problem.
+--===============1082844799068247110==
+Content-Type: multipart/signed; micalg=pgp-sha384;
+	protocol="application/pgp-signature"; boundary="5o2wzlaqjbtp76c4"
+Content-Disposition: inline
 
 
-> following errors/warnings.
-> 
-> 	arch/arm64/boot/dts/qcom/ipq9574-rdp449.dtb: pcie@20000000: reg-names:0: 'parf' was expected
+--5o2wzlaqjbtp76c4
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v4 03/12] phy: rockchip: samsung-hdptx: Fix clock ratio
+ setup
+MIME-Version: 1.0
 
-So this was added back in 2024 and never tested?
+On Tue, Mar 04, 2025 at 02:04:18PM +0200, Cristian Ciocaltea wrote:
+> Hi Maxime,
+>=20
+> On 3/4/25 10:13 AM, Maxime Ripard wrote:
+> > Hi,
+> >=20
+> > On Tue, Mar 04, 2025 at 03:44:02AM +0200, Cristian Ciocaltea wrote:
+> >> The switch from 1/10 to 1/40 clock ratio must happen when exceeding the
+> >> 340 MHz rate limit of HDMI 1.4, i.e. when entering the HDMI 2.0 domain,
+> >> and not before.
+> >>
+> >> While at it, introduce a define for this rate limit constant.
+> >>
+> >> Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY dr=
+iver")
+> >> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> >> ---
+> >>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 3 ++-
+> >>  1 file changed, 2 insertions(+), 1 deletion(-)
+> >>
+> >> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drive=
+rs/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> >> index f88369864c50e4563834ccbb26f1f9f440e99271..cf2c3a46604cb9d8c26fe5=
+ec8346904e0b62848f 100644
+> >> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> >> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> >> @@ -320,6 +320,7 @@
+> >>  #define LN3_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
+> >>  #define LN3_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
+> >> =20
+> >> +#define HDMI14_MAX_RATE			340000000
+> >>  #define HDMI20_MAX_RATE			600000000
+> >> =20
+> >>  enum dp_link_rate {
+> >> @@ -1072,7 +1073,7 @@ static int rk_hdptx_ropll_tmds_mode_config(struc=
+t rk_hdptx_phy *hdptx,
+> >> =20
+> >>  	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
+> >> =20
+> >> -	if (rate >=3D 3400000) {
+> >> +	if (rate > HDMI14_MAX_RATE / 100) {
+> >=20
+> > The rate seems to come from rk_hdptx_phy_power_on and eventually from
+> > tmds_char_rate in the PHY config options, so its rate is in Hertz.
+>=20
+> The rate coming from rk_hdptx_phy_power_on() is in hHz, since it passed
+> via dw_hdmi_qp_rockchip_encoder_enable() as
+>=20
+>   phy_set_bus_width(hdmi->phy, div_u64(rate, 100));
+>=20
+> > HDMI14_MAX_RATE and HDMI20_MAX_RATE are both defined in Hertz as well.
+> > It seems super odd to mee that you then convert HDMI14_MAX_RATE to hHz?
+>=20
+> This stems from the ropll_tmds_cfg table containing the configuration
+> params for the supported rates which requires the search keys to be
+> provided in hHz rather than Hz.
+>=20
+> I agree this is nothing but confusing, that's why I fixed this up in
+> "phy: rockchip: samsung-hdptx: Avoid Hz-hHz unit conversion overhead"
 
-> 	arch/arm64/boot/dts/qcom/ipq9574.dtsi:1045.24-1127.5: Warning (simple_bus_reg): /soc@0/pcie@20000000: simple-bus unit address format error, expected "88000"
-> 
-> Move the nodes to maintain sort order w.r.t address.
-> 
+Yeah, sorry, I noticed it after sending the review. Still, I'd advise to
+put that patch first, it's a bit weird to add more patch we're going to
+rework later on.
 
-I don't understand this commit msg and huge diff does not help. It's
-very difficult to spot the actual changes and since Qualcomm was never
-testing this in the past, I do not believe it is being tested now.
+Maxime
 
-Clearly explain what is the problem - *each of them*.
+--5o2wzlaqjbtp76c4
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Best regards,
-Krzysztof
+-----BEGIN PGP SIGNATURE-----
+
+iJUEABMJAB0WIQTkHFbLp4ejekA/qfgnX84Zoj2+dgUCZ8mklwAKCRAnX84Zoj2+
+dqsKAX4nqDcG5Vb45Qfy+reElIgfRIEkKdypEs03k8+dDGrmbgN4qMjCkJ/EBkjn
+HbmMAisBfRB4vWfpfcqsMV2LqZBvfAivr19nVh8LflLAH8Q/WFHnP5NlHsqmOcuv
+WXoDH3DoGQ==
+=ZIQ8
+-----END PGP SIGNATURE-----
+
+--5o2wzlaqjbtp76c4--
+
+
+--===============1082844799068247110==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1082844799068247110==--
+
