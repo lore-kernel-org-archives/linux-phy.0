@@ -4,50 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F7C8C282D1
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 07:20:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BE88C282D1
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 07:24:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cvPHSwzptmdmyicyVwc7LM2jSBHu0Wo3HvONGsdz7UY=; b=q9botKsgBULPKX
-	G2Gkm8wZ8Csq86l/GIkxwSJRvOy2dIOJMVa9q8A0WssY3kMtslHAyoJF7Vcuvb5uB/+SG4ZywJeel
-	fZbyCCudGp81gyUPO1YIi+9bz01/m8c+rfyG9IBoZ7/zObNYOseEF+uEzZHsYVvWiwDw9nF9izntv
-	Omn1PorRVTXTVUxx2BJ8L78ierSxzyvhjj1KclPXxYc0P/yrzQ3XefM99pWmSEuNkemzQZJIKJbYd
-	ydOr6NQdeFALO5dbmAMktiBB5RMSqvHL68ZAEjQu/m4TMH3cFJw6ZsorGe/JuIvW7eiOgo3NWKczj
-	GUE/aNcvcAhdcsbHT9IQ==;
+	List-Owner; bh=/5qpf7/1P4e/ROPsbrYrDX4Iy8FR756EJj7CKWhf3RA=; b=lDV3TaxZFKOeZj
+	fSUkmEVKaymFw3J8Y9B28FYw0+X3fOWwCIuhk81UoGvGaGZNeBxmQMv5Qgxxfit5j/DHNoHO5oXtK
+	MZr9uv0XPcRxWSSIfxjt6QRg3cn6VLpRWzXGSiWCnZc5zR38LVQ3prAIY8e0zosQCg4Hq64n+ADVN
+	0J92bejGjCydRI4vJeQEytK+5at8BLal31lc0qDRi3w8P3ruEeCRyfej6hlh2fTcVh+uMi8cjL5v9
+	bejHZQq1OK/nGIMVeAD+6HXB3jm8iwEIjSgNuGa2FYhOIP8uujcU+BM3k8XF1t9BJ51V7uRpTQWOU
+	UAB+cgHA2JJcRGXTq5rw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq5WX-0000000ACHS-1cQa;
-	Thu, 06 Mar 2025 07:20:05 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tq5ae-0000000ACbS-00vy;
+	Thu, 06 Mar 2025 07:24:20 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq5Uz-0000000AC6k-3n3j
+	id 1tq5ab-0000000ACb7-1LRP
 	for linux-phy@lists.infradead.org;
-	Thu, 06 Mar 2025 07:18:31 +0000
+	Thu, 06 Mar 2025 07:24:18 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 679915C4A48;
-	Thu,  6 Mar 2025 07:16:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA32AC4CEE0;
-	Thu,  6 Mar 2025 07:18:21 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id E58335C54A4;
+	Thu,  6 Mar 2025 07:21:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BD243C4CEE4;
+	Thu,  6 Mar 2025 07:24:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741245508;
-	bh=YLKYVDWQOrV8eI3ckWCLh6O/vZOuW1RwOWw1EBpS7wU=;
+	s=k20201202; t=1741245856;
+	bh=fufvW07eBLoyK26nh7xqxSSJVeU193rLs4MeIXNWyt4=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=CvKh7afQvL3Tbft8vQKxA4MuB3CYddx+1IGp/luNUgqCD33ZcEIF9vl46NlJWS7bj
-	 rQ6sTV+jGRMWtITqeVzPXoFHALwgzDNfGSpI1va7/0nZWjZ7P3rWLdLg+Ig78OwJM7
-	 3/Y6v554RWb6oxzS9A9kpdJIOWS5mYJpafLq5K3K63uC55WqZL/IMLFMR9y7yc3GOH
-	 djGhKKSTHs4AnI5CXSesb5abOaMdci5KNnNt9mGK9NQD3w5PFMhsythrpbgTmxYoNM
-	 H83g2kJv/eTl6Y+H5RbB9ND+Mu0BbnPQ4HNNzT2KZqVJmRiOkt+JAofgRrRmyE4Mmv
-	 VV7x+T2EIgLBQ==
-Message-ID: <b118bc5a-9f5c-476d-8af6-31e793ec5479@kernel.org>
-Date: Thu, 6 Mar 2025 08:18:19 +0100
+	b=rM7Ruas4RD+YHhFuiYZO7582WtCK+aYXHRB+fFIxw3Z2Gf3F0DEeBNQds59DTngNq
+	 /H5nT49qstGD40L0ce8nJtaatWsGT3HdJeMy8+fkMWtDFgwGAi3Q3tsDPRXE5zzRbA
+	 0fgXcOav8LTwgqOMB6rDa6kI1IcHADI2aGZ38VGZVgoEhlTyr4v9QyEZRTEP0DC1ZZ
+	 JJ6fA+42g/qxfO4j+DCCFA4zISFZizG+SAVuorVarttdyT2csN3V+UBGvTJvcm2iEQ
+	 vs/ZSUO46aEhrE0rTdVb4XaFJ+qX674/lz2fzLxH7m3lbn7xhsKC8gKZUDsKNTJ9ms
+	 0kZerVwlE//QQ==
+Message-ID: <2ef018c4-884a-4390-906c-8898b31228a5@kernel.org>
+Date: Thu, 6 Mar 2025 08:24:06 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/6] Enable IPQ5018 PCI support
+Subject: Re: [PATCH v3 3/6] dt-bindings: PCI: qcom: Add IPQ5018 SoC
 To: George Moussalem <george.moussalem@outlook.com>,
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
  linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
  andersson@kernel.org, bhelgaas@google.com, conor+dt@kernel.org,
@@ -58,9 +59,9 @@ To: George Moussalem <george.moussalem@outlook.com>,
  robimarko@gmail.com, vkoul@kernel.org
 Cc: quic_srichara@quicinc.com
 References: <20250305134239.2236590-1-george.moussalem@outlook.com>
- <DS7PR19MB8883B5F3CC99C0F943BEE9DE9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
- <b28b1778-8996-48a5-901e-807a1b820999@kernel.org>
- <DS7PR19MB8883484545BE6AE9E12B5AF69DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+ <DS7PR19MB8883E7167E44F92DBC29FF3C9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+ <a95b4c01-9d8c-49eb-8242-93ae411caec0@linaro.org>
+ <DS7PR19MB888309B506D25ABA03F218EB9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,10 +107,11 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <DS7PR19MB8883484545BE6AE9E12B5AF69DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+In-Reply-To: <DS7PR19MB888309B506D25ABA03F218EB9DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250305_231830_135927_2E23EDAF 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20250305_232417_455909_85C53618 
+X-CRM114-Status: UNSURE (   7.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,32 +128,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/03/2025 17:59, George Moussalem wrote:
+On 05/03/2025 17:41, George Moussalem wrote:
+> 
+> 
+> On 3/5/25 19:51, Krzysztof Kozlowski wrote:
 >> On 05/03/2025 14:41, George Moussalem wrote:
 >>> From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
->> Not correct From. Cover letter should be written by you.
-> Noted. I thought I'd keep the original author included and added my v3 changes which you rightfully pointed out should have been v4 instead.
-> Will remove in next version.
->>
->>> This patch series adds the relevant phy and controller
->>> DT configurations for enabling PCI gen2 support
->>> on IPQ5018. IPQ5018 has two phys and two controllers, 
->>> one dual-lane and one single-lane.
 >>>
->>> Last patch series (v2) submitted dates back to August 27, 2024.
->>> As I've worked to add IPQ5018 platform support in OpenWrt, I'm
->>> continuing the efforts to add Linux kernel support.
->>>
->>> v3:
->>>   *) Depends on: https://patchwork.kernel.org/project/linux-arm-msm/cover/20250220094251.230936-1-quic_varada@quicinc.com/
->>
->> Wasn't this applied, so why is it still a dependency?
-> I explicitly added it as ipq5332 has not made it to the master branch yet. Should I remove?
+>>> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+>> Nope, that's not a correct chain. Apply it yourself and check results.
+> this series is dependent on the series to add support for IPQ5332:
+> https://lore.kernel.org/all/20250220094251.230936-1-quic_varada@quicinc.com/
+> which was applied to dt-bindings
 
-If you treat something not yet released as dependency, then please stop
-sending so many versions because nothing here can be applied for this cycle.
-
-Why is this a dependency?
+Your comment is not relevant to reported problem. Instead of
+disagreeing, why can't you try it yourself and see?
 
 Best regards,
 Krzysztof
