@@ -4,139 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4007C282D1
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 15:34:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DBD4C282DE
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 16:40:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rd+1hvC5z8sIMMBSixP8Ez6ljK5J+LkNHnaDsVTpJds=; b=QePEHtPt6WgNfY
-	8dS3CM6Wi1855SU7sGbDCnIc+lOUpB7j15Vys19wFFu6YzLDGzohch20OzisuhFa0Qq4S5WO674kK
-	msrsUgjdSsfnKl7vaSuPeaZLW9sFPiTAqzdL/Rj0iTdKMxxYT7FzE/AwkyhCOjrqU9PcM/kXIRliY
-	F7DrGeK3dJMIyv4Bc0fKDXOK9wa/+BDW0lfB1B65iy3jMhXHIGX1OwMFDR+bLx83dgNHGluy/NpTD
-	Lm3R8ano+k7iwPBHZ3GFxsBoFLFgVFr7hbMSX9c8iFwjI9/hKIdupDjr6wD33lr0qaVwHRmXuNRMn
-	OKjlEs52vYiCBj7JLa8Q==;
+	List-Owner; bh=KNRXsKh01rhF30GssN/t2CdMz9Ve9tXNYIHSL6EIwmE=; b=DACOn30ZEP41t1
+	iTrJ4cTKm9EgFV9IT+tx/ru73vkGYZ4SLsebplpiNjUS9eD7FpP0WAPSyREduECk4zOJKbtbuyFa6
+	O0W85QT6XTvRLVeKcaKaC1wTzzeJfQIfraIDyw0CygdEwUSxY9/X8M5fOPkukADxOqSoVwpBw/4Os
+	c5Mc6VxPXud60tior2zl7FHCZ9dB9CoLzyojCBPwDsCKreQTK5cyb1x2RZBtbVAJJRUia2jCzNDOb
+	bpkiPknzUEb0DYhytg5N0sDNBzQtBt0PlDKdIZeKQ0/ETKEl+Ry+v6jCo4ibiwUMuWU3RgAbE3kkO
+	q4NHb5Hpj/OWrkroeF8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqDEW-0000000BL4c-1h5P;
-	Thu, 06 Mar 2025 15:34:00 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1tqEH1-0000000BXfx-2A2b;
+	Thu, 06 Mar 2025 16:40:39 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqBC7-0000000B2fU-14FR
-	for linux-phy@bombadil.infradead.org;
-	Thu, 06 Mar 2025 13:23:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=0DZEXLtvckg77OKbPWSinx9ePyO3OTpVuNl/L9SQffo=; b=cX0HhLHWUMwobZd+/lswrUKvgU
-	Dfh/HWzuMn1NLLG/5SETUnHefAdZHYfSka+1K7c//zlhZdMEvxq4QuKTn/CJUZsN1Zn24pMMbSr0F
-	DcI0XfjnOv5fOjisX1JypebOn82w8/CTOMVILtJz+ZfciGJV4ByAoZrtENHQytBgCGice274V7fpv
-	fdP/9SuQaljHciJABGJdo1pI079sYug/kzLI2ZMU4/FyNzODhCRhiiOVxxRYYbd5KXrUEt09FcO0i
-	Gd5uQ00gvupYfMEo1hf33IfzDpPQuBda9yil3Dh2F2gCA9l/TtEoyuYEUVT6MKBKBMlvc03sd7sMx
-	rVsv2tcQ==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqBC3-000000015t9-37zn
-	for linux-phy@lists.infradead.org;
-	Thu, 06 Mar 2025 13:23:22 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 526BTbGq005915
-	for <linux-phy@lists.infradead.org>; Thu, 6 Mar 2025 13:23:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	0DZEXLtvckg77OKbPWSinx9ePyO3OTpVuNl/L9SQffo=; b=FS1e4M4eG7fceDlI
-	M2ep1aDG6hXEqT93mvFWc/hMR4EkpJRCo8haa8A3OG63B5rUgFPikHGKWLuLWGjT
-	3EE+kElQAgVQwLI3NesIqga+K3oPwhhdHvCLDt5ei7TFsksSkNksMTzFr41IVI0m
-	T5/6oeGGRL+i5qPYVPjBd4sOVf3xUVvjibYcdMCNTkkMwCvdwKH6Rojk2tNNP0lF
-	aw0FafPaWBBNy+A8LW2cn6v3j9neWEcBjikxywcr+7Ydi4K8RCjsae9KHBJvd1Cf
-	uLAhSK3CgPVvgz2RmU3Jjj7eetvWV/Yh1xSu4lyz6rTOEpJE+X0oLFNJ1cbMBasF
-	4gDYVw==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4571sd9xfa-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 06 Mar 2025 13:23:13 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-22368a8979cso12308335ad.2
-        for <linux-phy@lists.infradead.org>; Thu, 06 Mar 2025 05:23:13 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741267393; x=1741872193;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=0DZEXLtvckg77OKbPWSinx9ePyO3OTpVuNl/L9SQffo=;
-        b=cetTEeZSn6Rr3PNY0eBmqUlk9MkiCW+CDJJUqWnsmBTPD++uwLRgvDbPPU+c+HyaVs
-         MmCfuCaqJZH1+U6QSx3g+8lheawDPYPyC21mzxdk0qiDg6nwzbR9J9fJPhCK4UvtHD3N
-         5Dk7N5N7nu/cJUEiEbLlK7dl8bVgvUMArq+OhicYhmssNn+gFWdyoC/H/OpxergNWsPN
-         STBwAjPWAFMEsutiEilZ3BGGMsIlL5lwn9U5RBlR+D+ez9sJBH2ABTqUaM5qAxppYbrY
-         Hc2RUkafLebpVg/kk8rEdzOcArw3rrWXPhxz5csvGmP7Oj54wHQVL6qdI0MhoatwxUNV
-         4sZw==
-X-Forwarded-Encrypted: i=1; AJvYcCUc3UqJRkE9CN4NjbnEDe4dR5mkLTTFOZX8cenWZRl1pZDcNBr3kXDfjhuUrdaodBDLhxpkV6FDEqA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxe0VUqFRhWZV90Rj+0MUuDbSyPdG8pTW8MOQ60fiQBvbi+PkMV
-	4xjYL8XKFmxwHyH7aWxlL/28eeKdiq6fsiBaMFKhvZ+QJh7bVn0YEOJDPoOU/H3QFux9By96lzP
-	YX0+guQkGtWOGBJ0+cwBIW9G0exwn9ANu359BCp0j/BWHggloR3FtePKQm97ckfQN
-X-Gm-Gg: ASbGncur0q57jPCj54SDfeRtHZyeXmG0FOnbBBxqgpiMe9QqB/sZW0iBkdYbXrEX3Dn
-	Vs2WGc5OTEtjMXvtxWQfU1eH/SpOGMxSC6ulQBHfDlY1iosyBasoLxsUZBMcNSw2yk5dwXIF1MZ
-	3DS70V659I5z4M1gKaWn9FS4NmsYilU6AMS3iQbW4gfVlsjv2E54K8Nb+Vm6Hv4RP2Srinn/IyH
-	1WhUmpBD3kWtnFpRQUrWAklmbvpLuSr7UR2EEn02uwKmSjnyQ9y+/TtWRZedA/snaHRLEYYtpMZ
-	Pxkag0v5pBNkiAvi4aPYR7PNYK4sFJxexAaCoINwNXORzt++qQ==
-X-Received: by 2002:a17:902:fc4b:b0:224:3c6:7865 with SMTP id d9443c01a7336-22403c67a23mr67829975ad.3.1741267392855;
-        Thu, 06 Mar 2025 05:23:12 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHbYidSvuynVuK36jDbOsSSNftXONqK2eAyUE5lvUJs2SLMWYNYB1pVzMJ9GgmFNxu1gv7dAg==
-X-Received: by 2002:a17:902:fc4b:b0:224:3c6:7865 with SMTP id d9443c01a7336-22403c67a23mr67829575ad.3.1741267392487;
-        Thu, 06 Mar 2025 05:23:12 -0800 (PST)
-Received: from [192.168.100.7] ([175.101.107.52])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-224109dd5f8sm11798665ad.52.2025.03.06.05.23.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 06 Mar 2025 05:23:12 -0800 (PST)
-Message-ID: <163cab94-3271-44ed-a211-300087f4bd83@oss.qualcomm.com>
-Date: Thu, 6 Mar 2025 18:53:06 +0530
+	id 1tqEFN-0000000BXMu-3j9w;
+	Thu, 06 Mar 2025 16:38:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1741279135;
+	bh=pf36QmNJXVaZuz3s0mehd9lTyDeLXhfnvdrEPGA0Fj8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=LVdJ9bO6yHENnaiGBkjkHB6ID9jroBGW+832lD2QHbp1MoPDOdOrLAFh5PK67eH3B
+	 J8hW+/HhpWumL0HgRcfXj2n1b964Dgd8IrMCFuVesFqGfwbOHN7DRsMd9U3Y9bJGLq
+	 /1SKMpO2qRhSrh5oztFLL3if988MSDBQxXrnXsaogjwuLH0UpNhEFzfHgjpU4SGLaO
+	 vFlF264y7A44/zYXFotkTS6KgYN/PsL23H8Hw7ZwxYICU3/sySmMCbfoNNICpYPIUu
+	 J087mlZc7AmqD2XPxjTg1d3O7lmHAf3H074JopdaaJYcuvc8+QEn/vrnRaaAV1bdiS
+	 WylyrhmOK71AQ==
+Received: from [192.168.1.90] (unknown [84.232.140.93])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 3232D17E086B;
+	Thu,  6 Mar 2025 17:38:55 +0100 (CET)
+Message-ID: <0600430d-12c1-4af7-9082-76448943b02a@collabora.com>
+Date: Thu, 6 Mar 2025 18:38:53 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: (subset) [PATCH v3 0/3] Add support for USB controllers on QCS615
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Johan Hovold <johan+linaro@kernel.org>,
-        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
-        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org
-References: <20241224084621.4139021-1-krishna.kurapati@oss.qualcomm.com>
- <173505391861.950293.11120368190852109172.b4-ty@kernel.org>
- <anfqf3jvh7timbvbfqfidylb4iro47cdinbb2y64fdalbiszum@2s3n7axnxixb>
- <Z2sJK9g7hiHnPwYA@vaman>
- <i7gptvn2fitpqypycjhsyjnp63s2w5omx4jtpubylfc3hx3m5l@jbuin5uvxuoc>
- <Z2sOl9ltv0ug4d82@vaman>
- <318620fc-e174-4ef3-808a-69fe1d4e1df5@oss.qualcomm.com>
- <f607aa9b-018c-4df6-9921-725693353f65@oss.qualcomm.com>
- <CAA8EJpr48k_tHKk-uVpAH7TMcp0-V97x6ztdFrbv0Go0a6kD2g@mail.gmail.com>
- <Z683g5yuSu1Pi0pM@vaman>
+Subject: Re: [PATCH v4 03/12] phy: rockchip: samsung-hdptx: Fix clock ratio
+ setup
+To: Maxime Ripard <mripard@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, kernel@collabora.com,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+References: <20250304-phy-sam-hdptx-bpc-v4-0-8657847c13f7@collabora.com>
+ <20250304-phy-sam-hdptx-bpc-v4-3-8657847c13f7@collabora.com>
+ <20250304-small-mindful-mongrel-bd6f8b@houat>
+ <155f609f-994f-4140-8453-7e38a5e6deef@collabora.com>
+ <20250306-masked-voracious-octopus-be05b8@houat>
 Content-Language: en-US
-From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-In-Reply-To: <Z683g5yuSu1Pi0pM@vaman>
-X-Proofpoint-ORIG-GUID: 4kASem35SdnMoO8vRVwtlyoxyVBCWETV
-X-Authority-Analysis: v=2.4 cv=W6PCVQWk c=1 sm=1 tr=0 ts=67c9a1c1 cx=c_pps a=IZJwPbhc+fLeJZngyXXI0A==:117 a=x49Km1ku1+q3EoAjmEejnQ==:17 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=EUspDBNiAAAA:8 a=W_DWO0qsI84jIeYb1FMA:9 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: 4kASem35SdnMoO8vRVwtlyoxyVBCWETV
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-06_05,2025-03-06_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
- phishscore=0 clxscore=1015 impostorscore=0 spamscore=0 malwarescore=0
- mlxlogscore=831 adultscore=0 bulkscore=0 suspectscore=0 mlxscore=0
- lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
- definitions=main-2503060102
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20250306-masked-voracious-octopus-be05b8@houat>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_132320_376260_ED089CD9 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20250306_083858_080374_9DD7DBDC 
+X-CRM114-Status: GOOD (  19.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,36 +78,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 2/14/2025 6:00 PM, Vinod Koul wrote:
-> On 23-01-25, 09:23, Dmitry Baryshkov wrote:
->> On Thu, 23 Jan 2025 at 09:00, Krishna Kurapati
->> <krishna.kurapati@oss.qualcomm.com> wrote:
-> 
->>>> As mentioned in the cover letter, the bindings of phy have been merged
->>>> from v1.
+On 3/6/25 3:35 PM, Maxime Ripard wrote:
+> On Tue, Mar 04, 2025 at 02:04:18PM +0200, Cristian Ciocaltea wrote:
+>> Hi Maxime,
+>>
+>> On 3/4/25 10:13 AM, Maxime Ripard wrote:
+>>> Hi,
 >>>
->>> Hi Vinod,
+>>> On Tue, Mar 04, 2025 at 03:44:02AM +0200, Cristian Ciocaltea wrote:
+>>>> The switch from 1/10 to 1/40 clock ratio must happen when exceeding the
+>>>> 340 MHz rate limit of HDMI 1.4, i.e. when entering the HDMI 2.0 domain,
+>>>> and not before.
+>>>>
+>>>> While at it, introduce a define for this rate limit constant.
+>>>>
+>>>> Fixes: 553be2830c5f ("phy: rockchip: Add Samsung HDMI/eDP Combo PHY driver")
+>>>> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+>>>> ---
+>>>>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 3 ++-
+>>>>  1 file changed, 2 insertions(+), 1 deletion(-)
+>>>>
+>>>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>> index f88369864c50e4563834ccbb26f1f9f440e99271..cf2c3a46604cb9d8c26fe5ec8346904e0b62848f 100644
+>>>> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>> @@ -320,6 +320,7 @@
+>>>>  #define LN3_TX_SER_RATE_SEL_HBR2_MASK	BIT(3)
+>>>>  #define LN3_TX_SER_RATE_SEL_HBR3_MASK	BIT(2)
+>>>>  
+>>>> +#define HDMI14_MAX_RATE			340000000
+>>>>  #define HDMI20_MAX_RATE			600000000
+>>>>  
+>>>>  enum dp_link_rate {
+>>>> @@ -1072,7 +1073,7 @@ static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx,
+>>>>  
+>>>>  	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
+>>>>  
+>>>> -	if (rate >= 3400000) {
+>>>> +	if (rate > HDMI14_MAX_RATE / 100) {
 >>>
->>>    Can you help in taking in the patch-3. As mentioned in previous mail,
->>> the bindings are merged and present in linux-next.
+>>> The rate seems to come from rk_hdptx_phy_power_on and eventually from
+>>> tmds_char_rate in the PHY config options, so its rate is in Hertz.
+>>
+>> The rate coming from rk_hdptx_phy_power_on() is in hHz, since it passed
+>> via dw_hdmi_qp_rockchip_encoder_enable() as
+>>
+>>   phy_set_bus_width(hdmi->phy, div_u64(rate, 100));
+>>
+>>> HDMI14_MAX_RATE and HDMI20_MAX_RATE are both defined in Hertz as well.
+>>> It seems super odd to mee that you then convert HDMI14_MAX_RATE to hHz?
+>>
+>> This stems from the ropll_tmds_cfg table containing the configuration
+>> params for the supported rates which requires the search keys to be
+>> provided in hHz rather than Hz.
+>>
+>> I agree this is nothing but confusing, that's why I fixed this up in
+>> "phy: rockchip: samsung-hdptx: Avoid Hz-hHz unit conversion overhead"
 > 
-> Can you pls post it after rebasing
-> 
+> Yeah, sorry, I noticed it after sending the review. Still, I'd advise to
+> put that patch first, it's a bit weird to add more patch we're going to
+> rework later on.
 
-Hi Vinod,
-
-  I see the patch-3 is applying cleanly on top of latest linux next. Do 
-you suggest sending a rebase or v3 is fine ?
-
-Regards,
-Krishna,
+No worries and yes, I've already planned to move the patch before all
+the others adding more stuff.  I'd still keep this patch as is, to make
+it easier for backporting, as well as the next three patches dropping
+stuff, before continuing with the unit conversion.
 
 -- 
 linux-phy mailing list
