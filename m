@@ -4,64 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25C83C282D1
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Mar 2025 20:22:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41C39C282D1
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Mar 2025 01:02:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+voJ5ansDMdPDG3KOKdPPsjN3mFui0d3QRNDRw8uftk=; b=Dv6GOgBD8HRDfO
-	bwJxEguU4ZHX5HSLUCrXkWmIg0eqFc3IpMF2vlAUiH9G/0cbZf/EQjRgB8afvWavLCQlF9paAp3PZ
-	/TlEPZEnWEr0jwlJFB/mZKYHPlQfO0AZqsUSUl5er+VdWvwAsi0f8ZFtQ4LtD5OHVD+P7l2sI6wVV
-	AphyQeVCgSFKgEItZAuOW19HYqbMkf9zzov0mjGMbM01vjQv9fGwdTB1/D279uOe7wXI5jGyKHR4F
-	1nac2UcHpcIUUj27n020+aykJ7jePBKBpYC2OgmjnbEqrNxgOmHNh04XA3tGol3GT3I+hwyz2xE1C
-	5MThVoIzTbRpYgAjhPrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RP17EDecTDyB8dFfZ8TkrTpu5T0JycTTBBObLoRCjv0=; b=pBxQozlEqwVCSW
+	HK2jWa6RsJRT2kAAjaTwPaCNcK7y301RbUMFhGPqaCBrEnDfj9i1H7n0aAzLsD67S7tAEQLbIWQWr
+	3Xp0MeW6H2I87gmhYm2RwJEU16iB6X3/Vn1gDeITbPTfb0LS0x4rPWNHuE/wVVOd+AsCLvyyazQbY
+	xjY9gDRmP+WyjdDIRSipqrvBopvl210dkHRHcAkNcU7BM1VfbLbzSQL7wUJjjPZ1h06QlBadxPQXv
+	AaFr0wZH3jbrH9cbev3BO++vlzk7HjHZg1PPu3LvK4W76loR0CJHKmMxD8bAL1RD0tjImjaTeHsjT
+	ewbQAYRhnDEOh+Ng4DVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqHk0-0000000C7F5-3Ykf;
-	Thu, 06 Mar 2025 20:22:48 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqHiK-0000000C73H-3P5q;
-	Thu, 06 Mar 2025 20:21:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1741292463;
-	bh=GxiDbWNKqgCU+Ke2LkaMoGFA8CQamRLz9lTuH/1CJBM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=huKYhB1cXv9cYSWddmu4w08vq6rgbNjAoZOibXwlNZGjgw1NRnpTyWqL235l0T/ct
-	 V+JIhNGe8HQs2Pzmk4ARs7Q/e93u6+eKqzbzjfBBB1WU/mne+BugeLhTbJ2TKW2DyP
-	 IPVdTzUQI2BwT0lSR9Sc0uc06qY4apBllqOnxrG4Q+n1tQpCEw3b5V+ZEYufI/QQF9
-	 Tlu+7BmdXH+N9LSp/fN6c0G+wwLssJAY7sq2+xuJy87/P8C4LPTEhkdqSeDNn8vuo8
-	 xKTUZlrOz0LVJSVW8+ulTCi8mPPUqMG4xHBAAGfBXAKfD5BHvJzuZQo500vrz5rwRY
-	 qqsos1Rw6j84Q==
-Received: from [192.168.1.90] (unknown [84.232.140.93])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B4E1817E05C1;
-	Thu,  6 Mar 2025 21:21:02 +0100 (CET)
-Message-ID: <751f18a4-900b-4644-9ae7-d28fa44888da@collabora.com>
-Date: Thu, 6 Mar 2025 22:21:01 +0200
+	id 1tqM73-0000000CjdV-052H;
+	Fri, 07 Mar 2025 01:02:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tqM1i-0000000Chr0-45LA;
+	Fri, 07 Mar 2025 00:57:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+	by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 53AB7169E;
+	Thu,  6 Mar 2025 16:57:35 -0800 (PST)
+Received: from localhost.localdomain (usa-sjc-mx-foss1.foss.arm.com [172.31.20.19])
+	by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 22E7A3F5A1;
+	Thu,  6 Mar 2025 16:57:20 -0800 (PST)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chen-Yu Tsai <wens@csie.org>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Samuel Holland <samuel@sholland.org>
+Cc: devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-sunxi@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	Ulf Hansson <ulf.hansson@linaro.org>,
+	linux-mmc@vger.kernel.org,
+	Wim Van Sebroeck <wim@linux-watchdog.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	linux-watchdog@vger.kernel.org,
+	Thomas Gleixner <tglx@linutronix.de>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org
+Subject: [PATCH v3 00/15] arm64: dts: allwinner: Add basic Allwinner A523 support
+Date: Fri,  7 Mar 2025 00:56:57 +0000
+Message-ID: <20250307005712.16828-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.46.3
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: phy-rockchip-samsung-hdptx: Add support for RK3576
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
- Heiko Stuebner <heiko@sntech.de>, Andy Yan <andyshrk@163.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Sebastian Reichel <sebastian.reichel@collabora.com>,
- kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_122105_010412_918280C2 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20250306_165723_110047_EBBFB4FE 
+X-CRM114-Status: GOOD (  21.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,35 +78,133 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi,
 
-On 3/6/25 9:29 PM, Nicolas Frattaroli wrote:
-> Despite the compatible already being listed in the bindings, the PHY
-> driver never gained explicit support for it. This is especially a
-> problem because the explicitly listed PHY addresses need to be specified
-> for each SoC.
-> 
-> To solve this, add the compatible, and a PHY config, with the address
-> gleaned from rk3576.dtsi.
-> 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> ---
-> I thought this must've been already submitted somewhere, but it wasn't
-> in linux-next and searching for the modified file on lore also didn't
-> yield any results. I guess this slipped through the cracks, and
-> torpedoes HDMI support for RK3576 entirely until merged, so it'd be
-> great if this could be merged in time for 6.15.
-> 
-> Let me know if I'm just very confused and this is already handled in
-> some other series that's about to be applied.
+this in an update to the series introducing the basic DT support for the
+Allwinner A523 SoC. It now comes with DTs for three boards, using
+slightly different packages of that SoC.[1]
+Functionality-wise it relies on the pinctrl[2] and clock[3] support
+series, though there are no direct code dependency series between the
+series. Two binding patches from there are required to pass dtbs_check,
+git put their patch IDs in the footer below.
+Compared to v2 only small fixes in the NMI controller driver: renaming
+the struct to better reflect its new usage, add adding the DS pin to
+the eMMC pingroup list. Adding accrued tags on the way, many thanks to
+the diligent reviewers! More detailed changelog below.
 
-I'm not aware of this being submitted as part of another series, that's
-probably because commit f08d1c085638 ("phy: phy-rockchip-samsung-hdptx:
-Don't use dt aliases to determine phy-id"), which actually changed the
-approach of mapping the PHY IDs, has been applied fairly recently.
+The first patches add DT binding documentation for the most basic
+peripherals, most of them actually being already supported, courtesy of
+identical IP being used. This includes MMC and USB 2.0, so with the above
+mentioned clock and pinctrl support this gives an already somewhat usable
+mainline support for this new SoC family.
+The watchdog is not completely compatible, but is an easy addition, so
+this bit is included in here as well, the same is true for the NMI
+controller, required for delivering PMIC interrupts.
 
-Reviewed-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+The A523 features 8 Arm Cortex-A55 cores, organised in two clusters,
+clocked separately, with different OPP limits, in some kind of
+little/LITTLE configuration. The GPU is a Arm Mali G57 MC01, and the chip
+also features a single PCIe 2.1 lane, sharing a PHY with some USB 3.1
+controller - which means only one of the two can be used.
+The rest of the SoC is the usual soup of multimedia SoC IP, with eDP
+support and two Gigabit Ethernet MACs among the highlights.
+
+The main feature is patch 08/15, which adds the SoC .dtsi. This for now
+is limited to the parts that are supported and could be tested. Compared
+to v1 we now have some basic TF-A support, so the PSCI nodes are in now.
+
+The final patches add basic support for the Avaota-A1 router board, the
+X96QPro+ TV box, and the Radxa A5E development board.
+
+The mainline firmware side in general is coming together now: we have
+basic U-Boot support working (including MMC and USB), most importantly
+with proper DRAM support, so no more binary blobs, and some basic TF-A
+support.
+
+Please have a look at those DT bits here, ideally compare them to the
+available user manual, and test them if you have access to hardware.
+
+Based on v6.14-rc1.
+I pushed a branch with all the three series combined here:
+https://github.com/apritzel/linux/commits/a523-v3/
 
 Cheers,
-Cristian
+Andre
+
+Changelog v2 .. v3:
+- split NMI controller register offset into sub-struct
+- properly align NMI controller data definition
+- adding ACKs from Rob and Jernej (with thanks!)
+
+Changelog v1 .. v2:
+- drop USB, I2C, RTC binding patches: already merged
+- add tags from reviewers (with thanks!)
+- drop unrelated deprecation comment from MMC binding patch
+- drop fallback compatible for NMI controller, stands on its own now
+- adjust PHY binding to merged A100 binding (dropping tag)
+- .dtsi: add secondary cores
+- .dtsi: enable PSCI
+- .dtsi: move 32K oscillator to board .dts files
+- .dtsi: adjust CCU source clocks
+- .dtsi: add MMC1 node (typcially for SDIO WiFi)
+- .dtsi: add remaining UARTs
+- .dtsi: add remaing I2C devices
+- add two new board .dts files
+- add DT bindings for those two new board names
+- avaota.dts: drop reserved memory from (TF-A now in SRAM)
+- avaota.dts: drop SD card dummy supply node
+- avaota.dts: add eMMC node (shipped on most boards)
+- avaota.dts: fix OTG mode, explain situation
+- add Chameleon .dts file (depends on YuzukiHD vendor name patch)
+
+[1] https://linux-sunxi.org/A523#Family_of_sun55iw3
+[2] https://lore.kernel.org/linux-sunxi/20250306235827.4895-1-andre.przywara@arm.com/T/#u
+[3] https://lore.kernel.org/linux-sunxi/20250307002628.10684-1-andre.przywara@arm.com/T/#u
+
+Andre Przywara (15):
+  dt-bindings: mmc: sunxi: Simplify compatible string listing
+  dt-bindings: mmc: sunxi: add compatible strings for Allwinner A523
+  dt-bindings: watchdog: sunxi: add Allwinner A523 compatible string
+  watchdog: sunxi_wdt: Add support for Allwinner A523
+  dt-bindings: irq: sun7i-nmi: document the Allwinner A523 NMI
+    controller
+  irqchip/sunxi-nmi: Support Allwinner A523 NMI controller
+  dt-bindings: phy: document Allwinner A523 USB-2.0 PHY
+  arm64: dts: allwinner: Add Allwinner A523 .dtsi file
+  dt-bindings: vendor-prefixes: Add YuzukiHD name
+  dt-bindings: arm: sunxi: Add new board names for A523 generation
+  arm64: dts: allwinner: a523: add Avaota-A1 router support
+  arm64: dts: allwinner: a523: add X96Q-Pro+ support
+  arm64: dts: allwinner: a523: add Radxa A5E support
+  dt-bindings: arm: sunxi: Add YuzukiHD Chameleon board name
+  arm64: dts: allwinner: h616: add YuzukiHD Chameleon support
+
+ .../devicetree/bindings/arm/sunxi.yaml        |  20 +
+ .../allwinner,sun7i-a20-sc-nmi.yaml           |   1 +
+ .../bindings/mmc/allwinner,sun4i-a10-mmc.yaml |  38 +-
+ .../phy/allwinner,sun50i-a64-usb-phy.yaml     |   4 +-
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ .../watchdog/allwinner,sun4i-a10-wdt.yaml     |   2 +
+ arch/arm64/boot/dts/allwinner/Makefile        |   4 +
+ .../sun50i-h618-yuzukihd-chameleon.dts        | 222 +++++++
+ .../arm64/boot/dts/allwinner/sun55i-a523.dtsi | 598 ++++++++++++++++++
+ .../dts/allwinner/sun55i-a527-radxa-a5e.dts   | 299 +++++++++
+ .../dts/allwinner/sun55i-h728-x96qpro+.dts    | 287 +++++++++
+ .../dts/allwinner/sun55i-t527-avaota-a1.dts   | 308 +++++++++
+ drivers/irqchip/irq-sunxi-nmi.c               |  76 ++-
+ drivers/watchdog/sunxi_wdt.c                  |  11 +
+ 14 files changed, 1821 insertions(+), 51 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-h618-yuzukihd-chameleon.dts
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-a523.dtsi
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-a527-radxa-a5e.dts
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-h728-x96qpro+.dts
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun55i-t527-avaota-a1.dts
+
+
+base-commit: 2014c95afecee3e76ca4a56956a936e23283f05b
+prerequisite-patch-id: 5b8a883819d2f3dfc975735a855291cb8b02dd39
+prerequisite-patch-id: 26d4fd19d9e9cf345261bbad4b8c3697fe773e7c
+-- 
+2.46.3
+
 
 -- 
 linux-phy mailing list
