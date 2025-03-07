@@ -4,111 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01E4FC19F32
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Mar 2025 07:12:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB744C19F32
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Mar 2025 18:07:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jLbIm8NjhdPqIr+MvBCtv/y+2kiJapXrAFElIWwClaM=; b=JlVkSgGsv6/SLP
-	vdsH2VCGME9ad3Fg0+wgg4IjHAqriz6Rq8H7XF3nPCZJCFvBUEgrk01VIyF+hYNvY/QcCwzVCxQ0N
-	kV98FqQRj5owWnNNY4BRR9BnTbUCXn45EPm1l+a/9/mdg5xl2UPcknXMi1iWFhdgqjp0W7wBRci3o
-	jrxGQNEAlpaA9ckbbqbaatp95TyHZrqorsHK8CKoes/9iFUEi1fH3TqUQhoEbGksFuBV1psZIMrQ0
-	ROLpY8+ZqqjQ1reO8Hg/uWDsfZ/JJdcFR7fmJwsxUlrVDN2T8O1qFhgi4U43rgWk+thtQuZ6fnlcm
-	hJ1khtRM0/FQmuWtMCnw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=nbT5EIH73LxpUkqkG2Hhr5iG0g3+7AijU3Dq172W7fM=; b=kh/Pt/Jv1lJJoW
+	WHGrnowsz6BL4FbV8FP03fj/2C8RAxYIskFVNAK3QUXA3/M3T3lNczeh1InyASeGlpvThxoJfNXiy
+	5q0AufBKxey3k2TeuLJ5dn2nYB+uPtRA3XgCg6eH/u2LGn5q2RSiI2DqZlEn/iZr5R2nOrihmXOiJ
+	CmZh6Vsj7hrNpuQLJ8gkawh5wedzvtjijfyRUV1iYakDAPUo+NS00RMNxb3VAxayHAhVkdvsa6CW9
+	igV8Y1mZtCRzTd4po5Zp3MYQfBRN9cNhkV4oSj0tiq66avqbxmLOcqDQ093lY1EcHC2K0hN3L3nzp
+	hj7loZRSmsr1AraUHUjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqRsN-0000000DPc8-3E5U;
-	Fri, 07 Mar 2025 07:12:07 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tqc74-0000000FAc7-0tZl;
+	Fri, 07 Mar 2025 18:07:58 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqRqu-0000000DPS8-0Rtn
+	id 1tqbew-0000000F4cB-2OVB
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Mar 2025 07:10:37 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 85ED6A4553E;
-	Fri,  7 Mar 2025 07:05:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D06B4C4CEE2;
-	Fri,  7 Mar 2025 07:10:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741331434;
-	bh=a5miTD1abVMgj3/j89zRVh6kuZLoji7VxTlmh6kIsG8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=eyyYH9pIqBJjTIF5XoIwd4/HcaDTyzwm24wtjoqrPdUJLXsqyi/6G3jBX3YbebjX0
-	 7Oh4TKa7Oefbr98INX++fnNTeMdZiBboMsBoMiBroJlNkyOdCLhiHc4mM2WO9b3sAF
-	 rIr+WOm4jpzy4q+p75a+DweRHjtZoOyaOYfOR+E/RP02vzjoLffssa/3AG5Jg0ESzP
-	 FUt8L5qE1amzN5gW+DwSHa4cmNkJBa26kymmW8LhFxQlr/GRRCRWhX0zexAQaE2Zqn
-	 EgILoXHxD3uJoHYP8Gr/2+zlUItrwWAvAFX/wJTvcA5ueQri+bVDIzX7fgQPI+Z4ZK
-	 ASDCBXDfAo77w==
-Message-ID: <4560876d-22d0-408c-8fc6-63bb79ae1249@kernel.org>
-Date: Fri, 7 Mar 2025 08:10:25 +0100
+	Fri, 07 Mar 2025 17:38:55 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-43bdcd0d97dso12651025e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 07 Mar 2025 09:38:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1741369132; x=1741973932; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+         :to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=gbhsOaksWfSrIW8u1uBJdU7SRRrY2hqIxanWZ0O00C8=;
+        b=XRG0qs7uYFRfbQ9Zui9NvGFbsJEduDcS/JMfNX+/cv5lT5S0NbdVP0M13DcJA1gdTJ
+         NcJFNh5Au+AGsKIM+x0r4UjALurziv1/Nj0qgAg/eeX5vKkhyMomYiVEe6sv+tYGSso2
+         yo19P/vIJH9Xc4V1Yk7ij5WWbaWsBwZHBpU4YjvhL6Ax6ieXmTyhob7a2XeMGhH9YJvu
+         VRf3dy7/Gi6tEES1q0sj3eK07DXDNE8urjTb1LSKMa3lHSSvoVbN55LHgoEkrC4/9ytB
+         fBVL4NeROaj6ljU8hOCyIY5QINjT/CPgvZGrD/ZsxbX3nlmVIzmg/Tudho/fjvg83F82
+         KYhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741369132; x=1741973932;
+        h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+         :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=gbhsOaksWfSrIW8u1uBJdU7SRRrY2hqIxanWZ0O00C8=;
+        b=G8gpNxnoFA58jRDY7SNTtkZouA6Var2AS9mhlHVjs0y4UcwVomXTpOFig6jOLc31iC
+         iyg0Xh14jkJtez8ILS0YIVTikcXusQx3JzA9db4JjYJR+CuUuZv5fcA0qaDoZJ50zK7Q
+         vu5fQnY70m+PJmXR6ZsbZWyf7NQaxN4yt1YFhBBK94wgjuq2rc/EWDo22mqNZi/DFZEm
+         wKmsLf9hd2bpqWHLcgapxeu7a3Q1Wzpu+ISuVEBi8oXJ8jp8g9fsgNBfenDs7UA3KXQk
+         R/FxDGHJAgNE+plnNqACN7qQxR12sZhQ9cgeSKfrrXKkmhOKBoWjtuE+CXpTisITT6C+
+         GF3g==
+X-Forwarded-Encrypted: i=1; AJvYcCW/dy5g8acwIzL6VimONq0/hCdtKTIfS1OHj/3dkh+SUeT19/R0A/MJuseP88iJpCU96oIglAYi7jw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyEB9vbnTnkJfWLKNW3+G7biECO4/kTK5OkvuTUYolcbM//gsCk
+	3UYlYszbUaqQnMskOIjd8dSFa1yRvhDZ4znznh7meaI6n5H3BVFyz73//Vl2kiw=
+X-Gm-Gg: ASbGnctcCvRCjKoSGuKjiHhRfm6Rjdz4NCqXHzszuG8Asgqg69t/sw/yvxKW9ZR91Hd
+	dPIYB7m5sB4BIg/nsHvpg/W0UvSsqa6830qxSbEjAMvgrCppgz0dKu9LkIUpiJAiw6TsChugOlT
+	lKS6hBlyt5CUJIwxT9yPjFBFgWUia/uTuDwcaQpGsrf6KAp15ZOzyKF2Sdvr7z+a23ajAGhzmsN
+	uuDaK2W2NSnUygyN0zXFNF2xmGH/mt2AuRGd6meof1qMvOdvmD7GeugoIKAM5gWm7YjcRNYW4y7
+	pp4HOOJ48SYaboLYAG2A3Qrl47mSmqhVj0PZaBXVAyEpneqL4Q==
+X-Google-Smtp-Source: AGHT+IGjlugzKmmxYS6YdwzXxtlXE4bzioPLgN5lZda7k+mvVXrIjN3iK1ETSrhFkaR7AXVaN1i8cA==
+X-Received: by 2002:a05:600c:4f11:b0:439:9f97:7d67 with SMTP id 5b1f17b1804b1-43c601e1173mr37208455e9.16.1741369132091;
+        Fri, 07 Mar 2025 09:38:52 -0800 (PST)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with UTF8SMTPSA id 5b1f17b1804b1-43bd42c6203sm87520795e9.24.2025.03.07.09.38.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 07 Mar 2025 09:38:51 -0800 (PST)
+Date: Fri, 7 Mar 2025 20:38:48 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: oe-kbuild@lists.linux.dev, Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Abel Vesa <abel.vesa@linaro.org>
+Cc: lkp@intel.com, oe-kbuild-all@lists.linux.dev,
+	linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 4/8] phy: move phy-qcom-snps-eusb2 out of its vendor
+ sub-directory
+Message-ID: <551a7b8d-1f2d-429f-b7fd-c8ea1afdcf25@stanley.mountain>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v11 0/7] Add PCIe support for Qualcomm IPQ5332
-To: =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kw@linux.com>
-Cc: Varadarajan Narayanan <quic_varada@quicinc.com>, bhelgaas@google.com,
- lpieralisi@kernel.org, manivannan.sadhasivam@linaro.org, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
- kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org,
- p.zabel@pengutronix.de, quic_nsekar@quicinc.com,
- dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org,
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20250220094251.230936-1-quic_varada@quicinc.com>
- <20250220144551.GB1777078@rocinante>
- <d399a2be-3010-43fc-9531-e4f3560ea6df@kernel.org>
- <20250306125940.GC478887@rocinante>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250306125940.GC478887@rocinante>
+Content-Disposition: inline
+In-Reply-To: <20250223122227.725233-5-ivo.ivanov.ivanov1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_231036_323593_57F50412 
-X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-CacheID: sfid-20250307_093854_617886_5009BEF1 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -121,25 +103,132 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDYvMDMvMjAyNSAxMzo1OSwgS3J6eXN6dG9mIFdpbGN6ecWEc2tpIHdyb3RlOgo+IEhlbGxv
-LAo+IAo+Pj4+IFBhdGNoIHNlcmllcyBhZGRzIHN1cHBvcnQgZm9yIGVuYWJsaW5nIHRoZSBQQ0ll
-IGNvbnRyb2xsZXIgYW5kCj4+Pj4gVU5JUEhZIGZvdW5kIG9uIFF1YWxjb21tIElQUTUzMzIgcGxh
-dGZvcm0uIFBDSWUwIGlzIEdlbjMgWDEgYW5kCj4+Pj4gUENJZTEgaXMgR2VuMyBYMiBhcmUgYWRk
-ZWQuCj4+Pgo+Pj4gQXBwbGllZCB0byBkdC1iaW5kaW5ncywgdGhhbmsgeW91IQo+PiBJIHdpbGwg
-c2VuZCByZXZlcnRzIGZvciB0aGVzZS4gVGhpcyBwYXRjaHNldCBhZmZlY3RzIHVzZXJzIHdpdGhv
-dXQKPj4gbWVudGlvbmluZyBpdCBhbmQgd2l0aG91dCBwcm92aWRpbmcgYW55IHJhdGlvbmFsZS4K
-Pj4KPj4gV2hhdCdzIG1vcmUsIGl0IGludHJvZHVjZXMga25vd24gdG8gYXV0aG9yIHdhcm5pbmdz
-IGp1c3QgdG8gZml4IHRoZW0KPj4gbGF0ZXIuLi4KPiAKPiBUaGUgZm9sbG93aW5nIGNvbW1pdDoK
-PiAKPiAgIDgyOWFhMzY5M2Y4ZCAoImR0LWJpbmRpbmdzOiBQQ0k6IHFjb206IFVzZSBTRFg1NSAn
-cmVnJyBkZWZpbml0aW9uIGZvciBJUFE5NTc0IikKPiAKPiBTaG91bGQgbm8gbG9uZ2VyIGJlIHBy
-ZXNlbnQuICBIb3dldmVyLCB3ZSBzdGlsbCBjYXJyeSB0aGUgZm9sbG93aW5nIGNvbW1pdDoKPiAK
-PiAgIGY2N2QwNGIxODMzNyAoImR0LWJpbmRpbmdzOiBQQ0k6IHFjb206IERvY3VtZW50IHRoZSBJ
-UFE1MzMyIFBDSWUgY29udHJvbGxlciIpCgoKVGhhbmtzLCBJIGxvb2tlZCBicmllZmx5IGFuZCBp
-dCBzZWVtZWQgZmluZS4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgotLSAKbGludXgtcGh5IG1h
-aWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Ivaylo,
+
+kernel test robot noticed the following build warnings:
+
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Ivaylo-Ivanov/dt-bindings-phy-rename-qcom-snps-eusb2-phy-binding-to-snps-eusb2-phy/20250223-202709
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250223122227.725233-5-ivo.ivanov.ivanov1%40gmail.com
+patch subject: [PATCH v2 4/8] phy: move phy-qcom-snps-eusb2 out of its vendor sub-directory
+config: sh-randconfig-r073-20250307 (https://download.01.org/0day-ci/archive/20250307/202503072305.Osodtcnk-lkp@intel.com/config)
+compiler: sh4-linux-gcc (GCC) 14.2.0
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+| Closes: https://lore.kernel.org/r/202503072305.Osodtcnk-lkp@intel.com/
+
+smatch warnings:
+drivers/phy/phy-snps-eusb2.c:452 snps_eusb2_hsphy_probe() warn: passing zero to 'PTR_ERR'
+
+vim +/PTR_ERR +452 drivers/phy/phy-snps-eusb2.c
+
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  399  static int snps_eusb2_hsphy_probe(struct platform_device *pdev)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  400  {
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  401  	struct device *dev = &pdev->dev;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  402  	struct device_node *np = dev->of_node;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  403  	struct snps_eusb2_hsphy *phy;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  404  	struct phy_provider *phy_provider;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  405  	struct phy *generic_phy;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  406  	const struct snps_eusb2_phy_drvdata *drv_data;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  407  	int ret, i;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  408  	int num;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  409  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  410  	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  411  	if (!phy)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  412  		return -ENOMEM;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  413  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  414  	drv_data = of_device_get_match_data(dev);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  415  	if (!drv_data)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  416  		return -EINVAL;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  417  	phy->data = drv_data;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  418  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  419  	phy->base = devm_platform_ioremap_resource(pdev, 0);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  420  	if (IS_ERR(phy->base))
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  421  		return PTR_ERR(phy->base);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  422  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  423  	phy->phy_reset = devm_reset_control_get_exclusive(dev, NULL);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  424  	if (IS_ERR(phy->phy_reset))
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  425  		return PTR_ERR(phy->phy_reset);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  426  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  427  	phy->clks = devm_kcalloc(dev,
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  428  				 phy->data->num_clks,
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  429  				 sizeof(*phy->clks),
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  430  				 GFP_KERNEL);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  431  	if (!phy->clks)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  432  		return -ENOMEM;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  433  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  434  	for (int i = 0; i < phy->data->num_clks; ++i)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  435  		phy->clks[i].id = phy->data->clk_names[i];
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  436  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  437  	ret = devm_clk_bulk_get(dev, phy->data->num_clks,
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  438  				phy->clks);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  439  	if (ret)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  440  		return dev_err_probe(dev, ret,
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  441  				     "failed to get phy clock(s)\n");
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  442  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  443  	phy->ref_clk = NULL;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  444  	for (int i = 0; i < phy->data->num_clks; ++i) {
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  445  		if (!strcmp(phy->clks[i].id, "ref")) {
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  446  			phy->ref_clk = phy->clks[i].clk;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  447  			break;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  448  		}
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  449  	}
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  450  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  451  	if (IS_ERR_OR_NULL(phy->ref_clk))
+15a1981f608b0f Ivaylo Ivanov 2025-02-23 @452  		return dev_err_probe(dev, PTR_ERR(phy->ref_clk),
+
+PTR_ERR(phy->ref_clk) is success.
+
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  453  				     "failed to get ref clk\n");
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  454  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  455  	num = ARRAY_SIZE(phy->vregs);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  456  	for (i = 0; i < num; i++)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  457  		phy->vregs[i].supply = eusb2_hsphy_vreg_names[i];
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  458  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  459  	ret = devm_regulator_bulk_get(dev, num, phy->vregs);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  460  	if (ret)
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  461  		return dev_err_probe(dev, ret,
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  462  				     "failed to get regulator supplies\n");
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  463  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  464  	phy->repeater = devm_of_phy_get_by_index(dev, np, 0);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  465  	if (IS_ERR(phy->repeater))
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  466  		return dev_err_probe(dev, PTR_ERR(phy->repeater),
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  467  				     "failed to get repeater\n");
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  468  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  469  	generic_phy = devm_phy_create(dev, NULL, &snps_eusb2_hsphy_ops);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  470  	if (IS_ERR(generic_phy)) {
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  471  		dev_err(dev, "failed to create phy %d\n", ret);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  472  		return PTR_ERR(generic_phy);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  473  	}
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  474  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  475  	dev_set_drvdata(dev, phy);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  476  	phy_set_drvdata(generic_phy, phy);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  477  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  478  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  479  	if (IS_ERR(phy_provider))
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  480  		return PTR_ERR(phy_provider);
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  481  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  482  	dev_info(dev, "Registered Snps-eUSB2 phy\n");
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  483  
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  484  	return 0;
+15a1981f608b0f Ivaylo Ivanov 2025-02-23  485  }
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
