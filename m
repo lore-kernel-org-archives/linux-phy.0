@@ -4,66 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65700C282EC
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Mar 2025 12:41:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E4FAC282EC
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Mar 2025 14:25:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hxbA0I1fGEi0XDw9yut3+YMA6LaVKXSsqO7SdKDlWgA=; b=qibdEpPaU4xaL5
-	gYcxVAm2BpN4LzaZcMHSNGAF6/HMRqr9EOCse2ZEWPDMxNioNpO0d+/5THnxUBgQERn19Le6eG0JT
-	dK/mHu8pXbw7BbGfQF4DhdF2xzzoAvHH+c8M8p5tMKPhpRw7Jk2b0Lc2LmQqvoQYhCl8g38HLRpfi
-	gnzXCiePLN7LBC1NE2QNukhT8TJO90WCAqHN9bEMcLi7Cm4gJK+7K655iPTJibdGtxKS4zR1oZo6Z
-	m+9O7RR7vwALn0HC8Y139wDB25p8EajUFEDAxvXEe87Wf1PEQqq8fa7JT8QCeC0UJCuYIaNRBtFws
-	cQiNiXCcqHbZA9xYS/1g==;
+	List-Owner; bh=LTSo72q9zsEv9i033ih8wYt3MiqfA5YRQzWVtagNghw=; b=rdYO0OXoQ+0rBF
+	SLTQGM2zoNRgubCl2tcqINJu+qd8KPT+uEvf7aB5XRQ19yx9qr94p59HDXWsNMT/NFNTZ8XDK8/cs
+	CnPceUu2XhhYFrlcGeXunTt+3Y65rG6u967cEIs/l3QDJfW/C+XKgnzjd+EqwIGum+TW315QDFfQk
+	RJCcwAHR4dhbPkpDOJfwF5YLXXID0fGGlDPUUyDZqeK5XlANRD+V+FzGYVn0+JR0h55t2lSnWoD7C
+	NEBRUvhmFSguoIpH+f0TyJcG466h705NW/QtbpOBZTRzvZ/tir0J6DqW24LzOmf92NLuoVey6RLTX
+	3l1vwlS8N89M/q9AXS5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqtUo-0000000GcPc-0gJZ;
-	Sat, 08 Mar 2025 12:41:38 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1tqv75-0000000Gj4D-0cjT;
+	Sat, 08 Mar 2025 14:25:15 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqtBZ-0000000GZgJ-2b4t;
-	Sat, 08 Mar 2025 12:21:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1741436504;
-	bh=lml/dpWS51d1l7pxeFA3I8arwVEqHo/afRbukZAkt8Q=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=VjDqM1TUvLUofFOdAwLKcwBLB4fwP3QQZK/Cs4OwXvIu2y5aYh1RO70YdLxw6VHP/
-	 60TlK+bKztDXcMQaWjpvMKLXrHf4jsTVt3Lk2F4JLEMiiEdazyKdOfGPi3OXpjLcNX
-	 IeqiKlVjEkfgr6B3TK584ovM9EBOXeJMEu7s9RxSXqSUwr5wwvyBvxUIT3HOTqXznQ
-	 CBjrBqMjXDlS99CzVPGlUQxcoP7oozfQQNgltejyuaYe9K+Nt/hu1p1ZoWCRY+JJAg
-	 xmRWacuxifkb4GU+woToupytLsuKFjPcypHT3dXd7vz8ZFoFxo59nDM2m6OP4rA4Pp
-	 oGbiMOUb0weVg==
-Received: from localhost (unknown [84.232.140.93])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 2829917E0F75;
-	Sat,  8 Mar 2025 13:21:44 +0100 (CET)
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Sat, 08 Mar 2025 14:21:21 +0200
-Subject: [PATCH v5 12/12] phy: rockchip: samsung-hdptx: Add high color
- depth management
+	id 1tqv72-0000000Gj3i-01UE
+	for linux-phy@lists.infradead.org;
+	Sat, 08 Mar 2025 14:25:13 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 528DjNmE013314
+	for <linux-phy@lists.infradead.org>; Sat, 8 Mar 2025 14:25:10 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	ajkDcMXkTChhLB9nQXqXX4w1XlD/zn/bmx5ISWyGiDE=; b=XdlAcI8mJvT5ZzSC
+	BYdYS14qi2YMrDMG0SARJc7twAMD4ylW/xAiRf7VdzLeQ0p2B88dgMBNI3Vd9/lB
+	yg5bLTeegaMxv8TOxoKsro/HOMyWUoyS4XxoEWam/FQftEmPaY8gg+TpfSGOCd41
+	5agraq4czLhmGRvhKscIk7UyEvzH1gk2B+vpDRV31EbIc+BIR50KmaoqruxUT+LY
+	LueVsidQh+p4yB6nHt5hsOnSE2AGC9vMWSo2R7P+0YGy2exaMsVMwEaqrIepPj5F
+	wUgZQnRQ2/y2AM5ss+YTNtGIe4uENpkPfwtM6bdha7fBjl3T7QTn8eZ/p/5Bbl94
+	vYh30w==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 458eyu8nsn-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Sat, 08 Mar 2025 14:25:10 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-474f467e613so7926771cf.2
+        for <linux-phy@lists.infradead.org>; Sat, 08 Mar 2025 06:25:10 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741443910; x=1742048710;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ajkDcMXkTChhLB9nQXqXX4w1XlD/zn/bmx5ISWyGiDE=;
+        b=FDFaZ1CsE2gzL3nw1KC63dJhIldy7G3k8Kf9EwWFn0cphI1riSErJqYjtQmSejLmFg
+         oEm5N5RNfchIYvXGgwoApA4CpuKmCvfrlQo9UeQOZ48C5+zCnk95eO15f+aTApAuOiA4
+         21u0nky4e1aKpThtdS5BngwX5KAa4tcTR6Fpvb9uSy8oUeEZqNemMI4EzRpJnvh7EKbg
+         HSQY7PxA8RIJakAyZq3E95imDEzT+OyKBbWKTr6eZYe/9cmMu1wucN4uKTKsLMyoshcP
+         uyKmbDpPtrx9QFom/scr3zkZAb9dRmIf4Ll6iYGvPYG8496yJRph0lWBt9eIYpBR1CCc
+         OJHg==
+X-Forwarded-Encrypted: i=1; AJvYcCUm6RU7dl023Rs8yqSkPrCeDtnUOn/3ckIXFci6EevzfsY6iUOJkX0x1mnIGN1+RlHPr8ivyiLNsjw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy0XfBM1vIS6s2T7ukawfkxwzR4S2yi1ybrv53eoIYM+y5M0xSa
+	T73/yXgm6W9qstlFGLQccsOIxtD2yyQYIu9uaCbzOBlm+uXzmUZXW4LwHN/IJquTFMychxubcqE
+	4AcpeUAPdI5dwN2V2lw1tpZCmC1uzse++bVRZIpRUV0eTNwLijPC36s54SymcCt7t
+X-Gm-Gg: ASbGnctZnKhtqvFNpcA0l2X6UQuw9kV4nh8mJIyxhA56cd22qiULCMoHSqknRqCl0HF
+	baHaXjmeFFsHkMDQQcCxKFcI0PIZ4GhnNSimBA/jF9RiO6MCcP4i4NmG4etpdLeC3/o5rqDQK5T
+	h3dqaWuQqMQuXxK8QgvrCP1V+cmvpQMVWVTxbc2T3NXDQZ8vSGWcHBy3vdClkpMqQypRAH6Pe38
+	THe4bYylqBsiyX7iSNVjbK2cjOissqhm5/NXu+iNr53N1LdincSGamla4XrG+BFfNZXy5llzdTW
+	HEtVvcesAdFFXomhIfUasuEVi3zsIGIL6YbfXgO0IbD2vFQ1hNP49SlhFTRK/9a0Eyq6xQ==
+X-Received: by 2002:a05:6214:d6b:b0:6e6:60f6:56db with SMTP id 6a1803df08f44-6e908d8568cmr15818356d6.6.1741443909945;
+        Sat, 08 Mar 2025 06:25:09 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGf5Bpdb+EwGJ+DUwof9ezxDFy4IdGxQr6SUgAcI78hiBLBYecPa0sQ6yprSMZOTAU4uNWqGA==
+X-Received: by 2002:a05:6214:d6b:b0:6e6:60f6:56db with SMTP id 6a1803df08f44-6e908d8568cmr15818006d6.6.1741443909472;
+        Sat, 08 Mar 2025 06:25:09 -0800 (PST)
+Received: from [192.168.65.90] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ac23973b09asm438894266b.119.2025.03.08.06.25.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 08 Mar 2025 06:25:08 -0800 (PST)
+Message-ID: <e2d84147-c061-4f12-a44b-f60919625f77@oss.qualcomm.com>
+Date: Sat, 8 Mar 2025 15:25:05 +0100
 MIME-Version: 1.0
-Message-Id: <20250308-phy-sam-hdptx-bpc-v5-12-35087287f9d1@collabora.com>
-References: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com>
-In-Reply-To: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>
-Cc: Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, 
- Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
-X-Mailer: b4 0.14.2
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 2/6] phy: qualcomm: qcom-uniphy-pcie 28LP add support
+ for IPQ5018
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        George Moussalem <george.moussalem@outlook.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+        andersson@kernel.org, bhelgaas@google.com, conor+dt@kernel.org,
+        devicetree@vger.kernel.org, kishon@kernel.org, konradybcio@kernel.org,
+        krzk+dt@kernel.org, kw@linux.com, lpieralisi@kernel.org,
+        manivannan.sadhasivam@linaro.org, p.zabel@pengutronix.de,
+        quic_nsekar@quicinc.com, robh@kernel.org, robimarko@gmail.com,
+        vkoul@kernel.org, quic_srichara@quicinc.com
+References: <20250305134239.2236590-1-george.moussalem@outlook.com>
+ <DS7PR19MB8883A6C7E8FA6810089453149DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
+ <oeu6wkfhx2masvendoweoufzit6dcwwer5bakzvg75dz3uc4bj@bwuj4slnb24e>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <oeu6wkfhx2masvendoweoufzit6dcwwer5bakzvg75dz3uc4bj@bwuj4slnb24e>
+X-Authority-Analysis: v=2.4 cv=cbIormDM c=1 sm=1 tr=0 ts=67cc5346 cx=c_pps a=WeENfcodrlLV9YRTxbY/uA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=Bxonh79IiWxE7T-ZNUwA:9 a=QEXdDO2ut3YA:10
+ a=kacYvNCVWA4VmyqE58fU:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: 5YIxcDrmYAXFraC-U5gv38EmKJm1wCa3
+X-Proofpoint-GUID: 5YIxcDrmYAXFraC-U5gv38EmKJm1wCa3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-08_05,2025-03-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0 mlxscore=0
+ impostorscore=0 bulkscore=0 suspectscore=0 priorityscore=1501 phishscore=0
+ malwarescore=0 adultscore=0 clxscore=1015 spamscore=0 mlxlogscore=878
+ classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2503080108
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250308_042145_819433_8ACF1409 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250308_062512_176101_2DCEAE63 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,79 +130,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for 8-bit, 10-bit, 12-bit and 16-bit color depth setup.
+On 5.03.2025 9:39 PM, Dmitry Baryshkov wrote:
+> On Wed, Mar 05, 2025 at 05:41:27PM +0400, George Moussalem wrote:
+>> From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
+>>
+>> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
+> 
+> Something is wrong here. There can't be two authors for the patch.
 
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 23 ++++++++++++++++++++++-
- 1 file changed, 22 insertions(+), 1 deletion(-)
+It may be that Nitheesh was the original author, whose patch was then
+picked up by Sricharan for sending (no additional notices of
+co-development), but George later did the same, forgetting to remove
+Sricharan from the chain.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 98f831c3704f5cd65dcf29a4f0a12862a4aa0482..d115a026f013fdbcd025626bccaa30639856fad7 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -1028,6 +1028,9 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
- 	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_POSTDIV_SEL_MASK,
- 			   FIELD_PREP(PLL_PCG_POSTDIV_SEL_MASK, cfg->pms_sdiv));
- 
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_CLK_SEL_MASK,
-+			   FIELD_PREP(PLL_PCG_CLK_SEL_MASK, (hdptx->hdmi_cfg.bpc - 8) >> 1));
-+
- 	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_CLK_EN_MASK,
- 			   FIELD_PREP(PLL_PCG_CLK_EN_MASK, 0x1));
- 
-@@ -1427,7 +1430,8 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 			hdptx->hdmi_cfg.tmds_char_rate *= 100;
- 		}
- 
--		dev_dbg(hdptx->dev, "%s rate=%llu\n", __func__, hdptx->hdmi_cfg.tmds_char_rate);
-+		dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
-+			hdptx->hdmi_cfg.tmds_char_rate, hdptx->hdmi_cfg.bpc);
- 	}
- 
- 	ret = rk_hdptx_phy_consumer_get(hdptx);
-@@ -1492,6 +1496,19 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
- 	    !rk_hdptx_phy_clk_pll_calc(hdmi->tmds_char_rate, NULL))
- 		return -EINVAL;
- 
-+	if (!hdmi->bpc)
-+		hdmi->bpc = 8;
-+
-+	switch (hdmi->bpc) {
-+	case 8:
-+	case 10:
-+	case 12:
-+	case 16:
-+		break;
-+	default:
-+		return -EINVAL;
-+	};
-+
- 	return 0;
- }
- 
-@@ -1764,6 +1781,9 @@ static int rk_hdptx_phy_configure(struct phy *phy, union phy_configure_opts *opt
- 			hdptx->hdmi_cfg = opts->hdmi;
- 			hdptx->restrict_rate_change = true;
- 		}
-+
-+		dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
-+			hdptx->hdmi_cfg.tmds_char_rate, hdptx->hdmi_cfg.bpc);
- 		return ret;
- 	}
- 
-@@ -1972,6 +1992,7 @@ static int rk_hdptx_phy_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	hdptx->dev = dev;
-+	hdptx->hdmi_cfg.bpc = 8;
- 
- 	regs = devm_platform_get_and_ioremap_resource(pdev, 0, &res);
- 	if (IS_ERR(regs))
-
--- 
-2.48.1
-
+Konrad
 
 -- 
 linux-phy mailing list
