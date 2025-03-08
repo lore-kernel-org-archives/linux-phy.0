@@ -4,94 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F13FC282EC
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Mar 2025 15:29:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9218CC282EC
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Mar 2025 16:51:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nSCplD/p6S5O+wa1Ia+7igM6fiSdWN8j0wRdd2L1EUU=; b=veZHmvGGxdJWvr
-	bi6xB1M8Kv796l5dlIMfRrHA6a2RXJ9Vv/09/q0O81fyle8O3vlP9k9yYff2df9HlukbA9nCOFVYE
-	5qtpclhZCdnQZlDiOo0KthA0TbLo0M+n4+g8WFigzca8s3ypTGs2yFGTV6jYxSpS39gkjwWW7Cnsv
-	OQ64L4a3WUcXCbW9kXQYBtsTWfFT2gtVCX745e3/B1DIkWknXUJpdoS+b+6CEpHqZJP8vYEGQp11I
-	W1gsgmgNtKZJy7EvjNcxw87lbf44YBmo2vDIO6JMG9eCKcU82yg23AeBwoz4awYic2d2F5qPBdd9u
-	tNXSPFqvbMvf5WC2rEsQ==;
+	List-Owner; bh=ksXqJyhJEffxFuTbaLMSn1DbXPvv7RWREyrUtGteWtw=; b=olO6yvyR/UTyk/
+	ABl+9ar9iBcSziZsNRKOtBUnvMxlA5C5kylmV77bRMtF4D+b5AJvB47ZoigjJqQm2ftHTDeaEQLHC
+	4Q5tefI9/Qo4Um+E87PlbD6wPuURUfTT3awALlJEq2uwUQSL260PkoIcQFqBuX5oH4aDCXCh7waRg
+	HewDNPVVa+Wg0tg2zszR1aujp9nJNba3pA6nn+5BlGGz/OWvgo0MJ7ml5jZi1GemKsSBwFDqiy0So
+	7P2Ym/mN9FmTOSHZY6RRLWdl3wUwKbNxwMJze9GLbwFB19Ex4LklYxYd4y/vcTXBqI7UMt4I+W7wC
+	o38JATiVxlqk3kgoaxvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqw7J-0000000GnJJ-1Itb;
-	Sat, 08 Mar 2025 15:29:33 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	id 1tqxP5-0000000GtbC-0zva;
+	Sat, 08 Mar 2025 16:51:59 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqw6w-0000000GnEt-3n6f
-	for linux-phy@lists.infradead.org;
-	Sat, 08 Mar 2025 15:29:12 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id 38308e7fff4ca-30bf8632052so15352001fa.0
-        for <linux-phy@lists.infradead.org>; Sat, 08 Mar 2025 07:29:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1741447749; x=1742052549; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=j1erwRbEpf42IpSPu2HfeF24p9T9l4keifT6FQUxIMM=;
-        b=X34XhNQBBQ7WBzkBJj7LFV37KdhvtyujAKGRQd/DgcCVfCSVY+KwBDMFcdfJZQhZTd
-         +auf4t/Wx31BPhuTt8A8G/6NkInRuVxyPaHgsHUD7IGhL/Z4ra7RAQA+8zSxF3ALAHII
-         pXH2mqYYbY6NWKZzQ8z1BQ9BDSQKOaxz7gGAMKCIagTLFf1bnCYpUDr5UNBsjT297kzc
-         KvJH+JVw6Ndosb33FbmlSu3Bgm5Pp86eIj4kdij7v355c9m954g5DfoEb8uuI1CKJckF
-         8Du8jDoHZDDJG0Bgx4/2gM4qnCAyDFK4V0Sq+OblO4sSKlNX+YikgaShOpjChe4fUYyN
-         9uEg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741447749; x=1742052549;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=j1erwRbEpf42IpSPu2HfeF24p9T9l4keifT6FQUxIMM=;
-        b=L1cjHW2rRIR45H0t6pcXqJM8Y7SZxX2velFEB5Q2j7Po6kT7POK+FN/aGFZi22szBU
-         HlmANU4v4Sp9s4LB7AG+1ud0k8KFYZF2PUh7bmhm1VMLwILf70b4j4/aCfhC32+J4FAB
-         oKe8AsGq6n5QDsX3Z6+By8aIox9JlzDORIjMjU9nKCDA5zTGhptasBazSXHppn+4X0oe
-         ZY0xdO06VaIqhdjhK2SN26fNKLf1BiwAelCJTGsnl1MqfBMwJXK5qQYBDB1/QK3TPN20
-         b0X0JQvcEVC3xNWO46Swaf4g6wFn78ENlJoQBs6Pi6sj4xiaLiduuKlQLF4HyU4zHgEx
-         B7Jg==
-X-Forwarded-Encrypted: i=1; AJvYcCXJr6mt2BFsW+sGxODFshlrTaewctnkmuZb6C6nZBt62/9Ct7h/NheLin5xkHnfOvxbQkP86vHdNmo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzBApltiq1YOV7oC5aBs7+rqJ1CBPFbIy4SiWtgEMihBpW6Ac93
-	NpFf/MHQxnztAnslhZ42X9q+aUk4tzh2LgJqebPMu339uxfPHml8kB+p2iTHCeSgpcVlvjvdARQ
-	3f8g=
-X-Gm-Gg: ASbGncvq2Mwn/UNOSPp3uciM0lxIHNEqDn4/J0Ly1ckx3qc8FIaXKAKpb9qYfXveus3
-	qLofSBXSXXKS45NsoD1Jimytn5bkCHWG0ldvEHLwqpyYEAiic7VlElGWzHUszK88KIXEyr/iGba
-	QV8vTkzk33h5+AUZ6Ws1OmkWBEv8Mf0L+gxHDT8kPZiBz50/kVpZKNDUKyOaufrEARft2o+jWS1
-	z8jvh1zKJRSlvKbiJK7gexnQNW3G1iST4oP5y4aTHa7DwjpDk1tO4h9Nfgtbz9dBlqIYXhBgzqq
-	BQwjLD9p8MkfNN2gM+SMsA+wJSH0pImUEbuALz+rhue4/uF9cuNrwHncuSlpnubd9cBS74LXjal
-	MmQaaYtXP2E63cdzF7olPEVBY
-X-Google-Smtp-Source: AGHT+IHWJzyRENoKYCsCD6ryWleW1FfCxkcxA9oKFolKIPqPM2Gc1cW/mG3/aDezKXNBCG2jOe6Msg==
-X-Received: by 2002:a05:651c:2106:b0:30b:b204:6b80 with SMTP id 38308e7fff4ca-30bf44eda0cmr24484481fa.8.1741447749006;
-        Sat, 08 Mar 2025 07:29:09 -0800 (PST)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-30bfcc80809sm3965871fa.86.2025.03.08.07.29.06
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 08 Mar 2025 07:29:07 -0800 (PST)
-Date: Sat, 8 Mar 2025 17:29:05 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: George Moussalem <george.moussalem@outlook.com>, 
-	linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
-	linux-phy@lists.infradead.org, andersson@kernel.org, bhelgaas@google.com, conor+dt@kernel.org, 
-	devicetree@vger.kernel.org, kishon@kernel.org, konradybcio@kernel.org, krzk+dt@kernel.org, 
-	kw@linux.com, lpieralisi@kernel.org, manivannan.sadhasivam@linaro.org, 
-	p.zabel@pengutronix.de, quic_nsekar@quicinc.com, robh@kernel.org, robimarko@gmail.com, 
-	vkoul@kernel.org, quic_srichara@quicinc.com
-Subject: Re: [PATCH v3 2/6] phy: qualcomm: qcom-uniphy-pcie 28LP add support
- for IPQ5018
-Message-ID: <fwpdzm4gdulyhfnmcvoqsbnu3fwbqyc6gne3ayz7sr6eu2yyqy@hhii6x4pk7a7>
-References: <20250305134239.2236590-1-george.moussalem@outlook.com>
- <DS7PR19MB8883A6C7E8FA6810089453149DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
- <oeu6wkfhx2masvendoweoufzit6dcwwer5bakzvg75dz3uc4bj@bwuj4slnb24e>
- <e2d84147-c061-4f12-a44b-f60919625f77@oss.qualcomm.com>
+	id 1tqxP3-0000000GtZw-00PM;
+	Sat, 08 Mar 2025 16:51:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=H2BsNafZeYvp9wbkGN2qGL99O0ortwb9hsZ0gqUcIdA=; b=EZ1vdrVVdILyYK9dTDvtM7OoD3
+	+qArpJvcSeElp9yPV81y5wQCiFYrtzFh4jIwIPPbd6kNm0oYAfywwQHxioFHDr4yRgXKaR5ALGwjX
+	dWHgcLVL3kaRYIDyjT+zmCjLyOsukR/DtVn2w+3Tti8XIb/qFTCG+LMSftEPjWJYXp9HhkEjt5pg0
+	qUFZEsG7r3zj3E6PLaJI9HmBpPVt32OM4Q0yw7keWSjLVCfudBHVtOmS+Mqv3N8asn/rA5B/exSz8
+	YARA9KImzZKKEtHtbCxfmSdeLgkPIC1dWkkTg+UNRzk6dG4iFZMBGCpgywcb0QvmYolvJnOFsTSlR
+	97cq09TQ==;
+Received: from [194.95.143.137] (helo=phil.localnet)
+	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.94.2)
+	(envelope-from <heiko@sntech.de>)
+	id 1tqxOw-000463-O9; Sat, 08 Mar 2025 17:51:50 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ Andy Yan <andyshrk@163.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Subject: Re: [PATCH] phy: phy-rockchip-samsung-hdptx: Add support for RK3576
+Date: Sat, 08 Mar 2025 17:51:50 +0100
+Message-ID: <5069079.31r3eYUQgx@phil>
+In-Reply-To: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
+References: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e2d84147-c061-4f12-a44b-f60919625f77@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250308_072910_945834_46046A52 
-X-CRM114-Status: GOOD (  14.50  )
+X-CRM114-CacheID: sfid-20250308_085157_036127_AA712413 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,38 +73,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Mar 08, 2025 at 03:25:05PM +0100, Konrad Dybcio wrote:
-> On 5.03.2025 9:39 PM, Dmitry Baryshkov wrote:
-> > On Wed, Mar 05, 2025 at 05:41:27PM +0400, George Moussalem wrote:
-> >> From: Sricharan Ramabadhran <quic_srichara@quicinc.com>
-> >>
-> >> From: Nitheesh Sekar <quic_nsekar@quicinc.com>
-> > 
-> > Something is wrong here. There can't be two authors for the patch.
-> 
-> It may be that Nitheesh was the original author, whose patch was then
-> picked up by Sricharan for sending (no additional notices of
-> co-development), but George later did the same, forgetting to remove
-> Sricharan from the chain.
-
-That would go to the SoB trailers. The issue is slightly different. I
-can't even come up with a normal way to end up with the patch having
-two From: headers:
-
-The only way how one can get the From: header is by doing git
-format-patch. But then git am would get rid of it by filling the commit
-metadata.
-
--- 
-With best wishes
-Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QW0gRG9ubmVyc3RhZywgNi4gTcOkcnogMjAyNSwgMjA6Mjk6MjMgTUVaIHNjaHJpZWIgTmljb2xh
+cyBGcmF0dGFyb2xpOgo+IERlc3BpdGUgdGhlIGNvbXBhdGlibGUgYWxyZWFkeSBiZWluZyBsaXN0
+ZWQgaW4gdGhlIGJpbmRpbmdzLCB0aGUgUEhZCj4gZHJpdmVyIG5ldmVyIGdhaW5lZCBleHBsaWNp
+dCBzdXBwb3J0IGZvciBpdC4gVGhpcyBpcyBlc3BlY2lhbGx5IGEKPiBwcm9ibGVtIGJlY2F1c2Ug
+dGhlIGV4cGxpY2l0bHkgbGlzdGVkIFBIWSBhZGRyZXNzZXMgbmVlZCB0byBiZSBzcGVjaWZpZWQK
+PiBmb3IgZWFjaCBTb0MuCj4gCj4gVG8gc29sdmUgdGhpcywgYWRkIHRoZSBjb21wYXRpYmxlLCBh
+bmQgYSBQSFkgY29uZmlnLCB3aXRoIHRoZSBhZGRyZXNzCj4gZ2xlYW5lZCBmcm9tIHJrMzU3Ni5k
+dHNpLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE5pY29sYXMgRnJhdHRhcm9saSA8bmljb2xhcy5mcmF0
+dGFyb2xpQGNvbGxhYm9yYS5jb20+CgpSZXZpZXdlZC1ieTogSGVpa28gU3R1ZWJuZXIgPGhlaWtv
+QHNudGVjaC5kZT4KCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
