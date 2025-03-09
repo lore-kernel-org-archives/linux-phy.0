@@ -4,92 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC937C28B2F
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 15:53:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E5C8C28B28
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 22:02:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AsGglvreeW8pLRZQRKnBRYUHQJwukXDvz884x2pYkRE=; b=mKZKuciUq4Sq83
-	umfkKew0w5ZQjgghIuC6TGEd4kdUoAsShE5sohxAouV4zKKy0KIc1ukBCZTKNHCD8L/7uVgtPcKhu
-	aKRBpqK/XrD404EgDiPfrJ3HSBYYvPeJLDh/LoRDptgLO7D5Sa5GIMrWUlEvVMYhSowB9qZHyYYiW
-	x0IJUCCoSst2wW5NoAnLcNz+zksqMxLs5AuFtaHnbuhPY3jh49cn4ZhrB80m5J3+5RJ//VrpMXMqz
-	ZHGXdoK3knEyCTp7gT5NM1M1AKLCshWYep2PM/w/ClNUur5kLf8kvGuPOKQ8tf5Lm9Jd1LONYtaKp
-	N2DYxVW2oxJlUslLTk6g==;
+	List-Owner; bh=d9LJQEYYWwmvYyemJMMe1dZGfvncdmDoxJIX6WDXqPk=; b=Qf19y3KGFbmq4I
+	42XXE/wB8hKEpy4L4DBXU3T5oO+Ntwq48xigN2ovbL7x3NEyVXXHEkCYD8cIvxTaBK/Jjg/uzpW6P
+	uUuMZe8U0Q1bwFODAMU61CLXFk3GGVcOfjD8zmnw0Hhhu1Nt0yQxRv5KAVFkMVHH75ZJIvpcSuV7q
+	JyXfuTmb3y7TKAXnnr2sWr4QeHV/M8+IL4/X1Mape7TFn8LtYhvExD6viw3ETlUs7wvUQj6ckNod9
+	sh3gSNsnrOys2Q9Bo6Va3m8qgrkW6tJ7zZidNanGONi2BUtAo+SrMrIRQy8bxYYbd8Rsrea5H0ns5
+	6I/w7IUzHFVglxfIwDTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trIxd-00000000lHc-15O5;
-	Sun, 09 Mar 2025 15:53:05 +0000
-Received: from mgamail.intel.com ([192.198.163.15])
+	id 1trOjI-00000001CUm-34We;
+	Sun, 09 Mar 2025 22:02:40 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trIvz-00000000lD6-1vvT;
-	Sun, 09 Mar 2025 15:51:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1741535483; x=1773071483;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=z26VWBNMz80YyF/hRHm8Hl23tDMXIjOJUiY/5dcLl2Q=;
-  b=PVL1Ey+U0tivLRBWJmj644tQn2z7YvuXfX4uS9nAwjLWhTxt1B851l4P
-   ivizsG8ZFsRm4hoPlPjUVnPjZqm7m4/kgz0qD2m7wxVn8rRHkk60Ryu74
-   N484Uf1Zq5hDhEgEl0uVBMqWN29xIPb2HyUp+fW1+Dvm3qqbqJOdJXGBB
-   XrndAqdHzg7rUxEUhMTbaL+oQOn5mgfH2xAw18zIR6gBtkcrSlBAOBKg6
-   lnpbd7XFEiOWLK+3dGyV0YtiOiiH6X1TSQqeuU05BNVOGlJawPigKgTNJ
-   /4BBKDtqBcTxF0V1QPAVpk/Q9a7gX0t6COZsW7llKyEXjzuxg5JPYhwCd
-   w==;
-X-CSE-ConnectionGUID: URMPhSImTZa7TNrtV4fhEQ==
-X-CSE-MsgGUID: AE9tsbSeQFuNCknKqIVKPQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11368"; a="42670982"
-X-IronPort-AV: E=Sophos;i="6.14,234,1736841600"; 
-   d="scan'208";a="42670982"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Mar 2025 08:51:20 -0700
-X-CSE-ConnectionGUID: aMKZlXlkRZmvTo3hOOJy6g==
-X-CSE-MsgGUID: elAGiMi7SmG61Nx2Z1eQnw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.14,234,1736841600"; 
-   d="scan'208";a="124782869"
-Received: from lkp-server02.sh.intel.com (HELO a4747d147074) ([10.239.97.151])
-  by orviesa004.jf.intel.com with ESMTP; 09 Mar 2025 08:51:13 -0700
-Received: from kbuild by a4747d147074 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1trIvi-0003Ey-22;
-	Sun, 09 Mar 2025 15:51:07 +0000
-Date: Sun, 9 Mar 2025 23:50:11 +0800
-From: kernel test robot <lkp@intel.com>
-To: Christian Marangi <ansuelsmth@gmail.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Nikita Shubin <nikita.shubin@maquefel.me>,
-	Guo Ren <guoren@kernel.org>, Yangyu Chen <cyy@cyyself.name>,
-	Ben Hutchings <bwh@kernel.org>, Felix Fietkau <nbd@nbd.name>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
-	linux-usb@vger.kernel.org, upstream@airoha.com
-Cc: oe-kbuild-all@lists.linux.dev
-Subject: Re: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha
- AN7581 USB PHY
-Message-ID: <202503092318.xReLDuUG-lkp@intel.com>
-References: <20250309132959.19045-10-ansuelsmth@gmail.com>
+	id 1trOhe-00000001CLk-3GOA;
+	Sun, 09 Mar 2025 22:01:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1741557655;
+	bh=2AwOlmOEhu3yB/ZFUZMUxaC69CB5cnd8T/Ge3O14dyY=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=J++TDpzVlCkjoNZ2ae2abmOJtcdsXHrqE2QTJgUz5l9o4nR/SbvysGdaNiDyN/8TY
+	 EpfBVAmh+9DE9/NiPAYPaeBW4NWTf374ueN7TXjwgCWBP6WTnpB6fCs1KZVs4bDjlZ
+	 WgNvAUg3r63CQ2MGSUl+Y0phl4m2VxXFq1VakrxbB+CJDN5C4aAtI2wsGXdHEcVAkq
+	 CLyHA+Khi0TZMwImsEncDdpzfbF+aZwyholl36Sbh3C5i5wSknyydYtfehk7/mOJaO
+	 DgBUAiOyYRz7vovByktlgODsOvnVB9Sveaal3tgRva21B0sECn6rG4VeKoDsS+xmdI
+	 Gdtj7Ri4/ZLIg==
+Received: from [192.168.1.90] (unknown [84.232.140.93])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id DABAC17E09FB;
+	Sun,  9 Mar 2025 23:00:54 +0100 (CET)
+Message-ID: <0fe4388f-3374-409b-8383-ee5200961583@collabora.com>
+Date: Mon, 10 Mar 2025 00:00:52 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250309132959.19045-10-ansuelsmth@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 07/12] phy: rockchip: samsung-hdptx: Avoid Hz<->hHz
+ unit conversion overhead
+To: David Laight <david.laight.linux@gmail.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
+ Sandor Yu <Sandor.yu@nxp.com>, Maxime Ripard <mripard@kernel.org>,
+ kernel@collabora.com, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+References: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com>
+ <20250308-phy-sam-hdptx-bpc-v5-7-35087287f9d1@collabora.com>
+ <CAA8EJpoQbvFbNXQ2RB1qY2gHnwZaU-PT-DMLnZkrxkqs2wkXqQ@mail.gmail.com>
+ <a1a3e86a-1906-4797-932d-8e1aadafedde@collabora.com>
+ <20250309144747.744e5197@pumpkin>
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20250309144747.744e5197@pumpkin>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250309_085123_551789_3CF1BC1B 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20250309_150058_986965_A385054D 
+X-CRM114-Status: GOOD (  12.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,45 +84,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Christian,
+On 3/9/25 4:47 PM, David Laight wrote:
+> On Sun, 9 Mar 2025 12:13:32 +0200
+> Cristian Ciocaltea <cristian.ciocaltea@collabora.com> wrote:
+> 
+>> On 3/9/25 11:22 AM, Dmitry Baryshkov wrote:
+>>> On Sat, 8 Mar 2025 at 14:21, Cristian Ciocaltea
+>>> <cristian.ciocaltea@collabora.com> wrote:  
+>>>>
+>>>> The ropll_tmds_cfg table used to identify the configuration params for
+>>>> the supported rates expects the search key, i.e. bit_rate member of
+>>>> struct ropll_config, to be provided in hHz rather than Hz (1 hHz = 100
+>>>> Hz).  This requires multiple conversions between these units being
+>>>> performed at runtime.
+>>>>
+>>>> Improve implementation clarity and efficiency by consistently using the
+>>>> Hz unit throughout driver's internal data structures and functions.
+>>>> Also rename the rather misleading struct member.
+>>>>
+>>>> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+>>>> ---
+>>>>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 79 +++++++++++------------
+>>>>  1 file changed, 39 insertions(+), 40 deletions(-)
+>>>>
+>>>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>> index 2bf525514c1991a1299265d12e1e85f66333c604..e58a01bdb3ce82d66acdcb02c06de2816288b574 100644
+>>>> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>>>> @@ -330,7 +330,7 @@ enum dp_link_rate {
+>>>>  };
+>>>>
+>>>>  struct ropll_config {
+>>>> -       u32 bit_rate;
+>>>> +       u32 rate;  
+>>>
+>>> unsigned long long, please, to match the tmds_char_rate type.
+> 
+> Isn't 'bit_rate' more descriptive?
+> But maybe rate_hz to make the units more obvious.
+> 
+> If the max frequency might get near 4Gz then the you need something
 
-kernel test robot noticed the following build warnings:
+The max freq. intended to be handled by the related config table is 600
+MHz, that is for supporting HDMI 2.0 (TMDS).  Anything above that
+requires HDMI 2.1 (FRL), which is currently not provided and would
+anyway not rely on this data structure.
 
-[auto build test WARNING on next-20250307]
-[also build test WARNING on v6.14-rc5]
-[cannot apply to clk/clk-next robh/for-next usb/usb-testing usb/usb-next usb/usb-linus linus/master v6.14-rc5 v6.14-rc4 v6.14-rc3]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Marangi/clk-en7523-convert-driver-to-regmap-API/20250309-213623
-base:   next-20250307
-patch link:    https://lore.kernel.org/r/20250309132959.19045-10-ansuelsmth%40gmail.com
-patch subject: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
-reproduce: (https://download.01.org/0day-ci/archive/20250309/202503092318.xReLDuUG-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202503092318.xReLDuUG-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   Warning: Documentation/translations/ja_JP/process/submit-checklist.rst references a file that doesn't exist: Documentation/translations/ja_JP/SubmitChecklist
-   Warning: Documentation/translations/zh_CN/admin-guide/README.rst references a file that doesn't exist: Documentation/dev-tools/kgdb.rst
-   Warning: Documentation/translations/zh_CN/dev-tools/gdb-kernel-debugging.rst references a file that doesn't exist: Documentation/dev-tools/gdb-kernel-debugging.rst
-   Warning: Documentation/translations/zh_TW/admin-guide/README.rst references a file that doesn't exist: Documentation/dev-tools/kgdb.rst
-   Warning: Documentation/translations/zh_TW/dev-tools/gdb-kernel-debugging.rst references a file that doesn't exist: Documentation/dev-tools/gdb-kernel-debugging.rst
->> Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yam
-   Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
-   Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/leds/backlight/ti,lp8864.yaml
-   Can't build as 1 mandatory dependency is missing at ./scripts/sphinx-pre-install line 984.
-   make[2]: *** [Documentation/Makefile:121: htmldocs] Error 255
-   make[1]: *** [Makefile:1792: htmldocs] Error 2
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Regards,
+Cristian
 
 -- 
 linux-phy mailing list
