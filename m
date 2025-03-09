@@ -4,74 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD4DCC28B2F
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 14:51:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC937C28B2F
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 15:53:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=14OXOG8yunyms7ZU1GIush8tvXNAxAEivWwiJKIpwWE=; b=1rHvr7UPBKL9VQAncXIVZQyVra
-	eutfm+hmId2qlG/BiwB2Qf9Kb8D+ODEWtLGqHOh7B0PHeKWOb+mChfqfG3Yrkxf8Aj0KLCZ2qsYH8
-	mq11wtC3HmxWnOPi81S/MgylH4zEaGYIng+XIL/Bpf7ZPb4oItLnWDd7AtG60Qx51q4bY2ZjNnnf8
-	9FG/w69h9/mEZgLt8iAkvPMf0xJNw7vbQhq35EdE8/x5fwH2zlahn7Vupppx8xAgyYZRzf0D5t3B6
-	V23C9RR6IgVsLCkzXGkThUsTHj95FRJ7MtIgiv6QwdTJPeLhBm8HKHmwwwhMTK4KGKq12yCvv+CUb
-	ZYqi5EFg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AsGglvreeW8pLRZQRKnBRYUHQJwukXDvz884x2pYkRE=; b=mKZKuciUq4Sq83
+	umfkKew0w5ZQjgghIuC6TGEd4kdUoAsShE5sohxAouV4zKKy0KIc1ukBCZTKNHCD8L/7uVgtPcKhu
+	aKRBpqK/XrD404EgDiPfrJ3HSBYYvPeJLDh/LoRDptgLO7D5Sa5GIMrWUlEvVMYhSowB9qZHyYYiW
+	x0IJUCCoSst2wW5NoAnLcNz+zksqMxLs5AuFtaHnbuhPY3jh49cn4ZhrB80m5J3+5RJ//VrpMXMqz
+	ZHGXdoK3knEyCTp7gT5NM1M1AKLCshWYep2PM/w/ClNUur5kLf8kvGuPOKQ8tf5Lm9Jd1LONYtaKp
+	N2DYxVW2oxJlUslLTk6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trHzl-00000000geo-1slh;
-	Sun, 09 Mar 2025 14:51:13 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1trIxd-00000000lHc-15O5;
+	Sun, 09 Mar 2025 15:53:05 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trHxn-00000000gHx-1AqG;
-	Sun, 09 Mar 2025 14:49:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 749D0A431EA;
-	Sun,  9 Mar 2025 14:43:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 369BBC4CEE3;
-	Sun,  9 Mar 2025 14:49:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741531749;
-	bh=IGpFddVBBxQL0jWLZ1CuQkeHAw1KzCzTqLo0KMHbMBA=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=SmyRjiHp3xzZSlxPwbe8MW5i8XRpkGUyAEQE5dDhP2Bk7q8NR5AElXnuPDcu/rEn0
-	 EMW4cxlpj+/lzUAI82rLo6FhliQ/ZXwg2eUl7g5cfZqXzzsR0c6/YCiEeJrUkdqwbk
-	 O7xJQGIfgwhMP12Q9RRPRKCK1heZ7EAcA7sOyR5N/uUgLumKkVKbyqnE71rNQaavhE
-	 Pp0KYybOnTiAMX1ullZT4Wp8DGpGxjVwQvqbwFHN2L3uX1MQhrA4bSNReVxYAkXd6K
-	 ks730h5004TAWkhCeoW1/IL2llxfUVkgs9ircKvqvjZUvJBLdHaCr+I2NppBnB11mR
-	 uY0jx6wBL/hMA==
-Date: Sun, 09 Mar 2025 09:49:08 -0500
+	id 1trIvz-00000000lD6-1vvT;
+	Sun, 09 Mar 2025 15:51:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1741535483; x=1773071483;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=z26VWBNMz80YyF/hRHm8Hl23tDMXIjOJUiY/5dcLl2Q=;
+  b=PVL1Ey+U0tivLRBWJmj644tQn2z7YvuXfX4uS9nAwjLWhTxt1B851l4P
+   ivizsG8ZFsRm4hoPlPjUVnPjZqm7m4/kgz0qD2m7wxVn8rRHkk60Ryu74
+   N484Uf1Zq5hDhEgEl0uVBMqWN29xIPb2HyUp+fW1+Dvm3qqbqJOdJXGBB
+   XrndAqdHzg7rUxEUhMTbaL+oQOn5mgfH2xAw18zIR6gBtkcrSlBAOBKg6
+   lnpbd7XFEiOWLK+3dGyV0YtiOiiH6X1TSQqeuU05BNVOGlJawPigKgTNJ
+   /4BBKDtqBcTxF0V1QPAVpk/Q9a7gX0t6COZsW7llKyEXjzuxg5JPYhwCd
+   w==;
+X-CSE-ConnectionGUID: URMPhSImTZa7TNrtV4fhEQ==
+X-CSE-MsgGUID: AE9tsbSeQFuNCknKqIVKPQ==
+X-IronPort-AV: E=McAfee;i="6700,10204,11368"; a="42670982"
+X-IronPort-AV: E=Sophos;i="6.14,234,1736841600"; 
+   d="scan'208";a="42670982"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Mar 2025 08:51:20 -0700
+X-CSE-ConnectionGUID: aMKZlXlkRZmvTo3hOOJy6g==
+X-CSE-MsgGUID: elAGiMi7SmG61Nx2Z1eQnw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.14,234,1736841600"; 
+   d="scan'208";a="124782869"
+Received: from lkp-server02.sh.intel.com (HELO a4747d147074) ([10.239.97.151])
+  by orviesa004.jf.intel.com with ESMTP; 09 Mar 2025 08:51:13 -0700
+Received: from kbuild by a4747d147074 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1trIvi-0003Ey-22;
+	Sun, 09 Mar 2025 15:51:07 +0000
+Date: Sun, 9 Mar 2025 23:50:11 +0800
+From: kernel test robot <lkp@intel.com>
+To: Christian Marangi <ansuelsmth@gmail.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Nikita Shubin <nikita.shubin@maquefel.me>,
+	Guo Ren <guoren@kernel.org>, Yangyu Chen <cyy@cyyself.name>,
+	Ben Hutchings <bwh@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
+	linux-usb@vger.kernel.org, upstream@airoha.com
+Cc: oe-kbuild-all@lists.linux.dev
+Subject: Re: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha
+ AN7581 USB PHY
+Message-ID: <202503092318.xReLDuUG-lkp@intel.com>
+References: <20250309132959.19045-10-ansuelsmth@gmail.com>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Ben Hutchings <ben@decadent.org.uk>, Arnd Bergmann <arnd@arndb.de>, 
- Stephen Boyd <sboyd@kernel.org>, Lee Jones <lee@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Daniel Danzberger <dd@embedd.com>, 
- linux-arm-kernel@lists.infradead.org, 
- Nikita Shubin <nikita.shubin@maquefel.me>, 
- Lorenzo Bianconi <lorenzo@kernel.org>, devicetree@vger.kernel.org, 
- linux-usb@vger.kernel.org, linux-clk@vger.kernel.org, 
- Guo Ren <guoren@kernel.org>, linux-mediatek@lists.infradead.org, 
- Felix Fietkau <nbd@nbd.name>, Vinod Koul <vkoul@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, linux-phy@lists.infradead.org, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- upstream@airoha.com, Michael Turquette <mturquette@baylibre.com>, 
- linux-kernel@vger.kernel.org, Yangyu Chen <cyy@cyyself.name>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Linus Walleij <linus.walleij@linaro.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-In-Reply-To: <20250309132959.19045-6-ansuelsmth@gmail.com>
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-6-ansuelsmth@gmail.com>
-Message-Id: <174153174798.1107714.11562627501354617614.robh@kernel.org>
-Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
- EN7581 SCU
+Content-Disposition: inline
+In-Reply-To: <20250309132959.19045-10-ansuelsmth@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250309_074911_483846_F8290696 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20250309_085123_551789_3CF1BC1B 
+X-CRM114-Status: GOOD (  13.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,51 +106,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Christian,
 
-On Sun, 09 Mar 2025 14:29:36 +0100, Christian Marangi wrote:
-> Add Documentation for Airoha EN7581 SCU.
-> 
-> Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
-> via the SCU (System Controller Unit).
-> 
-> Example of these pheriperals are reset-controller, clock-controller,
-> PCIe line speed controller and bits to configure different Serdes ports
-> for USB or Ethernet usage.
-> 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> ---
->  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
->  1 file changed, 68 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> 
+kernel test robot noticed the following build warnings:
 
-My bot found errors running 'make dt_binding_check' on your patch:
+[auto build test WARNING on next-20250307]
+[also build test WARNING on v6.14-rc5]
+[cannot apply to clk/clk-next robh/for-next usb/usb-testing usb/usb-next usb/usb-linus linus/master v6.14-rc5 v6.14-rc4 v6.14-rc3]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-yamllint warnings/errors:
+url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Marangi/clk-en7523-convert-driver-to-regmap-API/20250309-213623
+base:   next-20250307
+patch link:    https://lore.kernel.org/r/20250309132959.19045-10-ansuelsmth%40gmail.com
+patch subject: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
+reproduce: (https://download.01.org/0day-ci/archive/20250309/202503092318.xReLDuUG-lkp@intel.com/reproduce)
 
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.example.dtb: system-controller@1fb00000: clock-controller: 'reg' is a required property
-	from schema $id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.example.dtb: clock-controller: 'reg' is a required property
-	from schema $id: http://devicetree.org/schemas/clock/airoha,en7523-scu.yaml#
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202503092318.xReLDuUG-lkp@intel.com/
 
-doc reference errors (make refcheckdocs):
+All warnings (new ones prefixed by >>):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250309132959.19045-6-ansuelsmth@gmail.com
+   Warning: Documentation/translations/ja_JP/process/submit-checklist.rst references a file that doesn't exist: Documentation/translations/ja_JP/SubmitChecklist
+   Warning: Documentation/translations/zh_CN/admin-guide/README.rst references a file that doesn't exist: Documentation/dev-tools/kgdb.rst
+   Warning: Documentation/translations/zh_CN/dev-tools/gdb-kernel-debugging.rst references a file that doesn't exist: Documentation/dev-tools/gdb-kernel-debugging.rst
+   Warning: Documentation/translations/zh_TW/admin-guide/README.rst references a file that doesn't exist: Documentation/dev-tools/kgdb.rst
+   Warning: Documentation/translations/zh_TW/dev-tools/gdb-kernel-debugging.rst references a file that doesn't exist: Documentation/dev-tools/gdb-kernel-debugging.rst
+>> Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yam
+   Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+   Warning: MAINTAINERS references a file that doesn't exist: Documentation/devicetree/bindings/leds/backlight/ti,lp8864.yaml
+   Can't build as 1 mandatory dependency is missing at ./scripts/sphinx-pre-install line 984.
+   make[2]: *** [Documentation/Makefile:121: htmldocs] Error 255
+   make[1]: *** [Makefile:1792: htmldocs] Error 2
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
