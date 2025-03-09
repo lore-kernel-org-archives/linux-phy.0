@@ -4,84 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40709C28B2E
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 10:11:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B490C282D1
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 10:15:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nvmjfmOKrhaW+DhXUV4dY8tr7t9UKsj9UO5aCsAySok=; b=CoezXN6AoGWWbl
-	3cpuHm/6YYBiDrUTrinaKWBofRXeKACM1Ahndvn6a6DtdpwmffgXwhEQnbC3RECJekl0SGguz33AT
-	VQFWh0p0E62k+bJo4UmivsoJJ0kptZyQCDWfhS6HdYf0LKI1fuN0C8u+890gBfraFmsofVU/L3GRD
-	uaj7fpEIxhVbw7K0QGbEs98mUyKAFQpfvrEmB0bTBzAL2jeKl5lGf3GjgrXXbJlpbp8YS2ZmNLw5O
-	lyQiGrGHzEWFAo1U0zUmJe6G7w2FjZY6vwCYHo0qmW+toibiFwV5g0Lt6icI3DACYtT/7V3QEcSW9
-	/KVi2K28A4qVdAlST9qQ==;
+	List-Owner; bh=BkWYVHRyaIecUzpYF+vqI7n8w9Sg08tOBV+GDWiunH4=; b=a7LxCv6kQ3F7Em
+	hx4p9gcJ9HGS4jSKUPaU+ZiejDlAZ6XFCHsZvmTGyoNFr/uyEkHMVuOeqaP76NV/zvNCH/oUtjdJK
+	Z7lqjDktMWdXbkkQo1Ens49APWwKGZVK+SC8m1km+MtUtIbYcRpsfLPFB+NBsq8kHN1kutfJC5I1P
+	PHcln1CuSm14Dg2EmIz9J+Mc59S43dLp0h9TGYSGKB55lrcLYcA156XkSoxp128fVgpzhcYqSpS9Y
+	L/2t6jfMduFuxRX6SwuXS/5AqsQXmLI9lfdwyUop/UeuBmTmTtDt4tzj6m7M7JFy0Ovk0rmOs/ynx
+	G8VRw/7CcBtaEx/Ltmgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trDdR-00000000Kf2-3dPC;
-	Sun, 09 Mar 2025 10:11:53 +0000
-Received: from mail-yb1-xb29.google.com ([2607:f8b0:4864:20::b29])
+	id 1trDge-00000000L33-1GL5;
+	Sun, 09 Mar 2025 10:15:12 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trDcV-00000000KYB-2Kov
-	for linux-phy@lists.infradead.org;
-	Sun, 09 Mar 2025 10:10:56 +0000
-Received: by mail-yb1-xb29.google.com with SMTP id 3f1490d57ef6-e573136107bso2701958276.3
-        for <linux-phy@lists.infradead.org>; Sun, 09 Mar 2025 03:10:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1741515054; x=1742119854; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=4BClW3AD5pwAP7HlEQggy/3PgguRjaaiqTnG6w3UH/Q=;
-        b=r5kVOj5nS1WtVD30efoWSherxLG3Lgtt6QZQWAE5On9dNFSycyVA94TJYFUG97FETm
-         pp0BnQb9L/P270kG8s+LkYSaS2eotC8ffiVeAHR2uSVZH7GxxBndIH2S5nsEAwXUp71W
-         b474CEQbfIo8Vecml19gKDX/LlADFgv8Q2Q1CApHGUoECiQLEPVYjih/08K3r5LJFm9M
-         4tErYCV6AmlP7z9WVdg7NVS7PB9i0w2QnRVPcKwLwEc7Dv5kXhPvG7YIny2nuj19p5hG
-         ZlX7bN7RYY8ESVZmjdp+wmt2Be7aMMrSceif06OTd4xEA2W57zeY+C/tTxYH3QoVcVXF
-         f0Cw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741515054; x=1742119854;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=4BClW3AD5pwAP7HlEQggy/3PgguRjaaiqTnG6w3UH/Q=;
-        b=MbmvLxbz/nSa0ouQuW7buPXNhQhhr9kxv0Nzi1RTTwQqVHZzxcTlPjhSG2VM+mv8ZX
-         yUBxFQOEfFXWj36G7czPfF9hJhapAYW7gQQaNODCQbuL/76R4byNf+/QrXnsf8Vk56XF
-         caV9GD5mRfSfK8E26hBW3lRLIIvte5WQBkhUHPPeEGh0PfVp1hQipE6ITADT5W4Wl19Z
-         YLr1b8hD5lEsgXYGdxZyf7j1EyWhdAxZXTcr6KCj6WKwyJAy35Dsnz+v0p0/+Stm/rXp
-         qCV7LxMskrkZ79H4oxs7xbfq1Oi54WI50iLCJ+sBdE331TypOC46SAA3rfaahjWY5Bbe
-         tujg==
-X-Forwarded-Encrypted: i=1; AJvYcCXhTcniOQubOxK8Dw9oQm1SPeuOZ0cboTdewWCyAZ8knVlqjYA7JjzcAf+53+dHWMjTXVoOt7KjbFg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyyfRdySSmCPEKlwPBAj0qKCPXpgqqc731VgLozTSKPTFJ1HpGi
-	/JnLkXVCZY0s+kUsl0ggGhXzCPYvw174HbLshe07fvCFTO8Lk3PyQM4sW+PpyiHeXXweL8WUTJD
-	xzss8uNCt+PtgRn/yoiDzKxFFSDkRdYOXw7MZOA==
-X-Gm-Gg: ASbGnctamoWyu2356UmaGtsaqlg6NweuAsjk6uePHdwv6IV2UvSacvr8jHQUV8sYQE5
-	lTaoZNYD7uP1/jWF2vpwGxYaQDZGHTSpuQOJwd3F7sOAhF3u5waSQhdXgRRk1CCke0lmigckDxt
-	a5dfI4g7NANtFAlMyzTr+CHoQ7q3aVxk7DmB7lJDR3DNvmIAzdmAw=
-X-Google-Smtp-Source: AGHT+IELHQ0fTEF6TQsCVADH9+2FjqIz2dd2lZgnP8p9HlYkvFgSHseJRTK4oPdwl0BlLmUYZqUu+3ES+J82wsobBT0=
-X-Received: by 2002:a05:6902:1081:b0:e63:5be5:81a3 with SMTP id
- 3f1490d57ef6-e635c121fe2mr12595424276.1.1741515054548; Sun, 09 Mar 2025
- 03:10:54 -0700 (PDT)
+	id 1trDcq-00000000KbU-3gqE;
+	Sun, 09 Mar 2025 10:11:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1741515075;
+	bh=sQra10c30MYmky155tTp0EkDPmDnARSe2sYZR6ySckU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=RHKbmtlj+KMHs2L793B6DvggLvnoRIlmnAfp8wcnileSwLHbHLAI9+B/HeGN/0uLw
+	 2M1R4e8y6tG9LwnZ1ya6kVOzmldLzlMZMnogOXmmW+ZJCSz+liqVd5JwYCUZ2eZGep
+	 ZnZ7h6PUuVENMBtL0BfC5kskKjRLi70qfJ9eIe1aSQbU0hCl8yDWI0nXIiTiSecc1B
+	 yl2z5bKSQDgwaleDLirXARJN9ljEsofhUdc8AnZPMuuG8LnMBBVAT4wfOSbcDxsDfx
+	 X9QlgTtZFZ8TI4ta0rhpna3gn7bFZlGGd48U0ZMO874Wt/MlibrKI3seqszUz9MM80
+	 3hmDBhbizPr5Q==
+Received: from [192.168.1.90] (unknown [84.232.140.93])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C052317E05C1;
+	Sun,  9 Mar 2025 11:11:14 +0100 (CET)
+Message-ID: <f1e33b02-5646-4219-98ac-c09e31d8215b@collabora.com>
+Date: Sun, 9 Mar 2025 12:11:13 +0200
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 03/12] phy: rockchip: samsung-hdptx: Fix clock ratio
+ setup
+To: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>,
+ Maxime Ripard <mripard@kernel.org>, kernel@collabora.com,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 References: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com>
- <20250308-phy-sam-hdptx-bpc-v5-2-35087287f9d1@collabora.com>
- <CAA8EJpqYE1drM6=C0AwPZ-e5RkWqjMTpWQiwhA64qby1mmVL1Q@mail.gmail.com> <22142c86-c8b5-4427-9764-a7daa4a005b1@collabora.com>
-In-Reply-To: <22142c86-c8b5-4427-9764-a7daa4a005b1@collabora.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sun, 9 Mar 2025 12:10:43 +0200
-X-Gm-Features: AQ5f1JraoRZHEAAKtM_6fInxqSPprmQzLJINm38dwVXdhnnYMeLTS5kKKnY-1Ok
-Message-ID: <CAA8EJpqCUWH95Ew57K_HKmPGhf40G_2n09SWKTonvyUn2vE4oQ@mail.gmail.com>
-Subject: Re: [PATCH v5 02/12] phy: hdmi: Add color depth configuration
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
-	Sandor Yu <Sandor.yu@nxp.com>, Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+ <20250308-phy-sam-hdptx-bpc-v5-3-35087287f9d1@collabora.com>
+ <CAA8EJprBcGz0tZ5SDVC_WK2bzjXZAtOj+LfGnSxmwktvaQw=VQ@mail.gmail.com>
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Content-Language: en-US
+In-Reply-To: <CAA8EJprBcGz0tZ5SDVC_WK2bzjXZAtOj+LfGnSxmwktvaQw=VQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250309_031055_609293_5043AD58 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20250309_031117_070527_B0A27440 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,38 +82,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 9 Mar 2025 at 12:10, Cristian Ciocaltea
-<cristian.ciocaltea@collabora.com> wrote:
->
-> Hi Dmitry,
->
-> On 3/9/25 11:16 AM, Dmitry Baryshkov wrote:
-> > On Sat, 8 Mar 2025 at 14:21, Cristian Ciocaltea
-> > <cristian.ciocaltea@collabora.com> wrote:
-> >>
-> >> Extend the HDMI configuration options to allow managing bits per color
-> >> channel.  This is required by some PHY drivers such as
-> >> rockchip-samsung-hdptx.
-> >>
-> >> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> >> ---
-> >>  include/linux/phy/phy-hdmi.h | 2 ++
-> >>  1 file changed, 2 insertions(+)
-> >>
-> >
-> > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-> >
-> > Just to confirm, are you passing TMDS char rate or pixel clock for
-> > DeepColor (bpc > 8) modes?
->
-> It's the TMDS char rate, but we still need the bpc info to program
-> CMN_REG(0086) in PATCH 12.
+On 3/9/25 11:17 AM, Dmitry Baryshkov wrote:
+> On Sat, 8 Mar 2025 at 14:21, Cristian Ciocaltea
+> <cristian.ciocaltea@collabora.com> wrote:
+>>
+>> The switch from 1/10 to 1/40 clock ratio must happen when exceeding the
+>> 340 MHz rate limit of HDMI 1.4, i.e. when entering the HDMI 2.0 domain,
+>> and not before.
+> 
+> Am I correct that the only functional change is a switch from
+> greater-or-equal to simple greater?
 
-Thanks for the confirmation.
-
--- 
-With best wishes
-Dmitry
+Yes.
 
 -- 
 linux-phy mailing list
