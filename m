@@ -4,85 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3A27C28B28
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 10:34:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71D6EC28B2F
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 13:32:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=53EET6jaQfBClWkdXMpcro266cxLLFYXI3b70nUAFD0=; b=i1SIu7r4BD9Y5X
-	HUWQlSpjSldoDsIvi6T2W/DNuKgiw8EWO8np6PfRH70C1vGnrbsZ2On6mWK75GJfwvfXyyuDj5Ntr
-	8q/n5gjz/+yq7Bva+oQBvE3KgbsJdsvJw/DpsSkYqrQRWUEi7FRZRAF1umm226Rf13yCZBsJKiuLc
-	lyVSGJy6G8oMiHfy9ZogxbdA4i36bOIV0kH4a0zC5tQ7h9camBlVVJj4cDwbtKtp2RFNz+r7o1D4o
-	nxfeTzrtiOBV51QjdPi5+wuID+cE41Hq0mEyeqTqqTggVVYuUIswuP7hAQ6Z0ka2h/JFp5AnnfAD2
-	QF/YLoo9Gl46jViPxlUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AzRi4q2e59of2QMxI5ifrHdhCTVSqOiMed1v6LflJhg=; b=UGmODC71EsqR70
+	Sarjjq+fgOi99UQwhkvEQI2V5Zxt0+JxqDQpzoLWpJMT2NxA3937a1BCLtoJff58QwE6Vaqep4ELs
+	DtL3rWC9Aud2D7Jr15eibXFOQEfyXI6ErSL3/taXy+bJbSluB/r1HLjxo5LNS98y/QitmS5Jl5ibk
+	61ooeWKDZeRctzlHrHj5ei/Lahih4x1eF++Fmdbt1FH9FtOm7c9jHeBjBYF4BWOOL81gLRP0s96D+
+	VxCNYdY7YMvfqXPwc4WMn4GMov24DjVNhP+grQzPzyAoKt3/A8TrNZImVOOaNP1599Q6KvmjP4Jex
+	j/bKHxKwJQmTNPwxJPNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trDzI-00000000NIj-327y;
-	Sun, 09 Mar 2025 10:34:28 +0000
-Received: from mail-yb1-xb32.google.com ([2607:f8b0:4864:20::b32])
+	id 1trGlV-00000000an3-0gGD;
+	Sun, 09 Mar 2025 13:32:25 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trDyU-00000000N7c-0BZe
-	for linux-phy@lists.infradead.org;
-	Sun, 09 Mar 2025 10:33:39 +0000
-Received: by mail-yb1-xb32.google.com with SMTP id 3f1490d57ef6-e637edaa652so542465276.1
-        for <linux-phy@lists.infradead.org>; Sun, 09 Mar 2025 03:33:37 -0700 (PDT)
+	id 1trGjr-00000000aQ8-26AN;
+	Sun, 09 Mar 2025 13:30:44 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-390fdaf2897so3213628f8f.0;
+        Sun, 09 Mar 2025 06:30:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1741516417; x=1742121217; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=wNpRGIZi3b7vxWPUvyY23xmfkUDKlM0nIxV07CpFzTA=;
-        b=rgqNQdxG7eYpjV0sJoo9vKnw1DwmC28XhObudhMb/Z489YJ+Oh0SfPGS3awr536+P3
-         vZcdBUigRU0u+2NTyOkv1+Hfm80WH7SvSxQrK0fSaQsOYtuK1LOxoHdMbapR/RLpPf3g
-         XQXf/ZHdo2hHDZ2Bi8pxuNOr5czclg78UyNn3wswSsZHBTQsEaoU9Xg+4JpBGYCvPVXY
-         1K10QmzExiWOdl9oQNoWjldBENz91arLxlIuR0ziwAIR5SAY6/JMHinMPtn2FbnonLDZ
-         XHS092ma4LfBRznjLi9lJrDCC2UoLuJJr7BGaqyM2NJHzBQQ5vm+tx+xuNzfMM1cL12P
-         ow5g==
+        d=gmail.com; s=20230601; t=1741527038; x=1742131838; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=3IZp5z7nS232anPaIUnFqLxoHjUC4RU66ewstLpUgIU=;
+        b=gdzzBkz3eWkSUHlf+3o8o4Es3FC3s73Doy8Mewi64X0zn4zXtcH5vc1jNQzKXvVOGT
+         2/kyDBX9viONm1CgenmoIM0i+iU9OZc82PO+xc08ze9h9U5x/6s5m0xcDqEtoDJt6Y3l
+         B8PwTEV2N97FMUY3/rGSdPKQqxnYG3Dole9wP2cLoVrlarIuyYGQS/Uhd8oF2BflF9cC
+         bwnpEpllZqaEPcMi1J/e7OUPL8blIini2BgULj/nn+ey5D2SptaXQ526+7Sb9/0vNOq0
+         Yxcj4wg/CwvHWX1IROZJdXRHUISZCvzojtdI7PvNYuaGvSeCTXKa5e10LHkHRzbGt4Zg
+         vtcw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741516417; x=1742121217;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=wNpRGIZi3b7vxWPUvyY23xmfkUDKlM0nIxV07CpFzTA=;
-        b=ZtRLt0eMCCuAL+bevh8F1zXuLF//3UZsHZFRZFtGNqPaqvKaaexjSPzmLGBpKaSJUQ
-         m3OvoDu9tQTrwjJ5Qb4uUfEWu8y12UDu4S9MDrtG5eaY2kWSuhEXfX1P8lcBpMcR3jVN
-         pS7PhSQYexbpg0Drehg0F47v9cdwO50pI60+OMMxcHINtIPZ315aR7G6uT8vOOnBstXy
-         2FECCKUwQYpF32cd6B7x/jNG50ndeD4ArNONwnT+HwuhwaLHbL2w1rvVD1t8GBuCP95k
-         RVEQdrtOHA5BxFIdnMZfxbRx5NbwPKM+66+yBCelwHO4jnjyeaLU7lNnbC1ndo+fpuar
-         +yFg==
-X-Forwarded-Encrypted: i=1; AJvYcCUNlQWSAsdap3cp6KA5BhSIe/CMsejnMm6+ZwVR1OWVVJ0sjW/FYvYYqQO45Ksb9aYxYi/MWbXP9JI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzHZYE6IEBbO9zp5E5mog1Y9vRML5v8d6u/r+6QcPGOoYXboKe/
-	aVIlLPXBxylqMTA1EZRZuXSbeDOm3ei+5gS0J41Fg5ob3WXSqUEJWyLH9+KghhUPjs3dTHzZLAU
-	V+x4xLKG/ue+3BimGZvy0xyAWHr0Hu2GxopkXmA==
-X-Gm-Gg: ASbGncubpz/GMf2O5EXwvDFRWLoWWjwCnjS+RbVWpuZYElQ+BCA6BQOYQ53lRx+lJ5J
-	/jdafjZy2SQfAJW8OEu8QSPke4iZ7UOlU6kVlFMyF2OQL/KSeab17rEQOoHhg9CNcDIbguD3fd3
-	wpFqnwMW968Kjn/4trMcX91c32V8/WkgWqrG8K+lhapLGgDH3Pihg=
-X-Google-Smtp-Source: AGHT+IGVt6euUeWJaHel2JO0R3PdrFmPyg42bYFogZr5LdUenoAcHAoi+gtckgcA2kBzPh3bWUnzK1DaGMhNqPsRL9w=
-X-Received: by 2002:a05:6902:154d:b0:e5d:dd0a:7fdb with SMTP id
- 3f1490d57ef6-e635c19566dmr13607641276.28.1741516417063; Sun, 09 Mar 2025
- 03:33:37 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1741527038; x=1742131838;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=3IZp5z7nS232anPaIUnFqLxoHjUC4RU66ewstLpUgIU=;
+        b=oZ+kJ1Wv39SeEtBE9epE3SOS9UIcJdXeLWeJ5HwSsCQmuOYNK7b+S3SQgCYsqAZjl+
+         /xmzBONVpvJE1dyuYpHk2gjgKY8903W17fpgFJy33AzhtbnU/8PdLj7/tjOwf7Ui2Uv1
+         +Qbm86qOFzvB1ukRYNwxHz7rfkmLkn9jd2fpV/sHIw1etW9ItYJcgdoPJW68MtnYT6Ty
+         5xtxaesnEvR4Xc7kjIGICzYiRPgg0yZfSbuYvWpbIWCJqYZuAFTzVfv/od8AdAx1+W1o
+         LGy8tuYelxkODXJQSHQLuPgFL0BEAIFnZgS5Ol2Zr1I2zuZU24lf3DXIWEPZye1fazC1
+         Em5w==
+X-Forwarded-Encrypted: i=1; AJvYcCV99W6gErpkYTNZn7mCr0fqYkLK+XJCorXJFiSKaQT0yoYjaDh7HtI0qZGf8LJx9oFjHWVT7RMt+mYY18q4gfU=@lists.infradead.org, AJvYcCVvQ2hc5hq6psCVhkYgoTnd94HlbyArPaulWBZb16hGWDg/oRfi555LjqUQMZ55xsst/RLYzvVERUsa@lists.infradead.org, AJvYcCX9I9Eh5asEuS5oyHZXPEh0DnyhIlS//bYCjNykaMoLU1MCcZ0hE0H1LtHBqDNT/3C00MnnN4LLiW3rbYj80ODo@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3IBBBjgfIR43mgXLr8Xgdsori+Nq6KROvVV1oqCk0fB7gfYMP
+	BhMU719ty0cfYwJWrjRiTnfpZMDG6R86r2869ZpoInxN2a+h9H6b
+X-Gm-Gg: ASbGncumVpezYU74CeFwXv5VG/SaNzHpDCXTXk/v56JOyVNS5nIBMCDJgkL2UzmLy7x
+	aXx8k2QyjsOyVb41qapAYmsnw8U+ngE/Raa/kGgFBn82KNFMc8DpmLusi8NAWQDqUbl6l8F/gv4
+	8WhwCKNE7UppcVxyptngmmVzkQMN+8G1cgUYgFRfxatdYtE2zQDM1bzt9wou5g03OApiU1Ck9ZN
+	IJ3Ji3u8GdSXDGc0keXPFTMTAE83JEnpzBx/6s5XC68YbAiA/PVME7S3zv2y+jLmAuUnKmKNgOE
+	KBDiu3oiRFdb5btouYzn7Ae9Fwd95LXCqS7Gzdn04TZg2oHqsMFdKihXRD1OlMvSNBIWhIuMR2N
+	PeJVMEVeCUHfmhw==
+X-Google-Smtp-Source: AGHT+IEg/pmtwT7lVJCZK8BpVYZB76uZfLQXRI3/kWO/yuj5TZlAaT7OiGF/3WHcicI73lmrX/qPnw==
+X-Received: by 2002:adf:cb01:0:b0:38f:3245:21fc with SMTP id ffacd0b85a97d-39132db1fdamr6602070f8f.50.1741527038019;
+        Sun, 09 Mar 2025 06:30:38 -0700 (PDT)
+Received: from localhost.localdomain (93-34-90-129.ip49.fastwebnet.it. [93.34.90.129])
+        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-3912bee262esm11867536f8f.0.2025.03.09.06.30.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 09 Mar 2025 06:30:37 -0700 (PDT)
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Christian Marangi <ansuelsmth@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Daniel Danzberger <dd@embedd.com>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Nikita Shubin <nikita.shubin@maquefel.me>,
+	Guo Ren <guoren@kernel.org>,
+	Yangyu Chen <cyy@cyyself.name>,
+	Ben Hutchings <ben@decadent.org.uk>,
+	Felix Fietkau <nbd@nbd.name>,
+	linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	upstream@airoha.com
+Subject: [PATCH 00/13] airoha: en7581: clk cleanup + USB support
+Date: Sun,  9 Mar 2025 14:29:31 +0100
+Message-ID: <20250309132959.19045-1-ansuelsmth@gmail.com>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
-References: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com>
- <20250308-phy-sam-hdptx-bpc-v5-11-35087287f9d1@collabora.com>
- <CAA8EJpqzZaRoQ5mDeKUHpNhYsegC=V6c2SQpKaQn4FYhozQn1A@mail.gmail.com> <884acd6e-4936-4b00-88ed-cbccc10efc9c@collabora.com>
-In-Reply-To: <884acd6e-4936-4b00-88ed-cbccc10efc9c@collabora.com>
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-Date: Sun, 9 Mar 2025 12:33:26 +0200
-X-Gm-Features: AQ5f1JpGOU7l-kSySgvwGTxj7XdS5KAe8kqPUkQFgXHpSlPZef1sDW4xG8Fp1l8
-Message-ID: <CAA8EJpqDiK37uLid2ap0E=Sa+DU9vOmSf6WBUe4ZeVKj9mVODg@mail.gmail.com>
-Subject: Re: [PATCH v5 11/12] phy: rockchip: samsung-hdptx: Optimize internal
- rate handling
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
-	Sandor Yu <Sandor.yu@nxp.com>, Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250309_033338_103791_34CD26D5 
-X-CRM114-Status: GOOD (  19.43  )
+X-CRM114-CacheID: sfid-20250309_063043_538288_406F383D 
+X-CRM114-Status: GOOD (  19.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,45 +120,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 9 Mar 2025 at 12:32, Cristian Ciocaltea
-<cristian.ciocaltea@collabora.com> wrote:
->
-> On 3/9/25 12:17 PM, Dmitry Baryshkov wrote:
-> > On Sat, 8 Mar 2025 at 14:21, Cristian Ciocaltea
-> > <cristian.ciocaltea@collabora.com> wrote:
-> >>
-> >> Drop the rate parameter from a bunch of internal helpers and, instead,
-> >> make better use of the newly introduced ->hdmi_cfg.tmds_char_rate driver
-> >> data.
-> >>
-> >> Additionally, rename the rather ambiguous ->rate member of struct
-> >> rk_hdptx_phy to ->hw_rate and ensure rk_hdptx_ropll_tmds_cmn_config()
-> >
-> > Would it be better to name it tmds_char_rate?
->
-> This is only used in rk_hdptx_phy_clk_recalc_rate() to provide the
-> actual rate programmed in hardware, hence the "hw_rate" naming.
+This series implement all the changes required to correctly handle
+USB support for the Airoha EN7581 SoC.
 
-Ack
+The first few patch are cleanup for the clock driver and the
+introduction of the SCU SSR SoC driver.
 
-> Renaming it to tmds_char_rate might add some confusion with the similar
-> one in ->hdmi_cfg, but I don't really have any strong preference here.
->
-> >> updates it only after all the other operations have been successful.
-> >
-> > Please don't mix refactoring / renames and the actual code changes.
->
-> Right, I should have moved that to a dedicated patch.  Will handle in
-> the next revision.
->
-> Thanks,
-> Cristian
+The SoC always support USB 2.0 but for USB 3.0 it needs additional
+configuration for the Serdes port. Such port can be either configured
+for USB usage or for PCIe lines or HSGMII and these are configured
+in the SCU space.
 
+To correctly handle this, the SCU is changed to a simple-mfd
+implemenetation and the clock controller updated to follow this new
+node structure. Both implementation are supported to handle old
+binding.
 
+The xHCI USB is based on the Mediatek implementation but the PHY
+handling although conceptually similar, is indded different compared
+to Mediatek due to SSR checks and different port power up.
+
+The SSR driver expose an API to poll the current status of the Serdes
+port and the USB PHY driver validates it. Refer to the specific commit
+for additional info.
+
+Consider that there is currently an inconsistency as AN7581 and
+EN7581 refer to the same thing. This is due to the fact that
+the SoC born under EcoNet but then was acquired by Airoha.
+
+Christian Marangi (13):
+  clk: en7523: convert driver to regmap API
+  clk: en7523: generalize register clocks function
+  dt-bindings: soc: airoha: add SCU SSR Serdes port binding
+  dt-bindings: soc: airoha: add Documentation for Airoha AN7581 SCU SSR
+  dt-bindings: mfd: add Documentation for Airoha EN7581 SCU
+  dt-bindings: clock: airoha: make reg optional for Airoha EN7581
+  clk: en7523: support getting regmap from parent node for EN7581
+  soc: airoha: add support for configuring SCU SSR Serdes port
+  dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
+  phy: airoha: Add support for Airoha AN7581 USB PHY
+  usb: host: add ARCH_AIROHA in XHCI MTK dependency
+  arm64: dts: airoha: en7581: convert SCU clock node to MFD
+    implementation
+  arm64: dts: airoha: en7581: add USB and SCU SSR nodes
+
+ .../bindings/clock/airoha,en7523-scu.yaml     |  13 +-
+ .../mfd/airoha,en7581-scu-sysctl.yaml         |  68 +++
+ .../bindings/phy/airoha,an7581-usb-phy.yaml   | 106 ++++
+ .../soc/airoha/airoha,an7581-scu-ssr.yaml     | 106 ++++
+ MAINTAINERS                                   |  15 +
+ arch/arm64/boot/dts/airoha/en7581.dtsi        |  74 ++-
+ drivers/clk/clk-en7523.c                      | 258 ++++----
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   3 +-
+ drivers/phy/airoha/Kconfig                    |  13 +
+ drivers/phy/airoha/Makefile                   |   3 +
+ drivers/phy/airoha/phy-airoha-usb.c           | 554 ++++++++++++++++++
+ drivers/soc/Kconfig                           |   1 +
+ drivers/soc/Makefile                          |   1 +
+ drivers/soc/airoha/Kconfig                    |  18 +
+ drivers/soc/airoha/Makefile                   |   3 +
+ drivers/soc/airoha/airoha-scu-ssr.c           | 195 ++++++
+ drivers/usb/host/Kconfig                      |   2 +-
+ include/dt-bindings/soc/airoha,scu-ssr.h      |  24 +
+ include/linux/soc/airoha/airoha-scu-ssr.h     |  17 +
+ include/linux/soc/soc/airoha-scu-ssr.h        |  17 +
+ 21 files changed, 1355 insertions(+), 137 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+ create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+ create mode 100644 Documentation/devicetree/bindings/soc/airoha/airoha,an7581-scu-ssr.yaml
+ create mode 100644 drivers/phy/airoha/Kconfig
+ create mode 100644 drivers/phy/airoha/Makefile
+ create mode 100644 drivers/phy/airoha/phy-airoha-usb.c
+ create mode 100644 drivers/soc/airoha/Kconfig
+ create mode 100644 drivers/soc/airoha/Makefile
+ create mode 100644 drivers/soc/airoha/airoha-scu-ssr.c
+ create mode 100644 include/dt-bindings/soc/airoha,scu-ssr.h
+ create mode 100644 include/linux/soc/airoha/airoha-scu-ssr.h
+ create mode 100644 include/linux/soc/soc/airoha-scu-ssr.h
 
 -- 
-With best wishes
-Dmitry
+2.48.1
+
 
 -- 
 linux-phy mailing list
