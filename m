@@ -4,110 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCD02C28B2F
-	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 13:53:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90694C28B2F
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 14:47:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OaVxR6GB2WgJ4KY92P18GBfRIOAgjVfs80JAklHJ9ew=; b=aEnTWHzGD6Fw/M
-	ZyRgazvaw+EV5FiEQirpmlLncB058gsD0f/0XloH/QoTqHvVVA/NBrTnkMsMVgtM0059r8xSP3RQv
-	T+BH8hBErE5xtXLcRwaa7/OziN7/lZvLj1Uv9NEzmB7TFUSwcbXdQb3G5My4E8YX3U38x2L2U3zax
-	FYHXgm7odbw/U00rnqyDsWHzpMux8muXqk56wchFxDcXYiQ0DuSZmTjd7GnIheNzJlejAIClrrP15
-	QdVl0IxlyLuWeTfL7/BxUhDH+3zVgtEcvMY+eT5qqAtozjuAICCXPjByhG2RIAE/mp4+pijd0noy6
-	Axjy795rYc3jUz5Cfo1Q==;
+	List-Owner; bh=zM4uCpAcvh/ptmKYanhYDZQfefSSWQUTskaWIlGJIwc=; b=yoUIX5ZCS0/jnd
+	rDv+8eZNO0xbnMl752Jd3tn9VcVOXJzgfDfBFaq+NEXtRGYYhF8u4DvvjKrZQrOfL5ahNTjKNO/6V
+	D5uR7MBDSjW0C22aKeqE5L+1dX2AMvQs7WuFt4uommUjuhZ6Wql3kGRE29YJLvMftSfEfmXGo+qoN
+	p8b8nyQBcJ76FHYUBf+2Ks00/R6taV2ZRCd/uwyqMuUi+uABEpgBxijqYQv3onGgb21oXkWf6bv/Z
+	afZbztfGXyTGmIN7Ei2wdJZLabv5IpfWee/C5TFPgoownImOrPVyyu3R4oxC+D6QB1yIFVQJPaYm0
+	vHS81MYDq/VuFtTziVYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trH6L-00000000dMo-1spk;
-	Sun, 09 Mar 2025 13:53:57 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1trHwX-00000000g5t-2mKC;
+	Sun, 09 Mar 2025 14:47:53 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trGk8-00000000aY9-3Kyc;
-	Sun, 09 Mar 2025 13:31:01 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-39143200ddaso267664f8f.1;
-        Sun, 09 Mar 2025 06:31:00 -0700 (PDT)
+	id 1trHwV-00000000g57-0nY1;
+	Sun, 09 Mar 2025 14:47:52 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-390effd3e85so2989617f8f.0;
+        Sun, 09 Mar 2025 07:47:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1741527059; x=1742131859; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1741531670; x=1742136470; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:to:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=PUXPbCfIsepDY+Mn7pTqtiR4N56X9o4JrkeUo/O+gyc=;
-        b=WBjh0BugRF97k1PMEW5Bwyp+IrTR/gZOj/NcODG1KhdNkJz10GG6hECM4t05+XojFy
-         0EV/1+Z0KBXlOfLaPspPjKAOx1NqLmQHjfJyUG3BbM3udTqlc3Lhvilv84SBD73WnAyk
-         pdmbG1NxG4lgOI+aHKZJrj018KtRgYcu50Qchs7MaQNHI6JqInk/FFiCnmNy57iVQ7Aw
-         nbar1cJTTCL+FoTF4DSWqinwYRiaRtqo5v5U1EMFF5aCmFu6jfQEkj456ONh1qdEMBpw
-         ggXC6d+v3DpQCMpDf+4jc95rD7HYi+IGO6+qPVYa5P1gm0smFJny/ks9qbqww3C4oMph
-         v1fg==
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GTWaiiNH+tBaZi6l7L8OTGx/gcOTL7htEY9OSZqeGPc=;
+        b=b0O43ABVprUIu/SgxG5uNj34ZLLWeLkE/puUuiLRcAZiYDe5lkuc2UZM165rPhqQui
+         IhA8XCqn/k0vMmr9PDI9skNiyqzyWvPyBeRmHgElR1whD0aOCsZWS/qPzq6tiw07wmgH
+         /rXpGwFxLHx/ShKNXvAxHLXaxE8ooKvAhVID41JGxkJKDcGqwwP3EQDpOxWyradvGtcy
+         51mlgK6MPrr0OTVZPIHyH3KkkB6EXax7vjD3I0KPwFVw//acX4OcrjaX2TGtxB2E97nC
+         GGddz9ZZljxXChQu96QR4Bgd8q8RvBTc1GCjjszxFczElR+4y041l5OS5A9q0GH8ogrC
+         x8Iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741527059; x=1742131859;
+        d=1e100.net; s=20230601; t=1741531670; x=1742136470;
         h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:to:from:x-gm-message-state:from:to:cc
+         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=PUXPbCfIsepDY+Mn7pTqtiR4N56X9o4JrkeUo/O+gyc=;
-        b=sRiws4EPezvfDQyFpjenUU+rG+xh5/rAxdsqQbZDGqMMx8TeoQaWKuEaTNuQRO5JrV
-         6CrVQn7mJA99YsdRoEg0NEifkslkPvvKOGULpTG0uRbmv9JeY7IEOAFLFLOawhbXxV85
-         Zz5Eypt1Y5sHuvSfMudILWAg6+bGVK9zrRDkIi6je9+ulhajosirjr0EJSADmXXO/pjX
-         86qc1d3J2LvNQozn7/e6pEskKphvgccg5R99ZLuFNzf/zgksPbSnmPJqDOkw18oILAjc
-         P95+P/OWdhHrk9KiyaKu2j/X2bpVgalU0s2k9T2AZXpVU89ETechQEjteodBFAsVRkyY
-         qs/w==
-X-Forwarded-Encrypted: i=1; AJvYcCVvQfCcOrtBCDOJITt6770LEfKBTQyXXvUyOuRYP4Pq8c714/E1nXGRpC02I5ZsAyjEYWfkohFz0xDIVXP33E1y@lists.infradead.org, AJvYcCWdUWHQG94SA9cmrtv1H7FO02f5sAB8fqYsNNPUpoTSa9JG6z7s25rtLe3kFIecYCenwFkHYfT0jnlL18hRlMc=@lists.infradead.org, AJvYcCWiULmjlj43zhzIEIiC0tq1lgkFrpITQeXtAZOMSjjtc2bqoGcSyZmSzEam9JSBRxEhwHVXAgqHGyxo@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz+dyvFJxz0JHkjsvw5MYpCHXKFr3Uf2RpDs0mST+bOdCqORioW
-	EsPM7/Pl7CAP041vGuZ/jhCFMVRsO2MaN1xRzc0yWmZRGMeTDO+M
-X-Gm-Gg: ASbGncv5N0wuiWNzW31ytC8Sg5ssEttPuMEnm209xC+vLlbfperjUTbhJkHyk8YdfmN
-	+Lk2A3lzID5AanL8I+p2hIrE7iKpdHTXLD1FKygfsICiRwRLS21q44mNI2RXt3keEMkjM0HSzGL
-	HYKjH+4E/axmulFC2frC+bZGTN3hayr6MFvEXWp/hz7q4r9IBHsifsQ5+DG93zv5BFwux8LbfpN
-	X0RSDcL3fk0Hu0Jawvz5+FwZhv7EPolVqqzzndX3jMeXEu4XC62NAr3/Jg37KTBfCcng4eCFZck
-	6sWdZI5xay6li2w5ohoA1WIcXHqIWgDtFPhS+3GWqBGM3zRhIgLXlapVVN1IITATFUyM4qTNMgM
-	XSeLOYEoypfr8Wg==
-X-Google-Smtp-Source: AGHT+IHb6GE+RdsoNUn0+3sL37pgWMjh5/VzLN7RX2rS7tVvUpl9i16EKbDnFhvFgXvM+UgMM2DmzQ==
-X-Received: by 2002:a05:6000:1846:b0:391:2192:ccd6 with SMTP id ffacd0b85a97d-39132dd6afcmr7499960f8f.39.1741527059081;
-        Sun, 09 Mar 2025 06:30:59 -0700 (PDT)
-Received: from localhost.localdomain (93-34-90-129.ip49.fastwebnet.it. [93.34.90.129])
-        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-3912bee262esm11867536f8f.0.2025.03.09.06.30.57
+        bh=GTWaiiNH+tBaZi6l7L8OTGx/gcOTL7htEY9OSZqeGPc=;
+        b=nHGKKtP9U0dg5YV7WZZCa1cfRNWpNqKQnniERA/2MjWZNRzZuK+GtjaFASMNtzkxhs
+         wjmo8Y8h9ByD2tZwPXV27Tp+hDLj0z7/Qoejm+2NL3wpelfgKmkyKMDT4JOyXq+kJHut
+         nVpZxDqmDCDDQmMWkJHOqRsSAazQXcqZ5PVqV1gnTFE3PYIaw26bbFLxuBpOtiMZD/LX
+         CGPBR7Hek5pRvgOLqysxgX/cDANXgjQKjbQLlIVRXh/qzFveQMm903UjgAaeu0x8keAU
+         HMDVvTChwPJXC63GzW1BChGyR8TpNQcJorwwiiC4SuCQl6xhNCDYm+3KXui73k1acfRv
+         OHZg==
+X-Forwarded-Encrypted: i=1; AJvYcCV7Rp1XG7dZd3VVC4LzMw1z2NM0+FpVMhtYE/bq5HXRSAFLFr5xySPjrAp11rQyS8gQVDTEEkojpiUD@lists.infradead.org, AJvYcCXST54kkzpIl+TbIcAHZFuoJmF7lK+//ySAVlsdbr69DfVycxXA4tJ8cX3c0jl5pJ/q7AkaT48vJ3WgTsK+gQbB@lists.infradead.org, AJvYcCXdY2cPfgrYlD8ajlEz1emHC5is/VlQEHNfnKeTz1D7NM7WhhUvD2dkmHInrTdvcffOsgFQXwq40X+mK9WgNRY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwYJ8OM2c4aBooXyacdTmz9rVgxsmzQxOdh9AHOo8om3MQtes2B
+	exGCmgMma3ctCOAM9t4depntAzb3nWA+IG14cPtViKYSOAku1VHedxDjJw==
+X-Gm-Gg: ASbGncv+pxyYzrOizBajZdbS6ri3txy15qIAy7oTDMsUbPeWmTQQAPHacS2xKPdr3Xs
+	zAu8uLXDOJFVqCKMkVuKX5NMFhPpKHk7htYnYUl8IkwmsvgUT7Kzes+v5RgUDsfc5TmJxqA2RUD
+	GoqwWxLCVX7M7u25CEGNCrPAuoWnUkup2JBFUi2H9xq0wkzNQa9XwlWZrS61P+1M0ma/prbk/NW
+	nflLu/WVX0umVQFoyHVRZmqIRFRRdmDObG1hB1beYhzByq5AdyxatqTYb5kWpq511Zr/E8DFnhi
+	sZWzf3l0DfmpDlsAsA9l/k5esTxEz92+HNILpWzwuU6DEgChMG73xmc2e+EJ8KHkOkn2OgfXG25
+	4TC3liJxCIMu3DxQ2MQ==
+X-Google-Smtp-Source: AGHT+IEwJbPV09xk72LEbzQ8Myae9OExn7rbr2tBSURY8OV0I/uXz2TcorLmybD6DwsofI0FuPNHzw==
+X-Received: by 2002:a5d:64ad:0:b0:38f:2a49:f6a5 with SMTP id ffacd0b85a97d-39132d4de7emr6923623f8f.15.1741531669489;
+        Sun, 09 Mar 2025 07:47:49 -0700 (PDT)
+Received: from pumpkin (82-69-66-36.dsl.in-addr.zen.co.uk. [82.69.66.36])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3912c103aa5sm12193398f8f.94.2025.03.09.07.47.48
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 09 Mar 2025 06:30:58 -0700 (PDT)
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Christian Marangi <ansuelsmth@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Daniel Danzberger <dd@embedd.com>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Nikita Shubin <nikita.shubin@maquefel.me>,
-	Guo Ren <guoren@kernel.org>,
-	Yangyu Chen <cyy@cyyself.name>,
-	Ben Hutchings <ben@decadent.org.uk>,
-	Felix Fietkau <nbd@nbd.name>,
-	linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	upstream@airoha.com
-Subject: [PATCH 13/13] arm64: dts: airoha: en7581: add USB and SCU SSR nodes
-Date: Sun,  9 Mar 2025 14:29:44 +0100
-Message-ID: <20250309132959.19045-14-ansuelsmth@gmail.com>
-X-Mailer: git-send-email 2.48.1
-In-Reply-To: <20250309132959.19045-1-ansuelsmth@gmail.com>
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
+        Sun, 09 Mar 2025 07:47:48 -0700 (PDT)
+Date: Sun, 9 Mar 2025 14:47:47 +0000
+From: David Laight <david.laight.linux@gmail.com>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Heiko
+ Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, Sandor Yu
+ <Sandor.yu@nxp.com>, Maxime Ripard <mripard@kernel.org>,
+ kernel@collabora.com, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Subject: Re: [PATCH v5 07/12] phy: rockchip: samsung-hdptx: Avoid Hz<->hHz
+ unit conversion overhead
+Message-ID: <20250309144747.744e5197@pumpkin>
+In-Reply-To: <a1a3e86a-1906-4797-932d-8e1aadafedde@collabora.com>
+References: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com>
+	<20250308-phy-sam-hdptx-bpc-v5-7-35087287f9d1@collabora.com>
+	<CAA8EJpoQbvFbNXQ2RB1qY2gHnwZaU-PT-DMLnZkrxkqs2wkXqQ@mail.gmail.com>
+	<a1a3e86a-1906-4797-932d-8e1aadafedde@collabora.com>
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.38; arm-unknown-linux-gnueabihf)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250309_063100_831460_59F340B6 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20250309_074751_245742_625195AD 
+X-CRM114-Status: GOOD (  23.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,103 +107,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add SCU SSR and USB nodes required for USB support of Airoha EN7581. SCU
-SSR node is required to read and configure the current Serdes mode of
-the USB PHYs.
+On Sun, 9 Mar 2025 12:13:32 +0200
+Cristian Ciocaltea <cristian.ciocaltea@collabora.com> wrote:
 
-Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
----
- arch/arm64/boot/dts/airoha/en7581.dtsi | 61 ++++++++++++++++++++++++++
- 1 file changed, 61 insertions(+)
+> On 3/9/25 11:22 AM, Dmitry Baryshkov wrote:
+> > On Sat, 8 Mar 2025 at 14:21, Cristian Ciocaltea
+> > <cristian.ciocaltea@collabora.com> wrote:  
+> >>
+> >> The ropll_tmds_cfg table used to identify the configuration params for
+> >> the supported rates expects the search key, i.e. bit_rate member of
+> >> struct ropll_config, to be provided in hHz rather than Hz (1 hHz = 100
+> >> Hz).  This requires multiple conversions between these units being
+> >> performed at runtime.
+> >>
+> >> Improve implementation clarity and efficiency by consistently using the
+> >> Hz unit throughout driver's internal data structures and functions.
+> >> Also rename the rather misleading struct member.
+> >>
+> >> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> >> ---
+> >>  drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 79 +++++++++++------------
+> >>  1 file changed, 39 insertions(+), 40 deletions(-)
+> >>
+> >> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> >> index 2bf525514c1991a1299265d12e1e85f66333c604..e58a01bdb3ce82d66acdcb02c06de2816288b574 100644
+> >> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> >> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> >> @@ -330,7 +330,7 @@ enum dp_link_rate {
+> >>  };
+> >>
+> >>  struct ropll_config {
+> >> -       u32 bit_rate;
+> >> +       u32 rate;  
+> > 
+> > unsigned long long, please, to match the tmds_char_rate type.
 
-diff --git a/arch/arm64/boot/dts/airoha/en7581.dtsi b/arch/arm64/boot/dts/airoha/en7581.dtsi
-index dfc12fa99748..5975da11ace0 100644
---- a/arch/arm64/boot/dts/airoha/en7581.dtsi
-+++ b/arch/arm64/boot/dts/airoha/en7581.dtsi
-@@ -3,6 +3,7 @@
- #include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/clock/en7523-clk.h>
-+#include <dt-bindings/phy/phy.h>
- #include <dt-bindings/reset/airoha,en7581-reset.h>
- 
- / {
-@@ -183,6 +184,10 @@ scuclk: clock-controller {
- 				#clock-cells = <1>;
- 				#reset-cells = <1>;
- 			};
-+
-+			scu_ssr: system-controller {
-+				compatible = "airoha,an7581-scu-ssr";
-+			};
- 		};
- 
- 		uart1: serial@1fbf0000 {
-@@ -200,6 +205,62 @@ rng@1faa1000 {
- 			interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
-+		usb0: usb@1fab0000 {
-+			compatible = "mediatek,mtk-xhci";
-+			reg = <0x0 0x1fab0000 0x0 0x3e00>,
-+				<0x0 0x1fab3e00 0x0 0x100>;
-+			reg-names = "mac", "ippc";
-+			interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
-+
-+			phys = <&usb0_u2 PHY_TYPE_USB2>, <&usb0_u3 PHY_TYPE_USB3>;
-+
-+			status = "disabled";
-+		};
-+
-+		phy@1fac0000 {
-+			compatible = "airoha,an7581-usb-phy";
-+			reg = <0x0 0x1fac0000 0x0 0x10000>;
-+
-+			airoha,port-id = <0>;
-+			airoha,scu-ssr = <&scu_ssr>;
-+
-+			usb0_u2: usb2-phy {
-+				#phy-cells = <1>;
-+			};
-+
-+			usb0_u3: usb3-phy {
-+				#phy-cells = <1>;
-+			};
-+		};
-+
-+		usb1: usb@1fad0000 {
-+			compatible = "mediatek,mtk-xhci";
-+			reg = <0x0 0x1fad0000 0x0 0x3e00>,
-+				<0x0 0x1fad3e00 0x0 0x100>;
-+			reg-names = "mac", "ippc";
-+			interrupts = <GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>;
-+
-+			phys = <&usb1_u2 PHY_TYPE_USB2>, <&usb0_u3 PHY_TYPE_USB3>;
-+
-+			status = "disabled";
-+		};
-+
-+		phy@1fae0000 {
-+			compatible = "airoha,an7581-usb-phy";
-+			reg = <0x0 0x1fae0000 0x0 0x10000>;
-+
-+			airoha,port-id = <1>;
-+			airoha,scu-ssr = <&scu_ssr>;
-+
-+			usb1_u2: usb2-phy {
-+				#phy-cells = <1>;
-+			};
-+
-+			usb1_u3: usb3-phy {
-+				#phy-cells = <1>;
-+			};
-+		};
-+
- 		system-controller@1fbf0200 {
- 			compatible = "airoha,en7581-gpio-sysctl", "syscon",
- 				     "simple-mfd";
--- 
-2.48.1
+Isn't 'bit_rate' more descriptive?
+But maybe rate_hz to make the units more obvious.
+
+If the max frequency might get near 4Gz then the you need something
+bigger that u32 - which might it used hectaHz (a prefix that is pretty much only
+used with areas of land!)
+Being more explicit with u64 (rather than 'long long') may be better.
+Certainly less typing.
+
+	David
+
+
+
+> >   
+> >>         u8 pms_mdiv;
+> >>         u8 pms_mdiv_afc;
+> >>         u8 pms_pdiv;
+> >> @@ -410,45 +410,45 @@ struct rk_hdptx_phy {
+> >>  };
+> >>
+> >>  static const struct ropll_config ropll_tmds_cfg[] = {
+> >> -       { 5940000, 124, 124, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >> +       { 594000000, 124, 124, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,  
+> > 
+> > Use ULL suffix
+> >   
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 3712500, 155, 155, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >> +       { 371250000, 155, 155, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 2970000, 124, 124, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >> +       { 297000000, 124, 124, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1620000, 135, 135, 1, 1, 3, 1, 1, 0, 1, 1, 1, 1, 4, 0, 3, 5, 5, 0x10,
+> >> +       { 162000000, 135, 135, 1, 1, 3, 1, 1, 0, 1, 1, 1, 1, 4, 0, 3, 5, 5, 0x10,
+> >>           1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1856250, 155, 155, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >> +       { 185625000, 155, 155, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1540000, 193, 193, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 193, 1, 32, 2, 1,
+> >> +       { 154000000, 193, 193, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 193, 1, 32, 2, 1,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1485000, 0x7b, 0x7b, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 4, 0, 3, 5, 5,
+> >> +       { 148500000, 0x7b, 0x7b, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 4, 0, 3, 5, 5,
+> >>           0x10, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1462500, 122, 122, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 244, 1, 16, 2, 1, 1,
+> >> +       { 146250000, 122, 122, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 244, 1, 16, 2, 1, 1,
+> >>           1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1190000, 149, 149, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 149, 1, 16, 2, 1, 1,
+> >> +       { 119000000, 149, 149, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 149, 1, 16, 2, 1, 1,
+> >>           1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1065000, 89, 89, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 89, 1, 16, 1, 0, 1,
+> >> +       { 106500000, 89, 89, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 89, 1, 16, 1, 0, 1,
+> >>           1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 1080000, 135, 135, 1, 1, 5, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+> >> +       { 108000000, 135, 135, 1, 1, 5, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+> >>           0x14, 0x18, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 855000, 214, 214, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 214, 1, 16, 2, 1,
+> >> +       { 85500000, 214, 214, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 214, 1, 16, 2, 1,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 835000, 105, 105, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 42, 1, 16, 1, 0,
+> >> +       { 83500000, 105, 105, 1, 1, 5, 1, 1, 1, 1, 1, 1, 1, 42, 1, 16, 1, 0,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 928125, 155, 155, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >> +       { 92812500, 155, 155, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 742500, 124, 124, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >> +       { 74250000, 124, 124, 1, 1, 7, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 650000, 162, 162, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 54, 0, 16, 4, 1,
+> >> +       { 65000000, 162, 162, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 54, 0, 16, 4, 1,
+> >>           1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 337500, 0x70, 0x70, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 0x2, 0, 0x01, 5,
+> >> +       { 33750000, 0x70, 0x70, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 0x2, 0, 0x01, 5,
+> >>           1, 1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 400000, 100, 100, 1, 1, 11, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+> >> +       { 40000000, 100, 100, 1, 1, 11, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+> >>           0x14, 0x18, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 270000, 0x5a, 0x5a, 1, 1, 0xf, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+> >> +       { 27000000, 0x5a, 0x5a, 1, 1, 0xf, 1, 1, 0, 1, 0, 1, 1, 0x9, 0, 0x05, 0,
+> >>           0x14, 0x18, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >> -       { 251750, 84, 84, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 168, 1, 16, 4, 1, 1,
+> >> +       { 25175000, 84, 84, 1, 1, 0xf, 1, 1, 1, 1, 1, 1, 1, 168, 1, 16, 4, 1, 1,
+> >>           1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> >>  };
+> >>
+> >> @@ -894,10 +894,10 @@ static void rk_hdptx_phy_disable(struct rk_hdptx_phy *hdptx)
+> >>         regmap_write(hdptx->grf, GRF_HDPTX_CON0, val);
+> >>  }
+> >>
+> >> -static bool rk_hdptx_phy_clk_pll_calc(unsigned int data_rate,
+> >> +static bool rk_hdptx_phy_clk_pll_calc(unsigned long rate,  
+> > 
+> > here and further, unsigned long long
+> > Also, is it tmds_char_rate?  
+> 
+> Yes, will do the suggested changes in v6.
+> 
+> Thanks,
+> Cristian
+> 
 
 
 -- 
