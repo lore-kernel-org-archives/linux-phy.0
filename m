@@ -4,63 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9218CC282EC
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Mar 2025 16:51:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 064D6C282D1
+	for <linux-phy@archiver.kernel.org>; Sun,  9 Mar 2025 09:16:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ksXqJyhJEffxFuTbaLMSn1DbXPvv7RWREyrUtGteWtw=; b=olO6yvyR/UTyk/
-	ABl+9ar9iBcSziZsNRKOtBUnvMxlA5C5kylmV77bRMtF4D+b5AJvB47ZoigjJqQm2ftHTDeaEQLHC
-	4Q5tefI9/Qo4Um+E87PlbD6wPuURUfTT3awALlJEq2uwUQSL260PkoIcQFqBuX5oH4aDCXCh7waRg
-	HewDNPVVa+Wg0tg2zszR1aujp9nJNba3pA6nn+5BlGGz/OWvgo0MJ7ml5jZi1GemKsSBwFDqiy0So
-	7P2Ym/mN9FmTOSHZY6RRLWdl3wUwKbNxwMJze9GLbwFB19Ex4LklYxYd4y/vcTXBqI7UMt4I+W7wC
-	o38JATiVxlqk3kgoaxvA==;
+	List-Owner; bh=occygeP8Lf4ii5u4iuoCC46BCkLMIo6KBqWf36k7LVg=; b=CGHbSXy6/Cmmkg
+	6xOKeQ4N3h2fPk8x6F1gA9QincawiRlH8YZh5pg+2maZEt8Dtx2CMtGmaQwACt8YksPJkWzplvh4X
+	ZrhB7zCoMxWznZZDQXjrTvD++BbFGEVHph3CTcHmj2Y4efpw54ZIq0oq7dpXnahDOqLTa6WenmcYJ
+	wZxJettKi05I68Zs6I2/RaeTlrQal1e03nRq9pVb4jXxQ/tXDr5oj7cBRBLkFXcCc9gTAYlciL1wl
+	iWO+oTZzKFqbxmWc01IVXtdRwTxI9eoz+8O4lINlP/JKGwI3a/xnCFtqhno4h3Dks0mj4lDAenBmC
+	uTvzUDh61e1aLPSTTNeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqxP5-0000000GtbC-0zva;
-	Sat, 08 Mar 2025 16:51:59 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1trClz-00000000Fy9-0puh;
+	Sun, 09 Mar 2025 09:16:39 +0000
+Received: from mail-yw1-x1136.google.com ([2607:f8b0:4864:20::1136])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqxP3-0000000GtZw-00PM;
-	Sat, 08 Mar 2025 16:51:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
-	List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=H2BsNafZeYvp9wbkGN2qGL99O0ortwb9hsZ0gqUcIdA=; b=EZ1vdrVVdILyYK9dTDvtM7OoD3
-	+qArpJvcSeElp9yPV81y5wQCiFYrtzFh4jIwIPPbd6kNm0oYAfywwQHxioFHDr4yRgXKaR5ALGwjX
-	dWHgcLVL3kaRYIDyjT+zmCjLyOsukR/DtVn2w+3Tti8XIb/qFTCG+LMSftEPjWJYXp9HhkEjt5pg0
-	qUFZEsG7r3zj3E6PLaJI9HmBpPVt32OM4Q0yw7keWSjLVCfudBHVtOmS+Mqv3N8asn/rA5B/exSz8
-	YARA9KImzZKKEtHtbCxfmSdeLgkPIC1dWkkTg+UNRzk6dG4iFZMBGCpgywcb0QvmYolvJnOFsTSlR
-	97cq09TQ==;
-Received: from [194.95.143.137] (helo=phil.localnet)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1tqxOw-000463-O9; Sat, 08 Mar 2025 17:51:50 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
- Andy Yan <andyshrk@163.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Sebastian Reichel <sebastian.reichel@collabora.com>, kernel@collabora.com,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
- Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Subject: Re: [PATCH] phy: phy-rockchip-samsung-hdptx: Add support for RK3576
-Date: Sat, 08 Mar 2025 17:51:50 +0100
-Message-ID: <5069079.31r3eYUQgx@phil>
-In-Reply-To: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
-References: <20250306-rk3576-hdptx-phy-v1-1-288cc4b0611a@collabora.com>
+	id 1trClZ-00000000Ftl-45Fg
+	for linux-phy@lists.infradead.org;
+	Sun, 09 Mar 2025 09:16:15 +0000
+Received: by mail-yw1-x1136.google.com with SMTP id 00721157ae682-6f7031ea11cso32787347b3.2
+        for <linux-phy@lists.infradead.org>; Sun, 09 Mar 2025 01:16:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1741511772; x=1742116572; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=y0eUpkni4OJ6N5I2ip/hczJtRuPECve9UUx0lHvZiWc=;
+        b=DgXLowt/nBMQ9cRIV+fxyUW5H+MiAQa7CK6q6upI9YfZuYt+yRO4YrrOSZbHq64jY6
+         eRVtLSJxAEYH+VUiq3r3c+h2e0ZTEAsmUD/GiKtq4MNxv7OzDWebm/Lc1H9sKzgp7J4y
+         Rgs+Z/sH8xzsF/Ct27zHxyMhfTy1T9k3z3LXZ7OLsEV87WheP+19o/pUBTfwzHVTbpl0
+         YbDkeHOVVQqFSmeWgiY9AmPhK3M5HtDf96cY9a5G75EwC8ycmA9NBQeFP1/+4lawU1Pl
+         rIInfSTkz8EYptyooesgWcpfEbQz4bu8bVn+UVkSTKWfYPULyGIYmD1DbQIfA2zIj+Hn
+         O9cQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741511772; x=1742116572;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=y0eUpkni4OJ6N5I2ip/hczJtRuPECve9UUx0lHvZiWc=;
+        b=aobtF/0GlbvTjmKBWXQbTueyZdJ0kT05UgKdF+/uXZpBQwrMMEXshCVLvtTvleZLrM
+         B0E8bOGMxmMZQ19sxv/rZYKOCoA7YH8/pH1ZgKvTiS+tnhb1zBNCxJOn/2bXGSyVZgPs
+         dU9aL1OuZmTH02PVqen1Fr9Cp0twqJRHjmY5jqKPimeOHTWx34oBAj6WEkFBexOS7gsE
+         /8h2yQsVCOZ+eQZvsMCvTxXh9LIHKs5cDJbCUdWdApouGtS0bAEWDYig+xUUknIkbq+Z
+         39as3sEQpNMf8R6SnfZPpxXKhIuZkSuxQ6tqm4fJt2lF+NpS+Jp2wcBXDKOOzbxwqOnr
+         NOaw==
+X-Forwarded-Encrypted: i=1; AJvYcCVXvwKHPo2650xJm9GbSDlDd5EtIKDiTTleD655UvuRxaLNVQHzZROhWFazm9Xi/c+3k0mDjKqbaqA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyxS31/1fpoOp1czOgySH1QR/UMO1BHfKvQMwblzawq9BgsEf96
+	gu21sZD+bglnbwRes+A+LQSkaKAisdJAl5ThgbGMpsTUU2sW3fc32yiueKUQGbXCm+nCxQF9aKp
+	l/dv1MFDGEb2KNbSenxjUuvbq4Vj9KWD2cSEpwQ==
+X-Gm-Gg: ASbGncvvz7U0eInsyub28wkeqaLM9EcfjZ+nt5LN/nqQA5nopzwgNzA3HaD7weAGidu
+	y20rn7sYzXgjzQQO7H3TN3xGMUqVqRLV9/90pwRzkZ4zsP9ELU1BSXh2vgKvcySDrRt3SloPAWm
+	bkPGp9TnccEMVd5BMho/xeRVFKhEB9etgf30P0vFCh4xngLoaQjpU=
+X-Google-Smtp-Source: AGHT+IFPECWoQ2SLQxFVAn6AAfos114PtgmwIoKQ+zMM+yCAQaFRw3Tq8C5wAZ3CID7rhAZlrgL2zlDgjqBdRN6ki9A=
+X-Received: by 2002:a05:690c:6382:b0:6fd:3fd0:6f2c with SMTP id
+ 00721157ae682-6febf38323amr131915417b3.29.1741511771952; Sun, 09 Mar 2025
+ 01:16:11 -0800 (PST)
 MIME-Version: 1.0
+References: <20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com> <20250308-phy-sam-hdptx-bpc-v5-2-35087287f9d1@collabora.com>
+In-Reply-To: <20250308-phy-sam-hdptx-bpc-v5-2-35087287f9d1@collabora.com>
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Date: Sun, 9 Mar 2025 11:16:00 +0200
+X-Gm-Features: AQ5f1Jp3ty9yF8Gy946JtVIhFnSayq957H6H-29ZcG2uPAfgmPlCXdifLdlKe4c
+Message-ID: <CAA8EJpqYE1drM6=C0AwPZ-e5RkWqjMTpWQiwhA64qby1mmVL1Q@mail.gmail.com>
+Subject: Re: [PATCH v5 02/12] phy: hdmi: Add color depth configuration
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+	Sandor Yu <Sandor.yu@nxp.com>, Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250308_085157_036127_AA712413 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20250309_011614_021236_C875770D 
+X-CRM114-Status: UNSURE (   9.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,20 +92,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QW0gRG9ubmVyc3RhZywgNi4gTcOkcnogMjAyNSwgMjA6Mjk6MjMgTUVaIHNjaHJpZWIgTmljb2xh
-cyBGcmF0dGFyb2xpOgo+IERlc3BpdGUgdGhlIGNvbXBhdGlibGUgYWxyZWFkeSBiZWluZyBsaXN0
-ZWQgaW4gdGhlIGJpbmRpbmdzLCB0aGUgUEhZCj4gZHJpdmVyIG5ldmVyIGdhaW5lZCBleHBsaWNp
-dCBzdXBwb3J0IGZvciBpdC4gVGhpcyBpcyBlc3BlY2lhbGx5IGEKPiBwcm9ibGVtIGJlY2F1c2Ug
-dGhlIGV4cGxpY2l0bHkgbGlzdGVkIFBIWSBhZGRyZXNzZXMgbmVlZCB0byBiZSBzcGVjaWZpZWQK
-PiBmb3IgZWFjaCBTb0MuCj4gCj4gVG8gc29sdmUgdGhpcywgYWRkIHRoZSBjb21wYXRpYmxlLCBh
-bmQgYSBQSFkgY29uZmlnLCB3aXRoIHRoZSBhZGRyZXNzCj4gZ2xlYW5lZCBmcm9tIHJrMzU3Ni5k
-dHNpLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE5pY29sYXMgRnJhdHRhcm9saSA8bmljb2xhcy5mcmF0
-dGFyb2xpQGNvbGxhYm9yYS5jb20+CgpSZXZpZXdlZC1ieTogSGVpa28gU3R1ZWJuZXIgPGhlaWtv
-QHNudGVjaC5kZT4KCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtcGh5Cg==
+On Sat, 8 Mar 2025 at 14:21, Cristian Ciocaltea
+<cristian.ciocaltea@collabora.com> wrote:
+>
+> Extend the HDMI configuration options to allow managing bits per color
+> channel.  This is required by some PHY drivers such as
+> rockchip-samsung-hdptx.
+>
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> ---
+>  include/linux/phy/phy-hdmi.h | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+
+Just to confirm, are you passing TMDS char rate or pixel clock for
+DeepColor (bpc > 8) modes?
+
+
+-- 
+With best wishes
+Dmitry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
