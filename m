@@ -4,87 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23773C282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 09:19:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9210C282DE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 09:23:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mnPVTcd59Dc++PTllmLfw5wvgGP3MCPvalN+93fgTIQ=; b=AEHB51UITgX9fdlyQXk6Y10vvf
-	duCFiks20AH/AKHW9aRebDSHcQlOxBJ2+wuwyElNjNzOxU4jHwtZzfHCTezrHIQuiHqZAaFqHM+Qd
-	/tJXRsZ7S/URB2fG8Dpp45aQsz5ld57Ee4PC4P8UP1cMPLUTIoqVv9htCJN8iW9xpHC1tAYxCIk7D
-	CCvGr8Qr0VdhaTfUZThoScxF1zfgskzsahFzaKzN6+DqJAGqfTrcO+CIQ/CvdMAAoNXhv1f+MomAH
-	rZcVFzGKz9AXtH38cY2LKjk7zV+ZDvMHjpzUQp2nDoRs8k0IBzBzAS7f8m+J2fWctd1zbaaYztX6h
-	Y2SqWmsA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MFQNk85m6MnYMPcx/QQiG6t/81Ci0zQogHRyhg0hIwI=; b=j2jj9hmsXLp2kD
+	SK/x7LTwiEOcoz3IpWG3rby8+Mv+ezPSA9zugP5i7dU9vznSw8dPRN1DlIem1AT5oANypys37TVg/
+	zCkKHF16B1F+Db/FG5CMYJkHOp2rHRptxj1OBMURZxPerG4EZFGFFO5ruZ7am8QqlcnWeeFsG1ydD
+	nV51e/bzgFh3IKcfEAmeFsIgSFa9qjK5M06MaG413YisQ8bU05edwMePNLUP2F0kq3iu/DY8aiE21
+	hkHRTCsIWGtpCi4YaabHLw6hC19lDd2d2X32dN2V+e1XAq1xl5y8CW8RIl69otbxrKJbD/mvN31tW
+	t5w/2uD90STYgxrEp42w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trZIi-000000023Yk-1ShE;
-	Mon, 10 Mar 2025 09:19:56 +0000
-Received: from mail-ej1-x62c.google.com ([2a00:1450:4864:20::62c])
+	id 1trZML-000000024PV-27Ho;
+	Mon, 10 Mar 2025 09:23:41 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trZDR-000000022VH-1Vsr
-	for linux-phy@lists.infradead.org;
-	Mon, 10 Mar 2025 09:14:31 +0000
-Received: by mail-ej1-x62c.google.com with SMTP id a640c23a62f3a-aaeec07b705so612035966b.2
-        for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 02:14:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1741598067; x=1742202867; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=M2AFDf7Np+5eqeDRg3+giF4aI5aOo69QM3HUv/FvtGA=;
-        b=sH0mMJ/2YBtyNNIY/8ZntUw1pmoC2Jf5abbFPhOCySSPnO84utmZluKqTrKBCZ08qO
-         hFjB4g8Y95VH6DqeksUK/hNvXd2wuatOhRbYelkmflBcohcawX0NjRNxSEaYqd+Idrte
-         26PNkf7snI5OEgJGSq2KXBZuWdcd48EDecA9U9vA8DKhIusGQpUK7vw8BgzvW21nD3QV
-         eUMVpHUp+weMRqiZSjyrMxx+5OYdIooyuUGU/nQIsidYuFrprw/wZMt/pKnjhCq0DABN
-         KZTPeBvAyOytu8Yq9Z8Nk++ZRwn4xT62oE2f0TBB1Wi1xNl6Ay9EFIE/bV5Di4hOXPcp
-         FVug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741598067; x=1742202867;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=M2AFDf7Np+5eqeDRg3+giF4aI5aOo69QM3HUv/FvtGA=;
-        b=aPzmtSZ482whK2rshaZUD0CVeODDvghhjFxppQZoJ8w5Kdtg5npoCqgV30AcoOCTrq
-         DIUQ9Tt6uvzCAi3MvnXYwqGASYRcY38iw35KYrhu2NmTiLcsxqTypiCcv1j0cuQGibGx
-         6W6PJXxo227v7LwiB1h6wFaQhkM1is6s8htt3MfQR7cIw5Ot6AGE8gyJzpzuZKZp6OAl
-         T0HNveSIAZLKOQ3mFo0axd6f9pg35aSL4Wb04NonYzSR/YhZYgyfmDPUOXk54TZMUylx
-         FuqruDZ2ywFS9XGMEUNIpLWlhFQpQ13TkJ6e5wA5+kiFoSKzwqCrIrkbyeyP6s3LzHNv
-         wqKA==
-X-Forwarded-Encrypted: i=1; AJvYcCXFfyFM4zOq6o5KOzI/DD4eRliJb6XR9szqJPZj16VtvD9LP4E3SaYTeUo6+clQy3nSVRapYMQ4Db4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxPjOpi3B8h/L5z3o0gY4gzxg5vFz8N89zRkRkNe5NS3/W8VG8P
-	t++gjbqeB8YqnMCQSpUBvYpOc/BKMA7Ls0V7RhNVeDs+ZOx2hjCd6J55gJGkfX8=
-X-Gm-Gg: ASbGncv46u4zw/ubShwPs9YcQaj89eyCMR9AKjc8ihLxCJrrjH76g/uvkaeoZXI5pS0
-	C4veootbn8knCF/42BculHaziI6Jb+6R6WUTgSYr4AIjccDl+aOqpwwt9I2A4o0boslCVECUikN
-	0zk8Hj13DftfszoV4iPs0ZVafxUKP8Lw0OwD4avmFTbNjZu+XUVotzDq6l4Wbi8Hlq+4qbeyAJW
-	uFoKkcdBQavZZghHhG/3sbHsbj97EOahMUg0SABqmp7RMv4HCrwaAeGH1xNh6G/3E0v7a5x5NwG
-	FR6bfXzvwspcfrZNcI3XK/wy3jiHP4ArulCVzCnF83PhuNH8DO9WN4FDpB45/Hj/JTNVhoJBlyv
-	TYYrqBB4=
-X-Google-Smtp-Source: AGHT+IEtKkKBpM7vJgcnY9TXytbV/kIe46JnVxeVKL/rKi0cxkwuBUhSX1GFWK3r6UV3V93xyzgxSA==
-X-Received: by 2002:a17:907:3f9b:b0:ac1:ea6e:ad64 with SMTP id a640c23a62f3a-ac2526e5e87mr1604200066b.28.1741598067222;
-        Mon, 10 Mar 2025 02:14:27 -0700 (PDT)
-Received: from localhost (p200300f65f2c000400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f2c:4::1b9])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ac29363d604sm226706366b.76.2025.03.10.02.14.25
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Mar 2025 02:14:26 -0700 (PDT)
-Date: Mon, 10 Mar 2025 10:14:23 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-To: Dominique Martinet <dominique.martinet@atmark-techno.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Adam Ford <aford173@gmail.com>, 
-	Frieder Schrempf <frieder.schrempf@kontron.de>, Marco Felsch <m.felsch@pengutronix.de>, 
-	Lucas Stach <l.stach@pengutronix.de>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Makoto Sato <makoto.sato@atmark-techno.com>
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
- instead LUT
-Message-ID: <v57uy3gddzcoeg3refyv7h6j3ypx23mobctybt27xzdyqy6bgb@atzdlqlytz3c>
-References: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
+	id 1trZKh-0000000243T-0bt7;
+	Mon, 10 Mar 2025 09:22:00 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9FF745C5B08;
+	Mon, 10 Mar 2025 09:19:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D8B58C4CEE5;
+	Mon, 10 Mar 2025 09:21:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1741598518;
+	bh=QH139OqqRbSYRVUAo0wV8Z6rUvveYBae96OsXGOnYOU=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=ovWf9zNyYVPDlrK3Hj9zmPJpFt1eqYE9BptUXwjd47GnKdrI5JHA8WkzARd3K+sLZ
+	 a4N1zMuU0JG+WFDOMqO55C2GtMpHok8KFvg1WWl156UpON2bNjq0DHFzQOYv+O2YpK
+	 ZbOKbNsSTlN+x0ZAphboN3xTLs8viUz2FZzUyuwAucqjyy7bXs4CWBpeh1azixf5OT
+	 p22CRjh8eNKnzEuwapcchU9mjHbBCxTrOnnXdD46gdyvXgPzevxzJBrdItH+XQiuE/
+	 d6yxUtqJJfa3nNPR1Qe5ED3Na4QSPJqfAOT5ZRaJrW+bqJjMl7BappibhDhUH6X0YZ
+	 MkYXy4JUQ4NGg==
+Message-ID: <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
+Date: Mon, 10 Mar 2025 10:21:45 +0100
 MIME-Version: 1.0
-In-Reply-To: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
+ EN7581 SCU
+To: Christian Marangi <ansuelsmth@gmail.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Daniel Danzberger <dd@embedd.com>,
+ Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
+ Nikita Shubin <nikita.shubin@maquefel.me>, Guo Ren <guoren@kernel.org>,
+ Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
+ Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
+ upstream@airoha.com
+References: <20250309132959.19045-1-ansuelsmth@gmail.com>
+ <20250309132959.19045-6-ansuelsmth@gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20250309132959.19045-6-ansuelsmth@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_021429_399064_0483E4CD 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20250310_022159_275844_25CAEEFC 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,105 +127,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0363578650919672534=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 09/03/2025 14:29, Christian Marangi wrote:
+> Add Documentation for Airoha EN7581 SCU.
+> 
+> Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
+> via the SCU (System Controller Unit).
+> 
+> Example of these pheriperals are reset-controller, clock-controller,
+> PCIe line speed controller and bits to configure different Serdes ports
+> for USB or Ethernet usage.
+> 
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> ---
+>  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
+>  1 file changed, 68 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+> new file mode 100644
+> index 000000000000..d7dc66f912c1
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+> @@ -0,0 +1,68 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Airoha EN7581 SCU (System Controller Unit)
+> +
+> +maintainers:
+> +  - Christian Marangi <ansuelsmth@gmail.com>
+> +
+> +description:
+> +  Airoha EN7581 SoC expose registers to control miscellaneous
+> +  pheriperals via the SCU (System Controller Unit).
+> +
+One more comment - there is no such thing as "sysctl" in your hardware.
+Look at the SCU binding which clearly says that it is the hardware you
+are duplicating here, so the "System Control Unit".
 
---===============0363578650919672534==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="hbn3u5scrvz7ixpx"
-Content-Disposition: inline
+So you have existing "This node defines the System Control Unit of the
+EN7523 SoC" and you add one more node which defines the "System Control
+Unit", so you have two "System Control Unit" device nodes?
 
+Look also what Stephen asked for:
 
---hbn3u5scrvz7ixpx
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
- instead LUT
-MIME-Version: 1.0
+https://lore.kernel.org/all/20220106013100.842FCC36AEB@smtp.kernel.org/
 
-Hello,
+so how system-controller can now became clock-controller? Now, it was
+the system controller since the beginning.
 
-On Mon, Mar 10, 2025 at 10:21:32AM +0900, Dominique Martinet wrote:
-> From: Makoto Sato <makoto.sato@atmark-techno.com>
->=20
-> If the requested rate is not an exact match of the integer divider
-> phy_clk_round_rate() would return the look up table value,
-> but phy_clk_set_rate() can still use the integer divider if it results
-> in a frequency that is closer than the look up table.
->=20
-> In particular, not returning the actually used value here made the hdmi
-> bridge driver reject a frequency that has an integer divider rate
-> within 0.5% of the target:
-> for 83.5mHz, the integer divider generates 83.2mHz (-0.36%), but the
-> next LUT value (82.5mHz) is 1.2% off which incorrectly rejects modes
-> requiring this frequency.
-
-Is the unit here MHz or mHz? I suspect the former?
-
-Without having looked in detail, I think it would be nice to reduce code
-duplication between phy_clk_round_rate() and phy_clk_set_rate(). The
-former has
-
-	if (rate > 297000000 || rate < 22250000)
-		return -EINVAL;
-
-which seems to be lacking from the latter so I suspect there are more
-differences between the two functions than fixed here?
-
-Ideally the implementation would look conceptually like:
-
-	static long phy_clk_round_rate(..., unsigned long rate, ...)
-	{
-		hw =3D phy_determine_register_settings_for(rate);
-		if (hw_is_error(hw))
-			return someerror;
-
-		return phy_get_rate_from(hw);
-	}
-
-	static int phy_clk_set_rate(..., unsigned long rate, ...)
-	{
-		hw =3D phy_determine_register_settings_for(rate);
-		if (hw_is_error(hw))
-			return someerror;
-
-		return phy_apply(hw);
-	}
-
-Best regards
-Uwe
-
---hbn3u5scrvz7ixpx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmfOrW0ACgkQj4D7WH0S
-/k7gagf/Y2P7oymDjrfXm/iN4GTuPoKu5hSM+CyX/Lsjb4YvVl/NK1hJJSmNav5G
-8klQotxMRKJE0ucdaGv9hSgrK8MQuyV440H0f8Idpv1GTHjQiaMi13kMerzfvJIf
-/xVRmw5GO0HV+1NEUS4xTVpUcCNeobAAOw841PY8wyHo8v/ml90LugLVg+wJs9lM
-rCPiv6MbDHyEw9IUnkztM+LK0dnEvxVOmbuGaG6LfG/YBqxhJqrL1EwIsJnsSt4Q
-6xAadOZZvGwgT73BumBalZH0z8xG6CWrHHyoqMQnQ6KE9nhnPouyOT1a35Y281bb
-XjbCmTyQC37mJNKirDEM1K6AMeU5FQ==
-=uTzQ
------END PGP SIGNATURE-----
-
---hbn3u5scrvz7ixpx--
-
-
---===============0363578650919672534==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0363578650919672534==--
-
