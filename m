@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1397DC282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 10:39:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1A55C282DE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 11:12:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aW7wuPvgCpgVCXmINF5sHSOMyxZbXyV3c6Jaj0tQOC8=; b=kMwy8HcOxXrMQV
-	HERNUx8TDUR8EwrFmNkOACQUHldYbHzY2BWxMC3Y/BmGo81Wiox9ikT1mWWQVJQ8e1hm+0oi0rlbp
-	PDK9ZIAlIs+3hGKvp3NUsy+NACIspuNO+UHAiBnu2vglfgJ04q/e1USeMYAY4c+UXwOoTqT/k33OS
-	37VWOHiyhTJcM9U7lXhdHbwzrJo8v6MDeMDp6b35yOmUf0o72DAPlGOl6KpB25X1Yp79vKZd0eYmK
-	eBEi5sF+sQBwVDaiqOUyrt1Og8M6YiQZdLmgkFcxZkLvhFxcwjnXzogaUcSVaLBPN6axhfYTKPuVx
-	DXV23KpQ5/2WdvmlavcQ==;
+	List-Owner; bh=bqZQH7Wpez9V35yBaSsYj4Tgq+XT5q4hZ8NGOeKqprI=; b=zKuGi2tdXy7O51
+	Q+mr92BYgJ+yXy075xS1h0EwSUt9uqd7HDU2MDKCkSGbCr5uw/rYCX4xAmjfKapPJm1XYtLa4HKuw
+	xT2jE/bzL6z7KbhhzNyPr7XrOfKMObpoAr2vDVW2nZoU6U1GEZF/unF34mtFaujHozAQdBLs8NMbk
+	YrldV3TzxoxmNuLh8zstomkpA6sWBH8TYNqQkBZFTAkDreTy+DpVCgAfcK/9VyLo0NWzvwNNlR5Oz
+	k/IWQDZbxHKHZyJvsn3OnUxw8ob9gidU5w1B23E0gp1loXu5jUGVln+lffvtuNKql1UIJF1rLPwnT
+	c+YZeGRSUFP7qaQSKY3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1traXg-00000002HOv-3WbZ;
-	Mon, 10 Mar 2025 10:39:28 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1trb3I-00000002O4c-0ytb;
+	Mon, 10 Mar 2025 11:12:08 +0000
+Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1traSA-00000002Gc9-0Izz;
-	Mon, 10 Mar 2025 10:33:47 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-aaecf50578eso726669766b.2;
-        Mon, 10 Mar 2025 03:33:45 -0700 (PDT)
+	id 1traf5-00000002IdW-0jRB;
+	Mon, 10 Mar 2025 10:47:08 +0000
+Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-5e60cfef9cfso3275666a12.2;
+        Mon, 10 Mar 2025 03:47:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1741602824; x=1742207624; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1741603625; x=1742208425; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:subject:cc
          :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=MGTml7RpCjpVWP8eom9oAacKLsbRqPW94SvzBXitgHg=;
-        b=mpT4hFY8803mkJbGdDc3bdlgvNr6IENJyFUMoCPlWEJtyXlLNNrbr5UQwAk9U8wBSd
-         W2PNLN5n1S8tOu0ggAWDbzxfSnY5GKwOSMYWshIhMmWufF9JasdJCPrNLRe3Lt99Bsz2
-         lprGf2XhWssNj1C6407G8UCmi+Hh07OpcqwY/aGo1Q1TBYZ9nV01qzj1uODtbT8OpS+L
-         zNXeYS7D38M8E2UK03qXsWHP6Wh45Uy3SsTcdHhPsOwSR+swuuNfZmbqB1OEDruGV4l0
-         LLEJJrVtfYx7LFspyZpolZXicNYib8jfD+GEGu1ipLM4yLgJP+3CsmrPhOCHkcUJWQYH
-         C6eg==
+        bh=l5DEa09wiscb4LqtVRJpNAy3hWViEqi+/FfXF2zENFo=;
+        b=Cx5cYPcnCGGMfNcMBtb5XE3jwCyf0u3ODuhUInmhbMWOjUtxgcuXPPs/I9zur0EN/E
+         fGCPZQ2vfJ5BTWwcxgmGCKl1/WMapbGJ+APvHfA7pBHOVHsfvGRIPd5C5B1RZ3+H/Fa+
+         MCC/VU0djcX3wDFc/gYduQppkHpeNL4EeFMNe3rsaRcGRAEVZc/sE8iyQofxU9YdJRGY
+         ykbdTNo5fgsVr99twblkXhw2KOv3I1Ear+Xh0l4wr1+aXOFHrWa/mfoIy32qyD2C785d
+         b5P5RzOvf0Cd1KL9CiO+QdQaw3UUnyj5jjhSlXKZPnms69GoghISHShrfEuCRhLFoCTF
+         Ks+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741602824; x=1742207624;
+        d=1e100.net; s=20230601; t=1741603625; x=1742208425;
         h=in-reply-to:content-disposition:mime-version:references:subject:cc
          :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=MGTml7RpCjpVWP8eom9oAacKLsbRqPW94SvzBXitgHg=;
-        b=llH/o83LBhU5HQPL4gO+DWAqZM2alPArK/QJkS9fZ7kfseJEdTa9sA96P3pAKgKobD
-         l+vaLCI6yjSeG4mHy68pN9QZpCwQ+peIAKt1fNFlaflC511EI9NE2vN6Zh7qX5EIBpSG
-         3vl4swAjOGC2PLdsD2YHxU0utkCPb8/jH+SQbjecz8iTSmz8YkkQEnLuhrMqRQQo3XCG
-         jmPbGlc2eFyzl0iq0L5OJG4YkeUxjHRF+zuvXSW+06tfsgiZQOfBSj0eHaqYvWoMAxDu
-         dslgYrtuoNHGbPNPbOeZ7uCojscQ7i5VxTop2EMldVdlESOnwNDiD5iBVfL91P0+iRzk
-         b/TQ==
-X-Forwarded-Encrypted: i=1; AJvYcCULm/zEXnRYinFNMrJCJueWILqbP4EX+lcipKOjx2w0ucVRYJ4x52Be0dbJDHGyLOaHQDgOUmt+LTBm@lists.infradead.org, AJvYcCUgL93sTUazNhyVlNc8GtROW7Vaq0l4xempLmdZjiGlxaV7euwh7qIrZGIqZXM6NJIdMgZNVPo/O1Qy/keKDZw=@lists.infradead.org, AJvYcCUm+1Db5rgI9YFsQ2c9mApK+qn1m0vU1jcFJTCAbXVocEtJ4mRIK+IK4iC1lO37j+f7/i82JO9UcDXisNY+fLCh@lists.infradead.org
-X-Gm-Message-State: AOJu0YwMTkEZ0Ck/Pr9ILNIyNuMmQsiht0x1Dy9eJvXX1qpA7AgKHKbv
-	RI9FaQDJWDJxNXAEUrUMi1M1CVxkkD/G9uf5ZYO5h/ZZa+ll9xDt
-X-Gm-Gg: ASbGncv8dQyGBEfuCa6wVFKOPWnSVAX1a78okHtZSjBTvNp5HD/zkd7HrpdDb19o+9j
-	kE4QL6F6C9Td9nP++maOdJGN8Zg9vejmImFIwzHx50UyJYfzZdqkPEB9wFyhmD6MVQ9yc3WOX5n
-	Dx6ICCF6klfgTSY31HeEX20h5ovcGzg+sZjh1OMw6kX9QgEIICv9Pjro+NoF+4HieMitoW3sA8T
-	NVNAicXKg9nT1Iec/PecSQAB/L03hBCAXzY/yG1wDSu9AJNuSW9f7xJ2YH52nm8aCBSZLEvzGPO
-	Xu3x8fiYpcTCV0gBgiGEMNx27rgu5EWiDeltKHi3vA==
-X-Google-Smtp-Source: AGHT+IEWMSU1qAY2ggbAzuaICqttRpwRQzqd5Fp6/64RTbush8Y1vjOdi5AqZxhsuRglYeOy1RqUkg==
-X-Received: by 2002:a17:906:9586:b0:abf:56e3:e899 with SMTP id a640c23a62f3a-ac252f8d705mr1216793066b.40.1741602824270;
-        Mon, 10 Mar 2025 03:33:44 -0700 (PDT)
+        bh=l5DEa09wiscb4LqtVRJpNAy3hWViEqi+/FfXF2zENFo=;
+        b=f9ybJapv8YqNNhKS52fHtSB+60eaehnCcYE30242tn9FBNNms4D24EHC2pjxxp1ATE
+         z/qNvjWha+YMzlJxuOhLJ2UraPrizoTqi25pX0NUrzhNpb/ryeL2fd1FRvWjpFcUq1mf
+         xWsMzweyDWoEOmZk6JVbr5MaL24y7I+ntw4nSoxFSe8vVj0UVSdG6GsEFuIQgjUAmbJS
+         xwvoe7rc93qHbygk40xbz5maN6HFYYzfDtLAM0sKyQh/+MjHkQoigzHUICwE90cKLiNT
+         htiWSSKk+hA1DDTQ8TjFaUzE9D+Wyrrx7XXYP4Yg9wOhx/ospbvKcqxERX6AoVR/6HgU
+         +A0Q==
+X-Forwarded-Encrypted: i=1; AJvYcCV8eE+YVkB7+5AKYaSv4YGBpwiSs5fsuqeXPPsxQpDkLVWgCGTRH0yCH+M7ep4hdpa+ylxGPBBcY020MIMRB0k=@lists.infradead.org, AJvYcCWRRaapixFeNsWsXa8dpD4jujV/wuvvbS531yqL5m0u50CQjIPoqdW+gFXxdUGHAVTnf8KZa3ujJSXf@lists.infradead.org, AJvYcCX+uNrLgeHAi7NzM4XXikBIabLaO/abTeZjjv+jq6AsTaTexqDqewyS8pT7mSIUKd+R0Rmc+kzac+aBhOrXR5gQ@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz4sn287jILyat7HG+mE/2zCxutwnHNwJY8hS15MG3Cer2nakE9
+	uNuZcpssRbdolzD5FGJWyAMTbKlpskVFJ0gSTR9p8ulcnTgGZS6K
+X-Gm-Gg: ASbGncu+BvR/DE1EJjnoi2YjtJ04KTwhL+B8opbQyw10z8sM467ucuwbUCTofj8/u9i
+	jYc9v7Oc4pVk0hz1qz7a9uBhQacByZBi+VVbiABYlBiK3INUge8wN9CuKvmXvNAZswDFolmd3rC
+	uFFpZid2yxFNBi72yrSUOWos3+SIIvakCD4Jtog+csjqQ2K+iRgO6Ekf98VEy8EyZQuHzIC8ZAi
+	nBV1BwkQKFbeaNLmsloqFJrVBbHC1rZcg3jlo6OwfZdInPgX181VRqxwyq3UOVQLtdBmE2shLhR
+	HzM/alZSSmNJx11ho0jLltJ77m2v+F6/MgxpA+Ds5g==
+X-Google-Smtp-Source: AGHT+IGY9ZNuN9LrERXjHUYAwL4h4LC1ygOPlOz0b6pfTQ2hSZ2sXX5rhh5cw2fWoVRERYPwHIfVrQ==
+X-Received: by 2002:a17:907:8281:b0:abf:67d7:7816 with SMTP id a640c23a62f3a-ac2525dceb2mr1171265566b.3.1741603625111;
+        Mon, 10 Mar 2025 03:47:05 -0700 (PDT)
 Received: from Ansuel-XPS. ([85.119.46.8])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ac2397363b7sm736352266b.121.2025.03.10.03.33.42
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ac23943d8absm742184666b.20.2025.03.10.03.47.02
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Mar 2025 03:33:43 -0700 (PDT)
-Message-ID: <67cec007.170a0220.37245a.99cd@mx.google.com>
-X-Google-Original-Message-ID: <Z87ABZwgZPU2P5-X@Ansuel-XPS.>
-Date: Mon, 10 Mar 2025 11:33:41 +0100
+        Mon, 10 Mar 2025 03:47:04 -0700 (PDT)
+Message-ID: <67cec328.170a0220.27ecbc.9c6e@mx.google.com>
+X-Google-Original-Message-ID: <Z87DJANlBejnqJHR@Ansuel-XPS.>
+Date: Mon, 10 Mar 2025 11:47:00 +0100
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Krzysztof Kozlowski <krzk@kernel.org>
 Cc: Michael Turquette <mturquette@baylibre.com>,
@@ -90,17 +90,17 @@ Cc: Michael Turquette <mturquette@baylibre.com>,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
 	linux-usb@vger.kernel.org, upstream@airoha.com
-Subject: Re: [PATCH 04/13] dt-bindings: soc: airoha: add Documentation for
- Airoha AN7581 SCU SSR
+Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
+ EN7581 SCU
 References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-5-ansuelsmth@gmail.com>
- <20250310-aromatic-chihuahua-of-priority-4ee73b@krzk-bin>
+ <20250309132959.19045-6-ansuelsmth@gmail.com>
+ <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250310-aromatic-chihuahua-of-priority-4ee73b@krzk-bin>
+In-Reply-To: <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_033346_112829_FA113E2E 
-X-CRM114-Status: GOOD (  30.29  )
+X-CRM114-CacheID: sfid-20250310_034707_217125_2E241F12 
+X-CRM114-Status: GOOD (  33.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,91 +117,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 10, 2025 at 09:00:40AM +0100, Krzysztof Kozlowski wrote:
-> On Sun, Mar 09, 2025 at 02:29:35PM +0100, Christian Marangi wrote:
-> > The Airoha AN7581 SoC have in the SCU register space particular
-> > address that control how some peripheral are configured.
+On Mon, Mar 10, 2025 at 10:21:45AM +0100, Krzysztof Kozlowski wrote:
+> On 09/03/2025 14:29, Christian Marangi wrote:
+> > Add Documentation for Airoha EN7581 SCU.
 > > 
-> > These are toggeled in the System Status Register and are used to
-> > toggle Serdes port for USB 3.0 mode or HSGMII, USB 3.0 mode or PCIe2
-> > or setup port for PCIe mode or Ethrnet mode (HSGMII/USXGMII).
+> > Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
+> > via the SCU (System Controller Unit).
 > > 
-> > Modes are mutually exclusive and selecting one mode cause the
-> > other feature to not work (example a mode in USB 3.0 cause PCIe
-> > port 2 to not work) This depends also on what is physically
-> > connected to the Hardware and needs to correctly reflect the
-> > System Status Register bits.
-> > 
-> > Special care is needed for PCIe port 0 in 2 line mode that
-> > requires both WiFi1 and WiFi2 Serdes port set to PCIe0 2 Line
-> > mode.
+> > Example of these pheriperals are reset-controller, clock-controller,
+> > PCIe line speed controller and bits to configure different Serdes ports
+> > for USB or Ethernet usage.
 > > 
 > > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
 > > ---
-> >  .../soc/airoha/airoha,an7581-scu-ssr.yaml     | 106 ++++++++++++++++++
-> >  MAINTAINERS                                   |   1 +
-> >  2 files changed, 107 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/soc/airoha/airoha,an7581-scu-ssr.yaml
+> >  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
+> >  1 file changed, 68 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
 > > 
-> > diff --git a/Documentation/devicetree/bindings/soc/airoha/airoha,an7581-scu-ssr.yaml b/Documentation/devicetree/bindings/soc/airoha/airoha,an7581-scu-ssr.yaml
+> > diff --git a/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
 > > new file mode 100644
-> > index 000000000000..4bbf6e3b79a4
+> > index 000000000000..d7dc66f912c1
 > > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/soc/airoha/airoha,an7581-scu-ssr.yaml
-> > @@ -0,0 +1,106 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +++ b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+> > @@ -0,0 +1,68 @@
+> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
 > > +%YAML 1.2
 > > +---
-> > +$id: http://devicetree.org/schemas/soc/airoha/airoha,an7581-scu-ssr.yaml#
+> > +$id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
 > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> > +title: Airoha AN7581 SCU System Status Register
+> > +title: Airoha EN7581 SCU (System Controller Unit)
 > > +
 > > +maintainers:
 > > +  - Christian Marangi <ansuelsmth@gmail.com>
 > > +
-> > +description: >
-> > +  The Airoha AN7581 SoC have in the SCU register space particular
-> > +  address that control how some peripheral are configured.
+> > +description:
+> > +  Airoha EN7581 SoC expose registers to control miscellaneous
+> > +  pheriperals via the SCU (System Controller Unit).
 > > +
-> > +  These are toggeled in the System Status Register and are used to
-> > +  toggle Serdes port for USB 3.0 mode or HSGMII, USB 3.0 mode or PCIe2
-> > +  or setup port for PCIe mode or Ethrnet mode (HSGMII/USXGMII).
+> One more comment - there is no such thing as "sysctl" in your hardware.
+> Look at the SCU binding which clearly says that it is the hardware you
+> are duplicating here, so the "System Control Unit".
 > 
-> typo, Ethernet
+> So you have existing "This node defines the System Control Unit of the
+> EN7523 SoC" and you add one more node which defines the "System Control
+> Unit", so you have two "System Control Unit" device nodes?
 > 
-> > +
-> > +  Modes are mutually exclusive and selecting one mode cause the
-> > +  other feature to not work (example a mode in USB 3.0 cause PCIe
-> > +  port 2 to not work) This depends also on what is physically
-> > +  connected to the Hardware and needs to correctly reflect the
-> > +  System Status Register bits.
-> > +
-> > +  Special care is needed for PCIe port 0 in 2 line mode that
-> > +  requires both WiFi1 and WiFi2 Serdes port set to PCIe0 2 Line
-> > +  mode.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: airoha,an7581-scu-ssr
+> Look also what Stephen asked for:
 > 
-> That's not a separate device, but part of the SCU.
+> https://lore.kernel.org/all/20220106013100.842FCC36AEB@smtp.kernel.org/
+> 
+> so how system-controller can now became clock-controller? Now, it was
+> the system controller since the beginning.
 >
 
-More comments on this in the MFD patch.
+The main problem here (and we had a similar problem with GPIO and PWM)
+is that the Vendor (Airoha) wasn't so bright in placing the different
+registers for the SoC so we have case where everything is mixed and not
+one after another... 
 
-> But more important - such definition of choice of serial engines is
-> really not flexible, not reabable and not helping integrating into DTS.
-> Are you going to grow this for next chip airoha,serdes-wifi20, then
-> airoha,serdes-wifi21, 22... ? And then how the if:then: would look like?
-> 
-> Assuming you do not have here child-parent relationship, like usually
-> for serial engines, so then this should be somehow list of devices
-> (strings) you want to run.
-> 
+Example we have 
+- CLK register part 1
+- Some bits that configure PCIe
+- CLK register part 2
+- GPIO
+- CLK register part 3
+- ...
 
-You are right, string is more flexible and I don't need the include
-file.
+The driver solution for this is syscon and the simple-mfd node
+structure.
+
+Now the main problem is how to modle this in DT. There are lots of case
+where the simple-mfd model is used (like the one proposed) but probably
+this is not accepted anymore. But again this should be clearly stated or
+we have a chicken-egg problem when other devs implement similar thing and
+have to implement simple MFD driver to handle this. (and driver
+maintainers say "Use the simple-mfd model like it was already done)
+
+For this specific case (and to give an answer to the clock patch after
+this) the problem is that this register space was originally used only
+to control the clock and I wasn't aware that it was also used to control
+USB. Now that I'm implementing support for it, the disaster happened.
+
+So In short SCU is lots of thing, both a system-controller, a
+clock-controller and even a reset-controller.
+
+To make it short, 2 different solution:
+1. We can keep the current node structure of the node-controller and add a
+child node for the SSR part (with a dedicated compatible).
+2. Those property need to be be defined in the clock-controller node?
+
+The ideal solution is 1. Does it work for you?
+
+Sorry for the long post and hope you understand why this mess of
+reworking the binding.
 
 -- 
 	Ansuel
