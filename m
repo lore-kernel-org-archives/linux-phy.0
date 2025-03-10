@@ -4,90 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0BB1C282EC
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 17:50:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46145C28B30
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 19:59:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=YEqBZHztjVSrc3mQgRXsg/Apmz2h6vKcCcDzWkFOinA=; b=2AJaihS6cbdTn6/Q8hHKav8tjI
-	OsXIO3y+zZubP6SICuOLaojjnxDuVS8+uF/Dzqqt2CteQ6MR4/kNBeUoCtQuWVcqoo709BSV2yKq1
-	B97BTnAZqZlc/d8hBOaw/qw2yegHTssbvoCDFDmrqhCSq0DcIq2idbY1b5/fl6tk3htLj2lKIugFW
-	giZHFacyLwTn7BLZiCpPziWq2y5+2RnUxZVPW26ruBoRBHaDTtoqPxn+8J3X09egxDwPWtVNrDQPu
-	RxUivZmp2mqx+ocRXyiWwSJX+o4RMZDMZ/IzRmxR5Y/MU+BjzTA4tT+Y47BirHgwBZ2h8kiH21i4z
-	laXRFAmQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qbAmgGK6ePRg0UADNv1vqdBM4NXY/Ydl2d5SnF3l658=; b=ZCkSpU1vTkUJ6e
+	NhMqz80Ef8u4TsAxKDWezLfBUvGwhcjDaRvMwle/6m22XACU3jkQTKs6gRO0FyYbeGe9OD9/yP0VG
+	FxHvzqKkUuvZG/nAFDoiefS0RjfH3ZxBXdjsKTGyzo9wX4S1DKESzUixZdYceEjunGrTYcGACnefX
+	dAVwAx/PE1ibZSudfaIW9Jjgy9voAs92yGATAvXv3vnko0mXMOx7iR8iIxaIZUuPDj3wS6BweEgZw
+	F4KKLG6rzbZGVy00tye7bWn0XWffNq+dZM/CGyK9Rc8O1Vu3gkLyUcJc6Mss0d+zdZXEmSc9FxtvY
+	pDO2qJHekSN6gCFO9S7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trhGz-00000003X3e-1c5V;
-	Mon, 10 Mar 2025 17:50:41 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1trjHW-00000003n1u-35B4;
+	Mon, 10 Mar 2025 19:59:22 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trfkD-00000003K6D-2FKw
+	id 1trjHU-00000003n1H-3b95
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Mar 2025 16:12:47 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-3913fdd003bso878264f8f.1
-        for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 09:12:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1741623164; x=1742227964; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=GvXTzlRKlAbofNa+lbT2BMK1UdR2zHsco8fZgqhFdv4=;
-        b=KkcD4ZsN6Bw4gFOjlHVApdpRwpd1+tz3xJtK/x/2/dR7oj3Fyda3jYD9lto6qfpvLN
-         DS1WiawZMbiL0tbQxmfJuas8jjFQD1ZpkzfTKnhMrf9SLSGYxnjFcntCTQHOEmNbh3JU
-         I4mjVgqSrG86Z/81QFiRoEpSbGg3V0mOmSDVwD45UvnlSzRUsDPAP7ZVp925jHaR+HmH
-         K5beJwPqDP6gjwURBHLT+er1tfdo9Byj4zSb/vxOgoQuypsc9Yd/1Bz44WYzixGIsKm7
-         Hy6mD5ulzGh52zIMGuE87UdeXJ7oRarauM4SMm8Oat6cLb/mBFypaUIxCkdFZJcZkhhv
-         VSsA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741623164; x=1742227964;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=GvXTzlRKlAbofNa+lbT2BMK1UdR2zHsco8fZgqhFdv4=;
-        b=a+5evdjxtCxhUUknb+mAwbP9wgL+xrMaIMs0H8XfEOuCAH4bTm2wSQ3SbOc7SpCyig
-         oBmaX7u7aMVgBPGPGE1mK1fvzuWvb8/TUSaP5C8wDGz5v6pdGC+4g41VdXYM++bMiOhW
-         TFmZx6+/MfX1ocAw08IXxKUiaJ7TsRBcmMgKQlJ4N3Zq44V/9fRfCvtFlcb+QMvAf/Vl
-         eEQ7xq+T6v1OcP4Mj5wafQvQzKBeUvSAheqIgO4uemirMLmQXLn/EwvPyS6224aabs6R
-         7203Qda0rW1jleLVLjJArxkSatqkZ1WIChowpRRHOT1IJBj4UqBqs2SC8P6yPqipV1T0
-         Kg3w==
-X-Forwarded-Encrypted: i=1; AJvYcCV806iZpjDTRRd54nM+fgjSGmAmXgEfBPVsrKAcgrPPJp1m3UBm/y4AGI28TFPJWYypwFnG6JYwa+0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy6uj9fdxgCqcoYzHAr46rcdCtFNLIUK1ZJWb98msRpuKqmJ6no
-	6VwSkTzKga4Y54Qu6RiqtSFCJ3Yzf7OrXGgvV/zaYDjUryHiSIrm121xiCtrPnw=
-X-Gm-Gg: ASbGncsW7SIqZEBpXop3qWROSFjkBOb6Cz5SC+g5BqPfLFaZd0lpnohulGAIEbmEp0C
-	Uu/yhrKWEaGPpJYA+wseZg+An66CDAw0uDUmRM8VlcwnEG75PaJMXZpw1mj+hga2f9O5yW7lMvy
-	lmj8e402t45i+3ohKvxSnjSRsMsajuyVTlGkAgJGBh+QAxhQKge78thRnyc9NxXA5xOGVLz+cs2
-	aNfn+QtTOEzPaX0MpwtQv89L7Xf+D2A8427rAHomuqHnPa/U+MqG5TyQ1W19GRxV8gdW15R0XEl
-	iNhLIbU1i5jN7s9YhEs5XVQoLfHcExU8rd/FjXBzoUReuB5bODcc9TGFFa2k9nDidbMKd7CDVI2
-	6U3QX4wA=
-X-Google-Smtp-Source: AGHT+IFBbTozIoHSsEjyOzqv8zgmaRteBxrQlNVCcmKEKPGV689kjbOrp1a7Gy8xkgnb4JfTfotxdQ==
-X-Received: by 2002:a5d:5888:0:b0:391:27f1:fbf3 with SMTP id ffacd0b85a97d-3926d6e57ccmr78729f8f.27.1741623163982;
-        Mon, 10 Mar 2025 09:12:43 -0700 (PDT)
-Received: from localhost (p200300f65f2c000400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f2c:4::1b9])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3912bfb7934sm15566705f8f.12.2025.03.10.09.12.43
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Mar 2025 09:12:43 -0700 (PDT)
-Date: Mon, 10 Mar 2025 17:12:41 +0100
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
-To: Dominique Martinet <dominique.martinet@atmark-techno.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Adam Ford <aford173@gmail.com>, 
-	Frieder Schrempf <frieder.schrempf@kontron.de>, Marco Felsch <m.felsch@pengutronix.de>, 
-	Lucas Stach <l.stach@pengutronix.de>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Makoto Sato <makoto.sato@atmark-techno.com>
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
- instead LUT
-Message-ID: <b2qwqacogz5vzfekhk5276owld6isgewu5a2iw3roag3lbtsgm@67vqf54c5tdh>
-References: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
- <v57uy3gddzcoeg3refyv7h6j3ypx23mobctybt27xzdyqy6bgb@atzdlqlytz3c>
- <Z861gsaGY6bGSisf@atmark-techno.com>
+	Mon, 10 Mar 2025 19:59:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id D12C0A46225;
+	Mon, 10 Mar 2025 19:53:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1DCE4C4CEE5;
+	Mon, 10 Mar 2025 19:59:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1741636759;
+	bh=YqJdrfcQL5bnoaK4e6HG8xxxcS9OpHaA0+10lzP6WRE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=ELSA4IkdAyOc/R4oignOVi0GSH5WimVosRrPkHmnUNzvU44ucu6Rug24nJlBen4BI
+	 1SF95b24TYr9ya7oNj4w52pva7KmVNlMOLTsLjBQPcf1UzbWKqnwgG4OWNP27/QWP5
+	 p4BGyNQ+LBcNVkESGVqU9kONuHjGgfco3EVks/TQLMkYqoys7CsEuUmMnxe1cMp0ca
+	 raDxBZ63kYZCr5JZ7KsdKl6OmZNez1viGEA04OnkLX+1mXJEX4VF5pidq87HUctduw
+	 dXMpXuU71XQG8Osmxn15fw2FyTDcYGhLrzhB3ARoBmniUTfvt/2EEn/P2tWl71z3W6
+	 CS8lF90dLu3PA==
+Date: Tue, 11 Mar 2025 01:29:15 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: "Wenbin Yao (Consultant)" <quic_wenbyao@quicinc.com>
+Cc: kishon@kernel.org, p.zabel@pengutronix.de, dmitry.baryshkov@linaro.org,
+	abel.vesa@linaro.org, quic_qianyu@quicinc.com,
+	neil.armstrong@linaro.org, manivannan.sadhasivam@linaro.org,
+	quic_devipriy@quicinc.com, konrad.dybcio@oss.qualcomm.com,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 0/2] phy: qcom: qmp-pcie: Add PCIe PHY no_csr reset
+ support
+Message-ID: <Z89Ek8Y7TRSgTuMg@vaman>
+References: <20250226103600.1923047-1-quic_wenbyao@quicinc.com>
+ <e556e3c9-93ee-494a-be35-9353dc5718e4@quicinc.com>
 MIME-Version: 1.0
-In-Reply-To: <Z861gsaGY6bGSisf@atmark-techno.com>
+Content-Disposition: inline
+In-Reply-To: <e556e3c9-93ee-494a-be35-9353dc5718e4@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_091245_706830_94E21BDF 
-X-CRM114-Status: UNSURE (   9.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250310_125921_029177_4DC86618 
+X-CRM114-Status: GOOD (  23.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,65 +73,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5532926052529992726=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 10-03-25, 16:58, Wenbin Yao (Consultant) wrote:
+> On 2/26/2025 6:35 PM, Wenbin Yao wrote:
+> > The series aims to skip phy register programming and drive PCIe PHY with
+> > register setting programmed in bootloader by simply toggling no_csr reset,
+> > which once togglled, PHY hardware will be reset while PHY registers are
+> > retained.
+> > 
+> > First, determine whether PHY setting can be skipped by checking
+> > QPHY_START_CTRL register and the existence of nocsr reset. If it is
+> > programmed and no_csr reset is supported, do no_csr reset and skip BCR
+> > reset which will reset entire PHY.
+> > 
+> > This series also remove has_nocsr_reset flag in qmp_phy_cfg structure and
+> > decide whether the PHY supports nocsr reset by checking the existence of
+> > nocsr reset in device tree.
+> > 
+> > The series are tested on X1E80100-QCP and HDK8550.
+> > 
+> > The commit messages of this patchset have been modified based on comments
+> > and suggestions.
+> > 
+> > Changes in v5:
+> > - Add a check whether the init sequences are exist if the PHY needs to be
+> >    initialized to Patch 2/2.
+> > - Link to v4: https://lore.kernel.org/all/20250220102253.755116-1-quic_wenbyao@quicinc.com/
+> > 
+> > Changes in v4:
+> > - Add Philipp's Reviewed-by tag to Patch 1/2.
+> > - Use PHY instead of phy in comments in Patch 2/2.
+> > - Use "if (qmp->nocsr_reset)" instead of "if (!qmp->nocsr_reset)" in
+> >    function qmp_pcie_exit for readability in Patch 2/2.
+> > - Use goto statements in function qmp_pcie_power_on and qmp_pcie_power_off
+> >    for readability in Patch 2/2.
+> > - Refine the comment of why not checking qmp->skip_init when reset PHY in
+> >    function qmp_pcie_power_off in Patch 2/2.
+> > - Link to v3: https://lore.kernel.org/all/20250214104539.281846-1-quic_wenbyao@quicinc.com/
+> > 
+> > Changes in v3:
+> > - Replace devm_reset_control_get_exclusive with
+> >    devm_reset_control_get_optional_exclusive when get phy_nocsr reset
+> >    control in Patch 1/2.
+> > - Do not ignore -EINVAL when get phy_nocsr reset control in Patch 1/2.
+> > - Replace phy_initialized with skip_init in struct qmp_pcie in Patch 2/2.
+> > - Add a comment to why not check qmp->skip_init in function
+> >    qmp_pcie_power_off in Patch 2/2.
+> > - Link to v2: https://lore.kernel.org/all/20250211094231.1813558-1-quic_wenbyao@quicinc.com/
+> > 
+> > Changes in v2:
+> > - Add Abel's and Manivannan's Reviewed-by tag to Patch 1/2.
+> > - Refine commit msg of Patch 2/2.
+> > - Link to v1: https://lore.kernel.org/all/20250121094140.4006801-1-quic_wenbyao@quicinc.com/
+> > 
+> > Konrad Dybcio (1):
+> >    phy: qcom: pcie: Determine has_nocsr_reset dynamically
+> > 
+> > Qiang Yu (1):
+> >    phy: qcom: qmp-pcie: Add PHY register retention support
+> > 
+> >   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 86 +++++++++++++++++-------
+> >   1 file changed, 63 insertions(+), 23 deletions(-)
+> > 
+> > 
+> > base-commit: bcf2acd8f64b0a5783deeeb5fd70c6163ec5acd7
+> 
+> Hi, do you have any futher comments?
 
---===============5532926052529992726==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="mjffy452cs7bmfrg"
-Content-Disposition: inline
+Patches lgtm, It would be great if this was tested by someone as well...
+Abel, Stephan, Neil can you folks test this and provide T-B
 
+I am also concerned about bootloader assumptions esp if the Qcom boot
+chain is skipped
 
---mjffy452cs7bmfrg
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
- instead LUT
-MIME-Version: 1.0
-
-Hello Dominique,
-
-On Mon, Mar 10, 2025 at 06:48:50PM +0900, Dominique Martinet wrote:
-> [...] and I'm sure there are other improvements that could be made at
-> the edges.
-
-One thing that irritated me is the function names. `phy_clk_round_rate`
-sounds too generic. `fsl_samsung_hdmi_phy_clk_round_rate` is long, but
-I'd say would be a better match.
-
-Best regards
-Uwe
-
---mjffy452cs7bmfrg
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmfPD3cACgkQj4D7WH0S
-/k5R7Qf/VxOUrJge8JojL4BFpnMAkq1wOnQL4hVuzrN5LWBFTHDPnK+iAEFwkkSq
-3jprj6qucTaOj1b/fweLyFX+FXjq6dlZBTJvX13h78SpjN5mQN9e5sUHWtQygHDT
-iB02eNLLAiH+m4z68jbra3tRIThghGj4hL3rqalXOtohIYVrppmTv4AuyDDQKKT4
-JEAUYqaUO36QRJwXjMcKmIrmdkvDfq3fVgLlrAF31xE9Bd9NqvDi91EFweu+9YDk
-1RsJZCm474kggQRDwcoreI7qNxwOBUsv0qWZEyaTBKu3wx4kgLAhsegvIHK3EVYz
-nLhtC3X5kNEZJhvQgfXfGRmiU1qcfQ==
-=fsNW
------END PGP SIGNATURE-----
-
---mjffy452cs7bmfrg--
-
-
---===============5532926052529992726==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============5532926052529992726==--
-
