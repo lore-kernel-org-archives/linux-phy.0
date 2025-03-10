@@ -4,90 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BBBEC282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 20:43:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F0A0C28B30
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 21:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8HsGHvDBSVCowQkWkxkmeY58+lxPIle6wG/0JxjCNWQ=; b=s1XAwOA9IhEk7u
-	JZ9vXiaWpstslBlnx81jBAyMx1l1LPnoPaZi+oIPBXirEftf4+a7k1H7rMkw0aJhkVvoA15N4mDr8
-	PJ+Fh+PgZietsE8ouIUmg1TH134yCWgYyI0CqskAq8XkEVIYWJb36PmwWc4+ZOs7u75g49vIquuR6
-	hX6K8jRRHvuZavenlMlkxl+MuGtE1164fx9MEdHlXOLVsS0UrTeWUVUTnYE2vjTuzfai3bzn4isFr
-	8yQqSGbSCd7l/GI4PPQUXjV5jSVoeXFO1JtjBHyTvyeACsRnGoNxMw4nB+Sp+SiljCosw5RodkNPP
-	2m2I2v/fy9gd/Q7Ywkqg==;
+	List-Owner; bh=GTK+Hp7yJYS+bmKOz1paXKFWt2FkkK5KwGIo99HZDg4=; b=q3kyBFLVS8wvMS
+	ofxLhkyXh5QSfGZBINgO/lV3KcHIKc3CGoe/sh3p64rclcnMitQhYx0Sh2y3NWGprg9WH8yfeCrDq
+	COEngJup8Q+m0SjZqRDcj54DDV45ANFW1Ag/eZbQQny4jI7SoOyfCVTgpQKjgzQQo8ntScFI1ndsz
+	+oWzlmC5qngXM0ZJuupO+LCn2MErUtMAvrnYUW+xZD6JGNAbDxWjnQ9Ye6YBOsIYn8/p5Dbq2vrDo
+	aoiIUHBzEJUQpblowd+eL1YFnV5WGswqiLV7mvMAwnmG/FMN6PHUFOoLn3nWRAYwWNa/cojn51bV3
+	6RrnLdtEL0VDZn8j5yFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trjy6-00000003uFR-0gdt;
-	Mon, 10 Mar 2025 20:43:22 +0000
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+	id 1trkUK-00000003zgE-2sbr;
+	Mon, 10 Mar 2025 21:16:40 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trjgw-00000003s8x-0ydd
+	id 1trkQm-00000003ynH-2Lfq
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Mar 2025 20:25:39 +0000
-Received: by mail-lj1-x230.google.com with SMTP id 38308e7fff4ca-30797730cbdso49603391fa.3
-        for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 13:25:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1741638335; x=1742243135; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=dYNmRZYB/IDO1RurR4i6iqDD/1mktBUeW4kgdxDpZIw=;
-        b=OQ1Ly2B7f1n58aWDILfF6Nw97/QAcMN848DQYnF3jWLm4XeM8r11Rrd7gc3tvuV6uZ
-         LjGfhzVhbicGSK1x4t5Kq47OdvWUwZyjsDuN/SGEDOs8sA/5f7kbEpJj3H998ItIg4rH
-         gwxOKjoBQEoGcFWz0Mic31/rP8UhuO+H/iJHcrNL1zWhtNFSTVEjpo6+n0ZU6/JLSORe
-         ntIeX4Q+ljDnuJreitaGrWmun7X1rWktGlxd5KbxXJf7sgDLxcyaNNfttz1OEb1uuqRo
-         mI+5rPmlzreaYPWsCT4vzk4XnxVBpP56i2iTMg71vC42FNGgYBuyvaz4xQQVTN6SM89h
-         4Jgg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741638335; x=1742243135;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=dYNmRZYB/IDO1RurR4i6iqDD/1mktBUeW4kgdxDpZIw=;
-        b=GAA3Dz+vGmIXty4vIf91ER48Nje0TIjCNauKocziQDurFdPCE8q4LT0abpv0N1qtVr
-         yaxxYOdIAP8Ym/dPBhhADwZrxrVHWQ2fbC2gaLidojmeZR+UQpbusDWfvYx0bBLfDHd7
-         v1RMZPTp0743A4xcUDGsV4jIPlJyXGk4/ztohWvbHf1RFhg11YQqNzhTMjP8/km3znG3
-         v+QQ5JBkqecLT5k5990VqM1lTI8mygj8GEJ4r5VV5QkJppBOvoAuQ4MwxcfjhPYwupwR
-         f4nqQ8AnbFzjEms+7MOh2pxr2cfhn6KlDlO1P9LJdgE1UKSsP9hkmEUxHybiE6gENDzC
-         NmJg==
-X-Forwarded-Encrypted: i=1; AJvYcCUJxPuOea9jfQDfS7Wlo1/tqrSSnZfvq66IJDcRGBFYCV3GJo6uhc77v868RdgXGahsEjppvME65zQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw8ckfXX8GdNaqjsQjff0gfHW7bq+zg3Hdd2FZNRh8qWgXXPQsO
-	sPbvTRb16q09iCGa9E7NLpmHiacsurAcoUVdL/y9zDiYSx3P6jnofWjj81OGLE0=
-X-Gm-Gg: ASbGncsTfF8QmJvSgg6tOnvI0rgQt3m2uMoZjwFvN2IIgi3F7fvYtokf5zfOSplivXO
-	op1LwP/Kq7GAEwjSPHGdIooB47zG08cXz99uVyzx1gGEh1rjhIm0wrCTWEfPDHV+GN2n3WW5eUZ
-	gSOLSOnlje6A6rEhcldP5M8HE9ZoVIqPgIqc0VVBcTTVkdvAteXWUxMT6kbxEORnR6n1rEW9UWV
-	Tia/S8YP6rC8nd4XrCiFPBICICpeCTc8J43xOXjCJvuwU4CURB8CTfvmp9eSAEVD6i4jhNGXtoY
-	q0FNgbpDh3vJHz3T+BKBM5mz6dP4qps2LIb+s3YQNmH23NQ5g6hX4zg6ptcb+4w5xej9Nw7zC9i
-	4tDCZ7YkcQVa1nCx7liUYhixO
-X-Google-Smtp-Source: AGHT+IEPVrqhzKdG85UY4VL7q1PeHiNjtgCxYCgNnkHHR37Br6Hv/tkjnMqe/JrlEqz3SvLMcEnR1A==
-X-Received: by 2002:a05:6512:b84:b0:545:f1d:6f2c with SMTP id 2adb3069b0e04-54990e5d4c2mr4659162e87.18.1741638335156;
-        Mon, 10 Mar 2025 13:25:35 -0700 (PDT)
-Received: from eriador.lumag.spb.ru (2001-14ba-a0c3-3a00--7a1.rev.dnainternet.fi. [2001:14ba:a0c3:3a00::7a1])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5498b0bcf77sm1556084e87.107.2025.03.10.13.25.32
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Mar 2025 13:25:33 -0700 (PDT)
-Date: Mon, 10 Mar 2025 22:25:31 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
-	manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org, konradybcio@kernel.org, 
-	neil.armstrong@linaro.org, abel.vesa@linaro.org, quic_qianyu@quicinc.com, 
-	quic_krichai@quicinc.com, johan+linaro@kernel.org, linux-arm-msm@vger.kernel.org, 
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-phy@lists.infradead.org, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v4 6/8] arm64: dts: qcom: qcs8300: enable pcie0 interface
-Message-ID: <mxqrssteqfzp2llhp7exj7yoduv3h26qrxnsb7tobxkk7lxyeh@ywers6elgmwy>
-References: <20250310063103.3924525-1-quic_ziyuzhan@quicinc.com>
- <20250310063103.3924525-7-quic_ziyuzhan@quicinc.com>
+	Mon, 10 Mar 2025 21:13:01 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52AL2tk2025411;
+	Mon, 10 Mar 2025 21:12:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	cLpARsczquAdLgsj/FcLjU2y3YWSnAoledfDtctwhsg=; b=Ml2fik4nhG+gXZem
+	nfWJG3fdryXpsJoIhi0d8ORtxMpaCpvS4+uc1w2Gmzt8hJNC49atmb+IERDire6G
+	XFKD8/0H/DQCAW1Fe3s/miNA7HI3Wy1bEaUAJoWmOrLXIAnKkiMeuTaYZJJsSSkR
+	oxoyPVTYE23HbKe5dImUJ6BSMayUiobdtmQnnI5Tz9DfKFvjEz2++R2V01fYug9/
+	w0RnE6ZLCoxNQ8o1cFyqoV5mcIqtEcdfThYAr1s4/iTTrUGAGTFmP+ziEG+0Hsan
+	XZ7r6Hz0dT78essfha9Mlm72H8oWjIcXSBUD+SQm3jXa0qpf71dfwAqAfGHXw+a2
+	cwTYjA==
+Received: from nasanppmta04.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 458ex6x70r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Mar 2025 21:12:42 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA04.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52ALCgIn030237
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 10 Mar 2025 21:12:42 GMT
+Received: from hu-molvera-lv.qualcomm.com (10.49.16.6) by
+ nasanex01b.na.qualcomm.com (10.46.141.250) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.9; Mon, 10 Mar 2025 14:12:41 -0700
+From: Melody Olvera <quic_molvera@quicinc.com>
+Date: Mon, 10 Mar 2025 14:12:29 -0700
+Subject: [PATCH v2 1/6] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy:
+ document the SM8750 QMP UFS PHY
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250310063103.3924525-7-quic_ziyuzhan@quicinc.com>
+Message-ID: <20250310-sm8750_ufs_master-v2-1-0dfdd6823161@quicinc.com>
+References: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
+In-Reply-To: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Manivannan Sadhasivam
+	<manivannan.sadhasivam@linaro.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>,
+        Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Satya Durga Srinivasu Prabhala
+	<quic_satyap@quicinc.com>,
+        Trilok Soni <quic_tsoni@quicinc.com>
+CC: <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+        <linux-scsi@vger.kernel.org>, Nitin Rawat <quic_nitirawa@quicinc.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1741641161; l=1168;
+ i=quic_molvera@quicinc.com; s=20241204; h=from:subject:message-id;
+ bh=FQqqjK3cWy3/ddUGwo9sBTHtWsUxwLsugXCLdQnUKNQ=;
+ b=LEumYJ4R7zaF6pPuYW7ctD6FUcesvM+YmpZf7Cpatzg/vM+xFlwXYdLuQaaUkQXn4ko7lSZjB
+ di1m8pQAPyQDKZl/6P3Ddz3BoT8NlU0kq1eQ5qZuJVKRUA8hnbCy38g
+X-Developer-Key: i=quic_molvera@quicinc.com; a=ed25519;
+ pk=1DGLp3zVYsHAWipMaNZZTHR321e8xK52C9vuAoeca5c=
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=G8bmE8k5 c=1 sm=1 tr=0 ts=67cf55ca cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=3H110R4YSZwA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=BahsdhlD1VgbZ89a8f0A:9
+ a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: nxhSjuovW1WqG2JFloeljvg4C6hN8kn1
+X-Proofpoint-ORIG-GUID: nxhSjuovW1WqG2JFloeljvg4C6hN8kn1
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-10_08,2025-03-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=898 phishscore=0
+ malwarescore=0 mlxscore=0 suspectscore=0 clxscore=1015 bulkscore=0
+ adultscore=0 priorityscore=1501 lowpriorityscore=0 spamscore=0
+ impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2503100162
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_132538_275945_523619EF 
-X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-CacheID: sfid-20250310_141300_625119_A19E2819 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,22 +124,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 10, 2025 at 02:31:01PM +0800, Ziyue Zhang wrote:
-> Add configurations in devicetree for PCIe0, board related gpios,
-> PMIC regulators, etc.
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Signed-off-by: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-> ---
->  arch/arm64/boot/dts/qcom/qcs8300-ride.dts | 40 +++++++++++++++++++++++
->  1 file changed, 40 insertions(+)
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
 
-NIT: patch subject mentions qcs8300 (SoC), while the patch enables PCIe
-on qcs8300-ride (board).
+Document the QMP UFS PHY on the SM8750 Platform.
+
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+---
+ Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index 72bed2933b034ff61a29fafebfa176383086e440..a58370a6a5d389cd0118e7b4650c6ff960bf86fa 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -44,6 +44,7 @@ properties:
+           - qcom,sm8475-qmp-ufs-phy
+           - qcom,sm8550-qmp-ufs-phy
+           - qcom,sm8650-qmp-ufs-phy
++          - qcom,sm8750-qmp-ufs-phy
+ 
+   reg:
+     maxItems: 1
+@@ -111,6 +112,7 @@ allOf:
+               - qcom,sm8475-qmp-ufs-phy
+               - qcom,sm8550-qmp-ufs-phy
+               - qcom,sm8650-qmp-ufs-phy
++              - qcom,sm8750-qmp-ufs-phy
+     then:
+       properties:
+         clocks:
 
 -- 
-With best wishes
-Dmitry
+2.46.1
+
 
 -- 
 linux-phy mailing list
