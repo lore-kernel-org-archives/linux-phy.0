@@ -4,98 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14362C282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 13:28:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 965BBC35FF1
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 15:38:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BbQTig/AbEr57rwJCh0f5moy8YyMfUEa46eg0UwYGLw=; b=D6UjZH+iBNjw8P
-	fEzZiBSgv8pi8WxxJrqcJEF/75qdXQReWwHbF93cp/J/Y2nrre4Jz+LTHOXO0C33ABwZFBWHnBqb+
-	HDdomu0mgGJTLZfqbYwpqWMXHG2KE7pNx4p9yc1Ju+93VzT22ldzsrbRhNlhaM/gUsOXw26i8TUd+
-	WiTV0qIxPlEEoe8/a9aVx03sYQip/OQZrVQX3gl8vY/rubpLazOCM6dUD+7lLTdPv0NZX6K8Ve0Zo
-	wqCdXIniVPk3XydfB/D5BhFCNyoNKc9IPXrO6/B4XQnLSi0sq79WLbqtxGBnwz1OpF0XDp2k0OdLW
-	/NDK2rjf0cgkfEuHypQQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7gRTaJ9ksNMG8bbDHDQWgdJDQ1q/yFrB/bQI3TdZ0fs=; b=ZGMlEXpB+t1NCxZ/4TngcYNJ4T
+	Z9nxpI0TTQnN0+csJHIIQYDz+jWpNHYmatwZO7odxlusoKRlhTSXyzNxgL+xNYt3ZixFzWqm6qfsa
+	t9A6FQTLGYbnWEQXJaCU9wKF5pAr3yAoqy1t1xhqT0GWOVjPZTUlqCyg1ELvzjJIj8ucC5RiUqfPz
+	krtn6kO4satNdOhkDcziHXgQqOYYQ9dV2QwaooTYDpADRG6KRpQQN1qeX6RadArSdjt1mznM+3xPn
+	DN87HAbefgDkW2B8m2uj/i+Tf+nd563kWryNk49YMTgn8RU4V6vRb07P6RfuhR05aAJWb+Vgg2JGT
+	VKoG118g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trdBA-00000002nOr-3PHF;
-	Mon, 10 Mar 2025 13:28:24 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1trfD5-00000003CXT-378T;
+	Mon, 10 Mar 2025 15:38:31 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trcEe-00000002cQU-10VV;
-	Mon, 10 Mar 2025 12:27:57 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-43bdf0cbb6bso23333625e9.1;
-        Mon, 10 Mar 2025 05:27:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1741609675; x=1742214475; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=y07tVQtayKingIMzHvY+mUqyx0BK9tRXRpx87DXqL0Y=;
-        b=CZjbDPaLkGd3W0KA06ElFAvoTYOCT3OO0vOSf+Qx6uA30z5oTRhHtiVYjsa9KmbU7P
-         u9/mpPJMYH1CmrOSyyeR3Qrf7JdAhm0GWgeBmhVcKW1X7zfWEJagFsGuYxc4KeVfseWM
-         iEoQwNH2V1iPcXY5FtcQqnp8SBB8vTsiD4kY6N1VpwuDYYYdFh7D/Ji8xhFQOIpkzp+B
-         oz8L/Oa7PMXH1XtGbU9RvrV0sE3x9t2WJmU7B07jMNdlEK43l6cmCgkXZKLOK2WqqOdl
-         bjrIhPmF4+p70Rg6hdP5tQy6YjUaRxK2/YJK6zZnwm0tOhzp9eya9lWpSwB92XD8kKUC
-         /U9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741609675; x=1742214475;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=y07tVQtayKingIMzHvY+mUqyx0BK9tRXRpx87DXqL0Y=;
-        b=uJuy4av6giaDs1CsDuW4vm6voq+d4Ad9y0eQyd3/Ddr1kIMCfXv5o3nFS+682d22Wo
-         h6sIzNn41XtzjbgI86sL+qKHY2Z7tYtJF6IaepJTlIgLpRjDpKYJat/LdhyVxPxgpCqT
-         2dYkDQ27U6KmcfLnPK4N5m58fOSP+Vb2v7lLjgB3QnSpTKoFO7KfO0/iYfv8QAyKXHsx
-         KeuKIyZa8v7ryHwT4dwFzmg+5wo3OlE8tgr9pQvHbzDN5VaxoXw1FTPUKSf+98veKBUG
-         pv2CTTs5gEVBMbr2Jx/+p5BHLG91CUkP2GvyZj046LNQzzcUFykTfWXYGjKtY0sICZRN
-         TXZg==
-X-Forwarded-Encrypted: i=1; AJvYcCVYuI0F+Nl0fseqwMUhAt8T9yUs5+WGTIyYafiGoVIGmmjE4V6H+28fvTRswyPTdc1P0yxSXL4sZameUa5M2IRK@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywvs41DHaqfg6Wjpp9jUnh87rmQyAoZ5w1Zd5vHU9WsnPMqYW4K
-	KXlyxtomo0PA9dH+LhkMO/qC2iy4Rqb+HtJ69OPe731j/ydMDlZ9
-X-Gm-Gg: ASbGncuwqIRkjm+cb8aX1zzuMAGQ6OPuKESBGzp8nk1+GCkz0io0Wh7SGmUCmTMDdub
-	Qg6KRkojLzIpyOl/EuDAoUzzT8BiljRxJ1486v1HqLYBZ5Bb4j0q2D/wTaHt+2CewNZbFuZ8Xzm
-	0Zz+nqKFb7BSdC/KZm/kfwFdL328Knf33Xcr0IoetEvtCBVujG90oDIDcFOzy7C9JQ2mlCpDmig
-	WLxNmgOKnUlt32YQZptbb7pb1rv8tc1WEktGm4LxUS5Cbaic+MG2JqCw69cjkGRc1oUkkAxgTpQ
-	/bjohrT54go4YV5PYTdObEWx5k2+Hk7Af9cBwIYpgZDkjbHFN2gaykGsd83lAzM3Qxdq7mmmmQZ
-	FGzmKhrSgmGcc4XtD
-X-Google-Smtp-Source: AGHT+IHyEEGGzhCMZxMwRjQ82ccOJZrD+gnc4+NfGxz62Tu6AF+ZAKBbTzzBzG5J8FJd1mZ+MeHucw==
-X-Received: by 2002:a05:600c:4f41:b0:43c:ec28:d301 with SMTP id 5b1f17b1804b1-43cec28d3c2mr31513105e9.26.1741609674640;
-        Mon, 10 Mar 2025 05:27:54 -0700 (PDT)
-Received: from eichest-laptop.toradex.int (85-195-230-40.fiber7.init7.net. [85.195.230.40])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43bd6530f26sm171963245e9.4.2025.03.10.05.27.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Mar 2025 05:27:53 -0700 (PDT)
-From: Stefan Eichenberger <eichest@gmail.com>
-To: vkoul@kernel.org,
-	kishon@kernel.org,
-	shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	kernel@pengutronix.de,
-	festevam@gmail.com,
-	p.zabel@pengutronix.de,
-	hongxing.zhu@nxp.com,
-	tharvey@gateworks.com,
-	Frank.Li@nxp.com,
-	francesco.dolcini@toradex.com
-Cc: linux-phy@lists.infradead.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Stefan Eichenberger <stefan.eichenberger@toradex.com>,
-	stable@vger.kernel.org
-Subject: [PATCH v3 2/2] phy: freescale: imx8m-pcie: assert phy reset and perst in power off
-Date: Mon, 10 Mar 2025 13:27:04 +0100
-Message-ID: <20250310122745.34947-3-eichest@gmail.com>
-X-Mailer: git-send-email 2.45.2
-In-Reply-To: <20250310122745.34947-1-eichest@gmail.com>
-References: <20250310122745.34947-1-eichest@gmail.com>
+	id 1treEw-00000002wm1-1gD2;
+	Mon, 10 Mar 2025 14:36:23 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id D3F695C66D4;
+	Mon, 10 Mar 2025 14:34:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2BD09C4CEED;
+	Mon, 10 Mar 2025 14:36:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1741617381;
+	bh=7EEMVaFexgLc6pVJL7mrzAPNCcixahyfiK4unhrdXiw=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=AFQ+7R+aRontN6fPv0/HgRdTHM+2jCP8gLb3fFNBIIqBjJgaSNZTzlJCpJtDit3DX
+	 /k7CpIG8MNvyoClOmWfI+0zuclf7yQvycIW8C7dCSVE75gQbDGVXqUYFk6G6pnF3Fv
+	 5ttun5Y6xWEc0030EoS7Cryb86LEPT61w+DREAfr0zc8NtCYArA7opqJPX3zZejakD
+	 y7lymlPh1tiGqaRt2rlgq3lbTbJZNgSCfbFvAoBdqj23xJ8aEtQ2yAWxmfYgybRN/j
+	 aY+SDuFXh1C5SKGHOmd56vXuuGxCtD+0MwvNpdeO3bVdearATPNJLwGPKz0vpjUM1a
+	 ZnNR0JNtov2pw==
+Date: Mon, 10 Mar 2025 09:36:20 -0500
 MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>, 
+ Ben Hutchings <ben@decadent.org.uk>, Conor Dooley <conor+dt@kernel.org>, 
+ Guo Ren <guoren@kernel.org>, Felix Fietkau <nbd@nbd.name>, 
+ upstream@airoha.com, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Lorenzo Bianconi <lorenzo@kernel.org>, Lee Jones <lee@kernel.org>, 
+ devicetree@vger.kernel.org, Vinod Koul <vkoul@kernel.org>, 
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org, 
+ Nikita Shubin <nikita.shubin@maquefel.me>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Daniel Danzberger <dd@embedd.com>, Yangyu Chen <cyy@cyyself.name>, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ linux-usb@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>
+To: Christian Marangi <ansuelsmth@gmail.com>
+In-Reply-To: <20250309132959.19045-1-ansuelsmth@gmail.com>
+References: <20250309132959.19045-1-ansuelsmth@gmail.com>
+Message-Id: <174161712595.4185316.12073621496624773779.robh@kernel.org>
+Subject: Re: [PATCH 00/13] airoha: en7581: clk cleanup + USB support
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_052756_279745_3BD3E91F 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20250310_073622_526565_D33DCF1E 
+X-CRM114-Status: GOOD (  25.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,65 +85,122 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Stefan Eichenberger <stefan.eichenberger@toradex.com>
 
-Ensure the PHY reset and perst is asserted during power-off to
-guarantee it is in a reset state upon repeated power-on calls. This
-resolves an issue where the PHY may not properly initialize during
-subsequent power-on cycles. Power-on will deassert the reset at the
-appropriate time after tuning the PHY parameters.
+On Sun, 09 Mar 2025 14:29:31 +0100, Christian Marangi wrote:
+> This series implement all the changes required to correctly handle
+> USB support for the Airoha EN7581 SoC.
+> 
+> The first few patch are cleanup for the clock driver and the
+> introduction of the SCU SSR SoC driver.
+> 
+> The SoC always support USB 2.0 but for USB 3.0 it needs additional
+> configuration for the Serdes port. Such port can be either configured
+> for USB usage or for PCIe lines or HSGMII and these are configured
+> in the SCU space.
+> 
+> To correctly handle this, the SCU is changed to a simple-mfd
+> implemenetation and the clock controller updated to follow this new
+> node structure. Both implementation are supported to handle old
+> binding.
+> 
+> The xHCI USB is based on the Mediatek implementation but the PHY
+> handling although conceptually similar, is indded different compared
+> to Mediatek due to SSR checks and different port power up.
+> 
+> The SSR driver expose an API to poll the current status of the Serdes
+> port and the USB PHY driver validates it. Refer to the specific commit
+> for additional info.
+> 
+> Consider that there is currently an inconsistency as AN7581 and
+> EN7581 refer to the same thing. This is due to the fact that
+> the SoC born under EcoNet but then was acquired by Airoha.
+> 
+> Christian Marangi (13):
+>   clk: en7523: convert driver to regmap API
+>   clk: en7523: generalize register clocks function
+>   dt-bindings: soc: airoha: add SCU SSR Serdes port binding
+>   dt-bindings: soc: airoha: add Documentation for Airoha AN7581 SCU SSR
+>   dt-bindings: mfd: add Documentation for Airoha EN7581 SCU
+>   dt-bindings: clock: airoha: make reg optional for Airoha EN7581
+>   clk: en7523: support getting regmap from parent node for EN7581
+>   soc: airoha: add support for configuring SCU SSR Serdes port
+>   dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
+>   phy: airoha: Add support for Airoha AN7581 USB PHY
+>   usb: host: add ARCH_AIROHA in XHCI MTK dependency
+>   arm64: dts: airoha: en7581: convert SCU clock node to MFD
+>     implementation
+>   arm64: dts: airoha: en7581: add USB and SCU SSR nodes
+> 
+>  .../bindings/clock/airoha,en7523-scu.yaml     |  13 +-
+>  .../mfd/airoha,en7581-scu-sysctl.yaml         |  68 +++
+>  .../bindings/phy/airoha,an7581-usb-phy.yaml   | 106 ++++
+>  .../soc/airoha/airoha,an7581-scu-ssr.yaml     | 106 ++++
+>  MAINTAINERS                                   |  15 +
+>  arch/arm64/boot/dts/airoha/en7581.dtsi        |  74 ++-
+>  drivers/clk/clk-en7523.c                      | 258 ++++----
+>  drivers/phy/Kconfig                           |   1 +
+>  drivers/phy/Makefile                          |   3 +-
+>  drivers/phy/airoha/Kconfig                    |  13 +
+>  drivers/phy/airoha/Makefile                   |   3 +
+>  drivers/phy/airoha/phy-airoha-usb.c           | 554 ++++++++++++++++++
+>  drivers/soc/Kconfig                           |   1 +
+>  drivers/soc/Makefile                          |   1 +
+>  drivers/soc/airoha/Kconfig                    |  18 +
+>  drivers/soc/airoha/Makefile                   |   3 +
+>  drivers/soc/airoha/airoha-scu-ssr.c           | 195 ++++++
+>  drivers/usb/host/Kconfig                      |   2 +-
+>  include/dt-bindings/soc/airoha,scu-ssr.h      |  24 +
+>  include/linux/soc/airoha/airoha-scu-ssr.h     |  17 +
+>  include/linux/soc/soc/airoha-scu-ssr.h        |  17 +
+>  21 files changed, 1355 insertions(+), 137 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+>  create mode 100644 Documentation/devicetree/bindings/soc/airoha/airoha,an7581-scu-ssr.yaml
+>  create mode 100644 drivers/phy/airoha/Kconfig
+>  create mode 100644 drivers/phy/airoha/Makefile
+>  create mode 100644 drivers/phy/airoha/phy-airoha-usb.c
+>  create mode 100644 drivers/soc/airoha/Kconfig
+>  create mode 100644 drivers/soc/airoha/Makefile
+>  create mode 100644 drivers/soc/airoha/airoha-scu-ssr.c
+>  create mode 100644 include/dt-bindings/soc/airoha,scu-ssr.h
+>  create mode 100644 include/linux/soc/airoha/airoha-scu-ssr.h
+>  create mode 100644 include/linux/soc/soc/airoha-scu-ssr.h
+> 
+> --
+> 2.48.1
+> 
+> 
+> 
 
-During suspend/resume cycles, we observed that the PHY PLL failed to
-lock during resume when the CPU temperature increased from 65C to 75C.
-The observed errors were:
-  phy phy-32f00000.pcie-phy.3: phy poweron failed --> -110
-  imx6q-pcie 33800000.pcie: waiting for PHY ready timeout!
-  imx6q-pcie 33800000.pcie: PM: dpm_run_callback(): genpd_resume_noirq+0x0/0x80 returns -110
-  imx6q-pcie 33800000.pcie: PM: failed to resume noirq: error -110
 
-This resulted in a complete CPU freeze, which is resolved by ensuring
-the PHY is in reset during power-on, thus preventing PHY PLL failures.
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
 
-Cc: stable@vger.kernel.org
-Fixes: 1aa97b002258 ("phy: freescale: pcie: Initialize the imx8 pcie standalone phy driver")
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-Acked-by: Richard Zhu <hongxing.zhu@nxp.com>
-Signed-off-by: Stefan Eichenberger <stefan.eichenberger@toradex.com>
----
- drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
 
-diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-index 5b505e34ca364..7355d9921b646 100644
---- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
-@@ -156,6 +156,16 @@ static int imx8_pcie_phy_power_on(struct phy *phy)
- 	return ret;
- }
- 
-+static int imx8_pcie_phy_power_off(struct phy *phy)
-+{
-+	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
-+
-+	reset_control_assert(imx8_phy->reset);
-+	reset_control_assert(imx8_phy->perst);
-+
-+	return 0;
-+}
-+
- static int imx8_pcie_phy_init(struct phy *phy)
- {
- 	struct imx8_pcie_phy *imx8_phy = phy_get_drvdata(phy);
-@@ -176,6 +186,7 @@ static const struct phy_ops imx8_pcie_phy_ops = {
- 	.init		= imx8_pcie_phy_init,
- 	.exit		= imx8_pcie_phy_exit,
- 	.power_on	= imx8_pcie_phy_power_on,
-+	.power_off	= imx8_pcie_phy_power_off,
- 	.owner		= THIS_MODULE,
- };
- 
--- 
-2.45.2
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/airoha/' for 20250309132959.19045-1-ansuelsmth@gmail.com:
+
+arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fab0000: compatible:0: 'mediatek,mtk-xhci' is not one of ['mediatek,mt2701-xhci', 'mediatek,mt2712-xhci', 'mediatek,mt7622-xhci', 'mediatek,mt7623-xhci', 'mediatek,mt7629-xhci', 'mediatek,mt7986-xhci', 'mediatek,mt7988-xhci', 'mediatek,mt8173-xhci', 'mediatek,mt8183-xhci', 'mediatek,mt8186-xhci', 'mediatek,mt8188-xhci', 'mediatek,mt8192-xhci', 'mediatek,mt8195-xhci', 'mediatek,mt8365-xhci']
+	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
+arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fab0000: compatible: ['mediatek,mtk-xhci'] is too short
+	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
+arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fad0000: compatible:0: 'mediatek,mtk-xhci' is not one of ['mediatek,mt2701-xhci', 'mediatek,mt2712-xhci', 'mediatek,mt7622-xhci', 'mediatek,mt7623-xhci', 'mediatek,mt7629-xhci', 'mediatek,mt7986-xhci', 'mediatek,mt7988-xhci', 'mediatek,mt8173-xhci', 'mediatek,mt8183-xhci', 'mediatek,mt8186-xhci', 'mediatek,mt8188-xhci', 'mediatek,mt8192-xhci', 'mediatek,mt8195-xhci', 'mediatek,mt8365-xhci']
+	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
+arch/arm64/boot/dts/airoha/en7581-evb.dtb: usb@1fad0000: compatible: ['mediatek,mtk-xhci'] is too short
+	from schema $id: http://devicetree.org/schemas/usb/mediatek,mtk-xhci.yaml#
+
+
+
+
 
 
 -- 
