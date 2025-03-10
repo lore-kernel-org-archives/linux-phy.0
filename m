@@ -4,120 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC901C28B30
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 11:54:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3E86C282DE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 13:25:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T3kwgMwN/vDY2m451QMe5xdkiunqvV4vSeM8fzc8S30=; b=FOOxMJXn2JP7yB
-	MJqj90J+FSpZ4RcA8SqMTxjZfMakoRJfqRmQL0n9KRXd618OQ4HIsEx10xD7GAhV8N6IpNnMjK4x3
-	lAkmH8noz4Boa3fedwfHicJruNS7axZkHXfFKhZWQ8Ikfff/rKpR22UsMxDCNAmNvmUoAYNW7kJ0k
-	DKsJpOl4VpaQLdLpFT6zoOaUCOGBpj/L/1+f9G7W5lf5v2jg6/QOWTh03gQTQ7mK9GyeDRCitdbyV
-	d4OXaNRak8Z6wp+nPXlFg+J5AEdnvGZbxxjMJjaG0990K2u1Y0GCKqpKgYRYDTWkgg+Z5mvq2PixW
-	Lq9G2Frz3qvVdAoInKPw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Of6XGQwJxn7iyq9oRE1jJ4vs/T76IGTR830tx/llQI8=; b=NXL6I/M/Mn00Dv
+	4aRZB8CL7rtpoUrCY1IBTvS6KBLB6VAysCUZMbMDYe//slAdaca52UQBi8jU+zoeVbYR4MYL6+Hs2
+	shUTkdIOrYo1FqEcQiEA9dWIat7IQmz+Je+fsobK84KsHyyHTdL3Uvo2qqvHta/oGVWVckBm8aRrP
+	KRkGmiFjiHwE5bBJOkTyw0JpE2n6Q4Tf16d6jRPaozTHf4slub7IdTfYpNh22c0p/IRD46FJbIhMH
+	VN8LnjB79rRkTa5aK73HhH4jVS5jhSvfjAvQn0OEJeC0JP6MmYZgSVK/h+5RSFcsp+XuPiAHOAlJc
+	1mj4/DIjSauh/pBelHsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trbiR-00000002USd-26La;
-	Mon, 10 Mar 2025 11:54:39 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1trd7x-00000002muP-00wn;
+	Mon, 10 Mar 2025 13:25:05 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trbVZ-00000002Sma-1hRK;
-	Mon, 10 Mar 2025 11:41:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 71510A44945;
-	Mon, 10 Mar 2025 11:35:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B986C4CEE5;
-	Mon, 10 Mar 2025 11:41:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741606880;
-	bh=baohKrHUnm8F0gCGlhMlMZHHLAAXGDAnlAu9F2b27x0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Bb1rVcHODTTepAe2xtV9cg9zhjo7Gtb/OcDWaMECFAMc2aU2bzCWklhW4EP1LEM4k
-	 fHAFRnpxf/EImdd5ML0W3fZkubfXqUJOHGc9SJ2ve+HKdyEKdFKS79qOfE8X+KPoxP
-	 zheGIkLwsrYx5pGIR3G3Eu31Ts1u2dbgGGwn8Oh1y28V99CexsPZW9NVEt0XC6pngk
-	 z0kIXD5pFZd2Up8z14U5doOmKsuUeVxXjibhUnVGGb6ekcYBrFbeKnTdMHfgahfC2J
-	 4++nwajOCndh9jhY9XmjDx9bYZaHPd/zH+/3+yPlS6IXvd0xK73hAmNIhvoX/jnBoA
-	 iZxnW8rp0BSgg==
-Message-ID: <026296c8-a460-43ca-a423-0fa38269fbc2@kernel.org>
-Date: Mon, 10 Mar 2025 12:41:06 +0100
+	id 1trcEX-00000002cPG-0qTX;
+	Mon, 10 Mar 2025 12:27:50 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-43cf06eabdaso12840445e9.2;
+        Mon, 10 Mar 2025 05:27:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1741609667; x=1742214467; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=P0gVa+47vgpIskiaBk5o99cR3lWwJb6rgWAQDG1BpiA=;
+        b=erOWeGrvRCg6dSeLTTJnELlpnWX/i6Rm2kwosA8SjbL9X/W6LNnK/PiL2sjBhwUbEO
+         gjAiOZb/TvCt6m9LGm9z4tC9f8yVIAMbmCufw7ODyTU5vPRaE1Du7ENM4QsMZYC+Nvv7
+         FXGqFOfEESAntDUeWiFR7R8haSWIU+74HzlJuUrkXO+p9sSM8ElASCHY7N0tifbjvpKI
+         KjNgxb2X9ATSgD1OC3kEiBDx327OzXr6DhRU2C5vh9dWcUKnur+Ilqi01Kp0owzzzXgB
+         UwZsUamSC5D3as7f5DnvzdQLLuK11CHIrQJRcGM5cS/jxs7ByPjsDWaliZakPUfAApd5
+         9z7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741609667; x=1742214467;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=P0gVa+47vgpIskiaBk5o99cR3lWwJb6rgWAQDG1BpiA=;
+        b=s5lLwUV5SS2nUXc6e3xBeu5zLE6ox8vkbOdtCOakJiYbpT8O+umimm6gH9WWUVau/6
+         tgM8ogTqcwcYD+RDplqndssdjRpUKnfQy2mgEXjiIMH4z4CiyEDT2M5+pcoQadv5rFGS
+         vrymsgrR+qlKx8Z+A2QMDVCHyR6sznKjGgzLYX9HheFMPKcUpYiltKUXVHMzuNV+yIf5
+         /TOukbwQ2G8JxhJIZogPapALg+uXb79brnnrcP+EknZOBr4bc1ZxjiEbikGIYZ16a2mB
+         WvK9mG1i9Cih5fbew8sMFe0k5gSOkSkCMPvT07DqX7tM+gCnxAzdoJ38CptfKi7SSZ6I
+         l1PA==
+X-Forwarded-Encrypted: i=1; AJvYcCXu9FouqZNfIYNXWDpD/YU7bS/TSWDscRl75tfcoL8/Nxot7/bmCarJBG1Q+aAmD54cIUBr0XKdek8IbqVXeWqZ@lists.infradead.org
+X-Gm-Message-State: AOJu0YyRlC7JOmXvVwxAO/2WxH54opBNKmRxAV4kH19ot57y1daubV9I
+	Fu6uxOBtvSOu6DfoLebFj/sb65rALMfOVa2tF35zODGEyKOCGUuE
+X-Gm-Gg: ASbGnctxsebIlDRjRkXjAmCx21lD8upskVMl/QkqUKxe0IiTdmhfpXUG/FwwtTtJnB7
+	Frav2oigCDXv30qHZsa1Y8PUuXcFSSD9wWDPmZXdcVdd9t9RyPtPcizFoXE5BuKYTPaeuTuc5v+
+	/Qa9SNpQ8LtncMLt2tNRfgVBuLPDvXfDTO2jUV8FTVSgL/7NaYro13uJioYr18NWhuJBiTahhzz
+	e4oQ8eLWp3V/0dShg2qOYHScY/ModUvLLktGl2LuO/qEEP/o3AL5iQENmDHgScucI1uDMs7RG1J
+	Ei2Ufu6QfWiIkeIh/jYZlYqYo12FjsYJic80tuwNzaZWvdlv0NtLYdO2Wbmzh5nSLRrQRQWTlsO
+	1t0yyXBo2unvNcJ6G2Wtipx8lxzk=
+X-Google-Smtp-Source: AGHT+IHnfkFyUH7zwhO3UJXB4ON9kY20gf9Xj9a8RVVLTh0OxFR3WRoI6eW5/kVQ7doqUEWryYXkVw==
+X-Received: by 2002:a05:600c:4e91:b0:43b:d116:6483 with SMTP id 5b1f17b1804b1-43c6021f13cmr85331995e9.27.1741609667099;
+        Mon, 10 Mar 2025 05:27:47 -0700 (PDT)
+Received: from eichest-laptop.toradex.int (85-195-230-40.fiber7.init7.net. [85.195.230.40])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43bd6530f26sm171963245e9.4.2025.03.10.05.27.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 10 Mar 2025 05:27:46 -0700 (PDT)
+From: Stefan Eichenberger <eichest@gmail.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	p.zabel@pengutronix.de,
+	hongxing.zhu@nxp.com,
+	tharvey@gateworks.com,
+	Frank.Li@nxp.com,
+	francesco.dolcini@toradex.com
+Cc: linux-phy@lists.infradead.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/2] phy: freescale: imx8m-pcie: fix and cleanup phy
+Date: Mon, 10 Mar 2025 13:27:02 +0100
+Message-ID: <20250310122745.34947-1-eichest@gmail.com>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
- EN7581 SCU
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Lorenzo Bianconi <lorenzo@kernel.org>, Daniel Danzberger <dd@embedd.com>,
- Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
- Nikita Shubin <nikita.shubin@maquefel.me>, Guo Ren <guoren@kernel.org>,
- Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
- Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
- upstream@airoha.com
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-6-ansuelsmth@gmail.com>
- <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
- <67cec328.170a0220.27ecbc.9c6e@mx.google.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <67cec328.170a0220.27ecbc.9c6e@mx.google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_044121_591049_A7D5F1C0 
-X-CRM114-Status: GOOD (  36.52  )
+X-CRM114-CacheID: sfid-20250310_052749_235490_33213F92 
+X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,131 +108,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/03/2025 11:47, Christian Marangi wrote:
-> On Mon, Mar 10, 2025 at 10:21:45AM +0100, Krzysztof Kozlowski wrote:
->> On 09/03/2025 14:29, Christian Marangi wrote:
->>> Add Documentation for Airoha EN7581 SCU.
->>>
->>> Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
->>> via the SCU (System Controller Unit).
->>>
->>> Example of these pheriperals are reset-controller, clock-controller,
->>> PCIe line speed controller and bits to configure different Serdes ports
->>> for USB or Ethernet usage.
->>>
->>> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
->>> ---
->>>  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
->>>  1 file changed, 68 insertions(+)
->>>  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
->>>
->>> diff --git a/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
->>> new file mode 100644
->>> index 000000000000..d7dc66f912c1
->>> --- /dev/null
->>> +++ b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
->>> @@ -0,0 +1,68 @@
->>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->>> +%YAML 1.2
->>> +---
->>> +$id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
->>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->>> +
->>> +title: Airoha EN7581 SCU (System Controller Unit)
->>> +
->>> +maintainers:
->>> +  - Christian Marangi <ansuelsmth@gmail.com>
->>> +
->>> +description:
->>> +  Airoha EN7581 SoC expose registers to control miscellaneous
->>> +  pheriperals via the SCU (System Controller Unit).
->>> +
->> One more comment - there is no such thing as "sysctl" in your hardware.
->> Look at the SCU binding which clearly says that it is the hardware you
->> are duplicating here, so the "System Control Unit".
->>
->> So you have existing "This node defines the System Control Unit of the
->> EN7523 SoC" and you add one more node which defines the "System Control
->> Unit", so you have two "System Control Unit" device nodes?
->>
->> Look also what Stephen asked for:
->>
->> https://lore.kernel.org/all/20220106013100.842FCC36AEB@smtp.kernel.org/
->>
->> so how system-controller can now became clock-controller? Now, it was
->> the system controller since the beginning.
->>
-> 
-> The main problem here (and we had a similar problem with GPIO and PWM)
-> is that the Vendor (Airoha) wasn't so bright in placing the different
-> registers for the SoC so we have case where everything is mixed and not
-> one after another... 
-> 
-> Example we have 
-> - CLK register part 1
-> - Some bits that configure PCIe
-> - CLK register part 2
-> - GPIO
-> - CLK register part 3
-> - ...
+The imx8m-pcie PHY PLL fails to lock under certain conditions when
+returning from suspend. This is resolved by asserting the PHY reset when
+powering off the PHY during suspend. This ensures that the PHY is
+properly reset when powering on again in resume.
 
-This does not explain that binding said "This node defines the System
-Control Unit".
+Changes in v3:
+- Update commit message of cleanup patch (Frank)
+- Add Reviewd-by and Acked-by (Frank and Richard)
 
-So what are you adding here if not SCU?
+Changes in v2:
+- Remove unnecessary check if perst is not null (Philipp)
 
-> 
-> The driver solution for this is syscon and the simple-mfd node
-> structure.
+Stefan Eichenberger (2):
+  phy: freescale: imx8m-pcie: cleanup reset logic
+  phy: freescale: imx8m-pcie: assert phy reset and perst in power off
 
-Let's keep driver entirely separate, we don't talk about them and mixing
-arguments won't make it easier.
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 23 +++++++++++++---------
+ 1 file changed, 14 insertions(+), 9 deletions(-)
 
-> 
-> Now the main problem is how to modle this in DT. There are lots of case
-> where the simple-mfd model is used (like the one proposed) but probably
-> this is not accepted anymore. But again this should be clearly stated or
-> we have a chicken-egg problem when other devs implement similar thing and
-> have to implement simple MFD driver to handle this. (and driver
-> maintainers say "Use the simple-mfd model like it was already done)
+-- 
+2.45.2
 
-simple-mfd has nothing to do here. Describe the hardware - what is the SCU?
-
-
-> 
-> For this specific case (and to give an answer to the clock patch after
-> this) the problem is that this register space was originally used only
-> to control the clock and I wasn't aware that it was also used to control
-> USB. Now that I'm implementing support for it, the disaster happened.
-> 
-> So In short SCU is lots of thing, both a system-controller, a
-> clock-controller and even a reset-controller.
-
-And you have bindings for that already. Done.
-
-> 
-> To make it short, 2 different solution:
-> 1. We can keep the current node structure of the node-controller and add a
-> child node for the SSR part (with a dedicated compatible).
-
-No, you do not add child nodes just because you want some drivers.
-
-What is SSR? How is it a device?
-
-> 2. Those property need to be be defined in the clock-controller node?
-
-In the SCU node. Do you have only one SCU or more?
-
-> 
-> The ideal solution is 1. Does it work for you?
-> 
-> Sorry for the long post and hope you understand why this mess of
-> reworking the binding.
-> 
-
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
