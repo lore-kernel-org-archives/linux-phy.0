@@ -4,103 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1A55C282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 11:12:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98966C282DE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 11:40:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bqZQH7Wpez9V35yBaSsYj4Tgq+XT5q4hZ8NGOeKqprI=; b=zKuGi2tdXy7O51
-	Q+mr92BYgJ+yXy075xS1h0EwSUt9uqd7HDU2MDKCkSGbCr5uw/rYCX4xAmjfKapPJm1XYtLa4HKuw
-	xT2jE/bzL6z7KbhhzNyPr7XrOfKMObpoAr2vDVW2nZoU6U1GEZF/unF34mtFaujHozAQdBLs8NMbk
-	YrldV3TzxoxmNuLh8zstomkpA6sWBH8TYNqQkBZFTAkDreTy+DpVCgAfcK/9VyLo0NWzvwNNlR5Oz
-	k/IWQDZbxHKHZyJvsn3OnUxw8ob9gidU5w1B23E0gp1loXu5jUGVln+lffvtuNKql1UIJF1rLPwnT
-	c+YZeGRSUFP7qaQSKY3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1ZGPQPDR05Y7iQ/IE4r+4o77alFaBjXMICm3GjthhyM=; b=3CeWZAuXCX8jfv
+	DQbUsOtZ3RjCWzUsqaXf4xAQYb33v49gXQ1pCFjcXBdmg2pAFBveYyR7Z/3zUP2RJdyNnq+QO8OYQ
+	l9IOxzQ4CVoN+cPE1anDYpujH2OBJ3Y68/SDAXlHO5b0RzA5bUk5x7hJA70+qTsj6kM1PGuQLBbK0
+	QcZFb944DHPSjoR/CzVNjyT21TLkZB+sgmgb7YO8ynzRAfdfkRjnVAwdQ/qGEdS74n/QppaUzW73G
+	ccjBtaeGQ5655n/EeVwDgwOuyCCYRaJ3ja/sM0IuwG6/0LF8rEpfs9rSlNTxSSM5Gh4lnoBm3exql
+	nzBUomEcHyJG9/f7YAcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trb3I-00000002O4c-0ytb;
-	Mon, 10 Mar 2025 11:12:08 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1trbV7-00000002SiT-3SzJ;
+	Mon, 10 Mar 2025 11:40:53 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1traf5-00000002IdW-0jRB;
-	Mon, 10 Mar 2025 10:47:08 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-5e60cfef9cfso3275666a12.2;
-        Mon, 10 Mar 2025 03:47:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1741603625; x=1742208425; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=l5DEa09wiscb4LqtVRJpNAy3hWViEqi+/FfXF2zENFo=;
-        b=Cx5cYPcnCGGMfNcMBtb5XE3jwCyf0u3ODuhUInmhbMWOjUtxgcuXPPs/I9zur0EN/E
-         fGCPZQ2vfJ5BTWwcxgmGCKl1/WMapbGJ+APvHfA7pBHOVHsfvGRIPd5C5B1RZ3+H/Fa+
-         MCC/VU0djcX3wDFc/gYduQppkHpeNL4EeFMNe3rsaRcGRAEVZc/sE8iyQofxU9YdJRGY
-         ykbdTNo5fgsVr99twblkXhw2KOv3I1Ear+Xh0l4wr1+aXOFHrWa/mfoIy32qyD2C785d
-         b5P5RzOvf0Cd1KL9CiO+QdQaw3UUnyj5jjhSlXKZPnms69GoghISHShrfEuCRhLFoCTF
-         Ks+g==
+	id 1travi-00000002MsB-1o0K
+	for linux-phy@lists.infradead.org;
+	Mon, 10 Mar 2025 11:04:19 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52A9ZQrI008276
+	for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 11:04:17 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=7+h0SgCQWbpp2hc08NzZtuUqyuQ4lXLc5tQ
+	LmGtbA50=; b=bj2neNPPyGpRSdjTyspYKoXqr14OqsTXVLwiR9JUgqJTZzyZpXX
+	d6rdXBVYipzcHPvJkkfveDmRHAt+jCfMBfr/+expJ8k8JEBMb6quwaPVvS3bM05Q
+	U9ax+hAhd89Kx2tEmJXMSzepqa7qBD1990jPd63aBdEPBeE5TvU1j50VUcv47qPs
+	6K0d+9i4AVpvR1oegcOwVb/dMV7HUfORL+FkmNZ0YIFi0OiUe0PZAeTzTw9qZycz
+	ox3rzhe0kIdVE88URT+z/PjGkEYuPcnPBkv0Vg5XUd11WHmUhJ9nuRTq9h8v4PkT
+	U+4p74QN3SeXafsdULRBxxAGj5tWvhZ8NqQ==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 458ex6vkkt-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 11:04:16 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-22410053005so130092115ad.1
+        for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 04:04:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741603625; x=1742208425;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=l5DEa09wiscb4LqtVRJpNAy3hWViEqi+/FfXF2zENFo=;
-        b=f9ybJapv8YqNNhKS52fHtSB+60eaehnCcYE30242tn9FBNNms4D24EHC2pjxxp1ATE
-         z/qNvjWha+YMzlJxuOhLJ2UraPrizoTqi25pX0NUrzhNpb/ryeL2fd1FRvWjpFcUq1mf
-         xWsMzweyDWoEOmZk6JVbr5MaL24y7I+ntw4nSoxFSe8vVj0UVSdG6GsEFuIQgjUAmbJS
-         xwvoe7rc93qHbygk40xbz5maN6HFYYzfDtLAM0sKyQh/+MjHkQoigzHUICwE90cKLiNT
-         htiWSSKk+hA1DDTQ8TjFaUzE9D+Wyrrx7XXYP4Yg9wOhx/ospbvKcqxERX6AoVR/6HgU
-         +A0Q==
-X-Forwarded-Encrypted: i=1; AJvYcCV8eE+YVkB7+5AKYaSv4YGBpwiSs5fsuqeXPPsxQpDkLVWgCGTRH0yCH+M7ep4hdpa+ylxGPBBcY020MIMRB0k=@lists.infradead.org, AJvYcCWRRaapixFeNsWsXa8dpD4jujV/wuvvbS531yqL5m0u50CQjIPoqdW+gFXxdUGHAVTnf8KZa3ujJSXf@lists.infradead.org, AJvYcCX+uNrLgeHAi7NzM4XXikBIabLaO/abTeZjjv+jq6AsTaTexqDqewyS8pT7mSIUKd+R0Rmc+kzac+aBhOrXR5gQ@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz4sn287jILyat7HG+mE/2zCxutwnHNwJY8hS15MG3Cer2nakE9
-	uNuZcpssRbdolzD5FGJWyAMTbKlpskVFJ0gSTR9p8ulcnTgGZS6K
-X-Gm-Gg: ASbGncu+BvR/DE1EJjnoi2YjtJ04KTwhL+B8opbQyw10z8sM467ucuwbUCTofj8/u9i
-	jYc9v7Oc4pVk0hz1qz7a9uBhQacByZBi+VVbiABYlBiK3INUge8wN9CuKvmXvNAZswDFolmd3rC
-	uFFpZid2yxFNBi72yrSUOWos3+SIIvakCD4Jtog+csjqQ2K+iRgO6Ekf98VEy8EyZQuHzIC8ZAi
-	nBV1BwkQKFbeaNLmsloqFJrVBbHC1rZcg3jlo6OwfZdInPgX181VRqxwyq3UOVQLtdBmE2shLhR
-	HzM/alZSSmNJx11ho0jLltJ77m2v+F6/MgxpA+Ds5g==
-X-Google-Smtp-Source: AGHT+IGY9ZNuN9LrERXjHUYAwL4h4LC1ygOPlOz0b6pfTQ2hSZ2sXX5rhh5cw2fWoVRERYPwHIfVrQ==
-X-Received: by 2002:a17:907:8281:b0:abf:67d7:7816 with SMTP id a640c23a62f3a-ac2525dceb2mr1171265566b.3.1741603625111;
-        Mon, 10 Mar 2025 03:47:05 -0700 (PDT)
-Received: from Ansuel-XPS. ([85.119.46.8])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ac23943d8absm742184666b.20.2025.03.10.03.47.02
+        d=1e100.net; s=20230601; t=1741604655; x=1742209455;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=7+h0SgCQWbpp2hc08NzZtuUqyuQ4lXLc5tQLmGtbA50=;
+        b=lbB7GyBIs4BdjGNuP9X+1oR3Rkd10Y1caCvgT5U/riAm6zj+oV3l0UvaTAt3kwWlzt
+         2qsg81KL4Geh8LMV1yoborODH79n1IdtNA2gDd8dMg36eCYo+QWuR0L6b94ZAQQ2HChd
+         Lw7buDG/XtgjIwnJ+hWzaW2eV3hUOzgNkbrTIUpsOLCOsI6+/kwjtSHyO69AqEq/yl0L
+         NjlLGDMq14lC3/naYo4MgMjLKzWjBf49uOn+KRaU+nH51LX93Ctj2u4qsCagVyWGfbJQ
+         thHGCM1OF4uVvKbDZ6NRIJsaECawxCzu0qBXhwQzUUy9vxSW98hRVdcCjEEntp0wADzl
+         /t1Q==
+X-Gm-Message-State: AOJu0YzM1kis/3xtoVLB8h3wK5C3Qq+xTPnMkDBVhpfuU7J7yFOfnMM0
+	LAQ+ZoneWKM7mod58gKf+byCSFOENOpENn6L+d11gQ8aPuLc2rq5oEP+sAiCbEfwqWZ0ZLPyOy7
+	9v/+/yG8XRV4tQI7cO1H/DwwiDWWKJpDjIZrvSa4hCamvRm5gzvb29jdqhSVF0/xUuhbgENyg
+X-Gm-Gg: ASbGncu5dmT//00iQY5CSm0QnA9f8ZLUqayVNE4hLidB+V+8jXJwIIRmcwWkfpaJv1k
+	ksmLYseGbLSh7sea7ftHSd46MmTVYhWLoBn8zidoIJP3Gq3cb6fumiXKKtjM4ttUXzpguQ0J/2m
+	jWQQNos+QEZItWm4x+sDs2DYBvEsp0Or5S21GCpTu4/EY3fkepCVcGdT0ie9vZg2Oxe1CGah6ng
+	rlreG6UoRCQNfzZHsBe6FbnIJx54/dr7jQkAVYc7ks6/REXrd8neOqlWM9P817Y3nwOcSKCY3tQ
+	KK5p0odzdKlzQkRV+0yUmvpklvMJcIQq2WFk1GoH/nImDa6XrZ10aA==
+X-Received: by 2002:a17:903:22c8:b0:220:f449:7419 with SMTP id d9443c01a7336-22428880305mr190238565ad.7.1741604655629;
+        Mon, 10 Mar 2025 04:04:15 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGPpOyafTgqJOPNvJdDELRWWpYaOQqOg/hYct9/Qs6ay7Y38goWmm0TeDagcKLKgA3lGaIYZQ==
+X-Received: by 2002:a17:903:22c8:b0:220:f449:7419 with SMTP id d9443c01a7336-22428880305mr190238105ad.7.1741604655245;
+        Mon, 10 Mar 2025 04:04:15 -0700 (PDT)
+Received: from hu-kriskura-hyd.qualcomm.com ([202.46.22.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-22410a7f8c2sm74902025ad.116.2025.03.10.04.04.12
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 10 Mar 2025 03:47:04 -0700 (PDT)
-Message-ID: <67cec328.170a0220.27ecbc.9c6e@mx.google.com>
-X-Google-Original-Message-ID: <Z87DJANlBejnqJHR@Ansuel-XPS.>
-Date: Mon, 10 Mar 2025 11:47:00 +0100
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Nikita Shubin <nikita.shubin@maquefel.me>,
-	Guo Ren <guoren@kernel.org>, Yangyu Chen <cyy@cyyself.name>,
-	Ben Hutchings <ben@decadent.org.uk>, Felix Fietkau <nbd@nbd.name>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
-	linux-usb@vger.kernel.org, upstream@airoha.com
-Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
- EN7581 SCU
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-6-ansuelsmth@gmail.com>
- <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
+        Mon, 10 Mar 2025 04:04:14 -0700 (PDT)
+From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+        Johan Hovold <johan+linaro@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Subject: [PATCH v4] phy: qcom: qmp-usbc: Add qmp configuration for QCS615
+Date: Mon, 10 Mar 2025 16:33:59 +0530
+Message-Id: <20250310110359.210990-1-krishna.kurapati@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
+X-Authority-Analysis: v=2.4 cv=G8bmE8k5 c=1 sm=1 tr=0 ts=67cec730 cx=c_pps a=IZJwPbhc+fLeJZngyXXI0A==:117 a=fChuTYTh2wq5r3m49p7fHw==:17 a=Vs1iUdzkB0EA:10 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8 a=GV-Fn4z6lk5qDZWrX1MA:9 a=uG9DUKGECoFWVXl0Dc02:22
+ a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: pWZiqEphiOHubHlqudT6VaJ8jt5fMnGd
+X-Proofpoint-ORIG-GUID: pWZiqEphiOHubHlqudT6VaJ8jt5fMnGd
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-10_04,2025-03-07_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999 phishscore=0
+ malwarescore=0 mlxscore=0 suspectscore=0 clxscore=1015 bulkscore=0
+ adultscore=0 priorityscore=1501 lowpriorityscore=0 spamscore=0
+ impostorscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502100000
+ definitions=main-2503100088
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_034707_217125_2E241F12 
-X-CRM114-Status: GOOD (  33.49  )
+X-CRM114-CacheID: sfid-20250310_040418_492389_551C24E4 
+X-CRM114-Status: GOOD (  11.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,103 +119,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 10, 2025 at 10:21:45AM +0100, Krzysztof Kozlowski wrote:
-> On 09/03/2025 14:29, Christian Marangi wrote:
-> > Add Documentation for Airoha EN7581 SCU.
-> > 
-> > Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
-> > via the SCU (System Controller Unit).
-> > 
-> > Example of these pheriperals are reset-controller, clock-controller,
-> > PCIe line speed controller and bits to configure different Serdes ports
-> > for USB or Ethernet usage.
-> > 
-> > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> > ---
-> >  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
-> >  1 file changed, 68 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> > new file mode 100644
-> > index 000000000000..d7dc66f912c1
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> > @@ -0,0 +1,68 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Airoha EN7581 SCU (System Controller Unit)
-> > +
-> > +maintainers:
-> > +  - Christian Marangi <ansuelsmth@gmail.com>
-> > +
-> > +description:
-> > +  Airoha EN7581 SoC expose registers to control miscellaneous
-> > +  pheriperals via the SCU (System Controller Unit).
-> > +
-> One more comment - there is no such thing as "sysctl" in your hardware.
-> Look at the SCU binding which clearly says that it is the hardware you
-> are duplicating here, so the "System Control Unit".
-> 
-> So you have existing "This node defines the System Control Unit of the
-> EN7523 SoC" and you add one more node which defines the "System Control
-> Unit", so you have two "System Control Unit" device nodes?
-> 
-> Look also what Stephen asked for:
-> 
-> https://lore.kernel.org/all/20220106013100.842FCC36AEB@smtp.kernel.org/
-> 
-> so how system-controller can now became clock-controller? Now, it was
-> the system controller since the beginning.
->
+Provide PHY configuration for the USB QMP PHY for QCS615 Platform.
 
-The main problem here (and we had a similar problem with GPIO and PWM)
-is that the Vendor (Airoha) wasn't so bright in placing the different
-registers for the SoC so we have case where everything is mixed and not
-one after another... 
+Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+---
+Link to v3:
+https://lore.kernel.org/all/20241224084621.4139021-4-krishna.kurapati@oss.qualcomm.com/
+ 
+Changes in v4:
+First two patches in v3 are merged. Rebasing this patch on top
+of phy/next. No changes in code and v3 applies cleanly so keeping
+RB from Dmitry unchanged. Also changing mail ID from quicinc to OSS
+mail ID.
 
-Example we have 
-- CLK register part 1
-- Some bits that configure PCIe
-- CLK register part 2
-- GPIO
-- CLK register part 3
-- ...
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-The driver solution for this is syscon and the simple-mfd node
-structure.
-
-Now the main problem is how to modle this in DT. There are lots of case
-where the simple-mfd model is used (like the one proposed) but probably
-this is not accepted anymore. But again this should be clearly stated or
-we have a chicken-egg problem when other devs implement similar thing and
-have to implement simple MFD driver to handle this. (and driver
-maintainers say "Use the simple-mfd model like it was already done)
-
-For this specific case (and to give an answer to the clock patch after
-this) the problem is that this register space was originally used only
-to control the clock and I wasn't aware that it was also used to control
-USB. Now that I'm implementing support for it, the disaster happened.
-
-So In short SCU is lots of thing, both a system-controller, a
-clock-controller and even a reset-controller.
-
-To make it short, 2 different solution:
-1. We can keep the current node structure of the node-controller and add a
-child node for the SSR part (with a dedicated compatible).
-2. Those property need to be be defined in the clock-controller node?
-
-The ideal solution is 1. Does it work for you?
-
-Sorry for the long post and hope you understand why this mess of
-reworking the binding.
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+index cf12a6f12134..5e7fcb26744a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+@@ -1124,6 +1124,9 @@ static const struct of_device_id qmp_usbc_of_match_table[] = {
+ 	}, {
+ 		.compatible = "qcom,qcm2290-qmp-usb3-phy",
+ 		.data = &qcm2290_usb3phy_cfg,
++	}, {
++		.compatible = "qcom,qcs615-qmp-usb3-phy",
++		.data = &qcm2290_usb3phy_cfg,
+ 	}, {
+ 		.compatible = "qcom,sdm660-qmp-usb3-phy",
+ 		.data = &sdm660_usb3phy_cfg,
 -- 
-	Ansuel
+2.34.1
+
 
 -- 
 linux-phy mailing list
