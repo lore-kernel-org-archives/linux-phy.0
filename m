@@ -4,118 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75338C282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 16:50:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0BB1C282EC
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 17:50:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=39nn7cgVbWmr4U/Cx/09+BRI5ssbOtSzFvGChgagsLE=; b=xf0MyQUtlvU3Xx
-	uLYQtYtZDS/MJjEOWe/+sdUDOr0xs2TmSfFPzjFF6ukSmBMJZV9EgChwecJ0R1F6JwKHHgbIuHw+x
-	Grwk+5vyoNquqHOVpQGTywXaWJWWuDBqh7sjHM8fNhHyzuWf1CLyqUr503sVHo+zZkfx2HAYcYrVs
-	xXuAzkBhZ0+heJgIPOyS6SDnzPTdcbKY1v4QabUTxQToeUMI2tPO+un+8O2TeIctadFJZKtk7yTLm
-	q5GbAQdEGMdwqFoNLRokadIAqiL4PGlii3z/JOwRELAsY6viDANjHglnPf2UvgW/VeJ33wEbs0YvA
-	CgGHYvBIWvfEqRMws6gA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=YEqBZHztjVSrc3mQgRXsg/Apmz2h6vKcCcDzWkFOinA=; b=2AJaihS6cbdTn6/Q8hHKav8tjI
+	OsXIO3y+zZubP6SICuOLaojjnxDuVS8+uF/Dzqqt2CteQ6MR4/kNBeUoCtQuWVcqoo709BSV2yKq1
+	B97BTnAZqZlc/d8hBOaw/qw2yegHTssbvoCDFDmrqhCSq0DcIq2idbY1b5/fl6tk3htLj2lKIugFW
+	giZHFacyLwTn7BLZiCpPziWq2y5+2RnUxZVPW26ruBoRBHaDTtoqPxn+8J3X09egxDwPWtVNrDQPu
+	RxUivZmp2mqx+ocRXyiWwSJX+o4RMZDMZ/IzRmxR5Y/MU+BjzTA4tT+Y47BirHgwBZ2h8kiH21i4z
+	laXRFAmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trgKw-00000003OoU-3teX;
-	Mon, 10 Mar 2025 16:50:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1trhGz-00000003X3e-1c5V;
+	Mon, 10 Mar 2025 17:50:41 +0000
+Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trg5q-00000003MOU-1xlY;
-	Mon, 10 Mar 2025 16:35:07 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 118365C564E;
-	Mon, 10 Mar 2025 16:32:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7E47C4CEE5;
-	Mon, 10 Mar 2025 16:34:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741624505;
-	bh=FARdNy+91G1MdfluD+38ATYSmorCg4dYlxOvx7IorOM=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=QUxACk1P7GQWq6Zzy9+tc9rATcxE3jQm2rwoJra0ZaHQl+AssBm6kAjAF1sNrgqlg
-	 bPTaZqNHIgIkfBPbO2YACvGfYWmp5lKzRF0CHfp3Xiamr4hwI2cmj3NWhHMLmYH2R9
-	 hEwTeulJdDclYZoZR01jvELBAXdGq3j/ZlAZq7A1GZyzsSIn+pwF+GkbOeJGIP/5co
-	 WQ3ODm+bTU7Io8PlvIERGJZ0Kl3W2YNMN31U9XsoXqLB1WSFRGhafRorTokyVu1Vsm
-	 52t/K5Sz5wkTsbX8M2Pm0AQDmHfi5sIzeUUYu525hps06NgE/3/SadSn5VFWCaaUp9
-	 0u+fhx6r4pCNA==
-Message-ID: <4f16d239-f540-45d5-b67a-767b09f1c70c@kernel.org>
-Date: Mon, 10 Mar 2025 17:34:56 +0100
+	id 1trfkD-00000003K6D-2FKw
+	for linux-phy@lists.infradead.org;
+	Mon, 10 Mar 2025 16:12:47 +0000
+Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-3913fdd003bso878264f8f.1
+        for <linux-phy@lists.infradead.org>; Mon, 10 Mar 2025 09:12:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1741623164; x=1742227964; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=GvXTzlRKlAbofNa+lbT2BMK1UdR2zHsco8fZgqhFdv4=;
+        b=KkcD4ZsN6Bw4gFOjlHVApdpRwpd1+tz3xJtK/x/2/dR7oj3Fyda3jYD9lto6qfpvLN
+         DS1WiawZMbiL0tbQxmfJuas8jjFQD1ZpkzfTKnhMrf9SLSGYxnjFcntCTQHOEmNbh3JU
+         I4mjVgqSrG86Z/81QFiRoEpSbGg3V0mOmSDVwD45UvnlSzRUsDPAP7ZVp925jHaR+HmH
+         K5beJwPqDP6gjwURBHLT+er1tfdo9Byj4zSb/vxOgoQuypsc9Yd/1Bz44WYzixGIsKm7
+         Hy6mD5ulzGh52zIMGuE87UdeXJ7oRarauM4SMm8Oat6cLb/mBFypaUIxCkdFZJcZkhhv
+         VSsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741623164; x=1742227964;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=GvXTzlRKlAbofNa+lbT2BMK1UdR2zHsco8fZgqhFdv4=;
+        b=a+5evdjxtCxhUUknb+mAwbP9wgL+xrMaIMs0H8XfEOuCAH4bTm2wSQ3SbOc7SpCyig
+         oBmaX7u7aMVgBPGPGE1mK1fvzuWvb8/TUSaP5C8wDGz5v6pdGC+4g41VdXYM++bMiOhW
+         TFmZx6+/MfX1ocAw08IXxKUiaJ7TsRBcmMgKQlJ4N3Zq44V/9fRfCvtFlcb+QMvAf/Vl
+         eEQ7xq+T6v1OcP4Mj5wafQvQzKBeUvSAheqIgO4uemirMLmQXLn/EwvPyS6224aabs6R
+         7203Qda0rW1jleLVLjJArxkSatqkZ1WIChowpRRHOT1IJBj4UqBqs2SC8P6yPqipV1T0
+         Kg3w==
+X-Forwarded-Encrypted: i=1; AJvYcCV806iZpjDTRRd54nM+fgjSGmAmXgEfBPVsrKAcgrPPJp1m3UBm/y4AGI28TFPJWYypwFnG6JYwa+0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy6uj9fdxgCqcoYzHAr46rcdCtFNLIUK1ZJWb98msRpuKqmJ6no
+	6VwSkTzKga4Y54Qu6RiqtSFCJ3Yzf7OrXGgvV/zaYDjUryHiSIrm121xiCtrPnw=
+X-Gm-Gg: ASbGncsW7SIqZEBpXop3qWROSFjkBOb6Cz5SC+g5BqPfLFaZd0lpnohulGAIEbmEp0C
+	Uu/yhrKWEaGPpJYA+wseZg+An66CDAw0uDUmRM8VlcwnEG75PaJMXZpw1mj+hga2f9O5yW7lMvy
+	lmj8e402t45i+3ohKvxSnjSRsMsajuyVTlGkAgJGBh+QAxhQKge78thRnyc9NxXA5xOGVLz+cs2
+	aNfn+QtTOEzPaX0MpwtQv89L7Xf+D2A8427rAHomuqHnPa/U+MqG5TyQ1W19GRxV8gdW15R0XEl
+	iNhLIbU1i5jN7s9YhEs5XVQoLfHcExU8rd/FjXBzoUReuB5bODcc9TGFFa2k9nDidbMKd7CDVI2
+	6U3QX4wA=
+X-Google-Smtp-Source: AGHT+IFBbTozIoHSsEjyOzqv8zgmaRteBxrQlNVCcmKEKPGV689kjbOrp1a7Gy8xkgnb4JfTfotxdQ==
+X-Received: by 2002:a5d:5888:0:b0:391:27f1:fbf3 with SMTP id ffacd0b85a97d-3926d6e57ccmr78729f8f.27.1741623163982;
+        Mon, 10 Mar 2025 09:12:43 -0700 (PDT)
+Received: from localhost (p200300f65f2c000400000000000001b9.dip0.t-ipconnect.de. [2003:f6:5f2c:4::1b9])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3912bfb7934sm15566705f8f.12.2025.03.10.09.12.43
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 10 Mar 2025 09:12:43 -0700 (PDT)
+Date: Mon, 10 Mar 2025 17:12:41 +0100
+From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>
+To: Dominique Martinet <dominique.martinet@atmark-techno.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Adam Ford <aford173@gmail.com>, 
+	Frieder Schrempf <frieder.schrempf@kontron.de>, Marco Felsch <m.felsch@pengutronix.de>, 
+	Lucas Stach <l.stach@pengutronix.de>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Makoto Sato <makoto.sato@atmark-techno.com>
+Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
+ instead LUT
+Message-ID: <b2qwqacogz5vzfekhk5276owld6isgewu5a2iw3roag3lbtsgm@67vqf54c5tdh>
+References: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
+ <v57uy3gddzcoeg3refyv7h6j3ypx23mobctybt27xzdyqy6bgb@atzdlqlytz3c>
+ <Z861gsaGY6bGSisf@atmark-techno.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha
- AN7581 USB PHY
-To: Christian Marangi <ansuelsmth@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Lorenzo Bianconi <lorenzo@kernel.org>, Daniel Danzberger <dd@embedd.com>,
- Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
- Nikita Shubin <nikita.shubin@maquefel.me>, Guo Ren <guoren@kernel.org>,
- Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
- Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
- upstream@airoha.com
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-10-ansuelsmth@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250309132959.19045-10-ansuelsmth@gmail.com>
+In-Reply-To: <Z861gsaGY6bGSisf@atmark-techno.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_093506_627507_B88AF88B 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20250310_091245_706830_94E21BDF 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,118 +99,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5532926052529992726=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/03/2025 14:29, Christian Marangi wrote:
-> Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
-> for the USB controller.
-> 
-> Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> always supported. The USB 3.0 mode is optional and depends on the Serdes
-> mode currently configured on the system for the USB port. If USB 3.0 node
-> is defined, then airoha,scu-ssr property is required for Serdes mode
-> validation.
-> 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> ---
->  .../bindings/phy/airoha,an7581-usb-phy.yaml   | 106 ++++++++++++++++++
->  MAINTAINERS                                   |   6 +
->  2 files changed, 112 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> new file mode 100644
-> index 000000000000..39127cfb63a7
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> @@ -0,0 +1,106 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/airoha,an7581-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Airoha AN7581 SoC USB PHY
-> +
-> +maintainers:
-> +  - Christian Marangi <ansuelsmth@gmail.com>
-> +
-> +description: >
-> +  The Airoha AN7581 SoC USB PHY describes the USB PHY for the USB controller.
-> +
-> +  Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> +  always supported. The USB 3.0 mode is optional and depends on the Serdes
-> +  mode currently configured on the system for the USB port. If USB 3.0 node
-> +  is defined, then airoha,scu-ssr property is required for Serdes mode
-> +  validation.
-> +
-> +properties:
-> +  compatible:
-> +    const: airoha,an7581-usb-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  airoha,port-id:
-> +    description: Describe the physical port this USB PHY refer to. A dedicated
-> +      osciallator is used for each port for the USB 2.0 Slew Rate calibration.
 
-typo
-
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    enum: [0, 1]
-
-I don't understand why do you need index property here (which are
-usually not allowed).
-
-> +
-> +  airoha,scu-ssr:
-> +    description: Phandle to the SCU SSR node for USB 3.0 Serdes mode validation.
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +
-> +  usb2-phy:
-> +    type: object
-> +
-> +    properties:
-> +      '#phy-cells':
-> +        const: 1
-> +
-> +    required:
-> +      - '#phy-cells'
-> +
-> +    additionalProperties: false
-
-Also no resources in usb[23]-phy, so this goes to the parent level and
-you have phy-cells=2. Your DTS gives some hint that devices actually
-differ but the commit msg contradicts it, so I don't get. Do you have
-same IP block here or two different?
-
-> +
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index fe34c80b8d52..c2dd385e9165 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -753,6 +753,12 @@ S:	Maintained
->  F:	Documentation/devicetree/bindings/spi/airoha,en7581-snand.yaml
->  F:	drivers/spi/spi-airoha-snfi.c
->  
-> +AIROHA USB PHY DRIVER
-> +M:	Christian Marangi <ansuelsmth@gmail.com>
-> +L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yam
-
-Typo in extension/missing l.
+--===============5532926052529992726==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="mjffy452cs7bmfrg"
+Content-Disposition: inline
 
 
+--mjffy452cs7bmfrg
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
+ instead LUT
+MIME-Version: 1.0
 
-Best regards,
-Krzysztof
+Hello Dominique,
+
+On Mon, Mar 10, 2025 at 06:48:50PM +0900, Dominique Martinet wrote:
+> [...] and I'm sure there are other improvements that could be made at
+> the edges.
+
+One thing that irritated me is the function names. `phy_clk_round_rate`
+sounds too generic. `fsl_samsung_hdmi_phy_clk_round_rate` is long, but
+I'd say would be a better match.
+
+Best regards
+Uwe
+
+--mjffy452cs7bmfrg
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmfPD3cACgkQj4D7WH0S
+/k5R7Qf/VxOUrJge8JojL4BFpnMAkq1wOnQL4hVuzrN5LWBFTHDPnK+iAEFwkkSq
+3jprj6qucTaOj1b/fweLyFX+FXjq6dlZBTJvX13h78SpjN5mQN9e5sUHWtQygHDT
+iB02eNLLAiH+m4z68jbra3tRIThghGj4hL3rqalXOtohIYVrppmTv4AuyDDQKKT4
+JEAUYqaUO36QRJwXjMcKmIrmdkvDfq3fVgLlrAF31xE9Bd9NqvDi91EFweu+9YDk
+1RsJZCm474kggQRDwcoreI7qNxwOBUsv0qWZEyaTBKu3wx4kgLAhsegvIHK3EVYz
+nLhtC3X5kNEZJhvQgfXfGRmiU1qcfQ==
+=fsNW
+-----END PGP SIGNATURE-----
+
+--mjffy452cs7bmfrg--
+
+
+--===============5532926052529992726==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============5532926052529992726==--
+
