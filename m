@@ -4,118 +4,166 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9210C282DE
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 09:23:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A20D3C282DE
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Mar 2025 09:50:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MFQNk85m6MnYMPcx/QQiG6t/81Ci0zQogHRyhg0hIwI=; b=j2jj9hmsXLp2kD
-	SK/x7LTwiEOcoz3IpWG3rby8+Mv+ezPSA9zugP5i7dU9vznSw8dPRN1DlIem1AT5oANypys37TVg/
-	zCkKHF16B1F+Db/FG5CMYJkHOp2rHRptxj1OBMURZxPerG4EZFGFFO5ruZ7am8QqlcnWeeFsG1ydD
-	nV51e/bzgFh3IKcfEAmeFsIgSFa9qjK5M06MaG413YisQ8bU05edwMePNLUP2F0kq3iu/DY8aiE21
-	hkHRTCsIWGtpCi4YaabHLw6hC19lDd2d2X32dN2V+e1XAq1xl5y8CW8RIl69otbxrKJbD/mvN31tW
-	t5w/2uD90STYgxrEp42w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=tP7CohKHcTLNYysvnIXq37siX56nrAsyqohdhvdkd6k=; b=PJqoIHwapLFQ1r+SMj3kak5YWP
+	8k3G62i1F5nk0qBPFEpN8lAmru4EovcjP8d6ym4xosE+ZBASYqN/gwtW0BLbQw014lvMjDnbRLkKP
+	Fxt4JU1x0q+94/f7u7eYI07BB7S4evMuOQtbJpJ/s2IbfeEzCdh5Z1WVBZyUC/3ez9cH8ITApZyZE
+	/e+yJDVaS2fES2Ww+1ZLJHdPdD5422LqIzxhhWNvFGcQtF/GO7KtN7dtgED/GXeuC+OrMNZwMvHcV
+	0BQmdSPNFb9Vh5sDCUQS2lPx6YpzndqwjPfIB+r8DneJak0DK0ShTEyY1+128ScqWhNSWuhgZTxEF
+	3c81oeQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1trZML-000000024PV-27Ho;
-	Mon, 10 Mar 2025 09:23:41 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1trZmT-000000029JI-05V3;
+	Mon, 10 Mar 2025 09:50:41 +0000
+Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1trZKh-0000000243T-0bt7;
-	Mon, 10 Mar 2025 09:22:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 9FF745C5B08;
-	Mon, 10 Mar 2025 09:19:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D8B58C4CEE5;
-	Mon, 10 Mar 2025 09:21:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741598518;
-	bh=QH139OqqRbSYRVUAo0wV8Z6rUvveYBae96OsXGOnYOU=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=ovWf9zNyYVPDlrK3Hj9zmPJpFt1eqYE9BptUXwjd47GnKdrI5JHA8WkzARd3K+sLZ
-	 a4N1zMuU0JG+WFDOMqO55C2GtMpHok8KFvg1WWl156UpON2bNjq0DHFzQOYv+O2YpK
-	 ZbOKbNsSTlN+x0ZAphboN3xTLs8viUz2FZzUyuwAucqjyy7bXs4CWBpeh1azixf5OT
-	 p22CRjh8eNKnzEuwapcchU9mjHbBCxTrOnnXdD46gdyvXgPzevxzJBrdItH+XQiuE/
-	 d6yxUtqJJfa3nNPR1Qe5ED3Na4QSPJqfAOT5ZRaJrW+bqJjMl7BappibhDhUH6X0YZ
-	 MkYXy4JUQ4NGg==
-Message-ID: <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
-Date: Mon, 10 Mar 2025 10:21:45 +0100
-MIME-Version: 1.0
+	id 1trZVB-000000025tr-2PK5
+	for linux-phy@lists.infradead.org;
+	Mon, 10 Mar 2025 09:32:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=sSdvMO9T7VP+LNahHhNnJch7XzQyJQjYAOtsFPg7sz4T6qF150sDJP7Hf6kfm+uO4Rvc7tlDc8VCuwI88IxsvR/fYeginTxoNKxWs/Fux/ZvtDHa508rOfoLEmv+xOBzWDgXwJkL5nom36JHsIzAd1BYy9DFZqPpK1lk9uH6pXnAnJ97Fb0fvIgwrbbJOvY5X3KpeYpNfrhrvvERazElST+FlWgKP4ef4BaWOOUTspGs1xWxxEEFcRyKxYgbaCVwGYmeo+ZuAncxkxogz9NDWKimWyxjAgT4acXHfLlUhFTZNR7geL5T+ytyVcYRKAVNWgFH8/JtKDIUP0RTQaH31A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Xxg2ds9B3ZeZYg50/wXNf990MfnCst457iGIPw4DG08=;
+ b=vRlkYpUYe3jMkSm1sSR39E3krUwmPB0T8hOegVwCKU7N6W5s0KXL+oVI34Vp8dY5i5ajx0XM+vPr6ZB88XZcdZkwK6b5HqIbw+mH0Q2W7E4vmcYolY70yTkR5JqtlwvL1wVDeeS8P7J+CXUew0LDS7gNrCbtiERKtLmrWg/FmupxW52lx66p49JWkyM/ghHQVT3TfRzia5lDevoLxUY0/TdJ7k/qEBiLHJgL2mgjQJjXBlyHT1HUWFRfLEFL2KcmMIe6JukYByJ0VvFdsc5O/sRpxqgXPjyhlgqmkIx4t65i4FaSzHO+3qc5CteFPczcSfRDdGvqTiKdbFxXwVWJOw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=kontron.de; dmarc=pass action=none header.from=kontron.de;
+ dkim=pass header.d=kontron.de; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mysnt.onmicrosoft.com;
+ s=selector2-mysnt-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Xxg2ds9B3ZeZYg50/wXNf990MfnCst457iGIPw4DG08=;
+ b=UhzbPSxNsicMl2KX/aoIKCchpz5Lu+ZJb9moTMFUzoanYqAUwsOdLW7gU7vuTGqT+Fzh3Dz8v4sdpswUH9yo47IXCogX7EPN8f+qDD7zT2cNOU2FYFQqKxjnolrScsR9iBIdkvlZndwLrH0UA1bDagYMya1qvKy3TZvaMY0vBnw=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=kontron.de;
+Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:102:263::10)
+ by AS2PR10MB7761.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:20b:644::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8511.27; Mon, 10 Mar
+ 2025 09:32:44 +0000
+Received: from PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::b854:7611:1533:2a19]) by PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::b854:7611:1533:2a19%4]) with mapi id 15.20.8511.025; Mon, 10 Mar 2025
+ 09:32:44 +0000
+Message-ID: <638865e3-53ea-44a4-a541-ed73ee2c476f@kontron.de>
+Date: Mon, 10 Mar 2025 10:32:42 +0100
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
- EN7581 SCU
-To: Christian Marangi <ansuelsmth@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
- <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Lorenzo Bianconi <lorenzo@kernel.org>, Daniel Danzberger <dd@embedd.com>,
- Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
- Nikita Shubin <nikita.shubin@maquefel.me>, Guo Ren <guoren@kernel.org>,
- Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
- Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
- upstream@airoha.com
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-6-ansuelsmth@gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 fv0=
-In-Reply-To: <20250309132959.19045-6-ansuelsmth@gmail.com>
+Subject: Re: [PATCH] phy: freescale: fsl-samsung-hdmi: return closest rate
+ instead LUT
+To: Dominique Martinet <dominique.martinet@atmark-techno.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Adam Ford <aford173@gmail.com>, Marco Felsch <m.felsch@pengutronix.de>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@baylibre.com>,
+ Lucas Stach <l.stach@pengutronix.de>, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Makoto Sato <makoto.sato@atmark-techno.com>
+References: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
+Content-Language: en-US, de-DE
+From: Frieder Schrempf <frieder.schrempf@kontron.de>
+In-Reply-To: <20250310-8ulp_hdmi-v1-1-a2f231e31987@atmark-techno.com>
+X-ClientProxiedBy: FR4P281CA0236.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:e9::10) To PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:102:263::10)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA4PR10MB5681:EE_|AS2PR10MB7761:EE_
+X-MS-Office365-Filtering-Correlation-Id: f6e84e00-077f-41b0-cc1c-08dd5fb682b1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?MmR5QnBQTVZsQi8rRnlGd2ppNUJLQWVpMEgxT3cyOWY5TXpLSzR1c1ZiTzg1?=
+ =?utf-8?B?SVN1bWhIV0FyS2hkRkc4eVVCYnhSSkdXWUIyOVpNTWttQzdOK2E1Vzg0N3Bh?=
+ =?utf-8?B?bmYvZ2Uva2o2M0pSdExsSStRWlE3TnIrZ3lQaUtrUGlOTVNETUxJNUR6Q0dI?=
+ =?utf-8?B?ZHovakxuaSs5ZVV2d0JvSHpreVJiRXR6V1UrMHZNblNpSGN1SVlBVXlZTUNs?=
+ =?utf-8?B?UkhYd29mZEM4VmFOTkVSVWYvKzZDOEI4K2Fna0loZTA3YVQvam9mQWQ5bUpU?=
+ =?utf-8?B?a3pGMDlsVjljUk1rY3k5U0h6T3BnOVFsMm5HTkxWUGdQU1luMXhzUVRhOHRS?=
+ =?utf-8?B?YUFNTDVjWko4WDJEZURUczlFUWtXeHp1OGhxUkN6NXZWUllmcHcxUlQ0T1Ni?=
+ =?utf-8?B?VXltS2pKNmRYV29qSEtOVnl4VkJxLy8yVkJkTTBzUkl5QTNhOWdtUFN2SXJS?=
+ =?utf-8?B?TVFCT0dJWjRaQXBQbktKWExCUzBaSzcxaG9IdWc5N1RDcXZjeUVuQi9jMzdx?=
+ =?utf-8?B?UjNOeEphOXVnTU1vNDE3SHFNYThXUFc5WWVSTFQwS3VsRXB3NnJIallpcVl5?=
+ =?utf-8?B?S1NXaHFBU1VUcDdmUmt5c3A3eU5ZcU5WUW44d2NYd1JCSmpTQjJ2Nllob0tx?=
+ =?utf-8?B?eGxxaGthUmZyVzNadkdhdWY1VEdzRDJEWVg5czlpcmpTdldIcnpKWDJHR3k2?=
+ =?utf-8?B?NGxoUkFuUlFFM05NUE5KWkFLcnJBWGJkeEEyb3gra2lqQTNRK2hyQitKNmdl?=
+ =?utf-8?B?V01LUG1tczJwVGxUa3pmZXB3UjJLWUxBSDBxbkhTbUx6S2RCR3FUVzBZakJs?=
+ =?utf-8?B?QUVmQzdaUTcybkhLbkJXNjJLdEtuSGNwNjJ0V3hqS1NsaWRrMUh1UDJUVldI?=
+ =?utf-8?B?cis4aWl2b29pT1hoR0NVV1Iya0wwc09HQjg3dXJTaUVmWjNCNUpXSGhWN1JR?=
+ =?utf-8?B?OW53U3E5Z2FHYlJ2Q3N3eHNvNkYvbnhkR1ZacjByVExXdlk5Ynh4N1FmeTF4?=
+ =?utf-8?B?dDRRSGozU3lYOHJrU21yWk1BSmo2MEMvckx6VUQyNXpmVlR4NnV3T1hadUZa?=
+ =?utf-8?B?Mldiai9xYVpYRlA0dFppNG9QbFUyMitLQ2NUVVd6emE4S29oS0U5UEZNRkxE?=
+ =?utf-8?B?RUpPZDhGWGhKMlcwQ0U3UExQVTFuRzc4Y01nbVZoREdLcDlic1lCbXN2amZx?=
+ =?utf-8?B?cFJTOERFczg1c0FkanpPajlhSjhhS0dIWnB0TWsxQkdLenV2eFA3Q3ZpOXVK?=
+ =?utf-8?B?eU1zb2lzenFZNXNYaytDWms1eFZhbkxpRDUvdHgvdzJhNnlicmt2UERKbDE0?=
+ =?utf-8?B?WVpDN282VkRudkladTkyQWJQeXZXaTJPY0xlTUx3d003dktKUmo0bTFZSmlq?=
+ =?utf-8?B?WkVUaUFhM1BaK2N2Q0o4elJrRHRzeldsUHRFLzdISkhxK0pjakNPM2lnc3M2?=
+ =?utf-8?B?VDVwMXgvbHVTNUNwcnJib3g5SDNKM3U0NjA1YUZ3ZGkzVEJOQ1Jobk1wZURo?=
+ =?utf-8?B?NS9SamJRcEt0bndYczQ2U0VXdjl0L1VqKzRCeUtJZ0Y4cTQzNFZ3dGJvbHBC?=
+ =?utf-8?B?UUNJYlNQWnQ5cGFVZXNwMTdrVkhCRWR5ZjBZTldrbFhQSzdLcFdBWGVEZXRP?=
+ =?utf-8?B?aE51dFJ1THdOWldhUW96TmFSQnhCOGdhVWgzeFhOY2ZuaGtodFVXc2pYejhM?=
+ =?utf-8?B?Q3dMNzhBc0JYVkdXbzNpTFVVOG1TamlJYzJSVXQ1L2RDVzJDLzB0OUVhVXc1?=
+ =?utf-8?B?Yml6VDJtY283c3gvTHViQkJBMXA1eDIzNGd6UHc2emxtWGREUzlPTmVjcWdq?=
+ =?utf-8?B?MGpVUjF5SU1qY0ZVV2t1Q3dRRjcrcTV1WlE4Q1NjV2gvWGNZUnVLYnVNTEM5?=
+ =?utf-8?Q?N48UbErKrwzk/?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(7053199007);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?elVSS24vNllsRm1DZlkrOUlIZERkWStSOWJuVGk0Ryt6ZjlvNXE1YWVxbkMw?=
+ =?utf-8?B?K0MyTTErSG1IUmZiK01Xb1lYV09CVUdoRHN2S0RQVWlOUGhsaExyZ2dDVFln?=
+ =?utf-8?B?VThWYkc2YWRZSXlKTG1jMElIOWpGU3ZDNE9HMmI1b3g3bVBNZW1oZVFReE9v?=
+ =?utf-8?B?b0MwMGNDNnY4N2d3SFdrS04yaVFROU1aWEgwYkE4cDgxcUtHalpQdEhySjlj?=
+ =?utf-8?B?c1dtSXJHK0NVZGZmemhNNU1kbHBONkcwZUhrQ1o4TWdCQU1BOEdtdkIwdVl3?=
+ =?utf-8?B?cmp5ekptajdJbi9wMkJYNXVWc0JqRlRzREpjTkRKM1dpTnJock12VXRhNTl2?=
+ =?utf-8?B?cEdtOVM4SGNpQkNHRXhFT0wwUVFlK29GYi9lU0cxY0FhTE5pSkw0Zmh3Tlp1?=
+ =?utf-8?B?Zm52Z1M0aE5FckZkaFhqYWlnR1ljK0RYRXkrN1JOakRCaVM5ZTA1M29sbVFn?=
+ =?utf-8?B?NXJETDZiRjNzWDRwejVDemVaRWlNZFZXc2VHVXRZVXBvU0dlN0twOHovdEhD?=
+ =?utf-8?B?WGpoWDI1T2p4eTVzYU5VSVc1RnBEak5ibk9KQ2lGYkdkcWJvVi9FSlFpQ3VG?=
+ =?utf-8?B?M0NqRVZ0MzJaRmtiZlE1VXhQZFVieVFkeTlhVFNCclR6WkdsWGxwQmcxaDkv?=
+ =?utf-8?B?WXlHQ3d5d3lTVFNtMVFaQ1NFc1RqRW53a1liSzg2UnJPY2ZmT3N5M3Z4a0VM?=
+ =?utf-8?B?d2R2SmpqYXN6MEFPSHZGdHhSdTNnWW1QOVdaOVZJVk12dWlQQzIxWVBuUjFK?=
+ =?utf-8?B?Rkw2Z2FQM1ZNUGk0aGR6V1o3b2tSSjAzYXdEK3hjZ25ZNVpHUm5LVDNiUVpF?=
+ =?utf-8?B?ekI5QzJUWlZrMEx5ZkdhN0NyZjM5TGl5bWNuSERmZGw3T2RLSk9KWFFGUUlk?=
+ =?utf-8?B?ZDJBRGt6RjdpNG9GUTVEd21keENibGIzd1U2ckQwczVNU1g3c2Q0Vm5GNitM?=
+ =?utf-8?B?THNwTHVFeE94cFRmOGErbUg1V09QME9Za3BPK1Rtbk1OeCsxbW5HR0d2M3Nw?=
+ =?utf-8?B?TTJ6MU5RdmZvelZpbG4rWHVjd1VOV2JyalQrVW50RUFRdW1OZHZpNjRvdG5o?=
+ =?utf-8?B?ZEtndHc5L1VnaGg4YTZldkRnMTlGaCtUWW1vd1QwVHljbkxsbXNDeGp5YnhJ?=
+ =?utf-8?B?ck04UDE5TGpJWitLd0o0MHVoNFdBL3JiZTBFQWpzWHFXeDFJdjFUT3lWSmdM?=
+ =?utf-8?B?R3IwK09WeTRxckppdlFuV1QzbTh5VC9aY1QzUldkUWZoM3puTEFPQVRVaFpP?=
+ =?utf-8?B?U3Z6eHdwamw3QVdiY3lUTFhIaG5TWkJoY2FQVWtCUms0NTJSbHU3bG1POE1L?=
+ =?utf-8?B?Wld5THZxcDBPQkJ0Q1kvdHJVcmh3ekYyU0hmOEZqbEpFTkhlZFpTL1RpQnV0?=
+ =?utf-8?B?Z3h0eDFVVW5nWjNzaktqanVYSi9kaE9VSGoyN21jaS9hUHFzMUQ4bDlDSnhh?=
+ =?utf-8?B?dmlJVjl4aVBCdVEyRm5Wb2J0SHJTdXdxR1h2aEs3V0llZFlzK3ZER2ZUTVlv?=
+ =?utf-8?B?WlJ0OGk5TmRLbnRKWWt3WFpUYUJhdXZQUC9MSzlPK1JzOFJLVzAxZUVKOWJS?=
+ =?utf-8?B?NTVXZnk1OG1lc3pnTDdDVlg4TlNkOFpOanpWWlRkbEtVOEd1YlFIdnVZRG50?=
+ =?utf-8?B?dUJORXFEdHpOT001NHA5TmMzYXR0cHFZMm1JbmhOV0k0MXhRMGZQMGd5S3d3?=
+ =?utf-8?B?bStrSmwrVXBWb1NQWkZqVElId1JValBTak90WnFKQlZoWWpWV2RiTHk2eTNH?=
+ =?utf-8?B?V0xQVzBab2FGbExodjNvczkyR0JvL3Fsd3hYK0RBMVlZR2pNWW51VCtMcEpV?=
+ =?utf-8?B?SzFpOVRkdDFhMC9FOWJJcnViZTFoUklxb3dBVnpXbEl3cUJiZnBNOXk5UTRa?=
+ =?utf-8?B?TXpRRWRLSzViZUZseEh3STVGajlCejN0c21pbS9mUlUrS1VrOGI0eWk1bGxL?=
+ =?utf-8?B?aU05NUdGSFJQcVNuOE5lczFSNUljajNGSzVhTnE2QUhESXlXZjNlY3Zpejc2?=
+ =?utf-8?B?QUg4N0g5M0libGRGMFRRK3M0TkZZM2xURWJQeFcza2NMenNOdVVmNUxMS0I0?=
+ =?utf-8?B?VXNyWXRKNktJM2p1aU5XSmNFaHJlZERkd3BxSzNvMnRHNjRFbENCKzVoemVO?=
+ =?utf-8?B?Y3JKTjJ5aXR1OWhlbUVDQ2hRTWpBb2oyR3RKdjlqOU9NNC9KUzJYYTN6MGhR?=
+ =?utf-8?B?cXc9PQ==?=
+X-OriginatorOrg: kontron.de
+X-MS-Exchange-CrossTenant-Network-Message-Id: f6e84e00-077f-41b0-cc1c-08dd5fb682b1
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR10MB5681.EURPRD10.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Mar 2025 09:32:43.9619
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 8c9d3c97-3fd9-41c8-a2b1-646f3942daf1
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 33EVTlW8Ne7ZWU7MP+oyC1yIqoK6rEU2bj46V2RwWS1O+Di77FnrnsOF0UKjs+7I+fbXAd+ykxYSl5mKuuuP0MDEtVc30+n0B1ya/nnCztY=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2PR10MB7761
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250310_022159_275844_25CAEEFC 
-X-CRM114-Status: GOOD (  14.80  )
+X-CRM114-CacheID: sfid-20250310_023249_619648_A8920211 
+X-CRM114-Status: GOOD (  21.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,60 +180,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/03/2025 14:29, Christian Marangi wrote:
-> Add Documentation for Airoha EN7581 SCU.
+On 10.03.25 2:21 AM, Dominique Martinet wrote:
+> From: Makoto Sato <makoto.sato@atmark-techno.com>
 > 
-> Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
-> via the SCU (System Controller Unit).
+> If the requested rate is not an exact match of the integer divider
+> phy_clk_round_rate() would return the look up table value,
+> but phy_clk_set_rate() can still use the integer divider if it results
+> in a frequency that is closer than the look up table.
 > 
-> Example of these pheriperals are reset-controller, clock-controller,
-> PCIe line speed controller and bits to configure different Serdes ports
-> for USB or Ethernet usage.
+> In particular, not returning the actually used value here made the hdmi
+> bridge driver reject a frequency that has an integer divider rate
+> within 0.5% of the target:
+> for 83.5mHz, the integer divider generates 83.2mHz (-0.36%), but the
+> next LUT value (82.5mHz) is 1.2% off which incorrectly rejects modes
+> requiring this frequency.
 > 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> This commit updates phy_clk_round_rate() to use the same logic as the
+> set operation.
+> 
+> Signed-off-by: Makoto Sato <makoto.sato@atmark-techno.com>
+> Signed-off-by: Dominique Martinet <dominique.martinet@atmark-techno.com>
+
+This looks good to me.
+
+Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+
+But I think we should also add the following Fixes tag:
+
+Fixes: 058ea4a06704 ("phy: freescale: fsl-samsung-hdmi: Use closest
+divider")
+
 > ---
->  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
->  1 file changed, 68 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
+> We're finally using this rewrite in our (outdated) tree and noticed the
+> "best" mode missing on one of our picky displays.
+> It all looks good with this fix, thanks again!
+> ---
+>  drivers/phy/freescale/phy-fsl-samsung-hdmi.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> new file mode 100644
-> index 000000000000..d7dc66f912c1
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> @@ -0,0 +1,68 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Airoha EN7581 SCU (System Controller Unit)
-> +
-> +maintainers:
-> +  - Christian Marangi <ansuelsmth@gmail.com>
-> +
-> +description:
-> +  Airoha EN7581 SoC expose registers to control miscellaneous
-> +  pheriperals via the SCU (System Controller Unit).
-> +
-One more comment - there is no such thing as "sysctl" in your hardware.
-Look at the SCU binding which clearly says that it is the hardware you
-are duplicating here, so the "System Control Unit".
+> diff --git a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> index e4c0a82d16d9ef0f64ebf9e505b8620423cdc416..91c4d27a31f48fc49f1e8417d7089f5519b8a0a2 100644
+> --- a/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> +++ b/drivers/phy/freescale/phy-fsl-samsung-hdmi.c
+> @@ -557,8 +557,9 @@ static long phy_clk_round_rate(struct clk_hw *hw,
+>  	if (int_div_clk == rate)
+>  		return int_div_clk;
+>  
+> -	/* If neither rate is an exact match, use the value from the LUT */
+> -	return fract_div_phy->pixclk;
+> +	/* If neither rate is an exact match, use the closest value */
+> +	return fsl_samsung_hdmi_phy_get_closest_rate(rate, int_div_clk,
+> +						     fract_div_phy->pixclk);
+>  }
+>  
+>  static int phy_use_fract_div(struct fsl_samsung_hdmi_phy *phy, const struct phy_config *fract_div_phy)
+> 
+> ---
+> base-commit: 80e54e84911a923c40d7bee33a34c1b4be148d7a
+> change-id: 20250310-8ulp_hdmi-f8deac08611e
+> 
+> Best regards,
 
-So you have existing "This node defines the System Control Unit of the
-EN7523 SoC" and you add one more node which defines the "System Control
-Unit", so you have two "System Control Unit" device nodes?
-
-Look also what Stephen asked for:
-
-https://lore.kernel.org/all/20220106013100.842FCC36AEB@smtp.kernel.org/
-
-so how system-controller can now became clock-controller? Now, it was
-the system controller since the beginning.
-
-Best regards,
-Krzysztof
 
 -- 
 linux-phy mailing list
