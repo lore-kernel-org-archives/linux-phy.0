@@ -4,68 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AFBAC28B2E
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Mar 2025 12:34:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29F60C282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Mar 2025 18:28:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
-	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r4O7CojO2XOoN7zPfRovQ3BgXTZUYPapaUPXe9yZLpw=; b=M34dMJMOiDx66S
-	Hq0QF0KbJkid8iX+l8uFdH5hqxRAWuKCyOzkKySCK8o/93r+EUgpXRI0PH4x9OWcxbRR2/nQ1EwcU
-	HZ5Uc9tXwiPd+cJdLhPkbTh7N4wy+vkkyE067N+Zd/fW3roHH0mqKStYwdHSNvv6Rf0lB2O0lXaTn
-	PXItpnBB/CG3+NnRWeaYAi0HHiFnM8kHqmaTbvpglGe0/0o5ABlR4iTFOgpYeiOYzdCgLafqHH1EL
-	2yQ5lhpXIGmqn8hWlp9HrdyVvZqxRSIbJK9fuc0V1k51OpMQ8mfqOp+0vGIjVNgUiKbxCl9wOFlW+
-	77tE1azsCdDhqk34aZNw==;
+	List-Owner; bh=1W+yAaJsbPJTGEl4qCH6IPiAaRmU6t+u8IGOE0kmYao=; b=PVGPdS95TUfHqm
+	kqpGnxjyVag4f9z3XfNclMBfNE899dFDsSx8M+oHTjL74+SI/Lf1BxrFHC0PguQqA9pkuxzfAD1Ii
+	WWIv7wFztS/po54L9fyQok+CAGU2lbcrvO2VRVWmRCu7lROfF1MI0dKhTAcwYHe2fW1lcQAgEYBuJ
+	VmBS+7MydY2lj1+jAZ/I7xWw6j0KSX9iSHR6HXYoQgy+EWEBjiKfTQTofV8D9IVU70tlzEUxwjAl6
+	Kk71+D6sa+5ajHNMIZPIMYTvftnGfi5o09o/8ggMah6hZLF0V2UMITK0cLxe5Srylhyp5MPZGY2js
+	6lJW0dYjJrW5gt1AITkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tryoz-00000005fUX-1XF3;
-	Tue, 11 Mar 2025 12:34:57 +0000
-Received: from m16.mail.163.com ([220.197.31.2])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tryd4-00000005cPo-1UGB;
-	Tue, 11 Mar 2025 12:22:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=Date:From:Subject:Content-Type:MIME-Version:
-	Message-ID; bh=Jir35b0HgpV0FY6FTSTtKnirvFZaxaNLyjhlogfMqV4=; b=b
-	72iuzjLPM9Hpdt1LvzCk0VUtgFtaH+PnzDNS29xW4zkZSribKzLwWSRMqWch/9PG
-	AA36bzTdLuMmC7/JYiCJ+VlGE8L73KlPhOjuZ+QLxwgM1Jg3b7Wl7Bie4YBoEWl5
-	D/F8zS8MeQ66Rt+EmWMEXDMITg2CUfBylMVTCWI6ZM=
-Received: from andyshrk$163.com ( [58.22.7.114] ) by
- ajax-webmail-wmsvr-40-123 (Coremail) ; Tue, 11 Mar 2025 20:22:10 +0800
- (CST)
-X-Originating-IP: [58.22.7.114]
-Date: Tue, 11 Mar 2025 20:22:10 +0800 (CST)
-From: "Andy Yan" <andyshrk@163.com>
-To: "Vinod Koul" <vkoul@kernel.org>
-Cc: heiko@sntech.de, kishon@kernel.org, sebastian.reichel@collabora.com,
-	yubing.zhang@rock-chips.com, dmitry.baryshkov@linaro.org,
-	frank.wang@rock-chips.com, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	"Andy Yan" <andy.yan@rock-chips.com>
-Subject: Re:Re: Re: [PATCH] phy: rockchip: usbdp: Check these parameters
- only when the corresponding set flags are set
-X-Priority: 3
-X-Mailer: Coremail Webmail Server Version XT5.0.14 build 20240801(9da12a7b)
- Copyright (c) 2002-2025 www.mailtech.cn 163com
-In-Reply-To: <Z9Aa6v1/1KRdZDKE@vaman>
-References: <20250306065952.485809-1-andyshrk@163.com>
- <Z86UOmPg/UDSBajZ@vaman>
- <1379400c.90c.19582b05f74.Coremail.andyshrk@163.com>
- <Z9Aa6v1/1KRdZDKE@vaman>
-X-NTES-SC: AL_Qu2fA/qSuk8o5imYYOlSyjNW+7xfHKv6+qRChMQvQtsqqTHr9T0KcVtuP1XR3/++sAgV6BesM+3kGdDrWG6d
+	id 1ts4LN-00000006coC-3rJr;
+	Tue, 11 Mar 2025 18:28:45 +0000
+Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1ts432-00000006ZNm-1DB5;
+	Tue, 11 Mar 2025 18:09:49 +0000
+Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-ac2a81e41e3so446622366b.1;
+        Tue, 11 Mar 2025 11:09:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1741716586; x=1742321386; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=w7YliLuH4qlV/MO/+JH2L4UcYmketDeTxX5I8TCDYu0=;
+        b=bbb8VFxTSv9TnzHe4YN4H4iIIglQEkSkx9sgXJeD2p96qAQxwuIv2UASJu4LnG+iwP
+         BbqimsPhRVKvqSiBa5mvWWc8qEaw9cLtp27RKvyNxHQ/MhosZsOGhWQMSfUJMbRjuIbe
+         P+JHnw6rB9wmSmtWQrQGS5tPQXzszE5v9R6DKN9KIat8j/9w/o/Ild4e5vce75K1jz+0
+         2xzhWvp3zNirVEVfLsY9T6Qe0ioUGSkaWcZYkSO9HIjEg5yZz7LnAClO9oegLTZLF5PA
+         1v78Kf5ry12kuGe+FmDcesF3fdGSHXDh+yhnByUUY7Aw9yC575t6wQEUI1Dd4FVkA4CL
+         OF9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1741716586; x=1742321386;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=w7YliLuH4qlV/MO/+JH2L4UcYmketDeTxX5I8TCDYu0=;
+        b=cm3bqb/FluaPZFHZh9cY9lqSDAI0OhiV+p2CyBlHSYoqor3o6/RMGiw5Rbg3leuzNV
+         id355/OwIhOW/LmMSpqP/fF9JSTzM/wj35hkM1l2gHpN7lcYBLqHDQ7/xtrRjhWnx9/W
+         hd4cfLUxxKAWkQ+v7chy4Z2jOhMpBe2LEU+9rmy/emDDzTDyLlxIH+7wlz+jYP0hUzYV
+         7NmNqtTVbtPo1lJCmQZG/ZmYm4nH8Oq+iJDI1P8TBoJ0FKLNoxhZkdTMYSg9XMBsWX8L
+         YAmYSZrVnHFs2XFvoXEV0A08xNXoGfTpk1+fHdQVeNqZC+QPGrZVOPMsuIcIzRlLel7s
+         aOag==
+X-Forwarded-Encrypted: i=1; AJvYcCUvhko5IgpLwuFwuMJ+bFzdygU0MEDHB4BvV7FNBw2yCNQT0jE9FFcsilyBeu8niMjMw3nZsGtefzbeIYzvKfhs@lists.infradead.org, AJvYcCVJ3oFQ9XADRv0E0PTFC4ofLd18Lv1Dvfkq4ixg+4qHpP35oiXPINzN40+X6xeXUC9fNCMKc5PhT15D@lists.infradead.org, AJvYcCWY6w7WTlsBMKYyjKHwKNZsFqTSehM4dM6yhvQ0qdS+PSGHqI+VdNS2phA4XGsu4sncXXKzoRELumsAnsv4RbI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzmDTJLf0WIOaEKIy+No8pY1fLXxz9wzR5PmGqFXzJHCf0mIl37
+	Ko2XtfPy8IyFGdQyjMcPasEEOujvZqObfUhvb8MKLXMH/wnaLcpV
+X-Gm-Gg: ASbGncuTS7IFBpEcDSq9bEE2TFg5K1G8ewbupKmNSPjHAmvE+vX3CHCzpo/k63KTG4P
+	Sq3OGbPH4Z1yxXI16XSVznvMQfDqKT8Xb7LNHbfUCDgRQ3UOtujPGv6140kP6JfgXj5gn/5FcRL
+	ZorOwPy+nnGB2TEHgc8F1j2LsyO4bOXpc1As8sBMoLJAJpsdqOex7ocnUJL+gjy28UQuhOU6wnI
+	j1VLVqxWLUYXR0TYst/QzAerxXdqUBXksitlO9ln1ZyKgjc92X9FwZ3GNzev6QPODiVTxipR9AM
+	5pF4afslKVBCA4ZwLMXCP31X3/obwUqTihUALe/yyxeOiWRSnPTwo6y1qGuC68EG3mxgb5+n/d3
+	eQfopWFNqgNBh+vvoSCN9xvc=
+X-Google-Smtp-Source: AGHT+IFGoeMKh+SV9Aw9aLOSeklw6RYQlLlVxQgOHzKR34XV8RHNJXBdNm+Xa03GkQRMHVbvPeRAPw==
+X-Received: by 2002:a17:906:180d:b0:ac2:5d24:1fcf with SMTP id a640c23a62f3a-ac25d2423fdmr1538965666b.26.1741716585443;
+        Tue, 11 Mar 2025 11:09:45 -0700 (PDT)
+Received: from Ansuel-XPS. (58.43.196.178.dynamic.cust.swisscom.net. [178.196.43.58])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ac2895e7e6asm511088166b.54.2025.03.11.11.09.43
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 11 Mar 2025 11:09:44 -0700 (PDT)
+Message-ID: <67d07c68.170a0220.3fa05.2c8e@mx.google.com>
+X-Google-Original-Message-ID: <Z9B8Z2aA3MfCBBLG@Ansuel-XPS.>
+Date: Tue, 11 Mar 2025 19:09:43 +0100
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Nikita Shubin <nikita.shubin@maquefel.me>,
+	Guo Ren <guoren@kernel.org>, Yangyu Chen <cyy@cyyself.name>,
+	Ben Hutchings <ben@decadent.org.uk>, Felix Fietkau <nbd@nbd.name>,
+	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
+	linux-usb@vger.kernel.org, upstream@airoha.com
+Subject: Re: [PATCH 10/13] phy: airoha: Add support for Airoha AN7581 USB PHY
+References: <20250309132959.19045-1-ansuelsmth@gmail.com>
+ <20250309132959.19045-11-ansuelsmth@gmail.com>
+ <Z9AhN9T8s1oogCUn@vaman>
+ <Z9AhkByegWQgC9YE@vaman>
 MIME-Version: 1.0
-Message-ID: <5382b861.a48b.1958527c4dd.Coremail.andyshrk@163.com>
-X-Coremail-Locale: zh_CN
-X-CM-TRANSID: eygvCgCXPn_yKtBnExV8AA--.18497W
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/xtbB0hwNXmfQINjbaQACsi
-X-Coremail-Antispam: 1U5529EdanIXcx71UUUUU7vcSsGvfC2KfnxnUU==
+Content-Disposition: inline
+In-Reply-To: <Z9AhkByegWQgC9YE@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250311_052238_752345_AE6597B7 
-X-CRM114-Status: UNSURE (   5.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250311_110948_325525_A231ABBA 
+X-CRM114-Status: GOOD (  19.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,42 +117,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Mar 11, 2025 at 12:42:08PM +0100, Vinod Koul wrote:
+> On 11-03-25, 12:40, Vinod Koul wrote:
+> > On 09-03-25, 14:29, Christian Marangi wrote:
+> > > Add support for Airoha AN7581 USB PHY driver. AN7581 supports up to 2
+> > > USB port with USB 2.0 mode always supported and USB 3.0 mode available
+> > > only if the Serdes port is correctly configured for USB 3.0.
+> > > 
+> > > On xLate probe, the Serdes mode is validated and the driver return error
+> > > if the Serdes mode doesn't reflect the expected mode. This is required
+> > > as Serdes mode are controlled by the SCU SSR bits and can be either USB
+> > > 3.0 mode or HSGMII or PCIe 2. In such case USB 3.0 won't work.
+> > > 
+> > > If the USB 3.0 mode is not supported, the modes needs to be also
+> > > disabled in the xHCI node or the driver will report unsable clock and
+> > > fail probe.
+> 
+> Also I dont see phy depends on rest. Please split this and post phy bits
+> separately at least..
 
+Well USB doesn't work without this driver so they are indirectly
+dependent. Will split and address all the other comments.
 
-Hi Vinod,
-At 2025-03-11 19:13:46, "Vinod Koul" <vkoul@kernel.org> wrote:
->On 11-03-25, 08:52, Andy Yan wrote:
->
->> Do you mean we should do it like this:
->> 
->> static int rk_udphy_dp_phy_configure(struct phy *phy,
->>                                      union phy_configure_opts *opts)
->> {
->>         struct rk_udphy *udphy = phy_get_drvdata(phy);
->>         struct phy_configure_opts_dp *dp = &opts->dp;
->>         u32 i, val, lane;
->>         int ret;
->> 
->>        .............
->>       if (dp->set_rate)
->>            	ret = rk_udphy_dp_phy_verify_link_rate(dp->link_rate);
->>      if (dp->set_lanes)
->>                 ret = rk_udphy_dp_phy_verify_link_lanes(dp->lanes);
->>      if (dp->set_voltates)
->>                ret = rk_udphy_dp_phy_verify_link_voltate(dp->voltate);
->> 
->> 
->> Add helper for each of them ?
->
->That would look better for sure
+> 
+> -- 
+> ~Vinod
 
-I will do as that in V2.
+-- 
+	Ansuel
 
-Thanks
-
->
->-- 
->~Vinod
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
