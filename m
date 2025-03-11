@@ -4,63 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33E12C28B2E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76C9CC282EC
 	for <linux-phy@archiver.kernel.org>; Tue, 11 Mar 2025 11:49:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UB/yF94SIO0DL8Op5f6103Opg5m1dhHjmN6Y0R6DbPU=; b=QwMz6oRhUd+ImY
-	9NZRQeD+TXuCf3KNwtbsjg5CAq+PpXjKNAy3jnL2MXa6wV5gF4CagBFzbNExYVWZrx0Z62tZd4zPz
-	KXm9ELc87sdykq80VrudaAJ4Np/WB1YG2E0/GvcRK0FMLd+sw1mFmZmMLNJSzux4pgyoYOm+/873f
-	ALoDRjI0+y7PO9pK8qUU4yyQwv/rKofLNGComSCrY1crJufP+I1/ZlLWD4ZIM0KQw/pTIoJRUA7SO
-	QL4pgrNjnPa2wavS1UNhNpdzUf88F8BxzqVGzllGOrJDq7FikBysGvUKCrZVzp4cNS+vmEPj0rehs
-	6+Td3Kyskbjme9Z//uxA==;
+	List-Owner; bh=1JuSGZEfZQtsUTV64kah+o+Wbun1jOhzOV85I+eaQV8=; b=zGOMkN/RxGWtbP
+	r22871TJQndpKvzmncCS9rqyoamcvP7aZXJSo6qqcL47iM79vKe5e7z+FBBFcSIPx4dJ6nXTsGJeP
+	lT9DQEoBjGwxjz3v+vldHGvI1L0bxHGK6pFuh9oAHL5JydkF33zvyh5QfF0sAw/ZU+4B3DVoqKwXQ
+	uFPWN9vS8WUigWahxzyanFU78Ggs7tAzQ9kN6DXPvr6U+MWkQB9sNJc39EX6ww2YsBBLUFelERzI0
+	lab9cxPSpOgk7f5tXUE5OdzNVPOoMk26/IaenSHDVH47Jz+3LaQSM/zw60AhJqcfqxcL9vlqIhf57
+	PBoSD0G6I6SyM9I3pdAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1try6n-00000005WyA-3zjN;
-	Tue, 11 Mar 2025 11:49:17 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1try6o-00000005WyO-0wOt;
+	Tue, 11 Mar 2025 11:49:18 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1try4b-00000005Wa6-0rWg
+	id 1try4i-00000005Wan-1GPR
 	for linux-phy@lists.infradead.org;
-	Tue, 11 Mar 2025 11:47:02 +0000
+	Tue, 11 Mar 2025 11:47:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 25164A46ADF;
-	Tue, 11 Mar 2025 11:41:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C368CC4CEE9;
-	Tue, 11 Mar 2025 11:46:54 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id DE6F35C60A5;
+	Tue, 11 Mar 2025 11:44:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79ADFC4CEED;
+	Tue, 11 Mar 2025 11:47:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1741693619;
-	bh=/WYDs73Nm1lb/GTeRLCUHgCKaixHsBgVcb+f13tuZ6g=;
-	h=From:To:In-Reply-To:References:Subject:Date:From;
-	b=onwm2MwlnqeJgtZJd3NdhDoXu8Lz8tXY5d6n9aeq3UyWSGx3qH/u6OfBkrUcdXTgK
-	 38j94IriQR1emZT5Ouc2dFRGIgFhAFJIYTNxvcF1xeRCIUqpnFMVmcEnqG/vs5zigG
-	 ++2QAq1jOSfaOf/fYDxhQAkKPxm1AxmhROmYrdimYjj1tzM86YO81eayu3XkYqY7rc
-	 pwtF2LcNAixeNvQ95Aky13e65ZL5ggMatdvS1vxpwUOlpEo1XIth6yAm1Q88Oj3Qug
-	 paJugIGzVftncZc0rxild65Sdkwt8b+MSDkBjHLKvo+A3Qi4xVaB6wX5p1drvCYCjg
-	 MAmQrBm3kjRWw==
+	s=k20201202; t=1741693627;
+	bh=yRXYXZ9rV06lyaY2T1O8v8n5tymGv/7bHYuzwvkdyUM=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=UPU7SL2YxU2IXg0KW0RA96lOpuGU2yP7b9nBu990Wtx7QV1nktI6c9jkCjx8VII/y
+	 q0Feq0mpHXEgcnbsr2Aef8DasQSJuZZoKNNZh+HZFk/14QJgRr3BxDg/MAqh1lc8n7
+	 Ap46k9a6tsPn1458AnKmZhJEOdiUU499KHrtMRTllw/zIM7V6WD0/VxzwOBgpvoMl2
+	 SUSWkhoD6lMZO0DhR44V6ty4MXIg/FcWfrnLHWsO6XQ2Q5WYZPc/WBCctb/7WttMX/
+	 Pd5wIBZaxYWr4OW1RyzEAZcSe2pfb6TFJ7FHtMn7Qi8cEu6mxZKSFSDjpi9LoTxbw/
+	 IymDnNrxvAuqA==
 From: Vinod Koul <vkoul@kernel.org>
-To: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com, 
- manivannan.sadhasivam@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, kishon@kernel.org, andersson@kernel.org, 
- konradybcio@kernel.org, p.zabel@pengutronix.de, quic_nsekar@quicinc.com, 
- dmitry.baryshkov@linaro.org, linux-arm-msm@vger.kernel.org, 
- linux-pci@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- Varadarajan Narayanan <quic_varada@quicinc.com>
-In-Reply-To: <20250220094251.230936-1-quic_varada@quicinc.com>
-References: <20250220094251.230936-1-quic_varada@quicinc.com>
-Subject: Re: (subset) [PATCH v11 0/7] Add PCIe support for Qualcomm IPQ5332
-Message-Id: <174169361442.507381.5728010780608923977.b4-ty@kernel.org>
-Date: Tue, 11 Mar 2025 12:46:54 +0100
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, 
+ Bart Van Assche <bvanassche@acm.org>, 
+ Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Satya Durga Srinivasu Prabhala <quic_satyap@quicinc.com>, 
+ Trilok Soni <quic_tsoni@quicinc.com>, 
+ Melody Olvera <quic_molvera@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, Nitin Rawat <quic_nitirawa@quicinc.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Manish Pandey <quic_mapa@quicinc.com>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
+References: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
+Subject: Re: (subset) [PATCH v2 0/6] Add UFS support for SM8750
+Message-Id: <174169362014.507381.5528834930288014855.b4-ty@kernel.org>
+Date: Tue, 11 Mar 2025 12:47:00 +0100
 MIME-Version: 1.0
 X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250311_044701_314098_9682A5E8 
-X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-CacheID: sfid-20250311_044708_396167_01BFB905 
+X-CRM114-Status: UNSURE (   5.12  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,24 +90,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 20 Feb 2025 15:12:44 +0530, Varadarajan Narayanan wrote:
-> Patch series adds support for enabling the PCIe controller and
-> UNIPHY found on Qualcomm IPQ5332 platform. PCIe0 is Gen3 X1 and
-> PCIe1 is Gen3 X2 are added.
+On Mon, 10 Mar 2025 14:12:28 -0700, Melody Olvera wrote:
+> Add UFS support for SM8750 SoCs.
 > 
-> This series combines [1] and [2]. [1] introduces IPQ5018 PCIe
-> support and [2] depends on [1] to introduce IPQ5332 PCIe support.
-> Since the community was interested in [2] (please see [3]), tried
-> to revive IPQ5332's PCIe support with v2 of this patch series.
-> 
-> [...]
 
 Applied, thanks!
 
-[1/7] dt-bindings: phy: qcom,uniphy-pcie: Document PCIe uniphy
-      commit: a2e934885c82912caf3f72b9511ef626f3619e3d
-[2/7] phy: qcom: Introduce PCIe UNIPHY 28LP driver
-      commit: 74badb8b0b146668cc6c03eb58e2a814f9463d02
+[1/6] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: document the SM8750 QMP UFS PHY
+      commit: 12185bc38f7667b1d895b2165a8a47335a4cf31b
+[2/6] phy: qcom-qmp-ufs: Add PHY Configuration support for sm8750
+      commit: b02cc9a176793b207e959701af1ec26222093b05
 
 Best regards,
 -- 
