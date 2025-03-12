@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E68A9C28B28
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Mar 2025 08:11:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CB57C28B28
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Mar 2025 15:54:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1hKQ5X4z9yt6zL6WhY2OdwRhg/wtZN9nLeJek6w4kSE=; b=BLcTPA9CWiUIlN
-	08xa/LiLAjAp31BB/BM1JRAI/rUsliIR639sDnv5054Hd+rGN5TC15ES4UVhX0R527P73z3ywaGdd
-	gWs2LNwHAWmJ021k294YtnZrPZcbfTLEmJK4WeIfxheobGoBVov+ouXoDvGNlA6wgSQ41fvWenxSu
-	/PgGsmrBmOoVjkFb5o/YFnp6vSuUSEfjujYFwbQUBMdYyEhOk4c+b7+UiEgVA1I49BX3Vh8o+TN3U
-	W3xQ93NhtdSpHUZWHNpZAvKMGS04ansSNpgTVOuxQNoH4V4pelUpaQQcEgAQ+7WKOqi3HDUIVwCuI
-	iIJrYC2HAloBWhQe6rPg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NaEPTlNTE79QUBITwdFR83gIelYG+so5nrzeNSuI8+E=; b=049AspreUS/DAW
+	lOiv3eFWQAXCUlfPlxUCe4jXS4kRxC7wqczinwlEEjj9/uFsArTvi8ECWBcYbTfezfs2E++0Chqxj
+	sk+h/zSD/AGFi03rQdXV9F82P9KpDxGs/w6c/wlRBV3+fLlaTW1BR7hcGfqp0A8Gtboa2zqDJ6krZ
+	89E0DV/7LVaVLu0Uf3/4cns2A/Q0uOTo8MyeAMsiY2QOEHD0njfELJhelhRsEuhxDDyet/3S0QV+k
+	JVh5suWxes3jNCL/Lhy4JAWOdqiXTe8Wf6K3yaKutLg0xGQE2UEB1BKUH7CzOKo85XdsdUjY57OZJ
+	cJLccFtcgKVqIYMdBIKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tsHBe-00000007ncL-2pnV;
-	Wed, 12 Mar 2025 08:11:34 +0000
-Received: from m16.mail.163.com ([117.135.210.2])
-	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tsH1y-00000007m7s-2tkr;
-	Wed, 12 Mar 2025 08:01:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
-	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=4QvIQ
-	XwRafvQ580MV0Rsrv/OXQwP41zDVRl4xERsjyo=; b=HPbzTlQgCtphrtXf8ZtoJ
-	xVfmywixzn63XAIArXBq8H31CcgyJHueheoDC/3zC4mleJXlgT+6eXoVxr3ZiIGd
-	BQsjsPIc5HGMOt5lpgB9jL+vGxuDT7Dc3ueHRqfwZ7wzo7u8HWKxLkpHvjLdW6pj
-	PmFpSkKVcKWPzITq8y7NUI=
-Received: from ProDesk.. (unknown [])
-	by gzga-smtp-mtada-g0-2 (Coremail) with SMTP id _____wB3RA0rP9FnyOpJSA--.4036S2;
-	Wed, 12 Mar 2025 16:00:47 +0800 (CST)
-From: Andy Yan <andyshrk@163.com>
-To: vkoul@kernel.org
-Cc: heiko@sntech.de,
-	kishon@kernel.org,
-	sebastian.reichel@collabora.com,
-	yubing.zhang@rock-chips.com,
-	dmitry.baryshkov@linaro.org,
-	lumag@kernel.org,
-	frank.wang@rock-chips.com,
-	linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	Andy Yan <andy.yan@rock-chips.com>
-Subject: [PATCH v2] phy: rockchip: usbdp: Only verify link rates/lanes/voltage when the corresponding set flags are set
-Date: Wed, 12 Mar 2025 16:00:07 +0800
-Message-ID: <20250312080041.524546-1-andyshrk@163.com>
-X-Mailer: git-send-email 2.43.0
+	id 1tsOPs-00000008wlO-1JxQ;
+	Wed, 12 Mar 2025 15:54:44 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1tsON9-00000008wC0-03pj;
+	Wed, 12 Mar 2025 15:51:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id F289AA44713;
+	Wed, 12 Mar 2025 15:46:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD4DFC4CEDD;
+	Wed, 12 Mar 2025 15:51:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1741794713;
+	bh=3rzunnVX6hlrPNBilZi0C8BivrdvDP3q03Wwh9Wyt7k=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=mwQIkEMSlYC8zaL+gV01SAJnS+lHGlbW96iDEHbJUB/4qygwLl2axB/WxqVgnEX5D
+	 7AsNbJit+fpLMBpCf/vC5y+Z6R26OMKSTXd1vGrKr8DCpRfcZ611T8gbDCZG7NKiRv
+	 A8E9HC1Sm9GKWlT5WCcIlbTzIsnjAOtqnIoqxx4iiaz9FKNeGP3W4vF3LCx8Z4GfVf
+	 /E+CKw0f9ezIED3ffRUPab6p7WzTbiaHI+/9KrE/dxRlb4kCWgR4M/Al+/SkZsWR4Z
+	 1KWLRV2T9SyNd9yVceJPt7v+M2/hPj6kf/st8D/ZNkFy0wZOqz0MNg3JQG4Wm/ZFb1
+	 Cpe1iIKsqgXWQ==
+Date: Wed, 12 Mar 2025 16:51:50 +0100
+From: Vinod Koul <vkoul@kernel.org>
+To: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, quentin.schulz@cherry.de,
+	sebastian.reichel@collabora.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	dse@thaumatec.com, Heiko Stuebner <heiko.stuebner@cherry.de>
+Subject: Re: [PATCH v6 2/2] phy: rockchip: Add Samsung MIPI D-/C-PHY driver
+Message-ID: <Z9GtlvHwd8/blVKl@vaman>
+References: <20250213210554.1645755-1-heiko@sntech.de>
+ <20250213210554.1645755-3-heiko@sntech.de>
+ <Z68zdiIl75k2Vv9i@vaman>
+ <2030933.8hb0ThOEGa@diego>
 MIME-Version: 1.0
-X-CM-TRANSID: _____wB3RA0rP9FnyOpJSA--.4036S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxZF1DJFyUtr4fXFWrCr1ftFb_yoWrAr48pa
-	y5KFs8Gr15KFnxWay5tr1kCFn8Gan2qa1xJrWakayrX3W5A3yrZF97ury3Ar4rGr97AFWS
-	yFWftFy5CF4DA3JanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jwTmfUUUUU=
-X-Originating-IP: [58.22.7.114]
-X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqBEOXmfRN93ULAAAsN
+Content-Disposition: inline
+In-Reply-To: <2030933.8hb0ThOEGa@diego>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250312_010135_146905_183271F0 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20250312_085155_179569_6B276EEA 
+X-CRM114-Status: GOOD (  24.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,183 +73,163 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Andy Yan <andy.yan@rock-chips.com>
 
-According documentation of phy_configure_opts_dp, at the configure
-stage, link rates should only be verify/configure when set_rate
-flag is set, the same applies to lanes and voltage.
+Sorry this slipped thru...
 
-So do it as the documentation says.
-Because voltage setting depends on the lanes, link rates set
-previously, so record the link rates and lanes at it's verify stage.
+On 19-02-25, 23:51, Heiko St=FCbner wrote:
+> Hi Vinod,
+> =
 
-Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
+> thanks for the review.
+> I've dropped all the parts that would've just gotten a "ok, changed" ;-)
+> =
 
----
+> Am Freitag, 14. Februar 2025, 13:13:42 MEZ schrieb Vinod Koul:
+> > On 13-02-25, 22:05, Heiko Stuebner wrote:
+> =
 
-Changes in v2:
-- Make each check of link_rates/lanes/voltages helper functions
-- Refactor commit message
+> > > +	{ 200,  7,   1,  0, 33,  9,  0, 26,  5,  0, 11},
+> > > +	{ 190,  7,   1,  0, 32,  9,  0, 25,  5,  0, 11},
+> > > +	{ 180,  6,   1,  0, 32,  8,  0, 25,  5,  0, 10},
+> > > +	{ 170,  6,   0,  0, 32,  8,  0, 25,  5,  0, 10},
+> > > +	{ 160,  5,   0,  0, 31,  8,  0, 24,  4,  0,  9},
+> > > +	{ 150,  5,   0,  0, 31,  8,  0, 24,  5,  0,  9},
+> > > +	{ 140,  5,   0,  0, 31,  8,  0, 24,  5,  0,  8},
+> > > +	{ 130,  4,   0,  0, 30,  6,  0, 23,  3,  0,  8},
+> > > +	{ 120,  4,   0,  0, 30,  6,  0, 23,  3,  0,  7},
+> > > +	{ 110,  3,   0,  0, 30,  6,  0, 23,  3,  0,  7},
+> > > +	{ 100,  3,   0,  0, 29,  5,  0, 22,  2,  0,  6},
+> > > +	{  90,  3,   0,  0, 29,  5,  0, 22,  2,  0,  6},
+> > > +	{  80,  2,   0,  0, 28,  5,  0, 22,  2,  0,  5},
+> > > +};
+> > =
 
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 87 ++++++++++++++---------
- 1 file changed, 53 insertions(+), 34 deletions(-)
+> > any word on where this table came from, maybe worth documenting that
+> > part
+> =
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index c04cf64f8a35..fff04e0fbd80 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -187,6 +187,8 @@ struct rk_udphy {
- 	u32 dp_aux_din_sel;
- 	bool dp_sink_hpd_sel;
- 	bool dp_sink_hpd_cfg;
-+	unsigned int link_rate;
-+	unsigned int lanes;
- 	u8 bw;
- 	int id;
- 
-@@ -1102,15 +1104,19 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
- 	return 0;
- }
- 
--static int rk_udphy_dp_phy_verify_link_rate(unsigned int link_rate)
-+/*
-+ * Verify link rate
-+ */
-+static int rk_udphy_dp_phy_verify_link_rate(struct rk_udphy *udphy,
-+					    struct phy_configure_opts_dp *dp)
- {
--	switch (link_rate) {
-+	switch (dp->link_rate) {
- 	case 1620:
- 	case 2700:
- 	case 5400:
- 	case 8100:
-+		udphy->link_rate = dp->link_rate;
- 		break;
--
- 	default:
- 		return -EINVAL;
- 	}
-@@ -1118,45 +1124,44 @@ static int rk_udphy_dp_phy_verify_link_rate(unsigned int link_rate)
- 	return 0;
- }
- 
--static int rk_udphy_dp_phy_verify_config(struct rk_udphy *udphy,
--					 struct phy_configure_opts_dp *dp)
-+static int rk_udphy_dp_phy_verify_lanes(struct rk_udphy *udphy,
-+					struct phy_configure_opts_dp *dp)
- {
--	int i, ret;
--
--	/* If changing link rate was required, verify it's supported. */
--	ret = rk_udphy_dp_phy_verify_link_rate(dp->link_rate);
--	if (ret)
--		return ret;
--
--	/* Verify lane count. */
- 	switch (dp->lanes) {
- 	case 1:
- 	case 2:
- 	case 4:
- 		/* valid lane count. */
-+		udphy->lanes = dp->lanes;
- 		break;
- 
- 	default:
- 		return -EINVAL;
- 	}
- 
--	/*
--	 * If changing voltages is required, check swing and pre-emphasis
--	 * levels, per-lane.
--	 */
--	if (dp->set_voltages) {
--		/* Lane count verified previously. */
--		for (i = 0; i < dp->lanes; i++) {
--			if (dp->voltage[i] > 3 || dp->pre[i] > 3)
--				return -EINVAL;
-+	return 0;
-+}
- 
--			/*
--			 * Sum of voltage swing and pre-emphasis levels cannot
--			 * exceed 3.
--			 */
--			if (dp->voltage[i] + dp->pre[i] > 3)
--				return -EINVAL;
--		}
-+/*
-+ * If changing voltages is required, check swing and pre-emphasis
-+ * levels, per-lane.
-+ */
-+static int rk_udphy_dp_phy_verify_voltages(struct rk_udphy *udphy,
-+					   struct phy_configure_opts_dp *dp)
-+{
-+	int i;
-+
-+	/* Lane count verified previously. */
-+	for (i = 0; i < udphy->lanes; i++) {
-+		if (dp->voltage[i] > 3 || dp->pre[i] > 3)
-+			return -EINVAL;
-+
-+		/*
-+		 * Sum of voltage swing and pre-emphasis levels cannot
-+		 * exceed 3.
-+		 */
-+		if (dp->voltage[i] + dp->pre[i] > 3)
-+			return -EINVAL;
- 	}
- 
- 	return 0;
-@@ -1196,9 +1201,23 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
- 	u32 i, val, lane;
- 	int ret;
- 
--	ret = rk_udphy_dp_phy_verify_config(udphy, dp);
--	if (ret)
--		return ret;
-+	if (dp->set_rate) {
-+		ret = rk_udphy_dp_phy_verify_link_rate(udphy, dp);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	if (dp->set_lanes) {
-+		ret = rk_udphy_dp_phy_verify_lanes(udphy, dp);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	if (dp->set_voltages) {
-+		ret = rk_udphy_dp_phy_verify_voltages(udphy, dp);
-+		if (ret)
-+			return ret;
-+	}
- 
- 	if (dp->set_rate) {
- 		regmap_update_bits(udphy->pma_regmap, CMN_DP_RSTN_OFFSET,
-@@ -1243,9 +1262,9 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
- 	}
- 
- 	if (dp->set_voltages) {
--		for (i = 0; i < dp->lanes; i++) {
-+		for (i = 0; i < udphy->lanes; i++) {
- 			lane = udphy->dp_lane_sel[i];
--			switch (dp->link_rate) {
-+			switch (udphy->link_rate) {
- 			case 1620:
- 			case 2700:
- 				regmap_update_bits(udphy->pma_regmap,
--- 
-2.34.1
+> sadly not.
+> =
+
+> The table itself came from the vendor-kernel, and I would assume there
+
+Maybe make a note that this is from vendor kernel
+
+> it came from some super-secret additional documentation Rockchip
+> got with the IP documentation.
+> =
+
+> It is sadly not part of the RK3588 manual.
+> =
+
+> =
+
+> > > +
+> > > +static void samsung_mipi_dcphy_bias_block_enable(struct samsung_mipi=
+_dcphy *samsung)
+> > > +{
+> > > +	u32 bias_con2 =3D 0x3223;
+> > =
+
+> > magic value?
+> =
+
+> Converted over to some more meaningful constants.
+> Did the same to bias_con0+1 below that one too.
+> =
+
+> =
+
+> > > +static void samsung_mipi_dphy_lane_disable(struct samsung_mipi_dcphy=
+ *samsung)
+> > > +{
+> > > +	regmap_update_bits(samsung->regmap, DPHY_MC_GNR_CON0, PHY_ENABLE, 0=
+);
+> > > +	regmap_update_bits(samsung->regmap, COMBO_MD0_GNR_CON0, PHY_ENABLE,=
+ 0);
+> > > +	regmap_update_bits(samsung->regmap, COMBO_MD1_GNR_CON0, PHY_ENABLE,=
+ 0);
+> > > +	regmap_update_bits(samsung->regmap, COMBO_MD2_GNR_CON0, PHY_ENABLE,=
+ 0);
+> > > +	regmap_update_bits(samsung->regmap, DPHY_MD3_GNR_CON0, PHY_ENABLE, =
+0);
+> > =
+
+> > Is writing to a register (mmio) faster than a switch case for checking
+> > lane count and disabling specific lanes?
+> =
+
+> It might make sense to mimic the lane_enable way of doing things, even if
+> just for things looking the same in both functions.
+> =
+
+> I guess disabling lanes does not really care about minimal speed differen=
+ces
+> a switch/case would cause :-)
+
+ok
+
+> =
+
+> > =
+
+> > > +static void samsung_mipi_dcphy_pll_configure(struct samsung_mipi_dcp=
+hy *samsung)
+> > > +{
+> > > +	regmap_update_bits(samsung->regmap, PLL_CON0, S_MASK | P_MASK,
+> > > +			   S(samsung->pll.scaler) | P(samsung->pll.prediv));
+> > > +
+> > > +	if (samsung->pll.dsm < 0) {
+> > > +		u16 dsm_tmp;
+> > > +
+> > > +		/* Using opposite number subtraction to find complement */
+> > > +		dsm_tmp =3D abs(samsung->pll.dsm);
+> > > +		dsm_tmp =3D dsm_tmp - 1;
+> > > +		dsm_tmp ^=3D 0xffff;
+> > > +		regmap_write(samsung->regmap, PLL_CON1, dsm_tmp);
+> > > +	} else {
+> > > +		regmap_write(samsung->regmap, PLL_CON1, samsung->pll.dsm);
+> > > +	}
+> > > +
+> > > +	regmap_update_bits(samsung->regmap, PLL_CON2,
+> > > +			   M_MASK, M(samsung->pll.fbdiv));
+> > > +
+> > > +	if (samsung->pll.ssc_en) {
+> > > +		regmap_write(samsung->regmap, PLL_CON3,
+> > > +			     MRR(samsung->pll.mrr) | MFR(samsung->pll.mfr));
+> > > +		regmap_update_bits(samsung->regmap, PLL_CON4, SSCG_EN, SSCG_EN);
+> > > +	}
+> > > +
+> > > +	regmap_write(samsung->regmap, PLL_CON5, RESET_N_SEL | PLL_ENABLE_SE=
+L);
+> > > +	regmap_write(samsung->regmap, PLL_CON7, PLL_LOCK_CNT(0xf000));
+> > > +	regmap_write(samsung->regmap, PLL_CON8, PLL_STB_CNT(0xf000));
+> > =
+
+> > I guess you are writing to upper nibble, maybe define that, if we can
+> =
+
+> Nope ... the value is defined as bits [15:0] and both being pll lock and
+> stabilization timing control registers. Sadly yet again, their usage deta=
+il
+> is not documented, the manual even does not supply a unit for the =
+
+> register value :-(
+
+:-(
 
 
--- 
+-- =
+
+~Vinod
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
