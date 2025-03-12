@@ -4,106 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0584C282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Mar 2025 19:12:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E68A9C28B28
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Mar 2025 08:11:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0fd1swOu+1dBAf4XGjcED7bLhA0SX8mQeqGyQIREKqQ=; b=GfLgAZBSYCOENp
-	FZAaCdf3jS8BKKykpxmnSGNzC8sP7VV4EBX2MeBHWp09mxm8RaC1SsxktibFapFbY4ROBgd3AL50r
-	NlIluOXoWuUPORhF+9seiKYc/Nex4NBvC/Tufl4FdpXEQzUETRbzYgMYSFh7bh8NSNTGB7woPLTy4
-	5pKMZIMKrBkcyOIKP/mA1YP0epzDGqXODz2xTC4ZWFn1LcO/mgLcz4I3Chz7ffJiJmisUrf/WhPt9
-	MHsxAavSzcGzRiSKZOLTMS+QsZMZs0O688VUN0eJnKr7CIEm11ce+S8aoRDnaJR3O3T3nrpr3BaOC
-	scykAh1UeVhUs/9rL0PQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1hKQ5X4z9yt6zL6WhY2OdwRhg/wtZN9nLeJek6w4kSE=; b=BLcTPA9CWiUIlN
+	08xa/LiLAjAp31BB/BM1JRAI/rUsliIR639sDnv5054Hd+rGN5TC15ES4UVhX0R527P73z3ywaGdd
+	gWs2LNwHAWmJ021k294YtnZrPZcbfTLEmJK4WeIfxheobGoBVov+ouXoDvGNlA6wgSQ41fvWenxSu
+	/PgGsmrBmOoVjkFb5o/YFnp6vSuUSEfjujYFwbQUBMdYyEhOk4c+b7+UiEgVA1I49BX3Vh8o+TN3U
+	W3xQ93NhtdSpHUZWHNpZAvKMGS04ansSNpgTVOuxQNoH4V4pelUpaQQcEgAQ+7WKOqi3HDUIVwCuI
+	iIJrYC2HAloBWhQe6rPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ts51V-00000006kFK-2fyO;
-	Tue, 11 Mar 2025 19:12:17 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ts4yQ-00000006jkE-1QCo;
-	Tue, 11 Mar 2025 19:09:07 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-43cfb6e9031so28177225e9.0;
-        Tue, 11 Mar 2025 12:09:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1741720144; x=1742324944; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=QBYt0BHsxul+nTaYflhpms2js1nZoTfEFczz9ZKES00=;
-        b=HG2JOsojHKTy6obaiyCsNrhfRJxp/6d8S4KVQYWy6teC9UtxISdY9CEeG/C/Or1gOG
-         j0Mu9z05svFcmjJyQbI3HSubZGNj1WWFw0wuBG63BHYugu93T1a3iTpugeJMyzkw9fqG
-         pYVypnyGciYrY83jg0NKjT3omq3g0DaP3eCIeRsGKStXtD+n7VwEESVoksNrHs4d3DZK
-         4gTX9naGI+wdaZwv6Aw1XJK/PcJ6jRAzfjiYttLHCtwwIbwNRBvVxZ+12Enk1hI7onOl
-         bgNO465YXUc0mZdj5FHlhW8YDU4DN1U80/wyUqBTeX130WNUpTT0/N40Iz6kERdtbRS4
-         XJcg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1741720144; x=1742324944;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=QBYt0BHsxul+nTaYflhpms2js1nZoTfEFczz9ZKES00=;
-        b=RoYv/mQ9Gpbv+GfGsI5fKB0mFM5n7pxM5fz1xfTpErHyRPRpw8/9NCSb9JLB72qjSo
-         CDbA5tAG3BLJdQtt7jzMUYnZndw6MCxu6RYwZwgB6bWj9tyrauS5ENHjc6OZKlU0FhcS
-         C98Z62fYYrQqiQI2/a+NL6Dc+USHYBcseVNVsdjAyvVRrK+k/ECrHGysmFOKL/zZcWe4
-         29Zyr05NC0YtrlbIunpPc20pHDU2v8wNSXRHor8PrHv/xqkaRhqivNfSayz3LkczgsSV
-         yjEDxtSM4u0pC7uo/OPDNuvuA+AQot+sVq3Ot5HS/QQl0K3iXUP4cmQNnR90b73D83sV
-         xR9A==
-X-Forwarded-Encrypted: i=1; AJvYcCUjFrGidooe4v9slQnG0i65va0JKaeqIs0/li4nRqav4KR8accMGNZjrLHfDq4Ey7HzELSkM7+/Tf8R@lists.infradead.org, AJvYcCVJ15VbGGWaocU6LwTM8IYnKSKhtQ4vwHLXrNb/QDDrfGuOv4qQ5LlYGL1FSiO4ndfkV3mYOzn61GXBhyD6/rM=@lists.infradead.org, AJvYcCXuoA8+YQwV6ZnpUp2777ILBHF8qAcwQYf8Oq37KcFKSEpJMyTFxAnMnWgjrYcgZ5vLvuo87mmMMldj+pTf22X4@lists.infradead.org
-X-Gm-Message-State: AOJu0YwylrupkSkzdcGlaDpSxLbEufOR6FxIzVBPsIZNIco7IvIgpqFw
-	FWQkw1+/Td/KE51fNEWYSVZkDzsuTL6P8Vvvf/IPQRBqzia0dQyA
-X-Gm-Gg: ASbGncvCJurJM9eovoZRc8ejCP1/ZrgscPJhMJzfPtHXwmr7spjoUcmy5pXsIUDc1KH
-	sHVzVK0ZYqiwEb+yBNrYwk442OTuRzxdp8ZRDCv7JJrgoTz5Q6Ir0qicPlrD0bBAJEo9adW5vbi
-	auk2ytUH00c4IksWpRn2u1MtSrbeTU3lN8cjWoGsDVBhdgRHlcNaEize4GpDnjK5Qf/QmTPBH5b
-	hEeTm5ANz7npuqYJ9jnGlUU+/c5QDDFBEX/iqPnmj9MXfC1nnKOqM59hzHGDUPsIfpoFMPIAIEt
-	XZlsZV055nfQoCA1mp6MUd5huItLeqQsI5d4EB8362ZXaQaP/GLliSvcqWhPGrIg078hFCulg4b
-	yUPlqCPVOyzSh
-X-Google-Smtp-Source: AGHT+IEVvLB1J5PdZXBMZwLdi5Sfx5U8w2F5CDI5YD3a5o/Tqdo42jSaYp7CF55JMp1UKEuKA0N/8w==
-X-Received: by 2002:a05:600c:5618:b0:439:9a40:aa0b with SMTP id 5b1f17b1804b1-43cdfb7e4b1mr144023345e9.25.1741720144407;
-        Tue, 11 Mar 2025 12:09:04 -0700 (PDT)
-Received: from Ansuel-XPS. (58.43.196.178.dynamic.cust.swisscom.net. [178.196.43.58])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-43cf7c8249bsm81906155e9.7.2025.03.11.12.09.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 11 Mar 2025 12:09:03 -0700 (PDT)
-Message-ID: <67d08a4f.7b0a0220.8fe9e.44fd@mx.google.com>
-X-Google-Original-Message-ID: <Z9CKTrERYllmbczJ@Ansuel-XPS.>
-Date: Tue, 11 Mar 2025 20:09:02 +0100
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Nikita Shubin <nikita.shubin@maquefel.me>,
-	Guo Ren <guoren@kernel.org>, Yangyu Chen <cyy@cyyself.name>,
-	Ben Hutchings <ben@decadent.org.uk>, Felix Fietkau <nbd@nbd.name>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
-	linux-usb@vger.kernel.org, upstream@airoha.com
-Subject: Re: [PATCH 05/13] dt-bindings: mfd: add Documentation for Airoha
- EN7581 SCU
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-6-ansuelsmth@gmail.com>
- <c1227083-a4ea-4dac-a9db-d6a5386c0437@kernel.org>
- <67cec328.170a0220.27ecbc.9c6e@mx.google.com>
- <026296c8-a460-43ca-a423-0fa38269fbc2@kernel.org>
+	id 1tsHBe-00000007ncL-2pnV;
+	Wed, 12 Mar 2025 08:11:34 +0000
+Received: from m16.mail.163.com ([117.135.210.2])
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1tsH1y-00000007m7s-2tkr;
+	Wed, 12 Mar 2025 08:01:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+	s=s110527; h=From:Subject:Date:Message-ID:MIME-Version; bh=4QvIQ
+	XwRafvQ580MV0Rsrv/OXQwP41zDVRl4xERsjyo=; b=HPbzTlQgCtphrtXf8ZtoJ
+	xVfmywixzn63XAIArXBq8H31CcgyJHueheoDC/3zC4mleJXlgT+6eXoVxr3ZiIGd
+	BQsjsPIc5HGMOt5lpgB9jL+vGxuDT7Dc3ueHRqfwZ7wzo7u8HWKxLkpHvjLdW6pj
+	PmFpSkKVcKWPzITq8y7NUI=
+Received: from ProDesk.. (unknown [])
+	by gzga-smtp-mtada-g0-2 (Coremail) with SMTP id _____wB3RA0rP9FnyOpJSA--.4036S2;
+	Wed, 12 Mar 2025 16:00:47 +0800 (CST)
+From: Andy Yan <andyshrk@163.com>
+To: vkoul@kernel.org
+Cc: heiko@sntech.de,
+	kishon@kernel.org,
+	sebastian.reichel@collabora.com,
+	yubing.zhang@rock-chips.com,
+	dmitry.baryshkov@linaro.org,
+	lumag@kernel.org,
+	frank.wang@rock-chips.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	Andy Yan <andy.yan@rock-chips.com>
+Subject: [PATCH v2] phy: rockchip: usbdp: Only verify link rates/lanes/voltage when the corresponding set flags are set
+Date: Wed, 12 Mar 2025 16:00:07 +0800
+Message-ID: <20250312080041.524546-1-andyshrk@163.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <026296c8-a460-43ca-a423-0fa38269fbc2@kernel.org>
+X-CM-TRANSID: _____wB3RA0rP9FnyOpJSA--.4036S2
+X-Coremail-Antispam: 1Uf129KBjvJXoWxZF1DJFyUtr4fXFWrCr1ftFb_yoWrAr48pa
+	y5KFs8Gr15KFnxWay5tr1kCFn8Gan2qa1xJrWakayrX3W5A3yrZF97ury3Ar4rGr97AFWS
+	yFWftFy5CF4DA3JanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jwTmfUUUUU=
+X-Originating-IP: [58.22.7.114]
+X-CM-SenderInfo: 5dqg52xkunqiywtou0bp/1tbiqBEOXmfRN93ULAAAsN
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250311_120906_379461_98135464 
-X-CRM114-Status: GOOD (  53.16  )
+X-CRM114-CacheID: sfid-20250312_010135_146905_183271F0 
+X-CRM114-Status: GOOD (  14.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,173 +80,176 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 10, 2025 at 12:41:06PM +0100, Krzysztof Kozlowski wrote:
-> On 10/03/2025 11:47, Christian Marangi wrote:
-> > On Mon, Mar 10, 2025 at 10:21:45AM +0100, Krzysztof Kozlowski wrote:
-> >> On 09/03/2025 14:29, Christian Marangi wrote:
-> >>> Add Documentation for Airoha EN7581 SCU.
-> >>>
-> >>> Airoha EN7581 SoC expose registers to control miscellaneous pheriperals
-> >>> via the SCU (System Controller Unit).
-> >>>
-> >>> Example of these pheriperals are reset-controller, clock-controller,
-> >>> PCIe line speed controller and bits to configure different Serdes ports
-> >>> for USB or Ethernet usage.
-> >>>
-> >>> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> >>> ---
-> >>>  .../mfd/airoha,en7581-scu-sysctl.yaml         | 68 +++++++++++++++++++
-> >>>  1 file changed, 68 insertions(+)
-> >>>  create mode 100644 Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> >>>
-> >>> diff --git a/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> >>> new file mode 100644
-> >>> index 000000000000..d7dc66f912c1
-> >>> --- /dev/null
-> >>> +++ b/Documentation/devicetree/bindings/mfd/airoha,en7581-scu-sysctl.yaml
-> >>> @@ -0,0 +1,68 @@
-> >>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> >>> +%YAML 1.2
-> >>> +---
-> >>> +$id: http://devicetree.org/schemas/mfd/airoha,en7581-scu-sysctl.yaml#
-> >>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> >>> +
-> >>> +title: Airoha EN7581 SCU (System Controller Unit)
-> >>> +
-> >>> +maintainers:
-> >>> +  - Christian Marangi <ansuelsmth@gmail.com>
-> >>> +
-> >>> +description:
-> >>> +  Airoha EN7581 SoC expose registers to control miscellaneous
-> >>> +  pheriperals via the SCU (System Controller Unit).
-> >>> +
-> >> One more comment - there is no such thing as "sysctl" in your hardware.
-> >> Look at the SCU binding which clearly says that it is the hardware you
-> >> are duplicating here, so the "System Control Unit".
-> >>
-> >> So you have existing "This node defines the System Control Unit of the
-> >> EN7523 SoC" and you add one more node which defines the "System Control
-> >> Unit", so you have two "System Control Unit" device nodes?
-> >>
-> >> Look also what Stephen asked for:
-> >>
-> >> https://lore.kernel.org/all/20220106013100.842FCC36AEB@smtp.kernel.org/
-> >>
-> >> so how system-controller can now became clock-controller? Now, it was
-> >> the system controller since the beginning.
-> >>
-> > 
-> > The main problem here (and we had a similar problem with GPIO and PWM)
-> > is that the Vendor (Airoha) wasn't so bright in placing the different
-> > registers for the SoC so we have case where everything is mixed and not
-> > one after another... 
-> > 
-> > Example we have 
-> > - CLK register part 1
-> > - Some bits that configure PCIe
-> > - CLK register part 2
-> > - GPIO
-> > - CLK register part 3
-> > - ...
-> 
-> This does not explain that binding said "This node defines the System
-> Control Unit".
-> 
-> So what are you adding here if not SCU?
->
+From: Andy Yan <andy.yan@rock-chips.com>
 
-With "This node defines the System Control Unit" I mean, the entire
-register space of the IP block is defined and each child specifically
-define each part of the IP block.
+According documentation of phy_configure_opts_dp, at the configure
+stage, link rates should only be verify/configure when set_rate
+flag is set, the same applies to lanes and voltage.
 
-> > 
-> > The driver solution for this is syscon and the simple-mfd node
-> > structure.
-> 
-> Let's keep driver entirely separate, we don't talk about them and mixing
-> arguments won't make it easier.
-> 
+So do it as the documentation says.
+Because voltage setting depends on the lanes, link rates set
+previously, so record the link rates and lanes at it's verify stage.
 
-Ok.
+Signed-off-by: Andy Yan <andy.yan@rock-chips.com>
 
-> > 
-> > Now the main problem is how to modle this in DT. There are lots of case
-> > where the simple-mfd model is used (like the one proposed) but probably
-> > this is not accepted anymore. But again this should be clearly stated or
-> > we have a chicken-egg problem when other devs implement similar thing and
-> > have to implement simple MFD driver to handle this. (and driver
-> > maintainers say "Use the simple-mfd model like it was already done)
-> 
-> simple-mfd has nothing to do here. Describe the hardware - what is the SCU?
-> 
-> 
+---
 
-As I said below, SCU is just the name used in Airoha Documentation for
-this IP block. In this register space there are multiple things so it's
-not strictly a clock-controller (as it's currently defined)
+Changes in v2:
+- Make each check of link_rates/lanes/voltages helper functions
+- Refactor commit message
 
-It was proposed as clock-controller previously as we weren't aware this
-IP block was used also for other usage that a strict clock controller.
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 87 ++++++++++++++---------
+ 1 file changed, 53 insertions(+), 34 deletions(-)
 
-> > 
-> > For this specific case (and to give an answer to the clock patch after
-> > this) the problem is that this register space was originally used only
-> > to control the clock and I wasn't aware that it was also used to control
-> > USB. Now that I'm implementing support for it, the disaster happened.
-> > 
-> > So In short SCU is lots of thing, both a system-controller, a
-> > clock-controller and even a reset-controller.
-> 
-> And you have bindings for that already. Done.
-> 
-
-It's currently defined in DTS as clock-controller, should we change it
-to system-controller to make it more clear?
-
-> > 
-> > To make it short, 2 different solution:
-> > 1. We can keep the current node structure of the node-controller and add a
-> > child node for the SSR part (with a dedicated compatible).
-> 
-> No, you do not add child nodes just because you want some drivers.
-> 
-> What is SSR? How is it a device?
-
-SSR is the name used in Documentation for the register used to configure
-the Serdes and PCIe port.
-
-> 
-> > 2. Those property need to be be defined in the clock-controller node?
-> 
-> In the SCU node. Do you have only one SCU or more?
-
-Strictly speaking it's one register space. One clock-controller, one
-reset-controller and one set of SSR registers, and from what I can
-understand it's ALWAYS "One device/compatible for Register space"
-
-The simple-mfd pattern can't really work for case like this where in one
-register space there are multiple stuff.
-
-Is everything clear now?
-
-To summarize:
-- no child nodes
-- add additional property for SSR in the SCU .yaml
-
-> 
-> > 
-> > The ideal solution is 1. Does it work for you?
-> > 
-> > Sorry for the long post and hope you understand why this mess of
-> > reworking the binding.
-> > 
-> 
-> 
-> Best regards,
-> Krzysztof
-
+diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+index c04cf64f8a35..fff04e0fbd80 100644
+--- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
++++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
+@@ -187,6 +187,8 @@ struct rk_udphy {
+ 	u32 dp_aux_din_sel;
+ 	bool dp_sink_hpd_sel;
+ 	bool dp_sink_hpd_cfg;
++	unsigned int link_rate;
++	unsigned int lanes;
+ 	u8 bw;
+ 	int id;
+ 
+@@ -1102,15 +1104,19 @@ static int rk_udphy_dp_phy_power_off(struct phy *phy)
+ 	return 0;
+ }
+ 
+-static int rk_udphy_dp_phy_verify_link_rate(unsigned int link_rate)
++/*
++ * Verify link rate
++ */
++static int rk_udphy_dp_phy_verify_link_rate(struct rk_udphy *udphy,
++					    struct phy_configure_opts_dp *dp)
+ {
+-	switch (link_rate) {
++	switch (dp->link_rate) {
+ 	case 1620:
+ 	case 2700:
+ 	case 5400:
+ 	case 8100:
++		udphy->link_rate = dp->link_rate;
+ 		break;
+-
+ 	default:
+ 		return -EINVAL;
+ 	}
+@@ -1118,45 +1124,44 @@ static int rk_udphy_dp_phy_verify_link_rate(unsigned int link_rate)
+ 	return 0;
+ }
+ 
+-static int rk_udphy_dp_phy_verify_config(struct rk_udphy *udphy,
+-					 struct phy_configure_opts_dp *dp)
++static int rk_udphy_dp_phy_verify_lanes(struct rk_udphy *udphy,
++					struct phy_configure_opts_dp *dp)
+ {
+-	int i, ret;
+-
+-	/* If changing link rate was required, verify it's supported. */
+-	ret = rk_udphy_dp_phy_verify_link_rate(dp->link_rate);
+-	if (ret)
+-		return ret;
+-
+-	/* Verify lane count. */
+ 	switch (dp->lanes) {
+ 	case 1:
+ 	case 2:
+ 	case 4:
+ 		/* valid lane count. */
++		udphy->lanes = dp->lanes;
+ 		break;
+ 
+ 	default:
+ 		return -EINVAL;
+ 	}
+ 
+-	/*
+-	 * If changing voltages is required, check swing and pre-emphasis
+-	 * levels, per-lane.
+-	 */
+-	if (dp->set_voltages) {
+-		/* Lane count verified previously. */
+-		for (i = 0; i < dp->lanes; i++) {
+-			if (dp->voltage[i] > 3 || dp->pre[i] > 3)
+-				return -EINVAL;
++	return 0;
++}
+ 
+-			/*
+-			 * Sum of voltage swing and pre-emphasis levels cannot
+-			 * exceed 3.
+-			 */
+-			if (dp->voltage[i] + dp->pre[i] > 3)
+-				return -EINVAL;
+-		}
++/*
++ * If changing voltages is required, check swing and pre-emphasis
++ * levels, per-lane.
++ */
++static int rk_udphy_dp_phy_verify_voltages(struct rk_udphy *udphy,
++					   struct phy_configure_opts_dp *dp)
++{
++	int i;
++
++	/* Lane count verified previously. */
++	for (i = 0; i < udphy->lanes; i++) {
++		if (dp->voltage[i] > 3 || dp->pre[i] > 3)
++			return -EINVAL;
++
++		/*
++		 * Sum of voltage swing and pre-emphasis levels cannot
++		 * exceed 3.
++		 */
++		if (dp->voltage[i] + dp->pre[i] > 3)
++			return -EINVAL;
+ 	}
+ 
+ 	return 0;
+@@ -1196,9 +1201,23 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
+ 	u32 i, val, lane;
+ 	int ret;
+ 
+-	ret = rk_udphy_dp_phy_verify_config(udphy, dp);
+-	if (ret)
+-		return ret;
++	if (dp->set_rate) {
++		ret = rk_udphy_dp_phy_verify_link_rate(udphy, dp);
++		if (ret)
++			return ret;
++	}
++
++	if (dp->set_lanes) {
++		ret = rk_udphy_dp_phy_verify_lanes(udphy, dp);
++		if (ret)
++			return ret;
++	}
++
++	if (dp->set_voltages) {
++		ret = rk_udphy_dp_phy_verify_voltages(udphy, dp);
++		if (ret)
++			return ret;
++	}
+ 
+ 	if (dp->set_rate) {
+ 		regmap_update_bits(udphy->pma_regmap, CMN_DP_RSTN_OFFSET,
+@@ -1243,9 +1262,9 @@ static int rk_udphy_dp_phy_configure(struct phy *phy,
+ 	}
+ 
+ 	if (dp->set_voltages) {
+-		for (i = 0; i < dp->lanes; i++) {
++		for (i = 0; i < udphy->lanes; i++) {
+ 			lane = udphy->dp_lane_sel[i];
+-			switch (dp->link_rate) {
++			switch (udphy->link_rate) {
+ 			case 1620:
+ 			case 2700:
+ 				regmap_update_bits(udphy->pma_regmap,
 -- 
-	Ansuel
+2.34.1
+
 
 -- 
 linux-phy mailing list
