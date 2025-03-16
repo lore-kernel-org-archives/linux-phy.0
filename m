@@ -4,103 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23B4EC282DE
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Mar 2025 17:01:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58083C35FF3
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Mar 2025 17:03:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X1Ks3pRTutNr4I5wqOOQt9YQZtm3HQFV7qzi3ffsgTA=; b=n8BntkAMYZASM3
-	IJEkgr/fciEIvXNBkWqe5zp7rtl9oG3MBaqQM4Ks9JSvzw2s2NjuPFvP65RZKcnpQGYYXghuMggmF
-	yNUVIZWTQLHAhj2AW2c7mXhek+kOOKvoRO02ivhP15EgQEEhX6CF6wsIqK9MOiOV5VW+tkl2/2iVM
-	zBPFlxa6Gd9BWTR1WX+jQ1wwK5ecXsAfqxCzwyulvn47aqnwE1wR11wq1fw7cz6a8V4cH+1/eVxe2
-	lYmgEZZAYVWkeHKsuyef+9Z/Y3t75gw0yTXuUpgQuH4ImGW/flCibvT0ZULyiLfBT2ckkVwVSNljA
-	I9PV/Th7zC3HDcdOwyQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bBga5Xj21qFufB8ya087uH6GRuxk71kVaO8l9bgMG8o=; b=Tqk70+CvWpNLtA
+	ZGjaAywdjpLSOt2OW/NcIAhx0EsvLVZJp5jsKz6oAicYcMsrHavfn/B+3PlDC+OznNyIF5/TKqCfJ
+	XEeCF7+3kOFV4oR9WJvbzm46F95MNPvH4JugH1yPIP3VfYOIRtlFPj3vXFjVtaVlMVG3Vld0rkqDo
+	j3u1FYLK0d0LsJ7ju2l0ueHAaj6oQuU09maeRqo7uWzHzrH1NuQ1qJDpSB/ythtphFkpOrUwp/vvM
+	VoochmY5+RRtfKbdCWLyKWG1aSv9yKJnJs1Jz2vbore/SSJ8hjKJbP378GwyYb0yuKAH2QHm2LCoq
+	VA1mN/WPHyLeFG4iWP4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ttrMS-00000000OOv-3ApQ;
-	Sun, 16 Mar 2025 17:01:16 +0000
-Received: from mo4-p01-ob.smtp.rzone.de ([85.215.255.52])
+	id 1ttrO8-00000000OZa-45xe;
+	Sun, 16 Mar 2025 17:03:00 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ttrMP-00000000ODo-0I4X
-	for linux-phy@lists.infradead.org;
-	Sun, 16 Mar 2025 17:01:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1742144388; cv=none;
-    d=strato.com; s=strato-dkim-0002;
-    b=YoodfKxRBhB1/YfU5sEuhAMM6fpqu0ylzwJg/dBIugP2T4vRVhJamCed0/Wpx/jH3H
-    xZfHZq3MmpeZ4JUUhzE2okI/ZaeyRw14tOEFl6AzyyTVi9Gtm4i240ipWixL05X9Emot
-    rsMf567G5FVIHHE9Z/WVcFmabwprQGQBdddC2BkmjPmO9NdwAgbOdqv50caA7T0bX04X
-    RjCInMvJAjrJc2QxTXAoiDjdn3es4yGtahAzqi1XmCmJ1LqaUrEFFr1PtxinYqvz//cc
-    8rifEkNFU11SMBFEOxVBlszq32AEo7d+8ovIQcvZa0GmODZz0xGjraMyVpPvoSmyf85I
-    2nIg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1742144388;
-    s=strato-dkim-0002; d=strato.com;
-    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
-    From:Subject:Sender;
-    bh=/a4WBsJNkt2omozlDXzrC9B/dm4g50s1qwxJ6l1r5aw=;
-    b=rN3GqVQahxfHaEpR+H/ehBNgC2TGP2P+htCMBhJxvM+O5jx3TeXfmM4JjRgufXt9Kx
-    pDbJZ0HcRsRSB0TFOeD44G+VLqbff7ShwYLm6/9pgBDhIt7NC+PV5GG281Q9kJ1Wh77k
-    TfwMBu3bCqhSQWQV1RIgWXw22tUzEwAbxx12yJKfYDXC65rq27+9g6jsWtGWoy82da29
-    l6wyuDvSNJ6YtEPG++ykm864JLMQ/RvBSatsYRXnqGUD7NgcNNwVu9f/noIVhYaJEQyM
-    8lljfwtZUatqlLUIr2lfy7b/jO45/xqQjENcJv1yBPozwvMQ2i4CbCfpu5GSYWQCwb/O
-    VIbw==
-ARC-Authentication-Results: i=1; strato.com;
-    arc=none;
-    dkim=none
-X-RZG-CLASS-ID: mo01
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1742144388;
-    s=strato-dkim-0002; d=goldelico.com;
-    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
-    From:Subject:Sender;
-    bh=/a4WBsJNkt2omozlDXzrC9B/dm4g50s1qwxJ6l1r5aw=;
-    b=p8HB5Aw0OWYcG++rh2RREItn6pc9Wjg8V0lOCygSUgkO1GwbAXsUMPd3gd1sl92qdk
-    XcKhkDHI02ArrwVnoK3GK810A34HNPlGWov2chUGRKOATPNOazVyAnAQUk7wSFY8OtdC
-    HZb4JGlmYPRoEMjuJmbkW9VDXUT2DzhQv/SzRHZ7pyh2vT246G+zyTJBU9MN8K2biF9x
-    Q7hUZnpSGSIyiDrXL0V0oppMYS0bAacdsrE2BplKe6X+PPc1mpmNbziPHRvRmg/58idE
-    z87BfUy1CYrjbQyIOs1gCtB/8c4T4cQAGLr/sWB4PCfXPjGOAxUcIICkoOWS2OE2xmok
-    Fu3A==
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1742144388;
-    s=strato-dkim-0003; d=goldelico.com;
-    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
-    From:Subject:Sender;
-    bh=/a4WBsJNkt2omozlDXzrC9B/dm4g50s1qwxJ6l1r5aw=;
-    b=qHfiG8wbdo54bqVuztfX0onua4cK4guN8SxMVYW3avnF6wDnN/2sJwzWWHrlVbRfIV
-    1Mi4ED4WymReyJtbxgDA==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o12DNOsPj0lFzL1yeTkZ"
-Received: from smtpclient.apple
-    by smtp.strato.de (RZmta 51.3.0 DYNA|AUTH)
-    with ESMTPSA id Q56adc12GGxluvH
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1 with 256 ECDH bits, eq. 3072 bits RSA))
-	(Client did not present a certificate);
-    Sun, 16 Mar 2025 17:59:47 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3776.700.51.11.1\))
-Subject: Re: [PATCH RESEND] phy: ingenic: fix unbalanced regulator_disable()
- warning
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <Z9b+wSNdyE1hN+cn@vaman>
-Date: Sun, 16 Mar 2025 17:59:36 +0100
-Cc: Paul Cercueil <paul@crapouillou.net>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Zhou Yanjie <zhouyanjie@wanyeetech.com>,
- linux-phy@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- kernel@pyra-handheld.com,
- linux-mips@vger.kernel.org
-Message-Id: <3C1066EE-405D-43C6-912A-11943F1F43E9@goldelico.com>
-References: <96da5fe557f3b2501447358895bd78decc4633ef.1735482146.git.hns@goldelico.com>
- <ab308c135c3ea5e050bbfb0b94a832c8d52d5380.camel@crapouillou.net>
- <AF49A39E-0534-4ADC-8E50-606A636D167A@goldelico.com>
- <c67e2ecbcdf481cddcc4c93716e38049e53d3e93.camel@crapouillou.net>
- <Z9b+wSNdyE1hN+cn@vaman>
-To: Vinod Koul <vkoul@kernel.org>
-X-Mailer: Apple Mail (2.3776.700.51.11.1)
+	id 1ttrMR-00000000OOd-3IJC;
+	Sun, 16 Mar 2025 17:01:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 5498BA48C00;
+	Sun, 16 Mar 2025 16:55:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B71B8C4CEDD;
+	Sun, 16 Mar 2025 17:01:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742144474;
+	bh=6PfcJBRNV/52O2N067Qc1dkAL6g6RK6AiGmwAbAH68c=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=qQFd3hPeTpDx+jH+Bro2QsnUm9+dxfhPOHdVTYI1JJjYKY7Ha7ozZMMDrb8dnSYPM
+	 x15Pd3uLBOq4kPEm4GgF+NGN5ylbMFJmzVn8D3MGCQk1Ss+bpARjrZqwL34qLeK9oD
+	 t5CJOZ6eVDnHVvORXRN+jSBf0kCQEtr0eAa6O77xU+XDKSEXv5w9+X724ivizupDHy
+	 ZGP7iSzAr5ZomED03ma0S8Vcb+g2BPT+wrXH5meJn+YIkoC97P0zfLRXwXOOrtMWQz
+	 iQnLSrbiQHqJMmf6Cat7TZl5no1MNNPqtlRaC5ogSsLgCt9vPA7YMOyUincL9m584U
+	 +JmBXWV6kJjDA==
+Message-ID: <4a9ac302-dfbe-4d76-a634-a445957c313c@kernel.org>
+Date: Sun, 16 Mar 2025 18:01:02 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha
+ AN7581 USB PHY
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Daniel Danzberger <dd@embedd.com>,
+ Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
+ Nikita Shubin <nikita.shubin@maquefel.me>, Guo Ren <guoren@kernel.org>,
+ Yangyu Chen <cyy@cyyself.name>, Ben Hutchings <ben@decadent.org.uk>,
+ Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-usb@vger.kernel.org,
+ upstream@airoha.com
+References: <20250309132959.19045-1-ansuelsmth@gmail.com>
+ <20250309132959.19045-10-ansuelsmth@gmail.com>
+ <4f16d239-f540-45d5-b67a-767b09f1c70c@kernel.org>
+ <67d0862f.df0a0220.375bd.6b15@mx.google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <67d0862f.df0a0220.375bd.6b15@mx.google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250316_100113_262936_159251E6 
-X-CRM114-Status: UNSURE (   7.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250316_100115_983145_15D4E0C4 
+X-CRM114-Status: GOOD (  13.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,28 +134,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-> Am 16.03.2025 um 17:39 schrieb Vinod Koul <vkoul@kernel.org>:
+On 11/03/2025 19:51, Christian Marangi wrote:
+>>
+>>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>>> +    enum: [0, 1]
+>>
+>> I don't understand why do you need index property here (which are
+>> usually not allowed).
+>>
 > 
-> On 14-03-25, 11:33, Paul Cercueil wrote:
->> Vinod, can you take this?
+> Eh... As said in the description this is really to differentiate the 2
+> different physical port...
 > 
-> I dont seem to have this in my queue, can you pls post it again
+> Each port have a dedicated oscillator for calibration and these
+> calibration are identified by an offset (all placed one after another in
+> a separate register space).
+
+So different oscillators? Then describe the oscillator and its differences.
+
+Different programing model? Different compatible.
+
+Other difference? Depending what is the difference.
+
+But there is no such thing as "different port ID" based on your
+description above. You just claimed that they are different, but you do
+not put that difference to hardware description. Instead you encode that
+difference in the drivers and it should be opposite. The DTS, so the
+hardware description, should tell you the difference. And I am sorry,
+but in 99% of cases "I am the first phy" and "I am the second" is not
+the actual difference we are interested in.
+
 > 
-> -- 
-> ~Vinod
+> Oscillator 0 for physical port 0
+> Oscillator 1 for physcial port 1
 > 
-
-Here it is:
-
-https://patchwork.kernel.org/project/linux-phy/patch/96da5fe557f3b2501447358895bd78decc4633ef.1735482146.git.hns@goldelico.com/
-
-Strangely it wasn't collected by https://patchwork.kernel.org/project/linux-mips/list/
-
-BR and thanks,
-Nikolaus
-
+> And model this is a bit problematic without an additional property, any
+> hint for this?
+> 
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
