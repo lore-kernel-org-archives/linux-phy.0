@@ -4,79 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A751FC282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 15:13:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CED35C282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 15:15:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mSie3drFvIy5RGSGK6rwulpq9+SjAiSjIjsO4Qg9zcM=; b=xh9SC3ufM0WI1GcK7Uwe4z9cGH
-	eWEmYynyenwY5L/K1I4/D+8pdxPB7OZEwYc5UOeEs1gn/6X443TyM/dhn174sdnDDu2qlQ7wL31Ym
-	eZfemwl6YT8pA7fmTZuOXh1gLQ0BjZw/ri8qoDIUpbTV+11lhA5htdTvvHcclwF/X8FQTRkly8XUD
-	4kQhr+HJTfmj23+aGDSM7qahhp8U3499VsNPr28Egc4cG69CoyMWclQJg0uDtOsPzvaz5B8WwTzZF
-	6MSC9nLs2iYod5PHTsdOQP6GkXGvXocqmBmpSCI8X/T7wjARjApCnc26n2P25TreZsfpNvmsuTSVm
-	6gBuWXNA==;
+	bh=XlbomZHJDk5OfjFerD/OiNytqPfWUS5BfzZZQq4skBs=; b=QGl0ohO2cLUMxoXCirH/23d/Sj
+	3sFy4l6apEEmkk3MPWzp7s1oI1HmHn0QqLepHFPHVT+UuZTfMfwiDFtsaBH4aejqCyImmS+LUpDui
+	QLpprzTE2WW+AEFSTToJAdW3FUEENQErbPZ5qltMqbnHcxxvd+9nseXCfpV2qlMu3aoGrTfyrIoQa
+	ZoEunqwLFcWwkQp7mQb/oI3/lRnd7F4pIj88ILQL3EGtVeNsqi8bi7r0OWHFPv+QUzrCovnEx2naP
+	/0akQ5zSxE74ey0P5nq3gTTC6r9zUqKCez6IfOjahA9JXQQhJ5DcFFIBVSvuqX6Jsvj1af/J32oe8
+	2IObSm8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuYdS-00000006Jhj-0mCv;
-	Tue, 18 Mar 2025 15:13:42 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1tuYfT-00000006JwO-2QeS;
+	Tue, 18 Mar 2025 15:15:47 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuYdP-00000006JgU-2pdB
+	id 1tuYfR-00000006Jv5-1mSL
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Mar 2025 15:13:40 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-3965c995151so3835667f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 18 Mar 2025 08:13:39 -0700 (PDT)
+	Tue, 18 Mar 2025 15:15:46 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-3913d129c1aso4629518f8f.0
+        for <linux-phy@lists.infradead.org>; Tue, 18 Mar 2025 08:15:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1742310818; x=1742915618; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1742310944; x=1742915744; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=5yUDZJP2SM0YgcV/93zcQ6kDj56FosP1rr3RyiKi/9I=;
-        b=zFgJYFTBWoEK+Q9dn1M0dGI4U5fi5CILTHQ08UXhKLlWJTR37AkE2VZOqouRLZ6V+V
-         CheNjYe7A5XSXqN3nc3bKDNzlTJ7FPLpzlU4JGvXDtpZ7iQvaKFzDJEzHW9yWzBJ5L25
-         N435ZAkiqkbvd9p5IfQCV6z8VYKPBfm+ipmppkhHJgbLZr584qekLfZzXI7seVZRiIiV
-         1KabVh8BusoM/vcIV83iAdvEY1R6tfdaDjfnG/czdf9Y1L9t3NtOu3C+v3sS7pKRpi1A
-         TbvrHxucR9eQ3E78Ett5K2Jhlp3YUthC4zE3NWec7AmEOxwTbZbn1eBm+kDDmXmkhjH8
-         kjZg==
+        bh=nMAu6MQINuflXuKN4gs2ELPnPkzz6J51pp9nuweT/JU=;
+        b=Mg6xmCOsPGuLF19jkYjtkaZyLHONasPYLSStoeIH4aNY28/WWeoZiRpRw/8kJQPEYj
+         c0x9ROjSRDpFy0BW2uXM5ykwIwJbwe9akGFpa7M43lO7Fc+BOc5jNuAJIgMqhwcibX1k
+         NdPNAo2V9SpDl+X3XAUDDB1A/LHoSOdYX2kiG7+Ger3YAOqWmYiDwpu2F3vgoYPJSIsx
+         4iAQAQvihOwvZdOwmDe4f5VuqZ6dL00UUety/9IIxEECkMXcdaEUYYTOLxyUmYFRFfnn
+         qHZ7ldh50GPzv3VhkcJwcxmDqP2a66DO4ZNeoNAZ8vgpBGSJqM878WcFWJNPkmZnLcQe
+         iEHg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742310818; x=1742915618;
+        d=1e100.net; s=20230601; t=1742310944; x=1742915744;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=5yUDZJP2SM0YgcV/93zcQ6kDj56FosP1rr3RyiKi/9I=;
-        b=HhDH0pNLjnQI0xDespHz5wWu5aSo/pxpCrAUuhmlbie+bX8z3JYAqzF+6dTF42Wdkl
-         zNa5GZS5U5nWnA/86fUup7yb5tUv9OXppvIhcr5k6S+yZAZRfCrL/YE7GFCiZ45CCxih
-         J9SW01mNQD+R80ZsdG4fnFNAmjYvY6UqTvBZ37roOnX1L3lfbTmnoYHI5OrYUpxwqRFP
-         aPSGyixk5eqWhlED9g9A5iaxrP3DINvOMyWQJomxcmVV2ktOL3i8fOwW3rb5xA7PcOqM
-         nDHYroz+ujtGBedTjJzSqdi1+MFg2qgd+/jvpwjMkr4AT7LEM1yzLvsx3k1QHSnKTyBu
-         2T9A==
-X-Forwarded-Encrypted: i=1; AJvYcCVXfnfCUlFOOPqpq4UsU1ZQpy4909DjZEx4WXiJ5aiYkc6+m8aiCSptCVLi5yinMRobVYp3JMYapFs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyH1bJPIlr1c4kCfdFM8mJ0SI2Q5qGXI6PAI0gMrd19tbO8a+/0
-	dfHxkRieF6VdM9jRDNZQww/N3WTG52RHHnbieojcGIwq22t3wmfy+CznmZTYYdM=
-X-Gm-Gg: ASbGncvcp60UM9Zbx0aPgw/a6wFHlZnNM0qTxb0BPsv//YPesug25c2g2i4kdJN1Wsw
-	CumHxlQ7OwbebXaIk7aZkvMGZfJdpEdcDnD8N0kWKMZP9HrICIFS34VbC4qHvU0XnD3EqAMcJrZ
-	ve97MkZB0VTHMp9mOMPg8rqRraT19Y3ObWDbV1J2apOzjt0xHMqYKMVonh39FWKIOMkb5a7AwLm
-	ei/JQOZNOzUJo+43DM7TpeHg0hdd+IGzB3J7uBR3WzOIdPtQMTZZPBJTnKWscT5LVeNvxydhXrN
-	2rZPAxC3nvfECUILNsWT6fvHwdXE7TRPw0Qunk6F0vVyekDB8ETNOzBfr76gsCY2I3d622pe+JO
-	t1MOF9TUAMySnyjBoLJv2gw==
-X-Google-Smtp-Source: AGHT+IGUjoIGYDas8gkpp8G+lgjRxCUGyXnBQnaHKKHqfPTXpCc+7ovIZBRp+DbAz/aaNbbshlGP7w==
-X-Received: by 2002:adf:9b97:0:b0:399:6d53:68d9 with SMTP id ffacd0b85a97d-3996d536aabmr3166784f8f.38.1742310817752;
-        Tue, 18 Mar 2025 08:13:37 -0700 (PDT)
+        bh=nMAu6MQINuflXuKN4gs2ELPnPkzz6J51pp9nuweT/JU=;
+        b=BjwHhPTWZ08RyVqXaIGI4CynrTRNgazrwF+UsKoA3YxpyA3/p2kvJ7tB5sDwQGyN0A
+         nL3ds2+numAw5SRNd+kU2lXcinK+ecgmtRZzSCQ1Xf61HvqzpGNkmkiXgyYUb4JeXLzf
+         tOP8QAl0vguk7uNbvi/riSwlTkbbhHTfA36AFZc3VuVGmqPWrlFRYJ6d7F6v6iACydSV
+         7owRhYo8x6O9YYZvZibfqCSi2sQ7tTLJYe4TRcDhpOjf8+H7VMrCDUWkqOhMrLSsXYVW
+         385KSY7IAxfYnZo8HqFIEd/1tUoWfgBrJNaEdu7IKG3+ATMncIVSHZMyHIgnOeRdx6L+
+         a9Xw==
+X-Forwarded-Encrypted: i=1; AJvYcCWpyQddBCTiPOOaH1dXI2SHbeUU24iwemSv6CWSEDMZlMX9Nkj0n2RY4rrMAGeHJ82cLHPWav9NLj8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyFWRnFXVOfaTX6/bwzrX4EYqXoYPaQgkCytfeWpT4HMRZodTDJ
+	4cEPX75Tc0rn25jNU0DLb/U3XctwKd4NtdG6zyY2jHd95+vOB3Js0d1o1fL9IoA=
+X-Gm-Gg: ASbGncvqPbIsWFk3ExSyeiB9hBAGELRwTqiML22CDJbEN1izFh3ZB7ukYQTKNsiCGgy
+	i07kg3795qqkGLU3ELyrvX4pbVR8upSxMXKcjYXNF2NokAB7G8m76I7S5bamxdaS/6jT4NojDiT
+	YFRBBo4aOOFhcCxZ5VvNyIcmK7Bl+BZ1LHKf/BkvXmawZ95IYh6c0NqhLw+YXjadfRwFGdyxRqI
+	USpyHhLErXS0cEer8GJ3IwXVttMPzSBQpBKOASLpwrWqo3xHjv5AHMfbgrZiV8mlDHq3JvJ3azv
+	q6YsP02MgFkxm/z69VUyd+lz+u9fh1WBMOq0t8ny0AuyVXOpglhARavD7ht0+hy8LzfedQDICgM
+	bSP67z/JGhGhcD/bYEGiIQQ==
+X-Google-Smtp-Source: AGHT+IEdAuoBBa6rqdfXyXVPdfsyoNBKCU13VR5rdKO1AHzkVgoZcyHxlV5xdWf54kCgyzIi1YY4cg==
+X-Received: by 2002:a5d:5f93:0:b0:390:ec6e:43ea with SMTP id ffacd0b85a97d-3996bb51f57mr3474100f8f.15.1742310943702;
+        Tue, 18 Mar 2025 08:15:43 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:3d9:2080:eac1:f2d4:84a8:c5ff? ([2a01:e0a:3d9:2080:eac1:f2d4:84a8:c5ff])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-395cb40fab8sm18965595f8f.63.2025.03.18.08.13.36
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-395cb318a96sm18690639f8f.69.2025.03.18.08.15.42
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Mar 2025 08:13:37 -0700 (PDT)
-Message-ID: <c2d692a4-826e-4186-955a-41286c99de3f@linaro.org>
-Date: Tue, 18 Mar 2025 16:13:36 +0100
+        Tue, 18 Mar 2025 08:15:43 -0700 (PDT)
+Message-ID: <73dd1253-1b73-436f-af1b-94c724b2069e@linaro.org>
+Date: Tue, 18 Mar 2025 16:15:42 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: neil.armstrong@linaro.org
-Subject: Re: [PATCH V2 3/6] phy: qcom-qmp-ufs: Refactor UFS PHY reset
+Subject: Re: [PATCH V2 4/6] phy: qcom-qmp-ufs: Refactor qmp_ufs_exit callback.
 To: Nitin Rawat <quic_nitirawa@quicinc.com>, vkoul@kernel.org,
  kishon@kernel.org, manivannan.sadhasivam@linaro.org,
  James.Bottomley@HansenPartnership.com, martin.petersen@oracle.com,
@@ -85,7 +85,7 @@ Cc: quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org,
  linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-scsi@vger.kernel.org
 References: <20250318144944.19749-1-quic_nitirawa@quicinc.com>
- <20250318144944.19749-4-quic_nitirawa@quicinc.com>
+ <20250318144944.19749-5-quic_nitirawa@quicinc.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -112,10 +112,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250318144944.19749-4-quic_nitirawa@quicinc.com>
+In-Reply-To: <20250318144944.19749-5-quic_nitirawa@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_081339_727550_2052F0E5 
-X-CRM114-Status: GOOD (  22.15  )
+X-CRM114-CacheID: sfid-20250318_081545_474195_9D6F67B4 
+X-CRM114-Status: GOOD (  16.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,178 +134,94 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 18/03/2025 15:49, Nitin Rawat wrote:
-> Refactor the UFS PHY reset handling to parse the reset logic only once
-> during probe, instead of every resume.
-> 
-> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
-> qmp_ufs_probe to avoid unnecessary parsing during resume.
+> Rename qmp_ufs_disable to qmp_ufs_power_off and refactor
+> the code to move all the power off sequence to qmp_ufs_power_off.
 > 
 > Co-developed-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
 > Signed-off-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
 > Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 104 ++++++++++++------------
->   1 file changed, 50 insertions(+), 54 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 41 ++-----------------------
+>   1 file changed, 3 insertions(+), 38 deletions(-)
 > 
 > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index 0089ee80f852..3a80c2c110d2 100644
+> index 3a80c2c110d2..675fef106d3b 100644
 > --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
 > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -1757,32 +1757,6 @@ static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg
+> @@ -1757,19 +1757,6 @@ static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg
 >   	qmp_ufs_init_all(qmp, &cfg->tbls_hs_b);
 >   }
 > 
-> -static int qmp_ufs_com_init(struct qmp_ufs *qmp)
+> -static int qmp_ufs_com_exit(struct qmp_ufs *qmp)
 > -{
 > -	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> -	void __iomem *pcs = qmp->pcs;
-> -	int ret;
 > -
-> -	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-> -	if (ret) {
-> -		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-> -		return ret;
-> -	}
+> -	reset_control_assert(qmp->ufs_reset);
 > -
-> -	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
-> -	if (ret)
-> -		goto err_disable_regulators;
+> -	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
 > -
-> -	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
-> -
-> -	return 0;
-> -
-> -err_disable_regulators:
 > -	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
 > -
-> -	return ret;
+> -	return 0;
 > -}
 > -
->   static int qmp_ufs_com_exit(struct qmp_ufs *qmp)
->   {
->   	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> @@ -1800,41 +1774,27 @@ static int qmp_ufs_power_on(struct phy *phy)
+>   static int qmp_ufs_power_on(struct phy *phy)
 >   {
 >   	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> @@ -1839,39 +1826,17 @@ static int qmp_ufs_power_off(struct phy *phy)
+>   	struct qmp_ufs *qmp = phy_get_drvdata(phy);
 >   	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	void __iomem *pcs = qmp->pcs;
->   	int ret;
-> -	dev_vdbg(qmp->dev, "Initializing QMP phy\n");
-> -
-> -	if (cfg->no_pcs_sw_reset) {
-> -		/*
-> -		 * Get UFS reset, which is delayed until now to avoid a
-> -		 * circular dependency where UFS needs its PHY, but the PHY
-> -		 * needs this UFS reset.
-> -		 */
-> -		if (!qmp->ufs_reset) {
-> -			qmp->ufs_reset =
-> -				devm_reset_control_get_exclusive(qmp->dev,
-> -								 "ufsphy");
-> -
-> -			if (IS_ERR(qmp->ufs_reset)) {
-> -				ret = PTR_ERR(qmp->ufs_reset);
-> -				dev_err(qmp->dev,
-> -					"failed to get UFS reset: %d\n",
-> -					ret);
-> -
-> -				qmp->ufs_reset = NULL;
-> -				return ret;
-> -			}
-> -		}
 > 
-> -		ret = reset_control_assert(qmp->ufs_reset);
-> -		if (ret)
-> -			return ret;
-> +	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-> +	if (ret) {
-> +		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-> +		return ret;
->   	}
+> -	/* PHY reset */
+> -	if (!cfg->no_pcs_sw_reset)
+> -		qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+> -
+> -	/* stop SerDes */
+> -	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_START_CTRL], SERDES_START);
+> -
+>   	/* Put PHY into POWER DOWN state: active low */
+>   	qphy_clrbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+>   			SW_PWRDN);
+
+So where goes this code ? I think it should go in a new exit PHY op.
+
 > 
-> -	ret = qmp_ufs_com_init(qmp);
-> +	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
->   	if (ret)
-> -		return ret;
-> +		goto err_disable_regulators;
-> +
-> +	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
+> -	return 0;
+> -}
+> -
+> -static int qmp_ufs_exit(struct phy *phy)
+> -{
+> -	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> +	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
 > 
->   	return 0;
-> +
-> +err_disable_regulators:
+> -	qmp_ufs_com_exit(qmp);
 > +	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
-> +
-> +	return ret;
->   }
-
-This change is too fuzzy, please introduce qmp_ufs_get_phy_reset()
-in a patch, move qmp_ufs_com_init() inline in qmp_ufs_power_on()
-in a second time, and finally move reset_control_assert() to
-calibrate in a third patch (and explain why).
-
-Thanks,
-Neil
-
 > 
->   static int qmp_ufs_phy_calibrate(struct phy *phy)
-> @@ -1846,6 +1806,10 @@ static int qmp_ufs_phy_calibrate(struct phy *phy)
->   	unsigned int val;
->   	int ret;
-> 
-> +	ret = reset_control_assert(qmp->ufs_reset);
-> +	if (ret)
-> +		return ret;
-> +
->   	qmp_ufs_init_registers(qmp, cfg);
-> 
->   	ret = reset_control_deassert(qmp->ufs_reset);
-> @@ -2088,6 +2052,34 @@ static int qmp_ufs_parse_dt(struct qmp_ufs *qmp)
 >   	return 0;
 >   }
 > 
-> +static int qmp_ufs_get_phy_reset(struct qmp_ufs *qmp)
-> +{
-> +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	int ret;
-> +
-> +	if (!cfg->no_pcs_sw_reset)
-> +		return 0;
-> +
-> +	/*
-> +	 * Get UFS reset, which is delayed until now to avoid a
-> +	 * circular dependency where UFS needs its PHY, but the PHY
-> +	 * needs this UFS reset.
-> +	 */
-> +	if (!qmp->ufs_reset) {
-> +		qmp->ufs_reset =
-> +		devm_reset_control_get_exclusive(qmp->dev, "ufsphy");
-> +
-> +		if (IS_ERR(qmp->ufs_reset)) {
-> +			ret = PTR_ERR(qmp->ufs_reset);
-> +			dev_err(qmp->dev, "failed to get PHY reset: %d\n", ret);
-> +			qmp->ufs_reset = NULL;
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->   static int qmp_ufs_probe(struct platform_device *pdev)
+> -static int qmp_ufs_disable(struct phy *phy)
+> -{
+> -	int ret;
+> -
+> -	ret = qmp_ufs_power_off(phy);
+> -	if (ret)
+> -		return ret;
+> -	return qmp_ufs_exit(phy);
+> -}
+> -
+>   static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
 >   {
->   	struct device *dev = &pdev->dev;
-> @@ -2114,6 +2106,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
->   	if (ret)
->   		return ret;
+>   	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+> @@ -1890,7 +1855,7 @@ static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
 > 
-> +	ret = qmp_ufs_get_phy_reset(qmp);
-> +	if (ret)
-> +		return ret;
-> +
->   	/* Check for legacy binding with child node. */
->   	np = of_get_next_available_child(dev->of_node, NULL);
->   	if (np) {
+>   static const struct phy_ops qcom_qmp_ufs_phy_ops = {
+>   	.power_on	= qmp_ufs_power_on,
+> -	.power_off	= qmp_ufs_disable,
+> +	.power_off	= qmp_ufs_power_off,
+>   	.calibrate	= qmp_ufs_phy_calibrate,
+>   	.set_mode	= qmp_ufs_set_mode,
+>   	.owner		= THIS_MODULE,
 > --
 > 2.48.1
 > 
