@@ -4,61 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A4F5C282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 19:46:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5472BC282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 19:50:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gdQmTPAKGTh2CBSQhvPI3XLUTaFgur80fpDjL37fH7E=; b=1pRrVlSlEpcL7T
-	VBCLOQWtqu5WfohoPK3roFwlMwKImN1JJCLLklcVfs8ZpoVnrwV4xgo+HMKAIlAtJDjJ4tO+bMfCz
-	owSWA3u1T+ED95Tskg12gCS/ETXCMOzg83HwHcWqqrE28RCM/Ohy/a+5Z11cwPS2T1uK7gbYadvea
-	Wv3FKGEReRESx2jeXAK7y3v+ttssa2q0Lsi0bO0+yFLXQgKN0JKgvR6ZxEBL5emL/1+oZHE9frt/q
-	f82UNzlmzxPtQkYQV2kJdLneffOOa1roQ47sx7Hvg9HhVHRC0DlepW2Ov/oNJEhbUVmKTrtXB33xm
-	xeGmIq6ACouQuKS0Rs4g==;
+	List-Owner; bh=cxpFl9g7+B4JFnWujF3Y5gjNmiBDYGYXB2/WeIxYsY4=; b=TxRQZAxEHR/jjJ
+	p4wJBorjF4vRzKQc922yvoqPb1HJCT9KsFq0TfF4EA6e8sqmvEnCjGqBXXO/+hugduEKW/qszwEQb
+	MX+M3RO88FcCn821tR/RPb/9ciPmnOPMhkSSmW+Q4nkfJH5u1rU/baGmv9bEg5b6WEDDU6L+gSbgd
+	4LREkVnhnn80tyqVSadYFYt6ijaGbn9E1//4Uv6/Vu9MXjqLDtrYocK+7TaLc0HQDSp/XCbehyWeF
+	sK9BL2siH3r5ob6tE1KbDeEn/6EH08sdMaIIwMrf/HRtINPTZKrmd//dCa+K5MZIN4lKGvCLHY/FO
+	8q88g7yImsNFKqEdzpTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuctH-00000006wzm-3WDn;
-	Tue, 18 Mar 2025 19:46:19 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tucxH-00000006xOH-054A;
+	Tue, 18 Mar 2025 19:50:27 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuctF-00000006wyd-1wz0
+	id 1tucxF-00000006xO2-2PvY
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Mar 2025 19:46:19 +0000
+	Tue, 18 Mar 2025 19:50:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 56D245C047C;
-	Tue, 18 Mar 2025 19:43:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1886FC4CEDD;
-	Tue, 18 Mar 2025 19:46:15 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A3B5161559;
+	Tue, 18 Mar 2025 19:50:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 286C5C4CEDD;
+	Tue, 18 Mar 2025 19:50:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742327175;
-	bh=lEKbj7qrSRjeNGVY4SRKByN692s3IiIjiIa6ElYv0SQ=;
+	s=k20201202; t=1742327424;
+	bh=6hdO58MKH0BNWV5qZxIKRDwcvWh3JUfmzbEUrW588jQ=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hKxEFzI4269RyrslzX6RBJfahrwMkeMcZ7IDGJNxY7R5O0/6KFt1KQV34UYHBjClv
-	 jSmDwB7YaoiFvGtw18ohBXalAdhlQKjVVKn0qSqNfKdivO5ovMOsN7nOyywND/fFzz
-	 88lidbIYxHbh0QzqHeE5sJyioZL8HyVbtxrUwnE2sQAiD8ADjU0LgGr0chArRczLFt
-	 Mhi/ryxgy6HqlzOypB0deT4Nj+RFJlIqkctF9tuoNgXTj4AhAFjrDe9viQI1PbGqnU
-	 PqGcyHXgZN1PCRUnurKFA7i7NOsgTWH7Stlk4AIeJ5OYwTB21/LdSkDy6TI3+hlkT6
-	 Jc1dg37l11GxQ==
-Date: Tue, 18 Mar 2025 14:46:13 -0500
+	b=M/uwAorbadYZhvpOulGkbKMAZnuLmRS39MAamq2u0wcbPOnOFChWEhfrO7qr3g4gz
+	 31ztOikGwpRqeHy2VKAJvE17FZZV4uhsndRrdO1UWWzIe5QN5L3Sf2buNAAQTjlSuk
+	 TPn/0QPLSEyfMBQlUy3ittCYTqhtnH1oypNE600II4ZWmFkolrotXsuepAju3t1+ad
+	 j8YO6bXrshN9yM7Et4FaZ8S/piffKOn0VX6DMF04iWyryXNei/4+HlinblDYWFRfA6
+	 Gz5CrcNmYp2ez7RHwn3Edv2SE4eus0CKyhcAaoaJaRH+IAPuXtcDRQoA+3nO6rsFN/
+	 zL+BWGrp0kS3w==
+Date: Tue, 18 Mar 2025 14:50:21 -0500
 From: Bjorn Andersson <andersson@kernel.org>
 To: Nitin Rawat <quic_nitirawa@quicinc.com>
 Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org, 
 	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com, konrad.dybcio@oss.qualcomm.com, 
 	quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org
-Subject: Re: [PATCH V2 3/6] phy: qcom-qmp-ufs: Refactor UFS PHY reset
-Message-ID: <w3si5lpps5nzpyxjulxynl3fxwobtbnfsqwau6et5s2pkgehub@vcmkdaevbf5w>
+	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, Can Guo <quic_cang@quicinc.com>
+Subject: Re: [PATCH V2 6/6] scsi: ufs: host : Introduce phy_power_on/off
+ wrapper function
+Message-ID: <jx6t2745x3swbfiqwsii5xdumhpanc435ooucrg2nlyl22llho@epleg24suedr>
 References: <20250318144944.19749-1-quic_nitirawa@quicinc.com>
- <20250318144944.19749-4-quic_nitirawa@quicinc.com>
+ <20250318144944.19749-7-quic_nitirawa@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250318144944.19749-4-quic_nitirawa@quicinc.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_124617_619028_AE04714F 
-X-CRM114-Status: GOOD (  30.87  )
+In-Reply-To: <20250318144944.19749-7-quic_nitirawa@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,215 +73,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 18, 2025 at 08:19:41PM +0530, Nitin Rawat wrote:
-> Refactor the UFS PHY reset handling to parse the reset logic only once
-> during probe, instead of every resume.
+On Tue, Mar 18, 2025 at 08:19:44PM +0530, Nitin Rawat wrote:
+> Introduce ufs_qcom_phy_power_on and ufs_qcom_phy_power_off wrapper
+> functions with mutex protection to ensure safe usage of is_phy_pwr_on
+> and prevent possible race conditions.
 > 
 
-This looks very reasonable! But it would be preferred to see the commit
-messages following the what format outlines in
-https://docs.kernel.org/process/submitting-patches.html#describe-your-changes
-with a clear problem description followed by a description of the
-technical solution.
+Please describe the problem properly here. Are you introducing the mutex
+because there is a problem, or because you want to be "safe"?
 
-> Move the UFS PHY reset parsing logic from qmp_phy_power_on to
-> qmp_ufs_probe to avoid unnecessary parsing during resume.
-
-Please add ()-suffix to function names in your commit messages.
-
-Also, this series moves things around a lot, can you confirm that UFS is
-working inbetween each one of this patches, so that the branch is
-bisectable when this is being picked up?
-
-> 
-> Co-developed-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
-> Signed-off-by: Ram Kumar Dwivedi <quic_rdwivedi@quicinc.com>
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 104 ++++++++++++------------
->  1 file changed, 50 insertions(+), 54 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> index 0089ee80f852..3a80c2c110d2 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-> @@ -1757,32 +1757,6 @@ static void qmp_ufs_init_registers(struct qmp_ufs *qmp, const struct qmp_phy_cfg
->  	qmp_ufs_init_all(qmp, &cfg->tbls_hs_b);
->  }
-> 
-> -static int qmp_ufs_com_init(struct qmp_ufs *qmp)
-> -{
-> -	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> -	void __iomem *pcs = qmp->pcs;
-> -	int ret;
-> -
-> -	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-> -	if (ret) {
-> -		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-> -		return ret;
-> -	}
-> -
-> -	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
-> -	if (ret)
-> -		goto err_disable_regulators;
-> -
-> -	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
-> -
-> -	return 0;
-> -
-> -err_disable_regulators:
-> -	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
-> -
-> -	return ret;
-> -}
-> -
->  static int qmp_ufs_com_exit(struct qmp_ufs *qmp)
->  {
->  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> @@ -1800,41 +1774,27 @@ static int qmp_ufs_power_on(struct phy *phy)
->  {
->  	struct qmp_ufs *qmp = phy_get_drvdata(phy);
->  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	void __iomem *pcs = qmp->pcs;
-
-This is only used once, perhaps not worth a local variable to save 5
-characters on that line?
-
->  	int ret;
-> -	dev_vdbg(qmp->dev, "Initializing QMP phy\n");
-> -
-> -	if (cfg->no_pcs_sw_reset) {
-> -		/*
-> -		 * Get UFS reset, which is delayed until now to avoid a
-> -		 * circular dependency where UFS needs its PHY, but the PHY
-> -		 * needs this UFS reset.
-> -		 */
-> -		if (!qmp->ufs_reset) {
-> -			qmp->ufs_reset =
-> -				devm_reset_control_get_exclusive(qmp->dev,
-> -								 "ufsphy");
-> -
-> -			if (IS_ERR(qmp->ufs_reset)) {
-> -				ret = PTR_ERR(qmp->ufs_reset);
-> -				dev_err(qmp->dev,
-> -					"failed to get UFS reset: %d\n",
-> -					ret);
-> -
-> -				qmp->ufs_reset = NULL;
-> -				return ret;
-> -			}
-> -		}
-> 
-> -		ret = reset_control_assert(qmp->ufs_reset);
-> -		if (ret)
-> -			return ret;
-> +	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-> +	if (ret) {
-> +		dev_err(qmp->dev, "failed to enable regulators, err=%d\n", ret);
-
-regulator_bulk_enable() will already have printed a more useful error
-message, letting you know which of the vregs[] it was that failed to
-enable.
-
-> +		return ret;
->  	}
-> 
-> -	ret = qmp_ufs_com_init(qmp);
-> +	ret = clk_bulk_prepare_enable(qmp->num_clks, qmp->clks);
->  	if (ret)
-> -		return ret;
-> +		goto err_disable_regulators;
-> +
-> +	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
-> 
->  	return 0;
-> +
-> +err_disable_regulators:
-> +	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
-> +
-> +	return ret;
->  }
-> 
->  static int qmp_ufs_phy_calibrate(struct phy *phy)
-> @@ -1846,6 +1806,10 @@ static int qmp_ufs_phy_calibrate(struct phy *phy)
->  	unsigned int val;
->  	int ret;
-> 
-> +	ret = reset_control_assert(qmp->ufs_reset);
-> +	if (ret)
-> +		return ret;
-> +
->  	qmp_ufs_init_registers(qmp, cfg);
-> 
->  	ret = reset_control_deassert(qmp->ufs_reset);
-> @@ -2088,6 +2052,34 @@ static int qmp_ufs_parse_dt(struct qmp_ufs *qmp)
->  	return 0;
->  }
-> 
-> +static int qmp_ufs_get_phy_reset(struct qmp_ufs *qmp)
-> +{
-> +	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> +	int ret;
-> +
-> +	if (!cfg->no_pcs_sw_reset)
-> +		return 0;
-> +
-> +	/*
-> +	 * Get UFS reset, which is delayed until now to avoid a
-> +	 * circular dependency where UFS needs its PHY, but the PHY
-> +	 * needs this UFS reset.
-
-This is invoked only once, from qcom_ufs_probe(), so it doesn't seem
-accurate anymore. How come this is no longer needed? Please describe
-what changed int he commit message.
-
-> +	 */
-> +	if (!qmp->ufs_reset) {
-> +		qmp->ufs_reset =
-> +		devm_reset_control_get_exclusive(qmp->dev, "ufsphy");
-
-The line break here is really weird, are you sure checkpatch --strict
-didn't complain about this one?
-
-> +
-> +		if (IS_ERR(qmp->ufs_reset)) {
-> +			ret = PTR_ERR(qmp->ufs_reset);
-> +			dev_err(qmp->dev, "failed to get PHY reset: %d\n", ret);
-
-return dev_err_probe(qmp->dev, PTR_ERR(qmp->ufs_reset), "failed to...: %pe\n", qmp->ufs_reset);
-
-While being more succinct, it also stores the reason for failing the
-probe so that you can find it in /sys/kernel/debug/devices_deferred
-
-> +			qmp->ufs_reset = NULL;
-
-Use a local variable if you're worried about someone accessing the stale
-error code after returning here.
+Why is it "refcounted", is the calling code paths no longer in sync? How
+long has the current implementation been broken?
 
 Regards,
 Bjorn
 
-> +			return ret;
-> +		}
+> Co-developed-by: Can Guo <quic_cang@quicinc.com>
+> Signed-off-by: Can Guo <quic_cang@quicinc.com>
+> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+> ---
+>  drivers/ufs/host/ufs-qcom.c | 44 +++++++++++++++++++++++++++++++------
+>  drivers/ufs/host/ufs-qcom.h |  4 ++++
+>  2 files changed, 41 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+> index 5c7b6c75d669..8f80724e64b9 100644
+> --- a/drivers/ufs/host/ufs-qcom.c
+> +++ b/drivers/ufs/host/ufs-qcom.c
+> @@ -421,6 +421,38 @@ static u32 ufs_qcom_get_hs_gear(struct ufs_hba *hba)
+>  	return UFS_HS_G3;
+>  }
+> 
+> +static int ufs_qcom_phy_power_on(struct ufs_hba *hba)
+> +{
+> +	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+> +	struct phy *phy = host->generic_phy;
+> +	int ret = 0;
+> +
+> +	guard(mutex)(&host->phy_mutex);
+> +	if (!host->is_phy_pwr_on) {
+> +		ret = phy_power_on(phy);
+> +		if (!ret)
+> +			host->is_phy_pwr_on = true;
 > +	}
 > +
-> +	return 0;
+> +	return ret;
 > +}
 > +
->  static int qmp_ufs_probe(struct platform_device *pdev)
+> +static int ufs_qcom_phy_power_off(struct ufs_hba *hba)
+> +{
+> +	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+> +	struct phy *phy = host->generic_phy;
+> +	int ret = 0;
+> +
+> +	guard(mutex)(&host->phy_mutex);
+> +	if (host->is_phy_pwr_on) {
+> +		ret = phy_power_off(phy);
+> +		if (!ret)
+> +			host->is_phy_pwr_on = false;
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+>  static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
 >  {
->  	struct device *dev = &pdev->dev;
-> @@ -2114,6 +2106,10 @@ static int qmp_ufs_probe(struct platform_device *pdev)
->  	if (ret)
+>  	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+> @@ -449,7 +481,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
 >  		return ret;
 > 
-> +	ret = qmp_ufs_get_phy_reset(qmp);
-> +	if (ret)
-> +		return ret;
-> +
->  	/* Check for legacy binding with child node. */
->  	np = of_get_next_available_child(dev->of_node, NULL);
->  	if (np) {
+>  	if (phy->power_count) {
+> -		phy_power_off(phy);
+> +		ufs_qcom_phy_power_off(hba);
+>  		phy_exit(phy);
+>  	}
+> 
+> @@ -466,7 +498,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+>  		goto out_disable_phy;
+> 
+>  	/* power on phy - start serdes and phy's power and clocks */
+> -	ret = phy_power_on(phy);
+> +	ret = ufs_qcom_phy_power_on(hba);
+>  	if (ret) {
+>  		dev_err(hba->dev, "%s: phy power on failed, ret = %d\n",
+>  			__func__, ret);
+> @@ -1017,7 +1049,6 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>  				 enum ufs_notify_change_status status)
+>  {
+>  	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+> -	struct phy *phy = host->generic_phy;
+>  	int err;
+> 
+>  	/*
+> @@ -1037,7 +1068,7 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>  				/* disable device ref_clk */
+>  				ufs_qcom_dev_ref_clk_ctrl(host, false);
+>  			}
+> -			err = phy_power_off(phy);
+> +			err = ufs_qcom_phy_power_off(hba);
+>  			if (err) {
+>  				dev_err(hba->dev, "phy power off failed, ret=%d\n", err);
+>  					return err;
+> @@ -1046,7 +1077,7 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
+>  		break;
+>  	case POST_CHANGE:
+>  		if (on) {
+> -			err = phy_power_on(phy);
+> +			err = ufs_qcom_phy_power_on(hba);
+>  			if (err) {
+>  				dev_err(hba->dev, "phy power on failed, ret = %d\n", err);
+>  				return err;
+> @@ -1233,10 +1264,9 @@ static int ufs_qcom_init(struct ufs_hba *hba)
+>  static void ufs_qcom_exit(struct ufs_hba *hba)
+>  {
+>  	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
+> -	struct phy *phy = host->generic_phy;
+> 
+>  	ufs_qcom_disable_lane_clks(host);
+> -	phy_power_off(phy);
+> +	ufs_qcom_phy_power_off(hba);
+>  	phy_exit(host->generic_phy);
+>  }
+> 
+> diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
+> index d0e6ec9128e7..3db29fbcd40b 100644
+> --- a/drivers/ufs/host/ufs-qcom.h
+> +++ b/drivers/ufs/host/ufs-qcom.h
+> @@ -252,6 +252,10 @@ struct ufs_qcom_host {
+>  	u32 phy_gear;
+> 
+>  	bool esi_enabled;
+> +	/* flag to check if phy is powered on */
+> +	bool is_phy_pwr_on;
+> +	/* Protect the usage of is_phy_pwr_on against racing */
+> +	struct mutex phy_mutex;
+>  };
+> 
+>  struct ufs_qcom_drvdata {
 > --
 > 2.48.1
 > 
