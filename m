@@ -4,59 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5472BC282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 19:50:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2368EC282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 20:45:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cxpFl9g7+B4JFnWujF3Y5gjNmiBDYGYXB2/WeIxYsY4=; b=TxRQZAxEHR/jjJ
-	p4wJBorjF4vRzKQc922yvoqPb1HJCT9KsFq0TfF4EA6e8sqmvEnCjGqBXXO/+hugduEKW/qszwEQb
-	MX+M3RO88FcCn821tR/RPb/9ciPmnOPMhkSSmW+Q4nkfJH5u1rU/baGmv9bEg5b6WEDDU6L+gSbgd
-	4LREkVnhnn80tyqVSadYFYt6ijaGbn9E1//4Uv6/Vu9MXjqLDtrYocK+7TaLc0HQDSp/XCbehyWeF
-	sK9BL2siH3r5ob6tE1KbDeEn/6EH08sdMaIIwMrf/HRtINPTZKrmd//dCa+K5MZIN4lKGvCLHY/FO
-	8q88g7yImsNFKqEdzpTw==;
+	List-Owner; bh=l2jm35e/bvWi12C84l1ps13W+zlhYprpdwekSvgOPU4=; b=AXklMLWlQxM2+S
+	p+sexaNgPa1gP3ktLsli94CE9lCNbgYLKdmAwh0XmrRFnJTFz6T0oUuxHsrjLdeEvV1Vnwgn13esT
+	bRSSqGwfUseVoB9DcB7yV1RdxWOp+yMC6DMxj0nknxyT3Ua+OkORIZFwMKR0kI1jKnDNIq+c1vVxB
+	iW0z+Yu0zAwN8neMMsHClvnYioPMx/c20+EXbxX9NbEVviV0YXcpLdpyFR+YBousbC36dED8gwJDj
+	S/ANU5C6Ji2Hxfug7CcovNtJZ0YKf9SdLFA4QsFslTcnZ33xHvo63imnTTLcOjSvi5s9beccIjc9/
+	KIpvLepTLSmAoMVjSs2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tucxH-00000006xOH-054A;
-	Tue, 18 Mar 2025 19:50:27 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1tudoy-000000072wV-2rfe;
+	Tue, 18 Mar 2025 20:45:56 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tucxF-00000006xO2-2PvY
+	id 1tudov-000000072wA-2748
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Mar 2025 19:50:25 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id A3B5161559;
-	Tue, 18 Mar 2025 19:50:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 286C5C4CEDD;
-	Tue, 18 Mar 2025 19:50:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742327424;
-	bh=6hdO58MKH0BNWV5qZxIKRDwcvWh3JUfmzbEUrW588jQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=M/uwAorbadYZhvpOulGkbKMAZnuLmRS39MAamq2u0wcbPOnOFChWEhfrO7qr3g4gz
-	 31ztOikGwpRqeHy2VKAJvE17FZZV4uhsndRrdO1UWWzIe5QN5L3Sf2buNAAQTjlSuk
-	 TPn/0QPLSEyfMBQlUy3ittCYTqhtnH1oypNE600II4ZWmFkolrotXsuepAju3t1+ad
-	 j8YO6bXrshN9yM7Et4FaZ8S/piffKOn0VX6DMF04iWyryXNei/4+HlinblDYWFRfA6
-	 Gz5CrcNmYp2ez7RHwn3Edv2SE4eus0CKyhcAaoaJaRH+IAPuXtcDRQoA+3nO6rsFN/
-	 zL+BWGrp0kS3w==
-Date: Tue, 18 Mar 2025 14:50:21 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Nitin Rawat <quic_nitirawa@quicinc.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org, 
-	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com, konrad.dybcio@oss.qualcomm.com, 
-	quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, Can Guo <quic_cang@quicinc.com>
-Subject: Re: [PATCH V2 6/6] scsi: ufs: host : Introduce phy_power_on/off
- wrapper function
-Message-ID: <jx6t2745x3swbfiqwsii5xdumhpanc435ooucrg2nlyl22llho@epleg24suedr>
-References: <20250318144944.19749-1-quic_nitirawa@quicinc.com>
- <20250318144944.19749-7-quic_nitirawa@quicinc.com>
+	Tue, 18 Mar 2025 20:45:54 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52ICeCUP029922;
+	Tue, 18 Mar 2025 20:45:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+JCvgkzNThz1hf8hNzsnQUDSkHaYz3SwncuZ+rmg82o=; b=Ys/qtZN+5Rbs0ohA
+	OU5D2VvcZpc3Lwe+fuA+Ur2sECpS19A/lHipmtAWzWahYwKeal+T0RPWvaUAbqeb
+	ruoJxGE2E+Ht6tNU/+KWLGPD/EAG4roN7KqsITowKZpJryeDLnCnsFgojMylLNTe
+	5rMls8VGJC2VxBKajOacKaTsx/in11+b5JVN01fU2M7f/hfulIEaKmxOPbDyRBiv
+	nNRs0zVtu4gCGEv0hg9z6BehwHeiuW8yy2UimnOXNusoqnXa1KwXOBWrURe+GNbD
+	48mMQ8MXHbyPZEFu9gsoNS3VhxJJuMcahBFE2ZI4pw19zwrw62jHwnlRXk8WKPC3
+	vLlsPw==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45f91t1a3r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 18 Mar 2025 20:45:36 +0000 (GMT)
+Received: from nasanex01b.na.qualcomm.com (nasanex01b.na.qualcomm.com [10.46.141.250])
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52IKjZt1027943
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 18 Mar 2025 20:45:35 GMT
+Received: from [10.110.120.126] (10.80.80.8) by nasanex01b.na.qualcomm.com
+ (10.46.141.250) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 18 Mar
+ 2025 13:45:35 -0700
+Message-ID: <2448dd34-25e6-4d4f-8c13-d98debc0753e@quicinc.com>
+Date: Tue, 18 Mar 2025 13:45:34 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250318144944.19749-7-quic_nitirawa@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 4/6] arm64: dts: qcom: sm8750: Add UFS nodes for SM8750
+ SoC
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Alim Akhtar <alim.akhtar@samsung.com>,
+        Avri Altman <avri.altman@wdc.com>,
+        Bart Van Assche <bvanassche@acm.org>,
+        Bjorn Andersson <andersson@kernel.org>, Andy Gross <agross@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Satya Durga Srinivasu Prabhala
+	<quic_satyap@quicinc.com>,
+        Trilok Soni <quic_tsoni@quicinc.com>, <linux-arm-msm@vger.kernel.org>,
+        <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
+        Nitin Rawat <quic_nitirawa@quicinc.com>,
+        "Manish Pandey" <quic_mapa@quicinc.com>
+References: <20250310-sm8750_ufs_master-v2-0-0dfdd6823161@quicinc.com>
+ <20250310-sm8750_ufs_master-v2-4-0dfdd6823161@quicinc.com>
+ <20250318052841.bdiqbzxrpzwqf7h7@thinkpad>
+Content-Language: en-US
+From: Melody Olvera <quic_molvera@quicinc.com>
+In-Reply-To: <20250318052841.bdiqbzxrpzwqf7h7@thinkpad>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01b.na.qualcomm.com (10.46.141.250)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: J5jzGRzhnljgSotgqMER08QiY3fZwYfh
+X-Authority-Analysis: v=2.4 cv=Xrz6OUF9 c=1 sm=1 tr=0 ts=67d9db70 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=4sn12QoEtl80kFXXyQYA:9 a=QEXdDO2ut3YA:10
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: J5jzGRzhnljgSotgqMER08QiY3fZwYfh
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-18_09,2025-03-17_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ bulkscore=0 impostorscore=0 mlxlogscore=999 clxscore=1015 mlxscore=0
+ priorityscore=1501 phishscore=0 suspectscore=0 adultscore=0 spamscore=0
+ malwarescore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503180150
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250318_134553_576842_B905FBB2 
+X-CRM114-Status: GOOD (  14.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,152 +113,154 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 18, 2025 at 08:19:44PM +0530, Nitin Rawat wrote:
-> Introduce ufs_qcom_phy_power_on and ufs_qcom_phy_power_off wrapper
-> functions with mutex protection to ensure safe usage of is_phy_pwr_on
-> and prevent possible race conditions.
-> 
 
-Please describe the problem properly here. Are you introducing the mutex
-because there is a problem, or because you want to be "safe"?
 
-Why is it "refcounted", is the calling code paths no longer in sync? How
-long has the current implementation been broken?
+On 3/17/2025 10:28 PM, Manivannan Sadhasivam wrote:
+> On Mon, Mar 10, 2025 at 02:12:32PM -0700, Melody Olvera wrote:
+>> From: Nitin Rawat <quic_nitirawa@quicinc.com>
+>>
+>> Add UFS host controller and PHY nodes for SM8750 SoC.
+>>
+>> Co-developed-by: Manish Pandey <quic_mapa@quicinc.com>
+>> Signed-off-by: Manish Pandey <quic_mapa@quicinc.com>
+>> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
+>> ---
+>>   arch/arm64/boot/dts/qcom/sm8750.dtsi | 106 +++++++++++++++++++++++++++++++++++
+>>   1 file changed, 106 insertions(+)
+>>
+>> diff --git a/arch/arm64/boot/dts/qcom/sm8750.dtsi b/arch/arm64/boot/dts/qcom/sm8750.dtsi
+>> index 529e4e4e1d0ea9e99e89c12d072e27c45091f29e..72f69e717ce049bb0c524aa389d837ecd1459535 100644
+>> --- a/arch/arm64/boot/dts/qcom/sm8750.dtsi
+>> +++ b/arch/arm64/boot/dts/qcom/sm8750.dtsi
+>> @@ -13,6 +13,7 @@
+>>   #include <dt-bindings/power/qcom,rpmhpd.h>
+>>   #include <dt-bindings/power/qcom-rpmpd.h>
+>>   #include <dt-bindings/soc/qcom,rpmh-rsc.h>
+>> +#include <dt-bindings/gpio/gpio.h>
+> Sort includes alphabetically.
 
-Regards,
-Bjorn
+Ack.
 
-> Co-developed-by: Can Guo <quic_cang@quicinc.com>
-> Signed-off-by: Can Guo <quic_cang@quicinc.com>
-> Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
-> ---
->  drivers/ufs/host/ufs-qcom.c | 44 +++++++++++++++++++++++++++++++------
->  drivers/ufs/host/ufs-qcom.h |  4 ++++
->  2 files changed, 41 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-> index 5c7b6c75d669..8f80724e64b9 100644
-> --- a/drivers/ufs/host/ufs-qcom.c
-> +++ b/drivers/ufs/host/ufs-qcom.c
-> @@ -421,6 +421,38 @@ static u32 ufs_qcom_get_hs_gear(struct ufs_hba *hba)
->  	return UFS_HS_G3;
->  }
-> 
-> +static int ufs_qcom_phy_power_on(struct ufs_hba *hba)
-> +{
-> +	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> +	struct phy *phy = host->generic_phy;
-> +	int ret = 0;
-> +
-> +	guard(mutex)(&host->phy_mutex);
-> +	if (!host->is_phy_pwr_on) {
-> +		ret = phy_power_on(phy);
-> +		if (!ret)
-> +			host->is_phy_pwr_on = true;
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static int ufs_qcom_phy_power_off(struct ufs_hba *hba)
-> +{
-> +	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> +	struct phy *phy = host->generic_phy;
-> +	int ret = 0;
-> +
-> +	guard(mutex)(&host->phy_mutex);
-> +	if (host->is_phy_pwr_on) {
-> +		ret = phy_power_off(phy);
-> +		if (!ret)
-> +			host->is_phy_pwr_on = false;
-> +	}
-> +
-> +	return ret;
-> +}
-> +
->  static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
->  {
->  	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> @@ -449,7 +481,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
->  		return ret;
-> 
->  	if (phy->power_count) {
-> -		phy_power_off(phy);
-> +		ufs_qcom_phy_power_off(hba);
->  		phy_exit(phy);
->  	}
-> 
-> @@ -466,7 +498,7 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
->  		goto out_disable_phy;
-> 
->  	/* power on phy - start serdes and phy's power and clocks */
-> -	ret = phy_power_on(phy);
-> +	ret = ufs_qcom_phy_power_on(hba);
->  	if (ret) {
->  		dev_err(hba->dev, "%s: phy power on failed, ret = %d\n",
->  			__func__, ret);
-> @@ -1017,7 +1049,6 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
->  				 enum ufs_notify_change_status status)
->  {
->  	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> -	struct phy *phy = host->generic_phy;
->  	int err;
-> 
->  	/*
-> @@ -1037,7 +1068,7 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
->  				/* disable device ref_clk */
->  				ufs_qcom_dev_ref_clk_ctrl(host, false);
->  			}
-> -			err = phy_power_off(phy);
-> +			err = ufs_qcom_phy_power_off(hba);
->  			if (err) {
->  				dev_err(hba->dev, "phy power off failed, ret=%d\n", err);
->  					return err;
-> @@ -1046,7 +1077,7 @@ static int ufs_qcom_setup_clocks(struct ufs_hba *hba, bool on,
->  		break;
->  	case POST_CHANGE:
->  		if (on) {
-> -			err = phy_power_on(phy);
-> +			err = ufs_qcom_phy_power_on(hba);
->  			if (err) {
->  				dev_err(hba->dev, "phy power on failed, ret = %d\n", err);
->  				return err;
-> @@ -1233,10 +1264,9 @@ static int ufs_qcom_init(struct ufs_hba *hba)
->  static void ufs_qcom_exit(struct ufs_hba *hba)
->  {
->  	struct ufs_qcom_host *host = ufshcd_get_variant(hba);
-> -	struct phy *phy = host->generic_phy;
-> 
->  	ufs_qcom_disable_lane_clks(host);
-> -	phy_power_off(phy);
-> +	ufs_qcom_phy_power_off(hba);
->  	phy_exit(host->generic_phy);
->  }
-> 
-> diff --git a/drivers/ufs/host/ufs-qcom.h b/drivers/ufs/host/ufs-qcom.h
-> index d0e6ec9128e7..3db29fbcd40b 100644
-> --- a/drivers/ufs/host/ufs-qcom.h
-> +++ b/drivers/ufs/host/ufs-qcom.h
-> @@ -252,6 +252,10 @@ struct ufs_qcom_host {
->  	u32 phy_gear;
-> 
->  	bool esi_enabled;
-> +	/* flag to check if phy is powered on */
-> +	bool is_phy_pwr_on;
-> +	/* Protect the usage of is_phy_pwr_on against racing */
-> +	struct mutex phy_mutex;
->  };
-> 
->  struct ufs_qcom_drvdata {
-> --
-> 2.48.1
-> 
-> 
+>
+>>   
+>>   / {
+>>   	interrupt-parent = <&intc>;
+>> @@ -2675,6 +2676,111 @@ gic_its: msi-controller@16040000 {
+>>   			};
+>>   		};
+>>   
+>> +		ufs_mem_phy: phy@1d80000 {
+>> +			compatible = "qcom,sm8750-qmp-ufs-phy";
+>> +			reg = <0 0x01d80000 0 0x2000>;
+> Use 0x0 for consistency.
+
+Ack.
+
+>
+>> +
+>> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
+>> +				<&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
+>> +				 <&tcsrcc TCSR_UFS_CLKREF_EN>;
+> Please align the clocks.
+
+Ack.
+
+>
+>> +
+>> +			clock-names = "ref",
+>> +				      "ref_aux",
+>> +				      "qref";
+>> +
+>> +			resets = <&ufs_mem_hc 0>;
+>> +			reset-names = "ufsphy";
+>> +
+>> +			power-domains = <&gcc GCC_UFS_MEM_PHY_GDSC>;
+>> +
+>> +			#clock-cells = <1>;
+>> +			#phy-cells = <0>;
+>> +
+>> +			status = "disabled";
+>> +			};
+> Here too.
+
+I'm assuming you mean the curly brace; ack.
+
+>
+>> +
+>> +		ufs_mem_hc: ufs@1d84000 {
+>> +			compatible = "qcom,sm8750-ufshc",
+>> +				     "qcom,ufshc",
+>> +				     "jedec,ufs-2.0";
+> Compatibles can be ordered in the same line.
+
+Ack.
+
+>
+>> +			reg = <0 0x01d84000 0 0x3000>;
+> 0x0
+
+Ack.
+
+>
+>> +
+>> +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+>> +
+>> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
+>> +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
+>> +				 <&rpmhcc RPMH_LN_BB_CLK3>,
+>> +				 <&gcc GCC_UFS_PHY_TX_SYMBOL_0_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_0_CLK>,
+>> +				 <&gcc GCC_UFS_PHY_RX_SYMBOL_1_CLK>;
+>> +			clock-names = "core_clk",
+>> +				      "bus_aggr_clk",
+>> +				      "iface_clk",
+>> +				      "core_clk_unipro",
+>> +				      "ref_clk",
+>> +				      "tx_lane0_sync_clk",
+>> +				      "rx_lane0_sync_clk",
+>> +				      "rx_lane1_sync_clk";
+>> +
+>> +			operating-points-v2 = <&ufs_opp_table>;
+>> +
+>> +			resets = <&gcc GCC_UFS_PHY_BCR>;
+>> +			reset-names = "rst";
+>> +
+>> +			interconnects = <&aggre1_noc MASTER_UFS_MEM QCOM_ICC_TAG_ALWAYS
+>> +					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
+>> +					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ACTIVE_ONLY
+>> +					 &config_noc SLAVE_UFS_MEM_CFG QCOM_ICC_TAG_ACTIVE_ONLY>;
+>> +			interconnect-names = "ufs-ddr",
+>> +					     "cpu-ufs";
+>> +
+>> +			power-domains = <&gcc GCC_UFS_PHY_GDSC>;
+>> +			required-opps = <&rpmhpd_opp_nom>;
+>> +
+>> +			iommus = <&apps_smmu 0x60 0>;
+>> +			dma-coherent;
+>> +
+>> +			lanes-per-direction = <2>;
+>> +
+>> +			phys = <&ufs_mem_phy>;
+>> +			phy-names = "ufsphy";
+>> +
+>> +			#reset-cells = <1>;
+>> +
+>> +			status = "disabled";
+>> +
+> Extra newline
+
+Will remove.
+
+Thanks,
+Melody
+
 
 -- 
 linux-phy mailing list
