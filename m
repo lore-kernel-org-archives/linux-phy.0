@@ -4,94 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD1C0C282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 06:58:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1ADBC282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 07:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tW+Mv7A2ZV0a7exhfOdylQifPrXlF3HvhIetuFY6z6E=; b=Yg7kILjiSu5KQh
-	qHQgf5zeDyEO/kohxP0s7hM2lQZs946B3d2e0MKIKF1Cg/fgyTQDEq0wdE/uRmquMpfX0o6EGXcLS
-	fpnR3cjMs5CcqKibhzHzkJYllvT07jnOuUmccSlxsY5j9O3c4xKTKBo2KOjGzmXmx47R/bwaVPvVy
-	W5B8CTAFFWHKzYJViMVmPhLNrXk4nyRUkNKii06h9oyl0YUrWFEpDhTDQqAhsVnNhA1vfEQJFkGpr
-	SLFVIDwvanXVxGOA2Tfowc6GFKrPcloaN+RqJKmdC6aXZENpPlkonQO6tyxsgEbyRhec4heha2P/J
-	m8pCisAmnkZ4qPT029uQ==;
+	List-Owner; bh=gLrudslOgzsnmIEoJLT1+faU67QqbyvfH3ptBsCFH54=; b=cB6fx3AMVQmpA+
+	UIJhibmz+SMJfhvzZksfYDw/JN/mGCCB8gkWt5qbUipjjminH1EbbBwos6g61dwDezmlDpxgeR1BB
+	A5igkCPAN8/J4uLyu6fSpm1b+QQuA7fFZ105nI5YrpcWfaDuLTIZq0kvjnx6UI3nTXQKKdFz0BuzB
+	ZuEYtRq2XrZCvUqbWhp1IBrgQzMaCGa2wes/g0bxkn3H4OEjpiKVR1+Q6EOK4hWn06royVUUKCwOE
+	ONkSWaQeEVoIqGPZSGEMT5m2Mh15p2DyfH/Sk4pKv1SIXXr9eyiyWXK4cITgyBDN4HCOp/KL0v9qz
+	js1Wi+CkSHzNMeAUGHZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuQtq-00000004rvg-1CCC;
-	Tue, 18 Mar 2025 06:58:06 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1tuRDP-00000004tkH-1EI2;
+	Tue, 18 Mar 2025 07:18:19 +0000
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuQss-00000004rqB-1rNK
+	id 1tuRDM-00000004tjH-1Ixk
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Mar 2025 06:57:07 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52HKMeYd019356;
-	Tue, 18 Mar 2025 06:57:00 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	n+7xQ8wAsM+96+JpI461aw5SP7lBsC/LRCDDb2WWtSw=; b=ITt+fbPD3Rn2w1xs
-	nIAtYuiRCLxSHtWxSb+UfdEDBkGs+zgzaD0kSNtIrATHf/1zd2HEl6QiGXrJYKO8
-	RbBYy3bYgTsQgoGXwERvafMzZ5qJD9o89de8dF+ErJzBt5MgYA2kUNMMxATwp65s
-	vrLHVhYg9e99BLrAMSC2F/kg9UqgBrX9Ubzgo5KjubmopbCC5H3X/xscT8RoMpVM
-	KR83SRaiPM6RswvR9HkAU6ru7Gi0Y69aOy9Pe0tmT3TCst+VNJ56+gYFGyLXdwVY
-	P71GFCnlOHLyVBh2yWluDmY1fRBw3b8ffIapMTx3wSVkZBuNwtiCca063HjvB4+4
-	1O5P2w==
-Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1uty60j-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Mar 2025 06:57:00 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52I6ux0J002503
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 18 Mar 2025 06:56:59 GMT
-Received: from [10.233.19.224] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 17 Mar
- 2025 23:56:55 -0700
-Message-ID: <4fc69ebf-1bd4-428b-bae9-a4f67edee0f5@quicinc.com>
-Date: Tue, 18 Mar 2025 14:56:51 +0800
+	Tue, 18 Mar 2025 07:18:17 +0000
+Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-22349bb8605so112579835ad.0
+        for <linux-phy@lists.infradead.org>; Tue, 18 Mar 2025 00:18:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1742282295; x=1742887095; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=uL3J0kJ07qCQwLi/H8v/Z+UezU+LpDO7hkpWTExk8ys=;
+        b=mtgfa0OLpjwI4m2oWciDAl1ATy5UFDW45IOP/Jw72GNM2Y6Zs1/JoZbCeZ1YeccheS
+         NwOCMJ2MskrVchw3f8/iuAj+PEIXZfRICfwRuPzXA7v3KnDzj7yqt0BBk/L6mna4VOH2
+         f9zt3buQGoPZq3Rg4FKDCY4nzl9guNdHG0D9HS49ClpB4K/p4fitYAY39hoYWBNVKEJC
+         q4j1RfFcexjk4ZNfYsa/UYSKa00eSpAXeyjCf+TMQNpyuzyKjylj3jGc26d8f4hSP/F4
+         t2r0E0bC8A+MfnLOG1GKLpabnvLtqYiT3FdlYqnqyBhtYUjaGrm091vdG4DuGTqFql3D
+         jV1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742282295; x=1742887095;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=uL3J0kJ07qCQwLi/H8v/Z+UezU+LpDO7hkpWTExk8ys=;
+        b=onqauKE6boSqV/p/89mj4MiPsjbgRa+uhlTaQ0xq3y5yRNOKmsPmf0Dt3y8j9Hib/T
+         +AairDDNSo/UYwrPTjjIVjqY9NJFDdgqVsJEq90Vplgj+pG21QNNS/5ysHZ+sIV7xOb4
+         1W/UgnSGFtsE24gzFm6puJ8K0sRiLdOoaBi9pZWH+GY4THGNLfe2mXGmzMy+kySKCbaq
+         cluUmGNciJUEFwv6TFTnw092PiPibRDB/WWxqy2MIXoxTyCxSzvEbZP/5iKxmB2D/2/F
+         9EYnP5wdnIeToE32PZxwmQOdHeUzEgsjQQmFW80/IHKo7UpKWPlV1+9SqN2NKdsgtHuK
+         ST4g==
+X-Forwarded-Encrypted: i=1; AJvYcCUbl44cvKqaidc4XHUYczr+vkoR2MeMzb/316TouLNwScmp91Hm0ekj114rI1w7nSGddyJoUCBsRes=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzgtF/y57VqQsnSipWo05Sx8cMS4F/xDUvAFSzOiYnhTx6kWwvF
+	4JPA8mHyl4CNqvSjhr7LEz0rVChupo+bn+xoutrfWmZl56l8jnWu0HuMtZVd1g==
+X-Gm-Gg: ASbGncuuFpdTw0vnV4VXO23dsLEw9VPSmWdVCIpKRnJq+10kVtBqwhWVmWuJ6n/upAx
+	e3tG02A9mLLNaXBGSzKmc0AAVTluzjiDd1OPZqaC8PD8XfATzw8FH1Xq0MfuMwfYPiubAq2Z+6Z
+	D6DJw7XXZSasNl/99W/Q4Hk20hThAhKO9/dmtn4kNijC+F9YcizKHvNOA3fCVN8Ge475/Vb4S+Q
+	uZrR294iIksw2kpYklFp/U1HYHet0Q6LwlDyg1IovtnHMPOytFHTCms7zy/Qjp2YMWthtAX6OTJ
+	BodCx7XINT7QUrmtI+GVgguATsov6WxZic5qpzM0xf4qwXEZzcdOQLs1QZ0rldHIXhY=
+X-Google-Smtp-Source: AGHT+IEzVk5IzlQIC5VwuXRJuSpzspEea6bADLr7EeZbZUTj69tT3vTxsaaX4dqVtRwwYUxDGF902w==
+X-Received: by 2002:a17:903:3bad:b0:223:2cae:4a96 with SMTP id d9443c01a7336-225e0b0fa67mr181209535ad.42.1742282295391;
+        Tue, 18 Mar 2025 00:18:15 -0700 (PDT)
+Received: from thinkpad ([120.56.195.170])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-225c6ba7275sm87355885ad.115.2025.03.18.00.18.04
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 18 Mar 2025 00:18:15 -0700 (PDT)
+Date: Tue, 18 Mar 2025 12:47:56 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: George Moussalem <george.moussalem@outlook.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	andersson@kernel.org, bhelgaas@google.com, conor+dt@kernel.org,
+	devicetree@vger.kernel.org, dmitry.baryshkov@linaro.org,
+	kishon@kernel.org, konradybcio@kernel.org, krzk+dt@kernel.org,
+	kw@linux.com, lpieralisi@kernel.org, p.zabel@pengutronix.de,
+	quic_nsekar@quicinc.com, robh@kernel.org, robimarko@gmail.com,
+	vkoul@kernel.org, quic_srichara@quicinc.com
+Subject: Re: [PATCH v3 5/6] arm64: dts: qcom: ipq5018: Add PCIe related nodes
+Message-ID: <20250318071756.uilfhwfzgr5gds3o@thinkpad>
+References: <20250305134239.2236590-1-george.moussalem@outlook.com>
+ <DS7PR19MB8883E4A90C8AFF66BCAE14F49DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5 2/2] phy: qcom: qmp-pcie: Add PHY register retention
- support
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-CC: <vkoul@kernel.org>, <kishon@kernel.org>, <p.zabel@pengutronix.de>,
-        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
-        <quic_qianyu@quicinc.com>, <neil.armstrong@linaro.org>,
-        <quic_devipriy@quicinc.com>, <konrad.dybcio@oss.qualcomm.com>,
-        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-References: <20250226103600.1923047-1-quic_wenbyao@quicinc.com>
- <20250226103600.1923047-3-quic_wenbyao@quicinc.com>
- <20250314145035.h3nybvvko3ew37wl@thinkpad>
-Content-Language: en-US
-From: "Wenbin Yao (Consultant)" <quic_wenbyao@quicinc.com>
-In-Reply-To: <20250314145035.h3nybvvko3ew37wl@thinkpad>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=H8Pbw/Yi c=1 sm=1 tr=0 ts=67d9193c cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=GV8YIVLR6thIHoP4uU0A:9
- a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-GUID: T0rQ1fDVlKvzzSXpiM4jgq6Pz45WpJVT
-X-Proofpoint-ORIG-GUID: T0rQ1fDVlKvzzSXpiM4jgq6Pz45WpJVT
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-03-18_03,2025-03-17_03,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
- lowpriorityscore=0 bulkscore=0 adultscore=0 spamscore=0 priorityscore=1501
- mlxscore=0 suspectscore=0 malwarescore=0 clxscore=1015 impostorscore=0
- phishscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503180048
+Content-Disposition: inline
+In-Reply-To: <DS7PR19MB8883E4A90C8AFF66BCAE14F49DCB2@DS7PR19MB8883.namprd19.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250317_235706_629898_62DF9369 
-X-CRM114-Status: GOOD (  19.56  )
+X-CRM114-CacheID: sfid-20250318_001816_357532_0419A9B8 
+X-CRM114-Status: GOOD (  15.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,81 +100,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/14/2025 10:50 PM, Manivannan Sadhasivam wrote:
-> On Wed, Feb 26, 2025 at 06:36:00PM +0800, Wenbin Yao wrote:
->> From: Qiang Yu <quic_qianyu@quicinc.com>
->>
->> Some QCOM PCIe PHYs support no_csr reset. Unlike BCR reset which resets the
->> whole PHY (hardware and register), no_csr reset only resets PHY hardware
->> but retains register values, which means PHY setting can be skipped during
->> PHY init if PCIe link is enabled in booltloader and only no_csr is toggled
->> after that.
->>
->> Hence, determine whether the PHY has been enabled in bootloader by
->> verifying QPHY_START_CTRL register. If it's programmed and no_csr reset is
->> available, skip BCR reset and PHY register setting to establish the PCIe
->> link with bootloader - programmed PHY settings.
->>
->> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
->> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
-> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
->
-> One nit below.
->
->> ---
->>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 69 ++++++++++++++++++++----
->>   1 file changed, 59 insertions(+), 10 deletions(-)
->>
->> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->> index 219266125cf2..c3642d1807e4 100644
->> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
->> @@ -2805,6 +2805,7 @@ struct qmp_pcie {
->>   
->>   	const struct qmp_phy_cfg *cfg;
->>   	bool tcsr_4ln_config;
->> +	bool skip_init;
->>   
->>   	void __iomem *serdes;
->>   	void __iomem *pcs;
->> @@ -3976,18 +3977,38 @@ static int qmp_pcie_init(struct phy *phy)
->>   {
->>   	struct qmp_pcie *qmp = phy_get_drvdata(phy);
->>   	const struct qmp_phy_cfg *cfg = qmp->cfg;
->> +	void __iomem *pcs = qmp->pcs;
->> +	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
->>   	int ret;
->>   
->> +	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
->> +	/*
->> +	 * We need to check the existence of init sequences in two cases:
->> +	 * 1. The PHY doesn't support no_csr reset.
->> +	 * 2. The PHY supports no_csr reset but isn't initialized by bootloader.
->> +	 * As we can't skip init in these two cases.
->> +	 */
->> +	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
->> +		dev_err(qmp->dev, "no init sequences are available\n");
-> "Init sequence not available\n"
->
->> +		return -EINVAL;
-> -ENODATA
-
-Will fix in the next version.
-
->
-> - Mani
->
--- 
-With best wishes
-Wenbin
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBNYXIgMDUsIDIwMjUgYXQgMDU6NDE6MzBQTSArMDQwMCwgR2VvcmdlIE1vdXNzYWxl
+bSB3cm90ZToKPiBGcm9tOiBTcmljaGFyYW4gUmFtYWJhZGhyYW4gPHF1aWNfc3JpY2hhcmFAcXVp
+Y2luYy5jb20+Cj4gCj4gRnJvbTogTml0aGVlc2ggU2VrYXIgPHF1aWNfbnNla2FyQHF1aWNpbmMu
+Y29tPgo+IAo+IEFkZCBwaHkgYW5kIGNvbnRyb2xsZXIgbm9kZXMgZm9yIGEgMi1sYW5lIEdlbjIg
+YW5kCj4gYSAxLWxhbmUgR2VuMiBQQ0llIGJ1cy4gSVBRNTAxOCBoYXMgOCBNU0kgU1BJIGludGVy
+cnVwdHMgYW5kCj4gb25lIGdsb2JhbCBpbnRlcnJ1cHQuCj4gCj4gU2lnbmVkLW9mZi1ieTogTml0
+aGVlc2ggU2VrYXIgPHF1aWNfbnNla2FyQHF1aWNpbmMuY29tPgo+IFNpZ25lZC1vZmYtYnk6IFNy
+aWNoYXJhbiBSIDxxdWljX3NyaWNoYXJhQHF1aWNpbmMuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEdl
+b3JnZSBNb3Vzc2FsZW0gPGdlb3JnZS5tb3Vzc2FsZW1Ab3V0bG9vay5jb20+Cj4gLS0tCj4gIGFy
+Y2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9pcHE1MDE4LmR0c2kgfCAyMzIgKysrKysrKysrKysrKysr
+KysrKysrKysrKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDIzMCBpbnNlcnRpb25zKCspLCAyIGRlbGV0
+aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBxNTAx
+OC5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL2lwcTUwMTguZHRzaQo+IGluZGV4IDg5
+MTRmMmVmMGJjNC4uMzAxYTA0NGJkZjZkIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9k
+dHMvcWNvbS9pcHE1MDE4LmR0c2kKPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vaXBx
+NTAxOC5kdHNpCj4gQEAgLTE0Nyw2ICsxNDcsMjM0IEBAIHVzYnBoeTA6IHBoeUA1YjAwMCB7Cj4g
+IAkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4gIAkJfTsKPiAgCj4gKwkJcGNpZTE6IHBjaWVANzgw
+MDAgewo+ICsJCQljb21wYXRpYmxlID0gInFjb20scGNpZS1pcHE1MDE4IjsKPiArCQkJcmVnID0g
+PDB4MDAwNzgwMDAgMHgzMDAwPiwKPiArCQkJICAgICAgPDB4ODAwMDAwMDAgMHhmMWQ+LAo+ICsJ
+CQkgICAgICA8MHg4MDAwMGYyMCAweGE4PiwKPiArCQkJICAgICAgPDB4ODAwMDEwMDAgMHgxMDAw
+PiwKPiArCQkJICAgICAgPDB4ODAxMDAwMDAgMHgxMDAwPjsKPiArCQkJcmVnLW5hbWVzID0gInBh
+cmYiLAo+ICsJCQkJICAgICJkYmkiLAo+ICsJCQkJICAgICJlbGJpIiwKPiArCQkJCSAgICAiYXR1
+IiwKPiArCQkJCSAgICAiY29uZmlnIjsKPiArCQkJZGV2aWNlX3R5cGUgPSAicGNpIjsKPiArCQkJ
+bGludXgscGNpLWRvbWFpbiA9IDwwPjsKPiArCQkJYnVzLXJhbmdlID0gPDB4MDAgMHhmZj47Cj4g
+KwkJCW51bS1sYW5lcyA9IDwxPjsKPiArCQkJbWF4LWxpbmstc3BlZWQgPSA8Mj47CgpXaHkgZG8g
+eW91IHdhbnQgdG8gbGltaXQgbGluayBzcGVlZD8KCj4gKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+
+Owo+ICsJCQkjc2l6ZS1jZWxscyA9IDwyPjsKPiArCj4gKwkJCXBoeXMgPSA8JnBjaWUxX3BoeT47
+Cj4gKwkJCXBoeS1uYW1lcyA9InBjaWVwaHkiOwo+ICsKPiArCQkJcmFuZ2VzID0gPDB4ODEwMDAw
+MDAgMCAweDgwMjAwMDAwIDB4ODAyMDAwMDAgMCAweDAwMTAwMDAwPiwJLyogSS9PICovCj4gKwkJ
+CQkgPDB4ODIwMDAwMDAgMCAweDgwMzAwMDAwIDB4ODAzMDAwMDAgMCAweDEwMDAwMDAwPjsJLyog
+TUVNICovCgpUaGVzZSByYW5nZXMgYXJlIHdyb25nLiBQbGVhc2UgY2hlY2sgd2l0aCBvdGhlciBE
+VCBmaWxlcy4KClNhbWUgY29tbWVudHMgdG8gb3RoZXIgaW5zdGFuY2UgYXMgd2VsbC4KCj4gKwo+
+ICsJCQltc2ktbWFwID0gPDB4MCAmdjJtMCAweDAgMHhmZjg+Owo+ICsKPiArCQkJaW50ZXJydXB0
+cyA9IDxHSUNfU1BJIDExMSBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiArCQkJCSAgICAgPEdJQ19T
+UEkgMTEyIElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJICAgICA8R0lDX1NQSSAxMTMgSVJR
+X1RZUEVfTEVWRUxfSElHSD4sCj4gKwkJCQkgICAgIDxHSUNfU1BJIDExNCBJUlFfVFlQRV9MRVZF
+TF9ISUdIPiwKPiArCQkJCSAgICAgPEdJQ19TUEkgMTE1IElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+
+ICsJCQkJICAgICA8R0lDX1NQSSAxMTYgSVJRX1RZUEVfTEVWRUxfSElHSD4sCj4gKwkJCQkgICAg
+IDxHSUNfU1BJIDExNyBJUlFfVFlQRV9MRVZFTF9ISUdIPiwKPiArCQkJCSAgICAgPEdJQ19TUEkg
+MTE4IElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ICsJCQkJICAgICA8R0lDX1NQSSAxMTkgSVJRX1RZ
+UEVfTEVWRUxfSElHSD47Cj4gKwkJCWludGVycnVwdC1uYW1lcyA9ICJtc2kwIiwKPiArCQkJCQkg
+ICJtc2kxIiwKPiArCQkJCQkgICJtc2kyIiwKPiArCQkJCQkgICJtc2kzIiwKPiArCQkJCQkgICJt
+c2k0IiwKPiArCQkJCQkgICJtc2k1IiwKPiArCQkJCQkgICJtc2k2IiwKPiArCQkJCQkgICJtc2k3
+IiwKPiArCQkJCQkgICJnbG9iYWwiOwo+ICsKPiArCQkJI2ludGVycnVwdC1jZWxscyA9IDwxPjsK
+PiArCQkJaW50ZXJydXB0LW1hcC1tYXNrID0gPDAgMCAwIDB4Nz47Cj4gKwkJCWludGVycnVwdC1t
+YXAgPSA8MCAwIDAgMSAmaW50YyAwIDE0MiBJUlFfVFlQRV9MRVZFTF9ISUdIPiwgLyogaW50X2Eg
+Ki8KPiArCQkJCQk8MCAwIDAgMiAmaW50YyAwIDE0MyBJUlFfVFlQRV9MRVZFTF9ISUdIPiwgLyog
+aW50X2IgKi8KPiArCQkJCQk8MCAwIDAgMyAmaW50YyAwIDE0NCBJUlFfVFlQRV9MRVZFTF9ISUdI
+PiwgLyogaW50X2MgKi8KPiArCQkJCQk8MCAwIDAgNCAmaW50YyAwIDE0NSBJUlFfVFlQRV9MRVZF
+TF9ISUdIPjsgLyogaW50X2QgKi8KPiArCj4gKwkJCWNsb2NrcyA9IDwmZ2NjIEdDQ19TWVNfTk9D
+X1BDSUUxX0FYSV9DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfTV9DTEs+LAo+ICsJ
+CQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfU19DTEs+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9B
+SEJfQ0xLPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFfQVVYX0NMSz4sCj4gKwkJCQkgPCZnY2Mg
+R0NDX1BDSUUxX0FYSV9TX0JSSURHRV9DTEs+Owo+ICsJCQljbG9jay1uYW1lcyA9ICJpZmFjZSIs
+Cj4gKwkJCQkgICAgICAiYXhpX20iLAo+ICsJCQkJICAgICAgImF4aV9zIiwKPiArCQkJCSAgICAg
+ICJhaGIiLAo+ICsJCQkJICAgICAgImF1eCIsCj4gKwkJCQkgICAgICAiYXhpX2JyaWRnZSI7Cj4g
+Kwo+ICsJCQlyZXNldHMgPSA8JmdjYyBHQ0NfUENJRTFfUElQRV9BUkVTPiwKPiArCQkJCSA8Jmdj
+YyBHQ0NfUENJRTFfU0xFRVBfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUxX0NPUkVfU1RJ
+Q0tZX0FSRVM+LAo+ICsJCQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfTUFTVEVSX0FSRVM+LAo+ICsJ
+CQkJIDwmZ2NjIEdDQ19QQ0lFMV9BWElfU0xBVkVfQVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BD
+SUUxX0FIQl9BUkVTPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFfQVhJX01BU1RFUl9TVElDS1lf
+QVJFUz4sCj4gKwkJCQkgPCZnY2MgR0NDX1BDSUUxX0FYSV9TTEFWRV9TVElDS1lfQVJFUz47Cj4g
+KwkJCXJlc2V0LW5hbWVzID0gInBpcGUiLAo+ICsJCQkJICAgICAgInNsZWVwIiwKPiArCQkJCSAg
+ICAgICJzdGlja3kiLAo+ICsJCQkJICAgICAgImF4aV9tIiwKPiArCQkJCSAgICAgICJheGlfcyIs
+Cj4gKwkJCQkgICAgICAiYWhiIiwKPiArCQkJCSAgICAgICJheGlfbV9zdGlja3kiLAo+ICsJCQkJ
+ICAgICAgImF4aV9zX3N0aWNreSI7Cj4gKwo+ICsJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+ICsK
+PiArCQkJcGNpZUAwIHsKPiArCQkJCWRldmljZV90eXBlID0gInBjaSI7Cj4gKwkJCQlyZWcgPSA8
+MHgwIDB4MCAweDAgMHgwIDB4MD47Cj4gKwo+ICsJCQkJI2FkZHJlc3MtY2VsbHMgPSA8Mz47Cj4g
+KwkJCQkjc2l6ZS1jZWxscyA9IDwyPjsKPiArCQkJCXJhbmdlczsKPiArCQkJfTsKPiArCQl9Owo+
+ICsKPiArCQlwY2llMV9waHk6IHBoeUA3ZTAwMHsKPiArCQkJY29tcGF0aWJsZSA9ICJxY29tLGlw
+cTUwMTgtdW5pcGh5LXBjaWUtcGh5IjsKPiArCQkJcmVnID0gPDB4MDAwN2UwMDAgMHg4MDA+Owo+
+ICsKPiArCQkJY2xvY2tzID0gPCZnY2MgR0NDX1BDSUUxX1BJUEVfQ0xLPjsKPiArCj4gKwkJCXJl
+c2V0cyA9IDwmZ2NjIEdDQ19QQ0lFMV9QSFlfQkNSPiwKPiArCQkJCSA8JmdjYyBHQ0NfUENJRTFQ
+SFlfUEhZX0JDUj47Cj4gKwo+ICsJCQkjY2xvY2stY2VsbHMgPSA8MD47Cj4gKwoKUGxlYXNlIGdl
+dCByaWQgb2YgdGhlc2UgbmV3bGluZXMgYmV0d2VlbiAtY2VsbHMgcHJvcGVydGllcy4KCi0gTWFu
+aQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7g
+r40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBo
+eQo=
