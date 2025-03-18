@@ -4,106 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 423AFC282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 11:32:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C203C282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 12:39:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y/P/bTtQ4aCMKP0CuGcZopPm+riJ71KZ1NdeMFjCSbs=; b=Mpojb/fqKF9Dep
-	/XnNbXmCAgf4uy+fiKqrOzgjhEf29rdA1X7m2mfzgpJXjsslGavqpS9Kk93xhQL9CJgAsW8pArWZr
-	+ylLNG8bs7s2hnZwuLr1i06SG1QUKC1clRM0E1vDPhbmZCcYCRlEVsFZwf1HqecVS0GLyjyzGbqhX
-	XeEYJF3OAdnNDVZJVGjzCB3z+di/2+E8o/XVak9tpwSL0ndz2ATPFljD1jmrhySe8qBAH4xeLe1UY
-	NZNYKeMGih1LvqMa1IiLOPCmBDDbHh5TMVVugVwG2w80cv75IcHXQiXYb9FJngiX7MoVKHfunLnHr
-	jZYeMMnPvzdyA96cRLgw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z8AwQCdJWyLnrgGZDlI+WNwJgxL+SWpiT3HmtHWQ7Ew=; b=KU2a5bMPa4IJB4
+	jv8GftVk/0ObLKnBAWzjM/bA47UCFNmL7N9JT/SmVvDsPL0Hg1TRgR8ln/fSoMAu5Jp1pjsafl5Yq
+	SZ6PLHS78E0/Qk5PsKiBluIfwjBvudnKREnOyTeEHUdHRd8tppveKI0mpqNghbT5pOjNzIOJHvJ2S
+	YEzNB0kDOYHrtV58X/I8kDfdiXPN1Vdh9JGxvQvFKLs2SXSQQmH+FHeEh4mO7UeZFNjEh5fL4NPKk
+	IBbGDFIsBPgQl46gX/nRH6MTvmUrNEXVQoTXW6913U7Tk9vSWZlnWg6B55PmpwoXOPKseGRqoBRvM
+	GBnOdxRJAPrBYhMH06mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuVBl-00000005jey-3Spq;
-	Tue, 18 Mar 2025 11:32:53 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1tuWEC-00000005uDX-467f;
+	Tue, 18 Mar 2025 12:39:28 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuVA4-00000005jW7-0dfT;
-	Tue, 18 Mar 2025 11:31:09 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-391342fc1f6so4545379f8f.1;
-        Tue, 18 Mar 2025 04:31:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1742297466; x=1742902266; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=oeWK8KnE02poaU2apmgZYe7NYIk2mK6ZRM9x7EecA0A=;
-        b=U7bkBf1twgH+kVjx4h4MRP03LGKi7B9+ptHkb9ik1s7I69CPXn5HZymnJDOy26dVzN
-         GY8egev2y82Gjlyio7oukAsn6zCWgWyLe3DD5zU3QWsAMDbhKa+sBhFQNXnWUlhUp8Gk
-         ZbWP7I5iEP23l3rOAq6NQertyou7wDV6xt5oUVzFEXgEVKeWoLd6IfwWIqXIhc5z8W/b
-         3K9T3JjasH2p49wJV0VvcLPytRS0UwHVvZCArsQm+/2C0h0mVbXbXM98RUw8anI6R7MX
-         pFfW3aUSTCDqew7JN+mrR4LbBrO79Lut+VIn8g7US+zyAb8sMfULlSJW/vSg7PduNV3V
-         n/VQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742297466; x=1742902266;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=oeWK8KnE02poaU2apmgZYe7NYIk2mK6ZRM9x7EecA0A=;
-        b=U54PcZNoJEVLOdhawkvM8WtvGQPJ2bQkSS1RZWFKJq2AA2+reMqVBNAf/okjFHpxdg
-         NGEhAbskeWplpS0bh2/JF0Enizc16r7n3jLcKRBA1LmpB9EzVUqfHb2/KXnq25r6fsO6
-         FCrn/hPTgjALkuUPy2C/HqMeXfjXBusjl0yupsXN1KnurxbofbpkkQeGHWlX1qixnLLw
-         dsmfPuiH4IazjpOovdVZ06yr3PzfRmKJGaDpGpyfGs5J4KK6KgndFvsxGJSaIVcZ1V23
-         0aEBZVg7WootRNNcNEoYbp/Z2KWKTRAYm3r+1KsgOZigv5hIyLqdz/NXagZdDq7uci7K
-         uamw==
-X-Forwarded-Encrypted: i=1; AJvYcCUVEr3oCayTWGS9cAPewuisOMf2LaS94N4AGfrc4P+klZBwQSk9vHIrH/sEzvHWxKLhKpQJxnny175X@lists.infradead.org, AJvYcCWFBl7rYtgaWfwGbktsYBSDtKY5/3vn1OOdGNrSQ0UeptzkTwcTmhW2yO6VyAry8xtstsQO+sdG9MccImYgqpY=@lists.infradead.org, AJvYcCXgdPAAuZ3lxUYla7qNwasUmSXGdmJPLXI+XIveziXqsMpW9vImwXhbCVLt8IgtOKCTac3MTo4ugotsTUmAtwDe@lists.infradead.org
-X-Gm-Message-State: AOJu0YxsC7FY+dVoutIN2v2NTDM5i2uSR+JQ2WiOU+Y5pVsdsMPnZjGL
-	E5LXMxWsaySw+RkIdDYtA8RZ9oUY8bGckYnEmw4Pl+tDs38kT2ED
-X-Gm-Gg: ASbGncvZT6ORR1MRQNHUCYdMy5go4zocoQidy7CILP1XwBDhsqEeQeyhG8kA/lvoVGl
-	16U3bNSTIN9O+P6fBWN2BI/0A6kC9bcZOQLBzIsyyf3IKHzy+owQnerVa96OEv6OKO0ouujRqyC
-	f8ZWUW69lx3oV+G/W3rwbNvGJxsy7sM/TZiHV43lwkZ2e63tobvzQlyxwq1hHKKaaMybExOUMQF
-	D2Hl5eCtiFCCppfv5ONX7sN3YSe5tiIZZlQEOT2L++adZ3lTfBjEbspnOV94xG+MnktQCqgBgwI
-	nrbIMN5p3EpRknV8hpseOLbyE14Jnx5hauuS/Hkd9XGliIJiklgUciRFzkj3QM7zUsc6DVceTf2
-	Y
-X-Google-Smtp-Source: AGHT+IFpi+zFuJ8XXOnGn4TOSQKOE+/3yFEH37sz6LbTqTOZGYuC+54cInlqBrHl+fxwxahe/rNImA==
-X-Received: by 2002:a5d:47c9:0:b0:390:e311:a8c7 with SMTP id ffacd0b85a97d-3971cd57eb0mr15913025f8f.5.1742297465853;
-        Tue, 18 Mar 2025 04:31:05 -0700 (PDT)
-Received: from Ansuel-XPS. (93-34-90-129.ip49.fastwebnet.it. [93.34.90.129])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-395c8881187sm17594872f8f.41.2025.03.18.04.31.04
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 18 Mar 2025 04:31:05 -0700 (PDT)
-Message-ID: <67d95979.050a0220.166852.25e6@mx.google.com>
-X-Google-Original-Message-ID: <Z9lZdFMUpqWwpsA2@Ansuel-XPS.>
-Date: Tue, 18 Mar 2025 12:31:00 +0100
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Lee Jones <lee@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Daniel Danzberger <dd@embedd.com>, Arnd Bergmann <arnd@arndb.de>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Nikita Shubin <nikita.shubin@maquefel.me>,
-	Guo Ren <guoren@kernel.org>, Yangyu Chen <cyy@cyyself.name>,
-	Ben Hutchings <ben@decadent.org.uk>, Felix Fietkau <nbd@nbd.name>,
-	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-mediatek@lists.infradead.org,
-	linux-usb@vger.kernel.org, upstream@airoha.com
-Subject: Re: [PATCH 09/13] dt-bindings: phy: Add documentation for Airoha
- AN7581 USB PHY
-References: <20250309132959.19045-1-ansuelsmth@gmail.com>
- <20250309132959.19045-10-ansuelsmth@gmail.com>
- <4f16d239-f540-45d5-b67a-767b09f1c70c@kernel.org>
- <67d0862f.df0a0220.375bd.6b15@mx.google.com>
- <4a9ac302-dfbe-4d76-a634-a445957c313c@kernel.org>
+	id 1tuWBm-00000005tdT-48D7;
+	Tue, 18 Mar 2025 12:37:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1742301416;
+	bh=1EPLFHDewAN8/i4J9+X/KTzzwHH36Tm6ALls+862c64=;
+	h=From:Subject:Date:To:Cc:From;
+	b=JSY35S6CrgfDm8T6OIWNI8SqPLbGQslb2/CiagAlH3SfZtGgcLlQLsyfqfrMYpHYS
+	 NyZSJsB1JXaDD1zKxfHOAEE163b8FTSkewAUrOyU7ybxGOYJa0aPFUq5E/GpsoIum9
+	 HpGDEtCPspOhkkSzsQU2dFSaQ53sOaSZ+12kHBkfZzuWlGrF6rH3nWALdZrR7g25eC
+	 rddwaZpD/tk9jpFIHlvPKZ6tfmb+zNGwpbGhpdNG7ERVPlNIMi7M417jcsOW6z6TpO
+	 43AR56/50lXq9DigW3Cn6Tl/PXoMQJh+6j9XnTLG85+co8YYNjAFjujJADFI714qei
+	 qdN9bYkduteWA==
+Received: from localhost (unknown [84.232.140.93])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with UTF8SMTPSA id 83E9317E0673;
+	Tue, 18 Mar 2025 13:36:56 +0100 (CET)
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Subject: [PATCH v6 00/14] phy: rockchip: samsung-hdptx: Support high color
+ depth management
+Date: Tue, 18 Mar 2025 14:35:34 +0200
+Message-Id: <20250318-phy-sam-hdptx-bpc-v6-0-8cb1678e7663@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4a9ac302-dfbe-4d76-a634-a445957c313c@kernel.org>
+X-B4-Tracking: v=1; b=H4sIAJZo2WcC/23OwYoDIQwG4FcpnmvRqInd077HsgdHnY7Q1kHL0
+ FLm3dcWypYiOf2B/0vurMaSYmVfmzsrcUk15XMLuN0wP7nzIfIUWmYgQEsQyOfpxqs78SnMlys
+ fZs/VIIxHIBwDsdabSxzT9Wn+/LY8pXrJ5fY8scjH9qVRR1skF1woD1EHDLSnb5+PRzfk4nY+n
+ 9hDXOBNkdBToCmGIhJ4aqN7inopRgConqKaguiMtxGtgu4v+l9RQvcU3RSLhqwmL9XYVcy7Ynu
+ KaYoywhJYGvdBfirruv4BxfK80s4BAAA=
+X-Change-ID: 20241206-phy-sam-hdptx-bpc-3b05c6276fd7
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>
+Cc: Algea Cao <algea.cao@rock-chips.com>, Sandor Yu <Sandor.yu@nxp.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Maxime Ripard <mripard@kernel.org>, kernel@collabora.com, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ Dmitry Baryshkov <lumag@kernel.org>
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_043108_190937_FB768341 
-X-CRM114-Status: GOOD (  26.45  )
+X-CRM114-CacheID: sfid-20250318_053659_212177_3E52EFC8 
+X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,82 +85,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Mar 16, 2025 at 06:01:02PM +0100, Krzysztof Kozlowski wrote:
-> On 11/03/2025 19:51, Christian Marangi wrote:
-> >>
-> >>> +    $ref: /schemas/types.yaml#/definitions/uint32
-> >>> +    enum: [0, 1]
-> >>
-> >> I don't understand why do you need index property here (which are
-> >> usually not allowed).
-> >>
-> > 
-> > Eh... As said in the description this is really to differentiate the 2
-> > different physical port...
-> > 
-> > Each port have a dedicated oscillator for calibration and these
-> > calibration are identified by an offset (all placed one after another in
-> > a separate register space).
-> 
-> So different oscillators? Then describe the oscillator and its differences.
-> 
-> Different programing model? Different compatible.
-> 
-> Other difference? Depending what is the difference.
-> 
-> But there is no such thing as "different port ID" based on your
-> description above. You just claimed that they are different, but you do
-> not put that difference to hardware description. Instead you encode that
-> difference in the drivers and it should be opposite. The DTS, so the
-> hardware description, should tell you the difference. And I am sorry,
-> but in 99% of cases "I am the first phy" and "I am the second" is not
-> the actual difference we are interested in.
->
+This series relies on the new HDMI PHY configuration options [1] (patch
+included here for convenience) to provide high color depth management
+for rockchip-samsung-hdptx, and to introduce a proper solution to setup
+the TMDS character rate on this PHY.
 
-Ok to make it as clear as possible. (hope I don't contraddict with the
-previous statement) (actually yes the "separate register space statement
-was wrong and sorry for the confusion")
+[1] https://lore.kernel.org/lkml/d1cff6c03ec3732d2244022029245ab2d954d997.1734340233.git.Sandor.yu@nxp.com/
 
-- 2 USB port
-- USB 2.0 needs to be calibrated with an oscillator
-- Each USB port have his own dedicated oscillator somewhere in the HW
-- Each USB port have at the same offset a register to SELECT the
-  oscillator. This register refer to the same oscillator selection in
-  the HW.
-  
-  Example:
-  reg 0x1fac0100 MASK 27:26 can be set to source out of oscillator 0,1,2
-  reg 0x1fae0100 MASK 27:26 can be set to source out of oscillator 0,1,2
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+---
+Changes in v6:
+- Collected R-b tags from Dmitry
+- Updated commit description for "phy: rockchip: samsung-hdptx: Fix
+  clock ratio setup"
+- Added new patch "phy: rockchip: samsung-hdptx: Do no set
+  rk_hdptx_phy->rate in case of errors"
+- Replaced some "unsigned long" and "u32" types with "unsigned long
+  long" in "phy: rockchip: samsung-hdptx: Avoid Hz<->hHz unit conversion
+  overhead" to match the tmds_char_rate type (Dmitry)
+- Added new patch "phy: rockchip: samsung-hdptx: Rename ambiguous
+  rk_hdptx_phy->rate", originally part of "phy: rockchip: samsung-hdptx:
+  Optimize internal rate handling" (Dmitry)
+- Rebased series onto next-20250317
+- Link to v5: https://lore.kernel.org/r/20250308-phy-sam-hdptx-bpc-v5-0-35087287f9d1@collabora.com
 
-  Both register refer to the same oscillators in hardware (hence each
-  port should select the correct one)
-  Selecting oscillator 0 for both USB port is problematic.
+Changes in v5:
+- Moved the patch eliminating the unnecessary and rather confusing
+  Hz<->hHz unit conversion before all the others adding new content
+- Moved the patch adding high color depth management to the last
+  position, so that it follows the internal rate handling optimization
+- Amended description for a few patches to improve clarity
+- Performed some trivial refactoring in some cases while dealing with
+  rebase conflicts
+- Link to v4: https://lore.kernel.org/r/20250304-phy-sam-hdptx-bpc-v4-0-8657847c13f7@collabora.com
 
-With this in mind is it ok if I describe this with something like
+Changes in v4:
+- Added patches to drop unnecessary phy_cfg & cfgs driver data
+- Embedded struct phy_configure_opts_hdmi in driver data (Dmitry)
+- Added new patch to provide config params validation support
+- Provided a patch to restrict altering TMDS char rate via CCF (Dmitry)
+- Made a bunch of small tweaks here and there
+- Link to v3: https://lore.kernel.org/r/20250223-phy-sam-hdptx-bpc-v3-0-66a5c8e68327@collabora.com
 
-airoha,usb2-monitor-clk-sel = <AIROHA_USB2_MONCLK_SEL0>;
+Changes in v3:
+- Rebased series onto next-20250221 and fixed several conflicts due to
+  the recently introduced eDP support
+- Link to v2: https://lore.kernel.org/r/20241212-phy-sam-hdptx-bpc-v2-0-57e672c7c7c4@collabora.com
 
-and some dt-bindings include
+Changes in v2:
+- Added new patches providing a bug fix and several driver cleanups and
+  improvements
+- Link to v1: https://lore.kernel.org/r/20241207-phy-sam-hdptx-bpc-v1-0-03c2e4d6d797@collabora.com
 
-#define AIROHA_USB2_MONCLK_SEL0 0
-#define AIROHA_USB2_MONCLK_SEL1 1
-#define AIROHA_USB2_MONCLK_SEL2 2
-#define AIROHA_USB2_MONCLK_SEL3 3
+---
+Cristian Ciocaltea (13):
+      phy: hdmi: Add color depth configuration
+      phy: rockchip: samsung-hdptx: Fix clock ratio setup
+      phy: rockchip: samsung-hdptx: Do no set rk_hdptx_phy->rate in case of errors
+      phy: rockchip: samsung-hdptx: Drop unused struct lcpll_config
+      phy: rockchip: samsung-hdptx: Drop unused phy_cfg driver data
+      phy: rockchip: samsung-hdptx: Drop superfluous cfgs driver data
+      phy: rockchip: samsung-hdptx: Avoid Hz<->hHz unit conversion overhead
+      phy: rockchip: samsung-hdptx: Setup TMDS char rate via phy_configure_opts_hdmi
+      phy: rockchip: samsung-hdptx: Provide config params validation support
+      phy: rockchip: samsung-hdptx: Restrict altering TMDS char rate via CCF
+      phy: rockchip: samsung-hdptx: Rename ambiguous rk_hdptx_phy->rate
+      phy: rockchip: samsung-hdptx: Optimize internal rate handling
+      phy: rockchip: samsung-hdptx: Add high color depth management
 
-Or an enum of string like "osc0", "osc1", "osc2"...?
+Sandor Yu (1):
+      phy: Add HDMI configuration options
 
-> > 
-> > Oscillator 0 for physical port 0
-> > Oscillator 1 for physcial port 1
-> > 
-> > And model this is a bit problematic without an additional property, any
-> > hint for this?
-> > 
-> Best regards,
-> Krzysztof
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 292 +++++++++++++---------
+ include/linux/phy/phy-hdmi.h                      |  21 ++
+ include/linux/phy/phy.h                           |   7 +-
+ 3 files changed, 202 insertions(+), 118 deletions(-)
+---
+base-commit: e94bd4ec45ac156616da285a0bf03056cd7430fc
+change-id: 20241206-phy-sam-hdptx-bpc-3b05c6276fd7
 
--- 
-	Ansuel
 
 -- 
 linux-phy mailing list
