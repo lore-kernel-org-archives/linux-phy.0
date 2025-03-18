@@ -4,94 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39C14C282EC
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 05:43:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD1C0C282EC
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 06:58:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MbeYtOXAf+INXw4YdMc8vWXzB9g9X7GxAEuyn9imQa8=; b=QWDBdf8s3hqOpP
-	R0T1VMESJPPRFkBj/PaDVPCYPWcC3WdDVSeeNZSF1QC1WUoOCdgF2H5CSMDBImQ5bP3NW5aORzrWW
-	uIURRkGpYz1n6NCe5SykTsoPLsIn1l9LqDgyCj3szDHItxolj+OsCsaqkr6M/+thJzfAVk03kiWHL
-	IQKl9bwjcFzhcoi86NZL6ZsgV9NAb2mM1T79pFtmSWfFRqMkV6tqmYLFjOGTy/AML0eB20XVjT1+i
-	Rh3g1TZ9bcT/m8aEb13DyigHp4bzBbtemv9i7xAL/WmZ5yz9t6KTrmKsbluyEfcJOlFea7XNsGm3M
-	vRcNoOUmqMv7Bia6hZzQ==;
+	List-Owner; bh=tW+Mv7A2ZV0a7exhfOdylQifPrXlF3HvhIetuFY6z6E=; b=Yg7kILjiSu5KQh
+	qHQgf5zeDyEO/kohxP0s7hM2lQZs946B3d2e0MKIKF1Cg/fgyTQDEq0wdE/uRmquMpfX0o6EGXcLS
+	fpnR3cjMs5CcqKibhzHzkJYllvT07jnOuUmccSlxsY5j9O3c4xKTKBo2KOjGzmXmx47R/bwaVPvVy
+	W5B8CTAFFWHKzYJViMVmPhLNrXk4nyRUkNKii06h9oyl0YUrWFEpDhTDQqAhsVnNhA1vfEQJFkGpr
+	SLFVIDwvanXVxGOA2Tfowc6GFKrPcloaN+RqJKmdC6aXZENpPlkonQO6tyxsgEbyRhec4heha2P/J
+	m8pCisAmnkZ4qPT029uQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuPjH-00000004kEy-46l2;
-	Tue, 18 Mar 2025 05:43:07 +0000
-Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
+	id 1tuQtq-00000004rvg-1CCC;
+	Tue, 18 Mar 2025 06:58:06 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuPjG-00000004kEY-2ebM
+	id 1tuQss-00000004rqB-1rNK
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Mar 2025 05:43:07 +0000
-Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-224341bbc1dso96205395ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 17 Mar 2025 22:43:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1742276585; x=1742881385; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=FEoinY9MBp6fBxPU4owelu4oiM4ylGd59Qy+F2Dob3M=;
-        b=bKpHvwNdZI2Symdhqmmb3PetbnjMtXsIZuLTxs2ydeSC11wMWkWbosStkbR8jhZkmt
-         +loLjvtOI6d4g6iEdIWZWECO8Vym82dbe4st5W5Mj3yc8VKSqSBiWtyb+PZvTuc1GPBs
-         A4jIcADeBTCIGpL/itdeSoMXOG/weXLpYxbyuHWc6WWHZOunBlmDuEpS/8/t0Rn9cBzo
-         BNQhGoHHj4H1w7iBSR7PDbVteHH+KXrp33j5rBlron+bWlplEL+cfOk67+941pP5lVMl
-         g1lfFms13TJrJc2BY9Y5igvhHmFxQmZLX9ijZBm8ffgpyZvriADycdunr0aYkkZxrPGR
-         aJxQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742276585; x=1742881385;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=FEoinY9MBp6fBxPU4owelu4oiM4ylGd59Qy+F2Dob3M=;
-        b=mnH9JH0quhIBMoS1cQNAcwwGuynrQD86a5hzoUpf/fyy162XQZ3WYFwB+ie1VGqDsF
-         6StFwC6GfSah9GXP6cNdMvo9UgosHfBWL3bncPijK3/Bn5KLtc/jKVSDHtf9386Fof8t
-         fZhRML+Z+iIxgkuqqOHPNMfgUVZ8+xa1MvSfEASkKDAC5xgQpZuqLCwc5RX+GZpzPDkJ
-         3zbXZU+kofueV5ExxxN3fmDL5Q+RmuIa7j6/TT0wohE5lccItToe/5HN5Tz31Xuc0qG8
-         q3pmXC2PR1mrsVD3FUlc/WcBHriPvsRJAo4H1Tuj/yUVVC/DNbad3nYXPICJii9512Si
-         6sjQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWD3hJIIpsJN1AxC6+HpE3/QA/JhbR0PIQDeMPOnk1hekh5zG4Oblnb02VPlcoxWtHG7es9TUJSGN4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy6CiLGgcJPZ0DMiWWvKNoSnvk7VoQNZ7q3Yrow1NMNA/IBi86E
-	TTOhrpuLsJ/idc6AVQCErDrAjOUk5Fg8WIiyfaqfvG0YCXBy+UFF9ol41S8Ltznqql/bBmiW1HQ
-	=
-X-Gm-Gg: ASbGnct6pVxrUX4m9QeTxvc3n//Q9t3bO8JfJ2fpKpio7vDr7ThL04m17ylJY5CZC5t
-	8dSbVUoJyfpeg70b9DupWAJ2ni4knuPajI5mlpAigohXl2g8OjVexYBsQxvmfx2j9xLIOyudK5h
-	5p8mcYpfpJ9QtVUlYBaTEQSYKPuo5b3B79TySNUq46Jvu3PEAmnweOPcCAt8oYCU1lzWXScQbYo
-	Rx1fsdf0LECM2njqJUKsaE0oHT+bxH6gwDDSb65KLL5K9ekuL7C5DLim0nhKlLNc0gnH2voZhPn
-	rP32K87xte8toEqbkUbuE1OUYh08GyvFTbNymtgZltqngQu5kbwVEQe+
-X-Google-Smtp-Source: AGHT+IHFAYycRh8yAvQ6rzKtJ7IEEozCZPfvduhinevYL/RlGjWqSKDVBSpP0w/WLSUpzr4TkOvmSw==
-X-Received: by 2002:a05:6a00:98f:b0:730:7600:aeab with SMTP id d2e1a72fcca58-7375723f9afmr2788650b3a.13.1742276585611;
-        Mon, 17 Mar 2025 22:43:05 -0700 (PDT)
-Received: from thinkpad ([120.56.195.170])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73711578a67sm8596953b3a.78.2025.03.17.22.43.00
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 17 Mar 2025 22:43:05 -0700 (PDT)
-Date: Tue, 18 Mar 2025 11:12:58 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
-Cc: bhelgaas@google.com, lpieralisi@kernel.org, kw@linux.com,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, andersson@kernel.org,
-	konradybcio@kernel.org, dmitry.baryshkov@linaro.org,
-	neil.armstrong@linaro.org, abel.vesa@linaro.org,
-	quic_qianyu@quicinc.com, quic_krichai@quicinc.com,
-	johan+linaro@kernel.org, linux-arm-msm@vger.kernel.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Subject: Re: [PATCH v4 6/8] arm64: dts: qcom: qcs8300: enable pcie0 interface
-Message-ID: <20250318054258.roq5zifhqfkjge4e@thinkpad>
-References: <20250310063103.3924525-1-quic_ziyuzhan@quicinc.com>
- <20250310063103.3924525-7-quic_ziyuzhan@quicinc.com>
+	Tue, 18 Mar 2025 06:57:07 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52HKMeYd019356;
+	Tue, 18 Mar 2025 06:57:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	n+7xQ8wAsM+96+JpI461aw5SP7lBsC/LRCDDb2WWtSw=; b=ITt+fbPD3Rn2w1xs
+	nIAtYuiRCLxSHtWxSb+UfdEDBkGs+zgzaD0kSNtIrATHf/1zd2HEl6QiGXrJYKO8
+	RbBYy3bYgTsQgoGXwERvafMzZ5qJD9o89de8dF+ErJzBt5MgYA2kUNMMxATwp65s
+	vrLHVhYg9e99BLrAMSC2F/kg9UqgBrX9Ubzgo5KjubmopbCC5H3X/xscT8RoMpVM
+	KR83SRaiPM6RswvR9HkAU6ru7Gi0Y69aOy9Pe0tmT3TCst+VNJ56+gYFGyLXdwVY
+	P71GFCnlOHLyVBh2yWluDmY1fRBw3b8ffIapMTx3wSVkZBuNwtiCca063HjvB4+4
+	1O5P2w==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1uty60j-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 18 Mar 2025 06:57:00 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52I6ux0J002503
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 18 Mar 2025 06:56:59 GMT
+Received: from [10.233.19.224] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 17 Mar
+ 2025 23:56:55 -0700
+Message-ID: <4fc69ebf-1bd4-428b-bae9-a4f67edee0f5@quicinc.com>
+Date: Tue, 18 Mar 2025 14:56:51 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250310063103.3924525-7-quic_ziyuzhan@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 2/2] phy: qcom: qmp-pcie: Add PHY register retention
+ support
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+CC: <vkoul@kernel.org>, <kishon@kernel.org>, <p.zabel@pengutronix.de>,
+        <dmitry.baryshkov@linaro.org>, <abel.vesa@linaro.org>,
+        <quic_qianyu@quicinc.com>, <neil.armstrong@linaro.org>,
+        <quic_devipriy@quicinc.com>, <konrad.dybcio@oss.qualcomm.com>,
+        <linux-arm-msm@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+        <linux-kernel@vger.kernel.org>
+References: <20250226103600.1923047-1-quic_wenbyao@quicinc.com>
+ <20250226103600.1923047-3-quic_wenbyao@quicinc.com>
+ <20250314145035.h3nybvvko3ew37wl@thinkpad>
+Content-Language: en-US
+From: "Wenbin Yao (Consultant)" <quic_wenbyao@quicinc.com>
+In-Reply-To: <20250314145035.h3nybvvko3ew37wl@thinkpad>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Authority-Analysis: v=2.4 cv=H8Pbw/Yi c=1 sm=1 tr=0 ts=67d9193c cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=KKAkSRfTAAAA:8 a=GV8YIVLR6thIHoP4uU0A:9
+ a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: T0rQ1fDVlKvzzSXpiM4jgq6Pz45WpJVT
+X-Proofpoint-ORIG-GUID: T0rQ1fDVlKvzzSXpiM4jgq6Pz45WpJVT
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-18_03,2025-03-17_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxlogscore=999
+ lowpriorityscore=0 bulkscore=0 adultscore=0 spamscore=0 priorityscore=1501
+ mlxscore=0 suspectscore=0 malwarescore=0 clxscore=1015 impostorscore=0
+ phishscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503180048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250317_224306_675924_819D098C 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20250317_235706_629898_62DF9369 
+X-CRM114-Status: GOOD (  19.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,43 +103,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBNYXIgMTAsIDIwMjUgYXQgMDI6MzE6MDFQTSArMDgwMCwgWml5dWUgWmhhbmcgd3Jv
-dGU6Cj4gQWRkIGNvbmZpZ3VyYXRpb25zIGluIGRldmljZXRyZWUgZm9yIFBDSWUwLCBib2FyZCBy
-ZWxhdGVkIGdwaW9zLAo+IFBNSUMgcmVndWxhdG9ycywgZXRjLgo+IAo+IFJldmlld2VkLWJ5OiBL
-b25yYWQgRHliY2lvIDxrb25yYWQuZHliY2lvQG9zcy5xdWFsY29tbS5jb20+Cj4gU2lnbmVkLW9m
-Zi1ieTogWml5dWUgWmhhbmcgPHF1aWNfeml5dXpoYW5AcXVpY2luYy5jb20+CgpXaXRoIHN1Ympl
-Y3QgY2hhbmdlIG1lbnRpb25lZCBieSBEbWl0cnksCgpSZXZpZXdlZC1ieTogTWFuaXZhbm5hbiBT
-YWRoYXNpdmFtIDxtYW5pdmFubmFuLnNhZGhhc2l2YW1AbGluYXJvLm9yZz4KCi0gTWFuaQoKPiAt
-LS0KPiAgYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3FjczgzMDAtcmlkZS5kdHMgfCA0MCArKysr
-KysrKysrKysrKysrKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgNDAgaW5zZXJ0aW9ucygrKQo+
-IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vcWNzODMwMC1yaWRlLmR0
-cyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcWNvbS9xY3M4MzAwLXJpZGUuZHRzCj4gaW5kZXggYjVj
-OWY4OWIzNDM1Li5jM2ZlM2I5OGIxYjYgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0
-cy9xY29tL3FjczgzMDAtcmlkZS5kdHMKPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20v
-cWNzODMwMC1yaWRlLmR0cwo+IEBAIC0yODUsNiArMjg1LDIzIEBAIHF1ZXVlMyB7Cj4gIAl9Owo+
-ICB9Owo+ICAKPiArJnBjaWUwIHsKPiArCXBlcnN0LWdwaW9zID0gPCZ0bG1tIDIgR1BJT19BQ1RJ
-VkVfTE9XPjsKPiArCXdha2UtZ3Bpb3MgPSA8JnRsbW0gMCBHUElPX0FDVElWRV9ISUdIPjsKPiAr
-Cj4gKwlwaW5jdHJsLTAgPSA8JnBjaWUwX2RlZmF1bHRfc3RhdGU+Owo+ICsJcGluY3RybC1uYW1l
-cyA9ICJkZWZhdWx0IjsKPiArCj4gKwlzdGF0dXMgPSAib2theSI7Cj4gK307Cj4gKwo+ICsmcGNp
-ZTBfcGh5IHsKPiArCXZkZGEtcGh5LXN1cHBseSA9IDwmdnJlZ19sNmE+Owo+ICsJdmRkYS1wbGwt
-c3VwcGx5ID0gPCZ2cmVnX2w1YT47Cj4gKwo+ICsJc3RhdHVzID0gIm9rYXkiOwo+ICt9Owo+ICsK
-PiAgJnF1cHYzX2lkXzAgewo+ICAJc3RhdHVzID0gIm9rYXkiOwo+ICB9Owo+IEBAIC0zMTAsNiAr
-MzI3LDI5IEBAICZzZXJkZXMwIHsKPiAgfTsKPiAgCj4gICZ0bG1tIHsKPiArCXBjaWUwX2RlZmF1
-bHRfc3RhdGU6IHBjaWUwLWRlZmF1bHQtc3RhdGUgewo+ICsJCXdha2UtcGlucyB7Cj4gKwkJCXBp
-bnMgPSAiZ3BpbzAiOwo+ICsJCQlmdW5jdGlvbiA9ICJncGlvIjsKPiArCQkJZHJpdmUtc3RyZW5n
-dGggPSA8Mj47Cj4gKwkJCWJpYXMtcHVsbC11cDsKPiArCQl9Owo+ICsKPiArCQljbGtyZXEtcGlu
-cyB7Cj4gKwkJCXBpbnMgPSAiZ3BpbzEiOwo+ICsJCQlmdW5jdGlvbiA9ICJwY2llMF9jbGtyZXEi
-Owo+ICsJCQlkcml2ZS1zdHJlbmd0aCA9IDwyPjsKPiArCQkJYmlhcy1wdWxsLXVwOwo+ICsJCX07
-Cj4gKwo+ICsJCXBlcnN0LXBpbnMgewo+ICsJCQlwaW5zID0gImdwaW8yIjsKPiArCQkJZnVuY3Rp
-b24gPSAiZ3BpbyI7Cj4gKwkJCWRyaXZlLXN0cmVuZ3RoID0gPDI+Owo+ICsJCQliaWFzLXB1bGwt
-ZG93bjsKPiArCQl9Owo+ICsJfTsKPiArCj4gIAlldGhlcm5ldDBfZGVmYXVsdDogZXRoZXJuZXQw
-LWRlZmF1bHQtc3RhdGUgewo+ICAJCWV0aGVybmV0MF9tZGM6IGV0aGVybmV0MC1tZGMtcGlucyB7
-Cj4gIAkJCXBpbnMgPSAiZ3BpbzUiOwo+IC0tIAo+IDIuMzQuMQo+IAoKLS0gCuCuruCuo+Cuv+Cu
-teCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkg
-bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 3/14/2025 10:50 PM, Manivannan Sadhasivam wrote:
+> On Wed, Feb 26, 2025 at 06:36:00PM +0800, Wenbin Yao wrote:
+>> From: Qiang Yu <quic_qianyu@quicinc.com>
+>>
+>> Some QCOM PCIe PHYs support no_csr reset. Unlike BCR reset which resets the
+>> whole PHY (hardware and register), no_csr reset only resets PHY hardware
+>> but retains register values, which means PHY setting can be skipped during
+>> PHY init if PCIe link is enabled in booltloader and only no_csr is toggled
+>> after that.
+>>
+>> Hence, determine whether the PHY has been enabled in bootloader by
+>> verifying QPHY_START_CTRL register. If it's programmed and no_csr reset is
+>> available, skip BCR reset and PHY register setting to establish the PCIe
+>> link with bootloader - programmed PHY settings.
+>>
+>> Signed-off-by: Qiang Yu <quic_qianyu@quicinc.com>
+>> Signed-off-by: Wenbin Yao <quic_wenbyao@quicinc.com>
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+>
+> One nit below.
+>
+>> ---
+>>   drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 69 ++++++++++++++++++++----
+>>   1 file changed, 59 insertions(+), 10 deletions(-)
+>>
+>> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>> index 219266125cf2..c3642d1807e4 100644
+>> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+>> @@ -2805,6 +2805,7 @@ struct qmp_pcie {
+>>   
+>>   	const struct qmp_phy_cfg *cfg;
+>>   	bool tcsr_4ln_config;
+>> +	bool skip_init;
+>>   
+>>   	void __iomem *serdes;
+>>   	void __iomem *pcs;
+>> @@ -3976,18 +3977,38 @@ static int qmp_pcie_init(struct phy *phy)
+>>   {
+>>   	struct qmp_pcie *qmp = phy_get_drvdata(phy);
+>>   	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>> +	void __iomem *pcs = qmp->pcs;
+>> +	bool phy_initialized = !!(readl(pcs + cfg->regs[QPHY_START_CTRL]));
+>>   	int ret;
+>>   
+>> +	qmp->skip_init = qmp->nocsr_reset && phy_initialized;
+>> +	/*
+>> +	 * We need to check the existence of init sequences in two cases:
+>> +	 * 1. The PHY doesn't support no_csr reset.
+>> +	 * 2. The PHY supports no_csr reset but isn't initialized by bootloader.
+>> +	 * As we can't skip init in these two cases.
+>> +	 */
+>> +	if (!qmp->skip_init && !cfg->tbls.serdes_num) {
+>> +		dev_err(qmp->dev, "no init sequences are available\n");
+> "Init sequence not available\n"
+>
+>> +		return -EINVAL;
+> -ENODATA
+
+Will fix in the next version.
+
+>
+> - Mani
+>
+-- 
+With best wishes
+Wenbin
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
