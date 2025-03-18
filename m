@@ -4,87 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01CD2C28B28
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 14:34:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A109C28B2F
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Mar 2025 14:49:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gGxQALFt5DjRCV1Df8Bp9vo7624ArDSXBGpHJCJU7tI=; b=pmGNlQbO58bAR/
-	w83zX5Zo2vtzSsQa99FVYeB7F5D6Eswtuk1DrsZHRGT7kGfIgK/HciNJAoPHYrIkLCgBY6aHQVeWp
-	MITHRZE6PeYdnVZRAMWgjQX8IBcXwPbL5PWhjxL5ChPWmDjBybEpB/SVf0EQUHmwoqY/woeczhykF
-	UQINy4bGdxM+NtrQQcP69SFc9ebfL61XIWuvrwR+0SAckzOw47+3qCwSLwlHZDygvvimS+gklcpgF
-	OdzpRT8VePl0yteplO8/mSFveMeRdz61K0k2CKmXM0nKf4niajDQ+K6RVEVzV5iOABMAlialm6Yit
-	lIj7xYRxfDMZCb2PL6oA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uUPIPbyv9GOoA/iT53QvgE4MsKlBtpnRLkD5KlLlbno=; b=svWx/AlY9Y3+Jy
+	nUdOmIz4G6GiJLnyeswGI4pjAmxBSRhHpRikvxQIRvPR+9S3SNd8eZfZc1LA8GOaNjBMhBYplmrNh
+	xQPqqHt1+g0UEN4hTQnqlFyYNStJ7mWQ4FmMSEg87Dgb/ci6VoRHgtxCqeVYrFP/JrC8hVh8KnAEx
+	xLlR7/2INIHqwquTF/CO9U23e3dnEN1L40LW6UYXdCi1aDepXWGYxZZ3/C37Ajg802gimvBUuTi/u
+	2i3Uq2i+XFTGmH4N8rqdm6j+KdooGUrU5kxKepbMpnuUg5o3X546TX+CYHEBjl+vqPi2eUbvYIXht
+	8sOJ1jFjTr2dLQtYYkhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuY19-00000006C3j-2T8d;
-	Tue, 18 Mar 2025 14:34:07 +0000
-Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
+	id 1tuYGV-00000006Exo-1c2x;
+	Tue, 18 Mar 2025 14:49:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuY0v-00000006C0z-1FaE;
-	Tue, 18 Mar 2025 14:33:54 +0000
-Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-2260c915749so34128795ad.3;
-        Tue, 18 Mar 2025 07:33:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1742308432; x=1742913232; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=gADg9VNDLpQbKOL7DJWNEdDj/Dd07ziMut44yk6PmRU=;
-        b=RWA+5n3mgN5UPGkp0RAx3xk3fKQ9Cet/oUTNJNdyDE/ryndB2ZpsyzPemIC9bfWV/R
-         tfdXlh5Xu5uVFEoZ3zRMCclSQzjDXKn2vZJfW5dyCm+7Gznt6NXiDXdrWu9KS9wx0Ych
-         GZsuL7Uo2b/gVrPdUfgsq6S64TZvcnBGQFCd84iJ1l35cu24idvfsZUjL0oe5Kuk1eQ0
-         HyammYSYqKpndYpt0YVMSOR8VMx7JWbLmPKXrmlf1cpNdATLQmj3vEzhX8CI6Y35+xdb
-         X7Q9iYPq/jPFNjG79IHtGA9rgQD6FbGBRUXgsB8QGgJSoIb0gYVDUC408wE9AT4W4YAk
-         5Tsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1742308432; x=1742913232;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=gADg9VNDLpQbKOL7DJWNEdDj/Dd07ziMut44yk6PmRU=;
-        b=wFYZhjNFMVoMhWVZqPWJCzWmyHnaD6No+cpMxAIGMgeJaqd3vuWctvJBm5f2+OBeb7
-         e4NZ52omdgru7s1nL3HEOLUJwL7gqY8N1lynSjBCiIp5a/tvRV5VCz952EbK6n4IW+F9
-         fe/GEaOet31LRvqEDhOtj3ZqAehZAZaz1uxZR6E1TQUWuuPn8ClbQCg6OmtgX68QunhC
-         mWuGzGs9mYxObUukpxe0xILwlMxE2Yd1+wWi5DJPTg6Xt6XM1ZwiOC6U49sfK82tXJ4v
-         O/o64fhz7B3JsetrI/kepE87TPpUANIObXCpxxYl8nK0jcRkiwncSNLmnbmRKFVhiaKu
-         SBtQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUdrQebOjOE1iM8N4+k6PkbkCtfIAQvzUEBMMxgC1WBAvd44ojQnppjLQm6FPlL/8bhwrRJIgFMg2QyfXvpwzM=@lists.infradead.org, AJvYcCViewDWpzb4GIheFLpmhLOMsQyOpAGjn7ZlP3pJhBSwKbQVfuuJiFhyzlP/iaocSGri8pdBN22z/YJh@lists.infradead.org, AJvYcCX9CCpLv8OVwtJSR+Zut2qkZUOsMUHU/KSuF3vDSN9INHF73T3hCkP2fyJfmv5hd27CdFhI9ehr41CorMWvmD1l@lists.infradead.org
-X-Gm-Message-State: AOJu0YyRU7RpilQ20qxg3utueoVzCnmyV+9RmSJTPcLVuE7rtEF7oNtQ
-	3+8HYkR2Azo2gexlxGeoNAVgoZCn9UK5Ps/A4crKDZh7nwvk1y0P
-X-Gm-Gg: ASbGncvXZ5dX3Ws5h0C9TUef5GPtGbBx52l4JvEJO/P2u1cGZfvb9TYGV8z1me6+YB3
-	Evt2PdaVViZFzelBM20w3lastxYaayhes9HL853UoAI7B5cyTYfokhmOJnS8hMuut3WiP/ajYzf
-	vgmHubjss8HwJqwt1vdD+eV8qryweUyw0nueeVA7Wj4i4QqvAZ4eiR44yvzq5DhKAx9ebAq+Tos
-	rB+spaa0XzzH5rIRgTgEcV7VAWr6uSOIgTCLnIfW8LBihoK/l3QoDaSB259Eta57AVbq1PBj+kp
-	o5XEGE3xDWnC9cYjcPYQ75R42BG04iDySfdXm/ODiDYqbgkw+lWZNWOJxjBKrqOZQu2qYmIeTJQ
-	njAg=
-X-Google-Smtp-Source: AGHT+IEfgmfK1crsVRUWCYlfsqwt+/1m0mmrpIocbRk2MJOVO/tv4/clXEIchP4T/Mf/Fhw6MElziQ==
-X-Received: by 2002:a17:902:da8c:b0:21f:507b:9ad7 with SMTP id d9443c01a7336-225e0a8fac1mr177828705ad.25.1742308431908;
-        Tue, 18 Mar 2025 07:33:51 -0700 (PDT)
-Received: from localhost.localdomain ([183.242.254.176])
-        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-225c6bbca06sm94446355ad.161.2025.03.18.07.33.48
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Tue, 18 Mar 2025 07:33:51 -0700 (PDT)
-From: Miaoqian Lin <linmq006@gmail.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: linmq006@gmail.com
-Subject: [PATCH] phy: rockchip-usb: Fix refcount leak in rockchip_init_usb_uart
-Date: Tue, 18 Mar 2025 22:33:40 +0800
-Message-Id: <20250318143340.25162-1-linmq006@gmail.com>
-X-Mailer: git-send-email 2.39.5 (Apple Git-154)
+	id 1tuYGS-00000006EvQ-1yKf
+	for linux-phy@lists.infradead.org;
+	Tue, 18 Mar 2025 14:49:57 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52I9B2fE017976;
+	Tue, 18 Mar 2025 14:49:52 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=Q8Uj+hzMsRo
+	7D0JUQTQUU2qUCqDKD2bgUUcr/44iNqo=; b=lMXcawRCPdKhqEFOFjwE7l7P9bI
+	+7Nd2U0Mtv+c7+bj4z5W6Oj3wnOt8PJ1itt+WVbGTrP0klFNYG2JRqpWAV/IEoch
+	8y0z8vNglr/elezgebvNwyH27u/qL5nPipNDPEzbvKDk8tCiSC0wJIPmPaRm/vNp
+	gHxFw7EGm/Mbo42ce1cotRtESQMLtmvTyjXCLBpnRwVTNUrEsLIK1mB5PfT2pDkC
+	vs+OZbN6R3sY4GtopXgnRPKIuIwftvGT127m7EZRo6TzdF5iCXpKmdrAXoXKHgjN
+	ARfzuIvRm4oMy/Qpk/8yU5tQ4Pqo92DySOmgg3n22yQDvXQa0LHTJNdwNsg==
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45d1sy0jtu-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 18 Mar 2025 14:49:51 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 52IEnm1o004305;
+	Tue, 18 Mar 2025 14:49:48 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 45dkgmfv8n-1;
+	Tue, 18 Mar 2025 14:49:48 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 52IEnmWL004296;
+	Tue, 18 Mar 2025 14:49:48 GMT
+Received: from hu-maiyas-hyd.qualcomm.com (hu-nitirawa-hyd.qualcomm.com [10.213.109.152])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTP id 52IEnmLU004293;
+	Tue, 18 Mar 2025 14:49:48 +0000
+Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 2342877)
+	id 8233B501582; Tue, 18 Mar 2025 20:19:47 +0530 (+0530)
+From: Nitin Rawat <quic_nitirawa@quicinc.com>
+To: vkoul@kernel.org, kishon@kernel.org, manivannan.sadhasivam@linaro.org,
+        James.Bottomley@HansenPartnership.com, martin.petersen@oracle.com,
+        konrad.dybcio@oss.qualcomm.com
+Cc: quic_rdwivedi@quicinc.com, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+        linux-scsi@vger.kernel.org, Nitin Rawat <quic_nitirawa@quicinc.com>,
+        Can Guo <quic_cang@quicinc.com>
+Subject: [PATCH V2 2/6] phy: qcom-qmp-ufs: Refactor phy_power_on and phy_calibrate callbacks
+Date: Tue, 18 Mar 2025 20:19:40 +0530
+Message-ID: <20250318144944.19749-3-quic_nitirawa@quicinc.com>
+X-Mailer: git-send-email 2.48.1
+In-Reply-To: <20250318144944.19749-1-quic_nitirawa@quicinc.com>
+References: <20250318144944.19749-1-quic_nitirawa@quicinc.com>
 MIME-Version: 1.0
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: iz_eQCwoZu1Xq-qOAv7NDsu9HosJF4GH
+X-Proofpoint-ORIG-GUID: iz_eQCwoZu1Xq-qOAv7NDsu9HosJF4GH
+X-Authority-Analysis: v=2.4 cv=XKcwSRhE c=1 sm=1 tr=0 ts=67d98810 cx=c_pps a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=Vs1iUdzkB0EA:10 a=COk6AnOGAAAA:8 a=ZEhkBkkNTqPGxlI-GDwA:9 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2025-03-18_07,2025-03-17_03,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ mlxlogscore=999 priorityscore=1501 clxscore=1015 phishscore=0
+ impostorscore=0 adultscore=0 mlxscore=0 malwarescore=0 suspectscore=0
+ spamscore=0 bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2503180109
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250318_073353_335451_F9AB5A01 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250318_074956_628935_FF5D7839 
+X-CRM114-Status: GOOD (  11.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,37 +107,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Fix a reference counter leak in rockchip_init_usb_uart() where
-of_node_put(np) was missing after of_find_matching_node_and_match().
+Commit 052553af6a31 ("ufs/phy: qcom: Refactor to use phy_init call")
+puts enabling regulators & clks, calibrating UFS PHY, starting serdes
+and polling PCS ready status into phy_power_on.
 
-Fixes: 605df8af33a7 ("phy: rockchip-usb: add handler for usb-uart functionality")
-Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
+In Current code regulators enable, clks enable, calibrating UFS PHY,
+start_serdes and polling PCS_ready_status are part of phy_power_on.
+
+UFS PHY registers are retained after power collapse, meaning calibrating
+UFS PHY, start_serdes and polling PCS_ready_status can be done only when
+hba is powered_on, and not needed every time when phy_power_on is called
+during resume. Hence keep the code which enables PHY's regulators & clks
+in phy_power_on and move the rest steps into phy_calibrate function.
+
+Refactor the code to retain PHY regulators & clks in phy_power_on and
+move out rest of the code to new phy_calibrate function.
+
+Co-developed-by: Can Guo <quic_cang@quicinc.com>
+Signed-off-by: Can Guo <quic_cang@quicinc.com>
+Signed-off-by: Nitin Rawat <quic_nitirawa@quicinc.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usb.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 18 ++----------------
+ 1 file changed, 2 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usb.c b/drivers/phy/rockchip/phy-rockchip-usb.c
-index 666a896c8f0a..de7d879bb460 100644
---- a/drivers/phy/rockchip/phy-rockchip-usb.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usb.c
-@@ -539,6 +539,7 @@ static int __init rockchip_init_usb_uart(void)
- 	if (!data->init_usb_uart) {
- 		pr_err("%s: usb-uart not available on %s\n",
- 		       __func__, match->compatible);
-+		of_node_put(np);
- 		return -ENOTSUPP;
- 	}
- 
-@@ -547,6 +548,7 @@ static int __init rockchip_init_usb_uart(void)
- 		grf = syscon_node_to_regmap(np->parent);
- 	if (IS_ERR(grf))
- 		grf = syscon_regmap_lookup_by_phandle(np, "rockchip,grf");
-+	of_node_put(np);
- 	if (IS_ERR(grf)) {
- 		pr_err("%s: Missing rockchip,grf property, %lu\n",
- 		       __func__, PTR_ERR(grf));
--- 
-2.39.5 (Apple Git-154)
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index bb836bc0f736..0089ee80f852 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -1796,7 +1796,7 @@ static int qmp_ufs_com_exit(struct qmp_ufs *qmp)
+ 	return 0;
+ }
+
+-static int qmp_ufs_init(struct phy *phy)
++static int qmp_ufs_power_on(struct phy *phy)
+ {
+ 	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -1898,21 +1898,6 @@ static int qmp_ufs_exit(struct phy *phy)
+ 	return 0;
+ }
+
+-static int qmp_ufs_power_on(struct phy *phy)
+-{
+-	int ret;
+-
+-	ret = qmp_ufs_init(phy);
+-	if (ret)
+-		return ret;
+-
+-	ret = qmp_ufs_phy_calibrate(phy);
+-	if (ret)
+-		qmp_ufs_exit(phy);
+-
+-	return ret;
+-}
+-
+ static int qmp_ufs_disable(struct phy *phy)
+ {
+ 	int ret;
+@@ -1942,6 +1927,7 @@ static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ static const struct phy_ops qcom_qmp_ufs_phy_ops = {
+ 	.power_on	= qmp_ufs_power_on,
+ 	.power_off	= qmp_ufs_disable,
++	.calibrate	= qmp_ufs_phy_calibrate,
+ 	.set_mode	= qmp_ufs_set_mode,
+ 	.owner		= THIS_MODULE,
+ };
+--
+2.48.1
 
 
 -- 
